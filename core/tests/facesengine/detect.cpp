@@ -7,6 +7,7 @@
  * Description : Face detection CLI tool
  *
  * Copyright (C) 2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
+ * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -30,6 +31,10 @@
 #include <QPixmap>
 #include <QWidget>
 #include <QDebug>
+#include <QTime>
+#include <QRectF>
+#include <QList>
+#include <QScrollArea>
 
 // Local includes
 
@@ -37,14 +42,22 @@
 
 using namespace Digikam;
 
-void detectFaces(const QString& file)
+void detectFaces(const QString& imagePath)
 {
-    qDebug() << "Loading" << file;
-    QImage img(file);
-    qDebug() << "Detecting";
+    qDebug() << "Loading " << imagePath;
+    QImage img(imagePath);
+
     FaceDetector detector;
-    QList<QRectF> faces = detector.detectFaces(img);
-    qDebug() << "Detected";
+    qDebug() << "Detecting faces";
+
+    QTime time;
+    unsigned int elapsedDetection = 0;
+
+    time.start();
+    QList<QRectF> faces = detector.detectFaces(imagePath);
+    elapsedDetection = time.elapsed();
+
+    qDebug() << "(Input CV) Found " << faces.size() << " faces, in " << elapsedDetection << "ms";
 
     if (faces.isEmpty())
     {
@@ -60,23 +73,29 @@ void detectFaces(const QString& file)
     }
 
     QWidget* const mainWidget = new QWidget;
-    mainWidget->setWindowTitle(file);
+
+    QScrollArea* const scrollArea = new QScrollArea;
+    scrollArea->setWidget(mainWidget);
+    scrollArea->setWidgetResizable(true);
+
     QHBoxLayout* const layout = new QHBoxLayout(mainWidget);
-    QLabel* const fullImage   = new QLabel;
+    QLabel* const fullImage = new QLabel;
+    fullImage->setScaledContents(true);
     fullImage->setPixmap(QPixmap::fromImage(img.scaled(250, 250, Qt::KeepAspectRatio)));
     layout->addWidget(fullImage);
 
     foreach (const QRectF& rr, faces)
     {
         QLabel* const label = new QLabel;
-        label->setScaledContents(false);
+        label->setScaledContents(true);
         QRect r             = FaceDetector::toAbsoluteRect(rr, img.size());
         QImage part         = img.copy(r);
-        label->setPixmap(QPixmap::fromImage(part.scaled(200, 200, Qt::KeepAspectRatio)));
+        label->setPixmap(QPixmap::fromImage(part.scaled(50, 50, Qt::KeepAspectRatio)));
         layout->addWidget(label);
     }
 
-    mainWidget->show();
+    scrollArea->show();
+    scrollArea->setWindowTitle(imagePath);
     qApp->processEvents(); // dirty hack
 }
 
