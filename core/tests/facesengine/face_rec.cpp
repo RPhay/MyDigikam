@@ -302,14 +302,10 @@ int main(int argc, char* argv[])
 
     FaceDetector detector;
 
-    // Start timing for benchmark training
-
-    QTime time;
-    time.start();
-
     // Evaluation metrics
     unsigned correct = 0, notRecognized = 0, falsePositive = 0, totalTrained = 0, totalRecognized = 0;
     unsigned elapsedTraining = 0, elapsedTesting = 0;
+    unsigned detectingTime = 0;
 
 /*
  *  // Without using detector
@@ -390,7 +386,15 @@ int main(int argc, char* argv[])
         foreach(const QImage& image, rawImages)
         {
             QString imagePath = imagePaths.takeFirst();
+
+            // Start timing for benchmark face detection
+
+            QTime time;
+            time.start();
+
             QList<QRectF> detectedBoundingBox = processFaceDetection(imagePath, detector);
+
+            detectingTime += time.elapsed();
 
             if(detectedBoundingBox.size())
             {
@@ -405,10 +409,16 @@ int main(int argc, char* argv[])
         }
         
         QList<QImage> faces = retrieveFaces(detectedFaces, bboxes);
-        db.train(identity, faces, trainingContext);
-    }
 
-    elapsedTraining = time.restart();
+        // Start timing for benchmark training
+
+        QTime time;
+        time.start();
+
+        db.train(identity, faces, trainingContext);
+
+        elapsedTraining += time.elapsed();
+    }
 
     for (QMap<unsigned, QStringList>::const_iterator it = testset.constBegin() ;
          it != testset.constEnd() ; ++it)
@@ -424,7 +434,15 @@ int main(int argc, char* argv[])
         foreach(const QImage& image, rawImages)
         {
             QString imagePath = imagePaths.takeFirst();
+
+            // Start timing for benchmark face detection
+
+            QTime time;
+            time.start();
+
             QList<QRectF> detectedBoundingBox = processFaceDetection(imagePath, detector);
+
+            detectingTime += time.elapsed();
 
             if(detectedBoundingBox.size())
             {
@@ -441,7 +459,15 @@ int main(int argc, char* argv[])
         }
 
         QList<QImage> faces = retrieveFaces(detectedFaces, bboxes);
-        QList<Identity> results = db.recognizeFaces(faces);        
+
+        // Start timing for benchmark testing
+
+        QTime time;
+        time.start();
+
+        QList<Identity> results = db.recognizeFaces(faces);
+
+        elapsedTesting += time.elapsed();
 
         // qDebug() << "Result for " << it.value().first() << " is identity " << results.first().id();
 
@@ -468,8 +494,6 @@ int main(int argc, char* argv[])
 
         // totalRecognized += images.size();
     }
-
-    elapsedTesting = time.elapsed();
 
     unsigned nbUndetectedTrainedFaces = undetectedTrainedFaces.size();
     qDebug() << "\n" << nbUndetectedTrainedFaces << " / " << totalTrained + nbUndetectedTrainedFaces 
@@ -512,6 +536,10 @@ int main(int argc, char* argv[])
     {
         qDebug() << path;
     }
+
+    qDebug() << "\n Average time of face detection "
+             << detectingTime*1.0 / (totalTrained + nbUndetectedTrainedFaces + totalRecognized + nbUndetectedTestedFaces)
+             << "ms";
 
     return 0;
 
