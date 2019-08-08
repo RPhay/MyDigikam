@@ -238,7 +238,7 @@ bool FaceDbSchemaUpdater::createDatabase()
 bool FaceDbSchemaUpdater::createTables()
 {
     return d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDB"))) &&
-           d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBOpenCVLBPH"))) &&
+           // d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBOpenCVLBPH"))) &&
            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices")));
 }
 
