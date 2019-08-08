@@ -143,6 +143,11 @@ public:
                                LoadSaveThread::AccessMode mode = LoadSaveThread::AccessModeReadWrite,
                                LoadingTaskStatus loadingTaskStatus = LoadingTaskStatusLoading);
 
+    virtual ~SharedLoadingTask()
+    {
+        m_listeners.clear();
+    };
+
     virtual void execute() override;
     virtual void progressInfo(DImg* const img, float progress) override;
     virtual bool continueQuery(DImg* const img) override;
