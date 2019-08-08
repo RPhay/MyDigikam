@@ -19,41 +19,55 @@ include_directories($<TARGET_PROPERTY:Qt5::Xml,INTERFACE_INCLUDE_DIRECTORIES>
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/..
                     ${CMAKE_CURRENT_SOURCE_DIR}/facedb
-                    ${CMAKE_CURRENT_SOURCE_DIR}/detection
+
+                    ${CMAKE_CURRENT_SOURCE_DIR}/alignment/congealing
+
                     ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv3-face
+
+                    ${CMAKE_CURRENT_SOURCE_DIR}/detection
+                    ${CMAKE_CURRENT_SOURCE_DIR}/detection/dnn
+
                     ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph
                     ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces
                     ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-fisherfaces
-                    ${CMAKE_CURRENT_SOURCE_DIR}/alignment/congealing
-                    ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor
+                    ${CMAKE_CURRENT_SOURCE_DIR}/recognition/dnn
+
                     ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing
+                    ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor
                     ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/recognition
 
-#                   ${CMAKE_CURRENT_SOURCE_DIR}/alignment/flandmark
-#                   ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/tantriggs
+                    # ${CMAKE_CURRENT_SOURCE_DIR}/alignment/flandmark
+                    # ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/tantriggs
 )
 
-set(facesengine_LIB_SRCS detection/opencvfacedetector.cpp
-                         detection/opencvdnnfacedetector.cpp
-                         preprocessing/shape-predictor/fullobjectdetection.cpp
-                         preprocessing/shape-predictor/qdatastreamoverloads.cpp
-                         facedetector.cpp
+set(facesengine_LIB_SRCS facedetector.cpp
                          identity.cpp
                          dataproviders.cpp
+
+                         detection/opencvfacedetector.cpp
+                         detection/opencvdnnfacedetector.cpp
+
                          preprocessing/recognition/recognitionpreprocessor.cpp
                          preprocessing/recognition/openfacepreprocessor.cpp
+
                          preprocessing/shape-predictor/matrixoperations.cpp
                          preprocessing/shape-predictor/pointtransformaffine.cpp
+                         preprocessing/shape-predictor/qdatastreamoverloads.cpp
+                         preprocessing/shape-predictor/fullobjectdetection.cpp
                          preprocessing/shape-predictor/shapepredictor.cpp
 
+                         detection/dnn/dnnfacedetectorssd.cpp
+                         detection/dnn/dnnfacedetectoryolo.cpp
+                         detection/dnn/dnnfacedetectorbase.cpp
+
                          detection/opencv3-face/facerec.cpp
+                         detection/opencv3-face/predict_collector.cpp
                          detection/opencv3-face/lbph_faces.cpp
                          detection/opencv3-face/eigen_faces.cpp
                          detection/opencv3-face/fisher_faces.cpp
-                         detection/opencv3-face/predict_collector.cpp
 
-#                        alignment/flandmark/flandmarkaligner.cpp
-#                        preprocessing/tantriggs/tantriggspreprocessor.cpp
+                         # alignment/flandmark/flandmarkaligner.cpp
+                         # preprocessing/tantriggs/tantriggspreprocessor.cpp
 )
 
 set(facesengine_database_LIB_SRCS recognitiondatabase.cpp
@@ -88,6 +102,7 @@ set(facesengine_database_LIB_SRCS recognitiondatabase.cpp
 if(ENABLE_FACESENGINE_DNN)
 
     set(facesengine_database_LIB_SRCS ${facesengine_database_LIB_SRCS}
+
                                       # Neural NetWork Faces recognition module based on OpenCV DNN
                                       recognition/dnn/dnnfacemodel.cpp
                                       recognition/dnn/opencvdnnfacerecognizer.cpp

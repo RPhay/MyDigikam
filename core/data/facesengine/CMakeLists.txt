@@ -35,6 +35,14 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/res10_300x300_ssd_iter_140000_
         DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
 )
 
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/yolov3-face.cfg
+        DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
+)
+
+install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/yolov3-wider_16000.weights
+        DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
+)
+
 # ---------------------------------------------------------------
 
 # add_custom_command(OUTPUT face-funnel.data

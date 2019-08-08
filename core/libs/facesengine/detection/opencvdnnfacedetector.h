@@ -34,18 +34,26 @@
 #include <QList>
 #include <QRect>
 
-// DigiKam includes
+// Local includes
 
 #include "dimg.h"
+#include "dnnfacedetectorbase.h"
 
 namespace Digikam
 {
 
+enum DetectorNNModel
+{
+    SSDMOBILENET = 0,
+    YOLO
+};
+
 class OpenCVDNNFaceDetector
 {
+
 public:
 
-    explicit OpenCVDNNFaceDetector();
+    explicit OpenCVDNNFaceDetector(DetectorNNModel model = DetectorNNModel::SSDMOBILENET);
     ~OpenCVDNNFaceDetector();
 
     cv::Mat prepareForDetection(const QImage& inputImage) const;
@@ -61,13 +69,8 @@ public:
 
 private:
 
-    float           confidenceThreshold;
-
-    cv::dnn::Net    net;
-
-    float           scaleFactor;
-    cv::Scalar      meanValToSubtract;
-    cv::Size        inputImageSize;
+    DetectorNNModel         modelType;
+    DNNFaceDetectorBase*    inferenceEngine;
 
 };
 
