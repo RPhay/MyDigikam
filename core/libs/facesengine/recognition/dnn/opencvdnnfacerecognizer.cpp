@@ -44,8 +44,9 @@ class Q_DECL_HIDDEN OpenCVDNNFaceRecognizer::Private
 public:
 
     explicit Private()
-        : loaded(false),
-          m_preprocessor(0)
+      : m_preprocessor(0),
+        m_extractor(0),
+        loaded(false)
     {
     }
 
