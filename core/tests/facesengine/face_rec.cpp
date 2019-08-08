@@ -83,6 +83,8 @@ void prepareForTrain(QString testSetPath, QMap<unsigned, QStringList>& testset,
     QDir testSet(testSetPath);
     QStringList subjects = testSet.entryList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks);
 
+    qDebug() << nbOfSamples << ", " << nbOfIdentities;
+
     if(nbOfIdentities == 0)
     {
         nbOfIdentities = subjects.size();
@@ -225,16 +227,11 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    unsigned nbOfSamples, nbOfIdentities;
+    unsigned int nbOfSamples = 0, nbOfIdentities = 0;
     if(!parser.isSet(QLatin1String("as")))
     {
         nbOfSamples = parser.value(QLatin1String("ns")).toUInt();
         nbOfIdentities = parser.value(QLatin1String("ni")).toUInt();
-    }
-    else
-    {
-        nbOfSamples = 0;
-        nbOfIdentities = 0;
     }
 
     double ratio = 0;

@@ -35,6 +35,8 @@
 #include <QRectF>
 #include <QList>
 #include <QScrollArea>
+#include <QPainter>
+#include <QtGlobal>
 
 // Local includes
 
@@ -46,6 +48,7 @@ void detectFaces(const QString& imagePath)
 {
     qDebug() << "Loading " << imagePath;
     QImage img(imagePath);
+    QImage imgScaled(img.scaled(416, 416, Qt::KeepAspectRatio));
 
     FaceDetector detector;
     qDebug() << "Detecting faces";
@@ -81,18 +84,29 @@ void detectFaces(const QString& imagePath)
     QHBoxLayout* const layout = new QHBoxLayout(mainWidget);
     QLabel* const fullImage = new QLabel;
     fullImage->setScaledContents(true);
-    fullImage->setPixmap(QPixmap::fromImage(img.scaled(250, 250, Qt::KeepAspectRatio)));
     layout->addWidget(fullImage);
+
+    QPainter painter(&imgScaled);
+    QPen paintPen(Qt::green);
+    paintPen.setWidth(1);
+    painter.setPen(paintPen);
 
     foreach (const QRectF& rr, faces)
     {
         QLabel* const label = new QLabel;
-        label->setScaledContents(true);
+        label->setScaledContents(false);
+        QRect rectDraw      = FaceDetector::toAbsoluteRect(rr, imgScaled.size());
         QRect r             = FaceDetector::toAbsoluteRect(rr, img.size());
         QImage part         = img.copy(r);
-        label->setPixmap(QPixmap::fromImage(part.scaled(50, 50, Qt::KeepAspectRatio)));
+        label->setPixmap(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 50),
+                                                        qMin(img.size().width(), 50),
+                                                        Qt::KeepAspectRatio)));
         layout->addWidget(label);
+        painter.drawRect(rectDraw);
     }
+
+    // Only setPixmap after finishing drawing bboxes around detected faces
+    fullImage->setPixmap(QPixmap::fromImage(imgScaled));
 
     scrollArea->show();
     scrollArea->setWindowTitle(imagePath);
