@@ -215,7 +215,7 @@ public:
     {
         QPainter p1;
         p1.begin(&pm);
-        p1.initFrom(q);
+        initPainterFromWidget(&p1);
 
         int wWidth  = pm.width();
         int wHeight = pm.height();
@@ -271,7 +271,7 @@ public:
     {
         QPainter p1;
         p1.begin(&pm);
-        p1.initFrom(q);
+        initPainterFromWidget(&p1);
 
         int wWidth  = pm.width();
         int wHeight = pm.height();
@@ -291,7 +291,7 @@ public:
     {
         QPainter p1;
         p1.begin(&pm);
-        p1.initFrom(q);
+        initPainterFromWidget(&p1);
 
         int wWidth  = pm.width();
         int wHeight = pm.height();
@@ -314,10 +314,24 @@ public:
     {
         QPainter p1;
         p1.begin(&pm);
-        p1.initFrom(q);
+        initPainterFromWidget(&p1);
+
         p1.setPen(QPen(q->palette().color(QPalette::Active,
                                           QPalette::WindowText), 1, Qt::SolidLine));
         p1.drawRect(0, 0, pm.width() - 1, pm.height() - 1);
+    }
+
+    void initPainterFromWidget(QPainter* const p)
+    {
+        if (!p || !q)
+        {
+            return;
+        }
+
+        const QPalette& pal = q->palette();
+        p->setPen(QPen(pal.brush(q->foregroundRole()), 0));
+        p->setBackground(pal.brush(q->backgroundRole()));
+        p->setFont(q->font());
     }
 
     // --- patterns for storing / restoring state ---

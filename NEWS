@@ -3,6 +3,7 @@ digiKam 6.3.0 - Release date: 2019-??-??
 *****************************************************************************************************
 NEW FEATURES:
 
+General: Internal Libraw updated to last stable 0.19.4.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -13,7 +14,7 @@ BUGFIXES:
 004 ==> 410634 - The xmp tag data is not handled correctly for raw images with sidecar files.
 005 ==> 379503 - When detecting a new jpg with xmp sidecarfile in album: tags are not read/lost.
 006 ==> 410661 - Aspect ratio crop of 1024 x 500 always results in portret mode.
-007 ==> 410657 - Digikam 6.2 bad sorting.
+007 ==> 410657 - digiKam 6.2 bad sorting.
 008 ==> 410692 - Export to google photo: bad request.
 009 ==> 409034 - Unable to memorize any album and any preference.
 010 ==> 
