@@ -90,7 +90,7 @@ public:
 #ifdef HAVE_FACESENGINE_DNN
     /// DNN
     void updateDNNFaceModel(DNNFaceModel& model);
-    DNNFaceModel dnnFaceModel() const;
+    DNNFaceModel dnnFaceModel(bool debug) const;
 #endif
 
     // ----------- Database shrinking methods ----------

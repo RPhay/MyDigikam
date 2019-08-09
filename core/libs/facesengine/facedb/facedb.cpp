@@ -642,8 +642,13 @@ void FaceDb::updateDNNFaceModel(DNNFaceModel& model)
     }
 }
 
-DNNFaceModel FaceDb::dnnFaceModel() const
+DNNFaceModel FaceDb::dnnFaceModel(bool debug) const
 {
+    if(debug)
+    {
+        return DNNFaceModel();
+    }
+
     qCDebug(DIGIKAM_FACEDB_LOG) << "Loading DNN model";
     DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT id, identity, `context`, `type`, `rows`, `cols`, `data`, vecdata "
                                                             "FROM FaceMatrices;"));

@@ -43,7 +43,7 @@ public:
     /**
      *  @brief FaceRecognizer:Master class to control entire recognition using Eigenfaces algorithm
      */
-    explicit OpenCVDNNFaceRecognizer();
+    explicit OpenCVDNNFaceRecognizer(bool debug=false);
     ~OpenCVDNNFaceRecognizer();
 
     /**

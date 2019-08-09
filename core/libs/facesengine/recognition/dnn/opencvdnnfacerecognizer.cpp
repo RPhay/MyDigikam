@@ -43,10 +43,11 @@ class Q_DECL_HIDDEN OpenCVDNNFaceRecognizer::Private
 {
 public:
 
-    explicit Private()
+    explicit Private(bool debug)
       : m_preprocessor(0),
         m_extractor(0),
-        loaded(false)
+        loaded(false),
+        debug(debug)
     {
     }
 
@@ -62,7 +63,7 @@ public:
     {
         if (!loaded)
         {
-            m_dnn  = FaceDbAccess().db()->dnnFaceModel();
+            m_dnn  = FaceDbAccess().db()->dnnFaceModel(debug);
 
             m_preprocessor = new RecognitionPreprocessor;
             m_preprocessor->init(PreprocessorSelection::OPENFACE);
@@ -84,10 +85,11 @@ private:
 
     DNNFaceModel m_dnn;
     bool         loaded;
+    bool         debug;
 };
 
-OpenCVDNNFaceRecognizer::OpenCVDNNFaceRecognizer()
-    : d(new Private)
+OpenCVDNNFaceRecognizer::OpenCVDNNFaceRecognizer(bool debug)
+    : d(new Private(debug))
 {
 }
 
@@ -168,8 +170,13 @@ void OpenCVDNNFaceRecognizer::train(const std::vector<cv::Mat>& images,
 
     d->dnn().update(images_rgb, labels, context, d->m_extractor);
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "DNN Train: Adding model to Facedb";
-    // add to database waiting
-    FaceDbAccess().db()->updateDNNFaceModel(d->dnn());
+
+    // add to database waiting only when not in mode debug
+    if(!context.contains(QLatin1String("debug"), Qt::CaseInsensitive)
+    && !context.contains(QLatin1String("test"), Qt::CaseInsensitive))
+    {
+        FaceDbAccess().db()->updateDNNFaceModel(d->dnn());
+    }
 }
 
 } // namespace Digikam

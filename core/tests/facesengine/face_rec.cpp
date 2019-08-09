@@ -35,6 +35,9 @@
 #include <QCommandLineParser>
 #include <QRectF>
 #include <QList>
+#include <QUuid>
+
+// C++ includes
 
 #include <cassert>
 
@@ -275,33 +278,18 @@ int main(int argc, char* argv[])
         // TODO: Overload of prepareForTrain() to create training set and test set here
     }
 
-    // Create new IDs, clear existed IDs
+    // Create IDs
 
-    const QString trainingContext = QLatin1String("test_facerec");
     QMap<unsigned, Identity> idMap;
-    QList<Identity> existedIDs;
     
     for (unsigned i = 1 ; i <= nbOfIdentities; ++i)
     {
         QMap<QString, QString> attributes;
-        attributes[QString::fromLatin1("name")] = QString::number(i);
-        Identity identity                       = db.findIdentity(attributes);
-
-        if (identity.isNull())
-        {
-            Identity identity = db.addIdentity(attributes);
-            idMap[i]          = identity;
-            qDebug() << "Created identity " << identity.id();
-        }
-        else
-        {
-            qDebug() << "Already have identity " << i << ", clearing training data";
-            idMap[i] = identity;
-            existedIDs << identity;
-        }
+        attributes[QLatin1String("name")] = QString::number(i);
+        idMap[i] = db.addIdentityDebug(attributes);
     }
     
-    db.clearTraining(existedIDs, trainingContext); // Force reload OpenCVDNNFaceRecognizer instance
+    db.createDNNDebug(); // Create OpenCVDNNFaceRecognizer instance without loading recognition database
 
     // Init FaceDetector used for detecting faces and bounding box
     // before recognizing
@@ -371,15 +359,12 @@ int main(int argc, char* argv[])
 
     QStringList falsePositiveFaces;
 
+    QLatin1String trainingContext("Debug");
+
     for (QMap<unsigned, QStringList>::const_iterator it = trainingset.constBegin() ;
          it != trainingset.constEnd() ; ++it)
     {
-        Identity identity = db.findIdentity(QString::fromLatin1("name"), QString::number(it.key()));
-
-        if (identity.isNull())
-        {
-            qDebug() << "Identity management failed for person " << it.key();
-        }
+        Identity identity      = idMap.value(it.key());
 
         QStringList imagePaths = it.value();
 

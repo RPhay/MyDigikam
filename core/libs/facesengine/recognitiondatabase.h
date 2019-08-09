@@ -117,6 +117,12 @@ public:
     Identity addIdentity(const QMap<QString, QString>& attributes);
 
     /**
+     * This is the debug version of addIdentity, so the identity is only added
+     * to identityCache, but not into the recognition database.
+     */
+    Identity addIdentityDebug(const QMap<QString, QString>& attributes);
+
+    /**
      * Adds or sets, resp., the attributes of an identity.
      */
     void addIdentityAttributes(int id, const QMap<QString, QString>& attributes);
@@ -153,6 +159,11 @@ public:
      * Set the face recognition algorithm type
      */
     void activeFaceRecognizer(RecognizeAlgorithm algorithmType);
+
+    /**
+     * Create dnn model with debug set to True (used for CLI standalone test)
+     */
+    void createDNNDebug();
 
     /**
      * Performs recognition.

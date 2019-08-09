@@ -91,22 +91,23 @@ public:
 
 public:
 
-    OpenCVLBPHFaceRecognizer*   lbph()               { return getObjectOrCreate(opencvlbph);   }
-    OpenCVLBPHFaceRecognizer*   lbphConst() const    { return opencvlbph;                      }
+    OpenCVLBPHFaceRecognizer*   lbph()               { return getObjectOrCreate(opencvlbph);            }
+    OpenCVLBPHFaceRecognizer*   lbphConst() const    { return opencvlbph;                               }
 
-    OpenCVEIGENFaceRecognizer*  eigen()              { return getObjectOrCreate(opencveigen);  }
-    OpenCVEIGENFaceRecognizer*  eigenConst() const   { return opencveigen;                     }
+    OpenCVEIGENFaceRecognizer*  eigen()              { return getObjectOrCreate(opencveigen);           }
+    OpenCVEIGENFaceRecognizer*  eigenConst() const   { return opencveigen;                              }
 
-    OpenCVFISHERFaceRecognizer* fisher()             { return getObjectOrCreate(opencvfisher); }
-    OpenCVFISHERFaceRecognizer* fisherConst() const  { return opencvfisher;                    }
+    OpenCVFISHERFaceRecognizer* fisher()             { return getObjectOrCreate(opencvfisher);          }
+    OpenCVFISHERFaceRecognizer* fisherConst() const  { return opencvfisher;                             }
 
 #ifdef HAVE_FACESENGINE_DNN
-    OpenCVDNNFaceRecognizer*    dnn()                { return getObjectOrCreate(opencvdnn);    }
-    OpenCVDNNFaceRecognizer*    dnnConst() const     { return opencvdnn;                       }
+    OpenCVDNNFaceRecognizer*    dnn()                { return getObjectOrCreate(opencvdnn);             }
+    OpenCVDNNFaceRecognizer*    dnnConst() const     { return opencvdnn;                                }
+    void                        createDNNDebug()     { opencvdnn = new OpenCVDNNFaceRecognizer(true);   }
 #endif
 
-    FunnelReal*                 aligner()            { return getObjectOrCreate(funnel);       }
-    FunnelReal*                 alignerConst() const { return funnel;                          }
+    FunnelReal*                 aligner()            { return getObjectOrCreate(funnel);                }
+    FunnelReal*                 alignerConst() const { return funnel;                                   }
 
 public:
 
@@ -818,6 +819,19 @@ Identity RecognitionDatabase::addIdentity(const QMap<QString, QString>& attribut
     return identity;
 }
 
+Identity RecognitionDatabase::addIdentityDebug(const QMap<QString, QString>& attributes)
+{
+    Identity identity;
+    {
+        identity.setId(attributes[QLatin1String("name")].toInt());
+        identity.setAttributesMap(attributes);
+        identity.setAttribute(QLatin1String("uuid"), QUuid::createUuid().toString());
+    }
+
+    d->identityCache[identity.id()] = identity;
+    return identity;
+}
+
 void RecognitionDatabase::addIdentityAttributes(int id, const QMap<QString, QString>& attributes)
 {
     if (!d || !d->dbAvailable)
@@ -978,6 +992,11 @@ void RecognitionDatabase::activeFaceRecognizer(RecognizeAlgorithm algorithmType)
     {
         d->recognizeAlgorithm = algorithmType;
     }
+}
+
+void RecognitionDatabase::createDNNDebug()
+{
+    d->createDNNDebug();
 }
 
 QList<Identity> RecognitionDatabase::recognizeFaces(ImageListProvider* const images)
