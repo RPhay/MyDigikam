@@ -17,4 +17,17 @@ BUGFIXES:
 007 ==> 410657 - digiKam 6.2 bad sorting.
 008 ==> 410692 - Export to google photo: bad request.
 009 ==> 409034 - Unable to memorize any album and any preference.
-010 ==> 
+010 ==> 129523 - Editing images in other programs (e.g.: gimp).
+011 ==> 265861 - digiKam is missing session management.
+012 ==> 275002 - Import or synchronize contact lists.
+013 ==> 284745 - digiKam crashed while running ufraw, started from digikam menu.
+014 ==> 305839 - Opening terminal from Album List opens Terminal in background.
+015 ==> 331866 - Wish: "Open with" more prominently in the Menu/Image/ or as Toolbar item.
+016 ==> 380329 - Wishlist: Item - Open (locate) in file manager.
+017 ==> 195538 - Use more than one thread for batch conversion of RAW images.
+018 ==> 251656 - digiKam batch queue manager crashed on raw conversion to jpeg with rezising.
+019 ==> 276093 - Settings missing for raw demosaicing.
+020 ==> 285874 - digiKam crashed when loading an image via raw tool.
+021 ==> 294620 - Bad quality using batch raw converter.
+022 ==> 364122 - Crash due socket connect failed.
+023 ==> 
