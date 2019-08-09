@@ -30,4 +30,21 @@ BUGFIXES:
 020 ==> 285874 - digiKam crashed when loading an image via raw tool.
 021 ==> 294620 - Bad quality using batch raw converter.
 022 ==> 364122 - Crash due socket connect failed.
-023 ==> 
+023 ==> 303066 - Icon marking geotagged images.
+024 ==> 330974 - digiKam crashed when regenerating thumbnails in album.
+025 ==> 092375 - Rezisable thumbnail in Comments and Tag editor.
+026 ==> 116187 - No thumbnails in the album view.
+027 ==> 126111 - Prevent reloading thumbnails while renaming images.
+028 ==> 140616 - Continues creating of thumbnail in open album.
+029 ==> 169459 - digiKam view photo not work.
+030 ==> 173986 - Can view thumbnails, but not individual images.
+031 ==> 177500 - Thumbnails not shown when overwriting pictures.
+032 ==> 188029 - Aggressive preloading of thumbnail previews.
+033 ==> 207006 - Browsing, rating, mouse, stars.
+034 ==> 228056 - digiKam doesn't autorotate images anymore.
+035 ==> 259880 - When creating new pic-versions in different formats, a _different_(!!) preview apears and seems to be stored.
+036 ==> 297546 - digiKam scan thumbnails with duplicate filenames in different directories.
+037 ==> 307940 - Crash of digiKam.
+038 ==> 327033 - Memory leak when re-creating all thumbnails.
+039 ==> 407183 - Feature Request : "Open In File Manager" Applicable To Images.
+040 ==> 
