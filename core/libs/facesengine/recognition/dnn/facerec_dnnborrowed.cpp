@@ -128,6 +128,9 @@ void DNNFaceRecognizer::predict(cv::InputArray _src, int& label, double& dist,
 
     // find nearest neighbor
 
+    QMap<int, double> distMap;
+    QMap<int, int> countDist;
+
     for (size_t sampleIdx = 0 ; sampleIdx < m_src.size() ; ++sampleIdx)
     {
 /*        
@@ -146,6 +149,9 @@ void DNNFaceRecognizer::predict(cv::InputArray _src, int& label, double& dist,
             minClass = m_labels.at<int>((int) sampleIdx);
         }
 */
+/*
+        // The codes below only compute maximum similarity between the new face with all the old faces.
+        // Then the label is assigned according to the label of the face the most similar.
 
         double newDist = cosineDistance(vecdata, m_src[sampleIdx]);
 
@@ -154,7 +160,39 @@ void DNNFaceRecognizer::predict(cv::InputArray _src, int& label, double& dist,
             dist = newDist;
             label = m_labels.at<int>((int) sampleIdx);
         }
+*/
+
+        // The codes below compute the average similarity between the new face and the old faces of 
+        // each ID (label). Then, it finds out the group the most similar to that face.
+
+        double newDist = cosineDistance(vecdata, m_src[sampleIdx]);
+        int inspectedLabel = m_labels.at<int>((int) sampleIdx);
+
+        if(distMap.contains(inspectedLabel))
+        {
+            distMap[inspectedLabel] += newDist;
+            countDist[inspectedLabel]++;
+        }
+        else
+        {
+            distMap.insert(inspectedLabel, newDist);
+            countDist.insert(inspectedLabel, 1);
+        }
     }
+
+    // The label is eventually assigned according to the label of that group.
+
+    for(QMap<int, double>::const_iterator it = distMap.constBegin(); it != distMap.constEnd(); ++it)
+    {
+        double newDist = it.value() / countDist[it.key()];
+
+        if(newDist > dist)
+        {
+            dist = newDist;
+            label = it.key();
+        }
+    }
+
 }
 
 int DNNFaceRecognizer::predict(InputArray _src) const
