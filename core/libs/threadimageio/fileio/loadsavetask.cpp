@@ -431,7 +431,7 @@ void SharedLoadingTask::notifyNewLoadingProcess(LoadingProcess* const process, c
     // In this case, we notify our own thread (a signal to the API user is emitted) of this.
     // The fact that we are receiving the method call shows that this task is registered with the LoadingCache,
     // somewhere in between the calls to addLoadingProcess(this) and removeLoadingProcess(this) above.
-    if (process != this                                              &&
+    if (process != dynamic_cast<LoadingProcess*>(this)               &&
         m_loadingDescription.isReducedVersion()                      &&
         m_loadingDescription.equalsIgnoreReducedVersion(description) &&
         !description.isReducedVersion())
