@@ -201,31 +201,42 @@ int main(int argc, char* argv[])
 
     // Parse arguments
 
+    bool optionErrors = false;
+
     if(parser.optionNames().empty())
+    {
+        qWarning() << "NO options!!!";
+        optionErrors = true;
+    }
+    else if(!parser.isSet(QLatin1String("db")))
+    {
+        qWarning() << "MISSING database for test!!!";
+        optionErrors =true;
+    }
+    else if(!parser.isSet(QLatin1String("as"))
+            && (!parser.isSet(QLatin1String("ni")) || !parser.isSet(QLatin1String("ns"))))
+    {
+        qWarning() << "UNKNOWN training set / test set separation!!!";
+        optionErrors =true;
+    }
+    else if(parser.isSet(QLatin1String("ts")) && !parser.isSet(QLatin1String("ds")))
+    {
+        qWarning() << "UNKNOWN Dev set!!!";
+        optionErrors =true;
+    }
+    else if(parser.isSet(QLatin1String("ds")) && !parser.isSet(QLatin1String("ts")))
+    {
+        qWarning() << "UNKNOWN Test set!!!";
+        optionErrors =true;
+    }
+
+    if(optionErrors)
     {
         parser.showHelp();
         return 1;
     }
-    else if(parser.isSet(QLatin1String("ts")))
-    {
-        if(!parser.isSet(QLatin1String("ds")))
-        {
-            qWarning() << "UNKNOWN Dev set!!!";
-            return 1;
-        }
-    }
-    else if(parser.isSet(QLatin1String("ds")))
-    {
-        qWarning() << "UNKNOWN Test set!!!";
-        return 1;
-    }
 
-    if(!parser.isSet(QLatin1String("as"))
-       && (!parser.isSet(QLatin1String("ni")) || !parser.isSet(QLatin1String("ns"))))
-    {
-        qWarning() << "UNKNOWN training set / test set separation!!!";
-        return 1;
-    }
+    QString facedb = parser.value(QLatin1String("db"));
 
     unsigned int nbOfSamples = 0, nbOfIdentities = 0;
     if(!parser.isSet(QLatin1String("as")))
@@ -240,8 +251,6 @@ int main(int argc, char* argv[])
         ratio = parser.value(QLatin1String("rs")).toDouble();
     }
 
-    QString facedb = parser.value(QLatin1String("db"));
-
     // Init config for digiKam
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
@@ -249,7 +258,7 @@ int main(int argc, char* argv[])
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
     RecognitionDatabase db;
     db.activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm::DNN);
-    db.setRecognizerThreshold(0);
+    db.setRecognizerThreshold(0.5);
 
     // Construct training set, test set
 
