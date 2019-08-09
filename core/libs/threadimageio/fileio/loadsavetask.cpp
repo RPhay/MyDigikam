@@ -107,7 +107,7 @@ void SharedLoadingTask::execute()
     // send StartedLoadingEvent from each single Task, not via LoadingProcess list
     m_thread->imageStartedLoading(m_loadingDescription);
 
-    LoadingCache* cache = LoadingCache::cache();
+    LoadingCache* const cache = LoadingCache::cache();
     {
         LoadingCache::CacheLock lock(cache);
 
@@ -345,7 +345,7 @@ void SharedLoadingTask::progressInfo(DImg* const img, float progress)
 
     if (m_loadingTaskStatus == LoadingTaskStatusLoading)
     {
-        LoadingCache* cache = LoadingCache::cache();
+        LoadingCache* const cache = LoadingCache::cache();
         LoadingCache::CacheLock lock(cache);
 
         for (int i = 0 ; i < m_listeners.size() ; ++i)
@@ -375,7 +375,7 @@ void SharedLoadingTask::setStatus(LoadingTaskStatus status)
 
     if (m_loadingTaskStatus == LoadingTaskStatusStopping)
     {
-        LoadingCache* cache = LoadingCache::cache();
+        LoadingCache* const cache = LoadingCache::cache();
         LoadingCache::CacheLock lock(cache);
 
         // check for m_usedProcess, to avoid race condition that it has finished before

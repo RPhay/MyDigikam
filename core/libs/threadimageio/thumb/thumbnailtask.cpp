@@ -103,9 +103,8 @@ void ThumbnailLoadingTask::execute()
         if (m_qimage.isNull())
         {
             // find possible running loading process
-            m_usedProcess = cache->retrieveLoadingProcess(m_loadingDescription.cacheKey());
             // do not wait on other loading processes?
-            //m_usedProcess = cache->retrieveLoadingProcess(m_loadingDescription.cacheKey());
+            m_usedProcess = cache->retrieveLoadingProcess(m_loadingDescription.cacheKey());
 
             if (m_usedProcess)
             {

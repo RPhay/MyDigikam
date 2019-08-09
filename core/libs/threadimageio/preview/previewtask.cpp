@@ -24,10 +24,6 @@
 
 #include "previewtask.h"
 
-// C ANSI includes
-
-#include <cmath>
-
 // Qt includes
 
 #include <QImage>

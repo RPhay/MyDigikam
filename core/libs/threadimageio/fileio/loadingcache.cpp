@@ -502,7 +502,7 @@ void ClassicLoadingCacheFileWatch::slotUpdateDirWatch()
 
 //---------------------------------------------------------------------------------------------------
 
-LoadingCache::CacheLock::CacheLock(LoadingCache* cache)
+LoadingCache::CacheLock::CacheLock(LoadingCache* const cache)
     : m_cache(cache)
 {
     m_cache->d->mutex.lock();
