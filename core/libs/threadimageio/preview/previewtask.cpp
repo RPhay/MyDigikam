@@ -318,23 +318,27 @@ void PreviewLoadingTask::execute()
 
         for (int i = 0 ; i < m_listeners.count() ; ++i)
         {
-            LoadingProcessListener* const l  = m_listeners[i];
-            LoadSaveNotifier* const notifier = l->loadSaveNotifier();
+            PreviewLoadingTask* const task = dynamic_cast<PreviewLoadingTask*>(m_listeners.at(i));
 
-            if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
+            if (task)
             {
-                // If a listener requested ReadWrite access, it gets a deep copy.
-                // DImg is explicitly shared.
-                l->setResult(m_loadingDescription, m_img.copy());
-            }
-            else
-            {
-                l->setResult(m_loadingDescription, m_img);
-            }
+                LoadSaveNotifier* const notifier = task->loadSaveNotifier();
 
-            if (notifier)
-            {
-                notifier->imageLoaded(m_loadingDescription, m_img);
+                if (task->accessMode() == LoadSaveThread::AccessModeReadWrite)
+                {
+                    // If a listener requested ReadWrite access, it gets a deep copy.
+                    // DImg is explicitly shared.
+                    task->setResult(m_loadingDescription, m_img.copy());
+                }
+                else
+                {
+                    task->setResult(m_loadingDescription, m_img);
+                }
+
+                if (notifier)
+                {
+                    notifier->imageLoaded(m_loadingDescription, m_img);
+                }
             }
         }
 

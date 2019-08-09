@@ -224,17 +224,20 @@ void SharedLoadingTask::execute()
         // dispatch image to all listeners, including this
         for (int i = 0 ; i < m_listeners.count() ; ++i)
         {
-            LoadingProcessListener* const l = m_listeners[i];
+            SharedLoadingTask* const task = dynamic_cast<SharedLoadingTask*>(m_listeners.at(i));
 
-            if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
+            if (task)
             {
-                // If a listener requested ReadWrite access, it gets a deep copy.
-                // DImg is explicitly shared.
-                l->setResult(m_loadingDescription, m_img.copy());
-            }
-            else
-            {
-                l->setResult(m_loadingDescription, m_img);
+                if (task->accessMode() == LoadSaveThread::AccessModeReadWrite)
+                {
+                    // If a listener requested ReadWrite access, it gets a deep copy.
+                    // DImg is explicitly shared.
+                    task->setResult(m_loadingDescription, m_img.copy());
+                }
+                else
+                {
+                    task->setResult(m_loadingDescription, m_img);
+                }
             }
         }
 
@@ -350,12 +353,16 @@ void SharedLoadingTask::progressInfo(DImg* const img, float progress)
 
         for (int i = 0 ; i < m_listeners.size() ; ++i)
         {
-            LoadingProcessListener* const l  = m_listeners[i];
-            LoadSaveNotifier* const notifier = l->loadSaveNotifier();
+            SharedLoadingTask* const task = dynamic_cast<SharedLoadingTask*>(m_listeners.at(i));
 
-            if (notifier && l->querySendNotifyEvent())
+            if (task)
             {
-                notifier->loadingProgress(m_loadingDescription, progress);
+                LoadSaveNotifier* const notifier = task->loadSaveNotifier();
+
+                if (notifier && task->querySendNotifyEvent())
+                {
+                    notifier->loadingProgress(m_loadingDescription, progress);
+                }
             }
         }
     }
@@ -431,7 +438,12 @@ void SharedLoadingTask::notifyNewLoadingProcess(LoadingProcess* const process, c
     {
         for (int i = 0 ; i < m_listeners.size() ; ++i)
         {
-            m_listeners[i]->loadSaveNotifier()->moreCompleteLoadingAvailable(m_loadingDescription, description);
+            SharedLoadingTask* const task = dynamic_cast<SharedLoadingTask*>(m_listeners.at(i));
+
+            if (task)
+            {
+                task->loadSaveNotifier()->moreCompleteLoadingAvailable(m_loadingDescription, description);
+            }
         }
     }
 }
