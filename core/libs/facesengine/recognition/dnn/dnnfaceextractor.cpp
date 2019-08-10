@@ -70,7 +70,7 @@ DNNFaceExtractor::~DNNFaceExtractor()
 {
 }
 
-void DNNFaceExtractor::getFaceEmbedding(cv::Mat faceImage, std::vector<float>& vecdata)
+void DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage, std::vector<float>& vecdata)
 {
     qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage channels: " << faceImage.channels();
     qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage size: (" << faceImage.rows << ", " << faceImage.cols << ")\n";

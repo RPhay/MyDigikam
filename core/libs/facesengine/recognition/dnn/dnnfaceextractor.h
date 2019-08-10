@@ -48,7 +48,7 @@ public:
     explicit DNNFaceExtractor(Preprocessor* p);
     ~DNNFaceExtractor();
 
-	void getFaceEmbedding(cv::Mat faceImage, std::vector<float>& vecdata);
+	void getFaceEmbedding(const cv::Mat& faceImage, std::vector<float>& vecdata);
 
 private:
 
