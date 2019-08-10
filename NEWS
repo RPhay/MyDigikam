@@ -48,4 +48,6 @@ BUGFIXES:
 038 ==> 327033 - Memory leak when re-creating all thumbnails.
 039 ==> 407183 - Feature Request : "Open In File Manager" Applicable To Images.
 040 ==> 405519 - Google Maps not shown (blank map window).
-041 ==> 
+041 ==> 388898 - Convert Tiff to PNG fails.
+042 ==> 410796 - Convert to PNG - Fail to Process Item/Create File.
+043 ==> 
