@@ -176,6 +176,15 @@ public:
     Identity        recognizeFace(const QImage& image);
 
     /**
+     * Performs face clustering
+     * The images are passed to the function with the file paths of those images
+     * The result of clustering are groups of file paths representing groups of
+     * images.
+     */
+    void clusterFaces(const QList<QImage>& images, std::vector<int>& clusteredIndices,
+                      QStringList dataset, int nbOfClusters) const;
+
+    /**
      * Gives a hint about the complexity of training for the current backend.
      */
     TrainingCostHint trainingCostHint() const;

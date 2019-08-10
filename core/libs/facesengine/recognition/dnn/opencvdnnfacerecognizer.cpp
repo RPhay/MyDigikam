@@ -34,10 +34,57 @@
 #include "dnnfaceextractor.h"
 #include "recognitionpreprocessor.h"
 
+// OpenCV includes
+
+#include <opencv2/core.hpp>
+#include <opencv2/flann.hpp>
+
+// Qt includes
+
+#include <QTime>
+
 namespace Digikam
 {
 
 float OpenCVDNNFaceRecognizer::m_threshold = 15000.0;
+
+static void cvMatToStdVector(const cv::Mat& mat, std::vector<std::vector<float>>& vec)
+{
+    for(int row = 0; row < mat.rows; ++row)
+    {
+        std::vector<float> vecdata;
+        for(int col = 0; col < mat.cols; ++col)
+        {
+            vecdata.push_back(mat.at<float>(row, col));
+        }
+
+        vec.push_back(vecdata);
+    }
+}
+
+/** This compute cosine distance between 2 vectors with formula:
+ *      cos(a) = (v1*v2) / (||v1||*||v2||)
+ */
+static double cosineDistance(std::vector<float> v1, std::vector<float> v2)
+{
+    assert(v1.size() == v2.size());
+
+    double scalarProduct = std::inner_product(v1.begin(), v1.end(), v2.begin(), 0.0);
+    double normV1 = sqrt(std::inner_product(v1.begin(), v1.end(), v1.begin(), 0.0));
+    double normV2 = sqrt(std::inner_product(v2.begin(), v2.end(), v2.begin(), 0.0));
+
+    return scalarProduct / normV1*normV2;
+}
+
+struct Q_DECL_HIDDEN Predicate
+{
+    bool operator()(const std::vector<float>& a, const std::vector<float>& b)
+    {
+        float dist = cosineDistance(a, b);
+        qDebug() << "Dist " << dist;
+        return dist > 0.0;
+    }
+};
 
 class Q_DECL_HIDDEN OpenCVDNNFaceRecognizer::Private
 {
@@ -155,6 +202,103 @@ int OpenCVDNNFaceRecognizer::recognize(const cv::Mat& inputImage)
     }
 
     return predictedLabel;
+}
+
+void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images, std::vector<int>& clusteredIndices,
+                                      QStringList dataset, int nbOfClusters)
+{
+
+    d->dnn();
+
+/**
+ * Flann (error while running)
+    // Compute face embeddings of all images
+
+    cv::Mat_<float> faceEmbeddings(images.size(), 128);
+    int row = 0;
+
+    for(const cv::Mat& image: images)
+    {
+        std::vector<float> faceEmbedding;
+        d->m_extractor->getFaceEmbedding(image, faceEmbedding);
+
+        for(int col = 0; col < 128; col++)
+        {
+            faceEmbeddings.at<float>(row, col) = faceEmbedding[col];
+        }
+
+        row++;
+    }
+
+    // Construct index for flann search
+
+    cvflann::KMeansIndexParams indexParams;
+
+    QTime timer;
+    timer.start();
+    cv::flann::GenericIndex<cvflann::L2<float>> flannIndex(faceEmbeddings, indexParams);
+    qDebug() << "time to build flann index " << timer.elapsed() << " ms";
+
+    cv::Mat_<float> centers(10,128);
+    timer.start();
+    cv::flann::hierarchicalClustering<cvflann::L2<float>>(faceEmbeddings, centers, indexParams);
+    qDebug() << "time to compute cluster centers " << timer.elapsed() << " ms";
+
+    // std::vector<std::vector<float>> centerVectors;
+    // cvMatToStdVector(centers, centerVectors);
+
+    // Search for nearest neighbors around center
+    cv::Mat indices, dists;
+    float radius = 0.01;
+    timer.start();
+    flannIndex.radiusSearch(centers, indices, dists, radius, cvflann::SearchParams());
+    qDebug() << "time to search for nearest neighbors " << timer.elapsed() << " ms";
+*/
+/**
+ * k-means opencv
+ * Not well clustered
+ */
+    cv::Mat_<float> faceEmbeddings(images.size(), 128), centers(images.size(), 128);
+    int row = 0;
+
+    for(const cv::Mat& image: images)
+    {
+        std::vector<float> faceEmbedding;
+        d->m_extractor->getFaceEmbedding(image, faceEmbedding);
+
+        for(int col = 0; col < 128; col++)
+        {
+            faceEmbeddings.at<float>(row, col) = faceEmbedding[col];
+        }
+
+        row++;
+    }
+
+    std::vector<int> labels(clusteredIndices.size());
+    double compactness = cv::kmeans(faceEmbeddings, nbOfClusters, labels, cv::TermCriteria(cv::TermCriteria::Type::MAX_ITER | cv::TermCriteria::Type::EPS, 10000, 0.00001),
+                                    10, cv::KmeansFlags::KMEANS_PP_CENTERS, centers);
+
+    std::vector<QStringList> groups(nbOfClusters);
+    for(int i = 0; i < labels.size(); i++)
+    {
+        groups[labels[i]] << dataset[i];
+    }
+
+    for(int i = 0;  i < groups.size(); i++)
+    {
+        qDebug() << "Group " << i;
+        foreach(const QString& image, groups[i])
+        {
+            qDebug() << image;
+        }
+    }
+
+    qDebug() << "N Groups = " << groups.size();
+    qDebug() << "N LAbels = " << labels.size();
+
+    std::copy(labels.begin(), labels.end(), clusteredIndices.begin());
+
+//*/
 }
 
 void OpenCVDNNFaceRecognizer::train(const std::vector<cv::Mat>& images,

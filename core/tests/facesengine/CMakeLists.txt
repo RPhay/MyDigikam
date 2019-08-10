@@ -59,6 +59,23 @@ target_link_libraries(face_rec
 
 # -----------------------------------------------------------------------------
 
+set(facecluster_SRCS face_cluster.cpp)
+add_executable(face_cluster ${facecluster_SRCS})
+target_link_libraries(face_cluster
+                      digikamcore
+                      digikamgui
+                      digikamfacesengine
+                      digikamdatabase
+
+                      Qt5::Core
+                      Qt5::Gui
+                      Qt5::Sql
+
+                      ${OpenCV_LIBRARIES}
+)
+
+# -----------------------------------------------------------------------------
+
 set(align_SRCS align.cpp
                ${CMAKE_CURRENT_SOURCE_DIR}/../../libs/facesengine/alignment/congealing/funnelreal.cpp
 )

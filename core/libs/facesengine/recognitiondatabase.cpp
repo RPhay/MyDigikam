@@ -1061,6 +1061,19 @@ QList<Identity> RecognitionDatabase::recognizeFaces(ImageListProvider* const ima
     return result;
 }
 
+void RecognitionDatabase::clusterFaces(const QList<QImage>& images, std::vector<int>& clusteredIndices,
+                                       QStringList dataset, int nbOfClusters) const
+{
+    std::vector<cv::Mat> preprocessedImages;
+
+    foreach(const QImage& image, images)
+    {
+        preprocessedImages.push_back(d->preprocessingChainRGB(image));
+    }
+
+    d->dnn()->cluster(preprocessedImages, clusteredIndices, dataset, nbOfClusters);
+}
+
 RecognitionDatabase::TrainingCostHint RecognitionDatabase::trainingCostHint() const
 {
     return TrainingIsCheap;

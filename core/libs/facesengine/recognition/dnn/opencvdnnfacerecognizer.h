@@ -59,12 +59,20 @@ public:
     int recognize(const cv::Mat& inputImage);
 
     /**
+     *  Low-level codes to cluster images.
+     */
+    void cluster(const std::vector<cv::Mat>& images, std::vector<int>& clusteredIndices,
+                 QStringList dataset, int nbOfClusters);
+
+    /**
      *  Trains the given images, representing faces of the given matched identities.
      */
     void train(const std::vector<cv::Mat>& images,
                const std::vector<int>& labels,
                const QString& context,
                const std::vector<cv::Mat>& images_rgb);
+
+public:
 
     static float m_threshold;
 
