@@ -44,9 +44,9 @@ void SharedLoadSaveThread::load(const LoadingDescription& description, AccessMod
 
 DImg SharedLoadSaveThread::cacheLookup(const QString& filePath, AccessMode /*accessMode*/)
 {
-    LoadingCache* cache = LoadingCache::cache();
+    LoadingCache* const cache = LoadingCache::cache();
     LoadingCache::CacheLock lock(cache);
-    DImg* cachedImg     = cache->retrieveImage(filePath);
+    DImg* cachedImg           = cache->retrieveImage(filePath);
 
     // Qt4: uncomment this code.
     // See comments in SharedLoadingTask::execute for explanation.

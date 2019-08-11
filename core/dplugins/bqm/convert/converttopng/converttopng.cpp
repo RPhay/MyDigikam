@@ -27,16 +27,18 @@
 
 #include <QFileInfo>
 #include <QWidget>
+#include <QLabel>
 
 // KDE includes
 
 #include <kconfiggroup.h>
-#include <klocalizedstring.h>
 #include <ksharedconfig.h>
+#include <klocalizedstring.h>
 
 // Local includes
 
 #include "dimg.h"
+#include "dlayoutbox.h"
 #include "pngsettings.h"
 
 namespace DigikamBqmConvertToPngPlugin
@@ -54,12 +56,22 @@ ConvertToPNG::~ConvertToPNG()
 
 void ConvertToPNG::registerSettingsWidget()
 {
-    PNGSettings* const PNGBox = new PNGSettings();
+    DVBox* const vbox         = new DVBox;
+    PNGSettings* const PNGBox = new PNGSettings(vbox);
+    QLabel* const note        = new QLabel(i18n("<b>If conversion to PNG fails, this may be due to the "
+                                                "color profile check. Simply insert the tool for "
+                                                "color profile conversion before this tool and "
+                                                "select the desired color profile.</b>"), vbox);
+    note->setWordWrap(true);
+    note->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
+
+    QLabel* const space       = new QLabel(vbox);
+    vbox->setStretchFactor(space, 10);
 
     connect(PNGBox, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
 
-    m_settingsWidget = PNGBox;
+    m_settingsWidget = vbox;
 
     BatchTool::registerSettingsWidget();
 }
