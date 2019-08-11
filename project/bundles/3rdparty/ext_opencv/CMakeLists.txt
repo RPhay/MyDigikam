@@ -24,6 +24,7 @@ set(Opencv_Conf -DBUILD_EXAMPLES=OFF
                 -DBUILD_opencv_calib3d=ON
                 -DBUILD_opencv_features2d=ON
                 -DBUILD_opencv_flann=ON
+                -DBUILD_opencv_dnn=ON
                 -DBUILD_opencv_photo=OFF
                 -DBUILD_opencv_java=OFF
                 -DBUILD_opencv_java_bindings_generator=OFF
@@ -40,8 +41,8 @@ set(Opencv_Conf -DBUILD_EXAMPLES=OFF
                 -DBUILD_opencv_videoio=OFF
                 -DBUILD_opencv_video=OFF
                 -DBUILD_opencv_apps=OFF
-                -DBUILD_opencv_dnn=OFF
                 -DBUILD_opencv_gapi=OFF
+                -DWITH_PROTOBUF=ON
                 -DWITH_1394=OFF
                 -DWITH_VTK=OFF
                 -DWITH_DIRECTX=OFF
@@ -72,7 +73,6 @@ set(Opencv_Conf -DBUILD_EXAMPLES=OFF
                 -DWITH_XINE=OFF
                 -DWITH_VA_INTEL=OFF
                 -DWITH_GPHOTO2=OFF
-                -DWITH_PROTOBUF=OFF
                 -DWITH_WEBP=OFF
                 -DWITH_IMGCODEC_HDR=OFF
                 -DWITH_IMGCODEC_SUNRASTER=OFF
@@ -96,8 +96,8 @@ if(MINGW)
 
     ExternalProject_Add(ext_opencv
 
-        URL https://github.com/opencv/opencv/archive/3.4.6.tar.gz
-        URL_MD5 7453d6b344c15431f5dc0d9c84128e79
+        URL https://github.com/opencv/opencv/archive/3.4.7.tar.gz
+        URL_MD5 faa2b5950f8bee3f03118e600c74746a
 
         CMAKE_ARGS -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                    -DCMAKE_TOOLCHAIN_FILE=${MXE_TOOLCHAIN}
@@ -123,8 +123,8 @@ elseif(APPLE)
     ExternalProject_Add(ext_opencv
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
-        URL https://github.com/opencv/opencv/archive/3.4.6.tar.gz
-        URL_MD5 7453d6b344c15431f5dc0d9c84128e79
+        URL https://github.com/opencv/opencv/archive/3.4.7.tar.gz
+        URL_MD5 faa2b5950f8bee3f03118e600c74746a
 
         CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.macports ${EXTPREFIX_opencv} RelWithDebInfo x86_64 "${BASH_OPTIONS}"
@@ -144,8 +144,8 @@ else() #Linux
     ExternalProject_Add(ext_opencv
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
-        URL https://github.com/opencv/opencv/archive/3.4.6.tar.gz
-        URL_MD5 7453d6b344c15431f5dc0d9c84128e79
+        URL https://github.com/opencv/opencv/archive/3.4.7.tar.gz
+        URL_MD5 faa2b5950f8bee3f03118e600c74746a
 
         INSTALL_DIR ${EXTPREFIX_opencv}
 
