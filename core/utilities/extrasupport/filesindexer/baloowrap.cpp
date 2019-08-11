@@ -55,9 +55,8 @@ public:
 
 QPointer<BalooWrap> BalooWrap::internalPtr = QPointer<BalooWrap>();
 
-BalooWrap::BalooWrap(QObject* const parent)
-    : QObject(parent),
-      d(new BalooWrap::Private)
+BalooWrap::BalooWrap()
+    : d(new Private)
 {
 }
 
@@ -83,7 +82,7 @@ BalooWrap* BalooWrap::instance()
 
 void BalooWrap::setTags(const QUrl& url, QStringList* const tags)
 {
-    setAllData(url,tags, nullptr, -1);
+    setAllData(url, tags, nullptr, -1);
 }
 
 void BalooWrap::setComment(const QUrl& url, QString* const comment)
@@ -142,9 +141,10 @@ BalooInfo BalooWrap::getSemanticInfo(const QUrl& url) const
     bInfo.rating  = md.rating() / 2;
     bInfo.comment = md.userComment();
 
-    foreach(const QString& tag, md.tags().toSet())
+    foreach (const QString& tag, md.tags().toSet())
     {
-        bInfo.tags.append(i18n("BalooTags/") + tag);
+        bInfo.tags.append(i18n("BalooTags") +
+                          QLatin1Char('/')  + tag);
     }
 
     return bInfo;

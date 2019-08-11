@@ -5328,7 +5328,10 @@ void CLASS scale_colors()
   }
   if (!highlight)
     dmax = dmin;
-  FORC4 scale_mul[c] = (pre_mul[c] /= dmax) * 65535.0 / maximum;
+  if(dmax >= 1.0 && maximum >= 1)
+     FORC4 scale_mul[c] = (pre_mul[c] /= dmax) * 65535.0 / maximum;
+  else
+     FORC4 scale_mul[c] = 1.0;
 #ifdef DCRAW_VERBOSE
   if (verbose)
   {
@@ -9293,8 +9296,10 @@ void CLASS parse_makernote_0xc634(int base, int uptag, unsigned dng_writer)
   short morder, sorder = order;
   char buf[10];
   INT64 fsize = ifp->size();
+#if LIBRAW_METADATA_LOOP_PREVENTION
   if(metadata_blocks++ > LIBRAW_MAX_METADATA_BLOCKS)
     throw LIBRAW_EXCEPTION_IO_CORRUPT;
+#endif
 
   fread(buf, 1, 10, ifp);
 
@@ -9996,7 +10001,7 @@ void CLASS parse_makernote_0xc634(int base, int uptag, unsigned dng_writer)
         for (int wb_cnt = 0; wb_cnt < nPentax_wb_list2; wb_cnt++)
         {
           wb_ind = getc(ifp);
-          if (wb_ind < nPentax_wb_list2)
+          if (wb_ind >= 0 && wb_ind < nPentax_wb_list2)
             FORC4 imgdata.color.WB_Coeffs[Pentax_wb_list2[wb_ind]][c ^ (c >> 1)] = get2();
         }
       }
@@ -10131,8 +10136,10 @@ void CLASS parse_makernote(int base, int uptag)
   ushort table_buf_0x940e_len = 0;
 
   INT64 fsize = ifp->size();
+#if LIBRAW_METADATA_LOOP_PREVENTION
   if(metadata_blocks++ > LIBRAW_MAX_METADATA_BLOCKS)
     throw LIBRAW_EXCEPTION_IO_CORRUPT;
+#endif
 #endif
   /*
      The MakerNote might have its own TIFF header (possibly with
@@ -14666,8 +14673,10 @@ void CLASS parse_ciff(int offset, int length, int depth)
   ushort key[] = {0x410, 0x45f3};
 #ifdef LIBRAW_LIBRARY_BUILD
   INT64 fsize = ifp->size();
+#if LIBRAW_METADATA_LOOP_PREVENTION
   if(metadata_blocks++ > LIBRAW_MAX_METADATA_BLOCKS)
     throw LIBRAW_EXCEPTION_IO_CORRUPT;
+#endif
 #endif
 
   fseek(ifp, offset + length - 4, SEEK_SET);
@@ -17387,7 +17396,9 @@ void CLASS initdata()
   mix_green = profile_length = data_error = zero_is_bad = 0;
   pixel_aspect = is_raw = raw_color = 1;
   tile_width = tile_length = 0;
+#if LIBRAW_METADATA_LOOP_PREVENTION
   metadata_blocks = 0;
+#endif
 }
 
 #endif
@@ -17750,7 +17761,9 @@ void CLASS identify()
   mix_green = profile_length = data_error = zero_is_bad = 0;
   pixel_aspect = is_raw = raw_color = 1;
   tile_width = tile_length = 0;
+#if LIBRAW_METADATA_LOOP_PREVENTION
   metadata_blocks = 0;
+#endif
 
   for (i = 0; i < 4; i++)
   {

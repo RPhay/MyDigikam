@@ -195,6 +195,7 @@ DigikamApp::~DigikamApp()
         ImageWindow::imageWindow()->setAttribute(Qt::WA_DeleteOnClose, true);
         // close the window
         ImageWindow::imageWindow()->close();
+        qApp->processEvents();
     }
 
     // Close and delete light table instance.
@@ -203,6 +204,7 @@ DigikamApp::~DigikamApp()
     {
         LightTableWindow::lightTableWindow()->setAttribute(Qt::WA_DeleteOnClose, true);
         LightTableWindow::lightTableWindow()->close();
+        qApp->processEvents();
     }
 
     // Close and delete Batch Queue Manager instance.
@@ -211,6 +213,7 @@ DigikamApp::~DigikamApp()
     {
         QueueMgrWindow::queueManagerWindow()->setAttribute(Qt::WA_DeleteOnClose, true);
         QueueMgrWindow::queueManagerWindow()->close();
+        qApp->processEvents();
     }
 
     if (TagsManager::isCreated())
@@ -226,7 +229,7 @@ DigikamApp::~DigikamApp()
 #ifdef HAVE_KFILEMETADATA
     if (BalooWrap::isCreated())
     {
-        BalooWrap::internalPtr.clear();
+        delete BalooWrap::internalPtr;
     }
 #endif
 
@@ -508,9 +511,17 @@ void DigikamApp::slotAlbumSelected(Album* album)
 
 void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfoList& listAll)
 {
-    int numImagesWithGrouped              = listAll.count();
-    int numImagesWithoutGrouped           = d->view->allUrls(false).count();
+    int numOfImagesInAlbum               = 0;
+    int numImagesWithGrouped             = listAll.count();
+    int numImagesWithoutGrouped          = d->view->allUrls(false).count();
     ItemInfoList selectionWithoutGrouped = d->view->selectedInfoList(true, false);
+
+    Album* const album                   = AlbumManager::instance()->currentAlbums().first();
+
+    if (album && album->type() == Album::PHYSICAL)
+    {
+        numOfImagesInAlbum               = CoreDbAccess().db()->getNumberOfItemsInAlbum(album->id());
+    }
 
     QString statusBarSelectionText;
     QString statusBarSelectionToolTip;
@@ -606,6 +617,14 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
 
             break;
         }
+    }
+
+    if (numImagesWithGrouped < numOfImagesInAlbum)
+    {
+        statusBarSelectionText += QLatin1String(" - ");
+        statusBarSelectionText += i18np("%1 item hidden by grouping or versioning",
+                                        "%1 items hidden by grouping or versioning",
+                                        numOfImagesInAlbum - numImagesWithGrouped);
     }
 
     d->statusLabel->setAdjustedText(statusBarSelectionText);

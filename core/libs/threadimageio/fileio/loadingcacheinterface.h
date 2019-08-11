@@ -57,7 +57,7 @@ public:
      * which is emitted when the cache gains knowledge about a possible
      * change of this file on disk.
      */
-    static void connectToSignalFileChanged(QObject* object, const char* slot);
+    static void connectToSignalFileChanged(QObject* const object, const char* slot);
 
     /**
      * remove all images from the cache
