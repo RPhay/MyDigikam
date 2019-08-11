@@ -50,4 +50,5 @@ BUGFIXES:
 040 ==> 405519 - Google Maps not shown (blank map window).
 041 ==> 388898 - Convert Tiff to PNG fails.
 042 ==> 410796 - Convert to PNG - Fail to Process Item/Create File.
-043 ==> 
+043 ==> 410537 - Digikam 6.2-git win64 does not show some images in the folder.
+044 ==> 
