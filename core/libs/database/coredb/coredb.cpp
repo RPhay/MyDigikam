@@ -3457,6 +3457,16 @@ QMap<QDateTime, int> CoreDB::getAllCreationDatesAndNumberOfImages() const
     return datesStatMap;
 }
 
+int CoreDB::getNumberOfItemsInAlbum(int albumID) const
+{
+    QList<QVariant> values;
+
+    d->db->execSql(QString::fromUtf8("SELECT COUNT(id) FROM Images WHERE album=?;"),
+                   albumID, &values);
+
+    return values.first().toInt();
+}
+
 QMap<int, int> CoreDB::getNumberOfImagesInAlbums() const
 {
     QList<QVariant> values, allAbumIDs;
