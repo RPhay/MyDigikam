@@ -51,4 +51,7 @@ BUGFIXES:
 041 ==> 388898 - Convert Tiff to PNG fails.
 042 ==> 410796 - Convert to PNG - Fail to Process Item/Create File.
 043 ==> 410537 - Digikam 6.2-git win64 does not show some images in the folder.
-044 ==> 
+044 ==> 145295 - Support PDF as image format.
+045 ==> 320436 - Update mime data settings to remove mpo extension.
+046 ==> 333792 - Crash when renaming category.
+047 ==> 
