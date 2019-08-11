@@ -520,7 +520,7 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
 
     if (album && album->type() == Album::PHYSICAL)
     {
-        numOfImagesInAlbum               = CoreDbAccess().db()->getItemIDsInAlbum(album->id()).count();
+        numOfImagesInAlbum               = CoreDbAccess().db()->getNumberOfItemsInAlbum(album->id());
     }
 
     QString statusBarSelectionText;
