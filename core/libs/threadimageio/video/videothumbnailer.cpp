@@ -93,16 +93,16 @@ public:
 
 public:
 
-    int                       thumbnailSize;
-    quint16                   seekPercentage;
-    bool                      overlayFilmStrip;
-    bool                      workAroundIssues;
-    bool                      maintainAspectRatio;
-    bool                      smartFrameSelection;
-    QString                   seekTime;
+    int                        thumbnailSize;
+    quint16                    seekPercentage;
+    bool                       overlayFilmStrip;
+    bool                       workAroundIssues;
+    bool                       maintainAspectRatio;
+    bool                       smartFrameSelection;
+    QString                    seekTime;
     QVector<VideoStripFilter*> filters;
 
-    const int                 SMART_FRAME_ATTEMPTS;
+    const int                  SMART_FRAME_ATTEMPTS;
 };
 
 VideoThumbnailer::VideoThumbnailer()
@@ -236,9 +236,8 @@ void VideoThumbnailer::addFilter(VideoStripFilter* const filter)
 
 void VideoThumbnailer::removeFilter(VideoStripFilter* const filter)
 {
-    for (QVector<VideoStripFilter*>::iterator it = d->filters.begin();
-         it != d->filters.end();
-         ++it)
+    for (QVector<VideoStripFilter*>::iterator it = d->filters.begin() ;
+         it != d->filters.end() ; ++it)
     {
         if (*it == filter)
         {
@@ -255,9 +254,8 @@ void VideoThumbnailer::clearFilters()
 
 void VideoThumbnailer::applyFilters(VideoFrame& videoFrame)
 {
-    for (QVector<VideoStripFilter*>::iterator it = d->filters.begin();
-         it != d->filters.end();
-         ++it)
+    for (QVector<VideoStripFilter*>::iterator it = d->filters.begin() ;
+         it != d->filters.end() ; ++it)
     {
         (*it)->process(videoFrame);
     }

@@ -211,7 +211,7 @@ public:
         QImage bb(wWidth, wHeight, QImage::Format_RGB32);
         QPainter p2;
         p2.begin(&bb);
-        p2.initFrom(widgetToInitFrom);
+        initPainterFromWidget(&p2);
 
         double max  = 1.05 * calculateMax();
 
@@ -301,7 +301,7 @@ public:
         QImage bb(wWidth, wHeight, QImage::Format_RGB32);
         QPainter p2;
         p2.begin(&bb);
-        p2.initFrom(widgetToInitFrom);
+        initPainterFromWidget(&p2);
 
         double max  = 1.05 * calculateMax();
 
@@ -495,6 +495,19 @@ public:
         }
     }
 
+    void initPainterFromWidget(QPainter* const p)
+    {
+        if (!p || !widgetToInitFrom)
+        {
+            return;
+        }
+
+        const QPalette& pal = widgetToInitFrom->palette();
+        p->setPen(QPen(pal.brush(widgetToInitFrom->foregroundRole()), 0));
+        p->setBackground(pal.brush(widgetToInitFrom->backgroundRole()));
+        p->setFont(widgetToInitFrom->font());
+    }
+
 public:
 
     ImageHistogram*   histogram;
@@ -598,7 +611,7 @@ void HistogramPainter::render(QPixmap& bufferPixmap)
 
     if (d->widgetToInitFrom)
     {
-        d->painter.initFrom(d->widgetToInitFrom);
+        d->initPainterFromWidget(&d->painter);
         d->palette = d->widgetToInitFrom->palette();
     }
 

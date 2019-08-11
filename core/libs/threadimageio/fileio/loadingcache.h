@@ -143,7 +143,7 @@ public:
     {
     public:
 
-        explicit CacheLock(LoadingCache* cache);
+        explicit CacheLock(LoadingCache* const cache);
         ~CacheLock();
         void wakeAll();
         void timedWait();

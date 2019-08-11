@@ -362,6 +362,12 @@ public:
     QDate getAlbumAverageDate(int albumID) const;
 
     /**
+     * Returns the number of items in the album
+     * @param albumID the id of the album to calculate
+     */
+    int getNumberOfItemsInAlbum(int albumID) const;
+
+    /**
      * Returns a QMap<int,int> of album id -> count of items
      * in the album
      */
