@@ -54,4 +54,13 @@ BUGFIXES:
 044 ==> 145295 - Support PDF as image format.
 045 ==> 320436 - Update mime data settings to remove mpo extension.
 046 ==> 333792 - Crash when renaming category.
-047 ==> 
+047 ==> 298717 - Unreadable Tooltips - dark grey on black.
+048 ==> 245472 - digiKam crashed after clicking on the "Configure digiKam" option in the Settings menu.
+049 ==> 245920 - digiKam crash when open in suse 11.3.
+050 ==> 246666 - digiKam crashes at launch.
+051 ==> 251403 - Crash after trying to check the setup.
+052 ==> 253200 - digiKam Crashes As Soon As I Hit the Icon to Load.
+053 ==> 256391 - Aplication crashes on startup.
+054 ==> 260864 - digiKam fails to start. 
+055 ==> 267742 - digiKam crashes during startup.
+056 ==> 
