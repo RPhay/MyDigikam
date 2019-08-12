@@ -224,7 +224,7 @@ void SharedLoadingTask::execute()
         // dispatch image to all listeners, including this
         for (int i = 0 ; i < m_listeners.count() ; ++i)
         {
-            LoadingProcessListener* const l = m_listeners[i];
+            LoadingProcessListener* const l = m_listeners.at(i);
 
             if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
             {
@@ -350,7 +350,7 @@ void SharedLoadingTask::progressInfo(DImg* const img, float progress)
 
         for (int i = 0 ; i < m_listeners.size() ; ++i)
         {
-            LoadingProcessListener* const l  = m_listeners[i];
+            LoadingProcessListener* const l  = m_listeners.at(i);
             LoadSaveNotifier* const notifier = l->loadSaveNotifier();
 
             if (notifier && l->querySendNotifyEvent())
@@ -431,7 +431,8 @@ void SharedLoadingTask::notifyNewLoadingProcess(LoadingProcess* const process, c
     {
         for (int i = 0 ; i < m_listeners.size() ; ++i)
         {
-            m_listeners[i]->loadSaveNotifier()->moreCompleteLoadingAvailable(m_loadingDescription, description);
+            m_listeners.at(i)->loadSaveNotifier()->
+                moreCompleteLoadingAvailable(m_loadingDescription, description);
         }
     }
 }

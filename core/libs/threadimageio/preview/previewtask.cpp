@@ -318,7 +318,7 @@ void PreviewLoadingTask::execute()
 
         for (int i = 0 ; i < m_listeners.count() ; ++i)
         {
-            LoadingProcessListener* const l  = m_listeners[i];
+            LoadingProcessListener* const l  = m_listeners.at(i);
             LoadSaveNotifier* const notifier = l->loadSaveNotifier();
 
             if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
