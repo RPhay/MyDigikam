@@ -82,4 +82,17 @@ BUGFIXES:
 072 ==> 288487 - Exiting Full Screen mode doesn't display Windows taskbar or digiKam titlebar.
 073 ==> 301535 - Fullscreen of pics moving on second monitor.
 074 ==> 361689 - Provide a real (and simple) full screen mode.
-075 ==> 
+075 ==> 305288 - Crash in digiKam when editing shortcuts.
+076 ==> 301536 - Wish: configurable shortcuts for opening pics in other applications like gimp, rawtherapee, email.
+077 ==> 245765 - It would be fine to have a shortcut to start GIMP.
+078 ==> 226505 - Sidepanel hiding with shortcuts.
+079 ==> 219523 - Keyboard shortcuts are registered globally.
+080 ==> 196920 - Cannot exit full-screen mode without previously learning keyboard shortcut.
+081 ==> 195177 - Usability: difficulty of captioning albums.
+082 ==> 185277 - Cannot use keyboard to advance image while adding caption.
+083 ==> 150471 - Keyboard shortcut for "Open With" default app.
+084 ==> 145086 - F8 isn't used to resize panels.
+085 ==> 145085 - F6 isn't used for navigation between major panels.
+086 ==> 145084 - Ctrl-PgDown, Ctrl-PgUp aren't used for navigation between panels.
+087 ==> 131428 - Control C does not actually copy in the albums.
+088 ==> 
