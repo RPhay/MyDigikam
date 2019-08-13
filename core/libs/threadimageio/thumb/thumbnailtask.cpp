@@ -194,7 +194,7 @@ void ThumbnailLoadingTask::execute()
 
             if (task)
             {
-                task->setResult(m_loadingDescription, m_qimage);
+                task->setThumbResult(m_loadingDescription, m_qimage);
             }
         }
 
@@ -231,7 +231,7 @@ void ThumbnailLoadingTask::setupCreator()
     m_creator->setLoadingProperties(this, m_loadingDescription.rawDecodingSettings);
 }
 
-void ThumbnailLoadingTask::setResult(const LoadingDescription& loadingDescription, const QImage& qimage)
+void ThumbnailLoadingTask::setThumbResult(const LoadingDescription& loadingDescription, const QImage& qimage)
 {
     // this is called from another process's execute while this task is waiting on m_usedProcess.
     // Note that loadingDescription need not equal m_loadingDescription (may be superior)
