@@ -92,10 +92,10 @@ public:
     {
     }
 
-    ItemModel*           model;
+    ItemModel*            model;
     ImageSortFilterModel* filterModel;
 
-    ItemDelegate*        delegate;
+    ItemDelegate*         delegate;
     bool                  showToolTip;
 
     qlonglong             scrollToItemId;
@@ -239,7 +239,7 @@ ItemDelegate* ItemCategorizedView::delegate() const
 
 void ItemCategorizedView::setItemDelegate(ItemDelegate* delegate)
 {
-    ThumbnailSize oldSize      = thumbnailSize();
+    ThumbnailSize oldSize     = thumbnailSize();
     ItemDelegate* oldDelegate = d->delegate;
 
     if (oldDelegate)
@@ -278,7 +278,7 @@ void ItemCategorizedView::setItemDelegate(ItemDelegate* delegate)
 
 Album* ItemCategorizedView::currentAlbum() const
 {
-    ItemAlbumModel* albumModel = imageAlbumModel();
+    ItemAlbumModel* const albumModel = imageAlbumModel();
     /** TODO: Change to QList return type **/
     if (albumModel && !(albumModel->currentAlbums().isEmpty()))
     {
@@ -367,7 +367,7 @@ ItemInfo ItemCategorizedView::nextInOrder(const ItemInfo& startingPoint, int nth
 QModelIndex ItemCategorizedView::nextIndexHint(const QModelIndex& anchor, const QItemSelectionRange& removed) const
 {
     QModelIndex hint = ItemViewCategorized::nextIndexHint(anchor, removed);
-    ItemInfo info   = imageInfo(anchor);
+    ItemInfo info    = imageInfo(anchor);
 
     //qCDebug(DIGIKAM_GENERAL_LOG) << "Having initial hint" << hint << "for" << anchor << d->model->numberOfIndexesForItemInfo(info);
 
@@ -378,7 +378,7 @@ QModelIndex ItemCategorizedView::nextIndexHint(const QModelIndex& anchor, const 
         // The hint is for a different info, but we may have a hint for the same info
         if (info != imageInfo(hint))
         {
-            int minDiff                            = d->filterModel->rowCount();
+            int minDiff                           = d->filterModel->rowCount();
             QList<QModelIndex> indexesForItemInfo = d->filterModel->mapListFromSource(d->model->indexesForItemInfo(info));
 
             foreach(const QModelIndex& index, indexesForItemInfo)
