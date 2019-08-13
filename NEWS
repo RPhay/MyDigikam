@@ -63,4 +63,5 @@ BUGFIXES:
 053 ==> 256391 - Aplication crashes on startup.
 054 ==> 260864 - digiKam fails to start. 
 055 ==> 267742 - digiKam crashes during startup.
-056 ==> 
+056 ==> 410862 - Crash when starting appimage build 6.3.0-git-20190812T053738-x86-64.
+057 ==> 

@@ -516,7 +516,7 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
     int numImagesWithoutGrouped          = d->view->allUrls(false).count();
     ItemInfoList selectionWithoutGrouped = d->view->selectedInfoList(true, false);
 
-    Album* const album                   = AlbumManager::instance()->currentAlbums().first();
+    Album* const album                   = d->view->currentAlbum();
 
     if (album && album->type() == Album::PHYSICAL)
     {
