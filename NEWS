@@ -95,4 +95,12 @@ BUGFIXES:
 085 ==> 145085 - F6 isn't used for navigation between major panels.
 086 ==> 145084 - Ctrl-PgDown, Ctrl-PgUp aren't used for navigation between panels.
 087 ==> 131428 - Control C does not actually copy in the albums.
-088 ==> 
+088 ==> 114540 - Versioning of images in digiKam.
+089 ==> 127039 - digiKam needs to integrate a revision control system.
+090 ==> 145057 - Non Destructive Image Editing.
+091 ==> 202814 - Automaticaly manage original and versioned edited photos.
+092 ==> 218027 - Wish stacks in digiKam to organize originals and versions.
+093 ==> 277183 - Renaming multiple files.
+094 ==> 277585 - When using "Save as new version", the new file is added at the end of the thumbbar.
+095 ==> 281724 - Crashed when saving a version file.
+096 ==> 
