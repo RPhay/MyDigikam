@@ -91,11 +91,13 @@ class Q_DECL_HIDDEN OpenCVDNNFaceRecognizer::Private
 public:
 
     explicit Private(bool debug)
-      : m_preprocessor(0),
-        m_extractor(0),
-        loaded(false),
+      : loaded(false),
         debug(debug)
     {
+        m_preprocessor = new RecognitionPreprocessor;
+        m_preprocessor->init(PreprocessorSelection::OPENFACE);
+
+        m_extractor = new DNNFaceExtractor(m_preprocessor);
     }
 
     ~Private()
@@ -111,28 +113,24 @@ public:
         if (!loaded)
         {
             m_dnn  = FaceDbAccess().db()->dnnFaceModel(debug);
-
-            m_preprocessor = new RecognitionPreprocessor;
-            m_preprocessor->init(PreprocessorSelection::OPENFACE);
-
-            m_extractor = new DNNFaceExtractor(m_preprocessor);
-
             loaded = true;
         }
 
         return m_dnn;
     }
 
+private:
+
+    bool         loaded;
+    bool         debug;
+
+    DNNFaceModel m_dnn;
+
 public:
 
     RecognitionPreprocessor* m_preprocessor;
     DNNFaceExtractor* m_extractor;
 
-private:
-
-    DNNFaceModel m_dnn;
-    bool         loaded;
-    bool         debug;
 };
 
 OpenCVDNNFaceRecognizer::OpenCVDNNFaceRecognizer(bool debug)
