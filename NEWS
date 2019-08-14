@@ -103,4 +103,23 @@ BUGFIXES:
 093 ==> 277183 - Renaming multiple files.
 094 ==> 277585 - When using "Save as new version", the new file is added at the end of the thumbbar.
 095 ==> 281724 - Crashed when saving a version file.
-096 ==> 
+096 ==> 096279 - Cannot drag photos out of "My albums" into a specific album.
+097 ==> 102413 - Album drag and drop multiple folders.
+098 ==> 125789 - Move pictures per drag & drop in calendar view between albums.
+099 ==> 134485 - Writing keywords to files doesn't work when dragging and dropping the keywords.
+100 ==> 136582 - Moving pictures by Drag'n'Drop, Destination-Album still empty although files have been moved to new destination folder.
+101 ==> 146761 - Improve keyword-assignment through enhanced drag and drop.
+102 ==> 161467 - Light table has confusing drag-drop-click behaviour.
+103 ==> 209729 - Crash while drag and drop.
+104 ==> 219231 - Crash at drag n drop.
+105 ==> 222717 - digiKam crashes when editing tags by drag-and-drop.
+106 ==> 222731 - digiKam crashes when editing tags using drag-and-drop
+107 ==> 222733 - digikam crashes when editing tags using drag-and-drop.
+108 ==> 245835 - Dragging images from digikam album view to Nautilus removes the original.
+109 ==> 252189 - Crash on drag & drop from digiKam to external application.
+110 ==> 306635 - Drag and drop of pictures into chrome doesn't work.
+111 ==> 313173 - Drag and drop DELETES files from library (MOVES).
+112 ==> 333623 - Allow to drag photo over the Map to correct their coordinates.
+113 ==> 333787 - Crash while dragging image to People tag.
+114 ==> 358832 - Crash when drag and drop a tag under another tag.
+115 ==> 
