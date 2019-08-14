@@ -305,13 +305,12 @@ void ItemDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, const 
         drawComments(p, d->commentsRect, info.comment());
     }
 
-    if (!d->dateRect.isNull())
+    if (!d->dateRect.isNull() && info.dateTime().isValid())
     {
         drawCreationDate(p, d->dateRect, info.dateTime());
     }
 
-    if (!d->modDateRect.isNull() && info.modDateTime().isValid() &&
-                                    info.modDateTime() != info.dateTime())
+    if (!d->modDateRect.isNull() && info.modDateTime().isValid())
     {
         drawModificationDate(p, d->modDateRect, info.modDateTime());
     }
