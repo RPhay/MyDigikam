@@ -122,4 +122,6 @@ BUGFIXES:
 112 ==> 333623 - Allow to drag photo over the Map to correct their coordinates.
 113 ==> 333787 - Crash while dragging image to People tag.
 114 ==> 358832 - Crash when drag and drop a tag under another tag.
-115 ==> 
+115 ==> 328732 - Crash with lots of memory usage while rebuilding thumbnails.
+116 ==> 330904 - digiKam crash during maintenance.
+117 ==> 
