@@ -124,4 +124,10 @@ BUGFIXES:
 114 ==> 358832 - Crash when drag and drop a tag under another tag.
 115 ==> 328732 - Crash with lots of memory usage while rebuilding thumbnails.
 116 ==> 330904 - digiKam crash during maintenance.
-117 ==> 
+117 ==> 185207 - Segfault when watching pictures.
+118 ==> 185369 - Crash when a photo is displayed/modified.
+119 ==> 192415 - Allow the "thumb bar" to be repositioned.
+120 ==> 289260 - Invalid thumbbar-state, when switching from picture preview to full-screen-preview.
+121 ==> 341032 - THUMBBAR : Multiple selection on preview image (after using onscreen arrows) has wrong edge.
+122 ==> 
+
