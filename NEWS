@@ -131,5 +131,5 @@ BUGFIXES:
 121 ==> 341032 - THUMBBAR : Multiple selection on preview image (after using onscreen arrows) has wrong edge.
 122 ==> 231574 - Need "set as wallpaper" option (from digiKam host application).
 123 ==> 181308 - Integrate plasma with digiKam.
-124 ==> 
-
+124 ==> 350130 - Crash while viewing / scrolling thumbnails.
+125 ==> 
