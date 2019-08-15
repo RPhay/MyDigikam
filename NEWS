@@ -148,4 +148,20 @@ BUGFIXES:
 138 ==> 273133 - Crash when move files from harddisc folder to digiKam.
 139 ==> 273302 - Crashes while importing pictures from SD.
 140 ==> 274051 - digiKam crashed while rename multiple images.
-141 ==> 
+141 ==> 280527 - digiKam crashes while importing picture.
+142 ==> 281567 - Crash after importing pix, possibly rebuilding thumbnails.
+143 ==> 283214 - digiKam crashed when doing "cut and paste" from SD card.
+144 ==> 291070 - Rotation of thumbs/pics does not work.
+145 ==> 291436 - Optimize thumbnail generation process - is painfully slow in certain usage cases.
+146 ==> 324516 - digiKam crashed after switching display mode from thumbnails to table.
+147 ==> 339217 - Crash on startup: SIGSEGV in Exiv2::PreviewManager::getPreviewImage.
+148 ==> 339751 - Large tif files crash thumbnail generator (out of memory / sig11).
+149 ==> 339811 - Crash occurring when browsing my images, resolved issue to thumbnailcreator.cpp trying to access non-present preview.
+150 ==> 358337 - digiKam crashes while viewing thumbnails.
+151 ==> 393758 - Crash during assigned tag.
+152 ==> 396862 - digiKam crashed while closing.
+153 ==> 397129 - Dates panel, thumb generation crash (core dump).
+154 ==> 401164 - Crash on close from preview mode.
+155 ==> 401546 - digiKam crashs upon quit (Files -> Quit).
+156 ==> 402122 - Crashed while scrolling images.
+157 ==> 
