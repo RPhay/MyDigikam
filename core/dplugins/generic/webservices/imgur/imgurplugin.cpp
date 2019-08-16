@@ -44,6 +44,10 @@ ImgUrPlugin::ImgUrPlugin(QObject* const parent)
 
 ImgUrPlugin::~ImgUrPlugin()
 {
+}
+
+void ImgUrPlugin::cleanUp()
+{
     delete m_toolDlg;
 }
 

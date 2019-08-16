@@ -45,6 +45,10 @@ FbPlugin::FbPlugin(QObject* const parent)
 
 FbPlugin::~FbPlugin()
 {
+}
+
+void FbPlugin::cleanUp()
+{
     delete m_toolDlg;
 }
 

@@ -100,7 +100,7 @@ void CalendarPlugin::setup(QObject* const parent)
     ac->setText(i18nc("@action", "Create Calendar..."));
     ac->setObjectName(QLatin1String("calendar"));
     ac->setActionCategory(DPluginAction::GenericTool);
-    
+
     connect(ac, SIGNAL(triggered(bool)),
             this, SLOT(slotCalendar()));
 

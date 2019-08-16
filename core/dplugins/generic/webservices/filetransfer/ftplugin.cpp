@@ -45,6 +45,10 @@ FTPlugin::FTPlugin(QObject* const parent)
 
 FTPlugin::~FTPlugin()
 {
+}
+
+void FTPlugin::cleanUp()
+{
     delete m_toolDlgExport;
     delete m_toolDlgImport;
 }

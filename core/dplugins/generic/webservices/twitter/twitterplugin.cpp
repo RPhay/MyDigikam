@@ -44,6 +44,10 @@ TwitterPlugin::TwitterPlugin(QObject* const parent)
 
 TwitterPlugin::~TwitterPlugin()
 {
+}
+
+void TwitterPlugin::cleanUp()
+{
     delete m_toolDlg;
 }
 

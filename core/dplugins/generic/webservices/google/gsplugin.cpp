@@ -44,6 +44,10 @@ GSPlugin::GSPlugin(QObject* const parent)
 
 GSPlugin::~GSPlugin()
 {
+}
+
+void GSPlugin::cleanUp()
+{
     delete m_toolDlgExportGphoto;
     delete m_toolDlgImportGphoto;
     delete m_toolDlgExportGdrive;
