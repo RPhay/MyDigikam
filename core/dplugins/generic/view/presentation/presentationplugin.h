@@ -34,6 +34,8 @@ using namespace Digikam;
 namespace DigikamGenericPresentationPlugin
 {
 
+class PresentationMngr;
+
 class PresentationPlugin : public DPluginGeneric
 {
     Q_OBJECT
@@ -53,10 +55,15 @@ public:
     QList<DPluginAuthor> authors() const override;
 
     void setup(QObject* const) override;
+    void cleanUp()             override;
 
 private Q_SLOTS:
 
     void slotPresentation();
+
+private:
+
+    QPointer<PresentationMngr> m_presentationMngr;
 };
 
 } // namespace DigikamGenericPresentationPlugin
