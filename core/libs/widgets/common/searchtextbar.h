@@ -170,6 +170,8 @@ public:
 Q_SIGNALS:
 
     void signalSearchTextSettings(const SearchTextSettings& settings);
+    void completerHighlighted(int albumId);
+    void completerActivated();
 
 public Q_SLOTS:
 

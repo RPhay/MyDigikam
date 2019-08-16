@@ -32,6 +32,7 @@
 #include <QStyle>
 #include <QPushButton>
 #include <QAction>
+#include <QTimer>
 
 // KDE includes
 
@@ -120,7 +121,8 @@ class Q_DECL_HIDDEN AlbumSelectWidget::Private
 public:
 
     explicit Private()
-      : albumModel(nullptr),
+      : complAlbum(nullptr),
+        albumModel(nullptr),
         albumTreeView(nullptr),
         albumModificationHelper(nullptr),
         searchBar(nullptr),
@@ -128,6 +130,7 @@ public:
     {
     }
 
+    PAlbum*                  complAlbum;
     AlbumModel*              albumModel;
     AlbumSelectTreeView*     albumTreeView;
 
@@ -138,7 +141,8 @@ public:
     QPushButton*             newAlbumBtn;
 };
 
-AlbumSelectWidget::AlbumSelectWidget(QWidget* const parent, PAlbum* const albumToSelect)
+AlbumSelectWidget::AlbumSelectWidget(QWidget* const parent,
+                                     PAlbum* const albumToSelect, bool completerSelect)
     : QWidget(parent),
       d(new Private)
 {
@@ -198,11 +202,25 @@ AlbumSelectWidget::AlbumSelectWidget(QWidget* const parent, PAlbum* const albumT
     connect(AlbumManager::instance(), SIGNAL(signalAlbumRenamed(Album*)),
             this, SLOT(slotAlbumRenamed(Album*)));
 
+    if (completerSelect)
+    {
+        connect(d->searchBar, SIGNAL(completerHighlighted(int)),
+                this, SLOT(slotCompleterHighlighted(int)));
+
+        connect(d->searchBar, SIGNAL(completerActivated()),
+                this, SIGNAL(completerActivated()));
+    }
+
     connect(d->newAlbumBtn, SIGNAL(clicked()),
             d->albumTreeView, SLOT(slotNewAlbum()));
 
     d->albumTreeView->loadState();
     d->searchBar->loadState();
+
+    if (completerSelect)
+    {
+        d->searchBar->setFocus();
+    }
 }
 
 AlbumSelectWidget::~AlbumSelectWidget()
@@ -259,6 +277,26 @@ void AlbumSelectWidget::slotAlbumRenamed(Album* album)
 
     if (index.isValid())
     {
+        emit itemSelectionChanged();
+    }
+}
+
+void AlbumSelectWidget::slotCompleterHighlighted(int albumId)
+{
+    PAlbum* const album = AlbumManager::instance()->findPAlbum(albumId);
+
+    if (album)
+    {
+        d->complAlbum = album;
+        QTimer::singleShot(0, this, SLOT(slotCompleterTimer()));
+    }
+}
+
+void AlbumSelectWidget::slotCompleterTimer()
+{
+    if (d->complAlbum)
+    {
+        d->albumTreeView->setCurrentAlbums(QList<Album*>() << d->complAlbum);
         emit itemSelectionChanged();
     }
 }
