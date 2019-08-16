@@ -30,6 +30,7 @@
 #include <QMutexLocker>
 #include <QTextDocument>
 #include <QStandardPaths>
+#include <QApplication>
 #include <QVBoxLayout>
 
 // KDE includes
@@ -231,6 +232,8 @@ void PanoPreviewPage::startStitching()
     d->progressBar->progressThumbnailChanged(QIcon::fromTheme(QLatin1String("panorama")).pixmap(22, 22));
     d->progressBar->show();
     d->postProcessing->show();
+
+    qApp->processEvents();
 
     d->mngr->resetPanoPto();
     d->mngr->resetMkUrl();
