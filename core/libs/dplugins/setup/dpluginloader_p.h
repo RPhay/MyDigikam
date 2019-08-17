@@ -55,7 +55,6 @@ public:
 
     bool                  pluginsLoaded;
     QList<DPlugin*>       allPlugins;
-    QList<QPluginLoader*> allLoaders;
     QStringList           blacklist;
     QStringList           whitelist;
 };

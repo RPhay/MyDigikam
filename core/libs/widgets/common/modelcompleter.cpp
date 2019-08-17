@@ -89,6 +89,12 @@ ModelCompleter::ModelCompleter(QObject* const parent)
 
     connect(d->delayedModelTimer, SIGNAL(timeout()),
             this, SLOT(slotDelayedModelTimer()));
+
+    connect(this, SIGNAL(activated(QModelIndex)),
+            this, SIGNAL(activated()));
+
+    connect(this, SIGNAL(highlighted(QModelIndex)),
+            this, SLOT(slotHighlighted(QModelIndex)));
 }
 
 ModelCompleter::~ModelCompleter()
@@ -270,6 +276,19 @@ void ModelCompleter::sync(QAbstractItemModel* const model, const QModelIndex& in
     {
         const QModelIndex child = model->index(i, 0, index);
         sync(model, child);
+    }
+}
+
+void ModelCompleter::slotHighlighted(const QModelIndex& index)
+{
+    if (index.isValid())
+    {
+        QString itemName = index.data().toString();
+
+        if (d->idToTextHash.values().count(itemName) == 1)
+        {
+            emit highlighted(d->idToTextHash.key(itemName));
+        }
     }
 }
 

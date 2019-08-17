@@ -100,6 +100,12 @@ SearchTextBar::SearchTextBar(QWidget* const parent, const QString& name, const Q
     connect(this, SIGNAL(textChanged(QString)),
             this, SLOT(slotTextChanged(QString)));
 
+    connect(d->completer, static_cast<void(ModelCompleter::*)(void)>(&ModelCompleter::activated),
+            [this](void){ emit completerActivated(); });
+
+    connect(d->completer, static_cast<void(ModelCompleter::*)(const int)>(&ModelCompleter::highlighted),
+            [this](const int albumId){ emit completerHighlighted(albumId); });
+
     loadState();
 }
 

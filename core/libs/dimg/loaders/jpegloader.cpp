@@ -137,11 +137,11 @@ bool JPEGLoader::load(const QString& filePath, DImgLoaderObserver* const observe
     public:
 
         CleanupData()
+          : data(nullptr),
+            dest(nullptr),
+            file(nullptr),
+            cmod(0)
         {
-            data = nullptr;
-            dest = nullptr;
-            file = nullptr;
-            cmod = 0;
         }
 
         ~CleanupData()

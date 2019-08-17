@@ -93,7 +93,8 @@ class AlbumSelectWidget : public QWidget
 
 public:
 
-    explicit AlbumSelectWidget(QWidget* const parent = nullptr, PAlbum* const albumToSelect = nullptr);
+    explicit AlbumSelectWidget(QWidget* const parent = nullptr,
+                               PAlbum* const albumToSelect = nullptr, bool completerSelect = false);
     ~AlbumSelectWidget();
 
     void setCurrentAlbumUrl(const QUrl& albumUrl);
@@ -105,10 +106,13 @@ public:
 Q_SIGNALS:
 
     void itemSelectionChanged();
+    void completerActivated();
 
 private Q_SLOTS:
 
+    void slotCompleterTimer();
     void slotAlbumRenamed(Album*);
+    void slotCompleterHighlighted(int albumId);
 
 private:
 

@@ -45,6 +45,10 @@ FCPlugin::FCPlugin(QObject* const parent)
 
 FCPlugin::~FCPlugin()
 {
+}
+
+void FCPlugin::cleanUp()
+{
     delete m_toolDlgExport;
 }
 

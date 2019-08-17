@@ -44,6 +44,10 @@ MediaWikiPlugin::MediaWikiPlugin(QObject* const parent)
 
 MediaWikiPlugin::~MediaWikiPlugin()
 {
+}
+
+void MediaWikiPlugin::cleanUp()
+{
     delete m_toolDlg;
 }
 

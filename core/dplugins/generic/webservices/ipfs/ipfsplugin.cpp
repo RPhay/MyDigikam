@@ -44,6 +44,10 @@ IpfsPlugin::IpfsPlugin(QObject* const parent)
 
 IpfsPlugin::~IpfsPlugin()
 {
+}
+
+void IpfsPlugin::cleanUp()
+{
     delete m_toolDlg;
 }
 

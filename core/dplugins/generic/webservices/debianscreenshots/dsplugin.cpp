@@ -44,6 +44,10 @@ DSPlugin::DSPlugin(QObject* const parent)
 
 DSPlugin::~DSPlugin()
 {
+}
+
+void DSPlugin::cleanUp()
+{
     delete m_toolDlg;
 }
 

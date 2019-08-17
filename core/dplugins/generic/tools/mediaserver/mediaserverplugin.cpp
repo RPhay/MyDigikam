@@ -48,6 +48,10 @@ MediaServerPlugin::MediaServerPlugin(QObject* const parent)
 
 MediaServerPlugin::~MediaServerPlugin()
 {
+}
+
+void MediaServerPlugin::cleanUp()
+{
     // Stop the Media Server if necessary
 
     Digikam::DMediaServerMngr::instance()->saveAtShutdown();
