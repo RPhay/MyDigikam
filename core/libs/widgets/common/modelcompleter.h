@@ -62,9 +62,15 @@ public:
     void addItem(const QString& item);
     QStringList items() const;
 
+Q_SIGNALS:
+
+    void highlighted(int albumId);
+    void activated();
+
 private Q_SLOTS:
 
     void slotDelayedModelTimer();
+    void slotHighlighted(const QModelIndex& index);
     void slotRowsInserted(const QModelIndex& parent, int start, int end);
     void slotRowsAboutToBeRemoved(const QModelIndex& parent, int start, int end);
     void slotDataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight);

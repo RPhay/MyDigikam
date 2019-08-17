@@ -44,6 +44,10 @@ FlickrPlugin::FlickrPlugin(QObject* const parent)
 
 FlickrPlugin::~FlickrPlugin()
 {
+}
+
+void FlickrPlugin::cleanUp()
+{
     delete m_toolDlg;
 }
 

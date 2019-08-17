@@ -122,7 +122,6 @@ bool DPluginLoader::Private::appendPlugin(QObject* const obj,
             plugin->setLibraryFileName(loader->fileName());
 
             allPlugins << plugin;
-            allLoaders << loader;
 
             return true;
         }
@@ -142,7 +141,7 @@ void DPluginLoader::Private::loadPlugins()
     t.start();
     qCDebug(DIGIKAM_GENERAL_LOG) << "Starting to load external tools.";
 
-    Q_ASSERT(allPlugins.isEmpty() && allLoaders.isEmpty());
+    Q_ASSERT(allPlugins.isEmpty());
 
     for (const QFileInfo& info : pluginEntriesList())
     {

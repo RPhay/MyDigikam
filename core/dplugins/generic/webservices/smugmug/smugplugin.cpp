@@ -44,6 +44,10 @@ SmugPlugin::SmugPlugin(QObject* const parent)
 
 SmugPlugin::~SmugPlugin()
 {
+}
+
+void SmugPlugin::cleanUp()
+{
     delete m_toolDlgExport;
     delete m_toolDlgImport;
 }

@@ -44,6 +44,10 @@ PanoramaPlugin::PanoramaPlugin(QObject* const parent)
 
 PanoramaPlugin::~PanoramaPlugin()
 {
+}
+
+void PanoramaPlugin::cleanUp()
+{
     if (PanoManager::isCreated())
     {
         delete PanoManager::internalPtr;

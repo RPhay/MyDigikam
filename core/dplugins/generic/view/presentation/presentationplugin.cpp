@@ -46,6 +46,11 @@ PresentationPlugin::~PresentationPlugin()
 {
 }
 
+void PresentationPlugin::cleanUp()
+{
+    delete m_presentationMngr;
+}
+
 QString PresentationPlugin::name() const
 {
     return i18n("Presentation");
@@ -107,11 +112,12 @@ void PresentationPlugin::slotPresentation()
 {
     DInfoInterface* const iface = infoIface(sender());
 
-    QPointer<PresentationMngr> mngr = new PresentationMngr(this, iface);
+    delete m_presentationMngr;
+    m_presentationMngr = new PresentationMngr(this, iface);
 
-    mngr->addFiles(iface->currentSelectedItems());
-    mngr->setPlugin(this);
-    mngr->showConfigDialog();
+    m_presentationMngr->addFiles(iface->currentSelectedItems());
+    m_presentationMngr->setPlugin(this);
+    m_presentationMngr->showConfigDialog();
 }
 
 } // namespace DigikamGenericPresentationPlugin

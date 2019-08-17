@@ -44,6 +44,10 @@ YFPlugin::YFPlugin(QObject* const parent)
 
 YFPlugin::~YFPlugin()
 {
+}
+
+void YFPlugin::cleanUp()
+{
     delete m_toolDlg;
 }
 

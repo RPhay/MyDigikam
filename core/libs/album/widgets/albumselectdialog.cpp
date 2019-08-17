@@ -97,7 +97,7 @@ AlbumSelectDialog::AlbumSelectDialog(QWidget* const parent, PAlbum* const albumT
         message->setText(header);
     }
 
-    d->albumSel = new AlbumSelectWidget(page, albumToSelect);
+    d->albumSel = new AlbumSelectWidget(page, albumToSelect, true);
 
     grid->addWidget(logo,        0, 0, 1, 1);
     grid->addWidget(message,     1, 0, 1, 1);
@@ -116,6 +116,9 @@ AlbumSelectDialog::AlbumSelectDialog(QWidget* const parent, PAlbum* const albumT
 
     connect(d->albumSel, SIGNAL(itemSelectionChanged()),
             this, SLOT(slotSelectionChanged()));
+
+    connect(d->albumSel, SIGNAL(completerActivated()),
+            this, SLOT(accept()));
 
     connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(accept()));

@@ -63,6 +63,7 @@ public:
     bool    addPhoto(const QString& photoPath,
                      GSPhoto& info,
                      const QString& albumId,
+                     bool original,
                      bool rescale,
                      int maxDim,
                      int imageQuality);
