@@ -240,7 +240,7 @@ bool PNGLoader::load(const QString& filePath, DImgLoaderObserver* const observer
     if (setjmp(png_ptr->jmpbuf))
 #endif
     {
-        png_destroy_read_struct(&png_ptr, &info_ptr, nullptr);
+        png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) nullptr);
 
         if (!cleanupData->data ||
             !cleanupData->size.isValid())
