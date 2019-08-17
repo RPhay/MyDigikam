@@ -45,6 +45,10 @@ FbPlugin::FbPlugin(QObject* const parent)
 
 FbPlugin::~FbPlugin()
 {
+}
+
+void FbPlugin::cleanUp()
+{
     delete m_toolDlg;
 }
 
@@ -109,18 +113,23 @@ void FbPlugin::setup(QObject* const parent)
 
 void FbPlugin::slotFaceBook()
 {
-    if (!reactivateToolDialog(m_toolDlg))
+//    if (!reactivateToolDialog(m_toolDlg))
     {
-        // This message is not translated, and it will be removed after the review process.
-        QMessageBox::warning(nullptr, QLatin1String("Facebook"),
-                                QLatin1String("This Facebook export tool is under "
-                                              "review process and only works for "
-                                              "registered test users."));
+        QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Information, i18n("Facebook"),
+                 i18n("<p>Currently, as an open source project, we are unable to meet "
+                      "the Facebook requirements for reactivating this plugin.</p>"
+                      "<p>For more information look here: "
+                      "<a href='https://bugs.kde.org/show_bug.cgi?id=182838'>"
+                      "KDE Bugtracking System</a></p>"));
 
-        delete m_toolDlg;
-        m_toolDlg = new FbWindow(infoIface(sender()), nullptr);
-        m_toolDlg->setPlugin(this);
-        m_toolDlg->show();
+        msgBox->setTextInteractionFlags(Qt::LinksAccessibleByMouse);
+        msgBox->exec();
+        delete msgBox;
+
+//        delete m_toolDlg;
+//        m_toolDlg = new FbWindow(infoIface(sender()), nullptr);
+//        m_toolDlg->setPlugin(this);
+//        m_toolDlg->show();
     }
 }
 

@@ -44,6 +44,10 @@ VKontaktePlugin::VKontaktePlugin(QObject* const parent)
 
 VKontaktePlugin::~VKontaktePlugin()
 {
+}
+
+void VKontaktePlugin::cleanUp()
+{
     delete m_toolDlg;
 }
 

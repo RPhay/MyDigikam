@@ -33,6 +33,7 @@
 #include <QApplication>
 #include <QPainter>
 #include <QScreen>
+#include <QWindow>
 #include <QLocale>
 #include <QPixmap>
 #include <QTimer>
@@ -968,10 +969,13 @@ void TimeLineWidget::keyReleaseEvent(QKeyEvent *)
 
 void TimeLineWidget::keyScroll(bool isScrollNext)
 {
-    QScreen* screen = qApp->screenAt(mapToGlobal(geometry().center()));
+    QScreen* screen = qApp->primaryScreen();
 
-    if (!screen)
-        screen = qApp->primaryScreen();
+    if (QWidget* const widget = nativeParentWidget())
+    {
+        if (QWindow* const window = widget->windowHandle())
+            screen = window->screen();
+    }
 
     QRect barRect;
     QRect deskRect  = screen->geometry();
@@ -1022,7 +1026,13 @@ void TimeLineWidget::paintEvent(QPaintEvent*)
     QPainter p(this);
 
     d->bottomMargin = (int)(p.fontMetrics().height() * 1.5);
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+    d->barWidth     = p.fontMetrics().horizontalAdvance(QLatin1String("00"));
+#else
     d->barWidth     = p.fontMetrics().width(QLatin1String("00"));
+#endif
+
     d->nbItems      = (int)((width() / 2.0) / (float)d->barWidth);
     d->startPos     = (int)((width() / 2.0) - ((float)(d->barWidth) / 2.0));
     QDateTime     ref;
@@ -1929,10 +1939,13 @@ QDateTime TimeLineWidget::dateTimeForPoint(const QPoint& pt, bool& isOnSelection
     QDateTime ref = d->refDateTime;
     ref.setTime(QTime(0, 0, 0, 0));
 
-    QScreen* screen = qApp->screenAt(mapToGlobal(geometry().center()));
+    QScreen* screen = qApp->primaryScreen();
 
-    if (!screen)
-        screen = qApp->primaryScreen();
+    if (QWidget* const widget = nativeParentWidget())
+    {
+        if (QWindow* const window = widget->windowHandle())
+            screen = window->screen();
+    }
 
     QRect deskRect = screen->geometry();
     int items      = deskRect.width() / d->barWidth;

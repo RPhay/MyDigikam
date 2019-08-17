@@ -7,7 +7,7 @@
 
 # Configuration to tune before to build tarball.
 
-TARBALL_VERSION="6.1.0"
+TARBALL_VERSION="6.2.0"
 
 # Location to host target files.
 TARBALL_DIR="$PWD/../digikam-$TARBALL_VERSION"
@@ -62,7 +62,7 @@ rm -fr $TARBALL_BUILD
 
 mkdir -p $TARBALL_DIR
 cp -rf ./* $TARBALL_DIR
-tar cf - $TARBALL_DIR | xz -4e > $TARBALL_FILE
+tar cf - $TARBALL_DIR | xz -T0 -4e > $TARBALL_FILE
 
 # Cleanup temp directory
 

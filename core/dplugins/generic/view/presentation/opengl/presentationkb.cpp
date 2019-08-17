@@ -43,6 +43,7 @@
 #include <QMouseEvent>
 #include <QApplication>
 #include <QScreen>
+#include <QWindow>
 
 // KDE includes
 
@@ -215,14 +216,20 @@ PresentationKB::PresentationKB(PresentationContainer* const sharedData)
     setAttribute(Qt::WA_DeleteOnClose);
     setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::Popup);
 
-    QScreen* const activeScreen = qApp->screenAt(qApp->activeWindow()->geometry().center());
-    const int activeScreenIndex = qMax(qApp->screens().indexOf(activeScreen), 0);
+    QScreen* screen = qApp->primaryScreen();
 
-    QRect deskRect = qApp->screens().at(activeScreenIndex)->geometry();
-    d->deskX       = deskRect.x();
-    d->deskY       = deskRect.y();
-    d->deskWidth   = deskRect.width();
-    d->deskHeight  = deskRect.height();
+    if (QWidget* const widget = qApp->activeWindow())
+    {
+        if (QWindow* const window = widget->windowHandle())
+            screen = window->screen();
+    }
+
+    int screenIndex = qMax(qApp->screens().indexOf(screen), 0);
+    QRect deskRect  = qApp->screens().at(screenIndex)->geometry();
+    d->deskX        = deskRect.x();
+    d->deskY        = deskRect.y();
+    d->deskWidth    = deskRect.width();
+    d->deskHeight   = deskRect.height();
 
     move(d->deskX, d->deskY);
     resize(d->deskWidth, d->deskHeight);
@@ -238,9 +245,9 @@ PresentationKB::PresentationKB(PresentationContainer* const sharedData)
     {
         int rate = 25;
 
-        if (activeScreen)
+        if (screen)
         {
-            rate = (int)activeScreen->refreshRate();
+            rate = (int)screen->refreshRate();
         }
 
         frameRate = rate * 2;

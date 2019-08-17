@@ -44,6 +44,10 @@ BoxPlugin::BoxPlugin(QObject* const parent)
 
 BoxPlugin::~BoxPlugin()
 {
+}
+
+void BoxPlugin::cleanUp()
+{
     delete m_toolDlg;
 }
 

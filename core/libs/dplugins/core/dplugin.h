@@ -109,6 +109,12 @@ public:
 public:
 
     /**
+     * Plugin method to clean up internal created objects.
+     * This method is called by plugin loader.
+     */
+    virtual void cleanUp();
+
+    /**
      * Return true if plugin can be configured in setup dialog about the visibility property.
      * Default implementation return true.
      */

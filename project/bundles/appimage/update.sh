@@ -21,7 +21,7 @@ trap 'echo "FAILED COMMAND: $PREVIOUS_COMMAND"' ERR
 StartScript
 ChecksRunAsRoot
 ChecksCPUCores
-CentOS6Adjustments
+HostAdjustments
 
 echo "+++++++++++++++++++++++ Update Linux AppImage bundle ++++++++++++++++++++++++++++++"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"

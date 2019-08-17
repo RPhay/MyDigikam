@@ -71,14 +71,12 @@ void DPluginLoader::init()
 
 void DPluginLoader::cleanUp()
 {
-    foreach (QPluginLoader* const loader, d->allLoaders)
+    foreach (DPlugin* const p, d->allPlugins)
     {
-        loader->unload();
-        delete loader;
+        p->cleanUp();
     }
 
     d->allPlugins.clear();
-    d->allLoaders.clear();
 }
 
 QString DPluginLoader::configGroupName() const

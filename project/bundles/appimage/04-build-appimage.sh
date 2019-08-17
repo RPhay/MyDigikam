@@ -19,16 +19,6 @@ if [ "root" != "$USER" ]; then
     exit
 fi
 
-if [[ "$(arch)" = "x86_64" ]] ; then
-
-    LIB_PATH_ALT=lib64
-
-else
-
-    LIB_PATH_ALT=lib
-
-fi
-
 #################################################################################################
 # Manage script traces to log file
 
@@ -48,9 +38,14 @@ echo "-----------------------------------------------------"
 ChecksRunAsRoot
 StartScript
 ChecksCPUCores
-CentOS6Adjustments
+HostAdjustments
 RegisterRemoteServers
-. /opt/rh/devtoolset-6/enable
+
+if [[ "$(arch)" = "x86_64" ]] ; then
+    LIBSUFFIX=lib64
+else
+    LIBSUFFIX=lib
+fi
 
 #################################################################################################
 
@@ -67,11 +62,11 @@ cd $ORIG_WD/icon-rcc
 
 rm -f CMakeCache.txt > /dev/null
 
-cmake3 -DCMAKE_INSTALL_PREFIX="/usr" \
-       -DCMAKE_BUILD_TYPE=debug \
-       -DCMAKE_COLOR_MAKEFILE=ON \
-       -Wno-dev \
-       .
+cmake -DCMAKE_INSTALL_PREFIX="/usr" \
+      -DCMAKE_BUILD_TYPE=debug \
+      -DCMAKE_COLOR_MAKEFILE=ON \
+      -Wno-dev \
+      .
 
 make -j$CPU_CORES
 
@@ -134,7 +129,7 @@ cp -r /usr/share/solid                    ./usr/share
 cp -r /usr/share/OpenCV                   ./usr/share
 cp -r /usr/share/dbus-1/interfaces/kf5*   ./usr/share/dbus-1/interfaces/
 cp -r /usr/share/dbus-1/services/*kde*    ./usr/share/dbus-1/services/
-cp -r /usr/$LIB_PATH_ALT/libexec/kf5      ./usr/lib/libexec/
+cp -r /usr/${LIBSUFFIX}/libexec/kf5      ./usr/lib/libexec/
 
 # AppImage stream data file
 cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml   ./usr/share/metainfo/digikam.appdata.xml
@@ -146,13 +141,12 @@ if [[ $DK_QTWEBENGINE = 1 ]] ; then
 fi
 
 # copy libgphoto2 drivers
-find  /usr/lib/libgphoto2      -name "*.so" -type f -exec cp {} ./usr/lib/libgphoto2 \;      2>/dev/null
-find  /usr/lib/libgphoto2_port -name "*.so" -type f -exec cp {} ./usr/lib/libgphoto2_port \; 2>/dev/null
+find  /usr/${LIBSUFFIX}/libgphoto2      -name "*.so" -type f -exec cp {} ./usr/lib/libgphoto2 \;      2>/dev/null
+find  /usr/${LIBSUFFIX}/libgphoto2_port -name "*.so" -type f -exec cp {} ./usr/lib/libgphoto2_port \; 2>/dev/null
 
 # copy sane backends
-cp -r /usr/lib/sane                       ./usr/lib
-rm ./usr/lib/sane/*.la
-cp -r /usr/etc/sane.d                     ./usr/etc
+cp -r /usr/${LIBSUFFIX}/sane              ./usr/lib
+cp -r /etc/sane.d                         ./usr/etc
 
 # copy i18n
 
@@ -197,14 +191,14 @@ done
 
 # Marble data and plugins files
 
-cp -r /usr/$LIB_PATH_ALT/marble/plugins/ ./usr/bin/
+cp -r /usr/${LIBSUFFIX}/marble/plugins/ ./usr/bin/
 
-cp -r /usr/share/marble/data             ./usr/bin/
+cp -r /usr/share/marble/data            ./usr/bin/
 
 # otherwise segfaults!?
-cp $(ldconfig -p | grep /usr/$LIB_PATH_ALT/libsasl2.so.2    | cut -d ">" -f 2 | xargs) ./usr/lib/
-cp $(ldconfig -p | grep /usr/$LIB_PATH_ALT/libGL.so.1       | cut -d ">" -f 2 | xargs) ./usr/lib/
-cp $(ldconfig -p | grep /usr/$LIB_PATH_ALT/libGLU.so.1      | cut -d ">" -f 2 | xargs) ./usr/lib/
+cp $(ldconfig -p | grep /$LIBSUFFIX/libsasl2.so.3    | cut -d ">" -f 2 | xargs) ./usr/lib/
+cp $(ldconfig -p | grep /${LIBSUFFIX}/libGL.so.1       | cut -d ">" -f 2 | xargs) ./usr/lib/
+cp $(ldconfig -p | grep /${LIBSUFFIX}/libGLU.so.1      | cut -d ">" -f 2 | xargs) ./usr/lib/
 
 # Fedora 23 seemed to be missing SOMETHING from the Centos 6.7. The only message was:
 # This application failed to start because it could not find or load the Qt platform plugin "xcb".
@@ -214,13 +208,13 @@ cp $(ldconfig -p | grep /usr/$LIB_PATH_ALT/libGLU.so.1      | cut -d ">" -f 2 | 
 # Which means that we have to copy libEGL.so.1 in too
 
 # Otherwise F23 cannot load the Qt platform plugin "xcb"
-cp $(ldconfig -p | grep /usr/$LIB_PATH_ALT/libEGL.so.1      | cut -d ">" -f 2 | xargs) ./usr/lib/
+cp $(ldconfig -p | grep /${LIBSUFFIX}/libEGL.so.1      | cut -d ">" -f 2 | xargs) ./usr/lib/
 
 # let's not copy xcb itself, that breaks on dri3 systems https://bugs.kde.org/show_bug.cgi?id=360552
 #cp $(ldconfig -p | grep libxcb.so.1 | cut -d ">" -f 2 | xargs) ./usr/lib/
 
 # For Fedora 20
-cp $(ldconfig -p | grep /usr/$LIB_PATH_ALT/libfreetype.so.6 | cut -d ">" -f 2 | xargs) ./usr/lib/
+cp $(ldconfig -p | grep /${LIBSUFFIX}/libfreetype.so.6 | cut -d ">" -f 2 | xargs) ./usr/lib/
 
 cp /usr/bin/digikam                 ./usr/bin
 cp /usr/bin/showfoto                ./usr/bin
@@ -242,7 +236,7 @@ CopyReccursiveDependencies /usr/bin/digikam                  ./usr/lib
 CopyReccursiveDependencies /usr/bin/showfoto                 ./usr/lib
 CopyReccursiveDependencies /usr/plugins/platforms/libqxcb.so ./usr/lib
 
-FILES=$(ls /usr/$LIB_PATH_ALT/libdigikam*.so)
+FILES=$(ls /usr/${LIBSUFFIX}/libdigikam*.so)
 
 for FILE in $FILES ; do
     CopyReccursiveDependencies ${FILE} ./usr/lib
@@ -355,13 +349,15 @@ libopenal.so.1 \
 libdbus-1.so.3 \
 "
 
-#liblber-2.4.so.2       # needed for debian wheezy
-#libldap_r-2.4.so.2     # needed for debian wheezy
+#liblber-2.4.so.2       # needed for Debian Wheezy
+#libldap_r-2.4.so.2     # needed for Debian Wheezy
 
 #libffi.so.6            # needed for Ubuntu 11.04
 #libxcb-glx.so.0        # needed for Ubuntu 11.04
 
 #libkeyutils.so.1       # Originally removed in linuxdeployqt, but needed for Gentoo (see https://bugs.kde.org/show_bug.cgi?id=406171#c2)
+#libz.so.1              # needed for Mint 18.1 (see http://digikam.1695700.n4.nabble.com/digikam-6-2-0-64-bit-appimage-error-td4708921.html)
+
 
 for FILE in $EXCLUDE_FILES ; do
     if [[ -f usr/lib/${FILE} ]] ; then
@@ -428,7 +424,7 @@ APP=digikam
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
     WEB_BROWSER="-qtwebengine"
 else
-    WEB_BROWSER="-qtwebkit"
+    WEB_BROWSER=""
 fi
 
 if [[ "$ARCH" = "x86_64" ]] ; then
@@ -537,7 +533,7 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Upload new bundle AppImage files to files.kde.org repository \n"
 
-    rsync -r -v --progress -e ssh $ORIG_WD/bundle/$APPIMAGE     $DK_UPLOADURL:$DK_UPLOADDIR
+    rsync -r -v --progress -e ssh $ORIG_WD/bundle/$APPIMAGE $DK_UPLOADURL:$DK_UPLOADDIR
     scp $ORIG_WD/bundle/$APPIMAGE.sum $DK_UPLOADURL:$DK_UPLOADDIR
 
     if [[ $DK_SIGN = 1 ]] ; then

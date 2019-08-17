@@ -54,6 +54,7 @@ public:
     QList<DPluginAuthor> authors() const override;
 
     void setup(QObject* const) override;
+    void cleanUp()             override;
 
 private Q_SLOTS:
 

@@ -40,6 +40,10 @@ UnifiedPlugin::UnifiedPlugin(QObject* const parent)
 
 UnifiedPlugin::~UnifiedPlugin()
 {
+}
+
+void UnifiedPlugin::cleanUp()
+{
     delete m_toolDlg;
 }
 

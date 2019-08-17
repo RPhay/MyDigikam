@@ -107,7 +107,7 @@ void SharedLoadingTask::execute()
     // send StartedLoadingEvent from each single Task, not via LoadingProcess list
     m_thread->imageStartedLoading(m_loadingDescription);
 
-    LoadingCache* cache = LoadingCache::cache();
+    LoadingCache* const cache = LoadingCache::cache();
     {
         LoadingCache::CacheLock lock(cache);
 
@@ -224,7 +224,7 @@ void SharedLoadingTask::execute()
         // dispatch image to all listeners, including this
         for (int i = 0 ; i < m_listeners.count() ; ++i)
         {
-            LoadingProcessListener* const l = m_listeners[i];
+            LoadingProcessListener* const l = m_listeners.at(i);
 
             if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
             {
@@ -345,12 +345,12 @@ void SharedLoadingTask::progressInfo(DImg* const img, float progress)
 
     if (m_loadingTaskStatus == LoadingTaskStatusLoading)
     {
-        LoadingCache* cache = LoadingCache::cache();
+        LoadingCache* const cache = LoadingCache::cache();
         LoadingCache::CacheLock lock(cache);
 
         for (int i = 0 ; i < m_listeners.size() ; ++i)
         {
-            LoadingProcessListener* const l  = m_listeners[i];
+            LoadingProcessListener* const l  = m_listeners.at(i);
             LoadSaveNotifier* const notifier = l->loadSaveNotifier();
 
             if (notifier && l->querySendNotifyEvent())
@@ -375,7 +375,7 @@ void SharedLoadingTask::setStatus(LoadingTaskStatus status)
 
     if (m_loadingTaskStatus == LoadingTaskStatusStopping)
     {
-        LoadingCache* cache = LoadingCache::cache();
+        LoadingCache* const cache = LoadingCache::cache();
         LoadingCache::CacheLock lock(cache);
 
         // check for m_usedProcess, to avoid race condition that it has finished before
@@ -424,14 +424,15 @@ void SharedLoadingTask::notifyNewLoadingProcess(LoadingProcess* const process, c
     // In this case, we notify our own thread (a signal to the API user is emitted) of this.
     // The fact that we are receiving the method call shows that this task is registered with the LoadingCache,
     // somewhere in between the calls to addLoadingProcess(this) and removeLoadingProcess(this) above.
-    if (process != this                                              &&
+    if (process != dynamic_cast<LoadingProcess*>(this)               &&
         m_loadingDescription.isReducedVersion()                      &&
         m_loadingDescription.equalsIgnoreReducedVersion(description) &&
         !description.isReducedVersion())
     {
         for (int i = 0 ; i < m_listeners.size() ; ++i)
         {
-            m_listeners[i]->loadSaveNotifier()->moreCompleteLoadingAvailable(m_loadingDescription, description);
+            m_listeners.at(i)->loadSaveNotifier()->
+                moreCompleteLoadingAvailable(m_loadingDescription, description);
         }
     }
 }

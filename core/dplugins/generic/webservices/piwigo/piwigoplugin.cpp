@@ -44,6 +44,10 @@ PiwigoPlugin::PiwigoPlugin(QObject* const parent)
 
 PiwigoPlugin::~PiwigoPlugin()
 {
+}
+
+void PiwigoPlugin::cleanUp()
+{
     delete m_toolDlg;
 }
 

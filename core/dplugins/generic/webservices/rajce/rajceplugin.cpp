@@ -44,6 +44,10 @@ RajcePlugin::RajcePlugin(QObject* const parent)
 
 RajcePlugin::~RajcePlugin()
 {
+}
+
+void RajcePlugin::cleanUp()
+{
     delete m_toolDlg;
 }
 

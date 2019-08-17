@@ -40,6 +40,7 @@
 #include <QByteArray>
 #include <QBuffer>
 #include <QScreen>
+#include <QWindow>
 
 // KDE includes
 
@@ -237,10 +238,13 @@ void DItemToolTip::reposition()
     d->corner = 0;
     // should the tooltip be shown to the left or to the right of the ivi ?
 
-    QScreen* screen = qApp->screenAt(geometry().center());
+    QScreen* screen = qApp->primaryScreen();
 
-    if (!screen)
-        screen = qApp->primaryScreen();
+    if (QWidget* const widget = nativeParentWidget())
+    {
+        if (QWindow* const window = widget->windowHandle())
+            screen = window->screen();
+    }
 
     QRect desk = screen->geometry();
 

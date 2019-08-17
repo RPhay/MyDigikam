@@ -36,6 +36,7 @@
 #include <QHBoxLayout>
 #include <QCheckBox>
 #include <QScreen>
+#include <QWindow>
 
 // KDE includes
 
@@ -114,10 +115,13 @@ QSize DAdjustableLabel::minimumSizeHint() const
 
 QSize DAdjustableLabel::sizeHint() const
 {
-    QScreen* screen = qApp->screenAt(mapToGlobal(geometry().center()));
+    QScreen* screen = qApp->primaryScreen();
 
-    if (!screen)
-        screen = qApp->primaryScreen();
+    if (QWidget* const widget = nativeParentWidget())
+    {
+        if (QWindow* const window = widget->windowHandle())
+            screen = window->screen();
+    }
 
     QFontMetrics fm(fontMetrics());
     int maxW     = screen->geometry().width() * 3 / 4;

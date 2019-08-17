@@ -444,6 +444,12 @@ void GSWindow::slotListAlbumsDone(int code, const QString& errMsg, const QList <
 
             for (int i = 0 ; i < list.size() ; ++i)
             {
+                if (d->service == GoogleService::GPhotoImport && i == 0)
+                {
+                    // remove <auto-create> album
+                    continue;
+                }
+
                 QString albumIcon;
 
                 if (list.at(i).isWriteable)
@@ -588,6 +594,7 @@ void GSWindow::slotStartTransfer()
                 QStringList descriptions = QStringList() << info.title() << info.comment();
                 descriptions.removeAll(QLatin1String(""));
                 temp.description         = descriptions.join(QLatin1String("\n\n"));
+                temp.description.replace(QLatin1Char('"'), QLatin1String("\\\""));
                 break;
         }
 

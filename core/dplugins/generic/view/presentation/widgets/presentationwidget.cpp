@@ -46,6 +46,7 @@
 #include <QWheelEvent>
 #include <QApplication>
 #include <QScreen>
+#include <QWindow>
 
 // KDE includes
 
@@ -184,14 +185,20 @@ PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
     setAttribute(Qt::WA_DeleteOnClose);
     setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::Popup);
 
-    QScreen* const activeScreen = qApp->screenAt(qApp->activeWindow()->geometry().center());
-    const int activeScreenIndex = qMax(qApp->screens().indexOf(activeScreen), 0);
+    QScreen* screen = qApp->primaryScreen();
 
-    QRect deskRect = qApp->screens().at(activeScreenIndex)->geometry();
-    d->deskX       = deskRect.x();
-    d->deskY       = deskRect.y();
-    d->deskWidth   = deskRect.width();
-    d->deskHeight  = deskRect.height();
+    if (QWidget* const widget = qApp->activeWindow())
+    {
+        if (QWindow* const window = widget->windowHandle())
+            screen = window->screen();
+    }
+
+    int screenIndex = qMax(qApp->screens().indexOf(screen), 0);
+    QRect deskRect  = qApp->screens().at(screenIndex)->geometry();
+    d->deskX        = deskRect.x();
+    d->deskY        = deskRect.y();
+    d->deskWidth    = deskRect.width();
+    d->deskHeight   = deskRect.height();
 
     move(d->deskX, d->deskY);
     resize(d->deskWidth, d->deskHeight);
@@ -446,7 +453,7 @@ void PresentationWidget::printFilename()
 
     for (int x = 9 ; x <= 11 ; ++x)
     {
-        for (int y = 31 ; y >= 29 ; y--)
+        for (int y = 31 ; y >= 29 ; --y)
         {
             p.drawText(x, height() - y, d->imageLoader->currFileName());
         }
@@ -535,7 +542,7 @@ void PresentationWidget::printComments()
         for (int x = 9 ; x <= 11 ; ++x)
         {
             for (int y = (int)(yPos + lineNumber * 1.5 * d->sharedData->captionFont->pointSize() + 1) ;
-                 y >= (int)(yPos + lineNumber * 1.5 * d->sharedData->captionFont->pointSize() - 1) ; y--)
+                 y >= (int)(yPos + lineNumber * 1.5 * d->sharedData->captionFont->pointSize() - 1) ; --y)
             {
                 p.drawText(x, height() - y, commentsByLines[lineNumber]);
             }
@@ -555,15 +562,20 @@ void PresentationWidget::printProgress()
     QPainter p;
     p.begin(&d->currImage);
 
-    QString progress(QString::number(d->fileIndex + 1) + QLatin1Char('/') + QString::number(d->sharedData->urlList.count()));
+    QString progress(QString::number(d->fileIndex + 1) + QLatin1Char('/') +
+                                     QString::number(d->sharedData->urlList.count()));
 
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+    int stringLength = p.fontMetrics().horizontalAdvance(progress) * progress.length();
+#else
     int stringLength = p.fontMetrics().width(progress) * progress.length();
+#endif
 
     p.setPen(QColor(Qt::black));
 
     for (int x = 9 ; x <= 11 ; ++x)
     {
-        for (int y = 21 ; y >= 19 ; y--)
+        for (int y = 21 ; y >= 19 ; --y)
         {
             p.drawText(width() - stringLength - x, y, progress);
         }

@@ -89,18 +89,22 @@ SearchTextBar::SearchTextBar(QWidget* const parent, const QString& name, const Q
       StateSavingObject(this),
       d(new Private)
 {
-    setAttribute(Qt::WA_DeleteOnClose);
+    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
+    setObjectName(name + QLatin1String(" Search Text Tool"));
     setClearButtonEnabled(true);
     setPlaceholderText(msg);
-    setObjectName(name + QLatin1String(" Search Text Tool"));
 
     d->completer = new ModelCompleter(this);
     setCompleter(d->completer);
 
-    setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
-
     connect(this, SIGNAL(textChanged(QString)),
             this, SLOT(slotTextChanged(QString)));
+
+    connect(d->completer, static_cast<void(ModelCompleter::*)(void)>(&ModelCompleter::activated),
+            [this](void){ emit completerActivated(); });
+
+    connect(d->completer, static_cast<void(ModelCompleter::*)(const int)>(&ModelCompleter::highlighted),
+            [this](const int albumId){ emit completerHighlighted(albumId); });
 
     loadState();
 }
@@ -114,8 +118,10 @@ SearchTextBar::~SearchTextBar()
 void SearchTextBar::doLoadState()
 {
     KConfigGroup group        = getConfigGroup();
-    completer()->setCompletionMode((QCompleter::CompletionMode)group.readEntry(entryName(d->optionAutoCompletionModeEntry), (int)QCompleter::PopupCompletion));
-    d->settings.caseSensitive = (Qt::CaseSensitivity)group.readEntry(entryName(d->optionCaseSensitiveEntry), (int)Qt::CaseInsensitive);
+    completer()->setCompletionMode((QCompleter::CompletionMode)group.readEntry(entryName(d->optionAutoCompletionModeEntry),
+                                                                               (int)QCompleter::PopupCompletion));
+    d->settings.caseSensitive = (Qt::CaseSensitivity)group.readEntry(entryName(d->optionCaseSensitiveEntry),
+                                                                     (int)Qt::CaseInsensitive);
     setIgnoreCase(d->settings.caseSensitive == Qt::CaseInsensitive);
 }
 
