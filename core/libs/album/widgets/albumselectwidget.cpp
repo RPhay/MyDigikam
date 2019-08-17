@@ -297,7 +297,6 @@ void AlbumSelectWidget::slotCompleterTimer()
     if (d->complAlbum)
     {
         d->albumTreeView->setCurrentAlbums(QList<Album*>() << d->complAlbum);
-        emit itemSelectionChanged();
     }
 }
 
