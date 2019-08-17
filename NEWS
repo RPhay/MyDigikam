@@ -165,4 +165,5 @@ BUGFIXES:
 155 ==> 401546 - digiKam crashs upon quit (Files -> Quit).
 156 ==> 402122 - Crashed while scrolling images.
 157 ==> 410912 - Improve "Move to album" for keyboard use.
-158 ==> 
+158 ==> 411011 - Digikam does not display a PNG photo.
+159 ==> 
