@@ -306,6 +306,7 @@ void GPTalker::createAlbum(const GSFolder& album)
 bool GPTalker::addPhoto(const QString& photoPath,
                         GSPhoto& info,
                         const QString& albumId,
+                        bool original,
                         bool rescale,
                         int maxDim,
                         int imageQuality)
@@ -326,7 +327,7 @@ bool GPTalker::addPhoto(const QString& photoPath,
 
     QMimeDatabase mimeDB;
 
-    if (mimeDB.mimeTypeForFile(photoPath).name().startsWith(QLatin1String("image/")))
+    if (!original && mimeDB.mimeTypeForFile(photoPath).name().startsWith(QLatin1String("image/")))
     {
         QImage image = PreviewLoadThread::loadHighQualitySynchronously(photoPath).copyQImage();
 

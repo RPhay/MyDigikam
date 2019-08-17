@@ -92,11 +92,13 @@ GSWidget::GSWidget(QWidget* const parent,
             getSizeBox()->hide(); // (Trung) Hide this option temporary, until factorization 
             break;
         case GoogleService::GDrive:
+            getOriginalCheckBox()->show();
             getUploadBox()->hide();
             getSizeBox()->hide();
             leafBox->hide();
             break;
         default:
+            getOriginalCheckBox()->show();
             getUploadBox()->hide();
             getSizeBox()->hide();
             leafBox->hide();    // Google has removed this function in the current API V3.
