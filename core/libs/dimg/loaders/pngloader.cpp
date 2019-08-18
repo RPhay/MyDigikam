@@ -167,7 +167,8 @@ bool PNGLoader::load(const QString& filePath, DImgLoaderObserver* const observer
         CleanupData()
           : data(nullptr),
             lines(nullptr),
-            f(nullptr)
+            file(nullptr),
+            cmod(0)
         {
         }
 
@@ -176,9 +177,9 @@ bool PNGLoader::load(const QString& filePath, DImgLoaderObserver* const observer
             delete [] data;
             freeLines();
 
-            if (f)
+            if (file)
             {
-                fclose(f);
+                fclose(file);
             }
         }
 
@@ -192,9 +193,19 @@ bool PNGLoader::load(const QString& filePath, DImgLoaderObserver* const observer
             lines = l;
         }
 
-        void setFile(FILE* const file)
+        void setFile(FILE* const f)
         {
-            f = file;
+            file = f;
+        }
+
+        void setSize(const QSize& s)
+        {
+            size = s;
+        }
+
+        void setColorModel(int c)
+        {
+            cmod = c;
         }
 
         void takeData()
@@ -214,7 +225,10 @@ bool PNGLoader::load(const QString& filePath, DImgLoaderObserver* const observer
 
         uchar*  data;
         uchar** lines;
-        FILE*   f;
+        FILE*   file;
+
+        QSize  size;
+        int    cmod;
     };
 
     CleanupData* const cleanupData = new CleanupData;
@@ -226,11 +240,40 @@ bool PNGLoader::load(const QString& filePath, DImgLoaderObserver* const observer
     if (setjmp(png_ptr->jmpbuf))
 #endif
     {
-        qCWarning(DIGIKAM_DIMG_LOG_PNG) << "Internal libPNG error during reading file. Process aborted!";
-        png_destroy_read_struct(&png_ptr, &info_ptr, nullptr);
+        png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) nullptr);
+
+        if (!cleanupData->data ||
+            !cleanupData->size.isValid())
+        {
+            qCWarning(DIGIKAM_DIMG_LOG_PNG) << "Internal libPNG error during reading file. Process aborted!";
+            delete cleanupData;
+            loadingFailed();
+            return false;
+        }
+
+        // We check only Exif metadata for ICC profile to prevent endless loop
+
+        if (m_loadFlags & LoadICCData)
+        {
+            checkExifWorkingColorSpace();
+        }
+
+        if (observer)
+        {
+            observer->progressInfo(m_image, 1.0);
+        }
+
+        imageWidth()  = cleanupData->size.width();
+        imageHeight() = cleanupData->size.height();
+        imageData()   = cleanupData->data;
+        imageSetAttribute(QLatin1String("format"),             QLatin1String("PNG"));
+        imageSetAttribute(QLatin1String("originalColorModel"), cleanupData->cmod);
+        imageSetAttribute(QLatin1String("originalBitDepth"),   m_sixteenBit ? 16 : 8);
+        imageSetAttribute(QLatin1String("originalSize"),       cleanupData->size);
+
+        cleanupData->takeData();
         delete cleanupData;
-        loadingFailed();
-        return false;
+        return true;
     }
 
 #ifdef Q_OS_WIN
@@ -281,6 +324,9 @@ bool PNGLoader::load(const QString& filePath, DImgLoaderObserver* const observer
             colorModel = DImg::INDEXED;
             break;
     }
+
+    cleanupData->setColorModel(colorModel);
+    cleanupData->setSize(QSize(width, height));
 
     uchar* data  = nullptr;
 

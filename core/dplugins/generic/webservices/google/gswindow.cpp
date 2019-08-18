@@ -310,9 +310,10 @@ void GSWindow::readSettings()
         d->widget->getDimensionSpB()->setEnabled(false);
     }
 
-    d->widget->getPhotoIdCheckBox()->setChecked(grp.readEntry("Write PhotoID", true));
-    d->widget->getDimensionSpB()->setValue(grp.readEntry("Maximum Width",      1600));
-    d->widget->getImgQualitySpB()->setValue(grp.readEntry("Image Quality",     90));
+    d->widget->getOriginalCheckBox()->setChecked(grp.readEntry("Upload Original", false));
+    d->widget->getPhotoIdCheckBox()->setChecked(grp.readEntry("Write PhotoID",    true));
+    d->widget->getDimensionSpB()->setValue(grp.readEntry("Maximum Width",         1600));
+    d->widget->getImgQualitySpB()->setValue(grp.readEntry("Image Quality",        90));
 
     if (d->service == GoogleService::GPhotoExport && d->widget->m_tagsBGrp)
     {
@@ -341,11 +342,12 @@ void GSWindow::writeSettings()
             break;
     }
 
-    grp.writeEntry("Current Album", d->currentAlbumId);
-    grp.writeEntry("Resize",        d->widget->getResizeCheckBox()->isChecked());
-    grp.writeEntry("Write PhotoID", d->widget->getPhotoIdCheckBox()->isChecked());
-    grp.writeEntry("Maximum Width", d->widget->getDimensionSpB()->value());
-    grp.writeEntry("Image Quality", d->widget->getImgQualitySpB()->value());
+    grp.writeEntry("Current Album",   d->currentAlbumId);
+    grp.writeEntry("Resize",          d->widget->getResizeCheckBox()->isChecked());
+    grp.writeEntry("Upload Original", d->widget->getOriginalCheckBox()->isChecked());
+    grp.writeEntry("Write PhotoID",   d->widget->getPhotoIdCheckBox()->isChecked());
+    grp.writeEntry("Maximum Width",   d->widget->getDimensionSpB()->value());
+    grp.writeEntry("Image Quality",   d->widget->getImgQualitySpB()->value());
 
     if (d->service == GoogleService::GPhotoExport && d->widget->m_tagsBGrp)
     {
@@ -670,6 +672,7 @@ void GSWindow::uploadNextPhoto()
             res = d->talker->addPhoto(pathComments.first.toLocalFile(),
                                       info,
                                       d->currentAlbumId,
+                                      d->widget->getOriginalCheckBox()->isChecked(),
                                       d->widget->getResizeCheckBox()->isChecked(),
                                       d->widget->getDimensionSpB()->value(),
                                       d->widget->getImgQualitySpB()->value());
@@ -800,6 +803,7 @@ void GSWindow::uploadNextPhoto()
                     res = d->gphotoTalker->addPhoto(pathComments.first.toLocalFile(),
                                                     info,
                                                     d->currentAlbumId,
+                                                    d->widget->getOriginalCheckBox()->isChecked(),
                                                     d->widget->getResizeCheckBox()->isChecked(),
                                                     d->widget->getDimensionSpB()->value(),
                                                     d->widget->getImgQualitySpB()->value());
