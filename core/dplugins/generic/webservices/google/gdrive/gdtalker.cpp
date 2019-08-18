@@ -207,7 +207,7 @@ void GDTalker::createFolder(const QString& title, const QString& id)
 }
 
 bool GDTalker::addPhoto(const QString& imgPath, const GSPhoto& info,
-                        const QString& id, bool rescale, int maxDim, int imageQuality)
+                        const QString& id, bool original, bool rescale, int maxDim, int imageQuality)
 {
     if (m_reply)
     {
@@ -221,7 +221,7 @@ bool GDTalker::addPhoto(const QString& imgPath, const GSPhoto& info,
 
     QMimeDatabase mimeDB;
 
-    if (mimeDB.mimeTypeForFile(imgPath).name().startsWith(QLatin1String("image/")))
+    if (!original && mimeDB.mimeTypeForFile(imgPath).name().startsWith(QLatin1String("image/")))
     {
         QImage image = PreviewLoadThread::loadHighQualitySynchronously(imgPath).copyQImage();
 
@@ -258,7 +258,7 @@ bool GDTalker::addPhoto(const QString& imgPath, const GSPhoto& info,
     }
 
     GDMPForm form;
-    form.addPair(QUrl::fromLocalFile(imgPath).fileName(), info.description, imgPath, id);
+    form.addPair(QUrl::fromLocalFile(path).fileName(), info.description, path, id);
 
     if (!form.addFile(path))
     {
