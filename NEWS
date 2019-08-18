@@ -167,4 +167,6 @@ BUGFIXES:
 157 ==> 410912 - Improve "Move to album" for keyboard use.
 158 ==> 411011 - Digikam does not display a PNG photo.
 159 ==> 411013 - Export png to google photos or google drive fails.
-160 ==> 
+160 ==> 149874 - Include dcraw version 8.77.
+161 ==> 
+
