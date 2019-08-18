@@ -29,6 +29,7 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QPushButton>
+#include<QGroupBox>
 #include <QIcon>
 #include <QPoint>
 
@@ -77,6 +78,8 @@ public:
     QPoint                  sourcePoint;
     QPoint                  destinationStartPoint;
     QPushButton*            srcButton;
+    QPushButton*            lassoButton;
+    QPushButton*            moveButton;
 };
 
 
@@ -85,6 +88,11 @@ public:
 const QString HealingCloneTool::Private::configGroupName(QLatin1String("Healing Clone Tool"));
 const QString HealingCloneTool::Private::configRadiusAdjustmentEntry(QLatin1String("RadiusAdjustment"));
 const QString HealingCloneTool::Private::configBlurAdjustmentEntry(QLatin1String("BlurAdjustment"));
+// --------------------------------------------------------
+
+const QSize btnSize = QSize(50, 50);
+const QSize iconSize = QSize(30,30);
+
 // --------------------------------------------------------
 
 HealingCloneTool::HealingCloneTool(QObject* const parent)
@@ -127,8 +135,40 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    QLabel* const label3 = new QLabel(i18n("Source:"));
-    d->srcButton         = new QPushButton(i18n("Set Source Point"), d->gboxSettings->plainPage());
+
+    QPixmap pixmap_SRC(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                        QLatin1String("digikam/data/healing_clone_SRC.png")));
+    const QIcon ButtonIcon_SRC(pixmap_SRC);
+    d->srcButton  = new QPushButton();
+    d->srcButton->setFixedSize(btnSize);
+    d->srcButton->setIcon(ButtonIcon_SRC);
+    d->srcButton->setIconSize(iconSize);
+    d->srcButton->setWhatsThis(i18n("Select Source Point"));
+    d->srcButton->setToolTip(i18n("Select Source Point"));
+
+    // --------------------------------------------------------
+
+    QPixmap pixmap_LASSO(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                        QLatin1String("digikam/data/healing_clone_LASSO.png")));
+    const QIcon ButtonIcon_LASSO(pixmap_LASSO);
+    d->lassoButton  = new QPushButton();
+    d->lassoButton->setFixedSize(btnSize);
+    d->lassoButton->setIcon(ButtonIcon_LASSO);
+    d->lassoButton->setIconSize(iconSize);
+    d->lassoButton->setWhatsThis(i18n("LASSO/POLYGON SELECT"));
+    d->lassoButton->setToolTip(i18n("LASSO/POLYGON SELECT"));
+
+    // --------------------------------------------------------
+
+    QPixmap pixmap_MOVE(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                        QLatin1String("digikam/data/healing_clone_MOVE.png")));
+    const QIcon ButtonIcon_MOVE(pixmap_MOVE);
+    d->moveButton  = new QPushButton();
+    d->moveButton->setFixedSize(btnSize);
+    d->moveButton->setIcon(ButtonIcon_MOVE);
+    d->moveButton->setIconSize(iconSize);
+    d->moveButton->setWhatsThis(i18n("Move Image"));
+    d->moveButton->setToolTip(i18n("Move Image"));
 
     // --------------------------------------------------------
 
@@ -141,9 +181,17 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     const int spacing = d->gboxSettings->spacingHint();
 
-    QGridLayout* const grid = new QGridLayout( );
-    grid->addWidget(label3,         1, 0, 1, 2);
-    grid->addWidget(d->srcButton,   2, 0, 1, 2);
+    QGridLayout* const grid = new QGridLayout();
+    // Tool Buttons
+    QGroupBox *iconsGroupBox = new QGroupBox();
+    QHBoxLayout * iconsHBox = new QHBoxLayout();
+    iconsHBox->setSpacing(0);
+    iconsHBox->addWidget(d->srcButton);
+    iconsHBox->addWidget(d->lassoButton);
+    iconsHBox->addWidget(d->moveButton);
+    iconsGroupBox->setLayout(iconsHBox);
+    grid->addWidget(iconsGroupBox);
+    // ---
     grid->addWidget(new DLineWidget(Qt::Horizontal, d->gboxSettings->plainPage()), 3, 0, 1, 2);
     grid->addWidget(label,          4, 0, 1, 2);
     grid->addWidget(d->radiusInput, 5, 0, 1, 2);

@@ -245,12 +245,10 @@ void ImageBrushGuideWidget::  keyReleaseEvent(QKeyEvent *e)
     {
         if(this->currentState == HealingCloneState::SELECT_SOURCE)
         {
-            this->currentState = HealingCloneState::PAINT;
             undoSlotSetSourcePoint();
         }
         else
         {
-            this->currentState = HealingCloneState :: SELECT_SOURCE;
             slotSetSourcePoint();
         }
     }
@@ -277,12 +275,14 @@ void ImageBrushGuideWidget::focusInEvent(QFocusEvent *event)
 void ImageBrushGuideWidget::slotSetSourcePoint()
 {
     srcSet = true;
+    this->currentState = HealingCloneState :: SELECT_SOURCE;
     changeCursorShape(QColor(Qt::red));
 }
 
 void ImageBrushGuideWidget::undoSlotSetSourcePoint()
 {
     srcSet = false;
+    this->currentState = HealingCloneState :: PAINT;
     changeCursorShape(Qt::blue);
 }
 void ImageBrushGuideWidget::changeCursorShape(QColor color)
