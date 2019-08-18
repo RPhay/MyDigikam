@@ -1,0 +1,9 @@
+Add MacOS support:
+    https://stackoverflow.com/questions/5468074/programmatically-changing-desktop-image
+
+Add Windows support:
+    http://amin-ahmadi.com/2015/12/07/how-to-change-desktop-background-image-in-c/
+
+Add non Plasma Linux desktop support:
+    https://stackoverflow.com/questions/1220826/changing-wallpaper-on-linux-programmatically
+    https://github.com/GNOME/gthumb/tree/d644a77a1b2085ce2c947719fb3f9107e068c42c/extensions/desktop_background
