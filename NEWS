@@ -169,4 +169,5 @@ BUGFIXES:
 159 ==> 411013 - Export png to google photos or google drive fails.
 160 ==> 149874 - Include dcraw version 8.77.
 161 ==> 137869 - ImageRotate: ImageMagick exception: ImageMagick: Delegate failed `"dcraw".
-162 ==> 
+162 ==> 338416 - Crash when trying to scan faces, undefined symbol.
+163 ==> 
