@@ -168,6 +168,7 @@ void PanoPreProcessPage::process()
 
     connect(d->mngr->thread(), SIGNAL(stepFinished(DigikamGenericPanoramaPlugin::PanoActionData)),
             this, SLOT(slotPanoAction(DigikamGenericPanoramaPlugin::PanoActionData)));
+
     connect(d->mngr->thread(), SIGNAL(jobCollectionFinished(DigikamGenericPanoramaPlugin::PanoActionData)),
             this, SLOT(slotPanoAction(DigikamGenericPanoramaPlugin::PanoActionData)));
 

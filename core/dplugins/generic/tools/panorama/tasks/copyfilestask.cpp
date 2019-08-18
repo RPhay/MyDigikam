@@ -35,8 +35,7 @@
 
 #include "digikam_debug.h"
 #include "drawdecoder.h"
-
-
+#include "panomanager.h"
 
 namespace DigikamGenericPanoramaPlugin
 {
@@ -212,6 +211,8 @@ void CopyFilesTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
             }
         }
     }
+
+    emit PanoManager::instance()->updateHostApp(finalPanoUrl);
 
     successFlag = true;
     return;
