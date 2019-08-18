@@ -7,3 +7,8 @@ Add Windows support:
 Add non Plasma Linux desktop support:
     https://stackoverflow.com/questions/1220826/changing-wallpaper-on-linux-programmatically
     https://github.com/GNOME/gthumb/tree/d644a77a1b2085ce2c947719fb3f9107e068c42c/extensions/desktop_background
+
+Add wallpaper layout settings support.
+
+Add wallpaper slideshow support:
+    https://bugs.kde.org/show_bug.cgi?id=285888
