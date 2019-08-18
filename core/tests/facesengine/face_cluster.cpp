@@ -302,6 +302,7 @@ int main(int argc, char* argv[])
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
     RecognitionDatabase db;
     db.activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm::DNN);
+    db.setRecognizerThreshold(0.91); // This is sensitive for the performance of face clustering
 
     // Construct test set, data set
 

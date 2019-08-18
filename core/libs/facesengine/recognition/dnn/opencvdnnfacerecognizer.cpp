@@ -33,6 +33,7 @@
 #include "digikam_debug.h"
 #include "dnnfaceextractor.h"
 #include "recognitionpreprocessor.h"
+#include "dbscan.h"
 
 // OpenCV includes
 
@@ -47,44 +48,6 @@ namespace Digikam
 {
 
 float OpenCVDNNFaceRecognizer::m_threshold = 15000.0;
-
-static void cvMatToStdVector(const cv::Mat& mat, std::vector<std::vector<float>>& vec)
-{
-    for(int row = 0; row < mat.rows; ++row)
-    {
-        std::vector<float> vecdata;
-        for(int col = 0; col < mat.cols; ++col)
-        {
-            vecdata.push_back(mat.at<float>(row, col));
-        }
-
-        vec.push_back(vecdata);
-    }
-}
-
-/** This compute cosine distance between 2 vectors with formula:
- *      cos(a) = (v1*v2) / (||v1||*||v2||)
- */
-static double cosineDistance(std::vector<float> v1, std::vector<float> v2)
-{
-    assert(v1.size() == v2.size());
-
-    double scalarProduct = std::inner_product(v1.begin(), v1.end(), v2.begin(), 0.0);
-    double normV1 = sqrt(std::inner_product(v1.begin(), v1.end(), v1.begin(), 0.0));
-    double normV2 = sqrt(std::inner_product(v2.begin(), v2.end(), v2.begin(), 0.0));
-
-    return scalarProduct / normV1*normV2;
-}
-
-struct Q_DECL_HIDDEN Predicate
-{
-    bool operator()(const std::vector<float>& a, const std::vector<float>& b)
-    {
-        float dist = cosineDistance(a, b);
-        qDebug() << "Dist " << dist;
-        return dist > 0.0;
-    }
-};
 
 class Q_DECL_HIDDEN OpenCVDNNFaceRecognizer::Private
 {
@@ -255,7 +218,7 @@ void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images, std::v
 /**
  * k-means opencv
  * Not well clustered
- */
+
     cv::Mat_<float> faceEmbeddings(images.size(), 128), centers(images.size(), 128);
     int row = 0;
 
@@ -297,6 +260,47 @@ void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images, std::v
     std::copy(labels.begin(), labels.end(), clusteredIndices.begin());
 
 //*/
+
+/**
+ * DBSCAN clustering
+ */
+    std::vector<PointCustomized> faceEmbeddings;
+
+    for(const cv::Mat& image: images)
+    {
+        std::vector<float> faceEmbedding;
+        d->m_extractor->getFaceEmbedding(image, faceEmbedding);
+        faceEmbeddings.push_back(PointCustomized(faceEmbedding));
+    }
+
+    DBSCAN dbscan(m_threshold, 3, faceEmbeddings);
+    QTime timer;
+    timer.start();
+    dbscan.run();
+    qDebug() << "time to run dbscan " << timer.elapsed() << " ms";
+    int nClusters = dbscan.getCluster(clusteredIndices);
+
+    std::vector<QStringList> groups(nClusters);
+
+    qDebug() << "N Groups = " << groups.size();
+    qDebug() << "N LAbels = " << clusteredIndices.size();
+
+    for(int i = 0; i < clusteredIndices.size(); i++)
+    {
+        // qDebug() << "Image " << i << " in group " << clusteredIndices[i];
+        groups[clusteredIndices[i]] << dataset[i];
+    }
+
+    for(int i = 0;  i < groups.size(); i++)
+    {
+        qDebug() << "Group " << i;
+        foreach(const QString& image, groups[i])
+        {
+            qDebug() << image;
+        }
+    }
+//*/
+
 }
 
 void OpenCVDNNFaceRecognizer::train(const std::vector<cv::Mat>& images,

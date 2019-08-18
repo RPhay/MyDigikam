@@ -108,6 +108,7 @@ if(ENABLE_FACESENGINE_DNN)
                                       recognition/dnn/opencvdnnfacerecognizer.cpp
                                       recognition/dnn/facerec_dnnborrowed.cpp
                                       recognition/dnn/dnnfaceextractor.cpp
+                                      recognition/dnn/dbscan.cpp
     )
 endif()
 
