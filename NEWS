@@ -173,4 +173,5 @@ BUGFIXES:
 163 ==> 340194 - Symbol lookup error: digikam: undefined symbol.
 164 ==> 343257 - digiKam still crashing on startup with OpenSUSE.
 165 ==> 366740 - Remove extra dependency for KF5 framework.
-166 ==> 
+166 ==> 410973 - Plugin Panorama.
+167 ==> 
