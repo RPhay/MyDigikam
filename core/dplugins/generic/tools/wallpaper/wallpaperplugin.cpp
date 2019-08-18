@@ -112,14 +112,17 @@ void WallpaperPlugin::slotWallpaper()
             QLatin1String("org.kde.PlasmaShell"),
             QLatin1String("evaluateScript"));
 
-        message << QString::fromUtf8(
+        message << QString::fromUtf8
+        (
             "var allDesktops = desktops();"
-            "for (i=0;i<allDesktops.length;i++) {"
+            "for (i=0;i<allDesktops.length;i++)"
+            "{"
                 "d = allDesktops[i];"
                 "d.wallpaperPlugin = \"org.kde.image\";"
-                "d.currentConfigGroup = "
-                    "Array(\"Wallpaper\", \"org.kde.image\", \"General\");"
-                "d.writeConfig(\"Image\", \"%1\")}").arg(images[0].toString());
+                "d.currentConfigGroup = Array(\"Wallpaper\", \"org.kde.image\", \"General\");"
+                "d.writeConfig(\"Image\", \"%1\")"
+            "}"
+        ).arg(images[0].toString());
 
         QDBusMessage reply = QDBusConnection::sessionBus().call(message);
 

@@ -76,7 +76,7 @@ void HuginExecutorTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     if (!panoOutput.exists())
     {
         successFlag = false;
-        errString = getProcessError();
+        errString   = getProcessError();
     }
 
     printDebug(QLatin1String("hugin_executor"));
