@@ -116,7 +116,11 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     d->radiusInput->setDefaultValue(10);
     d->radiusInput->setWhatsThis(i18n("A radius of 0 has no effect, "
                                       "1 and above determine the brush radius "
-                                      "that determines the size of parts copied in the image."));
+                                      "that determines the size of parts copied in the image. \nShortcut :: [ and ]"));
+    d->radiusInput->setToolTip(i18n("A radius of 0 has no effect, "
+                                      "1 and above determine the brush radius "
+                                      "that determines the size of parts copied in the image. \nShortcut :: [ and ]"));
+
     d->previewWidget->setBrushRadius(d->radiusInput->value());
 
     // --------------------------------------------------------
@@ -143,8 +147,8 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     d->srcButton->setFixedSize(btnSize);
     d->srcButton->setIcon(ButtonIcon_SRC);
     d->srcButton->setIconSize(iconSize);
-    d->srcButton->setWhatsThis(i18n("Select Source Point"));
-    d->srcButton->setToolTip(i18n("Select Source Point"));
+    d->srcButton->setWhatsThis(i18n("Select Source Point. \nShortcut :: S"));
+    d->srcButton->setToolTip(i18n("Select Source Point. \nShortcut :: S"));
 
     // --------------------------------------------------------
 
@@ -155,8 +159,8 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     d->lassoButton->setFixedSize(btnSize);
     d->lassoButton->setIcon(ButtonIcon_LASSO);
     d->lassoButton->setIconSize(iconSize);
-    d->lassoButton->setWhatsThis(i18n("LASSO/POLYGON SELECT"));
-    d->lassoButton->setToolTip(i18n("LASSO/POLYGON SELECT"));
+    d->lassoButton->setWhatsThis(i18n("LASSO/POLYGON SELECT. \nShortcut :: L"));
+    d->lassoButton->setToolTip(i18n("LASSO/POLYGON SELECT. \nShortcut :: L"));
 
     // --------------------------------------------------------
 
@@ -167,8 +171,8 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     d->moveButton->setFixedSize(btnSize);
     d->moveButton->setIcon(ButtonIcon_MOVE);
     d->moveButton->setIconSize(iconSize);
-    d->moveButton->setWhatsThis(i18n("Move Image"));
-    d->moveButton->setToolTip(i18n("Move Image"));
+    d->moveButton->setWhatsThis(i18n("Move Image. \nShortcut :: M"));
+    d->moveButton->setToolTip(i18n("Move Image. \nShortcut :: M"));
 
     // --------------------------------------------------------
 
@@ -176,7 +180,8 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     d->zoomInput       = new DIntNumInput();
     d->zoomInput->setRange(10, 300, 10);
     d->zoomInput->setDefaultValue(100);
-    d->zoomInput->setWhatsThis(i18n("Zoom In or Out"));
+    d->zoomInput->setWhatsThis(i18n("Zoom In or Out. \nShortcut :: +/-"));
+    d->zoomInput->setToolTip(i18n("Zoom In or Out. \nShortcut :: +/-"));
     //----------------------------------------------------------
 
     const int spacing = d->gboxSettings->spacingHint();
