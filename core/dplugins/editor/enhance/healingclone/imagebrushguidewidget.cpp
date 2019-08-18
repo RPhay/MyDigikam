@@ -71,17 +71,17 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
 {
 
 
-    if(!isMPressed)
+    if( this->currentState != HealingCloneState::MOVE_IMAGE)
         oldPos = e->globalPos() ;
 
-    if (isMPressed && (e->buttons() & Qt::LeftButton))
+    if ( this->currentState == HealingCloneState::MOVE_IMAGE && (e->buttons() & Qt::LeftButton))
     {
         const QPoint delta = e->globalPos() - oldPos;
         move(x()+delta.x(), y()+delta.y());
         oldPos = e->globalPos();
 
     }
-    else if (isLPressed && (e->buttons() & Qt::LeftButton))
+    else if ( this->currentState == HealingCloneState::LASSO_SELECT && (e->buttons() & Qt::LeftButton))
      {
         QPoint dst = QPoint(e->x(),e->y());
         //qCDebug(DIGIKAM_GENERAL_LOG()) << "Emitting Signal Lasso";
@@ -117,7 +117,7 @@ void ImageBrushGuideWidget::mouseReleaseEvent(QMouseEvent* e)
 
 
     ImageGuideWidget::mouseReleaseEvent(e);
-    if (isMPressed)
+    if (this->currentState == HealingCloneState::MOVE_IMAGE)
     {
         setCursor(Qt::OpenHandCursor);
     }
@@ -145,7 +145,7 @@ void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
      {
          this->amIFocused = true;
      }
-     else if (isMPressed && (e->buttons() & Qt::LeftButton))
+     else if (this->currentState == HealingCloneState::MOVE_IMAGE && (e->buttons() & Qt::LeftButton))
      {
          setCursor(Qt::ClosedHandCursor);
      }
@@ -153,7 +153,7 @@ void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
     {
         ImageGuideWidget::mousePressEvent(e);
     }
-    else if (isLPressed && (e->buttons() & Qt::LeftButton))
+    else if (this->currentState == HealingCloneState::LASSO_SELECT && (e->buttons() & Qt::LeftButton))
      {
 
         QPoint dst = QPoint(e->x(),e->y());
@@ -182,32 +182,29 @@ void ImageBrushGuideWidget :: keyPressEvent(QKeyEvent *e)
     if(e->key() == Qt :: Key_M)
     {
 
-        if(isMPressed)
+        if(this->currentState == HealingCloneState::MOVE_IMAGE)
         {
-            isMPressed = false;
+            this->currentState = HealingCloneState::PAINT;
             changeCursorShape(Qt::blue);
         }
         else
         {
-            isMPressed = true;
-            isSPressed = false;
+            this->currentState = HealingCloneState::MOVE_IMAGE;
             setCursor(Qt::OpenHandCursor);
         }
     }
 
     else if(e->key() == Qt :: Key_L)
     {
-        if(!isLPressed)
+        if(this->currentState != HealingCloneState::LASSO_SELECT)
         {
-            isLPressed = true;
-            isMPressed = false;
-            isSPressed = false;
+            this->currentState = HealingCloneState :: LASSO_SELECT;
             changeCursorShape(Qt::yellow);
             emit signalResetLassoPoint();
             this->resetPixels();
         }
         else {
-            isLPressed = false;
+            this->currentState = HealingCloneState :: PAINT;
             changeCursorShape(Qt::blue);
             emit signalContinuePolygon();
         }
@@ -217,11 +214,15 @@ void ImageBrushGuideWidget :: keyPressEvent(QKeyEvent *e)
     if(e->key() == Qt :: Key_Plus)
     {
         zoomPlus();
+        emit signalResetLassoPoint();
+        emit signalContinuePolygon();
     }
 
     if(e->key() == Qt :: Key_Minus)
     {
         zoomMinus();
+        emit signalResetLassoPoint();
+        emit signalContinuePolygon();
     }
 
     if(e->key() == Qt :: Key_BracketLeft)
@@ -242,15 +243,15 @@ void ImageBrushGuideWidget::  keyReleaseEvent(QKeyEvent *e)
 {
     if(e->key() == Qt :: Key_S)
     {
-        if(isSPressed)
+        if(this->currentState == HealingCloneState::SELECT_SOURCE)
         {
+            this->currentState = HealingCloneState::PAINT;
             undoSlotSetSourcePoint();
         }
         else
         {
+            this->currentState = HealingCloneState :: SELECT_SOURCE;
             slotSetSourcePoint();
-            isMPressed = false;
-            isLPressed = false;
         }
     }
 }
@@ -276,14 +277,12 @@ void ImageBrushGuideWidget::focusInEvent(QFocusEvent *event)
 void ImageBrushGuideWidget::slotSetSourcePoint()
 {
     srcSet = true;
-    isSPressed = true;
     changeCursorShape(QColor(Qt::red));
 }
 
 void ImageBrushGuideWidget::undoSlotSetSourcePoint()
 {
     srcSet = false;
-    isSPressed = false;
     changeCursorShape(Qt::blue);
 }
 void ImageBrushGuideWidget::changeCursorShape(QColor color)

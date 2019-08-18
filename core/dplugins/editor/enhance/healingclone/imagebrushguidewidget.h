@@ -32,14 +32,26 @@
 
 using namespace Digikam;
 
+
+
 namespace DigikamEditorHealingCloneToolPlugin
 {
 
 class ImageBrushGuideWidget : public ImageGuideWidget
 {
     Q_OBJECT
+    Q_ENUMS(HealingCloneState)
 
 public:
+
+    enum   HealingCloneState {
+        SELECT_SOURCE = 0,
+        PAINT =1,
+        LASSO_SELECT=2,
+        MOVE_IMAGE=3
+    };
+
+
 
     /**
      * Using the parent's constructor
@@ -108,9 +120,6 @@ private:
     QPoint src;
     QPoint dst;
     QPoint oldPos;
-    bool isMPressed= false;
-    bool isSPressed = false;
-    bool isLPressed = false;
     double default_w;
     double default_h;
     double float_w;
@@ -119,6 +128,7 @@ private:
     bool amIFocused = false;
     int brushRadius;
     QColor brushColor = QColor(Qt::blue);
+    HealingCloneState currentState = HealingCloneState::PAINT;
 };
 
 } // namespace DigikamEditorHealingCloneToolPlugin
