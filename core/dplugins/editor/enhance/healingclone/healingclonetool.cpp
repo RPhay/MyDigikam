@@ -228,8 +228,17 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     connect(d->zoomInput, SIGNAL(valueChanged(int)),
             this, SLOT(slotZoomPercentChanged(int)));
 
+    connect(d->previewWidget, SIGNAL(signalZoomPercentChanged(int)),
+            this, SLOT(slotChangeZoomInput(int)));
+
     connect(d->srcButton, SIGNAL(clicked(bool)),
             d->previewWidget, SLOT(slotSetSourcePoint()));
+
+    connect(d->moveButton, SIGNAL(clicked(bool)),
+            d->previewWidget, SLOT(slotMoveImage()));
+
+    connect(d->lassoButton, SIGNAL(clicked(bool)),
+            d->previewWidget, SLOT(slotLassoSelect()));
 
     connect(d->previewWidget, SIGNAL(signalClone(QPoint,QPoint)),
             this, SLOT(slotReplace(QPoint,QPoint)));
@@ -324,6 +333,11 @@ void HealingCloneTool::slotRadiusChanged(int r)
 void HealingCloneTool :: slotZoomPercentChanged(int z)
 {
    d->previewWidget->zoomImage(z);
+}
+
+void HealingCloneTool :: slotChangeZoomInput(int z)
+{
+       d->zoomInput->setValue(z);
 }
 
 void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoint& dstPoint, int radius)

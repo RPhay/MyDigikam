@@ -75,6 +75,7 @@ public Q_SLOTS:
     void slotContinuePolygon();
     void slotIncreaseBrushRadius();
     void slotDecreaseBrushRadius();
+    void slotChangeZoomInput(int z);
 
 private:
 

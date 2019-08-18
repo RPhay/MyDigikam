@@ -81,7 +81,7 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
         oldPos = e->globalPos();
 
     }
-    else if ( this->currentState == HealingCloneState::LASSO_SELECT && (e->buttons() & Qt::LeftButton))
+    else if ( this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY && (e->buttons() & Qt::LeftButton))
      {
         QPoint dst = QPoint(e->x(),e->y());
         //qCDebug(DIGIKAM_GENERAL_LOG()) << "Emitting Signal Lasso";
@@ -141,11 +141,16 @@ void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
 
      oldPos = e->globalPos() ;
 
-     if(!this->amIFocused)
+     if(!this->amIFocused && this->currentState == HealingCloneState::PAINT)
+     {
+         this->amIFocused = true;
+         return;
+     }
+     else if(!this->amIFocused)
      {
          this->amIFocused = true;
      }
-     else if (this->currentState == HealingCloneState::MOVE_IMAGE && (e->buttons() & Qt::LeftButton))
+     if (this->currentState == HealingCloneState::MOVE_IMAGE && (e->buttons() & Qt::LeftButton))
      {
          setCursor(Qt::ClosedHandCursor);
      }
@@ -153,7 +158,7 @@ void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
     {
         ImageGuideWidget::mousePressEvent(e);
     }
-    else if (this->currentState == HealingCloneState::LASSO_SELECT && (e->buttons() & Qt::LeftButton))
+    else if (this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY && (e->buttons() & Qt::LeftButton))
      {
 
         QPoint dst = QPoint(e->x(),e->y());
@@ -182,32 +187,12 @@ void ImageBrushGuideWidget :: keyPressEvent(QKeyEvent *e)
     if(e->key() == Qt :: Key_M)
     {
 
-        if(this->currentState == HealingCloneState::MOVE_IMAGE)
-        {
-            this->currentState = HealingCloneState::PAINT;
-            changeCursorShape(Qt::blue);
-        }
-        else
-        {
-            this->currentState = HealingCloneState::MOVE_IMAGE;
-            setCursor(Qt::OpenHandCursor);
-        }
+        slotMoveImage();
     }
 
     else if(e->key() == Qt :: Key_L)
     {
-        if(this->currentState != HealingCloneState::LASSO_SELECT)
-        {
-            this->currentState = HealingCloneState :: LASSO_SELECT;
-            changeCursorShape(Qt::yellow);
-            emit signalResetLassoPoint();
-            this->resetPixels();
-        }
-        else {
-            this->currentState = HealingCloneState :: PAINT;
-            changeCursorShape(Qt::blue);
-            emit signalContinuePolygon();
-        }
+        slotLassoSelect();
     }
 
 
@@ -279,6 +264,46 @@ void ImageBrushGuideWidget::slotSetSourcePoint()
     changeCursorShape(QColor(Qt::red));
 }
 
+void ImageBrushGuideWidget :: slotMoveImage()
+{
+    if(this->currentState == HealingCloneState::MOVE_IMAGE)
+    {
+        this->currentState = HealingCloneState::PAINT;
+        changeCursorShape(Qt::blue);
+    }
+    else
+    {
+        this->currentState = HealingCloneState::MOVE_IMAGE;
+        setCursor(Qt::OpenHandCursor);
+    }
+}
+void ImageBrushGuideWidget :: slotLassoSelect()
+{
+    if(this->currentState != HealingCloneState::LASSO_DRAW_BOUNDARY &&
+            this->currentState != HealingCloneState::LASSO_CLONE)
+    {
+        this->currentState = HealingCloneState :: LASSO_DRAW_BOUNDARY;
+        changeCursorShape(Qt::yellow);
+        emit signalResetLassoPoint();
+        this->resetPixels();
+    }
+    else if(this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY) {
+        this->currentState = HealingCloneState :: LASSO_CLONE;
+        emit signalContinuePolygon();
+        changeCursorShape(Qt::blue);
+
+    }
+    else if(this->currentState == HealingCloneState::LASSO_CLONE)
+    {
+        this->currentState = HealingCloneState::PAINT;
+        emit signalResetLassoPoint();
+        this->resetPixels();
+
+    }
+
+    qCDebug(DIGIKAM_DIMG_LOG())<< "CurrentState " << this->currentState ;
+}
+
 void ImageBrushGuideWidget::undoSlotSetSourcePoint()
 {
     srcSet = false;
@@ -345,9 +370,10 @@ void ImageBrushGuideWidget::zoomPlus()
         setDefaults();
         first_time = false;
     }
-    this->float_h += .1 * this->default_h;
-    this->float_w += .1 * this->default_w;
-    this->resize((int)this->float_w, (int)this->float_h);
+    this->float_h += .01 * this->default_h;
+    this->float_w += .01 * this->default_w;
+    int zoomPercent = ceil((this->float_h/this->default_h) * 100);
+    emit signalZoomPercentChanged(zoomPercent);
 }
 
 void ImageBrushGuideWidget::zoomMinus()
@@ -357,9 +383,10 @@ void ImageBrushGuideWidget::zoomMinus()
         setDefaults();
         first_time = false;
     }
-    this->float_h -= .1 * this->default_h;
-    this->float_w -= .1 * this->default_w;
-    this->resize((int)this->float_w, (int)this->float_h);
+    this->float_h -= .01 * this->default_h;
+    this->float_w -= .01 * this->default_w;
+    int zoomPercent = floor((this->float_h/this->default_h) * 100);
+    emit signalZoomPercentChanged(zoomPercent);
 }
 
 void ImageBrushGuideWidget::resetPixels()

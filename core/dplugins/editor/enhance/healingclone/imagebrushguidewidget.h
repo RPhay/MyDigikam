@@ -45,10 +45,11 @@ class ImageBrushGuideWidget : public ImageGuideWidget
 public:
 
     enum   HealingCloneState {
-        SELECT_SOURCE = 0,
-        PAINT =1,
-        LASSO_SELECT=2,
-        MOVE_IMAGE=3
+        SELECT_SOURCE,
+        PAINT,
+        LASSO_DRAW_BOUNDARY,
+        LASSO_CLONE,
+        MOVE_IMAGE
     };
 
 
@@ -80,6 +81,8 @@ public Q_SLOTS:
      * @brief slotSrcSet toggles the fixing of the brush source center
      */
     void slotSetSourcePoint();
+    void slotMoveImage();
+    void slotLassoSelect();
 
 Q_SIGNALS:
 
@@ -94,6 +97,7 @@ Q_SIGNALS:
     void signalContinuePolygon();
     void signalIncreaseBrushRadius();
     void signalDecreaseBrushRadius();
+    void signalZoomPercentChanged(int z);
 
 protected:
 
