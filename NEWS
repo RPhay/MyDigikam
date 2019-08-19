@@ -175,4 +175,7 @@ BUGFIXES:
 165 ==> 366740 - Remove extra dependency for KF5 framework.
 166 ==> 410973 - Plugin Panorama.
 167 ==> 102275 - No support for mass storage camera.
-168 ==> 
+168 ==> 361033 - Build fails on Slackware Linux.
+169 ==> 269900 - Geolocation no longer compiles.
+170 ==> 200530 - digiKam crashes just after a fresh compile.
+171 ==> 
