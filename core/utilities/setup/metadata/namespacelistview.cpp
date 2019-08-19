@@ -157,8 +157,7 @@ void NamespaceListView::moveItemDown()
         return;
     }
 
-    QModelIndex index = sel.first();
-
+    QModelIndex index         = sel.first();
     QStandardItem* const root = model->invisibleRootItem();
 
     if (index.row() == root->rowCount() - 1)
@@ -166,14 +165,7 @@ void NamespaceListView::moveItemDown()
         return;
     }
 
-    int savedRow                 = index.row();
-    QStandardItem* const item    = root->child(index.row());
-    QStandardItem* const newCopy = item->clone();
-
-
-    root->removeRow(index.row());
-    root->insertRow(savedRow + 1, newCopy);
-
+    root->insertRow(index.row() + 1, root->takeRow(index.row()));
     setCurrentIndex(model->index(index.row() + 1, index.column(), index.parent()));
 
     emit signalItemsChanged();
@@ -196,21 +188,15 @@ void NamespaceListView::moveItemUp()
         return;
     }
 
-    QModelIndex index = sel.first();
+    QModelIndex index         = sel.first();
+    QStandardItem* const root = model->invisibleRootItem();
 
     if (index.row() == 0)
     {
         return;
     }
 
-    QStandardItem* const root    = model->invisibleRootItem();
-    int savedRow                 = index.row();
-    QStandardItem* const item    = root->child(index.row());
-    QStandardItem* const newCopy = item->clone();
-
-    root->removeRow(index.row());
-    root->insertRow(savedRow - 1, newCopy);
-
+    root->insertRow(index.row() - 1, root->takeRow(index.row()));
     setCurrentIndex(model->index(index.row() - 1, index.column(), index.parent()));
 
     emit signalItemsChanged();
