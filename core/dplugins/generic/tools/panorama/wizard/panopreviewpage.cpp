@@ -512,10 +512,10 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
                     if (d->previewBusy)
                     {
                         disconnect(d->mngr->thread(), SIGNAL(stepFinished(DigikamGenericPanoramaPlugin::PanoActionData)),
-                                this, SLOT(slotPanoAction(DigikamGenericPanoramaPlugin::PanoActionData)));
+                                   this, SLOT(slotPanoAction(DigikamGenericPanoramaPlugin::PanoActionData)));
 
                         disconnect(d->mngr->thread(), SIGNAL(jobCollectionFinished(DigikamGenericPanoramaPlugin::PanoActionData)),
-                                this, SLOT(slotPanoAction(DigikamGenericPanoramaPlugin::PanoActionData)));
+                                   this, SLOT(slotPanoAction(DigikamGenericPanoramaPlugin::PanoActionData)));
                     }
 
                     d->previewBusy = false;
@@ -625,6 +625,7 @@ void PanoPreviewPage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAct
             case PANO_STITCH:
             case PANO_HUGINEXECUTOR:
             {
+                lock.unlock();
                 d->postProcessing->addEntry(i18nc("Panorama compilation started", "Panorama compilation"), DHistoryView::StartingEntry);
                 break;
             }

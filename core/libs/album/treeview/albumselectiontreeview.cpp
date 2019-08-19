@@ -189,10 +189,10 @@ AlbumSelectionTreeView::AlbumSelectionTreeView(QWidget* const parent, AlbumModel
     setAlbumModel(model);
     d->albumModificationHelper = albumModificationHelper;
     d->toolTip                 = new AlbumViewToolTip(this);
-    d->findDuplAction          = new QAction(QIcon::fromTheme(QLatin1String("tools-wizard")),  i18n("Find Duplicates..."), this);
-    d->scanFacesAction         = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")), i18n("Scan for Faces"),     this);
-    d->resetGroupingAction     = new QAction(QIcon::fromTheme(QLatin1String("edit-group")),    i18n("Reset Grouping"),     this);
-    d->rebuildThumbsAction     = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),  i18n("Refresh"),            this);
+    d->findDuplAction          = new QAction(QIcon::fromTheme(QLatin1String("tools-wizard")),  i18n("Find Duplicates..."),    this);
+    d->scanFacesAction         = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")), i18n("Scan for Faces"),        this);
+    d->resetGroupingAction     = new QAction(QIcon::fromTheme(QLatin1String("edit-group")),    i18n("Reset hidden Grouping"), this);
+    d->rebuildThumbsAction     = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),  i18n("Refresh"),               this);
 
     connect(d->findDuplAction, SIGNAL(triggered()),
             this, SLOT(slotFindDuplicates()));
@@ -275,12 +275,17 @@ void AlbumSelectionTreeView::slotResetGrouping()
         return;
     }
 
-    const QList<qlonglong>& itemIds = CoreDbAccess().db()->getItemIDsInAlbum(album->id());
-
-    foreach (const qlonglong& id, itemIds)
+    foreach (const qlonglong& id, CoreDbAccess().db()->getItemIDsInAlbum(album->id()))
     {
-        CoreDbAccess().db()->removeAllImageRelationsFrom(id, DatabaseRelation::Grouped);
-        CoreDbAccess().db()->removeAllImageRelationsTo(id, DatabaseRelation::Grouped);
+        ItemInfo info(id);
+
+        if (!info.isNull() && info.isGrouped())
+        {
+            if (info.groupImage().albumId() != album->id())
+            {
+                info.removeFromGroup();
+            }
+        }
     }
 }
 

@@ -167,4 +167,12 @@ BUGFIXES:
 157 ==> 410912 - Improve "Move to album" for keyboard use.
 158 ==> 411011 - Digikam does not display a PNG photo.
 159 ==> 411013 - Export png to google photos or google drive fails.
-160 ==> 
+160 ==> 149874 - Include dcraw version 8.77.
+161 ==> 137869 - ImageRotate: ImageMagick exception: ImageMagick: Delegate failed `"dcraw".
+162 ==> 338416 - Crash when trying to scan faces, undefined symbol.
+163 ==> 340194 - Symbol lookup error: digikam: undefined symbol.
+164 ==> 343257 - digiKam still crashing on startup with OpenSUSE.
+165 ==> 366740 - Remove extra dependency for KF5 framework.
+166 ==> 410973 - Plugin Panorama.
+167 ==> 102275 - No support for mass storage camera.
+168 ==> 
