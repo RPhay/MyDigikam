@@ -88,32 +88,6 @@ QModelIndex NamespaceListView::indexVisuallyAt(const QPoint& p)
     return QModelIndex();
 }
 
-//void NamespaceListView::contextMenuEvent(QContextMenuEvent* event)
-//{
-//    Q_UNUSED(event);
-
-//    QMenu popmenu(this);
-//    ContextMenuHelper cmhelper(&popmenu);
-
-//    TagList* const tagList = dynamic_cast<TagList*>(parent());
-
-//    if (!tagList)
-//    {
-//        return;
-//    }
-
-//    QAction* const delAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")),
-//                                           i18n("Delete Selected from List"), this);
-//    cmhelper.addAction(delAction, tagList, SLOT(slotDeleteSelected()), false);
-
-//    QModelIndexList sel = selectionModel()->selectedIndexes();
-//
-//    if (sel.size() == 1 && sel.first().row() == 0)
-//        delAction->setDisabled(true);
-
-//    cmhelper.exec(QCursor::pos());
-//}
-
 void NamespaceListView::slotDeleteSelected()
 {
     QModelIndexList sel = selectionModel()->selectedIndexes();
@@ -140,7 +114,7 @@ void NamespaceListView::slotDeleteSelected()
     emit signalItemsChanged();
 }
 
-void NamespaceListView::moveItemDown()
+void NamespaceListView::slotMoveItemDown()
 {
     QModelIndexList sel = selectionModel()->selectedIndexes();
 
@@ -171,7 +145,7 @@ void NamespaceListView::moveItemDown()
     emit signalItemsChanged();
 }
 
-void NamespaceListView::moveItemUp()
+void NamespaceListView::slotMoveItemUp()
 {
     QModelIndexList sel = selectionModel()->selectedIndexes();
 

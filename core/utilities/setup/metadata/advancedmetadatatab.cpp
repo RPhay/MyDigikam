@@ -196,7 +196,6 @@ void AdvancedMetadataTab::slotAddNewNamespace()
 
     item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsDragEnabled | Qt::ItemIsEnabled);
     root->appendRow(item);
-    getCurrentContainer().append(entry);
 
     slotRevertChangesAvailable();
 }
@@ -219,21 +218,9 @@ void AdvancedMetadataTab::slotEditNamespace()
     QStandardItem* const root = d->models.at(getModelIndex())->invisibleRootItem();
     QStandardItem* const item = root->child(d->namespaceView->currentIndex().row());
 
-    getCurrentContainer().replace(d->namespaceView->currentIndex().row(), entry);
     setDataToItem(item, entry);
+
     slotRevertChangesAvailable();
-}
-
-void AdvancedMetadataTab::slotMoveItemDown()
-{
-    d->namespaceView->moveItemDown();
-    updateContainer();
-}
-
-void AdvancedMetadataTab::slotMoveItemUp()
-{
-    d->namespaceView->moveItemUp();
-    updateContainer();
 }
 
 void AdvancedMetadataTab::applySettings()
@@ -264,6 +251,8 @@ void AdvancedMetadataTab::slotRevertChangesAvailable()
         d->revertChanges->setEnabled(true);
         d->changed = true;
     }
+
+    updateContainer();
 }
 
 void AdvancedMetadataTab::connectButtons()
@@ -283,11 +272,11 @@ void AdvancedMetadataTab::connectButtons()
     connect(d->revertChanges, SIGNAL(clicked()),
             this, SLOT(slotRevertChanges()));
 
-    connect(d->moveDownButton, SIGNAL(clicked()),
-            this, SLOT(slotMoveItemDown()));
-
     connect(d->moveUpButton, SIGNAL(clicked()),
-            this, SLOT(slotMoveItemUp()));
+            d->namespaceView, SLOT(slotMoveItemUp()));
+
+    connect(d->moveDownButton, SIGNAL(clicked()),
+            d->namespaceView, SLOT(slotMoveItemDown()));
 }
 
 void AdvancedMetadataTab::setModelData(QStandardItemModel* model,

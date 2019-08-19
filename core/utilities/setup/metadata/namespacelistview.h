@@ -43,9 +43,6 @@ public:
     explicit NamespaceListView(QWidget* const parent = nullptr);
     QModelIndexList mySelectedIndexes();
 
-    void moveItemDown();
-    void moveItemUp();
-
 protected:
 
     /**
@@ -72,6 +69,10 @@ public Q_SLOTS:
      * @brief slotDeleteSelected - delete selected item from Quick Access List
      */
     void slotDeleteSelected();
+
+    void slotMoveItemDown();
+
+    void slotMoveItemUp();
 };
 
 } // namespace Digikam

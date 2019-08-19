@@ -55,8 +55,6 @@ public Q_SLOTS:
     void slotRevertChanges();
     void slotAddNewNamespace();
     void slotEditNamespace();
-    void slotMoveItemDown();
-    void slotMoveItemUp();
 
 private Q_SLOTS:
 
