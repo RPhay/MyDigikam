@@ -55,6 +55,8 @@ public Q_SLOTS:
     void slotRevertChanges();
     void slotAddNewNamespace();
     void slotEditNamespace();
+    void slotMoveItemDown();
+    void slotMoveItemUp();
 
 private Q_SLOTS:
 
@@ -125,6 +127,8 @@ private:
     QList<NamespaceEntry>& getCurrentContainer();
 
     void setModels();
+
+    void updateContainer();
 
     void saveModelData(QStandardItemModel* model, QList<NamespaceEntry>& container);
 
