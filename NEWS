@@ -178,4 +178,9 @@ BUGFIXES:
 168 ==> 361033 - Build fails on Slackware Linux.
 169 ==> 269900 - Geolocation no longer compiles.
 170 ==> 200530 - digiKam crashes just after a fresh compile.
-171 ==> 
+171 ==> 202193 - Wish for more rating options.
+172 ==> 226751 - Rating hangs in view mode.
+173 ==> 234516 - digiKam crash while rating.
+174 ==> 238605 - Crash when moving the mouse over the album view, or list.
+175 ==> 247413 - digiKam crashes randomly.
+176 ==> 
