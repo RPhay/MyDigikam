@@ -58,11 +58,6 @@ namespace DigikamEditorHealingCloneToolPlugin
 
  double ImageBrushGuideWidget::getScaleRatio()
  {
-     if(first_time)
-     {
-         setDefaults();
-         first_time = false;
-     }
 
      return this->width()/this->default_w;
 
@@ -84,7 +79,6 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
     else if ( this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY && (e->buttons() & Qt::LeftButton))
      {
         QPoint dst = QPoint(e->x(),e->y());
-        //qCDebug(DIGIKAM_GENERAL_LOG()) << "Emitting Signal Lasso";
         emit signalLasso(translateItemPosition(dst, false));
      }
     else if ((e->buttons() & Qt::LeftButton) && !srcSet)
@@ -199,15 +193,13 @@ void ImageBrushGuideWidget :: keyPressEvent(QKeyEvent *e)
     if(e->key() == Qt :: Key_Plus)
     {
         zoomPlus();
-        emit signalResetLassoPoint();
-        emit signalContinuePolygon();
+
     }
 
     if(e->key() == Qt :: Key_Minus)
     {
         zoomMinus();
-        emit signalResetLassoPoint();
-        emit signalContinuePolygon();
+
     }
 
     if(e->key() == Qt :: Key_BracketLeft)
@@ -260,21 +252,18 @@ void ImageBrushGuideWidget::focusInEvent(QFocusEvent *event)
 void ImageBrushGuideWidget::slotSetSourcePoint()
 {
     srcSet = true;
-    this->currentState = HealingCloneState :: SELECT_SOURCE;
-    changeCursorShape(QColor(Qt::red));
+    activateState(HealingCloneState::SELECT_SOURCE);
 }
 
 void ImageBrushGuideWidget :: slotMoveImage()
 {
     if(this->currentState == HealingCloneState::MOVE_IMAGE)
     {
-        this->currentState = HealingCloneState::PAINT;
-        changeCursorShape(Qt::blue);
+        activateState(HealingCloneState::PAINT);
     }
     else
     {
-        this->currentState = HealingCloneState::MOVE_IMAGE;
-        setCursor(Qt::OpenHandCursor);
+        activateState(HealingCloneState::MOVE_IMAGE);
     }
 }
 void ImageBrushGuideWidget :: slotLassoSelect()
@@ -282,33 +271,31 @@ void ImageBrushGuideWidget :: slotLassoSelect()
     if(this->currentState != HealingCloneState::LASSO_DRAW_BOUNDARY &&
             this->currentState != HealingCloneState::LASSO_CLONE)
     {
-        this->currentState = HealingCloneState :: LASSO_DRAW_BOUNDARY;
-        changeCursorShape(Qt::yellow);
+        activateState(HealingCloneState::LASSO_DRAW_BOUNDARY);
         emit signalResetLassoPoint();
         this->resetPixels();
     }
     else if(this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY) {
-        this->currentState = HealingCloneState :: LASSO_CLONE;
+
+        activateState(HealingCloneState::LASSO_CLONE);
         emit signalContinuePolygon();
-        changeCursorShape(Qt::blue);
 
     }
     else if(this->currentState == HealingCloneState::LASSO_CLONE)
     {
-        this->currentState = HealingCloneState::PAINT;
+        activateState(HealingCloneState::PAINT);
         emit signalResetLassoPoint();
         this->resetPixels();
 
     }
 
-    qCDebug(DIGIKAM_DIMG_LOG())<< "CurrentState " << this->currentState ;
+
 }
 
 void ImageBrushGuideWidget::undoSlotSetSourcePoint()
 {
     srcSet = false;
-    this->currentState = HealingCloneState :: PAINT;
-    changeCursorShape(Qt::blue);
+    activateState(HealingCloneState::PAINT);
 }
 void ImageBrushGuideWidget::changeCursorShape(QColor color)
 {
@@ -342,15 +329,9 @@ void ImageBrushGuideWidget::setBrushRadius(int value)
 void ImageBrushGuideWidget::zoomImage(int zoomPercent)
 {
 
-    if(first_time)
-    {
-        setDefaults();
-        first_time = false;
-    }
     this->float_h = this->default_h * zoomPercent/100.0;
     this->float_w = this->default_w  * zoomPercent/100.0;
     this->resize((int)this->float_w, (int)this->float_h);
-    qCDebug(DIGIKAM_DPLUGIN_EDITOR_LOG) << "zooom " << zoomPercent << this->float_h << this->float_w;
 
 
 }
@@ -360,16 +341,23 @@ void ImageBrushGuideWidget::resizeEvent(QResizeEvent* e)
 {
     ImageGuideWidget::resizeEvent(e);
     emit signalReclone();
+    emit signalResetLassoPoint();
+    emit signalContinuePolygon();
+    if(this->currentState == HealingCloneState::LASSO_CLONE
+            || this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY)
+    {
+        activateState(HealingCloneState::PAINT);
+    }
+}
 
+void ImageBrushGuideWidget::showEvent( QShowEvent* event ) {
+    ImageGuideWidget::showEvent( event );
+    setDefaults();
 }
 
 void ImageBrushGuideWidget::zoomPlus()
 {
-    if(first_time)
-    {
-        setDefaults();
-        first_time = false;
-    }
+
     this->float_h += .01 * this->default_h;
     this->float_w += .01 * this->default_w;
     int zoomPercent = ceil((this->float_h/this->default_h) * 100);
@@ -378,11 +366,7 @@ void ImageBrushGuideWidget::zoomPlus()
 
 void ImageBrushGuideWidget::zoomMinus()
 {
-    if(first_time)
-    {
-        setDefaults();
-        first_time = false;
-    }
+
     this->float_h -= .01 * this->default_h;
     this->float_w -= .01 * this->default_w;
     int zoomPercent = floor((this->float_h/this->default_h) * 100);
@@ -403,4 +387,29 @@ void ImageBrushGuideWidget::resetPixels()
     emit(signalReclone());
 }
 
+
+void ImageBrushGuideWidget :: activateState(HealingCloneState state)
+{
+    this->currentState = state;
+    if(state == HealingCloneState::PAINT)
+    {
+        changeCursorShape(Qt::blue);
+    }
+    else if(state == HealingCloneState::MOVE_IMAGE)
+    {
+        setCursor(Qt::OpenHandCursor);
+    }
+    else if(state == HealingCloneState::LASSO_DRAW_BOUNDARY)
+    {
+        changeCursorShape(Qt::yellow);
+    }
+    else if(state == HealingCloneState::LASSO_CLONE)
+    {
+        changeCursorShape(Qt::blue);
+    }
+    else if(state == HealingCloneState::SELECT_SOURCE)
+    {
+        changeCursorShape(Qt::red);
+    }
+}
 } // namespace DigikamEditorHealingCloneToolPlugin

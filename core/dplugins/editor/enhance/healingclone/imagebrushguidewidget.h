@@ -113,6 +113,9 @@ protected:
     void undoSlotSetSourcePoint();
     void changeCursorShape(QColor color);
     void updateCursor();
+    void showEvent( QShowEvent* event ) override;
+    void activateState(HealingCloneState state);
+
 
 
 
@@ -128,7 +131,6 @@ private:
     double default_h;
     double float_w;
     double float_h;
-    bool first_time = true;
     bool amIFocused = false;
     int brushRadius;
     QColor brushColor = QColor(Qt::blue);
