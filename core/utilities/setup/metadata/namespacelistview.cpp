@@ -64,7 +64,7 @@ void NamespaceListView::startDrag(Qt::DropActions supportedActions)
 
 QModelIndexList NamespaceListView::mySelectedIndexes()
 {
-    return this->selectedIndexes();
+    return selectedIndexes();
 }
 
 void NamespaceListView::dropEvent(QDropEvent* e)
@@ -88,34 +88,9 @@ QModelIndex NamespaceListView::indexVisuallyAt(const QPoint& p)
     return QModelIndex();
 }
 
-//void NamespaceListView::contextMenuEvent(QContextMenuEvent* event)
-//{
-//    Q_UNUSED(event);
-
-//    QMenu popmenu(this);
-//    ContextMenuHelper cmhelper(&popmenu);
-
-//    TagList* const tagList = dynamic_cast<TagList*>(this->parent());
-
-//    if (!tagList)
-//    {
-//        return;
-//    }
-
-//    QAction* const delAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash")), i18n("Delete Selected from List"),this);
-//    cmhelper.addAction(delAction, tagList, SLOT(slotDeleteSelected()),false);
-
-//    QModelIndexList sel = this->selectionModel()->selectedIndexes();
-//
-//    if (sel.size() == 1 && sel.first().row() == 0)
-//        delAction->setDisabled(true);
-
-//    cmhelper.exec(QCursor::pos());
-//}
-
 void NamespaceListView::slotDeleteSelected()
 {
-    QModelIndexList sel = this->selectionModel()->selectedIndexes();
+    QModelIndexList sel = selectionModel()->selectedIndexes();
 
     if (sel.isEmpty())
     {
@@ -139,46 +114,9 @@ void NamespaceListView::slotDeleteSelected()
     emit signalItemsChanged();
 }
 
-void NamespaceListView::slotMoveItemUp()
-{
-    QModelIndexList sel = this->selectionModel()->selectedIndexes();
-
-    if (sel.isEmpty())
-    {
-        return;
-    }
-
-    QStandardItemModel* const model = dynamic_cast<QStandardItemModel*>(this->model());
-
-    if (!model)
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Error! no model available!";
-        return;
-    }
-
-    QModelIndex index = sel.first();
-
-    if (index.row() == 0)
-    {
-        return;
-    }
-
-    QStandardItem* const root    = model->invisibleRootItem();
-    int savedRow                 = index.row();
-    QStandardItem* const item    = root->child(index.row());
-    QStandardItem* const newCopy = item->clone();
-
-    root->removeRow(index.row());
-    root->insertRow(savedRow - 1, newCopy);
-
-    this->setCurrentIndex(model->index(index.row() - 1, index.column(), index.parent()));
-
-    emit signalItemsChanged();
-}
-
 void NamespaceListView::slotMoveItemDown()
 {
-    QModelIndexList sel = this->selectionModel()->selectedIndexes();
+    QModelIndexList sel = selectionModel()->selectedIndexes();
 
     if (sel.isEmpty())
     {
@@ -193,8 +131,7 @@ void NamespaceListView::slotMoveItemDown()
         return;
     }
 
-    QModelIndex index = sel.first();
-
+    QModelIndex index         = sel.first();
     QStandardItem* const root = model->invisibleRootItem();
 
     if (index.row() == root->rowCount() - 1)
@@ -202,15 +139,39 @@ void NamespaceListView::slotMoveItemDown()
         return;
     }
 
-    int savedRow                 = index.row();
-    QStandardItem* const item    = root->child(index.row());
-    QStandardItem* const newCopy = item->clone();
+    root->insertRow(index.row() + 1, root->takeRow(index.row()));
+    setCurrentIndex(model->index(index.row() + 1, index.column(), index.parent()));
 
+    emit signalItemsChanged();
+}
 
-    root->removeRow(index.row());
-    root->insertRow(savedRow + 1, newCopy);
+void NamespaceListView::slotMoveItemUp()
+{
+    QModelIndexList sel = selectionModel()->selectedIndexes();
 
-    this->setCurrentIndex(model->index(index.row() + 1, index.column(), index.parent()));
+    if (sel.isEmpty())
+    {
+        return;
+    }
+
+    QStandardItemModel* const model = dynamic_cast<QStandardItemModel*>(this->model());
+
+    if (!model)
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Error! no model available!";
+        return;
+    }
+
+    QModelIndex index         = sel.first();
+    QStandardItem* const root = model->invisibleRootItem();
+
+    if (index.row() == 0)
+    {
+        return;
+    }
+
+    root->insertRow(index.row() - 1, root->takeRow(index.row()));
+    setCurrentIndex(model->index(index.row() - 1, index.column(), index.parent()));
 
     emit signalItemsChanged();
 }

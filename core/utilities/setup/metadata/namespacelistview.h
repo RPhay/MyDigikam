@@ -70,9 +70,9 @@ public Q_SLOTS:
      */
     void slotDeleteSelected();
 
-    void slotMoveItemUp();
-
     void slotMoveItemDown();
+
+    void slotMoveItemUp();
 };
 
 } // namespace Digikam

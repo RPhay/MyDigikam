@@ -196,7 +196,6 @@ void AdvancedMetadataTab::slotAddNewNamespace()
 
     item->setFlags(Qt::ItemIsSelectable | Qt::ItemIsDragEnabled | Qt::ItemIsEnabled);
     root->appendRow(item);
-    getCurrentContainer().append(entry);
 
     slotRevertChangesAvailable();
 }
@@ -219,28 +218,14 @@ void AdvancedMetadataTab::slotEditNamespace()
     QStandardItem* const root = d->models.at(getModelIndex())->invisibleRootItem();
     QStandardItem* const item = root->child(d->namespaceView->currentIndex().row());
 
-    getCurrentContainer().replace(d->namespaceView->currentIndex().row(), entry);
     setDataToItem(item, entry);
+
     slotRevertChangesAvailable();
 }
 
 void AdvancedMetadataTab::applySettings()
 {
-    QList<QString> keys = d->container.mappingKeys();
-    int index           = 0;
-
-    foreach(const QString& str, keys)
-    {
-        d->container.getReadMapping(str).clear();
-        saveModelData(d->models.at(index++), d->container.getReadMapping(str));
-    }
-
-    foreach(const QString& str, keys)
-    {
-        d->container.getWriteMapping(str).clear();
-        saveModelData(d->models.at(index++), d->container.getWriteMapping(str));
-    }
-
+    updateContainer();
     DMetadataSettings::instance()->setSettings(d->container);
 }
 
@@ -266,6 +251,8 @@ void AdvancedMetadataTab::slotRevertChangesAvailable()
         d->revertChanges->setEnabled(true);
         d->changed = true;
     }
+
+    updateContainer();
 }
 
 void AdvancedMetadataTab::connectButtons()
@@ -479,6 +466,24 @@ void AdvancedMetadataTab::setModels()
     }
 
     slotIndexChanged();
+}
+
+void AdvancedMetadataTab::updateContainer()
+{
+    QList<QString> keys = d->container.mappingKeys();
+    int index           = 0;
+
+    foreach(const QString& str, keys)
+    {
+        d->container.getReadMapping(str).clear();
+        saveModelData(d->models.at(index++), d->container.getReadMapping(str));
+    }
+
+    foreach(const QString& str, keys)
+    {
+        d->container.getWriteMapping(str).clear();
+        saveModelData(d->models.at(index++), d->container.getWriteMapping(str));
+    }
 }
 
 void AdvancedMetadataTab::saveModelData(QStandardItemModel* model,
