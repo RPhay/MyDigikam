@@ -360,7 +360,7 @@ void PanoActionThread::compileProject(QSharedPointer<const PTOType> basePtoData,
                 this, SLOT(slotStarting(ThreadWeaver::JobPointer)));
 
         connect(huginExecutorTask, SIGNAL(done(ThreadWeaver::JobPointer)),
-                this, SLOT(slotDone(ThreadWeaver::JobPointer)));
+                this, SLOT(slotStepDone(ThreadWeaver::JobPointer)));
 
         (*jobs) << huginExecutorTask;
     }

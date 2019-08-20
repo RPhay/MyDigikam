@@ -126,6 +126,8 @@ private:
 
     void setModels();
 
+    void updateContainer();
+
     void saveModelData(QStandardItemModel* model, QList<NamespaceEntry>& container);
 
 private:

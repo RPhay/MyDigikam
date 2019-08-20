@@ -35,8 +35,7 @@
 
 #include "digikam_debug.h"
 #include "drawdecoder.h"
-
-
+#include "panomanager.h"
 
 namespace DigikamGenericPanoramaPlugin
 {
@@ -107,7 +106,7 @@ void CopyFilesTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 
     double lat, lng, alt;
 
-    for (PanoramaItemUrlsMap::const_iterator i = urlList->constBegin(); i != urlList->constEnd(); ++i)
+    for (PanoramaItemUrlsMap::const_iterator i = urlList->constBegin() ; i != urlList->constEnd() ; ++i)
     {
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << i.key();
 
@@ -141,7 +140,7 @@ void CopyFilesTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 
     QString filesList;
 
-    for (PanoramaItemUrlsMap::const_iterator i = urlList->constBegin(); i != urlList->constEnd(); ++i)
+    for (PanoramaItemUrlsMap::const_iterator i = urlList->constBegin() ; i != urlList->constEnd() ; ++i)
         filesList.append(i.key().fileName() + QLatin1String(" ; "));
 
     filesList.truncate(filesList.length()-3);
@@ -187,13 +186,13 @@ void CopyFilesTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Copying converted RAW files...";
 
-        for (PanoramaItemUrlsMap::const_iterator i = urlList->constBegin(); i != urlList->constEnd(); ++i)
+        for (PanoramaItemUrlsMap::const_iterator i = urlList->constBegin() ; i != urlList->constEnd() ; ++i)
         {
             if (DRawDecoder::isRawFile(i.key()))
             {
                 QUrl finalImgUrl = finalPanoUrl.adjusted(QUrl::RemoveFilename);
                 finalImgUrl.setPath(finalImgUrl.path() + i->preprocessedUrl.fileName());
-                QFile finalImgFile(finalImgUrl.toString(QUrl::PreferLocalFile));
+                QFile finalImgFile(finalImgUrl.toLocalFile());
                 QFile imgFile(i->preprocessedUrl.toLocalFile());
 
                 if (finalImgFile.exists())
@@ -212,6 +211,8 @@ void CopyFilesTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
             }
         }
     }
+
+    emit PanoManager::instance()->updateHostApp(finalPanoUrl);
 
     successFlag = true;
     return;
