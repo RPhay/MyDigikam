@@ -183,4 +183,6 @@ BUGFIXES:
 173 ==> 234516 - digiKam crash while rating.
 174 ==> 238605 - Crash when moving the mouse over the album view, or list.
 175 ==> 247413 - digiKam crashes randomly.
-176 ==> 
+176 ==> 237104 - Very slow commit after tag change only in digiKam image editor.
+177 ==> 358590 - digiKam crashes after appling color label.
+178 ==> 
