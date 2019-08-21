@@ -43,15 +43,19 @@ void ItemLister::listTag(ItemListerReceiver* const receiver,
         parameters.insert(QLatin1String(":tagPID"), *it);
         parameters.insert(QLatin1String(":tagID"),  *it);
 
-        CoreDbAccess access;
+        {
+            CoreDbAccess access;
 
-        if (d->recursive)
-        {
-            access.backend()->execDBAction(access.backend()->getDBAction(QLatin1String("listTagRecursive")), parameters, &values);
-        }
-        else
-        {
-            access.backend()->execDBAction(access.backend()->getDBAction(QLatin1String("listTag")), parameters, &values);
+            if (d->recursive)
+            {
+                access.backend()->execDBAction(access.backend()->getDBAction(QLatin1String("listTagRecursive")),
+                                                                             parameters, &values);
+            }
+            else
+            {
+                access.backend()->execDBAction(access.backend()->getDBAction(QLatin1String("listTag")),
+                                                                             parameters, &values);
+            }
         }
 
         QSet<int> albumRoots = albumRootsToList();

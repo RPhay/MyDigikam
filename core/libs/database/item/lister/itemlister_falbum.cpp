@@ -33,16 +33,18 @@ void ItemLister::listFaces(ItemListerReceiver* const receiver, int personId)
 {
     QList<qlonglong> list;
     QList<QVariant>  values;
-    CoreDbAccess     access;
 
-    access.backend()->execSql(QString::fromUtf8("SELECT Images.id "
-                                                " FROM Images "
-                                                "       LEFT JOIN ImageInformation ON Images.id=ImageInformation.imageid "
-                                                "       INNER JOIN Albums ON Albums.id=")+
-                              QString::number(personId)+
-                              QString::fromUtf8(" WHERE Images.status=1 "
-                                                " ORDER BY Albums.id;"),
-                              &values);
+    {
+        CoreDbAccess access;
+        access.backend()->execSql(QString::fromUtf8("SELECT Images.id "
+                                          " FROM Images "
+                                          "       LEFT JOIN ImageInformation ON Images.id=ImageInformation.imageid "
+                                          "       INNER JOIN Albums ON Albums.id=") +
+                                          QString::number(personId) +
+                                          QString::fromUtf8(" WHERE Images.status=1 "
+                                          " ORDER BY Albums.id;"),
+                                  &values);
+    }
 
     QListIterator<QVariant> it(values);
 
