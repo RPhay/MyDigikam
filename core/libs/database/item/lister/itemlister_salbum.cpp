@@ -386,21 +386,21 @@ void ItemLister::listAreaRange(ItemListerReceiver* const receiver,
 
     qCDebug(DIGIKAM_DATABASE_LOG) << "Listing area" << lat1 << lat2 << lon1 << lon2;
 
-    CoreDbAccess access;
-
-    access.backend()->execSql(QString::fromUtf8("SELECT DISTINCT Images.id, "
-                                      "       Albums.albumRoot, ImageInformation.rating, ImageInformation.creationDate, "
-                                      "       ImagePositions.latitudeNumber, ImagePositions.longitudeNumber "
-                                      " FROM Images "
-                                      "       LEFT JOIN ImageInformation ON Images.id=ImageInformation.imageid "
-                                      "       INNER JOIN Albums ON Albums.id=Images.album "
-                                      "       INNER JOIN ImagePositions   ON Images.id=ImagePositions.imageid "
-                                      " WHERE Images.status=1 "
-                                      "   AND (ImagePositions.latitudeNumber>? AND ImagePositions.latitudeNumber<?) "
-                                      "   AND (ImagePositions.longitudeNumber>? AND ImagePositions.longitudeNumber<?);"),
-                              boundValues,
-                              &values);
-
+    {
+        CoreDbAccess access;
+        access.backend()->execSql(QString::fromUtf8("SELECT DISTINCT Images.id, "
+                                          "       Albums.albumRoot, ImageInformation.rating, ImageInformation.creationDate, "
+                                          "       ImagePositions.latitudeNumber, ImagePositions.longitudeNumber "
+                                          " FROM Images "
+                                          "       LEFT JOIN ImageInformation ON Images.id=ImageInformation.imageid "
+                                          "       INNER JOIN Albums ON Albums.id=Images.album "
+                                          "       INNER JOIN ImagePositions   ON Images.id=ImagePositions.imageid "
+                                          " WHERE Images.status=1 "
+                                          "   AND (ImagePositions.latitudeNumber>? AND ImagePositions.latitudeNumber<?) "
+                                          "   AND (ImagePositions.longitudeNumber>? AND ImagePositions.longitudeNumber<?);"),
+                                  boundValues,
+                                  &values);
+    }
 
     qCDebug(DIGIKAM_DATABASE_LOG) << "Results:" << values.size() / 14;
 
@@ -431,7 +431,7 @@ void ItemLister::listAreaRange(ItemListerReceiver* const receiver,
             continue;
         }
 
-        record.extraValues       << lat << lon;
+        record.extraValues << lat << lon;
 
         receiver->receive(record);
     }
