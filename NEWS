@@ -188,4 +188,5 @@ BUGFIXES:
 178 ==> 402922 - Spell check.
 179 ==> 384059 - Album > Reread metadata from images does not work correctly.
 180 ==> 146934 - Too many steps for continuous commenting.
-181 ==> 
+181 ==> 411146 - Git master doesn't compile moc_advancedrenameprocessdialog.cpp.
+182 ==> 
