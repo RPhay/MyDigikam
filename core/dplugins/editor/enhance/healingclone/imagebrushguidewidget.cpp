@@ -390,6 +390,12 @@ void ImageBrushGuideWidget::resetPixels()
 
 void ImageBrushGuideWidget :: activateState(HealingCloneState state)
 {
+
+    if(this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY &&
+            state != HealingCloneState::LASSO_CLONE)
+    {
+        emit signalContinuePolygon();
+    }
     this->currentState = state;
     if(state == HealingCloneState::PAINT)
     {
@@ -405,7 +411,7 @@ void ImageBrushGuideWidget :: activateState(HealingCloneState state)
     }
     else if(state == HealingCloneState::LASSO_CLONE)
     {
-        changeCursorShape(Qt::blue);
+        changeCursorShape(Qt::white);
     }
     else if(state == HealingCloneState::SELECT_SOURCE)
     {
