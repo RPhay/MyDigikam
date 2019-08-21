@@ -133,8 +133,8 @@ private:
     double float_h;
     bool amIFocused = false;
     int brushRadius;
-    QColor brushColor = QColor(Qt::blue);
-    HealingCloneState currentState = HealingCloneState::PAINT;
+    QColor brushColor = QColor(Qt::red);
+    HealingCloneState currentState = HealingCloneState::SELECT_SOURCE;
 };
 
 } // namespace DigikamEditorHealingCloneToolPlugin

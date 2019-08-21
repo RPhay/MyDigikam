@@ -353,6 +353,7 @@ void ImageBrushGuideWidget::resizeEvent(QResizeEvent* e)
 void ImageBrushGuideWidget::showEvent( QShowEvent* event ) {
     ImageGuideWidget::showEvent( event );
     setDefaults();
+    activateState(HealingCloneState::SELECT_SOURCE);
 }
 
 void ImageBrushGuideWidget::zoomPlus()
@@ -411,7 +412,7 @@ void ImageBrushGuideWidget :: activateState(HealingCloneState state)
     }
     else if(state == HealingCloneState::LASSO_CLONE)
     {
-        changeCursorShape(Qt::white);
+        changeCursorShape(Qt::blue);
     }
     else if(state == HealingCloneState::SELECT_SOURCE)
     {
