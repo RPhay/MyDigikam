@@ -31,6 +31,7 @@
 // KDE includes
 #include <klocalizedstring.h>
 
+
 namespace DigikamEditorHealingCloneToolPlugin
 {
 
@@ -407,6 +408,10 @@ void ImageBrushGuideWidget::changeCursorShape(QColor color)
     setCursor(QCursor(pix));
 }
 
+void ImageBrushGuideWidget::changeCursorShape(QPixmap pixMap, float x = 0.5 , float y = 0.5)
+{
+ setCursor(QCursor(pixMap,x * pixMap.width(),y *pixMap.height()));
+}
 void ImageBrushGuideWidget :: updateCursor()
 {
     changeCursorShape(this->brushColor);
@@ -508,7 +513,9 @@ void ImageBrushGuideWidget :: activateState(HealingCloneState state)
     }
     else if(state == HealingCloneState::LASSO_DRAW_BOUNDARY)
     {
-        changeCursorShape(Qt::yellow);
+        QPixmap pix = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                     QLatin1String("digikam/data/healing_clone_LASSO_PEN.png")));
+        changeCursorShape(pix,0,1);
     }
     else if(state == HealingCloneState::LASSO_CLONE)
     {
@@ -516,7 +523,9 @@ void ImageBrushGuideWidget :: activateState(HealingCloneState state)
     }
     else if(state == HealingCloneState::SELECT_SOURCE)
     {
-        changeCursorShape(Qt::red);
+        QPixmap pix = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                     QLatin1String("digikam/data/healing_clone_SRC.png")));
+        changeCursorShape(pix,0.5,0.5);
     }
 }
 

@@ -639,15 +639,12 @@ void HealingCloneTool :: initializeLassoFlags()
 
 void HealingCloneTool::slotPushToUndoStack()
 {
-    qCDebug(DIGIKAM_DIMG_LOG()) << " received in slot push to stack";
     this->redoStack = std::stack<std::vector<CloneInfo>>();
     this->undoStack.push((this->CloneInfoVector));
-    qCDebug(DIGIKAM_DIMG_LOG()) << "REDO :: " << this->redoStack.size() <<"UNDO ::" << this->undoStack.size();
 }
 
 void HealingCloneTool:: slotUndoClone()
 {
-    qCDebug(DIGIKAM_DIMG_LOG()) << "Beginning of UndoClone -- REDO :: " << this->redoStack.size() <<"UNDO ::" << this->undoStack.size();
 
     if(this->undoStack.empty())
         return;
@@ -658,13 +655,12 @@ void HealingCloneTool:: slotUndoClone()
     this->CloneInfoVector = this->undoStack.top();
     this->recloneFromVector(this->CloneInfoVector);
     this->undoStack.pop();
-    qCDebug(DIGIKAM_DIMG_LOG()) << "END of UndoClone -- REDO :: " << this->redoStack.size() <<"UNDO ::" << this->undoStack.size();
 
 }
 
 void HealingCloneTool:: slotRedoClone()
 {
-    qCDebug(DIGIKAM_DIMG_LOG()) << " Beginning of RedoClone -- REDO :: " << this->redoStack.size() <<"UNDO ::" << this->undoStack.size();
+
     if(this->redoStack.empty())
         return;
     this->undoStack.push(this->CloneInfoVector);
@@ -675,7 +671,6 @@ void HealingCloneTool:: slotRedoClone()
     this->redoStack.pop();
     this->recloneFromVector(this->CloneInfoVector);
 
-    qCDebug(DIGIKAM_DIMG_LOG()) << " END of RedoClone -- REDO :: " << this->redoStack.size() <<"UNDO ::" << this->undoStack.size();
 
 }
 

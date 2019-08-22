@@ -29,6 +29,7 @@
 #include "imageguidewidget.h"
 #include "previewtoolbar.h"
 #include <QPainter>
+#include<QStandardPaths>
 
 using namespace Digikam;
 
@@ -120,6 +121,7 @@ protected:
     bool event(QEvent*) override;
     void undoSlotSetSourcePoint();
     void changeCursorShape(QColor color);
+    void changeCursorShape(QPixmap,float,float);
     void updateCursor();
     void showEvent( QShowEvent* event ) override;
     void activateState(HealingCloneState state);
