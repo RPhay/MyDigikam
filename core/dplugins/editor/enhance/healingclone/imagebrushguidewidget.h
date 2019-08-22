@@ -142,7 +142,7 @@ private:
     double float_w;
     double float_h;
     bool amIFocused = false;
-    bool cloneVectorChanged = false;
+    bool cloneVectorChanged = true;
     int brushRadius;
     QColor brushColor = QColor(Qt::red);
     HealingCloneState currentState = HealingCloneState::SELECT_SOURCE;

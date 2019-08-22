@@ -53,6 +53,7 @@ namespace DigikamEditorHealingCloneToolPlugin
      this->float_h = default_h;
      this->float_w = default_w;
     setFocus();
+    this->resetPixels();
 
  }
 
@@ -443,9 +444,7 @@ void ImageBrushGuideWidget::resizeEvent(QResizeEvent* e)
 
 void ImageBrushGuideWidget::showEvent( QShowEvent* event ) {
     ImageGuideWidget::showEvent( event );
-    setDefaults();
     activateState(HealingCloneState::SELECT_SOURCE);
-    emit signalZoomPercentChanged(100);
 }
 
 void ImageBrushGuideWidget::zoomPlus()

@@ -114,7 +114,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     QLabel* const label  = new QLabel(i18n("Brush Radius:"));
     d->radiusInput       = new DIntNumInput();
-    d->radiusInput->setRange(0, 50, 1);
+    d->radiusInput->setRange(0, 100, 1);
     d->radiusInput->setDefaultValue(10);
     d->radiusInput->setWhatsThis(i18n("A radius of 0 has no effect, "
                                       "1 and above determine the brush radius "
@@ -318,8 +318,6 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
             this, SLOT(slotRedoClone()));
 
 
-
-
 }
 
 HealingCloneTool::~HealingCloneTool()
@@ -334,6 +332,7 @@ void HealingCloneTool::readSettings()
     KConfigGroup group        = config->group(d->configGroupName);
     d->radiusInput->setValue(group.readEntry(d->configRadiusAdjustmentEntry, d->radiusInput->defaultValue()));
     d->blurPercent->setValue(group.readEntry(d->configBlurAdjustmentEntry, d->blurPercent->defaultValue()));
+    d->previewWidget->setDefaults();
 
 }
 
@@ -352,6 +351,7 @@ void HealingCloneTool::finalRendering()
     DImg dest = d->previewWidget->imageIface()->preview();
     FilterAction action(QLatin1String("digikam:healingCloneTool"), 1);
     iface.setOriginal(i18n("healingClone"), action, dest);
+
 }
 
 void HealingCloneTool::slotResetSettings()
@@ -409,6 +409,16 @@ void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoi
             if (rPercent < (radius * radius)) // Check for inside the circle
             {
                 if (srcPoint.x()+i < 0 || srcPoint.x()+i >= (int)img->width()  ||
+                    srcPoint.y()+j < 0 || srcPoint.y()+j >= (int)img->height() )
+                {
+                        ;
+                }
+                else
+                {
+                    ;
+                }
+
+                if (srcPoint.x()+i < 0 || srcPoint.x()+i >= (int)img->width()  ||
                     srcPoint.y()+j < 0 || srcPoint.y()+j >= (int)img->height() ||
                     dstPoint.x()+i < 0 || dstPoint.x()+i >= (int)img->width()  ||
                     dstPoint.y()+j < 0 || dstPoint.y()+j >= (int)img->height())
@@ -450,6 +460,7 @@ void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoi
                 img->setPixelColor(dstPoint.x()+i, dstPoint.y()+j, cSrc);
                 this->CloneInfoVector.push_back({dstPoint.x()+i, dstPoint.y()+j, scaleRatio,cSrc});
                 this->d->previewWidget->setCloneVectorChanged(true);
+
             }
         }
     }
