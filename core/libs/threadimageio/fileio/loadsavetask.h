@@ -57,11 +57,11 @@ public:
     explicit LoadSaveTask(LoadSaveThread* const thread)
         : m_thread(thread)
     {
-    };
+    }
 
     virtual ~LoadSaveTask()
     {
-    };
+    }
 
     virtual void execute() = 0;
     virtual TaskType type() = 0;
@@ -143,6 +143,11 @@ public:
                                LoadSaveThread::AccessMode mode = LoadSaveThread::AccessModeReadWrite,
                                LoadingTaskStatus loadingTaskStatus = LoadingTaskStatusLoading);
 
+    virtual ~SharedLoadingTask()
+    {
+        m_listeners.clear();
+    }
+
     virtual void execute() override;
     virtual void progressInfo(DImg* const img, float progress) override;
     virtual bool continueQuery(DImg* const img) override;
@@ -201,7 +206,7 @@ public:
           m_img(img),
           m_savingTaskStatus(SavingTaskStatusSaving)
     {
-    };
+    }
 
     SavingTaskStatus status() const
     {
