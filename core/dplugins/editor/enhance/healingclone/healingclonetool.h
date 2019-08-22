@@ -130,6 +130,7 @@ private:
     QPolygon lassoPolygon;
     std::vector<std::vector<bool>> lassoFlags;
     std::map<std::pair<int,int>, DColor> lassoColorsMap;
+
 };
 
 } // namespace DigikamEditorHealingCloneToolPlugin

@@ -408,14 +408,15 @@ void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoi
 
             if (rPercent < (radius * radius)) // Check for inside the circle
             {
-                if (srcPoint.x()+i < 0 || srcPoint.x()+i >= (int)img->width()  ||
-                    srcPoint.y()+j < 0 || srcPoint.y()+j >= (int)img->height() )
+                if (srcPoint.x() < 0 || srcPoint.x() >= (int)img->width()  ||
+                    srcPoint.y() < 0 || srcPoint.y() >= (int)img->height() )
                 {
-                        ;
+                    d->previewWidget->setSpotVisibleNoUpdate(false);
+
                 }
                 else
                 {
-                    ;
+                    d->previewWidget->setSpotVisibleNoUpdate(true);
                 }
 
                 if (srcPoint.x()+i < 0 || srcPoint.x()+i >= (int)img->width()  ||

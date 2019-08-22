@@ -84,7 +84,7 @@ public:
     int         previewMode()                  const;
 
     void   setSpotVisible(bool spotVisible, bool blink = false);
-    void setSpotVisibleNoUpdate(bool spotVisible);
+    void   setSpotVisibleNoUpdate(bool spotVisible);
     void   resetSpotPosition();
     void   updatePreview();
     void   setPoints(const QPolygon& p, bool drawLine = false);
