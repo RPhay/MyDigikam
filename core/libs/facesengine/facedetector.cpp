@@ -22,7 +22,7 @@
  * ============================================================ */
 
 // OpenCV includes need to show up before Qt includes
-// #include "opencvfacedetector.h"
+#include "opencvfacedetector.h"
 #include "opencvdnnfacedetector.h"
 
 // Qt includes
@@ -43,19 +43,21 @@ class Q_DECL_HIDDEN FaceDetector::Private : public QSharedData
 public:
 
     explicit Private()
-        : m_backend(nullptr)
+        : m_HaarDetectorbackend(nullptr),
+          m_backend(nullptr)
     {
     }
 
     ~Private()
     {
+        delete m_HaarDetectorbackend;
         delete m_backend;
     }
 
-/*
-    OpenCVFaceDetector* backend()
+
+    OpenCVFaceDetector* haarDetectorBackend()
     {
-        if (!m_backend)
+        if (!m_HaarDetectorbackend)
         {
             QStringList cascadeDirs;
             cascadeDirs << QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("digikam/facesengine"),
@@ -63,18 +65,18 @@ public:
 
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "Try to find OpenCV Haar Cascade files in these directories: " << cascadeDirs;
 
-            m_backend = new OpenCVFaceDetector(cascadeDirs);
+            m_HaarDetectorbackend = new OpenCVFaceDetector(cascadeDirs);
             applyParameters();
         }
 
-        return m_backend;
+        return m_HaarDetectorbackend;
     }
 
-    const OpenCVFaceDetector* constBackend() const
+    const OpenCVFaceDetector* constHaarDetectorBackend() const
     {
-        return m_backend;
+        return m_HaarDetectorbackend;
     }
-*/
+
 
     OpenCVDNNFaceDetector* backend()
     {
@@ -120,11 +122,11 @@ public:
 
 public:
 
-    QVariantMap         m_parameters;
+    QVariantMap            m_parameters;
 
 private:
 
-    // OpenCVFaceDetector* m_backend;
+    OpenCVFaceDetector*    m_HaarDetectorbackend;
     OpenCVDNNFaceDetector* m_backend;
 };
 
@@ -177,8 +179,8 @@ QList<QRectF> FaceDetector::detectFaces(const QImage& image, const QSize& origin
             cvOriginalSize = cv::Size(image.width(), image.height());
         }
 
-        cv::Mat cvImage       = d->backend()->prepareForDetection(image);
-        QList<QRect> absRects = d->backend()->detectFaces(cvImage, cvOriginalSize);
+        cv::Mat cvImage       = d->haarDetectorBackend()->prepareForDetection(image);
+        QList<QRect> absRects = d->haarDetectorBackend()->detectFaces(cvImage, cvOriginalSize);
         result                = toRelativeRects(absRects, QSize(cvImage.cols, cvImage.rows));
 
     }
@@ -216,8 +218,8 @@ QList<QRectF> FaceDetector::detectFaces(const Digikam::DImg& image, const QSize&
             cvOriginalSize = cv::Size(image.width(), image.height());
         }
 
-        cv::Mat cvImage       = d->backend()->prepareForDetection(image);
-        QList<QRect> absRects = d->backend()->detectFaces(cvImage, cvOriginalSize);
+        cv::Mat cvImage       = d->haarDetectorBackend()->prepareForDetection(image);
+        QList<QRect> absRects = d->haarDetectorBackend()->detectFaces(cvImage, cvOriginalSize);
         result                = toRelativeRects(absRects, QSize(cvImage.cols, cvImage.rows));
 
     }
