@@ -25,6 +25,10 @@
 
 #include "dbscan.h"
 
+// C includes
+
+#include <stddef.h>
+
 // C++ includes
 
 #include <limits>
@@ -36,7 +40,7 @@ namespace Digikam
 {
 
 static const int NOT_CLASSIFIED = -1;
-static const int NOISE = -2;
+static const int NOISE          = -2;
 
 // -----------------------------------------------------------------------------------------
 
