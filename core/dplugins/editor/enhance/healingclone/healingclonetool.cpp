@@ -80,6 +80,8 @@ public:
     QPushButton*            srcButton;
     QPushButton*            lassoButton;
     QPushButton*            moveButton;
+    QPushButton*            undoCloneButton;
+    QPushButton*            redoCloneButton;
 };
 
 
@@ -159,8 +161,12 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     d->lassoButton->setFixedSize(btnSize);
     d->lassoButton->setIcon(ButtonIcon_LASSO);
     d->lassoButton->setIconSize(iconSize);
-    d->lassoButton->setWhatsThis(i18n("LASSO/POLYGON SELECT. \nShortcut :: L"));
-    d->lassoButton->setToolTip(i18n("LASSO/POLYGON SELECT. \nShortcut :: L"));
+    d->lassoButton->setWhatsThis(i18n("LASSO/POLYGON SELECT. \nShortcut :: L\n"
+                                      "To Continue polygon, either press L or double click\n"
+                                      "To Cancel, press ESC"));
+    d->lassoButton->setToolTip(i18n("LASSO/POLYGON SELECT. \nShortcut :: L\n"
+                                    "To Continue polygon, either press L or double click\n"
+                                    "To Cancel, press ESC"));
 
     // --------------------------------------------------------
 
@@ -173,6 +179,29 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     d->moveButton->setIconSize(iconSize);
     d->moveButton->setWhatsThis(i18n("Move Image. \nShortcut :: M"));
     d->moveButton->setToolTip(i18n("Move Image. \nShortcut :: M"));
+
+    // --------------------------------------------------------
+
+    QPixmap pixmap_UNDO(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                        QLatin1String("digikam/data/healing_clone_UNDO.png")));
+    const QIcon ButtonIcon_UNDO(pixmap_UNDO);
+    d->undoCloneButton  = new QPushButton();
+    d->undoCloneButton->setFixedSize(btnSize);
+    d->undoCloneButton->setIcon(ButtonIcon_UNDO);
+    d->undoCloneButton->setIconSize(iconSize);
+    d->undoCloneButton->setWhatsThis(i18n("UNDO CLONE. \nShortcut :: CTRL+Z"));
+    d->undoCloneButton->setToolTip(i18n("UNDO CLONE. \nShortcut :: CTRL+Z"));
+
+    // --------------------------------------------------------
+    QPixmap pixmap_REDO(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                        QLatin1String("digikam/data/healing_clone_REDO.png")));
+    const QIcon ButtonIcon_REDO(pixmap_REDO);
+    d->redoCloneButton  = new QPushButton();
+    d->redoCloneButton->setFixedSize(btnSize);
+    d->redoCloneButton->setIcon(ButtonIcon_REDO);
+    d->redoCloneButton->setIconSize(iconSize);
+    d->redoCloneButton->setWhatsThis(i18n("REDO CLONE. \nShortcut :: CTRL+Y"));
+    d->redoCloneButton->setToolTip(i18n("REDO CLONE. \nShortcut :: CTRL+Y"));
 
     // --------------------------------------------------------
 
@@ -194,6 +223,8 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     iconsHBox->addWidget(d->srcButton);
     iconsHBox->addWidget(d->lassoButton);
     iconsHBox->addWidget(d->moveButton);
+    iconsHBox->addWidget(d->undoCloneButton);
+    iconsHBox->addWidget(d->redoCloneButton);
     iconsGroupBox->setLayout(iconsHBox);
     grid->addWidget(iconsGroupBox);
     // ---
@@ -217,7 +248,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    this->CloneInfoVector = new std::vector<CloneInfo>();
+    this->CloneInfoVector = std::vector<CloneInfo>();
     this->lassoColors.push_back(DColor(Qt::red));
     this->lassoColors.push_back(DColor(Qt::white));
     this->lassoColors.push_back(DColor(Qt::black));
@@ -245,6 +276,12 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     connect(d->lassoButton, SIGNAL(clicked(bool)),
             d->previewWidget, SLOT(slotLassoSelect()));
 
+    connect(d->undoCloneButton, SIGNAL(clicked(bool)),
+            this, SLOT(slotUndoClone()));
+
+    connect(d->redoCloneButton, SIGNAL(clicked(bool)),
+            this, SLOT(slotRedoClone()));
+
     connect(d->previewWidget, SIGNAL(signalClone(QPoint,QPoint)),
             this, SLOT(slotReplace(QPoint,QPoint)));
 
@@ -270,13 +307,25 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     connect(d->previewWidget,SIGNAL(signalDecreaseBrushRadius()),
             this, SLOT(slotDecreaseBrushRadius()));
 
+    // undo - redo
+    connect(d->previewWidget,SIGNAL(signalPushToUndoStack()),
+            this, SLOT(slotPushToUndoStack()));
+
+    connect(d->previewWidget,SIGNAL(signalUndoClone()),
+            this, SLOT(slotUndoClone()));
+
+    connect(d->previewWidget,SIGNAL(signalRedoClone()),
+            this, SLOT(slotRedoClone()));
+
+
+
 
 }
 
 HealingCloneTool::~HealingCloneTool()
 {
     delete d;
-    delete this->CloneInfoVector;
+
 }
 
 void HealingCloneTool::readSettings()
@@ -351,7 +400,6 @@ void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoi
     double scaleRatio = d->previewWidget->getScaleRatio();
 
 
-
     for (int i = -1 * radius ; i < radius ; ++i)
     {
         for (int j = -1 * radius ; j < radius ; ++j)
@@ -400,28 +448,27 @@ void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoi
                 cDst.multiply(rP);
                 cSrc.blendAdd(cDst);
                 img->setPixelColor(dstPoint.x()+i, dstPoint.y()+j, cSrc);
-                this->CloneInfoVector->push_back({dstPoint.x()+i, dstPoint.y()+j, scaleRatio,cSrc});
+                this->CloneInfoVector.push_back({dstPoint.x()+i, dstPoint.y()+j, scaleRatio,cSrc});
+                this->d->previewWidget->setCloneVectorChanged(true);
             }
         }
     }
 }
 
-
-void HealingCloneTool :: slotReclone()
+void HealingCloneTool::recloneFromVector(const std::vector<CloneInfo> cloneVec)
 {
-
     double currentScaleRatio = d->previewWidget->getScaleRatio();
 
     ImageIface* const iface = d->previewWidget->imageIface();
     DImg* const img     = iface->previewReference();
 
 
-    for(int q = 0 ; q < CloneInfoVector->size(); q++)
+    for(int q = 0 ; q < cloneVec.size(); q++)
     {
-        int x = (*CloneInfoVector)[q].dstX;
-        int y = (*CloneInfoVector)[q].dstY;
-        double thenScaleRatio = (*CloneInfoVector)[q].scaleRatio;
-        DColor color = (*CloneInfoVector)[q].color;
+        int x = (cloneVec)[q].dstX;
+        int y = (cloneVec)[q].dstY;
+        double thenScaleRatio = (cloneVec)[q].scaleRatio;
+        DColor color = (cloneVec)[q].color;
        double ratioOfRatios = currentScaleRatio/thenScaleRatio;
        int radius = ceil(ratioOfRatios);
        for(int k = 0 ; k < radius ; k++)
@@ -438,6 +485,12 @@ void HealingCloneTool :: slotReclone()
 
     d->previewWidget->updatePreview();
 
+
+}
+
+void HealingCloneTool :: slotReclone()
+{
+    recloneFromVector(this->CloneInfoVector);
 }
 
 void HealingCloneTool :: updateLasso(std::vector<QPoint>& points)
@@ -569,6 +622,49 @@ void HealingCloneTool :: initializeLassoFlags()
             this->lassoFlags.at(i).at(j) = false;
         }
     }
+}
+
+
+void HealingCloneTool::slotPushToUndoStack()
+{
+    qCDebug(DIGIKAM_DIMG_LOG()) << " received in slot push to stack";
+    this->redoStack = std::stack<std::vector<CloneInfo>>();
+    this->undoStack.push((this->CloneInfoVector));
+    qCDebug(DIGIKAM_DIMG_LOG()) << "REDO :: " << this->redoStack.size() <<"UNDO ::" << this->undoStack.size();
+}
+
+void HealingCloneTool:: slotUndoClone()
+{
+    qCDebug(DIGIKAM_DIMG_LOG()) << "Beginning of UndoClone -- REDO :: " << this->redoStack.size() <<"UNDO ::" << this->undoStack.size();
+
+    if(this->undoStack.empty())
+        return;
+    this->redoStack.push(this->CloneInfoVector);
+
+    this->d->previewWidget->resetPixels();
+
+    this->CloneInfoVector = this->undoStack.top();
+    this->recloneFromVector(this->CloneInfoVector);
+    this->undoStack.pop();
+    qCDebug(DIGIKAM_DIMG_LOG()) << "END of UndoClone -- REDO :: " << this->redoStack.size() <<"UNDO ::" << this->undoStack.size();
+
+}
+
+void HealingCloneTool:: slotRedoClone()
+{
+    qCDebug(DIGIKAM_DIMG_LOG()) << " Beginning of RedoClone -- REDO :: " << this->redoStack.size() <<"UNDO ::" << this->undoStack.size();
+    if(this->redoStack.empty())
+        return;
+    this->undoStack.push(this->CloneInfoVector);
+
+    this->d->previewWidget->resetPixels();
+
+    this->CloneInfoVector = this->redoStack.top();
+    this->redoStack.pop();
+    this->recloneFromVector(this->CloneInfoVector);
+
+    qCDebug(DIGIKAM_DIMG_LOG()) << " END of RedoClone -- REDO :: " << this->redoStack.size() <<"UNDO ::" << this->undoStack.size();
+
 }
 
 } // namespace DigikamEditorHealingCloneToolPlugin

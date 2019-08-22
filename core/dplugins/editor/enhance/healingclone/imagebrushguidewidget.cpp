@@ -62,6 +62,70 @@ namespace DigikamEditorHealingCloneToolPlugin
      return this->width()/this->default_w;
 
  }
+
+
+ void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
+ {
+
+      oldPos = e->globalPos() ;
+
+      if(!this->amIFocused && this->currentState == HealingCloneState::PAINT)
+      {
+          this->amIFocused = true;
+          return;
+      }
+      else if(!this->amIFocused)
+      {
+          this->amIFocused = true;
+      }
+
+      if( (this->currentState == HealingCloneState::PAINT || this->currentState == HealingCloneState::LASSO_CLONE))
+      {
+          if(this->cloneVectorChanged)
+          {
+              this->setCloneVectorChanged(false);
+              qCDebug(DIGIKAM_DIMG_LOG()) << "emitting push to stack";
+              emit signalPushToUndoStack();
+          }
+          else {
+              qCDebug(DIGIKAM_DIMG_LOG()) << "clone vec didn't change - not pushing to undo stack";
+          }
+      }
+
+      if (this->currentState == HealingCloneState::MOVE_IMAGE && (e->buttons() & Qt::LeftButton))
+      {
+          setCursor(Qt::ClosedHandCursor);
+      }
+     else if (srcSet)
+     {
+         ImageGuideWidget::mousePressEvent(e);
+     }
+     else if (this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY && (e->buttons() & Qt::LeftButton))
+      {
+
+         QPoint dst = QPoint(e->x(),e->y());
+         emit signalLasso(translateItemPosition(dst, false));
+      }
+     else
+     {
+         if (e->button() == Qt::LeftButton)
+         {
+
+             dst = QPoint(e->x(), e->y());
+
+             QPoint currentSrc = translateItemPosition(src, true);
+             QPoint currentDst = translateItemPosition(dst, false);
+
+             emit signalClone(currentSrc, currentDst);
+
+         }
+
+     }
+
+
+
+
+ }
 void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
 {
 
@@ -95,6 +159,7 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
         setSpotPosition(currentSrc);
 
         emit signalClone(currentSrc, currentDst);
+
     }
 
     if (srcSet)
@@ -128,51 +193,10 @@ void ImageBrushGuideWidget::mouseReleaseEvent(QMouseEvent* e)
         setSpotPosition(p);
 
     }
-}
 
-void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
-{
-
-     oldPos = e->globalPos() ;
-
-     if(!this->amIFocused && this->currentState == HealingCloneState::PAINT)
-     {
-         this->amIFocused = true;
-         return;
-     }
-     else if(!this->amIFocused)
-     {
-         this->amIFocused = true;
-     }
-     if (this->currentState == HealingCloneState::MOVE_IMAGE && (e->buttons() & Qt::LeftButton))
-     {
-         setCursor(Qt::ClosedHandCursor);
-     }
-    else if (srcSet)
-    {
-        ImageGuideWidget::mousePressEvent(e);
-    }
-    else if (this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY && (e->buttons() & Qt::LeftButton))
-     {
-
-        QPoint dst = QPoint(e->x(),e->y());
-        emit signalLasso(translateItemPosition(dst, false));
-     }
-    else
-    {
-        if (e->button() == Qt::LeftButton)
-        {
-            dst = QPoint(e->x(), e->y());
-
-            QPoint currentSrc = translateItemPosition(src, true);
-            QPoint currentDst = translateItemPosition(dst, false);
-
-            emit signalClone(currentSrc, currentDst);
-        }
-
-    }
 
 }
+
 void ImageBrushGuideWidget::mouseDoubleClickEvent(QMouseEvent *event)
 {
     if ( event->button() == Qt::LeftButton )
@@ -219,6 +243,16 @@ void ImageBrushGuideWidget :: keyPressEvent(QKeyEvent *e)
     if(e->key() == Qt :: Key_BracketRight)
     {
         emit signalIncreaseBrushRadius();
+    }
+
+    if(e->matches(QKeySequence::Undo))
+    {
+       emit signalUndoClone();
+    }
+
+    if(e->matches(QKeySequence::Redo))
+    {
+       emit signalRedoClone();
     }
 
     QWidget::keyPressEvent(e);
@@ -314,7 +348,7 @@ void ImageBrushGuideWidget :: slotLassoSelect()
     {
         activateState(HealingCloneState::LASSO_DRAW_BOUNDARY);
         emit signalResetLassoPoint();
-        this->resetPixels();
+        this->resetPixelsAndReclone();
     }
     else if(this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY) {
 
@@ -332,7 +366,7 @@ void ImageBrushGuideWidget :: slotLassoSelect()
     {
         activateState(HealingCloneState::PAINT);
         emit signalResetLassoPoint();
-        this->resetPixels();
+        this->resetPixelsAndReclone();
 
     }
 
@@ -411,6 +445,7 @@ void ImageBrushGuideWidget::showEvent( QShowEvent* event ) {
     ImageGuideWidget::showEvent( event );
     setDefaults();
     activateState(HealingCloneState::SELECT_SOURCE);
+    emit signalZoomPercentChanged(100);
 }
 
 void ImageBrushGuideWidget::zoomPlus()
@@ -431,6 +466,7 @@ void ImageBrushGuideWidget::zoomMinus()
     emit signalZoomPercentChanged(zoomPercent);
 }
 
+
 void ImageBrushGuideWidget::resetPixels()
 {
 
@@ -441,10 +477,14 @@ void ImageBrushGuideWidget::resetPixels()
     // does this resetting for me.
     QResizeEvent event(QSize(w,h),QSize(w,h));
     ImageGuideWidget::resizeEvent(&event);
-
-    emit(signalReclone());
 }
 
+
+void ImageBrushGuideWidget::resetPixelsAndReclone()
+{
+    resetPixels();
+    emit(signalReclone());
+}
 
 void ImageBrushGuideWidget::setIsLassoPointsVectorEmpty(bool isEmpty)
 {
@@ -479,5 +519,10 @@ void ImageBrushGuideWidget :: activateState(HealingCloneState state)
     {
         changeCursorShape(Qt::red);
     }
+}
+
+void ImageBrushGuideWidget::setCloneVectorChanged(bool changed)
+{
+    this->cloneVectorChanged = changed;
 }
 } // namespace DigikamEditorHealingCloneToolPlugin

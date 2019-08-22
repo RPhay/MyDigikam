@@ -64,9 +64,11 @@ public:
     void zoomPlus();
     void zoomMinus();
     double getScaleRatio();
+    void resetPixelsAndReclone();
     void resetPixels();
     void setBrushRadius(int value);
     void setIsLassoPointsVectorEmpty(bool);
+    void setCloneVectorChanged(bool);
 
     explicit ImageBrushGuideWidget(QWidget* const parent = nullptr,
                               bool spotVisible = true,
@@ -99,6 +101,10 @@ Q_SIGNALS:
     void signalIncreaseBrushRadius();
     void signalDecreaseBrushRadius();
     void signalZoomPercentChanged(int z);
+    void signalPushToUndoStack();
+    void signalUndoClone();
+    void signalRedoClone();
+
 protected:
 
     void mouseReleaseEvent(QMouseEvent*);
@@ -123,6 +129,7 @@ protected:
 
 
 
+
 private:
 
     bool   srcSet = true;
@@ -135,6 +142,7 @@ private:
     double float_w;
     double float_h;
     bool amIFocused = false;
+    bool cloneVectorChanged = false;
     int brushRadius;
     QColor brushColor = QColor(Qt::red);
     HealingCloneState currentState = HealingCloneState::SELECT_SOURCE;

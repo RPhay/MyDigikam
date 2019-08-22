@@ -30,6 +30,7 @@
 #include "editortool.h"
 #include "dimg.h"
 #include<vector>
+#include<stack>
 
 using namespace Digikam;
 
@@ -76,8 +77,19 @@ public Q_SLOTS:
     void slotIncreaseBrushRadius();
     void slotDecreaseBrushRadius();
     void slotChangeZoomInput(int z);
+    void slotPushToUndoStack();
+    void slotUndoClone();
+    void slotRedoClone();
+
 
 private:
+    struct CloneInfo
+    {
+      int dstX;
+      int dstY;
+      double scaleRatio;
+      DColor color;
+    };
 
     void readSettings();
     void writeSettings();
@@ -95,6 +107,7 @@ private:
     std::vector<QPoint> interpolate(const QPoint& start,const QPoint& end);
     void updateLasso(std::vector<QPoint>& points);
     void initializeLassoFlags();
+    void recloneFromVector(const std::vector<CloneInfo> CloneInfoVector);
 
 
 
@@ -102,15 +115,12 @@ private:
 private:
 
     class Private;
-    struct CloneInfo
-    {
-      int dstX;
-      int dstY;
-      double scaleRatio;
-      DColor color;
-    };
+
     Private* const d;
-    std::vector<CloneInfo> * CloneInfoVector;
+    std::vector<CloneInfo>  CloneInfoVector;
+    std::stack<std::vector<CloneInfo>> undoStack;
+    std::stack<std::vector<CloneInfo>> redoStack;
+
     std::vector<DColor> lassoColors;
     bool resetLassoPoint = true;
     bool insideLassoOperation = false;
