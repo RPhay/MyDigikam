@@ -66,6 +66,7 @@ public:
     double getScaleRatio();
     void resetPixels();
     void setBrushRadius(int value);
+    void setIsLassoPointsVectorEmpty(bool);
 
     explicit ImageBrushGuideWidget(QWidget* const parent = nullptr,
                               bool spotVisible = true,
@@ -98,7 +99,7 @@ Q_SIGNALS:
     void signalIncreaseBrushRadius();
     void signalDecreaseBrushRadius();
     void signalZoomPercentChanged(int z);
-
+    void signalIsLassoPointsVectorEmpty();
 protected:
 
     void mouseReleaseEvent(QMouseEvent*);
@@ -124,6 +125,7 @@ protected:
 private:
 
     bool   srcSet = true;
+    bool isLassoPointsVectorEmpty = true;
     QPoint src;
     QPoint dst;
     QPoint oldPos;

@@ -277,10 +277,17 @@ void ImageBrushGuideWidget :: slotLassoSelect()
     }
     else if(this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY) {
 
-        activateState(HealingCloneState::LASSO_CLONE);
-        emit signalContinuePolygon();
-
-    }
+        emit signalIsLassoPointsVectorEmpty();
+        if(this->isLassoPointsVectorEmpty)
+        {
+            activateState(HealingCloneState::PAINT);
+        }
+        else
+        {
+            activateState(HealingCloneState::LASSO_CLONE);
+            emit signalContinuePolygon();
+        }
+      }
     else if(this->currentState == HealingCloneState::LASSO_CLONE)
     {
         activateState(HealingCloneState::PAINT);
@@ -389,6 +396,10 @@ void ImageBrushGuideWidget::resetPixels()
 }
 
 
+void ImageBrushGuideWidget::setIsLassoPointsVectorEmpty(bool isEmpty)
+{
+    this->isLassoPointsVectorEmpty = isEmpty;
+}
 void ImageBrushGuideWidget :: activateState(HealingCloneState state)
 {
 
