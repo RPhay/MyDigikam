@@ -99,18 +99,19 @@ Q_SIGNALS:
     void signalIncreaseBrushRadius();
     void signalDecreaseBrushRadius();
     void signalZoomPercentChanged(int z);
-    void signalIsLassoPointsVectorEmpty();
 protected:
 
     void mouseReleaseEvent(QMouseEvent*);
     void mousePressEvent(QMouseEvent*);
     void mouseMoveEvent(QMouseEvent*);
+    void mouseDoubleClickEvent(QMouseEvent*) override;
     void keyPressEvent(QKeyEvent *event) ;
     void keyReleaseEvent(QKeyEvent *event) ;
     void resizeEvent(QResizeEvent *) override;
     void wheelEvent(QWheelEvent *event) override;
     void focusOutEvent(QFocusEvent* event) override;
     void focusInEvent(QFocusEvent * event) override;
+    bool event(QEvent*) override;
     void undoSlotSetSourcePoint();
     void changeCursorShape(QColor color);
     void updateCursor();

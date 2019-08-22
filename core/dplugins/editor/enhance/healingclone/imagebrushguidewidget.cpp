@@ -173,10 +173,19 @@ void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
     }
 
 }
+void ImageBrushGuideWidget::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    if ( event->button() == Qt::LeftButton )
+    {
+        if(this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY)
+        {
+            slotLassoSelect();
+        }
+    }
+}
 
 void ImageBrushGuideWidget :: keyPressEvent(QKeyEvent *e)
 {
-    QWidget::keyPressEvent(e);
 
     if(e->key() == Qt :: Key_M)
     {
@@ -212,10 +221,34 @@ void ImageBrushGuideWidget :: keyPressEvent(QKeyEvent *e)
         emit signalIncreaseBrushRadius();
     }
 
-
+    QWidget::keyPressEvent(e);
 
 }
 
+bool ImageBrushGuideWidget::event(QEvent *event)
+{
+    QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
+        if(keyEvent && keyEvent->key() == Qt::Key_Escape
+                &&
+     this->currentState != HealingCloneState::PAINT)
+        {
+          keyEvent->accept();
+
+          if(this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY)
+          {
+              if(!this->isLassoPointsVectorEmpty)
+                slotLassoSelect();
+              slotLassoSelect();
+          }
+          else if(this->currentState == HealingCloneState::LASSO_CLONE)
+          {
+              slotLassoSelect();
+          }
+
+          return true;
+        }
+        return QWidget::event(event);
+}
 void ImageBrushGuideWidget::  keyReleaseEvent(QKeyEvent *e)
 {
     if(e->key() == Qt :: Key_S)
@@ -259,7 +292,15 @@ void ImageBrushGuideWidget :: slotMoveImage()
 {
     if(this->currentState == HealingCloneState::MOVE_IMAGE)
     {
-        activateState(HealingCloneState::PAINT);
+        if(this->isLassoPointsVectorEmpty)
+        {
+            activateState(HealingCloneState::PAINT);
+        }
+        else
+        {
+            activateState(HealingCloneState::LASSO_CLONE);
+            emit signalContinuePolygon();
+        }
     }
     else
     {
@@ -277,7 +318,6 @@ void ImageBrushGuideWidget :: slotLassoSelect()
     }
     else if(this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY) {
 
-        emit signalIsLassoPointsVectorEmpty();
         if(this->isLassoPointsVectorEmpty)
         {
             activateState(HealingCloneState::PAINT);
@@ -302,7 +342,16 @@ void ImageBrushGuideWidget :: slotLassoSelect()
 void ImageBrushGuideWidget::undoSlotSetSourcePoint()
 {
     srcSet = false;
-    activateState(HealingCloneState::PAINT);
+
+    if(this->isLassoPointsVectorEmpty)
+    {
+        activateState(HealingCloneState::PAINT);
+    }
+    else
+    {
+        activateState(HealingCloneState::LASSO_CLONE);
+        emit signalContinuePolygon();
+    }
 }
 void ImageBrushGuideWidget::changeCursorShape(QColor color)
 {
@@ -356,6 +405,7 @@ void ImageBrushGuideWidget::resizeEvent(QResizeEvent* e)
         activateState(HealingCloneState::PAINT);
     }
 }
+
 
 void ImageBrushGuideWidget::showEvent( QShowEvent* event ) {
     ImageGuideWidget::showEvent( event );

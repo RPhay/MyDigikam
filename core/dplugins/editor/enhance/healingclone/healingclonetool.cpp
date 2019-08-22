@@ -270,9 +270,6 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     connect(d->previewWidget,SIGNAL(signalDecreaseBrushRadius()),
             this, SLOT(slotDecreaseBrushRadius()));
 
-    connect(d->previewWidget,SIGNAL(signalIsLassoPointsVectorEmpty()),
-            this, SLOT(slotIsLassoPointsVectorEmpty()));
-
 
 }
 
@@ -483,8 +480,7 @@ void HealingCloneTool :: slotLasso(const QPoint& dst)
     this->lassoPoints.push_back(dst);
     this->previousLassoPoint = dst;
     this->updateLasso(points);
-
-
+    this->d->previewWidget->setIsLassoPointsVectorEmpty(this->lassoPoints.empty());
 }
 
 std::vector<QPoint> HealingCloneTool :: interpolate(const QPoint& start, const QPoint& end)
@@ -515,6 +511,7 @@ void HealingCloneTool ::slotResetLassoPoint()
     this->lassoPolygon.clear();
     this->lassoColorsMap.clear();
     this->initializeLassoFlags();
+    this->d->previewWidget->setIsLassoPointsVectorEmpty(this->lassoPoints.empty());
 
 }
 
@@ -552,10 +549,7 @@ void HealingCloneTool :: slotDecreaseBrushRadius()
     d->radiusInput->setValue(size-1);
 }
 
-void HealingCloneTool :: slotIsLassoPointsVectorEmpty()
-{
-    this->d->previewWidget->setIsLassoPointsVectorEmpty(this->lassoPoints.empty());
-}
+
 void HealingCloneTool :: initializeLassoFlags()
 {
     ImageIface* const iface = d->previewWidget->imageIface();

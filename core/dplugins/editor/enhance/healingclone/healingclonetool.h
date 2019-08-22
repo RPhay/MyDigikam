@@ -76,7 +76,6 @@ public Q_SLOTS:
     void slotIncreaseBrushRadius();
     void slotDecreaseBrushRadius();
     void slotChangeZoomInput(int z);
-    void slotIsLassoPointsVectorEmpty();
 
 private:
 
