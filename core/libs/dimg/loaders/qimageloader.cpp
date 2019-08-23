@@ -52,7 +52,7 @@ bool QImageLoader::load(const QString& filePath, DImgLoaderObserver* const obser
     blackList << QLatin1String("x-xcf");
 
     QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
-    // qCDebug(DIGIKAM_DIMG_LOG) << "Mime type extensions:" << mimeType.section(QLatin1Char('/'), -1);
+    // qCDebug(DIGIKAM_DIMG_LOG) << "Mime type extension:" << mimeType.section(QLatin1Char('/'), -1);
 
     if (!mimeType.startsWith(QLatin1String("image/")) || blackList.contains(mimeType.section(QLatin1Char('/'), -1)))
     {
@@ -147,7 +147,7 @@ bool QImageLoader::load(const QString& filePath, DImgLoaderObserver* const obser
 
     if (observer)
     {
-        observer->progressInfo(m_image, 1.0);
+        observer->progressInfo(m_image, 1.0F);
     }
 
     imageWidth()  = w;
