@@ -46,7 +46,9 @@ void LoadingTask::execute()
         return;
     }
 
-    DImg img(m_loadingDescription.filePath, this, m_loadingDescription.rawDecodingSettings);
+    DImg img(m_loadingDescription.filePath,
+             dynamic_cast<DImgLoaderObserver*>(this),
+             m_loadingDescription.rawDecodingSettings);
     m_thread->taskHasFinished();
     m_thread->imageLoaded(m_loadingDescription, img);
 }
@@ -161,7 +163,7 @@ void SharedLoadingTask::execute()
                 // Add this task to the list of listeners and
                 // attach this thread to the other thread, wait until loading
                 // has finished.
-                m_usedProcess->addListener(this);
+                m_usedProcess->addListener(dynamic_cast<LoadingProcessListener*>(this));
 
                 // break loop when either the loading has completed, or this task is being stopped
                 while (m_loadingTaskStatus != LoadingTaskStatusStopping &&
@@ -174,7 +176,7 @@ void SharedLoadingTask::execute()
                 // remove listener from process
                 if (m_usedProcess)
                 {
-                    m_usedProcess->removeListener(this);
+                    m_usedProcess->removeListener(dynamic_cast<LoadingProcessListener*>(this));
                 }
 
                 // wake up the process which is waiting until all listeners have removed themselves
@@ -187,14 +189,14 @@ void SharedLoadingTask::execute()
             {
                 // Neither in cache, nor currently loading in different thread.
                 // Load it here and now, add this LoadingProcess to cache list.
-                cache->addLoadingProcess(this);
+                cache->addLoadingProcess(dynamic_cast<LoadingProcess*>(this));
                 // Add this to the list of listeners
-                addListener(this);
+                addListener(dynamic_cast<LoadingProcessListener*>(this));
                 // for use in setStatus
-                m_usedProcess = this;
+                m_usedProcess = dynamic_cast<LoadingProcess*>(this);
                 // Notify other processes that we are now loading this image.
                 // They might be interested - see notifyNewLoadingProcess below
-                cache->notifyNewLoadingProcess(this, m_loadingDescription);
+                cache->notifyNewLoadingProcess(dynamic_cast<LoadingProcess*>(this), m_loadingDescription);
             }
         }
     }
@@ -203,7 +205,9 @@ void SharedLoadingTask::execute()
     {
         // load image
 
-        m_img = DImg(m_loadingDescription.filePath, this, m_loadingDescription.rawDecodingSettings);
+        m_img = DImg(m_loadingDescription.filePath,
+                     dynamic_cast<DImgLoaderObserver*>(this),
+                     m_loadingDescription.rawDecodingSettings);
 
         LoadingCache::CacheLock lock(cache);
 
@@ -215,7 +219,7 @@ void SharedLoadingTask::execute()
         }
 
         // remove this from the list of loading processes in cache
-        cache->removeLoadingProcess(this);
+        cache->removeLoadingProcess(dynamic_cast<LoadingProcess*>(this));
 
         //qCDebug(DIGIKAM_GENERAL_LOG) << "SharedLoadingTask " << this << ": image loaded, " << img.isNull();
         // indicate that loading has finished so that listeners can stop waiting
@@ -239,7 +243,7 @@ void SharedLoadingTask::execute()
         }
 
         // remove myself from list of listeners
-        removeListener(this);
+        removeListener(dynamic_cast<LoadingProcessListener*>(this));
         // wake all listeners waiting on cache condVar, so that they remove themselves
         lock.wakeAll();
 
@@ -295,7 +299,7 @@ bool SharedLoadingTask::needsPostProcessing() const
 void SharedLoadingTask::postProcess()
 {
     // to receive progress info again. Should be safe now, we are alone.
-    addListener(this);
+    addListener(dynamic_cast<LoadingProcessListener*>(this));
 
     // ---- Color management ---- //
 
@@ -306,7 +310,7 @@ void SharedLoadingTask::postProcess()
         case LoadingDescription::ApplyTransform:
         {
             IccTransform trans = m_loadingDescription.postProcessingParameters.transform();
-            trans.apply(m_img, this);
+            trans.apply(m_img, dynamic_cast<DImgLoaderObserver*>(this));
             m_img.setIccProfile(trans.outputProfile());
             break;
         }
@@ -336,7 +340,7 @@ void SharedLoadingTask::postProcess()
         }
     }
 
-    removeListener(this);
+    removeListener(dynamic_cast<LoadingProcessListener*>(this));
 }
 
 void SharedLoadingTask::progressInfo(DImg* const img, float progress)
@@ -382,7 +386,7 @@ void SharedLoadingTask::setStatus(LoadingTaskStatus status)
         if (m_usedProcess)
         {
             // remove this from list of listeners - check in continueQuery() of active thread
-            m_usedProcess->removeListener(this);
+            m_usedProcess->removeListener(dynamic_cast<LoadingProcessListener*>(this));
             // set m_usedProcess to 0, signalling that we have detached already
             m_usedProcess = nullptr;
             // wake all listeners - particularly this - from waiting on cache condvar
@@ -444,7 +448,7 @@ bool SharedLoadingTask::querySendNotifyEvent() const
 
 LoadSaveNotifier* SharedLoadingTask::loadSaveNotifier() const
 {
-    return m_thread;
+    return dynamic_cast<LoadSaveNotifier*>(m_thread);
 }
 
 LoadSaveThread::AccessMode SharedLoadingTask::accessMode()
@@ -457,7 +461,8 @@ LoadSaveThread::AccessMode SharedLoadingTask::accessMode()
 void SavingTask::execute()
 {
     m_thread->imageStartedSaving(m_filePath);
-    bool success = m_img.save(m_filePath, m_format, this);
+    bool success = m_img.save(m_filePath, m_format,
+                              dynamic_cast<DImgLoaderObserver*>(this));
     m_thread->taskHasFinished();
     m_thread->imageSaved(m_filePath, success);
 }
