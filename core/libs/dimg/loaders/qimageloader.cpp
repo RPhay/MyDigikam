@@ -48,11 +48,15 @@ QImageLoader::QImageLoader(DImg* const image)
 
 bool QImageLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
-    QMimeDatabase mimeDB;
+    QStringList blackList;
+    blackList << QLatin1String("x-xcf");
 
-    if (!mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("image/")))
+    QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
+    // qCDebug(DIGIKAM_DIMG_LOG) << "Mime type extensions:" << mimeType.section(QLatin1Char('/'), -1);
+
+    if (!mimeType.startsWith(QLatin1String("image/")) || blackList.contains(mimeType.section(QLatin1Char('/'), -1)))
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "QImageLoader support only the image mime type";
+        qCDebug(DIGIKAM_DIMG_LOG) << "QImageReader blacklisted this mime type:" << mimeType;
         loadingFailed();
         return false;
     }
