@@ -58,7 +58,7 @@ bool QImageLoader::load(const QString& filePath, DImgLoaderObserver* const obser
         mimeType.startsWith(QLatin1String("audio/")) ||
         blackList.contains(mimeType.section(QLatin1Char('/'), -1)))
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "QImageReader blacklisted this mime type:" << mimeType;
+        qCDebug(DIGIKAM_DIMG_LOG) << "Blacklisted from DImg::QImageLoader:" << mimeType;
         loadingFailed();
         return false;
     }
