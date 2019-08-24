@@ -257,8 +257,8 @@ void AlbumSelectionTreeView::slotScanForFaces()
     FaceScanSettings settings;
 
     settings.accuracy               = ApplicationSettings::instance()->getFaceDetectionAccuracy();
-    settings.recognizeAlgorithm     = RecognitionDatabase::RecognizeAlgorithm::LBP;
-    settings.task                   = FaceScanSettings::DetectAndRecognize;
+    settings.recognizeAlgorithm     = RecognitionDatabase::RecognizeAlgorithm::DNN; // Default now change to DNN
+    settings.task                   = FaceScanSettings::Detect;
     settings.alreadyScannedHandling = FaceScanSettings::Rescan;
     settings.albums                 = albums;
 

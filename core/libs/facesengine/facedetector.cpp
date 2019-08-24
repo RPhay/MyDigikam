@@ -82,7 +82,7 @@ public:
     {
         if (!m_backend)
         {
-            m_backend = new OpenCVDNNFaceDetector;
+            m_backend = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
         }
 
         return m_backend;

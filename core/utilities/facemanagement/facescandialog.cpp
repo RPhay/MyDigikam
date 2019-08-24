@@ -196,9 +196,9 @@ void FaceScanDialog::doLoadState()
 
     RecognitionDatabase::RecognizeAlgorithm algo =
             (RecognitionDatabase::RecognizeAlgorithm)group.readEntry(entryName(d->configRecognizeAlgorithm),
-                                                                               (int)RecognitionDatabase::RecognizeAlgorithm::LBP);
+                                                                               (int)RecognitionDatabase::RecognizeAlgorithm::DNN); // Default now change to DNN;
     int index = d->recognizeBox->findData(algo);
-    d->recognizeBox->setCurrentIndex(index == -1 ? (int)RecognitionDatabase::RecognizeAlgorithm::LBP : index);
+    d->recognizeBox->setCurrentIndex(index == -1 ? (int)RecognitionDatabase::RecognizeAlgorithm::DNN : index); // Default now change to DNN
 
     // do not load retrainAllButton state from config, dangerous
 
@@ -327,14 +327,15 @@ void FaceScanDialog::setupUi()
 
     QLabel* const detectionLabel        = new QLabel(i18nc("@label", "Parameters for face detection and Recognition"), parametersTab);
 
-    QLabel* const accuracyLabel         = new QLabel(i18nc("@label Two extremities of a scale", "Fast     -     Accurate"), parametersTab);
+    QLabel* const accuracyLabel         = new QLabel(i18nc("@label Two extremities of a scale", "Sensitivity     -     Specificity"), parametersTab);
     accuracyLabel->setAlignment(Qt::AlignTop | Qt::AlignHCenter);
     d->accuracyInput                    = new DIntNumInput(parametersTab);
-    d->accuracyInput->setDefaultValue(80);
+    d->accuracyInput->setDefaultValue(70);
     d->accuracyInput->setRange(0, 100, 10);
     d->accuracyInput->setToolTip(i18nc("@info:tooltip",
-                                       "Adjust speed versus accuracy: The higher the value, the more accurate the results "
-                                       "will be, but it will take more time."));
+                                       "Adjust sensitivity versus specificity: The higher the value, the more accurately faces will "
+                                       "be recognized, but less faces will be recognized "
+                                       "(only faces that are very similar to pretagged faces are recognized)"));
 
     parametersLayout->addWidget(detectionLabel,   0, 0, 1, 1);
     parametersLayout->addWidget(d->accuracyInput, 1, 0, 1, 1);
@@ -363,13 +364,13 @@ void FaceScanDialog::setupUi()
     // ---- Recognize algorithm ComboBox -----
 
     d->recognizeBox        = new QComboBox;
-    d->recognizeBox->addItem(i18nc("@label:listbox", "Recognize faces using LBP algorithm"),           RecognitionDatabase::RecognizeAlgorithm::LBP);
+    // d->recognizeBox->addItem(i18nc("@label:listbox", "Recognize faces using LBP algorithm"),           RecognitionDatabase::RecognizeAlgorithm::LBP);
     //d->recognizeBox->addItem(i18nc("@label:listbox", "Recognize faces using EigenFaces algorithm"),    RecognitionDatabase::RecognizeAlgorithm::EigenFace);
     //d->recognizeBox->addItem(i18nc("@label:listbox", "Recognize faces using FisherFaces algorithm"),   RecognitionDatabase::RecognizeAlgorithm::FisherFace);
 #ifdef HAVE_FACESENGINE_DNN
     d->recognizeBox->addItem(i18nc("@label:listbox", "Recognize faces using Deep Learning algorithm"), RecognitionDatabase::RecognizeAlgorithm::DNN);
 #endif
-    d->recognizeBox->setCurrentIndex(RecognitionDatabase::RecognizeAlgorithm::LBP);
+    d->recognizeBox->setCurrentIndex(RecognitionDatabase::RecognizeAlgorithm::DNN); // Default now change to DNN
 
     d->retrainAllButton = new QCheckBox(advancedTab);
     d->retrainAllButton->setText(i18nc("@option:check", "Clear and rebuild all training data"));
@@ -401,6 +402,9 @@ void FaceScanDialog::setupConnections()
             d->alreadyScannedBox, SLOT(setEnabled(bool)));
 
     connect(d->detectAndRecognizeButton, SIGNAL(toggled(bool)),
+            d->alreadyScannedBox, SLOT(setEnabled(bool)));
+
+    connect(d->reRecognizeButton, SIGNAL(toggled(bool)),
             d->alreadyScannedBox, SLOT(setEnabled(bool)));
 
     connect(d->retrainAllButton, SIGNAL(toggled(bool)),
@@ -472,7 +476,14 @@ FaceScanSettings FaceScanDialog::settings() const
 
     settings.accuracy               = double(d->accuracyInput->value()) / 100;
 
-    settings.albums << d->albumSelectors->selectedAlbumsAndTags();
+    // TODO: why does the original code append but not assign here???
+    // settings.albums << d->albumSelectors->selectedAlbumsAndTags();
+    settings.albums                 = d->albumSelectors->selectedAlbumsAndTags();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "settings albums";
+    for(int i = 0; i<settings.albums.size(); i++)
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << settings.albums[i]->title();
+    }
 
     settings.useFullCpu             = d->useFullCpuButton->isChecked();
 

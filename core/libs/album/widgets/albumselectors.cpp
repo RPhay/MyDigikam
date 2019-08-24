@@ -33,6 +33,7 @@
 #include <QRadioButton>
 #include <QButtonGroup>
 #include <QIcon>
+#include <QMessageBox>
 
 // KDE includes
 
@@ -277,7 +278,27 @@ AlbumList AlbumSelectors::selectedAlbums() const
 
     if (wholeAlbumsChecked())
     {
-        albums << AlbumManager::instance()->allPAlbums();
+        AlbumList albums = AlbumManager::instance()->allPAlbums();
+        QString albumsTitle;
+
+        for(int i = 0; i < albums.size(); i++)
+        {
+            if(i == albums.size() - 1)
+            {
+                albumsTitle += QString::fromLatin1("%1").arg(albums[i]->title());
+            }
+            else
+            {
+                albumsTitle += QString::fromLatin1("%1, ").arg(albums[i]->title());
+            }
+        }
+
+        if (QMessageBox::question(nullptr, i18n("WARNING"),
+                                  i18n("Scan collections for faces on all tags: \n%1", albumsTitle))
+            == QMessageBox::Yes)
+        {
+            albums << albums;
+        }
     }
     else if (d->albumSelectCB)
     {
@@ -311,7 +332,27 @@ AlbumList AlbumSelectors::selectedTags() const
 
     if (wholeTagsChecked())
     {
-        albums << AlbumManager::instance()->allTAlbums();
+        AlbumList tagAlbums = AlbumManager::instance()->allTAlbums();
+        QString tagAlbumsTitle;
+
+        for(int i = 0; i < tagAlbums.size(); i++)
+        {
+            if(i == tagAlbums.size() - 1)
+            {
+                tagAlbumsTitle += QString::fromLatin1("%1").arg(tagAlbums[i]->title());
+            }
+            else
+            {
+                tagAlbumsTitle += QString::fromLatin1("%1, ").arg(tagAlbums[i]->title());
+            }
+        }
+
+        if (QMessageBox::question(nullptr, i18n("WARNING"),
+                                  i18n("Scan collections for faces on all tags: \n%1", tagAlbumsTitle))
+            == QMessageBox::Yes)
+        {
+            albums << tagAlbums;
+        }
     }
     else if (d->tagSelectCB)
     {

@@ -61,10 +61,10 @@ public:
     explicit FaceScanSettings()
     {
         useFullCpu             = false;
-        accuracy               = 80;
+        accuracy               = 70;
         task                   = Detect;
         alreadyScannedHandling = Skip;
-        recognizeAlgorithm     = RecognitionDatabase::RecognizeAlgorithm::LBP;
+        recognizeAlgorithm     = RecognitionDatabase::RecognizeAlgorithm::DNN; // Default now change to DNN
     }
 
     // processing power
@@ -77,7 +77,7 @@ public:
     AlbumList                               albums;
 
     // image infos to scan
-    ItemInfoList                           infos;
+    ItemInfoList                            infos;
 
     ScanTask                                task;
 
