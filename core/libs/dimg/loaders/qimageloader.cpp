@@ -48,11 +48,17 @@ QImageLoader::QImageLoader(DImg* const image)
 
 bool QImageLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
-    QMimeDatabase mimeDB;
+    QStringList blackList;
+    blackList << QLatin1String("x-xcf");
 
-    if (!mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("image/")))
+    QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
+    // qCDebug(DIGIKAM_DIMG_LOG) << "Mime type extension:" << mimeType.section(QLatin1Char('/'), -1);
+
+    if (mimeType.startsWith(QLatin1String("video/")) ||
+        mimeType.startsWith(QLatin1String("audio/")) ||
+        blackList.contains(mimeType.section(QLatin1Char('/'), -1)))
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "QImageLoader support only the image mime type";
+        qCDebug(DIGIKAM_DIMG_LOG) << "Blacklisted from DImg::QImageLoader:" << mimeType;
         loadingFailed();
         return false;
     }
@@ -143,7 +149,7 @@ bool QImageLoader::load(const QString& filePath, DImgLoaderObserver* const obser
 
     if (observer)
     {
-        observer->progressInfo(m_image, 1.0);
+        observer->progressInfo(m_image, 1.0F);
     }
 
     imageWidth()  = w;
