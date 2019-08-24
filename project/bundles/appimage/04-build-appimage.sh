@@ -316,7 +316,6 @@ libutil.so.1 \
 libuuid.so.1 \
 libX11.so.6 \
 libxcb.so.1 \
-libz.so.1 \
 "
 
 for FILE in $EXCLUDE_FILES ; do
