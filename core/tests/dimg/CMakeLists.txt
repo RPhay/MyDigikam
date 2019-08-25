@@ -175,6 +175,7 @@ if(ImageMagick_Magick++_FOUND)
                           digikamcore
                           Qt5::Core
                           Qt5::Gui
+                          ${ImageMagick_LIBRARIES}
     )
 
 endif()

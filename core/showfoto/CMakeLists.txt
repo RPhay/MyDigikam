@@ -89,6 +89,10 @@ if(KF5NotifyConfig_FOUND)
     target_link_libraries(showfoto PUBLIC KF5::NotifyConfig)
 endif()
 
+if(ImageMagick_Magick++_FOUND)
+    target_link_libraries(showfoto PUBLIC ${ImageMagick_LIBRARIES})
+endif()
+
 if(NOT WIN32)
     # To link under Solaris (see bug #274484)
     target_link_libraries(showfoto PUBLIC ${MATH_LIBRARY})

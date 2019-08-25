@@ -55,4 +55,8 @@ if(KF5KIO_FOUND)
     target_link_libraries(digikam PUBLIC KF5::KIOWidgets)
 endif()
 
+if(ImageMagick_Magick++_FOUND)
+    target_link_libraries(digikam PUBLIC ${ImageMagick_LIBRARIES})
+endif()
+
 install(TARGETS digikam ${INSTALL_TARGETS_DEFAULT_ARGS})
