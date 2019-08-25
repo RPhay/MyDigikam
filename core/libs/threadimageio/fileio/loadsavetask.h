@@ -57,11 +57,11 @@ public:
     explicit LoadSaveTask(LoadSaveThread* const thread)
         : m_thread(thread)
     {
-    };
+    }
 
     virtual ~LoadSaveTask()
     {
-    };
+    }
 
     virtual void execute() = 0;
     virtual TaskType type() = 0;
@@ -127,8 +127,8 @@ public:
 
 protected:
 
-    LoadingDescription m_loadingDescription;
-    LoadingTaskStatus  m_loadingTaskStatus;
+    LoadingDescription          m_loadingDescription;
+    volatile LoadingTaskStatus  m_loadingTaskStatus;
 };
 
 //---------------------------------------------------------------------------------------------------
@@ -171,9 +171,9 @@ public:
 
 protected:
 
-    bool                           m_completed;
+    volatile bool                  m_completed;
     LoadSaveThread::AccessMode     m_accessMode;
-    LoadingProcess*                m_usedProcess;
+    LoadingProcess* volatile       m_usedProcess;
     QList<LoadingProcessListener*> m_listeners;
     DImg                           m_img;
     LoadingDescription             m_resultLoadingDescription;
@@ -201,7 +201,7 @@ public:
           m_img(img),
           m_savingTaskStatus(SavingTaskStatusSaving)
     {
-    };
+    }
 
     SavingTaskStatus status() const
     {

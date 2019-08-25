@@ -124,6 +124,7 @@ QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
 
         if (!d->failedThumbnails.contains(item.collectionPath))
         {
+            d->failedThumbnails << item.collectionPath;
             thumbPath = item.collectionPath;
         }
         else if (!d->failedThumbnails.contains(item.trashPath))
