@@ -93,16 +93,20 @@ target_link_libraries(digikamcore
                       Qt5::Xml
                       Qt5::XmlPatterns
                       Qt5::Widgets
-                      Qt5::Sql
                       Qt5::PrintSupport
+
+                      KF5::XmlGui
+                      KF5::I18n
+
+                      PRIVATE
+
+                      Qt5::Sql
                       Qt5::Concurrent
 
                       KF5::Solid
                       KF5::WindowSystem
                       KF5::ConfigGui
                       KF5::Service
-                      KF5::XmlGui
-                      KF5::I18n
 
                       # Required by CImg which use pthread internally.
 
