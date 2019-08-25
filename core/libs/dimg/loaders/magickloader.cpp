@@ -66,7 +66,8 @@ namespace Digikam
 MagickLoader::MagickLoader(DImg* const image)
     : DImgLoader(image)
 {
-    m_hasAlpha = false;
+    m_hasAlpha   = false;
+    m_sixteenBit = false;
 }
 
 bool MagickLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
@@ -114,9 +115,10 @@ bool MagickLoader::load(const QString& filePath, DImgLoaderObserver* const obser
 
             qCDebug(DIGIKAM_DIMG_LOG) << "IM to DImg      :" << image.columns() << image.rows();
             qCDebug(DIGIKAM_DIMG_LOG) << "IM QuantumRange :" << QuantumRange;
+            qCDebug(DIGIKAM_DIMG_LOG) << "IM Depth        :" << image.depth();
             qCDebug(DIGIKAM_DIMG_LOG) << "IM Format       :" << image.format().c_str();
 
-            int depth             = (QuantumRange >= 16) ? 16 : 8;
+            int depth             = image.depth();
             Blob* const pixelBlob = new Blob;
             image.write(pixelBlob, "BGRA", depth);
             qCDebug(DIGIKAM_DIMG_LOG) << "IM blob size    :" << pixelBlob->length();
@@ -152,6 +154,8 @@ bool MagickLoader::load(const QString& filePath, DImgLoaderObserver* const obser
             m_hasAlpha    = image.alpha();
 #endif
 
+            m_sixteenBit  = (depth == 16);
+
             // We considering that PNG is the most representative format of an image loaded by ImageMagick
             imageSetAttribute(QLatin1String("format"),             QLatin1String("PNG"));
             imageSetAttribute(QLatin1String("originalColorModel"), DImg::RGB);
@@ -178,9 +182,11 @@ bool MagickLoader::load(const QString& filePath, DImgLoaderObserver* const obser
             m_hasAlpha    = image.alpha();
 #endif
 
+            m_sixteenBit  = (image.depth() == 16);
+
             imageSetAttribute(QLatin1String("format"),             QLatin1String("PNG"));
             imageSetAttribute(QLatin1String("originalColorModel"), DImg::RGB);
-            imageSetAttribute(QLatin1String("originalBitDepth"),   (QuantumRange >= 16) ? 16 : 8);
+            imageSetAttribute(QLatin1String("originalBitDepth"),   m_sixteenBit ? 16 : 8);
             imageSetAttribute(QLatin1String("originalSize"),       QSize(image.columns(), image.rows()));
         }
     }
@@ -268,7 +274,7 @@ bool MagickLoader::hasAlpha() const
 
 bool MagickLoader::sixteenBit() const
 {
-    return true;
+    return m_sixteenBit;
 }
 
 bool MagickLoader::isReadOnly() const
