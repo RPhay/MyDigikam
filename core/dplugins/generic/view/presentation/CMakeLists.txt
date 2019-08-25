@@ -10,6 +10,8 @@ if(HAVE_MEDIAPLAYER)
 
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/audio)
 
+    set(QTMEDIA_BACKEND ${QTAV_LIBRARIES})
+
 endif()
 
 if(HAVE_OPENGL)
@@ -98,6 +100,7 @@ if(HAVE_OPENGL)
     DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Presentation
                                SOURCES ${presentationplugin_SRCS}
                                DEPENDS Qt5::OpenGL
+                                       ${QTMEDIA_BACKEND}
                                        ${OPENGL_LIBRARIES}
     )
 
@@ -105,6 +108,8 @@ else()
 
     DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Presentation
                                SOURCES ${presentationplugin_SRCS}
+                               DEPENDS ${QTMEDIA_BACKEND}
+
     )
 
 endif()
