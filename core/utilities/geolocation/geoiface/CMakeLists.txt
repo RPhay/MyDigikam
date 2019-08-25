@@ -101,3 +101,13 @@ endif()
 ecm_create_qm_loader(libgeoiface_SRCS marble_qt)
 
 add_library(geoiface_src OBJECT ${libgeoiface_SRCS})
+
+install(FILES
+            ${CMAKE_CURRENT_SOURCE_DIR}/items/gpsitemcontainer.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/correlator/gpsdatacontainer.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/core/geoifacetypes.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/core/geocoordinates.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/reversegeocoding/rginfo.h
+        DESTINATION
+            ${CMAKE_INSTALL_INCLUDEDIR}/digikam
+)

@@ -56,6 +56,7 @@ include(DigikamTarget.cmake)
 # Headers to install
 
 install(FILES
+            ${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_config.h
             ${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_core_export.h
             ${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_database_export.h
             ${CMAKE_CURRENT_SOURCE_DIR}/utils/digikam_export.h
