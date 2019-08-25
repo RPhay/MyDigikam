@@ -28,6 +28,7 @@ target_link_libraries(framesencoder
                       KF5::XmlGui
 
                       ${OpenCV_LIBRARIES}
+                      ${QTAV_LIBRARIES}
 )
 
 # -------------------------------------------------
@@ -47,6 +48,7 @@ target_link_libraries(qtavcodecs
                       KF5::XmlGui
 
                       ${OpenCV_LIBRARIES}
+                      ${QTAV_LIBRARIES}
 )
 
 # -------------------------------------------------
@@ -65,6 +67,7 @@ target_link_libraries(player
                       KF5::XmlGui
 
                       ${OpenCV_LIBRARIES}
+                      ${QTAV_LIBRARIES}
 )
 
 # -------------------------------------------------
@@ -78,4 +81,6 @@ target_link_libraries(videothumbtest
 
                       Qt5::Core
                       Qt5::Widgets
+
+                      ${QTAV_LIBRARIES}
 )

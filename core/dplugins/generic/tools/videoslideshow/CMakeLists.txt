@@ -6,6 +6,13 @@
 
 include(MacroDPlugins)
 
+if(HAVE_MEDIAPLAYER)
+
+    set(QTMEDIA_BACKEND ${QTAV_LIBRARIES})
+
+endif()
+
+
 include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
@@ -25,5 +32,6 @@ set(videoslideshowplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    VideoSlideShow
-                                    SOURCES ${videoslideshowplugin_SRCS}
+                           SOURCES ${videoslideshowplugin_SRCS}
+                           DEPENDS ${QTMEDIA_BACKEND}
 )

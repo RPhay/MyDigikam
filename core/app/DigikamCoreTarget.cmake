@@ -199,7 +199,7 @@ if(WIN32)
 endif()
 
 if(ENABLE_MEDIAPLAYER)
-    target_link_libraries(digikamcore PUBLIC ${QTAV_LIBRARIES})
+    target_link_libraries(digikamcore PRIVATE ${QTAV_LIBRARIES})
 endif()
 
 install(TARGETS digikamcore EXPORT DigikamCoreConfig ${INSTALL_TARGETS_DEFAULT_ARGS})
