@@ -29,12 +29,7 @@ target_link_libraries(dimgfilteractiontest
 
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Test
-
-                      KF5::XmlGui
-                      KF5::I18n
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -56,12 +51,7 @@ target_link_libraries(dimghistorygraphtest
                       digikamcore
                       digikamdatabase
 
-                      Qt5::Sql
-                      Qt5::Gui
-                      Qt5::Test
-
-                      KF5::I18n
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -81,11 +71,7 @@ target_link_libraries(dimghistorytest
 
                       digikamcore
 
-                      Qt5::Gui
-                      Qt5::Test
-
-                      KF5::I18n
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -104,7 +90,7 @@ target_link_libraries(dimgfreerotationtest
 
                       digikamcore
 
-                      Qt5::Test
+                      ${COMMON_TEST_LINK}
 )
 
 #------------------------------------------------------------------------
@@ -117,11 +103,7 @@ target_link_libraries(testdimgloader
 
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Gui
-
-                      KF5::I18n
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -136,11 +118,7 @@ target_link_libraries(testequalizefilter
 
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Gui
-
-                      KF5::I18n
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -155,11 +133,7 @@ target_link_libraries(testcolorbalancefilter
 
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Gui
-
-                      KF5::I18n
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -172,9 +146,11 @@ if(ImageMagick_Magick++_FOUND)
     add_executable(magickloader ${magickloader_SRCS})
 
     target_link_libraries(magickloader
+
                           digikamcore
-                          Qt5::Core
-                          Qt5::Gui
+
+                          ${COMMON_TEST_LINK}
+
                           ${ImageMagick_LIBRARIES}
     )
 

@@ -19,9 +19,7 @@ ecm_mark_as_test(geolocationedit_test_correlator)
 target_link_libraries(geolocationedit_test_correlator
                       digikamcore
 
-                      Qt5::Test
-                      Qt5::Gui
-                      Qt5::Xml
+                      ${COMMON_TEST_LINK}
                      )
 
 # ----------------------------------------------------------------
@@ -35,8 +33,7 @@ if(NOT WIN32)
     target_link_libraries(geolocationedit_test_gpsrgparsing
                           digikamcore
 
-                          Qt5::Test
-                          Qt5::Gui
+                          ${COMMON_TEST_LINK}
                          )
 
 endif()
@@ -50,10 +47,7 @@ ecm_mark_as_test(geolocationedit_test_gpsrgtagmodel)
 target_link_libraries(geolocationedit_test_gpsrgtagmodel
                       digikamcore
 
-                      Qt5::Test
-                      Qt5::Gui
-
-                      KF5::I18n
+                      ${COMMON_TEST_LINK}
                      )
 
 # ----------------------------------------------------------------
@@ -65,10 +59,7 @@ ecm_mark_as_test(geolocationedit_test_gpsimageitem)
 target_link_libraries(geolocationedit_test_gpsimageitem
                       digikamcore
 
-                      Qt5::Test
-                      Qt5::Gui
-
-                      KF5::I18n
+                      ${COMMON_TEST_LINK}
                      )
 
 # ----------------------------------------------------------------
@@ -80,6 +71,5 @@ ecm_mark_as_test(geolocationedit_test_simpletreemodel)
 target_link_libraries(geolocationedit_test_simpletreemodel
                       digikamcore
 
-                      Qt5::Test
-                      Qt5::Gui
+                      ${COMMON_TEST_LINK}
                      )

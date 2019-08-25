@@ -174,7 +174,10 @@ target_link_libraries(digikamgui
                       Qt5::Sql
                       Qt5::PrintSupport
 
+                      KF5::XmlGui
                       KF5::Solid
+                      KF5::ConfigCore
+                      KF5::ConfigGui
                       KF5::Service
                       KF5::WindowSystem
                       KF5::I18n

@@ -27,13 +27,7 @@ target_link_libraries(testdatabaseswitch
                       digikamcore
                       digikamgui
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Test
-                      Qt5::Sql
-
-                      KF5::I18n
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -51,13 +45,7 @@ target_link_libraries(testdatabaseinit
                       digikamcore
                       digikamgui
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Test
-                      Qt5::Sql
-
-                      KF5::I18n
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -77,13 +65,7 @@ target_link_libraries(databasefieldstest
 
                       digikamgui
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Test
-                      Qt5::Sql
-
-                      KF5::I18n
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 )
 
 if(ENABLE_DBUS)
@@ -105,13 +87,7 @@ endif()
 #
 #                       digikamgui
 #
-#                       Qt5::Core
-#                       Qt5::Gui
-#                       Qt5::Test
-#                       Qt5::Sql
-#
-#                       KF5::I18n
-#                       KF5::XmlGui
+#                       ${COMMON_TEST_LINK}
 #)
 #
 #if(ENABLE_DBUS)

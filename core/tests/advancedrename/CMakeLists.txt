@@ -27,13 +27,7 @@ target_link_libraries(renamecustomizertest
                       digikamcore
                       digikamgui
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Test
-
-                      KF5::I18n
-                      KF5::XmlGui
-
+                      ${COMMON_TEST_LINK}
                       ${OpenCV_LIBRARIES}
 )
 
@@ -53,12 +47,7 @@ target_link_libraries(cameranamehelpertest
                       digikamcore
                       digikamgui
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Test
-
-                      KF5::I18n
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -83,13 +72,7 @@ target_link_libraries(advancedrenametest
                       digikamcore
                       digikamgui
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Test
-
-                      KF5::I18n
-                      KF5::Solid
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )

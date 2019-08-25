@@ -9,7 +9,8 @@ add_executable(test_geoparsing
 )
 
 target_link_libraries(test_geoparsing
-                      Qt5::Test
+
+                      ${COMMON_TEST_LINK}
 )
 
 add_test(test_geoparsing ${EXECUTABLE_OUTPUT_PATH}/test_geoparsing)

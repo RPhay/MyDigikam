@@ -32,8 +32,7 @@ add_executable(twdemo ${twdemo_SRCS})
 target_link_libraries(twdemo
                       digikamcore
 
-                      Qt5::Gui
-                      Qt5::Xml
+                      ${COMMON_TEST_LINK}
 )
 
 target_compile_definitions(twdemo PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)

@@ -60,6 +60,18 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
     target_link_libraries(Generic_${_parse_results_NAME}_Plugin
                           ${${_parse_results_NAME}_LIBS}
                           digikamcore
+
+                          Qt5::Core
+                          Qt5::Gui
+                          Qt5::Xml
+                          Qt5::XmlPatterns
+                          Qt5::Widgets
+
+                          KF5::XmlGui
+                          KF5::I18n
+                          KF5::ConfigCore
+                          KF5::Service
+
                           ${_parse_results_DEPENDS}
     )
 
@@ -122,6 +134,18 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
     target_link_libraries(Editor_${_parse_results_NAME}_Plugin
                           ${${_parse_results_NAME}_LIBS}
                           digikamcore
+
+                          Qt5::Core
+                          Qt5::Gui
+                          Qt5::Xml
+                          Qt5::XmlPatterns
+                          Qt5::Widgets
+
+                          KF5::XmlGui
+                          KF5::I18n
+                          KF5::ConfigCore
+                          KF5::Service
+
                           ${_parse_results_DEPENDS}
     )
 
@@ -184,6 +208,18 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
     target_link_libraries(Bqm_${_parse_results_NAME}_Plugin
                           ${${_parse_results_NAME}_LIBS}
                           digikamgui
+
+                          Qt5::Core
+                          Qt5::Gui
+                          Qt5::Xml
+                          Qt5::XmlPatterns
+                          Qt5::Widgets
+
+                          KF5::XmlGui
+                          KF5::I18n
+                          KF5::ConfigCore
+                          KF5::Service
+
                           ${_parse_results_DEPENDS}
     )
 

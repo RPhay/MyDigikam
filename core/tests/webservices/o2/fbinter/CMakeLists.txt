@@ -39,8 +39,7 @@ add_executable(fbinter ${fbinter_SRCS})
 target_link_libraries(fbinter
                       digikamcore
 
-                      Qt5::Gui
-                      Qt5::Xml
+                      ${COMMON_TEST_LINK}
                       Qt5::WebEngineWidgets
 )
 

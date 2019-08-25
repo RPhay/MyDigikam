@@ -76,9 +76,15 @@ target_link_libraries(showfoto
                       digikamcore
 
                       Qt5::Core
+                      Qt5::Gui
+                      Qt5::Xml
+                      Qt5::XmlPatterns
+                      Qt5::Widgets
 
-                      KF5::I18n
                       KF5::XmlGui
+                      KF5::I18n
+                      KF5::ConfigCore
+                      KF5::Service
 )
 
 if(KF5Notifications_FOUND)

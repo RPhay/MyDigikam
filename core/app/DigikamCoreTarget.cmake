@@ -86,20 +86,14 @@ add_dependencies(digikamcore digikam-gitversion)
 generate_export_header(digikamcore BASE_NAME digikam EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_core_export.h")
 
 target_link_libraries(digikamcore
-                      PUBLIC
+
+                      PRIVATE
 
                       Qt5::Core
                       Qt5::Gui
                       Qt5::Xml
                       Qt5::XmlPatterns
                       Qt5::Widgets
-
-                      KF5::XmlGui
-                      KF5::I18n
-                      KF5::Service
-
-                      PRIVATE
-
                       Qt5::Sql
                       Qt5::PrintSupport
                       Qt5::Concurrent
@@ -107,6 +101,9 @@ target_link_libraries(digikamcore
                       KF5::Solid
                       KF5::WindowSystem
                       KF5::ConfigGui
+                      KF5::XmlGui
+                      KF5::I18n
+                      KF5::Service
 
                       # Required by CImg which use pthread internally.
 
