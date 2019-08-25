@@ -294,7 +294,14 @@ void RenameFileJob::run()
         {
             if (m_data->overwrite())
             {
-                QFile::remove(destUrl.toLocalFile());
+                if (!DTrash::deleteImage(destUrl.toLocalFile(), m_data->jobTime()))
+                {
+                    emit signalError(i18n("Could not move image %1 to collection trash",
+                                          QDir::toNativeSeparators(destUrl.toLocalFile())));
+
+                    emit signalRenameFailed(renameUrl);
+                    continue;
+                }
             }
             else
             {
