@@ -90,7 +90,7 @@ void PreviewLoadingTask::execute()
             // image is found in image cache, loading is successful
             m_img = *cachedImg;
         }
-        else
+/*      else
         {
             // find possible running loading process
             m_usedProcess = nullptr;
@@ -144,7 +144,7 @@ void PreviewLoadingTask::execute()
                 // They might be interested - see notifyNewLoadingProcess below
                 cache->notifyNewLoadingProcess(this, m_loadingDescription);
             }
-        }
+        } */
     }
 
     if (m_img.isNull())
@@ -307,7 +307,7 @@ void PreviewLoadingTask::execute()
             cache->putImage(m_loadingDescription.cacheKey(), m_img,
                             m_loadingDescription.filePath);
         }
-
+/*
         // remove this from the list of loading processes in cache
         cache->removeLoadingProcess(this);
 
@@ -353,7 +353,7 @@ void PreviewLoadingTask::execute()
 
         // set to 0, as checked in setStatus
         m_usedProcess = nullptr;
-    }
+*/  }
 
     // following the golden rule to avoid deadlocks, do this when CacheLock is not held
 
