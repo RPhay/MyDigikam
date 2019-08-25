@@ -191,4 +191,5 @@ BUGFIXES:
 181 ==> 411146 - Git master doesn't compile moc_advancedrenameprocessdialog.cpp.
 182 ==> 411271 - Digikam crashes when clicking on calendar drop down for date selection in advanced search.
 183 ==> 411279 - Digikam does not save initial DB configuration.
-184 ==> 
+184 ==> 411287 - Wrong link to splash screen SVGs.
+185 ==> 
