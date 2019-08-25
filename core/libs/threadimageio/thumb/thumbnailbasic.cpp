@@ -141,7 +141,7 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
     int          bit_depth, color_type, interlace_type;
     QImage       qimage;
 
-    FILE* const f = fopen(path.toLatin1().constData(), "rb");
+    FILE* const f = fopen(QFile::encodeName(path).constData(), "rb");
 
     if (!f)
     {
