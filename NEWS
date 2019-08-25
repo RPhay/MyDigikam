@@ -189,5 +189,5 @@ BUGFIXES:
 179 ==> 384059 - Album > Reread metadata from images does not work correctly.
 180 ==> 146934 - Too many steps for continuous commenting.
 181 ==> 411146 - Git master doesn't compile moc_advancedrenameprocessdialog.cpp.
-182 ==> 411214 - Digikam git beta 6.3 eats huge memory.
+182 ==> 411271 - Digikam crashes when clicking on calendar drop down for date selection in advanced search.
 183 ==> 
