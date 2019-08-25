@@ -109,7 +109,7 @@ void PreviewLoadingTask::execute()
                 // Add this task to the list of listeners and
                 // attach this thread to the other thread, wait until loading
                 // has finished.
-                m_usedProcess->addListener(dynamic_cast<LoadingProcessListener*>(this));
+                m_usedProcess->addListener(this);
 
                 // break loop when either the loading has completed, or this task is being stopped
                 while (m_loadingTaskStatus != LoadingTaskStatusStopping &&
@@ -122,7 +122,7 @@ void PreviewLoadingTask::execute()
                 // remove listener from process
                 if (m_usedProcess)
                 {
-                    m_usedProcess->removeListener(dynamic_cast<LoadingProcessListener*>(this));
+                    m_usedProcess->removeListener(this);
                 }
 
                 // wake up the process which is waiting until all listeners have removed themselves
@@ -135,14 +135,14 @@ void PreviewLoadingTask::execute()
             {
                 // Neither in cache, nor currently loading in different thread.
                 // Load it here and now, add this LoadingProcess to cache list.
-                cache->addLoadingProcess(dynamic_cast<LoadingProcess*>(this));
+                cache->addLoadingProcess(this);
                 // Add this to the list of listeners
-                addListener(dynamic_cast<LoadingProcessListener*>(this));
+                addListener(this);
                 // for use in setStatus
-                m_usedProcess = dynamic_cast<LoadingProcess*>(this);
+                m_usedProcess = this;
                 // Notify other processes that we are now loading this image.
                 // They might be interested - see notifyNewLoadingProcess below
-                cache->notifyNewLoadingProcess(dynamic_cast<LoadingProcess*>(this), m_loadingDescription);
+                cache->notifyNewLoadingProcess(this, m_loadingDescription);
             }
         }
     }
@@ -272,13 +272,10 @@ void PreviewLoadingTask::execute()
                         // Set a hint to try to load a JPEG or PGF with the fast scale-before-decoding method
                         if (isFast)
                         {
-                            m_img.setAttribute(QLatin1String("scaledLoadingSize"),
-                                               m_loadingDescription.previewParameters.size);
+                            m_img.setAttribute(QLatin1String("scaledLoadingSize"), m_loadingDescription.previewParameters.size);
                         }
 
-                        m_img.load(m_loadingDescription.filePath,
-                                   dynamic_cast<DImgLoaderObserver*>(this),
-                                   m_loadingDescription.rawDecodingSettings);
+                        m_img.load(m_loadingDescription.filePath, this, m_loadingDescription.rawDecodingSettings);
                     }
 
                     break;
@@ -288,9 +285,7 @@ void PreviewLoadingTask::execute()
                 {
                     if (continueQuery(&m_img))
                     {
-                        m_img.load(m_loadingDescription.filePath,
-                                   dynamic_cast<DImgLoaderObserver*>(this),
-                                   m_loadingDescription.rawDecodingSettings);
+                        m_img.load(m_loadingDescription.filePath, this, m_loadingDescription.rawDecodingSettings);
                     }
 
                     break;
@@ -314,7 +309,7 @@ void PreviewLoadingTask::execute()
         }
 
         // remove this from the list of loading processes in cache
-        cache->removeLoadingProcess(dynamic_cast<LoadingProcess*>(this));
+        cache->removeLoadingProcess(this);
 
         // indicate that loading has finished so that listeners can stop waiting
         m_completed = true;
@@ -344,7 +339,7 @@ void PreviewLoadingTask::execute()
         }
 
         // remove myself from list of listeners
-        removeListener(dynamic_cast<LoadingProcessListener*>(this));
+        removeListener(this);
 
         // wake all listeners waiting on cache condVar, so that they remove themselves
         lock.wakeAll();
