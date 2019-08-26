@@ -54,8 +54,13 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
 #        message(STATUS "Generic plugin dependencies=${_parse_results_DEPENDS}")
     endif()
 
+    if(APPLE)
+        set(_extra_deps /System/Library/Frameworks/AppKit.framework)
+    endif()
+
     add_library(Generic_${_parse_results_NAME}_Plugin
                 MODULE ${_parse_results_SOURCES})
+
 
     target_link_libraries(Generic_${_parse_results_NAME}_Plugin
                           digikamcore
@@ -72,11 +77,8 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
                           KF5::Service
 
                           ${_parse_results_DEPENDS}
+                          ${_extra_deps}
     )
-
-    if(APPLE)
-        target_link_libraries(Generic_${_parse_results_NAME}_Plugin PUBLIC /System/Library/Frameworks/AppKit.framework)
-    endif()
 
     install(TARGETS Generic_${_parse_results_NAME}_Plugin
             DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/generic
@@ -131,6 +133,10 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
 #        message(STATUS "Editor plugin dependencies=${_parse_results_DEPENDS}")
     endif()
 
+    if(APPLE)
+        set(_extra_deps /System/Library/Frameworks/AppKit.framework)
+    endif()
+
     add_library(Editor_${_parse_results_NAME}_Plugin
                 MODULE ${_parse_results_SOURCES})
 
@@ -149,11 +155,8 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
                           KF5::Service
 
                           ${_parse_results_DEPENDS}
+                          ${_extra_deps}
     )
-
-    if(APPLE)
-        target_link_libraries(Editor_${_parse_results_NAME}_Plugin PUBLIC /System/Library/Frameworks/AppKit.framework)
-    endif()
 
     install(TARGETS Editor_${_parse_results_NAME}_Plugin
             DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/editor
@@ -208,6 +211,10 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
 #        message(STATUS "Bqm plugin dependencies=${_parse_results_DEPENDS}")
     endif()
 
+    if(APPLE)
+        set(_extra_deps /System/Library/Frameworks/AppKit.framework)
+    endif()
+
     add_library(Bqm_${_parse_results_NAME}_Plugin
                 MODULE ${_parse_results_SOURCES})
 
@@ -229,11 +236,8 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
                           KF5::Service
 
                           ${_parse_results_DEPENDS}
+                          ${_extra_deps}
     )
-
-    if(APPLE)
-        target_link_libraries(Bqm_${_parse_results_NAME}_Plugin PUBLIC /System/Library/Frameworks/AppKit.framework)
-    endif()
 
     install(TARGETS Bqm_${_parse_results_NAME}_Plugin
             DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/bqm
