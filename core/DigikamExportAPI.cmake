@@ -15,6 +15,7 @@ install(FILES
             ${CMAKE_CURRENT_BINARY_DIR}/app/utils/digikam_core_export.h
             ${CMAKE_CURRENT_BINARY_DIR}/app/utils/digikam_database_export.h
             ${CMAKE_CURRENT_SOURCE_DIR}/app/utils/digikam_export.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/app/utils/digikam_globals.h
 
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dplugins/core/dplugin.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dplugins/core/dpluginaction.h
@@ -36,6 +37,28 @@ install(FILES
             ${CMAKE_CURRENT_SOURCE_DIR}/utilities/geolocation/geoiface/core/geoifacetypes.h
             ${CMAKE_CURRENT_SOURCE_DIR}/utilities/geolocation/geoiface/core/geocoordinates.h
             ${CMAKE_CURRENT_SOURCE_DIR}/utilities/geolocation/geoiface/reversegeocoding/rginfo.h
+
+            ${CMAKE_CURRENT_SOURCE_DIR}/utilities/imageeditor/editor/imageiface.h
+
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dimg.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dcolor.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dcolorcomposer.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dshareddata.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/drawdecoding.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/history/historyimageid.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/history/filteraction.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/icc/iccprofile.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/bcg/bcgcontainer.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/wb/wbcontainer.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/curves/curvescontainer.h
+
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/metadataengine/engine/metaengine.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/metadataengine/engine/metaengine_data.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/metadataengine/containers/photoinfocontainer.h
+
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/rawengine/drawdecoder.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/rawengine/drawinfo.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/rawengine/drawdecodersettings.h
 
         DESTINATION
 
