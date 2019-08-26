@@ -96,7 +96,7 @@ endmacro()
 # Note: by default an Editor plugin is linked with digikamcore shared library.
 #
 # This macro will generate a plugin library with this pattern as file name:
-# Bqm_${_pluginname_}_Plugin
+# Editor_${_pluginname_}_Plugin
 #
 macro(DIGIKAM_ADD_EDITOR_PLUGIN)
 
@@ -170,7 +170,7 @@ endmacro()
 # Note: by default a Bqm plugin is linked with digikamcore shared library.
 #
 # This macro will generate a plugin library with this pattern as file name:
-# Editor_${_pluginname_}_Plugin
+# Bqm_${_pluginname_}_Plugin
 #
 macro(DIGIKAM_ADD_BQM_PLUGIN)
 
