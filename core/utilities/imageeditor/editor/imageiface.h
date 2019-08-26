@@ -36,7 +36,6 @@
 #include "dcolor.h"
 #include "filteraction.h"
 #include "photoinfocontainer.h"
-#include "videoinfocontainer.h"
 #include "digikam_export.h"
 
 class QPaintDevice;
