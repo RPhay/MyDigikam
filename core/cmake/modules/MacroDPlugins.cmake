@@ -58,7 +58,6 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
                 MODULE ${_parse_results_SOURCES})
 
     target_link_libraries(Generic_${_parse_results_NAME}_Plugin
-                          ${${_parse_results_NAME}_LIBS}
                           digikamcore
 
                           Qt5::Core
@@ -132,7 +131,6 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
                 MODULE ${_parse_results_SOURCES})
 
     target_link_libraries(Editor_${_parse_results_NAME}_Plugin
-                          ${${_parse_results_NAME}_LIBS}
                           digikamcore
 
                           Qt5::Core
@@ -206,7 +204,6 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
                 MODULE ${_parse_results_SOURCES})
 
     target_link_libraries(Bqm_${_parse_results_NAME}_Plugin
-                          ${${_parse_results_NAME}_LIBS}
                           digikamcore
                           digikamdatabase
                           digikamgui
