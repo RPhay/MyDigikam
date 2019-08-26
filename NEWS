@@ -192,4 +192,7 @@ BUGFIXES:
 182 ==> 411271 - Digikam crashes when clicking on calendar drop down for date selection in advanced search.
 183 ==> 411279 - Digikam does not save initial DB configuration.
 184 ==> 411287 - Wrong link to splash screen SVGs.
-185 ==> 
+185 ==> 407235 - MacOS : digiKam 6 crashes when quitting.
+186 ==> 410518 - ~4 seconds after exiting with super-q, notice of crash appears.
+187 ==> 408549 - Many crashes on MacOS with current git.
+188 ==> 
