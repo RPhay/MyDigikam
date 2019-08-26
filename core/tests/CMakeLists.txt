@@ -7,6 +7,10 @@
 # enabling for everything although only required by DImg.
 kde_enable_exceptions()
 
+if(APPLE)
+    set(_extra_deps /System/Library/Frameworks/AppKit.framework)
+endif()
+
 set(COMMON_TEST_LINK Qt5::Core
                      Qt5::Gui
                      Qt5::Xml
@@ -21,6 +25,8 @@ set(COMMON_TEST_LINK Qt5::Core
                      KF5::ConfigCore
                      KF5::Service
                      KF5::Solid
+
+                     ${_extra_deps}
 )
 
 add_subdirectory(albummodel)

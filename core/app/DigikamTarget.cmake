@@ -43,6 +43,9 @@ target_link_libraries(digikam
 
                       KF5::WindowSystem
                       KF5::I18n
+                      KF5::XmlGui
+                      KF5::ConfigCore
+                      KF5::Service
 )
 
 if(ENABLE_DBUS)
