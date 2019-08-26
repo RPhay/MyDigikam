@@ -74,6 +74,10 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
                           ${_parse_results_DEPENDS}
     )
 
+    if(APPLE)
+        target_link_libraries(Generic_${_parse_results_NAME}_Plugin PUBLIC /System/Library/Frameworks/AppKit.framework)
+    endif()
+
     install(TARGETS Generic_${_parse_results_NAME}_Plugin
             DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/generic
     )
@@ -146,6 +150,10 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
 
                           ${_parse_results_DEPENDS}
     )
+
+    if(APPLE)
+        target_link_libraries(Editor_${_parse_results_NAME}_Plugin PUBLIC /System/Library/Frameworks/AppKit.framework)
+    endif()
 
     install(TARGETS Editor_${_parse_results_NAME}_Plugin
             DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/editor
@@ -222,6 +230,10 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
 
                           ${_parse_results_DEPENDS}
     )
+
+    if(APPLE)
+        target_link_libraries(Bqm_${_parse_results_NAME}_Plugin PUBLIC /System/Library/Frameworks/AppKit.framework)
+    endif()
 
     install(TARGETS Bqm_${_parse_results_NAME}_Plugin
             DESTINATION ${PLUGIN_INSTALL_DIR}/digikam/bqm
