@@ -44,6 +44,7 @@ install(FILES
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dcolor.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dcolorpixelaccess.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dcolorcomposer.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dcolorblend.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dshareddata.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/drawdecoding.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/history/historyimageid.h
