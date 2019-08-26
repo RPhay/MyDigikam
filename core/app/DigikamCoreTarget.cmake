@@ -5,7 +5,7 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-# digiKAm CORE shared library
+# digiKam CORE shared library
 
 set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:digikamdatabasecore_src>
