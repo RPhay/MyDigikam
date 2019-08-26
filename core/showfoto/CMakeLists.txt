@@ -108,6 +108,10 @@ if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
     target_link_libraries(showfoto PUBLIC ${KVM_LIBRARY})
 endif()
 
+if(APPLE)
+    target_link_libraries(showfoto PUBLIC /System/Library/Frameworks/AppKit.framework)
+endif()
+
 install(TARGETS  showfoto                          ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(PROGRAMS main/org.kde.showfoto.desktop     DESTINATION ${XDG_APPS_INSTALL_DIR})
 install(FILES    main/org.kde.showfoto.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
