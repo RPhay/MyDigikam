@@ -207,6 +207,8 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
 
     target_link_libraries(Bqm_${_parse_results_NAME}_Plugin
                           ${${_parse_results_NAME}_LIBS}
+                          digikamcore
+                          digikamdatabase
                           digikamgui
 
                           Qt5::Core
@@ -214,6 +216,7 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
                           Qt5::Xml
                           Qt5::XmlPatterns
                           Qt5::Widgets
+                          Qt5::Sql
 
                           KF5::XmlGui
                           KF5::I18n

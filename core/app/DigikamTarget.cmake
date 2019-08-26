@@ -33,11 +33,13 @@ target_link_libraries(digikam
                       PUBLIC
 
                       digikamcore
+                      digikamdatabase
                       digikamgui
 
                       Qt5::Core
                       Qt5::Gui
                       Qt5::Widgets
+                      Qt5::Sql
 
                       KF5::WindowSystem
                       KF5::I18n

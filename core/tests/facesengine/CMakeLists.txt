@@ -67,6 +67,8 @@ target_link_libraries(preprocess
                       Qt5::Gui
                       Qt5::Sql
 
+                      ${COMMON_TEST_LINK}
+
                       ${OpenCV_LIBRARIES}
 )
 

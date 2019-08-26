@@ -163,7 +163,7 @@ if(WIN32)
 endif()
 
 target_link_libraries(digikamgui
-                      PUBLIC
+                      PRIVATE
 
                       digikamdatabase
                       digikamcore
@@ -186,25 +186,25 @@ target_link_libraries(digikamgui
 )
 
 if(ENABLE_QWEBENGINE)
-    target_link_libraries(digikamgui PUBLIC Qt5::WebEngineWidgets)
+    target_link_libraries(digikamgui PRIVATE Qt5::WebEngineWidgets)
 else()
-    target_link_libraries(digikamgui PUBLIC Qt5::WebKitWidgets)
+    target_link_libraries(digikamgui PRIVATE Qt5::WebKitWidgets)
 endif()
 
 if(ENABLE_DBUS)
-    target_link_libraries(digikamgui PUBLIC Qt5::DBus)
+    target_link_libraries(digikamgui PRIVATE Qt5::DBus)
 endif()
 
 if(KF5IconThemes_FOUND)
-    target_link_libraries(digikamgui PUBLIC KF5::IconThemes)
+    target_link_libraries(digikamgui PRIVATE KF5::IconThemes)
 endif()
 
 if(KF5KIO_FOUND)
-    target_link_libraries(digikamgui PUBLIC KF5::KIOWidgets)
+    target_link_libraries(digikamgui PRIVATE KF5::KIOWidgets)
 endif()
 
 if(${Marble_FOUND})
-     target_link_libraries(digikamgui PUBLIC ${MARBLE_LIBRARIES})
+     target_link_libraries(digikamgui PRIVATE ${MARBLE_LIBRARIES})
 endif()
 
 if(APPLE)
@@ -213,7 +213,7 @@ endif()
 
 if(NOT WIN32)
     # To link under Solaris (see bug #274484)
-    target_link_libraries(digikamgui PUBLIC ${MATH_LIBRARY})
+    target_link_libraries(digikamgui PRIVATE ${MATH_LIBRARY})
 endif()
 
 if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
@@ -226,7 +226,7 @@ if(Gphoto2_FOUND)
     # at gphoto2 init if opencv is linked with libdc1394. Libusb linking rules are
     # add to gphoto2 linking rules by Gphoto2 cmake detection script.
 
-    target_link_libraries(digikamgui PUBLIC ${GPHOTO2_LIBRARIES})
+    target_link_libraries(digikamgui PRIVATE ${GPHOTO2_LIBRARIES})
 
 endif()
 

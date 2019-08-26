@@ -20,5 +20,5 @@ set(userscriptplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    UserScript
-                                SOURCES ${userscriptplugin_SRCS}
+                       SOURCES ${userscriptplugin_SRCS}
 )

@@ -222,6 +222,7 @@ target_include_directories(digikamdatabase
 target_link_libraries(digikamdatabase
 
                       PRIVATE
+
                       digikamcore
 
                       Qt5::Core
