@@ -232,3 +232,10 @@ endif()
 
 install(TARGETS digikamgui EXPORT DigikamGuiConfig ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(EXPORT DigikamGuiConfig  DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/digikam" NAMESPACE Digikam::)
+
+write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/DigikamGuiConfigVersion.cmake
+                                 VERSION ${DIGIKAM_VERSION_SHORT}
+                                 COMPATIBILITY SameMajorVersion)
+
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamGuiConfigVersion.cmake
+        DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/digikam")
