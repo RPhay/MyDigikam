@@ -20,10 +20,7 @@ target_link_libraries(browser
 
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Gui
-
-                      KF5::I18n
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )

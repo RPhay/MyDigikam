@@ -32,9 +32,7 @@ macro(METADATAENGINE_TESTS_BUILD)
 
     target_link_libraries(${_target}
                           digikamcore
-                          Qt5::Core
-                          Qt5::Test
-                          KF5::I18n
+                          ${COMMON_TEST_LINK}
     )
 
 ENDMACRO()

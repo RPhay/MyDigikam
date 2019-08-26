@@ -28,7 +28,6 @@
 #include <QFutureWatcher>
 #include <QRegExp>
 #include <QStringList>
-#include <QtConcurrentMap>
 #include <QApplication>
 #include <QProcess>
 #include <QUrl>
@@ -69,11 +68,11 @@ public:
     QList<QUrl>      urls;
 
     // State settings
-    bool              warnings;
+    bool             warnings;
 
-    bool              cancel;
-    DHistoryView*     pview;
-    DProgressWdg*     pbar;
+    bool             cancel;
+    DHistoryView*    pview;
+    DProgressWdg*    pbar;
 
 public:
 

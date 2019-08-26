@@ -31,8 +31,7 @@ add_executable(fbdemo ${fbdemo_SRCS})
 target_link_libraries(fbdemo
                       digikamcore
 
-                      Qt5::Gui
-                      Qt5::Xml
+                      ${COMMON_TEST_LINK}
 )
 
 target_compile_definitions(fbdemo PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)

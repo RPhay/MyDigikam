@@ -37,8 +37,8 @@ add_executable(sialis ${sialis_SRCS})
 target_link_libraries(sialis
                       digikamcore
 
-                      Qt5::Gui
-                      Qt5::Xml
+                      ${COMMON_TEST_LINK}
+
                       Qt5::Qml
                       Qt5::WebView
 )
