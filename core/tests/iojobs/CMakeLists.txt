@@ -19,6 +19,5 @@ ecm_mark_nongui_executable(IOJobsTest)
 target_link_libraries(IOJobsTest
                       digikamgui
 
-                      Qt5::Core
-                      Qt5::Test
+                      ${COMMON_TEST_LINK}
                      )

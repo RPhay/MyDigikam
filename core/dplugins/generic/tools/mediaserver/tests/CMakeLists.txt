@@ -10,11 +10,29 @@ set(dmediaservertest_SRCS
 
 add_executable(dmediaservertest ${dmediaservertest_SRCS})
 
+if(APPLE)
+    set(_extra_deps /System/Library/Frameworks/AppKit.framework)
+endif()
+
 target_link_libraries(dmediaservertest
                       digikamcore
                       mediaserverbackend
 
+                      Qt5::Core
+                      Qt5::Gui
+                      Qt5::Xml
+                      Qt5::XmlPatterns
+                      Qt5::Widgets
                       Qt5::Test
+                      Qt5::Sql
+
+                      KF5::XmlGui
+                      KF5::I18n
+                      KF5::ConfigCore
+                      KF5::Service
+                      KF5::Solid
+
+                     ${_extra_deps}
 )
 
 ########################################################################

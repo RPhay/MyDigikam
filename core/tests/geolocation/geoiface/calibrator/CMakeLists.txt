@@ -17,7 +17,5 @@ add_executable(geoiface_calibrator ${calibrator_sources})
 target_link_libraries(geoiface_calibrator
                       digikamcore
 
-                      Qt5::Widgets
-
-                      KF5::I18n
-                     )
+                      ${COMMON_TEST_LINK}
+)

@@ -21,11 +21,6 @@ ecm_mark_nongui_executable(testautocrop)
 target_link_libraries(testautocrop
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Test
-
-                      KF5::I18n
                       KF5::XmlGui
 
                       ${OpenCV_LIBRARIES}
@@ -42,9 +37,7 @@ if(LensFun_FOUND)
     target_link_libraries(testlensfuniface
                           digikamcore
 
-                          Qt5::Core
-
-                          KF5::I18n
+                          ${COMMON_TEST_LINK}
 
                           ${LENSFUN_LIBRARIES}
                           ${OpenCV_LIBRARIES}
@@ -72,11 +65,7 @@ target_link_libraries(testnrestimate
                       digikamdatabase
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Test
-
-                      KF5::I18n
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )

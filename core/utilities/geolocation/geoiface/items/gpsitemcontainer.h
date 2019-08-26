@@ -34,13 +34,8 @@
 // Local includes
 
 #include "geoifacetypes.h"
-
-// Local includes
-
 #include "digikam_export.h"
-#include "digikam_debug.h"
 #include "gpsdatacontainer.h"
-#include "dmetadata.h"
 #include "rginfo.h"
 
 namespace Digikam
@@ -86,6 +81,7 @@ public:
 };
 
 class GPSItemModel;
+class DMetadata;
 
 class DIGIKAM_EXPORT GPSItemContainer
 {

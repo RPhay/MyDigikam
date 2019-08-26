@@ -41,10 +41,11 @@ ki18n_wrap_ui(calendarplugin_SRCS
 if(KF5CalendarCore_FOUND)
     DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Calendar
                                         SOURCES ${calendarplugin_SRCS}
-                                        DEPENDS KF5::CalendarCore
+                                        DEPENDS KF5::CalendarCore Qt5::PrintSupport
     )
 else()
     DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Calendar
                                         SOURCES ${calendarplugin_SRCS}
+                                        DEPENDS Qt5::PrintSupport
     )
 endif()

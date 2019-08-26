@@ -24,7 +24,8 @@ macro(IMGQSORT_BUILD_STANDALONE)
 
     target_link_libraries(${_target}
                           digikamcore
-                          Qt5::Core
+
+                          ${COMMON_TEST_LINK}
 
                           ${OpenCV_LIBRARIES}
     )
@@ -51,8 +52,8 @@ macro(IMGQSORT_BUILD_UNITTEST)
 
     target_link_libraries(${_target}
                           digikamcore
-                          Qt5::Core
-                          Qt5::Test
+
+                          ${COMMON_TEST_LINK}
 
                           ${OpenCV_LIBRARIES}
     )

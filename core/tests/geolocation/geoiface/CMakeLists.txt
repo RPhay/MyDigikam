@@ -25,10 +25,8 @@ ecm_mark_as_test(geoiface_test_primitives)
 target_link_libraries(geoiface_test_primitives
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Test
-                     )
+                      ${COMMON_TEST_LINK}
+)
 
 # -- test the GeoCoordinates class --------------------------------------------------------------
 
@@ -41,9 +39,8 @@ ecm_mark_as_test(geoiface_test_geocoordinates)
 target_link_libraries(geoiface_test_geocoordinates
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Test
-                     )
+                      ${COMMON_TEST_LINK}
+)
 
 # -- test the TileIndex class --------------------------------------------------------------------
 
@@ -56,8 +53,8 @@ ecm_mark_as_test(geoiface_test_tileindex)
 target_link_libraries(geoiface_test_tileindex
                       digikamcore
 
-                      Qt5::Test
-                     )
+                      ${COMMON_TEST_LINK}
+)
 
 # -- test the LookupAltitudeGeonames class -------------------------------------------------------
 
@@ -71,8 +68,8 @@ target_link_libraries(geoiface_test_tileindex
 #
 # target_link_libraries(geoiface_test_lookup_altitude_geonames
 #                       digikamcore
-#                       Qt5::Core
-#                       Qt5::Test)
+#                       ${COMMON_TEST_LINK}
+#)
 
 # -- test the marker model ------------------------------------------------------------------------
 
@@ -88,10 +85,8 @@ if(NOT WIN32)
     target_link_libraries(geoiface_test_itemmarkertiler
                           digikamcore
 
-                          Qt5::Core
-                          Qt5::Gui
-                          Qt5::Test
-                         )
+                          ${COMMON_TEST_LINK}
+    )
 
 endif()
 
@@ -106,9 +101,8 @@ ecm_mark_as_test(geoiface_test_tracks)
 target_link_libraries(geoiface_test_tracks
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Test
-                     )
+                      ${COMMON_TEST_LINK}
+)
 
 # -- track loading application for timing tests ----------------------------------------------------
 
@@ -119,5 +113,5 @@ add_executable(loadtrack ${loadtrack_sources})
 target_link_libraries(loadtrack
                       digikamcore
 
-                      Qt5::Core
-                     )
+                      ${COMMON_TEST_LINK}
+)

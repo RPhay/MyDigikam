@@ -16,9 +16,7 @@ target_link_libraries(detect
                       digikamfacesengine
                       digikamdatabase
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Sql
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -33,9 +31,7 @@ target_link_libraries(recognize
                       digikamfacesengine
                       digikamdatabase
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Sql
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -86,10 +82,7 @@ target_link_libraries(align
                       digikamfacesengine
                       digikamdatabase
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Widgets
-                      Qt5::Sql
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -108,6 +101,8 @@ target_link_libraries(preprocess
                       Qt5::Gui
                       Qt5::Sql
 
+                      ${COMMON_TEST_LINK}
+
                       ${OpenCV_LIBRARIES}
 )
 
@@ -121,9 +116,7 @@ target_link_libraries(traindb
                       digikamfacesengine
                       digikamdatabase
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Sql
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -147,9 +140,7 @@ target_link_libraries(facesenginedemo
                       digikamfacesengine
                       digikamdatabase
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Sql
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )

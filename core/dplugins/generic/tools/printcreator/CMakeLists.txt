@@ -45,7 +45,8 @@ ki18n_wrap_ui(printcreatorplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    PrintCreator
-                                    SOURCES ${printcreatorplugin_SRCS}
+                           SOURCES ${printcreatorplugin_SRCS}
+                           DEPENDS Qt5::PrintSupport
 )
 
 install(DIRECTORY templates DESTINATION ${DATA_INSTALL_DIR}/digikam/)

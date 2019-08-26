@@ -25,5 +25,6 @@ set(filetransferplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    FileTransfer
-                                    SOURCES ${filetransferplugin_SRCS}
+                           SOURCES ${filetransferplugin_SRCS}
+                           DEPENDS KF5::KIOCore KF5::KIOWidgets
 )

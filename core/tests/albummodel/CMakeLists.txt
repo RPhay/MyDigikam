@@ -24,15 +24,10 @@ ecm_mark_nongui_executable(albummodeltest)
 
 target_link_libraries(albummodeltest
                       digikamcore
+                      digikamdatabase
                       digikamgui
 
-                      Qt5::Gui
-                      Qt5::Test
-                      Qt5::Sql
-                      Qt5::Xml
-
-                      KF5::I18n
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )

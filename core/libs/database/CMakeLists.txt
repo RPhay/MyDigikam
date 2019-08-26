@@ -222,12 +222,14 @@ target_include_directories(digikamdatabase
 target_link_libraries(digikamdatabase
 
                       PRIVATE
+
                       digikamcore
 
                       Qt5::Core
                       Qt5::Gui
                       Qt5::Sql
 
+                      KF5::ConfigCore
                       KF5::Solid
                       KF5::I18n
 )
@@ -240,3 +242,10 @@ set_target_properties(digikamdatabase PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT
 
 install(TARGETS digikamdatabase EXPORT DigikamDatabaseConfig ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(EXPORT DigikamDatabaseConfig DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/digikam" NAMESPACE Digikam::)
+
+write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/DigikamDatabaseConfigVersion.cmake
+                                 VERSION ${DIGIKAM_VERSION_SHORT}
+                                 COMPATIBILITY SameMajorVersion)
+
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamDatabaseConfigVersion.cmake
+        DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/digikam")

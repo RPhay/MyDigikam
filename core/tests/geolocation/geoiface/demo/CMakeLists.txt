@@ -26,10 +26,5 @@ add_executable(geoiface_demo ${geoiface_demo_SRCS})
 target_link_libraries(geoiface_demo
                       digikamcore
 
-                      Qt5::Widgets
-                      Qt5::Gui
-                      Qt5::Concurrent
-
-                      KF5::ConfigCore
-                      KF5::I18n
-                     )
+                      ${COMMON_TEST_LINK}
+)

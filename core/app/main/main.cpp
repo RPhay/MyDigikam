@@ -246,6 +246,7 @@ int main(int argc, char* argv[])
         params.legacyAndDefaultChecks(firstAlbumPath);
         // sync to config, for all first-run or upgrade situations
         params.writeToConfig(config);
+        ApplicationSettings::instance()->setDbEngineParameters(params);
     }
 
     // initialize database
