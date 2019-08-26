@@ -50,10 +50,11 @@ set(htmlgalleryplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    HtmlGallery
-                                    SOURCES ${htmlgalleryplugin_SRCS}
-                                    DEPENDS ${LIBXSLT_EXSLT_LIBRARIES}
-                                            ${LIBXSLT_LIBRARIES}
-                                            ${LIBXML2_LIBRARIES}
+                           SOURCES ${htmlgalleryplugin_SRCS}
+                           DEPENDS ${LIBXSLT_EXSLT_LIBRARIES}
+                                   ${LIBXSLT_LIBRARIES}
+                                   ${LIBXML2_LIBRARIES}
+                                   Qt5::Concurrent
 )
 
 install(DIRECTORY themes DESTINATION ${DATA_INSTALL_DIR}/digikam/)

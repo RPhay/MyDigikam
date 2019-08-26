@@ -5,7 +5,7 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-# digiKAm CORE shared library
+# digiKam CORE shared library
 
 set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:digikamdatabasecore_src>
@@ -86,7 +86,8 @@ add_dependencies(digikamcore digikam-gitversion)
 generate_export_header(digikamcore BASE_NAME digikam EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_core_export.h")
 
 target_link_libraries(digikamcore
-                      PUBLIC
+
+                      PRIVATE
 
                       Qt5::Core
                       Qt5::Gui
@@ -100,9 +101,9 @@ target_link_libraries(digikamcore
                       KF5::Solid
                       KF5::WindowSystem
                       KF5::ConfigGui
-                      KF5::Service
                       KF5::XmlGui
                       KF5::I18n
+                      KF5::Service
 
                       # Required by CImg which use pthread internally.
 
@@ -122,42 +123,42 @@ target_link_libraries(digikamcore
 )
 
 if(ENABLE_QWEBENGINE)
-    target_link_libraries(digikamcore PUBLIC Qt5::WebEngineWidgets)
+    target_link_libraries(digikamcore PRIVATE Qt5::WebEngineWidgets)
 else()
-    target_link_libraries(digikamcore PUBLIC Qt5::WebKitWidgets)
+    target_link_libraries(digikamcore PRIVATE Qt5::WebKitWidgets)
 endif()
 
 if(ENABLE_DBUS)
-    target_link_libraries(digikamcore PUBLIC Qt5::DBus)
+    target_link_libraries(digikamcore PRIVATE Qt5::DBus)
 endif()
 
 if(KF5IconThemes_FOUND)
-    target_link_libraries(digikamcore PUBLIC KF5::IconThemes)
+    target_link_libraries(digikamcore PRIVATE KF5::IconThemes)
 endif()
 
 if(KF5KIO_FOUND)
-    target_link_libraries(digikamcore PUBLIC KF5::KIOCore)
-    target_link_libraries(digikamcore PUBLIC KF5::KIOWidgets)
+    target_link_libraries(digikamcore PRIVATE KF5::KIOCore)
+    target_link_libraries(digikamcore PRIVATE KF5::KIOWidgets)
 endif()
 
 if(KF5Notifications_FOUND)
-    target_link_libraries(digikamcore PUBLIC KF5::Notifications)
+    target_link_libraries(digikamcore PRIVATE KF5::Notifications)
 endif()
 
 if(KF5NotifyConfig_FOUND)
-    target_link_libraries(digikamcore PUBLIC KF5::NotifyConfig)
+    target_link_libraries(digikamcore PRIVATE KF5::NotifyConfig)
 endif()
 
 if(Marble_FOUND)
-    target_link_libraries(digikamcore PUBLIC ${MARBLE_LIBRARIES})
+    target_link_libraries(digikamcore PRIVATE ${MARBLE_LIBRARIES})
 endif()
 
 if(X11_FOUND)
-    target_link_libraries(digikamcore PUBLIC Qt5::X11Extras ${X11_LIBRARIES})
+    target_link_libraries(digikamcore PRIVATE Qt5::X11Extras ${X11_LIBRARIES})
 endif()
 
 if(Jasper_FOUND)
-    target_link_libraries(digikamcore PUBLIC ${JASPER_LIBRARIES})
+    target_link_libraries(digikamcore PRIVATE ${JASPER_LIBRARIES})
 endif()
 
 # LibLqr-1 library rules for content-aware filter
@@ -166,11 +167,11 @@ if(Lqr-1_FOUND)
 endif()
 
 if(LensFun_FOUND)
-    target_link_libraries(digikamcore PUBLIC ${LENSFUN_LIBRARIES})
+    target_link_libraries(digikamcore PRIVATE ${LENSFUN_LIBRARIES})
 endif()
 
 if(ImageMagick_FOUND)
-    target_link_libraries(digikamcore PUBLIC ${ImageMagick_LIBRARIES})
+    target_link_libraries(digikamcore PRIVATE ${ImageMagick_LIBRARIES})
 endif()
 
 # for nrfilter
@@ -179,24 +180,31 @@ if(OpenCV_FOUND)
 endif()
 
 if(KF5FileMetaData_FOUND)
-    target_link_libraries(digikamcore PUBLIC KF5::FileMetaData)
+    target_link_libraries(digikamcore PRIVATE KF5::FileMetaData)
 endif()
 
 if(KF5AkonadiContact_FOUND)
-    target_link_libraries(digikamcore PUBLIC KF5::AkonadiContact)
+    target_link_libraries(digikamcore PRIVATE KF5::AkonadiContact)
 endif()
 
 if(APPLE)
-    target_link_libraries(digikamcore PUBLIC /System/Library/Frameworks/AppKit.framework)
+    target_link_libraries(digikamcore PRIVATE /System/Library/Frameworks/AppKit.framework)
 endif()
 
 if(WIN32)
-    target_link_libraries(digikamcore PUBLIC wsock32 ws2_32)
+    target_link_libraries(digikamcore PRIVATE wsock32 ws2_32)
 endif()
 
 if(ENABLE_MEDIAPLAYER)
-    target_link_libraries(digikamcore PUBLIC ${QTAV_LIBRARIES})
+    target_link_libraries(digikamcore PRIVATE ${QTAV_LIBRARIES})
 endif()
 
 install(TARGETS digikamcore EXPORT DigikamCoreConfig ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(EXPORT DigikamCoreConfig DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/digikam" NAMESPACE Digikam::)
+
+write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/DigikamCoreConfigVersion.cmake
+                                 VERSION ${DIGIKAM_VERSION_SHORT}
+                                 COMPATIBILITY SameMajorVersion)
+
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamCoreConfigVersion.cmake
+        DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/digikam")

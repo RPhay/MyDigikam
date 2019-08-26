@@ -21,13 +21,10 @@ target_link_libraries(framesencoder
 
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Gui
-
-                      KF5::I18n
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
+                      ${QTAV_LIBRARIES}
 )
 
 # -------------------------------------------------
@@ -40,13 +37,10 @@ target_link_libraries(qtavcodecs
 
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Gui
-
-                      KF5::I18n
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
+                      ${QTAV_LIBRARIES}
 )
 
 # -------------------------------------------------
@@ -58,13 +52,10 @@ target_link_libraries(player
 
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Gui
-
-                      KF5::I18n
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
+                      ${QTAV_LIBRARIES}
 )
 
 # -------------------------------------------------
@@ -76,6 +67,7 @@ ecm_mark_nongui_executable(videothumbtest)
 target_link_libraries(videothumbtest
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Widgets
+                      ${COMMON_TEST_LINK}
+
+                      ${QTAV_LIBRARIES}
 )

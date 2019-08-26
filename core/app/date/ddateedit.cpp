@@ -205,7 +205,15 @@ void DDateEdit::showPopup()
         return;
     }
 
-    QRect desk          = windowHandle()->screen()->geometry();
+    QScreen* screen = qApp->primaryScreen();
+
+    if (QWidget* const widget = nativeParentWidget())
+    {
+        if (QWindow* const window = widget->windowHandle())
+            screen = window->screen();
+    }
+
+    QRect desk          = screen->geometry();
     QPoint popupPoint   = mapToGlobal(QPoint(0, 0));
     int dateFrameHeight = d->popup->sizeHint().height();
 

@@ -54,13 +54,30 @@ macro(DIGIKAM_ADD_GENERIC_PLUGIN)
 #        message(STATUS "Generic plugin dependencies=${_parse_results_DEPENDS}")
     endif()
 
+    if(APPLE)
+        set(_extra_deps /System/Library/Frameworks/AppKit.framework)
+    endif()
+
     add_library(Generic_${_parse_results_NAME}_Plugin
                 MODULE ${_parse_results_SOURCES})
 
+
     target_link_libraries(Generic_${_parse_results_NAME}_Plugin
-                          ${${_parse_results_NAME}_LIBS}
                           digikamcore
+
+                          Qt5::Core
+                          Qt5::Gui
+                          Qt5::Xml
+                          Qt5::XmlPatterns
+                          Qt5::Widgets
+
+                          KF5::XmlGui
+                          KF5::I18n
+                          KF5::ConfigCore
+                          KF5::Service
+
                           ${_parse_results_DEPENDS}
+                          ${_extra_deps}
     )
 
     install(TARGETS Generic_${_parse_results_NAME}_Plugin
@@ -84,7 +101,7 @@ endmacro()
 # Note: by default an Editor plugin is linked with digikamcore shared library.
 #
 # This macro will generate a plugin library with this pattern as file name:
-# Bqm_${_pluginname_}_Plugin
+# Editor_${_pluginname_}_Plugin
 #
 macro(DIGIKAM_ADD_EDITOR_PLUGIN)
 
@@ -116,13 +133,29 @@ macro(DIGIKAM_ADD_EDITOR_PLUGIN)
 #        message(STATUS "Editor plugin dependencies=${_parse_results_DEPENDS}")
     endif()
 
+    if(APPLE)
+        set(_extra_deps /System/Library/Frameworks/AppKit.framework)
+    endif()
+
     add_library(Editor_${_parse_results_NAME}_Plugin
                 MODULE ${_parse_results_SOURCES})
 
     target_link_libraries(Editor_${_parse_results_NAME}_Plugin
-                          ${${_parse_results_NAME}_LIBS}
                           digikamcore
+
+                          Qt5::Core
+                          Qt5::Gui
+                          Qt5::Xml
+                          Qt5::XmlPatterns
+                          Qt5::Widgets
+
+                          KF5::XmlGui
+                          KF5::I18n
+                          KF5::ConfigCore
+                          KF5::Service
+
                           ${_parse_results_DEPENDS}
+                          ${_extra_deps}
     )
 
     install(TARGETS Editor_${_parse_results_NAME}_Plugin
@@ -146,7 +179,7 @@ endmacro()
 # Note: by default a Bqm plugin is linked with digikamcore shared library.
 #
 # This macro will generate a plugin library with this pattern as file name:
-# Editor_${_pluginname_}_Plugin
+# Bqm_${_pluginname_}_Plugin
 #
 macro(DIGIKAM_ADD_BQM_PLUGIN)
 
@@ -178,13 +211,32 @@ macro(DIGIKAM_ADD_BQM_PLUGIN)
 #        message(STATUS "Bqm plugin dependencies=${_parse_results_DEPENDS}")
     endif()
 
+    if(APPLE)
+        set(_extra_deps /System/Library/Frameworks/AppKit.framework)
+    endif()
+
     add_library(Bqm_${_parse_results_NAME}_Plugin
                 MODULE ${_parse_results_SOURCES})
 
     target_link_libraries(Bqm_${_parse_results_NAME}_Plugin
-                          ${${_parse_results_NAME}_LIBS}
+                          digikamcore
+                          digikamdatabase
                           digikamgui
+
+                          Qt5::Core
+                          Qt5::Gui
+                          Qt5::Xml
+                          Qt5::XmlPatterns
+                          Qt5::Widgets
+                          Qt5::Sql
+
+                          KF5::XmlGui
+                          KF5::I18n
+                          KF5::ConfigCore
+                          KF5::Service
+
                           ${_parse_results_DEPENDS}
+                          ${_extra_deps}
     )
 
     install(TARGETS Bqm_${_parse_results_NAME}_Plugin

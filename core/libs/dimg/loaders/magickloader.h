@@ -49,6 +49,7 @@ public:
 
 private:
 
+    bool m_sixteenBit;
     bool m_hasAlpha;
 };
 

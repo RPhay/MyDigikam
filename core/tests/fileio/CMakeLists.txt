@@ -20,10 +20,7 @@ ecm_mark_nongui_executable(pgfscaled)
 target_link_libraries(pgfscaled
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Gui
-
-                      KF5::I18n
+                      ${COMMON_TEST_LINK}
 )
 
 #------------------------------------------------------------------------
@@ -35,10 +32,7 @@ ecm_mark_nongui_executable(qtpgftest)
 target_link_libraries(qtpgftest
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Gui
-
-                      KF5::I18n
+                      ${COMMON_TEST_LINK}
 )
 
 #------------------------------------------------------------------------
@@ -50,10 +44,7 @@ ecm_mark_nongui_executable(loadpgfdata)
 target_link_libraries(loadpgfdata
                       digikamcore
 
-                      Qt5::Core
-                      Qt5::Gui
-
-                      KF5::I18n
+                      ${COMMON_TEST_LINK}
 )
 
 #------------------------------------------------------------------------
@@ -65,9 +56,7 @@ ecm_mark_nongui_executable(loadsavethreadtest)
 target_link_libraries(loadsavethreadtest
                       digikamcore
 
-                      Qt5::Core
-
-                      KF5::I18n
+                      ${COMMON_TEST_LINK}
 )
 
 #------------------------------------------------------------------------
@@ -84,7 +73,7 @@ target_link_libraries(filesaveoptionsboxtest
                       digikamcore
                       digikamdatabase
 
-                      Qt5::Test
+                      ${COMMON_TEST_LINK}
 )
 
 #------------------------------------------------------------------------
@@ -100,10 +89,7 @@ ecm_mark_as_test(statesavingobjecttest)
 target_link_libraries(statesavingobjecttest
                       digikamcore
 
-                      Qt5::Gui
-                      Qt5::Test
-
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )

@@ -30,5 +30,5 @@ set(jalbumplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    JAlbum
-                                    SOURCES ${jalbumplugin_SRCS}
+                           SOURCES ${jalbumplugin_SRCS}
 )

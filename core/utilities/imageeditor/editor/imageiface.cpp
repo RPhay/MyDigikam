@@ -41,6 +41,7 @@
 #include "icctransform.h"
 #include "editorcore.h"
 #include "dmetadata.h"
+#include "digikam_globals.h"
 
 namespace Digikam
 {

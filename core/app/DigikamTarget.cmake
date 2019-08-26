@@ -33,14 +33,19 @@ target_link_libraries(digikam
                       PUBLIC
 
                       digikamcore
+                      digikamdatabase
                       digikamgui
 
                       Qt5::Core
                       Qt5::Gui
                       Qt5::Widgets
+                      Qt5::Sql
 
                       KF5::WindowSystem
                       KF5::I18n
+                      KF5::XmlGui
+                      KF5::ConfigCore
+                      KF5::Service
 )
 
 if(ENABLE_DBUS)
@@ -53,6 +58,10 @@ endif()
 
 if(KF5KIO_FOUND)
     target_link_libraries(digikam PUBLIC KF5::KIOWidgets)
+endif()
+
+if(ImageMagick_Magick++_FOUND)
+    target_link_libraries(digikam PUBLIC ${ImageMagick_LIBRARIES})
 endif()
 
 install(TARGETS digikam ${INSTALL_TARGETS_DEFAULT_ARGS})

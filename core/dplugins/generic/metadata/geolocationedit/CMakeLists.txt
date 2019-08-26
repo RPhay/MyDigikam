@@ -30,5 +30,6 @@ set(geolocationeditplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    GeolocationEdit
-                                    SOURCES ${geolocationeditplugin_SRCS}
+                           SOURCES ${geolocationeditplugin_SRCS}
+                           DEPENDS Qt5::Concurrent
 )
