@@ -493,8 +493,8 @@ void ImageBrushGuideWidget::recenterOnMousePosition()
 void ImageBrushGuideWidget::zoomPlus()
 {
 
-    this->float_h += .01 * this->default_h;
-    this->float_w += .01 * this->default_w;
+    this->float_h += .1 * this->default_h;
+    this->float_w += .1 * this->default_w;
     int zoomPercent = ceil((this->float_h/this->default_h) * 100);
     emit signalZoomPercentChanged(zoomPercent);
     recenterOnMousePosition();
@@ -503,8 +503,8 @@ void ImageBrushGuideWidget::zoomPlus()
 void ImageBrushGuideWidget::zoomMinus()
 {
 
-    this->float_h -= .01 * this->default_h;
-    this->float_w -= .01 * this->default_w;
+    this->float_h -= .1 * this->default_h;
+    this->float_w -= .1 * this->default_w;
     int zoomPercent = floor((this->float_h/this->default_h) * 100);
     emit signalZoomPercentChanged(zoomPercent);
     recenterOnMousePosition();
