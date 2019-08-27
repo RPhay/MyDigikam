@@ -30,6 +30,7 @@
 #include "previewtoolbar.h"
 #include <QPainter>
 #include<QStandardPaths>
+#include<QCursor>
 
 using namespace Digikam;
 
@@ -70,7 +71,7 @@ public:
     void setBrushRadius(int value);
     void setIsLassoPointsVectorEmpty(bool);
     void setCloneVectorChanged(bool);
-
+    void recenterOnMousePosition();
     explicit ImageBrushGuideWidget(QWidget* const parent = nullptr,
                               bool spotVisible = true,
                               int guideMode = PickColorMode,

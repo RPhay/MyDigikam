@@ -387,6 +387,7 @@ void HealingCloneTool::slotRadiusChanged(int r)
 void HealingCloneTool :: slotZoomPercentChanged(int z)
 {
    d->previewWidget->zoomImage(z);
+
 }
 
 void HealingCloneTool :: slotChangeZoomInput(int z)

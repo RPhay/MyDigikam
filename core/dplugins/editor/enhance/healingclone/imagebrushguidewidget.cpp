@@ -444,6 +444,8 @@ void ImageBrushGuideWidget::resizeEvent(QResizeEvent* e)
     {
         activateState(HealingCloneState::PAINT);
     }
+
+   // this->recenterOnMousePosition();
 }
 
 
@@ -452,6 +454,42 @@ void ImageBrushGuideWidget::showEvent( QShowEvent* event ) {
     activateState(HealingCloneState::SELECT_SOURCE);
 }
 
+void ImageBrushGuideWidget::recenterOnMousePosition()
+{
+   // QPoint diff = this->parentWidget()->mapFromGlobal(QCursor::pos()) -  this->pos();
+   // QPoint newPos = this->parentWidget()->mapFromGlobal(QCursor::pos()) - diff;
+    qCDebug(DIGIKAM_DIMG_LOG()) << "****************************";
+    qCDebug(DIGIKAM_GENERAL_LOG()) <<  "Cursor[regular,translate,map] " << QCursor::pos() << translatePointPosition(QCursor::pos())
+                                  << this->parentWidget()->mapFromGlobal(QCursor::pos());
+    qCDebug(DIGIKAM_GENERAL_LOG()) << "this->pos [regular,translate,map] " <<this->pos() << translatePointPosition(this->pos())
+                                   << this->parentWidget()->mapFromGlobal(this->pos());
+    qCDebug(DIGIKAM_GENERAL_LOG()) << "****************************";
+
+    double parentWidthHalf = this->parentWidget()->width()/2.0;
+    double parentHeightHalf = this->parentWidget()->height()/2.0;
+    QPoint pos = this->pos(); // position of upper-left corner of the imagewidget, relative
+    // to the upper-left corner of the screen (parent)
+    QPoint cursorRelativePosition = this->parentWidget()->mapFromGlobal(QCursor::pos());
+    QPoint centerPosition = QPoint(parentWidthHalf,parentHeightHalf);
+
+    bool inside = false;
+
+    if(cursorRelativePosition.x() > pos.x() && cursorRelativePosition.x() < pos.x()+this->width()
+            && cursorRelativePosition.y() > pos.y() && cursorRelativePosition.y() < pos.y()+this->height())
+    {
+        inside = true;
+    }
+    QPoint diff = centerPosition - cursorRelativePosition;
+    if(!inside)
+    {
+        diff = 0 * diff;
+    }
+    QPoint relPos = pos+diff;
+    qCDebug(DIGIKAM_GENERAL_LOG()) << "pos,diff,rel, Inside" << pos << diff<< relPos<<   inside;
+    this->move(relPos);
+    //QCursor::setPos(centerPosition);
+
+}
 void ImageBrushGuideWidget::zoomPlus()
 {
 
@@ -459,6 +497,7 @@ void ImageBrushGuideWidget::zoomPlus()
     this->float_w += .01 * this->default_w;
     int zoomPercent = ceil((this->float_h/this->default_h) * 100);
     emit signalZoomPercentChanged(zoomPercent);
+    recenterOnMousePosition();
 }
 
 void ImageBrushGuideWidget::zoomMinus()
@@ -468,6 +507,7 @@ void ImageBrushGuideWidget::zoomMinus()
     this->float_w -= .01 * this->default_w;
     int zoomPercent = floor((this->float_h/this->default_h) * 100);
     emit signalZoomPercentChanged(zoomPercent);
+    recenterOnMousePosition();
 }
 
 
