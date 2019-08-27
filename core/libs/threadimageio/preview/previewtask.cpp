@@ -147,7 +147,7 @@ void PreviewLoadingTask::execute()
         }
     }
 
-    if (m_img.isNull())
+    if (continueQuery(&m_img) && m_img.isNull())
     {
         // Preview is not in cache, we will load image from file.
 
@@ -267,33 +267,25 @@ void PreviewLoadingTask::execute()
                         break;
                     }
 
-                    if (continueQuery(&m_img))
+                    // Set a hint to try to load a JPEG or PGF with the fast scale-before-decoding method
+                    if (isFast)
                     {
-                        // Set a hint to try to load a JPEG or PGF with the fast scale-before-decoding method
-                        if (isFast)
-                        {
-                            m_img.setAttribute(QLatin1String("scaledLoadingSize"), m_loadingDescription.previewParameters.size);
-                        }
-
-                        m_img.load(m_loadingDescription.filePath, this, m_loadingDescription.rawDecodingSettings);
+                        m_img.setAttribute(QLatin1String("scaledLoadingSize"), m_loadingDescription.previewParameters.size);
                     }
 
+                    m_img.load(m_loadingDescription.filePath, this, m_loadingDescription.rawDecodingSettings);
                     break;
                 }
 
                 case PreviewSettings::HighQualityPreview:
                 {
-                    if (continueQuery(&m_img))
-                    {
-                        m_img.load(m_loadingDescription.filePath, this, m_loadingDescription.rawDecodingSettings);
-                    }
-
+                    m_img.load(m_loadingDescription.filePath, this, m_loadingDescription.rawDecodingSettings);
                     break;
                 }
             }
         }
 
-        if (!m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
+        if (continueQuery(&m_img) && !m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
         {
             LoadSaveThread::exifRotate(m_img, m_loadingDescription.filePath);
         }
@@ -302,7 +294,7 @@ void PreviewLoadingTask::execute()
             LoadingCache::CacheLock lock(cache);
 
             // Put valid image into cache of loaded images
-            if (!m_img.isNull())
+            if (continueQuery(&m_img) && !m_img.isNull())
             {
                 cache->putImage(m_loadingDescription.cacheKey(), m_img,
                                 m_loadingDescription.filePath);
@@ -362,7 +354,7 @@ void PreviewLoadingTask::execute()
 
     // following the golden rule to avoid deadlocks, do this when CacheLock is not held
 
-    if (!m_img.isNull() && continueQuery(&m_img))
+    if (continueQuery(&m_img) && !m_img.isNull())
     {
         // The image from the cache may or may not be rotated and post processed.
         // exifRotate() and postProcess() will detect if work is needed.
