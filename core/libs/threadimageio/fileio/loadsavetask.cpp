@@ -164,7 +164,9 @@ void SharedLoadingTask::execute()
                 m_usedProcess->addListener(this);
 
                 // break loop when either the loading has completed, or this task is being stopped
-                while (!m_usedProcess->completed() && m_loadingTaskStatus != LoadingTaskStatusStopping)
+                while (m_loadingTaskStatus != LoadingTaskStatusStopping &&
+                       m_usedProcess                                    &&
+                       !m_usedProcess->completed())
                 {
                     lock.timedWait();
                 }
