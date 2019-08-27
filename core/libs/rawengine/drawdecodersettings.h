@@ -30,7 +30,6 @@
 
 #include <QRect>
 #include <QString>
-#include <QTextStream>
 #include <QDebug>
 
 // Local includes
