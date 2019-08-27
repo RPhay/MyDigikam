@@ -73,7 +73,7 @@ bool LoadingTask::continueQuery(DImg* const img)
 {
     Q_UNUSED(img);
 
-    return m_loadingTaskStatus != LoadingTaskStatusStopping;
+    return (m_loadingTaskStatus != LoadingTaskStatusStopping);
 }
 
 void LoadingTask::setStatus(LoadingTaskStatus status)
@@ -485,6 +485,7 @@ void SavingTask::progressInfo(DImg* const img, float progress)
 bool SavingTask::continueQuery(DImg* const img)
 {
     Q_UNUSED(img);
+
     return (m_savingTaskStatus != SavingTaskStatusStopping);
 }
 
