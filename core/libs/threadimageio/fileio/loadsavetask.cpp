@@ -199,7 +199,7 @@ void SharedLoadingTask::execute()
         }
     }
 
-    if (m_img.isNull())
+    if (continueQuery(&m_img) && m_img.isNull())
     {
         // load image
 
@@ -209,7 +209,7 @@ void SharedLoadingTask::execute()
             LoadingCache::CacheLock lock(cache);
 
             // put (valid) image into cache of loaded images
-            if (!m_img.isNull())
+            if (continueQuery(&m_img) && !m_img.isNull())
             {
                 cache->putImage(m_loadingDescription.cacheKey(), m_img,
                                 m_loadingDescription.filePath);
@@ -260,7 +260,7 @@ void SharedLoadingTask::execute()
 
     // following the golden rule to avoid deadlocks, do this when CacheLock is not held
 
-    if (!m_img.isNull() && continueQuery(&m_img))
+    if (continueQuery(&m_img) && !m_img.isNull())
     {
         if (accessMode() == LoadSaveThread::AccessModeReadWrite)
         {
