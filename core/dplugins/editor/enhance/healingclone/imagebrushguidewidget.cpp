@@ -106,7 +106,7 @@ namespace DigikamEditorHealingCloneToolPlugin
       {
 
          QPoint dst = QPoint(e->x(),e->y());
-         emit signalLasso(translateItemPosition(dst, false));
+         emit signalLasso(ImageGuideWidget::translateItemPosition(dst, false));
       }
      else
      {
@@ -115,8 +115,8 @@ namespace DigikamEditorHealingCloneToolPlugin
 
              dst = QPoint(e->x(), e->y());
 
-             QPoint currentSrc = translateItemPosition(src, true);
-             QPoint currentDst = translateItemPosition(dst, false);
+             QPoint currentSrc = ImageGuideWidget::translateItemPosition(src, true);
+             QPoint currentDst = ImageGuideWidget::translateItemPosition(dst, false);
 
              emit signalClone(currentSrc, currentDst);
 
@@ -145,7 +145,7 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
     else if ( this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY && (e->buttons() & Qt::LeftButton))
      {
         QPoint dst = QPoint(e->x(),e->y());
-        emit signalLasso(translateItemPosition(dst, false));
+        emit signalLasso(ImageGuideWidget::translateItemPosition(dst, false));
      }
     else if ((e->buttons() & Qt::LeftButton) && !srcSet)
     {
@@ -153,12 +153,12 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
 
         QPoint currentDst = QPoint(e->x(), e->y());
 
-        currentDst        = translateItemPosition(currentDst, false);
-        QPoint currentSrc = translateItemPosition(src, true);
-        QPoint orgDst     = translateItemPosition(dst, false);
+        currentDst        = ImageGuideWidget::translateItemPosition(currentDst, false);
+        QPoint currentSrc = ImageGuideWidget::translateItemPosition(src, true);
+        QPoint orgDst     = ImageGuideWidget::translateItemPosition(dst, false);
         currentSrc        = QPoint(currentSrc.x() + currentDst.x() - orgDst.x(), currentSrc.y() + currentDst.y() - orgDst.y());
 
-        setSpotPosition(currentSrc);
+        ImageGuideWidget::setSpotPosition(currentSrc);
 
         emit signalClone(currentSrc, currentDst);
 
@@ -185,14 +185,14 @@ void ImageBrushGuideWidget::mouseReleaseEvent(QMouseEvent* e)
 
     else if (srcSet)
     {
-        src   = getSpotPosition();
+        src   = ImageGuideWidget::getSpotPosition();
         undoSlotSetSourcePoint();
 
     }
     else
     {
-        QPoint p = translatePointPosition(src);
-        setSpotPosition(p);
+        QPoint p = ImageGuideWidget::translatePointPosition(src);
+        ImageGuideWidget::setSpotPosition(p);
 
     }
 
@@ -459,9 +459,9 @@ void ImageBrushGuideWidget::recenterOnMousePosition()
    // QPoint diff = this->parentWidget()->mapFromGlobal(QCursor::pos()) -  this->pos();
    // QPoint newPos = this->parentWidget()->mapFromGlobal(QCursor::pos()) - diff;
     qCDebug(DIGIKAM_DIMG_LOG()) << "****************************";
-    qCDebug(DIGIKAM_GENERAL_LOG()) <<  "Cursor[regular,translate,map] " << QCursor::pos() << translatePointPosition(QCursor::pos())
+    qCDebug(DIGIKAM_GENERAL_LOG()) <<  "Cursor[regular,translate,map] " << QCursor::pos() << ImageGuideWidget::translatePointPosition(QCursor::pos())
                                   << this->parentWidget()->mapFromGlobal(QCursor::pos());
-    qCDebug(DIGIKAM_GENERAL_LOG()) << "this->pos [regular,translate,map] " <<this->pos() << translatePointPosition(this->pos())
+    qCDebug(DIGIKAM_GENERAL_LOG()) << "this->pos [regular,translate,map] " <<this->pos() << ImageGuideWidget::translatePointPosition(this->pos())
                                    << this->parentWidget()->mapFromGlobal(this->pos());
     qCDebug(DIGIKAM_GENERAL_LOG()) << "****************************";
 
@@ -563,9 +563,11 @@ void ImageBrushGuideWidget :: activateState(HealingCloneState state)
     }
     else if(state == HealingCloneState::SELECT_SOURCE)
     {
+        this->setSpotVisibleNoUpdate(true);
         QPixmap pix = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                      QLatin1String("digikam/data/healing_clone_SRC.png")));
         changeCursorShape(pix,0.5,0.5);
+
     }
 }
 

@@ -60,7 +60,7 @@ public:
      * Using the parent's constructor
      * Should be changed to get rid of the inheritance
      */
-    using ImageGuideWidget::ImageGuideWidget;
+  //  using ImageGuideWidget::ImageGuideWidget;
     void setDefaults();
     void zoomImage(int zoomPercent);
     void zoomPlus();
@@ -72,6 +72,9 @@ public:
     void setIsLassoPointsVectorEmpty(bool);
     void setCloneVectorChanged(bool);
     void recenterOnMousePosition();
+    void changeCursorShape(QColor color);
+    void changeCursorShape(QPixmap,float,float);
+    void updateCursor();
     explicit ImageBrushGuideWidget(QWidget* const parent = nullptr,
                               bool spotVisible = true,
                               int guideMode = PickColorMode,
@@ -121,9 +124,6 @@ protected:
     void focusInEvent(QFocusEvent * event) override;
     bool event(QEvent*) override;
     void undoSlotSetSourcePoint();
-    void changeCursorShape(QColor color);
-    void changeCursorShape(QPixmap,float,float);
-    void updateCursor();
     void showEvent( QShowEvent* event ) override;
     void activateState(HealingCloneState state);
 
