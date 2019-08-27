@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 # Script to build a bundle MXE installation with all Exiv2 low level dependencies in a dedicated directory.
 #
