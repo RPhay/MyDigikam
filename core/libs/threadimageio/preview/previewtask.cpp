@@ -112,9 +112,7 @@ void PreviewLoadingTask::execute()
                 m_usedProcess->addListener(this);
 
                 // break loop when either the loading has completed, or this task is being stopped
-                while (m_loadingTaskStatus != LoadingTaskStatusStopping &&
-                       m_usedProcess                                    &&
-                       !m_usedProcess->completed())
+                while (!m_usedProcess->completed() && m_loadingTaskStatus != LoadingTaskStatusStopping)
                 {
                     lock.timedWait();
                 }
