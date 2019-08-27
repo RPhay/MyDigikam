@@ -90,7 +90,7 @@ void PreviewLoadingTask::execute()
             // image is found in image cache, loading is successful
             m_img = *cachedImg;
         }
-        else
+/*      else
         {
             // find possible running loading process
             m_usedProcess = nullptr;
@@ -112,7 +112,9 @@ void PreviewLoadingTask::execute()
                 m_usedProcess->addListener(this);
 
                 // break loop when either the loading has completed, or this task is being stopped
-                while (!m_usedProcess->completed() && m_loadingTaskStatus != LoadingTaskStatusStopping)
+                while (m_loadingTaskStatus != LoadingTaskStatusStopping &&
+                       m_usedProcess                                    &&
+                       !m_usedProcess->completed())
                 {
                     lock.timedWait();
                 }
@@ -142,7 +144,7 @@ void PreviewLoadingTask::execute()
                 // They might be interested - see notifyNewLoadingProcess below
                 cache->notifyNewLoadingProcess(this, m_loadingDescription);
             }
-        }
+        } */
     }
 
     if (m_img.isNull())
@@ -296,66 +298,62 @@ void PreviewLoadingTask::execute()
             LoadSaveThread::exifRotate(m_img, m_loadingDescription.filePath);
         }
 
-        {
-            LoadingCache::CacheLock lock(cache);
+        LoadingCache::CacheLock lock(cache);
 
-            // Put valid image into cache of loaded images
-            if (!m_img.isNull())
+        // Put valid image into cache of loaded images
+
+        if (!m_img.isNull())
+        {
+            cache->putImage(m_loadingDescription.cacheKey(), m_img,
+                            m_loadingDescription.filePath);
+        }
+/*
+        // remove this from the list of loading processes in cache
+        cache->removeLoadingProcess(this);
+
+        // indicate that loading has finished so that listeners can stop waiting
+        m_completed = true;
+
+        // dispatch image to all listeners, including this
+
+        for (int i = 0 ; i < m_listeners.count() ; ++i)
+        {
+            LoadingProcessListener* const l  = m_listeners.at(i);
+            LoadSaveNotifier* const notifier = l->loadSaveNotifier();
+
+            if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
             {
-                cache->putImage(m_loadingDescription.cacheKey(), m_img,
-                                m_loadingDescription.filePath);
+                // If a listener requested ReadWrite access, it gets a deep copy.
+                // DImg is explicitly shared.
+                l->setResult(m_loadingDescription, m_img.copy());
+            }
+            else
+            {
+                l->setResult(m_loadingDescription, m_img);
             }
 
-            // remove this from the list of loading processes in cache
-            cache->removeLoadingProcess(this);
+            if (notifier)
+            {
+                notifier->imageLoaded(m_loadingDescription, m_img);
+            }
         }
 
+        // remove myself from list of listeners
+        removeListener(this);
+
+        // wake all listeners waiting on cache condVar, so that they remove themselves
+        lock.wakeAll();
+
+        // wait until all listeners have removed themselves
+
+        while (m_listeners.count() != 0)
         {
-            LoadingCache::CacheLock lock(cache);
-            // indicate that loading has finished so that listeners can stop waiting
-            m_completed = true;
-
-            // dispatch image to all listeners, including this
-
-            for (int i = 0 ; i < m_listeners.count() ; ++i)
-            {
-                LoadingProcessListener* const l  = m_listeners.at(i);
-                LoadSaveNotifier* const notifier = l->loadSaveNotifier();
-
-                if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
-                {
-                    // If a listener requested ReadWrite access, it gets a deep copy.
-                    // DImg is explicitly shared.
-                    l->setResult(m_loadingDescription, m_img.copy());
-                }
-                else
-                {
-                    l->setResult(m_loadingDescription, m_img);
-                }
-
-                if (notifier)
-                {
-                    notifier->imageLoaded(m_loadingDescription, m_img);
-                }
-            }
-
-            // remove myself from list of listeners
-            removeListener(this);
-
-            // wake all listeners waiting on cache condVar, so that they remove themselves
-            lock.wakeAll();
-
-            // wait until all listeners have removed themselves
-
-            while (m_listeners.count() != 0)
-            {
-                lock.timedWait();
-            }
-
-            // set to 0, as checked in setStatus
-            m_usedProcess = nullptr;
+            lock.timedWait();
         }
-    }
+
+        // set to 0, as checked in setStatus
+        m_usedProcess = nullptr;
+*/  }
 
     // following the golden rule to avoid deadlocks, do this when CacheLock is not held
 
@@ -411,8 +409,11 @@ void PreviewLoadingTask::execute()
         m_img = DImg();
     }
 
-    m_thread->taskHasFinished();
-    m_thread->imageLoaded(m_loadingDescription, m_img);
+    if (m_thread)
+    {
+        m_thread->taskHasFinished();
+        m_thread->imageLoaded(m_loadingDescription, m_img);
+    }
 }
 
 bool PreviewLoadingTask::needToScale()
