@@ -34,9 +34,10 @@
 
 #include <klocalizedstring.h>
 
-// local includes
+// Local includes
 
 #include "gpscommon.h"
+#include "digikam_debug.h"
 
 namespace DigikamGenericGeolocationEditPlugin
 {

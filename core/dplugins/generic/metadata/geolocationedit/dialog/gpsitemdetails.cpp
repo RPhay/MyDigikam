@@ -45,8 +45,9 @@
 #include <kconfiggroup.h>
 #include <klocalizedstring.h>
 
-// local includes
+// Local includes
 
+#include "digikam_debug.h"
 #include "dlayoutbox.h"
 #include "graphicsdimgview.h"
 #include "dimgpreviewitem.h"

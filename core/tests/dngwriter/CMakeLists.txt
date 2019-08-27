@@ -27,7 +27,9 @@ ecm_mark_nongui_executable(dnginfo)
 
 target_link_libraries(dnginfo
                       libdng
-                      Qt5::Core
+
+                      ${COMMON_TEST_LINK}
+
                       ${EXPAT_LIBRARY}
                       ${CMAKE_THREAD_LIBS_INIT}
                      )
@@ -46,6 +48,9 @@ ecm_mark_nongui_executable(raw2dng)
 target_link_libraries(raw2dng
                       digikamcore
                       libdng
+
+                      ${COMMON_TEST_LINK}
+
                       ${EXPAT_LIBRARY}
                       ${CMAKE_THREAD_LIBS_INIT}
                      )

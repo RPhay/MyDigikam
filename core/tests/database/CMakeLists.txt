@@ -25,15 +25,10 @@ add_executable(testdatabaseswitch ${testdatabaseswitch_SRCS})
 
 target_link_libraries(testdatabaseswitch
                       digikamcore
+                      digikamdatabase
                       digikamgui
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Test
-                      Qt5::Sql
-
-                      KF5::I18n
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -49,15 +44,10 @@ add_executable(testdatabaseinit ${testdatabaseinit_SRCS})
 
 target_link_libraries(testdatabaseinit
                       digikamcore
+                      digikamdatabase
                       digikamgui
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Test
-                      Qt5::Sql
-
-                      KF5::I18n
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -75,15 +65,10 @@ ecm_mark_as_test(databasefieldstest)
 
 target_link_libraries(databasefieldstest
 
+                      digikamdatabase
                       digikamgui
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Test
-                      Qt5::Sql
-
-                      KF5::I18n
-                      KF5::XmlGui
+                      ${COMMON_TEST_LINK}
 )
 
 if(ENABLE_DBUS)
@@ -103,15 +88,10 @@ endif()
 #
 # target_link_libraries(databasetagstest
 #
+#                       digikamdatabase
 #                       digikamgui
 #
-#                       Qt5::Core
-#                       Qt5::Gui
-#                       Qt5::Test
-#                       Qt5::Sql
-#
-#                       KF5::I18n
-#                       KF5::XmlGui
+#                       ${COMMON_TEST_LINK}
 #)
 #
 #if(ENABLE_DBUS)

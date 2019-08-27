@@ -26,12 +26,7 @@ target_link_libraries(timestampupdatetest
                       digikamdatabase
                       digikamcore
 
-                      Qt5::Gui
-                      Qt5::Test
-                      Qt5::Sql
-
-                      KF5::ConfigCore
-                      KF5::I18n
+                      ${COMMON_TEST_LINK}
                      )
 
 if(ENABLE_DBUS)

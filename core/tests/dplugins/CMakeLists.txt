@@ -23,8 +23,8 @@ macro(DPLUGINS_BUILD_TOOL)
 
     target_link_libraries(${_target}
                           digikamcore
-                          Qt5::Gui
-                          Qt5::Xml
+
+                          ${COMMON_TEST_LINK}
     )
 
 endmacro()

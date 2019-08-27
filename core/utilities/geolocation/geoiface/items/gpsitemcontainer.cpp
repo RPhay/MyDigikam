@@ -35,9 +35,11 @@
 
 #include <klocalizedstring.h>
 
-// local includes
+// Local includes
 
+#include "digikam_debug.h"
 #include "gpsitemmodel.h"
+#include "dmetadata.h"
 #include "metaenginesettings.h"
 
 namespace Digikam

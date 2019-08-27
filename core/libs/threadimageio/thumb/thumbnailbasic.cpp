@@ -33,6 +33,7 @@
 
 #include <QImage>
 #include <QDir>
+#include <QStandardPaths>
 #include <QCryptographicHash>
 #include <QUrl>
 
@@ -69,12 +70,14 @@ namespace Digikam
 
 QString ThumbnailCreator::normalThumbnailDir()
 {
-    return  QDir::homePath() + QLatin1String("/.thumbnails/normal/");
+    return  QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) +
+            QLatin1String("/thumbnails/normal/");
 }
 
 QString ThumbnailCreator::largeThumbnailDir()
 {
-    return  QDir::homePath() + QLatin1String("/.thumbnails/large/");
+    return  QStandardPaths::writableLocation(QStandardPaths::GenericCacheLocation) +
+            QLatin1String("/thumbnails/large/");
 }
 
 QString ThumbnailCreator::thumbnailPath(const QString& filePath, const QString& basePath)
@@ -138,7 +141,7 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
     int          bit_depth, color_type, interlace_type;
     QImage       qimage;
 
-    FILE* const f = fopen(path.toLatin1().constData(), "rb");
+    FILE* const f = fopen(QFile::encodeName(path).constData(), "rb");
 
     if (!f)
     {
@@ -150,9 +153,9 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
     size_t itemsRead = fread(buf, 1, PNG_BYTES_TO_CHECK, f);
 #if PNG_LIBPNG_VER >= 10400
 
-    if (itemsRead != 1 || png_sig_cmp(buf, 0, PNG_BYTES_TO_CHECK))
+    if (itemsRead != PNG_BYTES_TO_CHECK || png_sig_cmp(buf, 0, PNG_BYTES_TO_CHECK))
 #else
-    if (itemsRead != 1 || !png_check_sig(buf, PNG_BYTES_TO_CHECK))
+    if (itemsRead != PNG_BYTES_TO_CHECK || !png_check_sig(buf, PNG_BYTES_TO_CHECK))
 #endif
     {
         fclose(f);

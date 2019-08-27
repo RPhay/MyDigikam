@@ -21,9 +21,7 @@ ecm_mark_as_test(searchtextbartest)
 target_link_libraries(searchtextbartest
                       digikamcore
 
-                      Qt5::Test
-
-                      KF5::I18n
+                      ${COMMON_TEST_LINK}
 )
 
 ##################################################################
@@ -37,7 +35,5 @@ add_executable(ditemslisttest ${ditemslisttest_SRCS})
 target_link_libraries(ditemslisttest
                       digikamcore
 
-                      Qt5::Test
-
-                      KF5::I18n
+                      ${COMMON_TEST_LINK}
 )

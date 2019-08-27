@@ -14,8 +14,7 @@ add_executable(raw2png ${raw2png_SRCS})
 target_link_libraries(raw2png
                       digikamcore
 
-                      Qt5::Gui
-                      Qt5::Core
+                      ${COMMON_TEST_LINK}
 )
 
 set(libinfo_SRCS libinfo.cpp)
@@ -23,8 +22,7 @@ add_executable(libinfo ${libinfo_SRCS})
 target_link_libraries(libinfo
                       digikamcore
 
-                      Qt5::Gui
-                      Qt5::Core
+                      ${COMMON_TEST_LINK}
 )
 
 # -- LibRaw CLI Samples Compilation --------------------------------------------------------------------------------
@@ -46,6 +44,8 @@ macro(LIBRAW_BUILD_SAMPLES)
                           ${OPENMP_LDFLAGS}
                           ${CMAKE_THREAD_LIBS_INIT}
                           digikamcore
+
+                          ${COMMON_TEST_LINK}
     )
 
     if(WIN32)

@@ -41,8 +41,6 @@
 
 class QDomElement;
 
-
-
 namespace Digikam
 {
 

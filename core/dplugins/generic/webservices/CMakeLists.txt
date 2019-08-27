@@ -6,8 +6,10 @@
 
 if(ENABLE_QWEBENGINE)
     include_directories($<TARGET_PROPERTY:Qt5::WebEngineWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
+    SET(QWEB_BACKEND Qt5::WebEngineWidgets)
 else()
     include_directories($<TARGET_PROPERTY:Qt5::WebKitWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
+    SET(QWEB_BACKEND Qt5::WebKitWidgets)
 endif()
 
 add_subdirectory(box)
