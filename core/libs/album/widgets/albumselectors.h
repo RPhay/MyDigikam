@@ -76,6 +76,14 @@ public:
      */
     AlbumList selectedAlbumsAndTags() const;
 
+    /** Reset all Physical Albums selection.
+     */
+    void resetPAlbumSelection();
+
+    /** Reset all Tag Albums selection.
+     */
+    void resetTAlbumSelection();
+
     /** Reset all Physical and Tag Albums selection.
      */
     void resetSelection();

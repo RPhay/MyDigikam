@@ -40,6 +40,7 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include <QIcon>
+#include <QMessageBox>
 
 // KDE includes
 
@@ -1509,8 +1510,20 @@ void PeopleSideBarWidget::slotScanForFaces()
 
     if (dialog.exec() == QDialog::Accepted)
     {
-        FacesDetector* const tool = new FacesDetector(dialog.settings());
-        tool->start();
+        FaceScanSettings faceScanSettings = dialog.settings();
+        if(!dialog.settingsConflicted())
+        {
+            FacesDetector* const tool = new FacesDetector(faceScanSettings);
+            tool->start();
+        }
+        else
+        {
+            QMessageBox::warning(&dialog, i18n("Face recognition aborted"),
+                                 i18n("Face recognition is aborted, because "
+                                      "there are no tags to recognize (except "
+                                      "Unconfirmed and Unknown. Please add "
+                                      "new tags."));
+        }
     }
 }
 

@@ -55,6 +55,7 @@
 #include "digikam_debug.h"
 #include "albummodel.h"
 #include "albumselectors.h"
+#include "albummanager.h"
 #include "applicationsettings.h"
 #include "dexpanderbox.h"
 
@@ -74,7 +75,8 @@ public:
           configAlreadyScannedHandling(QLatin1String("Already Scanned Handling")),
           configUseFullCpu(QLatin1String("Use Full CPU")),
           configSettingsVisible(QLatin1String("Settings Widget Visible")),
-          configRecognizeAlgorithm(QLatin1String("Recognize Algorithm")) 
+          configRecognizeAlgorithm(QLatin1String("Recognize Algorithm")),
+          settingsConflicted(false)
     {
         buttons                    = nullptr;
         optionGroupBox             = nullptr;
@@ -118,6 +120,8 @@ public:
     const QString                configUseFullCpu;
     const QString                configSettingsVisible;
     const QString                configRecognizeAlgorithm;
+
+    bool                         settingsConflicted;
 };
 
 FaceScanDialog::FaceScanDialog(QWidget* const parent)
@@ -296,8 +300,13 @@ void FaceScanDialog::setupUi()
 
     optionLayout->addWidget(d->alreadyScannedBox,          0, 0, 1, 2);
     optionLayout->addWidget(d->detectButton,               1, 0, 1, 2);
-    optionLayout->addWidget(d->detectAndRecognizeButton,   2, 0, 1, 2);
-    optionLayout->addWidget(d->reRecognizeButton,          3, 0, 1, 2);
+
+/*  TODO:
+    Currently hiden this option, since it's not handled properly and provides confusing functionality
+    Fix it later
+    // optionLayout->addWidget(d->detectAndRecognizeButton,   2, 0, 1, 2);
+*/
+    optionLayout->addWidget(d->reRecognizeButton,          2, 0, 1, 2);
 
     QStyleOptionButton buttonOption;
     buttonOption.initFrom(d->detectAndRecognizeButton);
@@ -398,14 +407,16 @@ void FaceScanDialog::setupUi()
 
 void FaceScanDialog::setupConnections()
 {
+    // connect(d->detectButton, SIGNAL(toggled(bool)),
+    //         d->alreadyScannedBox, SLOT(setEnabled(bool)));
     connect(d->detectButton, SIGNAL(toggled(bool)),
-            d->alreadyScannedBox, SLOT(setEnabled(bool)));
+            this, SLOT(slotPrepareForDetect(bool)));
 
     connect(d->detectAndRecognizeButton, SIGNAL(toggled(bool)),
             d->alreadyScannedBox, SLOT(setEnabled(bool)));
 
     connect(d->reRecognizeButton, SIGNAL(toggled(bool)),
-            d->alreadyScannedBox, SLOT(setEnabled(bool)));
+            this, SLOT(slotPrepareForRecognize(bool)));
 
     connect(d->retrainAllButton, SIGNAL(toggled(bool)),
             this, SLOT(retrainAllButtonToggled(bool)));
@@ -418,6 +429,38 @@ void FaceScanDialog::setupConnections()
 
     connect(d->buttons->button(QDialogButtonBox::Reset), SIGNAL(clicked()),
             this, SLOT(slotDetails()));
+}
+
+void FaceScanDialog::slotPrepareForDetect(bool status)
+{
+    d->alreadyScannedBox->setEnabled(status);
+
+    // Set default for Tag tab as all unchecked
+    d->albumSelectors->resetTAlbumSelection();
+}
+
+void FaceScanDialog::slotPrepareForRecognize(bool status)
+{
+    /**  TODO:
+     * reRecognizeButton always disables d->alreadyScannedBox, while it should be
+     * Find out why and fix it.
+     */
+    d->alreadyScannedBox->setEnabled(false);
+
+    // First we set all tags unchecked
+    d->albumSelectors->resetTAlbumSelection();
+
+    // Set default for Tag tab so that People and its children are checked
+    AlbumList tagAlbums = AlbumManager::instance()->allTAlbums();
+    for(int i = 0; i < tagAlbums.size(); i++)
+    {
+        Album* album = tagAlbums[i];
+        if(album->title() == QLatin1String("People")
+        || (album->parent() != nullptr && album->parent()->title() == QLatin1String("People")))
+        {
+            d->albumSelectors->setTagSelected(album, false);
+        }
+    }
 }
 
 void FaceScanDialog::slotDetails()
@@ -447,6 +490,11 @@ void FaceScanDialog::retrainAllButtonToggled(bool on)
     d->recognizeBox->setEnabled(!on);
 }
 
+bool FaceScanDialog::settingsConflicted() const
+{
+    return d->settingsConflicted;
+}
+
 FaceScanSettings FaceScanDialog::settings() const
 {
     FaceScanSettings settings;
@@ -465,9 +513,12 @@ FaceScanSettings FaceScanDialog::settings() const
         {
             settings.task = FaceScanSettings::DetectAndRecognize;
         }
-        else
+        else // recognize only
         {
             settings.task = FaceScanSettings::RecognizeMarkedFaces;
+
+            // preset settingsConflicted as True, since by default there are no tags to recognize
+            d->settingsConflicted = true;
         }
     }
 
@@ -479,10 +530,23 @@ FaceScanSettings FaceScanDialog::settings() const
     // TODO: why does the original code append but not assign here???
     // settings.albums << d->albumSelectors->selectedAlbumsAndTags();
     settings.albums                 = d->albumSelectors->selectedAlbumsAndTags();
-    qCDebug(DIGIKAM_GENERAL_LOG) << "settings albums";
-    for(int i = 0; i<settings.albums.size(); i++)
+    AlbumList tagAlbums = AlbumManager::instance()->allTAlbums();
+    for(int i = 0; i < tagAlbums.size(); i++)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << settings.albums[i]->title();
+        Album* const album = tagAlbums[i];
+        QString albumTitle = album->title();
+        if(albumTitle == QLatin1String("People"))
+        {
+            continue;
+        }
+        if(album->parent() != nullptr
+        && album->parent()->title() == QString::fromLatin1("People")
+        && albumTitle != QString::fromLatin1("Unknown")
+        && albumTitle != QString::fromLatin1("Unconfirmed"))
+        {
+            // set settingsConflicted back to false in case that there are tags to recognize
+            d->settingsConflicted = false;
+        }
     }
 
     settings.useFullCpu             = d->useFullCpuButton->isChecked();

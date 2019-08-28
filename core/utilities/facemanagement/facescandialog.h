@@ -48,6 +48,7 @@ public:
     explicit FaceScanDialog(QWidget* const parent = nullptr);
     ~FaceScanDialog();
 
+    bool             settingsConflicted() const;
     FaceScanSettings settings() const;
 
 protected:
@@ -66,6 +67,9 @@ private:
     void adjustDetailsButton(bool on);
 
 private Q_SLOTS:
+
+    void slotPrepareForDetect(bool status);
+    void slotPrepareForRecognize(bool status);
 
     void slotDetails();
     void slotOk();
