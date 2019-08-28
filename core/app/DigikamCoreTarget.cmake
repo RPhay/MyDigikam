@@ -199,12 +199,14 @@ if(ENABLE_MEDIAPLAYER)
     target_link_libraries(digikamcore PRIVATE ${QTAV_LIBRARIES})
 endif()
 
+# --- Install Rules ---
+
 install(TARGETS digikamcore EXPORT DigikamCoreConfig ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(EXPORT DigikamCoreConfig DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/digikam" NAMESPACE Digikam::)
+install(EXPORT DigikamCoreConfig DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamCore" NAMESPACE Digikam::)
 
 write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/DigikamCoreConfigVersion.cmake
                                  VERSION ${DIGIKAM_VERSION_SHORT}
                                  COMPATIBILITY SameMajorVersion)
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamCoreConfigVersion.cmake
-        DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/digikam")
+        DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamCore")

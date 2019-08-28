@@ -115,7 +115,9 @@ void ThumbnailLoadingTask::execute()
                 m_usedProcess->addListener(this);
 
                 // break loop when either the loading has completed, or this task is being stopped
-                while (!m_usedProcess->completed() && m_loadingTaskStatus != LoadingTaskStatusStopping)
+                while (m_loadingTaskStatus != LoadingTaskStatusStopping &&
+                       m_usedProcess                                    &&
+                       !m_usedProcess->completed())
                 {
                     lock.timedWait();
                 }
@@ -172,45 +174,51 @@ void ThumbnailLoadingTask::execute()
             return;
         }
 
-        LoadingCache::CacheLock lock(cache);
-
-        // put (valid) image into cache of loaded images
-        if (!m_qimage.isNull())
         {
-            cache->putThumbnail(m_loadingDescription.cacheKey(), m_qimage,
-                                m_loadingDescription.filePath);
-        }
+            LoadingCache::CacheLock lock(cache);
 
-        // remove this from the list of loading processes in cache
-        cache->removeLoadingProcess(this);
-
-        // indicate that loading has finished so that listeners can stop waiting
-        m_completed = true;
-
-        // dispatch image to all listeners, including this
-        for (int i = 0 ; i < m_listeners.count() ; ++i)
-        {
-            ThumbnailLoadingTask* const task = dynamic_cast<ThumbnailLoadingTask*>(m_listeners.at(i));
-
-            if (task)
+            // put (valid) image into cache of loaded images
+            if (!m_qimage.isNull())
             {
-                task->setThumbResult(m_loadingDescription, m_qimage);
+                cache->putThumbnail(m_loadingDescription.cacheKey(), m_qimage,
+                                    m_loadingDescription.filePath);
             }
+
+            // remove this from the list of loading processes in cache
+            cache->removeLoadingProcess(this);
         }
 
-        // remove myself from list of listeners
-        removeListener(this);
-        // wake all listeners waiting on cache condVar, so that they remove themselves
-        lock.wakeAll();
-
-        // wait until all listeners have removed themselves
-        while (m_listeners.count() != 0)
         {
-            lock.timedWait();
-        }
+            LoadingCache::CacheLock lock(cache);
 
-        // set to 0, as checked in setStatus
-        m_usedProcess = nullptr;
+            // indicate that loading has finished so that listeners can stop waiting
+            m_completed = true;
+
+            // dispatch image to all listeners, including this
+            for (int i = 0 ; i < m_listeners.count() ; ++i)
+            {
+                ThumbnailLoadingTask* const task = dynamic_cast<ThumbnailLoadingTask*>(m_listeners.at(i));
+
+                if (task)
+                {
+                    task->setThumbResult(m_loadingDescription, m_qimage);
+                }
+            }
+
+            // remove myself from list of listeners
+            removeListener(this);
+            // wake all listeners waiting on cache condVar, so that they remove themselves
+            lock.wakeAll();
+
+            // wait until all listeners have removed themselves
+            while (m_listeners.count() != 0)
+            {
+                lock.timedWait();
+            }
+
+            // set to 0, as checked in setStatus
+            m_usedProcess = nullptr;
+        }
     }
 
     // following the golden rule to avoid deadlocks, do this when CacheLock is not held

@@ -195,4 +195,5 @@ BUGFIXES:
 185 ==> 407235 - MacOS : digiKam 6 crashes when quitting.
 186 ==> 410518 - ~4 seconds after exiting with super-q, notice of crash appears.
 187 ==> 408549 - Many crashes on MacOS with current git.
-188 ==> 
+188 ==> 411053 - digikam-6.2.0-x86-64 appimage fails to run in Ubuntu 16.04.
+189 ==> 
