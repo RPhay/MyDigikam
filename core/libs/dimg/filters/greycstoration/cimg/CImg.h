@@ -1898,6 +1898,9 @@ static struct _cimg_macosx_setcwd {
    I[18] = I[19], I[19] = I[20], I[21] = I[22], I[22] = I[23], I[24] = I[25], I[25] = I[26], \
    _p1##x = x++, ++_n1##x)
 
+namespace Digikam
+{
+
 /*------------------------------------------------
  #
  #
@@ -36830,6 +36833,8 @@ namespace cimg {
 
   // End of cimg_library:: namespace
 }
+
+} // namespace Digikam
 
 #ifdef _cimg_redefine_min
 #define min(a,b) (((a)<(b))?(a):(b))
