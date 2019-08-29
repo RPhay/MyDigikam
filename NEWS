@@ -3,7 +3,8 @@ digiKam 6.3.0 - Release date: 2019-??-??
 *****************************************************************************************************
 NEW FEATURES:
 
-General: Internal Libraw updated to last stable 0.19.5.
+General    : Internal Libraw updated to last stable 0.19.5.
+ImageEditor: new external plugin based on GMicQt included in all bundles (https://github.com/c-koi/gmic-qt)
 
 *****************************************************************************************************
 BUGFIXES:
