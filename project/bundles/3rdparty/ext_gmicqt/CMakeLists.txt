@@ -30,7 +30,7 @@ ExternalProject_Add(ext_gmic_base
 # Download and build gmic-qt
 if (MINGW)
 
-    ExternalProject_Add(ext_lensfun
+    ExternalProject_Add(ext_gmic_qt
 
         DEPENDS ext_gmic_base
 
