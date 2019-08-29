@@ -8,6 +8,12 @@
 
 SET(PREFIX_ext_gmicqt "${EXTPREFIX}" )
 
+set(GmicQt_Conf -DGMIC_QT_HOST=digikam 
+                ${GLOBAL_PROFILE}
+)
+
+JoinListAsString("${GmicQt_Conf}" " " BASH_OPTIONS)
+
 # Download the gmic sources
 ExternalProject_Add(ext_gmic_base
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
@@ -22,17 +28,44 @@ ExternalProject_Add(ext_gmic_base
 )
 
 # Download and build gmic-qt
-ExternalProject_Add(ext_gmic_qt
+if (MINGW)
 
-    DEPENDS ext_gmic_base
+    ExternalProject_Add(ext_lensfun
 
-    DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    GIT_REPOSITORY https://github.com/cgilles/gmic-qt.git
+        DEPENDS ext_gmic_base
 
-    SOURCE_DIR gmic-qt
-    INSTALL_DIR ${PREFIX_ext_gmicqt}
+        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+        GIT_REPOSITORY https://github.com/cgilles/gmic-qt.git
 
-    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_gmic} -DGMIC_QT_HOST=digikam -DCMAKE_BUILD_TYPE=Release ${GLOBAL_PROFILE}
+        SOURCE_DIR gmic-qt
 
-    UPDATE_COMMAND ""
-)
+        CONFIGURE_COMMAND cp ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
+                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
+
+        BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE)
+
+        INSTALL_COMMAND cd <SOURCE_DIR>/build.mxe && make install/fast
+
+        BUILD_IN_SOURCE 1
+
+        UPDATE_COMMAND ""
+    )
+
+else()
+
+    ExternalProject_Add(ext_gmic_qt
+
+        DEPENDS ext_gmic_base
+
+        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+        GIT_REPOSITORY https://github.com/cgilles/gmic-qt.git
+
+        SOURCE_DIR gmic-qt
+        INSTALL_DIR ${PREFIX_ext_gmicqt}
+
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_gmic} -DCMAKE_BUILD_TYPE=Release ${BASH_OPTIONS}
+
+        UPDATE_COMMAND ""
+    )
+
+endif()
