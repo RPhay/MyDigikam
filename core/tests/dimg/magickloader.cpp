@@ -139,7 +139,12 @@ int main(int argc, char** argv)
         if (inf->encoder) mode.append(QLatin1Char('W'));
         else              mode.append(QLatin1Char('-'));
 
+#if MagickLibVersion > 0x708
+        QString module = QLatin1String(inf->magick_module);
+#else
         QString module = QLatin1String(inf->module);
+#endif
+
         QString mime   = QMimeDatabase().mimeTypeForFile(QFileInfo(QString::fromLatin1("foo.%1").arg(module))).name();
 
         if (module != QLatin1String("DNG")  &&

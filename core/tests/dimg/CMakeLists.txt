@@ -140,7 +140,7 @@ target_link_libraries(testcolorbalancefilter
 
 #------------------------------------------------------------------------
 
-if(ImageMagick_Magick++_FOUND)
+if(ImageMagick_Magick++_FOUND AND 0)
 
     set(magickloader_SRCS magickloader.cpp)
     add_executable(magickloader ${magickloader_SRCS})
