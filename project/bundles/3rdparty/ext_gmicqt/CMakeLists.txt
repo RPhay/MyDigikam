@@ -8,7 +8,7 @@
 
 SET(PREFIX_ext_gmicqt "${EXTPREFIX}" )
 
-set(GmicQt_Conf -DGMIC_QT_HOST=digikam 
+set(GmicQt_Conf -DGMIC_QT_HOST=digikam
                 ${GLOBAL_PROFILE}
 )
 
@@ -63,7 +63,7 @@ else()
         SOURCE_DIR gmic-qt
         INSTALL_DIR ${PREFIX_ext_gmicqt}
 
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_gmic} -DCMAKE_BUILD_TYPE=Release ${BASH_OPTIONS}
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_gmic} -DCMAKE_BUILD_TYPE=Release ${GmicQt_Conf}
 
         UPDATE_COMMAND ""
     )
