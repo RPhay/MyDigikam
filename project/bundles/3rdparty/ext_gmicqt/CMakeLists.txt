@@ -16,12 +16,9 @@ ExternalProject_Add(ext_gmic_base
 
     SOURCE_DIR gmic
 
-    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_gmicqt} -D -DCMAKE_BUILD_TYPE=Release ${GLOBAL_PROFILE}
-
+    CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
     INSTALL_COMMAND ""
-
-    BUILD_IN_SOURCE 1
 )
 
 # Download and build gmic-qt
