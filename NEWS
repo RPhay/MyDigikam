@@ -198,4 +198,5 @@ BUGFIXES:
 187 ==> 408549 - Many crashes on MacOS with current git.
 188 ==> 411053 - digikam-6.2.0-x86-64 appimage fails to run in Ubuntu 16.04.
 189 ==> 411395 - digiKam git master doesn't build with Imagemagick 6.9.
-190 ==> 
+190 ==> 411429 - Dimg test doesn't compile with latest imagemagick.
+191 ==> 
