@@ -140,12 +140,12 @@ int main(int argc, char** argv)
         else              mode.append(QLatin1Char('-'));
 
 #if MagickLibVersion < 0x708
-        QString mod = QLatin1String(inf->module);
+        QString mod  = QLatin1String(inf->module);
 #else
-        QString mod = QLatin1String(inf->magick_module);
+        QString mod  = QLatin1String(inf->magick_module);
 #endif
 
-        QString mime   = QMimeDatabase().mimeTypeForFile(QFileInfo(QString::fromLatin1("foo.%1").arg(mod))).name();
+        QString mime = QMimeDatabase().mimeTypeForFile(QFileInfo(QString::fromLatin1("foo.%1").arg(mod))).name();
 
         if (mod != QLatin1String("DNG")  &&
             mod != QLatin1String("JPEG") &&
