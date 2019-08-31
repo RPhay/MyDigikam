@@ -91,7 +91,49 @@ void DigikamApp::slotEditKeys()
 
 void DigikamApp::slotThemeChanged()
 {
-    ApplicationSettings::instance()->setCurrentTheme(ThemeManager::instance()->currentThemeName());
+    ApplicationSettings* const settings = ApplicationSettings::instance();
+    QString theme                       = ThemeManager::instance()->currentThemeName();
+
+    if (qApp->activeWindow() && settings->getCurrentTheme() != theme)
+    {
+        qApp->processEvents();
+
+        QColor color   = qApp->palette().color(qApp->activeWindow()->backgroundRole());
+        int colorValue = color.red();
+        colorValue    += color.blue();
+        colorValue    += color.green();
+        colorValue     = colorValue / 3;
+
+        QString iconTheme;
+        QString msgText;
+
+        if (colorValue > 127)
+        {
+            msgText   = i18n("You have chosen a bright color scheme. We switch "
+                             "to a dark icon theme. The Icon theme is "
+                             "available after a restart of digiKam.");
+
+            iconTheme = QLatin1String("breeze");
+        }
+        else
+        {
+            msgText   = i18n("You have chosen a dark color scheme. We switch "
+                             "to a bright icon theme. The icon theme is "
+                             "available after a restart of digiKam.");
+
+            iconTheme = QLatin1String("breeze-dark");
+        }
+
+        if (settings->getIconTheme() != iconTheme)
+        {
+            QMessageBox::information(qApp->activeWindow(),
+                                     qApp->applicationName(), msgText);
+
+            settings->setIconTheme(iconTheme);
+        }
+    }
+
+    settings->setCurrentTheme(theme);
 }
 
 } // namespace Digikam
