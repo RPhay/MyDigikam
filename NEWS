@@ -199,4 +199,7 @@ BUGFIXES:
 188 ==> 411053 - digikam-6.2.0-x86-64 appimage fails to run in Ubuntu 16.04.
 189 ==> 411395 - digiKam git master doesn't build with Imagemagick 6.9.
 190 ==> 411429 - Dimg test doesn't compile with latest imagemagick.
-191 ==> 
+191 ==> 411289 - Wishlist: Color schemes, Icon themes and Widget style together in the same menu.
+192 ==> 374091 - Theme application menu icons combine theme with icon theme.
+193 ==> 409084 - Greycard theme and Editor tools icon lack of visibility.
+194 ==> 

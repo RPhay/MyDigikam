@@ -50,6 +50,45 @@ namespace Digikam
 
 void ApplicationSettings::setCurrentTheme(const QString& theme)
 {
+    if (qApp->activeWindow() && d->currentTheme != theme)
+    {
+        qApp->processEvents();
+
+        QColor color   = qApp->palette().color(qApp->activeWindow()->backgroundRole());
+        int colorValue = color.red();
+        colorValue    += color.blue();
+        colorValue    += color.green();
+        colorValue     = colorValue / 3;
+
+        QString iconTheme;
+        QString msgText;
+
+        if (colorValue > 127)
+        {
+            msgText   = i18n("You have chosen a bright color scheme. We switch "
+                             "to a dark icon theme. The Icon theme is "
+                             "available after a restart of digiKam.");
+
+            iconTheme = QLatin1String("breeze");
+        }
+        else
+        {
+            msgText   = i18n("You have chosen a dark color scheme. We switch "
+                             "to a bright icon theme. The icon theme is "
+                             "available after a restart of digiKam.");
+
+            iconTheme = QLatin1String("breeze-dark");
+        }
+
+        if (getIconTheme() != iconTheme)
+        {
+            QMessageBox::information(qApp->activeWindow(),
+                                     qApp->applicationName(), msgText);
+
+            setIconTheme(iconTheme);
+        }
+    }
+
     d->currentTheme = theme;
 }
 
