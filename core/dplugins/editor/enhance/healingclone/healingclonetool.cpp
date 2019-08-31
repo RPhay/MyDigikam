@@ -82,6 +82,7 @@ public:
     QPushButton*            moveButton;
     QPushButton*            undoCloneButton;
     QPushButton*            redoCloneButton;
+    QPushButton*            resetImagePositionButton;
 };
 
 
@@ -193,6 +194,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     d->undoCloneButton->setToolTip(i18n("UNDO CLONE. \nShortcut :: CTRL+Z"));
 
     // --------------------------------------------------------
+
     QPixmap pixmap_REDO(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                         QLatin1String("digikam/data/healing_clone_REDO.png")));
     const QIcon ButtonIcon_REDO(pixmap_REDO);
@@ -205,9 +207,19 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     // --------------------------------------------------------
 
+    d->resetImagePositionButton = new QPushButton(i18n("R"));
+    d->resetImagePositionButton->setFixedSize(btnSize);
+    d->resetImagePositionButton->setWhatsThis(i18n("Reset Image Position"));
+    d->resetImagePositionButton->setToolTip(i18n("Reset Image Position"));
+    d->resetImagePositionButton->setStyleSheet(i18n("QPushButton {color: black;font-weight: bold;}"));
+
+
+
+    // ---------------------------------------------------------
+
     QLabel* const label4  = new QLabel(i18n("Zoom:"));
     d->zoomInput       = new DIntNumInput();
-    d->zoomInput->setRange(10, 300, 10);
+    d->zoomInput->setRange(10, 250, 10);
     d->zoomInput->setDefaultValue(100);
     d->zoomInput->setWhatsThis(i18n("Zoom In or Out. \nShortcut :: +/-"));
     d->zoomInput->setToolTip(i18n("Zoom In or Out. \nShortcut :: +/-"));
@@ -225,6 +237,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     iconsHBox->addWidget(d->moveButton);
     iconsHBox->addWidget(d->undoCloneButton);
     iconsHBox->addWidget(d->redoCloneButton);
+    iconsHBox->addWidget(d->resetImagePositionButton);
     iconsGroupBox->setLayout(iconsHBox);
     grid->addWidget(iconsGroupBox);
     // ---
@@ -316,6 +329,9 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     connect(d->previewWidget,SIGNAL(signalRedoClone()),
             this, SLOT(slotRedoClone()));
+
+    connect(d->resetImagePositionButton, SIGNAL(clicked(bool)),
+            this, SLOT(slotResetImagePosition()));
 
 
 }
@@ -672,6 +688,12 @@ void HealingCloneTool:: slotRedoClone()
     this->redoStack.pop();
     this->recloneFromVector(this->CloneInfoVector);
 
+
+}
+
+void HealingCloneTool::slotResetImagePosition()
+{
+    d->previewWidget->move(0,0);
 
 }
 

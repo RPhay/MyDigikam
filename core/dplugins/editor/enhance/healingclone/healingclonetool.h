@@ -80,6 +80,7 @@ public Q_SLOTS:
     void slotPushToUndoStack();
     void slotUndoClone();
     void slotRedoClone();
+    void slotResetImagePosition();
 
 
 private:
