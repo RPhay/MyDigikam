@@ -110,7 +110,7 @@ void DigikamApp::slotThemeChanged()
         if (colorValue > 127)
         {
             msgText   = i18n("You have chosen a bright color scheme. We switch "
-                             "to a dark icon theme. The Icon theme is "
+                             "to a dark icon theme. The icon theme is "
                              "available after a restart of digiKam.");
 
             iconTheme = QLatin1String("breeze");
