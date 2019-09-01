@@ -26,19 +26,6 @@
 
 #include "coredb.h"
 
-// C ANSI includes
-
-extern "C"
-{
-#include <sys/time.h>
-}
-
-// C++ includes
-
-#include <cstdio>
-#include <cstdlib>
-#include <ctime>
-
 // Qt includes
 
 #include <QFile>
