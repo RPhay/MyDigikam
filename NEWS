@@ -3,7 +3,8 @@ digiKam 6.3.0 - Release date: 2019-??-??
 *****************************************************************************************************
 NEW FEATURES:
 
-General: Internal Libraw updated to last stable 0.19.5.
+General    : Internal Libraw updated to last stable 0.19.5.
+ImageEditor: new external plugin based on GMicQt included in all bundles (https://github.com/c-koi/gmic-qt)
 
 *****************************************************************************************************
 BUGFIXES:
@@ -195,4 +196,10 @@ BUGFIXES:
 185 ==> 407235 - MacOS : digiKam 6 crashes when quitting.
 186 ==> 410518 - ~4 seconds after exiting with super-q, notice of crash appears.
 187 ==> 408549 - Many crashes on MacOS with current git.
-188 ==> 
+188 ==> 411053 - digikam-6.2.0-x86-64 appimage fails to run in Ubuntu 16.04.
+189 ==> 411395 - digiKam git master doesn't build with Imagemagick 6.9.
+190 ==> 411429 - Dimg test doesn't compile with latest imagemagick.
+191 ==> 411289 - Wishlist: Color schemes, Icon themes and Widget style together in the same menu.
+192 ==> 374091 - Theme application menu icons combine theme with icon theme.
+193 ==> 409084 - Greycard theme and Editor tools icon lack of visibility.
+194 ==> 

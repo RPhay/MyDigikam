@@ -209,7 +209,7 @@ void ManagedLoadSaveThread::load(const LoadingDescription& description, LoadingM
             }
 
             // stop current task
-            if (m_currentTask && m_currentTask != existingTask)
+            if (m_currentTask && static_cast<LoadingTask*>(m_currentTask) != existingTask)
             {
                 if ((loadingTask = checkLoadingTask(m_currentTask, LoadingTaskFilterAll)))
                 {
@@ -224,7 +224,7 @@ void ManagedLoadSaveThread::load(const LoadingDescription& description, LoadingM
             {
                 LoadSaveTask* const task = m_todo[i];
 
-                if (task != existingTask && checkLoadingTask(task, LoadingTaskFilterAll))
+                if (static_cast<LoadingTask*>(task) != existingTask && checkLoadingTask(task, LoadingTaskFilterAll))
                 {
                     //qCDebug(DIGIKAM_GENERAL_LOG) << "Removing task " << task << " from list";
                     delete m_todo.takeAt(i--);
@@ -433,12 +433,12 @@ void ManagedLoadSaveThread::prependThumbnailGroup(const QList<LoadingDescription
         // remove task, if not the current task
         if (existingTask)
         {
-            if (existingTask == m_currentTask)
+            if (existingTask == static_cast<LoadingTask*>(m_currentTask))
             {
                 continue;
             }
 
-            m_todo.removeAll(existingTask);
+            m_todo.removeAll(static_cast<LoadSaveTask*>(existingTask));
             delete existingTask;
         }
 

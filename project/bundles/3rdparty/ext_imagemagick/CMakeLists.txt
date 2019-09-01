@@ -23,7 +23,6 @@ ExternalProject_Add(ext_imagemagick
                                              --without-perl
                                              --without-x
                                              --disable-docs
-                                             --disable-largefile
                                              --disable-static
                                              --with-magick-plus-plus
                                              --with-heic

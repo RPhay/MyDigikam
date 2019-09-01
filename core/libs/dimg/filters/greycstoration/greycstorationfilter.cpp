@@ -86,10 +86,10 @@ extern "C"
 #include <unistd.h>
 }
 
-using namespace cimg_library;
-
 namespace Digikam
 {
+
+using namespace cimg_library;
 
 class Q_DECL_HIDDEN GreycstorationFilter::Private
 {

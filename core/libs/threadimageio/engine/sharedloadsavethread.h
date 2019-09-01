@@ -38,7 +38,6 @@ public:
     explicit SharedLoadSaveThread(QObject* const parent = nullptr);
 
     void load(const LoadingDescription& description, AccessMode mode, LoadingPolicy policy = LoadingPolicyAppend);
-    DImg cacheLookup(const QString& filePath, AccessMode mode);
 };
 
 } // namespace Digikam

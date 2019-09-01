@@ -73,7 +73,7 @@ bool LoadingTask::continueQuery(DImg* const img)
 {
     Q_UNUSED(img);
 
-    return m_loadingTaskStatus != LoadingTaskStatusStopping;
+    return (m_loadingTaskStatus != LoadingTaskStatusStopping);
 }
 
 void LoadingTask::setStatus(LoadingTaskStatus status)
@@ -199,63 +199,68 @@ void SharedLoadingTask::execute()
         }
     }
 
-    if (m_img.isNull())
+    if (continueQuery(&m_img) && m_img.isNull())
     {
         // load image
 
         m_img = DImg(m_loadingDescription.filePath, this, m_loadingDescription.rawDecodingSettings);
 
-        LoadingCache::CacheLock lock(cache);
-
-        // put (valid) image into cache of loaded images
-        if (!m_img.isNull())
         {
-            cache->putImage(m_loadingDescription.cacheKey(), m_img,
-                            m_loadingDescription.filePath);
-        }
+            LoadingCache::CacheLock lock(cache);
 
-        // remove this from the list of loading processes in cache
-        cache->removeLoadingProcess(this);
-
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "SharedLoadingTask " << this << ": image loaded, " << img.isNull();
-        // indicate that loading has finished so that listeners can stop waiting
-        m_completed = true;
-
-        // dispatch image to all listeners, including this
-        for (int i = 0 ; i < m_listeners.count() ; ++i)
-        {
-            LoadingProcessListener* const l = m_listeners.at(i);
-
-            if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
+            // put (valid) image into cache of loaded images
+            if (continueQuery(&m_img) && !m_img.isNull())
             {
-                // If a listener requested ReadWrite access, it gets a deep copy.
-                // DImg is explicitly shared.
-                l->setResult(m_loadingDescription, m_img.copy());
+                cache->putImage(m_loadingDescription.cacheKey(), m_img,
+                                m_loadingDescription.filePath);
             }
-            else
-            {
-                l->setResult(m_loadingDescription, m_img);
-            }
+
+            // remove this from the list of loading processes in cache
+            cache->removeLoadingProcess(this);
         }
 
-        // remove myself from list of listeners
-        removeListener(this);
-        // wake all listeners waiting on cache condVar, so that they remove themselves
-        lock.wakeAll();
-
-        // wait until all listeners have removed themselves
-        while (m_listeners.count() != 0)
         {
-            lock.timedWait();
-        }
+            LoadingCache::CacheLock lock(cache);
 
-        // set to 0, as checked in setStatus
-        m_usedProcess = nullptr;
+            // indicate that loading has finished so that listeners can stop waiting
+            m_completed = true;
+
+            // dispatch image to all listeners, including this
+            for (int i = 0 ; i < m_listeners.count() ; ++i)
+            {
+                LoadingProcessListener* const l = m_listeners.at(i);
+
+                if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
+                {
+                    // If a listener requested ReadWrite access, it gets a deep copy.
+                    // DImg is explicitly shared.
+                    l->setResult(m_loadingDescription, m_img.copy());
+                }
+                else
+                {
+                    l->setResult(m_loadingDescription, m_img);
+                }
+            }
+
+            // remove myself from list of listeners
+            removeListener(this);
+            // wake all listeners waiting on cache condVar, so that they remove themselves
+            lock.wakeAll();
+
+            // wait until all listeners have removed themselves
+            while (m_listeners.count() != 0)
+            {
+                lock.timedWait();
+            }
+
+            // set to 0, as checked in setStatus
+            m_usedProcess = nullptr;
+        }
     }
 
     // following the golden rule to avoid deadlocks, do this when CacheLock is not held
 
-    if (!m_img.isNull() && continueQuery(&m_img))
+    if (continueQuery(&m_img) && !m_img.isNull())
     {
         if (accessMode() == LoadSaveThread::AccessModeReadWrite)
         {
@@ -480,6 +485,7 @@ void SavingTask::progressInfo(DImg* const img, float progress)
 bool SavingTask::continueQuery(DImg* const img)
 {
     Q_UNUSED(img);
+
     return (m_savingTaskStatus != SavingTaskStatusStopping);
 }
 

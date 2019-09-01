@@ -139,19 +139,24 @@ int main(int argc, char** argv)
         if (inf->encoder) mode.append(QLatin1Char('W'));
         else              mode.append(QLatin1Char('-'));
 
-        QString module = QLatin1String(inf->module);
-        QString mime   = QMimeDatabase().mimeTypeForFile(QFileInfo(QString::fromLatin1("foo.%1").arg(module))).name();
+#if (MagickLibVersion >= 0x708 && defined(magick_module))
+        QString mod  = QLatin1String(inf->magick_module);
+#else
+        QString mod  = QLatin1String(inf->module);
+#endif
 
-        if (module != QLatin1String("DNG")  &&
-            module != QLatin1String("JPEG") &&
-            module != QLatin1String("PNG")  &&
-            module != QLatin1String("TIFF") &&
-            module != QLatin1String("JP2")  &&
+        QString mime = QMimeDatabase().mimeTypeForFile(QFileInfo(QString::fromLatin1("foo.%1").arg(mod))).name();
+
+        if (mod != QLatin1String("DNG")  &&
+            mod != QLatin1String("JPEG") &&
+            mod != QLatin1String("PNG")  &&
+            mod != QLatin1String("TIFF") &&
+            mod != QLatin1String("JP2")  &&
             mime.startsWith(QLatin1String("image/")))
         {
             qDebug().noquote()
                  << QString::fromLatin1("%1").arg(QLatin1String(inf->name),        16) << "::"
-                 << QString::fromLatin1("%1").arg(module,                          16) << "::"
+                 << QString::fromLatin1("%1").arg(mod,                             16) << "::"
                  << QString::fromLatin1("%1").arg(mime,                            28) << "::"
                  << QString::fromLatin1("%1").arg(mode,                             5) << "::"
                  << QString::fromLatin1("%1").arg(QLatin1String(inf->version),     28) << "::"
