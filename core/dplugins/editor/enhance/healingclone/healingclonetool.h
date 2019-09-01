@@ -81,6 +81,7 @@ public Q_SLOTS:
     void slotUndoClone();
     void slotRedoClone();
     void slotResetImagePosition();
+    void slotScaleChanged() override;
 
 
 private:
@@ -95,6 +96,11 @@ private:
     void readSettings();
     void writeSettings();
     void finalRendering();
+
+    void preparePreview();
+    void prepareFinal();
+    void setPreviewImage();
+    void setFinalImage();
 
 
     /**

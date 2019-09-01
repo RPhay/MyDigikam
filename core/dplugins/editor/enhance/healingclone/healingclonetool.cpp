@@ -46,7 +46,8 @@
 #include "imageiface.h"
 #include "imageguidewidget.h"
 #include "imagebrushguidewidget.h"
-
+#include "redeyecorrectioncontainer.h"
+#include "redeyecorrectionfilter.h"
 
 namespace DigikamEditorHealingCloneToolPlugin
 {
@@ -106,7 +107,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     setToolHelp(QLatin1String("healingclonetool.anchor"));
 
     d->gboxSettings      = new EditorToolSettings(0);
-    d->previewWidget     = new ImageBrushGuideWidget(0, true, ImageGuideWidget::PickColorMode, Qt::red);
+    d->previewWidget     = new ImageBrushGuideWidget(0);
     d->previewWidget->setFocusPolicy(Qt::StrongFocus);
     setToolView(d->previewWidget);
     setPreviewModeMask(PreviewToolBar::PreviewTargetImage);
@@ -361,10 +362,23 @@ void HealingCloneTool::writeSettings()
     config->sync();
 }
 
+void HealingCloneTool::preparePreview(){
+
+    qCDebug(DIGIKAM_DIMG_LOG()) << "PREPAARE PREVIEWWW";
+
+
+    DImg original = d->previewWidget->getOriginalImage();
+    //setFilter(new RedEyeCorrectionFilter(&original, this, d->gboxSettings));
+}
+void HealingCloneTool::prepareFinal(){}
+void HealingCloneTool::setPreviewImage(){}
+void HealingCloneTool::setFinalImage(){}
+
 void HealingCloneTool::finalRendering()
 {
     ImageIface iface;
-    DImg dest = d->previewWidget->imageIface()->preview();
+ //   DImg dest = d->previewWidget->imageIface()->preview();
+    DImg dest = d->previewWidget->getOriginalImage();
     FilterAction action(QLatin1String("digikam:healingCloneTool"), 1);
     iface.setOriginal(i18n("healingClone"), action, dest);
 
@@ -387,15 +401,17 @@ void HealingCloneTool::slotResized()
 
 void HealingCloneTool::slotReplace(const QPoint& srcPoint, const QPoint& dstPoint)
 {
-    ImageIface* const iface = d->previewWidget->imageIface();
-    DImg* const current     = iface->previewReference();
-    clone(current, srcPoint, dstPoint, d->radiusInput->value());
-    d->previewWidget->updatePreview();
+ //   ImageIface* const iface = d->previewWidget->imageIface();
+ //   DImg* const current     = iface->previewReference();
+    DImg  current = d->previewWidget->getOriginalImage();
+    clone(&current, srcPoint, dstPoint, d->radiusInput->value());
+    qCDebug(DIGIKAM_DIMG_LOG())<< "src,dst inside tool ::" <<  srcPoint << dstPoint;
+ //   d->previewWidget->updatePreview();
 }
 
 void HealingCloneTool::slotRadiusChanged(int r)
 {
-    d->previewWidget->setMaskPenSize(r);
+ //   d->previewWidget->setMaskPenSize(r);
     d->previewWidget->setBrushRadius(r);
 
 }
@@ -428,12 +444,12 @@ void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoi
                 if (srcPoint.x() < 0 || srcPoint.x() >= (int)img->width()  ||
                     srcPoint.y() < 0 || srcPoint.y() >= (int)img->height() )
                 {
-                    d->previewWidget->setSpotVisibleNoUpdate(false);
+          //          d->previewWidget->setSpotVisibleNoUpdate(false);
 
                 }
                 else
                 {
-                    d->previewWidget->setSpotVisibleNoUpdate(true);
+           //         d->previewWidget->setSpotVisibleNoUpdate(true);
                 }
 
                 if (srcPoint.x()+i < 0 || srcPoint.x()+i >= (int)img->width()  ||
@@ -479,17 +495,24 @@ void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoi
                 this->CloneInfoVector.push_back({dstPoint.x()+i, dstPoint.y()+j, scaleRatio,cSrc});
                 this->d->previewWidget->setCloneVectorChanged(true);
 
+
             }
         }
     }
+
+    d->previewWidget->updateImage(*img);
+
+
 }
 
 void HealingCloneTool::recloneFromVector(const std::vector<CloneInfo> cloneVec)
 {
     double currentScaleRatio = d->previewWidget->getScaleRatio();
 
-    ImageIface* const iface = d->previewWidget->imageIface();
-    DImg* const img     = iface->previewReference();
+  //  ImageIface* const iface = d->previewWidget->imageIface();
+ //   DImg* const img     = iface->previewReference();
+
+    DImg  img =  (d->previewWidget->getOriginalImage());
 
 
     for(int q = 0 ; q < cloneVec.size(); q++)
@@ -504,7 +527,7 @@ void HealingCloneTool::recloneFromVector(const std::vector<CloneInfo> cloneVec)
        {
            for(int s = 0 ; s<radius ; s++)
            {
-               img->setPixelColor(round(x * currentScaleRatio/thenScaleRatio)+k,
+               img.setPixelColor(round(x * currentScaleRatio/thenScaleRatio)+k,
                                   round(y*currentScaleRatio/thenScaleRatio) + s ,
                                   color);
 
@@ -512,7 +535,7 @@ void HealingCloneTool::recloneFromVector(const std::vector<CloneInfo> cloneVec)
        }
     }
 
-    d->previewWidget->updatePreview();
+ //   d->previewWidget->updatePreview();
 
 
 }
@@ -526,8 +549,9 @@ void HealingCloneTool :: updateLasso(std::vector<QPoint>& points)
 {
     uint radius = 5;
     static uint colorCounter = 0;
-    ImageIface* const iface = d->previewWidget->imageIface();
-    DImg* const img     = iface->previewReference();
+ //   ImageIface* const iface = d->previewWidget->imageIface();
+ //   DImg* const img     = iface->previewReference();
+    DImg img = d->previewWidget->getOriginalImage();
     for (QPoint p: points)
     {
         for(uint i = 0 ; i < radius ; i++)
@@ -536,17 +560,17 @@ void HealingCloneTool :: updateLasso(std::vector<QPoint>& points)
             {
                 uint x_shifted = p.x()+i;
                 uint y_shifted = p.y()+j;
-                DColor c = img->getPixelColor(x_shifted,y_shifted);
+                DColor c = img.getPixelColor(x_shifted,y_shifted);
 
                 this->lassoColorsMap.insert(std::make_pair(std::make_pair(x_shifted,y_shifted), c)) ;
-                img->setPixelColor(x_shifted,y_shifted,this->lassoColors[(colorCounter)%this->lassoColors.size()]);
+                img.setPixelColor(x_shifted,y_shifted,this->lassoColors[(colorCounter)%this->lassoColors.size()]);
                 this->lassoFlags.at(x_shifted).at(y_shifted) = true;
                 colorCounter++;
             }
         }
     }
 
-    d->previewWidget->updatePreview();
+//    d->previewWidget->updatePreview();
 }
 
 void HealingCloneTool :: slotLasso(const QPoint& dst)
@@ -634,10 +658,11 @@ void HealingCloneTool :: slotDecreaseBrushRadius()
 
 void HealingCloneTool :: initializeLassoFlags()
 {
-    ImageIface* const iface = d->previewWidget->imageIface();
-    DImg* const img     = iface->previewReference();
-    int w = img->width();
-    int h = img->height();
+  //  ImageIface* const iface = d->previewWidget->imageIface();
+  //  DImg* const img     = iface->previewReference();
+    DImg img = d->previewWidget->getOriginalImage();
+    int w = img.width();
+    int h = img.height();
     this->lassoFlags.resize(w);
     for(int i = 0 ; i < w; i++)
     {
@@ -696,5 +721,13 @@ void HealingCloneTool::slotResetImagePosition()
     d->previewWidget->move(0,0);
 
 }
+
+void HealingCloneTool::slotScaleChanged()
+{
+ qCDebug(DIGIKAM_GENERAL_LOG())  << "HEEY \n SCALE CHANGED !";
+}
+
+
+
 
 } // namespace DigikamEditorHealingCloneToolPlugin

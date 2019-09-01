@@ -31,6 +31,8 @@
 #include <QPainter>
 #include<QStandardPaths>
 #include<QCursor>
+#include<imageregionwidget.h>
+#include<imageregionitem.h>
 
 using namespace Digikam;
 
@@ -39,7 +41,7 @@ using namespace Digikam;
 namespace DigikamEditorHealingCloneToolPlugin
 {
 
-class ImageBrushGuideWidget : public ImageGuideWidget
+class ImageBrushGuideWidget : public ImageRegionWidget
 {
     Q_OBJECT
     Q_ENUMS(HealingCloneState)
@@ -75,13 +77,8 @@ public:
     void changeCursorShape(QColor color);
     void changeCursorShape(QPixmap,float,float);
     void updateCursor();
-    explicit ImageBrushGuideWidget(QWidget* const parent = nullptr,
-                              bool spotVisible = true,
-                              int guideMode = PickColorMode,
-                              const QColor& guideColor = Qt::red,
-                              int guideSize = 1,
-                              bool blink = false,
-                              ImageIface::PreviewType type= ImageIface::FullImage);
+    QPoint mapToImageCoordinates(QPoint point);
+    explicit ImageBrushGuideWidget(QWidget* const parent = nullptr);
 
 public Q_SLOTS:
 

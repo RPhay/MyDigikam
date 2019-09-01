@@ -35,14 +35,8 @@
 namespace DigikamEditorHealingCloneToolPlugin
 {
 
- ImageBrushGuideWidget::ImageBrushGuideWidget(QWidget* const parent ,
-                          bool spotVisible,
-                          int guideMode ,
-                          const QColor& guideColor ,
-                          int guideSize ,
-                          bool blink ,
-                          ImageIface::PreviewType type):
-     ImageGuideWidget( parent, spotVisible, guideMode , guideColor,  guideSize , blink, type)
+ ImageBrushGuideWidget::ImageBrushGuideWidget(QWidget* const parent):
+     ImageRegionWidget(parent)
 {
 
 }
@@ -100,25 +94,23 @@ namespace DigikamEditorHealingCloneToolPlugin
       }
      else if (srcSet)
      {
-         ImageGuideWidget::mousePressEvent(e);
+         ImageRegionWidget::mousePressEvent(e);
      }
      else if (this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY && (e->buttons() & Qt::LeftButton))
       {
 
          QPoint dst = QPoint(e->x(),e->y());
-         emit signalLasso(ImageGuideWidget::translateItemPosition(dst, false));
+    //     emit signalLasso(ImageRegionWidget::translateItemPosition(dst, false));
       }
      else
      {
          if (e->button() == Qt::LeftButton)
          {
 
-             dst = QPoint(e->x(), e->y());
 
-             QPoint currentSrc = ImageGuideWidget::translateItemPosition(src, true);
-             QPoint currentDst = ImageGuideWidget::translateItemPosition(dst, false);
-
-             emit signalClone(currentSrc, currentDst);
+             dst = mapToImageCoordinates(e->pos());
+             qCDebug(DIGIKAM_DIMG_LOG()) <<"SRC AND DST :: "<< src << dst ;
+             emit signalClone(src, dst);
 
          }
 
@@ -145,28 +137,27 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
     else if ( this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY && (e->buttons() & Qt::LeftButton))
      {
         QPoint dst = QPoint(e->x(),e->y());
-        emit signalLasso(ImageGuideWidget::translateItemPosition(dst, false));
+   //     emit signalLasso(ImageRegionWidget::translateItemPosition(dst, false));
      }
     else if ((e->buttons() & Qt::LeftButton) && !srcSet)
     {
 
 
-        QPoint currentDst = QPoint(e->x(), e->y());
+        QPoint currentDst   =   mapToImageCoordinates(e->pos());
+        QPoint currentSrc   =   src;
+        QPoint orgDst       =   dst;
+        currentSrc          =   QPoint(currentSrc.x() + currentDst.x() - orgDst.x(), currentSrc.y() + currentDst.y() - orgDst.y());
 
-        currentDst        = ImageGuideWidget::translateItemPosition(currentDst, false);
-        QPoint currentSrc = ImageGuideWidget::translateItemPosition(src, true);
-        QPoint orgDst     = ImageGuideWidget::translateItemPosition(dst, false);
-        currentSrc        = QPoint(currentSrc.x() + currentDst.x() - orgDst.x(), currentSrc.y() + currentDst.y() - orgDst.y());
+     //   ImageRegionWidget::setSpotPosition(currentSrc);
 
-        ImageGuideWidget::setSpotPosition(currentSrc);
-
+        qCDebug(DIGIKAM_DIMG_LOG()) << "mouse move :: src,dst " << currentSrc <<currentDst ;
         emit signalClone(currentSrc, currentDst);
 
     }
 
     if (srcSet)
     {
-        ImageGuideWidget::mouseMoveEvent(e);
+        ImageRegionWidget::mouseMoveEvent(e);
 
     }
 
@@ -177,7 +168,7 @@ void ImageBrushGuideWidget::mouseReleaseEvent(QMouseEvent* e)
 {
 
 
-    ImageGuideWidget::mouseReleaseEvent(e);
+    ImageRegionWidget::mouseReleaseEvent(e);
     if (this->currentState == HealingCloneState::MOVE_IMAGE)
     {
         setCursor(Qt::OpenHandCursor);
@@ -185,14 +176,19 @@ void ImageBrushGuideWidget::mouseReleaseEvent(QMouseEvent* e)
 
     else if (srcSet)
     {
-        src   = ImageGuideWidget::getSpotPosition();
+  //    src   = ImageRegionWidget::getSpotPosition();
+
+        src = mapToImageCoordinates(e->pos());
+        qCDebug(DIGIKAM_DIMG_LOG()) << "SRC IS " << src;
+
+
         undoSlotSetSourcePoint();
 
     }
     else
     {
-        QPoint p = ImageGuideWidget::translatePointPosition(src);
-        ImageGuideWidget::setSpotPosition(p);
+   //     QPoint p = ImageRegionWidget::translatePointPosition(src);
+   //     ImageGuideWidget::setSpotPosition(p);
 
     }
 
@@ -303,11 +299,15 @@ void ImageBrushGuideWidget::  keyReleaseEvent(QKeyEvent *e)
 void ImageBrushGuideWidget:: wheelEvent(QWheelEvent *e)
 {
 
+    ImageRegionWidget::wheelEvent(e);
+    return;
     if(e->angleDelta().y() > 0)
         zoomPlus();
     else if (e->angleDelta().y() <0)
         zoomMinus();
+
 }
+
 
 void ImageBrushGuideWidget::focusOutEvent(QFocusEvent *event)
 {
@@ -430,12 +430,13 @@ void ImageBrushGuideWidget::zoomImage(int zoomPercent)
     this->resize((int)this->float_w, (int)this->float_h);
 
 
+
 }
 
 
 void ImageBrushGuideWidget::resizeEvent(QResizeEvent* e)
 {
-    ImageGuideWidget::resizeEvent(e);
+    ImageRegionWidget::resizeEvent(e);
     emit signalReclone();
     emit signalResetLassoPoint();
     emit signalContinuePolygon();
@@ -450,7 +451,7 @@ void ImageBrushGuideWidget::resizeEvent(QResizeEvent* e)
 
 
 void ImageBrushGuideWidget::showEvent( QShowEvent* event ) {
-    ImageGuideWidget::showEvent( event );
+    ImageRegionWidget::showEvent( event );
     activateState(HealingCloneState::SELECT_SOURCE);
 }
 
@@ -458,13 +459,13 @@ void ImageBrushGuideWidget::recenterOnMousePosition()
 {
    // QPoint diff = this->parentWidget()->mapFromGlobal(QCursor::pos()) -  this->pos();
    // QPoint newPos = this->parentWidget()->mapFromGlobal(QCursor::pos()) - diff;
-    qCDebug(DIGIKAM_DIMG_LOG()) << "****************************";
-    qCDebug(DIGIKAM_GENERAL_LOG()) <<  "Cursor[regular,translate,map] " << QCursor::pos() << ImageGuideWidget::translatePointPosition(QCursor::pos())
+/*    qCDebug(DIGIKAM_DIMG_LOG()) << "****************************";
+    qCDebug(DIGIKAM_GENERAL_LOG()) <<  "Cursor[regular,translate,map] " << QCursor::pos() << ImageRegionWidget::translatePointPosition(QCursor::pos())
                                   << this->parentWidget()->mapFromGlobal(QCursor::pos());
-    qCDebug(DIGIKAM_GENERAL_LOG()) << "this->pos [regular,translate,map] " <<this->pos() << ImageGuideWidget::translatePointPosition(this->pos())
+    qCDebug(DIGIKAM_GENERAL_LOG()) << "this->pos [regular,translate,map] " <<this->pos() << ImageRegionWidget::translatePointPosition(this->pos())
                                    << this->parentWidget()->mapFromGlobal(this->pos());
     qCDebug(DIGIKAM_GENERAL_LOG()) << "****************************";
-
+*/
     double parentWidthHalf = this->parentWidget()->width()/2.0;
     double parentHeightHalf = this->parentWidget()->height()/2.0;
     QPoint pos = this->pos(); // position of upper-left corner of the imagewidget, relative
@@ -493,15 +494,22 @@ void ImageBrushGuideWidget::recenterOnMousePosition()
 void ImageBrushGuideWidget::zoomPlus()
 {
 
+  //  this->setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
+    this->scale(1.2,1.2);
+    return;
     this->float_h += .1 * this->default_h;
     this->float_w += .1 * this->default_w;
     int zoomPercent = ceil((this->float_h/this->default_h) * 100);
     emit signalZoomPercentChanged(zoomPercent);
     recenterOnMousePosition();
+
 }
 
 void ImageBrushGuideWidget::zoomMinus()
 {
+ //   this->setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
+    this->scale(.8,.8);
+    return;
 
     this->float_h -= .1 * this->default_h;
     this->float_w -= .1 * this->default_w;
@@ -520,7 +528,7 @@ void ImageBrushGuideWidget::resetPixels()
     // I am forcing a resize event with the same width and height, as a resizeEvent function in ImageGuideWidget already
     // does this resetting for me.
     QResizeEvent event(QSize(w,h),QSize(w,h));
-    ImageGuideWidget::resizeEvent(&event);
+    ImageRegionWidget::resizeEvent(&event);
 }
 
 
@@ -563,7 +571,7 @@ void ImageBrushGuideWidget :: activateState(HealingCloneState state)
     }
     else if(state == HealingCloneState::SELECT_SOURCE)
     {
-        this->setSpotVisibleNoUpdate(true);
+  //      this->setSpotVisibleNoUpdate(true);
         QPixmap pix = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                      QLatin1String("digikam/data/healing_clone_SRC.png")));
         changeCursorShape(pix,0.5,0.5);
@@ -575,4 +583,18 @@ void ImageBrushGuideWidget::setCloneVectorChanged(bool changed)
 {
     this->cloneVectorChanged = changed;
 }
+
+QPoint ImageBrushGuideWidget::mapToImageCoordinates(QPoint point)
+{
+
+    ImageRegionItem* item = (ImageRegionItem*)this->item();
+    double zoomFactor = item->zoomSettings()->zoomFactor();
+
+    QPointF temp = item->zoomSettings()->mapZoomToImage(mapToScene(point)) ;
+
+    qCDebug(DIGIKAM_DIMG_LOG()) << "zoom factor" << zoomFactor;
+    qCDebug(DIGIKAM_DIMG_LOG()) << "B, B mapped, temp" << point  << mapToScene(point)<< temp;
+    return QPoint((int) temp.x(), (int) temp.y());
+}
+
 } // namespace DigikamEditorHealingCloneToolPlugin
