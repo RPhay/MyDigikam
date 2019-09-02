@@ -43,11 +43,13 @@ using namespace Magick;
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 #include <QMessageBox>
+#include <QStandardPaths>
 
 // KDE includes
 
 #include <klocalizedstring.h>
 #include <kaboutdata.h>
+#include <ksharedconfig.h>
 
 // Local includes
 
@@ -242,10 +244,10 @@ int main(int argc, char* argv[])
     }
     else
     {
-        params = DbEngineParameters::parametersFromConfig(config);
+        params = DbEngineParameters::parametersFromConfig();
         params.legacyAndDefaultChecks(firstAlbumPath);
         // sync to config, for all first-run or upgrade situations
-        params.writeToConfig(config);
+        params.writeToConfig();
         ApplicationSettings::instance()->setDbEngineParameters(params);
     }
 

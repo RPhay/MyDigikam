@@ -36,6 +36,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 
 // Local includes
 
@@ -100,7 +101,7 @@ public:
     SearchTextBar*            tagSearchBar;
     SearchTextBar*            searchSearchBar;
 
-    LabelsTreeView*      labelsTree;
+    LabelsTreeView*           labelsTree;
     AlbumLabelsSearchHandler* labelsSearchHandler;
 };
 

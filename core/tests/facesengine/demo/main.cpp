@@ -39,8 +39,7 @@ int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
     a.setApplicationName(QString::fromLatin1("digikam"));          // for DB init.
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    DbEngineParameters prm    = DbEngineParameters::parametersFromConfig(config);
+    DbEngineParameters prm    = DbEngineParameters::parametersFromConfig();
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
 
     MainWindow w;
