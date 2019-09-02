@@ -67,8 +67,8 @@ install(FILES
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/rawengine/drawinfo.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/rawengine/drawdecodersettings.h
 
-            ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/containers/iteminfo.h
-            ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/containers/iteminfolist.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/item/containers/iteminfo.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/item/containers/iteminfolist.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/coredb/coredbfields.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/coredb/coredbconstants.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/coredb/coredbalbuminfo.h
