@@ -239,7 +239,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    this->CloneInfoVector = std::vector<CloneInfo>();
+
     this->lassoColors.push_back(DColor(Qt::red));
     this->lassoColors.push_back(DColor(Qt::white));
     this->lassoColors.push_back(DColor(Qt::black));
@@ -315,7 +315,7 @@ void HealingCloneTool::readSettings()
     KConfigGroup group        = config->group(d->configGroupName);
     d->radiusInput->setValue(group.readEntry(d->configRadiusAdjustmentEntry, d->radiusInput->defaultValue()));
     d->blurPercent->setValue(group.readEntry(d->configBlurAdjustmentEntry, d->blurPercent->defaultValue()));
-    d->previewWidget->setDefaults();
+
 
 }
 
@@ -378,7 +378,6 @@ void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoi
     double scale = item->zoomSettings()->zoomFactor();
     radius = radius / scale;
     double blurPercent = d->blurPercent->value() / 100;
-    double scaleRatio = d->previewWidget->getScaleRatio();
 
 
     for (int i = -1 * radius ; i < radius ; ++i)
@@ -431,7 +430,6 @@ void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoi
                 cDst.multiply(rP);
                 cSrc.blendAdd(cDst);
                 img->setPixelColor(dstPoint.x()+i, dstPoint.y()+j, cSrc);
-                this->CloneInfoVector.push_back({dstPoint.x()+i, dstPoint.y()+j, scaleRatio,cSrc});
                 this->d->previewWidget->setCloneVectorChanged(true);
 
 

@@ -62,9 +62,7 @@ public:
      * Using the parent's constructor
      * Should be changed to get rid of the inheritance
      */
-  //  using ImageGuideWidget::ImageGuideWidget;
-    void setDefaults();
-    double getScaleRatio();
+
     void setBrushRadius(int value);
     void setIsLassoPointsVectorEmpty(bool);
     void setCloneVectorChanged(bool);

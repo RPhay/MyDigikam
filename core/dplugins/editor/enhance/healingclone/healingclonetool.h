@@ -84,13 +84,7 @@ public Q_SLOTS:
 
 
 private:
-    struct CloneInfo
-    {
-      int dstX;
-      int dstY;
-      double scaleRatio;
-      DColor color;
-    };
+
 
     void readSettings();
     void writeSettings();
@@ -118,7 +112,7 @@ private:
     class Private;
 
     Private* const d;
-    std::vector<CloneInfo>  CloneInfoVector;
+
     std::stack<DImg> undoStack;
     std::stack<DImg> redoStack;
 

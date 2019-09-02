@@ -43,23 +43,6 @@ namespace DigikamEditorHealingCloneToolPlugin
     updateSourceCursor(src,10);
 }
 
- void ImageBrushGuideWidget::setDefaults()
- {
-     this->default_h = this->height();
-     this->default_w = this->width();
-     this->float_h = default_h;
-     this->float_w = default_w;
-    setFocus();
-  //  this->resetPixels();
-
- }
-
- double ImageBrushGuideWidget::getScaleRatio()
- {
-
-     return this->width()/this->default_w;
-
- }
 
 
  void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
