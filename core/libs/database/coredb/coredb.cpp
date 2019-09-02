@@ -26,19 +26,6 @@
 
 #include "coredb.h"
 
-// C ANSI includes
-
-extern "C"
-{
-#include <sys/time.h>
-}
-
-// C++ includes
-
-#include <cstdio>
-#include <cstdlib>
-#include <ctime>
-
 // Qt includes
 
 #include <QFile>
@@ -427,65 +414,6 @@ QList<TagShortInfo> CoreDB::getTagShortInfos() const
 
     return tagList;
 }
-
-/*
-QStringList CoreDB::getSubalbumsForPath(const QString& albumRoot,
-                                         const QString& path,
-                                         bool onlyDirectSubalbums)
-{
-    CollectionLocation location = CollectionManager::instance()->locationForAlbumRootPath(albumRoot);
-
-    if (location.isNull())
-        return QStringList();
-
-    QString subURL = path;
-
-    if (!path.endsWith(QLatin1String("/")))
-        subURL += QLatin1Char('/');
-
-    subURL = (subURL);
-
-    QList<QVariant> values;
-
-    if (onlyDirectSubalbums)
-    {
-        d->db->execSql( QString::fromUtf8("SELECT relativePath FROM Albums WHERE albumRoot=? AND relativePath LIKE '") +
-                        subURL + QString::fromUtf8("%' ") + QString::fromUtf8("AND relativePath NOT LIKE '") +
-                        subURL + QString::fromUtf8("%/%'; "),
-                        location.id(),
-                        &values );
-    }
-    else
-    {
-        d->db->execSql( QString::fromUtf8("SELECT relativePath FROM Albums WHERE albumRoot=? AND relativePath LIKE '") +
-                        subURL + QString::fromUtf8("%'; "),
-                        location.id(),
-                        &values );
-    }
-
-    QStringList subalbums;
-    QString albumRootPath = location.albumRootPath();
-
-    for (QList<QVariant>::iterator it = values.begin() ; it != values.end() ; ++it)
-        subalbums << albumRootPath + it->toString();
-
-    return subalbums;
-}
-*/
-
-/*
-int CoreDB::addAlbum(const QString& albumRoot, const QString& relativePath,
-                      const QString& caption,
-                      const QDate& date, const QString& collection)
-{
-    CollectionLocation location = CollectionManager::instance()->locationForAlbumRootPath(albumRoot);
-
-    if (location.isNull())
-        return -1;
-
-    return addAlbum(location.id(), relativePath, caption, date, collection);
-}
-*/
 
 int CoreDB::addAlbum(int albumRootId, const QString& relativePath,
                      const QString& caption,
@@ -1108,69 +1036,6 @@ void CoreDB::setUniqueHashVersion(int version)
     d->uniqueHashVersion = version;
     setSetting(QLatin1String("uniqueHashVersion"), QString::number(d->uniqueHashVersion));
 }
-
-/*
-QString CoreDB::getItemCaption(qlonglong imageID)
-{
-    QList<QVariant> values;
-
-    d->db->execSql( QString::fromUtf8("SELECT caption FROM Images "
-                            "WHERE id=?;"),
-                    imageID, &values );
-
-    if (!values.isEmpty())
-        return values.first().toString();
-    else
-        return QString();
-}
-
-QString CoreDB::getItemCaption(int albumID, const QString& name)
-{
-    QList<QVariant> values;
-
-    d->db->execSql( QString::fromUtf8("SELECT caption FROM Images "
-                            "WHERE dirid=? AND name=?;"),
-                    albumID,
-                    name,
-                    &values );
-
-    if (!values.isEmpty())
-        return values.first().toString();
-    else
-        return QString();
-}
-
-QDateTime CoreDB::getItemDate(qlonglong imageID)
-{
-    QList<QVariant> values;
-
-    d->db->execSql( QString::fromUtf8("SELECT datetime FROM Images "
-                            "WHERE id=?;"),
-                    imageID,
-                    &values );
-
-    if (!values.isEmpty())
-        return QDateTime::fromString(values.first().toString(), Qt::ISODate);
-    else
-        return QDateTime();
-}
-
-QDateTime CoreDB::getItemDate(int albumID, const QString& name)
-{
-    QList<QVariant> values;
-
-    d->db->execSql( QString::fromUtf8("SELECT datetime FROM Images "
-                            "WHERE dirid=? AND name=?;"),
-                    albumID,
-                    name,
-                    &values );
-
-    if (values.isEmpty())
-        return QDateTime::fromString(values.first().toString(), Qt::ISODate);
-    else
-        return QDateTime();
-}
-*/
 
 qlonglong CoreDB::getImageId(int albumID, const QString& name) const
 {
@@ -3185,38 +3050,6 @@ int CoreDB::addToDownloadHistory(const QString& identifier, const QString& name,
     return id.toInt();
 }
 
-/*
-void CoreDB::setItemCaption(qlonglong imageID,const QString& caption)
-{
-    QList<QVariant> values;
-
-    d->db->execSql( QString::fromUtf8("UPDATE Images SET caption=? "
-                            "WHERE id=?;"),
-                    caption,
-                    imageID );
-
-    CoreDbAccess::attributesWatch()
-            ->sendImageFieldChanged(imageID, DatabaseAttributesWatch::ImageComment);
-}
-
-
-void CoreDB::setItemCaption(int albumID, const QString& name, const QString& caption)
-{
-    / *
-    QList<QVariant> values;
-
-    d->db->execSql( QString::fromUtf8("UPDATE Images SET caption=? "
-                     "WHERE dirid=? AND name=?;")
-             .(caption,
-                  QString::number(albumID),
-                  (name)) );
-    * /
-
-    // easier because of attributes watch
-    return setItemCaption(getImageId(albumID, name), caption);
-}
-*/
-
 void CoreDB::addItemTag(qlonglong imageID, int tagID)
 {
     d->db->execSql(QString::fromUtf8("REPLACE INTO ImageTags (imageid, tagid) "
@@ -3241,15 +3074,6 @@ void CoreDB::addItemTag(qlonglong imageID, int tagID)
 
 void CoreDB::addItemTag(int albumID, const QString& name, int tagID)
 {
-/*
-    d->db->execSql( QString::fromUtf8("REPLACE INTO ImageTags (imageid, tagid) \n "
-                     "(SELECT id, ? FROM Images \n "
-                     " WHERE dirid=? AND name=?);")
-             .tagID
-             .albumID
-             .(name) );
-*/
-
     // easier because of attributes watch
     return addItemTag(getImageId(albumID, name), tagID);
 }
@@ -3378,27 +3202,6 @@ qlonglong CoreDB::getItemFromAlbum(int albumID, const QString& fileName) const
         return values.first().toLongLong();
     }
 }
-
-/*
-QStringList CoreDB::getAllItemURLsWithoutDate()
-{
-    QList<QVariant> values;
-    d->db->execSql( QString::fromUtf8("SELECT AlbumRoots.absolutePath||Albums.relativePath||'/'||Images.name "
-                            "FROM Images "
-                            "  LEFT JOIN Albums ON Images.album=Albums.id "
-                            "  LEFT JOIN AlbumRoots ON AlbumRoots.id=Albums.albumRoot "
-                            "WHERE (Images.datetime is null or "
-                            "       Images.datetime == '');"),
-                    &values );
-
-    QStringList urls;
-
-    for (QList<QVariant>::iterator it = values.begin() ; it != values.end() ; ++it)
-        urls << it->toString();
-
-    return urls;
-}
-*/
 
 QList<QDateTime> CoreDB::getAllCreationDates() const
 {
@@ -3675,44 +3478,6 @@ QStringList CoreDB::getListFromImageMetadata(DatabaseFields::ImageMetadata field
     return list;
 }
 
-/*
-QList<QPair<QString, QDateTime> > CoreDB::getItemsAndDate()
-{
-    QList<QVariant> values;
-    d->db->execSql( QString::fromUtf8("SELECT Images.name, datetime FROM Images;", &values ));
-
-    QList<QPair<QString, QDateTime> > data;
-
-    for ( QList<QVariant>::iterator it = values.begin() ; it != values.end() ; )
-    {
-        QPair<QString, QDateTime> pair;
-        pair.first  = (*it).toString();
-        ++it;
-        pair.second = QDateTime::fromString( (*it).toString(),  Qt::ISODate );
-        ++it;
-
-        if (!pair.second.isValid())
-            continue;
-
-        data << pair;
-    }
-
-    return data;
-}
-*/
-
-/*
-int CoreDB::getAlbumForPath(const QString& albumRoot, const QString& folder, bool create)
-{
-    CollectionLocation location = CollectionManager::instance()->locationForAlbumRootPath(albumRoot);
-    if (location.isNull())
-        return -1;
-
-    return getAlbumForPath(location.id(), folder, create);
-
-}
-*/
-
 int CoreDB::getAlbumForPath(int albumRootId, const QString& folder, bool create) const
 {
     QList<QVariant> values;
@@ -3876,180 +3641,6 @@ void CoreDB::renameItem(qlonglong imageID, const QString& newName)
                    newName, imageID);
 }
 
-/*
-QList<int> CoreDB::getTagsFromTagPaths(const QStringList& keywordsList, bool create)
-{
-    if (keywordsList.isEmpty())
-        return QList<int>();
-
-    QList<int> tagIDs;
-
-    QStringList keywordsList2Create;
-
-    // Create a list of the tags currently in database
-
-    TagInfo::List currentTagsList;
-
-    QList<QVariant> values;
-    d->db->execSql( "SELECT id, pid, name FROM Tags;", &values );
-
-    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
-    {
-        TagInfo info;
-
-        info.id   = (*it).toInt();
-        ++it;
-        info.pid  = (*it).toInt();
-        ++it;
-        info.name = (*it).toString();
-        ++it;
-        currentTagsList.append(info);
-    }
-
-    // For every tag in keywordsList, scan taglist to check if tag already exists.
-
-    for (QStringList::const_iterator kwd = keywordsList.constBegin() ;
-        kwd != keywordsList.constEnd() ; ++kwd )
-    {
-        // split full tag "url" into list of single tag names
-        QStringList tagHierarchy = (*kwd).split('/', QString::SkipEmptyParts);
-        if (tagHierarchy.isEmpty())
-            continue;
-
-        // last entry in list is the actual tag name
-        bool foundTag   = false;
-        QString tagName = tagHierarchy.back();
-        tagHierarchy.pop_back();
-
-        for (TagInfo::List::const_iterator tag = currentTagsList.constBegin() ;
-            tag != currentTagsList.constEnd() ; ++tag )
-        {
-            // There might be multiple tags with the same name, but in different
-            // hierarchies. We must check them all until we find the correct hierarchy
-            if ((*tag).name == tagName)
-            {
-                int parentID = (*tag).pid;
-
-                // Check hierarchy, from bottom to top
-                bool foundParentTag                 = true;
-                QStringList::iterator parentTagName = tagHierarchy.end() ;
-
-                while (foundParentTag && parentTagName != tagHierarchy.begin())
-                {
-                    --parentTagName;
-
-                    foundParentTag = false;
-
-                    for (TagInfo::List::const_iterator parentTag = currentTagsList.constBegin();
-                        parentTag != currentTagsList.constEnd() ; ++parentTag )
-                    {
-                        // check if name is the same, and if ID is identical
-                        // to the parent ID we got from the child tag
-                        if ( (*parentTag).id == parentID &&
-                            (*parentTag).name == (*parentTagName) )
-                        {
-                            parentID       = (*parentTag).pid;
-                            foundParentTag = true;
-                            break;
-                        }
-                    }
-
-                    // If we traversed the list without a match,
-                    // foundParentTag will be false, the while loop breaks.
-                }
-
-                // If we managed to traverse the full hierarchy,
-                // we have our tag.
-                if (foundParentTag)
-                {
-                    // add to result list
-                    tagIDs.append((*tag).id);
-                    foundTag = true;
-                    break;
-                }
-            }
-        }
-
-        if (!foundTag)
-            keywordsList2Create.append(*kwd);
-    }
-
-    // If tags do not exist in database, create them.
-
-    if (create && !keywordsList2Create.isEmpty())
-    {
-        for (QStringList::const_iterator kwd = keywordsList2Create.constBegin();
-            kwd != keywordsList2Create.constEnd() ; ++kwd )
-        {
-            // split full tag "url" into list of single tag names
-            QStringList tagHierarchy = (*kwd).split('/', QString::SkipEmptyParts);
-
-            if (tagHierarchy.isEmpty())
-                continue;
-
-            int  parentTagID      = 0;
-            int  tagID            = 0;
-            bool parentTagExisted = true;
-
-            // Traverse hierarchy from top to bottom
-            for (QStringList::const_iterator tagName = tagHierarchy.constBegin();
-                tagName != tagHierarchy.constEnd() ; ++tagName)
-            {
-                tagID = 0;
-
-                // if the parent tag did not exist, we need not check if the child exists
-                if (parentTagExisted)
-                {
-                    for (TagInfo::List::const_iterator tag = currentTagsList.constBegin();
-                        tag != currentTagsList.constEnd() ; ++tag )
-                    {
-                        // find the tag with tag name according to tagHierarchy,
-                        // and parent ID identical to the ID of the tag we found in
-                        // the previous run.
-                        if ((*tag).name == (*tagName) && (*tag).pid == parentTagID)
-                        {
-                            tagID = (*tag).id;
-                            break;
-                        }
-                    }
-                }
-
-                if (tagID != 0)
-                {
-                    // tag already found in DB
-                    parentTagID = tagID;
-                    continue;
-                }
-
-                // Tag does not yet exist in DB, add it
-                tagID = addTag(parentTagID, (*tagName), QString(), 0);
-
-                if (tagID == -1)
-                {
-                    // Something is wrong in database. Abort.
-                    break;
-                }
-
-                // append to our list of existing tags (for following keywords)
-                TagInfo info;
-                info.id   = tagID;
-                info.pid  = parentTagID;
-                info.name = (*tagName);
-                currentTagsList.append(info);
-
-                parentTagID      = tagID;
-                parentTagExisted = false;
-            }
-
-            // add to result list
-            tagIDs.append(tagID);
-        }
-    }
-
-    return tagIDs;
-}
-*/
-
 int CoreDB::getItemAlbum(qlonglong imageID) const
 {
     QList<QVariant> values;
@@ -4083,68 +3674,6 @@ QString CoreDB::getItemName(qlonglong imageID) const
         return QString();
     }
 }
-
-/*
-bool CoreDB::setItemDate(qlonglong imageID,
-                          const QDateTime& datetime)
-{
-    d->db->execSql ( QString::fromUtf8("UPDATE Images SET datetime=?"
-                            "WHERE id=?;"),
-                     datetime.toString(Qt::ISODate),
-                     imageID );
-
-    CoreDbAccess::attributesWatch()
-            ->sendImageFieldChanged(imageID, DatabaseAttributesWatch::ImageDate);
-
-    return true;
-}
-
-bool CoreDB::setItemDate(int albumID, const QString& name,
-                          const QDateTime& datetime)
-{
-    / *
-    d->db->execSql ( QString::fromUtf8("UPDATE Images SET datetime=?"
-                       "WHERE dirid=? AND name=?;")
-              .datetime.toString(Qt::ISODate,
-                   QString::number(albumID),
-                   (name)) );
-
-    return true;
-    * /
-    // easier because of attributes watch
-    return setItemDate(getImageId(albumID, name), datetime);
-}
-
-
-void CoreDB::setItemRating(qlonglong imageID, int rating)
-{
-    d->db->execSql ( QString::fromUtf8("REPLACE INTO ImageProperties "
-                            "(imageid, property, value) "
-                            "VALUES(?, ?, ?);"),
-                     imageID,
-                     QString("Rating"),
-                     rating );
-
-    CoreDbAccess::attributesWatch()
-            ->sendImageFieldChanged(imageID, DatabaseAttributesWatch::ImageRating);
-}
-
-int CoreDB::getItemRating(qlonglong imageID)
-{
-    QList<QVariant> values;
-
-    d->db->execSql( QString::fromUtf8(SELECT value FROM ImageProperties "
-                            "WHERE imageid=? and property=?;"),
-                    imageID,
-                    QString("Rating"),
-                    &values);
-
-    if (!values.isEmpty())
-        return values.first().toInt();
-    else
-        return 0;
-}
-*/
 
 QStringList CoreDB::getItemURLsInAlbum(int albumID, ItemSortOrder sortOrder) const
 {
@@ -4468,20 +3997,6 @@ QList<qlonglong> CoreDB::getItemIDsInTag(int tagID, bool recursive) const
     return itemIDs;
 }
 
-/*
-QString CoreDB::getAlbumPath(int albumID)
-{
-    QList<QVariant> values;
-    d->db->execSql( QString::fromUtf8("SELECT AlbumRoots.absolutePath||Albums.relativePath "
-                            "FROM Albums, AlbumRoots WHERE Albums.id=? AND AlbumRoots.id=Albums.albumRoot; "),
-                    albumID, &values);
-    if (!values.isEmpty())
-        return values.first().toString();
-    else
-        return QString();
-}
-*/
-
 QString CoreDB::getAlbumRelativePath(int albumID) const
 {
     QList<QVariant> values;
@@ -4663,28 +4178,6 @@ void CoreDB::deleteRemovedItems()
     d->db->recordChangeset(CollectionImageChangeset(QList<qlonglong>(), QList<int>(), CollectionImageChangeset::RemovedDeleted));
 }
 
-/*
-// This method is probably nonsense because a remove image no longer has an associated album
-void CoreDB::deleteRemovedItems(QList<int> albumIds)
-{
-    DbEngineSqlQuery query = d->db->prepareQuery( QString::fromUtf8("DELETE FROM Images WHERE status=? AND album=?;") );
-
-    QVariantList albumBindIds;
-    QVariantList status;
-    foreach (int albumId, albumIds)
-    {
-        status << (int)DatabaseItem::Removed;
-        albumBindIds << albumId;
-    }
-
-    query.addBindValue(status);
-    query.addBindValue(albumBindIds);
-    d->db->execBatch(query);
-
-    d->db->recordChangeset(CollectionImageChangeset(QList<qlonglong>(), albumIds, CollectionImageChangeset::RemovedDeleted));
-}
-*/
-
 void CoreDB::renameAlbum(int albumID, int newAlbumRoot, const QString& newRelativePath)
 {
     int albumRoot        = getAlbumRootId(albumID);
@@ -4709,31 +4202,6 @@ void CoreDB::renameAlbum(int albumID, int newAlbumRoot, const QString& newRelati
     d->db->execSql(QString::fromUtf8("UPDATE Albums SET albumRoot=?, relativePath=? WHERE id=? AND albumRoot=?;"),
                    newAlbumRoot, newRelativePath, albumID, albumRoot);
     d->db->recordChangeset(AlbumChangeset(albumID, AlbumChangeset::Renamed));
-
-/*
-    if (renameSubalbums)
-    {
-        // now find the list of all subalbums which need to be updated
-        QList<QVariant> values;
-        d->db->execSql( QString::fromUtf8("SELECT id, relativePath FROM Albums WHERE albumRoot=? AND relativePath LIKE ?;"),
-                        albumRoot, oldUrl + "/%", &values );
-
-        // and update their url
-        QString newChildURL;
-
-        for (QList<QVariant>::iterator it = values.begin() ; it != values.end() ; )
-        {
-            int childAlbumId = (*it).toInt();
-            ++it;
-            newChildURL = (*it).toString();
-            ++it;
-            newChildURL.replace(oldUrl, newRelativePath);
-            d->db->execSql(QString::fromUtf8("UPDATE Albums SET albumRoot=?, relativePath=? WHERE albumRoot=? AND relativePath=?"),
-                           newAlbumRoot, newChildURL, albumRoot, (*it) );
-            d->db->recordChangeset(AlbumChangeset(childAlbumId, AlbumChangeset::Renamed));
-        }
-    }
-*/
 }
 
 void CoreDB::setTagName(int tagID, const QString& name)
@@ -4956,8 +4424,6 @@ QList<QVariant> CoreDB::getImageIdsFromArea(qreal lat1, qreal lat2, qreal lng1, 
     QList<QVariant> values;
     QList<QVariant> boundValues;
     boundValues << lat1 << lat2 << lng1 << lng2;
-
-    //CoreDbAccess access;
 
     d->db->execSql(QString::fromUtf8("Select ImageInformation.imageid, ImageInformation.rating, "
                                      "ImagePositions.latitudeNumber, ImagePositions.longitudeNumber "

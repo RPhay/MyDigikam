@@ -151,6 +151,21 @@ if [ $? -ne 0 ]; then
 fi
 
 #################################################################################################
+# Install Extra Plugins
+
+cd $BUILDING_DIR
+
+rm -rf $BUILDING_DIR/* || true
+
+cmake $ORIG_WD/../3rdparty \
+      -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+      -DINSTALL_ROOT=/usr \
+      -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
+
+cmake --build . --config RelWithDebInfo --target ext_gmic_qt -- -j$CPU_CORES
+
+#################################################################################################
 
 export PATH=$ORIG_PATH
 
