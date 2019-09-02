@@ -25,6 +25,10 @@
  *
  * ============================================================ */
 
+// C++ includes
+
+#include <cassert>
+
 // Qt includes
 
 #include <QApplication>
@@ -37,10 +41,6 @@
 #include <QList>
 #include <QUuid>
 
-// C++ includes
-
-#include <cassert>
-
 // Local includes
 
 #include "dimg.h"
@@ -51,7 +51,6 @@
 #include "dbengineparameters.h"
 
 using namespace Digikam;
-
 
 // --------------------------------------------------------------------------------------------------
 
@@ -79,7 +78,7 @@ QList<QImage> toImages(const QStringList& paths)
     return images;
 }
 
-void prepareForTrain(QString testSetPath, QMap<unsigned, QStringList>& testset, 
+void prepareForTrain(QString testSetPath, QMap<unsigned, QStringList>& testset,
                      QMap<unsigned, QStringList>& trainingset, double ratio,
                      unsigned int nbOfSamples, unsigned int& nbOfIdentities)
 {
@@ -88,7 +87,7 @@ void prepareForTrain(QString testSetPath, QMap<unsigned, QStringList>& testset,
 
     qDebug() << nbOfSamples << ", " << nbOfIdentities;
 
-    if(nbOfIdentities == 0)
+    if (nbOfIdentities == 0)
     {
         nbOfIdentities = subjects.size();
     }
@@ -118,7 +117,7 @@ void prepareForTrain(QString testSetPath, QMap<unsigned, QStringList>& testset,
                 qDebug() << "test " << path;
             }
         }
-    }    
+    }
 }
 
 QImage scaleForDetection(const DImg& image, FaceDetector detector)
@@ -163,7 +162,7 @@ QImage retrieveFace(const DImg& image, const QList<QRectF>& rects)
 
     QRectF rect = rects.first();
     QImage face = image.copyQImage(rect);
-    
+
     return face;
 }
 
@@ -172,13 +171,13 @@ QList<QImage> retrieveFaces(const QList<QImage>& images, const QList<QRectF>& re
     QList<QImage> faces;
     unsigned index = 0;
 
-    foreach(const QRectF& rect, rects)
+    foreach (const QRectF& rect, rects)
     {
         DImg temp(images.at(index));
         faces << temp.copyQImage(rect);
         index++;
     }
-    
+
     return faces;
 }
 
@@ -206,34 +205,34 @@ int main(int argc, char* argv[])
 
     bool optionErrors = false;
 
-    if(parser.optionNames().empty())
+    if (parser.optionNames().empty())
     {
         qWarning() << "NO options!!!";
         optionErrors = true;
     }
-    else if(!parser.isSet(QLatin1String("db")))
+    else if (!parser.isSet(QLatin1String("db")))
     {
         qWarning() << "MISSING database for test!!!";
         optionErrors =true;
     }
-    else if(!parser.isSet(QLatin1String("as"))
-            && (!parser.isSet(QLatin1String("ni")) || !parser.isSet(QLatin1String("ns"))))
+    else if (!parser.isSet(QLatin1String("as")) &&
+             (!parser.isSet(QLatin1String("ni")) || !parser.isSet(QLatin1String("ns"))))
     {
         qWarning() << "UNKNOWN training set / test set separation!!!";
         optionErrors =true;
     }
-    else if(parser.isSet(QLatin1String("ts")) && !parser.isSet(QLatin1String("ds")))
+    else if (parser.isSet(QLatin1String("ts")) && !parser.isSet(QLatin1String("ds")))
     {
         qWarning() << "UNKNOWN Dev set!!!";
         optionErrors =true;
     }
-    else if(parser.isSet(QLatin1String("ds")) && !parser.isSet(QLatin1String("ts")))
+    else if (parser.isSet(QLatin1String("ds")) && !parser.isSet(QLatin1String("ts")))
     {
         qWarning() << "UNKNOWN Test set!!!";
         optionErrors =true;
     }
 
-    if(optionErrors)
+    if (optionErrors)
     {
         parser.showHelp();
         return 1;
@@ -242,22 +241,23 @@ int main(int argc, char* argv[])
     QString facedb = parser.value(QLatin1String("db"));
 
     unsigned int nbOfSamples = 0, nbOfIdentities = 0;
-    if(!parser.isSet(QLatin1String("as")))
+
+    if (!parser.isSet(QLatin1String("as")))
     {
         nbOfSamples = parser.value(QLatin1String("ns")).toUInt();
         nbOfIdentities = parser.value(QLatin1String("ni")).toUInt();
     }
 
     double ratio = 0;
-    if(parser.isSet(QLatin1String("rs")))
+
+    if (parser.isSet(QLatin1String("rs")))
     {
         ratio = parser.value(QLatin1String("rs")).toDouble();
     }
 
     // Init config for digiKam
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    DbEngineParameters prm    = DbEngineParameters::parametersFromConfig(config);
+    DbEngineParameters prm = DbEngineParameters::parametersFromConfig();
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
     RecognitionDatabase db;
     db.activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm::DNN);
@@ -266,13 +266,14 @@ int main(int argc, char* argv[])
     // Construct training set, test set
 
     QMap<unsigned, QStringList> testset, trainingset;
-    if(ratio > 0)
+
+    if (ratio > 0)
     {
         prepareForTrain(facedb, testset, trainingset, ratio, nbOfSamples, nbOfIdentities);
     }
     else
     {
-        QString testsetFolder = parser.value(QLatin1String("ts"));
+        QString testsetFolder    = parser.value(QLatin1String("ts"));
         QString trainingsetFoler = parser.value(QLatin1String("ds"));
 
         // TODO: Overload of prepareForTrain() to create training set and test set here
@@ -281,14 +282,14 @@ int main(int argc, char* argv[])
     // Create IDs
 
     QMap<unsigned, Identity> idMap;
-    
-    for (unsigned i = 1 ; i <= nbOfIdentities; ++i)
+
+    for (unsigned i = 1 ; i <= nbOfIdentities ; ++i)
     {
         QMap<QString, QString> attributes;
         attributes[QLatin1String("name")] = QString::number(i);
         idMap[i] = db.addIdentityDebug(attributes);
     }
-    
+
     db.createDNNDebug(); // Create OpenCVDNNFaceRecognizer instance without loading recognition database
 
     // Init FaceDetector used for detecting faces and bounding box
@@ -374,7 +375,7 @@ int main(int argc, char* argv[])
         QList<QImage> rawImages = toImages(imagePaths);
         qDebug() << "Training directory " << it.key();
 
-        foreach(const QImage& image, rawImages)
+        foreach (const QImage& image, rawImages)
         {
             QString imagePath = imagePaths.takeFirst();
 
@@ -387,7 +388,7 @@ int main(int argc, char* argv[])
 
             detectingTime += time.elapsed();
 
-            if(detectedBoundingBox.size())
+            if (detectedBoundingBox.size())
             {
                 detectedFaces << image;
                 bboxes << detectedBoundingBox.first();
@@ -398,7 +399,7 @@ int main(int argc, char* argv[])
                 undetectedTrainedFaces << imagePath;
             }
         }
-        
+
         QList<QImage> faces = retrieveFaces(detectedFaces, bboxes);
 
         // Start timing for benchmark training
@@ -417,12 +418,12 @@ int main(int argc, char* argv[])
         Identity identity       = idMap.value(it.key());
         QList<QImage> rawImages = toImages(it.value());
 
-        QStringList imagePaths = it.value();
+        QStringList imagePaths  = it.value();
 
         QList<QImage> detectedFaces;
         QList<QRectF> bboxes;
 
-        foreach(const QImage& image, rawImages)
+        foreach (const QImage& image, rawImages)
         {
             QString imagePath = imagePaths.takeFirst();
 
@@ -435,7 +436,7 @@ int main(int argc, char* argv[])
 
             detectingTime += time.elapsed();
 
-            if(detectedBoundingBox.size())
+            if (detectedBoundingBox.size())
             {
                 detectedFaces << image;
                 bboxes << detectedBoundingBox.first();
@@ -490,7 +491,8 @@ int main(int argc, char* argv[])
     qDebug() << "\n" << nbUndetectedTrainedFaces << " / " << totalTrained + nbUndetectedTrainedFaces 
              << " (" << float(nbUndetectedTrainedFaces) / (totalTrained + nbUndetectedTrainedFaces) * 100 << "%)" 
              << " faces cannot be detected for training";
-    foreach(const QString& path, undetectedTrainedFaces)
+
+    foreach (const QString& path, undetectedTrainedFaces)
     {
         qDebug() << path;
     }
@@ -500,12 +502,12 @@ int main(int argc, char* argv[])
         qDebug() << "Training " << totalTrained << "of " << nbOfIdentities << " different objects took " << elapsedTraining << " ms, " << ((float)elapsedTraining/totalTrained) << " ms per image";
     }
 
-
     unsigned nbUndetectedTestedFaces = undetectedTestedFaces.size();
     qDebug() << "\n" << nbUndetectedTestedFaces << " / " << totalRecognized + nbUndetectedTestedFaces 
              << " (" << float(nbUndetectedTestedFaces) / (totalRecognized + nbUndetectedTestedFaces) * 100 << "%)" 
              << " faces cannot be detected for testing";
-    foreach(const QString& path, undetectedTestedFaces)
+
+    foreach (const QString& path, undetectedTestedFaces)
     {
         qDebug() << path;
     }
@@ -523,7 +525,8 @@ int main(int argc, char* argv[])
     }
 
     qDebug() << "\nFalse positive faces";
-    foreach(const QString& path, falsePositiveFaces)
+
+    foreach (const QString& path, falsePositiveFaces)
     {
         qDebug() << path;
     }
@@ -533,5 +536,4 @@ int main(int argc, char* argv[])
              << "ms";
 
     return 0;
-
 }

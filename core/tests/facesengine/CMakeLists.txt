@@ -46,9 +46,7 @@ target_link_libraries(face_rec
                       digikamfacesengine
                       digikamdatabase
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Sql
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -63,9 +61,7 @@ target_link_libraries(face_cluster
                       digikamfacesengine
                       digikamdatabase
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Sql
+                      ${COMMON_TEST_LINK}
 
                       ${OpenCV_LIBRARIES}
 )
@@ -96,10 +92,6 @@ target_link_libraries(preprocess
                       digikamgui
                       digikamfacesengine
                       digikamdatabase
-
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Sql
 
                       ${COMMON_TEST_LINK}
 

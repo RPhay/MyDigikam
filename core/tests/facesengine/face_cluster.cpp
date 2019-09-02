@@ -21,6 +21,11 @@
  *
  * ============================================================ */
 
+// C++ includes
+
+#include <cassert>
+#include <set>
+
 // Qt includes
 
 #include <QApplication>
@@ -31,12 +36,7 @@
 #include <QCommandLineParser>
 #include <QList>
 
-// C++ includes
-
-#include <cassert>
-#include <set>
-
-// Digikam includes
+// Local includes
 
 #include "dimg.h"
 #include "facescansettings.h"
@@ -48,41 +48,41 @@
 using namespace Digikam;
 
 // --------------------------------------------------------------------------------------------------
-  
-// Function to return the 
-// intersection vector of v1 and v2 
+
+// Function to return the
+// intersection vector of v1 and v2
 void intersection(const std::vector<int>& v1, const std::vector<int>& v2,
-                  std::vector<int>& vout) 
-{ 
-    // Find the intersection of the two sets 
-    std::set_intersection(v1.begin(), v1.end(), v2.begin(), v2.end(), 
-                          std::inserter(vout, vout.begin())); 
-} 
-  
-// Function to return the Jaccard distance of two vectors 
-double jaccard_distance(const std::vector<int>& v1, const std::vector<int>& v2) 
-{ 
-    // Sizes of both the sets 
-    double size_v1 = v1.size(); 
-    double size_v2 = v2.size(); 
-  
+                  std::vector<int>& vout)
+{
+    // Find the intersection of the two sets
+    std::set_intersection(v1.begin(), v1.end(), v2.begin(), v2.end(),
+                          std::inserter(vout, vout.begin()));
+}
+
+// Function to return the Jaccard distance of two vectors
+double jaccard_distance(const std::vector<int>& v1, const std::vector<int>& v2)
+{
+    // Sizes of both the sets
+    double size_v1 = v1.size();
+    double size_v2 = v2.size();
+
     // Get the intersection set
     std::vector<int> intersect;
-    intersection(v1, v2, intersect); 
-  
+    intersection(v1, v2, intersect);
+
     // Size of the intersection set
-    double size_in = intersect.size(); 
-  
-    // Calculate the Jaccard index 
-    // using the formula 
-    double jaccard_index = size_in / (size_v1 + size_v2 - size_in); 
-  
-    // Calculate the Jaccard distance 
-    // using the formula 
-    double jaccard_dist = 1 - jaccard_index; 
-  
-    // Return the Jaccard distance 
-    return jaccard_dist; 
+    double size_in = intersect.size();
+
+    // Calculate the Jaccard index
+    // using the formula
+    double jaccard_index = size_in / (size_v1 + size_v2 - size_in);
+
+    // Calculate the Jaccard distance
+    // using the formula
+    double jaccard_dist = 1 - jaccard_index;
+
+    // Return the Jaccard distance
+    return jaccard_dist;
 }
 
 QStringList toPaths(char** argv, int startIndex, int argc)
@@ -161,13 +161,13 @@ QList<QImage> retrieveFaces(const QList<QImage>& images, const QList<QRectF>& re
     QList<QImage> faces;
     unsigned index = 0;
 
-    foreach(const QRectF& rect, rects)
+    foreach (const QRectF& rect, rects)
     {
         DImg temp(images.at(index));
         faces << temp.copyQImage(rect);
         index++;
     }
-    
+
     return faces;
 }
 
@@ -175,24 +175,27 @@ void createClustersFromClusterIndices(const std::vector<int>& clusteredIndices,
                                       QList<std::vector<int>>& clusters)
 {
     int nbOfClusters = 0;
-    for(size_t i = 0; i < clusteredIndices.size(); i++)
+
+    for (size_t i = 0 ; i < clusteredIndices.size() ; i++)
     {
         int nb = clusteredIndices[i];
-        if(nb > nbOfClusters)
+
+        if (nb > nbOfClusters)
         {
             nbOfClusters = nb;
         }
     }
 
     nbOfClusters++;
-    for(int i = 0; i < nbOfClusters; i++)
+
+    for (int i = 0 ; i < nbOfClusters ; i++)
     {
         clusters << std::vector<int>();
     }
 
     qDebug() << "nbOfClusters " << clusters.size();
 
-    for(size_t i = 0; i < clusteredIndices.size(); i++)
+    for (size_t i = 0 ; i < clusteredIndices.size() ; i++)
     {
         clusters[clusteredIndices[i]].push_back(i);
     }
@@ -211,16 +214,19 @@ void verifyClusteringResults(const std::vector<int>& clusteredIndices,
     int testClustersSize = testClusters.size();
     std::vector<float> visited(testClustersSize, 1.0);
     std::vector<std::set<int>> lastVisit(testClustersSize, std::set<int>{});
-    for(int i = 0; i < testClustersSize; i++)
+
+    for(int i = 0 ; i < testClustersSize ; i++)
     {
         std::vector<int> refSet = testClusters.at(i);
 
         double minDist = 1.0;
         int indice = 0;
-        for(int j = 0; j < clusters.size(); j++)
+
+        for (int j = 0 ; j < clusters.size() ; j++)
         {
             double dist = jaccard_distance(refSet, clusters.at(j));
-            if(dist < minDist)
+
+            if (dist < minDist)
             {
                 indice = j;
                 minDist = dist;
@@ -230,7 +236,8 @@ void verifyClusteringResults(const std::vector<int>& clusteredIndices,
         qDebug() << "testCluster " << i << " with group " << indice;
 
         std::vector<int> similarSet = clusters.at(indice);
-        if(minDist < visited[indice])
+
+        if (minDist < visited[indice])
         {
             visited[indice] = minDist;
             std::set<int> lastVisitSet = lastVisit[indice];
@@ -238,10 +245,11 @@ void verifyClusteringResults(const std::vector<int>& clusteredIndices,
             std::set_symmetric_difference(refSet.begin(), refSet.end(), similarSet.begin(), similarSet.end(), 
                                           std::inserter(newVisitSet, newVisitSet.begin()));
 
-            for(int elm: lastVisitSet)
+            for (int elm: lastVisitSet)
             {
                 falsePositivePoints.erase(elm);
             }
+
             lastVisit[indice] = newVisitSet;
             falsePositivePoints.insert(newVisitSet.begin(), newVisitSet.end());
         }
@@ -249,10 +257,10 @@ void verifyClusteringResults(const std::vector<int>& clusteredIndices,
         {
             std::set_intersection(refSet.begin(), refSet.end(), similarSet.begin(), similarSet.end(), 
                                   std::inserter(falsePositivePoints, falsePositivePoints.begin()));
-        }    
+        }
     }
 
-    for(auto indx: falsePositivePoints)
+    for (auto indx: falsePositivePoints)
     {
         falsePositiveCases << dataset[indx];
     }
@@ -276,18 +284,18 @@ int main(int argc, char* argv[])
 
     bool optionErrors = false;
 
-    if(parser.optionNames().empty())
+    if (parser.optionNames().empty())
     {
         qWarning() << "NO options!!!";
         optionErrors = true;
     }
-    else if(!parser.isSet(QLatin1String("db")))
+    else if (!parser.isSet(QLatin1String("db")))
     {
         qWarning() << "MISSING database for test!!!";
         optionErrors =true;
     }
 
-    if(optionErrors)
+    if (optionErrors)
     {
         parser.showHelp();
         return 1;
@@ -297,8 +305,7 @@ int main(int argc, char* argv[])
 
     // Init config for digiKam
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    DbEngineParameters prm    = DbEngineParameters::parametersFromConfig(config);
+    DbEngineParameters prm = DbEngineParameters::parametersFromConfig();
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
     RecognitionDatabase db;
     db.activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm::DNN);
@@ -316,22 +323,21 @@ int main(int argc, char* argv[])
     FaceDetector detector;
 
     // Evaluation metrics
-    unsigned totalClustered = 0;
+    unsigned totalClustered    = 0;
     unsigned elapsedClustering = 0;
 
     QStringList undetectedFaces;
 
     QList<QImage> detectedFaces;
     QList<QRectF> bboxes;
-
     QList<QImage> rawImages = toImages(dataset);
 
-    foreach(const QImage& image, rawImages)
+    foreach (const QImage& image, rawImages)
     {
-        QString imagePath = dataset.takeFirst();
+        QString imagePath                 = dataset.takeFirst();
         QList<QRectF> detectedBoundingBox = processFaceDetection(imagePath, detector);
 
-        if(detectedBoundingBox.size())
+        if (detectedBoundingBox.size())
         {
             detectedFaces << image;
             bboxes << detectedBoundingBox.first();
@@ -364,9 +370,10 @@ int main(int argc, char* argv[])
 
     unsigned nbUndetectedFaces = undetectedFaces.size();
     qDebug() << "\n" << nbUndetectedFaces << " / " << dataset.size() + nbUndetectedFaces
-             << " (" << float(nbUndetectedFaces) / (dataset.size() + nbUndetectedFaces) * 100 << "%)" 
+             << " (" << float(nbUndetectedFaces) / (dataset.size() + nbUndetectedFaces) * 100 << "%)"
              << " faces cannot be detected";
-    foreach(const QString& path, undetectedFaces)
+
+    foreach (const QString& path, undetectedFaces)
     {
         qDebug() << path;
     }
@@ -374,8 +381,9 @@ int main(int argc, char* argv[])
     unsigned nbOfFalsePositiveCases = falsePositiveCases.size();
     qDebug() << "\nFalse positive cases";
     qDebug() << "\n" << nbOfFalsePositiveCases << " / " << dataset.size()
-             << " (" << float(nbOfFalsePositiveCases*100) / dataset.size()<< "%)" 
+             << " (" << float(nbOfFalsePositiveCases*100) / dataset.size()<< "%)"
              << " faces were wrongly clustered";
+
     foreach (const QString& imagePath, falsePositiveCases)
     {
         qDebug() << imagePath;
@@ -384,5 +392,4 @@ int main(int argc, char* argv[])
     qDebug() << "\n Time for clustering " << elapsedClustering << " ms";
 
     return 0;
-
 }
