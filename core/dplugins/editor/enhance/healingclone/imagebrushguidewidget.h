@@ -77,7 +77,7 @@ public:
     void updateCursor();
     QPoint mapToImageCoordinates(QPoint point);
     QPoint mapFromImageCoordinates(QPoint point);
-    void initializeSourceCursor();
+    void updateSourceCursor(QPointF pos = QPoint(), int diamter = 10);
     void setSourceCursorPosition(QPointF topLeftPos);
     explicit ImageBrushGuideWidget(QWidget* const parent = nullptr);
 
@@ -135,9 +135,8 @@ private:
 
     bool   srcSet = true;
     bool isLassoPointsVectorEmpty = true;
-    QPoint src;
+    QPoint src = QPoint(0,0);
     QPoint dst;
-    QPoint oldPos;
     double default_w;
     double default_h;
     double float_w;
@@ -147,7 +146,7 @@ private:
     int brushRadius;
     QColor brushColor = QColor(Qt::red);
     HealingCloneState currentState = HealingCloneState::SELECT_SOURCE;
-    QGraphicsEllipseItem* sourceCursor;
+    QGraphicsEllipseItem* sourceCursor = nullptr;
 };
 
 } // namespace DigikamEditorHealingCloneToolPlugin

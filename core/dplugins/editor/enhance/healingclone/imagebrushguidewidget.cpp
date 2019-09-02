@@ -40,7 +40,7 @@ namespace DigikamEditorHealingCloneToolPlugin
 {
 
     activateState(HealingCloneState::SELECT_SOURCE);
-    initializeSourceCursor();
+    updateSourceCursor(src,10);
 }
 
  void ImageBrushGuideWidget::setDefaults()
@@ -65,7 +65,7 @@ namespace DigikamEditorHealingCloneToolPlugin
  void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
  {
 
-      oldPos = e->globalPos() ;
+
 
       if(!this->amIFocused && this->currentState == HealingCloneState::PAINT)
       {
@@ -92,7 +92,8 @@ namespace DigikamEditorHealingCloneToolPlugin
 
       if (this->currentState == HealingCloneState::MOVE_IMAGE && (e->buttons() & Qt::LeftButton))
       {
-          setCursor(Qt::ClosedHandCursor);
+          //setCursor(Qt::ClosedHandCursor);
+          ImageRegionWidget::mousePressEvent(e);
       }
      else if (srcSet)
      {
@@ -125,15 +126,10 @@ namespace DigikamEditorHealingCloneToolPlugin
 void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
 {
 
-
-    if( this->currentState != HealingCloneState::MOVE_IMAGE)
-        oldPos = e->globalPos() ;
-
     if ( this->currentState == HealingCloneState::MOVE_IMAGE && (e->buttons() & Qt::LeftButton))
     {
-        const QPoint delta = e->globalPos() - oldPos;
-        move(x()+delta.x(), y()+delta.y());
-        oldPos = e->globalPos();
+
+        ImageRegionWidget::mouseMoveEvent(e);
 
     }
     else if ( this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY && (e->buttons() & Qt::LeftButton))
@@ -176,7 +172,8 @@ void ImageBrushGuideWidget::mouseReleaseEvent(QMouseEvent* e)
     ImageRegionWidget::mouseReleaseEvent(e);
     if (this->currentState == HealingCloneState::MOVE_IMAGE)
     {
-        setCursor(Qt::OpenHandCursor);
+       // setCursor(Qt::OpenHandCursor);
+        ImageRegionWidget::mouseReleaseEvent(e);
     }
 
     else if (srcSet)
@@ -393,25 +390,25 @@ void ImageBrushGuideWidget::undoSlotSetSourcePoint()
 }
 void ImageBrushGuideWidget::changeCursorShape(QColor color)
 {
+
     int radius =this->brushRadius;
     int size = radius * 2;
     this->brushColor = color;
-    int penSize = 2;
-    QPixmap pix(size,size);
-    pix.fill(Qt::transparent);
+    if(this->currentState == HealingCloneState ::PAINT || this->currentState == HealingCloneState::LASSO_CLONE)
+    {
 
-    QPainter p(&pix);
-    p.setPen(QPen(color,penSize));
-    p.setRenderHint(QPainter::Antialiasing, true);
+        int penSize = 2;
+        QPixmap pix(size,size);
+        pix.fill(Qt::transparent);
+        QPainter p(&pix);
+        p.setPen(QPen(color,penSize));
+        p.setRenderHint(QPainter::Antialiasing, true);
+        p.drawEllipse(1, 1, size-2, size-2);
+        setCursor(QCursor(pix));
+    }
+    QPointF tempCursorPosition = mapToScene(mapFromImageCoordinates(src));
+    updateSourceCursor(tempCursorPosition, 2*this->brushRadius);
 
-    p.drawEllipse(1, 1, size-2, size-2);
-
-
-    setCursor(QCursor(pix));
-
-    this->sourceCursor->rect().setWidth(size -2);
-    this->sourceCursor->rect().setHeight(size-2);
-    this->sourceCursor->update();
 }
 
 void ImageBrushGuideWidget::changeCursorShape(QPixmap pixMap, float x = 0.5 , float y = 0.5)
@@ -536,6 +533,7 @@ void ImageBrushGuideWidget::setIsLassoPointsVectorEmpty(bool isEmpty)
 void ImageBrushGuideWidget :: activateState(HealingCloneState state)
 {
 
+    setDragMode(QGraphicsView::NoDrag);
     if(this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY &&
             state != HealingCloneState::LASSO_CLONE)
     {
@@ -548,7 +546,8 @@ void ImageBrushGuideWidget :: activateState(HealingCloneState state)
     }
     else if(state == HealingCloneState::MOVE_IMAGE)
     {
-        setCursor(Qt::OpenHandCursor);
+        setDragMode(QGraphicsView::ScrollHandDrag);
+      //  setCursor(Qt::OpenHandCursor);
     }
     else if(state == HealingCloneState::LASSO_DRAW_BOUNDARY)
     {
@@ -590,14 +589,19 @@ QPoint ImageBrushGuideWidget::mapFromImageCoordinates(QPoint point)
     return mapFromScene(item->zoomSettings()->mapImageToZoom(point));
 }
 
-void ImageBrushGuideWidget::initializeSourceCursor()
+void ImageBrushGuideWidget::updateSourceCursor(QPointF pos, int diameter)
 {
-    const int DIAMETER = 10;
-    this->sourceCursor = new QGraphicsEllipseItem(0, 0, DIAMETER, DIAMETER);
+   if(this->sourceCursor != nullptr)
+    {
+        this->scene()->removeItem(this->sourceCursor);
+        delete this->sourceCursor;
+    }
+    this->sourceCursor = new QGraphicsEllipseItem(0, 0, diameter, diameter);
     this->sourceCursor->setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
-    this->sourceCursor->setBrush(Qt::green);
-    this->sourceCursor->setOpacity(.2);
+    this->sourceCursor->setBrush(QBrush(Qt::white));
+    this->sourceCursor->setOpacity(.25);
     this->scene()->addItem(this->sourceCursor);
+    setSourceCursorPosition(pos);
 }
 
 void ImageBrushGuideWidget::setSourceCursorPosition(QPointF topLeftPos)
