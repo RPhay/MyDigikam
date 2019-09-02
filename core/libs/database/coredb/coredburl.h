@@ -61,13 +61,13 @@ public:
       * - The parameters of the database that is referenced
       */
     static CoreDbUrl fromFileUrl(const QUrl& fileUrl,
-                                   const QUrl& albumRoot,
-                                   int   albumRootId,
-                                   const DbEngineParameters& parameters = CoreDbAccess::parameters());
+                                 const QUrl& albumRoot,
+                                 int   albumRootId,
+                                 const DbEngineParameters& parameters = CoreDbAccess::parameters());
 
     static CoreDbUrl fromFileUrl(const QUrl& fileUrl,
-                                   const QUrl& albumRoot,
-                                   const DbEngineParameters& parameters = CoreDbAccess::parameters());
+                                 const QUrl& albumRoot,
+                                 const DbEngineParameters& parameters = CoreDbAccess::parameters());
 
     /**
      * Create a digikamalbums:/ url from an album name and an image in this album.
@@ -75,15 +75,15 @@ public:
      * Other parameters as above.
      */
     static CoreDbUrl fromAlbumAndName(const QString& name,
-                                        const QString& album,
-                                        const QUrl& albumRoot,
-                                        int   albumRootId,
-                                        const DbEngineParameters& parameters = CoreDbAccess::parameters());
+                                      const QString& album,
+                                      const QUrl& albumRoot,
+                                      int   albumRootId,
+                                      const DbEngineParameters& parameters = CoreDbAccess::parameters());
 
     static CoreDbUrl fromAlbumAndName(const QString& name,
-                                        const QString& album,
-                                        const QUrl& albumRoot,
-                                        const DbEngineParameters& parameters = CoreDbAccess::parameters());
+                                      const QString& album,
+                                      const QUrl& albumRoot,
+                                      const DbEngineParameters& parameters = CoreDbAccess::parameters());
 
     /**
      * Create an empty digikamalbums:/ url
@@ -96,7 +96,7 @@ public:
      * An empty list references the root tag.
      */
     static CoreDbUrl fromTagIds(const QList<int>& tagIds,
-                                  const DbEngineParameters& parameters = CoreDbAccess::parameters());
+                                const DbEngineParameters& parameters = CoreDbAccess::parameters());
 
     /**
      * Create an empty digikamdates:/ url
@@ -108,14 +108,14 @@ public:
      * (The whole month of the given date will included in the referenced time span)
      */
     static CoreDbUrl fromDateForMonth(const QDate& date,
-                                        const DbEngineParameters& parameters = CoreDbAccess::parameters());
+                                      const DbEngineParameters& parameters = CoreDbAccess::parameters());
 
     /**
      * Create a digikamdates:/ url for the year of the given date.
      * (The whole year of the given date will included in the referenced time span)
      */
     static CoreDbUrl fromDateForYear(const QDate& date,
-                                       const DbEngineParameters& parameters = CoreDbAccess::parameters());
+                                     const DbEngineParameters& parameters = CoreDbAccess::parameters());
 
     /**
      * Create a digikamdates:/ url for a specified time span which begin with the
@@ -123,7 +123,7 @@ public:
      * To cover the whole year of 1984, you would pass 1/1/1984 and 1/1/1985.
      */
     static CoreDbUrl fromDateRange(const QDate& startDate, const QDate& endDate,
-                                     const DbEngineParameters& parameters = CoreDbAccess::parameters());
+                                   const DbEngineParameters& parameters = CoreDbAccess::parameters());
 
     /**
      * Create an empty digikammapimages:/ url

@@ -32,10 +32,6 @@
 #include <QtGlobal>
 #include <QUrl>
 
-// KDE includes
-
-#include <ksharedconfig.h>
-
 // Local includes
 
 #include "digikam_export.h"
@@ -110,14 +106,13 @@ public:
      */
     static DbEngineParameters defaultParameters(const QString& databaseType);
 
-    static DbEngineParameters parametersFromConfig(KSharedConfig::Ptr config = KSharedConfig::openConfig(),
-                                                   const QString& configGroup = QString());
+    static DbEngineParameters parametersFromConfig(const QString& configGroup = QString());
     /**
      * Read and write parameters from config. You can specify the group,
      * or use the default value.
      */
-    void readFromConfig(KSharedConfig::Ptr config = KSharedConfig::openConfig(), const QString& configGroup = QString());
-    void writeToConfig(KSharedConfig::Ptr config = KSharedConfig::openConfig(), const QString& configGroup = QString()) const;
+    void readFromConfig(const QString& configGroup = QString());
+    void writeToConfig(const QString& configGroup = QString()) const;
 
     /**
      * NOTE: In case of SQLite, the database name typically is a file.
@@ -165,8 +160,8 @@ public:
      */
     DbEngineParameters similarityParameters() const;
 
-    void legacyAndDefaultChecks(const QString& suggestedPath = QString(), KSharedConfig::Ptr config = KSharedConfig::openConfig());
-    void removeLegacyConfig(KSharedConfig::Ptr config);
+    void legacyAndDefaultChecks(const QString& suggestedPath = QString());
+    void removeLegacyConfig();
 
     /**
      * Convenience methods to create a DbEngineParameters object for an

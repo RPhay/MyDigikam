@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # ===========================================================
 #
 # This file is a part of digiKam project
@@ -21,8 +23,6 @@
 # GNU General Public License for more details.
 #
 # ============================================================
-
-#!/bin/bash
 
 find -name '*.cpp' -print0 | xargs -r0 sed -e 's/[[:blank:]]\+$//' -i
 find -name '*.h' -print0 | xargs -r0 sed -e 's/[[:blank:]]\+$//' -i

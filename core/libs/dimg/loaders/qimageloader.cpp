@@ -48,15 +48,9 @@ QImageLoader::QImageLoader(DImg* const image)
 
 bool QImageLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
-    QStringList blackList;
-    blackList << QLatin1String("x-xcf");
-
     QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
-    // qCDebug(DIGIKAM_DIMG_LOG) << "Mime type extension:" << mimeType.section(QLatin1Char('/'), -1);
 
-    if (mimeType.startsWith(QLatin1String("video/")) ||
-        mimeType.startsWith(QLatin1String("audio/")) ||
-        blackList.contains(mimeType.section(QLatin1Char('/'), -1)))
+    if (mimeType.startsWith(QLatin1String("video/")) || mimeType.startsWith(QLatin1String("audio/")))
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Blacklisted from DImg::QImageLoader:" << mimeType;
         loadingFailed();

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # ===========================================================
 #
 # This file is a part of digiKam project
@@ -22,7 +24,6 @@
 #
 # ============================================================
 
-#!/bin/bash
 
 find . -name "*.cpp" -o -name "*.h" | xargs -I {} -t bash -c " expand -t 4 {}  > tmp ; cat tmp > {}"
 rm -f tmp

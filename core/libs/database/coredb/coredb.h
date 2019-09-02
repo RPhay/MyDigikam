@@ -220,12 +220,6 @@ public:
                  const QString& caption,
                  const QDate& date, const QString& collection) const;
 
-    /*
-    int addAlbum(const QString& albumRoot, const QString& relativePath,
-                 const QString& caption,
-                 const QDate& date, const QString& collection);
-    */
-
     /**
      * Find out the album for a given folder.
      * @param albumRootId  id of the album root of the album
@@ -237,8 +231,6 @@ public:
      */
     int  getAlbumForPath(int albumRootId, const QString& relativePath, bool create = true) const;
 
-    //int  getAlbumForPath(const QString& albumRoot, const QString& relativePath, bool create = true);
-
     /**
      * Find out the album ids for a given relative path, including the subalbums.
      * @param albumRootId  id of the album root of the album
@@ -246,13 +238,6 @@ public:
      * @return a list of album ids. The list is empty if no albums are found.
      */
     QList<int> getAlbumAndSubalbumsForPath(int albumRootId, const QString& relativePath) const;
-
-    /* *
-     * List the urls of all subalbums of the album specified by albumRoot and path.
-     * @param onlyDirectSubalbums if this is true, only first-level subalbums are returned,
-     *                            if false, all levels of children are returned (include subalbums of subalbums).
-     */
-    //QStringList getSubalbumsForPath(const QString& albumRoot, const QString& path, bool onlyDirectSubalbums = true);
 
     /**
      * Find out all album ids of a given album root
@@ -324,13 +309,6 @@ public:
      * @return the id of the album root of this album
      */
     int getAlbumRootId(int albumID) const;
-
-    /**
-     * Given an albumid, this returns the path for that album
-     * @param albumID the id of the album
-     * @return the url of the album
-     */
-    //QString getAlbumPath(int albumID);
 
     /**
      * Given an albumid, this returns the relative path for that album

@@ -26,13 +26,17 @@
 // Qt includes
 
 #include <QApplication>
+#include <QFileInfo>
+
+// KDE includes
+
+#include <ksharedconfig.h>
 
 // Local includes
 
 #include "drawdecoder.h"
 #include "digikam_debug.h"
 #include "dmetadata.h"
-#include "itemscanner.h"
 #include "thumbnailsize.h"
 #include "thumbnailloadthread.h"
 #include "loadingdescription.h"

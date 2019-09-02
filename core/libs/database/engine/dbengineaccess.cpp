@@ -50,7 +50,7 @@ bool DbEngineAccess::checkReadyForUse(QString& error)
 
     // Retrieving DB settings from config file
 
-    DbEngineParameters internalServerParameters = DbEngineParameters::parametersFromConfig(KSharedConfig::openConfig());
+    DbEngineParameters internalServerParameters = DbEngineParameters::parametersFromConfig();
 
     // Checking for QSQLITE driver
 

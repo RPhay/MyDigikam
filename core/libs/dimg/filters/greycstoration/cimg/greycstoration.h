@@ -57,7 +57,8 @@
 //
 // #include "dynamicthread.h"
 
-class GreycstorationParameters {
+class GreycstorationParameters
+{
 public:
 
   // Tell if the patch-based algorithm is selected

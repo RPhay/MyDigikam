@@ -42,36 +42,4 @@ void SharedLoadSaveThread::load(const LoadingDescription& description, AccessMod
     ManagedLoadSaveThread::load(description, LoadingModeShared, policy, mode);
 }
 
-DImg SharedLoadSaveThread::cacheLookup(const QString& filePath, AccessMode /*accessMode*/)
-{
-    LoadingCache* const cache = LoadingCache::cache();
-    LoadingCache::CacheLock lock(cache);
-    DImg* cachedImg           = cache->retrieveImage(filePath);
-
-    // Qt4: uncomment this code.
-    // See comments in SharedLoadingTask::execute for explanation.
-
-/*
-    if (cachedImg)
-    {
-        if (accessMode == AccessModeReadWrite)
-            return cachedImg->copy();
-        else
-            return *cachedImg;
-    }
-    else
-    {
-        return DImg();
-    }
-*/
-    if (cachedImg)
-    {
-        return cachedImg->copy();
-    }
-    else
-    {
-        return DImg();
-    }
-}
-
 } // namespace Digikam
