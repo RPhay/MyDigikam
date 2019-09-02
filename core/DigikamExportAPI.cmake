@@ -22,6 +22,7 @@ install(FILES
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dplugins/core/dpluginauthor.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dplugins/core/dplugineditor.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dplugins/core/dplugingeneric.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/dplugins/setup/dpluginloader.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dplugins/iface/dinfointerface.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dplugins/iface/dmetainfoiface.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dplugins/widgets/ditemslist.h
@@ -75,6 +76,7 @@ install(FILES
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/coredb/coredbaccess.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/coredb/coredburl.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/engine/dbengineparameters.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/engine/dbengineaction.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/engine/dbengineconfig.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/engine/dbengineerrorhandler.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/engine/dbengineconfigsettings.h
