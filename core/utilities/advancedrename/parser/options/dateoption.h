@@ -29,6 +29,7 @@
 #include <QDialog>
 #include <QObject>
 #include <QString>
+#include <QVariant>
 
 // Local includes
 

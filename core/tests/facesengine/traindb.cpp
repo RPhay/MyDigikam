@@ -30,10 +30,6 @@
 #include <QRunnable>
 #include <QDebug>
 
-// KDE includes
-
-#include <ksharedconfig.h>
-
 // Local includes
 
 #include "recognitiondatabase.h"
@@ -107,8 +103,7 @@ int main(int argc, char** argv)
     QCoreApplication app(argc, argv);
 
     app.setApplicationName(QString::fromLatin1("digikam"));          // for DB init.
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    DbEngineParameters prm    = DbEngineParameters::parametersFromConfig(config);
+    DbEngineParameters prm    = DbEngineParameters::parametersFromConfig();
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
     RecognitionDatabase db;
 

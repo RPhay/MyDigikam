@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QDir>
+#include <QStandardPaths>
 
 // Local includes
 

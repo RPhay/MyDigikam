@@ -37,12 +37,12 @@
 
 // Local includes
 
-#include "coredbalbuminfo.h"
 #include "digikam_export.h"
 #include "dshareddata.h"
+#include "coredbalbuminfo.h"
 #include "coredburl.h"
-#include "iteminfolist.h"
 #include "coredbfields.h"
+#include "iteminfolist.h"
 
 namespace Digikam
 {

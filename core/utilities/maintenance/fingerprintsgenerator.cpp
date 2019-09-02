@@ -35,6 +35,7 @@
 
 #include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 
 // Local includes
 

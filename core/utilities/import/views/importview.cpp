@@ -30,6 +30,10 @@
 #include <QTimer>
 #include <QShortcut>
 
+// KDE includes
+
+#include <ksharedconfig.h>
+
 // Local includes
 
 #include "digikam_debug.h"
