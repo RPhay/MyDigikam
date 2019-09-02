@@ -588,12 +588,7 @@ QPoint ImageBrushGuideWidget::mapToImageCoordinates(QPoint point)
 {
 
     ImageRegionItem* item = (ImageRegionItem*)this->item();
-    double zoomFactor = item->zoomSettings()->zoomFactor();
-
     QPointF temp = item->zoomSettings()->mapZoomToImage(mapToScene(point)) ;
-
-    qCDebug(DIGIKAM_DIMG_LOG()) << "zoom factor" << zoomFactor;
-    qCDebug(DIGIKAM_DIMG_LOG()) << "B, B mapped, temp" << point  << mapToScene(point)<< temp;
     return QPoint((int) temp.x(), (int) temp.y());
 }
 
