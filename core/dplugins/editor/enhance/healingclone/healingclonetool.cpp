@@ -107,11 +107,12 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     setToolHelp(QLatin1String("healingclonetool.anchor"));
 
     d->gboxSettings      = new EditorToolSettings(0);
-    d->previewWidget     = new ImageBrushGuideWidget(nullptr);
+    d->previewWidget     = new ImageBrushGuideWidget;
+    ImageRegionItem* item = (ImageRegionItem*)d->previewWidget->item();
 
     d->previewWidget->setFocusPolicy(Qt::StrongFocus);
     setToolView(d->previewWidget);
-    setPreviewModeMask(PreviewToolBar::PreviewTargetImage);
+    setPreviewModeMask(PreviewToolBar::AllPreviewModes);
 
     // --------------------------------------------------------
 
@@ -303,8 +304,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     connect(d->previewWidget, SIGNAL(signalResized()),
             this, SLOT(slotResized()));
 
-    connect(d->previewWidget, SIGNAL(signalReclone()),
-            this, SLOT(slotReclone()));
+
 
     connect(d->previewWidget, SIGNAL(signalLasso(QPoint)),
             this, SLOT(slotLasso(QPoint)));
@@ -430,6 +430,9 @@ void HealingCloneTool :: slotChangeZoomInput(int z)
 
 void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoint& dstPoint, int radius)
 {
+    ImageRegionItem * item = (ImageRegionItem *) d->previewWidget->item();
+    double scale = item->zoomSettings()->zoomFactor();
+    radius = radius / scale;
     double blurPercent = d->blurPercent->value() / 100;
     double scaleRatio = d->previewWidget->getScaleRatio();
 
@@ -541,17 +544,12 @@ void HealingCloneTool::recloneFromVector(const std::vector<CloneInfo> cloneVec)
 
 }
 
-void HealingCloneTool :: slotReclone()
-{
-    recloneFromVector(this->CloneInfoVector);
-}
+
 
 void HealingCloneTool :: updateLasso(std::vector<QPoint>& points)
 {
     uint radius = 5;
     static uint colorCounter = 0;
- //   ImageIface* const iface = d->previewWidget->imageIface();
- //   DImg* const img     = iface->previewReference();
     DImg img = d->previewWidget->getOriginalImage();
     for (QPoint p: points)
     {
@@ -572,6 +570,7 @@ void HealingCloneTool :: updateLasso(std::vector<QPoint>& points)
     }
 
 //    d->previewWidget->updatePreview();
+    d->previewWidget->updateImage(img);
 }
 
 void HealingCloneTool :: slotLasso(const QPoint& dst)
@@ -610,8 +609,25 @@ std::vector<QPoint> HealingCloneTool :: interpolate(const QPoint& start, const Q
     return points;
 }
 
+void HealingCloneTool::removeLassoPixels()
+{
+    DImg img = d->previewWidget->getOriginalImage();
+    std::map<std::pair<int,int>, DColor>::iterator it;
+
+    for ( it = lassoColorsMap.begin(); it != lassoColorsMap.end(); it++ )
+    {
+        std::pair<int,int> xy = it->first;
+        DColor color = it->second;
+        img.setPixelColor(xy.first, xy.second,color);
+    }
+
+d->previewWidget->updateImage(img);
+
+}
+
 void HealingCloneTool ::slotResetLassoPoint()
 {
+    removeLassoPixels();
     this->resetLassoPoint = true;
     this->lassoPoints.clear();
     this->insideLassoOperation = true;
@@ -653,6 +669,7 @@ void HealingCloneTool :: slotIncreaseBrushRadius()
 void HealingCloneTool :: slotDecreaseBrushRadius()
 {
     int size = d->radiusInput->value();
+
     d->radiusInput->setValue(size-1);
 }
 
@@ -693,7 +710,7 @@ void HealingCloneTool:: slotUndoClone()
         return;
     this->redoStack.push(this->CloneInfoVector);
 
-    this->d->previewWidget->resetPixels();
+//    this->d->previewWidget->resetPixels();
 
     this->CloneInfoVector = this->undoStack.top();
     this->recloneFromVector(this->CloneInfoVector);
@@ -708,7 +725,7 @@ void HealingCloneTool:: slotRedoClone()
         return;
     this->undoStack.push(this->CloneInfoVector);
 
-    this->d->previewWidget->resetPixels();
+ //   this->d->previewWidget->resetPixels();
 
     this->CloneInfoVector = this->redoStack.top();
     this->redoStack.pop();

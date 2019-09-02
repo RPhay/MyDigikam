@@ -68,8 +68,6 @@ public:
     void zoomPlus();
     void zoomMinus();
     double getScaleRatio();
-    void resetPixelsAndReclone();
-    void resetPixels();
     void setBrushRadius(int value);
     void setIsLassoPointsVectorEmpty(bool);
     void setCloneVectorChanged(bool);
@@ -78,6 +76,9 @@ public:
     void changeCursorShape(QPixmap,float,float);
     void updateCursor();
     QPoint mapToImageCoordinates(QPoint point);
+    QPoint mapFromImageCoordinates(QPoint point);
+    void initializeSourceCursor();
+    void setSourceCursorPosition(QPointF topLeftPos);
     explicit ImageBrushGuideWidget(QWidget* const parent = nullptr);
 
 public Q_SLOTS:
@@ -96,7 +97,6 @@ Q_SIGNALS:
      * and keeps emitting with motion
      */
     void signalClone(const QPoint& currentSrc, const QPoint& currentDst);
-    void signalReclone();
     void signalLasso(const QPoint& dst);
     void signalResetLassoPoint();
     void signalContinuePolygon();
@@ -130,6 +130,7 @@ protected:
 
 
 
+
 private:
 
     bool   srcSet = true;
@@ -146,6 +147,7 @@ private:
     int brushRadius;
     QColor brushColor = QColor(Qt::red);
     HealingCloneState currentState = HealingCloneState::SELECT_SOURCE;
+    QGraphicsEllipseItem* sourceCursor;
 };
 
 } // namespace DigikamEditorHealingCloneToolPlugin

@@ -39,6 +39,8 @@ namespace DigikamEditorHealingCloneToolPlugin
      ImageRegionWidget(parent)
 {
 
+    activateState(HealingCloneState::SELECT_SOURCE);
+    initializeSourceCursor();
 }
 
  void ImageBrushGuideWidget::setDefaults()
@@ -48,7 +50,7 @@ namespace DigikamEditorHealingCloneToolPlugin
      this->float_h = default_h;
      this->float_w = default_w;
     setFocus();
-    this->resetPixels();
+  //  this->resetPixels();
 
  }
 
@@ -100,7 +102,7 @@ namespace DigikamEditorHealingCloneToolPlugin
       {
 
          QPoint dst = QPoint(e->x(),e->y());
-    //     emit signalLasso(ImageRegionWidget::translateItemPosition(dst, false));
+         emit signalLasso(mapToImageCoordinates(dst));
       }
      else
      {
@@ -137,7 +139,7 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
     else if ( this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY && (e->buttons() & Qt::LeftButton))
      {
         QPoint dst = QPoint(e->x(),e->y());
-   //     emit signalLasso(ImageRegionWidget::translateItemPosition(dst, false));
+        emit signalLasso(mapToImageCoordinates(dst));
      }
     else if ((e->buttons() & Qt::LeftButton) && !srcSet)
     {
@@ -148,9 +150,12 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
         QPoint orgDst       =   dst;
         currentSrc          =   QPoint(currentSrc.x() + currentDst.x() - orgDst.x(), currentSrc.y() + currentDst.y() - orgDst.y());
 
-     //   ImageRegionWidget::setSpotPosition(currentSrc);
+        // Source Cursor Update
+        QPointF tempCursorPosition = mapToScene(mapFromImageCoordinates(src)); // sceneCoordinates
+        tempCursorPosition = QPoint(tempCursorPosition.x() + currentDst.x() - orgDst.x(), tempCursorPosition.y() + currentDst.y() - orgDst.y());
+        setSourceCursorPosition(tempCursorPosition);
+        //
 
-        qCDebug(DIGIKAM_DIMG_LOG()) << "mouse move :: src,dst " << currentSrc <<currentDst ;
         emit signalClone(currentSrc, currentDst);
 
     }
@@ -176,19 +181,16 @@ void ImageBrushGuideWidget::mouseReleaseEvent(QMouseEvent* e)
 
     else if (srcSet)
     {
-  //    src   = ImageRegionWidget::getSpotPosition();
-
         src = mapToImageCoordinates(e->pos());
-        qCDebug(DIGIKAM_DIMG_LOG()) << "SRC IS " << src;
-
+        setSourceCursorPosition(mapToScene(e->pos()));
 
         undoSlotSetSourcePoint();
 
     }
     else
     {
-   //     QPoint p = ImageRegionWidget::translatePointPosition(src);
-   //     ImageGuideWidget::setSpotPosition(p);
+        QPointF tempCursorPosition = mapToScene(mapFromImageCoordinates(src));
+        setSourceCursorPosition(tempCursorPosition);
 
     }
 
@@ -350,7 +352,7 @@ void ImageBrushGuideWidget :: slotLassoSelect()
     {
         activateState(HealingCloneState::LASSO_DRAW_BOUNDARY);
         emit signalResetLassoPoint();
-        this->resetPixelsAndReclone();
+
     }
     else if(this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY) {
 
@@ -368,7 +370,7 @@ void ImageBrushGuideWidget :: slotLassoSelect()
     {
         activateState(HealingCloneState::PAINT);
         emit signalResetLassoPoint();
-        this->resetPixelsAndReclone();
+
 
     }
 
@@ -406,6 +408,10 @@ void ImageBrushGuideWidget::changeCursorShape(QColor color)
 
 
     setCursor(QCursor(pix));
+
+    this->sourceCursor->rect().setWidth(size -2);
+    this->sourceCursor->rect().setHeight(size-2);
+    this->sourceCursor->update();
 }
 
 void ImageBrushGuideWidget::changeCursorShape(QPixmap pixMap, float x = 0.5 , float y = 0.5)
@@ -436,8 +442,10 @@ void ImageBrushGuideWidget::zoomImage(int zoomPercent)
 
 void ImageBrushGuideWidget::resizeEvent(QResizeEvent* e)
 {
+
+
     ImageRegionWidget::resizeEvent(e);
-    emit signalReclone();
+    return;
     emit signalResetLassoPoint();
     emit signalContinuePolygon();
     if(this->currentState == HealingCloneState::LASSO_CLONE
@@ -519,24 +527,7 @@ void ImageBrushGuideWidget::zoomMinus()
 }
 
 
-void ImageBrushGuideWidget::resetPixels()
-{
 
-    int w = (int)this->float_w;
-    int h = (int) this->float_h;
-    // This is a workaround. I am mainly using this to restore all lasso-colored pixels to the original image colors.
-    // I am forcing a resize event with the same width and height, as a resizeEvent function in ImageGuideWidget already
-    // does this resetting for me.
-    QResizeEvent event(QSize(w,h),QSize(w,h));
-    ImageRegionWidget::resizeEvent(&event);
-}
-
-
-void ImageBrushGuideWidget::resetPixelsAndReclone()
-{
-    resetPixels();
-    emit(signalReclone());
-}
 
 void ImageBrushGuideWidget::setIsLassoPointsVectorEmpty(bool isEmpty)
 {
@@ -592,4 +583,41 @@ QPoint ImageBrushGuideWidget::mapToImageCoordinates(QPoint point)
     return QPoint((int) temp.x(), (int) temp.y());
 }
 
+QPoint ImageBrushGuideWidget::mapFromImageCoordinates(QPoint point)
+{
+
+    ImageRegionItem* item = (ImageRegionItem*)this->item();
+    return mapFromScene(item->zoomSettings()->mapImageToZoom(point));
+}
+
+void ImageBrushGuideWidget::initializeSourceCursor()
+{
+    const int DIAMETER = 10;
+    this->sourceCursor = new QGraphicsEllipseItem(0, 0, DIAMETER, DIAMETER);
+    this->sourceCursor->setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
+    this->sourceCursor->setBrush(Qt::green);
+    this->sourceCursor->setOpacity(.2);
+    this->scene()->addItem(this->sourceCursor);
+}
+
+void ImageBrushGuideWidget::setSourceCursorPosition(QPointF topLeftPos)
+{
+    double dx = this->sourceCursor->rect().width()/2.0;
+    double dy = this->sourceCursor->rect().width()/2.0;
+    QPointF shiftedPos = QPointF(topLeftPos.x()-dx, topLeftPos.y()-dy);
+    this->sourceCursor->setPos(shiftedPos);
+
+    // check if source is inside scene
+
+    if(topLeftPos.x() < 0 || topLeftPos.x() + dx > scene()->width() ||
+            topLeftPos.y()<0 || topLeftPos.y() + dy > scene()->height())
+    {
+        this->sourceCursor->setVisible(false);
+    }
+    else {
+        this->sourceCursor->setVisible(true);
+    }
+
+
+}
 } // namespace DigikamEditorHealingCloneToolPlugin

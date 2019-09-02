@@ -70,7 +70,7 @@ public Q_SLOTS:
     void slotReplace(const QPoint& srcPoint, const QPoint& dstPoint);
     void slotRadiusChanged(int r);
     void slotZoomPercentChanged(int z);
-    void slotReclone();
+
     void slotLasso(const QPoint& dst);
     void slotResetLassoPoint();
     void slotContinuePolygon();
@@ -82,6 +82,7 @@ public Q_SLOTS:
     void slotRedoClone();
     void slotResetImagePosition();
     void slotScaleChanged() override;
+    void removeLassoPixels();
 
 
 private:
