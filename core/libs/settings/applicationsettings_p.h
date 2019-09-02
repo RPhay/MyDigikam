@@ -30,6 +30,10 @@
 #include <QStringList>
 #include <QFont>
 
+// KDE includes
+
+#include <ksharedconfig.h>
+
 // Local includes
 
 #include "applicationsettings.h"

@@ -34,6 +34,7 @@
 
 #include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 
 // Local includes
 
@@ -84,11 +85,10 @@ DbEngineParameters DatabasePage::getDbEngineParameters() const
 
 void DatabasePage::saveSettings()
 {
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
     DbEngineParameters params = d->dbsettingswidget->getDbEngineParameters();
-    params.writeToConfig(config);
+    params.writeToConfig();
 
-    config->sync();
+    KSharedConfig::openConfig()->sync();
 }
 
 bool DatabasePage::checkSettings()

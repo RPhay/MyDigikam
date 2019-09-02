@@ -30,6 +30,10 @@
 #include <QPushButton>
 #include <QVariant>
 
+// KDE includes
+
+#include <kconfig.h>
+
 // Local includes
 
 #include "digikam_debug.h"

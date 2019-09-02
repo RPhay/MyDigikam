@@ -38,6 +38,7 @@
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
+#include <QStandardPaths>
 
 // KDE includes
 
@@ -190,7 +191,7 @@ void MigrateFromDigikam4Page::doMigration()
     // Fix albumroot identifier since digiKam 5 doesn't interpret correctly
     // values like volumeid:?path=%2Fhome%2Fantonio%2FPictures and it needs
     // to be url-decoded.
-    DbEngineParameters parameters = DbEngineParameters::parametersFromConfig(KSharedConfig::openConfig());
+    DbEngineParameters parameters = DbEngineParameters::parametersFromConfig();
     QSqlDatabase databaseHandler  = QSqlDatabase::addDatabase(parameters.databaseType, QLatin1String("digikam4migration"));
 
     databaseHandler.setHostName(parameters.hostName);

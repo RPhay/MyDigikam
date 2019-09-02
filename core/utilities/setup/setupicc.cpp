@@ -51,6 +51,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 
 // Local includes
 

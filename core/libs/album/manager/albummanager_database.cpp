@@ -25,6 +25,10 @@
 
 #include "albummanager_p.h"
 
+// KDE includes
+
+#include <ksharedconfig.h>
+
 namespace Digikam
 {
 

@@ -6,10 +6,10 @@
  * Date        : 2007-03-18
  * Description : Database Engine storage container for connection parameters.
  *
- * Copyright (C) 2007-2008 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2007-2008 by Marcel Wiesweg  <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010      by Holger Foerster <hamsi2k at freenet dot de>
- * Copyright (C) 2010-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C)      2018 by Mario Frank    <mario dot frank at uni minus potsdam dot de>
+ * Copyright (C) 2010-2019 by Gilles Caulier  <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2018 by Mario Frank     <mario dot frank at uni minus potsdam dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -37,6 +37,7 @@
 // KDE includes
 
 #include <kconfiggroup.h>
+#include <ksharedconfig.h>
 
 // Local includes
 
@@ -319,15 +320,16 @@ QByteArray DbEngineParameters::hash() const
     return md5.result().toHex();
 }
 
-DbEngineParameters DbEngineParameters::parametersFromConfig(KSharedConfig::Ptr config, const QString& configGroup)
+DbEngineParameters DbEngineParameters::parametersFromConfig(const QString& configGroup)
 {
     DbEngineParameters parameters;
-    parameters.readFromConfig(config, configGroup);
+    parameters.readFromConfig(configGroup);
     return parameters;
 }
 
-void DbEngineParameters::readFromConfig(KSharedConfig::Ptr config, const QString& configGroup)
+void DbEngineParameters::readFromConfig(const QString& configGroup)
 {
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group;
 
     if (configGroup.isNull())
@@ -490,8 +492,10 @@ QString DbEngineParameters::similarityDatabaseFileSQLite(const QString& folderOr
 }
 
 
-void DbEngineParameters::legacyAndDefaultChecks(const QString& suggestedPath, KSharedConfig::Ptr config)
+void DbEngineParameters::legacyAndDefaultChecks(const QString& suggestedPath)
 {
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+
     // Additional semantic checks for the database section.
     // If the internal server should be started, then the connection options must be reset
 
@@ -548,9 +552,10 @@ void DbEngineParameters::legacyAndDefaultChecks(const QString& suggestedPath, KS
     }
 }
 
-void DbEngineParameters::removeLegacyConfig(KSharedConfig::Ptr config)
+void DbEngineParameters::removeLegacyConfig()
 {
-    KConfigGroup group = config->group("Album Settings");
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group        = config->group("Album Settings");
 
     if (group.hasKey(configDatabaseFilePathEntry))
     {
@@ -563,8 +568,9 @@ void DbEngineParameters::removeLegacyConfig(KSharedConfig::Ptr config)
     }
 }
 
-void DbEngineParameters::writeToConfig(KSharedConfig::Ptr config, const QString& configGroup) const
+void DbEngineParameters::writeToConfig(const QString& configGroup) const
 {
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group;
 
     if (configGroup.isNull())
