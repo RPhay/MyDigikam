@@ -64,9 +64,6 @@ public:
      */
   //  using ImageGuideWidget::ImageGuideWidget;
     void setDefaults();
-    void zoomImage(int zoomPercent);
-    void zoomPlus();
-    void zoomMinus();
     double getScaleRatio();
     void setBrushRadius(int value);
     void setIsLassoPointsVectorEmpty(bool);
@@ -102,7 +99,6 @@ Q_SIGNALS:
     void signalContinuePolygon();
     void signalIncreaseBrushRadius();
     void signalDecreaseBrushRadius();
-    void signalZoomPercentChanged(int z);
     void signalPushToUndoStack();
     void signalUndoClone();
     void signalRedoClone();

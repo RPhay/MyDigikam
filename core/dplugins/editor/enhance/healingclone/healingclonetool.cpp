@@ -59,7 +59,6 @@ public:
 
     explicit Private()
       : radiusInput(0),
-        zoomInput(0),
         blurPercent(0),
         previewWidget(0),
         gboxSettings(0),
@@ -72,7 +71,6 @@ public:
     static const QString configBlurAdjustmentEntry;
 
     DIntNumInput*           radiusInput;
-    DIntNumInput*           zoomInput;
     DDoubleNumInput*        blurPercent;
     ImageBrushGuideWidget*  previewWidget;
     EditorToolSettings*     gboxSettings;
@@ -108,11 +106,10 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     d->gboxSettings      = new EditorToolSettings(0);
     d->previewWidget     = new ImageBrushGuideWidget;
-    ImageRegionItem* item = (ImageRegionItem*)d->previewWidget->item();
 
     d->previewWidget->setFocusPolicy(Qt::StrongFocus);
     setToolView(d->previewWidget);
-    setPreviewModeMask(PreviewToolBar::AllPreviewModes);
+    setPreviewModeMask(PreviewToolBar::PreviewTargetImage);
 
     // --------------------------------------------------------
 
@@ -218,15 +215,6 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
 
 
-    // ---------------------------------------------------------
-
-    QLabel* const label4  = new QLabel(i18n("Zoom:"));
-    d->zoomInput       = new DIntNumInput();
-    d->zoomInput->setRange(10, 250, 10);
-    d->zoomInput->setDefaultValue(100);
-    d->zoomInput->setWhatsThis(i18n("Zoom In or Out. \nShortcut :: +/-"));
-    d->zoomInput->setToolTip(i18n("Zoom In or Out. \nShortcut :: +/-"));
-    //----------------------------------------------------------
 
     const int spacing = d->gboxSettings->spacingHint();
 
@@ -249,8 +237,6 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     grid->addWidget(d->radiusInput, 5, 0, 1, 2);
     grid->addWidget(label2,         6, 0, 1, 2);
     grid->addWidget(d->blurPercent, 7, 0, 1, 2);
-    grid->addWidget(label4,         8, 0, 1, 2);
-    grid->addWidget(d->zoomInput, 9, 0, 1, 2);
     grid->setRowStretch(10, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
@@ -275,13 +261,6 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     connect(d->radiusInput, SIGNAL(valueChanged(int)),
             this, SLOT(slotRadiusChanged(int)));
-
-
-    connect(d->zoomInput, SIGNAL(valueChanged(int)),
-            this, SLOT(slotZoomPercentChanged(int)));
-
-    connect(d->previewWidget, SIGNAL(signalZoomPercentChanged(int)),
-            this, SLOT(slotChangeZoomInput(int)));
 
     connect(d->srcButton, SIGNAL(clicked(bool)),
             d->previewWidget, SLOT(slotSetSourcePoint()));
@@ -417,16 +396,7 @@ void HealingCloneTool::slotRadiusChanged(int r)
 
 }
 
-void HealingCloneTool :: slotZoomPercentChanged(int z)
-{
-   d->previewWidget->zoomImage(z);
 
-}
-
-void HealingCloneTool :: slotChangeZoomInput(int z)
-{
-       d->zoomInput->setValue(z);
-}
 
 void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoint& dstPoint, int radius)
 {

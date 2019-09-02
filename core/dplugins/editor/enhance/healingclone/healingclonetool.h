@@ -69,14 +69,13 @@ public Q_SLOTS:
      */
     void slotReplace(const QPoint& srcPoint, const QPoint& dstPoint);
     void slotRadiusChanged(int r);
-    void slotZoomPercentChanged(int z);
+
 
     void slotLasso(const QPoint& dst);
     void slotResetLassoPoint();
     void slotContinuePolygon();
     void slotIncreaseBrushRadius();
     void slotDecreaseBrushRadius();
-    void slotChangeZoomInput(int z);
     void slotPushToUndoStack();
     void slotUndoClone();
     void slotRedoClone();

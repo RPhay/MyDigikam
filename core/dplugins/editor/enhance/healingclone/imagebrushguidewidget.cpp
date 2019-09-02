@@ -147,8 +147,7 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
         currentSrc          =   QPoint(currentSrc.x() + currentDst.x() - orgDst.x(), currentSrc.y() + currentDst.y() - orgDst.y());
 
         // Source Cursor Update
-        QPointF tempCursorPosition = mapToScene(mapFromImageCoordinates(src)); // sceneCoordinates
-        tempCursorPosition = QPoint(tempCursorPosition.x() + currentDst.x() - orgDst.x(), tempCursorPosition.y() + currentDst.y() - orgDst.y());
+        QPointF tempCursorPosition = mapToScene(mapFromImageCoordinates(currentSrc)); // sceneCoordinates
         setSourceCursorPosition(tempCursorPosition);
         //
 
@@ -219,19 +218,6 @@ void ImageBrushGuideWidget :: keyPressEvent(QKeyEvent *e)
         slotLassoSelect();
     }
 
-
-    if(e->key() == Qt :: Key_Plus)
-    {
-        zoomPlus();
-
-    }
-
-    if(e->key() == Qt :: Key_Minus)
-    {
-        zoomMinus();
-
-    }
-
     if(e->key() == Qt :: Key_BracketLeft)
     {
      emit signalDecreaseBrushRadius();
@@ -299,11 +285,6 @@ void ImageBrushGuideWidget:: wheelEvent(QWheelEvent *e)
 {
 
     ImageRegionWidget::wheelEvent(e);
-    return;
-    if(e->angleDelta().y() > 0)
-        zoomPlus();
-    else if (e->angleDelta().y() <0)
-        zoomMinus();
 
 }
 
@@ -394,18 +375,15 @@ void ImageBrushGuideWidget::changeCursorShape(QColor color)
     int radius =this->brushRadius;
     int size = radius * 2;
     this->brushColor = color;
-    if(this->currentState == HealingCloneState ::PAINT || this->currentState == HealingCloneState::LASSO_CLONE)
-    {
+    int penSize = 2;
+    QPixmap pix(size,size);
+    pix.fill(Qt::transparent);
+    QPainter p(&pix);
+    p.setPen(QPen(color,penSize));
+    p.setRenderHint(QPainter::Antialiasing, true);
+    p.drawEllipse(1, 1, size-2, size-2);
+    setCursor(QCursor(pix));
 
-        int penSize = 2;
-        QPixmap pix(size,size);
-        pix.fill(Qt::transparent);
-        QPainter p(&pix);
-        p.setPen(QPen(color,penSize));
-        p.setRenderHint(QPainter::Antialiasing, true);
-        p.drawEllipse(1, 1, size-2, size-2);
-        setCursor(QCursor(pix));
-    }
     QPointF tempCursorPosition = mapToScene(mapFromImageCoordinates(src));
     updateSourceCursor(tempCursorPosition, 2*this->brushRadius);
 
@@ -422,18 +400,7 @@ void ImageBrushGuideWidget :: updateCursor()
 void ImageBrushGuideWidget::setBrushRadius(int value)
 {
     this->brushRadius = value;
-    updateCursor();
-}
-
-void ImageBrushGuideWidget::zoomImage(int zoomPercent)
-{
-
-    this->float_h = this->default_h * zoomPercent/100.0;
-    this->float_w = this->default_w  * zoomPercent/100.0;
-    this->resize((int)this->float_w, (int)this->float_h);
-
-
-
+    activateState(this->currentState);
 }
 
 
@@ -495,32 +462,6 @@ void ImageBrushGuideWidget::recenterOnMousePosition()
     this->move(relPos);
     //QCursor::setPos(centerPosition);
 
-}
-void ImageBrushGuideWidget::zoomPlus()
-{
-
-  //  this->setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
-    this->scale(1.2,1.2);
-    return;
-    this->float_h += .1 * this->default_h;
-    this->float_w += .1 * this->default_w;
-    int zoomPercent = ceil((this->float_h/this->default_h) * 100);
-    emit signalZoomPercentChanged(zoomPercent);
-    recenterOnMousePosition();
-
-}
-
-void ImageBrushGuideWidget::zoomMinus()
-{
- //   this->setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
-    this->scale(.8,.8);
-    return;
-
-    this->float_h -= .1 * this->default_h;
-    this->float_w -= .1 * this->default_w;
-    int zoomPercent = floor((this->float_h/this->default_h) * 100);
-    emit signalZoomPercentChanged(zoomPercent);
-    recenterOnMousePosition();
 }
 
 
@@ -606,6 +547,8 @@ void ImageBrushGuideWidget::updateSourceCursor(QPointF pos, int diameter)
 
 void ImageBrushGuideWidget::setSourceCursorPosition(QPointF topLeftPos)
 {
+
+
     double dx = this->sourceCursor->rect().width()/2.0;
     double dy = this->sourceCursor->rect().width()/2.0;
     QPointF shiftedPos = QPointF(topLeftPos.x()-dx, topLeftPos.y()-dy);
