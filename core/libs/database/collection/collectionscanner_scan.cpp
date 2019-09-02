@@ -615,7 +615,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
             counter = 0;
         }
 
-        QFileInfo info(dir.path() + QLatin1Char('/') + entry);
+        QFileInfo info(dir, entry);
 
         if (info.isFile())
         {
@@ -640,9 +640,9 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
                 scanFileNormal(info, scanInfos.at(index), hasSidecar);
             }
-            // ignore temp files we created ourselves
             else if (info.completeSuffix().contains(QLatin1String("digikamtempfile.")))
             {
+                // ignore temp files we created ourselves
                 continue;
             }
             else
