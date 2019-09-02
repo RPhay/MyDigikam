@@ -199,20 +199,15 @@ int CollectionScanner::countItemsInFolder(const QString& directory)
         return 0;
     }
 
-    const QFileInfoList& list = dir.entryInfoList(QDir::Dirs    |
-                                                  QDir::Files   |
-                                                  QDir::NoDotAndDotDot);
+    QDirIterator it(dir.path(), QDir::Dirs    |
+                                QDir::Files   |
+                                QDir::NoDotAndDotDot,
+                                QDirIterator::Subdirectories);
 
-    items += list.count();
-
-    QFileInfoList::const_iterator fi;
-
-    for (fi = list.constBegin() ; fi != list.constEnd() ; ++fi)
+    while (it.hasNext())
     {
-        if (fi->isDir())
-        {
-            items += countItemsInFolder(fi->filePath());
-        }
+        it.next();
+        ++items;
     }
 
     return items;
