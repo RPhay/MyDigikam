@@ -38,7 +38,12 @@ install(FILES
             ${CMAKE_CURRENT_SOURCE_DIR}/utilities/geolocation/geoiface/core/geocoordinates.h
             ${CMAKE_CURRENT_SOURCE_DIR}/utilities/geolocation/geoiface/reversegeocoding/rginfo.h
 
+            ${CMAKE_CURRENT_SOURCE_DIR}/utilities/queuemanager/dplugins/dpluginbqm.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/utilities/queuemanager/manager/batchtool.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/utilities/queuemanager/manager/queuesettings.h
+
             ${CMAKE_CURRENT_SOURCE_DIR}/utilities/imageeditor/editor/imageiface.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/utilities/imageeditor/core/iofilesettings.h
 
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dimg.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dcolor.h
@@ -61,6 +66,20 @@ install(FILES
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/rawengine/drawdecoder.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/rawengine/drawinfo.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/rawengine/drawdecodersettings.h
+
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/containers/iteminfo.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/containers/iteminfolist.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/coredb/coredbfields.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/coredb/coredbconstants.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/coredb/coredbalbuminfo.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/coredb/coredbaccess.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/coredb/coredburl.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/engine/dbengineparameters.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/engine/dbengineconfig.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/engine/dbengineerrorhandler.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/database/engine/dbengineconfigsettings.h
+
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/widgets/files/filesaveconflictbox.h
 
         DESTINATION
 
