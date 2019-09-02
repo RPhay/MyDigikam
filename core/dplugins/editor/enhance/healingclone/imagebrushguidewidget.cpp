@@ -131,13 +131,13 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
                                temp.y()<0 || temp.y()  > scene()->height();
 
 
-    if(cursorOutsideScene)
+    if(cursorOutsideScene && this->cursor().shape() != Qt::ArrowCursor)
     {
         this->prevCursor = this->cursor();
         this->setCursor(QCursor(Qt::ArrowCursor));
     }
-    else if(this->cursor().shape() == Qt::ArrowCursor) {
-
+    else if(!cursorOutsideScene && this->cursor().shape() == Qt::ArrowCursor) {
+        qCDebug(DIGIKAM_DIMG_LOG()) << "SSSSSSS" << this->prevCursor;
         this->setCursor(this->prevCursor);
     }
 

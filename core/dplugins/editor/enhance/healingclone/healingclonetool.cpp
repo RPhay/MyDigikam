@@ -81,7 +81,6 @@ public:
     QPushButton*            moveButton;
     QPushButton*            undoCloneButton;
     QPushButton*            redoCloneButton;
-    QPushButton*            resetImagePositionButton;
 };
 
 
@@ -205,15 +204,6 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     d->redoCloneButton->setWhatsThis(i18n("REDO CLONE. \nShortcut :: CTRL+Y"));
     d->redoCloneButton->setToolTip(i18n("REDO CLONE. \nShortcut :: CTRL+Y"));
 
-    // --------------------------------------------------------
-
-    d->resetImagePositionButton = new QPushButton(i18n("R"));
-    d->resetImagePositionButton->setFixedSize(btnSize);
-    d->resetImagePositionButton->setWhatsThis(i18n("Reset Image Position"));
-    d->resetImagePositionButton->setToolTip(i18n("Reset Image Position"));
-    d->resetImagePositionButton->setStyleSheet(i18n("QPushButton {color: black;font-weight: bold;}"));
-
-
 
 
     const int spacing = d->gboxSettings->spacingHint();
@@ -228,7 +218,6 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     iconsHBox->addWidget(d->moveButton);
     iconsHBox->addWidget(d->undoCloneButton);
     iconsHBox->addWidget(d->redoCloneButton);
-    iconsHBox->addWidget(d->resetImagePositionButton);
     iconsGroupBox->setLayout(iconsHBox);
     grid->addWidget(iconsGroupBox);
     // ---
@@ -289,7 +278,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
             this, SLOT(slotLasso(QPoint)));
 
     connect(d->previewWidget, SIGNAL(signalResetLassoPoint()),
-            this, SLOT(slotResetLassoPoint()));
+            this, SLOT(slotResetLassoPoints()));
 
     connect(d->previewWidget,SIGNAL(signalContinuePolygon()),
             this, SLOT(slotContinuePolygon()));
@@ -310,9 +299,6 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     connect(d->previewWidget,SIGNAL(signalRedoClone()),
             this, SLOT(slotRedoClone()));
-
-    connect(d->resetImagePositionButton, SIGNAL(clicked(bool)),
-            this, SLOT(slotResetImagePosition()));
 
 
 }
@@ -342,22 +328,11 @@ void HealingCloneTool::writeSettings()
     config->sync();
 }
 
-void HealingCloneTool::preparePreview(){
 
-    qCDebug(DIGIKAM_DIMG_LOG()) << "PREPAARE PREVIEWWW";
-
-
-    DImg original = d->previewWidget->getOriginalImage();
-    //setFilter(new RedEyeCorrectionFilter(&original, this, d->gboxSettings));
-}
-void HealingCloneTool::prepareFinal(){}
-void HealingCloneTool::setPreviewImage(){}
-void HealingCloneTool::setFinalImage(){}
 
 void HealingCloneTool::finalRendering()
 {
     ImageIface iface;
- //   DImg dest = d->previewWidget->imageIface()->preview();
     DImg dest = d->previewWidget->getOriginalImage();
     FilterAction action(QLatin1String("digikam:healingCloneTool"), 1);
     iface.setOriginal(i18n("healingClone"), action, dest);
@@ -381,17 +356,16 @@ void HealingCloneTool::slotResized()
 
 void HealingCloneTool::slotReplace(const QPoint& srcPoint, const QPoint& dstPoint)
 {
- //   ImageIface* const iface = d->previewWidget->imageIface();
- //   DImg* const current     = iface->previewReference();
+
     DImg  current = d->previewWidget->getOriginalImage();
     clone(&current, srcPoint, dstPoint, d->radiusInput->value());
     qCDebug(DIGIKAM_DIMG_LOG())<< "src,dst inside tool ::" <<  srcPoint << dstPoint;
- //   d->previewWidget->updatePreview();
+
 }
 
 void HealingCloneTool::slotRadiusChanged(int r)
 {
- //   d->previewWidget->setMaskPenSize(r);
+
     d->previewWidget->setBrushRadius(r);
 
 }
@@ -544,13 +518,32 @@ void HealingCloneTool::removeLassoPixels()
         std::pair<int,int> xy = it->first;
         DColor color = it->second;
         img.setPixelColor(xy.first, xy.second,color);
+
     }
 
 d->previewWidget->updateImage(img);
 
 }
 
-void HealingCloneTool ::slotResetLassoPoint()
+
+void HealingCloneTool :: redrawLassoPixels()
+{
+    int colorCounter = 0;
+    DImg img = d->previewWidget->getOriginalImage();
+    std::map<std::pair<int,int>, DColor>::iterator it;
+
+    for ( it = lassoColorsMap.begin(); it != lassoColorsMap.end(); it++ )
+    {
+        colorCounter++;
+        DColor color = this->lassoColors[(colorCounter)%this->lassoColors.size()];
+        std::pair<int,int> xy = it->first;
+        img.setPixelColor(xy.first, xy.second,color);
+
+    }
+
+d->previewWidget->updateImage(img);
+}
+void HealingCloneTool ::slotResetLassoPoints()
 {
     removeLassoPixels();
     this->resetLassoPoint = true;
@@ -624,8 +617,11 @@ void HealingCloneTool :: initializeLassoFlags()
 
 void HealingCloneTool::slotPushToUndoStack()
 {
+
     this->redoStack = std::stack<DImg>();
+    removeLassoPixels();
     this->undoStack.push(d->previewWidget->getOriginalImage());
+    redrawLassoPixels();
 }
 
 void HealingCloneTool:: slotUndoClone()
@@ -633,39 +629,32 @@ void HealingCloneTool:: slotUndoClone()
 
     if(this->undoStack.empty())
         return;
+    removeLassoPixels();
     this->redoStack.push(d->previewWidget->getOriginalImage());
-
     DImg temp = this->undoStack.top();
     this->undoStack.pop();
     d->previewWidget->updateImage(temp);
-
+    redrawLassoPixels();
 }
 
 void HealingCloneTool:: slotRedoClone()
 {
 
+    //slotResetLassoPoints();
     if(this->redoStack.empty())
         return;
 
+    removeLassoPixels();
     this->undoStack.push(d->previewWidget->getOriginalImage());
 
     DImg temp = this->redoStack.top();
     this->redoStack.pop();
     d->previewWidget->updateImage(temp);
+    redrawLassoPixels();
 
 
 }
 
-void HealingCloneTool::slotResetImagePosition()
-{
-    d->previewWidget->move(0,0);
-
-}
-
-void HealingCloneTool::slotScaleChanged()
-{
- qCDebug(DIGIKAM_GENERAL_LOG())  << "HEEY \n SCALE CHANGED !";
-}
 
 
 

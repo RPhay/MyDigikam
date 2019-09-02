@@ -72,16 +72,15 @@ public Q_SLOTS:
 
 
     void slotLasso(const QPoint& dst);
-    void slotResetLassoPoint();
+    void slotResetLassoPoints();
     void slotContinuePolygon();
     void slotIncreaseBrushRadius();
     void slotDecreaseBrushRadius();
     void slotPushToUndoStack();
     void slotUndoClone();
     void slotRedoClone();
-    void slotResetImagePosition();
-    void slotScaleChanged() override;
     void removeLassoPixels();
+    void redrawLassoPixels();
 
 
 private:
@@ -97,10 +96,7 @@ private:
     void writeSettings();
     void finalRendering();
 
-    void preparePreview();
-    void prepareFinal();
-    void setPreviewImage();
-    void setFinalImage();
+
 
 
     /**
