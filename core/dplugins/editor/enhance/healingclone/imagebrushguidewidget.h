@@ -68,7 +68,6 @@ public:
     void setBrushRadius(int value);
     void setIsLassoPointsVectorEmpty(bool);
     void setCloneVectorChanged(bool);
-    void recenterOnMousePosition();
     void changeCursorShape(QColor color);
     void changeCursorShape(QPixmap,float,float);
     void updateCursor();
@@ -111,13 +110,12 @@ protected:
     void mouseDoubleClickEvent(QMouseEvent*) override;
     void keyPressEvent(QKeyEvent *event) ;
     void keyReleaseEvent(QKeyEvent *event) ;
-    void resizeEvent(QResizeEvent *) override;
     void wheelEvent(QWheelEvent *event) override;
     void focusOutEvent(QFocusEvent* event) override;
     void focusInEvent(QFocusEvent * event) override;
     bool event(QEvent*) override;
     void undoSlotSetSourcePoint();
-    void showEvent( QShowEvent* event ) override;
+   // void showEvent( QShowEvent* event ) override;
     void activateState(HealingCloneState state);
 
 
@@ -138,11 +136,13 @@ private:
     double float_w;
     double float_h;
     bool amIFocused = false;
+    bool proceedInMoveEvent = false;
     bool cloneVectorChanged = true;
     int brushRadius;
     QColor brushColor = QColor(Qt::red);
     HealingCloneState currentState = HealingCloneState::SELECT_SOURCE;
     QGraphicsEllipseItem* sourceCursor = nullptr;
+    QCursor prevCursor;
 };
 
 } // namespace DigikamEditorHealingCloneToolPlugin

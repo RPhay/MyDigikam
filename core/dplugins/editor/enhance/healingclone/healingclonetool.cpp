@@ -415,16 +415,7 @@ void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoi
 
             if (rPercent < (radius * radius)) // Check for inside the circle
             {
-                if (srcPoint.x() < 0 || srcPoint.x() >= (int)img->width()  ||
-                    srcPoint.y() < 0 || srcPoint.y() >= (int)img->height() )
-                {
-          //          d->previewWidget->setSpotVisibleNoUpdate(false);
 
-                }
-                else
-                {
-           //         d->previewWidget->setSpotVisibleNoUpdate(true);
-                }
 
                 if (srcPoint.x()+i < 0 || srcPoint.x()+i >= (int)img->width()  ||
                     srcPoint.y()+j < 0 || srcPoint.y()+j >= (int)img->height() ||
@@ -479,41 +470,6 @@ void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoi
 
 }
 
-void HealingCloneTool::recloneFromVector(const std::vector<CloneInfo> cloneVec)
-{
-    double currentScaleRatio = d->previewWidget->getScaleRatio();
-
-  //  ImageIface* const iface = d->previewWidget->imageIface();
- //   DImg* const img     = iface->previewReference();
-
-    DImg  img =  (d->previewWidget->getOriginalImage());
-
-
-    for(int q = 0 ; q < cloneVec.size(); q++)
-    {
-        int x = (cloneVec)[q].dstX;
-        int y = (cloneVec)[q].dstY;
-        double thenScaleRatio = (cloneVec)[q].scaleRatio;
-        DColor color = (cloneVec)[q].color;
-       double ratioOfRatios = currentScaleRatio/thenScaleRatio;
-       int radius = ceil(ratioOfRatios);
-       for(int k = 0 ; k < radius ; k++)
-       {
-           for(int s = 0 ; s<radius ; s++)
-           {
-               img.setPixelColor(round(x * currentScaleRatio/thenScaleRatio)+k,
-                                  round(y*currentScaleRatio/thenScaleRatio) + s ,
-                                  color);
-
-           }
-       }
-    }
-
- //   d->previewWidget->updatePreview();
-
-
-}
-
 
 
 void HealingCloneTool :: updateLasso(std::vector<QPoint>& points)
@@ -539,7 +495,6 @@ void HealingCloneTool :: updateLasso(std::vector<QPoint>& points)
         }
     }
 
-//    d->previewWidget->updatePreview();
     d->previewWidget->updateImage(img);
 }
 
@@ -669,8 +624,8 @@ void HealingCloneTool :: initializeLassoFlags()
 
 void HealingCloneTool::slotPushToUndoStack()
 {
-    this->redoStack = std::stack<std::vector<CloneInfo>>();
-    this->undoStack.push((this->CloneInfoVector));
+    this->redoStack = std::stack<DImg>();
+    this->undoStack.push(d->previewWidget->getOriginalImage());
 }
 
 void HealingCloneTool:: slotUndoClone()
@@ -678,13 +633,11 @@ void HealingCloneTool:: slotUndoClone()
 
     if(this->undoStack.empty())
         return;
-    this->redoStack.push(this->CloneInfoVector);
+    this->redoStack.push(d->previewWidget->getOriginalImage());
 
-//    this->d->previewWidget->resetPixels();
-
-    this->CloneInfoVector = this->undoStack.top();
-    this->recloneFromVector(this->CloneInfoVector);
+    DImg temp = this->undoStack.top();
     this->undoStack.pop();
+    d->previewWidget->updateImage(temp);
 
 }
 
@@ -693,13 +646,12 @@ void HealingCloneTool:: slotRedoClone()
 
     if(this->redoStack.empty())
         return;
-    this->undoStack.push(this->CloneInfoVector);
 
- //   this->d->previewWidget->resetPixels();
+    this->undoStack.push(d->previewWidget->getOriginalImage());
 
-    this->CloneInfoVector = this->redoStack.top();
+    DImg temp = this->redoStack.top();
     this->redoStack.pop();
-    this->recloneFromVector(this->CloneInfoVector);
+    d->previewWidget->updateImage(temp);
 
 
 }

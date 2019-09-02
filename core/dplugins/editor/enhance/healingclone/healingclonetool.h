@@ -114,8 +114,6 @@ private:
     std::vector<QPoint> interpolate(const QPoint& start,const QPoint& end);
     void updateLasso(std::vector<QPoint>& points);
     void initializeLassoFlags();
-    void recloneFromVector(const std::vector<CloneInfo> CloneInfoVector);
-
 
 
 
@@ -125,8 +123,8 @@ private:
 
     Private* const d;
     std::vector<CloneInfo>  CloneInfoVector;
-    std::stack<std::vector<CloneInfo>> undoStack;
-    std::stack<std::vector<CloneInfo>> redoStack;
+    std::stack<DImg> undoStack;
+    std::stack<DImg> redoStack;
 
     std::vector<DColor> lassoColors;
     bool resetLassoPoint = true;

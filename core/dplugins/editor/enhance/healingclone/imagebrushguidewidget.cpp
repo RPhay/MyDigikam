@@ -66,8 +66,8 @@ namespace DigikamEditorHealingCloneToolPlugin
  {
 
 
-
-      if(!this->amIFocused && this->currentState == HealingCloneState::PAINT)
+      if(!this->amIFocused &&
+              (this->currentState == HealingCloneState::PAINT || this->currentState == HealingCloneState::LASSO_CLONE))
       {
           this->amIFocused = true;
           return;
@@ -76,6 +76,8 @@ namespace DigikamEditorHealingCloneToolPlugin
       {
           this->amIFocused = true;
       }
+
+      proceedInMoveEvent = true;
 
       if( (this->currentState == HealingCloneState::PAINT || this->currentState == HealingCloneState::LASSO_CLONE))
       {
@@ -112,7 +114,6 @@ namespace DigikamEditorHealingCloneToolPlugin
 
 
              dst = mapToImageCoordinates(e->pos());
-             qCDebug(DIGIKAM_DIMG_LOG()) <<"SRC AND DST :: "<< src << dst ;
              emit signalClone(src, dst);
 
          }
@@ -125,6 +126,24 @@ namespace DigikamEditorHealingCloneToolPlugin
  }
 void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
 {
+    QPointF temp = mapToScene(e->pos());
+    bool cursorOutsideScene = temp.x() < 0 || temp.x()  > scene()->width() ||
+                               temp.y()<0 || temp.y()  > scene()->height();
+
+
+    if(cursorOutsideScene)
+    {
+        this->prevCursor = this->cursor();
+        this->setCursor(QCursor(Qt::ArrowCursor));
+    }
+    else if(this->cursor().shape() == Qt::ArrowCursor) {
+
+        this->setCursor(this->prevCursor);
+    }
+
+
+    if(!proceedInMoveEvent)
+        return;
 
     if ( this->currentState == HealingCloneState::MOVE_IMAGE && (e->buttons() & Qt::LeftButton))
     {
@@ -292,6 +311,7 @@ void ImageBrushGuideWidget:: wheelEvent(QWheelEvent *e)
 void ImageBrushGuideWidget::focusOutEvent(QFocusEvent *event)
 {
     this->amIFocused = false;
+    proceedInMoveEvent = false;
 }
 
 void ImageBrushGuideWidget::focusInEvent(QFocusEvent *event)
@@ -308,6 +328,7 @@ void ImageBrushGuideWidget :: slotMoveImage()
 {
     if(this->currentState == HealingCloneState::MOVE_IMAGE)
     {
+
         if(this->isLassoPointsVectorEmpty)
         {
             activateState(HealingCloneState::PAINT);
@@ -320,6 +341,7 @@ void ImageBrushGuideWidget :: slotMoveImage()
     }
     else
     {
+
         activateState(HealingCloneState::MOVE_IMAGE);
     }
 }
@@ -404,68 +426,13 @@ void ImageBrushGuideWidget::setBrushRadius(int value)
 }
 
 
-void ImageBrushGuideWidget::resizeEvent(QResizeEvent* e)
-{
 
-
-    ImageRegionWidget::resizeEvent(e);
-    return;
-    emit signalResetLassoPoint();
-    emit signalContinuePolygon();
-    if(this->currentState == HealingCloneState::LASSO_CLONE
-            || this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY)
-    {
-        activateState(HealingCloneState::PAINT);
-    }
-
-   // this->recenterOnMousePosition();
-}
-
-
+/*
 void ImageBrushGuideWidget::showEvent( QShowEvent* event ) {
     ImageRegionWidget::showEvent( event );
     activateState(HealingCloneState::SELECT_SOURCE);
 }
-
-void ImageBrushGuideWidget::recenterOnMousePosition()
-{
-   // QPoint diff = this->parentWidget()->mapFromGlobal(QCursor::pos()) -  this->pos();
-   // QPoint newPos = this->parentWidget()->mapFromGlobal(QCursor::pos()) - diff;
-/*    qCDebug(DIGIKAM_DIMG_LOG()) << "****************************";
-    qCDebug(DIGIKAM_GENERAL_LOG()) <<  "Cursor[regular,translate,map] " << QCursor::pos() << ImageRegionWidget::translatePointPosition(QCursor::pos())
-                                  << this->parentWidget()->mapFromGlobal(QCursor::pos());
-    qCDebug(DIGIKAM_GENERAL_LOG()) << "this->pos [regular,translate,map] " <<this->pos() << ImageRegionWidget::translatePointPosition(this->pos())
-                                   << this->parentWidget()->mapFromGlobal(this->pos());
-    qCDebug(DIGIKAM_GENERAL_LOG()) << "****************************";
 */
-    double parentWidthHalf = this->parentWidget()->width()/2.0;
-    double parentHeightHalf = this->parentWidget()->height()/2.0;
-    QPoint pos = this->pos(); // position of upper-left corner of the imagewidget, relative
-    // to the upper-left corner of the screen (parent)
-    QPoint cursorRelativePosition = this->parentWidget()->mapFromGlobal(QCursor::pos());
-    QPoint centerPosition = QPoint(parentWidthHalf,parentHeightHalf);
-
-    bool inside = false;
-
-    if(cursorRelativePosition.x() > pos.x() && cursorRelativePosition.x() < pos.x()+this->width()
-            && cursorRelativePosition.y() > pos.y() && cursorRelativePosition.y() < pos.y()+this->height())
-    {
-        inside = true;
-    }
-    QPoint diff = centerPosition - cursorRelativePosition;
-    if(!inside)
-    {
-        diff = 0 * diff;
-    }
-    QPoint relPos = pos+diff;
-    qCDebug(DIGIKAM_GENERAL_LOG()) << "pos,diff,rel, Inside" << pos << diff<< relPos<<   inside;
-    this->move(relPos);
-    //QCursor::setPos(centerPosition);
-
-}
-
-
-
 
 void ImageBrushGuideWidget::setIsLassoPointsVectorEmpty(bool isEmpty)
 {
@@ -474,7 +441,9 @@ void ImageBrushGuideWidget::setIsLassoPointsVectorEmpty(bool isEmpty)
 void ImageBrushGuideWidget :: activateState(HealingCloneState state)
 {
 
-    setDragMode(QGraphicsView::NoDrag);
+    if(state != HealingCloneState::MOVE_IMAGE)
+        setDragMode(QGraphicsView::NoDrag);
+
     if(this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY &&
             state != HealingCloneState::LASSO_CLONE)
     {
@@ -487,8 +456,8 @@ void ImageBrushGuideWidget :: activateState(HealingCloneState state)
     }
     else if(state == HealingCloneState::MOVE_IMAGE)
     {
-        setDragMode(QGraphicsView::ScrollHandDrag);
-      //  setCursor(Qt::OpenHandCursor);
+       if(this->cursor().shape() != QGraphicsView::ScrollHandDrag)
+         setDragMode(QGraphicsView::ScrollHandDrag);
     }
     else if(state == HealingCloneState::LASSO_DRAW_BOUNDARY)
     {
@@ -554,10 +523,12 @@ void ImageBrushGuideWidget::setSourceCursorPosition(QPointF topLeftPos)
     QPointF shiftedPos = QPointF(topLeftPos.x()-dx, topLeftPos.y()-dy);
     this->sourceCursor->setPos(shiftedPos);
 
-    // check if source is inside scene
+    // check if source is outside scene
 
-    if(topLeftPos.x() < 0 || topLeftPos.x() + dx > scene()->width() ||
-            topLeftPos.y()<0 || topLeftPos.y() + dy > scene()->height())
+    bool sourceCursorOutsideScene =
+            topLeftPos.x() < 0 || topLeftPos.x() + dx > scene()->width() ||
+            topLeftPos.y()<0 || topLeftPos.y() + dy > scene()->height();
+    if(sourceCursorOutsideScene)
     {
         this->sourceCursor->setVisible(false);
     }
