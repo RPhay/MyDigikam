@@ -59,6 +59,7 @@ install(FILES
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/drawdecoding.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/history/historyimageid.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/history/filteraction.h
+            ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/dimgbuiltinfilter.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/icc/iccprofile.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/bcg/bcgcontainer.h
             ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/wb/wbcontainer.h
