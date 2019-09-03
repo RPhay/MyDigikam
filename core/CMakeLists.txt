@@ -122,7 +122,7 @@ endif()
 
 ############## Find Packages ###################
 
-find_package(Qt5 ${QT_MIN_VERSION}
+find_package(Qt5 ${QT_MIN_VERSION} REQUIRED
              NO_MODULE COMPONENTS
              Core
              Concurrent
@@ -156,7 +156,7 @@ endif()
 # Dependencies For unit tests and CLI test tools
 
 if(BUILD_TESTING)
-    find_package(Qt5 ${QT_MIN_VERSION}
+    find_package(Qt5 ${QT_MIN_VERSION} REQUIRED
                  NO_MODULE COMPONENTS
                  Test
     )
@@ -166,7 +166,7 @@ if(BUILD_TESTING)
     )
 endif()
 
-find_package(KF5 ${KF5_MIN_VERSION}
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
              COMPONENTS
              XmlGui
              CoreAddons
@@ -247,7 +247,7 @@ find_package(LCMS2)
 find_package(EXPAT)    # For DNGWriter: XMP SDK need Expat library to compile.
 find_package(Threads)  # For DNGWriter and LibRaw which needs native threads support.
 
-find_package(Exiv2 ${EXIV2_MIN_VERSION})
+find_package(Exiv2 ${EXIV2_MIN_VERSION} REQUIRED)
 
 set_package_properties("Exiv2"     PROPERTIES
                        DESCRIPTION "Required to build digiKam"
