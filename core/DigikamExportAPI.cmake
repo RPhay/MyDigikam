@@ -8,6 +8,7 @@
 #
 # Note: all headers must export only Qt5 dependencies.
 # No KF5 dependencies are permitted: all external DPlugin based projects do not depend explicitly to KF5 API.
+# External DPlugins demo code can be found in this project: https://github.com/cgilles/digikamplugins-demo
 
 # -----------------------------------------------------------------------------------
 # Headers to install
