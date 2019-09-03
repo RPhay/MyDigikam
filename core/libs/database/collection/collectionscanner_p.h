@@ -38,12 +38,13 @@
 
 #include <QDir>
 #include <QFileInfo>
+#include <QDirIterator>
+#include <QWriteLocker>
 #include <QReadWriteLock>
 #include <QReadLocker>
 #include <QStringList>
 #include <QSet>
 #include <QTime>
-#include <QWriteLocker>
 
 // Local includes
 
