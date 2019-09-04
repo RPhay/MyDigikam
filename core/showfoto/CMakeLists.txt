@@ -13,13 +13,6 @@ include_directories(BEFORE
                     ${CMAKE_CURRENT_SOURCE_DIR}/main
 )
 
-include_directories(
-    $<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:Qt5::Network,INTERFACE_INCLUDE_DIRECTORIES>
-
-    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
-)
-
 set(showfoto_SRCS
     setup/showfotosetuptooltip.cpp
     setup/showfotosetupmisc.cpp
