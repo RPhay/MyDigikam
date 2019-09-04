@@ -266,11 +266,10 @@ GSWindow::GSWindow(DInfoInterface* const iface,
 
 GSWindow::~GSWindow()
 {
-    delete d->widget;
-    delete d->albumDlg;
-    delete d->gphotoAlbumDlg;
-    delete d->talker;
+    d->transferQueue.clear();
+
     delete d->gphotoTalker;
+    delete d->talker;
     delete d;
 }
 
@@ -851,6 +850,11 @@ void GSWindow::downloadNextPhoto()
 void GSWindow::slotGetPhotoDone(int errCode, const QString& errMsg,
                                 const QByteArray& photoData, const QString& fileName)
 {
+    if (d->transferQueue.isEmpty())
+    {
+        return;
+    }
+
     GSPhoto item = d->transferQueue.first().second;
 
     /**
@@ -982,6 +986,11 @@ void GSWindow::slotGetPhotoDone(int errCode, const QString& errMsg,
 
 void GSWindow::slotAddPhotoDone(int err, const QString& msg)
 {
+    if (d->transferQueue.isEmpty())
+    {
+        return;
+    }
+
     if (err == 0)
     {
         d->widget->imagesList()->processed(d->transferQueue.first().first,false);
@@ -1245,6 +1254,7 @@ void GSWindow::buttonStateChange(bool state)
 void GSWindow::slotFinished()
 {
     writeSettings();
+    d->transferQueue.clear();
     d->widget->imagesList()->listView()->clear();
 }
 
