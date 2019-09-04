@@ -15,7 +15,7 @@
 
 install(FILES
 
-               # As part of DigikamCore
+              # As part of DigikamCore
 
               ${CMAKE_CURRENT_BINARY_DIR}/app/utils/digikam_config.h
               ${CMAKE_CURRENT_BINARY_DIR}/app/utils/digikam_core_export.h
@@ -72,6 +72,7 @@ install(FILES
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/rawengine/drawdecodersettings.h
 
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/widgets/files/filesaveconflictbox.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dialogs/dmessagebox.h
 
               # As part of DigikamDatabase
 
