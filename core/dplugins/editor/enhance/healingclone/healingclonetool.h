@@ -104,6 +104,7 @@ private:
     std::vector<QPoint> interpolate(const QPoint& start,const QPoint& end);
     void updateLasso(std::vector<QPoint>& points);
     void initializeLassoFlags();
+    void refreshImage();
 
 
 
