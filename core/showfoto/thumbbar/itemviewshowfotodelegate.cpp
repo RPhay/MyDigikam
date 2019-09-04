@@ -36,7 +36,6 @@
 // Local includes
 
 #include "thememanager.h"
-#include "itemscanner.h"
 #include "itempropertiestab.h"
 #include "showfotoiteminfo.h"
 #include "colorlabelwidget.h"
