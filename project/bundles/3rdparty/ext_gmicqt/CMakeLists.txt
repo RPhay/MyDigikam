@@ -10,7 +10,6 @@ SET(PREFIX_ext_gmicqt "${EXTPREFIX}" )
 
 set(GmicQt_Conf -DGMIC_QT_HOST=digikam
                 -DENABLE_ASAN=OFF
-                -DENABLE_FFTW3=ON
                 ${GLOBAL_PROFILE}
 )
 
@@ -53,30 +52,7 @@ if (MINGW)
         UPDATE_COMMAND ""
     )
 
-elseif (APPLE)
-
-    ExternalProject_Add(ext_gmic_qt
-
-        DEPENDS ext_gmic_base
-
-        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-        GIT_REPOSITORY https://github.com/cgilles/gmic-qt.git
-
-        SOURCE_DIR gmic-qt
-        INSTALL_DIR ${PREFIX_ext_gmicqt}
-
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_gmic}
-                   -DCMAKE_BUILD_TYPE=RelWithDebInfo
-                   -DGMIC_QT_HOST=digikam
-                   -DENABLE_ASAN=OFF
-                   -DENABLE_FFTW3=OFF
-                   ${GLOBAL_PROFILE}
-
-
-        UPDATE_COMMAND ""
-    )
-
-else() # Linux
+else() # MacOS and Linux
 
     ExternalProject_Add(ext_gmic_qt
 
