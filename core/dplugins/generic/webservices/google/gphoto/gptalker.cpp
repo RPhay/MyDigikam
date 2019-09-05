@@ -160,6 +160,7 @@ GPTalker::~GPTalker()
     if (m_reply)
     {
         m_reply->abort();
+        m_reply = nullptr;
     }
 
     WSToolUtils::removeTemporaryDir("google");
@@ -637,7 +638,7 @@ void GPTalker::slotFinished(QNetworkReply* reply)
         {
             emit signalAddPhotoDone(reply->error(), reply->errorString());
         }
-        else
+        else if (reply->error() != QNetworkReply::OperationCanceledError)
         {
             QMessageBox::critical(QApplication::activeWindow(),
                                   i18n("Error"), reply->errorString());
