@@ -21,5 +21,5 @@ set(healingclonetoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    HealingCloneTool
-                                   SOURCES ${healingclonetoolplugin_SRCS}
+                          SOURCES ${healingclonetoolplugin_SRCS}
 )

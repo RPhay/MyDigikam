@@ -371,6 +371,8 @@ void GraphicsDImgView::scrollPointOnPoint(const QPointF& scenePos, const QPoint&
 
 void GraphicsDImgView::wheelEvent(QWheelEvent* e)
 {
+    int p = this->verticalScrollBar()->sliderPosition();
+
     if (e->modifiers() & Qt::ShiftModifier)
     {
         e->accept();
@@ -401,7 +403,20 @@ void GraphicsDImgView::wheelEvent(QWheelEvent* e)
         return;
     }
 
-    QGraphicsView::wheelEvent(e);
+    else if((p == this->verticalScrollBar()->maximum() && e->angleDelta().y() < 0)
+            ||(p == this->verticalScrollBar()->minimum() && e->angleDelta().y() > 0))
+    {
+        // I had to add this condition for "ImageBrushGuideWidget" that subclasses ImageRegionWidget, used
+        // in the healingclone tool.
+        // If I remove that condition, this event handler gets called recursively and the program
+        // crashes.T I couldn't figure out the reason. [Ahmed Fathy]
+        return;
+    }
+    else
+    {
+        QGraphicsView::wheelEvent(e);
+    }
+
 }
 
 void GraphicsDImgView::slotCornerButtonPressed()
