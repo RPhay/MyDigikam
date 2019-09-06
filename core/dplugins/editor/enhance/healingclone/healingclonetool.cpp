@@ -29,6 +29,7 @@
 
 #include <QGridLayout>
 #include <QLabel>
+#include<QPlainTextEdit>
 #include <QPushButton>
 #include<QGroupBox>
 #include <QIcon>
@@ -206,6 +207,16 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     d->redoCloneButton->setToolTip(i18n("REDO CLONE. \nShortcut :: CTRL+Y"));
 
 
+    QPlainTextEdit* const label3  = new QPlainTextEdit(i18n("How To Use:\n====\n"
+                                            "* Press s to switch to source-selection mode, and select source point on image.\n"
+                                            "* Press s again and start cloning.\n"
+                                            "* Press [ and ] to change brush size.\n"
+                                            "* Press CTRL+Mousewheel to zoom in/out.\n"
+                                            "* Press m to pan the image if image is larger than viewport.\n"
+                                            "* Press l to start lasso mode. Start drawing lasso boundary either "
+                                            "continuously or discretely, then double-click or press l again to close the boundary.\n"
+                                            "* Inside lasso mode, you can clone only inside the lasso region.\n"));
+    label3->setReadOnly(true);
 
     const int spacing = d->gboxSettings->spacingHint();
 
@@ -227,6 +238,8 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     grid->addWidget(d->radiusInput, 5, 0, 1, 2);
     grid->addWidget(label2,         6, 0, 1, 2);
     grid->addWidget(d->blurPercent, 7, 0, 1, 2);
+    grid->addWidget(new DLineWidget(Qt::Horizontal, d->gboxSettings->plainPage()), 8, 0, 1, 2);
+    grid->addWidget(label3,          9, 0, 1, 2);
     grid->setRowStretch(10, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
