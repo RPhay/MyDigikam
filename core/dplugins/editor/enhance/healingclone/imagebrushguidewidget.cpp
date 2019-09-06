@@ -45,28 +45,29 @@ ImageBrushGuideWidget::ImageBrushGuideWidget(QWidget* const parent)
 
 void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
 {
-      if(!this->amIFocused &&
-              (this->currentState == HealingCloneState::PAINT || this->currentState == HealingCloneState::LASSO_CLONE))
+      if (!this->amIFocused &&
+          (this->currentState == HealingCloneState::PAINT || this->currentState == HealingCloneState::LASSO_CLONE))
       {
           this->amIFocused = true;
           return;
       }
-      else if(!this->amIFocused)
+      else if (!this->amIFocused)
       {
           this->amIFocused = true;
       }
 
       proceedInMoveEvent = true;
 
-      if( (this->currentState == HealingCloneState::PAINT || this->currentState == HealingCloneState::LASSO_CLONE))
+      if ((this->currentState == HealingCloneState::PAINT || this->currentState == HealingCloneState::LASSO_CLONE))
       {
-          if(this->cloneVectorChanged)
+          if (this->cloneVectorChanged)
           {
               this->setCloneVectorChanged(false);
               qCDebug(DIGIKAM_DIMG_LOG()) << "emitting push to stack";
               emit signalPushToUndoStack();
           }
-          else {
+          else
+          {
               qCDebug(DIGIKAM_DIMG_LOG()) << "clone vec didn't change - not pushing to undo stack";
           }
       }
@@ -90,39 +91,30 @@ void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
      {
          if (e->button() == Qt::LeftButton)
          {
-
-
              dst = mapToImageCoordinates(e->pos());
              emit signalClone(src, dst);
-
          }
-
      }
-
-
-
-
  }
 
 void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
 {
     QPointF temp = mapToScene(e->pos());
     bool cursorOutsideScene = temp.x() < 0 || temp.x()  > scene()->width() ||
-                               temp.y()<0 || temp.y()  > scene()->height();
+                              temp.y()<0 || temp.y()  > scene()->height();
 
-
-    if(cursorOutsideScene && this->cursor().shape() != Qt::ArrowCursor)
+    if (cursorOutsideScene && this->cursor().shape() != Qt::ArrowCursor)
     {
         this->prevCursor = this->cursor();
         this->setCursor(QCursor(Qt::ArrowCursor));
     }
-    else if(!cursorOutsideScene && this->cursor().shape() == Qt::ArrowCursor) {
+    else if (!cursorOutsideScene && this->cursor().shape() == Qt::ArrowCursor)
+    {
         qCDebug(DIGIKAM_DIMG_LOG()) << "SSSSSSS" << this->prevCursor;
         this->setCursor(this->prevCursor);
     }
 
-
-    if(!proceedInMoveEvent)
+    if (!proceedInMoveEvent)
         return;
 
     if ( this->currentState == HealingCloneState::MOVE_IMAGE && (e->buttons() & Qt::LeftButton))
@@ -132,14 +124,12 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
 
     }
     else if ( this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY && (e->buttons() & Qt::LeftButton))
-     {
+    {
         QPoint dst = QPoint(e->x(),e->y());
         emit signalLasso(mapToImageCoordinates(dst));
-     }
+    }
     else if ((e->buttons() & Qt::LeftButton) && !srcSet)
     {
-
-
         QPoint currentDst   =   mapToImageCoordinates(e->pos());
         QPoint currentSrc   =   src;
         QPoint orgDst       =   dst;
@@ -151,13 +141,11 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
         //
 
         emit signalClone(currentSrc, currentDst);
-
     }
 
     if (srcSet)
     {
         ImageRegionWidget::mouseMoveEvent(e);
-
     }
 }
 
@@ -182,7 +170,6 @@ void ImageBrushGuideWidget::mouseReleaseEvent(QMouseEvent* e)
     {
         QPointF tempCursorPosition = mapToScene(mapFromImageCoordinates(src));
         setSourceCursorPosition(tempCursorPosition);
-
     }
 }
 
