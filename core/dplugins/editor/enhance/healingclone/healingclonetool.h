@@ -70,7 +70,6 @@ public Q_SLOTS:
     void slotReplace(const QPoint& srcPoint, const QPoint& dstPoint);
     void slotRadiusChanged(int r);
 
-
     void slotLasso(const QPoint& dst);
     void slotResetLassoPoints();
     void slotContinuePolygon();
@@ -82,16 +81,11 @@ public Q_SLOTS:
     void removeLassoPixels();
     void redrawLassoPixels();
 
-
 private:
-
 
     void readSettings();
     void writeSettings();
     void finalRendering();
-
-
-
 
     /**
      * @brief clone the method responsible for the clone/heal of preview image
@@ -106,27 +100,26 @@ private:
     void initializeLassoFlags();
     void refreshImage();
 
-
-
 private:
 
     class Private;
-
     Private* const d;
 
     std::stack<DImg> undoStack;
     std::stack<DImg> redoStack;
 
-    std::vector<DColor> lassoColors;
-    bool resetLassoPoint = true;
+    bool resetLassoPoint      = true;
     bool insideLassoOperation = false;
+
     QPoint previousLassoPoint;
     QPoint startLassoPoint;
-    std::vector<QPoint> lassoPoints;
-    QPolygon lassoPolygon;
-    std::vector<std::vector<bool>> lassoFlags;
-    std::map<std::pair<int,int>, DColor> lassoColorsMap;
 
+    std::vector<DColor> lassoColors;
+    std::vector<QPoint> lassoPoints;
+    QPolygon            lassoPolygon;
+
+    std::vector<std::vector<bool>>       lassoFlags;
+    std::map<std::pair<int,int>, DColor> lassoColorsMap;
 };
 
 } // namespace DigikamEditorHealingCloneToolPlugin
