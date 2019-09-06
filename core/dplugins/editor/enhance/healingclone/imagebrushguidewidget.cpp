@@ -30,6 +30,7 @@
 
 // KDE includes
 #include <klocalizedstring.h>
+#include <QScrollBar>
 
 
 namespace DigikamEditorHealingCloneToolPlugin
@@ -61,6 +62,12 @@ namespace DigikamEditorHealingCloneToolPlugin
       }
 
       proceedInMoveEvent = true;
+
+      if(this->currentState == HealingCloneState ::DO_NOTHING)
+      {
+          ImageRegionWidget::mousePressEvent(e);
+          return;
+      }
 
       if( (this->currentState == HealingCloneState::PAINT || this->currentState == HealingCloneState::LASSO_CLONE))
       {
@@ -109,22 +116,25 @@ namespace DigikamEditorHealingCloneToolPlugin
  }
 void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
 {
-    QPointF temp = mapToScene(e->pos());
-    bool cursorOutsideScene = temp.x() < 0 || temp.x()  > scene()->width() ||
-                               temp.y()<0 || temp.y()  > scene()->height();
 
 
-    if(cursorOutsideScene && this->cursor().shape() != Qt::ArrowCursor)
+    bool cursorOutsideScene = checkPointOutsideScene(e->pos());
+
+
+
+    if(cursorOutsideScene && this->currentState != HealingCloneState::DO_NOTHING)
     {
-        this->prevCursor = this->cursor();
-        this->setCursor(QCursor(Qt::ArrowCursor));
+        activateState(HealingCloneState::DO_NOTHING);
     }
-    else if(!cursorOutsideScene && this->cursor().shape() == Qt::ArrowCursor) {
-        qCDebug(DIGIKAM_DIMG_LOG()) << "SSSSSSS" << this->prevCursor;
-        this->setCursor(this->prevCursor);
+    else if(!cursorOutsideScene && this->currentState == HealingCloneState::DO_NOTHING) {
+        activateState(this->previousState);
     }
 
-
+    if(this->currentState == HealingCloneState ::DO_NOTHING)
+    {
+        ImageRegionWidget::mouseMoveEvent(e);
+        return;
+    }
     if(!proceedInMoveEvent)
         return;
 
@@ -171,6 +181,11 @@ void ImageBrushGuideWidget::mouseReleaseEvent(QMouseEvent* e)
 
 
     ImageRegionWidget::mouseReleaseEvent(e);
+
+    if(this->currentState == HealingCloneState ::DO_NOTHING)
+    {
+        return;
+    }
     if (this->currentState == HealingCloneState::MOVE_IMAGE)
     {
        // setCursor(Qt::OpenHandCursor);
@@ -266,6 +281,7 @@ bool ImageBrushGuideWidget::event(QEvent *event)
 
           return true;
         }
+
         return QWidget::event(event);
 }
 void ImageBrushGuideWidget::  keyReleaseEvent(QKeyEvent *e)
@@ -387,6 +403,9 @@ void ImageBrushGuideWidget::changeCursorShape(QColor color)
     p.setPen(QPen(color,penSize));
     p.setRenderHint(QPainter::Antialiasing, true);
     p.drawEllipse(1, 1, size-2, size-2);
+    p.setBrush(Qt::SolidPattern);
+    p.drawEllipse((size-2)/2,(size-2)/2,2,2);
+
     setCursor(QCursor(pix));
 
     QPointF tempCursorPosition = mapToScene(mapFromImageCoordinates(src));
@@ -424,6 +443,8 @@ void ImageBrushGuideWidget::setIsLassoPointsVectorEmpty(bool isEmpty)
 void ImageBrushGuideWidget :: activateState(HealingCloneState state)
 {
 
+    this->previousState = this->currentState;
+
     if(state != HealingCloneState::MOVE_IMAGE)
         setDragMode(QGraphicsView::NoDrag);
 
@@ -459,6 +480,10 @@ void ImageBrushGuideWidget :: activateState(HealingCloneState state)
                                                      QLatin1String("digikam/data/healing_clone_SRC.png")));
         changeCursorShape(pix,0.5,0.5);
 
+    }
+    else if(state ==HealingCloneState::DO_NOTHING)
+    {
+        this->setCursor(QCursor(Qt::ArrowCursor));
     }
 }
 
@@ -500,7 +525,6 @@ void ImageBrushGuideWidget::updateSourceCursor(QPointF pos, int diameter)
 void ImageBrushGuideWidget::setSourceCursorPosition(QPointF topLeftPos)
 {
 
-
     double dx = this->sourceCursor->rect().width()/2.0;
     double dy = this->sourceCursor->rect().width()/2.0;
     QPointF shiftedPos = QPointF(topLeftPos.x()-dx, topLeftPos.y()-dy);
@@ -521,4 +545,27 @@ void ImageBrushGuideWidget::setSourceCursorPosition(QPointF topLeftPos)
 
 
 }
+
+bool ImageBrushGuideWidget :: checkPointOutsideScene(QPoint globalPoint)
+{
+  bool pointOutsideScene;
+  QPointF temp = mapToScene(globalPoint);
+
+ if(viewport()->width() > scene()->width())
+ {
+    pointOutsideScene = temp.x()  < 0 || temp.x()  > scene()->width() ||
+                               temp.y()  <0 || temp.y()  > scene()->height();
+ }
+ else {
+     QPoint bottomRight = QPoint(viewport()->width()-1,viewport()->height()-1);
+     int right = mapToScene(bottomRight).x() ;
+     int bottom = mapToScene(bottomRight).y();
+
+     pointOutsideScene = temp.x()  <= 0 || temp.x()  >= right ||
+                                temp.y()  <=0 || temp.y()  >= bottom;
+ }
+
+ return pointOutsideScene;
+}
+
 } // namespace DigikamEditorHealingCloneToolPlugin

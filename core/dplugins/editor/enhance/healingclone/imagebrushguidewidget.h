@@ -53,7 +53,8 @@ public:
         PAINT,
         LASSO_DRAW_BOUNDARY,
         LASSO_CLONE,
-        MOVE_IMAGE
+        MOVE_IMAGE,
+        DO_NOTHING
     };
 
 
@@ -73,7 +74,9 @@ public:
     QPoint mapFromImageCoordinates(QPoint point);
     void updateSourceCursor(QPointF pos = QPoint(), int diamter = 10);
     void setSourceCursorPosition(QPointF topLeftPos);
+    bool checkPointOutsideScene(QPoint point);
     explicit ImageBrushGuideWidget(QWidget* const parent = nullptr);
+
 
 public Q_SLOTS:
 
@@ -113,13 +116,7 @@ protected:
     void focusInEvent(QFocusEvent * event) override;
     bool event(QEvent*) override;
     void undoSlotSetSourcePoint();
-   // void showEvent( QShowEvent* event ) override;
     void activateState(HealingCloneState state);
-
-
-
-
-
 
 
 
@@ -139,6 +136,7 @@ private:
     int brushRadius;
     QColor brushColor = QColor(Qt::red);
     HealingCloneState currentState = HealingCloneState::SELECT_SOURCE;
+    HealingCloneState previousState;
     QGraphicsEllipseItem* sourceCursor = nullptr;
     QCursor prevCursor;
 };

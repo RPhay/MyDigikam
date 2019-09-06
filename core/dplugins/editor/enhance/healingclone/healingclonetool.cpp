@@ -662,7 +662,6 @@ void HealingCloneTool::refreshImage()
     ImageRegionWidget* const wgt= dynamic_cast<ImageRegionWidget*>(d->previewWidget);
     if(wgt)
     {
-      qCDebug(DIGIKAM_DIMG_LOG()) << "PROOOOOOF\n\n\n\n\n";
       QRectF test = wgt->sceneRect();
       ImageRegionItem* item =  (ImageRegionItem*)wgt->item();
       int w = item->boundingRect().width();
