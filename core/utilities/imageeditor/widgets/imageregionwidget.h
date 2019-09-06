@@ -70,6 +70,7 @@ public:
     DImg   getOriginalImage() const;
 
     void   setPreviewImage(const DImg& img);
+    void   updateImage(DImg& img);
 
     void   setCapturePointMode(bool b);
     bool   capturePointMode() const;

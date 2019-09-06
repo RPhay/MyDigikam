@@ -7,6 +7,7 @@
  * Description : image editor plugin to reduce image artifacts
  *
  * Copyright (C) 2018-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019      by Ahmed Fathi <ahmed dot fathi dot abdelmageed at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -75,12 +76,15 @@ QString HealingCloneToolPlugin::details() const
 QList<DPluginAuthor> HealingCloneToolPlugin::authors() const
 {
     return QList<DPluginAuthor>()
-            << DPluginAuthor(QString::fromUtf8("Shaza Ismail Kaoud shaza dot ismail dot k at gmail dot com"),
+            << DPluginAuthor(QString::fromUtf8("Shaza Ismail Kaoud"),
                              QString::fromUtf8("shaza dot ismail dot k at gmail dot com"),
                              QString::fromUtf8("(C) 2017"))
+            << DPluginAuthor(QString::fromUtf8("Ahmed Fathi"),
+                             QString::fromUtf8("ahmed dot fathi dot abdelmageed at gmail dot com"),
+                             QString::fromUtf8("(C) 2019"))
             ;
 }
-    
+
 void HealingCloneToolPlugin::setup(QObject* const parent)
 {
     DPluginAction* const ac = new DPluginAction(parent);
@@ -95,7 +99,7 @@ void HealingCloneToolPlugin::setup(QObject* const parent)
 
     addAction(ac);
 }
-    
+
 void HealingCloneToolPlugin::slotHealingClone()
 {
     EditorWindow* const editor = dynamic_cast<EditorWindow*>(sender()->parent());

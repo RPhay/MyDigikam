@@ -7,6 +7,7 @@
  * Description : a brush for use with tool to replace part of the image using another
  *
  * Copyright (C) 2017      by Shaza Ismail Kaoud <shaza dot ismail dot k at gmail dot com>
+ * Copyright (C) 2019      by Ahmed Fathi <ahmed dot fathi dot abdelmageed at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -24,18 +25,38 @@
 #ifndef DIGIKAM_IMAGE_BRUSH_GUIDE_WIDGET_H
 #define DIGIKAM_IMAGE_BRUSH_GUIDE_WIDGET_H
 
+// Qt includes
+
+#include <QPainter>
+#include <QStandardPaths>
+#include <QCursor>
+
 // Local includes
 
-#include "imageguidewidget.h"
+#include "previewtoolbar.h"
+#include "imageregionwidget.h"
+#include "imageregionitem.h"
 
 using namespace Digikam;
 
 namespace DigikamEditorHealingCloneToolPlugin
 {
 
-class ImageBrushGuideWidget : public ImageGuideWidget
+class ImageBrushGuideWidget : public ImageRegionWidget
 {
     Q_OBJECT
+    Q_ENUMS(HealingCloneState)
+
+public:
+
+    enum   HealingCloneState
+    {
+        SELECT_SOURCE,
+        PAINT,
+        LASSO_DRAW_BOUNDARY,
+        LASSO_CLONE,
+        MOVE_IMAGE
+    };
 
 public:
 
@@ -43,7 +64,18 @@ public:
      * Using the parent's constructor
      * Should be changed to get rid of the inheritance
      */
-    using ImageGuideWidget::ImageGuideWidget;
+    explicit ImageBrushGuideWidget(QWidget* const parent = nullptr);
+
+    void setBrushRadius(int value);
+    void setIsLassoPointsVectorEmpty(bool);
+    void setCloneVectorChanged(bool);
+    void changeCursorShape(QColor color);
+    void changeCursorShape(QPixmap,float,float);
+    void updateCursor();
+    QPoint mapToImageCoordinates(QPoint point);
+    QPoint mapFromImageCoordinates(QPoint point);
+    void updateSourceCursor(QPointF pos = QPoint(), int diamter = 10);
+    void setSourceCursorPosition(QPointF topLeftPos);
 
 public Q_SLOTS:
 
@@ -51,6 +83,8 @@ public Q_SLOTS:
      * @brief slotSrcSet toggles the fixing of the brush source center
      */
     void slotSetSourcePoint();
+    void slotMoveImage();
+    void slotLassoSelect();
 
 Q_SIGNALS:
 
@@ -59,18 +93,49 @@ Q_SIGNALS:
      * and keeps emitting with motion
      */
     void signalClone(const QPoint& currentSrc, const QPoint& currentDst);
+    void signalLasso(const QPoint& dst);
+    void signalResetLassoPoint();
+    void signalContinuePolygon();
+    void signalIncreaseBrushRadius();
+    void signalDecreaseBrushRadius();
+    void signalPushToUndoStack();
+    void signalUndoClone();
+    void signalRedoClone();
 
 protected:
 
     void mouseReleaseEvent(QMouseEvent*);
     void mousePressEvent(QMouseEvent*);
     void mouseMoveEvent(QMouseEvent*);
+    void mouseDoubleClickEvent(QMouseEvent*) override;
+    void keyPressEvent(QKeyEvent *event) ;
+    void keyReleaseEvent(QKeyEvent *event) ;
+    void wheelEvent(QWheelEvent *event) override;
+    void focusOutEvent(QFocusEvent* event) override;
+    void focusInEvent(QFocusEvent * event) override;
+    bool event(QEvent*) override;
+    void undoSlotSetSourcePoint();
+    // void showEvent( QShowEvent* event ) override;
+    void activateState(HealingCloneState state);
 
 private:
 
-    bool   srcSet = true;
-    QPoint src;
+    bool   srcSet                      = true;
+    bool isLassoPointsVectorEmpty      = true;
+    QPoint src                         = QPoint(0, 0);
     QPoint dst;
+    double default_w;
+    double default_h;
+    double float_w;
+    double float_h;
+    bool amIFocused                    = false;
+    bool proceedInMoveEvent            = false;
+    bool cloneVectorChanged            = true;
+    int brushRadius;
+    QColor brushColor                  = QColor(Qt::red);
+    HealingCloneState currentState     = HealingCloneState::SELECT_SOURCE;
+    QGraphicsEllipseItem* sourceCursor = nullptr;
+    QCursor prevCursor;
 };
 
 } // namespace DigikamEditorHealingCloneToolPlugin

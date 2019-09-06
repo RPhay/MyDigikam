@@ -158,7 +158,7 @@ void ThumbBarDock::reInitialize()
 {
     // Measure orientation of the widget and adjust the child thumbbar to this
     // orientation and size.
-    QMainWindow* parent = qobject_cast<QMainWindow*>(parentWidget());
+    QMainWindow* const parent = qobject_cast<QMainWindow*>(parentWidget());
     emit dockLocationChanged(parent->dockWidgetArea(this));
     widget()->resize(size());
     update();
@@ -300,6 +300,7 @@ QPixmap ThumbBarDock::generateFuzzyRect(const QSize& size, const QColor& color, 
     linearGradient.setStart(size.width() - radius, 0);
     linearGradient.setFinalStop(size.width(), 0);
     painter.fillRect(int(linearGradient.start().x()), radius, radius, size.height() - 2*radius, linearGradient);
+
     return pix;
 }
 
