@@ -7,6 +7,7 @@
  * Description : a brush for use with tool to replace part of the image using another
  *
  * Copyright (C) 2017      by Shaza Ismail Kaoud <shaza dot ismail dot k at gmail dot com>
+ * Copyright (C) 2019      by Ahmed Fathi <ahmed dot fathi dot abdelmageed at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -24,19 +25,19 @@
 #ifndef DIGIKAM_IMAGE_BRUSH_GUIDE_WIDGET_H
 #define DIGIKAM_IMAGE_BRUSH_GUIDE_WIDGET_H
 
+// Qt includes
+
+#include <QPainter>
+#include <QStandardPaths>
+#include <QCursor>
+
 // Local includes
 
-#include "imageguidewidget.h"
 #include "previewtoolbar.h"
-#include <QPainter>
-#include<QStandardPaths>
-#include<QCursor>
-#include<imageregionwidget.h>
-#include<imageregionitem.h>
+#include "imageregionwidget.h"
+#include "imageregionitem.h"
 
 using namespace Digikam;
-
-
 
 namespace DigikamEditorHealingCloneToolPlugin
 {
@@ -48,7 +49,8 @@ class ImageBrushGuideWidget : public ImageRegionWidget
 
 public:
 
-    enum   HealingCloneState {
+    enum   HealingCloneState
+    {
         SELECT_SOURCE,
         PAINT,
         LASSO_DRAW_BOUNDARY,
@@ -57,25 +59,29 @@ public:
         DO_NOTHING
     };
 
-
+public:
 
     /**
      * Using the parent's constructor
      * Should be changed to get rid of the inheritance
      */
+    explicit ImageBrushGuideWidget(QWidget* const parent = nullptr);
 
     void setBrushRadius(int value);
     void setIsLassoPointsVectorEmpty(bool);
     void setCloneVectorChanged(bool);
-    void changeCursorShape(QColor color);
-    void changeCursorShape(QPixmap,float,float);
+    void setSourceCursorPosition(const QPointF& topLeftPos);
+
+    void changeCursorShape(const QColor& color);
+    void changeCursorShape(const QPixmap&, float, float);
     void updateCursor();
-    QPoint mapToImageCoordinates(QPoint point);
-    QPoint mapFromImageCoordinates(QPoint point);
-    void updateSourceCursor(QPointF pos = QPoint(), int diamter = 10);
-    void setSourceCursorPosition(QPointF topLeftPos);
+
+
     bool checkPointOutsideScene(QPoint point);
-    explicit ImageBrushGuideWidget(QWidget* const parent = nullptr);
+    void updateSourceCursor(const QPointF& pos = QPoint(), int diamter = 10);
+    QPoint mapToImageCoordinates(const QPoint& point);
+    QPoint mapFromImageCoordinates(const QPoint& point);
+
 
 
 public Q_SLOTS:
@@ -105,15 +111,15 @@ Q_SIGNALS:
 
 protected:
 
-    void mouseReleaseEvent(QMouseEvent*);
-    void mousePressEvent(QMouseEvent*);
-    void mouseMoveEvent(QMouseEvent*);
+    void mouseReleaseEvent(QMouseEvent*)override;
+    void mousePressEvent(QMouseEvent*)override;
+    void mouseMoveEvent(QMouseEvent*)override;
     void mouseDoubleClickEvent(QMouseEvent*) override;
-    void keyPressEvent(QKeyEvent *event) ;
-    void keyReleaseEvent(QKeyEvent *event) ;
-    void wheelEvent(QWheelEvent *event) override;
-    void focusOutEvent(QFocusEvent* event) override;
-    void focusInEvent(QFocusEvent * event) override;
+    void keyPressEvent(QKeyEvent*) override;
+    void keyReleaseEvent(QKeyEvent*) override;
+    void wheelEvent(QWheelEvent*) override;
+    void focusOutEvent(QFocusEvent*) override;
+    void focusInEvent(QFocusEvent*) override;
     bool event(QEvent*) override;
     void undoSlotSetSourcePoint();
     void activateState(HealingCloneState state);
@@ -122,20 +128,21 @@ protected:
 
 private:
 
-    bool   srcSet = true;
-    bool isLassoPointsVectorEmpty = true;
-    QPoint src = QPoint(0,0);
+    bool   srcSet                      = true;
+    bool isLassoPointsVectorEmpty      = true;
+    QPoint src                         = QPoint(0, 0);
     QPoint dst;
     double default_w;
     double default_h;
     double float_w;
     double float_h;
-    bool amIFocused = false;
-    bool proceedInMoveEvent = false;
-    bool cloneVectorChanged = true;
+    bool amIFocused                    = false;
+    bool proceedInMoveEvent            = false;
+    bool cloneVectorChanged            = true;
     int brushRadius;
-    QColor brushColor = QColor(Qt::red);
-    HealingCloneState currentState = HealingCloneState::SELECT_SOURCE;
+
+    QColor brushColor                  = QColor(Qt::red);
+    HealingCloneState currentState     = HealingCloneState::SELECT_SOURCE;
     HealingCloneState previousState;
     QGraphicsEllipseItem* sourceCursor = nullptr;
     QCursor prevCursor;

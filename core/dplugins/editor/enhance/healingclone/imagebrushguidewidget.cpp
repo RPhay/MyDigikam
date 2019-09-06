@@ -7,7 +7,7 @@
  * Description : a brush for use with tool to replace part of the image using another
  *
  * Copyright (C) 2017      by Shaza Ismail Kaoud <shaza dot ismail dot k at gmail dot com>
- *
+ * Copyright (C) 2019      by Ahmed Fathi <ahmed dot fathi dot abdelmageed at gmail dot com>
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
  * Public License as published by the Free Software Foundation;
@@ -307,13 +307,13 @@ void ImageBrushGuideWidget:: wheelEvent(QWheelEvent *e)
 }
 
 
-void ImageBrushGuideWidget::focusOutEvent(QFocusEvent *event)
+void ImageBrushGuideWidget::focusOutEvent(QFocusEvent *)
 {
     this->amIFocused = false;
     proceedInMoveEvent = false;
 }
 
-void ImageBrushGuideWidget::focusInEvent(QFocusEvent *event)
+void ImageBrushGuideWidget::focusInEvent(QFocusEvent *)
 {
 
 }
@@ -390,7 +390,7 @@ void ImageBrushGuideWidget::undoSlotSetSourcePoint()
         emit signalContinuePolygon();
     }
 }
-void ImageBrushGuideWidget::changeCursorShape(QColor color)
+void ImageBrushGuideWidget::changeCursorShape(const QColor& color)
 {
 
     int radius =this->brushRadius;
@@ -413,7 +413,7 @@ void ImageBrushGuideWidget::changeCursorShape(QColor color)
 
 }
 
-void ImageBrushGuideWidget::changeCursorShape(QPixmap pixMap, float x = 0.5 , float y = 0.5)
+void ImageBrushGuideWidget::changeCursorShape(const QPixmap& pixMap, float x = 0.5 , float y = 0.5)
 {
  setCursor(QCursor(pixMap,x * pixMap.width(),y *pixMap.height()));
 }
@@ -429,12 +429,7 @@ void ImageBrushGuideWidget::setBrushRadius(int value)
 
 
 
-/*
-void ImageBrushGuideWidget::showEvent( QShowEvent* event ) {
-    ImageRegionWidget::showEvent( event );
-    activateState(HealingCloneState::SELECT_SOURCE);
-}
-*/
+
 
 void ImageBrushGuideWidget::setIsLassoPointsVectorEmpty(bool isEmpty)
 {
@@ -460,7 +455,7 @@ void ImageBrushGuideWidget :: activateState(HealingCloneState state)
     }
     else if(state == HealingCloneState::MOVE_IMAGE)
     {
-       if(this->cursor().shape() != QGraphicsView::ScrollHandDrag)
+       if(QGraphicsView::dragMode() != QGraphicsView::ScrollHandDrag)
          setDragMode(QGraphicsView::ScrollHandDrag);
     }
     else if(state == HealingCloneState::LASSO_DRAW_BOUNDARY)
@@ -475,7 +470,7 @@ void ImageBrushGuideWidget :: activateState(HealingCloneState state)
     }
     else if(state == HealingCloneState::SELECT_SOURCE)
     {
-  //      this->setSpotVisibleNoUpdate(true);
+
         QPixmap pix = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                      QLatin1String("digikam/data/healing_clone_SRC.png")));
         changeCursorShape(pix,0.5,0.5);
@@ -492,7 +487,7 @@ void ImageBrushGuideWidget::setCloneVectorChanged(bool changed)
     this->cloneVectorChanged = changed;
 }
 
-QPoint ImageBrushGuideWidget::mapToImageCoordinates(QPoint point)
+QPoint ImageBrushGuideWidget::mapToImageCoordinates(const QPoint& point)
 {
 
     ImageRegionItem* item = (ImageRegionItem*)this->item();
@@ -500,14 +495,14 @@ QPoint ImageBrushGuideWidget::mapToImageCoordinates(QPoint point)
     return QPoint((int) temp.x(), (int) temp.y());
 }
 
-QPoint ImageBrushGuideWidget::mapFromImageCoordinates(QPoint point)
+QPoint ImageBrushGuideWidget::mapFromImageCoordinates(const QPoint& point)
 {
 
     ImageRegionItem* item = (ImageRegionItem*)this->item();
     return mapFromScene(item->zoomSettings()->mapImageToZoom(point));
 }
 
-void ImageBrushGuideWidget::updateSourceCursor(QPointF pos, int diameter)
+void ImageBrushGuideWidget::updateSourceCursor(const QPointF& pos, int diameter)
 {
    if(this->sourceCursor != nullptr)
     {
@@ -522,7 +517,7 @@ void ImageBrushGuideWidget::updateSourceCursor(QPointF pos, int diameter)
     setSourceCursorPosition(pos);
 }
 
-void ImageBrushGuideWidget::setSourceCursorPosition(QPointF topLeftPos)
+void ImageBrushGuideWidget::setSourceCursorPosition(const QPointF& topLeftPos)
 {
 
     double dx = this->sourceCursor->rect().width()/2.0;
