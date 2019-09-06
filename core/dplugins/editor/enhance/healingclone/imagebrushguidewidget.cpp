@@ -23,33 +23,28 @@
  * ============================================================ */
 
 #include "imagebrushguidewidget.h"
-#include "overlaywidget.h"
+
+// KDE includes
+
+#include <klocalizedstring.h>
 
 // Local includes
 
 #include "digikam_debug.h"
-
-// KDE includes
-#include <klocalizedstring.h>
-
+#include "overlaywidget.h"
 
 namespace DigikamEditorHealingCloneToolPlugin
 {
 
- ImageBrushGuideWidget::ImageBrushGuideWidget(QWidget* const parent):
-     ImageRegionWidget(parent)
+ImageBrushGuideWidget::ImageBrushGuideWidget(QWidget* const parent)
+    :ImageRegionWidget(parent)
 {
-
     activateState(HealingCloneState::SELECT_SOURCE);
     updateSourceCursor(src,10);
 }
 
-
-
- void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
- {
-
-
+void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
+{
       if(!this->amIFocused &&
               (this->currentState == HealingCloneState::PAINT || this->currentState == HealingCloneState::LASSO_CLONE))
       {
@@ -108,6 +103,7 @@ namespace DigikamEditorHealingCloneToolPlugin
 
 
  }
+
 void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
 {
     QPointF temp = mapToScene(e->pos());
@@ -163,21 +159,17 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
         ImageRegionWidget::mouseMoveEvent(e);
 
     }
-
-
 }
 
 void ImageBrushGuideWidget::mouseReleaseEvent(QMouseEvent* e)
 {
-
-
     ImageRegionWidget::mouseReleaseEvent(e);
+
     if (this->currentState == HealingCloneState::MOVE_IMAGE)
     {
        // setCursor(Qt::OpenHandCursor);
         ImageRegionWidget::mouseReleaseEvent(e);
     }
-
     else if (srcSet)
     {
         src = mapToImageCoordinates(e->pos());
@@ -192,13 +184,11 @@ void ImageBrushGuideWidget::mouseReleaseEvent(QMouseEvent* e)
         setSourceCursorPosition(tempCursorPosition);
 
     }
-
-
 }
 
-void ImageBrushGuideWidget::mouseDoubleClickEvent(QMouseEvent *event)
+void ImageBrushGuideWidget::mouseDoubleClickEvent(QMouseEvent* event)
 {
-    if ( event->button() == Qt::LeftButton )
+    if (event->button() == Qt::LeftButton)
     {
         if(this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY)
         {
@@ -207,51 +197,47 @@ void ImageBrushGuideWidget::mouseDoubleClickEvent(QMouseEvent *event)
     }
 }
 
-void ImageBrushGuideWidget :: keyPressEvent(QKeyEvent *e)
+void ImageBrushGuideWidget::keyPressEvent(QKeyEvent* e)
 {
-
-    if(e->key() == Qt :: Key_M)
+    if (e->key() == Qt :: Key_M)
     {
-
         slotMoveImage();
     }
-
-    else if(e->key() == Qt :: Key_L)
+    else if (e->key() == Qt :: Key_L)
     {
         slotLassoSelect();
     }
 
-    if(e->key() == Qt :: Key_BracketLeft)
+    if (e->key() == Qt :: Key_BracketLeft)
     {
      emit signalDecreaseBrushRadius();
     }
 
-    if(e->key() == Qt :: Key_BracketRight)
+    if (e->key() == Qt :: Key_BracketRight)
     {
         emit signalIncreaseBrushRadius();
     }
 
-    if(e->matches(QKeySequence::Undo))
+    if (e->matches(QKeySequence::Undo))
     {
        emit signalUndoClone();
     }
 
-    if(e->matches(QKeySequence::Redo))
+    if (e->matches(QKeySequence::Redo))
     {
        emit signalRedoClone();
     }
 
     QWidget::keyPressEvent(e);
-
 }
 
-bool ImageBrushGuideWidget::event(QEvent *event)
+bool ImageBrushGuideWidget::event(QEvent* event)
 {
     QKeyEvent *keyEvent = static_cast<QKeyEvent*>(event);
-        if(keyEvent && keyEvent->key() == Qt::Key_Escape
-                &&
-     this->currentState != HealingCloneState::PAINT)
-        {
+
+    if (keyEvent && keyEvent->key() == Qt::Key_Escape &&
+        this->currentState != HealingCloneState::PAINT)
+    {
           keyEvent->accept();
 
           if(this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY)
@@ -269,11 +255,12 @@ bool ImageBrushGuideWidget::event(QEvent *event)
         }
         return QWidget::event(event);
 }
-void ImageBrushGuideWidget::  keyReleaseEvent(QKeyEvent *e)
+
+void ImageBrushGuideWidget::keyReleaseEvent(QKeyEvent* e)
 {
-    if(e->key() == Qt :: Key_S)
+    if (e->key() == Qt :: Key_S)
     {
-        if(this->currentState == HealingCloneState::SELECT_SOURCE)
+        if (this->currentState == HealingCloneState::SELECT_SOURCE)
         {
             undoSlotSetSourcePoint();
         }
@@ -284,36 +271,32 @@ void ImageBrushGuideWidget::  keyReleaseEvent(QKeyEvent *e)
     }
 }
 
-void ImageBrushGuideWidget:: wheelEvent(QWheelEvent *e)
+void ImageBrushGuideWidget:: wheelEvent(QWheelEvent* e)
 {
-
     ImageRegionWidget::wheelEvent(e);
-
 }
 
-
-void ImageBrushGuideWidget::focusOutEvent(QFocusEvent *event)
+void ImageBrushGuideWidget::focusOutEvent(QFocusEvent*)
 {
-    this->amIFocused = false;
+    this->amIFocused   = false;
     proceedInMoveEvent = false;
 }
 
-void ImageBrushGuideWidget::focusInEvent(QFocusEvent *event)
+void ImageBrushGuideWidget::focusInEvent(QFocusEvent*)
 {
-
 }
+
 void ImageBrushGuideWidget::slotSetSourcePoint()
 {
     srcSet = true;
     activateState(HealingCloneState::SELECT_SOURCE);
 }
 
-void ImageBrushGuideWidget :: slotMoveImage()
+void ImageBrushGuideWidget::slotMoveImage()
 {
-    if(this->currentState == HealingCloneState::MOVE_IMAGE)
+    if (this->currentState == HealingCloneState::MOVE_IMAGE)
     {
-
-        if(this->isLassoPointsVectorEmpty)
+        if (this->isLassoPointsVectorEmpty)
         {
             activateState(HealingCloneState::PAINT);
         }
@@ -325,22 +308,21 @@ void ImageBrushGuideWidget :: slotMoveImage()
     }
     else
     {
-
         activateState(HealingCloneState::MOVE_IMAGE);
     }
 }
-void ImageBrushGuideWidget :: slotLassoSelect()
+
+void ImageBrushGuideWidget::slotLassoSelect()
 {
-    if(this->currentState != HealingCloneState::LASSO_DRAW_BOUNDARY &&
-            this->currentState != HealingCloneState::LASSO_CLONE)
+    if (this->currentState != HealingCloneState::LASSO_DRAW_BOUNDARY &&
+        this->currentState != HealingCloneState::LASSO_CLONE)
     {
         activateState(HealingCloneState::LASSO_DRAW_BOUNDARY);
         emit signalResetLassoPoint();
-
     }
-    else if(this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY) {
-
-        if(this->isLassoPointsVectorEmpty)
+    else if (this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY)
+    {
+        if (this->isLassoPointsVectorEmpty)
         {
             activateState(HealingCloneState::PAINT);
         }
@@ -349,23 +331,19 @@ void ImageBrushGuideWidget :: slotLassoSelect()
             activateState(HealingCloneState::LASSO_CLONE);
             emit signalContinuePolygon();
         }
-      }
+    }
     else if(this->currentState == HealingCloneState::LASSO_CLONE)
     {
         activateState(HealingCloneState::PAINT);
         emit signalResetLassoPoint();
-
-
     }
-
-
 }
 
 void ImageBrushGuideWidget::undoSlotSetSourcePoint()
 {
     srcSet = false;
 
-    if(this->isLassoPointsVectorEmpty)
+    if (this->isLassoPointsVectorEmpty)
     {
         activateState(HealingCloneState::PAINT);
     }
@@ -375,9 +353,9 @@ void ImageBrushGuideWidget::undoSlotSetSourcePoint()
         emit signalContinuePolygon();
     }
 }
+
 void ImageBrushGuideWidget::changeCursorShape(QColor color)
 {
-
     int radius =this->brushRadius;
     int size = radius * 2;
     this->brushColor = color;
@@ -392,28 +370,28 @@ void ImageBrushGuideWidget::changeCursorShape(QColor color)
 
     QPointF tempCursorPosition = mapToScene(mapFromImageCoordinates(src));
     updateSourceCursor(tempCursorPosition, 2*this->brushRadius);
-
 }
 
 void ImageBrushGuideWidget::changeCursorShape(QPixmap pixMap, float x = 0.5 , float y = 0.5)
 {
- setCursor(QCursor(pixMap,x * pixMap.width(),y *pixMap.height()));
+    setCursor(QCursor(pixMap,x * pixMap.width(),y *pixMap.height()));
 }
+
 void ImageBrushGuideWidget :: updateCursor()
 {
     changeCursorShape(this->brushColor);
 }
+
 void ImageBrushGuideWidget::setBrushRadius(int value)
 {
     this->brushRadius = value;
     activateState(this->currentState);
 }
 
-
-
 /*
-void ImageBrushGuideWidget::showEvent( QShowEvent* event ) {
-    ImageRegionWidget::showEvent( event );
+void ImageBrushGuideWidget::showEvent( QShowEvent* event )
+{
+    ImageRegionWidget::showEvent(event);
     activateState(HealingCloneState::SELECT_SOURCE);
 }
 */
@@ -422,44 +400,45 @@ void ImageBrushGuideWidget::setIsLassoPointsVectorEmpty(bool isEmpty)
 {
     this->isLassoPointsVectorEmpty = isEmpty;
 }
-void ImageBrushGuideWidget :: activateState(HealingCloneState state)
-{
 
-    if(state != HealingCloneState::MOVE_IMAGE)
+void ImageBrushGuideWidget::activateState(HealingCloneState state)
+{
+    if (state != HealingCloneState::MOVE_IMAGE)
         setDragMode(QGraphicsView::NoDrag);
 
-    if(this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY &&
-            state != HealingCloneState::LASSO_CLONE)
+    if (this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY &&
+        state != HealingCloneState::LASSO_CLONE)
     {
         emit signalContinuePolygon();
     }
+
     this->currentState = state;
-    if(state == HealingCloneState::PAINT)
+
+    if (state == HealingCloneState::PAINT)
     {
         changeCursorShape(Qt::blue);
     }
-    else if(state == HealingCloneState::MOVE_IMAGE)
+    else if (state == HealingCloneState::MOVE_IMAGE)
     {
-       if(this->cursor().shape() != QGraphicsView::ScrollHandDrag)
-         setDragMode(QGraphicsView::ScrollHandDrag);
+       if (this->cursor().shape() != QGraphicsView::ScrollHandDrag)
+           setDragMode(QGraphicsView::ScrollHandDrag);
     }
-    else if(state == HealingCloneState::LASSO_DRAW_BOUNDARY)
+    else if (state == HealingCloneState::LASSO_DRAW_BOUNDARY)
     {
         QPixmap pix = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                      QLatin1String("digikam/data/healing_clone_LASSO_PEN.png")));
         changeCursorShape(pix,0,1);
     }
-    else if(state == HealingCloneState::LASSO_CLONE)
+    else if (state == HealingCloneState::LASSO_CLONE)
     {
         changeCursorShape(Qt::blue);
     }
-    else if(state == HealingCloneState::SELECT_SOURCE)
+    else if (state == HealingCloneState::SELECT_SOURCE)
     {
-  //      this->setSpotVisibleNoUpdate(true);
+//      this->setSpotVisibleNoUpdate(true);
         QPixmap pix = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                      QLatin1String("digikam/data/healing_clone_SRC.png")));
-        changeCursorShape(pix,0.5,0.5);
-
+        changeCursorShape(pix, 0.5, 0.5);
     }
 }
 
@@ -470,26 +449,25 @@ void ImageBrushGuideWidget::setCloneVectorChanged(bool changed)
 
 QPoint ImageBrushGuideWidget::mapToImageCoordinates(QPoint point)
 {
-
     ImageRegionItem* item = (ImageRegionItem*)this->item();
-    QPointF temp = item->zoomSettings()->mapZoomToImage(mapToScene(point)) ;
+    QPointF temp          = item->zoomSettings()->mapZoomToImage(mapToScene(point));
     return QPoint((int) temp.x(), (int) temp.y());
 }
 
 QPoint ImageBrushGuideWidget::mapFromImageCoordinates(QPoint point)
 {
-
     ImageRegionItem* item = (ImageRegionItem*)this->item();
     return mapFromScene(item->zoomSettings()->mapImageToZoom(point));
 }
 
 void ImageBrushGuideWidget::updateSourceCursor(QPointF pos, int diameter)
 {
-   if(this->sourceCursor != nullptr)
+   if (this->sourceCursor != nullptr)
     {
         this->scene()->removeItem(this->sourceCursor);
         delete this->sourceCursor;
     }
+
     this->sourceCursor = new QGraphicsEllipseItem(0, 0, diameter, diameter);
     this->sourceCursor->setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
     this->sourceCursor->setBrush(QBrush(Qt::white));
@@ -500,26 +478,24 @@ void ImageBrushGuideWidget::updateSourceCursor(QPointF pos, int diameter)
 
 void ImageBrushGuideWidget::setSourceCursorPosition(QPointF topLeftPos)
 {
-
-
-    double dx = this->sourceCursor->rect().width()/2.0;
-    double dy = this->sourceCursor->rect().width()/2.0;
-    QPointF shiftedPos = QPointF(topLeftPos.x()-dx, topLeftPos.y()-dy);
+    double dx          = this->sourceCursor->rect().width() / 2.0;
+    double dy          = this->sourceCursor->rect().width() / 2.0;
+    QPointF shiftedPos = QPointF(topLeftPos.x() - dx, topLeftPos.y() - dy);
     this->sourceCursor->setPos(shiftedPos);
 
     // check if source is outside scene
 
-    bool sourceCursorOutsideScene =
-            topLeftPos.x() < 0 || topLeftPos.x() + dx > scene()->width() ||
-            topLeftPos.y()<0 || topLeftPos.y() + dy > scene()->height();
-    if(sourceCursorOutsideScene)
+    bool sourceCursorOutsideScene = topLeftPos.x() < 0 || topLeftPos.x() + dx > scene()->width() ||
+                                    topLeftPos.y() < 0 || topLeftPos.y() + dy > scene()->height();
+
+    if (sourceCursorOutsideScene)
     {
         this->sourceCursor->setVisible(false);
     }
-    else {
+    else
+    {
         this->sourceCursor->setVisible(true);
     }
-
-
 }
+
 } // namespace DigikamEditorHealingCloneToolPlugin

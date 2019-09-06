@@ -30,7 +30,7 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QPushButton>
-#include<QGroupBox>
+#include <QGroupBox>
 #include <QIcon>
 #include <QPoint>
 

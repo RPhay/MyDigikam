@@ -25,19 +25,19 @@
 #ifndef DIGIKAM_IMAGE_BRUSH_GUIDE_WIDGET_H
 #define DIGIKAM_IMAGE_BRUSH_GUIDE_WIDGET_H
 
+// Qt includes
+
+#include <QPainter>
+#include <QStandardPaths>
+#include <QCursor>
+
 // Local includes
 
-#include "imageguidewidget.h"
 #include "previewtoolbar.h"
-#include <QPainter>
-#include<QStandardPaths>
-#include<QCursor>
-#include<imageregionwidget.h>
-#include<imageregionitem.h>
+#include "imageregionwidget.h"
+#include "imageregionitem.h"
 
 using namespace Digikam;
-
-
 
 namespace DigikamEditorHealingCloneToolPlugin
 {
@@ -49,7 +49,8 @@ class ImageBrushGuideWidget : public ImageRegionWidget
 
 public:
 
-    enum   HealingCloneState {
+    enum   HealingCloneState
+    {
         SELECT_SOURCE,
         PAINT,
         LASSO_DRAW_BOUNDARY,
@@ -57,12 +58,13 @@ public:
         MOVE_IMAGE
     };
 
-
+public:
 
     /**
      * Using the parent's constructor
      * Should be changed to get rid of the inheritance
      */
+    explicit ImageBrushGuideWidget(QWidget* const parent = nullptr);
 
     void setBrushRadius(int value);
     void setIsLassoPointsVectorEmpty(bool);
@@ -74,7 +76,6 @@ public:
     QPoint mapFromImageCoordinates(QPoint point);
     void updateSourceCursor(QPointF pos = QPoint(), int diamter = 10);
     void setSourceCursorPosition(QPointF topLeftPos);
-    explicit ImageBrushGuideWidget(QWidget* const parent = nullptr);
 
 public Q_SLOTS:
 
@@ -114,32 +115,25 @@ protected:
     void focusInEvent(QFocusEvent * event) override;
     bool event(QEvent*) override;
     void undoSlotSetSourcePoint();
-   // void showEvent( QShowEvent* event ) override;
+    // void showEvent( QShowEvent* event ) override;
     void activateState(HealingCloneState state);
-
-
-
-
-
-
-
 
 private:
 
-    bool   srcSet = true;
-    bool isLassoPointsVectorEmpty = true;
-    QPoint src = QPoint(0,0);
+    bool   srcSet                      = true;
+    bool isLassoPointsVectorEmpty      = true;
+    QPoint src                         = QPoint(0, 0);
     QPoint dst;
     double default_w;
     double default_h;
     double float_w;
     double float_h;
-    bool amIFocused = false;
-    bool proceedInMoveEvent = false;
-    bool cloneVectorChanged = true;
+    bool amIFocused                    = false;
+    bool proceedInMoveEvent            = false;
+    bool cloneVectorChanged            = true;
     int brushRadius;
-    QColor brushColor = QColor(Qt::red);
-    HealingCloneState currentState = HealingCloneState::SELECT_SOURCE;
+    QColor brushColor                  = QColor(Qt::red);
+    HealingCloneState currentState     = HealingCloneState::SELECT_SOURCE;
     QGraphicsEllipseItem* sourceCursor = nullptr;
     QCursor prevCursor;
 };

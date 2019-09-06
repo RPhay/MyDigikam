@@ -26,12 +26,15 @@
 #ifndef DIGIKAM_EDITOR_HEALING_CLONE_TOOL_H
 #define DIGIKAM_EDITOR_HEALING_CLONE_TOOL_H
 
+// C++ includes
+
+#include <vector>
+#include <stack>
+
 // Local includes
 
 #include "editortool.h"
 #include "dimg.h"
-#include<vector>
-#include<stack>
 
 using namespace Digikam;
 
