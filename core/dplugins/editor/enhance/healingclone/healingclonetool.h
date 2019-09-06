@@ -29,6 +29,8 @@
 
 #include "editortool.h"
 #include "dimg.h"
+#include<vector>
+#include<stack>
 
 using namespace Digikam;
 
@@ -68,11 +70,28 @@ public Q_SLOTS:
     void slotReplace(const QPoint& srcPoint, const QPoint& dstPoint);
     void slotRadiusChanged(int r);
 
+
+    void slotLasso(const QPoint& dst);
+    void slotResetLassoPoints();
+    void slotContinuePolygon();
+    void slotIncreaseBrushRadius();
+    void slotDecreaseBrushRadius();
+    void slotPushToUndoStack();
+    void slotUndoClone();
+    void slotRedoClone();
+    void removeLassoPixels();
+    void redrawLassoPixels();
+
+
 private:
+
 
     void readSettings();
     void writeSettings();
     void finalRendering();
+
+
+
 
     /**
      * @brief clone the method responsible for the clone/heal of preview image
@@ -82,11 +101,32 @@ private:
      * @param radius radius of cloning brush
      */
     void clone(DImg* const img, const QPoint& srcPoint, const QPoint& dstPoint, int radius);
+    std::vector<QPoint> interpolate(const QPoint& start,const QPoint& end);
+    void updateLasso(std::vector<QPoint>& points);
+    void initializeLassoFlags();
+    void refreshImage();
+
+
 
 private:
 
     class Private;
+
     Private* const d;
+
+    std::stack<DImg> undoStack;
+    std::stack<DImg> redoStack;
+
+    std::vector<DColor> lassoColors;
+    bool resetLassoPoint = true;
+    bool insideLassoOperation = false;
+    QPoint previousLassoPoint;
+    QPoint startLassoPoint;
+    std::vector<QPoint> lassoPoints;
+    QPolygon lassoPolygon;
+    std::vector<std::vector<bool>> lassoFlags;
+    std::map<std::pair<int,int>, DColor> lassoColorsMap;
+
 };
 
 } // namespace DigikamEditorHealingCloneToolPlugin

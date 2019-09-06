@@ -257,4 +257,10 @@ void ImageRegionWidget::emitCapturedPointFromOriginal(const QPointF& pt)
     emit signalCapturedPointFromOriginal(color, imgPt);
 }
 
+
+
+void ImageRegionWidget::updateImage(DImg& img)
+{
+    d_ptr->item->setImage(img);
+}
 } // namespace Digikam

@@ -253,6 +253,11 @@ void ImageGuideWidget::setSpotVisible(bool spotVisible, bool blink)
     updatePreview();
 }
 
+void ImageGuideWidget::setSpotVisibleNoUpdate(bool spotVisible)
+{
+    d->spotVisible = spotVisible;
+}
+
 void ImageGuideWidget::slotChangeGuideColor(const QColor& color)
 {
     d->guideColor = color;
