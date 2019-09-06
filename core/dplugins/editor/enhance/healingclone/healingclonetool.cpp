@@ -105,7 +105,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     d->gboxSettings      = new EditorToolSettings(0);
     d->previewWidget     = new ImageBrushGuideWidget;
-    refreshImage(); 
+    refreshImage();
     d->previewWidget->setFocusPolicy(Qt::StrongFocus);
     setToolView(d->previewWidget);
     setPreviewModeMask(PreviewToolBar::PreviewTargetImage);
