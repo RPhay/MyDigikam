@@ -74,17 +74,13 @@ namespace DigikamEditorHealingCloneToolPlugin
           if(this->cloneVectorChanged)
           {
               this->setCloneVectorChanged(false);
-              qCDebug(DIGIKAM_DIMG_LOG()) << "emitting push to stack";
               emit signalPushToUndoStack();
           }
-          else {
-              qCDebug(DIGIKAM_DIMG_LOG()) << "clone vec didn't change - not pushing to undo stack";
-          }
+
       }
 
       if (this->currentState == HealingCloneState::MOVE_IMAGE && (e->buttons() & Qt::LeftButton))
       {
-          //setCursor(Qt::ClosedHandCursor);
           ImageRegionWidget::mousePressEvent(e);
       }
      else if (srcSet)
@@ -507,14 +503,30 @@ void ImageBrushGuideWidget::updateSourceCursor(const QPointF& pos, int diameter)
    if(this->sourceCursor != nullptr)
     {
         this->scene()->removeItem(this->sourceCursor);
+        this->scene()->removeItem(this->sourceCursorCenter);
         delete this->sourceCursor;
+        delete this->sourceCursorCenter;
     }
-    this->sourceCursor = new QGraphicsEllipseItem(0, 0, diameter, diameter);
-    this->sourceCursor->setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
-    this->sourceCursor->setBrush(QBrush(Qt::white));
-    this->sourceCursor->setOpacity(.25);
-    this->scene()->addItem(this->sourceCursor);
-    setSourceCursorPosition(pos);
+   this->sourceCursor = new QGraphicsEllipseItem(0, 0, diameter, diameter);
+   this->sourceCursorCenter = new QGraphicsEllipseItem(0, 0, 2, 2);
+   this->sourceCursor->setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
+   this->sourceCursorCenter->setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
+
+   QPen pen(Qt::DashDotDotLine);
+   pen.setWidth(2);
+   pen.setColor(Qt::black);
+   this->sourceCursor->setPen(pen);
+   this->sourceCursor->setBrush(QBrush(Qt::transparent));
+   this->sourceCursor->setOpacity(1);
+   this->scene()->addItem(this->sourceCursor);
+
+   pen.setStyle(Qt::SolidLine);
+   this->sourceCursorCenter->setPen(pen);
+   this->sourceCursorCenter->setBrush(QBrush(Qt::black));
+   this->sourceCursorCenter->setOpacity(1);
+   this->scene()->addItem(this->sourceCursorCenter);
+
+   setSourceCursorPosition(pos);
 }
 
 void ImageBrushGuideWidget::setSourceCursorPosition(const QPointF& topLeftPos)
@@ -523,7 +535,13 @@ void ImageBrushGuideWidget::setSourceCursorPosition(const QPointF& topLeftPos)
     double dx = this->sourceCursor->rect().width()/2.0;
     double dy = this->sourceCursor->rect().width()/2.0;
     QPointF shiftedPos = QPointF(topLeftPos.x()-dx, topLeftPos.y()-dy);
+
+    double dx2 = this->sourceCursorCenter->rect().width()/2.0;
+    double dy2 = this->sourceCursorCenter->rect().width()/2.0;
+    QPointF shiftedPos2 = QPointF(topLeftPos.x()-dx2, topLeftPos.y()-dy2);
+
     this->sourceCursor->setPos(shiftedPos);
+    this->sourceCursorCenter->setPos(shiftedPos2);
 
     // check if source is outside scene
 
@@ -533,9 +551,11 @@ void ImageBrushGuideWidget::setSourceCursorPosition(const QPointF& topLeftPos)
     if(sourceCursorOutsideScene)
     {
         this->sourceCursor->setVisible(false);
+        this->sourceCursorCenter->setVisible(false);
     }
     else {
         this->sourceCursor->setVisible(true);
+        this->sourceCursorCenter->setVisible(true);
     }
 
 

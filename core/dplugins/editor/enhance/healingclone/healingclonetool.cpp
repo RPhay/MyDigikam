@@ -270,8 +270,6 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     connect(d->previewWidget, SIGNAL(signalClone(QPoint,QPoint)),
             this, SLOT(slotReplace(QPoint,QPoint)));
 
-    connect(d->previewWidget, SIGNAL(signalResized()),
-            this, SLOT(slotResized()));
 
 
 
@@ -360,7 +358,6 @@ void HealingCloneTool::slotReplace(const QPoint& srcPoint, const QPoint& dstPoin
 
     DImg  current = d->previewWidget->getOriginalImage();
     clone(&current, srcPoint, dstPoint, d->radiusInput->value());
-    qCDebug(DIGIKAM_DIMG_LOG())<< "src,dst inside tool ::" <<  srcPoint << dstPoint;
 
 }
 

@@ -145,6 +145,7 @@ private:
     HealingCloneState currentState     = HealingCloneState::SELECT_SOURCE;
     HealingCloneState previousState;
     QGraphicsEllipseItem* sourceCursor = nullptr;
+    QGraphicsEllipseItem* sourceCursorCenter = nullptr;
     QCursor prevCursor;
 };
 
