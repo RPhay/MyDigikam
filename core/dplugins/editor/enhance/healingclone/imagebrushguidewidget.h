@@ -69,13 +69,15 @@ public:
     void setBrushRadius(int value);
     void setIsLassoPointsVectorEmpty(bool);
     void setCloneVectorChanged(bool);
-    void changeCursorShape(QColor color);
-    void changeCursorShape(QPixmap,float,float);
+    void setSourceCursorPosition(const QPointF& topLeftPos);
+
+    void changeCursorShape(const QColor& color);
+    void changeCursorShape(const QPixmap&, float, float);
     void updateCursor();
-    QPoint mapToImageCoordinates(QPoint point);
-    QPoint mapFromImageCoordinates(QPoint point);
-    void updateSourceCursor(QPointF pos = QPoint(), int diamter = 10);
-    void setSourceCursorPosition(QPointF topLeftPos);
+    void updateSourceCursor(const QPointF& pos = QPoint(), int diamter = 10);
+
+    QPoint mapToImageCoordinates(const QPoint& point);
+    QPoint mapFromImageCoordinates(const QPoint& point);
 
 public Q_SLOTS:
 
@@ -108,15 +110,16 @@ protected:
     void mousePressEvent(QMouseEvent*);
     void mouseMoveEvent(QMouseEvent*);
     void mouseDoubleClickEvent(QMouseEvent*) override;
-    void keyPressEvent(QKeyEvent *event) ;
-    void keyReleaseEvent(QKeyEvent *event) ;
-    void wheelEvent(QWheelEvent *event) override;
-    void focusOutEvent(QFocusEvent* event) override;
-    void focusInEvent(QFocusEvent * event) override;
+    void keyPressEvent(QKeyEvent*) ;
+    void keyReleaseEvent(QKeyEvent*) ;
+    void wheelEvent(QWheelEvent*) override;
+    void focusOutEvent(QFocusEvent*) override;
+    void focusInEvent(QFocusEvent*) override;
     bool event(QEvent*) override;
     void undoSlotSetSourcePoint();
-    // void showEvent( QShowEvent* event ) override;
     void activateState(HealingCloneState state);
+
+//  void showEvent( QShowEvent* event ) override;
 
 private:
 
