@@ -89,7 +89,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     aboutData.addAuthor ( ki18n("Caulier Gilles").toString(),
                           ki18n("Coordinator, Developer, and Mentoring").toString(),
                           QLatin1String("caulier dot gilles at gmail dot com"),
-                          QLatin1String("https://plus.google.com/+GillesCaulier")
+                          QLatin1String("https://www.linkedin.com/in/gilles-caulier/")
                         );
 
     aboutData.addAuthor ( ki18n("Marcel Wiesweg").toString(),
@@ -101,13 +101,13 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     aboutData.addAuthor ( ki18n("Maik Qualmann").toString(),
                           ki18n("Developer and Mentoring").toString(),
                           QLatin1String("metzpinguin at gmail dot com"),
-                          QLatin1String("https://plus.google.com/u/0/107171232114475191915")
+                          QLatin1String("https://www.linkedin.com/in/maik-qualmann-2b266717b/")
                         );
 
     aboutData.addAuthor ( ki18n("Mohamed Anwer").toString(),                                    // krazy:exclude=spelling
                           ki18n("Developer and Mentoring").toString(),
                           QLatin1String("mohammed dot ahmed dot anwer at gmail dot com"),       // krazy:exclude=spelling
-                          QLatin1String("https://plus.google.com/106020792892118847381")
+                          QLatin1String("https://www.linkedin.com/in/mohamedanwer/")
                         );
 
     aboutData.addAuthor ( ki18n("Michael G. Hansen").toString(),
@@ -119,7 +119,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     aboutData.addAuthor ( ki18n("Teemu Rytilahti").toString(),
                           ki18n("Developer").toString(),
                           QLatin1String("tpr at iki dot fi"),
-                          QLatin1String("https://plus.google.com/u/0/105136119348505864693")
+                          QLatin1String("https://www.linkedin.com/in/teemurytilahti/")
                         );
 
     // -- Contributors -----------------------------------------------------------
@@ -127,13 +127,13 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     aboutData.addAuthor ( ki18n("Matthias Welwarsky").toString(),
                           ki18n("Developer").toString(),
                           QLatin1String("matze at welwarsky dot de"),
-                          QLatin1String("https://plus.google.com/s/Matthias%20Welwarsky")
+                          QLatin1String("https://www.linkedin.com/in/matthiaswelwarsky/")
                         );
 
     aboutData.addAuthor ( ki18n("Julien Narboux").toString(),
                           ki18n("Developer").toString(),
                           QLatin1String("Julien at narboux dot fr"),
-                          QLatin1String("https://plus.google.com/+JulienNarboux")
+                          QLatin1String("https://www.linkedin.com/in/julien-narboux-17566610/")
                         );
 
     aboutData.addAuthor ( ki18n("Mario Frank").toString(),
@@ -144,27 +144,34 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     aboutData.addAuthor ( ki18n("Nicolas Lécureuil").toString(),
                           ki18n("Releases Manager").toString(),
                           QLatin1String("neoclust dot kde at gmail dot com"),
-                          QLatin1String("https://plus.google.com/u/0/111733995327568706391")
+                          QLatin1String("https://www.linkedin.com/in/nicolaslecureuil/")
                         );
 
     // -- Students ---------------------------------------------------------------
 
+    aboutData.addCredit ( ki18n("Thanh Trung Dinh").toString(),
+                          ki18n("Port web-service tools to OAuth, factoring web service tools, "
+                                "and port faces recognition engine to OpenCV neural network").toString(),
+                          QLatin1String("dinhthanhtrung1996 at gmail dot com"),
+                          QLatin1String("https://www.linkedin.com/in/thanhtrungdinh/")
+                        );
+
+    aboutData.addCredit ( ki18n("Ahmed Fathi").toString(),
+                          ki18n("UPNP/DLNA export tool, and Healing clone tool for image editor").toString(),
+                          QLatin1String("ahmed dot fathi dot abdelmageed at gmail dot com"),
+                          QLatin1String("https://ahmedfathishabanblog.wordpress.com/")
+                        );
+
     aboutData.addCredit ( ki18n("Veaceslav Munteanu").toString(),
                           ki18n("Tags Manager").toString(),
                           QLatin1String("veaceslav dot munteanu90 at gmail dot com"),
-                          QLatin1String("https://plus.google.com/114906808699351374523")
-                        );
-
-    aboutData.addCredit ( ki18n("Thanh Trung Dinh").toString(),
-                          ki18n("Port web-service tools to OAuth and factoring").toString(),
-                          QLatin1String("dinhthanhtrung1996 at gmail dot com"),
-                          QLatin1String("https://plus.google.com/u/0/105288296237200960831")
+                          QLatin1String("https://www.linkedin.com/in/veaceslav-munteanu-4370a063/")
                         );
 
     aboutData.addCredit ( ki18n("Tarek Talaat").toString(),
                           ki18n("New OneDrive, Pinterrest, and Box export tools").toString(),
                           QLatin1String("tarektalaat93 at gmail dot com"),
-                          QLatin1String("https://plus.google.com/u/0/108164047195873182769")
+                          QLatin1String("https://www.linkedin.com/in/tarek-talaat-9bb5b1a6/")
                         );
 
     aboutData.addCredit ( ki18n("Yingjie Liu").toString(),
@@ -176,79 +183,79 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     aboutData.addCredit ( ki18n("Yiou Wang").toString(),
                           ki18n("Model/View Port of Image Editor Canvas").toString(),
                           QLatin1String("geow812 at gmail dot com"),
-                          QLatin1String("https://plus.google.com/101883964009694930513")
+                          QLatin1String("https://www.linkedin.com/in/yiouwang/")
                         );
 
     aboutData.addCredit ( ki18n("Gowtham Ashok").toString(),
                           ki18n("Image Quality Sorter").toString(),
                           QLatin1String("gwty93 at gmail dot com"),
-                          QLatin1String("https://plus.google.com/u/0/113235187016472722859")
+                          QLatin1String("https://www.linkedin.com/in/gowtham-ashok/")
                         );
 
     aboutData.addCredit ( ki18n("Aditya Bhatt").toString(),
                           ki18n("Face Detection").toString(),
                           QLatin1String("aditya at bhatts dot org"),
-                          QLatin1String("https://twitter.com/aditya_bhatt")
+                          QLatin1String("https://www.linkedin.com/in/adityabhatt/")
                         );
 
     aboutData.addCredit ( ki18n("Martin Klapetek").toString(),
                           ki18n("Non-destructive image editing").toString(),
                           QLatin1String("martin dot klapetek at gmail dot com"),
-                          QLatin1String("https://plus.google.com/u/0/101026761070865237619")
+                          QLatin1String("https://www.linkedin.com/in/mck182/")
                         );
 
     aboutData.addCredit ( ki18n("Gabriel Voicu").toString(),
                           ki18n("Reverse Geo-Coding").toString(),
                           QLatin1String("ping dot gabi at gmail dot com"),
-                          QLatin1String("https://plus.google.com/u/0/101476692615103604273")
+                          QLatin1String("https://www.linkedin.com/in/gabriel-voicu-958b8327/")
                         );
 
     aboutData.addCredit ( ki18n("Mahesh Hegde").toString(),
                           ki18n("Face Recognition").toString(),
                           QLatin1String("maheshmhegade at gmail dot com"),
-                          QLatin1String("https://plus.google.com/113704327590506304403")
+                          QLatin1String("https://www.linkedin.com/in/maheshmhegade/")
                         );
 
     aboutData.addCredit ( ki18n("Pankaj Kumar").toString(),
                           ki18n("Multi-core Support in Batch Queue Manager and Mentoring").toString(),
                           QLatin1String("me at panks dot me"),
-                          QLatin1String("https://plus.google.com/114958890691877878308")
+                          QLatin1String("https://www.linkedin.com/in/panks42/")
                         );
 
     aboutData.addCredit ( ki18n("Smit Mehta").toString(),
                           ki18n("UPnP / DLNA Export tool and Mentoring").toString(),
                           QLatin1String("smit dot tmeh at gmail dot com"),
-                          QLatin1String("https://plus.google.com/u/0/113404087048256151794")
+                          QLatin1String("https://www.linkedin.com/in/smit-mehta-45b82640/")
                         );
 
     aboutData.addCredit ( ki18n("Islam Wazery").toString(),
                           ki18n("Model/View port of Import Tool and Mentoring").toString(),
                           QLatin1String("wazery at ubuntu dot com"),
-                          QLatin1String("https://plus.google.com/u/0/114444774108176364727")
+                          QLatin1String("https://www.linkedin.com/in/wazery/")
                         );
 
     aboutData.addCredit ( ki18n("Abhinav Badola").toString(),
                           ki18n("Video Metadata Support and Mentoring").toString(),
                           QLatin1String("mail dot abu dot to at gmail dot com"),
-                          QLatin1String("https://plus.google.com/u/0/107198225472060439855")
+                          QLatin1String("https://www.linkedin.com/in/abhinav-badola-86085424/")
                         );
 
     aboutData.addCredit ( ki18n("Benjamin Girault").toString(),
                           ki18n("Panorama Tool and Mentoring").toString(),
                           QLatin1String("benjamin dot girault at gmail dot com"),
-                          QLatin1String("https://plus.google.com/u/0/109282675370620103497")
+                          QLatin1String("https://www.linkedin.com/in/benjamingirault/")
                         );
 
     aboutData.addCredit ( ki18n("Victor Dodon").toString(),
                           ki18n("XML based GUI port of tools").toString(),
                           QLatin1String("dodonvictor at gmail dot com"),
-                          QLatin1String("https://plus.google.com/u/0/107198225472060439855")
+                          QLatin1String("https://www.linkedin.com/in/dodonvictor/")
                         );
 
     aboutData.addCredit ( ki18n("Sayantan Datta").toString(),
                           ki18n("Auto Noise Reduction").toString(),
                           QLatin1String("sayantan dot knz at gmail dot com"),
-                          QLatin1String("https://plus.google.com/100302360459800439676")
+                          QLatin1String("https://www.linkedin.com/in/stndta/")
                         );
 
     // -- Former contributors ----------------------------------------------------
@@ -256,25 +263,24 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     aboutData.addAuthor ( ki18n("Ananta Palani").toString(),
                           ki18n("Windows Port and Release Manager").toString(),
                           QLatin1String("anantapalani at gmail dot com"),
-                          QLatin1String("https://plus.google.com/u/0/+AnantaPalani")
+                          QLatin1String("https://www.linkedin.com/in/anantapalani/")
                         );
 
     aboutData.addAuthor ( ki18n("Andi Clemens").toString(),
                           ki18n("Developer").toString(),
-                          QLatin1String("andi dot clemens at gmail dot com"),
-                          QLatin1String("https://plus.google.com/110531606986594589135")
+                          QLatin1String("andi dot clemens at gmail dot com")
                         );
 
     aboutData.addAuthor ( ki18n("Patrick Spendrin").toString(),
                           ki18n("Developer and Windows port").toString(),
                           QLatin1String("patrick_spendrin at gmx dot de"),
-                          QLatin1String("https://plus.google.com/u/0/107813275713575797754")
+                          QLatin1String("https://www.linkedin.com/in/patrickspendrin/")
                         );
 
     aboutData.addCredit ( ki18n("Francesco Riosa").toString(),
                           ki18n("LCMS2 library port").toString(),
                           QLatin1String("francesco plus kde at pnpitalia dot it"),
-                          QLatin1String("https://plus.google.com/u/0/113237307210359236747")
+                          QLatin1String("https://www.linkedin.com/in/vivogentoo/")
                         );
 
     aboutData.addCredit ( ki18n("Johannes Wienke").toString(),
@@ -286,7 +292,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     aboutData.addAuthor ( ki18n("Julien Pontabry").toString(),
                           ki18n("Developer").toString(),
                           QLatin1String("julien dot pontabry at ulp dot u-strasbg dot fr"),
-                          QLatin1String("https://www.facebook.com/julien.pontabry")
+                          QLatin1String("https://www.linkedin.com/in/julien-pontabry-b784a247/")
                         );
 
     aboutData.addAuthor ( ki18n("Arnd Baecker").toString(),
@@ -296,8 +302,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
 
     aboutData.addAuthor ( ki18n("Francisco J. Cruz").toString(),
                           ki18n("Color Management").toString(),
-                          QLatin1String("fj dot cruz at supercable dot es"),
-                          QLatin1String("https://plus.google.com/u/0/+FranciscoJCruz")
+                          QLatin1String("fj dot cruz at supercable dot es")
                         );
 
     aboutData.addCredit ( ki18n("Pieter Edelman").toString(),
@@ -337,7 +342,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     aboutData.addCredit ( ki18n("Angelo Naselli").toString(),
                           ki18n("Developer").toString(),
                           QLatin1String("a dot naselli at libero dot it"),
-                          QLatin1String("https://plus.google.com/u/0/s/Angelo%20Naselli")
+                          QLatin1String("https://www.linkedin.com/in/angelo-naselli-11199028/")
                         );
 
     aboutData.addCredit ( ki18n("Fabien Salvi").toString(),
@@ -353,7 +358,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     aboutData.addCredit ( ki18n("Gerhard Kulzer").toString(),
                           ki18n("Handbook writer, alpha tester, webmaster").toString(),
                           QLatin1String("gerhard at kulzer dot net"),
-                          QLatin1String("https://plus.google.com/u/0/+GerhardKulzer")
+                          QLatin1String("https://www.linkedin.com/in/gerhard-kulzer-8931301/")
                         );
 
     aboutData.addCredit ( ki18n("Oliver Doerr").toString(),
@@ -379,7 +384,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     aboutData.addCredit ( ki18n("Aaron Seigo").toString(),
                           ki18n("Various usability fixes and general application polishing").toString(),
                           QLatin1String("aseigo at kde dot org"),
-                          QLatin1String("https://plus.google.com/u/0/+AaronSeigo")
+                          QLatin1String("https://www.linkedin.com/in/aaronseigo/")
                         );
 
     aboutData.addCredit ( ki18n("Yves Chaufour").toString(),
@@ -409,7 +414,7 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
     aboutData.addAuthor ( ki18n("Tom Albers").toString(),
                           ki18n("Developer (2004-2005)").toString(),
                           QLatin1String("tomalbers at kde dot nl"),
-                          QLatin1String("https://plus.google.com/u/0/+TomAlbers")
+                          QLatin1String("https://www.linkedin.com/in/tom-a-676a58157/")
                         );
 
     aboutData.addAuthor ( ki18n("Ralf Holzer").toString(),
