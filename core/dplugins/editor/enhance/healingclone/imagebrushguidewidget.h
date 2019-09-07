@@ -76,13 +76,10 @@ public:
     void changeCursorShape(const QPixmap&, float, float);
     void updateCursor();
 
-
     bool checkPointOutsideScene(QPoint point);
     void updateSourceCursor(const QPointF& pos = QPoint(), int diamter = 10);
     QPoint mapToImageCoordinates(const QPoint& point);
     QPoint mapFromImageCoordinates(const QPoint& point);
-
-
 
 public Q_SLOTS:
 
@@ -124,8 +121,6 @@ protected:
     void undoSlotSetSourcePoint();
     void activateState(HealingCloneState state);
 
-
-
 private:
 
     bool   srcSet                      = true;
@@ -141,10 +136,10 @@ private:
     bool cloneVectorChanged            = true;
     int brushRadius;
 
-    QColor brushColor                  = QColor(Qt::red);
-    HealingCloneState currentState     = HealingCloneState::SELECT_SOURCE;
+    QColor brushColor                        = QColor(Qt::red);
+    HealingCloneState currentState           = HealingCloneState::SELECT_SOURCE;
     HealingCloneState previousState;
-    QGraphicsEllipseItem* sourceCursor = nullptr;
+    QGraphicsEllipseItem* sourceCursor       = nullptr;
     QGraphicsEllipseItem* sourceCursorCenter = nullptr;
     QCursor prevCursor;
 };
