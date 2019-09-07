@@ -64,19 +64,19 @@ public:
         }
     }
 
-    bool  clipSat;
-    bool  overExp;
-    bool  WBind;
+    bool   clipSat;
+    bool   overExp;
+    bool   WBind;
 
-    int   BP;
-    int   WP;
+    int    BP;
+    int    WP;
 
-    uint  rgbMax;
+    uint   rgbMax;
 
-    float curve[65536];
-    float mr;
-    float mg;
-    float mb;
+    double curve[65536];
+    double mr;
+    double mg;
+    double mb;
 };
 
 WBFilter::WBFilter(QObject* const parent)
@@ -127,17 +127,6 @@ void WBFilter::filterImage()
     setLUTv();
     setRGBmult();
 
-    // See bug #259223 : scaling down the rgb multipliers just enough to prevent clipping
-    if ((m_settings.maxr == -1) && (m_settings.maxg == -1) && (m_settings.maxb == -1))
-    {
-        findChanelsMax((const DImg*) &m_orgImage,
-                       m_settings.maxr,
-                       m_settings.maxg,
-                       m_settings.maxb);
-    }
-
-    preventAutoExposure(m_settings.maxr, m_settings.maxg, m_settings.maxb);
-
     // Apply White balance adjustments.
     adjustWhiteBalance(m_orgImage.bits(), m_orgImage.width(), m_orgImage.height(), m_orgImage.sixteenBit());
     m_destImage = m_orgImage;
@@ -147,9 +136,9 @@ void WBFilter::autoWBAdjustementFromColor(const QColor& tc, double& temperature,
 {
     // Calculate Temperature and Green component from color picked.
 
-    float mr = 0.0;
-    float mg = 0.0;
-    float mb = 0.0;
+    double mr = 0.0;
+    double mg = 0.0;
+    double mb = 0.0;
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Sums:  R:" << tc.red() << " G:" << tc.green() << " B:" << tc.blue();
 
@@ -206,7 +195,7 @@ void WBFilter::autoExposureAdjustement(const DImg* const img, double& black, dou
         sum += histogram->getValue(LuminosityChannel, i);
     }
 
-    expo = -log((float)(i + 1) / rgbMax) / log(2);
+    expo = -log((double)(i + 1) / rgbMax) / log(2);
     qCDebug(DIGIKAM_DIMG_LOG) << "White level at:" << i;
 
     for (i = 1, sum = 0 ; (i < (int)rgbMax) && (sum < stop) ; ++i)
@@ -222,161 +211,69 @@ void WBFilter::autoExposureAdjustement(const DImg* const img, double& black, dou
     delete histogram;
 }
 
-void WBFilter::setRGBmult(double& temperature, double& green, float& mr, float& mg, float& mb)
+void WBFilter::setRGBmult(double& temperature, double& green, double& mr, double& mg, double& mb)
 {
-    float  mi;
-    double xD, yD, X, Y, Z;
+    // Original implementation by Tanner Helland
+    // http://www.tannerhelland.com/4435/convert-temperature-rgb-algorithm-code/
 
-    if (temperature > 12000)
+    double temp = temperature / 100.0;
+    double mx;
+
+    if (temp > 120.0)
     {
-        temperature = 12000.0;
+        temp = 120.0;
     }
 
-    /* Here starts the code picked from ufraw (0.12.1)
-       to convert Temperature + green multiplier to RGB multipliers
-    */
+    if (temp <= 66.0)
+    {
+        mr = 1.0;
 
-    /* Convert between Temperature and RGB.
-     * Base on information from http://www.brucelindbloom.com/
-     * The fit for D-illuminant between 4000K and 12000K are from CIE
-     * The generalization to 2000K < T < 4000K and the blackbody fits
-     * are my own and should be taken with a grain of salt.
-     */
-    const double XYZ_to_RGB[3][3] =
-    {
-        { 3.24071,  -0.969258,   0.0556352 },
-        { -1.53726,  1.87599,    -0.203996 },
-        { -0.498571, 0.0415557,  1.05707   }
-    };
-
-    // Fit for CIE Daylight illuminant
-    if (temperature <= 4000)
-    {
-        xD = 0.27475e9   / (temperature * temperature * temperature)
-             - 0.98598e6 / (temperature * temperature)
-             + 1.17444e3 / temperature + 0.145986;
-    }
-    else if (temperature <= 7000)
-    {
-        xD = -4.6070e9   / (temperature * temperature * temperature)
-             + 2.9678e6  / (temperature * temperature)
-             + 0.09911e3 / temperature + 0.244063;
+        mg = temp;
+        mg = 99.4708025861 * log(mg) - 161.1195681661;
     }
     else
     {
-        xD = -2.0064e9   / (temperature * temperature * temperature)
-             + 1.9018e6  / (temperature * temperature)
-             + 0.24748e3 / temperature + 0.237040;
+        mr = temp - 60.0;
+        mr = 329.698727466 * pow(mr, -0.1332047592);
+        mr = 1.0 / (1.0 / 255.0 * CLAMP(mr, 0.0, 255.0));
+
+        mg = temp - 60.0;
+        mg = 288.1221695283 * pow(mg, -0.0755148492);
     }
 
-    yD = -3 * xD * xD + 2.87 * xD - 0.275;
-
-    X  = xD / yD;
-    Y  = 1;
-    Z  = (1 - xD - yD) / yD;
-    mr = X * XYZ_to_RGB[0][0] + Y * XYZ_to_RGB[1][0] + Z * XYZ_to_RGB[2][0];
-    mg = X * XYZ_to_RGB[0][1] + Y * XYZ_to_RGB[1][1] + Z * XYZ_to_RGB[2][1];
-    mb = X * XYZ_to_RGB[0][2] + Y * XYZ_to_RGB[1][2] + Z * XYZ_to_RGB[2][2];
-    /* End of the code picked to ufraw
-    */
-
     // Apply green multiplier
-    mg  = mg / green;
+    mg = mg / green;
 
-    mr  = 1.0 / mr;
-    mg  = 1.0 / mg;
-    mb  = 1.0 / mb;
+    mg = 1.0 / (1.0 / 255.0 * CLAMP(mg, 0.0, 255.0));
 
-    // Normalize to at least 1.0, so we are not dimming colors only bumping.
-    mi  = qMin(mb, qMin(mr, mg));
-    mr /= mi;
-    mg /= mi;
-    mb /= mi;
+    if (temp >= 66.0)
+    {
+        mb = 1.0;
+    }
+    else
+    {
+        if (temp <= 19.0)
+        {
+            mb = 0.0;
+        }
+        else
+        {
+            mb = temp - 10.0;
+            mb = 138.5177312231 * log(mb) - 305.0447927307;
+            mb = 1.0 / (1.0 / 255.0 * CLAMP(mb, 0.0, 255.0));
+        }
+    }
+
+    // Calculate to an average of 1.0
+    mx  = ((mr + mg + mb) / 3.0) - 0.01;
+    mr /= mx;
+    mg /= mx;
+    mb /= mx;
 }
 
 void WBFilter::setRGBmult()
 {
     setRGBmult(m_settings.temperature, m_settings.green, d->mr, d->mg, d->mb);
-}
-
-void WBFilter::findChanelsMax(const DImg* const img, int& maxr, int& maxg, int& maxb)
-{
-    const uchar* data = img->bits();
-    int width         = img->width();
-    int height        = img->height();
-    bool sixteenBit   = img->sixteenBit();
-
-    maxr              = 0;
-    maxg              = 0;
-    maxb              = 0;
-    uint size         = (uint)(width * height);
-
-    // Look for the maximum r, g, b values in the given image.
-
-    if (!sixteenBit)        // 8 bits image.
-    {
-        for (uint j = 0 ; j < size ; ++j)
-        {
-            if (maxb < data[0])
-            {
-                maxb = data[0];
-            }
-
-            if (maxg < data[1])
-            {
-                maxg = data[1];
-            }
-
-            if (maxr < data[2])
-            {
-                maxr = data[2];
-            }
-
-            data += 4;
-        }
-    }
-    else                    // 16 bits image.
-    {
-        const unsigned short* ptr = reinterpret_cast<const unsigned short*>(data);
-
-        for (uint j = 0 ; j < size ; ++j)
-        {
-            if (maxb < ptr[0])
-            {
-                maxb = ptr[0];
-            }
-
-            if (maxg < ptr[1])
-            {
-                maxg = ptr[1];
-            }
-
-            if (maxr < ptr[2])
-            {
-                maxr = ptr[2];
-            }
-
-            ptr += 4;
-        }
-    }
-}
-
-void WBFilter::preventAutoExposure(int maxr, int maxg, int maxb)
-{
-    // White balance them and find the brightest one.
-    maxr     *= d->mr;
-    maxg     *= d->mg;
-    maxb     *= d->mb;
-    uint max  = qMax(maxr, qMax(maxb, maxg));
-
-    // Scale wb coefficients down if one of them is overexposed.
-    if (max > d->rgbMax - 1)
-    {
-        double adjust  = (double)(d->rgbMax - 1) / max;
-        d->mb         *= adjust;
-        d->mg         *= adjust;
-        d->mr         *= adjust;
-    }
 }
 
 void WBFilter::setLUTv()
@@ -397,7 +294,7 @@ void WBFilter::setLUTv()
              << " BP:  " << d->BP
              << " WP:  " << d->WP;
 
-    d->curve[0] = 0;
+    d->curve[0] = 0.0;
 
     // We will try to reproduce the same Gamma effect here than BCG tool.
     double gamma;
@@ -413,10 +310,10 @@ void WBFilter::setLUTv()
 
     for (int i = 1 ; i < (int)d->rgbMax ; ++i)
     {
-        float x      = (float)(i - d->BP) / (d->WP - d->BP);
+        double x     = (double)(i - d->BP) / (d->WP - d->BP);
         d->curve[i]  = (i < d->BP) ? 0 : (d->rgbMax - 1) * pow((double)x, gamma);
         d->curve[i] *= (1 - m_settings.dark * exp(-x * x / 0.002));
-        d->curve[i] /= (float)i;
+        d->curve[i] /= (double)i;
     }
 }
 

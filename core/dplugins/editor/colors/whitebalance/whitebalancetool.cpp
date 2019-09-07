@@ -185,7 +185,6 @@ void WhiteBalanceTool::preparePreview()
     ImageIface iface;
     DImg* const img      = iface.original();
     WBContainer settings = d->settingsView->settings();
-    WBFilter::findChanelsMax(img, settings.maxr, settings.maxg, settings.maxb);
 
     d->gboxSettings->histogramBox()->histogram()->stopHistogramComputation();
 

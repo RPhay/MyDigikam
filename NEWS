@@ -8,4 +8,5 @@ NEW FEATURES:
 BUGFIXES:
 
 001 ==> 411587 - [digiKam] Crash when reopening Google Photos import wizard.
-002 ==> 
+002 ==> 411578 - White Balance changes global luminosity.
+003 ==> 
