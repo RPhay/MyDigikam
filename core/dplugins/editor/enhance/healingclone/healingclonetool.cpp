@@ -288,7 +288,6 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     connect(d->previewWidget,SIGNAL(signalContinuePolygon()),
             this, SLOT(slotContinuePolygon()));
 
-
     connect(d->previewWidget,SIGNAL(signalIncreaseBrushRadius()),
             this, SLOT(slotIncreaseBrushRadius()));
 
@@ -361,7 +360,7 @@ void HealingCloneTool::slotRadiusChanged(int r)
 
 void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoint& dstPoint, int radius)
 {
-    ImageRegionItem* const item = (ImageRegionItem *) d->previewWidget->item();
+    ImageRegionItem* const item = (ImageRegionItem*)d->previewWidget->item();
     double scale                = item->zoomSettings()->zoomFactor();
     radius                      = radius / scale;
     double blurPercent          = d->blurPercent->value() / 100;
@@ -382,16 +381,16 @@ void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoi
                     continue;
                 }
 
-                DColor cSrc = img->getPixelColor(srcPoint.x()+i, srcPoint.y()+j);
+                DColor cSrc = img->getPixelColor(srcPoint.x() + i, srcPoint.y() + j);
 
                 if (insideLassoOperation && !this->lassoPoints.empty())
                 {
-                    if (this->lassoFlags.at(dstPoint.x()+i).at(dstPoint.y()+j))
+                    if (this->lassoFlags.at(dstPoint.x() + i).at(dstPoint.y() + j))
                     {
                         continue;
                     }
 
-                    bool isInside = this->lassoPolygon.containsPoint(QPoint(dstPoint.x()+i,dstPoint.y()+j),
+                    bool isInside = this->lassoPolygon.containsPoint(QPoint(dstPoint.x()+i, dstPoint.y()+j),
                                                                      Qt::OddEvenFill);
 
                      if (!isInside)
@@ -403,8 +402,6 @@ void HealingCloneTool::clone(DImg* const img, const QPoint& srcPoint, const QPoi
                      {
                          cSrc = this->lassoColorsMap[std::make_pair(srcPoint.x()+i,srcPoint.y()+j)];
                      }
-
-
                 }
 
                 double rP   = blurPercent * rPercent / (radius * radius);
@@ -432,14 +429,14 @@ void HealingCloneTool::updateLasso(std::vector<QPoint>& points)
     {
         for(uint i = 0 ; i < radius ; i++)
         {
-            for(uint j = 0; j<radius ; j++)
+            for(uint j = 0 ; j < radius ; j++)
             {
                 uint x_shifted = p.x()+i;
                 uint y_shifted = p.y()+j;
-                DColor c = img.getPixelColor(x_shifted,y_shifted);
+                DColor c       = img.getPixelColor(x_shifted, y_shifted);
 
-                this->lassoColorsMap.insert(std::make_pair(std::make_pair(x_shifted,y_shifted), c)) ;
-                img.setPixelColor(x_shifted,y_shifted,this->lassoColors[(colorCounter)%this->lassoColors.size()]);
+                this->lassoColorsMap.insert(std::make_pair(std::make_pair(x_shifted, y_shifted), c));
+                img.setPixelColor(x_shifted,y_shifted,this->lassoColors[(colorCounter) % this->lassoColors.size()]);
                 this->lassoFlags.at(x_shifted).at(y_shifted) = true;
                 colorCounter++;
             }
@@ -451,7 +448,7 @@ void HealingCloneTool::updateLasso(std::vector<QPoint>& points)
 
 void HealingCloneTool::slotLasso(const QPoint& dst)
 {
-    if(this->resetLassoPoint)
+    if (this->resetLassoPoint)
     {
         this->previousLassoPoint = dst;
         this->resetLassoPoint = false;
@@ -469,16 +466,16 @@ std::vector<QPoint> HealingCloneTool::interpolate(const QPoint& start, const QPo
 {
     std::vector<QPoint> points;
     points.push_back(start);
-    QPointF distanceVec = QPoint(end.x()-start.x() , end.y() - start.y());
-    double distance = sqrt(distanceVec.x() * distanceVec.x() + distanceVec.y() * distanceVec.y());
+    QPointF distanceVec = QPoint(end.x()-start.x(), end.y() - start.y());
+    double distance     = sqrt(distanceVec.x() * distanceVec.x() + distanceVec.y() * distanceVec.y());
     //creating a unit vector
     distanceVec.setX(distanceVec.x()/distance);
     distanceVec.setY(distanceVec.y()/distance);
     int steps = (int) distance;
 
-    for(int i = 0 ; i<steps ; i++)
+    for(int i = 0 ; i < steps ; i++)
     {
-        points.push_back(QPoint(start.x() + i*distanceVec.x() ,start.y() + i*distanceVec.y()));
+        points.push_back(QPoint(start.x() + i * distanceVec.x(), start.y() + i * distanceVec.y()));
     }
 
     points.push_back(end);
@@ -491,11 +488,11 @@ void HealingCloneTool::removeLassoPixels()
     DImg img = d->previewWidget->getOriginalImage();
     std::map<std::pair<int,int>, DColor>::iterator it;
 
-    for ( it = lassoColorsMap.begin(); it != lassoColorsMap.end(); it++ )
+    for (it = lassoColorsMap.begin() ; it != lassoColorsMap.end() ; it++)
     {
         std::pair<int,int> xy = it->first;
-        DColor color = it->second;
-        img.setPixelColor(xy.first, xy.second,color);
+        DColor color          = it->second;
+        img.setPixelColor(xy.first, xy.second, color);
     }
 
     d->previewWidget->updateImage(img);
@@ -504,15 +501,15 @@ void HealingCloneTool::removeLassoPixels()
 void HealingCloneTool::redrawLassoPixels()
 {
     int colorCounter = 0;
-    DImg img = d->previewWidget->getOriginalImage();
+    DImg img         = d->previewWidget->getOriginalImage();
     std::map<std::pair<int,int>, DColor>::iterator it;
 
-    for ( it = lassoColorsMap.begin(); it != lassoColorsMap.end(); it++ )
+    for (it = lassoColorsMap.begin() ; it != lassoColorsMap.end() ; it++)
     {
         colorCounter++;
-        DColor color = this->lassoColors[(colorCounter)%this->lassoColors.size()];
+        DColor color          = this->lassoColors[(colorCounter) % this->lassoColors.size()];
         std::pair<int,int> xy = it->first;
-        img.setPixelColor(xy.first, xy.second,color);
+        img.setPixelColor(xy.first, xy.second, color);
     }
 
     d->previewWidget->updateImage(img);
@@ -521,7 +518,7 @@ void HealingCloneTool::redrawLassoPixels()
 void HealingCloneTool::slotResetLassoPoints()
 {
     removeLassoPixels();
-    this->resetLassoPoint = true;
+    this->resetLassoPoint      = true;
     this->lassoPoints.clear();
     this->insideLassoOperation = true;
     this->lassoPolygon.clear();
@@ -550,7 +547,6 @@ void HealingCloneTool::slotContinuePolygon()
     }
 
     this->lassoPolygon = QPolygon(polygon);
-
 }
 
 void HealingCloneTool::slotIncreaseBrushRadius()
@@ -567,19 +563,20 @@ void HealingCloneTool::slotDecreaseBrushRadius()
 
 void HealingCloneTool::initializeLassoFlags()
 {
-  //  ImageIface* const iface = d->previewWidget->imageIface();
-  //  DImg* const img     = iface->previewReference();
+//  ImageIface* const iface = d->previewWidget->imageIface();
+//  DImg* const img         = iface->previewReference();
+
     DImg img = d->previewWidget->getOriginalImage();
     int w    = img.width();
     int h    = img.height();
     this->lassoFlags.resize(w);
 
-    for (int i = 0 ; i < w; i++)
+    for (int i = 0 ; i < w ; i++)
     {
         this->lassoFlags.at(i).resize(h);
     }
 
-    for (int i = 0 ; i < w; i++)
+    for (int i = 0 ; i < w ; i++)
     {
         for (int j = 0 ; j < h ; j++)
         {
@@ -611,7 +608,8 @@ void HealingCloneTool::slotUndoClone()
 
 void HealingCloneTool::slotRedoClone()
 {
-    //slotResetLassoPoints();
+//  slotResetLassoPoints();
+
     if (this->redoStack.empty())
         return;
 
@@ -630,18 +628,18 @@ void HealingCloneTool::refreshImage()
 
     if (wgt)
     {
-      QRectF test                 = wgt->sceneRect();
-      ImageRegionItem* const item = (ImageRegionItem*)wgt->item();
-      int w                       = item->boundingRect().width();
-      int h                       = item->boundingRect().height();
+        QRectF test                 = wgt->sceneRect();
+        ImageRegionItem* const item = (ImageRegionItem*)wgt->item();
+        int w                       = item->boundingRect().width();
+        int h                       = item->boundingRect().height();
 
-      test.setWidth(10);
-      test.setHeight(10);
-      wgt->fitInView( test, Qt::KeepAspectRatio );
+        test.setWidth(10);
+        test.setHeight(10);
+        wgt->fitInView( test, Qt::KeepAspectRatio );
 
-      test.setWidth(w);
-      test.setHeight(h);
-      wgt->fitInView( test, Qt::KeepAspectRatio );
+        test.setWidth(w);
+        test.setHeight(h);
+        wgt->fitInView( test, Qt::KeepAspectRatio );
     }
 }
 
