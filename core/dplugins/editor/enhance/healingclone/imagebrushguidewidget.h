@@ -55,7 +55,8 @@ public:
         PAINT,
         LASSO_DRAW_BOUNDARY,
         LASSO_CLONE,
-        MOVE_IMAGE
+        MOVE_IMAGE,
+        DO_NOTHING
     };
 
 public:
@@ -69,13 +70,19 @@ public:
     void setBrushRadius(int value);
     void setIsLassoPointsVectorEmpty(bool);
     void setCloneVectorChanged(bool);
-    void changeCursorShape(QColor color);
-    void changeCursorShape(QPixmap,float,float);
+    void setSourceCursorPosition(const QPointF& topLeftPos);
+
+    void changeCursorShape(const QColor& color);
+    void changeCursorShape(const QPixmap&, float, float);
     void updateCursor();
-    QPoint mapToImageCoordinates(QPoint point);
-    QPoint mapFromImageCoordinates(QPoint point);
-    void updateSourceCursor(QPointF pos = QPoint(), int diamter = 10);
-    void setSourceCursorPosition(QPointF topLeftPos);
+
+
+    bool checkPointOutsideScene(QPoint point);
+    void updateSourceCursor(const QPointF& pos = QPoint(), int diamter = 10);
+    QPoint mapToImageCoordinates(const QPoint& point);
+    QPoint mapFromImageCoordinates(const QPoint& point);
+
+
 
 public Q_SLOTS:
 
@@ -104,19 +111,20 @@ Q_SIGNALS:
 
 protected:
 
-    void mouseReleaseEvent(QMouseEvent*);
-    void mousePressEvent(QMouseEvent*);
-    void mouseMoveEvent(QMouseEvent*);
+    void mouseReleaseEvent(QMouseEvent*)override;
+    void mousePressEvent(QMouseEvent*)override;
+    void mouseMoveEvent(QMouseEvent*)override;
     void mouseDoubleClickEvent(QMouseEvent*) override;
-    void keyPressEvent(QKeyEvent *event) ;
-    void keyReleaseEvent(QKeyEvent *event) ;
-    void wheelEvent(QWheelEvent *event) override;
-    void focusOutEvent(QFocusEvent* event) override;
-    void focusInEvent(QFocusEvent * event) override;
+    void keyPressEvent(QKeyEvent*) override;
+    void keyReleaseEvent(QKeyEvent*) override;
+    void wheelEvent(QWheelEvent*) override;
+    void focusOutEvent(QFocusEvent*) override;
+    void focusInEvent(QFocusEvent*) override;
     bool event(QEvent*) override;
     void undoSlotSetSourcePoint();
-    // void showEvent( QShowEvent* event ) override;
     void activateState(HealingCloneState state);
+
+
 
 private:
 
@@ -132,9 +140,12 @@ private:
     bool proceedInMoveEvent            = false;
     bool cloneVectorChanged            = true;
     int brushRadius;
+
     QColor brushColor                  = QColor(Qt::red);
     HealingCloneState currentState     = HealingCloneState::SELECT_SOURCE;
+    HealingCloneState previousState;
     QGraphicsEllipseItem* sourceCursor = nullptr;
+    QGraphicsEllipseItem* sourceCursorCenter = nullptr;
     QCursor prevCursor;
 };
 
