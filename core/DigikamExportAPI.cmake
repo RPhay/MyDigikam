@@ -45,8 +45,9 @@ install(FILES
               ${CMAKE_CURRENT_SOURCE_DIR}/utilities/geolocation/geoiface/core/geocoordinates.h
               ${CMAKE_CURRENT_SOURCE_DIR}/utilities/geolocation/geoiface/reversegeocoding/rginfo.h
 
-              ${CMAKE_CURRENT_SOURCE_DIR}/utilities/imageeditor/editor/imageiface.h
               ${CMAKE_CURRENT_SOURCE_DIR}/utilities/imageeditor/core/iofilesettings.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/utilities/imageeditor/editor/imageiface.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/utilities/imageeditor/widgets/imageregionwidget.h
 
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dimg.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dcolor.h
@@ -55,10 +56,12 @@ install(FILES
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dcolorblend.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dshareddata.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/drawdecoding.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/loaders/dimgloaderobserver.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/history/historyimageid.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/history/filteraction.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/dimgbuiltinfilter.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/icc/iccprofile.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/icc/icctransform.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/bcg/bcgcontainer.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/wb/wbcontainer.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/curves/curvescontainer.h
@@ -72,6 +75,16 @@ install(FILES
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/rawengine/drawdecodersettings.h
 
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/widgets/files/filesaveconflictbox.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/widgets/graphicsview/imagezoomsettings.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/widgets/graphicsview/previewlayout.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/widgets/graphicsview/dimgpreviewitem.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/widgets/graphicsview/graphicsdimgview.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/widgets/graphicsview/graphicsdimgitem.h
+
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/threadimageio/preview/previewsettings.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/threadimageio/fileio/loadingdescription.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/threadimageio/thumb/thumbnailinfo.h
+
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dialogs/dmessagebox.h
 
               # As part of DigikamDatabase
