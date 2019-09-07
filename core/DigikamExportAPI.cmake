@@ -63,7 +63,7 @@ install(FILES
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/history/filteraction.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/dimgbuiltinfilter.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/dimgthreadedfilter.h
-              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/dimgthreadedanalyzer.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/dimgthreadedanalyser.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/icc/iccprofile.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/icc/icctransform.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/bcg/bcgcontainer.h
