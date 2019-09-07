@@ -76,8 +76,9 @@ public:
     void changeCursorShape(const QPixmap&, float, float);
     void updateCursor();
 
-    bool checkPointOutsideScene(QPoint point);
+    bool checkPointOutsideScene(const QPoint& point);
     void updateSourceCursor(const QPointF& pos = QPoint(), int diamter = 10);
+
     QPoint mapToImageCoordinates(const QPoint& point);
     QPoint mapFromImageCoordinates(const QPoint& point);
 
