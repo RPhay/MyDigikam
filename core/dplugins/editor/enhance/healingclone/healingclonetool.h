@@ -82,8 +82,6 @@ public Q_SLOTS:
     void slotPushToUndoStack();
     void slotUndoClone();
     void slotRedoClone();
-    void removeLassoPixels();
-    void redrawLassoPixels();
 
 private:
 
@@ -100,8 +98,12 @@ private:
      */
     void clone(DImg* const img, const QPoint& srcPoint, const QPoint& dstPoint, int radius);
     std::vector<QPoint> interpolate(const QPoint& start,const QPoint& end);
+
     void updateLasso(std::vector<QPoint>& points);
     void initializeLassoFlags();
+    void removeLassoPixels();
+    void redrawLassoPixels();
+    
     void refreshImage();
 
 private:
