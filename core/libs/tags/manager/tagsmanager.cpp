@@ -201,7 +201,7 @@ void TagsManager::setupUi(KMainWindow* const dialog)
      d->treeWindow    = new KMainWindow(this);
      setupActions();
 
-     d->splitter      = new QSplitter();
+     d->splitter      = new QSplitter(Qt::Horizontal, this);
 
      d->listView      = new TagList(d->tagMngrView, dialog);
 
