@@ -14,4 +14,5 @@ BUGFIXES:
 004 ==> 406503 - Histogram initializes greyer than white.
 005 ==> 411714 - Correction of ticket 408881 (Restore default tools settings) is not enforced.
 006 ==> 411702 - Video/picture Filter.
-007 ==> 
+007 ==> 411726 - Geolocation not working.
+008 ==> 
