@@ -210,12 +210,16 @@ void EditorCore::slotImageLoaded(const LoadingDescription& loadingDescription, c
     }
 
     // RAW tool active? Discard previous loaded image
+    // Special case for Jenkins, no Editor window also no EditorToolIface
 
-    EditorTool* const tool = EditorToolIface::editorToolIface()->currentTool();
-
-    if (tool && tool->property("DPluginIId").toString().contains(QLatin1String("rawimport")))
+    if (EditorToolIface::editorToolIface())
     {
-        return;
+        EditorTool* const tool = EditorToolIface::editorToolIface()->currentTool();
+
+        if (tool && tool->property("DPluginIId").toString().contains(QLatin1String("rawimport")))
+        {
+            return;
+        }
     }
 
     bool valRet = false;
