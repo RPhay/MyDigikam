@@ -105,8 +105,15 @@ void WBFilter::filterImage()
     d->rgbMax = m_orgImage.sixteenBit() ? 65536 : 256;
 
     // Set final lut.
-    setRGBmult();
     setLUTv();
+    setRGBmult(m_settings.temperature, m_settings.green, d->mr, d->mg, d->mb);
+
+    qCDebug(DIGIKAM_DIMG_LOG) << "T(K):" << m_settings.temperature
+                              << "=> R:" << d->mr
+                              << "   G:" << d->mg
+                              << "   B:" << d->mb
+                              << "  BP:" << d->BP
+                              << "  WP:" << d->WP;
 
     // Apply White balance adjustments.
     adjustWhiteBalance(m_orgImage.bits(), m_orgImage.width(), m_orgImage.height(), m_orgImage.sixteenBit());
@@ -252,11 +259,6 @@ void WBFilter::setRGBmult(double& temperature, double& green, double& mr, double
     mb /= mx;
 }
 
-void WBFilter::setRGBmult()
-{
-    setRGBmult(m_settings.temperature, m_settings.green, d->mr, d->mg, d->mb);
-}
-
 void WBFilter::setLUTv()
 {
     double b = pow(2, m_settings.expositionMain + m_settings.expositionFine);
@@ -267,13 +269,6 @@ void WBFilter::setLUTv()
     {
         d->WP = d->BP + 1;
     }
-
-    qCDebug(DIGIKAM_DIMG_LOG) << "T(K):" << m_settings.temperature
-             << "=> R:" << d->mr
-             << "   G:" << d->mg
-             << "   B:" << d->mb
-             << "  BP:" << d->BP
-             << "  WP:" << d->WP;
 
     d->curve[0] = 0.0;
 

@@ -95,7 +95,6 @@ protected:
 
 private:
 
-    void setRGBmult();
     void setLUTv();
     void adjustWhiteBalance(uchar* const data, int width, int height, bool sixteenBit);
     inline unsigned short pixelColor(int colorMult, int index);
