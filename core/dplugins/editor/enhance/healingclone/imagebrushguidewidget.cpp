@@ -61,7 +61,7 @@ void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
 
     proceedInMoveEvent = true;
 
-    if (this->currentState == HealingCloneState ::DO_NOTHING)
+    if (this->currentState == HealingCloneState::DO_NOTHING)
     {
         ImageRegionWidget::mousePressEvent(e);
         return;
@@ -74,7 +74,6 @@ void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
             this->setCloneVectorChanged(false);
             emit signalPushToUndoStack();
         }
-
     }
 
     if (this->currentState == HealingCloneState::MOVE_IMAGE && (e->buttons() & Qt::LeftButton))
@@ -87,7 +86,7 @@ void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
     }
     else if (this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY && (e->buttons() & Qt::LeftButton))
     {
-        QPoint dst = QPoint(e->x(),e->y());
+        QPoint dst = QPoint(e->x(), e->y());
         emit signalLasso(mapToImageCoordinates(dst));
     }
     else
@@ -104,16 +103,18 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
 {
     bool cursorOutsideScene = checkPointOutsideScene(e->pos());
 
-    if (cursorOutsideScene && this->currentState != HealingCloneState::DO_NOTHING)
+    if (cursorOutsideScene &&
+        this->currentState != HealingCloneState::DO_NOTHING)
     {
         activateState(HealingCloneState::DO_NOTHING);
     }
-    else if (!cursorOutsideScene && this->currentState == HealingCloneState::DO_NOTHING)
+    else if (!cursorOutsideScene &&
+             this->currentState == HealingCloneState::DO_NOTHING)
     {
         activateState(this->previousState);
     }
 
-    if (this->currentState == HealingCloneState ::DO_NOTHING)
+    if (this->currentState == HealingCloneState::DO_NOTHING)
     {
         ImageRegionWidget::mouseMoveEvent(e);
         return;
@@ -122,13 +123,15 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
     if (!proceedInMoveEvent)
         return;
 
-    if (this->currentState == HealingCloneState::MOVE_IMAGE && (e->buttons() & Qt::LeftButton))
+    if (this->currentState == HealingCloneState::MOVE_IMAGE &&
+        (e->buttons() & Qt::LeftButton))
     {
         ImageRegionWidget::mouseMoveEvent(e);
     }
-    else if (this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY && (e->buttons() & Qt::LeftButton))
+    else if (this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY &&
+             (e->buttons() & Qt::LeftButton))
     {
-        QPoint dst = QPoint(e->x(),e->y());
+        QPoint dst = QPoint(e->x(), e->y());
         emit signalLasso(mapToImageCoordinates(dst));
     }
     else if ((e->buttons() & Qt::LeftButton) && !srcSet)
@@ -136,7 +139,8 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
         QPoint currentDst = mapToImageCoordinates(e->pos());
         QPoint currentSrc = src;
         QPoint orgDst     = dst;
-        currentSrc        = QPoint(currentSrc.x() + currentDst.x() - orgDst.x(), currentSrc.y() + currentDst.y() - orgDst.y());
+        currentSrc        = QPoint(currentSrc.x() + currentDst.x() - orgDst.x(),
+                                   currentSrc.y() + currentDst.y() - orgDst.y());
 
         // Source Cursor Update
         QPointF tempCursorPosition = mapToScene(mapFromImageCoordinates(currentSrc)); // sceneCoordinates
@@ -193,22 +197,22 @@ void ImageBrushGuideWidget::mouseDoubleClickEvent(QMouseEvent* event)
 
 void ImageBrushGuideWidget :: keyPressEvent(QKeyEvent *e)
 {
-    if (e->key() == Qt :: Key_M)
+    if (e->key() == Qt::Key_M)
     {
         slotMoveImage();
     }
 
-    else if (e->key() == Qt :: Key_L)
+    else if (e->key() == Qt::Key_L)
     {
         slotLassoSelect();
     }
 
-    if (e->key() == Qt :: Key_BracketLeft)
+    if (e->key() == Qt::Key_BracketLeft)
     {
         emit signalDecreaseBrushRadius();
     }
 
-    if (e->key() == Qt :: Key_BracketRight)
+    if (e->key() == Qt::Key_BracketRight)
     {
         emit signalIncreaseBrushRadius();
     }
@@ -255,9 +259,9 @@ bool ImageBrushGuideWidget::event(QEvent *event)
     return QWidget::event(event);
 }
 
-void ImageBrushGuideWidget::  keyReleaseEvent(QKeyEvent *e)
+void ImageBrushGuideWidget::keyReleaseEvent(QKeyEvent* e)
 {
-    if (e->key() == Qt :: Key_S)
+    if (e->key() == Qt::Key_S)
     {
         if (this->currentState == HealingCloneState::SELECT_SOURCE)
         {
@@ -291,7 +295,7 @@ void ImageBrushGuideWidget::slotSetSourcePoint()
     activateState(HealingCloneState::SELECT_SOURCE);
 }
 
-void ImageBrushGuideWidget :: slotMoveImage()
+void ImageBrushGuideWidget::slotMoveImage()
 {
     if (this->currentState == HealingCloneState::MOVE_IMAGE)
     {
@@ -312,7 +316,7 @@ void ImageBrushGuideWidget :: slotMoveImage()
     }
 }
 
-void ImageBrushGuideWidget :: slotLassoSelect()
+void ImageBrushGuideWidget::slotLassoSelect()
 {
     if (this->currentState != HealingCloneState::LASSO_DRAW_BOUNDARY &&
         this->currentState != HealingCloneState::LASSO_CLONE)
@@ -360,10 +364,10 @@ void ImageBrushGuideWidget::changeCursorShape(const QColor& color)
     int size         = radius * 2;
     this->brushColor = color;
     int penSize      = 2;
-    QPixmap pix(size,size);
+    QPixmap pix(size, size);
     pix.fill(Qt::transparent);
     QPainter p(&pix);
-    p.setPen(QPen(color,penSize));
+    p.setPen(QPen(color, penSize));
     p.setRenderHint(QPainter::Antialiasing, true);
     p.drawEllipse(1, 1, size - 2, size - 2);
     p.setBrush(Qt::SolidPattern);
@@ -401,7 +405,9 @@ void ImageBrushGuideWidget::activateState(HealingCloneState state)
     this->previousState = this->currentState;
 
     if (state != HealingCloneState::MOVE_IMAGE)
+    {
         setDragMode(QGraphicsView::NoDrag);
+    }
 
     if (this->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY &&
         state != HealingCloneState::LASSO_CLONE)
@@ -538,7 +544,7 @@ bool ImageBrushGuideWidget::checkPointOutsideScene(const QPoint& globalPoint)
     else
     {
         QPoint bottomRight = QPoint(viewport()->width()-1,viewport()->height()-1);
-        int right          = mapToScene(bottomRight).x() ;
+        int right          = mapToScene(bottomRight).x();
         int bottom         = mapToScene(bottomRight).y();
 
         pointOutsideScene  = temp.x() <= 0 || temp.x() >= right ||

@@ -33,6 +33,7 @@
 #include "digikam_debug.h"
 #include "dplugingeneric.h"
 #include "dplugineditor.h"
+#include "dpluginrawimport.h"
 
 namespace Digikam
 {
@@ -312,6 +313,21 @@ void DPluginLoader::registerEditorPlugins(QObject* const parent)
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "Editor plugin named" << edit->name()
                                          << "registered to" << parent;
+        }
+    }
+}
+
+void DPluginLoader::registerRawImportPlugins(QObject* const parent)
+{
+    foreach (DPlugin* const plugin, d->allPlugins)
+    {
+        DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(plugin);
+
+        if (raw)
+        {
+            raw->setup(parent);
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Raw Import plugin named" << raw->name()
+                                            << "registered to" << parent;
         }
     }
 }

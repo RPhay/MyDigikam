@@ -56,7 +56,7 @@
 #include "digikam_debug.h"
 #include "drawdecoderwidget.h"
 
-namespace Digikam
+namespace DigikamRawImportNativePlugin
 {
 
 class Q_DECL_HIDDEN RawSettingsBox::Private
@@ -515,4 +515,4 @@ void RawSettingsBox::slotFileDialogAboutToOpen()
     //requester->fileDialog()->setPreviewWidget(new ICCPreviewWidget(requester));
 }
 
-} // namespace Digikam
+} // namespace DigikamRawImportNativePlugin

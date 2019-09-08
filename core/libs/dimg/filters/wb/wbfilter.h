@@ -50,13 +50,12 @@ public:
     explicit WBFilter(QObject* const parent = nullptr);
     explicit WBFilter(DImg* const orgImage, QObject* const parent=nullptr, const WBContainer& settings=WBContainer());
     explicit WBFilter(const WBContainer& settings, DImgThreadedFilter* const master, const DImg& orgImage, const DImg& destImage,
-                      int progressBegin=0, int progressEnd=100);
+                      int progressBegin = 0, int progressEnd = 100);
     virtual ~WBFilter();
 
     void                    readParameters(const FilterAction& action) override;
 
     static void             autoExposureAdjustement(const DImg* const img, double& black, double& expo);
-    static void             findChanelsMax(const DImg* const img, int& maxr, int& maxg, int& maxb);
     static void             autoWBAdjustementFromColor(const QColor& tc, double& temperature, double& green);
 
     static QString          FilterIdentifier()
@@ -96,16 +95,11 @@ protected:
 
 private:
 
-    void setRGBmult();
     void setLUTv();
     void adjustWhiteBalance(uchar* const data, int width, int height, bool sixteenBit);
-    inline unsigned short pixelColor(int colorMult, int index, int value);
+    inline unsigned short pixelColor(int colorMult, int index);
 
-    static void setRGBmult(double& temperature, double& green, float& mr, float& mg, float& mb);
-
-    /** This method have been introduced with bug #259223
-     */
-    void preventAutoExposure(int maxr, int maxg, int maxb);
+    static void setRGBmult(double& temperature, double& green, double& mr, double& mg, double& mb);
 
 private:
 

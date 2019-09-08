@@ -62,12 +62,6 @@ set(libeditorcore_SRCS
     core/iccpostloadingmanager.cpp
 )
 
-set(libeditorrawimport_SRCS
-    rawimport/rawimport.cpp
-    rawimport/rawpreview.cpp
-    rawimport/rawsettingsbox.cpp
-)
-
 set(libeditoriface_SRCS
     editor/editortool.cpp
     editor/editortooliface.cpp
@@ -81,7 +75,6 @@ set(libeditoriface_SRCS
 add_library(imageeditor_src OBJECT ${libeditorcore_SRCS}
                                    ${libeditordlg_SRCS}
                                    ${libeditoriface_SRCS}
-                                   ${libeditorrawimport_SRCS}
                                    ${libeditorwidgets_SRCS}
 )
 

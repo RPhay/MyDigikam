@@ -66,7 +66,8 @@ public:
 };
 
 TagList::TagList(TagMngrTreeView* const treeView, QWidget* const parent)
-        : QWidget(parent), d(new Private())
+        : QWidget(parent),
+          d(new Private())
 {
     d->treeView               = treeView;
     QVBoxLayout* const layout = new QVBoxLayout();

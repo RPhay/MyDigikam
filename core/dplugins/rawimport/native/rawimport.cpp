@@ -44,7 +44,7 @@
 #include "editortooliface.h"
 #include "rawpreview.h"
 
-namespace Digikam
+namespace DigikamRawImportNativePlugin
 {
 
 class Q_DECL_HIDDEN RawImport::Private
@@ -256,4 +256,4 @@ void RawImport::ICCSettingsChanged()
     d->previewWidget->ICCSettingsChanged();
 }
 
-} // namespace Digikam
+} // namespace DigikamRawImportNativePlugin

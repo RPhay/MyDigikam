@@ -2772,6 +2772,7 @@ void EditorWindow::registerExtraPluginsActions(QString& dom)
 {
     DPluginLoader* const dpl = DPluginLoader::instance();
     dpl->registerEditorPlugins(this);
+    dpl->registerRawImportPlugins(this);
 
     QList<DPluginAction*> actions = dpl->pluginsActions(DPluginAction::Editor, this);
 

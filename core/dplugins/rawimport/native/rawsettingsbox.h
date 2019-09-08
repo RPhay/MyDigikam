@@ -30,15 +30,15 @@
 // Local includes
 
 #include "editortoolsettings.h"
-#include "digikam_export.h"
 #include "dimg.h"
+#include "curveswidget.h"
 
-namespace Digikam
+using namespace Digikam;
+
+namespace DigikamRawImportNativePlugin
 {
 
-class CurvesWidget;
-
-class DIGIKAM_EXPORT RawSettingsBox : public EditorToolSettings
+class RawSettingsBox : public EditorToolSettings
 {
     Q_OBJECT
 
@@ -81,6 +81,6 @@ private:
     Private* const d;
 };
 
-} // namespace Digikam
+} // namespace DigikamRawImportNativePlugin
 
 #endif // DIGIKAM_RAW_SETTINGS_BOX_H

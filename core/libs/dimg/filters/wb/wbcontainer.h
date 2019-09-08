@@ -62,15 +62,6 @@ public:
     double dark;
     double gamma;
     double saturation;
-
-    /** These values are not settings and are computed from original image which can be different
-     *  for image to process in case of preview. If all values are -1 (default), there are compute on image to process
-     *  on filter workflow, else there are used as well.
-     *  See bug #259223 for details.
-     */
-    int    maxr;
-    int    maxg;
-    int    maxb;
 };
 
 } // namespace Digikam

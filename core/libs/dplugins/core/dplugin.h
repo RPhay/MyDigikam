@@ -43,9 +43,10 @@
 /** The plugin interface identifier definitions shared between DPlugins and Loader to
  *  check the binary compatibility at run-time.
  */
-#define DIGIKAM_DPLUGIN_GENERIC_IID "org.kde.digikam.DPluginGeneric/1.1.0"
-#define DIGIKAM_DPLUGIN_EDITOR_IID  "org.kde.digikam.DPluginEditor/1.1.0"
-#define DIGIKAM_DPLUGIN_BQM_IID     "org.kde.digikam.DPluginBqm/1.1.0"
+#define DIGIKAM_DPLUGIN_GENERIC_IID   "org.kde.digikam.DPluginGeneric/1.1.0"
+#define DIGIKAM_DPLUGIN_EDITOR_IID    "org.kde.digikam.DPluginEditor/1.1.0"
+#define DIGIKAM_DPLUGIN_BQM_IID       "org.kde.digikam.DPluginBqm/1.1.0"
+#define DIGIKAM_DPLUGIN_RAWIMPORT_IID "org.kde.digikam.DPluginRawImport/1.1.0"
 
 namespace Digikam
 {

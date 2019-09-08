@@ -473,7 +473,7 @@ std::vector<QPoint> HealingCloneTool::interpolate(const QPoint& start, const QPo
     distanceVec.setY(distanceVec.y()/distance);
     int steps = (int) distance;
 
-    for(int i = 0 ; i < steps ; i++)
+    for (int i = 0 ; i < steps ; i++)
     {
         points.push_back(QPoint(start.x() + i * distanceVec.x(), start.y() + i * distanceVec.y()));
     }

@@ -42,10 +42,6 @@ WBContainer::WBContainer()
     dark           = 0.5;
     gamma          = 1.0;
     saturation     = 1.0;
-
-    maxr           = -1;
-    maxg           = -1;
-    maxb           = -1;
 }
 
 bool WBContainer::isDefault() const
