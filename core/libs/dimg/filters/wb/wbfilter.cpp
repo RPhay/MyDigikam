@@ -45,12 +45,6 @@ public:
 
     explicit Private()
     {
-        // Obsolete in algorithm since over/under exposure indicators
-        // are implemented directly with preview widget.
-        WBind   = false;
-        overExp = false;
-
-        clipSat = true;
         mr      = 1.0;
         mg      = 1.0;
         mb      = 1.0;
@@ -63,10 +57,6 @@ public:
             curve[i] = 0.0;
         }
     }
-
-    bool   clipSat;
-    bool   overExp;
-    bool   WBind;
 
     int    BP;
     int    WP;
@@ -111,21 +101,12 @@ WBFilter::~WBFilter()
 
 void WBFilter::filterImage()
 {
-    d->WP      = m_orgImage.sixteenBit() ? 65536 : 256;
-    d->rgbMax  = m_orgImage.sixteenBit() ? 65536 : 256;
+    d->WP     = m_orgImage.sixteenBit() ? 65536 : 256;
+    d->rgbMax = m_orgImage.sixteenBit() ? 65536 : 256;
 
     // Set final lut.
     setRGBmult();
-    d->mr = 1.0;
-    d->mb = 1.0;
-
-    if (d->clipSat)
-    {
-        d->mg = 1.0;
-    }
-
     setLUTv();
-    setRGBmult();
 
     // Apply White balance adjustments.
     adjustWhiteBalance(m_orgImage.bits(), m_orgImage.width(), m_orgImage.height(), m_orgImage.sixteenBit());
@@ -278,7 +259,7 @@ void WBFilter::setRGBmult()
 
 void WBFilter::setLUTv()
 {
-    double b = d->mg * pow(2, m_settings.expositionMain + m_settings.expositionFine);
+    double b = pow(2, m_settings.expositionMain + m_settings.expositionFine);
     d->BP    = (uint)(d->rgbMax * m_settings.black);
     d->WP    = (uint)(d->rgbMax / b);
 
@@ -287,12 +268,12 @@ void WBFilter::setLUTv()
         d->WP = d->BP + 1;
     }
 
-    qCDebug(DIGIKAM_DIMG_LOG) << "T(K): " << m_settings.temperature
-             << " => R:" << d->mr
-             << " G:   " << d->mg
-             << " B:   " << d->mb
-             << " BP:  " << d->BP
-             << " WP:  " << d->WP;
+    qCDebug(DIGIKAM_DIMG_LOG) << "T(K):" << m_settings.temperature
+             << "=> R:" << d->mr
+             << "   G:" << d->mg
+             << "   B:" << d->mb
+             << "  BP:" << d->BP
+             << "  WP:" << d->WP;
 
     d->curve[0] = 0.0;
 
@@ -330,7 +311,7 @@ void WBFilter::adjustWhiteBalance(uchar* const data, int width, int height, bool
 
         for (j = 0 ; runningFlag() && (j < size) ; ++j)
         {
-            int v, rv[3];
+            int idx, rv[3];
 
             blue  = ptr[0];
             green = ptr[1];
@@ -339,19 +320,13 @@ void WBFilter::adjustWhiteBalance(uchar* const data, int width, int height, bool
             rv[0] = (int)(blue  * d->mb);
             rv[1] = (int)(green * d->mg);
             rv[2] = (int)(red   * d->mr);
-            v     = qMax(rv[0], rv[1]);
-            v     = qMax(v, rv[2]);
+            idx   = qMax(rv[0], rv[1]);
+            idx   = qMax(idx, rv[2]);
+            idx   = qMin(idx, (int)d->rgbMax - 1);
 
-            if (d->clipSat)
-            {
-                v = qMin(v, (int)d->rgbMax - 1);
-            }
-
-            i = v;
-
-            ptr[0] = (uchar)pixelColor(rv[0], i, v);
-            ptr[1] = (uchar)pixelColor(rv[1], i, v);
-            ptr[2] = (uchar)pixelColor(rv[2], i, v);
+            ptr[0] = (uchar)pixelColor(rv[0], idx);
+            ptr[1] = (uchar)pixelColor(rv[1], idx);
+            ptr[2] = (uchar)pixelColor(rv[2], idx);
             ptr   += 4;
 
             progress = (int)(((double)j * 100.0) / size);
@@ -369,7 +344,7 @@ void WBFilter::adjustWhiteBalance(uchar* const data, int width, int height, bool
 
         for (j = 0 ; runningFlag() && (j < size) ; ++j)
         {
-            int v, rv[3];
+            int idx, rv[3];
 
             blue  = ptr[0];
             green = ptr[1];
@@ -378,19 +353,13 @@ void WBFilter::adjustWhiteBalance(uchar* const data, int width, int height, bool
             rv[0] = (int)(blue  * d->mb);
             rv[1] = (int)(green * d->mg);
             rv[2] = (int)(red   * d->mr);
-            v     = qMax(rv[0], rv[1]);
-            v     = qMax(v, rv[2]);
+            idx   = qMax(rv[0], rv[1]);
+            idx   = qMax(idx, rv[2]);
+            idx   = qMin(idx, (int)d->rgbMax - 1);
 
-            if (d->clipSat)
-            {
-                v = qMin(v, (int)d->rgbMax - 1);
-            }
-
-            i = v;
-
-            ptr[0] = pixelColor(rv[0], i, v);
-            ptr[1] = pixelColor(rv[1], i, v);
-            ptr[2] = pixelColor(rv[2], i, v);
+            ptr[0] = pixelColor(rv[0], idx);
+            ptr[1] = pixelColor(rv[1], idx);
+            ptr[2] = pixelColor(rv[2], idx);
             ptr   += 4;
 
             progress = (int)(((double)j * 100.0) / size);
@@ -403,23 +372,12 @@ void WBFilter::adjustWhiteBalance(uchar* const data, int width, int height, bool
     }
 }
 
-unsigned short WBFilter::pixelColor(int colorMult, int index, int value)
+unsigned short WBFilter::pixelColor(int colorMult, int index)
 {
-    int r = (d->clipSat && colorMult > (int)d->rgbMax) ? d->rgbMax : colorMult;
+    int r = (colorMult > (int)d->rgbMax) ? d->rgbMax : colorMult;
+    int c = (index - m_settings.saturation * (index - r)) * d->curve[index];
 
-    if (value > d->BP && d->overExp && value > d->WP)
-    {
-        if (d->WBind)
-        {
-            r = (colorMult > d->WP) ? 0 : r;
-        }
-        else
-        {
-            r = 0;
-        }
-    }
-
-    return((unsigned short)CLAMP((int)((index - m_settings.saturation * (index - r)) * d->curve[index]), 0, (int)(d->rgbMax - 1)));
+    return ((unsigned short)CLAMP(c, 0, (int)(d->rgbMax - 1)));
 }
 
 FilterAction WBFilter::filterAction()

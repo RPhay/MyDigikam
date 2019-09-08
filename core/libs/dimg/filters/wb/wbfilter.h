@@ -98,7 +98,7 @@ private:
     void setRGBmult();
     void setLUTv();
     void adjustWhiteBalance(uchar* const data, int width, int height, bool sixteenBit);
-    inline unsigned short pixelColor(int colorMult, int index, int value);
+    inline unsigned short pixelColor(int colorMult, int index);
 
     static void setRGBmult(double& temperature, double& green, double& mr, double& mg, double& mb);
 
