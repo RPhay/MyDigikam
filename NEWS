@@ -13,4 +13,5 @@ BUGFIXES:
 003 ==> 411696 - Cannot launch digikam-6.3.0-x86-64.appimage in Kubuntu 14.04.
 004 ==> 406503 - Histogram initializes greyer than white.
 005 ==> 411714 - Correction of ticket 408881 (Restore default tools settings) is not enforced.
-006 ==> 
+006 ==> 411702 - Video/picture Filter.
+007 ==> 
