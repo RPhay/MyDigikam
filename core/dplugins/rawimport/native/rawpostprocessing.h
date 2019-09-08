@@ -26,13 +26,14 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "dimgthreadedfilter.h"
 
-namespace Digikam
+using namespace Digikam;
+
+namespace DigikamRawImportNativePlugin
 {
 
-class DIGIKAM_EXPORT RawPostProcessing : public DImgThreadedFilter
+class RawPostProcessing : public DImgThreadedFilter
 {
 
 public:
@@ -78,6 +79,6 @@ private:
     DRawDecoding m_customRawSettings;
 };
 
-} // namespace Digikam
+} // namespace DigikamRawImportNativePlugin
 
 #endif // DIGIKAM_RAW_POST_PROCESSING_H

@@ -102,70 +102,49 @@ void EditorCore::load(const QString& filePath, IOFileSettings* const iofileSetti
 
     if (DImg::fileFormat(filePath) == DImg::RAW)
     {
-        description = LoadingDescription(filePath, iofileSettings->rawDecodingSettings,
-                                         LoadingDescription::RawDecodingGlobalSettings,
-                                         LoadingDescription::ConvertForEditor);
-
         if (EditorToolIface::editorToolIface() && iofileSettings->useRAWImport)
         {
-            d->nextRawDescription = description;
+            foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
+            {
+                DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
 
-            RawImport* const rawImport = new RawImport(QUrl::fromLocalFile(filePath), this);
-            EditorToolIface::editorToolIface()->loadTool(rawImport);
+                if (raw)
+                {
+                    connect(raw, SIGNAL(signalDecodedImage(Digikam::LoadingDescription,Digikam::DImg)),
+                            this, SLOT(slotLoadRawFromTool(Digikam::LoadingDescription,Digikam::DImg)));
 
-            connect(rawImport, SIGNAL(okClicked()),
-                    this, SLOT(slotLoadRawFromTool()));
+                    connect(raw, SIGNAL(signalLoadRaw(Digikam::LoadingDescription)),
+                            this, SLOT(slotLoadRaw(Digikam::LoadingDescription)));
 
-            connect(rawImport, SIGNAL(cancelClicked()),
-                    this, SLOT(slotLoadRaw()));
+                    raw->run(filePath, iofileSettings->rawDecodingSettings);
 
-            d->thread->stopLoading();
-            return;
+                    d->thread->stopLoading();
+                    return;
+                }
+            }
+
+            qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot found Raw Import tool! This probably due to a wrong install of plugins. Load Raw file with default settings...";
         }
-    }
-    else
-    {
-        d->nextRawDescription = LoadingDescription();
     }
 
     d->load(description);
 }
 
-void EditorCore::slotLoadRawFromTool()
+void EditorCore::slotLoadRawFromTool(const LoadingDescription& props, const DImg& img)
 {
-    if (EditorToolIface::editorToolIface())
-    {
-        RawImport* const rawImport = dynamic_cast<RawImport*>(EditorToolIface::editorToolIface()->currentTool());
+    d->resetValues();
+    d->currentDescription = props;
 
-        if (!rawImport)
-            return;
-
-        d->nextRawDescription.rawDecodingSettings = rawImport->rawDecodingSettings();
-        d->nextRawDescription.rawDecodingHint     = LoadingDescription::RawDecodingCustomSettings;
-
-        if (rawImport->hasPostProcessedImage())
-        {
-            d->resetValues();
-            d->currentDescription = d->nextRawDescription;
-            d->nextRawDescription = LoadingDescription();
-
-            emit signalLoadingStarted(d->currentDescription.filePath);
-            slotImageLoaded(d->currentDescription, rawImport->postProcessedImage());
-            EditorToolIface::editorToolIface()->unLoadTool();
-            emit signalImageLoaded(d->currentDescription.filePath, true);
-        }
-        else
-        {
-            slotLoadRaw();
-        }
-    }
+    emit signalLoadingStarted(d->currentDescription.filePath);
+    slotImageLoaded(d->currentDescription, img);
+    EditorToolIface::editorToolIface()->unLoadTool();
+    emit signalImageLoaded(d->currentDescription.filePath, true);
 }
 
-void EditorCore::slotLoadRaw()
+void EditorCore::slotLoadRaw(const LoadingDescription& props)
 {
     //qCDebug(DIGIKAM_GENERAL_LOG) << d->nextRawDescription.rawDecodingSettings;
-    d->load(d->nextRawDescription);
-    d->nextRawDescription = LoadingDescription();
+    d->load(props);
 }
 
 void EditorCore::applyTransform(const IccTransform& transform)
@@ -231,7 +210,10 @@ void EditorCore::slotImageLoaded(const LoadingDescription& loadingDescription, c
     }
 
     // RAW tool active? Discard previous loaded image
-    if (!d->nextRawDescription.filePath.isNull())
+
+    EditorTool* const tool = EditorToolIface::editorToolIface()->currentTool();
+
+    if (tool && tool->property("DPluginIId").toString().contains(QLatin1String("rawimport")))
     {
         return;
     }

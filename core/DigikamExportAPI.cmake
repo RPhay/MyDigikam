@@ -28,6 +28,7 @@ install(FILES
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dplugins/core/dpluginauthor.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dplugins/core/dplugineditor.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dplugins/core/dplugingeneric.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dplugins/core/dpluginrawimport.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dplugins/setup/dpluginloader.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dplugins/iface/dinfointerface.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dplugins/iface/dmetainfoiface.h

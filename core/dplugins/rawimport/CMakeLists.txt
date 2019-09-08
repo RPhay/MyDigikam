@@ -4,7 +4,4 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-add_subdirectory(generic)
-add_subdirectory(editor)
-add_subdirectory(bqm)
-add_subdirectory(rawimport)
+add_subdirectory(native)

@@ -33,7 +33,7 @@
 #include "bcgfilter.h"
 #include "digikam_globals.h"
 
-namespace Digikam
+namespace DigikamRawImportNativePlugin
 {
 
 RawPostProcessing::RawPostProcessing(DImg* const orgImage, QObject* const parent, const DRawDecoding& settings)
@@ -127,4 +127,4 @@ void RawPostProcessing::rawPostProcessing()
     postProgress(100);
 }
 
-} // namespace Digikam
+} // namespace DigikamRawImportNativePlugin

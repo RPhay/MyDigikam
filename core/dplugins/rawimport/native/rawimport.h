@@ -31,14 +31,15 @@
 
 #include "editortool.h"
 #include "dimg.h"
-#include "digikam_export.h"
 
-namespace Digikam
+using namespace Digikam;
+
+namespace DigikamRawImportNativePlugin
 {
 
 class DRawDecoderSettings;
 
-class DIGIKAM_EXPORT RawImport : public EditorToolThreaded
+class RawImport : public EditorToolThreaded
 {
     Q_OBJECT
 
@@ -83,6 +84,6 @@ private:
     Private* const d;
 };
 
-} // namespace Digikam
+} // namespace DigikamRawImportNativePlugin
 
 #endif // DIGIKAM_RAW_IMPORT_DLG_H

@@ -38,7 +38,6 @@
 #include "iofilesettings.h"
 #include "sharedloadsavethread.h"
 #include "dmetadata.h"
-#include "rawimport.h"
 #include "editortooliface.h"
 #include "dimg.h"
 #include "dimgfiltergenerator.h"
@@ -47,6 +46,9 @@
 #include "dimgfiltermanager.h"
 #include "versionmanager.h"
 #include "colorcorrectiondlg.h"
+#include "dpluginloader.h"
+#include "dpluginrawimport.h"
+#include "editortool.h"
 
 namespace Digikam
 {
@@ -143,7 +145,6 @@ public:
 
     SharedLoadSaveThread*      thread;
     LoadingDescription         currentDescription;
-    LoadingDescription         nextRawDescription;
 };
 
 void EditorCore::Private::putImageData(uchar* const data, int w, int h, bool sixteenBit)

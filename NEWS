@@ -3,6 +3,7 @@ digiKam 6.4.0 - Release date: 2019-??-??
 *****************************************************************************************************
 NEW FEATURES:
 
+General : new RawImport plugin interface to delegate Raw decoding function to extra engine.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -10,4 +11,5 @@ BUGFIXES:
 001 ==> 411587 - [digiKam] Crash when reopening Google Photos import wizard.
 002 ==> 411578 - White Balance changes global luminosity.
 003 ==> 411696 - Cannot launch digikam-6.3.0-x86-64.appimage in Kubuntu 14.04.
-004 ==> 
+004 ==> 406503 - Histogram initializes greyer than white.
+005 ==> 

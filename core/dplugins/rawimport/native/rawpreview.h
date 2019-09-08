@@ -35,16 +35,16 @@
 
 #include "dimg.h"
 #include "graphicsdimgview.h"
-#include "digikam_export.h"
+#include "loadingdescription.h"
 
 class QPixmap;
 
-namespace Digikam
+using namespace Digikam;
+
+namespace DigikamRawImportNativePlugin
 {
 
-class LoadingDescription;
-
-class DIGIKAM_EXPORT RawPreview : public GraphicsDImgView
+class  RawPreview : public GraphicsDImgView
 {
     Q_OBJECT
 
@@ -93,6 +93,6 @@ private:
     Private* const d;
 };
 
-} // namespace Digikam
+} // namespace DigikamRawImportNativePlugin
 
 #endif // DIGIKAM_RAW_PREVIEW_H

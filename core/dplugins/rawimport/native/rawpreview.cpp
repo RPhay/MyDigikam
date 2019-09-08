@@ -41,12 +41,11 @@
 
 #include "digikam_debug.h"
 #include "managedloadsavethread.h"
-#include "loadingdescription.h"
 #include "editorcore.h"
 #include "previewlayout.h"
 #include "imagepreviewitem.h"
 
-namespace Digikam
+namespace DigikamRawImportNativePlugin
 {
 
 class Q_DECL_HIDDEN RawPreview::Private
@@ -225,4 +224,4 @@ QImage RawPreview::previewToQImage() const
     return d->item->image().copyQImage();
 }
 
-} // namespace Digikam
+} // namespace DigikamRawImportNativePlugin
