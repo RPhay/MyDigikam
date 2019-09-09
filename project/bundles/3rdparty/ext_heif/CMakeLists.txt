@@ -15,6 +15,8 @@ if(MINGW)
         URL https://github.com/strukturag/libde265/archive/v1.0.3.tar.gz
         URL_MD5 189b4deb376ff879f8cbb2b7ffc24f97
 
+        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/de265-sse-mxe.patch
+
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo "-DDISABLE_SSE=OFF"
 
