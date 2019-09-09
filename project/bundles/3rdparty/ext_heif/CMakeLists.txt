@@ -8,23 +8,32 @@
 
 set(PREFIX_ext_heif "${EXTPREFIX}")
 
+CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/libde265.pc.in_cmake ${CMAKE_BINARY_DIR}/libde265.pc)
+CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/libheif.pc.in_cmake ${CMAKE_BINARY_DIR}/libheif.pc)
+
 if(MINGW)
 
     ExternalProject_Add(de265
+
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         URL https://github.com/strukturag/libde265/archive/v1.0.3.tar.gz
         URL_MD5 189b4deb376ff879f8cbb2b7ffc24f97
 
-        INSTALL_DIR ${EXTPREFIX}
+        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/de265-sse-mxe.patch
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
+                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo "-DDISABLE_SSE=OFF"
+
+        BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE)
+
+        BUILD_IN_SOURCE 1
 
         INSTALL_COMMAND mkdir -p ${EXTPREFIX}/include/libde265/ &&
-                        cp -fv <BINARY_DIR>/libde265/de265-version.h ${EXTPREFIX}/include/libde265/ &&
+                        cp -fv <SOURCE_DIR>/build.mxe/libde265/de265-version.h ${EXTPREFIX}/include/libde265/ &&
                         cp -fv <SOURCE_DIR>/libde265/de265.h ${EXTPREFIX}/include/libde265/ &&
-                        cp -fv <BINARY_DIR>/libde265/libde265.so ${EXTPREFIX}/lib/ &&
-                        cp -fv ${CMAKE_CURRENT_SOURCE_DIR}/libde265.pc ${EXTPREFIX}/lib/pkgconfig/
+                        cp -fv <SOURCE_DIR>/build.mxe/libde265/liblibde265.dll ${EXTPREFIX}/bin/libde265.dll &&
+                        cp -fv <SOURCE_DIR>/build.mxe/libde265/liblibde265.dll.a ${EXTPREFIX}/lib/libde265.a &&
+                        cp -fv ${CMAKE_BINARY_DIR}/libde265.pc ${EXTPREFIX}/lib/pkgconfig/
 
         UPDATE_COMMAND ""
         ALWAYS 0
@@ -37,18 +46,21 @@ if(MINGW)
         URL https://github.com/strukturag/libheif/archive/v1.4.0.tar.gz
         URL_MD5 05dea500c105289c74270791cb5f8942
 
-        INSTALL_DIR ${PREFIX_ext_heif}
-
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
+                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo
+
+        BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE)
+
+        BUILD_IN_SOURCE 1
 
         INSTALL_COMMAND mkdir -p ${PREFIX_ext_heif}/include/libheif/ &&
                         cp -fv <SOURCE_DIR>/libheif/heif_version.h ${PREFIX_ext_heif}/include/libheif/ &&
                         cp -fv <SOURCE_DIR>/libheif/heif.h ${PREFIX_ext_heif}/include/libheif/ &&
                         cp -fv <SOURCE_DIR>/libheif/heif_cxx.h ${PREFIX_ext_heif}/include/libheif/ &&
                         cp -fv <SOURCE_DIR>/libheif/heif_plugin.h ${PREFIX_ext_heif}/include/libheif/ &&
-                        cp -fv <BINARY_DIR>/libheif/libheif.so ${PREFIX_ext_heif}/lib/ &&
-                        cp -fv ${CMAKE_CURRENT_SOURCE_DIR}/libheif.pc ${PREFIX_ext_heif}/lib/pkgconfig/
+                        cp -fv <SOURCE_DIR>/build.mxe/libheif/liblibheif.dll ${PREFIX_ext_heif}/bin/libheif.dll &&
+                        cp -fv <SOURCE_DIR>/build.mxe/libheif/liblibheif.dll.a ${PREFIX_ext_heif}/lib/libheif.a &&
+                        cp -fv ${CMAKE_BINARY_DIR}/libheif.pc ${PREFIX_ext_heif}/lib/pkgconfig/
 
         UPDATE_COMMAND ""
         ALWAYS 0
@@ -62,6 +74,7 @@ elseif(APPLE)
 else() # Linux
 
     ExternalProject_Add(de265
+
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         URL https://github.com/strukturag/libde265/archive/v1.0.3.tar.gz
         URL_MD5 189b4deb376ff879f8cbb2b7ffc24f97
@@ -78,7 +91,7 @@ else() # Linux
                         cp -fv <BINARY_DIR>/libde265/de265-version.h /usr/include/libde265/ &&
                         cp -fv <SOURCE_DIR>/libde265/de265.h /usr/include/libde265/ &&
                         cp -fv <BINARY_DIR>/libde265/libde265.so /usr/lib/ &&
-                        cp -fv ${CMAKE_CURRENT_SOURCE_DIR}/libde265.pc /usr/lib/pkgconfig/
+                        cp -fv ${CMAKE_BINARY_DIR}/libde265.pc /usr/lib/pkgconfig/
 
         UPDATE_COMMAND ""
         ALWAYS 0
@@ -103,7 +116,7 @@ else() # Linux
                         cp -fv <SOURCE_DIR>/libheif/heif_cxx.h /usr/include/libheif/ &&
                         cp -fv <SOURCE_DIR>/libheif/heif_plugin.h /usr/include/libheif/ &&
                         cp -fv <BINARY_DIR>/libheif/libheif.so /usr/lib/ &&
-                        cp -fv ${CMAKE_CURRENT_SOURCE_DIR}/libheif.pc /usr/lib/pkgconfig/
+                        cp -fv ${CMAKE_BINARY_DIR}/libheif.pc /usr/lib/pkgconfig/
 
         UPDATE_COMMAND ""
         ALWAYS 0
