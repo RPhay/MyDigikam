@@ -15,10 +15,12 @@ if(MINGW)
         URL https://github.com/strukturag/libde265/archive/v1.0.3.tar.gz
         URL_MD5 189b4deb376ff879f8cbb2b7ffc24f97
 
-        INSTALL_DIR ${EXTPREFIX}
-
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
+                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo "-DDISABLE_SSE=OFF"
+
+        BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE)
+
+        BUILD_IN_SOURCE 1
 
         INSTALL_COMMAND mkdir -p ${EXTPREFIX}/include/libde265/ &&
                         cp -fv <BINARY_DIR>/libde265/de265-version.h ${EXTPREFIX}/include/libde265/ &&
@@ -37,10 +39,12 @@ if(MINGW)
         URL https://github.com/strukturag/libheif/archive/v1.4.0.tar.gz
         URL_MD5 05dea500c105289c74270791cb5f8942
 
-        INSTALL_DIR ${PREFIX_ext_heif}
-
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
-                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
+                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo
+
+        BUILD_COMMAND cd <SOURCE_DIR>/build.mxe && $(MAKE)
+
+        BUILD_IN_SOURCE 1
 
         INSTALL_COMMAND mkdir -p ${PREFIX_ext_heif}/include/libheif/ &&
                         cp -fv <SOURCE_DIR>/libheif/heif_version.h ${PREFIX_ext_heif}/include/libheif/ &&
