@@ -113,6 +113,9 @@ void EditorCore::load(const QString& filePath, IOFileSettings* const iofileSetti
                     connect(raw, SIGNAL(signalDecodedImage(Digikam::LoadingDescription,Digikam::DImg)),
                             this, SLOT(slotLoadRawFromTool(Digikam::LoadingDescription,Digikam::DImg)));
 
+                    connect(raw, SIGNAL(signalDecodedImage(Digikam::LoadingDescription)),
+                            this, SLOT(slotLoadRaw(Digikam::LoadingDescription)));
+
                     connect(raw, SIGNAL(signalLoadRaw(Digikam::LoadingDescription)),
                             this, SLOT(slotLoadRaw(Digikam::LoadingDescription)));
 
