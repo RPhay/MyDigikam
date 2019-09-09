@@ -505,6 +505,7 @@ bool AlbumManager::renamePAlbum(PAlbum* album, const QString& newName,
     updateAlbumPathHash();
     emit signalAlbumRenamed(album);
 
+    ScanController::instance()->scheduleCollectionScanRelaxed(album->albumRootPath() + newAlbumPath);
     ScanController::instance()->resumeCollectionScan();
 
     return true;
