@@ -481,10 +481,19 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
         if (location.isAvailable())
         {
             QFileInfo fileInfo(location.albumRootPath() + (*it).relativePath);
+            bool dirExist = (fileInfo.exists() && fileInfo.isDir());
+
+            if (!(*it).relativePath.endsWith(QLatin1Char('/')))
+            {
+                QDir dir(fileInfo.dir());
+                dirExist = dir.entryList(QDir::Dirs |
+                                         QDir::NoDotAndDotDot)
+                                         .contains(fileInfo.fileName());
+            }
 
             // let digikam think that ignored directories got deleted
             // (if they already exist in the database, this will delete them)
-            if (!fileInfo.exists() || !fileInfo.isDir() || d->ignoreDirectory.contains(fileInfo.fileName()))
+            if (!dirExist || d->ignoreDirectory.contains(fileInfo.fileName()))
             {
                 toBeDeleted << (*it).id;
                 d->scannedAlbums << (*it).id;
@@ -535,9 +544,18 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
                 if (location.isAvailable())
                 {
                     QFileInfo fileInfo(location.albumRootPath() + it.key().relativePath);
+                    bool dirExist = (fileInfo.exists() && fileInfo.isDir());
+
+                    if (!it.key().relativePath.endsWith(QLatin1Char('/')))
+                    {
+                        QDir dir(fileInfo.dir());
+                        dirExist = dir.entryList(QDir::Dirs |
+                                                 QDir::NoDotAndDotDot)
+                                                 .contains(fileInfo.fileName());
+                    }
 
                     // Make sure ignored directories are not used in renaming operations
-                    if (fileInfo.exists() && fileInfo.isDir() && d->ignoreDirectory.contains(fileInfo.fileName()))
+                    if (dirExist && d->ignoreDirectory.contains(fileInfo.fileName()))
                     {
                         // Just set a new root/relativePath to the album. Further scanning will care for all cases or error.
                         CoreDbAccess().db()->renameAlbum(it.value().albumId, it.key().albumRootId, it.key().relativePath);
