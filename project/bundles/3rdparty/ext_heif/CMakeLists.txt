@@ -17,9 +17,8 @@ if(MINGW)
 
         INSTALL_DIR ${EXTPREFIX}
 
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX}
-                   -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
-                   ${GLOBAL_PROFILE}
+        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
+                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
 
         INSTALL_COMMAND mkdir -p ${EXTPREFIX}/include/libde265/ &&
                         cp -fv <BINARY_DIR>/libde265/de265-version.h ${EXTPREFIX}/include/libde265/ &&
@@ -40,9 +39,8 @@ if(MINGW)
 
         INSTALL_DIR ${PREFIX_ext_heif}
 
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_heif}
-                   -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
-                   ${GLOBAL_PROFILE}
+        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
+                          <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
 
         INSTALL_COMMAND mkdir -p ${PREFIX_ext_heif}/include/libheif/ &&
                         cp -fv <SOURCE_DIR>/libheif/heif_version.h ${PREFIX_ext_heif}/include/libheif/ &&
