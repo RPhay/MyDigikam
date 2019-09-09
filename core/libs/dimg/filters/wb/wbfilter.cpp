@@ -229,10 +229,11 @@ void WBFilter::setRGBmult(double& temperature, double& green, double& mr, double
         mg = 288.1221695283 * pow(mg, -0.0755148492);
     }
 
-    // Apply green multiplier
-    mg = mg / green;
+    mg = 1.0 / 255.0 * CLAMP(mg, 0.0, 255.0);
 
-    mg = 1.0 / (1.0 / 255.0 * CLAMP(mg, 0.0, 255.0));
+    // Apply green multiplier
+    mg = mg  / green;
+    mg = 1.0 / mg;
 
     if (temp >= 66.0)
     {
@@ -296,7 +297,7 @@ void WBFilter::setLUTv()
 void WBFilter::adjustWhiteBalance(uchar* const data, int width, int height, bool sixteenBit)
 {
     uint size = (uint)(width * height);
-    uint i, j;
+    uint j;
     int  progress;
 
     if (!sixteenBit)        // 8 bits image.
