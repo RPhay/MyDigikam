@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index af2001d7..b2ef9bd4 100644
+index af2001d7..e6cd2749 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -43,14 +43,14 @@ elseif("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang")
@@ -25,6 +25,15 @@ index af2001d7..b2ef9bd4 100644
  
  include_directories ("${PROJECT_SOURCE_DIR}")
  include_directories ("${PROJECT_BINARY_DIR}")
+@@ -64,7 +64,7 @@ endif()
+ if(UNIX)
+   set(LIBDE265_LIBRARY_NAME de265)
+ else()
+-  set(LIBDE265_LIBRARY_NAME libde265)
++  set(LIBDE265_LIBRARY_NAME de265)
+ endif()
+ 
+ add_subdirectory (libde265)
 diff --git a/libde265/CMakeLists.txt b/libde265/CMakeLists.txt
 index 137e1970..6bfc5045 100644
 --- a/libde265/CMakeLists.txt

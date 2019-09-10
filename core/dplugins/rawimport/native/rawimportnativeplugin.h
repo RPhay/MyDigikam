@@ -27,7 +27,7 @@
 
 #include "dpluginrawimport.h"
 
-#define DPLUGIN_IID "org.kde.digikam.plugin.RawImport.Native"
+#define DPLUGIN_IID "org.kde.digikam.plugin.rawimport.Native"
 
 using namespace Digikam;
 
