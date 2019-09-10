@@ -1475,6 +1475,13 @@ QVariantList CoreDB::getImagesFields(qlonglong imageID, DatabaseFields::Images f
         {
             return QVariantList();
         }
+
+        // Convert date times to QDateTime, they come as QString
+        if ((fields & DatabaseFields::ModificationDate))
+        {
+            int index     = fieldNames.indexOf(QLatin1String("modificationDate"));
+            values[index] = values.at(index).toDateTime();
+        }
     }
 
     return values;
@@ -1496,6 +1503,19 @@ QVariantList CoreDB::getItemInformation(qlonglong imageID, DatabaseFields::ItemI
         if (fieldNames.size() != values.size())
         {
             return QVariantList();
+        }
+
+        // Convert date times to QDateTime, they come as QString
+        if ((fields & DatabaseFields::CreationDate))
+        {
+            int index     = fieldNames.indexOf(QLatin1String("creationDate"));
+            values[index] = values.at(index).toDateTime();
+        }
+
+        if ((fields & DatabaseFields::DigitizationDate))
+        {
+            int index     = fieldNames.indexOf(QLatin1String("digitizationDate"));
+            values[index] = values.at(index).toDateTime();
         }
     }
 
