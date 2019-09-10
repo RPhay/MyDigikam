@@ -3856,36 +3856,31 @@ QHash<qlonglong, QPair<int, int> > CoreDB::getAllItemsWithAlbum() const
 
 QList<ItemScanInfo> CoreDB::getItemScanInfos(int albumID) const
 {
-    QList<QVariant> values;
-
-    d->db->execSql(QString::fromUtf8("SELECT id, album, name, status, category, modificationDate, fileSize, uniqueHash "
-                                     "FROM Images WHERE album=?;"),
-                   albumID, &values);
-
     QList<ItemScanInfo> list;
 
-    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
+    QString sql = QString::fromUtf8("SELECT id, album, name, status, category, modificationDate, fileSize, uniqueHash "
+                                    "FROM Images WHERE album=?;");
+
+    DbEngineSqlQuery query = d->db->prepareQuery(sql);
+    query.addBindValue(albumID);
+
+    if (d->db->exec(query))
     {
-        ItemScanInfo info;
+        while (query.next())
+        {
+            ItemScanInfo info;
 
-        info.id               = (*it).toLongLong();
-        ++it;
-        info.albumID          = (*it).toInt();
-        ++it;
-        info.itemName         = (*it).toString();
-        ++it;
-        info.status           = (DatabaseItem::Status)(*it).toInt();
-        ++it;
-        info.category         = (DatabaseItem::Category)(*it).toInt();
-        ++it;
-        info.modificationDate = (*it).toDateTime();
-        ++it;
-        info.fileSize         = (*it).toLongLong();
-        ++it;
-        info.uniqueHash       = (*it).toString();
-        ++it;
+            info.id               = query.value(0).toLongLong();
+            info.albumID          = query.value(1).toInt();
+            info.itemName         = query.value(2).toString();
+            info.status           = (DatabaseItem::Status)query.value(3).toInt();
+            info.category         = (DatabaseItem::Category)query.value(4).toInt();
+            info.modificationDate = query.value(5).toDateTime();
+            info.fileSize         = query.value(6).toLongLong();
+            info.uniqueHash       = query.value(7).toString();
 
-        list << info;
+            list << info;
+        }
     }
 
     return list;
