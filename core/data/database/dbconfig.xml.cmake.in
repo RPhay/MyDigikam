@@ -1466,8 +1466,8 @@
             </dbaction>
 
             <dbaction name="deleteAlbumRootPath" mode="transaction">
-                <statement mode="query">SELECT @albumID:=id FROM Albums WHERE albumRoot=:albumRoot AND relativePath=:relativePath;</statement>
-                <statement mode="query">DELETE FROM Albums WHERE albumRoot=:albumRoot AND relativePath=:relativePath;</statement>
+                <statement mode="query">SELECT @albumID:=id FROM Albums WHERE albumRoot=:albumRoot AND BINARY relativePath=:relativePath;</statement>
+                <statement mode="query">DELETE FROM Albums WHERE albumRoot=:albumRoot AND BINARY relativePath=:relativePath;</statement>
                 <statement mode="query">DELETE FROM Images WHERE Images.album=@albumID;</statement>
             </dbaction>
 
