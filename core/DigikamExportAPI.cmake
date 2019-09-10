@@ -91,6 +91,7 @@ install(FILES
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/threadimageio/thumb/thumbnailinfo.h
 
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dialogs/dmessagebox.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dialogs/dprogresdlg.h
 
               # As part of DigikamDatabase
 
