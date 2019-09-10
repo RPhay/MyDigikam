@@ -78,18 +78,18 @@ DProgressDlg::DProgressDlg(QWidget* const parent, const QString& caption)
     setModal(true);
     setWindowTitle(caption);
 
-    d->buttons = new QDialogButtonBox(QDialogButtonBox::Cancel, this);
+    d->buttons              = new QDialogButtonBox(QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Cancel)->setDefault(true);
 
     QWidget* const page     = new QWidget(this);
     QGridLayout* const grid = new QGridLayout(page);
 
-    d->actionPix      = new QLabel(page);
-    d->actionLabel    = new DAdjustableLabel(page);
-    d->logo           = new QLabel(page);
-    d->progress       = new QProgressBar(page);
-    d->title          = new QLabel(page);
-    d->label          = new QLabel(page);
+    d->actionPix            = new QLabel(page);
+    d->actionLabel          = new DAdjustableLabel(page);
+    d->logo                 = new QLabel(page);
+    d->progress             = new QProgressBar(page);
+    d->title                = new QLabel(page);
+    d->label                = new QLabel(page);
     d->actionPix->setFixedSize(QSize(32, 32));
 
     d->logo->setPixmap(QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(48,48)));
