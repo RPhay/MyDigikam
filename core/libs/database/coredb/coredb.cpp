@@ -3284,7 +3284,7 @@ QMap<int, int> CoreDB::getNumberOfImagesInAlbums() const
 {
     QList<QVariant> values, allAbumIDs;
     QMap<int, int>  albumsStatMap;
-    int             albumID;
+    int             albumID, count;
 
     // initialize allAbumIDs with all existing albums from db to prevent
     // wrong album image counters
@@ -3297,24 +3297,18 @@ QMap<int, int> CoreDB::getNumberOfImagesInAlbums() const
         albumsStatMap.insert(albumID, 0);
     }
 
-    d->db->execSql(QString::fromUtf8("SELECT album FROM Images WHERE Images.status=1;"),
+    d->db->execSql(QString::fromUtf8("SELECT album, COUNT(*) FROM Images "
+                                     "WHERE Images.status=1 GROUP BY album;"),
                    &values);
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
         albumID = (*it).toInt();
         ++it;
+        count   = (*it).toInt();
+        ++it;
 
-        QMap<int, int>::iterator it2 = albumsStatMap.find(albumID);
-
-        if (it2 == albumsStatMap.end())
-        {
-            albumsStatMap.insert(albumID, 1);
-        }
-        else
-        {
-            it2.value()++;
-        }
+        albumsStatMap[albumID] = count;
     }
 
     return albumsStatMap;
@@ -3324,7 +3318,7 @@ QMap<int, int> CoreDB::getNumberOfImagesInTags() const
 {
     QList<QVariant> values, allTagIDs;
     QMap<int, int>  tagsStatMap;
-    int             tagID;
+    int             tagID, count;
 
     // initialize allTagIDs with all existing tags from db to prevent
     // wrong tag counters
@@ -3336,26 +3330,19 @@ QMap<int, int> CoreDB::getNumberOfImagesInTags() const
         tagsStatMap.insert(tagID, 0);
     }
 
-    d->db->execSql(QString::fromUtf8("SELECT tagid FROM ImageTags "
+    d->db->execSql(QString::fromUtf8("SELECT tagid, COUNT(*) FROM ImageTags "
                                      "LEFT JOIN Images ON Images.id=ImageTags.imageid "
-                                     " WHERE Images.status=1;"),
+                                     " WHERE Images.status=1 GROUP BY tagid;"),
                    &values);
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
         tagID = (*it).toInt();
         ++it;
+        count = (*it).toInt();
+        ++it;
 
-        QMap<int, int>::iterator it2 = tagsStatMap.find(tagID);
-
-        if (it2 == tagsStatMap.end())
-        {
-            tagsStatMap.insert(tagID, 1);
-        }
-        else
-        {
-            it2.value()++;
-        }
+        tagsStatMap[tagID] = count;
     }
 
     return tagsStatMap;
