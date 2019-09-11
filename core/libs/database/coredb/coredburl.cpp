@@ -187,8 +187,8 @@ CoreDbUrl CoreDbUrl::mapImagesUrl(const DbEngineParameters& parameters)
     return url;
 }
 
-CoreDbUrl CoreDbUrl::fromAreaRange(const qreal lat1, const qreal lat2,
-                                   const qreal lng1, const qreal lng2,
+CoreDbUrl CoreDbUrl::fromAreaRange(const qreal lat1, const qreal lng1,
+                                   const qreal lat2, const qreal lng2,
                                    const DbEngineParameters& parameters)
 {
     CoreDbUrl url;

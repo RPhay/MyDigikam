@@ -1,0 +1,22 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 12dfdd9..fec1a57 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -36,7 +36,7 @@ configure_file (
+ 
+ if(NOT MSVC)
+   add_definitions(-Wall)
+-  add_definitions(-Werror)
++#  add_definitions(-Werror)
+   add_definitions(-Wsign-compare)
+   add_definitions(-Wconversion)
+   add_definitions(-Wno-sign-conversion)
+@@ -64,7 +64,7 @@ include_directories ("${PROJECT_SOURCE_DIR}")
+ if(UNIX)
+   set(LIBHEIF_LIBRARY_NAME heif)
+ else()
+-  set(LIBHEIF_LIBRARY_NAME libheif)
++  set(LIBHEIF_LIBRARY_NAME heif)
+ endif()
+ 
+ add_subdirectory (examples)

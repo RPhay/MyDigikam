@@ -130,7 +130,9 @@ public:
      */
     static CoreDbUrl mapImagesUrl(const DbEngineParameters& parameters = CoreDbAccess::parameters());
 
-    static CoreDbUrl fromAreaRange(const qreal lat1, const qreal lng1, const qreal lat2, const qreal lng2, const DbEngineParameters& parameters = CoreDbAccess::parameters());
+    static CoreDbUrl fromAreaRange(const qreal lat1, const qreal lng1,
+                                   const qreal lat2, const qreal lng2,
+                                   const DbEngineParameters& parameters = CoreDbAccess::parameters());
 
     /**
      * Create a digikamsearch: URL for the search with the given id.

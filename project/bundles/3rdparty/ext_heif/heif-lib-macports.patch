@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 12dfdd9..14220da 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -67,6 +67,6 @@ else()
+   set(LIBHEIF_LIBRARY_NAME libheif)
+ endif()
+ 
+-add_subdirectory (examples)
++#add_subdirectory (examples)
+ add_subdirectory (libheif)
+-add_subdirectory (gdk-pixbuf)
++#add_subdirectory (gdk-pixbuf)

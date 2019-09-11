@@ -84,10 +84,6 @@ Q_SIGNALS:
     /** Signal to emit to notify host application to load pre-decoded Raw preprocessed with these decoding settings.
      */
     void signalDecodedImage(const Digikam::LoadingDescription&, const Digikam::DImg&);
-
-    /** Signal to emit to notify host application to load pre-decoded Raw preprocessed and saved into a temporary file.
-     */
-    void signalDecodedImage(const Digikam::LoadingDescription&);
 };
 
 } // namespace Digikam

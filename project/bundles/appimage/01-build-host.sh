@@ -136,8 +136,7 @@ urpmi --auto \
       ${LIBSUFFIX}png-devel \
       ${LIBSUFFIX}tiff-devel \
       ${LIBSUFFIX}icu-devel \
-      ${LIBSUFFIX}lqr-devel \
-      ${LIBSUFFIX}magick-devel
+      ${LIBSUFFIX}lqr-devel
 
 #################################################################################################
 
@@ -194,6 +193,8 @@ cmake --build . --config RelWithDebInfo --target ext_qtav          -- -j$CPU_COR
 cmake --build . --config RelWithDebInfo --target ext_exiv2         -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_opencv        -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_lensfun       -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_heif          -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_imagemagick   -- -j$CPU_CORES
 
 #################################################################################################
 

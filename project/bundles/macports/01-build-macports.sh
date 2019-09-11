@@ -84,7 +84,8 @@ if [ -d "$INSTALL_PREFIX" ] ; then
     if echo "$answer" | grep -iq "^r" ;then
 
         echo "---------- Removing existing $INSTALL_PREFIX"
-        rm -rf "$INSTALL_PREFIX"
+        mv $INSTALL_PREFIX $INSTALL_PREFIX.old
+        rm -rf $INSTALL_PREFIX.old
 
     elif echo "$answer" | grep -iq "^c" ;then
 
@@ -240,7 +241,6 @@ port install \
              libgphoto2 \
              jasper \
              lcms2 \
-             ImageMagick \
              expat \
              libxml2 \
              libxslt \
@@ -289,6 +289,9 @@ cmake $ORIG_WD/../3rdparty \
 cmake --build . --config RelWithDebInfo --target ext_opencv -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_exiv2  -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_qtav   -- -j$CPU_CORES
+cmake --build . --config RelWithDebInfo --target ext_heif   -- -j$CPU_CORES
+
+port install ImageMagick
 
 #################################################################################################
 

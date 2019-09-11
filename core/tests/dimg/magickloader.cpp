@@ -139,7 +139,7 @@ int main(int argc, char** argv)
         if (inf->encoder) mode.append(QLatin1Char('W'));
         else              mode.append(QLatin1Char('-'));
 
-#if (MagickLibVersion >= 0x708 && defined(magick_module))
+#if (MagickLibVersion >= 0x69A && defined(magick_module))
         QString mod  = QLatin1String(inf->magick_module);
 #else
         QString mod  = QLatin1String(inf->module);

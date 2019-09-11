@@ -62,7 +62,7 @@ public Q_SLOTS:
     void setValue(int value);
     void setButtonText(const QString& text);
 
-    void addedAction(const QPixmap &icon, const QString& text);
+    void addedAction(const QPixmap& icon, const QString& text);
     void reset();
 
 protected Q_SLOTS:
