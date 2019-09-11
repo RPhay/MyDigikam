@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 276aec3..fb4eb27 100644
+index 3ff3fe2..91680ce 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -44,7 +44,7 @@ find_package(KF5Config ${KF5_DEP_VERSION} REQUIRED)
+@@ -50,7 +50,7 @@ find_package(KF5Config ${KF5_DEP_VERSION} REQUIRED)
  find_package(KF5ConfigWidgets ${KF5_DEP_VERSION} REQUIRED)
  find_package(KF5I18n ${KF5_DEP_VERSION} REQUIRED)
  find_package(KF5IconThemes ${KF5_DEP_VERSION} REQUIRED)
@@ -12,10 +12,10 @@ index 276aec3..fb4eb27 100644
  find_package(KF5WindowSystem ${KF5_DEP_VERSION} REQUIRED)
  find_package(KF5Attica ${KF5_DEP_VERSION})
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 1a9442c..905926c 100644
+index d31e3ee..e869058 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -99,7 +99,7 @@ PRIVATE
+@@ -93,7 +93,7 @@ PRIVATE
      KF5::ItemViews           #KWidgetItemDelegate in KAboutApplicationPersonListDelegate
      KF5::I18n                #i18n and i18nc in many places
      KF5::IconThemes         #KIconLoader and KIconThemes in KToolBar
@@ -25,13 +25,13 @@ index 1a9442c..905926c 100644
      ${XMLGUI_EXTRA_LIBS}
  )
 diff --git a/src/kbugreport.cpp b/src/kbugreport.cpp
-index 67a6586..3f3b5f8 100644
+index 4f00cad..1a0dc9e 100644
 --- a/src/kbugreport.cpp
 +++ b/src/kbugreport.cpp
 @@ -36,6 +36,7 @@
- #include <QLineEdit>
- #include <QStandardPaths>
  #include <QDebug>
+ #include <QHBoxLayout>
+ #include <QGridLayout>
 +#include <QTextEdit>
  
  #include <kaboutdata.h>
@@ -45,7 +45,7 @@ index 67a6586..3f3b5f8 100644
  #include <ktitlewidget.h>
  
  #include "kdepackages.h"
-@@ -72,7 +73,7 @@ public:
+@@ -74,7 +75,7 @@ public:
      QProcess *m_process;
      KAboutData m_aboutData;
  
@@ -54,7 +54,7 @@ index 67a6586..3f3b5f8 100644
      QLineEdit *m_subject;
      QLabel *m_from;
      QLabel *m_version;
-@@ -277,12 +278,12 @@ KBugReport::KBugReport(const KAboutData &aboutData, QWidget *_parent)
+@@ -284,12 +285,12 @@ KBugReport::KBugReport(const KAboutData &aboutData, QWidget *_parent)
          lay->addWidget(label);
  
          // The multiline-edit
