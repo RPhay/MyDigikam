@@ -131,6 +131,8 @@ else() # Linux
 
         INSTALL_DIR ${EXTPREFIX}
 
+        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/de265-lib-linux.patch
+
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX}
                    -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                    ${GLOBAL_PROFILE}
