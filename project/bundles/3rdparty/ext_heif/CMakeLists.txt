@@ -74,6 +74,8 @@ elseif(APPLE)
     ExternalProject_Add(de265
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+
+        # NOTE: v1.0.3 do not compile under MacOS
         GIT_REPOSITORY https://github.com/strukturag/libde265.git
 
         INSTALL_DIR ${EXTPREFIX}
