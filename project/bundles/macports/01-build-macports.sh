@@ -84,7 +84,8 @@ if [ -d "$INSTALL_PREFIX" ] ; then
     if echo "$answer" | grep -iq "^r" ;then
 
         echo "---------- Removing existing $INSTALL_PREFIX"
-        rm -rf "$INSTALL_PREFIX"
+        mv $INSTALL_PREFIX $INSTALL_PREFIX.old
+        rm -rf $INSTALL_PREFIX.old
 
     elif echo "$answer" | grep -iq "^c" ;then
 
