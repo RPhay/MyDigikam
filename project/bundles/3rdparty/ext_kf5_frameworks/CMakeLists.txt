@@ -198,11 +198,11 @@ function(InstallKF5Component
 endfunction()
 
 if(MINGW)
-    set(KF5_VERSION 5.59) # we have Qt 5.12.1 available.
+    set(KF5_VERSION 5.61) # we have Qt 5.12.1 available.
 elseif(APPLE)
-    set(KF5_VERSION 5.59) # we have Qt 5.11.3 available.
+    set(KF5_VERSION 5.61) # we have Qt 5.11.3 available.
 else()
-    set(KF5_VERSION 5.59) # we have Qt 5.11.3 available.
+    set(KF5_VERSION 5.61) # we have Qt 5.11.3 available.
 endif()
 
 if(APPLE)
@@ -241,4 +241,3 @@ InstallKF5Component(sonnet              ${KF5_VERSION} ""                       
 InstallKF5Component(ktextwidgets        ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kio                 ${KF5_VERSION} ""                                                                   "kio-drop-ktextwidgets.patch")
 InstallKF5Component(kinit               ${KF5_VERSION} ""                                                                   "")
-InstallKF5Component(kdewebkit           ${KF5_VERSION} ""                                                                   "")
