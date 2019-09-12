@@ -241,4 +241,3 @@ InstallKF5Component(sonnet              ${KF5_VERSION} ""                       
 InstallKF5Component(ktextwidgets        ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kio                 ${KF5_VERSION} ""                                                                   "kio-drop-ktextwidgets.patch")
 InstallKF5Component(kinit               ${KF5_VERSION} ""                                                                   "")
-InstallKF5Component(kdewebkit           ${KF5_VERSION} ""                                                                   "")
