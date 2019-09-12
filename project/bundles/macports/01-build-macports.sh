@@ -290,7 +290,8 @@ cmake --build . --config RelWithDebInfo --target ext_opencv      -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_exiv2       -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_qtav        -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_heif        -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_imagemagick -- -j$CPU_CORES
+
+port install ImageMagick
 
 #################################################################################################
 
