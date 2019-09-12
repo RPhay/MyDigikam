@@ -182,8 +182,6 @@ void WhiteBalanceTool::slotAutoAdjustExposure()
 
 void WhiteBalanceTool::preparePreview()
 {
-    ImageIface iface;
-    DImg* const img      = iface.original();
     WBContainer settings = d->settingsView->settings();
 
     d->gboxSettings->histogramBox()->histogram()->stopHistogramComputation();
