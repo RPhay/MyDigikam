@@ -16,4 +16,5 @@ BUGFIXES:
 006 ==> 411702 - Video/picture Filter.
 007 ==> 411726 - Geolocation not working.
 008 ==> 387768 - File system corruption after renaming folder.
-009 ==> 
+009 ==> 411808 - digiKam quit unexpectedly.
+010 ==> 
