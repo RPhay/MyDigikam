@@ -18,4 +18,5 @@ BUGFIXES:
 008 ==> 387768 - File system corruption after renaming folder.
 009 ==> 411808 - digiKam quit unexpectedly.
 010 ==> 411880 - Existing file is count but not displayed.
-011 ==> 
+011 ==> 411882 - I don't get image stack or panorama.
+012 ==> 
