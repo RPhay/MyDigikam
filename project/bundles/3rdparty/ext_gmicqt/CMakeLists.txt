@@ -6,7 +6,9 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-SET(PREFIX_ext_gmicqt "${EXTPREFIX}" )
+SET(PREFIX_ext_gmicqt "${EXTPREFIX}")
+
+SET(GMIC_VERSION v.2.7.1)
 
 set(GmicQt_Conf -DGMIC_QT_HOST=digikam
                 -DENABLE_ASAN=OFF
@@ -20,12 +22,17 @@ ExternalProject_Add(ext_gmic_base
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
     GIT_REPOSITORY https://github.com/dtschump/gmic.git
-    GIT_TAG v.2.7.1
+    GIT_TAG ${GMIC_VERSION}
 
     SOURCE_DIR gmic
 
+    BUILD_IN_SOURCE 1
+
     CONFIGURE_COMMAND ""
-    BUILD_COMMAND ""
+
+    BUILD_COMMAND $(MAKE) -C <SOURCE_DIR>/src gmic_stdlib.h &&
+                  wget -O <SOURCE_DIR>/src/CImg.h -N https://framagit.org/dtschump/CImg/raw/${GMIC_VERSION}/CImg.h
+
     INSTALL_COMMAND ""
 )
 
@@ -38,7 +45,7 @@ if (MINGW)
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://github.com/c-koi/gmic-qt.git
-        GIT_TAG v.2.7.1
+        GIT_TAG ${GMIC_VERSION}
 
         SOURCE_DIR gmic-qt
 
@@ -62,7 +69,7 @@ else() # MacOS and Linux
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         GIT_REPOSITORY https://github.com/c-koi/gmic-qt.git
-        GIT_TAG v.2.7.1
+        GIT_TAG ${GMIC_VERSION}
 
         SOURCE_DIR gmic-qt
         INSTALL_DIR ${PREFIX_ext_gmicqt}
