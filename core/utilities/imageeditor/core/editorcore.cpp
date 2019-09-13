@@ -139,7 +139,8 @@ void EditorCore::load(const QString& filePath, IOFileSettings* const iofileSetti
                 }
             }
 
-            qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot found Raw Import tool! This probably due to a wrong install of plugins. Load Raw file with default settings...";
+            qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot found Raw Import tool! This probably due to a wrong "
+                                               "install of plugins. Load Raw file with default settings...";
         }
     }
 
@@ -154,7 +155,7 @@ void EditorCore::slotLoadRawFromTool(const LoadingDescription& props, const DImg
     emit signalLoadingStarted(d->currentDescription.filePath);
     slotImageLoaded(d->currentDescription, img);
     EditorToolIface::editorToolIface()->unLoadTool();
-    emit signalImageLoaded(d->currentDescription.filePath, true);
+    //emit signalImageLoaded(d->currentDescription.filePath, true);
 }
 
 void EditorCore::slotLoadRaw(const LoadingDescription& props)
@@ -228,15 +229,15 @@ void EditorCore::slotImageLoaded(const LoadingDescription& loadingDescription, c
     // RAW tool active? Discard previous loaded image
     // Special case for Jenkins, no Editor window also no EditorToolIface
 
-    if (EditorToolIface::editorToolIface())
-    {
-        EditorTool* const tool = EditorToolIface::editorToolIface()->currentTool();
+//    if (EditorToolIface::editorToolIface())
+//    {
+//        EditorTool* const tool = EditorToolIface::editorToolIface()->currentTool();
 
-        if (tool && tool->property("DPluginIId").toString().contains(QLatin1String("rawimport")))
-        {
-            return;
-        }
-    }
+//        if (tool && tool->property("DPluginIId").toString().contains(QLatin1String("rawimport")))
+//        {
+//            return;
+//        }
+//    }
 
     bool valRet = false;
     d->image    = img;
