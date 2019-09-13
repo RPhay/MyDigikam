@@ -10,8 +10,11 @@ SET(EXTPREFIX_qtwebkit "${EXTPREFIX}")
 
 ExternalProject_Add(ext_qtwebkit
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+
     URL https://download.qt.io/snapshots/ci/qtwebkit/5.212/latest/src/submodules/qtwebkit-everywhere-src-5.212.tar.xz
-    URL_MD5 8070564af80809459bf6336431a9890b
+    # NOTE: this is a CI tarball, it change each month. So no MD5 sum to use here.
+    #URL_MD5 8070564af80809459bf6336431a9890b
+
     INSTALL_DIR ${EXTPREFIX_qtwebkit}
 
     PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qtwebkit-fixdeps.patch
