@@ -108,15 +108,31 @@ void EditorCore::load(const QString& filePath, IOFileSettings* const iofileSetti
             {
                 DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
 
-                if (raw)
+                if (raw && d->rawPlugin && d->rawPlugin != raw)
                 {
-                    connect(raw, SIGNAL(signalDecodedImage(Digikam::LoadingDescription,Digikam::DImg)),
+                    disconnect(d->rawPlugin, SIGNAL(signalDecodedImage(Digikam::LoadingDescription,Digikam::DImg)),
                             this, SLOT(slotLoadRawFromTool(Digikam::LoadingDescription,Digikam::DImg)));
 
-                    connect(raw, SIGNAL(signalLoadRaw(Digikam::LoadingDescription)),
+                    disconnect(d->rawPlugin, SIGNAL(signalLoadRaw(Digikam::LoadingDescription)),
                             this, SLOT(slotLoadRaw(Digikam::LoadingDescription)));
 
-                    raw->run(filePath, iofileSettings->rawDecodingSettings);
+                    d->rawPlugin = nullptr;
+                }
+
+                if (raw && !d->rawPlugin)
+                {
+                    d->rawPlugin = raw;
+
+                    connect(d->rawPlugin, SIGNAL(signalDecodedImage(Digikam::LoadingDescription,Digikam::DImg)),
+                            this, SLOT(slotLoadRawFromTool(Digikam::LoadingDescription,Digikam::DImg)));
+
+                    connect(d->rawPlugin, SIGNAL(signalLoadRaw(Digikam::LoadingDescription)),
+                            this, SLOT(slotLoadRaw(Digikam::LoadingDescription)));
+                }
+
+                if (d->rawPlugin)
+                {
+                    d->rawPlugin->run(filePath, iofileSettings->rawDecodingSettings);
 
                     d->thread->stopLoading();
                     return;
