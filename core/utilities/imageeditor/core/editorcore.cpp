@@ -108,15 +108,22 @@ void EditorCore::load(const QString& filePath, IOFileSettings* const iofileSetti
             {
                 DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
 
-                if (raw && d->rawPlugin && d->rawPlugin != raw)
+                if (raw && d->rawPlugin)
                 {
-                    disconnect(d->rawPlugin, SIGNAL(signalDecodedImage(Digikam::LoadingDescription,Digikam::DImg)),
-                            this, SLOT(slotLoadRawFromTool(Digikam::LoadingDescription,Digikam::DImg)));
+                    if (d->rawPlugin != raw)
+                    {
+                        disconnect(d->rawPlugin, SIGNAL(signalDecodedImage(Digikam::LoadingDescription,Digikam::DImg)),
+                                   this, SLOT(slotLoadRawFromTool(Digikam::LoadingDescription,Digikam::DImg)));
 
-                    disconnect(d->rawPlugin, SIGNAL(signalLoadRaw(Digikam::LoadingDescription)),
-                            this, SLOT(slotLoadRaw(Digikam::LoadingDescription)));
+                        disconnect(d->rawPlugin, SIGNAL(signalLoadRaw(Digikam::LoadingDescription)),
+                                   this, SLOT(slotLoadRaw(Digikam::LoadingDescription)));
 
-                    d->rawPlugin = nullptr;
+                        d->rawPlugin = nullptr;
+                    }
+                    else
+                    {
+                        break;
+                    }
                 }
 
                 if (raw && !d->rawPlugin)
@@ -128,15 +135,17 @@ void EditorCore::load(const QString& filePath, IOFileSettings* const iofileSetti
 
                     connect(d->rawPlugin, SIGNAL(signalLoadRaw(Digikam::LoadingDescription)),
                             this, SLOT(slotLoadRaw(Digikam::LoadingDescription)));
-                }
 
-                if (d->rawPlugin)
-                {
-                    d->rawPlugin->run(filePath, iofileSettings->rawDecodingSettings);
-
-                    d->thread->stopLoading();
-                    return;
+                    break;
                 }
+            }
+
+            if (d->rawPlugin)
+            {
+                d->rawPlugin->run(filePath, iofileSettings->rawDecodingSettings);
+
+                d->thread->stopLoading();
+                return;
             }
 
             qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot found Raw Import tool! This probably due to a wrong "
