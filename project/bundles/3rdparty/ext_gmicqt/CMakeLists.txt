@@ -44,8 +44,8 @@ if (MINGW)
         DEPENDS ext_gmic_base
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-        GIT_REPOSITORY https://github.com/c-koi/gmic-qt.git
-        GIT_TAG ${GMIC_VERSION}
+        GIT_REPOSITORY https://github.com/cgilles/gmic-qt.git
+        #GIT_TAG ${GMIC_VERSION}
 
         SOURCE_DIR gmic-qt
 
@@ -68,8 +68,8 @@ else() # MacOS and Linux
         DEPENDS ext_gmic_base
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-        GIT_REPOSITORY https://github.com/c-koi/gmic-qt.git
-        GIT_TAG ${GMIC_VERSION}
+        GIT_REPOSITORY https://github.com/cgilles/gmic-qt.git
+        #GIT_TAG ${GMIC_VERSION}
 
         SOURCE_DIR gmic-qt
         INSTALL_DIR ${PREFIX_ext_gmicqt}
