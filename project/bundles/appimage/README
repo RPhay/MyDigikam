@@ -128,24 +128,19 @@ at startup following these instructions:
 
 1/ As root, mkdir /root/.ssh
 2/ Put your ssh keys in /root/.ssh
-3/ Edit /root/.bashrc and add these lines at end:
+3/ Install openssh-ask-pass package.
+4/ Edit /root/.bashrc and add these lines at end:
 
 # --- ssh key rules
 
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-   eval `ssh-agent`
-   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
-
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-ssh-add -l > /dev/null || ssh-add
+eval `SSH_ASKPASS=/usr/libexec/openssh/x11-ssh-askpass /usr/bin/keychain -q --eval --noask --agents ssh ~/.ssh/id_rsa`
 
 # ---
 
 Note: the bundle can be signed with GPG. You must setup your private and public keys before
 and put your passphare to a text file (~/.gnupg/dkorg-gpg-pwd.txt)
 
-4/ Re-login as root to setup password.
+5/ Re-login as root to setup password.
 
 Source : https://unix.stackexchange.com/questions/90853/how-can-i-run-ssh-add-automatically-without-password-prompt
 

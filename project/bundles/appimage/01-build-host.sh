@@ -117,6 +117,7 @@ urpmi --auto \
       gphoto2-devel \
       sane-backends \
       jasper-devel \
+      ${LIBSUFFIX}xkbcommon-devel \
       ${LIBSUFFIX}sane1-devel \
       ${LIBSUFFIX}xcb-util1 \
       ${LIBSUFFIX}xi-devel \
@@ -144,6 +145,7 @@ echo -e "---------- Clean-up Old Packages\n"
 
 # Remove system based devel package to prevent conflict with new one.
 urpme --auto --force ${LIBSUFFIX}qt5core5 || true
+urpme --auto -a lib64magick || true
 
 #################################################################################################
 

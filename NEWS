@@ -17,4 +17,8 @@ BUGFIXES:
 007 ==> 411726 - Geolocation not working.
 008 ==> 387768 - File system corruption after renaming folder.
 009 ==> 411808 - digiKam quit unexpectedly.
-010 ==> 
+010 ==> 411880 - Existing file is count but not displayed.
+011 ==> 411882 - I don't get image stack or panorama.
+012 ==> 403269 - Stacked image and Panorama tools cannot find required binaries.
+013 ==> 411651 - New tool to export photos to Canon Irista.
+014 ==> 
