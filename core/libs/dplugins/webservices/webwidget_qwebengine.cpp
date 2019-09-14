@@ -52,10 +52,11 @@ WebWidget::WebWidget(QWidget* const parent)
       d(new Private())
 {
     d->parent = parent;
-#if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 7, 0)
-    settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
-    settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, false);
-#endif
+
+//#if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+//    settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
+//    settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, false);
+//#endif
 }
 
 void WebWidget::closeEvent(QCloseEvent* event)
