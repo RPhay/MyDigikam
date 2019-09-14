@@ -138,7 +138,8 @@ urpmi --auto \
       ${LIBSUFFIX}tiff-devel \
       ${LIBSUFFIX}icu-devel \
       ${LIBSUFFIX}lqr-devel \
-      ${LIBSUFFIX}fftw-devel
+      ${LIBSUFFIX}fftw-devel \
+      ${LIBSUFFIX}curl-devel
 
 #################################################################################################
 
