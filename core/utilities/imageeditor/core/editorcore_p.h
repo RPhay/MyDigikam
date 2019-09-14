@@ -95,7 +95,8 @@ public:
         currentFileToSave(0),
         undoMan(nullptr),
         expoSettings(nullptr),
-        thread(nullptr)
+        thread(nullptr),
+        rawPlugin(nullptr)
     {
     }
 
@@ -144,6 +145,9 @@ public:
     ExposureSettingsContainer* expoSettings;
 
     SharedLoadSaveThread*      thread;
+
+    DPluginRawImport*          rawPlugin;
+
     LoadingDescription         currentDescription;
 };
 
