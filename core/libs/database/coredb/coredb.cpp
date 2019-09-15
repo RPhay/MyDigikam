@@ -822,10 +822,8 @@ QString CoreDB::getSearchQuery(int searchId) const
     {
         return QString();
     }
-    else
-    {
-        return values.first().toString();
-    }
+
+    return values.first().toString();
 }
 
 SearchInfo CoreDB::getSearchInfo(int searchId) const
@@ -869,10 +867,8 @@ QString CoreDB::getSetting(const QString& keyword) const
     {
         return QString();
     }
-    else
-    {
-        return values.first().toString();
-    }
+
+    return values.first().toString();
 }
 
 // helper method
@@ -1049,10 +1045,8 @@ qlonglong CoreDB::getImageId(int albumID, const QString& name) const
     {
         return -1;
     }
-    else
-    {
-        return values.first().toLongLong();
-    }
+
+    return values.first().toLongLong();
 }
 
 QList<qlonglong> CoreDB::getImageIds(int albumID, const QString& name, DatabaseItem::Status status) const
@@ -1153,12 +1147,10 @@ qlonglong CoreDB::findImageId(int albumID, const QString& name,
     {
         return -1;
     }
-    else
-    {
-        // If there are several identical image ids,
-        // probably use the last most recent one.
-        return values.last().toLongLong();
-    }
+
+    // If there are several identical image ids,
+    // probably use the last most recent one.
+    return values.last().toLongLong();
 }
 
 QStringList CoreDB::getItemTagNames(qlonglong imageID) const
@@ -1411,10 +1403,8 @@ bool CoreDB::hasTags(const QList<qlonglong>& imageIDList) const
     {
         return false;
     }
-    else
-    {
-        return true;
-    }
+
+    return true;
 }
 
 QList<int> CoreDB::getItemCommonTagIDs(const QList<qlonglong>& imageIDList) const
@@ -3205,10 +3195,8 @@ qlonglong CoreDB::getItemFromAlbum(int albumID, const QString& fileName) const
     {
         return -1;
     }
-    else
-    {
-        return values.first().toLongLong();
-    }
+
+    return values.first().toLongLong();
 }
 
 QList<QDateTime> CoreDB::getAllCreationDates() const
