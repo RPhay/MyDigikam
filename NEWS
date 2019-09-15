@@ -27,4 +27,5 @@ BUGFIXES:
 017 ==> 316865 - SCAN : Add new option to don't scan file bigger than n Mb or stop scan if longer than n seconds.
 018 ==> 370019 - Sidecar metadata not loading sporadically.
 019 ==> 329353 - Make slow processing better.
-020 ==> 
+020 ==> 392090 - While scanning collection the progess bar shows 0%.
+021 ==> 
