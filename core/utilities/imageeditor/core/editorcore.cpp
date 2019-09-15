@@ -108,7 +108,7 @@ void EditorCore::load(const QString& filePath, IOFileSettings* const iofileSetti
             {
                 DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
 
-                if (raw && d->rawPlugin)
+                if (raw && d->rawPlugin && (raw->iid() == iofileSettings->rawImportToolIid))
                 {
                     if (d->rawPlugin != raw)
                     {

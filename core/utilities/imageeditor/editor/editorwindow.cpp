@@ -877,7 +877,8 @@ void EditorWindow::applyIOSettings()
 
     // -- RAW images decoding settings ------------------------------------------------------
 
-    m_IOFileSettings->useRAWImport = group.readEntry(d->configUseRawImportToolEntry, false);
+    m_IOFileSettings->useRAWImport        = group.readEntry(d->configUseRawImportToolEntry, false);
+    m_IOFileSettings->rawImportToolIid    = group.readEntry(d->configRawImportToolIidEntry, QString::fromLatin1("org.kde.digikam.plugin.rawimport.Native"));
     DRawDecoderWidget::readSettings(m_IOFileSettings->rawDecodingSettings.rawPrm, group);
 
     // Raw Color Management settings:

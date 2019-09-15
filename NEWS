@@ -3,7 +3,8 @@ digiKam 6.4.0 - Release date: 2019-??-??
 *****************************************************************************************************
 NEW FEATURES:
 
-General : new RawImport plugin interface to delegate Raw decoding function to extra engine.
+General    : new RawImport plugin interface to delegate Raw decoding function to extra engine ImageEditor.
+ImageEditor: add new setting from setup dialog to select right Raw Import plugin.
 
 *****************************************************************************************************
 BUGFIXES:
