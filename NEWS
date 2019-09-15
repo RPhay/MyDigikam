@@ -21,4 +21,5 @@ BUGFIXES:
 011 ==> 411882 - I don't get image stack or panorama.
 012 ==> 403269 - Stacked image and Panorama tools cannot find required binaries.
 013 ==> 411651 - New tool to export photos to Canon Irista.
-014 ==> 
+014 ==> 411927 - Crash during initial scan.
+015 ==> 

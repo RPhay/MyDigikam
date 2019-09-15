@@ -3277,6 +3277,11 @@ int CoreDB::getNumberOfItemsInAlbum(int albumID) const
     d->db->execSql(QString::fromUtf8("SELECT COUNT(id) FROM Images WHERE album=?;"),
                    albumID, &values);
 
+    if (values.isEmpty())
+    {
+        return -1;
+    }
+
     return values.first().toInt();
 }
 
@@ -3382,6 +3387,11 @@ int CoreDB::getNumberOfImagesInTagProperties(int tagId, const QString& property)
                                      " WHERE ImageTagProperties.property=? AND Images.status=1 "
                                      " AND ImageTagProperties.tagid=? ;"),
                    property, tagId, &values);
+
+    if (values.isEmpty())
+    {
+        return 0;
+    }
 
     return values.first().toInt();
 }
@@ -3645,14 +3655,12 @@ int CoreDB::getItemAlbum(qlonglong imageID) const
     d->db->execSql(QString::fromUtf8("SELECT album FROM Images WHERE id=?;"),
                    imageID, &values);
 
-    if (!values.isEmpty())
-    {
-        return values.first().toInt();
-    }
-    else
+    if (values.isEmpty())
     {
         return 1;
     }
+
+    return values.first().toInt();
 }
 
 QString CoreDB::getItemName(qlonglong imageID) const
@@ -4011,14 +4019,12 @@ int CoreDB::getAlbumRootId(int albumID) const
     d->db->execSql(QString::fromUtf8("SELECT albumRoot FROM Albums WHERE id=?;"),
                    albumID, &values);
 
-    if (!values.isEmpty())
-    {
-        return values.first().toInt();
-    }
-    else
+    if (values.isEmpty())
     {
         return -1;
     }
+
+    return values.first().toInt();
 }
 
 QDate CoreDB::getAlbumLowestDate(int albumID) const
