@@ -322,7 +322,7 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
 MediaPlayerView::~MediaPlayerView()
 {
-    d->player->stop();
+    escapePreview();
     delete d;
 }
 
@@ -371,6 +371,7 @@ void MediaPlayerView::slotMediaStatusChanged(QtAV::MediaStatus status)
 void MediaPlayerView::escapePreview()
 {
     d->player->stop();
+    d->player->setFile(QString());
 }
 
 void MediaPlayerView::slotThemeChanged()
