@@ -80,7 +80,7 @@ class DIGIKAM_EXPORT DPluginLoader : public QObject
      * Register all Raw Import plugin to parent object.
      */
     void registerRawImportPlugins(QObject* const parent);
-    
+
     /**
      * Init plugin loader. Call this method to parse and load relevant plugins installed on your system.
      */

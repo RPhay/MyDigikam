@@ -48,6 +48,7 @@ public:
         PGFCompression      = 3;
         PGFLossLess         = true;
         useRAWImport        = true;
+        rawImportToolIid    = QLatin1String("org.kde.digikam.plugin.rawimport.Native");
     };
 
     ~IOFileSettings()
@@ -57,31 +58,33 @@ public:
 public:
 
     // JPEG quality value.
-    int  JPEGCompression;
+    int     JPEGCompression;
 
     // JPEG chroma sub-sampling value.
-    int  JPEGSubSampling;
+    int     JPEGSubSampling;
 
     // PNG compression value.
-    int  PNGCompression;
+    int     PNGCompression;
 
     // TIFF deflate compression.
-    bool TIFFCompression;
+    bool    TIFFCompression;
 
     // JPEG2000 quality value.
-    int  JPEG2000Compression;
+    int     JPEG2000Compression;
 
     // JPEG2000 lossless compression.
-    bool JPEG2000LossLess;
+    bool    JPEG2000LossLess;
 
     // PGF quality value.
-    int  PGFCompression;
+    int     PGFCompression;
 
     // PGF lossless compression.
-    bool PGFLossLess;
+    bool    PGFLossLess;
 
     // Use Raw Import tool to load a RAW picture.
-    bool useRAWImport;
+    bool    useRAWImport;
+
+    QString rawImportToolIid;
 
     // ------------------------------------------------------
     // RAW File decoding options :

@@ -27,6 +27,7 @@
 
 #include <QGridLayout>
 #include <QGroupBox>
+#include <QComboBox>
 #include <QRadioButton>
 #include <QVBoxLayout>
 #include <QTabWidget>
@@ -41,6 +42,8 @@
 
 #include "drawdecoding.h"
 #include "drawdecoderwidget.h"
+#include "dpluginloader.h"
+#include "dpluginrawimport.h"
 
 namespace Digikam
 {
@@ -56,12 +59,15 @@ public:
         openSimple(nullptr),
         openDefault(nullptr),
         openTool(nullptr),
+        rawImportTool(nullptr),
         rawSettings(nullptr)
     {
     }
 
     static const QString  configGroupName;
     static const QString  configUseRawImportToolEntry;
+    static const QString  configRawImportToolIidEntry;
+    static const QString  nativeRawImportToolIid;
 
     QTabWidget*           tab;
 
@@ -72,11 +78,15 @@ public:
     QRadioButton*         openDefault;
     QRadioButton*         openTool;
 
+    QComboBox*            rawImportTool;
+
     DRawDecoderWidget*    rawSettings;
 };
 
 const QString SetupRaw::Private::configGroupName(QLatin1String("ImageViewer Settings"));
 const QString SetupRaw::Private::configUseRawImportToolEntry(QLatin1String("UseRawImportTool"));
+const QString SetupRaw::Private::configRawImportToolIidEntry(QLatin1String("RawImportToolIid"));
+const QString SetupRaw::Private::nativeRawImportToolIid(QLatin1String("org.kde.digikam.plugin.rawimport.Native"));
 
 SetupRaw::SetupRaw(QTabWidget* const tab)
     : QObject(tab),
@@ -118,11 +128,32 @@ SetupRaw::SetupRaw(QTabWidget* const tab)
     d->openTool    = new QRadioButton(i18nc("@option:radio Open raw files...",
                                             "Always open the Raw Import Tool to customize settings"));
 
-    boxLayout->addWidget(openIcon,       0, 0);
-    boxLayout->addWidget(openIntro,      0, 1);
-    boxLayout->addWidget(d->openSimple,  1, 0, 1, 3);
-    boxLayout->addWidget(d->openDefault, 2, 0, 1, 3);
-    boxLayout->addWidget(d->openTool,    3, 0, 1, 3);
+    d->rawImportTool = new QComboBox;
+
+    foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
+    {
+        DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
+
+        if (raw)
+        {
+            QString iid  = raw->iid();
+            QString name = raw->name();
+
+            if (iid == d->nativeRawImportToolIid)
+            {
+                name += i18n(" (default)");
+            }
+
+            d->rawImportTool->addItem(name, iid);
+        }
+    }
+
+    boxLayout->addWidget(openIcon,         0, 0);
+    boxLayout->addWidget(openIntro,        0, 1);
+    boxLayout->addWidget(d->openSimple,    1, 0, 1, 3);
+    boxLayout->addWidget(d->openDefault,   2, 0, 1, 3);
+    boxLayout->addWidget(d->openTool,      3, 0, 1, 2);
+    boxLayout->addWidget(d->rawImportTool, 3, 2, 1, 1);
     boxLayout->setColumnStretch(2, 1);
     behaviorBox->setLayout(boxLayout);
 
@@ -182,6 +213,8 @@ void SetupRaw::slotSixteenBitsImageToggled(bool)
 
 void SetupRaw::slotBehaviorChanged()
 {
+    d->rawImportTool->setEnabled(d->openTool->isChecked());
+
     DRawDecoderSettings settings = d->rawSettings->settings();
     settings.sixteenBitsImage    = !d->openSimple->isChecked();
     d->rawSettings->setSettings(settings);
@@ -192,6 +225,7 @@ void SetupRaw::applySettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(d->configGroupName);
     group.writeEntry(d->configUseRawImportToolEntry, d->openTool->isChecked());
+    group.writeEntry(d->configRawImportToolIidEntry, d->rawImportTool->itemData(d->rawImportTool->currentIndex()));
 
     d->rawSettings->writeSettings(group);
 
@@ -222,6 +256,9 @@ void SetupRaw::readSettings()
             d->openSimple->setChecked(true);
         }
     }
+
+    QString iid = group.readEntry(d->configRawImportToolIidEntry, d->nativeRawImportToolIid);
+    d->rawImportTool->setCurrentIndex(d->rawImportTool->findData(iid));
 }
 
 } // namespace Digikam

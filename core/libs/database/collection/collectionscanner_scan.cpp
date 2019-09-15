@@ -35,11 +35,13 @@ void CollectionScanner::completeScan()
 
     emit startCompleteScan();
 
-    // lock database
-    CoreDbTransaction transaction;
+    {
+        // lock database
+        CoreDbTransaction transaction;
 
-    mainEntryPoint(true);
-    d->resetRemovedItemsTime();
+        mainEntryPoint(true);
+        d->resetRemovedItemsTime();
+    }
 
     //TODO: Implement a mechanism to watch for album root changes while we keep this list
     QList<CollectionLocation> allLocations = CollectionManager::instance()->allAvailableLocations();
@@ -101,6 +103,7 @@ void CollectionScanner::completeScan()
         return;
     }
 
+    CoreDbTransaction transaction;
     completeScanCleanupPart();
 
     qCDebug(DIGIKAM_DATABASE_LOG) << "Complete scan took:" << time.elapsed() << "msecs.";
@@ -111,6 +114,7 @@ void CollectionScanner::finishCompleteScan(const QStringList& albumPaths)
     emit startCompleteScan();
 
     {
+        // lock database
         CoreDbTransaction transaction;
 
         mainEntryPoint(true);
