@@ -1969,14 +1969,12 @@ QString CoreDB::getImageProperty(qlonglong imageID, const QString& property) con
                                      "WHERE imageid=? and property=?;"),
                    imageID, property, &values);
 
-    if (!values.isEmpty())
-    {
-        return values.first().toString();
-    }
-    else
+    if (values.isEmpty())
     {
         return QString();
     }
+
+    return values.first().toString();
 }
 
 void CoreDB::setImageProperty(qlonglong imageID, const QString& property, const QString& value)
@@ -3670,14 +3668,12 @@ QString CoreDB::getItemName(qlonglong imageID) const
     d->db->execSql(QString::fromUtf8("SELECT name FROM Images WHERE id=?;"),
                    imageID, &values);
 
-    if (!values.isEmpty())
-    {
-        return values.first().toString();
-    }
-    else
+    if (values.isEmpty())
     {
         return QString();
     }
+
+    return values.first().toString();
 }
 
 QStringList CoreDB::getItemURLsInAlbum(int albumID, ItemSortOrder sortOrder) const
@@ -4003,14 +3999,12 @@ QString CoreDB::getAlbumRelativePath(int albumID) const
     d->db->execSql(QString::fromUtf8("SELECT relativePath from Albums WHERE id=?;"),
                    albumID, &values);
 
-    if (!values.isEmpty())
-    {
-        return values.first().toString();
-    }
-    else
+    if (values.isEmpty())
     {
         return QString();
     }
+
+    return values.first().toString();
 }
 
 int CoreDB::getAlbumRootId(int albumID) const
@@ -4035,14 +4029,12 @@ QDate CoreDB::getAlbumLowestDate(int albumID) const
                                      " WHERE Images.album=? GROUP BY Images.album;"),
                    albumID, &values);
 
-    if (!values.isEmpty())
-    {
-        return values.first().toDate();
-    }
-    else
+    if (values.isEmpty())
     {
         return QDate();
     }
+
+    return values.first().toDate();
 }
 
 QDate CoreDB::getAlbumHighestDate(int albumID) const
@@ -4053,14 +4045,12 @@ QDate CoreDB::getAlbumHighestDate(int albumID) const
                                      " WHERE Images.album=? GROUP BY Images.album;"),
                    albumID , &values);
 
-    if (!values.isEmpty())
-    {
-        return values.first().toDate();
-    }
-    else
+    if (values.isEmpty())
     {
         return QDate();
     }
+
+    return values.first().toDate();
 }
 
 QDate CoreDB::getAlbumAverageDate(int albumID) const
