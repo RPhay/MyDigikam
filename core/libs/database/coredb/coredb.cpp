@@ -3272,6 +3272,11 @@ QMap<QDateTime, int> CoreDB::getAllCreationDatesAndNumberOfImages() const
 
 int CoreDB::getNumberOfItemsInAlbum(int albumID) const
 {
+    if (d->db->isInTransaction())
+    {
+        return -1;
+    }
+
     QList<QVariant> values;
 
     d->db->execSql(QString::fromUtf8("SELECT COUNT(id) FROM Images WHERE album=?;"),

@@ -341,7 +341,7 @@ public:
 
     /**
      * Returns the number of items in the album.
-     * Returns -1 if an error occurs.
+     * Returns -1 if the DB is in the transaction.
      * @param albumID the id of the album to calculate
      */
     int getNumberOfItemsInAlbum(int albumID) const;
