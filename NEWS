@@ -22,4 +22,6 @@ BUGFIXES:
 012 ==> 403269 - Stacked image and Panorama tools cannot find required binaries.
 013 ==> 411651 - New tool to export photos to Canon Irista.
 014 ==> 411927 - Crash during initial scan.
-015 ==> 
+015 ==> 389652 - Interface freezes during initial scan.
+016 ==> 389949 - Very slow startup [patch].
+017 ==> 
