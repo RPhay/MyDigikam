@@ -26,4 +26,5 @@ BUGFIXES:
 016 ==> 389949 - Very slow startup [patch].
 017 ==> 316865 - SCAN : Add new option to don't scan file bigger than n Mb or stop scan if longer than n seconds.
 018 ==> 370019 - Sidecar metadata not loading sporadically.
-019 ==> 
+019 ==> 329353 - Make slow processing better.
+020 ==> 
