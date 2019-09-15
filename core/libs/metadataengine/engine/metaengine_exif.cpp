@@ -258,7 +258,7 @@ bool MetaEngine::setExifComment(const QString& comment, bool writeDescription) c
             // Write as Unicode only when necessary.
             QTextCodec* const latin1Codec = QTextCodec::codecForName("iso8859-1");
 
-            if (latin1Codec->canEncode(comment))
+            if (latin1Codec && latin1Codec->canEncode(comment))
             {
                 // We know it's in the ISO-8859-1 8bit range.
                 // Check if it's in the ASCII 7bit range

@@ -32,4 +32,5 @@ BUGFIXES:
 021 ==> 411929 - Can not move or delete videos that were not played till the end.
 022 ==> 392727 - Images are missing (Windows).
 023 ==> 396559 - "digikam.dbengine: Database is locked." when scanning for new items.
-024 ==> 
+024 ==> 411946 - Crash when saving captions to picture.
+025 ==> 
