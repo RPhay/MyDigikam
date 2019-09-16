@@ -72,11 +72,16 @@ MagickLoader::MagickLoader(DImg* const image)
 
 bool MagickLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
-    QMimeDatabase mimeDB;
+    QStringList blackList;
+    blackList << QLatin1String("image/x-xcf");
 
-    if (!mimeDB.mimeTypeForFile(filePath).name().startsWith(QLatin1String("image/")))
+    QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
+
+    // qCDebug(DIGIKAM_DIMG_LOG) << "Mime type name:" << mimeType;
+
+    if (blackList.contains(mimeType))
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "The ImageMagick codecs support only the image mime type";
+        qCDebug(DIGIKAM_DIMG_LOG) << "This mime type is on the blacklist:" << mimeType;
         loadingFailed();
         return false;
     }
