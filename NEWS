@@ -33,4 +33,5 @@ BUGFIXES:
 022 ==> 392727 - Images are missing (Windows).
 023 ==> 396559 - "digikam.dbengine: Database is locked." when scanning for new items.
 024 ==> 411946 - Crash when saving captions to picture.
-025 ==> 
+025 ==> 411902 - Interface icons become very large and unusable.
+026 ==> 
