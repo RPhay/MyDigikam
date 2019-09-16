@@ -301,9 +301,7 @@ libnss_hesiod.so.2 \
 libnss_nisplus.so.2 \
 libnss_nis.so.2 \
 libp11-kit.so.0 \
-libpango-1.0.so.0 \
 libpangocairo-1.0.so.0 \
-libpangoft2-1.0.so.0 \
 libpthread.so.0 \
 libresolv.so.2 \
 librt.so.1 \
@@ -357,6 +355,8 @@ libdbus-1.so.3 \
 #libkeyutils.so.1       # Originally removed in linuxdeployqt, but needed for Gentoo (see https://bugs.kde.org/show_bug.cgi?id=406171#c2)
 #libz.so.1              # needed for Mint 18.1 (see http://digikam.1695700.n4.nabble.com/digikam-6-2-0-64-bit-appimage-error-td4708921.html)
 
+#libpango-1.0.so.0
+#libpangoft2-1.0.so.0
 
 for FILE in $EXCLUDE_FILES ; do
     if [[ -f usr/lib/${FILE} ]] ; then
