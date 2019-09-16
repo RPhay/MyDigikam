@@ -84,8 +84,6 @@ public:
     DDoubleNumInput*                     blurPercent;
     ImageBrushGuideWidget*               previewWidget;
     EditorToolSettings*                  gboxSettings;
-    QPoint                               sourcePoint;
-    QPoint                               destinationStartPoint;
     QPushButton*                         srcButton;
     QPushButton*                         lassoButton;
     QPushButton*                         moveButton;
