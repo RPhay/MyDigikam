@@ -130,6 +130,7 @@ public:
     static const QString         configOverExposurePercentsEntry;
     static const QString         configExpoIndicatorModeEntry;
     static const QString         configUseRawImportToolEntry;
+    static const QString         configRawImportToolIidEntry;
     static const QString         configUseThemeBackgroundColorEntry;
     static const QString         configVerticalSplitterSizesEntry;
     static const QString         configVerticalSplitterStateEntry;
@@ -202,6 +203,7 @@ const QString EditorWindow::Private::configOverExposureIndicatorEntry(QLatin1Str
 const QString EditorWindow::Private::configOverExposurePercentsEntry(QLatin1String("OverExposurePercentsEntry"));
 const QString EditorWindow::Private::configExpoIndicatorModeEntry(QLatin1String("ExpoIndicatorMode"));
 const QString EditorWindow::Private::configUseRawImportToolEntry(QLatin1String("UseRawImportTool"));
+const QString EditorWindow::Private::configRawImportToolIidEntry(QLatin1String("RawImportToolIid"));
 const QString EditorWindow::Private::configUseThemeBackgroundColorEntry(QLatin1String("UseThemeBackgroundColor"));
 const QString EditorWindow::Private::configVerticalSplitterSizesEntry(QLatin1String("Vertical Splitter Sizes"));
 const QString EditorWindow::Private::configVerticalSplitterStateEntry(QLatin1String("Vertical Splitter State"));

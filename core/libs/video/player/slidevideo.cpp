@@ -179,7 +179,7 @@ SlideVideo::SlideVideo(QWidget* const parent)
 
 SlideVideo::~SlideVideo()
 {
-    d->player->stop();
+    stop();
     delete d;
 }
 
@@ -291,6 +291,7 @@ void SlideVideo::pause(bool b)
 void SlideVideo::stop()
 {
     d->player->stop();
+    d->player->setFile(QString());
 }
 
 void SlideVideo::slotPositionChanged(qint64 position)

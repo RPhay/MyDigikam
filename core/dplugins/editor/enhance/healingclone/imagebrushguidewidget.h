@@ -25,12 +25,6 @@
 #ifndef DIGIKAM_IMAGE_BRUSH_GUIDE_WIDGET_H
 #define DIGIKAM_IMAGE_BRUSH_GUIDE_WIDGET_H
 
-// Qt includes
-
-#include <QPainter>
-#include <QStandardPaths>
-#include <QCursor>
-
 // Local includes
 
 #include "previewtoolbar.h"
@@ -66,6 +60,7 @@ public:
      * Should be changed to get rid of the inheritance
      */
     explicit ImageBrushGuideWidget(QWidget* const parent = nullptr);
+    ~ImageBrushGuideWidget();
 
     void setBrushRadius(int value);
     void setIsLassoPointsVectorEmpty(bool);
@@ -73,7 +68,7 @@ public:
     void setSourceCursorPosition(const QPointF& topLeftPos);
 
     void changeCursorShape(const QColor& color);
-    void changeCursorShape(const QPixmap&, float, float);
+    void changeCursorShape(const QPixmap&pixMap, float x = 0.5 , float y = 0.5);
     void updateCursor();
 
     bool checkPointOutsideScene(const QPoint& point);
@@ -124,25 +119,8 @@ protected:
 
 private:
 
-    bool   srcSet                      = true;
-    bool isLassoPointsVectorEmpty      = true;
-    QPoint src                         = QPoint(0, 0);
-    QPoint dst;
-    double default_w;
-    double default_h;
-    double float_w;
-    double float_h;
-    bool amIFocused                    = false;
-    bool proceedInMoveEvent            = false;
-    bool cloneVectorChanged            = true;
-    int brushRadius;
-
-    QColor brushColor                        = QColor(Qt::red);
-    HealingCloneState currentState           = HealingCloneState::SELECT_SOURCE;
-    HealingCloneState previousState;
-    QGraphicsEllipseItem* sourceCursor       = nullptr;
-    QGraphicsEllipseItem* sourceCursorCenter = nullptr;
-    QCursor prevCursor;
+    class Private;
+    Private* const d;
 };
 
 } // namespace DigikamEditorHealingCloneToolPlugin

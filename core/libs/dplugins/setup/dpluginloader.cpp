@@ -327,7 +327,7 @@ void DPluginLoader::registerRawImportPlugins(QObject* const parent)
         {
             raw->setup(parent);
             qCDebug(DIGIKAM_GENERAL_LOG) << "Raw Import plugin named" << raw->name()
-                                            << "registered to" << parent;
+                                         << "registered to" << parent;
         }
     }
 }
