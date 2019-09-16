@@ -35,7 +35,7 @@ ExternalProject_Add(ext_qt
                   -sql-sqlite                       # Compile Sqlite SQL plugin
                   -sql-mysql                        # Compile Mysql SQL plugin
                   -fontconfig
-                  -iconv                            # iconv is used instead icu
+#                  -icu                              # International Component Unicode
                   -system-freetype                  # Use system font rendering lib https://doc.qt.io/qt-5/qtgui-attribution-freetype.html
                   -openssl-linked                   # hard link ssl libraries
                   -nomake tests                     # Do not build test codes
@@ -50,7 +50,6 @@ ExternalProject_Add(ext_qt
                   -no-linuxfb
                   -no-libproxy
                   -no-pch
-                  -no-icu                           # iconv is used instead icu
                   -qt-zlib
                   -qt-pcre
                   -qt-harfbuzz
