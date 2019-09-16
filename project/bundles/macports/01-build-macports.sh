@@ -248,12 +248,17 @@ port install \
              lensfun \
              bison \
              ffmpeg \
-             qt511 \
-             qt511-qtimageformats \
-             qt511-qtwebkit \
-             qt511-sqlite-plugin \
-             qt511-mysql-plugin \
-             qt511-qtscript \
+             qt5-qtbase \
+             qt5-qtdeclarative \
+             qt5-qtmacextras \
+             qt5-qtquickcontrols \
+             qt5-qtsvg \
+             qt5-qttools \
+             qt5-qttranslations \
+             qt5-qtimageformats \
+             qt5-qtwebkit \
+             qt5-sqlite-plugin \
+             qt5-mysql-plugin \
              wget +ssl
 
 #             sane-backends

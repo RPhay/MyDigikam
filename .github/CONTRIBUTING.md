@@ -1,13 +1,11 @@
 The digiKam project is part of the KDE community. digiKam is
-developed on KDE's infrastructure, not Github's. digiKam on
-Github is just a mirror. Do not create pull requests on
+developed on KDE's infrastructure based on Gitlab, not Github's.
+digiKam on Github is just a mirror. Do not create pull requests on
 Github.
 
-Please join our Bugzilla instance to start contributing.
+Please join our Gitlab instance to start contributing.
 
-Please join our Phabricator instance to start contributing.
-
-https://phabricator.kde.org/
+https://invent.kde.org/kde/digikam
 
 Please use our Bugzilla instance to report bugs and whishes.
 
