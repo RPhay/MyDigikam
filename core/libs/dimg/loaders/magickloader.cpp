@@ -83,7 +83,7 @@ bool MagickLoader::load(const QString& filePath, DImgLoaderObserver* const obser
         mimeType.startsWith(QLatin1String("video/")) ||
         mimeType.startsWith(QLatin1String("audio/")))
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "This mime type is on the blacklist:" << mimeType;
+        qCWarning(DIGIKAM_DIMG_LOG) << "This mime type is on the blacklist:" << mimeType;
         loadingFailed();
         return false;
     }
