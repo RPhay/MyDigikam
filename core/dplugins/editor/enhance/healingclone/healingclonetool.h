@@ -26,11 +26,6 @@
 #ifndef DIGIKAM_EDITOR_HEALING_CLONE_TOOL_H
 #define DIGIKAM_EDITOR_HEALING_CLONE_TOOL_H
 
-// C++ includes
-
-#include <vector>
-#include <stack>
-
 // Local includes
 
 #include "editortool.h"
@@ -103,29 +98,13 @@ private:
     void initializeLassoFlags();
     void removeLassoPixels();
     void redrawLassoPixels();
-    
+
     void refreshImage();
 
 private:
 
     class Private;
     Private* const d;
-
-    std::stack<DImg> undoStack;
-    std::stack<DImg> redoStack;
-
-    bool resetLassoPoint      = true;
-    bool insideLassoOperation = false;
-
-    QPoint previousLassoPoint;
-    QPoint startLassoPoint;
-
-    std::vector<DColor> lassoColors;
-    std::vector<QPoint> lassoPoints;
-    QPolygon            lassoPolygon;
-
-    std::vector<std::vector<bool>>       lassoFlags;
-    std::map<std::pair<int,int>, DColor> lassoColorsMap;
 };
 
 } // namespace DigikamEditorHealingCloneToolPlugin
