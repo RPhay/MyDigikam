@@ -43,7 +43,7 @@ class ImageBrushGuideWidget : public ImageRegionWidget
 
 public:
 
-    enum   HealingCloneState
+    enum HealingCloneState
     {
         SELECT_SOURCE,
         PAINT,
@@ -68,14 +68,14 @@ public:
     void setSourceCursorPosition(const QPointF& topLeftPos);
 
     void changeCursorShape(const QColor& color);
-    void changeCursorShape(const QPixmap&pixMap, float x = 0.5 , float y = 0.5);
+    void changeCursorShape(const QPixmap& pixMap, float x = 0.5 , float y = 0.5);
     void updateCursor();
 
-    bool checkPointOutsideScene(const QPoint& point);
+    bool checkPointOutsideScene(const QPoint& point)    const;
     void updateSourceCursor(const QPointF& pos = QPoint(), int diamter = 10);
 
-    QPoint mapToImageCoordinates(const QPoint& point);
-    QPoint mapFromImageCoordinates(const QPoint& point);
+    QPoint mapToImageCoordinates(const QPoint& point)   const;
+    QPoint mapFromImageCoordinates(const QPoint& point) const;
 
 public Q_SLOTS:
 
@@ -104,16 +104,17 @@ Q_SIGNALS:
 
 protected:
 
-    void mouseReleaseEvent(QMouseEvent*)override;
-    void mousePressEvent(QMouseEvent*)override;
-    void mouseMoveEvent(QMouseEvent*)override;
+    void mouseReleaseEvent(QMouseEvent*)     override;
+    void mousePressEvent(QMouseEvent*)       override;
+    void mouseMoveEvent(QMouseEvent*)        override;
     void mouseDoubleClickEvent(QMouseEvent*) override;
-    void keyPressEvent(QKeyEvent*) override;
-    void keyReleaseEvent(QKeyEvent*) override;
-    void wheelEvent(QWheelEvent*) override;
-    void focusOutEvent(QFocusEvent*) override;
-    void focusInEvent(QFocusEvent*) override;
-    bool event(QEvent*) override;
+    void keyPressEvent(QKeyEvent*)           override;
+    void keyReleaseEvent(QKeyEvent*)         override;
+    void wheelEvent(QWheelEvent*)            override;
+    void focusOutEvent(QFocusEvent*)         override;
+    void focusInEvent(QFocusEvent*)          override;
+    bool event(QEvent*)                      override;
+
     void undoSlotSetSourcePoint();
     void activateState(HealingCloneState state);
 

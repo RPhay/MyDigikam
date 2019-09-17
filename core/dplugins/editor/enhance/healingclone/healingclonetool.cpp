@@ -27,7 +27,6 @@
 
 // C++ includes
 
-#include <vector>
 #include <stack>
 
 // Qt includes
@@ -62,7 +61,9 @@ class Q_DECL_HIDDEN HealingCloneTool::Private
 public:
 
     explicit Private()
-      : radiusInput(nullptr),
+      : btnSize(QSize(50, 50)),
+        iconSize(QSize(30, 30)),
+        radiusInput(nullptr),
         blurPercent(nullptr),
         previewWidget(nullptr),
         gboxSettings(nullptr),
@@ -80,6 +81,9 @@ public:
     static const QString                 configRadiusAdjustmentEntry;
     static const QString                 configBlurAdjustmentEntry;
 
+    const QSize                          btnSize;
+    const QSize                          iconSize;
+
     DIntNumInput*                        radiusInput;
     DDoubleNumInput*                     blurPercent;
     ImageBrushGuideWidget*               previewWidget;
@@ -89,7 +93,7 @@ public:
     QPushButton*                         moveButton;
     QPushButton*                         undoCloneButton;
     QPushButton*                         redoCloneButton;
-    
+
     std::stack<DImg>                     undoStack;
     std::stack<DImg>                     redoStack;
 
@@ -113,11 +117,6 @@ const QString HealingCloneTool::Private::configBlurAdjustmentEntry(QLatin1String
 
 // --------------------------------------------------------
 
-const QSize btnSize  = QSize(50, 50);
-const QSize iconSize = QSize(30, 30);
-
-// --------------------------------------------------------
-
 HealingCloneTool::HealingCloneTool(QObject* const parent)
     : EditorTool(parent),
       d(new Private)
@@ -128,6 +127,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     d->gboxSettings      = new EditorToolSettings(0);
     d->previewWidget     = new ImageBrushGuideWidget;
     refreshImage();
+
     d->previewWidget->setFocusPolicy(Qt::StrongFocus);
     setToolView(d->previewWidget);
     setPreviewModeMask(PreviewToolBar::PreviewTargetImage);
@@ -142,8 +142,8 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
                                       "1 and above determine the brush radius "
                                       "that determines the size of parts copied in the image. \nShortcut :: [ and ]"));
     d->radiusInput->setToolTip(i18n("A radius of 0 has no effect, "
-                                      "1 and above determine the brush radius "
-                                      "that determines the size of parts copied in the image. \nShortcut :: [ and ]"));
+                                    "1 and above determine the brush radius "
+                                    "that determines the size of parts copied in the image. \nShortcut :: [ and ]"));
 
     d->previewWidget->setBrushRadius(d->radiusInput->value());
 
@@ -163,67 +163,67 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    QPixmap pixmap_SRC(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                        QLatin1String("digikam/data/healing_clone_SRC.png")));
-    const QIcon ButtonIcon_SRC(pixmap_SRC);
+    QPixmap sourcePixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                         QLatin1String("digikam/data/healing_clone_SRC.png")));
+    const QIcon sourceBtnIcon(sourcePixmap);
     d->srcButton  = new QPushButton();
-    d->srcButton->setFixedSize(btnSize);
-    d->srcButton->setIcon(ButtonIcon_SRC);
-    d->srcButton->setIconSize(iconSize);
-    d->srcButton->setWhatsThis(i18n("Select Source Point. \nShortcut :: S"));
-    d->srcButton->setToolTip(i18n("Select Source Point. \nShortcut :: S"));
+    d->srcButton->setFixedSize(d->btnSize);
+    d->srcButton->setIcon(sourceBtnIcon);
+    d->srcButton->setIconSize(d->iconSize);
+    d->srcButton->setWhatsThis(i18n("Select Source Point.\nShortcut: S"));
+    d->srcButton->setToolTip(i18n("Select Source Point.\nShortcut: S"));
 
     // --------------------------------------------------------
 
-    QPixmap pixmap_LASSO(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+    QPixmap lassoPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                         QLatin1String("digikam/data/healing_clone_LASSO.png")));
-    const QIcon ButtonIcon_LASSO(pixmap_LASSO);
+    const QIcon lassoBtnIcon(lassoPixmap);
     d->lassoButton  = new QPushButton();
-    d->lassoButton->setFixedSize(btnSize);
-    d->lassoButton->setIcon(ButtonIcon_LASSO);
-    d->lassoButton->setIconSize(iconSize);
-    d->lassoButton->setWhatsThis(i18n("LASSO/POLYGON SELECT. \nShortcut :: L\n"
+    d->lassoButton->setFixedSize(d->btnSize);
+    d->lassoButton->setIcon(lassoBtnIcon);
+    d->lassoButton->setIconSize(d->iconSize);
+    d->lassoButton->setWhatsThis(i18n("Polygon Selection With Lasso.\nShortcut: L\n"
                                       "To Continue polygon, either press L or double click\n"
                                       "To Cancel, press ESC"));
-    d->lassoButton->setToolTip(i18n("LASSO/POLYGON SELECT. \nShortcut :: L\n"
+    d->lassoButton->setToolTip(i18n("Polygon Selection With Lasso.\nShortcut: L\n"
                                     "To Continue polygon, either press L or double click\n"
                                     "To Cancel, press ESC"));
 
     // --------------------------------------------------------
 
-    QPixmap pixmap_MOVE(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                        QLatin1String("digikam/data/healing_clone_MOVE.png")));
-    const QIcon ButtonIcon_MOVE(pixmap_MOVE);
+    QPixmap movePixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                       QLatin1String("digikam/data/healing_clone_MOVE.png")));
+    const QIcon moveBtnIcon(movePixmap);
     d->moveButton  = new QPushButton();
-    d->moveButton->setFixedSize(btnSize);
-    d->moveButton->setIcon(ButtonIcon_MOVE);
-    d->moveButton->setIconSize(iconSize);
-    d->moveButton->setWhatsThis(i18n("Move Image. \nShortcut :: M"));
-    d->moveButton->setToolTip(i18n("Move Image. \nShortcut :: M"));
+    d->moveButton->setFixedSize(d->btnSize);
+    d->moveButton->setIcon(moveBtnIcon);
+    d->moveButton->setIconSize(d->iconSize);
+    d->moveButton->setWhatsThis(i18n("Move Image.\nShortcut: M"));
+    d->moveButton->setToolTip(i18n("Move Image.\nShortcut: M"));
 
     // --------------------------------------------------------
 
-    QPixmap pixmap_UNDO(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                        QLatin1String("digikam/data/healing_clone_UNDO.png")));
-    const QIcon ButtonIcon_UNDO(pixmap_UNDO);
+    QPixmap undoPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                       QLatin1String("digikam/data/healing_clone_UNDO.png")));
+    const QIcon undoBtnIcon(undoPixmap);
     d->undoCloneButton  = new QPushButton();
-    d->undoCloneButton->setFixedSize(btnSize);
-    d->undoCloneButton->setIcon(ButtonIcon_UNDO);
-    d->undoCloneButton->setIconSize(iconSize);
-    d->undoCloneButton->setWhatsThis(i18n("UNDO CLONE. \nShortcut :: CTRL+Z"));
-    d->undoCloneButton->setToolTip(i18n("UNDO CLONE. \nShortcut :: CTRL+Z"));
+    d->undoCloneButton->setFixedSize(d->btnSize);
+    d->undoCloneButton->setIcon(undoBtnIcon);
+    d->undoCloneButton->setIconSize(d->iconSize);
+    d->undoCloneButton->setWhatsThis(i18n("Undo clone operation.\nShortcut: CTRL+Z"));
+    d->undoCloneButton->setToolTip(i18n("Undo clone operation.\nShortcut: CTRL+Z"));
 
     // --------------------------------------------------------
 
-    QPixmap pixmap_REDO(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                        QLatin1String("digikam/data/healing_clone_REDO.png")));
-    const QIcon ButtonIcon_REDO(pixmap_REDO);
+    QPixmap redoPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                       QLatin1String("digikam/data/healing_clone_REDO.png")));
+    const QIcon redoBtnIcon(redoPixmap);
     d->redoCloneButton  = new QPushButton();
-    d->redoCloneButton->setFixedSize(btnSize);
-    d->redoCloneButton->setIcon(ButtonIcon_REDO);
-    d->redoCloneButton->setIconSize(iconSize);
-    d->redoCloneButton->setWhatsThis(i18n("REDO CLONE. \nShortcut :: CTRL+Y"));
-    d->redoCloneButton->setToolTip(i18n("REDO CLONE. \nShortcut :: CTRL+Y"));
+    d->redoCloneButton->setFixedSize(d->btnSize);
+    d->redoCloneButton->setIcon(redoBtnIcon);
+    d->redoCloneButton->setIconSize(d->iconSize);
+    d->redoCloneButton->setWhatsThis(i18n("Redo clone operation.\nShortcut: CTRL+Y"));
+    d->redoCloneButton->setToolTip(i18n("Redo clone operation.\nShortcut: CTRL+Y"));
 
 
     QPlainTextEdit* const label3  = new QPlainTextEdit(i18n("How To Use:\n====\n"
@@ -260,7 +260,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     grid->addWidget(label2,         6, 0, 1, 2);
     grid->addWidget(d->blurPercent, 7, 0, 1, 2);
     grid->addWidget(new DLineWidget(Qt::Horizontal, d->gboxSettings->plainPage()), 8, 0, 1, 2);
-    grid->addWidget(label3,          9, 0, 1, 2);
+    grid->addWidget(label3,         9, 0, 1, 2);
     grid->setRowStretch(10, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
@@ -388,7 +388,13 @@ void HealingCloneTool::clone(DImg* const img,
                              const QPoint& dstPoint,
                              int radius)
 {
-    ImageRegionItem* const item = (ImageRegionItem*)d->previewWidget->item();
+    ImageRegionItem* const item = dynamic_cast<ImageRegionItem*>(d->previewWidget->item());
+
+    if (!item)
+    {
+        return;
+    }
+
     double scale                = item->zoomSettings()->zoomFactor();
     radius                      = radius / scale;
     double blurPercent          = d->blurPercent->value() / 100;
@@ -401,10 +407,10 @@ void HealingCloneTool::clone(DImg* const img,
 
             if (rPercent < (radius * radius)) // Check for inside the circle
             {
-                if (srcPoint.x()+i < 0 || srcPoint.x()+i >= (int)img->width()  ||
-                    srcPoint.y()+j < 0 || srcPoint.y()+j >= (int)img->height() ||
-                    dstPoint.x()+i < 0 || dstPoint.x()+i >= (int)img->width()  ||
-                    dstPoint.y()+j < 0 || dstPoint.y()+j >= (int)img->height())
+                if ((srcPoint.x() + i < 0) || (srcPoint.x() + i >= (int)img->width())  ||
+                    (srcPoint.y() + j < 0) || (srcPoint.y() + j >= (int)img->height()) ||
+                    (dstPoint.x() + i < 0) || (dstPoint.x() + i >= (int)img->width())  ||
+                    (dstPoint.y() + j < 0) || (dstPoint.y() + j >= (int)img->height()))
                 {
                     continue;
                 }
@@ -455,14 +461,14 @@ void HealingCloneTool::updateLasso(std::vector<QPoint>& points)
     static uint colorCounter = 0;
     DImg img                 = d->previewWidget->getOriginalImage();
 
-    for (QPoint p: points)
+    foreach (const QPoint& p, points)
     {
         for (uint i = 0 ; i < radius ; ++i)
         {
             for (uint j = 0 ; j < radius ; ++j)
             {
-                uint x_shifted = p.x()+i;
-                uint y_shifted = p.y()+j;
+                uint x_shifted = p.x() + i;
+                uint y_shifted = p.y() + j;
                 DColor c       = img.getPixelColor(x_shifted, y_shifted);
 
                 d->lassoColorsMap.insert(std::make_pair(std::make_pair(x_shifted, y_shifted), c));
@@ -596,9 +602,6 @@ void HealingCloneTool::slotDecreaseBrushRadius()
 
 void HealingCloneTool::initializeLassoFlags()
 {
-//  ImageIface* const iface = d->previewWidget->imageIface();
-//  DImg* const img         = iface->previewReference();
-
     DImg img = d->previewWidget->getOriginalImage();
     int w    = img.width();
     int h    = img.height();
@@ -666,17 +669,21 @@ void HealingCloneTool::refreshImage()
     if (wgt)
     {
         QRectF test                 = wgt->sceneRect();
-        ImageRegionItem* const item = (ImageRegionItem*)wgt->item();
-        int w                       = item->boundingRect().width();
-        int h                       = item->boundingRect().height();
+        ImageRegionItem* const item = dynamic_cast<ImageRegionItem*>(wgt->item());
 
-        test.setWidth(10);
-        test.setHeight(10);
-        wgt->fitInView( test, Qt::KeepAspectRatio );
+        if (item)
+        {
+            int w = item->boundingRect().width();
+            int h = item->boundingRect().height();
 
-        test.setWidth(w);
-        test.setHeight(h);
-        wgt->fitInView( test, Qt::KeepAspectRatio );
+            test.setWidth(10);
+            test.setHeight(10);
+            wgt->fitInView(test, Qt::KeepAspectRatio);
+
+            test.setWidth(w);
+            test.setHeight(h);
+            wgt->fitInView(test, Qt::KeepAspectRatio);
+        }
     }
 }
 
