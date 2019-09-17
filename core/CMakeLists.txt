@@ -56,7 +56,7 @@ set(ECM_MIN_VERSION       "1.7.0")
 set(KF5_MIN_VERSION       "5.1.0")
 set(QT_MIN_VERSION        "5.6.0")
 set(LENSFUN_MIN_VERSION   "0.2.6.0")
-set(EXIV2_MIN_VERSION     "0.27.1")
+set(EXIV2_MIN_VERSION     "0.27.0")
 set(OPENCV_MIN_VERSION    "3.1.0")
 set(QTAV_MIN_VERSION      "1.12.0")
 set(KSANE_MIN_VERSION     "5.0.0")         # For digital scanner support.
@@ -247,7 +247,7 @@ find_package(LCMS2)
 find_package(EXPAT)    # For DNGWriter: XMP SDK need Expat library to compile.
 find_package(Threads)  # For DNGWriter and LibRaw which needs native threads support.
 
-find_package(exiv2 ${EXIV2_MIN_VERSION} REQUIRED)
+find_package(exiv2)
 
 set_package_properties("exiv2"     PROPERTIES
                        DESCRIPTION "Required to build digiKam"
