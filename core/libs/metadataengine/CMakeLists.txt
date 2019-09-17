@@ -14,8 +14,6 @@ if(WIN32)
     add_definitions(-DEXV_HAVE_DLL)
 endif()
 
-message(STATUS "EXIV2 VER: ${exiv2_VERSION} <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
-
 if("${exiv2_VERSION}" VERSION_LESS "0.27.99")
 
     # Exiv2 version > 0.28 use auto_ptr instead unique_ptr which is deprecated.
