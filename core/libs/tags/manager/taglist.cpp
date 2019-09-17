@@ -102,8 +102,6 @@ TagList::TagList(TagMngrTreeView* const treeView, QWidget* const parent)
 
 TagList::~TagList()
 {
-    delete d->tagList;
-    delete d->tagListModel;
     delete d;
 }
 
