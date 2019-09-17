@@ -8,6 +8,7 @@
  *
  * Copyright (C) 2017      by Shaza Ismail Kaoud <shaza dot ismail dot k at gmail dot com>
  * Copyright (C) 2019      by Ahmed Fathi <ahmed dot fathi dot abdelmageed at gmail dot com>
+ *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
  * Public License as published by the Free Software Foundation;
@@ -62,7 +63,6 @@ public:
         previousState(HealingCloneState::DO_NOTHING),
         sourceCursor(nullptr),
         sourceCursorCenter(nullptr)
-        
     {
         src        = QPoint(0, 0);
         brushColor = QColor(Qt::red);
@@ -290,10 +290,10 @@ void ImageBrushGuideWidget :: keyPressEvent(QKeyEvent *e)
     QWidget::keyPressEvent(e);
 }
 
-bool ImageBrushGuideWidget::event(QEvent *event)
+bool ImageBrushGuideWidget::event(QEvent* event)
 {
     QKeyEvent* const keyEvent = static_cast<QKeyEvent*>(event);
-    
+
     if (keyEvent && keyEvent->key() == Qt::Key_Escape &&
         d->currentState != HealingCloneState::PAINT)
     {
@@ -424,8 +424,10 @@ void ImageBrushGuideWidget::changeCursorShape(const QColor& color)
     int size      = radius * 2;
     d->brushColor = color;
     int penSize   = 2;
+
     QPixmap pix(size, size);
     pix.fill(Qt::transparent);
+
     QPainter p(&pix);
     p.setPen(QPen(color, penSize));
     p.setRenderHint(QPainter::Antialiasing, true);
@@ -518,15 +520,29 @@ void ImageBrushGuideWidget::setCloneVectorChanged(bool changed)
 
 QPoint ImageBrushGuideWidget::mapToImageCoordinates(const QPoint& point) const
 {
-    ImageRegionItem* const region = (ImageRegionItem*)item();
-    QPointF temp                  = region->zoomSettings()->mapZoomToImage(mapToScene(point)) ;
-    return QPoint((int) temp.x(), (int) temp.y());
+    QPoint ret;
+    ImageRegionItem* const region = dynamic_cast<ImageRegionItem*>(item());
+
+    if (region)
+    {
+        QPointF temp                  = region->zoomSettings()->mapZoomToImage(mapToScene(point)) ;
+        ret = QPoint((int) temp.x(), (int) temp.y());
+    }
+
+    return ret;
 }
 
 QPoint ImageBrushGuideWidget::mapFromImageCoordinates(const QPoint& point) const
 {
-    ImageRegionItem* const region = (ImageRegionItem*)item();
-    return mapFromScene(region->zoomSettings()->mapImageToZoom(point));
+    QPoint ret;
+    ImageRegionItem* const region = dynamic_cast<ImageRegionItem*>(item());
+
+    if (region)
+    {
+        ret = mapFromScene(region->zoomSettings()->mapImageToZoom(point));
+    }
+
+    return ret;
 }
 
 void ImageBrushGuideWidget::updateSourceCursor(const QPointF& pos, int diameter)
