@@ -56,7 +56,7 @@ set(ECM_MIN_VERSION       "1.7.0")
 set(KF5_MIN_VERSION       "5.1.0")
 set(QT_MIN_VERSION        "5.6.0")
 set(LENSFUN_MIN_VERSION   "0.2.6.0")
-set(EXIV2_MIN_VERSION     "0.26")
+set(EXIV2_MIN_VERSION     "0.27.1")
 set(OPENCV_MIN_VERSION    "3.1.0")
 set(QTAV_MIN_VERSION      "1.12.0")
 set(KSANE_MIN_VERSION     "5.0.0")         # For digital scanner support.
@@ -247,9 +247,9 @@ find_package(LCMS2)
 find_package(EXPAT)    # For DNGWriter: XMP SDK need Expat library to compile.
 find_package(Threads)  # For DNGWriter and LibRaw which needs native threads support.
 
-find_package(Exiv2 ${EXIV2_MIN_VERSION} REQUIRED)
+find_package(exiv2 ${EXIV2_MIN_VERSION} REQUIRED)
 
-set_package_properties("Exiv2"     PROPERTIES
+set_package_properties("exiv2"     PROPERTIES
                        DESCRIPTION "Required to build digiKam"
                        URL         "http://www.exiv2.org"
                        TYPE        RECOMMENDED
@@ -579,7 +579,7 @@ PRINT_COMPONENT_COMPILE_STATUS("FacesEngine DNN Support" ENABLE_FACESENGINE_DNN)
 # ==============================================================================
 
 PRINT_LIBRARY_STATUS("libboostgraph" "http://www.boost.org/doc/libs"                    "(version >= 1.43.0)"                Boost_FOUND)
-PRINT_LIBRARY_STATUS("libexiv2"      "http://www.exiv2.org"                             "(version >= ${EXIV2_MIN_VERSION}"   Exiv2_FOUND)
+PRINT_LIBRARY_STATUS("libexiv2"      "http://www.exiv2.org"                             "(version >= ${EXIV2_MIN_VERSION}"   exiv2_FOUND)
 PRINT_LIBRARY_STATUS("libexpat"      "http://expat.sourceforge.net"                     "(version >= 2.0.0)"                 EXPAT_FOUND)
 PRINT_LIBRARY_STATUS("libjpeg"       "http://www.ijg.org"                               "(version >= 6b)"                    JPEG_FOUND)
 PRINT_LIBRARY_STATUS("libkde"        "http://www.kde.org"                               "(version >= ${KF5_MIN_VERSION})"    KF5_FOUND)
@@ -620,7 +620,7 @@ PRINT_OPTIONAL_LIBRARY_STATUS("OpenGL"            "http://www.mesa3d.org"       
 # ==============================================================================
 
 if(Boost_FOUND                          AND
-   Exiv2_FOUND                          AND
+   exiv2_FOUND                          AND
    EXPAT_FOUND                          AND
    JPEG_FOUND                           AND
    KF5_FOUND                            AND

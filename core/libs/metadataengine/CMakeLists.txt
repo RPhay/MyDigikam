@@ -7,13 +7,16 @@
 
 kde_enable_exceptions()
 
-add_definitions(${EXIV2_DEFINITIONS})
+# TODO: How to extract exiv2lib definitions properties with cmake import interface?
+#add_definitions($<TARGET_PROPERTY:exiv2lib,INTERFACE_COMPILE_DEFINITIONS>)
 
 if(WIN32)
-    add_definitions( -DEXV_HAVE_DLL )
+    add_definitions(-DEXV_HAVE_DLL)
 endif()
 
-if("${EXIV2_VERSION}" VERSION_LESS "0.27.99")
+message(STATUS "EXIV2 VER: ${exiv2_VERSION} <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+
+if("${exiv2_VERSION}" VERSION_LESS "0.27.99")
 
     # Exiv2 version > 0.28 use auto_ptr instead unique_ptr which is deprecated.
     DISABLE_GCC_COMPILER_WARNINGS("5.99.99" "-Wno-deprecated")
@@ -62,12 +65,13 @@ set(libdmetadata_SRCS
 )
 
 include_directories(
-    ${EXIV2_INCLUDE_DIR}
     $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
+
+    $<TARGET_PROPERTY:exiv2lib,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 add_library(dmetadata_src OBJECT ${libdmetadata_SRCS})

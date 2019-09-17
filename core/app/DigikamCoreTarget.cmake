@@ -115,7 +115,7 @@ target_link_libraries(digikamcore
                       ${TIFF_LIBRARIES}
                       PNG::PNG
                       ${JPEG_LIBRARIES}
-                      ${EXIV2_LIBRARIES}
+                      exiv2lib
 
                       ${FFMPEG_LIBRARIES}
 
