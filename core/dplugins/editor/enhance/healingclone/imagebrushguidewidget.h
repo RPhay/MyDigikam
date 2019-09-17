@@ -43,7 +43,7 @@ class ImageBrushGuideWidget : public ImageRegionWidget
 
 public:
 
-    enum   HealingCloneState
+    enum HealingCloneState
     {
         SELECT_SOURCE,
         PAINT,
@@ -68,7 +68,7 @@ public:
     void setSourceCursorPosition(const QPointF& topLeftPos);
 
     void changeCursorShape(const QColor& color);
-    void changeCursorShape(const QPixmap&pixMap, float x = 0.5 , float y = 0.5);
+    void changeCursorShape(const QPixmap& pixMap, float x = 0.5 , float y = 0.5);
     void updateCursor();
 
     bool checkPointOutsideScene(const QPoint& point)    const;
