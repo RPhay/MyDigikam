@@ -247,7 +247,7 @@ find_package(LCMS2)
 find_package(EXPAT)    # For DNGWriter: XMP SDK need Expat library to compile.
 find_package(Threads)  # For DNGWriter and LibRaw which needs native threads support.
 
-find_package(exiv2)
+find_package(exiv2 REQUIRED)
 
 set_package_properties("exiv2"     PROPERTIES
                        DESCRIPTION "Required to build digiKam"
@@ -255,6 +255,10 @@ set_package_properties("exiv2"     PROPERTIES
                        TYPE        RECOMMENDED
                        PURPOSE     "Library to manage image metadata"
 )
+
+if("${exiv2_VERSION}" VERSION_LESS ${EXIV2_MIN_VERSION})
+    message(FATAL_ERROR "Exiv2 version is too old (${exiv2_VERSION})! Minimal version required:${EXIV2_MIN_VERSION}.")
+endif()
 
 # -- check Media player --------------------------------------------------------
 
