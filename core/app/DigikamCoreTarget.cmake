@@ -150,7 +150,7 @@ if(KF5NotifyConfig_FOUND)
 endif()
 
 if(Marble_FOUND)
-    target_link_libraries(digikamcore PRIVATE ${MARBLE_LIBRARIES})
+    target_link_libraries(digikamcore PRIVATE Marble)
 endif()
 
 if(X11_FOUND)

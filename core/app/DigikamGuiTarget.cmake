@@ -204,7 +204,7 @@ if(KF5KIO_FOUND)
 endif()
 
 if(${Marble_FOUND})
-     target_link_libraries(digikamgui PRIVATE ${MARBLE_LIBRARIES})
+     target_link_libraries(digikamgui PRIVATE Marble)
 endif()
 
 if(APPLE)
