@@ -516,14 +516,14 @@ void ImageBrushGuideWidget::setCloneVectorChanged(bool changed)
     d->cloneVectorChanged = changed;
 }
 
-QPoint ImageBrushGuideWidget::mapToImageCoordinates(const QPoint& point)
+QPoint ImageBrushGuideWidget::mapToImageCoordinates(const QPoint& point) const
 {
     ImageRegionItem* const region = (ImageRegionItem*)item();
     QPointF temp                  = region->zoomSettings()->mapZoomToImage(mapToScene(point)) ;
     return QPoint((int) temp.x(), (int) temp.y());
 }
 
-QPoint ImageBrushGuideWidget::mapFromImageCoordinates(const QPoint& point)
+QPoint ImageBrushGuideWidget::mapFromImageCoordinates(const QPoint& point) const
 {
     ImageRegionItem* const region = (ImageRegionItem*)item();
     return mapFromScene(region->zoomSettings()->mapImageToZoom(point));
