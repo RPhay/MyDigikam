@@ -26,6 +26,10 @@
 #ifndef DIGIKAM_EDITOR_HEALING_CLONE_TOOL_H
 #define DIGIKAM_EDITOR_HEALING_CLONE_TOOL_H
 
+// C++ includes
+
+#include <vector>
+
 // Local includes
 
 #include "editortool.h"

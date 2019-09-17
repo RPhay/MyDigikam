@@ -27,7 +27,6 @@
 
 // C++ includes
 
-#include <vector>
 #include <stack>
 
 // Qt includes
@@ -143,8 +142,8 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
                                       "1 and above determine the brush radius "
                                       "that determines the size of parts copied in the image. \nShortcut :: [ and ]"));
     d->radiusInput->setToolTip(i18n("A radius of 0 has no effect, "
-                                      "1 and above determine the brush radius "
-                                      "that determines the size of parts copied in the image. \nShortcut :: [ and ]"));
+                                    "1 and above determine the brush radius "
+                                    "that determines the size of parts copied in the image. \nShortcut :: [ and ]"));
 
     d->previewWidget->setBrushRadius(d->radiusInput->value());
 
@@ -164,67 +163,67 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    QPixmap pixmap_SRC(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                        QLatin1String("digikam/data/healing_clone_SRC.png")));
-    const QIcon ButtonIcon_SRC(pixmap_SRC);
+    QPixmap sourcePixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                         QLatin1String("digikam/data/healing_clone_SRC.png")));
+    const QIcon sourceBtnIcon(sourcePixmap);
     d->srcButton  = new QPushButton();
     d->srcButton->setFixedSize(d->btnSize);
-    d->srcButton->setIcon(ButtonIcon_SRC);
+    d->srcButton->setIcon(sourceBtnIcon);
     d->srcButton->setIconSize(d->iconSize);
-    d->srcButton->setWhatsThis(i18n("Select Source Point. \nShortcut :: S"));
-    d->srcButton->setToolTip(i18n("Select Source Point. \nShortcut :: S"));
+    d->srcButton->setWhatsThis(i18n("Select Source Point.\nShortcut: S"));
+    d->srcButton->setToolTip(i18n("Select Source Point.\nShortcut: S"));
 
     // --------------------------------------------------------
 
-    QPixmap pixmap_LASSO(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+    QPixmap lassoPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                         QLatin1String("digikam/data/healing_clone_LASSO.png")));
-    const QIcon ButtonIcon_LASSO(pixmap_LASSO);
+    const QIcon lassoBtnIcon(lassoPixmap);
     d->lassoButton  = new QPushButton();
     d->lassoButton->setFixedSize(d->btnSize);
-    d->lassoButton->setIcon(ButtonIcon_LASSO);
+    d->lassoButton->setIcon(lassoBtnIcon);
     d->lassoButton->setIconSize(d->iconSize);
-    d->lassoButton->setWhatsThis(i18n("LASSO/POLYGON SELECT. \nShortcut :: L\n"
+    d->lassoButton->setWhatsThis(i18n("Polygon Selection With Lasso.\nShortcut: L\n"
                                       "To Continue polygon, either press L or double click\n"
                                       "To Cancel, press ESC"));
-    d->lassoButton->setToolTip(i18n("LASSO/POLYGON SELECT. \nShortcut :: L\n"
+    d->lassoButton->setToolTip(i18n("Polygon Selection With Lasso.\nShortcut: L\n"
                                     "To Continue polygon, either press L or double click\n"
                                     "To Cancel, press ESC"));
 
     // --------------------------------------------------------
 
-    QPixmap pixmap_MOVE(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                        QLatin1String("digikam/data/healing_clone_MOVE.png")));
-    const QIcon ButtonIcon_MOVE(pixmap_MOVE);
+    QPixmap movePixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                       QLatin1String("digikam/data/healing_clone_MOVE.png")));
+    const QIcon moveBtnIcon(movePixmap);
     d->moveButton  = new QPushButton();
     d->moveButton->setFixedSize(d->btnSize);
-    d->moveButton->setIcon(ButtonIcon_MOVE);
+    d->moveButton->setIcon(moveBtnIcon);
     d->moveButton->setIconSize(d->iconSize);
-    d->moveButton->setWhatsThis(i18n("Move Image. \nShortcut :: M"));
-    d->moveButton->setToolTip(i18n("Move Image. \nShortcut :: M"));
+    d->moveButton->setWhatsThis(i18n("Move Image.\nShortcut: M"));
+    d->moveButton->setToolTip(i18n("Move Image.\nShortcut: M"));
 
     // --------------------------------------------------------
 
-    QPixmap pixmap_UNDO(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                        QLatin1String("digikam/data/healing_clone_UNDO.png")));
-    const QIcon ButtonIcon_UNDO(pixmap_UNDO);
+    QPixmap undoPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                       QLatin1String("digikam/data/healing_clone_UNDO.png")));
+    const QIcon undoBtnIcon(undoPixmap);
     d->undoCloneButton  = new QPushButton();
     d->undoCloneButton->setFixedSize(d->btnSize);
-    d->undoCloneButton->setIcon(ButtonIcon_UNDO);
+    d->undoCloneButton->setIcon(undoBtnIcon);
     d->undoCloneButton->setIconSize(d->iconSize);
-    d->undoCloneButton->setWhatsThis(i18n("UNDO CLONE. \nShortcut :: CTRL+Z"));
-    d->undoCloneButton->setToolTip(i18n("UNDO CLONE. \nShortcut :: CTRL+Z"));
+    d->undoCloneButton->setWhatsThis(i18n("Undo clone operation.\nShortcut: CTRL+Z"));
+    d->undoCloneButton->setToolTip(i18n("Undo clone operation.\nShortcut: CTRL+Z"));
 
     // --------------------------------------------------------
 
-    QPixmap pixmap_REDO(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                        QLatin1String("digikam/data/healing_clone_REDO.png")));
-    const QIcon ButtonIcon_REDO(pixmap_REDO);
+    QPixmap redoPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                       QLatin1String("digikam/data/healing_clone_REDO.png")));
+    const QIcon redoBtnIcon(redoPixmap);
     d->redoCloneButton  = new QPushButton();
     d->redoCloneButton->setFixedSize(d->btnSize);
-    d->redoCloneButton->setIcon(ButtonIcon_REDO);
+    d->redoCloneButton->setIcon(redoBtnIcon);
     d->redoCloneButton->setIconSize(d->iconSize);
-    d->redoCloneButton->setWhatsThis(i18n("REDO CLONE. \nShortcut :: CTRL+Y"));
-    d->redoCloneButton->setToolTip(i18n("REDO CLONE. \nShortcut :: CTRL+Y"));
+    d->redoCloneButton->setWhatsThis(i18n("Redo clone operation.\nShortcut: CTRL+Y"));
+    d->redoCloneButton->setToolTip(i18n("Redo clone operation.\nShortcut: CTRL+Y"));
 
 
     QPlainTextEdit* const label3  = new QPlainTextEdit(i18n("How To Use:\n====\n"
