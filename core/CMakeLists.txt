@@ -256,6 +256,10 @@ set_package_properties("exiv2"     PROPERTIES
                        PURPOSE     "Library to manage image metadata"
 )
 
+if("${exiv2_VERSION}" VERSION_LESS ${EXIV2_MIN_VERSION})
+    message(FATAL_ERROR "Exiv2 version is too old (${exiv2_VERSION})! Minimal version required:${EXIV2_MIN_VERSION}.")
+endif()
+
 # -- check Media player --------------------------------------------------------
 
 find_package(FFmpeg COMPONENTS AVCODEC AVFILTER AVFORMAT AVUTIL SWSCALE)
