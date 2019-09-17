@@ -591,7 +591,7 @@ void ImageBrushGuideWidget::setSourceCursorPosition(const QPointF& topLeftPos)
     }
 }
 
-bool ImageBrushGuideWidget::checkPointOutsideScene(const QPoint& globalPoint)
+bool ImageBrushGuideWidget::checkPointOutsideScene(const QPoint& globalPoint) const
 {
     bool pointOutsideScene;
     QPointF temp = mapToScene(globalPoint);
