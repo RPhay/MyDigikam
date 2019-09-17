@@ -5,6 +5,7 @@ NEW FEATURES:
 
 General    : new RawImport plugin interface to delegate Raw decoding function to extra engine ImageEditor.
 ImageEditor: add new setting from setup dialog to select right Raw Import plugin.
+ImageEditor: add new clone tool to fix artifacts on image.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -36,4 +37,6 @@ BUGFIXES:
 025 ==> 411902 - Interface icons become very large and unusable.
 026 ==> 330168 - MYSQL : allow read only database.
 027 ==> 351658 - Prevent to fill whole memory when all CPU cores are used to process Maintenance tools.
-028 ==> 
+028 ==> 110920 - Support for removing complex objects from photos.
+029 ==> 103332 - Blurring brushes for image correction.
+030 ==> 
