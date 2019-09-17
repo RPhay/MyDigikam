@@ -35,4 +35,5 @@ BUGFIXES:
 024 ==> 411946 - Crash when saving captions to picture.
 025 ==> 411902 - Interface icons become very large and unusable.
 026 ==> 330168 - MYSQL : allow read only database.
-027 ==> 
+027 ==> 351658 - Prevent to fill whole memory when all CPU cores are used to process Maintenance tools.
+028 ==> 
