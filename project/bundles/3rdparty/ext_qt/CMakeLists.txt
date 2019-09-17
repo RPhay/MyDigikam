@@ -18,11 +18,11 @@ ENDIF()
 
 ExternalProject_Add(ext_qt
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL https://download.qt.io/official_releases/qt/5.12/5.12.5/single/qt-everywhere-src-5.12.5.tar.xz
-    URL_MD5 d8c9ed842d39f1a5f31a7ab31e4e886c
+    URL https://download.qt.io/official_releases/qt/5.13/5.13.1/single/qt-everywhere-src-5.13.1.tar.xz
+    URL_MD5 d66b1da335d0c25325fdf493e9044c38
 
-    PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-support.patch &&
-                  ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-glibc.patch
+#    PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-support.patch &&
+#                  ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-glibc.patch
 
     CMAKE_ARGS -DOPENSSL_LIBS='-L${EXTPREFIX_qt}/lib -lssl -lcrypto'
 
@@ -35,7 +35,7 @@ ExternalProject_Add(ext_qt
                   -sql-sqlite                       # Compile Sqlite SQL plugin
                   -sql-mysql                        # Compile Mysql SQL plugin
                   -fontconfig
-                  -iconv                            # iconv is used instead icu
+#                  -icu                              # International Component Unicode
                   -system-freetype                  # Use system font rendering lib https://doc.qt.io/qt-5/qtgui-attribution-freetype.html
                   -openssl-linked                   # hard link ssl libraries
                   -nomake tests                     # Do not build test codes
@@ -50,7 +50,6 @@ ExternalProject_Add(ext_qt
                   -no-linuxfb
                   -no-libproxy
                   -no-pch
-                  -no-icu                           # iconv is used instead icu
                   -qt-zlib
                   -qt-pcre
                   -qt-harfbuzz
@@ -58,32 +57,33 @@ ExternalProject_Add(ext_qt
                   -skip qt3d                        # 3D core
                   -skip qtactiveqt                  # No need ActiveX support
                   -skip qtandroidextras             # For embeded devices only
-                  -skip qtwinextras                 # For Windows devices only
-                  -skip qtmacextras                 # For MacOS devices only
-                  -skip qtcanvas3d                  # 3D extensions
                   -skip qtcharts                    # No need data models charts support
                   -skip qtconnectivity              # For embeded devices only
-                  -skip qtscript                    # No need scripting (deprecated)
                   -skip qtdatavis3d                 # no need 3D data visualizations support
                   -skip qtdoc                       # No need documentation
                   -skip qtgamepad                   # No need gamepad hardware support.
-                  -skip qtgraphicaleffects          # Advanced graphical effects in GUI
+                  -skip qtgraphicaleffects          # No need Advanced graphical effects in GUI
                   -skip qtlocation                  # No need geolocation
-                  -skip qtquickcontrols2            # QtQuick support for QML
+                  -skip qtlottie                    # No need Adobe QtQuick After Effect animations integration
+                  -skip qtmacextras                 # For MacOS devices only
                   -skip qtmultimedia                # No need multimedia support (replaced by QtAV+ffmpeg)
                   -skip qtnetworkauth               # No need network authentification support.
                   -skip qtpurchasing                # No need in-app purchase of products support
+                  -skip qtquickcontrols2            # QtQuick support for QML
                   -skip qtremoteobjects             # No need sharing QObject properties between processes support
-                  -skip qtserialport                # No need serial port support
+                  -skip qtscript                    # No need scripting (deprecated)
                   -skip qtscxml                     # No need SCXML state machines support
                   -skip qtsensors                   # For embeded devices only
+                  -skip qtserialbus                 # No need serial bus support
+                  -skip qtserialport                # No need serial port support
                   -skip qtspeech                    # No need speech synthesis support
                   -skip qttranslations              # No need translation tools.
                   -skip qtvirtualkeyboard           # No need virtual keyboard support
                   -skip qtwayland                   # Specific to Linux
+                  -skip qtwebglplugin               # No need browser OpenGL extention support
                   -skip qtwebsockets                # No need websocket support
                   -skip qtwebview                   # QML extension for QWebEngine
-                  -skip qtwebglplugin               # No need browser OpenGL extention support
+                  -skip qtwinextras                 # For Windows devices only
                   ${DROP_QTWEBENGINE_DEPS}
 
 

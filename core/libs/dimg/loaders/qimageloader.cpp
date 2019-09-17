@@ -52,7 +52,7 @@ bool QImageLoader::load(const QString& filePath, DImgLoaderObserver* const obser
 
     if (mimeType.startsWith(QLatin1String("video/")) || mimeType.startsWith(QLatin1String("audio/")))
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Blacklisted from DImg::QImageLoader:" << mimeType;
+        qCWarning(DIGIKAM_DIMG_LOG) << "Blacklisted from DImg::QImageLoader:" << mimeType;
         loadingFailed();
         return false;
     }

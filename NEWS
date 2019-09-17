@@ -34,4 +34,5 @@ BUGFIXES:
 023 ==> 396559 - "digikam.dbengine: Database is locked." when scanning for new items.
 024 ==> 411946 - Crash when saving captions to picture.
 025 ==> 411902 - Interface icons become very large and unusable.
-026 ==> 
+026 ==> 330168 - MYSQL : allow read only database.
+027 ==> 

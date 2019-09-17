@@ -56,6 +56,12 @@ bool CoreDbPrivilegesChecker::checkPrivileges(QStringList& insufficientRights)
         return false;
     }
 
+    // After a crash at the start of digiKam, it may happen that the table
+    // to check the rights remains. Because the next time the start of the
+    // rights check is constantly failing, we remove the table before
+    // every start and do not check for errors.
+    checkPriv(fromDBbackend, QLatin1String("CheckPriv_Cleanup"));
+
     if (!checkPriv(fromDBbackend, QLatin1String("CheckPriv_CREATE_TABLE")))
     {
         insufficientRights.append(QLatin1String("CREATE TABLE"));
@@ -92,16 +98,14 @@ bool CoreDbPrivilegesChecker::checkPrivileges(QStringList& insufficientRights)
 
 bool CoreDbPrivilegesChecker::checkPriv(CoreDbBackend& dbBackend, const QString& dbActionName)
 {
-    QMap<QString, QVariant> bindingMap;
-    // now perform the copy action
-    QList<QString> columnNames;
-    BdEngineBackend::QueryState queryStateResult = dbBackend.execDBAction(dbBackend.getDBAction(dbActionName), bindingMap);
+    BdEngineBackend::QueryState queryStateResult = dbBackend.execDBAction(dbActionName);
 
-    if (queryStateResult != BdEngineBackend::NoErrors &&
-        dbBackend.lastSQLError().isValid()                &&
+    if (queryStateResult != BdEngineBackend::NoErrors       &&
+        dbBackend.lastSQLError().isValid()                  &&
         !dbBackend.lastSQLError().nativeErrorCode().isEmpty())
     {
-        qCDebug(DIGIKAM_COREDB_LOG) << "Core database: error while creating a trigger. Details: " << dbBackend.lastSQLError();
+        qCDebug(DIGIKAM_COREDB_LOG) << "Core database: error while creating a trigger. Details:"
+                                    << dbBackend.lastSQLError();
         return false;
     }
 
