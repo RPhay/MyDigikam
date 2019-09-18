@@ -33,7 +33,6 @@
 
 #include <QGridLayout>
 #include <QLabel>
-#include <QPlainTextEdit>
 #include <QPushButton>
 #include <QGroupBox>
 #include <QIcon>
@@ -50,6 +49,7 @@
 #include "dnuminput.h"
 #include "editortoolsettings.h"
 #include "imageiface.h"
+#include "itempropertiestxtlabel.h"
 #include "healingclonetoolwidget.h"
 
 namespace DigikamEditorHealingCloneToolPlugin
@@ -225,17 +225,20 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     d->redoCloneButton->setWhatsThis(i18n("Redo clone operation.\nShortcut: CTRL+Y"));
     d->redoCloneButton->setToolTip(i18n("Redo clone operation.\nShortcut: CTRL+Y"));
 
+    // --------------------------------------------------------
 
-    QPlainTextEdit* const label3  = new QPlainTextEdit(i18n("How To Use:\n====\n"
-                                            "* Press s to switch to source-selection mode, and select source point on image.\n"
-                                            "* Press s again and start cloning.\n"
-                                            "* Press [ and ] to change brush size.\n"
-                                            "* Press CTRL+Mousewheel to zoom in/out.\n"
-                                            "* Press m to pan the image if image is larger than viewport.\n"
-                                            "* Press l to start lasso mode. Start drawing lasso boundary either "
-                                            "continuously or discretely, then double-click or press l again to close the boundary.\n"
-                                            "* Inside lasso mode, you can clone only inside the lasso region.\n"));
-    label3->setReadOnly(true);
+    QString help = i18n("<p>How To Use:<br/><br/>"
+                        "* Press <b>s</b> to switch to source-selection mode, and select source point on image.<br/>"
+                        "* Press <b>s</b> again and start cloning.<br/>"
+                        "* Press <b>[</b> and <b>]</b> to change brush size.<br/>"
+                        "* Press <b>CTRL+Mousewheel</b> to zoom in/out.<br/>"
+                        "* Press <b>m</b> to pan the image if image is larger than viewport.<br/>"
+                        "* Press <b>l</b> to start lasso mode. Start drawing lasso boundary either "
+                        "continuously or discretely, then double-click or press l again to close the boundary.<br/>"
+                        "* Inside lasso mode, you can clone only inside the lasso region.</p>");
+
+    DTextBrowser* const label3 = new DTextBrowser(help);
+    label3->setLinesNumber(20);
 
     // Tool Buttons
 
