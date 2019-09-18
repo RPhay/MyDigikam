@@ -86,7 +86,7 @@ public:
 
     DIntNumInput*                        radiusInput;
     DDoubleNumInput*                     blurPercent;
-    ImageBrushGuideWidget*               previewWidget;
+    HealingCloneToolWidget*               previewWidget;
     EditorToolSettings*                  gboxSettings;
     QPushButton*                         srcButton;
     QPushButton*                         lassoButton;
@@ -125,7 +125,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     setToolHelp(QLatin1String("healingclonetool.anchor"));
 
     d->gboxSettings      = new EditorToolSettings(0);
-    d->previewWidget     = new ImageBrushGuideWidget;
+    d->previewWidget     = new HealingCloneToolWidget;
     refreshImage();
 
     d->previewWidget->setFocusPolicy(Qt::StrongFocus);
@@ -580,7 +580,7 @@ void HealingCloneTool::slotContinuePolygon()
 
     QVector<QPoint> polygon;
 
-    for (QPoint point : d->lassoPoints)
+    foreach (const QPoint& point, d->lassoPoints)
     {
         polygon.append(point);
     }

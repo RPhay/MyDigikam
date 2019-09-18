@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "imagebrushguidewidget.h"
+#include "healingclonetoolwidget.h"
 
 // Qt includes
 
@@ -43,7 +43,7 @@
 namespace DigikamEditorHealingCloneToolPlugin
 {
 
-class Q_DECL_HIDDEN ImageBrushGuideWidget::Private
+class Q_DECL_HIDDEN HealingCloneToolWidget::Private
 {
 
 public:
@@ -88,7 +88,7 @@ public:
     QCursor               prevCursor;
 };
 
-ImageBrushGuideWidget::ImageBrushGuideWidget(QWidget* const parent)
+HealingCloneToolWidget::HealingCloneToolWidget(QWidget* const parent)
     : ImageRegionWidget(parent),
       d(new Private)
 {
@@ -96,12 +96,12 @@ ImageBrushGuideWidget::ImageBrushGuideWidget(QWidget* const parent)
     updateSourceCursor(d->src, 10);
 }
 
-ImageBrushGuideWidget::~ImageBrushGuideWidget()
+HealingCloneToolWidget::~HealingCloneToolWidget()
 {
     delete d;
 }
 
-void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
+void HealingCloneToolWidget::mousePressEvent(QMouseEvent* e)
 {
     if (!d->amIFocused &&
         (d->currentState == HealingCloneState::PAINT ||
@@ -158,7 +158,7 @@ void ImageBrushGuideWidget::mousePressEvent(QMouseEvent* e)
     }
 }
 
-void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
+void HealingCloneToolWidget::mouseMoveEvent(QMouseEvent* e)
 {
     bool cursorOutsideScene = checkPointOutsideScene(e->pos());
 
@@ -203,8 +203,8 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
         currentSrc        = QPoint(currentSrc.x() + currentDst.x() - orgDst.x(),
                                    currentSrc.y() + currentDst.y() - orgDst.y());
 
-        // Source Cursor Update
-        QPointF tempCursorPosition = mapToScene(mapFromImageCoordinates(currentSrc)); // sceneCoordinates
+        // Source Cursor Update in scene coordinates
+        QPointF tempCursorPosition = mapToScene(mapFromImageCoordinates(currentSrc));
         setSourceCursorPosition(tempCursorPosition);
 
         emit signalClone(currentSrc, currentDst);
@@ -216,11 +216,11 @@ void ImageBrushGuideWidget::mouseMoveEvent(QMouseEvent* e)
     }
 }
 
-void ImageBrushGuideWidget::mouseReleaseEvent(QMouseEvent* e)
+void HealingCloneToolWidget::mouseReleaseEvent(QMouseEvent* e)
 {
     ImageRegionWidget::mouseReleaseEvent(e);
 
-    if (d->currentState == HealingCloneState ::DO_NOTHING)
+    if (d->currentState == HealingCloneState::DO_NOTHING)
     {
         return;
     }
@@ -245,7 +245,7 @@ void ImageBrushGuideWidget::mouseReleaseEvent(QMouseEvent* e)
     }
 }
 
-void ImageBrushGuideWidget::mouseDoubleClickEvent(QMouseEvent* event)
+void HealingCloneToolWidget::mouseDoubleClickEvent(QMouseEvent* event)
 {
     if (event->button() == Qt::LeftButton)
     {
@@ -256,7 +256,7 @@ void ImageBrushGuideWidget::mouseDoubleClickEvent(QMouseEvent* event)
     }
 }
 
-void ImageBrushGuideWidget :: keyPressEvent(QKeyEvent *e)
+void HealingCloneToolWidget :: keyPressEvent(QKeyEvent *e)
 {
     if (e->key() == Qt::Key_M)
     {
@@ -290,7 +290,7 @@ void ImageBrushGuideWidget :: keyPressEvent(QKeyEvent *e)
     QWidget::keyPressEvent(e);
 }
 
-bool ImageBrushGuideWidget::event(QEvent* event)
+bool HealingCloneToolWidget::event(QEvent* event)
 {
     QKeyEvent* const keyEvent = static_cast<QKeyEvent*>(event);
 
@@ -319,7 +319,7 @@ bool ImageBrushGuideWidget::event(QEvent* event)
     return QWidget::event(event);
 }
 
-void ImageBrushGuideWidget::keyReleaseEvent(QKeyEvent* e)
+void HealingCloneToolWidget::keyReleaseEvent(QKeyEvent* e)
 {
     if (e->key() == Qt::Key_S)
     {
@@ -334,28 +334,28 @@ void ImageBrushGuideWidget::keyReleaseEvent(QKeyEvent* e)
     }
 }
 
-void ImageBrushGuideWidget:: wheelEvent(QWheelEvent* e)
+void HealingCloneToolWidget:: wheelEvent(QWheelEvent* e)
 {
     ImageRegionWidget::wheelEvent(e);
 }
 
-void ImageBrushGuideWidget::focusOutEvent(QFocusEvent*)
+void HealingCloneToolWidget::focusOutEvent(QFocusEvent*)
 {
     d->amIFocused         = false;
     d->proceedInMoveEvent = false;
 }
 
-void ImageBrushGuideWidget::focusInEvent(QFocusEvent*)
+void HealingCloneToolWidget::focusInEvent(QFocusEvent*)
 {
 }
 
-void ImageBrushGuideWidget::slotSetSourcePoint()
+void HealingCloneToolWidget::slotSetSourcePoint()
 {
     d->srcSet = true;
     activateState(HealingCloneState::SELECT_SOURCE);
 }
 
-void ImageBrushGuideWidget::slotMoveImage()
+void HealingCloneToolWidget::slotMoveImage()
 {
     if (d->currentState == HealingCloneState::MOVE_IMAGE)
     {
@@ -376,7 +376,7 @@ void ImageBrushGuideWidget::slotMoveImage()
     }
 }
 
-void ImageBrushGuideWidget::slotLassoSelect()
+void HealingCloneToolWidget::slotLassoSelect()
 {
     if (d->currentState != HealingCloneState::LASSO_DRAW_BOUNDARY &&
         d->currentState != HealingCloneState::LASSO_CLONE)
@@ -403,7 +403,7 @@ void ImageBrushGuideWidget::slotLassoSelect()
     }
 }
 
-void ImageBrushGuideWidget::undoSlotSetSourcePoint()
+void HealingCloneToolWidget::undoSlotSetSourcePoint()
 {
     d->srcSet = false;
 
@@ -418,7 +418,7 @@ void ImageBrushGuideWidget::undoSlotSetSourcePoint()
     }
 }
 
-void ImageBrushGuideWidget::changeCursorShape(const QColor& color)
+void HealingCloneToolWidget::changeCursorShape(const QColor& color)
 {
     int radius    = d->brushRadius;
     int size      = radius * 2;
@@ -441,28 +441,28 @@ void ImageBrushGuideWidget::changeCursorShape(const QColor& color)
     updateSourceCursor(tempCursorPosition, 2 * d->brushRadius);
 }
 
-void ImageBrushGuideWidget::changeCursorShape(const QPixmap& pixMap, float x, float y)
+void HealingCloneToolWidget::changeCursorShape(const QPixmap& pixMap, float x, float y)
 {
     setCursor(QCursor(pixMap, x * pixMap.width(), y * pixMap.height()));
 }
 
-void ImageBrushGuideWidget::updateCursor()
+void HealingCloneToolWidget::updateCursor()
 {
     changeCursorShape(d->brushColor);
 }
 
-void ImageBrushGuideWidget::setBrushRadius(int value)
+void HealingCloneToolWidget::setBrushRadius(int value)
 {
     d->brushRadius = value;
     activateState(d->currentState);
 }
 
-void ImageBrushGuideWidget::setIsLassoPointsVectorEmpty(bool isEmpty)
+void HealingCloneToolWidget::setIsLassoPointsVectorEmpty(bool isEmpty)
 {
     d->isLassoPointsVectorEmpty = isEmpty;
 }
 
-void ImageBrushGuideWidget::activateState(HealingCloneState state)
+void HealingCloneToolWidget::activateState(HealingCloneState state)
 {
     d->previousState = d->currentState;
 
@@ -509,30 +509,30 @@ void ImageBrushGuideWidget::activateState(HealingCloneState state)
     }
     else if (state ==HealingCloneState::DO_NOTHING)
     {
-        this->setCursor(QCursor(Qt::ArrowCursor));
+        setCursor(QCursor(Qt::ArrowCursor));
     }
 }
 
-void ImageBrushGuideWidget::setCloneVectorChanged(bool changed)
+void HealingCloneToolWidget::setCloneVectorChanged(bool changed)
 {
     d->cloneVectorChanged = changed;
 }
 
-QPoint ImageBrushGuideWidget::mapToImageCoordinates(const QPoint& point) const
+QPoint HealingCloneToolWidget::mapToImageCoordinates(const QPoint& point) const
 {
     QPoint ret;
     ImageRegionItem* const region = dynamic_cast<ImageRegionItem*>(item());
 
     if (region)
     {
-        QPointF temp                  = region->zoomSettings()->mapZoomToImage(mapToScene(point)) ;
-        ret = QPoint((int) temp.x(), (int) temp.y());
+        QPointF temp = region->zoomSettings()->mapZoomToImage(mapToScene(point)) ;
+        ret          = QPoint((int) temp.x(), (int) temp.y());
     }
 
     return ret;
 }
 
-QPoint ImageBrushGuideWidget::mapFromImageCoordinates(const QPoint& point) const
+QPoint HealingCloneToolWidget::mapFromImageCoordinates(const QPoint& point) const
 {
     QPoint ret;
     ImageRegionItem* const region = dynamic_cast<ImageRegionItem*>(item());
@@ -545,7 +545,7 @@ QPoint ImageBrushGuideWidget::mapFromImageCoordinates(const QPoint& point) const
     return ret;
 }
 
-void ImageBrushGuideWidget::updateSourceCursor(const QPointF& pos, int diameter)
+void HealingCloneToolWidget::updateSourceCursor(const QPointF& pos, int diameter)
 {
     if (d->sourceCursor != nullptr)
     {
@@ -577,7 +577,7 @@ void ImageBrushGuideWidget::updateSourceCursor(const QPointF& pos, int diameter)
     setSourceCursorPosition(pos);
 }
 
-void ImageBrushGuideWidget::setSourceCursorPosition(const QPointF& topLeftPos)
+void HealingCloneToolWidget::setSourceCursorPosition(const QPointF& topLeftPos)
 {
     double dx           = d->sourceCursor->rect().width() / 2.0;
     double dy           = d->sourceCursor->rect().width() / 2.0;
@@ -592,8 +592,10 @@ void ImageBrushGuideWidget::setSourceCursorPosition(const QPointF& topLeftPos)
 
     // check if source is outside scene
 
-    bool sourceCursorOutsideScene = topLeftPos.x() < 0 || topLeftPos.x() + dx > scene()->width() ||
-                                    topLeftPos.y() < 0 || topLeftPos.y() + dy > scene()->height();
+    bool sourceCursorOutsideScene = (topLeftPos.x() < 0)                     ||
+                                    (topLeftPos.x() + dx > scene()->width()) ||
+                                    (topLeftPos.y() < 0)                     ||
+                                    (topLeftPos.y() + dy > scene()->height());
 
     if (sourceCursorOutsideScene)
     {
@@ -607,15 +609,17 @@ void ImageBrushGuideWidget::setSourceCursorPosition(const QPointF& topLeftPos)
     }
 }
 
-bool ImageBrushGuideWidget::checkPointOutsideScene(const QPoint& globalPoint) const
+bool HealingCloneToolWidget::checkPointOutsideScene(const QPoint& globalPoint) const
 {
     bool pointOutsideScene;
     QPointF temp = mapToScene(globalPoint);
 
     if (viewport()->width() > scene()->width())
     {
-        pointOutsideScene = temp.x() < 0 || temp.x() > scene()->width() ||
-                            temp.y() < 0 || temp.y() > scene()->height();
+        pointOutsideScene = (temp.x() < 0)                ||
+                            (temp.x() > scene()->width()) ||
+                            (temp.y() < 0)                ||
+                            (temp.y() > scene()->height());
     }
     else
     {
@@ -623,8 +627,10 @@ bool ImageBrushGuideWidget::checkPointOutsideScene(const QPoint& globalPoint) co
         int right          = mapToScene(bottomRight).x();
         int bottom         = mapToScene(bottomRight).y();
 
-        pointOutsideScene  = temp.x() <= 0 || temp.x() >= right ||
-                             temp.y() <= 0 || temp.y() >= bottom;
+        pointOutsideScene  = (temp.x() <= 0)     ||
+                             (temp.x() >= right) ||
+                             (temp.y() <= 0)     ||
+                             (temp.y() >= bottom);
     }
 
     return pointOutsideScene;
