@@ -42,4 +42,5 @@ BUGFIXES:
 029 ==> 103332 - Blurring brushes for image correction.
 030 ==> 150161 - UFRaw as tool for RAW.
 032 ==> 411214 - Digikam git beta 6.4 eats huge memory.
-033 ==> 
+033 ==> 181941 - Add an option to image editor to remember or not tools settings between sessions.
+034 ==> 
