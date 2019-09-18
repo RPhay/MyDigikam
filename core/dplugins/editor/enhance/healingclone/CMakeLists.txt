@@ -15,7 +15,7 @@ include_directories($<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 set(healingclonetoolplugin_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/imagebrushguidewidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/healingclonetoolwidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/healingclonetoolplugin.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/healingclonetool.cpp
 )

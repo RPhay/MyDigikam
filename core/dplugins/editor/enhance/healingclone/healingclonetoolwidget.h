@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMAGE_BRUSH_GUIDE_WIDGET_H
-#define DIGIKAM_IMAGE_BRUSH_GUIDE_WIDGET_H
+#ifndef DIGIKAM_HEALING_CLONE_TOOL_WIDGET_H
+#define DIGIKAM_HEALING_CLONE_TOOL_WIDGET_H
 
 // Local includes
 
@@ -36,7 +36,7 @@ using namespace Digikam;
 namespace DigikamEditorHealingCloneToolPlugin
 {
 
-class ImageBrushGuideWidget : public ImageRegionWidget
+class HealingCloneToolWidget : public ImageRegionWidget
 {
     Q_OBJECT
     Q_ENUMS(HealingCloneState)
@@ -56,11 +56,10 @@ public:
 public:
 
     /**
-     * Using the parent's constructor
-     * Should be changed to get rid of the inheritance
+     * Standard constructor
      */
-    explicit ImageBrushGuideWidget(QWidget* const parent = nullptr);
-    ~ImageBrushGuideWidget();
+    explicit HealingCloneToolWidget(QWidget* const parent = nullptr);
+    ~HealingCloneToolWidget();
 
     void setBrushRadius(int value);
     void setIsLassoPointsVectorEmpty(bool);
@@ -126,4 +125,4 @@ private:
 
 } // namespace DigikamEditorHealingCloneToolPlugin
 
-#endif // DIGIKAM_IMAGE_BRUSH_GUIDE_WIDGET_H
+#endif // DIGIKAM_HEALING_CLONE_TOOL_WIDGET_H
