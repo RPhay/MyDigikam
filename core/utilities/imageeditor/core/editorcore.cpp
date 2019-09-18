@@ -104,39 +104,35 @@ void EditorCore::load(const QString& filePath, IOFileSettings* const iofileSetti
     {
         if (EditorToolIface::editorToolIface() && iofileSettings->useRAWImport)
         {
-            foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
+            if (d->rawPlugin && (d->rawPlugin->iid() != iofileSettings->rawImportToolIid))
             {
-                DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
+                disconnect(d->rawPlugin, SIGNAL(signalDecodedImage(Digikam::LoadingDescription,Digikam::DImg)),
+                           this, SLOT(slotLoadRawFromTool(Digikam::LoadingDescription,Digikam::DImg)));
 
-                if (raw && d->rawPlugin && (raw->iid() == iofileSettings->rawImportToolIid))
+                disconnect(d->rawPlugin, SIGNAL(signalLoadRaw(Digikam::LoadingDescription)),
+                           this, SLOT(slotLoadRaw(Digikam::LoadingDescription)));
+
+                d->rawPlugin = nullptr;
+            }
+
+            if (!d->rawPlugin)
+            {
+                foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
                 {
-                    if (d->rawPlugin != raw)
-                    {
-                        disconnect(d->rawPlugin, SIGNAL(signalDecodedImage(Digikam::LoadingDescription,Digikam::DImg)),
-                                   this, SLOT(slotLoadRawFromTool(Digikam::LoadingDescription,Digikam::DImg)));
+                    DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
 
-                        disconnect(d->rawPlugin, SIGNAL(signalLoadRaw(Digikam::LoadingDescription)),
-                                   this, SLOT(slotLoadRaw(Digikam::LoadingDescription)));
-
-                        d->rawPlugin = nullptr;
-                    }
-                    else
+                    if (raw && (raw->iid() == iofileSettings->rawImportToolIid))
                     {
+                        d->rawPlugin = raw;
+
+                        connect(d->rawPlugin, SIGNAL(signalDecodedImage(Digikam::LoadingDescription,Digikam::DImg)),
+                                this, SLOT(slotLoadRawFromTool(Digikam::LoadingDescription,Digikam::DImg)));
+
+                        connect(d->rawPlugin, SIGNAL(signalLoadRaw(Digikam::LoadingDescription)),
+                                this, SLOT(slotLoadRaw(Digikam::LoadingDescription)));
+
                         break;
                     }
-                }
-
-                if (raw && !d->rawPlugin)
-                {
-                    d->rawPlugin = raw;
-
-                    connect(d->rawPlugin, SIGNAL(signalDecodedImage(Digikam::LoadingDescription,Digikam::DImg)),
-                            this, SLOT(slotLoadRawFromTool(Digikam::LoadingDescription,Digikam::DImg)));
-
-                    connect(d->rawPlugin, SIGNAL(signalLoadRaw(Digikam::LoadingDescription)),
-                            this, SLOT(slotLoadRaw(Digikam::LoadingDescription)));
-
-                    break;
                 }
             }
 
