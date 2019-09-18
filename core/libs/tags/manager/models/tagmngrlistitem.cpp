@@ -46,9 +46,9 @@ public:
     }
 
     QList<ListItem*> childItems;
+    QList<ListItem*> toDelItems;
     QList<QVariant>  itemData;
     QList<int>       tagIds;
-    QList<int>       tagsToDel;
     ListItem*        parentItem;
 };
 
@@ -69,12 +69,16 @@ ListItem::ListItem(QList<QVariant>& data, ListItem* const parent)
 ListItem::~ListItem()
 {
     qDeleteAll(d->childItems);
+    qDeleteAll(d->toDelItems);
     delete d;
 }
 
 void ListItem::deleteChild(ListItem* const item)
 {
-    d->childItems.removeOne(item);
+    int row = d->childItems.indexOf(item);
+
+    if (row != -1)
+        deleteChild(row);
 }
 
 QList<ListItem*> ListItem::allChildren() const
@@ -109,11 +113,12 @@ int ListItem::childCount() const
 
 void ListItem::deleteChild(int row)
 {
-    return d->childItems.removeAt(row);
+    d->toDelItems << d->childItems.takeAt(row);
 }
 
 void ListItem::removeAll()
 {
+    d->toDelItems << d->childItems;
     d->childItems.clear();
 }
 
@@ -202,7 +207,7 @@ ListItem* ListItem::containsItem(ListItem* const item) const
 
 bool ListItem::equal(ListItem* const item) const
 {
-    return (this->d->tagIds) == (item->getTagIds());
+    return (d->tagIds == item->getTagIds());
 }
 
 } // namespace Digikam
