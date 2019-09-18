@@ -24,11 +24,15 @@
 
 // Qt includes
 
-#include <QVBoxLayout>
+#include <QMessageBox>
 #include <QApplication>
 #include <QPointer>
 #include <QDebug>
 #include <QByteArray>
+
+// KDE includes
+
+#include <klocalizedstring.h>
 
 // Local includes
 
@@ -157,13 +161,12 @@ void UFRawRawImportPlugin::slotErrorOccurred(QProcess::ProcessError error)
 
 void UFRawRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus status)
 {
+    qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: return code:" << code << ":: Exit status:" << status;
+
     if (code < 0)
     {
-        
-/*
-        m_history->addEntry(QString::fromUtf8("Error to decode RAW image with dcraw!"),                        DHistoryView::ErrorEntry);
-        m_history->addEntry( QString::fromUtf8("Close this dialog to load RAW image with native import tool"), DHistoryView::WarningEntry);
-*/
+        QString message = i18n("Error to import RAW image with UFRaw\nClose this dialog to load RAW image with native import tool");
+        QMessageBox::information(0, qApp->applicationName(), message);
     }
     else
     {
