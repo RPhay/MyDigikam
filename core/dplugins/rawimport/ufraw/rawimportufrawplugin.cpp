@@ -64,7 +64,7 @@ QString UFRawRawImportPlugin::iid() const
 
 QIcon UFRawRawImportPlugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("digikam"));
+    return QIcon::fromTheme(QLatin1String("image-x-adobe-dng"));
 }
 
 QString UFRawRawImportPlugin::description() const
@@ -163,32 +163,27 @@ void UFRawRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus st
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: return code:" << code << ":: Exit status:" << status;
 
-    if (code < 0)
+    m_props   = LoadingDescription(m_tempFile->fileName(), LoadingDescription::ConvertForEditor);
+    m_decoded = DImg(m_props.filePath);
+
+    if (m_decoded.isNull())
     {
         QString message = i18n("Error to import RAW image with UFRaw\nClose this dialog to load RAW image with native import tool");
         QMessageBox::information(0, qApp->applicationName(), message);
+
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
+        qCDebug(DIGIKAM_GENERAL_LOG) << m_props.filePath;
+        emit signalLoadRaw(m_props);
     }
     else
     {
-        m_props   = LoadingDescription(m_tempFile->fileName(), LoadingDescription::ConvertForEditor);
-        m_decoded = DImg(m_props.filePath);
-
-        if (m_decoded.isNull())
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
-            qCDebug(DIGIKAM_GENERAL_LOG) << m_props.filePath;
-            emit signalLoadRaw(m_props);
-        }
-        else
-        {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is not null...";
-            qCDebug(DIGIKAM_GENERAL_LOG) << m_props.filePath;
-            emit signalDecodedImage(m_props, m_decoded);
-        }
-
-        delete m_tempFile;
-        m_tempFile = nullptr;
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is not null...";
+        qCDebug(DIGIKAM_GENERAL_LOG) << m_props.filePath;
+        emit signalDecodedImage(m_props, m_decoded);
     }
+
+    delete m_tempFile;
+    m_tempFile = nullptr;
 }
 
 void UFRawRawImportPlugin::slotProcessReadyRead()
