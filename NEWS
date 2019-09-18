@@ -8,6 +8,7 @@ ImageEditor: add new setting from setup dialog to select right Raw Import plugin
 ImageEditor: add new clone tool to fix artifacts on image.
 ImageEditor: add new tool to import RAW image using UFRaw.
 ImageEditor: add new tool to import RAW image using RawTherapee.
+ImageEditor: add new tool to import RAW image using DarkTable.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -45,6 +46,5 @@ BUGFIXES:
 032 ==> 411214 - digiKam git beta 6.4 eats huge memory.
 033 ==> 181941 - Add an option to image editor to remember or not tools settings between sessions.
 034 ==> 221571 - Integrate RawTherapee into digikam
-035 ==>
-
-
+035 ==> 341186 - Integrate with darktable.
+036 ==> 

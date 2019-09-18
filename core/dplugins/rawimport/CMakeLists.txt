@@ -8,3 +8,4 @@
 add_subdirectory(native)
 add_subdirectory(ufraw)
 add_subdirectory(rawtherapee)
+add_subdirectory(darktable)

@@ -32,7 +32,6 @@
 // Local includes
 
 #include "dpluginrawimport.h"
-#include "dhistoryview.h"
 #include "dimg.h"
 #include "loadingdescription.h"
 

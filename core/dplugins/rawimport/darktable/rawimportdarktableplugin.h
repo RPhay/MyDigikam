@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2019-09-18
- * Description : UFRaw raw import plugin.
+ * Description : DarkTable raw import plugin.
  *
  * Copyright (C) 2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_UFRAW_RAW_IMPORT_PLUGIN_H
-#define DIGIKAM_UFRAW_RAW_IMPORT_PLUGIN_H
+#ifndef DIGIKAM_DARKTABLE_RAW_IMPORT_PLUGIN_H
+#define DIGIKAM_DARKTABLE_RAW_IMPORT_PLUGIN_H
 
 // Qt includes
 
@@ -35,14 +35,14 @@
 #include "dimg.h"
 #include "loadingdescription.h"
 
-#define DPLUGIN_IID "org.kde.digikam.plugin.rawimport.UFRaw"
+#define DPLUGIN_IID "org.kde.digikam.plugin.rawimport.DarkTable"
 
 using namespace Digikam;
 
-namespace DigikamRawImportUFRawPlugin
+namespace DigikamRawImportDarkTablePlugin
 {
 
-class UFRawRawImportPlugin : public DPluginRawImport
+class DarkTableRawImportPlugin : public DPluginRawImport
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID DPLUGIN_IID)
@@ -50,8 +50,8 @@ class UFRawRawImportPlugin : public DPluginRawImport
 
 public:
 
-    explicit UFRawRawImportPlugin(QObject* const parent = nullptr);
-    ~UFRawRawImportPlugin();
+    explicit DarkTableRawImportPlugin(QObject* const parent = nullptr);
+    ~DarkTableRawImportPlugin();
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -72,13 +72,14 @@ private Q_SLOTS:
 
 private:
 
-    QProcess*          m_ufraw;
+    QProcess*          m_darktable;
     DImg               m_decoded;
     LoadingDescription m_props;
     QFileInfo          m_fileInfo;
     QTemporaryFile*    m_tempFile;
+    QTemporaryFile     m_luaFile;
 };
 
-} // namespace DigikamRawImportUFRawPlugin
+} // namespace DigikamRawImportDarkTablePlugin
 
-#endif // DIGIKAM_UFRAW_RAW_IMPORT_PLUGIN_H
+#endif // DIGIKAM_DARKTABLE_RAW_IMPORT_PLUGIN_H
