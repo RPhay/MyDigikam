@@ -163,8 +163,7 @@ void UFRawRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus st
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: return code:" << code << ":: Exit status:" << status;
 
-    m_props   = LoadingDescription(m_tempFile->fileName(), LoadingDescription::ConvertForEditor);
-    m_decoded = DImg(m_props.filePath);
+    m_decoded = DImg(m_tempFile->fileName());
 
     if (m_decoded.isNull())
     {
@@ -179,6 +178,7 @@ void UFRawRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus st
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is not null...";
         qCDebug(DIGIKAM_GENERAL_LOG) << m_props.filePath;
+        m_props = LoadingDescription(m_tempFile->fileName(), LoadingDescription::ConvertForEditor);
         emit signalDecodedImage(m_props, m_decoded);
     }
 
