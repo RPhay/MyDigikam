@@ -14,10 +14,10 @@ include_directories($<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-set(rawimportufrawplugin_SRCS
+set(rawimportrawtherapeeplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/rawimportrawtherapeeplugin.cpp
 )
 
 DIGIKAM_ADD_RAWIMPORT_PLUGIN(NAME    RawTherapee
-                             SOURCES ${rawimportufrawplugin_SRCS}
+                             SOURCES ${rawimportrawtherapeeplugin_SRCS}
 )
