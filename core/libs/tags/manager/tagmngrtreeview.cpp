@@ -55,7 +55,8 @@ public:
 };
 
 TagMngrTreeView::TagMngrTreeView(TagsManager* const parent, TagModel* const model)
-                : TagFolderView(parent, model), d(new Private())
+    : TagFolderView(parent, model),
+      d(new Private())
 {
     d->tagMngr = parent;
     setAlbumFilterModel(new TagsManagerFilterModel(this), albumFilterModel());
@@ -75,7 +76,7 @@ void TagMngrTreeView::contextMenuEvent(QContextMenuEvent* event)
     std::sort(selectedItems.begin(), selectedItems.end());
     QList<TAlbum*> items;
 
-    foreach(const QModelIndex& mIndex, selectedItems)
+    foreach (const QModelIndex& mIndex, selectedItems)
     {
         TAlbum* const temp = static_cast<TAlbum*>(albumForIndex(mIndex));
         items.append(temp);
@@ -187,7 +188,7 @@ void TagMngrTreeView::slotExpandSelected()
 {
     QModelIndexList list = selectionModel()->selectedIndexes();
 
-    foreach(const QModelIndex& index, list)
+    foreach (const QModelIndex& index, list)
     {
         expand(index);
     }

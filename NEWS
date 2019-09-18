@@ -3,9 +3,12 @@ digiKam 6.4.0 - Release date: 2019-??-??
 *****************************************************************************************************
 NEW FEATURES:
 
-General    : new RawImport plugin interface to delegate Raw decoding function to extra engine ImageEditor.
+General    : new RawImport plugin interface to delegate Raw decoding function to extra engine with ImageEditor.
 ImageEditor: add new setting from setup dialog to select right Raw Import plugin.
 ImageEditor: add new clone tool to fix artifacts on image.
+ImageEditor: add new tool to import RAW image using UFRaw.
+ImageEditor: add new tool to import RAW image using RawTherapee.
+ImageEditor: add new tool to import RAW image using DarkTable.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -39,4 +42,9 @@ BUGFIXES:
 027 ==> 351658 - Prevent to fill whole memory when all CPU cores are used to process Maintenance tools.
 028 ==> 110920 - Support for removing complex objects from photos.
 029 ==> 103332 - Blurring brushes for image correction.
-030 ==> 
+030 ==> 150161 - UFRaw as tool for RAW.
+032 ==> 411214 - digiKam git beta 6.4 eats huge memory.
+033 ==> 181941 - Add an option to image editor to remember or not tools settings between sessions.
+034 ==> 221571 - Integrate RawTherapee into digikam
+035 ==> 341186 - Integrate with darktable.
+036 ==> 

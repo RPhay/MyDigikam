@@ -696,9 +696,11 @@ void TagsManager::setupActions()
 
     d->mainToolbar->addSeparator();
 
-    d->addAction = new QAction(QIcon::fromTheme(QLatin1String("list-add")), QLatin1String(""), d->treeWindow);
+    d->addAction                 = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
+                                               QLatin1String(""), d->treeWindow);
 
-    d->delAction = new QAction(QIcon::fromTheme(QLatin1String("list-remove")), QLatin1String(""), d->treeWindow);
+    d->delAction                 = new QAction(QIcon::fromTheme(QLatin1String("list-remove")),
+                                               QLatin1String(""), d->treeWindow);
 
     /** organize group **/
     d->organizeAction            = new QMenu(i18nc("@title:menu", "Organize"), this);
@@ -792,8 +794,7 @@ void TagsManager::setupActions()
     d->syncexportAction->setIcon(QIcon::fromTheme(QLatin1String("network-server-database")));
 
     QAction* const wrDbImg  = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),
-                                          i18n("Write Tags from Database "
-                                              "to Image"), this);
+                                          i18n("Write Tags from Database to Image"), this);
 
     QAction* const readTags = new QAction(QIcon::fromTheme(QLatin1String("tag-new")),
                                           i18n("Read Tags from Image"), this);
@@ -847,7 +848,7 @@ void TagsManager::setupActions()
 }
 
 // helper based on KAction::setHelpText
-void TagsManager::setHelpText(QAction *action, const QString& text)
+void TagsManager::setHelpText(QAction* const action, const QString& text)
 {
     action->setStatusTip(text);
     action->setToolTip(text);

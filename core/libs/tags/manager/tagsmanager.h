@@ -167,7 +167,7 @@ private:
      *                               tag is selected
      */
 
-    void setHelpText(QAction* action, const QString& text);
+    void setHelpText(QAction* const action, const QString& text);
     void enableRootTagActions(bool value);
 
 private:

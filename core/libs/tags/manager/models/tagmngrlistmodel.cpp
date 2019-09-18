@@ -157,7 +157,7 @@ QMimeData* TagMngrListModel::mimeData(const QModelIndexList& indexes) const
 
     QDataStream stream(&encodedData, QIODevice::WriteOnly);
 
-    foreach(const QModelIndex& index, indexes)
+    foreach (const QModelIndex& index, indexes)
     {
         if (index.isValid())
         {
@@ -197,7 +197,7 @@ bool TagMngrListModel::dropMimeData(const QMimeData* data, Qt::DropAction action
 
         if (itemPoz < row)
         {
-            temp++;
+            ++temp;
         }
 
         toRemove.append(itemPoz);
