@@ -122,7 +122,7 @@ bool UFRawRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*de
 
     m_ufraw->setProgram(QLatin1String("ufraw"));
     m_ufraw->setArguments(QStringList() << QLatin1String("--out-depth=16")                               // 16 bits per color per pixels
-                                        << QLatin1String("--out-type=png")                               // PNG output
+                                        << QLatin1String("--out-type=png")                               // PNG output (TIFF output generate multi-layers file)
                                         << QLatin1String("--overwrite")                                  // Overwrite target temporay file
                                         << QString::fromUtf8("--output=%1").arg(m_tempFile->fileName())  // output file
                                         << filePath);
