@@ -50,7 +50,7 @@
 #include "dnuminput.h"
 #include "editortoolsettings.h"
 #include "imageiface.h"
-#include "imagebrushguidewidget.h"
+#include "healingclonetoolwidget.h"
 
 namespace DigikamEditorHealingCloneToolPlugin
 {
