@@ -26,14 +26,10 @@
 // Qt includes
 
 #include <QProcess>
-#include <QFileInfo>
-#include <QTemporaryFile>
 
 // Local includes
 
 #include "dpluginrawimport.h"
-#include "dimg.h"
-#include "loadingdescription.h"
 
 #define DPLUGIN_IID "org.kde.digikam.plugin.rawimport.DarkTable"
 
@@ -72,12 +68,8 @@ private Q_SLOTS:
 
 private:
 
-    QProcess*          m_darktable;
-    DImg               m_decoded;
-    LoadingDescription m_props;
-    QFileInfo          m_fileInfo;
-    QTemporaryFile*    m_tempFile;
-    QTemporaryFile     m_luaFile;
+    class Private;
+    Private* const d;
 };
 
 } // namespace DigikamRawImportDarkTablePlugin

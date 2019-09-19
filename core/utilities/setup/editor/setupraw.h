@@ -49,6 +49,7 @@ private Q_SLOTS:
 
     void slotSixteenBitsImageToggled(bool);
     void slotBehaviorChanged();
+    void slotAboutRawImportPlugin();
 
 private:
 

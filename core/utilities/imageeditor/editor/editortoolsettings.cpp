@@ -118,7 +118,7 @@ public:
     HistogramBox*        histogramBox;
 
     DIntNumInput*        guideSize;
-    
+
     EditorTool*          tool;
 };
 
