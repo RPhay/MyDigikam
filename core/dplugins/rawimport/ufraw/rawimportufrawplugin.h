@@ -26,14 +26,10 @@
 // Qt includes
 
 #include <QProcess>
-#include <QFileInfo>
-#include <QTemporaryFile>
 
 // Local includes
 
 #include "dpluginrawimport.h"
-#include "dimg.h"
-#include "loadingdescription.h"
 
 #define DPLUGIN_IID "org.kde.digikam.plugin.rawimport.UFRaw"
 
@@ -71,12 +67,9 @@ private Q_SLOTS:
     void slotProcessReadyRead();
 
 private:
-
-    QProcess*          m_ufraw;
-    DImg               m_decoded;
-    LoadingDescription m_props;
-    QFileInfo          m_fileInfo;
-    QTemporaryFile*    m_tempFile;
+    
+    class Private;
+    Private* const d;
 };
 
 } // namespace DigikamRawImportUFRawPlugin

@@ -29,6 +29,8 @@
 #include <QPointer>
 #include <QDebug>
 #include <QByteArray>
+#include <QFileInfo>
+#include <QTemporaryFile>
 
 // KDE includes
 
@@ -37,19 +39,38 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "dimg.h"
+#include "loadingdescription.h"
 
 namespace DigikamRawImportUFRawPlugin
 {
 
+class Q_DECL_HIDDEN UFRawRawImportPlugin::Private
+{
+public:
+
+    explicit Private()
+      : ufraw(nullptr),
+        tempFile(nullptr)
+    {
+    }
+
+    QProcess*          ufraw;
+    DImg               decoded;
+    LoadingDescription props;
+    QFileInfo          fileInfo;
+    QTemporaryFile*    tempFile;
+};
+    
 UFRawRawImportPlugin::UFRawRawImportPlugin(QObject* const parent)
     : DPluginRawImport(parent),
-      m_ufraw(nullptr),
-      m_tempFile(nullptr)
+      d(new Private)
 {
 }
 
 UFRawRawImportPlugin::~UFRawRawImportPlugin()
 {
+    delete d;
 }
 
 QString UFRawRawImportPlugin::name() const
@@ -93,42 +114,42 @@ void UFRawRawImportPlugin::setup(QObject* const /*parent*/)
 
 bool UFRawRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*/)
 {
-    m_fileInfo = QFileInfo(filePath);
-    m_props    = LoadingDescription(m_fileInfo.filePath(), LoadingDescription::ConvertForEditor);
-    m_decoded  = DImg();
+    d->fileInfo = QFileInfo(filePath);
+    d->props    = LoadingDescription(d->fileInfo.filePath(), LoadingDescription::ConvertForEditor);
+    d->decoded  = DImg();
 
-    delete m_tempFile;
+    delete d->tempFile;
 
-    m_tempFile = new QTemporaryFile();
-    m_tempFile->open();
+    d->tempFile = new QTemporaryFile();
+    d->tempFile->open();
 
-    m_ufraw    = new QProcess(this);
-    m_ufraw->setProcessChannelMode(QProcess::MergedChannels);
-    m_ufraw->setWorkingDirectory(m_fileInfo.path());
+    d->ufraw    = new QProcess(this);
+    d->ufraw->setProcessChannelMode(QProcess::MergedChannels);
+    d->ufraw->setWorkingDirectory(d->fileInfo.path());
 
-    connect(m_ufraw, SIGNAL(errorOccurred(QProcess::ProcessError)),
+    connect(d->ufraw, SIGNAL(errorOccurred(QProcess::ProcessError)),
             this, SLOT(slotErrorOccurred(QProcess::ProcessError)));
 
-    connect(m_ufraw, SIGNAL(finished(int,QProcess::ExitStatus)),
+    connect(d->ufraw, SIGNAL(finished(int,QProcess::ExitStatus)),
             this, SLOT(slotProcessFinished(int,QProcess::ExitStatus)));
 
-    connect(m_ufraw, SIGNAL(readyRead()),
+    connect(d->ufraw, SIGNAL(readyRead()),
             this, SLOT(slotProcessReadyRead()));
 
     // --------
 
-    m_fileInfo = QFileInfo(filePath);
+    d->fileInfo = QFileInfo(filePath);
 
-    m_ufraw->setProgram(QLatin1String("ufraw"));
-    m_ufraw->setArguments(QStringList() << QLatin1String("--out-depth=16")                              // 16 bits per color per pixels
-                                        << QLatin1String("--out-type=png")                              // PNG output (TIFF output generate multi-layers file)
-                                        << QLatin1String("--overwrite")                                 // Overwrite target temporay file
-                                        << QString::fromUtf8("--output=%1").arg(m_tempFile->fileName()) // Output file
-                                        << filePath);                                                   // Input file
+    d->ufraw->setProgram(QLatin1String("ufraw"));
+    d->ufraw->setArguments(QStringList() << QLatin1String("--out-depth=16")                              // 16 bits per color per pixels
+                                        << QLatin1String("--out-type=png")                               // PNG output (TIFF output generate multi-layers file)
+                                        << QLatin1String("--overwrite")                                  // Overwrite target temporay file
+                                        << QString::fromUtf8("--output=%1").arg(d->tempFile->fileName()) // Output file
+                                        << filePath);                                                    // Input file
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw arguments:" << m_ufraw->arguments();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw arguments:" << d->ufraw->arguments();
 
-    m_ufraw->start();
+    d->ufraw->start();
 
     return true;
 }
@@ -162,32 +183,32 @@ void UFRawRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatus st
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "UFRaw :: return code:" << code << ":: Exit status:" << status;
 
-    m_decoded = DImg(m_tempFile->fileName());
+    d->decoded = DImg(d->tempFile->fileName());
 
-    if (m_decoded.isNull())
+    if (d->decoded.isNull())
     {
         QString message = i18n("Error to import RAW image with UFRaw\nClose this dialog to load RAW image with native import tool");
         QMessageBox::information(0, qApp->applicationName(), message);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
-        qCDebug(DIGIKAM_GENERAL_LOG) << m_props.filePath;
-        emit signalLoadRaw(m_props);
+        qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
+        emit signalLoadRaw(d->props);
     }
     else
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is not null...";
-        qCDebug(DIGIKAM_GENERAL_LOG) << m_props.filePath;
-        m_props = LoadingDescription(m_tempFile->fileName(), LoadingDescription::ConvertForEditor);
-        emit signalDecodedImage(m_props, m_decoded);
+        qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
+        d->props = LoadingDescription(d->tempFile->fileName(), LoadingDescription::ConvertForEditor);
+        emit signalDecodedImage(d->props, d->decoded);
     }
 
-    delete m_tempFile;
-    m_tempFile = nullptr;
+    delete d->tempFile;
+    d->tempFile = nullptr;
 }
 
 void UFRawRawImportPlugin::slotProcessReadyRead()
 {
-    QByteArray data   = m_ufraw->readAllStandardError();
+    QByteArray data   = d->ufraw->readAllStandardError();
     QStringList lines = QString::fromUtf8(data).split(QLatin1Char('\n'), QString::SkipEmptyParts);
 
     foreach (const QString& one, lines)
