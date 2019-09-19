@@ -45,55 +45,76 @@
 namespace DigikamRawImportDarkTablePlugin
 {
 
-const QString s_luaScriptData = QLatin1String("\n"                                                      \
-"local dt = require \"darktable\"\n"                                                                    \
-"\n"                                                                                                    \
-"local min_api_version = \"2.1.0\"\n"                                                                   \
-"if dt.configuration.api_version_string < min_api_version then\n"                                       \
-"  dt.print(\"the exit export script requires at least darktable version 1.7.0\")\n"                    \
-"  dt.print_error(\"the exit export script requires at least darktable version 1.7.0\")\n"              \
-"  return\n"                                                                                            \
-"else\n"                                                                                                \
-"  dt.print(\"closing darktable will export the image and make image editor load it\")\n"               \
-"end\n"                                                                                                 \
-"\n"                                                                                                    \
-"local export_filename = dt.preferences.read(\"export_on_exit\", \"export_filename\", \"string\")\n"    \
-"\n"                                                                                                    \
-"dt.register_event(\"exit\", function()\n"                                                              \
-"  -- safegurad against someone using this with their library containing 50k images\n"                  \
-"  if #dt.database > 1 then\n"                                                                          \
-"    dt.print_error(\"too many images, only exporting the first\")\n"                                   \
-"  -- return\n"                                                                                         \
-"  end\n"                                                                                               \
-"\n"                                                                                                    \
-"  -- change the view first to force writing of the history stack\n"                                    \
-"  dt.gui.current_view(dt.gui.views.lighttable)\n"                                                      \
-"  -- now export\n"                                                                                     \
-"  local format = dt.new_format(\"png\")\n"                                                             \
-"  format.max_width = 0\n"                                                                              \
-"  format.max_height = 0\n"                                                                             \
-"  -- lets have the export in a loop so we could easily support > 1 images\n"                           \
-"  for _, image in ipairs(dt.database) do\n"                                                            \
-"    dt.print_error(\"exporting `\"..tostring(image)..\"' to `\"..export_filename..\"'\")\n"            \
-"    format:write_image(image, export_filename)\n"                                                      \
-"    break -- only export one image. see above for the reason\n"                                        \
-"  end\n"                                                                                               \
-"end)\n"                                                                                                \
-"");
+class Q_DECL_HIDDEN DarkTableRawImportPlugin::Private
+{
+public:
+
+    explicit Private()
+      : darktable(nullptr),
+        tempFile(nullptr)
+    {
+    }
+
+    static const QString luaScriptData;
+
+    QProcess*            darktable;
+    DImg                 decoded;
+    LoadingDescription   props;
+    QFileInfo            fileInfo;
+    QTemporaryFile*      tempFile;
+    QTemporaryFile       luaFile;
+};
+
+const QString DarkTableRawImportPlugin::Private::luaScriptData = QLatin1String(
+    "\n"                                                                                                    \
+    "local dt = require \"darktable\"\n"                                                                    \
+    "\n"                                                                                                    \
+    "local min_api_version = \"2.1.0\"\n"                                                                   \
+    "if dt.configuration.api_version_string < min_api_version then\n"                                       \
+    "  dt.print(\"the exit export script requires at least darktable version 1.7.0\")\n"                    \
+    "  dt.print_error(\"the exit export script requires at least darktable version 1.7.0\")\n"              \
+    "  return\n"                                                                                            \
+    "else\n"                                                                                                \
+    "  dt.print(\"closing darktable will export the image and make image editor load it\")\n"               \
+    "end\n"                                                                                                 \
+    "\n"                                                                                                    \
+    "local export_filename = dt.preferences.read(\"export_on_exit\", \"export_filename\", \"string\")\n"    \
+    "\n"                                                                                                    \
+    "dt.register_event(\"exit\", function()\n"                                                              \
+    "  -- safegurad against someone using this with their library containing 50k images\n"                  \
+    "  if #dt.database > 1 then\n"                                                                          \
+    "    dt.print_error(\"too many images, only exporting the first\")\n"                                   \
+    "  -- return\n"                                                                                         \
+    "  end\n"                                                                                               \
+    "\n"                                                                                                    \
+    "  -- change the view first to force writing of the history stack\n"                                    \
+    "  dt.gui.current_view(dt.gui.views.lighttable)\n"                                                      \
+    "  -- now export\n"                                                                                     \
+    "  local format = dt.new_format(\"png\")\n"                                                             \
+    "  format.max_width = 0\n"                                                                              \
+    "  format.max_height = 0\n"                                                                             \
+    "  -- lets have the export in a loop so we could easily support > 1 images\n"                           \
+    "  for _, image in ipairs(dt.database) do\n"                                                            \
+    "    dt.print_error(\"exporting `\"..tostring(image)..\"' to `\"..export_filename..\"'\")\n"            \
+    "    format:write_image(image, export_filename)\n"                                                      \
+    "    break -- only export one image. see above for the reason\n"                                        \
+    "  end\n"                                                                                               \
+    "end)\n"                                                                                                \
+);
 
 DarkTableRawImportPlugin::DarkTableRawImportPlugin(QObject* const parent)
     : DPluginRawImport(parent),
-      m_darktable(nullptr),
-      m_tempFile(nullptr)
+      d(new Private)
 {
-    m_luaFile.open();
-    QTextStream stream(&m_luaFile);
-    stream << s_luaScriptData;
+    d->luaFile.open();
+    QTextStream stream(&d->luaFile);
+    stream << d->luaScriptData;
     stream.flush();
 }
 
 DarkTableRawImportPlugin::~DarkTableRawImportPlugin()
 {
+    delete d;
 }
 
 QString DarkTableRawImportPlugin::name() const
@@ -118,7 +139,8 @@ QString DarkTableRawImportPlugin::description() const
 
 QString DarkTableRawImportPlugin::details() const
 {
-    return QString::fromUtf8("<p>This RAW Import plugin use DarkTable tool to pre-process file in Image Editor.</p>");
+    return QString::fromUtf8("<p>This RAW Import plugin use DarkTable tool to pre-process file in Image Editor.</p>"
+                             "<p>It requires at least darktable version 1.7.0 to work.</p>");
 }
 
 QList<DPluginAuthor> DarkTableRawImportPlugin::authors() const
@@ -137,48 +159,48 @@ void DarkTableRawImportPlugin::setup(QObject* const /*parent*/)
 
 bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*/)
 {
-    m_fileInfo = QFileInfo(filePath);
-    m_props    = LoadingDescription(m_fileInfo.filePath(), LoadingDescription::ConvertForEditor);
-    m_decoded  = DImg();
+    d->fileInfo = QFileInfo(filePath);
+    d->props    = LoadingDescription(d->fileInfo.filePath(), LoadingDescription::ConvertForEditor);
+    d->decoded  = DImg();
 
-    delete m_tempFile;
+    delete d->tempFile;
 
-    m_tempFile = new QTemporaryFile();
-    m_tempFile->open();
+    d->tempFile = new QTemporaryFile();
+    d->tempFile->open();
 
-    m_darktable    = new QProcess(this);
-    m_darktable->setProcessChannelMode(QProcess::MergedChannels);
-    m_darktable->setWorkingDirectory(m_fileInfo.path());
+    d->darktable    = new QProcess(this);
+    d->darktable->setProcessChannelMode(QProcess::MergedChannels);
+    d->darktable->setWorkingDirectory(d->fileInfo.path());
 
-    connect(m_darktable, SIGNAL(errorOccurred(QProcess::ProcessError)),
+    connect(d->darktable, SIGNAL(errorOccurred(QProcess::ProcessError)),
             this, SLOT(slotErrorOccurred(QProcess::ProcessError)));
 
-    connect(m_darktable, SIGNAL(finished(int,QProcess::ExitStatus)),
+    connect(d->darktable, SIGNAL(finished(int,QProcess::ExitStatus)),
             this, SLOT(slotProcessFinished(int,QProcess::ExitStatus)));
 
-    connect(m_darktable, SIGNAL(readyRead()),
+    connect(d->darktable, SIGNAL(readyRead()),
             this, SLOT(slotProcessReadyRead()));
 
     // --------
 
-    m_fileInfo = QFileInfo(filePath);
+    d->fileInfo = QFileInfo(filePath);
 
-    m_darktable->setProgram(QLatin1String("darktable"));
-    m_darktable->setArguments(QStringList() << QLatin1String("--library")
+    d->darktable->setProgram(QLatin1String("darktable"));
+    d->darktable->setArguments(QStringList() << QLatin1String("--library")
                                             << QLatin1String(":memory:")                                    // Run DarkTable to process only one file
                                             << QLatin1String("--luacmd")
                                             << QString::fromUtf8("dofile('%1')")
-                                               .arg(m_luaFile.fileName())                                   // LUA script to run in DarkTable
+                                               .arg(d->luaFile.fileName())                                   // LUA script to run in DarkTable
                                             << QLatin1String("--conf")
                                             << QLatin1String("plugins/lighttable/export/icctype=3")         // Output color-space
                                             << QLatin1String("--conf")
                                             << QString::fromUtf8("lua/export_on_exit/export_filename=%1")
-                                               .arg(m_tempFile->fileName())                                 // Ouput file
+                                               .arg(d->tempFile->fileName())                                 // Ouput file
                                             << filePath);                                                   // Input file
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable arguments:" << m_darktable->arguments();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable arguments:" << d->darktable->arguments();
 
-    m_darktable->start();
+    d->darktable->start();
 
     return true;
 }
@@ -212,32 +234,32 @@ void DarkTableRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatu
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable :: return code:" << code << ":: Exit status:" << status;
 
-    m_decoded = DImg(m_tempFile->fileName());
+    d->decoded = DImg(d->tempFile->fileName());
 
-    if (m_decoded.isNull())
+    if (d->decoded.isNull())
     {
         QString message = i18n("Error to import RAW image with DarkTable\nClose this dialog to load RAW image with native import tool");
         QMessageBox::information(0, qApp->applicationName(), message);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
-        qCDebug(DIGIKAM_GENERAL_LOG) << m_props.filePath;
-        emit signalLoadRaw(m_props);
+        qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
+        emit signalLoadRaw(d->props);
     }
     else
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is not null...";
-        qCDebug(DIGIKAM_GENERAL_LOG) << m_props.filePath;
-        m_props = LoadingDescription(m_tempFile->fileName(), LoadingDescription::ConvertForEditor);
-        emit signalDecodedImage(m_props, m_decoded);
+        qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
+        d->props = LoadingDescription(d->tempFile->fileName(), LoadingDescription::ConvertForEditor);
+        emit signalDecodedImage(d->props, d->decoded);
     }
 
-    delete m_tempFile;
-    m_tempFile = nullptr;
+    delete d->tempFile;
+    d->tempFile = nullptr;
 }
 
 void DarkTableRawImportPlugin::slotProcessReadyRead()
 {
-    QByteArray data   = m_darktable->readAllStandardError();
+    QByteArray data   = d->darktable->readAllStandardError();
     QStringList lines = QString::fromUtf8(data).split(QLatin1Char('\n'), QString::SkipEmptyParts);
 
     foreach (const QString& one, lines)

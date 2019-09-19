@@ -72,12 +72,8 @@ private Q_SLOTS:
 
 private:
 
-    QProcess*          m_darktable;
-    DImg               m_decoded;
-    LoadingDescription m_props;
-    QFileInfo          m_fileInfo;
-    QTemporaryFile*    m_tempFile;
-    QTemporaryFile     m_luaFile;
+    class Private;
+    Private* const d;
 };
 
 } // namespace DigikamRawImportDarkTablePlugin
