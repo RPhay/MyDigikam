@@ -32,6 +32,7 @@
 #include <QVBoxLayout>
 #include <QTabWidget>
 #include <QIcon>
+#include <QPointer>
 
 // KDE includes
 
@@ -44,6 +45,7 @@
 #include "drawdecoderwidget.h"
 #include "dpluginloader.h"
 #include "dpluginrawimport.h"
+#include "dpluginaboutdlg.h"
 
 namespace Digikam
 {
@@ -60,6 +62,7 @@ public:
         openDefault(nullptr),
         openTool(nullptr),
         rawImportTool(nullptr),
+        toolAbout(nullptr),
         rawSettings(nullptr)
     {
     }
@@ -79,6 +82,7 @@ public:
     QRadioButton*         openTool;
 
     QComboBox*            rawImportTool;
+    QPushButton*          toolAbout;
 
     DRawDecoderWidget*    rawSettings;
 };
@@ -148,12 +152,19 @@ SetupRaw::SetupRaw(QTabWidget* const tab)
         }
     }
 
+    d->toolAbout = new QPushButton;
+    d->toolAbout->setIcon(QIcon::fromTheme(QLatin1String("help-about")));
+    d->toolAbout->setToolTip(i18n("About this Raw Import tool..."));
+    
+    // ----------------------------------------------
+
     boxLayout->addWidget(openIcon,         0, 0);
     boxLayout->addWidget(openIntro,        0, 1);
-    boxLayout->addWidget(d->openSimple,    1, 0, 1, 3);
-    boxLayout->addWidget(d->openDefault,   2, 0, 1, 3);
+    boxLayout->addWidget(d->openSimple,    1, 0, 1, 4);
+    boxLayout->addWidget(d->openDefault,   2, 0, 1, 4);
     boxLayout->addWidget(d->openTool,      3, 0, 1, 2);
     boxLayout->addWidget(d->rawImportTool, 3, 2, 1, 1);
+    boxLayout->addWidget(d->toolAbout,     3, 3, 1, 1);
     boxLayout->setColumnStretch(2, 1);
     behaviorBox->setLayout(boxLayout);
 
@@ -193,6 +204,9 @@ SetupRaw::SetupRaw(QTabWidget* const tab)
 
     connect(d->rawSettings, SIGNAL(signalSixteenBitsImageToggled(bool)),
             this, SLOT(slotSixteenBitsImageToggled(bool)));
+
+    connect(d->toolAbout, SIGNAL(clicked()),
+            this, SLOT(slotAboutRawImportPlugin()));
 
     // --------------------------------------------------------
 
@@ -259,6 +273,23 @@ void SetupRaw::readSettings()
 
     QString iid = group.readEntry(d->configRawImportToolIidEntry, d->nativeRawImportToolIid);
     d->rawImportTool->setCurrentIndex(d->rawImportTool->findData(iid));
+}
+
+void SetupRaw::slotAboutRawImportPlugin()
+{
+    QString iid = d->rawImportTool->itemData(d->rawImportTool->currentIndex()).toString();
+
+    foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
+    {
+        DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
+
+        if (raw && (raw->iid() == iid))
+        {
+            QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(dynamic_cast<DPlugin*>(raw));
+            dlg->exec();
+            delete dlg;
+        }
+    }
 }
 
 } // namespace Digikam

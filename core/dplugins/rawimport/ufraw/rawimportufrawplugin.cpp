@@ -95,7 +95,8 @@ QString UFRawRawImportPlugin::description() const
 
 QString UFRawRawImportPlugin::details() const
 {
-    return QString::fromUtf8("<p>This RAW Import plugin use UFRaw tool to pre-process file in Image Editor.</p>");
+    return QString::fromUtf8("<p>This RAW Import plugin use UFRaw tool to pre-process file in Image Editor.</p>"
+                             "<p>See UFRaw web site for details: <a href='http://ufraw.sourceforge.net/'>http://ufraw.sourceforge.net/</a></p>");
 }
 
 QList<DPluginAuthor> UFRawRawImportPlugin::authors() const

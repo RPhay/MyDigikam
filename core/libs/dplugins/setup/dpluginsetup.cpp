@@ -157,7 +157,7 @@ void DPluginSetup::updateInfo()
     d->pluginsNumberActivated->setVisible(b);
     d->checkAllBtn->setVisible(b);
     d->clearBtn->setVisible(b);
-        
+
     if (d->pluginFilter->text().isEmpty())
     {
         // List is not filtered

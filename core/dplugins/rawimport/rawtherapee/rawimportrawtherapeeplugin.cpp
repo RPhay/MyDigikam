@@ -96,7 +96,8 @@ QString RawTherapeeRawImportPlugin::description() const
 QString RawTherapeeRawImportPlugin::details() const
 {
     return QString::fromUtf8("<p>This RAW Import plugin use RawTherapee tool to pre-process file in Image Editor.</p>"
-                             "<p>It requires at least RawTherapee version 5.2.0 to work.</p>");
+                             "<p>It requires at least RawTherapee version 5.2.0 to work.</p>"
+                             "<p>See RawTherapee web site for details: <a href='https://rawtherapee.com/'>https://rawtherapee.com/</a></p>");
 }
 
 QList<DPluginAuthor> RawTherapeeRawImportPlugin::authors() const

@@ -144,7 +144,8 @@ QString DarkTableRawImportPlugin::description() const
 QString DarkTableRawImportPlugin::details() const
 {
     return QString::fromUtf8("<p>This RAW Import plugin use DarkTable tool to pre-process file in Image Editor.</p>"
-                             "<p>It requires at least DarkTable version 1.7.0 to work.</p>");
+                             "<p>It requires at least DarkTable version 1.7.0 to work.</p>"
+                             "<p>See DarkTable web site for details: <a href='https://www.darktable.org/'>https://www.darktable.org/</a></p>");
 }
 
 QList<DPluginAuthor> DarkTableRawImportPlugin::authors() const
