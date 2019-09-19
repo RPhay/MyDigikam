@@ -10,8 +10,8 @@ SET(EXTPREFIX_libicu "${EXTPREFIX}")
 
 ExternalProject_Add(ext_libicu
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL https://github.com/unicode-org/icu/archive/release-56-1.tar.gz
-    URL_MD5 ff8d3867fb316822724ed3cc8af979ac
+    URL https://github.com/unicode-org/icu/archive/release-64-2.tar.gz
+    URL_MD5 6bab6095784e0d1ede06d6d27df29bf2
 
     INSTALL_DIR ${EXTPREFIX_libicu}
 
