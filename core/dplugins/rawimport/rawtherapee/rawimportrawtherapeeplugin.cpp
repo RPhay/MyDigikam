@@ -29,6 +29,8 @@
 #include <QPointer>
 #include <QDebug>
 #include <QByteArray>
+#include <QFileInfo>
+#include <QTemporaryFile>
 
 // KDE includes
 
@@ -37,19 +39,38 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "dimg.h"
+#include "loadingdescription.h"
 
 namespace DigikamRawImportRawTherapeePlugin
 {
 
+class Q_DECL_HIDDEN RawTherapeeRawImportPlugin::Private
+{
+public:
+
+    explicit Private()
+      : rawtherapee(nullptr),
+        tempFile(nullptr)
+    {
+    }
+
+    QProcess*          rawtherapee;
+    DImg               decoded;
+    LoadingDescription props;
+    QFileInfo          fileInfo;
+    QTemporaryFile*    tempFile;
+};
+
 RawTherapeeRawImportPlugin::RawTherapeeRawImportPlugin(QObject* const parent)
     : DPluginRawImport(parent),
-      m_rawtherapee(nullptr),
-      m_tempFile(nullptr)
+      d(new Private)
 {
 }
 
 RawTherapeeRawImportPlugin::~RawTherapeeRawImportPlugin()
 {
+    delete d;
 }
 
 QString RawTherapeeRawImportPlugin::name() const
@@ -74,7 +95,8 @@ QString RawTherapeeRawImportPlugin::description() const
 
 QString RawTherapeeRawImportPlugin::details() const
 {
-    return QString::fromUtf8("<p>This RAW Import plugin use RawTherapee tool to pre-process file in Image Editor.</p>");
+    return QString::fromUtf8("<p>This RAW Import plugin use RawTherapee tool to pre-process file in Image Editor.</p>"
+                             "<p>It requires at least RawTherapee version 5.2.0 to work.</p>");
 }
 
 QList<DPluginAuthor> RawTherapeeRawImportPlugin::authors() const
@@ -93,40 +115,40 @@ void RawTherapeeRawImportPlugin::setup(QObject* const /*parent*/)
 
 bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*/)
 {
-    m_fileInfo = QFileInfo(filePath);
-    m_props    = LoadingDescription(m_fileInfo.filePath(), LoadingDescription::ConvertForEditor);
-    m_decoded  = DImg();
+    d->fileInfo = QFileInfo(filePath);
+    d->props    = LoadingDescription(d->fileInfo.filePath(), LoadingDescription::ConvertForEditor);
+    d->decoded  = DImg();
 
-    delete m_tempFile;
+    delete d->tempFile;
 
-    m_tempFile = new QTemporaryFile();
-    m_tempFile->open();
+    d->tempFile = new QTemporaryFile();
+    d->tempFile->open();
 
-    m_rawtherapee    = new QProcess(this);
-    m_rawtherapee->setProcessChannelMode(QProcess::MergedChannels);
-    m_rawtherapee->setWorkingDirectory(m_fileInfo.path());
+    d->rawtherapee = new QProcess(this);
+    d->rawtherapee->setProcessChannelMode(QProcess::MergedChannels);
+    d->rawtherapee->setWorkingDirectory(d->fileInfo.path());
 
-    connect(m_rawtherapee, SIGNAL(errorOccurred(QProcess::ProcessError)),
+    connect(d->rawtherapee, SIGNAL(errorOccurred(QProcess::ProcessError)),
             this, SLOT(slotErrorOccurred(QProcess::ProcessError)));
 
-    connect(m_rawtherapee, SIGNAL(finished(int,QProcess::ExitStatus)),
+    connect(d->rawtherapee, SIGNAL(finished(int,QProcess::ExitStatus)),
             this, SLOT(slotProcessFinished(int,QProcess::ExitStatus)));
 
-    connect(m_rawtherapee, SIGNAL(readyRead()),
+    connect(d->rawtherapee, SIGNAL(readyRead()),
             this, SLOT(slotProcessReadyRead()));
 
     // --------
 
-    m_fileInfo = QFileInfo(filePath);
+    d->fileInfo = QFileInfo(filePath);
 
-    m_rawtherapee->setProgram(QLatin1String("rawtherapee"));
-    m_rawtherapee->setArguments(QStringList() << QLatin1String("-gimp")   // Special mode used initialy as Gimp plugin
+    d->rawtherapee->setProgram(QLatin1String("rawtherapee"));
+    d->rawtherapee->setArguments(QStringList() << QLatin1String("-gimp")   // Special mode used initialy as Gimp plugin
                                               << filePath                 // Input file
-                                              << m_tempFile->fileName()); // Output file
+                                              << d->tempFile->fileName()); // Output file
 
-    qCDebug(DIGIKAM_GENERAL_LOG) << "RawTherapee arguments:" << m_rawtherapee->arguments();
+    qCDebug(DIGIKAM_GENERAL_LOG) << "RawTherapee arguments:" << d->rawtherapee->arguments();
 
-    m_rawtherapee->start();
+    d->rawtherapee->start();
 
     return true;
 }
@@ -160,32 +182,32 @@ void RawTherapeeRawImportPlugin::slotProcessFinished(int code, QProcess::ExitSta
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "RawTherapee :: return code:" << code << ":: Exit status:" << status;
 
-    m_decoded = DImg(m_tempFile->fileName());
+    d->decoded = DImg(d->tempFile->fileName());
 
-    if (m_decoded.isNull())
+    if (d->decoded.isNull())
     {
         QString message = i18n("Error to import RAW image with RawTherapee\nClose this dialog to load RAW image with native import tool");
         QMessageBox::information(0, qApp->applicationName(), message);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is null! Load with Native tool...";
-        qCDebug(DIGIKAM_GENERAL_LOG) << m_props.filePath;
-        emit signalLoadRaw(m_props);
+        qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
+        emit signalLoadRaw(d->props);
     }
     else
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is not null...";
-        qCDebug(DIGIKAM_GENERAL_LOG) << m_props.filePath;
-        m_props = LoadingDescription(m_tempFile->fileName(), LoadingDescription::ConvertForEditor);
-        emit signalDecodedImage(m_props, m_decoded);
+        qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
+        d->props = LoadingDescription(d->tempFile->fileName(), LoadingDescription::ConvertForEditor);
+        emit signalDecodedImage(d->props, d->decoded);
     }
 
-    delete m_tempFile;
-    m_tempFile = nullptr;
+    delete d->tempFile;
+    d->tempFile = nullptr;
 }
 
 void RawTherapeeRawImportPlugin::slotProcessReadyRead()
 {
-    QByteArray data   = m_rawtherapee->readAllStandardError();
+    QByteArray data   = d->rawtherapee->readAllStandardError();
     QStringList lines = QString::fromUtf8(data).split(QLatin1Char('\n'), QString::SkipEmptyParts);
 
     foreach (const QString& one, lines)

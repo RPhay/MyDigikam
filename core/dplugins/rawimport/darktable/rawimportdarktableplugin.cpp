@@ -33,6 +33,8 @@
 #include <QDebug>
 #include <QByteArray>
 #include <QTextStream>
+#include <QFileInfo>
+#include <QTemporaryFile>
 
 // KDE includes
 
@@ -41,6 +43,8 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "dimg.h"
+#include "loadingdescription.h"
 
 namespace DigikamRawImportDarkTablePlugin
 {
@@ -140,7 +144,7 @@ QString DarkTableRawImportPlugin::description() const
 QString DarkTableRawImportPlugin::details() const
 {
     return QString::fromUtf8("<p>This RAW Import plugin use DarkTable tool to pre-process file in Image Editor.</p>"
-                             "<p>It requires at least darktable version 1.7.0 to work.</p>");
+                             "<p>It requires at least DarkTable version 1.7.0 to work.</p>");
 }
 
 QList<DPluginAuthor> DarkTableRawImportPlugin::authors() const

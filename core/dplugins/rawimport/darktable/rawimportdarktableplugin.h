@@ -26,14 +26,10 @@
 // Qt includes
 
 #include <QProcess>
-#include <QFileInfo>
-#include <QTemporaryFile>
 
 // Local includes
 
 #include "dpluginrawimport.h"
-#include "dimg.h"
-#include "loadingdescription.h"
 
 #define DPLUGIN_IID "org.kde.digikam.plugin.rawimport.DarkTable"
 
