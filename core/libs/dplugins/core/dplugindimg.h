@@ -69,9 +69,22 @@ public:
      */
     QString ifaceIid() const override { return QLatin1String(DIGIKAM_DPLUGIN_DIMG_IID); };
 
+public:
+
     /** Return the image loader instance.
      */
     virtual DImgLoader* loader() const = 0;
+
+    /** Return the list of type-mimes supported by the loader,
+     *  as a string of file-name suffix separated by spaces.
+     *  Ex: "jpeg jpg thm"
+     */
+    virtual QString typeMimes() const = 0;
+
+    /** Return a single capitalized word to identify the format supported by the loader.
+     *  Ex: jpeg => "JPG" ; tiff => "TIF", etc.
+     */
+    virtual QString format() const = 0;
 };
 
 } // namespace Digikam
