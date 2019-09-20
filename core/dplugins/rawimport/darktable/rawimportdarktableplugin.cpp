@@ -43,6 +43,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "dimg.h"
 #include "loadingdescription.h"
 
@@ -176,6 +177,7 @@ bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& 
     d->darktable    = new QProcess(this);
     d->darktable->setProcessChannelMode(QProcess::MergedChannels);
     d->darktable->setWorkingDirectory(d->fileInfo.path());
+    d->darktable->setProcessEnvironment(adjustedEnvironmentForAppImage());
 
     connect(d->darktable, SIGNAL(errorOccurred(QProcess::ProcessError)),
             this, SLOT(slotErrorOccurred(QProcess::ProcessError)));
