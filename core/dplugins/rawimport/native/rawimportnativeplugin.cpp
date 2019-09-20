@@ -75,7 +75,7 @@ QString RawImportNativePlugin::details() const
 {
     return i18n("<p>This Image Editor tool import Raw images using Libraw engine as decoder.</p>"
                 "<p>This is the <b>native</b> Raw Import tool included in core application. "
-                "It do not require any external engine to work.</p>"
+                "It does not require any external engine to work.</p>"
                 "<p>See Libraw web site for details: <a href='https://www.libraw.org/'>https://www.libraw.org/</a></p>");
 }
 
