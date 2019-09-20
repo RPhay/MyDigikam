@@ -33,8 +33,7 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
-#include "dimg.h"
-#include "loadingdescription.h"
+#include "qimageloader.h"
 
 namespace DigikamDImgQImagePlugin
 {
@@ -101,9 +100,9 @@ void QImageDImgPlugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
-DImgLoader* QImageDImgPlugin::loader() const
+DImgLoader* QImageDImgPlugin::loader(DImg* const image) const
 {
-    return nullptr;
+    return new QImageLoader(image);
 }
 
 QString QImageDImgPlugin::typeMimes() const

@@ -31,6 +31,7 @@
 // Local includes
 
 #include "dplugindimg.h"
+#include "dimg.h"
 
 #define DPLUGIN_IID "org.kde.digikam.plugin.dimg.QImage"
 
@@ -59,7 +60,7 @@ public:
 
     void setup(QObject* const)           override;
 
-    DImgLoader* loader() const;
+    DImgLoader* loader(DImg* const) const override;
     QString typeMimes() const;
     QString format() const;
     bool checkMagickNumber(const QByteArray& header) const;
