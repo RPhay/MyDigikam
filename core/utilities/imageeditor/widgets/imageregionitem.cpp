@@ -118,9 +118,12 @@ void ImageRegionItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* o
     QSize   completeSize = boundingRect().size().toSize();
 
     // scale "as if" scaling to whole image, but clip output to our exposed region
-    DImg scaledImage     = d->image.smoothScaleClipped(completeSize.width(),    completeSize.height(),
-                                                       d_ptr->drawRect.x(),     d_ptr->drawRect.y(),
-                                                       d_ptr->drawRect.width(), d_ptr->drawRect.height());
+    DImg scaledImage     = d->image.smoothScaleClipped(completeSize.width(),
+                                                       completeSize.height(),
+                                                       d_ptr->drawRect.x(),
+                                                       d_ptr->drawRect.y(),
+                                                       d_ptr->drawRect.width(),
+                                                       d_ptr->drawRect.height());
 
     if (d->cachedPixmaps.find(d_ptr->drawRect, &pix, &pixSourceRect))
     {
