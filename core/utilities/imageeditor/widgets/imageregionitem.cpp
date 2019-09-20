@@ -266,8 +266,8 @@ void ImageRegionItem::paintExtraData(QPainter* const p)
 
         for (int i = 0 ; i < d_ptr->hightlightPoints.count() ; ++i)
         {
-            pt             = d_ptr->hightlightPoints.point(i);
-            double zoomFactor = zoomSettings()->zoomFactor();
+            pt                = d_ptr->hightlightPoints.point(i);
+            double zoomFactor = zoomSettings()->realZoomFactor();
             int x = (int)((double)pt.x() * zoomFactor);
             int y = (int)((double)pt.y() * zoomFactor);
 

@@ -249,8 +249,8 @@ void ImageRegionWidget::mouseReleaseEvent(QMouseEvent* e)
 
 void ImageRegionWidget::emitCapturedPointFromOriginal(const QPointF& pt)
 {
-    int x        = (int)(pt.x() / layout()->zoomFactor());
-    int y        = (int)(pt.y() / layout()->zoomFactor());
+    int x        = (int)(pt.x() / layout()->realZoomFactor());
+    int y        = (int)(pt.y() / layout()->realZoomFactor());
     QPoint imgPt(x, y);
     DColor color = d_ptr->item->image().getPixelColor(x, y);
     qCDebug(DIGIKAM_GENERAL_LOG) << "Captured point from image : " << imgPt;
