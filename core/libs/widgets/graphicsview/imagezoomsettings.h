@@ -65,6 +65,9 @@ public:
     /// Return the currently set zoom factor
     double zoomFactor() const;
 
+    /// Return the real zoom factor dependent on device pixel ratio
+    double realZoomFactor() const;
+
     /// Returns the (available) image size
     QSizeF imageSize() const;
 

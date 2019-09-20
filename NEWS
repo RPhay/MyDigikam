@@ -47,4 +47,5 @@ BUGFIXES:
 033 ==> 181941 - Add an option to image editor to remember or not tools settings between sessions.
 034 ==> 221571 - Integrate RawTherapee into digikam
 035 ==> 341186 - Integrate with darktable.
-036 ==> 
+036 ==> 412083 - Image previews scaled incorrectly on hidpi.
+037 ==> 

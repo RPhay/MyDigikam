@@ -123,6 +123,16 @@ double SinglePhotoPreviewLayout::zoomFactor() const
     return d->zoomSettings()->zoomFactor();
 }
 
+double SinglePhotoPreviewLayout::realZoomFactor() const
+{
+    if (!d->item || !d->view)
+    {
+        return 1;
+    }
+
+    return d->zoomSettings()->realZoomFactor();
+}
+
 double SinglePhotoPreviewLayout::maxZoomFactor() const
 {
     return d->maxZoom;

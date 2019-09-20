@@ -73,6 +73,11 @@ double ImageZoomSettings::zoomFactor() const
     return m_zoom;
 }
 
+double ImageZoomSettings::realZoomFactor() const
+{
+    return m_zoom / m_zoomRatio;
+}
+
 QSizeF ImageZoomSettings::imageSize() const
 {
     return m_size;
