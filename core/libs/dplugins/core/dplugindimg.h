@@ -85,6 +85,11 @@ public:
      *  Ex: jpeg => "JPG" ; tiff => "TIF", etc.
      */
     virtual QString format() const = 0;
+
+    /** Return true if bytes from header start with magick number from image format
+     *  support by the loader.
+     */
+    virtual bool checkMagickNumber(const QByteArray& header) const = 0;
 };
 
 } // namespace Digikam
