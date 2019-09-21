@@ -100,9 +100,9 @@ void QImageDImgPlugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
-DImgLoader* QImageDImgPlugin::loader(DImg* const image) const
+QString QImageDImgPlugin::loaderName() const
 {
-    return new QImageLoader(image);
+    return QLatin1String("QIMAGE");
 }
 
 QString QImageDImgPlugin::typeMimes() const
@@ -110,14 +110,14 @@ QString QImageDImgPlugin::typeMimes() const
     return QLatin1String("");
 }
 
-QString QImageDImgPlugin::format() const
-{
-    return QLatin1String("");
-}
-
-bool QImageDImgPlugin::checkMagickNumber(const QByteArray&) const
+bool QImageDImgPlugin::isSupported(const QString& filePath) const
 {
     return false;
+}
+
+DImgLoader* QImageDImgPlugin::loader(DImg* const image) const
+{
+    return new QImageLoader(image);
 }
 
 QWidget* QImageDImgPlugin::settingsWidget() const

@@ -60,11 +60,11 @@ public:
 
     void setup(QObject* const)           override;
 
-    DImgLoader* loader(DImg* const) const override;
-    QString typeMimes() const;
-    QString format() const;
-    bool checkMagickNumber(const QByteArray& header) const;
-    QWidget* settingsWidget() const;
+    QString     loaderName()                         const;
+    QString     typeMimes()                          const;
+    bool        isSupported(const QString& filePath) const;
+    DImgLoader* loader(DImg* const)                  const;
+    QWidget*    settingsWidget()                     const;
 
 private:
 
