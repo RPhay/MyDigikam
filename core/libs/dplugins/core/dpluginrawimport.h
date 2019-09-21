@@ -70,6 +70,8 @@ public:
      */
     QString ifaceIid() const override { return QLatin1String(DIGIKAM_DPLUGIN_RAWIMPORT_IID); };
 
+public:
+
     /** Function to re-implement to invoke Raw processor for a Raw file path.
      *  Default Raw decoding settings is also availalble.
      */

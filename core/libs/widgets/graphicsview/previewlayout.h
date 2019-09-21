@@ -68,6 +68,7 @@ public:
 
     bool   isFitToWindow() const;
     double zoomFactor() const;
+    double realZoomFactor() const;
 
     /** The zoom range for incrementing and decrementing. */
     double maxZoomFactor() const;

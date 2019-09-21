@@ -123,13 +123,13 @@ HTMLWidget::HTMLWidget(QWidget* const parent)
     setAcceptDrops(false);
     setFocusPolicy(Qt::WheelFocus);
 
-//#if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 7, 0)
-//    settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
-//    settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, false);
-//#endif
-
     d->hpage = new HTMLWidgetPage(this);
     setPage(d->hpage);
+
+#if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+    settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
+    settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, false);
+#endif
 
     d->parent->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
