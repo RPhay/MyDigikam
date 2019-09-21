@@ -160,8 +160,7 @@ TagsManager::TagsManager()
             screen = window->screen();
     }
 
-    const int screenIndex = qMax(qApp->screens().indexOf(screen), 0);
-    move(qApp->screens().at(screenIndex)->geometry().center() - rect().center());
+    move(screen->geometry().center() - rect().center());
 }
 
 TagsManager::~TagsManager()
