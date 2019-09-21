@@ -833,7 +833,7 @@ void TagsManager::setupActions()
     /**
      * Right Toolbar with vertical properties button
      */
-    d->rightToolBar = new DMultiTabBar(Qt::RightEdge);
+    d->rightToolBar = new DMultiTabBar(Qt::RightEdge, this);
     d->rightToolBar->appendTab(QIcon::fromTheme(QLatin1String("tag-properties"))
                                .pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize)), 0, i18n("Tag Properties"));
     d->rightToolBar->setStyle(DMultiTabBar::AllIconsText);
