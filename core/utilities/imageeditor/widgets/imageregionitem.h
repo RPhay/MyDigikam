@@ -45,7 +45,7 @@ class DIGIKAM_EXPORT ImageRegionItem : public GraphicsDImgItem
 
 public:
 
-    explicit ImageRegionItem(ImageRegionWidget* const view);
+    explicit ImageRegionItem(ImageRegionWidget* const view, bool paintExtras = true);
     virtual ~ImageRegionItem();
 
     void setTargetImage(DImg& img);
