@@ -71,25 +71,24 @@ public:
 
 public:
 
-    /** Return the image loader instance.
+    /** Return a single capitalized word to identify the format supported by the loader.
+     *  Ex: jpeg => "JPG" ; tiff => "TIF", etc.
      */
-    virtual DImgLoader* loader() const = 0;
+    virtual QString loaderName() const = 0;
 
-    /** Return the list of type-mimes supported by the loader,
+    /** Return the list of white-listed type-mimes supported by the loader,
      *  as a string of file-name suffix separated by spaces.
      *  Ex: "jpeg jpg thm"
      */
     virtual QString typeMimes() const = 0;
 
-    /** Return a single capitalized word to identify the format supported by the loader.
-     *  Ex: jpeg => "JPG" ; tiff => "TIF", etc.
+    /** Return true if file is supported by the loader and contents can be loaded in memory,
      */
-    virtual QString format() const = 0;
+    virtual bool isSupported(const QString& filePath) const = 0;
 
-    /** Return true if bytes from header start with magick number from image format
-     *  support by the loader.
+    /** Return the image loader instance for the DImg instance.
      */
-    virtual bool checkMagickNumber(const QByteArray& header) const = 0;
+    virtual DImgLoader* loader(DImg* const image) const = 0;
 
     /** Return an instance of settings widget for the image format supported by the loader.
      *  This widget is used to host all settings to write a new image in this format.
