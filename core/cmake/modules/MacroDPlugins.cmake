@@ -386,6 +386,9 @@ macro(DIGIKAM_ADD_DIMG_PLUGIN)
                           Qt5::XmlPatterns
                           Qt5::Widgets
 
+                          KF5::I18n
+                          KF5::ConfigCore
+                          
                           ${_parse_results_DEPENDS}
                           ${_extra_deps}
     )

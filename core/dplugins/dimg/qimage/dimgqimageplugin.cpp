@@ -33,12 +33,12 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
-#include "qimageloader.h"
+#include "dimgqimageloader.h"
 
-namespace DigikamDImgQImagePlugin
+namespace DigikamQImageDImgPlugin
 {
 
-class Q_DECL_HIDDEN QImageDImgPlugin::Private
+class Q_DECL_HIDDEN DImgQImagePlugin::Private
 {
 public:
 
@@ -48,45 +48,45 @@ public:
 
 };
 
-QImageDImgPlugin::QImageDImgPlugin(QObject* const parent)
+DImgQImagePlugin::DImgQImagePlugin(QObject* const parent)
     : DPluginDImg(parent),
       d(new Private)
 {
 }
 
-QImageDImgPlugin::~QImageDImgPlugin()
+DImgQImagePlugin::~DImgQImagePlugin()
 {
     delete d;
 }
 
-QString QImageDImgPlugin::name() const
+QString DImgQImagePlugin::name() const
 {
     return QString::fromUtf8("QImage based DImg loader");
 }
 
-QString QImageDImgPlugin::iid() const
+QString DImgQImagePlugin::iid() const
 {
     return QLatin1String(DPLUGIN_IID);
 }
 
-QIcon QImageDImgPlugin::icon() const
+QIcon DImgQImagePlugin::icon() const
 {
     return QIcon::fromTheme(QLatin1String("digikam"));
 }
 
-QString QImageDImgPlugin::description() const
+QString DImgQImagePlugin::description() const
 {
     return QString::fromUtf8("A DImg image loader based on QImage plugins");
 }
 
-QString QImageDImgPlugin::details() const
+QString DImgQImagePlugin::details() const
 {
     return QString::fromUtf8("<p>This plugin permit to load and save image with DImg using "
                              "QImage plugins</p>"
     );
 }
 
-QList<DPluginAuthor> QImageDImgPlugin::authors() const
+QList<DPluginAuthor> DImgQImagePlugin::authors() const
 {
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
@@ -95,34 +95,29 @@ QList<DPluginAuthor> QImageDImgPlugin::authors() const
             ;
 }
 
-void QImageDImgPlugin::setup(QObject* const /*parent*/)
+void DImgQImagePlugin::setup(QObject* const /*parent*/)
 {
     // Nothing to do
 }
 
-QString QImageDImgPlugin::loaderName() const
+QString DImgQImagePlugin::loaderName() const
 {
     return QLatin1String("QIMAGE");
 }
 
-QString QImageDImgPlugin::typeMimes() const
+QString DImgQImagePlugin::typeMimes() const
 {
     return QLatin1String("");
 }
 
-bool QImageDImgPlugin::isSupported(const QString& filePath) const
+bool DImgQImagePlugin::isSupported(const QString& filePath) const
 {
     return false;
 }
 
-DImgLoader* QImageDImgPlugin::loader(DImg* const image) const
+DImgLoader* DImgQImagePlugin::loader(DImg* const image) const
 {
-    return new QImageLoader(image);
+    return new DImgQImageLoader(image);
 }
 
-QWidget* QImageDImgPlugin::settingsWidget() const
-{
-    return nullptr;
-}
-
-} // namespace DigikamDImgQImagePlugin
+} // namespace DigikamQImageDImgPlugin

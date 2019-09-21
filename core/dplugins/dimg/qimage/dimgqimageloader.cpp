@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "qimageloader.h"
+#include "dimgqimageloader.h"
 
 // Qt includes
 
@@ -33,26 +33,25 @@
 
 // Local includes
 
-#include "dimg.h"
 #include "digikam_debug.h"
 #include "dimgloaderobserver.h"
 
-namespace Digikam
+namespace DigikamQImageDImgPlugin
 {
 
-QImageLoader::QImageLoader(DImg* const image)
+DImgQImageLoader::DImgQImageLoader(DImg* const image)
     : DImgLoader(image)
 {
     m_hasAlpha = false;
 }
 
-bool QImageLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
+bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
     QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
 
     if (mimeType.startsWith(QLatin1String("video/")) || mimeType.startsWith(QLatin1String("audio/")))
     {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Blacklisted from DImg::QImageLoader:" << mimeType;
+        qCWarning(DIGIKAM_DIMG_LOG) << "Blacklisted from DImg::DImgQImageLoader:" << mimeType;
         loadingFailed();
         return false;
     }
@@ -74,7 +73,7 @@ bool QImageLoader::load(const QString& filePath, DImgLoaderObserver* const obser
 
     if (image.isNull())
     {
-        qCWarning(DIGIKAM_DIMG_LOG_QIMAGE) << "Can not load \"" << filePath << "\" using DImg::QImageLoader!";
+        qCWarning(DIGIKAM_DIMG_LOG_QIMAGE) << "Can not load \"" << filePath << "\" using DImg::DImgQImageLoader!";
         qCWarning(DIGIKAM_DIMG_LOG_QIMAGE) << "Error message from loader:" << reader.errorString();
         loadingFailed();
         return false;
@@ -159,7 +158,7 @@ bool QImageLoader::load(const QString& filePath, DImgLoaderObserver* const obser
     return true;
 }
 
-bool QImageLoader::save(const QString& filePath, DImgLoaderObserver* const observer)
+bool DImgQImageLoader::save(const QString& filePath, DImgLoaderObserver* const observer)
 {
     QVariant qualityAttr = imageGetAttribute(QLatin1String("quality"));
     int quality          = qualityAttr.isValid() ? qualityAttr.toInt() : 90;
@@ -199,19 +198,19 @@ bool QImageLoader::save(const QString& filePath, DImgLoaderObserver* const obser
     return success;
 }
 
-bool QImageLoader::hasAlpha() const
+bool DImgQImageLoader::hasAlpha() const
 {
     return m_hasAlpha;
 }
 
-bool QImageLoader::sixteenBit() const
+bool DImgQImageLoader::sixteenBit() const
 {
     return false;
 }
 
-bool QImageLoader::isReadOnly() const
+bool DImgQImageLoader::isReadOnly() const
 {
     return false;
 }
 
-} // namespace Digikam
+} // namespace DigikamQImageDImgPlugin

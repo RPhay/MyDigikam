@@ -22,24 +22,26 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_QIMAGE_LOADER_H
-#define DIGIKAM_QIMAGE_LOADER_H
+#ifndef DIGIKAM_DIMG_QIMAGE_LOADER_H
+#define DIGIKAM_DIMG_QIMAGE_LOADER_H
 
 // Local includes
 
+#include "dimg.h"
 #include "dimgloader.h"
 #include "digikam_export.h"
 #include "digikam_config.h"
 
-namespace Digikam
-{
-class DImg;
+using namespace Digikam;
 
-class DIGIKAM_EXPORT QImageLoader : public DImgLoader
+namespace DigikamQImageDImgPlugin
+{
+
+class DIGIKAM_EXPORT DImgQImageLoader : public DImgLoader
 {
 public:
 
-    explicit QImageLoader(DImg* const image);
+    explicit DImgQImageLoader(DImg* const image);
 
     virtual bool load(const QString& filePath, DImgLoaderObserver* const observer) override;
     virtual bool save(const QString& filePath, DImgLoaderObserver* const observer) override;
@@ -53,6 +55,6 @@ private:
     bool m_hasAlpha;
 };
 
-} // namespace Digikam
+} // namespace DigikamQImageDImgPlugin
 
-#endif // DIGIKAM_QIMAGE_LOADER_H
+#endif // DIGIKAM_DIMG_QIMAGE_LOADER_H

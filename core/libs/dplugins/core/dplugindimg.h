@@ -89,11 +89,6 @@ public:
     /** Return the image loader instance for the DImg instance.
      */
     virtual DImgLoader* loader(DImg* const image) const = 0;
-
-    /** Return an instance of settings widget for the image format supported by the loader.
-     *  This widget is used to host all settings to write a new image in this format.
-     */
-    virtual QWidget* settingsWidget() const = 0;
 };
 
 } // namespace Digikam

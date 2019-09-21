@@ -37,10 +37,10 @@
 
 using namespace Digikam;
 
-namespace DigikamDImgQImagePlugin
+namespace DigikamQImageDImgPlugin
 {
 
-class QImageDImgPlugin : public DPluginDImg
+class DImgQImagePlugin : public DPluginDImg
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID DPLUGIN_IID)
@@ -48,8 +48,8 @@ class QImageDImgPlugin : public DPluginDImg
 
 public:
 
-    explicit QImageDImgPlugin(QObject* const parent = nullptr);
-    ~QImageDImgPlugin();
+    explicit DImgQImagePlugin(QObject* const parent = nullptr);
+    ~DImgQImagePlugin();
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -64,7 +64,6 @@ public:
     QString     typeMimes()                          const;
     bool        isSupported(const QString& filePath) const;
     DImgLoader* loader(DImg* const)                  const;
-    QWidget*    settingsWidget()                     const;
 
 private:
 
@@ -72,6 +71,6 @@ private:
     Private* const d;
 };
 
-} // namespace DigikamDImgQImagePlugin
+} // namespace DigikamQImageDImgPlugin
 
 #endif // DIGIKAM_QIMAGE_DIMG_PLUGIN_H
