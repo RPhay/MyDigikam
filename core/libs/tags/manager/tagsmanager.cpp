@@ -56,7 +56,6 @@
 #include "searchtextbar.h"
 #include "tageditdlg.h"
 #include "coredb.h"
-#include "sidebar.h"
 #include "dlogoaction.h"
 #include "metadatasynchronizer.h"
 #include "fileactionmngr.h"
@@ -78,7 +77,6 @@ public:
         splitter         = nullptr;
         treeWindow       = nullptr;
         mainToolbar      = nullptr;
-        rightToolBar     = nullptr;
         organizeAction   = nullptr;
         syncexportAction = nullptr;
         tagProperties    = nullptr;
@@ -100,7 +98,6 @@ public:
     QSplitter*       splitter;
     KMainWindow*     treeWindow;
     KToolBar*        mainToolbar;
-    DMultiTabBar*    rightToolBar;
     QMenu*           organizeAction;
     QMenu*           syncexportAction;
     QAction*         tagProperties;
@@ -143,7 +140,7 @@ TagsManager::TagsManager()
 
     StateSavingObject::loadState();
 
-    /** Set KMainWindow in center of the screen **/
+    // Set main window in center of the screen
     QScreen* screen = qApp->primaryScreen();
 
     if (QWidget* const widget = qApp->activeWindow())
@@ -196,7 +193,7 @@ void TagsManager::setupUi(KMainWindow* const dialog)
      d->searchBar->setMaximumWidth(200);
      d->searchBar->setFilterModel(d->tagMngrView->albumFilterModel());
 
-     /** Tree Widget & Actions + Tag Properties sidebar **/
+     // Tree Widget + Actions + Tag Properties
 
      d->treeWindow    = new KMainWindow(this);
      setupActions();
@@ -208,7 +205,6 @@ void TagsManager::setupUi(KMainWindow* const dialog)
      d->splitter->addWidget(d->listView);
      d->splitter->addWidget(d->tagMngrView);
      d->splitter->addWidget(d->tagPropWidget);
-     d->tagPropWidget->hide();
 
      connect(d->tagPropWidget, SIGNAL(signalTitleEditReady()),
              this, SLOT(slotTitleEditReady()));
@@ -219,27 +215,10 @@ void TagsManager::setupUi(KMainWindow* const dialog)
      d->treeWindow->setCentralWidget(d->splitter);
 
      mainLayout->addWidget(d->treeWindow);
-     mainLayout->addWidget(d->rightToolBar);
 
      QWidget* const centraW = new QWidget(this);
      centraW->setLayout(mainLayout);
      setCentralWidget(centraW);
-}
-
-void TagsManager::slotOpenProperties()
-{
-    DMultiTabBarTab* const sender = dynamic_cast<DMultiTabBarTab*>(QObject::sender());
-
-    if (sender->isChecked())
-    {
-        d->tagPropWidget->show();
-    }
-    else
-    {
-        d->tagPropWidget->hide();
-    }
-
-    d->tagPropVisible = d->tagPropWidget->isVisible();
 }
 
 void TagsManager::slotSelectionChanged()
@@ -438,7 +417,6 @@ void TagsManager::slotEditTagTitle()
     {
         d->tagPropWidget->show();
         d->tagPropWidget->slotFocusTitleEdit();
-        d->rightToolBar->tab(0)->setChecked(true);
     }
 }
 
@@ -447,7 +425,6 @@ void TagsManager::slotTitleEditReady()
     if (!d->tagPropVisible)
     {
         d->tagPropWidget->hide();
-        d->rightToolBar->tab(0)->setChecked(false);
     }
 
     d->tagMngrView->setFocus();
@@ -829,17 +806,6 @@ void TagsManager::setupActions()
     d->mainToolbar->addAction(d->syncexportAction->menuAction());
     d->mainToolbar->addAction(new DLogoAction(this));
     addToolBar(d->mainToolbar);
-
-    /**
-     * Right Toolbar with vertical properties button
-     */
-    d->rightToolBar = new DMultiTabBar(Qt::RightEdge, this);
-    d->rightToolBar->appendTab(QIcon::fromTheme(QLatin1String("tag-properties"))
-                               .pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize)), 0, i18n("Tag Properties"));
-    d->rightToolBar->setStyle(DMultiTabBar::AllIconsText);
-
-    connect(d->rightToolBar->tab(0), SIGNAL(clicked()),
-            this, SLOT(slotOpenProperties()));
 
     d->rootDisabledOptions.append(d->delAction);
     d->rootDisabledOptions.append(d->titleEdit);

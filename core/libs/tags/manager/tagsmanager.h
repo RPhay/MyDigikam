@@ -68,12 +68,6 @@ Q_SIGNALS:
 private Q_SLOTS:
 
     /**
-     * @brief slotOpenProperties - open tag properties option when
-     *                             activating Tag Properties from right sidebar
-     */
-    void slotOpenProperties();
-
-    /**
      * @brief slotSelectionChanged - update tag properties in tagPropWidget when
      *                               different item is selected
      */
