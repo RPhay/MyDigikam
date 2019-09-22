@@ -28,7 +28,6 @@
 
 #include <QScrollBar>
 #include <QPainter>
-#include <QStandardPaths>
 #include <QCursor>
 
 // KDE includes
@@ -39,6 +38,7 @@
 
 #include "digikam_debug.h"
 #include "overlaywidget.h"
+#include "previewlayout.h"
 
 namespace DigikamEditorHealingCloneToolPlugin
 {
@@ -59,8 +59,10 @@ public:
         proceedInMoveEvent(false),
         cloneVectorChanged(true),
         brushRadius(1),
+        brushValue(1),
         currentState(HealingCloneState::SELECT_SOURCE),
         previousState(HealingCloneState::DO_NOTHING),
+        drawCursor(nullptr),
         sourceCursor(nullptr),
         sourceCursorCenter(nullptr)
     {
@@ -80,9 +82,11 @@ public:
     bool                  proceedInMoveEvent;
     bool                  cloneVectorChanged;
     int                   brushRadius;
+    int                   brushValue;
     QColor                brushColor;
     HealingCloneState     currentState;
     HealingCloneState     previousState;
+    QGraphicsEllipseItem* drawCursor;
     QGraphicsEllipseItem* sourceCursor;
     QGraphicsEllipseItem* sourceCursorCenter;
     QCursor               prevCursor;
@@ -94,6 +98,9 @@ HealingCloneToolWidget::HealingCloneToolWidget(QWidget* const parent)
 {
     activateState(HealingCloneState::SELECT_SOURCE);
     updateSourceCursor(d->src, 10);
+
+    connect(this, SIGNAL(viewportRectChanged(QRectF)),
+            this, SLOT(slotImageRegionChanged()));
 }
 
 HealingCloneToolWidget::~HealingCloneToolWidget()
@@ -161,6 +168,8 @@ void HealingCloneToolWidget::mousePressEvent(QMouseEvent* e)
 void HealingCloneToolWidget::mouseMoveEvent(QMouseEvent* e)
 {
     bool cursorOutsideScene = checkPointOutsideScene(e->pos());
+    QPointF cursorPosition  = mapToScene(e->pos());
+    setDrawCursorPosition(cursorPosition);
 
     if (cursorOutsideScene &&
         d->currentState != HealingCloneState::DO_NOTHING)
@@ -420,41 +429,34 @@ void HealingCloneToolWidget::undoSlotSetSourcePoint()
 
 void HealingCloneToolWidget::changeCursorShape(const QColor& color)
 {
-    int radius    = d->brushRadius;
-    int size      = radius * 2;
-    d->brushColor = color;
-    int penSize   = 2;
+    if (d->drawCursor)
+    {
+        scene()->removeItem(d->drawCursor);
+        delete d->drawCursor;
+    }
 
-    QPixmap pix(size, size);
-    pix.fill(Qt::transparent);
+    int diameter = d->brushRadius * 2;
 
-    QPainter p(&pix);
-    p.setPen(QPen(color, penSize));
-    p.setRenderHint(QPainter::Antialiasing, true);
-    p.drawEllipse(1, 1, size - 2, size - 2);
-    p.setBrush(Qt::SolidPattern);
-    p.drawEllipse((size - 2) / 2, (size - 2) / 2, 2, 2);
+    d->drawCursor = new QGraphicsEllipseItem(0, 0, diameter, diameter);
+    d->drawCursor->setFlag(QGraphicsItem::ItemClipsChildrenToShape, true);
 
-    setCursor(QCursor(pix));
+    QPen pen(Qt::SolidLine);
+    pen.setWidth(2);
+    pen.setColor(color);
+    d->drawCursor->setPen(pen);
+    d->drawCursor->setBrush(QBrush(Qt::transparent));
+    d->drawCursor->setOpacity(1);
+    scene()->addItem(d->drawCursor);
 
     QPointF tempCursorPosition = mapToScene(mapFromImageCoordinates(d->src));
-    updateSourceCursor(tempCursorPosition, 2 * d->brushRadius);
+    updateSourceCursor(tempCursorPosition, diameter);
+    setDrawCursorPosition(tempCursorPosition);
 }
 
-void HealingCloneToolWidget::changeCursorShape(const QPixmap& pixMap, float x, float y)
+void HealingCloneToolWidget::setBrushValue(int value)
 {
-    setCursor(QCursor(pixMap, x * pixMap.width(), y * pixMap.height()));
-}
-
-void HealingCloneToolWidget::updateCursor()
-{
-    changeCursorShape(d->brushColor);
-}
-
-void HealingCloneToolWidget::setBrushRadius(int value)
-{
-    d->brushRadius = value;
-    activateState(d->currentState);
+    d->brushValue = value;
+    slotImageRegionChanged();
 }
 
 void HealingCloneToolWidget::setIsLassoPointsVectorEmpty(bool isEmpty)
@@ -482,6 +484,7 @@ void HealingCloneToolWidget::activateState(HealingCloneState state)
     if (state == HealingCloneState::PAINT)
     {
         changeCursorShape(Qt::blue);
+        setCursor(QCursor(Qt::BlankCursor));
     }
     else if (state == HealingCloneState::MOVE_IMAGE)
     {
@@ -542,7 +545,7 @@ QPoint HealingCloneToolWidget::mapFromImageCoordinates(const QPoint& point) cons
 
 void HealingCloneToolWidget::updateSourceCursor(const QPointF& pos, int diameter)
 {
-    if (d->sourceCursor != nullptr)
+    if (d->sourceCursor)
     {
         scene()->removeItem(d->sourceCursor);
         scene()->removeItem(d->sourceCursorCenter);
@@ -572,25 +575,52 @@ void HealingCloneToolWidget::updateSourceCursor(const QPointF& pos, int diameter
     setSourceCursorPosition(pos);
 }
 
+void HealingCloneToolWidget::setDrawCursorPosition(const QPointF& topLeftPos)
+{
+    if (!d->drawCursor)
+    {
+        return;
+    }
+
+    double d1          = d->drawCursor->rect().width() / 2.0;
+    QPointF shiftedPos = QPointF(topLeftPos.x() - d1, topLeftPos.y() - d1);
+
+    d->drawCursor->setPos(shiftedPos);
+
+    // check if source is outside scene
+
+    bool drawCursorOutsideScene = (topLeftPos.x() < 0)                      ||
+                                  (topLeftPos.x() + d1 >= scene()->width()) ||
+                                  (topLeftPos.y() < 0)                      ||
+                                  (topLeftPos.y() + d1 >= scene()->height());
+
+    if (drawCursorOutsideScene || (d->currentState != HealingCloneState::PAINT))
+    {
+        d->drawCursor->setVisible(false);
+    }
+    else
+    {
+        d->drawCursor->setVisible(true);
+    }
+}
+
 void HealingCloneToolWidget::setSourceCursorPosition(const QPointF& topLeftPos)
 {
-    double dx           = d->sourceCursor->rect().width() / 2.0;
-    double dy           = d->sourceCursor->rect().width() / 2.0;
-    QPointF shiftedPos  = QPointF(topLeftPos.x() - dx, topLeftPos.y() - dy);
+    double d1           = d->sourceCursor->rect().width() / 2.0;
+    QPointF shiftedPos  = QPointF(topLeftPos.x() - d1, topLeftPos.y() - d1);
 
-    double dx2          = d->sourceCursorCenter->rect().width() / 2.0;
-    double dy2          = d->sourceCursorCenter->rect().width() / 2.0;
-    QPointF shiftedPos2 = QPointF(topLeftPos.x() - dx2, topLeftPos.y() - dy2);
+    double d2           = d->sourceCursorCenter->rect().width() / 2.0;
+    QPointF shiftedPos2 = QPointF(topLeftPos.x() - d2, topLeftPos.y() - d2);
 
     d->sourceCursor->setPos(shiftedPos);
     d->sourceCursorCenter->setPos(shiftedPos2);
 
     // check if source is outside scene
 
-    bool sourceCursorOutsideScene = (topLeftPos.x() < 0)                     ||
-                                    (topLeftPos.x() + dx > scene()->width()) ||
-                                    (topLeftPos.y() < 0)                     ||
-                                    (topLeftPos.y() + dy > scene()->height());
+    bool sourceCursorOutsideScene = (topLeftPos.x() < 0)                       ||
+                                     (topLeftPos.x() + d1 >= scene()->width()) ||
+                                     (topLeftPos.y() < 0)                      ||
+                                     (topLeftPos.y() + d1 >= scene()->height());
 
     if (sourceCursorOutsideScene)
     {
@@ -629,6 +659,19 @@ bool HealingCloneToolWidget::checkPointOutsideScene(const QPoint& globalPoint) c
     }
 
     return pointOutsideScene;
+}
+
+void HealingCloneToolWidget::slotImageRegionChanged()
+{
+    double zoom    = layout()->realZoomFactor();
+    d->brushRadius = qRound(d->brushValue * zoom);
+
+    activateState(d->currentState);
+}
+
+int HealingCloneToolWidget::getBrushRadius() const
+{
+    return d->brushRadius;
 }
 
 } // namespace DigikamEditorHealingCloneToolPlugin
