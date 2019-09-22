@@ -5,4 +5,5 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 add_subdirectory(jpeg)
+add_subdirectory(png)
 add_subdirectory(qimage)

@@ -3,8 +3,8 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2019-09-21
- * Description : JPEG DImg plugin.
+ * Date        : 2019-09-22
+ * Description : PNG DImg plugin.
  *
  * Copyright (C) 2019      by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "dimgjpegplugin.h"
+#include "dimgpngplugin.h"
 
 // C++ includes
 
@@ -39,49 +39,49 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
-#include "dimgjpegloader.h"
+#include "dimgpngloader.h"
 
-namespace DigikamJPEGDImgPlugin
+namespace DigikamPNGDImgPlugin
 {
 
-DImgJPEGPlugin::DImgJPEGPlugin(QObject* const parent)
+DImgPNGPlugin::DImgPNGPlugin(QObject* const parent)
     : DPluginDImg(parent)
 {
 }
 
-DImgJPEGPlugin::~DImgJPEGPlugin()
+DImgPNGPlugin::~DImgPNGPlugin()
 {
 }
 
-QString DImgJPEGPlugin::name() const
+QString DImgPNGPlugin::name() const
 {
-    return i18n("JPEG DImg loader");
+    return i18n("PNG DImg loader");
 }
 
-QString DImgJPEGPlugin::iid() const
+QString DImgPNGPlugin::iid() const
 {
     return QLatin1String(DPLUGIN_IID);
 }
 
-QIcon DImgJPEGPlugin::icon() const
+QIcon DImgPNGPlugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("image-jpeg"));
+    return QIcon::fromTheme(QLatin1String("image-png"));
 }
 
-QString DImgJPEGPlugin::description() const
+QString DImgPNGPlugin::description() const
 {
-    return i18n("A DImg image loader based on libjpeg codec");
+    return i18n("A DImg image loader based on libpng codec");
 }
 
-QString DImgJPEGPlugin::details() const
+QString DImgPNGPlugin::details() const
 {
     return i18n("<p>This plugin permit to load and save image with DImg using "
-                "Libjpeg codec</p>"
-                "<p>See <a href='https://en.wikipedia.org/wiki/Libjpeg'>Libjpeg documentation</a> for details.</p>"
+                "Libpng codec</p>"
+                "<p>See <a href='https://en.wikipedia.org/wiki/Libpng'>Libpng documentation</a> for details.</p>"
     );
 }
 
-QList<DPluginAuthor> DImgJPEGPlugin::authors() const
+QList<DPluginAuthor> DImgPNGPlugin::authors() const
 {
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
@@ -90,22 +90,22 @@ QList<DPluginAuthor> DImgJPEGPlugin::authors() const
             ;
 }
 
-void DImgJPEGPlugin::setup(QObject* const /*parent*/)
+void DImgPNGPlugin::setup(QObject* const /*parent*/)
 {
     // Nothing to do
 }
 
-QString DImgJPEGPlugin::loaderName() const
+QString DImgPNGPlugin::loaderName() const
 {
-    return QLatin1String("JPEG");
+    return QLatin1String("PNG");
 }
 
-QString DImgJPEGPlugin::typeMimes() const
+QString DImgPNGPlugin::typeMimes() const
 {
-    return QLatin1String("jpg jpeg jpe");
+    return QLatin1String("png");
 }
 
-bool DImgJPEGPlugin::canRead(const QString& filePath) const
+bool DImgPNGPlugin::canRead(const QString& filePath) const
 {
     QFileInfo fileInfo(filePath);
 
@@ -119,7 +119,7 @@ bool DImgJPEGPlugin::canRead(const QString& filePath) const
 
     QString ext = fileInfo.suffix().toUpper();
 
-    if (!ext.isEmpty() && (ext == QLatin1String("JPEG") || ext == QLatin1String("JPG") || ext == QLatin1String("JPE")))
+    if (!ext.isEmpty() && (ext == QLatin1String("PNG")))
     {
         return true;
     }
@@ -147,9 +147,9 @@ bool DImgJPEGPlugin::canRead(const QString& filePath) const
 
     fclose(f);
 
-    uchar jpegID[2] = { 0xFF, 0xD8 };
+    uchar pngID[8] = { 0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A };
 
-    if (memcmp(&header, &jpegID, 2) == 0)
+    if (memcmp(&header, &pngID, 8) == 0)
     {
         return true;
     }
@@ -157,9 +157,9 @@ bool DImgJPEGPlugin::canRead(const QString& filePath) const
     return false;
 }
 
-bool DImgJPEGPlugin::canWrite(const QString& format) const
+bool DImgPNGPlugin::canWrite(const QString& format) const
 {
-    if ((format == QLatin1String("JPEG") || format == QLatin1String("JPG") || format == QLatin1String("JPE")))
+    if (format == QLatin1String("PNG"))
     {
         return true;
     }
@@ -167,9 +167,9 @@ bool DImgJPEGPlugin::canWrite(const QString& format) const
     return false;
 }
 
-DImgLoader* DImgJPEGPlugin::loader(DImg* const image) const
+DImgLoader* DImgPNGPlugin::loader(DImg* const image) const
 {
-    return new DImgJPEGLoader(image);
+    return new DImgPNGLoader(image);
 }
 
-} // namespace DigikamJPEGDImgPlugin
+} // namespace DigikamPNGDImgPlugin
