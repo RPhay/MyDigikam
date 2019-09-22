@@ -5,4 +5,3 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 add_subdirectory(lut3d)
-add_subdirectory(healingclonetool)
