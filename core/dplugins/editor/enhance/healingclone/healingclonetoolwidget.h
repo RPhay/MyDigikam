@@ -61,14 +61,15 @@ public:
     explicit HealingCloneToolWidget(QWidget* const parent = nullptr);
     ~HealingCloneToolWidget();
 
-    void setBrushRadius(int value);
+    void setBrushValue(int value);
     void setIsLassoPointsVectorEmpty(bool);
     void setCloneVectorChanged(bool);
+    void setDrawCursorPosition(const QPointF& topLeftPos);
     void setSourceCursorPosition(const QPointF& topLeftPos);
 
     void changeCursorShape(const QColor& color);
-    void changeCursorShape(const QPixmap& pixMap, float x = 0.5 , float y = 0.5);
-    void updateCursor();
+
+    int  getBrushRadius() const;
 
     bool checkPointOutsideScene(const QPoint& point)    const;
     void updateSourceCursor(const QPointF& pos = QPoint(), int diamter = 10);
@@ -100,6 +101,10 @@ Q_SIGNALS:
     void signalPushToUndoStack();
     void signalUndoClone();
     void signalRedoClone();
+
+private Q_SLOTS:
+
+    void slotImageRegionChanged();
 
 protected:
 

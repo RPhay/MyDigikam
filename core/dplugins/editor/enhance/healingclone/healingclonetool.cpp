@@ -32,11 +32,11 @@
 // Qt includes
 
 #include <QGridLayout>
-#include <QLabel>
 #include <QPushButton>
 #include <QGroupBox>
-#include <QIcon>
+#include <QLabel>
 #include <QPoint>
+#include <QIcon>
 
 // KDE includes
 
@@ -136,8 +136,8 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     QLabel* const label  = new QLabel(i18n("Brush Radius:"));
     d->radiusInput       = new DIntNumInput();
-    d->radiusInput->setRange(0, 100, 1);
-    d->radiusInput->setDefaultValue(10);
+    d->radiusInput->setRange(0, 200, 1);
+    d->radiusInput->setDefaultValue(50);
     d->radiusInput->setWhatsThis(i18n("A radius of 0 has no effect, "
                                       "1 and above determine the brush radius "
                                       "that determines the size of parts copied in the image. \nShortcut :: [ and ]"));
@@ -145,7 +145,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
                                     "1 and above determine the brush radius "
                                     "that determines the size of parts copied in the image. \nShortcut :: [ and ]"));
 
-    d->previewWidget->setBrushRadius(d->radiusInput->value());
+    d->previewWidget->setBrushValue(d->radiusInput->value());
 
     // --------------------------------------------------------
 
@@ -362,13 +362,14 @@ void HealingCloneTool::slotResized()
 
 void HealingCloneTool::slotReplace(const QPoint& srcPoint, const QPoint& dstPoint)
 {
-    DImg  current = d->previewWidget->getOriginalImage();
-    clone(&current, srcPoint, dstPoint, d->radiusInput->value());
+    DImg current = d->previewWidget->getOriginalImage();
+    int  radius  = d->previewWidget->getBrushRadius();
+    clone(&current, srcPoint, dstPoint, radius);
 }
 
 void HealingCloneTool::slotRadiusChanged(int r)
 {
-    d->previewWidget->setBrushRadius(r);
+    d->previewWidget->setBrushValue(r);
 }
 
 void HealingCloneTool::clone(DImg* const img,
@@ -383,9 +384,9 @@ void HealingCloneTool::clone(DImg* const img,
         return;
     }
 
-    double scale                = item->zoomSettings()->zoomFactor();
-    radius                      = radius / scale;
-    double blurPercent          = d->blurPercent->value() / 100;
+    double scale       = item->zoomSettings()->realZoomFactor();
+    radius             = radius / scale;
+    double blurPercent = d->blurPercent->value() / 100;
 
     for (int i = -1 * radius ; i < radius ; ++i)
     {
