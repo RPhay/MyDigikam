@@ -163,24 +163,18 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    QPixmap sourcePixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                         QLatin1String("digikam/data/healing_clone_SRC.png")));
-    const QIcon sourceBtnIcon(sourcePixmap);
-    d->srcButton  = new QPushButton();
+    d->srcButton = new QPushButton();
     d->srcButton->setFixedSize(d->btnSize);
-    d->srcButton->setIcon(sourceBtnIcon);
+    d->srcButton->setIcon(QIcon::fromTheme(QLatin1String("crosshairs")));
     d->srcButton->setIconSize(d->iconSize);
     d->srcButton->setWhatsThis(i18n("Select Source Point.\nShortcut: S"));
     d->srcButton->setToolTip(i18n("Select Source Point.\nShortcut: S"));
 
     // --------------------------------------------------------
 
-    QPixmap lassoPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                        QLatin1String("digikam/data/healing_clone_LASSO.png")));
-    const QIcon lassoBtnIcon(lassoPixmap);
-    d->lassoButton  = new QPushButton();
+    d->lassoButton = new QPushButton();
     d->lassoButton->setFixedSize(d->btnSize);
-    d->lassoButton->setIcon(lassoBtnIcon);
+    d->lassoButton->setIcon(QIcon::fromTheme(QLatin1String("edit-select-lasso")));
     d->lassoButton->setIconSize(d->iconSize);
     d->lassoButton->setWhatsThis(i18n("Polygon Selection With Lasso.\nShortcut: L\n"
                                       "To Continue polygon, either press L or double click\n"
@@ -191,36 +185,27 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    QPixmap movePixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                       QLatin1String("digikam/data/healing_clone_MOVE.png")));
-    const QIcon moveBtnIcon(movePixmap);
-    d->moveButton  = new QPushButton();
+    d->moveButton = new QPushButton();
     d->moveButton->setFixedSize(d->btnSize);
-    d->moveButton->setIcon(moveBtnIcon);
+    d->moveButton->setIcon(QIcon::fromTheme(QLatin1String("transform-browse")));
     d->moveButton->setIconSize(d->iconSize);
     d->moveButton->setWhatsThis(i18n("Move Image.\nShortcut: M"));
     d->moveButton->setToolTip(i18n("Move Image.\nShortcut: M"));
 
     // --------------------------------------------------------
 
-    QPixmap undoPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                       QLatin1String("digikam/data/healing_clone_UNDO.png")));
-    const QIcon undoBtnIcon(undoPixmap);
-    d->undoCloneButton  = new QPushButton();
+    d->undoCloneButton = new QPushButton();
     d->undoCloneButton->setFixedSize(d->btnSize);
-    d->undoCloneButton->setIcon(undoBtnIcon);
+    d->undoCloneButton->setIcon(QIcon::fromTheme(QLatin1String("edit-undo")));
     d->undoCloneButton->setIconSize(d->iconSize);
     d->undoCloneButton->setWhatsThis(i18n("Undo clone operation.\nShortcut: CTRL+Z"));
     d->undoCloneButton->setToolTip(i18n("Undo clone operation.\nShortcut: CTRL+Z"));
 
     // --------------------------------------------------------
 
-    QPixmap redoPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                       QLatin1String("digikam/data/healing_clone_REDO.png")));
-    const QIcon redoBtnIcon(redoPixmap);
-    d->redoCloneButton  = new QPushButton();
+    d->redoCloneButton = new QPushButton();
     d->redoCloneButton->setFixedSize(d->btnSize);
-    d->redoCloneButton->setIcon(redoBtnIcon);
+    d->redoCloneButton->setIcon(QIcon::fromTheme(QLatin1String("edit-redo")));
     d->redoCloneButton->setIconSize(d->iconSize);
     d->redoCloneButton->setWhatsThis(i18n("Redo clone operation.\nShortcut: CTRL+Y"));
     d->redoCloneButton->setToolTip(i18n("Redo clone operation.\nShortcut: CTRL+Y"));
@@ -313,23 +298,23 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     connect(d->previewWidget, SIGNAL(signalResetLassoPoint()),
             this, SLOT(slotResetLassoPoints()));
 
-    connect(d->previewWidget,SIGNAL(signalContinuePolygon()),
+    connect(d->previewWidget, SIGNAL(signalContinuePolygon()),
             this, SLOT(slotContinuePolygon()));
 
-    connect(d->previewWidget,SIGNAL(signalIncreaseBrushRadius()),
+    connect(d->previewWidget, SIGNAL(signalIncreaseBrushRadius()),
             this, SLOT(slotIncreaseBrushRadius()));
 
-    connect(d->previewWidget,SIGNAL(signalDecreaseBrushRadius()),
+    connect(d->previewWidget, SIGNAL(signalDecreaseBrushRadius()),
             this, SLOT(slotDecreaseBrushRadius()));
 
     // undo - redo
-    connect(d->previewWidget,SIGNAL(signalPushToUndoStack()),
+    connect(d->previewWidget, SIGNAL(signalPushToUndoStack()),
             this, SLOT(slotPushToUndoStack()));
 
-    connect(d->previewWidget,SIGNAL(signalUndoClone()),
+    connect(d->previewWidget, SIGNAL(signalUndoClone()),
             this, SLOT(slotUndoClone()));
 
-    connect(d->previewWidget,SIGNAL(signalRedoClone()),
+    connect(d->previewWidget, SIGNAL(signalRedoClone()),
             this, SLOT(slotRedoClone()));
 }
 

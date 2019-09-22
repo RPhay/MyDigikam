@@ -492,9 +492,7 @@ void HealingCloneToolWidget::activateState(HealingCloneState state)
     }
     else if (state == HealingCloneState::LASSO_DRAW_BOUNDARY)
     {
-        QPixmap pix = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                     QLatin1String("digikam/data/healing_clone_LASSO_PEN.png")));
-        changeCursorShape(pix, 0.0, 1.0);
+        setCursor(QCursor(Qt::PointingHandCursor));
     }
     else if (state == HealingCloneState::LASSO_CLONE)
     {
@@ -502,10 +500,7 @@ void HealingCloneToolWidget::activateState(HealingCloneState state)
     }
     else if (state == HealingCloneState::SELECT_SOURCE)
     {
-
-        QPixmap pix = QPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                     QLatin1String("digikam/data/healing_clone_SRC.png")));
-        changeCursorShape(pix, 0.5, 0.5);
+        setCursor(QCursor(Qt::CrossCursor));
     }
     else if (state ==HealingCloneState::DO_NOTHING)
     {
