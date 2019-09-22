@@ -53,13 +53,15 @@ class Q_DECL_HIDDEN ImageRegionItem::Private
 public:
 
     explicit Private()
-      : onMouseMovePreviewToggled(true),
+      : paintExtras(true),
+        onMouseMovePreviewToggled(true),
         renderingPreviewMode(PreviewToolBar::PreviewBothImagesVertCont),
         view(nullptr),
         iface(nullptr)
     {
     }
 
+    bool               paintExtras;
     bool               onMouseMovePreviewToggled;
     int                renderingPreviewMode;
 
@@ -71,11 +73,12 @@ public:
     ImageIface*        iface;
 };
 
-ImageRegionItem::ImageRegionItem(ImageRegionWidget* const widget):
-    d_ptr(new Private)
+ImageRegionItem::ImageRegionItem(ImageRegionWidget* const widget, bool paintExtras)
+    : d_ptr(new Private)
 {
-    d_ptr->view  = widget;
-    d_ptr->iface = new ImageIface;
+    d_ptr->view        = widget;
+    d_ptr->iface       = new ImageIface;
+    d_ptr->paintExtras = paintExtras;
     setAcceptHoverEvents(true);
     setImage(d_ptr->iface->original() ? d_ptr->iface->original()->copy() : DImg());
 }
@@ -171,7 +174,10 @@ void ImageRegionItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* o
         painter->drawPixmap(d_ptr->drawRect.topLeft(), pix);
     }
 
-    paintExtraData(painter);
+    if (d_ptr->paintExtras)
+    {
+        paintExtraData(painter);
+    }
 
     // Show the Over/Under exposure pixels indicators
 

@@ -48,4 +48,6 @@ BUGFIXES:
 034 ==> 221571 - Integrate RawTherapee into digikam
 035 ==> 341186 - Integrate with darktable.
 036 ==> 412083 - Image previews scaled incorrectly on hidpi.
-037 ==> 
+037 ==> 411612 - When using Tags Manager and then closing crashes digiKam.
+038 ==> 
+

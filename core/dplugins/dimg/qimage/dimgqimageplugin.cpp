@@ -38,25 +38,13 @@
 namespace DigikamQImageDImgPlugin
 {
 
-class Q_DECL_HIDDEN DImgQImagePlugin::Private
-{
-public:
-
-    explicit Private()
-    {
-    }
-
-};
-
 DImgQImagePlugin::DImgQImagePlugin(QObject* const parent)
-    : DPluginDImg(parent),
-      d(new Private)
+    : DPluginDImg(parent)
 {
 }
 
 DImgQImagePlugin::~DImgQImagePlugin()
 {
-    delete d;
 }
 
 QString DImgQImagePlugin::name() const

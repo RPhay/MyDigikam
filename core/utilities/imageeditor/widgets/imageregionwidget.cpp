@@ -75,11 +75,11 @@ public:
     ImageRegionItem* item;
 };
 
-ImageRegionWidget::ImageRegionWidget(QWidget* const parent)
+ImageRegionWidget::ImageRegionWidget(QWidget* const parent, bool paintExtras)
     : GraphicsDImgView(parent),
       d_ptr(new Private)
 {
-    d_ptr->item = new ImageRegionItem(this);
+    d_ptr->item = new ImageRegionItem(this, paintExtras);
     setItem(d_ptr->item);
 
     setAttribute(Qt::WA_DeleteOnClose);
@@ -257,10 +257,9 @@ void ImageRegionWidget::emitCapturedPointFromOriginal(const QPointF& pt)
     emit signalCapturedPointFromOriginal(color, imgPt);
 }
 
-
-
-void ImageRegionWidget::updateImage(DImg& img)
+void ImageRegionWidget::updateImage(const DImg& img)
 {
     d_ptr->item->setImage(img);
 }
+
 } // namespace Digikam

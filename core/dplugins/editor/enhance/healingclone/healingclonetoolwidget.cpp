@@ -89,7 +89,7 @@ public:
 };
 
 HealingCloneToolWidget::HealingCloneToolWidget(QWidget* const parent)
-    : ImageRegionWidget(parent),
+    : ImageRegionWidget(parent, false),
       d(new Private)
 {
     activateState(HealingCloneState::SELECT_SOURCE);
