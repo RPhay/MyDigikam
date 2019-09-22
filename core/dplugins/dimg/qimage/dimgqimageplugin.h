@@ -64,11 +64,6 @@ public:
     QString     typeMimes()                          const;
     bool        isSupported(const QString& filePath) const;
     DImgLoader* loader(DImg* const)                  const;
-
-private:
-
-    class Private;
-    Private* const d;
 };
 
 } // namespace DigikamQImageDImgPlugin
