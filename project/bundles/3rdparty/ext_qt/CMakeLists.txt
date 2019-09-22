@@ -34,14 +34,15 @@ ExternalProject_Add(ext_qt
                   -confirm-license
                   -sql-sqlite                       # Compile Sqlite SQL plugin
                   -sql-mysql                        # Compile Mysql SQL plugin
+                  -iconv                            # International string conversion
                   -fontconfig
-#                  -icu                              # International Component Unicode
                   -system-freetype                  # Use system font rendering lib https://doc.qt.io/qt-5/qtgui-attribution-freetype.html
                   -openssl-linked                   # hard link ssl libraries
                   -nomake tests                     # Do not build test codes
                   -nomake examples                  # Do not build basis example codes
                   -no-compile-examples              # Do not build extra example codes
                   -no-qml-debug
+                  -no-icu                           # Locale support disabled (International Component Unicode)
                   -no-mtdev
                   -no-journald
                   -no-syslog
