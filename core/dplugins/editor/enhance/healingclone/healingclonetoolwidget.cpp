@@ -51,10 +51,6 @@ public:
     explicit Private()
       : srcSet(true),
         isLassoPointsVectorEmpty(true),
-        default_w(0.0),
-        default_h(0.0),
-        float_w(0.0),
-        float_h(0.0),
         amIFocused(false),
         proceedInMoveEvent(false),
         cloneVectorChanged(true),
@@ -67,7 +63,6 @@ public:
         sourceCursorCenter(nullptr)
     {
         src        = QPoint(0, 0);
-        brushColor = QColor(Qt::red);
     }
 
     bool                  srcSet;
@@ -75,22 +70,16 @@ public:
     QPointF               lastCursorPosition;
     QPoint                src;
     QPoint                dst;
-    double                default_w;
-    double                default_h;
-    double                float_w;
-    double                float_h;
     bool                  amIFocused;
     bool                  proceedInMoveEvent;
     bool                  cloneVectorChanged;
     int                   brushRadius;
     int                   brushValue;
-    QColor                brushColor;
     HealingCloneState     currentState;
     HealingCloneState     previousState;
     QGraphicsEllipseItem* drawCursor;
     QGraphicsEllipseItem* sourceCursor;
     QGraphicsEllipseItem* sourceCursorCenter;
-    QCursor               prevCursor;
 };
 
 HealingCloneToolWidget::HealingCloneToolWidget(QWidget* const parent)
@@ -173,7 +162,6 @@ void HealingCloneToolWidget::mouseMoveEvent(QMouseEvent* e)
 {
     bool cursorOutsideScene = checkPointOutsideScene(e->pos());
     d->lastCursorPosition   = mapToScene(e->pos());
-    setDrawCursorPosition(d->lastCursorPosition);
 
     if (cursorOutsideScene &&
         d->currentState != HealingCloneState::DO_NOTHING)
@@ -185,6 +173,8 @@ void HealingCloneToolWidget::mouseMoveEvent(QMouseEvent* e)
     {
         activateState(d->previousState);
     }
+
+    setDrawCursorPosition(d->lastCursorPosition);
 
     if (d->currentState == HealingCloneState::DO_NOTHING)
     {
@@ -269,7 +259,7 @@ void HealingCloneToolWidget::mouseDoubleClickEvent(QMouseEvent* event)
     }
 }
 
-void HealingCloneToolWidget :: keyPressEvent(QKeyEvent *e)
+void HealingCloneToolWidget::keyPressEvent(QKeyEvent *e)
 {
     if (e->key() == Qt::Key_M)
     {
@@ -345,11 +335,6 @@ void HealingCloneToolWidget::keyReleaseEvent(QKeyEvent* e)
             slotSetSourcePoint();
         }
     }
-}
-
-void HealingCloneToolWidget:: wheelEvent(QWheelEvent* e)
-{
-    ImageRegionWidget::wheelEvent(e);
 }
 
 void HealingCloneToolWidget::focusOutEvent(QFocusEvent*)
@@ -652,14 +637,18 @@ bool HealingCloneToolWidget::checkPointOutsideScene(const QPoint& globalPoint) c
     }
     else
     {
-        QPoint bottomRight = QPoint(viewport()->width() - 1, viewport()->height() - 1);
-        int right          = mapToScene(bottomRight).x();
-        int bottom         = mapToScene(bottomRight).y();
+        QPoint bottomRight = QPoint(viewport()->width(),
+                                    viewport()->height());
 
-        pointOutsideScene  = (temp.x() <= 0)     ||
-                             (temp.x() >= right) ||
-                             (temp.y() <= 0)     ||
-                             (temp.y() >= bottom);
+        int right          = mapToScene(bottomRight).x();
+        int left           = right - viewport()->width();
+        int bottom         = mapToScene(bottomRight).y();
+        int top            = bottom - viewport()->height();
+
+        pointOutsideScene  = (temp.x()     < left)  ||
+                             (temp.x() + 1 > right) ||
+                             (temp.y()     < top)   ||
+                             (temp.y() + 1 > bottom);
     }
 
     return pointOutsideScene;
