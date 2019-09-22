@@ -105,12 +105,18 @@ QString DImgQImagePlugin::typeMimes() const
 
     qDebug(DIGIKAM_DIMG_LOG_QIMAGE) << "QImage support this formats:" << formats;
 
-    formats.removeAll(QByteArray("JPEG"));
-    formats.removeAll(QByteArray("JPG"));
+    formats.removeAll(QByteArray("JPEG"));  // JPEG file format
+    formats.removeAll(QByteArray("JPG"));   // JPEG file format
+    formats.removeAll(QByteArray("JPE"));   // JPEG file format
     formats.removeAll(QByteArray("PNG"));
     formats.removeAll(QByteArray("TIFF"));
     formats.removeAll(QByteArray("TIF"));
     formats.removeAll(QByteArray("PGF"));
+    formats.removeAll(QByteArray("JP2"));   // JPEG2000 file format
+    formats.removeAll(QByteArray("JPX"));   // JPEG2000 file format
+    formats.removeAll(QByteArray("JPC"));   // JPEG2000 code stream
+    formats.removeAll(QByteArray("J2K"));   // JPEG2000 code stream
+    formats.removeAll(QByteArray("PGX"));   // JPEG2000 alternative
 
     QString ret;
 
@@ -139,12 +145,18 @@ bool DImgQImagePlugin::canRead(const QString& filePath) const
     // Ignore native loaders.
 
     if (
-        mimeType.contains(QLatin1String("image/jpeg")) ||
-        mimeType.contains(QLatin1String("image/jpg"))  ||
-        mimeType.contains(QLatin1String("image/png"))  ||
-        mimeType.contains(QLatin1String("image/tif"))  ||
-        mimeType.contains(QLatin1String("image/tiff")) ||
-        mimeType.contains(QLatin1String("image/x-pgf"))
+        mimeType.contains(QLatin1String("image/jpeg"))  ||
+        mimeType.contains(QLatin1String("image/jpg"))   ||
+        mimeType.contains(QLatin1String("image/jpe"))   ||
+        mimeType.contains(QLatin1String("image/png"))   ||
+        mimeType.contains(QLatin1String("image/tif"))   ||
+        mimeType.contains(QLatin1String("image/tiff"))  ||
+        mimeType.contains(QLatin1String("image/x-pgf")) ||
+        mimeType.contains(QLatin1String("image/jp2"))   ||
+        mimeType.contains(QLatin1String("image/jpx"))   ||
+        mimeType.contains(QLatin1String("image/jpc"))   ||
+        mimeType.contains(QLatin1String("image/j2k"))   ||
+        mimeType.contains(QLatin1String("image/pgx"))
        )
     {
         return false;
@@ -165,8 +177,8 @@ bool DImgQImagePlugin::canRead(const QString& filePath) const
 
 bool DImgQImagePlugin::canWrite(const QString& format) const
 {
-    QString blackList = QLatin1String(DRawDecoder::rawFiles());          // Ignore RAW files
-    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF"));   // Ignore native loaders
+    QString blackList = QLatin1String(DRawDecoder::rawFiles());                              // Ignore RAW files
+    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX "));  // Ignore native loaders
 
     if (blackList.toUpper().contains(format))
     {

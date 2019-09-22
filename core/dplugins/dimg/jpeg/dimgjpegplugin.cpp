@@ -70,7 +70,7 @@ QIcon DImgJPEGPlugin::icon() const
 
 QString DImgJPEGPlugin::description() const
 {
-    return i18n("A DImg image loader based on libjpeg codec");
+    return i18n("A DImg image loader based on Libjpeg codec");
 }
 
 QString DImgJPEGPlugin::details() const

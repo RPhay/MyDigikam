@@ -49,7 +49,6 @@ extern "C"
 #include "digikam_debug.h"
 #include "digikam_config.h"
 #include "digikam_version.h"
-#include "dimg.h"
 #include "dimgloaderobserver.h"
 
 // libPNG includes

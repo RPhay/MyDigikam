@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2019-09-22
- * Description : PNG DImg plugin.
+ * Description : TIFF DImg plugin.
  *
  * Copyright (C) 2019      by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "dimgpngplugin.h"
+#include "dimgtiffplugin.h"
 
 // C++ includes
 
@@ -39,49 +39,49 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
-#include "dimgpngloader.h"
+#include "dimgtiffloader.h"
 
-namespace DigikamPNGDImgPlugin
+namespace DigikamTIFFDImgPlugin
 {
 
-DImgPNGPlugin::DImgPNGPlugin(QObject* const parent)
+DImgTIFFPlugin::DImgTIFFPlugin(QObject* const parent)
     : DPluginDImg(parent)
 {
 }
 
-DImgPNGPlugin::~DImgPNGPlugin()
+DImgTIFFPlugin::~DImgTIFFPlugin()
 {
 }
 
-QString DImgPNGPlugin::name() const
+QString DImgTIFFPlugin::name() const
 {
-    return i18n("PNG DImg loader");
+    return i18n("TIFF DImg loader");
 }
 
-QString DImgPNGPlugin::iid() const
+QString DImgTIFFPlugin::iid() const
 {
     return QLatin1String(DPLUGIN_IID);
 }
 
-QIcon DImgPNGPlugin::icon() const
+QIcon DImgTIFFPlugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("image-png"));
+    return QIcon::fromTheme(QLatin1String("image-tiff"));
 }
 
-QString DImgPNGPlugin::description() const
+QString DImgTIFFPlugin::description() const
 {
-    return i18n("A DImg image loader based on Libpng codec");
+    return i18n("A DImg image loader based on Libtiff codec");
 }
 
-QString DImgPNGPlugin::details() const
+QString DImgTIFFPlugin::details() const
 {
     return i18n("<p>This plugin permit to load and save image with DImg using "
-                "Libpng codec</p>"
-                "<p>See <a href='https://en.wikipedia.org/wiki/Libpng'>Libpng documentation</a> for details.</p>"
+                "Libtiff codec</p>"
+                "<p>See <a href='https://en.wikipedia.org/wiki/Libtiff'>Libtiff documentation</a> for details.</p>"
     );
 }
 
-QList<DPluginAuthor> DImgPNGPlugin::authors() const
+QList<DPluginAuthor> DImgTIFFPlugin::authors() const
 {
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
@@ -90,22 +90,22 @@ QList<DPluginAuthor> DImgPNGPlugin::authors() const
             ;
 }
 
-void DImgPNGPlugin::setup(QObject* const /*parent*/)
+void DImgTIFFPlugin::setup(QObject* const /*parent*/)
 {
     // Nothing to do
 }
 
-QString DImgPNGPlugin::loaderName() const
+QString DImgTIFFPlugin::loaderName() const
 {
-    return QLatin1String("PNG");
+    return QLatin1String("TIFF");
 }
 
-QString DImgPNGPlugin::typeMimes() const
+QString DImgTIFFPlugin::typeMimes() const
 {
-    return QLatin1String("png");
+    return QLatin1String("tif tiff");
 }
 
-bool DImgPNGPlugin::canRead(const QString& filePath) const
+bool DImgTIFFPlugin::canRead(const QString& filePath) const
 {
     QFileInfo fileInfo(filePath);
 
@@ -119,7 +119,7 @@ bool DImgPNGPlugin::canRead(const QString& filePath) const
 
     QString ext = fileInfo.suffix().toUpper();
 
-    if (!ext.isEmpty() && (ext == QLatin1String("PNG")))
+    if (!ext.isEmpty() && (ext == QLatin1String("TIFF") || ext == QLatin1String("TIF")))
     {
         return true;
     }
@@ -147,9 +147,11 @@ bool DImgPNGPlugin::canRead(const QString& filePath) const
 
     fclose(f);
 
-    uchar pngID[8] = { 0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A };
+    uchar tiffBigID[2] = { 0x4D, 0x4D };
+    uchar tiffLilID[2] = { 0x49, 0x49 };
 
-    if (memcmp(&header, &pngID, 8) == 0)
+    if (memcmp(&header, &tiffBigID, 2) == 0 ||
+        memcmp(&header, &tiffLilID, 2) == 0)
     {
         return true;
     }
@@ -157,9 +159,9 @@ bool DImgPNGPlugin::canRead(const QString& filePath) const
     return false;
 }
 
-bool DImgPNGPlugin::canWrite(const QString& format) const
+bool DImgTIFFPlugin::canWrite(const QString& format) const
 {
-    if (format == QLatin1String("PNG"))
+    if ((format == QLatin1String("TIFF") || format == QLatin1String("TIF")))
     {
         return true;
     }
@@ -167,9 +169,9 @@ bool DImgPNGPlugin::canWrite(const QString& format) const
     return false;
 }
 
-DImgLoader* DImgPNGPlugin::loader(DImg* const image) const
+DImgLoader* DImgTIFFPlugin::loader(DImg* const image) const
 {
-    return new DImgPNGLoader(image);
+    return new DImgTIFFLoader(image);
 }
 
-} // namespace DigikamPNGDImgPlugin
+} // namespace DigikamTIFFDImgPlugin

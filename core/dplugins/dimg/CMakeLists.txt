@@ -6,4 +6,5 @@
 
 add_subdirectory(jpeg)
 add_subdirectory(png)
+add_subdirectory(tiff)
 add_subdirectory(qimage)
