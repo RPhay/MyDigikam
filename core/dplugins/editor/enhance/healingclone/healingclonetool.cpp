@@ -384,9 +384,9 @@ void HealingCloneTool::clone(DImg* const img,
         return;
     }
 
-    double scale                = item->zoomSettings()->zoomFactor();
-    radius                      = radius / scale;
-    double blurPercent          = d->blurPercent->value() / 100;
+    double scale       = item->zoomSettings()->realZoomFactor();
+    radius             = radius / scale;
+    double blurPercent = d->blurPercent->value() / 100;
 
     for (int i = -1 * radius ; i < radius ; ++i)
     {

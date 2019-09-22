@@ -72,6 +72,7 @@ public:
 
     bool                  srcSet;
     bool                  isLassoPointsVectorEmpty;
+    QPointF               lastCursorPosition;
     QPoint                src;
     QPoint                dst;
     double                default_w;
@@ -105,6 +106,9 @@ HealingCloneToolWidget::HealingCloneToolWidget(QWidget* const parent)
 
 HealingCloneToolWidget::~HealingCloneToolWidget()
 {
+    delete d->drawCursor;
+    delete d->sourceCursor;
+    delete d->sourceCursorCenter;
     delete d;
 }
 
@@ -168,8 +172,8 @@ void HealingCloneToolWidget::mousePressEvent(QMouseEvent* e)
 void HealingCloneToolWidget::mouseMoveEvent(QMouseEvent* e)
 {
     bool cursorOutsideScene = checkPointOutsideScene(e->pos());
-    QPointF cursorPosition  = mapToScene(e->pos());
-    setDrawCursorPosition(cursorPosition);
+    d->lastCursorPosition   = mapToScene(e->pos());
+    setDrawCursorPosition(d->lastCursorPosition);
 
     if (cursorOutsideScene &&
         d->currentState != HealingCloneState::DO_NOTHING)
@@ -524,7 +528,7 @@ QPoint HealingCloneToolWidget::mapToImageCoordinates(const QPoint& point) const
     if (region)
     {
         QPointF temp = region->zoomSettings()->mapZoomToImage(mapToScene(point)) ;
-        ret          = QPoint((int) temp.x(), (int) temp.y());
+        ret          = QPoint((int)temp.x(), (int)temp.y());
     }
 
     return ret;
@@ -585,14 +589,12 @@ void HealingCloneToolWidget::setDrawCursorPosition(const QPointF& topLeftPos)
     double d1          = d->drawCursor->rect().width() / 2.0;
     QPointF shiftedPos = QPointF(topLeftPos.x() - d1, topLeftPos.y() - d1);
 
-    d->drawCursor->setPos(shiftedPos);
-
     // check if source is outside scene
 
-    bool drawCursorOutsideScene = (topLeftPos.x() < 0)                      ||
-                                  (topLeftPos.x() + d1 >= scene()->width()) ||
-                                  (topLeftPos.y() < 0)                      ||
-                                  (topLeftPos.y() + d1 >= scene()->height());
+    bool drawCursorOutsideScene = (topLeftPos.x() < 0)                ||
+                                  (topLeftPos.x() > scene()->width()) ||
+                                  (topLeftPos.y() < 0)                ||
+                                  (topLeftPos.y() > scene()->height());
 
     if (drawCursorOutsideScene || (d->currentState != HealingCloneState::PAINT))
     {
@@ -600,6 +602,8 @@ void HealingCloneToolWidget::setDrawCursorPosition(const QPointF& topLeftPos)
     }
     else
     {
+        d->drawCursor->setPos(shiftedPos);
+
         d->drawCursor->setVisible(true);
     }
 }
@@ -612,15 +616,12 @@ void HealingCloneToolWidget::setSourceCursorPosition(const QPointF& topLeftPos)
     double d2           = d->sourceCursorCenter->rect().width() / 2.0;
     QPointF shiftedPos2 = QPointF(topLeftPos.x() - d2, topLeftPos.y() - d2);
 
-    d->sourceCursor->setPos(shiftedPos);
-    d->sourceCursorCenter->setPos(shiftedPos2);
-
     // check if source is outside scene
 
-    bool sourceCursorOutsideScene = (topLeftPos.x() < 0)                       ||
-                                     (topLeftPos.x() + d1 >= scene()->width()) ||
-                                     (topLeftPos.y() < 0)                      ||
-                                     (topLeftPos.y() + d1 >= scene()->height());
+    bool sourceCursorOutsideScene = (topLeftPos.x() < 0)                ||
+                                    (topLeftPos.x() > scene()->width()) ||
+                                    (topLeftPos.y() < 0)                ||
+                                    (topLeftPos.y() > scene()->height());
 
     if (sourceCursorOutsideScene)
     {
@@ -629,6 +630,9 @@ void HealingCloneToolWidget::setSourceCursorPosition(const QPointF& topLeftPos)
     }
     else
     {
+        d->sourceCursor->setPos(shiftedPos);
+        d->sourceCursorCenter->setPos(shiftedPos2);
+
         d->sourceCursor->setVisible(true);
         d->sourceCursorCenter->setVisible(true);
     }
@@ -667,6 +671,11 @@ void HealingCloneToolWidget::slotImageRegionChanged()
     d->brushRadius = qRound(d->brushValue * zoom);
 
     activateState(d->currentState);
+
+    if (!d->lastCursorPosition.isNull())
+    {
+        setDrawCursorPosition(d->lastCursorPosition);
+    }
 }
 
 int HealingCloneToolWidget::getBrushRadius() const
