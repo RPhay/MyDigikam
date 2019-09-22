@@ -82,9 +82,13 @@ public:
      */
     virtual QString typeMimes() const = 0;
 
-    /** Return true if file is supported by the loader and contents can be loaded in memory,
+    /** Return true if source file path is supported by the loader and contents can be loaded.
      */
-    virtual bool isSupported(const QString& filePath) const = 0;
+    virtual bool canRead(const QString& filePath) const = 0;
+
+    /** Return true if target file format is supported by the loader and contents can be written.
+     */
+    virtual bool canWrite(const QString& format) const = 0;
 
     /** Return the image loader instance for the DImg instance.
      */
