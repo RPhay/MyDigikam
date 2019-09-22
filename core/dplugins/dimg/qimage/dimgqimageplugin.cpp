@@ -25,6 +25,13 @@
 
 #include "dimgqimageplugin.h"
 
+// Qt includes
+
+#include <QFileInfo>
+#include <QImageReader>
+#include <QImageWriter>
+#include <QMimeDatabase>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -34,6 +41,7 @@
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "dimgqimageloader.h"
+#include "drawdecoder.h"
 
 namespace DigikamQImageDImgPlugin
 {
@@ -49,7 +57,7 @@ DImgQImagePlugin::~DImgQImagePlugin()
 
 QString DImgQImagePlugin::name() const
 {
-    return QString::fromUtf8("QImage based DImg loader");
+    return i18n("QImage based DImg loader");
 }
 
 QString DImgQImagePlugin::iid() const
@@ -64,13 +72,13 @@ QIcon DImgQImagePlugin::icon() const
 
 QString DImgQImagePlugin::description() const
 {
-    return QString::fromUtf8("A DImg image loader based on QImage plugins");
+    return i18n("A DImg image loader based on QImage plugins");
 }
 
 QString DImgQImagePlugin::details() const
 {
-    return QString::fromUtf8("<p>This plugin permit to load and save image with DImg using "
-                             "QImage plugins</p>"
+    return i18n("<p>This plugin permit to load and save image with DImg using "
+                "QImage plugins</p>"
     );
 }
 
@@ -95,11 +103,91 @@ QString DImgQImagePlugin::loaderName() const
 
 QString DImgQImagePlugin::typeMimes() const
 {
-    return QLatin1String("");
+    QList<QByteArray> formats = QImageReader::supportedImageFormats();
+
+    qDebug(DIGIKAM_DIMG_LOG_QIMAGE) << "QImage support this formats:" << formats;
+
+    formats.removeAll(QByteArray("JPEG"));
+    formats.removeAll(QByteArray("JPG"));
+    formats.removeAll(QByteArray("PNG"));
+    formats.removeAll(QByteArray("TIFF"));
+    formats.removeAll(QByteArray("TIF"));
+    formats.removeAll(QByteArray("PGF"));
+
+    QString ret;
+
+    foreach (const QByteArray& ba, formats)
+    {
+        ret += QString::fromUtf8("%1 ").arg(QString::fromUtf8(ba).toUpper());
+    }
+
+    return ret;
 }
 
-bool DImgQImagePlugin::isSupported(const QString& filePath) const
+bool DImgQImagePlugin::canRead(const QString& filePath) const
 {
+    QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
+
+    // Ignore non image format.
+
+    if (
+        mimeType.startsWith(QLatin1String("video/")) ||
+        mimeType.startsWith(QLatin1String("audio/"))
+       )
+    {
+        return false;
+    }
+
+    // Ignore native loaders.
+
+    if (
+        mimeType.contains(QLatin1String("image/jpeg")) ||
+        mimeType.contains(QLatin1String("image/jpg"))  ||
+        mimeType.contains(QLatin1String("image/png"))  ||
+        mimeType.contains(QLatin1String("image/tif"))  ||
+        mimeType.contains(QLatin1String("image/tiff")) ||
+        mimeType.contains(QLatin1String("image/x-pgf"))
+       )
+    {
+        return false;
+    }
+
+    // Ignore RAW files
+
+    QString ext         = QFileInfo(filePath).suffix().toUpper();
+    QString rawFilesExt = QLatin1String(DRawDecoder::rawFiles());
+
+    if (rawFilesExt.toUpper().contains(ext))
+    {
+        return false;
+    }
+
+    return true;
+}
+
+bool DImgQImagePlugin::canWrite(const QString& format) const
+{
+    QString blackList = QLatin1String(DRawDecoder::rawFiles());          // Ignore RAW files
+    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF"));   // Ignore native loaders
+
+    if (blackList.toUpper().contains(format))
+    {
+        return false;
+    }
+
+    // NOTE: Native loaders support are previously black-listed.
+    // For ex, if tiff is supported in write mode by QImage it will nerver be handled.
+
+    QList<QByteArray> formats = QImageWriter::supportedImageFormats();
+
+    foreach (const QByteArray& ba, formats)
+    {
+        if (QString::fromUtf8(ba).toUpper().contains(format.toUpper()))
+        {
+            return true;
+        }
+    }
+
     return false;
 }
 

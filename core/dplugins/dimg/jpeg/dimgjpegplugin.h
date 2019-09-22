@@ -61,10 +61,11 @@ public:
 
     void setup(QObject* const)           override;
 
-    QString     loaderName()                         const;
-    QString     typeMimes()                          const;
-    bool        isSupported(const QString& filePath) const;
-    DImgLoader* loader(DImg* const)                  const;
+    QString     loaderName()                     const;
+    QString     typeMimes()                      const;
+    bool        canRead(const QString& filePath) const;
+    bool        canWrite(const QString& format)  const;
+    DImgLoader* loader(DImg* const)              const;
 };
 
 } // namespace DigikamJPEGDImgPlugin

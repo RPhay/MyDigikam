@@ -47,15 +47,6 @@ DImgQImageLoader::DImgQImageLoader(DImg* const image)
 
 bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
-    QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
-
-    if (mimeType.startsWith(QLatin1String("video/")) || mimeType.startsWith(QLatin1String("audio/")))
-    {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Blacklisted from DImg::DImgQImageLoader:" << mimeType;
-        loadingFailed();
-        return false;
-    }
-
     readMetadata(filePath, DImg::QIMAGE);
 
     // Loading is opaque to us. No support for stopping from observer,

@@ -58,7 +58,7 @@ DImgJPEGPlugin::~DImgJPEGPlugin()
 
 QString DImgJPEGPlugin::name() const
 {
-    return QString::fromUtf8("JPEG DImg loader");
+    return i18n("JPEG DImg loader");
 }
 
 QString DImgJPEGPlugin::iid() const
@@ -73,13 +73,13 @@ QIcon DImgJPEGPlugin::icon() const
 
 QString DImgJPEGPlugin::description() const
 {
-    return QString::fromUtf8("A DImg image loader based on libjpeg codec");
+    return i18n("A DImg image loader based on libjpeg codec");
 }
 
 QString DImgJPEGPlugin::details() const
 {
-    return QString::fromUtf8("<p>This plugin permit to load and save image with DImg using "
-                             "libjpeg codec</p>"
+    return i18n("<p>This plugin permit to load and save image with DImg using "
+                "libjpeg codec</p>"
     );
 }
 
@@ -107,7 +107,7 @@ QString DImgJPEGPlugin::typeMimes() const
     return QLatin1String("jpg jpeg jpe");
 }
 
-bool DImgJPEGPlugin::isSupported(const QString& filePath) const
+bool DImgJPEGPlugin::canRead(const QString& filePath) const
 {
     QFileInfo fileInfo(filePath);
 
@@ -118,7 +118,7 @@ bool DImgJPEGPlugin::isSupported(const QString& filePath) const
     }
 
     // First simply check file extension
-    
+
     QString ext = fileInfo.suffix().toUpper();
 
     if (!ext.isEmpty() && (ext == QLatin1String("JPEG") || ext == QLatin1String("JPG") || ext == QLatin1String("JPE")))
@@ -152,6 +152,16 @@ bool DImgJPEGPlugin::isSupported(const QString& filePath) const
     uchar jpegID[2] = { 0xFF, 0xD8 };
 
     if (memcmp(&header, &jpegID, 2) == 0)
+    {
+        return true;
+    }
+
+    return false;
+}
+
+bool DImgJPEGPlugin::canWrite(const QString& format) const
+{
+    if ((format == QLatin1String("JPEG") || format == QLatin1String("JPG") || format == QLatin1String("JPE")))
     {
         return true;
     }
