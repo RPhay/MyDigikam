@@ -39,7 +39,7 @@ function updateReportToWebsite()
 
     rm -fr $WEBSITE_DIR
 
-    git clone git@git.kde.org:websites/digikam-org $WEBSITE_DIR
+    git clone git@invent.kde.org:websites/digikam-org $WEBSITE_DIR
 
     cd $WEBSITE_DIR
 
