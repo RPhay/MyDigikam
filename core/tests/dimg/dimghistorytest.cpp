@@ -39,6 +39,7 @@
 #include "editorwindow.h"
 #include "imageiface.h"
 #include "iofilesettings.h"
+#include "dpluginloader.h"
 
 using namespace Digikam;
 
@@ -47,10 +48,12 @@ QTEST_MAIN(DImgHistoryTest)
 void DImgHistoryTest::initTestCase()
 {
     initBaseTestCase();
+    DPluginLoader::instance()->init();
 }
 
 void DImgHistoryTest::cleanupTestCase()
 {
+    DPluginLoader::instance()->cleanUp();
     cleanupBaseTestCase();
 }
 

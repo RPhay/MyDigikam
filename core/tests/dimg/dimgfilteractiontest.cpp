@@ -35,6 +35,7 @@
 // Local includes
 
 #include "metaengine.h"
+#include "dpluginloader.h"
 #include "dimagehistory.h"
 #include "drawdecoding.h"
 #include "filteractionfilter.h"
@@ -146,12 +147,14 @@ void DImgFilterActionTest::initTestCase()
 {
     // initialize Exiv2 before doing any multitasking
     MetaEngine::initializeExiv2();
+    DPluginLoader::instance()->init();
 }
 
 void DImgFilterActionTest::cleanupTestCase()
 {
     // clean up the Exiv2 memory:
     MetaEngine::cleanupExiv2();
+    DPluginLoader::instance()->cleanUp();
 }
 
 QString DImgFilterActionTest::originalImage()
