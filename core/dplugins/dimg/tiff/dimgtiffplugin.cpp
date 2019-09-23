@@ -55,7 +55,7 @@ DImgTIFFPlugin::~DImgTIFFPlugin()
 
 QString DImgTIFFPlugin::name() const
 {
-    return i18n("TIFF DImg loader");
+    return i18n("TIFF loader");
 }
 
 QString DImgTIFFPlugin::iid() const

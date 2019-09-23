@@ -56,7 +56,7 @@ DImgRAWPlugin::~DImgRAWPlugin()
 
 QString DImgRAWPlugin::name() const
 {
-    return i18n("RAW DImg loader");
+    return i18n("RAW loader");
 }
 
 QString DImgRAWPlugin::iid() const

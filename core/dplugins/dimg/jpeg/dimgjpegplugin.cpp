@@ -55,7 +55,7 @@ DImgJPEGPlugin::~DImgJPEGPlugin()
 
 QString DImgJPEGPlugin::name() const
 {
-    return i18n("JPEG DImg loader");
+    return i18n("JPEG loader");
 }
 
 QString DImgJPEGPlugin::iid() const

@@ -54,7 +54,7 @@ DImgQImagePlugin::~DImgQImagePlugin()
 
 QString DImgQImagePlugin::name() const
 {
-    return i18n("QImage based DImg loader");
+    return i18n("QImage loader");
 }
 
 QString DImgQImagePlugin::iid() const

@@ -55,7 +55,7 @@ DImgPNGPlugin::~DImgPNGPlugin()
 
 QString DImgPNGPlugin::name() const
 {
-    return i18n("PNG DImg loader");
+    return i18n("PNG loader");
 }
 
 QString DImgPNGPlugin::iid() const

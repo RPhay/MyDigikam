@@ -61,7 +61,7 @@ DImgImageMagickPlugin::~DImgImageMagickPlugin()
 
 QString DImgImageMagickPlugin::name() const
 {
-    return i18n("ImageMagick DImg loader");
+    return i18n("ImageMagick loader");
 }
 
 QString DImgImageMagickPlugin::iid() const

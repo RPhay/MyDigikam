@@ -55,7 +55,7 @@ DImgJPEG2000Plugin::~DImgJPEG2000Plugin()
 
 QString DImgJPEG2000Plugin::name() const
 {
-    return i18n("JPEG-2000 DImg loader");
+    return i18n("JPEG-2000 loader");
 }
 
 QString DImgJPEG2000Plugin::iid() const

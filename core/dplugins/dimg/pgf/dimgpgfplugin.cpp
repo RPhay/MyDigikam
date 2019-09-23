@@ -55,7 +55,7 @@ DImgPGFPlugin::~DImgPGFPlugin()
 
 QString DImgPGFPlugin::name() const
 {
-    return i18n("PGF DImg loader");
+    return i18n("PGF loader");
 }
 
 QString DImgPGFPlugin::iid() const
