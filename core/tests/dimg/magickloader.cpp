@@ -126,7 +126,7 @@ int main(int argc, char** argv)
     MagickCore::ExceptionInfo ex;
     size_t n                              = 0;
     const MagickCore::MagickInfo** inflst = MagickCore::GetMagickInfoList("*", &n, &ex);
-    qDebug().noquote() << "Name             :: Module           :: Mime Type                    :: Mode :: Version                      :: Description";
+    qDebug().noquote() << "Name             :: Module           :: Mime Type                    :: Mode  :: Version                      :: Description";
 
     for (uint i = 0 ; i < n ; ++i)
     {
