@@ -84,9 +84,12 @@ QString DImgTIFFPlugin::details() const
 QList<DPluginAuthor> DImgTIFFPlugin::authors() const
 {
     return QList<DPluginAuthor>()
+            << DPluginAuthor(QString::fromUtf8("Renchi Raju"),
+                             QString::fromUtf8("renchi dot raju at gmail dot com"),
+                             QString::fromUtf8("(C) 2005"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2019"))
+                             QString::fromUtf8("(C) 2006-2019"))
             ;
 }
 

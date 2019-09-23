@@ -3,8 +3,8 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2019-09-21
- * Description : JPEG DImg plugin.
+ * Date        : 2019-09-22
+ * Description : JPEG-2000 DImg plugin.
  *
  * Copyright (C) 2019      by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "dimgjpegplugin.h"
+#include "dimgjpeg2000plugin.h"
 
 // C++ includes
 
@@ -39,76 +39,73 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
-#include "dimgjpegloader.h"
+#include "dimgjpeg2000loader.h"
 
-namespace DigikamJPEGDImgPlugin
+namespace DigikamJPEG2000DImgPlugin
 {
 
-DImgJPEGPlugin::DImgJPEGPlugin(QObject* const parent)
+DImgJPEG2000Plugin::DImgJPEG2000Plugin(QObject* const parent)
     : DPluginDImg(parent)
 {
 }
 
-DImgJPEGPlugin::~DImgJPEGPlugin()
+DImgJPEG2000Plugin::~DImgJPEG2000Plugin()
 {
 }
 
-QString DImgJPEGPlugin::name() const
+QString DImgJPEG2000Plugin::name() const
 {
-    return i18n("JPEG DImg loader");
+    return i18n("JPEG-2000 DImg loader");
 }
 
-QString DImgJPEGPlugin::iid() const
+QString DImgJPEG2000Plugin::iid() const
 {
     return QLatin1String(DPLUGIN_IID);
 }
 
-QIcon DImgJPEGPlugin::icon() const
+QIcon DImgJPEG2000Plugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("image-jpeg"));
+    return QIcon::fromTheme(QLatin1String("image-jpeg2000"));
 }
 
-QString DImgJPEGPlugin::description() const
+QString DImgJPEG2000Plugin::description() const
 {
-    return i18n("A DImg image loader based on Libjpeg codec");
+    return i18n("A DImg image loader based on Libjasper codec");
 }
 
-QString DImgJPEGPlugin::details() const
+QString DImgJPEG2000Plugin::details() const
 {
     return i18n("<p>This plugin permit to load and save image with DImg using "
-                "Libjpeg codec</p>"
-                "<p>See <a href='https://en.wikipedia.org/wiki/Libjpeg'>Libjpeg documentation</a> for details.</p>"
+                "Libjasper codec</p>"
+                "<p>See <a href='https://en.wikipedia.org/wiki/JasPer'>Libjasper documentation</a> for details.</p>"
     );
 }
 
-QList<DPluginAuthor> DImgJPEGPlugin::authors() const
+QList<DPluginAuthor> DImgJPEG2000Plugin::authors() const
 {
     return QList<DPluginAuthor>()
-            << DPluginAuthor(QString::fromUtf8("Renchi Raju"),
-                             QString::fromUtf8("renchi dot raju at gmail dot com"),
-                             QString::fromUtf8("(C) 2005"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
                              QString::fromUtf8("(C) 2006-2019"))
             ;
 }
 
-void DImgJPEGPlugin::setup(QObject* const /*parent*/)
+void DImgJPEG2000Plugin::setup(QObject* const /*parent*/)
 {
     // Nothing to do
 }
 
-QString DImgJPEGPlugin::loaderName() const
+QString DImgJPEG2000Plugin::loaderName() const
 {
-    return QLatin1String("JPEG");
+    return QLatin1String("JPEG2000");
 }
 
-QString DImgJPEGPlugin::typeMimes() const
+QString DImgJPEG2000Plugin::typeMimes() const
 {
-    return QLatin1String("jpg jpeg jpe");
+    return QLatin1String("jp2 jpx jpc jp2k pgx");
 }
 
-bool DImgJPEGPlugin::canRead(const QString& filePath) const
+bool DImgJPEG2000Plugin::canRead(const QString& filePath) const
 {
     QFileInfo fileInfo(filePath);
 
@@ -122,7 +119,11 @@ bool DImgJPEGPlugin::canRead(const QString& filePath) const
 
     QString ext = fileInfo.suffix().toUpper();
 
-    if (!ext.isEmpty() && (ext == QLatin1String("JPEG") || ext == QLatin1String("JPG") || ext == QLatin1String("JPE")))
+    if (!ext.isEmpty() &&
+        (ext == QLatin1String("JP2") || ext == QLatin1String("JPX") || // JPEG2000 file format
+         ext == QLatin1String("JPC") || ext == QLatin1String("J2K") || // JPEG2000 code stream
+         ext == QLatin1String("PGX"))                                  // JPEG2000 WM format
+       )
     {
         return true;
     }
@@ -150,9 +151,11 @@ bool DImgJPEGPlugin::canRead(const QString& filePath) const
 
     fclose(f);
 
-    uchar jpegID[2] = { 0xFF, 0xD8 };
+    uchar jp2ID[5] = { 0x6A, 0x50, 0x20, 0x20, 0x0D, };
+    uchar jpcID[2] = { 0xFF, 0x4F };
 
-    if (memcmp(&header, &jpegID, 2) == 0)
+    if (memcmp(&header[4], &jp2ID, 5) == 0 ||
+        memcmp(&header,    &jpcID, 2) == 0)
     {
         return true;
     }
@@ -160,9 +163,11 @@ bool DImgJPEGPlugin::canRead(const QString& filePath) const
     return false;
 }
 
-bool DImgJPEGPlugin::canWrite(const QString& format) const
+bool DImgJPEG2000Plugin::canWrite(const QString& format) const
 {
-    if ((format == QLatin1String("JPEG") || format == QLatin1String("JPG") || format == QLatin1String("JPE")))
+    if (format == QLatin1String("JP2") || format == QLatin1String("JPX") || // JPEG2000 file format
+        format == QLatin1String("JPC") || format == QLatin1String("J2K") || // JPEG2000 code stream
+        format == QLatin1String("PGX"))                                     // JPEG2000 WM format
     {
         return true;
     }
@@ -170,9 +175,9 @@ bool DImgJPEGPlugin::canWrite(const QString& format) const
     return false;
 }
 
-DImgLoader* DImgJPEGPlugin::loader(DImg* const image) const
+DImgLoader* DImgJPEG2000Plugin::loader(DImg* const image) const
 {
-    return new DImgJPEGLoader(image);
+    return new DImgJPEG2000Loader(image);
 }
 
-} // namespace DigikamJPEGDImgPlugin
+} // namespace DigikamJPEG2000DImgPlugin
