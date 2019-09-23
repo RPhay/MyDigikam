@@ -70,6 +70,10 @@ public:
      */
     QString ifaceIid() const override { return QLatin1String(DIGIKAM_DPLUGIN_DIMG_IID); };
 
+    /** This kind of plugin do not need to be configurable
+     */
+    bool hasVisibilityProperty() const { return false; };
+
 public:
 
     /** Return a single capitalized word to identify the format supported by the loader.
