@@ -74,9 +74,10 @@ QString DImgQImagePlugin::description() const
 
 QString DImgQImagePlugin::details() const
 {
-    return i18n("<p>This plugin permit to load and save image with DImg using "
-                "QImage plugins</p>"
-                "<p>See <a href='https://doc.qt.io/qt-5/qimage.html'>Qt Framework documentation</a> for details.</p>"
+    return i18n("<p>This plugin permit to load and save image with DImg using QImage plugins from Qt Framework.</p>"
+                "<p>The list of type-mimes supported by this plugin are: %1</p>"
+                "<p>See <a href='https://doc.qt.io/qt-5/qimage.html'>Qt Framework documentation</a> for details.</p>",
+                typeMimes()
     );
 }
 
@@ -189,7 +190,7 @@ bool DImgQImagePlugin::canWrite(const QString& format) const
     }
 
     // NOTE: Native loaders support are previously black-listed.
-    // For ex, if tiff is supported in write mode by QImage it will nerver be handled.
+    // For ex, if tiff is supported in write mode by QImage it will never be handled.
 
     QList<QByteArray> formats = QImageWriter::supportedImageFormats();
 
