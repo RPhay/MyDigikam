@@ -65,11 +65,11 @@ public:
     /** Return the number of visible plugins in the list.
      */
     int itemsVisible() const;
-    
+
     /** Return the number of plugins in the list with visibly properties availalble.
      */
     int itemsWithVisiblyProperty() const;
-    
+
     /** Select all plugins in the list.
      */
     void selectAll() override;
