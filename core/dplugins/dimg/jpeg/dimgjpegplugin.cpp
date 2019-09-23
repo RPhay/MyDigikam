@@ -174,7 +174,7 @@ bool DImgJPEGPlugin::canWrite(const QString& format) const
     return false;
 }
 
-DImgLoader* DImgJPEGPlugin::loader(DImg* const image) const
+DImgLoader* DImgJPEGPlugin::loader(DImg* const image, const DRawDecoding&) const
 {
     return new DImgJPEGLoader(image);
 }

@@ -74,26 +74,12 @@ extern "C"
 #include "iccprofile.h"
 #include "metaengine_rotation.h"
 #include "drawdecoder.h"
-#include "pngloader.h"
-#include "tiffloader.h"
-#include "rawloader.h"
-#include "pgfloader.h"
-#include "qimageloader.h"
-#include "jpegloader.h"
 #include "filereadwritelock.h"
 #include "iccmanager.h"
 #include "icctransform.h"
 #include "exposurecontainer.h"
 #include "dimgloaderobserver.h"
 #include "randomnumbergenerator.h"
-
-#ifdef HAVE_JASPER
-#   include "jp2kloader.h"
-#endif // HAVE_JASPER
-
-#ifdef HAVE_IMAGE_MAGICK
-#   include "magickloader.h"
-#endif // HAVE_IMAGE_MAGICK
 
 /** Lanczos kernel is precomputed in a table with this resolution
     The value below seems to be enough for HQ upscaling up to eight times

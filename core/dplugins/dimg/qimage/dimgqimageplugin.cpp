@@ -205,7 +205,7 @@ bool DImgQImagePlugin::canWrite(const QString& format) const
     return false;
 }
 
-DImgLoader* DImgQImagePlugin::loader(DImg* const image) const
+DImgLoader* DImgQImagePlugin::loader(DImg* const image, const DRawDecoding&) const
 {
     return new DImgQImageLoader(image);
 }

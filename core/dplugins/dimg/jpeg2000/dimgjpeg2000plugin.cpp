@@ -179,7 +179,7 @@ bool DImgJPEG2000Plugin::canWrite(const QString& format) const
     return false;
 }
 
-DImgLoader* DImgJPEG2000Plugin::loader(DImg* const image) const
+DImgLoader* DImgJPEG2000Plugin::loader(DImg* const image, const DRawDecoding&) const
 {
     return new DImgJPEG2000Loader(image);
 }

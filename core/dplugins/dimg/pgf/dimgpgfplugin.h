@@ -61,11 +61,11 @@ public:
 
     void setup(QObject* const)           override;
 
-    QString     loaderName()                     const;
-    QString     typeMimes()                      const;
-    bool        canRead(const QString& filePath) const;
-    bool        canWrite(const QString& format)  const;
-    DImgLoader* loader(DImg* const)              const;
+    QString     loaderName()                                                                const;
+    QString     typeMimes()                                                                 const;
+    bool        canRead(const QString& filePath)                                            const;
+    bool        canWrite(const QString& format)                                             const;
+    DImgLoader* loader(DImg* const image, const DRawDecoding& rawSettings = DRawDecoding()) const;
 };
 
 } // namespace DigikamPGFDImgPlugin

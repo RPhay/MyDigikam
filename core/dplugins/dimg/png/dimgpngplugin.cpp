@@ -170,7 +170,7 @@ bool DImgPNGPlugin::canWrite(const QString& format) const
     return false;
 }
 
-DImgLoader* DImgPNGPlugin::loader(DImg* const image) const
+DImgLoader* DImgPNGPlugin::loader(DImg* const image, const DRawDecoding&) const
 {
     return new DImgPNGLoader(image);
 }

@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2019-09-22
- * Description : JPEG-2000 DImg plugin.
+ * Description : RAW DImg plugin.
  *
  * Copyright (C) 2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_JPEG2000_DIMG_PLUGIN_H
-#define DIGIKAM_JPEG2000_DIMG_PLUGIN_H
+#ifndef DIGIKAM_RAW_DIMG_PLUGIN_H
+#define DIGIKAM_RAW_DIMG_PLUGIN_H
 
 // Qt includes
 
@@ -34,14 +34,14 @@
 #include "dimg.h"
 #include "dimgloader.h"
 
-#define DPLUGIN_IID "org.kde.digikam.plugin.dimg.JPEG2000"
+#define DPLUGIN_IID "org.kde.digikam.plugin.dimg.RAW"
 
 using namespace Digikam;
 
-namespace DigikamJPEG2000DImgPlugin
+namespace DigikamRAWDImgPlugin
 {
 
-class DImgJPEG2000Plugin : public DPluginDImg
+class DImgRAWPlugin : public DPluginDImg
 {
     Q_OBJECT
     Q_PLUGIN_METADATA(IID DPLUGIN_IID)
@@ -49,8 +49,8 @@ class DImgJPEG2000Plugin : public DPluginDImg
 
 public:
 
-    explicit DImgJPEG2000Plugin(QObject* const parent = nullptr);
-    ~DImgJPEG2000Plugin();
+    explicit DImgRAWPlugin(QObject* const parent = nullptr);
+    ~DImgRAWPlugin();
 
     QString name()                 const override;
     QString iid()                  const override;
@@ -68,6 +68,6 @@ public:
     DImgLoader* loader(DImg* const image, const DRawDecoding& rawSettings = DRawDecoding()) const;
 };
 
-} // namespace DigikamJPEG2000DImgPlugin
+} // namespace DigikamRAWDImgPlugin
 
-#endif // DIGIKAM_JPEG2000_DIMG_PLUGIN_H
+#endif // DIGIKAM_RAW_DIMG_PLUGIN_H

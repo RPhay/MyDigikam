@@ -30,6 +30,7 @@
 #include "dimgloader.h"
 #include "dpluginloader.h"
 #include "digikam_export.h"
+#include "drawdecoding.h"
 
 namespace Digikam
 {
@@ -92,7 +93,7 @@ public:
 
     /** Return the image loader instance for the DImg instance.
      */
-    virtual DImgLoader* loader(DImg* const image) const = 0;
+    virtual DImgLoader* loader(DImg* const image, const DRawDecoding& rawSettings = DRawDecoding()) const = 0;
 };
 
 } // namespace Digikam

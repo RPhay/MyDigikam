@@ -177,7 +177,7 @@ bool DImgTIFFPlugin::canWrite(const QString& format) const
     return false;
 }
 
-DImgLoader* DImgTIFFPlugin::loader(DImg* const image) const
+DImgLoader* DImgTIFFPlugin::loader(DImg* const image, const DRawDecoding&) const
 {
     return new DImgTIFFLoader(image);
 }
