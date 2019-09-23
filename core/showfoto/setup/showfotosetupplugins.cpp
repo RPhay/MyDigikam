@@ -32,6 +32,7 @@
 #include "dpluginsetup.h"
 #include "dpluginconfviewgeneric.h"
 #include "dpluginconfvieweditor.h"
+#include "dpluginconfviewdimg.h"
 
 namespace ShowFoto
 {
@@ -43,7 +44,8 @@ public:
     explicit Private()
       : tab(nullptr),
         setupGeneric(nullptr),
-        setupEditor(nullptr)
+        setupEditor(nullptr),
+        setupDImg(nullptr)
     {
     }
 
@@ -51,6 +53,7 @@ public:
 
     Digikam::DPluginSetup* setupGeneric;
     Digikam::DPluginSetup* setupEditor;
+    Digikam::DPluginSetup* setupDImg;
 };
 
 SetupPlugins::SetupPlugins(QWidget* const parent)
@@ -72,6 +75,12 @@ SetupPlugins::SetupPlugins(QWidget* const parent)
     d->setupEditor = new Digikam::DPluginSetup(d->tab);
     d->setupEditor->setPluginConfView(new Digikam::DPluginConfViewEditor(d->setupEditor));
     d->tab->insertTab(Editor, d->setupEditor, i18nc("@title:tab", "Image Editor"));
+
+    // --------------------
+
+    d->setupDImg = new Digikam::DPluginSetup(d->tab);
+    d->setupDImg->setPluginConfView(new Digikam::DPluginConfViewDImg(d->setupEditor));
+    d->tab->insertTab(Loaders, d->setupDImg, i18nc("@title:tab", "Image Loaders"));
 }
 
 SetupPlugins::~SetupPlugins()
@@ -83,6 +92,7 @@ void SetupPlugins::applySettings()
 {
     d->setupGeneric->applySettings();
     d->setupEditor->applySettings();
+    d->setupDImg->applySettings();
 }
 
 }  // namespace ShowFoto

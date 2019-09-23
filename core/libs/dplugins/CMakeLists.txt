@@ -41,6 +41,7 @@ set(libdpluginsinterface_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginconfview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginconfviewgeneric.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginconfvieweditor.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginconfviewdimg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginsetup.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginaboutdlg.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/iface/dinfointerface.cpp

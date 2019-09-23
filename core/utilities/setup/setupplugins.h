@@ -41,7 +41,8 @@ public:
     {
         Generic = 0,
         Editor,
-        Bqm
+        Bqm,
+        Loaders
     };
 
 public:

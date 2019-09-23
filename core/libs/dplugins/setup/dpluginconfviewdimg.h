@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2007-02-06
- * Description : Setup view panel for dplugins.
+ * Date        : 2018-09-22
+ * Description : configuration view for external DImg plugin
  *
- * Copyright (C) 2018-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,42 +21,33 @@
  *
  * ============================================================ */
 
-#ifndef SHOW_FOTO_SETUP_PLUGINS_H
-#define SHOW_FOTO_SETUP_PLUGINS_H
+#ifndef DIGIKAM_DPLUGIN_CONF_VIEW_DIMG_H
+#define DIGIKAM_DPLUGIN_CONF_VIEW_DIMG_H
 
 // Qt includes
 
-#include <QScrollArea>
+#include <QString>
 
-namespace ShowFoto
+// Local includes
+
+#include "dpluginconfview.h"
+#include "digikam_export.h"
+
+namespace Digikam
 {
 
-class SetupPlugins : public QScrollArea
+class DIGIKAM_EXPORT DPluginConfViewDImg : public DPluginConfView
 {
     Q_OBJECT
 
 public:
 
-    enum PluginTab
-    {
-        Generic = 0,
-        Editor,
-        Loaders
-    };
+    explicit DPluginConfViewDImg(QWidget* const parent=nullptr);
+    ~DPluginConfViewDImg();
 
-public:
-
-    explicit SetupPlugins(QWidget* const parent = nullptr);
-    ~SetupPlugins();
-
-    void applySettings();
-
-private:
-
-    class Private;
-    Private* const d;
+    void loadPlugins();
 };
 
-} // namespace ShowFoto
+} // namespace Digikam
 
-#endif // SHOW_FOTO_SETUP_PLUGINS_H
+#endif // DIGIKAM_DPLUGIN_CONF_VIEW_DIMG_H
