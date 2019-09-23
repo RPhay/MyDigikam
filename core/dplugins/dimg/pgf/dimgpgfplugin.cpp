@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2019-09-22
- * Description : PNG DImg plugin.
+ * Description : PGF DImg plugin.
  *
  * Copyright (C) 2019      by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -20,7 +20,7 @@
  *
  * ============================================================ */
 
-#include "dimgpngplugin.h"
+#include "dimgpgfplugin.h"
 
 // C++ includes
 
@@ -39,76 +39,77 @@
 
 #include "digikam_debug.h"
 #include "digikam_globals.h"
-#include "dimgpngloader.h"
+#include "dimgpgfloader.h"
 
-namespace DigikamPNGDImgPlugin
+namespace DigikamPGFDImgPlugin
 {
 
-DImgPNGPlugin::DImgPNGPlugin(QObject* const parent)
+DImgPGFPlugin::DImgPGFPlugin(QObject* const parent)
     : DPluginDImg(parent)
 {
 }
 
-DImgPNGPlugin::~DImgPNGPlugin()
+DImgPGFPlugin::~DImgPGFPlugin()
 {
 }
 
-QString DImgPNGPlugin::name() const
+QString DImgPGFPlugin::name() const
 {
-    return i18n("PNG DImg loader");
+    return i18n("PGF DImg loader");
 }
 
-QString DImgPNGPlugin::iid() const
+QString DImgPGFPlugin::iid() const
 {
     return QLatin1String(DPLUGIN_IID);
 }
 
-QIcon DImgPNGPlugin::icon() const
+QIcon DImgPGFPlugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("image-png"));
+    return QIcon::fromTheme(QLatin1String("image-pgf"));
 }
 
-QString DImgPNGPlugin::description() const
+QString DImgPGFPlugin::description() const
 {
-    return i18n("A DImg image loader based on Libpng codec");
+    return i18n("A DImg image loader based on Libpgf codec");
 }
 
-QString DImgPNGPlugin::details() const
+QString DImgPGFPlugin::details() const
 {
-    return i18n("<p>This plugin permit to load and save image with DImg using Libpng codec.</p>"
-                "<p>Portable Network Graphics (PNG) is a raster-graphics file-format that supports "
-                "lossless data compression. PNG was developed as an improved, non-patented replacement "
-                "for Graphics Interchange Format.</p>"
-                "<p>See <a href='https://en.wikipedia.org/wiki/Portable_Network_Graphics'>"
-                "Portable Network Graphics documentation</a> for details.</p>"
+    return i18n("<p>This plugin permit to load and save image with DImg using Libpgf codec.</p>"
+                "<p>The Progressive Graphics File (PGF) is an efficient image file format, "
+                "that is based on a fast, discrete wavelet transform with progressive coding "
+                "features. PGF can be used for lossless and lossy compression. It's most suitable "
+                "for natural images. PGF can be used as a very efficient and fast replacement of JPEG-2000.</p>"
+                "<p>See <a href='https://en.wikipedia.org/wiki/Progressive_Graphics_File'>"
+                "Progressive Graphics File documentation</a> for details.</p>"
     );
 }
 
-QList<DPluginAuthor> DImgPNGPlugin::authors() const
+QList<DPluginAuthor> DImgPGFPlugin::authors() const
 {
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2005-2019"))
+                             QString::fromUtf8("(C) 2009-2019"))
             ;
 }
 
-void DImgPNGPlugin::setup(QObject* const /*parent*/)
+void DImgPGFPlugin::setup(QObject* const /*parent*/)
 {
     // Nothing to do
 }
 
-QString DImgPNGPlugin::loaderName() const
+QString DImgPGFPlugin::loaderName() const
 {
-    return QLatin1String("PNG");
+    return QLatin1String("PGF");
 }
 
-QString DImgPNGPlugin::typeMimes() const
+QString DImgPGFPlugin::typeMimes() const
 {
-    return QLatin1String("png");
+    return QLatin1String("pgf");
 }
 
-bool DImgPNGPlugin::canRead(const QString& filePath) const
+bool DImgPGFPlugin::canRead(const QString& filePath) const
 {
     QFileInfo fileInfo(filePath);
 
@@ -122,7 +123,7 @@ bool DImgPNGPlugin::canRead(const QString& filePath) const
 
     QString ext = fileInfo.suffix().toUpper();
 
-    if (!ext.isEmpty() && (ext == QLatin1String("PNG")))
+    if (!ext.isEmpty() && (ext == QLatin1String("PGF")))
     {
         return true;
     }
@@ -150,9 +151,9 @@ bool DImgPNGPlugin::canRead(const QString& filePath) const
 
     fclose(f);
 
-    uchar pngID[8] = { 0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A };
+    uchar pgfID[3] = { 0x50, 0x47, 0x46 };
 
-    if (memcmp(&header, &pngID, 8) == 0)
+    if (memcmp(&header, &pgfID, 3) == 0)
     {
         return true;
     }
@@ -160,9 +161,9 @@ bool DImgPNGPlugin::canRead(const QString& filePath) const
     return false;
 }
 
-bool DImgPNGPlugin::canWrite(const QString& format) const
+bool DImgPGFPlugin::canWrite(const QString& format) const
 {
-    if (format == QLatin1String("PNG"))
+    if (format == QLatin1String("PGF"))
     {
         return true;
     }
@@ -170,9 +171,9 @@ bool DImgPNGPlugin::canWrite(const QString& format) const
     return false;
 }
 
-DImgLoader* DImgPNGPlugin::loader(DImg* const image) const
+DImgLoader* DImgPGFPlugin::loader(DImg* const image) const
 {
-    return new DImgPNGLoader(image);
+    return new DImgPGFLoader(image);
 }
 
-} // namespace DigikamPNGDImgPlugin
+} // namespace DigikamPGFDImgPlugin

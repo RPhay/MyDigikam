@@ -7,8 +7,13 @@
 add_subdirectory(jpeg)
 add_subdirectory(png)
 add_subdirectory(tiff)
+add_subdirectory(pgf)
 add_subdirectory(qimage)
 
 if(Jasper_FOUND)
     add_subdirectory(jpeg2000)
+endif()
+
+if(ImageMagick_FOUND)
+    add_subdirectory(imagemagick)
 endif()
