@@ -34,6 +34,8 @@ namespace Digikam
 DPluginConfViewDImg::DPluginConfViewDImg(QWidget* const parent)
     : DPluginConfView(parent)
 {
+    setColumnHidden(1, true);
+    setColumnHidden(2, true);
     loadPlugins();
 }
 
