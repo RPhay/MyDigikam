@@ -65,7 +65,7 @@ QString DImgPGFPlugin::iid() const
 
 QIcon DImgPGFPlugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("image-pgf"));
+    return QIcon::fromTheme(QLatin1String("image-x-generic"));
 }
 
 QString DImgPGFPlugin::description() const
