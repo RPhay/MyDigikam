@@ -667,9 +667,4 @@ void HealingCloneToolWidget::slotImageRegionChanged()
     }
 }
 
-int HealingCloneToolWidget::getBrushRadius() const
-{
-    return d->brushRadius;
-}
-
 } // namespace DigikamEditorHealingCloneToolPlugin

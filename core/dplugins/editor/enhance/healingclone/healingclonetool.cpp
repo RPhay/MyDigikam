@@ -86,7 +86,7 @@ public:
 
     DIntNumInput*                        radiusInput;
     DDoubleNumInput*                     blurPercent;
-    HealingCloneToolWidget*               previewWidget;
+    HealingCloneToolWidget*              previewWidget;
     EditorToolSettings*                  gboxSettings;
     QPushButton*                         srcButton;
     QPushButton*                         lassoButton;
@@ -363,8 +363,7 @@ void HealingCloneTool::slotResized()
 void HealingCloneTool::slotReplace(const QPoint& srcPoint, const QPoint& dstPoint)
 {
     DImg current = d->previewWidget->getOriginalImage();
-    int  radius  = d->previewWidget->getBrushRadius();
-    clone(&current, srcPoint, dstPoint, radius);
+    clone(&current, srcPoint, dstPoint);
 }
 
 void HealingCloneTool::slotRadiusChanged(int r)
@@ -374,19 +373,10 @@ void HealingCloneTool::slotRadiusChanged(int r)
 
 void HealingCloneTool::clone(DImg* const img,
                              const QPoint& srcPoint,
-                             const QPoint& dstPoint,
-                             int radius)
+                             const QPoint& dstPoint)
 {
-    ImageRegionItem* const item = dynamic_cast<ImageRegionItem*>(d->previewWidget->item());
-
-    if (!item)
-    {
-        return;
-    }
-
-    double scale       = item->zoomSettings()->realZoomFactor();
-    radius             = radius / scale;
     double blurPercent = d->blurPercent->value() / 100;
+    int    radius      = d->radiusInput->value();
 
     for (int i = -1 * radius ; i < radius ; ++i)
     {

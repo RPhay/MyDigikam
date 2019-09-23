@@ -69,8 +69,6 @@ public:
 
     void changeCursorShape(const QColor& color);
 
-    int  getBrushRadius() const;
-
     bool checkPointOutsideScene(const QPoint& point)    const;
     void updateSourceCursor(const QPointF& pos = QPoint(), int diamter = 10);
 
