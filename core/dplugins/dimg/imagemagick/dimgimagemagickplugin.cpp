@@ -83,7 +83,8 @@ QString DImgImageMagickPlugin::details() const
 {
     return i18n("<p>This plugin permit to load and save image with DImg using ImageMagick coders.</p>"
                 "<p>ImageMagick is a free and open-source software suite for converting raster image and vector image files. "
-                "It can read and write over 200 image file formats. The list of type-mimes supported by this plugin are: %1</p>"
+                "It can read and write over 200 image file formats. The list of type-mimes supported by this plugin are:</p>"
+                "<p>%1</p>"
                 "<p>See <a href='https://en.wikipedia.org/wiki/ImageMagick'>ImageMagick documentation</a> for details.</p>",
                 typeMimes()
     );

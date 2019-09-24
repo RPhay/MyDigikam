@@ -75,7 +75,8 @@ QString DImgQImagePlugin::description() const
 QString DImgQImagePlugin::details() const
 {
     return i18n("<p>This plugin permit to load and save image with DImg using QImage plugins from Qt Framework.</p>"
-                "<p>The list of type-mimes supported by this plugin are: %1</p>"
+                "<p>The list of type-mimes supported by this plugin are:</p>"
+                "<p>%1</p>"
                 "<p>See <a href='https://doc.qt.io/qt-5/qimage.html'>Qt Framework documentation</a> for details.</p>",
                 typeMimes()
     );
