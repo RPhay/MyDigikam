@@ -146,9 +146,12 @@ DPluginConfView::~DPluginConfView()
     delete d;
 }
 
-void DPluginConfView::appendPlugin(DPlugin* const plugin)
+QTreeWidgetItem* DPluginConfView::appendPlugin(DPlugin* const plugin)
 {
-    d->plugBoxes.append(new DPluginCB(plugin, this));
+    DPluginCB* const cb = new DPluginCB(plugin, this);
+    d->plugBoxes.append(cb);
+
+    return cb;
 }
 
 DPlugin* DPluginConfView::plugin(QTreeWidgetItem* const item) const

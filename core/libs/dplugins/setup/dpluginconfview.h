@@ -90,7 +90,7 @@ public:
 
 protected:
 
-    void appendPlugin(DPlugin* const);
+    QTreeWidgetItem* appendPlugin(DPlugin* const);
 
     virtual void loadPlugins() = 0;
 

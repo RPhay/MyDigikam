@@ -23,8 +23,17 @@
 
 #include "dpluginconfviewdimg.h"
 
+// Qt includes
+
+#include <QHeaderView>
+
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
+#include "itempropertiestxtlabel.h"
 #include "dplugindimg.h"
 #include "dpluginloader.h"
 
@@ -35,7 +44,8 @@ DPluginConfViewDImg::DPluginConfViewDImg(QWidget* const parent)
     : DPluginConfView(parent)
 {
     setColumnHidden(1, true);
-    setColumnHidden(2, true);
+    headerItem()->setText(2, i18n("Type-Mimes"));
+    header()->setSectionResizeMode(2, QHeaderView::Stretch);
     loadPlugins();
 }
 
@@ -51,11 +61,13 @@ void DPluginConfViewDImg::loadPlugins()
     {
         foreach (DPlugin* const tool, loader->allPlugins())
         {
-            DPluginDImg* const bqm = dynamic_cast<DPluginDImg*>(tool);
+            DPluginDImg* const plug = dynamic_cast<DPluginDImg*>(tool);
 
-            if (bqm)
+            if (plug)
             {
-                appendPlugin(bqm);
+                QTreeWidgetItem* const item = appendPlugin(plug);
+                DTextBrowser* const tview   = new DTextBrowser(plug->typeMimes(), this);
+                setItemWidget(item, 2, tview);
             }
         }
     }
