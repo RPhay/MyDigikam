@@ -41,6 +41,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "digikam_version.h"
 
 namespace Digikam
@@ -77,9 +78,18 @@ QFileInfoList DPluginLoader::Private::pluginEntriesList() const
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Parsing plugins from" << path;
 
-    QDirIterator  it(path, QDir::Files |
-                           QDir::NoDotAndDotDot,
-                           QDirIterator::Subdirectories);
+#ifdef Q_OS_OSX
+    QString filter(QLatin1String("*.dylib"));
+#elif defined Q_OS_WIN
+    QString filter(QLatin1String("*.dll"));
+#else
+    QString filter(QLatin1String("*.so"));
+#endif
+
+    QDir dir(path, filter, QDir::Unsorted,
+             QDir::Files | QDir::NoDotAndDotDot);
+
+    QDirIterator  it(dir, QDirIterator::Subdirectories);
     QFileInfoList allFiles;
     QStringList   dupFiles;
 
