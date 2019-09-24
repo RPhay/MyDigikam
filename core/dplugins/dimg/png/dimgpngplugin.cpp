@@ -105,7 +105,7 @@ QString DImgPNGPlugin::loaderName() const
 
 QString DImgPNGPlugin::typeMimes() const
 {
-    return QLatin1String("png");
+    return QLatin1String("PNG");
 }
 
 bool DImgPNGPlugin::canRead(const QString& filePath) const

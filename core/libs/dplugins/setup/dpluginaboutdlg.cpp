@@ -37,6 +37,7 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QTreeWidget>
+#include <QListWidget>
 #include <QHeaderView>
 
 // KDE includes
@@ -131,6 +132,17 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
     new QTreeWidgetItem(props, QStringList() << i18n("Library")      << tool->libraryFileName());
 
     tab->addTab(props, i18n("Properties"));
+
+    // --------------------------------------------------------
+
+    QStringList data = tool->extraAboutData();
+
+    if (!data.isEmpty())
+    {
+        QListWidget* const extra = new QListWidget(tab);
+        extra->addItems(data);
+        tab->addTab(extra, tool->extraAboutDataTitle());
+    }
 
     // --------------------------------------------------------
 

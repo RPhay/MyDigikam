@@ -190,6 +190,16 @@ public:
      */
     virtual QString details() const = 0;
 
+    /**
+     * @brief Returns a list of extra data to show in plugin about dialog.
+     */
+    virtual QStringList extraAboutData() const { return QStringList(); };
+
+    /**
+     * @brief Returns the title of data returned by extraAboiutData().
+     */
+    virtual QString extraAboutDataTitle() const { return QString(); };
+
 private:
 
     class Private;

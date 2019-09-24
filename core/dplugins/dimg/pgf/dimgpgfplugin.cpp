@@ -106,7 +106,7 @@ QString DImgPGFPlugin::loaderName() const
 
 QString DImgPGFPlugin::typeMimes() const
 {
-    return QLatin1String("pgf");
+    return QLatin1String("PGF");
 }
 
 bool DImgPGFPlugin::canRead(const QString& filePath) const

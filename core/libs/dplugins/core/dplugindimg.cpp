@@ -23,6 +23,10 @@
 
 #include "dplugindimg.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_version.h"
@@ -39,5 +43,15 @@ DPluginDImg::DPluginDImg(QObject* const parent)
 DPluginDImg::~DPluginDImg()
 {
 }
+
+QStringList DPluginDImg::extraAboutData() const
+{
+    return typeMimes().split(QLatin1Char(' '));
+};
+
+QString DPluginDImg::extraAboutDataTitle() const
+{
+    return i18n("Type-Mimes");
+};
 
 } // namespace Digikam

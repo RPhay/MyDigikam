@@ -84,11 +84,8 @@ QString DImgRAWPlugin::details() const
                 "internal color space where precise adjustments can be made before conversion to a TIFF "
                 "or JPEG for storage, printing, or further manipulation. This often encodes the image in "
                 "a device-dependent color space.</p>"
-                "The list of type-mimes supported by this plugin are:<p>"
-                "<p>%1</p>"
                 "<p>See <a href='https://en.wikipedia.org/wiki/Raw_image_format'>"
-                "Raw Image File documentation</a> for details.</p>",
-                typeMimes()
+                "Raw Image File documentation</a> for details.</p>"
     );
 }
 

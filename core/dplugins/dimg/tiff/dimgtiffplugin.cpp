@@ -110,7 +110,7 @@ QString DImgTIFFPlugin::loaderName() const
 
 QString DImgTIFFPlugin::typeMimes() const
 {
-    return QLatin1String("tif tiff");
+    return QLatin1String("TIF TIFF");
 }
 
 bool DImgTIFFPlugin::canRead(const QString& filePath) const

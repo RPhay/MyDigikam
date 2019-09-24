@@ -106,7 +106,7 @@ QString DImgJPEG2000Plugin::loaderName() const
 
 QString DImgJPEG2000Plugin::typeMimes() const
 {
-    return QLatin1String("jp2 jpx jpc jp2k pgx");
+    return QLatin1String("JP2 JPX JPC JP2K PGX");
 }
 
 bool DImgJPEG2000Plugin::canRead(const QString& filePath) const

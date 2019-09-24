@@ -72,7 +72,12 @@ public:
 
     /** This kind of plugin do not need to be configurable
      */
-    bool hasVisibilityProperty() const { return false; };
+    bool hasVisibilityProperty() const override { return false; };
+
+    /** With this kind of plugin, we will display the type-mimes list on about dialog.
+     */
+    QStringList extraAboutData()      const override;
+    QString     extraAboutDataTitle() const override;
 
 public:
 
