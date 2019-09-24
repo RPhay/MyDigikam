@@ -201,7 +201,7 @@ bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& 
                                             << QLatin1String("plugins/lighttable/export/icctype=3")         // Output color-space
                                             << QLatin1String("--conf")
                                             << QString::fromUtf8("lua/export_on_exit/export_filename=%1")
-                                               .arg(d->tempFile->fileName())                                 // Ouput file
+                                               .arg(d->tempFile->fileName())                                 // Output file
                                             << filePath);                                                   // Input file
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable arguments:" << d->darktable->arguments();

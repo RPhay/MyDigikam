@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DARKTABLE_RAW_IMPORT_PLUGIN_H
-#define DIGIKAM_DARKTABLE_RAW_IMPORT_PLUGIN_H
+#ifndef DIGIKAM_RAW_IMPORT_DARKTABLE_PLUGIN_H
+#define DIGIKAM_RAW_IMPORT_DARKTABLE_PLUGIN_H
 
 // Qt includes
 
@@ -74,4 +74,4 @@ private:
 
 } // namespace DigikamRawImportDarkTablePlugin
 
-#endif // DIGIKAM_DARKTABLE_RAW_IMPORT_PLUGIN_H
+#endif // DIGIKAM_RAW_IMPORT_DARKTABLE_PLUGIN_H
