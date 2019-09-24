@@ -94,6 +94,8 @@ public:
     QPushButton*                         undoCloneButton;
     QPushButton*                         redoCloneButton;
 
+    DImg                                 cloneImg;
+
     std::stack<DImg>                     undoStack;
     std::stack<DImg>                     redoStack;
 
@@ -316,6 +318,8 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     connect(d->previewWidget, SIGNAL(signalRedoClone()),
             this, SLOT(slotRedoClone()));
+
+    d->cloneImg = d->previewWidget->getOriginalImage();
 }
 
 HealingCloneTool::~HealingCloneTool()
@@ -343,9 +347,8 @@ void HealingCloneTool::writeSettings()
 void HealingCloneTool::finalRendering()
 {
     ImageIface iface;
-    DImg dest = d->previewWidget->getOriginalImage();
     FilterAction action(QLatin1String("digikam:healingCloneTool"), 1);
-    iface.setOriginal(i18n("healingClone"), action, dest);
+    iface.setOriginal(i18n("healingClone"), action, d->cloneImg);
 }
 
 void HealingCloneTool::slotResetSettings()
@@ -362,8 +365,7 @@ void HealingCloneTool::slotResized()
 
 void HealingCloneTool::slotReplace(const QPoint& srcPoint, const QPoint& dstPoint)
 {
-    DImg current = d->previewWidget->getOriginalImage();
-    clone(&current, srcPoint, dstPoint);
+    clone(&d->cloneImg, srcPoint, dstPoint);
 }
 
 void HealingCloneTool::slotRadiusChanged(int r)
@@ -438,7 +440,6 @@ void HealingCloneTool::updateLasso(std::vector<QPoint>& points)
 {
     uint radius              = 5;
     static uint colorCounter = 0;
-    DImg img                 = d->previewWidget->getOriginalImage();
 
     foreach (const QPoint& p, points)
     {
@@ -448,17 +449,17 @@ void HealingCloneTool::updateLasso(std::vector<QPoint>& points)
             {
                 uint x_shifted = p.x() + i;
                 uint y_shifted = p.y() + j;
-                DColor c       = img.getPixelColor(x_shifted, y_shifted);
+                DColor c       = d->cloneImg.getPixelColor(x_shifted, y_shifted);
 
                 d->lassoColorsMap.insert(std::make_pair(std::make_pair(x_shifted, y_shifted), c));
-                img.setPixelColor(x_shifted, y_shifted, d->lassoColors[(colorCounter) % d->lassoColors.size()]);
+                d->cloneImg.setPixelColor(x_shifted, y_shifted, d->lassoColors[(colorCounter) % d->lassoColors.size()]);
                 d->lassoFlags.at(x_shifted).at(y_shifted) = true;
                 colorCounter++;
             }
         }
     }
 
-    d->previewWidget->updateImage(img);
+    d->previewWidget->updateImage(d->cloneImg);
 }
 
 void HealingCloneTool::slotLasso(const QPoint& dst)
@@ -501,23 +502,21 @@ std::vector<QPoint> HealingCloneTool::interpolate(const QPoint& start, const QPo
 
 void HealingCloneTool::removeLassoPixels()
 {
-    DImg img = d->previewWidget->getOriginalImage();
     std::map<std::pair<int,int>, DColor>::iterator it;
 
     for (it = d->lassoColorsMap.begin() ; it != d->lassoColorsMap.end() ; it++)
     {
         std::pair<int,int> xy = it->first;
         DColor color          = it->second;
-        img.setPixelColor(xy.first, xy.second, color);
+        d->cloneImg.setPixelColor(xy.first, xy.second, color);
     }
 
-    d->previewWidget->updateImage(img);
+    d->previewWidget->updateImage(d->cloneImg);
 }
 
 void HealingCloneTool::redrawLassoPixels()
 {
     int colorCounter = 0;
-    DImg img         = d->previewWidget->getOriginalImage();
     std::map<std::pair<int,int>, DColor>::iterator it;
 
     for (it = d->lassoColorsMap.begin() ; it != d->lassoColorsMap.end() ; it++)
@@ -525,10 +524,10 @@ void HealingCloneTool::redrawLassoPixels()
         colorCounter++;
         DColor color          = d->lassoColors[(colorCounter) % d->lassoColors.size()];
         std::pair<int,int> xy = it->first;
-        img.setPixelColor(xy.first, xy.second, color);
+        d->cloneImg.setPixelColor(xy.first, xy.second, color);
     }
 
-    d->previewWidget->updateImage(img);
+    d->previewWidget->updateImage(d->cloneImg);
 }
 
 void HealingCloneTool::slotResetLassoPoints()
@@ -581,9 +580,8 @@ void HealingCloneTool::slotDecreaseBrushRadius()
 
 void HealingCloneTool::initializeLassoFlags()
 {
-    DImg img = d->previewWidget->getOriginalImage();
-    int w    = img.width();
-    int h    = img.height();
+    int w    = d->cloneImg.width();
+    int h    = d->cloneImg.height();
     d->lassoFlags.resize(w);
 
     for (int i = 0 ; i < w ; ++i)
@@ -617,9 +615,9 @@ void HealingCloneTool::slotUndoClone()
 
     removeLassoPixels();
     d->redoStack.push(d->previewWidget->getOriginalImage());
-    DImg temp = d->undoStack.top();
+    d->cloneImg = d->undoStack.top();
     d->undoStack.pop();
-    d->previewWidget->updateImage(temp);
+    d->previewWidget->updateImage(d->cloneImg);
     redrawLassoPixels();
 }
 
@@ -635,9 +633,9 @@ void HealingCloneTool::slotRedoClone()
     removeLassoPixels();
     d->undoStack.push(d->previewWidget->getOriginalImage());
 
-    DImg temp = d->redoStack.top();
+    d->cloneImg = d->redoStack.top();
     d->redoStack.pop();
-    d->previewWidget->updateImage(temp);
+    d->previewWidget->updateImage(d->cloneImg);
     redrawLassoPixels();
 }
 
