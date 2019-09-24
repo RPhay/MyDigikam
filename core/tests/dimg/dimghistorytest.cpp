@@ -48,6 +48,8 @@ QTEST_MAIN(DImgHistoryTest)
 void DImgHistoryTest::initTestCase()
 {
     initBaseTestCase();
+    QDir dir(QFINDTESTDATA("../../dplugins/dimg/jpeg"));
+    qputenv("DK_PLUGIN_PATH", dir.canonicalPath().toUtf8());
     DPluginLoader::instance()->init();
 }
 
