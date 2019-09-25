@@ -123,6 +123,8 @@ bool loadWithImageMagick(const QString& path, QImage& qimg)
 
 int main(int argc, char** argv)
 {
+    MagickCoreGenesis((char*)NULL, MagickFalse);
+
     MagickCore::ExceptionInfo ex;
     size_t n                              = 0;
     const MagickCore::MagickInfo** inflst = MagickCore::GetMagickInfoList("*", &n, &ex);
@@ -200,12 +202,15 @@ int main(int argc, char** argv)
             else
             {
                 qWarning() << "exit -1";
+                MagickCoreTerminus();
                 return -1;
             }
         }
 
         app.exec();
     }
+
+    MagickCoreTerminus();
 
     return 0;
 }
