@@ -104,6 +104,7 @@ lib/plugins/imageformats/*.so \
 lib/plugins/digikam/bqm/*.so \
 lib/plugins/digikam/generic/*.so \
 lib/plugins/digikam/editor/*.so \
+lib/plugins/digikam/dimg/*.so \
 lib/mariadb/bin/mysql \
 lib/mariadb/bin/mysqld \
 lib/mariadb/bin/my_print_defaults \
