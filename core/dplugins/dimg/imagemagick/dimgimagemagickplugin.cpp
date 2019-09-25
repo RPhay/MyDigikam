@@ -22,18 +22,20 @@
 
 #include "dimgimagemagickplugin.h"
 
+// Image Magick includes
+
 #include <Magick++.h>
-using namespace Magick;
 
 #if MagickLibVersion < 0x700
 #   include <magick/magick.h>
 #endif
 
+using namespace Magick;
+using namespace MagickCore;
+
 // Qt includes
 
 #include <QFileInfo>
-#include <QImageReader>
-#include <QImageWriter>
 #include <QMimeDatabase>
 
 // KDE includes
@@ -115,13 +117,13 @@ QString DImgImageMagickPlugin::loaderName() const
 QString DImgImageMagickPlugin::typeMimes() const
 {
     QStringList formats;
-    MagickCore::ExceptionInfo ex;
+    ExceptionInfo ex;
     size_t n                              = 0;
-    const MagickCore::MagickInfo** inflst = MagickCore::GetMagickInfoList("*", &n, &ex);
+    const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
     for (uint i = 0 ; i < n ; ++i)
     {
-        const MagickCore::MagickInfo* inf = inflst[i];
+        const MagickInfo* inf = inflst[i];
 
         if (inf->decoder)
         {
@@ -210,13 +212,13 @@ bool DImgImageMagickPlugin::canRead(const QString& filePath) const
     }
 
     QStringList formats;
-    MagickCore::ExceptionInfo ex;
-    size_t n                              = 0;
-    const MagickCore::MagickInfo** inflst = MagickCore::GetMagickInfoList("*", &n, &ex);
+    ExceptionInfo ex;
+    size_t n                  = 0;
+    const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
     for (uint i = 0 ; i < n ; ++i)
     {
-        const MagickCore::MagickInfo* inf = inflst[i];
+        const MagickInfo* inf = inflst[i];
 
         if (inf->decoder)
         {
@@ -250,13 +252,13 @@ bool DImgImageMagickPlugin::canWrite(const QString& format) const
     // For ex, if tiff is supported in write mode by ImageMagick it will never be handled.
 
     QStringList formats;
-    MagickCore::ExceptionInfo ex;
-    size_t n                              = 0;
-    const MagickCore::MagickInfo** inflst = MagickCore::GetMagickInfoList("*", &n, &ex);
+    ExceptionInfo ex;
+    size_t n                  = 0;
+    const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
     for (uint i = 0 ; i < n ; ++i)
     {
-        const MagickCore::MagickInfo* inf = inflst[i];
+        const MagickInfo* inf = inflst[i];
 
         if (inf->encoder)
         {

@@ -20,14 +20,16 @@
  *
  * ============================================================ */
 
-// IM includes
+// ImageMagick includes
 
 #include <Magick++.h>
-using namespace Magick;
 
 #if MagickLibVersion < 0x700
 #   include <magick/magick.h>
 #endif
+
+using namespace Magick;
+using namespace MagickCore;
 
 // Qt includes
 
@@ -86,7 +88,7 @@ bool loadWithImageMagick(const QString& path, QImage& qimg)
 
     try
     {
-        Image image;
+        Magick::Image image;
         image.read(path.toUtf8().constData());
 
         qDebug() << "IM toQImage     :" << image.columns() << image.rows();
@@ -125,14 +127,14 @@ int main(int argc, char** argv)
 {
     MagickCoreGenesis((char*)NULL, MagickFalse);
 
-    MagickCore::ExceptionInfo ex;
-    size_t n                              = 0;
-    const MagickCore::MagickInfo** inflst = MagickCore::GetMagickInfoList("*", &n, &ex);
+    ExceptionInfo ex;
+    size_t n                  = 0;
+    const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
     qDebug().noquote() << "Name             :: Module           :: Mime Type                    :: Mode  :: Version                      :: Description";
 
     for (uint i = 0 ; i < n ; ++i)
     {
-        const MagickCore::MagickInfo* inf = inflst[i];
+        const MagickInfo* inf = inflst[i];
         QString mode;
 
         if (inf->decoder) mode.append(QLatin1Char('R'));
