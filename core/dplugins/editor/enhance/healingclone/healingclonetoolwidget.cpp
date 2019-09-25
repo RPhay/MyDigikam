@@ -439,7 +439,6 @@ void HealingCloneToolWidget::changeCursorShape(const QColor& color)
 
     QPointF tempCursorPosition = mapToScene(mapFromImageCoordinates(d->src));
     updateSourceCursor(tempCursorPosition, diameter);
-    setDrawCursorPosition(tempCursorPosition);
 }
 
 void HealingCloneToolWidget::setBrushValue(int value)
@@ -474,6 +473,7 @@ void HealingCloneToolWidget::activateState(HealingCloneState state)
     {
         changeCursorShape(Qt::blue);
         setCursor(QCursor(Qt::BlankCursor));
+        setDrawCursorPosition(d->lastCursorPosition);
     }
     else if (state == HealingCloneState::MOVE_IMAGE)
     {
@@ -489,6 +489,8 @@ void HealingCloneToolWidget::activateState(HealingCloneState state)
     else if (state == HealingCloneState::LASSO_CLONE)
     {
         changeCursorShape(Qt::blue);
+        setCursor(QCursor(Qt::BlankCursor));
+        setDrawCursorPosition(d->lastCursorPosition);
     }
     else if (state == HealingCloneState::SELECT_SOURCE)
     {
@@ -581,7 +583,9 @@ void HealingCloneToolWidget::setDrawCursorPosition(const QPointF& topLeftPos)
                                   (topLeftPos.y() < 0)                ||
                                   (topLeftPos.y() > scene()->height());
 
-    if (drawCursorOutsideScene || (d->currentState != HealingCloneState::PAINT))
+    if (drawCursorOutsideScene                       ||
+        (d->currentState != HealingCloneState::PAINT &&
+         d->currentState != HealingCloneState::LASSO_CLONE))
     {
         d->drawCursor->setVisible(false);
     }
