@@ -146,6 +146,13 @@ QString DImgImageMagickPlugin::typeMimes() const
     formats.removeAll(QLatin1String("J2K"));   // JPEG2000 code stream
     formats.removeAll(QLatin1String("PGX"));   // JPEG2000 WM format
 
+    QString rawFilesExt = QString::fromLatin1(DRawDecoder::rawFiles()).remove(QLatin1String("*."));
+
+    foreach (const QString& str, rawFilesExt)
+    {
+        formats.removeAll(str);                // All Raw image formats
+    }
+
     QString ret;
 
     foreach (const QString& str, formats)
@@ -193,7 +200,7 @@ bool DImgImageMagickPlugin::canRead(const QString& filePath) const
     // Ignore RAW files
 
     QString ext         = QFileInfo(filePath).suffix().toUpper();
-    QString rawFilesExt = QLatin1String(DRawDecoder::rawFiles());
+    QString rawFilesExt = QString::fromLatin1(DRawDecoder::rawFiles()).remove(QLatin1String("*."));
 
     if (rawFilesExt.toUpper().contains(ext))
     {
@@ -229,8 +236,8 @@ bool DImgImageMagickPlugin::canRead(const QString& filePath) const
 
 bool DImgImageMagickPlugin::canWrite(const QString& format) const
 {
-    QString blackList = QLatin1String(DRawDecoder::rawFiles());                              // Ignore RAW files
-    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX "));  // Ignore native loaders
+    QString blackList = QString::fromLatin1(DRawDecoder::rawFiles()).remove(QLatin1String("*.")); // Ignore RAW files
+    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX "));       // Ignore native loaders
 
     if (blackList.toUpper().contains(format))
     {
@@ -239,14 +246,6 @@ bool DImgImageMagickPlugin::canWrite(const QString& format) const
 
     // NOTE: Native loaders support are previously black-listed.
     // For ex, if tiff is supported in write mode by ImageMagick it will never be handled.
-
-    QString ext         = format.toUpper();
-    QString rawFilesExt = QLatin1String(DRawDecoder::rawFiles());
-
-    if (rawFilesExt.toUpper().contains(ext))
-    {
-        return false;
-    }
 
     QStringList formats;
     MagickCore::ExceptionInfo ex;
@@ -267,7 +266,7 @@ bool DImgImageMagickPlugin::canWrite(const QString& format) const
         }
     }
 
-    if (!formats.contains(ext))
+    if (!formats.contains(format))
     {
         return false;
     }
