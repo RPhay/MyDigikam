@@ -6,7 +6,7 @@
  * Date        : 2019-09-22
  * Description : PGF DImg plugin.
  *
- * Copyright (C) 2019      by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -70,12 +70,12 @@ QIcon DImgPGFPlugin::icon() const
 
 QString DImgPGFPlugin::description() const
 {
-    return i18n("A DImg image loader based on Libpgf codec");
+    return i18n("An image loader based on Libpgf codec");
 }
 
 QString DImgPGFPlugin::details() const
 {
-    return i18n("<p>This plugin permit to load and save image with DImg using Libpgf codec.</p>"
+    return i18n("<p>This plugin permit to load and save image using Libpgf codec.</p>"
                 "<p>The Progressive Graphics File (PGF) is an efficient image file format, "
                 "that is based on a fast, discrete wavelet transform with progressive coding "
                 "features. PGF can be used for lossless and lossy compression. It's most suitable "

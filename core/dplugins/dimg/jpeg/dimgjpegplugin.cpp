@@ -6,7 +6,7 @@
  * Date        : 2019-09-21
  * Description : JPEG DImg plugin.
  *
- * Copyright (C) 2019      by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -70,12 +70,12 @@ QIcon DImgJPEGPlugin::icon() const
 
 QString DImgJPEGPlugin::description() const
 {
-    return i18n("A DImg image loader based on Libjpeg codec");
+    return i18n("An image loader based on Libjpeg codec");
 }
 
 QString DImgJPEGPlugin::details() const
 {
-    return i18n("<p>This plugin permit to load and save image with DImg using Libjpeg codec.</p>"
+    return i18n("<p>This plugin permit to load and save image using Libjpeg codec.</p>"
                 "<p>Joint Photographic Experts Group (JPEG) is a commonly used method of lossy "
                 "compression for digital images, particularly for those images produced by "
                 "digital photography. The degree of compression can be adjusted, allowing "

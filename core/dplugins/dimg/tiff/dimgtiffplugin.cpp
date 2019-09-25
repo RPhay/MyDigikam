@@ -6,7 +6,7 @@
  * Date        : 2019-09-22
  * Description : TIFF DImg plugin.
  *
- * Copyright (C) 2019      by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -70,12 +70,12 @@ QIcon DImgTIFFPlugin::icon() const
 
 QString DImgTIFFPlugin::description() const
 {
-    return i18n("A DImg image loader based on Libtiff codec");
+    return i18n("An image loader based on Libtiff codec");
 }
 
 QString DImgTIFFPlugin::details() const
 {
-    return i18n("<p>This plugin permit to load and save image with DImg using Libtiff codec.</p>"
+    return i18n("<p>This plugin permit to load and save image using Libtiff codec.</p>"
                 "<p>Tagged Image File Format, abbreviated TIFF or TIF, is a computer file format "
                 "for storing raster graphics images, popular among graphic artists, the publishing "
                 "industry, and photographers. TIFF is widely supported by scanning, faxing, "

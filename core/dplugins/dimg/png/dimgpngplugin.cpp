@@ -6,7 +6,7 @@
  * Date        : 2019-09-22
  * Description : PNG DImg plugin.
  *
- * Copyright (C) 2019      by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -70,12 +70,12 @@ QIcon DImgPNGPlugin::icon() const
 
 QString DImgPNGPlugin::description() const
 {
-    return i18n("A DImg image loader based on Libpng codec");
+    return i18n("An image loader based on Libpng codec");
 }
 
 QString DImgPNGPlugin::details() const
 {
-    return i18n("<p>This plugin permit to load and save image with DImg using Libpng codec.</p>"
+    return i18n("<p>This plugin permit to load and save image using Libpng codec.</p>"
                 "<p>Portable Network Graphics (PNG) is a raster-graphics file-format that supports "
                 "lossless data compression. PNG was developed as an improved, non-patented replacement "
                 "for Graphics Interchange Format.</p>"

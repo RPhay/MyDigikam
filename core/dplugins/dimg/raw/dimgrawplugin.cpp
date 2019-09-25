@@ -71,12 +71,12 @@ QIcon DImgRAWPlugin::icon() const
 
 QString DImgRAWPlugin::description() const
 {
-    return i18n("A DImg image loader based on Libraw codec");
+    return i18n("An image loader based on Libraw codec");
 }
 
 QString DImgRAWPlugin::details() const
 {
-    return i18n("<p>This plugin permit to load and save image with DImg using Libraw codec.</p>"
+    return i18n("<p>This plugin permit to load and save image using Libraw codec.</p>"
                 "<p>A camera raw image file contains minimally processed data from the image sensor "
                 "of either a digital camera, a motion picture film scanner, or other image scanner. "
                 "Raw files are not yet processed and therefore are not ready to be printed or edited "
