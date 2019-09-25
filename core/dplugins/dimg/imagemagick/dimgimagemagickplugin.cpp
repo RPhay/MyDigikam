@@ -22,18 +22,20 @@
 
 #include "dimgimagemagickplugin.h"
 
+// Image Magick includes
+
 #include <Magick++.h>
-using namespace Magick;
 
 #if MagickLibVersion < 0x700
 #   include <magick/magick.h>
 #endif
 
+using namespace Magick;
+using namespace MagickCore;
+
 // Qt includes
 
 #include <QFileInfo>
-#include <QImageReader>
-#include <QImageWriter>
 #include <QMimeDatabase>
 
 // KDE includes
@@ -53,10 +55,12 @@ namespace DigikamImageMagickDImgPlugin
 DImgImageMagickPlugin::DImgImageMagickPlugin(QObject* const parent)
     : DPluginDImg(parent)
 {
+    MagickCoreGenesis((char*)NULL ,MagickFalse);
 }
 
 DImgImageMagickPlugin::~DImgImageMagickPlugin()
 {
+    MagickCoreTerminus();
 }
 
 QString DImgImageMagickPlugin::name() const
@@ -113,13 +117,13 @@ QString DImgImageMagickPlugin::loaderName() const
 QString DImgImageMagickPlugin::typeMimes() const
 {
     QStringList formats;
-    MagickCore::ExceptionInfo ex;
+    ExceptionInfo ex;
     size_t n                              = 0;
-    const MagickCore::MagickInfo** inflst = MagickCore::GetMagickInfoList("*", &n, &ex);
+    const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
     for (uint i = 0 ; i < n ; ++i)
     {
-        const MagickCore::MagickInfo* inf = inflst[i];
+        const MagickInfo* inf = inflst[i];
 
         if (inf->decoder)
         {
@@ -145,6 +149,13 @@ QString DImgImageMagickPlugin::typeMimes() const
     formats.removeAll(QLatin1String("JPC"));   // JPEG2000 code stream
     formats.removeAll(QLatin1String("J2K"));   // JPEG2000 code stream
     formats.removeAll(QLatin1String("PGX"));   // JPEG2000 WM format
+
+    QString rawFilesExt = QString::fromLatin1(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();
+
+    foreach (const QString& str, rawFilesExt.split(QLatin1Char(' ')))
+    {
+        formats.removeAll(str);                // All Raw image formats
+    }
 
     QString ret;
 
@@ -193,7 +204,7 @@ bool DImgImageMagickPlugin::canRead(const QString& filePath) const
     // Ignore RAW files
 
     QString ext         = QFileInfo(filePath).suffix().toUpper();
-    QString rawFilesExt = QLatin1String(DRawDecoder::rawFiles());
+    QString rawFilesExt = QString::fromLatin1(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();
 
     if (rawFilesExt.toUpper().contains(ext))
     {
@@ -201,13 +212,13 @@ bool DImgImageMagickPlugin::canRead(const QString& filePath) const
     }
 
     QStringList formats;
-    MagickCore::ExceptionInfo ex;
-    size_t n                              = 0;
-    const MagickCore::MagickInfo** inflst = MagickCore::GetMagickInfoList("*", &n, &ex);
+    ExceptionInfo ex;
+    size_t n                  = 0;
+    const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
     for (uint i = 0 ; i < n ; ++i)
     {
-        const MagickCore::MagickInfo* inf = inflst[i];
+        const MagickInfo* inf = inflst[i];
 
         if (inf->decoder)
         {
@@ -229,8 +240,8 @@ bool DImgImageMagickPlugin::canRead(const QString& filePath) const
 
 bool DImgImageMagickPlugin::canWrite(const QString& format) const
 {
-    QString blackList = QLatin1String(DRawDecoder::rawFiles());                              // Ignore RAW files
-    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX "));  // Ignore native loaders
+    QString blackList = QString::fromLatin1(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper(); // Ignore RAW files
+    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX "));                 // Ignore native loaders
 
     if (blackList.toUpper().contains(format))
     {
@@ -240,22 +251,14 @@ bool DImgImageMagickPlugin::canWrite(const QString& format) const
     // NOTE: Native loaders support are previously black-listed.
     // For ex, if tiff is supported in write mode by ImageMagick it will never be handled.
 
-    QString ext         = format.toUpper();
-    QString rawFilesExt = QLatin1String(DRawDecoder::rawFiles());
-
-    if (rawFilesExt.toUpper().contains(ext))
-    {
-        return false;
-    }
-
     QStringList formats;
-    MagickCore::ExceptionInfo ex;
-    size_t n                              = 0;
-    const MagickCore::MagickInfo** inflst = MagickCore::GetMagickInfoList("*", &n, &ex);
+    ExceptionInfo ex;
+    size_t n                  = 0;
+    const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
     for (uint i = 0 ; i < n ; ++i)
     {
-        const MagickCore::MagickInfo* inf = inflst[i];
+        const MagickInfo* inf = inflst[i];
 
         if (inf->encoder)
         {
@@ -267,7 +270,7 @@ bool DImgImageMagickPlugin::canWrite(const QString& format) const
         }
     }
 
-    if (!formats.contains(ext))
+    if (!formats.contains(format))
     {
         return false;
     }
