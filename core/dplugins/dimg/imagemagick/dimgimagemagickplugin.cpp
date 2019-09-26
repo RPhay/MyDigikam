@@ -161,7 +161,10 @@ QString DImgImageMagickPlugin::typeMimes() const
 
     foreach (const QString& str, formats)
     {
-        ret += QString::fromUtf8("%1 ").arg(str.toUpper());
+        if (!ret.contains(str))
+        {
+            ret += QString::fromUtf8("%1 ").arg(str.toUpper());
+        }
     }
 
     return ret;

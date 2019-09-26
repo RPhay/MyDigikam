@@ -25,6 +25,7 @@
 
 // Qt includes
 
+#include <QMap>
 #include <QStringList>
 #include <QString>
 #include <QLabel>
@@ -135,12 +136,24 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QStringList data = tool->extraAboutData();
+    QMap<QString, QString> list = tool->extraAboutData();
 
-    if (!data.isEmpty())
+    if (!list.isEmpty())
     {
-        QListWidget* const extra = new QListWidget(tab);
-        extra->addItems(data);
+        QTreeWidget* const extra = new QTreeWidget(tab);
+        extra->setSortingEnabled(false);
+        extra->setRootIsDecorated(false);
+        extra->setSelectionMode(QAbstractItemView::SingleSelection);
+        extra->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        extra->setAllColumnsShowFocus(true);
+        extra->setColumnCount(2);
+        extra->header()->setSectionResizeMode(QHeaderView::Stretch);
+
+        for (QMap<QString, QString>::const_iterator it = list.constBegin(); it != list.constEnd() ; ++it)
+        {
+            new QTreeWidgetItem(extra, QStringList() << it.key() << it.value());
+        }
+
         tab->addTab(extra, tool->extraAboutDataTitle());
     }
 

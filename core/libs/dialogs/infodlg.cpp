@@ -115,6 +115,7 @@ InfoDlg::InfoDlg(QWidget* const parent)
     d->listView->setAllColumnsShowFocus(true);
     d->listView->setColumnCount(2);
     d->listView->header()->setSectionResizeMode(QHeaderView::Stretch);
+    d->listView->header()->setVisible(false);
 
     // --------------------------------------------------------
 

@@ -26,6 +26,7 @@
 
 // Qt includes
 
+#include <QMap>
 #include <QList>
 #include <QCoreApplication>
 #include <QString>
@@ -193,7 +194,7 @@ public:
     /**
      * @brief Returns a list of extra data to show in plugin about dialog.
      */
-    virtual QStringList extraAboutData() const { return QStringList(); };
+    virtual QMap<QString, QString> extraAboutData() const { return QMap<QString, QString>(); };
 
     /**
      * @brief Returns the title of data returned by extraAboiutData().

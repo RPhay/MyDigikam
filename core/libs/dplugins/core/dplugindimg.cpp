@@ -23,6 +23,10 @@
 
 #include "dplugindimg.h"
 
+// Qt includes
+
+#include <QMimeDatabase>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -44,9 +48,20 @@ DPluginDImg::~DPluginDImg()
 {
 }
 
-QStringList DPluginDImg::extraAboutData() const
+QMap<QString, QString> DPluginDImg::extraAboutData() const
 {
-    return typeMimes().split(QLatin1Char(' '));
+    QMap<QString, QString> map;
+    QMimeDatabase mimeDb;
+
+    foreach (const QString& ext, typeMimes().split(QLatin1Char(' ')))
+    {
+        if (!ext.isEmpty())
+        {
+            map.insert(ext, mimeDb.mimeTypeForFile(QString::fromLatin1("foo.%1").arg(ext)).comment());
+        }
+    }
+
+    return map;
 };
 
 QString DPluginDImg::extraAboutDataTitle() const

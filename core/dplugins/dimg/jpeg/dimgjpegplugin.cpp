@@ -109,7 +109,7 @@ QString DImgJPEGPlugin::loaderName() const
 
 QString DImgJPEGPlugin::typeMimes() const
 {
-    return QLatin1String("jpg jpeg jpe");
+    return QLatin1String("JPG JPEG JPE");
 }
 
 bool DImgJPEGPlugin::canRead(const QString& filePath) const
