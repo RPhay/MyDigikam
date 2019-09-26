@@ -1,7 +1,7 @@
-prefix=@EXTPREFIX@
-exec_prefix=@EXTPREFIX@
-libdir=@EXTPREFIX@/lib
-includedir=@EXTPREFIX@/include
+prefix=@PREFIX_ext_heif@
+exec_prefix=@PREFIX_ext_heif@
+libdir=@PREFIX_ext_heif@/lib
+includedir=@PREFIX_ext_heif@/include
 builtin_h265_decoder=yes
 builtin_h265_encoder=yes
 
@@ -10,6 +10,6 @@ Description: HEIF image codec.
 URL: https://github.com/strukturag/libheif
 Version: 1.4.0
 Requires:
-Libs: -L@EXTPREFIX@/lib -lheif
+Libs: -L@PREFIX_ext_heif@/lib -lheif
 Libs.private: -lpthread  -lstdc++
-Cflags: -I@EXTPREFIX@/include/libheif
+Cflags: -I@PREFIX_ext_heif@/include/libheif
