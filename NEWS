@@ -51,4 +51,5 @@ BUGFIXES:
 036 ==> 412083 - Image previews scaled incorrectly on hidpi.
 037 ==> 411612 - When using Tags Manager and then closing crashes digiKam.
 038 ==> 412291 - Mac: Opening Preferences zooms the main window to unusable state.
-039 ==> 
+039 ==> 412372 - Image editor view is expanded to 100% and shows only partial amount of picture.
+040 ==> 
