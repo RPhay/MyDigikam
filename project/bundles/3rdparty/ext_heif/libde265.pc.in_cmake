@@ -1,13 +1,13 @@
-prefix=@EXTPREFIX@
-exec_prefix=@EXTPREFIX@
-libdir=@EXTPREFIX@/lib
-includedir=@EXTPREFIX@/include
+prefix=@PREFIX_ext_heif@
+exec_prefix=@PREFIX_ext_heif@
+libdir=@PREFIX_ext_heif@/lib
+includedir=@PREFIX_ext_heif@/include
 
 Name: libde265
 Description: H.265/HEVC video decoder.
 URL: https://github.com/strukturag/libde265
 Version: 1.0.3
 Requires: 
-Libs: -lde265 -L@EXTPREFIX@/lib
+Libs: -lde265 -L@PREFIX_ext_heif@/lib
 Libs.private: -lpthread -lm  -lstdc++
-Cflags: -I@EXTPREFIX@/include
+Cflags: -I@PREFIX_ext_heif@/include

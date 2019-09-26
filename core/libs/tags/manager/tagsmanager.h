@@ -27,10 +27,7 @@
 // Qt includes
 
 #include <QPointer>
-
-// KDE includes
-
-#include <kmainwindow.h>
+#include <QMainWindow>
 
 // Local includes
 
@@ -42,7 +39,7 @@ namespace Digikam
 class TagModel;
 class TAlbum;
 
-class TagsManager : public KMainWindow, public StateSavingObject
+class TagsManager : public QMainWindow, public StateSavingObject
 {
     Q_OBJECT
 
@@ -53,9 +50,8 @@ public:
 
     /**
      * @brief setupUi   setup all gui elements for Tag Manager
-     * @param Dialog    parent dialog
      */
-    void setupUi(KMainWindow* const dialog);
+    void setupUi();
 
     static QPointer<TagsManager> internalPtr;
     static TagsManager* instance();
@@ -66,12 +62,6 @@ Q_SIGNALS:
     void signalSelectionChanged(TAlbum* album);
 
 private Q_SLOTS:
-
-    /**
-     * @brief slotOpenProperties - open tag properties option when
-     *                             activating Tag Properties from right sidebar
-     */
-    void slotOpenProperties();
 
     /**
      * @brief slotSelectionChanged - update tag properties in tagPropWidget when

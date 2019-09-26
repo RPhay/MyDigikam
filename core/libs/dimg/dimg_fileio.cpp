@@ -101,7 +101,9 @@ bool DImg::load(const QString& filePath,
                 DImgLoaderObserver* const observer,
                 const DRawDecoding& rawDecodingSettings)
 {
-    FORMAT format                   = fileFormat(filePath);
+    FORMAT format;
+    QString name;
+    DPluginDImg* const plug         = m_priv->pluginForFile(filePath, name, format);
     DImgLoader::LoadFlags loadFlags = (DImgLoader::LoadFlags)loadFlagsInt;
 
     setAttribute(QLatin1String("detectedFileFormat"), format);
@@ -109,172 +111,34 @@ bool DImg::load(const QString& filePath,
 
     FileReadLocker lock(filePath);
 
-    switch (format)
+    if (plug)
     {
-        case (NONE):
+        qCDebug(DIGIKAM_DIMG_LOG) << filePath << ":" << plug->loaderName() << "file identified";
+        DImgLoader* const loader = plug->loader(this, rawDecodingSettings);
+        loader->setLoadFlags(loadFlags);
+
+        if (observer && !observer->continueQuery(nullptr))
         {
-            qCDebug(DIGIKAM_DIMG_LOG) << filePath << " : Unknown image format !!!";
             return false;
         }
 
-        case (JPEG):
+        if (loader->load(filePath, observer))
         {
-            qCDebug(DIGIKAM_DIMG_LOG) << filePath << " : JPEG file identified";
-            JPEGLoader loader(this);
-            loader.setLoadFlags(loadFlags);
+            m_priv->null       = !loader->hasLoadedData();
+            m_priv->alpha      = loader->hasAlpha();
+            m_priv->sixteenBit = loader->sixteenBit();
+            setAttribute(QLatin1String("isReadOnly"), loader->isReadOnly());
+            delete loader;
 
-            if (loader.load(filePath, observer))
-            {
-                m_priv->null       = !loader.hasLoadedData();
-                m_priv->alpha      = loader.hasAlpha();
-                m_priv->sixteenBit = loader.sixteenBit();
-                setAttribute(QLatin1String("isReadOnly"), loader.isReadOnly());
-                return true;
-            }
-
-            break;
+            return true;
         }
 
-        case (TIFF):
-        {
-            qCDebug(DIGIKAM_DIMG_LOG) << filePath << " : TIFF file identified";
-            TIFFLoader loader(this);
-            loader.setLoadFlags(loadFlags);
+        qCWarning(DIGIKAM_DIMG_LOG) << filePath << ": Cannot load file !!!";
 
-            if (loader.load(filePath, observer))
-            {
-                m_priv->null       = !loader.hasLoadedData();
-                m_priv->alpha      = loader.hasAlpha();
-                m_priv->sixteenBit = loader.sixteenBit();
-                setAttribute(QLatin1String("isReadOnly"), loader.isReadOnly());
-                return true;
-            }
-
-            break;
-        }
-
-        case (PNG):
-        {
-            qCDebug(DIGIKAM_DIMG_LOG) << filePath << " : PNG file identified";
-            PNGLoader loader(this);
-            loader.setLoadFlags(loadFlags);
-
-            if (loader.load(filePath, observer))
-            {
-                m_priv->null       = !loader.hasLoadedData();
-                m_priv->alpha      = loader.hasAlpha();
-                m_priv->sixteenBit = loader.sixteenBit();
-                setAttribute(QLatin1String("isReadOnly"), loader.isReadOnly());
-                return true;
-            }
-
-            break;
-        }
-
-        case (RAW):
-        {
-            qCDebug(DIGIKAM_DIMG_LOG) << filePath << " : RAW file identified";
-            RAWLoader loader(this, rawDecodingSettings);
-            loader.setLoadFlags(loadFlags);
-
-            if (loader.load(filePath, observer))
-            {
-                m_priv->null       = !loader.hasLoadedData();
-                m_priv->alpha      = loader.hasAlpha();
-                m_priv->sixteenBit = loader.sixteenBit();
-                setAttribute(QLatin1String("isReadOnly"), loader.isReadOnly());
-                loader.postProcess(observer);
-                return true;
-            }
-
-            break;
-        }
-
-#ifdef HAVE_JASPER
-        case (JP2K):
-        {
-            qCDebug(DIGIKAM_DIMG_LOG) << filePath << " : JPEG2000 file identified";
-            JP2KLoader loader(this);
-            loader.setLoadFlags(loadFlags);
-
-            if (loader.load(filePath, observer))
-            {
-                m_priv->null       = !loader.hasLoadedData();
-                m_priv->alpha      = loader.hasAlpha();
-                m_priv->sixteenBit = loader.sixteenBit();
-                setAttribute(QLatin1String("isReadOnly"), loader.isReadOnly());
-                return true;
-            }
-
-            break;
-        }
-#endif // HAVE_JASPER
-
-        case (PGF):
-        {
-            qCDebug(DIGIKAM_DIMG_LOG) << filePath << " : PGF file identified";
-            PGFLoader loader(this);
-            loader.setLoadFlags(loadFlags);
-
-            if (loader.load(filePath, observer))
-            {
-                m_priv->null       = !loader.hasLoadedData();
-                m_priv->alpha      = loader.hasAlpha();
-                m_priv->sixteenBit = loader.sixteenBit();
-                setAttribute(QLatin1String("isReadOnly"), loader.isReadOnly());
-                return true;
-            }
-
-            break;
-        }
-
-        default:
-            break;
-    }
-
-    if (observer && !observer->continueQuery(nullptr))
-    {
         return false;
     }
 
-#ifdef HAVE_IMAGE_MAGICK
-
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << filePath << " : Try to load with ImageMagick";
-        MagickLoader loader(this);
-        loader.setLoadFlags(loadFlags);
-
-        if (loader.load(filePath, observer))
-        {
-            m_priv->null       = !loader.hasLoadedData();
-            m_priv->alpha      = loader.hasAlpha();
-            m_priv->sixteenBit = loader.sixteenBit();
-            setAttribute(QLatin1String("isReadOnly"), loader.isReadOnly());
-            return true;
-        }
-    }
-
-    if (observer && !observer->continueQuery(nullptr))
-    {
-        return false;
-    }
-
-#endif // HAVE_IMAGE_MAGICK
-
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << filePath << " : Try to load with QImage";
-        QImageLoader loader(this);
-        loader.setLoadFlags(loadFlags);
-
-        if (loader.load(filePath, observer))
-        {
-            m_priv->null       = !loader.hasLoadedData();
-            m_priv->alpha      = loader.hasAlpha();
-            m_priv->sixteenBit = loader.sixteenBit();
-            setAttribute(QLatin1String("isReadOnly"), loader.isReadOnly());
-            return true;
-        }
-    }
+    qCWarning(DIGIKAM_DIMG_LOG) << filePath << " : Unknown image format !!!";
 
     return false;
 }
@@ -354,10 +218,14 @@ bool DImg::save(const QString& filePath, const QString& format, DImgLoaderObserv
         return false;
     }
 
+    QString name;
     QString frm = format.toUpper();
     setAttribute(QLatin1String("savedFilePath"), filePath);
 
     FileWriteLocker lock(filePath);
+
+    DPluginDImg* const plug = m_priv->pluginForFormat(frm, name);
+    DImg copyForSave        = copy();
 
     if (frm == QLatin1String("JPEG") || frm == QLatin1String("JPG") || frm == QLatin1String("JPE"))
     {
@@ -365,185 +233,26 @@ bool DImg::save(const QString& filePath, const QString& format, DImgLoaderObserv
         // This is only necessary if the image has an alpha channel, and there are actually transparent pixels
         if (hasTransparentPixels())
         {
-            DImg alphaRemoved = copy();
-            alphaRemoved.removeAlphaChannel();
-            JPEGLoader loader(&alphaRemoved);
-            setAttribute(QLatin1String("savedFormat-isReadOnly"), loader.isReadOnly());
-            return loader.save(filePath, observer);
-        }
-        else
-        {
-            JPEGLoader loader(this);
-            setAttribute(QLatin1String("savedFormat-isReadOnly"), loader.isReadOnly());
-            return loader.save(filePath, observer);
+            copyForSave.removeAlphaChannel();
         }
     }
-    else if (frm == QLatin1String("PNG"))
-    {
-        PNGLoader loader(this);
-        setAttribute(QLatin1String("savedFormat-isReadOnly"), loader.isReadOnly());
-        return loader.save(filePath, observer);
-    }
-    else if (frm == QLatin1String("TIFF") || frm == QLatin1String("TIF"))
-    {
-        TIFFLoader loader(this);
-        setAttribute(QLatin1String("savedFormat-isReadOnly"), loader.isReadOnly());
-        return loader.save(filePath, observer);
-    }
 
-#ifdef HAVE_JASPER
-    else if (frm == QLatin1String("JP2") ||
-             frm == QLatin1String("J2K") ||
-             frm == QLatin1String("JPX") ||
-             frm == QLatin1String("JPC") ||
-             frm == QLatin1String("PGX"))
-    {
-        JP2KLoader loader(this);
-        setAttribute(QLatin1String("savedFormat-isReadOnly"), loader.isReadOnly());
-        return loader.save(filePath, observer);
-    }
-#endif // HAVE_JASPER
+    DImgLoader* const loader = plug->loader(&copyForSave);
+    copyForSave.setAttribute(QLatin1String("savedFormat-isReadOnly"), loader->isReadOnly());
+    bool ret                 = loader->save(filePath, observer);
+    delete loader;
 
-    else if (frm == QLatin1String("PGF"))
-    {
-        PGFLoader loader(this);
-        setAttribute(QLatin1String("savedFormat-isReadOnly"), loader.isReadOnly());
-        return loader.save(filePath, observer);
-    }
-    else
-    {
-#ifdef HAVE_IMAGE_MAGICK
-        setAttribute(QLatin1String("format"), format);
-        MagickLoader loader(this);
-        setAttribute(QLatin1String("savedFormat-isReadOnly"), loader.isReadOnly());
-        return loader.save(filePath, observer);
-#else
-        setAttribute(QLatin1String("format"), format);
-        QImageLoader loader(this);
-        setAttribute(QLatin1String("savedFormat-isReadOnly"), loader.isReadOnly());
-        return loader.save(filePath, observer);
-#endif
-    }
-
-    return false;
+    return ret;
 }
 
 DImg::FORMAT DImg::fileFormat(const QString& filePath)
 {
-    if (filePath.isNull())
-    {
-        return NONE;
-    }
+    FORMAT format;
+    QString name;
 
-    // In first we trying to check the file extension. This is mandatory because
-    // some tiff files are detected like RAW files by identify method.
+    DImg::Private::pluginForFile(filePath, name, format);
 
-    QFileInfo fileInfo(filePath);
-
-    if (!fileInfo.exists())
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return NONE;
-    }
-
-    QString rawFilesExt = QLatin1String(DRawDecoder::rawFiles());
-    QString ext         = fileInfo.suffix().toUpper();
-
-    if (!ext.isEmpty())
-    {
-        if (ext == QLatin1String("JPEG") || ext == QLatin1String("JPG") || ext == QLatin1String("JPE"))
-        {
-            return JPEG;
-        }
-        else if (ext == QLatin1String("PNG"))
-        {
-            return PNG;
-        }
-        else if (ext == QLatin1String("TIFF") || ext == QLatin1String("TIF"))
-        {
-            return TIFF;
-        }
-        else if (rawFilesExt.toUpper().contains(ext))
-        {
-            return RAW;
-        }
-        else if (ext == QLatin1String("JP2") || ext == QLatin1String("JPX") || // JPEG2000 file format
-                 ext == QLatin1String("JPC") || ext == QLatin1String("J2K") || // JPEG2000 code stream
-                 ext == QLatin1String("PGX"))                                  // JPEG2000 WM format
-        {
-            return JP2K;
-        }
-        else if (ext == QLatin1String("PGF"))
-        {
-            return PGF;
-        }
-    }
-
-    // In second, we trying to parse file header.
-
-    FILE* const f = fopen(QFile::encodeName(filePath).constData(), "rb");
-
-    if (!f)
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Failed to open file " << filePath;
-        return NONE;
-    }
-
-    const int headerLen = 9;
-
-    unsigned char header[headerLen];
-
-    if (fread(&header, headerLen, 1, f) != 1)
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Failed to read header of file " << filePath;
-        fclose(f);
-        return NONE;
-    }
-
-    fclose(f);
-
-    DRawInfo dcrawIdentify;
-    uchar jpegID[2]    = { 0xFF, 0xD8 };
-    uchar tiffBigID[2] = { 0x4D, 0x4D };
-    uchar tiffLilID[2] = { 0x49, 0x49 };
-    uchar pngID[8]     = { 0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A };
-    uchar jp2ID[5]     = { 0x6A, 0x50, 0x20, 0x20, 0x0D, };
-    uchar jpcID[2]     = { 0xFF, 0x4F };
-    uchar pgfID[3]     = { 0x50, 0x47, 0x46 };
-
-    if (memcmp(&header, &jpegID, 2) == 0)            // JPEG file ?
-    {
-        return JPEG;
-    }
-    else if (memcmp(&header, &pngID, 8) == 0)        // PNG file ?
-    {
-        return PNG;
-    }
-    else if (DRawDecoder::rawFileIdentify(dcrawIdentify, filePath)
-             && dcrawIdentify.isDecodable)
-    {
-        // RAW File test using identify method.
-        // Need to test it before TIFF because any RAW file
-        // formats using TIFF header.
-        return RAW;
-    }
-    else if (memcmp(&header, &tiffBigID, 2) == 0 ||  // TIFF file ?
-             memcmp(&header, &tiffLilID, 2) == 0)
-    {
-        return TIFF;
-    }
-    else if (memcmp(&header[4], &jp2ID, 5) == 0 ||   // JPEG2000 file ?
-             memcmp(&header,    &jpcID, 2) == 0)
-    {
-        return JP2K;
-    }
-    else if (memcmp(&header, &pgfID, 3) == 0)        // PGF file ?
-    {
-        return PNG;
-    }
-
-    // In others cases, ImageMagick or QImage will be used to try to open file.
-    return QIMAGE;
+    return format;
 }
 
 } // namespace Digikam

@@ -470,7 +470,8 @@ void Canvas::slotSelectionMoved()
 
 QRect Canvas::calcSelectedArea() const
 {
-    int x = 0, y = 0, w = 0, h = 0;
+    int    x = 0, y = 0, w = 0, h = 0;
+    double z = layout()->realZoomFactor();
 
     if (d->rubber && d->rubber->isVisible())
     {
@@ -478,12 +479,13 @@ QRect Canvas::calcSelectedArea() const
 
         if (r.isValid())
         {
-            r.translate((int)d->rubber->x(), (int)d->rubber->y());
+            r.translate((int)d->rubber->x(),
+                        (int)d->rubber->y());
 
-            x = (int)((double)r.x()      / layout()->zoomFactor());
-            y = (int)((double)r.y()      / layout()->zoomFactor());
-            w = (int)((double)r.width()  / layout()->zoomFactor());
-            h = (int)((double)r.height() / layout()->zoomFactor());
+            x = (int)((double)r.x()      / z);
+            y = (int)((double)r.y()      / z);
+            w = (int)((double)r.width()  / z);
+            h = (int)((double)r.height() / z);
 
             x = qMin(imageWidth(),  qMax(x, 0));
             y = qMin(imageHeight(), qMax(y, 0));

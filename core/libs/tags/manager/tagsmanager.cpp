@@ -32,6 +32,7 @@
 #include <QHBoxLayout>
 #include <QSplitter>
 #include <QApplication>
+#include <QToolBar>
 #include <QScreen>
 #include <QWindow>
 #include <QAction>
@@ -41,7 +42,6 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <ktoolbar.h>
 
 // Local includes
 
@@ -56,11 +56,21 @@
 #include "searchtextbar.h"
 #include "tageditdlg.h"
 #include "coredb.h"
-#include "sidebar.h"
 #include "dlogoaction.h"
 #include "metadatasynchronizer.h"
 #include "fileactionmngr.h"
 #include "metaenginesettings.h"
+
+namespace
+{
+
+QString JoinTagNamesToList(const QStringList& stringList)
+{
+    const QString joinedStringList = stringList.join(QLatin1String("', '"));
+    return QLatin1Char('\'') + joinedStringList + QLatin1Char('\'');
+}
+
+} // namespace
 
 namespace Digikam
 {
@@ -78,7 +88,6 @@ public:
         splitter         = nullptr;
         treeWindow       = nullptr;
         mainToolbar      = nullptr;
-        rightToolBar     = nullptr;
         organizeAction   = nullptr;
         syncexportAction = nullptr;
         tagProperties    = nullptr;
@@ -98,9 +107,8 @@ public:
 
 
     QSplitter*       splitter;
-    KMainWindow*     treeWindow;
-    KToolBar*        mainToolbar;
-    DMultiTabBar*    rightToolBar;
+    QWidget*         treeWindow;
+    QToolBar*        mainToolbar;
     QMenu*           organizeAction;
     QMenu*           syncexportAction;
     QAction*         tagProperties;
@@ -118,14 +126,14 @@ public:
 };
 
 TagsManager::TagsManager()
-    : KMainWindow(nullptr),
+    : QMainWindow(nullptr),
       StateSavingObject(this),
       d(new Private())
 {
     setObjectName(QLatin1String("Tags Manager"));
     d->tagModel = new TagModel(AbstractAlbumModel::IncludeRootAlbum, this);
     d->tagModel->setCheckable(false);
-    setupUi(this);
+    setupUi();
 
     /*----------------------------Connects---------------------------*/
 
@@ -143,7 +151,7 @@ TagsManager::TagsManager()
 
     StateSavingObject::loadState();
 
-    /** Set KMainWindow in center of the screen **/
+    // Set main window in center of the screen
     QScreen* screen = qApp->primaryScreen();
 
     if (QWidget* const widget = qApp->activeWindow())
@@ -152,8 +160,7 @@ TagsManager::TagsManager()
             screen = window->screen();
     }
 
-    const int screenIndex = qMax(qApp->screens().indexOf(screen), 0);
-    move(qApp->screens().at(screenIndex)->geometry().center() - rect().center());
+    move(screen->geometry().center() - rect().center());
 }
 
 TagsManager::~TagsManager()
@@ -173,12 +180,10 @@ TagsManager* TagsManager::instance()
     return TagsManager::internalPtr;
 }
 
-void TagsManager::setupUi(KMainWindow* const dialog)
+void TagsManager::setupUi()
 {
-     dialog->resize(972, 722);
-     dialog->setWindowTitle(i18n("Tags Manager"));
-
-     QHBoxLayout* const mainLayout = new QHBoxLayout();
+     resize(970, 720);
+     setWindowTitle(i18n("Tags Manager"));
 
      d->tagPixmap   = new QLabel();
      d->tagPixmap->setText(QLatin1String("Tag Pixmap"));
@@ -196,10 +201,9 @@ void TagsManager::setupUi(KMainWindow* const dialog)
      d->searchBar->setMaximumWidth(200);
      d->searchBar->setFilterModel(d->tagMngrView->albumFilterModel());
 
-     /** Tree Widget & Actions + Tag Properties sidebar **/
-
-     d->treeWindow    = new KMainWindow(this);
      setupActions();
+
+     // Tree Widget + Actions + Tag Properties
 
      d->tagPropWidget = new TagPropWidget(this);
      d->listView      = new TagList(d->tagMngrView, this);
@@ -208,7 +212,6 @@ void TagsManager::setupUi(KMainWindow* const dialog)
      d->splitter->addWidget(d->listView);
      d->splitter->addWidget(d->tagMngrView);
      d->splitter->addWidget(d->tagPropWidget);
-     d->tagPropWidget->hide();
 
      connect(d->tagPropWidget, SIGNAL(signalTitleEditReady()),
              this, SLOT(slotTitleEditReady()));
@@ -216,30 +219,12 @@ void TagsManager::setupUi(KMainWindow* const dialog)
      d->splitter->setStretchFactor(0, 0);
      d->splitter->setStretchFactor(1, 1);
      d->splitter->setStretchFactor(2, 0);
-     d->treeWindow->setCentralWidget(d->splitter);
 
-     mainLayout->addWidget(d->treeWindow);
-     mainLayout->addWidget(d->rightToolBar);
-
-     QWidget* const centraW = new QWidget(this);
-     centraW->setLayout(mainLayout);
-     setCentralWidget(centraW);
-}
-
-void TagsManager::slotOpenProperties()
-{
-    DMultiTabBarTab* const sender = dynamic_cast<DMultiTabBarTab*>(QObject::sender());
-
-    if (sender->isChecked())
-    {
-        d->tagPropWidget->show();
-    }
-    else
-    {
-        d->tagPropWidget->hide();
-    }
-
-    d->tagPropVisible = d->tagPropWidget->isVisible();
+     QWidget* const centralView    = new QWidget(this);
+     QHBoxLayout* const mainLayout = new QHBoxLayout(centralView);
+     mainLayout->addWidget(d->splitter);
+     centralView->setLayout(mainLayout);
+     setCentralWidget(centralView);
 }
 
 void TagsManager::slotSelectionChanged()
@@ -286,17 +271,6 @@ void TagsManager::slotAddAction()
     AlbumList tList = TagEditDlg::createTAlbum(parent, title, icon, ks, errMap);
     TagEditDlg::showtagsListCreationError(qApp->activeWindow(), errMap);
 }
-
-namespace
-{
-
-QString JoinTagNamesToList(const QStringList& stringList)
-{
-    const QString joinedStringList = stringList.join(QLatin1String("', '"));
-    return QLatin1Char('\'') + joinedStringList + QLatin1Char('\'');
-}
-
-} // namespace
 
 void TagsManager::slotDeleteAction()
 {
@@ -438,7 +412,6 @@ void TagsManager::slotEditTagTitle()
     {
         d->tagPropWidget->show();
         d->tagPropWidget->slotFocusTitleEdit();
-        d->rightToolBar->tab(0)->setChecked(true);
     }
 }
 
@@ -447,7 +420,6 @@ void TagsManager::slotTitleEditReady()
     if (!d->tagPropVisible)
     {
         d->tagPropWidget->hide();
-        d->rightToolBar->tab(0)->setChecked(false);
     }
 
     d->tagMngrView->setFocus();
@@ -674,12 +646,14 @@ void TagsManager::slotRemoveTagsFromImgs()
 void TagsManager::closeEvent(QCloseEvent* event)
 {
     d->listView->saveSettings();
-    KMainWindow::closeEvent(event);
+    QMainWindow::closeEvent(event);
 }
 
 void TagsManager::setupActions()
 {
-    d->mainToolbar = new KToolBar(d->treeWindow, true);
+    d->mainToolbar = new QToolBar(this);
+    d->mainToolbar->setMovable(false);
+    d->mainToolbar->setFloatable(false);
     d->mainToolbar->layout()->setContentsMargins(QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin),
                                                  QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin),
                                                  QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin),
@@ -697,10 +671,10 @@ void TagsManager::setupActions()
     d->mainToolbar->addSeparator();
 
     d->addAction                 = new QAction(QIcon::fromTheme(QLatin1String("list-add")),
-                                               QLatin1String(""), d->treeWindow);
+                                               QLatin1String(""), this);
 
     d->delAction                 = new QAction(QIcon::fromTheme(QLatin1String("list-remove")),
-                                               QLatin1String(""), d->treeWindow);
+                                               QLatin1String(""), this);
 
     /** organize group **/
     d->organizeAction            = new QMenu(i18nc("@title:menu", "Organize"), this);
@@ -829,17 +803,6 @@ void TagsManager::setupActions()
     d->mainToolbar->addAction(d->syncexportAction->menuAction());
     d->mainToolbar->addAction(new DLogoAction(this));
     addToolBar(d->mainToolbar);
-
-    /**
-     * Right Toolbar with vertical properties button
-     */
-    d->rightToolBar = new DMultiTabBar(Qt::RightEdge);
-    d->rightToolBar->appendTab(QIcon::fromTheme(QLatin1String("tag-properties"))
-                               .pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize)), 0, i18n("Tag Properties"));
-    d->rightToolBar->setStyle(DMultiTabBar::AllIconsText);
-
-    connect(d->rightToolBar->tab(0), SIGNAL(clicked()),
-            this, SLOT(slotOpenProperties()));
 
     d->rootDisabledOptions.append(d->delAction);
     d->rootDisabledOptions.append(d->titleEdit);

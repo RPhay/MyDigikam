@@ -95,7 +95,7 @@ private:
      * @param dstPoint center of brush destination
      * @param radius radius of cloning brush
      */
-    void clone(DImg* const img, const QPoint& srcPoint, const QPoint& dstPoint, int radius);
+    void clone(DImg* const img, const QPoint& srcPoint, const QPoint& dstPoint);
     std::vector<QPoint> interpolate(const QPoint& start,const QPoint& end);
 
     void updateLasso(std::vector<QPoint>& points);

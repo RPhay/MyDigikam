@@ -65,6 +65,7 @@ extern "C"
 // Local includes
 
 #include "dimg.h"
+#include "dplugindimg.h"
 #include "digikam_export.h"
 #include "digikam_debug.h"
 #include "dmetadata.h"
@@ -73,26 +74,12 @@ extern "C"
 #include "iccprofile.h"
 #include "metaengine_rotation.h"
 #include "drawdecoder.h"
-#include "pngloader.h"
-#include "tiffloader.h"
-#include "rawloader.h"
-#include "pgfloader.h"
-#include "qimageloader.h"
-#include "jpegloader.h"
 #include "filereadwritelock.h"
 #include "iccmanager.h"
 #include "icctransform.h"
 #include "exposurecontainer.h"
 #include "dimgloaderobserver.h"
 #include "randomnumbergenerator.h"
-
-#ifdef HAVE_JASPER
-#   include "jp2kloader.h"
-#endif // HAVE_JASPER
-
-#ifdef HAVE_IMAGE_MAGICK
-#   include "magickloader.h"
-#endif // HAVE_IMAGE_MAGICK
 
 /** Lanczos kernel is precomputed in a table with this resolution
     The value below seems to be enough for HQ upscaling up to eight times
@@ -143,6 +130,81 @@ public:
     {
         delete [] data;
         delete [] lanczos_func;
+    }
+
+    static DPluginDImg* pluginForFile(const QString& filePath, QString& name, DImg::FORMAT& format)
+    {
+        if (!filePath.isNull())
+        {
+            foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
+            {
+                DPluginDImg* const plug = dynamic_cast<DPluginDImg*>(p);
+
+                if (plug && (plug->canRead(filePath)))
+                {
+                    name = plug->loaderName();
+
+                    if (name.isNull())
+                    {
+                        format = DImg::NONE;
+                    }
+                    else if (name == QLatin1String("JPG"))
+                    {
+                        format = DImg::JPEG;
+                    }
+                    else if (name == QLatin1String("PNG"))
+                    {
+                        format = DImg::PNG;
+                    }
+                    else if (name == QLatin1String("TIF"))
+                    {
+                        format = DImg::TIFF;
+                    }
+                    else if (name == QLatin1String("RAW"))
+                    {
+                        format = DImg::RAW;
+                    }
+                    else if (name == QLatin1String("JP2"))
+                    {
+                        format = DImg::JP2K;
+                    }
+                    else if (name == QLatin1String("PGF"))
+                    {
+                        format = DImg::PGF;
+                    }
+
+                    // In others cases, ImageMagick or QImage will be used to try to open file.
+                    format = DImg::QIMAGE;
+
+                    return plug;
+                }
+            }
+        }
+
+        format = DImg::NONE;
+        name   = QString();
+        return nullptr;
+    }
+
+    static DPluginDImg* pluginForFormat(const QString& format, QString& name)
+    {
+        if (!format.isNull())
+        {
+            foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
+            {
+                DPluginDImg* const plug = dynamic_cast<DPluginDImg*>(p);
+
+                if (plug && (plug->canWrite(format)))
+                {
+                    name = plug->loaderName();
+
+                    return plug;
+                }
+            }
+        }
+
+        name   = QString();
+        return nullptr;
     }
 
     static QStringList fileOriginAttributes()

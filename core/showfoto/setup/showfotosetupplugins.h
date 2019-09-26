@@ -40,9 +40,10 @@ public:
     enum PluginTab
     {
         Generic = 0,
-        Editor
+        Editor,
+        Loaders
     };
-    
+
 public:
 
     explicit SetupPlugins(QWidget* const parent = nullptr);

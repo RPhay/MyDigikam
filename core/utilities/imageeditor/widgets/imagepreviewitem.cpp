@@ -83,14 +83,20 @@ void ImagePreviewItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
 
     double ratio          = qApp->devicePixelRatio();
 
-    QRect  scaledDrawRect = QRectF(ratio*drawRect.x(), ratio*drawRect.y(),
-                                   ratio*drawRect.width(), ratio*drawRect.height()).toRect();
+    QRect  scaledDrawRect = QRectF(ratio * drawRect.x(),
+                                   ratio * drawRect.y(),
+                                   ratio * drawRect.width(),
+                                   ratio * drawRect.height()).toRect();
 
     // scale "as if" scaling to whole image, but clip output to our exposed region
-    QSize scaledCompleteSize = QSizeF(ratio*completeSize.width(), ratio*completeSize.height()).toSize();
-    DImg scaledImage   = d->image.smoothScaleClipped(scaledCompleteSize.width(), scaledCompleteSize.height(),
-                                                     scaledDrawRect.x(), scaledDrawRect.y(),
-                                                     scaledDrawRect.width(), scaledDrawRect.height());
+    QSize scaledCompleteSize = QSizeF(ratio * completeSize.width(),
+                                      ratio * completeSize.height()).toSize();
+    DImg scaledImage         = d->image.smoothScaleClipped(scaledCompleteSize.width(),
+                                                           scaledCompleteSize.height(),
+                                                           scaledDrawRect.x(),
+                                                           scaledDrawRect.y(),
+                                                           scaledDrawRect.width(),
+                                                           scaledDrawRect.height());
 
     if (d->cachedPixmaps.find(scaledDrawRect, &pix, &pixSourceRect))
     {

@@ -39,6 +39,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "dimg.h"
 #include "loadingdescription.h"
 
@@ -127,6 +128,7 @@ bool UFRawRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*de
     d->ufraw    = new QProcess(this);
     d->ufraw->setProcessChannelMode(QProcess::MergedChannels);
     d->ufraw->setWorkingDirectory(d->fileInfo.path());
+    d->ufraw->setProcessEnvironment(adjustedEnvironmentForAppImage());
 
     connect(d->ufraw, SIGNAL(errorOccurred(QProcess::ProcessError)),
             this, SLOT(slotErrorOccurred(QProcess::ProcessError)));

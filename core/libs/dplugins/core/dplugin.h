@@ -26,6 +26,7 @@
 
 // Qt includes
 
+#include <QMap>
 #include <QList>
 #include <QCoreApplication>
 #include <QString>
@@ -47,6 +48,7 @@
 #define DIGIKAM_DPLUGIN_EDITOR_IID    "org.kde.digikam.DPluginEditor/1.1.0"
 #define DIGIKAM_DPLUGIN_BQM_IID       "org.kde.digikam.DPluginBqm/1.1.0"
 #define DIGIKAM_DPLUGIN_RAWIMPORT_IID "org.kde.digikam.DPluginRawImport/1.1.0"
+#define DIGIKAM_DPLUGIN_DIMG_IID      "org.kde.digikam.DPluginDImg/1.1.0"
 
 namespace Digikam
 {
@@ -188,6 +190,16 @@ public:
      * @brief Returns a long description about the plugin.
      */
     virtual QString details() const = 0;
+
+    /**
+     * @brief Returns a list of extra data to show in plugin about dialog.
+     */
+    virtual QMap<QString, QString> extraAboutData() const { return QMap<QString, QString>(); };
+
+    /**
+     * @brief Returns the title of data returned by extraAboiutData().
+     */
+    virtual QString extraAboutDataTitle() const { return QString(); };
 
 private:
 

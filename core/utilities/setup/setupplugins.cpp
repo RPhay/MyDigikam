@@ -37,6 +37,7 @@
 #include "dpluginconfviewgeneric.h"
 #include "dpluginconfvieweditor.h"
 #include "dpluginconfviewbqm.h"
+#include "dpluginconfviewdimg.h"
 
 namespace Digikam
 {
@@ -49,7 +50,8 @@ public:
       : tab(nullptr),
         setupGeneric(nullptr),
         setupEditor(nullptr),
-        setupBqm(nullptr)
+        setupBqm(nullptr),
+        setupDImg(nullptr)
     {
     }
 
@@ -58,6 +60,7 @@ public:
     DPluginSetup* setupGeneric;
     DPluginSetup* setupEditor;
     DPluginSetup* setupBqm;
+    DPluginSetup* setupDImg;
 };
 
 SetupPlugins::SetupPlugins(QWidget* const parent)
@@ -85,6 +88,12 @@ SetupPlugins::SetupPlugins(QWidget* const parent)
     d->setupBqm = new DPluginSetup(d->tab);
     d->setupBqm->setPluginConfView(new DPluginConfViewBqm(d->setupBqm));
     d->tab->insertTab(Bqm, d->setupBqm, i18nc("@title:tab", "Batch Queue Manager"));
+
+    // --------------------
+
+    d->setupDImg = new DPluginSetup(d->tab);
+    d->setupDImg->setPluginConfView(new DPluginConfViewDImg(d->setupDImg));
+    d->tab->insertTab(Loaders, d->setupDImg, i18nc("@title:tab", "Image Loaders"));
 }
 
 SetupPlugins::~SetupPlugins()
@@ -97,6 +106,7 @@ void SetupPlugins::applySettings()
     d->setupGeneric->applySettings();
     d->setupEditor->applySettings();
     d->setupBqm->applySettings();
+    d->setupDImg->applySettings();
 }
 
 } // namespace Digikam

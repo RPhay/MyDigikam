@@ -25,6 +25,7 @@
 
 // Qt includes
 
+#include <QMap>
 #include <QStringList>
 #include <QString>
 #include <QLabel>
@@ -37,6 +38,7 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QTreeWidget>
+#include <QListWidget>
 #include <QHeaderView>
 
 // KDE includes
@@ -131,6 +133,29 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
     new QTreeWidgetItem(props, QStringList() << i18n("Library")      << tool->libraryFileName());
 
     tab->addTab(props, i18n("Properties"));
+
+    // --------------------------------------------------------
+
+    QMap<QString, QString> list = tool->extraAboutData();
+
+    if (!list.isEmpty())
+    {
+        QTreeWidget* const extra = new QTreeWidget(tab);
+        extra->setSortingEnabled(false);
+        extra->setRootIsDecorated(false);
+        extra->setSelectionMode(QAbstractItemView::SingleSelection);
+        extra->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        extra->setAllColumnsShowFocus(true);
+        extra->setColumnCount(2);
+        extra->header()->setSectionResizeMode(QHeaderView::Stretch);
+
+        for (QMap<QString, QString>::const_iterator it = list.constBegin(); it != list.constEnd() ; ++it)
+        {
+            new QTreeWidgetItem(extra, QStringList() << it.key() << it.value());
+        }
+
+        tab->addTab(extra, tool->extraAboutDataTitle());
+    }
 
     // --------------------------------------------------------
 

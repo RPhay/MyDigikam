@@ -4,6 +4,7 @@ digiKam 6.4.0 - Release date: 2019-??-??
 NEW FEATURES:
 
 General    : new RawImport plugin interface to delegate Raw decoding function to extra engine with ImageEditor.
+General    : new DImg plugin interface to externalize image loaders from core implementation.
 ImageEditor: add new setting from setup dialog to select right Raw Import plugin.
 ImageEditor: add new clone tool to fix artifacts on image.
 ImageEditor: add new tool to import RAW image using UFRaw.
@@ -47,4 +48,7 @@ BUGFIXES:
 033 ==> 181941 - Add an option to image editor to remember or not tools settings between sessions.
 034 ==> 221571 - Integrate RawTherapee into digikam
 035 ==> 341186 - Integrate with darktable.
-036 ==> 
+036 ==> 412083 - Image previews scaled incorrectly on hidpi.
+037 ==> 411612 - When using Tags Manager and then closing crashes digiKam.
+038 ==> 412291 - Mac: Opening Preferences zooms the main window to unusable state.
+039 ==> 

@@ -21,10 +21,8 @@ ExternalProject_Add(ext_qt
     URL https://download.qt.io/official_releases/qt/5.13/5.13.1/single/qt-everywhere-src-5.13.1.tar.xz
     URL_MD5 d66b1da335d0c25325fdf493e9044c38
 
-    PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-icu-hack.patch
-
-#    PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-support.patch &&
-#                  ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-glibc.patch
+    PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-icu-hack.patch &&
+                  ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/qt-appimage-support.patch
 
     CMAKE_ARGS -DOPENSSL_LIBS='-L${EXTPREFIX_qt}/lib -lssl -lcrypto'
 
@@ -36,14 +34,15 @@ ExternalProject_Add(ext_qt
                   -confirm-license
                   -sql-sqlite                       # Compile Sqlite SQL plugin
                   -sql-mysql                        # Compile Mysql SQL plugin
+                  -iconv                            # International string conversion
                   -fontconfig
-#                  -icu                              # International Component Unicode
                   -system-freetype                  # Use system font rendering lib https://doc.qt.io/qt-5/qtgui-attribution-freetype.html
                   -openssl-linked                   # hard link ssl libraries
                   -nomake tests                     # Do not build test codes
                   -nomake examples                  # Do not build basis example codes
                   -no-compile-examples              # Do not build extra example codes
                   -no-qml-debug
+                  -no-icu                           # Locale support disabled (International Component Unicode)
                   -no-mtdev
                   -no-journald
                   -no-syslog

@@ -177,26 +177,11 @@ endif()
 
 set(libdimgloaders_SRCS
     loaders/dimgloader.cpp
-    loaders/pngloader.cpp
-    loaders/jpegloader.cpp
-    loaders/tiffloader.cpp
-    loaders/rawloader.cpp
-    loaders/qimageloader.cpp
-    loaders/pgfloader.cpp
     loaders/jpegsettings.cpp
     loaders/pngsettings.cpp
     loaders/tiffsettings.cpp
     loaders/pgfsettings.cpp
 )
-
-# ImageMagick support
-
-if(ImageMagick_Magick++_FOUND)
-    set(libdimgloaders_SRCS
-        ${libdimgloaders_SRCS}
-        loaders/magickloader.cpp
-    )
-endif()
 
 # JPEG2000 support
 
@@ -204,7 +189,6 @@ if(Jasper_FOUND)
     # this should be compiled separately to the lib, cleans if checks
     set(libdimgloaders_SRCS
         ${libdimgloaders_SRCS}
-        loaders/jp2kloader.cpp
         loaders/jp2ksettings.cpp
     )
 endif()

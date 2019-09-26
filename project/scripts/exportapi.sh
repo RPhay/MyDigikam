@@ -15,7 +15,7 @@ rm -fr $WEBSITE_DIR
 cd ${ORIG_WD}/../../ && doxygen
 cd ${ORIG_WD}
 
-git clone git@git.kde.org:websites/digikam-org $WEBSITE_DIR
+git clone git@invent.kde.org:websites/digikam-org.git $WEBSITE_DIR
 
 cd $WEBSITE_DIR
 

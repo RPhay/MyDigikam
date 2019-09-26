@@ -104,6 +104,7 @@ lib/plugins/imageformats/*.so \
 lib/plugins/digikam/bqm/*.so \
 lib/plugins/digikam/generic/*.so \
 lib/plugins/digikam/editor/*.so \
+lib/plugins/digikam/dimg/*.so \
 lib/mariadb/bin/mysql \
 lib/mariadb/bin/mysqld \
 lib/mariadb/bin/my_print_defaults \
@@ -418,15 +419,15 @@ cp $ORIG_WD/icon-rcc/breeze-dark.rcc $TEMPROOT/Applications/KF5/digikam.app/Cont
 #################################################################################################
 # Cleanup symbols in binary files to free space.
 
-echo -e "\n---------- Strip symbols in binary files\n"
-
-if [[ $DK_DEBUG = 1 ]] ; then
-    find $TEMPROOT -name "*.so"    | grep -Ev '(digikam|showfoto|exiv2)' | xargs strip -SXx
-    find $TEMPROOT -name "*.dylib" | grep -Ev '(digikam|showfoto|exiv2)' | xargs strip -SXx
-else
-    find $TEMPROOT -name "*.so"    | xargs strip -SXx
-    find $TEMPROOT -name "*.dylib" | xargs strip -SXx
-fi
+#echo -e "\n---------- Strip symbols in binary files\n"
+#
+#if [[ $DK_DEBUG = 1 ]] ; then
+#    find $TEMPROOT -name "*.so"    | grep -Ev '(digikam|showfoto|exiv2)' | xargs strip -SXx
+#    find $TEMPROOT -name "*.dylib" | grep -Ev '(digikam|showfoto|exiv2)' | xargs strip -SXx
+#else
+#    find $TEMPROOT -name "*.so"    | xargs strip -SXx
+#    find $TEMPROOT -name "*.dylib" | xargs strip -SXx
+#fi
 
 #################################################################################################
 # Relocate binary files

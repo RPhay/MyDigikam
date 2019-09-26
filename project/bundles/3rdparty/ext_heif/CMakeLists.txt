@@ -28,12 +28,12 @@ if(MINGW)
 
         BUILD_IN_SOURCE 1
 
-        INSTALL_COMMAND mkdir -p ${EXTPREFIX}/include/libde265/ &&
-                        cp -fv <SOURCE_DIR>/build.mxe/libde265/de265-version.h ${EXTPREFIX}/include/libde265/ &&
-                        cp -fv <SOURCE_DIR>/libde265/de265.h ${EXTPREFIX}/include/libde265/ &&
-                        cp -fv <SOURCE_DIR>/build.mxe/libde265/libde265.dll ${EXTPREFIX}/bin/ &&
-                        cp -fv <SOURCE_DIR>/build.mxe/libde265/libde265.dll.a ${EXTPREFIX}/lib/ &&
-                        cp -fv ${CMAKE_BINARY_DIR}/libde265.pc ${EXTPREFIX}/lib/pkgconfig/
+        INSTALL_COMMAND mkdir -p ${PREFIX_ext_heif}/include/libde265/ &&
+                        cp -fv <SOURCE_DIR>/build.mxe/libde265/de265-version.h ${PREFIX_ext_heif}/include/libde265/ &&
+                        cp -fv <SOURCE_DIR>/libde265/de265.h ${PREFIX_ext_heif}/include/libde265/ &&
+                        cp -fv <SOURCE_DIR>/build.mxe/libde265/libde265.dll ${PREFIX_ext_heif}/bin/ &&
+                        cp -fv <SOURCE_DIR>/build.mxe/libde265/libde265.dll.a ${PREFIX_ext_heif}/lib/ &&
+                        cp -fv ${CMAKE_BINARY_DIR}/libde265.pc ${PREFIX_ext_heif}/lib/pkgconfig/
 
         UPDATE_COMMAND ""
         ALWAYS 0
@@ -78,17 +78,15 @@ elseif(APPLE)
         # NOTE: v1.0.3 do not compile under MacOS
         GIT_REPOSITORY https://github.com/strukturag/libde265.git
 
-        INSTALL_DIR ${EXTPREFIX}
-
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX}
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_heif}
                    -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                    ${GLOBAL_PROFILE}
 
-        INSTALL_COMMAND mkdir -p ${EXTPREFIX}/include/libde265/ &&
-                        cp -fv <BINARY_DIR>/libde265/de265-version.h ${EXTPREFIX}/include/libde265/ &&
-                        cp -fv <SOURCE_DIR>/libde265/de265.h ${EXTPREFIX}/include/libde265/ &&
-                        cp -fv <BINARY_DIR>/libde265/libde265.dylib ${EXTPREFIX}/lib/ &&
-                        cp -fv ${CMAKE_BINARY_DIR}/libde265.pc ${EXTPREFIX}/lib/pkgconfig/
+        INSTALL_COMMAND mkdir -p ${PREFIX_ext_heif}/include/libde265/ &&
+                        cp -fv <BINARY_DIR>/libde265/de265-version.h ${PREFIX_ext_heif}/include/libde265/ &&
+                        cp -fv <SOURCE_DIR>/libde265/de265.h ${PREFIX_ext_heif}/include/libde265/ &&
+                        cp -fv <BINARY_DIR>/libde265/libde265.dylib ${PREFIX_ext_heif}/lib/ &&
+                        cp -fv ${CMAKE_BINARY_DIR}/libde265.pc ${PREFIX_ext_heif}/lib/pkgconfig/
 
         UPDATE_COMMAND ""
         ALWAYS 0
@@ -102,8 +100,6 @@ elseif(APPLE)
         URL_MD5 05dea500c105289c74270791cb5f8942
 
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/heif-lib-macports.patch
-
-        INSTALL_DIR ${PREFIX_ext_heif}
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_heif}
                    -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
@@ -129,19 +125,17 @@ else() # Linux
         URL https://github.com/strukturag/libde265/archive/v1.0.3.tar.gz
         URL_MD5 189b4deb376ff879f8cbb2b7ffc24f97
 
-        INSTALL_DIR ${EXTPREFIX}
-
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/de265-lib-linux.patch
 
-        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX}
+        CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_heif}
                    -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                    ${GLOBAL_PROFILE}
 
-        INSTALL_COMMAND mkdir -p ${EXTPREFIX}/include/libde265/ &&
-                        cp -fv <BINARY_DIR>/libde265/de265-version.h ${EXTPREFIX}/include/libde265/ &&
-                        cp -fv <SOURCE_DIR>/libde265/de265.h ${EXTPREFIX}/include/libde265/ &&
-                        cp -fv <BINARY_DIR>/libde265/libde265.so ${EXTPREFIX}/lib/ &&
-                        cp -fv ${CMAKE_BINARY_DIR}/libde265.pc ${EXTPREFIX}/lib/pkgconfig/
+        INSTALL_COMMAND mkdir -p ${PREFIX_ext_heif}/include/libde265/ &&
+                        cp -fv <BINARY_DIR>/libde265/de265-version.h ${PREFIX_ext_heif}/include/libde265/ &&
+                        cp -fv <SOURCE_DIR>/libde265/de265.h ${PREFIX_ext_heif}/include/libde265/ &&
+                        cp -fv <BINARY_DIR>/libde265/libde265.so ${PREFIX_ext_heif}/lib/ &&
+                        cp -fv ${CMAKE_BINARY_DIR}/libde265.pc ${PREFIX_ext_heif}/lib/pkgconfig/
 
         UPDATE_COMMAND ""
         ALWAYS 0
@@ -153,8 +147,6 @@ else() # Linux
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
         URL https://github.com/strukturag/libheif/archive/v1.4.0.tar.gz
         URL_MD5 05dea500c105289c74270791cb5f8942
-
-        INSTALL_DIR ${PREFIX_ext_heif}
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_heif}
                    -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}

@@ -32,11 +32,11 @@
 // Qt includes
 
 #include <QGridLayout>
-#include <QLabel>
 #include <QPushButton>
 #include <QGroupBox>
-#include <QIcon>
+#include <QLabel>
 #include <QPoint>
+#include <QIcon>
 
 // KDE includes
 
@@ -86,13 +86,15 @@ public:
 
     DIntNumInput*                        radiusInput;
     DDoubleNumInput*                     blurPercent;
-    HealingCloneToolWidget*               previewWidget;
+    HealingCloneToolWidget*              previewWidget;
     EditorToolSettings*                  gboxSettings;
     QPushButton*                         srcButton;
     QPushButton*                         lassoButton;
     QPushButton*                         moveButton;
     QPushButton*                         undoCloneButton;
     QPushButton*                         redoCloneButton;
+
+    DImg                                 cloneImg;
 
     std::stack<DImg>                     undoStack;
     std::stack<DImg>                     redoStack;
@@ -136,8 +138,8 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     QLabel* const label  = new QLabel(i18n("Brush Radius:"));
     d->radiusInput       = new DIntNumInput();
-    d->radiusInput->setRange(0, 100, 1);
-    d->radiusInput->setDefaultValue(10);
+    d->radiusInput->setRange(0, 200, 1);
+    d->radiusInput->setDefaultValue(50);
     d->radiusInput->setWhatsThis(i18n("A radius of 0 has no effect, "
                                       "1 and above determine the brush radius "
                                       "that determines the size of parts copied in the image. \nShortcut :: [ and ]"));
@@ -145,7 +147,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
                                     "1 and above determine the brush radius "
                                     "that determines the size of parts copied in the image. \nShortcut :: [ and ]"));
 
-    d->previewWidget->setBrushRadius(d->radiusInput->value());
+    d->previewWidget->setBrushValue(d->radiusInput->value());
 
     // --------------------------------------------------------
 
@@ -163,24 +165,18 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    QPixmap sourcePixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                         QLatin1String("digikam/data/healing_clone_SRC.png")));
-    const QIcon sourceBtnIcon(sourcePixmap);
-    d->srcButton  = new QPushButton();
+    d->srcButton = new QPushButton();
     d->srcButton->setFixedSize(d->btnSize);
-    d->srcButton->setIcon(sourceBtnIcon);
+    d->srcButton->setIcon(QIcon::fromTheme(QLatin1String("crosshairs")));
     d->srcButton->setIconSize(d->iconSize);
     d->srcButton->setWhatsThis(i18n("Select Source Point.\nShortcut: S"));
     d->srcButton->setToolTip(i18n("Select Source Point.\nShortcut: S"));
 
     // --------------------------------------------------------
 
-    QPixmap lassoPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                        QLatin1String("digikam/data/healing_clone_LASSO.png")));
-    const QIcon lassoBtnIcon(lassoPixmap);
-    d->lassoButton  = new QPushButton();
+    d->lassoButton = new QPushButton();
     d->lassoButton->setFixedSize(d->btnSize);
-    d->lassoButton->setIcon(lassoBtnIcon);
+    d->lassoButton->setIcon(QIcon::fromTheme(QLatin1String("edit-select-lasso")));
     d->lassoButton->setIconSize(d->iconSize);
     d->lassoButton->setWhatsThis(i18n("Polygon Selection With Lasso.\nShortcut: L\n"
                                       "To Continue polygon, either press L or double click\n"
@@ -191,36 +187,27 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    QPixmap movePixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                       QLatin1String("digikam/data/healing_clone_MOVE.png")));
-    const QIcon moveBtnIcon(movePixmap);
-    d->moveButton  = new QPushButton();
+    d->moveButton = new QPushButton();
     d->moveButton->setFixedSize(d->btnSize);
-    d->moveButton->setIcon(moveBtnIcon);
+    d->moveButton->setIcon(QIcon::fromTheme(QLatin1String("transform-browse")));
     d->moveButton->setIconSize(d->iconSize);
     d->moveButton->setWhatsThis(i18n("Move Image.\nShortcut: M"));
     d->moveButton->setToolTip(i18n("Move Image.\nShortcut: M"));
 
     // --------------------------------------------------------
 
-    QPixmap undoPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                       QLatin1String("digikam/data/healing_clone_UNDO.png")));
-    const QIcon undoBtnIcon(undoPixmap);
-    d->undoCloneButton  = new QPushButton();
+    d->undoCloneButton = new QPushButton();
     d->undoCloneButton->setFixedSize(d->btnSize);
-    d->undoCloneButton->setIcon(undoBtnIcon);
+    d->undoCloneButton->setIcon(QIcon::fromTheme(QLatin1String("edit-undo")));
     d->undoCloneButton->setIconSize(d->iconSize);
     d->undoCloneButton->setWhatsThis(i18n("Undo clone operation.\nShortcut: CTRL+Z"));
     d->undoCloneButton->setToolTip(i18n("Undo clone operation.\nShortcut: CTRL+Z"));
 
     // --------------------------------------------------------
 
-    QPixmap redoPixmap(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                       QLatin1String("digikam/data/healing_clone_REDO.png")));
-    const QIcon redoBtnIcon(redoPixmap);
-    d->redoCloneButton  = new QPushButton();
+    d->redoCloneButton = new QPushButton();
     d->redoCloneButton->setFixedSize(d->btnSize);
-    d->redoCloneButton->setIcon(redoBtnIcon);
+    d->redoCloneButton->setIcon(QIcon::fromTheme(QLatin1String("edit-redo")));
     d->redoCloneButton->setIconSize(d->iconSize);
     d->redoCloneButton->setWhatsThis(i18n("Redo clone operation.\nShortcut: CTRL+Y"));
     d->redoCloneButton->setToolTip(i18n("Redo clone operation.\nShortcut: CTRL+Y"));
@@ -313,24 +300,26 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     connect(d->previewWidget, SIGNAL(signalResetLassoPoint()),
             this, SLOT(slotResetLassoPoints()));
 
-    connect(d->previewWidget,SIGNAL(signalContinuePolygon()),
+    connect(d->previewWidget, SIGNAL(signalContinuePolygon()),
             this, SLOT(slotContinuePolygon()));
 
-    connect(d->previewWidget,SIGNAL(signalIncreaseBrushRadius()),
+    connect(d->previewWidget, SIGNAL(signalIncreaseBrushRadius()),
             this, SLOT(slotIncreaseBrushRadius()));
 
-    connect(d->previewWidget,SIGNAL(signalDecreaseBrushRadius()),
+    connect(d->previewWidget, SIGNAL(signalDecreaseBrushRadius()),
             this, SLOT(slotDecreaseBrushRadius()));
 
     // undo - redo
-    connect(d->previewWidget,SIGNAL(signalPushToUndoStack()),
+    connect(d->previewWidget, SIGNAL(signalPushToUndoStack()),
             this, SLOT(slotPushToUndoStack()));
 
-    connect(d->previewWidget,SIGNAL(signalUndoClone()),
+    connect(d->previewWidget, SIGNAL(signalUndoClone()),
             this, SLOT(slotUndoClone()));
 
-    connect(d->previewWidget,SIGNAL(signalRedoClone()),
+    connect(d->previewWidget, SIGNAL(signalRedoClone()),
             this, SLOT(slotRedoClone()));
+
+    d->cloneImg = d->previewWidget->getOriginalImage();
 }
 
 HealingCloneTool::~HealingCloneTool()
@@ -358,9 +347,8 @@ void HealingCloneTool::writeSettings()
 void HealingCloneTool::finalRendering()
 {
     ImageIface iface;
-    DImg dest = d->previewWidget->getOriginalImage();
     FilterAction action(QLatin1String("digikam:healingCloneTool"), 1);
-    iface.setOriginal(i18n("healingClone"), action, dest);
+    iface.setOriginal(i18n("healingClone"), action, d->cloneImg);
 }
 
 void HealingCloneTool::slotResetSettings()
@@ -377,30 +365,20 @@ void HealingCloneTool::slotResized()
 
 void HealingCloneTool::slotReplace(const QPoint& srcPoint, const QPoint& dstPoint)
 {
-    DImg  current = d->previewWidget->getOriginalImage();
-    clone(&current, srcPoint, dstPoint, d->radiusInput->value());
+    clone(&d->cloneImg, srcPoint, dstPoint);
 }
 
 void HealingCloneTool::slotRadiusChanged(int r)
 {
-    d->previewWidget->setBrushRadius(r);
+    d->previewWidget->setBrushValue(r);
 }
 
 void HealingCloneTool::clone(DImg* const img,
                              const QPoint& srcPoint,
-                             const QPoint& dstPoint,
-                             int radius)
+                             const QPoint& dstPoint)
 {
-    ImageRegionItem* const item = dynamic_cast<ImageRegionItem*>(d->previewWidget->item());
-
-    if (!item)
-    {
-        return;
-    }
-
-    double scale                = item->zoomSettings()->zoomFactor();
-    radius                      = radius / scale;
-    double blurPercent          = d->blurPercent->value() / 100;
+    double blurPercent = d->blurPercent->value() / 100;
+    int    radius      = d->radiusInput->value();
 
     for (int i = -1 * radius ; i < radius ; ++i)
     {
@@ -462,7 +440,6 @@ void HealingCloneTool::updateLasso(std::vector<QPoint>& points)
 {
     uint radius              = 5;
     static uint colorCounter = 0;
-    DImg img                 = d->previewWidget->getOriginalImage();
 
     foreach (const QPoint& p, points)
     {
@@ -472,17 +449,17 @@ void HealingCloneTool::updateLasso(std::vector<QPoint>& points)
             {
                 uint x_shifted = p.x() + i;
                 uint y_shifted = p.y() + j;
-                DColor c       = img.getPixelColor(x_shifted, y_shifted);
+                DColor c       = d->cloneImg.getPixelColor(x_shifted, y_shifted);
 
                 d->lassoColorsMap.insert(std::make_pair(std::make_pair(x_shifted, y_shifted), c));
-                img.setPixelColor(x_shifted, y_shifted, d->lassoColors[(colorCounter) % d->lassoColors.size()]);
+                d->cloneImg.setPixelColor(x_shifted, y_shifted, d->lassoColors[(colorCounter) % d->lassoColors.size()]);
                 d->lassoFlags.at(x_shifted).at(y_shifted) = true;
                 colorCounter++;
             }
         }
     }
 
-    d->previewWidget->updateImage(img);
+    d->previewWidget->updateImage(d->cloneImg);
 }
 
 void HealingCloneTool::slotLasso(const QPoint& dst)
@@ -525,23 +502,21 @@ std::vector<QPoint> HealingCloneTool::interpolate(const QPoint& start, const QPo
 
 void HealingCloneTool::removeLassoPixels()
 {
-    DImg img = d->previewWidget->getOriginalImage();
     std::map<std::pair<int,int>, DColor>::iterator it;
 
     for (it = d->lassoColorsMap.begin() ; it != d->lassoColorsMap.end() ; it++)
     {
         std::pair<int,int> xy = it->first;
         DColor color          = it->second;
-        img.setPixelColor(xy.first, xy.second, color);
+        d->cloneImg.setPixelColor(xy.first, xy.second, color);
     }
 
-    d->previewWidget->updateImage(img);
+    d->previewWidget->updateImage(d->cloneImg);
 }
 
 void HealingCloneTool::redrawLassoPixels()
 {
     int colorCounter = 0;
-    DImg img         = d->previewWidget->getOriginalImage();
     std::map<std::pair<int,int>, DColor>::iterator it;
 
     for (it = d->lassoColorsMap.begin() ; it != d->lassoColorsMap.end() ; it++)
@@ -549,10 +524,10 @@ void HealingCloneTool::redrawLassoPixels()
         colorCounter++;
         DColor color          = d->lassoColors[(colorCounter) % d->lassoColors.size()];
         std::pair<int,int> xy = it->first;
-        img.setPixelColor(xy.first, xy.second, color);
+        d->cloneImg.setPixelColor(xy.first, xy.second, color);
     }
 
-    d->previewWidget->updateImage(img);
+    d->previewWidget->updateImage(d->cloneImg);
 }
 
 void HealingCloneTool::slotResetLassoPoints()
@@ -605,9 +580,8 @@ void HealingCloneTool::slotDecreaseBrushRadius()
 
 void HealingCloneTool::initializeLassoFlags()
 {
-    DImg img = d->previewWidget->getOriginalImage();
-    int w    = img.width();
-    int h    = img.height();
+    int w    = d->cloneImg.width();
+    int h    = d->cloneImg.height();
     d->lassoFlags.resize(w);
 
     for (int i = 0 ; i < w ; ++i)
@@ -641,9 +615,9 @@ void HealingCloneTool::slotUndoClone()
 
     removeLassoPixels();
     d->redoStack.push(d->previewWidget->getOriginalImage());
-    DImg temp = d->undoStack.top();
+    d->cloneImg = d->undoStack.top();
     d->undoStack.pop();
-    d->previewWidget->updateImage(temp);
+    d->previewWidget->updateImage(d->cloneImg);
     redrawLassoPixels();
 }
 
@@ -659,9 +633,9 @@ void HealingCloneTool::slotRedoClone()
     removeLassoPixels();
     d->undoStack.push(d->previewWidget->getOriginalImage());
 
-    DImg temp = d->redoStack.top();
+    d->cloneImg = d->redoStack.top();
     d->redoStack.pop();
-    d->previewWidget->updateImage(temp);
+    d->previewWidget->updateImage(d->cloneImg);
     redrawLassoPixels();
 }
 

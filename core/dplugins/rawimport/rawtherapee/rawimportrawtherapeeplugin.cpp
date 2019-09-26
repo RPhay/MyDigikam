@@ -39,6 +39,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "dimg.h"
 #include "loadingdescription.h"
 
@@ -128,6 +129,7 @@ bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding
     d->rawtherapee = new QProcess(this);
     d->rawtherapee->setProcessChannelMode(QProcess::MergedChannels);
     d->rawtherapee->setWorkingDirectory(d->fileInfo.path());
+    d->rawtherapee->setProcessEnvironment(adjustedEnvironmentForAppImage());
 
     connect(d->rawtherapee, SIGNAL(errorOccurred(QProcess::ProcessError)),
             this, SLOT(slotErrorOccurred(QProcess::ProcessError)));
