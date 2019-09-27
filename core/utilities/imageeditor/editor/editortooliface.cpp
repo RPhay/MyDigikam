@@ -51,18 +51,19 @@ public:
 
     explicit Private()
       : toolsIconView(nullptr),
+        lastActiveTab(nullptr),
         tool(nullptr),
         editor(nullptr),
-        sidebarWasExpanded(false),
-        toolsViewSelected(false)
+        splitterSize(0)
     {
     }
 
     DCategorizedView* toolsIconView;
+    QWidget*          lastActiveTab;
     EditorTool*       tool;
     EditorWindow*     editor;
-    bool              sidebarWasExpanded;
-    bool              toolsViewSelected;
+
+    int               splitterSize;
 };
 
 EditorToolIface* EditorToolIface::m_iface = nullptr;
@@ -111,13 +112,20 @@ void EditorToolIface::loadTool(EditorTool* const tool)
         unLoadTool();
     }
 
-    d->tool = tool;
+    d->tool          = tool;
+    d->lastActiveTab = d->editor->rightSideBar()->getActiveTab();
+    d->splitterSize  = d->editor->sidebarSplitter()->size(d->editor->rightSideBar());
+
     d->editor->editorStackView()->setToolView(d->tool->toolView());
     d->editor->editorStackView()->setViewMode(EditorStackView::ToolViewMode);
-    d->toolsViewSelected = (d->editor->rightSideBar()->getActiveTab() == d->toolsIconView);
+
     d->editor->rightSideBar()->deleteTab(d->toolsIconView);
     d->editor->rightSideBar()->appendTab(d->tool->toolSettings(), d->tool->toolIcon(), d->tool->toolName());
     d->editor->rightSideBar()->setActiveTab(d->tool->toolSettings());
+
+    int w = qMax(d->splitterSize, d->tool->toolSettings()->minimumSizeHint().width());
+    d->editor->sidebarSplitter()->setSize(d->editor->rightSideBar(), w);
+
     d->editor->toggleActions(false);
     d->editor->toggleToolActions(d->tool);
 
@@ -207,12 +215,14 @@ void EditorToolIface::unLoadTool()
                                          QIcon::fromTheme(QLatin1String("document-edit")),
                                          i18n("Tools"));
 
-    if (d->toolsViewSelected)
-    {
-        d->editor->rightSideBar()->setActiveTab(d->toolsIconView);
-    }
+    d->editor->rightSideBar()->setActiveTab(d->lastActiveTab);
 
-    if (!d->editor->rightSideBar()->isVisible())
+    if (d->splitterSize > 0)
+    {
+        d->editor->sidebarSplitter()->setSize(d->editor->rightSideBar(),
+                                              d->splitterSize);
+    }
+    else
     {
         d->editor->rightSideBar()->shrink();
     }

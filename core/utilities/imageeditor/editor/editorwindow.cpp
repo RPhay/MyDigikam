@@ -193,6 +193,11 @@ EditorWindow::~EditorWindow()
     delete d;
 }
 
+SidebarSplitter* EditorWindow::sidebarSplitter() const
+{
+    return m_splitter;
+}
+
 EditorStackView* EditorWindow::editorStackView() const
 {
     return m_stackView;

@@ -221,6 +221,7 @@ protected:
     void addServicesMenuForUrl(const QUrl& url);
     void openWith(const QUrl& url, QAction* action);
 
+    SidebarSplitter*           sidebarSplitter()  const;
     EditorStackView*           editorStackView()  const;
     ExposureSettingsContainer* exposureSettings() const;
 
