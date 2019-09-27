@@ -164,6 +164,8 @@ LensFunCameraSelector::LensFunCameraSelector(QWidget* const parent)
     d->lensLabel         = new QLabel(i18nc("camera lens",  "Lens:"),  hbox3);
     QLabel* const space3 = new QLabel(hbox3);
     d->lensDescription   = new DAdjustableLabel(hbox3);
+    // Workaround for layout problem with long lens names.
+    d->lensDescription->setAdjustedText(QString(40, QLatin1Char(' ')));
     d->lensDescription->setAlignment(Qt::AlignVCenter | Qt::AlignRight);
     d->lensDescription->setWhatsThis(i18n("This is the lens description string found in image meta-data. "
                                           "This one is used to query and found relevant lens information from Lensfun database."));
