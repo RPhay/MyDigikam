@@ -319,9 +319,10 @@ QSize EditorToolSettings::minimumSizeHint() const
     }
 
     QRect desktopRect = screen->geometry();
-    int wSB           = verticalScrollBar()->height();
     QSize hint        = QScrollArea::minimumSizeHint();
+    int wSB           = verticalScrollBar()->sizeHint().width();
     hint.setWidth(qMin(d->settingsArea->sizeHint().width() + wSB, desktopRect.width() * 2 / 5));
+
     return hint;
 }
 
