@@ -184,32 +184,11 @@ bool DImgImageMagickPlugin::canRead(const QString& filePath) const
         return false;
     }
 
-    // Ignore native loaders.
+    QString format    = QFileInfo(filePath).suffix().toUpper();
+    QString blackList = QString::fromLatin1(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper(); // Ignore RAW files
+    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC "));            // Ignore native loaders
 
-    if (
-        mimeType.contains(QLatin1String("image/jpeg"))  ||
-        mimeType.contains(QLatin1String("image/jpg"))   ||
-        mimeType.contains(QLatin1String("image/jpe"))   ||
-        mimeType.contains(QLatin1String("image/png"))   ||
-        mimeType.contains(QLatin1String("image/tif"))   ||
-        mimeType.contains(QLatin1String("image/tiff"))  ||
-        mimeType.contains(QLatin1String("image/x-pgf")) ||
-        mimeType.contains(QLatin1String("image/jp2"))   ||
-        mimeType.contains(QLatin1String("image/jpx"))   ||
-        mimeType.contains(QLatin1String("image/jpc"))   ||
-        mimeType.contains(QLatin1String("image/j2k"))   ||
-        mimeType.contains(QLatin1String("image/pgx"))
-       )
-    {
-        return false;
-    }
-
-    // Ignore RAW files
-
-    QString ext         = QFileInfo(filePath).suffix().toUpper();
-    QString rawFilesExt = QString::fromLatin1(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();
-
-    if (rawFilesExt.toUpper().contains(ext))
+    if (blackList.toUpper().contains(format))
     {
         return false;
     }
@@ -233,7 +212,7 @@ bool DImgImageMagickPlugin::canRead(const QString& filePath) const
         }
     }
 
-    if (!formats.contains(ext))
+    if (!formats.contains(format))
     {
         return false;
     }
@@ -244,7 +223,7 @@ bool DImgImageMagickPlugin::canRead(const QString& filePath) const
 bool DImgImageMagickPlugin::canWrite(const QString& format) const
 {
     QString blackList = QString::fromLatin1(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper(); // Ignore RAW files
-    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX "));                 // Ignore native loaders
+    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC "));            // Ignore native loaders
 
     if (blackList.toUpper().contains(format))
     {

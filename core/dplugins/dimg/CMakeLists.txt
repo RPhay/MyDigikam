@@ -10,6 +10,7 @@ add_subdirectory(tiff)
 add_subdirectory(pgf)
 add_subdirectory(raw)
 add_subdirectory(qimage)
+add_subdirectory(heif)
 
 if(Jasper_FOUND)
     add_subdirectory(jpeg2000)
