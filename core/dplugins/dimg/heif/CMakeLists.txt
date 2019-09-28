@@ -171,15 +171,8 @@ endif()
 
 if(WIN32)
     set(libde265_SRCS ${libde265_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/libde265/extra/win32cond.h
-        ${CMAKE_CURRENT_SOURCE_DIR}/libde265/extra/win32cond.c
+        ${CMAKE_CURRENT_SOURCE_DIR}/libde265/extra/win32cond.cc
     )
-
-    foreach(_currentfile ${libde265_SRCS})
-        if(NOT MSVC)
-            set_source_files_properties(${_currentfile} PROPERTIES COMPILE_FLAGS "-std=c99")
-        endif()
-     endforeach()
 endif()
 
 foreach(_currentfile ${libde265_SRCS})
