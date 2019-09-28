@@ -170,7 +170,10 @@ if(SUPPORTS_SSE4_1)
 endif()
 
 if(WIN32)
-    set(libde265_SRCS ${libde265_SRCS} ${CMAKE_CURRENT_SOURCE_DIR}/libde265/extra/win32cond.c)
+    set(libde265_SRCS ${libde265_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/libde265/extra/win32cond.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/libde265/extra/win32cond.c
+    )
 
     foreach(_currentfile ${libde265_SRCS})
         if(NOT MSVC)
