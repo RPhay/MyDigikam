@@ -30,6 +30,7 @@
 #include "metaengine.h"
 #include "dimg.h"
 #include "drawdecoding.h"
+#include "dpluginloader.h"
 
 using namespace Digikam;
 
@@ -46,8 +47,10 @@ int main(int argc, char** argv)
 
     MetaEngine::initializeExiv2();
 
+    DPluginLoader::instance()->init();
+
     QFileInfo input(QString::fromUtf8(argv[1]));
-    QString   outFilePath(input.baseName() + QLatin1String(".out"));
+    QString   outFilePath(input.baseName() + QLatin1String(".png"));
 
     DRawDecoderSettings settings;
     settings.halfSizeColorImage    = false;
@@ -56,7 +59,13 @@ int main(int argc, char** argv)
     settings.RAWQuality            = DRawDecoderSettings::BILINEAR;
 
     DImg img(input.filePath(), nullptr, DRawDecoding(settings));
-    img.save(outFilePath, QLatin1String("webp"));
+
+    if (!img.isNull())
+    {
+        img.save(outFilePath, QLatin1String("png"));
+    }
+
+    DPluginLoader::instance()->cleanUp();
 
     MetaEngine::cleanupExiv2();
 

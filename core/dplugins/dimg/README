@@ -6,9 +6,10 @@ Format  Read  Write  ICC   MetaData  Thumb   8bits    16bits  dependency
 JPG     Done  Done   Done  Done      Done    yes      N.A     libjpeg
 PNG     Done  Done   Done  Done      N.A     yes      yes     libpng
 TIF/EP  Done  Done   Done  Done      Done    yes      yes     libtiff
-RAW     Done  N.A    N.A   Done      Done    yes      yes     libraw
-PGF     Done  Done   TODO  Done      N.A     yes      yes     libpgf
+RAW     Done  N.A    N.A   Done      Done    yes      yes     libraw             (internal)
+PGF     Done  Done   TODO  Done      N.A     yes      yes     libpgf             (internal)
 JPEG2K  Done  Done   Done  Done      N.A     yes      yes     libjasper
+HEIF    Done  TODO   TODO  TODO      Done    yes      yes     libheif + libde265 (internal)
 
 Others file formats are supported:
 - in 8 bits/color/pixel only using Qt plugin loaders (QImage and KImageFormat plugins - "KIMG") and mostly in read only.
@@ -53,7 +54,6 @@ ICO      yes        no         Windows icon format                             I
 MNG      yes        yes        Multiple-image Network Graphics                 IM
 SVG      yes        yes        Scalable Vector Graphics                        IM
 WEBP     yes        yes        Weppy image format                              IM
-HEIF     yes        yes        Apple High efficiency Image Format              IM
 FIT/FITS yes        yes        Flexible Image Transport System                 IM
 FLIF     yes        yes        Free Lossless Image Format                      IM
 JBIG     yes        yes        Joint Bi-level Image                            IM

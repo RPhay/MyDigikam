@@ -140,43 +140,51 @@ public:
             {
                 DPluginDImg* const plug = dynamic_cast<DPluginDImg*>(p);
 
-                if (plug && (plug->canRead(filePath)))
+                if (plug)
                 {
-                    name = plug->loaderName();
+/*
+                    qCDebug(DIGIKAM_DIMG_LOG) << filePath << "=>"
+                                              << plug->loaderName() << ":: can read:"
+                                              << plug->canRead(filePath);
+*/
+                    if (plug->canRead(filePath))
+                    {
+                        name = plug->loaderName();
 
-                    if (name.isNull())
-                    {
-                        format = DImg::NONE;
-                    }
-                    else if (name == QLatin1String("JPG"))
-                    {
-                        format = DImg::JPEG;
-                    }
-                    else if (name == QLatin1String("PNG"))
-                    {
-                        format = DImg::PNG;
-                    }
-                    else if (name == QLatin1String("TIF"))
-                    {
-                        format = DImg::TIFF;
-                    }
-                    else if (name == QLatin1String("RAW"))
-                    {
-                        format = DImg::RAW;
-                    }
-                    else if (name == QLatin1String("JP2"))
-                    {
-                        format = DImg::JP2K;
-                    }
-                    else if (name == QLatin1String("PGF"))
-                    {
-                        format = DImg::PGF;
-                    }
+                        if (name.isNull())
+                        {
+                            format = DImg::NONE;
+                        }
+                        else if (name == QLatin1String("JPG"))
+                        {
+                            format = DImg::JPEG;
+                        }
+                        else if (name == QLatin1String("PNG"))
+                        {
+                            format = DImg::PNG;
+                        }
+                        else if (name == QLatin1String("TIF"))
+                        {
+                            format = DImg::TIFF;
+                        }
+                        else if (name == QLatin1String("RAW"))
+                        {
+                            format = DImg::RAW;
+                        }
+                        else if (name == QLatin1String("JP2"))
+                        {
+                            format = DImg::JP2K;
+                        }
+                        else if (name == QLatin1String("PGF"))
+                        {
+                            format = DImg::PGF;
+                        }
 
-                    // In others cases, ImageMagick or QImage will be used to try to open file.
-                    format = DImg::QIMAGE;
+                        // In others cases, ImageMagick or QImage will be used to try to open file.
+                        format = DImg::QIMAGE;
 
-                    return plug;
+                        return plug;
+                    }
                 }
             }
         }
