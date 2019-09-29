@@ -113,10 +113,13 @@ void TagFolderView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
         return;
     }
 
-    cmh.addActionNewTag(tagModificationHelper(), tag);
+    if (tag->id() != FaceTags::unconfirmedPersonTagId() && tag->id() != FaceTags::unknownPersonTagId())
+    {
+        cmh.addActionNewTag(tagModificationHelper(), tag);
 #ifdef HAVE_AKONADICONTACT
-    cmh.addCreateTagFromAddressbookMenu();
+        cmh.addCreateTagFromAddressbookMenu();
 #endif
+    }
     cmh.addAction(d->resetIconAction);
     cmh.addSeparator();
 
@@ -140,23 +143,12 @@ void TagFolderView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
     cmh.addExportMenu();
     cmh.addSeparator();
 
-    if (d->showDeleteFaceTagsAction)
-    {
-        cmh.addActionDeleteFaceTag(tagModificationHelper(), tag);
-        cmh.addSeparator();
-    }
-    else
+    if (tag->id() != FaceTags::unconfirmedPersonTagId() && tag->id() != FaceTags::unknownPersonTagId())
     {
         cmh.addActionDeleteTag(tagModificationHelper(), tag);
         cmh.addSeparator();
-        // If the tag is no face tag, add the option to set it as face tag.
-        if (!FaceTags::isPerson(tag->id()) && !tag->isRoot())
-        {
-            cmh.addActionTagToFaceTag(tagModificationHelper(), tag);
-        }
+        cmh.addActionEditTag(tagModificationHelper(), tag);
     }
-
-    cmh.addActionEditTag(tagModificationHelper(), tag);
 
     connect(&cmh, SIGNAL(signalAddNewTagFromABCMenu(QString)),
             this, SLOT(slotTagNewFromABCMenu(QString)));
@@ -300,24 +292,25 @@ void TagFolderView::setContexMenuItems(ContextMenuHelper& cmh, const QList<TAlbu
     cmh.addExportMenu();
     cmh.addSeparator();
 
-    if (d->showDeleteFaceTagsAction)
-    {
-        cmh.addActionDeleteFaceTags(tagModificationHelper(), albums);
-    }
-    else
-    {
-        cmh.addActionDeleteTags(tagModificationHelper(), albums);
-        // If one of the selected tags is no face tag, add the action to mark them as face tags.
-        foreach (TAlbum* const tag, albums)
-        {
-            if (!FaceTags::isPerson(tag->id()))
-            {
-                cmh.addSeparator();
-                cmh.addActionTagToFaceTag(tagModificationHelper(), tag);
-                break;
-            }
-        }
-    }
+//    if (d->showDeleteFaceTagsAction)
+//    {
+//        cmh.addActionDeleteFaceTags(tagModificationHelper(), albums);
+//    }
+//    else
+//    {
+//        cmh.addActionDeleteTags(tagModificationHelper(), albums);
+//        // If one of the selected tags is no face tag, add the action to mark them as face tags.
+//        foreach (TAlbum* const tag, albums)
+//        {
+//            if (!FaceTags::isPerson(tag->id()))
+//            {
+//                cmh.addSeparator();
+//                cmh.addActionTagToFaceTag(tagModificationHelper(), tag);
+//                break;
+//            }
+//        }
+//    }
+    cmh.addActionDeleteTags(tagModificationHelper(), albums);
 
     cmh.addSeparator();
 }

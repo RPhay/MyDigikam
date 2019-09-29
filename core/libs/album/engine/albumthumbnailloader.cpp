@@ -44,11 +44,13 @@
 #include "metaenginesettings.h"
 #include "thumbnailloadthread.h"
 #include "thumbnailsize.h"
+#include "facetagseditor.h"
+#include "thumbnailcreator.h"
 
 namespace Digikam
 {
 
-typedef QMap<qlonglong, QList<int> > IdAlbumMap;
+typedef QMap<QPair<qlonglong, QString>, QList<int> > IdAlbumMap;
 typedef QMap<int, QPixmap>           AlbumThumbnailMap;
 
 class Q_DECL_HIDDEN AlbumThumbnailLoaderCreator
@@ -306,8 +308,23 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
         return;
     }
 
+    //Finding face rect to identify correct tag
+    QRect faceRect = QRect();
+    if (album->type() == Album::TAG && static_cast<TAlbum*>(album)->hasProperty(TagPropertyName::person())) {
+        QList<FaceTagsIface> faces = FaceTagsEditor().databaseFaces(id);
+        foreach(const FaceTagsIface& face, faces) {
+            if (face.tagId() == album->id()) {
+                faceRect = face.region().toRect();
+            }
+        }
+    }
+
+    //Simple way to put QRect into QMap
+    QString faceRectStr = QString(QLatin1String("%1%2%3%4"))
+            .arg(faceRect.x()).arg(faceRect.y()).arg(faceRect.right()).arg(faceRect.bottom());
+
     // Check if the URL has already been added
-    IdAlbumMap::iterator it = d->idAlbumMap.find(id);
+    IdAlbumMap::iterator it = d->idAlbumMap.find(QPair<qlonglong, QString>(id, faceRectStr));
 
     if (it == d->idAlbumMap.end())
     {
@@ -327,8 +344,11 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
                         Qt::QueuedConnection);
             }
 
-            // use the asynchronous version - with queued connections, see above
-            d->iconTagThumbThread->find(ItemInfo::thumbnailIdentifier(id));
+            if (static_cast<TAlbum*>(album)->hasProperty(TagPropertyName::person())) {
+                d->iconTagThumbThread->find(ItemInfo::thumbnailIdentifier(id), faceRect);
+            } else {
+                d->iconTagThumbThread->find(ItemInfo::thumbnailIdentifier(id));
+            }
         }
         else
         {
@@ -348,7 +368,7 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
         }
 
         // insert new entry to map, add album globalID
-        QList<int> &list = d->idAlbumMap[id];
+        QList<int> &list = d->idAlbumMap[QPair<qlonglong, QString>(id, faceRectStr)];
         list.removeAll(album->globalID());
         list.append(album->globalID());
     }
@@ -399,8 +419,16 @@ void AlbumThumbnailLoader::slotGotThumbnailFromIcon(const LoadingDescription& lo
     // We need to find all albums for which the given url has been requested,
     // and emit a signal for each album.
 
+    QRect faceRect = QRect();
+    if (loadingDescription.previewParameters.extraParameter.type() == QVariant::Rect){
+        faceRect = loadingDescription.previewParameters.extraParameter.toRect();
+    }
+    //Simple way to put QRect into QMap
+    QString faceRectStr = QString(QLatin1String("%1%2%3%4"))
+            .arg(faceRect.x()).arg(faceRect.y()).arg(faceRect.right()).arg(faceRect.bottom());
+
     ThumbnailIdentifier id = loadingDescription.thumbnailIdentifier();
-    IdAlbumMap::iterator it = d->idAlbumMap.find(id.id);
+    IdAlbumMap::iterator it = d->idAlbumMap.find(QPair<qlonglong, QString>(id.id, faceRectStr));
 
     if (it != d->idAlbumMap.end())
     {

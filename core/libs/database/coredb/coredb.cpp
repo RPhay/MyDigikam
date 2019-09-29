@@ -65,9 +65,11 @@ public:
 
     static const QString configGroupName;
     static const QString configRecentlyUsedTags;
+    static const QString configRecentlyUsedFaceTags;
 
     CoreDbBackend*       db;
     QList<int>           recentlyAssignedTags;
+    QList<int>           recentlyAssignedFaceTags;
 
     int                  uniqueHashVersion;
 
@@ -79,6 +81,7 @@ public:
 
 const QString CoreDB::Private::configGroupName(QLatin1String("CoreDB Settings"));
 const QString CoreDB::Private::configRecentlyUsedTags(QLatin1String("Recently Used Tags"));
+const QString CoreDB::Private::configRecentlyUsedFaceTags(QLatin1String("Recently Used Face Tags"));
 
 QString CoreDB::Private::constructRelatedImagesSQL(bool fromOrTo, DatabaseRelation::Type type, bool boolean)
 {
@@ -3060,13 +3063,26 @@ void CoreDB::addItemTag(qlonglong imageID, int tagID)
     if (TagsCache::instance()->isInternalTag(tagID))
         return;
 
-    //move current tag to front
-    d->recentlyAssignedTags.removeAll(tagID);
-    d->recentlyAssignedTags.prepend(tagID);
-
-    if (d->recentlyAssignedTags.size() > 10)
+    //don't mix face tags and common tags
+    if (TagsCache::instance()->hasProperty(tagID, TagPropertyName::person()))
     {
-        d->recentlyAssignedTags.removeLast();
+        //move current tag to front
+        d->recentlyAssignedFaceTags.removeAll(tagID);
+        d->recentlyAssignedFaceTags.prepend(tagID);
+
+        if (d->recentlyAssignedFaceTags.size() > 10)
+        {
+            d->recentlyAssignedFaceTags.removeLast();
+        }
+    } else {
+        //move current tag to front
+        d->recentlyAssignedTags.removeAll(tagID);
+        d->recentlyAssignedTags.prepend(tagID);
+
+        if (d->recentlyAssignedTags.size() > 10)
+        {
+            d->recentlyAssignedTags.removeLast();
+        }
     }
 }
 
@@ -3106,6 +3122,11 @@ void CoreDB::addTagsToItems(QList<qlonglong> imageIDs, QList<int> tagIDs)
 QList<int> CoreDB::getRecentlyAssignedTags() const
 {
     return d->recentlyAssignedTags;
+}
+
+QList<int> CoreDB::getRecentlyAssignedFaceTags() const
+{
+    return d->recentlyAssignedFaceTags;
 }
 
 void CoreDB::removeItemTag(qlonglong imageID, int tagID)
@@ -4526,6 +4547,7 @@ void CoreDB::readSettings()
     KConfigGroup group        = config->group(d->configGroupName);
 
     d->recentlyAssignedTags = group.readEntry(d->configRecentlyUsedTags, QList<int>());
+    d->recentlyAssignedFaceTags = group.readEntry(d->configRecentlyUsedFaceTags, QList<int>());
 }
 
 void CoreDB::writeSettings()
@@ -4534,6 +4556,7 @@ void CoreDB::writeSettings()
     KConfigGroup group        = config->group(d->configGroupName);
 
     group.writeEntry(d->configRecentlyUsedTags, d->recentlyAssignedTags);
+    group.writeEntry(d->configRecentlyUsedFaceTags, d->recentlyAssignedFaceTags);
 }
 
 } // namespace Digikam

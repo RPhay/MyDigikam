@@ -69,6 +69,7 @@
 #include "labelstreeview.h"
 #include "coredb.h"
 #include "dexpanderbox.h"
+#include "facetags.h"
 
 namespace Digikam
 {
@@ -247,9 +248,13 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
     d->tagFolderView->setExpandNewCurrentItem(true);
     d->tagFolderView->setAlbumManagerCurrentAlbum(true);
 
+    d->tagFolderView->filteredModel()->doNotListTagsWithProperty(TagPropertyName::person());
+    d->tagFolderView->filteredModel()->setFilterBehavior(AlbumFilterModel::StrictFiltering);
+
     d->tagSearchBar  = new SearchTextBar(this, QLatin1String("ItemIconViewTagSearchBar"));
     d->tagSearchBar->setHighlightOnResult(true);
-    d->tagSearchBar->setModel(model, AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
+    d->tagSearchBar->setModel(d->tagFolderView->filteredModel(),
+                              AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
     d->tagSearchBar->setFilterModel(d->tagFolderView->albumFilterModel());
 
     layout->addWidget(d->openTagMngr);
@@ -1445,7 +1450,7 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
     d->personIcon     = new QLabel;
     d->personIcon->setPixmap(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(48));
 
-    d->textLabel      = new QLabel(i18n("People Tags"));
+    d->textLabel      = new QLabel(i18n("People"));
 
     hlay->addWidget(d->personIcon);
     hlay->addWidget(d->textLabel);
@@ -1463,6 +1468,12 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
 
     connect(d->rescanButton, SIGNAL(pressed()),
             this, SLOT(slotScanForFaces()) );
+
+    connect(AlbumManager::instance(), SIGNAL(signalAllAlbumsLoaded()), d->tagFolderView, SLOT(setPeopleAsRoot()));
+
+    //Have to do like this
+    //Something strange is happening when trying to access filteredModel()->filterChanged() signal
+    connect(d->tagSearchBar, &SearchTextBar::signalSearchTextSettings, d->tagFolderView, &TagFolderView::setPeopleAsRoot);
 }
 
 PeopleSideBarWidget::~PeopleSideBarWidget()
