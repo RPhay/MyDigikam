@@ -98,30 +98,10 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     // Initialize HEIF API.
 
     heif_item_id primary_image_id;
-    struct heif_error error;
 
     struct heif_context* const heif_context = heif_context_alloc();
-
-#ifdef Q_OS_WIN32
-
-#   ifdef UNICODE
-    error = heif_context_read_from_file(heif_context,
-                                        (LPCWSTR)filePath.utf16(),
-                                        NULL);
-
-#   else
-    error = heif_context_read_from_file(heif_context,
-                                        QFile::encodeName(filePath).constData(),
-                                        NULL);
-#   endif
-
-#else
-
-    error = heif_context_read_from_file(heif_context,
-                                        QFile::encodeName(filePath).constData(),
-                                        NULL);
-
-#endif
+    struct heif_error error                 = heif_context_read_from_file(heif_context,
+                                              QFile::encodeName(filePath).constData(), NULL);
 
     if (!isHeifSuccess(&error))
     {

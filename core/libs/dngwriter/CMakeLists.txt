@@ -25,7 +25,7 @@ include_directories(
 
 #------------------------------------------------------------------------------------
 
-set(libmd5_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/extra/md5/MD5.cpp)
+set(libmd5_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/extra/md5/XMP_MD5.cpp)
 
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
 foreach(_currentfile ${libmd5_SRCS})

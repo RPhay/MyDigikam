@@ -14,8 +14,8 @@ include_directories($<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-include (CheckFunctionExists)
-include (CheckIncludeFile)
+include(CheckFunctionExists)
+include(CheckIncludeFile)
 
 CHECK_FUNCTION_EXISTS(posix_memalign HAVE_POSIX_MEMALIGN)
 CHECK_INCLUDE_FILE(malloc.h HAVE_MALLOC_H)
@@ -26,36 +26,36 @@ CHECK_INCLUDE_FILE(stddef.h HAVE_STDDEF_H)
 CHECK_INCLUDE_FILE(strings.h HAVE_STRINGS_H)
 CHECK_INCLUDE_FILE(unistd.h HAVE_UNISTD_H)
 
-if (HAVE_INTTYPES_H)
-  add_definitions(-DHAVE_INTTYPES_H)
+if(HAVE_INTTYPES_H)
+    add_definitions(-DHAVE_INTTYPES_H)
 endif()
 
-if (HAVE_STDDEF_H)
-  add_definitions(-DHAVE_STDDEF_H)
+if(HAVE_STDDEF_H)
+    add_definitions(-DHAVE_STDDEF_H)
 endif()
 
-if (HAVE_STRINGS_H)
-  add_definitions(-DHAVE_STRINGS_H)
+if(HAVE_STRINGS_H)
+    add_definitions(-DHAVE_STRINGS_H)
 endif()
 
-if (HAVE_UNISTD_H)
-  add_definitions(-DHAVE_UNISTD_H)
+if(HAVE_UNISTD_H)
+    add_definitions(-DHAVE_UNISTD_H)
 endif()
 
-if (HAVE_MALLOC_H)
-  add_definitions(-DHAVE_MALLOC_H)
+if(HAVE_MALLOC_H)
+    add_definitions(-DHAVE_MALLOC_H)
 endif()
 
-if (HAVE_STDINT_H)
-  add_definitions(-DHAVE_STDINT_H)
+if(HAVE_STDINT_H)
+    add_definitions(-DHAVE_STDINT_H)
 endif()
 
-if (HAVE_STDBOOL_H)
-  add_definitions(-DHAVE_STDBOOL_H)
+if(HAVE_STDBOOL_H)
+    add_definitions(-DHAVE_STDBOOL_H)
 endif()
 
-if (HAVE_POSIX_MEMALIGN)
-  add_definitions(-DHAVE_POSIX_MEMALIGN)
+if(HAVE_POSIX_MEMALIGN)
+    add_definitions(-DHAVE_POSIX_MEMALIGN)
 endif()
 
 add_definitions(-DHAVE_LIBDE265=1)
@@ -154,6 +154,12 @@ set(libde265_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/libde265/encoder/algo/tb-rateestim.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/libde265/encoder/algo/pb-mv.cc
 )
+
+if(WIN32)
+    set(libde265_SRCS ${libde265_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/libde265/extra/win32cond.cc
+    )
+endif()
 
 foreach(_currentfile ${libde265_SRCS})
     if(NOT MSVC)

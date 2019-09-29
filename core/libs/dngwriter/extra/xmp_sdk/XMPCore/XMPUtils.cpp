@@ -10,7 +10,7 @@
 #include "XMPCore_Impl.hpp"
 #include "XMPUtils.hpp"
 
-#include "MD5.h"
+#include "XMP_MD5.h"
 
 #include <map>
 

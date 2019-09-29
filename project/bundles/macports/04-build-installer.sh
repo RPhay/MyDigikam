@@ -112,6 +112,8 @@ lib/mariadb/bin/mysqladmin \
 lib/mariadb/bin/mysqltest \
 lib/mariadb/mysql/*.dylib \
 lib/mariadb/plugin/*.so \
+lib/ImageMagick-6.9.9/modules-Q16/coders/*.so \
+lib/ImageMagick-6.9.9/modules-Q16/filters/*.so \
 bin/kbuildsycoca5 \
 libexec/qt5/plugins/imageformats/*.dylib \
 libexec/qt5/plugins/sqldrivers/*.dylib \
@@ -134,6 +136,7 @@ lib/plugins \
 lib/libgphoto2 \
 lib/libgphoto2_port \
 lib/mariadb \
+lib/ImageMagick-6.9.9 \
 share/mariadb \
 etc/xdg \
 "

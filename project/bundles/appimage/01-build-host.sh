@@ -139,7 +139,8 @@ urpmi --auto \
       ${LIBSUFFIX}icu-devel \
       ${LIBSUFFIX}lqr-devel \
       ${LIBSUFFIX}fftw-devel \
-      ${LIBSUFFIX}curl-devel
+      ${LIBSUFFIX}curl-devel \ 
+      ${LIBSUFFIX}magick-devel
 
 #################################################################################################
 
@@ -147,7 +148,6 @@ echo -e "---------- Clean-up Old Packages\n"
 
 # Remove system based devel package to prevent conflict with new one.
 urpme --auto --force ${LIBSUFFIX}qt5core5 || true
-urpme --auto -a lib64magick || true
 
 #################################################################################################
 
@@ -197,8 +197,6 @@ cmake --build . --config RelWithDebInfo --target ext_qtav          -- -j$CPU_COR
 cmake --build . --config RelWithDebInfo --target ext_exiv2         -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_opencv        -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_lensfun       -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_heif          -- -j$CPU_CORES
-cmake --build . --config RelWithDebInfo --target ext_imagemagick   -- -j$CPU_CORES
 
 #################################################################################################
 

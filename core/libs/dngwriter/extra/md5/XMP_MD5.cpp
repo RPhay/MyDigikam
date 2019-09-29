@@ -1,4 +1,4 @@
-#include "MD5.h"
+#include "XMP_MD5.h"
 
 #include <cassert>
 #include <cstring>
