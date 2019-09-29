@@ -55,10 +55,6 @@ DPlugin::~DPlugin()
     delete d;
 }
 
-void DPlugin::cleanUp()
-{
-}
-
 QString DPlugin::libraryFileName() const
 {
     return d->libraryFileName;
