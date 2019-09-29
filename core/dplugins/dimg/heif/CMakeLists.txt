@@ -16,10 +16,8 @@ include_directories($<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
 
 include(CheckFunctionExists)
 include(CheckIncludeFile)
-include(CheckCCompilerFlag)
 
 CHECK_FUNCTION_EXISTS(posix_memalign HAVE_POSIX_MEMALIGN)
-CHECK_C_COMPILER_FLAG(-msse4.1 SUPPORTS_SSE4_1)
 CHECK_INCLUDE_FILE(malloc.h HAVE_MALLOC_H)
 CHECK_INCLUDE_FILE(stdint.h HAVE_STDINT_H)
 CHECK_INCLUDE_FILE(stdbool.h HAVE_STDBOOL_H)
@@ -58,10 +56,6 @@ endif()
 
 if(HAVE_POSIX_MEMALIGN)
     add_definitions(-DHAVE_POSIX_MEMALIGN)
-endif()
-
-if(SUPPORTS_SSE4_1)
-    add_definitions(-DHAVE_SSE4_1)
 endif()
 
 add_definitions(-DHAVE_LIBDE265=1)
@@ -161,14 +155,6 @@ set(libde265_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/libde265/encoder/algo/pb-mv.cc
 )
 
-if(SUPPORTS_SSE4_1)
-    set(libde265_SRCS ${libde265_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/libde265/x86/sse.cc
-        ${CMAKE_CURRENT_SOURCE_DIR}/libde265/x86/sse-motion.cc
-        ${CMAKE_CURRENT_SOURCE_DIR}/libde265/x86/sse-dct.cc
-    )
-endif()
-
 if(WIN32)
     set(libde265_SRCS ${libde265_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/libde265/extra/win32cond.cc
@@ -178,10 +164,6 @@ endif()
 foreach(_currentfile ${libde265_SRCS})
     if(NOT MSVC)
         set_source_files_properties(${_currentfile} PROPERTIES COMPILE_FLAGS "-w")
-
-        if(SUPPORTS_SSE4_1)
-            set_source_files_properties(${_currentfile} PROPERTIES COMPILE_FLAGS "-msse4.1")
-        endif()
     endif()
 endforeach()
 
