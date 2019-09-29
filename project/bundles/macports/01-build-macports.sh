@@ -247,6 +247,7 @@ port install \
              libical \
              lensfun \
              bison \
+             x265 \
              ffmpeg \
              qt5-qtbase \
              qt5-qtdeclarative \
@@ -260,7 +261,7 @@ port install \
              qt5-sqlite-plugin \
              qt5-mysql-plugin \
              wget +ssl \
-             ImageMagick 
+             ImageMagick
 
 #             sane-backends
 

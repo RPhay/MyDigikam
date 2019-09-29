@@ -164,14 +164,14 @@ bool DImgHEIFPlugin::canRead(const QString& filePath) const
     return false;
 }
 
-bool DImgHEIFPlugin::canWrite(const QString& /*format*/) const
+bool DImgHEIFPlugin::canWrite(const QString& format) const
 {
-/*  NOTE : not yet supported as it require libx265 dependency
-    if (format == QLatin1String("HEIC"))
+#ifdef HAVE_X265
+    if (format.toUpper() == QLatin1String("HEIC"))
     {
         return true;
     }
-*/
+#endif
     return false;
 }
 
