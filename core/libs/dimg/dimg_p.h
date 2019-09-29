@@ -155,7 +155,7 @@ public:
                         {
                             format = DImg::NONE;
                         }
-                        else if (name == QLatin1String("JPG"))
+                        else if (name == QLatin1String("JPEG"))
                         {
                             format = DImg::JPEG;
                         }
@@ -163,7 +163,7 @@ public:
                         {
                             format = DImg::PNG;
                         }
-                        else if (name == QLatin1String("TIF"))
+                        else if (name == QLatin1String("TIFF"))
                         {
                             format = DImg::TIFF;
                         }
@@ -171,7 +171,7 @@ public:
                         {
                             format = DImg::RAW;
                         }
-                        else if (name == QLatin1String("JP2"))
+                        else if (name == QLatin1String("JPEG2000"))
                         {
                             format = DImg::JP2K;
                         }
@@ -179,9 +179,11 @@ public:
                         {
                             format = DImg::PGF;
                         }
-
-                        // In others cases, ImageMagick or QImage will be used to try to open file.
-                        format = DImg::QIMAGE;
+                        else
+                        {
+                            // In others cases, ImageMagick or QImage will be used to try to open file.
+                            format = DImg::QIMAGE;
+                        }
 
                         return plug;
                     }
