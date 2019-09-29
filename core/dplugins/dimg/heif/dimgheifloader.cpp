@@ -387,12 +387,14 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
             m_observer->progressInfo(m_image, 0.4F);
         }
 
-        uchar* dst            = data;
-        unsigned short* dst16 = reinterpret_cast<unsigned short*>(data);
-        uchar* src            = reinterpret_cast<unsigned char*>(ptr);
-        unsigned short* src16 = reinterpret_cast<unsigned short*>(ptr);
+        uchar* dst              = data;
+        unsigned short* dst16   = reinterpret_cast<unsigned short*>(data);
+        uchar* src              = reinterpret_cast<unsigned char*>(ptr);
+        unsigned short* src16   = reinterpret_cast<unsigned short*>(ptr);
+        unsigned int checkPoint = 0;
+        unsigned int size       = imageHeight()*imageWidth();
 
-        for (unsigned int i = 0 ; i < imageHeight()*imageWidth() ; ++i)
+        for (unsigned int i = 0 ; i < size ; ++i)
         {
             if (!m_sixteenBit)   // 8 bits image.
             {
@@ -443,8 +445,11 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
                 dst16 += 4;
             }
 
-            if (m_observer)
+
+            if (m_observer && i >= checkPoint)
             {
+                checkPoint += granularity(m_observer, i, 0.8F);
+
                 if (!m_observer->continueQuery(m_image))
                 {
                     heif_image_release(heif_image);
@@ -454,7 +459,7 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
                     return false;
                 }
 
-                m_observer->progressInfo(m_image, 0.4 + (0.8 * (((float)i) / ((float)imageHeight()*imageWidth()))));
+                m_observer->progressInfo(m_image, 0.4 + (0.8 * (((float)i) / ((float)size))));
             }
         }
 

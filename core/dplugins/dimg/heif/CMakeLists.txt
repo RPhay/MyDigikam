@@ -98,6 +98,8 @@ if(X265_FOUND)
     set(libheif_SRCS ${libheif_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/libheif/heif_encoder_x265.cc
     )
+else()
+    set(X265_LIBRARIES "")
 endif()
 
 foreach(_currentfile ${libheif_SRCS})
