@@ -237,12 +237,19 @@ bool DImg::save(const QString& filePath, const QString& format, DImgLoaderObserv
         }
     }
 
-    DImgLoader* const loader = plug->loader(&copyForSave);
-    copyForSave.setAttribute(QLatin1String("savedFormat-isReadOnly"), loader->isReadOnly());
-    bool ret                 = loader->save(filePath, observer);
-    delete loader;
+    if (plug)
+    {
+        DImgLoader* const loader = plug->loader(&copyForSave);
+        copyForSave.setAttribute(QLatin1String("savedFormat-isReadOnly"), loader->isReadOnly());
+        bool ret                 = loader->save(filePath, observer);
+        delete loader;
 
-    return ret;
+        return ret;
+    }
+
+    qCWarning(DIGIKAM_DIMG_LOG) << filePath << " : Unknown save format !!!";
+
+    return false;
 }
 
 DImg::FORMAT DImg::fileFormat(const QString& filePath)
