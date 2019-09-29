@@ -133,7 +133,10 @@ bool DImg::load(const QString& filePath,
             return true;
         }
 
-        qCWarning(DIGIKAM_DIMG_LOG) << filePath << ": Cannot load file !!!";
+        if (observer && observer->continueQuery(nullptr))
+        {
+            qCWarning(DIGIKAM_DIMG_LOG) << filePath << ": Cannot load file !!!";
+        }
 
         return false;
     }
