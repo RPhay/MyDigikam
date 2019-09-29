@@ -128,6 +128,7 @@ make MXE_TARGETS=$MXE_BUILD_TARGETS \
      qttools \
      qtwinextras \
      qtscript \
+     x265
      ffmpeg \
      openal \
      libical \
