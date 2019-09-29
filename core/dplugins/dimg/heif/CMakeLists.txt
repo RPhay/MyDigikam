@@ -14,6 +14,9 @@ include_directories($<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
+find_package(X265)
+
 include(CheckFunctionExists)
 include(CheckIncludeFile)
 
@@ -88,6 +91,16 @@ set(libheif_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/libheif/heif_plugin.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/libheif/heif_decoder_libde265.cc
 )
+
+if(X265_FOUND)
+    include_directories(${X265_INCLUDE_DIRS})
+    add_definitions(-DHAVE_X265=1)
+    set(libheif_SRCS ${libheif_SRCS}
+        ${CMAKE_CURRENT_SOURCE_DIR}/libheif/heif_encoder_x265.cc
+    )
+else()
+    set(X265_LIBRARIES "")
+endif()
 
 foreach(_currentfile ${libheif_SRCS})
     if(NOT MSVC)
@@ -176,4 +189,5 @@ set(dimgheifplugin_SRCS
 
 DIGIKAM_ADD_DIMG_PLUGIN(NAME    HEIF
                         SOURCES ${dimgheifplugin_SRCS}
+                        DEPENDS ${X265_LIBRARIES}
 )

@@ -55,4 +55,7 @@ BUGFIXES:
 039 ==> 412372 - Image editor view is expanded to 100% and shows only partial amount of picture.
 040 ==> 412293 - Image editor Tools sidebar width not restored.
 041 ==> 412425 - UI "breaks" / scales after opening any dialog.
-042 ==> 
+042 ==> 412437 - Opening Preferences on MacOS 10.14.6 breaks resolution of main screen.
+043 ==> 412442 - Website points to obsolete versions.
+044 ==> 411027 - image files *.heic from iphones do not show up in digikam thumbnails although ther are find in MS file browser.
+045 ==> 
