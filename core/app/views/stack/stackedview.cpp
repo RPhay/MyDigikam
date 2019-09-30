@@ -93,19 +93,21 @@ public:
 #endif // HAVE_MARBLE
     }
 
-    bool               needUpdateBar;
-    bool               syncingSelection;
+    bool              needUpdateBar;
+    bool              syncingSelection;
 
-    QMainWindow*       dockArea;
-    QSplitter*         splitter;
+    QMainWindow*      dockArea;
+    QSplitter*        splitter;
 
     DigikamItemView*  imageIconView;
     ItemThumbnailBar* thumbBar;
     ItemPreviewView*  imagePreviewView;
-    ThumbBarDock*      thumbBarDock;
-    WelcomePageView*   welcomePageView;
-    TableView*         tableView;
-    TrashView*         trashView;
+    ThumbBarDock*     thumbBarDock;
+    WelcomePageView*  welcomePageView;
+    TableView*        tableView;
+    TrashView*        trashView;
+
+    QMap<int, int>    stackMap;
 
 #ifdef HAVE_MEDIAPLAYER
     MediaPlayerView*   mediaPlayerView;
@@ -151,18 +153,18 @@ StackedView::StackedView(QWidget* const parent)
     d->mediaPlayerView->setInfoInterface(new DBInfoIface(this, QList<QUrl>()));
 #endif //HAVE_MEDIAPLAYER
 
-    insertWidget(IconViewMode,     d->imageIconView);
-    insertWidget(PreviewImageMode, d->imagePreviewView);
-    insertWidget(WelcomePageMode,  d->welcomePageView);
-    insertWidget(TableViewMode,    d->tableView);
-    insertWidget(TrashViewMode,    d->trashView);
+    d->stackMap[addWidget(d->imageIconView)]    = IconViewMode;
+    d->stackMap[addWidget(d->imagePreviewView)] = PreviewImageMode;
+    d->stackMap[addWidget(d->welcomePageView)]  = WelcomePageMode;
+    d->stackMap[addWidget(d->tableView)]        = TableViewMode;
+    d->stackMap[addWidget(d->trashView)]        = TrashViewMode;
 
 #ifdef HAVE_MARBLE
-    insertWidget(MapWidgetMode,    d->mapWidgetView);
+    d->stackMap[addWidget(d->mapWidgetView)]    = MapWidgetMode;
 #endif // HAVE_MARBLE
 
 #ifdef HAVE_MEDIAPLAYER
-    insertWidget(MediaPlayerMode,  d->mediaPlayerView);
+    d->stackMap[addWidget(d->mediaPlayerView)]  = MediaPlayerMode;
 #endif //HAVE_MEDIAPLAYER
 
     setViewMode(IconViewMode);
@@ -306,19 +308,19 @@ MediaPlayerView* StackedView::mediaPlayerView() const
 
 bool StackedView::isInSingleFileMode() const
 {
-    return currentIndex() == PreviewImageMode || currentIndex() == MediaPlayerMode;
+    return viewMode() == PreviewImageMode || viewMode() == MediaPlayerMode;
 }
 
 bool StackedView::isInMultipleFileMode() const
 {
-    return (currentIndex() == IconViewMode  ||
-            currentIndex() == MapWidgetMode ||
-            currentIndex() == TableViewMode);
+    return (viewMode() == IconViewMode  ||
+            viewMode() == MapWidgetMode ||
+            viewMode() == TableViewMode);
 }
 
 bool StackedView::isInAbstractMode() const
 {
-    return currentIndex() == WelcomePageMode;
+    return viewMode() == WelcomePageMode;
 }
 
 void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous, const ItemInfo& next)
@@ -380,7 +382,7 @@ void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous,
 
 StackedView::StackedViewMode StackedView::viewMode() const
 {
-    return StackedViewMode(indexOf(currentWidget()));
+    return StackedViewMode(d->stackMap.value(currentIndex()));
 }
 
 void StackedView::setViewMode(const StackedViewMode mode)
@@ -405,11 +407,11 @@ void StackedView::setViewMode(const StackedViewMode mode)
     if (mode == IconViewMode || mode == WelcomePageMode || mode == MapWidgetMode || mode == TableViewMode)
     {
         setPreviewItem();
-        setCurrentIndex(mode);
+        setCurrentIndex(d->stackMap.key(mode));
     }
     else
     {
-        setCurrentIndex(mode);
+        setCurrentIndex(d->stackMap.key(mode));
     }
 
 #ifdef HAVE_MARBLE
@@ -469,7 +471,7 @@ void StackedView::syncSelection(ItemCategorizedView* from, ItemCategorizedView* 
 
 void StackedView::slotThumbBarSelectionChanged()
 {
-    if (currentIndex() != PreviewImageMode && currentIndex() != MediaPlayerMode)
+    if (viewMode() != PreviewImageMode && viewMode() != MediaPlayerMode)
     {
         return;
     }
@@ -484,7 +486,7 @@ void StackedView::slotThumbBarSelectionChanged()
 
 void StackedView::slotIconViewSelectionChanged()
 {
-    if (currentIndex() != IconViewMode)
+    if (viewMode() != IconViewMode)
     {
         return;
     }
