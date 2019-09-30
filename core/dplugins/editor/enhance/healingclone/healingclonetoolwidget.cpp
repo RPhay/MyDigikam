@@ -6,8 +6,8 @@
  * Date        : 2017-06-15
  * Description : a brush for use with tool to replace part of the image using another
  *
- * Copyright (C) 2017      by Shaza Ismail Kaoud <shaza dot ismail dot k at gmail dot com>
- * Copyright (C) 2019      by Ahmed Fathi <ahmed dot fathi dot abdelmageed at gmail dot com>
+ * Copyright (C) 2017 by Shaza Ismail Kaoud <shaza dot ismail dot k at gmail dot com>
+ * Copyright (C) 2019 by Ahmed Fathi <ahmed dot fathi dot abdelmageed at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -62,7 +62,7 @@ public:
         sourceCursor(nullptr),
         sourceCursorCenter(nullptr)
     {
-        src        = QPoint(0, 0);
+        src = QPoint(0, 0);
     }
 
     bool                  srcSet;
@@ -248,9 +248,9 @@ void HealingCloneToolWidget::mouseReleaseEvent(QMouseEvent* e)
     }
 }
 
-void HealingCloneToolWidget::mouseDoubleClickEvent(QMouseEvent* event)
+void HealingCloneToolWidget::mouseDoubleClickEvent(QMouseEvent* e)
 {
-    if (event->button() == Qt::LeftButton)
+    if (e->button() == Qt::LeftButton)
     {
         if (d->currentState == HealingCloneState::LASSO_DRAW_BOUNDARY)
         {
@@ -259,7 +259,7 @@ void HealingCloneToolWidget::mouseDoubleClickEvent(QMouseEvent* event)
     }
 }
 
-void HealingCloneToolWidget::keyPressEvent(QKeyEvent *e)
+void HealingCloneToolWidget::keyPressEvent(QKeyEvent* e)
 {
     if (e->key() == Qt::Key_M)
     {
@@ -293,9 +293,9 @@ void HealingCloneToolWidget::keyPressEvent(QKeyEvent *e)
     QWidget::keyPressEvent(e);
 }
 
-bool HealingCloneToolWidget::event(QEvent* event)
+bool HealingCloneToolWidget::event(QEvent* e)
 {
-    QKeyEvent* const keyEvent = static_cast<QKeyEvent*>(event);
+    QKeyEvent* const keyEvent = static_cast<QKeyEvent*>(e);
 
     if (keyEvent && keyEvent->key() == Qt::Key_Escape &&
         d->currentState != HealingCloneState::PAINT)
@@ -319,7 +319,7 @@ bool HealingCloneToolWidget::event(QEvent* event)
         return true;
     }
 
-    return QWidget::event(event);
+    return QWidget::event(e);
 }
 
 void HealingCloneToolWidget::keyReleaseEvent(QKeyEvent* e)
