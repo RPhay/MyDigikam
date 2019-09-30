@@ -504,7 +504,7 @@ void HealingCloneTool::removeLassoPixels()
 {
     std::map<std::pair<int,int>, DColor>::iterator it;
 
-    for (it = d->lassoColorsMap.begin() ; it != d->lassoColorsMap.end() ; it++)
+    for (it = d->lassoColorsMap.begin() ; it != d->lassoColorsMap.end() ; ++it)
     {
         std::pair<int,int> xy = it->first;
         DColor color          = it->second;
@@ -519,7 +519,7 @@ void HealingCloneTool::redrawLassoPixels()
     int colorCounter = 0;
     std::map<std::pair<int,int>, DColor>::iterator it;
 
-    for (it = d->lassoColorsMap.begin() ; it != d->lassoColorsMap.end() ; it++)
+    for (it = d->lassoColorsMap.begin() ; it != d->lassoColorsMap.end() ; ++it)
     {
         colorCounter++;
         DColor color          = d->lassoColors[(colorCounter) % d->lassoColors.size()];

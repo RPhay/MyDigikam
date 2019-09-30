@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_HEIF_DIMG_PLUGIN_H
-#define DIGIKAM_HEIF_DIMG_PLUGIN_H
+#ifndef DIGIKAM_DIMG_HEIF_PLUGIN_H
+#define DIGIKAM_DIMG_HEIF_PLUGIN_H
 
 // Qt includes
 
@@ -70,4 +70,4 @@ public:
 
 } // namespace DigikamHEIFDImgPlugin
 
-#endif // DIGIKAM_HEIF_DIMG_PLUGIN_H
+#endif // DIGIKAM_DIMG_HEIF_PLUGIN_H

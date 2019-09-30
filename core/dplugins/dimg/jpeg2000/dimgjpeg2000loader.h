@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DIMG_JP2000_LOADER_H
-#define DIGIKAM_DIMG_JP2000_LOADER_H
+#ifndef DIGIKAM_DIMG_JPEG_2000_LOADER_H
+#define DIGIKAM_DIMG_JPEG_2000_LOADER_H
 
 // Local includes
 
@@ -57,4 +57,4 @@ private:
 
 } // namespace DigikamJPEG2000DImgPlugin
 
-#endif // DIGIKAM_DIMG_JP2000_LOADER_H
+#endif // DIGIKAM_DIMG_JPEG_2000_LOADER_H
