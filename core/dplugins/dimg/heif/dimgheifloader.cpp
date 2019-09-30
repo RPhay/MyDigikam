@@ -283,8 +283,9 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
 {
     struct heif_image*        heif_image   = nullptr;
     struct heif_image_handle* image_handle = nullptr;
-
-    struct heif_error error = heif_context_get_image_handle(heif_context, image_id, &image_handle);
+    struct heif_error error                = heif_context_get_image_handle(heif_context,
+                                                                           image_id,
+                                                                           &image_handle);
 
     if (!isHeifSuccess(&error))
     {
@@ -311,7 +312,15 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
         struct heif_decoding_options* const decode_options = heif_decoding_options_alloc();
         decode_options->ignore_transformations             = 1;
         m_hasAlpha                                         = heif_image_handle_has_alpha_channel(image_handle);
-        heif_chroma chroma                                 = m_hasAlpha ? heif_chroma_interleaved_RGBA : heif_chroma_interleaved_RGB;
+        heif_chroma chroma                                 = m_hasAlpha ? heif_chroma_interleaved_RGBA
+                                                                        : heif_chroma_interleaved_RGB;
+
+        // Trace to check image size properties before decoding, as these values can be different.
+        qDebug() << "HEIC image size: ("
+                 << heif_image_handle_get_width(image_handle)
+                 << "x"
+                 << heif_image_handle_get_height(image_handle)
+                 << ")";
 
         error = heif_decode_image(image_handle,
                                   &heif_image,
@@ -336,8 +345,10 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
         imageWidth()   = heif_image_get_width(heif_image, heif_channel_interleaved);
         imageHeight()  = heif_image_get_height(heif_image, heif_channel_interleaved);
 
-        qDebug() << "HEIC image properties: size(" << imageWidth() << "x" << imageHeight()
-                 << "), Alpha:" << m_hasAlpha << ", Color depth :" << colorDepth;
+        qDebug() << "Decoded HEIC image properties: size("
+                 << imageWidth() << "x" << imageHeight()
+                 << "), Alpha:" << m_hasAlpha
+                 << ", Color depth :" << colorDepth;
 
         if (!QSize(imageWidth(), imageHeight()).isValid())
         {
