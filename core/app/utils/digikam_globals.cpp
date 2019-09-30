@@ -147,6 +147,9 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
     formats << i18n("Progressive Graphics file (*.pgf)");
     allTypes.append(QLatin1String("*.pgf "));
 
+    formats << i18n("High Efficiency Image Coding (*.heic)");
+    allTypes.append(QLatin1String("*.heic "));
+
     if (mode != QIODevice::WriteOnly)
     {
         formats << i18n("Raw Images (%1)", QLatin1String(DRawDecoder::rawFiles()));
