@@ -148,9 +148,11 @@ bool DImgHEIFLoader::isReadOnly() const
 bool DImgHEIFLoader::isHeifSuccess(struct heif_error* const error)
 {
     if (error->code == 0)
+    {
         return true;
+    }
 
-    qWarning() << "Cannot read HEIF image:" << error->message;
+    qWarning() << "Error while processing HEIC image:" << error->message;
     return false;
 }
 
@@ -510,140 +512,257 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         return false;
     }
 
-    // TODO
+    QVariant qualityAttr  = imageGetAttribute(QLatin1String("quality"));
+    int quality           = qualityAttr.isValid() ? qualityAttr.toInt() : 50;
+    QVariant losslessAttr = imageGetAttribute(QLatin1String("lossless"));
+    bool lossless         = losslessAttr.isValid() ? qualityAttr.toBool() : false;
+    heif_chroma chroma    = imageHasAlpha() ? heif_chroma_interleaved_RGBA
+                                            : heif_chroma_interleaved_RGB;
+
+    // --- use standard HEVC encoder
+
+    struct heif_context* const ctx = heif_context_alloc();
+
+    if (!ctx)
+    {
+        qWarning() << "Cannot create HEIC context!";
+        return false;
+    }
+
+    struct heif_encoder* encoder   = nullptr;
+    struct heif_error error        = heif_context_get_encoder_for_format(ctx, heif_compression_HEVC, &encoder);
+
+    if (!isHeifSuccess(&error))
+    {
+        heif_context_free(ctx);
+        return false;
+    }
+
+    heif_encoder_set_lossy_quality(encoder, quality);
+    heif_encoder_set_lossless(encoder, lossless);
+
+    struct heif_image* image = nullptr;
+    error                    = heif_image_create(imageWidth(), imageHeight(), heif_colorspace_RGB, chroma, &image);
+
+    if (!isHeifSuccess(&error))
+    {
+        heif_encoder_release(encoder);
+        heif_context_free(ctx);
+        return false;
+    }
+
+    error = heif_image_add_plane(image, heif_channel_R, imageWidth(), imageHeight(), imageBytesDepth());
+
+    if (!isHeifSuccess(&error))
+    {
+        heif_encoder_release(encoder);
+        heif_context_free(ctx);
+        return false;
+    }
+
+    error = heif_image_add_plane(image, heif_channel_G, imageWidth(), imageHeight(), imageBytesDepth());
+
+    if (!isHeifSuccess(&error))
+    {
+        heif_encoder_release(encoder);
+        heif_context_free(ctx);
+        return false;
+    }
+
+    error = heif_image_add_plane(image, heif_channel_B, imageWidth(), imageHeight(), imageBytesDepth());
+
+    if (!isHeifSuccess(&error))
+    {
+        heif_encoder_release(encoder);
+        heif_context_free(ctx);
+        return false;
+    }
+
+    if (imageHasAlpha())
+    {
+        error = heif_image_add_plane(image, heif_channel_Alpha, imageWidth(), imageHeight(), imageBytesDepth());
+
+        if (!isHeifSuccess(&error))
+        {
+            heif_encoder_release(encoder);
+            heif_context_free(ctx);
+            return false;
+        }
+    }
+
+    int strideR = 0;
+    int strideG = 0;
+    int strideB = 0;
+    int strideA = 0;
+
+    uint8_t* ptrR = heif_image_get_plane(image, heif_channel_R, &strideR);
+    uint8_t* ptrG = heif_image_get_plane(image, heif_channel_G, &strideG);
+    uint8_t* ptrB = heif_image_get_plane(image, heif_channel_B, &strideB);
+
+    if (!ptrR || !ptrG || ! ptrB)
+    {
+        qWarning() << "Cannot get HEIC RGB planes!";
+        heif_encoder_release(encoder);
+        heif_context_free(ctx);
+        return false;
+    }
+
+    uint8_t* ptrA = nullptr;
+
+    if (imageHasAlpha())
+    {
+        ptrA = heif_image_get_plane(image, heif_channel_Alpha, &strideA);
+
+        if (!ptrA)
+        {
+            qWarning() << "Cannot get HEIC Alpha plane!";
+            heif_encoder_release(encoder);
+            heif_context_free(ctx);
+            return false;
+        }
+    }
+
+    qDebug() << "HEIC plane details:"
+             <<   "ptrR=" << ptrR << " strideR=" << strideR
+             << ", ptrG=" << ptrG << " strideG=" << strideG
+             << ", ptrB=" << ptrB << " strideB=" << strideB
+             << ", ptrA=" << ptrA << " strideA=" << strideA;
+
+    uint checkpoint      = 0;
+    unsigned short r     = 0;
+    unsigned short g     = 0;
+    unsigned short b     = 0;
+    unsigned short a     = 0;
+    unsigned char* data  = imageData();
+    unsigned char* pixel = nullptr;
+
+    for (unsigned int y = 0 ; y < imageHeight() ; ++y)
+    {
+        if (m_observer && y == (long)checkpoint)
+        {
+            checkpoint += granularity(m_observer, imageHeight(), 0.8F);
+
+            if (!m_observer->continueQuery(m_image))
+            {
+                heif_encoder_release(encoder);
+                heif_context_free(ctx);
+                return false;
+            }
+
+            m_observer->progressInfo(m_image, 0.1 + (0.8 * (((float)y) / ((float)imageHeight()))));
+        }
+
+        for (unsigned int x = 0 ; x < imageWidth() ; ++x)
+        {
+            pixel = &data[((y * imageWidth()) + x) * imageBytesDepth()];
+
+            if (imageSixteenBit())          // 16 bits image.
+            {
+                b = (unsigned short)(pixel[0] + 256 * pixel[1]);
+                g = (unsigned short)(pixel[2] + 256 * pixel[3]);
+                r = (unsigned short)(pixel[4] + 256 * pixel[5]);
+
+                if (imageHasAlpha())
+                {
+                    a = (unsigned short)(pixel[6] + 256 * pixel[7]);
+                }
+            }
+            else                            // 8 bits image.
+            {
+                b = (unsigned short)pixel[0];
+                g = (unsigned short)pixel[1];
+                r = (unsigned short)pixel[2];
+
+                if (imageHasAlpha())
+                {
+                    a = (unsigned short)(pixel[3]);
+                }
+            }
+
+            ptrR[(y * strideR) + x] = r;
+            ptrG[(y * strideG) + x] = g;
+            ptrB[(y * strideB) + x] = b;
+
+            if (imageHasAlpha())
+            {
+                ptrA[(y * strideA) + x] = a;
+            }
+        }
+    }
+
+    // --- encode and write image
+
+    struct heif_encoding_options* options = heif_encoding_options_alloc();
+    options->save_alpha_channel           = imageHasAlpha() ? 1 : 0;
+    struct heif_image_handle* hdl         = nullptr;
+    error                                 = heif_context_encode_image(ctx, image, encoder, options, &hdl);
+
+    if (!isHeifSuccess(&error))
+    {
+        heif_encoding_options_free(options);
+        heif_image_handle_release(hdl);
+        heif_encoder_release(encoder);
+        heif_context_free(ctx);
+        return false;
+    }
+
+    heif_encoding_options_free(options);
+    heif_image_handle_release(hdl);
+    heif_encoder_release(encoder);
+
+    // --- add Exif / XMP metadata
+/*
+    KisExifInfoVisitor exivInfoVisitor;
+    exivInfoVisitor.visit(image->rootLayer().data());
+
+    QScopedPointer<KisMetaData::Store> metaDataStore;
+    if (exivInfoVisitor.metaDataCount() == 1) {
+        metaDataStore.reset(new KisMetaData::Store(*exivInfoVisitor.exifInfo()));
+    }
+    else {
+        metaDataStore.reset(new KisMetaData::Store());
+    }
+
+    if (!metaDataStore->empty()) {
+        {
+        KisMetaData::IOBackend* exifIO = KisMetaData::IOBackendRegistry::instance()->value("exif");
+        QBuffer buffer;
+        exifIO->saveTo(metaDataStore.data(), &buffer, KisMetaData::IOBackend::NoHeader); // Or JpegHeader? Or something else?
+        QByteArray data = buffer.data();
+
+        // Write the data to the file
+        ctx.add_exif_metadata(handle, data.constData(), data.size());
+        }
+        {
+        KisMetaData::IOBackend* xmpIO = KisMetaData::IOBackendRegistry::instance()->value("xmp");
+        QBuffer buffer;
+        xmpIO->saveTo(metaDataStore.data(), &buffer, KisMetaData::IOBackend::NoHeader); // Or JpegHeader? Or something else?
+        QByteArray data = buffer.data();
+
+        // Write the data to the file
+        ctx.add_XMP_metadata(handle, data.constData(), data.size());
+        }
+    }
+*/
+
+    // --- write HEIF file
+
+    error = heif_context_write_to_file(ctx, QFile::encodeName(filePath).constData());
+
+    if (!isHeifSuccess(&error))
+    {
+        heif_context_free(ctx);
+        return false;
+    }
+
+    heif_context_free(ctx);
+
+    imageSetAttribute(QLatin1String("savedFormat"), QLatin1String("HEIC"));
+    saveMetadata(filePath);
 
 #endif
 
-    return false;
+    return true;
 }
-
-/*
-KisImportExportErrorCode HeifExport::convert(KisDocument *document, QIODevice *io,  KisPropertiesConfigurationSP configuration)
-{
-    KisImageSP image = document->savingImage();
-    const KoColorSpace *cs = image->colorSpace();
-
-    // Convert to 8 bits rgba on saving
-    if (cs->colorModelId() != RGBAColorModelID || cs->colorDepthId() != Integer8BitsColorDepthID) {
-        cs = KoColorSpaceRegistry::instance()->colorSpace(RGBAColorModelID.id(), Integer8BitsColorDepthID.id());
-        image->convertImageColorSpace(cs, KoColorConversionTransformation::internalRenderingIntent(), KoColorConversionTransformation::internalConversionFlags());
-    }
-
-    int quality = configuration->getInt("quality", 50);
-    bool lossless = configuration->getBool("lossless", false);
-    bool has_alpha = configuration->getBool(KisImportExportFilter::ImageContainsTransparencyTag, false);
-
-
-    // If we want to add information from the document to the metadata,
-    // we should do that here.
-
-    try {
-        // --- use standard HEVC encoder
-
-        heif::Encoder encoder(heif_compression_HEVC);
-
-        encoder.set_lossy_quality(quality);
-        encoder.set_lossless(lossless);
-
-
-        // --- convert KisImage to HEIF image ---
-        int width = image->width();
-        int height = image->height();
-
-        heif::Context ctx;
-
-        heif::Image img;
-        img.create(width,height, heif_colorspace_RGB, heif_chroma_444);
-        img.add_plane(heif_channel_R, width,height, 8);
-        img.add_plane(heif_channel_G, width,height, 8);
-        img.add_plane(heif_channel_B, width,height, 8);
-
-        uint8_t* ptrR {0};
-        uint8_t* ptrG {0};
-        uint8_t* ptrB {0};
-        uint8_t* ptrA {0};
-        int strideR,strideG,strideB,strideA;
-
-        ptrR = img.get_plane(heif_channel_R, &strideR);
-        ptrG = img.get_plane(heif_channel_G, &strideG);
-        ptrB = img.get_plane(heif_channel_B, &strideB);
-
-        if (has_alpha) {
-            img.add_plane(heif_channel_Alpha, width,height, 8);
-            ptrA = img.get_plane(heif_channel_Alpha, &strideA);
-        }
-
-        KisPaintDeviceSP pd = image->projection();
-
-        for (int y=0; y<height; y++) {
-            KisHLineIteratorSP it = pd->createHLineIteratorNG(0, y, width);
-
-            for (int x=0; x<width; x++) {
-                ptrR[y*strideR+x] = KoBgrTraits<quint8>::red(it->rawData());
-                ptrG[y*strideG+x] = KoBgrTraits<quint8>::green(it->rawData());
-                ptrB[y*strideB+x] = KoBgrTraits<quint8>::blue(it->rawData());
-
-                if (has_alpha) {
-                    ptrA[y*strideA+x] = cs->opacityU8(it->rawData());
-                }
-
-                it->nextPixel();
-            }
-        }
-
-        // --- encode and write image
-
-        heif::ImageHandle handle = ctx.encode_image(img, encoder);
-
-
-
-        // --- add Exif / XMP metadata
-
-        KisExifInfoVisitor exivInfoVisitor;
-        exivInfoVisitor.visit(image->rootLayer().data());
-
-        QScopedPointer<KisMetaData::Store> metaDataStore;
-        if (exivInfoVisitor.metaDataCount() == 1) {
-          metaDataStore.reset(new KisMetaData::Store(*exivInfoVisitor.exifInfo()));
-        }
-        else {
-          metaDataStore.reset(new KisMetaData::Store());
-        }
-
-        if (!metaDataStore->empty()) {
-          {
-            KisMetaData::IOBackend* exifIO = KisMetaData::IOBackendRegistry::instance()->value("exif");
-            QBuffer buffer;
-            exifIO->saveTo(metaDataStore.data(), &buffer, KisMetaData::IOBackend::NoHeader); // Or JpegHeader? Or something else?
-            QByteArray data = buffer.data();
-
-            // Write the data to the file
-            ctx.add_exif_metadata(handle, data.constData(), data.size());
-          }
-          {
-            KisMetaData::IOBackend* xmpIO = KisMetaData::IOBackendRegistry::instance()->value("xmp");
-            QBuffer buffer;
-            xmpIO->saveTo(metaDataStore.data(), &buffer, KisMetaData::IOBackend::NoHeader); // Or JpegHeader? Or something else?
-            QByteArray data = buffer.data();
-
-            // Write the data to the file
-            ctx.add_XMP_metadata(handle, data.constData(), data.size());
-          }
-        }
-
-
-        // --- write HEIF file
-
-        Writer_QIODevice writer(io);
-
-        ctx.write(writer);
-    }
-    catch (heif::Error err) {
-        return setHeifError(document, err);
-    }
-
-    return ImportExportCodes::OK;
-}
-*/
 
 } // namespace Digikam

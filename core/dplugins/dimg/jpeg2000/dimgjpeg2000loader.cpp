@@ -689,8 +689,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
     (void)icc_profile;
 
     QByteArray profile_rawdata = m_image->getIccProfile().data();
-
-    icc_profile = jas_iccprof_createfrombuf((uchar*)profile_rawdata.data(), profile_rawdata.size());
+    icc_profile                = jas_iccprof_createfrombuf((uchar*)profile_rawdata.data(), profile_rawdata.size());
 
     if (icc_profile != nullptr)
     {
@@ -726,10 +725,13 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
         }
     }
 
-    unsigned char* data = imageData();
-    unsigned char* pixel;
-    unsigned short r, g, b, a = 0;
-    uint           checkpoint = 0;
+    unsigned char* data  = imageData();
+    unsigned char* pixel = nullptr;
+    unsigned short r     = 0;
+    unsigned short g     = 0;
+    unsigned short b     = 0;
+    unsigned short a     = 0;
+    uint checkpoint      = 0;
 
     for (y = 0 ; y < (long)imageHeight() ; ++y)
     {
