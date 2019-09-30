@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PNG_DIMG_PLUGIN_H
-#define DIGIKAM_PNG_DIMG_PLUGIN_H
+#ifndef DIGIKAM_DIMG_PNG_PLUGIN_H
+#define DIGIKAM_DIMG_PNG_PLUGIN_H
 
 // Qt includes
 
@@ -70,4 +70,4 @@ public:
 
 } // namespace DigikamPNGDImgPlugin
 
-#endif // DIGIKAM_PNG_DIMG_PLUGIN_H
+#endif // DIGIKAM_DIMG_PNG_PLUGIN_H
