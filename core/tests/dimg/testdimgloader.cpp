@@ -50,7 +50,7 @@ int main(int argc, char** argv)
     DPluginLoader::instance()->init();
 
     QFileInfo input(QString::fromUtf8(argv[1]));
-    QString   outFilePath(input.baseName() + QLatin1String(".png"));
+    QString   outFilePath(input.baseName() + QLatin1String(".heic"));
 
     DRawDecoderSettings settings;
     settings.halfSizeColorImage    = false;
@@ -62,7 +62,7 @@ int main(int argc, char** argv)
 
     if (!img.isNull())
     {
-        img.save(outFilePath, QLatin1String("png"));
+        img.save(outFilePath, QLatin1String("heic"));
     }
 
     DPluginLoader::instance()->cleanUp();
