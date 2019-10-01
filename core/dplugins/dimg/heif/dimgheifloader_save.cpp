@@ -63,8 +63,18 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     int quality           = qualityAttr.isValid() ? qualityAttr.toInt() : 50;
     QVariant losslessAttr = imageGetAttribute(QLatin1String("lossless"));
     bool lossless         = losslessAttr.isValid() ? qualityAttr.toBool() : false;
-    heif_chroma chroma    = imageHasAlpha() ? heif_chroma_interleaved_RGBA
-                                            : heif_chroma_interleaved_RGB;
+    heif_chroma chroma;
+
+    if (imageSixteenBit())          // 16 bits image.
+    {
+        chroma = imageHasAlpha() ? heif_chroma_interleaved_RRGGBBAA_BE
+                                 : heif_chroma_interleaved_RRGGBB_BE;
+    }
+    else
+    {
+        chroma = imageHasAlpha() ? heif_chroma_interleaved_RGBA
+                                 : heif_chroma_interleaved_RGB;
+    }
 
     // --- use standard HEVC encoder
 
@@ -112,6 +122,8 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     int nbBytesPerColor = imageHasAlpha()   ?                   4 : 3;
     nbBytesPerColor     = imageSixteenBit() ? nbBytesPerColor * 2 : nbBytesPerColor;
+
+    qDebug() << "HEIC number of bits per pixels:" << nbBytesPerColor * 8;
 
     error = heif_image_add_plane(image,
                                  heif_channel_interleaved,
