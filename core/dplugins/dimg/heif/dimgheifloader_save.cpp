@@ -39,6 +39,12 @@
 #include "dimgloaderobserver.h"
 #include "metaengine.h"
 
+// libx265 includes
+
+#ifdef HAVE_X265
+#   include <x265.h>
+#endif
+
 namespace Digikam
 {
 
@@ -63,9 +69,34 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     int quality           = qualityAttr.isValid() ? qualityAttr.toInt() : 50;
     QVariant losslessAttr = imageGetAttribute(QLatin1String("lossless"));
     bool lossless         = losslessAttr.isValid() ? qualityAttr.toBool() : false;
+
+    // --- Determine libx265 encoder bits depth capability: 8=standard, 10, 12, or later 16.
+
+    int maxOutputBitsDepth = -1;
+
+    for (int i = 16 ; i >= 8 ; i-=2)
+    {
+        qDebug() << "Check HEVC encoder for" << i << "bits encoding...";
+        const x265_api* const api = x265_api_get(i);
+
+        if (api)
+        {
+            maxOutputBitsDepth = i;
+            break;
+        }
+    }
+
+    qDebug() << "HEVC encoder max bits depth:" << maxOutputBitsDepth;
+
+    if (maxOutputBitsDepth == -1)
+    {
+        qWarning() << "Cannot get max supported HEVC encoder bits depth!";
+        return false;
+    }
+
     heif_chroma chroma;
 
-    if (imageSixteenBit())          // 16 bits image.
+    if (maxOutputBitsDepth > 8)          // 16 bits image.
     {
         chroma = imageHasAlpha() ? heif_chroma_interleaved_RRGGBBAA_BE
                                  : heif_chroma_interleaved_RRGGBB_BE;
@@ -77,6 +108,8 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     }
 
     // --- use standard HEVC encoder
+
+    qDebug() << "HEVC encoder setup...";
 
     struct heif_context* const ctx = heif_context_alloc();
 
@@ -100,6 +133,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     heif_encoder_set_lossy_quality(encoder, quality);
     heif_encoder_set_lossless(encoder, lossless);
 
+
     struct heif_image* image = nullptr;
     error                    = heif_image_create(imageWidth(),
                                                  imageHeight(),
@@ -116,20 +150,19 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     // --- Save color profile before to create image data, as converting to color space can be processed at this stage.
 
+    qDebug() << "HEIC set color profile...";
+
     saveHEICColorProfile(image);
 
     // --- Add image data
 
-    int nbBytesPerColor = imageHasAlpha()   ?                   4 : 3;
-    nbBytesPerColor     = imageSixteenBit() ? nbBytesPerColor * 2 : nbBytesPerColor;
-
-    qDebug() << "HEIC number of bits per pixels:" << nbBytesPerColor * 8;
+    qDebug() << "HEIC setup data plane...";
 
     error = heif_image_add_plane(image,
                                  heif_channel_interleaved,
                                  imageWidth(),
                                  imageHeight(),
-                                 nbBytesPerColor * 8);
+                                 maxOutputBitsDepth);
 
     if (!isHeifSuccess(&error))
     {
@@ -153,14 +186,20 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     qDebug() << "HEIC plane details: ptr=" << data << " stride=" << stride;
 
-    uint checkpoint       = 0;
-    unsigned short r      = 0;
-    unsigned short g      = 0;
-    unsigned short b      = 0;
-    unsigned short a      = 0;
-    unsigned char* pixel  = nullptr;
-    unsigned char* ptr    = nullptr;
-    unsigned short* ptr16 = nullptr;
+    uint checkpoint           = 0;
+    unsigned short r          = 0;
+    unsigned short g          = 0;
+    unsigned short b          = 0;
+    unsigned short a          = 0;
+    unsigned char* pixel      = nullptr;
+    unsigned char* ptr        = nullptr;
+    unsigned short* ptr16     = nullptr;
+    int div16                 = 16 - maxOutputBitsDepth + 1;
+    int mul8                  = maxOutputBitsDepth - 8 + 1;
+    int nbOutputBytesPerColor = (maxOutputBitsDepth > 8) ? (imageHasAlpha() ? 4 * 2 : 3 * 2)  // output data stored on 16 bits
+                                                         : (imageHasAlpha() ? 4     : 3    ); // output data stored on 8 bits
+
+    qDebug() << "HEIC output bytes per color:" << nbOutputBytesPerColor;
 
     for (unsigned int y = 0 ; y < imageHeight() ; ++y)
     {
@@ -193,14 +232,29 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                     a = (unsigned short)(pixel[6] + 256 * pixel[7]);
                 }
 
-                ptr16    = reinterpret_cast<unsigned short*>(&data[((y * imageWidth()) + x) * nbBytesPerColor]);
-                ptr16[0] = r;
-                ptr16[1] = g;
-                ptr16[2] = b;
-
-                if (imageHasAlpha())
+                if (maxOutputBitsDepth > 8) // From 16 bits to 10 bits or more.
                 {
-                    ptr16[3] = a;
+                    ptr16    = reinterpret_cast<unsigned short*>(&data[((y * imageWidth()) + x) * nbOutputBytesPerColor]);
+                    ptr16[0] = r / div16;
+                    ptr16[1] = g / div16;
+                    ptr16[2] = b / div16;
+
+                    if (imageHasAlpha())
+                    {
+                        ptr16[3] = a / div16;
+                    }
+                }
+                else                        // From 16 bits to 8 bits.
+                {
+                    ptr    = reinterpret_cast<unsigned char*>(&data[((y * imageWidth()) + x) * nbOutputBytesPerColor]);
+                    ptr[0] = r / div16;
+                    ptr[1] = g / div16;
+                    ptr[2] = b / div16;
+
+                    if (imageHasAlpha())
+                    {
+                        ptr[3] = a / div16;
+                    }
                 }
             }
             else                            // 8 bits image.
@@ -214,18 +268,35 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                     a = (unsigned char)(pixel[3]);
                 }
 
-                ptr    = reinterpret_cast<unsigned char*>(&data[((y * imageWidth()) + x) * nbBytesPerColor]);
-                ptr[0] = r;
-                ptr[1] = g;
-                ptr[2] = b;
-
-                if (imageHasAlpha())
+                if (maxOutputBitsDepth > 8) // From 8 bits to 10 bits or more.
                 {
-                    ptr[3] = a;
+                    ptr16    = reinterpret_cast<unsigned short*>(&data[((y * imageWidth()) + x) * nbOutputBytesPerColor]);
+                    ptr16[0] = r * mul8;
+                    ptr16[1] = g * mul8;
+                    ptr16[2] = b * mul8;
+
+                    if (imageHasAlpha())
+                    {
+                        ptr16[3] = a * mul8;
+                    }
+                }
+                else                        // From 8 bits to 8 bits.
+                {
+                    ptr    = reinterpret_cast<unsigned char*>(&data[((y * imageWidth()) + x) * nbOutputBytesPerColor]);
+                    ptr[0] = r;
+                    ptr[1] = g;
+                    ptr[2] = b;
+
+                    if (imageHasAlpha())
+                    {
+                        ptr[3] = a;
+                    }
                 }
             }
         }
     }
+
+    qDebug() << "HEIC image encoding...";
 
     // --- encode and write image
 
@@ -248,6 +319,8 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     // --- Add Exif and XMP metadata
 
+    qDebug() << "HEIC metadata embeding...";
+
     saveHEICMetadata(ctx, hdl);
 
     heif_image_handle_release(hdl);
@@ -255,6 +328,8 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     // --- TODO: Add thumnail image.
 
     // --- write HEIF file
+
+    qDebug() << "HEIC flush to file...";
 
     error = heif_context_write_to_file(ctx, QFile::encodeName(filePath).constData());
 
