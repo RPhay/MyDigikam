@@ -551,7 +551,14 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         return false;
     }
 
-    error = heif_image_add_plane(image, heif_channel_R, imageWidth(), imageHeight(), imageBytesDepth());
+    int nbBytesPerColor = imageHasAlpha()   ?                 4 : 3;
+    nbBytesPerColor     = imageSixteenBit() ? nbBytesPerColor*2 : nbBytesPerColor;
+
+    error = heif_image_add_plane(image,
+                                 heif_channel_interleaved,
+                                 imageWidth(),
+                                 imageHeight(),
+                                 nbBytesPerColor * 8);
 
     if (!isHeifSuccess(&error))
     {
@@ -560,81 +567,27 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         return false;
     }
 
-    error = heif_image_add_plane(image, heif_channel_G, imageWidth(), imageHeight(), imageBytesDepth());
+    int stride    = 0;
+    uint8_t* data = heif_image_get_plane(image, heif_channel_interleaved, &stride);
 
-    if (!isHeifSuccess(&error))
+    if (!data)
     {
+        qWarning() << "Cannot get HEIC RGB plane!";
         heif_encoder_release(encoder);
         heif_context_free(ctx);
         return false;
     }
 
-    error = heif_image_add_plane(image, heif_channel_B, imageWidth(), imageHeight(), imageBytesDepth());
+    qDebug() << "HEIC plane details: ptr=" << data << " stride=" << stride;
 
-    if (!isHeifSuccess(&error))
-    {
-        heif_encoder_release(encoder);
-        heif_context_free(ctx);
-        return false;
-    }
-
-    if (imageHasAlpha())
-    {
-        error = heif_image_add_plane(image, heif_channel_Alpha, imageWidth(), imageHeight(), imageBytesDepth());
-
-        if (!isHeifSuccess(&error))
-        {
-            heif_encoder_release(encoder);
-            heif_context_free(ctx);
-            return false;
-        }
-    }
-
-    int strideR = 0;
-    int strideG = 0;
-    int strideB = 0;
-    int strideA = 0;
-
-    uint8_t* ptrR = heif_image_get_plane(image, heif_channel_R, &strideR);
-    uint8_t* ptrG = heif_image_get_plane(image, heif_channel_G, &strideG);
-    uint8_t* ptrB = heif_image_get_plane(image, heif_channel_B, &strideB);
-
-    if (!ptrR || !ptrG || ! ptrB)
-    {
-        qWarning() << "Cannot get HEIC RGB planes!";
-        heif_encoder_release(encoder);
-        heif_context_free(ctx);
-        return false;
-    }
-
-    uint8_t* ptrA = nullptr;
-
-    if (imageHasAlpha())
-    {
-        ptrA = heif_image_get_plane(image, heif_channel_Alpha, &strideA);
-
-        if (!ptrA)
-        {
-            qWarning() << "Cannot get HEIC Alpha plane!";
-            heif_encoder_release(encoder);
-            heif_context_free(ctx);
-            return false;
-        }
-    }
-
-    qDebug() << "HEIC plane details:"
-             <<   "ptrR=" << ptrR << " strideR=" << strideR
-             << ", ptrG=" << ptrG << " strideG=" << strideG
-             << ", ptrB=" << ptrB << " strideB=" << strideB
-             << ", ptrA=" << ptrA << " strideA=" << strideA;
-
-    uint checkpoint      = 0;
-    unsigned short r     = 0;
-    unsigned short g     = 0;
-    unsigned short b     = 0;
-    unsigned short a     = 0;
-    unsigned char* data  = imageData();
-    unsigned char* pixel = nullptr;
+    uint checkpoint       = 0;
+    unsigned short r      = 0;
+    unsigned short g      = 0;
+    unsigned short b      = 0;
+    unsigned short a      = 0;
+    unsigned char* pixel  = nullptr;
+    unsigned char* ptr    = nullptr;
+    unsigned short* ptr16 = nullptr;
 
     for (unsigned int y = 0 ; y < imageHeight() ; ++y)
     {
@@ -654,7 +607,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
         for (unsigned int x = 0 ; x < imageWidth() ; ++x)
         {
-            pixel = &data[((y * imageWidth()) + x) * imageBytesDepth()];
+            pixel = &imageData()[((y * imageWidth()) + x) * imageBytesDepth()];
 
             if (imageSixteenBit())          // 16 bits image.
             {
@@ -666,26 +619,37 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                 {
                     a = (unsigned short)(pixel[6] + 256 * pixel[7]);
                 }
-            }
-            else                            // 8 bits image.
-            {
-                b = (unsigned short)pixel[0];
-                g = (unsigned short)pixel[1];
-                r = (unsigned short)pixel[2];
+
+                ptr16    = reinterpret_cast<unsigned short*>(&data[((y * imageWidth()) + x) * nbBytesPerColor]);
+                ptr16[0] = r;
+                ptr16[1] = g;
+                ptr16[2] = b;
 
                 if (imageHasAlpha())
                 {
-                    a = (unsigned short)(pixel[3]);
+                    ptr16[3] = a;
                 }
             }
-
-            ptrR[(y * strideR) + x] = r;
-            ptrG[(y * strideG) + x] = g;
-            ptrB[(y * strideB) + x] = b;
-
-            if (imageHasAlpha())
+            else                            // 8 bits image.
             {
-                ptrA[(y * strideA) + x] = a;
+                b = (unsigned char)pixel[0];
+                g = (unsigned char)pixel[1];
+                r = (unsigned char)pixel[2];
+
+                if (imageHasAlpha())
+                {
+                    a = (unsigned char)(pixel[3]);
+                }
+
+                ptr    = reinterpret_cast<unsigned char*>(&data[((y * imageWidth()) + x) * nbBytesPerColor]);
+                ptr[0] = r;
+                ptr[1] = g;
+                ptr[2] = b;
+
+                if (imageHasAlpha())
+                {
+                    ptr[3] = a;
+                }
             }
         }
     }
