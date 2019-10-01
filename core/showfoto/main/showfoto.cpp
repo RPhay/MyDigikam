@@ -282,8 +282,8 @@ void ShowFoto::openUrls(const QList<QUrl> &urls)
         iteminfo.name      = fi.fileName();
         iteminfo.mime      = fi.suffix();
         iteminfo.size      = fi.size();
-        iteminfo.url       = QUrl::fromLocalFile(fi.filePath());
         iteminfo.folder    = fi.path();
+        iteminfo.url       = QUrl::fromLocalFile(fi.filePath());
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
         iteminfo.dtime     = fi.birthTime();
@@ -385,12 +385,13 @@ void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
     QList<QUrl> imagesUrls;
     QList<QUrl> foldersUrls;
 
-    foreach (const QUrl& url, droppedUrls)
+    foreach (const QUrl& drop, droppedUrls)
     {
-        if (url.isValid())
+        if (drop.isValid())
         {
-            QFileInfo info(url.toLocalFile());
+            QFileInfo info(drop.toLocalFile());
             QString ext(info.suffix().toUpper());
+            QUrl url(QUrl::fromLocalFile(info.canonicalFilePath()));
 
             // Add extra check of the image extensions that are still
             // unknown in older Qt versions or have an application mime type.
@@ -398,12 +399,12 @@ void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
                 ext == QLatin1String("HEIC")                                                   ||
                 ext == QLatin1String("KRA"))
             {
-                imagesUrls << QUrl::fromLocalFile(info.canonicalFilePath());
+                imagesUrls << url;
             }
 
             if (info.isDir())
             {
-                foldersUrls << QUrl::fromLocalFile(info.canonicalFilePath());
+                foldersUrls << url;
             }
         }
     }
