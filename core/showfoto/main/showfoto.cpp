@@ -128,7 +128,7 @@ ShowFoto::ShowFoto(const QList<QUrl>& urlList)
     d->thumbBarDock->reInitialize();
 
     // -- Load current items ---------------------------
-
+    qCDebug(DIGIKAM_SHOWFOTO_LOG) << "Dropped Urls:" << urlList;
     slotDroppedUrls(urlList, false);
 }
 
@@ -279,6 +279,7 @@ void ShowFoto::openUrls(const QList<QUrl> &urls)
     for (QList<QUrl>::const_iterator it = urls.constBegin() ; it != urls.constEnd() ; ++it)
     {
         QFileInfo fi((*it).toLocalFile());
+        qCDebug(DIGIKAM_SHOWFOTO_LOG) << "QFileInfo path:" << fi.path() << fi.canonicalPath();
         iteminfo.name      = fi.fileName();
         iteminfo.mime      = fi.suffix();
         iteminfo.size      = fi.size();
@@ -408,7 +409,8 @@ void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
             foldersUrls << url;
         }
     }
-
+    qCDebug(DIGIKAM_SHOWFOTO_LOG) << "imagesUrls:" << imagesUrls;
+    qCDebug(DIGIKAM_SHOWFOTO_LOG) << "foldersUrls:" << foldersUrls;
     if (!imagesUrls.isEmpty())
     {
         openUrls(imagesUrls);
