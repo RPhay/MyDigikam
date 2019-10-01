@@ -23,6 +23,10 @@
 
 #include "dimgheifloader.h"
 
+// C includes
+
+#include <math.h>
+
 // Qt includes
 
 #include <QFile>
@@ -192,14 +196,17 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     unsigned short b          = 0;
     unsigned short a          = 0;
     unsigned char* pixel      = nullptr;
+    unsigned short* pixel16   = nullptr;
     unsigned char* ptr        = nullptr;
     unsigned short* ptr16     = nullptr;
-    int div16                 = 16 - maxOutputBitsDepth + 1;
-    int mul8                  = maxOutputBitsDepth - 8 + 1;
+    float div16               = (16 - maxOutputBitsDepth) > 0 ? 16.0 - maxOutputBitsDepth : 1.0;
+    float mul8                = (maxOutputBitsDepth - 8)  > 0 ? maxOutputBitsDepth - 8.0  : 1.0;
     int nbOutputBytesPerColor = (maxOutputBitsDepth > 8) ? (imageHasAlpha() ? 4 * 2 : 3 * 2)  // output data stored on 16 bits
                                                          : (imageHasAlpha() ? 4     : 3    ); // output data stored on 8 bits
 
     qDebug() << "HEIC output bytes per color:" << nbOutputBytesPerColor;
+    qDebug() << "HEIC 16 to 8 bits coeff.   :" << div16;
+    qDebug() << "HEIC 8 to 16 bits coeff.   :" << mul8;
 
     for (unsigned int y = 0 ; y < imageHeight() ; ++y)
     {
@@ -223,73 +230,75 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
             if (imageSixteenBit())          // 16 bits image.
             {
-                b = (unsigned short)(pixel[0] + 256 * pixel[1]);
-                g = (unsigned short)(pixel[2] + 256 * pixel[3]);
-                r = (unsigned short)(pixel[4] + 256 * pixel[5]);
+                pixel16 = reinterpret_cast<unsigned short*>(pixel);
+
+                b = pixel16[0];
+                g = pixel16[1];
+                r = pixel16[2];
 
                 if (imageHasAlpha())
                 {
-                    a = (unsigned short)(pixel[6] + 256 * pixel[7]);
+                    a = pixel16[3];
                 }
 
                 if (maxOutputBitsDepth > 8) // From 16 bits to 10 bits or more.
                 {
                     ptr16    = reinterpret_cast<unsigned short*>(&data[((y * imageWidth()) + x) * nbOutputBytesPerColor]);
-                    ptr16[0] = r / div16;
-                    ptr16[1] = g / div16;
-                    ptr16[2] = b / div16;
+                    ptr16[0] = (unsigned short)floor(r / div16);
+                    ptr16[1] = (unsigned short)floor(g / div16);
+                    ptr16[2] = (unsigned short)floor(b / div16);
 
                     if (imageHasAlpha())
                     {
-                        ptr16[3] = a / div16;
+                        ptr16[3] = (unsigned short)floor(a / div16);
                     }
                 }
                 else                        // From 16 bits to 8 bits.
                 {
                     ptr    = reinterpret_cast<unsigned char*>(&data[((y * imageWidth()) + x) * nbOutputBytesPerColor]);
-                    ptr[0] = r / div16;
-                    ptr[1] = g / div16;
-                    ptr[2] = b / div16;
+                    ptr[0] = (unsigned char)floor(r / div16);
+                    ptr[1] = (unsigned char)floor(g / div16);
+                    ptr[2] = (unsigned char)floor(b / div16);
 
                     if (imageHasAlpha())
                     {
-                        ptr[3] = a / div16;
+                        ptr[3] = (unsigned char)floor(a / div16);
                     }
                 }
             }
             else                            // 8 bits image.
             {
-                b = (unsigned char)pixel[0];
-                g = (unsigned char)pixel[1];
-                r = (unsigned char)pixel[2];
+                b = (unsigned short)pixel[0];
+                g = (unsigned short)pixel[1];
+                r = (unsigned short)pixel[2];
 
                 if (imageHasAlpha())
                 {
-                    a = (unsigned char)(pixel[3]);
+                    a = (unsigned short)(pixel[3]);
                 }
 
                 if (maxOutputBitsDepth > 8) // From 8 bits to 10 bits or more.
                 {
                     ptr16    = reinterpret_cast<unsigned short*>(&data[((y * imageWidth()) + x) * nbOutputBytesPerColor]);
-                    ptr16[0] = r * mul8;
-                    ptr16[1] = g * mul8;
-                    ptr16[2] = b * mul8;
+                    ptr16[0] = (unsigned short)floor(r * mul8);
+                    ptr16[1] = (unsigned short)floor(g * mul8);
+                    ptr16[2] = (unsigned short)floor(b * mul8);
 
                     if (imageHasAlpha())
                     {
-                        ptr16[3] = a * mul8;
+                        ptr16[3] = (unsigned short)floor(a * mul8);
                     }
                 }
                 else                        // From 8 bits to 8 bits.
                 {
                     ptr    = reinterpret_cast<unsigned char*>(&data[((y * imageWidth()) + x) * nbOutputBytesPerColor]);
-                    ptr[0] = r;
-                    ptr[1] = g;
-                    ptr[2] = b;
+                    ptr[0] = (unsigned char)r;
+                    ptr[1] = (unsigned char)g;
+                    ptr[2] = (unsigned char)b;
 
                     if (imageHasAlpha())
                     {
-                        ptr[3] = a;
+                        ptr[3] = (unsigned char)a;
                     }
                 }
             }
