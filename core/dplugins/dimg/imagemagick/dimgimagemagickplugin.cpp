@@ -118,7 +118,7 @@ QString DImgImageMagickPlugin::typeMimes() const
 {
     QStringList formats;
     ExceptionInfo ex;
-    size_t n                              = 0;
+    size_t n                  = 0;
     const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
     if (!inflst)
@@ -205,11 +205,17 @@ bool DImgImageMagickPlugin::canRead(const QString& filePath) const
     size_t n                  = 0;
     const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
+    if (!inflst)
+    {
+        qWarning() << "ImageMagick coders list is null!";
+        return false;
+    }
+
     for (uint i = 0 ; i < n ; ++i)
     {
         const MagickInfo* inf = inflst[i];
 
-        if (inf->decoder)
+        if (inf && inf->decoder)
         {
 #if (MagickLibVersion >= 0x69A && defined(magick_module))
             formats.append(QString::fromLatin1(inf->magick_module).toUpper());
@@ -245,11 +251,17 @@ bool DImgImageMagickPlugin::canWrite(const QString& format) const
     size_t n                  = 0;
     const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
+    if (!inflst)
+    {
+        qWarning() << "ImageMagick coders list is null!";
+        return false;
+    }
+
     for (uint i = 0 ; i < n ; ++i)
     {
         const MagickInfo* inf = inflst[i];
 
-        if (inf->encoder)
+        if (inf && inf->encoder)
         {
 #if (MagickLibVersion >= 0x69A && defined(magick_module))
             formats.append(QString::fromLatin1(inf->magick_module).toUpper());
