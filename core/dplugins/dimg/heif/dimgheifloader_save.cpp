@@ -77,7 +77,9 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     }
 
     struct heif_encoder* encoder   = nullptr;
-    struct heif_error error        = heif_context_get_encoder_for_format(ctx, heif_compression_HEVC, &encoder);
+    struct heif_error error        = heif_context_get_encoder_for_format(ctx,
+                                                                         heif_compression_HEVC,
+                                                                         &encoder);
 
     if (!isHeifSuccess(&error))
     {
@@ -89,7 +91,11 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     heif_encoder_set_lossless(encoder, lossless);
 
     struct heif_image* image = nullptr;
-    error                    = heif_image_create(imageWidth(), imageHeight(), heif_colorspace_RGB, chroma, &image);
+    error                    = heif_image_create(imageWidth(),
+                                                 imageHeight(),
+                                                 heif_colorspace_RGB,
+                                                 chroma,
+                                                 &image);
 
     if (!isHeifSuccess(&error))
     {
@@ -104,8 +110,8 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     // --- Add image data
 
-    int nbBytesPerColor = imageHasAlpha()   ?                 4 : 3;
-    nbBytesPerColor     = imageSixteenBit() ? nbBytesPerColor*2 : nbBytesPerColor;
+    int nbBytesPerColor = imageHasAlpha()   ?                   4 : 3;
+    nbBytesPerColor     = imageSixteenBit() ? nbBytesPerColor * 2 : nbBytesPerColor;
 
     error = heif_image_add_plane(image,
                                  heif_channel_interleaved,
@@ -120,8 +126,10 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         return false;
     }
 
-    int stride    = 0;
-    uint8_t* data = heif_image_get_plane(image, heif_channel_interleaved, &stride);
+    int stride          = 0;
+    uint8_t* const data = heif_image_get_plane(image,
+                                               heif_channel_interleaved,
+                                               &stride);
 
     if (!data)
     {
