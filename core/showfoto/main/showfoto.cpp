@@ -398,12 +398,12 @@ void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
                 ext == QLatin1String("HEIC")                                                   ||
                 ext == QLatin1String("KRA"))
             {
-                imagesUrls << url;
+                imagesUrls << QUrl::fromLocalFile(info.canonicalFilePath());
             }
 
-            if (QMimeDatabase().mimeTypeForUrl(url).name() == QLatin1String("inode/directory"))
+            if (info.isDir())
             {
-                foldersUrls << url;
+                foldersUrls << QUrl::fromLocalFile(info.canonicalFilePath());
             }
         }
     }
@@ -443,7 +443,7 @@ void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
     {
         QMessageBox::information(this, qApp->applicationName(),
                                  i18n("There is no dropped item to process."));
-        qWarning(DIGIKAM_SHOWFOTO_LOG) << "infolist is empty..";
+        qCWarning(DIGIKAM_SHOWFOTO_LOG) << "infolist is empty..";
     }
 }
 
