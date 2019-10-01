@@ -382,30 +382,29 @@ void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
         return;
     }
 
-    QList<QUrl> validUrls;
+    QList<QUrl> imagesUrls;
+    QList<QUrl> foldersUrls;
 
     foreach (const QUrl& url, droppedUrls)
     {
         if (url.isValid())
         {
-            validUrls << url;
-        }
-    }
+            QFileInfo info(url.toLocalFile());
+            QString ext(info.suffix().toUpper());
 
-    QList<QUrl> imagesUrls;
-    QList<QUrl> foldersUrls;
+            // Add extra check of the image extensions that are still
+            // unknown in older Qt versions or have an application mime type.
+            if (QMimeDatabase().mimeTypeForUrl(url).name().startsWith(QLatin1String("image/")) ||
+                ext == QLatin1String("HEIC")                                                   ||
+                ext == QLatin1String("KRA"))
+            {
+                imagesUrls << url;
+            }
 
-    foreach (const QUrl& url, validUrls)
-    {
-        if (QMimeDatabase().mimeTypeForUrl(url).name().startsWith(QLatin1String("image"),
-                                                                  Qt::CaseInsensitive))
-        {
-            imagesUrls << url;
-        }
-
-        if (QMimeDatabase().mimeTypeForUrl(url).name() == QLatin1String("inode/directory"))
-        {
-            foldersUrls << url;
+            if (QMimeDatabase().mimeTypeForUrl(url).name() == QLatin1String("inode/directory"))
+            {
+                foldersUrls << url;
+            }
         }
     }
 
