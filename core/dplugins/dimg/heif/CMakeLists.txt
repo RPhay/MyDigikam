@@ -185,6 +185,8 @@ set(dimgheifplugin_SRCS
     ${libde265_SRCS}
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgheifplugin.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgheifloader.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dimgheifloader_read.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dimgheifloader_save.cpp
 )
 
 DIGIKAM_ADD_DIMG_PLUGIN(NAME    HEIF
