@@ -332,6 +332,14 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
         qDebug() << "HEIC data  :" << ptr;
         qDebug() << "HEIC stride:" << stride;
 
+        if (!ptr || stride <= 0)
+        {
+            qWarning() << "Invalid data pixel information!";
+            heif_image_release(heif_image);
+            heif_image_handle_release(image_handle);
+            return false;
+        }
+
         uchar* data = nullptr;
 
         if (colorDepth == 24 ||       // RGB
