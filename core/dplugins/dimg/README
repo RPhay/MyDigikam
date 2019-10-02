@@ -63,3 +63,6 @@ BPG                            Better Portable Graphics
 TODO :
 
 Remove Jasper dependency and replace by OpenJpeg http://www.openjpeg.org
+Add AV1 plugin based on libaom (https://aomedia.googlesource.com/aom/)
+Add JPEG-XR plugin based on libjxr (https://github.com/4creators/jxrlib)
+Add WebP plugin based on libwebp (https://github.com/webmproject/libwebp)
