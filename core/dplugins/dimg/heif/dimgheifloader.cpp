@@ -35,12 +35,9 @@ namespace Digikam
 DImgHEIFLoader::DImgHEIFLoader(DImg* const image)
     : DImgLoader(image)
 {
-    m_hasAlpha           = false;
-    m_sixteenBit         = false;
-    m_observer           = nullptr;
-    m_maxOutputBitsDepth = -1;
-    m_quality            = 50;
-    m_lossless           = false;
+    m_hasAlpha   = false;
+    m_sixteenBit = false;
+    m_observer   = nullptr;
 }
 
 bool DImgHEIFLoader::hasAlpha() const
