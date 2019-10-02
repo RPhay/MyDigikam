@@ -137,7 +137,6 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     heif_encoder_set_lossy_quality(encoder, quality);
     heif_encoder_set_lossless(encoder, lossless);
 
-
     struct heif_image* image = nullptr;
     error                    = heif_image_create(imageWidth(),
                                                  imageHeight(),
@@ -188,7 +187,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         return false;
     }
 
-    qDebug() << "HEIC plane details: ptr=" << data << " stride=" << stride;
+    qDebug() << "HEIC plane details: ptr=" << data << "stride=" << stride;
 
     uint checkpoint           = 0;
     unsigned char r           = 0;
@@ -245,7 +244,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
                 if (maxOutputBitsDepth > 8) // From 16 bits to 10 bits or more.
                 {
-                    dst16    = reinterpret_cast<unsigned short*>(&data[((y * imageWidth()) + x) * nbOutputBytesPerColor]);
+                    dst16    = reinterpret_cast<unsigned short*>(data) + (y * stride) + (x * nbOutputBytesPerColor);
                     dst16[0] = (unsigned short)floor(r16 / div16);
                     dst16[1] = (unsigned short)floor(g16 / div16);
                     dst16[2] = (unsigned short)floor(b16 / div16);
@@ -257,7 +256,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                 }
                 else                        // From 16 bits to 8 bits.
                 {
-                    dst    = reinterpret_cast<unsigned char*>(&data[((y * imageWidth()) + x) * nbOutputBytesPerColor]);
+                    dst    = reinterpret_cast<unsigned char*>(data) + (y * stride) + (x * nbOutputBytesPerColor);
                     dst[0] = (unsigned char)floor(r16 / div16);
                     dst[1] = (unsigned char)floor(g16 / div16);
                     dst[2] = (unsigned char)floor(b16 / div16);
@@ -272,18 +271,18 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
             {
                 src = &imageData()[((y * imageWidth()) + x) * imageBytesDepth()];
 
-                b   = (unsigned short)src[0];
-                g   = (unsigned short)src[1];
-                r   = (unsigned short)src[2];
+                b   = src[0];
+                g   = src[1];
+                r   = src[2];
 
                 if (imageHasAlpha())
                 {
-                    a = (unsigned short)(src[3]);
+                    a = src[3];
                 }
 
                 if (maxOutputBitsDepth > 8) // From 8 bits to 10 bits or more.
                 {
-                    dst16    = reinterpret_cast<unsigned short*>(&data[((y * imageWidth()) + x) * nbOutputBytesPerColor]);
+                    dst16    = reinterpret_cast<unsigned short*>(data) + (y * stride) + (x * nbOutputBytesPerColor);
                     dst16[0] = (unsigned short)floor(r * mul8);
                     dst16[1] = (unsigned short)floor(g * mul8);
                     dst16[2] = (unsigned short)floor(b * mul8);
@@ -295,14 +294,14 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                 }
                 else                        // From 8 bits to 8 bits.
                 {
-                    dst    = reinterpret_cast<unsigned char*>(&data[((y * imageWidth()) + x) * nbOutputBytesPerColor]);
-                    dst[0] = (unsigned char)r;
-                    dst[1] = (unsigned char)g;
-                    dst[2] = (unsigned char)b;
+                    dst    = reinterpret_cast<unsigned char*>(data) + (y * stride) + (x * nbOutputBytesPerColor);
+                    dst[0] = r;
+                    dst[1] = g;
+                    dst[2] = b;
 
                     if (imageHasAlpha())
                     {
-                        dst[3] = (unsigned char)a;
+                        dst[3] = a;
                     }
                 }
             }
