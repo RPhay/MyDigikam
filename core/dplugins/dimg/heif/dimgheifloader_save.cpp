@@ -433,7 +433,7 @@ bool DImgHEIFLoader::saveHEICMetadata(struct heif_context* const heif_context,
     }
 
     QByteArray exif = meta.getExifEncoded();
-    QByteArray xmp  = meta.getExifEncoded();
+    QByteArray xmp  = meta.getXmp();
     struct heif_error error;
 
     if (!exif.isEmpty())
