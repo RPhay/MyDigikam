@@ -48,7 +48,7 @@
 namespace Digikam
 {
 
-int DImgHEIFLoader::x265MaxBitsDepth() const
+int DImgHEIFLoader::x265MaxBitsDepth()
 {
     int maxOutputBitsDepth = -1;
 

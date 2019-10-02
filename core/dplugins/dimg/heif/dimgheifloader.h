@@ -55,6 +55,12 @@ public:
     virtual bool sixteenBit() const override;
     virtual bool isReadOnly() const override;
 
+    /**
+     * Determine libx265 encoder bits depth capability: 8=standard, 10, 12, or more.
+     * Return -1 if encoder instance is not found.
+     */
+    static int x265MaxBitsDepth();
+
 private:
 
     bool isHeifSuccess(struct heif_error* const error);
@@ -69,12 +75,6 @@ private:
     bool saveHEICColorProfile(struct heif_image* const image);
     bool saveHEICMetadata(struct heif_context* const heif_context,
                           struct heif_image_handle* const image_handle);
-
-    /**
-     * Determine libx265 encoder bits depth capability: 8=standard, 10, 12, or more.
-     * Return -1 if encoder instance is not found.
-     */
-    int x265MaxBitsDepth() const;
 
 private:
 

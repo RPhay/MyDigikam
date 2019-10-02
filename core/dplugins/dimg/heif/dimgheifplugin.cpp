@@ -75,6 +75,23 @@ QString DImgHEIFPlugin::description() const
 
 QString DImgHEIFPlugin::details() const
 {
+    QString x265Notice = i18n("This library is not present on your system.");
+
+#ifdef HAVE_X265
+    int depth = DImgHEIFLoader::x265MaxBitsDepth();
+
+    if (depth != -1)
+    {
+        x265Notice = i18n("This library is available on your system with a maximum color depth "
+                          "support of %1 bits.", depth);
+    }
+    else
+    {
+        x265Notice = i18n("This library is available on your system but is not able to encode "
+                          "image with a suitable color depth.");
+    }
+#endif
+
     return i18n("<p>This plugin permit to load and save image using Libheif codec.</p>"
                 "<p>High Efficiency Image File Format (HEIF), also known as High Efficiency Image Coding (HEIC), "
                 "is a file format for individual images and image sequences. It was developed by the "
@@ -82,9 +99,9 @@ QString DImgHEIFPlugin::details() const
                 "stored in a HEIF image as in a JPEG image of the same size, resulting in a better quality image. "
                 "HEIF also supports animation, and is capable of storing more information than an animated GIF "
                 "at a small fraction of the size.</p>"
+                "<p>Encoding HEIC is relevant of optional libx265 codec. %1<p>"
                 "<p>See <a href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>"
-                "High Efficiency Image File Format</a> for details.</p>"
-    );
+                "High Efficiency Image File Format</a> for details.</p>", x265Notice);
 }
 
 QList<DPluginAuthor> DImgHEIFPlugin::authors() const
