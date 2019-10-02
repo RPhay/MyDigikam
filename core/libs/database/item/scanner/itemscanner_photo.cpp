@@ -138,6 +138,8 @@ QString ItemScanner::detectImageFormat() const
             return QLatin1String("JP2");
         case DImg::PGF:
             return QLatin1String("PGF");
+        case DImg::HEIF:
+            return QLatin1String("HEIF");
         case DImg::RAW:
         {
             QString format = QLatin1String("RAW-");

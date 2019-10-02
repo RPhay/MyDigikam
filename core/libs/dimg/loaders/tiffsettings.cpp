@@ -57,7 +57,8 @@ public:
 };
 
 TIFFSettings::TIFFSettings(QWidget* const parent)
-    : QWidget(parent), d(new Private)
+    : QWidget(parent),
+     d(new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 

@@ -13,3 +13,7 @@ add_subdirectory(converttotiff)
 if(Jasper_FOUND)
     add_subdirectory(converttojp2)
 endif()
+
+if(X265_FOUND)
+    add_subdirectory(converttoheif)
+endif()

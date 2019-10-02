@@ -3,8 +3,8 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2019-09-26
- * Description : A HEIF IO file for DImg framework
+ * Date        : 2019-10-02
+ * Description : save HEIF image options.
  *
  * Copyright (C) 2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -21,54 +21,49 @@
  *
  * ============================================================ */
 
-#include "dimgheifloader.h"
+#ifndef DIGIKAM_HEIF_SETTINGS_H
+#define DIGIKAM_HEIF_SETTINGS_H
+
+// Qt includes
+
+#include <QWidget>
 
 // Local includes
 
-#include "digikam_config.h"
-#include "digikam_debug.h"
-#include "dimg.h"
-#include "dimgloaderobserver.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {
 
-DImgHEIFLoader::DImgHEIFLoader(DImg* const image)
-    : DImgLoader(image)
+class DIGIKAM_EXPORT HEIFSettings : public QWidget
 {
-    m_hasAlpha   = false;
-    m_sixteenBit = false;
-    m_observer   = nullptr;
-}
+    Q_OBJECT
 
-bool DImgHEIFLoader::hasAlpha() const
-{
-    return m_hasAlpha;
-}
+public:
 
-bool DImgHEIFLoader::sixteenBit() const
-{
-    return m_sixteenBit;
-}
+    explicit HEIFSettings(QWidget* const parent = nullptr);
+    ~HEIFSettings();
 
-bool DImgHEIFLoader::isReadOnly() const
-{
-#ifdef HAVE_X265
-    return false;
-#else
-    return true;
-#endif
-}
+    void setCompressionValue(int val);
+    int  getCompressionValue() const;
 
-bool DImgHEIFLoader::isHeifSuccess(struct heif_error* const error)
-{
-    if (error->code == 0)
-    {
-        return true;
-    }
+    void setLossLessCompression(bool b);
+    bool getLossLessCompression() const;
 
-    qWarning() << "Error while processing HEIC image:" << error->message;
-    return false;
-}
+Q_SIGNALS:
+
+    void signalSettingsChanged();
+
+private Q_SLOTS:
+
+    void slotToggleHEIFLossLess(bool);
+
+private:
+
+    class Private;
+    Private* const d;
+};
 
 } // namespace Digikam
+
+#endif // DIGIKAM_HEIF_SETTINGS_H

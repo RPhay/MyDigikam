@@ -63,7 +63,8 @@ public:
 };
 
 PNGSettings::PNGSettings(QWidget* parent)
-    : QWidget(parent), d(new Private)
+    : QWidget(parent),
+      d(new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 

@@ -53,6 +53,10 @@ void FileSaveOptionsBoxTest::testDiscoverFormat_data()
     QTest::newRow("bla.png.jpeg.pgx") << "bla.png.jpeg.pgx" << (int) DImg::JP2K;
 #endif // HAVE_JASPER
 
+#ifdef HAVE_X265
+    QTest::newRow("bla.png.jpeg.heic") << "bla.png.jpeg.heic" << (int) DImg::HEIF;
+#endif // HAVE_X265
+
     QTest::newRow("pgf") << "PGF" << (int) DImg::PGF;
 
     QTest::newRow("unknwon") << "i.dont.know" << (int) DImg::NONE; // krazy:exclude=spelling

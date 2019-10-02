@@ -62,6 +62,10 @@
 #   include "jp2ksettings.h"
 #endif // HAVE_JASPER
 
+#ifdef HAVE_X265
+#   include "heifsettings.h"
+#endif // HAVE_X265
+
 namespace Digikam
 {
 
@@ -101,6 +105,9 @@ public:
 #ifdef HAVE_JASPER
         j2kSettings(nullptr),
 #endif // HAVE_JASPER
+#ifdef HAVE_X265
+        heifSettings(nullptr),
+#endif // HAVE_X265
         pgfSettings(nullptr)
     {
     }
@@ -132,6 +139,9 @@ public:
 #ifdef HAVE_JASPER
     JP2KSettings*          j2kSettings;
 #endif // HAVE_JASPER
+#ifdef HAVE_X265
+    HEIFSettings*          heifSettings;
+#endif // HAVE_X265
     PGFSettings*           pgfSettings;
 };
 
@@ -278,12 +288,21 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
     slay->addWidget(box4);
 #endif // HAVE_JASPER
 
+#ifdef HAVE_X265
     QGroupBox* const  box5   = new QGroupBox;
     QVBoxLayout* const lbox5 = new QVBoxLayout;
-    d->pgfSettings           = new PGFSettings();
-    lbox5->addWidget(d->pgfSettings);
+    d->heifSettings          = new HEIFSettings();
+    lbox5->addWidget(d->j2kSettings);
     box5->setLayout(lbox5);
     slay->addWidget(box5);
+#endif // HAVE_X265
+
+    QGroupBox* const  box6   = new QGroupBox;
+    QVBoxLayout* const lbox6 = new QVBoxLayout;
+    d->pgfSettings           = new PGFSettings();
+    lbox6->addWidget(d->pgfSettings);
+    box6->setLayout(lbox6);
+    slay->addWidget(box6);
 
     slay->setContentsMargins(spacing, spacing, spacing, spacing);
     slay->setSpacing(spacing);
@@ -330,6 +349,11 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
     connect(d->j2kSettings, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
 #endif // HAVE_JASPER
+
+#ifdef HAVE_X265
+    connect(d->heifSettings, SIGNAL(signalSettingsChanged()),
+            this, SLOT(slotSettingsChanged()));
+#endif // HAVE_X265
 
     connect(d->pgfSettings, SIGNAL(signalSettingsChanged()),
             this, SLOT(slotSettingsChanged()));
@@ -391,6 +415,10 @@ void QueueSettingsView::slotResetSettings()
     d->j2kSettings->setLossLessCompression(true);
     d->j2kSettings->setCompressionValue(75);
 #endif // HAVE_JASPER
+#ifdef HAVE_X265
+    d->heifSettings->setLossLessCompression(true);
+    d->heifSettings->setCompressionValue(75);
+#endif // HAVE_X265
     d->pgfSettings->setLossLessCompression(true);
     d->pgfSettings->setCompressionValue(3);
     blockSignals(false);
@@ -424,6 +452,10 @@ void QueueSettingsView::slotQueueSelected(int, const QueueSettings& settings, co
     d->j2kSettings->setLossLessCompression(settings.ioFileSettings.JPEG2000LossLess);
     d->j2kSettings->setCompressionValue(settings.ioFileSettings.JPEG2000Compression);
 #endif // HAVE_JASPER
+#ifdef HAVE_X265
+    d->heifSettings->setLossLessCompression(settings.ioFileSettings.HEIFLossLess);
+    d->heifSettings->setCompressionValue(settings.ioFileSettings.HEIFCompression);
+#endif // HAVE_X265
     d->pgfSettings->setLossLessCompression(settings.ioFileSettings.PGFLossLess);
     d->pgfSettings->setCompressionValue(settings.ioFileSettings.PGFCompression);
 }
@@ -456,6 +488,10 @@ void QueueSettingsView::slotSettingsChanged()
     settings.ioFileSettings.JPEG2000LossLess    = d->j2kSettings->getLossLessCompression();
     settings.ioFileSettings.JPEG2000Compression = d->j2kSettings->getCompressionValue();
 #endif // HAVE_JASPER
+#ifdef HAVE_X265
+    settings.ioFileSettings.HEIFLossLess        = d->heifSettings->getLossLessCompression();
+    settings.ioFileSettings.HEIFCompression     = d->heifSettings->getCompressionValue();
+#endif // HAVE_X265
     settings.ioFileSettings.PGFLossLess         = d->pgfSettings->getLossLessCompression();
     settings.ioFileSettings.PGFCompression      = d->pgfSettings->getCompressionValue();
 

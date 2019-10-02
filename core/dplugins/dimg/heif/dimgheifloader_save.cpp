@@ -34,6 +34,7 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "digikam_debug.h"
 #include "dimg.h"
 #include "dimgloaderobserver.h"
@@ -96,9 +97,8 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     fclose(f);
 
     QVariant qualityAttr  = imageGetAttribute(QLatin1String("quality"));
-    int quality           = qualityAttr.isValid() ? qualityAttr.toInt() : 50;
-    QVariant losslessAttr = imageGetAttribute(QLatin1String("lossless"));
-    bool lossless         = losslessAttr.isValid() ? qualityAttr.toBool() : false;
+    int quality           = qualityAttr.isValid() ? qualityAttr.toInt() : 75;
+    bool lossless         = (quality == 0);
 
     // --- Determine libx265 encoder bits depth capability: 8=standard, 10, 12, or later 16.
 
@@ -386,8 +386,8 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     heif_context_free(ctx);
 
-    imageSetAttribute(QLatin1String("savedFormat"), QLatin1String("HEIC"));
-//    saveMetadata(filePath);  NOTE: Exiv2 do not support HEIC yet
+    imageSetAttribute(QLatin1String("savedFormat"), QLatin1String("HEIF"));
+    saveMetadata(filePath);
 
     return true;
 }

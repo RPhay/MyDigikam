@@ -53,6 +53,10 @@
 #   include "jp2ksettings.h"
 #endif // HAVE_JASPER
 
+#ifdef HAVE_X265
+#   include "heifsettings.h"
+#endif // HAVE_X265
+
 namespace Digikam
 {
 
@@ -71,6 +75,9 @@ public:
 #ifdef HAVE_JASPER
         JPEG2000Options(nullptr),
 #endif // HAVE_JASPER
+#ifdef HAVE_X265
+        HEIFOptions(nullptr),
+#endif // HAVE_X265
         PGFOptions(nullptr)
     {
     }
@@ -88,6 +95,10 @@ public:
 #ifdef HAVE_JASPER
     JP2KSettings* JPEG2000Options;
 #endif // HAVE_JASPER
+
+#ifdef HAVE_X265
+    HEIFSettings* HEIFOptions;
+#endif // HAVE_X265
 
     PGFSettings*  PGFOptions;
 };
@@ -128,6 +139,11 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
 
     d->PGFOptions      = new PGFSettings(this);
 
+    //-- HEIF Settings -------------------------------------------------
+#ifdef HAVE_X265
+    d->HEIFOptions     = new HEIFSettings(this);
+#endif // HAVE_X265
+
     //-----------------------------------------------------------------------
 
     insertWidget(DImg::NONE, d->noneOptions);
@@ -138,6 +154,9 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
     insertWidget(DImg::JP2K, d->JPEG2000Options);
 #endif // HAVE_JASPER
     insertWidget(DImg::PGF,  d->PGFOptions);
+#ifdef HAVE_X265
+    insertWidget(DImg::HEIF, d->HEIFOptions);
+#endif // HAVE_X265
 
     //-----------------------------------------------------------------------
 
@@ -197,6 +216,12 @@ DImg::FORMAT FileSaveOptionsBox::discoverFormat(const QString& filename, DImg::F
         format = DImg::JP2K;
     }
 #endif // HAVE_JASPER
+#ifdef HAVE_X265
+    else if (ext.contains(QLatin1String("HEIC")))
+    {
+        format = DImg::HEIF;
+    }
+#endif // HAVE_X265
     else if (ext.contains(QLatin1String("PGF")))
     {
         format = DImg::PGF;
@@ -225,6 +250,11 @@ void FileSaveOptionsBox::applySettings()
 #endif // HAVE_JASPER
     group.writeEntry(QLatin1String("PGFCompression"),      d->PGFOptions->getCompressionValue());
     group.writeEntry(QLatin1String("PGFLossLess"),         d->PGFOptions->getLossLessCompression());
+#ifdef HAVE_X265
+    group.writeEntry(QLatin1String("HEIFCompression"),     d->HEIFOptions->getCompressionValue());
+    group.writeEntry(QLatin1String("HEIFLossLess"),        d->HEIFOptions->getLossLessCompression());
+#endif // HAVE_X265
+
     config->sync();
 }
 
@@ -242,6 +272,10 @@ void FileSaveOptionsBox::readSettings()
 #endif // HAVE_JASPER
     d->PGFOptions->setCompressionValue( group.readEntry(QLatin1String("PGFCompression"),           3) );
     d->PGFOptions->setLossLessCompression( group.readEntry(QLatin1String("PGFLossLess"),           true) );
+#ifdef HAVE_X265
+    d->HEIFOptions->setCompressionValue( group.readEntry(QLatin1String("HEIFCompression"),         75) );
+    d->HEIFOptions->setLossLessCompression( group.readEntry(QLatin1String("HEIFLossLess"),         true) );
+#endif // HAVE_X265
 }
 
 } // namespace Digikam

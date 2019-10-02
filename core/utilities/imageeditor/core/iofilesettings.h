@@ -47,6 +47,8 @@ public:
         JPEG2000LossLess    = true;
         PGFCompression      = 3;
         PGFLossLess         = true;
+        HEIFCompression     = 75;
+        HEIFLossLess        = true;
         useRAWImport        = true;
         rawImportToolIid    = QLatin1String("org.kde.digikam.plugin.rawimport.Native");
     };
@@ -80,6 +82,12 @@ public:
 
     // PGF lossless compression.
     bool    PGFLossLess;
+
+    // HEIF quality value.
+    int     HEIFCompression;
+
+    // HEIF lossless compression.
+    bool    HEIFLossLess;
 
     // Use Raw Import tool to load a RAW picture.
     bool    useRAWImport;

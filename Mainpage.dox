@@ -24,7 +24,7 @@
 |├── COPYING-CMAKE-SCRIPTS                                    | Cmake files license                                                     |
 |├── COPYING.LIB                                              | Internal shared libraries license                                       |
 |├── download-repos                                           | Script to download all source code including extra repositories         |
-|├── gits                                                     | Script to perform git in recursive mode over multiple repositories     |
+|├── gits                                                     | Script to perform git in recursive mode over multiple repositories      |
 |├── gitup                                                    | Script to perform git pull --rebase in reccursive mode                  |
 |├── Mainpage.dox                                             | API documentation main page based on Doxygen                            |
 |├── Messages.sh                                              | Script to extract strings for translators                               |
@@ -54,7 +54,7 @@
 |│   │       └── utils                                        | View utility classes                                                    |
 |│   ├── cmake                                                | Extra Cmake scripts will be hosted here                                 |
 |│   │   ├── modules                                          | Cmake scripts to find extra dependencies                                |
-|│   │   └── templates                                        | Cmake template files used at configuration time                         |
+|│   │   ├── templates                                        | Cmake template files used at configuration time                         |
 |│   │   ├── about                                            | Welcome page files (HTML + CSS)                                         |
 |│   │   ├── colorschemes                                     | GUI Color scheme files                                                  |
 |│   │   ├── database                                         | Database XML configuration files                                        |
@@ -86,12 +86,14 @@
 |│   │   │   ├── file                                         | All file processing plugins                                             |
 |│   │   │   ├── filters                                      | All filter item plugins                                                 |
 |│   │   │   └── transform                                    | All tranform item plugins                                               |
-|│   │   └── generic                                          | All generic plugins                                                     |
-|│   │       ├── import                                       | Tools to import items                                                   |
-|│   │       ├── metadata                                     | Plugins to change items metadata                                        |
-|│   │       ├── tools                                        | Plugins hosted in Tools main menu                                       |
-|│   │       ├── view                                         | Plugins to display items                                                |
-|│   │       └── webservices                                  | All plugins to import and export items to remote web-services           |
+|│   │   ├── generic                                          | All generic plugins                                                     |
+|│   │   │   ├── import                                       | Tools to import items                                                   |
+|│   │   │   ├── metadata                                     | Plugins to change items metadata                                        |
+|│   │   │   ├── tools                                        | Plugins hosted in Tools main menu                                       |
+|│   │   │   ├── view                                         | Plugins to display items                                                |
+|│   │   │   └── webservices                                  | All plugins to import and export items to remote web-services           |
+|│   │   ├── rawimport                                        | All Raw import plugins                                                  |
+|│   │   └── dimg                                             | All DImg image loader plugins                                           |
 |│   ├── libs                                                 | digiKam core sub-components (few are shared with Showfoto)              |
 |│   │   ├── album                                            | All classes use to manage digiKam albums operations and properties      |
 |│   │   ├── database                                         | All low level database interface is here                                |
@@ -132,7 +134,7 @@
 |│   │   │   │   ├── transform                                | All image transformation filters                                        |
 |│   │   │   │   └── wb                                       | White balance filter                                                    |
 |│   │   │   ├── imagehistory                                 | Image history interface for image container                             |
-|│   │   │   └── loaders                                      | All DImg image loaders are here                                         |
+|│   │   │   └── loaders                                      | All DImg image loaders interface                                        |
 |│   │   ├── metadataengine                                   | The metadata wrapper based on Exiv2 for image and FFMpeg for video      |
 |│   │   ├── dngwriter                                        | Qt classes to convert RAW files to DNG format                           |
 |│   │   │   └── extra                                        | DNG and XMP sdks from Adobe                                             |
@@ -214,7 +216,6 @@
 |│       │   ├── dialogs                                      | Image editor dialogs                                                    |
 |│       │   ├── editor                                       | The core image editors classes                                          |
 |│       │   ├── main                                         | The main digiKam image editor view, not shared with Showfoto            |
-|│       │   ├── rawimport                                    | The Raw import tool                                                     |
 |│       │   └── widgets                                      | All common widgets                                                      |
 |│       ├── import                                           | The import tools, including USB MAss Storage, Gphoto2, and Sane support |
 |│       │   ├── backend                                      | Camera backends                                                         |

@@ -14,9 +14,6 @@ include_directories($<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules ${CMAKE_MODULE_PATH})
-find_package(X265)
-
 include(CheckFunctionExists)
 include(CheckIncludeFile)
 
@@ -94,7 +91,6 @@ set(libheif_SRCS
 
 if(X265_FOUND)
     include_directories(${X265_INCLUDE_DIRS})
-    add_definitions(-DHAVE_X265=1)
     set(libheif_SRCS ${libheif_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/libheif/heif_encoder_x265.cc
     )

@@ -100,6 +100,9 @@ AdvancedSettings::AdvancedSettings(QWidget* const parent)
 #ifdef HAVE_JASPER
     d->losslessFormat->insertItem(3, QLatin1String("JP2"));
 #endif // HAVE_JASPER
+#ifdef HAVE_X265
+    d->losslessFormat->insertItem(4, QLatin1String("HEIC"));
+#endif // HAVE_X265
 
     onFlyVlay->addWidget(d->templateSelector);
     onFlyVlay->addWidget(d->documentNameCheck);

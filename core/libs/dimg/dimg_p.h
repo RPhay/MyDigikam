@@ -179,6 +179,10 @@ public:
                         {
                             format = DImg::PGF;
                         }
+                        else if (name == QLatin1String("HEIF"))
+                        {
+                            format = DImg::HEIF;
+                        }
                         else
                         {
                             // In others cases, ImageMagick or QImage will be used to try to open file.

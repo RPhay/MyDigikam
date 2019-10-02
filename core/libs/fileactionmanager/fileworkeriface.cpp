@@ -199,6 +199,7 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
                     case DImg::TIFF:
                     case DImg::JP2K:
                     case DImg::PGF:
+                    case DImg::HEIF:
                         rotateLossy = true;
                     default:
                         break;

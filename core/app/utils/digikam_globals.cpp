@@ -92,7 +92,11 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
     bool jp2k = false;
 #endif // HAVE_JASPER
 
-    foreach(const QByteArray& frm, supported)
+#ifdef HAVE_X265
+    bool heif = false;
+#endif // HAVE_X265
+
+    foreach (const QByteArray& frm, supported)
     {
         if (QString::fromLatin1(frm).contains(QLatin1String("tif"),  Qt::CaseInsensitive) ||
             QString::fromLatin1(frm).contains(QLatin1String("tiff"), Qt::CaseInsensitive))
@@ -119,6 +123,14 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
             continue;
         }
 #endif // HAVE_JASPER
+
+#ifdef HAVE_X265
+        if (QString::fromLatin1(frm).contains(QLatin1String("heic"),  Qt::CaseInsensitive))
+        {
+            heif = true;
+            continue;
+        }
+#endif // HAVE_X265
 
         formats.append(i18n("%1 Image (%2)", QString::fromLatin1(frm).toUpper(), QLatin1String("*.") + QLatin1String(frm)));
         allTypes.append(QString::fromLatin1("*.%1 ").arg(QLatin1String(frm)));
@@ -147,8 +159,13 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
     formats << i18n("Progressive Graphics file (*.pgf)");
     allTypes.append(QLatin1String("*.pgf "));
 
-    formats << i18n("High Efficiency Image Coding (*.heic)");
-    allTypes.append(QLatin1String("*.heic "));
+#ifdef HAVE_X265
+    if (heif)
+    {
+        formats << i18n("High Efficiency Image Coding (*.heic)");
+        allTypes.append(QLatin1String("*.heic "));
+    }
+#endif // HAVE_X265
 
     if (mode != QIODevice::WriteOnly)
     {

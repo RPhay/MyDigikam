@@ -246,6 +246,7 @@ find_package(Boost)
 find_package(LCMS2)
 find_package(EXPAT)    # For DNGWriter: XMP SDK need Expat library to compile.
 find_package(Threads)  # For DNGWriter and LibRaw which needs native threads support.
+find_package(X265)     # For HEIF encoding support.
 
 find_package(exiv2 REQUIRED)
 
@@ -559,6 +560,7 @@ MACRO_BOOL_TO_01(ENABLE_QWEBENGINE            HAVE_QWEBENGINE)
 MACRO_BOOL_TO_01(ENABLE_FACESENGINE_DNN       HAVE_FACESENGINE_DNN)
 MACRO_BOOL_TO_01(ENABLE_DRMINGW               HAVE_DRMINGW)
 MACRO_BOOL_TO_01(ImageMagick_Magick++_FOUND   HAVE_IMAGE_MAGICK)
+MACRO_BOOL_TO_01(X265_FOUND                   HAVE_X265)
 
 # Set config files accordingly with optional dependencies
 
@@ -612,14 +614,15 @@ PRINT_OPTIONAL_LIBRARY_STATUS("libkio"            "https://cgit.kde.org/kio.git/
 PRINT_OPTIONAL_LIBRARY_STATUS("libknotifications" "https://cgit.kde.org/knotifyconfig.git/about/"                   "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without KDE desktop notifications support."         KF5Notifications_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libknotifyconfig"  "https://cgit.kde.org/knotifications.git/about/"                  "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without KDE desktop notify configuration support."  KF5NotifyConfig_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libksane"          "https://cgit.kde.org/libksane.git/about/"                        "(version >= ${KSANE_MIN_VERSION})"     "digiKam will be compiled without flat scanners support."                     KF5Sane_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("liblensfun"        "http://lensfun.sourceforge.net"                                  "(version >= 0.2.6)"                    "digiKam will be compiled without Lens Auto Correction tool support."         LensFun_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("liblqr-1"          "http://liblqr.wikidot.com"                                       "(version >= 0.4.1)"                    "digiKam will be compiled without Contents Aware Resizer tool support."       Lqr-1_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("liblensfun"        "https://lensfun.sourceforge.net"                                 "(version >= 0.2.6)"                    "digiKam will be compiled without Lens Auto Correction tool support."         LensFun_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("liblqr-1"          "https://liblqr.wikidot.com"                                      "(version >= 0.4.1)"                    "digiKam will be compiled without Contents Aware Resizer tool support."       Lqr-1_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libmarble"         "https://cgit.kde.org/marble.git/about/"                          "(version >= 0.22.0)"                   "digiKam will be compiled without geolocation maps support."                  Marble_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libqtav"           "http://www.qtav.org/"                                            "(version >= ${QTAV_MIN_VERSION})"      "digiKam will be compiled without Media Player support."                      QtAV_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libqtav"           "https://www.qtav.org/"                                           "(version >= ${QTAV_MIN_VERSION})"      "digiKam will be compiled without Media Player support."                      QtAV_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libthreadweaver"   "https://cgit.kde.org/threadweaver.git/about/"                    "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without Panorama support."                          KF5ThreadWeaver_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libxml2"           "http://xmlsoft.org"                                              "(version >= 2.7.0)"                    "digiKam will be compiled without HTMLGallery support."                       LibXml2_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libxslt"           "http://xmlsoft.org/XSLT"                                         "(version >= 1.1.0)"                    "digiKam will be compiled without HTMLGallery support."                       LibXslt_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("OpenGL"            "http://www.mesa3d.org"                                           "(version >= 11.0.0)"                   "digiKam will be compiled without OpenGL support."                            HAVE_OPENGL)
+PRINT_OPTIONAL_LIBRARY_STATUS("libxml2"           "https://xmlsoft.org"                                             "(version >= 2.7.0)"                    "digiKam will be compiled without HTMLGallery support."                       LibXml2_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libxslt"           "https://xmlsoft.org/XSLT"                                        "(version >= 1.1.0)"                    "digiKam will be compiled without HTMLGallery support."                       LibXslt_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libx265"           "https://x265.org"                                                "(version >= 2.2)"                      "digiKam will be compiled without HEIF encoding support."                     X265_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("OpenGL"            "https://www.mesa3d.org"                                          "(version >= 11.0.0)"                   "digiKam will be compiled without OpenGL support."                            HAVE_OPENGL)
 
 # ==============================================================================
 
