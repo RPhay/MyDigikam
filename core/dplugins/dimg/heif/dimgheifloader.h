@@ -8,6 +8,11 @@
  *
  * Copyright (C) 2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
+ * Other HEIF loader implementions:
+ *     https://github.com/KDE/krita/tree/master/plugins/impex/heif
+ *     https://github.com/jakar/qt-heif-image-plugin
+ *     https://github.com/ImageMagick/ImageMagick/blob/master/coders/heic.c
+ *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
  * Public License as published by the Free Software Foundation;
@@ -50,13 +55,26 @@ public:
     virtual bool sixteenBit() const override;
     virtual bool isReadOnly() const override;
 
+    /**
+     * Determine libx265 encoder bits depth capability: 8=standard, 10, 12, or more.
+     * Return -1 if encoder instance is not found.
+     */
+    static int x265MaxBitsDepth();
+
 private:
 
     bool isHeifSuccess(struct heif_error* const error);
+
+    // Read operations
     bool readHEICColorProfile(struct heif_image_handle* const image_handle);
     bool readHEICMetadata(struct heif_image_handle* const image_handle);
     bool readHEICImageByID(struct heif_context* const heif_context,
                            heif_item_id image_id);
+
+    // Save operations
+    bool saveHEICColorProfile(struct heif_image* const image);
+    bool saveHEICMetadata(struct heif_context* const heif_context,
+                          struct heif_image_handle* const image_handle);
 
 private:
 

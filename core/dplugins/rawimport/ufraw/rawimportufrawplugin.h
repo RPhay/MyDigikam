@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_UFRAW_RAW_IMPORT_PLUGIN_H
-#define DIGIKAM_UFRAW_RAW_IMPORT_PLUGIN_H
+#ifndef DIGIKAM_RAW_IMPORT_UFRAW_PLUGIN_H
+#define DIGIKAM_RAW_IMPORT_UFRAW_PLUGIN_H
 
 // Qt includes
 
@@ -67,11 +67,11 @@ private Q_SLOTS:
     void slotProcessReadyRead();
 
 private:
-    
+
     class Private;
     Private* const d;
 };
 
 } // namespace DigikamRawImportUFRawPlugin
 
-#endif // DIGIKAM_UFRAW_RAW_IMPORT_PLUGIN_H
+#endif // DIGIKAM_RAW_IMPORT_UFRAW_PLUGIN_H

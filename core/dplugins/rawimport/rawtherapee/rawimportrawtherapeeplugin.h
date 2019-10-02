@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_RAWTHERAPEE_RAW_IMPORT_PLUGIN_H
-#define DIGIKAM_RAWTHERAPEE_RAW_IMPORT_PLUGIN_H
+#ifndef DIGIKAM_RAW_IMPORT_RAWTHERAPEE_PLUGIN_H
+#define DIGIKAM_RAW_IMPORT_RAWTHERAPEE_PLUGIN_H
 
 // Qt includes
 
@@ -74,4 +74,4 @@ private:
 
 } // namespace DigikamRawImportRawTherapeePlugin
 
-#endif // DIGIKAM_RAWTHERAPEE_RAW_IMPORT_PLUGIN_H
+#endif // DIGIKAM_RAW_IMPORT_RAWTHERAPEE_PLUGIN_H

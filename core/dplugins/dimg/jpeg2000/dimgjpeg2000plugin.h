@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_JPEG2000_DIMG_PLUGIN_H
-#define DIGIKAM_JPEG2000_DIMG_PLUGIN_H
+#ifndef DIGIKAM_DIMG_JPEG_2000_PLUGIN_H
+#define DIGIKAM_DIMG_JPEG_2000_PLUGIN_H
 
 // Qt includes
 
@@ -70,4 +70,4 @@ public:
 
 } // namespace DigikamJPEG2000DImgPlugin
 
-#endif // DIGIKAM_JPEG2000_DIMG_PLUGIN_H
+#endif // DIGIKAM_DIMG_JPEG_2000_PLUGIN_H

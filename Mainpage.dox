@@ -337,6 +337,7 @@ The full list of mandatory (X) and optional (opt) external dependencies required
 | libgomp              |  opt     | >= 5.0      | https://gcc.gnu.org/onlinedocs/libgomp            | OpenMP support for RawEngine                           |                                                                                       |
 | libmagick++          |  opt     | >= 6.7.0    | https://www.imagemagick.org                       | ImageMagick codecs support for DImg image loader       | Version >= 7.0 recommended                                                            |
 | DrMingw              |  opt     | >= 0.8.2    | https://github.com/jrfonseca/drmingw              | Mingw crash handler (run-time deps only for windows)   |                                                                                       |
+| libx265              |  opt     | >= 2.2      | http://x265.org/                                  | For HEIC encoding support                              |                                                                                       |
 
 \section getsourcecode Get Source Code
 

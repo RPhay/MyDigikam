@@ -130,41 +130,52 @@ int main(int argc, char** argv)
     ExceptionInfo ex;
     size_t n                  = 0;
     const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
+
+    if (!inflst)
+    {
+        qWarning() << "ImageMagick coders list is null!";
+        return -1;
+    }
+
     qDebug().noquote() << "Name             :: Module           :: Mime Type                    :: Mode  :: Version                      :: Description";
 
     for (uint i = 0 ; i < n ; ++i)
     {
         const MagickInfo* inf = inflst[i];
-        QString mode;
 
-        if (inf->decoder) mode.append(QLatin1Char('R'));
-        else              mode.append(QLatin1Char('-'));
+        if (inf)
+        {
+            QString mode;
 
-        if (inf->encoder) mode.append(QLatin1Char('W'));
-        else              mode.append(QLatin1Char('-'));
+            if (inf->decoder) mode.append(QLatin1Char('R'));
+            else              mode.append(QLatin1Char('-'));
+
+            if (inf->encoder) mode.append(QLatin1Char('W'));
+            else              mode.append(QLatin1Char('-'));
 
 #if (MagickLibVersion >= 0x69A && defined(magick_module))
-        QString mod  = QLatin1String(inf->magick_module);
+            QString mod  = QLatin1String(inf->magick_module);
 #else
-        QString mod  = QLatin1String(inf->module);
+            QString mod  = QLatin1String(inf->module);
 #endif
 
-        QString mime = QMimeDatabase().mimeTypeForFile(QFileInfo(QString::fromLatin1("foo.%1").arg(mod))).name();
+            QString mime = QMimeDatabase().mimeTypeForFile(QFileInfo(QString::fromLatin1("foo.%1").arg(mod))).name();
 
-        if (mod != QLatin1String("DNG")  &&
-            mod != QLatin1String("JPEG") &&
-            mod != QLatin1String("PNG")  &&
-            mod != QLatin1String("TIFF") &&
-            mod != QLatin1String("JP2")  &&
-            mime.startsWith(QLatin1String("image/")))
-        {
-            qDebug().noquote()
-                 << QString::fromLatin1("%1").arg(QLatin1String(inf->name),        16) << "::"
-                 << QString::fromLatin1("%1").arg(mod,                             16) << "::"
-                 << QString::fromLatin1("%1").arg(mime,                            28) << "::"
-                 << QString::fromLatin1("%1").arg(mode,                             5) << "::"
-                 << QString::fromLatin1("%1").arg(QLatin1String(inf->version),     28) << "::"
-                 << QString::fromLatin1("%1").arg(QLatin1String(inf->description), 64);
+            if (mod != QLatin1String("DNG")  &&
+                mod != QLatin1String("JPEG") &&
+                mod != QLatin1String("PNG")  &&
+                mod != QLatin1String("TIFF") &&
+                mod != QLatin1String("JP2")  &&
+                mime.startsWith(QLatin1String("image/")))
+            {
+                qDebug().noquote()
+                     << QString::fromLatin1("%1").arg(QLatin1String(inf->name),        16) << "::"
+                     << QString::fromLatin1("%1").arg(mod,                             16) << "::"
+                     << QString::fromLatin1("%1").arg(mime,                            28) << "::"
+                     << QString::fromLatin1("%1").arg(mode,                             5) << "::"
+                     << QString::fromLatin1("%1").arg(QLatin1String(inf->version),     28) << "::"
+                     << QString::fromLatin1("%1").arg(QLatin1String(inf->description), 64);
+            }
         }
     }
 

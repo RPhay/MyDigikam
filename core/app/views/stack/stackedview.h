@@ -83,12 +83,12 @@ public:
     /* Attach the thumbnail dock widget to the specified QMainWindow. */
     void setDockArea(QMainWindow*);
 
-    ThumbBarDock*      thumbBarDock()     const;
+    ThumbBarDock*     thumbBarDock()     const;
     ItemThumbnailBar* thumbBar()         const;
     DigikamItemView*  imageIconView()    const;
     ItemPreviewView*  imagePreviewView() const;
-    TableView*         tableView()        const;
-    TrashView*         trashView()        const;
+    TableView*        tableView()        const;
+    TrashView*        trashView()        const;
 
 #ifdef HAVE_MEDIAPLAYER
     MediaPlayerView*   mediaPlayerView()  const;

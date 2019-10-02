@@ -282,8 +282,8 @@ void ShowFoto::openUrls(const QList<QUrl> &urls)
         iteminfo.name      = fi.fileName();
         iteminfo.mime      = fi.suffix();
         iteminfo.size      = fi.size();
-        iteminfo.url       = QUrl::fromLocalFile(fi.filePath());
         iteminfo.folder    = fi.path();
+        iteminfo.url       = QUrl::fromLocalFile(fi.filePath());
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
         iteminfo.dtime     = fi.birthTime();
@@ -382,30 +382,30 @@ void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
         return;
     }
 
-    QList<QUrl> validUrls;
-
-    foreach (const QUrl& url, droppedUrls)
-    {
-        if (url.isValid())
-        {
-            validUrls << url;
-        }
-    }
-
     QList<QUrl> imagesUrls;
     QList<QUrl> foldersUrls;
 
-    foreach (const QUrl& url, validUrls)
+    foreach (const QUrl& drop, droppedUrls)
     {
-        if (QMimeDatabase().mimeTypeForUrl(url).name().startsWith(QLatin1String("image"),
-                                                                  Qt::CaseInsensitive))
+        if (drop.isValid())
         {
-            imagesUrls << url;
-        }
+            QFileInfo info(drop.toLocalFile());
+            QString ext(info.suffix().toUpper());
+            QUrl url(QUrl::fromLocalFile(info.canonicalFilePath()));
 
-        if (QMimeDatabase().mimeTypeForUrl(url).name() == QLatin1String("inode/directory"))
-        {
-            foldersUrls << url;
+            // Add extra check of the image extensions that are still
+            // unknown in older Qt versions or have an application mime type.
+            if (QMimeDatabase().mimeTypeForUrl(url).name().startsWith(QLatin1String("image/")) ||
+                ext == QLatin1String("HEIC")                                                   ||
+                ext == QLatin1String("KRA"))
+            {
+                imagesUrls << url;
+            }
+
+            if (info.isDir())
+            {
+                foldersUrls << url;
+            }
         }
     }
 
@@ -444,7 +444,7 @@ void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
     {
         QMessageBox::information(this, qApp->applicationName(),
                                  i18n("There is no dropped item to process."));
-        qWarning(DIGIKAM_SHOWFOTO_LOG) << "infolist is empty..";
+        qCWarning(DIGIKAM_SHOWFOTO_LOG) << "infolist is empty..";
     }
 }
 
