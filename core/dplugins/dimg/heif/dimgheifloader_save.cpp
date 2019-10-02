@@ -23,10 +23,6 @@
 
 #include "dimgheifloader.h"
 
-// C includes
-
-#include <math.h>
-
 // Qt includes
 
 #include <QFile>
@@ -218,8 +214,8 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     unsigned short a16        = 0;
     unsigned short* src16     = nullptr;
     unsigned short* dst16     = nullptr;
-    float div16               = (16 - maxOutputBitsDepth) > 0 ? 16.0 - maxOutputBitsDepth : 1.0;
-    float mul8                = (maxOutputBitsDepth - 8)  > 0 ? maxOutputBitsDepth - 8.0  : 1.0;
+    int div16                 = 16 - maxOutputBitsDepth;
+    int mul8                  = maxOutputBitsDepth - 8;
     int nbOutputBytesPerColor = (maxOutputBitsDepth > 8) ? (imageHasAlpha() ? 4 * 2 : 3 * 2)  // output data stored on 16 bits
                                                          : (imageHasAlpha() ? 4     : 3    ); // output data stored on 8 bits
 
@@ -249,13 +245,13 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
                 if (maxOutputBitsDepth > 8) // From 16 bits to 10 bits or more.
                 {
-                    dst16[0] = (unsigned short)floor(r16 / div16);
-                    dst16[1] = (unsigned short)floor(g16 / div16);
-                    dst16[2] = (unsigned short)floor(b16 / div16);
+                    dst16[0] = (unsigned short)(r16 >> div16);
+                    dst16[1] = (unsigned short)(g16 >> div16);
+                    dst16[2] = (unsigned short)(b16 >> div16);
 
                     if (imageHasAlpha())
                     {
-                        dst16[3] = (unsigned short)floor(a16 / div16);
+                        dst16[3] = (unsigned short)(a16 >> div16);
                         dst16   += 4;
                     }
                     else
@@ -265,13 +261,13 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                 }
                 else                        // From 16 bits to 8 bits.
                 {
-                    dst[0] = (unsigned char)floor(r16 / div16);
-                    dst[1] = (unsigned char)floor(g16 / div16);
-                    dst[2] = (unsigned char)floor(b16 / div16);
+                    dst[0] = (unsigned char)(r16 >> div16);
+                    dst[1] = (unsigned char)(g16 >> div16);
+                    dst[2] = (unsigned char)(b16 >> div16);
 
                     if (imageHasAlpha())
                     {
-                        dst[3] = (unsigned char)floor(a16 / div16);
+                        dst[3] = (unsigned char)(a16 >> div16);
                         dst   += 4;
                     }
                     else
@@ -295,13 +291,13 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
                 if (maxOutputBitsDepth > 8) // From 8 bits to 10 bits or more.
                 {
-                    dst16[0] = (unsigned short)floor(r * mul8);
-                    dst16[1] = (unsigned short)floor(g * mul8);
-                    dst16[2] = (unsigned short)floor(b * mul8);
+                    dst16[0] = (unsigned short)(r << mul8);
+                    dst16[1] = (unsigned short)(g << mul8);
+                    dst16[2] = (unsigned short)(b << mul8);
 
                     if (imageHasAlpha())
                     {
-                        dst16[3] = (unsigned short)floor(a * mul8);
+                        dst16[3] = (unsigned short)(a << mul8);
                         dst16   += 4;
                     }
                     else
