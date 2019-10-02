@@ -78,7 +78,7 @@ DImgJPEG2000Loader::DImgJPEG2000Loader(DImg* const image)
 
 bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
-    readMetadata(filePath, DImg::JPEG);
+    readMetadata(filePath);
 
     FILE* const file = fopen(QFile::encodeName(filePath).constData(), "rb");
 

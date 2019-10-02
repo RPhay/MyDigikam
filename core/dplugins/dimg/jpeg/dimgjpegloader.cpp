@@ -88,7 +88,7 @@ DImgJPEGLoader::DImgJPEGLoader(DImg* const image)
 
 bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
-    readMetadata(filePath, DImg::JPEG);
+    readMetadata(filePath);
 
     FILE* const file = fopen(QFile::encodeName(filePath).constData(), "rb");
 

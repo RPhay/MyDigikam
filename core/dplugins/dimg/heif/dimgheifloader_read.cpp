@@ -46,7 +46,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 {
     m_observer = observer;
 
-//    readMetadata(filePath, DImg::QIMAGE); NOTE: Exiv2 do not support HEIC yet
+//    readMetadata(filePath); NOTE: Exiv2 do not support HEIC yet
 
     FILE* const file = fopen(QFile::encodeName(filePath).constData(), "rb");
 

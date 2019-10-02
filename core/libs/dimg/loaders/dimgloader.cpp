@@ -206,7 +206,7 @@ qint64 DImgLoader::checkAllocation(qint64 fullSize)
     return fullSize;
 }
 
-bool DImgLoader::readMetadata(const QString& filePath, DImg::FORMAT /*ff*/)
+bool DImgLoader::readMetadata(const QString& filePath)
 {
     if (!((m_loadFlags & LoadMetadata) || (m_loadFlags & LoadUniqueHash) || (m_loadFlags & LoadImageHistory)))
     {

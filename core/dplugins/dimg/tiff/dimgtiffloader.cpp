@@ -95,7 +95,7 @@ DImgTIFFLoader::DImgTIFFLoader(DImg* const image)
 
 bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
-    readMetadata(filePath, DImg::TIFF);
+    readMetadata(filePath);
 
     // -------------------------------------------------------------------
     // TIFF error handling. If an errors/warnings occurs during reading,

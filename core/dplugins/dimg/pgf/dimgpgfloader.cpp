@@ -118,7 +118,7 @@ DImgPGFLoader::DImgPGFLoader(DImg* const image)
 bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
     m_observer = observer;
-    readMetadata(filePath, DImg::PGF);
+    readMetadata(filePath);
 
     FILE* const file = fopen(QFile::encodeName(filePath).constData(), "rb");
 

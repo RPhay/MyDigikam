@@ -55,7 +55,7 @@ bool DImgRAWLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 {
     m_observer = observer;
 
-    readMetadata(filePath, DImg::RAW);
+    readMetadata(filePath);
 
     DRawInfo dcrawIdentify;
 

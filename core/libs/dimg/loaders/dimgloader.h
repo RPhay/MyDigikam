@@ -125,7 +125,7 @@ protected:
     void                    purgeExifWorkingColorSpace();
     void                    storeColorProfileInMetadata();
 
-    virtual bool            readMetadata(const QString& filePath, DImg::FORMAT ff);
+    virtual bool            readMetadata(const QString& filePath);
     virtual bool            saveMetadata(const QString& filePath);
     virtual int             granularity(DImgLoaderObserver* const observer, int total, float progressSlice = 1.0);
 

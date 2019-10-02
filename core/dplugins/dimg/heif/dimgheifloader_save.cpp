@@ -387,7 +387,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     heif_context_free(ctx);
 
     imageSetAttribute(QLatin1String("savedFormat"), QLatin1String("HEIC"));
-    saveMetadata(filePath);
+//    saveMetadata(filePath);  NOTE: Exiv2 do not support HEIC yet
 
     return true;
 }

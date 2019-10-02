@@ -98,7 +98,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     (void)png_ptr;
     (void)info_ptr;
 
-    readMetadata(filePath, DImg::PNG);
+    readMetadata(filePath);
 
     // -------------------------------------------------------------------
     // Open the file
