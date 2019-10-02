@@ -162,7 +162,7 @@ public:
     /** Generic method to print the Exiv2 C++ Exception error message from 'e'.
      *  'msg' string is printed using qDebug rules.
      */
-    static void printExiv2ExceptionError(const QString& msg, Exiv2::Error& e);
+    static void printExiv2ExceptionError(const QString& msg, Exiv2::AnyError& e);
 
     /** Generic method to print debug message from Exiv2.
      *  'msg' string is printed using qDebug rules. 'lvl' is the debug level of Exiv2 message.

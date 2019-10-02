@@ -160,7 +160,7 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
         return saveOperations(finfo, image);
 #endif
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot save metadata to XMP sidecar using Exiv2 "), e);
         return false;
@@ -250,7 +250,7 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
         return saveOperations(finfo, image);
 #endif
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot save metadata to image using Exiv2 "), e);
         return false;
@@ -415,7 +415,7 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
         return true;
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot save metadata using Exiv2 "), e);
     }
@@ -427,7 +427,7 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
     return false;
 }
 
-void MetaEngine::Private::printExiv2ExceptionError(const QString& msg, Exiv2::Error& e)
+void MetaEngine::Private::printExiv2ExceptionError(const QString& msg, Exiv2::AnyError& e)
 {
     std::string s(e.what());
     qCCritical(DIGIKAM_METAENGINE_LOG) << msg.toLatin1().constData()
@@ -495,7 +495,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
             return detectEncodingAndDecode(comment);
         }
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot convert Comment using Exiv2 "), e);
     }
@@ -702,7 +702,7 @@ int MetaEngine::Private::getXMPTagsListFromPrefix(const QString& pf, MetaEngine:
             }
         }
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot get Xmp tags list using Exiv2 "), e);
     }
