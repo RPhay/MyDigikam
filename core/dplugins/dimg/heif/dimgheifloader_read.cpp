@@ -329,7 +329,7 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
         int stride         = 0;
         uint8_t* const ptr = heif_image_get_plane(heif_image, heif_channel_interleaved, &stride);
 
-        qDebug() << "HEIC data          :" << ptr;
+        qDebug() << "HEIC data container:" << ptr;
         qDebug() << "HEIC bytes per line:" << stride;
 
         if (!ptr || stride <= 0)

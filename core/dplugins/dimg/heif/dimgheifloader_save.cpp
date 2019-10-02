@@ -202,7 +202,8 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         return false;
     }
 
-    qDebug() << "HEIC plane details: ptr=" << data << "stride=" << stride;
+    qDebug() << "HEIC data container:" << data;
+    qDebug() << "HEIC bytes per line:" << stride;
 
     uint checkpoint           = 0;
     unsigned char r           = 0;
