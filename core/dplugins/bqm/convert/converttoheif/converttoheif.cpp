@@ -109,7 +109,7 @@ void ConvertToHEIF::slotSettingsChanged()
 
 QString ConvertToHEIF::outputSuffix() const
 {
-    return QLatin1String("pgf");
+    return QLatin1String("heic");
 }
 
 bool ConvertToHEIF::toolOperations()
