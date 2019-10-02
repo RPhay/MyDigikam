@@ -35,9 +35,12 @@ namespace Digikam
 DImgHEIFLoader::DImgHEIFLoader(DImg* const image)
     : DImgLoader(image)
 {
-    m_hasAlpha   = false;
-    m_sixteenBit = false;
-    m_observer   = nullptr;
+    m_hasAlpha           = false;
+    m_sixteenBit         = false;
+    m_observer           = nullptr;
+    m_maxOutputBitsDepth = -1;
+    m_quality            = 50;
+    m_lossless           = false;
 }
 
 bool DImgHEIFLoader::hasAlpha() const
@@ -52,7 +55,11 @@ bool DImgHEIFLoader::sixteenBit() const
 
 bool DImgHEIFLoader::isReadOnly() const
 {
+#ifdef HAVE_X265
     return false;
+#else
+    return true;
+#endif
 }
 
 bool DImgHEIFLoader::isHeifSuccess(struct heif_error* const error)

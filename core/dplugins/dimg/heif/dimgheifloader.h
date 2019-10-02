@@ -70,8 +70,21 @@ private:
     bool saveHEICMetadata(struct heif_context* const heif_context,
                           struct heif_image_handle* const image_handle);
 
+    bool saveHEIC8bits(const QString& filePath);
+    bool saveHEICHdr(const QString& filePath);
+
+    /**
+     * Determine libx265 encoder bits depth capability: 8=standard, 10, 12, or more.
+     * Return -1 if encoder instance is not found.
+     */
+    int x265MaxBitsDepth() const;
+
 private:
 
+    int                 m_quality;
+    bool                m_lossless;
+    
+    int                 m_maxOutputBitsDepth;
     bool                m_sixteenBit;
     bool                m_hasAlpha;
 
