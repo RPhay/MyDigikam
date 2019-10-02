@@ -190,9 +190,9 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                                                heif_channel_interleaved,
                                                &stride);
 
-    if (!data)
+    if (!data || stride <= 0)
     {
-        qWarning() << "Cannot get HEIC RGB plane!";
+        qWarning() << "HEIC data pixels information not valid!";
         heif_encoder_release(encoder);
         heif_context_free(ctx);
         return false;
