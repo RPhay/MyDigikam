@@ -364,7 +364,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     // --- Add Exif and XMP metadata
 
-    qDebug() << "HEIC metadata embeding...";
+    qDebug() << "HEIC metadata storage...";
 
     saveHEICMetadata(ctx, hdl);
 
@@ -412,6 +412,8 @@ bool DImgHEIFLoader::saveHEICColorProfile(struct heif_image* const image)
             qWarning() << "Cannot set HEIC color profile!";
             return false;
         }
+
+        qDebug() << "Stored HEIC color profile size:" << profile.size();
     }
 #else
     Q_UNUSED(image_handle);
@@ -430,36 +432,40 @@ bool DImgHEIFLoader::saveHEICMetadata(struct heif_context* const heif_context,
         return false;
     }
 
+    QByteArray exif = meta.getExifEncoded();
+    QByteArray xmp  = meta.getExifEncoded();
     struct heif_error error;
 
-    if (meta.hasExif())
+    if (!exif.isEmpty())
     {
-        QByteArray exif = meta.getExifEncoded(true);
-        error           = heif_context_add_exif_metadata(heif_context,
-                                                         image_handle,
-                                                         exif.data(),
-                                                         exif.size());
+        error = heif_context_add_exif_metadata(heif_context,
+                                               image_handle,
+                                               exif.data(),
+                                               exif.size());
 
         if (error.code != 0)
         {
-            qWarning() << "Cannot set HEIC Exif metadata!";
+            qWarning() << "Cannot store HEIC Exif metadata!";
             return false;
         }
+
+        qDebug() << "Stored HEIC Exif data size:" << exif.size();
     }
 
-    if (meta.hasXmp())
+    if (!xmp.isEmpty())
     {
-        QByteArray xmp = meta.getExifEncoded();
-        error          = heif_context_add_XMP_metadata(heif_context,
-                                                       image_handle,
-                                                       xmp.data(),
-                                                       xmp.size());
+        error = heif_context_add_XMP_metadata(heif_context,
+                                              image_handle,
+                                              xmp.data(),
+                                              xmp.size());
 
         if (error.code != 0)
         {
-            qWarning() << "Cannot set HEIC Xmp metadata!";
+            qWarning() << "Cannot store HEIC Xmp metadata!";
             return false;
         }
+
+        qDebug() << "Stored HEIC Xmp data size:" << xmp.size();
     }
 
     return true;
