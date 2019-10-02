@@ -618,6 +618,10 @@ void SetupCollectionModel::updateCollection(int internalId)
             path = item.location.albumRootPath();
         }
 
+        // Mark item as deleted so that
+        // the path can be used again.
+        item.deleted = true;
+
         if (askForNewCollectionPath(parentId, &path, &label))
         {
             item.parentId = parentId;
@@ -628,6 +632,8 @@ void SetupCollectionModel::updateCollection(int internalId)
             // only workaround for bug 182753
             emit layoutChanged();
         }
+
+        item.deleted = false;
     }
 }
 
