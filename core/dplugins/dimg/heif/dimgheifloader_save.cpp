@@ -229,6 +229,107 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     for (unsigned int y = 0 ; y < imageHeight() ; ++y)
     {
+        src   = &imageData()[(y * imageWidth()) * imageBytesDepth()];
+        src16 = reinterpret_cast<unsigned short*>(src);
+        dst   = reinterpret_cast<unsigned char*>(data + (y * stride));
+        dst16 = reinterpret_cast<unsigned short*>(dst);
+
+        for (unsigned int x = 0 ; x < imageWidth() ; ++x)
+        {
+            if (imageSixteenBit())          // 16 bits source image.
+            {
+                b16 = src16[0];
+                g16 = src16[1];
+                r16 = src16[2];
+
+                if (imageHasAlpha())
+                {
+                    a16 = src16[3];
+                }
+
+                if (maxOutputBitsDepth > 8) // From 16 bits to 10 bits or more.
+                {
+                    dst16[0] = (unsigned short)floor(r16 / div16);
+                    dst16[1] = (unsigned short)floor(g16 / div16);
+                    dst16[2] = (unsigned short)floor(b16 / div16);
+
+                    if (imageHasAlpha())
+                    {
+                        dst16[3] = (unsigned short)floor(a16 / div16);
+                        dst16   += 4;
+                    }
+                    else
+                    {
+                        dst16 += 3;
+                    }
+                }
+                else                        // From 16 bits to 8 bits.
+                {
+                    dst[0] = (unsigned char)floor(r16 / div16);
+                    dst[1] = (unsigned char)floor(g16 / div16);
+                    dst[2] = (unsigned char)floor(b16 / div16);
+
+                    if (imageHasAlpha())
+                    {
+                        dst[3] = (unsigned char)floor(a16 / div16);
+                        dst   += 4;
+                    }
+                    else
+                    {
+                        dst += 3;
+                    }
+                }
+
+                src16 += 4;
+            }
+            else                            // 8 bits source image.
+            {
+                b = src[0];
+                g = src[1];
+                r = src[2];
+
+                if (imageHasAlpha())
+                {
+                    a = src[3];
+                }
+
+                if (maxOutputBitsDepth > 8) // From 8 bits to 10 bits or more.
+                {
+                    dst16[0] = (unsigned short)floor(r * mul8);
+                    dst16[1] = (unsigned short)floor(g * mul8);
+                    dst16[2] = (unsigned short)floor(b * mul8);
+
+                    if (imageHasAlpha())
+                    {
+                        dst16[3] = (unsigned short)floor(a * mul8);
+                        dst16   += 4;
+                    }
+                    else
+                    {
+                        dst16 += 3;
+                    }
+                }
+                else                        // From 8 bits to 8 bits.
+                {
+                    dst[0] = r;
+                    dst[1] = g;
+                    dst[2] = b;
+
+                    if (imageHasAlpha())
+                    {
+                        dst[3] = a;
+                        dst   += 4;
+                    }
+                    else
+                    {
+                        dst += 3;
+                    }
+                }
+
+                src += 4;
+            }
+        }
+
         if (m_observer && y == (long)checkpoint)
         {
             checkpoint += granularity(m_observer, imageHeight(), 0.8F);
@@ -241,86 +342,6 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
             }
 
             m_observer->progressInfo(m_image, 0.1 + (0.8 * (((float)y) / ((float)imageHeight()))));
-        }
-
-        for (unsigned int x = 0 ; x < imageWidth() ; ++x)
-        {
-            if (imageSixteenBit())          // 16 bits image.
-            {
-                src16 = reinterpret_cast<unsigned short*>(&imageData()[((y * imageWidth()) + x) * imageBytesDepth()]);
-
-                b16   = src16[0];
-                g16   = src16[1];
-                r16   = src16[2];
-
-                if (imageHasAlpha())
-                {
-                    a16 = src16[3];
-                }
-
-                if (maxOutputBitsDepth > 8) // From 16 bits to 10 bits or more.
-                {
-                    dst16    = reinterpret_cast<unsigned short*>(data) + (y * stride) + (x * nbOutputBytesPerColor);
-                    dst16[0] = (unsigned short)floor(r16 / div16);
-                    dst16[1] = (unsigned short)floor(g16 / div16);
-                    dst16[2] = (unsigned short)floor(b16 / div16);
-
-                    if (imageHasAlpha())
-                    {
-                        dst16[3] = (unsigned short)floor(a16 / div16);
-                    }
-                }
-                else                        // From 16 bits to 8 bits.
-                {
-                    dst    = reinterpret_cast<unsigned char*>(data) + (y * stride) + (x * nbOutputBytesPerColor);
-                    dst[0] = (unsigned char)floor(r16 / div16);
-                    dst[1] = (unsigned char)floor(g16 / div16);
-                    dst[2] = (unsigned char)floor(b16 / div16);
-
-                    if (imageHasAlpha())
-                    {
-                        dst[3] = (unsigned char)floor(a16 / div16);
-                    }
-                }
-            }
-            else                            // 8 bits image.
-            {
-                src = &imageData()[((y * imageWidth()) + x) * imageBytesDepth()];
-
-                b   = src[0];
-                g   = src[1];
-                r   = src[2];
-
-                if (imageHasAlpha())
-                {
-                    a = src[3];
-                }
-
-                if (maxOutputBitsDepth > 8) // From 8 bits to 10 bits or more.
-                {
-                    dst16    = reinterpret_cast<unsigned short*>(data) + (y * stride) + (x * nbOutputBytesPerColor);
-                    dst16[0] = (unsigned short)floor(r * mul8);
-                    dst16[1] = (unsigned short)floor(g * mul8);
-                    dst16[2] = (unsigned short)floor(b * mul8);
-
-                    if (imageHasAlpha())
-                    {
-                        dst16[3] = (unsigned short)floor(a * mul8);
-                    }
-                }
-                else                        // From 8 bits to 8 bits.
-                {
-                    dst    = reinterpret_cast<unsigned char*>(data) + (y * stride) + (x * nbOutputBytesPerColor);
-                    dst[0] = r;
-                    dst[1] = g;
-                    dst[2] = b;
-
-                    if (imageHasAlpha())
-                    {
-                        dst[3] = a;
-                    }
-                }
-            }
         }
     }
 
