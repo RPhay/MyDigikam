@@ -509,6 +509,24 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
             break;
         }
+        case MimeFilter::HEIFFiles:
+        {
+            if (info.format() != QLatin1String("HEIF"))
+            {
+                match = false;
+            }
+
+            break;
+        }
+        case MimeFilter::PGFFiles:
+        {
+            if (info.format() != QLatin1String("PGF"))
+            {
+                match = false;
+            }
+
+            break;
+        }
         case MimeFilter::TIFFiles:
         {
             if (info.format() != QLatin1String("TIFF"))

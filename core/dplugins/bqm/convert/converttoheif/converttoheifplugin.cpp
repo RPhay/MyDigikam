@@ -61,7 +61,7 @@ QString ConvertToHeifPlugin::iid() const
 
 QIcon ConvertToHeifPlugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("image-jpeg"));
+    return QIcon::fromTheme(QLatin1String("image-x-generic"));
 }
 
 QString ConvertToHeifPlugin::description() const

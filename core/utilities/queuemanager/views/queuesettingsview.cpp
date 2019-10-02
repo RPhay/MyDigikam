@@ -292,7 +292,7 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
     QGroupBox* const  box5   = new QGroupBox;
     QVBoxLayout* const lbox5 = new QVBoxLayout;
     d->heifSettings          = new HEIFSettings();
-    lbox5->addWidget(d->j2kSettings);
+    lbox5->addWidget(d->heifSettings);
     box5->setLayout(lbox5);
     slay->addWidget(box5);
 #endif // HAVE_X265

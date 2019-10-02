@@ -45,8 +45,10 @@ public:
         JPGFiles,
         PNGFiles,
         TIFFiles,
+        PGFFiles,
+        HEIFFiles,           // HEVC H265 compression based containers.
         DNGFiles,
-        RAWFiles,
+        RAWFiles,            // All Raw file formats such as nef, cr2, arw, pef, etc..
         MoviesFiles,
         AudioFiles,
         RasterGraphics       // PSD, XCF, etc...
