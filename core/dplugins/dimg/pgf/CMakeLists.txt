@@ -17,6 +17,8 @@ include_directories($<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
 set(dimgpgfplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgpgfplugin.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgpgfloader.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dimgpgfloader_load.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dimgpgfloader_save.cpp
 )
 
 DIGIKAM_ADD_DIMG_PLUGIN(NAME    PGF
