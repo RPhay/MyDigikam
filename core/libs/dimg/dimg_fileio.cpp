@@ -134,6 +134,8 @@ bool DImg::load(const QString& filePath,
 
             return true;
         }
+
+        delete loader;
     }
 
     if (observer && !observer->continueQuery(nullptr))
@@ -167,6 +169,8 @@ bool DImg::load(const QString& filePath,
 
             return true;
         }
+
+        delete loader;
 
         if (observer && observer->continueQuery(nullptr))
         {
