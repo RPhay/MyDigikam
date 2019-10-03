@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
 
     if (argc <= 1)
     {
-        QString filter = QString::fromLatin1("Raw Files") + QString::fromLatin1(" (%1)").arg(QString::fromLatin1(Digikam::raw_file_extentions));
+        QString filter = QString::fromLatin1("Raw Files") + QString::fromLatin1(" (%1)").arg(Digikam::s_rawFileExtentions());
         qDebug() << filter;
 
         QStringList files = DFileDialog::getOpenFileNames(nullptr, QString::fromLatin1("Select RAW files to process"),

@@ -87,6 +87,7 @@ set(librawengine_SRCS
     drawdecodersettings.cpp
     drawdecoderwidget.cpp
     drawinfo.cpp
+    drawfiles.cpp
     ${libraw_LIB_SRCS}
 )
 

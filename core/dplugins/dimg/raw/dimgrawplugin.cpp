@@ -41,6 +41,7 @@
 #include "digikam_globals.h"
 #include "dimgrawloader.h"
 #include "drawdecoder.h"
+#include "drawfiles.h"
 
 namespace DigikamRAWDImgPlugin
 {
@@ -104,6 +105,11 @@ QList<DPluginAuthor> DImgRAWPlugin::authors() const
 void DImgRAWPlugin::setup(QObject* const /*parent*/)
 {
     // Nothing to do
+}
+
+QMap<QString, QString> DImgRAWPlugin::extraAboutData() const
+{
+    return s_rawFileExtensionsdWithDesc();
 }
 
 QString DImgRAWPlugin::loaderName() const
