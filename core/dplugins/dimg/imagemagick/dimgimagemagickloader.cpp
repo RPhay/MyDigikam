@@ -70,6 +70,10 @@ DImgImageMagickLoader::DImgImageMagickLoader(DImg* const image)
     m_sixteenBit = false;
 }
 
+DImgImageMagickLoader::~DImgImageMagickLoader()
+{
+}
+
 bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
     QStringList blackList;
