@@ -17,6 +17,8 @@ include_directories($<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
 set(dimgjpeg2000plugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgjpeg2000plugin.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgjpeg2000loader.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dimgjpeg2000loader_load.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dimgjpeg2000loader_save.cpp
 )
 
 DIGIKAM_ADD_DIMG_PLUGIN(NAME    JPEG2000

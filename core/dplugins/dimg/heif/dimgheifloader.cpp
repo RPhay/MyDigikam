@@ -41,6 +41,10 @@ DImgHEIFLoader::DImgHEIFLoader(DImg* const image)
     m_observer   = nullptr;
 }
 
+DImgHEIFLoader::~DImgHEIFLoader()
+{
+}
+
 bool DImgHEIFLoader::hasAlpha() const
 {
     return m_hasAlpha;
