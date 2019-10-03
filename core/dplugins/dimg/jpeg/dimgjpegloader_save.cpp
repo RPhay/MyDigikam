@@ -1,0 +1,345 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2005-06-14
+ * Description : A JPEG IO file for DImg framework - save operations
+ *
+ * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
+ * Copyright (C) 2005-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ *
+ * This program is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General
+ * Public License as published by the Free Software Foundation;
+ * either version 2, or (at your option)
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * ============================================================ */
+
+#define XMD_H
+
+#include "dimgjpegloader.h"
+
+// C ANSI includes
+
+extern "C"
+{
+#include "iccjpeg.h"
+}
+
+// Qt includes
+
+#include <QFile>
+#include <QByteArray>
+
+// Local includes
+
+#include "digikam_config.h"
+#include "digikam_debug.h"
+#include "dimgloaderobserver.h"
+
+#ifdef Q_OS_WIN
+#   include "jpegwin.h"
+#endif
+
+namespace DigikamJPEGDImgPlugin
+{
+
+bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const observer)
+{
+    FILE* const file = fopen(QFile::encodeName(filePath).constData(), "wb");
+
+    if (!file)
+    {
+        return false;
+    }
+
+    struct jpeg_compress_struct  cinfo;
+
+    struct dimg_jpeg_error_mgr jerr;
+
+    // -------------------------------------------------------------------
+    // JPEG error handling.
+
+    cinfo.err                 = jpeg_std_error(&jerr);
+    cinfo.err->error_exit     = dimg_jpeg_error_exit;
+    cinfo.err->emit_message   = dimg_jpeg_emit_message;
+    cinfo.err->output_message = dimg_jpeg_output_message;
+
+    // setjmp-save cleanup
+    class Q_DECL_HIDDEN CleanupData
+    {
+    public:
+
+        CleanupData()
+            : line(nullptr),
+              f(nullptr)
+        {
+        }
+
+        ~CleanupData()
+        {
+            deleteLine();
+
+            if (f)
+            {
+                fclose(f);
+            }
+        }
+
+        void setLine(uchar* const l)
+        {
+            line = l;
+        }
+
+        void setFile(FILE* const file)
+        {
+            f = file;
+        }
+
+        void deleteLine()
+        {
+            delete [] line;
+            line = nullptr;
+        }
+
+    public:
+
+        uchar* line;
+        FILE*  f;
+    };
+
+    CleanupData* const cleanupData = new CleanupData;
+    cleanupData->setFile(file);
+
+    // If an error occurs during writing, libjpeg will jump here
+
+    if (setjmp(jerr.setjmp_buffer))
+    {
+        jpeg_destroy_compress(&cinfo);
+        delete cleanupData;
+        return false;
+    }
+
+    // -------------------------------------------------------------------
+    // Set JPEG compressor instance
+
+    jpeg_create_compress(&cinfo);
+    jpeg_stdio_dest(&cinfo, file);
+
+    uint&              w   = imageWidth();
+    uint&              h   = imageHeight();
+    unsigned char*& data   = imageData();
+
+    // Size of image.
+    cinfo.image_width      = w;
+    cinfo.image_height     = h;
+
+    // Color components of image in RGB.
+    cinfo.input_components = 3;
+    cinfo.in_color_space   = JCS_RGB;
+
+    QVariant qualityAttr   = imageGetAttribute(QLatin1String("quality"));
+    int quality            = qualityAttr.isValid() ? qualityAttr.toInt() : 90;
+
+    if (quality < 0)
+    {
+        quality = 90;
+    }
+
+    if (quality > 100)
+    {
+        quality = 100;
+    }
+
+    QVariant subSamplingAttr = imageGetAttribute(QLatin1String("subsampling"));
+    int subsampling          = subSamplingAttr.isValid() ? subSamplingAttr.toInt() : 1;  // Medium
+
+    jpeg_set_defaults(&cinfo);
+
+    // bug #149578: set horizontal and vertical chroma subsampling factor to encoder.
+    // See this page for details: http://en.wikipedia.org/wiki/Chroma_subsampling
+
+    switch (subsampling)
+    {
+        case 1:  // 2x1, 1x1, 1x1 (4:2:2)
+        {
+            qCDebug(DIGIKAM_DIMG_LOG_JPEG) << "Using LibJPEG chroma-subsampling 4:2:2";
+            cinfo.comp_info[0].h_samp_factor = 2;
+            cinfo.comp_info[0].v_samp_factor = 1;
+            cinfo.comp_info[1].h_samp_factor = 1;
+            cinfo.comp_info[1].v_samp_factor = 1;
+            cinfo.comp_info[2].h_samp_factor = 1;
+            cinfo.comp_info[2].v_samp_factor = 1;
+            break;
+        }
+
+        case 2:  // 2x2, 1x1, 1x1 (4:2:0)
+        {
+            qCDebug(DIGIKAM_DIMG_LOG_JPEG) << "Using LibJPEG chroma-subsampling 4:2:0";
+            cinfo.comp_info[0].h_samp_factor = 2;
+            cinfo.comp_info[0].v_samp_factor = 2;
+            cinfo.comp_info[1].h_samp_factor = 1;
+            cinfo.comp_info[1].v_samp_factor = 1;
+            cinfo.comp_info[2].h_samp_factor = 1;
+            cinfo.comp_info[2].v_samp_factor = 1;
+            break;
+        }
+
+        case 3:  // 4x1, 1x1, 1x1 (4:1:1)
+        {
+            qCDebug(DIGIKAM_DIMG_LOG_JPEG) << "Using LibJPEG chroma-subsampling 4:1:1";
+            cinfo.comp_info[0].h_samp_factor = 4;
+            cinfo.comp_info[0].v_samp_factor = 1;
+            cinfo.comp_info[1].h_samp_factor = 1;
+            cinfo.comp_info[1].v_samp_factor = 1;
+            cinfo.comp_info[2].h_samp_factor = 1;
+            cinfo.comp_info[2].v_samp_factor = 1;
+            break;
+        }
+
+        default: // 1x1, 1x1, 1x1 (4:4:4)
+        {
+            qCDebug(DIGIKAM_DIMG_LOG_JPEG) << "Using LibJPEG chroma-subsampling 4:4:4";
+            cinfo.comp_info[0].h_samp_factor = 1;
+            cinfo.comp_info[0].v_samp_factor = 1;
+            cinfo.comp_info[1].h_samp_factor = 1;
+            cinfo.comp_info[1].v_samp_factor = 1;
+            cinfo.comp_info[2].h_samp_factor = 1;
+            cinfo.comp_info[2].v_samp_factor = 1;
+            break;
+        }
+    }
+
+    jpeg_set_quality(&cinfo, quality, boolean(true));
+    jpeg_start_compress(&cinfo, boolean(true));
+
+    qCDebug(DIGIKAM_DIMG_LOG_JPEG) << "Using LibJPEG quality compression value: " << quality;
+
+    if (observer)
+    {
+        observer->progressInfo(m_image, 0.1F);
+    }
+
+    // -------------------------------------------------------------------
+    // Write ICC profile.
+
+    QByteArray profile_rawdata = m_image->getIccProfile().data();
+
+    if (!profile_rawdata.isEmpty())
+    {
+        purgeExifWorkingColorSpace();
+        write_icc_profile(&cinfo, (JOCTET*)profile_rawdata.data(), profile_rawdata.size());
+    }
+
+    if (observer)
+    {
+        observer->progressInfo(m_image, 0.2F);
+    }
+
+    // -------------------------------------------------------------------
+    // Write Image data.
+
+    uchar* line       = new uchar[w * 3];
+    uchar* dstPtr     = nullptr;
+    uint   checkPoint = 0;
+    cleanupData->setLine(line);
+
+    if (!imageSixteenBit())     // 8 bits image.
+    {
+
+        uchar* srcPtr = data;
+
+        for (uint j = 0; j < h; ++j)
+        {
+
+            if (observer && j == checkPoint)
+            {
+                checkPoint += granularity(observer, h, 0.8F);
+
+                if (!observer->continueQuery(m_image))
+                {
+                    jpeg_destroy_compress(&cinfo);
+                    delete cleanupData;
+                    return false;
+                }
+
+                // use 0-20% for pseudo-progress, now fill 20-100%
+                observer->progressInfo(m_image, 0.2 + (0.8 * (((float)j) / ((float)h))));
+            }
+
+            dstPtr = line;
+
+            for (uint i = 0; i < w; ++i)
+            {
+                dstPtr[2] = srcPtr[0];  // Blue
+                dstPtr[1] = srcPtr[1];  // Green
+                dstPtr[0] = srcPtr[2];  // Red
+
+                srcPtr   += 4;
+                dstPtr   += 3;
+            }
+
+            jpeg_write_scanlines(&cinfo, &line, 1);
+        }
+    }
+    else
+    {
+        unsigned short* srcPtr = reinterpret_cast<unsigned short*>(data);
+
+        for (uint j = 0; j < h; ++j)
+        {
+
+            if (observer && j == checkPoint)
+            {
+                checkPoint += granularity(observer, h, 0.8F);
+
+                if (!observer->continueQuery(m_image))
+                {
+                    jpeg_destroy_compress(&cinfo);
+                    delete cleanupData;
+                    return false;
+                }
+
+                // use 0-20% for pseudo-progress, now fill 20-100%
+                observer->progressInfo(m_image, 0.2 + (0.8 * (((float)j) / ((float)h))));
+            }
+
+            dstPtr = line;
+
+            for (uint i = 0; i < w; ++i)
+            {
+                dstPtr[2] = (srcPtr[0] * 255UL) / 65535UL;  // Blue
+                dstPtr[1] = (srcPtr[1] * 255UL) / 65535UL;  // Green
+                dstPtr[0] = (srcPtr[2] * 255UL) / 65535UL;  // Red
+
+                srcPtr   += 4;
+                dstPtr   += 3;
+            }
+
+            jpeg_write_scanlines(&cinfo, &line, 1);
+        }
+    }
+
+    cleanupData->deleteLine();
+
+    // -------------------------------------------------------------------
+
+    jpeg_finish_compress(&cinfo);
+    jpeg_destroy_compress(&cinfo);
+    delete cleanupData;
+
+    imageSetAttribute(QLatin1String("savedFormat"), QLatin1String("JPG"));
+
+    saveMetadata(filePath);
+
+    return true;
+}
+
+} // namespace DigikamJPEGDImgPlugin
