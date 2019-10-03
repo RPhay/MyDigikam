@@ -109,6 +109,44 @@ void DImgImageMagickPlugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
+QMap<QString, QString> DImgImageMagickPlugin::extraAboutData() const
+{
+    QString mimes = typeMimes();
+
+    QMap<QString, QString> map;
+    ExceptionInfo ex;
+    size_t n                  = 0;
+    const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
+
+    if (!inflst)
+    {
+        qWarning() << "ImageMagick coders list is null!";
+        return QMap<QString, QString>();
+    }
+
+    for (uint i = 0 ; i < n ; ++i)
+    {
+        const MagickInfo* inf = inflst[i];
+
+        if (inf)
+        {
+            QString mod =
+#if (MagickLibVersion >= 0x69A && defined(magick_module))
+                QString::fromLatin1(inf->magick_module).toUpper();
+#else
+                QString::fromLatin1(inf->module).toUpper();
+#endif
+
+            if (mimes.contains(mod))
+            {
+                map.insert(mod, QLatin1String(inf->description));
+            }
+        }
+    }
+
+    return map;
+}
+
 QString DImgImageMagickPlugin::loaderName() const
 {
     return QLatin1String("IMAGEMAGICK");
