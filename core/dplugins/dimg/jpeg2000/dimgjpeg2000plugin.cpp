@@ -135,13 +135,17 @@ bool DImgJPEG2000Plugin::canRead(const QString& filePath) const
 
     QString ext = fileInfo.suffix().toUpper();
 
-    if (!ext.isEmpty() &&
-        (ext == QLatin1String("JP2") || ext == QLatin1String("JPX") || // JPEG2000 file format
-         ext == QLatin1String("JPC") || ext == QLatin1String("J2K") || // JPEG2000 code stream
-         ext == QLatin1String("PGX"))                                  // JPEG2000 Verification Model
+    if (
+        ext == QLatin1String("JP2") || ext == QLatin1String("JPX") || // JPEG2000 file format
+        ext == QLatin1String("JPC") || ext == QLatin1String("J2K") || // JPEG2000 code stream
+        ext == QLatin1String("PGX")                                   // JPEG2000 Verification Model
        )
     {
         return true;
+    }
+    else if (!ext.isEmpty())
+    {
+        return false;
     }
 
     // In second, we trying to parse file header.
