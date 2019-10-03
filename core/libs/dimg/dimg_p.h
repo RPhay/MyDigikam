@@ -132,7 +132,7 @@ public:
         delete [] lanczos_func;
     }
 
-    static DPluginDImg* pluginForFile(const QString& filePath, QString& name, DImg::FORMAT& format)
+    static DPluginDImg* pluginForFile(const QString& filePath, bool magic, QString& name, DImg::FORMAT& format)
     {
         if (!filePath.isNull())
         {
@@ -147,7 +147,7 @@ public:
                                               << plug->loaderName() << ":: can read:"
                                               << plug->canRead(filePath);
 */
-                    if (plug->canRead(filePath))
+                    if (plug->canRead(filePath, magic))
                     {
                         name = plug->loaderName();
 

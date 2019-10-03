@@ -94,7 +94,7 @@ public:
 
     /** Return true if source file path is supported by the loader and contents can be loaded.
      */
-    virtual bool canRead(const QString& filePath) const = 0;
+    virtual bool canRead(const QString& filePath, bool magic) const = 0;
 
     /** Return true if target file format is supported by the loader and contents can be written.
      */

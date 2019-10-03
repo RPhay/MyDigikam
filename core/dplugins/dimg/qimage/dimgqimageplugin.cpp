@@ -138,30 +138,38 @@ QString DImgQImagePlugin::typeMimes() const
     return ret;
 }
 
-bool DImgQImagePlugin::canRead(const QString& filePath) const
+bool DImgQImagePlugin::canRead(const QString& filePath, bool magic) const
 {
-    QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
+    QFileInfo fileInfo(filePath);
 
-    // Ignore non image format.
-
-    if (
-        mimeType.startsWith(QLatin1String("video/")) ||
-        mimeType.startsWith(QLatin1String("audio/"))
-       )
+    if (!fileInfo.exists())
     {
+        qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
         return false;
     }
 
-    QString format    = QFileInfo(filePath).suffix().toUpper();
-    QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();  // Ignore RAW files
-    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC ")); // Ignore native loaders
-
-    if (blackList.toUpper().contains(format))
+    if (!magic)
     {
-        return false;
+        QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
+
+        // Ignore non image format.
+
+        if (
+            mimeType.startsWith(QLatin1String("video/")) ||
+            mimeType.startsWith(QLatin1String("audio/"))
+           )
+        {
+            return false;
+        }
+
+        QString format    = fileInfo.suffix().toUpper();
+        QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();  // Ignore RAW files
+        blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC ")); // Ignore native loaders
+
+        return (!blackList.toUpper().contains(format));
     }
 
-    return true;
+    return false;
 }
 
 bool DImgQImagePlugin::canWrite(const QString& format) const

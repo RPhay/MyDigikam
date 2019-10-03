@@ -108,7 +108,7 @@ QString DImgPNGPlugin::typeMimes() const
     return QLatin1String("PNG");
 }
 
-bool DImgPNGPlugin::canRead(const QString& filePath) const
+bool DImgPNGPlugin::canRead(const QString& filePath, bool magic) const
 {
     QFileInfo fileInfo(filePath);
 
@@ -120,15 +120,11 @@ bool DImgPNGPlugin::canRead(const QString& filePath) const
 
     // First simply check file extension
 
-    QString ext = fileInfo.suffix().toUpper();
+    if (!magic)
+    {
+        QString ext = fileInfo.suffix().toUpper();
 
-    if (ext == QLatin1String("PNG"))
-    {
-        return true;
-    }
-    else if (!ext.isEmpty())
-    {
-        return false;
+        return (ext == QLatin1String("PNG"));
     }
 
     // In second, we trying to parse file header.

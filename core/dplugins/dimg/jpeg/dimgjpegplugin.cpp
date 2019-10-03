@@ -112,7 +112,7 @@ QString DImgJPEGPlugin::typeMimes() const
     return QLatin1String("JPG JPEG JPE");
 }
 
-bool DImgJPEGPlugin::canRead(const QString& filePath) const
+bool DImgJPEGPlugin::canRead(const QString& filePath, bool magic) const
 {
     QFileInfo fileInfo(filePath);
 
@@ -124,15 +124,11 @@ bool DImgJPEGPlugin::canRead(const QString& filePath) const
 
     // First simply check file extension
 
-    QString ext = fileInfo.suffix().toUpper();
+    if (!magic)
+    {
+        QString ext = fileInfo.suffix().toUpper();
 
-    if (ext == QLatin1String("JPEG") || ext == QLatin1String("JPG") || ext == QLatin1String("JPE"))
-    {
-        return true;
-    }
-    else if (!ext.isEmpty())
-    {
-        return false;
+        return (ext == QLatin1String("JPEG") || ext == QLatin1String("JPG") || ext == QLatin1String("JPE"));
     }
 
     // In second, we trying to parse file header.

@@ -113,7 +113,7 @@ QString DImgTIFFPlugin::typeMimes() const
     return QLatin1String("TIF TIFF");
 }
 
-bool DImgTIFFPlugin::canRead(const QString& filePath) const
+bool DImgTIFFPlugin::canRead(const QString& filePath, bool magic) const
 {
     QFileInfo fileInfo(filePath);
 
@@ -125,15 +125,11 @@ bool DImgTIFFPlugin::canRead(const QString& filePath) const
 
     // First simply check file extension
 
-    QString ext = fileInfo.suffix().toUpper();
+    if (!magic)
+    {
+        QString ext = fileInfo.suffix().toUpper();
 
-    if (ext == QLatin1String("TIFF") || ext == QLatin1String("TIF"))
-    {
-        return true;
-    }
-    else if (!ext.isEmpty())
-    {
-        return false;
+        return (ext == QLatin1String("TIFF") || ext == QLatin1String("TIF"));
     }
 
     // In second, we trying to parse file header.

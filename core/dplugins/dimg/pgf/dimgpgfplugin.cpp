@@ -116,7 +116,7 @@ QString DImgPGFPlugin::typeMimes() const
     return QLatin1String("PGF");
 }
 
-bool DImgPGFPlugin::canRead(const QString& filePath) const
+bool DImgPGFPlugin::canRead(const QString& filePath, bool magic) const
 {
     QFileInfo fileInfo(filePath);
 
@@ -128,15 +128,11 @@ bool DImgPGFPlugin::canRead(const QString& filePath) const
 
     // First simply check file extension
 
-    QString ext = fileInfo.suffix().toUpper();
+    if (!magic)
+    {
+        QString ext = fileInfo.suffix().toUpper();
 
-    if (ext == QLatin1String("PGF"))
-    {
-        return true;
-    }
-    else if (!ext.isEmpty())
-    {
-        return false;
+        return (ext == QLatin1String("PGF"));
     }
 
     // In second, we trying to parse file header.

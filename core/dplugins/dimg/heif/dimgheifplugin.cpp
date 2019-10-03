@@ -136,7 +136,7 @@ QString DImgHEIFPlugin::typeMimes() const
     return QLatin1String("HEIC");
 }
 
-bool DImgHEIFPlugin::canRead(const QString& filePath) const
+bool DImgHEIFPlugin::canRead(const QString& filePath, bool magic) const
 {
     QFileInfo fileInfo(filePath);
 
@@ -148,15 +148,11 @@ bool DImgHEIFPlugin::canRead(const QString& filePath) const
 
     // First simply check file extension
 
-    QString ext = fileInfo.suffix().toUpper();
+    if (!magic)
+    {
+        QString ext = fileInfo.suffix().toUpper();
 
-    if (ext == QLatin1String("HEIC"))
-    {
-        return true;
-    }
-    else if (!ext.isEmpty())
-    {
-        return false;
+        return (ext == QLatin1String("HEIC"));
     }
 
     // In second, we trying to parse file header.

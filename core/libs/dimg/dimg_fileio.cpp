@@ -103,7 +103,7 @@ bool DImg::load(const QString& filePath,
 {
     FORMAT format;
     QString name;
-    DPluginDImg* const plug         = m_priv->pluginForFile(filePath, name, format);
+    DPluginDImg* const plug         = m_priv->pluginForFile(filePath, false, name, format);
     DImgLoader::LoadFlags loadFlags = (DImgLoader::LoadFlags)loadFlagsInt;
 
     setAttribute(QLatin1String("detectedFileFormat"), format);
@@ -260,7 +260,7 @@ DImg::FORMAT DImg::fileFormat(const QString& filePath)
     FORMAT format;
     QString name;
 
-    DImg::Private::pluginForFile(filePath, name, format);
+    DImg::Private::pluginForFile(filePath, false, name, format);
 
     return format;
 }
