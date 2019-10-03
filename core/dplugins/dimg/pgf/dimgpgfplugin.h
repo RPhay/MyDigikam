@@ -59,7 +59,9 @@ public:
     QString description()          const override;
     QList<DPluginAuthor> authors() const override;
 
-    void setup(QObject* const)           override;
+    void setup(QObject* const)                    override;
+    QMap<QString, QString> extraAboutData() const override;
+
 
     QString     loaderName()                                                                const;
     QString     typeMimes()                                                                 const;

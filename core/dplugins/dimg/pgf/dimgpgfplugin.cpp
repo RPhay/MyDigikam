@@ -99,6 +99,13 @@ void DImgPGFPlugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
+QMap<QString, QString> DImgPGFPlugin::extraAboutData() const
+{
+    QMap<QString, QString> map;
+    map.insert(QLatin1String("PGF"), QLatin1String("Progressive Graphics File"));
+    return map;
+}
+
 QString DImgPGFPlugin::loaderName() const
 {
     return QLatin1String("PGF");
