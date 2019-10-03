@@ -120,7 +120,7 @@ bool DImg::load(const QString& filePath,
             return false;
         }
 
-        qCDebug(DIGIKAM_DIMG_LOG) << filePath << ":" << plug->loaderName() << "file identified (suffix)";
+        qCDebug(DIGIKAM_DIMG_LOG) << filePath << ":" << plug->loaderName() << "file identified";
         DImgLoader* const loader = plug->loader(this, rawDecodingSettings);
         loader->setLoadFlags(loadFlags);
 
