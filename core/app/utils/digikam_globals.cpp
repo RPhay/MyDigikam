@@ -169,8 +169,8 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
 
     if (mode != QIODevice::WriteOnly)
     {
-        formats << i18n("Raw Images (%1)", QLatin1String(DRawDecoder::rawFiles()));
-        allTypes.append(QLatin1String(DRawDecoder::rawFiles()));
+        formats << i18n("Raw Images (%1)", DRawDecoder::rawFiles());
+        allTypes.append(DRawDecoder::rawFiles());
         formats << i18n("All supported files (%1)", allTypes);
     }
 
