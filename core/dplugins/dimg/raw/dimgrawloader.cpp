@@ -47,8 +47,12 @@ DImgRAWLoader::DImgRAWLoader(DImg* const image, const DRawDecoding& rawDecodingS
       m_filter(nullptr)
 {
     m_decoderSettings = rawDecodingSettings.rawPrm;
-    m_filter              = new RawProcessingFilter(this);
+    m_filter          = new RawProcessingFilter(this);
     m_filter->setSettings(rawDecodingSettings);
+}
+
+DImgRAWLoader::~DImgRAWLoader()
+{
 }
 
 bool DImgRAWLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
@@ -147,14 +151,17 @@ void DImgRAWLoader::setWaitingDataProgress(double value)
     }
 }
 
-bool DImgRAWLoader::loadedFromRawData(const QByteArray& data, int width, int height, int rgbmax,
-                                  DImgLoaderObserver* const observer)
+bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
+                                      int width,
+                                      int height,
+                                      int rgbmax,
+                                      DImgLoaderObserver* const observer)
 {
     int checkpoint = 0;
 
     if (m_decoderSettings.sixteenBitsImage)       // 16 bits image
     {
-        uchar* image = new_failureTolerant(width, height, 8);
+        uchar* const image = new_failureTolerant(width, height, 8);
 
         if (!image)
         {
@@ -167,7 +174,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data, int width, int hei
         float fac           = 65535.0 / rgbmax;
         checkpoint          = 0;
 
-        for (int h = 0; h < height; ++h)
+        for (int h = 0 ; h < height ; ++h)
         {
             if (observer && h == checkpoint)
             {
@@ -182,7 +189,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data, int width, int hei
                 observer->progressInfo(m_image, 0.7 + 0.2 * (((float)h) / ((float)height)));
             }
 
-            for (int w = 0; w < width; ++w)
+            for (int w = 0 ; w < width ; ++w)
             {
                 if (QSysInfo::ByteOrder == QSysInfo::LittleEndian)     // Intel
                 {
@@ -210,7 +217,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data, int width, int hei
     }
     else        // 8 bits image
     {
-        uchar* image = new_failureTolerant(width, height, 4);
+        uchar* const image = new_failureTolerant(width, height, 4);
 
         if (!image)
         {
@@ -222,7 +229,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data, int width, int hei
         uchar* src = (uchar*)data.data();
         checkpoint = 0;
 
-        for (int h = 0; h < height; ++h)
+        for (int h = 0 ; h < height ; ++h)
         {
 
             if (observer && h == checkpoint)
@@ -238,7 +245,7 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data, int width, int hei
                 observer->progressInfo(m_image, 0.7 + 0.2 * (((float)h) / ((float)height)));
             }
 
-            for (int w = 0; w < width; ++w)
+            for (int w = 0 ; w < width ; ++w)
             {
                 // No need to adapt RGB components accordingly with rgbmax value because Raw engine
                 // always return rgbmax to 255 in 8 bits/color/pixels.
