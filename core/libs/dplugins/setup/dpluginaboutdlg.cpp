@@ -147,8 +147,7 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
         extra->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         extra->setAllColumnsShowFocus(true);
         extra->setColumnCount(2);
-        extra->header()->setSectionResizeMode(QHeaderView::Stretch);
-        extra->header()->setVisible(false);
+        extra->setHeaderLabels(QStringList() << i18n("Extension") << i18n("Description"));
 
         for (QMap<QString, QString>::const_iterator it = list.constBegin() ; it != list.constEnd() ; ++it)
         {
