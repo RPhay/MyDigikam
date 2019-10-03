@@ -100,7 +100,7 @@ QString DImgHEIFPlugin::details() const
                 "stored in a HEIF image as in a JPEG image of the same size, resulting in a better quality image. "
                 "HEIF also supports animation, and is capable of storing more information than an animated GIF "
                 "at a small fraction of the size.</p>"
-                "<p>Encoding HEIC is relevant of optional libx265 codec. %1<p>"
+                "<p>Encoding HEIC is relevant of optional libx265 codec. %1</p>"
                 "<p>See <a href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>"
                 "High Efficiency Image File Format</a> for details.</p>", x265Notice);
 }
