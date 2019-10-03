@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2019-09-26
- * Description : A HEIF IO file for DImg framework - read operations
+ * Description : A HEIF IO file for DImg framework - load operations
  *
  * Copyright (C) 2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -94,7 +94,8 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     struct heif_context* const heif_context = heif_context_alloc();
     struct heif_error error                 = heif_context_read_from_file(heif_context,
-                                              QFile::encodeName(filePath).constData(), NULL);
+                                                                          QFile::encodeName(filePath).constData(),
+                                                                          nullptr);
 
     if (!isHeifSuccess(&error))
     {
