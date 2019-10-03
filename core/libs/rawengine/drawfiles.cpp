@@ -26,7 +26,7 @@
 namespace Digikam
 {
 
-QString s_rawFileExtentions()
+QString s_rawFileExtensions()
 {
     QList<QString> list = s_rawFileExtensionsdWithDesc().keys();
     QString ret;

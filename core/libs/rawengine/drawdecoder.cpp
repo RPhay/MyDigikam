@@ -497,7 +497,7 @@ void DRawDecoder::setWaitingDataProgress(double)
 
 const char* DRawDecoder::rawFiles()
 {
-    return s_rawFileExtentions().toLatin1().constData();
+    return s_rawFileExtensions().toLatin1().constData();
 }
 
 QStringList DRawDecoder::rawFilesList()

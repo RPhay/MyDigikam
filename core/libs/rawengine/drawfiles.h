@@ -34,7 +34,7 @@ namespace Digikam
 
 QMap<QString, QString> s_rawFileExtensionsdWithDesc();
 
-QString                s_rawFileExtentions();
+QString                s_rawFileExtensions();
 
 int                    s_rawFileExtensionsVersion();
 
