@@ -62,7 +62,6 @@ public:
     void setup(QObject* const)                    override;
     QMap<QString, QString> extraAboutData() const override;
 
-
     QString     loaderName()                                                                const;
     QString     typeMimes()                                                                 const;
     bool        canRead(const QString& filePath)                                            const;

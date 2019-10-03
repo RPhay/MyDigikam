@@ -119,6 +119,13 @@ void DImgHEIFPlugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
+QMap<QString, QString> DImgHEIFPlugin::extraAboutData() const
+{
+    QMap<QString, QString> map;
+    map.insert(QLatin1String("HEIC"), i18n("High efficiency image coding"));
+    return map;
+}
+
 QString DImgHEIFPlugin::loaderName() const
 {
     return QLatin1String("HEIF");
