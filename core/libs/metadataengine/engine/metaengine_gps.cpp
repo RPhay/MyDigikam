@@ -128,7 +128,7 @@ bool MetaEngine::getGPSLatitudeNumber(double* const latitude) const
             return true;
         }
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get GPS tag using Exiv2 "), e);
     }
@@ -214,7 +214,7 @@ bool MetaEngine::getGPSLongitudeNumber(double* const longitude) const
             return true;
         }
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get GPS tag using Exiv2 "), e);
     }
@@ -291,7 +291,7 @@ bool MetaEngine::getGPSAltitude(double* const altitude) const
             return true;
         }
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get GPS tag using Exiv2 "), e);
     }
@@ -348,7 +348,7 @@ bool MetaEngine::initializeGPSInfo()
 
         return true;
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot initialize GPS data using Exiv2 "), e);
     }
@@ -479,7 +479,7 @@ bool MetaEngine::setGPSInfo(const double* const altitude, const double latitude,
 
         return true;
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set Exif GPS tag using Exiv2 "), e);
     }
@@ -567,7 +567,7 @@ bool MetaEngine::removeGPSInfo()
 
         return true;
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot remove Exif GPS tag using Exiv2 "), e);
     }

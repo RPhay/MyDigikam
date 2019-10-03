@@ -120,7 +120,7 @@ public:
 
     /** Return the string of all RAW file type mime supported.
      */
-    static const char* rawFiles();
+    static QString rawFiles();
 
     /** Return the list of all RAW file type mime supported,
         as a QStringList, without wildcard and suffix dot.

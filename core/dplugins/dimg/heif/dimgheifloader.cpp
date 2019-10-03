@@ -25,6 +25,7 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "digikam_debug.h"
 #include "dimg.h"
 #include "dimgloaderobserver.h"
@@ -38,6 +39,10 @@ DImgHEIFLoader::DImgHEIFLoader(DImg* const image)
     m_hasAlpha   = false;
     m_sixteenBit = false;
     m_observer   = nullptr;
+}
+
+DImgHEIFLoader::~DImgHEIFLoader()
+{
 }
 
 bool DImgHEIFLoader::hasAlpha() const

@@ -99,6 +99,13 @@ void DImgPGFPlugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
+QMap<QString, QString> DImgPGFPlugin::extraAboutData() const
+{
+    QMap<QString, QString> map;
+    map.insert(QLatin1String("PGF"), i18n("Progressive Graphics File"));
+    return map;
+}
+
 QString DImgPGFPlugin::loaderName() const
 {
     return QLatin1String("PGF");
@@ -123,9 +130,13 @@ bool DImgPGFPlugin::canRead(const QString& filePath) const
 
     QString ext = fileInfo.suffix().toUpper();
 
-    if (!ext.isEmpty() && (ext == QLatin1String("PGF")))
+    if (ext == QLatin1String("PGF"))
     {
         return true;
+    }
+    else if (!ext.isEmpty())
+    {
+        return false;
     }
 
     // In second, we trying to parse file header.

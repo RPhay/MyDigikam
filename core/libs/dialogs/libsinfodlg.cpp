@@ -174,6 +174,12 @@ LibsInfoDlg::LibsInfoDlg(QWidget* const parent)
     list.insert(i18nc(CONTEXT, "ImageMagick codecs support"),  SUPPORTED_NO);
 #endif // HAVE_IMAGE_MAGICK
 
+#ifdef HAVE_X265
+    list.insert(i18nc(CONTEXT, "HEIF encoding support"),       SUPPORTED_YES);
+#else
+    list.insert(i18nc(CONTEXT, "HEIF encoding support"),       SUPPORTED_NO);
+#endif // HAVE_X265
+
     QString tiffver = QLatin1String(TIFFLIB_VERSION_STR);
     tiffver         = tiffver.left(tiffver.indexOf(QLatin1Char('\n')));
     tiffver         = tiffver.section(QLatin1Char(' '), 2, 2);

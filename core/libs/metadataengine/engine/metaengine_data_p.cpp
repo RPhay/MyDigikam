@@ -45,7 +45,7 @@ void MetaEngineData::Private::clear()
         xmpMetadata.clear();
 #endif
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Cannot clear data container using Exiv2"
                                            << " (Error #" << e.code() << ": "

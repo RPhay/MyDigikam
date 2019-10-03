@@ -147,9 +147,9 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
         extra->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         extra->setAllColumnsShowFocus(true);
         extra->setColumnCount(2);
-        extra->header()->setSectionResizeMode(QHeaderView::Stretch);
+        extra->setHeaderLabels(QStringList() << i18n("Extension") << i18n("Description"));
 
-        for (QMap<QString, QString>::const_iterator it = list.constBegin(); it != list.constEnd() ; ++it)
+        for (QMap<QString, QString>::const_iterator it = list.constBegin() ; it != list.constEnd() ; ++it)
         {
             new QTreeWidgetItem(extra, QStringList() << it.key() << it.value());
         }
@@ -159,9 +159,9 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
 
     // --------------------------------------------------------
 
-    grid->addWidget(logo,   0, 0, 1, 1);
-    grid->addWidget(header, 0, 1, 1, 1);
-    grid->addWidget(tab, 2, 0, 1, -1);
+    grid->addWidget(logo,   0, 0, 1,  1);
+    grid->addWidget(header, 0, 1, 1,  1);
+    grid->addWidget(tab,    2, 0, 1, -1);
     grid->setColumnStretch(1, 10);
     grid->setRowStretch(2, 10);
     grid->setContentsMargins(QMargins());

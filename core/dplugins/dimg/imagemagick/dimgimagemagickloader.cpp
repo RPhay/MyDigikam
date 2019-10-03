@@ -70,6 +70,10 @@ DImgImageMagickLoader::DImgImageMagickLoader(DImg* const image)
     m_sixteenBit = false;
 }
 
+DImgImageMagickLoader::~DImgImageMagickLoader()
+{
+}
+
 bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
     QStringList blackList;
@@ -88,7 +92,7 @@ bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* co
         return false;
     }
 
-    readMetadata(filePath, DImg::QIMAGE);
+    readMetadata(filePath);
 
     // Loading is opaque to us. No support for stopping from observer,
     // progress info are only pseudo values

@@ -47,6 +47,10 @@
 #   include "jp2ksettings.h"
 #endif // HAVE_JASPER
 
+#ifdef HAVE_X265
+#   include "heifsettings.h"
+#endif // HAVE_X265
+
 namespace Digikam
 {
 
@@ -62,6 +66,9 @@ public:
         JPEG2000Options(nullptr),
 #endif // HAVE_JASPER
         PGFOptions(nullptr),
+#ifdef HAVE_X265
+        HEIFOptions(nullptr),
+#endif // HAVE_X265
         showImageSettingsDialog(nullptr)
     {
     }
@@ -86,6 +93,8 @@ public:
     static const QString configJPEG2000LossLessEntry;
     static const QString configPGFCompressionEntry;
     static const QString configPGFLossLessEntry;
+    static const QString configHEIFCompressionEntry;
+    static const QString configHEIFLossLessEntry;
     static const QString configShowImageSettingsDialog;
 
     JPEGSettings*        JPEGOptions;
@@ -95,6 +104,9 @@ public:
     JP2KSettings*        JPEG2000Options;
 #endif // HAVE_JASPER
     PGFSettings*         PGFOptions;
+#ifdef HAVE_X265
+    HEIFSettings*        HEIFOptions;
+#endif // HAVE_X265
 
     QCheckBox*           showImageSettingsDialog;
 };
@@ -108,6 +120,8 @@ const QString SetupIOFiles::Private::configJPEG2000CompressionEntry(QLatin1Strin
 const QString SetupIOFiles::Private::configJPEG2000LossLessEntry(QLatin1String("JPEG2000LossLess"));
 const QString SetupIOFiles::Private::configPGFCompressionEntry(QLatin1String("PGFCompression"));
 const QString SetupIOFiles::Private::configPGFLossLessEntry(QLatin1String("PGFLossLess"));
+const QString SetupIOFiles::Private::configHEIFCompressionEntry(QLatin1String("HEIFCompression"));
+const QString SetupIOFiles::Private::configHEIFLossLessEntry(QLatin1String("HEIFLossLess"));
 const QString SetupIOFiles::Private::configShowImageSettingsDialog(QLatin1String("ShowImageSettingsDialog"));
 
 // --------------------------------------------------------
@@ -125,6 +139,9 @@ SetupIOFiles::SetupIOFiles(QWidget* const parent)
     d->JPEG2000Options      = new JP2KSettings;
 #endif // HAVE_JASPER
     d->PGFOptions           = new PGFSettings;
+#ifdef HAVE_X265
+    d->HEIFOptions          = new HEIFSettings;
+#endif // HAVE_X265
 
     // Show Settings Dialog Option
 
@@ -140,6 +157,9 @@ SetupIOFiles::SetupIOFiles(QWidget* const parent)
     vbox->addWidget(d->createGroupBox(d->JPEG2000Options));
 #endif // HAVE_JASPER
     vbox->addWidget(d->createGroupBox(d->PGFOptions));
+#ifdef HAVE_X265
+    vbox->addWidget(d->createGroupBox(d->HEIFOptions));
+#endif // HAVE_265
     vbox->addWidget(d->createGroupBox(d->showImageSettingsDialog));
     vbox->addStretch();
 
@@ -171,6 +191,10 @@ void SetupIOFiles::applySettings()
 #endif // HAVE_JASPER
     group.writeEntry(d->configPGFCompressionEntry,      d->PGFOptions->getCompressionValue());
     group.writeEntry(d->configPGFLossLessEntry,         d->PGFOptions->getLossLessCompression());
+#ifdef HAVE_X265
+    group.writeEntry(d->configHEIFCompressionEntry,     d->HEIFOptions->getCompressionValue());
+    group.writeEntry(d->configHEIFLossLessEntry,        d->HEIFOptions->getLossLessCompression());
+#endif // HAVE_X265
     group.writeEntry(d->configShowImageSettingsDialog,  d->showImageSettingsDialog->isChecked());
     config->sync();
 }
@@ -189,6 +213,10 @@ void SetupIOFiles::readSettings()
 #endif // HAVE_JASPER
     d->PGFOptions->setCompressionValue(group.readEntry(d->configPGFCompressionEntry,           3));
     d->PGFOptions->setLossLessCompression(group.readEntry(d->configPGFLossLessEntry,           true));
+#ifdef HAVE_X265
+    d->HEIFOptions->setCompressionValue(group.readEntry(d->configHEIFCompressionEntry,         75));
+    d->HEIFOptions->setLossLessCompression(group.readEntry(d->configHEIFLossLessEntry,         true));
+#endif // HAVE_X265
     d->showImageSettingsDialog->setChecked(group.readEntry(d->configShowImageSettingsDialog,   true));
 }
 

@@ -89,7 +89,7 @@ bool MetaEngine::setItemProgramId(const QString& program, const QString& version
         d->iptcMetadata()["Iptc.Application2.ProgramVersion"] = std::string(version.toLatin1().constData());
         return true;
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set Program identity into image using Exiv2 "), e);
     }
@@ -193,7 +193,7 @@ QSize MetaEngine::getItemDimensions() const
 #endif // _XMP_SUPPORT_
 
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot parse image dimensions tag using Exiv2 "), e);
     }
@@ -232,7 +232,7 @@ bool MetaEngine::setItemDimensions(const QSize& size) const
 
         return true;
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set image dimensions using Exiv2 "), e);
     }
@@ -335,7 +335,7 @@ MetaEngine::ImageOrientation MetaEngine::getItemOrientation() const
         }
 
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot parse Exif Orientation tag using Exiv2 "), e);
     }
@@ -409,7 +409,7 @@ bool MetaEngine::setItemOrientation(ImageOrientation orientation) const
 
         return true;
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set Exif Orientation tag using Exiv2 "), e);
     }
@@ -521,7 +521,7 @@ bool MetaEngine::setItemColorWorkSpace(ImageColorWorkSpace workspace) const
 
         return true;
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set Exif color workspace tag using Exiv2 "), e);
     }
@@ -875,7 +875,7 @@ QDateTime MetaEngine::getItemDateTime() const
             }
         }
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot parse Exif date & time tag using Exiv2 "), e);
     }
@@ -955,7 +955,7 @@ bool MetaEngine::setImageDateTime(const QDateTime& dateTime, bool setDateTimeDig
 
         return true;
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set Date & Time into image using Exiv2 "), e);
     }
@@ -1105,7 +1105,7 @@ QDateTime MetaEngine::getDigitizationDateTime(bool fallbackToCreationTime) const
         }
 
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot parse Exif digitization date & time tag using Exiv2 "), e);
     }
@@ -1132,7 +1132,7 @@ bool MetaEngine::getItemPreview(QImage& preview) const
 
         // TODO : Added here Makernotes preview extraction when Exiv2 will be fixed for that.
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get image preview using Exiv2 "), e);
     }
@@ -1178,7 +1178,7 @@ bool MetaEngine::setItemPreview(const QImage& preview) const
 
         return true;
     }
-    catch( Exiv2::Error& e )
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get image preview using Exiv2 "), e);
     }

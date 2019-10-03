@@ -67,7 +67,8 @@ public:
 };
 
 JP2KSettings::JP2KSettings(QWidget* const parent)
-    : QWidget(parent), d(new Private)
+    : QWidget(parent),
+      d(new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 

@@ -8,6 +8,9 @@
  *
  * Copyright (C) 2006-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
+ * Others Linux JPEG-2000 Loader implementation:
+ *    https://github.com/ImageMagick/ImageMagick/blob/master/coders/jp2.c
+ *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
  * Public License as published by the Free Software Foundation;
@@ -41,13 +44,14 @@ class DIGIKAM_EXPORT DImgJPEG2000Loader : public DImgLoader
 public:
 
     explicit DImgJPEG2000Loader(DImg* const image);
+    ~DImgJPEG2000Loader();
 
     bool load(const QString& filePath, DImgLoaderObserver* const observer) override;
     bool save(const QString& filePath, DImgLoaderObserver* const observer) override;
 
-    virtual bool hasAlpha()   const override;
-    virtual bool sixteenBit() const override;
-    virtual bool isReadOnly() const override;
+    bool hasAlpha()   const override;
+    bool sixteenBit() const override;
+    bool isReadOnly() const override;
 
 private:
 

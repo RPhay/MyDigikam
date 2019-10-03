@@ -44,7 +44,7 @@ bool MetaEngine::canWriteIptc(const QString& filePath)
         Exiv2::AccessMode mode = image->checkMode(Exiv2::mdIptc);
         return (mode == Exiv2::amWrite || mode == Exiv2::amReadWrite);
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         std::string s(e.what());
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Cannot check Iptc access mode using Exiv2 (Error #"
@@ -72,7 +72,7 @@ bool MetaEngine::clearIptc() const
         d->iptcMetadata().clear();
         return true;
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot clear Iptc data using Exiv2 "), e);
     }
@@ -109,7 +109,7 @@ QByteArray MetaEngine::getIptc(bool addIrbHeader) const
 
         }
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         if (!d->filePath.isEmpty())
         {
@@ -138,7 +138,7 @@ bool MetaEngine::setIptc(const QByteArray& data) const
             return (!d->iptcMetadata().empty());
         }
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         if (!d->filePath.isEmpty())
         {
@@ -253,7 +253,7 @@ MetaEngine::MetaDataMap MetaEngine::getIptcTagsDataList(const QStringList& iptcK
 
         return metaDataMap;
     }
-    catch (Exiv2::Error& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot parse Iptc metadata using Exiv2 "), e);
     }
@@ -275,7 +275,7 @@ QString MetaEngine::getIptcTagTitle(const char* iptcTagName)
         Exiv2::IptcKey ik(iptckey);
         return QString::fromLocal8Bit( Exiv2::IptcDataSets::dataSetTitle(ik.tag(), ik.record()) );
     }
-    catch (Exiv2::Error& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get metadata tag title using Exiv2 "), e);
     }
@@ -297,7 +297,7 @@ QString MetaEngine::getIptcTagDescription(const char* iptcTagName)
         Exiv2::IptcKey ik(iptckey);
         return QString::fromLocal8Bit( Exiv2::IptcDataSets::dataSetDesc(ik.tag(), ik.record()) );
     }
-    catch (Exiv2::Error& e)
+    catch (Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get metadata tag description using Exiv2 "), e);
     }
@@ -336,7 +336,7 @@ bool MetaEngine::removeIptcTag(const char* iptcTagName) const
         if (i > 0)
             return true;
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot remove Iptc tag using Exiv2 "), e);
     }
@@ -361,7 +361,7 @@ bool MetaEngine::setIptcTagData(const char* iptcTagName, const QByteArray& data)
         d->iptcMetadata()[iptcTagName] = val;
         return true;
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc tag data into image using Exiv2 "), e);
     }
@@ -392,7 +392,7 @@ QByteArray MetaEngine::getIptcTagData(const char* iptcTagName) const
             return data;
         }
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QString::fromLatin1("Cannot find Iptc key '%1' into image using Exiv2 ")
                                     .arg(QLatin1String(iptcTagName)), e);
@@ -427,7 +427,7 @@ QString MetaEngine::getIptcTagString(const char* iptcTagName, bool escapeCR) con
             return tagValue;
         }
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QString::fromLatin1("Cannot find Iptc key '%1' into image using Exiv2 ")
                                     .arg(QLatin1String(iptcTagName)), e);
@@ -452,7 +452,7 @@ bool MetaEngine::setIptcTagString(const char* iptcTagName, const QString& value)
         d->iptcMetadata()["Iptc.Envelope.CharacterSet"] = "\33%G";
         return true;
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc tag string into image using Exiv2 "), e);
     }
@@ -493,7 +493,7 @@ QStringList MetaEngine::getIptcTagsStringList(const char* iptcTagName, bool esca
             return values;
         }
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QString::fromLatin1("Cannot find Iptc key '%1' into image using Exiv2 ")
                                     .arg(QLatin1String(iptcTagName)), e);
@@ -559,7 +559,7 @@ bool MetaEngine::setIptcTagsStringList(const char* iptcTagName, int maxSize,
 
         return true;
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QString::fromLatin1("Cannot set Iptc key '%1' into image using Exiv2 ")
                                     .arg(QLatin1String(iptcTagName)), e);
@@ -599,7 +599,7 @@ QStringList MetaEngine::getIptcKeywords() const
             return keywords;
         }
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc Keywords from image using Exiv2 "), e);
     }
@@ -661,7 +661,7 @@ bool MetaEngine::setIptcKeywords(const QStringList& oldKeywords, const QStringLi
 
         return true;
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc Keywords into image using Exiv2 "), e);
     }
@@ -698,7 +698,7 @@ QStringList MetaEngine::getIptcSubjects() const
             return subjects;
         }
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc Subjects from image using Exiv2 "), e);
     }
@@ -755,7 +755,7 @@ bool MetaEngine::setIptcSubjects(const QStringList& oldSubjects, const QStringLi
 
         return true;
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc Subjects into image using Exiv2 "), e);
     }
@@ -792,7 +792,7 @@ QStringList MetaEngine::getIptcSubCategories() const
             return subCategories;
         }
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc Sub Categories from image using Exiv2 "), e);
     }
@@ -850,7 +850,7 @@ bool MetaEngine::setIptcSubCategories(const QStringList& oldSubCategories, const
 
         return true;
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot set Iptc Sub Categories into image using Exiv2 "), e);
     }
@@ -889,7 +889,7 @@ MetaEngine::TagsMap MetaEngine::getIptcTagsList() const
 
         return tagsMap;
     }
-    catch(Exiv2::Error& e)
+    catch(Exiv2::AnyError& e)
     {
         d->printExiv2ExceptionError(QLatin1String("Cannot get Iptc Tags list using Exiv2 "), e);
     }

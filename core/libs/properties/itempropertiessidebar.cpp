@@ -221,7 +221,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 
     QSize   dims;
     QString bitDepth, colorMode;
-    QString rawFilesExt = QLatin1String(DRawDecoder::rawFiles());
+    QString rawFilesExt = DRawDecoder::rawFiles();
     QString ext         = fileInfo.suffix().toUpper();
 
     if (!ext.isEmpty() && rawFilesExt.toUpper().contains(ext))

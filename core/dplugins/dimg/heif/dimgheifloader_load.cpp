@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2019-09-26
- * Description : A HEIF IO file for DImg framework - read operations
+ * Description : A HEIF IO file for DImg framework - load operations
  *
  * Copyright (C) 2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -46,7 +46,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 {
     m_observer = observer;
 
-//    readMetadata(filePath, DImg::QIMAGE); NOTE: Exiv2 do not support HEIC yet
+    readMetadata(filePath);
 
     FILE* const file = fopen(QFile::encodeName(filePath).constData(), "rb");
 
@@ -94,7 +94,8 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     struct heif_context* const heif_context = heif_context_alloc();
     struct heif_error error                 = heif_context_read_from_file(heif_context,
-                                              QFile::encodeName(filePath).constData(), NULL);
+                                                                          QFile::encodeName(filePath).constData(),
+                                                                          nullptr);
 
     if (!isHeifSuccess(&error))
     {
@@ -310,9 +311,10 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
 
         heif_decoding_options_free(decode_options);
 
-        int colorDepth = heif_image_get_bits_per_pixel(heif_image, heif_channel_interleaved);
-        imageWidth()   = heif_image_get_width(heif_image, heif_channel_interleaved);
-        imageHeight()  = heif_image_get_height(heif_image, heif_channel_interleaved);
+        heif_colorspace colorSpace = heif_image_get_colorspace(heif_image);
+        int colorDepth             = heif_image_get_bits_per_pixel(heif_image, heif_channel_interleaved);
+        imageWidth()               = heif_image_get_width(heif_image, heif_channel_interleaved);
+        imageHeight()              = heif_image_get_height(heif_image, heif_channel_interleaved);
 
         qDebug() << "Decoded HEIC image properties: size("
                  << imageWidth() << "x" << imageHeight()
@@ -458,7 +460,7 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
 
         imageData() = data;
         imageSetAttribute(QLatin1String("format"),             QLatin1String("HEIF"));
-        imageSetAttribute(QLatin1String("originalColorModel"), DImg::RGB);
+        imageSetAttribute(QLatin1String("originalColorModel"), colorSpace);
         imageSetAttribute(QLatin1String("originalBitDepth"),   m_sixteenBit ? 16 : 8);
         imageSetAttribute(QLatin1String("originalSize"),       QSize(imageWidth(), imageHeight()));
     }

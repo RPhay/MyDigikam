@@ -186,10 +186,17 @@ set(libdimgloaders_SRCS
 # JPEG2000 support
 
 if(Jasper_FOUND)
-    # this should be compiled separately to the lib, cleans if checks
     set(libdimgloaders_SRCS
         ${libdimgloaders_SRCS}
         loaders/jp2ksettings.cpp
+    )
+endif()
+
+# HEIF support
+if(X265_FOUND)
+    set(libdimgloaders_SRCS
+        ${libdimgloaders_SRCS}
+        loaders/heifsettings.cpp
     )
 endif()
 

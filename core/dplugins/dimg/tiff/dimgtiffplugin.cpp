@@ -127,9 +127,13 @@ bool DImgTIFFPlugin::canRead(const QString& filePath) const
 
     QString ext = fileInfo.suffix().toUpper();
 
-    if (!ext.isEmpty() && (ext == QLatin1String("TIFF") || ext == QLatin1String("TIF")))
+    if (ext == QLatin1String("TIFF") || ext == QLatin1String("TIF"))
     {
         return true;
+    }
+    else if (!ext.isEmpty())
+    {
+        return false;
     }
 
     // In second, we trying to parse file header.
@@ -142,7 +146,7 @@ bool DImgTIFFPlugin::canRead(const QString& filePath) const
         return false;
     }
 
-    const int headerLen = 10;
+    const int headerLen = 9;
 
     unsigned char header[headerLen];
 
@@ -157,11 +161,9 @@ bool DImgTIFFPlugin::canRead(const QString& filePath) const
 
     uchar tiffBigID[4]  = { 0x4D, 0x4D, 0x00, 0x2A };
     uchar tiffLilID[4]  = { 0x49, 0x49, 0x2A, 0x00 };
-    uchar Cr2Header[10] = { 0x49, 0x49, 0x2A, 0x00, 0x10, 0x00, 0x00, 0x00, 0x43, 0x52 };
 
-    if (memcmp(&header, &Cr2Header, 10) != 0  &&
-        (memcmp(&header, &tiffBigID, 4) == 0  ||
-         memcmp(&header, &tiffLilID, 4) == 0))
+    if (memcmp(&header, &tiffBigID, 4) == 0 ||
+        memcmp(&header, &tiffLilID, 4) == 0)
     {
         return true;
     }

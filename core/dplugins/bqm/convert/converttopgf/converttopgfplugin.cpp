@@ -61,7 +61,7 @@ QString ConvertToPgfPlugin::iid() const
 
 QIcon ConvertToPgfPlugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("image-jpeg"));
+    return QIcon::fromTheme(QLatin1String("image-x-generic"));
 }
 
 QString ConvertToPgfPlugin::description() const

@@ -34,6 +34,7 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "digikam_debug.h"
 #include "dimg.h"
 #include "dimgloaderobserver.h"
@@ -85,20 +86,19 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     // -------------------------------------------------------------------
     // Open the file
 
-    FILE* const f = fopen(QFile::encodeName(filePath).constData(), "wb");
+    FILE* const file = fopen(QFile::encodeName(filePath).constData(), "wb");
 
-    if (!f)
+    if (!file)
     {
         qWarning() << "Cannot open target image file.";
         return false;
     }
 
-    fclose(f);
+    fclose(file);
 
     QVariant qualityAttr  = imageGetAttribute(QLatin1String("quality"));
-    int quality           = qualityAttr.isValid() ? qualityAttr.toInt() : 50;
-    QVariant losslessAttr = imageGetAttribute(QLatin1String("lossless"));
-    bool lossless         = losslessAttr.isValid() ? qualityAttr.toBool() : false;
+    int quality           = qualityAttr.isValid() ? qualityAttr.toInt() : 75;
+    bool lossless         = (quality == 0);
 
     // --- Determine libx265 encoder bits depth capability: 8=standard, 10, 12, or later 16.
 
@@ -345,15 +345,15 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     // --- encode and write image
 
-    struct heif_encoding_options* options = heif_encoding_options_alloc();
-    options->save_alpha_channel           = imageHasAlpha() ? 1 : 0;
-    struct heif_image_handle* hdl         = nullptr;
-    error                                 = heif_context_encode_image(ctx, image, encoder, options, &hdl);
+    struct heif_encoding_options* const options = heif_encoding_options_alloc();
+    options->save_alpha_channel                 = imageHasAlpha() ? 1 : 0;
+    struct heif_image_handle* image_handle      = nullptr;
+    error                                       = heif_context_encode_image(ctx, image, encoder, options, &image_handle);
 
     if (!isHeifSuccess(&error))
     {
         heif_encoding_options_free(options);
-        heif_image_handle_release(hdl);
+        heif_image_handle_release(image_handle);
         heif_encoder_release(encoder);
         heif_context_free(ctx);
         return false;
@@ -366,9 +366,9 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     qDebug() << "HEIC metadata storage...";
 
-    saveHEICMetadata(ctx, hdl);
+    saveHEICMetadata(ctx, image_handle);
 
-    heif_image_handle_release(hdl);
+    heif_image_handle_release(image_handle);
 
     // --- TODO: Add thumnail image.
 
@@ -386,7 +386,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     heif_context_free(ctx);
 
-    imageSetAttribute(QLatin1String("savedFormat"), QLatin1String("HEIC"));
+    imageSetAttribute(QLatin1String("savedFormat"), QLatin1String("HEIF"));
     saveMetadata(filePath);
 
     return true;

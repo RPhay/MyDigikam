@@ -41,6 +41,7 @@
 #include "digikam_globals.h"
 #include "dimgrawloader.h"
 #include "drawdecoder.h"
+#include "drawfiles.h"
 
 namespace DigikamRAWDImgPlugin
 {
@@ -106,6 +107,11 @@ void DImgRAWPlugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
+QMap<QString, QString> DImgRAWPlugin::extraAboutData() const
+{
+    return s_rawFileExtensionsdWithDesc();
+}
+
 QString DImgRAWPlugin::loaderName() const
 {
     return QLatin1String("RAW");
@@ -113,7 +119,7 @@ QString DImgRAWPlugin::loaderName() const
 
 QString DImgRAWPlugin::typeMimes() const
 {
-    return QString::fromLatin1(DRawDecoder::rawFiles()).toUpper().remove(QLatin1String("*."));
+    return QString(DRawDecoder::rawFiles()).toUpper().remove(QLatin1String("*."));
 }
 
 bool DImgRAWPlugin::canRead(const QString& filePath) const
@@ -127,7 +133,7 @@ bool DImgRAWPlugin::canRead(const QString& filePath) const
     }
 
     QString ext         = QFileInfo(filePath).suffix().toUpper();
-    QString rawFilesExt = QLatin1String(DRawDecoder::rawFiles());
+    QString rawFilesExt = DRawDecoder::rawFiles();
 
     if (rawFilesExt.toUpper().contains(ext))
     {

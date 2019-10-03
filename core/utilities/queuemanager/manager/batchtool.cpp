@@ -426,7 +426,7 @@ void BatchTool::setOutputUrlFromInputUrl()
 
 bool BatchTool::isRawFile(const QUrl& url) const
 {
-    QString   rawFilesExt = QLatin1String(DRawDecoder::rawFiles());
+    QString   rawFilesExt = DRawDecoder::rawFiles();
     QFileInfo fileInfo(url.toLocalFile());
     return (rawFilesExt.toUpper().contains(fileInfo.suffix().toUpper()));
 }

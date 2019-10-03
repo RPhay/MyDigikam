@@ -122,9 +122,13 @@ bool DImgPNGPlugin::canRead(const QString& filePath) const
 
     QString ext = fileInfo.suffix().toUpper();
 
-    if (!ext.isEmpty() && (ext == QLatin1String("PNG")))
+    if (ext == QLatin1String("PNG"))
     {
         return true;
+    }
+    else if (!ext.isEmpty())
+    {
+        return false;
     }
 
     // In second, we trying to parse file header.

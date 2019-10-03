@@ -97,7 +97,7 @@ bool DRawDecoder::loadEmbeddedPreview(QImage& image, const QString& path)
 bool DRawDecoder::loadEmbeddedPreview(QByteArray& imgData, const QString& path)
 {
     QFileInfo fileInfo(path);
-    QString   rawFilesExt = QString::fromUtf8(rawFiles());
+    QString   rawFilesExt = rawFiles();
     QString   ext         = fileInfo.suffix().toUpper();
 
     if (!fileInfo.exists() || ext.isEmpty() || !rawFilesExt.toUpper().contains(ext))
@@ -120,7 +120,7 @@ bool DRawDecoder::loadEmbeddedPreview(QByteArray& imgData, const QString& path)
 
 bool DRawDecoder::loadEmbeddedPreview(QByteArray& imgData, const QBuffer& buffer)
 {
-    QString rawFilesExt = QString::fromUtf8(rawFiles());
+    QString rawFilesExt = rawFiles();
     LibRaw* const raw   = new LibRaw;
 
     QByteArray inData = buffer.data();
@@ -140,7 +140,7 @@ bool DRawDecoder::loadEmbeddedPreview(QByteArray& imgData, const QBuffer& buffer
 bool DRawDecoder::loadHalfPreview(QImage& image, const QString& path)
 {
     QFileInfo fileInfo(path);
-    QString   rawFilesExt = QString::fromUtf8(rawFiles());
+    QString   rawFilesExt = rawFiles();
     QString   ext = fileInfo.suffix().toUpper();
 
     if (!fileInfo.exists() || ext.isEmpty() || !rawFilesExt.toUpper().contains(ext))
@@ -178,7 +178,7 @@ bool DRawDecoder::loadHalfPreview(QImage& image, const QString& path)
 bool DRawDecoder::loadHalfPreview(QByteArray& imgData, const QString& path)
 {
     QFileInfo fileInfo(path);
-    QString   rawFilesExt = QString::fromUtf8(rawFiles());
+    QString   rawFilesExt = rawFiles();
     QString   ext = fileInfo.suffix().toUpper();
 
     if (!fileInfo.exists() || ext.isEmpty() || !rawFilesExt.toUpper().contains(ext))
@@ -214,7 +214,7 @@ bool DRawDecoder::loadHalfPreview(QByteArray& imgData, const QString& path)
 
 bool DRawDecoder::loadHalfPreview(QByteArray& imgData, const QBuffer& inBuffer)
 {
-    QString rawFilesExt = QString::fromUtf8(rawFiles());
+    QString rawFilesExt = rawFiles();
     LibRaw* const raw   = new LibRaw;
 
     QByteArray inData = inBuffer.data();
@@ -247,7 +247,7 @@ bool DRawDecoder::loadHalfPreview(QByteArray& imgData, const QBuffer& inBuffer)
 bool DRawDecoder::loadFullImage(QImage& image, const QString& path, const DRawDecoderSettings& settings)
 {
     QFileInfo fileInfo(path);
-    QString   rawFilesExt = QString::fromUtf8(rawFiles());
+    QString   rawFilesExt = rawFiles();
     QString   ext         = fileInfo.suffix().toUpper();
 
     if (!fileInfo.exists() || ext.isEmpty() || !rawFilesExt.toUpper().contains(ext))
@@ -302,7 +302,7 @@ bool DRawDecoder::loadFullImage(QImage& image, const QString& path, const DRawDe
 bool DRawDecoder::rawFileIdentify(DRawInfo& identify, const QString& path)
 {
     QFileInfo fileInfo(path);
-    QString rawFilesExt  = QString::fromUtf8(rawFiles());
+    QString rawFilesExt  = rawFiles();
     QString ext          = fileInfo.suffix().toUpper();
     identify.isDecodable = false;
 
@@ -342,7 +342,7 @@ bool DRawDecoder::rawFileIdentify(DRawInfo& identify, const QString& path)
 bool DRawDecoder::extractRAWData(const QString& filePath, QByteArray& rawData, DRawInfo& identify, unsigned int shotSelect)
 {
     QFileInfo fileInfo(filePath);
-    QString rawFilesExt  = QString::fromUtf8(rawFiles());
+    QString rawFilesExt  = rawFiles();
     QString ext          = fileInfo.suffix().toUpper();
     identify.isDecodable = false;
 
@@ -495,20 +495,20 @@ void DRawDecoder::setWaitingDataProgress(double)
 {
 }
 
-const char* DRawDecoder::rawFiles()
+QString DRawDecoder::rawFiles()
 {
-    return raw_file_extentions;
+    return s_rawFileExtensions();
 }
 
 QStringList DRawDecoder::rawFilesList()
 {
-    QString string = QLatin1String(rawFiles());
+    QString string = rawFiles();
     return string.remove(QLatin1String("*.")).split(QLatin1Char(' '));
 }
 
 int DRawDecoder::rawFilesVersion()
 {
-    return raw_file_extensions_version;
+    return s_rawFileExtensionsVersion();
 }
 
 QStringList DRawDecoder::supportedCamera()
@@ -538,7 +538,7 @@ int DRawDecoder::librawUseGomp()
 
 bool DRawDecoder::isRawFile(const QUrl& url)
 {
-    QString   rawFilesExt = QLatin1String(rawFiles());
+    QString   rawFilesExt = rawFiles();
     QFileInfo fileInfo(url.toLocalFile());
 
     return (rawFilesExt.toUpper().contains(fileInfo.suffix().toUpper()));

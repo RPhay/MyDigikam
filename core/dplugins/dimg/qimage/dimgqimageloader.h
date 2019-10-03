@@ -42,13 +42,14 @@ class DIGIKAM_EXPORT DImgQImageLoader : public DImgLoader
 public:
 
     explicit DImgQImageLoader(DImg* const image);
+    ~DImgQImageLoader();
 
-    virtual bool load(const QString& filePath, DImgLoaderObserver* const observer) override;
-    virtual bool save(const QString& filePath, DImgLoaderObserver* const observer) override;
+    bool load(const QString& filePath, DImgLoaderObserver* const observer) override;
+    bool save(const QString& filePath, DImgLoaderObserver* const observer) override;
 
-    virtual bool hasAlpha()   const override;
-    virtual bool sixteenBit() const override;
-    virtual bool isReadOnly() const override;
+    bool hasAlpha()   const override;
+    bool sixteenBit() const override;
+    bool isReadOnly() const override;
 
 private:
 

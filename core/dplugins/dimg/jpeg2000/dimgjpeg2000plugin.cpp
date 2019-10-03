@@ -99,6 +99,18 @@ void DImgJPEG2000Plugin::setup(QObject* const /*parent*/)
     // Nothing to do
 }
 
+QMap<QString, QString> DImgJPEG2000Plugin::extraAboutData() const
+{
+    QMap<QString, QString> map;
+    map.insert(QLatin1String("JP2"), i18n("JPEG-2000 image"));
+    map.insert(QLatin1String("JPX"), i18n("JPEG-2000 image"));
+    map.insert(QLatin1String("JPC"), i18n("JPEG-2000 stream"));
+    map.insert(QLatin1String("J2K"), i18n("JPEG-2000 stream"));
+    map.insert(QLatin1String("PGX"), i18n("JPEG-2000 verification model"));
+
+    return map;
+}
+
 QString DImgJPEG2000Plugin::loaderName() const
 {
     return QLatin1String("JPEG2000");
@@ -123,13 +135,17 @@ bool DImgJPEG2000Plugin::canRead(const QString& filePath) const
 
     QString ext = fileInfo.suffix().toUpper();
 
-    if (!ext.isEmpty() &&
-        (ext == QLatin1String("JP2") || ext == QLatin1String("JPX") || // JPEG2000 file format
-         ext == QLatin1String("JPC") || ext == QLatin1String("J2K") || // JPEG2000 code stream
-         ext == QLatin1String("PGX"))                                  // JPEG2000 WM format
+    if (
+        ext == QLatin1String("JP2") || ext == QLatin1String("JPX") || // JPEG2000 file format
+        ext == QLatin1String("JPC") || ext == QLatin1String("J2K") || // JPEG2000 code stream
+        ext == QLatin1String("PGX")                                   // JPEG2000 Verification Model
        )
     {
         return true;
+    }
+    else if (!ext.isEmpty())
+    {
+        return false;
     }
 
     // In second, we trying to parse file header.
@@ -171,7 +187,7 @@ bool DImgJPEG2000Plugin::canWrite(const QString& format) const
 {
     if (format == QLatin1String("JP2") || format == QLatin1String("JPX") || // JPEG2000 file format
         format == QLatin1String("JPC") || format == QLatin1String("J2K") || // JPEG2000 code stream
-        format == QLatin1String("PGX"))                                     // JPEG2000 WM format
+        format == QLatin1String("PGX"))                                     // JPEG2000 Verification Model
     {
         return true;
     }

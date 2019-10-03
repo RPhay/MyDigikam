@@ -37,6 +37,7 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "dimgheifloader.h"
@@ -99,7 +100,7 @@ QString DImgHEIFPlugin::details() const
                 "stored in a HEIF image as in a JPEG image of the same size, resulting in a better quality image. "
                 "HEIF also supports animation, and is capable of storing more information than an animated GIF "
                 "at a small fraction of the size.</p>"
-                "<p>Encoding HEIC is relevant of optional libx265 codec. %1<p>"
+                "<p>Encoding HEIC is relevant of optional libx265 codec. %1</p>"
                 "<p>See <a href='https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format'>"
                 "High Efficiency Image File Format</a> for details.</p>", x265Notice);
 }
@@ -116,6 +117,13 @@ QList<DPluginAuthor> DImgHEIFPlugin::authors() const
 void DImgHEIFPlugin::setup(QObject* const /*parent*/)
 {
     // Nothing to do
+}
+
+QMap<QString, QString> DImgHEIFPlugin::extraAboutData() const
+{
+    QMap<QString, QString> map;
+    map.insert(QLatin1String("HEIC"), i18n("High efficiency image coding"));
+    return map;
 }
 
 QString DImgHEIFPlugin::loaderName() const
@@ -142,9 +150,13 @@ bool DImgHEIFPlugin::canRead(const QString& filePath) const
 
     QString ext = fileInfo.suffix().toUpper();
 
-    if (!ext.isEmpty() && (ext == QLatin1String("HEIC")))
+    if (ext == QLatin1String("HEIC"))
     {
         return true;
+    }
+    else if (!ext.isEmpty())
+    {
+        return false;
     }
 
     // In second, we trying to parse file header.

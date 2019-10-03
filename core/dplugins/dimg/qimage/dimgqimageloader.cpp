@@ -45,18 +45,23 @@ DImgQImageLoader::DImgQImageLoader(DImg* const image)
     m_hasAlpha = false;
 }
 
+DImgQImageLoader::~DImgQImageLoader()
+{
+}
+
 bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
     QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
 
-    if (mimeType.startsWith(QLatin1String("video/")) || mimeType.startsWith(QLatin1String("audio/")))
+    if (mimeType.startsWith(QLatin1String("video/")) ||
+        mimeType.startsWith(QLatin1String("audio/")))
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "Blacklisted from DImg::QImageLoader:" << mimeType;
         loadingFailed();
         return false;
     }
 
-    readMetadata(filePath, DImg::QIMAGE);
+    readMetadata(filePath);
 
     // Loading is opaque to us. No support for stopping from observer,
     // progress info are only pseudo values

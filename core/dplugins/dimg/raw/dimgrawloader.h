@@ -47,6 +47,7 @@ class DIGIKAM_EXPORT DImgRAWLoader : public DRawDecoder, public DImgLoader
 public:
 
     explicit DImgRAWLoader(DImg* const image, const DRawDecoding& rawDecodingSettings = DRawDecoding());
+    ~DImgRAWLoader();
 
     bool load(const QString& filePath, DImgLoaderObserver* const observer = nullptr) override;
     bool save(const QString& /*filePath*/, DImgLoaderObserver* const /*observer=0*/) override;
@@ -61,7 +62,10 @@ public:
 
 private:
 
-    bool loadedFromRawData(const QByteArray& data, int width, int height, int rgbmax,
+    bool loadedFromRawData(const QByteArray& data,
+                           int width,
+                           int height,
+                           int rgbmax,
                            DImgLoaderObserver* const observer);
 
     bool checkToCancelWaitingData() override;

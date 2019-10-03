@@ -385,6 +385,12 @@ void EditorWindow::setupStandardActions()
 
 #endif // HAVE_JASPER
 
+#ifdef HAVE_X265
+
+    d->plugNewVersionInFormatAction(this, m_saveNewVersionInFormatAction, i18nc("@action:inmenu", "HEIC"),      QLatin1String("HEIC"));
+
+#endif // HAVE_X265
+
     m_saveNewVersionAction->menu()->addAction(m_saveNewVersionAsAction);
     m_saveNewVersionAction->menu()->addAction(m_saveNewVersionInFormatAction->menuAction());
 
