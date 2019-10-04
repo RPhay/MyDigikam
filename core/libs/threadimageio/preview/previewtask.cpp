@@ -32,6 +32,7 @@
 
 // Local includes
 
+#include "dimgloader.h"
 #include "drawdecoder.h"
 #include "digikam_debug.h"
 #include "dmetadata.h"
@@ -553,6 +554,23 @@ bool PreviewLoadingTask::loadImagePreview(int sizeLimit)
         if (sizeLimit == -1 || qMax(previewImage.width(), previewImage.height()) > sizeLimit)
         {
             m_qimage = previewImage;
+            return true;
+        }
+    }
+    
+    qDebug(DIGIKAM_GENERAL_LOG) << "Try to load DImg preview from:" << m_loadingDescription.filePath;
+
+    DImg img;
+    DImgLoader::LoadFlags loadFlags = DImgLoader::LoadItemInfo |
+                                      DImgLoader::LoadMetadata |
+                                      DImgLoader::LoadICCData  |
+                                      DImgLoader::LoadPreview;
+
+    if (img.load(m_loadingDescription.filePath, loadFlags, nullptr))
+    {
+        if (sizeLimit == -1 || qMax(img.width(), img.height()) > (uint)sizeLimit)
+        {
+            m_qimage = img.copyQImage();
             return true;
         }
     }

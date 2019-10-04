@@ -208,6 +208,9 @@ public:
                      DImgLoaderObserver* const observer = nullptr,
                      const DRawDecoding& rawDecodingSettings=DRawDecoding());
 
+    bool        load(const QString& filePath, int loadFlags, DImgLoaderObserver* const observer,
+                     const DRawDecoding& rawDecodingSettings=DRawDecoding());
+    
     bool        save(const QString& filePath, FORMAT frm, DImgLoaderObserver* const observer = nullptr);
     bool        save(const QString& filePath, const QString& format, DImgLoaderObserver* const observer = nullptr);
 
@@ -658,8 +661,6 @@ private:
 
     DImg(const DImg& image, int w, int h);
 
-    bool load(const QString& filePath, int loadFlags, DImgLoaderObserver* const observer,
-              const DRawDecoding& rawDecodingSettings=DRawDecoding());
     void copyMetaData(const Private* const src);
     void copyImageData(const Private* const src);
     void setImageData(bool null, uint width, uint height, bool sixteenBit, bool alpha);
