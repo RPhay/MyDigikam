@@ -122,26 +122,39 @@ bool DImgHEIFLoader::readHEICColorProfile(struct heif_image_handle* const image_
 {
 #if LIBHEIF_NUMERIC_VERSION >= 0x01040000
 
-    size_t length = heif_image_handle_get_raw_color_profile_size(image_handle);
-
-    if (length > 0)
+    switch (heif_image_handle_get_color_profile_type(image_handle))
     {
-        // Read color profile.
+        case heif_color_profile_type_not_present:
+            break;
 
-        QByteArray profile;
-        profile.resize(length);
-
-        struct heif_error error = heif_image_handle_get_raw_color_profile(image_handle,
-                                                                          profile.data());
-
-        if (error.code == 0)
+        case heif_color_profile_type_rICC:
+        case heif_color_profile_type_prof:
         {
-            qDebug() << "HEIC color profile found with size:" << length;
-            imageSetIccProfile(IccProfile(profile));
-            return true;
-        }
-    }
+            size_t length = heif_image_handle_get_raw_color_profile_size(image_handle);
 
+            if (length > 0)
+            {
+                // Read color profile.
+
+                QByteArray profile;
+                profile.resize(length);
+
+                struct heif_error error = heif_image_handle_get_raw_color_profile(image_handle,
+                                                                                  profile.data());
+
+                if (error.code == 0)
+                {
+                    qDebug() << "HEIC color profile found with size:" << length;
+                    imageSetIccProfile(IccProfile(profile));
+                    return true;
+                }
+            }
+        }
+
+        default: // heif_color_profile_type_nclx
+            qWarning() << "Unknown HEIC color profile type discarded";
+            break;
+    }
 #else
     Q_UNUSED(image_handle);
 #endif
