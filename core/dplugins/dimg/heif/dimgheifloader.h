@@ -73,8 +73,12 @@ private:
     bool readHEICImageByID(struct heif_context* const heif_context,
                            heif_item_id image_id);
 
+    bool readHEICImageByHandle(struct heif_image_handle* image_handle,
+                               struct heif_image* heif_image);
+
     // Save operations
     bool saveHEICColorProfile(struct heif_image* const image);
+
     bool saveHEICMetadata(struct heif_context* const heif_context,
                           struct heif_image_handle* const image_handle);
 
