@@ -30,77 +30,77 @@ namespace Digikam
 {
 
 /**
- * 
- * DImg is a framework to support 16bits color depth image. it doesn't aim 
- * to be a complete imaging library; it uses QImage/ImageMagick for 
- * load/save files which are not supported natively by it. 
+ *
+ * DImg is a framework to support 16bits color depth image. it doesn't aim
+ * to be a complete imaging library; it uses QImage/ImageMagick for
+ * load/save files which are not supported natively by it.
  * some of the features:
- * 
- * - Native Image Loaders, for some imageformats which are of interest to 
- * us: JPEG (complete), TIFF (mostly complete), PNG (complete), JPEG2000 
+ *
+ * - Native Image Loaders, for some imageformats which are of interest to
+ * us: JPEG (complete), TIFF (mostly complete), PNG (complete), JPEG2000
  * (complete), RAW (complete through libraw), PGF (complete).
  * For the rest ImageMAgick codecs or qimageloader are used.
- * 
- * - Metadata preservation: when a file is loaded, its metadata like XMP, 
- * IPTC, EXIF, JFIF are read and held in memory. now when you save back the 
- * file to the original file or to a different file, the metadata is 
+ *
+ * - Metadata preservation: when a file is loaded, its metadata like XMP,
+ * IPTC, EXIF, JFIF are read and held in memory. now when you save back the
+ * file to the original file or to a different file, the metadata is
  * automatically written. All is delegate to Exiv2 library.
- * 
- * - Explicitly Shared Container format (see qt docs): this is necessary for 
+ *
+ * - Explicitly Shared Container format (see qt docs): this is necessary for
  * performance reasons.
- * 
- * - 8 bits and 16 bits support: if the file format is 16 bits, it will load up 
- * the image in 16bits format (TIFF/PNG/JPEG2000/RAW/PGF support) and all 
- * operations are done in 16 bits format, except when the rendering to screen 
- * is done, when its converted on the fly to a temporary 8 bits image and then 
+ *
+ * - 8 bits and 16 bits support: if the file format is 16 bits, it will load up
+ * the image in 16bits format (TIFF/PNG/JPEG2000/RAW/PGF support) and all
+ * operations are done in 16 bits format, except when the rendering to screen
+ * is done, when its converted on the fly to a temporary 8 bits image and then
  * rendered.
- * 
- * - Basic image manipulation: rotate, flip, color modifications, crop, 
+ *
+ * - Basic image manipulation: rotate, flip, color modifications, crop,
  * scale. This has been ported from Imlib2 with 16 bits scaling support
  * and support for scaling of only a section of the image.
- * 
- * - Rendering to Pixmap: using QImage/QPixmap. (see above for rendering of 
+ *
+ * - Rendering to Pixmap: using QImage/QPixmap. (see above for rendering of
  * 16 bits images).
- * 
- * - Pixel format: the pixel format is different from QImage pixel 
- * format. In QImage the pixel data is stored as unsigned ints and to 
- * access the individual colors you need to use bit-shifting to ensure 
- * endian correctness. in DImg, the pixel data is stored as unsigned char. 
+ *
+ * - Pixel format: the pixel format is different from QImage pixel
+ * format. In QImage the pixel data is stored as unsigned ints and to
+ * access the individual colors you need to use bit-shifting to ensure
+ * endian correctness. in DImg, the pixel data is stored as unsigned char.
  * the color layout is B,G,R,A (blue, green, red, alpha)
- * 
+ *
  * for 8 bits images: you can access individual color components like this:
- * 
+ *
  * uchar* const pixels = image.bits();
- * 
+ *
  * for (int i = 0 ; i < image.width() * image.height() ; ++i)
  * {
  *    pixel[0] // blue
  *    pixel[1] // green
  *    pixel[2] // red
  *    pixel[3] // alpha
- * 
+ *
  *    pixel += 4; // go to next pixel
  * }
- * 
+ *
  * and for 16 bits images:
- * 
+ *
  * ushort* const pixels = (ushort*)image.bits();
- * 
+ *
  * for (int i = 0 ; i < image.width() * image.height() ; ++i)
  * {
  *    pixel[0] // blue
  *    pixel[1] // green
  *    pixel[2] // red
  *    pixel[3] // alpha
- * 
+ *
  *    pixel += 4; // go to next pixel
  * }
- * 
+ *
  * The above is true for both big and little endian platforms. What this also
- * means is that the pixel format is different from that of QImage for big 
- * endian machines. Functions are provided if you want to get a copy of the 
+ * means is that the pixel format is different from that of QImage for big
+ * endian machines. Functions are provided if you want to get a copy of the
  * DImg as a QImage.
- * 
+ *
  */
 DImg::DImg()
     : m_priv(new Private)

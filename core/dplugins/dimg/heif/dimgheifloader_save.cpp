@@ -138,7 +138,6 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     struct heif_error error        = heif_context_get_encoder_for_format(ctx,
                                                                          heif_compression_HEVC,
                                                                          &encoder);
-
     if (!isHeifSuccess(&error))
     {
         heif_context_free(ctx);
@@ -154,7 +153,6 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                                                  heif_colorspace_RGB,
                                                  chroma,
                                                  &image);
-
     if (!isHeifSuccess(&error))
     {
         heif_encoder_release(encoder);
@@ -341,14 +339,18 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         }
     }
 
-    qDebug() << "HEIC image encoding...";
+    qDebug() << "HEIC master image encoding...";
 
-    // --- encode and write image
+    // --- encode and write master image
 
     struct heif_encoding_options* const options = heif_encoding_options_alloc();
     options->save_alpha_channel                 = imageHasAlpha() ? 1 : 0;
     struct heif_image_handle* image_handle      = nullptr;
-    error                                       = heif_context_encode_image(ctx, image, encoder, options, &image_handle);
+    error                                       = heif_context_encode_image(ctx,
+                                                                            image,
+                                                                            encoder,
+                                                                            options,
+                                                                            &image_handle);
 
     if (!isHeifSuccess(&error))
     {
@@ -357,6 +359,37 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         heif_encoder_release(encoder);
         heif_context_free(ctx);
         return false;
+    }
+
+    // --- encode thumbnail
+
+    // Note: Only encode preview for large image.
+    // We will use the same preview size than DImg::prepareMetadataToSave()
+    const int previewSize = 1280;
+
+    if (qMin(imageWidth(), imageHeight()) > previewSize)
+    {
+        qDebug() << "HEIC preview storage...";
+
+        struct heif_image_handle* thumbnail_handle = nullptr;
+
+        error = heif_context_encode_thumbnail(ctx,
+                                              image,
+                                              image_handle,
+                                              encoder,
+                                              options,
+                                              previewSize,
+                                              &thumbnail_handle);
+        if (!isHeifSuccess(&error))
+        {
+            heif_encoding_options_free(options);
+            heif_image_handle_release(image_handle);
+            heif_encoder_release(encoder);
+            heif_context_free(ctx);
+            return false;
+        }
+
+        heif_image_handle_release(thumbnail_handle);
     }
 
     heif_encoding_options_free(options);

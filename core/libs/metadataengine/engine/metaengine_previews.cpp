@@ -206,8 +206,8 @@ QByteArray MetaEnginePreviews::data(int index)
 {
     if (index < 0 || index >= size()) return QByteArray();
 
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "index: "         << index;
-    qCDebug(DIGIKAM_METAENGINE_LOG) << "d->properties: " << count();
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "index     : " << index;
+    qCDebug(DIGIKAM_METAENGINE_LOG) << "properties: " << count();
 
     QMutexLocker lock(&s_metaEngineMutex);
 

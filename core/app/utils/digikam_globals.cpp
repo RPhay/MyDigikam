@@ -86,29 +86,17 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
             break;
     }
 
-    bool tiff = false;
-    bool jpeg = false;
-#ifdef HAVE_JASPER
-    bool jp2k = false;
-#endif // HAVE_JASPER
-
-#ifdef HAVE_X265
-    bool heif = false;
-#endif // HAVE_X265
-
     foreach (const QByteArray& frm, supported)
     {
         if (QString::fromLatin1(frm).contains(QLatin1String("tif"),  Qt::CaseInsensitive) ||
             QString::fromLatin1(frm).contains(QLatin1String("tiff"), Qt::CaseInsensitive))
         {
-            tiff = true;
             continue;
         }
 
         if (QString::fromLatin1(frm).contains(QLatin1String("jpg"),  Qt::CaseInsensitive) ||
             QString::fromLatin1(frm).contains(QLatin1String("jpeg"), Qt::CaseInsensitive))
         {
-            jpeg = true;
             continue;
         }
 
@@ -119,7 +107,6 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
             QString::fromLatin1(frm).contains(QLatin1String("jpc"),  Qt::CaseInsensitive) ||
             QString::fromLatin1(frm).contains(QLatin1String("pgx"),  Qt::CaseInsensitive))
         {
-            jp2k = true;
             continue;
         }
 #endif // HAVE_JASPER
@@ -127,7 +114,6 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
 #ifdef HAVE_X265
         if (QString::fromLatin1(frm).contains(QLatin1String("heic"),  Qt::CaseInsensitive))
         {
-            heif = true;
             continue;
         }
 #endif // HAVE_X265
@@ -136,35 +122,22 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
         allTypes.append(QString::fromLatin1("*.%1 ").arg(QLatin1String(frm)));
     }
 
-    if (tiff)
-    {
-        formats.append(i18n("TIFF Image (*.tiff *.tif)"));
-        allTypes.append(QLatin1String("*.tiff *.tif "));
-    }
-
-    if (jpeg)
-    {
-        formats.append(i18n("JPEG Image (*.jpg *.jpeg *.jpe)"));
-        allTypes.append(QLatin1String("*.jpg *.jpeg *.jpe "));
-    }
+    formats.append(i18n("TIFF Image (*.tiff *.tif)"));
+    allTypes.append(QLatin1String("*.tiff *.tif "));
+    formats.append(i18n("JPEG Image (*.jpg *.jpeg *.jpe)"));
+    allTypes.append(QLatin1String("*.jpg *.jpeg *.jpe "));
 
 #ifdef HAVE_JASPER
-    if (jp2k)
-    {
-        formats.append(i18n("JPEG2000 Image (*.jp2 *.j2k *.jpx *.pgx)"));
-        allTypes.append(QLatin1String("*.jp2 *.j2k *.jpx *.pgx "));
-    }
+    formats.append(i18n("JPEG2000 Image (*.jp2 *.j2k *.jpx *.pgx)"));
+    allTypes.append(QLatin1String("*.jp2 *.j2k *.jpx *.pgx "));
 #endif // HAVE_JASPER
 
     formats << i18n("Progressive Graphics file (*.pgf)");
     allTypes.append(QLatin1String("*.pgf "));
 
 #ifdef HAVE_X265
-    if (heif)
-    {
-        formats << i18n("High Efficiency Image Coding (*.heic)");
-        allTypes.append(QLatin1String("*.heic "));
-    }
+    formats << i18n("High Efficiency Image Coding (*.heic)");
+    allTypes.append(QLatin1String("*.heic "));
 #endif // HAVE_X265
 
     if (mode != QIODevice::WriteOnly)
