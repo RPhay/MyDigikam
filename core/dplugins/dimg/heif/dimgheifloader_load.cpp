@@ -277,9 +277,13 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
 
     // NOTE: An HEIC image without ICC color profile or without metadata still valid.
 
-    if (m_loadFlags & LoadICCData)
+    if (m_loadFlags & LoadMetadata)
     {
         readHEICMetadata(image_handle);
+    }
+
+    if (m_loadFlags & LoadICCData)
+    {
         readHEICColorProfile(image_handle);
     }
 

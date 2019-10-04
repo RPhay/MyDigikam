@@ -61,7 +61,12 @@ public:
         LoadImageData    = 8,
         LoadUniqueHash   = 16,
         LoadImageHistory = 32,
-        LoadAll          = LoadItemInfo | LoadMetadata | LoadUniqueHash | LoadICCData | LoadImageData | LoadImageHistory
+        LoadAll          = LoadItemInfo   |
+                           LoadMetadata   |
+                           LoadUniqueHash |
+                           LoadICCData    |
+                           LoadImageData  |
+                           LoadImageHistory
     };
     Q_DECLARE_FLAGS(LoadFlags, LoadFlag)
 
