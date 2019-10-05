@@ -12,6 +12,7 @@
  *    https://github.com/ImageMagick/ImageMagick/blob/master/coders/jp2.c
  *    https://github.com/GNOME/gimp/blob/master/plug-ins/common/file-jp2-load.c
  *    https://invent.kde.org/kde/krita/tree/fc1d4dce1c12a1a663d02436cde15a77e067af2c/plugins/impex/jp2
+ *    https://github.com/darktable-org/darktable/blob/master/src/imageio/format/j2k.c
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
