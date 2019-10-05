@@ -12,6 +12,7 @@
  *     https://github.com/KDE/krita/tree/master/plugins/impex/heif
  *     https://github.com/jakar/qt-heif-image-plugin
  *     https://github.com/ImageMagick/ImageMagick/blob/master/coders/heic.c
+ *     https://github.com/GNOME/gimp/blob/master/plug-ins/common/file-heif.c
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -72,8 +73,12 @@ private:
     bool readHEICImageByID(struct heif_context* const heif_context,
                            heif_item_id image_id);
 
+    bool readHEICImageByHandle(struct heif_image_handle* image_handle,
+                               struct heif_image* heif_image);
+
     // Save operations
     bool saveHEICColorProfile(struct heif_image* const image);
+
     bool saveHEICMetadata(struct heif_context* const heif_context,
                           struct heif_image_handle* const image_handle);
 

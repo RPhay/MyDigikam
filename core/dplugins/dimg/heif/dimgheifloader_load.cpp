@@ -122,26 +122,41 @@ bool DImgHEIFLoader::readHEICColorProfile(struct heif_image_handle* const image_
 {
 #if LIBHEIF_NUMERIC_VERSION >= 0x01040000
 
-    size_t length = heif_image_handle_get_raw_color_profile_size(image_handle);
-
-    if (length > 0)
+    switch (heif_image_handle_get_color_profile_type(image_handle))
     {
-        // Read color profile.
+        case heif_color_profile_type_not_present:
+            break;
 
-        QByteArray profile;
-        profile.resize(length);
-
-        struct heif_error error = heif_image_handle_get_raw_color_profile(image_handle,
-                                                                          profile.data());
-
-        if (error.code == 0)
+        case heif_color_profile_type_rICC:
+        case heif_color_profile_type_prof:
         {
-            qDebug() << "HEIC color profile found with size:" << length;
-            imageSetIccProfile(IccProfile(profile));
-            return true;
-        }
-    }
+            size_t length = heif_image_handle_get_raw_color_profile_size(image_handle);
 
+            if (length > 0)
+            {
+                // Read color profile.
+
+                QByteArray profile;
+                profile.resize(length);
+
+                struct heif_error error = heif_image_handle_get_raw_color_profile(image_handle,
+                                                                                  profile.data());
+
+                if (error.code == 0)
+                {
+                    qDebug() << "HEIC color profile found with size:" << length;
+                    imageSetIccProfile(IccProfile(profile));
+                    return true;
+                }
+            }
+
+            break;
+        }
+
+        default: // heif_color_profile_type_nclx
+            qWarning() << "Unknown HEIC color profile type discarded";
+            break;
+    }
 #else
     Q_UNUSED(image_handle);
 #endif
@@ -264,9 +279,13 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
 
     // NOTE: An HEIC image without ICC color profile or without metadata still valid.
 
-    if (m_loadFlags & LoadICCData)
+    if (m_loadFlags & LoadMetadata)
     {
         readHEICMetadata(image_handle);
+    }
+
+    if (m_loadFlags & LoadICCData)
+    {
         readHEICColorProfile(image_handle);
     }
 
@@ -275,195 +294,227 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
         m_observer->progressInfo(m_image, 0.2F);
     }
 
+    if (m_loadFlags & LoadPreview)
+    {
+        heif_item_id thumbnail_ID = 0;
+        int nThumbnails           = heif_image_handle_get_list_of_thumbnail_IDs(image_handle, &thumbnail_ID, 1);
+        
+        if (nThumbnails > 0)
+        {
+            struct heif_image_handle* thumbnail_handle = nullptr;
+            error = heif_image_handle_get_thumbnail(image_handle, thumbnail_ID, &thumbnail_handle);
+            
+            if (!isHeifSuccess(&error))
+            {
+                heif_image_handle_release(image_handle);
+                return false;
+            }
+
+            heif_image_handle_release(image_handle);
+            qDebug() << "HEIC preview found";
+            return readHEICImageByHandle(thumbnail_handle, heif_image);
+        }
+    }
+        
     if (m_loadFlags & LoadImageData)
     {
-        // Copy HEIF image into data structures.
+        return readHEICImageByHandle(image_handle, heif_image);
+    }
+    
+    heif_image_handle_release(image_handle);
+    return true;
+}
+        
+bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handle,
+                                           struct heif_image* heif_image)
+{
+    // Copy HEIF image into data structures.
 
-        struct heif_decoding_options* const decode_options = heif_decoding_options_alloc();
-        decode_options->ignore_transformations             = 1;
-        m_hasAlpha                                         = heif_image_handle_has_alpha_channel(image_handle);
-        heif_chroma chroma                                 = m_hasAlpha ? heif_chroma_interleaved_RGBA
-                                                                        : heif_chroma_interleaved_RGB;
+    struct heif_error error;
+    struct heif_decoding_options* const decode_options = heif_decoding_options_alloc();
+    decode_options->ignore_transformations             = 1;
+    m_hasAlpha                                         = heif_image_handle_has_alpha_channel(image_handle);
+    heif_chroma chroma                                 = m_hasAlpha ? heif_chroma_interleaved_RGBA
+                                                                    : heif_chroma_interleaved_RGB;
 
-        // Trace to check image size properties before decoding, as these values can be different.
-        qDebug() << "HEIC image size: ("
-                 << heif_image_handle_get_width(image_handle)
-                 << "x"
-                 << heif_image_handle_get_height(image_handle)
-                 << ")";
+    // Trace to check image size properties before decoding, as these values can be different.
+    qDebug() << "HEIC image size: ("
+                << heif_image_handle_get_width(image_handle)
+                << "x"
+                << heif_image_handle_get_height(image_handle)
+                << ")";
 
-        error = heif_decode_image(image_handle,
-                                  &heif_image,
-                                  heif_colorspace_RGB,
-                                  chroma,
-                                  decode_options);
+    error = heif_decode_image(image_handle,
+                              &heif_image,
+                              heif_colorspace_RGB,
+                              chroma,
+                              decode_options);
 
-        if (!isHeifSuccess(&error))
+    if (!isHeifSuccess(&error))
+    {
+        heif_image_handle_release(image_handle);
+        return false;
+    }
+
+    if (m_observer)
+    {
+        m_observer->progressInfo(m_image, 0.3F);
+    }
+
+    heif_decoding_options_free(decode_options);
+
+    heif_colorspace colorSpace = heif_image_get_colorspace(heif_image);
+    int colorDepth             = heif_image_get_bits_per_pixel(heif_image, heif_channel_interleaved);
+    imageWidth()               = heif_image_get_width(heif_image, heif_channel_interleaved);
+    imageHeight()              = heif_image_get_height(heif_image, heif_channel_interleaved);
+
+    qDebug() << "Decoded HEIC image properties: size("
+                << imageWidth() << "x" << imageHeight()
+                << "), Alpha:" << m_hasAlpha
+                << ", Color depth :" << colorDepth;
+
+    if (!QSize(imageWidth(), imageHeight()).isValid())
+    {
+        heif_image_release(heif_image);
+        heif_image_handle_release(image_handle);
+        return false;
+    }
+
+    int stride         = 0;
+    uint8_t* const ptr = heif_image_get_plane(heif_image, heif_channel_interleaved, &stride);
+
+    qDebug() << "HEIC data container:" << ptr;
+    qDebug() << "HEIC bytes per line:" << stride;
+
+    if (!ptr || stride <= 0)
+    {
+        qWarning() << "HEIC data pixels information not valid!";
+        heif_image_release(heif_image);
+        heif_image_handle_release(image_handle);
+        return false;
+    }
+
+    uchar* data = nullptr;
+
+    if (colorDepth == 24 ||       // RGB
+        colorDepth == 32)         // RGBA
+    {
+        qDebug() << "Color bytes depth: 8";
+        m_sixteenBit = false;
+    }
+    else if (colorDepth == 48 ||  // RGB
+                colorDepth == 64)    // RGBA
+    {
+        qDebug() << "Color bytes depth: 16";
+        m_sixteenBit = true;
+    }
+    else
+    {
+        qWarning() << "Color bits depth: " << colorDepth << ": not supported!";
+        heif_image_release(heif_image);
+        heif_image_handle_release(image_handle);
+        return false;
+    }
+
+    if (m_sixteenBit)
+    {
+        data = new_failureTolerant(imageWidth(), imageHeight(), 8); // 16 bits/color/pixel
+    }
+    else
+    {
+        data = new_failureTolerant(imageWidth(), imageHeight(), 4); // 8 bits/color/pixel
+    }
+
+    if (m_observer)
+    {
+        m_observer->progressInfo(m_image, 0.4F);
+    }
+
+    uchar* dst              = data;
+    unsigned short* dst16   = nullptr;
+    uchar* src              = nullptr;
+    unsigned short* src16   = nullptr;
+    unsigned int checkPoint = 0;
+
+    for (unsigned int y = 0 ; y < imageHeight() ; ++y)
+    {
+        src   = reinterpret_cast<unsigned char*>(ptr + (y * stride));
+        src16 = reinterpret_cast<unsigned short*>(src);
+
+        for (unsigned int x = 0 ; x < imageWidth() ; ++x)
         {
-            heif_image_handle_release(image_handle);
-            return false;
-        }
-
-        if (m_observer)
-        {
-            m_observer->progressInfo(m_image, 0.3F);
-        }
-
-        heif_decoding_options_free(decode_options);
-
-        heif_colorspace colorSpace = heif_image_get_colorspace(heif_image);
-        int colorDepth             = heif_image_get_bits_per_pixel(heif_image, heif_channel_interleaved);
-        imageWidth()               = heif_image_get_width(heif_image, heif_channel_interleaved);
-        imageHeight()              = heif_image_get_height(heif_image, heif_channel_interleaved);
-
-        qDebug() << "Decoded HEIC image properties: size("
-                 << imageWidth() << "x" << imageHeight()
-                 << "), Alpha:" << m_hasAlpha
-                 << ", Color depth :" << colorDepth;
-
-        if (!QSize(imageWidth(), imageHeight()).isValid())
-        {
-            heif_image_release(heif_image);
-            heif_image_handle_release(image_handle);
-            return false;
-        }
-
-        int stride         = 0;
-        uint8_t* const ptr = heif_image_get_plane(heif_image, heif_channel_interleaved, &stride);
-
-        qDebug() << "HEIC data container:" << ptr;
-        qDebug() << "HEIC bytes per line:" << stride;
-
-        if (!ptr || stride <= 0)
-        {
-            qWarning() << "HEIC data pixels information not valid!";
-            heif_image_release(heif_image);
-            heif_image_handle_release(image_handle);
-            return false;
-        }
-
-        uchar* data = nullptr;
-
-        if (colorDepth == 24 ||       // RGB
-            colorDepth == 32)         // RGBA
-        {
-            qDebug() << "Color bytes depth: 8";
-            m_sixteenBit = false;
-        }
-        else if (colorDepth == 48 ||  // RGB
-                 colorDepth == 64)    // RGBA
-        {
-            qDebug() << "Color bytes depth: 16";
-            m_sixteenBit = true;
-        }
-        else
-        {
-            qWarning() << "Color bits depth: " << colorDepth << ": not supported!";
-            heif_image_release(heif_image);
-            heif_image_handle_release(image_handle);
-            return false;
-        }
-
-        if (m_sixteenBit)
-        {
-            data = new_failureTolerant(imageWidth(), imageHeight(), 8); // 16 bits/color/pixel
-        }
-        else
-        {
-            data = new_failureTolerant(imageWidth(), imageHeight(), 4); // 8 bits/color/pixel
-        }
-
-        if (m_observer)
-        {
-            m_observer->progressInfo(m_image, 0.4F);
-        }
-
-        uchar* dst              = data;
-        unsigned short* dst16   = nullptr;
-        uchar* src              = nullptr;
-        unsigned short* src16   = nullptr;
-        unsigned int checkPoint = 0;
-
-        for (unsigned int y = 0 ; y < imageHeight() ; ++y)
-        {
-            src   = reinterpret_cast<unsigned char*>(ptr + (y * stride));
-            src16 = reinterpret_cast<unsigned short*>(src);
-
-            for (unsigned int x = 0 ; x < imageWidth() ; ++x)
+            if (!m_sixteenBit)   // 8 bits image.
             {
-                if (!m_sixteenBit)   // 8 bits image.
+                // Blue
+                dst[0] = src[2];
+                // Green
+                dst[1] = src[1];
+                // Red
+                dst[2] = src[3];
+
+                // Alpha
+
+                if (m_hasAlpha)
                 {
-                    // Blue
-                    dst[0] = src[2];
-                    // Green
-                    dst[1] = src[1];
-                    // Red
-                    dst[2] = src[3];
-
-                    // Alpha
-
-                    if (m_hasAlpha)
-                    {
-                        dst[3] = src[3];
-                        src   += 4;
-                    }
-                    else
-                    {
-                        dst[3] = 0xFF;
-                        src   += 3;
-                    }
-
-                    dst += 4;
+                    dst[3] = src[3];
+                    src   += 4;
                 }
-                else                // 16 bits image.
+                else
                 {
-                    // Blue
-                    dst16[0] = src16[2];
-                    // Green
-                    dst16[1] = src16[1];
-                    // Red
-                    dst16[2] = src16[0];
-
-                    // Alpha
-
-                    if (m_hasAlpha)
-                    {
-                        dst16[3] = src16[3];
-                        src16   += 4;
-                    }
-                    else
-                    {
-                        dst16[3] = 0xFFFF;
-                        src16   += 3;
-                    }
-
-                    dst16 += 4;
+                    dst[3] = 0xFF;
+                    src   += 3;
                 }
-           }
 
-           if (m_observer && y >= checkPoint)
-           {
-               checkPoint += granularity(m_observer, y, 0.8F);
+                dst += 4;
+            }
+            else                // 16 bits image.
+            {
+                // Blue
+                dst16[0] = src16[2];
+                // Green
+                dst16[1] = src16[1];
+                // Red
+                dst16[2] = src16[0];
 
-               if (!m_observer->continueQuery(m_image))
-               {
-                   heif_image_release(heif_image);
-                   heif_image_handle_release(image_handle);
+                // Alpha
 
-                   loadingFailed();
-                   return false;
-               }
+                if (m_hasAlpha)
+                {
+                    dst16[3] = src16[3];
+                    src16   += 4;
+                }
+                else
+                {
+                    dst16[3] = 0xFFFF;
+                    src16   += 3;
+                }
 
-               m_observer->progressInfo(m_image, 0.4 + (0.8 * (((float)y) / ((float)imageHeight()))));
+                dst16 += 4;
             }
         }
 
-        imageData() = data;
-        imageSetAttribute(QLatin1String("format"),             QLatin1String("HEIF"));
-        imageSetAttribute(QLatin1String("originalColorModel"), colorSpace);
-        imageSetAttribute(QLatin1String("originalBitDepth"),   m_sixteenBit ? 16 : 8);
-        imageSetAttribute(QLatin1String("originalSize"),       QSize(imageWidth(), imageHeight()));
+        if (m_observer && y >= checkPoint)
+        {
+            checkPoint += granularity(m_observer, y, 0.8F);
+
+            if (!m_observer->continueQuery(m_image))
+            {
+                heif_image_release(heif_image);
+                heif_image_handle_release(image_handle);
+
+                loadingFailed();
+                return false;
+            }
+
+            m_observer->progressInfo(m_image, 0.4 + (0.8 * (((float)y) / ((float)imageHeight()))));
+        }
     }
+
+    imageData() = data;
+    imageSetAttribute(QLatin1String("format"),             QLatin1String("HEIF"));
+    imageSetAttribute(QLatin1String("originalColorModel"), colorSpace);
+    imageSetAttribute(QLatin1String("originalBitDepth"),   m_sixteenBit ? 16 : 8);
+    imageSetAttribute(QLatin1String("originalSize"),       QSize(imageWidth(), imageHeight()));
 
     if (m_observer)
     {

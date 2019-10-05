@@ -32,6 +32,7 @@
 
 // Local includes
 
+#include "dimgloader.h"
 #include "drawdecoder.h"
 #include "digikam_debug.h"
 #include "dmetadata.h"
@@ -254,6 +255,9 @@ void PreviewLoadingTask::execute()
         }
         else // Non-RAW images
         {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Try to get preview from" << m_loadingDescription.filePath;
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Preview quality: " << m_loadingDescription.previewParameters.previewSettings.quality;
+
             bool isFast = (m_loadingDescription.previewParameters.previewSettings.quality == PreviewSettings::FastPreview);
 
             switch (m_loadingDescription.previewParameters.previewSettings.quality)
@@ -553,6 +557,23 @@ bool PreviewLoadingTask::loadImagePreview(int sizeLimit)
         if (sizeLimit == -1 || qMax(previewImage.width(), previewImage.height()) > sizeLimit)
         {
             m_qimage = previewImage;
+            return true;
+        }
+    }
+    
+    qDebug(DIGIKAM_GENERAL_LOG) << "Try to load DImg preview from:" << m_loadingDescription.filePath;
+
+    DImg img;
+    DImgLoader::LoadFlags loadFlags = DImgLoader::LoadItemInfo |
+                                      DImgLoader::LoadMetadata |
+                                      DImgLoader::LoadICCData  |
+                                      DImgLoader::LoadPreview;
+
+    if (img.load(m_loadingDescription.filePath, loadFlags, nullptr))
+    {
+        if (sizeLimit == -1 || qMax(img.width(), img.height()) > (uint)sizeLimit)
+        {
+            m_qimage = img.copyQImage();
             return true;
         }
     }

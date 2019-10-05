@@ -90,6 +90,7 @@ set(libheif_SRCS
 )
 
 if(X265_FOUND)
+    add_definitions(-DHAVE_X265=1)
     include_directories(${X265_INCLUDE_DIRS})
     set(libheif_SRCS ${libheif_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/libheif/heif_encoder_x265.cc

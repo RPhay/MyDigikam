@@ -50,7 +50,9 @@ namespace Digikam
 {
 
 ThumbnailLoadingTask::ThumbnailLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description)
-    : SharedLoadingTask(thread, description, LoadSaveThread::AccessModeRead,
+    : SharedLoadingTask(thread,
+                        description,
+                        LoadSaveThread::AccessModeRead,
                         LoadingTaskStatusLoading)
 {
     // Thread must be a ThumbnailLoadThread, crashes otherwise.
@@ -130,6 +132,7 @@ void ThumbnailLoadingTask::execute()
 
                 // wake up the process which is waiting until all listeners have removed themselves
                 lock.wakeAll();
+
                 // set to 0, as checked in setStatus
                 m_usedProcess = nullptr;
             }
@@ -138,10 +141,13 @@ void ThumbnailLoadingTask::execute()
                 // Neither in cache, nor currently loading in different thread.
                 // Load it here and now, add this LoadingProcess to cache list.
                 cache->addLoadingProcess(this);
+
                 // Add this to the list of listeners
                 addListener(this);
+
                 // for use in setStatus
                 m_usedProcess = this;
+
                 // Notify other processes that we are now loading this image.
                 // They might be interested - see notifyNewLoadingProcess below
                 cache->notifyNewLoadingProcess(this, m_loadingDescription);
@@ -207,6 +213,7 @@ void ThumbnailLoadingTask::execute()
 
             // remove myself from list of listeners
             removeListener(this);
+
             // wake all listeners waiting on cache condVar, so that they remove themselves
             lock.wakeAll();
 
@@ -243,10 +250,11 @@ void ThumbnailLoadingTask::setThumbResult(const LoadingDescription& loadingDescr
 {
     // this is called from another process's execute while this task is waiting on m_usedProcess.
     // Note that loadingDescription need not equal m_loadingDescription (may be superior)
-    m_resultLoadingDescription = loadingDescription;
+    m_resultLoadingDescription                          = loadingDescription;
+
     // these are taken from our own description
     m_resultLoadingDescription.postProcessingParameters = m_loadingDescription.postProcessingParameters;
-    m_qimage = qimage;
+    m_qimage                                            = qimage;
 }
 
 void ThumbnailLoadingTask::postProcess()

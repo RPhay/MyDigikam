@@ -23,41 +23,9 @@
 
 #include "dimgjpeg2000loader.h"
 
-// Qt includes
-
-#include <QFile>
-#include <QByteArray>
-#include <QTextStream>
-
 // Local includes
 
-#include "digikam_config.h"
-#include "dimg.h"
 #include "digikam_debug.h"
-#include "dimgloaderobserver.h"
-#include "dmetadata.h"
-
-// Jasper includes
-
-#ifndef Q_CC_MSVC
-extern "C"
-{
-#endif
-
-#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wshift-negative-value"
-#endif
-
-#include <jasper/jasper.h>
-
-#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
-#endif
-
-#ifndef Q_CC_MSVC
-}
-#endif
 
 namespace DigikamJPEG2000DImgPlugin
 {

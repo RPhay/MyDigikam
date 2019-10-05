@@ -215,60 +215,68 @@ QString DImgImageMagickPlugin::typeMimes() const
     return ret;
 }
 
-bool DImgImageMagickPlugin::canRead(const QString& filePath) const
+bool DImgImageMagickPlugin::canRead(const QString& filePath, bool magic) const
 {
-    QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
+    QFileInfo fileInfo(filePath);
 
-    // Ignore non image format.
-
-    if (
-        mimeType.startsWith(QLatin1String("video/")) ||
-        mimeType.startsWith(QLatin1String("audio/"))
-       )
+    if (!fileInfo.exists())
     {
+        qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
         return false;
     }
 
-    QString format    = QFileInfo(filePath).suffix().toUpper();
-    QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();  // Ignore RAW files
-    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC ")); // Ignore native loaders
-
-    if (blackList.toUpper().contains(format))
+    if (!magic)
     {
-        return false;
-    }
+        QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
 
-    QStringList formats;
-    ExceptionInfo ex;
-    size_t n                  = 0;
-    const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
+        // Ignore non image format.
 
-    if (!inflst)
-    {
-        qWarning() << "ImageMagick coders list is null!";
-        return false;
-    }
-
-    for (uint i = 0 ; i < n ; ++i)
-    {
-        const MagickInfo* inf = inflst[i];
-
-        if (inf && inf->decoder)
+        if (
+            mimeType.startsWith(QLatin1String("video/")) ||
+            mimeType.startsWith(QLatin1String("audio/"))
+           )
         {
-#if (MagickLibVersion >= 0x69A && defined(magick_module))
-            formats.append(QString::fromLatin1(inf->magick_module).toUpper());
-#else
-            formats.append(QString::fromLatin1(inf->module).toUpper());
-#endif
+            return false;
         }
+
+        QString format    = fileInfo.suffix().toUpper();
+        QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();  // Ignore RAW files
+        blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC ")); // Ignore native loaders
+
+        if (blackList.toUpper().contains(format))
+        {
+            return false;
+        }
+
+        QStringList formats;
+        ExceptionInfo ex;
+        size_t n                  = 0;
+        const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
+
+        if (!inflst)
+        {
+            qWarning() << "ImageMagick coders list is null!";
+            return false;
+        }
+
+        for (uint i = 0 ; i < n ; ++i)
+        {
+            const MagickInfo* inf = inflst[i];
+
+            if (inf && inf->decoder)
+            {
+#if (MagickLibVersion >= 0x69A && defined(magick_module))
+                formats.append(QString::fromLatin1(inf->magick_module).toUpper());
+#else
+                formats.append(QString::fromLatin1(inf->module).toUpper());
+#endif
+            }
+        }
+
+        return (formats.contains(format));
     }
 
-    if (!formats.contains(format))
-    {
-        return false;
-    }
-
-    return true;
+    return false;
 }
 
 bool DImgImageMagickPlugin::canWrite(const QString& format) const

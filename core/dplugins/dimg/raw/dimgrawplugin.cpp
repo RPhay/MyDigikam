@@ -122,7 +122,7 @@ QString DImgRAWPlugin::typeMimes() const
     return QString(DRawDecoder::rawFiles()).toUpper().remove(QLatin1String("*."));
 }
 
-bool DImgRAWPlugin::canRead(const QString& filePath) const
+bool DImgRAWPlugin::canRead(const QString& filePath, bool magic) const
 {
     QFileInfo fileInfo(filePath);
 
@@ -132,12 +132,12 @@ bool DImgRAWPlugin::canRead(const QString& filePath) const
         return false;
     }
 
-    QString ext         = QFileInfo(filePath).suffix().toUpper();
-    QString rawFilesExt = DRawDecoder::rawFiles();
-
-    if (rawFilesExt.toUpper().contains(ext))
+    if (!magic)
     {
-        return true;
+        QString ext         = fileInfo.suffix().toUpper();
+        QString rawFilesExt = DRawDecoder::rawFiles();
+
+        return (rawFilesExt.toUpper().contains(ext));
     }
 
     return false;
