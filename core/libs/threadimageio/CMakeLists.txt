@@ -15,6 +15,9 @@ set(libthreadimageio_SRCS
     preview/previewsettings.cpp
     thumb/thumbnailbasic.cpp
     thumb/thumbnailcreator.cpp
+    thumb/thumbnailcreator_freedesktop.cpp
+    thumb/thumbnailcreator_database.cpp
+    thumb/thumbnailcreator_engine.cpp
     thumb/thumbnailloadthread.cpp
     thumb/thumbnailtask.cpp
     thumb/thumbnailsize.cpp

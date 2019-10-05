@@ -179,7 +179,7 @@ private:
     ThumbnailImage createThumbnail(const ThumbnailInfo& info, const QRect& detailRect = QRect()) const;
 
     QImage load(const ThumbnailIdentifier& id, const QRect& rect, bool pregenerate) const;
-    QImage loadWithDImg(const QString& path, IccProfile* const profile) const;
+    QImage loadWithDImgScaled(const QString& path, IccProfile* const profile) const;
     QImage loadImageDetail(const ThumbnailInfo& info, const DMetadata& metadata, const QRect& detailRect, IccProfile* const profile) const;
     QImage loadImagePreview(const DMetadata& metadata) const;
     QImage loadPNG(const QString& path) const;

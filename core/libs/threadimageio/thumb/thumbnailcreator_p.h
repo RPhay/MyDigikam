@@ -26,9 +26,52 @@
 #ifndef DIGIKAM_THUMB_NAIL_CREATOR_PRIVATE_H
 #define DIGIKAM_THUMB_NAIL_CREATOR_PRIVATE_H
 
+#include "thumbnailcreator.h"
+
+// Qt includes
+
+#include <QFileInfo>
+#include <QFile>
+#include <QPainter>
+#include <QBuffer>
+#include <QIODevice>
+#include <QUrl>
+#include <QUrlQuery>
+#include <QApplication>
+#include <QMimeDatabase>
+#include <QTemporaryFile>
+
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
+#include "digikam_config.h"
+#include "metaengine_previews.h"
+#include "metaengine_rotation.h"
+#include "drawdecoder.h"
+#include "drawfiles.h"
+#include "digikam_debug.h"
+#include "dimg.h"
+#include "dimgloader.h"
 #include "dmetadata.h"
+#include "iccmanager.h"
+#include "iccprofile.h"
+#include "iccsettings.h"
+#include "loadsavethread.h"
+#include "jpegutils.h"
+#include "pgfutils.h"
+#include "tagregion.h"
+#include "thumbsdbaccess.h"
+#include "thumbsdb.h"
+#include "thumbsdbbackend.h"
+#include "thumbnailsize.h"
+
+#ifdef HAVE_MEDIAPLAYER
+#   include "videothumbnailer.h"
+#   include "videostripfilter.h"
+#endif
 
 namespace Digikam
 {
