@@ -431,7 +431,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     }
 
     uchar* dst              = data;
-    unsigned short* dst16   = nullptr;
+    unsigned short* dst16   = reinterpret_cast<unsigned short*>(data);
     uchar* src              = nullptr;
     unsigned short* src16   = nullptr;
     unsigned int checkPoint = 0;
