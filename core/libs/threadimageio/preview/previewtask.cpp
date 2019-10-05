@@ -255,6 +255,9 @@ void PreviewLoadingTask::execute()
         }
         else // Non-RAW images
         {
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Try to get preview from" << m_loadingDescription.filePath;
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Preview quality: " << m_loadingDescription.previewParameters.previewSettings.quality;
+
             bool isFast = (m_loadingDescription.previewParameters.previewSettings.quality == PreviewSettings::FastPreview);
 
             switch (m_loadingDescription.previewParameters.previewSettings.quality)
