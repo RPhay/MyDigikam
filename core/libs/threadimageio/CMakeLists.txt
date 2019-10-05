@@ -19,6 +19,7 @@ set(libthreadimageio_SRCS
     thumb/thumbnailcreator_database.cpp
     thumb/thumbnailcreator_engine.cpp
     thumb/thumbnailloadthread.cpp
+    thumb/thumbnailloadthread_p.cpp
     thumb/thumbnailtask.cpp
     thumb/thumbnailsize.cpp
     fileio/loadsavethread.cpp
