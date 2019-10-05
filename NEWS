@@ -61,4 +61,5 @@ BUGFIXES:
 043 ==> 412442 - Website points to obsolete versions.
 044 ==> 411027 - image files *.heic from iphones do not show up in digikam thumbnails although ther are find in MS file browser.
 045 ==> 412574 - New images are not recognized when externally added to a DK folder.
-046 ==> 
+046 ==> 195583 - FILEIO : read header metadata from JPEG2000 files with Exiv2.
+047 ==> 
