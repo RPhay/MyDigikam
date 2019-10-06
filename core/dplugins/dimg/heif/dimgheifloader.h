@@ -14,6 +14,8 @@
  *     https://github.com/ImageMagick/ImageMagick/blob/master/coders/heic.c
  *     https://github.com/GNOME/gimp/blob/master/plug-ins/common/file-heif.c
  *
+ * Specification: https://nokiatech.github.io/heif/technical.html
+ *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
  * Public License as published by the Free Software Foundation;
