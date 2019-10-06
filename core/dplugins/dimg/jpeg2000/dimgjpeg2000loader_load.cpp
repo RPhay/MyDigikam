@@ -167,7 +167,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
     // -------------------------------------------------------------------
     // Check color space.
 
-    int colorModel;
+    int colorModel = DImg::COLORMODELUNKNOWN;
 
     switch (jas_clrspc_fam(jas_image_clrspc(jp2_image)))
     {

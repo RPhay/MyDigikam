@@ -274,15 +274,15 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
     typedef QMap<QString, QString> EmbeddedTextMap;
     EmbeddedTextMap map = imageEmbeddedText();
 
-    for (EmbeddedTextMap::const_iterator it = map.constBegin(); it != map.constEnd(); ++it)
+    for (EmbeddedTextMap::const_iterator it = map.constBegin() ; it != map.constEnd() ; ++it)
     {
         if (it.key() != QLatin1String("Software") && it.key() != QLatin1String("Comment"))
         {
-            QByteArray key = it.key().toLatin1();
+            QByteArray key   = it.key().toLatin1();
             QByteArray value = it.value().toLatin1();
             png_text text;
-            text.key  = key.data();
-            text.text = value.data();
+            text.key         = key.data();
+            text.text        = value.data();
 
             qCDebug(DIGIKAM_DIMG_LOG_PNG) << "Writing PNG Embedded text: key="
                                           << text.key << " text=" << text.text;
@@ -293,7 +293,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
     }
 
     // Update 'Software' text tag.
-    QString software = QLatin1String("digiKam ");
+    QString software  = QLatin1String("digiKam ");
     software.append(digiKamVersion());
     QString libpngver = QLatin1String(PNG_HEADER_VERSION_STRING);
     libpngver.replace(QLatin1Char('\n'), QLatin1Char(' '));
@@ -324,7 +324,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
     uint checkPoint = 0;
 
-    for (y = 0; y < imageHeight(); ++y)
+    for (y = 0 ; y < imageHeight() ; ++y)
     {
 
         if (observer && y == checkPoint)
@@ -346,14 +346,14 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
         if (QSysInfo::ByteOrder == QSysInfo::LittleEndian)
         {
-            for (x = 0; x < imageWidth()*imageBytesDepth(); x += imageBytesDepth())
+            for (x = 0 ; x < imageWidth()*imageBytesDepth() ; x += imageBytesDepth())
             {
                 if (imageSixteenBit())
                 {
                     if (imageHasAlpha())
                     {
                         data[j++] = ptr[x + 1]; // Blue
-                        data[j++] = ptr[ x ];
+                        data[j++] = ptr[  x  ];
                         data[j++] = ptr[x + 3]; // Green
                         data[j++] = ptr[x + 2];
                         data[j++] = ptr[x + 5]; // Red
@@ -364,7 +364,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
                     else
                     {
                         data[j++] = ptr[x + 1]; // Blue
-                        data[j++] = ptr[ x ];
+                        data[j++] = ptr[  x  ];
                         data[j++] = ptr[x + 3]; // Green
                         data[j++] = ptr[x + 2];
                         data[j++] = ptr[x + 5]; // Red
@@ -375,14 +375,14 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
                 {
                     if (imageHasAlpha())
                     {
-                        data[j++] = ptr[ x ];   // Blue
+                        data[j++] = ptr[  x  ]; // Blue
                         data[j++] = ptr[x + 1]; // Green
                         data[j++] = ptr[x + 2]; // Red
                         data[j++] = ptr[x + 3]; // Alpha
                     }
                     else
                     {
-                        data[j++] = ptr[ x ];   // Blue
+                        data[j++] = ptr[  x  ]; // Blue
                         data[j++] = ptr[x + 1]; // Green
                         data[j++] = ptr[x + 2]; // Red
                     }
@@ -393,7 +393,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         {
             int bytes = (imageSixteenBit() ? 2 : 1) * (imageHasAlpha() ? 4 : 3);
 
-            for (x = 0; x < imageWidth()*imageBytesDepth(); x += imageBytesDepth())
+            for (x = 0 ; x < imageWidth()*imageBytesDepth() ; x += imageBytesDepth())
             {
                 memcpy(data + j, ptr + x, bytes);
                 j += bytes;
