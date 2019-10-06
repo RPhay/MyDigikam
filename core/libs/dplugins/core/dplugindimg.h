@@ -92,6 +92,10 @@ public:
      */
     virtual QString typeMimes() const = 0;
 
+    /** Return true if the loader can read a preview image.
+     */
+    virtual bool previewSupported() const { return false; };
+
     /** Return true if source file path is supported by the loader and contents can be loaded.
      */
     virtual bool canRead(const QString& filePath, bool magic) const = 0;

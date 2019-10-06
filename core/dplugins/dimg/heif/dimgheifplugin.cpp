@@ -136,6 +136,11 @@ QString DImgHEIFPlugin::typeMimes() const
     return QLatin1String("HEIC");
 }
 
+bool DImgHEIFPlugin::previewSupported() const
+{
+    return true;
+}
+
 bool DImgHEIFPlugin::canRead(const QString& filePath, bool magic) const
 {
     QFileInfo fileInfo(filePath);
