@@ -120,6 +120,7 @@ QString DImgQImagePlugin::typeMimes() const
     formats.removeAll(QByteArray("J2K"));   // JPEG2000 code stream
     formats.removeAll(QByteArray("PGX"));   // JPEG2000 WM format
     formats.removeAll(QByteArray("HEIC"));
+    formats.removeAll(QByteArray("HEIF"));
 
     QString rawFilesExt = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();
 
@@ -163,8 +164,8 @@ bool DImgQImagePlugin::canRead(const QString& filePath, bool magic) const
         }
 
         QString format    = fileInfo.suffix().toUpper();
-        QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();  // Ignore RAW files
-        blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC ")); // Ignore native loaders
+        QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();       // Ignore RAW files
+        blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC HEIF ")); // Ignore native loaders
 
         return (!blackList.toUpper().contains(format));
     }
@@ -174,8 +175,8 @@ bool DImgQImagePlugin::canRead(const QString& filePath, bool magic) const
 
 bool DImgQImagePlugin::canWrite(const QString& format) const
 {
-    QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();  // Ignore RAW files
-    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC ")); // Ignore native loaders
+    QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();      // Ignore RAW files
+    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC HEIF")); // Ignore native loaders
 
     if (blackList.toUpper().contains(format))
     {

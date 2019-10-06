@@ -112,7 +112,8 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
 #endif // HAVE_JASPER
 
 #ifdef HAVE_X265
-        if (QString::fromLatin1(frm).contains(QLatin1String("heic"),  Qt::CaseInsensitive))
+        if (QString::fromLatin1(frm).contains(QLatin1String("heic"), Qt::CaseInsensitive) ||
+            QString::fromLatin1(frm).contains(QLatin1String("heif"), Qt::CaseInsensitive))
         {
             continue;
         }
@@ -136,8 +137,8 @@ QStringList supportedImageMimeTypes(QIODevice::OpenModeFlag mode, QString& allTy
     allTypes.append(QLatin1String("*.pgf "));
 
 #ifdef HAVE_X265
-    formats << i18n("High Efficiency Image Coding (*.heic)");
-    allTypes.append(QLatin1String("*.heic "));
+    formats << i18n("High Efficiency Image Coding (*.heic *.heif)");
+    allTypes.append(QLatin1String("*.heic *.heif"));
 #endif // HAVE_X265
 
     if (mode != QIODevice::WriteOnly)

@@ -397,6 +397,7 @@ void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
             // unknown in older Qt versions or have an application mime type.
             if (QMimeDatabase().mimeTypeForUrl(url).name().startsWith(QLatin1String("image/")) ||
                 ext == QLatin1String("HEIC")                                                   ||
+                ext == QLatin1String("HEIF")                                                   ||
                 ext == QLatin1String("KRA"))
             {
                 imagesUrls << url;

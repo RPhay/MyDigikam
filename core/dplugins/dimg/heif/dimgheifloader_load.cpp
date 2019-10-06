@@ -74,7 +74,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         (memcmp(&header[8], "heix", 4) != 0) &&
         (memcmp(&header[8], "mif1", 4) != 0))
     {
-        qWarning() << "Error: source file is not HEIC image.";
+        qWarning() << "Error: source file is not HEIF image.";
         fclose(file);
         loadingFailed();
         return false;
@@ -144,7 +144,7 @@ bool DImgHEIFLoader::readHEICColorProfile(struct heif_image_handle* const image_
 
                 if (error.code == 0)
                 {
-                    qDebug() << "HEIC color profile found with size:" << length;
+                    qDebug() << "HEIF color profile found with size:" << length;
                     imageSetIccProfile(IccProfile(profile));
                     return true;
                 }
@@ -154,7 +154,7 @@ bool DImgHEIFLoader::readHEICColorProfile(struct heif_image_handle* const image_
         }
 
         default: // heif_color_profile_type_nclx
-            qWarning() << "Unknown HEIC color profile type discarded";
+            qWarning() << "Unknown HEIF color profile type discarded";
             break;
     }
 #else
@@ -213,7 +213,7 @@ bool DImgHEIFLoader::readHEICMetadata(struct heif_image_handle* const image_hand
                     {
                         // Copy the real exif data into the byte array
 
-                        qDebug() << "HEIC exif container found with size:" << length - skip;
+                        qDebug() << "HEIF exif container found with size:" << length - skip;
                         exif.append((char*)(exifChunk.data() + skip), exifChunk.size() - skip);
                     }
                 }
@@ -236,7 +236,7 @@ bool DImgHEIFLoader::readHEICMetadata(struct heif_image_handle* const image_hand
 
                 if ((error.code == 0))
                 {
-                    qDebug() << "HEIC xmp container found with size:" << length;
+                    qDebug() << "HEIF xmp container found with size:" << length;
                 }
                 else
                 {
@@ -311,7 +311,7 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
             }
 
             heif_image_handle_release(image_handle);
-            qDebug() << "HEIC preview found";
+            qDebug() << "HEIF preview found in thumbnail chunk";
             return readHEICImageByHandle(thumbnail_handle, heif_image);
         }
     }
@@ -338,7 +338,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
                                                                     : heif_chroma_interleaved_RGB;
 
     // Trace to check image size properties before decoding, as these values can be different.
-    qDebug() << "HEIC image size: ("
+    qDebug() << "HEIF image size: ("
                 << heif_image_handle_get_width(image_handle)
                 << "x"
                 << heif_image_handle_get_height(image_handle)
@@ -368,7 +368,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     imageWidth()               = heif_image_get_width(heif_image, heif_channel_interleaved);
     imageHeight()              = heif_image_get_height(heif_image, heif_channel_interleaved);
 
-    qDebug() << "Decoded HEIC image properties: size("
+    qDebug() << "Decoded HEIF image properties: size("
                 << imageWidth() << "x" << imageHeight()
                 << "), Alpha:" << m_hasAlpha
                 << ", Color depth :" << colorDepth;
@@ -383,7 +383,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     int stride         = 0;
     uint8_t* const ptr = heif_image_get_plane(heif_image, heif_channel_interleaved, &stride);
 
-    qDebug() << "HEIC data container:" << ptr;
+    qDebug() << "HEIF data container:" << ptr;
     qDebug() << "HEIC bytes per line:" << stride;
 
     if (!ptr || stride <= 0)
