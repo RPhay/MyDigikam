@@ -560,7 +560,7 @@ bool PreviewLoadingTask::loadImagePreview(int sizeLimit)
             return true;
         }
     }
-    
+
     qDebug(DIGIKAM_GENERAL_LOG) << "Try to load DImg preview from:" << m_loadingDescription.filePath;
 
     DImg img;
@@ -569,7 +569,7 @@ bool PreviewLoadingTask::loadImagePreview(int sizeLimit)
                                       DImgLoader::LoadICCData  |
                                       DImgLoader::LoadPreview;
 
-    if (img.load(m_loadingDescription.filePath, loadFlags, nullptr))
+    if (img.load(m_loadingDescription.filePath, loadFlags, this))
     {
         if (sizeLimit == -1 || qMax(img.width(), img.height()) > (uint)sizeLimit)
         {
