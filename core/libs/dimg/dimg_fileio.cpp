@@ -115,6 +115,11 @@ bool DImg::load(const QString& filePath,
 
     if (plug)
     {
+        if (loadFlags & DImgLoader::LoadPreview && !plug->previewSupported())
+        {
+            return false;
+        }
+
         if (observer && !observer->continueQuery(nullptr))
         {
             return false;
