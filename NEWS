@@ -63,5 +63,5 @@ BUGFIXES:
 045 ==> 412574 - New images are not recognized when externally added to a DK folder.
 046 ==> 195583 - FILEIO : read header metadata from JPEG2000 files with Exiv2.
 047 ==> 116225 - JPEG compression quality should be shown in Properties.
-048 ==> 
-
+048 ==> 405232 - digiKam crashes in Slideshow and Presentation.
+049 ==> 
