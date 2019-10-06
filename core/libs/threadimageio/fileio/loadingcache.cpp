@@ -343,23 +343,15 @@ void LoadingCache::notifyFileChanged(const QString& filePath, bool notify)
 
     foreach (const QString& cacheKey, keys)
     {
-        if (d->imageCache.remove(cacheKey) && notify)
-        {
-            emit fileChanged(filePath, cacheKey);
-        }
+        d->imageCache.remove(cacheKey);
     }
 
     keys = d->thumbnailFilePathHash.values(filePath);
 
     foreach (const QString& cacheKey, keys)
     {
-        bool removedImage  = d->thumbnailImageCache.remove(cacheKey);
-        bool removedPixmap = d->thumbnailPixmapCache.remove(cacheKey);
-
-        if ((removedImage || removedPixmap) && notify)
-        {
-            emit fileChanged(filePath, cacheKey);
-        }
+        d->thumbnailImageCache.remove(cacheKey);
+        d->thumbnailPixmapCache.remove(cacheKey);
     }
 
     if (notify)
@@ -439,7 +431,6 @@ ClassicLoadingCacheFileWatch::ClassicLoadingCacheFileWatch()
     connect(this, SIGNAL(signalUpdateDirWatch()),
             this, SLOT(slotUpdateDirWatch()),
             Qt::QueuedConnection);
-
 }
 
 ClassicLoadingCacheFileWatch::~ClassicLoadingCacheFileWatch()

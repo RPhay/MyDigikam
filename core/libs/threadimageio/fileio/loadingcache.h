@@ -288,13 +288,6 @@ Q_SIGNALS:
      */
     void fileChanged(const QString& filePath);
 
-    /**
-     * This signal is emitted when the cache is notified that a file was changed,
-     * and the given cache key was removed from the cache.
-     * The signal may be emitted under CacheLock. Strongly consider a queued connection.
-     */
-    void fileChanged(const QString& filePath, const QString& cacheKey);
-
 private Q_SLOTS:
 
     void iccSettingsChanged(const ICCSettingsContainer& current, const ICCSettingsContainer& previous);
