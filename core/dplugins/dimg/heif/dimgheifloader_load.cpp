@@ -364,7 +364,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     heif_decoding_options_free(decode_options);
 
     heif_colorspace colorSpace = heif_image_get_colorspace(heif_image);
-    int colorDepth             = heif_image_get_bits_per_pixel(heif_image, heif_channel_interleaved);
+    int colorDepth             = heif_image_get_bits_per_pixel_range(heif_image, heif_channel_interleaved);
     imageWidth()               = heif_image_get_width(heif_image, heif_channel_interleaved);
     imageHeight()              = heif_image_get_height(heif_image, heif_channel_interleaved);
 
@@ -394,19 +394,19 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
         return false;
     }
 
-    uchar* data = nullptr;
+    uchar* data  = nullptr;
+    int colorMul = 1;       // color multiplier
 
-    if (colorDepth == 24 ||       // RGB
-        colorDepth == 32)         // RGBA
+    if (colorDepth == 8)
     {
         qDebug() << "Color bytes depth: 8";
         m_sixteenBit = false;
     }
-    else if (colorDepth == 48 ||  // RGB
-             colorDepth == 64)    // RGBA
+    else if ((colorDepth > 8) && (colorDepth <= 16))
     {
         qDebug() << "Color bytes depth: 16";
         m_sixteenBit = true;
+        colorMul     = 16 - colorDepth;
     }
     else
     {
@@ -415,6 +415,8 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
         heif_image_handle_release(image_handle);
         return false;
     }
+
+    qDebug() << "Color multiplier:" << colorMul;
 
     if (m_sixteenBit)
     {
@@ -470,17 +472,17 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
             else                // 16 bits image.
             {
                 // Blue
-                dst16[0] = src16[2];
+                dst16[0] = (unsigned short)(src16[2] << colorMul);
                 // Green
-                dst16[1] = src16[1];
+                dst16[1] = (unsigned short)(src16[1] << colorMul);
                 // Red
-                dst16[2] = src16[0];
+                dst16[2] = (unsigned short)(src16[0] << colorMul);
 
                 // Alpha
 
                 if (m_hasAlpha)
                 {
-                    dst16[3] = src16[3];
+                    dst16[3] = (unsigned short)(src16[3] << colorMul);
                     src16   += 4;
                 }
                 else
