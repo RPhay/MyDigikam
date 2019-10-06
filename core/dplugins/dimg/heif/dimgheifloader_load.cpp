@@ -298,12 +298,12 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
     {
         heif_item_id thumbnail_ID = 0;
         int nThumbnails           = heif_image_handle_get_list_of_thumbnail_IDs(image_handle, &thumbnail_ID, 1);
-        
+
         if (nThumbnails > 0)
         {
             struct heif_image_handle* thumbnail_handle = nullptr;
             error = heif_image_handle_get_thumbnail(image_handle, thumbnail_ID, &thumbnail_handle);
-            
+
             if (!isHeifSuccess(&error))
             {
                 heif_image_handle_release(image_handle);
@@ -315,16 +315,16 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
             return readHEICImageByHandle(thumbnail_handle, heif_image);
         }
     }
-        
+
     if (m_loadFlags & LoadImageData)
     {
         return readHEICImageByHandle(image_handle, heif_image);
     }
-    
+
     heif_image_handle_release(image_handle);
     return true;
 }
-        
+
 bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handle,
                                            struct heif_image* heif_image)
 {
@@ -403,7 +403,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
         m_sixteenBit = false;
     }
     else if (colorDepth == 48 ||  // RGB
-                colorDepth == 64)    // RGBA
+             colorDepth == 64)    // RGBA
     {
         qDebug() << "Color bytes depth: 16";
         m_sixteenBit = true;
@@ -450,7 +450,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
                 // Green
                 dst[1] = src[1];
                 // Red
-                dst[2] = src[3];
+                dst[2] = src[0];
 
                 // Alpha
 
