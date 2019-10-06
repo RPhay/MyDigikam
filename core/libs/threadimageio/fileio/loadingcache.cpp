@@ -450,7 +450,6 @@ ClassicLoadingCacheFileWatch::~ClassicLoadingCacheFileWatch()
 void ClassicLoadingCacheFileWatch::removeFile(const QString& filePath)
 {
     m_watch->removePath(filePath);
-    m_watchedFiles.remove(filePath);
 }
 
 void ClassicLoadingCacheFileWatch::addedImage(const QString& filePath)
@@ -470,12 +469,11 @@ void ClassicLoadingCacheFileWatch::addedThumbnail(const QString& filePath)
 void ClassicLoadingCacheFileWatch::slotFileDirty(const QString& path)
 {
     // Signal comes from main thread
-    qCDebug(DIGIKAM_GENERAL_LOG) << "LoadingCache slotFileDirty " << path;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "LoadingCache slotFileDirty:" << path;
     // This method acquires a lock itself
     notifyFileChanged(path);
     // No need for locking here, we are in main thread
     m_watch->removePath(path);
-    m_watchedFiles.remove(path);
 }
 
 void ClassicLoadingCacheFileWatch::slotUpdateDirWatch()
@@ -484,35 +482,29 @@ void ClassicLoadingCacheFileWatch::slotUpdateDirWatch()
     LoadingCache::CacheLock lock(m_cache);
 
     // get a list of files in cache that need watch
-    QSet<QString> toBeAdded;
-    QSet<QString> toBeRemoved = m_watchedFiles;
-    QList<QString> filePaths  = m_cache->imageFilePathsInCache();
+    QStringList watchedFiles = m_watch->files();
+    QList<QString> filePaths = m_cache->imageFilePathsInCache();
 
-    foreach (const QString& m_watchPath, filePaths)
+    foreach (const QString& path, watchedFiles)
     {
-        if (!m_watchPath.isEmpty())
+        if (!path.isEmpty())
         {
-            if (!m_watchedFiles.contains(m_watchPath))
+            if (!filePaths.contains(path))
             {
-                toBeAdded.insert(m_watchPath);
+                m_watch->removePath(path);
             }
-
-            toBeRemoved.remove(m_watchPath);
         }
     }
 
-    foreach (const QString& watchedItem, toBeRemoved)
+    foreach (const QString& path, filePaths)
     {
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "removing watch for " << *it;
-        m_watch->removePath(watchedItem);
-        m_watchedFiles.remove(watchedItem);
-    }
-
-    foreach (const QString& watchedItem, toBeAdded)
-    {
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "adding watch for " << *it;
-        m_watch->addPath(watchedItem);
-        m_watchedFiles.insert(watchedItem);
+        if (!path.isEmpty())
+        {
+            if (!watchedFiles.contains(path))
+            {
+                m_watch->addPath(path);
+            }
+        }
     }
 }
 

@@ -124,7 +124,6 @@ Q_SIGNALS:
 protected:
 
     QFileSystemWatcher* m_watch;
-    QSet<QString>       m_watchedFiles;
 };
 
 // --------------------------------------------------------------------------------------------------------------
