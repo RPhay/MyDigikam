@@ -46,7 +46,8 @@ public:
     {
     };
 
-    /** Posts progress information about image IO
+    /**
+     * Posts progress information about image IO
      */
     virtual void progressInfo(DImg* const img, float progress)
     {
@@ -54,7 +55,8 @@ public:
         Q_UNUSED(progress);
     };
 
-    /** Queries whether the image IO operation shall be continued
+    /**
+     * Queries whether the image IO operation shall be continued
      */
     virtual bool continueQuery(DImg* const img)
     {
@@ -62,7 +64,8 @@ public:
         return true;
     };
 
-    /** Return a relative value which determines the granularity, the frequency
+    /**
+     * Return a relative value which determines the granularity, the frequency
      *  with which the DImgLoaderObserver is checked and progress is posted.
      *  Standard is 1.0. Values < 1 mean less granularity (fewer checks),
      *  values > 1 mean higher granularity (more checks).
@@ -73,6 +76,6 @@ public:
     };
 };
 
-}      // namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_DIMG_LOADER_OBSERVER_H
