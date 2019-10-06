@@ -30,15 +30,16 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "metaenginesettings.h"
+#include "digikam_globals.h"
 #include "fileactionmngr_p.h"
+#include "metaenginesettings.h"
 #include "itemattributeswatch.h"
 #include "iteminfotasksplitter.h"
+#include "loadingcacheinterface.h"
+#include "facetagseditor.h"
 #include "scancontroller.h"
-#include "digikam_globals.h"
 #include "jpegutils.h"
 #include "dimg.h"
-#include "facetagseditor.h"
 
 namespace Digikam
 {
@@ -58,6 +59,8 @@ void FileActionMngrFileWorker::writeOrientationToFiles(FileActionItemInfoList in
         DMetadata metadata(path);
         DMetadata::ImageOrientation o = (DMetadata::ImageOrientation)orientation;
         metadata.setItemOrientation(o);
+
+        LoadingCacheInterface::removeFromFileWatch(path);
 
         if (!metadata.applyChanges())
         {
@@ -97,16 +100,16 @@ void FileActionMngrFileWorker::writeMetadataToFiles(FileActionItemInfoList infos
         }
 
         hub.load(info);
-        QString filePath = info.filePath();
+        QString path = info.filePath();
 
         if (MetaEngineSettings::instance()->settings().useLazySync)
         {
-            hub.write(filePath, MetadataHub::WRITE_ALL);
+            hub.write(path, MetadataHub::WRITE_ALL);
         }
         else
         {
             ScanController::FileMetadataWrite writeScope(info);
-            writeScope.changed(hub.write(filePath, MetadataHub::WRITE_ALL));
+            writeScope.changed(hub.write(path, MetadataHub::WRITE_ALL));
         }
 
         // hub emits fileMetadataChanged
@@ -212,6 +215,8 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
         matrix                                        *= (MetaEngineRotation::TransformationAction)action;
         MetaEngine::ImageOrientation finalOrientation  = matrix.exifOrientation();
         bool rotatedPixels                             = false;
+
+        LoadingCacheInterface::removeFromFileWatch(path);
 
         if (rotateAsJpeg)
         {

@@ -320,6 +320,11 @@ void LoadingCache::setFileWatch(LoadingCacheFileWatch* const watch)
     d->watch->m_cache = this;
 }
 
+void LoadingCache::removeFromFileWatch(const QString& filePath)
+{
+    d->fileWatch()->removeFile(filePath);
+}
+
 QStringList LoadingCache::imageFilePathsInCache() const
 {
     d->cleanUpImageFilePathHash();
@@ -399,6 +404,11 @@ void LoadingCacheFileWatch::notifyFileChanged(const QString& filePath)
     }
 }
 
+void LoadingCacheFileWatch::removeFile(const QString&)
+{
+    // default: do nothing
+}
+
 void LoadingCacheFileWatch::addedImage(const QString&)
 {
     // default: do nothing
@@ -435,6 +445,12 @@ ClassicLoadingCacheFileWatch::ClassicLoadingCacheFileWatch()
 ClassicLoadingCacheFileWatch::~ClassicLoadingCacheFileWatch()
 {
     delete m_watch;
+}
+
+void ClassicLoadingCacheFileWatch::removeFile(const QString& filePath)
+{
+    m_watch->removePath(filePath);
+    m_watchedFiles.remove(filePath);
 }
 
 void ClassicLoadingCacheFileWatch::addedImage(const QString& filePath)

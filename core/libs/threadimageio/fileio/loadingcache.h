@@ -75,6 +75,7 @@ public:
 
     virtual ~LoadingCacheFileWatch();
     /// Called by the thread when a new entry is added to the cache
+    virtual void removeFile(const QString& filePath);
     virtual void addedImage(const QString& filePath);
     virtual void addedThumbnail(const QString& filePath);
 
@@ -107,6 +108,7 @@ public:
 
     ClassicLoadingCacheFileWatch();
     ~ClassicLoadingCacheFileWatch();
+    virtual void removeFile(const QString& filePath) override;
     virtual void addedImage(const QString& filePath) override;
     virtual void addedThumbnail(const QString& filePath) override;
 
@@ -260,6 +262,11 @@ public:
      * Ownership of this object is transferred to the cache.
      */
     void setFileWatch(LoadingCacheFileWatch* const watch);
+
+    /**
+     * Remove file from LoadingCacheFileWatch.
+     */
+    void removeFromFileWatch(const QString& filePath);
 
     /**
      * Returns a list of all possible file paths in cache.
