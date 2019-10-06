@@ -126,6 +126,11 @@ QMap<QString, QString> DImgHEIFPlugin::extraAboutData() const
     return map;
 }
 
+bool DImgHEIFPlugin::previewSupported() const
+{
+    return true;
+}
+
 QString DImgHEIFPlugin::loaderName() const
 {
     return QLatin1String("HEIF");
@@ -134,11 +139,6 @@ QString DImgHEIFPlugin::loaderName() const
 QString DImgHEIFPlugin::typeMimes() const
 {
     return QLatin1String("HEIC");
-}
-
-bool DImgHEIFPlugin::previewSupported() const
-{
-    return true;
 }
 
 bool DImgHEIFPlugin::canRead(const QString& filePath, bool magic) const
