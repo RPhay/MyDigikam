@@ -64,4 +64,6 @@ BUGFIXES:
 046 ==> 195583 - FILEIO : read header metadata from JPEG2000 files with Exiv2.
 047 ==> 116225 - JPEG compression quality should be shown in Properties.
 048 ==> 405232 - digiKam crashes in Slideshow and Presentation.
-049 ==> 
+049 ==> 412730 - Main window double resolution on retina after dialog is open.
+050 ==> 
+
