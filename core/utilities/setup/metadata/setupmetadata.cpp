@@ -89,6 +89,7 @@ public:
         writeRawFilesBox(nullptr),
         writeXMPSidecarBox(nullptr),
         readXMPSidecarBox(nullptr),
+        sidecarFileNameBox(nullptr),
         updateFileTimeStampBox(nullptr),
         rescanImageIfModifiedBox(nullptr),
         clearMetadataIfRescanBox(nullptr),
@@ -131,6 +132,7 @@ public:
     QCheckBox*           writeRawFilesBox;
     QCheckBox*           writeXMPSidecarBox;
     QCheckBox*           readXMPSidecarBox;
+    QCheckBox*           sidecarFileNameBox;
     QCheckBox*           updateFileTimeStampBox;
     QCheckBox*           rescanImageIfModifiedBox;
     QCheckBox*           clearMetadataIfRescanBox;
@@ -573,6 +575,12 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->writingModeCombo->setToolTip(i18nc("@info:tooltip", "Specify the exact mode of XMP sidecar writing"));
     d->writingModeCombo->setEnabled(false);
 
+    d->sidecarFileNameBox = new QCheckBox;
+    d->sidecarFileNameBox->setText(i18nc("@option:check", "Use compatible file name (BASENAME.xmp) for sidecar files"));
+    d->sidecarFileNameBox->setWhatsThis(i18nc("@info:whatsthis",
+                                              "Turn on this option to create the sidecar files in a compatible "
+                                              "file name format of many commercial programs."));
+
     connect(d->writeXMPSidecarBox, SIGNAL(toggled(bool)),
             d->writingModeCombo, SLOT(setEnabled(bool)));
 
@@ -580,6 +588,7 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     rwSidecarsLayout->addWidget(d->readXMPSidecarBox,  1, 0, 1, 3);
     rwSidecarsLayout->addWidget(d->writeXMPSidecarBox, 2, 0, 1, 3);
     rwSidecarsLayout->addWidget(d->writingModeCombo,   3, 1, 1, 2);
+    rwSidecarsLayout->addWidget(d->sidecarFileNameBox, 4, 0, 1, 3);
     rwSidecarsLayout->setColumnStretch(3, 10);
     rwSidecarsGroup->setLayout(rwSidecarsLayout);
 
@@ -705,6 +714,7 @@ void SetupMetadata::applySettings()
     set.useLazySync           = d->useLazySync->isChecked();
     set.writeRawFiles         = d->writeRawFilesBox->isChecked();
     set.useXMPSidecar4Reading = d->readXMPSidecarBox->isChecked();
+    set.useCompatibleFileName = d->sidecarFileNameBox->isChecked();
 
     if (d->writeXMPSidecarBox->isChecked())
     {
@@ -787,6 +797,7 @@ void SetupMetadata::readSettings()
     d->useLazySync->setChecked(set.useLazySync);
     d->writeRawFilesBox->setChecked(set.writeRawFiles);
     d->readXMPSidecarBox->setChecked(set.useXMPSidecar4Reading);
+    d->sidecarFileNameBox->setChecked(set.useCompatibleFileName);
     d->updateFileTimeStampBox->setChecked(set.updateFileTimeStamp);
     d->rescanImageIfModifiedBox->setChecked(set.rescanImageIfModified);
     d->clearMetadataIfRescanBox->setChecked(set.clearMetadataIfRescan);

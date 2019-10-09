@@ -102,6 +102,7 @@ public:
     bool                            rescanImageIfModified;
     bool                            clearMetadataIfRescan;
     bool                            useXMPSidecar4Reading;
+    bool                            useCompatibleFileName;
     bool                            useLazySync;
 
     MetaEngine::MetadataWritingMode metadataWritingMode;

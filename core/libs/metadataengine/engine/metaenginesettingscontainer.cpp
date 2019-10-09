@@ -54,6 +54,7 @@ MetaEngineSettingsContainer::MetaEngineSettingsContainer()
       rescanImageIfModified(false),
       clearMetadataIfRescan(false),
       useXMPSidecar4Reading(false),
+      useCompatibleFileName(false),
       useLazySync(false),
       metadataWritingMode(MetaEngine::WRITE_TO_FILE_ONLY),
       rotationBehavior(RotatingFlags | RotateByLosslessRotation),
@@ -82,6 +83,7 @@ void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
 
     writeRawFiles         = group.readEntry("Write Metadata To RAW Files", false);
     useXMPSidecar4Reading = group.readEntry("Use XMP Sidecar For Reading", false);
+    useCompatibleFileName = group.readEntry("Use Compatible File Name",    false);
     metadataWritingMode   = (MetaEngine::MetadataWritingMode)
                             group.readEntry("Metadata Writing Mode",       (int)MetaEngine::WRITE_TO_FILE_ONLY);
     updateFileTimeStamp   = group.readEntry("Update File Timestamp",       true);
@@ -131,6 +133,7 @@ void MetaEngineSettingsContainer::writeToConfig(KConfigGroup& group) const
 
     group.writeEntry("Write Metadata To RAW Files", writeRawFiles);
     group.writeEntry("Use XMP Sidecar For Reading", useXMPSidecar4Reading);
+    group.writeEntry("Use Compatible File Name",    useCompatibleFileName);
     group.writeEntry("Metadata Writing Mode",       (int)metadataWritingMode);
     group.writeEntry("Update File Timestamp",       updateFileTimeStamp);
     group.writeEntry("Rescan File If Modified",     rescanImageIfModified);
@@ -177,6 +180,8 @@ QDebug operator<<(QDebug dbg, const MetaEngineSettingsContainer& inf)
                   << inf.clearMetadataIfRescan << "), ";
     dbg.nospace() << "useXMPSidecar4Reading("
                   << inf.useXMPSidecar4Reading << "), ";
+    dbg.nospace() << "useCompatibleFileName("
+                  << inf.useCompatibleFileName << "), ";
     dbg.nospace() << "useLazySync("
                   << inf.useLazySync << "), ";
     dbg.nospace() << "metadataWritingMode("

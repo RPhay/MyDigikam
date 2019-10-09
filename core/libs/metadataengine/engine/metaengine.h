@@ -243,13 +243,21 @@ public:
      */
     bool writeRawFiles() const;
 
-    /** Enable or disable using XMP sidecar for reading metadata
+    /** Enable or disable using XMP sidecar for reading metadata.
      */
     void setUseXMPSidecar4Reading(const bool on);
 
     /** Return true if using XMP sidecar for reading metadata is enabled.
      */
     bool useXMPSidecar4Reading() const;
+
+    /** Enable or disable using compatible file name for sidecar files.
+     */
+    void setUseCompatibleFileName(const bool on);
+
+    /** Return true if using compatible file name for sidecar files.
+     */
+    bool useCompatibleFileName() const;
 
     /** Set metadata writing mode.
      *  @param mode Metadata writing mode as defined by the #MetadataWritingMode enum.
@@ -289,7 +297,7 @@ public:
     /** Return the XMP Sidecar file path for a item file path.
      *  If item file path do not include a file name or is empty, this function return a null string.
      */
-    static QString sidecarFilePathForFile(const QString& path);
+    static QString sidecarFilePathForFile(const QString& path, bool useLR = false);
 
     /** Like sidecarFilePathForFile(), but works for local file path.
      */
