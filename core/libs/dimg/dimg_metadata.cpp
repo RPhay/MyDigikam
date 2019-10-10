@@ -125,6 +125,8 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
     // Get image Exif/IPTC data.
     DMetadata meta(getMetadata());
 
+    qCDebug(DIGIKAM_DIMG_LOG) << "Prepare Metadata to save for" << originalFileName;
+
     if (flags & RemoveOldMetadataPreviews || flags & CreateNewMetadataPreview)
     {
         // Clear IPTC preview
@@ -142,6 +144,9 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
         {
             meta.removeExifTag(it.key().toLatin1().constData());
         }
+
+        // Clear Xmp preview from digiKam namespace
+        meta.removeXmpTag("Xmp.digiKam.Preview");
     }
 
     bool createNewPreview    = false;
@@ -409,10 +414,10 @@ bool DImg::isAnimatedImage(const QString& filePath)
     QImageReader reader(filePath);
     reader.setDecideFormatFromContent(true);
 
-    if (reader.supportsAnimation() && 
+    if (reader.supportsAnimation() &&
        (reader.imageCount() > 1))
     {
-        qDebug(DIGIKAM_DIMG_LOG_QIMAGE) << "File \"" << filePath << "\" is an animated image ";
+        qCDebug(DIGIKAM_DIMG_LOG) << "File \"" << filePath << "\" is an animated image";
         return true;
     }
 
