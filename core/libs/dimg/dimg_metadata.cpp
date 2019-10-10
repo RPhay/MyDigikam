@@ -212,7 +212,7 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
              destMimeType.toUpper() != QLatin1String("JPE"))
            )
         {
-            // Non JPEG file, we update IPTC preview
+            // Non JPEG file, we update IPTC and XMP preview
             meta.setItemPreview(preview);
         }
 
