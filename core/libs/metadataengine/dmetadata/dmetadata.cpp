@@ -66,6 +66,7 @@ void DMetadata::registerMetadataSettings()
 void DMetadata::setSettings(const MetaEngineSettingsContainer& settings)
 {
     setUseXMPSidecar4Reading(settings.useXMPSidecar4Reading);
+    setUseCompatibleFileName(settings.useCompatibleFileName);
     setWriteRawFiles(settings.writeRawFiles);
     setMetadataWritingMode(settings.metadataWritingMode);
     setUpdateFileTimeStamp(settings.updateFileTimeStamp);

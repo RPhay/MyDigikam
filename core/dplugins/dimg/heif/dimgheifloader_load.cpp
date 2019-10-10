@@ -74,7 +74,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         (memcmp(&header[8], "heix", 4) != 0) &&
         (memcmp(&header[8], "mif1", 4) != 0))
     {
-        qWarning() << "Error: source file is not HEIC image.";
+        qWarning() << "Error: source file is not HEIF image.";
         fclose(file);
         loadingFailed();
         return false;
@@ -144,7 +144,7 @@ bool DImgHEIFLoader::readHEICColorProfile(struct heif_image_handle* const image_
 
                 if (error.code == 0)
                 {
-                    qDebug() << "HEIC color profile found with size:" << length;
+                    qDebug() << "HEIF color profile found with size:" << length;
                     imageSetIccProfile(IccProfile(profile));
                     return true;
                 }
@@ -154,7 +154,7 @@ bool DImgHEIFLoader::readHEICColorProfile(struct heif_image_handle* const image_
         }
 
         default: // heif_color_profile_type_nclx
-            qWarning() << "Unknown HEIC color profile type discarded";
+            qWarning() << "Unknown HEIF color profile type discarded";
             break;
     }
 #else
@@ -213,7 +213,7 @@ bool DImgHEIFLoader::readHEICMetadata(struct heif_image_handle* const image_hand
                     {
                         // Copy the real exif data into the byte array
 
-                        qDebug() << "HEIC exif container found with size:" << length - skip;
+                        qDebug() << "HEIF exif container found with size:" << length - skip;
                         exif.append((char*)(exifChunk.data() + skip), exifChunk.size() - skip);
                     }
                 }
@@ -236,7 +236,7 @@ bool DImgHEIFLoader::readHEICMetadata(struct heif_image_handle* const image_hand
 
                 if ((error.code == 0))
                 {
-                    qDebug() << "HEIC xmp container found with size:" << length;
+                    qDebug() << "HEIF xmp container found with size:" << length;
                 }
                 else
                 {
@@ -298,12 +298,12 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
     {
         heif_item_id thumbnail_ID = 0;
         int nThumbnails           = heif_image_handle_get_list_of_thumbnail_IDs(image_handle, &thumbnail_ID, 1);
-        
+
         if (nThumbnails > 0)
         {
             struct heif_image_handle* thumbnail_handle = nullptr;
             error = heif_image_handle_get_thumbnail(image_handle, thumbnail_ID, &thumbnail_handle);
-            
+
             if (!isHeifSuccess(&error))
             {
                 heif_image_handle_release(image_handle);
@@ -311,20 +311,20 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
             }
 
             heif_image_handle_release(image_handle);
-            qDebug() << "HEIC preview found";
+            qDebug() << "HEIF preview found in thumbnail chunk";
             return readHEICImageByHandle(thumbnail_handle, heif_image);
         }
     }
-        
+
     if (m_loadFlags & LoadImageData)
     {
         return readHEICImageByHandle(image_handle, heif_image);
     }
-    
+
     heif_image_handle_release(image_handle);
     return true;
 }
-        
+
 bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handle,
                                            struct heif_image* heif_image)
 {
@@ -338,7 +338,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
                                                                     : heif_chroma_interleaved_RGB;
 
     // Trace to check image size properties before decoding, as these values can be different.
-    qDebug() << "HEIC image size: ("
+    qDebug() << "HEIF image size: ("
                 << heif_image_handle_get_width(image_handle)
                 << "x"
                 << heif_image_handle_get_height(image_handle)
@@ -363,12 +363,12 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
 
     heif_decoding_options_free(decode_options);
 
-    heif_colorspace colorSpace = heif_image_get_colorspace(heif_image);
-    int colorDepth             = heif_image_get_bits_per_pixel(heif_image, heif_channel_interleaved);
+    int colorModel             = DImg::COLORMODELUNKNOWN;
+    int colorDepth             = heif_image_get_bits_per_pixel_range(heif_image, heif_channel_interleaved);
     imageWidth()               = heif_image_get_width(heif_image, heif_channel_interleaved);
     imageHeight()              = heif_image_get_height(heif_image, heif_channel_interleaved);
 
-    qDebug() << "Decoded HEIC image properties: size("
+    qDebug() << "Decoded HEIF image properties: size("
                 << imageWidth() << "x" << imageHeight()
                 << "), Alpha:" << m_hasAlpha
                 << ", Color depth :" << colorDepth;
@@ -383,7 +383,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     int stride         = 0;
     uint8_t* const ptr = heif_image_get_plane(heif_image, heif_channel_interleaved, &stride);
 
-    qDebug() << "HEIC data container:" << ptr;
+    qDebug() << "HEIF data container:" << ptr;
     qDebug() << "HEIC bytes per line:" << stride;
 
     if (!ptr || stride <= 0)
@@ -394,19 +394,20 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
         return false;
     }
 
-    uchar* data = nullptr;
+    uchar* data  = nullptr;
+    int colorMul = 1;       // color multiplier
+    colorModel   = DImg::RGB;
 
-    if (colorDepth == 24 ||       // RGB
-        colorDepth == 32)         // RGBA
+    if (colorDepth == 8)
     {
         qDebug() << "Color bytes depth: 8";
         m_sixteenBit = false;
     }
-    else if (colorDepth == 48 ||  // RGB
-                colorDepth == 64)    // RGBA
+    else if ((colorDepth > 8) && (colorDepth <= 16))
     {
         qDebug() << "Color bytes depth: 16";
         m_sixteenBit = true;
+        colorMul     = 16 - colorDepth;
     }
     else
     {
@@ -415,6 +416,8 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
         heif_image_handle_release(image_handle);
         return false;
     }
+
+    qDebug() << "Color multiplier:" << colorMul;
 
     if (m_sixteenBit)
     {
@@ -431,7 +434,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     }
 
     uchar* dst              = data;
-    unsigned short* dst16   = nullptr;
+    unsigned short* dst16   = reinterpret_cast<unsigned short*>(data);
     uchar* src              = nullptr;
     unsigned short* src16   = nullptr;
     unsigned int checkPoint = 0;
@@ -450,7 +453,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
                 // Green
                 dst[1] = src[1];
                 // Red
-                dst[2] = src[3];
+                dst[2] = src[0];
 
                 // Alpha
 
@@ -470,17 +473,17 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
             else                // 16 bits image.
             {
                 // Blue
-                dst16[0] = src16[2];
+                dst16[0] = (unsigned short)(src16[2] << colorMul);
                 // Green
-                dst16[1] = src16[1];
+                dst16[1] = (unsigned short)(src16[1] << colorMul);
                 // Red
-                dst16[2] = src16[0];
+                dst16[2] = (unsigned short)(src16[0] << colorMul);
 
                 // Alpha
 
                 if (m_hasAlpha)
                 {
-                    dst16[3] = src16[3];
+                    dst16[3] = (unsigned short)(src16[3] << colorMul);
                     src16   += 4;
                 }
                 else
@@ -512,7 +515,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
 
     imageData() = data;
     imageSetAttribute(QLatin1String("format"),             QLatin1String("HEIF"));
-    imageSetAttribute(QLatin1String("originalColorModel"), colorSpace);
+    imageSetAttribute(QLatin1String("originalColorModel"), colorModel);
     imageSetAttribute(QLatin1String("originalBitDepth"),   m_sixteenBit ? 16 : 8);
     imageSetAttribute(QLatin1String("originalSize"),       QSize(imageWidth(), imageHeight()));
 

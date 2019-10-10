@@ -276,6 +276,16 @@ bool MetaEngine::useXMPSidecar4Reading() const
     return d->useXMPSidecar4Reading;
 }
 
+void MetaEngine::setUseCompatibleFileName(const bool on)
+{
+    d->useCompatibleFileName = on;
+}
+
+bool MetaEngine::useCompatibleFileName() const
+{
+    return d->useCompatibleFileName;
+}
+
 void MetaEngine::setMetadataWritingMode(const int mode)
 {
     d->metadataWritingMode = mode;

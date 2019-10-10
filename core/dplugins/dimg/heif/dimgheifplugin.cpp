@@ -123,7 +123,13 @@ QMap<QString, QString> DImgHEIFPlugin::extraAboutData() const
 {
     QMap<QString, QString> map;
     map.insert(QLatin1String("HEIC"), i18n("High efficiency image coding"));
+    map.insert(QLatin1String("HEIF"), i18n("High efficiency image file format"));
     return map;
+}
+
+bool DImgHEIFPlugin::previewSupported() const
+{
+    return true;
 }
 
 QString DImgHEIFPlugin::loaderName() const
@@ -133,7 +139,7 @@ QString DImgHEIFPlugin::loaderName() const
 
 QString DImgHEIFPlugin::typeMimes() const
 {
-    return QLatin1String("HEIC");
+    return QLatin1String("HEIC HEIF");
 }
 
 bool DImgHEIFPlugin::canRead(const QString& filePath, bool magic) const

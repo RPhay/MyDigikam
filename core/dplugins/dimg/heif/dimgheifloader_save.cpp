@@ -130,7 +130,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     if (!ctx)
     {
-        qWarning() << "Cannot create HEIC context!";
+        qWarning() << "Cannot create HEIF context!";
         return false;
     }
 
@@ -162,13 +162,13 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     // --- Save color profile before to create image data, as converting to color space can be processed at this stage.
 
-    qDebug() << "HEIC set color profile...";
+    qDebug() << "HEIF set color profile...";
 
     saveHEICColorProfile(image);
 
     // --- Add image data
 
-    qDebug() << "HEIC setup data plane...";
+    qDebug() << "HEIF setup data plane...";
 
     error = heif_image_add_plane(image,
                                  heif_channel_interleaved,
@@ -190,14 +190,14 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     if (!data || stride <= 0)
     {
-        qWarning() << "HEIC data pixels information not valid!";
+        qWarning() << "HEIF data pixels information not valid!";
         heif_encoder_release(encoder);
         heif_context_free(ctx);
         return false;
     }
 
-    qDebug() << "HEIC data container:" << data;
-    qDebug() << "HEIC bytes per line:" << stride;
+    qDebug() << "HEIF data container:" << data;
+    qDebug() << "HEIF bytes per line:" << stride;
 
     uint checkpoint           = 0;
     unsigned char r           = 0;
@@ -217,9 +217,9 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     int nbOutputBytesPerColor = (maxOutputBitsDepth > 8) ? (imageHasAlpha() ? 4 * 2 : 3 * 2)  // output data stored on 16 bits
                                                          : (imageHasAlpha() ? 4     : 3    ); // output data stored on 8 bits
 
-    qDebug() << "HEIC output bytes per color:" << nbOutputBytesPerColor;
-    qDebug() << "HEIC 16 to 8 bits coeff.   :" << div16;
-    qDebug() << "HEIC 8 to 16 bits coeff.   :" << mul8;
+    qDebug() << "HEIF output bytes per color:" << nbOutputBytesPerColor;
+    qDebug() << "HEIF 16 to 8 bits coeff.   :" << div16;
+    qDebug() << "HEIF 8 to 16 bits coeff.   :" << mul8;
 
     for (unsigned int y = 0 ; y < imageHeight() ; ++y)
     {
@@ -339,7 +339,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         }
     }
 
-    qDebug() << "HEIC master image encoding...";
+    qDebug() << "HEIF master image encoding...";
 
     // --- encode and write master image
 
@@ -369,7 +369,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     if (qMin(imageWidth(), imageHeight()) > previewSize)
     {
-        qDebug() << "HEIC preview storage...";
+        qDebug() << "HEIF preview storage in thumbnail chunk...";
 
         struct heif_image_handle* thumbnail_handle = nullptr;
 
@@ -397,17 +397,15 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     // --- Add Exif and XMP metadata
 
-    qDebug() << "HEIC metadata storage...";
+    qDebug() << "HEIF metadata storage...";
 
     saveHEICMetadata(ctx, image_handle);
 
     heif_image_handle_release(image_handle);
 
-    // --- TODO: Add thumnail image.
-
     // --- write HEIF file
 
-    qDebug() << "HEIC flush to file...";
+    qDebug() << "HEIF flush to file...";
 
     error = heif_context_write_to_file(ctx, QFile::encodeName(filePath).constData());
 
@@ -442,11 +440,11 @@ bool DImgHEIFLoader::saveHEICColorProfile(struct heif_image* const image)
 
         if (error.code != 0)
         {
-            qWarning() << "Cannot set HEIC color profile!";
+            qWarning() << "Cannot set HEIF color profile!";
             return false;
         }
 
-        qDebug() << "Stored HEIC color profile size:" << profile.size();
+        qDebug() << "Stored HEIF color profile size:" << profile.size();
     }
 #else
     Q_UNUSED(image_handle);
@@ -478,11 +476,11 @@ bool DImgHEIFLoader::saveHEICMetadata(struct heif_context* const heif_context,
 
         if (error.code != 0)
         {
-            qWarning() << "Cannot store HEIC Exif metadata!";
+            qWarning() << "Cannot store HEIF Exif metadata!";
             return false;
         }
 
-        qDebug() << "Stored HEIC Exif data size:" << exif.size();
+        qDebug() << "Stored HEIF Exif data size:" << exif.size();
     }
 
     if (!xmp.isEmpty())
@@ -494,11 +492,11 @@ bool DImgHEIFLoader::saveHEICMetadata(struct heif_context* const heif_context,
 
         if (error.code != 0)
         {
-            qWarning() << "Cannot store HEIC Xmp metadata!";
+            qWarning() << "Cannot store HEIF Xmp metadata!";
             return false;
         }
 
-        qDebug() << "Stored HEIC Xmp data size:" << xmp.size();
+        qDebug() << "Stored HEIF Xmp data size:" << xmp.size();
     }
 
     return true;

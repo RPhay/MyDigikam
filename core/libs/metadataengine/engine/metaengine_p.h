@@ -175,6 +175,7 @@ public:
     bool                                        updateFileTimeStamp;
 
     bool                                        useXMPSidecar4Reading;
+    bool                                        useCompatibleFileName;
 
     /// A mode from #MetadataWritingMode enum.
     int                                         metadataWritingMode;

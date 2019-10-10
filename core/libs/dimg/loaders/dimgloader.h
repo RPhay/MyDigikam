@@ -53,15 +53,26 @@ class DImgLoader
 {
 public:
 
+    /** This is the list of loading modes usable by DImg image plugins
+     */
     enum LoadFlag
     {
-        LoadItemInfo     = 1,
-        LoadMetadata     = 2,
-        LoadICCData      = 4,
-        LoadImageData    = 8,
-        LoadUniqueHash   = 16,
-        LoadImageHistory = 32,
-        LoadPreview      = 64,
+        // Load image information without image data
+
+        LoadItemInfo     = 1,           /// Image info as width and height
+        LoadMetadata     = 2,           /// Image metadata
+        LoadICCData      = 4,           /// Image color profile
+
+        LoadImageData    = 8,           /// Full image data
+        LoadUniqueHash   = 16,          /// Image unique hash
+        LoadImageHistory = 32,          /// Image version history
+        
+        // Special mode to load reduced image data
+        
+        LoadPreview      = 64,          /// Load embeded preview image instead full size image
+        
+        // Helper to load all information, metadata and full image.
+        
         LoadAll          = LoadItemInfo | LoadMetadata | LoadUniqueHash | LoadICCData | LoadImageData | LoadImageHistory
     };
     Q_DECLARE_FLAGS(LoadFlags, LoadFlag)

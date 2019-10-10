@@ -281,9 +281,15 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
     png_read_info(png_ptr, info_ptr);
 
-    png_get_IHDR(png_ptr, info_ptr, (png_uint_32*)(&w32),
-                 (png_uint_32*)(&h32), &bit_depth, &color_type,
-                 &interlace_type, nullptr, nullptr);
+    png_get_IHDR(png_ptr,
+                 info_ptr,
+                 (png_uint_32*)(&w32),
+                 (png_uint_32*)(&h32),
+                 &bit_depth,
+                 &color_type,
+                 &interlace_type,
+                 nullptr,
+                 nullptr);
 
     width  = (int)w32;
     height = (int)h32;
@@ -484,7 +490,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             return false;
         }
 
-        for (int i = 0; i < height; ++i)
+        for (int i = 0 ; i < height ; ++i)
         {
             if (m_sixteenBit)
             {
@@ -501,12 +507,11 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         // The other way to read images is row by row. Necessary for observer.
         // Now we need to deal with interlacing.
 
-        for (int pass = 0; pass < number_passes; ++pass)
+        for (int pass = 0 ; pass < number_passes ; ++pass)
         {
-            int y;
             int checkPoint = 0;
 
-            for (y = 0; y < height; ++y)
+            for (int y = 0 ; y < height ; ++y)
             {
                 if (observer && y == checkPoint)
                 {
@@ -538,11 +543,11 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
             {
                 uchar ptr[8];   // One pixel to swap
 
-                for (int p = 0; p < width * height * 8; p += 8)
+                for (int p = 0 ; p < width * height * 8 ; p += 8)
                 {
                     memcpy(&ptr[0], &data[p], 8);   // Current pixel
 
-                    data[ p ] = ptr[1];  // Blue
+                    data[  p  ] = ptr[1];  // Blue
                     data[p + 1] = ptr[0];
                     data[p + 2] = ptr[3]; // Green
                     data[p + 3] = ptr[2];

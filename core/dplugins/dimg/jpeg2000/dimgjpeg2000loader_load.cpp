@@ -167,7 +167,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
     // -------------------------------------------------------------------
     // Check color space.
 
-    int colorModel;
+    int colorModel = DImg::COLORMODELUNKNOWN;
 
     switch (jas_clrspc_fam(jas_image_clrspc(jp2_image)))
     {
@@ -258,14 +258,14 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
     imageWidth()  = jas_image_width(jp2_image);
     imageHeight() = jas_image_height(jp2_image);
 
-    for (i = 0; i < (long)number_components; ++i)
+    for (i = 0 ; i < (long)number_components ; ++i)
     {
         if ((((jas_image_cmptwidth(jp2_image, components[i])*
                jas_image_cmpthstep(jp2_image, components[i])) != (long)imageWidth()))  ||
             (((jas_image_cmptheight(jp2_image, components[i])*
                jas_image_cmptvstep(jp2_image, components[i])) != (long)imageHeight())) ||
-            (jas_image_cmpttlx(jp2_image, components[i]) != 0)                         ||
-            (jas_image_cmpttly(jp2_image, components[i]) != 0)                         ||
+            (jas_image_cmpttlx(jp2_image, components[i])  != 0)                        ||
+            (jas_image_cmpttly(jp2_image, components[i])  != 0)                        ||
             (jas_image_cmptsgnd(jp2_image, components[i]) != false))
         {
             jas_image_destroy(jp2_image);
@@ -283,11 +283,12 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
     maximum_component_depth = 0;
 
-    for (i = 0; i < (long)number_components; ++i)
+    for (i = 0 ; i < (long)number_components ; ++i)
     {
         maximum_component_depth = qMax((long)jas_image_cmptprec(jp2_image, components[i]),
                                        (long)maximum_component_depth);
-        pixels[i] = jas_matrix_create(1, ((unsigned int)imageWidth()) / x_step[i]);
+
+        pixels[i]               = jas_matrix_create(1, ((unsigned int)imageWidth()) / x_step[i]);
 
         if (!pixels[i])
         {
@@ -351,7 +352,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
         for (y = 0 ; y < (long)imageHeight() ; ++y)
         {
-            for (i = 0 ; i < (long)number_components; ++i)
+            for (i = 0 ; i < (long)number_components ; ++i)
             {
                 int ret = jas_image_readcmpt(jp2_image, (short)components[i], 0,
                                              ((unsigned int) y)            / y_step[i],
@@ -539,7 +540,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
                 {
                     if (jas_stream_flush(icc_stream) == 0)
                     {
-                        jas_stream_memobj_t* blob = (jas_stream_memobj_t*) icc_stream->obj_;
+                        jas_stream_memobj_t* const blob = (jas_stream_memobj_t*) icc_stream->obj_;
                         QByteArray profile_rawdata;
                         profile_rawdata.resize(blob->len_);
                         memcpy(profile_rawdata.data(), blob->buf_, blob->len_);

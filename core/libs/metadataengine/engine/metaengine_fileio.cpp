@@ -44,7 +44,7 @@ QString MetaEngine::getFilePath() const
     return d->filePath;
 }
 
-QString MetaEngine::sidecarFilePathForFile(const QString& path)
+QString MetaEngine::sidecarFilePathForFile(const QString& path, bool useLR)
 {
     if (path.isEmpty())
     {
@@ -56,7 +56,7 @@ QString MetaEngine::sidecarFilePathForFile(const QString& path)
     pathForLR.chop(info.suffix().size());
     pathForLR.append(QLatin1String("xmp"));
 
-    if (QFileInfo::exists(pathForLR))
+    if (useLR || QFileInfo::exists(pathForLR))
     {
         return pathForLR;
     }

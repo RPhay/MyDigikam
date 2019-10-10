@@ -74,6 +74,7 @@ MetaEngine::Private::Private()
     writeRawFiles         = false;
     updateFileTimeStamp   = false;
     useXMPSidecar4Reading = false;
+    useCompatibleFileName = false;
     metadataWritingMode   = WRITE_TO_FILE_ONLY;
     loadedFromSidecar     = false;
     Exiv2::LogMsg::setHandler(MetaEngine::Private::printExiv2MessageHandler);
@@ -134,12 +135,14 @@ void MetaEngine::Private::copyPrivateData(const Private* const other)
     writeRawFiles         = other->writeRawFiles;
     updateFileTimeStamp   = other->updateFileTimeStamp;
     useXMPSidecar4Reading = other->useXMPSidecar4Reading;
+    useCompatibleFileName = other->useCompatibleFileName;
     metadataWritingMode   = other->metadataWritingMode;
 }
 
 bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
 {
-    QString filePath = MetaEngine::sidecarFilePathForFile(finfo.filePath());
+    QString filePath = MetaEngine::sidecarFilePathForFile(finfo.filePath(),
+                                                          useCompatibleFileName);
 
     if (filePath.isEmpty())
     {

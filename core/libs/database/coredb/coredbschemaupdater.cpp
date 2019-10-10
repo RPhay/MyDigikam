@@ -468,13 +468,13 @@ void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, 
 
     // https://en.wikipedia.org/wiki/Image_file_formats
 
-    defaultItemFilter << QLatin1String("jpg") << QLatin1String("jpeg") << QLatin1String("jpe")                                                 // JPEG
-                       << QLatin1String("jp2") << QLatin1String("j2k")  << QLatin1String("jpx") << QLatin1String("jpc") << QLatin1String("pgx") // JPEG-2000
-                       << QLatin1String("tif") << QLatin1String("tiff")                                                                         // TIFF
+    defaultItemFilter << QLatin1String("jpg")   << QLatin1String("jpeg") << QLatin1String("jpe")                                                 // JPEG
+                       << QLatin1String("jp2")  << QLatin1String("j2k")  << QLatin1String("jpx") << QLatin1String("jpc") << QLatin1String("pgx") // JPEG-2000
+                       << QLatin1String("tif")  << QLatin1String("tiff")                                                                         // TIFF
                        << QLatin1String("png")                                                                                                  // PNG
-                       << QLatin1String("gif") << QLatin1String("xpm")  << QLatin1String("ppm") << QLatin1String("pnm") << QLatin1String("pgf")
-                       << QLatin1String("bmp") << QLatin1String("pcx")
-                       << QLatin1String("heic")
+                       << QLatin1String("gif")  << QLatin1String("xpm")  << QLatin1String("ppm") << QLatin1String("pnm") << QLatin1String("pgf")
+                       << QLatin1String("bmp")  << QLatin1String("pcx")
+                       << QLatin1String("heic") << QLatin1String("heif")
                        << QLatin1String("webp");
 
     // Raster graphics editor containers: https://en.wikipedia.org/wiki/Raster_graphics_editor

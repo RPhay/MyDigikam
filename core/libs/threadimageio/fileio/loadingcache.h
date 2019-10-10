@@ -75,6 +75,7 @@ public:
 
     virtual ~LoadingCacheFileWatch();
     /// Called by the thread when a new entry is added to the cache
+    virtual void removeFile(const QString& filePath);
     virtual void addedImage(const QString& filePath);
     virtual void addedThumbnail(const QString& filePath);
 
@@ -107,6 +108,7 @@ public:
 
     ClassicLoadingCacheFileWatch();
     ~ClassicLoadingCacheFileWatch();
+    virtual void removeFile(const QString& filePath) override;
     virtual void addedImage(const QString& filePath) override;
     virtual void addedThumbnail(const QString& filePath) override;
 
@@ -122,7 +124,6 @@ Q_SIGNALS:
 protected:
 
     QFileSystemWatcher* m_watch;
-    QSet<QString>       m_watchedFiles;
 };
 
 // --------------------------------------------------------------------------------------------------------------
@@ -262,6 +263,11 @@ public:
     void setFileWatch(LoadingCacheFileWatch* const watch);
 
     /**
+     * Remove file from LoadingCacheFileWatch.
+     */
+    void removeFromFileWatch(const QString& filePath);
+
+    /**
      * Returns a list of all possible file paths in cache.
      */
     QStringList imageFilePathsInCache()     const;
@@ -281,13 +287,6 @@ Q_SIGNALS:
      * The signal may be emitted under CacheLock. Strongly consider a queued connection.
      */
     void fileChanged(const QString& filePath);
-
-    /**
-     * This signal is emitted when the cache is notified that a file was changed,
-     * and the given cache key was removed from the cache.
-     * The signal may be emitted under CacheLock. Strongly consider a queued connection.
-     */
-    void fileChanged(const QString& filePath, const QString& cacheKey);
 
 private Q_SLOTS:
 

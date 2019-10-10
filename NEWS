@@ -61,4 +61,9 @@ BUGFIXES:
 043 ==> 412442 - Website points to obsolete versions.
 044 ==> 411027 - image files *.heic from iphones do not show up in digikam thumbnails although ther are find in MS file browser.
 045 ==> 412574 - New images are not recognized when externally added to a DK folder.
-046 ==> 
+046 ==> 195583 - FILEIO : read header metadata from JPEG2000 files with Exiv2.
+047 ==> 116225 - JPEG compression quality should be shown in Properties.
+048 ==> 405232 - digiKam crashes in Slideshow and Presentation.
+049 ==> 412730 - Main window double resolution on retina after dialog is open.
+050 ==> 412728 - MacOS: Image editor tools for colour adjustment incorrectly apply crop automatically and cut out most of the image.
+051 ==> 
