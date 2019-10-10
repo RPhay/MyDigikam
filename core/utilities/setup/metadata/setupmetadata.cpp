@@ -578,7 +578,7 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->sidecarFileNameBox = new QCheckBox;
     d->sidecarFileNameBox->setText(i18nc("@option:check", "Use a compatible file name for writing to sidecars files"));
     d->sidecarFileNameBox->setWhatsThis(i18nc("@info:whatsthis",
-                                              "Turn on this option to write the sidecar files with a compatible "
+                                              "Turn on this option to create the XMP sidecar files with a compatible "
                                               "file name (BASENAME.xmp) used by many commercial programs."));
 
     connect(d->writeXMPSidecarBox, SIGNAL(toggled(bool)),
