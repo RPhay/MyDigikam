@@ -580,9 +580,13 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->sidecarFileNameBox->setWhatsThis(i18nc("@info:whatsthis",
                                               "Turn on this option to create the XMP sidecar files with a compatible "
                                               "file name (BASENAME.xmp) used by many commercial programs."));
+    d->sidecarFileNameBox->setEnabled(false);
 
     connect(d->writeXMPSidecarBox, SIGNAL(toggled(bool)),
             d->writingModeCombo, SLOT(setEnabled(bool)));
+
+    connect(d->writeXMPSidecarBox, SIGNAL(toggled(bool)),
+            d->sidecarFileNameBox, SLOT(setEnabled(bool)));
 
     rwSidecarsLayout->addWidget(rwSidecarsLabel,       0, 0, 1, 3);
     rwSidecarsLayout->addWidget(d->readXMPSidecarBox,  1, 0, 1, 3);
