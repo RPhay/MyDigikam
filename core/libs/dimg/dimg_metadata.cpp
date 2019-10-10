@@ -125,7 +125,7 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
     // Get image Exif/IPTC data.
     DMetadata meta(getMetadata());
 
-    qCDebug(DIGIKAM_DIMG_LOG) << "Prepare Metadata to save for" << originalFileName;
+    qCDebug(DIGIKAM_DIMG_LOG) << "Prepare Metadata to save for" << intendedDestPath;
 
     if (flags & RemoveOldMetadataPreviews || flags & CreateNewMetadataPreview)
     {
