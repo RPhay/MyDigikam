@@ -230,12 +230,11 @@ bool DImgHEIFLoader::readHEICMetadata(struct heif_image_handle* const image_hand
 
                 size_t length = heif_image_handle_get_metadata_size(image_handle, dataIds[i]);
 
-                QByteArray iptcChunk;
-                iptcChunk.resize(length);
+                iptc.resize(length);
 
                 struct heif_error error = heif_image_handle_get_metadata(image_handle,
                                                                          dataIds[i],
-                                                                         iptcChunk.data());
+                                                                         iptc.data());
 
                 if (error.code == 0)
                 {
