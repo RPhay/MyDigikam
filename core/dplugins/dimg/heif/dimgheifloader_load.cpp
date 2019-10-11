@@ -274,7 +274,7 @@ bool DImgHEIFLoader::readHEICMetadata(struct heif_image_handle* const image_hand
         }
     }
 
-    if (!exif.isEmpty() || !xmp.isEmpty())
+    if (!exif.isEmpty() || !iptc.isEmpty() || !xmp.isEmpty())
     {
         MetaEngine meta;
 
