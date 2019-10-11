@@ -576,13 +576,18 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->writingModeCombo->setEnabled(false);
 
     d->sidecarFileNameBox = new QCheckBox;
-    d->sidecarFileNameBox->setText(i18nc("@option:check", "Use compatible file name (BASENAME.xmp) for sidecar files"));
+    d->sidecarFileNameBox->setText(i18nc("@option:check", "Use a compatible file name for writing to sidecar files"));
     d->sidecarFileNameBox->setWhatsThis(i18nc("@info:whatsthis",
-                                              "Turn on this option to create the sidecar files in a compatible "
-                                              "file name format of many commercial programs."));
+                                              "Turn on this option to create the XMP sidecar files with a compatible "
+                                              "file name (BASENAME.xmp) used by many commercial programs. "
+                                              "For Darktable do not enable this option."));
+    d->sidecarFileNameBox->setEnabled(false);
 
     connect(d->writeXMPSidecarBox, SIGNAL(toggled(bool)),
             d->writingModeCombo, SLOT(setEnabled(bool)));
+
+    connect(d->writeXMPSidecarBox, SIGNAL(toggled(bool)),
+            d->sidecarFileNameBox, SLOT(setEnabled(bool)));
 
     rwSidecarsLayout->addWidget(rwSidecarsLabel,       0, 0, 1, 3);
     rwSidecarsLayout->addWidget(d->readXMPSidecarBox,  1, 0, 1, 3);

@@ -32,7 +32,7 @@ QTEST_MAIN(SetIptcPreviewTest)
 
 void SetIptcPreviewTest::testSetIptcPreview()
 {
-    setIptcPreview(m_originalImageFolder + QLatin1String("2015-07-22_00001.JPG"));
+    setIptcPreview(m_originalImageFolder + QLatin1String("Luftbild_H6_7.tif"));
 }
 
 void SetIptcPreviewTest::setIptcPreview(const QString& file)

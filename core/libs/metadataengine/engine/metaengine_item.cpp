@@ -1130,6 +1130,9 @@ bool MetaEngine::getItemPreview(QImage& preview) const
         if (preview.loadFromData(getIptcTagData("Iptc.Application2.Preview")) )
             return true;
 
+        if (preview.loadFromData(QByteArray::fromBase64(getXmpTagString("Xmp.digiKam.Preview", false).toUtf8())))
+            return true;
+
         // TODO : Added here Makernotes preview extraction when Exiv2 will be fixed for that.
     }
     catch(Exiv2::AnyError& e)
@@ -1151,6 +1154,7 @@ bool MetaEngine::setItemPreview(const QImage& preview) const
         removeIptcTag("Iptc.Application2.Preview");
         removeIptcTag("Iptc.Application2.PreviewFormat");
         removeIptcTag("Iptc.Application2.PreviewVersion");
+        removeXmpTag("Xmp.digiKam.Preview");
         return true;
     }
 
@@ -1175,6 +1179,8 @@ bool MetaEngine::setItemPreview(const QImage& preview) const
         // See http://www.iptc.org/std/IIM/4.1/specification/IIMV4.1.pdf Appendix A for details.
         d->iptcMetadata()["Iptc.Application2.PreviewFormat"]  = 11;  // JPEG
         d->iptcMetadata()["Iptc.Application2.PreviewVersion"] = 1;
+
+        setXmpTagString("Xmp.digiKam.Preview", QString::fromUtf8(data.toBase64()));
 
         return true;
     }

@@ -2240,12 +2240,12 @@ bool EditorWindow::checkOverwrite(const QUrl& url)
 
 bool EditorWindow::moveLocalFile(const QString& org, const QString& dst)
 {
-    QString sidecarOrg = DMetadata::sidecarFilePathForFile(org);
+    QString sidecarOrg = DMetadata::sidecarPath(org);
     QString source     = m_savingContext.srcURL.toLocalFile();
 
-    if (QFileInfo(sidecarOrg).exists())
+    if (QFileInfo::exists(sidecarOrg))
     {
-        QString sidecarDst = DMetadata::sidecarFilePathForFile(dst);
+        QString sidecarDst = DMetadata::sidecarPath(dst);
 
         if (!DFileOperations::localFileRename(source, sidecarOrg, sidecarDst))
         {
