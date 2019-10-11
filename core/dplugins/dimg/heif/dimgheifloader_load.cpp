@@ -175,6 +175,7 @@ bool DImgHEIFLoader::readHEICMetadata(struct heif_image_handle* const image_hand
 {
     heif_item_id dataIds[10];
     QByteArray exif;
+    QByteArray iptc;
     QByteArray xmp;
 
     int count = heif_image_handle_get_list_of_metadata_block_IDs(image_handle,
@@ -182,10 +183,14 @@ bool DImgHEIFLoader::readHEICMetadata(struct heif_image_handle* const image_hand
                                                                  dataIds,
                                                                  10);
 
+    qDebug() << "Found" << count << "HEIF metadata chunck";
+
     if (count > 0)
     {
         for (int i = 0 ; i < count ; ++i)
         {
+            qDebug() << "Parsing HEIF metadata chunck:" << heif_image_handle_get_metadata_type(image_handle, dataIds[i]);
+
             if (QLatin1String(heif_image_handle_get_metadata_type(image_handle, dataIds[i])) == QLatin1String("Exif"))
             {
                 // Read Exif chunk.
@@ -219,6 +224,29 @@ bool DImgHEIFLoader::readHEICMetadata(struct heif_image_handle* const image_hand
                 }
             }
 
+            if (QLatin1String(heif_image_handle_get_metadata_type(image_handle, dataIds[i])) == QLatin1String("iptc"))
+            {
+                // Read Iptc chunk.
+
+                size_t length = heif_image_handle_get_metadata_size(image_handle, dataIds[i]);
+
+                QByteArray iptcChunk;
+                iptcChunk.resize(length);
+
+                struct heif_error error = heif_image_handle_get_metadata(image_handle,
+                                                                         dataIds[i],
+                                                                         iptcChunk.data());
+
+                if (error.code == 0)
+                {
+                    qDebug() << "HEIF iptc container found with size:" << length;
+                }
+                else
+                {
+                    iptc = QByteArray();
+                }
+            }
+
             if (
                 (QLatin1String(heif_image_handle_get_metadata_type(image_handle, dataIds[i]))         == QLatin1String("mime")) &&
                 (QLatin1String(heif_image_handle_get_metadata_content_type(image_handle, dataIds[i])) == QLatin1String("application/rdf+xml"))
@@ -234,7 +262,7 @@ bool DImgHEIFLoader::readHEICMetadata(struct heif_image_handle* const image_hand
                                                                          dataIds[i],
                                                                          xmp.data());
 
-                if ((error.code == 0))
+                if (error.code == 0)
                 {
                     qDebug() << "HEIF xmp container found with size:" << length;
                 }
@@ -252,6 +280,9 @@ bool DImgHEIFLoader::readHEICMetadata(struct heif_image_handle* const image_hand
 
         if (!exif.isEmpty())
             meta.setExif(exif);
+
+        if (!iptc.isEmpty())
+            meta.setIptc(iptc);
 
         if (!xmp.isEmpty())
             meta.setXmp(xmp);

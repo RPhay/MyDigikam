@@ -459,12 +459,13 @@ bool DImgHEIFLoader::saveHEICMetadata(struct heif_context* const heif_context,
 {
     MetaEngine meta(m_image->getMetadata());
 
-    if (!meta.hasExif() && !meta.hasXmp())
+    if (!meta.hasExif() && !meta.hasIptc() && !meta.hasXmp())
     {
         return false;
     }
 
     QByteArray exif = meta.getExifEncoded();
+    QByteArray iptc = meta.getIptc();
     QByteArray xmp  = meta.getXmp();
     struct heif_error error;
 
@@ -482,6 +483,24 @@ bool DImgHEIFLoader::saveHEICMetadata(struct heif_context* const heif_context,
         }
 
         qDebug() << "Stored HEIF Exif data size:" << exif.size();
+    }
+
+    if (!iptc.isEmpty())
+    {
+        error = heif_context_add_generic_metadata(heif_context,
+                                                  image_handle,
+                                                  iptc.data(),
+                                                  iptc.size(),
+                                                  "iptc",
+                                                  nullptr);
+
+        if (error.code != 0)
+        {
+            qWarning() << "Cannot store HEIF Iptc metadata!";
+            return false;
+        }
+
+        qDebug() << "Stored HEIF Iptc data size:" << iptc.size();
     }
 
     if (!xmp.isEmpty())
