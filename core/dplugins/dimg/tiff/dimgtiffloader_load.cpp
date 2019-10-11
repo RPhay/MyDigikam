@@ -523,7 +523,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     {
                         p = dataPtr;
 
-                        switch ((st / (num_of_strips / (samples_per_pixel != 0) ? samples_per_pixel : 1)))
+                        switch (st / (num_of_strips / ((samples_per_pixel != 0) ? samples_per_pixel : 1)))
                         {
                             case 0:
                                 p[2] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);

@@ -71,6 +71,7 @@ int DImgHEIFLoader::x265MaxBitsDepth()
 
 #endif
 
+    // cppcheck-suppress knownConditionTrueFalse
     if (maxOutputBitsDepth == -1)
     {
         qWarning() << "Cannot get max supported HEVC encoder bits depth!";
