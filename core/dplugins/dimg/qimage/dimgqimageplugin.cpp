@@ -38,7 +38,6 @@
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "dimgqimageloader.h"
-#include "drawdecoder.h"
 
 namespace DigikamQImageDImgPlugin
 {
@@ -107,28 +106,6 @@ QString DImgQImagePlugin::typeMimes() const
 
     qDebug(DIGIKAM_DIMG_LOG_QIMAGE) << "QImage support this formats:" << formats;
 
-    formats.removeAll(QByteArray("JPEG"));  // JPEG file format
-    formats.removeAll(QByteArray("JPG"));   // JPEG file format
-    formats.removeAll(QByteArray("JPE"));   // JPEG file format
-    formats.removeAll(QByteArray("PNG"));
-    formats.removeAll(QByteArray("TIFF"));
-    formats.removeAll(QByteArray("TIF"));
-    formats.removeAll(QByteArray("PGF"));
-    formats.removeAll(QByteArray("JP2"));   // JPEG2000 file format
-    formats.removeAll(QByteArray("JPX"));   // JPEG2000 file format
-    formats.removeAll(QByteArray("JPC"));   // JPEG2000 code stream
-    formats.removeAll(QByteArray("J2K"));   // JPEG2000 code stream
-    formats.removeAll(QByteArray("PGX"));   // JPEG2000 WM format
-    formats.removeAll(QByteArray("HEIC"));
-    formats.removeAll(QByteArray("HEIF"));
-
-    QString rawFilesExt = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();
-
-    foreach (const QString& str, rawFilesExt.split(QLatin1Char(' ')))
-    {
-        formats.removeAll(str.toLatin1());             // All Raw image formats
-    }
-
     QString ret;
 
     foreach (const QByteArray& ba, formats)
@@ -163,11 +140,7 @@ int DImgQImagePlugin::canRead(const QString& filePath, bool magic) const
             return 0;
         }
 
-        QString format    = fileInfo.suffix().toUpper();
-        QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();       // Ignore RAW files
-        blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC HEIF ")); // Ignore native loaders
-
-        return (!blackList.toUpper().contains(format)) ? 50 : 0;
+        return 50;
     }
 
     return 0;
@@ -175,17 +148,6 @@ int DImgQImagePlugin::canRead(const QString& filePath, bool magic) const
 
 int DImgQImagePlugin::canWrite(const QString& format) const
 {
-    QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();      // Ignore RAW files
-    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC HEIF")); // Ignore native loaders
-
-    if (blackList.toUpper().contains(format))
-    {
-        return 0;
-    }
-
-    // NOTE: Native loaders support are previously black-listed.
-    // For ex, if tiff is supported in write mode by QImage it will never be handled.
-
     QList<QByteArray> formats = QImageWriter::supportedImageFormats();
 
     foreach (const QByteArray& ba, formats)

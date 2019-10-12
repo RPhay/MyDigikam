@@ -145,11 +145,11 @@ public:
 
                 if (plug && ((prio = plug->canRead(filePath, magic)) > 0))
                 {
-                    /*
+                    ///*
                     qCDebug(DIGIKAM_DIMG_LOG) << "File path:" << filePath
                                               << "Priority:" << prio
                                               << "Loader:" << plug->loaderName();
-                    */
+                    //*/
                     pluginMap.insertMulti(prio, plug);
                 }
             }
@@ -158,24 +158,29 @@ public:
         return pluginMap.values();
     }
 
-    static DPluginDImg* pluginForFormat(const QString& format, QString& name)
+    static DPluginDImg* pluginForFormat(const QString& format)
     {
+        QMap<int, DPluginDImg*> pluginMap;
+
         if (!format.isNull())
         {
             foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
             {
+                int prio;
                 DPluginDImg* const plug = dynamic_cast<DPluginDImg*>(p);
 
-                if (plug && (plug->canWrite(format) > 0))
+                if (plug && ((prio = plug->canWrite(format)) > 0))
                 {
-                    name = plug->loaderName();
-
-                    return plug;
+                    pluginMap.insertMulti(prio, plug);
                 }
             }
         }
 
-        name   = QString();
+        if (!pluginMap.isEmpty())
+        {
+            return pluginMap.first();
+        }
+
         return nullptr;
     }
 
