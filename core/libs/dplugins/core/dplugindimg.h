@@ -96,13 +96,19 @@ public:
      */
     virtual bool previewSupported() const { return false; };
 
-    /** Return true if source file path is supported by the loader and contents can be loaded.
+    /** Return > 0 if source file path is supported by the loader and contents can be loaded.
+     *  The return value (1 - 100) is a priority.
+     *  DigiKam default loaders have a priority of 10.
+     *  ImageMagick and QImage loaders have a priority of 50.
+     *  If the loader is to be used before the default loader,
+     *  the value must be less than 10.
      */
-    virtual bool canRead(const QString& filePath, bool magic) const = 0;
+    virtual int canRead(const QString& filePath, bool magic) const = 0;
 
-    /** Return true if target file format is supported by the loader and contents can be written.
+    /** Return > 0 if target file format is supported by the loader and contents can be written.
+     *  The return value (1 - 100) is a priority.
      */
-    virtual bool canWrite(const QString& format) const = 0;
+    virtual int canWrite(const QString& format) const = 0;
 
     /** Return the image loader instance for the DImg instance.
      */

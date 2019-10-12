@@ -139,14 +139,14 @@ QString DImgQImagePlugin::typeMimes() const
     return ret;
 }
 
-bool DImgQImagePlugin::canRead(const QString& filePath, bool magic) const
+int DImgQImagePlugin::canRead(const QString& filePath, bool magic) const
 {
     QFileInfo fileInfo(filePath);
 
     if (!fileInfo.exists())
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return false;
+        return 0;
     }
 
     if (!magic)
@@ -160,27 +160,27 @@ bool DImgQImagePlugin::canRead(const QString& filePath, bool magic) const
             mimeType.startsWith(QLatin1String("audio/"))
            )
         {
-            return false;
+            return 0;
         }
 
         QString format    = fileInfo.suffix().toUpper();
         QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();       // Ignore RAW files
         blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC HEIF ")); // Ignore native loaders
 
-        return (!blackList.toUpper().contains(format));
+        return (!blackList.toUpper().contains(format)) ? 50 : 0;
     }
 
-    return false;
+    return 0;
 }
 
-bool DImgQImagePlugin::canWrite(const QString& format) const
+int DImgQImagePlugin::canWrite(const QString& format) const
 {
     QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();      // Ignore RAW files
     blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC HEIF")); // Ignore native loaders
 
     if (blackList.toUpper().contains(format))
     {
-        return false;
+        return 0;
     }
 
     // NOTE: Native loaders support are previously black-listed.
@@ -192,11 +192,11 @@ bool DImgQImagePlugin::canWrite(const QString& format) const
     {
         if (QString::fromUtf8(ba).toUpper().contains(format.toUpper()))
         {
-            return true;
+            return 50;
         }
     }
 
-    return false;
+    return 0;
 }
 
 DImgLoader* DImgQImagePlugin::loader(DImg* const image, const DRawDecoding&) const

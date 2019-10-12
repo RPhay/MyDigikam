@@ -122,14 +122,14 @@ QString DImgRAWPlugin::typeMimes() const
     return QString(DRawDecoder::rawFiles()).toUpper().remove(QLatin1String("*."));
 }
 
-bool DImgRAWPlugin::canRead(const QString& filePath, bool magic) const
+int DImgRAWPlugin::canRead(const QString& filePath, bool magic) const
 {
     QFileInfo fileInfo(filePath);
 
     if (!fileInfo.exists())
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return false;
+        return 0;
     }
 
     if (!magic)
@@ -137,16 +137,16 @@ bool DImgRAWPlugin::canRead(const QString& filePath, bool magic) const
         QString ext         = fileInfo.suffix().toUpper();
         QString rawFilesExt = DRawDecoder::rawFiles();
 
-        return (rawFilesExt.toUpper().contains(ext));
+        return (rawFilesExt.toUpper().contains(ext)) ? 10 : 0;
     }
 
-    return false;
+    return 0;
 }
 
-bool DImgRAWPlugin::canWrite(const QString& /*format*/) const
+int DImgRAWPlugin::canWrite(const QString& /*format*/) const
 {
     // NOTE: Raw are read only files.
-    return false;
+    return 0;
 }
 
 DImgLoader* DImgRAWPlugin::loader(DImg* const image, const DRawDecoding& rawSettings) const

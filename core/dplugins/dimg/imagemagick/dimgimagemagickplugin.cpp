@@ -216,14 +216,14 @@ QString DImgImageMagickPlugin::typeMimes() const
     return ret;
 }
 
-bool DImgImageMagickPlugin::canRead(const QString& filePath, bool magic) const
+int DImgImageMagickPlugin::canRead(const QString& filePath, bool magic) const
 {
     QFileInfo fileInfo(filePath);
 
     if (!fileInfo.exists())
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return false;
+        return 0;
     }
 
     if (!magic)
@@ -237,7 +237,7 @@ bool DImgImageMagickPlugin::canRead(const QString& filePath, bool magic) const
             mimeType.startsWith(QLatin1String("audio/"))
            )
         {
-            return false;
+            return 0;
         }
 
         QString format    = fileInfo.suffix().toUpper();
@@ -246,7 +246,7 @@ bool DImgImageMagickPlugin::canRead(const QString& filePath, bool magic) const
 
         if (blackList.toUpper().contains(format))
         {
-            return false;
+            return 0;
         }
 
         QStringList formats;
@@ -257,7 +257,7 @@ bool DImgImageMagickPlugin::canRead(const QString& filePath, bool magic) const
         if (!inflst)
         {
             qWarning() << "ImageMagick coders list is null!";
-            return false;
+            return 0;
         }
 
         for (uint i = 0 ; i < n ; ++i)
@@ -274,20 +274,20 @@ bool DImgImageMagickPlugin::canRead(const QString& filePath, bool magic) const
             }
         }
 
-        return (formats.contains(format));
+        return (formats.contains(format)) ? 50 : 0;
     }
 
-    return false;
+    return 0;
 }
 
-bool DImgImageMagickPlugin::canWrite(const QString& format) const
+int DImgImageMagickPlugin::canWrite(const QString& format) const
 {
     QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();       // Ignore RAW files
     blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC HEIF ")); // Ignore native loaders
 
     if (blackList.toUpper().contains(format))
     {
-        return false;
+        return 0;
     }
 
     // NOTE: Native loaders support are previously black-listed.
@@ -301,7 +301,7 @@ bool DImgImageMagickPlugin::canWrite(const QString& format) const
     if (!inflst)
     {
         qWarning() << "ImageMagick coders list is null!";
-        return false;
+        return 0;
     }
 
     for (uint i = 0 ; i < n ; ++i)
@@ -320,10 +320,10 @@ bool DImgImageMagickPlugin::canWrite(const QString& format) const
 
     if (!formats.contains(format))
     {
-        return false;
+        return 0;
     }
 
-    return true;
+    return 50;
 }
 
 DImgLoader* DImgImageMagickPlugin::loader(DImg* const image, const DRawDecoding&) const

@@ -145,9 +145,9 @@ public:
 /*
                     qCDebug(DIGIKAM_DIMG_LOG) << filePath << "=>"
                                               << plug->loaderName() << ":: can read:"
-                                              << plug->canRead(filePath);
+                                              << plug->canRead(filePath, magic);
 */
-                    if (plug->canRead(filePath, magic))
+                    if (plug->canRead(filePath, magic) > 0)
                     {
                         name = plug->loaderName();
 
@@ -208,7 +208,7 @@ public:
             {
                 DPluginDImg* const plug = dynamic_cast<DPluginDImg*>(p);
 
-                if (plug && (plug->canWrite(format)))
+                if (plug && (plug->canWrite(format) > 0))
                 {
                     name = plug->loaderName();
 

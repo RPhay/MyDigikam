@@ -142,14 +142,14 @@ QString DImgHEIFPlugin::typeMimes() const
     return QLatin1String("HEIC HEIF");
 }
 
-bool DImgHEIFPlugin::canRead(const QString& filePath, bool magic) const
+int DImgHEIFPlugin::canRead(const QString& filePath, bool magic) const
 {
     QFileInfo fileInfo(filePath);
 
     if (!fileInfo.exists())
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return false;
+        return 0;
     }
 
     // First simply check file extension
@@ -158,7 +158,7 @@ bool DImgHEIFPlugin::canRead(const QString& filePath, bool magic) const
     {
         QString ext = fileInfo.suffix().toUpper();
 
-        return (ext == QLatin1String("HEIC"));
+        return (ext == QLatin1String("HEIC")) ? 10 : 0;
     }
 
     // In second, we trying to parse file header.
@@ -168,7 +168,7 @@ bool DImgHEIFPlugin::canRead(const QString& filePath, bool magic) const
     if (!f)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Failed to open file " << filePath;
-        return false;
+        return 0;
     }
 
     const int headerLen = 12;
@@ -179,7 +179,7 @@ bool DImgHEIFPlugin::canRead(const QString& filePath, bool magic) const
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Failed to read header of file " << filePath;
         fclose(f);
-        return false;
+        return 0;
     }
 
     fclose(f);
@@ -189,21 +189,21 @@ bool DImgHEIFPlugin::canRead(const QString& filePath, bool magic) const
         (memcmp(&header[8], "heix", 4) == 0) ||
         (memcmp(&header[8], "mif1", 4) == 0))
     {
-        return true;
+        return 10;
     }
 
-    return false;
+    return 0;
 }
 
-bool DImgHEIFPlugin::canWrite(const QString& format) const
+int DImgHEIFPlugin::canWrite(const QString& format) const
 {
 #ifdef HAVE_X265
     if (format.toUpper() == QLatin1String("HEIC"))
     {
-        return true;
+        return 10;
     }
 #endif
-    return false;
+    return 0;
 }
 
 DImgLoader* DImgHEIFPlugin::loader(DImg* const image, const DRawDecoding&) const

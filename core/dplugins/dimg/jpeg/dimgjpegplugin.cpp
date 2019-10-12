@@ -112,14 +112,14 @@ QString DImgJPEGPlugin::typeMimes() const
     return QLatin1String("JPG JPEG JPE");
 }
 
-bool DImgJPEGPlugin::canRead(const QString& filePath, bool magic) const
+int DImgJPEGPlugin::canRead(const QString& filePath, bool magic) const
 {
     QFileInfo fileInfo(filePath);
 
     if (!fileInfo.exists())
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return false;
+        return 0;
     }
 
     // First simply check file extension
@@ -128,7 +128,11 @@ bool DImgJPEGPlugin::canRead(const QString& filePath, bool magic) const
     {
         QString ext = fileInfo.suffix().toUpper();
 
-        return (ext == QLatin1String("JPEG") || ext == QLatin1String("JPG") || ext == QLatin1String("JPE"));
+        return (
+                ext == QLatin1String("JPEG") ||
+                ext == QLatin1String("JPG")  ||
+                ext == QLatin1String("JPE")
+               ) ? 10 : 0;
     }
 
     // In second, we trying to parse file header.
@@ -138,7 +142,7 @@ bool DImgJPEGPlugin::canRead(const QString& filePath, bool magic) const
     if (!f)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Failed to open file " << filePath;
-        return false;
+        return 0;
     }
 
     const int headerLen = 9;
@@ -158,20 +162,22 @@ bool DImgJPEGPlugin::canRead(const QString& filePath, bool magic) const
 
     if (memcmp(&header, &jpegID, 2) == 0)
     {
-        return true;
+        return 10;
     }
 
-    return false;
+    return 0;
 }
 
-bool DImgJPEGPlugin::canWrite(const QString& format) const
+int DImgJPEGPlugin::canWrite(const QString& format) const
 {
-    if ((format == QLatin1String("JPEG") || format == QLatin1String("JPG") || format == QLatin1String("JPE")))
+    if (format == QLatin1String("JPEG") ||
+        format == QLatin1String("JPG")  ||
+        format == QLatin1String("JPE"))
     {
-        return true;
+        return 10;
     }
 
-    return false;
+    return 0;
 }
 
 DImgLoader* DImgJPEGPlugin::loader(DImg* const image, const DRawDecoding&) const
