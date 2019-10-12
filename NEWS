@@ -69,4 +69,5 @@ BUGFIXES:
 051 ==> 412777 - DigiKam+MySQL: Failed to create database tables.
 052 ==> 412854 - Digikam Impossible to select "write metadata in Raw files" in configuration menu.
 053 ==> 411480 - Problems with database migration on remote host.
-054 ==> 
+054 ==> 412880 - Since version 6.2.0 video thumbnails are generated from the very first scene of the movie files.
+055 ==> 

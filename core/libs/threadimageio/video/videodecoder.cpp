@@ -182,7 +182,8 @@ void VideoDecoder::seek(int timeInSeconds)
         timestamp = 0;
     }
 
-    int ret = av_seek_frame(d->pFormatContext, -1, timestamp, 0);
+    int ret = av_seek_frame(d->pFormatContext, -1, timestamp,
+                            AVSEEK_FLAG_FRAME | AVSEEK_FLAG_BACKWARD);
 
     if (ret >= 0)
     {
@@ -195,12 +196,12 @@ void VideoDecoder::seek(int timeInSeconds)
     }
 
     int keyFrameAttempts = 0;
-    bool gotFrame        = 0;
+    bool gotFrame        = false;
 
     do
     {
         int count = 0;
-        gotFrame  = 0;
+        gotFrame  = false;
 
         while (!gotFrame && count < 20)
         {
@@ -214,7 +215,7 @@ void VideoDecoder::seek(int timeInSeconds)
     while ((!gotFrame || !d->pFrame->key_frame) &&
             keyFrameAttempts < 200);
 
-    if (gotFrame == 0)
+    if (!gotFrame)
     {
         qDebug(DIGIKAM_GENERAL_LOG) << "Seeking in video failed";
     }
