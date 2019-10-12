@@ -136,11 +136,11 @@ int DImgQImagePlugin::canRead(const QString& filePath, bool magic) const
             return 0;
         }
 
-        QString format = fileInfo.suffix();
+        QString format = fileInfo.suffix().toUpper();
 
         foreach (const QByteArray& ba, QImageReader::supportedImageFormats())
         {
-            if (QString::fromUtf8(ba).toUpper() == format.toUpper())
+            if (QString::fromUtf8(ba).toUpper() == format)
             {
                 return 50;
             }

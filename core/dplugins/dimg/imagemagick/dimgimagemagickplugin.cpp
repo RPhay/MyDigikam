@@ -291,9 +291,9 @@ int DImgImageMagickPlugin::canWrite(const QString& format) const
         }
     }
 
-    if (formats.contains(format))
+    if (formats.contains(format.toUpper()))
     {
-        if (format == QLatin1String("WEBP"))
+        if (format.toUpper() == QLatin1String("WEBP"))
         {
             return 40;
         }

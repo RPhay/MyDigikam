@@ -193,7 +193,6 @@ bool DImg::load(const QString& filePath,
         !(loadFlags & DImgLoader::LoadPreview))
     {
         qCWarning(DIGIKAM_DIMG_LOG) << filePath << ": Cannot load file !!!";
-        return false;
     }
 
     return false;
