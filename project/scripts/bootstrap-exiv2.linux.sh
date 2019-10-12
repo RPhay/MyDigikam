@@ -25,6 +25,7 @@ export Exiv2Options='-DBUILD_SHARED_LIBS=ON \
                      -DEXIV2_ENABLE_XMP=ON \
                      -DEXIV2_ENABLE_EXTERNAL_XMP=OFF \
                      -DEXIV2_ENABLE_PNG=ON \
+                     -DEXIV2_ENABLE_HEIF=ON \
                      -DEXIV2_ENABLE_NLS=ON \
                      -DEXIV2_ENABLE_PRINTUCS2=ON \
                      -DEXIV2_ENABLE_LENSDATA=ON \
@@ -35,7 +36,7 @@ export Exiv2Options='-DBUILD_SHARED_LIBS=ON \
                      -DEXIV2_ENABLE_SSH=OFF \
                      -DEXIV2_BUILD_SAMPLES=OFF \
                      -DEXIV2_BUILD_PO=OFF \
-                     -DEXIV2_BUILD_EXIV2_COMMAND=OFF \
+                     -DEXIV2_BUILD_EXIV2_COMMAND=ON \
                      -DEXIV2_BUILD_UNIT_TESTS=OFF \
                      -DEXIV2_BUILD_DOC=OFF \
                      -DEXIV2_TEAM_EXTRA_WARNINGS=OFF \
