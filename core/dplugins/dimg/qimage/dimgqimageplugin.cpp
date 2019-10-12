@@ -102,13 +102,9 @@ QString DImgQImagePlugin::loaderName() const
 
 QString DImgQImagePlugin::typeMimes() const
 {
-    QList<QByteArray> formats = QImageReader::supportedImageFormats();
-
-    qDebug(DIGIKAM_DIMG_LOG_QIMAGE) << "QImage support this formats:" << formats;
-
     QString ret;
 
-    foreach (const QByteArray& ba, formats)
+    foreach (const QByteArray& ba, QImageReader::supportedImageFormats())
     {
         ret += QString::fromUtf8("%1 ").arg(QString::fromUtf8(ba).toUpper());
     }
@@ -140,7 +136,15 @@ int DImgQImagePlugin::canRead(const QString& filePath, bool magic) const
             return 0;
         }
 
-        return 50;
+        QString format = fileInfo.suffix();
+
+        foreach (const QByteArray& ba, QImageReader::supportedImageFormats())
+        {
+            if (QString::fromUtf8(ba).toUpper() == format.toUpper())
+            {
+                return 50;
+            }
+        }
     }
 
     return 0;
@@ -148,11 +152,9 @@ int DImgQImagePlugin::canRead(const QString& filePath, bool magic) const
 
 int DImgQImagePlugin::canWrite(const QString& format) const
 {
-    QList<QByteArray> formats = QImageWriter::supportedImageFormats();
-
-    foreach (const QByteArray& ba, formats)
+    foreach (const QByteArray& ba, QImageWriter::supportedImageFormats())
     {
-        if (QString::fromUtf8(ba).toUpper().contains(format.toUpper()))
+        if (QString::fromUtf8(ba).toUpper() == format.toUpper())
         {
             return 50;
         }

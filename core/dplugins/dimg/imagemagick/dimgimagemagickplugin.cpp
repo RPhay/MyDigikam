@@ -178,8 +178,6 @@ QString DImgImageMagickPlugin::typeMimes() const
         }
     }
 
-    qDebug() << "ImageMagick support this formats:" << formats;
-
     QString ret;
 
     foreach (const QString& str, formats)
@@ -243,6 +241,12 @@ int DImgImageMagickPlugin::canRead(const QString& filePath, bool magic) const
         }
 
         QString format = fileInfo.suffix().toUpper();
+
+        if (formats.contains(QLatin1String("JPEG")))
+        {
+            formats.append(QLatin1String("JPG"));
+            formats.append(QLatin1String("JPE"));
+        }
 
         if (formats.contains(format))
         {

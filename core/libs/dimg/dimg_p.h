@@ -145,11 +145,11 @@ public:
 
                 if (plug && ((prio = plug->canRead(filePath, magic)) > 0))
                 {
-                    ///*
+                    /*
                     qCDebug(DIGIKAM_DIMG_LOG) << "File path:" << filePath
                                               << "Priority:" << prio
                                               << "Loader:" << plug->loaderName();
-                    //*/
+                    */
                     pluginMap.insertMulti(prio, plug);
                 }
             }
