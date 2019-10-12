@@ -132,72 +132,30 @@ public:
         delete [] lanczos_func;
     }
 
-    static DPluginDImg* pluginForFile(const QString& filePath, bool magic, QString& name, DImg::FORMAT& format)
+    static QList<DPluginDImg*> pluginsForFile(const QString& filePath, bool magic)
     {
+        QMap<int, DPluginDImg*> pluginMap;
+
         if (!filePath.isNull())
         {
             foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
             {
+                int prio;
                 DPluginDImg* const plug = dynamic_cast<DPluginDImg*>(p);
 
-                if (plug)
+                if (plug && ((prio = plug->canRead(filePath, magic)) > 0))
                 {
-/*
-                    qCDebug(DIGIKAM_DIMG_LOG) << filePath << "=>"
-                                              << plug->loaderName() << ":: can read:"
-                                              << plug->canRead(filePath, magic);
-*/
-                    if (plug->canRead(filePath, magic) > 0)
-                    {
-                        name = plug->loaderName();
-
-                        if (name.isNull())
-                        {
-                            format = DImg::NONE;
-                        }
-                        else if (name == QLatin1String("JPEG"))
-                        {
-                            format = DImg::JPEG;
-                        }
-                        else if (name == QLatin1String("PNG"))
-                        {
-                            format = DImg::PNG;
-                        }
-                        else if (name == QLatin1String("TIFF"))
-                        {
-                            format = DImg::TIFF;
-                        }
-                        else if (name == QLatin1String("RAW"))
-                        {
-                            format = DImg::RAW;
-                        }
-                        else if (name == QLatin1String("JPEG2000"))
-                        {
-                            format = DImg::JP2K;
-                        }
-                        else if (name == QLatin1String("PGF"))
-                        {
-                            format = DImg::PGF;
-                        }
-                        else if (name == QLatin1String("HEIF"))
-                        {
-                            format = DImg::HEIF;
-                        }
-                        else
-                        {
-                            // In others cases, ImageMagick or QImage will be used to try to open file.
-                            format = DImg::QIMAGE;
-                        }
-
-                        return plug;
-                    }
+                    /*
+                    qCDebug(DIGIKAM_DIMG_LOG) << "File path:" << filePath
+                                              << "Priority:" << prio
+                                              << "Loader:" << plug->loaderName();
+                    */
+                    pluginMap.insertMulti(prio, plug);
                 }
             }
         }
 
-        format = DImg::NONE;
-        name   = QString();
-        return nullptr;
+        return pluginMap.values();
     }
 
     static DPluginDImg* pluginForFormat(const QString& format, QString& name)
@@ -219,6 +177,45 @@ public:
 
         name   = QString();
         return nullptr;
+    }
+
+    static DImg::FORMAT loaderNameToFormat(const QString& name)
+    {
+        if (name.isNull())
+        {
+            return DImg::NONE;
+        }
+        else if (name == QLatin1String("JPEG"))
+        {
+            return DImg::JPEG;
+        }
+        else if (name == QLatin1String("PNG"))
+        {
+            return DImg::PNG;
+        }
+        else if (name == QLatin1String("TIFF"))
+        {
+            return DImg::TIFF;
+        }
+        else if (name == QLatin1String("RAW"))
+        {
+            return DImg::RAW;
+        }
+        else if (name == QLatin1String("JPEG2000"))
+        {
+            return DImg::JP2K;
+        }
+        else if (name == QLatin1String("PGF"))
+        {
+            return DImg::PGF;
+        }
+        else if (name == QLatin1String("HEIF"))
+        {
+            return DImg::HEIF;
+        }
+
+        // In others cases, ImageMagick or QImage will be used to try to open file.
+        return DImg::QIMAGE;
     }
 
     static QStringList fileOriginAttributes()
