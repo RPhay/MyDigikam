@@ -67,4 +67,6 @@ BUGFIXES:
 049 ==> 412730 - Main window double resolution on retina after dialog is open.
 050 ==> 412728 - MacOS: Image editor tools for colour adjustment incorrectly apply crop automatically and cut out most of the image.
 051 ==> 412777 - DigiKam+MySQL: Failed to create database tables.
-052 ==> 
+052 ==> 412854 - Digikam Impossible to select "write metadata in Raw files" in configuration menu.
+053 ==> 411480 - Problems with database migration on remote host.
+054 ==> 
