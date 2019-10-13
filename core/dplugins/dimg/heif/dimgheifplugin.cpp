@@ -176,9 +176,9 @@ int DImgHEIFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     fclose(f);
 
-    if ((memcmp(&header[8], "heic", 4) == 0) ||
-        (memcmp(&header[8], "heix", 4) == 0) ||
-        (memcmp(&header[8], "mif1", 4) == 0))
+    if (memcmp(&header[4], "ftypheic", 8) == 0 ||
+        memcmp(&header[4], "ftypheix", 8) == 0 ||
+        memcmp(&header[4], "ftypmif1", 8) == 0)
     {
         return 10;
     }
