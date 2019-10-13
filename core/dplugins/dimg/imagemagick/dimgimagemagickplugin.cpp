@@ -240,6 +240,9 @@ int DImgImageMagickPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
             formats.append(QLatin1String("JPE"));
         }
 
+        // Remove known formats that are not stable.
+        formats.removeAll(QLatin1String("XCF"));
+
         if (formats.contains(format))
         {
             if (format == QLatin1String("WEBP"))

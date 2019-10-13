@@ -24,10 +24,6 @@
 
 #include "dimgimagemagickloader.h"
 
-// Qt includes
-
-#include <QMimeDatabase>
-
 // ImageMagick includes
 
 // Pragma directives to reduce warnings from ImageMagick header files.
@@ -76,22 +72,6 @@ DImgImageMagickLoader::~DImgImageMagickLoader()
 
 bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
-    QStringList blackList;
-    blackList << QLatin1String("image/x-xcf");
-
-    QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
-
-    // qCDebug(DIGIKAM_DIMG_LOG) << "Mime type name:" << mimeType;
-
-    if (blackList.contains(mimeType)                 ||
-        mimeType.startsWith(QLatin1String("video/")) ||
-        mimeType.startsWith(QLatin1String("audio/")))
-    {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Blacklisted from ImageMagick loader:" << mimeType;
-        loadingFailed();
-        return false;
-    }
-
     readMetadata(filePath);
 
     // Loading is opaque to us. No support for stopping from observer,

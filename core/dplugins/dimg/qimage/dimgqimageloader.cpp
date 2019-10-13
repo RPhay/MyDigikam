@@ -29,7 +29,6 @@
 #include <QImage>
 #include <QByteArray>
 #include <QImageReader>
-#include <QMimeDatabase>
 
 // Local includes
 
@@ -51,16 +50,6 @@ DImgQImageLoader::~DImgQImageLoader()
 
 bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const observer)
 {
-    QString mimeType(QMimeDatabase().mimeTypeForFile(filePath).name());
-
-    if (mimeType.startsWith(QLatin1String("video/")) ||
-        mimeType.startsWith(QLatin1String("audio/")))
-    {
-        qCWarning(DIGIKAM_DIMG_LOG) << "Blacklisted from DImg::QImageLoader:" << mimeType;
-        loadingFailed();
-        return false;
-    }
-
     readMetadata(filePath);
 
     // Loading is opaque to us. No support for stopping from observer,
