@@ -274,6 +274,10 @@ bool DMetadata::setItemColorLabel(int colorId) const
                 return false;
             }
         }
+        else
+        {
+            removeXmpTag("Xmp.xmp.Label");
+        }
     }
 
     return true;
