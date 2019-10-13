@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2018-07-30
- * Description : a plugin to export to FaceBook web-service.
+ * Description : a plugin to export to Facebook web-service.
  *
  * Copyright (C) 2018-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -54,7 +54,7 @@ void FbPlugin::cleanUp()
 
 QString FbPlugin::name() const
 {
-    return i18n("FaceBook");
+    return i18n("Facebook");
 }
 
 QString FbPlugin::iid() const
@@ -69,13 +69,13 @@ QIcon FbPlugin::icon() const
 
 QString FbPlugin::description() const
 {
-    return i18n("A tool to export to FaceBook web-service");
+    return i18n("A tool to export to Facebook web-service");
 }
 
 QString FbPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to FaceBook web-service.</p>"
-                "<p>See FaceBook web site for details: <a href='https://www.facebook.com/'>https://www.facebook.com/</a></p>");
+    return i18n("<p>This tool permit to export items to Facebook web-service.</p>"
+                "<p>See Facebook web site for details: <a href='https://www.facebook.com/'>https://www.facebook.com/</a></p>");
 }
 
 QList<DPluginAuthor> FbPlugin::authors() const
@@ -100,7 +100,7 @@ void FbPlugin::setup(QObject* const parent)
 {
     DPluginAction* const ac = new DPluginAction(parent);
     ac->setIcon(icon());
-    ac->setText(i18nc("@action", "Export to &FaceBook..."));
+    ac->setText(i18nc("@action", "Export to &Facebook..."));
     ac->setObjectName(QLatin1String("export_facebook"));
     ac->setActionCategory(DPluginAction::GenericExport);
     ac->setShortcut(Qt::CTRL + Qt::ALT + Qt::SHIFT + Qt::Key_F);
