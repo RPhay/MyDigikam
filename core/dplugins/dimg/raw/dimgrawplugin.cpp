@@ -26,11 +26,6 @@
 
 #include <cstdio>
 
-// Qt includes
-
-#include <QFile>
-#include <QFileInfo>
-
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -122,22 +117,14 @@ QString DImgRAWPlugin::typeMimes() const
     return QString(DRawDecoder::rawFiles()).toUpper().remove(QLatin1String("*."));
 }
 
-int DImgRAWPlugin::canRead(const QString& filePath, bool magic) const
+int DImgRAWPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 {
-    QFileInfo fileInfo(filePath);
-
-    if (!fileInfo.exists())
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return 0;
-    }
-
     if (!magic)
     {
-        QString ext         = fileInfo.suffix().toUpper();
         QString rawFilesExt = DRawDecoder::rawFiles();
+        QString format      = fileInfo.suffix().toUpper();
 
-        return (rawFilesExt.toUpper().contains(ext)) ? 10 : 0;
+        return (rawFilesExt.toUpper().contains(format)) ? 10 : 0;
     }
 
     return 0;

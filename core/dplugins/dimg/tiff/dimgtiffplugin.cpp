@@ -29,7 +29,6 @@
 // Qt includes
 
 #include <QFile>
-#include <QFileInfo>
 
 // KDE includes
 
@@ -113,25 +112,18 @@ QString DImgTIFFPlugin::typeMimes() const
     return QLatin1String("TIF TIFF");
 }
 
-int DImgTIFFPlugin::canRead(const QString& filePath, bool magic) const
+int DImgTIFFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 {
-    QFileInfo fileInfo(filePath);
-
-    if (!fileInfo.exists())
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return 0;
-    }
+    QString filePath = fileInfo.filePath();
+    QString format   = fileInfo.suffix().toUpper();
 
     // First simply check file extension
 
     if (!magic)
     {
-        QString ext = fileInfo.suffix().toUpper();
-
         return (
-                ext == QLatin1String("TIFF") ||
-                ext == QLatin1String("TIF")
+                format == QLatin1String("TIFF") ||
+                format == QLatin1String("TIF")
                ) ? 10 : 0;
     }
 

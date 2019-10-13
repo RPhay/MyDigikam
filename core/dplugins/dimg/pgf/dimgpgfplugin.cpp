@@ -29,7 +29,6 @@
 // Qt includes
 
 #include <QFile>
-#include <QFileInfo>
 
 // KDE includes
 
@@ -116,23 +115,16 @@ QString DImgPGFPlugin::typeMimes() const
     return QLatin1String("PGF");
 }
 
-int DImgPGFPlugin::canRead(const QString& filePath, bool magic) const
+int DImgPGFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 {
-    QFileInfo fileInfo(filePath);
-
-    if (!fileInfo.exists())
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return 0;
-    }
+    QString filePath = fileInfo.filePath();
+    QString format   = fileInfo.suffix().toUpper();
 
     // First simply check file extension
 
     if (!magic)
     {
-        QString ext = fileInfo.suffix().toUpper();
-
-        return (ext == QLatin1String("PGF")) ? 10 : 0;
+        return (format == QLatin1String("PGF")) ? 10 : 0;
     }
 
     // In second, we trying to parse file header.

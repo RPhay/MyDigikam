@@ -35,7 +35,6 @@ using namespace MagickCore;
 
 // Qt includes
 
-#include <QFileInfo>
 #include <QMimeDatabase>
 
 // KDE includes
@@ -191,15 +190,10 @@ QString DImgImageMagickPlugin::typeMimes() const
     return ret;
 }
 
-int DImgImageMagickPlugin::canRead(const QString& filePath, bool magic) const
+int DImgImageMagickPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 {
-    QFileInfo fileInfo(filePath);
-
-    if (!fileInfo.exists())
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return 0;
-    }
+    QString filePath = fileInfo.filePath();
+    QString format   = fileInfo.suffix().toUpper();
 
     if (!magic)
     {
@@ -239,8 +233,6 @@ int DImgImageMagickPlugin::canRead(const QString& filePath, bool magic) const
 #endif
             }
         }
-
-        QString format = fileInfo.suffix().toUpper();
 
         if (formats.contains(QLatin1String("JPEG")))
         {

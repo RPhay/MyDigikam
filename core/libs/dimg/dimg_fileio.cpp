@@ -101,7 +101,15 @@ bool DImg::load(const QString& filePath,
                 DImgLoaderObserver* const observer,
                 const DRawDecoding& rawDecodingSettings)
 {
-    QList<DPluginDImg*> pluginList  = m_priv->pluginsForFile(filePath, false);
+    QFileInfo fileInfo(filePath);
+
+    if (!fileInfo.exists() || !fileInfo.isReadable())
+    {
+        qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
+        return false;
+    }
+
+    QList<DPluginDImg*> pluginList  = m_priv->pluginsForFile(fileInfo, false);
     DImgLoader::LoadFlags loadFlags = (DImgLoader::LoadFlags)loadFlagsInt;
     setAttribute(QLatin1String("originalFilePath"), filePath);
 
@@ -148,7 +156,7 @@ bool DImg::load(const QString& filePath,
 
     // In the second step we check the magic bytes to find the right loader.
 
-    pluginList = m_priv->pluginsForFile(filePath, true);
+    pluginList = m_priv->pluginsForFile(fileInfo, true);
 
     foreach (DPluginDImg* const plug, pluginList)
     {

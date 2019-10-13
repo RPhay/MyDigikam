@@ -24,6 +24,9 @@
 #ifndef DIGIKAM_DPLUGIN_DIMG_H
 #define DIGIKAM_DPLUGIN_DIMG_H
 
+// Qt includes
+#include <QFileInfo>
+
 // Local includes
 
 #include "dplugin.h"
@@ -104,7 +107,7 @@ public:
      *  If the loader is to be used before the default loader,
      *  the value must be less than 10.
      */
-    virtual int canRead(const QString& filePath, bool magic) const = 0;
+    virtual int canRead(const QFileInfo& fileInfo, bool magic) const = 0;
 
     /** Return > 0 if target file format is supported by the loader and contents can be written.
      *  The return value (1 - 100) is a priority.

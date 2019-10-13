@@ -24,7 +24,6 @@
 
 // Qt includes
 
-#include <QFileInfo>
 #include <QImageReader>
 #include <QImageWriter>
 #include <QMimeDatabase>
@@ -112,15 +111,10 @@ QString DImgQImagePlugin::typeMimes() const
     return ret;
 }
 
-int DImgQImagePlugin::canRead(const QString& filePath, bool magic) const
+int DImgQImagePlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 {
-    QFileInfo fileInfo(filePath);
-
-    if (!fileInfo.exists())
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return 0;
-    }
+    QString filePath = fileInfo.filePath();
+    QString format   = fileInfo.suffix().toUpper();
 
     if (!magic)
     {
@@ -135,8 +129,6 @@ int DImgQImagePlugin::canRead(const QString& filePath, bool magic) const
         {
             return 0;
         }
-
-        QString format = fileInfo.suffix().toUpper();
 
         foreach (const QByteArray& ba, QImageReader::supportedImageFormats())
         {

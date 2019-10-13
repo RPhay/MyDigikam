@@ -132,26 +132,23 @@ public:
         delete [] lanczos_func;
     }
 
-    static QList<DPluginDImg*> pluginsForFile(const QString& filePath, bool magic)
+    static QList<DPluginDImg*> pluginsForFile(const QFileInfo& fileInfo, bool magic)
     {
         QMap<int, DPluginDImg*> pluginMap;
 
-        if (!filePath.isNull())
+        foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
         {
-            foreach (DPlugin* const p, DPluginLoader::instance()->allPlugins())
-            {
-                int prio;
-                DPluginDImg* const plug = dynamic_cast<DPluginDImg*>(p);
+            int prio;
+            DPluginDImg* const plug = dynamic_cast<DPluginDImg*>(p);
 
-                if (plug && ((prio = plug->canRead(filePath, magic)) > 0))
-                {
-                    /*
-                    qCDebug(DIGIKAM_DIMG_LOG) << "File path:" << filePath
-                                              << "Priority:" << prio
-                                              << "Loader:" << plug->loaderName();
-                    */
-                    pluginMap.insertMulti(prio, plug);
-                }
+            if (plug && ((prio = plug->canRead(fileInfo, magic)) > 0))
+            {
+                /*
+                qCDebug(DIGIKAM_DIMG_LOG) << "File path:" << filePath
+                                          << "Priority:" << prio
+                                          << "Loader:" << plug->loaderName();
+                */
+                pluginMap.insertMulti(prio, plug);
             }
         }
 

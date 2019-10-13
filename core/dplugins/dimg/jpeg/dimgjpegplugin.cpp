@@ -29,7 +29,6 @@
 // Qt includes
 
 #include <QFile>
-#include <QFileInfo>
 
 // KDE includes
 
@@ -112,26 +111,19 @@ QString DImgJPEGPlugin::typeMimes() const
     return QLatin1String("JPG JPEG JPE");
 }
 
-int DImgJPEGPlugin::canRead(const QString& filePath, bool magic) const
+int DImgJPEGPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 {
-    QFileInfo fileInfo(filePath);
-
-    if (!fileInfo.exists())
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return 0;
-    }
+    QString filePath = fileInfo.filePath();
+    QString format   = fileInfo.suffix().toUpper();
 
     // First simply check file extension
 
     if (!magic)
     {
-        QString ext = fileInfo.suffix().toUpper();
-
         return (
-                ext == QLatin1String("JPEG") ||
-                ext == QLatin1String("JPG")  ||
-                ext == QLatin1String("JPE")
+                format == QLatin1String("JPEG") ||
+                format == QLatin1String("JPG")  ||
+                format == QLatin1String("JPE")
                ) ? 10 : 0;
     }
 
