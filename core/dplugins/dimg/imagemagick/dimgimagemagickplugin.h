@@ -66,6 +66,10 @@ public:
     int         canRead(const QFileInfo& fileInfo, bool magic)                              const;
     int         canWrite(const QString& format)                                             const;
     DImgLoader* loader(DImg* const image, const DRawDecoding& rawSettings = DRawDecoding()) const;
+
+private:
+
+    QStringList decoderFormats() const;
 };
 
 } // namespace DigikamImageMagickDImgPlugin

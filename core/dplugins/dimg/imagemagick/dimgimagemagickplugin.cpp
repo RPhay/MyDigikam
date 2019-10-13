@@ -152,30 +152,8 @@ QString DImgImageMagickPlugin::loaderName() const
 
 QString DImgImageMagickPlugin::typeMimes() const
 {
-    QStringList formats;
-    ExceptionInfo ex;
-    size_t n                  = 0;
-    const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
-
-    if (!inflst)
-    {
-        qWarning() << "ImageMagick coders list is null!";
-        return QString();
-    }
-
-    for (uint i = 0 ; i < n ; ++i)
-    {
-        const MagickInfo* inf = inflst[i];
-
-        if (inf && inf->decoder)
-        {
-#if (MagickLibVersion >= 0x69A && defined(magick_module))
-            formats.append(QString::fromLatin1(inf->magick_module).toUpper());
-#else
-            formats.append(QString::fromLatin1(inf->module).toUpper());
-#endif
-        }
-    }
+    QStringList formats = decoderFormats();
+    formats.sort();
 
     QString ret;
 
@@ -209,39 +187,7 @@ int DImgImageMagickPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
             return 0;
         }
 
-        QStringList formats;
-        ExceptionInfo ex;
-        size_t n                  = 0;
-        const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
-
-        if (!inflst)
-        {
-            qWarning() << "ImageMagick coders list is null!";
-            return 0;
-        }
-
-        for (uint i = 0 ; i < n ; ++i)
-        {
-            const MagickInfo* inf = inflst[i];
-
-            if (inf && inf->decoder)
-            {
-#if (MagickLibVersion >= 0x69A && defined(magick_module))
-                formats.append(QString::fromLatin1(inf->magick_module).toUpper());
-#else
-                formats.append(QString::fromLatin1(inf->module).toUpper());
-#endif
-            }
-        }
-
-        if (formats.contains(QLatin1String("JPEG")))
-        {
-            formats.append(QLatin1String("JPG"));
-            formats.append(QLatin1String("JPE"));
-        }
-
-        // Remove known formats that are not stable.
-        formats.removeAll(QLatin1String("XCF"));
+        QStringList formats = decoderFormats();
 
         if (formats.contains(format))
         {
@@ -304,6 +250,45 @@ int DImgImageMagickPlugin::canWrite(const QString& format) const
 DImgLoader* DImgImageMagickPlugin::loader(DImg* const image, const DRawDecoding&) const
 {
     return new DImgImageMagickLoader(image);
+}
+
+QStringList DImgImageMagickPlugin::decoderFormats() const
+{
+    QStringList formats;
+    ExceptionInfo ex;
+    size_t n                  = 0;
+    const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
+
+    if (!inflst)
+    {
+        qWarning() << "ImageMagick coders list is null!";
+        return formats;
+    }
+
+    for (uint i = 0 ; i < n ; ++i)
+    {
+        const MagickInfo* inf = inflst[i];
+
+        if (inf && inf->decoder)
+        {
+#if (MagickLibVersion >= 0x69A && defined(magick_module))
+            formats.append(QString::fromLatin1(inf->magick_module).toUpper());
+#else
+            formats.append(QString::fromLatin1(inf->module).toUpper());
+#endif
+        }
+    }
+
+    if (formats.contains(QLatin1String("JPEG")))
+    {
+        formats.append(QLatin1String("JPG"));
+        formats.append(QLatin1String("JPE"));
+    }
+
+    // Remove known formats that are not stable.
+    formats.removeAll(QLatin1String("XCF"));
+
+    return formats;
 }
 
 } // namespace DigikamImageMagickDImgPlugin
