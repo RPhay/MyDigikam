@@ -66,14 +66,14 @@ public:
         LoadImageData    = 8,           /// Full image data
         LoadUniqueHash   = 16,          /// Image unique hash
         LoadImageHistory = 32,          /// Image version history
-        
+
         // Special mode to load reduced image data
-        
-        LoadPreview      = 64,          /// Load embeded preview image instead full size image
-        
+
+        LoadPreview      = 128,         /// Load embeded preview image instead full size image
+
         // Helper to load all information, metadata and full image.
-        
-        LoadAll          = LoadItemInfo | LoadMetadata | LoadUniqueHash | LoadICCData | LoadImageData | LoadImageHistory
+
+        LoadAll          = LoadItemInfo | LoadMetadata | LoadICCData | LoadImageData | LoadUniqueHash | LoadImageHistory
     };
     Q_DECLARE_FLAGS(LoadFlags, LoadFlag)
 
