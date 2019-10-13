@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2018-07-30
- * Description : a plugin to export to DropBox web-service.
+ * Description : a plugin to export to Dropbox web-service.
  *
  * Copyright (C) 2018-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -53,7 +53,7 @@ void DBPlugin::cleanUp()
 
 QString DBPlugin::name() const
 {
-    return i18n("DropBox");
+    return i18n("Dropbox");
 }
 
 QString DBPlugin::iid() const
@@ -68,13 +68,13 @@ QIcon DBPlugin::icon() const
 
 QString DBPlugin::description() const
 {
-    return i18n("A tool to export to DropBox web-service");
+    return i18n("A tool to export to Dropbox web-service");
 }
 
 QString DBPlugin::details() const
 {
-    return i18n("<p>This tool permit to export items to DropBox web-service.</p>"
-                "<p>See DropBox web site for details: <a href='https://www.dropbox.com/'>https://www.dropbox.com/</a></p>");
+    return i18n("<p>This tool permit to export items to Dropbox web-service.</p>"
+                "<p>See Dropbox web site for details: <a href='https://www.dropbox.com/'>https://www.dropbox.com/</a></p>");
 }
 
 QList<DPluginAuthor> DBPlugin::authors() const
