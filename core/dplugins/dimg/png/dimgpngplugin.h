@@ -63,8 +63,8 @@ public:
 
     QString     loaderName()                                                                const;
     QString     typeMimes()                                                                 const;
-    bool        canRead(const QString& filePath, bool magic)                                const;
-    bool        canWrite(const QString& format)                                             const;
+    int         canRead(const QFileInfo& fileInfo, bool magic)                              const;
+    int         canWrite(const QString& format)                                             const;
     DImgLoader* loader(DImg* const image, const DRawDecoding& rawSettings = DRawDecoding()) const;
 };
 

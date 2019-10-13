@@ -35,7 +35,6 @@ using namespace MagickCore;
 
 // Qt includes
 
-#include <QFileInfo>
 #include <QMimeDatabase>
 
 // KDE includes
@@ -47,7 +46,6 @@ using namespace MagickCore;
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "dimgimagemagickloader.h"
-#include "drawdecoder.h"
 
 namespace DigikamImageMagickDImgPlugin
 {
@@ -154,54 +152,8 @@ QString DImgImageMagickPlugin::loaderName() const
 
 QString DImgImageMagickPlugin::typeMimes() const
 {
-    QStringList formats;
-    ExceptionInfo ex;
-    size_t n                  = 0;
-    const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
-
-    if (!inflst)
-    {
-        qWarning() << "ImageMagick coders list is null!";
-        return QString();
-    }
-
-    for (uint i = 0 ; i < n ; ++i)
-    {
-        const MagickInfo* inf = inflst[i];
-
-        if (inf && inf->decoder)
-        {
-#if (MagickLibVersion >= 0x69A && defined(magick_module))
-            formats.append(QString::fromLatin1(inf->magick_module).toUpper());
-#else
-            formats.append(QString::fromLatin1(inf->module).toUpper());
-#endif
-        }
-    }
-
-    qDebug() << "ImageMagick support this formats:" << formats;
-
-    formats.removeAll(QLatin1String("JPEG"));  // JPEG file format
-    formats.removeAll(QLatin1String("JPG"));   // JPEG file format
-    formats.removeAll(QLatin1String("JPE"));   // JPEG file format
-    formats.removeAll(QLatin1String("PNG"));
-    formats.removeAll(QLatin1String("TIFF"));
-    formats.removeAll(QLatin1String("TIF"));
-    formats.removeAll(QLatin1String("PGF"));
-    formats.removeAll(QLatin1String("JP2"));   // JPEG2000 file format
-    formats.removeAll(QLatin1String("JPX"));   // JPEG2000 file format
-    formats.removeAll(QLatin1String("JPC"));   // JPEG2000 code stream
-    formats.removeAll(QLatin1String("J2K"));   // JPEG2000 code stream
-    formats.removeAll(QLatin1String("PGX"));   // JPEG2000 WM format
-    formats.removeAll(QLatin1String("HEIC"));
-    formats.removeAll(QLatin1String("HEIF"));
-
-    QString rawFilesExt = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();
-
-    foreach (const QString& str, rawFilesExt.split(QLatin1Char(' ')))
-    {
-        formats.removeAll(str);                // All Raw image formats
-    }
+    QStringList formats = decoderFormats();
+    formats.sort();
 
     QString ret;
 
@@ -216,15 +168,10 @@ QString DImgImageMagickPlugin::typeMimes() const
     return ret;
 }
 
-bool DImgImageMagickPlugin::canRead(const QString& filePath, bool magic) const
+int DImgImageMagickPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 {
-    QFileInfo fileInfo(filePath);
-
-    if (!fileInfo.exists())
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return false;
-    }
+    QString filePath = fileInfo.filePath();
+    QString format   = fileInfo.suffix().toUpper();
 
     if (!magic)
     {
@@ -237,62 +184,27 @@ bool DImgImageMagickPlugin::canRead(const QString& filePath, bool magic) const
             mimeType.startsWith(QLatin1String("audio/"))
            )
         {
-            return false;
+            return 0;
         }
 
-        QString format    = fileInfo.suffix().toUpper();
-        QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();       // Ignore RAW files
-        blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC HEIF ")); // Ignore native loaders
-
-        if (blackList.toUpper().contains(format))
+        if (decoderFormats().contains(format))
         {
-            return false;
-        }
-
-        QStringList formats;
-        ExceptionInfo ex;
-        size_t n                  = 0;
-        const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
-
-        if (!inflst)
-        {
-            qWarning() << "ImageMagick coders list is null!";
-            return false;
-        }
-
-        for (uint i = 0 ; i < n ; ++i)
-        {
-            const MagickInfo* inf = inflst[i];
-
-            if (inf && inf->decoder)
+            if (format == QLatin1String("WEBP"))
             {
-#if (MagickLibVersion >= 0x69A && defined(magick_module))
-                formats.append(QString::fromLatin1(inf->magick_module).toUpper());
-#else
-                formats.append(QString::fromLatin1(inf->module).toUpper());
-#endif
+                return 70;
+            }
+            else
+            {
+                return 90;
             }
         }
-
-        return (formats.contains(format));
     }
 
-    return false;
+    return 0;
 }
 
-bool DImgImageMagickPlugin::canWrite(const QString& format) const
+int DImgImageMagickPlugin::canWrite(const QString& format) const
 {
-    QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();       // Ignore RAW files
-    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC HEIF ")); // Ignore native loaders
-
-    if (blackList.toUpper().contains(format))
-    {
-        return false;
-    }
-
-    // NOTE: Native loaders support are previously black-listed.
-    // For ex, if tiff is supported in write mode by ImageMagick it will never be handled.
-
     QStringList formats;
     ExceptionInfo ex;
     size_t n                  = 0;
@@ -301,7 +213,7 @@ bool DImgImageMagickPlugin::canWrite(const QString& format) const
     if (!inflst)
     {
         qWarning() << "ImageMagick coders list is null!";
-        return false;
+        return 0;
     }
 
     for (uint i = 0 ; i < n ; ++i)
@@ -318,17 +230,63 @@ bool DImgImageMagickPlugin::canWrite(const QString& format) const
         }
     }
 
-    if (!formats.contains(format))
+    if (formats.contains(format.toUpper()))
     {
-        return false;
+        if (format.toUpper() == QLatin1String("WEBP"))
+        {
+            return 70;
+        }
+        else
+        {
+            return 90;
+        }
     }
 
-    return true;
+    return 0;
 }
 
 DImgLoader* DImgImageMagickPlugin::loader(DImg* const image, const DRawDecoding&) const
 {
     return new DImgImageMagickLoader(image);
+}
+
+QStringList DImgImageMagickPlugin::decoderFormats() const
+{
+    QStringList formats;
+    ExceptionInfo ex;
+    size_t n                  = 0;
+    const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
+
+    if (!inflst)
+    {
+        qWarning() << "ImageMagick coders list is null!";
+        return formats;
+    }
+
+    for (uint i = 0 ; i < n ; ++i)
+    {
+        const MagickInfo* inf = inflst[i];
+
+        if (inf && inf->decoder)
+        {
+#if (MagickLibVersion >= 0x69A && defined(magick_module))
+            formats.append(QString::fromLatin1(inf->magick_module).toUpper());
+#else
+            formats.append(QString::fromLatin1(inf->module).toUpper());
+#endif
+        }
+    }
+
+    if (formats.contains(QLatin1String("JPEG")))
+    {
+        formats.append(QLatin1String("JPG"));
+        formats.append(QLatin1String("JPE"));
+    }
+
+    // Remove known formats that are not stable.
+    formats.removeAll(QLatin1String("XCF"));
+
+    return formats;
 }
 
 } // namespace DigikamImageMagickDImgPlugin

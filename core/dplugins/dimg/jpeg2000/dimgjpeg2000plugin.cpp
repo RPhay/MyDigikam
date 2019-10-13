@@ -29,7 +29,6 @@
 // Qt includes
 
 #include <QFile>
-#include <QFileInfo>
 
 // KDE includes
 
@@ -121,27 +120,20 @@ QString DImgJPEG2000Plugin::typeMimes() const
     return QLatin1String("JP2 JPX JPC JP2K PGX");
 }
 
-bool DImgJPEG2000Plugin::canRead(const QString& filePath, bool magic) const
+int DImgJPEG2000Plugin::canRead(const QFileInfo& fileInfo, bool magic) const
 {
-    QFileInfo fileInfo(filePath);
-
-    if (!fileInfo.exists())
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return false;
-    }
+    QString filePath = fileInfo.filePath();
+    QString format   = fileInfo.suffix().toUpper();
 
     // First simply check file extension
 
     if (!magic)
     {
-        QString ext = fileInfo.suffix().toUpper();
-
         return (
-                ext == QLatin1String("JP2") || ext == QLatin1String("JPX") || // JPEG2000 file format
-                ext == QLatin1String("JPC") || ext == QLatin1String("J2K") || // JPEG2000 code stream
-                ext == QLatin1String("PGX")                                   // JPEG2000 Verification Model
-               );
+                format == QLatin1String("JP2") || format == QLatin1String("JPX") || // JPEG2000 file format
+                format == QLatin1String("JPC") || format == QLatin1String("J2K") || // JPEG2000 code stream
+                format == QLatin1String("PGX")                                      // JPEG2000 Verification Model
+               ) ? 10 : 0;
     }
 
     // In second, we trying to parse file header.
@@ -151,7 +143,7 @@ bool DImgJPEG2000Plugin::canRead(const QString& filePath, bool magic) const
     if (!f)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Failed to open file " << filePath;
-        return false;
+        return 0;
     }
 
     const int headerLen = 9;
@@ -162,7 +154,7 @@ bool DImgJPEG2000Plugin::canRead(const QString& filePath, bool magic) const
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Failed to read header of file " << filePath;
         fclose(f);
-        return false;
+        return 0;
     }
 
     fclose(f);
@@ -173,22 +165,22 @@ bool DImgJPEG2000Plugin::canRead(const QString& filePath, bool magic) const
     if (memcmp(&header[4], &jp2ID, 5) == 0 ||
         memcmp(&header,    &jpcID, 2) == 0)
     {
-        return true;
+        return 10;
     }
 
-    return false;
+    return 0;
 }
 
-bool DImgJPEG2000Plugin::canWrite(const QString& format) const
+int DImgJPEG2000Plugin::canWrite(const QString& format) const
 {
     if (format == QLatin1String("JP2") || format == QLatin1String("JPX") || // JPEG2000 file format
         format == QLatin1String("JPC") || format == QLatin1String("J2K") || // JPEG2000 code stream
         format == QLatin1String("PGX"))                                     // JPEG2000 Verification Model
     {
-        return true;
+        return 10;
     }
 
-    return false;
+    return 0;
 }
 
 DImgLoader* DImgJPEG2000Plugin::loader(DImg* const image, const DRawDecoding&) const

@@ -101,19 +101,23 @@ bool DImg::load(const QString& filePath,
                 DImgLoaderObserver* const observer,
                 const DRawDecoding& rawDecodingSettings)
 {
-    FORMAT format;
-    QString name;
-    DPluginDImg* plug               = m_priv->pluginForFile(filePath, false, name, format);
-    DImgLoader::LoadFlags loadFlags = (DImgLoader::LoadFlags)loadFlagsInt;
+    QFileInfo fileInfo(filePath);
 
-    setAttribute(QLatin1String("detectedFileFormat"), format);
-    setAttribute(QLatin1String("originalFilePath"),   filePath);
+    if (!fileInfo.exists() || !fileInfo.isReadable())
+    {
+        qCDebug(DIGIKAM_DIMG_LOG) << "File" << filePath << "does not exist";
+        return false;
+    }
+
+    QList<DPluginDImg*> pluginList  = m_priv->pluginsForFile(fileInfo, false);
+    DImgLoader::LoadFlags loadFlags = (DImgLoader::LoadFlags)loadFlagsInt;
+    setAttribute(QLatin1String("originalFilePath"), filePath);
 
     FileReadLocker lock(filePath);
 
     // First step we check the file extension to find the right loader.
 
-    if (plug)
+    foreach (DPluginDImg* const plug, pluginList)
     {
         if (observer && !observer->continueQuery(nullptr))
         {
@@ -122,11 +126,13 @@ bool DImg::load(const QString& filePath,
 
         if (loadFlags & DImgLoader::LoadPreview && !plug->previewSupported())
         {
-            return false;
+            continue;
         }
 
         qCDebug(DIGIKAM_DIMG_LOG) << filePath << ":" << plug->loaderName() << "file identified";
+        FORMAT format            = m_priv->loaderNameToFormat(plug->loaderName());
         DImgLoader* const loader = plug->loader(this, rawDecodingSettings);
+        setAttribute(QLatin1String("detectedFileFormat"), format);
         loader->setLoadFlags(loadFlags);
 
         if (loader->load(filePath, observer))
@@ -148,12 +154,11 @@ bool DImg::load(const QString& filePath,
         return false;
     }
 
-    plug = m_priv->pluginForFile(filePath, true, name, format);
-    setAttribute(QLatin1String("detectedFileFormat"), format);
-
     // In the second step we check the magic bytes to find the right loader.
 
-    if (plug)
+    pluginList = m_priv->pluginsForFile(fileInfo, true);
+
+    foreach (DPluginDImg* const plug, pluginList)
     {
         if (observer && !observer->continueQuery(nullptr))
         {
@@ -162,11 +167,13 @@ bool DImg::load(const QString& filePath,
 
         if (loadFlags & DImgLoader::LoadPreview && !plug->previewSupported())
         {
-            return false;
+            continue;
         }
 
         qCDebug(DIGIKAM_DIMG_LOG) << filePath << ":" << plug->loaderName() << "file identified (magic)";
+        FORMAT format            = m_priv->loaderNameToFormat(plug->loaderName());
         DImgLoader* const loader = plug->loader(this, rawDecodingSettings);
+        setAttribute(QLatin1String("detectedFileFormat"), format);
         loader->setLoadFlags(loadFlags);
 
         if (loader->load(filePath, observer))
@@ -181,16 +188,20 @@ bool DImg::load(const QString& filePath,
         }
 
         delete loader;
+    }
 
-        if (observer && observer->continueQuery(nullptr))
-        {
-            qCWarning(DIGIKAM_DIMG_LOG) << filePath << ": Cannot load file !!!";
-        }
-
+    if (pluginList.isEmpty() && !(loadFlags & DImgLoader::LoadPreview))
+    {
+        qCWarning(DIGIKAM_DIMG_LOG) << filePath << ": Unknown image format !!!";
         return false;
     }
 
-    qCWarning(DIGIKAM_DIMG_LOG) << filePath << ": Unknown image format !!!";
+    if (observer                         &&
+        observer->continueQuery(nullptr) &&
+        !(loadFlags & DImgLoader::LoadPreview))
+    {
+        qCWarning(DIGIKAM_DIMG_LOG) << filePath << ": Cannot load file !!!";
+    }
 
     return false;
 }
@@ -270,13 +281,12 @@ bool DImg::save(const QString& filePath, const QString& format, DImgLoaderObserv
         return false;
     }
 
-    QString name;
     QString frm = format.toUpper();
     setAttribute(QLatin1String("savedFilePath"), filePath);
 
     FileWriteLocker lock(filePath);
 
-    DPluginDImg* const plug = m_priv->pluginForFormat(frm, name);
+    DPluginDImg* const plug = m_priv->pluginForFormat(frm);
     DImg copyForSave        = copy();
 
     if (frm == QLatin1String("JPEG") || frm == QLatin1String("JPG") || frm == QLatin1String("JPE"))
@@ -306,10 +316,27 @@ bool DImg::save(const QString& filePath, const QString& format, DImgLoaderObserv
 
 DImg::FORMAT DImg::fileFormat(const QString& filePath)
 {
-    FORMAT format;
-    QString name;
+    FORMAT format = DImg::NONE;
 
-    DImg::Private::pluginForFile(filePath, false, name, format);
+    if (filePath.isEmpty())
+    {
+        return format;
+    }
+
+    QFileInfo fileInfo(filePath);
+
+    if (!fileInfo.exists() || !fileInfo.isReadable())
+    {
+        return format;
+    }
+
+    QList<DPluginDImg*> pluginList = DImg::Private::pluginsForFile(fileInfo, false);
+
+    if (!pluginList.isEmpty())
+    {
+        QString name = pluginList.first()->loaderName();
+        format       = DImg::Private::loaderNameToFormat(name);
+    }
 
     return format;
 }

@@ -24,7 +24,6 @@
 
 // Qt includes
 
-#include <QFileInfo>
 #include <QImageReader>
 #include <QImageWriter>
 #include <QMimeDatabase>
@@ -38,7 +37,6 @@
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "dimgqimageloader.h"
-#include "drawdecoder.h"
 
 namespace DigikamQImageDImgPlugin
 {
@@ -103,35 +101,9 @@ QString DImgQImagePlugin::loaderName() const
 
 QString DImgQImagePlugin::typeMimes() const
 {
-    QList<QByteArray> formats = QImageReader::supportedImageFormats();
-
-    qDebug(DIGIKAM_DIMG_LOG_QIMAGE) << "QImage support this formats:" << formats;
-
-    formats.removeAll(QByteArray("JPEG"));  // JPEG file format
-    formats.removeAll(QByteArray("JPG"));   // JPEG file format
-    formats.removeAll(QByteArray("JPE"));   // JPEG file format
-    formats.removeAll(QByteArray("PNG"));
-    formats.removeAll(QByteArray("TIFF"));
-    formats.removeAll(QByteArray("TIF"));
-    formats.removeAll(QByteArray("PGF"));
-    formats.removeAll(QByteArray("JP2"));   // JPEG2000 file format
-    formats.removeAll(QByteArray("JPX"));   // JPEG2000 file format
-    formats.removeAll(QByteArray("JPC"));   // JPEG2000 code stream
-    formats.removeAll(QByteArray("J2K"));   // JPEG2000 code stream
-    formats.removeAll(QByteArray("PGX"));   // JPEG2000 WM format
-    formats.removeAll(QByteArray("HEIC"));
-    formats.removeAll(QByteArray("HEIF"));
-
-    QString rawFilesExt = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();
-
-    foreach (const QString& str, rawFilesExt.split(QLatin1Char(' ')))
-    {
-        formats.removeAll(str.toLatin1());             // All Raw image formats
-    }
-
     QString ret;
 
-    foreach (const QByteArray& ba, formats)
+    foreach (const QByteArray& ba, QImageReader::supportedImageFormats())
     {
         ret += QString::fromUtf8("%1 ").arg(QString::fromUtf8(ba).toUpper());
     }
@@ -139,15 +111,10 @@ QString DImgQImagePlugin::typeMimes() const
     return ret;
 }
 
-bool DImgQImagePlugin::canRead(const QString& filePath, bool magic) const
+int DImgQImagePlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 {
-    QFileInfo fileInfo(filePath);
-
-    if (!fileInfo.exists())
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return false;
-    }
+    QString filePath = fileInfo.filePath();
+    QString format   = fileInfo.suffix().toUpper();
 
     if (!magic)
     {
@@ -160,43 +127,32 @@ bool DImgQImagePlugin::canRead(const QString& filePath, bool magic) const
             mimeType.startsWith(QLatin1String("audio/"))
            )
         {
-            return false;
+            return 0;
         }
 
-        QString format    = fileInfo.suffix().toUpper();
-        QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();       // Ignore RAW files
-        blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC HEIF ")); // Ignore native loaders
-
-        return (!blackList.toUpper().contains(format));
+        foreach (const QByteArray& ba, QImageReader::supportedImageFormats())
+        {
+            if (QString::fromUtf8(ba).toUpper() == format)
+            {
+                return 80;
+            }
+        }
     }
 
-    return false;
+    return 0;
 }
 
-bool DImgQImagePlugin::canWrite(const QString& format) const
+int DImgQImagePlugin::canWrite(const QString& format) const
 {
-    QString blackList = QString(DRawDecoder::rawFiles()).remove(QLatin1String("*.")).toUpper();      // Ignore RAW files
-    blackList.append(QLatin1String(" JPEG JPG JPE PNG TIF TIFF PGF JP2 JPX JPC J2K PGX HEIC HEIF")); // Ignore native loaders
-
-    if (blackList.toUpper().contains(format))
+    foreach (const QByteArray& ba, QImageWriter::supportedImageFormats())
     {
-        return false;
-    }
-
-    // NOTE: Native loaders support are previously black-listed.
-    // For ex, if tiff is supported in write mode by QImage it will never be handled.
-
-    QList<QByteArray> formats = QImageWriter::supportedImageFormats();
-
-    foreach (const QByteArray& ba, formats)
-    {
-        if (QString::fromUtf8(ba).toUpper().contains(format.toUpper()))
+        if (QString::fromUtf8(ba).toUpper() == format.toUpper())
         {
-            return true;
+            return 80;
         }
     }
 
-    return false;
+    return 0;
 }
 
 DImgLoader* DImgQImagePlugin::loader(DImg* const image, const DRawDecoding&) const

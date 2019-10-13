@@ -29,7 +29,6 @@
 // Qt includes
 
 #include <QFile>
-#include <QFileInfo>
 
 // KDE includes
 
@@ -108,23 +107,16 @@ QString DImgPNGPlugin::typeMimes() const
     return QLatin1String("PNG");
 }
 
-bool DImgPNGPlugin::canRead(const QString& filePath, bool magic) const
+int DImgPNGPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 {
-    QFileInfo fileInfo(filePath);
-
-    if (!fileInfo.exists())
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return false;
-    }
+    QString filePath = fileInfo.filePath();
+    QString format   = fileInfo.suffix().toUpper();
 
     // First simply check file extension
 
     if (!magic)
     {
-        QString ext = fileInfo.suffix().toUpper();
-
-        return (ext == QLatin1String("PNG"));
+        return (format == QLatin1String("PNG")) ? 10 : 0;
     }
 
     // In second, we trying to parse file header.
@@ -134,7 +126,7 @@ bool DImgPNGPlugin::canRead(const QString& filePath, bool magic) const
     if (!f)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Failed to open file " << filePath;
-        return false;
+        return 0;
     }
 
     const int headerLen = 9;
@@ -145,7 +137,7 @@ bool DImgPNGPlugin::canRead(const QString& filePath, bool magic) const
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Failed to read header of file " << filePath;
         fclose(f);
-        return false;
+        return 0;
     }
 
     fclose(f);
@@ -154,20 +146,20 @@ bool DImgPNGPlugin::canRead(const QString& filePath, bool magic) const
 
     if (memcmp(&header, &pngID, 8) == 0)
     {
-        return true;
+        return 10;
     }
 
-    return false;
+    return 0;
 }
 
-bool DImgPNGPlugin::canWrite(const QString& format) const
+int DImgPNGPlugin::canWrite(const QString& format) const
 {
     if (format == QLatin1String("PNG"))
     {
-        return true;
+        return 10;
     }
 
-    return false;
+    return 0;
 }
 
 DImgLoader* DImgPNGPlugin::loader(DImg* const image, const DRawDecoding&) const

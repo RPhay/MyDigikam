@@ -29,7 +29,6 @@
 // Qt includes
 
 #include <QFile>
-#include <QFileInfo>
 
 // KDE includes
 
@@ -142,23 +141,16 @@ QString DImgHEIFPlugin::typeMimes() const
     return QLatin1String("HEIC HEIF");
 }
 
-bool DImgHEIFPlugin::canRead(const QString& filePath, bool magic) const
+int DImgHEIFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 {
-    QFileInfo fileInfo(filePath);
-
-    if (!fileInfo.exists())
-    {
-        qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
-        return false;
-    }
+    QString filePath = fileInfo.filePath();
+    QString format   = fileInfo.suffix().toUpper();
 
     // First simply check file extension
 
     if (!magic)
     {
-        QString ext = fileInfo.suffix().toUpper();
-
-        return (ext == QLatin1String("HEIC"));
+        return (format == QLatin1String("HEIC")) ? 10 : 0;
     }
 
     // In second, we trying to parse file header.
@@ -168,7 +160,7 @@ bool DImgHEIFPlugin::canRead(const QString& filePath, bool magic) const
     if (!f)
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Failed to open file " << filePath;
-        return false;
+        return 0;
     }
 
     const int headerLen = 12;
@@ -179,31 +171,30 @@ bool DImgHEIFPlugin::canRead(const QString& filePath, bool magic) const
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Failed to read header of file " << filePath;
         fclose(f);
-        return false;
+        return 0;
     }
 
     fclose(f);
 
-    if ((memcmp(&header[4], "ftyp", 4) == 0) ||
-        (memcmp(&header[8], "heic", 4) == 0) ||
-        (memcmp(&header[8], "heix", 4) == 0) ||
-        (memcmp(&header[8], "mif1", 4) == 0))
+    if (memcmp(&header[4], "ftypheic", 8) == 0 ||
+        memcmp(&header[4], "ftypheix", 8) == 0 ||
+        memcmp(&header[4], "ftypmif1", 8) == 0)
     {
-        return true;
+        return 10;
     }
 
-    return false;
+    return 0;
 }
 
-bool DImgHEIFPlugin::canWrite(const QString& format) const
+int DImgHEIFPlugin::canWrite(const QString& format) const
 {
 #ifdef HAVE_X265
     if (format.toUpper() == QLatin1String("HEIC"))
     {
-        return true;
+        return 10;
     }
 #endif
-    return false;
+    return 0;
 }
 
 DImgLoader* DImgHEIFPlugin::loader(DImg* const image, const DRawDecoding&) const
