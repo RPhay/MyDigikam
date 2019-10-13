@@ -187,9 +187,7 @@ int DImgImageMagickPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
             return 0;
         }
 
-        QStringList formats = decoderFormats();
-
-        if (formats.contains(format))
+        if (decoderFormats().contains(format))
         {
             if (format == QLatin1String("WEBP"))
             {
