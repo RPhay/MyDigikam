@@ -69,7 +69,7 @@ public:
 
         // Special mode to load reduced image data
 
-        LoadPreview      = 128,         /// Load embeded preview image instead full size image
+        LoadPreview      = 64,          /// Load embeded preview image instead full size image
 
         // Helper to load all information, metadata and full image.
 
