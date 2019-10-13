@@ -105,7 +105,7 @@ bool DImg::load(const QString& filePath,
 
     if (!fileInfo.exists() || !fileInfo.isReadable())
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "File " << filePath << " does not exist";
+        qCDebug(DIGIKAM_DIMG_LOG) << "File" << filePath << "does not exist";
         return false;
     }
 

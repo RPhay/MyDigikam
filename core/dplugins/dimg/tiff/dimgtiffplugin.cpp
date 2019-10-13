@@ -150,8 +150,8 @@ int DImgTIFFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     fclose(f);
 
-    uchar tiffBigID[4]  = { 0x4D, 0x4D, 0x00, 0x2A };
-    uchar tiffLilID[4]  = { 0x49, 0x49, 0x2A, 0x00 };
+    uchar tiffBigID[4] = { 0x4D, 0x4D, 0x00, 0x2A };
+    uchar tiffLilID[4] = { 0x49, 0x49, 0x2A, 0x00 };
 
     if (memcmp(&header, &tiffBigID, 4) == 0 ||
         memcmp(&header, &tiffLilID, 4) == 0)
