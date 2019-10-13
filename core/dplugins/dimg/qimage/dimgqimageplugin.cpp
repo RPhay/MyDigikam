@@ -142,7 +142,7 @@ int DImgQImagePlugin::canRead(const QString& filePath, bool magic) const
         {
             if (QString::fromUtf8(ba).toUpper() == format)
             {
-                return 50;
+                return 80;
             }
         }
     }
@@ -156,7 +156,7 @@ int DImgQImagePlugin::canWrite(const QString& format) const
     {
         if (QString::fromUtf8(ba).toUpper() == format.toUpper())
         {
-            return 50;
+            return 80;
         }
     }
 

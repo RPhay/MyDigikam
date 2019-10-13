@@ -252,11 +252,11 @@ int DImgImageMagickPlugin::canRead(const QString& filePath, bool magic) const
         {
             if (format == QLatin1String("WEBP"))
             {
-                return 40;
+                return 70;
             }
             else
             {
-                return 60;
+                return 90;
             }
         }
     }
@@ -295,11 +295,11 @@ int DImgImageMagickPlugin::canWrite(const QString& format) const
     {
         if (format.toUpper() == QLatin1String("WEBP"))
         {
-            return 40;
+            return 70;
         }
         else
         {
-            return 60;
+            return 90;
         }
     }
 

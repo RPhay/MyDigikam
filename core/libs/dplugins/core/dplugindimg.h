@@ -99,8 +99,8 @@ public:
     /** Return > 0 if source file path is supported by the loader and contents can be loaded.
      *  The return value (1 - 100) is a priority.
      *  DigiKam default loaders have a priority of 10, the
-     *  QImage loader has a priority of 50 and the
-     *  ImageMagick loader has a priority of 60.
+     *  QImage loader has a priority of 80 and the
+     *  ImageMagick loader has a priority of 90.
      *  If the loader is to be used before the default loader,
      *  the value must be less than 10.
      */
