@@ -190,7 +190,7 @@ bool DImg::load(const QString& filePath,
         delete loader;
     }
 
-    if (pluginList.isEmpty())
+    if (pluginList.isEmpty() && !(loadFlags & DImgLoader::LoadPreview))
     {
         qCWarning(DIGIKAM_DIMG_LOG) << filePath << ": Unknown image format !!!";
         return false;
