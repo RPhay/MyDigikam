@@ -316,8 +316,21 @@ bool DImg::save(const QString& filePath, const QString& format, DImgLoaderObserv
 
 DImg::FORMAT DImg::fileFormat(const QString& filePath)
 {
-    QList<DPluginDImg*> pluginList = DImg::Private::pluginsForFile(filePath, false);
-    FORMAT format                  = DImg::NONE;
+    FORMAT format = DImg::NONE;
+
+    if (filePath.isEmpty())
+    {
+        return format;
+    }
+
+    QFileInfo fileInfo(filePath);
+
+    if (!fileInfo.exists() || !fileInfo.isReadable())
+    {
+        return format;
+    }
+
+    QList<DPluginDImg*> pluginList = DImg::Private::pluginsForFile(fileInfo, false);
 
     if (!pluginList.isEmpty())
     {
