@@ -73,4 +73,5 @@ BUGFIXES:
 055 ==> 412921 - BatchQueueManager: change file format.
 056 ==> 412922 - Xmp:Label not created/changed if color label is none/orange/grey/black/white.
 057 ==> 412899 - Export tool to flickr doesn't submit privacy settings.
-058 ==> 
+058 ==> 412944 - Wrong Piwigo version parsing (2.10.x < 2.4).
+059 ==> 
