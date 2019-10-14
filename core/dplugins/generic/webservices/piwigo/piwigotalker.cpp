@@ -484,7 +484,7 @@ void PiwigoTalker::parseResponseGetVersion(const QByteArray& data)
 {
     QXmlStreamReader ts(data);
     QString line;
-    QRegExp verrx(QLatin1String(".?(\\d)\\.(\\d).*"));
+    QRegExp verrx(QLatin1String(".?(\\d+)\\.(\\d+).*"));
 
     bool foundResponse = false;
 
