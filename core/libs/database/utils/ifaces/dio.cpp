@@ -35,6 +35,7 @@
 #include "digikam_debug.h"
 #include "iteminfo.h"
 #include "albummanager.h"
+#include "tagscache.h"
 #include "coredb.h"
 #include "coredbaccess.h"
 #include "album.h"
@@ -454,11 +455,11 @@ void DIO::slotOneProccessed(const QUrl& url)
         // Mark the images as obsolete and remove them
         // from their album and from the grouped
         PAlbum* const album = data->srcAlbum();
-        CoreDbAccess access;
 
         if (album && album->fileUrl() == url)
         {
             // get all deleted albums
+            CoreDbAccess access;
             QList<int> albumsToDelete;
             QList<qlonglong> imagesToRemove;
 
@@ -483,6 +484,18 @@ void DIO::slotOneProccessed(const QUrl& url)
 
             if (!info.isNull())
             {
+                int originalVersionTag    = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::originalVersion());
+                int needTaggingTag        = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::needTaggingHistoryGraph());
+                QList<qlonglong> imageIds = CoreDbAccess().db()->getImagesRelatedFrom(info.id(), DatabaseRelation::DerivedFrom);
+
+                CoreDbAccess access;
+
+                foreach (const qlonglong& id, imageIds)
+                {
+                    access.db()->removeItemTag(id, originalVersionTag);
+                    access.db()->addItemTag(id, needTaggingTag);
+                }
+
                 access.db()->removeAllImageRelationsFrom(info.id(),
                                                          DatabaseRelation::Grouped);
 
@@ -497,8 +510,20 @@ void DIO::slotOneProccessed(const QUrl& url)
 
         if (!info.isNull())
         {
-            CoreDbAccess().db()->removeItems(QList<qlonglong>() << info.id(),
-                                             QList<int>() << info.albumId());
+            int originalVersionTag    = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::originalVersion());
+            int needTaggingTag        = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::needTaggingHistoryGraph());
+            QList<qlonglong> imageIds = CoreDbAccess().db()->getImagesRelatedFrom(info.id(), DatabaseRelation::DerivedFrom);
+
+            CoreDbAccess access;
+
+            foreach (const qlonglong& id, imageIds)
+            {
+                access.db()->removeItemTag(id, originalVersionTag);
+                access.db()->addItemTag(id, needTaggingTag);
+            }
+
+            access.db()->removeItems(QList<qlonglong>() << info.id(),
+                                     QList<int>() << info.albumId());
         }
     }
     else if (operation == IOJobData::Rename)
