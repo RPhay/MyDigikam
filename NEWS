@@ -75,4 +75,6 @@ BUGFIXES:
 057 ==> 412899 - Export tool to flickr doesn't submit privacy settings.
 058 ==> 412944 - Wrong Piwigo version parsing (2.10.x < 2.4).
 059 ==> 412948 - Deleting a versioned file leaves original hidden in thumbnail view.
-060 ==> 
+060 ==> 412704 - Stops working when selecting a catalogue.
+061 ==> 
+
