@@ -400,6 +400,8 @@ void SlideShow::slotImageLoaded(bool loaded)
         preloadNextItem();
 #endif
     }
+
+    d->osd->setLoadingReady(true);
 }
 
 void SlideShow::slotVideoLoaded(bool loaded)

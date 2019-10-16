@@ -57,6 +57,8 @@ public:
     bool isPaused() const;
     bool isUnderMouse() const;
     void toggleProperties();
+    void setLoadingReady(bool b);
+
 
     SlideToolBar* toolBar() const;
 
