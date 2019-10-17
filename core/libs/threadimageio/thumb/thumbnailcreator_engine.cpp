@@ -154,10 +154,9 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
                 PGFUtils::loadPGFScaled(qimage, path, d->storageSize());
             }
         }
-
-        // Try video thumbnail anyway;
-        if (qimage.isNull())
+        else
         {
+            // Try video thumbnail anyway
 
 #ifdef HAVE_MEDIAPLAYER
             qCDebug(DIGIKAM_GENERAL_LOG) << "Trying to load video preview with FFmpeg";
