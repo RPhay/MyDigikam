@@ -62,6 +62,7 @@ public:
       : paused(false),
         video(false),
         blink(false),
+        ready(false),
         refresh(1000),       // Progress bar refresh in ms
         progressBar(nullptr),
         progressTimer(nullptr),
@@ -79,6 +80,8 @@ public:
     bool                paused;
     bool                video;
     bool                blink;
+    bool                ready;
+
     int const           refresh;
 
     QProgressBar*       progressBar;
@@ -337,12 +340,19 @@ void SlideOSD::slotProgressTimer()
     else
     {
         d->progressBar->setFormat(str);
-        d->progressBar->setValue(d->progressBar->value()+1);
 
         if (d->progressBar->value() == d->settings.delay)
         {
+            if (!d->ready)
+            {
+                return;
+            }
+
+            d->ready = false;
             d->parent->slotLoadNextItem();
         }
+
+        d->progressBar->setValue(d->progressBar->value()+1);
     }
 }
 
@@ -378,6 +388,11 @@ bool SlideOSD::isUnderMouse() const
 void SlideOSD::toggleProperties()
 {
     d->slideProps->togglePaintEnabled();
+}
+
+void SlideOSD::setLoadingReady(bool b)
+{
+    d->ready = b;
 }
 
 } // namespace Digikam

@@ -70,4 +70,11 @@ BUGFIXES:
 052 ==> 412854 - Digikam Impossible to select "write metadata in Raw files" in configuration menu.
 053 ==> 411480 - Problems with database migration on remote host.
 054 ==> 412880 - Since version 6.2.0 video thumbnails are generated from the very first scene of the movie files.
-055 ==> 
+055 ==> 412921 - BatchQueueManager: change file format.
+056 ==> 412922 - Xmp:Label not created/changed if color label is none/orange/grey/black/white.
+057 ==> 412899 - Export tool to flickr doesn't submit privacy settings.
+058 ==> 412944 - Wrong Piwigo version parsing (2.10.x < 2.4).
+059 ==> 412948 - Deleting a versioned file leaves original hidden in thumbnail view.
+060 ==> 412704 - Stops working when selecting a catalogue.
+061 ==> 412909 - Slideshow skips photos.
+062 ==> 

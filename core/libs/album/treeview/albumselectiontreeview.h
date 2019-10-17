@@ -73,7 +73,7 @@ private Q_SLOTS:
 
     void slotFindDuplicates();
     void slotScanForFaces();
-    void slotResetGrouping();
+    void slotRepairHiddenItems();
     void slotRebuildThumbs();
 
 

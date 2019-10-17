@@ -292,7 +292,7 @@ QImage ThumbnailCreator::loadImagePreview(const DMetadata& metadata) const
                                           DImgLoader::LoadICCData  |
                                           DImgLoader::LoadPreview;
 
-        if (!img.load(metadata.getFilePath(), loadFlags, d->observer, d->fastRawSettings))
+        if (img.load(metadata.getFilePath(), loadFlags, d->observer, d->fastRawSettings))
         {
             image = img.copyQImage();
         }

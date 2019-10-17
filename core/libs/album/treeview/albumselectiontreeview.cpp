@@ -36,6 +36,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "tagscache.h"
 #include "albummanager.h"
 #include "facescansettings.h"
 #include "applicationsettings.h"
@@ -89,7 +90,7 @@ public:
         resetIconAction(nullptr),
         findDuplAction(nullptr),
         scanFacesAction(nullptr),
-        resetGroupingAction(nullptr),
+        repairHiddenAction(nullptr),
         rebuildThumbsAction(nullptr),
         contextMenuElement(nullptr)
     {
@@ -104,7 +105,7 @@ public:
     QAction*                                  resetIconAction;
     QAction*                                  findDuplAction;
     QAction*                                  scanFacesAction;
-    QAction*                                  resetGroupingAction;
+    QAction*                                  repairHiddenAction;
     QAction*                                  rebuildThumbsAction;
 
     class AlbumSelectionTreeViewContextMenuElement;
@@ -164,8 +165,8 @@ public:
         cmh.addAlbumActions();
         cmh.addSeparator();
         // --------------------------------------------------------
-        cmh.addAction(d->resetGroupingAction);
-        d->albumModificationHelper->bindAlbum(d->resetGroupingAction, album);
+        cmh.addAction(d->repairHiddenAction);
+        d->albumModificationHelper->bindAlbum(d->repairHiddenAction, album);
         cmh.addSeparator();
         // --------------------------------------------------------
         cmh.addActionDeleteAlbum(d->albumModificationHelper, album);
@@ -189,10 +190,10 @@ AlbumSelectionTreeView::AlbumSelectionTreeView(QWidget* const parent, AlbumModel
     setAlbumModel(model);
     d->albumModificationHelper = albumModificationHelper;
     d->toolTip                 = new AlbumViewToolTip(this);
-    d->findDuplAction          = new QAction(QIcon::fromTheme(QLatin1String("tools-wizard")),  i18n("Find Duplicates..."),    this);
-    d->scanFacesAction         = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")), i18n("Scan for Faces"),        this);
-    d->resetGroupingAction     = new QAction(QIcon::fromTheme(QLatin1String("edit-group")),    i18n("Reset hidden Grouping"), this);
-    d->rebuildThumbsAction     = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),  i18n("Refresh"),               this);
+    d->findDuplAction          = new QAction(QIcon::fromTheme(QLatin1String("tools-wizard")),  i18n("Find Duplicates..."),  this);
+    d->scanFacesAction         = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")), i18n("Scan for Faces"),      this);
+    d->repairHiddenAction      = new QAction(QIcon::fromTheme(QLatin1String("edit-group")),    i18n("Repair hidden Items"), this);
+    d->rebuildThumbsAction     = new QAction(QIcon::fromTheme(QLatin1String("view-refresh")),  i18n("Refresh"),             this);
 
     connect(d->findDuplAction, SIGNAL(triggered()),
             this, SLOT(slotFindDuplicates()));
@@ -200,8 +201,8 @@ AlbumSelectionTreeView::AlbumSelectionTreeView(QWidget* const parent, AlbumModel
     connect(d->scanFacesAction, SIGNAL(triggered()),
             this, SLOT(slotScanForFaces()));
 
-    connect(d->resetGroupingAction, SIGNAL(triggered()),
-            this, SLOT(slotResetGrouping()));
+    connect(d->repairHiddenAction, SIGNAL(triggered()),
+            this, SLOT(slotRepairHiddenItems()));
 
     connect(d->rebuildThumbsAction, SIGNAL(triggered()),
             this, SLOT(slotRebuildThumbs()));
@@ -266,7 +267,7 @@ void AlbumSelectionTreeView::slotScanForFaces()
     tool->start();
 }
 
-void AlbumSelectionTreeView::slotResetGrouping()
+void AlbumSelectionTreeView::slotRepairHiddenItems()
 {
     PAlbum* const album = d->albumModificationHelper->boundAlbum(sender());
 
@@ -274,6 +275,9 @@ void AlbumSelectionTreeView::slotResetGrouping()
     {
         return;
     }
+
+   int needTaggingTag     = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::needTaggingHistoryGraph());
+   int originalVersionTag = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::originalVersion());
 
     foreach (const qlonglong& id, CoreDbAccess().db()->getItemIDsInAlbum(album->id()))
     {
@@ -285,6 +289,12 @@ void AlbumSelectionTreeView::slotResetGrouping()
             {
                 info.removeFromGroup();
             }
+        }
+
+        if (!info.hasDerivedImages() && info.tagIds().contains(originalVersionTag))
+        {
+            info.removeTag(originalVersionTag);
+            info.setTag(needTaggingTag);
         }
     }
 }
