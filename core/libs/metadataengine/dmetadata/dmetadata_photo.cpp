@@ -264,11 +264,14 @@ QString DMetadata::getLensDescription() const
     {
         lens = getExifTagString((*it).toLatin1().constData());
 
-        if ( !lens.isEmpty() &&
-             !(lens.startsWith(QLatin1Char('(')) &&
-               lens.endsWith(QLatin1Char(')'))
-              )
-           )   // To prevent undecoded tag values from Exiv2 as "(65535)".
+        // To prevent undecoded tag values from Exiv2 as "(65535)"
+        // or the value "----" from Exif.Photo.LensModel
+        if (!lens.isEmpty()                     &&
+            !(lens.startsWith(QLatin1Char('(')) &&
+              lens.endsWith(QLatin1Char(')'))
+             )                                  &&
+            lens != QLatin1String("----")
+           )
         {
             return lens;
         }
