@@ -267,10 +267,10 @@ QString DMetadata::getLensDescription() const
         // To prevent undecoded tag values from Exiv2 as "(65535)"
         // or the value "----" from Exif.Photo.LensModel
         if (!lens.isEmpty()                     &&
+            lens != QLatin1String("----")       &&
             !(lens.startsWith(QLatin1Char('(')) &&
               lens.endsWith(QLatin1Char(')'))
-             )                                  &&
-            lens != QLatin1String("----")
+             )
            )
         {
             return lens;
