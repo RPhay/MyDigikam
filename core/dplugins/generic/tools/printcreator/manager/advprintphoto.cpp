@@ -29,6 +29,10 @@
 #include <QFileInfo>
 #include <QPolygon>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
