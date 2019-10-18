@@ -78,4 +78,5 @@ BUGFIXES:
 060 ==> 412704 - Stops working when selecting a catalogue.
 061 ==> 412909 - Slideshow skips photos.
 062 ==> 413017 - Lens id is unknown within automatic lens correction.
-063 ==> 
+063 ==> 413072 - German user interface?
+064 ==> 
