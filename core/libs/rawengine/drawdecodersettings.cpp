@@ -76,7 +76,7 @@ DRawDecoderSettings::~DRawDecoderSettings()
 {
 }
 
-DRawDecoderSettings::IccTransform(const DRawDecoderSettings& o)
+DRawDecoderSettings::DRawDecoderSettings(const DRawDecoderSettings& o)
 {
     fixColorsHighlights     = o.fixColorsHighlights;
     autoBrightness          = o.autoBrightness;
