@@ -140,9 +140,11 @@ public:
      */
     DRawDecoderSettings();
 
+
     /** Equivalent to the copy constructor
      */
-    DRawDecoderSettings& operator=(const DRawDecoderSettings& prm);
+    DRawDecoderSettings(const DRawDecoderSettings& o);
+    DRawDecoderSettings& operator=(const DRawDecoderSettings& o);
 
     /** Compare for equality
      */

@@ -76,6 +76,43 @@ DRawDecoderSettings::~DRawDecoderSettings()
 {
 }
 
+DRawDecoderSettings::IccTransform(const DRawDecoderSettings& o)
+{
+    fixColorsHighlights     = o.fixColorsHighlights;
+    autoBrightness          = o.autoBrightness;
+    sixteenBitsImage        = o.sixteenBitsImage;
+    brightness              = o.brightness;
+    RAWQuality              = o.RAWQuality;
+    inputColorSpace         = o.inputColorSpace;
+    outputColorSpace        = o.outputColorSpace;
+    RGBInterpolate4Colors   = o.RGBInterpolate4Colors;
+    DontStretchPixels       = o.DontStretchPixels;
+    unclipColors            = o.unclipColors;
+    whiteBalance            = o.whiteBalance;
+    customWhiteBalance      = o.customWhiteBalance;
+    customWhiteBalanceGreen = o.customWhiteBalanceGreen;
+    halfSizeColorImage      = o.halfSizeColorImage;
+    enableBlackPoint        = o.enableBlackPoint;
+    blackPoint              = o.blackPoint;
+    enableWhitePoint        = o.enableWhitePoint;
+    whitePoint              = o.whitePoint;
+    NRType                  = o.NRType;
+    NRThreshold             = o.NRThreshold;
+    medianFilterPasses      = o.medianFilterPasses;
+    inputProfile            = o.inputProfile;
+    outputProfile           = o.outputProfile;
+    deadPixelMap            = o.deadPixelMap;
+    whiteBalanceArea        = o.whiteBalanceArea;
+
+    //-- Extended demosaicing settings ----------------------------------------------------------
+
+    dcbIterations           = o.dcbIterations;
+    dcbEnhanceFl            = o.dcbEnhanceFl;
+    expoCorrection          = o.expoCorrection;
+    expoCorrectionShift     = o.expoCorrectionShift;
+    expoCorrectionHighlight = o.expoCorrectionHighlight;
+}
+
 DRawDecoderSettings& DRawDecoderSettings::operator=(const DRawDecoderSettings& o)
 {
     fixColorsHighlights     = o.fixColorsHighlights;
