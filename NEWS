@@ -77,4 +77,6 @@ BUGFIXES:
 059 ==> 412948 - Deleting a versioned file leaves original hidden in thumbnail view.
 060 ==> 412704 - Stops working when selecting a catalogue.
 061 ==> 412909 - Slideshow skips photos.
-062 ==> 
+062 ==> 413017 - Lens id is unknown within automatic lens correction.
+063 ==> 413072 - German user interface?
+064 ==> 

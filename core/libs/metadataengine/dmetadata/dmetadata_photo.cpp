@@ -252,7 +252,8 @@ QString DMetadata::getLensDescription() const
     lensExifTags.append(QLatin1String("Exif.Photo.0xFDEA"));          // Non-standard Exif tag set by Camera Raw.
     lensExifTags.append(QLatin1String("Exif.OlympusEq.LensModel"));   // Olympus Cameras Makernote.
 
-    // Olympus Cameras Makernote. FIXME is this necessary? exiv2 returns complete name, which doesn't match with lensfun information, see bug #311295
+    // Olympus Cameras Makernote. FIXME is this necessary? exiv2 returns complete name,
+    // which doesn't match with lensfun information, see bug #311295
     //lensExifTags.append("Exif.OlympusEq.LensType");
 
     // TODO : add Fuji camera Makernotes.
@@ -260,15 +261,18 @@ QString DMetadata::getLensDescription() const
     // -------------------------------------------------------------------
     // Try to get Lens Data information from Exif.
 
-    for (QStringList::const_iterator it = lensExifTags.constBegin(); it != lensExifTags.constEnd(); ++it)
+    for (QStringList::const_iterator it = lensExifTags.constBegin() ; it != lensExifTags.constEnd() ; ++it)
     {
         lens = getExifTagString((*it).toLatin1().constData());
 
-        if ( !lens.isEmpty() &&
-             !(lens.startsWith(QLatin1Char('(')) &&
-               lens.endsWith(QLatin1Char(')'))
-              )
-           )   // To prevent undecoded tag values from Exiv2 as "(65535)".
+        // To prevent undecoded tag values from Exiv2 as "(65535)"
+        // or the value "----" from Exif.Photo.LensModel
+        if (!lens.isEmpty()                     &&
+            lens != QLatin1String("----")       &&
+            !(lens.startsWith(QLatin1Char('(')) &&
+              lens.endsWith(QLatin1Char(')'))
+             )
+           )
         {
             return lens;
         }

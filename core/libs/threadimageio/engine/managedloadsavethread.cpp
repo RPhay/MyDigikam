@@ -209,9 +209,9 @@ void ManagedLoadSaveThread::load(const LoadingDescription& description, LoadingM
             }
 
             // stop current task
-            if (m_currentTask && m_currentTask != existingTask)
+            if ((loadingTask = checkLoadingTask(m_currentTask, LoadingTaskFilterAll)))
             {
-                if ((loadingTask = checkLoadingTask(m_currentTask, LoadingTaskFilterAll)))
+                if (loadingTask != existingTask)
                 {
                     loadingTask->setStatus(LoadingTask::LoadingTaskStatusStopping);
                 }
@@ -222,12 +222,15 @@ void ManagedLoadSaveThread::load(const LoadingDescription& description, LoadingM
             // remove all loading tasks
             for (int i = 0 ; i < m_todo.size() ; ++i)
             {
-                LoadSaveTask* const task = m_todo[i];
+                LoadingTask* task = nullptr;
 
-                if (task != existingTask && checkLoadingTask(task, LoadingTaskFilterAll))
+                if ((task = checkLoadingTask(m_todo.at(i), LoadingTaskFilterAll)))
                 {
-                    //qCDebug(DIGIKAM_GENERAL_LOG) << "Removing task " << task << " from list";
-                    delete m_todo.takeAt(i--);
+                    if (task != existingTask)
+                    {
+                        //qCDebug(DIGIKAM_GENERAL_LOG) << "Removing task " << task << " from list";
+                        delete m_todo.takeAt(i--);
+                    }
                 }
             }
 
@@ -248,13 +251,10 @@ void ManagedLoadSaveThread::load(const LoadingDescription& description, LoadingM
             }
 
             // stop and postpone current task if it is a preloading task
-            if (m_currentTask)
+            if ((loadingTask = checkLoadingTask(m_currentTask, LoadingTaskFilterPreloading)))
             {
-                if ((loadingTask = checkLoadingTask(m_currentTask, LoadingTaskFilterPreloading)))
-                {
-                    loadingTask->setStatus(LoadingTask::LoadingTaskStatusStopping);
-                    load(loadingTask->loadingDescription(), LoadingPolicyPreload);
-                }
+                loadingTask->setStatus(LoadingTask::LoadingTaskStatusStopping);
+                load(loadingTask->loadingDescription(), LoadingPolicyPreload);
             }
 
             //qCDebug(DIGIKAM_GENERAL_LOG) << "LoadingPolicyPrepend, Existing task " << existingTask << ", m_currentTask " << m_currentTask;
@@ -279,13 +279,10 @@ void ManagedLoadSaveThread::load(const LoadingDescription& description, LoadingM
             }
 
             // stop and postpone current task if it is a preloading task
-            if (m_currentTask)
+            if ((loadingTask = checkLoadingTask(m_currentTask, LoadingTaskFilterPreloading)))
             {
-                if ((loadingTask = checkLoadingTask(m_currentTask, LoadingTaskFilterPreloading)))
-                {
-                    loadingTask->setStatus(LoadingTask::LoadingTaskStatusStopping);
-                    load(loadingTask->loadingDescription(), LoadingPolicyPreload);
-                }
+                loadingTask->setStatus(LoadingTask::LoadingTaskStatusStopping);
+                load(loadingTask->loadingDescription(), LoadingPolicyPreload);
             }
 
             if (existingTask)
@@ -433,7 +430,7 @@ void ManagedLoadSaveThread::prependThumbnailGroup(const QList<LoadingDescription
         // remove task, if not the current task
         if (existingTask)
         {
-            if (existingTask == m_currentTask)
+            if (existingTask == static_cast<LoadingTask*>(m_currentTask))
             {
                 continue;
             }
