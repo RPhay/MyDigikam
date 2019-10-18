@@ -140,7 +140,6 @@ public:
      */
     DRawDecoderSettings();
 
-
     /** Equivalent to the copy constructor
      */
     DRawDecoderSettings(const DRawDecoderSettings& o);
