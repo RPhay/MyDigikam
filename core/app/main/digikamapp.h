@@ -127,6 +127,7 @@ private Q_SLOTS:
 
     void slotAlbumSelected(Album*);
     void slotImageSelected(const ItemInfoList&, const ItemInfoList&);
+    void slotTrashSelectionChanged(const QString& text);
     void slotSelectionChanged(int selectionCount);
     void slotExit();
     void slotDBStat() override;

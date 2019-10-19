@@ -80,4 +80,5 @@ BUGFIXES:
 062 ==> 413017 - Lens id is unknown within automatic lens correction.
 063 ==> 413072 - German user interface?
 064 ==> 413197 - Export to Onedrive > Create New Album: improvement when adding album.
-065 ==> 
+065 ==> 413189 - Status bar text not correct in Trash view
+066 ==> 

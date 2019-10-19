@@ -1369,6 +1369,10 @@ void ItemIconView::slotImageSelected()
 
     switch (viewMode())
     {
+        case StackedView::TrashViewMode:
+            emit signalTrashSelectionChanged(d->trashView->statusBarText());
+            break;
+
         case StackedView::TableViewMode:
             emit signalSelectionChanged(d->tableView->numberOfSelectedItems());
             break;
