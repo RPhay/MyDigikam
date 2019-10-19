@@ -193,10 +193,12 @@ void TrashView::slotSelectionChanged()
     if (d->tableView->selectionModel()->hasSelection())
     {
         d->restoreButton->setEnabled(true);
+        d->deleteAction->setEnabled(true);
     }
     else
     {
         d->restoreButton->setEnabled(false);
+        d->deleteAction->setEnabled(false);
     }
 
     emit selectionChanged();
