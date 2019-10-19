@@ -79,4 +79,5 @@ BUGFIXES:
 061 ==> 412909 - Slideshow skips photos.
 062 ==> 413017 - Lens id is unknown within automatic lens correction.
 063 ==> 413072 - German user interface?
-064 ==> 
+064 ==> 413197 - Export to Onedrive > Create New Album: improvement when adding album.
+065 ==> 
