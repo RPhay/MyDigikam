@@ -28,6 +28,10 @@
 #include <cstdio>
 #include <cmath>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -37,6 +41,11 @@
 
 namespace Digikam
 {
+
+QString AutoLevelsFilter::DisplayableName()
+{
+    return i18n("Auto Levels");
+}
 
 AutoLevelsFilter::AutoLevelsFilter(QObject* const parent)
     : DImgThreadedFilter(parent)

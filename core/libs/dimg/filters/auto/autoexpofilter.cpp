@@ -23,6 +23,10 @@
 
 #include "autoexpofilter.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -30,6 +34,11 @@
 
 namespace Digikam
 {
+
+QString AutoExpoFilter::DisplayableName()
+{
+    return i18n("Auto Exposure");
+}
 
 AutoExpoFilter::AutoExpoFilter(QObject* const parent)
     : WBFilter(parent)

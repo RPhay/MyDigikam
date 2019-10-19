@@ -28,6 +28,10 @@
 #include <cstdio>
 #include <cmath>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -36,6 +40,12 @@
 
 namespace Digikam
 {
+
+QString EqualizeFilter::DisplayableName()
+{
+    return i18n("Auto Equalize");
+}
+
 
 EqualizeFilter::EqualizeFilter(QObject* const parent)
     : DImgThreadedFilter(parent)

@@ -59,10 +59,7 @@ public:
         return 1;
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Auto Normalize"));
-    }
+    static QString DisplayableName();
 
     virtual QString         filterIdentifier() const override
     {
