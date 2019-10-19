@@ -103,10 +103,7 @@ public:
         return QLatin1String("digikam:MixerFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Channel Mixer Tool"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

@@ -29,6 +29,10 @@
 #include <cstdio>
 #include <cmath>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -57,7 +61,14 @@ TonalityFilter::~TonalityFilter()
     cancelFilter();
 }
 
-/** Change color tonality of an image for applying a RGB color mask.*/
+QString TonalityFilter::DisplayableName()
+{
+    return i18n("Tonality Filter");
+}
+    
+/**
+ * Change color tonality of an image for applying a RGB color mask.
+ */
 void TonalityFilter::filterImage()
 {
     m_destImage.putImageData(m_orgImage.bits());
