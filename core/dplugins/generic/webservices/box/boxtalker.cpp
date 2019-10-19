@@ -42,6 +42,10 @@
 #include <QHttpMultiPart>
 #include <QNetworkAccessManager>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"

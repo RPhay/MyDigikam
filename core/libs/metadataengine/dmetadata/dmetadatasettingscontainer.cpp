@@ -26,6 +26,7 @@
 
 // KDE includes
 
+#include <klocalizedstring.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -35,6 +36,23 @@
 
 namespace Digikam
 {
+
+QString NamespaceEntry::DM_TAG_CONTAINER()
+{
+    return i18n("Tags");
+}
+
+QString NamespaceEntry::DM_RATING_CONTAINER()
+{
+    return i18n("Rating");
+}
+
+QString NamespaceEntry::DM_COMMENT_CONTAINER()
+{
+    return i18n("Comment");
+}
+
+// ------------------------------------------------------------
 
 bool dmcompare(NamespaceEntry& e1, NamespaceEntry e2)
 {
@@ -70,7 +88,7 @@ QDebug operator<<(QDebug dbg, const NamespaceEntry& inf)
 
     return dbg.space();
 }
-    
+
 // -------------------------------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN DMetadataSettingsContainer::Private
@@ -92,9 +110,9 @@ public:
 DMetadataSettingsContainer::DMetadataSettingsContainer()
     : d(new Private)
 {
-    addMapping(QString::fromUtf8(DM_TAG_CONTAINER));
-    addMapping(QString::fromUtf8(DM_RATING_CONTAINER));
-    addMapping(QString::fromUtf8(DM_COMMENT_CONTAINER));
+    addMapping(NamespaceEntry::DM_TAG_CONTAINER());
+    addMapping(NamespaceEntry::DM_RATING_CONTAINER());
+    addMapping(NamespaceEntry::DM_COMMENT_CONTAINER());
 }
 
 DMetadataSettingsContainer::DMetadataSettingsContainer(const DMetadataSettingsContainer& other)
@@ -286,16 +304,17 @@ void DMetadataSettingsContainer::defaultTagValues()
     tagNs8.index            = 7;
     tagNs8.subspace         = NamespaceEntry::EXIF;
 
-    getReadMapping(QString::fromUtf8(DM_TAG_CONTAINER)) << tagNs1
-                                                        << tagNs2
-                                                        << tagNs3
-                                                        << tagNs4
-                                                        << tagNs5
-                                                        << tagNs6
-                                                        << tagNs7
-                                                        << tagNs8;
+    getReadMapping(NamespaceEntry::DM_TAG_CONTAINER()) << tagNs1
+                                                       << tagNs2
+                                                       << tagNs3
+                                                       << tagNs4
+                                                       << tagNs5
+                                                       << tagNs6
+                                                       << tagNs7
+                                                       << tagNs8;
 
-    d->writeMappings[QString::fromUtf8(DM_TAG_CONTAINER)] = QList<NamespaceEntry>(getReadMapping(QString::fromUtf8(DM_TAG_CONTAINER)));
+    d->writeMappings[NamespaceEntry::DM_TAG_CONTAINER()]
+        = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_TAG_CONTAINER()));
 }
 
 void DMetadataSettingsContainer::defaultRatingValues()
@@ -350,14 +369,15 @@ void DMetadataSettingsContainer::defaultRatingValues()
     ratingNs6.index         = 5;
     ratingNs6.subspace      = NamespaceEntry::IPTC;
 
-    getReadMapping(QString::fromUtf8(DM_RATING_CONTAINER))  << ratingNs1
-                                                            << ratingNs2
-                                                            << ratingNs3
-                                                            << ratingNs4
-                                                            << ratingNs5
-                                                            << ratingNs6;
+    getReadMapping(NamespaceEntry::DM_RATING_CONTAINER()) << ratingNs1
+                                                          << ratingNs2
+                                                          << ratingNs3
+                                                          << ratingNs4
+                                                          << ratingNs5
+                                                          << ratingNs6;
 
-    d->writeMappings[QString::fromUtf8(DM_RATING_CONTAINER)] = QList<NamespaceEntry>(getReadMapping(QString::fromUtf8(DM_RATING_CONTAINER)));
+    d->writeMappings[NamespaceEntry::DM_RATING_CONTAINER()]
+        = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_RATING_CONTAINER()));
 }
 
 void DMetadataSettingsContainer::defaultCommentValues()
@@ -413,15 +433,16 @@ void DMetadataSettingsContainer::defaultCommentValues()
     commNs7.subspace        = NamespaceEntry::IPTC;
 
 
-     getReadMapping(QString::fromUtf8(DM_COMMENT_CONTAINER)) << commNs1
-                                                             << commNs2
-                                                             << commNs3
-                                                             << commNs4
-                                                             << commNs5
-                                                             << commNs6
-                                                             << commNs7;
+     getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()) << commNs1
+                                                            << commNs2
+                                                            << commNs3
+                                                            << commNs4
+                                                            << commNs5
+                                                            << commNs6
+                                                            << commNs7;
 
-    d->writeMappings[QString::fromUtf8(DM_COMMENT_CONTAINER)] = QList<NamespaceEntry>(getReadMapping(QString::fromUtf8(DM_COMMENT_CONTAINER)));
+    d->writeMappings[NamespaceEntry::DM_COMMENT_CONTAINER()]
+        = QList<NamespaceEntry>(getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()));
 }
 
 void DMetadataSettingsContainer::readOneGroup(KConfigGroup& group, const QString& name, QList<NamespaceEntry>& container)

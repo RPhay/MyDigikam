@@ -135,7 +135,7 @@ int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
     bool iptcSupported = hasIptc();
     bool exivSupported = hasExif();
 
-    for (NamespaceEntry entry : settings.getReadMapping(QString::fromUtf8(DM_RATING_CONTAINER)))
+    for (NamespaceEntry entry : settings.getReadMapping(NamespaceEntry::DM_RATING_CONTAINER()))
     {
         if (entry.isDisabled)
             continue;
@@ -296,10 +296,12 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
 
     //qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Rating:" << rating;
 
-    QList<NamespaceEntry> toWrite = settings.getReadMapping(QString::fromUtf8(DM_RATING_CONTAINER));
+    QList<NamespaceEntry> toWrite = settings.getReadMapping(NamespaceEntry::DM_RATING_CONTAINER());
 
     if (!settings.unifyReadWrite())
-        toWrite = settings.getWriteMapping(QString::fromUtf8(DM_RATING_CONTAINER));
+    {
+        toWrite = settings.getWriteMapping(NamespaceEntry::DM_RATING_CONTAINER());
+    }
 
     for (NamespaceEntry entry : toWrite)
     {

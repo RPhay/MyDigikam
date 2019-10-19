@@ -43,6 +43,7 @@
 
 // KDE includes
 
+#include <klocalizedstring.h>
 #include <kwindowconfig.h>
 
 // Local includes

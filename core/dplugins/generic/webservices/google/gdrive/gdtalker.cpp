@@ -47,6 +47,10 @@
 #include <QStandardPaths>
 #include <QUrlQuery>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "wstoolutils.h"

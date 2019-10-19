@@ -100,8 +100,8 @@ void TagsReadWriteTest::testWriteToDisabledNamespaces()
     tagNs3.alternativeName = QLatin1String("Xmp.lr.HierarchicalSubject");
     tagNs3.secondNameOpts  = NamespaceEntry::TAG_XMPSEQ;
 
-    dmsettings.getWriteMapping(QString::fromUtf8(DM_TAG_CONTAINER)).clear();
-    dmsettings.getWriteMapping(QString::fromUtf8(DM_TAG_CONTAINER))
+    dmsettings.getWriteMapping(NamespaceEntry::DM_TAG_CONTAINER()).clear();
+    dmsettings.getWriteMapping(NamespaceEntry::DM_TAG_CONTAINER())
              << tagNs2
              << tagNs3;
 
@@ -146,8 +146,8 @@ void TagsReadWriteTest::testReadFromDisabledNamespaces()
     tagNs3.alternativeName = QLatin1String("Xmp.lr.HierarchicalSubject");
     tagNs3.secondNameOpts  = NamespaceEntry::TAG_XMPSEQ;
 
-    dmsettings.getReadMapping(QString::fromUtf8(DM_TAG_CONTAINER)).clear();
-    dmsettings.getReadMapping(QString::fromUtf8(DM_TAG_CONTAINER))
+    dmsettings.getReadMapping(NamespaceEntry::DM_TAG_CONTAINER()).clear();
+    dmsettings.getReadMapping(NamespaceEntry::DM_TAG_CONTAINER())
              << tagNs2
              << tagNs3;
 
@@ -179,8 +179,8 @@ void TagsReadWriteTest::testTagSeparatorWrite()
     tagNs3.alternativeName = QLatin1String("Xmp.lr.HierarchicalSubject");
     tagNs3.secondNameOpts  = NamespaceEntry::TAG_XMPSEQ;
 
-    dmsettings.getWriteMapping(QString::fromUtf8(DM_TAG_CONTAINER)).clear();
-    dmsettings.getWriteMapping(QString::fromUtf8(DM_TAG_CONTAINER))
+    dmsettings.getWriteMapping(NamespaceEntry::DM_TAG_CONTAINER()).clear();
+    dmsettings.getWriteMapping(NamespaceEntry::DM_TAG_CONTAINER())
              << tagNs3;
 
     dmeta.setItemTagsPath(tagSet1, dmsettings);
@@ -213,8 +213,8 @@ void TagsReadWriteTest::testTagSeparatorRead()
     tagNs3.alternativeName = QLatin1String("Xmp.lr.HierarchicalSubject");
     tagNs3.secondNameOpts  = NamespaceEntry::TAG_XMPSEQ;
 
-    dmsettings.getReadMapping(QString::fromUtf8(DM_TAG_CONTAINER)).clear();
-    dmsettings.getReadMapping(QString::fromUtf8(DM_TAG_CONTAINER))
+    dmsettings.getReadMapping(NamespaceEntry::DM_TAG_CONTAINER()).clear();
+    dmsettings.getReadMapping(NamespaceEntry::DM_TAG_CONTAINER())
              << tagNs3;
 
     toWrite   = tagSet1;
@@ -251,8 +251,8 @@ void TagsReadWriteTest::testTagReadAlternativeNameSpace()
     tagNs3.alternativeName = QLatin1String("Xmp.lr.HierarchicalSubject");
     tagNs3.secondNameOpts  = NamespaceEntry::TAG_XMPSEQ;
 
-    dmsettings.getReadMapping(QString::fromUtf8(DM_TAG_CONTAINER)).clear();
-    dmsettings.getReadMapping(QString::fromUtf8(DM_TAG_CONTAINER))
+    dmsettings.getReadMapping(NamespaceEntry::DM_TAG_CONTAINER()).clear();
+    dmsettings.getReadMapping(NamespaceEntry::DM_TAG_CONTAINER())
              << tagNs3;
 
     toWrite   = tagSet1;

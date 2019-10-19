@@ -83,7 +83,7 @@ CaptionsMap DMetadata::getItemComments(const DMetadataSettingsContainer& setting
     bool iptcSupported = hasIptc();
     bool exivSupported = hasExif();
 
-    for (NamespaceEntry entry : settings.getReadMapping(QString::fromUtf8(DM_COMMENT_CONTAINER)))
+    for (NamespaceEntry entry : settings.getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()))
     {
         if (entry.isDisabled)
             continue;
@@ -184,10 +184,12 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
     }
 
     QString defaultComment        = comments.value(QLatin1String("x-default")).caption;
-    QList<NamespaceEntry> toWrite = settings.getReadMapping(QString::fromUtf8(DM_COMMENT_CONTAINER));
+    QList<NamespaceEntry> toWrite = settings.getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER());
 
     if (!settings.unifyReadWrite())
-        toWrite = settings.getWriteMapping(QString::fromUtf8(DM_COMMENT_CONTAINER));
+    {
+        toWrite = settings.getWriteMapping(NamespaceEntry::DM_COMMENT_CONTAINER());
+    }
 
     for (NamespaceEntry entry : toWrite)
     {

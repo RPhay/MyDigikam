@@ -29,6 +29,10 @@
 #include <QFileInfo>
 #include <QStandardPaths>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dmetadata.h"

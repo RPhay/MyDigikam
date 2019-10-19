@@ -111,8 +111,8 @@ void CommentReadWriteTest::testWriteToDisabledNamespaces()
 
     dmsettings.setUnifyReadWrite(false);
 
-    dmsettings.getWriteMapping(QString::fromUtf8(DM_COMMENT_CONTAINER)).clear();
-    dmsettings.getWriteMapping(QString::fromUtf8(DM_COMMENT_CONTAINER))
+    dmsettings.getWriteMapping(NamespaceEntry::DM_COMMENT_CONTAINER()).clear();
+    dmsettings.getWriteMapping(NamespaceEntry::DM_COMMENT_CONTAINER())
              << commNs1
              << commNs2;
 
@@ -154,8 +154,8 @@ void CommentReadWriteTest::testReadFromDisabledNamespaces()
     commNs2.subspace        = NamespaceEntry::XMP;
 
     dmsettings.setUnifyReadWrite(false);
-    dmsettings.getReadMapping(QString::fromUtf8(DM_COMMENT_CONTAINER)).clear();
-    dmsettings.getReadMapping(QString::fromUtf8(DM_COMMENT_CONTAINER))
+    dmsettings.getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()).clear();
+    dmsettings.getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER())
              << commNs1
              << commNs2;
 

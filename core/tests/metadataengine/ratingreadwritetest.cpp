@@ -95,8 +95,8 @@ void RatingReadWriteTest::testWriteToDisabledNamespaces()
     ratingNs3.subspace = NamespaceEntry::XMP;
 
 
-    dmsettings.getWriteMapping(QString::fromUtf8(DM_RATING_CONTAINER)).clear();
-    dmsettings.getWriteMapping(QString::fromUtf8(DM_RATING_CONTAINER))
+    dmsettings.getWriteMapping(NamespaceEntry::DM_RATING_CONTAINER()).clear();
+    dmsettings.getWriteMapping(NamespaceEntry::DM_RATING_CONTAINER())
              << ratingNs2
              << ratingNs3;
 
@@ -147,8 +147,8 @@ void RatingReadWriteTest::testReadFromDisabledNamespaces()
     ratingNs3.subspace = NamespaceEntry::XMP;
 
 
-    dmsettings.getReadMapping(QString::fromUtf8(DM_RATING_CONTAINER)).clear();
-    dmsettings.getReadMapping(QString::fromUtf8(DM_RATING_CONTAINER))
+    dmsettings.getReadMapping(NamespaceEntry::DM_RATING_CONTAINER()).clear();
+    dmsettings.getReadMapping(NamespaceEntry::DM_RATING_CONTAINER())
              << ratingNs2
              << ratingNs3;
 

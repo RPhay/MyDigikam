@@ -169,15 +169,15 @@ void AdvancedMetadataTab::slotAddNewNamespace()
 
     // Setting some default parameters;
 
-    if (d->metadataType->currentData().toString() == QString::fromUtf8(DM_TAG_CONTAINER))
+    if (d->metadataType->currentData().toString() == NamespaceEntry::DM_TAG_CONTAINER())
     {
         entry.nsType = NamespaceEntry::TAGS;
     }
-    else if (d->metadataType->currentData().toString() == QString::fromUtf8(DM_RATING_CONTAINER))
+    else if (d->metadataType->currentData().toString() == NamespaceEntry::DM_RATING_CONTAINER())
     {
         entry.nsType = NamespaceEntry::RATING;
     }
-    else if (d->metadataType->currentData().toString() == QString::fromUtf8(DM_COMMENT_CONTAINER))
+    else if (d->metadataType->currentData().toString() == NamespaceEntry::DM_COMMENT_CONTAINER())
     {
         entry.nsType = NamespaceEntry::COMMENT;
     }
