@@ -637,6 +637,7 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
 void DigikamApp::slotTrashSelectionChanged(const QString& text)
 {
     d->statusLabel->setAdjustedText(text);
+    d->statusLabel->setToolTip(text);
 }
 
 void DigikamApp::slotSelectionChanged(int selectionCount)
