@@ -41,11 +41,6 @@
 namespace Digikam
 {
 
-QString StretchFilter::DisplayableName()
-{
-    return i18n("Stretch Contrast");
-}
-
 StretchFilter::StretchFilter(QObject* const parent)
     : DImgThreadedFilter(parent)
 {
@@ -62,6 +57,11 @@ StretchFilter::StretchFilter(DImg* const orgImage, const DImg* const refImage, Q
 StretchFilter::~StretchFilter()
 {
     cancelFilter();
+}
+
+QString StretchFilter::DisplayableName()
+{
+    return i18n("Stretch Contrast");
 }
 
 void StretchFilter::filterImage()

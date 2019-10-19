@@ -41,18 +41,11 @@
 namespace Digikam
 {
 
-QString EqualizeFilter::DisplayableName()
-{
-    return i18n("Auto Equalize");
-}
-
-
 EqualizeFilter::EqualizeFilter(QObject* const parent)
     : DImgThreadedFilter(parent)
 {
     initFilter();
 }
-
 
 EqualizeFilter::EqualizeFilter(DImg* const orgImage, const DImg* const refImage, QObject* const parent)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("EqualizeFilter")),
@@ -63,6 +56,11 @@ EqualizeFilter::EqualizeFilter(DImg* const orgImage, const DImg* const refImage,
 
 EqualizeFilter::~EqualizeFilter()
 {
+}
+
+QString EqualizeFilter::DisplayableName()
+{
+    return i18n("Auto Equalize");
 }
 
 void EqualizeFilter::filterImage()

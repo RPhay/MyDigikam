@@ -40,11 +40,6 @@
 namespace Digikam
 {
 
-QString NormalizeFilter::DisplayableName()
-{
-    return i18n("Auto Normalize");
-}
-
 NormalizeFilter::NormalizeFilter(QObject* const parent)
     : DImgThreadedFilter(parent)
 {
@@ -61,6 +56,11 @@ NormalizeFilter::NormalizeFilter(DImg* const orgImage, const DImg* const refImag
 NormalizeFilter::~NormalizeFilter()
 {
     cancelFilter();
+}
+
+QString NormalizeFilter::DisplayableName()
+{
+    return i18n("Auto Normalize");
 }
 
 void NormalizeFilter::filterImage()

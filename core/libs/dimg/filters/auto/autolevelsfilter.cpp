@@ -42,11 +42,6 @@
 namespace Digikam
 {
 
-QString AutoLevelsFilter::DisplayableName()
-{
-    return i18n("Auto Levels");
-}
-
 AutoLevelsFilter::AutoLevelsFilter(QObject* const parent)
     : DImgThreadedFilter(parent)
 {
@@ -63,6 +58,11 @@ AutoLevelsFilter::AutoLevelsFilter(DImg* const orgImage, const DImg* const refIm
 AutoLevelsFilter::~AutoLevelsFilter()
 {
     cancelFilter();
+}
+
+QString AutoLevelsFilter::DisplayableName()
+{
+    return i18n("Auto Levels");
 }
 
 void AutoLevelsFilter::filterImage()

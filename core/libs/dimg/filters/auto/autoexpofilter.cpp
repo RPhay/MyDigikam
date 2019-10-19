@@ -35,11 +35,6 @@
 namespace Digikam
 {
 
-QString AutoExpoFilter::DisplayableName()
-{
-    return i18n("Auto Exposure");
-}
-
 AutoExpoFilter::AutoExpoFilter(QObject* const parent)
     : WBFilter(parent)
 {
@@ -55,6 +50,11 @@ AutoExpoFilter::AutoExpoFilter(DImg* const orgImage, const DImg* const refImage,
 
 AutoExpoFilter::~AutoExpoFilter()
 {
+}
+
+QString AutoExpoFilter::DisplayableName()
+{
+    return i18n("Auto Exposure");
 }
 
 void AutoExpoFilter::filterImage()
