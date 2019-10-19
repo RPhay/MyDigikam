@@ -383,8 +383,8 @@ void PWindow::slotNewBoardRequest()
         PFolder newFolder;
         d->albumDlg->getFolderTitle(newFolder);
         d->currentAlbumName = d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString();
-        QString temp        = newFolder.title;
-        d->talker->createBoard(temp);
+        d->currentAlbumName = newFolder.title;
+        d->talker->createBoard(d->currentAlbumName);
     }
 }
 

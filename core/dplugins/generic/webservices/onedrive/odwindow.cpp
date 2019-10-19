@@ -160,7 +160,7 @@ ODWindow::~ODWindow()
 void ODWindow::readSettings()
 {
     KConfig config;
-    KConfigGroup grp   = config.group("Onedrive Settings");
+    KConfigGroup grp    = config.group("Onedrive Settings");
     d->currentAlbumName = grp.readEntry("Current Album", QString());
 
     if (grp.readEntry("Resize", false))
