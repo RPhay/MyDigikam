@@ -35,10 +35,6 @@
 #include <QPrinter>
 #include <QFont>
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "filesaveconflictbox.h"

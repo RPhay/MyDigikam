@@ -7,8 +7,7 @@
 #
 # Script to show all KF5 dependencies by macro includes scan
 
-grep --exclude-dir PORT.KF5 -r "#include <k" * | \
+grep --exclude-dir -r "#include <k" *.h    | \
    grep -v "#include <klocalizedstring.h>" | \
    grep -v "config"                        | \
-   grep -v "ipi"                           | \
    grep -v "action"

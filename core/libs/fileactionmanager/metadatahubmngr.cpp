@@ -29,6 +29,10 @@
 #include <QDebug>
 #include <QProgressDialog>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "iteminfo.h"

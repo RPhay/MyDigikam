@@ -32,10 +32,6 @@
 #include <QMap>
 #include <QDebug>
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "digikam_export.h"
@@ -51,11 +47,6 @@ namespace Digikam
  *        as names, what types of data expects and extra
  *        xml tags
  */
-
-const char* const DM_TAG_CONTAINER     = I18N_NOOP("Tags");
-const char* const DM_RATING_CONTAINER  = I18N_NOOP("Rating");
-const char* const DM_COMMENT_CONTAINER = I18N_NOOP("Comment");
-
 class NamespaceEntry
 {
 
@@ -126,6 +117,12 @@ public:
     ~NamespaceEntry()
     {
     }
+
+public:
+
+    static QString DM_TAG_CONTAINER();
+    static QString DM_RATING_CONTAINER();
+    static QString DM_COMMENT_CONTAINER();
 
 public:
 

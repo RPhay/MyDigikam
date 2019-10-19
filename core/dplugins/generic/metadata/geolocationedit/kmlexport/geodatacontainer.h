@@ -56,6 +56,14 @@ public:
     {
     };
 
+    GeoDataContainer(const GeoDataContainer& data)
+    {
+        m_interpolated = data.isInterpolated();
+        m_altitude     = data.altitude();
+        m_latitude     = data.latitude();
+        m_longitude    = data.longitude();
+    };
+
     GeoDataContainer& operator=(const GeoDataContainer& data)
     {
         m_interpolated = data.isInterpolated();

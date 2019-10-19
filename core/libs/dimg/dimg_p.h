@@ -62,6 +62,10 @@ extern "C"
 #include <QSysInfo>
 #include <QUuid>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"

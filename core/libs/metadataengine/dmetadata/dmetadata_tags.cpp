@@ -42,7 +42,7 @@ namespace Digikam
 bool DMetadata::getItemTagsPath(QStringList& tagsPath,
                                  const DMetadataSettingsContainer& settings) const
 {
-    for (NamespaceEntry entry : settings.getReadMapping(QString::fromUtf8(DM_TAG_CONTAINER)))
+    for (NamespaceEntry entry : settings.getReadMapping(NamespaceEntry::DM_TAG_CONTAINER()))
     {
         if (entry.isDisabled)
             continue;
@@ -53,11 +53,11 @@ bool DMetadata::getItemTagsPath(QStringList& tagsPath,
 
         // Some namespaces have altenative paths, we must search them both
 
-        switch(entry.subspace)
+        switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
 
-                while(index < 2)
+                while (index < 2)
                 {
                     const std::string myStr = currentNamespace.toStdString();
                     const char* nameSpace   = myStr.data();
@@ -163,10 +163,10 @@ bool DMetadata::setItemTagsPath(const QStringList& tagsPath, const DMetadataSett
 
     // Set the new Tags path list. This is set, not add-to like setXmpKeywords.
     // Unlike the other keyword fields, we do not need to merge existing entries.
-    QList<NamespaceEntry> toWrite = settings.getReadMapping(QString::fromUtf8(DM_TAG_CONTAINER));
+    QList<NamespaceEntry> toWrite = settings.getReadMapping(NamespaceEntry::DM_TAG_CONTAINER());
 
     if (!settings.unifyReadWrite())
-        toWrite = settings.getWriteMapping(QString::fromUtf8(DM_TAG_CONTAINER));
+        toWrite = settings.getWriteMapping(NamespaceEntry::DM_TAG_CONTAINER());
 
     for (NamespaceEntry entry : toWrite)
     {

@@ -30,6 +30,10 @@
 #include <QFile>
 #include <QStandardPaths>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Platinum includes
 
 #include "PltDeviceHost.h"

@@ -41,6 +41,10 @@
 #include <QMimeType>
 #include <QUrlQuery>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_version.h"

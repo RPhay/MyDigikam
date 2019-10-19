@@ -42,6 +42,7 @@ set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:timeadjust_src>
 
             utils/digikam_debug.cpp
+            utils/digikam_version.cpp
 )
 
 if(ENABLE_MEDIAPLAYER)
