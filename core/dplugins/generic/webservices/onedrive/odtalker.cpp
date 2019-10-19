@@ -36,6 +36,7 @@
 #include <QWidget>
 #include <QMessageBox>
 #include <QApplication>
+#include <QMimeDatabase>
 #include <QDesktopServices>
 #include <QUrlQuery>
 #include <QNetworkCookieJar>
@@ -348,32 +349,39 @@ bool ODTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, boo
     emit signalBusy(true);
 
     ODMPForm form;
-    QImage image = PreviewLoadThread::loadHighQualitySynchronously(imgPath).copyQImage();
+    QString path = imgPath;
 
-    if (image.isNull())
+    QMimeDatabase mimeDB;
+
+    if (mimeDB.mimeTypeForFile(imgPath).name().startsWith(QLatin1String("image/")))
     {
-        emit signalBusy(false);
-        return false;
-    }
+        QImage image = PreviewLoadThread::loadHighQualitySynchronously(imgPath).copyQImage();
 
-    QString path = WSToolUtils::makeTemporaryDir("onedrive").filePath(QFileInfo(imgPath)
-                                                 .baseName().trimmed() + QLatin1String(".jpg"));
+        if (image.isNull())
+        {
+            emit signalBusy(false);
+            return false;
+        }
 
-    if (rescale && (image.width() > maxDim || image.height() > maxDim))
-    {
-        image = image.scaled(maxDim, maxDim, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-    }
+        path = WSToolUtils::makeTemporaryDir("onedrive").filePath(QFileInfo(imgPath)
+                                             .baseName().trimmed() + QLatin1String(".jpg"));
 
-    image.save(path, "JPEG", imageQuality);
+        if (rescale && (image.width() > maxDim || image.height() > maxDim))
+        {
+            image = image.scaled(maxDim, maxDim, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        }
 
-    DMetadata meta;
+        image.save(path, "JPEG", imageQuality);
 
-    if (meta.load(imgPath))
-    {
-        meta.setItemDimensions(image.size());
-        meta.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
-        meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
-        meta.save(path, true);
+        DMetadata meta;
+
+        if (meta.load(imgPath))
+        {
+            meta.setItemDimensions(image.size());
+            meta.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
+            meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+            meta.save(path, true);
+        }
     }
 
     if (!form.addFile(path))

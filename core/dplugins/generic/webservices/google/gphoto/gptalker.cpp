@@ -407,7 +407,7 @@ bool GPTalker::updatePhoto(const QString& photoPath, GSPhoto& info, /*const QStr
 
     QMimeDatabase mimeDB;
 
-    if (mimeDB.mimeTypeForFile(path).name().startsWith(QLatin1String("image/")))
+    if (mimeDB.mimeTypeForFile(photoPath).name().startsWith(QLatin1String("image/")))
     {
         QImage image = PreviewLoadThread::loadHighQualitySynchronously(photoPath).copyQImage();
 
