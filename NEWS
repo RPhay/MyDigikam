@@ -81,4 +81,5 @@ BUGFIXES:
 063 ==> 413072 - German user interface?
 064 ==> 413197 - Export to Onedrive > Create New Album: improvement when adding album.
 065 ==> 413189 - Status bar text not correct in Trash view
-066 ==> 
+066 ==> 413147 - Pictures missing from thumbnail view of album.
+067 ==> 
