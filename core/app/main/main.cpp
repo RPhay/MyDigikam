@@ -95,6 +95,10 @@ int main(int argc, char* argv[])
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 #endif
 
+#ifdef HAVE_QWEBENGINE
+    app.setAttribute(Qt::AA_ShareOpenGLContexts, true);
+#endif
+
     // if we have some local breeze icon resource, prefer it
     DXmlGuiWindow::setupIconTheme();
 
