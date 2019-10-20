@@ -25,9 +25,11 @@
 
 // Qt includes
 
-#include <QComboBox>
-#include <QString>
 #include <QVariant>
+
+// KDE includes
+
+#include <klocalizedstring.h>
 
 namespace Digikam
 {
@@ -49,7 +51,7 @@ WSComboBoxIntermediate::WSComboBoxIntermediate(QWidget* const parent, const QStr
     : QComboBox(parent),
       d(new Private)
 {
-    d->intermediateText = text;
+    d->intermediateText = text.isNull() ? i18n("Various") : text;
 
     // Whenever the signal changes, there's a chance that the combobox should
     // be changed from intermediate to normal.

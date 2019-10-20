@@ -40,6 +40,10 @@
 #include <QDesktopServices>
 #include <QNetworkAccessManager>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dmetadata.h"

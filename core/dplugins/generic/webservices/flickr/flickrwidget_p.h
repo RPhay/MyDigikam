@@ -43,6 +43,10 @@
 #include <QStyle>
 #include <QDialog>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "wscomboboxdelegate.h"
