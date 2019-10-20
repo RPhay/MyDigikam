@@ -35,6 +35,10 @@
 #include <QStyle>
 #include <QIcon>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dexpanderbox.h"

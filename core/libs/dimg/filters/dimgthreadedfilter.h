@@ -25,10 +25,6 @@
 #ifndef DIGIKAM_DIMG_THREADED_FILTER_H
 #define DIGIKAM_DIMG_THREADED_FILTER_H
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "digikam_export.h"
