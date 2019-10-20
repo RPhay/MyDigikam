@@ -29,6 +29,10 @@
 #include <cstdio>
 #include <cmath>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -85,6 +89,11 @@ BWSepiaFilter::~BWSepiaFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString BWSepiaFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Black & White / Sepia Filter"));
 }
 
 void BWSepiaFilter::filterImage()

@@ -37,6 +37,10 @@
 #include <QImage>
 #include <QtMath>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -76,6 +80,11 @@ ColorFXFilter::~ColorFXFilter()
     {
         delete [] m_lutTable;
     }
+}
+
+QString ColorFXFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Color FX Filter"));
 }
 
 void ColorFXFilter::filterImage()

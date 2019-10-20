@@ -30,6 +30,10 @@
 #include <cstdio>
 #include <cmath>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -125,6 +129,11 @@ BCGFilter::~BCGFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString BCGFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Brightness / Contrast / Gamma Filter"));
 }
 
 FilterAction BCGFilter::filterAction()
@@ -302,7 +311,6 @@ void BCGFilter::applyBCG(uchar* const bits, uint width, uint height, bool sixtee
             }
         }
     }
-
 }
 
 } // namespace Digikam

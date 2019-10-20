@@ -44,6 +44,10 @@
 
 #include <QColor>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -193,6 +197,11 @@ ContentAwareFilter::~ContentAwareFilter()
     }
 
     delete d;
+}
+
+QString ContentAwareFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Content-Aware Filter"));
 }
 
 void ContentAwareFilter::getEnergyImage()

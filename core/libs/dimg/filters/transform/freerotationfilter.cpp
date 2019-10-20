@@ -30,10 +30,14 @@
 #include <cmath>
 #include <cstdlib>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
-#include "pixelsaliasfilter.h"
+#include "dpixelsaliasfilter.h"
 #include "digikam_globals.h"
 
 namespace Digikam
@@ -69,6 +73,11 @@ FreeRotationFilter::~FreeRotationFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString FreeRotationFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Free Rotation"));
 }
 
 QSize FreeRotationFilter::getNewSize() const
@@ -185,7 +194,7 @@ void FreeRotationFilter::filterImage()
     uchar* pResBits            = m_destImage.bits();
     unsigned short* pResBits16 = reinterpret_cast<unsigned short*>(m_destImage.bits());
 
-    PixelsAliasFilter alias;
+    DPixelsAliasFilter alias;
 
     // main loop
 

@@ -23,6 +23,10 @@
 
 #include "autoexpofilter.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -46,6 +50,11 @@ AutoExpoFilter::AutoExpoFilter(DImg* const orgImage, const DImg* const refImage,
 
 AutoExpoFilter::~AutoExpoFilter()
 {
+}
+
+QString AutoExpoFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Auto Exposure"));
 }
 
 void AutoExpoFilter::filterImage()

@@ -37,6 +37,7 @@ set(libdimgfilters_SRCS
     filters/dimgthreadedanalyser.cpp
     filters/dimgfiltermanager.cpp
     filters/dimgfiltergenerator.cpp
+    filters/dpixelsaliasfilter.cpp
     filters/filteractionfilter.cpp
     filters/randomnumbergenerator.cpp
     filters/rawprocessingfilter.cpp
@@ -54,7 +55,6 @@ set(libdimgfilters_SRCS
     filters/fx/filmgrainfilter.cpp
     filters/fx/filmgrainsettings.cpp
     filters/fx/invertfilter.cpp
-    filters/fx/pixelsaliasfilter.cpp
     filters/fx/oilpaintfilter.cpp
     filters/fx/raindropfilter.cpp
     filters/auto/autolevelsfilter.cpp
@@ -116,7 +116,7 @@ set(libdimgfilters_SRCS
     filters/lens/antivignettingfilter.cpp
     filters/lens/antivignettingsettings.cpp
     filters/lens/lensdistortionfilter.cpp
-    filters/lens/pixelaccess.cpp
+    filters/lens/lensdistortionpixelaccess.cpp
     filters/redeye/redeyecorrectionfilter.cpp
     filters/redeye/redeyecorrectionsettings.cpp
     filters/redeye/redeyecorrectioncontainer.cpp
@@ -170,7 +170,7 @@ if(Eigen3_FOUND)
     set(libdimgfilters_SRCS
         ${libdimgfilters_SRCS}
         filters/sharp/refocusfilter.cpp
-        filters/sharp/matrix.cpp
+        filters/sharp/refocusmatrix.cpp
     )
     include_directories(${EIGEN3_INCLUDE_DIR})
 endif()

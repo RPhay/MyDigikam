@@ -52,10 +52,7 @@ public:
         return QLatin1String("digikam:EmbossFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Emboss Effect"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

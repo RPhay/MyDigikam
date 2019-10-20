@@ -36,6 +36,10 @@
 #include <QRegExp>
 #include <QStringList>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -77,6 +81,11 @@ HotPixelFixer::HotPixelFixer(DImg* const orgImage, QObject* const parent, const 
 HotPixelFixer::~HotPixelFixer()
 {
     cancelFilter();
+}
+
+QString HotPixelFixer::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Hot Pixels Tool"));
 }
 
 Digikam::FilterAction HotPixelFixer::filterAction()
@@ -238,7 +247,7 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction 
     {
         // Obtain weight data block.
 
-        Weights w;
+        HotPixelsWeights w;
         int polynomeOrder = -1;
 
         switch (method)
@@ -275,7 +284,7 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction 
 
         //if (mWeightList.find(w)==mWeightList.end())
         //{
-        w.calculateWeights();
+        w.calculateHotPixelsWeights();
 
         //    mWeightList.append(w);
 

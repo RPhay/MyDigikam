@@ -28,6 +28,10 @@
 #include <cstdio>
 #include <cmath>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -43,7 +47,6 @@ EqualizeFilter::EqualizeFilter(QObject* const parent)
     initFilter();
 }
 
-
 EqualizeFilter::EqualizeFilter(DImg* const orgImage, const DImg* const refImage, QObject* const parent)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("EqualizeFilter")),
       m_refImage(*refImage)
@@ -53,6 +56,11 @@ EqualizeFilter::EqualizeFilter(DImg* const orgImage, const DImg* const refImage,
 
 EqualizeFilter::~EqualizeFilter()
 {
+}
+
+QString EqualizeFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Auto Equalize"));
 }
 
 void EqualizeFilter::filterImage()

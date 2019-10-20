@@ -57,7 +57,7 @@
 #include "editortoolsettings.h"
 #include "dcombobox.h"
 #include "imageiface.h"
-#include "imageselectionwidget.h"
+#include "ratiocropwidget.h"
 #include "histogrambox.h"
 #include "histogramwidget.h"
 #include "dcolorselector.h"
@@ -96,7 +96,7 @@ public:
         xInput(nullptr),
         yInput(nullptr),
         guideColorBt(nullptr),
-        imageSelectionWidget(nullptr),
+        ratioCropWidget(nullptr),
         expbox(nullptr),
         gboxSettings(nullptr),
         histogramBox(nullptr)
@@ -167,7 +167,7 @@ public:
 
     DColorSelector*       guideColorBt;
 
-    ImageSelectionWidget* imageSelectionWidget;
+    RatioCropWidget*      ratioCropWidget;
     DExpanderBox*         expbox;
     EditorToolSettings*   gboxSettings;
     HistogramBox*         histogramBox;
@@ -219,18 +219,18 @@ RatioCropTool::RatioCropTool(QObject* const parent)
     // -------------------------------------------------------------
 
     // Important: Deactivate drawing of the selection now, we will enable it later.
-    d->imageSelectionWidget = new ImageSelectionWidget(480, 320, false);
-    d->imageSelectionWidget->setWhatsThis(i18n("<p>Here you can see the aspect ratio selection preview "
+    d->ratioCropWidget = new RatioCropWidget(480, 320, false);
+    d->ratioCropWidget->setWhatsThis(i18n("<p>Here you can see the aspect ratio selection preview "
                                           "used for cropping. You can use the mouse to move and "
                                           "resize the crop area.</p>"
                                           "<p>Press and hold the <b>CTRL</b> key to move the opposite corner too.</p>"
                                           "<p>Press and hold the <b>SHIFT</b> key to move the closest corner to the "
                                           "mouse pointer.</p>"));
 
-    d->originalIsLandscape = (d->imageSelectionWidget->getOriginalImageWidth() >
-                              d->imageSelectionWidget->getOriginalImageHeight());
+    d->originalIsLandscape = (d->ratioCropWidget->getOriginalImageWidth() >
+                              d->ratioCropWidget->getOriginalImageHeight());
 
-    setToolView(d->imageSelectionWidget);
+    setToolView(d->ratioCropWidget);
 
     // -------------------------------------------------------------
 
@@ -282,7 +282,7 @@ RatioCropTool::RatioCropTool(QObject* const parent)
     QLabel* const label = new QLabel(i18n("Aspect ratio:"), cropSelection);
     d->ratioCB          = new DComboBox(cropSelection);
     d->ratioCB->addItem(i18nc("custom aspect ratio crop settings", "Custom"));
-    // NOTE: Order is important there. Look ImageSelectionWidget::RatioAspect for details.
+    // NOTE: Order is important there. Look RatioCropWidget::RatioAspect for details.
     d->ratioCB->addItem(QLatin1String("1:1"));
     d->ratioCB->addItem(QLatin1String("2:1"));
     d->ratioCB->addItem(QLatin1String("2:3"));
@@ -298,8 +298,8 @@ RatioCropTool::RatioCropTool(QObject* const parent)
     d->ratioCB->addItem(i18n("Golden Ratio"));
     d->ratioCB->addItem(i18n("Current Aspect Ratio"));
     d->ratioCB->addItem(i18nc("no aspect ratio", "None"));
-    d->ratioCB->setDefaultIndex(ImageSelectionWidget::RATIO03X04);
-    setRatioCBText(ImageSelectionWidget::Landscape);
+    d->ratioCB->setDefaultIndex(RatioCropWidget::RATIO03X04);
+    setRatioCBText(RatioCropWidget::Landscape);
     d->ratioCB->setWhatsThis(i18n("<p>Select your constrained aspect ratio for cropping. "
                                   "Aspect Ratio Crop tool uses a relative ratio. That means it "
                                   "is the same if you use centimeters or inches and it does not "
@@ -358,12 +358,12 @@ RatioCropTool::RatioCropTool(QObject* const parent)
 
     d->xInput = new DIntNumInput(cropSelection);
     d->xInput->setWhatsThis(i18n("Set here the top left selection corner position for cropping."));
-    d->xInput->setRange(0, d->imageSelectionWidget->getOriginalImageWidth(), 1);
+    d->xInput->setRange(0, d->ratioCropWidget->getOriginalImageWidth(), 1);
     d->xInput->setDefaultValue(50);
 
     d->yInput = new DIntNumInput(cropSelection);
     d->yInput->setWhatsThis(i18n("Set here the top left selection corner position for cropping."));
-    d->yInput->setRange(0, d->imageSelectionWidget->getOriginalImageWidth(), 1);
+    d->yInput->setRange(0, d->ratioCropWidget->getOriginalImageWidth(), 1);
     d->yInput->setDefaultValue(50);
 
     // -------------------------------------------------------------
@@ -373,9 +373,9 @@ RatioCropTool::RatioCropTool(QObject* const parent)
 
     d->widthInput = new DIntNumInput(cropSelection);
     d->widthInput->setWhatsThis(i18n("Set here the width selection for cropping."));
-    d->widthInput->setRange(d->imageSelectionWidget->getMinWidthRange(),
-                            d->imageSelectionWidget->getMaxWidthRange(),
-                            d->imageSelectionWidget->getWidthStep());
+    d->widthInput->setRange(d->ratioCropWidget->getMinWidthRange(),
+                            d->ratioCropWidget->getMaxWidthRange(),
+                            d->ratioCropWidget->getWidthStep());
     d->widthInput->setDefaultValue(800);
 
     d->centerWidth = new QToolButton(cropSelection);
@@ -384,9 +384,9 @@ RatioCropTool::RatioCropTool(QObject* const parent)
 
     d->heightInput = new DIntNumInput(cropSelection);
     d->heightInput->setWhatsThis(i18n("Set here the height selection for cropping."));
-    d->heightInput->setRange(d->imageSelectionWidget->getMinHeightRange(),
-                             d->imageSelectionWidget->getMaxHeightRange(),
-                             d->imageSelectionWidget->getHeightStep());
+    d->heightInput->setRange(d->ratioCropWidget->getMinHeightRange(),
+                             d->ratioCropWidget->getMaxHeightRange(),
+                             d->ratioCropWidget->getHeightStep());
     d->heightInput->setDefaultValue(600);
 
     d->centerHeight = new QToolButton(cropSelection);
@@ -431,7 +431,7 @@ RatioCropTool::RatioCropTool(QObject* const parent)
     d->guideLinesCB->addItem(i18n("Harmonious Triangles"));
     d->guideLinesCB->addItem(i18n("Golden Mean"));
     d->guideLinesCB->addItem(i18nc("no geometric form", "None"));
-    d->guideLinesCB->setDefaultIndex(ImageSelectionWidget::GuideNone);
+    d->guideLinesCB->setDefaultIndex(RatioCropWidget::GuideNone);
     d->guideLinesCB->setCurrentIndex(3);
     d->guideLinesCB->setWhatsThis(i18n("With this option, you can display guide lines "
                                        "to help compose your photograph."));
@@ -543,10 +543,10 @@ RatioCropTool::RatioCropTool(QObject* const parent)
             this, SLOT(slotGoldenGuideTypeChanged()));
 
     connect(d->guideColorBt, SIGNAL(signalColorSelected(QColor)),
-            d->imageSelectionWidget, SLOT(slotChangeGuideColor(QColor)));
+            d->ratioCropWidget, SLOT(slotChangeGuideColor(QColor)));
 
     connect(d->guideSize, SIGNAL(valueChanged(int)),
-            d->imageSelectionWidget, SLOT(slotChangeGuideSize(int)));
+            d->ratioCropWidget, SLOT(slotChangeGuideSize(int)));
 
     connect(d->widthInput, SIGNAL(valueChanged(int)),
             this, SLOT(slotWidthChanged(int)));
@@ -554,13 +554,13 @@ RatioCropTool::RatioCropTool(QObject* const parent)
     connect(d->heightInput, SIGNAL(valueChanged(int)),
             this, SLOT(slotHeightChanged(int)));
 
-    connect(d->imageSelectionWidget, SIGNAL(signalSelectionChanged(QRect)),
+    connect(d->ratioCropWidget, SIGNAL(signalSelectionChanged(QRect)),
             this, SLOT(slotSelectionChanged(QRect)));
 
-    connect(d->imageSelectionWidget, SIGNAL(signalSelectionMoved(QRect)),
+    connect(d->ratioCropWidget, SIGNAL(signalSelectionMoved(QRect)),
             this, SLOT(slotSelectionChanged(QRect)));
 
-    connect(d->imageSelectionWidget, SIGNAL(signalSelectionOrientationChanged(int)),
+    connect(d->ratioCropWidget, SIGNAL(signalSelectionOrientationChanged(int)),
             this, SLOT(slotSelectionOrientationChanged(int)));
 
     connect(d->centerWidth, SIGNAL(clicked()),
@@ -599,7 +599,7 @@ void RatioCropTool::readSettings()
 
     // No guide lines per default.
     d->guideLinesCB->setCurrentIndex(group.readEntry(d->configGuideLinesTypeEntry,
-                                     (int)ImageSelectionWidget::GuideNone));
+                                     (int)RatioCropWidget::GuideNone));
     d->goldenSectionBox->setChecked(group.readEntry(d->configGoldenSectionEntry,             true));
     d->goldenSpiralSectionBox->setChecked(group.readEntry(d->configGoldenSpiralSectionEntry, false));
     d->goldenSpiralBox->setChecked(group.readEntry(d->configGoldenSpiralEntry,               false));
@@ -611,36 +611,36 @@ void RatioCropTool::readSettings()
     d->guideColorBt->setColor(group.readEntry(d->configGuideColorEntry,                      defaultGuideColor));
     d->guideSize->setValue(group.readEntry(d->configGuideWidthEntry,                         d->guideSize->defaultValue()));
 
-    d->imageSelectionWidget->slotGuideLines(d->guideLinesCB->currentIndex());
-    d->imageSelectionWidget->slotChangeGuideColor(d->guideColorBt->color());
-    d->imageSelectionWidget->setPreciseCrop(d->preciseCrop->isChecked());
+    d->ratioCropWidget->slotGuideLines(d->guideLinesCB->currentIndex());
+    d->ratioCropWidget->slotChangeGuideColor(d->guideColorBt->color());
+    d->ratioCropWidget->setPreciseCrop(d->preciseCrop->isChecked());
 
     if (d->originalIsLandscape)
     {
         d->ratioCB->setCurrentIndex(group.readEntry(d->configHorOrientedAspectRatioEntry,
                                                     d->ratioCB->defaultIndex()));
-        d->orientCB->setDefaultIndex(ImageSelectionWidget::Landscape);
+        d->orientCB->setDefaultIndex(RatioCropWidget::Landscape);
         d->orientCB->setCurrentIndex(group.readEntry(d->configHorOrientedAspectRatioOrientationEntry,
-                                                     (int)ImageSelectionWidget::Landscape));
+                                                     (int)RatioCropWidget::Landscape));
         d->customRatioNInput->setValue(group.readEntry(d->configHorOrientedCustomAspectRatioNumEntry,
                                                        d->customRatioNInput->defaultValue()));
         d->customRatioDInput->setValue(group.readEntry(d->configHorOrientedCustomAspectRatioDenEntry,
                                                        d->customRatioDInput->defaultValue()));
 
-        d->imageSelectionWidget->setSelectionOrientation(d->orientCB->currentIndex());
+        d->ratioCropWidget->setSelectionOrientation(d->orientCB->currentIndex());
         slotAutoOrientChanged(d->autoOrientation->isChecked());
         applyRatioChanges(d->ratioCB->currentIndex());
         slotHeightChanged(1);
         slotWidthChanged(1);
 
-        setInputRange(d->imageSelectionWidget->getRegionSelection());
+        setInputRange(d->ratioCropWidget->getRegionSelection());
 
         d->xInput->setValue(group.readEntry(d->configHorOrientedCustomAspectRatioXposEntry,
                                             d->xInput->defaultValue()));
         d->yInput->setValue(group.readEntry(d->configHorOrientedCustomAspectRatioYposEntry,
                                             d->yInput->defaultValue()));
 
-        setInputRange(d->imageSelectionWidget->getRegionSelection());
+        setInputRange(d->ratioCropWidget->getRegionSelection());
 
         d->widthInput->setValue(group.readEntry(d->configHorOrientedCustomAspectRatioWidthEntry,
                                                 d->widthInput->defaultValue()));
@@ -651,28 +651,28 @@ void RatioCropTool::readSettings()
     {
         d->ratioCB->setCurrentIndex(group.readEntry(d->configVerOrientedAspectRatioEntry,
                                                     d->ratioCB->defaultIndex()));
-        d->orientCB->setDefaultIndex(ImageSelectionWidget::Portrait);
+        d->orientCB->setDefaultIndex(RatioCropWidget::Portrait);
         d->orientCB->setCurrentIndex(group.readEntry(d->configVerOrientedAspectRatioOrientationEntry,
-                                                     (int)ImageSelectionWidget::Portrait));
+                                                     (int)RatioCropWidget::Portrait));
         d->customRatioNInput->setValue(group.readEntry(d->configVerOrientedCustomAspectRatioNumEntry,
                                                        d->customRatioNInput->defaultValue()));
         d->customRatioDInput->setValue(group.readEntry(d->configVerOrientedCustomAspectRatioDenEntry,
                                                        d->customRatioDInput->defaultValue()));
 
-        d->imageSelectionWidget->setSelectionOrientation(d->orientCB->currentIndex());
+        d->ratioCropWidget->setSelectionOrientation(d->orientCB->currentIndex());
         slotAutoOrientChanged(d->autoOrientation->isChecked());
         applyRatioChanges(d->ratioCB->currentIndex());
         slotHeightChanged(1);
         slotWidthChanged(1);
 
-        setInputRange(d->imageSelectionWidget->getRegionSelection());
+        setInputRange(d->ratioCropWidget->getRegionSelection());
 
         d->xInput->setValue(group.readEntry(d->configVerOrientedCustomAspectRatioXposEntry,
                                             d->xInput->defaultValue()));
         d->yInput->setValue(group.readEntry(d->configVerOrientedCustomAspectRatioYposEntry,
                                             d->yInput->defaultValue()));
 
-        setInputRange(d->imageSelectionWidget->getRegionSelection());
+        setInputRange(d->ratioCropWidget->getRegionSelection());
 
         d->widthInput->setValue(group.readEntry(d->configVerOrientedCustomAspectRatioWidthEntry,
                                                 d->widthInput->defaultValue()));
@@ -680,11 +680,11 @@ void RatioCropTool::readSettings()
                                                  d->heightInput->defaultValue()));
     }
 
-    setInputRange(d->imageSelectionWidget->getRegionSelection());
+    setInputRange(d->ratioCropWidget->getRegionSelection());
 
     // For the last setting to be applied, activate drawing in
     // the selectionWidget, so that we can see the results.
-    d->imageSelectionWidget->setIsDrawingSelection(true);
+    d->ratioCropWidget->setIsDrawingSelection(true);
 
     slotGuideTypeChanged(d->guideLinesCB->currentIndex());
 
@@ -745,22 +745,22 @@ void RatioCropTool::writeSettings()
 
 void RatioCropTool::slotResetSettings()
 {
-    d->imageSelectionWidget->resetSelection();
+    d->ratioCropWidget->resetSelection();
 }
 
 void RatioCropTool::slotMaxAspectRatio()
 {
-    d->imageSelectionWidget->maxAspectSelection();
+    d->ratioCropWidget->maxAspectSelection();
 }
 
 void RatioCropTool::slotCenterWidth()
 {
-    d->imageSelectionWidget->setCenterSelection(ImageSelectionWidget::CenterWidth);
+    d->ratioCropWidget->setCenterSelection(RatioCropWidget::CenterWidth);
 }
 
 void RatioCropTool::slotCenterHeight()
 {
-    d->imageSelectionWidget->setCenterSelection(ImageSelectionWidget::CenterHeight);
+    d->ratioCropWidget->setCenterSelection(RatioCropWidget::CenterHeight);
 }
 
 void RatioCropTool::slotSelectionChanged(const QRect& rect)
@@ -775,7 +775,7 @@ void RatioCropTool::slotSelectionChanged(const QRect& rect)
 
     d->gboxSettings->enableButton(EditorToolSettings::Ok, rect.isValid());
 
-    d->preciseCrop->setEnabled(d->imageSelectionWidget->preciseCropAvailable());
+    d->preciseCrop->setEnabled(d->ratioCropWidget->preciseCropAvailable());
 
     updateCropInfo();
 
@@ -790,7 +790,7 @@ void RatioCropTool::setRatioCBText(int orientation)
     d->ratioCB->addItem(i18nc("custom ratio crop settings", "Custom"));
     d->ratioCB->addItem(QLatin1String("1:1"));
 
-    if (orientation == ImageSelectionWidget::Landscape)
+    if (orientation == RatioCropWidget::Landscape)
     {
         d->ratioCB->addItem(QLatin1String("1:2"));
         d->ratioCB->addItem(QLatin1String("3:2"));
@@ -827,14 +827,14 @@ void RatioCropTool::setRatioCBText(int orientation)
 
 void RatioCropTool::setInputRange(const QRect& rect)
 {
-    d->xInput->setRange(0, d->imageSelectionWidget->getOriginalImageWidth()  - rect.width(),  1);
-    d->yInput->setRange(0, d->imageSelectionWidget->getOriginalImageHeight() - rect.height(), 1);
-    d->widthInput->setRange(d->imageSelectionWidget->getMinWidthRange(),
-                            d->imageSelectionWidget->getMaxWidthRange(),
-                            d->imageSelectionWidget->getWidthStep());
-    d->heightInput->setRange(d->imageSelectionWidget->getMinHeightRange(),
-                             d->imageSelectionWidget->getMaxHeightRange(),
-                             d->imageSelectionWidget->getHeightStep());
+    d->xInput->setRange(0, d->ratioCropWidget->getOriginalImageWidth()  - rect.width(),  1);
+    d->yInput->setRange(0, d->ratioCropWidget->getOriginalImageHeight() - rect.height(), 1);
+    d->widthInput->setRange(d->ratioCropWidget->getMinWidthRange(),
+                            d->ratioCropWidget->getMaxWidthRange(),
+                            d->ratioCropWidget->getWidthStep());
+    d->heightInput->setRange(d->ratioCropWidget->getMinHeightRange(),
+                             d->ratioCropWidget->getMaxHeightRange(),
+                             d->ratioCropWidget->getHeightStep());
 }
 
 void RatioCropTool::slotSelectionOrientationChanged(int newOrientation)
@@ -850,9 +850,9 @@ void RatioCropTool::slotSelectionOrientationChanged(int newOrientation)
     // Reverse custom values
 
     if ((d->customRatioNInput->value() < d->customRatioDInput->value() &&
-         newOrientation == ImageSelectionWidget::Landscape)            ||
+         newOrientation == RatioCropWidget::Landscape)            ||
         (d->customRatioNInput->value() > d->customRatioDInput->value() &&
-         newOrientation == ImageSelectionWidget::Portrait))
+         newOrientation == RatioCropWidget::Portrait))
     {
         d->customRatioNInput->blockSignals(true);
         d->customRatioDInput->blockSignals(true);
@@ -868,32 +868,32 @@ void RatioCropTool::slotSelectionOrientationChanged(int newOrientation)
 
 void RatioCropTool::slotXChanged(int x)
 {
-    d->imageSelectionWidget->setSelectionX(x);
+    d->ratioCropWidget->setSelectionX(x);
 }
 
 void RatioCropTool::slotYChanged(int y)
 {
-    d->imageSelectionWidget->setSelectionY(y);
+    d->ratioCropWidget->setSelectionY(y);
 }
 
 void RatioCropTool::slotWidthChanged(int w)
 {
-    d->imageSelectionWidget->setSelectionWidth(w);
+    d->ratioCropWidget->setSelectionWidth(w);
 }
 
 void RatioCropTool::slotHeightChanged(int h)
 {
-    d->imageSelectionWidget->setSelectionHeight(h);
+    d->ratioCropWidget->setSelectionHeight(h);
 }
 
 void RatioCropTool::slotPreciseCropChanged(bool a)
 {
-    d->imageSelectionWidget->setPreciseCrop(a);
+    d->ratioCropWidget->setPreciseCrop(a);
 }
 
 void RatioCropTool::slotOrientChanged(int o)
 {
-    d->imageSelectionWidget->setSelectionOrientation(o);
+    d->ratioCropWidget->setSelectionOrientation(o);
 
     // Reset selection area.
     slotResetSettings();
@@ -902,7 +902,7 @@ void RatioCropTool::slotOrientChanged(int o)
 void RatioCropTool::slotAutoOrientChanged(bool a)
 {
     d->orientCB->setEnabled(!a);
-    d->imageSelectionWidget->setAutoOrientation(a);
+    d->ratioCropWidget->setAutoOrientation(a);
 }
 
 void RatioCropTool::slotRatioChanged(int a)
@@ -915,9 +915,9 @@ void RatioCropTool::slotRatioChanged(int a)
 
 void RatioCropTool::applyRatioChanges(int a)
 {
-    d->imageSelectionWidget->setSelectionAspectRatioType(a);
+    d->ratioCropWidget->setSelectionAspectRatioType(a);
 
-    if (a == ImageSelectionWidget::RATIOCUSTOM)
+    if (a == RatioCropWidget::RATIOCUSTOM)
     {
         d->customLabel->setEnabled(true);
         d->customRatioNInput->setEnabled(true);
@@ -927,7 +927,7 @@ void RatioCropTool::applyRatioChanges(int a)
         d->autoOrientation->setEnabled(true);
         slotCustomRatioChanged();
     }
-    else if (a == ImageSelectionWidget::RATIONONE)
+    else if (a == RatioCropWidget::RATIONONE)
     {
         d->orientLabel->setEnabled(false);
         d->orientCB->setEnabled(false);
@@ -961,18 +961,18 @@ void RatioCropTool::slotGuideTypeChanged(int t)
 
     switch (t)
     {
-        case ImageSelectionWidget::GuideNone:
+        case RatioCropWidget::GuideNone:
             d->colorGuideLabel->setEnabled(false);
             d->guideColorBt->setEnabled(false);
             d->guideSize->setEnabled(false);
             break;
 
-        case ImageSelectionWidget::HarmoniousTriangles:
+        case RatioCropWidget::HarmoniousTriangles:
             d->flipHorBox->setEnabled(true);
             d->flipVerBox->setEnabled(true);
             break;
 
-        case ImageSelectionWidget::GoldenMean:
+        case RatioCropWidget::GoldenMean:
             d->flipHorBox->setEnabled(true);
             d->flipVerBox->setEnabled(true);
             d->goldenSectionBox->setEnabled(true);
@@ -982,13 +982,13 @@ void RatioCropTool::slotGuideTypeChanged(int t)
             break;
     }
 
-    d->imageSelectionWidget->setGoldenGuideTypes(d->goldenSectionBox->isChecked(),
+    d->ratioCropWidget->setGoldenGuideTypes(d->goldenSectionBox->isChecked(),
             d->goldenSpiralSectionBox->isChecked(),
             d->goldenSpiralBox->isChecked(),
             d->goldenTriangleBox->isChecked(),
             d->flipHorBox->isChecked(),
             d->flipVerBox->isChecked());
-    d->imageSelectionWidget->slotGuideLines(t);
+    d->ratioCropWidget->slotGuideLines(t);
 }
 
 void RatioCropTool::slotGoldenGuideTypeChanged()
@@ -1000,9 +1000,9 @@ void RatioCropTool::slotCustomNRatioChanged(int a)
 {
     if (!d->autoOrientation->isChecked())
     {
-        if ((d->orientCB->currentIndex() == ImageSelectionWidget::Portrait  &&
+        if ((d->orientCB->currentIndex() == RatioCropWidget::Portrait  &&
              d->customRatioDInput->value() < a)                             ||
-            (d->orientCB->currentIndex() == ImageSelectionWidget::Landscape &&
+            (d->orientCB->currentIndex() == RatioCropWidget::Landscape &&
              d->customRatioDInput->value() > a))
         {
             d->customRatioDInput->blockSignals(true);
@@ -1018,9 +1018,9 @@ void RatioCropTool::slotCustomDRatioChanged(int a)
 {
     if (!d->autoOrientation->isChecked())
     {
-        if ((d->orientCB->currentIndex() == ImageSelectionWidget::Landscape &&
+        if ((d->orientCB->currentIndex() == RatioCropWidget::Landscape &&
              d->customRatioNInput->value() < a)                             ||
-            (d->orientCB->currentIndex() == ImageSelectionWidget::Portrait  &&
+            (d->orientCB->currentIndex() == RatioCropWidget::Portrait  &&
              d->customRatioNInput->value() > a))
         {
             d->customRatioNInput->blockSignals(true);
@@ -1034,7 +1034,7 @@ void RatioCropTool::slotCustomDRatioChanged(int a)
 
 void RatioCropTool::slotCustomRatioChanged()
 {
-    d->imageSelectionWidget->setSelectionAspectRatioValue(d->customRatioNInput->value(), d->customRatioDInput->value());
+    d->ratioCropWidget->setSelectionAspectRatioValue(d->customRatioNInput->value(), d->customRatioDInput->value());
 
     // Reset selection area.
     slotResetSettings();
@@ -1043,7 +1043,7 @@ void RatioCropTool::slotCustomRatioChanged()
 void RatioCropTool::updateCropInfo()
 {
     d->histogramBox->histogram()->stopHistogramComputation();
-    DImg* const img   = d->imageSelectionWidget->imageIface()->original();
+    DImg* const img   = d->ratioCropWidget->imageIface()->original();
     d->imageSelection = img->copy(getNormalizedRegion());
     d->histogramBox->histogram()->updateData(d->imageSelection);
 
@@ -1055,8 +1055,8 @@ void RatioCropTool::updateCropInfo()
 
 QRect RatioCropTool::getNormalizedRegion() const
 {
-    QRect currentRegion     = d->imageSelectionWidget->getRegionSelection();
-    ImageIface* const iface = d->imageSelectionWidget->imageIface();
+    QRect currentRegion     = d->ratioCropWidget->getRegionSelection();
+    ImageIface* const iface = d->ratioCropWidget->imageIface();
     int w                   = iface->originalSize().width();
     int h                   = iface->originalSize().height();
     QRect normalizedRegion  = currentRegion.normalized();
@@ -1078,8 +1078,8 @@ void RatioCropTool::finalRendering()
 {
     qApp->setOverrideCursor(Qt::WaitCursor);
 
-    QRect currentRegion     = d->imageSelectionWidget->getRegionSelection();
-    ImageIface* const iface = d->imageSelectionWidget->imageIface();
+    QRect currentRegion     = d->ratioCropWidget->getRegionSelection();
+    ImageIface* const iface = d->ratioCropWidget->imageIface();
     QRect normalizedRegion  = getNormalizedRegion();
     DImg imOrg              = iface->original()->copy();
 
@@ -1110,7 +1110,7 @@ void RatioCropTool::blockWidgetSignals(bool b)
     d->goldenTriangleBox->blockSignals(b);
     d->guideLinesCB->blockSignals(b);
     d->heightInput->blockSignals(b);
-    d->imageSelectionWidget->blockSignals(b);
+    d->ratioCropWidget->blockSignals(b);
     d->preciseCrop->blockSignals(b);
     d->widthInput->blockSignals(b);
     d->xInput->blockSignals(b);
@@ -1119,7 +1119,7 @@ void RatioCropTool::blockWidgetSignals(bool b)
 
 void RatioCropTool::setBackgroundColor(const QColor& bg)
 {
-    d->imageSelectionWidget->setBackgroundColor(bg);
+    d->ratioCropWidget->setBackgroundColor(bg);
 }
 
 } // namespace DigikamEditorRatioCropToolPlugin

@@ -87,10 +87,7 @@ public:
         return QLatin1String("digikam:ColorBalanceFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Color Balance Tool"));
-    }
+    static QString DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

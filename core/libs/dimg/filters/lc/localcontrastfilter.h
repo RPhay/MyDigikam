@@ -55,10 +55,7 @@ public:
         return QLatin1String("digikam:LocalContrastFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Local Contrast Filter"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

@@ -91,10 +91,7 @@ public:
         return QLatin1String("digikam:LevelsFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Levels Adjust Tool"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

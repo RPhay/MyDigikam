@@ -28,6 +28,10 @@
 #include <cstdio>
 #include <cmath>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -54,6 +58,11 @@ AutoLevelsFilter::AutoLevelsFilter(DImg* const orgImage, const DImg* const refIm
 AutoLevelsFilter::~AutoLevelsFilter()
 {
     cancelFilter();
+}
+
+QString AutoLevelsFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Auto Levels"));
 }
 
 void AutoLevelsFilter::filterImage()

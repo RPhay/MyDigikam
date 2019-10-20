@@ -54,10 +54,7 @@ public:
         return QLatin1String("digikam:BCGFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Brightness / Contrast / Gamma Filter"));
-    }
+    static QString DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

@@ -27,6 +27,10 @@
 #include <QString>
 #include <QtConcurrent>    // krazy:exclude=includes
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -84,6 +88,11 @@ LensFunFilter::~LensFunFilter()
 
     delete d->iface;
     delete d;
+}
+
+QString LensFunFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Lens Auto-Correction Tool"));
 }
 
 void LensFunFilter::filterCCAMultithreaded(uint start, uint stop)

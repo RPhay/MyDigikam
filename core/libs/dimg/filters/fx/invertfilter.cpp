@@ -24,6 +24,10 @@
 
 #include "invertfilter.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -58,8 +62,14 @@ InvertFilter::~InvertFilter()
     cancelFilter();
 }
 
-/** Performs image colors inversion. This tool is used for negate image
-    resulting of a positive film scanned.
+QString InvertFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Invert Effect"));
+}
+
+/**
+ * Performs image colors inversion. This tool is used for negate image
+ * resulting of a positive film scanned.
  */
 void InvertFilter::filterImage()
 {

@@ -78,7 +78,7 @@ DBWindow::DBWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Dropbox Export Dialog")),
       d(new Private)
 {
-    d->widget      = new DBWidget(this, iface, QLatin1String("Dropbox"));
+    d->widget   = new DBWidget(this, iface, QLatin1String("Dropbox"));
     d->widget->imagesList()->setIface(iface);
 
     setMainWidget(d->widget);
@@ -150,8 +150,6 @@ DBWindow::DBWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
 
 DBWindow::~DBWindow()
 {
-    delete d->widget;
-    delete d->albumDlg;
     delete d->talker;
     delete d;
 }
@@ -172,9 +170,8 @@ void DBWindow::reactivate()
 void DBWindow::readSettings()
 {
     KConfig config;
-    KConfigGroup grp   = config.group("Dropbox Settings");
-
-    d->currentAlbumName = grp.readEntry("Current Album",QString());
+    KConfigGroup grp    = config.group("Dropbox Settings");
+    d->currentAlbumName = grp.readEntry("Current Album", QString());
 
     if (grp.readEntry("Resize", false))
     {
@@ -187,8 +184,9 @@ void DBWindow::readSettings()
         d->widget->getDimensionSpB()->setEnabled(false);
     }
 
-    d->widget->getDimensionSpB()->setValue(grp.readEntry("Maximum Width",  1600));
-    d->widget->getImgQualitySpB()->setValue(grp.readEntry("Image Quality", 90));
+    d->widget->getOriginalCheckBox()->setChecked(grp.readEntry("Upload Original", false));
+    d->widget->getDimensionSpB()->setValue(grp.readEntry("Maximum Width",         1600));
+    d->widget->getImgQualitySpB()->setValue(grp.readEntry("Image Quality",        90));
 
     winId();
     KConfigGroup dialogGroup = config.group("Dropbox Export Dialog");
@@ -201,10 +199,11 @@ void DBWindow::writeSettings()
     KConfig config;
     KConfigGroup grp = config.group("Dropbox Settings");
 
-    grp.writeEntry("Current Album", d->currentAlbumName);
-    grp.writeEntry("Resize",        d->widget->getResizeCheckBox()->isChecked());
-    grp.writeEntry("Maximum Width", d->widget->getDimensionSpB()->value());
-    grp.writeEntry("Image Quality", d->widget->getImgQualitySpB()->value());
+    grp.writeEntry("Current Album",   d->currentAlbumName);
+    grp.writeEntry("Resize",          d->widget->getResizeCheckBox()->isChecked());
+    grp.writeEntry("Upload Original", d->widget->getOriginalCheckBox()->isChecked());
+    grp.writeEntry("Maximum Width",   d->widget->getDimensionSpB()->value());
+    grp.writeEntry("Image Quality",   d->widget->getImgQualitySpB()->value());
 
     KConfigGroup dialogGroup = config.group("Dropbox Export Dialog");
     KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
@@ -315,10 +314,11 @@ void DBWindow::uploadNextPhoto()
     }
 
     QString imgPath = d->transferQueue.first().toLocalFile();
-    QString temp = d->currentAlbumName + QLatin1Char('/');
+    QString temp    = d->currentAlbumName + QLatin1Char('/');
 
     bool res = d->talker->addPhoto(imgPath,
                                    temp,
+                                   d->widget->getOriginalCheckBox()->isChecked(),
                                    d->widget->getResizeCheckBox()->isChecked(),
                                    d->widget->getDimensionSpB()->value(),
                                    d->widget->getImgQualitySpB()->value());
@@ -375,8 +375,8 @@ void DBWindow::slotNewAlbumRequest()
         d->albumDlg->getFolderTitle(newFolder);
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "slotNewAlbumRequest:" << newFolder.title;
         d->currentAlbumName = d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString();
-        QString temp = d->currentAlbumName + newFolder.title;
-        d->talker->createFolder(temp);
+        d->currentAlbumName = d->currentAlbumName + newFolder.title;
+        d->talker->createFolder(d->currentAlbumName);
     }
 }
 

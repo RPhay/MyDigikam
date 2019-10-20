@@ -35,6 +35,10 @@
 #include <QListIterator>
 #include <QStandardPaths>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -97,6 +101,11 @@ RedEyeCorrectionFilter::~RedEyeCorrectionFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString RedEyeCorrectionFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("RedEye Correction Filter"));
 }
 
 void RedEyeCorrectionFilter::filterImage()

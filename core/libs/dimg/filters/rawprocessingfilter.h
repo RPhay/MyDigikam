@@ -104,10 +104,7 @@ public:
         return QLatin1String("digikam:RawConverter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Raw Conversion"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

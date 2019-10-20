@@ -141,6 +141,7 @@ Q_SIGNALS:
     void signalImageSelected(const ItemInfoList& selectedImage, const ItemInfoList& allImages);
     void signalNoCurrentItem();
     void signalSelectionChanged(int numberOfSelectedItems);
+    void signalTrashSelectionChanged(const QString& text);
     void signalThumbSizeChanged(int);
     void signalZoomChanged(double);
     void signalSwitchedToPreview();

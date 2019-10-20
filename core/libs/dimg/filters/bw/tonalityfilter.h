@@ -77,10 +77,7 @@ public:
         return QLatin1String("digikam:TonalityFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Tonality Filter"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

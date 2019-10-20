@@ -31,6 +31,10 @@
 #include <QtMath>
 #include <QMutex>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -84,6 +88,11 @@ BlurFilter::~BlurFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString BlurFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Blur Filter"));
 }
 
 void BlurFilter::blurMultithreaded(uint start, uint stop)

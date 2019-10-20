@@ -15,11 +15,11 @@ include_directories($<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 set(ratiocroptoolplugin_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/imageselectionwidget.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ratiocropwidget.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ratiocroptoolplugin.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/ratiocroptool.cpp
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    RatioCropTool
-                                   SOURCES ${ratiocroptoolplugin_SRCS}
+                          SOURCES ${ratiocroptoolplugin_SRCS}
 )

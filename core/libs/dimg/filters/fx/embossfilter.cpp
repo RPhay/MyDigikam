@@ -38,6 +38,10 @@
 #include <QtMath>
 #include <QtConcurrent>    // krazy:exclude=includes
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -63,6 +67,11 @@ EmbossFilter::EmbossFilter(DImg* const orgImage, QObject* const parent, int dept
 EmbossFilter::~EmbossFilter()
 {
     cancelFilter();
+}
+
+QString EmbossFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Emboss Effect"));
 }
 
 /** Function to apply the EmbossFilter effect

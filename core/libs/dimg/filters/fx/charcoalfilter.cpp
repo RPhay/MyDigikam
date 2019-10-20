@@ -36,6 +36,10 @@
 #include <QtConcurrent>    // krazy:exclude=includes
 #include <QMutex>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -90,6 +94,11 @@ CharcoalFilter::~CharcoalFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString CharcoalFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Charcoal Effect"));
 }
 
 void CharcoalFilter::filterImage()

@@ -33,12 +33,16 @@
 
 #include <QtConcurrent>    // krazy:exclude=includes
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
 #include "digikam_debug.h"
 #include "dcolor.h"
-#include "matrix.h"
+#include "refocusmatrix.h"
 
 namespace Digikam
 {
@@ -99,6 +103,11 @@ RefocusFilter::~RefocusFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString RefocusFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Refocus"));
 }
 
 void RefocusFilter::filterImage()

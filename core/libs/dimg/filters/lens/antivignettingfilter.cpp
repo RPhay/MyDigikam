@@ -35,6 +35,10 @@
 #include <cmath>
 #include <cstdlib>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -61,8 +65,14 @@ AntiVignettingFilter::~AntiVignettingFilter()
     cancelFilter();
 }
 
-// This method is inspired from John Walker 'pnmctrfilt' algorithm code.
+QString AntiVignettingFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Anti-Vignetting Tool"));
+}
 
+/**
+ * This method is inspired from John Walker 'pnmctrfilt' algorithm code.
+ */
 void AntiVignettingFilter::filterImage()
 {
     int    progress;

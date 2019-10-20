@@ -34,6 +34,10 @@
 
 #include <QDateTime>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -60,6 +64,11 @@ InfraredFilter::InfraredFilter(DImg* const orgImage, QObject* const parent, cons
 InfraredFilter::~InfraredFilter()
 {
     cancelFilter();
+}
+
+QString InfraredFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Infrared Filter"));
 }
 
 /** This method is based on the Simulate Infrared Film tutorial from GimpGuru.org web site

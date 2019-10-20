@@ -7,7 +7,11 @@
 #
 # Script to show all KF5 dependencies by macro includes scan
 
-grep --exclude-dir -r "#include <k" *.h    | \
-   grep -v "#include <klocalizedstring.h>" | \
-   grep -v "config"                        | \
-   grep -v "action"
+grep -r "#include <k" ../../core/*          | \
+    grep -v "#include <klocalizedstring.h>" | \
+    grep -v "config"                        | \
+    grep -v "kernel"                        | \
+    grep -v "kvm"                           | \
+    grep -v "kstat"                         | \
+    grep -v "keychain"                      | \
+    grep -v "scankdedep.sh"

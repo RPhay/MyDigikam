@@ -38,6 +38,10 @@
 #include <QtConcurrent>    // krazy:exclude=includes
 #include <QMutex>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -85,6 +89,11 @@ OilPaintFilter::~OilPaintFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString OilPaintFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Oil Painter Effect"));
 }
 
 /** Function to apply the OilPaintFilter effect.

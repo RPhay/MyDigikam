@@ -39,6 +39,10 @@
 #include <QtMath>
 #include <QtConcurrent>    // krazy:exclude=includes
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -96,6 +100,11 @@ RainDropFilter::~RainDropFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString RainDropFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Rain Drops Effect"));
 }
 
 void RainDropFilter::filterImage()

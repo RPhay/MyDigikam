@@ -69,6 +69,11 @@ public:
      */
     void selectLastSelected();
 
+    /**
+     * @return text for the main status bar
+     */
+    QString statusBarText() const;
+
 private Q_SLOTS:
 
     void slotSelectionChanged();

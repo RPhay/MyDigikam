@@ -54,10 +54,7 @@ public:
         return QLatin1String("digikam:DistortionFXFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Distortion Effect"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

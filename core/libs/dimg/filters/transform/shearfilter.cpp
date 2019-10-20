@@ -32,11 +32,15 @@
 #include <cmath>
 #include <cstdlib>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_globals.h"
 #include "dimg.h"
-#include "pixelsaliasfilter.h"
+#include "dpixelsaliasfilter.h"
 
 namespace Digikam
 {
@@ -93,6 +97,11 @@ ShearFilter::ShearFilter(DImg* const orgImage, QObject* const parent, float hAng
 ShearFilter::~ShearFilter()
 {
     cancelFilter();
+}
+
+QString ShearFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Shear Tool"));
 }
 
 QSize ShearFilter::getNewSize() const
@@ -170,7 +179,7 @@ void ShearFilter::filterImage()
     uchar* pResBits            = m_destImage.bits();
     unsigned short* pResBits16 = reinterpret_cast<unsigned short*>(m_destImage.bits());
 
-    PixelsAliasFilter alias;
+    DPixelsAliasFilter alias;
 
     for (y = 0; y < new_height; ++y)
     {

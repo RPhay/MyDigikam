@@ -35,6 +35,10 @@
 #include <QtConcurrent>    // krazy:exclude=includes
 #include <QMutex>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -110,6 +114,11 @@ FilmGrainFilter::~FilmGrainFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString FilmGrainFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Film Grain Effect"));
 }
 
 void FilmGrainFilter::filmgrainMultithreaded(uint start, uint stop)

@@ -29,6 +29,10 @@
 #include <cstdio>
 #include <cmath>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -53,6 +57,11 @@ MixerFilter::MixerFilter(DImg* const orgImage, QObject* const parent, const Mixe
 MixerFilter::~MixerFilter()
 {
     cancelFilter();
+}
+
+QString MixerFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Channel Mixer Tool"));
 }
 
 void MixerFilter::filterImage()

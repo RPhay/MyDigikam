@@ -24,6 +24,10 @@
 
 #include "curvesfilter.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -71,6 +75,11 @@ CurvesFilter::CurvesFilter(const CurvesContainer& settings,
 CurvesFilter::~CurvesFilter()
 {
     cancelFilter();
+}
+
+QString CurvesFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Adjust Curves"));
 }
 
 void CurvesFilter::filterImage()

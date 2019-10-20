@@ -23,8 +23,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_IMAGE_SELECTION_WIDGET_H
-#define DIGIKAM_EDITOR_IMAGE_SELECTION_WIDGET_H
+#ifndef DIGIKAM_EDITOR_RATIO_CROP_WIDGET_H
+#define DIGIKAM_EDITOR_RATIO_CROP_WIDGET_H
 
 // Qt includes
 
@@ -41,13 +41,13 @@ using namespace Digikam;
 namespace DigikamEditorRatioCropToolPlugin
 {
 
-class ImageSelectionWidget : public QWidget
+class RatioCropWidget : public QWidget
 {
     Q_OBJECT
 
 public:
 
-    enum RatioAspect               // Constrained Aspect Ratio list. See ImageSelectionWidget::setSelectionAspectRatioType()
+    enum RatioAspect               // Constrained Aspect Ratio list. See RatioCropWidget::setSelectionAspectRatioType()
     {                              // method for crop-value implementations.
         RATIOCUSTOM=0,             // Custom aspect ratio.
         RATIO01X01,                // 1:1
@@ -94,9 +94,9 @@ public:
 
 public:
 
-    ImageSelectionWidget(int width, int height, QWidget* const parent = nullptr);
-    ImageSelectionWidget(int width, int height, bool initDrawing, QWidget* const parent = nullptr);
-    ~ImageSelectionWidget();
+    RatioCropWidget(int width, int height, QWidget* const parent = nullptr);
+    RatioCropWidget(int width, int height, bool initDrawing, QWidget* const parent = nullptr);
+    ~RatioCropWidget();
 
     void  setBackgroundColor(const QColor& bg);
     void  setCenterSelection(int centerType=CenterImage);
@@ -193,4 +193,4 @@ private:
 
 } // namespace DigikamEditorRatioCropToolPlugin
 
-#endif // DIGIKAM_EDITOR_IMAGE_SELECTION_WIDGET_H
+#endif // DIGIKAM_EDITOR_RATIO_CROP_WIDGET_H

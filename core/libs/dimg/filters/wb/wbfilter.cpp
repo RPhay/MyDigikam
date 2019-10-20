@@ -30,6 +30,10 @@
 #include <cstdio>
 #include <cmath>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -97,6 +101,11 @@ WBFilter::~WBFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString WBFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("White Balance Tool"));
 }
 
 void WBFilter::filterImage()

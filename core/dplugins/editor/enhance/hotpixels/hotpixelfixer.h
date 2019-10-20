@@ -37,7 +37,7 @@
 
 #include "dimgthreadedfilter.h"
 #include "hotpixel.h"
-#include "weights.h"
+#include "hotpixelsweights.h"
 
 using namespace Digikam;
 
@@ -76,10 +76,7 @@ public:
         return QLatin1String("digikam:HotPixelFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Hot Pixels Tool"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {
@@ -113,7 +110,7 @@ private:
         return (p.x() >= 0 && p.y() >= 0 && p.x() < (long) img.width() && p.y() < (long) img.height());
     };
 
-    QList <Weights> mWeightList;
+    QList <HotPixelsWeights> mWeightList;
 
 private:
 

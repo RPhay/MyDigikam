@@ -31,6 +31,10 @@
 
 #include <QListWidget>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "invertfilter.h"
@@ -352,6 +356,11 @@ FilmFilter::~FilmFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString FilmFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Color Negative Inverter"));
 }
 
 void FilmFilter::filterImage()

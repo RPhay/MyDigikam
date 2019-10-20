@@ -57,10 +57,7 @@ public:
         return QLatin1String("digikam:RedEyeCorrectionFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("RedEye Correction Filter"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

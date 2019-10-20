@@ -24,6 +24,10 @@
 
 #include "levelsfilter.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -66,6 +70,11 @@ LevelsFilter::LevelsFilter(const LevelsContainer& settings,
 LevelsFilter::~LevelsFilter()
 {
     cancelFilter();
+}
+
+QString LevelsFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Levels Adjust Tool"));
 }
 
 void LevelsFilter::filterImage()

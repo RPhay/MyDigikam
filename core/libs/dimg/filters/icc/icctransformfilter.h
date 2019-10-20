@@ -48,10 +48,7 @@ public:
         return QLatin1String("digikam:IccTransformFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Color Profile Conversion"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {
@@ -70,14 +67,14 @@ public:
 
     virtual FilterAction    filterAction() override;
 
-    void                    readParameters(const FilterAction& action) override;
-    bool                    parametersSuccessfullyRead() const override;
+    void                    readParameters(const FilterAction& action)                      override;
+    bool                    parametersSuccessfullyRead() const                              override;
     QString                 readParametersError(const FilterAction& actionThatFailed) const override;
 
 protected:
 
     virtual void progressInfo(DImg* const img, float progress) override;
-    virtual void filterImage() override;
+    virtual void filterImage()                                 override;
 
 private:
 

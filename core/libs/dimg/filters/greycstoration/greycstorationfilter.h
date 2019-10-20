@@ -192,10 +192,7 @@ public:
         return QLatin1String("digikam:GreycstorationFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Greycstoration Filter"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

@@ -193,11 +193,15 @@ void TrashView::slotSelectionChanged()
     if (d->tableView->selectionModel()->hasSelection())
     {
         d->restoreButton->setEnabled(true);
+        d->deleteAction->setEnabled(true);
     }
     else
     {
         d->restoreButton->setEnabled(false);
+        d->deleteAction->setEnabled(false);
     }
+
+    emit selectionChanged();
 }
 
 void TrashView::slotUndoLastDeletedItems()
@@ -425,6 +429,30 @@ void TrashView::selectLastSelected()
     }
 
     emit selectionChanged();
+}
+
+QString TrashView::statusBarText() const
+{
+    int selectionCount = d->tableView->selectionModel()->selectedRows().count();
+    int numberOfItems  = d->model->rowCount(QModelIndex());
+
+    QString statusBarSelectionText;
+
+    if (selectionCount == 0)
+    {
+        statusBarSelectionText
+                = i18np("No item selected (%1 item)",
+                        "No item selected (%1 items)",
+                        numberOfItems);
+    }
+    else
+    {
+        statusBarSelectionText
+                = i18n("%1/%2 items selected",
+                       selectionCount, numberOfItems);
+    }
+
+    return statusBarSelectionText;
 }
 
 // --------------------------------------------------

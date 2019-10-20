@@ -178,7 +178,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
     if (qimage.isNull())
     {
         d->error = i18n("Cannot create thumbnail for %1", path);
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot create thumbnail for " << path;
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot create thumbnail for" << path;
         return ThumbnailImage();
     }
 

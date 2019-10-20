@@ -37,7 +37,7 @@
 // DIN A sqrt(2)
 #define DINA     1.41421356237309504F
 
-#include "imageselectionwidget.h"
+#include "ratiocropwidget.h"
 
 // C++ includes
 
@@ -70,7 +70,7 @@
 namespace DigikamEditorRatioCropToolPlugin
 {
 
-class Q_DECL_HIDDEN ImageSelectionWidget::Private
+class Q_DECL_HIDDEN RatioCropWidget::Private
 {
 public:
 
@@ -157,7 +157,7 @@ public:
     ImageIface* iface;
 };
 
-ImageSelectionWidget::ImageSelectionWidget(int w, int h, QWidget* const parent)
+RatioCropWidget::RatioCropWidget(int w, int h, QWidget* const parent)
     : QWidget(parent),
       d(new Private)
 {
@@ -166,21 +166,21 @@ ImageSelectionWidget::ImageSelectionWidget(int w, int h, QWidget* const parent)
     setup(w, h);
 }
 
-ImageSelectionWidget::ImageSelectionWidget(int w, int h, bool initDrawing, QWidget* const parent)
+RatioCropWidget::RatioCropWidget(int w, int h, bool initDrawing, QWidget* const parent)
     : QWidget(parent), d(new Private)
 {
     d->isDrawingSelection = initDrawing;
     setup(w, h);
 }
 
-ImageSelectionWidget::~ImageSelectionWidget()
+RatioCropWidget::~RatioCropWidget()
 {
     delete d->iface;
     delete d->pixmap;
     delete d;
 }
 
-void ImageSelectionWidget::setup(int w, int h,
+void RatioCropWidget::setup(int w, int h,
                                  int widthRatioValue, int heightRatioValue,
                                  int aspectRatio, int orient,
                                  int guideLinesType)
@@ -214,12 +214,12 @@ void ImageSelectionWidget::setup(int w, int h,
     setGoldenGuideTypes(true, false, false, false, false, false);
 }
 
-ImageIface* ImageSelectionWidget::imageIface() const
+ImageIface* RatioCropWidget::imageIface() const
 {
     return d->iface;
 }
 
-void ImageSelectionWidget::resizeEvent(QResizeEvent* e)
+void RatioCropWidget::resizeEvent(QResizeEvent* e)
 {
     delete d->pixmap;
 
@@ -272,32 +272,32 @@ void ImageSelectionWidget::resizeEvent(QResizeEvent* e)
     updatePixmap();
 }
 
-int ImageSelectionWidget::getOriginalImageWidth() const
+int RatioCropWidget::getOriginalImageWidth() const
 {
     return d->image.width();
 }
 
-int ImageSelectionWidget::getOriginalImageHeight() const
+int RatioCropWidget::getOriginalImageHeight() const
 {
     return d->image.height();
 }
 
-QRect ImageSelectionWidget::getRegionSelection() const
+QRect RatioCropWidget::getRegionSelection() const
 {
     return d->regionSelection;
 }
 
-int ImageSelectionWidget::getMinWidthRange() const
+int RatioCropWidget::getMinWidthRange() const
 {
     return MINRANGE;
 }
 
-int ImageSelectionWidget::getMinHeightRange() const
+int RatioCropWidget::getMinHeightRange() const
 {
     return MINRANGE;
 }
 
-int ImageSelectionWidget::getMaxWidthRange() const
+int RatioCropWidget::getMaxWidthRange() const
 {
     int maxW = d->image.width() - d->regionSelection.left();
 
@@ -319,7 +319,7 @@ int ImageSelectionWidget::getMaxWidthRange() const
     return computePreciseSize(maxW, (int)d->currentWidthRatioValue);
 }
 
-int ImageSelectionWidget::getMaxHeightRange() const
+int RatioCropWidget::getMaxHeightRange() const
 {
     int maxH = d->image.height() - d->regionSelection.top();
 
@@ -341,7 +341,7 @@ int ImageSelectionWidget::getMaxHeightRange() const
     return computePreciseSize(maxH, (int)d->currentHeightRatioValue);
 }
 
-int ImageSelectionWidget::getWidthStep() const
+int RatioCropWidget::getWidthStep() const
 {
     if (d->preciseCrop && preciseCropAvailable())
     {
@@ -353,7 +353,7 @@ int ImageSelectionWidget::getWidthStep() const
     }
 }
 
-int ImageSelectionWidget::getHeightStep() const
+int RatioCropWidget::getHeightStep() const
 {
     if (d->preciseCrop && preciseCropAvailable())
     {
@@ -367,7 +367,7 @@ int ImageSelectionWidget::getHeightStep() const
 
 // Draw a new centered selection with half width (if orientation = Landscape)
 // or with half height (if orientation = Portrait)
-void ImageSelectionWidget::resetSelection()
+void RatioCropWidget::resetSelection()
 {
     d->regionSelection.setWidth(d->image.width()/2);
     d->regionSelection.setHeight(d->image.height()/2);
@@ -376,7 +376,7 @@ void ImageSelectionWidget::resetSelection()
     setCenterSelection(CenterImage);
 }
 
-void ImageSelectionWidget::setCenterSelection(int centerType)
+void RatioCropWidget::setCenterSelection(int centerType)
 {
     // Adjust selection size if bigger than real image
     if (d->regionSelection.height() > d->image.height())
@@ -414,7 +414,7 @@ void ImageSelectionWidget::setCenterSelection(int centerType)
 }
 
 // Draw a new centered selection with max size
-void ImageSelectionWidget::maxAspectSelection()
+void RatioCropWidget::maxAspectSelection()
 {
     d->regionSelection.setWidth(d->image.width());
     d->regionSelection.setHeight(d->image.height());
@@ -427,7 +427,7 @@ void ImageSelectionWidget::maxAspectSelection()
     setCenterSelection(CenterImage);
 }
 
-void ImageSelectionWidget::setGoldenGuideTypes(bool drawGoldenSection,  bool drawGoldenSpiralSection,
+void RatioCropWidget::setGoldenGuideTypes(bool drawGoldenSection,  bool drawGoldenSpiralSection,
                                                bool drawGoldenSpiral,   bool drawGoldenTriangle,
                                                bool flipHorGoldenGuide, bool flipVerGoldenGuide)
 {
@@ -439,35 +439,35 @@ void ImageSelectionWidget::setGoldenGuideTypes(bool drawGoldenSection,  bool dra
     d->flipVerGoldenGuide      = flipVerGoldenGuide;
 }
 
-void ImageSelectionWidget::setBackgroundColor(const QColor& bg)
+void RatioCropWidget::setBackgroundColor(const QColor& bg)
 {
     d->bgColor = bg;
     updatePixmap();
     update();
 }
 
-void ImageSelectionWidget::slotGuideLines(int guideLinesType)
+void RatioCropWidget::slotGuideLines(int guideLinesType)
 {
     d->guideLinesType = guideLinesType;
     updatePixmap();
     update();
 }
 
-void ImageSelectionWidget::slotChangeGuideColor(const QColor& color)
+void RatioCropWidget::slotChangeGuideColor(const QColor& color)
 {
     d->guideColor = color;
     updatePixmap();
     update();
 }
 
-void ImageSelectionWidget::slotChangeGuideSize(int size)
+void RatioCropWidget::slotChangeGuideSize(int size)
 {
     d->guideSize = size;
     updatePixmap();
     update();
 }
 
-void ImageSelectionWidget::setSelectionOrientation(int orient)
+void RatioCropWidget::setSelectionOrientation(int orient)
 {
     d->currentOrientation = orient;
     reverseRatioValues();
@@ -475,7 +475,7 @@ void ImageSelectionWidget::setSelectionOrientation(int orient)
     emit signalSelectionOrientationChanged(d->currentOrientation);
 }
 
-void ImageSelectionWidget::setSelectionAspectRatioType(int aspectRatioType)
+void RatioCropWidget::setSelectionAspectRatioType(int aspectRatioType)
 {
     d->currentAspectRatioType = aspectRatioType;
 
@@ -557,7 +557,7 @@ void ImageSelectionWidget::setSelectionAspectRatioType(int aspectRatioType)
     applyAspectRatio(false);
 }
 
-void ImageSelectionWidget::setSelectionAspectRatioValue(int widthRatioValue, int heightRatioValue)
+void RatioCropWidget::setSelectionAspectRatioValue(int widthRatioValue, int heightRatioValue)
 {
     int gdc = widthRatioValue;
 
@@ -596,7 +596,7 @@ void ImageSelectionWidget::setSelectionAspectRatioValue(int widthRatioValue, int
     applyAspectRatio(false);
 }
 
-void ImageSelectionWidget::reverseRatioValues()
+void RatioCropWidget::reverseRatioValues()
 {
     // Reverse ratio values if needed
     if ((d->currentWidthRatioValue > d->currentHeightRatioValue  &&
@@ -610,7 +610,7 @@ void ImageSelectionWidget::reverseRatioValues()
     }
 }
 
-bool ImageSelectionWidget::preciseCropAvailable() const
+bool RatioCropWidget::preciseCropAvailable() const
 {
     // Define when precise crop feature can be used
     // No needed when aspect ratio is 1:1
@@ -630,31 +630,31 @@ bool ImageSelectionWidget::preciseCropAvailable() const
     }
 }
 
-void ImageSelectionWidget::setPreciseCrop(bool precise)
+void RatioCropWidget::setPreciseCrop(bool precise)
 {
     d->preciseCrop = precise;
     applyAspectRatio(false, true);
     regionSelectionChanged();
 }
 
-void ImageSelectionWidget::setAutoOrientation(bool orientation)
+void RatioCropWidget::setAutoOrientation(bool orientation)
 {
     d->autoOrientation = orientation;
 }
 
-void ImageSelectionWidget::setSelectionX(int x)
+void RatioCropWidget::setSelectionX(int x)
 {
     d->regionSelection.moveLeft(x);
     regionSelectionMoved();
 }
 
-void ImageSelectionWidget::setSelectionY(int y)
+void RatioCropWidget::setSelectionY(int y)
 {
     d->regionSelection.moveTop(y);
     regionSelectionMoved();
 }
 
-void ImageSelectionWidget::setSelectionWidth(int w)
+void RatioCropWidget::setSelectionWidth(int w)
 {
     d->regionSelection.setWidth(w);
     applyAspectRatio(false, true);
@@ -662,7 +662,7 @@ void ImageSelectionWidget::setSelectionWidth(int w)
     regionSelectionChanged();
 }
 
-void ImageSelectionWidget::setSelectionHeight(int h)
+void RatioCropWidget::setSelectionHeight(int h)
 {
     d->regionSelection.setHeight(h);
     applyAspectRatio(true, true);
@@ -670,12 +670,12 @@ void ImageSelectionWidget::setSelectionHeight(int h)
     regionSelectionChanged();
 }
 
-QPoint ImageSelectionWidget::convertPoint(const QPoint& pm, bool localToReal) const
+QPoint RatioCropWidget::convertPoint(const QPoint& pm, bool localToReal) const
 {
     return convertPoint(pm.x(), pm.y(), localToReal);
 }
 
-QPoint ImageSelectionWidget::convertPoint(int x, int y, bool localToReal) const
+QPoint RatioCropWidget::convertPoint(int x, int y, bool localToReal) const
 {
     int pmX, pmY;
 
@@ -699,7 +699,7 @@ QPoint ImageSelectionWidget::convertPoint(int x, int y, bool localToReal) const
     return QPoint(pmX, pmY);
 }
 
-int ImageSelectionWidget::computePreciseSize(int size, int step) const
+int RatioCropWidget::computePreciseSize(int size, int step) const
 {
     // Adjust size if precise crop is wanted
     if (d->preciseCrop && preciseCropAvailable())
@@ -710,7 +710,7 @@ int ImageSelectionWidget::computePreciseSize(int size, int step) const
     return size;
 }
 
-void ImageSelectionWidget::applyAspectRatio(bool useHeight, bool repaintWidget)
+void RatioCropWidget::applyAspectRatio(bool useHeight, bool repaintWidget)
 {
     // Save selection area for re-adjustment after changing width and height.
     QRect oldRegionSelection = d->regionSelection;
@@ -781,7 +781,7 @@ void ImageSelectionWidget::applyAspectRatio(bool useHeight, bool repaintWidget)
     }
 }
 
-void ImageSelectionWidget::normalizeRegion()
+void RatioCropWidget::normalizeRegion()
 {
     // Perform normalization of selection area.
 
@@ -806,7 +806,7 @@ void ImageSelectionWidget::normalizeRegion()
     }
 }
 
-void ImageSelectionWidget::regionSelectionMoved()
+void RatioCropWidget::regionSelectionMoved()
 {
     normalizeRegion();
 
@@ -816,7 +816,7 @@ void ImageSelectionWidget::regionSelectionMoved()
     emit signalSelectionMoved(d->regionSelection);
 }
 
-void ImageSelectionWidget::regionSelectionChanged()
+void RatioCropWidget::regionSelectionChanged()
 {
     // Compute the intersection of selection region and image region
     QRect cut = d->regionSelection & d->image;
@@ -837,7 +837,7 @@ void ImageSelectionWidget::regionSelectionChanged()
     emit signalSelectionChanged(d->regionSelection);
 }
 
-void ImageSelectionWidget::drawRulesOfThirds(QPainter& p, const int& xThird, const int& yThird)
+void RatioCropWidget::drawRulesOfThirds(QPainter& p, const int& xThird, const int& yThird)
 {
 
     p.drawLine(d->localRegionSelection.left() + xThird,   d->localRegionSelection.top(),
@@ -852,7 +852,7 @@ void ImageSelectionWidget::drawRulesOfThirds(QPainter& p, const int& xThird, con
 
 }
 
-void ImageSelectionWidget::drawDiagonalMethod(QPainter& p, const int& w, const int& h)
+void RatioCropWidget::drawDiagonalMethod(QPainter& p, const int& w, const int& h)
 {
     p.setRenderHint(QPainter::Antialiasing);
 
@@ -872,7 +872,7 @@ void ImageSelectionWidget::drawDiagonalMethod(QPainter& p, const int& w, const i
     }
 }
 
-void ImageSelectionWidget::drawHarmoniousTriangles(QPainter& p, const int& dst)
+void RatioCropWidget::drawHarmoniousTriangles(QPainter& p, const int& dst)
 {
     p.setRenderHint(QPainter::Antialiasing);
 
@@ -886,7 +886,7 @@ void ImageSelectionWidget::drawHarmoniousTriangles(QPainter& p, const int& dst)
                d->localRegionSelection.width()/2 - dst,  d->localRegionSelection.height()/2);
 }
 
-void ImageSelectionWidget::drawGoldenMean(QPainter& p, const QRect& R1,
+void RatioCropWidget::drawGoldenMean(QPainter& p, const QRect& R1,
                                           const QRect& R2, const QRect& R3, const QRect& R4,
                                           const QRect& R5, const QRect& R6, const QRect& R7)
 {
@@ -975,7 +975,7 @@ void ImageSelectionWidget::drawGoldenMean(QPainter& p, const QRect& R1,
     }
 }
 
-void ImageSelectionWidget::updatePixmap()
+void RatioCropWidget::updatePixmap()
 {
     // Updated local selection region.
     d->localRegionSelection.setTopLeft(convertPoint(d->regionSelection.topLeft(), false));
@@ -1150,14 +1150,14 @@ void ImageSelectionWidget::updatePixmap()
     p.end();
 }
 
-void ImageSelectionWidget::paintEvent(QPaintEvent*)
+void RatioCropWidget::paintEvent(QPaintEvent*)
 {
     QPainter p(this);
     p.drawPixmap(0, 0, *d->pixmap);
     p.end();
 }
 
-QPoint ImageSelectionWidget::opposite() const
+QPoint RatioCropWidget::opposite() const
 {
     QPoint opp;
 
@@ -1184,12 +1184,12 @@ QPoint ImageSelectionWidget::opposite() const
     return opp;
 }
 
-float ImageSelectionWidget::distance(const QPoint& a, const QPoint& b) const
+float RatioCropWidget::distance(const QPoint& a, const QPoint& b) const
 {
     return sqrt(pow(a.x() - b.x(), 2) + pow(a.y() - b.y(), 2));
 }
 
-void ImageSelectionWidget::setCursorResizing()
+void RatioCropWidget::setCursorResizing()
 {
     switch (d->currentResizing)
     {
@@ -1211,7 +1211,7 @@ void ImageSelectionWidget::setCursorResizing()
     }
 }
 
-void ImageSelectionWidget::placeSelection(const QPoint& pm, bool symmetric, const QPoint& center)
+void RatioCropWidget::placeSelection(const QPoint& pm, bool symmetric, const QPoint& center)
 {
     // Set orientation
     if (d->autoOrientation)
@@ -1303,7 +1303,7 @@ void ImageSelectionWidget::placeSelection(const QPoint& pm, bool symmetric, cons
     update();
 }
 
-void ImageSelectionWidget::mousePressEvent(QMouseEvent* e)
+void RatioCropWidget::mousePressEvent(QMouseEvent* e)
 {
     if (e->button() == Qt::LeftButton)
     {
@@ -1389,7 +1389,7 @@ void ImageSelectionWidget::mousePressEvent(QMouseEvent* e)
     }
 }
 
-void ImageSelectionWidget::mouseReleaseEvent(QMouseEvent*)
+void RatioCropWidget::mouseReleaseEvent(QMouseEvent*)
 {
     if (d->currentResizing != Private::ResizingNone)
     {
@@ -1409,7 +1409,7 @@ void ImageSelectionWidget::mouseReleaseEvent(QMouseEvent*)
     }
 }
 
-void ImageSelectionWidget::mouseMoveEvent(QMouseEvent* e)
+void RatioCropWidget::mouseMoveEvent(QMouseEvent* e)
 {
     if (e->buttons() & Qt::LeftButton)
     {
@@ -1513,7 +1513,7 @@ void ImageSelectionWidget::mouseMoveEvent(QMouseEvent* e)
     }
 }
 
-void ImageSelectionWidget::setIsDrawingSelection(bool draw)
+void RatioCropWidget::setIsDrawingSelection(bool draw)
 {
     d->isDrawingSelection = draw;
 }

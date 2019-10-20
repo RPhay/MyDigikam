@@ -40,6 +40,10 @@
 #include <QtConcurrent>    // krazy:exclude=includes
 #include <QtMath>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -89,6 +93,11 @@ BlurFXFilter::~BlurFXFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString BlurFXFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Blur FX Filter"));
 }
 
 void BlurFXFilter::filterImage()
