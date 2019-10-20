@@ -37,6 +37,10 @@
 #include <QPolygon>
 #include <QRegion>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -70,6 +74,8 @@ public:
     DColor          decorativeSecondColor;
 
     BorderContainer settings;
+
+public:
 
     void setup(const DImg& m_orgImage);
 };
@@ -118,6 +124,11 @@ BorderFilter::~BorderFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString BorderFilter::DisplayableName()
+{
+    return i18n("Border Tool");
 }
 
 void BorderFilter::filterImage()
@@ -464,7 +475,7 @@ void BorderFilter::pattern2(DImg& src, DImg& dest, int borderWidth,
     }
 
     // First line around the pattern tile.
-    DImg tmp = borderImg.smoothScale(src.width() + borderWidth * 2,
+    DImg tmp = borderImg.smoothScale(src.width()  + borderWidth * 2,
                                      src.height() + borderWidth * 2);
 
     solid2(tmp, dest, firstColor, firstWidth);
