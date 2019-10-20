@@ -1,0 +1,48 @@
+diff --git a/core/libs/tags/widgets/tagfolderview.cpp b/core/libs/tags/widgets/tagfolderview.cpp
+index cfe5950aa8..7cf5187f8b 100644
+--- a/core/libs/tags/widgets/tagfolderview.cpp
++++ b/core/libs/tags/widgets/tagfolderview.cpp
+@@ -292,25 +292,24 @@ void TagFolderView::setContexMenuItems(ContextMenuHelper& cmh, const QList<TAlbu
+     cmh.addExportMenu();
+     cmh.addSeparator();
+ 
+-//    if (d->showDeleteFaceTagsAction)
+-//    {
+-//        cmh.addActionDeleteFaceTags(tagModificationHelper(), albums);
+-//    }
+-//    else
+-//    {
+-//        cmh.addActionDeleteTags(tagModificationHelper(), albums);
+-//        // If one of the selected tags is no face tag, add the action to mark them as face tags.
+-//        foreach (TAlbum* const tag, albums)
+-//        {
+-//            if (!FaceTags::isPerson(tag->id()))
+-//            {
+-//                cmh.addSeparator();
+-//                cmh.addActionTagToFaceTag(tagModificationHelper(), tag);
+-//                break;
+-//            }
+-//        }
+-//    }
+-    cmh.addActionDeleteTags(tagModificationHelper(), albums);
++    if (d->showDeleteFaceTagsAction)
++    {
++        cmh.addActionDeleteFaceTags(tagModificationHelper(), albums);
++    }
++    else
++    {
++        cmh.addActionDeleteTags(tagModificationHelper(), albums);
++        // If one of the selected tags is no face tag, add the action to mark them as face tags.
++        foreach (TAlbum* const tag, albums)
++        {
++            if (!FaceTags::isPerson(tag->id()))
++            {
++                cmh.addSeparator();
++                cmh.addActionTagToFaceTag(tagModificationHelper(), tag);
++                break;
++            }
++        }
++    }
+ 
+     cmh.addSeparator();
+ }

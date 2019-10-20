@@ -1,0 +1,93 @@
+diff --git a/core/app/filters/filtersidebarwidget.cpp b/core/app/filters/filtersidebarwidget.cpp
+index 035b4ba76d..a61481f0b5 100644
+--- a/core/app/filters/filtersidebarwidget.cpp
++++ b/core/app/filters/filtersidebarwidget.cpp
+@@ -298,12 +298,6 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const
+ 
+     connect(d->ratingFilter, SIGNAL(signalRatingFilterChanged(int,ItemFilterSettings::RatingCondition,bool)),
+             this, SIGNAL(signalRatingFilterChanged(int,ItemFilterSettings::RatingCondition,bool)));
+-
+-    connect(AlbumManager::instance(), SIGNAL(signalAllAlbumsLoaded()), d->faceFilterView, SLOT(setPeopleAsRoot()));
+-
+-    //Have to do like this
+-    //Something strange is happening when trying to access filteredModel()->filterChanged() signal
+-    connect(d->faceFilterSearchBar, &SearchTextBar::signalSearchTextSettings, d->faceFilterView, &TagFolderView::setPeopleAsRoot);
+ }
+ 
+ FilterSideBarWidget::~FilterSideBarWidget()
+diff --git a/core/app/views/sidebar/leftsidebarwidgets.cpp b/core/app/views/sidebar/leftsidebarwidgets.cpp
+index 5ca67f3a36..7cde5ba733 100644
+--- a/core/app/views/sidebar/leftsidebarwidgets.cpp
++++ b/core/app/views/sidebar/leftsidebarwidgets.cpp
+@@ -69,7 +69,6 @@
+ #include "labelstreeview.h"
+ #include "coredb.h"
+ #include "dexpanderbox.h"
+-#include "facetags.h"
+ 
+ namespace Digikam
+ {
+@@ -1468,12 +1467,6 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
+ 
+     connect(d->rescanButton, SIGNAL(pressed()),
+             this, SLOT(slotScanForFaces()) );
+-
+-    connect(AlbumManager::instance(), SIGNAL(signalAllAlbumsLoaded()), d->tagFolderView, SLOT(setPeopleAsRoot()));
+-
+-    //Have to do like this
+-    //Something strange is happening when trying to access filteredModel()->filterChanged() signal
+-    connect(d->tagSearchBar, &SearchTextBar::signalSearchTextSettings, d->tagFolderView, &TagFolderView::setPeopleAsRoot);
+ }
+ 
+ PeopleSideBarWidget::~PeopleSideBarWidget()
+diff --git a/core/libs/album/treeview/tagtreeview.cpp b/core/libs/album/treeview/tagtreeview.cpp
+index a214aab395..1a1edef562 100644
+--- a/core/libs/album/treeview/tagtreeview.cpp
++++ b/core/libs/album/treeview/tagtreeview.cpp
+@@ -149,24 +149,4 @@ void TagTreeView::setCurrentAlbum(int albumId, bool selectInAlbumManager)
+     setCurrentAlbums(QList<Album*>() << album, selectInAlbumManager);
+ }
+ 
+-void TagTreeView::setPeopleAsRoot()
+-{
+-
+-    //Unfortunately the only way to set new Root Index is to use QAbstractItemModel directly
+-    //Indexes from our filterModel or TagModel don't work here
+-    static int i = 0;
+-    for(int i = 0; ;++i)
+-    {
+-        if (!model()->hasIndex(i, 0))
+-            break;
+-        QModelIndex ind = model()->index(i, 0);
+-        if (model()->data(ind, TagModel::AlbumIdRole) ==
+-                FaceTags::personParentTag())
+-        {
+-            setRootIndex(ind);
+-            break;
+-        }
+-    }
+-}
+-
+ } // namespace Digikam
+diff --git a/core/libs/album/treeview/tagtreeview.h b/core/libs/album/treeview/tagtreeview.h
+index 5c66f27555..6f32ef3da9 100644
+--- a/core/libs/album/treeview/tagtreeview.h
++++ b/core/libs/album/treeview/tagtreeview.h
+@@ -29,7 +29,6 @@
+ // Local includes
+ 
+ #include "abstractcheckablealbumtreeview.h"
+-#include "facetags.h"
+ 
+ namespace Digikam
+ {
+@@ -73,9 +72,6 @@ public Q_SLOTS:
+     void setCurrentAlbums(const QList<Album*>& tags, bool selectInAlbumManager = true);
+     void setCurrentAlbum(int tagId, bool selectInAlbumManager = true);
+ 
+-    ///For face tags
+-    void setPeopleAsRoot();
+-
+ Q_SIGNALS:
+ 
+     void assignTags(int tagId, const QList<int>& imageIDs);
