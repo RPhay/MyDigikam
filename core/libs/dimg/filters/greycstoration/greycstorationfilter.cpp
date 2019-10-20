@@ -39,6 +39,10 @@
 #include <QMutexLocker>
 #include <QWaitCondition>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -159,6 +163,11 @@ GreycstorationFilter::~GreycstorationFilter()
     delete d;
 }
 
+QString GreycstorationFilter::DisplayableName()
+{
+    return i18n("Greycstoration Filter");
+}
+
 void GreycstorationFilter::setSettings(const GreycstorationContainer& settings)
 {
     d->settings = settings;
@@ -198,7 +207,7 @@ void GreycstorationFilter::setup()
                            m_orgImage.sixteenBit(), m_orgImage.hasAlpha());
 
         qCDebug(DIGIKAM_DIMG_LOG) << "GreycstorationFilter::Resize: new size: ("
-                 << d->newSize.width() << ", " << d->newSize.height() << ")";
+                                  << d->newSize.width() << ", " << d->newSize.height() << ")";
     }
     else
     {

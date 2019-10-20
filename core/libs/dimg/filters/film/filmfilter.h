@@ -143,10 +143,7 @@ public:
         return QLatin1String("digikam:FilmFilter");
     }
 
-    static QString DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Color Negative Inverter"));
-    }
+    static QString DisplayableName();
 
     static QList<int> SupportedVersions()
     {
