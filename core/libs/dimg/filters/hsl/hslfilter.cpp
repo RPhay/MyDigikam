@@ -30,6 +30,10 @@
 #include <cstdio>
 #include <cmath>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -83,6 +87,11 @@ HSLFilter::~HSLFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString HSLFilter::DisplayableName()
+{
+    return i18n("Hue / Saturation / Lightness Filter");
 }
 
 void HSLFilter::filterImage()

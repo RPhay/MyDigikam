@@ -76,10 +76,7 @@ public:
         return QLatin1String("digikam:HSLFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Hue / Saturation / Lightness Filter"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

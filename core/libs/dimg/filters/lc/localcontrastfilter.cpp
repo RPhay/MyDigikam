@@ -32,6 +32,10 @@
 #include <QtMath>
 #include <QtConcurrent>    // krazy:exclude=includes
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -77,6 +81,11 @@ LocalContrastFilter::~LocalContrastFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString LocalContrastFilter::DisplayableName()
+{
+    return i18n("Local Contrast Filter");
 }
 
 void LocalContrastFilter::filterImage()
