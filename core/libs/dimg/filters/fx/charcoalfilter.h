@@ -51,10 +51,7 @@ public:
         return QLatin1String("digikam:CharcoalFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Charcoal Effect"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

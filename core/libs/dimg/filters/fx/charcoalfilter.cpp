@@ -96,6 +96,11 @@ CharcoalFilter::~CharcoalFilter()
     delete d;
 }
 
+QString CharcoalFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Charcoal Effect"));
+}
+
 void CharcoalFilter::filterImage()
 {
     if (m_orgImage.isNull())

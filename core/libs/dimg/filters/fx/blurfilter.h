@@ -54,10 +54,7 @@ public:
         return QLatin1String("digikam:BlurFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Blur Filter"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

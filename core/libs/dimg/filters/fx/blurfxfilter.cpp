@@ -95,6 +95,11 @@ BlurFXFilter::~BlurFXFilter()
     delete d;
 }
 
+QString BlurFXFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Blur FX Filter"));
+}
+
 void BlurFXFilter::filterImage()
 {
     int w = m_orgImage.width();

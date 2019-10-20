@@ -37,6 +37,7 @@ set(libdimgfilters_SRCS
     filters/dimgthreadedanalyser.cpp
     filters/dimgfiltermanager.cpp
     filters/dimgfiltergenerator.cpp
+    filters/dpixelsaliasfilter.cpp
     filters/filteractionfilter.cpp
     filters/randomnumbergenerator.cpp
     filters/rawprocessingfilter.cpp
@@ -54,7 +55,6 @@ set(libdimgfilters_SRCS
     filters/fx/filmgrainfilter.cpp
     filters/fx/filmgrainsettings.cpp
     filters/fx/invertfilter.cpp
-    filters/fx/pixelsaliasfilter.cpp
     filters/fx/oilpaintfilter.cpp
     filters/fx/raindropfilter.cpp
     filters/auto/autolevelsfilter.cpp

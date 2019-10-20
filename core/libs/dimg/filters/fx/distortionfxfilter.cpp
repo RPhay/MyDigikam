@@ -49,7 +49,7 @@
 // Local includes
 
 #include "dimg.h"
-#include "pixelsaliasfilter.h"
+#include "dpixelsaliasfilter.h"
 #include "randomnumbergenerator.h"
 
 namespace Digikam
@@ -108,6 +108,11 @@ DistortionFXFilter::~DistortionFXFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString DistortionFXFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Distortion Effect"));
 }
 
 void DistortionFXFilter::filterImage()
@@ -1229,12 +1234,12 @@ void DistortionFXFilter::setPixelFromOther(int Width, int Height, bool sixteenBi
         if (sixteenBit)
         {
             unsigned short* ptr16 = reinterpret_cast<unsigned short*>(ptr);
-            PixelsAliasFilter().pixelAntiAliasing16(reinterpret_cast<unsigned short*>(data), Width, Height, nw, nh,
+            DPixelsAliasFilter().pixelAntiAliasing16(reinterpret_cast<unsigned short*>(data), Width, Height, nw, nh,
                                                     ptr16 + 3, ptr16 + 2, ptr16 + 1, ptr16);
         }
         else
         {
-            PixelsAliasFilter().pixelAntiAliasing(data, Width, Height, nw, nh,
+            DPixelsAliasFilter().pixelAntiAliasing(data, Width, Height, nw, nh,
                                                   ptr + 3, ptr + 2, ptr + 1, ptr);
         }
     }

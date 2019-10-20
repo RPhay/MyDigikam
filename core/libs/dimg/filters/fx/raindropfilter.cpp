@@ -102,6 +102,11 @@ RainDropFilter::~RainDropFilter()
     delete d;
 }
 
+QString RainDropFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Rain Drops Effect"));
+}
+
 void RainDropFilter::filterImage()
 {
     int w = m_orgImage.width();

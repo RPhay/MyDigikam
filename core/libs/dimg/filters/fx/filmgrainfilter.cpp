@@ -116,6 +116,11 @@ FilmGrainFilter::~FilmGrainFilter()
     delete d;
 }
 
+QString FilmGrainFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Film Grain Effect"));
+}
+
 void FilmGrainFilter::filmgrainMultithreaded(uint start, uint stop)
 {
     // To emulate grain size we use a matrix [grainSize x grainSize].

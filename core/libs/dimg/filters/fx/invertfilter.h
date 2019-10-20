@@ -55,10 +55,7 @@ public:
         return QLatin1String("digikam:InvertFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Invert Effect"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

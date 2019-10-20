@@ -57,10 +57,7 @@ public:
         return QLatin1String("digikam:RainDropFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Rain Drops Effect"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

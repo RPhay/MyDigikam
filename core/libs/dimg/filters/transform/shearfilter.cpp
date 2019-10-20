@@ -40,7 +40,7 @@
 
 #include "digikam_globals.h"
 #include "dimg.h"
-#include "pixelsaliasfilter.h"
+#include "dpixelsaliasfilter.h"
 
 namespace Digikam
 {
@@ -174,7 +174,7 @@ void ShearFilter::filterImage()
     uchar* pResBits            = m_destImage.bits();
     unsigned short* pResBits16 = reinterpret_cast<unsigned short*>(m_destImage.bits());
 
-    PixelsAliasFilter alias;
+    DPixelsAliasFilter alias;
 
     for (y = 0; y < new_height; ++y)
     {

@@ -82,6 +82,11 @@ ColorFXFilter::~ColorFXFilter()
     }
 }
 
+QString ColorFXFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Color FX Filter"));
+}
+
 void ColorFXFilter::filterImage()
 {
     switch (m_settings.colorFXType)

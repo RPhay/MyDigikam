@@ -91,6 +91,11 @@ OilPaintFilter::~OilPaintFilter()
     delete d;
 }
 
+QString OilPaintFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Oil Painter Effect"));
+}
+
 /** Function to apply the OilPaintFilter effect.
  *  This method have been ported from Pieter Z. Voloshyn algorithm code.
  *

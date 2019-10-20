@@ -37,7 +37,7 @@
 // Local includes
 
 #include "dimg.h"
-#include "pixelsaliasfilter.h"
+#include "dpixelsaliasfilter.h"
 #include "digikam_globals.h"
 
 namespace Digikam
@@ -189,7 +189,7 @@ void FreeRotationFilter::filterImage()
     uchar* pResBits            = m_destImage.bits();
     unsigned short* pResBits16 = reinterpret_cast<unsigned short*>(m_destImage.bits());
 
-    PixelsAliasFilter alias;
+    DPixelsAliasFilter alias;
 
     // main loop
 

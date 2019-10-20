@@ -69,6 +69,11 @@ EmbossFilter::~EmbossFilter()
     cancelFilter();
 }
 
+QString EmbossFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Emboss Effect"));
+}
+
 /** Function to apply the EmbossFilter effect
  *  This method have been ported from Pieter Z. Voloshyn algorithm code.
  *

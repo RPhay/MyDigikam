@@ -55,10 +55,7 @@ public:
         return QLatin1String("digikam:BlurFXFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Blur FX Filter"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

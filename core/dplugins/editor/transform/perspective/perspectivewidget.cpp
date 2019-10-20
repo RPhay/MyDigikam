@@ -47,7 +47,7 @@
 
 #include "digikam_debug.h"
 #include "triangle.h"
-#include "pixelsaliasfilter.h"
+#include "dpixelsaliasfilter.h"
 
 namespace DigikamEditorPerspectiveToolPlugin
 {
@@ -702,7 +702,7 @@ void PerspectiveWidget::transformAffine(DImg* const orgImage,
 
     //destImage->fill(bg);
 
-    PixelsAliasFilter alias;
+    DPixelsAliasFilter alias;
 
     // Find the inverse of the transformation matrix
     m.invert();

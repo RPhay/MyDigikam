@@ -120,10 +120,7 @@ public:
         return QLatin1String("digikam:FilmGrainFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Film Grain Effect"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

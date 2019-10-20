@@ -90,6 +90,11 @@ BlurFilter::~BlurFilter()
     delete d;
 }
 
+QString BlurFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Blur Filter"));
+}
+
 void BlurFilter::blurMultithreaded(uint start, uint stop)
 {
     bool sixteenBit  = m_orgImage.sixteenBit();
