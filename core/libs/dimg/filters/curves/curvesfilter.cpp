@@ -79,7 +79,7 @@ CurvesFilter::~CurvesFilter()
 
 QString CurvesFilter::DisplayableName()
 {
-    return i18n("Adjust Curves");
+    return QString::fromUtf8(I18N_NOOP("Adjust Curves"));
 }
 
 void CurvesFilter::filterImage()

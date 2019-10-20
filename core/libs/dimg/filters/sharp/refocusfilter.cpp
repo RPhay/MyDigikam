@@ -107,7 +107,7 @@ RefocusFilter::~RefocusFilter()
 
 QString RefocusFilter::DisplayableName()
 {
-    return i18n("Refocus");
+    return QString::fromUtf8(I18N_NOOP("Refocus"));
 }
 
 void RefocusFilter::filterImage()

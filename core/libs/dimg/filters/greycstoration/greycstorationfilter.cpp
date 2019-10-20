@@ -165,7 +165,7 @@ GreycstorationFilter::~GreycstorationFilter()
 
 QString GreycstorationFilter::DisplayableName()
 {
-    return i18n("Greycstoration Filter");
+    return QString::fromUtf8(I18N_NOOP("Greycstoration Filter"));
 }
 
 void GreycstorationFilter::setSettings(const GreycstorationContainer& settings)

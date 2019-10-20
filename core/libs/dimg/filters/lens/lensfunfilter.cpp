@@ -92,7 +92,7 @@ LensFunFilter::~LensFunFilter()
 
 QString LensFunFilter::DisplayableName()
 {
-    return i18n("Lens Auto-Correction Tool");
+    return QString::fromUtf8(I18N_NOOP("Lens Auto-Correction Tool"));
 }
 
 void LensFunFilter::filterCCAMultithreaded(uint start, uint stop)

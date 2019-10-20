@@ -360,7 +360,7 @@ FilmFilter::~FilmFilter()
 
 QString FilmFilter::DisplayableName()
 {
-    return i18n("Color Negative Inverter");
+    return QString::fromUtf8(I18N_NOOP("Color Negative Inverter"));
 }
 
 void FilmFilter::filterImage()

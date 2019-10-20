@@ -77,7 +77,7 @@ LensDistortionFilter::~LensDistortionFilter()
 
 QString LensDistortionFilter::DisplayableName()
 {
-    return i18n("Lens Distortion Tool");
+    return QString::fromUtf8(I18N_NOOP("Lens Distortion Tool"));
 }
 
 void LensDistortionFilter::filterImage()

@@ -98,7 +98,7 @@ SharpenFilter::~SharpenFilter()
 
 QString SharpenFilter::DisplayableName()
 {
-    return i18n("Sharpen");
+    return QString::fromUtf8(I18N_NOOP("Sharpen"));
 }
 
 void SharpenFilter::filterImage()

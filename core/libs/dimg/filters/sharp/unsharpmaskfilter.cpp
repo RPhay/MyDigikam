@@ -80,7 +80,7 @@ UnsharpMaskFilter::~UnsharpMaskFilter()
 
 QString UnsharpMaskFilter::DisplayableName()
 {
-    return i18n("Unsharp Mask Tool");
+    return QString::fromUtf8(I18N_NOOP("Unsharp Mask Tool"));
 }
 
 void UnsharpMaskFilter::unsharpMaskMultithreaded(uint start, uint stop, uint y)

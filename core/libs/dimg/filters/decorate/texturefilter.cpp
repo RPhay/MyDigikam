@@ -66,7 +66,7 @@ TextureFilter::~TextureFilter()
 
 QString TextureFilter::DisplayableName()
 {
-    return i18n("Texture Filter");
+    return QString::fromUtf8(I18N_NOOP("Texture Filter"));
 }
 
 /** This method is based on the Simulate Texture Film tutorial from GimpGuru.org web site

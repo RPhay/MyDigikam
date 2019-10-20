@@ -85,7 +85,7 @@ LocalContrastFilter::~LocalContrastFilter()
 
 QString LocalContrastFilter::DisplayableName()
 {
-    return i18n("Local Contrast Filter");
+    return QString::fromUtf8(I18N_NOOP("Local Contrast Filter"));
 }
 
 void LocalContrastFilter::filterImage()

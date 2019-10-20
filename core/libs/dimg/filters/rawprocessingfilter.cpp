@@ -74,7 +74,7 @@ RawProcessingFilter::~RawProcessingFilter()
 
 QString RawProcessingFilter::DisplayableName()
 {
-    return i18n("Raw Conversion");
+    return QString::fromUtf8(I18N_NOOP("Raw Conversion"));
 }
 
 void RawProcessingFilter::setSettings(const DRawDecoding& settings)

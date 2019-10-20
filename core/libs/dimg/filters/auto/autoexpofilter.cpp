@@ -54,7 +54,7 @@ AutoExpoFilter::~AutoExpoFilter()
 
 QString AutoExpoFilter::DisplayableName()
 {
-    return i18n("Auto Exposure");
+    return QString::fromUtf8(I18N_NOOP("Auto Exposure"));
 }
 
 void AutoExpoFilter::filterImage()

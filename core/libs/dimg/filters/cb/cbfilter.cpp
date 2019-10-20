@@ -111,7 +111,7 @@ CBFilter::~CBFilter()
 
 QString CBFilter::DisplayableName()
 {
-    return i18n("Color Balance Tool");
+    return QString::fromUtf8(I18N_NOOP("Color Balance Tool"));
 }
 
 void CBFilter::filterImage()

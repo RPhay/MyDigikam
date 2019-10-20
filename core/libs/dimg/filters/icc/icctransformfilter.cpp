@@ -59,7 +59,7 @@ IccTransformFilter::~IccTransformFilter()
 
 QString IccTransformFilter::DisplayableName()
 {
-    return i18n("Color Profile Conversion");
+    return QString::fromUtf8(I18N_NOOP("Color Profile Conversion"));
 }
 
 void IccTransformFilter::filterImage()

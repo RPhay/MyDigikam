@@ -91,7 +91,7 @@ HSLFilter::~HSLFilter()
 
 QString HSLFilter::DisplayableName()
 {
-    return i18n("Hue / Saturation / Lightness Filter");
+    return QString::fromUtf8(I18N_NOOP("Hue / Saturation / Lightness Filter"));
 }
 
 void HSLFilter::filterImage()

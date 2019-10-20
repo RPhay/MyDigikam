@@ -60,7 +60,7 @@ NormalizeFilter::~NormalizeFilter()
 
 QString NormalizeFilter::DisplayableName()
 {
-    return i18n("Auto Normalize");
+    return QString::fromUtf8(I18N_NOOP("Auto Normalize"));
 }
 
 void NormalizeFilter::filterImage()

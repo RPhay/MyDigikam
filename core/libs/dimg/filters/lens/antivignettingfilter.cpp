@@ -67,7 +67,7 @@ AntiVignettingFilter::~AntiVignettingFilter()
 
 QString AntiVignettingFilter::DisplayableName()
 {
-    return i18n("Anti-Vignetting Tool");
+    return QString::fromUtf8(I18N_NOOP("Anti-Vignetting Tool"));
 }
 
 /**

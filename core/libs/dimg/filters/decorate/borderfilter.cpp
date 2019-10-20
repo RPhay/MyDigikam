@@ -128,7 +128,7 @@ BorderFilter::~BorderFilter()
 
 QString BorderFilter::DisplayableName()
 {
-    return i18n("Border Tool");
+    return QString::fromUtf8(I18N_NOOP("Border Tool"));
 }
 
 void BorderFilter::filterImage()

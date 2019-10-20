@@ -133,7 +133,7 @@ BCGFilter::~BCGFilter()
 
 QString BCGFilter::DisplayableName()
 {
-    return i18n("Brightness / Contrast / Gamma Filter");
+    return QString::fromUtf8(I18N_NOOP("Brightness / Contrast / Gamma Filter"));
 }
 
 FilterAction BCGFilter::filterAction()
