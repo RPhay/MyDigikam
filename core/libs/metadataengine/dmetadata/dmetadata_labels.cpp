@@ -75,8 +75,9 @@ int DMetadata::getItemColorLabel() const
     if (hasXmp())
     {
         QString value = getXmpTagString("Xmp.digiKam.ColorLabel", false);
+        QString label = getXmpTagString("Xmp.xmp.Label", false);
 
-        if (value.isEmpty())
+        if (value.isEmpty() && label.isEmpty())
         {
             // Nikon NX use this XMP tags to store Color Labels
             value = getXmpTagString("Xmp.photoshop.Urgency", false);
@@ -96,25 +97,23 @@ int DMetadata::getItemColorLabel() const
         // LightRoom use this tag to store color name as string.
         // Values are limited : see bug #358193.
 
-        value = getXmpTagString("Xmp.xmp.Label", false);
-
-        if (value == QLatin1String("Blue"))
+        if (label == QLatin1String("Blue"))
         {
             return BlueLabel;
         }
-        else if (value == QLatin1String("Green"))
+        else if (label == QLatin1String("Green"))
         {
             return GreenLabel;
         }
-        else if (value == QLatin1String("Red"))
+        else if (label == QLatin1String("Red"))
         {
             return RedLabel;
         }
-        else if (value == QLatin1String("Yellow"))
+        else if (label == QLatin1String("Yellow"))
         {
             return YellowLabel;
         }
-        else if (value == QLatin1String("Purple"))
+        else if (label == QLatin1String("Purple"))
         {
             return MagentaLabel;
         }
