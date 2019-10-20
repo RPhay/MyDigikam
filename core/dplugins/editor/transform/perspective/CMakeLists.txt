@@ -18,8 +18,8 @@ set(perspectivetoolplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/perspectivetoolplugin.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/perspectivetool.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/perspectivewidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/triangle.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/matrix.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/perspectivetriangle.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/perspectivematrix.cpp
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    PerspectiveTool

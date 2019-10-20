@@ -21,45 +21,39 @@
  *
  * ============================================================ */
 
-#define RADIAN2DEGREE(a) (a * 57.295779513082)
+#ifndef DIGIKAM_EDITOR_PERSPECTIVE_TRIANGLE_H
+#define DIGIKAM_EDITOR_PERSPECTIVE_TRIANGLE_H
 
-#include "triangle.h"
+// Qt includes
 
-// C++ includes
-
-#include <cstdio>
-#include <cstdlib>
-#include <cmath>
+#include <QPoint>
 
 namespace DigikamEditorPerspectiveToolPlugin
 {
 
-Triangle::Triangle(const QPoint& A, const QPoint& B, const QPoint& C)
+class PerspectiveTriangle
 {
-    m_a = distanceP2P(B, C);
-    m_b = distanceP2P(A, C);
-    m_c = distanceP2P(A, B);
-}
 
-float Triangle::angleABC() const
-{
-    return( RADIAN2DEGREE( acos( (m_b*m_b - m_a*m_a - m_c*m_c ) / (-2*m_a*m_c ) ) ) );
-}
+public:
 
-float Triangle::angleACB() const
-{
-    return( RADIAN2DEGREE( acos( (m_c*m_c - m_a*m_a - m_b*m_b ) / (-2*m_a*m_b ) ) ) );
-}
+    PerspectiveTriangle(const QPoint& A, const QPoint& B, const QPoint& C);
+    ~PerspectiveTriangle() {};
 
-float Triangle::angleBAC() const
-{
-    return( RADIAN2DEGREE( acos( (m_a*m_a - m_b*m_b - m_c*m_c ) / (-2*m_b*m_c ) ) ) );
-}
+    float angleABC() const;
+    float angleACB() const;
+    float angleBAC() const;
 
-float Triangle::distanceP2P(const QPoint& p1, const QPoint& p2) const
-{
-    return(sqrt( abs( p2.x()-p1.x() ) * abs( p2.x()-p1.x() ) +
-                 abs( p2.y()-p1.y() ) * abs( p2.y()-p1.y() ) ));
-}
+private:
+
+    float distanceP2P(const QPoint& p1, const QPoint& p2) const;
+
+private:
+
+    float m_a;
+    float m_b;
+    float m_c;
+};
 
 } // namespace DigikamEditorPerspectiveToolPlugin
+
+#endif // DIGIKAM_EDITOR_PERSPECTIVE_TRIANGLE_H

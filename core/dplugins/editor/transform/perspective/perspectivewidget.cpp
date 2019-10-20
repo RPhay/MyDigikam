@@ -46,7 +46,7 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "triangle.h"
+#include "perspectivetriangle.h"
 #include "dpixelsaliasfilter.h"
 
 namespace DigikamEditorPerspectiveToolPlugin
@@ -244,25 +244,25 @@ QRect PerspectiveWidget::getTargetSize() const
 
 float PerspectiveWidget::getAngleTopLeft() const
 {
-    Triangle topLeft(getTopLeftCorner(), getTopRightCorner(), getBottomLeftCorner());
+    PerspectiveTriangle topLeft(getTopLeftCorner(), getTopRightCorner(), getBottomLeftCorner());
     return topLeft.angleBAC();
 }
 
 float PerspectiveWidget::getAngleTopRight() const
 {
-    Triangle topLeft(getTopRightCorner(), getBottomRightCorner(), getTopLeftCorner());
+    PerspectiveTriangle topLeft(getTopRightCorner(), getBottomRightCorner(), getTopLeftCorner());
     return topLeft.angleBAC();
 }
 
 float PerspectiveWidget::getAngleBottomLeft() const
 {
-    Triangle topLeft(getBottomLeftCorner(), getTopLeftCorner(), getBottomRightCorner());
+    PerspectiveTriangle topLeft(getBottomLeftCorner(), getTopLeftCorner(), getBottomRightCorner());
     return topLeft.angleBAC();
 }
 
 float PerspectiveWidget::getAngleBottomRight() const
 {
-    Triangle topLeft(getBottomRightCorner(), getBottomLeftCorner(), getTopRightCorner());
+    PerspectiveTriangle topLeft(getBottomRightCorner(), getBottomLeftCorner(), getTopRightCorner());
     return topLeft.angleBAC();
 }
 
@@ -511,7 +511,7 @@ QPoint PerspectiveWidget::buildPerspective(const QPoint& orignTopLeft, const QPo
                                            DImg* const orgImage, DImg* const destImage,
                                            const DColor& background)
 {
-    Matrix matrix, transform;
+    PerspectiveMatrix matrix, transform;
     double scalex;
     double scaley;
 
@@ -618,11 +618,11 @@ QPoint PerspectiveWidget::buildPerspective(const QPoint& orignTopLeft, const QPo
     {
         if (d->inverseTransformation)
         {
-            Matrix inverseTransform = transform;
+            PerspectiveMatrix inverseTransform = transform;
             inverseTransform.invert();
 
             //Transform the matrix so it puts the result into the getTargetSize() rectangle
-            Matrix transformIntoBounds;
+            PerspectiveMatrix transformIntoBounds;
             transformIntoBounds.scale(double(getTargetSize().width()) / double(orgImage->width()), double(getTargetSize().height()) / double(orgImage->height()));
             transformIntoBounds.translate(getTargetSize().left(), getTargetSize().top());
             inverseTransform.multiply(transformIntoBounds);
@@ -653,10 +653,10 @@ QPoint PerspectiveWidget::buildPerspective(const QPoint& orignTopLeft, const QPo
 
 void PerspectiveWidget::transformAffine(DImg* const orgImage,
                                         DImg* const destImage,
-                                        const Matrix& matrix,
+                                        const PerspectiveMatrix& matrix,
                                         const DColor& background)
 {
-    Matrix m(matrix);
+    PerspectiveMatrix m(matrix);
 
     int    x1,   y1, x2, y2;     // target bounding box
     int    x,    y;              // target coordinates

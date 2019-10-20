@@ -38,7 +38,7 @@
 // Local includes
 
 #include "dimg.h"
-#include "matrix.h"
+#include "perspectivematrix.h"
 #include "imageiface.h"
 
 using namespace Digikam;
@@ -100,7 +100,7 @@ private:  // Widget methods.
     void   updatePixmap();
 
     void   transformAffine(DImg* const orgImage, DImg* const destImage,
-                           const Matrix& matrix, const DColor& background);
+                           const PerspectiveMatrix& matrix, const DColor& background);
 
     QPoint buildPerspective(const QPoint& orignTopLeft, const QPoint& orignBottomRight,
                             const QPoint& transTopLeft, const QPoint& transTopRight,

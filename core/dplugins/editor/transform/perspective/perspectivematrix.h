@@ -23,22 +23,22 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_MATRIX_H
-#define DIGIKAM_EDITOR_MATRIX_H
+#ifndef DIGIKAM_EDITOR_PERSPECTIVE_MATRIX_H
+#define DIGIKAM_EDITOR_PERSPECTIVE_MATRIX_H
 
 namespace DigikamEditorPerspectiveToolPlugin
 {
 
-class Matrix
+class PerspectiveMatrix
 {
 public:
 
     /**
-     * Matrix:
+     * PerspectiveMatrix:
      *
      * Initializes matrix to the identity matrix.
      */
-    explicit Matrix();
+    explicit PerspectiveMatrix();
 
     /**
      * translate:
@@ -71,7 +71,7 @@ public:
      *
      * Multiplies this matrix with another matrix
      */
-    void multiply(const Matrix& matrix1);
+    void multiply(const PerspectiveMatrix& matrix1);
 
     /**
      * transformPoint:
@@ -105,4 +105,4 @@ public:
 
 } // namespace DigikamEditorPerspectiveToolPlugin
 
-#endif // DIGIKAM_EDITOR_MATRIX_H
+#endif // DIGIKAM_EDITOR_PERSPECTIVE_MATRIX_H

@@ -10,7 +10,7 @@
  * Copyright (C) 2005-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  *
- * Based on Matrix3 implementation inspired from gimp 2.0
+ * Based on PerspectiveMatrix3 implementation inspired from gimp 2.0
  * from Spencer Kimball and Peter Mattis.
  *
  * This program is free software; you can redistribute it
@@ -26,7 +26,7 @@
  *
  * ============================================================ */
 
-#include "matrix.h"
+#include "perspectivematrix.h"
 
 // C++ includes
 
@@ -35,18 +35,18 @@
 namespace DigikamEditorPerspectiveToolPlugin
 {
 
-static double identityMatrix[3][3] = {
+static double identityPerspectiveMatrix[3][3] = {
                                        { 1.0, 0.0, 0.0 },
                                        { 0.0, 1.0, 0.0 },
                                        { 0.0, 0.0, 1.0 }
                                      };
 
-Matrix::Matrix()
+PerspectiveMatrix::PerspectiveMatrix()
 {
-    memcpy(coeff, identityMatrix, sizeof(coeff));
+    memcpy(coeff, identityPerspectiveMatrix, sizeof(coeff));
 }
 
-void Matrix::translate (double x, double y)
+void PerspectiveMatrix::translate (double x, double y)
 {
     double g, h, i;
 
@@ -62,7 +62,7 @@ void Matrix::translate (double x, double y)
     coeff[1][2] += y * i;
 }
 
-void Matrix::scale(double x, double y)
+void PerspectiveMatrix::scale(double x, double y)
 {
     coeff[0][0] *= x;
     coeff[0][1] *= x;
@@ -73,9 +73,9 @@ void Matrix::scale(double x, double y)
     coeff[1][2] *= y;
 }
 
-void Matrix::multiply(const Matrix& matrix)
+void PerspectiveMatrix::multiply(const PerspectiveMatrix& matrix)
 {
-    Matrix tmp;
+    PerspectiveMatrix tmp;
     double t1, t2, t3;
 
     for (int i = 0; i < 3; ++i)
@@ -95,7 +95,7 @@ void Matrix::multiply(const Matrix& matrix)
     *this = tmp;
 }
 
-void Matrix::transformPoint(double x, double y, double* newx, double* newy) const
+void PerspectiveMatrix::transformPoint(double x, double y, double* newx, double* newy) const
 {
     double  w = coeff[2][0] * x + coeff[2][1] * y + coeff[2][2];
 
@@ -116,9 +116,9 @@ void Matrix::transformPoint(double x, double y, double* newx, double* newy) cons
              coeff[1][2]) * w;
 }
 
-void Matrix::invert()
+void PerspectiveMatrix::invert()
 {
-    Matrix  inv;
+    PerspectiveMatrix  inv;
     double  det = determinant();
 
     if (det == 0.0)
@@ -158,7 +158,7 @@ void Matrix::invert()
     *this = inv;
 }
 
-double Matrix::determinant() const
+double PerspectiveMatrix::determinant() const
 {
     double determinant;
 
