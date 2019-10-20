@@ -29,6 +29,10 @@
 #include <cstdio>
 #include <cmath>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -103,6 +107,11 @@ CBFilter::~CBFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString CBFilter::DisplayableName()
+{
+    return i18n("Color Balance Tool");
 }
 
 void CBFilter::filterImage()

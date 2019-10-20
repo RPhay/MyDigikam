@@ -160,8 +160,8 @@ ODWindow::~ODWindow()
 void ODWindow::readSettings()
 {
     KConfig config;
-    KConfigGroup grp   = config.group("Onedrive Settings");
-    d->currentAlbumName = grp.readEntry("Current Album",QString());
+    KConfigGroup grp    = config.group("Onedrive Settings");
+    d->currentAlbumName = grp.readEntry("Current Album", QString());
 
     if (grp.readEntry("Resize", false))
     {
@@ -383,8 +383,8 @@ void ODWindow::slotNewAlbumRequest()
         ODFolder newFolder;
         d->albumDlg->getFolderTitle(newFolder);
         d->currentAlbumName = d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString();
-        QString temp        = d->currentAlbumName + newFolder.title;
-        d->talker->createFolder(temp);
+        d->currentAlbumName = d->currentAlbumName + newFolder.title;
+        d->talker->createFolder(d->currentAlbumName);
     }
 }
 

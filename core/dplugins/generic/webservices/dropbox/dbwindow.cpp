@@ -172,9 +172,8 @@ void DBWindow::reactivate()
 void DBWindow::readSettings()
 {
     KConfig config;
-    KConfigGroup grp   = config.group("Dropbox Settings");
-
-    d->currentAlbumName = grp.readEntry("Current Album",QString());
+    KConfigGroup grp    = config.group("Dropbox Settings");
+    d->currentAlbumName = grp.readEntry("Current Album", QString());
 
     if (grp.readEntry("Resize", false))
     {
@@ -375,8 +374,8 @@ void DBWindow::slotNewAlbumRequest()
         d->albumDlg->getFolderTitle(newFolder);
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "slotNewAlbumRequest:" << newFolder.title;
         d->currentAlbumName = d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString();
-        QString temp = d->currentAlbumName + newFolder.title;
-        d->talker->createFolder(temp);
+        d->currentAlbumName = d->currentAlbumName + newFolder.title;
+        d->talker->createFolder(d->currentAlbumName);
     }
 }
 

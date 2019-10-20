@@ -28,6 +28,10 @@
 #include <cstdio>
 #include <cmath>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -52,6 +56,11 @@ NormalizeFilter::NormalizeFilter(DImg* const orgImage, const DImg* const refImag
 NormalizeFilter::~NormalizeFilter()
 {
     cancelFilter();
+}
+
+QString NormalizeFilter::DisplayableName()
+{
+    return i18n("Auto Normalize");
 }
 
 void NormalizeFilter::filterImage()

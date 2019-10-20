@@ -1254,6 +1254,7 @@ void ItemIconView::slotAlbumSelected(const QList<Album*>& albums)
 
         if (palbum)
         {
+            slotTogglePreviewMode(ItemInfo());
             QUrl url = palbum->fileUrl().adjusted(QUrl::StripTrailingSlash);
             d->trashView->model()->loadItemsForCollection(url.toLocalFile());
             d->stackedview->setViewMode(StackedView::TrashViewMode);
@@ -1369,6 +1370,10 @@ void ItemIconView::slotImageSelected()
 
     switch (viewMode())
     {
+        case StackedView::TrashViewMode:
+            emit signalTrashSelectionChanged(d->trashView->statusBarText());
+            break;
+
         case StackedView::TableViewMode:
             emit signalSelectionChanged(d->tableView->numberOfSelectedItems());
             break;

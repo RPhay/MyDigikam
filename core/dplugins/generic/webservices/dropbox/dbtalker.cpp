@@ -288,7 +288,7 @@ bool DBTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, boo
 
     emit signalBusy(true);
 
-    QString path(imgPath);
+    QString path = imgPath;
 
     QMimeDatabase mimeDB;
 

@@ -221,7 +221,7 @@ bool GDTalker::addPhoto(const QString& imgPath, const GSPhoto& info,
 
     emit signalBusy(true);
 
-    QString path(imgPath);
+    QString path = imgPath;
 
     QMimeDatabase mimeDB;
 

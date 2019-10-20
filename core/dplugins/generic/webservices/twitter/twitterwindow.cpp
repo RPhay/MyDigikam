@@ -161,8 +161,8 @@ TwWindow::~TwWindow()
 void TwWindow::readSettings()
 {
     KConfig config;
-    KConfigGroup grp   = config.group("Twitter Settings");
-    d->currentAlbumName = grp.readEntry("Current Album",QString());
+    KConfigGroup grp    = config.group("Twitter Settings");
+    d->currentAlbumName = grp.readEntry("Current Album", QString());
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "readsettings:" << d->currentAlbumName;
 
     if (grp.readEntry("Resize", false))
@@ -189,7 +189,7 @@ void TwWindow::readSettings()
 void TwWindow::writeSettings()
 {
     KConfig config;
-    KConfigGroup grp = config.group("Onedrive Settings");
+    KConfigGroup grp = config.group("Twitter Settings");
 
     grp.writeEntry("Current Album", d->currentAlbumName);
     grp.writeEntry("Resize",        d->widget->getResizeCheckBox()->isChecked());

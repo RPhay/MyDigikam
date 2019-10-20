@@ -157,10 +157,7 @@ public:
         return QLatin1String("digikam:BWSepiaFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Black & White / Sepia Filter"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

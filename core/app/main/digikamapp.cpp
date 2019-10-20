@@ -636,6 +636,12 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
     d->statusLabel->setToolTip(statusBarSelectionToolTip);
 }
 
+void DigikamApp::slotTrashSelectionChanged(const QString& text)
+{
+    d->statusLabel->setAdjustedText(text);
+    d->statusLabel->setToolTip(text);
+}
+
 void DigikamApp::slotSelectionChanged(int selectionCount)
 {
     // The preview can either be activated when only one image is selected,
