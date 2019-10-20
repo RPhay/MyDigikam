@@ -36,6 +36,10 @@
 #include <QtConcurrent>    // krazy:exclude=includes
 #include <QMutex>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"

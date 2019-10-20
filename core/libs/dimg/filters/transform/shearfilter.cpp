@@ -32,6 +32,10 @@
 #include <cmath>
 #include <cstdlib>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_globals.h"
