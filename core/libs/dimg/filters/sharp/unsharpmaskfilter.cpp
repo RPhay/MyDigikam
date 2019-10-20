@@ -78,6 +78,11 @@ UnsharpMaskFilter::~UnsharpMaskFilter()
     cancelFilter();
 }
 
+QString UnsharpMaskFilter::DisplayableName()
+{
+    return i18n("Unsharp Mask Tool");
+}
+
 void UnsharpMaskFilter::unsharpMaskMultithreaded(uint start, uint stop, uint y)
 {
     long int zero  = 0;

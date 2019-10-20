@@ -42,7 +42,7 @@
 #include "dimg.h"
 #include "digikam_debug.h"
 #include "dcolor.h"
-#include "matrix.h"
+#include "refocusmatrix.h"
 
 namespace Digikam
 {
@@ -103,6 +103,11 @@ RefocusFilter::~RefocusFilter()
 {
     cancelFilter();
     delete d;
+}
+
+QString RefocusFilter::DisplayableName()
+{
+    return i18n("Refocus");
 }
 
 void RefocusFilter::filterImage()

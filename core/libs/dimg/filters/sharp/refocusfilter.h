@@ -53,10 +53,7 @@ public:
         return QLatin1String("digikam:RefocusFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Refocus"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

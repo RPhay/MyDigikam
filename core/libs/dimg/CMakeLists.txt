@@ -170,7 +170,7 @@ if(Eigen3_FOUND)
     set(libdimgfilters_SRCS
         ${libdimgfilters_SRCS}
         filters/sharp/refocusfilter.cpp
-        filters/sharp/matrix.cpp
+        filters/sharp/refocusmatrix.cpp
     )
     include_directories(${EIGEN3_INCLUDE_DIR})
 endif()

@@ -96,6 +96,11 @@ SharpenFilter::~SharpenFilter()
     cancelFilter();
 }
 
+QString SharpenFilter::DisplayableName()
+{
+    return i18n("Sharpen");
+}
+
 void SharpenFilter::filterImage()
 {
     sharpenImage(m_radius, m_sigma);
@@ -117,8 +122,8 @@ void SharpenFilter::sharpenImage(double radius, double sigma)
         return;
     }
 
-    double        alpha, normalize = 0.0;
-   long i = 0, u, v;
+    double alpha, normalize = 0.0;
+    long i = 0, u, v;
 
     int kernelWidth     = getOptimalKernelWidth(radius, sigma);
     int halfKernelWidth = kernelWidth / 2;
@@ -203,7 +208,7 @@ bool SharpenFilter::convolveImage(const unsigned int order, const double* const 
 
     Args prm;
     prm.kernelWidth     = order;
-    prm.halfKernelWidth = prm.kernelWidth / 2;;
+    prm.halfKernelWidth = prm.kernelWidth / 2;
 
     if ((prm.kernelWidth % 2) == 0)
     {
