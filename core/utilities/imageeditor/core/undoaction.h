@@ -26,10 +26,6 @@
 #ifndef DIGIKAM_UNDO_ACTION_H
 #define DIGIKAM_UNDO_ACTION_H
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "digikam_export.h"
@@ -58,8 +54,8 @@ public:
 
 public:
 
-    DImageHistory  history;
-    IccProfile     profile;
+    DImageHistory history;
+    IccProfile    profile;
 };
 
 // -------------------------------------------------------------------
@@ -78,7 +74,8 @@ public:
     void                  setMetadata(const UndoMetadataContainer&);
     UndoMetadataContainer getMetadata()               const;
 
-    void                  setFileOriginData(const QVariant& data, const DImageHistory& resolvedInitialHistory);
+    void                  setFileOriginData(const QVariant& data,
+                                            const DImageHistory& resolvedInitialHistory);
     bool                  hasFileOriginData()         const;
     QVariant              fileOriginData()            const;
     DImageHistory         fileOriginResolvedHistory() const;
@@ -98,7 +95,8 @@ class DIGIKAM_EXPORT UndoActionReversible : public UndoAction
 
 public:
 
-    explicit UndoActionReversible(EditorCore* const core, const DImgBuiltinFilter& reversibleFilter);
+    explicit UndoActionReversible(EditorCore* const core,
+                                  const DImgBuiltinFilter& reversibleFilter);
 
     DImgBuiltinFilter getFilter()        const;
     DImgBuiltinFilter getReverseFilter() const;
@@ -115,7 +113,8 @@ class DIGIKAM_EXPORT UndoActionIrreversible : public UndoAction
 
 public:
 
-    explicit UndoActionIrreversible(EditorCore* const core, const QString& caller = i18n("Unknown"));
+    explicit UndoActionIrreversible(EditorCore* const core,
+                                    const QString& title = QString());
     ~UndoActionIrreversible();
 };
 
