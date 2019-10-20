@@ -116,7 +116,7 @@ set(libdimgfilters_SRCS
     filters/lens/antivignettingfilter.cpp
     filters/lens/antivignettingsettings.cpp
     filters/lens/lensdistortionfilter.cpp
-    filters/lens/pixelaccess.cpp
+    filters/lens/lensdistortionpixelaccess.cpp
     filters/redeye/redeyecorrectionfilter.cpp
     filters/redeye/redeyecorrectionsettings.cpp
     filters/redeye/redeyecorrectioncontainer.cpp

@@ -22,14 +22,14 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PIXEL_ACCESS_H
-#define DIGIKAM_PIXEL_ACCESS_H
+#ifndef DIGIKAM_LENS_DISTORTION_PIXEL_ACCESS_H
+#define DIGIKAM_LENS_DISTORTION_PIXEL_ACCESS_H
 
-#define PixelAccessRegions 20
-#define PixelAccessWidth   40
-#define PixelAccessHeight  20
-#define PixelAccessXOffset 3
-#define PixelAccessYOffset 3
+#define LensDistortionPixelAccessRegions 20
+#define LensDistortionPixelAccessWidth   40
+#define LensDistortionPixelAccessHeight  20
+#define LensDistortionPixelAccessXOffset 3
+#define LensDistortionPixelAccessYOffset 3
 
 // Local includes
 
@@ -39,26 +39,26 @@
 namespace Digikam
 {
 
-/** PixelAccess class: solving the eternal problem: random, cubic-interpolated,
+/** LensDistortionPixelAccess class: solving the eternal problem: random, cubic-interpolated,
  * sub-pixel coordinate access to an image.
  * Assuming that accesses are at least slightly coherent,
- * PixelAccess keeps PixelAccessRegions buffers, each containing a
- * PixelAccessWidth x PixelAccessHeight region of pixels.
+ * LensDistortionPixelAccess keeps LensDistortionPixelAccessRegions buffers, each containing a
+ * LensDistortionPixelAccessWidth x LensDistortionPixelAccessHeight region of pixels.
  * Buffer[0] is always checked first, so move the last accessed
  * region into that position.
  * When a request arrives which is outside all the regions,
  * get a new region.
  * The new region is placed so that the requested pixel is positioned
- * at [PixelAccessXOffset, PixelAccessYOffset] in the region.
+ * at [LensDistortionPixelAccessXOffset, LensDistortionPixelAccessYOffset] in the region.
  */
 
-class DIGIKAM_EXPORT PixelAccess
+class DIGIKAM_EXPORT LensDistortionPixelAccess
 {
 
 public:
 
-    explicit PixelAccess(DImg* srcImage);
-    ~PixelAccess();
+    explicit LensDistortionPixelAccess(DImg* srcImage);
+    ~LensDistortionPixelAccess();
 
     void pixelAccessGetCubic(double srcX, double srcY, double brighten, uchar* dst);
 
@@ -75,8 +75,7 @@ private:
 
     DImg* m_image;
 
-    //uchar* m_buffer[PixelAccessRegions];
-    DImg* m_buffer[PixelAccessRegions];
+    DImg* m_buffer[LensDistortionPixelAccessRegions];
 
     int   m_width;
     int   m_height;
@@ -84,12 +83,12 @@ private:
     int   m_imageWidth;
     int   m_imageHeight;
     bool  m_sixteenBit;
-    int   m_tileMinX[PixelAccessRegions];
-    int   m_tileMaxX[PixelAccessRegions];
-    int   m_tileMinY[PixelAccessRegions];
-    int   m_tileMaxY[PixelAccessRegions];
+    int   m_tileMinX[LensDistortionPixelAccessRegions];
+    int   m_tileMaxX[LensDistortionPixelAccessRegions];
+    int   m_tileMinY[LensDistortionPixelAccessRegions];
+    int   m_tileMaxY[LensDistortionPixelAccessRegions];
 };
 
 } // namespace Digikam
 
-#endif // DIGIKAM_PIXEL_ACCESS_H
+#endif // DIGIKAM_LENS_DISTORTION_PIXEL_ACCESS_H

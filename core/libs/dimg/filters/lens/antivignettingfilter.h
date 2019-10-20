@@ -87,16 +87,12 @@ public:
 
     virtual FilterAction    filterAction() override;
 
-
     static QString          FilterIdentifier()
     {
         return QLatin1String("digikam:AntiVignettingFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Anti-Vignetting Tool"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

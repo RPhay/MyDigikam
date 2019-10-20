@@ -37,7 +37,7 @@
 // Local includes
 
 #include "dimg.h"
-#include "pixelaccess.h"
+#include "lensdistortionpixelaccess.h"
 
 namespace Digikam
 {
@@ -75,6 +75,11 @@ LensDistortionFilter::~LensDistortionFilter()
     cancelFilter();
 }
 
+QString LensDistortionFilter::DisplayableName()
+{
+    return i18n("Lens Distortion Tool");
+}
+
 void LensDistortionFilter::filterImage()
 {
     int    Width      = m_orgImage.width();
@@ -88,14 +93,14 @@ void LensDistortionFilter::filterImage()
 
     // initialize coefficients
 
-    double normallise_radius_sq = 4.0 / (Width * Width + Height * Height);
-    double center_x             = Width * (100.0 + m_centre_x) / 200.0;
-    double center_y             = Height * (100.0 + m_centre_y) / 200.0;
-    double mult_sq              = m_main / 200.0;
-    double mult_qd              = m_edge / 200.0;
-    double rescale              = pow(2.0, - m_rescale / 100.0);
-    double brighten             = - m_brighten / 10.0;
-    PixelAccess* pa             = new PixelAccess(&m_orgImage);
+    double normallise_radius_sq   = 4.0 / (Width * Width + Height * Height);
+    double center_x               = Width * (100.0 + m_centre_x) / 200.0;
+    double center_y               = Height * (100.0 + m_centre_y) / 200.0;
+    double mult_sq                = m_main / 200.0;
+    double mult_qd                = m_edge / 200.0;
+    double rescale                = pow(2.0, - m_rescale / 100.0);
+    double brighten               = - m_brighten / 10.0;
+    LensDistortionPixelAccess* pa = new LensDistortionPixelAccess(&m_orgImage);
 
     /*
      * start at image (i, j), increment by (step, step)

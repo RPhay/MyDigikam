@@ -65,8 +65,14 @@ AntiVignettingFilter::~AntiVignettingFilter()
     cancelFilter();
 }
 
-// This method is inspired from John Walker 'pnmctrfilt' algorithm code.
+QString AntiVignettingFilter::DisplayableName()
+{
+    return i18n("Anti-Vignetting Tool");
+}
 
+/**
+ * This method is inspired from John Walker 'pnmctrfilt' algorithm code.
+ */
 void AntiVignettingFilter::filterImage()
 {
     int    progress;

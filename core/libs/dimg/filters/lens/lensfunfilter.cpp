@@ -90,6 +90,11 @@ LensFunFilter::~LensFunFilter()
     delete d;
 }
 
+QString LensFunFilter::DisplayableName()
+{
+    return i18n("Lens Auto-Correction Tool");
+}
+
 void LensFunFilter::filterCCAMultithreaded(uint start, uint stop)
 {
     QScopedArrayPointer<float> pos(new float[m_orgImage.width() * 2 * 3]);
