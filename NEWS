@@ -83,4 +83,5 @@ BUGFIXES:
 065 ==> 413189 - Status bar text not correct in Trash view
 066 ==> 413147 - Pictures missing from thumbnail view of album.
 067 ==> 400433 - After visiting 'Trash' folder, it is difficult to select 'Preview' mode (remains in 'Thumbnails' mode).
-068 ==> 
+068 ==> 400786 - Auto/ask -actions of groups seems to not do anything.
+069 ==> 
