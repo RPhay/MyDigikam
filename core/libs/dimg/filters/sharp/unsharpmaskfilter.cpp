@@ -37,6 +37,10 @@
 
 #include <QtConcurrent>    // krazy:exclude=includes
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -72,6 +76,11 @@ UnsharpMaskFilter::UnsharpMaskFilter(DImg* const orgImage, QObject* const parent
 UnsharpMaskFilter::~UnsharpMaskFilter()
 {
     cancelFilter();
+}
+
+QString UnsharpMaskFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Unsharp Mask Tool"));
 }
 
 void UnsharpMaskFilter::unsharpMaskMultithreaded(uint start, uint stop, uint y)

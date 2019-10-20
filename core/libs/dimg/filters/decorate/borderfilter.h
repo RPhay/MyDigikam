@@ -136,14 +136,14 @@ public:
     {
         return QLatin1String("digikam:BorderFilter");
     }
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Border Tool"));
-    }
+
+    static QString          DisplayableName();
+
     static QList<int>       SupportedVersions()
     {
         return QList<int>() << 1;
     }
+
     static int              CurrentVersion()
     {
         return 1;
@@ -153,6 +153,7 @@ public:
     {
         return FilterIdentifier();
     }
+
     virtual FilterAction    filterAction() override;
     void                    readParameters(const FilterAction& action) override;
 

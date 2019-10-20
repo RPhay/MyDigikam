@@ -27,6 +27,10 @@
 
 #include <cmath>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -51,6 +55,11 @@ IccTransformFilter::IccTransformFilter(DImg* const orgImage, QObject* const pare
 IccTransformFilter::~IccTransformFilter()
 {
     cancelFilter();
+}
+
+QString IccTransformFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Color Profile Conversion"));
 }
 
 void IccTransformFilter::filterImage()

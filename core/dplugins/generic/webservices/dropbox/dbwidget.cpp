@@ -26,6 +26,7 @@
 
 #include <QLabel>
 #include <QGroupBox>
+#include <QCheckBox>
 
 // Local includes
 
@@ -39,6 +40,7 @@ DBWidget::DBWidget(QWidget* const parent,
                    const QString& toolName)
     : WSSettingsWidget(parent, iface, toolName)
 {
+    getOriginalCheckBox()->show();
     getUploadBox()->hide();
     getSizeBox()->hide();
 }

@@ -89,10 +89,7 @@ public:
         return QLatin1String("digikam:LensFunFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Lens Auto-Correction Tool"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

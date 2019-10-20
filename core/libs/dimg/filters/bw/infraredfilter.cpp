@@ -68,7 +68,7 @@ InfraredFilter::~InfraredFilter()
 
 QString InfraredFilter::DisplayableName()
 {
-    return i18n("Infrared Filter");
+    return QString::fromUtf8(I18N_NOOP("Infrared Filter"));
 }
 
 /** This method is based on the Simulate Infrared Film tutorial from GimpGuru.org web site

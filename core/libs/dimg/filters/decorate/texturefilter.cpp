@@ -30,6 +30,10 @@
 #include <cmath>
 #include <cstdlib>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"
@@ -58,6 +62,11 @@ TextureFilter::TextureFilter(DImg* const orgImage, QObject* const parent, int bl
 TextureFilter::~TextureFilter()
 {
     cancelFilter();
+}
+
+QString TextureFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Texture Filter"));
 }
 
 /** This method is based on the Simulate Texture Film tutorial from GimpGuru.org web site

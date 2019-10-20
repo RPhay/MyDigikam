@@ -278,7 +278,8 @@ void DBTalker::listFolders(const QString& cursor)
     emit signalBusy(true);
 }
 
-bool DBTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, bool rescale, int maxDim, int imageQuality)
+bool DBTalker::addPhoto(const QString& imgPath, const QString& uploadFolder,
+                        bool original, bool rescale, int maxDim, int imageQuality)
 {
     if (d->reply)
     {
@@ -292,7 +293,7 @@ bool DBTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, boo
 
     QMimeDatabase mimeDB;
 
-    if (mimeDB.mimeTypeForFile(imgPath).name().startsWith(QLatin1String("image/")))
+    if (!original && mimeDB.mimeTypeForFile(imgPath).name().startsWith(QLatin1String("image/")))
     {
         QImage image = PreviewLoadThread::loadHighQualitySynchronously(imgPath).copyQImage();
 

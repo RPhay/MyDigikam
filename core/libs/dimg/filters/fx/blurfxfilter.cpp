@@ -40,6 +40,10 @@
 #include <QtConcurrent>    // krazy:exclude=includes
 #include <QtMath>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dimg.h"

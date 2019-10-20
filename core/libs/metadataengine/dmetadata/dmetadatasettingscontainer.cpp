@@ -39,24 +39,24 @@ namespace Digikam
 
 QString NamespaceEntry::DM_TAG_CONTAINER()
 {
-    return i18n("Tags");
+    return QString::fromUtf8(I18N_NOOP("Tags"));
 }
 
 QString NamespaceEntry::DM_RATING_CONTAINER()
 {
-    return i18n("Rating");
+    return QString::fromUtf8(I18N_NOOP("Rating"));
 }
 
 QString NamespaceEntry::DM_COMMENT_CONTAINER()
 {
-    return i18n("Comment");
+    return QString::fromUtf8(I18N_NOOP("Comment"));
 }
 
 // ------------------------------------------------------------
 
 bool dmcompare(NamespaceEntry& e1, NamespaceEntry e2)
 {
-    return  e1.index < e2.index;
+    return (e1.index < e2.index);
 }
 
 QDebug operator<<(QDebug dbg, const NamespaceEntry& inf)

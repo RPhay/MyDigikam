@@ -24,12 +24,13 @@
 
 #include "rawprocessingfilter.h"
 
-// DRawDecoder includes
+// KDE includes
 
-#include "drawdecoder.h"
+#include <klocalizedstring.h>
 
 // Local includes
 
+#include "drawdecoder.h"
 #include "bcgfilter.h"
 #include "curvesfilter.h"
 #include "digikam_export.h"
@@ -69,6 +70,11 @@ RawProcessingFilter::RawProcessingFilter(const DRawDecoding& settings,
 RawProcessingFilter::~RawProcessingFilter()
 {
     cancelFilter();
+}
+
+QString RawProcessingFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Raw Conversion"));
 }
 
 void RawProcessingFilter::setSettings(const DRawDecoding& settings)

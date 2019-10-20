@@ -63,10 +63,7 @@ public:
         return QLatin1String("digikam:CurvesFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Adjust Curves"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

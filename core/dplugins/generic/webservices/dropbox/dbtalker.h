@@ -51,7 +51,8 @@ public:
     void getUserName();
     void cancel();
     void listFolders(const QString& cursor = QString());
-    bool addPhoto(const QString& imgPath, const QString& uploadFolder, bool rescale, int maxDim, int imageQuality);
+    bool addPhoto(const QString& imgPath, const QString& uploadFolder,
+                  bool original, bool rescale, int maxDim, int imageQuality);
     void createFolder(const QString& path);
 
 Q_SIGNALS:

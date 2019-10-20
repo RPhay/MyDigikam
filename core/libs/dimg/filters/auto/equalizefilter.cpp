@@ -60,7 +60,7 @@ EqualizeFilter::~EqualizeFilter()
 
 QString EqualizeFilter::DisplayableName()
 {
-    return i18n("Auto Equalize");
+    return QString::fromUtf8(I18N_NOOP("Auto Equalize"));
 }
 
 void EqualizeFilter::filterImage()

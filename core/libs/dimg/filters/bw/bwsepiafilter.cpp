@@ -93,7 +93,7 @@ BWSepiaFilter::~BWSepiaFilter()
 
 QString BWSepiaFilter::DisplayableName()
 {
-    return i18n("Black & White / Sepia Filter");
+    return QString::fromUtf8(I18N_NOOP("Black & White / Sepia Filter"));
 }
 
 void BWSepiaFilter::filterImage()

@@ -30,7 +30,7 @@
 // Square
 #define SQR(x) ((x) * (x))
 
-#include "matrix.h"
+#include "refocusmatrix.h"
 
 // C++ includes
 
@@ -45,10 +45,10 @@
 // Pragma directives to reduce warnings from Eigen header files.
 
 #if defined(Q_CC_GNU) && !defined(Q_CC_CLANG)
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wunused-local-typedefs"
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#pragma GCC diagnostic ignored "-Wlogical-op"
+#   pragma GCC diagnostic push
+#   pragma GCC diagnostic ignored "-Wunused-local-typedefs"
+#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#   pragma GCC diagnostic ignored "-Wlogical-op"
 #endif
 
 #include <Eigen/Eigen>
@@ -56,7 +56,7 @@
 
 // Restore warnings
 #if defined(Q_CC_GNU) && !defined(Q_CC_CLANG)
-#pragma GCC diagnostic pop
+#   pragma GCC diagnostic pop
 #endif
 
 // Local includes

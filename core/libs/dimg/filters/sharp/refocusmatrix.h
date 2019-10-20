@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MATRIX_H
-#define DIGIKAM_MATRIX_H
+#ifndef DIGIKAM_REFOCUS_MATRIX_H
+#define DIGIKAM_REFOCUS_MATRIX_H
 
 // C ++ includes
 
@@ -151,4 +151,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_MATRIX_H
+#endif // DIGIKAM_REFOCUS_MATRIX_H

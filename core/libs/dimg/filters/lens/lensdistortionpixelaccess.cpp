@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "pixelaccess.h"
+#include "lensdistortionpixelaccess.h"
 
 // C++ includes
 
@@ -33,19 +33,19 @@
 namespace Digikam
 {
 
-PixelAccess::PixelAccess(DImg* srcImage)
+LensDistortionPixelAccess::LensDistortionPixelAccess(DImg* srcImage)
 {
     m_image       = srcImage;
 
-    m_width       = PixelAccessWidth;
-    m_height      = PixelAccessHeight;
+    m_width       = LensDistortionPixelAccessWidth;
+    m_height      = LensDistortionPixelAccessHeight;
 
     m_depth       = m_image->bytesDepth();
     m_imageWidth  = m_image->width();
     m_imageHeight = m_image->height();
     m_sixteenBit  = m_image->sixteenBit();
 
-    for (int i = 0 ; i < PixelAccessRegions ; ++i)
+    for (int i = 0 ; i < LensDistortionPixelAccessRegions ; ++i)
     {
         m_buffer[i] = new DImg(m_image->copy(0, 0, m_width, m_height));
 
@@ -56,23 +56,23 @@ PixelAccess::PixelAccess(DImg* srcImage)
     }
 }
 
-PixelAccess::~PixelAccess()
+LensDistortionPixelAccess::~LensDistortionPixelAccess()
 {
-    for (int i = 0 ; i < PixelAccessRegions ; ++i)
+    for (int i = 0 ; i < LensDistortionPixelAccessRegions ; ++i)
     {
         delete m_buffer[i];
     }
 }
 
-uchar* PixelAccess::pixelAccessAddress(int i, int j)
+uchar* LensDistortionPixelAccess::pixelAccessAddress(int i, int j)
 {
     return m_buffer[0]->bits() + m_depth * (m_width * (j + 1 - m_tileMinY[0]) + (i + 1 - m_tileMinX[0]));
 }
 
 // Swap region[n] with region[0].
-void PixelAccess::pixelAccessSelectRegion(int n)
+void LensDistortionPixelAccess::pixelAccessSelectRegion(int n)
 {
-    DImg* temp;
+    DImg* temp = nullptr;
     int    a, b, c, d;
     int    i;
 
@@ -99,12 +99,12 @@ void PixelAccess::pixelAccessSelectRegion(int n)
 }
 
 // Buffer[0] is cleared, should start at [i, j], fill rows that overlap image.
-void PixelAccess::pixelAccessDoEdge(int i, int j)
+void LensDistortionPixelAccess::pixelAccessDoEdge(int i, int j)
 {
     int    lineStart, lineEnd;
     int    rowStart, rowEnd;
     int    lineWidth;
-    uchar* line;
+    uchar* line = nullptr;
 
     lineStart = i;
 
@@ -149,10 +149,10 @@ void PixelAccess::pixelAccessDoEdge(int i, int j)
 }
 
 // Moves buffer[0] so that [x, y] is inside it.
-void PixelAccess::pixelAccessReposition(int xInt, int yInt)
+void LensDistortionPixelAccess::pixelAccessReposition(int xInt, int yInt)
 {
-    int newStartX = xInt - PixelAccessXOffset;
-    int newStartY = yInt - PixelAccessYOffset;
+    int newStartX = xInt - LensDistortionPixelAccessXOffset;
+    int newStartY = yInt - LensDistortionPixelAccessYOffset;
 
     m_tileMinX[0] = newStartX + 1;
     m_tileMaxX[0] = newStartX + m_width - 2;
@@ -187,11 +187,11 @@ void PixelAccess::pixelAccessReposition(int xInt, int yInt)
     }
 }
 
-void PixelAccess::pixelAccessGetCubic(double srcX, double srcY, double brighten, uchar* dst)
+void LensDistortionPixelAccess::pixelAccessGetCubic(double srcX, double srcY, double brighten, uchar* dst)
 {
     int    xInt, yInt;
     double dx, dy;
-    uchar* corner;
+    uchar* corner = nullptr;
 
     xInt = (int)floor(srcX);
     dx   = srcX - xInt;
@@ -211,7 +211,7 @@ void PixelAccess::pixelAccessGetCubic(double srcX, double srcY, double brighten,
 
     // Or maybe it was a while back...
 
-    for (int i = 1 ; i < PixelAccessRegions ; ++i)
+    for (int i = 1 ; i < LensDistortionPixelAccessRegions ; ++i)
     {
         if ((xInt >= m_tileMinX[i]) && (xInt < m_tileMaxX[i]) &&
             (yInt >= m_tileMinY[i]) && (yInt < m_tileMaxY[i]))
@@ -227,7 +227,7 @@ void PixelAccess::pixelAccessGetCubic(double srcX, double srcY, double brighten,
 
     // Nope, recycle an old region.
 
-    pixelAccessSelectRegion(PixelAccessRegions - 1);
+    pixelAccessSelectRegion(LensDistortionPixelAccessRegions - 1);
     pixelAccessReposition(xInt, yInt);
 
     corner = pixelAccessAddress(xInt - 1, yInt - 1);
@@ -246,7 +246,7 @@ void PixelAccess::pixelAccessGetCubic(double srcX, double srcY, double brighten,
  *               ( -0.5  1.5 -1.5  0.5 ) (p3)
  *
  */
-void PixelAccess::cubicInterpolate(uchar* src, int rowStride, uchar* dst,
+void LensDistortionPixelAccess::cubicInterpolate(uchar* src, int rowStride, uchar* dst,
                                    bool sixteenBit, double dx, double dy, double brighten)
 {
     float um1, u, up1, up2;

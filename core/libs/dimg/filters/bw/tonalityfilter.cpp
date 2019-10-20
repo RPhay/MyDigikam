@@ -63,7 +63,7 @@ TonalityFilter::~TonalityFilter()
 
 QString TonalityFilter::DisplayableName()
 {
-    return i18n("Tonality Filter");
+    return QString::fromUtf8(I18N_NOOP("Tonality Filter"));
 }
     
 /**

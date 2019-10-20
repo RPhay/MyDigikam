@@ -61,7 +61,7 @@ MixerFilter::~MixerFilter()
 
 QString MixerFilter::DisplayableName()
 {
-    return i18n("Channel Mixer Tool");
+    return QString::fromUtf8(I18N_NOOP("Channel Mixer Tool"));
 }
 
 void MixerFilter::filterImage()

@@ -62,7 +62,7 @@ AutoLevelsFilter::~AutoLevelsFilter()
 
 QString AutoLevelsFilter::DisplayableName()
 {
-    return i18n("Auto Levels");
+    return QString::fromUtf8(I18N_NOOP("Auto Levels"));
 }
 
 void AutoLevelsFilter::filterImage()

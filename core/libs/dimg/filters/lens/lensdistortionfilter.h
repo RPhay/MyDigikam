@@ -51,10 +51,7 @@ public:
         return QLatin1String("digikam:LensDistortionFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Lens Distortion Tool"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

@@ -61,7 +61,7 @@ StretchFilter::~StretchFilter()
 
 QString StretchFilter::DisplayableName()
 {
-    return i18n("Stretch Contrast");
+    return QString::fromUtf8(I18N_NOOP("Stretch Contrast"));
 }
 
 void StretchFilter::filterImage()

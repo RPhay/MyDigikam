@@ -55,10 +55,7 @@ public:
         return QLatin1String("digikam:UnsharpMaskFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Unsharp Mask Tool"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {
