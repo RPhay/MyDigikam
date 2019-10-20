@@ -72,6 +72,11 @@ LevelsFilter::~LevelsFilter()
     cancelFilter();
 }
 
+QString LevelsFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Levels Adjust Tool"));
+}
+
 void LevelsFilter::filterImage()
 {
     ImageLevels levels(m_orgImage.sixteenBit());

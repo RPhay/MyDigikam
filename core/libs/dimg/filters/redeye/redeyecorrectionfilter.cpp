@@ -103,6 +103,11 @@ RedEyeCorrectionFilter::~RedEyeCorrectionFilter()
     delete d;
 }
 
+QString RedEyeCorrectionFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("RedEye Correction Filter"));
+}
+
 void RedEyeCorrectionFilter::filterImage()
 {
     if (!d->sp)

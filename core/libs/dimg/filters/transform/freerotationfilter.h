@@ -102,10 +102,7 @@ public:
         return QLatin1String("digikam:FreeRotationFilter");
     }
 
-    static QString          DisplayableName()
-    {
-        return QString::fromUtf8(I18N_NOOP("Free Rotation"));
-    }
+    static QString          DisplayableName();
 
     static QList<int>       SupportedVersions()
     {

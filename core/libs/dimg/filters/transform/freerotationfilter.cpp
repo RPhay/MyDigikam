@@ -75,6 +75,11 @@ FreeRotationFilter::~FreeRotationFilter()
     delete d;
 }
 
+QString FreeRotationFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Free Rotation"));
+}
+
 QSize FreeRotationFilter::getNewSize() const
 {
     return d->settings.newSize;

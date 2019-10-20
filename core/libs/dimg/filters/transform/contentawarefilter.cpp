@@ -199,6 +199,11 @@ ContentAwareFilter::~ContentAwareFilter()
     delete d;
 }
 
+QString ContentAwareFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Content-Aware Filter"));
+}
+
 void ContentAwareFilter::getEnergyImage()
 {
     if (!d->carver)

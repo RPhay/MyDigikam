@@ -99,6 +99,11 @@ ShearFilter::~ShearFilter()
     cancelFilter();
 }
 
+QString ShearFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("Shear Tool"));
+}
+
 QSize ShearFilter::getNewSize() const
 {
     return d->newSize;

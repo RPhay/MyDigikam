@@ -103,6 +103,11 @@ WBFilter::~WBFilter()
     delete d;
 }
 
+QString WBFilter::DisplayableName()
+{
+    return QString::fromUtf8(I18N_NOOP("White Balance Tool"));
+}
+
 void WBFilter::filterImage()
 {
     d->WP     = m_orgImage.sixteenBit() ? 65536 : 256;
