@@ -43,6 +43,10 @@
 #include <QInputDialog>
 #include <QIcon>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"

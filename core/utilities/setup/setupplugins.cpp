@@ -30,6 +30,10 @@
 #include <QStyle>
 #include <QVBoxLayout>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dpluginsetup.h"

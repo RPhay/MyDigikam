@@ -30,10 +30,6 @@
 #include <QStringList>
 #include <QLineEdit>
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "digikam_export.h"
@@ -102,7 +98,7 @@ public:
 
     explicit SearchTextBar(QWidget* const parent,
                            const QString& name,
-                           const QString& msg=i18n("Search..."));
+                           const QString& msg=QString());
     ~SearchTextBar();
 
     void setTextQueryCompletion(bool b);

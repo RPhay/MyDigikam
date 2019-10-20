@@ -32,6 +32,10 @@
 #include <QAction>
 #include <QIcon>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "contextmenuhelper.h"

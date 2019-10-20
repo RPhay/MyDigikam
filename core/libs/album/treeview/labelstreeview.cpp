@@ -31,6 +31,10 @@
 #include <QPainter>
 #include <QUrl>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"

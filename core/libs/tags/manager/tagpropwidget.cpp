@@ -37,6 +37,7 @@
 
 // KDE includes
 
+#include <klocalizedstring.h>
 #include <kkeysequencewidget.h>
 
 #ifdef HAVE_KICONTHEMES
