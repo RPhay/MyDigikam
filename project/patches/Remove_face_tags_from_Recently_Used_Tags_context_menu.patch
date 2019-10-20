@@ -1,0 +1,102 @@
+diff --git a/core/libs/database/coredb/coredb.cpp b/core/libs/database/coredb/coredb.cpp
+index f3b2ce0827..c26b7e19e0 100644
+--- a/core/libs/database/coredb/coredb.cpp
++++ b/core/libs/database/coredb/coredb.cpp
+@@ -65,11 +65,9 @@ public:
+ 
+     static const QString configGroupName;
+     static const QString configRecentlyUsedTags;
+-    static const QString configRecentlyUsedFaceTags;
+ 
+     CoreDbBackend*       db;
+     QList<int>           recentlyAssignedTags;
+-    QList<int>           recentlyAssignedFaceTags;
+ 
+     int                  uniqueHashVersion;
+ 
+@@ -81,7 +79,6 @@ public:
+ 
+ const QString CoreDB::Private::configGroupName(QLatin1String("CoreDB Settings"));
+ const QString CoreDB::Private::configRecentlyUsedTags(QLatin1String("Recently Used Tags"));
+-const QString CoreDB::Private::configRecentlyUsedFaceTags(QLatin1String("Recently Used Face Tags"));
+ 
+ QString CoreDB::Private::constructRelatedImagesSQL(bool fromOrTo, DatabaseRelation::Type type, bool boolean)
+ {
+@@ -3063,26 +3060,13 @@ void CoreDB::addItemTag(qlonglong imageID, int tagID)
+     if (TagsCache::instance()->isInternalTag(tagID))
+         return;
+ 
+-    //don't mix face tags and common tags
+-    if (TagsCache::instance()->hasProperty(tagID, TagPropertyName::person()))
+-    {
+-        //move current tag to front
+-        d->recentlyAssignedFaceTags.removeAll(tagID);
+-        d->recentlyAssignedFaceTags.prepend(tagID);
++    //move current tag to front
++    d->recentlyAssignedTags.removeAll(tagID);
++    d->recentlyAssignedTags.prepend(tagID);
+ 
+-        if (d->recentlyAssignedFaceTags.size() > 10)
+-        {
+-            d->recentlyAssignedFaceTags.removeLast();
+-        }
+-    } else {
+-        //move current tag to front
+-        d->recentlyAssignedTags.removeAll(tagID);
+-        d->recentlyAssignedTags.prepend(tagID);
+-
+-        if (d->recentlyAssignedTags.size() > 10)
+-        {
+-            d->recentlyAssignedTags.removeLast();
+-        }
++    if (d->recentlyAssignedTags.size() > 10)
++    {
++        d->recentlyAssignedTags.removeLast();
+     }
+ }
+ 
+@@ -3124,11 +3108,6 @@ QList<int> CoreDB::getRecentlyAssignedTags() const
+     return d->recentlyAssignedTags;
+ }
+ 
+-QList<int> CoreDB::getRecentlyAssignedFaceTags() const
+-{
+-    return d->recentlyAssignedFaceTags;
+-}
+-
+ void CoreDB::removeItemTag(qlonglong imageID, int tagID)
+ {
+     d->db->execSql(QString::fromUtf8("DELETE FROM ImageTags "
+@@ -4547,7 +4526,6 @@ void CoreDB::readSettings()
+     KConfigGroup group        = config->group(d->configGroupName);
+ 
+     d->recentlyAssignedTags = group.readEntry(d->configRecentlyUsedTags, QList<int>());
+-    d->recentlyAssignedFaceTags = group.readEntry(d->configRecentlyUsedFaceTags, QList<int>());
+ }
+ 
+ void CoreDB::writeSettings()
+@@ -4556,7 +4534,6 @@ void CoreDB::writeSettings()
+     KConfigGroup group        = config->group(d->configGroupName);
+ 
+     group.writeEntry(d->configRecentlyUsedTags, d->recentlyAssignedTags);
+-    group.writeEntry(d->configRecentlyUsedFaceTags, d->recentlyAssignedFaceTags);
+ }
+ 
+ } // namespace Digikam
+diff --git a/core/libs/database/coredb/coredb.h b/core/libs/database/coredb/coredb.h
+index bbafd4865e..d87635ce01 100644
+--- a/core/libs/database/coredb/coredb.h
++++ b/core/libs/database/coredb/coredb.h
+@@ -373,12 +373,6 @@ public:
+     //TODO move to other place (AlbumManager)
+     QList<int> getRecentlyAssignedTags() const;
+ 
+-    /**
+-     * Get a list of recently assigned face tags (only last 6 face tags are listed)
+-     * @return the list of recently assigned face tags
+-     */
+-    QList<int> getRecentlyAssignedFaceTags() const;
+-
+     /**
+      * Deletes a tag from the database. This will not delete the
+      * subtags of the tag.
