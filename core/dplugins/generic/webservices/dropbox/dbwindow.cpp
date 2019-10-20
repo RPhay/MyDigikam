@@ -78,7 +78,7 @@ DBWindow::DBWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     : WSToolDialog(nullptr, QLatin1String("Dropbox Export Dialog")),
       d(new Private)
 {
-    d->widget      = new DBWidget(this, iface, QLatin1String("Dropbox"));
+    d->widget   = new DBWidget(this, iface, QLatin1String("Dropbox"));
     d->widget->imagesList()->setIface(iface);
 
     setMainWidget(d->widget);
@@ -150,8 +150,6 @@ DBWindow::DBWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
 
 DBWindow::~DBWindow()
 {
-    delete d->widget;
-    delete d->albumDlg;
     delete d->talker;
     delete d;
 }
@@ -316,7 +314,7 @@ void DBWindow::uploadNextPhoto()
     }
 
     QString imgPath = d->transferQueue.first().toLocalFile();
-    QString temp = d->currentAlbumName + QLatin1Char('/');
+    QString temp    = d->currentAlbumName + QLatin1Char('/');
 
     bool res = d->talker->addPhoto(imgPath,
                                    temp,
