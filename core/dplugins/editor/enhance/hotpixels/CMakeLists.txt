@@ -15,14 +15,14 @@ include_directories($<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 set(hotpixelstoolplugin_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/weights.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/blackframeparser.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/blackframelistview.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/hotpixelfixer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/hotpixelstoolplugin.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/hotpixelstool.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/hotpixelsweights.cpp
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    HotpixelsTool
-                                   SOURCES ${hotpixelstoolplugin_SRCS}
+                          SOURCES ${hotpixelstoolplugin_SRCS}
 )

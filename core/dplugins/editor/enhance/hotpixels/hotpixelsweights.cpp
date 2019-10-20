@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2005-03-27
- * Description : a class to calculate filter weights
+ * Description : a class to calculate filter weights for hot pixels tool
  *
  * Copyright (C) 2005-2006 by Unai Garro <ugarro at users dot sourceforge dot net>
  * Copyright (C) 2005-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "weights.h"
+#include "hotpixelsweights.h"
 
 // C++ includes
 
@@ -35,7 +35,7 @@
 namespace DigikamEditorHotPixelsToolPlugin
 {
 
-Weights::Weights()
+HotPixelsWeights::HotPixelsWeights()
   : mHeight(0),
     mWidth(0),
     mCoefficientNumber(0),
@@ -46,7 +46,7 @@ Weights::Weights()
 {
 }
 
-Weights::Weights(const Weights& w)
+HotPixelsWeights::HotPixelsWeights(const HotPixelsWeights& w)
   : mHeight(0),
     mWidth(0),
     mCoefficientNumber(0),
@@ -58,7 +58,7 @@ Weights::Weights(const Weights& w)
     (*this) = w;
 }
 
-Weights& Weights::operator=(const Weights& w)
+HotPixelsWeights& HotPixelsWeights::operator=(const HotPixelsWeights& w)
 {
     if (this == &w)
     {
@@ -107,7 +107,7 @@ Weights& Weights::operator=(const Weights& w)
     return *this;
 }
 
-void Weights::calculateWeights()
+void HotPixelsWeights::calculateHotPixelsWeights()
 {
     mCoefficientNumber = (mTwoDim ? ((size_t)mPolynomeOrder + 1) * ((size_t)mPolynomeOrder + 1)
                                   :  (size_t)mPolynomeOrder + 1);
@@ -242,7 +242,7 @@ void Weights::calculateWeights()
     }
 }
 
-bool Weights::operator==(const Weights& ws) const
+bool HotPixelsWeights::operator==(const HotPixelsWeights& ws) const
 {
     return (mHeight        == ws.height()        &&
             mWidth         == ws.width()         &&
@@ -251,7 +251,7 @@ bool Weights::operator==(const Weights& ws) const
 }
 
 //Invert a quadratic matrix.
-void Weights::matrixInv (double* const a, const size_t size)
+void HotPixelsWeights::matrixInv (double* const a, const size_t size)
 {
     QScopedArrayPointer<double> b(new double[size * size]);
     size_t ix, iy, j;
@@ -313,7 +313,7 @@ void Weights::matrixInv (double* const a, const size_t size)
 }
 
 // Calculates one term of the polynomial
-double Weights::polyTerm (const size_t i_coeff, const int x, const int y, const int poly_order) const
+double HotPixelsWeights::polyTerm (const size_t i_coeff, const int x, const int y, const int poly_order) const
 {
     const size_t x_power = i_coeff / ((size_t)poly_order + 1);
     const size_t y_power = i_coeff % ((size_t)poly_order + 1);

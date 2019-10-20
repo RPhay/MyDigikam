@@ -238,7 +238,7 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction 
     {
         // Obtain weight data block.
 
-        Weights w;
+        HotPixelsWeights w;
         int polynomeOrder = -1;
 
         switch (method)
@@ -275,7 +275,7 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction 
 
         //if (mWeightList.find(w)==mWeightList.end())
         //{
-        w.calculateWeights();
+        w.calculateHotPixelsWeights();
 
         //    mWeightList.append(w);
 

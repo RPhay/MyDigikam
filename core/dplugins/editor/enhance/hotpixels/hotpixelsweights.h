@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2005-03-27
- * Description : a class to calculate filter weights
+ * Description : a class to calculate filter weights for hot pixels tool
  *
  * Copyright (C) 2005-2006 by Unai Garro <ugarro at users dot sourceforge dot net>
  * Copyright (C) 2005-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_EDITOR_WEIGHTS_H
-#define DIGIKAM_EDITOR_WEIGHTS_H
+#ifndef DIGIKAM_EDITOR_HOT_PIXELS_WEIGHTS_H
+#define DIGIKAM_EDITOR_HOT_PIXELS_WEIGHTS_H
 
 // Qt includes
 
@@ -33,15 +33,15 @@
 namespace DigikamEditorHotPixelsToolPlugin
 {
 
-class Weights
+class HotPixelsWeights
 {
 public:
 
-    Weights();
-    Weights(const Weights& w);
-    Weights& operator=(const Weights& w);
+    HotPixelsWeights();
+    HotPixelsWeights(const HotPixelsWeights& w);
+    HotPixelsWeights& operator=(const HotPixelsWeights& w);
 
-    ~Weights()
+    ~HotPixelsWeights()
     {
         if (!mWeightMatrices)
         {
@@ -99,9 +99,9 @@ public:
         mWidth = w;
     };
 
-    void calculateWeights();
+    void calculateHotPixelsWeights();
 
-    bool operator==(const Weights& ws) const;
+    bool operator==(const HotPixelsWeights& ws) const;
 
     double** operator[](int n) const
     {
@@ -143,4 +143,4 @@ private:
 
 } // namespace DigikamEditorHotPixelsToolPlugin
 
-#endif // DIGIKAM_EDITOR_WEIGHTS_H
+#endif // DIGIKAM_EDITOR_HOT_PIXELS_WEIGHTS_H

@@ -37,7 +37,7 @@
 
 #include "dimgthreadedfilter.h"
 #include "hotpixel.h"
-#include "weights.h"
+#include "hotpixelsweights.h"
 
 using namespace Digikam;
 
@@ -113,7 +113,7 @@ private:
         return (p.x() >= 0 && p.y() >= 0 && p.x() < (long) img.width() && p.y() < (long) img.height());
     };
 
-    QList <Weights> mWeightList;
+    QList <HotPixelsWeights> mWeightList;
 
 private:
 
