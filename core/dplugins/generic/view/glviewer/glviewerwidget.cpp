@@ -161,8 +161,7 @@ GLViewerWidget::GLViewerWidget(DPlugin* const plugin, DInfoInterface* const ifac
             screen = window->screen();
     }
 
-    int screenIndex = qMax(qApp->screens().indexOf(screen), 0);
-    d->screenSize   = qApp->screens().at(screenIndex)->size();
+    d->screenSize = screen->size();
 
     QList<QUrl> myfiles;                                            // pics which are displayed in imageviewer
     QList<QUrl> selection = d->iface->currentSelectedItems();
