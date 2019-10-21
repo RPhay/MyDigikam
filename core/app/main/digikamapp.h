@@ -236,6 +236,7 @@ Q_SIGNALS:
 private:
 
     void fillSolidMenus();
+    void connectToSolidNotifiers();
     void openSolidCamera(const QString& udi, const QString& label = QString());
     void openSolidUsmDevice(const QString& udi, const QString& label = QString());
 

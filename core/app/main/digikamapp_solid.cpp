@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2002-16-10
- * Description : main digiKam interface implementation - Solid methods
+ * Description : main digiKam interface implementation - Solid API based methods
  *
  * Copyright (C) 2002-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -35,6 +35,7 @@
 #include <solid/camera.h>
 #include <solid/device.h>
 #include <solid/deviceinterface.h>
+#include <solid/devicenotifier.h>
 #include <solid/predicate.h>
 #include <solid/storageaccess.h>
 #include <solid/storagedrive.h>
@@ -464,6 +465,27 @@ void DigikamApp::fillSolidMenus()
 
     updateCameraMenu();
     updateQuickImportAction();
+}
+
+void DigikamApp::connectToSolidNotifiers()
+{
+    connect(Solid::DeviceNotifier::instance(), SIGNAL(deviceAdded(QString)),
+            this, SLOT(slotSolidDeviceChanged(QString)),
+            Qt::QueuedConnection);
+
+    connect(Solid::DeviceNotifier::instance(), SIGNAL(deviceRemoved(QString)),
+            this, SLOT(slotSolidDeviceChanged(QString)),
+            Qt::QueuedConnection);
+
+    // -- queued connections -------------------------------------------
+
+    connect(this, SIGNAL(queuedOpenCameraUiFromPath(QString)),
+            this, SLOT(slotOpenCameraUiFromPath(QString)),
+            Qt::QueuedConnection);
+
+    connect(this, SIGNAL(queuedOpenSolidDevice(QString)),
+            this, SLOT(slotOpenSolidDevice(QString)),
+            Qt::QueuedConnection);
 }
 
 void DigikamApp::openSolidCamera(const QString& udi, const QString& cameraLabel)
