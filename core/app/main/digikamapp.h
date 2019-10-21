@@ -34,29 +34,11 @@
 #include <QString>
 #include <QMenu>
 
-// Solid includes
-
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wnonportable-include-path"
-#endif
-
-#include <solid/solidnamespace.h>
-
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
-#endif
-
 // Local includes
 
 #include "digikam_config.h"
 #include "dxmlguiwindow.h"
 #include "digikam_export.h"
-
-namespace Solid
-{
-    class Device;
-}
 
 namespace Digikam
 {
@@ -253,18 +235,15 @@ Q_SIGNALS:
 
 private:
 
-    void    fillSolidMenus();
-    bool    checkSolidCamera(const Solid::Device& cameraDevice);
-    QString labelForSolidCamera(const Solid::Device& cameraDevice);
-    void    openSolidCamera(const QString& udi, const QString& label = QString());
-    void    openSolidUsmDevice(const QString& udi, const QString& label = QString());
+    void fillSolidMenus();
+    void openSolidCamera(const QString& udi, const QString& label = QString());
+    void openSolidUsmDevice(const QString& udi, const QString& label = QString());
 
 private Q_SLOTS:
 
     void slotOpenSolidCamera(QAction*);
     void slotOpenSolidUsmDevice(QAction*);
     void slotOpenSolidDevice(const QString& udi);
-    void slotSolidSetupDone(Solid::ErrorType errorType, QVariant errorData, const QString& udi);
     void slotSolidDeviceChanged(const QString& udi);
 
 // -- Internal private container --------------------------------------------------------------------

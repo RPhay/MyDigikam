@@ -31,6 +31,7 @@
 #   pragma clang diagnostic ignored "-Wnonportable-include-path"
 #endif
 
+#include <solid/solidnamespace.h>
 #include <solid/camera.h>
 #include <solid/device.h>
 #include <solid/deviceinterface.h>
@@ -45,6 +46,107 @@
 
 namespace Digikam
 {
+
+// NOTE: static methods to not expose whole digiKam to Solid API.
+
+bool s_checkSolidCamera(const Solid::Device& cameraDevice)
+{
+    const Solid::Camera* const camera = cameraDevice.as<Solid::Camera>();
+
+    if (!camera)
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Solid device" << cameraDevice.description() << "is not a camera";
+        return false;
+    }
+
+    QStringList drivers = camera->supportedDrivers();
+
+    qCDebug(DIGIKAM_GENERAL_LOG) << "checkSolidCamera: Found Camera "
+                                 << QString::fromUtf8("%1 %2").arg(cameraDevice.vendor()).arg(cameraDevice.product())
+                                 << " protocols " << camera->supportedProtocols()
+                                 << " drivers " << camera->supportedDrivers(QLatin1String("ptp"));
+
+    // We handle gphoto2 cameras in this loop
+    if (!(camera->supportedDrivers().contains(QLatin1String("gphoto")) ||
+        camera->supportedProtocols().contains(QLatin1String("ptp"))))
+    {
+        return false;
+    }
+
+    QVariant driverHandle = camera->driverHandle(QLatin1String("gphoto"));
+
+    if (!driverHandle.canConvert(QVariant::List))
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Solid returns unsupported driver handle for gphoto2";
+        return false;
+    }
+
+    QList<QVariant> driverHandleList = driverHandle.toList();
+
+    if ((driverHandleList.size() < 3)                               ||
+        (driverHandleList.at(0).toString() != QLatin1String("usb")) ||
+        !driverHandleList.at(1).canConvert(QVariant::Int)           ||
+        !driverHandleList.at(2).canConvert(QVariant::Int))
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Solid returns unsupported driver handle for gphoto2";
+        return false;
+    }
+
+    return true;
+}
+
+QString s_labelForSolidCamera(const Solid::Device& cameraDevice)
+{
+    QString vendor  = cameraDevice.vendor();
+    QString product = cameraDevice.product();
+
+    if (product == QLatin1String("USB Imaging Interface") ||
+        product == QLatin1String("USB Vendor Specific Interface"))
+    {
+        Solid::Device parentUsbDevice = cameraDevice.parent();
+
+        if (parentUsbDevice.isValid())
+        {
+            vendor  = parentUsbDevice.vendor();
+            product = parentUsbDevice.product();
+
+            if (!vendor.isEmpty() && !product.isEmpty())
+            {
+                if (vendor == QLatin1String("Canon, Inc."))
+                {
+                    vendor = QLatin1String("Canon");
+
+                    if (product.startsWith(QLatin1String("Canon ")))
+                    {
+                        product = product.mid(6);    // cut off another "Canon " from product
+                    }
+
+                    if (product.endsWith(QLatin1String(" (ptp)")))
+                    {
+                        product.chop(6);             // cut off " (ptp)"
+                    }
+                }
+                else if (vendor == QLatin1String("Fuji Photo Film Co., Ltd"))
+                {
+                    vendor = QLatin1String("Fuji");
+                }
+                else if (vendor == QLatin1String("Nikon Corp."))
+                {
+                    vendor = QLatin1String("Nikon");
+
+                    if (product.startsWith(QLatin1String("NIKON ")))
+                    {
+                        product = product.mid(6);
+                    }
+                }
+            }
+        }
+    }
+
+    return vendor + QLatin1Char(' ') + product;
+}
+
+// --------------------------------------------------------------------------------------------------
 
 void DigikamApp::fillSolidMenus()
 {
@@ -78,14 +180,14 @@ void DigikamApp::fillSolidMenus()
             continue;
         }
 
-        if (!checkSolidCamera(cameraDevice))
+        if (!s_checkSolidCamera(cameraDevice))
         {
             continue;
         }
 
         // --------------------------------------------------------
 
-        QString l     = labelForSolidCamera(cameraDevice);
+        QString l     = s_labelForSolidCamera(cameraDevice);
         QString label = CameraNameHelper::cameraNameAutoDetected(l.trimmed());
 
         // --------------------------------------------------------
@@ -364,54 +466,6 @@ void DigikamApp::fillSolidMenus()
     updateQuickImportAction();
 }
 
-bool DigikamApp::checkSolidCamera(const Solid::Device& cameraDevice)
-{
-    const Solid::Camera* const camera = cameraDevice.as<Solid::Camera>();
-
-    if (!camera)
-    {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Solid device" << cameraDevice.description() << "is not a camera";
-        return false;
-    }
-
-    QStringList drivers = camera->supportedDrivers();
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "checkSolidCamera: Found Camera "
-                                 << QString::fromUtf8("%1 %2").arg(cameraDevice.vendor()).arg(cameraDevice.product())
-                                 << " protocols " << camera->supportedProtocols()
-                                 << " drivers " << camera->supportedDrivers(QLatin1String("ptp"));
-
-    // We handle gphoto2 cameras in this loop
-    if (!(camera->supportedDrivers().contains(QLatin1String("gphoto")) ||
-        camera->supportedProtocols().contains(QLatin1String("ptp")))
-       )
-    {
-        return false;
-    }
-
-    QVariant driverHandle = camera->driverHandle(QLatin1String("gphoto"));
-
-    if (!driverHandle.canConvert(QVariant::List))
-    {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Solid returns unsupported driver handle for gphoto2";
-        return false;
-    }
-
-    QList<QVariant> driverHandleList = driverHandle.toList();
-
-    if ((driverHandleList.size() < 3)                               ||
-        (driverHandleList.at(0).toString() != QLatin1String("usb")) ||
-        !driverHandleList.at(1).canConvert(QVariant::Int)           ||
-        !driverHandleList.at(2).canConvert(QVariant::Int)
-       )
-    {
-        qCWarning(DIGIKAM_GENERAL_LOG) << "Solid returns unsupported driver handle for gphoto2";
-        return false;
-    }
-
-    return true;
-}
-
 void DigikamApp::openSolidCamera(const QString& udi, const QString& cameraLabel)
 {
     // if there is already an open ImportUI for the device, show and raise it, and be done
@@ -438,7 +492,7 @@ void DigikamApp::openSolidCamera(const QString& udi, const QString& cameraLabel)
     {
         if (cameraLabel.isNull())
         {
-            QString label = labelForSolidCamera(device);
+            QString label = s_labelForSolidCamera(device);
         }
 
         Solid::Camera* const camera = device.as<Solid::Camera>();
@@ -476,57 +530,6 @@ void DigikamApp::openSolidCamera(const QString& udi, const QString& cameraLabel)
             qCDebug(DIGIKAM_GENERAL_LOG) << "Failed to detect camera with GPhoto2 from Solid information";
         }
     }
-}
-
-QString DigikamApp::labelForSolidCamera(const Solid::Device& cameraDevice)
-{
-    QString vendor  = cameraDevice.vendor();
-    QString product = cameraDevice.product();
-
-    if (product == QLatin1String("USB Imaging Interface") ||
-        product == QLatin1String("USB Vendor Specific Interface"))
-    {
-        Solid::Device parentUsbDevice = cameraDevice.parent();
-
-        if (parentUsbDevice.isValid())
-        {
-            vendor  = parentUsbDevice.vendor();
-            product = parentUsbDevice.product();
-
-            if (!vendor.isEmpty() && !product.isEmpty())
-            {
-                if (vendor == QLatin1String("Canon, Inc."))
-                {
-                    vendor = QLatin1String("Canon");
-
-                    if (product.startsWith(QLatin1String("Canon ")))
-                    {
-                        product = product.mid(6);    // cut off another "Canon " from product
-                    }
-
-                    if (product.endsWith(QLatin1String(" (ptp)")))
-                    {
-                        product.chop(6);             // cut off " (ptp)"
-                    }
-                }
-                else if (vendor == QLatin1String("Fuji Photo Film Co., Ltd"))
-                {
-                    vendor = QLatin1String("Fuji");
-                }
-                else if (vendor == QLatin1String("Nikon Corp."))
-                {
-                    vendor = QLatin1String("Nikon");
-
-                    if (product.startsWith(QLatin1String("NIKON ")))
-                    {
-                        product = product.mid(6);
-                    }
-                }
-            }
-        }
-    }
-
-    return vendor + QLatin1Char(' ') + product;
 }
 
 void DigikamApp::openSolidUsmDevice(const QString& udi, const QString& givenLabel)
@@ -573,8 +576,28 @@ void DigikamApp::openSolidUsmDevice(const QString& udi, const QString& givenLabe
 
             d->eventLoop = new QEventLoop(this);
 
-            connect(access, SIGNAL(setupDone(Solid::ErrorType,QVariant,QString)),
-                    this, SLOT(slotSolidSetupDone(Solid::ErrorType,QVariant,QString)));
+            // NOTE: Lambda function to not expose whole digiKam to Solid API.
+
+            connect(access, &Solid::StorageAccess::setupDone,
+                    [=](Solid::ErrorType errorType, QVariant errorData, const QString& /*udi*/)
+                {
+                    if (!d->eventLoop)
+                    {
+                        return;
+                    }
+
+                    if (errorType == Solid::NoError)
+                    {
+                        d->eventLoop->exit(0);
+                    }
+                    else
+                    {
+                        d->solidErrorMessage  = i18n("Cannot access the storage device.\n");
+                        d->solidErrorMessage += errorData.toString();
+                        d->eventLoop->exit(1);
+                    }
+                }
+            );
 
             int returnCode = d->eventLoop->exec(QEventLoop::ExcludeUserInputEvents);
 
@@ -642,7 +665,7 @@ void DigikamApp::slotOpenSolidDevice(const QString& udi)
     }
     else if (device.is<Solid::Camera>())
     {
-        if (!checkSolidCamera(device))
+        if (!s_checkSolidCamera(device))
         {
             QMessageBox::critical(this, qApp->applicationName(),
                                   i18n("The specified camera (\"%1\") is not supported.", udi));
@@ -650,25 +673,6 @@ void DigikamApp::slotOpenSolidDevice(const QString& udi)
         }
 
         openSolidCamera(udi);
-    }
-}
-
-void DigikamApp::slotSolidSetupDone(Solid::ErrorType errorType, QVariant errorData, const QString& /*udi*/)
-{
-    if (!d->eventLoop)
-    {
-        return;
-    }
-
-    if (errorType == Solid::NoError)
-    {
-        d->eventLoop->exit(0);
-    }
-    else
-    {
-        d->solidErrorMessage  = i18n("Cannot access the storage device.\n");
-        d->solidErrorMessage += errorData.toString();
-        d->eventLoop->exit(1);
     }
 }
 
