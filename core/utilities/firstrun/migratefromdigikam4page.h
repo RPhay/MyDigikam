@@ -47,6 +47,11 @@ public:
     void doMigration();
     int  nextId() const;
 
+    /**
+     * Return true if migration data are available on the system
+     */
+    static bool checkForMigration();
+
 public Q_SLOTS:
 
     void migrationToggled(bool b);
