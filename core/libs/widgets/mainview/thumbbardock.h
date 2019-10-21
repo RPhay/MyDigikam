@@ -38,10 +38,6 @@
 #include <QMainWindow>
 #include <QAction>
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "digikam_export.h"
@@ -77,6 +73,8 @@ private:
     Private* const d;
 };
 
+// --------------------------------------------------------------------------------
+
 /** A dock widget specifically designed for thumbnail bars (class ThumbNailView
  *  or one of its descendants). It provides the same look as a toolbar.
  */
@@ -108,7 +106,7 @@ public:
 
     /** Return an Action to show and hide the thumbnail bar.
      */
-    QAction* getToggleAction(QObject* const parent, const QString& caption = i18n("Show Thumbbar")) const;
+    QAction* getToggleAction(QObject* const parent, const QString& caption = QString()) const;
 
     /** The normal show() and hide() functions don't apply that well, because
      *  there are two orthogonal reasons to hide the thumbbar: the user doesn't

@@ -27,6 +27,10 @@
 
 #include <QWidget>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "sidebar.h"

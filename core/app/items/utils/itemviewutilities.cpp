@@ -34,6 +34,7 @@
 
 // KDE includes
 
+#include <klocalizedstring.h>
 #include <kwindowsystem.h>
 
 // Local includes

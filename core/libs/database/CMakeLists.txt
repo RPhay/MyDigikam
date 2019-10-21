@@ -49,6 +49,8 @@ set(libdatabaseutils_SRCS
     utils/widgets/dbstatdlg.cpp
     utils/widgets/dbsettingswidget.cpp
     utils/widgets/dbmigrationdlg.cpp
+    utils/widgets/mysqlinitbinary.cpp
+    utils/widgets/mysqlservbinary.cpp
     utils/ifaces/dbinfoiface.cpp
     utils/ifaces/syncjob.cpp
     utils/ifaces/dio.cpp

@@ -149,7 +149,7 @@ void DImgAbstractHistoryTest::applyFilters1()
 
     BCGFilter filter1(iface.original(), this);
     filter1.startFilterDirectly();
-    iface.setOriginal(i18n("Brightness / Contrast / Gamma"), filter1.filterAction(), filter1.getTargetImage());
+    iface.setOriginal(QLatin1String("Brightness / Contrast / Gamma"), filter1.filterAction(), filter1.getTargetImage());
 
     CurvesFilter filter2(iface.original(), this);
     filter2.startFilterDirectly();
