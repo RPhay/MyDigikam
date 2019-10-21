@@ -29,6 +29,10 @@
 #include <QStandardItemModel>
 #include <QStandardPaths>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "gpsbookmarkmodelhelper.h"

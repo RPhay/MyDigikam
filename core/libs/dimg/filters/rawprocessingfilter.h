@@ -24,10 +24,6 @@
 #ifndef DIGIKAM_RAW_PROCESSING_FILTERS_H
 #define DIGIKAM_RAW_PROCESSING_FILTERS_H
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "digikam_export.h"

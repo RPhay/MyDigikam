@@ -32,6 +32,11 @@
 #include "gitversion.h"
 #include "daboutdata.h"
 
+#if !defined(__APPLE__) && defined(__GNUC__)
+#pragma GCC diagnostic push
+#   pragma GCC diagnostic ignored "-Wdate-time"
+#endif
+
 namespace Digikam
 {
 
@@ -64,3 +69,8 @@ const QString additionalInformation()
 }
 
 }  // namespace Digikam
+
+// Restore warnings
+#if !defined(__APPLE__) && defined(__GNUC__)
+#   pragma GCC diagnostic pop
+#endif

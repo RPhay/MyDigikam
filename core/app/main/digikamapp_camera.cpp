@@ -24,19 +24,6 @@
 #include "digikamapp.h"
 #include "digikamapp_p.h"
 
-// Solid includes
-
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wnonportable-include-path"
-#endif
-
-#include <solid/devicenotifier.h>
-
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
-#endif
-
 namespace Digikam
 {
 
@@ -120,23 +107,7 @@ void DigikamApp::loadCameras()
 
     fillSolidMenus();
 
-    connect(Solid::DeviceNotifier::instance(), SIGNAL(deviceAdded(QString)),
-            this, SLOT(slotSolidDeviceChanged(QString)),
-            Qt::QueuedConnection);
-
-    connect(Solid::DeviceNotifier::instance(), SIGNAL(deviceRemoved(QString)),
-            this, SLOT(slotSolidDeviceChanged(QString)),
-            Qt::QueuedConnection);
-
-    // -- queued connections -------------------------------------------
-
-    connect(this, SIGNAL(queuedOpenCameraUiFromPath(QString)),
-            this, SLOT(slotOpenCameraUiFromPath(QString)),
-            Qt::QueuedConnection);
-
-    connect(this, SIGNAL(queuedOpenSolidDevice(QString)),
-            this, SLOT(slotOpenSolidDevice(QString)),
-            Qt::QueuedConnection);
+    connectToSolidNotifiers();
 }
 
 void DigikamApp::updateCameraMenu()

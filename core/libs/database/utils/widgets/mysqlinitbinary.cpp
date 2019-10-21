@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2016-06-20
- * Description : Autodetects Mysql server binary program and version
+ * Description : Autodetects Mysql initializer binary program and version
  *
  * Copyright (C) 2016-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -20,25 +20,32 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MYSQL_SERV_BINARY_H
-#define DIGIKAM_MYSQL_SERV_BINARY_H
+#include "mysqlinitbinary.h"
+
+// KDE includes
+
+#include <klocalizedstring.h>
 
 // Local includes
 
-#include "dbinaryiface.h"
+#include "dbengineparameters.h"
 
 namespace Digikam
 {
 
-class MysqlServBinary : public DBinaryIface
+MysqlInitBinary::MysqlInitBinary()
+    : DBinaryIface(DbEngineParameters::defaultMysqlInitCmd(),
+                   QLatin1String("MariaDB"),
+                   QLatin1String("https://mariadb.org/download/"),
+                   QString(),
+                   QStringList(QLatin1String("--help")),
+                   i18n("This binary file is used to initialize the MariaDB data files for the database."))
 {
+    setup();
+}
 
-public:
-
-    explicit MysqlServBinary();
-    ~MysqlServBinary();
-};
+MysqlInitBinary::~MysqlInitBinary()
+{
+}
 
 } // namespace Digikam
-
-#endif // DIGIKAM_MYSQL_SERV_BINARY_H

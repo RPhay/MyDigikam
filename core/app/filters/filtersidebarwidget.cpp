@@ -36,6 +36,10 @@
 #include <QMenu>
 #include <QIcon>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dlayoutbox.h"

@@ -35,6 +35,7 @@
 
 // KDE includes
 
+#include <klocalizedstring.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -92,7 +93,7 @@ SearchTextBar::SearchTextBar(QWidget* const parent, const QString& name, const Q
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
     setObjectName(name + QLatin1String(" Search Text Tool"));
     setClearButtonEnabled(true);
-    setPlaceholderText(msg);
+    setPlaceholderText(msg.isNull() ? i18n("Search...") : msg);
 
     d->completer = new ModelCompleter(this);
     setCompleter(d->completer);

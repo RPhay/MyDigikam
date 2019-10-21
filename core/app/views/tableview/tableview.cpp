@@ -35,6 +35,10 @@
 #include <QApplication>
 #include <QPointer>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "advancedrenamedialog.h"

@@ -27,6 +27,10 @@
 
 #include <QTabWidget>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "dpluginsetup.h"

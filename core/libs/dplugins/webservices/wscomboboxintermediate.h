@@ -36,10 +36,6 @@
 #include <QComboBox>
 #include <QString>
 
-// KDE includes
-
-#include <klocalizedstring.h>
-
 // Local includes
 
 #include "digikam_export.h"
@@ -56,7 +52,7 @@ public:
     /* Initialize the combobox with a parent and a string to indicate the
      * intermediate state.
      */
-    explicit WSComboBoxIntermediate(QWidget* const = nullptr, const QString& = i18n("Various"));
+    explicit WSComboBoxIntermediate(QWidget* const = nullptr, const QString& = QString());
     ~WSComboBoxIntermediate();
 
     /* Set the state of the combobox to intermediate. The intermediate state is

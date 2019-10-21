@@ -25,6 +25,10 @@
 
 #include "undoaction.h"
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "digikam_debug.h"
@@ -32,21 +36,6 @@
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN UndoAction::Private
-{
-public:
-
-    explicit Private()
-    {
-    }
-
-    QString               title;
-    QVariant              fileOrigin;
-
-    UndoMetadataContainer container;
-    DImageHistory         fileOriginResolvedHistory;
-};
 
 UndoMetadataContainer UndoMetadataContainer::fromImage(const DImg& img)
 {
@@ -66,6 +55,23 @@ bool UndoMetadataContainer::changesIccProfile(const DImg& target) const
 {
     return !(profile == target.getIccProfile());
 }
+
+// ---------------------------------------------------------------------------------------------
+
+class Q_DECL_HIDDEN UndoAction::Private
+{
+public:
+
+    explicit Private()
+    {
+    }
+
+    QString               title;
+    QVariant              fileOrigin;
+
+    UndoMetadataContainer container;
+    DImageHistory         fileOriginResolvedHistory;
+};
 
 UndoAction::UndoAction(EditorCore* const core)
     : d(new Private)
@@ -103,7 +109,8 @@ bool UndoAction::hasFileOriginData() const
     return !d->fileOrigin.isNull();
 }
 
-void UndoAction::setFileOriginData(const QVariant& data, const DImageHistory& resolvedInitialHistory)
+void UndoAction::setFileOriginData(const QVariant& data,
+                                   const DImageHistory& resolvedInitialHistory)
 {
     d->fileOrigin                = data;
     d->fileOriginResolvedHistory = resolvedInitialHistory;
@@ -121,7 +128,8 @@ DImageHistory UndoAction::fileOriginResolvedHistory() const
 
 // ---------------------------------------------------------------------------------------------
 
-UndoActionReversible::UndoActionReversible(EditorCore* const core, const DImgBuiltinFilter& reversibleFilter)
+UndoActionReversible::UndoActionReversible(EditorCore* const core,
+                                           const DImgBuiltinFilter& reversibleFilter)
     : UndoAction(core),
       m_filter(reversibleFilter)
 {
@@ -140,10 +148,11 @@ DImgBuiltinFilter UndoActionReversible::getReverseFilter() const
 
 // ---------------------------------------------------------------------------------------------
 
-UndoActionIrreversible::UndoActionIrreversible(EditorCore* const core, const QString& title)
+UndoActionIrreversible::UndoActionIrreversible(EditorCore* const core,
+                                               const QString& title)
     : UndoAction(core)
 {
-    setTitle(title);
+    setTitle(title.isNull() ? i18n("Unknown") : title);
 }
 
 UndoActionIrreversible::~UndoActionIrreversible()

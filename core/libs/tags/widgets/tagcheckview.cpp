@@ -33,6 +33,7 @@
 
 // KDE includes
 
+#include <klocalizedstring.h>
 #include <kselectaction.h>
 
 // Local includes

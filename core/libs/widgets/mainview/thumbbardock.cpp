@@ -31,6 +31,10 @@
 
 #include <QKeySequence>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 namespace Digikam
 {
 
@@ -166,7 +170,9 @@ void ThumbBarDock::reInitialize()
 
 QAction* ThumbBarDock::getToggleAction(QObject* const parent, const QString& caption) const
 {
-    QAction* const action = new QAction(QIcon::fromTheme(QLatin1String("view-choose")), caption, parent);
+    QAction* const action = new QAction(QIcon::fromTheme(QLatin1String("view-choose")),
+                                        caption.isNull() ? i18n("Show Thumbbar") : caption,
+                                        parent);
 
     action->setCheckable(true);
 

@@ -27,10 +27,6 @@
 
 #include <QPushButton>
 
-// KDE includes
-
-#include <kdelibs4migration.h>
-
 // Local includes
 
 #include "dxmlguiwindow.h"
@@ -89,22 +85,12 @@ FirstRunDlg::FirstRunDlg(QWidget* const parent)
                                                    << QWizard::NextButton
                                                    << QWizard::FinishButton);
 
-    bool migrateAvailable;
+    d->welcomePage   = new WelcomePage(this);    // First assistant page
 
-#ifdef Q_OS_LINUX
-    ::Kdelibs4Migration migration;
-
-    // If there's a digikamrc file in $KDEHOME/share/config,
-    // then we create the migration page in the wizard
-    migrateAvailable = !migration.locateLocal("config", QLatin1String("digikamrc")).isEmpty();
-#else
-    migrateAvailable = false;
-#endif
-
-    d->welcomePage    = new WelcomePage(this);    // First assistant page
-
-    if (migrateAvailable)
-       d->migrateFromDigikam4Page = new MigrateFromDigikam4Page(this);
+    if (MigrateFromDigikam4Page::checkForMigration())
+    {
+        d->migrateFromDigikam4Page = new MigrateFromDigikam4Page(this);
+    }
 
     d->collectionPage = new CollectionPage(this);
     d->databasePage   = new DatabasePage(this);

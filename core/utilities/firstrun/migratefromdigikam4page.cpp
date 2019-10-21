@@ -249,4 +249,17 @@ int MigrateFromDigikam4Page::nextId() const
         return QWizardPage::nextId();
 }
 
+bool MigrateFromDigikam4Page::checkForMigration()
+{
+#ifdef Q_OS_LINUX
+    ::Kdelibs4Migration migration;
+
+    // If there's a digikamrc file in $KDEHOME/share/config,
+    // then we create the migration page in the wizard
+    return (!migration.locateLocal("config", QLatin1String("digikamrc")).isEmpty());
+#endif
+
+    return false;
+}
+
 } // namespace Digikam

@@ -20,25 +20,32 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MYSQL_SERV_BINARY_H
-#define DIGIKAM_MYSQL_SERV_BINARY_H
+#include "mysqlservbinary.h"
+
+// KDE includes
+
+#include <klocalizedstring.h>
 
 // Local includes
 
-#include "dbinaryiface.h"
+#include "dbengineparameters.h"
 
 namespace Digikam
 {
 
-class MysqlServBinary : public DBinaryIface
+MysqlServBinary::MysqlServBinary()
+    : DBinaryIface(DbEngineParameters::defaultMysqlServerCmd(),
+                   QLatin1String("MariaDB"),
+                   QLatin1String("https://mariadb.org/download/"),
+                   QString(),
+                   QStringList(QLatin1String("--help")),
+                   i18n("This binary file is used to start a dedicated instance of MariaDB server."))
 {
+    setup();
+}
 
-public:
-
-    explicit MysqlServBinary();
-    ~MysqlServBinary();
-};
+MysqlServBinary::~MysqlServBinary()
+{
+}
 
 } // namespace Digikam
-
-#endif // DIGIKAM_MYSQL_SERV_BINARY_H
