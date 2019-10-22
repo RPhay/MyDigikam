@@ -61,6 +61,7 @@
 #   pragma GCC diagnostic ignored "-Wshift-negative-value"
 #   pragma GCC diagnostic ignored "-Wmisleading-indentation"
 #   pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#   pragma GCC diagnostic ignored "-Wdate-time"
 #endif
 
 #if defined(Q_CC_CLANG)
@@ -70,6 +71,7 @@
 #   pragma clang diagnostic ignored "-Wshift-negative-value"
 #   pragma clang diagnostic ignored "-Wunused-local-typedef"
 #   pragma clang diagnostic ignored "-Wzero-as-null-pointer-constant"
+#   pragma clang diagnostic ignored "-Wdate-time"
 #endif
 
 // CImg includes
