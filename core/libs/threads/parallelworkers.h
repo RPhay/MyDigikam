@@ -151,17 +151,17 @@ public:
         static_cast<ParallelAdapter*>(o)->replacementStaticQtMetacall(_c, _id, _a);
     }
 
-    virtual StaticMetacallFunction staticMetacallPointer()
+    virtual StaticMetacallFunction staticMetacallPointer() override
     {
         return qt_static_metacall;
     }
 
-    virtual const QMetaObject* metaObject() const
+    virtual const QMetaObject* metaObject() const override
     {
         return ParallelWorkers::replacementMetaObject();
     }
 
-    virtual int qt_metacall(QMetaObject::Call _c, int _id, void** _a)
+    virtual int qt_metacall(QMetaObject::Call _c, int _id, void** _a) override
     {
         return ParallelWorkers::replacementQtMetacall(_c, _id, _a);
     }
