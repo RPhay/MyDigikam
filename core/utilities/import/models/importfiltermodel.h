@@ -135,7 +135,7 @@ public:
     //bool isGroupOpen(qlonglong group) const;
     //bool isAllGroupsOpen() const;
 
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
+    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
     virtual ImportFilterModel* importFilterModel()                              const override;
 
 public Q_SLOTS:
@@ -183,12 +183,12 @@ protected:
 
 protected:
 
-    virtual void setDirectSourceImportModel(ImportItemModel* const sourceModel) override;
+    virtual void setDirectSourceImportModel(ImportItemModel* const sourceModel)            override;
 
-    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
+    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const  override;
 
-    virtual int compareCategories(const QModelIndex& left, const QModelIndex& right) const;
-    virtual bool subSortLessThan(const QModelIndex& left, const QModelIndex& right) const;
+    virtual int compareCategories(const QModelIndex& left, const QModelIndex& right) const override;
+    virtual bool subSortLessThan(const QModelIndex& left, const QModelIndex& right) const  override;
 
     /** Reimplement to customize category sorting,
      *  Return negative if category of left < category right,

@@ -137,10 +137,10 @@ public:
     QList<qlonglong>   camItemIds()         const;
     QList<CamItemInfo> uniqueCamItemInfos() const;
 
-    bool hasImage(qlonglong id) const;
+    bool hasImage(qlonglong id)             const;
     bool hasImage(const CamItemInfo& info)  const;
 
-    bool isEmpty() const;
+    bool isEmpty()                          const;
 
     /**
      * Remove the given infos or indexes directly from the model.
@@ -161,11 +161,11 @@ public:
     static qlonglong   retrieveCamItemId(const QModelIndex& index);
 
     // QAbstractListModel implementation
-    virtual int           rowCount(const QModelIndex& parent)                            const;
-    virtual QVariant      data(const QModelIndex& index, int role)                       const;
-    virtual QVariant      headerData(int section, Qt::Orientation orientation, int role) const;
-    virtual Qt::ItemFlags flags(const QModelIndex& index)                                const;
-    virtual QModelIndex   index(int row, int column, const QModelIndex& parent)          const;
+    virtual int           rowCount(const QModelIndex& parent)                            const override;
+    virtual QVariant      data(const QModelIndex& index, int role)                       const override;
+    virtual QVariant      headerData(int section, Qt::Orientation orientation, int role) const override;
+    virtual Qt::ItemFlags flags(const QModelIndex& index)                                const override;
+    virtual QModelIndex   index(int row, int column, const QModelIndex& parent)          const override;
 
     // DragDrop methods
     DECLARE_MODEL_DRAG_DROP_METHODS
