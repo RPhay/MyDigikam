@@ -47,10 +47,6 @@ namespace Digikam
  * are supported (in the native language): tomorrow, yesterday, today,
  * Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
  *
- * @author Cornelius Schumacher <schumacher at kde dot org>
- * @author Mike Pilone <mpilone at slac dot com>
- * @author David Jarvie <software at astrojar dot org dot uk>
- * @author Tobias Koenig <tokoe at kde dot org>
  */
 class DDateEdit : public QComboBox
 {
@@ -80,7 +76,7 @@ public:
      */
     bool isReadOnly() const;
 
-    virtual void showPopup();
+    virtual void showPopup() override;
 
 Q_SIGNALS:
 

@@ -75,15 +75,15 @@ public:
     void newDuplicatesSearch(const QList<PAlbum*>& albums);
     void newDuplicatesSearch(const QList<TAlbum*>& albums);
 
-    virtual void setConfigGroup(const KConfigGroup& group);
-    void doLoadState();
-    void doSaveState();
+    virtual void setConfigGroup(const KConfigGroup& group) override;
+    void doLoadState()                                     override;
+    void doSaveState()                                     override;
 
 protected:
 
     void dragEnterEvent(QDragEnterEvent* e) override;
-    void dragMoveEvent(QDragMoveEvent* e) override;
-    void dropEvent(QDropEvent* e) override;
+    void dragMoveEvent(QDragMoveEvent* e)   override;
+    void dropEvent(QDropEvent* e)           override;
 
 private Q_SLOTS:
 
