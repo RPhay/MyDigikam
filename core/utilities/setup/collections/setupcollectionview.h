@@ -111,14 +111,14 @@ public:
     QList<QModelIndex> categoryIndexes()            const;
 
     // QAbstractItemModel implementation
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
+    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                       const;
     virtual QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
-    virtual int rowCount(const QModelIndex& parent = QModelIndex()) const;
-    virtual int columnCount(const QModelIndex& parent = QModelIndex()) const;
-    virtual Qt::ItemFlags flags(const QModelIndex& index) const;
+    virtual int rowCount(const QModelIndex& parent = QModelIndex())                                   const;
+    virtual int columnCount(const QModelIndex& parent = QModelIndex())                                const;
+    virtual Qt::ItemFlags flags(const QModelIndex& index)                                             const;
     virtual bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::EditRole);
-    virtual QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex()) const;
-    virtual QModelIndex parent(const QModelIndex& index) const;
+    virtual QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())         const;
+    virtual QModelIndex parent(const QModelIndex& index)                                              const;
 
 /*
     virtual Qt::DropActions supportedDropActions() const;
@@ -224,15 +224,34 @@ public:
     explicit SetupCollectionDelegate(QAbstractItemView* const view, QObject* const parent = nullptr);
     ~SetupCollectionDelegate();
 
-    virtual QWidget* createEditor(QWidget* parent, const QStyleOptionViewItem& option, const QModelIndex& index) const;
-    virtual bool     editorEvent(QEvent* event, QAbstractItemModel* model, const QStyleOptionViewItem& option, const QModelIndex& index);
-    virtual void     paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
-    virtual void     setEditorData(QWidget* editor, const QModelIndex& index) const;
-    virtual void     setModelData(QWidget* editor, QAbstractItemModel* model, const QModelIndex& index) const;
-    virtual QSize    sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
-    virtual void     updateEditorGeometry(QWidget* editor, const QStyleOptionViewItem& option, const QModelIndex& index) const;
+    virtual QWidget* createEditor(QWidget* parent,
+                                  const QStyleOptionViewItem& option,
+                                  const QModelIndex& index) const                       override;
 
-    virtual QList<QWidget*> createItemWidgets(const QModelIndex& index) const override;
+    virtual bool     editorEvent(QEvent* event,
+                                 QAbstractItemModel* model,
+                                 const QStyleOptionViewItem& option,
+                                 const QModelIndex& index)                              override;
+
+    virtual void     paint(QPainter* painter,
+                           const QStyleOptionViewItem& option,
+                           const QModelIndex& index) const                              override;
+
+    virtual void     setEditorData(QWidget* editor,
+                                   const QModelIndex& index) const                      override;
+
+    virtual void     setModelData(QWidget* editor,
+                                  QAbstractItemModel* model,
+                                  const QModelIndex& index) const                       override;
+
+    virtual QSize    sizeHint(const QStyleOptionViewItem& option,
+                              const QModelIndex& index) const                           override;
+
+    virtual void     updateEditorGeometry(QWidget* editor,
+                                          const QStyleOptionViewItem& option,
+                                          const QModelIndex& index) const               override;
+
+    virtual QList<QWidget*> createItemWidgets(const QModelIndex& index) const           override;
     virtual void            updateItemWidgets(const QList<QWidget*> widgets,
                                               const QStyleOptionViewItem& option,
                                               const QPersistentModelIndex& index) const override;
@@ -240,8 +259,8 @@ public:
 Q_SIGNALS:
 
     void categoryButtonPressed(int mappedId) const;
-    void updatePressed(int mappedId) const;
-    void deletePressed(int mappedId) const;
+    void updatePressed(int mappedId)         const;
+    void deletePressed(int mappedId)         const;
 
 protected:
 
