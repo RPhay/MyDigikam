@@ -58,6 +58,10 @@ DImgImageMagickPlugin::DImgImageMagickPlugin(QObject* const parent)
 
 DImgImageMagickPlugin::~DImgImageMagickPlugin()
 {
+}
+
+void DImgImageMagickPlugin::cleanUp()
+{
     MagickCoreTerminus();
 }
 

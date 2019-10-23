@@ -485,7 +485,9 @@ __inline int MulDiv(int nNumber, int nNumerator, int nDenominator) {
 #define FSFromStart			SEEK_SET
 #define FSFromCurrent		SEEK_CUR
 #define FSFromEnd			SEEK_END
-#define nullptr				NULL
+#if defined(__cplusplus) && __cplusplus < 201103L
+    #define nullptr         NULL
+#endif
 
 //-------------------------------------------------------------------------------
 // IO Error constants

@@ -68,8 +68,8 @@ public:
 
     virtual ~TagCheckView();
 
-    virtual void doLoadState();
-    virtual void doSaveState();
+    virtual void doLoadState() override;
+    virtual void doSaveState() override;
 
 Q_SIGNALS:
 

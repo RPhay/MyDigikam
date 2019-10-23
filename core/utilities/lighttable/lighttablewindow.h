@@ -60,7 +60,7 @@ public:
 
 public:
 
-    DInfoInterface* infoIface(DPluginAction* const ac);
+    DInfoInterface* infoIface(DPluginAction* const ac) override;
 
 Q_SIGNALS:
 
@@ -79,10 +79,10 @@ protected:
 
 private:
 
-    void customizedFullScreenMode(bool set);
-    void showSideBars(bool visible);
-    void closeEvent(QCloseEvent* e) override;
-    void showEvent(QShowEvent*) override;
+    void customizedFullScreenMode(bool set) override;
+    void showSideBars(bool visible)         override;
+    void closeEvent(QCloseEvent* e)         override;
+    void showEvent(QShowEvent*)             override;
 
     void deleteItem(bool permanently);
     void deleteItem(const ItemInfo& info, bool permanently);
@@ -131,19 +131,19 @@ private Q_SLOTS:
     void slotThumbbarDroppedItems(const QList<ItemInfo>&);
 
     void slotToggleColorManagedView();
-    void slotComponentsInfo();
-    void slotDBStat();
+    void slotComponentsInfo() override;
+    void slotDBStat()         override;
 
     void slotFileWithDefaultApplication();
 
     void slotRefreshStatusBar();
 
-    void slotToggleLeftSideBar();
-    void slotToggleRightSideBar();
-    void slotPreviousLeftSideBarTab();
-    void slotNextLeftSideBarTab();
-    void slotPreviousRightSideBarTab();
-    void slotNextRightSideBarTab();
+    void slotToggleLeftSideBar()       override;
+    void slotToggleRightSideBar()      override;
+    void slotPreviousLeftSideBarTab()  override;
+    void slotNextLeftSideBarTab()      override;
+    void slotPreviousRightSideBarTab() override;
+    void slotNextRightSideBarTab()     override;
 
     void slotRightSideBarActivateTitles();
     void slotRightSideBarActivateComments();
@@ -165,7 +165,7 @@ private:
 
 public Q_SLOTS:
 
-    void slotSetup();
+    void slotSetup() override;
     void slotColorManagementOptionsChanged();
 
     void slotThemeChanged();

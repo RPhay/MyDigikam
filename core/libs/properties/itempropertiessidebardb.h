@@ -123,12 +123,12 @@ protected:
     /**
      * load the last view state from disk - called by StateSavingObject#loadState()
      */
-    void doLoadState();
+    void doLoadState() override;
 
     /**
      * save the view state to disk - called by StateSavingObject#saveState()
      */
-    void doSaveState();
+    void doSaveState() override;
 
 private:
 

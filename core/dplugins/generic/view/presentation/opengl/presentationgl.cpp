@@ -170,8 +170,7 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
             screen = window->screen();
     }
 
-    int screenIndex = qMax(qApp->screens().indexOf(screen), 0);
-    QRect deskRect  = qApp->screens().at(screenIndex)->geometry();
+    QRect deskRect  = screen->geometry();
     d->deskX        = deskRect.x();
     d->deskY        = deskRect.y();
     d->deskWidth    = deskRect.width();
