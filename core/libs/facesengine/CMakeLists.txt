@@ -97,10 +97,10 @@ if(ENABLE_FACESENGINE_DNN)
         REMOVE_GCC_COMPILER_WARNINGS("-Wundef")
         REMOVE_GCC_COMPILER_WARNINGS("-Wall")
 
-        DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wno-cast-align")
-        DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wno-sign-compare")
-        DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wno-unused-parameter")
-        DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wno-unused-variable")
+        DISABLE_CLANG_COMPILER_WARNINGS("3.99.99" "-Wno-cast-align")
+        DISABLE_CLANG_COMPILER_WARNINGS("3.99.99" "-Wno-sign-compare")
+        DISABLE_CLANG_COMPILER_WARNINGS("3.99.99" "-Wno-unused-parameter")
+        DISABLE_CLANG_COMPILER_WARNINGS("3.99.99" "-Wno-unused-variable")
 
     endif()
 
