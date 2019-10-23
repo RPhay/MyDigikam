@@ -56,9 +56,8 @@ public:
      * It is perfectly all right to create an extra object of the class,
      * but it is useful to have default object
      */
-    static ThumbnailLoadThread* defaultIconViewThread();
-    static ThumbnailLoadThread* defaultThumbBarThread();
     static ThumbnailLoadThread* defaultThread();
+    static ThumbnailLoadThread* defaultIconViewThread();
 
     static void cleanUp();
 
