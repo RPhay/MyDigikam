@@ -199,7 +199,11 @@ QImage ThumbnailCreator::loadWithDImgScaled(const QString& path, IccProfile* con
 {
     DImg img;
     img.setAttribute(QLatin1String("scaledLoadingSize"), d->storageSize());
-    img.load(path, false, profile ? true : false, false, false, d->observer, d->rawSettings);
+
+    if (!img.load(path, false, profile ? true : false, false, false, d->observer, d->rawSettings))
+    {
+        return QImage();
+    }
 
     if (profile)
     {
@@ -250,7 +254,10 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
         qDebug(DIGIKAM_GENERAL_LOG) << "Try to get thumbnail from DImg scaled for" << path;
         //TODO: scaledLoading if detailRect is large
         //TODO: use code from PreviewTask, including cache storage
-        img.load(path, false, profile ? true : false, false, false, d->observer, d->fastRawSettings);
+        if (!img.load(path, false, profile ? true : false, false, false, d->observer, d->fastRawSettings))
+        {
+            return QImage();
+        }
     }
 
     if (profile)

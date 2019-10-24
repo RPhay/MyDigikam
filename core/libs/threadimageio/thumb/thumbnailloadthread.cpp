@@ -29,9 +29,8 @@ namespace Digikam
 {
 
 Q_GLOBAL_STATIC(ThumbnailLoadThreadStaticPriv, static_d)
-Q_GLOBAL_STATIC(ThumbnailLoadThread,           defaultIconViewObject)
 Q_GLOBAL_STATIC(ThumbnailLoadThread,           defaultObject)
-Q_GLOBAL_STATIC(ThumbnailLoadThread,           defaultThumbBarObject)
+Q_GLOBAL_STATIC(ThumbnailLoadThread,           defaultIconViewObject)
 
 // --- Creating loading descriptions ---
 
@@ -129,17 +128,11 @@ ThumbnailLoadThread* ThumbnailLoadThread::defaultThread()
     return defaultObject;
 }
 
-ThumbnailLoadThread* ThumbnailLoadThread::defaultThumbBarThread()
-{
-    return defaultThumbBarObject;
-}
-
 void ThumbnailLoadThread::cleanUp()
 {
     // NOTE : Nothing to do with Qt5 and Q_GLOBAL_STATIC. Qt clean up all automatically at end of application instance.
     // But stopping all running tasks to prevent a crash at end.
     defaultIconViewThread()->stopAllTasks();
-    defaultThumbBarThread()->stopAllTasks();
     defaultThread()->stopAllTasks();
 }
 

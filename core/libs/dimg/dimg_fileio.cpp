@@ -151,7 +151,6 @@ bool DImg::load(const QString& filePath,
 
     if (observer && !observer->continueQuery(nullptr))
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << filePath << "==> loading was canceled";
         return false;
     }
 
