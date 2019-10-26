@@ -53,14 +53,14 @@ public:
     void setItemModel(ItemFilterModel* const model);
 
     void setYearMonth(int year, int month);
-    QSize sizeHint() const;
+    QSize sizeHint() const               override;
 
     void setActive(bool val);
 
 protected:
 
-    void resizeEvent(QResizeEvent* e) override;
-    void paintEvent(QPaintEvent*) override;
+    void resizeEvent(QResizeEvent* e)    override;
+    void paintEvent(QPaintEvent*)        override;
     void mousePressEvent(QMouseEvent* e) override;
 
 private:

@@ -26,10 +26,6 @@
 #ifndef DIGIKAM_LEFT_SIDE_BAR_WIDGETS_H
 #define DIGIKAM_LEFT_SIDE_BAR_WIDGETS_H
 
-// KDE includes
-
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "digikam_config.h"
@@ -67,13 +63,13 @@ public:
                                           AlbumModificationHelper* const albumModificationHelper);
     virtual ~AlbumFolderViewSideBarWidget();
 
-    void    setActive(bool active) override;
-    void    doLoadState();
-    void    doSaveState();
-    void    applySettings() override;
-    void    changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon() override;
-    const QString getCaption() override;
+    void          setActive(bool active)                             override;
+    void          doLoadState()                                      override;
+    void          doSaveState()                                      override;
+    void          applySettings()                                    override;
+    void          changeAlbumFromHistory(const QList<Album*>& album) override;
+    const QIcon   getIcon()                                          override;
+    const QString getCaption()                                       override;
 
     AlbumPointer<PAlbum> currentAlbum() const;
 
@@ -108,13 +104,13 @@ public:
     explicit TagViewSideBarWidget(QWidget* const parent, TagModel* const model);
     virtual ~TagViewSideBarWidget();
 
-    void    setActive(bool active) override;
-    void    doLoadState();
-    void    doSaveState();
-    void    applySettings() override;
-    void    changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon() override;
-    const QString getCaption() override;
+    void          setActive(bool active)                             override;
+    void          doLoadState()                                      override;
+    void          doSaveState()                                      override;
+    void          applySettings()                                    override;
+    void          changeAlbumFromHistory(const QList<Album*>& album) override;
+    const QIcon   getIcon()                                          override;
+    const QString getCaption()                                       override;
 
     AlbumPointer<TAlbum> currentAlbum() const;
 
@@ -160,13 +156,13 @@ public:
 
     LabelsTreeView* labelsTree();
 
-    void    setActive(bool active) override;
-    void    applySettings() override;
-    void    changeAlbumFromHistory(const QList<Album*>& album) override;
-    void    doLoadState();
-    void    doSaveState();
-    const QIcon   getIcon() override;
-    const QString getCaption() override;
+    void          setActive(bool active)                             override;
+    void          applySettings()                                    override;
+    void          changeAlbumFromHistory(const QList<Album*>& album) override;
+    void          doLoadState()                                      override;
+    void          doSaveState()                                      override;
+    const QIcon   getIcon()                                          override;
+    const QString getCaption()                                       override;
 
     QHash<LabelsTreeView::Labels, QList<int> > selectedLabels();
 
@@ -194,13 +190,13 @@ public:
                                          ItemAlbumFilterModel* const imageFilterModel);
     virtual ~DateFolderViewSideBarWidget();
 
-    void    setActive(bool active) override;
-    void    doLoadState();
-    void    doSaveState();
-    void    applySettings() override;
-    void    changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon() override;
-    const QString getCaption() override;
+    void          setActive(bool active)                             override;
+    void          doLoadState()                                      override;
+    void          doSaveState()                                      override;
+    void          applySettings()                                    override;
+    void          changeAlbumFromHistory(const QList<Album*>& album) override;
+    const QIcon   getIcon()                                          override;
+    const QString getCaption()                                       override;
 
     AlbumPointer<DAlbum> currentAlbum() const;
 
@@ -230,13 +226,13 @@ public:
                                    SearchModificationHelper* const searchModificationHelper);
     virtual ~TimelineSideBarWidget();
 
-    void    setActive(bool active) override;
-    void    doLoadState();
-    void    doSaveState();
-    void    applySettings() override;
-    void    changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon() override;
-    const QString getCaption() override;
+    void          setActive(bool active)                             override;
+    void          doLoadState()                                      override;
+    void          doSaveState()                                      override;
+    void          applySettings()                                    override;
+    void          changeAlbumFromHistory(const QList<Album*>& album) override;
+    const QIcon   getIcon()                                          override;
+    const QString getCaption()                                       override;
 
 private Q_SLOTS:
 
@@ -277,13 +273,13 @@ public:
                                  SearchModificationHelper* const searchModificationHelper);
     virtual ~SearchSideBarWidget();
 
-    void    setActive(bool active) override;
-    void    doLoadState();
-    void    doSaveState();
-    void    applySettings() override;
-    void    changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon() override;
-    const QString getCaption() override;
+    void          setActive(bool active)                             override;
+    void          doLoadState()                                      override;
+    void          doSaveState()                                      override;
+    void          applySettings()                                    override;
+    void          changeAlbumFromHistory(const QList<Album*>& album) override;
+    const QIcon   getIcon()                                          override;
+    const QString getCaption()                                       override;
 
     void newKeywordSearch();
     void newAdvancedSearch();
@@ -312,13 +308,13 @@ public:
                                       SearchModificationHelper* const searchModificationHelper);
     virtual ~FuzzySearchSideBarWidget();
 
-    void    setActive(bool active) override;
-    void    doLoadState();
-    void    doSaveState();
-    void    applySettings() override;
-    void    changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon() override;
-    const QString getCaption() override;
+    void          setActive(bool active)                             override;
+    void          doLoadState()                                      override;
+    void          doSaveState()                                      override;
+    void          applySettings()                                    override;
+    void          changeAlbumFromHistory(const QList<Album*>& album) override;
+    const QIcon   getIcon()                                          override;
+    const QString getCaption()                                       override;
 
     void newDuplicatesSearch(PAlbum* album);
     void newDuplicatesSearch(const QList<PAlbum*>& albums);
@@ -357,13 +353,13 @@ public:
                                     QItemSelectionModel* const itemSelectionModel);
     virtual ~GPSSearchSideBarWidget();
 
-    void    setActive(bool active) override;
-    void    doLoadState();
-    void    doSaveState();
-    void    applySettings() override;
-    void    changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon() override;
-    const QString getCaption() override;
+    void          setActive(bool active)                             override;
+    void          doLoadState()                                      override;
+    void          doSaveState()                                      override;
+    void          applySettings()                                    override;
+    void          changeAlbumFromHistory(const QList<Album*>& album) override;
+    const QIcon   getIcon()                                          override;
+    const QString getCaption()                                       override;
 
 Q_SIGNALS:
 
@@ -395,13 +391,13 @@ public:
                                  SearchModificationHelper* const searchModificationHelper);
     virtual ~PeopleSideBarWidget();
 
-    void    setActive(bool active) override;
-    void    doLoadState();
-    void    doSaveState();
-    void    applySettings() override;
-    void    changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon() override;
-    const QString getCaption() override;
+    void          setActive(bool active)                             override;
+    void          doLoadState()                                      override;
+    void          doSaveState()                                      override;
+    void          applySettings()                                    override;
+    void          changeAlbumFromHistory(const QList<Album*>& album) override;
+    const QIcon   getIcon()                                          override;
+    const QString getCaption()                                       override;
 
 private Q_SLOTS:
 
