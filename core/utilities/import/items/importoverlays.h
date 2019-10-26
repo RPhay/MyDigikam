@@ -157,13 +157,13 @@ protected Q_SLOTS:
 
 protected:
 
-    virtual QWidget* createWidget() override;
-    virtual void setActive(bool) override;
-    virtual void visualChange() override;
-    virtual void hide() override;
+    virtual QWidget* createWidget()                    override;
+    virtual void setActive(bool)                       override;
+    virtual void visualChange()                        override;
+    virtual void hide()                                override;
     virtual void slotEntered(const QModelIndex& index) override;
-    virtual void widgetEnterEvent();
-    virtual void widgetLeaveEvent();
+    virtual void widgetEnterEvent()                    override;
+    virtual void widgetLeaveEvent()                    override;
 
     void updatePosition();
     void updateRating();
@@ -207,11 +207,11 @@ public:
     explicit ImportRotateOverlay(ImportRotateOverlayDirection dir, QObject* const parent);
     virtual void setActive(bool active);
 
-    ImportRotateOverlayDirection direction() const { return m_direction; }
-    bool isLeft() const                            { return m_direction  == ImportRotateOverlayLeft; }
+    ImportRotateOverlayDirection direction() const { return m_direction;                             }
+    bool isLeft() const                            { return m_direction == ImportRotateOverlayLeft;  }
     bool isRight() const                           { return m_direction == ImportRotateOverlayRight; }
 
-    static ImportRotateOverlay* left(QObject* const parent)  { return new ImportRotateOverlay(ImportRotateOverlayLeft, parent);  }
+    static ImportRotateOverlay* left (QObject* const parent) { return new ImportRotateOverlay(ImportRotateOverlayLeft,  parent); }
     static ImportRotateOverlay* right(QObject* const parent) { return new ImportRotateOverlay(ImportRotateOverlayRight, parent); }
 
 Q_SIGNALS:
