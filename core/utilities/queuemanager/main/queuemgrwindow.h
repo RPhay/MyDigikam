@@ -73,11 +73,14 @@ public:
     bool isBusy()                          const;
     int  currentQueueId()                  const;
 
-    bool queryClose();
+    bool queryClose() override;
 
 public:
 
-    DInfoInterface* infoIface(DPluginAction* const) { return nullptr; };
+    DInfoInterface* infoIface(DPluginAction* const) override
+    {
+        return nullptr;
+    };
 
 Q_SIGNALS:
 
@@ -97,8 +100,8 @@ public Q_SLOTS:
 
 private:
 
-    void customizedFullScreenMode(bool set);
-    void closeEvent(QCloseEvent* e);
+    void customizedFullScreenMode(bool set) override;
+    void closeEvent(QCloseEvent* e)         override;
     void setupActions();
     void setupConnections();
     void setupUserArea();
@@ -119,9 +122,9 @@ private:
 
 private Q_SLOTS:
 
-    void slotSetup();
-    void slotComponentsInfo();
-    void slotDBStat();
+    void slotSetup()          override;
+    void slotComponentsInfo() override;
+    void slotDBStat()         override;
     void slotAction(const Digikam::ActionData&);
     void slotHistoryEntryClicked(int, qlonglong);
     void slotAssignedToolsChanged(const AssignedBatchTools&);

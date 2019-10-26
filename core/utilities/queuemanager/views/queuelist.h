@@ -172,7 +172,7 @@ private:
     void leaveEvent(QEvent*) override;
     void resetQueue();
 
-    void drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const;
+    void drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const override;
 
 private:
 
