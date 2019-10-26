@@ -51,8 +51,8 @@ public:
 
     QModelIndex nextIndex(const QModelIndex& index)     const;
     QModelIndex previousIndex(const QModelIndex& index) const;
-    QModelIndex firstIndex() const;
-    QModelIndex lastIndex()  const;
+    QModelIndex firstIndex()                            const;
+    QModelIndex lastIndex()                             const;
 
     /// Sets the policy always for the one scroll bar which is relevant, depending on orientation
     void setScrollBarPolicy(Qt::ScrollBarPolicy policy);
@@ -68,8 +68,8 @@ public Q_SLOTS:
 
 protected:
 
-    virtual void slotSetupChanged();
-    virtual bool event(QEvent*) override;
+    virtual void slotSetupChanged() override;
+    virtual bool event(QEvent*)     override;
 
 private:
 
