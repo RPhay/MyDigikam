@@ -54,7 +54,7 @@ public:
 
     bool isOnLeftPanel(const ItemInfo& info)             const;
     bool isOnRightPanel(const ItemInfo& info)            const;
-    int  countItems()                                     const;
+    int  countItems()                                    const;
     QModelIndex findItemByInfo(const ItemInfo& info)     const;
     ItemInfo   findItemByIndex(const QModelIndex& index) const;
 
@@ -81,8 +81,8 @@ public Q_SLOTS:
 
 private:
 
-    void paintEvent(QPaintEvent*) override;
-    void showContextMenuOnInfo(QContextMenuEvent* e, const ItemInfo& info);
+    void paintEvent(QPaintEvent*)                                          override;
+    void showContextMenuOnInfo(QContextMenuEvent* e, const ItemInfo& info) override;
     void assignPickLabel(const ItemInfo& info, int pickId);
     void assignColorLabel(const ItemInfo& info, int colorId);
     void assignRating(const ItemInfo& info, int rating);
@@ -90,7 +90,7 @@ private:
 
 private Q_SLOTS:
 
-    void slotSetupChanged();
+    void slotSetupChanged() override;
 
 private:
 
