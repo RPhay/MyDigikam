@@ -68,9 +68,9 @@ public:
 protected:
 
     void    mousePressEvent(QMouseEvent*) override;
-    void    mouseMoveEvent(QMouseEvent*) override;
-    void    wheelEvent(QWheelEvent*) override;
-    void    keyPressEvent(QKeyEvent*) override;
+    void    mouseMoveEvent(QMouseEvent*)  override;
+    void    wheelEvent(QWheelEvent*)      override;
+    void    keyPressEvent(QKeyEvent*)     override;
 
     int     effectNone(bool);
     int     effectChessboard(bool doInit);
@@ -87,7 +87,7 @@ protected:
     int     effectCircleOut(bool doInit);
     int     effectBlobs(bool doInit);
 
-    void    paintEvent(QPaintEvent*);
+    void    paintEvent(QPaintEvent*)     override;
     void    startPainter();
 
 protected:
