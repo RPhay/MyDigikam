@@ -53,10 +53,10 @@ public:
 
     virtual void setThumbnailSize(const ThumbnailSize& size) override;
 
-    ItemInfoList allItemInfos(bool grouping = false) const;
-    ItemInfoList selectedItemInfos(bool grouping = false) const;
-    ItemInfoList selectedItemInfosCurrentFirst(bool grouping = false) const;
-    bool          allNeedGroupResolving(const ApplicationSettings::OperationType type) const;
+    ItemInfoList allItemInfos(bool grouping = false)                                        const;
+    ItemInfoList selectedItemInfos(bool grouping = false)                                   const;
+    ItemInfoList selectedItemInfosCurrentFirst(bool grouping = false)                       const;
+    bool          allNeedGroupResolving(const ApplicationSettings::OperationType type)      const;
     bool          selectedNeedGroupResolving(const ApplicationSettings::OperationType type) const;
 
 public Q_SLOTS:
@@ -101,15 +101,15 @@ protected:
     void addRejectionOverlay(ItemDelegate* delegate = nullptr);
     void addAssignNameOverlay(ItemDelegate* delegate = nullptr);
 
-    virtual void activated(const ItemInfo& info, Qt::KeyboardModifiers modifiers) override;
+    virtual void activated(const ItemInfo& info, Qt::KeyboardModifiers modifiers)      override;
     virtual void showContextMenuOnInfo(QContextMenuEvent* event, const ItemInfo& info) override;
-    virtual void showContextMenu(QContextMenuEvent* event);
+    virtual void showContextMenu(QContextMenuEvent* event)                             override;
     virtual void slotSetupChanged() override;
 
-    virtual bool hasHiddenGroupedImages(const ItemInfo& info) const;
+    virtual bool hasHiddenGroupedImages(const ItemInfo& info)                    const override;
 
     ItemInfoList imageInfos(const QList<QModelIndex>& indexes,
-                             ApplicationSettings::OperationType type) const;
+                             ApplicationSettings::OperationType type)            const;
 
 private Q_SLOTS:
 

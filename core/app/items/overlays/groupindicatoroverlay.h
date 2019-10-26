@@ -45,11 +45,11 @@ class GroupIndicatorOverlayWidget : public QAbstractButton
 public:
 
     explicit GroupIndicatorOverlayWidget(QWidget* const parent = nullptr);
-    virtual void contextMenuEvent(QContextMenuEvent* event);
+    virtual void contextMenuEvent(QContextMenuEvent* event) override;
 
 protected:
 
-    virtual void paintEvent(QPaintEvent*) override;
+    virtual void paintEvent(QPaintEvent*)                   override;
 
 Q_SIGNALS:
 

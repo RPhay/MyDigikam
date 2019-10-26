@@ -66,13 +66,13 @@ protected:
 
 protected:
 
-    virtual QWidget* createWidget();
-    virtual void setActive(bool);
-    virtual void visualChange();
-    virtual void hide();
-    virtual void slotEntered(const QModelIndex& index);
-    virtual void widgetEnterEvent();
-    virtual void widgetLeaveEvent();
+    virtual QWidget* createWidget()                    override;
+    virtual void setActive(bool)                       override;
+    virtual void visualChange()                        override;
+    virtual void hide()                                override;
+    virtual void slotEntered(const QModelIndex& index) override;
+    virtual void widgetEnterEvent()                    override;
+    virtual void widgetLeaveEvent()                    override;
 
 protected:
 

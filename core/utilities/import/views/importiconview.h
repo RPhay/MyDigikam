@@ -88,10 +88,10 @@ private Q_SLOTS:
 
 protected:
 
-    virtual void activated(const CamItemInfo& info, Qt::KeyboardModifiers modifiers) override;
+    virtual void activated(const CamItemInfo& info, Qt::KeyboardModifiers modifiers)      override;
     virtual void showContextMenuOnInfo(QContextMenuEvent* event, const CamItemInfo& info) override;
-    virtual void showContextMenu(QContextMenuEvent* event);
-    virtual void slotSetupChanged();
+    virtual void showContextMenu(QContextMenuEvent* event)                                override;
+    virtual void slotSetupChanged()                                                       override;
 
 private:
 

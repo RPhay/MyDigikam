@@ -98,7 +98,7 @@ public Q_SLOTS:
 
 protected:
 
-    void keyPressEvent(QKeyEvent*);
+    void keyPressEvent(QKeyEvent*) override;
 
 private Q_SLOTS:
 

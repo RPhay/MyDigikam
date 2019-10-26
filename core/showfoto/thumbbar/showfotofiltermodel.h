@@ -45,6 +45,7 @@ class ShowfotoSortFilterModel : public DCategorizedSortFilterProxyModel
     Q_OBJECT
 
 public:
+
     explicit ShowfotoSortFilterModel(QObject* const parent = nullptr);
     ~ShowfotoSortFilterModel();
 
@@ -132,7 +133,7 @@ public:
     //bool isGroupOpen(qlonglong group) const;
     //bool isAllGroupsOpen() const;
 
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const;
+    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
     virtual ShowfotoFilterModel* showfotoFilterModel()                          const override;
 
 public Q_SLOTS:
@@ -180,8 +181,8 @@ protected:
 
     //TODO: virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
 
-    virtual int compareCategories(const QModelIndex& left, const QModelIndex& right) const;
-    virtual bool subSortLessThan(const QModelIndex& left, const QModelIndex& right) const;
+    virtual int compareCategories(const QModelIndex& left, const QModelIndex& right) const override;
+    virtual bool subSortLessThan(const QModelIndex& left, const QModelIndex& right)  const override;
 
     /** Reimplement to customize category sorting,
      *  Return negative if category of left < category right,

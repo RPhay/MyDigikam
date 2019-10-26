@@ -52,30 +52,30 @@ public:
 
     void setView(ImportCategorizedView* view);
 
-    ImportCategoryDrawer* categoryDrawer() const;
+    ImportCategoryDrawer* categoryDrawer()           const;
 
     //QRect commentsRect() const;
-    QRect tagsRect() const;
+    QRect tagsRect()                                 const;
     QRect actualPixmapRect(const QModelIndex& index) const;
-    QRect groupIndicatorRect() const;
-    QRect downloadIndicatorRect() const;
-    QRect lockIndicatorRect() const;
-    QRect coordinatesIndicatorRect() const;
+    QRect groupIndicatorRect()                       const;
+    QRect downloadIndicatorRect()                    const;
+    QRect lockIndicatorRect()                        const;
+    QRect coordinatesIndicatorRect()                 const;
 
     int calculatethumbSizeToFit(int ws);
 
-    virtual void setSpacing(int spacing) override;
-    virtual void setDefaultViewOptions(const QStyleOptionViewItem& option) override;
+    virtual void setSpacing(int spacing)                                                                       override;
+    virtual void setDefaultViewOptions(const QStyleOptionViewItem& option)                                     override;
     virtual bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
-                                const QModelIndex& index, QRect* tooltipRect = nullptr) const override;
+                                const QModelIndex& index, QRect* tooltipRect = nullptr)                  const override;
     virtual bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
-                                   const QModelIndex& index, QRect* activationRect = nullptr) const override;
+                                   const QModelIndex& index, QRect* activationRect = nullptr)            const override;
 
-    virtual QRect pixmapRect() const override;
-    virtual QRect imageInformationRect() const override;
+    virtual QRect pixmapRect()                                                                           const override;
+    virtual QRect imageInformationRect()                                                                 const override;
 
-    virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
-    virtual QPixmap pixmapForDrag(const QStyleOptionViewItem& option, const QList<QModelIndex>& indexes) const;
+    virtual void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index)  const override;
+    virtual QPixmap pixmapForDrag(const QStyleOptionViewItem& option, const QList<QModelIndex>& indexes) const override;
 
     /**
      * Retrieve the thumbnail pixmap in given size for the ImportItemModel::ThumbnailRole for
@@ -108,7 +108,7 @@ protected:
      */
     virtual void updateRects() = 0;
 
-    virtual void clearCaches();
+    virtual void clearCaches()               override;
 
     /** Reimplement to clear caches based on model indexes (hash on row number etc.)
      *  Change signals are listened to this is called whenever such properties become invalid.
@@ -117,7 +117,7 @@ protected:
 
     virtual QPixmap thumbnailPixmap(const QModelIndex& index) const;
 
-    virtual void invalidatePaintingCache() override;
+    virtual void invalidatePaintingCache()   override;
     virtual void updateSizeRectsAndPixmaps() override;
 
 protected Q_SLOTS:
