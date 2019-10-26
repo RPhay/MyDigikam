@@ -163,11 +163,11 @@ public:
     static qlonglong        retrieveShowfotoItemId(const QModelIndex& index);
 
     // QAbstractListModel implementation
-    virtual int           rowCount(const QModelIndex& parent)                            const;
-    virtual QVariant      data(const QModelIndex& index, int role)                       const;
-    virtual QVariant      headerData(int section, Qt::Orientation orientation, int role) const;
-    virtual Qt::ItemFlags flags(const QModelIndex& index)                                const;
-    virtual QModelIndex   index(int row, int column, const QModelIndex& parent)          const;
+    virtual int           rowCount(const QModelIndex& parent)                            const override;
+    virtual QVariant      data(const QModelIndex& index, int role)                       const override;
+    virtual QVariant      headerData(int section, Qt::Orientation orientation, int role) const override;
+    virtual Qt::ItemFlags flags(const QModelIndex& index)                                const override;
+    virtual QModelIndex   index(int row, int column, const QModelIndex& parent)          const override;
 
     // DragDrop methods
     DECLARE_MODEL_DRAG_DROP_METHODS
