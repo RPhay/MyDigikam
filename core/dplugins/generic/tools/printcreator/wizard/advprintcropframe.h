@@ -58,17 +58,17 @@ public:
 
 protected:
 
-    virtual void paintEvent(QPaintEvent*) override;
-    virtual void mousePressEvent(QMouseEvent*) override;
+    virtual void paintEvent(QPaintEvent*)        override;
+    virtual void mousePressEvent(QMouseEvent*)   override;
     virtual void mouseReleaseEvent(QMouseEvent*) override;
-    virtual void mouseMoveEvent(QMouseEvent*) override;
-    virtual void keyReleaseEvent(QKeyEvent*) override;
+    virtual void mouseMoveEvent(QMouseEvent*)    override;
+    virtual void keyReleaseEvent(QKeyEvent*)     override;
 
 private:
 
     QRect screenToPhotoRect(const QRect&) const;
     QRect photoToScreenRect(const QRect&) const;
-    void  resizeEvent(QResizeEvent*);
+    void  resizeEvent(QResizeEvent*)             override;
     void  updateImage();
 
 private:
