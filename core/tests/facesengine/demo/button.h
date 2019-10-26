@@ -48,8 +48,8 @@ public:
     Button(const QPixmap& normal, const QPixmap& pressed, QGraphicsItem* const parent = nullptr);
     ~Button();
 
-    QRectF boundingRect() const;
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget = nullptr);
+    QRectF boundingRect() const                                                                      override;
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget = nullptr) override;
     void setPixmap(const QString& normal, const QString& pressed = QString());
     void setPixmap(const QPixmap& normal, const QPixmap& pressed);
 
@@ -59,8 +59,8 @@ Q_SIGNALS:
 
 protected:
 
-    void mousePressEvent(QGraphicsSceneMouseEvent*) override;
-    void mouseMoveEvent(QGraphicsSceneMouseEvent*) override;
+    void mousePressEvent(QGraphicsSceneMouseEvent*)   override;
+    void mouseMoveEvent(QGraphicsSceneMouseEvent*)    override;
     void mouseReleaseEvent(QGraphicsSceneMouseEvent*) override;
 
 private:

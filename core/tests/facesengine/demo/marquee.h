@@ -48,7 +48,7 @@ public:
     explicit Marquee(FancyRect* const rect, QGraphicsItem* const parent = nullptr);
     ~Marquee();
 
-    QRectF boundingRect() const;
+    QRectF boundingRect() const override;
     QRectF toRectF()      const;
 
 Q_SIGNALS:
@@ -60,8 +60,8 @@ Q_SIGNALS:
 
 protected:
 
-    void mousePressEvent(QGraphicsSceneMouseEvent* e) override;
-    void mouseMoveEvent(QGraphicsSceneMouseEvent* e) override;
+    void mousePressEvent(QGraphicsSceneMouseEvent* e)   override;
+    void mouseMoveEvent(QGraphicsSceneMouseEvent* e)    override;
     void mouseReleaseEvent(QGraphicsSceneMouseEvent* e) override;
 
 private:
