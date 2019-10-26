@@ -45,16 +45,16 @@ public:
     explicit RawImportNativePlugin(QObject* const parent = nullptr);
     ~RawImportNativePlugin();
 
-    QString name()                 const override;
-    QString iid()                  const override;
-    QIcon   icon()                 const override;
-    QString details()              const override;
-    QString description()          const override;
-    QList<DPluginAuthor> authors() const override;
+    QString name()                                       const override;
+    QString iid()                                        const override;
+    QIcon   icon()                                       const override;
+    QString details()                                    const override;
+    QString description()                                const override;
+    QList<DPluginAuthor> authors()                       const override;
 
-    void setup(QObject* const) override;
+    void setup(QObject* const)                                 override;
 
-    bool run(const QString& filePath, const DRawDecoding& def);
+    bool run(const QString& filePath, const DRawDecoding& def) override;
 
 private Q_SLOTS:
 

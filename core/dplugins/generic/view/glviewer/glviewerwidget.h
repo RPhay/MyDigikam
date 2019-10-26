@@ -59,23 +59,23 @@ public:
     void nextImage();
     bool listOfFilesIsEmpty() const;
 
-    OGLstate getOGLstate() const;
+    OGLstate getOGLstate()    const;
 
 private:
 
-    void initializeGL();
-    void resizeGL(int w, int h);
-    void paintGL();
+    void initializeGL()                        override;
+    void resizeGL(int w, int h)                override;
+    void paintGL()                             override;
 
     bool isReallyFullScreen() const;
 
-    void keyPressEvent(QKeyEvent* e) override;
-    void keyReleaseEvent(QKeyEvent* e) override;
-    void wheelEvent(QWheelEvent* e) override;
-    void mouseMoveEvent(QMouseEvent* e) override;
-    void mousePressEvent(QMouseEvent* e) override;
+    void keyPressEvent(QKeyEvent* e)           override;
+    void keyReleaseEvent(QKeyEvent* e)         override;
+    void wheelEvent(QWheelEvent* e)            override;
+    void mouseMoveEvent(QMouseEvent* e)        override;
+    void mousePressEvent(QMouseEvent* e)       override;
     void mouseDoubleClickEvent(QMouseEvent* e) override;
-    void mouseReleaseEvent(QMouseEvent* e) override;
+    void mouseReleaseEvent(QMouseEvent* e)     override;
 
     GLViewerTexture* loadImage(int file_index) const;
     void drawImage(GLViewerTexture* const tex);

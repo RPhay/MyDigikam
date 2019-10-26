@@ -65,14 +65,14 @@ public:
 
 protected:
 
-    void initializeGL();
-    void paintGL();
-    void resizeGL(int w, int h);
+    void initializeGL()                override;
+    void paintGL()                     override;
+    void resizeGL(int w, int h)        override;
 
     void mousePressEvent(QMouseEvent*) override;
-    void mouseMoveEvent(QMouseEvent*) override;
-    void wheelEvent(QWheelEvent*) override;
-    void keyPressEvent(QKeyEvent*) override;
+    void mouseMoveEvent(QMouseEvent*)  override;
+    void wheelEvent(QWheelEvent*)      override;
+    void keyPressEvent(QKeyEvent*)     override;
 
 private:
 

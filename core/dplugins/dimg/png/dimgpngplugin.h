@@ -52,20 +52,20 @@ public:
     explicit DImgPNGPlugin(QObject* const parent = nullptr);
     ~DImgPNGPlugin();
 
-    QString name()                 const override;
-    QString iid()                  const override;
-    QIcon   icon()                 const override;
-    QString details()              const override;
-    QString description()          const override;
-    QList<DPluginAuthor> authors() const override;
+    QString name()                                                                          const override;
+    QString iid()                                                                           const override;
+    QIcon   icon()                                                                          const override;
+    QString details()                                                                       const override;
+    QString description()                                                                   const override;
+    QList<DPluginAuthor> authors()                                                          const override;
 
-    void setup(QObject* const)           override;
+    void setup(QObject* const)                                                                    override;
 
-    QString     loaderName()                                                                const;
-    QString     typeMimes()                                                                 const;
-    int         canRead(const QFileInfo& fileInfo, bool magic)                              const;
-    int         canWrite(const QString& format)                                             const;
-    DImgLoader* loader(DImg* const image, const DRawDecoding& rawSettings = DRawDecoding()) const;
+    QString     loaderName()                                                                const override;
+    QString     typeMimes()                                                                 const override;
+    int         canRead(const QFileInfo& fileInfo, bool magic)                              const override;
+    int         canWrite(const QString& format)                                             const override;
+    DImgLoader* loader(DImg* const image, const DRawDecoding& rawSettings = DRawDecoding()) const override;
 };
 
 } // namespace DigikamPNGDImgPlugin
