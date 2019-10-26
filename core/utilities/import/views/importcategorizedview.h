@@ -51,7 +51,7 @@ public:
 
     void setModels(ImportItemModel* model, ImportSortFilterModel* filterModel);
 
-    ImportItemModel*      importItemModel()                 const;
+    ImportItemModel*       importItemModel()                  const;
     ImportSortFilterModel* importSortFilterModel()            const;
 
     QItemSelectionModel*   getSelectionModel()                const;
@@ -69,10 +69,10 @@ public:
 
     QList<CamItemInfo>     selectedCamItemInfos()             const;
     QList<CamItemInfo>     selectedCamItemInfosCurrentFirst() const;
-    QList<QUrl>             selectedUrls()                     const;
+    QList<QUrl>            selectedUrls()                     const;
 
     QList<CamItemInfo>     camItemInfos()                     const;
-    QList<QUrl>             urls()                             const;
+    QList<QUrl>            urls()                             const;
 
     /** Selects the index as current and scrolls to it */
     void toIndex(const QUrl& url);
@@ -151,21 +151,21 @@ protected Q_SLOTS:
 
 protected:
     // reimplemented from parent class
-    QSortFilterProxyModel*       filterModel()     const override;
-    AbstractItemDragDropHandler* dragDropHandler() const override;
+    QSortFilterProxyModel*       filterModel()                                                                       const override;
+    AbstractItemDragDropHandler* dragDropHandler()                                                                   const override;
     QModelIndex                  nextIndexHint(const QModelIndex& indexToAnchor, const QItemSelectionRange& removed) const override;
 
     void setItemDelegate(ImportDelegate* delegate);
     void indexActivated(const QModelIndex& index, Qt::KeyboardModifiers modifiers) override;
-    void currentChanged(const QModelIndex& index, const QModelIndex& previous) override;
-    void paintEvent(QPaintEvent* e) override;
-    void selectionChanged(const QItemSelection&, const QItemSelection&) override;
-    void updateGeometries() override;
+    void currentChanged(const QModelIndex& index, const QModelIndex& previous)     override;
+    void paintEvent(QPaintEvent* e)                                                override;
+    void selectionChanged(const QItemSelection&, const QItemSelection&)            override;
+    void updateGeometries()                                                        override;
 
     /// Reimplement these in a subclass
     virtual void activated(const CamItemInfo& info, Qt::KeyboardModifiers modifiers);
     virtual void showContextMenuOnInfo(QContextMenuEvent* event, const CamItemInfo& info);
-    virtual void showContextMenuOnIndex(QContextMenuEvent* event, const QModelIndex& index);
+    virtual void showContextMenuOnIndex(QContextMenuEvent* event, const QModelIndex& index) override;
 
 private Q_SLOTS:
 

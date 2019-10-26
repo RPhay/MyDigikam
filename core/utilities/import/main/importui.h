@@ -64,33 +64,39 @@ class DIGIKAM_EXPORT ImportUI : public DXmlGuiWindow
 
 public:
 
-    explicit ImportUI(const QString& cameraTitle, const QString& model,
-             const QString& port, const QString& path, int startIndex);
+    explicit ImportUI(const QString& cameraTitle,
+                      const QString& model,
+                      const QString& port,
+                      const QString& path,
+                      int startIndex);
     virtual ~ImportUI();
 
     static ImportUI* instance();
 
-    bool isBusy() const;
+    bool isBusy()   const;
     bool isClosed() const;
 
-    bool    cameraDeleteSupport() const;
-    bool    cameraUploadSupport() const;
-    bool    cameraMkDirSupport() const;
-    bool    cameraDelDirSupport() const;
-    bool    cameraUseUMSDriver() const;
+    bool    cameraDeleteSupport()   const;
+    bool    cameraUploadSupport()   const;
+    bool    cameraMkDirSupport()    const;
+    bool    cameraDelDirSupport()   const;
+    bool    cameraUseUMSDriver()    const;
     bool    cameraUseGPhotoDriver() const;
-    QString cameraTitle() const;
+    QString cameraTitle()           const;
 
     void enableZoomPlusAction(bool val);
     void enableZoomMinusAction(bool val);
 
-    DownloadSettings downloadSettings() const;
+    DownloadSettings downloadSettings()     const;
 
     CameraThumbsCtrl* getCameraThumbsCtrl() const;
 
 public:
 
-    DInfoInterface* infoIface(DPluginAction* const) { return nullptr; };
+    DInfoInterface* infoIface(DPluginAction* const) override
+    {
+        return nullptr;
+    };
 
 Q_SIGNALS:
 
@@ -108,7 +114,7 @@ public Q_SLOTS:
 protected:
 
     void closeEvent(QCloseEvent* e) override;
-    void moveEvent(QMoveEvent* e) override;
+    void moveEvent(QMoveEvent* e)   override;
 
 private:
 
@@ -147,10 +153,10 @@ private:
     bool createDateBasedSubAlbum(QUrl& downloadUrl, const CamItemInfo& info);
     bool createExtBasedSubAlbum(QUrl& downloadUrl, const CamItemInfo& info);
 
-    void showThumbBar(bool visible);
-    void showSideBars(bool visible);
-    bool thumbbarVisibility() const;
-    void customizedFullScreenMode(bool set);
+    void showThumbBar(bool visible)         override;
+    void showSideBars(bool visible)         override;
+    bool thumbbarVisibility() const         override;
+    void customizedFullScreenMode(bool set) override;
     void toogleShowBar();
     void setInitialSorting();
     void sidebarTabTitleStyleChanged();
@@ -220,14 +226,14 @@ private Q_SLOTS:
     void setFilter(Filter *);
 
     void slotToggleShowBar();
-    void slotSetup();
     void slotColorManagementOptionsChanged();
     void slotToggleColorManagedView();
-    void slotComponentsInfo();
-    void slotDBStat();
-    void slotToggleRightSideBar();
-    void slotPreviousRightSideBarTab();
-    void slotNextRightSideBarTab();
+    void slotSetup()                   override;
+    void slotComponentsInfo()          override;
+    void slotDBStat()                  override;
+    void slotToggleRightSideBar()      override;
+    void slotPreviousRightSideBarTab() override;
+    void slotNextRightSideBarTab()     override;
 
     void slotSetupChanged();
 
