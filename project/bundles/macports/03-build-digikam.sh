@@ -49,6 +49,21 @@ ORIG_WD="`pwd`"
 export PATH=$INSTALL_PREFIX/bin:/$INSTALL_PREFIX/sbin:$ORIG_PATH
 
 #################################################################################################
+# Install out-dated dependencies
+
+cd $BUILDING_DIR
+
+rm -rf $BUILDING_DIR/* || true
+
+cmake $ORIG_WD/../3rdparty \
+       -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
+       -DINSTALL_ROOT=$INSTALL_PREFIX \
+       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+       -Wno-dev
+
+cmake --build . --config RelWithDebInfo --target ext_lensfun -- -j$CPU_CORES
+
+#################################################################################################
 # Build digiKam in temporary directory and installation
 
 if [ -d "$DK_BUILDTEMP/digikam-$DK_VERSION" ] ; then
