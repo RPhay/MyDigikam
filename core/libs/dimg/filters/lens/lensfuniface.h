@@ -30,11 +30,20 @@
 #   pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
 #endif
 
+#if defined(__APPLE__) && defined(__clang__)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wmismatched-tags"
+#endif
+
 #include <lensfun.h>
 
 // Restore warnings
 #if defined(Q_CC_GNU)
 #   pragma GCC diagnostic pop
+#endif
+
+#if defined(__APPLE__) && defined(__clang__)
+#   pragma clang diagnostic pop
 #endif
 
 // Local includes
