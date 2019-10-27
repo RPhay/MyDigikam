@@ -154,7 +154,7 @@ void DbCleaner::slotStart()
 
     // Compute the database junk. This will lead to the call of the slot
     // slotFetchedData.
-    d->thread->computeDatabaseJunk(d->cleanThumbsDb,d->cleanFacesDb,d->cleanSimilarityDb);
+    d->thread->computeDatabaseJunk(d->cleanThumbsDb, d->cleanFacesDb, d->cleanSimilarityDb);
     d->thread->start();
 }
 
@@ -214,7 +214,7 @@ void DbCleaner::slotCleanItems()
 
     if (d->imagesToRemove.size() > 0)
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Found " << d->imagesToRemove.size() << " obsolete image entries.";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Found" << d->imagesToRemove.size() << "obsolete image entries.";
 
         setLabel(i18n("Clean up the databases : ") + i18n("cleaning core db"));
 
@@ -242,7 +242,7 @@ void DbCleaner::slotCleanedItems()
     {
         if (!d->staleThumbnails.isEmpty())
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Found " << d->staleThumbnails.size() << " stale thumbnails.";
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Found" << d->staleThumbnails.size() << "stale thumbnails.";
             setLabel(i18n("Clean up the databases : ") + i18n("cleaning thumbnails db"));
 
             // GO!
@@ -271,7 +271,7 @@ void DbCleaner::slotCleanedThumbnails()
     {
         if (d->staleIdentities.count() > 0)
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Found " << d->staleIdentities.size() << " stale face identities.";
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Found" << d->staleIdentities.size() << "stale face identities.";
             setLabel(i18n("Clean up the databases : ") + i18n("cleaning recognition db"));
 
             // GO! and don't forget the signal!
@@ -305,7 +305,8 @@ void DbCleaner::slotCleanedFaces()
         // TODO: implement similarity db cleanup
         if (!d->staleImageSimilarities.isEmpty())
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "Found " << d->staleImageSimilarities.size() << " image ids that are referenced in similarity db but not used.";
+            qCDebug(DIGIKAM_GENERAL_LOG) << "Found" << d->staleImageSimilarities.size()
+                                         << "image ids that are referenced in similarity db but not used.";
             setLabel(i18n("Clean up the databases : ") + i18n("cleaning similarity db"));
 
             // GO! and don't forget the signal!
