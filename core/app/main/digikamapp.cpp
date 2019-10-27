@@ -500,7 +500,7 @@ void DigikamApp::slotAlbumSelected(Album* album)
     }
     else
     {
-        // Rules if no current album.
+        // Rules if album is trash or no current album.
 
         d->deleteAction->setEnabled(false);
         d->renameAction->setEnabled(false);
