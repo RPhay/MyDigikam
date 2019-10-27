@@ -439,7 +439,7 @@ void DigikamApp::slotAboutToShowForwardMenu()
 
 void DigikamApp::slotAlbumSelected(Album* album)
 {
-    if (album)
+    if (album && !album->isTrashAlbum())
     {
         PAlbum* const palbum = dynamic_cast<PAlbum*>(album);
 
@@ -456,7 +456,12 @@ void DigikamApp::slotAlbumSelected(Album* album)
             d->addFoldersAction->setEnabled(false);
             d->writeAlbumMetadataAction->setEnabled(true);
             d->readAlbumMetadataAction->setEnabled(true);
+
             d->pasteItemsAction->setEnabled(!album->isRoot());
+
+            d->selectInvertAction->setEnabled(!album->isRoot());
+            d->selectNoneAction->setEnabled(!album->isRoot());
+            d->selectAllAction->setEnabled(!album->isRoot());
 
             // Special case if Tag album.
 
@@ -485,7 +490,12 @@ void DigikamApp::slotAlbumSelected(Album* album)
             d->addFoldersAction->setEnabled(isNormalAlbum || isAlbumRoot);
             d->writeAlbumMetadataAction->setEnabled(isNormalAlbum || isAlbumRoot);
             d->readAlbumMetadataAction->setEnabled(isNormalAlbum || isAlbumRoot);
+
             d->pasteItemsAction->setEnabled(isNormalAlbum || isAlbumRoot);
+
+            d->selectInvertAction->setEnabled(isNormalAlbum || isAlbumRoot);
+            d->selectNoneAction->setEnabled(isNormalAlbum || isAlbumRoot);
+            d->selectAllAction->setEnabled(isNormalAlbum || isAlbumRoot);
         }
     }
     else
@@ -501,7 +511,14 @@ void DigikamApp::slotAlbumSelected(Album* album)
         d->addFoldersAction->setEnabled(false);
         d->writeAlbumMetadataAction->setEnabled(false);
         d->readAlbumMetadataAction->setEnabled(false);
+
         d->pasteItemsAction->setEnabled(false);
+        d->copyItemsAction->setEnabled(false);
+        d->cutItemsAction->setEnabled(false);
+
+        d->selectInvertAction->setEnabled(false);
+        d->selectNoneAction->setEnabled(false);
+        d->selectAllAction->setEnabled(false);
 
         d->newTagAction->setEnabled(false);
         d->deleteTagAction->setEnabled(false);
@@ -943,21 +960,6 @@ void DigikamApp::customizedTrashView(bool set)
     d->zoomFitToWindowAction->setEnabled(set);
     d->recurseAlbumsAction->setEnabled(set);
     d->recurseTagsAction->setEnabled(set);
-
-    d->writeAlbumMetadataAction->setEnabled(set);
-    d->readAlbumMetadataAction->setEnabled(set);
-    d->openInFileManagerAction->setEnabled(set);
-    d->propsEditAction->setEnabled(set);
-    d->deleteAction->setEnabled(set);
-    d->renameAction->setEnabled(set);
-    d->newAction->setEnabled(set);
-
-    d->selectInvertAction->setEnabled(set);
-    d->selectNoneAction->setEnabled(set);
-    d->pasteItemsAction->setEnabled(set);
-    d->copyItemsAction->setEnabled(set);
-    d->selectAllAction->setEnabled(set);
-    d->cutItemsAction->setEnabled(set);
     d->refreshAction->setEnabled(set);
 
     foreach (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::GenericView, this))
