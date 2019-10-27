@@ -40,7 +40,7 @@ ExternalProject_Add(ext_qt
                   -nomake tests                     # Do not build test codes
                   -nomake examples                  # Do not build basis example codes
                   -no-compile-examples              # Do not build extra example codes
-                  -noicu                            # ICU do not work at run-time (FIXME later)
+                  -no-icu                           # ICU do not work at run-time (FIXME later)
                   -no-qml-debug
                   -no-mtdev
                   -no-journald
