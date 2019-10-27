@@ -30,6 +30,29 @@ if (MINGW)
         ALWAYS 0
     )
 
+elseif (APPLE)
+
+    ExternalProject_Add(ext_lensfun
+
+        DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
+
+        GIT_REPOSITORY https://github.com/lensfun/lensfun.git
+
+        INSTALL_DIR ${EXTPREFIX_lensfun}
+
+        CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
+                          <SOURCE_DIR>/bootstrap.macports ${EXTPREFIX_lensfun} RelWithDebInfo x86_64
+
+        BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)
+
+        INSTALL_COMMAND cd <SOURCE_DIR>/build && $(MAKE) install/fast
+
+        BUILD_IN_SOURCE 1
+
+        UPDATE_COMMAND ""
+        ALWAYS 0
+    )
+
 else()
 
     ExternalProject_Add(ext_lensfun
