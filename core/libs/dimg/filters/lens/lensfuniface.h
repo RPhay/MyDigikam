@@ -22,7 +22,7 @@
 #ifndef DIGIKAM_LENS_FUN_IFACE_H
 #define DIGIKAM_LENS_FUN_IFACE_H
 
-// Lib LensFun includes
+// LensFun includes
 
 // Pragma directives to reduce warnings from Lensfun header files.
 #if defined(Q_CC_GNU)
@@ -33,6 +33,7 @@
 #if defined(__APPLE__) && defined(__clang__)
 #   pragma clang diagnostic push
 #   pragma clang diagnostic ignored "-Wmismatched-tags"
+#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #endif
 
 #include <lensfun.h>
