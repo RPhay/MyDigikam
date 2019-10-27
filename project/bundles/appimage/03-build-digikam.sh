@@ -48,7 +48,7 @@ ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
 #################################################################################################
-# Install not released dependencies
+# Install out-dated dependencies
 
 cd $BUILDING_DIR
 
