@@ -36,6 +36,7 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "applicationsettings.h"
 #include "previewsettings.h"
 #include "dbengineparameters.h"
