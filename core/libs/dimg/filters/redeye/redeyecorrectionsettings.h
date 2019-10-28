@@ -29,14 +29,12 @@
 
 #include <QWidget>
 
-// KDE includes
-
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "digikam_export.h"
 #include "redeyecorrectionfilter.h"
+
+class KConfigGroup;
 
 namespace Digikam
 {

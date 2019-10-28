@@ -28,14 +28,12 @@
 
 #include <QWidget>
 
-// KDE includes
-
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "digikam_export.h"
 #include "colorfxfilter.h"
+
+class  KConfigGroup;
 
 namespace Digikam
 {

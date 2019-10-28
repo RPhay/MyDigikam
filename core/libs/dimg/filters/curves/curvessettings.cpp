@@ -45,6 +45,7 @@
 
 // KDE includes
 
+#include <kconfiggroup.h>
 #include <klocalizedstring.h>
 
 // Local includes
@@ -55,8 +56,6 @@
 #include "digikam_debug.h"
 #include "dcombobox.h"
 #include "colorgradientwidget.h"
-
-
 
 namespace Digikam
 {

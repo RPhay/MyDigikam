@@ -31,15 +31,13 @@
 #include <QMouseEvent>
 #include <QPaintEvent>
 
-// KDE includes
-
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "dcolor.h"
 #include "digikam_export.h"
 #include "digikam_globals.h"
+
+class KConfigGroup;
 
 namespace Digikam
 {
