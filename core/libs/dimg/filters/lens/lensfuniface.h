@@ -24,7 +24,13 @@
 
 // LensFun includes
 
-// Pragma directives to reduce warnings from Lensfun header files.
+/*
+ * Pragma directives to reduce warnings from Lensfun header files.
+ *
+ * TODO: lensfun version > 0.3.2 introduce deprecated methods for the future.
+ * digiKam Code need to be ported to new API when Lensfun 0.4.0 will be releaed.
+ *
+ */
 #if defined(Q_CC_GNU)
 #   pragma GCC diagnostic push
 #   pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
