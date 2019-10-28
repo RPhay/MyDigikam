@@ -78,11 +78,13 @@ class DIGIKAM_EXPORT LensFunFilter : public DImgThreadedFilter
 public:
 
     explicit LensFunFilter(QObject* const parent = nullptr);
-    explicit LensFunFilter(DImg* const origImage, QObject* const parent, const LensFunContainer& settings);
+    explicit LensFunFilter(DImg* const origImage,
+                           QObject* const parent,
+                           const LensFunContainer& settings);
     ~LensFunFilter();
 
     bool registerSettingsToXmp(MetaEngineData& data) const;
-    void readParameters(const FilterAction& action) override;
+    void readParameters(const FilterAction& action)        override;
 
     static QString          FilterIdentifier()
     {
@@ -101,16 +103,16 @@ public:
         return 2;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()       const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
+    virtual FilterAction    filterAction()                 override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                     override;
     void filterCCAMultithreaded(uint start, uint stop);
     void filterVIGMultithreaded(uint start, uint stop);
     void filterDSTMultithreaded(uint start, uint stop);

@@ -83,51 +83,55 @@ public:
 public:
 
     explicit LensFunIface();
-    virtual ~LensFunIface();
+    ~LensFunIface();
 
     void setFilterSettings(const LensFunContainer& other);
 
     void             setSettings(const LensFunContainer& other);
-    LensFunContainer settings() const;
+    LensFunContainer settings()                                     const;
 
-    LensPtr usedLens() const;
+    LensPtr usedLens()                                              const;
     void    setUsedLens(LensPtr lens);
 
-    DevicePtr usedCamera() const;
+    DevicePtr usedCamera()                                          const;
     void      setUsedCamera(DevicePtr cam);
 
-    lfDatabase*            lensFunDataBase() const;
-    const lfCamera* const* lensFunCameras()  const;
+    lfDatabase*            lensFunDataBase()                        const;
+    const lfCamera* const* lensFunCameras()                         const;
 
     DevicePtr findCamera(const QString& make, const QString& model) const;
     LensPtr   findLens(const QString& model)                        const;
 
     MetadataMatch findFromMetadata(const DMetadata& meta);
 
-    bool supportsDistortion() const;
-    bool supportsCCA()        const;
-    bool supportsVig()        const;
-    bool supportsGeometry()   const;
+    bool supportsDistortion()                                       const;
+    bool supportsCCA()                                              const;
+    bool supportsVig()                                              const;
+    bool supportsGeometry()                                         const;
 
-    /** Return Camera maker string description found in metadata
-    */
-    QString makeDescription()  const;
-
-    /** Return Camera model string description found in metadata
-    */
-    QString modelDescription() const;
-
-    /** Return Lens string description found in metadata
+    /**
+     * Return Camera maker string description found in metadata
      */
-    QString lensDescription()  const;
+    QString makeDescription()                                       const;
+
+    /**
+     *Return Camera model string description found in metadata
+     */
+    QString modelDescription()                                      const;
+
+    /**
+     * Return Lens string description found in metadata
+     */
+    QString lensDescription()                                       const;
 
     static QString lensFunVersion();
 
 private:
 
-    QString  metadataMatchDebugStr(MetadataMatch val) const;
-    LensList findLenses(const lfCamera* const camera, const QString& lensDesc,
-                        const QString& lensMaker=QString()) const;
+    QString  metadataMatchDebugStr(MetadataMatch val)               const;
+    LensList findLenses(const lfCamera* const camera,
+                        const QString& lensDesc,
+                        const QString& lensMaker=QString())         const;
 
 private:
 
@@ -139,7 +143,7 @@ private:
 
 } // namespace Digikam
 
-Q_DECLARE_METATYPE( Digikam::LensFunIface::DevicePtr )
-Q_DECLARE_METATYPE( Digikam::LensFunIface::LensPtr )
+Q_DECLARE_METATYPE(Digikam::LensFunIface::DevicePtr)
+Q_DECLARE_METATYPE(Digikam::LensFunIface::LensPtr)
 
 #endif // DIGIKAM_LENS_FUN_IFACE_H

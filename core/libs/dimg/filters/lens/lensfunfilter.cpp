@@ -68,7 +68,9 @@ LensFunFilter::LensFunFilter(QObject* const parent)
     initFilter();
 }
 
-LensFunFilter::LensFunFilter(DImg* const orgImage, QObject* const parent,  const LensFunContainer& settings)
+LensFunFilter::LensFunFilter(DImg* const orgImage,
+                             QObject* const parent,
+                             const LensFunContainer& settings)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("LensCorrection")),
       d(new Private)
 {

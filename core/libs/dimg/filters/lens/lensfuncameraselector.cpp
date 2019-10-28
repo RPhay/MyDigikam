@@ -136,34 +136,34 @@ LensFunCameraSelector::LensFunCameraSelector(QWidget* const parent)
     d->metadataResult       = new QLabel(hbox);
     hbox->setStretchFactor(space, 10);
 
-    DHBox* const hbox1   = new DHBox(this);
-    d->makeLabel         = new QLabel(i18nc("camera make",  "Make:"),  hbox1);
-    QLabel* const space1 = new QLabel(hbox1);
-    d->makeDescription   = new DAdjustableLabel(hbox1);
+    DHBox* const hbox1      = new DHBox(this);
+    d->makeLabel            = new QLabel(i18nc("camera make",  "Make:"),  hbox1);
+    QLabel* const space1    = new QLabel(hbox1);
+    d->makeDescription      = new DAdjustableLabel(hbox1);
     hbox1->setStretchFactor(space1, 10);
     d->makeDescription->setAlignment(Qt::AlignVCenter | Qt::AlignRight);
     d->makeDescription->setWhatsThis(i18n("This is the camera maker description string found in image meta-data. "
                                           "This one is used to query and find relevant camera device information from Lensfun database."));
 
-    d->make              = new SqueezedComboBox(this);
+    d->make                 = new SqueezedComboBox(this);
     d->make->setCurrentIndex(0);
 
-    DHBox* const hbox2   = new DHBox(this);
-    d->modelLabel        = new QLabel(i18nc("camera model", "Model:"), hbox2);
-    QLabel* const space2 = new QLabel(hbox2);
-    d->modelDescription  = new DAdjustableLabel(hbox2);
+    DHBox* const hbox2      = new DHBox(this);
+    d->modelLabel           = new QLabel(i18nc("camera model", "Model:"), hbox2);
+    QLabel* const space2    = new QLabel(hbox2);
+    d->modelDescription     = new DAdjustableLabel(hbox2);
     hbox2->setStretchFactor(space2, 10);
     d->modelDescription->setAlignment(Qt::AlignVCenter | Qt::AlignRight);
     d->modelDescription->setWhatsThis(i18n("This is the camera model description string found in image meta-data. "
                                            "This one is used to query and found relevant camera device information from Lensfun database."));
 
-    d->model             = new SqueezedComboBox(this);
+    d->model                = new SqueezedComboBox(this);
     d->model->setCurrentIndex(0);
 
-    DHBox* const hbox3   = new DHBox(this);
-    d->lensLabel         = new QLabel(i18nc("camera lens",  "Lens:"),  hbox3);
-    QLabel* const space3 = new QLabel(hbox3);
-    d->lensDescription   = new DAdjustableLabel(hbox3);
+    DHBox* const hbox3      = new DHBox(this);
+    d->lensLabel            = new QLabel(i18nc("camera lens",  "Lens:"),  hbox3);
+    QLabel* const space3    = new QLabel(hbox3);
+    d->lensDescription      = new DAdjustableLabel(hbox3);
     // Workaround for layout problem with long lens names.
     d->lensDescription->setAdjustedText(QString(40, QLatin1Char(' ')));
     d->lensDescription->setAlignment(Qt::AlignVCenter | Qt::AlignRight);
@@ -171,7 +171,7 @@ LensFunCameraSelector::LensFunCameraSelector(QWidget* const parent)
                                           "This one is used to query and found relevant lens information from Lensfun database."));
     hbox3->setStretchFactor(space3, 10);
 
-    d->lens              = new SqueezedComboBox(this);
+    d->lens                 = new SqueezedComboBox(this);
     d->lens->setCurrentIndex(0);
 
     d->metadataUsage->setEnabled(false);
@@ -179,21 +179,21 @@ LensFunCameraSelector::LensFunCameraSelector(QWidget* const parent)
     d->metadataUsage->setWhatsThis(i18n("Set this option to try to guess the right camera/lens settings "
                                         "from the image metadata (as Exif or XMP)."));
 
-    d->focalLabel       = new QLabel(i18n("Focal Length (mm):"), this);
-    d->aperLabel        = new QLabel(i18n("Aperture:"), this);
-    d->distLabel        = new QLabel(i18n("Subject Distance (m):"), this);
+    d->focalLabel           = new QLabel(i18n("Focal Length (mm):"), this);
+    d->aperLabel            = new QLabel(i18n("Aperture:"), this);
+    d->distLabel            = new QLabel(i18n("Subject Distance (m):"), this);
 
-    d->focal            = new DDoubleNumInput(this);
+    d->focal                = new DDoubleNumInput(this);
     d->focal->setDecimals(1);
     d->focal->setRange(1.0, 10000.0, 0.01);
     d->focal->setDefaultValue(1.0);
 
-    d->aperture         = new DDoubleNumInput(this);
+    d->aperture             = new DDoubleNumInput(this);
     d->aperture->setDecimals(1);
     d->aperture->setRange(1.1, 256.0, 0.1);
     d->aperture->setDefaultValue(1.1);
 
-    d->distance         = new DDoubleNumInput(this);
+    d->distance             = new DDoubleNumInput(this);
     d->distance->setDecimals(1);
     d->distance->setRange(0.0, 10000.0, 0.1);
     d->distance->setDefaultValue(0.0);
@@ -286,9 +286,9 @@ void LensFunCameraSelector::readSettings(KConfigGroup& group)
     if (!useMetadata())
     {
         LensFunContainer settings = d->iface->settings();
-        settings.cameraModel = group.readEntry(d->configCameraModel, QString());
-        settings.cameraMake  = group.readEntry(d->configCameraMake,  QString());
-        settings.lensModel   = group.readEntry(d->configLensModel,   QString());
+        settings.cameraModel      = group.readEntry(d->configCameraModel, QString());
+        settings.cameraMake       = group.readEntry(d->configCameraMake,  QString());
+        settings.lensModel        = group.readEntry(d->configLensModel,   QString());
 
         if (settings.subjectDistance <= 0.0)
         {
