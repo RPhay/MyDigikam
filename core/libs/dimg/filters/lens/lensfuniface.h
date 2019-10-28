@@ -28,9 +28,11 @@
 #if defined(Q_CC_GNU)
 #   pragma GCC diagnostic push
 #   pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#   pragma GCC diagnostic ignored "-Wmismatched-tags"
+#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 #endif
 
-#if defined(__APPLE__) && defined(__clang__)
+#if defined(__clang__)
 #   pragma clang diagnostic push
 #   pragma clang diagnostic ignored "-Wmismatched-tags"
 #   pragma clang diagnostic ignored "-Wdeprecated-declarations"
