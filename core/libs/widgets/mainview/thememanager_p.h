@@ -75,7 +75,7 @@ class SchemeManagerPrivate;
  * SchemeManager::BackgroundRole, SchemeManager::DecorationRole,
  * SchemeManager::ShadeRole
  */
-class DIGIKAM_EXPORT SchemeManager
+class Q_DECL_HIDDEN SchemeManager
 {
 public:
 
