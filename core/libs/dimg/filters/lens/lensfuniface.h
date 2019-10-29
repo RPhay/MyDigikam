@@ -37,7 +37,7 @@
 #   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 #endif
 
-#if defined(__clang__)
+#if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
 #   pragma clang diagnostic ignored "-Wmismatched-tags"
 #   pragma clang diagnostic ignored "-Wdeprecated-declarations"
@@ -50,7 +50,7 @@
 #   pragma GCC diagnostic pop
 #endif
 
-#if defined(__clang__)
+#if defined(Q_CC_CLANG)
 #   pragma clang diagnostic pop
 #endif
 
