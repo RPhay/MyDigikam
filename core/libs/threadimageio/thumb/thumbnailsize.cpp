@@ -23,6 +23,10 @@
 
 #include "thumbnailsize.h"
 
+// KDE includes
+
+#include <kconfiggroup.h>
+
 namespace Digikam
 {
 

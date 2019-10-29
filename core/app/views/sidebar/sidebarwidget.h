@@ -29,10 +29,6 @@
 #include <QPixmap>
 #include <QWidget>
 
-// KDE includes
-
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "album.h"

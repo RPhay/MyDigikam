@@ -129,7 +129,7 @@ void LensFunIface::setUsedCamera(DevicePtr cam)
     d->usedCamera           = cam;
     d->settings.cameraMake  = d->usedCamera ? QLatin1String(d->usedCamera->Maker) : QString();
     d->settings.cameraModel = d->usedCamera ? QLatin1String(d->usedCamera->Model) : QString();
-    d->settings.cropFactor  = d->usedCamera ? d->usedCamera->CropFactor : -1.0;
+    d->settings.cropFactor  = d->usedCamera ? d->usedCamera->CropFactor           : -1.0;
 }
 
 LensFunIface::LensPtr LensFunIface::usedLens() const
@@ -185,7 +185,8 @@ LensFunIface::DevicePtr LensFunIface::findCamera(const QString& make, const QStr
         DevicePtr cam = *cameras;
 //      qCDebug(DIGIKAM_DIMG_LOG) << "Query camera:" << cam->Maker << "-" << cam->Model;
 
-        if (QString::fromLatin1(cam->Maker).toLower() == make.toLower() && QString::fromLatin1(cam->Model).toLower() == model.toLower())
+        if (QString::fromLatin1(cam->Maker).toLower() == make.toLower() &&
+            QString::fromLatin1(cam->Model).toLower() == model.toLower())
         {
             qCDebug(DIGIKAM_DIMG_LOG) << "Search for camera " << make << "-" << model << " ==> true";
             return cam;
@@ -227,8 +228,8 @@ LensFunIface::LensList LensFunIface::findLenses(const lfCamera* const lfCamera,
 
     if (lfCamera)
     {
-        const auto maker = lensMaker.isEmpty() ? nullptr : lensMaker.toLatin1().constData();
-        const auto model = lensDesc.isEmpty() ? nullptr : lensDesc.toLatin1().constData();
+        const auto maker            = lensMaker.isEmpty() ? nullptr : lensMaker.toLatin1().constData();
+        const auto model            = lensDesc.isEmpty()  ? nullptr : lensDesc.toLatin1().constData();
         const lfLens *const *lfLens = d->lfDb->FindLenses(lfCamera, maker, model);
 
         while (lfLens && *lfLens)
@@ -343,6 +344,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
                 qCDebug(DIGIKAM_DIMG_LOG) << "Lens description string is empty";
 
                 const auto lensList = findLenses(d->usedCamera, QString{});
+
                 if (lensList.count() == 1)
                 {
                     // NOTE: see bug #407157
@@ -560,7 +562,10 @@ bool LensFunIface::supportsGeometry() const
 
 QString LensFunIface::lensFunVersion()
 {
-    return QString::fromLatin1("%1.%2.%3-%4").arg(LF_VERSION_MAJOR).arg(LF_VERSION_MINOR).arg(LF_VERSION_MICRO).arg(LF_VERSION_BUGFIX);
+    return QString::fromLatin1("%1.%2.%3-%4").arg(LF_VERSION_MAJOR)
+           .arg(LF_VERSION_MINOR)
+           .arg(LF_VERSION_MICRO)
+           .arg(LF_VERSION_BUGFIX);
 }
 
 } // namespace Digikam

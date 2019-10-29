@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2004-08-02
- * Description : colors scheme manager
+ * Description : colors theme manager - private classes
  *
  * Copyright (C) 2006-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Matthew Woehlke <mw_triad at users dot sourceforge dot net>
@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "schememanager.h"
+#include "thememanager_p.h"
 
 // C++ includes
 
@@ -37,6 +37,7 @@
 
 #include <kconfig.h>
 #include <kconfiggroup.h>
+#include <klocalizedstring.h>
 
 namespace Digikam
 {
@@ -925,7 +926,9 @@ SchemeManager::~SchemeManager()
 {
 }
 
-SchemeManager::SchemeManager(QPalette::ColorGroup state, ColorSet set, KSharedConfigPtr config)
+SchemeManager::SchemeManager(QPalette::ColorGroup state,
+                             ColorSet set,
+                             KSharedConfigPtr config)
 {
     if (!config)
     {
@@ -1013,12 +1016,16 @@ QColor SchemeManager::shade(ShadeRole role) const
     return shade(background().color(), role, d->contrast());
 }
 
-QColor SchemeManager::shade(const QColor& color, ShadeRole role)
+QColor SchemeManager::shade(const QColor& color,
+                            ShadeRole role)
 {
     return shade(color, role, SchemeManager::contrastF());
 }
 
-QColor SchemeManager::shade(const QColor& color, ShadeRole role, qreal contrast, qreal chromaAdjust)
+QColor SchemeManager::shade(const QColor& color,
+                            ShadeRole role,
+                            qreal contrast,
+                            qreal chromaAdjust)
 {
     // nan -> 1.0
     contrast = ((1.0 > contrast) ? ((-1.0 < contrast) ? contrast
@@ -1078,16 +1085,22 @@ QColor SchemeManager::shade(const QColor& color, ShadeRole role, qreal contrast,
     }
 }
 
-void SchemeManager::adjustBackground(QPalette& palette, BackgroundRole newRole, QPalette::ColorRole color,
-                                     ColorSet set, KSharedConfigPtr config)
+void SchemeManager::adjustBackground(QPalette& palette,
+                                     BackgroundRole newRole,
+                                     QPalette::ColorRole color,
+                                     ColorSet set,
+                                     KSharedConfigPtr config)
 {
     palette.setBrush(QPalette::Active,   color, SchemeManager(QPalette::Active,   set, config).background(newRole));
     palette.setBrush(QPalette::Inactive, color, SchemeManager(QPalette::Inactive, set, config).background(newRole));
     palette.setBrush(QPalette::Disabled, color, SchemeManager(QPalette::Disabled, set, config).background(newRole));
 }
 
-void SchemeManager::adjustForeground(QPalette& palette, ForegroundRole newRole, QPalette::ColorRole color,
-                                     ColorSet set, KSharedConfigPtr config)
+void SchemeManager::adjustForeground(QPalette& palette,
+                                     ForegroundRole newRole,
+                                     QPalette::ColorRole color,
+                                     ColorSet set,
+                                     KSharedConfigPtr config)
 {
     palette.setBrush(QPalette::Active,   color, SchemeManager(QPalette::Active,   set, config).foreground(newRole));
     palette.setBrush(QPalette::Inactive, color, SchemeManager(QPalette::Inactive, set, config).foreground(newRole));
@@ -1139,6 +1152,54 @@ QPalette SchemeManager::createApplicationPalette(const KSharedConfigPtr& config)
     }
 
     return palette;
+}
+
+// ---------------------------------------------------------------
+
+ThemeManager::Private::Private()
+    : defaultThemeName(i18nc("default theme name", "Default")),
+      themeMenuActionGroup(nullptr),
+      themeMenuAction(nullptr)
+{
+}
+
+QPixmap ThemeManager::Private::createSchemePreviewIcon(const KSharedConfigPtr& config) const
+{
+    const uchar bits1[] = { 0xff, 0xff, 0xff, 0x2c, 0x16, 0x0b };
+    const uchar bits2[] = { 0x68, 0x34, 0x1a, 0xff, 0xff, 0xff };
+    const QSize bitsSize(24, 2);
+    const QBitmap b1    = QBitmap::fromData(bitsSize, bits1);
+    const QBitmap b2    = QBitmap::fromData(bitsSize, bits2);
+
+    QPixmap pixmap(23, 16);
+    pixmap.fill(Qt::black); // FIXME use some color other than black for borders?
+
+    KConfigGroup group(config, QLatin1String("WM"));
+    QPainter p(&pixmap);
+    SchemeManager windowScheme(QPalette::Active, SchemeManager::Window, config);
+    p.fillRect(1,  1, 7, 7, windowScheme.background());
+    p.fillRect(2,  2, 5, 2, QBrush(windowScheme.foreground().color(), b1));
+
+    SchemeManager buttonScheme(QPalette::Active, SchemeManager::Button, config);
+    p.fillRect(8,   1, 7, 7, buttonScheme.background());
+    p.fillRect(9,   2, 5, 2, QBrush(buttonScheme.foreground().color(), b1));
+
+    p.fillRect(15,  1, 7, 7, group.readEntry(QLatin1String("activeBackground"),        QColor(96, 148, 207)));
+    p.fillRect(16,  2, 5, 2, QBrush(group.readEntry(QLatin1String("activeForeground"), QColor(255, 255, 255)), b1));
+
+    SchemeManager viewScheme(QPalette::Active, SchemeManager::View, config);
+    p.fillRect(1,   8, 7, 7, viewScheme.background());
+    p.fillRect(2,  12, 5, 2, QBrush(viewScheme.foreground().color(), b2));
+
+    SchemeManager selectionScheme(QPalette::Active, SchemeManager::Selection, config);
+    p.fillRect(8,   8, 7, 7, selectionScheme.background());
+    p.fillRect(9,  12, 5, 2, QBrush(selectionScheme.foreground().color(), b2));
+
+    p.fillRect(15,  8, 7, 7, group.readEntry(QLatin1String("inactiveBackground"),        QColor(224, 223, 222)));
+    p.fillRect(16, 12, 5, 2, QBrush(group.readEntry(QLatin1String("inactiveForeground"), QColor(20,  19,  18)), b2));
+
+    p.end();
+    return pixmap;
 }
 
 } // namespace Digikam

@@ -27,7 +27,7 @@ set(rajceplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Rajce
-                                    SOURCES ${rajceplugin_SRCS}
+                           SOURCES ${rajceplugin_SRCS}
 )
 
 add_subdirectory(icons)

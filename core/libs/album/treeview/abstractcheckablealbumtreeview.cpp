@@ -28,6 +28,10 @@
 #include "abstractcheckablealbumtreeview.h"
 #include "abstractalbumtreeview_p.h"
 
+// KDE includes
+
+#include <kconfiggroup.h>
+
 namespace Digikam
 {
 

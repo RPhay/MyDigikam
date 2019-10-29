@@ -21,12 +21,11 @@
  *
  * ============================================================ */
 
-#include "lighttablewindow.h"
 #include "lighttablewindow_p.h"
 
 namespace Digikam
 {
-    
+
 void LightTableWindow::slotSetup()
 {
     Setup::execDialog(this);

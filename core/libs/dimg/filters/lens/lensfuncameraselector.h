@@ -33,6 +33,8 @@
 #include "lensfunfilter.h"
 #include "lensfuniface.h"
 
+class KConfigGroup;
+
 namespace Digikam
 {
 
@@ -47,7 +49,7 @@ public:
 public:
 
     explicit LensFunCameraSelector(QWidget* const parent=nullptr);
-    virtual ~LensFunCameraSelector();
+    ~LensFunCameraSelector();
 
     void setEnabledUseMetadata(bool b);
 

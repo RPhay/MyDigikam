@@ -37,6 +37,11 @@
 #   pragma GCC diagnostic ignored "-Wdate-time"
 #endif
 
+#if defined(__APPLE__) && defined(__clang__)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wdate-time"
+#endif
+
 namespace Digikam
 {
 
@@ -71,6 +76,11 @@ const QString additionalInformation()
 }  // namespace Digikam
 
 // Restore warnings
+
 #if !defined(__APPLE__) && defined(__GNUC__)
 #   pragma GCC diagnostic pop
+#endif
+
+#if defined(__APPLE__) && defined(__clang__)
+#   pragma clang diagnostic pop
 #endif

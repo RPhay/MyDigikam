@@ -29,14 +29,12 @@
 #include <QWidget>
 #include <QDateTime>
 
-// KDE includes
-
-#include <kconfiggroup.h>
-
 // Local settings
 
 #include "downloadsettings.h"
 #include "digikam_export.h"
+
+class KConfigGroup;
 
 namespace Digikam
 {
@@ -48,7 +46,7 @@ class DIGIKAM_EXPORT ScriptingSettings : public QWidget
 public:
 
     explicit ScriptingSettings(QWidget* const parent = nullptr);
-    virtual ~ScriptingSettings();
+    ~ScriptingSettings();
 
     void readSettings(KConfigGroup& group);
     void saveSettings(KConfigGroup& group);

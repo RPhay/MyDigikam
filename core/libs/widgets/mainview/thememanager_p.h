@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2004-08-02
- * Description : colors scheme manager
+ * Description : colors theme manager - private classes
  *
  * Copyright (C) 2006-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007      by Matthew Woehlke <mw_triad at users dot sourceforge dot net>
@@ -22,8 +22,10 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SCHEME_MANAGER_H
-#define DIGIKAM_SCHEME_MANAGER_H
+#ifndef DIGIKAM_THEME_MANAGER_P_H
+#define DIGIKAM_THEME_MANAGER_P_H
+
+#include "thememanager.h"
 
 // Qt includes
 
@@ -31,14 +33,12 @@
 #include <QPalette>
 #include <QColor>
 #include <QBrush>
+#include <QBitmap>
+#include <QActionGroup>
 
 // KDE includes
 
 #include <ksharedconfig.h>
-
-// Local includes
-
-#include "digikam_export.h"
 
 namespace Digikam
 {
@@ -341,7 +341,9 @@ public:
      * Construct a palette from given color set and state, using the colors
      * from the given KConfig (if null, the system colors are used).
      */
-    explicit SchemeManager(QPalette::ColorGroup, ColorSet = View, KSharedConfigPtr = KSharedConfigPtr());
+    explicit SchemeManager(QPalette::ColorGroup state,
+                           ColorSet set = View,
+                           KSharedConfigPtr config = KSharedConfigPtr());
 
     /**
      * Retrieve the requested background brush.
@@ -418,8 +420,10 @@ public:
      * darker than the base color, with light() == mid().
      *
      */
-    static QColor shade(const QColor&, ShadeRole,
-                        qreal contrast, qreal chromaAdjust = 0.0);
+    static QColor shade(const QColor&,
+                        ShadeRole,
+                        qreal contrast,
+                        qreal chromaAdjust = 0.0);
 
     /**
      * Adjust a QPalette by replacing the specified QPalette::ColorRole with
@@ -434,7 +438,7 @@ public:
                                  BackgroundRole newRole = NormalBackground,
                                  QPalette::ColorRole color = QPalette::Base,
                                  ColorSet set = View,
-                                 KSharedConfigPtr = KSharedConfigPtr());
+                                 KSharedConfigPtr config = KSharedConfigPtr());
 
     /**
      * Adjust a QPalette by replacing the specified QPalette::ColorRole with
@@ -449,7 +453,7 @@ public:
                                  ForegroundRole newRole = NormalText,
                                  QPalette::ColorRole color = QPalette::Text,
                                  ColorSet set = View,
-                                 KSharedConfigPtr = KSharedConfigPtr());
+                                 KSharedConfigPtr config = KSharedConfigPtr());
 
     /**
      * Used to obtain the QPalette that will be used to set the application
@@ -466,6 +470,25 @@ private:
     QExplicitlySharedDataPointer<SchemeManagerPrivate> d;
 };
 
+// --------------------------------------------------------------------------
+
+class Q_DECL_HIDDEN ThemeManager::Private
+{
+public:
+
+    explicit Private();
+
+    QPixmap createSchemePreviewIcon(const KSharedConfigPtr& config) const;
+
+public:
+
+    const QString          defaultThemeName;
+    QMap<QString, QString> themeMap;            // map<theme name, theme config path>
+
+    QActionGroup*          themeMenuActionGroup;
+    QMenu*                 themeMenuAction;
+};
+
 } // namespace Digikam
 
-#endif // DIGIKAM_SCHEME_MANAGER_H
+#endif // DIGIKAM_THEME_MANAGER_P_H

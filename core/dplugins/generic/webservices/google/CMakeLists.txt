@@ -28,7 +28,7 @@ set(googleplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Google
-                                    SOURCES ${googleplugin_SRCS}
+                           SOURCES ${googleplugin_SRCS}
 )
 
 add_subdirectory(icons)

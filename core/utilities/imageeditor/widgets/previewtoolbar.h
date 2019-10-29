@@ -28,15 +28,13 @@
 
 #include <QWidget>
 
-// KDE includes
-
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "digikam_export.h"
 
 class QAction;
+
+class KConfigGroup;
 
 namespace Digikam
 {

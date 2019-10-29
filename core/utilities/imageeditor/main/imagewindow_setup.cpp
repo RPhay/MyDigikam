@@ -21,7 +21,6 @@
  *
  * ============================================================ */
 
-#include "imagewindow.h"
 #include "imagewindow_p.h"
 
 namespace Digikam

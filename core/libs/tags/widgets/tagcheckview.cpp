@@ -33,6 +33,7 @@
 
 // KDE includes
 
+#include <kconfiggroup.h>
 #include <klocalizedstring.h>
 #include <kselectaction.h>
 

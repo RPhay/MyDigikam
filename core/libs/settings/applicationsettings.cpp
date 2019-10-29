@@ -26,7 +26,6 @@
  *
  * ============================================================ */
 
-#include "applicationsettings.h"
 #include "applicationsettings_p.h"
 
 // Qt includes
@@ -34,18 +33,21 @@
 #include <QApplication>
 #include <QFontDatabase>
 
+// KDE includes
+
+#include <kconfiggroup.h>
+
+#ifdef HAVE_KFILEMETADATA
+#   include "baloowrap.h"
+#endif
+
 // Local includes
 
-#include "digikam_config.h"
 #include "itemfiltersettings.h"
 #include "itemsortsettings.h"
 #include "mimefilter.h"
 #include "thumbnailsize.h"
 #include "thememanager.h"
-
-#ifdef HAVE_KFILEMETADATA
-#   include "baloowrap.h"
-#endif
 
 namespace Digikam
 {

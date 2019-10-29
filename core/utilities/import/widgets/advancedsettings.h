@@ -29,13 +29,11 @@
 #include <QWidget>
 #include <QDateTime>
 
-// KDE includes
-
-#include <kconfiggroup.h>
-
 // Local settings
 
 #include "downloadsettings.h"
+
+class KConfigGroup;
 
 namespace Digikam
 {

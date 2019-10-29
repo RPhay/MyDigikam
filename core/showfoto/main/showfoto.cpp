@@ -27,7 +27,6 @@
  *
  * ============================================================ */
 
-#include "showfoto.h"
 #include "showfoto_p.h"
 
 namespace ShowFoto

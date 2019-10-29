@@ -26,6 +26,8 @@
 
 #include "sidebar.h"
 
+// C++ includes
+
 #include <cmath>
 
 // Qt includes
@@ -46,6 +48,10 @@
 #include <QFontMetrics>
 #include <QStyle>
 #include <QStyleOptionButton>
+
+// KDE includes
+
+#include <kconfiggroup.h>
 
 // Local includes
 

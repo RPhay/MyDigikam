@@ -24,7 +24,7 @@ set(dropboxplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    DropBox
-                                    SOURCES ${dropboxplugin_SRCS}
+                           SOURCES ${dropboxplugin_SRCS}
 )
 
 add_subdirectory(icons)

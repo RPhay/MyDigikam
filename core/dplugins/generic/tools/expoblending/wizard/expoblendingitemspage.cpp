@@ -29,6 +29,7 @@
 #include <QVBoxLayout>
 #include <QPixmap>
 #include <QTimer>
+#include <QStandardPaths>
 
 // KDE includes
 

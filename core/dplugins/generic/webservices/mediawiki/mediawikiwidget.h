@@ -33,15 +33,13 @@
 #include <QTreeWidgetItem>
 #include <QUrl>
 
-// KDE includes
-
-#include <kconfig.h>
-
 // Local includes
 
 #include "dinfointerface.h"
 #include "dprogresswdg.h"
 #include "ditemslist.h"
+
+class KConfigGroup;
 
 using namespace Digikam;
 

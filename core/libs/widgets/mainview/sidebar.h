@@ -37,14 +37,12 @@
 #include <QStyleOptionToolButton>
 #include <QBoxLayout>
 
-// KDE includes
-
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "digikam_export.h"
 #include "statesavingobject.h"
+
+class KConfigGroup;
 
 namespace Digikam
 {

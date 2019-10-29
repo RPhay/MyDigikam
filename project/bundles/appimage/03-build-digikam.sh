@@ -48,6 +48,21 @@ ORIG_PATH="$PATH"
 ORIG_WD="`pwd`"
 
 #################################################################################################
+# Install out-dated dependencies
+
+cd $BUILDING_DIR
+
+rm -rf $BUILDING_DIR/* || true
+
+cmake $ORIG_WD/../3rdparty \
+      -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+      -DINSTALL_ROOT=/usr \
+      -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+      -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
+
+cmake --build . --config RelWithDebInfo --target ext_lensfun       -- -j$CPU_CORES
+
+#################################################################################################
 # Build digiKam in temporary directory and installation
 
 if [ -d "$DK_BUILDTEMP/digikam-$DK_VERSION" ] ; then

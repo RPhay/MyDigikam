@@ -33,6 +33,10 @@
 #include <QPushButton>
 #include <QApplication>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
 #include "drawdecoder.h"

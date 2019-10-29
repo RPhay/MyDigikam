@@ -21,7 +21,6 @@
  *
  * ============================================================ */
 
-#include "lighttablewindow.h"
 #include "lighttablewindow_p.h"
 
 namespace Digikam

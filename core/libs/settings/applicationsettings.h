@@ -36,16 +36,14 @@
 #include <QString>
 #include <QStringList>
 
-// KDE includes
-
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "sidebar.h"
 #include "dbengineparameters.h"
 #include "versionmanager.h"
 #include "digikam_export.h"
+
+class KConfigGroup;
 
 namespace Digikam
 {

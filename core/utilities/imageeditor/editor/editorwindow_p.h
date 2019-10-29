@@ -34,6 +34,7 @@
 
 #include <kconfiggroup.h>
 #include <kservice.h>
+#include <ksharedconfig.h>
 
 // Local includes
 

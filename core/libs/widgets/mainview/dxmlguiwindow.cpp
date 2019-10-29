@@ -50,6 +50,7 @@
 
 // KDE includes
 
+#include <kconfiggroup.h>
 #include <ktogglefullscreenaction.h>
 #include <ktoolbar.h>
 #include <ktoggleaction.h>
@@ -60,6 +61,7 @@
 #include <ksharedconfig.h>
 #include <kshortcutsdialog.h>
 #include <kedittoolbar.h>
+#include <kxmlguifactory.h>
 
 #ifdef HAVE_KNOTIFYCONFIG
 #   include <knotifyconfigwidget.h>

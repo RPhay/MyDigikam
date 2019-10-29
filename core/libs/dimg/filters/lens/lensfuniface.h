@@ -22,12 +22,26 @@
 #ifndef DIGIKAM_LENS_FUN_IFACE_H
 #define DIGIKAM_LENS_FUN_IFACE_H
 
-// Lib LensFun includes
+// LensFun includes
 
-// Pragma directives to reduce warnings from Lensfun header files.
+/*
+ * Pragma directives to reduce warnings from Lensfun header files.
+ *
+ * TODO: lensfun version > 0.3.2 introduce deprecated methods for the future.
+ * digiKam Code need to be ported to new API when Lensfun 0.4.0 will be releaed.
+ *
+ */
 #if defined(Q_CC_GNU)
 #   pragma GCC diagnostic push
 #   pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+#   pragma GCC diagnostic ignored "-Wmismatched-tags"
+#   pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+#endif
+
+#if defined(__clang__)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wmismatched-tags"
+#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
 #endif
 
 #include <lensfun.h>
@@ -35,6 +49,10 @@
 // Restore warnings
 #if defined(Q_CC_GNU)
 #   pragma GCC diagnostic pop
+#endif
+
+#if defined(__APPLE__) && defined(__clang__)
+#   pragma clang diagnostic pop
 #endif
 
 // Local includes
@@ -65,51 +83,55 @@ public:
 public:
 
     explicit LensFunIface();
-    virtual ~LensFunIface();
+    ~LensFunIface();
 
     void setFilterSettings(const LensFunContainer& other);
 
     void             setSettings(const LensFunContainer& other);
-    LensFunContainer settings() const;
+    LensFunContainer settings()                                     const;
 
-    LensPtr usedLens() const;
+    LensPtr usedLens()                                              const;
     void    setUsedLens(LensPtr lens);
 
-    DevicePtr usedCamera() const;
+    DevicePtr usedCamera()                                          const;
     void      setUsedCamera(DevicePtr cam);
 
-    lfDatabase*            lensFunDataBase() const;
-    const lfCamera* const* lensFunCameras()  const;
+    lfDatabase*            lensFunDataBase()                        const;
+    const lfCamera* const* lensFunCameras()                         const;
 
     DevicePtr findCamera(const QString& make, const QString& model) const;
     LensPtr   findLens(const QString& model)                        const;
 
     MetadataMatch findFromMetadata(const DMetadata& meta);
 
-    bool supportsDistortion() const;
-    bool supportsCCA()        const;
-    bool supportsVig()        const;
-    bool supportsGeometry()   const;
+    bool supportsDistortion()                                       const;
+    bool supportsCCA()                                              const;
+    bool supportsVig()                                              const;
+    bool supportsGeometry()                                         const;
 
-    /** Return Camera maker string description found in metadata
-    */
-    QString makeDescription()  const;
-
-    /** Return Camera model string description found in metadata
-    */
-    QString modelDescription() const;
-
-    /** Return Lens string description found in metadata
+    /**
+     * Return Camera maker string description found in metadata
      */
-    QString lensDescription()  const;
+    QString makeDescription()                                       const;
+
+    /**
+     *Return Camera model string description found in metadata
+     */
+    QString modelDescription()                                      const;
+
+    /**
+     * Return Lens string description found in metadata
+     */
+    QString lensDescription()                                       const;
 
     static QString lensFunVersion();
 
 private:
 
-    QString  metadataMatchDebugStr(MetadataMatch val) const;
-    LensList findLenses(const lfCamera* const camera, const QString& lensDesc,
-                        const QString& lensMaker=QString()) const;
+    QString  metadataMatchDebugStr(MetadataMatch val)               const;
+    LensList findLenses(const lfCamera* const camera,
+                        const QString& lensDesc,
+                        const QString& lensMaker=QString())         const;
 
 private:
 
@@ -121,7 +143,7 @@ private:
 
 } // namespace Digikam
 
-Q_DECLARE_METATYPE( Digikam::LensFunIface::DevicePtr )
-Q_DECLARE_METATYPE( Digikam::LensFunIface::LensPtr )
+Q_DECLARE_METATYPE(Digikam::LensFunIface::DevicePtr)
+Q_DECLARE_METATYPE(Digikam::LensFunIface::LensPtr)
 
 #endif // DIGIKAM_LENS_FUN_IFACE_H

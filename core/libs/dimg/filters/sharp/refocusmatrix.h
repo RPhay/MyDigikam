@@ -27,7 +27,7 @@
 // C ++ includes
 
 #ifndef Q_CC_MSVC
-#include <cstdio>
+#   include <cstdio>
 #endif
 
 namespace Digikam

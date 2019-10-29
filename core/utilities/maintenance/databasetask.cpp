@@ -303,16 +303,13 @@ void DatabaseTask::run()
 
                 if (!info.isNull())
                 {
-                    QString hash       = CoreDbAccess().db()->getImagesFields(item, DatabaseFields::ImagesField::UniqueHash).first().toString();
-                    qlonglong fileSize = info.fileSize();
-
                     // Remove the id that is found by the file path. Finding the id -1 does no harm
-                    bool removed       = thumbIds.remove(ThumbsDbAccess().db()->findByFilePath(info.filePath()).id);
+                    bool removed = thumbIds.remove(ThumbsDbAccess().db()->findByFilePath(info.filePath()).id);
 
                     if (!removed)
                     {
                         // Remove the id that is found by the hash and file size. Finding the id -1 does no harm
-                        thumbIds.remove(ThumbsDbAccess().db()->findByHash(hash, fileSize).id);
+                        thumbIds.remove(ThumbsDbAccess().db()->findByHash(info.uniqueHash(), info.fileSize()).id);
                     }
 
                     // Add the custom identifier.

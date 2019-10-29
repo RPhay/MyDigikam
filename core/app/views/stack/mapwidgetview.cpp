@@ -32,13 +32,14 @@
 #include <QAbstractItemModel>
 #include <QPersistentModelIndex>
 
+// KDE includes
+
+#include <kconfiggroup.h>
+
 // Local includes
 
 #include "mapwidget.h"
 #include "itemmarkertiler.h"
-
-//local includes
-
 #include "digikam_debug.h"
 #include "camerathumbsctrl.h"
 #include "itemposition.h"

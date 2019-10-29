@@ -23,7 +23,7 @@ set(boxplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Box
-                                    SOURCES ${boxplugin_SRCS}
+                           SOURCES ${boxplugin_SRCS}
 )
 
 add_subdirectory(icons)
