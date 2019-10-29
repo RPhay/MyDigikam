@@ -31,5 +31,6 @@ set(unifiedplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Unified
-                                    SOURCES ${unifiedplugin_SRCS}
+                           SOURCES ${unifiedplugin_SRCS}
+                           DEPENDS ${QWEB_BACKEND}
 )

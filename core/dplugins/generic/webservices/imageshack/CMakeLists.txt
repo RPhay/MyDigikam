@@ -25,7 +25,7 @@ set(imageshackplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    ImageShack
-                                    SOURCES ${imageshackplugin_SRCS}
+                           SOURCES ${imageshackplugin_SRCS}
 )
 
 add_subdirectory(icons)

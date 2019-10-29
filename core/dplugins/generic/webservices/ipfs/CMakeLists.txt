@@ -22,7 +22,7 @@ set(ipfsplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    IpFs
-                                    SOURCES ${ipfsplugin_SRCS}
+                           SOURCES ${ipfsplugin_SRCS}
 )
 
 add_subdirectory(icons)

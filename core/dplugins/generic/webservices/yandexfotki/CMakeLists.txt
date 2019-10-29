@@ -27,5 +27,5 @@ set(yandexfotkiplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    YandexFotki
-                                    SOURCES ${yandexfotkiplugin_SRCS}
+                           SOURCES ${yandexfotkiplugin_SRCS}
 )

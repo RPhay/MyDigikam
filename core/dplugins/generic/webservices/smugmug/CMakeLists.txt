@@ -24,7 +24,7 @@ set(smugplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    SmugMug
-                                    SOURCES ${smugplugin_SRCS}
+                           SOURCES ${smugplugin_SRCS}
 )
 
 add_subdirectory(icons)

@@ -22,7 +22,7 @@ set(imgurplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    ImgUr
-                                    SOURCES ${imgurplugin_SRCS}
+                           SOURCES ${imgurplugin_SRCS}
 )
 
 add_subdirectory(icons)

@@ -23,7 +23,7 @@ set(piwigoplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Piwigo
-                                    SOURCES ${piwigoplugin_SRCS}
+                           SOURCES ${piwigoplugin_SRCS}
 )
 
 add_subdirectory(icons)

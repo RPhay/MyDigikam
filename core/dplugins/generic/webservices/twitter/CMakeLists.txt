@@ -24,5 +24,5 @@ set(twitterplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Twitter
-                                    SOURCES ${twitterplugin_SRCS}
+                           SOURCES ${twitterplugin_SRCS}
 )
