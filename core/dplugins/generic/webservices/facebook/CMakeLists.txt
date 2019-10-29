@@ -25,7 +25,7 @@ set(facebookplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    FaceBook
-                                    SOURCES ${facebookplugin_SRCS}
+                           SOURCES ${facebookplugin_SRCS}
 )
 
 add_subdirectory(icons)

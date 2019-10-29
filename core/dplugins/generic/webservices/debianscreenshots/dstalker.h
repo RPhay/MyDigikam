@@ -23,12 +23,19 @@
 #ifndef DIGIKAM_DS_TALKER_H
 #define DIGIKAM_DS_TALKER_H
 
-// KDE includes
+// Qt includes
+
+#include <QObject>
+#include <QString>
+#include <QByteArray>
+#include <QWidget>
 
 namespace KIO
 {
 class Job;
 }
+
+class KJob;
 
 namespace DigikamGenericDebianScreenshotsPlugin
 {

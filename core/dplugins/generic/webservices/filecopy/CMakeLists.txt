@@ -23,5 +23,5 @@ set(filecopyplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    FileCopy
-                                    SOURCES ${filecopyplugin_SRCS}
+                           SOURCES ${filecopyplugin_SRCS}
 )
