@@ -50,6 +50,7 @@
 
 // KDE includes
 
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 #include <klocalizedstring.h>
 
@@ -146,7 +147,7 @@ public:
 
     DProgressWdg*                            progressBar;
     DInfoInterface*                          iface;
-    DItemsList*                             imgList;
+    DItemsList*                              imgList;
 
     QStringList                              WikisHistory;
     QStringList                              UrlsHistory;

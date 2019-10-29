@@ -22,6 +22,10 @@
 
 #include "tableview_columnfactory.h"
 
+// KDE include
+
+#include <kconfiggroup.h>
+
 // Local includes
 
 #include "digikam_debug.h"

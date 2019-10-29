@@ -21,7 +21,6 @@
  *
  * ============================================================ */
 
-#include "digikamapp.h"
 #include "digikamapp_p.h"
 
 // Solid includes

@@ -65,6 +65,7 @@
 
 #include <klocalizedstring.h>
 #include <kactioncollection.h>
+#include <kconfiggroup.h>
 
 // Local includes
 

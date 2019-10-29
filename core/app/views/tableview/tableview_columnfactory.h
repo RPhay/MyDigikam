@@ -29,10 +29,6 @@
 #include <QHash>
 #include <QWidget>
 
-// KDE includes
-
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "tableview_model.h"
@@ -40,6 +36,8 @@
 
 class QModelIndex;
 class QStyleOptionViewItem;
+
+class KConfigGroup;
 
 namespace Digikam
 {

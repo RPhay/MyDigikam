@@ -25,6 +25,8 @@
 #ifndef DIGIKAM_IMAGE_WINDOW_PRIVATE_H
 #define DIGIKAM_IMAGE_WINDOW_PRIVATE_H
 
+#include "imagewindow.h"
+
 // C++ includes
 
 #include <cstdio>
@@ -58,6 +60,7 @@
 #include <kactioncollection.h>
 #include <klocalizedstring.h>
 #include <kwindowsystem.h>
+#include <kconfiggroup.h>
 
 // Local includes
 

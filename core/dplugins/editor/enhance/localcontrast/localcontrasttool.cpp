@@ -39,6 +39,7 @@
 
 #include <klocalizedstring.h>
 #include <ksharedconfig.h>
+#include "kconfiggroup.h"
 
 // Local includes
 

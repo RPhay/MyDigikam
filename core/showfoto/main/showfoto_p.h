@@ -26,6 +26,8 @@
 #ifndef SHOW_FOTO_PRIVATE_H
 #define SHOW_FOTO_PRIVATE_H
 
+#include "showfoto.h"
+
 // Qt includes
 
 #include <QCursor>
@@ -59,10 +61,10 @@
 
 #include <kactioncollection.h>
 #include <klocalizedstring.h>
+#include "kconfiggroup.h"
 
 // Local includes
 
-#include "showfoto.h"
 #include "showfotoiteminfo.h"
 #include "showfotothumbnailbar.h"
 #include "dsplashscreen.h"

@@ -26,7 +26,6 @@
  *
  * ============================================================ */
 
-#include "digikamapp.h"
 #include "digikamapp_p.h"
 
 namespace Digikam

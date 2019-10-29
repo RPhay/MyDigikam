@@ -25,6 +25,8 @@
 #ifndef DIGIKAM_APP_PRIVATE_H
 #define DIGIKAM_APP_PRIVATE_H
 
+#include "digikamapp.h"
+
 // Qt includes
 
 #include <QEventLoop>
@@ -47,6 +49,7 @@
 
 // KDE includes
 
+#include "kconfiggroup.h"
 #include <klocalizedstring.h>
 #include <kactioncollection.h>
 #include <ktoolbar.h>

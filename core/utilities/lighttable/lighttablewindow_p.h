@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_LIGHT_TABLE_WINDOW_PRIVATE_H
 #define DIGIKAM_LIGHT_TABLE_WINDOW_PRIVATE_H
 
+#include "lighttablewindow.h"
+
 // Qt includes
 
 #include <QApplication>
@@ -40,6 +42,7 @@
 
 #include <klocalizedstring.h>
 #include <kactioncollection.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
