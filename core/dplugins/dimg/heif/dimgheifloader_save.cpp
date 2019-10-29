@@ -42,8 +42,19 @@
 
 // libx265 includes
 
+#if defined(__clang__)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wundef"
+#   pragma clang diagnostic ignored "-Wgnu-anonymous-struct"
+#   pragma clang diagnostic ignored "-Wnested-anon-types"
+#endif
+
 #ifdef HAVE_X265
 #   include <x265.h>
+#endif
+
+#if defined(__clang__)
+#   pragma clang diagnostic pop
 #endif
 
 namespace Digikam
