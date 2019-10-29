@@ -28,9 +28,11 @@
 #include <QLabel>
 #include <QPixmap>
 #include <QGroupBox>
+#include <QStandardPaths>
 
 // KDE includes
 
+#include <kconfiggroup.h>
 #include <klocalizedstring.h>
 
 // local includes

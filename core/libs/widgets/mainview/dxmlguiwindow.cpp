@@ -50,6 +50,7 @@
 
 // KDE includes
 
+#include <kconfiggroup.h>
 #include <ktogglefullscreenaction.h>
 #include <ktoolbar.h>
 #include <ktoggleaction.h>

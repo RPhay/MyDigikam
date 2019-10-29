@@ -36,6 +36,7 @@
 #include <QString>
 #include <QSet>
 #include <QUrl>
+#include <QDateTime>
 
 // Local includes
 

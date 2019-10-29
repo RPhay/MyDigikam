@@ -50,6 +50,7 @@ using namespace Magick;
 #include <klocalizedstring.h>
 #include <kaboutdata.h>
 #include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 

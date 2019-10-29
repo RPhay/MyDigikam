@@ -28,6 +28,7 @@
 #include <QDir>
 #include <QLabel>
 #include <QPixmap>
+#include <QStandardPaths>
 
 // KDE includes
 

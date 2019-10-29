@@ -35,7 +35,6 @@
 
 #include <kxmlguiwindow.h>
 #include <kxmlguifactory.h>
-#include <kconfiggroup.h>
 
 // Local includes
 
@@ -49,6 +48,7 @@
 class QEvent;
 
 class KToolBar;
+class KConfigGroup;
 
 namespace Digikam
 {

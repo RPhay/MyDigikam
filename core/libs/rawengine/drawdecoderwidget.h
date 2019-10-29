@@ -30,10 +30,6 @@
 
 #include <QString>
 
-// KDE includes
-
-#include <kconfiggroup.h>
-
 // Local includes
 
 #include "drawdecodersettings.h"
@@ -41,6 +37,8 @@
 #include "dexpanderbox.h"
 #include "dfileselector.h"
 #include "digikam_export.h"
+
+class KConfigGroup;
 
 namespace Digikam
 {
