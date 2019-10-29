@@ -26,9 +26,18 @@
 
 // ImageMagick includes
 
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wkeyword-macro"
+#endif
+
 #ifdef HAVE_IMAGE_MAGICK
 #   include <Magick++.h>
 using namespace Magick;
+#endif
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
 #endif
 
 // Qt includes

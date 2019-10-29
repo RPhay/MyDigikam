@@ -24,6 +24,11 @@
 
 // Image Magick includes
 
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wkeyword-macro"
+#endif
+
 #include <Magick++.h>
 
 #if MagickLibVersion < 0x700
@@ -32,6 +37,10 @@
 
 using namespace Magick;
 using namespace MagickCore;
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
+#endif
 
 // Qt includes
 
