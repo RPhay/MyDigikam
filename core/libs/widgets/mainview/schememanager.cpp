@@ -925,7 +925,9 @@ SchemeManager::~SchemeManager()
 {
 }
 
-SchemeManager::SchemeManager(QPalette::ColorGroup state, ColorSet set, KSharedConfigPtr config)
+SchemeManager::SchemeManager(QPalette::ColorGroup state,
+                             ColorSet set,
+                             KSharedConfigPtr config)
 {
     if (!config)
     {
@@ -1013,12 +1015,16 @@ QColor SchemeManager::shade(ShadeRole role) const
     return shade(background().color(), role, d->contrast());
 }
 
-QColor SchemeManager::shade(const QColor& color, ShadeRole role)
+QColor SchemeManager::shade(const QColor& color,
+                            ShadeRole role)
 {
     return shade(color, role, SchemeManager::contrastF());
 }
 
-QColor SchemeManager::shade(const QColor& color, ShadeRole role, qreal contrast, qreal chromaAdjust)
+QColor SchemeManager::shade(const QColor& color,
+                            ShadeRole role,
+                            qreal contrast,
+                            qreal chromaAdjust)
 {
     // nan -> 1.0
     contrast = ((1.0 > contrast) ? ((-1.0 < contrast) ? contrast
@@ -1078,16 +1084,22 @@ QColor SchemeManager::shade(const QColor& color, ShadeRole role, qreal contrast,
     }
 }
 
-void SchemeManager::adjustBackground(QPalette& palette, BackgroundRole newRole, QPalette::ColorRole color,
-                                     ColorSet set, KSharedConfigPtr config)
+void SchemeManager::adjustBackground(QPalette& palette,
+                                     BackgroundRole newRole,
+                                     QPalette::ColorRole color,
+                                     ColorSet set,
+                                     KSharedConfigPtr config)
 {
     palette.setBrush(QPalette::Active,   color, SchemeManager(QPalette::Active,   set, config).background(newRole));
     palette.setBrush(QPalette::Inactive, color, SchemeManager(QPalette::Inactive, set, config).background(newRole));
     palette.setBrush(QPalette::Disabled, color, SchemeManager(QPalette::Disabled, set, config).background(newRole));
 }
 
-void SchemeManager::adjustForeground(QPalette& palette, ForegroundRole newRole, QPalette::ColorRole color,
-                                     ColorSet set, KSharedConfigPtr config)
+void SchemeManager::adjustForeground(QPalette& palette,
+                                     ForegroundRole newRole,
+                                     QPalette::ColorRole color,
+                                     ColorSet set,
+                                     KSharedConfigPtr config)
 {
     palette.setBrush(QPalette::Active,   color, SchemeManager(QPalette::Active,   set, config).foreground(newRole));
     palette.setBrush(QPalette::Inactive, color, SchemeManager(QPalette::Inactive, set, config).foreground(newRole));

@@ -341,7 +341,9 @@ public:
      * Construct a palette from given color set and state, using the colors
      * from the given KConfig (if null, the system colors are used).
      */
-    explicit SchemeManager(QPalette::ColorGroup, ColorSet = View, KSharedConfigPtr = KSharedConfigPtr());
+    explicit SchemeManager(QPalette::ColorGroup state,
+                           ColorSet set = View,
+                           KSharedConfigPtr config = KSharedConfigPtr());
 
     /**
      * Retrieve the requested background brush.
@@ -418,8 +420,10 @@ public:
      * darker than the base color, with light() == mid().
      *
      */
-    static QColor shade(const QColor&, ShadeRole,
-                        qreal contrast, qreal chromaAdjust = 0.0);
+    static QColor shade(const QColor&,
+                        ShadeRole,
+                        qreal contrast,
+                        qreal chromaAdjust = 0.0);
 
     /**
      * Adjust a QPalette by replacing the specified QPalette::ColorRole with
@@ -434,7 +438,7 @@ public:
                                  BackgroundRole newRole = NormalBackground,
                                  QPalette::ColorRole color = QPalette::Base,
                                  ColorSet set = View,
-                                 KSharedConfigPtr = KSharedConfigPtr());
+                                 KSharedConfigPtr config = KSharedConfigPtr());
 
     /**
      * Adjust a QPalette by replacing the specified QPalette::ColorRole with
@@ -449,7 +453,7 @@ public:
                                  ForegroundRole newRole = NormalText,
                                  QPalette::ColorRole color = QPalette::Text,
                                  ColorSet set = View,
-                                 KSharedConfigPtr = KSharedConfigPtr());
+                                 KSharedConfigPtr config = KSharedConfigPtr());
 
     /**
      * Used to obtain the QPalette that will be used to set the application
