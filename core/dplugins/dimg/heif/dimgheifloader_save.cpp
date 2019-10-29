@@ -336,7 +336,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
             }
         }
 
-        if (m_observer && y == (long)checkpoint)
+        if (m_observer && (y == (unsigned int)checkpoint))
         {
             checkpoint += granularity(m_observer, imageHeight(), 0.8F);
 
