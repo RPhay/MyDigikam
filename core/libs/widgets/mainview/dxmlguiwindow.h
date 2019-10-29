@@ -34,7 +34,6 @@
 // KDE includes
 
 #include <kxmlguiwindow.h>
-#include <kxmlguifactory.h>
 
 // Local includes
 

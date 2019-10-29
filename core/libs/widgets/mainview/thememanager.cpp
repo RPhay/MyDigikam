@@ -45,6 +45,7 @@
 #include <klocalizedstring.h>
 #include <kactioncollection.h>
 #include <kconfiggroup.h>
+#include <ksharedconfig.h>
 
 // Local includes
 
@@ -78,12 +79,57 @@ public:
     {
     }
 
+    QPixmap createSchemePreviewIcon(const KSharedConfigPtr& config) const;
+
+public:
+
     const QString          defaultThemeName;
     QMap<QString, QString> themeMap;            // map<theme name, theme config path>
 
     QActionGroup*          themeMenuActionGroup;
     QMenu*                 themeMenuAction;
 };
+
+QPixmap ThemeManager::Private::createSchemePreviewIcon(const KSharedConfigPtr& config) const
+{
+    const uchar bits1[] = { 0xff, 0xff, 0xff, 0x2c, 0x16, 0x0b };
+    const uchar bits2[] = { 0x68, 0x34, 0x1a, 0xff, 0xff, 0xff };
+    const QSize bitsSize(24, 2);
+    const QBitmap b1    = QBitmap::fromData(bitsSize, bits1);
+    const QBitmap b2    = QBitmap::fromData(bitsSize, bits2);
+
+    QPixmap pixmap(23, 16);
+    pixmap.fill(Qt::black); // FIXME use some color other than black for borders?
+
+    KConfigGroup group(config, QLatin1String("WM"));
+    QPainter p(&pixmap);
+    SchemeManager windowScheme(QPalette::Active, SchemeManager::Window, config);
+    p.fillRect(1,  1, 7, 7, windowScheme.background());
+    p.fillRect(2,  2, 5, 2, QBrush(windowScheme.foreground().color(), b1));
+
+    SchemeManager buttonScheme(QPalette::Active, SchemeManager::Button, config);
+    p.fillRect(8,   1, 7, 7, buttonScheme.background());
+    p.fillRect(9,   2, 5, 2, QBrush(buttonScheme.foreground().color(), b1));
+
+    p.fillRect(15,  1, 7, 7, group.readEntry(QLatin1String("activeBackground"),        QColor(96, 148, 207)));
+    p.fillRect(16,  2, 5, 2, QBrush(group.readEntry(QLatin1String("activeForeground"), QColor(255, 255, 255)), b1));
+
+    SchemeManager viewScheme(QPalette::Active, SchemeManager::View, config);
+    p.fillRect(1,   8, 7, 7, viewScheme.background());
+    p.fillRect(2,  12, 5, 2, QBrush(viewScheme.foreground().color(), b2));
+
+    SchemeManager selectionScheme(QPalette::Active, SchemeManager::Selection, config);
+    p.fillRect(8,   8, 7, 7, selectionScheme.background());
+    p.fillRect(9,  12, 5, 2, QBrush(selectionScheme.foreground().color(), b2));
+
+    p.fillRect(15,  8, 7, 7, group.readEntry(QLatin1String("inactiveBackground"),        QColor(224, 223, 222)));
+    p.fillRect(16, 12, 5, 2, QBrush(group.readEntry(QLatin1String("inactiveForeground"), QColor(20,  19,  18)), b2));
+
+    p.end();
+    return pixmap;
+}
+
+// ---------------------------------------------------------------
 
 ThemeManager::ThemeManager()
     : d(new Private)
@@ -229,7 +275,7 @@ void ThemeManager::populateThemeMenu()
         const QString filename  = schemeFiles.at(i);
         const QFileInfo info(filename);
         KSharedConfigPtr config = KSharedConfig::openConfig(filename);
-        QIcon icon              = createSchemePreviewIcon(config);
+        QIcon icon              = d->createSchemePreviewIcon(config);
         KConfigGroup group(config, "General");
         const QString name      = group.readEntry("Name", info.baseName());
         QAction* const ac       = new QAction(name, d->themeMenuActionGroup);
@@ -261,50 +307,12 @@ void ThemeManager::updateCurrentDesktopDefaultThemePreview()
         if (action->text().remove(QLatin1Char('&')) == defaultThemeName())
         {
             KSharedConfigPtr config = KSharedConfig::openConfig(d->themeMap.value(currentDesktopdefaultTheme()));
-            QIcon icon              = createSchemePreviewIcon(config);
+            QIcon icon              = d->createSchemePreviewIcon(config);
             action->setIcon(icon);
         }
     }
 }
 
-QPixmap ThemeManager::createSchemePreviewIcon(const KSharedConfigPtr& config) const
-{
-    const uchar bits1[] = { 0xff, 0xff, 0xff, 0x2c, 0x16, 0x0b };
-    const uchar bits2[] = { 0x68, 0x34, 0x1a, 0xff, 0xff, 0xff };
-    const QSize bitsSize(24, 2);
-    const QBitmap b1    = QBitmap::fromData(bitsSize, bits1);
-    const QBitmap b2    = QBitmap::fromData(bitsSize, bits2);
-
-    QPixmap pixmap(23, 16);
-    pixmap.fill(Qt::black); // FIXME use some color other than black for borders?
-
-    KConfigGroup group(config, QLatin1String("WM"));
-    QPainter p(&pixmap);
-    SchemeManager windowScheme(QPalette::Active, SchemeManager::Window, config);
-    p.fillRect(1,  1, 7, 7, windowScheme.background());
-    p.fillRect(2,  2, 5, 2, QBrush(windowScheme.foreground().color(), b1));
-
-    SchemeManager buttonScheme(QPalette::Active, SchemeManager::Button, config);
-    p.fillRect(8,   1, 7, 7, buttonScheme.background());
-    p.fillRect(9,   2, 5, 2, QBrush(buttonScheme.foreground().color(), b1));
-
-    p.fillRect(15,  1, 7, 7, group.readEntry(QLatin1String("activeBackground"),        QColor(96, 148, 207)));
-    p.fillRect(16,  2, 5, 2, QBrush(group.readEntry(QLatin1String("activeForeground"), QColor(255, 255, 255)), b1));
-
-    SchemeManager viewScheme(QPalette::Active, SchemeManager::View, config);
-    p.fillRect(1,   8, 7, 7, viewScheme.background());
-    p.fillRect(2,  12, 5, 2, QBrush(viewScheme.foreground().color(), b2));
-
-    SchemeManager selectionScheme(QPalette::Active, SchemeManager::Selection, config);
-    p.fillRect(8,   8, 7, 7, selectionScheme.background());
-    p.fillRect(9,  12, 5, 2, QBrush(selectionScheme.foreground().color(), b2));
-
-    p.fillRect(15,  8, 7, 7, group.readEntry(QLatin1String("inactiveBackground"),        QColor(224, 223, 222)));
-    p.fillRect(16, 12, 5, 2, QBrush(group.readEntry(QLatin1String("inactiveForeground"), QColor(20,  19,  18)), b2));
-
-    p.end();
-    return pixmap;
-}
 
 QString ThemeManager::currentDesktopdefaultTheme() const
 {

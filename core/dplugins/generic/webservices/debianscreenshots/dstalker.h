@@ -25,7 +25,10 @@
 
 // KDE includes
 
-#include <kio/job.h>
+namespace KIO
+{
+class Job;
+}
 
 namespace DigikamGenericDebianScreenshotsPlugin
 {

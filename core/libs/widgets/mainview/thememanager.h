@@ -30,10 +30,6 @@
 #include <QPixmap>
 #include <QString>
 
-// KDE includes
-
-#include <ksharedconfig.h>
-
 // Local includes
 
 #include "digikam_export.h"
@@ -77,7 +73,6 @@ private:
     ThemeManager();
 
     void    populateThemeMenu();
-    QPixmap createSchemePreviewIcon(const KSharedConfigPtr& config) const;
     QString currentDesktopdefaultTheme() const;
     void    updateCurrentDesktopDefaultThemePreview();
 
