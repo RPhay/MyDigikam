@@ -27,8 +27,9 @@ endif()
 
 if(NOT MSVC)
 
+    REMOVE_GCC_COMPILER_WARNINGS("-Wundef")
     REMOVE_GCC_COMPILER_WARNINGS("-Werror=return-type")
-    DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wno-c++11-narrowing")
+    DISABLE_CLANG_COMPILER_WARNINGS("3.99.99" "-Wno-c++11-narrowing")
 
 endif()
 

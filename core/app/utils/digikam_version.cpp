@@ -32,12 +32,12 @@
 #include "gitversion.h"
 #include "daboutdata.h"
 
-#if !defined(__APPLE__) && defined(__GNUC__)
-#pragma GCC diagnostic push
+#if defined(Q_CC_GNU)
+#   pragma GCC diagnostic push
 #   pragma GCC diagnostic ignored "-Wdate-time"
 #endif
 
-#if defined(__APPLE__) && defined(__clang__)
+#if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
 #   pragma clang diagnostic ignored "-Wdate-time"
 #endif
@@ -77,10 +77,10 @@ const QString additionalInformation()
 
 // Restore warnings
 
-#if !defined(__APPLE__) && defined(__GNUC__)
+#if defined(Q_CC_GNU)
 #   pragma GCC diagnostic pop
 #endif
 
-#if defined(__APPLE__) && defined(__clang__)
+#if defined(Q_CC_CLANG)
 #   pragma clang diagnostic pop
 #endif
