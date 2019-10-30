@@ -197,7 +197,7 @@ public:
 public:
 
     GraphicsDImgView*          view;
-    ItemInfo                  info;
+    ItemInfo                   info;
     bool                       autoSuggest;
     bool                       showOnHover;
 
@@ -458,6 +458,7 @@ QList<QGraphicsItem*> FaceGroup::Private::hotItems(const QPointF& scenePos)
 /*
     qreal distance;
     d->faceGroup->closestItem(mapToScene(e->pos()), &distance);
+
     if (distance < 15)
         return false;
 */
@@ -484,11 +485,11 @@ void FaceGroup::itemHoverMoveEvent(QGraphicsSceneHoverEvent* e)
         else
         {
             // get all items close to pos
-            QList<QGraphicsItem*> hotItems = d->hotItems(e->scenePos());
+            QList<QGraphicsItem*> hItems = d->hotItems(e->scenePos());
             // this will be the one item shown by mouse over
-            QList<QObject*> visible        = d->visibilityController->visibleItems(ItemVisibilityController::ExcludeFadingOut);
+            QList<QObject*> visible      = d->visibilityController->visibleItems(ItemVisibilityController::ExcludeFadingOut);
 
-            foreach (QGraphicsItem* const item, hotItems)
+            foreach (QGraphicsItem* const item, hItems)
             {
                 foreach (QObject* const parent, visible)
                 {
@@ -710,8 +711,15 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
     FaceTagsIface face      = item->face();
     TagRegion currentRegion = TagRegion(item->originalRect());
 
-    if (!face.isConfirmedName() || face.region() != currentRegion ||
-        action.shallCreateNewTag() || (action.shallAssignTag() && action.tagId() != face.tagId()))
+    if (
+            !face.isConfirmedName()          ||
+            (face.region() != currentRegion) ||
+            action.shallCreateNewTag()       ||
+            (
+                 action.shallAssignTag() &&
+                 (action.tagId() != face.tagId())
+            )
+       )
     {
         int tagId = 0;
 
@@ -815,7 +823,8 @@ void FaceGroup::slotAddItemFinished(const QRectF& rect)
     if (d->manuallyAddedItem)
     {
         d->manuallyAddedItem->setRectInSceneCoordinatesAdjusted(rect);
-        FaceTagsIface face   = d->editPipeline.addManually(d->info, d->view->previewItem()->image(),
+        FaceTagsIface face   = d->editPipeline.addManually(d->info,
+                                                           d->view->previewItem()->image(),
                                                            TagRegion(d->manuallyAddedItem->originalRect()));
         FaceItem* const item = d->addItem(face);
         d->visibilityController->setItemDirectlyVisible(item, true);
