@@ -70,6 +70,7 @@ public:
         InternalWidgetStillDocked = 4
     };
 
+    // cppcheck-suppress unknownMacro
     Q_DECLARE_FLAGS(InternalWidgetStates, InternalWidgetState)
 
     GeoIfaceInternalWidgetInfo()

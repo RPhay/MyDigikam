@@ -113,6 +113,7 @@ private:
 
 } // namespace Digikam
 
+// cppcheck-suppress unknownMacro
 Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::GeoCoordinates::HasFlags)
 
 Q_DECLARE_TYPEINFO(Digikam::GeoCoordinates, Q_MOVABLE_TYPE);
