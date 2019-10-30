@@ -193,9 +193,9 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
 
             if (behavior & MetaEngineSettingsContainer::RotateByLossyRotation)
             {
-                DImg::FORMAT format = DImg::fileFormat(path);
+                DImg::FORMAT frmt = DImg::fileFormat(path);
 
-                switch (format)
+                switch (frmt)
                 {
                     case DImg::JPEG:
                     case DImg::PNG:
