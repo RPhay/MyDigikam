@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2010-12-16
- * Description : Filter combobox
+ * Description : Import filter combobox
  *
  * Copyright (C) 2010-2011 by Petri Damstén <petri dot damsten at iki dot fi>
  *
@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FILTER_COMBO_H
-#define DIGIKAM_FILTER_COMBO_H
+#ifndef DIGIKAM_IMPORT_FILTER_COMBOBOX_H
+#define DIGIKAM_IMPORT_FILTER_COMBOBOX_H
 
 // Qt includes
 
@@ -37,14 +37,14 @@ namespace Digikam
 
 class CamItemInfo;
 
-class FilterComboBox : public QComboBox
+class ImportFilterComboBox : public QComboBox
 {
     Q_OBJECT
 
 public:
 
-    explicit FilterComboBox(QWidget* const parent);
-    ~FilterComboBox();
+    explicit ImportFilterComboBox(QWidget* const parent);
+    ~ImportFilterComboBox();
 
     Filter* currentFilter();
     void saveSettings();
@@ -73,4 +73,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_FILTER_COMBO_H
+#endif // DIGIKAM_IMPORT_FILTER_COMBOBOX_H

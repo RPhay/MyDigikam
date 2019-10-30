@@ -45,7 +45,7 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "filtercombo.h"
+#include "importfiltercombobox.h"
 #include "dexpanderbox.h"
 
 namespace Digikam

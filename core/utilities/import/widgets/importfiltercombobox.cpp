@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2010-12-16
- * Description : Filter combobox
+ * Description : Import Filter combobox
  *
  * Copyright (C) 2010-2011 by Petri Damstén <petri dot damsten at iki dot fi>
  *
@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "filtercombo.h"
+#include "importfiltercombobox.h"
 
 // Qt includes
 
@@ -42,14 +42,14 @@ namespace Digikam
 {
 
 // JVC camera (see bug #133185).
-const QString FilterComboBox::defaultIgnoreNames(QLatin1String("mgr_data pgr_mgr"));
+const QString ImportFilterComboBox::defaultIgnoreNames(QLatin1String("mgr_data pgr_mgr"));
 // HP Photosmart camera (see bug #156338).
 // Minolta camera in PTP mode
-const QString FilterComboBox::defaultIgnoreExtensions(QLatin1String("dsp dps"));
+const QString ImportFilterComboBox::defaultIgnoreExtensions(QLatin1String("dsp dps"));
 
 // ---------------------------------------------------------------------------------
 
-class Q_DECL_HIDDEN FilterComboBox::Private
+class Q_DECL_HIDDEN ImportFilterComboBox::Private
 {
 public:
 
@@ -72,7 +72,7 @@ public:
             filters.append(f);
         }
 
-        FilterComboBox::defaultFilters(&filters);
+        ImportFilterComboBox::defaultFilters(&filters);
         currentFilter = group.readEntry(QLatin1String("CurrentFilter"), 0);
     }
 
@@ -87,7 +87,9 @@ public:
     QHash<QString, QStringList> mimeHash;
 };
 
-FilterComboBox::FilterComboBox(QWidget* const parent)
+// -------------------------------------------------------
+
+ImportFilterComboBox::ImportFilterComboBox(QWidget* const parent)
     : QComboBox(parent),
       d(new Private)
 {
@@ -97,18 +99,18 @@ FilterComboBox::FilterComboBox(QWidget* const parent)
             this, SLOT(indexChanged(int)));
 }
 
-FilterComboBox::~FilterComboBox()
+ImportFilterComboBox::~ImportFilterComboBox()
 {
     delete d;
 }
 
-Filter* FilterComboBox::currentFilter()
+Filter* ImportFilterComboBox::currentFilter()
 {
     Filter* const filter = d->filters.value(d->currentFilter);
     return filter;
 }
 
-void FilterComboBox::defaultFilters(FilterList* const filters)
+void ImportFilterComboBox::defaultFilters(FilterList* const filters)
 {
     if (filters->count() == 0)
     {
@@ -143,7 +145,7 @@ void FilterComboBox::defaultFilters(FilterList* const filters)
     }
 }
 
-void FilterComboBox::fillCombo()
+void ImportFilterComboBox::fillCombo()
 {
     clear();
 
@@ -155,7 +157,7 @@ void FilterComboBox::fillCombo()
     setCurrentIndex(d->currentFilter);
 }
 
-void FilterComboBox::indexChanged(int index)
+void ImportFilterComboBox::indexChanged(int index)
 {
     if (index != d->currentFilter)
     {
@@ -165,7 +167,7 @@ void FilterComboBox::indexChanged(int index)
     }
 }
 
-void FilterComboBox::saveSettings()
+void ImportFilterComboBox::saveSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(QLatin1String("Import Filters"));

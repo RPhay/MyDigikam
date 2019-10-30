@@ -22,8 +22,10 @@
  * ============================================================ */
 
 #include "importfiltermodel.h"
+
+// Local includes
+
 #include "camiteminfo.h"
-#include "filtercombo.h"
 #include "filter.h"
 #include "importimagemodel.h"
 
