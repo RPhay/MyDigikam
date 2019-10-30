@@ -58,9 +58,6 @@ private:
     bool loadImagePreview(int sizeLimit = -1);
     void convertQImageToDImg();
 
-    bool wasExifRotated();
-    bool exifRotate(const QString& filePath);
-
 private:
 
     QImage m_qimage;

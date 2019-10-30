@@ -293,7 +293,7 @@ void PreviewLoadingTask::execute()
         {
             if (!m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
             {
-                exifRotate(m_loadingDescription.filePath);
+                LoadSaveThread::exifRotate(m_img, m_loadingDescription.filePath);
             }
 
             {
@@ -396,7 +396,7 @@ void PreviewLoadingTask::execute()
 
         if (needExifRotate)
         {
-            exifRotate(m_loadingDescription.filePath);
+            LoadSaveThread::exifRotate(m_img, m_loadingDescription.filePath);
         }
 
         if (needPostProcess)
@@ -582,30 +582,6 @@ bool PreviewLoadingTask::loadImagePreview(int sizeLimit)
     }
 
     return false;
-}
-
-bool PreviewLoadingTask::wasExifRotated()
-{
-    // Keep in sync with the variant in thumbnailcreator.cpp
-    QVariant attribute(m_img.attribute(QLatin1String("exifRotated")));
-
-    return attribute.isValid() && attribute.toBool();
-}
-
-bool PreviewLoadingTask::exifRotate(const QString& filePath)
-{
-    // Keep in sync with the variant in thumbnailcreator.cpp
-    if (wasExifRotated())
-    {
-        return false;
-    }
-
-    // Rotate thumbnail based on metadata orientation information
-
-    bool rotatedOrFlipped = m_img.rotateAndFlip(LoadSaveThread::exifOrientation(m_img, filePath));
-    m_img.setAttribute(QLatin1String("exifRotated"), true);
-
-    return rotatedOrFlipped;
 }
 
 } // namespace Digikam
