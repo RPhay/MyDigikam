@@ -61,8 +61,8 @@
 #include "cameratype.h"
 #include "digikam_config.h"
 #include "gpcamera.h"
-#include "filtercombo.h"
-#include "importfilters.h"
+#include "importfiltercombobox.h"
+#include "importfilterdlg.h"
 #include "dfontselect.h"
 #include "importsettings.h"
 #include "fullscreensettings.h"
@@ -131,7 +131,8 @@ public:
 };
 
 CameraAutoDetectThread::CameraAutoDetectThread(QObject* const parent)
-    : DBusyThread(parent), d(new Private)
+    : DBusyThread(parent),
+      d(new Private)
 {
     d->result = -1;
 }
@@ -335,10 +336,12 @@ SetupCamera::SetupCamera(QWidget* const parent)
     gphotoLogoLabel->setToolTip(i18n("Visit Gphoto project website"));
 
 #ifndef HAVE_GPHOTO2
+
     // If digiKam is compiled without Gphoto2 support, we hide widgets relevant.
     d->autoDetectButton->hide();
     gphotoLogoLabel->hide();
-#endif /* HAVE_GPHOTO2 */
+
+#endif // HAVE_GPHOTO2
 
     // -------------------------------------------------------------
 
@@ -467,7 +470,7 @@ SetupCamera::SetupCamera(QWidget* const parent)
     d->iconShowSizeBox       = new QCheckBox(i18n("Show file si&ze"), iconViewGroup);
     d->iconShowSizeBox->setWhatsThis(i18n("Set this option to show the file size below the image thumbnail."));
 
-    d->iconShowDateBox    = new QCheckBox(i18n("Show camera creation &date"), iconViewGroup);
+    d->iconShowDateBox       = new QCheckBox(i18n("Show camera creation &date"), iconViewGroup);
     d->iconShowDateBox->setWhatsThis(i18n("Set this option to show the camera creation date "
                                              "below the image thumbnail."));
 
@@ -635,7 +638,7 @@ void SetupCamera::readSettings()
     {
         QList<CameraType*>* const cl = clist->cameraList();
 
-        foreach(CameraType* const ctype, *cl)
+        foreach (CameraType* const ctype, *cl)
         {
             new SetupCameraItem(d->listView, ctype);
         }
@@ -674,17 +677,17 @@ void SetupCamera::readSettings()
         d->filters.append(f);
     }
 
-    FilterComboBox::defaultFilters(&d->filters);
+    ImportFilterComboBox::defaultFilters(&d->filters);
 
-    foreach(Filter* const f, d->filters)
+    foreach (Filter* const f, d->filters)
     {
         new QListWidgetItem(f->name, d->importListView);
     }
 
     d->importListView->sortItems();
 
-    d->ignoreNamesEdit->setText(importGroup.readEntry(QLatin1String("IgnoreNames"), FilterComboBox::defaultIgnoreNames));
-    d->ignoreExtensionsEdit->setText(importGroup.readEntry(QLatin1String("IgnoreExtensions"), FilterComboBox::defaultIgnoreExtensions));
+    d->ignoreNamesEdit->setText(importGroup.readEntry(QLatin1String("IgnoreNames"), ImportFilterComboBox::defaultIgnoreNames));
+    d->ignoreExtensionsEdit->setText(importGroup.readEntry(QLatin1String("IgnoreExtensions"), ImportFilterComboBox::defaultIgnoreExtensions));
 
     ImportSettings* const settings = ImportSettings::instance();
 
@@ -939,8 +942,8 @@ void SetupCamera::slotImportSelectionChanged()
 void SetupCamera::slotAddFilter()
 {
     Filter filter;
-    filter.name                 = i18n("Untitled");
-    QPointer<ImportFilters> dlg = new ImportFilters(this);
+    filter.name                   = i18n("Untitled");
+    QPointer<ImportFilterDlg> dlg = new ImportFilterDlg(this);
     dlg->setData(filter);
 
     if (dlg->exec() == QDialog::Accepted)
@@ -981,8 +984,8 @@ void SetupCamera::slotEditFilter()
     {
         if (d->filters.at(i)->name == item->text())
         {
-            Filter filter               = *d->filters.at(i);
-            QPointer<ImportFilters> dlg = new ImportFilters(this);
+            Filter filter                 = *d->filters.at(i);
+            QPointer<ImportFilterDlg> dlg = new ImportFilterDlg(this);
             dlg->setData(filter);
 
             if (dlg->exec() == QDialog::Accepted)

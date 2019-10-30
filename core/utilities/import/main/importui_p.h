@@ -43,7 +43,7 @@
 #include "digikam_config.h"
 #include "camerathumbsctrl.h"
 #include "cameracontroller.h"
-#include "filtercombo.h"
+#include "importfiltercombobox.h"
 #include "dzoombar.h"
 #include "freespacewidget.h"
 #include "importitempropertiessidebar.h"
@@ -239,7 +239,7 @@ public:
     float                         progressValue;
 
     DHistoryView*                 historyView;
-    FilterComboBox*               filterComboBox;
+    ImportFilterComboBox*         filterComboBox;
 
     //CHUpdateItemMap               map;
 

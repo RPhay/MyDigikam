@@ -4,10 +4,9 @@
  * https://www.digikam.org
  *
  * Date        : 2010-12-16
- * Description : Import filters configuration dialog
+ * Description : Import filter combobox
  *
  * Copyright (C) 2010-2011 by Petri Damstén <petri dot damsten at iki dot fi>
- * Copyright (C) 2012-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -22,38 +21,49 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMPORT_FILTERS_H
-#define DIGIKAM_IMPORT_FILTERS_H
+#ifndef DIGIKAM_IMPORT_FILTER_COMBOBOX_H
+#define DIGIKAM_IMPORT_FILTER_COMBOBOX_H
 
 // Qt includes
 
-#include <QDialog>
+#include <QComboBox>
 
 // Local includes
 
-#include "filtercombo.h"
+#include "filter.h"
 
 namespace Digikam
 {
 
-class ImportFilters : public QDialog
+class CamItemInfo;
+
+class ImportFilterComboBox : public QComboBox
 {
     Q_OBJECT
 
 public:
 
-    explicit ImportFilters(QWidget* const parent = nullptr);
-    ~ImportFilters();
+    explicit ImportFilterComboBox(QWidget* const parent);
+    ~ImportFilterComboBox();
 
-    void setData(const Filter& filter);
-    void getData(Filter* const filter);
+    Filter* currentFilter();
+    void saveSettings();
+
+    static void  defaultFilters(FilterList* const filters);
+    static const QString defaultIgnoreNames;
+    static const QString defaultIgnoreExtensions;
+
+Q_SIGNALS:
+
+    void filterChanged(Filter *);
+
+protected:
+
+    void  fillCombo();
 
 protected Q_SLOTS:
 
-    void fileNameCheckBoxClicked();
-    void pathCheckBoxClicked();
-    void mimeCheckBoxClicked();
-    void mimeButtonClicked();
+    void indexChanged(int index);
 
 private:
 
@@ -63,4 +73,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_IMPORT_FILTERS_H
+#endif // DIGIKAM_IMPORT_FILTER_COMBOBOX_H

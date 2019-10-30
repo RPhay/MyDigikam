@@ -50,7 +50,7 @@ set(libimportui_SRCS
     widgets/advancedsettings.cpp
     widgets/scriptingsettings.cpp
     widgets/filter.cpp
-    widgets/filtercombo.cpp
+    widgets/importfiltercombobox.cpp
     widgets/importcontextmenu.cpp
     widgets/dngconvertsettings.cpp
 

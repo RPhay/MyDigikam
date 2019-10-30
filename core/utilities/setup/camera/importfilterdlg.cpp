@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "importfilters.h"
+#include "importfilterdlg.h"
 
 // Qt includes
 
@@ -45,13 +45,13 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "filtercombo.h"
+#include "importfiltercombobox.h"
 #include "dexpanderbox.h"
 
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN ImportFilters::Private
+class Q_DECL_HIDDEN ImportFilterDlg::Private
 {
 public:
 
@@ -84,7 +84,7 @@ public:
 
 // ----------------------------------------------------------------------------------------
 
-ImportFilters::ImportFilters(QWidget* const parent)
+ImportFilterDlg::ImportFilterDlg(QWidget* const parent)
     : QDialog(parent),
       d(new Private)
 {
@@ -183,12 +183,12 @@ ImportFilters::ImportFilters(QWidget* const parent)
     adjustSize();
 }
 
-ImportFilters::~ImportFilters()
+ImportFilterDlg::~ImportFilterDlg()
 {
     delete d;
 }
 
-void ImportFilters::fileNameCheckBoxClicked()
+void ImportFilterDlg::fileNameCheckBoxClicked()
 {
     if (!d->fileNameCheckBox->isChecked())
     {
@@ -196,7 +196,7 @@ void ImportFilters::fileNameCheckBoxClicked()
     }
 }
 
-void ImportFilters::pathCheckBoxClicked()
+void ImportFilterDlg::pathCheckBoxClicked()
 {
     if (!d->pathCheckBox->isChecked())
     {
@@ -204,7 +204,7 @@ void ImportFilters::pathCheckBoxClicked()
     }
 }
 
-void ImportFilters::mimeCheckBoxClicked()
+void ImportFilterDlg::mimeCheckBoxClicked()
 {
     if (!d->mimeCheckBox->isChecked())
     {
@@ -212,7 +212,7 @@ void ImportFilters::mimeCheckBoxClicked()
     }
 }
 
-void ImportFilters::mimeButtonClicked()
+void ImportFilterDlg::mimeButtonClicked()
 {
     QString text     = i18n("Select the MimeTypes you want for this filter.");
     QStringList list = d->mimeLabel->adjustedText().split(QLatin1Char(';'), QString::SkipEmptyParts);
@@ -227,7 +227,7 @@ void ImportFilters::mimeButtonClicked()
     delete dlg;
 }
 
-void ImportFilters::setData(const Filter& filter)
+void ImportFilterDlg::setData(const Filter& filter)
 {
     d->filterName->setText(filter.name);
     d->mimeCheckBox->setChecked(!filter.mimeFilter.isEmpty());
@@ -242,7 +242,7 @@ void ImportFilters::setData(const Filter& filter)
     d->newFilesCheckBox->setChecked(filter.onlyNew);
 }
 
-void ImportFilters::getData(Filter* const filter)
+void ImportFilterDlg::getData(Filter* const filter)
 {
     filter->name       = d->filterName->text();
     filter->mimeFilter = d->mimeLabel->adjustedText();
