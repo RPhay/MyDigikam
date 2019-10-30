@@ -62,7 +62,7 @@
 #include "digikam_config.h"
 #include "gpcamera.h"
 #include "filtercombo.h"
-#include "importfilters.h"
+#include "importfilterdlg.h"
 #include "dfontselect.h"
 #include "importsettings.h"
 #include "fullscreensettings.h"
@@ -939,8 +939,8 @@ void SetupCamera::slotImportSelectionChanged()
 void SetupCamera::slotAddFilter()
 {
     Filter filter;
-    filter.name                 = i18n("Untitled");
-    QPointer<ImportFilters> dlg = new ImportFilters(this);
+    filter.name                   = i18n("Untitled");
+    QPointer<ImportFilterDlg> dlg = new ImportFilterDlg(this);
     dlg->setData(filter);
 
     if (dlg->exec() == QDialog::Accepted)
@@ -981,8 +981,8 @@ void SetupCamera::slotEditFilter()
     {
         if (d->filters.at(i)->name == item->text())
         {
-            Filter filter               = *d->filters.at(i);
-            QPointer<ImportFilters> dlg = new ImportFilters(this);
+            Filter filter                 = *d->filters.at(i);
+            QPointer<ImportFilterDlg> dlg = new ImportFilterDlg(this);
             dlg->setData(filter);
 
             if (dlg->exec() == QDialog::Accepted)

@@ -36,7 +36,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "importfilters.h"
 #include "camiteminfo.h"
 
 namespace Digikam

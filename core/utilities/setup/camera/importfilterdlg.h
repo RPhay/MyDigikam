@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_IMPORT_FILTERS_H
-#define DIGIKAM_IMPORT_FILTERS_H
+#ifndef DIGIKAM_IMPORT_FILTER_DLG_H
+#define DIGIKAM_IMPORT_FILTER_DLG_H
 
 // Qt includes
 
@@ -36,14 +36,14 @@
 namespace Digikam
 {
 
-class ImportFilters : public QDialog
+class ImportFilterDlg : public QDialog
 {
     Q_OBJECT
 
 public:
 
-    explicit ImportFilters(QWidget* const parent = nullptr);
-    ~ImportFilters();
+    explicit ImportFilterDlg(QWidget* const parent = nullptr);
+    ~ImportFilterDlg();
 
     void setData(const Filter& filter);
     void getData(Filter* const filter);
@@ -63,4 +63,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_IMPORT_FILTERS_H
+#endif // DIGIKAM_IMPORT_FILTER_DLG_H
