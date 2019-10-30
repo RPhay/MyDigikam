@@ -32,7 +32,8 @@ Notice to make release tarballs from GIT
     Look with "git tag" command for exiting tags in git.
     These git tags will be used to make tarball and all bundles.
 
-7/  Run the bootstrap.tarball script to release digiKam source tarball. This will include all translations
+7/  Edit the bootstrap.tarball and patch the value from TARBALL_VERSION.
+    Run the bootstrap.tarball script to release digiKam source tarball. This will include all translations
     files and the documentation. The script compiles all translations files to see if nothing is broken.
     At the end, if all is fine, the tarball properties must be displayed.
     3 files are generated:

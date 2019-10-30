@@ -1,4 +1,4 @@
-digiKam 6.4.0 - Release date: 2019-??-??
+digiKam 6.4.0 - Release date: 2019-11-02
 
 *****************************************************************************************************
 NEW FEATURES:
@@ -91,4 +91,3 @@ BUGFIXES:
 073 ==> 406019 - Corrupted image thumbnail on some pictures.
 074 ==> 413488 - Albums/Database inconsistencies digiKam.
 075 ==> 413422 - No access of photo collection via digiKam.
-076 ==> 
