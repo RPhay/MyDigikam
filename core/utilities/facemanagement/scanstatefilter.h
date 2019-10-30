@@ -64,9 +64,9 @@ protected:
 
 protected:
 
-    QList<ItemInfo>                        toFilter;
+    QList<ItemInfo>                         toFilter;
     QList<FacePipelineExtendedPackage::Ptr> toSend;
-    QList<ItemInfo>                        toBeSkipped;
+    QList<ItemInfo>                         toBeSkipped;
 };
 
 } // namespace Digikam
