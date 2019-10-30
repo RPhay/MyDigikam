@@ -85,7 +85,7 @@ public:
     /**
      * Marks the image as scanned for faces.
      */
-    void                markAsScanned(qlonglong imageid, bool hasBeenScanned = true) const;
+    void                markAsScanned(qlonglong imageid, bool hasBeenScanned = true)    const;
     void                markAsScanned(const ItemInfo& info, bool hasBeenScanned = true) const;
 
     // --- Utilities ---
@@ -103,16 +103,18 @@ public:
      * Store the needed thumbnails for the given faces. This can be a huge optimization
      * when the has already been loaded anyway.
      */
-    void                storeThumbnails(ThumbnailLoadThread* const thread, const QString& filePath,
-                                        const QList<FaceTagsIface>& databaseFaces, const DImg& image);
+    void                storeThumbnails(ThumbnailLoadThread* const thread,
+                                        const QString& filePath,
+                                        const QList<FaceTagsIface>& databaseFaces,
+                                        const DImg& image);
 
     /**
      * Conversion
      */
     QList<FaceTagsIface> toFaceTagsIfaces(qlonglong imageid,
-                                        const QList<QRectF>& detectedFaces,
-                                        const QList<Identity> recognitionResults,
-                                        const QSize& fullSize) const;
+                                         const QList<QRectF>& detectedFaces,
+                                         const QList<Identity> recognitionResults,
+                                         const QSize& fullSize) const;
 
     /**
      * For display, it may be desirable to display a slightly larger region than the strict
@@ -121,7 +123,7 @@ public:
      */
     static int          faceRectDisplayMargin();
 
-    Identity identityForTag(int tagId, RecognitionDatabase& db) const;
+    Identity identityForTag(int tagId, RecognitionDatabase& db)   const;
     int                  tagForIdentity(const Identity& identity) const;
 
 protected:

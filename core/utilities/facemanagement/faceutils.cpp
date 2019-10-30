@@ -124,8 +124,10 @@ QList<FaceTagsIface> FaceUtils::toFaceTagsIfaces(qlonglong imageid,
 
 // --- Images in faces and thumbnails ---
 
-void FaceUtils::storeThumbnails(ThumbnailLoadThread* const thread, const QString& filePath,
-                                const QList<FaceTagsIface>& databaseFaces, const DImg& image)
+void FaceUtils::storeThumbnails(ThumbnailLoadThread* const thread,
+                                const QString& filePath,
+                                const QList<FaceTagsIface>& databaseFaces,
+                                const DImg& image)
 {
     foreach (const FaceTagsIface& face, databaseFaces)
     {
@@ -187,9 +189,9 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
             if (newFace.isUnknownName())
             {
                 // we have no name in the new face. Do we have one in the old faces?
-                for (int i = 0 ; i < overlappingEntries.size() ; ++i)
+                for (int j = 0 ; j < overlappingEntries.size() ; ++j)
                 {
-                    const FaceTagsIface& oldFace = overlappingEntries.at(i);
+                    const FaceTagsIface& oldFace = overlappingEntries.at(j);
 
                     if (oldFace.isUnknownName())
                     {
@@ -206,9 +208,9 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
             else
             {
                 // we have a name in the new face. Do we have names in overlapping faces?
-                for (int i = 0 ; i < overlappingEntries.size() ; ++i)
+                for (int j = 0 ; j < overlappingEntries.size() ; ++j)
                 {
-                    FaceTagsIface& oldFace = overlappingEntries[i];
+                    FaceTagsIface& oldFace = overlappingEntries[j];
 
                     if (oldFace.isUnknownName())
                     {
@@ -248,8 +250,10 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
             removeFaces(overlappingEntries);
 
             ItemTagPair pair(imageid, newFace.tagId());
+
             // UnconfirmedName and UnknownName have the same attribute
             addFaceAndTag(pair, newFace, FaceTagsIface::attributesForFlags(FaceTagsIface::UnconfirmedName), false);
+
             // If the face is unconfirmed and the tag is not the unknown person tag, set the unconfirmed person property.
             if (newFace.isUnconfirmedType() && !FaceTags::isTheUnknownPerson(newFace.tagId()))
             {
@@ -265,7 +269,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
 Identity FaceUtils::identityForTag(int tagId, RecognitionDatabase& db) const
 {
     QMap<QString, QString> attributes = FaceTags::identityAttributes(tagId);
-    Identity identity    = db.findIdentity(attributes);
+    Identity identity                 = db.findIdentity(attributes);
 
     if (!identity.isNull())
     {
