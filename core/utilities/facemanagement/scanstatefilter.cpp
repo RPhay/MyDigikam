@@ -139,8 +139,8 @@ void ScanStateFilter::run()
         // process list
         if (!todo.isEmpty())
         {
-            QList<FacePipelineExtendedPackage::Ptr> send;
-            QList<ItemInfo> skip;
+            QList<FacePipelineExtendedPackage::Ptr> itemsToSend;
+            QList<ItemInfo>                         itemsToSkip;
 
             foreach (const ItemInfo& info, todo)
             {
@@ -148,11 +148,11 @@ void ScanStateFilter::run()
 
                 if (package)
                 {
-                    send << package;
+                    itemsToSend << package;
                 }
                 else
                 {
-                    skip << info;
+                    itemsToSkip << info;
                 }
             }
 
@@ -160,8 +160,8 @@ void ScanStateFilter::run()
 
             {
                 QMutexLocker lock(threadMutex());
-                toSend      << send;
-                toBeSkipped << skip;
+                toSend      << itemsToSend;
+                toBeSkipped << itemsToSkip;
             }
 
             emit infosToDispatch();
@@ -171,27 +171,27 @@ void ScanStateFilter::run()
 
 void ScanStateFilter::dispatch()
 {
-    QList<FacePipelineExtendedPackage::Ptr> send;
+    QList<FacePipelineExtendedPackage::Ptr> itemsToSend;
+    QList<ItemInfo>                         itemsToSkip;
 
-    QList<ItemInfo> skip;
     {
         QMutexLocker lock(threadMutex());
-        send = toSend;
+        itemsToSend = toSend;
         toSend.clear();
-        skip = toBeSkipped;
+        itemsToSkip = toBeSkipped;
         toBeSkipped.clear();
     }
 
     //qCDebug(DIGIKAM_GENERAL_LOG) << "Dispatching, sending" << send.size() << "skipping" << skip.size();
 
-    if (!skip.isEmpty())
+    if (!itemsToSkip.isEmpty())
     {
-        d->skipFromFilter(skip);
+        d->skipFromFilter(itemsToSkip);
     }
 
-    if (!send.isEmpty())
+    if (!itemsToSend.isEmpty())
     {
-        d->sendFromFilter(send);
+        d->sendFromFilter(itemsToSend);
     }
 }
 
