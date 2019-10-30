@@ -106,7 +106,11 @@ void UndoManager::addAction(UndoAction* const action)
     {
         QVariant      originDataBeforeStep    = d->core->getImg()->fileOriginData();
         DImageHistory originHistoryBeforeStep = d->core->getResolvedInitialHistory();
-        action->setFileOriginData(originDataBeforeStep, originHistoryBeforeStep);
+
+        if (action)
+        {
+            action->setFileOriginData(originDataBeforeStep, originHistoryBeforeStep);
+        }
     }
 
     // if origin is at one of the redo action that are now invalid,

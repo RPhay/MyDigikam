@@ -51,9 +51,9 @@ class HaarProgressObserver
 {
 public:
 
-    virtual ~HaarProgressObserver() = default;
+    virtual ~HaarProgressObserver()                              = default;
 
-    virtual void totalNumberToScan(int number) = 0;
+    virtual void totalNumberToScan(int number)                   = 0;
     virtual void processedNumber(int numberThatHasBeenProcessed) = 0;
     virtual bool isCanceled()
     {
@@ -137,8 +137,8 @@ public:
                                                                              double maximumPercentage,
                                                                              const QList<int>& targetAlbums,
                                                                              DuplicatesSearchRestrictions
-                                                                               searchResultRestriction =
-                                                                               DuplicatesSearchRestrictions::None,
+                                                                                searchResultRestriction =
+                                                                                DuplicatesSearchRestrictions::None,
                                                                              SketchType type = ScannedSketch);
 
     /** Searches the database for the best matches for the specified query image.
@@ -150,8 +150,8 @@ public:
                                                                              double maximumPercentage,
                                                                              const QList<int>& targetAlbums,
                                                                              DuplicatesSearchRestrictions
-                                                                               searchResultRestriction =
-                                                                               DuplicatesSearchRestrictions::None,
+                                                                                searchResultRestriction =
+                                                                                DuplicatesSearchRestrictions::None,
                                                                              SketchType type=ScannedSketch);
 
     /** Calculates the Haar signature, bring it in a form as stored in the DB,
@@ -162,15 +162,20 @@ public:
     /** Checks whether the image with the given imageId fulfills all restrictions given in
      * targetAlbums and in respect to searchResultRestriction.
      */
-    bool fulfillsRestrictions(qlonglong imageId, int albumId, qlonglong originalImageId,
-                              int originalAlbumId, const QList<int>& targetAlbums,
+    bool fulfillsRestrictions(qlonglong imageId,
+                              int albumId,
+                              qlonglong originalImageId,
+                              int originalAlbumId,
+                              const QList<int>& targetAlbums,
                               DuplicatesSearchRestrictions searchResultRestriction);
 
     /** For a given signature, find out the highest and lowest possible score
      *  that any other signature could reach, compared to the given signature.
      */
-    void getBestAndWorstPossibleScore(Haar::SignatureData* const querySig, SketchType type,
-                                      double* const lowestAndBestScore, double* const highestAndWorstScore);
+    void getBestAndWorstPossibleScore(Haar::SignatureData* const querySig,
+                                      SketchType type,
+                                      double* const lowestAndBestScore,
+                                      double* const highestAndWorstScore);
 
     /** Fill a map of duplicates images found over a list of image to scan.
      *  For each map item, the result values is list of candidate images which are duplicates of the key image.
@@ -181,8 +186,8 @@ public:
                                                                      double requiredPercentage,
                                                                      double maximumPercentage,
                                                                      DuplicatesSearchRestrictions
-                                                                       searchResultRestriction =
-                                                                       DuplicatesSearchRestrictions::None,
+                                                                        searchResultRestriction =
+                                                                        DuplicatesSearchRestrictions::None,
                                                                      HaarProgressObserver* const observer = nullptr);
 
     /** Calls findDuplicates with all images in the given album ids
@@ -200,8 +205,8 @@ public:
                                                                                     double requiredPercentage,
                                                                                     double maximumPercentage,
                                                                                     DuplicatesSearchRestrictions
-                                                                                      searchResultRestriction =
-                                                                                      DuplicatesSearchRestrictions::None,
+                                                                                       searchResultRestriction =
+                                                                                       DuplicatesSearchRestrictions::None,
                                                                                     HaarProgressObserver* const observer = nullptr);
 
     /** Rebuilds the special search albums in the database that contain a list of possible candidates
@@ -213,8 +218,8 @@ public:
                                  double requiredPercentage,
                                  double maximumPercentage,
                                  DuplicatesSearchRestrictions
-                                   searchResultRestriction =
-                                   DuplicatesSearchRestrictions::None,
+                                    searchResultRestriction =
+                                    DuplicatesSearchRestrictions::None,
                                  HaarProgressObserver* const observer = nullptr);
 
     /** This method rebuilds the given SAlbums by searching duplicates and replacing the SAlbums by the updated versions.
@@ -227,8 +232,8 @@ public:
                                  double requiredPercentage,
                                  double maximumPercentage,
                                  DuplicatesSearchRestrictions
-                                   searchResultRestriction =
-                                   DuplicatesSearchRestrictions::None,
+                                    searchResultRestriction =
+                                    DuplicatesSearchRestrictions::None,
                                  HaarProgressObserver* const observer = nullptr);
 
     /** Retrieve the Haar signature from database using image id.
@@ -268,7 +273,7 @@ private:
                                                                      double maximumPercentage,
                                                                      const QList<int>& targetAlbums,
                                                                      DuplicatesSearchRestrictions
-                                                                       searchResultRestriction,
+                                                                        searchResultRestriction,
                                                                      SketchType type);
 
     /** This function generates the scores for all images in database.
@@ -283,7 +288,7 @@ private:
                                            SketchType type,
                                            const QList<int>& targetAlbums,
                                            DuplicatesSearchRestrictions
-                                             searchResultRestriction = None,
+                                              searchResultRestriction = None,
                                            qlonglong originalImageId = -1,
                                            int albumId = -1);
 

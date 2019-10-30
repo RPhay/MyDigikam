@@ -560,7 +560,7 @@ DatabaseServerError DatabaseServer::initMysqlDatabase() const
                 break;
             }
 
-            if (d->databaseProcess->waitForFinished(500))
+            if (d->databaseProcess && d->databaseProcess->waitForFinished(500))
             {
                 exited = true;
                 break;
