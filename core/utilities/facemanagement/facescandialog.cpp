@@ -553,7 +553,7 @@ FaceScanSettings FaceScanDialog::settings() const
         if (album->parent() != nullptr                                &&
             album->parent()->title() == QString::fromLatin1("People") &&
             albumTitle != QString::fromLatin1("Unknown")              &&
-            albumTitle != QString::fromLatin1("Unconfirmed"))         &&
+            albumTitle != QString::fromLatin1("Unconfirmed"))
         {
             // set settingsConflicted back to false in case that there are tags to recognize
             d->settingsConflicted = false;

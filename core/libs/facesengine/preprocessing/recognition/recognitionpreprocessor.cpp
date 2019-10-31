@@ -36,20 +36,20 @@ class RecognitionPreprocessor::Private
 
 public:
 
-	explicit Private();
-	~Private();
+    explicit Private();
+    ~Private();
 
-	void init(PreprocessorSelection mode);
-	cv::Mat preprocess(const cv::Mat& image);
+    void init(PreprocessorSelection mode);
+    cv::Mat preprocess(const cv::Mat& image);
 
 private:
 
-	int						preprocessingMode;
+    int                   preprocessingMode;
 
-	OpenfacePreprocessor*	ofpreprocessor;
-
+    OpenfacePreprocessor* ofpreprocessor;
 };
 
+// -------------------------------------------------------------------------------
 
 RecognitionPreprocessor::Private::Private()
   : preprocessingMode(-1),

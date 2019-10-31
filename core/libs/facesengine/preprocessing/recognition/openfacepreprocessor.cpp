@@ -33,12 +33,9 @@
 
 // Local includes
 
-#include "fullobjectdetection.h"
 #include "digikam_debug.h"
-
-
-#include <opencv2/imgproc.hpp>
-#include <opencv2/highgui.hpp>
+#include "digikam_opencv.h"
+#include "fullobjectdetection.h"
 
 using namespace Digikam;
 
@@ -46,14 +43,14 @@ using namespace Digikam;
 
 /** Template for face landmark to perform alignment with open face
   * This variable must be declared as static so that it is allocated as long as
-  * dk is still running. We need that because this variable is the internal data 
+  * digiKam is still running. We need that because this variable is the internal data
   * for matrix faceTemplate below.
-  */ 
-static float FACE_TEMPLATE[3][2] =  { 
-                                        {18.639072, 16.249624}, 
-                                        {75.73048, 15.18443}, 
-                                        {47.515285, 49.38637} 
-                                    };
+  */
+static float FACE_TEMPLATE[3][2] = {
+                                       {18.639072, 16.249624},
+                                       {75.73048,  15.18443 },
+                                       {47.515285, 49.38637 }
+                                   };
 
 // ---------------------------------------------------------------------------------------------------
 
@@ -70,10 +67,10 @@ OpenfacePreprocessor::~OpenfacePreprocessor()
 
 void OpenfacePreprocessor::init()
 {
-	// Load shapepredictor model for face alignment with 68 points of face landmark extraction
+    // Load shapepredictor model for face alignment with 68 points of face landmark extraction
 
     QString spdata = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                           	QLatin1String("digikam/facesengine/shapepredictor.dat"));
+                                            QLatin1String("digikam/facesengine/shapepredictor.dat"));
     QFile model(spdata);
     redeye::ShapePredictor* const temp = new redeye::ShapePredictor();
 
@@ -100,7 +97,7 @@ void OpenfacePreprocessor::init()
 
 cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
 {
-	int type = image.type();
+    int type = image.type();
     qCDebug(DIGIKAM_FACEDB_LOG) << "type: " << type;
 
     cv::Mat gray;
@@ -122,13 +119,15 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
     cv::Rect new_rect(0, 0, image.cols, image.rows);
     cv::Mat landmarks(3,2,CV_32F);
     FullObjectDetection object = sp(gray, new_rect);
-    for(size_t i = 0; i < outerEyesNosePositions.size(); i++)
+
+    for (size_t i = 0; i < outerEyesNosePositions.size(); ++i)
     {
-    	int index = outerEyesNosePositions[i];
+        int index                = outerEyesNosePositions[i];
         landmarks.at<float>(i,0) = object.part(index)[0];
         landmarks.at<float>(i,1) = object.part(index)[1];
         // qDebug() << "index = " << index << ", landmarks: (" << landmarks.at<float>(i,0) << ", " << landmarks.at<float>(i,1) << ")\n";
     }
+
     qCDebug(DIGIKAM_FACEDB_LOG) << "Full object detection and landmard computation finished";
     // qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing landmark in " << timer.restart() << " ms";
 
@@ -138,8 +137,8 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
 
     if(alignedFace.empty())
     {
-    	qCDebug(DIGIKAM_FACEDB_LOG) << "Face alignment failed!";
-    	return image; 
+        qCDebug(DIGIKAM_FACEDB_LOG) << "Face alignment failed!";
+        return image;
     }
     else
     {
