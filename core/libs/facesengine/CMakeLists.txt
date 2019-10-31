@@ -70,12 +70,12 @@ set(facesengine_LIB_SRCS facedetector.cpp
                          # preprocessing/tantriggs/tantriggspreprocessor.cpp
 )
 
-set(facesengine_database_LIB_SRCS recognitiondatabase.cpp
-                                  recognitiondatabase_p.cpp
-                                  recognitiondatabase_identity.cpp
-                                  recognitiondatabase_training.cpp
-                                  recognitiondatabase_backend.cpp
-                                  recognitiondatabase_recognize.cpp
+set(facesengine_database_LIB_SRCS recognition/recognitiondatabase.cpp
+                                  recognition/recognitiondatabase_p.cpp
+                                  recognition/recognitiondatabase_identity.cpp
+                                  recognition/recognitiondatabase_training.cpp
+                                  recognition/recognitiondatabase_backend.cpp
+                                  recognition/recognitiondatabase_recognize.cpp
                                   simpletrainingdataprovider.cpp
 
                                   # Eigen Faces recognition module based on OpenCV
