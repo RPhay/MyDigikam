@@ -8,4 +8,5 @@ FaceManagement: new Neural Network engine based on OpenCV to detect and recogniz
 *****************************************************************************************************
 BUGFIXES:
 
-001 ==> 
+001 ==> 384401 - Various recognition algorithm improvements for face detection.
+002 ==> 
