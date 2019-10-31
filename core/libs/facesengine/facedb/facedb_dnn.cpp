@@ -93,7 +93,7 @@ void FaceDb::updateDNNFaceModel(DNNFaceModel& model)
 
                 model.setWrittenToDatabase(i, insertedId.toInt());
 
-                qCDebug(DIGIKAM_FACEDB_LOG) << "Commit compressed mat data " << insertedId << " for identity "
+                qCDebug(DIGIKAM_FACEDB_LOG) << "Commit compressed face mat data " << insertedId << " for identity "
                                             << metadata.identity << " with size " << compressed_vecdata.size();
             }
         }
@@ -132,12 +132,12 @@ DNNFaceModel FaceDb::dnnFaceModel(bool debug) const
 
             if (new_vec.isEmpty())
             {
-                qCWarning(DIGIKAM_FACEDB_LOG) << "Cannot uncompress mat data to checkout from database for identity "
+                qCWarning(DIGIKAM_FACEDB_LOG) << "Cannot uncompress face mat data to checkout from database for identity "
                                               << metadata.identity;
             }
             else
             {
-                qCDebug(DIGIKAM_FACEDB_LOG) << "Checkout mat data " << metadata.databaseId << " for identity "
+                qCDebug(DIGIKAM_FACEDB_LOG) << "Checkout face mat data " << metadata.databaseId << " for identity "
                                             << metadata.identity << " with size " << cData.size();
 
                 float* const it = (float *)new_vec.data();
@@ -153,7 +153,7 @@ DNNFaceModel FaceDb::dnnFaceModel(bool debug) const
         }
         else
         {
-            qCWarning(DIGIKAM_FACEDB_LOG) << "Mat data to checkout from database are empty for identity "
+            qCWarning(DIGIKAM_FACEDB_LOG) << "Face mat data to checkout from database are empty for identity "
                                           << metadata.identity;
         }
     }
