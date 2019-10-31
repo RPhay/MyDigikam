@@ -57,8 +57,9 @@ public:
     explicit FaceDb(FaceDbBackend* const db);
     ~FaceDb();
 
-    BdEngineBackend::QueryState setSetting(const QString& keyword, const QString& value);
-    QString setting(const QString& keyword) const;
+public:
+
+    // --- Identity management
 
     int  addIdentity() const;
     void updateIdentity(const Identity& p);
@@ -67,30 +68,43 @@ public:
     QList<Identity> identities()  const;
     QList<int>      identityIds() const;
 
-    /// OpenCV LBPH
+public:
+
+    // --- OpenCV LBPH
 
     void updateLBPHFaceModel(LBPHFaceModel& model);
     LBPHFaceModel lbphFaceModel() const;
     void clearLBPHTraining(const QString& context = QString());
     void clearLBPHTraining(const QList<int>& identities, const QString& context = QString());
 
-    /// OpenCV EIGEN
+public:
+
+    // --- OpenCV EIGEN
 
     void updateEIGENFaceModel(EigenFaceModel& model, const std::vector<cv::Mat>& images_rgb);
     EigenFaceModel eigenFaceModel() const;
     void clearEIGENTraining(const QString& context = QString());
     void clearEIGENTraining(const QList<int>& identities, const QString& context = QString());
 
-    /// OpenCV FISHER
+public:
+
+    // --- OpenCV FISHER
 
     FisherFaceModel fisherFaceModel() const;
 
-    /// OpenCV DNN
+public:
+
+    // --- OpenCV DNN
 
     void updateDNNFaceModel(DNNFaceModel& model);
     DNNFaceModel dnnFaceModel(bool debug) const;
 
-    // ----------- Database shrinking methods ----------
+public:
+
+    // --- Database helpers
+
+    BdEngineBackend::QueryState setSetting(const QString& keyword, const QString& value);
+    QString setting(const QString& keyword) const;
 
     /**
      * Returns true if the integrity of the database is preserved.
