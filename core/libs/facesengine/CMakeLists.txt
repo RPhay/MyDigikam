@@ -108,6 +108,12 @@ set(facesengine_database_LIB_SRCS recognitiondatabase.cpp
                                   facedb/facedboperationgroup.cpp
                                   facedb/facedbschemaupdater.cpp
                                   facedb/facedb.cpp
+                                  facedb/facedb_identity.cpp
+                                  facedb/facedb_lbph.cpp
+                                  facedb/facedb_eigen.cpp
+                                  facedb/facedb_fisher.cpp
+                                  facedb/facedb_dnn.cpp
+
 )
 
 add_library(digikamfacesengine_src

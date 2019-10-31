@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_DB_TRAINING_INTERFACE_H
-#define DIGIKAM_FACE_DB_TRAINING_INTERFACE_H
+#ifndef DIGIKAM_FACE_DB_H
+#define DIGIKAM_FACE_DB_H
 
 // C++ includes
 
@@ -57,9 +57,22 @@ public:
     explicit FaceDb(FaceDbBackend* const db);
     ~FaceDb();
 
+    BdEngineBackend::QueryState setSetting(const QString& keyword, const QString& value);
+    QString setting(const QString& keyword) const;
+
+    /**
+     * Returns true if the integrity of the database is preserved.
+     */
+    bool integrityCheck();
+
+    /**
+     * Shrinks the database.
+     */
+    void vacuum();
+
 public:
 
-    // --- Identity management
+    // --- Identity management (facedb_identity.cpp)
 
     int  addIdentity() const;
     void updateIdentity(const Identity& p);
@@ -99,22 +112,6 @@ public:
     void updateDNNFaceModel(DNNFaceModel& model);
     DNNFaceModel dnnFaceModel(bool debug) const;
 
-public:
-
-    // --- Database helpers
-
-    BdEngineBackend::QueryState setSetting(const QString& keyword, const QString& value);
-    QString setting(const QString& keyword) const;
-
-    /**
-     * Returns true if the integrity of the database is preserved.
-     */
-    bool integrityCheck();
-
-    /**
-     * Shrinks the database.
-     */
-    void vacuum();
 
 private:
 
@@ -126,4 +123,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_FACE_DB_TRAINING_INTERFACE_H
+#endif // DIGIKAM_FACE_DB_H
