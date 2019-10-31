@@ -107,10 +107,14 @@ public:
 
 public:
 
-    void applyParameters();
-
     cv::Mat preprocessingChain(const QImage& image);
     cv::Mat preprocessingChainRGB(const QImage& image);
+
+public:
+
+    // --- Backend parameters (recognitiondatabase_backend.cpp) --------------------------
+
+    void applyParameters();
 
 public:
 

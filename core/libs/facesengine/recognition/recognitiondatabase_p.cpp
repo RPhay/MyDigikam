@@ -66,53 +66,6 @@ RecognitionDatabase::Private::~Private()
     delete funnel;
 }
 
-void RecognitionDatabase::Private::applyParameters()
-{
-    if (lbphConst()   ||
-        eigenConst()  ||
-        fisherConst())
-    {
-        for (QVariantMap::const_iterator it = parameters.constBegin() ; it != parameters.constEnd() ; ++it)
-        {
-            if (it.key() == QLatin1String("threshold") || it.key() == QLatin1String("accuracy"))
-            {
-                if      (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::LBP)
-                {
-                    lbph()->setThreshold(it.value().toFloat());
-                }
-                else if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::EigenFace)
-                {
-                    eigen()->setThreshold(it.value().toFloat());
-                }
-                else if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::FisherFace)
-                {
-                    fisher()->setThreshold(it.value().toFloat());
-                }
-                else
-                {
-                    qCCritical(DIGIKAM_FACESENGINE_LOG) << "No obvious recognize algorithm";
-                }
-            }
-        }
-    }
-
-    if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::DNN)
-    {
-        float threshold = 0.8;
-
-        if      (parameters.contains(QLatin1String("threshold")))
-        {
-            threshold = parameters.value(QLatin1String("threshold")).toFloat();
-        }
-        else if (parameters.contains(QLatin1String("accuracy")))
-        {
-            threshold = parameters.value(QLatin1String("accuracy")).toFloat();
-        }
-
-        OpenCVDNNFaceRecognizer::m_threshold = threshold;
-    }
-}
-
 cv::Mat RecognitionDatabase::Private::preprocessingChain(const QImage& image)
 {
     try
