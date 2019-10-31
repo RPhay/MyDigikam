@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACESENGINE_RECOGNITIONDATABASE_H
-#define DIGIKAM_FACESENGINE_RECOGNITIONDATABASE_H
+#ifndef DIGIKAM_FACESENGINE_RECOGNITION_DATABASE_H
+#define DIGIKAM_FACESENGINE_RECOGNITION_DATABASE_H
 
 // Qt includes
 
@@ -62,9 +62,11 @@ public:
     {
         /// Training is so cheap that new photos for training can be passed any time
         TrainingIsCheap,
+
         /// Training is significantly optimized if new images are received in batches
         /// instead training single images multiple times
         TrainingLikesBatches,
+
         /// Training is a computing intensive operation.
         /// By choice of the application, it may be manually triggered by the user.
         TrainingIsExpensive
@@ -76,7 +78,7 @@ public:
         LBP,
         EigenFace,
         FisherFace,
-        DNN             // Deep Neural Networks.
+        DNN             /// Deep Neural Networks (default).
     };
 
 public:
@@ -86,9 +88,21 @@ public:
 
     RecognitionDatabase(const RecognitionDatabase&);
 
-    // ------------ Identity management --------------
+    /**
+     * Checks the integrity and returns true if everything is fine.
+     */
+    bool integrityCheck();
 
-    /// For the documentation of standard attributes, see identity.h
+    /**
+     * Shrinks the database.
+     */
+    void vacuum();
+
+public:
+
+    // --- Identity management -----------------------------------------
+
+    /// NOTE: For the documentation of standard attributes, see identity.h
 
     /**
      * Returns all identities known to the database
@@ -129,7 +143,14 @@ public:
     void addIdentityAttribute(int id, const QString& attribute, const QString& value);
     void setIdentityAttributes(int id, const QMap<QString, QString>& attributes);
 
-    // ------------ backend parameters --------------
+    /**
+     * Deletes an identity from the database.
+     */
+    void deleteIdentity(const Identity& identityToBeDeleted);
+
+public:
+
+    // --- Backend parameters --------------------------------------------
 
     /**
      * A textual, informative identifier of the backend in use.
@@ -147,7 +168,9 @@ public:
     void        setRecognizerThreshold(float threshold);
     QVariantMap parameters() const;
 
-    // ------------ Recognition, clustering and training --------------
+public:
+
+    // --- Recognition management -------------------------------------------------------
 
     /**
      * Returns the recommended size if you want to scale face images for recognition.
@@ -175,14 +198,24 @@ public:
     QList<Identity> recognizeFaces(const QList<QImage>& images);
     Identity        recognizeFace(const QImage& image);
 
+public:
+
+    // --- Clustering management --------------------------------------------------------
+
     /**
      * Performs face clustering
      * The images are passed to the function with the file paths of those images
      * The result of clustering are groups of file paths representing groups of
      * images.
      */
-    void clusterFaces(const QList<QImage>& images, std::vector<int>& clusteredIndices,
-                      QStringList dataset, int nbOfClusters) const;
+    void clusterFaces(const QList<QImage>& images,
+                      std::vector<int>& clusteredIndices,
+                      QStringList dataset,
+                      int nbOfClusters) const;
+
+public:
+
+    // --- Faces Training management ----------------------------------------------------
 
     /**
      * Gives a hint about the complexity of training for the current backend.
@@ -230,21 +263,6 @@ public:
      */
     void clearTraining(const QList<Identity>& identitiesToClean, const QString& trainingContext = QString());
 
-    /**
-     * Deletes an identity from the database.
-     */
-    void deleteIdentity(const Identity& identityToBeDeleted);
-
-    /**
-     * Checks the integrity and returns true if everything is fine.
-     */
-    bool integrityCheck();
-
-    /**
-     * Shrinks the database.
-     */
-    void vacuum();
-
 public:
 
     // Declared as public to please with Clang compiler, due to use as argument with static methods.
@@ -257,4 +275,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_FACESENGINE_RECOGNITIONDATABASE_H
+#endif // DIGIKAM_FACESENGINE_RECOGNITION_DATABASE_H
