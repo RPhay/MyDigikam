@@ -33,13 +33,10 @@
 #include <QStandardPaths>
 #include <qmath.h>
 
-// OpenCV includes
-
-#include <opencv2/imgproc.hpp>
-
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_opencv.h"
 #include "dnnfacedetectorssd.h"
 #include "dnnfacedetectoryolo.h"
 
