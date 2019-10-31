@@ -23,11 +23,6 @@
 #ifndef DIGIKAM_FACESENGINE_OPENCV_DNN_FACE_DETECTOR_H
 #define DIGIKAM_FACESENGINE_OPENCV_DNN_FACE_DETECTOR_H
 
-// OpenCV library
-
-#include <opencv2/core.hpp>
-#include <opencv2/dnn.hpp>
-
 // Qt includes
 
 #include <QImage>
@@ -36,6 +31,7 @@
 
 // Local includes
 
+#include "digikam_opencv.h"
 #include "dimg.h"
 #include "dnnfacedetectorbase.h"
 

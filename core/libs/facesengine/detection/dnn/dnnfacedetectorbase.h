@@ -24,14 +24,13 @@
 #ifndef DIGIKAM_FACESENGINE_DNN_FACE_DETECTOR_BASE_H
 #define DIGIKAM_FACESENGINE_DNN_FACE_DETECTOR_BASE_H
 
-// OpenCV library
-
-#include <opencv2/core.hpp>
-#include <opencv2/dnn.hpp>
-
 // C++ includes
 
 #include <vector>
+
+// Local includes
+
+#include "digikam_opencv.h"
 
 namespace Digikam
 {

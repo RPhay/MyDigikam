@@ -20,5 +20,5 @@ set(embosstoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    EmbossTool
-                                   SOURCES ${embosstoolplugin_SRCS}
+                          SOURCES ${embosstoolplugin_SRCS}
 )

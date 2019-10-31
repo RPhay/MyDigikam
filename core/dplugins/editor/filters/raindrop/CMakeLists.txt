@@ -20,5 +20,5 @@ set(raindroptoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    RainDropTool
-                                   SOURCES ${raindroptoolplugin_SRCS}
+                          SOURCES ${raindroptoolplugin_SRCS}
 )

@@ -20,5 +20,5 @@ set(autocorrectiontoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    AutoCorrectionTool
-                                   SOURCES ${autocorrectiontoolplugin_SRCS}
+                          SOURCES ${autocorrectiontoolplugin_SRCS}
 )

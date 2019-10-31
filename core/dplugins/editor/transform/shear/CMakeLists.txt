@@ -20,5 +20,5 @@ set(sheartoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    ShearTool
-                                   SOURCES ${sheartoolplugin_SRCS}
+                          SOURCES ${sheartoolplugin_SRCS}
 )

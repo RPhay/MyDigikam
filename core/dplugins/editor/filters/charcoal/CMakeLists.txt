@@ -20,5 +20,5 @@ set(charcoaltoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    CharcoalTool
-                                   SOURCES ${charcoaltoolplugin_SRCS}
+                          SOURCES ${charcoaltoolplugin_SRCS}
 )

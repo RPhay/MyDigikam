@@ -26,7 +26,7 @@
 
 // Local includes
 
-#include "preprocessor.h"
+#include "facepreprocessor.h"
 
 namespace Digikam
 {

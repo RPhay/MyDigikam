@@ -28,14 +28,10 @@
 
 #include <vector>
 
-// OpenCV includes
-
-#include <opencv2/core.hpp>
-#include <opencv2/dnn.hpp>
-
 // Local includes
 
-#include "preprocessor.h"
+#include "digikam_opencv.h"
+#include "facepreprocessor.h"
 
 namespace Digikam
 {
@@ -45,23 +41,23 @@ class DNNFaceExtractor
 
 public:
 
-    explicit DNNFaceExtractor(Preprocessor* p);
+    explicit DNNFaceExtractor(Preprocessor* const p);
     ~DNNFaceExtractor();
 
     void getFaceEmbedding(const cv::Mat& faceImage, std::vector<float>& vecdata);
 
 private:
 
-    Preprocessor*   preprocessor;
+    Preprocessor* preprocessor;
 
-    cv::dnn::Net    net;
+    cv::dnn::Net  net;
 
-    cv::Size        imageSize;
-    float           scaleFactor;
-    cv::Scalar      meanValToSubtract;
+    cv::Size      imageSize;
+    float         scaleFactor;
+    cv::Scalar    meanValToSubtract;
 
 };
 
-}; // namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_DNN_FACE_EXTRACTOR_H

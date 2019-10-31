@@ -20,5 +20,5 @@ set(blurfxtoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    BlurFxTool
-                                   SOURCES ${blurfxtoolplugin_SRCS}
+                          SOURCES ${blurfxtoolplugin_SRCS}
 )

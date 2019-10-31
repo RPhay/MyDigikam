@@ -20,5 +20,5 @@ set(profileconversiontoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    ProfileConversionTool
-                                   SOURCES ${profileconversiontoolplugin_SRCS}
+                          SOURCES ${profileconversiontoolplugin_SRCS}
 )

@@ -24,13 +24,13 @@
 #ifndef DIGIKAM_OPENCV_DNN_FACE_RECOGNIZER_H
 #define DIGIKAM_OPENCV_DNN_FACE_RECOGNIZER_H
 
-// OpenCV library
-
-#include "digikam_opencv.h"
-
 // Qt include
 
 #include <QImage>
+
+// OpenCV library
+
+#include "digikam_opencv.h"
 
 namespace Digikam
 {

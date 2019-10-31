@@ -31,11 +31,6 @@
 #include <QStandardPaths>
 #include <QTime>
 
-// OpenCV includes
-
-#include <opencv2/core.hpp>
-#include <opencv2/dnn.hpp>
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -43,7 +38,7 @@
 namespace Digikam
 {
 
-DNNFaceExtractor::DNNFaceExtractor(Preprocessor* p)
+DNNFaceExtractor::DNNFaceExtractor(Preprocessor* const p)
   : preprocessor(p)
 {
     // Read pretrained neural network for face recognition
@@ -54,15 +49,15 @@ DNNFaceExtractor::DNNFaceExtractor(Preprocessor* p)
     //                                           QLatin1String("digikam/facesengine/dnnface/deep-residual-networks/ResNet-50-model.caffemodel"));
     // net = cv::dnn::readNetFromCaffe(nnproto, nnmodel);
 
-    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                             QLatin1String("digikam/facesengine/openface_nn4.small2.v1.t7"));
+    QString nnmodel   = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                               QLatin1String("digikam/facesengine/openface_nn4.small2.v1.t7"));
     qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;
-    net = cv::dnn::readNetFromTorch(nnmodel.toStdString());
+    net               = cv::dnn::readNetFromTorch(nnmodel.toStdString());
 
     // As we use OpenFace, we need to set appropriate values for image color space and image size
 
-    imageSize = cv::Size(96,96);
-    scaleFactor = 1.0 / 255.0;
+    imageSize         = cv::Size(96,96);
+    scaleFactor       = 1.0 / 255.0;
     meanValToSubtract = cv::Scalar(0.0, 0.0, 0.0);
 }
 
@@ -99,13 +94,13 @@ void DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage, std::vector<fl
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Face descriptors size: (" << face_descriptors.rows << ", " << face_descriptors.cols << ")";
 
-    for(int i = 0 ; i < face_descriptors.rows ; ++i)
+    for (int i = 0 ; i < face_descriptors.rows ; ++i)
     {
-        for(int j = 0 ; j < face_descriptors.cols ; ++j)
+        for (int j = 0 ; j < face_descriptors.cols ; ++j)
         {
             vecdata.push_back(face_descriptors.at<float>(i,j));
         }
     }
 }
 
-}; // namespace Digikam
+} // namespace Digikam

@@ -19,5 +19,5 @@ set(inverttoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    InvertTool
-                                   SOURCES ${inverttoolplugin_SRCS}
+                          SOURCES ${inverttoolplugin_SRCS}
 )

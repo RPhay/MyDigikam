@@ -20,5 +20,5 @@ set(resizetoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    ResizeTool
-                                   SOURCES ${resizetoolplugin_SRCS}
+                          SOURCES ${resizetoolplugin_SRCS}
 )

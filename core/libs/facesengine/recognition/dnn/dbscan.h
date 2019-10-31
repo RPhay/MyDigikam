@@ -4,8 +4,8 @@
  *
  * Date        : 2019-08-11
  * Description : Class performs DBSCAN for clustering
- *               More on DBSCAN: 
- *               https://medium.com/@elutins/dbscan-what-is-it-when-to-use-it-how-to-use-it-8bd506293818               
+ *               More on DBSCAN:
+ *               https://medium.com/@elutins/dbscan-what-is-it-when-to-use-it-how-to-use-it-8bd506293818
  *               https://github.com/bowbowbow/DBSCAN/blob/master/clustering.cpp
  *
  * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
@@ -60,11 +60,13 @@ private:
 
 };
 
-class DBSCAN 
+// ------------------------------------------------------------------------------------------
+
+class DBSCAN
 {
 
 public:
-    
+
     explicit DBSCAN(double eps, int minPts, const std::vector<PointCustomized>& pts);
     ~DBSCAN() = default;
 
@@ -81,17 +83,17 @@ private:
 
 private:
 
-    double eps;
-    int minPtsPerCluster;
+    double                        eps;
+    int                           minPtsPerCluster;
 
-    std::vector<PointCustomized>    points;
-    std::vector<std::vector<int>>   adjPoints;
+    std::vector<PointCustomized>  points;
+    std::vector<std::vector<int>> adjPoints;
 
-    int                 nbOfClusters;   
-    std::vector<int>    clusteredIdx;
+    int                           nbOfClusters;
+    std::vector<int>              clusteredIdx;
 
 };
 
-}; // namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_DBSCAN_H

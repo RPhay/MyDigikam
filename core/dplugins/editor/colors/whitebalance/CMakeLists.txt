@@ -20,5 +20,5 @@ set(whitebalancetoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    WhiteBalanceTool
-                                   SOURCES ${whitebalancetoolplugin_SRCS}
+                          SOURCES ${whitebalancetoolplugin_SRCS}
 )

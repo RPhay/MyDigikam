@@ -21,6 +21,6 @@ set(inserttexttoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    InsertTextTool
-                                   SOURCES ${inserttexttoolplugin_SRCS}
+                          SOURCES ${inserttexttoolplugin_SRCS}
 )
 

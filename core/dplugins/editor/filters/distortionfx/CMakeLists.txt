@@ -20,5 +20,5 @@ set(distortionfxtoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    DistortionFxTool
-                                   SOURCES ${distortionfxtoolplugin_SRCS}
+                          SOURCES ${distortionfxtoolplugin_SRCS}
 )

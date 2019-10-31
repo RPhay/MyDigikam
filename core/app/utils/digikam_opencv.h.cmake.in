@@ -57,10 +57,6 @@
 #include <opencv2/core/core_c.h>
 #include <opencv2/core/types_c.h>
 
-// Object detection module headers
-
-#include <opencv2/objdetect.hpp>
-
 // Image codecs module headers
 
 #include <opencv2/imgcodecs.hpp>
@@ -73,6 +69,12 @@
 
 #include <opencv2/imgproc.hpp>
 #include <opencv2/imgproc/types_c.h>
+
+// Shape detection/recognition module headers
+
+#include <opencv2/objdetect.hpp>
+#include <opencv2/flann.hpp>
+#include <opencv2/dnn.hpp>
 
 // Restore warnings
 #if !defined(__APPLE__) && defined(__GNUC__)

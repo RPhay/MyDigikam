@@ -20,5 +20,5 @@ set(colorbalancetoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    CBTool
-                                   SOURCES ${colorbalancetoolplugin_SRCS}
+                          SOURCES ${colorbalancetoolplugin_SRCS}
 )

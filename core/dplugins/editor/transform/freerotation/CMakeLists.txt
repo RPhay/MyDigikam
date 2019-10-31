@@ -20,5 +20,5 @@ set(freerotationtoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    FreeRotationTool
-                                   SOURCES ${freerotationtoolplugin_SRCS}
+                          SOURCES ${freerotationtoolplugin_SRCS}
 )

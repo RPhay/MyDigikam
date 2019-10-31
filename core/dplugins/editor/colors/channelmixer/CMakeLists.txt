@@ -20,5 +20,5 @@ set(channelmixertoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    ChannelMixerTool
-                                   SOURCES ${channelmixertoolplugin_SRCS}
+                          SOURCES ${channelmixertoolplugin_SRCS}
 )

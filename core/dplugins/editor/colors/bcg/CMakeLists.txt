@@ -20,5 +20,5 @@ set(bcgtoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    BcgTool
-                                   SOURCES ${bcgtoolplugin_SRCS}
+                          SOURCES ${bcgtoolplugin_SRCS}
 )

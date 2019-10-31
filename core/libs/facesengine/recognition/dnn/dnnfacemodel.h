@@ -25,16 +25,13 @@
 #ifndef DIGIKAM_DNN_FACE_MODEL_H
 #define DIGIKAM_DNN_FACE_MODEL_H
 
-// OpenCV library
-
-#include "digikam_opencv.h"
-
 // Qt include
 
 #include <QList>
 
 // Local includes
 
+#include "digikam_opencv.h"
 #include "opencvmatdata.h"
 #include "facerec_dnnborrowed.h"
 #include "dnnfaceextractor.h"

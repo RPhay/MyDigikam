@@ -21,12 +21,12 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_PREPROCESSOR_H
-#define DIGIKAM_PREPROCESSOR_H
+#ifndef DIGIKAM_FACE_PREPROCESSOR_H
+#define DIGIKAM_FACE_PREPROCESSOR_H
 
-// OpenCV includes
+// Local includes
 
-#include <opencv2/core.hpp>
+#include "digikam_opencv.h"
 
 namespace Digikam
 {
@@ -50,5 +50,5 @@ public:
 
 }; // namespace Digikam
 
-#endif // DIGIKAM_PREPROCESSOR_H
+#endif // DIGIKAM_FACE_PREPROCESSOR_H
 

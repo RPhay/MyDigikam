@@ -20,5 +20,7 @@ set(redeyecorrectionplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    RedEyeCorrection
-                                SOURCES ${redeyecorrectionplugin_SRCS}
+                       SOURCES ${redeyecorrectionplugin_SRCS}
+                       DEPENDS ${OpenCV_LIBRARIES}
+
 )

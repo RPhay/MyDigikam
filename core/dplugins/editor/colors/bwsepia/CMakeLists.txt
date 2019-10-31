@@ -19,5 +19,5 @@ set(bwsepiatoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    BWSepiaTool
-                                   SOURCES ${bwsepiatoolplugin_SRCS}
+                          SOURCES ${bwsepiatoolplugin_SRCS}
 )

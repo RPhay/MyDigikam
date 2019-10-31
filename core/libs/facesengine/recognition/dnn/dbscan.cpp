@@ -4,8 +4,8 @@
  *
  * Date        : 2019-08-11
  * Description : Class performs DBSCAN for clustering
- *               More on DBSCAN: 
- *               https://medium.com/@elutins/dbscan-what-is-it-when-to-use-it-how-to-use-it-8bd506293818               
+ *               More on DBSCAN:
+ *               https://medium.com/@elutins/dbscan-what-is-it-when-to-use-it-how-to-use-it-8bd506293818
  *               https://github.com/bowbowbow/DBSCAN/blob/master/clustering.cpp
  *
  * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
@@ -84,12 +84,16 @@ DBSCAN::DBSCAN(double eps, int minPts, const std::vector<PointCustomized>& pts)
 void DBSCAN::run()
 {
     checkNearPoints();
-    
-    for(size_t i = 0; i < points.size(); i++) {
-        
-        if(points[i].cluster != NOT_CLASSIFIED) continue;
-        
-        if(isCoreObject(i))
+
+    for (size_t i = 0 ; i < points.size() ; ++i)
+    {
+
+        if (points[i].cluster != NOT_CLASSIFIED)
+        {
+            continue;
+        }
+
+        if (isCoreObject(i))
         {
             dfs(i, ++nbOfClusters);
         }
@@ -101,10 +105,11 @@ void DBSCAN::run()
 
     ++nbOfClusters; // since nbOfClusters counted from 0
 
-    for(size_t i = 0; i < points.size(); i++)
+    for (size_t i = 0 ; i < points.size() ; ++i)
     {
         int cluster = points[i].cluster;
-        if(cluster != NOISE)
+
+        if (cluster != NOISE)
         {
             clusteredIdx.push_back(cluster);
         }
@@ -119,15 +124,16 @@ void DBSCAN::run()
 */
 
 void DBSCAN::run()
-{   
-    for(size_t i = 0; i < points.size(); i++) {
-        
-        if(points[i].cluster != NOT_CLASSIFIED) continue;
-        
+{
+    for (size_t i = 0 ; i < points.size() ; ++i)
+    {
+        if (points[i].cluster != NOT_CLASSIFIED)
+            continue;
+
         std::list<int> neighbors;
         findNeighbors(points[i], i, neighbors);
 
-        if(neighbors.size() < minPtsPerCluster)
+        if (neighbors.size() < minPtsPerCluster)
         {
             points[i].cluster = NOISE;
             continue;
@@ -137,16 +143,16 @@ void DBSCAN::run()
 
         points[i].cluster = nbOfClusters;
 
-        while(!neighbors.empty())
+        while (!neighbors.empty())
         {
             int pointIdx = neighbors.front();
             neighbors.pop_front();
 
-            if(points[pointIdx].cluster == NOISE)
+            if (points[pointIdx].cluster == NOISE)
             {
                 points[pointIdx].cluster = nbOfClusters;
             }
-            else if(points[pointIdx].cluster != NOT_CLASSIFIED)
+            else if (points[pointIdx].cluster != NOT_CLASSIFIED)
             {
                 continue;
             }
@@ -156,9 +162,9 @@ void DBSCAN::run()
             std::list<int> newNeighbors;
             findNeighbors(points[pointIdx], pointIdx, newNeighbors);
 
-            if(newNeighbors.size() >= minPtsPerCluster)
+            if (newNeighbors.size() >= minPtsPerCluster)
             {
-                for(auto elm: newNeighbors)
+                for (auto elm: newNeighbors)
                 {
                     neighbors.push_back(elm);
                 }
@@ -168,10 +174,11 @@ void DBSCAN::run()
 
     ++nbOfClusters; // since nbOfClusters counted from 0
 
-    for(size_t i = 0; i < points.size(); i++)
+    for(size_t i = 0 ; i < points.size() ; ++i)
     {
         int cluster = points[i].cluster;
-        if(cluster != NOISE)
+
+        if (cluster != NOISE)
         {
             clusteredIdx.push_back(cluster);
         }
@@ -183,41 +190,46 @@ void DBSCAN::run()
 
     ++nbOfClusters; // Noise is added as last group
 }
-    
+
 void DBSCAN::dfs(int current, int cluster)
 {
     points[current].cluster = cluster;
 
-    if(!isCoreObject(current)) return;
-    
-    for(auto& next: adjPoints[current])
+    if (!isCoreObject(current))
+        return;
+
+    for (auto& next: adjPoints[current])
     {
-        if(points[next].cluster != NOT_CLASSIFIED) continue;
+        if (points[next].cluster != NOT_CLASSIFIED)
+            continue;
         dfs(next, cluster);
     }
 }
-    
+
 void DBSCAN::checkNearPoints()
 {
-    for(size_t i = 0; i < points.size(); i++)
+    for (size_t i = 0 ; i < points.size() ; ++i)
     {
         std::vector<int> vecAdjToPoint;
-        
-        for(size_t j=0; j < points.size(); j++)
+
+        for (size_t j = 0 ; j < points.size() ; ++j)
         {
-            if(i==j) continue;
-            if(points[i].computeSimilarity(points[j]) >= eps) // since it is cosine similarity
+            if (i == j)
+                continue;
+
+            if (points[i].computeSimilarity(points[j]) >= eps) // since it is cosine similarity
             {
                 points[i].ptsCount++;
                 vecAdjToPoint.push_back(j);
             }
         }
-        
+
         adjPoints.push_back(vecAdjToPoint);
     }
 }
-    
+
 // Core object has at least minPtsPerCluster as neighbors
+
 bool DBSCAN::isCoreObject(int idx)
 {
     return points[idx].ptsCount >= minPtsPerCluster;
@@ -225,9 +237,9 @@ bool DBSCAN::isCoreObject(int idx)
 
 void DBSCAN::findNeighbors(const PointCustomized& p, int pointIdx, std::list<int>& neighbors)
 {
-    for(int i = 0; i < points.size(); i++)
+    for (int i = 0 ; i < points.size() ; ++i)
     {
-        if(points[i].computeSimilarity(p) >= eps && i != pointIdx)
+        if (points[i].computeSimilarity(p) >= eps && i != pointIdx)
         {
             neighbors.push_back(i);
         }
@@ -236,7 +248,7 @@ void DBSCAN::findNeighbors(const PointCustomized& p, int pointIdx, std::list<int
 
 int DBSCAN::getCluster(std::vector<int>& clusteredIndices)
 {
-    if(clusteredIndices.empty() || clusteredIndices.size() < clusteredIdx.size())
+    if (clusteredIndices.empty() || clusteredIndices.size() < clusteredIdx.size())
     {
         clusteredIndices.shrink_to_fit();
         std::copy(clusteredIdx.begin(), clusteredIdx.end(), std::back_inserter(clusteredIndices));
@@ -248,5 +260,5 @@ int DBSCAN::getCluster(std::vector<int>& clusteredIndices)
 
     return nbOfClusters;
 }
-    
-}; // namespace Digikam
+
+} // namespace Digikam

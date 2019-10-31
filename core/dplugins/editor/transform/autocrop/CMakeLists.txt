@@ -19,5 +19,5 @@ set(autocroptoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    AutoCropTool
-                                   SOURCES ${autocroptoolplugin_SRCS}
+                          SOURCES ${autocroptoolplugin_SRCS}
 )

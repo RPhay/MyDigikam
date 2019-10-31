@@ -20,5 +20,5 @@ set(adjustcurvestoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    AdjustCurvesTool
-                                   SOURCES ${adjustcurvestoolplugin_SRCS}
+                          SOURCES ${adjustcurvestoolplugin_SRCS}
 )

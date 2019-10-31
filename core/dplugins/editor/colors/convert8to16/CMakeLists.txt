@@ -19,5 +19,5 @@ set(convert8to16toolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    Convert8To16Tool
-                                   SOURCES ${convert8to16toolplugin_SRCS}
+                          SOURCES ${convert8to16toolplugin_SRCS}
 )

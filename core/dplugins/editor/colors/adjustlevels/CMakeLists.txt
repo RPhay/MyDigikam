@@ -20,5 +20,5 @@ set(adjustlevelstoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    AdjustLevelsTool
-                                   SOURCES ${adjustlevelstoolplugin_SRCS}
+                          SOURCES ${adjustlevelstoolplugin_SRCS}
 )

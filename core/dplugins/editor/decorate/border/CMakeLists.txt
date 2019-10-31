@@ -20,5 +20,5 @@ set(bordertoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    BorderTool
-                                   SOURCES ${bordertoolplugin_SRCS}
+                          SOURCES ${bordertoolplugin_SRCS}
 )

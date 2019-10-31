@@ -20,5 +20,5 @@ set(hsltoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    HSLTool
-                                   SOURCES ${hsltoolplugin_SRCS}
+                          SOURCES ${hsltoolplugin_SRCS}
 )

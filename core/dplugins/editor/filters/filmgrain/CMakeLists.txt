@@ -20,5 +20,5 @@ set(filmgraintoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    FilmGrainTool
-                                   SOURCES ${filmgraintoolplugin_SRCS}
+                          SOURCES ${filmgraintoolplugin_SRCS}
 )

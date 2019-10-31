@@ -20,5 +20,5 @@ set(texturetoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    TextureTool
-                                   SOURCES ${texturetoolplugin_SRCS}
+                          SOURCES ${texturetoolplugin_SRCS}
 )

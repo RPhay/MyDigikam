@@ -25,16 +25,16 @@
 #ifndef DIGIKAM_FACE_REC_DNN_BORROWED_H
 #define DIGIKAM_FACE_REC_DNN_BORROWED_H
 
+// C++ includes
+
+#include <vector>
+
 // Local includes
 
 #include "digikam_opencv.h"
 #include "facedb.h"
 #include "face.hpp"
 #include "dnnfaceextractor.h"
-
-// C++ includes
-
-#include <vector>
 
 namespace Digikam
 {

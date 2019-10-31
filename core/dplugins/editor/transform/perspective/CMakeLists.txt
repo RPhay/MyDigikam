@@ -23,5 +23,5 @@ set(perspectivetoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    PerspectiveTool
-                                   SOURCES ${perspectivetoolplugin_SRCS}
+                          SOURCES ${perspectivetoolplugin_SRCS}
 )

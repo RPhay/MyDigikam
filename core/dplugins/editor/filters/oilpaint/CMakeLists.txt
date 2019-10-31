@@ -20,5 +20,5 @@ set(oilpainttoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    OilPaintTool
-                                   SOURCES ${oilpainttoolplugin_SRCS}
+                          SOURCES ${oilpainttoolplugin_SRCS}
 )

@@ -20,5 +20,5 @@ set(colorfxtoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    ColorFxTool
-                                   SOURCES ${colorfxtoolplugin_SRCS}
+                          SOURCES ${colorfxtoolplugin_SRCS}
 )

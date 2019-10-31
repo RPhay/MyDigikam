@@ -28,12 +28,9 @@
 
 #include <array>
 
-// OpenCV includes
-
-#include <opencv2/core.hpp>
-
 // Local includes
 
+#include "digikam_opencv.h""
 #include "shapepredictor.h"
 
 namespace Digikam
