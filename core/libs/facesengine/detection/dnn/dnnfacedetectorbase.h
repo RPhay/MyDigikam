@@ -44,33 +44,41 @@ public:
     explicit DNNFaceDetectorBase(float scale, const cv::Scalar& val, const cv::Size& inputImgSize);
     virtual ~DNNFaceDetectorBase();
 
-    virtual void detectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize,
+    virtual void detectFaces(const cv::Mat& inputImage,
+                             const cv::Size& paddedSize,
                              std::vector<cv::Rect>& detectedBboxes) = 0;
+ 
     cv::Size nnInputSizeRequired() const;
 
 protected:
 
-    void selectBbox(const cv::Size& paddedSize, float confidence,
-                    int left, int right, int top, int bottom,
+    void selectBbox(const cv::Size& paddedSize,
+                    float confidence,
+                    int left,
+                    int right,
+                    int top,
+                    int bottom,
                     std::vector<float>& goodConfidences, std::vector<cv::Rect>& goodBoxes,
                     std::vector<float>& doubtConfidences, std::vector<cv::Rect>& doubtBoxes);
-    void correctBbox(cv::Rect& bbox, const cv::Size& paddedSize);
+
+    void correctBbox(cv::Rect& bbox,
+                     const cv::Size& paddedSize);
 
 public:
 
-    static float    confidenceThreshold;    // Threshold for bbox detection. It can be init and changed in the GUI
-    static float    nmsThreshold;           // Threshold for nms suppression
+    static float confidenceThreshold;    // Threshold for bbox detection. It can be init and changed in the GUI
+    static float nmsThreshold;           // Threshold for nms suppression
 
 protected:
 
-    float           scaleFactor;
-    cv::Scalar      meanValToSubtract;
-    cv::Size        inputImageSize;
+    float        scaleFactor;
+    cv::Scalar   meanValToSubtract;
+    cv::Size     inputImageSize;
 
-    cv::dnn::Net    net;
+    cv::dnn::Net net;
 
 };
 
-}; // namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_FACESENGINE_DNN_FACE_DETECTOR_BASE_H

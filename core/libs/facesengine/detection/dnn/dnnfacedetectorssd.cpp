@@ -42,8 +42,8 @@ DNNFaceDetectorSSD::DNNFaceDetectorSSD()
 {
     QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                              QLatin1String("digikam/facesengine/deploy.prototxt"));
-    QString nndata = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                            QLatin1String("digikam/facesengine/res10_300x300_ssd_iter_140000_fp16.caffemodel"));
+    QString nndata  = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QLatin1String("digikam/facesengine/res10_300x300_ssd_iter_140000_fp16.caffemodel"));
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "nnmodel: " << nnmodel << ", nndata " << nndata;
 
@@ -54,7 +54,8 @@ DNNFaceDetectorSSD::~DNNFaceDetectorSSD()
 {
 }
 
-void DNNFaceDetectorSSD::detectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize,
+void DNNFaceDetectorSSD::detectFaces(const cv::Mat& inputImage,
+                                     const cv::Size& paddedSize,
                                      std::vector<cv::Rect>& detectedBboxes)
 {
     if (inputImage.empty())
@@ -70,7 +71,8 @@ void DNNFaceDetectorSSD::detectFaces(const cv::Mat& inputImage, const cv::Size& 
     postprocess(detection, paddedSize, detectedBboxes);
 }
 
-void DNNFaceDetectorSSD::postprocess(cv::Mat detection, const cv::Size& paddedSize,
+void DNNFaceDetectorSSD::postprocess(cv::Mat detection,
+                                     const cv::Size& paddedSize,
                                      std::vector<cv::Rect>& detectedBboxes)
 {
     std::vector<float> goodConfidences, doubtConfidences, confidences;
@@ -78,48 +80,54 @@ void DNNFaceDetectorSSD::postprocess(cv::Mat detection, const cv::Size& paddedSi
 
     cv::Mat detectionMat(detection.size[2], detection.size[3], CV_32F, detection.ptr<float>());
 
-    for (int i = 0; i < detectionMat.rows; ++i)
+    for (int i = 0 ; i < detectionMat.rows ; ++i)
     {
         float confidence = detectionMat.at<float>(i, 2);
 
         if (confidence > confidenceThreshold)
         {
-            float leftRatio = detectionMat.at<float>(i, 3);
-            float topRatio = detectionMat.at<float>(i, 4);
-            float rightRatio = detectionMat.at<float>(i, 5);
+            float leftRatio   = detectionMat.at<float>(i, 3);
+            float topRatio    = detectionMat.at<float>(i, 4);
+            float rightRatio  = detectionMat.at<float>(i, 5);
             float bottomRatio = detectionMat.at<float>(i, 6);
 
-            int left = (int)(leftRatio*inputImageSize.width);
-            int right = (int)(rightRatio*inputImageSize.width);
-            int top = (int)(topRatio*inputImageSize.height);
-            int bottom = (int)(bottomRatio*inputImageSize.height);
+            int left          = (int)(leftRatio*inputImageSize.width);
+            int right         = (int)(rightRatio*inputImageSize.width);
+            int top           = (int)(topRatio*inputImageSize.height);
+            int bottom        = (int)(bottomRatio*inputImageSize.height);
 
-            selectBbox(paddedSize, confidence,
-                       left, right, top, bottom,
-                       goodConfidences, goodBoxes,
-                       doubtConfidences, doubtBoxes);
+            selectBbox(paddedSize,
+                       confidence,
+                       left,
+                       right,
+                       top,
+                       bottom,
+                       goodConfidences,
+                       goodBoxes,
+                       doubtConfidences,
+                       doubtBoxes);
         }
     }
 
-    if(goodBoxes.empty())
+    if (goodBoxes.empty())
     {
-        boxes = doubtBoxes;
+        boxes       = doubtBoxes;
         confidences = doubtConfidences;
     }
     else
     {
-        boxes = goodBoxes;
+        boxes       = goodBoxes;
         confidences = goodConfidences;
     }
 
     // Perform non maximum suppression to eliminate redundant overlapping boxes with lower confidences
-    
+
     std::vector<int> indices;
     cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold, indices);
-    
+
     // Get detected bounding boxes
 
-    for (size_t i = 0; i < indices.size(); ++i)
+    for (size_t i = 0 ; i < indices.size() ; ++i)
     {
         cv::Rect bbox = boxes[indices[i]];
         correctBbox(bbox, paddedSize);
@@ -127,4 +135,4 @@ void DNNFaceDetectorSSD::postprocess(cv::Mat detection, const cv::Size& paddedSi
     }
 }
 
-}; // namespace Digikam
+} // namespace Digikam

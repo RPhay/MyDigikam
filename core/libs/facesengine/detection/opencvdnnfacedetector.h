@@ -52,8 +52,8 @@ public:
     explicit OpenCVDNNFaceDetector(DetectorNNModel model = DetectorNNModel::SSDMOBILENET);
     ~OpenCVDNNFaceDetector();
 
-    cv::Mat prepareForDetection(const QImage& inputImage) const;
-    cv::Mat prepareForDetection(const Digikam::DImg& inputImage) const;
+    cv::Mat prepareForDetection(const QImage& inputImage)                            const;
+    cv::Mat prepareForDetection(const Digikam::DImg& inputImage)                     const;
     cv::Mat prepareForDetection(const QString& inputImagePath, cv::Size& paddedSize) const;
     QList<QRect> detectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize);
 
@@ -65,8 +65,8 @@ public:
 
 private:
 
-    DetectorNNModel         modelType;
-    DNNFaceDetectorBase*    inferenceEngine;
+    DetectorNNModel      modelType;
+    DNNFaceDetectorBase* inferenceEngine;
 
 };
 

@@ -5,7 +5,7 @@
  * Date        : 2019-08-08
  * Description : Derived class to perform YOLO neural network inference
  *               for face detection. Credit: Ayoosh Kathuria (for Yolov3 blog post),
- *               sthanhng (for example of face detection with Yolov3).               
+ *               sthanhng (for example of face detection with Yolov3).
  *               More information with Yolov3:
  *               https://towardsdatascience.com/yolo-v3-object-detection-53fb7d3bfe6b
  *               sthanhng github on face detection with Yolov3:
@@ -35,7 +35,7 @@
 #include <QList>
 #include <QRect>
 
-// Digikam includes
+// Local includes
 
 #include "digikam_debug.h"
 
@@ -47,19 +47,20 @@ DNNFaceDetectorYOLO::DNNFaceDetectorYOLO()
 {
     QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                              QLatin1String("digikam/facesengine/yolov3-face.cfg"));
-    QString nndata = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                            QLatin1String("digikam/facesengine/yolov3-wider_16000.weights"));
+    QString nndata  = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QLatin1String("digikam/facesengine/yolov3-wider_16000.weights"));
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "nnmodel: " << nnmodel << ", nndata " << nndata;
 
-    net = cv::dnn::readNetFromDarknet(nnmodel.toStdString(), nndata.toStdString());
+    net             = cv::dnn::readNetFromDarknet(nnmodel.toStdString(), nndata.toStdString());
 }
 
 DNNFaceDetectorYOLO::~DNNFaceDetectorYOLO()
 {
 }
 
-void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize,
+void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage,
+                                      const cv::Size& paddedSize,
                                       std::vector<cv::Rect>& detectedBboxes)
 {
     if (inputImage.empty())
@@ -76,68 +77,75 @@ void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage, const cv::Size&
     postprocess(outs, paddedSize, detectedBboxes);
 }
 
-void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs, const cv::Size& paddedSize, 
+void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
+                                      const cv::Size& paddedSize,
                                       std::vector<cv::Rect>& detectedBboxes)
 {
     std::vector<float> goodConfidences, doubtConfidences, confidences;
     std::vector<cv::Rect> goodBoxes, doubtBoxes, boxes;
 
-    for (size_t i = 0; i < outs.size(); ++i)
+    for (size_t i = 0 ; i < outs.size() ; ++i)
     {
         // Scan through all the bounding boxes output from the network and keep only the
         // ones with high confidence scores. Assign the box's class label as the class
         // with the highest score for the box.
 
         float* data = (float*)outs[i].data;
-        
-        for (int j = 0; j < outs[i].rows; ++j, data += outs[i].cols)
+
+        for (int j = 0 ; j < outs[i].rows ; ++j, data += outs[i].cols)
         {
             cv::Mat scores = outs[i].row(j).colRange(5, outs[i].cols);
 
             // Get the value and location of the maximum score
-            
+
             double confidence;
             cv::minMaxLoc(scores, 0, &confidence, 0, 0);
-            
+
             if (confidence > confidenceThreshold)
             {
                 int centerX = (int)(data[0] * inputImageSize.width);
                 int centerY = (int)(data[1] * inputImageSize.height);
-                int width = (int)(data[2] * inputImageSize.width);
-                int height = (int)(data[3] * inputImageSize.height);
+                int width   = (int)(data[2] * inputImageSize.width);
+                int height  = (int)(data[3] * inputImageSize.height);
 
-                int left = centerX - width / 2;
-                int right = centerX + width / 2;
-                int top = centerY - height / 2;
-                int bottom = centerY + height / 2;
+                int left    = centerX - width  / 2;
+                int right   = centerX + width  / 2;
+                int top     = centerY - height / 2;
+                int bottom  = centerY + height / 2;
 
-                selectBbox(paddedSize, confidence,
-                           left, right, top, bottom,
-                           goodConfidences, goodBoxes,
-                           doubtConfidences, doubtBoxes);
+                selectBbox(paddedSize,
+                           confidence,
+                           left,
+                           right,
+                           top,
+                           bottom,
+                           goodConfidences,
+                           goodBoxes,
+                           doubtConfidences,
+                           doubtBoxes);
             }
         }
     }
 
-    if(goodBoxes.empty())
+    if (goodBoxes.empty())
     {
-        boxes = doubtBoxes;
+        boxes       = doubtBoxes;
         confidences = doubtConfidences;
     }
     else
     {
-        boxes = goodBoxes;
+        boxes       = goodBoxes;
         confidences = goodConfidences;
     }
 
     // Perform non maximum suppression to eliminate redundant overlapping boxes with lower confidences
-    
+
     std::vector<int> indices;
     cv::dnn::NMSBoxes(boxes, confidences, confidenceThreshold, nmsThreshold, indices);
-    
+
     // Get detected bounding boxes
 
-    for (size_t i = 0; i < indices.size(); ++i)
+    for (size_t i = 0 ; i < indices.size() ; ++i)
     {
         cv::Rect bbox = boxes[indices[i]];
         correctBbox(bbox, paddedSize);
@@ -153,19 +161,22 @@ std::vector<cv::String> DNNFaceDetectorYOLO::getOutputsNames()
 
     if (names.empty())
     {
-        //Get the indices of the output layers, i.e. the layers with unconnected outputs
+        // Get the indices of the output layers, i.e. the layers with unconnected outputs
         std::vector<int> outLayers = net.getUnconnectedOutLayers();
-         
-        //get the names of all the layers in the network
+
+        // Get the names of all the layers in the network
         std::vector<cv::String> layersNames = net.getLayerNames();
-         
+
         // Get the names of the output layers in names
         names.resize(outLayers.size());
-        for (size_t i = 0; i < outLayers.size(); ++i)
-        names[i] = layersNames[outLayers[i] - 1];
+
+        for (size_t i = 0 ; i < outLayers.size() ; ++i)
+        {
+            names[i] = layersNames[outLayers[i] - 1];
+        }
     }
 
     return names;
 }
 
-}; // namespace Digikam
+} // namespace Digikam

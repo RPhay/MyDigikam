@@ -59,9 +59,10 @@ public:
     explicit OpenCVFaceDetector(const QStringList& cascadeDirs);
     ~OpenCVFaceDetector();
 
-    cv::Mat prepareForDetection(const QImage& inputImage) const;
+    cv::Mat prepareForDetection(const QImage& inputImage)        const;
     cv::Mat prepareForDetection(const Digikam::DImg& inputImage) const;
-    QList<QRect> detectFaces(const cv::Mat& inputImage, const cv::Size& originalSize = cv::Size(0, 0));
+    QList<QRect> detectFaces(const cv::Mat& inputImage,
+                             const cv::Size& originalSize = cv::Size(0, 0));
 
     /**
      * Tunes the parameters.
@@ -94,9 +95,11 @@ private:
      *  @param params The parameters to be used for detection
      *  @return Returns a vector of Face objects. Each object hold information about 1 face.
      */
-    QList<QRect> cascadeResult(const cv::Mat& inputImage, Cascade& cascade, const DetectObjectParameters& params) const;
+    QList<QRect> cascadeResult(const cv::Mat& inputImage,
+                               Cascade& cascade,
+                               const DetectObjectParameters& params) const;
 
-    bool verifyFace(const cv::Mat& inputImage, const QRect& face) const;
+    bool verifyFace(const cv::Mat& inputImage, const QRect& face)    const;
 
     /**
      * Returns the faces from the detection results of multiple cascades
@@ -106,9 +109,11 @@ private:
      * @param mindups The minimum number of duplicate detections required for a face to qualify as genuine
      * @return The vector of the final faces
      */
-    QList<QRect> mergeFaces(const cv::Mat& inputImage, const QList< QList<QRect> >& preliminaryResults) const;
+    QList<QRect> mergeFaces(const cv::Mat& inputImage,
+                            const QList< QList<QRect> >& preliminaryResults) const;
 
-    void updateParameters(const cv::Size& scaledSize, const cv::Size& originalSize);
+    void updateParameters(const cv::Size& scaledSize,
+                          const cv::Size& originalSize);
 
 private:
 

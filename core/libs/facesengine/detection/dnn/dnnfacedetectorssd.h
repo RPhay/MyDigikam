@@ -36,19 +36,21 @@ class DNNFaceDetectorSSD: public DNNFaceDetectorBase
 
 public:
 
-    DNNFaceDetectorSSD();
+    explicit DNNFaceDetectorSSD();
     ~DNNFaceDetectorSSD();
 
-    virtual void detectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize,
+    virtual void detectFaces(const cv::Mat& inputImage,
+                             const cv::Size& paddedSize,
                              std::vector<cv::Rect>& detectedBboxes);
 
 private:
 
-    void postprocess(cv::Mat detectionMat, const cv::Size& paddedSize,
+    void postprocess(cv::Mat detectionMat,
+                     const cv::Size& paddedSize,
                      std::vector<cv::Rect>& detectedBboxes);
 
 };
 
-}; // namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_FACESENGINE_DNN_FACE_DETECTOR_SSD_H
