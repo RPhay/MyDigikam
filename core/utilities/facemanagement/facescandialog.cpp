@@ -201,7 +201,8 @@ void FaceScanDialog::doLoadState()
 
     RecognitionDatabase::RecognizeAlgorithm algo =
             (RecognitionDatabase::RecognizeAlgorithm)group.readEntry(entryName(d->configRecognizeAlgorithm),
-                                                                               (int)RecognitionDatabase::RecognizeAlgorithm::DNN); // Default now change to DNN;
+            (int)RecognitionDatabase::RecognizeAlgorithm::DNN); // Default now change to DNN;
+
     int index = d->recognizeBox->findData(algo);
     d->recognizeBox->setCurrentIndex(index == -1 ? (int)RecognitionDatabase::RecognizeAlgorithm::DNN : index); // Default now change to DNN
 
@@ -269,10 +270,10 @@ void FaceScanDialog::setupUi()
 
     // ---- Introductory labels ----
 
-    QLabel* const personIcon   = new QLabel;
+    QLabel* const personIcon      = new QLabel;
     personIcon->setPixmap(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(48));
 
-    QLabel* const introduction = new QLabel;
+    QLabel* const introduction    = new QLabel;
     introduction->setTextFormat(Qt::RichText);
     introduction->setText(i18nc("@info",
                                 "<qt>digiKam can search for faces in your photos.<br/> "
@@ -373,13 +374,16 @@ void FaceScanDialog::setupUi()
 
     // ---- Recognize algorithm ComboBox -----
 
-    d->recognizeBox        = new QComboBox;
-    // d->recognizeBox->addItem(i18nc("@label:listbox", "Recognize faces using LBP algorithm"),           RecognitionDatabase::RecognizeAlgorithm::LBP);
+    d->recognizeBox     = new QComboBox;
+
+    //d->recognizeBox->addItem(i18nc("@label:listbox", "Recognize faces using LBP algorithm"),           RecognitionDatabase::RecognizeAlgorithm::LBP);
     //d->recognizeBox->addItem(i18nc("@label:listbox", "Recognize faces using EigenFaces algorithm"),    RecognitionDatabase::RecognizeAlgorithm::EigenFace);
     //d->recognizeBox->addItem(i18nc("@label:listbox", "Recognize faces using FisherFaces algorithm"),   RecognitionDatabase::RecognizeAlgorithm::FisherFace);
+
 #ifdef HAVE_FACESENGINE_DNN
     d->recognizeBox->addItem(i18nc("@label:listbox", "Recognize faces using Deep Learning algorithm"), RecognitionDatabase::RecognizeAlgorithm::DNN);
 #endif
+
     d->recognizeBox->setCurrentIndex(RecognitionDatabase::RecognizeAlgorithm::DNN); // Default now change to DNN
 
     d->retrainAllButton = new QCheckBox(advancedTab);
@@ -440,9 +444,10 @@ void FaceScanDialog::slotPrepareForDetect(bool status)
     d->albumSelectors->resetTAlbumSelection();
 }
 
-void FaceScanDialog::slotPrepareForRecognize(bool status)
+void FaceScanDialog::slotPrepareForRecognize(bool /*status*/)
 {
-    /**  TODO:
+    /**
+     * TODO:
      * reRecognizeButton always disables d->alreadyScannedBox, while it should be
      * Find out why and fix it.
      */
@@ -453,11 +458,13 @@ void FaceScanDialog::slotPrepareForRecognize(bool status)
 
     // Set default for Tag tab so that People and its children are checked
     AlbumList tagAlbums = AlbumManager::instance()->allTAlbums();
-    for(int i = 0; i < tagAlbums.size(); i++)
+
+    for (int i = 0; i < tagAlbums.size(); ++i)
     {
-        Album* album = tagAlbums[i];
-        if(album->title() == QLatin1String("People")
-        || (album->parent() != nullptr && album->parent()->title() == QLatin1String("People")))
+        Album* const album = tagAlbums[i];
+
+        if (album->title() == QLatin1String("People") ||
+           ((album->parent() != nullptr) && (album->parent()->title() == QLatin1String("People"))))
         {
             d->albumSelectors->setTagSelected(album, false);
         }
@@ -531,19 +538,22 @@ FaceScanSettings FaceScanDialog::settings() const
     // TODO: why does the original code append but not assign here???
     // settings.albums << d->albumSelectors->selectedAlbumsAndTags();
     settings.albums                 = d->albumSelectors->selectedAlbumsAndTags();
-    AlbumList tagAlbums = AlbumManager::instance()->allTAlbums();
-    for(int i = 0; i < tagAlbums.size(); i++)
+    AlbumList tagAlbums             = AlbumManager::instance()->allTAlbums();
+
+    for (int i = 0; i < tagAlbums.size();++i)
     {
         Album* const album = tagAlbums[i];
         QString albumTitle = album->title();
-        if(albumTitle == QLatin1String("People"))
+
+        if (albumTitle == QLatin1String("People"))
         {
             continue;
         }
-        if(album->parent() != nullptr
-        && album->parent()->title() == QString::fromLatin1("People")
-        && albumTitle != QString::fromLatin1("Unknown")
-        && albumTitle != QString::fromLatin1("Unconfirmed"))
+
+        if (album->parent() != nullptr                                &&
+            album->parent()->title() == QString::fromLatin1("People") &&
+            albumTitle != QString::fromLatin1("Unknown")              &&
+            albumTitle != QString::fromLatin1("Unconfirmed"))         &&
         {
             // set settingsConflicted back to false in case that there are tags to recognize
             d->settingsConflicted = false;
