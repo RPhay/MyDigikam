@@ -215,7 +215,7 @@ public:
 
 public:
 
-    // --- Faces Training management ----------------------------------------------------
+    // --- Faces Training management (recognitiondatabase_training.cpp) ----------------------------------------------------
 
     /**
      * Gives a hint about the complexity of training for the current backend.
