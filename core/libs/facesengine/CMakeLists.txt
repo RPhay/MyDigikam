@@ -71,6 +71,7 @@ set(facesengine_LIB_SRCS facedetector.cpp
 )
 
 set(facesengine_database_LIB_SRCS recognitiondatabase.cpp
+                                  recognitiondatabase_p.cpp
                                   simpletrainingdataprovider.cpp
 
                                   # Eigen Faces recognition module based on OpenCV
