@@ -30,7 +30,7 @@
 
 // Local includes
 
-#include "digikam_opencv.h""
+#include "digikam_opencv.h"
 #include "shapepredictor.h"
 
 namespace Digikam
