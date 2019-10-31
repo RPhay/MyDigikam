@@ -33,7 +33,7 @@ namespace Digikam
 
 enum PreprocessorSelection
 {
-	OPENFACE = 0
+    OPENFACE = 0
 };
 
 class RecognitionPreprocessor: public Preprocessor
@@ -41,17 +41,17 @@ class RecognitionPreprocessor: public Preprocessor
 
 public:
 
-	RecognitionPreprocessor();
-	virtual ~RecognitionPreprocessor();
+    RecognitionPreprocessor();
+    virtual ~RecognitionPreprocessor();
 
-	void init(PreprocessorSelection mode);
+    void init(PreprocessorSelection mode);
 
-	virtual cv::Mat preprocess(const cv::Mat& image);
+    virtual cv::Mat preprocess(const cv::Mat& image);
 
 private:
 
-	class Private;
-	Private* const d;
+    class Private;
+    Private* const d;
 
 };
 

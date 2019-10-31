@@ -4,7 +4,7 @@
  *
  * Date        : 2019-08-08
  * Description : Base class to perform low-level neural network inference
- *				 for face detection
+ *               for face detection
  *
  * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
@@ -35,8 +35,8 @@
 namespace Digikam
 {
 
-float DNNFaceDetectorBase::confidenceThreshold 	= 0.6;
-float DNNFaceDetectorBase::nmsThreshold 		= 0.4;
+float DNNFaceDetectorBase::confidenceThreshold  = 0.6;
+float DNNFaceDetectorBase::nmsThreshold         = 0.4;
 
 // --------------------------------------------------------------------------------------------------------
 
@@ -57,7 +57,7 @@ DNNFaceDetectorBase::~DNNFaceDetectorBase()
 
 cv::Size DNNFaceDetectorBase::nnInputSizeRequired() const
 {
-	return inputImageSize;
+    return inputImageSize;
 }
 
 void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize, float confidence,

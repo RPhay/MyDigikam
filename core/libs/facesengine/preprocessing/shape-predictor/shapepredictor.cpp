@@ -286,7 +286,7 @@ bool pointContained(const cv::Rect& rect, const std::vector<float>& point)
 // ------------------------------------------------------------------------------------
 
 void extract_feature_pixel_values(const cv::Mat& img_,
-                          		  const cv::Rect& rect,
+                                  const cv::Rect& rect,
                                   const std::vector<float>& current_shape,
                                   const std::vector<float>& reference_shape,
                                   const std::vector<unsigned long>& reference_pixel_anchor_idx,

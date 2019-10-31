@@ -48,13 +48,13 @@ public:
     explicit DNNFaceExtractor(Preprocessor* p);
     ~DNNFaceExtractor();
 
-	void getFaceEmbedding(const cv::Mat& faceImage, std::vector<float>& vecdata);
+    void getFaceEmbedding(const cv::Mat& faceImage, std::vector<float>& vecdata);
 
 private:
 
-	Preprocessor*	preprocessor;
+    Preprocessor*   preprocessor;
 
-	cv::dnn::Net 	net;
+    cv::dnn::Net    net;
 
     cv::Size        imageSize;
     float           scaleFactor;

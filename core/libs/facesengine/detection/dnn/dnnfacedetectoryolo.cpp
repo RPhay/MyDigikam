@@ -45,7 +45,7 @@ namespace Digikam
 DNNFaceDetectorYOLO::DNNFaceDetectorYOLO()
   : DNNFaceDetectorBase(1.0 / 255.0, cv::Scalar(0.0, 0.0, 0.0), cv::Size(416, 416))
 {
-	QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                              QLatin1String("digikam/facesengine/yolov3-face.cfg"));
     QString nndata = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                             QLatin1String("digikam/facesengine/yolov3-wider_16000.weights"));
@@ -60,7 +60,7 @@ DNNFaceDetectorYOLO::~DNNFaceDetectorYOLO()
 }
 
 void DNNFaceDetectorYOLO::detectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize,
-				 					  std::vector<cv::Rect>& detectedBboxes)
+                                      std::vector<cv::Rect>& detectedBboxes)
 {
     if (inputImage.empty())
     {

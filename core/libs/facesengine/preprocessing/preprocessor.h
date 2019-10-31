@@ -36,15 +36,15 @@ class Preprocessor
 
 public:
 
-	Preprocessor()
-	{
-	}
+    Preprocessor()
+    {
+    }
 
-	virtual ~Preprocessor()
-	{
-	}
+    virtual ~Preprocessor()
+    {
+    }
 
-	virtual cv::Mat preprocess(const cv::Mat& image) = 0;
+    virtual cv::Mat preprocess(const cv::Mat& image) = 0;
 
 };
 

@@ -4,7 +4,7 @@
  *
  * Date        : 2019-08-08
  * Description : Base class to perform low-level neural network inference
- *				 for face detection
+ *               for face detection
  *
  * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
@@ -41,13 +41,13 @@ class DNNFaceDetectorBase
 
 public:
 
-	explicit DNNFaceDetectorBase();
-	explicit DNNFaceDetectorBase(float scale, const cv::Scalar& val, const cv::Size& inputImgSize);
-	virtual ~DNNFaceDetectorBase();
+    explicit DNNFaceDetectorBase();
+    explicit DNNFaceDetectorBase(float scale, const cv::Scalar& val, const cv::Size& inputImgSize);
+    virtual ~DNNFaceDetectorBase();
 
-	virtual void detectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize,
-					 		 std::vector<cv::Rect>& detectedBboxes) = 0;
-	cv::Size nnInputSizeRequired() const;
+    virtual void detectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize,
+                             std::vector<cv::Rect>& detectedBboxes) = 0;
+    cv::Size nnInputSizeRequired() const;
 
 protected:
 
@@ -59,8 +59,8 @@ protected:
 
 public:
 
-    static float    confidenceThreshold; 	// Threshold for bbox detection. It can be init and changed in the GUI
-	static float 	nmsThreshold;			// Threshold for nms suppression
+    static float    confidenceThreshold;    // Threshold for bbox detection. It can be init and changed in the GUI
+    static float    nmsThreshold;           // Threshold for nms suppression
 
 protected:
 

@@ -4,7 +4,7 @@
  *
  * Date        : 2019-08-08
  * Description : Derived class to perform SSD neural network inference
- *				 for face detection
+ *               for face detection
  *
  * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
@@ -40,7 +40,7 @@ namespace Digikam
 DNNFaceDetectorSSD::DNNFaceDetectorSSD()
   : DNNFaceDetectorBase(1.0, cv::Scalar(104.0, 177.0, 123.0), cv::Size(300, 300))
 {
-	QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                              QLatin1String("digikam/facesengine/deploy.prototxt"));
     QString nndata = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                             QLatin1String("digikam/facesengine/res10_300x300_ssd_iter_140000_fp16.caffemodel"));
@@ -55,7 +55,7 @@ DNNFaceDetectorSSD::~DNNFaceDetectorSSD()
 }
 
 void DNNFaceDetectorSSD::detectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize,
-				 					 std::vector<cv::Rect>& detectedBboxes)
+                                     std::vector<cv::Rect>& detectedBboxes)
 {
     if (inputImage.empty())
     {
@@ -71,12 +71,12 @@ void DNNFaceDetectorSSD::detectFaces(const cv::Mat& inputImage, const cv::Size& 
 }
 
 void DNNFaceDetectorSSD::postprocess(cv::Mat detection, const cv::Size& paddedSize,
-                     				 std::vector<cv::Rect>& detectedBboxes)
+                                     std::vector<cv::Rect>& detectedBboxes)
 {
     std::vector<float> goodConfidences, doubtConfidences, confidences;
     std::vector<cv::Rect> goodBoxes, doubtBoxes, boxes;
 
-	cv::Mat detectionMat(detection.size[2], detection.size[3], CV_32F, detection.ptr<float>());
+    cv::Mat detectionMat(detection.size[2], detection.size[3], CV_32F, detection.ptr<float>());
 
     for (int i = 0; i < detectionMat.rows; ++i)
     {

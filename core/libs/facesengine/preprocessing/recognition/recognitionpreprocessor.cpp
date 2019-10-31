@@ -53,71 +53,71 @@ private:
 
 RecognitionPreprocessor::Private::Private()
   : preprocessingMode(-1),
-  	ofpreprocessor(0)
+    ofpreprocessor(0)
 {
 }
 
 RecognitionPreprocessor::Private::~Private()
 {
-	delete ofpreprocessor;
+    delete ofpreprocessor;
 }
 
 void RecognitionPreprocessor::Private::init(PreprocessorSelection mode)
 {
-	preprocessingMode = mode;
+    preprocessingMode = mode;
 
-	switch(mode)
-	{
-		case OPENFACE:
-		{
-			ofpreprocessor = new OpenfacePreprocessor;
-			ofpreprocessor->init();
-			break;
-		}
-		default:
-		{
-			qCDebug(DIGIKAM_FACEDB_LOG) << "Error unknown preprocessingMode " << preprocessingMode;
-			preprocessingMode = -1;
-		}
-	}
+    switch(mode)
+    {
+        case OPENFACE:
+        {
+            ofpreprocessor = new OpenfacePreprocessor;
+            ofpreprocessor->init();
+            break;
+        }
+        default:
+        {
+            qCDebug(DIGIKAM_FACEDB_LOG) << "Error unknown preprocessingMode " << preprocessingMode;
+            preprocessingMode = -1;
+        }
+    }
 }
 
 cv::Mat RecognitionPreprocessor::Private::preprocess(const cv::Mat& image)
 {
-	switch(preprocessingMode)
-	{
-		case OPENFACE:
-		{
-			qCDebug(DIGIKAM_FACEDB_LOG) << "Align face for OpenFace neural network model";
-			return ofpreprocessor->process(image);
-		}
-		default:
-		{
-			qCDebug(DIGIKAM_FACEDB_LOG) << "Error unknown preprocessingMode " << preprocessingMode;
-			return image;
-		}
-	}
+    switch(preprocessingMode)
+    {
+        case OPENFACE:
+        {
+            qCDebug(DIGIKAM_FACEDB_LOG) << "Align face for OpenFace neural network model";
+            return ofpreprocessor->process(image);
+        }
+        default:
+        {
+            qCDebug(DIGIKAM_FACEDB_LOG) << "Error unknown preprocessingMode " << preprocessingMode;
+            return image;
+        }
+    }
 }
 
 // ------------------------------------------------------------------------------------------------------
 
 RecognitionPreprocessor::RecognitionPreprocessor()
   : Preprocessor(),
-  	d(new Private)
+    d(new Private)
 {
 }
 
 RecognitionPreprocessor::~RecognitionPreprocessor()
 {
-	delete d;
+    delete d;
 }
 
 void RecognitionPreprocessor::init(PreprocessorSelection mode)
 {
-	d->init(mode);
+    d->init(mode);
 }
 
 cv::Mat RecognitionPreprocessor::preprocess(const cv::Mat& image)
 {
-	return d->preprocess(image);
+    return d->preprocess(image);
 }

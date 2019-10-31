@@ -4,7 +4,7 @@
  *
  * Date        : 2019-08-08
  * Description : Derived class to perform SSD neural network inference
- *				 for face detection
+ *               for face detection
  *
  * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
@@ -36,15 +36,15 @@ class DNNFaceDetectorSSD: public DNNFaceDetectorBase
 
 public:
 
-	DNNFaceDetectorSSD();
-	~DNNFaceDetectorSSD();
+    DNNFaceDetectorSSD();
+    ~DNNFaceDetectorSSD();
 
-	virtual void detectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize,
-					 		 std::vector<cv::Rect>& detectedBboxes);
+    virtual void detectFaces(const cv::Mat& inputImage, const cv::Size& paddedSize,
+                             std::vector<cv::Rect>& detectedBboxes);
 
 private:
 
-	void postprocess(cv::Mat detectionMat, const cv::Size& paddedSize,
+    void postprocess(cv::Mat detectionMat, const cv::Size& paddedSize,
                      std::vector<cv::Rect>& detectedBboxes);
 
 };
