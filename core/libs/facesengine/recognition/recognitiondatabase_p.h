@@ -114,7 +114,7 @@ public:
 
 public:
 
-    // --- Faces Training management (recognitiondatabase_training.cpp) ----------------------------------------------------
+    // --- Faces Training management (recognitiondatabase_training.cpp) ----------------------------------
 
     void train(OpenCVLBPHFaceRecognizer* const r,
                const QList<Identity>& identitiesToBeTrained,
@@ -134,6 +134,8 @@ public:
                const QString& trainingContext);
 
 public:
+
+    // --- Recognition management (recognitiondatabase_recognize.cpp) ------------------------------------
 
     void clear(OpenCVLBPHFaceRecognizer* const,
                const QList<int>& idsToClear,

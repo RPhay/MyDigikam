@@ -28,6 +28,62 @@
 namespace Digikam
 {
 
+void RecognitionDatabase::Private::clear(OpenCVLBPHFaceRecognizer* const,
+                                         const QList<int>& idsToClear,
+                                         const QString& trainingContext)
+{
+    // force later reload
+    delete opencvlbph;
+    opencvlbph = nullptr;
+
+    if (idsToClear.isEmpty())
+    {
+        FaceDbAccess().db()->clearLBPHTraining(trainingContext);
+    }
+    else
+    {
+        FaceDbAccess().db()->clearLBPHTraining(idsToClear, trainingContext);
+    }
+}
+
+void RecognitionDatabase::Private::clear(OpenCVEIGENFaceRecognizer* const,
+                                         const QList<int>& idsToClear,
+                                         const QString& trainingContext)
+{
+    // force later reload
+    delete opencveigen;
+    opencveigen = nullptr;
+
+    if (idsToClear.isEmpty())
+    {
+        FaceDbAccess().db()->clearEIGENTraining(trainingContext);
+    }
+    else
+    {
+        FaceDbAccess().db()->clearEIGENTraining(idsToClear, trainingContext);
+    }
+}
+
+void RecognitionDatabase::Private::clear(OpenCVFISHERFaceRecognizer* const,
+                                         const QList<int>&,
+                                         const QString&)
+{
+    // force later reload
+    delete opencvfisher;
+    opencvfisher = nullptr;
+}
+
+void RecognitionDatabase::Private::clear(OpenCVDNNFaceRecognizer* const,
+                                         const QList<int>&,
+                                         const QString&)
+{
+    // force later reload
+    delete opencvdnn;
+    opencvdnn = nullptr;
+}
+
+// ------------------------------------------------------------------------------
+
 int RecognitionDatabase::recommendedImageSize(const QSize& availableSize) const
 {
     // hardcoded for now, change when we know better.
