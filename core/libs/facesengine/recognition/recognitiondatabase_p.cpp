@@ -66,55 +66,6 @@ RecognitionDatabase::Private::~Private()
     delete funnel;
 }
 
-// NOTE: Takes care that there may be multiple values of attribute in identity's attributes
-bool RecognitionDatabase::Private::identityContains(const Identity& identity, const QString& attribute, const QString& value) const
-{
-    const QMap<QString, QString> map          = identity.attributesMap();
-    QMap<QString, QString>::const_iterator it = map.constFind(attribute);
-
-    for ( ; it != map.constEnd() && it.key() == attribute ; ++it)
-    {
-        if (it.value() == value)
-        {
-            return true;
-        }
-    }
-
-    return false;
-}
-
-Identity RecognitionDatabase::Private::findByAttribute(const QString& attribute, const QString& value) const
-{
-    foreach (const Identity& identity, identityCache)
-    {
-        if (identityContains(identity, attribute, value))
-        {
-            return identity;
-        }
-    }
-
-    return Identity();
-}
-
-// NOTE: Takes care that there may be multiple values of attribute in valueMap
-Identity RecognitionDatabase::Private::findByAttributes(const QString& attribute, const QMap<QString, QString>& valueMap) const
-{
-    QMap<QString, QString>::const_iterator it = valueMap.find(attribute);
-
-    for ( ; it != valueMap.end() && it.key() == attribute ; ++it)
-    {
-        foreach (const Identity& identity, identityCache)
-        {
-            if (identityContains(identity, attribute, it.value()))
-            {
-                return identity;
-            }
-        }
-    }
-
-    return Identity();
-}
-
 void RecognitionDatabase::Private::applyParameters()
 {
     if (lbphConst()   ||

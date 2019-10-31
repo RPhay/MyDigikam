@@ -151,6 +151,8 @@ public:
 
 public:
 
+    // --- Identity management (recognitiondatabase_identity.cpp) -----------------------------------------
+
     bool     identityContains(const Identity& identity,
                               const QString& attribute,
                               const QString& value)                   const;
@@ -171,7 +173,7 @@ private:
     FunnelReal*                 funnel;
 };
 
-// --- Static Training methods (recognitiondatabase_training.cpp) ------------------------------------------------
+// --- Static Training methods (recognitiondatabase_training.cpp) ----------------------------------------
 
 void trainIdentityBatchLBPH(OpenCVLBPHFaceRecognizer* const r,
                             const QList<Identity>& identitiesToBeTrained,
