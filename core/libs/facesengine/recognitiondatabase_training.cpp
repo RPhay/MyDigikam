@@ -144,4 +144,198 @@ void RecognitionDatabase::clearTraining(const QList<Identity>& identitiesToClean
     }
 }
 
+// --- Static Training methods -------------------------------------------------------------------------------
+
+/// Training where the train method takes one identity and one image
+/*
+template <class Recognizer>
+static void trainSingle(Recognizer* const r,
+                        const Identity& identity,
+                        TrainingDataProvider* const data,
+                        const QString& trainingContext,
+                        RecognitionDatabase::Private* const d)
+{
+    ImageListProvider* const images = data->newImages(identity);
+
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "Training " << images->size() << " images for identity " << identity.id();
+
+    for ( ; !images->atEnd() ; images->proceed())
+    {
+        try
+        {
+            r->train(identity.id(), d->preprocessingChain(images->image()), trainingContext);
+        }
+        catch (cv::Exception& e)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+        }
+        catch (...)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        }
+    }
+}
+*/
+
+/**
+ * Training where the train method takes a list of identities and images,
+ * and updating per-identity is non-inferior to updating all at once.
+ */
+void trainIdentityBatchLBPH(OpenCVLBPHFaceRecognizer* const r,
+                            const QList<Identity>& identitiesToBeTrained,
+                            TrainingDataProvider* const data,
+                            const QString& trainingContext,
+                            RecognitionDatabase::Private* const d)
+{
+    foreach (const Identity& identity, identitiesToBeTrained)
+    {
+        std::vector<int>     labels;
+        std::vector<cv::Mat> images;
+
+        ImageListProvider* const imageList = data->newImages(identity);
+        images.reserve(imageList->size());
+
+        for ( ; !imageList->atEnd() ; imageList->proceed())
+        {
+            try
+            {
+                cv::Mat cvImage     = d->preprocessingChain(imageList->image());
+                cv::Mat cvImage_rgb = d->preprocessingChainRGB(imageList->image());
+
+                labels.push_back(identity.id());
+                images.push_back(cvImage);
+            }
+            catch (cv::Exception& e)
+            {
+                qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception preparing image for LBPH:" << e.what();
+            }
+            catch (...)
+            {
+                qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+            }
+        }
+
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "LBPH Training " << images.size() << " images for identity " << identity.id();
+
+        try
+        {
+            r->train(images, labels, trainingContext);
+        }
+        catch (cv::Exception& e)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception training LBPH Recognizer:" << e.what();
+        }
+        catch (...)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        }
+    }
+}
+
+void trainIdentityBatchEIGEN(OpenCVEIGENFaceRecognizer* const r,
+                             const QList<Identity>& identitiesToBeTrained,
+                             TrainingDataProvider* const data,
+                             const QString& trainingContext,
+                             RecognitionDatabase::Private* const d)
+{
+    foreach (const Identity& identity, identitiesToBeTrained)
+    {
+        std::vector<int>     labels;
+        std::vector<cv::Mat> images;
+        std::vector<cv::Mat> images_rgb;
+
+        ImageListProvider* const imageList = data->newImages(identity);
+        images.reserve(imageList->size());
+
+        for ( ; !imageList->atEnd() ; imageList->proceed())
+        {
+            try
+            {
+                cv::Mat cvImage     = d->preprocessingChain(imageList->image());
+                cv::Mat cvImage_rgb = d->preprocessingChainRGB(imageList->image());
+
+                labels.push_back(identity.id());
+                images.push_back(cvImage);
+                images_rgb.push_back(cvImage_rgb);
+            }
+            catch (cv::Exception& e)
+            {
+                qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception preparing image for Eigen:" << e.what();
+            }
+            catch (...)
+            {
+                qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+            }
+        }
+
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "Eigen Training " << images.size() << " images for identity " << identity.id();
+
+        try
+        {
+            r->train(images, labels, trainingContext, images_rgb);
+        }
+        catch (cv::Exception& e)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception training Eigen Recognizer:" << e.what();
+        }
+        catch (...)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        }
+    }
+}
+
+void trainIdentityBatchDNN(OpenCVDNNFaceRecognizer* const r,
+                           const QList<Identity>& identitiesToBeTrained,
+                           TrainingDataProvider* const data,
+                           const QString& trainingContext,
+                           RecognitionDatabase::Private* const d)
+{
+    foreach (const Identity& identity, identitiesToBeTrained)
+    {
+        std::vector<int>     labels;
+        std::vector<cv::Mat> images;
+        std::vector<cv::Mat> images_rgb;
+
+        ImageListProvider* const imageList = data->newImages(identity);
+        images.reserve(imageList->size());
+
+        for ( ; !imageList->atEnd() ; imageList->proceed())
+        {
+            try
+            {
+                cv::Mat cvImage     = d->preprocessingChain(imageList->image());
+                cv::Mat cvImage_rgb = d->preprocessingChainRGB(imageList->image());
+
+                labels.push_back(identity.id());
+                images.push_back(cvImage);
+                images_rgb.push_back(cvImage_rgb);
+            }
+            catch (cv::Exception& e)
+            {
+                qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception preparing image for DNN:" << e.what();
+            }
+            catch (...)
+            {
+                qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+            }
+        }
+
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "DNN Training " << images.size() << " images for identity " << identity.id();
+
+        try
+        {
+            r->train(images, labels, trainingContext, images_rgb);
+        }
+        catch (cv::Exception& e)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception training DNN Recognizer:" << e.what();
+        }
+        catch (...)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        }
+    }
+}
+
 } // namespace Digikam
