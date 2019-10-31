@@ -22,10 +22,10 @@
 
 #include "opencvdnnfacedetector.h"
 
-// Local includes
+// C++ includes
 
-#include "dnnfacedetectorssd.h"
-#include "dnnfacedetectoryolo.h"
+#include <cassert>
+#include <vector>
 
 // Qt includes
 
@@ -33,27 +33,23 @@
 #include <QStandardPaths>
 #include <qmath.h>
 
-// Local includes
-
-#include "digikam_debug.h"
-
 // OpenCV includes
 
 #include <opencv2/imgproc.hpp>
-#include <opencv2/highgui.hpp>
 
-// C++ includes
+// Local includes
 
-#include <cassert>
-#include <vector>
+#include "digikam_debug.h"
+#include "dnnfacedetectorssd.h"
+#include "dnnfacedetectoryolo.h"
 
 namespace Digikam
 {
 
 OpenCVDNNFaceDetector::OpenCVDNNFaceDetector(DetectorNNModel model)
-  : modelType(model)
+    : modelType(model)
 {
-    switch(model)
+    switch (model)
     {
         case DetectorNNModel::SSDMOBILENET:
         {
@@ -161,31 +157,32 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const Digikam::DImg& inputIma
 
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QString& inputImagePath, cv::Size& paddedSize) const
 {
-    cv::Mat image = cv::imread(inputImagePath.toStdString()), imagePadded;
-
+    cv::Mat image           = cv::imread(inputImagePath.toStdString()), imagePadded;
     cv::Size inputImageSize = inferenceEngine->nnInputSizeRequired();
-    float k = qMin(inputImageSize.width*1.0/image.cols, inputImageSize.height*1.0/image.rows);
+    float k                 = qMin(inputImageSize.width*1.0/image.cols, inputImageSize.height*1.0/image.rows);
 
-    int newWidth = (int)(k*image.cols);
-    int newHeight = (int)(k*image.rows);
+    int newWidth            = (int)(k*image.cols);
+    int newHeight           = (int)(k*image.rows);
     cv::resize(image, image, cv::Size(newWidth, newHeight));
 
     // Pad with black pixels
-    int padX = (inputImageSize.width - newWidth) / 2;
-    int padY = (inputImageSize.height - newHeight) / 2;
+    int padX                = (inputImageSize.width - newWidth) / 2;
+    int padY                = (inputImageSize.height - newHeight) / 2;
     cv::copyMakeBorder(image, imagePadded,
                        padY, padY,
                        padX, padX,
                        cv::BORDER_CONSTANT,
                        cv::Scalar(0,0,0));
 
-    paddedSize = cv::Size(padX, padY);
+    paddedSize              = cv::Size(padX, padY);
 
     return imagePadded;
 }
 
-/** There is no proof that doing this will help, since face can be detected at various positions (even half, masked faces
- *  can be detected), not only frontal. Effort on doing this should be questioned. 
+/**
+ * There is no proof that doing this will help, since face can be detected at various positions (even half, masked faces
+ *  can be detected), not only frontal. Effort on doing this should be questioned.
+
 void OpenCVDNNFaceDetector::resizeBboxToStandardHumanFace(int& width, int& height)
 >>>>>>> Restructure and improve Face Detection module
 {
@@ -203,11 +200,11 @@ void OpenCVDNNFaceDetector::resizeBboxToStandardHumanFace(int& width, int& heigh
     }
     else if(r <= 0.25)
     {
-        rReference = r*1.5; 
+        rReference = r*1.5;
     }
     else if(r >= 4)
     {
-        rReference = r/1.5; 
+        rReference = r/1.5;
     }
     else if(r < minRatioNonFrontalFace*0.9)
     {
@@ -238,7 +235,7 @@ QList<QRect> OpenCVDNNFaceDetector::detectFaces(const cv::Mat& inputImage, const
 
     // cv::Mat imageTest = inputImage.clone();
 
-    for(cv::Rect bbox : detectedBboxes)
+    for (cv::Rect bbox : detectedBboxes)
     {
         QRect rect(bbox.x, bbox.y, bbox.width, bbox.height);
         results << rect;
