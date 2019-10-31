@@ -33,7 +33,6 @@
 
 #include "digikam_opencv.h"
 #include "facedb.h"
-#include "face.hpp"
 #include "dnnfaceextractor.h"
 
 namespace Digikam
