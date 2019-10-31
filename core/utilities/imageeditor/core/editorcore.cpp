@@ -269,7 +269,7 @@ void EditorCore::slotImageLoaded(const LoadingDescription& loadingDescription, c
 
             if (!attribute.isValid() || !attribute.toBool())
             {
-                d->rotatedOrFlipped = d->image.rotateAndFlip(LoadSaveThread::exifOrientation(d->image, loadingDescription.filePath));
+                d->rotatedOrFlipped = d->image.rotateAndFlip(LoadSaveThread::exifOrientation(&d->image, loadingDescription.filePath));
             }
         }
 

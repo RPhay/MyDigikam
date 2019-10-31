@@ -49,7 +49,7 @@ QByteArray DImg::getUniqueHash() const
     }
 
     FileReadLocker lock(filePath);
-    QByteArray hash = DImgLoader::uniqueHash(filePath, *this, false);
+    QByteArray hash = DImgLoader::uniqueHash(filePath, this);
 
     // attribute is written by DImgLoader
 
@@ -58,7 +58,7 @@ QByteArray DImg::getUniqueHash() const
 
 QByteArray DImg::getUniqueHash(const QString& filePath)
 {
-    return DImgLoader::uniqueHash(filePath, DImg(), true);
+    return DImgLoader::uniqueHash(filePath);
 }
 
 QByteArray DImg::getUniqueHashV2() const
@@ -280,7 +280,7 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
 
 HistoryImageId DImg::createHistoryImageId(const QString& filePath, HistoryImageId::Type type) const
 {
-    HistoryImageId id = DImgLoader::createHistoryImageId(filePath, *this, DMetadata(getMetadata()));
+    HistoryImageId id = DImgLoader::createHistoryImageId(filePath, this, DMetadata(getMetadata()));
     id.setType(type);
 
     return id;

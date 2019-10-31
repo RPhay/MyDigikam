@@ -264,19 +264,24 @@ bool LoadSaveThread::querySendNotifyEvent() const
     return false;
 }
 
-int LoadSaveThread::exifOrientation(const DImg& image, const QString& filePath)
+int LoadSaveThread::exifOrientation(DImg* const image, const QString& filePath)
 {
-    QVariant attribute = image.attribute(QLatin1String("fromRawEmbeddedPreview"));
+    if (image)
+    {
+        QVariant attribute = image->attribute(QLatin1String("fromRawEmbeddedPreview"));
 
-    return exifOrientation(filePath, DMetadata(image.getMetadata()),
-                           image.detectedFormat() == DImg::RAW,
-                           (attribute.isValid() && attribute.toBool()));
+        return exifOrientation(filePath, DMetadata(image->getMetadata()),
+                               image->detectedFormat() == DImg::RAW,
+                               (attribute.isValid() && attribute.toBool()));
+    }
+
+    return (int)MetaEngine::ORIENTATION_UNSPECIFIED;
 }
 
 int LoadSaveThread::exifOrientation(const QString& filePath, const DMetadata& metadata,
                                     bool isRaw, bool fromRawEmbeddedPreview)
 {
-    int dbOrientation   = MetaEngine::ORIENTATION_UNSPECIFIED;
+    int dbOrientation = MetaEngine::ORIENTATION_UNSPECIFIED;
 
     if (infoProvider())
     {
@@ -314,15 +319,19 @@ int LoadSaveThread::exifOrientation(const QString& filePath, const DMetadata& me
     return exifOrientation;
 }
 
-bool LoadSaveThread::wasExifRotated(const DImg& image)
+bool LoadSaveThread::wasExifRotated(DImg* const image)
 {
-    // Keep in sync with the variant in thumbnailcreator.cpp
-    QVariant attribute(image.attribute(QLatin1String("exifRotated")));
+    if (image)
+    {
+        // Keep in sync with the variant in thumbnailcreator.cpp
+        QVariant attribute(image->attribute(QLatin1String("exifRotated")));
+        return (attribute.isValid() && attribute.toBool());
+    }
 
-    return attribute.isValid() && attribute.toBool();
+    return false;
 }
 
-bool LoadSaveThread::exifRotate(DImg& image, const QString& filePath)
+bool LoadSaveThread::exifRotate(DImg* const image, const QString& filePath)
 {
     // Keep in sync with the variant in thumbnailcreator.cpp
     if (wasExifRotated(image))
@@ -330,19 +339,26 @@ bool LoadSaveThread::exifRotate(DImg& image, const QString& filePath)
         return false;
     }
 
-    // Rotate thumbnail based on metadata orientation information
+    if (image)
+    {
+        // Rotate thumbnail based on metadata orientation information
+        bool rotatedOrFlipped = image->rotateAndFlip(exifOrientation(image, filePath));
+        image->setAttribute(QLatin1String("exifRotated"), true);
+        return rotatedOrFlipped;
+    }
 
-    bool rotatedOrFlipped = image.rotateAndFlip(exifOrientation(image, filePath));
-    image.setAttribute(QLatin1String("exifRotated"), true);
-
-    return rotatedOrFlipped;
+    return false;
 }
 
-bool LoadSaveThread::reverseExifRotate(DImg& image, const QString& filePath)
+bool LoadSaveThread::reverseExifRotate(DImg* const image, const QString& filePath)
 {
-    bool rotatedOrFlipped = image.reverseRotateAndFlip(exifOrientation(image, filePath));
+    if (image)
+    {
+        bool rotatedOrFlipped = image->reverseRotateAndFlip(exifOrientation(image, filePath));
+        return rotatedOrFlipped;
+    }
 
-    return rotatedOrFlipped;
+    return false;
 }
 
 } // namespace Digikam

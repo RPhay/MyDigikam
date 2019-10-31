@@ -218,7 +218,7 @@ bool Rotate::toolOperations()
     if (useExif)
     {
         // Exif rotation is currently not recorded to image history
-        image().rotateAndFlip(LoadSaveThread::exifOrientation(image(), inputUrl().toLocalFile()));
+        image().rotateAndFlip(LoadSaveThread::exifOrientation(&image(), inputUrl().toLocalFile()));
     }
     else
     {

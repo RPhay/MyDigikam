@@ -142,19 +142,19 @@ public:
      * Returns true if the image has actually been rotated or flipped.
      * Returns false if a rotation was not needed.
      */
-    static bool exifRotate(DImg& image, const QString& filePath);
-    static bool wasExifRotated(const DImg& image);
+    static bool exifRotate(DImg* const image, const QString& filePath);
+    static bool wasExifRotated(DImg* const image);
 
     /**
      * Reverses the previous function
      */
-    static bool reverseExifRotate(DImg& image, const QString& filePath);
+    static bool reverseExifRotate(DImg* const image, const QString& filePath);
 
     /**
      * Retrieves the Exif orientation, either from the info provider if available,
      * or from the metadata
      */
-    static int exifOrientation(const DImg& image, const QString& filePath);
+    static int exifOrientation(DImg* const image, const QString& filePath);
     static int exifOrientation(const QString& filePath, const DMetadata& metadata,
                                bool isRaw, bool fromRawEmbeddedPreview);
 

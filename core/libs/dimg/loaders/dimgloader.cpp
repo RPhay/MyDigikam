@@ -226,7 +226,7 @@ bool DImgLoader::readMetadata(const QString& filePath)
     if (m_loadFlags & LoadImageHistory)
     {
         DImageHistory history = DImageHistory::fromXml(metaDataFromFile.getItemHistory());
-        HistoryImageId id     = createHistoryImageId(filePath, *m_image, metaDataFromFile);
+        HistoryImageId id     = createHistoryImageId(filePath, m_image, metaDataFromFile);
         id.m_type             = HistoryImageId::Current;
         history << id;
 
@@ -262,7 +262,7 @@ static QDateTime creationDateFromFilesystem(const QFileInfo& info)
     return qMin(ctime, mtime);
 }
 
-HistoryImageId DImgLoader::createHistoryImageId(const QString& filePath, const DImg& image, const DMetadata& metadata)
+HistoryImageId DImgLoader::createHistoryImageId(const QString& filePath, const DImg* const image, const DMetadata& metadata)
 {
     QFileInfo file(filePath);
 
@@ -283,7 +283,7 @@ HistoryImageId DImgLoader::createHistoryImageId(const QString& filePath, const D
     id.setCreationDate(dt);
     id.setFileName(file.fileName());
     id.setPath(file.path());
-    id.setUniqueHash(QString::fromUtf8(uniqueHashV2(filePath, &image)), file.size());
+    id.setUniqueHash(QString::fromUtf8(uniqueHashV2(filePath, image)), file.size());
 
     return id;
 }
@@ -330,6 +330,57 @@ void DImgLoader::purgeExifWorkingColorSpace()
     m_image->setMetadata(meta.data());
 }
 
+QByteArray DImgLoader::uniqueHash(const QString& filePath, const DImg* const img)
+{
+    QByteArray bv;
+
+    if (img)
+    {
+        DMetadata metaDataFromImage(const_cast<DImg*>(img)->getMetadata());
+        bv = metaDataFromImage.getExifEncoded();
+    }
+    else
+    {
+        DMetadata metaDataFromFile(filePath);
+        bv = metaDataFromFile.getExifEncoded();
+    }
+
+    // Create the unique ID
+
+    QCryptographicHash md5(QCryptographicHash::Md5);
+
+    // First, read the Exif data into the hash
+    md5.addData(bv);
+
+    // Second, read in the first 8KB of the file
+    QFile qfile(filePath);
+
+    char databuf[8192];
+    QByteArray hash;
+
+    if (qfile.open(QIODevice::Unbuffered | QIODevice::ReadOnly))
+    {
+        int readlen = 0;
+
+        if ((readlen = qfile.read(databuf, 8192)) > 0)
+        {
+            QByteArray size;
+            md5.addData(databuf, readlen);
+            md5.addData(size.setNum(qfile.size()));
+            hash = md5.result().toHex();
+        }
+
+        qfile.close();
+    }
+
+    if (img && !hash.isNull())
+    {
+        const_cast<DImg*>(img)->setAttribute(QLatin1String("uniqueHash"), hash);
+    }
+
+    return hash;
+}
+
 QByteArray DImgLoader::uniqueHashV2(const QString& filePath, const DImg* const img)
 {
     QFile file(filePath);
@@ -372,57 +423,6 @@ QByteArray DImgLoader::uniqueHashV2(const QString& filePath, const DImg* const i
     if (img && !hash.isNull())
     {
         const_cast<DImg*>(img)->setAttribute(QString::fromUtf8("uniqueHashV2"), hash);
-    }
-
-    return hash;
-}
-
-QByteArray DImgLoader::uniqueHash(const QString& filePath, const DImg& img, bool loadMetadata)
-{
-    QByteArray bv;
-
-    if (loadMetadata)
-    {
-        DMetadata metaDataFromFile(filePath);
-        bv = metaDataFromFile.getExifEncoded();
-    }
-    else
-    {
-        DMetadata metaDataFromImage(img.getMetadata());
-        bv = metaDataFromImage.getExifEncoded();
-    }
-
-    // Create the unique ID
-
-    QCryptographicHash md5(QCryptographicHash::Md5);
-
-    // First, read the Exif data into the hash
-    md5.addData(bv);
-
-    // Second, read in the first 8KB of the file
-    QFile qfile(filePath);
-
-    char databuf[8192];
-    QByteArray hash;
-
-    if (qfile.open(QIODevice::Unbuffered | QIODevice::ReadOnly))
-    {
-        int readlen = 0;
-
-        if ((readlen = qfile.read(databuf, 8192)) > 0)
-        {
-            QByteArray size = nullptr;
-            md5.addData(databuf, readlen);
-            md5.addData(size.setNum(qfile.size()));
-            hash = md5.result().toHex();
-        }
-
-        qfile.close();
-    }
-
-    if (!hash.isNull())
-    {
-        const_cast<DImg&>(img).setAttribute(QLatin1String("uniqueHash"), hash);
     }
 
     return hash;

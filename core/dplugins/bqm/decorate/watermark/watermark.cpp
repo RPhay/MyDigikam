@@ -604,7 +604,7 @@ bool WaterMark::toolOperations()
 
     // rotate and/or flip the image depending on the exif information to allow for the expected watermark placement.
     //note that this operation is reversed after proper watermark generation to leave everything as it was.
-    LoadSaveThread::exifRotate(image(), inputUrl().toLocalFile());
+    LoadSaveThread::exifRotate(&image(), inputUrl().toLocalFile());
 
     float ratio = (float)image().height()/image().width();
 
@@ -863,7 +863,7 @@ bool WaterMark::toolOperations()
     // TODO: Create watermark filter, move code there, implement FilterAction
 
     delete composer;
-    LoadSaveThread::reverseExifRotate(image(), inputUrl().toLocalFile());
+    LoadSaveThread::reverseExifRotate(&image(), inputUrl().toLocalFile());
     return (savefromDImg());
 }
 
