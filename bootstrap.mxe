@@ -109,7 +109,6 @@ ${MXE_BUILD_TARGETS}-cmake -G "Unix Makefiles" . \
                            -DENABLE_KIO=OFF \
                            -DENABLE_APPSTYLES=ON \
                            -DENABLE_QWEBENGINE=OFF \
-                           -DENABLE_FACESENGINE_DNN=ON \
                            -DENABLE_DRMINGW=ON \
                            ${PNG2ICO_PATH} \
                            ${OPTIONS} \

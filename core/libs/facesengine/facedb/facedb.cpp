@@ -7,7 +7,7 @@
  *
  * Copyright (C) 2012-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C)      2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -26,9 +26,7 @@
 
 // OpenCV includes need to show up before Qt includes
 
-#ifdef HAVE_FACESENGINE_DNN
 #include "dnnfacemodel.h"
-#endif
 
 // Local includes
 
@@ -150,7 +148,7 @@ QList<Identity> FaceDb::identities() const
         p.setId(v.toInt());
         d->db->execSql(QLatin1String("SELECT attribute, `value` FROM IdentityAttributes WHERE id=?;"), p.id(), &values);
 
-        for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ;)
+        for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
         {
             QString attribute = it->toString();
             ++it;
@@ -428,9 +426,8 @@ void FaceDb::updateEIGENFaceModel(EigenFaceModel& model, const std::vector<cv::M
                   * Otherwise, how does it comput vecdata ???
                   * Buggy codes from GSoC 2017
                   */
-// #ifdef HAVE_FACESENGINE_DNN
 //                 this->getFaceVector(mat_rgb, vecdata);
-// #endif
+
                 QByteArray vec_byte(vecdata.size()*sizeof(float), 0);
                 float* const fp = (float*)vec_byte.data();
 
@@ -590,7 +587,6 @@ FisherFaceModel FaceDb::fisherFaceModel() const
     return model;
 }
 
-#ifdef HAVE_FACESENGINE_DNN
 void FaceDb::updateDNNFaceModel(DNNFaceModel& model)
 {
     QList<DNNFaceVecMetadata> metadataList = model.vecMetadata();
@@ -702,7 +698,6 @@ DNNFaceModel FaceDb::dnnFaceModel(bool debug) const
 
     return model;
 }
-#endif
 
 void FaceDb::clearEIGENTraining(const QString& context)
 {

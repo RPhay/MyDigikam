@@ -48,10 +48,7 @@ namespace Digikam
 class LBPHFaceModel;
 class EigenFaceModel;
 class FisherFaceModel;
-
-#ifdef HAVE_FACESENGINE_DNN
 class DNNFaceModel;
-#endif
 
 class FaceDb
 {
@@ -85,13 +82,13 @@ public:
     void clearEIGENTraining(const QList<int>& identities, const QString& context = QString());
 
     /// OpenCV FISHER
+
     FisherFaceModel fisherFaceModel() const;
 
-#ifdef HAVE_FACESENGINE_DNN
-    /// DNN
+    /// OpenCV DNN
+
     void updateDNNFaceModel(DNNFaceModel& model);
     DNNFaceModel dnnFaceModel(bool debug) const;
-#endif
 
     // ----------- Database shrinking methods ----------
 

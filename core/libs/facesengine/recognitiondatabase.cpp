@@ -8,7 +8,7 @@
  * Copyright (C)      2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C)      2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * Copyright (C) 2010-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -30,10 +30,7 @@
 #include "opencveigenfacerecognizer.h"
 #include "opencvlbphfacerecognizer.h"
 #include "funnelreal.h"
-
-#ifdef HAVE_FACESENGINE_DNN
-#   include "opencvdnnfacerecognizer.h"
-#endif
+#include "opencvdnnfacerecognizer.h"
 
 // Qt includes
 
@@ -100,11 +97,9 @@ public:
     OpenCVFISHERFaceRecognizer* fisher()             { return getObjectOrCreate(opencvfisher);          }
     OpenCVFISHERFaceRecognizer* fisherConst() const  { return opencvfisher;                             }
 
-#ifdef HAVE_FACESENGINE_DNN
     OpenCVDNNFaceRecognizer*    dnn()                { return getObjectOrCreate(opencvdnn);             }
     OpenCVDNNFaceRecognizer*    dnnConst() const     { return opencvdnn;                                }
     void                        createDNNDebug()     { opencvdnn = new OpenCVDNNFaceRecognizer(true);   }
-#endif
 
     FunnelReal*                 aligner()            { return getObjectOrCreate(funnel);                }
     FunnelReal*                 alignerConst() const { return funnel;                                   }
@@ -113,42 +108,64 @@ public:
 
     void applyParameters();
 
-    void train(OpenCVLBPHFaceRecognizer* const r, const QList<Identity>& identitiesToBeTrained,
-               TrainingDataProvider* const data, const QString& trainingContext);
-    void train(OpenCVEIGENFaceRecognizer* const r, const QList<Identity>& identitiesToBeTrained,
-               TrainingDataProvider* const data, const QString& trainingContext);
-
-#ifdef HAVE_FACESENGINE_DNN
-    void train(OpenCVDNNFaceRecognizer* const r, const QList<Identity>& identitiesToBeTrained,
-               TrainingDataProvider* const data, const QString& trainingContext);
-#endif
-
-    void clear(OpenCVLBPHFaceRecognizer* const, const QList<int>& idsToClear, const QString& trainingContext);
-    void clear(OpenCVEIGENFaceRecognizer* const, const QList<int>& idsToClear, const QString& trainingContext);
-    void clear(OpenCVFISHERFaceRecognizer* const, const QList<int>& idsToClear, const QString& trainingContext);
-
-#ifdef HAVE_FACESENGINE_DNN
-    void clear(OpenCVDNNFaceRecognizer* const, const QList<int>& idsToClear, const QString& trainingContext);
-#endif
-
     cv::Mat preprocessingChain(const QImage& image);
     cv::Mat preprocessingChainRGB(const QImage& image);
 
 public:
 
-    bool     identityContains(const Identity& identity, const QString& attribute, const QString& value) const;
-    Identity findByAttribute(const QString& attribute, const QString& value) const;
-    Identity findByAttributes(const QString& attribute, const QMap<QString, QString>& valueMap) const;
+    void train(OpenCVLBPHFaceRecognizer* const r,
+               const QList<Identity>& identitiesToBeTrained,
+               TrainingDataProvider* const data,
+               const QString& trainingContext);
+
+    void train(OpenCVEIGENFaceRecognizer* const r,
+               const QList<Identity>& identitiesToBeTrained,
+               TrainingDataProvider* const data,
+               const QString& trainingContext);
+
+    // NOTE: OpenCVFISHERFaceRecognizer do not have training method.
+    
+    void train(OpenCVDNNFaceRecognizer* const r,
+               const QList<Identity>& identitiesToBeTrained,
+               TrainingDataProvider* const data,
+               const QString& trainingContext);
+
+public:
+
+    void clear(OpenCVLBPHFaceRecognizer* const,
+               const QList<int>& idsToClear,
+               const QString& trainingContext);
+
+    void clear(OpenCVEIGENFaceRecognizer* const,
+               const QList<int>& idsToClear,
+               const QString& trainingContext);
+
+    void clear(OpenCVFISHERFaceRecognizer* const,
+               const QList<int>& idsToClear,
+               const QString& trainingContext);
+
+    void clear(OpenCVDNNFaceRecognizer* const,
+               const QList<int>& idsToClear,
+               const QString& trainingContext);
+
+public:
+
+    bool     identityContains(const Identity& identity,
+                              const QString& attribute,
+                              const QString& value) const;
+
+    Identity findByAttribute(const QString& attribute,
+                             const QString& value) const;
+
+    Identity findByAttributes(const QString& attribute,
+                              const QMap<QString, QString>& valueMap) const;
 
 private:
 
     OpenCVFISHERFaceRecognizer* opencvfisher;
     OpenCVEIGENFaceRecognizer*  opencveigen;
     OpenCVLBPHFaceRecognizer*   opencvlbph;
-
-#ifdef HAVE_FACESENGINE_DNN
     OpenCVDNNFaceRecognizer*    opencvdnn;
-#endif
 
     FunnelReal*                 funnel;
 };
@@ -158,8 +175,11 @@ private:
 /// Training where the train method takes one identity and one image
 /*
 template <class Recognizer>
-static void trainSingle(Recognizer* const r, const Identity& identity, TrainingDataProvider* const data,
-                        const QString& trainingContext, RecognitionDatabase::Private* const d)
+static void trainSingle(Recognizer* const r,
+                        const Identity& identity,
+                        TrainingDataProvider* const data,
+                        const QString& trainingContext,
+                        RecognitionDatabase::Private* const d)
 {
     ImageListProvider* const images = data->newImages(identity);
 
@@ -183,8 +203,9 @@ static void trainSingle(Recognizer* const r, const Identity& identity, TrainingD
 }
 */
 
-/** Training where the train method takes a list of identities and images,
- *  and updating per-identity is non-inferior to updating all at once.
+/**
+ * Training where the train method takes a list of identities and images,
+ * and updating per-identity is non-inferior to updating all at once.
  */
 static void trainIdentityBatchLBPH(OpenCVLBPHFaceRecognizer* const r,
                                    const QList<Identity>& identitiesToBeTrained,
@@ -200,7 +221,7 @@ static void trainIdentityBatchLBPH(OpenCVLBPHFaceRecognizer* const r,
         ImageListProvider* const imageList = data->newImages(identity);
         images.reserve(imageList->size());
 
-        for (; !imageList->atEnd() ; imageList->proceed())
+        for ( ; !imageList->atEnd() ; imageList->proceed())
         {
             try
             {
@@ -252,7 +273,7 @@ static void trainIdentityBatchEIGEN(OpenCVEIGENFaceRecognizer* const r,
         ImageListProvider* const imageList = data->newImages(identity);
         images.reserve(imageList->size());
 
-        for (; !imageList->atEnd() ; imageList->proceed())
+        for ( ; !imageList->atEnd() ; imageList->proceed())
         {
             try
             {
@@ -290,7 +311,6 @@ static void trainIdentityBatchEIGEN(OpenCVEIGENFaceRecognizer* const r,
     }
 }
 
-#ifdef HAVE_FACESENGINE_DNN
 static void trainIdentityBatchDNN(OpenCVDNNFaceRecognizer* const r,
                                   const QList<Identity>& identitiesToBeTrained,
                                   TrainingDataProvider* const data,
@@ -343,7 +363,6 @@ static void trainIdentityBatchDNN(OpenCVDNNFaceRecognizer* const r,
         }
     }
 }
-#endif
 
 // ----------------------------------------------------------------------------------------------
 
@@ -352,9 +371,7 @@ RecognitionDatabase::Private::Private()
       opencvfisher(nullptr),
       opencveigen(nullptr),
       opencvlbph(nullptr),
-#ifdef HAVE_FACESENGINE_DNN
       opencvdnn(nullptr),
-#endif
       funnel(nullptr)
 {
     DbEngineParameters params = CoreDbAccess::parameters().faceParameters();
@@ -383,9 +400,7 @@ RecognitionDatabase::Private::~Private()
     delete opencvfisher;
     delete opencveigen;
     delete opencvlbph;
-#ifdef HAVE_FACESENGINE_DNN
     delete opencvdnn;
-#endif
     delete funnel;
 }
 
@@ -395,7 +410,7 @@ bool RecognitionDatabase::Private::identityContains(const Identity& identity, co
     const QMap<QString, QString> map          = identity.attributesMap();
     QMap<QString, QString>::const_iterator it = map.constFind(attribute);
 
-    for (; it != map.constEnd() && it.key() == attribute; ++it)
+    for ( ; it != map.constEnd() && it.key() == attribute ; ++it)
     {
         if (it.value() == value)
         {
@@ -424,7 +439,7 @@ Identity RecognitionDatabase::Private::findByAttributes(const QString& attribute
 {
     QMap<QString, QString>::const_iterator it = valueMap.find(attribute);
 
-    for (; it != valueMap.end() && it.key() == attribute ; ++it)
+    for ( ; it != valueMap.end() && it.key() == attribute ; ++it)
     {
         foreach (const Identity& identity, identityCache)
         {
@@ -448,7 +463,7 @@ void RecognitionDatabase::Private::applyParameters()
         {
             if (it.key() == QLatin1String("threshold") || it.key() == QLatin1String("accuracy"))
             {
-                if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::LBP)
+                if      (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::LBP)
                 {
                     lbph()->setThreshold(it.value().toFloat());
                 }
@@ -468,8 +483,7 @@ void RecognitionDatabase::Private::applyParameters()
         }
     }
 
-#ifdef HAVE_FACESENGINE_DNN
-    if(recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::DNN)
+    if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::DNN)
     {
         float threshold = 0.8;
 
@@ -484,7 +498,6 @@ void RecognitionDatabase::Private::applyParameters()
 
         OpenCVDNNFaceRecognizer::m_threshold = threshold;
     }
-#endif
 }
 
 cv::Mat RecognitionDatabase::Private::preprocessingChain(const QImage& image)
@@ -493,7 +506,7 @@ cv::Mat RecognitionDatabase::Private::preprocessingChain(const QImage& image)
     {
         cv::Mat cvImage;
 
-        if (recognizeAlgorithm == RecognizeAlgorithm::LBP)
+        if      (recognizeAlgorithm == RecognizeAlgorithm::LBP)
         {
             cvImage = lbph()->prepareForRecognition(image);
         }
@@ -505,12 +518,10 @@ cv::Mat RecognitionDatabase::Private::preprocessingChain(const QImage& image)
         {
             cvImage = fisher()->prepareForRecognition(image);
         }
-#ifdef HAVE_FACESENGINE_DNN
         else if (recognizeAlgorithm == RecognizeAlgorithm::DNN)
         {
             cvImage = dnn()->prepareForRecognition(image);
         }
-#endif
         else
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "No obvious recognize algorithm";
@@ -552,12 +563,10 @@ cv::Mat RecognitionDatabase::Private::preprocessingChainRGB(const QImage& image)
         {
             cvImage = fisher()->prepareForRecognition(image);
         }
-#ifdef HAVE_FACESENGINE_DNN
         else if (recognizeAlgorithm == RecognizeAlgorithm::DNN)
         {
             cvImage = dnn()->prepareForRecognition(image);
         }
-#endif
         else
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "No obvious recognize algorithm";
@@ -598,7 +607,6 @@ void RecognitionDatabase::Private::train(OpenCVEIGENFaceRecognizer* const r,
     trainIdentityBatchEIGEN(r, identitiesToBeTrained, data, trainingContext, this);
 }
 
-#ifdef HAVE_FACESENGINE_DNN
 void RecognitionDatabase::Private::train(OpenCVDNNFaceRecognizer* const r,
                                          const QList<Identity>& identitiesToBeTrained,
                                          TrainingDataProvider* const data,
@@ -607,7 +615,6 @@ void RecognitionDatabase::Private::train(OpenCVDNNFaceRecognizer* const r,
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Training using opencv DNN";
     trainIdentityBatchDNN(r, identitiesToBeTrained, data, trainingContext, this);
 }
-#endif
 
 void RecognitionDatabase::Private::clear(OpenCVLBPHFaceRecognizer* const,
                                          const QList<int>& idsToClear,
@@ -654,7 +661,6 @@ void RecognitionDatabase::Private::clear(OpenCVFISHERFaceRecognizer* const,
     opencvfisher = nullptr;
 }
 
-#ifdef HAVE_FACESENGINE_DNN
 void RecognitionDatabase::Private::clear(OpenCVDNNFaceRecognizer* const,
                                          const QList<int>&,
                                          const QString&)
@@ -663,7 +669,6 @@ void RecognitionDatabase::Private::clear(OpenCVDNNFaceRecognizer* const,
     delete opencvdnn;
     opencvdnn = nullptr;
 }
-#endif
 
 // -------------------------------------------------------------------------------------------------
 
@@ -890,16 +895,14 @@ void RecognitionDatabase::setIdentityAttributes(int id, const QMap<QString, QStr
 
 QString RecognitionDatabase::backendIdentifier() const
 {
-    if (d->recognizeAlgorithm == RecognizeAlgorithm::EigenFace)
+    if      (d->recognizeAlgorithm == RecognizeAlgorithm::EigenFace)
     {
         return QLatin1String("eigenfaces");
     }
-#ifdef HAVE_FACESENGINE_DNN
     else if (d->recognizeAlgorithm == RecognizeAlgorithm::DNN)
     {
         return QLatin1String("dnn");
     }
-#endif
     else if (d->recognizeAlgorithm == RecognizeAlgorithm::FisherFace)
     {
         return QLatin1String("fisherfaces");
@@ -1016,7 +1019,7 @@ QList<Identity> RecognitionDatabase::recognizeFaces(ImageListProvider* const ima
 
         try
         {
-            if (d->recognizeAlgorithm == RecognizeAlgorithm::LBP)
+            if      (d->recognizeAlgorithm == RecognizeAlgorithm::LBP)
             {
                 id = d->lbph()->recognize(d->preprocessingChain(images->image()));
             }
@@ -1028,12 +1031,10 @@ QList<Identity> RecognitionDatabase::recognizeFaces(ImageListProvider* const ima
             {
                 id = d->fisher()->recognize(d->preprocessingChain(images->image()));
             }
-#ifdef HAVE_FACESENGINE_DNN
             else if (d->recognizeAlgorithm == RecognizeAlgorithm::DNN)
             {
                 id = d->dnn()->recognize(d->preprocessingChainRGB(images->image()));
             }
-#endif
             else
             {
                 qCCritical(DIGIKAM_FACESENGINE_LOG) << "No obvious recognize algorithm";
@@ -1061,8 +1062,10 @@ QList<Identity> RecognitionDatabase::recognizeFaces(ImageListProvider* const ima
     return result;
 }
 
-void RecognitionDatabase::clusterFaces(const QList<QImage>& images, std::vector<int>& clusteredIndices,
-                                       QStringList dataset, int nbOfClusters) const
+void RecognitionDatabase::clusterFaces(const QList<QImage>& images,
+                                       std::vector<int>& clusteredIndices,
+                                       QStringList dataset,
+                                       int nbOfClusters) const
 {
     std::vector<cv::Mat> preprocessedImages;
 
@@ -1079,13 +1082,15 @@ RecognitionDatabase::TrainingCostHint RecognitionDatabase::trainingCostHint() co
     return TrainingIsCheap;
 }
 
-void RecognitionDatabase::train(const Identity& identityToBeTrained, TrainingDataProvider* const data,
+void RecognitionDatabase::train(const Identity& identityToBeTrained, 
+                                TrainingDataProvider* const data,
                                 const QString& trainingContext)
 {
     train(QList<Identity>() << identityToBeTrained, data, trainingContext);
 }
 
-void RecognitionDatabase::train(const QList<Identity>& identitiesToBeTrained, TrainingDataProvider* const data,
+void RecognitionDatabase::train(const QList<Identity>& identitiesToBeTrained,
+                                TrainingDataProvider* const data,
                                 const QString& trainingContext)
 {
     if (!d || !d->dbAvailable)
@@ -1107,12 +1112,10 @@ void RecognitionDatabase::train(const QList<Identity>& identitiesToBeTrained, Tr
     {
         // No method to call
     }
-#ifdef HAVE_FACESENGINE_DNN
     else if (d->recognizeAlgorithm == RecognizeAlgorithm::DNN)
     {
         d->train(d->dnn(),   identitiesToBeTrained, data, trainingContext);
     }
-#endif
     else
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "No obvious recognize algorithm";
@@ -1150,9 +1153,7 @@ void RecognitionDatabase::clearAllTraining(const QString& trainingContext)
     d->clear(d->lbph(),   QList<int>(), trainingContext);
     d->clear(d->eigen(),  QList<int>(), trainingContext);
     d->clear(d->fisher(), QList<int>(), trainingContext);
-#ifdef HAVE_FACESENGINE_DNN
     d->clear(d->dnn(),    QList<int>(), trainingContext);
-#endif
 }
 
 void RecognitionDatabase::clearTraining(const QList<Identity>& identitiesToClean, const QString& trainingContext)
@@ -1170,7 +1171,7 @@ void RecognitionDatabase::clearTraining(const QList<Identity>& identitiesToClean
         ids << id.id();
     }
 
-    if (d->recognizeAlgorithm == RecognizeAlgorithm::LBP)
+    if      (d->recognizeAlgorithm == RecognizeAlgorithm::LBP)
     {
         d->clear(d->lbph(), ids, trainingContext);
     }
@@ -1182,12 +1183,10 @@ void RecognitionDatabase::clearTraining(const QList<Identity>& identitiesToClean
     {
         d->clear(d->fisher(), ids, trainingContext);
     }
-#ifdef HAVE_FACESENGINE_DNN
     else if (d->recognizeAlgorithm == RecognizeAlgorithm::DNN)
     {
         d->clear(d->dnn(), ids, trainingContext);
     }
-#endif
     else
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "No obvious recognize algorithm";

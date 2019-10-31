@@ -74,21 +74,32 @@ set(facesengine_database_LIB_SRCS recognitiondatabase.cpp
                                   simpletrainingdataprovider.cpp
 
                                   # Eigen Faces recognition module based on OpenCV
+
                                   recognition/opencv-eigenfaces/eigenfacemodel.cpp
                                   recognition/opencv-eigenfaces/opencveigenfacerecognizer.cpp
                                   recognition/opencv-eigenfaces/facerec_eigenborrowed.cpp
 
                                   # Fisher Faces recognition module based on OpenCV
+
                                   recognition/opencv-fisherfaces/fisherfacemodel.cpp
                                   recognition/opencv-fisherfaces/opencvfisherfacerecognizer.cpp
                                   recognition/opencv-fisherfaces/facerec_fisherborrowed.cpp
 
 
                                   # Lpbh Faces recognition module based on OpenCV
+
                                   recognition/opencv-lbph/lbphfacemodel.cpp
                                   recognition/opencv-lbph/opencvlbphfacerecognizer.cpp
                                   recognition/opencv-lbph/opencvmatdata.cpp
                                   recognition/opencv-lbph/facerec_borrowed.cpp
+
+                                  # Neural NetWork Faces recognition module based on OpenCV DNN
+
+                                  recognition/dnn/dnnfacemodel.cpp
+                                  recognition/dnn/opencvdnnfacerecognizer.cpp
+                                  recognition/dnn/facerec_dnnborrowed.cpp
+                                  recognition/dnn/dnnfaceextractor.cpp
+                                  recognition/dnn/dbscan.cpp
 
                                   alignment/congealing/funnelreal.cpp
 
@@ -98,19 +109,6 @@ set(facesengine_database_LIB_SRCS recognitiondatabase.cpp
                                   facedb/facedbschemaupdater.cpp
                                   facedb/facedb.cpp
 )
-
-if(ENABLE_FACESENGINE_DNN)
-
-    set(facesengine_database_LIB_SRCS ${facesengine_database_LIB_SRCS}
-
-                                      # Neural NetWork Faces recognition module based on OpenCV DNN
-                                      recognition/dnn/dnnfacemodel.cpp
-                                      recognition/dnn/opencvdnnfacerecognizer.cpp
-                                      recognition/dnn/facerec_dnnborrowed.cpp
-                                      recognition/dnn/dnnfaceextractor.cpp
-                                      recognition/dnn/dbscan.cpp
-    )
-endif()
 
 add_library(digikamfacesengine_src
             OBJECT
