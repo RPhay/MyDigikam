@@ -38,8 +38,12 @@ void FaceDb::updateDNNFaceModel(DNNFaceModel& model)
         if (metadata.storageStatus == DNNFaceVecMetadata::Created)
         {
             std::vector<float> vecdata = model.vecData(i);
-            qCDebug(DIGIKAM_FACEDB_LOG) << "vecdata: " << vecdata[vecdata.size()-2]
-                                                       << vecdata[vecdata.size()-1];
+
+            if (vecdata.size() > 2)
+            {
+                qCDebug(DIGIKAM_FACEDB_LOG) << "vecdata: " << vecdata[vecdata.size()-2]
+                                                           << vecdata[vecdata.size()-1];
+            }
 
             QByteArray vec_byte(vecdata.size()*sizeof(float), 0);
             float* const fp = (float*)vec_byte.data();
