@@ -7,7 +7,7 @@
  *
  * Copyright (C) 2017      by Yingjie Liu <yingjiewudi at gmail dot com>
  * Copyright (C) 2017-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -73,24 +73,27 @@ public:
     ~DNNFaceModel();
 
     DNNFaceRecognizer*       ptr();
-    const DNNFaceRecognizer* ptr() const;
+    const DNNFaceRecognizer* ptr()                              const;
 
     //Getter function
-    std::vector<std::vector<float> > getSrc() const;
+    std::vector<std::vector<float> > getSrc()                   const;
     void setSrc(std::vector<std::vector<float> > new_src);
 
-    cv::Mat getLabels() const;
+    cv::Mat getLabels()                                         const;
     void setLabels(cv::Mat new_labels);
 
-    QList<DNNFaceVecMetadata> vecMetadata()      const;
-    std::vector<float>        vecData(int index) const;
+    QList<DNNFaceVecMetadata> vecMetadata()                     const;
+    std::vector<float>        vecData(int index)                const;
 
     void setWrittenToDatabase(int index, int databaseId);
 
-    void setMats(const QList<std::vector<float> >& mats, const QList<DNNFaceVecMetadata>& matMetadata);
+    void setMats(const QList<std::vector<float> >& mats,
+                 const QList<DNNFaceVecMetadata>& matMetadata);
 
     /// Make sure to call this instead of FaceRecognizer::update directly!
-    void update(const std::vector<cv::Mat>& images, const std::vector<int>& labels, const QString& context,
+    void update(const std::vector<cv::Mat>& images,
+                const std::vector<int>& labels,
+                const QString& context,
                 DNNFaceExtractor* const extractor);
 
 protected:

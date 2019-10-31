@@ -78,24 +78,26 @@ public:
     /**
      * Predicts the label of a query image in src.
      */
-    int predict(cv::InputArray src) const;
+    int predict(cv::InputArray src)                 const;
 
     /**
      * Predicts the label and confidence for a given sample.
      */
-    void predict(cv::InputArray _src, int& label, double& dist,
+    void predict(cv::InputArray _src,
+                 int& label,
+                 double& dist,
                  DNNFaceExtractor* const extractor) const;
 
     /**
      * Getter and setter functions.
      */
-    double getThreshold() const                                 { return m_threshold;                  }
+    double getThreshold()                           const       { return m_threshold;                  }
     void   setThreshold(double _threshold)                      { m_threshold = _threshold;            }
 
-    std::vector<std::vector<float> > getSrc() const             { return m_src;                        }
+    std::vector<std::vector<float> > getSrc()       const       { return m_src;                        }
     void setSrc(const std::vector<std::vector<float> >& _src)   { m_src = _src;                        }
 
-    cv::Mat getLabels() const                                   { return m_labels;                     }
+    cv::Mat getLabels()                             const       { return m_labels;                     }
     void setLabels(cv::Mat _labels)                             { m_labels = _labels;                  }
 
 private:
@@ -105,7 +107,9 @@ private:
      * corresponding labels in labels, possibly preserving
      * old training data.
      */
-    void train(std::vector<std::vector<float> > src, cv::InputArray labels, bool preserveData);
+    void train(std::vector<std::vector<float> > src,
+               cv::InputArray labels,
+               bool preserveData);
 
 private:
 

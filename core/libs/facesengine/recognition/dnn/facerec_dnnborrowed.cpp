@@ -7,7 +7,7 @@
  *
  * Copyright (C) 2017      by Yingjie Liu <yingjiewudi at gmail dot com>
  * Copyright (C) 2017-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,21 +53,23 @@ static double cosineDistance(std::vector<float> v1, std::vector<float> v2)
     assert(v1.size() == v2.size());
 
     double scalarProduct = std::inner_product(v1.begin(), v1.end(), v2.begin(), 0.0);
-    double normV1 = sqrt(std::inner_product(v1.begin(), v1.end(), v1.begin(), 0.0));
-    double normV2 = sqrt(std::inner_product(v2.begin(), v2.end(), v2.begin(), 0.0));
+    double normV1        = sqrt(std::inner_product(v1.begin(), v1.end(), v1.begin(), 0.0));
+    double normV2        = sqrt(std::inner_product(v2.begin(), v2.end(), v2.begin(), 0.0));
 
-    return scalarProduct / normV1*normV2;
+    return (scalarProduct / (normV1 * normV2));
 }
 
 namespace Digikam
 {
 
-void DNNFaceRecognizer::train(std::vector<std::vector<float> > _in_src, InputArray _inm_labels)
+void DNNFaceRecognizer::train(std::vector<std::vector<float> > _in_src,
+                              InputArray _inm_labels)
 {
     this->train(_in_src, _inm_labels, false);
 }
 
-void DNNFaceRecognizer::update(std::vector<std::vector<float> > _in_src, InputArray _inm_labels)
+void DNNFaceRecognizer::update(std::vector<std::vector<float> > _in_src,
+                               InputArray _inm_labels)
 {
     // got no data, just return
     if (_in_src.size() == 0)
@@ -80,7 +82,9 @@ void DNNFaceRecognizer::update(std::vector<std::vector<float> > _in_src, InputAr
 
 /** This train function is used to store the face vectors, not training
  */
-void DNNFaceRecognizer::train(std::vector<std::vector<float> > _in_src, InputArray _inm_labels, bool preserveData)
+void DNNFaceRecognizer::train(std::vector<std::vector<float> > _in_src,
+                              InputArray _inm_labels,
+                              bool preserveData)
 {
     // get the vector of matrices
     std::vector<std::vector<float> > src = _in_src;
@@ -112,19 +116,21 @@ void DNNFaceRecognizer::train(std::vector<std::vector<float> > _in_src, InputArr
     return ;
 }
 
-void DNNFaceRecognizer::predict(cv::InputArray _src, int& label, double& dist,
+void DNNFaceRecognizer::predict(cv::InputArray _src,
+                                int& label,
+                                double& dist,
                                 DNNFaceExtractor* const extractor) const
 {
     qCWarning(DIGIKAM_FACESENGINE_LOG) << "Predicting face image";
 
-    cv::Mat src              = _src.getMat();//254*254
+    cv::Mat src = _src.getMat();//254*254
     std::vector<float> vecdata;
     extractor->getFaceEmbedding(src, vecdata);
     qCWarning(DIGIKAM_FACESENGINE_LOG) << "m_threshold " << m_threshold;
     qCWarning(DIGIKAM_FACESENGINE_LOG) << "vecdata: " << vecdata[vecdata.size()-2] << " " << vecdata[vecdata.size()-1];
 
-    dist  = -1;
-    label = -1;
+    dist        = -1;
+    label       = -1;
 
     // find nearest neighbor
 
@@ -188,7 +194,7 @@ void DNNFaceRecognizer::predict(cv::InputArray _src, int& label, double& dist,
 
         if (newDist > dist)
         {
-            dist = newDist;
+            dist  = newDist;
             label = it.key();
         }
     }
@@ -218,7 +224,7 @@ Ptr<DNNFaceRecognizer> DNNFaceRecognizer::create(double threshold)
         return ptr;
     }
 
-    ptr                         = Ptr<DNNFaceRecognizer>(fr);
+    ptr = Ptr<DNNFaceRecognizer>(fr);
 
     if (ptr.empty())
     {

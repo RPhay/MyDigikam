@@ -61,8 +61,10 @@ public:
     /**
      *  Low-level codes to cluster images.
      */
-    void cluster(const std::vector<cv::Mat>& images, std::vector<int>& clusteredIndices,
-                 QStringList dataset, int nbOfClusters);
+    void cluster(const std::vector<cv::Mat>& images,
+                 std::vector<int>& clusteredIndices,
+                 QStringList dataset,
+                 int nbOfClusters);
 
     /**
      *  Trains the given images, representing faces of the given matched identities.

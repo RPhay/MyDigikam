@@ -49,10 +49,10 @@ double cosineSimilarity(const std::vector<float>& v1, const std::vector<float>& 
     assert(v1.size() == v2.size());
 
     double scalarProduct = std::inner_product(v1.begin(), v1.end(), v2.begin(), 0.0);
-    double normV1 = sqrt(std::inner_product(v1.begin(), v1.end(), v1.begin(), 0.0));
-    double normV2 = sqrt(std::inner_product(v2.begin(), v2.end(), v2.begin(), 0.0));
+    double normV1        = sqrt(std::inner_product(v1.begin(), v1.end(), v1.begin(), 0.0));
+    double normV2        = sqrt(std::inner_product(v2.begin(), v2.end(), v2.begin(), 0.0));
 
-    return scalarProduct / normV1*normV2;
+    return (scalarProduct / (normV1 * normV2));
 }
 
 // -----------------------------------------------------------------------------------------
@@ -69,10 +69,11 @@ double PointCustomized::computeSimilarity(const PointCustomized& p)
     return cosineSimilarity(p.data, data);
 }
 
-
 // -----------------------------------------------------------------------------------------
 
-DBSCAN::DBSCAN(double eps, int minPts, const std::vector<PointCustomized>& pts)
+DBSCAN::DBSCAN(double eps,
+               int minPts,
+               const std::vector<PointCustomized>& pts)
   : eps(eps),
     minPtsPerCluster(minPts),
     points(pts),
@@ -174,7 +175,7 @@ void DBSCAN::run()
 
     ++nbOfClusters; // since nbOfClusters counted from 0
 
-    for(size_t i = 0 ; i < points.size() ; ++i)
+    for (size_t i = 0 ; i < points.size() ; ++i)
     {
         int cluster = points[i].cluster;
 
@@ -202,6 +203,7 @@ void DBSCAN::dfs(int current, int cluster)
     {
         if (points[next].cluster != NOT_CLASSIFIED)
             continue;
+
         dfs(next, cluster);
     }
 }

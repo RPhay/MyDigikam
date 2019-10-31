@@ -47,7 +47,7 @@ public:
     explicit PointCustomized(const std::vector<float>& _data);
     ~PointCustomized() = default;
 
-    double computeSimilarity(const PointCustomized & ot);
+    double computeSimilarity(const PointCustomized& ot);
 
 public:
 
@@ -67,7 +67,9 @@ class DBSCAN
 
 public:
 
-    explicit DBSCAN(double eps, int minPts, const std::vector<PointCustomized>& pts);
+    explicit DBSCAN(double eps,
+                    int minPts,
+                    const std::vector<PointCustomized>& pts);
     ~DBSCAN() = default;
 
     void run();
@@ -79,7 +81,9 @@ private:
     void checkNearPoints();
     bool isCoreObject(int idx);
 
-    void findNeighbors(const PointCustomized& p, int pointIdx, std::list<int>& neighbors);
+    void findNeighbors(const PointCustomized& p,
+                       int pointIdx,
+                       std::list<int>& neighbors);
 
 private:
 

@@ -81,7 +81,7 @@ void DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage, std::vector<fl
 
     timer.start();
     cv::Mat face_descriptors;
-    cv::Mat blob = cv::dnn::blobFromImage(alignedFace, scaleFactor, imageSize, meanValToSubtract);
+    cv::Mat blob     = cv::dnn::blobFromImage(alignedFace, scaleFactor, imageSize, meanValToSubtract);
     net.setInput(blob);
     face_descriptors = net.forward();
 

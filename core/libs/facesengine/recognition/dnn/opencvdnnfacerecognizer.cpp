@@ -7,7 +7,7 @@
  *
  * Copyright (C) 2017      by Yingjie Liu <yingjiewudi at gmail dot com>
  * Copyright (C) 2017-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -86,7 +86,7 @@ private:
 public:
 
     RecognitionPreprocessor* m_preprocessor;
-    DNNFaceExtractor* m_extractor;
+    DNNFaceExtractor*        m_extractor;
 
 };
 
@@ -114,7 +114,7 @@ cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(const QImage& inputImage)
 {
     QImage image(inputImage);
 
-    if (inputImage.width() > TargetInputSize || inputImage.height() > TargetInputSize)
+    if ((inputImage.width() > TargetInputSize) || (inputImage.height() > TargetInputSize))
     {
         image = inputImage.scaled(TargetInputSize, TargetInputSize, Qt::IgnoreAspectRatio);
     }
@@ -140,6 +140,7 @@ cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(const QImage& inputImage)
 
     //resize(cvImage, cvImage, Size(256, 256), (0, 0), (0, 0), INTER_LINEAR);
     //equalizeHist(cvImage, cvImage);
+
     return cvImage;
 }
 
@@ -300,8 +301,6 @@ void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images,
             qDebug() << image;
         }
     }
-//*/
-
 }
 
 void OpenCVDNNFaceRecognizer::train(const std::vector<cv::Mat>& images,
@@ -320,7 +319,7 @@ void OpenCVDNNFaceRecognizer::train(const std::vector<cv::Mat>& images,
 
     // add to database waiting only when not in mode debug
     if (!context.contains(QLatin1String("debug"), Qt::CaseInsensitive) &&
-        !context.contains(QLatin1String("test"), Qt::CaseInsensitive))
+        !context.contains(QLatin1String("test"),  Qt::CaseInsensitive))
     {
         FaceDbAccess().db()->updateDNNFaceModel(d->dnn());
     }
