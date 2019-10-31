@@ -65,6 +65,24 @@ void FaceDb::updateDNNFaceModel(DNNFaceModel& model)
                                 << metadata.context
                                 << compressed_vecdata;
 
+                QVariantList values;
+                d->db->execSql(QLatin1String("SELECT id FROM FaceMatrices "
+                                                 "WHERE identity=? AND `context`=?;"),
+                               metadata.identity, metadata.context, &values);
+
+                if (values.count() > 20)
+                {
+                    for (int j = 0 ; j < values.count() - 20 ; ++j)
+                    {
+                        qCDebug(DIGIKAM_FACEDB_LOG) << "Delete face vec data " << values.at(j).toInt()
+                                                    << " for identity " << metadata.identity;
+
+                        d->db->execSql(QLatin1String("DELETE FROM FaceMatrices "
+                                                     "WHERE id=? AND identity=? AND `context`=?;"),
+                                       values.at(j).toInt(), metadata.identity, metadata.context);
+                    }
+                }
+
                 d->db->execSql(QLatin1String("INSERT INTO FaceMatrices (identity, `context`, vecdata) "
                                              "VALUES (?,?,?);"),
                                histogramValues, nullptr, &insertedId);
