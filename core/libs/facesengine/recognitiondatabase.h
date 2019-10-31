@@ -100,7 +100,7 @@ public:
 
 public:
 
-    // --- Identity management -----------------------------------------
+    // --- Identity management (recognitiondatabase_identity.cpp) -----------------------------------------
 
     /// NOTE: For the documentation of standard attributes, see identity.h
 
