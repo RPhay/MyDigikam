@@ -150,7 +150,7 @@ public:
 
 public:
 
-    // --- Backend parameters --------------------------------------------
+    // --- Backend parameters (recognitiondatabase_backend.cpp) --------------------------
 
     /**
      * A textual, informative identifier of the backend in use.

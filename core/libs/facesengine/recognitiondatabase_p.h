@@ -171,7 +171,7 @@ private:
     FunnelReal*                 funnel;
 };
 
-// --- Static Training methods -------------------------------------------------------------------------------
+// --- Static Training methods (recognitiondatabase_training.cpp) ------------------------------------------------
 
 void trainIdentityBatchLBPH(OpenCVLBPHFaceRecognizer* const r,
                             const QList<Identity>& identitiesToBeTrained,
