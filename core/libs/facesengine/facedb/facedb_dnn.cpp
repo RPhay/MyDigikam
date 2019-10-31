@@ -57,7 +57,7 @@ void FaceDb::updateDNNFaceModel(DNNFaceModel& model)
 
             if (compressed_vecdata.isEmpty())
             {
-                qCWarning(DIGIKAM_FACEDB_LOG) << "Cannot compress face vec data to commit in database for Identity "
+                qCWarning(DIGIKAM_FACEDB_LOG) << "Cannot compress face mat data to commit in database for identity "
                                               << metadata.identity;
             }
             else
@@ -71,14 +71,14 @@ void FaceDb::updateDNNFaceModel(DNNFaceModel& model)
 
                 QVariantList values;
                 d->db->execSql(QLatin1String("SELECT id FROM FaceMatrices "
-                                                 "WHERE identity=? AND `context`=?;"),
+                                             "WHERE identity=? AND `context`=?;"),
                                metadata.identity, metadata.context, &values);
 
                 if (values.count() > 20)
                 {
                     for (int j = 0 ; j < values.count() - 20 ; ++j)
                     {
-                        qCDebug(DIGIKAM_FACEDB_LOG) << "Delete face vec data " << values.at(j).toInt()
+                        qCDebug(DIGIKAM_FACEDB_LOG) << "Delete face mat data " << values.at(j).toInt()
                                                     << " for identity " << metadata.identity;
 
                         d->db->execSql(QLatin1String("DELETE FROM FaceMatrices "
@@ -93,7 +93,7 @@ void FaceDb::updateDNNFaceModel(DNNFaceModel& model)
 
                 model.setWrittenToDatabase(i, insertedId.toInt());
 
-                qCDebug(DIGIKAM_FACEDB_LOG) << "Commit compressed vecData " << insertedId << " for identity "
+                qCDebug(DIGIKAM_FACEDB_LOG) << "Commit compressed mat data " << insertedId << " for identity "
                                             << metadata.identity << " with size " << compressed_vecdata.size();
             }
         }
@@ -132,11 +132,12 @@ DNNFaceModel FaceDb::dnnFaceModel(bool debug) const
 
             if (new_vec.isEmpty())
             {
-                qCWarning(DIGIKAM_FACEDB_LOG) << "Cannot uncompress mat data to checkout from database for Identity " << metadata.identity;
+                qCWarning(DIGIKAM_FACEDB_LOG) << "Cannot uncompress mat data to checkout from database for identity "
+                                              << metadata.identity;
             }
             else
             {
-                qCDebug(DIGIKAM_FACEDB_LOG) << "Checkout compressed histogram " << metadata.databaseId << " for identity "
+                qCDebug(DIGIKAM_FACEDB_LOG) << "Checkout mat data " << metadata.databaseId << " for identity "
                                             << metadata.identity << " with size " << cData.size();
 
                 float* const it = (float *)new_vec.data();
@@ -152,7 +153,8 @@ DNNFaceModel FaceDb::dnnFaceModel(bool debug) const
         }
         else
         {
-            qCWarning(DIGIKAM_FACEDB_LOG) << "Mat data to checkout from database are empty for Identity " << metadata.identity;
+            qCWarning(DIGIKAM_FACEDB_LOG) << "Mat data to checkout from database are empty for identity "
+                                          << metadata.identity;
         }
     }
 
