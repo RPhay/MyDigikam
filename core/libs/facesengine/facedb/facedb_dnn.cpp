@@ -104,7 +104,7 @@ DNNFaceModel FaceDb::dnnFaceModel(bool debug) const
     }
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Loading DNN model";
-    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT id, identity, `context`, `type`, `rows`, `cols`, `data`, vecdata "
+    DbEngineSqlQuery query = d->db->execQuery(QLatin1String("SELECT id, identity, `context`, vecdata "
                                                             "FROM FaceMatrices;"));
 
     DNNFaceModel model = DNNFaceModel();
@@ -120,7 +120,7 @@ DNNFaceModel FaceDb::dnnFaceModel(bool debug) const
         metadata.identity      = query.value(1).toInt();
         metadata.context       = query.value(2).toString();
         metadata.storageStatus = DNNFaceVecMetadata::InDatabase;
-        QByteArray cData       = query.value(7).toByteArray();
+        QByteArray cData       = query.value(3).toByteArray();
 
         if (!cData.isEmpty())
         {
@@ -137,7 +137,7 @@ DNNFaceModel FaceDb::dnnFaceModel(bool debug) const
 
                 float* const it = (float *)new_vec.data();
 
-                for (size_t i = 0; i < new_vec.size() / sizeof(float); ++i)
+                for (size_t i = 0 ; i < new_vec.size() / sizeof(float) ; ++i)
                 {
                     vecdata.push_back(*(it+i));
                 }
