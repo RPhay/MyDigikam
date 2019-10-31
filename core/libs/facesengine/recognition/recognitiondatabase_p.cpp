@@ -203,32 +203,6 @@ cv::Mat RecognitionDatabase::Private::preprocessingChainRGB(const QImage& image)
     }
 }
 
-void RecognitionDatabase::Private::train(OpenCVLBPHFaceRecognizer* const r,
-                                         const QList<Identity>& identitiesToBeTrained,
-                                         TrainingDataProvider* const data,
-                                         const QString& trainingContext)
-{
-    trainIdentityBatchLBPH(r, identitiesToBeTrained, data, trainingContext, this);
-}
-
-void RecognitionDatabase::Private::train(OpenCVEIGENFaceRecognizer* const r,
-                                         const QList<Identity>& identitiesToBeTrained,
-                                         TrainingDataProvider* const data,
-                                         const QString& trainingContext)
-{
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << "Training using opencv eigenfaces";
-    trainIdentityBatchEIGEN(r, identitiesToBeTrained, data, trainingContext, this);
-}
-
-void RecognitionDatabase::Private::train(OpenCVDNNFaceRecognizer* const r,
-                                         const QList<Identity>& identitiesToBeTrained,
-                                         TrainingDataProvider* const data,
-                                         const QString& trainingContext)
-{
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << "Training using opencv DNN";
-    trainIdentityBatchDNN(r, identitiesToBeTrained, data, trainingContext, this);
-}
-
 void RecognitionDatabase::Private::clear(OpenCVLBPHFaceRecognizer* const,
                                          const QList<int>& idsToClear,
                                          const QString& trainingContext)
