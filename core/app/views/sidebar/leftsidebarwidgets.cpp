@@ -1526,7 +1526,7 @@ void PeopleSideBarWidget::slotScanForFaces()
             QMessageBox::warning(&dialog, i18n("Face recognition aborted"),
                                  i18n("Face recognition is aborted, because "
                                       "there are no tags to recognize (except "
-                                      "Unconfirmed and Unknown. Please add "
+                                      "Unconfirmed and Unknown). Please add "
                                       "new tags."));
         }
     }
