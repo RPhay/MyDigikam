@@ -170,7 +170,7 @@ public:
 
 public:
 
-    // --- Recognition management -------------------------------------------------------
+    // --- Recognition management (recognitiondatabase_recognize.cpp) -------------------
 
     /**
      * Returns the recommended size if you want to scale face images for recognition.
@@ -197,10 +197,6 @@ public:
     QList<Identity> recognizeFaces(ImageListProvider* const images);
     QList<Identity> recognizeFaces(const QList<QImage>& images);
     Identity        recognizeFace(const QImage& image);
-
-public:
-
-    // --- Clustering management --------------------------------------------------------
 
     /**
      * Performs face clustering
