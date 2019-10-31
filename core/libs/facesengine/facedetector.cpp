@@ -21,9 +21,7 @@
  *
  * ============================================================ */
 
-// OpenCV includes need to show up before Qt includes
-#include "opencvfacedetector.h"
-#include "opencvdnnfacedetector.h"
+#include "facedetector.h"
 
 // Qt includes
 
@@ -32,8 +30,9 @@
 
 // Local includes
 
+#include "opencvfacedetector.h"
+#include "opencvdnnfacedetector.h"
 #include "digikam_debug.h"
-#include "facedetector.h"       // krazy:exclude=includes
 
 namespace Digikam
 {
@@ -53,7 +52,6 @@ public:
         delete m_HaarDetectorbackend;
         delete m_backend;
     }
-
 
     OpenCVFaceDetector* haarDetectorBackend()
     {
@@ -95,13 +93,15 @@ public:
 
     void applyParameters()
     {
-/*        if (!m_backend)
+/*
+        if (!m_backend)
         {
             return;
         }
+
         for (QVariantMap::const_iterator it = m_parameters.constBegin() ; it != m_parameters.constEnd() ; ++it)
         {
-            if (it.key() == QLatin1String("accuracy"))
+            if      (it.key() == QLatin1String("accuracy"))
             {
                 backend()->setAccuracy(it.value().toDouble());
             }
@@ -117,7 +117,8 @@ public:
             {
                 backend()->setSpecificity(1.0 - it.value().toDouble());
             }
-        }*/
+        }
+*/
     }
 
 public:
@@ -285,6 +286,7 @@ QVariantMap FaceDetector::parameters() const
 int FaceDetector::recommendedImageSize(const QSize& availableSize) const
 {
     Q_UNUSED(availableSize);
+
     // return OpenCVFaceDetector::recommendedImageSizeForDetection();
     return OpenCVDNNFaceDetector::recommendedImageSizeForDetection();
 }

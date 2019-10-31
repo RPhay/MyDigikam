@@ -69,25 +69,25 @@ public:
           edgeDescDim(0)
     {
 /*
-        if(outerDimW - innerDimW < 2*windowSize)
+        if (outerDimW - innerDimW < 2*windowSize)
         {
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "difference between outerDimW and innerDimW is not greater than window size for SIFT descriptor)";
             return -1;
         }
 
-        if( (outerDimW - innerDimW) % 2 != 0)
+        if ((outerDimW - innerDimW) % 2 != 0)
         {
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "shrinking innerDimW by 1 so outerDimW - innerDimW is divisible by 2";
             --innerDimW;
         }
 
-        if(outerDimH - innerDimH < 2*windowSize)
+        if (outerDimH - innerDimH < 2*windowSize)
         {
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "difference between outerDimH and innerDimH is not greater than window size for SIFT descriptor)";
             return -1;
         }
 
-        if( (outerDimH - innerDimH) % 2 != 0)
+        if ((outerDimH - innerDimH) % 2 != 0)
         {
             qCDebug(DIGIKAM_FACESENGINE_LOG) << "shrinking innerDimH by 1 so outerDimH - innerDimH is divisible by 2";
             --innerDimH;
@@ -120,8 +120,10 @@ public:
                                  const std::vector<std::vector<float> > &theta,
                                  int x, int y, int windowSize, int histDim, int bucketsDim,
                                  const std::vector<std::vector<float> > &Gaussian) const;
+
     float computeLogLikelihood  (const std::vector<std::vector<float> > &logDistField,
                                  const std::vector<std::vector<float> > &fids, int numFeatureClusters) const;
+
     void  getNewFeatsInvT       (std::vector<std::vector<float> > &newFIDs,
                                  const std::vector<std::vector<std::vector<float> > > &originalFeats,
                                  const std::vector<float> &vparams,
@@ -157,6 +159,8 @@ public:
     std::vector<std::vector<float> >                Gaussian;
 };
 
+// -----------------------------------------------------------------------------------------------------------------------------
+
 FunnelReal::FunnelReal()
     : d(new Private)
 {
@@ -185,9 +189,11 @@ cv::Mat FunnelReal::align(const cv::Mat& inputImage)
     }
 
     cv::Mat scaled, grey, image;
+
     // resize to outer window size
     cv::resize(inputImage, scaled, cv::Size(d->outerDimW, d->outerDimH), 0, 0,
                ( (d->outerDimW < inputImage.cols) ? cv::INTER_AREA : cv::INTER_CUBIC) );
+
     // ensure it's grayscale
     if (scaled.channels() > 1)
     {
@@ -226,9 +232,9 @@ void FunnelReal::Private::loadTrainingData(const QString& path)
         centroids = std::vector<std::vector<float> >(numFeatureClusters, cRow);
         sigmaSq   = std::vector<float>(numFeatureClusters);
 
-        for(int i = 0; i < numFeatureClusters; i++)
+        for (int i = 0 ; i < numFeatureClusters ; ++i)
         {
-            for(int j = 0; j < edgeDescDim; j++)
+            for (int j = 0 ; j < edgeDescDim ; ++j)
             {
                 trainingInfo >> centroids[i][j];
             }
@@ -239,25 +245,29 @@ void FunnelReal::Private::loadTrainingData(const QString& path)
         trainingInfo >> numRandPxls;
         randPxls = std::vector<std::pair<int, int> >(numRandPxls);
 
-        for(int j = 0; j < numRandPxls; j++)
+        for (int j = 0 ; j < numRandPxls ; ++j)
+        {
             trainingInfo >> randPxls[j].first >> randPxls[j].second;
+        }
 
-        std::vector<float>                dfCol(numFeatureClusters, 0);
-        std::vector<std::vector<float> >  logDistField(numRandPxls, dfCol);
+        std::vector<float>               dfCol(numFeatureClusters, 0);
+        std::vector<std::vector<float> > logDistField(numRandPxls, dfCol);
 
         int iteration;
 
-        while(true)
+        while (true)
         {
             trainingInfo >> iteration;
 
-            if(trainingInfo.eof())
+            if (trainingInfo.eof())
                 break;
 
-            for(int j = 0; j < numRandPxls; j++)
+            for(int j = 0 ; j < numRandPxls ; ++j)
             {
-                for(int i = 0; i < numFeatureClusters; i++)
+                for(int i = 0 ; i < numFeatureClusters ; ++i)
+                {
                     trainingInfo >> logDistField[j][i];
+                }
             }
 
             logDFSeq.push_back(logDistField);
@@ -279,13 +289,14 @@ void FunnelReal::Private::loadTrainingData(const QString& path)
 
 void FunnelReal::Private::computeGaussian(std::vector<std::vector<float> > &Gaussian, int windowSize) const
 {
-    for(int i = 0; i < 2*windowSize; i++)
+    for (int i = 0 ; i < 2*windowSize ; ++i)
     {
         std::vector<float> grow(2*windowSize);
 
-        for(int j = 0; j < 2*windowSize; j++)
+        for(int j = 0 ; j < 2*windowSize ; ++j)
         {
-            float ii = i-(windowSize-0.5f), jj = j-(windowSize-0.5f);
+            float ii = i-(windowSize-0.5f);
+            float jj = j-(windowSize-0.5f);
             grow[j]  = exp(-(ii*ii+jj*jj)/(2*windowSize*windowSize));
         }
 
@@ -295,10 +306,12 @@ void FunnelReal::Private::computeGaussian(std::vector<std::vector<float> > &Gaus
 
 static float dist(const std::vector<float> &a, const std::vector<float> &b)
 {
-    float r=0;
+    float r = 0;
 
-    for(int i = 0; i < (signed)a.size(); i++)
-        r+=(a[i]-b[i])*(a[i]-b[i]);
+    for (int i = 0 ; i < (signed)a.size() ; ++i)
+    {
+        r += (a[i]-b[i])*(a[i]-b[i]);
+    }
 
     return r;
 }
@@ -320,12 +333,12 @@ void FunnelReal::Private::computeOriginalFeatures(std::vector<std::vector<std::v
     std::vector<std::vector<float> > theta(image.rows, mtRow);
     float dx, dy;
 
-    for(int j = 0; j < image.rows; j++)
+    for (int j = 0 ; j < image.rows ; ++j)
     {
         const float *greaterRow, *lesserRow, *row;
         row = image.ptr<float>(j);
 
-        if (j == 0)
+        if      (j == 0)
         {
             greaterRow = image.ptr<float>(j+1);
             lesserRow  = row;
@@ -341,11 +354,11 @@ void FunnelReal::Private::computeOriginalFeatures(std::vector<std::vector<std::v
             lesserRow  = image.ptr<float>(j-1);
         }
 
-        for(int k = 0; k < image.cols; k++)
+        for (int k = 0 ; k < image.cols ; ++k)
         {
             dy = greaterRow[k] - lesserRow[k];
 
-            if(k == 0)
+            if      (k == 0)
             {
                 dx = row[k+1] - row[k];
             }
@@ -361,37 +374,45 @@ void FunnelReal::Private::computeOriginalFeatures(std::vector<std::vector<std::v
             m[j][k]     = (float)sqrt(dx*dx+dy*dy);
             theta[j][k] = (float)atan2(dy,dx) * 180.0f/M_PI;
 
-            if(theta[j][k] < 0)
+            if (theta[j][k] < 0)
             {
                 theta[j][k] += 360.0f;
             }
         }
     }
 
-    for(int j = 0; j < height; j++)
+    for (int j = 0 ; j < height ; ++j)
     {
-        for(int k = 0; k < width; k++)
+        for (int k = 0 ; k < width ; ++k)
         {
-            getSIFTdescripter(SiftDesc, m, theta, j+windowSize, k+windowSize, windowSize,
-                              siftHistDim, siftBucketsDim, Gaussian);
+            getSIFTdescripter(SiftDesc,
+                              m,
+                              theta,
+                              j+windowSize,
+                              k+windowSize,
+                              windowSize,
+                              siftHistDim,
+                              siftBucketsDim,
+                              Gaussian);
+
             originalFeatures[j][k] = SiftDesc;
         }
     }
 
-    for(int j = 0; j < height; j++)
+    for (int j = 0 ; j < height ; ++j)
     {
-        for(int k = 0; k < width; k++)
+        for(int k = 0 ; k < width ; ++k)
         {
             std::vector<float> distances(numFeatureClusters);
             float sum = 0;
 
-            for(int ii = 0; ii < numFeatureClusters; ii++)
+            for (int ii = 0 ; ii < numFeatureClusters ; ++ii)
             {
                 distances[ii] = exp(-dist(originalFeatures[j][k], centroids[ii])/(2*sigmaSq[ii]))/sqrt(sigmaSq[ii]);
-                sum += distances[ii];
+                sum          += distances[ii];
             }
 
-            for(int ii = 0; ii < numFeatureClusters; ii++)
+            for (int ii = 0 ; ii < numFeatureClusters ; ++ii)
             {
                 distances[ii] /= sum;
             }
@@ -415,17 +436,23 @@ std::vector<float> FunnelReal::Private::computeTransform(const std::vector<std::
     float centerX = width/2.0f;
     float centerY = height/2.0f;
 
-    float d[] = {1.0f, 1.0f, (float)M_PI/180.0f, 0.02f};
+    float d[] = {
+                    1.0f,
+                    1.0f,
+                    (float)M_PI / 180.0f,
+                    0.02f
+                };
 
     getNewFeatsInvT(featureIDs, originalFeatures, v, centerX, centerY);
 
-    for (uint iter = 0 ; iter < logDFSeq.size() ; iter++)
+    for (uint iter = 0 ; iter < logDFSeq.size() ; ++iter)
     {
         float oldL = computeLogLikelihood(logDFSeq[iter], featureIDs, numFeatureClusters);
 
-        for (int k = 0 ; k < numParams ; k++)
+        for (int k = 0 ; k < numParams ; ++k)
         {
             float dn = ((qrand()%160)-80)/100.0f;
+
             if (k>1)
             {
                 dn /= 100.0f;

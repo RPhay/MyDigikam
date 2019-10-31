@@ -21,8 +21,6 @@
  *
  * ============================================================ */
 
-// Local includes
-
 #include "dataproviders.h"
 
 namespace Digikam

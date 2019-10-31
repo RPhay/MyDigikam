@@ -70,10 +70,10 @@ public:
 
 public:
 
-    virtual int    size()  const override;
-    virtual bool   atEnd() const override;
+    virtual int    size()  const          override;
+    virtual bool   atEnd() const          override;
     virtual void   proceed(int steps = 1) override;
-    virtual QImage image() override;
+    virtual QImage image()                override;
 
 public:
 
@@ -87,10 +87,10 @@ class DIGIKAM_DATABASE_EXPORT EmptyImageListProvider : public ImageListProvider
 {
 public:
 
-    virtual int    size()  const override;
-    virtual bool   atEnd() const override;
+    virtual int    size()  const          override;
+    virtual bool   atEnd() const          override;
     virtual void   proceed(int steps = 1) override;
-    virtual QImage image() override;
+    virtual QImage image()                override;
 };
 
 // ----------------------------------------------------------------------------------------
