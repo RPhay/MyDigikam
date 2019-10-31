@@ -37,7 +37,8 @@
 #include "digikam_opencv.h"
 #include "fullobjectdetection.h"
 
-using namespace Digikam;
+namespace Digikam
+{
 
 // --------------------------------------- Static global variables -----------------------------------
 
@@ -55,9 +56,9 @@ static float FACE_TEMPLATE[3][2] = {
 // ---------------------------------------------------------------------------------------------------
 
 OpenfacePreprocessor::OpenfacePreprocessor()
-  : outImageSize(cv::Size(96, 96)),
-    faceTemplate(cv::Mat(3, 2, CV_32F, &FACE_TEMPLATE)),
-    outerEyesNosePositions({36,45,33})
+    : outImageSize(cv::Size(96, 96)),
+      faceTemplate(cv::Mat(3, 2, CV_32F, &FACE_TEMPLATE)),
+      outerEyesNosePositions({36,45,33})
 {
 }
 
@@ -87,6 +88,7 @@ void OpenfacePreprocessor::init()
     else
     {
         qCDebug(DIGIKAM_FACEDB_LOG) << "Error open file shapepredictor.dat\n";
+        delete temp;
         return;
     }
 
@@ -120,7 +122,7 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
     cv::Mat landmarks(3,2,CV_32F);
     FullObjectDetection object = sp(gray, new_rect);
 
-    for (size_t i = 0; i < outerEyesNosePositions.size(); ++i)
+    for (size_t i = 0 ; i < outerEyesNosePositions.size() ; ++i)
     {
         int index                = outerEyesNosePositions[i];
         landmarks.at<float>(i,0) = object.part(index)[0];
@@ -135,7 +137,7 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
     cv::Mat alignedFace;
     cv::warpAffine(image, alignedFace, affineTransformMatrix, outImageSize);
 
-    if(alignedFace.empty())
+    if (alignedFace.empty())
     {
         qCDebug(DIGIKAM_FACEDB_LOG) << "Face alignment failed!";
         return image;
@@ -147,3 +149,5 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
 
     return alignedFace;
 }
+
+} // namespace Digikam

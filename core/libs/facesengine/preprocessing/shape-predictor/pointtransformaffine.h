@@ -35,8 +35,6 @@
 #include "matrixoperations.h"
 #include "vectoroperations.h"
 
-// using namespace std;
-
 namespace Digikam
 {
 
@@ -95,10 +93,9 @@ PointTransformAffine find_affine_transform(const std::vector<std::vector<T> >& f
 
 // ----------------------------------------------------------------------------------------
 
-
 PointTransformAffine find_similarity_transform(const std::vector<std::vector<float> >& from_points,
                                                const std::vector<std::vector<float> >& to_points);
 
-}; // namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_POINT_TRANSFORM_AFFINE_H

@@ -37,12 +37,14 @@ namespace redeye
 QDataStream& operator << (QDataStream& dataStream, const SplitFeature& sp)
 {
     dataStream << sp.idx1 << sp.idx2 << sp.thresh;
+
     return dataStream;
 }
 
 QDataStream& operator >> (QDataStream& dataStream, SplitFeature& sp)
 {
     dataStream >> sp.idx1 >> sp.idx2 >> sp.thresh;
+
     return dataStream;
 }
 
@@ -181,7 +183,7 @@ PointTransformAffine find_tform_between_shapes(const std::vector<float>& from_sh
     assert(from_shape.size() == to_shape.size() && (from_shape.size()%2) == 0 && from_shape.size() > 0);
 
     std::vector<std::vector<float> > from_points, to_points;
-    const unsigned long num = from_shape.size()/2;
+    const unsigned long num = from_shape.size() / 2;
     from_points.reserve(num);
     to_points.reserve(num);
 
@@ -267,7 +269,8 @@ PointTransformAffine unnormalizing_tform(const cv::Rect& rect)
     return find_affine_transform(from_points, to_points);
 }
 
-bool pointContained(const cv::Rect& rect, const std::vector<float>& point)
+bool pointContained(const cv::Rect& rect,
+                    const std::vector<float>& point)
 {
     int x = std::round(point[0]);
     int y = std::round(point[1]);
@@ -482,6 +485,6 @@ QDataStream& operator >> (QDataStream& dataStream, ShapePredictor& shape)
     return dataStream;
 }
 
-}; // namespace redeye
+} // namespace redeye
 
-}; // namespace Digikam
+} // namespace Digikam

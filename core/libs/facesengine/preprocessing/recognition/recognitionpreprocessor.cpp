@@ -28,8 +28,8 @@
 #include "openfacepreprocessor.h"
 #include "digikam_debug.h"
 
-using namespace Digikam;
-
+namespace Digikam
+{
 
 class RecognitionPreprocessor::Private
 {
@@ -66,7 +66,7 @@ void RecognitionPreprocessor::Private::init(PreprocessorSelection mode)
 {
     preprocessingMode = mode;
 
-    switch(mode)
+    switch (mode)
     {
         case OPENFACE:
         {
@@ -84,7 +84,7 @@ void RecognitionPreprocessor::Private::init(PreprocessorSelection mode)
 
 cv::Mat RecognitionPreprocessor::Private::preprocess(const cv::Mat& image)
 {
-    switch(preprocessingMode)
+    switch (preprocessingMode)
     {
         case OPENFACE:
         {
@@ -102,8 +102,8 @@ cv::Mat RecognitionPreprocessor::Private::preprocess(const cv::Mat& image)
 // ------------------------------------------------------------------------------------------------------
 
 RecognitionPreprocessor::RecognitionPreprocessor()
-  : Preprocessor(),
-    d(new Private)
+    : Preprocessor(),
+      d(new Private)
 {
 }
 
@@ -121,3 +121,5 @@ cv::Mat RecognitionPreprocessor::preprocess(const cv::Mat& image)
 {
     return d->preprocess(image);
 }
+
+} // namespace Digikam

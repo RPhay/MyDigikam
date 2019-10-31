@@ -59,6 +59,6 @@ private:
 
 };
 
-}; // namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_OPENFACE_PREPROCESSOR_H

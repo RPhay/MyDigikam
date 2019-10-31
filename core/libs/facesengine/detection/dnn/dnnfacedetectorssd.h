@@ -24,7 +24,7 @@
 #ifndef DIGIKAM_FACESENGINE_DNN_FACE_DETECTOR_SSD_H
 #define DIGIKAM_FACESENGINE_DNN_FACE_DETECTOR_SSD_H
 
-// Digikam includes
+// Local includes
 
 #include "dnnfacedetectorbase.h"
 
@@ -48,7 +48,6 @@ private:
     void postprocess(cv::Mat detectionMat,
                      const cv::Size& paddedSize,
                      std::vector<cv::Rect>& detectedBboxes);
-
 };
 
 } // namespace Digikam

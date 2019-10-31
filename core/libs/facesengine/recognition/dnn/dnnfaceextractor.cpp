@@ -39,7 +39,7 @@ namespace Digikam
 {
 
 DNNFaceExtractor::DNNFaceExtractor(Preprocessor* const p)
-  : preprocessor(p)
+    : preprocessor(p)
 {
     // Read pretrained neural network for face recognition
 

@@ -37,9 +37,9 @@ PointTransformAffine::PointTransformAffine()
 }
 
 PointTransformAffine::PointTransformAffine(const std::vector<std::vector<float> >& m_,
-                     const std::vector<float>& b_)
-  : m(m_),
-    b(b_)
+                                           const std::vector<float>& b_)
+    : m(m_),
+      b(b_)
 {
 }
 
@@ -66,7 +66,7 @@ PointTransformAffine::PointTransformAffine(const std::vector<std::vector<float> 
 
 const std::vector<float> PointTransformAffine::operator() (const std::vector<float>& p) const
 {
-    return m*p + b;
+    return (m*p + b);
 }
 
 
@@ -165,4 +165,4 @@ PointTransformAffine find_similarity_transform(const std::vector<std::vector<flo
     return PointTransformAffine(r * c, t);
 }
 
-}; // namespace Digikam
+} // namespace Digikam

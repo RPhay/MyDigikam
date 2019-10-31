@@ -48,7 +48,8 @@ using namespace cv;
 /** This compute cosine distance between 2 vectors with formula:
  *      cos(a) = (v1*v2) / (||v1||*||v2||)
  */
-static double cosineDistance(std::vector<float> v1, std::vector<float> v2)
+static double cosineDistance(std::vector<float> v1,
+                             std::vector<float> v2)
 {
     assert(v1.size() == v2.size());
 

@@ -31,10 +31,6 @@
 #ifndef DIGIKAM_FACESENGINE_OPENCV_FACE_DETECTOR_H
 #define DIGIKAM_FACESENGINE_OPENCV_FACE_DETECTOR_H
 
-// OpenCV library
-
-#include "digikam_opencv.h"
-
 // Qt includes
 
 #include <QImage>
@@ -42,8 +38,9 @@
 #include <QRect>
 #include <QStringList>
 
-// DigiKam includes
+// Local includes
 
+#include "digikam_opencv.h"
 #include "dimg.h"
 
 namespace Digikam

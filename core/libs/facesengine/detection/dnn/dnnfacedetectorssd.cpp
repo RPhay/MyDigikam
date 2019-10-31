@@ -30,7 +30,7 @@
 #include <QList>
 #include <QRect>
 
-// Digikam includes
+// Local includes
 
 #include "digikam_debug.h"
 

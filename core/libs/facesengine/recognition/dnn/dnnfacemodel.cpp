@@ -28,7 +28,7 @@
 
 #include <QList>
 
-// local includes
+// Local includes
 
 #include "digikam_debug.h"
 #include "facedbaccess.h"
@@ -118,7 +118,8 @@ void DNNFaceModel::setWrittenToDatabase(int index, int id)
     m_vecMetadata[index].storageStatus = DNNFaceVecMetadata::InDatabase;
 }
 
-void DNNFaceModel::setMats(const QList<std::vector<float> >& mats, const QList<DNNFaceVecMetadata>& matMetadata)
+void DNNFaceModel::setMats(const QList<std::vector<float> >& mats,
+                           const QList<DNNFaceVecMetadata>& matMetadata)
 {
     /*
      * Does not work with standard OpenCV, as these two params are declared read-only in OpenCV.
@@ -158,7 +159,9 @@ void DNNFaceModel::setMats(const QList<std::vector<float> >& mats, const QList<D
     }
 }
 
-void DNNFaceModel::update(const std::vector<cv::Mat>& images, const std::vector<int>& labels, const QString& context,
+void DNNFaceModel::update(const std::vector<cv::Mat>& images,
+                          const std::vector<int>& labels,
+                          const QString& context,
                           DNNFaceExtractor* const extractor)
 {
     std::vector<std::vector<float> > src;

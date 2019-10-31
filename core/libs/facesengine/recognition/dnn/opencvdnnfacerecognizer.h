@@ -28,7 +28,7 @@
 
 #include <QImage>
 
-// OpenCV library
+// Local library
 
 #include "digikam_opencv.h"
 

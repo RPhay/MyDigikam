@@ -24,8 +24,6 @@
 #ifndef DIGIKAM_RECOGNITION_PREPROCESSOR_H
 #define DIGIKAM_RECOGNITION_PREPROCESSOR_H
 
-// Local includes
-
 #include "facepreprocessor.h"
 
 namespace Digikam
@@ -41,7 +39,7 @@ class RecognitionPreprocessor: public Preprocessor
 
 public:
 
-    RecognitionPreprocessor();
+    explicit RecognitionPreprocessor();
     virtual ~RecognitionPreprocessor();
 
     void init(PreprocessorSelection mode);
@@ -52,10 +50,8 @@ private:
 
     class Private;
     Private* const d;
-
 };
 
-}; // namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_RECOGNITION_PREPROCESSOR_H
-

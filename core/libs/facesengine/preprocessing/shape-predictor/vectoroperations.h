@@ -140,7 +140,8 @@ std::vector<std::vector<T> > operator+(const std::vector<std::vector<T> >& v1,
 }
 
 template<class T>
-std::vector<T> operator*(const std::vector<std::vector<T> >& v1, const std::vector<T>& v2)
+std::vector<T> operator*(const std::vector<std::vector<T> >& v1,
+                         const std::vector<T>& v2)
 {
     assert(v1[0].size() == v2.size());
 
@@ -186,7 +187,8 @@ std::vector<std::vector<T> > operator*(const std::vector<std::vector<T> >& v1,
 
 
 template<class T>
-std::vector<std::vector<T> > operator*(const std::vector<T>& v1, const std::vector<T>& v2)
+std::vector<std::vector<T> > operator*(const std::vector<T>& v1,
+                                       const std::vector<T>& v2)
 {
     assert(v1.size() == v2.size());
 
@@ -204,7 +206,8 @@ std::vector<std::vector<T> > operator*(const std::vector<T>& v1, const std::vect
 }
 
 template<class T>
-std::vector<std::vector<T> > operator+(const std::vector<std::vector<T> >& v1, float d)
+std::vector<std::vector<T> > operator+(const std::vector<std::vector<T> >& v1,
+                                       float d)
 {
 //    assert(v1.size()    == v2.size() &&
 //           v1[0].size() == v2[0].size());
@@ -224,7 +227,8 @@ std::vector<std::vector<T> > operator+(const std::vector<std::vector<T> >& v1, f
 }
 
 template<class T>
-std::vector<T> operator*(const std::vector<T>& v1, float d)
+std::vector<T> operator*(const std::vector<T>& v1,
+                         float d)
 {
 //    assert(v1.size()    == v2.size() &&
 //           v1[0].size() == v2[0].size());

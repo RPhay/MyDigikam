@@ -29,7 +29,7 @@
 #ifndef DIGIKAM_FACESENGINE_DNN_FACE_DETECTOR_YOLO_H
 #define DIGIKAM_FACESENGINE_DNN_FACE_DETECTOR_YOLO_H
 
-// Digikam includes
+// Local includes
 
 #include "dnnfacedetectorbase.h"
 

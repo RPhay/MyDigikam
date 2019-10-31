@@ -28,7 +28,7 @@
 #include <QtGlobal>
 #include <QRect>
 
-// Digikam includes
+// Local includes
 
 #include "digikam_debug.h"
 
@@ -74,8 +74,8 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
                                      std::vector<cv::Rect>& doubtBoxes)
 {
 
-    int width  = right  - left;
-    int height = bottom - top;
+    int width        = right  - left;
+    int height       = bottom - top;
 
     cv::Rect bbox(left, top, width, height);
 

@@ -82,6 +82,7 @@ inline T pythag(const T& a, const T& b)
         {
             T val = absa/absb;
             val  *= val;
+
             return (absb * std::sqrt(1.0 + val));
         }
     }

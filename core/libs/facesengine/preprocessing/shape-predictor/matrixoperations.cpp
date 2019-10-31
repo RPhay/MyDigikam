@@ -205,7 +205,7 @@ bool svd3(std::vector<std::vector<float> >& a,
         s     = 0.0;
         scale = 0.0;
 
-        if (i < m && i < n-1)
+        if ((i < m) && (i < n-1))
         {
             for (long k = l ; k < n ; ++k)
             {
@@ -521,6 +521,7 @@ void svd(const std::vector<std::vector<float> >& m,
 float determinant(const std::vector<std::vector<float> >& u)
 {
     float result = u[0][0]*u[1][1] - u[1][0]*u[0][1];
+
     return result;
 }
 

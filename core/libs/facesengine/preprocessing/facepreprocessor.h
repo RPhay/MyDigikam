@@ -45,10 +45,8 @@ public:
     }
 
     virtual cv::Mat preprocess(const cv::Mat& image) = 0;
-
 };
 
-}; // namespace Digikam
+} // namespace Digikam
 
 #endif // DIGIKAM_FACE_PREPROCESSOR_H
-

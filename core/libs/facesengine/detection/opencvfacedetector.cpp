@@ -88,6 +88,7 @@ static QString findFileInDirs(const QStringList& dirs, const QString& fileName)
 static int distanceOfCenters(const QRect& r1, const QRect& r2)
 {
     QPointF diff = r1.center() - r2.center();
+
     return lround(sqrt(diff.x() * diff.x() + diff.y() * diff.y()));    // Euclidean distance
 }
 
@@ -369,7 +370,7 @@ void OpenCVFaceDetector::updateParameters(const cv::Size& /*scaledSize*/, const 
 
     /* Original small images deserve a smaller minimum size
      */
-    minSize -= 10 * (1.0 - cv::min(1.0, origSize));
+    minSize       -= 10 * (1.0 - cv::min(1.0, origSize));
 
     /* A small min size means small starting size, together with search increment, determining
      * the number of operations and thus speed
@@ -503,8 +504,8 @@ bool OpenCVFaceDetector::verifyFace(const cv::Mat& inputImage, const QRect& face
     cv::Mat extendedFaceImg = inputImage(extendedRect);
 
     QList<QRect> foundFaces;
-    int frontalFaceVotes   = 0;
-    int facialFeatureVotes = 0;
+    int frontalFaceVotes    = 0;
+    int facialFeatureVotes  = 0;
 
     for (int i = 0 ; i < d->cascades.size() ; ++i)
     {
@@ -721,6 +722,7 @@ cv::Mat OpenCVFaceDetector::prepareForDetection(const QImage& inputImage) const
     }
 
     equalizeHist(cvImage, cvImage);
+
     return cvImage;
 }
 

@@ -76,7 +76,6 @@ protected:
     cv::Size     inputImageSize;
 
     cv::dnn::Net net;
-
 };
 
 } // namespace Digikam

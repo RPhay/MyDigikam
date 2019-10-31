@@ -193,12 +193,13 @@ class ShapePredictor
 {
 public:
 
-    ShapePredictor();
+    explicit ShapePredictor();
 
-    unsigned long num_parts() const;
-    unsigned long num_features() const;
+    unsigned long num_parts()                            const;
+    unsigned long num_features()                         const;
 
-    FullObjectDetection operator()(const cv::Mat& img, const cv::Rect& rect) const;
+    FullObjectDetection operator()(const cv::Mat& img,
+                                   const cv::Rect& rect) const;
 
 public:
 

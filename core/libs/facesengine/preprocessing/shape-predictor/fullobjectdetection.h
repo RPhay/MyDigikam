@@ -42,7 +42,8 @@ class DIGIKAM_DATABASE_EXPORT FullObjectDetection
 {
 public:
 
-    FullObjectDetection(const cv::Rect& rect_, const std::vector<std::vector<float> >& parts_);
+    FullObjectDetection(const cv::Rect& rect_,
+                        const std::vector<std::vector<float> >& parts_);
     FullObjectDetection();
     explicit FullObjectDetection(const cv::Rect& rect_);
 

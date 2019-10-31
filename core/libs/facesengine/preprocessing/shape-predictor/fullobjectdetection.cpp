@@ -23,8 +23,6 @@
  *
  * ============================================================ */
 
-// Local includes
-
 #include "fullobjectdetection.h"
 
 namespace Digikam
@@ -97,6 +95,7 @@ std::vector<cv::Rect> geteyes(const FullObjectDetection& shape)
                 tlx = x[0];
             else if (x[0] > brx)
                 brx = x[0];
+
             if (x[1] < tly)
                 tly = x[1];
             else if (x[1] > bry)
