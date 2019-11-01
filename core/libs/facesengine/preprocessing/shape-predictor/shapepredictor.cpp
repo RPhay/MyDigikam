@@ -232,6 +232,7 @@ PointTransformAffine normalizing_tform(const cv::Rect& rect)
     to_points.push_back(pt2);
     from_points.push_back(brcorner);
     to_points.push_back(pt3);
+
     return find_affine_transform(from_points, to_points);
 }
 
@@ -266,6 +267,7 @@ PointTransformAffine unnormalizing_tform(const cv::Rect& rect)
     from_points.push_back(pt2);
     to_points.push_back(brcorner);
     from_points.push_back(pt3);
+
     return find_affine_transform(from_points, to_points);
 }
 

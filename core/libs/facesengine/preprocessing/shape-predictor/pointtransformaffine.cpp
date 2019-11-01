@@ -152,8 +152,8 @@ PointTransformAffine find_similarity_transform(const std::vector<std::vector<flo
     }
 
     transpose(vt,v);
-    std::vector<std::vector<float> >  r = u * s * v;
-    float c = 1;
+    std::vector<std::vector<float> > r = u * s * v;
+    float c                            = 1;
 
     if (sigma_from != 0)
     {

@@ -89,11 +89,13 @@ cv::Mat RecognitionPreprocessor::Private::preprocess(const cv::Mat& image)
         case OPENFACE:
         {
             qCDebug(DIGIKAM_FACEDB_LOG) << "Align face for OpenFace neural network model";
+
             return ofpreprocessor->process(image);
         }
         default:
         {
             qCDebug(DIGIKAM_FACEDB_LOG) << "Error unknown preprocessingMode " << preprocessingMode;
+
             return image;
         }
     }

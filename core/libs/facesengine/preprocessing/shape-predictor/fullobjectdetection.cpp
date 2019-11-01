@@ -28,7 +28,8 @@
 namespace Digikam
 {
 
-FullObjectDetection::FullObjectDetection(const cv::Rect& rect_, const std::vector<std::vector<float> >& parts_)
+FullObjectDetection::FullObjectDetection(const cv::Rect& rect_,
+                                         const std::vector<std::vector<float> >& parts_)
     : rect(rect_),
       parts(parts_)
 {
@@ -102,7 +103,8 @@ std::vector<cv::Rect> geteyes(const FullObjectDetection& shape)
                 bry = x[1];
         }
 
-        eyes.push_back(cv::Rect(cv::Point(tlx,tly), cv::Point(brx,bry)));
+        eyes.push_back(cv::Rect(cv::Point(tlx, tly),
+                                cv::Point(brx, bry)));
     }
 
     return eyes;

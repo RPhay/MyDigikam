@@ -58,7 +58,7 @@ struct SplitFeature
 QDataStream& operator << (QDataStream& dataStream, const SplitFeature& sp);
 QDataStream& operator >> (QDataStream& dataStream, SplitFeature& sp);
 
-// a tree is just a std::vector<redeye::SplitFeature>.  We use this function to navigate the tree nodes.
+// NOTE: a tree is just a std::vector<redeye::SplitFeature>. We use this function to navigate the tree nodes.
 
 /*!
     ensures
@@ -92,7 +92,8 @@ struct RegressionTree
             - runs through the tree and returns the vector at the leaf we end up in.
             - #i == the selected leaf node index.
     !*/
-    const std::vector<float>& operator()(const std::vector<float>& feature_pixel_values, unsigned long& i) const;
+    const std::vector<float>& operator()(const std::vector<float>& feature_pixel_values,
+                                         unsigned long& i) const;
 };
 
 QDataStream& operator << (QDataStream& dataStream, const RegressionTree& regtree);
@@ -106,7 +107,8 @@ QDataStream& operator >> (QDataStream& dataStream, RegressionTree& regtree);
         - returns the idx-th point from the shape vector.
 !*/
 template<class T>
-inline std::vector<T> location(const std::vector<T>& shape, unsigned long idx)
+inline std::vector<T> location(const std::vector<T>& shape,
+                               unsigned long idx)
 {
     std::vector<T> temp(2);
     temp[0] = shape[idx * 2];
@@ -118,7 +120,7 @@ inline std::vector<T> location(const std::vector<T>& shape, unsigned long idx)
 // ------------------------------------------------------------------------------------
 
 unsigned long nearest_shape_point(const std::vector<float>& shape,
-                                         const std::vector<float>& pt);
+                                  const std::vector<float>& pt);
 
 // ------------------------------------------------------------------------------------
 

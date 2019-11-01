@@ -50,13 +50,12 @@ public:
 
 private:
 
-    cv::Size                outImageSize;
+    cv::Size               outImageSize;
 
-    cv::Mat                 faceTemplate;
-    std::array<int, 3>      outerEyesNosePositions;
+    cv::Mat                faceTemplate;
+    std::array<int, 3>     outerEyesNosePositions;
 
-    redeye::ShapePredictor  sp;
-
+    redeye::ShapePredictor sp;
 };
 
 } // namespace Digikam
