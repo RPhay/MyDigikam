@@ -28,12 +28,14 @@
 #ifndef DIGIKAM_FACE_REC_BORROWED_H
 #define DIGIKAM_FACE_REC_BORROWED_H
 
-#include "digikam_opencv.h"
-#include "opencv_face.hpp"
-
 // C++ includes
 
 #include <vector>
+
+// Local includes
+
+#include "digikam_opencv.h"
+#include "opencv_face.hpp"
 
 namespace Digikam
 {

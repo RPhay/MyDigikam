@@ -49,24 +49,30 @@ namespace Digikam
 inline Mat asRowMatrix(std::vector<Mat> src, int rtype, double alpha=1, double beta=0)
 {
     // number of samples
+
     size_t n = src.size();
 
     // return empty matrix if no matrices given
+
     if (n == 0)
         return Mat();
 
     // dimensionality of (reshaped) samples
+
     size_t d = src[0].total();
 
     // create data matrix
+
     Mat data((int)n, (int)d, rtype);
 
     // now copy data
-    for (unsigned int i = 0 ; i < n ; i++)
+
+    for (unsigned int i = 0 ; i < n ; ++i)
     {
         Mat xi = data.row(i);
 
         // make reshape happy by cloning for non-continuous matrices
+
         if (src[i].isContinuous())
         {
             src[i].reshape(1, 1).convertTo(xi, rtype, alpha, beta);
@@ -81,8 +87,9 @@ inline Mat asRowMatrix(std::vector<Mat> src, int rtype, double alpha=1, double b
 }
 
 // Removes duplicate elements in a given vector.
+
 template<typename _Tp>
-inline std::vector<_Tp> remove_dups(const std::vector<_Tp>& src) 
+inline std::vector<_Tp> remove_dups(const std::vector<_Tp>& src)
 {
     typedef typename std::set<_Tp>::const_iterator constSetIterator;
     typedef typename std::vector<_Tp>::const_iterator constVecIterator;
@@ -133,13 +140,16 @@ void FisherFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_lab
     }
 
     // get the vector of matrices
+
     std::vector<Mat> src;
     _in_src.getMatVector(src);
 
     // get the label matrix
+
     Mat labels = _inm_labels.getMat();
 
     // check if data is well- aligned
+
     if (labels.total() != src.size())
     {
         String error_message = format("The number of samples (src) must equal the number of labels (labels). Was len(samples)=%d, len(labels)=%d.", src.size(), m_labels.total());
@@ -147,6 +157,7 @@ void FisherFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_lab
     }
 
     // if this model should be trained without preserving old data, delete old model data
+
     if (!preserveData)
     {
         m_labels.release();
@@ -154,16 +165,19 @@ void FisherFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_lab
     }
 
     // append labels to m_labels matrix
-    for (size_t labelIdx = 0; labelIdx < labels.total(); labelIdx++)
+
+    for (size_t labelIdx = 0 ; labelIdx < labels.total() ; ++labelIdx)
     {
         m_labels.push_back(labels.at<int>((int)labelIdx));
         m_src.push_back(src[(int)labelIdx]);
     }
 
     // observations in row
+
     Mat data = asRowMatrix(m_src, CV_64FC1);
 
     // number of samples
+
     int n = data.rows;
 
     /*
@@ -172,7 +186,7 @@ void FisherFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_lab
     */
     bool label_flag = false;
 
-    for (int i = 1 ; i < m_labels.rows ; i++)
+    for (int i = 1 ; i < m_labels.rows ; ++i)
     {
         if (m_labels.at<int>(i, 0)!=m_labels.at<int>(i-1, 0))
         {
@@ -188,31 +202,37 @@ void FisherFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_lab
     }
 
     // clear existing model data
+
     m_projections.clear();
 
     std::vector<int> ll;
 
-    for (unsigned int i = 0 ; i < m_labels.total() ; i++)
+    for (unsigned int i = 0 ; i < m_labels.total() ; ++i)
     {
         ll.push_back(m_labels.at<int>(i));
     }
 
     // get the number of unique classes
+
     int C = (int) remove_dups(ll).size();
 
     // clip number of components to be valid
+
     m_num_components = (C-1);
 
     // perform the PCA
+
     PCA pca(data, Mat(), PCA::DATA_AS_ROW, (n-C));
     LDA lda(pca.project(data),m_labels, m_num_components);
 
     // Now calculate the projection matrix as pca.eigenvectors * lda.eigenvectors.
     // Note: OpenCV stores the eigenvectors by row, so we need to transpose it!
+
     gemm(pca.eigenvectors, lda.eigenvectors(), 1.0, Mat(), 0.0, m_eigenvectors, GEMM_1_T);
 
     // store the projections of the original data
-    for (int sampleIdx = 0 ; sampleIdx < data.rows ; sampleIdx++)
+
+    for (int sampleIdx = 0 ; sampleIdx < data.rows ; ++sampleIdx)
     {
         Mat p = LDA::subspaceProject(m_eigenvectors, m_mean, data.row(sampleIdx));
         m_projections.push_back(p);
@@ -233,18 +253,20 @@ void FisherFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<cv::face::Predic
     Mat src = _src.getMat();//254*254
 
     //make sure the size of input image is the same as training image
+
     if (m_src.size() >= 1 && (src.rows != m_src[0].rows || src.cols != m_src[0].cols))
     {
         //resize(src, src, Size(m_src[0].rows, m_src[0].cols), (0, 0), (0, 0), INTER_LINEAR);
         resize(src, src, Size(m_src[0].rows, m_src[0].cols));
     }
 
-    collector->init(0);//here need to confirm
+    collector->init(0); // here need to confirm
 
     Mat q = LDA::subspaceProject(m_eigenvectors, m_mean, src.reshape(1, 1));
 
-    //find nearest neighbor
-    for (size_t sampleIdx = 0 ; sampleIdx < m_projections.size() ; sampleIdx++)
+    // find nearest neighbor
+
+    for (size_t sampleIdx = 0 ; sampleIdx < m_projections.size() ; ++sampleIdx)
     {
         double dist = norm(m_projections[sampleIdx], q, NORM_L2);
         int label   = m_labels.at<int>((int) sampleIdx);

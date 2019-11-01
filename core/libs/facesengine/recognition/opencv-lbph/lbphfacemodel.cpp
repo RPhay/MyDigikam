@@ -207,9 +207,10 @@ void LBPHFaceModel::update(const std::vector<cv::Mat>& images, const std::vector
 
     // Update local information
     // We assume new labels are simply appended
+
     cv::Mat currentLabels = ptr()->getLabels();
 
-    for (int i = m_histogramMetadata.size() ; i < currentLabels.rows ; i++)
+    for (int i = m_histogramMetadata.size() ; i < currentLabels.rows ; ++i)
     {
         LBPHistogramMetadata metadata;
         metadata.storageStatus = LBPHistogramMetadata::Created;
