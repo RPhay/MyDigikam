@@ -105,7 +105,7 @@ set(facesengine_database_LIB_SRCS recognition/recognitiondatabase.cpp
                                   recognition/dnn/opencvdnnfacerecognizer.cpp
                                   recognition/dnn/facerec_dnnborrowed.cpp
                                   recognition/dnn/dnnfaceextractor.cpp
-                                  recognition/dnn/dbscan.cpp
+                                  recognition/dnn/dnndbscan.cpp
 
                                   alignment/congealing/funnelreal.cpp
 

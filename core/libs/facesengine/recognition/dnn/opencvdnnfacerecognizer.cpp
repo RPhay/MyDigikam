@@ -36,7 +36,7 @@
 #include "digikam_debug.h"
 #include "dnnfaceextractor.h"
 #include "recognitionpreprocessor.h"
-#include "dbscan.h"
+#include "dnndbscan.h"
 
 namespace Digikam
 {
@@ -271,18 +271,18 @@ void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images,
 //*/
 
 /**
- * DBSCAN clustering
+ * DNNDbscan clustering
  */
-    std::vector<PointCustomized> faceEmbeddings;
+    std::vector<DNNDbscanPointCustomized> faceEmbeddings;
 
     for (const cv::Mat& image: images)
     {
         std::vector<float> faceEmbedding;
         d->m_extractor->getFaceEmbedding(image, faceEmbedding);
-        faceEmbeddings.push_back(PointCustomized(faceEmbedding));
+        faceEmbeddings.push_back(DNNDbscanPointCustomized(faceEmbedding));
     }
 
-    DBSCAN dbscan(m_threshold, 3, faceEmbeddings);
+    DNNDbscan dbscan(m_threshold, 3, faceEmbeddings);
     QTime timer;
     timer.start();
     dbscan.run();
@@ -326,6 +326,7 @@ void OpenCVDNNFaceRecognizer::train(const std::vector<cv::Mat>& images,
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "DNN Train: Adding model to Facedb";
 
     // add to database waiting only when not in mode debug
+
     if (!context.contains(QLatin1String("debug"), Qt::CaseInsensitive) &&
         !context.contains(QLatin1String("test"),  Qt::CaseInsensitive))
     {

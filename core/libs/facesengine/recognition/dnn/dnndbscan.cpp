@@ -3,8 +3,8 @@
  * This file is a part of digiKam
  *
  * Date        : 2019-08-11
- * Description : Class performs DBSCAN for clustering
- *               More on DBSCAN:
+ * Description : Class performs DBSCAN for clustering with DNN recognition
+ *               More on DBSCAN (Density-Based Spatial Clustering of Applications with Noise):
  *               https://medium.com/@elutins/dbscan-what-is-it-when-to-use-it-how-to-use-it-8bd506293818
  *               https://github.com/bowbowbow/DBSCAN/blob/master/clustering.cpp
  *
@@ -23,7 +23,7 @@
  *
  * ============================================================ */
 
-#include "dbscan.h"
+#include "dnndbscan.h"
 
 // C includes
 
@@ -44,7 +44,7 @@ static const int NOISE          = -2;
 
 // -----------------------------------------------------------------------------------------
 
-double cosineSimilarity(const std::vector<float>& v1, const std::vector<float>& v2)
+double s_DNNDbscanCosineSimilarity(const std::vector<float>& v1, const std::vector<float>& v2)
 {
     assert(v1.size() == v2.size());
 
@@ -57,23 +57,23 @@ double cosineSimilarity(const std::vector<float>& v1, const std::vector<float>& 
 
 // -----------------------------------------------------------------------------------------
 
-PointCustomized::PointCustomized(const std::vector<float>& _data)
+DNNDbscanPointCustomized::DNNDbscanPointCustomized(const std::vector<float>& _data)
   : ptsCount(0),
     cluster(NOT_CLASSIFIED),
     data(_data)
 {
 }
 
-double PointCustomized::computeSimilarity(const PointCustomized& p)
+double DNNDbscanPointCustomized::computeSimilarity(const DNNDbscanPointCustomized& p)
 {
-    return cosineSimilarity(p.data, data);
+    return s_DNNDbscanCosineSimilarity(p.data, data);
 }
 
 // -----------------------------------------------------------------------------------------
 
-DBSCAN::DBSCAN(double eps,
+DNNDbscan::DNNDbscan(double eps,
                int minPts,
-               const std::vector<PointCustomized>& pts)
+               const std::vector<DNNDbscanPointCustomized>& pts)
   : eps(eps),
     minPtsPerCluster(minPts),
     points(pts),
@@ -82,7 +82,7 @@ DBSCAN::DBSCAN(double eps,
 }
 
 /*
-void DBSCAN::run()
+void DNNDbscan::run()
 {
     checkNearPoints();
 
@@ -124,7 +124,7 @@ void DBSCAN::run()
 }
 */
 
-void DBSCAN::run()
+void DNNDbscan::run()
 {
     for (size_t i = 0 ; i < points.size() ; ++i)
     {
@@ -194,7 +194,7 @@ void DBSCAN::run()
     ++nbOfClusters; // Noise is added as last group
 }
 
-void DBSCAN::dfs(int current, int cluster)
+void DNNDbscan::dfs(int current, int cluster)
 {
     points[current].cluster = cluster;
 
@@ -214,7 +214,7 @@ void DBSCAN::dfs(int current, int cluster)
     }
 }
 
-void DBSCAN::checkNearPoints()
+void DNNDbscan::checkNearPoints()
 {
     for (size_t i = 0 ; i < points.size() ; ++i)
     {
@@ -240,12 +240,12 @@ void DBSCAN::checkNearPoints()
 
 // Core object has at least minPtsPerCluster as neighbors
 
-bool DBSCAN::isCoreObject(int idx)
+bool DNNDbscan::isCoreObject(int idx)
 {
     return points[idx].ptsCount >= minPtsPerCluster;
 }
 
-void DBSCAN::findNeighbors(const PointCustomized& p, int pointIdx, std::list<int>& neighbors)
+void DNNDbscan::findNeighbors(const DNNDbscanPointCustomized& p, int pointIdx, std::list<int>& neighbors)
 {
     for (unsigned int i = 0 ; i < points.size() ; ++i)
     {
@@ -256,7 +256,7 @@ void DBSCAN::findNeighbors(const PointCustomized& p, int pointIdx, std::list<int
     }
 }
 
-int DBSCAN::getCluster(std::vector<int>& clusteredIndices)
+int DNNDbscan::getCluster(std::vector<int>& clusteredIndices)
 {
     if (clusteredIndices.empty() ||
         clusteredIndices.size() < clusteredIdx.size())

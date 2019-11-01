@@ -3,8 +3,8 @@
  * This file is a part of digiKam
  *
  * Date        : 2019-08-11
- * Description : Class performs DBSCAN for clustering
- *               More on DBSCAN:
+ * Description : Class performs DBSCAN for clustering with DNN recognition
+ *               More on DBSCAN (Density-Based Spatial Clustering of Applications with Noise):
  *               https://medium.com/@elutins/dbscan-what-is-it-when-to-use-it-how-to-use-it-8bd506293818
  *               https://github.com/bowbowbow/DBSCAN/blob/master/clustering.cpp
  *
@@ -23,8 +23,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DBSCAN_H
-#define DIGIKAM_DBSCAN_H
+#ifndef DIGIKAM_DNN_DBSCAN_H
+#define DIGIKAM_DNN_DBSCAN_H
 
 // C++ includes
 
@@ -37,22 +37,22 @@ namespace Digikam
 /** This compute cosine distance between 2 vectors with formula:
  *      cos(a) = (v1*v2) / (||v1||*||v2||)
  */
-double cosineSimilarity(const std::vector<float>& v1, const std::vector<float>& v2);
+double s_DNNDbscanCosineSimilarity(const std::vector<float>& v1, const std::vector<float>& v2);
 
-class PointCustomized
+class DNNDbscanPointCustomized
 {
 
 public:
 
-    explicit PointCustomized(const std::vector<float>& _data);
-    ~PointCustomized() = default;
+    explicit DNNDbscanPointCustomized(const std::vector<float>& _data);
+    ~DNNDbscanPointCustomized() = default;
 
-    double computeSimilarity(const PointCustomized& ot);
+    double computeSimilarity(const DNNDbscanPointCustomized& ot);
 
 public:
 
-    int ptsCount;
-    int cluster;
+    int                ptsCount;
+    int                cluster;
 
 private:
 
@@ -61,15 +61,15 @@ private:
 
 // ------------------------------------------------------------------------------------------
 
-class DBSCAN
+class DNNDbscan
 {
 
 public:
 
-    explicit DBSCAN(double eps,
+    explicit DNNDbscan(double eps,
                     int minPts,
-                    const std::vector<PointCustomized>& pts);
-    ~DBSCAN() = default;
+                    const std::vector<DNNDbscanPointCustomized>& pts);
+    ~DNNDbscan() = default;
 
     void run();
     int getCluster(std::vector<int>& clusteredIndices);
@@ -80,7 +80,7 @@ private:
     void checkNearPoints();
     bool isCoreObject(int idx);
 
-    void findNeighbors(const PointCustomized& p,
+    void findNeighbors(const DNNDbscanPointCustomized& p,
                        int pointIdx,
                        std::list<int>& neighbors);
 
@@ -89,7 +89,7 @@ private:
     double                        eps;
     int                           minPtsPerCluster;
 
-    std::vector<PointCustomized>  points;
+    std::vector<DNNDbscanPointCustomized>  points;
     std::vector<std::vector<int>> adjPoints;
 
     int                           nbOfClusters;
@@ -98,4 +98,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_DBSCAN_H
+#endif // DIGIKAM_DNN_DBSCAN_H
