@@ -98,7 +98,7 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
     {
         goodBoxes.push_back(bbox);
         goodConfidences.push_back(confidence);
-        qDebug() << "Good rect = " << QRect(bbox.x, bbox.y, bbox.width, bbox.height) << ", conf = " << confidence;
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "Good rect = " << QRect(bbox.x, bbox.y, bbox.width, bbox.height) << ", conf = " << confidence;
     }
     else if (right > left                                        &&
              right >= borderLeft + width*0.75                    &&
@@ -108,7 +108,7 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
     {
         doubtBoxes.push_back(bbox);
         doubtConfidences.push_back(confidence);
-        qDebug() << "Doubt rect = " << QRect(bbox.x, bbox.y, bbox.width, bbox.height) << ", conf = " << confidence;
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "Doubt rect = " << QRect(bbox.x, bbox.y, bbox.width, bbox.height) << ", conf = " << confidence;
     }
 }
 

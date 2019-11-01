@@ -68,13 +68,14 @@ public:
 
     /** Id value accessor.
      */
-    int  id() const;
+    int  id()                              const;
     void setId(int id);
 
     /** Attribute value accessor.
      */
-    QString attribute(const QString& att) const;
-    void    setAttribute(const QString& att, const QString& val);
+    QString attribute(const QString& att)  const;
+    void    setAttribute(const QString& att,
+                         const QString& val);
 
     /** Attributes map accessor.
      */

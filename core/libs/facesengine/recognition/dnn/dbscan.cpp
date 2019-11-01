@@ -129,12 +129,14 @@ void DBSCAN::run()
     for (size_t i = 0 ; i < points.size() ; ++i)
     {
         if (points[i].cluster != NOT_CLASSIFIED)
+        {
             continue;
+        }
 
         std::list<int> neighbors;
         findNeighbors(points[i], i, neighbors);
 
-        if (neighbors.size() < minPtsPerCluster)
+        if ((int)neighbors.size() < minPtsPerCluster)
         {
             points[i].cluster = NOISE;
             continue;
@@ -163,7 +165,7 @@ void DBSCAN::run()
             std::list<int> newNeighbors;
             findNeighbors(points[pointIdx], pointIdx, newNeighbors);
 
-            if (newNeighbors.size() >= minPtsPerCluster)
+            if ((int)newNeighbors.size() >= minPtsPerCluster)
             {
                 for (auto elm: newNeighbors)
                 {
@@ -197,12 +199,16 @@ void DBSCAN::dfs(int current, int cluster)
     points[current].cluster = cluster;
 
     if (!isCoreObject(current))
+    {
         return;
+    }
 
     for (auto& next: adjPoints[current])
     {
         if (points[next].cluster != NOT_CLASSIFIED)
+        {
             continue;
+        }
 
         dfs(next, cluster);
     }
@@ -217,7 +223,9 @@ void DBSCAN::checkNearPoints()
         for (size_t j = 0 ; j < points.size() ; ++j)
         {
             if (i == j)
+            {
                 continue;
+            }
 
             if (points[i].computeSimilarity(points[j]) >= eps) // since it is cosine similarity
             {
@@ -239,9 +247,9 @@ bool DBSCAN::isCoreObject(int idx)
 
 void DBSCAN::findNeighbors(const PointCustomized& p, int pointIdx, std::list<int>& neighbors)
 {
-    for (int i = 0 ; i < points.size() ; ++i)
+    for (unsigned int i = 0 ; i < points.size() ; ++i)
     {
-        if (points[i].computeSimilarity(p) >= eps && i != pointIdx)
+        if ((points[i].computeSimilarity(p) >= eps) && ((int)i != pointIdx))
         {
             neighbors.push_back(i);
         }
@@ -250,7 +258,8 @@ void DBSCAN::findNeighbors(const PointCustomized& p, int pointIdx, std::list<int
 
 int DBSCAN::getCluster(std::vector<int>& clusteredIndices)
 {
-    if (clusteredIndices.empty() || clusteredIndices.size() < clusteredIdx.size())
+    if (clusteredIndices.empty() ||
+        clusteredIndices.size() < clusteredIdx.size())
     {
         clusteredIndices.shrink_to_fit();
         std::copy(clusteredIdx.begin(), clusteredIdx.end(), std::back_inserter(clusteredIndices));

@@ -156,15 +156,16 @@ void DNNFaceRecognizer::predict(cv::InputArray _src,
             minClass = m_labels.at<int>((int) sampleIdx);
         }
 */
+
 /*
         // The codes below only compute maximum similarity between the new face with all the old faces.
         // Then the label is assigned according to the label of the face the most similar.
 
         double newDist = cosineDistance(vecdata, m_src[sampleIdx]);
 
-        if(newDist > dist)
+        if (newDist > dist)
         {
-            dist = newDist;
+            dist  = newDist;
             label = m_labels.at<int>((int) sampleIdx);
         }
 */
@@ -199,15 +200,15 @@ void DNNFaceRecognizer::predict(cv::InputArray _src,
             label = it.key();
         }
     }
-
 }
 
-int DNNFaceRecognizer::predict(InputArray _src) const
+int DNNFaceRecognizer::predict(InputArray /*_src*/) const
 {
-    int    label;
-    double dummy;
-    //predict(_src, label, dummy);
-
+    int    label = 0;
+/*
+    double dummy = 0.0;
+    predict(_src, label, dummy);
+*/
     return label;
 }
 

@@ -25,17 +25,14 @@
 #ifndef DIGIKAM_FACE_DB_P_H
 #define DIGIKAM_FACE_DB_P_H
 
-#include "facedb.h"                    // krazy:exclude=includes
-
-// OpenCV includes need to show up before Qt includes
-
-#include "dnnfacemodel.h"
+#include "facedb.h"
 
 // Local includes
 
 #include "eigenfacemodel.h"
 #include "fisherfacemodel.h"
 #include "lbphfacemodel.h"
+#include "dnnfacemodel.h"
 #include "digikam_debug.h"
 
 namespace Digikam
