@@ -79,21 +79,20 @@ void RecognitionDatabase::Private::applyParameters()
 
 QString RecognitionDatabase::backendIdentifier() const
 {
-    if      (d->recognizeAlgorithm == RecognizeAlgorithm::EigenFace)
+    if      (d->recognizeAlgorithm == RecognizeAlgorithm::LBP)
+    {
+        return QLatin1String("opencvlbph");
+    }
+    else if (d->recognizeAlgorithm == RecognizeAlgorithm::EigenFace)
     {
         return QLatin1String("eigenfaces");
-    }
-    else if (d->recognizeAlgorithm == RecognizeAlgorithm::DNN)
-    {
-        return QLatin1String("dnn");
     }
     else if (d->recognizeAlgorithm == RecognizeAlgorithm::FisherFace)
     {
         return QLatin1String("fisherfaces");
     }
 
-    // d->recognizeAlgorithm == RecognizeAlgorithm::LPB
-    return QLatin1String("opencvlbph");
+    return QLatin1String("dnn");
 }
 
 void RecognitionDatabase::setParameter(const QString& parameter, const QVariant& value)
