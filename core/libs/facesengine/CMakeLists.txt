@@ -54,9 +54,6 @@ set(facesengine_LIB_SRCS common/identity.cpp
 
                          detection/opencv3-face/facerec.cpp
                          detection/opencv3-face/predict_collector.cpp
-                         detection/opencv3-face/lbph_faces.cpp
-                         detection/opencv3-face/eigen_faces.cpp
-                         detection/opencv3-face/fisher_faces.cpp
 
                          preprocessing/recognition/recognitionpreprocessor.cpp
                          preprocessing/recognition/openfacepreprocessor.cpp
