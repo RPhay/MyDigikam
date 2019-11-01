@@ -53,7 +53,7 @@ private:
     std::vector<cv::String> getOutputsNames();
 
     void postprocess(const std::vector<cv::Mat>& outs,
-                     const cv::Size& paddedSize, 
+                     const cv::Size& paddedSize,
                      std::vector<cv::Rect>& detectedBboxes);
 
 };

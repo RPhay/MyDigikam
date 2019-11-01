@@ -24,13 +24,13 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR}/..
                     ${CMAKE_CURRENT_SOURCE_DIR}/alignment/congealing
 
                     ${CMAKE_CURRENT_SOURCE_DIR}/detection
-                    ${CMAKE_CURRENT_SOURCE_DIR}/detection/dnn
+                    ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn
                     ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-face
 
                     ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph
                     ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces
                     ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-fisherfaces
-                    ${CMAKE_CURRENT_SOURCE_DIR}/recognition/dnn
+                    ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn
 
                     ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing
                     ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor
@@ -47,9 +47,9 @@ set(facesengine_LIB_SRCS common/identity.cpp
                          detection/opencvfacedetector.cpp
                          detection/opencvdnnfacedetector.cpp
 
-                         detection/dnn/dnnfacedetectorssd.cpp
-                         detection/dnn/dnnfacedetectoryolo.cpp
-                         detection/dnn/dnnfacedetectorbase.cpp
+                         detection/opencv-dnn/dnnfacedetectorssd.cpp
+                         detection/opencv-dnn/dnnfacedetectoryolo.cpp
+                         detection/opencv-dnn/dnnfacedetectorbase.cpp
 
                          detection/opencv-face/opencv_facerec.cpp
                          detection/opencv-face/opencv_predictcollector.cpp
@@ -97,11 +97,11 @@ set(facesengine_database_LIB_SRCS recognition/recognitiondatabase.cpp
 
                                   # Neural NetWork Faces recognition module based on OpenCV DNN
 
-                                  recognition/dnn/dnnfacemodel.cpp
-                                  recognition/dnn/opencvdnnfacerecognizer.cpp
-                                  recognition/dnn/facerec_dnnborrowed.cpp
-                                  recognition/dnn/dnnfaceextractor.cpp
-                                  recognition/dnn/dnndbscan.cpp
+                                  recognition/opencv-dnn/dnnfacemodel.cpp
+                                  recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
+                                  recognition/opencv-dnn/facerec_dnnborrowed.cpp
+                                  recognition/opencv-dnn/dnnfaceextractor.cpp
+                                  recognition/opencv-dnn/dnndbscan.cpp
 
                                   alignment/congealing/funnelreal.cpp
 

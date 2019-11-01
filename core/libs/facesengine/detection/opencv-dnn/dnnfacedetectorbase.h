@@ -47,7 +47,7 @@ public:
     virtual void detectFaces(const cv::Mat& inputImage,
                              const cv::Size& paddedSize,
                              std::vector<cv::Rect>& detectedBboxes) = 0;
- 
+
     cv::Size nnInputSizeRequired() const;
 
 protected:
