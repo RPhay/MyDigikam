@@ -246,7 +246,7 @@ DImg ImageIface::preview() const
     // NOTE: corrects the values for width and height of the preview image from the image data interface
     // See Bug #320382 for details.
     uchar* const data = d->previewImageData();
-    return DImg(d->previewWidth, d->previewHeight, previewSixteenBit(), previewHasAlpha(), data);
+    return DImg(d->previewWidth, d->previewHeight, previewSixteenBit(), previewHasAlpha(), data, false);
 }
 
 DImg* ImageIface::original() const

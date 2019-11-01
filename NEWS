@@ -9,4 +9,5 @@ FaceManagement: new Neural Network engine based on OpenCV to detect and recogniz
 BUGFIXES:
 
 001 ==> 384401 - Various recognition algorithm improvements for face detection.
-002 ==> 
+002 ==> 413701 - DigiKam 6.3.0 does not build against current plasma.
+003 ==> 
