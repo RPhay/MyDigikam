@@ -39,8 +39,8 @@ class Q_DECL_HIDDEN OpenCVLBPHFaceRecognizer::Private
 public:
 
     explicit Private()
-        : threshold(100),
-          loaded(false)
+        : m_threshold(100),
+          m_loaded(false)
     {
     }
 
@@ -48,10 +48,10 @@ public:
 
     LBPHFaceModel& lbph()
     {
-        if (!loaded)
+        if (!m_loaded)
         {
-            m_lbph = FaceDbAccess().db()->lbphFaceModel();
-            loaded = true;
+            m_lbph   = FaceDbAccess().db()->lbphFaceModel();
+            m_loaded = true;
         }
 
         return m_lbph;
@@ -59,12 +59,12 @@ public:
 
 public:
 
-    float             threshold;
+    float         m_threshold;
 
 private:
 
-    LBPHFaceModel     m_lbph;
-    bool              loaded;
+    LBPHFaceModel m_lbph;
+    bool          m_loaded;
 };
 
 OpenCVLBPHFaceRecognizer::OpenCVLBPHFaceRecognizer()
@@ -88,7 +88,7 @@ void OpenCVLBPHFaceRecognizer::setThreshold(float threshold) const
     float t         = (8.0 * qBound(0.f, threshold, 1.f)) - 4.0;
     // 1/(1+e^(t))
     float factor    = 1.0 / (1.0 + exp(t));
-    d->threshold    = min + factor*(max-min);
+    d->m_threshold    = min + factor*(max-min);
 }
 
 namespace
@@ -120,6 +120,7 @@ cv::Mat OpenCVLBPHFaceRecognizer::prepareForRecognition(const QImage& inputImage
             cvImageWrapper = cv::Mat(image.height(), image.width(), CV_8UC4, image.scanLine(0), image.bytesPerLine());
             cvtColor(cvImageWrapper, cvImage, CV_RGBA2GRAY);
             break;
+
         default:
             image          = image.convertToFormat(QImage::Format_RGB888);
             cvImageWrapper = cv::Mat(image.height(), image.width(), CV_8UC3, image.scanLine(0), image.bytesPerLine());
@@ -128,6 +129,7 @@ cv::Mat OpenCVLBPHFaceRecognizer::prepareForRecognition(const QImage& inputImage
     }
 
     equalizeHist(cvImage, cvImage);
+
     return cvImage;
 }
 
@@ -138,7 +140,7 @@ int OpenCVLBPHFaceRecognizer::recognize(const cv::Mat& inputImage)
     d->lbph()->predict(inputImage, predictedLabel, confidence);
     qCDebug(DIGIKAM_FACESENGINE_LOG) << predictedLabel << confidence;
 
-    if (confidence > d->threshold)
+    if (confidence > d->m_threshold)
     {
         return -1;
     }
@@ -156,7 +158,9 @@ void OpenCVLBPHFaceRecognizer::train(const std::vector<cv::Mat>& images, const s
 
     d->lbph().update(images, labels, context);
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "LBPH Train: Adding model to Facedb";
+
     // add to database
+
     FaceDbAccess().db()->updateLBPHFaceModel(d->lbph());
 }
 

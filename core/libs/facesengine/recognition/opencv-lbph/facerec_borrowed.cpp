@@ -49,13 +49,16 @@ template <typename _Tp> static
 void olbp_(InputArray _src, OutputArray _dst)
 {
     // get matrices
+
     Mat src = _src.getMat();
 
     // allocate memory for result
+
     _dst.create(src.rows-2, src.cols-2, CV_8UC1);
     Mat dst = _dst.getMat();
 
     // zero the result matrix
+
     dst.setTo(0);
 
     // calculate patterns
@@ -87,42 +90,54 @@ template <typename _Tp> static
 inline void elbp_(InputArray _src, OutputArray _dst, int radius, int neighbors)
 {
     //get matrices
+
     Mat src = _src.getMat();
+
     // allocate memory for result
+
     _dst.create(src.rows-2*radius, src.cols-2*radius, CV_32SC1);
     Mat dst = _dst.getMat();
+
     // zero
+
     dst.setTo(0);
 
     for (int n = 0 ; n < neighbors ; ++n)
     {
         // sample points
+
         float x = static_cast<float>(radius  * cos(2.0*CV_PI*n/static_cast<float>(neighbors)));
         float y = static_cast<float>(-radius * sin(2.0*CV_PI*n/static_cast<float>(neighbors)));
 
         // relative indices
+
         int fx = static_cast<int>(floor(x));
         int fy = static_cast<int>(floor(y));
         int cx = static_cast<int>(ceil(x));
         int cy = static_cast<int>(ceil(y));
 
         // fractional part
+
         float ty = y - fy;
         float tx = x - fx;
 
         // set interpolation weights
+
         float w1 = (1 - tx) * (1 - ty);
         float w2 =      tx  * (1 - ty);
         float w3 = (1 - tx) *      ty;
         float w4 =      tx  *      ty;
 
         // iterate through your data
+
         for (int i = radius ; i < src.rows-radius ; ++i)
         {
             for (int j = radius ; j < src.cols-radius ; ++j)
             {
                 // calculate interpolated value
+
                 float t                          = static_cast<float>(w1*src.at<_Tp>(i+fy, j+fx) + w2*src.at<_Tp>(i+fy, j+cx) + w3*src.at<_Tp>(i+cy, j+fx) + w4*src.at<_Tp>(i+cy,j+cx));
+
                 // floating point precision, so check some machine-dependent epsilon
                 dst.at<int>(i-radius, j-radius) += ((t > src.at<_Tp>(i,j)) || (qAbs(t-src.at<_Tp>(i, j)) < std::numeric_limits<float>::epsilon())) << n;
             }
@@ -162,16 +177,20 @@ static Mat histc_(const Mat& src, int minVal = 0, int maxVal = 255, bool normed 
     Mat result;
 
     // Establish the number of bins.
+
     int histSize           = maxVal-minVal+1;
 
     // Set the ranges.
+
     float range[]          = { static_cast<float>(minVal), static_cast<float>(maxVal+1) };
     const float* histRange = { range };
 
     // calc histogram
+
     calcHist(&src, 1, nullptr, Mat(), result, 1, &histSize, &histRange, true, false);
 
     // normalize
+
     if (normed)
     {
         result /= (int)src.total();
@@ -217,17 +236,21 @@ static Mat spatial_histogram(InputArray _src, int numPatterns, int grid_x, int g
     Mat src    = _src.getMat();
 
     // calculate LBP patch size
+
     int width  = src.cols / grid_x;
     int height = src.rows / grid_y;
 
     // allocate memory for the spatial histogram
+
     Mat result = Mat::zeros(grid_x * grid_y, numPatterns, CV_32FC1);
 
     // return matrix with zeros if no data was given
+
     if (src.empty())
         return result.reshape(1,1);
 
     // initial result_row
+
     int resultRowIdx = 0;
 
     // iterate through grid
@@ -240,15 +263,18 @@ static Mat spatial_histogram(InputArray _src, int numPatterns, int grid_x, int g
             Mat cell_hist  = histc(src_cell, 0, (numPatterns-1), true);
 
             // copy to the result matrix
+
             Mat result_row = result.row(resultRowIdx);
             cell_hist.reshape(1, 1).convertTo(result_row, CV_32FC1);
 
             // increase row count in result matrix
-            resultRowIdx++;
+
+            ++resultRowIdx;
         }
     }
 
     // return result as reshaped feature vector
+
     return result.reshape(1,1);
 }
 
@@ -298,6 +324,7 @@ void LBPHFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_label
 void LBPHFaceRecognizer::update(InputArrayOfArrays _in_src, InputArray _inm_labels)
 {
     // got no data, just return
+
     if (_in_src.total() == 0)
         return;
 
@@ -324,13 +351,16 @@ void LBPHFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_label
     }
 
     // get the vector of matrices
+
     std::vector<Mat> src;
     _in_src.getMatVector(src);
 
     // get the label matrix
+
     Mat labels = _inm_labels.getMat();
 
     // check if data is well- aligned
+
     if (labels.total() != src.size())
     {
         String error_message = format("The number of samples (src) must equal the number of labels (labels). Was len(samples)=%d, len(labels)=%d.", src.size(), m_labels.total());
@@ -338,6 +368,7 @@ void LBPHFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_label
     }
 
     // if this model should be trained without preserving old data, delete old model data
+
     if (!preserveData)
     {
         m_labels.release();
@@ -345,24 +376,31 @@ void LBPHFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_label
     }
 
     // append labels to m_labels matrix
-    for (size_t labelIdx = 0 ; labelIdx < labels.total() ; labelIdx++)
+
+    for (size_t labelIdx = 0 ; labelIdx < labels.total() ; ++labelIdx)
     {
         m_labels.push_back(labels.at<int>((int)labelIdx));
     }
 
     // store the spatial histograms of the original data
-    for (size_t sampleIdx = 0 ; sampleIdx < src.size() ; sampleIdx++)
+
+    for (size_t sampleIdx = 0 ; sampleIdx < src.size() ; ++sampleIdx)
     {
         // calculate lbp image
+
         Mat lbp_image = elbp(src[sampleIdx], m_radius, m_neighbors);
+
         // get spatial histogram from this lbp image
+
         Mat p = spatial_histogram(lbp_image,                                                         /* lbp_image                   */
                                   static_cast<int>(std::pow(2.0, static_cast<double>(m_neighbors))), /* number of possible patterns */
                                   m_grid_x,                                                          /* grid size x                 */
                                   m_grid_y,                                                          /* grid size y                 */
                                   true
                                  );
+
         // add to templates
+
         m_histograms.push_back(p);
     }
 }
@@ -372,6 +410,7 @@ void LBPHFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<cv::face::PredictC
     if (m_histograms.empty())
     {
         // throw error if no data (or simply return -1?)
+
         String error_message = "This LBPH model is not computed yet. Did you call the train method?";
         CV_Error(CV_StsBadArg, error_message);
     }
@@ -379,6 +418,7 @@ void LBPHFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<cv::face::PredictC
     Mat src       = _src.getMat();
 
     // get the spatial histogram from input image
+
     Mat lbp_image = elbp(src, m_radius, m_neighbors);
     Mat query     = spatial_histogram(lbp_image,                                                         /* lbp_image                   */
                                       static_cast<int>(std::pow(2.0, static_cast<double>(m_neighbors))), /* number of possible patterns */
@@ -393,7 +433,8 @@ void LBPHFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<cv::face::PredictC
     if (m_statisticsMode == NearestNeighbor)
     {
         // find 1-nearest neighbor
-        for (size_t sampleIdx = 0 ; sampleIdx < m_histograms.size() ; sampleIdx++)
+
+        for (size_t sampleIdx = 0 ; sampleIdx < m_histograms.size() ; ++sampleIdx)
         {
             double dist = compareHist(m_histograms[sampleIdx], query, CV_COMP_CHISQR);
             int label   = m_labels.at<int>((int) sampleIdx);
@@ -411,9 +452,10 @@ void LBPHFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<cv::face::PredictC
     else if (m_statisticsMode == NearestMean)
     {
         // Create map "label -> vector of distances to all histograms for this label"
+
         std::map<int, std::vector<int> > distancesMap;
 
-        for (size_t sampleIdx = 0 ; sampleIdx < m_histograms.size() ; sampleIdx++)
+        for (size_t sampleIdx = 0 ; sampleIdx < m_histograms.size() ; ++sampleIdx)
         {
             double dist                 = compareHist(m_histograms[sampleIdx], query, CV_COMP_CHISQR);
             std::vector<int>& distances = distancesMap[m_labels.at<int>((int) sampleIdx)];
@@ -421,6 +463,7 @@ void LBPHFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<cv::face::PredictC
         }
 
         // Compute mean
+
         QString s = QLatin1String("Mean distances: ");
         std::map<int, std::vector<int> >::const_iterator it;
 
@@ -447,12 +490,14 @@ void LBPHFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<cv::face::PredictC
     else if (m_statisticsMode == MostNearestNeighbors)
     {
         // Create map "distance -> label"
+
         std::multimap<double, int> distancesMap;
 
         // map "label -> number of histograms"
+
         std::map<int, int> countMap;
 
-        for (size_t sampleIdx = 0 ; sampleIdx < m_histograms.size() ; sampleIdx++)
+        for (size_t sampleIdx = 0 ; sampleIdx < m_histograms.size() ; ++sampleIdx)
         {
             int label   = m_labels.at<int>((int) sampleIdx);
             double dist = compareHist(m_histograms[sampleIdx], query, CV_COMP_CHISQR);
@@ -463,10 +508,11 @@ void LBPHFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<cv::face::PredictC
         int nearestElementCount = cv::min(100, int(distancesMap.size()/3+1));
 
         // map "label -> number of nearest neighbors"
+
         std::map<int, int> scoreMap;
 
         for (std::multimap<double, int>::iterator it = distancesMap.begin() ;
-             it != distancesMap.end() && nearestElementCount != 0 ; 
+             it != distancesMap.end() && nearestElementCount != 0 ;
              ++it, --nearestElementCount)
         {
             scoreMap[it->second]++;
@@ -480,6 +526,7 @@ void LBPHFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<cv::face::PredictC
             s           += QString::fromLatin1("%1/%2 %3  ").arg(it->second).arg(countMap.at(it->first)).arg(score);
 
             // large is better thus it is -score.
+
             if (!collector->collect(it->first, -score))
             {
                 return;

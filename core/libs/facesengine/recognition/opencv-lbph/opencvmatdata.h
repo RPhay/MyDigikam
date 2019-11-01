@@ -25,13 +25,13 @@
 #ifndef DIGIKAM_OPENCV_MAT_DATA_H
 #define DIGIKAM_OPENCV_MAT_DATA_H
 
-// OpenCV includes
-
-#include "digikam_opencv.h"
-
 // Qt includes
 
 #include <QByteArray>
+
+// Local includes
+
+#include "digikam_opencv.h"
 
 namespace Digikam
 {

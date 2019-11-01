@@ -27,7 +27,7 @@
 
 #include "opencveigenfacerecognizer.h"
 
-// local includes
+// Local includes
 
 #include "digikam_opencv.h"
 #include "facedbaccess.h"
@@ -43,8 +43,8 @@ class Q_DECL_HIDDEN OpenCVEIGENFaceRecognizer::Private
 public:
 
     explicit Private()
-        : threshold(15000.0),
-          loaded(false)
+        : m_threshold(15000.0),
+          m_loaded(false)
     {
     }
 
@@ -52,10 +52,10 @@ public:
 
     EigenFaceModel& eigen()
     {
-        if (!loaded)
+        if (!m_loaded)
         {
-            m_eigen = FaceDbAccess().db()->eigenFaceModel();
-            loaded  = true;
+            m_eigen  = FaceDbAccess().db()->eigenFaceModel();
+            m_loaded = true;
         }
 
         return m_eigen;
@@ -63,12 +63,12 @@ public:
 
 public:
 
-    float             threshold;
+    float          m_threshold;
 
 private:
 
-    EigenFaceModel    m_eigen;
-    bool              loaded;
+    EigenFaceModel m_eigen;
+    bool           m_loaded;
 };
 
 OpenCVEIGENFaceRecognizer::OpenCVEIGENFaceRecognizer()
@@ -84,7 +84,7 @@ OpenCVEIGENFaceRecognizer::~OpenCVEIGENFaceRecognizer()
 
 void OpenCVEIGENFaceRecognizer::setThreshold(float threshold) const
 {
-    d->threshold = threshold;
+    d->m_threshold = threshold;
 }
 
 namespace
@@ -116,6 +116,7 @@ cv::Mat OpenCVEIGENFaceRecognizer::prepareForRecognition(const QImage& inputImag
             cvImageWrapper = cv::Mat(image.height(), image.width(), CV_8UC4, image.scanLine(0), image.bytesPerLine());
             cvtColor(cvImageWrapper, cvImage, CV_RGBA2RGB);
             break;
+
         default:
             image          = image.convertToFormat(QImage::Format_RGB888);
             cvImage        = cv::Mat(image.height(), image.width(), CV_8UC3, image.scanLine(0), image.bytesPerLine());
@@ -125,6 +126,7 @@ cv::Mat OpenCVEIGENFaceRecognizer::prepareForRecognition(const QImage& inputImag
 
     //resize(cvImage, cvImage, Size(256, 256), (0, 0), (0, 0), INTER_LINEAR);
     //equalizeHist(cvImage, cvImage);
+
     return cvImage;
 }
 
@@ -135,7 +137,7 @@ int OpenCVEIGENFaceRecognizer::recognize(const cv::Mat& inputImage)
     d->eigen()->predict(inputImage, predictedLabel, confidence);
     qCDebug(DIGIKAM_FACESENGINE_LOG) << predictedLabel << confidence;
 
-    if (confidence > d->threshold)
+    if (confidence > d->m_threshold)
     {
         return -1;
     }
@@ -156,6 +158,7 @@ void OpenCVEIGENFaceRecognizer::train(const std::vector<cv::Mat>& images,
 
     d->eigen().update(images, labels, context);
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Eigenfaces Train: Adding model to Facedb";
+
     // add to database waiting
     FaceDbAccess().db()->updateEIGENFaceModel(d->eigen(), images_rgb);
 }

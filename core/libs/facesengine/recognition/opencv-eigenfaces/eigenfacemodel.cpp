@@ -53,7 +53,6 @@ EigenFaceMatMetadata::~EigenFaceMatMetadata()
 
 EigenFaceModel::EigenFaceModel()
     : cv::Ptr<EigenFaceRecognizer>(EigenFaceRecognizer::create())
-    /*, databaseId(0)*/
 {
     ptr()->setThreshold(20000.0);
 }
@@ -118,7 +117,8 @@ void EigenFaceModel::setWrittenToDatabase(int index, int id)
     m_matMetadata[index].storageStatus = EigenFaceMatMetadata::InDatabase;
 }
 
-void EigenFaceModel::setMats(const QList<OpenCVMatData>& mats, const QList<EigenFaceMatMetadata>& matMetadata)
+void EigenFaceModel::setMats(const QList<OpenCVMatData>& mats,
+                             const QList<EigenFaceMatMetadata>& matMetadata)
 {
     /*
      * Does not work with standard OpenCV, as these two params are declared read-only in OpenCV.
@@ -157,7 +157,9 @@ void EigenFaceModel::setMats(const QList<OpenCVMatData>& mats, const QList<Eigen
     }
 }
 
-void EigenFaceModel::update(const std::vector<cv::Mat>& images, const std::vector<int>& labels, const QString& context)
+void EigenFaceModel::update(const std::vector<cv::Mat>& images,
+                            const std::vector<int>& labels,
+                            const QString& context)
 {
     ptr()->update(images, labels);
 

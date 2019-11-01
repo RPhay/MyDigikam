@@ -28,13 +28,13 @@
 #ifndef DIGIKAM_OPENCV_EIGENFACE_RECOGNIZER_H
 #define DIGIKAM_OPENCV_EIGENFACE_RECOGNIZER_H
 
-// OpenCV library
-
-#include "digikam_opencv.h"
-
 // Qt include
 
 #include <QImage>
+
+// Local includes
+
+#include "digikam_opencv.h"
 
 namespace Digikam
 {
@@ -75,6 +75,8 @@ public:
 private:
 
     OpenCVEIGENFaceRecognizer(const OpenCVEIGENFaceRecognizer&); // Disable
+
+private:
 
     class Private;
     Private* const d;

@@ -28,13 +28,13 @@
 #ifndef DIGIKAM_OPENCV_FISHERFACE_RECOGNIZER_H
 #define DIGIKAM_OPENCV_FISHERFACE_RECOGNIZER_H
 
-// OpenCV library
-
-#include "digikam_opencv.h"
-
 // Qt include
 
 #include <QImage>
+
+// Local includes
+
+#include "digikam_opencv.h"
 
 namespace Digikam
 {
@@ -72,6 +72,8 @@ public:
 private:
 
     OpenCVFISHERFaceRecognizer(const OpenCVFISHERFaceRecognizer&); // Disable
+
+private:
 
     class Private;
     Private* const d;

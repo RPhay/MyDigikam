@@ -24,16 +24,13 @@
 #ifndef DIGIKAM_OPENCV_LBPH_FACE_RECOGNIZER_H
 #define DIGIKAM_OPENCV_LBPH_FACE_RECOGNIZER_H
 
-// OpenCV library
-
-#include "digikam_opencv.h"
-
 // Qt include
 
 #include <QImage>
 
 // Local includes
 
+#include "digikam_opencv.h"
 #include "opencvmatdata.h"
 
 namespace Digikam
@@ -72,6 +69,8 @@ public:
 private:
 
     OpenCVLBPHFaceRecognizer(const OpenCVLBPHFaceRecognizer&); // Disable
+
+private:
 
     class Private;
     Private* const d;

@@ -52,8 +52,7 @@ FisherFaceMatMetadata::~FisherFaceMatMetadata()
 // ------------------------------------------------------------------------------------
 
 FisherFaceModel::FisherFaceModel()
-    : cv::Ptr<FisherFaceRecognizer>(FisherFaceRecognizer::create())/*,
-      databaseId(0)*/
+    : cv::Ptr<FisherFaceRecognizer>(FisherFaceRecognizer::create())
 {
     ptr()->setThreshold(25000.0);
 }
@@ -150,8 +149,10 @@ void FisherFaceModel::setMats(const QList<OpenCVMatData>& mats, const QList<Fish
 
     //ptr()->setSrc(currentSrcs);
     //ptr()->setLabels(currentLabels);
-    //make sure that there exits training data
-    if (currentSrcs.size()>0)
+
+    // make sure that there exits training data
+
+    if (currentSrcs.size() > 0)
     {
         ptr()->train(currentSrcs, currentLabels);
     }
@@ -163,9 +164,10 @@ void FisherFaceModel::update(const std::vector<cv::Mat>& images, const std::vect
 
     // Update local information
     // We assume new labels are simply appended
+
     cv::Mat currentLabels = ptr()->getLabels();
 
-    for (int i = m_matMetadata.size() ; i < currentLabels.rows ; i++)
+    for (int i = m_matMetadata.size() ; i < currentLabels.rows ; ++i)
     {
         FisherFaceMatMetadata metadata;
         metadata.storageStatus = FisherFaceMatMetadata::Created;

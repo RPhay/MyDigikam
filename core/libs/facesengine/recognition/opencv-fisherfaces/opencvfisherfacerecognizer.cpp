@@ -43,8 +43,8 @@ class Q_DECL_HIDDEN OpenCVFISHERFaceRecognizer::Private
 public:
 
     explicit Private()
-        : threshold(25000.0),
-          loaded(false)
+        : m_threshold(25000.0),
+          m_loaded(false)
     {
     }
 
@@ -52,10 +52,10 @@ public:
 
     FisherFaceModel& fisher()
     {
-        if (!loaded)
+        if (!m_loaded)
         {
             m_fisher = FaceDbAccess().db()->fisherFaceModel();
-            loaded   = true;
+            m_loaded = true;
         }
 
         return m_fisher;
@@ -63,12 +63,12 @@ public:
 
 public:
 
-    float             threshold;
+    float           m_threshold;
 
 private:
 
-    FisherFaceModel   m_fisher;
-    bool              loaded;
+    FisherFaceModel m_fisher;
+    bool            m_loaded;
 };
 
 OpenCVFISHERFaceRecognizer::OpenCVFISHERFaceRecognizer()
@@ -84,7 +84,7 @@ OpenCVFISHERFaceRecognizer::~OpenCVFISHERFaceRecognizer()
 
 void OpenCVFISHERFaceRecognizer::setThreshold(float threshold) const
 {
-    d->threshold = threshold;
+    d->m_threshold = threshold;
 }
 
 namespace
@@ -116,6 +116,7 @@ cv::Mat OpenCVFISHERFaceRecognizer::prepareForRecognition(const QImage& inputIma
             cvImageWrapper = cv::Mat(image.height(), image.width(), CV_8UC4, image.scanLine(0), image.bytesPerLine());
             cvtColor(cvImageWrapper, cvImage, CV_RGBA2GRAY);
             break;
+
         default:
             image          = image.convertToFormat(QImage::Format_RGB888);
             cvImageWrapper = cv::Mat(image.height(), image.width(), CV_8UC3, image.scanLine(0), image.bytesPerLine());
@@ -125,6 +126,7 @@ cv::Mat OpenCVFISHERFaceRecognizer::prepareForRecognition(const QImage& inputIma
 
     //resize(cvImage, cvImage, Size(256, 256), (0, 0), (0, 0), INTER_LINEAR);
     equalizeHist(cvImage, cvImage);
+
     return cvImage;
 }
 
@@ -135,7 +137,7 @@ int OpenCVFISHERFaceRecognizer::recognize(const cv::Mat& inputImage)
     d->fisher()->predict(inputImage, predictedLabel, confidence);
     qCDebug(DIGIKAM_FACESENGINE_LOG) << predictedLabel << confidence;
 
-    if (confidence > d->threshold)
+    if (confidence > d->m_threshold)
     {
         return -1;
     }
@@ -153,6 +155,7 @@ void OpenCVFISHERFaceRecognizer::train(const std::vector<cv::Mat>& images, const
 
     d->fisher().update(images, labels, context);
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Fisherfaces Train: Adding model to Facedb";
+
     // add to database waiting
 }
 

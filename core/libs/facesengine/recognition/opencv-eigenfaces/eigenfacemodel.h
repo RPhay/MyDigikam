@@ -28,16 +28,13 @@
 #ifndef DIGIKAM_FACESENGINE_EIGEN_FACE_MODEL_H
 #define DIGIKAM_FACESENGINE_EIGEN_FACE_MODEL_H
 
-// OpenCV library
-
-#include "digikam_opencv.h"
-
 // Qt include
 
 #include <QList>
 
 // Local includes
 
+#include "digikam_opencv.h"
 #include "opencvmatdata.h"
 #include "facerec_eigenborrowed.h"
 
@@ -92,14 +89,13 @@ public:
 
     void setWrittenToDatabase(int index, int databaseId);
 
-    void setMats(const QList<OpenCVMatData>& mats, const QList<EigenFaceMatMetadata>& matMetadata);
+    void setMats(const QList<OpenCVMatData>& mats,
+                 const QList<EigenFaceMatMetadata>& matMetadata);
 
     /// Make sure to call this instead of FaceRecognizer::update directly!
-    void update(const std::vector<cv::Mat>& images, const std::vector<int>& labels, const QString& context);
-
-//public:
-
-    //int databaseId;
+    void update(const std::vector<cv::Mat>& images,
+                const std::vector<int>& labels,
+                const QString& context);
 
 protected:
 

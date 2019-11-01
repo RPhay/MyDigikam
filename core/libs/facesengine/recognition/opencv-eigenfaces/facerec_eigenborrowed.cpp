@@ -49,13 +49,16 @@ namespace Digikam
 inline Mat asRowMatrix(std::vector<Mat> src, int rtype, double alpha=1, double beta=0)
 {
     // number of samples
+
     size_t n = src.size();
 
     // return empty matrix if no matrices given
+
     if (n == 0)
         return Mat();
 
     // dimensionality of (reshaped) samples
+
     size_t d = src[0].total();
 
     // create data matrix
@@ -63,7 +66,7 @@ inline Mat asRowMatrix(std::vector<Mat> src, int rtype, double alpha=1, double b
 
     // now copy data
 
-    for (unsigned int i = 0 ; i < n ; i++)
+    for (unsigned int i = 0 ; i < n ; ++i)
     {
         Mat xi = data.row(i);
 
@@ -90,6 +93,7 @@ void EigenFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_labe
 void EigenFaceRecognizer::update(InputArrayOfArrays _in_src, InputArray _inm_labels)
 {
     // got no data, just return
+
     if (_in_src.total() == 0)
         return;
 
@@ -116,13 +120,16 @@ void EigenFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_labe
     }
 
     // get the vector of matrices
+
     std::vector<Mat> src;
     _in_src.getMatVector(src);
 
     // get the label matrix
+
     Mat labels = _inm_labels.getMat();
 
     // check if data is well- aligned
+
     if (labels.total() != src.size())
     {
         String error_message = format("The number of samples (src) must equal the number of labels (labels). Was len(samples)=%d, len(labels)=%d.", src.size(), m_labels.total());
@@ -130,6 +137,7 @@ void EigenFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_labe
     }
 
     // if this model should be trained without preserving old data, delete old model data
+
     if (!preserveData)
     {
         m_labels.release();
@@ -137,6 +145,7 @@ void EigenFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_labe
     }
 
     // append labels to m_labels matrix
+
     for (size_t labelIdx = 0 ; labelIdx < labels.total() ; ++labelIdx)
     {
         m_labels.push_back(labels.at<int>((int)labelIdx));
@@ -144,24 +153,32 @@ void EigenFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_labe
     }
 
     // observations in row
-    Mat data = asRowMatrix(m_src, CV_64FC1);
+
+    Mat data         = asRowMatrix(m_src, CV_64FC1);
 
     // number of samples
-    int n    = data.rows;
+
+    int n            = data.rows;
 
     // clear existing model data
+
     m_projections.clear();
 
     // clip number of components to be valid
+
     m_num_components = n;
 
     // perform the PCA
+
     PCA pca(data, Mat(), PCA::DATA_AS_ROW, m_num_components);
+
     // copy the PCA results
-    m_mean = pca.mean.reshape(1, 1); // store the mean vector
+
+    m_mean           = pca.mean.reshape(1, 1); // store the mean vector
     transpose(pca.eigenvectors, m_eigenvectors); // eigenvectors by column
 
     // save projections
+
     for (int sampleIdx = 0 ; sampleIdx < data.rows ; ++sampleIdx)
     {
         Mat p = LDA::subspaceProject(m_eigenvectors, m_mean, data.row(sampleIdx));
@@ -195,7 +212,7 @@ void EigenFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<cv::face::Predict
 
     // find nearest neighbor
 
-    for (size_t sampleIdx = 0 ; sampleIdx < m_projections.size() ; sampleIdx++)
+    for (size_t sampleIdx = 0 ; sampleIdx < m_projections.size() ; ++sampleIdx)
     {
         double dist = norm(m_projections[sampleIdx], q, NORM_L2);
         int label   = m_labels.at<int>((int) sampleIdx);

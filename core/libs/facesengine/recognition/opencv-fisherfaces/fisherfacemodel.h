@@ -28,16 +28,13 @@
 #ifndef DIGIKAM_FACESENGINE_FISHER_FACE_MODEL_H
 #define DIGIKAM_FACESENGINE_FISHER_FACE_MODEL_H
 
-// OpenCV library
-
-#include "digikam_opencv.h"
-
 // Qt include
 
 #include <QList>
 
 // Local includes
 
+#include "digikam_opencv.h"
 #include "opencvmatdata.h"
 #include "facerec_fisherborrowed.h"
 
@@ -78,16 +75,16 @@ public:
     ~FisherFaceModel();
 
     FisherFaceRecognizer*       ptr();
-    const FisherFaceRecognizer* ptr() const;
+    const FisherFaceRecognizer* ptr()               const;
 
     //Getter function
-    std::vector<cv::Mat> getSrc() const;
+    std::vector<cv::Mat> getSrc()                   const;
     void setSrc(std::vector<cv::Mat> new_src);
 
-    cv::Mat getLabels() const;
+    cv::Mat getLabels()                             const;
     void setLabels(cv::Mat new_labels);
 
-    QList<FisherFaceMatMetadata> matMetadata() const;
+    QList<FisherFaceMatMetadata> matMetadata()      const;
     OpenCVMatData                matData(int index) const;
 
     void setWrittenToDatabase(int index, int databaseId);
@@ -96,10 +93,6 @@ public:
 
     /// Make sure to call this instead of FaceRecognizer::update directly!
     void update(const std::vector<cv::Mat>& images, const std::vector<int>& labels, const QString& context);
-
-//public:
-
-    //int databaseId;
 
 protected:
 
