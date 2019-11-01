@@ -220,6 +220,8 @@ void LensAutoFixTool::preparePreview()
 
         // Do alpha blending of template on dest image
         preview.bitBlendImage(composer, &grid, 0, 0, preview.width(), preview.height(), 0, 0, flags);
+
+        delete composer;
     }
 
     setFilter(new LensFunFilter(&preview, this, settings));
