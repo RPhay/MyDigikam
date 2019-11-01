@@ -481,7 +481,7 @@ QRect InsertTextWidget::composeImage(DImg* const image, QPainter* const destPain
     }
 
     // compose semi-transparent background over textArea
-    DColorComposer* composer = DColorComposer::getComposer(DColorComposer::PorterDuffNone);
+    DColorComposer* const composer = DColorComposer::getComposer(DColorComposer::PorterDuffNone);
 
     if (transparentBackground)
     {
