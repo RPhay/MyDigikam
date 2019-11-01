@@ -8,10 +8,13 @@
 #ifndef __OPENCV_FACEREC_HPP__
 #define __OPENCV_FACEREC_HPP__
 
-#include "face.hpp"
-#include "opencv2/core.hpp"
+#include "opencv_face.hpp"
 
-namespace cv { namespace face {
+#include "digikam_opencv.h"
+
+namespace cv {
+
+namespace face {
 
 //! @addtogroup face
 //! @{
@@ -161,6 +164,8 @@ CV_EXPORTS_W Ptr<LBPHFaceRecognizer> createLBPHFaceRecognizer(int radius=1, int 
 
 //! @}
 
-}} //namespace cv::face
+}
+
+} //namespace cv::face
 
 #endif //__OPENCV_FACEREC_HPP__

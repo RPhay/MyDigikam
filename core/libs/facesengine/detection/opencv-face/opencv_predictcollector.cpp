@@ -41,9 +41,12 @@ and on any theory of liability, whether in contract, strict liability,
 or tort (including negligence or otherwise) arising in any way out of
 the use of this software, even if advised of the possibility of such damage.
 */
-#include "predict_collector.hpp"
 
-namespace cv {namespace face {
+#include "opencv_predictcollector.hpp"
+
+namespace cv {
+
+namespace face {
 
 static std::pair<int, double> toPair(const StandardCollector::PredictResult & val) {
     return std::make_pair(val.label, val.distance);
@@ -111,4 +114,6 @@ Ptr<StandardCollector> StandardCollector::create(double threshold) {
     return makePtr<StandardCollector>(threshold);
 }
 
-}} // cv::face::
+}
+
+} // cv::face::

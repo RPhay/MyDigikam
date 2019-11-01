@@ -23,10 +23,9 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR}/..
 
                     ${CMAKE_CURRENT_SOURCE_DIR}/alignment/congealing
 
-                    ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv3-face
-
                     ${CMAKE_CURRENT_SOURCE_DIR}/detection
                     ${CMAKE_CURRENT_SOURCE_DIR}/detection/dnn
+                    ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-face
 
                     ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph
                     ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces
@@ -52,8 +51,8 @@ set(facesengine_LIB_SRCS common/identity.cpp
                          detection/dnn/dnnfacedetectoryolo.cpp
                          detection/dnn/dnnfacedetectorbase.cpp
 
-                         detection/opencv3-face/facerec.cpp
-                         detection/opencv3-face/predict_collector.cpp
+                         detection/opencv-face/opencv_facerec.cpp
+                         detection/opencv-face/opencv_predictcollector.cpp
 
                          preprocessing/recognition/recognitionpreprocessor.cpp
                          preprocessing/recognition/openfacepreprocessor.cpp

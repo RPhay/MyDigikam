@@ -42,8 +42,8 @@ or tort (including negligence or otherwise) arising in any way out of
 the use of this software, even if advised of the possibility of such damage.
 */
 
-#ifndef __OPENCV_PREDICT_COLLECTOR_HPP__
-#define __OPENCV_PREDICT_COLLECTOR_HPP__
+#ifndef __OPENCV3_PREDICT_COLLECTOR_HPP__
+#define __OPENCV3_PREDICT_COLLECTOR_HPP__
 
 #include <vector>
 #include <map>
@@ -64,7 +64,9 @@ the use of this software, even if advised of the possibility of such damage.
 #endif
 
 namespace cv {
+
 namespace face {
+
 //! @addtogroup face
 //! @{
 /** @brief Abstract base class for all strategies of prediction result handling
@@ -133,6 +135,7 @@ public:
 
 //! @}
 }
+
 }
 
-#endif
+#endif // __OPENCV3_PREDICT_COLLECTOR_HPP__

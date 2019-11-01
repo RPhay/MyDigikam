@@ -22,12 +22,12 @@
 #pragma clang diagnostic ignored "-Wcast-align"
 #endif
 
-#include "precomp.hpp"
-#include "face.hpp"
+#include "opencv_precomp.hpp"
+#include "opencv_face.hpp"
 
 // Restore warnings
 #if defined(__APPLE__) && defined(__clang__)
-#pragma clang diagnostic pop
+#   pragma clang diagnostic pop
 #endif
 
 namespace cv

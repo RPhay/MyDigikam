@@ -49,11 +49,14 @@ the use of this software, even if advised of the possibility of such damage.
 
 #include "digikam_opencv.h"
 #include "digikam_export.h"
-#include "opencv2/core.hpp"
-#include "predict_collector.hpp"
+
+#include "opencv_predictcollector.hpp"
+
 #include <map>
 
-namespace cv { namespace face {
+namespace cv {
+
+namespace face {
 
 //! @addtogroup face
 //! @{
@@ -389,8 +392,10 @@ protected:
 
 //! @}
 
-}}
+}
 
-#include "facerec.hpp"
+}
 
-#endif
+#include "opencv_facerec.hpp"
+
+#endif // __OPENCV_FACE_HPP__

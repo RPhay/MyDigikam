@@ -29,7 +29,7 @@
 #define DIGIKAM_FACE_REC_BORROWED_H
 
 #include "digikam_opencv.h"
-#include "face.hpp"
+#include "opencv_face.hpp"
 
 // C++ includes
 
