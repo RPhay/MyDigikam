@@ -18,6 +18,7 @@ include_directories($<TARGET_PROPERTY:Qt5::Xml,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/..
+                    ${CMAKE_CURRENT_SOURCE_DIR}/common
                     ${CMAKE_CURRENT_SOURCE_DIR}/facedb
 
                     ${CMAKE_CURRENT_SOURCE_DIR}/alignment/congealing
@@ -40,8 +41,8 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR}/..
                     # ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/tantriggs
 )
 
-set(facesengine_LIB_SRCS identity.cpp
-                         dataproviders.cpp
+set(facesengine_LIB_SRCS common/identity.cpp
+                         common/dataproviders.cpp
 
                          detection/facedetector.cpp
                          detection/opencvfacedetector.cpp
@@ -76,7 +77,7 @@ set(facesengine_database_LIB_SRCS recognition/recognitiondatabase.cpp
                                   recognition/recognitiondatabase_training.cpp
                                   recognition/recognitiondatabase_backend.cpp
                                   recognition/recognitiondatabase_recognize.cpp
-                                  simpletrainingdataprovider.cpp
+                                  recognition/simpletrainingdataprovider.cpp
 
                                   # Eigen Faces recognition module based on OpenCV
 
@@ -118,7 +119,6 @@ set(facesengine_database_LIB_SRCS recognition/recognitiondatabase.cpp
                                   facedb/facedb_eigen.cpp
                                   facedb/facedb_fisher.cpp
                                   facedb/facedb_dnn.cpp
-
 )
 
 add_library(digikamfacesengine_src
