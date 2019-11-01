@@ -28,5 +28,5 @@ target_link_libraries(akonadiiface PRIVATE Qt5::Core KF5::I18n)
 
 if(KF5AkonadiContact_FOUND)
     target_include_directories(akonadiiface_src PRIVATE $<TARGET_PROPERTY:KF5::AkonadiContact,INTERFACE_INCLUDE_DIRECTORIES>)
-    target_link_libraries(akonadiiface PRIVATE KF5::AkonadiContact)
+    target_link_libraries(akonadiiface PRIVATE KF5::AkonadiContact KF5::Contacts)
 endif()
