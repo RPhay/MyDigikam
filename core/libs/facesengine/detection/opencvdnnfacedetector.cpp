@@ -236,7 +236,7 @@ QList<QRect> OpenCVDNNFaceDetector::detectFaces(const cv::Mat& inputImage, const
     {
         QRect rect(bbox.x, bbox.y, bbox.width, bbox.height);
         results << rect;
-        // qDebug() << rect;
+        // qCDebug(DIGIKAM_FACESENGINE_LOG) << rect;
         // cv::rectangle(imageTest, cv::Rect(bbox.x + paddedSize.width,
         //                                   bbox.y + paddedSize.height,
         //                                   bbox.width, bbox.height), cv::Scalar(0,128,0));

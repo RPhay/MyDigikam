@@ -48,8 +48,8 @@ class Q_DECL_HIDDEN OpenCVDNNFaceRecognizer::Private
 public:
 
     explicit Private(bool debug)
-        : loaded(false),
-          debug(debug)
+        : m_loaded(false),
+          m_debug(debug)
     {
         m_preprocessor = new RecognitionPreprocessor;
         m_preprocessor->init(PreprocessorSelection::OPENFACE);
@@ -67,10 +67,10 @@ public:
 
     DNNFaceModel& dnn()
     {
-        if (!loaded)
+        if (!m_loaded)
         {
-            m_dnn  = FaceDbAccess().db()->dnnFaceModel(debug);
-            loaded = true;
+            m_dnn    = FaceDbAccess().db()->dnnFaceModel(m_debug);
+            m_loaded = true;
         }
 
         return m_dnn;
@@ -78,16 +78,15 @@ public:
 
 private:
 
-    bool         loaded;
-    bool         debug;
+    bool                     m_loaded;
+    bool                     m_debug;
 
-    DNNFaceModel m_dnn;
+    DNNFaceModel             m_dnn;
 
 public:
 
     RecognitionPreprocessor* m_preprocessor;
     DNNFaceExtractor*        m_extractor;
-
 };
 
 // ----------------------------------------------------------------------------
@@ -131,6 +130,7 @@ cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(const QImage& inputImage)
             cvImageWrapper = cv::Mat(image.height(), image.width(), CV_8UC4, image.scanLine(0), image.bytesPerLine());
             cvtColor(cvImageWrapper, cvImage, CV_RGBA2RGB);
             break;
+
         default:
             image          = image.convertToFormat(QImage::Format_RGB888);
             cvImage        = cv::Mat(image.height(), image.width(), CV_8UC3, image.scanLine(0), image.bytesPerLine());
@@ -165,7 +165,7 @@ int OpenCVDNNFaceRecognizer::recognize(const cv::Mat& inputImage)
 void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images,
                                       std::vector<int>& clusteredIndices,
                                       QStringList dataset,
-                                      int nbOfClusters)
+                                      int /*nbOfClusters*/)
 {
 
     d->dnn();
@@ -198,12 +198,12 @@ void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images,
     QTime timer;
     timer.start();
     cv::flann::GenericIndex<cvflann::L2<float>> flannIndex(faceEmbeddings, indexParams);
-    qDebug() << "time to build flann index " << timer.elapsed() << " ms";
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "time to build flann index " << timer.elapsed() << " ms";
 
     cv::Mat_<float> centers(10,128);
     timer.start();
     cv::flann::hierarchicalClustering<cvflann::L2<float>>(faceEmbeddings, centers, indexParams);
-    qDebug() << "time to compute cluster centers " << timer.elapsed() << " ms";
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "time to compute cluster centers " << timer.elapsed() << " ms";
 
     // std::vector<std::vector<float>> centerVectors;
     // cvMatToStdVector(centers, centerVectors);
@@ -213,8 +213,9 @@ void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images,
     float radius = 0.01;
     timer.start();
     flannIndex.radiusSearch(centers, indices, dists, radius, cvflann::SearchParams());
-    qDebug() << "time to search for nearest neighbors " << timer.elapsed() << " ms";
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "time to search for nearest neighbors " << timer.elapsed() << " ms";
 */
+
 /**
  * k-means opencv
  * Not well clustered
@@ -236,8 +237,14 @@ void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images,
     }
 
     std::vector<int> labels(clusteredIndices.size());
-    double compactness = cv::kmeans(faceEmbeddings, nbOfClusters, labels, cv::TermCriteria(cv::TermCriteria::Type::MAX_ITER | cv::TermCriteria::Type::EPS, 10000, 0.00001),
-                                    10, cv::KmeansFlags::KMEANS_PP_CENTERS, centers);
+    double compactness = cv::kmeans(faceEmbeddings,
+                                    nbOfClusters,
+                                    labels,
+                                    cv::TermCriteria(cv::TermCriteria::Type::MAX_ITER |
+                                                     cv::TermCriteria::Type::EPS, 10000, 0.00001),
+                                    10,
+                                    cv::KmeansFlags::KMEANS_PP_CENTERS,
+                                    centers);
 
     std::vector<QStringList> groups(nbOfClusters);
 
@@ -248,15 +255,16 @@ void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images,
 
     for (int i = 0 ; i < groups.size() ; ++i)
     {
-        qDebug() << "Group " << i;
-        foreach(const QString& image, groups[i])
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "Group " << i;
+
+        foreach (const QString& image, groups[i])
         {
-            qDebug() << image;
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << image;
         }
     }
 
-    qDebug() << "N Groups = " << groups.size();
-    qDebug() << "N LAbels = " << labels.size();
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "N Groups = " << groups.size();
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "N LAbels = " << labels.size();
 
     std::copy(labels.begin(), labels.end(), clusteredIndices.begin());
 
@@ -278,27 +286,27 @@ void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images,
     QTime timer;
     timer.start();
     dbscan.run();
-    qDebug() << "time to run dbscan " << timer.elapsed() << " ms";
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "time to run dbscan " << timer.elapsed() << " ms";
     int nClusters = dbscan.getCluster(clusteredIndices);
 
     std::vector<QStringList> groups(nClusters);
 
-    qDebug() << "N Groups = " << groups.size();
-    qDebug() << "N LAbels = " << clusteredIndices.size();
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "N Groups = " << groups.size();
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "N LAbels = " << clusteredIndices.size();
 
     for (int i = 0 ; i < clusteredIndices.size() ; ++i)
     {
-        // qDebug() << "Image " << i << " in group " << clusteredIndices[i];
+        // qCDebug(DIGIKAM_FACESENGINE_LOG) << "Image " << i << " in group " << clusteredIndices[i];
         groups[clusteredIndices[i]] << dataset[i];
     }
 
     for (int i = 0 ;  i < groups.size() ; ++i)
     {
-        qDebug() << "Group " << i;
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "Group " << i;
 
         foreach (const QString& image, groups[i])
         {
-            qDebug() << image;
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << image;
         }
     }
 }
