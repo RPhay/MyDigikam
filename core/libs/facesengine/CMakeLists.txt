@@ -40,21 +40,12 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR}/..
                     # ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/tantriggs
 )
 
-set(facesengine_LIB_SRCS facedetector.cpp
-                         identity.cpp
+set(facesengine_LIB_SRCS identity.cpp
                          dataproviders.cpp
 
+                         detection/facedetector.cpp
                          detection/opencvfacedetector.cpp
                          detection/opencvdnnfacedetector.cpp
-
-                         preprocessing/recognition/recognitionpreprocessor.cpp
-                         preprocessing/recognition/openfacepreprocessor.cpp
-
-                         preprocessing/shape-predictor/matrixoperations.cpp
-                         preprocessing/shape-predictor/pointtransformaffine.cpp
-                         preprocessing/shape-predictor/qdatastreamoverloads.cpp
-                         preprocessing/shape-predictor/fullobjectdetection.cpp
-                         preprocessing/shape-predictor/shapepredictor.cpp
 
                          detection/dnn/dnnfacedetectorssd.cpp
                          detection/dnn/dnnfacedetectoryolo.cpp
@@ -65,6 +56,15 @@ set(facesengine_LIB_SRCS facedetector.cpp
                          detection/opencv3-face/lbph_faces.cpp
                          detection/opencv3-face/eigen_faces.cpp
                          detection/opencv3-face/fisher_faces.cpp
+
+                         preprocessing/recognition/recognitionpreprocessor.cpp
+                         preprocessing/recognition/openfacepreprocessor.cpp
+
+                         preprocessing/shape-predictor/matrixoperations.cpp
+                         preprocessing/shape-predictor/pointtransformaffine.cpp
+                         preprocessing/shape-predictor/qdatastreamoverloads.cpp
+                         preprocessing/shape-predictor/fullobjectdetection.cpp
+                         preprocessing/shape-predictor/shapepredictor.cpp
 
                          # alignment/flandmark/flandmarkaligner.cpp
                          # preprocessing/tantriggs/tantriggspreprocessor.cpp
