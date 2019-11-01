@@ -50,6 +50,8 @@ private:
 
     FunnelReal(const FunnelReal&); // Disable
 
+private:
+
     class Private;
     Private* const d;
 };

@@ -36,7 +36,7 @@ class Preprocessor
 
 public:
 
-    Preprocessor()
+    explicit Preprocessor()
     {
     }
 

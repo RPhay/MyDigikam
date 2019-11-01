@@ -107,12 +107,13 @@ cv::Mat FlandmarkAligner::align(const cv::Mat& inputImage)
 
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Detecting" << d->model->data.options.M << "landmarks";
     QVector<double> landmarks(2*d->model->data.options.M);
+
     // bbox with detected face (format: top_left_col top_left_row bottom_right_col bottom_right_row)
-    int bbox[]        = {30,30,120,120}; //{ 0, 0, image.cols, image.rows };
+    int bbox[]        = {30, 30, 120, 120}; //{ 0, 0, image.cols, image.rows };
     IplImage iplImage = image;
     flandmark_detect(&iplImage, bbox, d->model, landmarks.data());
 
-    for (int i = 0; i < d->model->data.options.M; i++)
+    for (int i = 0 ; i < d->model->data.options.M ; ++i)
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Landmark" << i << landmarks.at(2*i) << ", " << landmarks.at(2*i+1);
     }

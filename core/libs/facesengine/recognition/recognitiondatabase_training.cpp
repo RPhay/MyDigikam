@@ -105,8 +105,8 @@ void RecognitionDatabase::train(const Identity& identityToBeTrained,
                                 const QImage& image,
                                 const QString& trainingContext)
 {
-    SimpleTrainingDataProvider* const data = new SimpleTrainingDataProvider(identityToBeTrained,
-                                                                            QList<QImage>() << image);
+    RecognitionTrainingProvider* const data = new RecognitionTrainingProvider(identityToBeTrained,
+                                                                              QList<QImage>() << image);
     train(identityToBeTrained, data, trainingContext);
     delete data;
 }
@@ -115,7 +115,7 @@ void RecognitionDatabase::train(const Identity& identityToBeTrained,
                                 const QList<QImage>& images,
                                 const QString& trainingContext)
 {
-    SimpleTrainingDataProvider* const data = new SimpleTrainingDataProvider(identityToBeTrained, images);
+    RecognitionTrainingProvider* const data = new RecognitionTrainingProvider(identityToBeTrained, images);
     train(identityToBeTrained, data, trainingContext);
     delete data;
 }

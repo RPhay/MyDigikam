@@ -22,42 +22,36 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SIMPLE_TRAINING_DATA_PROVIDER_H
-#define DIGIKAM_SIMPLE_TRAINING_DATA_PROVIDER_H
-
-// Qt includes
-
-#include <QList>
-#include <QImage>
-
-// Local includes
-
-#include "dataproviders.h"
-#include "identity.h"
+#include "recognitiontrainingprovider.h"
 
 namespace Digikam
 {
 
-/** Simple QImage training data container used by RecognitionDatabase::train(Identity, QImage, QString)
- */
-class SimpleTrainingDataProvider : public TrainingDataProvider
+RecognitionTrainingProvider::RecognitionTrainingProvider(const Identity& identity,
+                                                         const QList<QImage>& newImages)
+    : m_identity(identity),
+      m_toTrain(newImages)
 {
-public:
+}
 
-    explicit SimpleTrainingDataProvider(const Identity& identity, const QList<QImage>& newImages);
-    ~SimpleTrainingDataProvider();
+RecognitionTrainingProvider::~RecognitionTrainingProvider()
+{
+}
 
-    ImageListProvider* newImages(const Identity& id) override;
+ImageListProvider* RecognitionTrainingProvider::newImages(const Identity& id)
+{
+    if (m_identity == id)
+    {
+        m_toTrain.reset();
+        return &m_toTrain;
+    }
 
-    ImageListProvider* images(const Identity&) override;
+    return &m_empty;
+}
 
-public:
-
-    Identity               m_identity;
-    QListImageListProvider m_toTrain;
-    QListImageListProvider m_empty;
-};
+ImageListProvider* RecognitionTrainingProvider::images(const Identity&)
+{
+    return &m_empty;
+}
 
 } // namespace Digikam
-
-#endif // DIGIKAM_SIMPLE_TRAINING_DATA_PROVIDER_H

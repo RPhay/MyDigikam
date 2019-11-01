@@ -39,19 +39,19 @@
 // Local includes
 
 #include "digikam_config.h"
+#include "digikam_debug.h"
 #include "opencvfisherfacerecognizer.h"
 #include "opencveigenfacerecognizer.h"
 #include "opencvlbphfacerecognizer.h"
-#include "funnelreal.h"
 #include "opencvdnnfacerecognizer.h"
-#include "simpletrainingdataprovider.h"
+#include "recognitiontrainingprovider.h"
 #include "coredbaccess.h"
 #include "dbengineparameters.h"
 #include "facedbaccess.h"
 #include "facedboperationgroup.h"
-#include "dataproviders.h"
 #include "facedb.h"
-#include "digikam_debug.h"
+#include "funnelreal.h"
+#include "dataproviders.h"
 
 namespace Digikam
 {

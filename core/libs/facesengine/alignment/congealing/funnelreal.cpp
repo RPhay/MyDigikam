@@ -98,36 +98,41 @@ public:
     }
 
     void loadTrainingData(const QString& path);
-    void computeGaussian(std::vector<std::vector<float> > &Gaussian, int windowSize) const;
+    void computeGaussian(std::vector<std::vector<float> >& Gaussian,
+                         int windowSize) const;
 
     /// Part 1: Fills originalFeatures from the image data
-    void computeOriginalFeatures(std::vector<std::vector<std::vector<float> > > &originalFeatures,
+    void computeOriginalFeatures(std::vector<std::vector<std::vector<float> > >& originalFeatures,
                                  const cv::Mat& image,
-                                 const int width, const int height) const;
+                                 const int width,
+                                 const int height) const;
 
     /// Part 2: Returns a small vector contains transformation parameters
-    std::vector<float> computeTransform(const std::vector<std::vector<std::vector<float> > > &originalFeatures,
-                                 const int width, const int height) const;
+    std::vector<float> computeTransform(const std::vector<std::vector<std::vector<float> > >& originalFeatures,
+                                        const int width, const int height) const;
 
     /// Part 3: Applies the transformation (v, form computeTransform) to the given image, returns the result.
     cv::Mat applyTransform      (const cv::Mat& image,
-                                 const std::vector<float> &v,
-                                 int h, int w) const;
+                                 const std::vector<float>& v,
+                                 int h,
+                                 int w) const;
 
     // Utilities
-    void getSIFTdescripter      (std::vector<float> &descripter,
-                                 const std::vector<std::vector<float> > &m,
-                                 const std::vector<std::vector<float> > &theta,
+    void getSIFTdescripter      (std::vector<float>& descripter,
+                                 const std::vector<std::vector<float> >& m,
+                                 const std::vector<std::vector<float> >& theta,
                                  int x, int y, int windowSize, int histDim, int bucketsDim,
-                                 const std::vector<std::vector<float> > &Gaussian) const;
+                                 const std::vector<std::vector<float> >& Gaussian) const;
 
-    float computeLogLikelihood  (const std::vector<std::vector<float> > &logDistField,
-                                 const std::vector<std::vector<float> > &fids, int numFeatureClusters) const;
+    float computeLogLikelihood  (const std::vector<std::vector<float> >& logDistField,
+                                 const std::vector<std::vector<float> >& fids,
+                                 int numFeatureClusters) const;
 
-    void  getNewFeatsInvT       (std::vector<std::vector<float> > &newFIDs,
-                                 const std::vector<std::vector<std::vector<float> > > &originalFeats,
-                                 const std::vector<float> &vparams,
-                                 float centerX, float centerY) const;
+    void  getNewFeatsInvT       (std::vector<std::vector<float> >& newFIDs,
+                                 const std::vector<std::vector<std::vector<float> > >& originalFeats,
+                                 const std::vector<float>& vparams,
+                                 float centerX,
+                                 float centerY) const;
 
 public:
 
@@ -317,9 +322,10 @@ static float dist(const std::vector<float> &a, const std::vector<float> &b)
 }
 
 // Main function, part 1
-void FunnelReal::Private::computeOriginalFeatures(std::vector<std::vector<std::vector<float> > > &originalFeatures,
+void FunnelReal::Private::computeOriginalFeatures(std::vector<std::vector<std::vector<float> > >& originalFeatures,
                                                   const cv::Mat& image,
-                                                  const int width, const int height) const
+                                                  const int width,
+                                                  const int height) const
 {
     std::vector<float>               ofEntry(edgeDescDim, 0);
     std::vector<std::vector<float> > ofCol(width, ofEntry);
@@ -408,7 +414,9 @@ void FunnelReal::Private::computeOriginalFeatures(std::vector<std::vector<std::v
 
             for (int ii = 0 ; ii < numFeatureClusters ; ++ii)
             {
-                distances[ii] = exp(-dist(originalFeatures[j][k], centroids[ii])/(2*sigmaSq[ii]))/sqrt(sigmaSq[ii]);
+                distances[ii] = exp(-dist(originalFeatures[j][k], centroids[ii]) /
+                                (2*sigmaSq[ii])) / sqrt(sigmaSq[ii]);
+
                 sum          += distances[ii];
             }
 
@@ -423,8 +431,9 @@ void FunnelReal::Private::computeOriginalFeatures(std::vector<std::vector<std::v
 }
 
 // Main function, part 2
-std::vector<float> FunnelReal::Private::computeTransform(const std::vector<std::vector<std::vector<float> > > &originalFeatures,
-                                                         const int width, const int height) const
+std::vector<float> FunnelReal::Private::computeTransform(const std::vector<std::vector<std::vector<float> > >& originalFeatures,
+                                                         const int width,
+                                                         const int height) const
 {
     std::vector<float> v(numParams);
 
@@ -472,7 +481,7 @@ std::vector<float> FunnelReal::Private::computeTransform(const std::vector<std::
             {
                 v[k] -= (2*(d[k] + dn));
                 getNewFeatsInvT(newFIDs, originalFeatures, v, centerX, centerY);
-                newL = computeLogLikelihood(logDFSeq[iter], newFIDs, numFeatureClusters);
+                newL  = computeLogLikelihood(logDFSeq[iter], newFIDs, numFeatureClusters);
 
                 if (newL > oldL)
                 {
@@ -492,7 +501,9 @@ std::vector<float> FunnelReal::Private::computeTransform(const std::vector<std::
 
 
 cv::Mat FunnelReal::Private::applyTransform(const cv::Mat& image,
-                                            const std::vector<float> &v, int h, int w) const
+                                            const std::vector<float>& v,
+                                            int h,
+                                            int w) const
 {
     float cropT1inv[2][3] = {{1,0,image.cols/2.0f}, {0,1,image.rows/2.0f}};
     float cropS1inv[3][3] = {{image.cols/(float)w,0,0}, {0,image.rows/(float)h,0}, {0,0,1}};
@@ -532,15 +543,18 @@ cv::Mat FunnelReal::Private::applyTransform(const cv::Mat& image,
     return dst;
 }
 
-void FunnelReal::Private::getSIFTdescripter(std::vector<float> &descripter,
-                                             const std::vector<std::vector<float> > &m,
-                                             const std::vector<std::vector<float> > &theta,
-                                             int x, int y, int windowSize,
-                                             int histDim, int bucketsDim,
-                                             const std::vector<std::vector<float> > &Gaussian) const
+void FunnelReal::Private::getSIFTdescripter(std::vector<float>& descripter,
+                                             const std::vector<std::vector<float> >& m,
+                                             const std::vector<std::vector<float> >& theta,
+                                             int x,
+                                             int y,
+                                             int windowSize,
+                                             int histDim,
+                                             int bucketsDim,
+                                             const std::vector<std::vector<float> >& Gaussian) const
 {
-    for (int i = 0 ; i < (signed)descripter.size() ; i++)
-        descripter[i]=0;
+    for (int i = 0 ; i < (signed)descripter.size() ; ++i)
+        descripter[i] = 0;
 
     int histDimWidth = 2*windowSize/histDim;
     float degPerBin  = 360.0f/bucketsDim;
@@ -549,9 +563,9 @@ void FunnelReal::Private::getSIFTdescripter(std::vector<float> &descripter,
     std::vector<float> mtimesGRow(2*windowSize);
     std::vector<std::vector<float> > mtimesG(2*windowSize, mtimesGRow);
 
-    for (int i = 0 ; i < 2*windowSize ; i++)
+    for (int i = 0 ; i < 2*windowSize ; ++i)
     {
-        for (int j = 0 ; j < 2*windowSize ; j++)
+        for (int j = 0 ; j < 2*windowSize ; ++j)
         {
             int xx        = x+i-(windowSize-1);
             int yy        = y+j-(windowSize-1);
@@ -564,9 +578,9 @@ void FunnelReal::Private::getSIFTdescripter(std::vector<float> &descripter,
     int histBin[2], histX[2], histY[2];
     float dX[2], dY[2], dBin[2];
 
-    for (int i = 0; i < 2*windowSize ; i++)
+    for (int i = 0; i < 2*windowSize ; ++i)
     {
-        for (int j = 0 ; j < 2*windowSize ; j++)
+        for (int j = 0 ; j < 2*windowSize ; ++j)
         {
             histX[0] = i/histDim; histX[1] = i/histDim;
             histY[0] = j/histDim; histY[1] = j/histDim;
@@ -580,45 +594,45 @@ void FunnelReal::Private::getSIFTdescripter(std::vector<float> &descripter,
             if ( iModHD >= histDimD2 && i < 2*windowSize - histDimD2 )
             {
                 histX[1] = histX[0] + 1;
-                dX[1] = (iModHD + 0.5f - histDimD2) / histDim;
+                dX[1]    = (iModHD + 0.5f - histDimD2) / histDim;
             }
 
             if ( iModHD < histDimD2 && i >= histDimD2 )
             {
                 histX[1] = histX[0] - 1;
-                dX[1] = (histDimD2 + 0.5f - iModHD) / histDim;
+                dX[1]    = (histDimD2 + 0.5f - iModHD) / histDim;
             }
 
             if ( jModHD >= histDimD2 && j < 2*windowSize - histDimD2 )
             {
                 histY[1] = histY[0] + 1;
-                dY[1] = (jModHD + 0.5f - histDimD2) / histDim;
+                dY[1]    = (jModHD + 0.5f - histDimD2) / histDim;
             }
 
             if ( jModHD < histDimD2 && j >= histDimD2)
             {
                 histY[1] = histY[0] - 1;
-                dY[1] = (histDimD2 + 0.5f - jModHD) / histDim;
+                dY[1]    = (histDimD2 + 0.5f - jModHD) / histDim;
             }
 
-            dX[0] = 1.0f - dX[1];
-            dY[0] = 1.0f - dY[1];
+            dX[0]           = 1.0f - dX[1];
+            dY[0]           = 1.0f - dY[1];
 
             float histAngle = theta[x+i-(windowSize-1)][y+j-(windowSize-1)];
 
-            histBin[0] = (int)(histAngle / degPerBin);
-            histBin[1] = (histBin[0]+1) % bucketsDim;
-            dBin[1]    = (histAngle - histBin[0]*degPerBin) / degPerBin;
-            dBin[0]    = 1.0f-dBin[1];
+            histBin[0]      = (int)(histAngle / degPerBin);
+            histBin[1]      = (histBin[0]+1) % bucketsDim;
+            dBin[1]         = (histAngle - histBin[0]*degPerBin) / degPerBin;
+            dBin[0]         = 1.0f-dBin[1];
 
-            for (int histBinIndex = 0 ; histBinIndex < 2 ; histBinIndex++)
+            for (int histBinIndex = 0 ; histBinIndex < 2 ; ++histBinIndex)
             {
-                for (int histXIndex = 0; histXIndex < 2 ; histXIndex++)
+                for (int histXIndex = 0; histXIndex < 2 ; ++histXIndex)
                 {
-                    for (int histYIndex = 0; histYIndex < 2 ; histYIndex++)
+                    for (int histYIndex = 0; histYIndex < 2 ; ++histYIndex)
                     {
-                        int histNum = histX[histXIndex]*histDimWidth + histY[histYIndex];
-                        int bin = histBin[histBinIndex];
+                        int histNum                           = histX[histXIndex]*histDimWidth + histY[histYIndex];
+                        int bin                               = histBin[histBinIndex];
                         descripter[histNum*bucketsDim + bin] += (mtimesG[i][j] * dX[histXIndex] * dY[histYIndex] * dBin[histBinIndex]);
                     }
                 }
@@ -630,44 +644,45 @@ void FunnelReal::Private::getSIFTdescripter(std::vector<float> &descripter,
     // threshold values at .2, renormalize
     float sum = 0;
 
-    for (int i = 0 ; i < (signed)descripter.size() ; i++)
+    for (int i = 0 ; i < (signed)descripter.size() ; ++i)
         sum += descripter[i];
 
     if (sum < .0000001f)
     {
         //float dn = 1.0f / (signed)descripter.size(); // is unused, don't know
-        for (int i = 0 ; i < (signed)descripter.size() ; i++)
+        for (int i = 0 ; i < (signed)descripter.size() ; ++i)
             descripter[i] = 0;
 
         return;
     }
 
-    for (int i = 0 ; i < (signed)descripter.size() ; i++)
+    for (int i = 0 ; i < (signed)descripter.size() ; ++i)
     {
         descripter[i] /= sum;
 
-        if(descripter[i] > .2f)
+        if (descripter[i] > .2f)
             descripter[i] = .2f;
     }
 
     sum = 0;
 
-    for (int i = 0 ; i < (signed)descripter.size() ; i++)
+    for (int i = 0 ; i < (signed)descripter.size() ; ++i)
         sum += descripter[i];
 
-    for (int i = 0 ; i < (signed)descripter.size() ; i++)
+    for (int i = 0 ; i < (signed)descripter.size() ; ++i)
         descripter[i] /= sum;
 }
 
-void FunnelReal::Private::getNewFeatsInvT(std::vector<std::vector<float> > &newFIDs,
-                                          const std::vector<std::vector<std::vector<float> > > &originalFeats,
-                                          const std::vector<float> &vparams,
-                                          float centerX, float centerY) const
+void FunnelReal::Private::getNewFeatsInvT(std::vector<std::vector<float> >& newFIDs,
+                                          const std::vector<std::vector<std::vector<float> > >& originalFeats,
+                                          const std::vector<float>& vparams,
+                                          float centerX,
+                                          float centerY) const
 {
-    int numFeats = newFIDs[0].size();
+    int numFeats      = newFIDs[0].size();
     std::vector<float> uniformDist(numFeats, 1.0f/numFeats);
 
-    float postM[2][3] = {{1,0,centerX}, {0,1,centerY}};
+    float postM[2][3] = {{1,0,centerX},  {0,1,centerY}};
     float preM[3][3]  = {{1,0,-centerX}, {0,1,-centerY}, {0,0,1}};
 
     float tM[3][3]    = {{1, 0, vparams[0]}, {0, 1, vparams[1]}, {0,0,1}};
@@ -683,14 +698,14 @@ void FunnelReal::Private::getNewFeatsInvT(std::vector<std::vector<float> > &newF
 
     cv::Mat xform(2, 3, CV_32FC1);
     xform = postCVM * tCVM;
-    xform = xform * rCVM;
-    xform = xform * sCVM;
-    xform = xform * preCVM;
+    xform = xform   * rCVM;
+    xform = xform   * sCVM;
+    xform = xform   * preCVM;
 
     int height = (signed)originalFeats.size();
     int width  = (signed)originalFeats[0].size();
 
-    for (int i = 0 ; i < (signed)newFIDs.size() ; i++)
+    for (int i = 0 ; i < (signed)newFIDs.size() ; ++i)
     {
         int j  = randPxls[i].first;
         int k  = randPxls[i].second;
@@ -704,15 +719,15 @@ void FunnelReal::Private::getNewFeatsInvT(std::vector<std::vector<float> > &newF
     }
 }
 
-float FunnelReal::Private::computeLogLikelihood(const std::vector<std::vector<float> > &logDistField,
-                                                const std::vector<std::vector<float> > &fids,
+float FunnelReal::Private::computeLogLikelihood(const std::vector<std::vector<float> >& logDistField,
+                                                const std::vector<std::vector<float> >& fids,
                                                 int numFeatureClusters) const
 {
     float l = 0;
 
-    for(int j = 0 ; j < (signed)fids.size() ; j++)
+    for (int j = 0 ; j < (signed)fids.size() ; ++j)
     {
-        for(int i = 0 ; i < numFeatureClusters ; i++)
+        for (int i = 0 ; i < numFeatureClusters ; ++i)
             l += fids[j][i] * logDistField[j][i];
     }
 
