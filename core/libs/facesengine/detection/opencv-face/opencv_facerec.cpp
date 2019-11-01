@@ -22,7 +22,17 @@
 #pragma clang diagnostic ignored "-Wcast-align"
 #endif
 
-#include "opencv_precomp.hpp"
+#include "digikam_opencv.h"
+
+#include "opencv2/core/utility.hpp"
+#include "opencv2/core/persistence.hpp"
+
+#include <map>
+#include <iostream>
+#include <set>
+#include <limits>
+#include <iostream>
+
 #include "opencv_face.hpp"
 
 // Restore warnings
