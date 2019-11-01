@@ -163,8 +163,8 @@ void InsertTextWidget::setText(const QString& text, const QFont& font, const QCo
     // Center text if top left corner text area is not visible.
 
 /*
-    if ( d->textFont.pointSize() != font.pointSize() &&
-         !rect().contains( d->textRect.x(), d->textRect.y() ) )
+    if (d->textFont.pointSize() != font.pointSize() &&
+        !rect().contains( d->textRect.x(), d->textRect.y()))
     {
         d->textFont = font;
         resetEdit();
@@ -206,10 +206,10 @@ QRect InsertTextWidget::getPositionHint() const
     if (d->textRect.isValid())
     {
         // We normalize on the size of the image, but we store as int. Precision loss is no problem.
-        hint.setX(      (int) ((float)(d->textRect.x() - d->rect.x())     / (float)d->rect.width()  * 10000.0) );
-        hint.setY(      (int) ((float)(d->textRect.y() - d->rect.y())     / (float)d->rect.height() * 10000.0) );
-        hint.setWidth(  (int) ((float)d->textRect.width()  / (float)d->rect.width()  * 10000.0) );
-        hint.setHeight( (int) ((float)d->textRect.height() / (float)d->rect.height() * 10000.0) );
+        hint.setX(     (int) ((float)(d->textRect.x() - d->rect.x())     / (float)d->rect.width()  * 10000.0));
+        hint.setY(     (int) ((float)(d->textRect.y() - d->rect.y())     / (float)d->rect.height() * 10000.0));
+        hint.setWidth( (int) ((float)d->textRect.width()  / (float)d->rect.width()  * 10000.0));
+        hint.setHeight((int) ((float)d->textRect.height() / (float)d->rect.height() * 10000.0));
     }
 
     return hint;
@@ -273,7 +273,7 @@ void InsertTextWidget::makePixmap()
 
     // get preview image data
     DImg image = d->iface->preview();
-    image.setIccProfile( d->iface->original()->getIccProfile() );
+    image.setIccProfile(d->iface->original()->getIccProfile());
 
     // paint pixmap for drawing this widget
     // First, fill with background color
@@ -413,7 +413,7 @@ QRect InsertTextWidget::composeImage(DImg* const image, QPainter* const destPain
             {
                 x = maxWidth - qRound(fromRight * maxWidth) - boxWidth;
 
-                if ( x < 0 )
+                if (x < 0)
                 {
                     x = qMax( (maxWidth - boxWidth) / 2, 0);
                 }
@@ -433,14 +433,14 @@ QRect InsertTextWidget::composeImage(DImg* const image, QPainter* const destPain
             {
                 y = maxHeight - qRound(fromBottom * maxHeight) - boxHeight;
 
-                if ( y < 0 )
+                if (y < 0)
                 {
                     y = qMax( (maxHeight - boxHeight) / 2, 0);
                 }
             }
 
-            if (! QRect(x, y, boxWidth, boxHeight).
-                intersects(QRect(0, 0, maxWidth, maxHeight)) )
+            if (!QRect(x, y, boxWidth, boxHeight).
+                 intersects(QRect(0, 0, maxWidth, maxHeight)))
             {
                 // emergency fallback - nothing is visible
                 x = qMax( (maxWidth - boxWidth)   / 2, 0);
@@ -459,18 +459,18 @@ QRect InsertTextWidget::composeImage(DImg* const image, QPainter* const destPain
     }
 
     // create a rectangle relative to image
-    QRect drawRect( x, y, fontWidth + 2 * borderWidth + 2 * spacing, fontHeight + 2 * borderWidth  + 2 * spacing);
+    QRect drawRect(x, y, fontWidth + 2 * borderWidth + 2 * spacing, fontHeight + 2 * borderWidth  + 2 * spacing);
 
     // create a rectangle relative to textArea, excluding the border
-    QRect textAreaBackgroundRect( borderWidth, borderWidth, fontWidth + 2 * spacing, fontHeight + 2 * spacing);
+    QRect textAreaBackgroundRect(borderWidth, borderWidth, fontWidth + 2 * spacing, fontHeight + 2 * spacing);
 
     // create a rectangle relative to textArea, excluding the border and spacing
-    QRect textAreaTextRect( borderWidth + spacing, borderWidth + spacing, fontWidth, fontHeight );
+    QRect textAreaTextRect(borderWidth + spacing, borderWidth + spacing, fontWidth, fontHeight);
 
     // create a rectangle relative to textArea, including the border,
     // for drawing the rectangle, taking into account that the width of the QPen goes in and out in equal parts
-    QRect textAreaDrawRect( borderWidth / 2, borderWidth / 2, fontWidth + borderWidth + 2 * spacing,
-                            fontHeight + borderWidth + 2 * spacing );
+    QRect textAreaDrawRect(borderWidth / 2, borderWidth / 2, fontWidth + borderWidth + 2 * spacing,
+                           fontHeight + borderWidth + 2 * spacing);
 
     // cut out the text area
     DImg textArea = image->copy(drawRect);
@@ -577,8 +577,9 @@ QRect InsertTextWidget::composeImage(DImg* const image, QPainter* const destPain
 
     if (borderMode == BORDER_NORMAL)      // Decorative border using text color.
     {
-        p.setPen( QPen(textColor, borderWidth, Qt::SolidLine,
-                       Qt::SquareCap, Qt::RoundJoin) ) ;
+        p.setOpacity((qreal)textOpacity / 100.0);
+        p.setPen(QPen(textColor, borderWidth, Qt::SolidLine,
+                      Qt::SquareCap, Qt::RoundJoin));
         p.drawRect(textAreaDrawRect);
     }
     else if (borderMode == BORDER_SUPPORT)  // Make simple dot line border to help user.
@@ -612,7 +613,7 @@ QRect InsertTextWidget::composeImage(DImg* const image, QPainter* const destPain
         {
             color.setColor(ptr, false);
             ncolor.setColor(nptr, false);
-            if ( color.red()   == ncolor.red() &&
+            if (color.red()   == ncolor.red()   &&
                 color.green() == ncolor.green() &&
                 color.blue()  == ncolor.blue())
             {
@@ -688,27 +689,27 @@ void InsertTextWidget::resizeEvent(QResizeEvent* e)
 
 void InsertTextWidget::mousePressEvent(QMouseEvent* e)
 {
-    if ( e->button() == Qt::LeftButton &&
-         d->textRect.contains( e->x(), e->y() ) )
+    if (e->button() == Qt::LeftButton &&
+        d->textRect.contains( e->x(), e->y()))
     {
         d->xpos = e->x();
         d->ypos = e->y();
-        setCursor ( Qt::SizeAllCursor );
+        setCursor (Qt::SizeAllCursor);
         d->currentMoving = true;
     }
 }
 
 void InsertTextWidget::mouseReleaseEvent(QMouseEvent*)
 {
-    setCursor ( Qt::ArrowCursor );
+    setCursor(Qt::ArrowCursor);
     d->currentMoving = false;
 }
 
 void InsertTextWidget::mouseMoveEvent(QMouseEvent* e)
 {
-    if ( rect().contains( e->x(), e->y() ) )
+    if (rect().contains( e->x(), e->y()))
     {
-        if ( e->buttons() == Qt::LeftButton && d->currentMoving )
+        if (e->buttons() == Qt::LeftButton && d->currentMoving)
         {
             uint newxpos = e->x();
             uint newypos = e->y();
@@ -730,15 +731,15 @@ void InsertTextWidget::mouseMoveEvent(QMouseEvent* e)
 
             d->xpos = newxpos;
             d->ypos = newypos;
-            setCursor( Qt::PointingHandCursor );
+            setCursor(Qt::PointingHandCursor);
         }
-        else if ( d->textRect.contains( e->x(), e->y() ) )
+        else if (d->textRect.contains( e->x(), e->y()))
         {
-            setCursor ( Qt::SizeAllCursor );
+            setCursor (Qt::SizeAllCursor);
         }
         else
         {
-            setCursor ( Qt::ArrowCursor );
+            setCursor (Qt::ArrowCursor);
         }
     }
 }
