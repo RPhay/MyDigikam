@@ -57,7 +57,6 @@ public:
 private:
 
     std::vector<float> data;
-
 };
 
 // ------------------------------------------------------------------------------------------
@@ -95,7 +94,6 @@ private:
 
     int                           nbOfClusters;
     std::vector<int>              clusteredIdx;
-
 };
 
 } // namespace Digikam
