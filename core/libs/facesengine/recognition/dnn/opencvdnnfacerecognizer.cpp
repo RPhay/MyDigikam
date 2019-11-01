@@ -294,13 +294,13 @@ void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images,
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "N Groups = " << groups.size();
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "N LAbels = " << clusteredIndices.size();
 
-    for (int i = 0 ; i < clusteredIndices.size() ; ++i)
+    for (unsigned int i = 0 ; i < clusteredIndices.size() ; ++i)
     {
         // qCDebug(DIGIKAM_FACESENGINE_LOG) << "Image " << i << " in group " << clusteredIndices[i];
         groups[clusteredIndices[i]] << dataset[i];
     }
 
-    for (int i = 0 ;  i < groups.size() ; ++i)
+    for (unsigned int i = 0 ;  i < groups.size() ; ++i)
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Group " << i;
 
