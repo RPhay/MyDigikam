@@ -37,6 +37,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // QtAV includes
 
@@ -143,6 +145,13 @@ SlideVideo::SlideVideo(QWidget* const parent)
     grid->setRowStretch(1, 100);
     grid->setContentsMargins(QMargins());
 
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group = config->group("Media Player Settings");
+    int volume         = group.readEntry("Volume", 50);
+
+    d->volume->setValue(volume);
+    d->player->audio()->setVolume((qreal)volume / 100.0);
+
     // --------------------------------------------------------------------------
 
     connect(d->slider, SIGNAL(sliderMoved(int)),
@@ -171,7 +180,6 @@ SlideVideo::SlideVideo(QWidget* const parent)
 
     // --------------------------------------------------------------------------
 
-    slotVolumeChanged(d->volume->value());
     layout()->activate();
     resize(sizeHint());
     show();

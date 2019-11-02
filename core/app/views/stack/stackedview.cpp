@@ -149,8 +149,9 @@ StackedView::StackedView(QWidget* const parent)
     d->mapWidgetView->setObjectName(QLatin1String("mainwindow_mapwidgetview"));
 #endif // HAVE_MARBLE
 
-#ifdef HAVE_MEDIAPLAYER
+#ifdef HAVE_MEDIAPLAYER´
     d->mediaPlayerView  = new MediaPlayerView(this);
+    d->mediaPlayerView->setObjectName(QLatin1String("main_media_player"));
     d->mediaPlayerView->setInfoInterface(new DBInfoIface(this, QList<QUrl>()));
 #endif //HAVE_MEDIAPLAYER
 
