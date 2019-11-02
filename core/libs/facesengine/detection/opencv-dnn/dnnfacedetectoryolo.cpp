@@ -43,7 +43,7 @@ namespace Digikam
 {
 
 DNNFaceDetectorYOLO::DNNFaceDetectorYOLO()
-  : DNNFaceDetectorBase(1.0 / 255.0, cv::Scalar(0.0, 0.0, 0.0), cv::Size(416, 416))
+    : DNNFaceDetectorBase(1.0 / 255.0, cv::Scalar(0.0, 0.0, 0.0), cv::Size(416, 416))
 {
     QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                              QLatin1String("digikam/facesengine/yolov3-face.cfg"));
@@ -81,8 +81,12 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
                                       const cv::Size& paddedSize,
                                       std::vector<cv::Rect>& detectedBboxes)
 {
-    std::vector<float> goodConfidences, doubtConfidences, confidences;
-    std::vector<cv::Rect> goodBoxes, doubtBoxes, boxes;
+    std::vector<float>    goodConfidences;
+    std::vector<float>    doubtConfidences;
+    std::vector<float>    confidences;
+    std::vector<cv::Rect> goodBoxes;
+    std::vector<cv::Rect> doubtBoxes;
+    std::vector<cv::Rect> boxes;
 
     for (size_t i = 0 ; i < outs.size() ; ++i)
     {
@@ -90,7 +94,7 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
         // ones with high confidence scores. Assign the box's class label as the class
         // with the highest score for the box.
 
-        float* data = (float*)outs[i].data;
+        float* data = reinterpret_cast<float*>(outs[i].data);
 
         for (int j = 0 ; j < outs[i].rows ; ++j, data += outs[i].cols)
         {
@@ -153,8 +157,8 @@ void DNNFaceDetectorYOLO::postprocess(const std::vector<cv::Mat>& outs,
     }
 }
 
-// Get the names of the output layers
-
+/** Get the names of the output layers
+ */
 std::vector<cv::String> DNNFaceDetectorYOLO::getOutputsNames()
 {
     static std::vector<cv::String> names;
@@ -162,12 +166,15 @@ std::vector<cv::String> DNNFaceDetectorYOLO::getOutputsNames()
     if (names.empty())
     {
         // Get the indices of the output layers, i.e. the layers with unconnected outputs
+
         std::vector<int> outLayers = net.getUnconnectedOutLayers();
 
         // Get the names of all the layers in the network
+
         std::vector<cv::String> layersNames = net.getLayerNames();
 
         // Get the names of the output layers in names
+
         names.resize(outLayers.size());
 
         for (size_t i = 0 ; i < outLayers.size() ; ++i)

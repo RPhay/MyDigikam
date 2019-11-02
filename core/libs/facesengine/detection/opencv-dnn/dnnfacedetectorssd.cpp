@@ -38,7 +38,7 @@ namespace Digikam
 {
 
 DNNFaceDetectorSSD::DNNFaceDetectorSSD()
-  : DNNFaceDetectorBase(1.0, cv::Scalar(104.0, 177.0, 123.0), cv::Size(300, 300))
+    : DNNFaceDetectorBase(1.0, cv::Scalar(104.0, 177.0, 123.0), cv::Size(300, 300))
 {
     QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                              QLatin1String("digikam/facesengine/deploy.prototxt"));

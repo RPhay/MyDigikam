@@ -45,8 +45,8 @@ void FaceDb::updateDNNFaceModel(DNNFaceModel& model)
                                                            << vecdata[vecdata.size()-1];
             }
 
-            QByteArray vec_byte(vecdata.size()*sizeof(float), 0);
-            float* const fp = (float*)vec_byte.data();
+            QByteArray vec_byte(vecdata.size() * sizeof(float), 0);
+            float* const fp = reinterpret_cast<float*>(vec_byte.data());
 
             for (size_t k = 0 ; k < vecdata.size() ; ++k)
             {
@@ -140,7 +140,7 @@ DNNFaceModel FaceDb::dnnFaceModel(bool debug) const
                 qCDebug(DIGIKAM_FACEDB_LOG) << "Checkout face mat data " << metadata.databaseId << " for identity "
                                             << metadata.identity << " with size " << cData.size();
 
-                float* const it = (float *)new_vec.data();
+                float* const it = reinterpret_cast<float*>(new_vec.data());
 
                 for (size_t i = 0 ; i < new_vec.size() / sizeof(float) ; ++i)
                 {

@@ -65,8 +65,8 @@ void FaceDb::updateEIGENFaceModel(EigenFaceModel& model, const std::vector<cv::M
                   */
 //                 this->getFaceVector(mat_rgb, vecdata);
 
-                QByteArray vec_byte(vecdata.size()*sizeof(float), 0);
-                float* const fp = (float*)vec_byte.data();
+                QByteArray vec_byte(vecdata.size() * sizeof(float), 0);
+                float* const fp = reinterpret_cast<float*>(vec_byte.data());
 
                 for (size_t k = 0 ; k < vecdata.size() ; ++k)
                 {

@@ -65,8 +65,8 @@ public:
 
 private:
 
-    DetectorNNModel      modelType;
-    DNNFaceDetectorBase* inferenceEngine;
+    DetectorNNModel      m_modelType;
+    DNNFaceDetectorBase* m_inferenceEngine;
 };
 
 } // namespace Digikam

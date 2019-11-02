@@ -128,7 +128,7 @@ LBPHFaceModel FaceDb::lbphFaceModel() const
     qCDebug(DIGIKAM_FACEDB_LOG) << "Loading LBPH model";
     d->db->execSql(QLatin1String("SELECT id, version, radius, neighbors, grid_x, grid_y FROM OpenCVLBPHRecognizer;"), &values);
 
-    for (QList<QVariant>::const_iterator it = values.constBegin(); it != values.constEnd();)
+    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
         LBPHFaceModel model;
         model.databaseId = it->toInt();
