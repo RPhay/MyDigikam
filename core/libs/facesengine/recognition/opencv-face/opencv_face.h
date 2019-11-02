@@ -74,7 +74,7 @@ public:
 
 /** @brief Default predict collector
  *
- *Trace minimal distance with treshhold checking (that is default behavior for most predict logic)
+ *Trace minimal distance with threshold checking (that is default behavior for most predict logic)
  */
 class DIGIKAM_DATABASE_EXPORT StandardCollector : public PredictCollector
 {
@@ -143,7 +143,7 @@ public:
 
 /**
  * All face recognition models in OpenCV are derived from the abstract base class FaceRecognizer, which
- * provides a unified access to all face recongition algorithms in OpenCV.
+ * provides a unified access to all face recognition algorithms in OpenCV.
  *
  * ### Description
  *
@@ -160,7 +160,7 @@ public:
  *     good practice to add a unique prefix to your algorithms to distinguish them from other
  *     algorithms.
  * -   Setting/Retrieving algorithm parameters by name. If you used video capturing functionality from
- *     OpenCV highgui module, you are probably familar with cv::cvSetCaptureProperty,
+ *     OpenCV highgui module, you are probably familiar with cv::cvSetCaptureProperty,
  *     ocvcvGetCaptureProperty, VideoCapture::set and VideoCapture::get. Algorithm provides similar
  *     method where instead of integer id's you specify the parameter names as text Strings. See
  *     Algorithm::set and Algorithm::get for details.
@@ -192,7 +192,7 @@ public:
  *      int num_components = 10;
  *      double threshold = 10.0;
  *      // Then if you want to have a cv::FaceRecognizer with a confidence threshold,
- *      // create the concrete implementation with the appropiate parameters:
+ *      // create the concrete implementation with the appropriate parameters:
  *      Ptr<FaceRecognizer> model = createEigenFaceRecognizer(num_components, threshold);
  * @endcode
  *
@@ -472,7 +472,7 @@ public:
     CV_WRAP virtual std::vector<int> getLabelsByString(const String& str) const;
 
     /**
-     * @brief threshhold parameter accessor - required for default BestMinDist collector
+     * @brief threshold parameter accessor - required for default BestMinDist collector
      */
     virtual double getThreshold() const = 0;
 
