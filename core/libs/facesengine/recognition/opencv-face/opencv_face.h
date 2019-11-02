@@ -104,7 +104,7 @@ public:
     /** @brief Constructor
      *  @param threshold_ set threshold
      */
-    StandardCollector(double threshold_ = DBL_MAX);
+    explicit StandardCollector(double threshold_ = DBL_MAX);
 
     /** @brief overloaded interface method
      */
