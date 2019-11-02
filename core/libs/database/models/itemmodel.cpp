@@ -56,28 +56,28 @@ public:
         incrementalRefreshRequested = false;
     }
 
-    ItemInfoList                        infos;
-    ItemInfo                            itemInfo;
+    ItemInfoList                       infos;
+    ItemInfo                           itemInfo;
 
-    QList<QVariant>                     extraValues;
-    QHash<qlonglong, int>               idHash;
+    QList<QVariant>                    extraValues;
+    QHash<qlonglong, int>              idHash;
 
-    bool                                keepFilePathCache;
-    QHash<QString, qlonglong>           filePathHash;
+    bool                               keepFilePathCache;
+    QHash<QString, qlonglong>          filePathHash;
 
-    bool                                sendRemovalSignals;
+    bool                               sendRemovalSignals;
 
-    QObject*                            preprocessor;
-    bool                                refreshing;
-    bool                                reAdding;
-    bool                                incrementalRefreshRequested;
+    QObject*                           preprocessor;
+    bool                               refreshing;
+    bool                               reAdding;
+    bool                               incrementalRefreshRequested;
 
-    DatabaseFields::Set                 watchFlags;
+    DatabaseFields::Set                watchFlags;
 
     class ItemModelIncrementalUpdater* incrementalUpdater;
 
     ItemInfoList                       pendingInfos;
-    QList<QVariant>                     pendingExtraValues;
+    QList<QVariant>                    pendingExtraValues;
 
     inline bool isValid(const QModelIndex& index)
     {
@@ -342,7 +342,7 @@ ItemInfo ItemModel::retrieveItemInfo(const QModelIndex& index)
     }
 
     ItemModel* const model = index.data(ItemModelPointerRole).value<ItemModel*>();
-    int row                 = index.data(ItemModelInternalId).toInt();
+    int row                = index.data(ItemModelInternalId).toInt();
 
     if (!model)
     {
@@ -361,7 +361,7 @@ qlonglong ItemModel::retrieveImageId(const QModelIndex& index)
     }
 
     ItemModel* const model = index.data(ItemModelPointerRole).value<ItemModel*>();
-    int row                 = index.data(ItemModelInternalId).toInt();
+    int row                = index.data(ItemModelInternalId).toInt();
 
     if (!model)
     {

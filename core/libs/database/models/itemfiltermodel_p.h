@@ -105,29 +105,29 @@ public:
     VersionItemFilterSettings          versionFilter;
     GroupItemFilterSettings            groupFilter;
 
-    volatile unsigned int               version;
-    unsigned int                        lastDiscardVersion;
-    unsigned int                        lastFilteredVersion;
-    int                                 sentOut;
-    int                                 sentOutForReAdd;
+    volatile unsigned int              version;
+    unsigned int                       lastDiscardVersion;
+    unsigned int                       lastFilteredVersion;
+    int                                sentOut;
+    int                                sentOutForReAdd;
 
-    QTimer*                             updateFilterTimer;
+    QTimer*                            updateFilterTimer;
 
-    bool                                needPrepare;
-    bool                                needPrepareComments;
-    bool                                needPrepareTags;
-    bool                                needPrepareGroups;
+    bool                               needPrepare;
+    bool                               needPrepareComments;
+    bool                               needPrepareTags;
+    bool                               needPrepareGroups;
 
-    QMutex                              mutex;
+    QMutex                             mutex;
     ItemFilterSettings                 filterCopy;
     VersionItemFilterSettings          versionFilterCopy;
     GroupItemFilterSettings            groupFilterCopy;
     ItemFilterModelPreparer*           preparer;
     ItemFilterModelFilterer*           filterer;
 
-    QHash<qlonglong, bool>              filterResults;
-    bool                                hasOneMatch;
-    bool                                hasOneMatchForText;
+    QHash<qlonglong, bool>             filterResults;
+    bool                               hasOneMatch;
+    bool                               hasOneMatchForText;
 
     QList<ItemFilterModelPrepareHook*> prepareHooks;
 
