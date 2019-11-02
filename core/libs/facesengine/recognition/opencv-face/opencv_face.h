@@ -72,6 +72,75 @@ public:
 
 // -------------------------------------------------------------------------------------------------------
 
+/** @brief Default predict collector
+ *
+ *Trace minimal distance with treshhold checking (that is default behavior for most predict logic)
+ */
+class CV_EXPORTS_W StandardCollector : public PredictCollector
+{
+public:
+
+    struct PredictResult
+    {
+        PredictResult(int label_ = -1,
+                      double distance_ = DBL_MAX)
+            : label(label_),
+              distance(distance_)
+        {
+        }
+
+        int    label;
+        double distance;
+    };
+
+protected:
+
+    double                     threshold;
+    PredictResult              minRes;
+    std::vector<PredictResult> data;
+
+public:
+
+    /** @brief Constructor
+     *  @param threshold_ set threshold
+     */
+    StandardCollector(double threshold_ = DBL_MAX);
+
+    /** @brief overloaded interface method
+     */
+    void init(size_t size);
+
+    /** @brief overloaded interface method
+     */
+    bool collect(int label, double dist);
+
+    /** @brief Returns label with minimal distance
+     */
+    CV_WRAP int getMinLabel() const;
+
+    /** @brief Returns minimal distance value
+     */
+    CV_WRAP double getMinDist() const;
+
+    /** @brief Return results as vector
+     *  @param sorted If set, results will be sorted by distance
+     *  Each values is a pair of label and distance.
+     */
+    CV_WRAP std::vector< std::pair<int, double> > getResults(bool sorted = false) const;
+
+    /** @brief Return results as map
+     *  Labels are keys, values are minimal distances
+     */
+    std::map<int, double> getResultsMap() const;
+
+    /** @brief Static constructor
+     *  @param threshold set threshold
+     */
+    CV_WRAP static Ptr<StandardCollector> create(double threshold = DBL_MAX);
+};
+
+// -------------------------------------------------------------------------------------------------------
+
 /**
  * All face recognition models in OpenCV are derived from the abstract base class FaceRecognizer, which
  * provides a unified access to all face recongition algorithms in OpenCV.

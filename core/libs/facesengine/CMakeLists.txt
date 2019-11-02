@@ -73,6 +73,8 @@ set(facesengine_database_LIB_SRCS recognition/recognitiondatabase.cpp
                                   recognition/recognitiondatabase_recognize.cpp
                                   recognition/recognitiontrainingprovider.cpp
 
+                                  recognition/opencv-face/opencv_face.cpp
+
                                   # Eigen Faces recognition module based on OpenCV
 
                                   recognition/opencv-eigenfaces/eigenfacemodel.cpp
@@ -84,7 +86,6 @@ set(facesengine_database_LIB_SRCS recognition/recognitiondatabase.cpp
                                   recognition/opencv-fisherfaces/fisherfacemodel.cpp
                                   recognition/opencv-fisherfaces/opencvfisherfacerecognizer.cpp
                                   recognition/opencv-fisherfaces/facerec_fisherborrowed.cpp
-
 
                                   # Lpbh Faces recognition module based on OpenCV
 
