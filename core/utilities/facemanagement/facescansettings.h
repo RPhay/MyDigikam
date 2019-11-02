@@ -48,7 +48,7 @@ public:
         BenchmarkRecognition
     };
 
-    // for detect and recognize
+    /// For detect and recognize
     enum AlreadyScannedHandling
     {
         Skip,
@@ -64,19 +64,19 @@ public:
         accuracy               = 70;
         task                   = Detect;
         alreadyScannedHandling = Skip;
-        recognizeAlgorithm     = RecognitionDatabase::RecognizeAlgorithm::DNN; // Default now change to DNN
+        recognizeAlgorithm     = RecognitionDatabase::RecognizeAlgorithm::DNN; // Default is DNN with 7.0.0
     }
 
-    // processing power
+    /// Processing power
     bool                                    useFullCpu;
 
-    // detection
+    /// Detection accuracy
     double                                  accuracy;
 
-    // albums to scan
+    /// Albums to scan
     AlbumList                               albums;
 
-    // image infos to scan
+    /// Image infos to scan
     ItemInfoList                            infos;
 
     ScanTask                                task;
