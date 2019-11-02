@@ -39,8 +39,9 @@ RecognitionDatabase::Private::Private()
     DbEngineParameters params = CoreDbAccess::parameters().faceParameters();
     params.setFaceDatabasePath(CoreDbAccess::parameters().faceParameters().getFaceDatabaseNameOrDir());
     FaceDbAccess::setParameters(params);
+
     dbAvailable               = FaceDbAccess::checkReadyForUse(nullptr);
-    recognizeAlgorithm        = RecognizeAlgorithm::LBP;
+    recognizeAlgorithm        = RecognizeAlgorithm::DNN;
 
     if (dbAvailable)
     {
