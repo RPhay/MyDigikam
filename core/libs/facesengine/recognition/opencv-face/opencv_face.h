@@ -76,7 +76,7 @@ public:
  *
  *Trace minimal distance with treshhold checking (that is default behavior for most predict logic)
  */
-class CV_EXPORTS_W StandardCollector : public PredictCollector
+class DIGIKAM_DATABASE_EXPORT StandardCollector : public PredictCollector
 {
 public:
 
