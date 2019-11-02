@@ -95,7 +95,7 @@ Q_SIGNALS:
 
 protected:
 
-    FaceItemRetriever           imageRetriever;
+    FaceItemRetriever            imageRetriever;
     RecognitionDatabase          database;
     FacePipeline::Private* const d;
 };
@@ -154,7 +154,7 @@ Q_SIGNALS:
 protected:
 
     RecognitionDatabase          database;
-    FaceItemRetriever           imageRetriever;
+    FaceItemRetriever            imageRetriever;
     FacePipeline::Private* const d;
 };
 
