@@ -125,7 +125,7 @@ FilterAction NRFilter::filterAction()
     FilterAction action(FilterIdentifier(), CurrentVersion());
     action.setDisplayableName(DisplayableName());
 
-    for (int i = 0; i < 3; ++i)
+    for (int i = 0 ; i < 3 ; ++i)
     {
         action.addParameter(QString::fromLatin1("softness[%1]").arg(i),   d->settings.softness[i]);
         action.addParameter(QString::fromLatin1("thresholds[%1]").arg(i), d->settings.thresholds[i]);
@@ -372,11 +372,12 @@ void NRFilter::thresholdingMultithreaded(const Args& prm)
 void NRFilter::waveletDenoise(float* fimg[3], unsigned int width, unsigned int height,
                               float threshold, double softness)
 {
-    float  thold;
-    uint   lpass = 0, hpass = 0;
-    double stdev[5];
-    uint   samples[5];
-    uint   size  = width * height;
+    float  thold      = 0.0;
+    uint   lpass      = 0;
+    uint   hpass      = 0;
+    double stdev[5]   = { 0.0 };
+    uint   samples[5] = { 0 };
+    uint   size       = width * height;
 
     QScopedArrayPointer<float> temp(new float[qMax(width, height)]);
 
