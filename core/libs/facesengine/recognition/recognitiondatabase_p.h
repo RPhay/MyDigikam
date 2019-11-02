@@ -130,7 +130,10 @@ public:
                TrainingDataProvider* const data,
                const QString& trainingContext);
 
-    // NOTE: OpenCVFISHERFaceRecognizer do not have training method.
+    void train(OpenCVFISHERFaceRecognizer* const r,
+               const QList<Identity>& identitiesToBeTrained,
+               TrainingDataProvider* const data,
+               const QString& trainingContext);
 
     void train(OpenCVDNNFaceRecognizer* const r,
                const QList<Identity>& identitiesToBeTrained,
@@ -194,6 +197,12 @@ void trainIdentityBatchEIGEN(OpenCVEIGENFaceRecognizer* const r,
                              TrainingDataProvider* const data,
                              const QString& trainingContext,
                              RecognitionDatabase::Private* const d);
+
+void trainIdentityBatchFISHER(OpenCVFISHERFaceRecognizer* const r,
+                              const QList<Identity>& identitiesToBeTrained,
+                              TrainingDataProvider* const data,
+                              const QString& trainingContext,
+                              RecognitionDatabase::Private* const d);
 
 void trainIdentityBatchDNN(OpenCVDNNFaceRecognizer* const r,
                            const QList<Identity>& identitiesToBeTrained,

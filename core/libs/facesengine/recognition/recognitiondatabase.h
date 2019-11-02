@@ -60,25 +60,49 @@ public:
 
     enum TrainingCostHint
     {
-        /// Training is so cheap that new photos for training can be passed any time
+        /**
+         * Training is so cheap that new photos for training can be passed any time
+         */
         TrainingIsCheap,
 
-        /// Training is significantly optimized if new images are received in batches
-        /// instead training single images multiple times
+        /**
+         * Training is significantly optimized if new images are received in batches
+         * instead training single images multiple times
+         */
         TrainingLikesBatches,
 
-        /// Training is a computing intensive operation.
-        /// By choice of the application, it may be manually triggered by the user.
+        /**
+         * Training is a computing intensive operation.
+         * By choice of the application, it may be manually triggered by the user.
+         */
         TrainingIsExpensive
     };
 
     // for recognize algorithm option
     enum RecognizeAlgorithm
     {
+        /**
+         * Local Binary Patterns Histograms
+         * http://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html#local-binary-patterns-histograms
+         */
         LBP,
+
+        /**
+         * http://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html#eigenfaces
+         */
         EigenFace,
+
+        /**
+         * http://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html#Fisherfaces
+         * NOTE: cannot be used in production as model registration in database is not implemented.
+         *       See OpenCVFISHERFaceRecognizer::train() for details.
+         */
         FisherFace,
-        DNN             /// Deep Neural Networks (default).
+
+        /**
+         * Deep Neural Networks (default).
+         */
+        DNN
     };
 
 public:

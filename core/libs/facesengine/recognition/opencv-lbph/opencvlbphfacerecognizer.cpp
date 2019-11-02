@@ -151,7 +151,9 @@ int OpenCVLBPHFaceRecognizer::recognize(const cv::Mat& inputImage)
     return predictedLabel;
 }
 
-void OpenCVLBPHFaceRecognizer::train(const std::vector<cv::Mat>& images, const std::vector<int>& labels, const QString& context)
+void OpenCVLBPHFaceRecognizer::train(const std::vector<cv::Mat>& images,
+                                     const std::vector<int>& labels,
+                                     const QString& context)
 {
     if (images.empty() || labels.size() != images.size())
     {

@@ -145,7 +145,9 @@ int OpenCVFISHERFaceRecognizer::recognize(const cv::Mat& inputImage)
     return predictedLabel;
 }
 
-void OpenCVFISHERFaceRecognizer::train(const std::vector<cv::Mat>& images, const std::vector<int>& labels, const QString& context)
+void OpenCVFISHERFaceRecognizer::train(const std::vector<cv::Mat>& images,
+                                       const std::vector<int>& labels,
+                                       const QString& context)
 {
     if (images.empty() || labels.size() != images.size())
     {
@@ -156,7 +158,10 @@ void OpenCVFISHERFaceRecognizer::train(const std::vector<cv::Mat>& images, const
     d->fisher().update(images, labels, context);
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Fisherfaces Train: Adding model to Facedb";
 
-    // add to database waiting
+    /*
+     * TODO: OpenCVFISHERFaceRecognizer do not register the model to database yet !
+     * This is why it cannot be used in production or for testing to compare with other algorithm.
+     */
 }
 
 } // namespace Digikam
