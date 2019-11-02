@@ -343,7 +343,8 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
         case CategoryDateRole:
             return d->imageModel->imageInfoRef(mapToSource(index)).dateTime();
         case GroupIsOpenRole:
-            return d->groupFilter.isAllOpen() ||
+            return d->filter.isFiltering()    ||
+                   d->groupFilter.isAllOpen() ||
                    d->groupFilter.isOpen(d->imageModel->imageInfoRef(mapToSource(index)).id());
         case ItemFilterModelPointerRole:
             return QVariant::fromValue(const_cast<ItemFilterModel*>(this));
@@ -729,12 +730,14 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
     ItemFilterSettings        localFilter;
     VersionItemFilterSettings localVersionFilter;
     GroupItemFilterSettings   localGroupFilter;
-    bool                       hasOneMatch;
-    bool                       hasOneMatchForText;
+    bool                      isFiltering;
+    bool                      hasOneMatch;
+    bool                      hasOneMatchForText;
 
     {
         QMutexLocker lock(&d->mutex);
         localFilter        = d->filterCopy;
+        isFiltering        = localFilter.isFiltering();
         localVersionFilter = d->versionFilterCopy;
         localGroupFilter   = d->groupFilterCopy;
         hasOneMatch        = d->hasOneMatch;
@@ -748,7 +751,7 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
         {
             package.filterResults[info.id()] = localFilter.matches(info)        &&
                                                localVersionFilter.matches(info) &&
-                                               localGroupFilter.matches(info);
+                                               (isFiltering ? true : localGroupFilter.matches(info));
         }
     }
     else if (hasOneMatch)
@@ -759,7 +762,7 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
         {
             package.filterResults[info.id()] = localFilter.matches(info, &matchForText) &&
                                                localVersionFilter.matches(info)         &&
-                                               localGroupFilter.matches(info);
+                                               (isFiltering ? true : localGroupFilter.matches(info));
 
             if (matchForText)
             {
@@ -775,7 +778,8 @@ void ItemFilterModelFilterer::process(ItemFilterModelTodoPackage package)
         {
             result                           = localFilter.matches(info, &matchForText) &&
                                                localVersionFilter.matches(info)         &&
-                                               localGroupFilter.matches(info);
+                                               (isFiltering ? true : localGroupFilter.matches(info));
+
             package.filterResults[info.id()] = result;
 
             if (result)

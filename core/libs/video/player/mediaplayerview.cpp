@@ -48,6 +48,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -267,6 +269,13 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->errorView->installEventFilter(new MediaPlayerMouseClickFilter(this));
     d->videoWidget->installEventFilter(new MediaPlayerMouseClickFilter(this));
 
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group = config->group("Media Player Settings");
+    int volume         = group.readEntry("Volume", 50);
+
+    d->volume->setValue(volume);
+    d->player->audio()->setVolume((qreal)volume / 100.0);
+
     // --------------------------------------------------------------------------
 
     connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
@@ -307,8 +316,6 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     connect(d->player, SIGNAL(error(QtAV::AVError)),
             this, SLOT(slotHandlePlayerError(QtAV::AVError)));
-
-    slotVolumeChanged(d->volume->value());
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Audio output backends:"
                                  << d->player->audio()->backendsAvailable();
@@ -530,6 +537,15 @@ void MediaPlayerView::slotPositionChanged(qint64 position)
 void MediaPlayerView::slotVolumeChanged(int volume)
 {
     d->player->audio()->setVolume((qreal)volume / 100.0);
+
+    if (objectName() != QLatin1String("main_media_player"))
+    {
+        return;
+    }
+
+    KSharedConfig::Ptr config = KSharedConfig::openConfig();
+    KConfigGroup group = config->group("Media Player Settings");
+    group.writeEntry("Volume", volume);
 }
 
 void MediaPlayerView::slotLoopToggled(bool loop)

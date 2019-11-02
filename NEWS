@@ -10,4 +10,9 @@ BUGFIXES:
 
 001 ==> 384401 - Various recognition algorithm improvements for face detection.
 002 ==> 413701 - DigiKam 6.3.0 does not build against current plasma.
-003 ==> 
+003 ==> 413748 - Broken theme on Windows 10 after Digikam update.
+004 ==> 413738 - Video Preview changes VLC volume.
+005 ==> 382311 - Photos in collapsed groups are incorrectly excluded if first photo in group does not match filter.
+006 ==> 396337 - In tag filter view (or any other filitered view), grouped photos should not always have "group" thumbnail
+007 ==> 413704 - Filters do not work on hidden grouped images.
+007 ==> 
