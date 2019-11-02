@@ -27,8 +27,6 @@
 // Qt includes
 
 #include <QGraphicsSceneHoverEvent>
-#include <QGraphicsWidget>
-#include <QObject>
 
 // Local includes
 
@@ -36,18 +34,16 @@
 #include "albummodel.h"
 #include "albumfiltermodel.h"
 #include "albummanager.h"
-#include "assignnamewidget.h"
 #include "clickdragreleaseitem.h"
 #include "dimgpreviewitem.h"
 #include "facepipeline.h"
+#include "faceitem.h"
 #include "facetags.h"
 #include "facetagseditor.h"
 #include "graphicsdimgview.h"
 #include "iteminfo.h"
 #include "metadatahub.h"
-#include "regionframeitem.h"
 #include "taggingaction.h"
-#include "itemvisibilitycontroller.h"
 #include "digikam_debug.h"
 
 namespace Digikam
@@ -59,111 +55,6 @@ enum FaceGroupState
     LoadingFaces,
     FacesLoaded
 };
-
-//-------------------------------------------------------------------------------
-
-class Q_DECL_HIDDEN FaceItem : public RegionFrameItem
-{
-public:
-
-    explicit FaceItem(QGraphicsItem* const parent = nullptr);
-
-    void setFace(const FaceTagsIface& face);
-    FaceTagsIface face() const;
-    void setHudWidget(AssignNameWidget* const widget);
-    AssignNameWidget* widget() const;
-    void switchMode(AssignNameWidget::Mode mode);
-    void setEditable(bool allowEdit);
-    void updateCurrentTag();
-
-protected:
-
-    FaceTagsIface       m_face;
-    AssignNameWidget*   m_widget;
-    HidingStateChanger* m_changer;
-};
-
-//-------------------------------------------------------------------------------
-
-FaceItem::FaceItem(QGraphicsItem* const parent)
-    : RegionFrameItem(parent),
-      m_widget(nullptr),
-      m_changer(nullptr)
-{
-}
-
-void FaceItem::setFace(const FaceTagsIface& face)
-{
-    m_face = face;
-    updateCurrentTag();
-    setEditable(!m_face.isConfirmedName());
-}
-
-FaceTagsIface FaceItem::face() const
-{
-    return m_face;
-}
-
-void FaceItem::setHudWidget(AssignNameWidget* const widget)
-{
-    m_widget = widget;
-    updateCurrentTag();
-    RegionFrameItem::setHudWidget(widget);
-    // Ensure that all HUD widgets are stacked before the frame items
-    hudWidget()->setZValue(1);
-}
-
-AssignNameWidget* FaceItem::widget() const
-{
-    return m_widget;
-}
-
-void FaceItem::switchMode(AssignNameWidget::Mode mode)
-{
-    if (!m_widget || m_widget->mode() == mode)
-    {
-        return;
-    }
-
-    if (!m_changer)
-    {
-        m_changer = new AssignNameWidgetHidingStateChanger(this);
-    }
-
-    m_changer->changeValue(mode);
-}
-
-void FaceItem::setEditable(bool allowEdit)
-{
-    changeFlags(ShowResizeHandles | MoveByDrag, allowEdit);
-}
-
-void FaceItem::updateCurrentTag()
-{
-    if (m_widget)
-    {
-        m_widget->setCurrentFace(m_face);
-    }
-}
-
-//-------------------------------------------------------------------------------
-
-AssignNameWidgetHidingStateChanger::AssignNameWidgetHidingStateChanger(FaceItem* const item)
-    : HidingStateChanger(item->widget(), "mode", item)
-{
-    // The WidgetProxyItem
-    addItem(item->hudWidget());
-
-    connect(this, SIGNAL(stateChanged()),
-            this, SLOT(slotStateChanged()));
-}
-
-void AssignNameWidgetHidingStateChanger::slotStateChanged()
-{
-    FaceItem* const item = static_cast<FaceItem*>(parent());
-    // Show resize handles etc. only in edit modes
-    item->setEditable(item->widget()->mode() != AssignNameWidget::ConfirmedMode);
-}
 
 //-------------------------------------------------------------------------------
 

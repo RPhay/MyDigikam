@@ -7,6 +7,7 @@
 
 set(libfacemanagement_SRCS
     faceutils.cpp
+    faceitem.cpp
     facegroup.cpp
     facepipeline.cpp
     facepipeline_p.cpp

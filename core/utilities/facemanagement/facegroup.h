@@ -29,10 +29,6 @@
 #include <QObject>
 #include <QPointF>
 
-// Local includes
-
-#include "itemvisibilitycontroller.h"
-
 class QGraphicsSceneHoverEvent;
 
 namespace Digikam
@@ -95,24 +91,34 @@ public:
 
 public Q_SLOTS:
 
-    /** Shows or hides the frames */
+    /**
+     * Shows or hides the frames
+     */
     void setVisible(bool visible);
     void setVisibleItem(RegionFrameItem* item);
 
-    /** Sets the current ItemInfo */
+    /**
+     * Sets the current ItemInfo
+     */
     void setInfo(const ItemInfo& info);
 
-    /** Prepares to load a new info.
-     *  Closes the face group for editing.
-     *  Pass a null info if about to close. */
+    /**
+     * Prepares to load a new info.
+     * Closes the face group for editing.
+     * Pass a null info if about to close.
+     */
     void aboutToSetInfo(const ItemInfo& info);
 
     void aboutToSetInfoAfterRotate(const ItemInfo& info);
 
-    /** Enters a special state where by click + drag a new face can be created */
+    /**
+     * Enters a special state where by click + drag a new face can be created
+     */
     void addFace();
 
-    /** Rejects (clears) all faces on the current image */
+    /**
+     * Rejects (clears) all faces on the current image
+     */
     void rejectAll();
 
 protected:
@@ -141,23 +147,6 @@ private:
 
     class Private;
     Private* const d;
-};
-
-// ---------------------------------------------------------------------------------
-
-class FaceItem;
-
-class AssignNameWidgetHidingStateChanger : public HidingStateChanger
-{
-    Q_OBJECT
-
-public:
-
-    explicit AssignNameWidgetHidingStateChanger(FaceItem* const item);
-
-protected Q_SLOTS:
-
-    void slotStateChanged();
 };
 
 } // namespace Digikam
