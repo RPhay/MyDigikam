@@ -3,9 +3,12 @@
  * This file is a part of digiKam
  *
  * Date        : 2010-03-03
- * Description : LBPH Recognizer.
+ * Description : http://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html#local-binary-patterns-histograms
+ *               Ahonen T, Hadid A. and Pietikäinen M. "Face description with local binary
+ *               patterns: Application to face recognition." IEEE Transactions on Pattern
+ *               Analysis and Machine Intelligence, 28(12):2037-2041.
  *
- * Copyright (C)      2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2013      by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2012-2013 by Mahesh Hegde <maheshmhegade at gmail dot com>
  *
  * This program is free software; you can redistribute it

@@ -5,7 +5,7 @@
  * Date        : 2017-05-22
  * Description : Face Recognition based on Eigenfaces
  *               http://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html#eigenfaces
- *               Turk, Matthew A and Pentland, Alex P. "Face recognition using eigenfaces." 
+ *               Turk, Matthew A and Pentland, Alex P. "Face recognition using eigenfaces."
  *               Computer Vision and Pattern Recognition, 1991. Proceedings {CVPR'91.},
  *               {IEEE} Computer Society Conference on 1991.
  *
@@ -35,7 +35,7 @@
 // Local includes
 
 #include "digikam_opencv.h"
-#include "opencv_face.hpp"
+#include "opencv_face.h"
 
 namespace Digikam
 {
@@ -82,13 +82,13 @@ public:
      * corresponding labels in labels.
      */
 
-    void train(cv::InputArrayOfArrays src, cv::InputArray labels)  override;
+    void train(cv::InputArrayOfArrays src, cv::InputArray labels)                         override;
 
     /**
      * Updates this Eigenfaces model with images in src and
      * corresponding labels in labels.
      */
-    void update(cv::InputArrayOfArrays src, cv::InputArray labels) override;
+    void update(cv::InputArrayOfArrays src, cv::InputArray labels)                        override;
 
     /*
      * Predict
@@ -108,7 +108,7 @@ public:
      * See FaceRecognizer::save().
      */
 #if OPENCV_TEST_VERSION(3,4,0)
-    void save(cv::FileStorage&) const  override {}
+    void save(cv::FileStorage&)  const override {}
 #else
     void write(cv::FileStorage&) const override {}
 #endif
@@ -144,7 +144,8 @@ private:
      *  corresponding labels in labels, possibly preserving
      *  old training data.
      */
-    void train(cv::InputArrayOfArrays src, cv::InputArray labels,
+    void train(cv::InputArrayOfArrays src,
+               cv::InputArray labels,
                bool preserveData);
 
 private:

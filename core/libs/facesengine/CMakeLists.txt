@@ -25,8 +25,8 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR}/..
 
                     ${CMAKE_CURRENT_SOURCE_DIR}/detection
                     ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn
-                    ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-face
 
+                    ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-face
                     ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph
                     ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces
                     ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-fisherfaces
@@ -42,6 +42,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR}/..
 
 set(facesengine_LIB_SRCS common/identity.cpp
                          common/dataproviders.cpp
+                         common/opencvmatdata.cpp
 
                          detection/facedetector.cpp
                          detection/opencvfacedetector.cpp
@@ -50,9 +51,6 @@ set(facesengine_LIB_SRCS common/identity.cpp
                          detection/opencv-dnn/dnnfacedetectorssd.cpp
                          detection/opencv-dnn/dnnfacedetectoryolo.cpp
                          detection/opencv-dnn/dnnfacedetectorbase.cpp
-
-                         detection/opencv-face/opencv_facerec.cpp
-                         detection/opencv-face/opencv_predictcollector.cpp
 
                          preprocessing/recognition/recognitionpreprocessor.cpp
                          preprocessing/recognition/openfacepreprocessor.cpp
@@ -92,7 +90,6 @@ set(facesengine_database_LIB_SRCS recognition/recognitiondatabase.cpp
 
                                   recognition/opencv-lbph/lbphfacemodel.cpp
                                   recognition/opencv-lbph/opencvlbphfacerecognizer.cpp
-                                  recognition/opencv-lbph/opencvmatdata.cpp
                                   recognition/opencv-lbph/facerec_borrowed.cpp
 
                                   # Neural NetWork Faces recognition module based on OpenCV DNN
