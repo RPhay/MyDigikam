@@ -7,11 +7,12 @@
  *               inspired from OpenCV contrib module 'face'
  *               https://github.com/Itseez/opencv_contrib/tree/master/modules/face
  *
- * Copyright (C) 2013      by OpenCV Foundation, all rights reserved.
- * Copyright (C) 2010-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (c) 2011-2012 by Philipp Wagner <bytefish at gmx dot de>
+ * Copyright (C)      2013 by OpenCV Foundation.
  * Copyright (C)      2010 by Aditya Bhatt <adityabhatt at gmail dot com>
  * Copyright (C)      2010 by Alex Jironkin <alexjironkin at gmail dot com>
+ * Copyright (C) 2010-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2010-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
