@@ -86,7 +86,9 @@ public:
 
 private:
 
-    ItemLister(const ItemLister&); // Disable
+    // Hidden copy constructor and assignment operator.
+    ItemLister(const ItemLister&);
+    ItemLister& operator=(const ItemLister&);
 
     // -----------------------------------------------------------------------------
 

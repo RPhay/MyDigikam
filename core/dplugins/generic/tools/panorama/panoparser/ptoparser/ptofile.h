@@ -50,7 +50,9 @@ public:
 
 private:
 
-    PTOFile(const PTOFile&); // Disable
+    // Hidden copy constructor and assignment operator.
+    PTOFile(const PTOFile&);
+    PTOFile& operator=(const PTOFile&);
 
     class Private;
     Private* const d;

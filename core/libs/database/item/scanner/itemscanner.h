@@ -103,7 +103,9 @@ public:
 
 private:
 
-    ItemScanner(const ItemScanner&); // Disable
+    // Hidden copy constructor and assignment operator.
+    ItemScanner(const ItemScanner&);
+    ItemScanner& operator=(const ItemScanner&);
 
     static bool hasValidField(const QVariantList& list);
     static bool lessThanForIdentity(const ItemScanInfo& a, const ItemScanInfo& b);

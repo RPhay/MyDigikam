@@ -62,7 +62,9 @@ private:
 
 private:
 
-    PiwigoSession(const PiwigoSession&); // Disable
+    // Hidden copy constructor and assignment operator.
+    PiwigoSession(const PiwigoSession&);
+    PiwigoSession& operator=(const PiwigoSession&);
 
     class Private;
     Private* const d;

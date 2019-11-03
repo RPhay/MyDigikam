@@ -1382,7 +1382,9 @@ protected:
 
 private:
 
-    CoreDB(const CoreDB&); // Disable
+    // Hidden copy constructor and assignment operator.
+    CoreDB(const CoreDB&);
+    CoreDB& operator=(const CoreDB&);
 
     void readSettings();
     void writeSettings();

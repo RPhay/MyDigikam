@@ -72,7 +72,9 @@ private:
 
 private:
 
-    RajceCommand(const RajceCommand&); // Disable
+    // Hidden copy constructor and assignment operator.
+    RajceCommand(const RajceCommand&);
+    RajceCommand& operator=(const RajceCommand&);
 
     class Private;
     Private* const d;
