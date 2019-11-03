@@ -28,7 +28,7 @@
 #ifndef DIGIKAM_TAN_TRIGGS_PREPROCESSOR_H
 #define DIGIKAM_TAN_TRIGGS_PREPROCESSOR_H
 
-// OpenCV includes
+// Locak includes
 
 #include "digikam_opencv.h"
 
@@ -54,7 +54,9 @@ public:
      */
     cv::Mat preprocessRaw(const cv::Mat& inputImage);
 
-    /// Converts CV_32F1 -> CV_8UC1
+    /**
+     * Converts CV_32F1 -> CV_8UC1
+     */
     cv::Mat normalize(const cv::Mat& preprocessedImage);
 
 public:

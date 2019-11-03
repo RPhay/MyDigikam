@@ -48,30 +48,37 @@ cv::Mat TanTriggsPreprocessor::preprocessRaw(const cv::Mat& inputImage)
 {
     cv::Mat X = inputImage;
 
-    // ensure it's grayscale
+    // Ensure it's grayscale
+
     if (X.channels() > 1)
     {
         cvtColor(X, X, CV_RGB2GRAY);
     }
 
     // Convert to floating point:
+
     X.convertTo(X, CV_32FC1);
 
     // Start preprocessing:
+
     cv::Mat I;
 
     // Gamma correction
+
     cv::pow(X, gamma, I);
 
-    // Calculate the DOG (Difference of Gaussian) Image:
+    // Calculate the DOG (Difference of Gaussian) Image.
+
     {
         cv::Mat gaussian0, gaussian1;
 
         // Kernel Size:
+
         int kernel_sz0 = (int)(3*sigma0);
         int kernel_sz1 = (int)(3*sigma1);
 
         // Make them odd for OpenCV:
+
         kernel_sz0    += ((kernel_sz0 % 2) == 0) ? 1 : 0;
         kernel_sz1    += ((kernel_sz1 % 2) == 0) ? 1 : 0;
         cv::GaussianBlur(I, gaussian0, cv::Size(kernel_sz0,kernel_sz0), sigma0, sigma0, cv::BORDER_CONSTANT);
@@ -86,7 +93,6 @@ cv::Mat TanTriggsPreprocessor::preprocessRaw(const cv::Mat& inputImage)
             cv::Mat tmp;
             cv::pow(cv::abs(I), alpha, tmp);
             meanI = cv::mean(tmp).val[0];
-
         }
 
         I = I / cv::pow(meanI, 1.0/alpha);
@@ -105,6 +111,7 @@ cv::Mat TanTriggsPreprocessor::preprocessRaw(const cv::Mat& inputImage)
     }
 
     // Squash into the tanh:
+
     {
         for (int r = 0 ; r < I.rows ; ++r)
         {
@@ -120,11 +127,13 @@ cv::Mat TanTriggsPreprocessor::preprocessRaw(const cv::Mat& inputImage)
     return I;
 }
 
-/** Normalizes a given image into a value range between 0 and 255.
+/**
+ * Normalizes a given image into a value range between 0 and 255.
  */
 cv::Mat TanTriggsPreprocessor::normalize(const cv::Mat& src)
 {
-    // Create and return normalized image:
+    // Create and return normalized image.
+
     cv::Mat dst;
 
     switch(src.channels())
