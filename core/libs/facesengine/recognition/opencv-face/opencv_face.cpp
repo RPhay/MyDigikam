@@ -113,17 +113,18 @@ std::map<int, double> StandardCollector::getResultsMap() const
 {
     std::map<int, double> res;
 
-    for (std::vector<PredictResult>::const_iterator i = data.begin() ; i != data.end() ; ++i)
+    for (std::vector<PredictResult>::const_iterator it = data.begin() ;
+         it != data.end() ; ++it)
     {
-        std::map<int, double>::iterator j = res.find(i->label);
+        std::map<int, double>::iterator lbl = res.find(it->label);
 
-        if (j == res.end())
+        if (lbl == res.end())
         {
-            res.insert(toPair(*i));
+            res.insert(toPair(*it));
         }
-        else if (i->distance < j->second)
+        else if (it->distance < lbl->second)
         {
-            j->second = i->distance;
+            lbl->second = it->distance;
         }
     }
 
@@ -159,7 +160,7 @@ String FaceRecognizer::getLabelInfo(int label) const
 {
     std::map<int, String>::const_iterator iter(_labelsInfo.find(label));
 
-    return (iter != _labelsInfo.end() ? iter->second : "");
+    return ((iter != _labelsInfo.end()) ? iter->second : "");
 }
 
 void FaceRecognizer::setLabelInfo(int label, const String& strInfo)
@@ -224,6 +225,7 @@ int FaceRecognizer::predict(InputArray src) const
 {
     int    _label = 0;
     double _dist  = 0.0;
+
     predict(src, _label, _dist);
 
     return _label;
@@ -234,7 +236,9 @@ void FaceRecognizer::predict(InputArray src,
                              CV_OUT double& confidence) const
 {
     Ptr<StandardCollector> collector = StandardCollector::create(getThreshold());
+
     predict(src, collector);
+
     label                            = collector->getMinLabel();
     confidence                       = collector->getMinDist();
 }
