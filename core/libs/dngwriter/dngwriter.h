@@ -91,7 +91,9 @@ public:
 
 private:
 
-    DNGWriter(const DNGWriter&); // Disable
+    // Hidden copy constructor and assignment operator.
+    DNGWriter(const DNGWriter&);
+    DNGWriter& operator=(const DNGWriter&);
 
     Private* const d;
 };

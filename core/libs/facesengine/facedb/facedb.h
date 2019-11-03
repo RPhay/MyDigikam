@@ -115,7 +115,9 @@ public:
 
 private:
 
-    FaceDb(const FaceDb&); // Disable
+    // Hidden copy constructor and assignment operator.
+    FaceDb(const FaceDb&);
+    FaceDb& operator=(const FaceDb&);
 
     class Private;
     Private* const d;

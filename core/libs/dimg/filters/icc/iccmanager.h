@@ -138,7 +138,9 @@ protected:
 
 private:
 
-    IccManager(const IccManager&); // Disable
+    // Hidden copy constructor and assignment operator.
+    IccManager(const IccManager&);
+    IccManager& operator=(const IccManager&);
 
     class Private;
     Private* const d;

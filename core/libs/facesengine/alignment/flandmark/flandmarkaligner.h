@@ -48,9 +48,9 @@ public:
 
 private:
 
-    FlandmarkAligner(const FlandmarkAligner&); // Disable
-
-private:
+    // Hidden copy constructor and assignment operator.
+    FlandmarkAligner(const FlandmarkAligner&);
+    FlandmarkAligner& operator=(const FlandmarkAligner&);
 
     class Private;
     Private* const d;

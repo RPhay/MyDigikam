@@ -114,7 +114,9 @@ public:
 
 private:
 
-    ImageDialog(const ImageDialog&); // Disable
+    // Hidden copy constructor and assignment operator.
+    ImageDialog(const ImageDialog&);
+    ImageDialog& operator=(const ImageDialog&);
 
     class Private;
     Private* const d;

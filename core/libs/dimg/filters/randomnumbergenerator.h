@@ -144,7 +144,9 @@ public:
 
 private:
 
-    RandomNumberGenerator(const RandomNumberGenerator&); // Disable
+    // Hidden copy constructor and assignment operator.
+    RandomNumberGenerator(const RandomNumberGenerator&);
+    RandomNumberGenerator& operator=(const RandomNumberGenerator&);
 
     class Private;
     Private* const d;

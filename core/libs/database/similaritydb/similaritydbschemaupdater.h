@@ -59,7 +59,9 @@ private:
 
 private:
 
-    SimilarityDbSchemaUpdater(const SimilarityDbSchemaUpdater&); // Disable
+    // Hidden copy constructor and assignment operator.
+    SimilarityDbSchemaUpdater(const SimilarityDbSchemaUpdater&);
+    SimilarityDbSchemaUpdater& operator=(const SimilarityDbSchemaUpdater&);
 
     class Private;
     Private* const d;

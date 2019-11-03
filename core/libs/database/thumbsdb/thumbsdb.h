@@ -145,7 +145,9 @@ private:
 
 private:
 
-    ThumbsDb(const ThumbsDb&); // Disable
+    // Hidden copy constructor and assignment operator.
+    ThumbsDb(const ThumbsDb&);
+    ThumbsDb& operator=(const ThumbsDb&);
 
     class Private;
     Private* const d;

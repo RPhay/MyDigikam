@@ -58,7 +58,9 @@ private:
 
 private:
 
-    ThumbsDbSchemaUpdater(const ThumbsDbSchemaUpdater&); // Disable
+    // Hidden copy constructor and assignment operator.
+    ThumbsDbSchemaUpdater(const ThumbsDbSchemaUpdater&);
+    ThumbsDbSchemaUpdater& operator=(const ThumbsDbSchemaUpdater&);
 
     class Private;
     Private* const d;

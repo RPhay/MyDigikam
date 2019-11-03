@@ -252,7 +252,9 @@ private:
 
 private:
 
-    SimilarityDb(const SimilarityDb&); // Disable
+    // Hidden copy constructor and assignment operator.
+    SimilarityDb(const SimilarityDb&);
+    SimilarityDb& operator=(const SimilarityDb&);
 
     class Private;
     Private* const d;
