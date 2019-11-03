@@ -203,7 +203,7 @@ QHash<LabelsTreeView::Labels, QList<int> > LabelsTreeView::selectedLabels()
     {
         QTreeWidgetItemIterator it(this, QTreeWidgetItemIterator::Checked);
 
-        while(*it)
+        while (*it)
         {
             QTreeWidgetItem* const item = (*it);
 
@@ -396,7 +396,7 @@ void LabelsTreeView::initPicksTree()
                  << QLatin1String("flag-yellow")
                  << QLatin1String("flag-green");
 
-    foreach(const QString& pick, pickSetNames)
+    foreach (const QString& pick, pickSetNames)
     {
         QTreeWidgetItem* const pickWidgetItem = new QTreeWidgetItem(d->picks);
         pickWidgetItem->setText(0, pick);
@@ -407,12 +407,12 @@ void LabelsTreeView::initPicksTree()
 
 void LabelsTreeView::initColorsTree()
 {
-    d->colors = new QTreeWidgetItem(this);
+    d->colors                      = new QTreeWidgetItem(this);
     d->colors->setText(0, i18n("Color"));
     d->colors->setFont(0, d->regularFont);
     d->colors->setFlags(Qt::ItemIsEnabled);
 
-    QTreeWidgetItem* noColor = new QTreeWidgetItem(d->colors);
+    QTreeWidgetItem* const noColor = new QTreeWidgetItem(d->colors);
     noColor->setText(0, i18n("No Color"));
     noColor->setFont(0, d->regularFont);
     noColor->setIcon(0, QIcon::fromTheme(QLatin1String("emblem-unmounted")));
@@ -431,12 +431,12 @@ void LabelsTreeView::initColorsTree()
                   << i18n("Gray")   << i18n("Black")
                   << i18n("White");
 
-    foreach(const QString& color, colorSet)
+    foreach (const QString& color, colorSet)
     {
         QTreeWidgetItem* const colorWidgetItem = new QTreeWidgetItem(d->colors);
         colorWidgetItem->setText(0, colorSetNames.at(colorSet.indexOf(color)));
         colorWidgetItem->setFont(0, d->regularFont);
-        QPixmap colorIcon = colorRectPixmap(QColor(color));
+        QPixmap colorIcon                      = colorRectPixmap(QColor(color));
         colorWidgetItem->setIcon(0, QIcon(colorIcon));
         colorWidgetItem->setSizeHint(0, d->iconSize);
     }
@@ -451,13 +451,9 @@ void LabelsTreeView::slotSettingsChanged()
         d->iconSize            = QSize(d->iconSizeFromSetting, d->iconSizeFromSetting);
         QTreeWidgetItemIterator it(this);
 
-        while(*it)
+        while (*it)
         {
-            if (*it)
-            {
-                (*it)->setSizeHint(0, d->iconSize);
-            }
-
+            (*it)->setSizeHint(0, d->iconSize);
             ++it;
         }
     }
@@ -467,13 +463,9 @@ void LabelsTreeView::slotSettingsChanged()
         d->regularFont = ApplicationSettings::instance()->getTreeViewFont();
         QTreeWidgetItemIterator it(this);
 
-        while(*it)
+        while (*it)
         {
-            if (*it)
-            {
-                (*it)->setFont(0, d->regularFont);
-            }
-
+            (*it)->setFont(0, d->regularFont);
             ++it;
         }
     }
@@ -483,7 +475,7 @@ void LabelsTreeView::restoreSelectionFromHistory(QHash<Labels, QList<int> > need
 {
     QTreeWidgetItemIterator it(this, QTreeWidgetItemIterator::Selected);
 
-    while(*it)
+    while (*it)
     {
         (*it)->setSelected(false);
         ++it;
@@ -514,13 +506,13 @@ public:
     explicit Private()
       : treeWidget(nullptr),
         dbJobThread(nullptr),
-        restoringSelectionFromHistory(0),
-        currentXmlIsEmpty(0),
+        restoringSelectionFromHistory(false),
+        currentXmlIsEmpty(false),
         albumForSelectedItems(nullptr)
     {
     }
 
-    LabelsTreeView*  treeWidget;
+    LabelsTreeView*       treeWidget;
     SearchesDBJobsThread* dbJobThread;
     bool                  restoringSelectionFromHistory;
     bool                  currentXmlIsEmpty;
@@ -596,6 +588,7 @@ QString AlbumLabelsSearchHandler::createXMLForCurrentSelection(const QHash<Label
         {
             ratings << -1;
         }
+
         ratings << rate;
     }
 
@@ -663,7 +656,7 @@ QString AlbumLabelsSearchHandler::createXMLForCurrentSelection(const QHash<Label
 SAlbum* AlbumLabelsSearchHandler::search(const QString& xml) const
 {
     SAlbum* album = nullptr;
-    int id;
+    int     id    = 0;
 
     if (!d->treeWidget->isCheckable())
     {
@@ -703,7 +696,9 @@ SAlbum* AlbumLabelsSearchHandler::search(const QString& xml) const
     }
 
     if (!album->isUsedByLabelsTree())
+    {
         album->setUsedByLabelsTree(true);
+    }
 
     return album;
 }
@@ -749,7 +744,7 @@ void AlbumLabelsSearchHandler::generateAlbumNameForExporting(const QList<int>& r
 
         QListIterator<int> it(colorsList);
 
-        while(it.hasNext())
+        while (it.hasNext())
         {
             switch (it.next())
             {
@@ -800,7 +795,7 @@ void AlbumLabelsSearchHandler::generateAlbumNameForExporting(const QList<int>& r
 
         QListIterator<int> it(picksList);
 
-        while(it.hasNext())
+        while (it.hasNext())
         {
             switch (it.next())
             {
@@ -862,7 +857,7 @@ void AlbumLabelsSearchHandler::generateAlbumNameForExporting(const QList<int>& r
 void AlbumLabelsSearchHandler::imagesUrlsForCurrentAlbum()
 {
     SearchesDBJobInfo jobInfo;
-    jobInfo.setSearchId( d->albumForSelectedItems->id() );
+    jobInfo.setSearchId(d->albumForSelectedItems->id());
     jobInfo.setRecursive();
 
     d->dbJobThread = DBJobsManager::instance()->startSearchesJobThread(jobInfo);
@@ -963,7 +958,9 @@ void AlbumLabelsSearchHandler::slotResult()
 void AlbumLabelsSearchHandler::slotData(const QList<ItemListerRecord>& data)
 {
     if (d->dbJobThread != sender() || data.isEmpty())
+    {
         return;
+    }
 
     QList<QUrl> urlList;
 
