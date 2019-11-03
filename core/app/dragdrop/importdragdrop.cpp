@@ -64,8 +64,10 @@ QAction* ImportDragDropHandler::addCancelAction(QMenu* const menu)
     return menu->addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 }
 
-ImportDragDropHandler::DropAction ImportDragDropHandler::copyOrMove(const QDropEvent* e, QWidget* const view,
-                                                                    bool allowMove, bool askForGrouping)
+ImportDragDropHandler::DropAction ImportDragDropHandler::copyOrMove(const QDropEvent* e,
+                                                                    QWidget* const view,
+                                                                    bool allowMove,
+                                                                    bool askForGrouping)
 {
     if (e->keyboardModifiers() & Qt::ControlModifier)
     {

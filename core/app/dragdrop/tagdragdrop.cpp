@@ -57,7 +57,8 @@ TagModel* TagDragDropHandler::model() const
     return static_cast<TagModel*>(m_model);
 }
 
-bool TagDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* e,
+bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
+                                   const QDropEvent* e,
                                    const QModelIndex& droppedOn)
 {
     if (accepts(e, droppedOn) == Qt::IgnoreAction)
@@ -87,7 +88,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* e,
         popMenu.addSeparator();
         popMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
         popMenu.setMouseTracking(true);
-        QAction* const choice     = popMenu.exec(QCursor::pos());
+        QAction* const choice      = popMenu.exec(QCursor::pos());
 
         for (int index = 0 ; index < tagIDs.count() ; ++index)
         {

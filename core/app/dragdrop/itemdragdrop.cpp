@@ -119,14 +119,14 @@ static DropAction copyOrMove(const QDropEvent* const e, QWidget* const view, boo
 
     QMenu popMenu(view);
 
-    QAction* moveAction = nullptr;
+    QAction* moveAction         = nullptr;
 
     if (allowMove)
     {
         moveAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("go-jump")), i18n("&Move Here"));
     }
 
-    QAction* const copyAction = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
+    QAction* const copyAction   = popMenu.addAction(QIcon::fromTheme(QLatin1String("edit-copy")), i18n("&Copy Here"));
     popMenu.addSeparator();
 
     QAction* groupAction        = nullptr;
@@ -195,19 +195,19 @@ static DropAction tagAction(const QDropEvent* const, QWidget* const view, bool a
     return NoAction;
 }
 
-static DropAction groupAction(const QDropEvent* const, QWidget* const view)
+static DropAction s_groupAction(const QDropEvent* const, QWidget* const view)
 {
     ItemCategorizedView* const imgView = dynamic_cast<ItemCategorizedView*>(view);
     int sortOrder                      = ApplicationSettings::instance()->getImageSortOrder();
 
     QMenu popMenu(view);
-    QAction* sortAction        = nullptr;
+    QAction* sortAction                = nullptr;
 
     if (imgView &&
         (sortOrder == ItemSortSettings::SortByManualOrderAndName ||
          sortOrder == ItemSortSettings::SortByManualOrderAndDate))
     {
-        sortAction             = addSortAction(&popMenu);
+        sortAction = addSortAction(&popMenu);
         popMenu.addSeparator();
     }
 
@@ -276,7 +276,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
     }
 
     // unless we are readonly anyway, we always want an album
-    if (!m_readOnly && (!album || album->isRoot()) )
+    if (!m_readOnly && (!album || album->isRoot()))
     {
         return false;
     }
@@ -391,7 +391,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
                 droppedOn.isValid() &&
                 e->keyboardModifiers() == Qt::NoModifier)
             {
-                action = groupAction(e, view);
+                action = s_groupAction(e, view);
             }
             else
             {
@@ -464,7 +464,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             if (droppedOn.isValid())
             {
                 // Ask if the user wants to group
-                action = groupAction(e, view);
+                action = s_groupAction(e, view);
             }
         }
 
@@ -554,12 +554,15 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
         //Face tags
         if (talbum->hasProperty(TagPropertyName::person()))
         {
-            if (tagIDs.first() == FaceTags::unconfirmedPersonTagId()
-                    || tagIDs.first() == FaceTags::unknownPersonTagId()
-                    || !FaceTags::isPerson(tagIDs.first()))
+            if (tagIDs.first() == FaceTags::unconfirmedPersonTagId() ||
+                tagIDs.first() == FaceTags::unknownPersonTagId()     ||
+                !FaceTags::isPerson(tagIDs.first()))
+            {
                 return false;
+            }
 
-            DigikamItemView* dview = qobject_cast<DigikamItemView*>(abstractview);
+            DigikamItemView* const dview = qobject_cast<DigikamItemView*>(abstractview);
+
             if (dview == nullptr || !droppedOn.isValid())
             {
                 return false;
@@ -567,7 +570,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
             QMenu popFaceTagMenu(dview);
 
-            QAction* assignFace = nullptr;
+            QAction* assignFace  = nullptr;
             QAction* assignFaces = nullptr;
 
             if (dview->selectionModel()->selectedIndexes().size() > 1)
@@ -583,9 +586,10 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             popFaceTagMenu.addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("&Cancel"));
             popFaceTagMenu.setMouseTracking(true);
 
-            QAction* res = popFaceTagMenu.exec(dview->mapToGlobal(e->pos()));
+            QAction* const res = popFaceTagMenu.exec(dview->mapToGlobal(e->pos()));
 
-            if (res) {
+            if (res)
+            {
                 if (res == assignFace)
                 {
                     dview->confirmFaces({droppedOn}, tagIDs.first());
@@ -599,10 +603,10 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             return true;
         }
 
-        //Standart tags
+        // Standart tags
         QMenu popMenu(view);
 
-        QList<ItemInfo> selectedInfos  = view->selectedItemInfosCurrentFirst();
+        QList<ItemInfo> selectedInfos   = view->selectedItemInfosCurrentFirst();
         QAction* assignToSelectedAction = nullptr;
 
         if (selectedInfos.count() > 1)

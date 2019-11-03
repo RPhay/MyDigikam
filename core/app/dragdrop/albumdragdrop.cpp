@@ -131,6 +131,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
 
         // Check if items dropped come from outside current album.
         // This can be the case with recursive content album mode.
+
         ItemInfoList extImgInfList;
 
         for (QList<qlonglong>::const_iterator it = imageIDs.constBegin(); it != imageIDs.constEnd(); ++it)
@@ -148,6 +149,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
             // Setting the dropped image as the album thumbnail
             // If the ctrl key is pressed, when dropping the image, the
             // thumbnail is set without a popup menu
+
             bool set = false;
 
             if (e->keyboardModifiers() == Qt::ControlModifier)
@@ -182,6 +184,7 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
 
         // If shift key is pressed while dragging, move the drag object without
         // displaying popup menu -> move
+
         bool move         = false;
         bool copy         = false;
         bool setThumbnail = false;
@@ -190,8 +193,10 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
         {
             move = true;
         }
+
         // If ctrl key is pressed while dragging, copy the drag object without
         // displaying popup menu -> copy
+
         else if (e->keyboardModifiers() == Qt::ControlModifier)
         {
             copy = true;
@@ -251,7 +256,9 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
 
         return true;
     }
+
     // -- DnD from Camera GUI ----------------------------
+
     else if (DCameraItemListDrag::canDecode(e->mimeData()))
     {
         ImportUI* const ui = dynamic_cast<ImportUI*>(e->source());
@@ -279,7 +286,9 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
             }
         }
     }
+
     // -- DnD from an external source ---------------------
+
     else if (e->mimeData()->hasUrls())
     {
         QList<QUrl> srcURLs = e->mimeData()->urls();
@@ -288,12 +297,15 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
 
         // If shift key is pressed while dropping, move the drag object without
         // displaying popup menu -> move
+
         if (e->keyboardModifiers() == Qt::ShiftModifier)
         {
             move = true;
         }
+
         // If ctrl key is pressed while dropping, copy the drag object without
         // displaying popup menu -> copy
+
         else if (e->keyboardModifiers() == Qt::ControlModifier)
         {
             copy = true;
@@ -422,6 +434,7 @@ QMimeData* AlbumDragDropHandler::createMimeData(const QList<Album*>& albums)
     PAlbum* const palbum = dynamic_cast<PAlbum*>(albums.first());
 
     // Root and Trash Albums are not dragable
+
     if (!palbum || palbum->isRoot() || palbum->isTrashAlbum())
     {
         return nullptr;

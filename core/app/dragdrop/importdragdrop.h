@@ -49,10 +49,15 @@ public:
 
     ImportItemModel* model() const;
 
-    virtual bool           dropEvent(QAbstractItemView* view, const QDropEvent* e, const QModelIndex& droppedOn) override;
-    virtual Qt::DropAction accepts(const QDropEvent* e, const QModelIndex& dropIndex) override;
-    virtual QStringList    mimeTypes() const override;
-    virtual QMimeData*     createMimeData(const QList<QModelIndex> &) override;
+    virtual bool           dropEvent(QAbstractItemView* view,
+                                     const QDropEvent* e,
+                                     const QModelIndex& droppedOn)      override;
+
+    virtual Qt::DropAction accepts(const QDropEvent* e,
+                                   const QModelIndex& dropIndex)        override;
+
+    virtual QStringList    mimeTypes() const                            override;
+    virtual QMimeData*     createMimeData(const QList<QModelIndex> &)   override;
 
 private:
 
@@ -69,7 +74,10 @@ private:
 
     QAction*   addGroupAction(QMenu* const menu);
     QAction*   addCancelAction(QMenu* const menu);
-    DropAction copyOrMove(const QDropEvent* e, QWidget* const view, bool allowMove = true, bool askForGrouping = false);
+    DropAction copyOrMove(const QDropEvent* e,
+                          QWidget* const view,
+                          bool allowMove = true,
+                          bool askForGrouping = false);
 };
 
 } // namespace Digikam
