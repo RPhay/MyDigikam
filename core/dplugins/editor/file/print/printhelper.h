@@ -48,7 +48,9 @@ public:
 
 private:
 
-    PrintHelper(const PrintHelper&); // Disable
+    // Hidden copy constructor and assignment operator.
+    PrintHelper(const PrintHelper&);
+    PrintHelper& operator=(const PrintHelper&);
 
     class Private;
     Private* const d;

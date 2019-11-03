@@ -44,8 +44,9 @@ public:
 
 private:
 
-    // No copy constructor
+    // Hidden copy constructor and assignment operator.
     GLViewerTimer(const GLViewerTimer&);
+    GLViewerTimer& operator=(const GLViewerTimer&);
 
     class Private;
     Private* const d;

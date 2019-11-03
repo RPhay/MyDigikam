@@ -79,7 +79,9 @@ private:
 
 private:
 
-    AtkinsPageLayout(const AtkinsPageLayout&); // Disable
+    // Hidden copy constructor and assignment operator.
+    AtkinsPageLayout(const AtkinsPageLayout&);
+    AtkinsPageLayout& operator=(const AtkinsPageLayout&);
 
     class Private;
     Private* const d;

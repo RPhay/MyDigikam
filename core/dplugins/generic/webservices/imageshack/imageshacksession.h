@@ -62,7 +62,9 @@ public:
 
 private:
 
-    ImageShackSession(const ImageShackSession&); // Disable
+    // Hidden copy constructor and assignment operator.
+    ImageShackSession(const ImageShackSession&);
+    ImageShackSession& operator=(const ImageShackSession&);
 
     class Private;
     Private* const d;
