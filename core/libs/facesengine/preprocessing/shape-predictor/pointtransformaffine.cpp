@@ -29,11 +29,11 @@ namespace Digikam
 {
 
 PointTransformAffine::PointTransformAffine()
+    : m(std::vector<std::vector<float> >(2, std::vector<float>(2, 0))),
+      b(std::vector<float>(2, 0))
 {
-    m       = std::vector<std::vector<float> >(2, std::vector<float>(2, 0));
     m[0][0] = 1.0;
     m[1][1] = 1.0;
-    b       = std::vector<float>(2, 0);
 }
 
 PointTransformAffine::PointTransformAffine(const std::vector<std::vector<float> >& m_,
@@ -44,9 +44,9 @@ PointTransformAffine::PointTransformAffine(const std::vector<std::vector<float> 
 }
 
 PointTransformAffine::PointTransformAffine(const std::vector<std::vector<float> >& m_)
+    : m(std::vector<std::vector<float> >(2, std::vector<float>(2, 0))),
+      b(std::vector<float >(2, 0))
 {
-    m = std::vector<std::vector<float> >(2, std::vector<float>(2, 0));
-    b = std::vector<float >(2, 0);
 
     for (unsigned int i = 0 ; i < m_.size() ; ++i)
     {
@@ -85,7 +85,8 @@ const std::vector<float>& PointTransformAffine::get_b() const
 PointTransformAffine operator* (const PointTransformAffine& lhs,
                                 const PointTransformAffine& rhs)
 {
-    return PointTransformAffine(lhs.get_m() * rhs.get_m(), lhs.get_m() * rhs.get_b() + lhs.get_b());
+    return PointTransformAffine(lhs.get_m() * rhs.get_m(),
+                                lhs.get_m() * rhs.get_b() + lhs.get_b());
 }
 
 // ----------------------------------------------------------------------------------------
