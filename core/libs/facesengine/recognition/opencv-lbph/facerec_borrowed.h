@@ -53,11 +53,12 @@ public:
 
 public:
 
-    /** Initializes this LBPH Model. The current implementation is rather fixed
-     *  as it uses the Extended Local Binary Patterns per default.
+    /**
+     * Initializes this LBPH Model. The current implementation is rather fixed
+     * as it uses the Extended Local Binary Patterns per default.
      *
-     *  radius, neighbors are used in the local binary patterns creation.
-     *  grid_x, grid_y control the grid size of the spatial histograms.
+     * radius, neighbors are used in the local binary patterns creation.
+     * grid_x, grid_y control the grid size of the spatial histograms.
      */
     explicit LBPHFaceRecognizer(int radius_ = 1,
                                 int neighbors_ = 8,
@@ -74,11 +75,12 @@ public:
     {
     }
 
-    /** Initializes and computes this LBPH Model. The current implementation is
-     *  rather fixed as it uses the Extended Local Binary Patterns per default.
+    /**
+     * Initializes and computes this LBPH Model. The current implementation is
+     * rather fixed as it uses the Extended Local Binary Patterns per default.
      *
-     *  (radius=1), (neighbors=8) are used in the local binary patterns creation.
-     *  (grid_x=8), (grid_y=8) controls the grid size of the spatial histograms.
+     * (radius=1), (neighbors=8) are used in the local binary patterns creation.
+     * (grid_x=8), (grid_y=8) controls the grid size of the spatial histograms.
      */
     LBPHFaceRecognizer(cv::InputArrayOfArrays src,
                        cv::InputArray labels,
@@ -158,35 +160,36 @@ public:
      * Getter functions.
      */
 
-    int getNeighbors() const                             { return m_neighbors;            }
-    void setNeighbors(int _neighbors)                    { m_neighbors = _neighbors;      }
+    int getNeighbors() const                                    { return m_neighbors;            }
+    void setNeighbors(int _neighbors)                           { m_neighbors = _neighbors;      }
 
-    int getRadius()    const                             { return m_radius;               }
-    void setRadius(int radius)                           { m_radius = radius;             }
+    int getRadius()    const                                    { return m_radius;               }
+    void setRadius(int radius)                                  { m_radius = radius;             }
 
-    int getGrid_x()    const                             { return m_grid_x;               }
-    void setGrid_x(int _grid_x)                          { m_grid_x = _grid_x;            }
+    int getGrid_x()    const                                    { return m_grid_x;               }
+    void setGrid_x(int _grid_x)                                 { m_grid_x = _grid_x;            }
 
-    int getGrid_y()    const                             { return m_grid_y;               }
-    void setGrid_y(int _grid_y)                          { m_grid_y = _grid_y;            }
+    int getGrid_y()    const                                    { return m_grid_y;               }
+    void setGrid_y(int _grid_y)                                 { m_grid_y = _grid_y;            }
 
-    double getThreshold() const override                 { return m_threshold;            }
-    void setThreshold(double _threshold)                 { m_threshold = _threshold;      }
+    double getThreshold() const override                        { return m_threshold;            }
+    void setThreshold(double _threshold)                        { m_threshold = _threshold;      }
 
-    void setHistograms(std::vector<cv::Mat> _histograms) { m_histograms = _histograms;    }
-    std::vector<cv::Mat> getHistograms() const           { return m_histograms;           }
+    void setHistograms(const std::vector<cv::Mat>& _histograms) { m_histograms = _histograms;    }
+    std::vector<cv::Mat> getHistograms() const                  { return m_histograms;           }
 
-    void setLabels(cv::Mat _labels)                      { m_labels = _labels;            }
-    cv::Mat getLabels() const                            { return m_labels;               }
+    void setLabels(cv::Mat _labels)                             { m_labels = _labels;            }
+    cv::Mat getLabels() const                                   { return m_labels;               }
 
-    void setStatistic(int _statistic)                    { m_statisticsMode = _statistic; }
-    int getStatistic() const                             { return m_statisticsMode;       }
+    void setStatistic(int _statistic)                           { m_statisticsMode = _statistic; }
+    int getStatistic() const                                    { return m_statisticsMode;       }
 
 private:
 
-    /** Computes a LBPH model with images in src and
-     *  corresponding labels in labels, possibly preserving
-     *  old model data.
+    /**
+     * Computes a LBPH model with images in src and
+     * corresponding labels in labels, possibly preserving
+     * old model data.
      */
     void train(cv::InputArrayOfArrays src,
                cv::InputArray labels,

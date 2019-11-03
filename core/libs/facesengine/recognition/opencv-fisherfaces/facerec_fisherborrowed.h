@@ -44,14 +44,18 @@ class FisherFaceRecognizer : public cv::face::FaceRecognizer
 {
 public:
 
-    // Initializes this Fisherfaces Model.
+    /**
+     * Initializes this Fisherfaces Model.
+     */
     explicit FisherFaceRecognizer(double threshold = DBL_MAX)
         : m_threshold(threshold),
           m_num_components(0)
     {
     }
 
-    // Initializes and computes this Fisherfaces Model.
+    /**
+     * Initializes and computes this Fisherfaces Model.
+     */
     FisherFaceRecognizer(cv::InputArrayOfArrays src,
                          cv::InputArray labels,
                          double threshold = DBL_MAX)
@@ -89,7 +93,7 @@ public:
      */
     void update(cv::InputArrayOfArrays src, cv::InputArray labels)                        override;
 
-    /*
+    /**
      * Predict
      */
     void predict(cv::InputArray src, cv::Ptr<cv::face::PredictCollector> collector) const override;
@@ -116,32 +120,33 @@ public:
      * Getter functions.
      */
 
-    int getNumComponents() const                           { return m_num_components;             }
-    void setNumComponents(int _num_com_ponents)            { m_num_components = _num_com_ponents; }
+    int getNumComponents() const                                    { return m_num_components;             }
+    void setNumComponents(int _num_com_ponents)                     { m_num_components = _num_com_ponents; }
 
-    double getThreshold() const override                   { return m_threshold;                  }
-    void setThreshold(double _threshold)                   { m_threshold = _threshold;            }
+    double getThreshold() const override                            { return m_threshold;                  }
+    void setThreshold(double _threshold)                            { m_threshold = _threshold;            }
 
-    std::vector<cv::Mat> getSrc() const                    { return m_src;                        }
-    void setSrc(std::vector<cv::Mat> _src)                 { m_src = _src;                        }
+    std::vector<cv::Mat> getSrc() const                             { return m_src;                        }
+    void setSrc(const std::vector<cv::Mat>& _src)                   { m_src = _src;                        }
 
-    std::vector<cv::Mat> getProjections() const            { return m_projections;                }
-    void setProjections(std::vector<cv::Mat> _projections) { m_projections = _projections;        }
+    std::vector<cv::Mat> getProjections() const                     { return m_projections;                }
+    void setProjections(const std::vector<cv::Mat>& _projections)   { m_projections = _projections;        }
 
-    cv::Mat getLabels() const                              { return m_labels;                     }
-    void setLabels(cv::Mat _labels)                        { m_labels = _labels;                  }
+    cv::Mat getLabels() const                                       { return m_labels;                     }
+    void setLabels(cv::Mat _labels)                                 { m_labels = _labels;                  }
 
-    cv::Mat getEigenvectors() const                        { return m_eigenvectors;               }
-    void setEigenvectors(cv::Mat _eigenvectors)            { m_eigenvectors = _eigenvectors;      }
+    cv::Mat getEigenvectors() const                                 { return m_eigenvectors;               }
+    void setEigenvectors(cv::Mat _eigenvectors)                     { m_eigenvectors = _eigenvectors;      }
 
-    cv::Mat getMean() const                                { return m_mean;                       }
-    void setMean(cv::Mat _mean)                            { m_mean = _mean;                      }
+    cv::Mat getMean() const                                         { return m_mean;                       }
+    void setMean(cv::Mat _mean)                                     { m_mean = _mean;                      }
 
 private:
 
-    /** Computes a Fisherfaces model with images in src and
-     *  corresponding labels in labels, possibly preserving
-     *  old training data.
+    /**
+     * Computes a Fisherfaces model with images in src and
+     * corresponding labels in labels, possibly preserving
+     * old training data.
      */
     void train(cv::InputArrayOfArrays src,
                cv::InputArray labels,

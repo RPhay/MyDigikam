@@ -45,7 +45,7 @@ class OpenCVFISHERFaceRecognizer
 public:
 
     /**
-     *  @brief FaceRecognizer:Master class to control entire recognition using Fisherfaces algorithm
+     * @brief FaceRecognizer:Master class to control entire recognition using Fisherfaces algorithm
      */
     explicit OpenCVFISHERFaceRecognizer();
     ~OpenCVFISHERFaceRecognizer();
@@ -53,19 +53,19 @@ public:
     void setThreshold(float threshold) const;
 
     /**
-     *  Returns a cvMat created from the inputImage, optimized for recognition
+     * Returns a cvMat created from the inputImage, optimized for recognition
      */
     cv::Mat prepareForRecognition(const QImage& inputImage);
 
     /**
-     *  Try to recognize the given image.
-     *  Returns the identity id.
-     *  If the identity cannot be recognized, returns -1.
+     * Try to recognize the given image.
+     * Returns the identity id.
+     * If the identity cannot be recognized, returns -1.
      */
     int recognize(const cv::Mat& inputImage);
 
     /**
-     *  Trains the given images, representing faces of the given matched identities.
+     * Trains the given images, representing faces of the given matched identities.
      */
     void train(const std::vector<cv::Mat>& images,
                const std::vector<int>& labels,

@@ -77,7 +77,7 @@ public:
     FisherFaceRecognizer*       ptr();
     const FisherFaceRecognizer* ptr()               const;
 
-    //Getter function
+    // Getter function
     std::vector<cv::Mat> getSrc()                   const;
     void setSrc(std::vector<cv::Mat> new_src);
 
