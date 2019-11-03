@@ -104,7 +104,7 @@ private:
 
     // Hidden copy constructor and assignment operator.
     TaggingActionFactory(const TaggingActionFactory&);
-    TaggingActionFactor& operator=(const TaggingActionFactor&);
+    TaggingActionFactory& operator=(const TaggingActionFactory&);
 
     class Private;
     Private* const d;

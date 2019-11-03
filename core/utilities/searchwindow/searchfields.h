@@ -121,6 +121,12 @@ protected:
 
     bool                 m_categoryLabelVisible;
     bool                 m_valueIsValid;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    SearchField(const SearchField&);
+    SearchField& operator=(const SearchField&);
 };
 
 //-----------------------------------------------------------------------------
@@ -286,6 +292,12 @@ protected:
     QLabel*    m_betweenLabel;
 
     Type       m_type;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    SearchFieldRangeDate(const SearchFieldRangeDate&);
+    SearchFieldRangeDate& operator=(const SearchFieldRangeDate&);
 };
 
 //-----------------------------------------------------------------------------
