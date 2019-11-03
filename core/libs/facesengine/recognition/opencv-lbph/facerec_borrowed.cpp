@@ -136,10 +136,14 @@ inline void elbp_(InputArray _src, OutputArray _dst, int radius, int neighbors)
             {
                 // calculate interpolated value
 
-                float t                          = static_cast<float>(w1*src.at<_Tp>(i+fy, j+fx) + w2*src.at<_Tp>(i+fy, j+cx) + w3*src.at<_Tp>(i+cy, j+fx) + w4*src.at<_Tp>(i+cy,j+cx));
+                float t                          = static_cast<float>(w1*src.at<_Tp>(i+fy, j+fx) +
+                                                                      w2*src.at<_Tp>(i+fy, j+cx) +
+                                                                      w3*src.at<_Tp>(i+cy, j+fx) +
+                                                                      w4*src.at<_Tp>(i+cy, j+cx));
 
                 // floating point precision, so check some machine-dependent epsilon
-                dst.at<int>(i-radius, j-radius) += ((t > src.at<_Tp>(i,j)) || (qAbs(t-src.at<_Tp>(i, j)) < std::numeric_limits<float>::epsilon())) << n;
+                dst.at<int>(i-radius, j-radius) += ((t > src.at<_Tp>(i, j)) ||
+                                                    (qAbs(t-src.at<_Tp>(i, j)) < std::numeric_limits<float>::epsilon())) << n;
             }
         }
     }
@@ -166,7 +170,9 @@ static void elbp(InputArray src, OutputArray dst, int radius, int neighbors)
         case CV_64FC1:  elbp_<double>(src,dst, radius, neighbors);
             break;
         default:
-            String error_msg = format("Using Original Local Binary Patterns for feature extraction only works on single-channel images (given %d). Please pass the image data as a grayscale image!", type);
+            String error_msg = format("Using Original Local Binary Patterns for feature extraction "
+                                      "only works on single-channel images (given %d). Please pass "
+                                      "the image data as a grayscale image!", type);
             CV_Error(CV_StsNotImplemented, error_msg);
             break;
     }
@@ -335,7 +341,8 @@ void LBPHFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_label
 {
     if (_in_src.kind() != _InputArray::STD_VECTOR_MAT && _in_src.kind() != _InputArray::STD_VECTOR_VECTOR)
     {
-        String error_message = "The images are expected as InputArray::STD_VECTOR_MAT (a std::vector<Mat>) or _InputArray::STD_VECTOR_VECTOR (a std::vector< std::vector<...> >).";
+        String error_message = "The images are expected as InputArray::STD_VECTOR_MAT (a std::vector<Mat>) "
+                               "or _InputArray::STD_VECTOR_VECTOR (a std::vector< std::vector<...> >).";
         CV_Error(CV_StsBadArg, error_message);
     }
 
@@ -346,7 +353,8 @@ void LBPHFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_label
     }
     else if (_inm_labels.getMat().type() != CV_32SC1)
     {
-        String error_message = format("Labels must be given as integer (CV_32SC1). Expected %d, but was %d.", CV_32SC1, _inm_labels.type());
+        String error_message = format("Labels must be given as integer (CV_32SC1). "
+                                      "Expected %d, but was %d.", CV_32SC1, _inm_labels.type());
         CV_Error(CV_StsUnsupportedFormat, error_message);
     }
 
@@ -363,7 +371,8 @@ void LBPHFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_label
 
     if (labels.total() != src.size())
     {
-        String error_message = format("The number of samples (src) must equal the number of labels (labels). Was len(samples)=%d, len(labels)=%d.",
+        String error_message = format("The number of samples (src) must equal the number of labels "
+                                      "(labels). Was len(samples)=%d, len(labels)=%d.",
                                       (int)src.size(), (int)m_labels.total());
         CV_Error(CV_StsBadArg, error_message);
     }
@@ -540,7 +549,12 @@ void LBPHFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<cv::face::PredictC
 
 // Static method ----------------------------------------------------
 
-Ptr<LBPHFaceRecognizer> LBPHFaceRecognizer::create(int radius, int neighbors, int grid_x, int grid_y, double threshold, PredictionStatistics statistics)
+Ptr<LBPHFaceRecognizer> LBPHFaceRecognizer::create(int radius,
+                                                   int neighbors,
+                                                   int grid_x,
+                                                   int grid_y,
+                                                   double threshold,
+                                                   PredictionStatistics statistics)
 {
     Ptr<LBPHFaceRecognizer> ptr;
 

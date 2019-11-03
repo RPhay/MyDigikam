@@ -104,7 +104,8 @@ void EigenFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_labe
 {
     if (_in_src.kind() != _InputArray::STD_VECTOR_MAT && _in_src.kind() != _InputArray::STD_VECTOR_VECTOR)
     {
-        String error_message = "The images are expected as InputArray::STD_VECTOR_MAT (a std::vector<Mat>) or _InputArray::STD_VECTOR_VECTOR (a std::vector< std::vector<...> >).";
+        String error_message = "The images are expected as InputArray::STD_VECTOR_MAT (a std::vector<Mat>) "
+                               "or _InputArray::STD_VECTOR_VECTOR (a std::vector< std::vector<...> >).";
         CV_Error(CV_StsBadArg, error_message);
     }
 
@@ -115,7 +116,8 @@ void EigenFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_labe
     }
     else if (_inm_labels.getMat().type() != CV_32SC1)
     {
-        String error_message = format("Labels must be given as integer (CV_32SC1). Expected %d, but was %d.", CV_32SC1, _inm_labels.type());
+        String error_message = format("Labels must be given as integer (CV_32SC1). "
+                                      "Expected %d, but was %d.", CV_32SC1, _inm_labels.type());
         CV_Error(CV_StsUnsupportedFormat, error_message);
     }
 
@@ -132,7 +134,8 @@ void EigenFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_labe
 
     if (labels.total() != src.size())
     {
-        String error_message = format("The number of samples (src) must equal the number of labels (labels). Was len(samples)=%d, len(labels)=%d.",
+        String error_message = format("The number of samples (src) must equal the number of labels "
+                                      "(labels). Was len(samples)=%d, len(labels)=%d.",
                                       (int)src.size(), (int)m_labels.total());
         CV_Error(CV_StsBadArg, error_message);
     }
