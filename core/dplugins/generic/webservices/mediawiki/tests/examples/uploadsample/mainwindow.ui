@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>426</width>
-    <height>589</height>
+    <height>665</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,7 +36,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>Send</string>
+         <string notr="true">Send</string>
         </property>
        </widget>
       </item>
@@ -45,7 +45,7 @@
     <item row="2" column="1">
      <widget class="QGroupBox" name="groupBox">
       <property name="title">
-       <string>File Source</string>
+       <string notr="true">File Source</string>
       </property>
       <property name="flat">
        <bool>true</bool>
@@ -60,7 +60,7 @@
        <item>
         <widget class="QPushButton" name="parcourir">
          <property name="text">
-          <string>Select</string>
+          <string notr="true">Select</string>
          </property>
         </widget>
        </item>
@@ -72,7 +72,7 @@
       <item row="1" column="0">
        <widget class="QLabel" name="mLoginLabel">
         <property name="text">
-         <string>Login:</string>
+         <string notr="true">Login:</string>
         </property>
        </widget>
       </item>
@@ -82,7 +82,7 @@
       <item row="2" column="0">
        <widget class="QLabel" name="mMdpLabel">
         <property name="text">
-         <string>Password:</string>
+         <string notr="true">Password:</string>
         </property>
        </widget>
       </item>
@@ -127,7 +127,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Sign In</string>
+       <string notr="true">Sign In</string>
       </property>
       <property name="scaledContents">
        <bool>false</bool>
@@ -140,7 +140,7 @@
     <item row="5" column="1" rowspan="2">
      <widget class="QGroupBox" name="groupBox_2">
       <property name="title">
-       <string>File Description</string>
+       <string notr="true">File Description</string>
       </property>
       <property name="flat">
        <bool>true</bool>
@@ -149,7 +149,7 @@
        <item row="4" column="0">
         <widget class="QLabel" name="authorLabel">
          <property name="text">
-          <string>Author:</string>
+          <string notr="true">Author:</string>
          </property>
         </widget>
        </item>
@@ -162,7 +162,7 @@
        <item row="6" column="0">
         <widget class="QLabel" name="versionsLabel">
          <property name="text">
-          <string>Other Versions:</string>
+          <string notr="true">Other Versions:</string>
          </property>
         </widget>
        </item>
@@ -172,7 +172,7 @@
        <item row="5" column="0">
         <widget class="QLabel" name="permissionLabel">
          <property name="text">
-          <string>Permission:</string>
+          <string notr="true">Permission:</string>
          </property>
         </widget>
        </item>
@@ -185,7 +185,7 @@
        <item row="1" column="0">
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>Description:</string>
+          <string notr="true">Description:</string>
          </property>
         </widget>
        </item>
@@ -195,21 +195,21 @@
        <item row="3" column="0">
         <widget class="QLabel" name="dateLabel">
          <property name="text">
-          <string>Date:</string>
+          <string notr="true">Date:</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="sourceLabel">
          <property name="text">
-          <string>Image Source:</string>
+          <string notr="true">Image Source:</string>
          </property>
         </widget>
        </item>
        <item row="0" column="0">
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>Destination Filename:</string>
+          <string notr="true">Destination Filename:</string>
          </property>
         </widget>
        </item>
@@ -245,7 +245,7 @@
        <enum>Qt::LeftToRight</enum>
       </property>
       <property name="title">
-       <string>File Licenses</string>
+       <string notr="true">File Licenses</string>
       </property>
       <property name="flat">
        <bool>true</bool>

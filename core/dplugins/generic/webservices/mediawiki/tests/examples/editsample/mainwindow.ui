@@ -20,7 +20,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>Load page</string>
+         <string notr="true">Load page</string>
         </property>
        </widget>
       </item>
@@ -30,7 +30,7 @@
       <item row="1" column="0">
        <widget class="QLabel" name="label">
         <property name="text">
-         <string>Page : </string>
+         <string notr="true">Page : </string>
         </property>
        </widget>
       </item>
@@ -44,7 +44,7 @@
       <item row="0" column="0">
        <widget class="QLabel" name="label_3">
         <property name="text">
-         <string>Wiki :</string>
+         <string notr="true">Wiki :</string>
         </property>
        </widget>
       </item>
@@ -64,14 +64,14 @@
          <enum>QFrame::NoFrame</enum>
         </property>
         <property name="text">
-         <string>Username:</string>
+         <string notr="true">Username:</string>
         </property>
        </widget>
       </item>
       <item row="1" column="1">
        <widget class="QLabel" name="mMdpLabel">
         <property name="text">
-         <string>Password:</string>
+         <string notr="true">Password:</string>
         </property>
        </widget>
       </item>
@@ -104,7 +104,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>Send</string>
+         <string notr="true">Send</string>
         </property>
        </widget>
       </item>
