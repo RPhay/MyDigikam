@@ -293,8 +293,9 @@ void DigikamItemView::slotSetupChanged()
 
 bool DigikamItemView::hasHiddenGroupedImages(const ItemInfo& info) const
 {
-    return (info.hasGroupedImages() &&
-            !imageFilterModel()->isGroupOpen(info.id()));
+    return (info.hasGroupedImages()                     &&
+            !imageFilterModel()->isGroupOpen(info.id()) &&
+            !imageFilterModel()->imageFilterSettings().isFiltering());
 }
 
 ItemInfoList DigikamItemView::imageInfos(const QList<QModelIndex>& indexes,
