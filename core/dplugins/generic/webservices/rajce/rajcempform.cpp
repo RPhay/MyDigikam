@@ -43,8 +43,8 @@ namespace DigikamGenericRajcePlugin
 {
 
 RajceMPForm::RajceMPForm()
+    : m_boundary("----------")
 {
-    m_boundary  = "----------";
     m_boundary += WSToolUtils::randomString(42 + 13).toLatin1();
 }
 
@@ -97,6 +97,7 @@ bool RajceMPForm::addPair(const QString& name, const QString& value, const QStri
     str += "\r\n";
 
     m_buffer.append(str);
+
     return true;
 }
 
@@ -116,12 +117,14 @@ bool RajceMPForm::addFile(const QString& name,const QString& path)
     QFile imageFile(path);
 
     if (!imageFile.open(QIODevice::ReadOnly))
+    {
         return false;
+    }
 
     QByteArray imageData = imageFile.readAll();
 
     QByteArray str;
-    QString file_size = QString::number(imageFile.size());
+    QString file_size    = QString::number(imageFile.size());
     imageFile.close();
 
     str += "--";
