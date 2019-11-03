@@ -85,22 +85,26 @@ extern "C"
 #include "dimgloaderobserver.h"
 #include "randomnumbergenerator.h"
 
-/** Lanczos kernel is precomputed in a table with this resolution
-    The value below seems to be enough for HQ upscaling up to eight times
+/**
+ * Lanczos kernel is precomputed in a table with this resolution
+ * The value below seems to be enough for HQ upscaling up to eight times
  */
 #define LANCZOS_TABLE_RES  256
 
-/** A support of 3 gives an overall sharper looking image, but
-    it is a) slower b) gives more sharpening artifacts
+/**
+ * A support of 3 gives an overall sharper looking image, but
+ * it is a) slower b) gives more sharpening artifacts
  */
 #define LANCZOS_SUPPORT    2
 
-/** Define this to use a floating-point implementation of Lanczos interpolation.
-    The integer implementation is a little bit less accurate, but MUCH faster
-    (even on machines with FPU - ~2.5 times faster on Core2); besides, it will
-    run a hell lot faster on computers without a FPU (e.g. PDAs).
+/**
+ * Define this to use a floating-point implementation of Lanczos interpolation.
+ * The integer implementation is a little bit less accurate, but MUCH faster
+ * (even on machines with FPU - ~2.5 times faster on Core2); besides, it will
+ * run a hell lot faster on computers without a FPU (e.g. PDAs).
  */
 //#define LANCZOS_DATA_FLOAT
+
 #ifdef LANCZOS_DATA_FLOAT
 #   define LANCZOS_DATA_TYPE float
 #   define LANCZOS_DATA_ONE 1.0
@@ -149,8 +153,8 @@ public:
             {
                 /*
                 qCDebug(DIGIKAM_DIMG_LOG) << "File path:" << filePath
-                                          << "Priority:" << prio
-                                          << "Loader:" << plug->loaderName();
+                                          << "Priority:"  << prio
+                                          << "Loader:"    << plug->loaderName();
                 */
                 pluginMap.insertMulti(prio, plug);
             }
@@ -252,12 +256,13 @@ public:
 
         if (!outer.contains(inner))
         {
-            QRect clipped = inner.intersected(outer);
-            x             = clipped.x();
-            y             = clipped.y();
-            w             = clipped.width();
-            h             = clipped.height();
-            return clipped.isValid();
+            QRect pt = inner.intersected(outer);
+            x        = pt.x();
+            y        = pt.y();
+            w        = pt.width();
+            h        = pt.height();
+
+            return pt.isValid();
         }
 
         return inner.isValid();
