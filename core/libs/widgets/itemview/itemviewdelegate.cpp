@@ -577,7 +577,7 @@ void ItemViewDelegate::drawGeolocationIndicator(QPainter* p, const QRect& r) con
 }
 
 void ItemViewDelegate::drawGroupIndicator(QPainter* p, const QRect& r,
-                                               int numberOfGroupedImages, bool open) const
+                                          int numberOfGroupedImages, bool open) const
 {
     if (numberOfGroupedImages)
     {
@@ -603,7 +603,7 @@ void ItemViewDelegate::drawGroupIndicator(QPainter* p, const QRect& r,
 }
 
 void ItemViewDelegate::drawColorLabelRect(QPainter* p, const QStyleOptionViewItem& option,
-                                               bool isSelected, int colorId) const
+                                          bool isSelected, int colorId) const
 {
     Q_D(const ItemViewDelegate);
     Q_UNUSED(option);
@@ -752,7 +752,7 @@ void ItemViewDelegate::prepareRatingPixmaps(bool composeOverBackground)
             painter.setPen(pen);
 
             // move painter while drawing polygons
-            painter.translate( lround((d->ratingRect.width() - d->margin - rating*(d->starPolygonSize.width()+1))/2.0) + 2, 0);
+            painter.translate(lround((d->ratingRect.width() - d->margin - rating*(d->starPolygonSize.width()+1))/2.0) + 2, 0);
 
             for (int s = 0 ; s < rating ; ++s)
             {
