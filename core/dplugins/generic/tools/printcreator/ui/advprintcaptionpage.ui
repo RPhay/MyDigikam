@@ -171,7 +171,7 @@ add a new line</string>
                 <item>
                  <widget class="QLabel" name="label_4">
                   <property name="text">
-                   <string>Color:</string>
+                   <string>Text Color:</string>
                   </property>
                   <property name="buddy">
                    <cstring>m_font_color</cstring>
@@ -194,7 +194,7 @@ add a new line</string>
                    </sizepolicy>
                   </property>
                   <property name="text">
-                   <string>Size:</string>
+                   <string>Text Size:</string>
                   </property>
                   <property name="wordWrap">
                    <bool>false</bool>
@@ -241,7 +241,7 @@ add a new line</string>
               <item>
                <widget class="QLabel" name="label_3">
                 <property name="text">
-                 <string>Family:</string>
+                 <string>Font Family:</string>
                 </property>
                 <property name="buddy">
                  <cstring>m_font_name</cstring>

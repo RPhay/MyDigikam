@@ -145,6 +145,9 @@
          </item>
          <item>
           <widget class="QLabel" name="label_3">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
            <property name="sizePolicy">
             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -152,7 +155,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string>x</string>
+            <string notr="true">x</string>
            </property>
           </widget>
          </item>
@@ -382,7 +385,7 @@
    <item>
     <widget class="QPushButton" name="m_doneButton">
      <property name="text">
-      <string>Done</string>
+      <string>Ok</string>
      </property>
     </widget>
    </item>
