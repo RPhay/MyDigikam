@@ -67,7 +67,9 @@ PreparedImage s_prepareImageForUpload(const QString& saveDir,
     PreparedImage ret;
 
     if (img.isNull())
+    {
         return ret;
+    }
 
     QImage image(img);
 
@@ -76,8 +78,9 @@ PreparedImage s_prepareImageForUpload(const QString& saveDir,
     ret.scaledImagePath = baseName + QLatin1String(".jpg");
     ret.thumbPath       = baseName + QLatin1String(".thumb.jpg");
 
-    if (maxDimension > 0 && ((unsigned) image.width() > maxDimension ||
-        (unsigned) image.height() > maxDimension))
+    if ((maxDimension > 0) &&
+        (((unsigned)image.width()  > maxDimension) ||
+         ((unsigned)image.height() > maxDimension)))
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Resizing to " << maxDimension;
         image = image.scaled(maxDimension, maxDimension, Qt::KeepAspectRatio, Qt::SmoothTransformation);
@@ -353,7 +356,7 @@ void AlbumListCommand::parseResponse(QXmlQuery& q, RajceSession& state)
 
     QXmlItem item(results.next());
 
-    while(!item.isNull())
+    while (!item.isNull())
     {
         q.setFocus(item);
         RajceAlbum album;
@@ -530,7 +533,7 @@ QString AddPhotoCommand::additionalXml() const
     QString ret(QLatin1String("  <objectInfo>\n    <Item id=\""));
     ret.append(id).append(QLatin1String("\">\n"));
 
-    foreach(const QString& key, metadata.keys())
+    foreach (const QString& key, metadata.keys())
     {
         ret.append(QLatin1String("      <")).append(key);
         QString value = metadata[key];
@@ -567,18 +570,18 @@ QByteArray AddPhotoCommand::encode() const
         return QByteArray();
     }
 
-    PreparedImage prepared                      = s_prepareImageForUpload(d->tmpDir,
-                                                                          d->image,
-                                                                          d->imagePath,
-                                                                          d->desiredDimension,
-                                                                          THUMB_SIZE,
-                                                                          d->jpgQuality);
+    PreparedImage prepared                = s_prepareImageForUpload(d->tmpDir,
+                                                                    d->image,
+                                                                    d->imagePath,
+                                                                    d->desiredDimension,
+                                                                    THUMB_SIZE,
+                                                                    d->jpgQuality);
 
     //add the rest of the parameters to be encoded as xml
     QImage scaled(prepared.scaledImagePath);
     parameters()[QLatin1String("width")]  = QString::number(scaled.width());
     parameters()[QLatin1String("height")] = QString::number(scaled.height());
-    QString xml                                 = getXml();
+    QString xml                           = getXml();
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Really sending:\n" << xml;
 
@@ -595,7 +598,7 @@ QByteArray AddPhotoCommand::encode() const
 
     d->form->finish();
 
-    QByteArray ret = d->form->formData();
+    QByteArray ret                       = d->form->formData();
 
     return ret;
 }
