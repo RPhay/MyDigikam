@@ -56,7 +56,7 @@ public:
     ~AdvPrintPhotoPage();
 
     QPrinter*             printer()           const;
-    DItemsList*          imagesList()        const;
+    DItemsList*           imagesList()        const;
     Ui_AdvPrintPhotoPage* ui()                const;
     bool                  isComplete()        const;
     int                   getPageCount()      const;

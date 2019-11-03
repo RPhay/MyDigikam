@@ -112,9 +112,9 @@ AdvPrintPhotoPage::AdvPrintPhotoPage(QWizard* const wizard, const QString& title
       d(new Private(wizard))
 {
     d->photoUi->BtnPreviewPageUp->setIcon(QIcon::fromTheme(QLatin1String("go-next"))
-                                            .pixmap(16, 16));
+                                          .pixmap(16, 16));
     d->photoUi->BtnPreviewPageDown->setIcon(QIcon::fromTheme(QLatin1String("go-previous"))
-                                              .pixmap(16, 16));
+                                            .pixmap(16, 16));
 
     // ----------------------
 
@@ -167,12 +167,12 @@ AdvPrintPhotoPage::AdvPrintPhotoPage(QWizard* const wizard, const QString& title
     d->photoUi->mPrintList->setIface(d->iface);
     d->photoUi->mPrintList->setAllowDuplicate(true);
     d->photoUi->mPrintList->setControlButtons(DItemsList::Add      |
-                                    DItemsList::Remove   |
-                                    DItemsList::MoveUp   |
-                                    DItemsList::MoveDown |
-                                    DItemsList::Clear    |
-                                    DItemsList::Save     |
-                                    DItemsList::Load);
+                                              DItemsList::Remove   |
+                                              DItemsList::MoveUp   |
+                                              DItemsList::MoveDown |
+                                              DItemsList::Clear    |
+                                              DItemsList::Save     |
+                                              DItemsList::Load);
     d->photoUi->mPrintList->setControlButtonsPlacement(DItemsList::ControlButtonsAbove);
     d->photoUi->mPrintList->enableDragAndDrop(false);
 
@@ -494,7 +494,9 @@ void AdvPrintPhotoPage::slotIncreaseCopies()
         DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(d->photoUi->mPrintList->listView()->currentItem());
 
         if (!item)
+        {
             return;
+        }
 
         list.append(item->url());
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << " Adding a copy of " << item->url();
@@ -510,7 +512,9 @@ void AdvPrintPhotoPage::slotDecreaseCopies()
             (d->photoUi->mPrintList->listView()->currentItem());
 
         if (!item)
+        {
             return;
+        }
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << " Removing a copy of " << item->url();
         d->photoUi->mPrintList->slotRemoveItems();
@@ -564,7 +568,7 @@ void AdvPrintPhotoPage::slotAddItems(const QList<QUrl>& list)
             d->settings->photos.append(pPhoto);
 
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Added new fileName: "
-                                         << pPhoto->m_url.fileName();
+                                                 << pPhoto->m_url.fileName();
         }
     }
 
@@ -795,8 +799,8 @@ void AdvPrintPhotoPage::slotBtnPreviewPageUpClicked()
 
 int AdvPrintPhotoPage::getPageCount() const
 {
-    int pageCount   = 0;
-    int photoCount  =  d->settings->photos.count();
+    int pageCount  = 0;
+    int photoCount = d->settings->photos.count();
 
     if (photoCount > 0)
     {
@@ -827,6 +831,10 @@ void AdvPrintPhotoPage::createPhotoGrid(AdvPrintPhotoSize* const p,
                                         int columns,
                                         TemplateIcon* const iconpreview)
 {
+    // To prevent divide by 0.
+    if (!columns) columns = 1;
+    if (!rows)    rows    = 1;
+
     int MARGIN      = (int)(((double)pageWidth + (double)pageHeight) / 2.0 * 0.04 + 0.5);
     int GAP         = MARGIN / 4;
     int photoWidth  = (pageWidth  - (MARGIN * 2) - ((columns - 1) * GAP)) / columns;
@@ -835,20 +843,20 @@ void AdvPrintPhotoPage::createPhotoGrid(AdvPrintPhotoSize* const p,
 
     for (int y = MARGIN ;
          (row < rows) && (y < (pageHeight - MARGIN)) ;
-         y += photoHeight + GAP)
+         y += (photoHeight + GAP))
     {
         int col = 0;
 
         for (int x = MARGIN ;
              (col < columns) && (x < (pageWidth - MARGIN)) ;
-             x += photoWidth + GAP)
+             x += (photoWidth + GAP))
         {
             p->m_layouts.append(new QRect(x, y, photoWidth, photoHeight));
             iconpreview->fillRect(x, y, photoWidth, photoHeight, Qt::color1);
-            col++;
+            ++col;
         }
 
-        row++;
+        ++row;
     }
 }
 
@@ -969,7 +977,7 @@ void AdvPrintPhotoPage::slotListPhotoSizesSelected()
                 {
                     // n photos => dx1, photo1, dx2, photo2,... photoN, dxN+1
                     int dx      = spareWidth  * scaleValue / (nColumns + 1);
-                    int dy      = spareHeight * scaleValue / (nRows + 1);
+                    int dy      = spareHeight * scaleValue / (nRows    + 1);
                     int photoX  = 0;
                     int photoY  = 0;
                     width      *= scaleValue;
@@ -1145,19 +1153,23 @@ void AdvPrintPhotoPage::manageBtnPreviewPage()
 void AdvPrintPhotoPage::initPhotoSizes(const QSizeF& pageSize)
 {
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "New page size "
-                                 << pageSize
-                                 << ", old page size "
-                                 << d->settings->pageSize;
+                                         << pageSize
+                                         << ", old page size "
+                                         << d->settings->pageSize;
 
     // don't refresh anything if we haven't changed page sizes.
     if (pageSize == d->settings->pageSize)
+    {
         return;
+    }
 
     d->settings->pageSize = pageSize;
 
     // cleaning pageSize memory before invoking clear()
     for (int i = 0 ; i < d->settings->photosizes.count() ; ++i)
+    {
         delete d->settings->photosizes.at(i);
+    }
 
     d->settings->photosizes.clear();
 
@@ -1169,7 +1181,7 @@ void AdvPrintPhotoPage::initPhotoSizes(const QSizeF& pageSize)
     const QStringList list = dir.entryList(QStringList() << QLatin1String("*.xml"));
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Template XML files list: "
-                                 << list;
+                                         << list;
 
     foreach(const QString& fn, list)
     {
@@ -1177,9 +1189,9 @@ void AdvPrintPhotoPage::initPhotoSizes(const QSizeF& pageSize)
     }
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "photosizes count() ="
-                                 << d->settings->photosizes.count();
+                                         << d->settings->photosizes.count();
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "photosizes isEmpty() ="
-                                 << d->settings->photosizes.isEmpty();
+                                         << d->settings->photosizes.isEmpty();
 
     if (d->settings->photosizes.isEmpty())
     {
@@ -1241,7 +1253,9 @@ void AdvPrintPhotoPage::parseTemplateFile(const QString& fn, const QSizeF& pageS
     QFile file(fn);
 
     if (!file.open(QIODevice::ReadOnly))
+    {
         return;
+    }
 
     if (!doc.setContent(&file))
     {
