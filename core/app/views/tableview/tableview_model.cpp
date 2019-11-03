@@ -826,6 +826,7 @@ void TableViewModel::addSourceModelIndex(const QModelIndex& imageModelIndex, con
 
     const ItemInfo imageInfo = s->imageModel->imageInfo(imageModelIndex);
     const bool passedFilter  = d->imageFilterSettings.matches(imageInfo);
+    const bool isFiltering   = d->imageFilterSettings.isFiltering();
 
     if (!passedFilter)
     {
@@ -835,21 +836,21 @@ void TableViewModel::addSourceModelIndex(const QModelIndex& imageModelIndex, con
     /// @todo Implement Grouping and sorting
     Item* const parentItem = d->rootItem;
 
-    if (imageInfo.isGrouped())
+    if (!isFiltering && imageInfo.isGrouped())
     {
         switch (d->groupingMode)
         {
-        case GroupingHideGrouped:
-            // we do not show grouped items at all
-            return;
+            case GroupingHideGrouped:
+                // we do not show grouped items at all
+                return;
 
-        case GroupingIgnoreGrouping:
-            // nothing to do, we just add it to the root item
-            break;
+            case GroupingIgnoreGrouping:
+                // nothing to do, we just add it to the root item
+                break;
 
-        case GroupingShowSubItems:
-            // we do not add this subitem, because it has been automatically added to the group leader
-            return;
+            case GroupingShowSubItems:
+                // we do not add this subitem, because it has been automatically added to the group leader
+                return;
         }
     }
 
@@ -878,7 +879,7 @@ void TableViewModel::addSourceModelIndex(const QModelIndex& imageModelIndex, con
         endInsertRows();
     }
 
-    if ((d->groupingMode == GroupingShowSubItems) && imageInfo.hasGroupedImages())
+    if (!isFiltering && (d->groupingMode == GroupingShowSubItems) && imageInfo.hasGroupedImages())
     {
         // the item was a group leader, add its subitems
         const QList<ItemInfo> groupedImages = imageInfo.groupedImages();
