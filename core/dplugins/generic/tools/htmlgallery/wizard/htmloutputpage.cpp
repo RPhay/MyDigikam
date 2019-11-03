@@ -191,7 +191,7 @@ bool HTMLOutputPage::isComplete() const
 
     if (info->m_getOption == GalleryInfo::IMAGES)
     {
-        b = (b & !d->imageSelectionTitle->text().isEmpty());
+        b = (b && !d->imageSelectionTitle->text().isEmpty());
     }
 
     return b;
