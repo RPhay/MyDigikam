@@ -130,6 +130,11 @@ protected:
 protected:
 
     PageItem* rootItem = nullptr;
+
+private:
+
+    DConfigDlgWdgModelPrivate(const DConfigDlgWdgModelPrivate&);            // Disable
+    DConfigDlgWdgModelPrivate& operator=(const DConfigDlgWdgModelPrivate&); // Disable
 };
 
 } // namespace Digikam
