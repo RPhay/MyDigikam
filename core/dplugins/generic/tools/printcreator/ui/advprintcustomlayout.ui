@@ -155,7 +155,7 @@
             </sizepolicy>
            </property>
            <property name="text">
-            <string notr="true">x</string>
+            <string notr="true" comment="Photo width x photo height">x</string>
            </property>
           </widget>
          </item>
