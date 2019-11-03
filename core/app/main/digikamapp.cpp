@@ -643,8 +643,7 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
     if (numImagesWithGrouped < numOfImagesInAlbum)
     {
         statusBarSelectionText += QLatin1String(" - ");
-        statusBarSelectionText += i18np("%1 item hidden by grouping or versioning",
-                                        "%1 items hidden by grouping or versioning",
+        statusBarSelectionText += i18np("%1 item hidden", "%1 items hidden",
                                         numOfImagesInAlbum - numImagesWithGrouped);
     }
 
