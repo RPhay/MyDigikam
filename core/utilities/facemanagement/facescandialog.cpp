@@ -22,108 +22,10 @@
  *
  * ============================================================ */
 
-#include "facescandialog.h"
-
-// Qt includes
-
-#include <QApplication>
-#include <QButtonGroup>
-#include <QCheckBox>
-#include <QComboBox>
-#include <QGridLayout>
-#include <QGroupBox>
-#include <QLabel>
-#include <QMouseEvent>
-#include <QKeyEvent>
-#include <QRadioButton>
-#include <QToolButton>
-#include <QTabWidget>
-#include <QIcon>
-#include <QDialogButtonBox>
-#include <QVBoxLayout>
-#include <QPushButton>
-
-// KDE includes
-
-#include <kconfiggroup.h>
-#include <klocalizedstring.h>
-
-// Local includes
-
-#include "digikam_config.h"
-#include "dlayoutbox.h"
-#include "dnuminput.h"
-#include "digikam_debug.h"
-#include "albummodel.h"
-#include "albumselectors.h"
-#include "albummanager.h"
-#include "applicationsettings.h"
-#include "dexpanderbox.h"
+#include "facescandialog_p.h"
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN FaceScanDialog::Private
-{
-public:
-
-    explicit Private()
-        : configName(QLatin1String("Face Detection Dialog")),
-          configMainTask(QLatin1String("Face Scan Main Task")),
-          configValueDetect(QLatin1String("Detect")),
-          configValueDetectAndRecognize(QLatin1String("Detect and Recognize Faces")),
-          configValueRecognizedMarkedFaces(QLatin1String("Recognize Marked Faces")),
-          configAlreadyScannedHandling(QLatin1String("Already Scanned Handling")),
-          configUseFullCpu(QLatin1String("Use Full CPU")),
-          configSettingsVisible(QLatin1String("Settings Widget Visible")),
-          configRecognizeAlgorithm(QLatin1String("Recognize Algorithm")),
-          settingsConflicted(false)
-    {
-        buttons                    = nullptr;
-        optionGroupBox             = nullptr;
-        detectAndRecognizeButton   = nullptr;
-        detectButton               = nullptr;
-        alreadyScannedBox          = nullptr;
-        reRecognizeButton          = nullptr;
-        tabWidget                  = nullptr;
-        albumSelectors             = nullptr;
-        accuracyInput              = nullptr;
-        useFullCpuButton           = nullptr;
-        retrainAllButton           = nullptr;
-        recognizeBox               = nullptr;
-    }
-
-    QDialogButtonBox*            buttons;
-
-    QGroupBox*                   optionGroupBox;
-    QRadioButton*                detectAndRecognizeButton;
-    QRadioButton*                detectButton;
-    QComboBox*                   alreadyScannedBox;
-    QRadioButton*                reRecognizeButton;
-
-    QTabWidget*                  tabWidget;
-
-    AlbumSelectors*              albumSelectors;
-
-    DIntNumInput*                accuracyInput;
-
-    QCheckBox*                   useFullCpuButton;
-    QCheckBox*                   retrainAllButton;
-
-    QComboBox*                   recognizeBox;
-
-    const QString                configName;
-    const QString                configMainTask;
-    const QString                configValueDetect;
-    const QString                configValueDetectAndRecognize;
-    const QString                configValueRecognizedMarkedFaces;
-    const QString                configAlreadyScannedHandling;
-    const QString                configUseFullCpu;
-    const QString                configSettingsVisible;
-    const QString                configRecognizeAlgorithm;
-
-    bool                         settingsConflicted;
-};
 
 FaceScanDialog::FaceScanDialog(QWidget* const parent)
     : QDialog(parent),
