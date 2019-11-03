@@ -87,7 +87,7 @@ public Q_SLOTS:
 
 protected:
 
-    void aboutToDeactivate() override;
+    virtual void aboutToDeactivate() override;
 
 Q_SIGNALS:
 
@@ -141,7 +141,7 @@ public:
 
 protected:
 
-    virtual void aboutToDeactivate();
+    virtual void aboutToDeactivate() override;
 
 public Q_SLOTS:
 
