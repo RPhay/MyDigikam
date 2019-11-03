@@ -694,7 +694,7 @@ void InsertTextWidget::mousePressEvent(QMouseEvent* e)
     {
         d->xpos = e->x();
         d->ypos = e->y();
-        setCursor (Qt::SizeAllCursor);
+        setCursor(Qt::SizeAllCursor);
         d->currentMoving = true;
     }
 }
@@ -735,11 +735,11 @@ void InsertTextWidget::mouseMoveEvent(QMouseEvent* e)
         }
         else if (d->textRect.contains( e->x(), e->y()))
         {
-            setCursor (Qt::SizeAllCursor);
+            setCursor(Qt::SizeAllCursor);
         }
         else
         {
-            setCursor (Qt::ArrowCursor);
+            setCursor(Qt::ArrowCursor);
         }
     }
 }
