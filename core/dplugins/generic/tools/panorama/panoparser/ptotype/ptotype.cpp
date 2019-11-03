@@ -25,7 +25,7 @@
 
 #include "ptotype.h"
 
-// C/C++ includes
+// C includes
 
 #include <math.h>
 
@@ -101,15 +101,19 @@ bool PTOType::createFile(const QString& filepath)
         case Project::FileFormat::PNG:
             out << "PNG";
             break;
+
         case Project::FileFormat::JPEG:
             out <<  "JPEG";
             out << " q" << project.fileFormat.quality;
             break;
+
         case Project::FileFormat::TIFF:
             out << "TIFF c:" << project.fileFormat.compressionMethod;
             break;
+
         case Project::FileFormat::TIFF_m:
         case Project::FileFormat::TIFF_multilayer:
+
             if (project.fileFormat.fileType == Project::FileFormat::TIFF_multilayer)
             {
                 out << "TIFF_multilayer";
@@ -230,6 +234,7 @@ bool PTOType::createFile(const QString& filepath)
         {
             out << " Vf" << image.vignettingFlatfieldImageName;
         }
+
         out << " Vx" << image.vignettingOffsetX;
         out << " Vy" << image.vignettingOffsetY;
         out << " Vm" << image.vignettingMode;

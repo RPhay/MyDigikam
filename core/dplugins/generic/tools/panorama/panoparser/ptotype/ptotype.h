@@ -225,25 +225,30 @@ struct DIGIKAM_EXPORT PTOType
         struct LensParameter
         {
             LensParameter()
-              : referenceId(-1)
+              : value(T()),
+                referenceId(-1)
             {
             }
 
-            explicit LensParameter(T v)
+            explicit LensParameter(const T& v)
               : value(v),
                 referenceId(-1)
             {
             }
 
-            T           value;
-            int         referenceId;
+            T   value;
+            int referenceId;
 
             friend QTextStream& operator<<(QTextStream& qts, const LensParameter<T>& p)
             {
                if (p.referenceId == -1)
+               {
                    qts << p.value;
+               }
                else
+               {
                    qts << "=" << p.referenceId;
+               }
 
                return qts;
             }
@@ -368,13 +373,20 @@ struct DIGIKAM_EXPORT PTOType
 
     // --------------------------------------------------------------------------------------
 
+    enum
+    {
+        PRE_V2014,
+        V2014
+    } version;
+
     PTOType()
       : version(PRE_V2014)
     {
     }
 
     explicit PTOType(const QString& version)
-      : version(version.split(QLatin1Char('.'))[0].toInt() >= 2014 ? V2014 : PRE_V2014)
+      : version(version.split(QLatin1Char('.'))[0].toInt() >= 2014 ? V2014 
+                                                                   : PRE_V2014)
     {
     }
 
@@ -392,12 +404,6 @@ struct DIGIKAM_EXPORT PTOType
     QVector<Image>      images;
     QList<ControlPoint> controlPoints;
     QStringList         lastComments;
-
-    enum
-    {
-        PRE_V2014,
-        V2014
-    } version;
 };
 
 } // namespace Digikam
