@@ -80,7 +80,9 @@ public:
 
 private:
 
-    OpenCVDNNFaceRecognizer(const OpenCVDNNFaceRecognizer&); // Disable
+    // Hidden copy constructor and assignment operator.
+    OpenCVDNNFaceRecognizer(const OpenCVDNNFaceRecognizer&);
+    OpenCVDNNFaceRecognizer& operator=(const OpenCVDNNFaceRecognizer&);
 
     class Private;
     Private* const d;

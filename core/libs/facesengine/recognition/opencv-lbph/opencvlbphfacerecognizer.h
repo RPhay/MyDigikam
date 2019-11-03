@@ -73,9 +73,9 @@ public:
 
 private:
 
-    OpenCVLBPHFaceRecognizer(const OpenCVLBPHFaceRecognizer&); // Disable
-
-private:
+    // Hidden copy constructor and assignment operator.
+    OpenCVLBPHFaceRecognizer(const OpenCVLBPHFaceRecognizer&);
+    OpenCVLBPHFaceRecognizer& operator=(const OpenCVLBPHFaceRecognizer&);
 
     class Private;
     Private* const d;

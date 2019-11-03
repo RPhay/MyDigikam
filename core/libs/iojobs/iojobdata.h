@@ -112,7 +112,9 @@ public:
 
 private:
 
-    IOJobData(const IOJobData&); // Disable
+    // Hidden copy constructor and assignment operator.
+    IOJobData(const IOJobData&);
+    IOJobData& operator=(const IOJobData&);
 
     class Private;
     Private* const d;

@@ -290,6 +290,9 @@ public:
 
 private:
 
+    // Hidden assignment operator.
+    RecognitionDatabase& operator=(const RecognitionDatabase&);
+
     Private* const d;
 };
 

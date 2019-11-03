@@ -73,9 +73,9 @@ public:
 
 private:
 
-    OpenCVFISHERFaceRecognizer(const OpenCVFISHERFaceRecognizer&); // Disable
-
-private:
+    // Hidden copy constructor and assignment operator.
+    OpenCVFISHERFaceRecognizer(const OpenCVFISHERFaceRecognizer&);
+    OpenCVFISHERFaceRecognizer& operator=(const OpenCVFISHERFaceRecognizer&);
 
     class Private;
     Private* const d;

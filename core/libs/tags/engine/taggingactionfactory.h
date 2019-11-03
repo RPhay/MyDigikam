@@ -102,7 +102,9 @@ public:
 
 private:
 
-    TaggingActionFactory(const TaggingActionFactory&); // Disable
+    // Hidden copy constructor and assignment operator.
+    TaggingActionFactory(const TaggingActionFactory&);
+    TaggingActionFactor& operator=(const TaggingActionFactor&);
 
     class Private;
     Private* const d;

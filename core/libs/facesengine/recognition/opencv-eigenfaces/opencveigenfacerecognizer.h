@@ -74,9 +74,9 @@ public:
 
 private:
 
-    OpenCVEIGENFaceRecognizer(const OpenCVEIGENFaceRecognizer&); // Disable
-
-private:
+    // Hidden copy constructor and assignment operator.
+    OpenCVEIGENFaceRecognizer(const OpenCVEIGENFaceRecognizer&);
+    OpenCVEIGENFaceRecognizer& operator=(const OpenCVEIGENFaceRecognizer&);
 
     class Private;
     Private* const d;
