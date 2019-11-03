@@ -230,6 +230,10 @@ protected:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    LoadSaveThread(const LoadSaveThread&);
+    LoadSaveThread& operator=(const LoadSaveThread&);
+
     class Private;
     Private* const d;
 };

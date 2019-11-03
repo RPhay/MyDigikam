@@ -124,6 +124,12 @@ Q_SIGNALS:
 protected:
 
     QFileSystemWatcher* m_watch;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    ClassicLoadingCacheFileWatch(const ClassicLoadingCacheFileWatch&);
+    ClassicLoadingCacheFileWatch& operator=(const ClassicLoadingCacheFileWatch&);
 };
 
 // --------------------------------------------------------------------------------------------------------------
