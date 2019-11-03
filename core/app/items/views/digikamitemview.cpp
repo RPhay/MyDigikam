@@ -293,11 +293,13 @@ void DigikamItemView::slotSetupChanged()
 
 bool DigikamItemView::hasHiddenGroupedImages(const ItemInfo& info) const
 {
-    return info.hasGroupedImages() && !imageFilterModel()->isGroupOpen(info.id());
+    return (info.hasGroupedImages()                     &&
+            !imageFilterModel()->isGroupOpen(info.id()) &&
+            !imageFilterModel()->imageFilterSettings().isFiltering());
 }
 
 ItemInfoList DigikamItemView::imageInfos(const QList<QModelIndex>& indexes,
-                                           ApplicationSettings::OperationType type) const
+                                         ApplicationSettings::OperationType type) const
 {
     ItemInfoList infos = ItemCategorizedView::imageInfos(indexes);
 
@@ -365,9 +367,9 @@ void DigikamItemView::addAssignNameOverlay(ItemDelegate* delegate)
 
 void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
 {
-    QList<ItemInfo>    infos;
+    QList<ItemInfo>      infos;
     QList<FaceTagsIface> faces;
-    QList<QModelIndex>  sourceIndexes;
+    QList<QModelIndex>   sourceIndexes;
 
     // fast-remove in the "unknown person" view
 
