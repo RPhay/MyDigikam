@@ -121,7 +121,7 @@
      <item row="0" column="0">
       <widget class="QGroupBox" name="groupBox_2">
        <property name="title">
-        <string>Content</string>
+        <string>Content Rendering</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
