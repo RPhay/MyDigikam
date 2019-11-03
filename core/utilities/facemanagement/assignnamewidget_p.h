@@ -21,6 +21,9 @@
  *
  * ============================================================ */
 
+#ifndef DIGIKAM_ASSIGN_NAME_WIDGET_P_H
+#define DIGIKAM_ASSIGN_NAME_WIDGET_P_H
+
 #include "assignnamewidget.h"
 
 // Qt includes
@@ -114,3 +117,5 @@ public:
 };
 
 } // namespace Digikam
+
+#endif // DIGIKAM_ASSIGN_NAME_WIDGET_P_H
