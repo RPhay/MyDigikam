@@ -1,0 +1,116 @@
+/* ============================================================
+ *
+ * This file is a part of digiKam project
+ * https://www.digikam.org
+ *
+ * Date        : 2010-09-12
+ * Description : Widget for assignment and confirmation of names for faces
+ *
+ * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ *
+ * This program is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General
+ * Public License as published by the Free Software Foundation;
+ * either version 2, or (at your option)
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * ============================================================ */
+
+#include "assignnamewidget.h"
+
+// Qt includes
+
+#include <QGridLayout>
+#include <QKeyEvent>
+#include <QToolButton>
+#include <QApplication>
+#include <QIcon>
+
+// KDE includes
+
+#include <klocalizedstring.h>
+
+// Local includes
+
+#include "dexpanderbox.h"
+#include "digikam_debug.h"
+#include "addtagscombobox.h"
+#include "addtagslineedit.h"
+#include "album.h"
+#include "albummanager.h"
+#include "albumtreeview.h"
+#include "facetagsiface.h"
+#include "dimg.h"
+#include "iteminfo.h"
+#include "thememanager.h"
+#include "applicationsettings.h"
+
+namespace Digikam
+{
+
+class Q_DECL_HIDDEN AssignNameWidget::Private
+{
+public:
+
+    explicit Private(AssignNameWidget* const q);
+
+    void         updateModes();
+    void         updateContents();
+
+    bool         isValid()                                        const;
+
+private:
+
+    void         clearWidgets();
+    void         checkWidgets();
+    void         updateLayout();
+    void         updateVisualStyle();
+
+    QToolButton* createToolButton(const QIcon& icon,
+                                  const QString& text,
+                                  const QString& tip = QString()) const;
+
+    QWidget* addTagsWidget()                                      const;
+
+    template <class T> void setupAddTagsWidget(T* const widget);
+    template <class T> void setAddTagsWidgetContents(T* const widget);
+
+    void layoutAddTagsWidget(bool exceedBounds, int minimumContentsLength);
+    void setSizePolicies(QSizePolicy::Policy h, QSizePolicy::Policy v);
+    void setToolButtonStyles(Qt::ToolButtonStyle style);
+    QString styleSheetFontDescriptor(const QFont& font)           const;
+
+public:
+
+    ItemInfo                   info;
+    QVariant                   faceIdentifier;
+    AlbumPointer<TAlbum>       currentTag;
+
+    Mode                       mode;
+    LayoutMode                 layoutMode;
+    VisualStyle                visualStyle;
+    TagEntryWidgetMode         widgetMode;
+
+    AddTagsComboBox*           comboBox;
+    AddTagsLineEdit*           lineEdit;
+    QToolButton*               confirmButton;
+    QToolButton*               rejectButton;
+    DClickLabel*               clickLabel;
+
+    bool                       modelsGiven;
+    TagModel*                  tagModel;
+    CheckableAlbumFilterModel* tagFilterModel;
+    TagPropertiesFilterModel*  tagFilteredModel;
+    AlbumPointer<TAlbum>       parentTag;
+
+    QGridLayout*               layout;
+
+    AssignNameWidget* const    q;
+};
+
+} // namespace Digikam

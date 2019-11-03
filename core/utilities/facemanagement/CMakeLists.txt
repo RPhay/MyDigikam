@@ -17,6 +17,7 @@ set(libfacemanagement_SRCS
     facepreviewloader.cpp
     facescandialog.cpp
     assignnamewidget.cpp
+    assignnamewidget_p.cpp
     parallelpipes.cpp
     scanstatefilter.cpp
 )
