@@ -60,7 +60,8 @@ MetaEngine::MetaEngine(const MetaEngineData& data)
 MetaEngine::MetaEngine(const QString& filePath)
     : d(new Private)
 {
-    load(filePath);
+    // NOTE: Explicit calling function as it's a virtual method.
+    MetaEngine::load(filePath);
 }
 
 MetaEngine::~MetaEngine()
