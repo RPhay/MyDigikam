@@ -112,12 +112,12 @@ public:
     /**
      * @brief overloaded interface method
      */
-    void init(size_t size);
+    void init(size_t size)                  override;
 
     /**
      * @brief overloaded interface method
      */
-    bool collect(int label, double dist);
+    bool collect(int label, double dist)    override;
 
     /**
      * @brief Returns label with minimal distance

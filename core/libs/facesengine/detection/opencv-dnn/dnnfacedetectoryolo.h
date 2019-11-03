@@ -46,7 +46,7 @@ public:
 
     virtual void detectFaces(const cv::Mat& inputImage,
                              const cv::Size& paddedSize,
-                             std::vector<cv::Rect>& detectedBboxes);
+                             std::vector<cv::Rect>& detectedBboxes) override;
 
 private:
 
