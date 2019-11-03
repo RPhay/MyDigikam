@@ -100,11 +100,6 @@ bool AlbumDragDropHandler::dropEvent(QAbstractItemView* view, const QDropEvent* 
         popMenu.setMouseTracking(true);
         QAction* const choice = popMenu.exec(QCursor::pos());
 
-        if (!droppedAlbum || !destAlbum)
-        {
-            return false;
-        }
-
         if (choice == moveAction)
         {
             DIO::move(droppedAlbum, destAlbum);
