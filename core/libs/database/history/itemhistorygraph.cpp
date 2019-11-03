@@ -37,7 +37,8 @@ class Q_DECL_HIDDEN ItemHistoryGraphDataSharedNull : public QSharedDataPointer<I
 {
 public:
 
-    ItemHistoryGraphDataSharedNull() : QSharedDataPointer<ItemHistoryGraphData>(new ItemHistoryGraphData)
+    ItemHistoryGraphDataSharedNull()
+        : QSharedDataPointer<ItemHistoryGraphData>(new ItemHistoryGraphData)
     {
     }
 };
@@ -119,7 +120,7 @@ bool HistoryVertexProperties::operator==(const HistoryImageId& other) const
 {
     if (!uuid.isEmpty() && !other.m_uuid.isEmpty())
     {
-        return uuid == other.m_uuid;
+        return (uuid == other.m_uuid);
     }
 
     foreach (const HistoryImageId& id, referredImages)
@@ -237,30 +238,28 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const HistoryImageId& image
     QList<ItemInfo> infos;
     //qCDebug(DIGIKAM_DATABASE_LOG) << "Adding vertex" << imageId.m_uuid.left(6) << imageId.fileName();
 
-    // find by UUID
-
     // find by HistoryImageId (most notably, by UUID)
+
     v = findVertexByProperties(imageId);
     //qCDebug(DIGIKAM_DATABASE_LOG) << "Found by properties:" << (v.isNull() ? -1 : int(v));
 
     if (v.isNull())
     {
         // Resolve HistoryImageId, find by ItemInfo
+
         foreach (const qlonglong& id, ItemScanner::resolveHistoryImageId(imageId))
         {
             ItemInfo info(id);
             //qCDebug(DIGIKAM_DATABASE_LOG) << "Found info id:" << info.id();
             infos << info;
 
-            if (v.isNull())
-            {
-                v = findVertexByProperties(info);
-            }
+            v = findVertexByProperties(info);
         }
     }
 
     applyProperties(v, infos, QList<HistoryImageId>() << imageId);
     //qCDebug(DIGIKAM_DATABASE_LOG) << "Returning vertex" << v;
+
     return v;
 }
 
@@ -276,12 +275,15 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const ItemInfo& info)
     HistoryImageId id;
 
     // Simply find by image id
+
     v = findVertexByProperties(info);
 
     //qCDebug(DIGIKAM_DATABASE_LOG) << "Find by id" << info.id() << ": found" << v.isNull();
+
     if (v.isNull())
     {
         // Find by contents
+
         uuid = info.uuid();
 
         if (!uuid.isNull())
@@ -290,6 +292,7 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const ItemInfo& info)
         }
 
         //qCDebug(DIGIKAM_DATABASE_LOG) << "Find by uuid" << uuid << ": found" << v.isNull();
+
         if (v.isNull())
         {
             id = info.historyImageId();
@@ -298,6 +301,7 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const ItemInfo& info)
         }
 
         // Need to add new vertex. Do this through the method which will resolve the history id
+
         if (v.isNull())
         {
             v = addVertex(id);
@@ -348,7 +352,7 @@ int ItemHistoryGraphData::removeNextUnresolvedVertex(int index)
 {
     QList<Vertex> vs = vertices();
 
-    for ( ; index<vs.size() ; ++index)
+    for ( ; index < vs.size() ; ++index)
     {
         Vertex& v = vs[index];
         const HistoryVertexProperties& props = properties(v);
@@ -360,14 +364,15 @@ int ItemHistoryGraphData::removeNextUnresolvedVertex(int index)
                 foreach (const HistoryGraph::Edge& lowerEdge, edges(v, HistoryGraph::EdgesToLeaf))
                 {
                     HistoryEdgeProperties combinedProps;
-                    combinedProps.actions += properties(upperEdge).actions;
-                    combinedProps.actions += properties(lowerEdge).actions;
+                    combinedProps.actions        += properties(upperEdge).actions;
+                    combinedProps.actions        += properties(lowerEdge).actions;
                     HistoryGraph::Edge connection = addEdge(source(lowerEdge), target(upperEdge));
                     setProperties(connection, combinedProps);
                 }
             }
 
             remove(v);
+
             return index;
         }
     }
@@ -415,6 +420,7 @@ QHash<HistoryGraph::Vertex, HistoryImageId::Types> ItemHistoryGraphData::categor
         if (!(type & HistoryImageId::Current) && hasEdges(v, EdgesToLeaf))
         {
             // We check if all immediate actions set the ExplicitBranch flag
+
             bool allBranches = true;
 
             foreach (const Edge& e, edges(v, EdgesToLeaf))
@@ -469,7 +475,7 @@ ItemHistoryGraph& ItemHistoryGraph::operator=(const ItemHistoryGraph& other)
 
 bool ItemHistoryGraph::isNull() const
 {
-    return d == *imageHistoryGraphDataSharedNull;
+    return (d == *imageHistoryGraphDataSharedNull);
 }
 
 bool ItemHistoryGraph::isEmpty() const
@@ -479,7 +485,7 @@ bool ItemHistoryGraph::isEmpty() const
 
 bool ItemHistoryGraph::isSingleVertex() const
 {
-    return d->vertexCount() == 1;
+    return (d->vertexCount() == 1);
 }
 
 bool ItemHistoryGraph::hasEdges() const
@@ -502,8 +508,9 @@ void ItemHistoryGraph::clear()
     *d = HistoryGraph();
 }
 
-ItemHistoryGraph ItemHistoryGraph::fromInfo(const ItemInfo& info, HistoryLoadingMode loadingMode,
-        ProcessingMode processingMode)
+ItemHistoryGraph ItemHistoryGraph::fromInfo(const ItemInfo& info,
+                                            HistoryLoadingMode loadingMode,
+                                            ProcessingMode processingMode)
 {
     ItemHistoryGraph graph;
 
@@ -544,6 +551,7 @@ void ItemHistoryGraph::addHistory(const DImageHistory& givenHistory, const ItemI
 void ItemHistoryGraph::addHistory(const DImageHistory& givenHistory, const HistoryImageId& subjectId)
 {
     // append the subject to its history
+
     DImageHistory history = givenHistory;
 
     if (subjectId.isValid())
@@ -559,7 +567,7 @@ void ItemHistoryGraph::addScannedHistory(const DImageHistory& history, qlonglong
     d->addHistory(history, historySubjectId);
 }
 
-void ItemHistoryGraphData::addHistory(const DImageHistory& history, qlonglong extraCurrent/*=0*/)
+void ItemHistoryGraphData::addHistory(const DImageHistory& history, qlonglong extraCurrent)
 {
     if (history.isEmpty())
     {
@@ -607,7 +615,7 @@ void ItemHistoryGraphData::addHistory(const DImageHistory& history, qlonglong ex
     {
         HistoryGraph::Vertex v = addVertexScanned(extraCurrent);
 
-        if (!v.isNull() && !last.isNull() && v != last)
+        if (!v.isNull() && !last.isNull() && (v != last))
         {
             HistoryGraph::Edge e = addEdge(v, last);
             setProperties(e, edgeProps);
@@ -622,7 +630,7 @@ void ItemHistoryGraph::addRelations(const QList<QPair<qlonglong, qlonglong> >& p
 
     foreach (const IdPair& pair, pairs)
     {
-        if (pair.first < 1 || pair.second < 1)
+        if ((pair.first < 1) || (pair.second < 1))
         {
             continue;
         }
@@ -685,7 +693,8 @@ void ItemHistoryGraph::dropUnresolvedEntries()
 
     // The problem is that with each removable, the vertex list is invalidated,
     // so we cannot do one loop over d->vertices
-    for (int i=0; i<d->vertexCount(); )
+
+    for (int i = 0 ; i < d->vertexCount() ; )
     {
         i = d->removeNextUnresolvedVertex(i);
     }
@@ -696,7 +705,7 @@ void ItemHistoryGraph::sortForInfo(const ItemInfo& subject)
     // Remove nodes which could not be resolved into image infos
     QList<HistoryGraph::Vertex> toRemove;
 
-    foreach(const HistoryGraph::Vertex& v, d->vertices())
+    foreach (const HistoryGraph::Vertex& v, d->vertices())
     {
         HistoryVertexProperties& props = d->properties(v);
         ItemScanner::sortByProximity(props.infos, subject);
@@ -713,7 +722,7 @@ void ItemHistoryGraph::prepareForDisplay(const ItemInfo& subject)
 QList<QPair<qlonglong, qlonglong> > ItemHistoryGraph::relationCloud() const
 {
     QList<QPair<qlonglong, qlonglong> > pairs;
-    ItemHistoryGraphData closure         = ItemHistoryGraphData(d->transitiveClosure());
+    ItemHistoryGraphData closure          = ItemHistoryGraphData(d->transitiveClosure());
     QList<HistoryGraph::VertexPair> edges = closure.edgePairs();
 
     foreach (const HistoryGraph::VertexPair& edge, edges)
@@ -733,7 +742,7 @@ QList<QPair<qlonglong, qlonglong> > ItemHistoryGraph::relationCloud() const
 QPair<QList<qlonglong>, QList<qlonglong> > ItemHistoryGraph::relationCloudParallel() const
 {
     QList<qlonglong> subjects, objects;
-    ItemHistoryGraphData closure         = ItemHistoryGraphData(d->transitiveClosure());
+    ItemHistoryGraphData closure          = ItemHistoryGraphData(d->transitiveClosure());
     QList<HistoryGraph::VertexPair> edges = closure.edgePairs();
 
     foreach (const HistoryGraph::VertexPair& edge, edges)
@@ -787,7 +796,7 @@ QHash<ItemInfo, HistoryImageId::Types> ItemHistoryGraph::categorize() const
 
     QHash<ItemInfo, HistoryImageId::Types> types;
 
-    foreach(const HistoryGraph::Vertex& v, d->vertices())
+    foreach (const HistoryGraph::Vertex& v, d->vertices())
     {
         const HistoryVertexProperties& props = d->properties(v);
 
@@ -798,7 +807,7 @@ QHash<ItemInfo, HistoryImageId::Types> ItemHistoryGraph::categorize() const
 
         HistoryImageId::Types type = vertexType.value(v);
 
-        foreach(const ItemInfo& info, props.infos)
+        foreach (const ItemInfo& info, props.infos)
         {
             types[info] = type;
         }
@@ -809,11 +818,10 @@ QHash<ItemInfo, HistoryImageId::Types> ItemHistoryGraph::categorize() const
 
 static QString toString(const HistoryVertexProperties& props)
 {
-    QString s;
-    s = QLatin1String("Ids: ");
+    QString s = QLatin1String("Ids: ");
     QStringList ids;
 
-    foreach(const ItemInfo& info, props.infos)
+    foreach (const ItemInfo& info, props.infos)
     {
         ids << QString::number(info.id());
     }
@@ -862,21 +870,22 @@ QDebug operator<<(QDebug dbg, const ItemHistoryGraph& g)
         dbg << "Graph with" << vertices.size() << "vertices:" << endl;
     }
 
-    foreach(const HistoryGraph::Vertex& target, vertices)
+    foreach (const HistoryGraph::Vertex& target, vertices)
     {
         QString targetString = toString(g.data().properties(target));
 
         QStringList sourceVertexTexts;
 
-        foreach(const HistoryGraph::Vertex& source, g.data().adjacentVertices(target, HistoryGraph::InboundEdges))
+        foreach (const HistoryGraph::Vertex& source, g.data().adjacentVertices(target, HistoryGraph::InboundEdges))
         {
             sourceVertexTexts << toString(g.data().properties(source));
         }
 
         if (!sourceVertexTexts.isEmpty())
         {
-            dbg.nospace() << QLatin1String("{ ") + targetString + QLatin1String(" } ") +
-                          QLatin1String("-> { ") + sourceVertexTexts.join(QLatin1String(" }, { ")) + QLatin1String(" }") << endl;
+            dbg.nospace() << QLatin1String("{ ")    + targetString + QLatin1String(" } ") +
+                             QLatin1String("-> { ") + sourceVertexTexts.join(QLatin1String(" }, { ")) + 
+                             QLatin1String(" }") << endl;
         }
         else if (g.data().outDegree(target) == 0)
         {

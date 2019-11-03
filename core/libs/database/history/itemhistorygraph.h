@@ -52,14 +52,15 @@ public:
 
     ItemHistoryGraph& operator=(const ItemHistoryGraph& other);
 
-    bool isNull() const;
-    bool isEmpty() const;
-    bool isSingleVertex() const;
+    bool isNull()                      const;
+    bool isEmpty()                     const;
+    bool isSingleVertex()              const;
+
     /**
      * Returns if the graph contains any edges. Because loops are not allowed,
      * this also means (!isEmpty() && !isSingleVertex()).
      */
-    bool hasEdges() const;
+    bool hasEdges()                    const;
 
     ItemHistoryGraphData& data();
     const ItemHistoryGraphData& data() const;
@@ -151,33 +152,33 @@ public:
      * the edges of the transitive closure.
      * The first variant returns (1,2),(3,4),(6,8), the second (1,3,6)(2,4,8).
      */
-    QList<QPair<qlonglong, qlonglong> > relationCloud() const;
+    QList<QPair<qlonglong, qlonglong> > relationCloud()                const;
     QPair<QList<qlonglong>, QList<qlonglong> > relationCloudParallel() const;
 
     /**
      * Returns image infos / ids from all vertices in this graph
      */
-    QList<ItemInfo> allImages() const;
-    QList<qlonglong> allImageIds() const;
+    QList<ItemInfo> allImages()                                        const;
+    QList<qlonglong> allImageIds()                                     const;
 
     /**
      * Returns image infos / ids from all root vertices in this graph,
      * i.e. vertices with no precedent history.
      */
-    QList<ItemInfo> rootImages() const;
+    QList<ItemInfo> rootImages()                                       const;
 
     /**
      * Returns image infos / ids from all leaf vertices in this graph,
      * i.e. vertices with no subsequent history.
      */
-    QList<ItemInfo> leafImages() const;
+    QList<ItemInfo> leafImages()                                       const;
 
     /**
      * Attempts at a categorization of all images in the graph
      * into the types defined by HistoryImageId.
      * The type will be invalid if no decision can be made due to conflicting data.
      */
-    QHash<ItemInfo, HistoryImageId::Types> categorize() const;
+    QHash<ItemInfo, HistoryImageId::Types> categorize()                const;
 
 private:
 
