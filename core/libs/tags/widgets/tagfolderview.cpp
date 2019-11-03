@@ -113,7 +113,8 @@ void TagFolderView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
         return;
     }
 
-    if (tag->id() != FaceTags::unconfirmedPersonTagId() && tag->id() != FaceTags::unknownPersonTagId())
+    if (tag->id() != FaceTags::unconfirmedPersonTagId() &&
+        tag->id() != FaceTags::unknownPersonTagId())
     {
         cmh.addActionNewTag(tagModificationHelper(), tag);
 #ifdef HAVE_AKONADICONTACT
@@ -143,7 +144,8 @@ void TagFolderView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
     cmh.addExportMenu();
     cmh.addSeparator();
 
-    if (tag->id() != FaceTags::unconfirmedPersonTagId() && tag->id() != FaceTags::unknownPersonTagId())
+    if (tag->id() != FaceTags::unconfirmedPersonTagId() &&
+        tag->id() != FaceTags::unknownPersonTagId())
     {
         cmh.addActionDeleteTag(tagModificationHelper(), tag);
         cmh.addSeparator();
@@ -170,7 +172,9 @@ void TagFolderView::slotTagNewFromABCMenu(const QString& personName)
 
 void TagFolderView::slotExpandNode()
 {
-    //QModelIndex root                 = this->model()->index(0,0);
+/*
+    QModelIndex root                 = this->model()->index(0,0);
+*/
     QItemSelectionModel* const model = this->selectionModel();
     QModelIndexList selected         = model->selectedIndexes();
 
@@ -192,13 +196,13 @@ void TagFolderView::slotExpandNode()
         }
 
         int it            = 0;
-        QModelIndex child = current.model()->index(it++, 0, current);
+        QModelIndex child = current.model()->index(++it, 0, current);
 
         while (child.isValid())
         {
             expand(child);
             greyNodes.enqueue(child);
-            child = current.model()->index(it++, 0, current);
+            child = current.model()->index(++it, 0, current);
         }
     }
 }
@@ -227,13 +231,13 @@ void TagFolderView::slotCollapseNode()
         }
 
         int it            = 0;
-        QModelIndex child = current.model()->index(it++, 0, current);
+        QModelIndex child = current.model()->index(++it, 0, current);
 
         while (child.isValid())
         {
             collapse(child);
             greyNodes.enqueue(child);
-            child = current.model()->index(it++, 0, current);
+            child = current.model()->index(++it, 0, current);
         }
     }
 }
@@ -242,11 +246,6 @@ void TagFolderView::handleCustomContextMenuAction(QAction* action, AlbumPointer<
 {
     Album* const a    = album;
     TAlbum* const tag = dynamic_cast<TAlbum*>(a);
-
-    if (!tag)
-    {
-        return;
-    }
 
     if (!tag || !action)
     {

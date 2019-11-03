@@ -50,7 +50,7 @@ public:
      * @param parent parent for Qt's parent child mechanism
      * @param model tag model to display
      */
-    TagFolderView(QWidget* const parent, Digikam::TagModel* const model);
+    TagFolderView(QWidget* const parent, TagModel* const model);
 
     /**
      * Destructor.
@@ -81,7 +81,7 @@ Q_SIGNALS:
 
 protected:
 
-    QString contextMenuTitle() const override;
+    QString contextMenuTitle() const                                                       override;
 
     /**
      * Hook method to add custom actions to the generated context menu.
@@ -95,7 +95,7 @@ protected:
      * @param album tag on which the context menu will be created. May be null if
      *              it is requested on no tag entry
      */
-    virtual void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album) override;
+    virtual void addCustomContextMenuActions(ContextMenuHelper& cmh, Album* album)         override;
 
     /**
      * Hook method to handle the custom context menu actions that were added
@@ -114,7 +114,7 @@ protected:
      *
      * @param event context menu event triggered by right click
      */
-    void contextMenuEvent(QContextMenuEvent* event) override;
+    void contextMenuEvent(QContextMenuEvent* event)                                       override;
 
     /**
      * Implementation of AddCustomContextMenuActions(see above) that handle
@@ -126,7 +126,7 @@ protected:
      */
     virtual void setContexMenuItems(ContextMenuHelper& cmh, const QList<TAlbum*>& albums);
 
-    virtual void keyPressEvent(QKeyEvent* event) override;
+    virtual void keyPressEvent(QKeyEvent* event)                                         override;
 
 private Q_SLOTS:
 
