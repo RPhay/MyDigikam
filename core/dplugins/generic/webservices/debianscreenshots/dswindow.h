@@ -81,6 +81,8 @@ private:
 
 private:
 
+    DSWindow(); // disable
+
     bool prepareImageForUpload(const QString& imgPath, MassageType massage);
     void uploadNextPhoto();
     void buttonStateChange(bool state);
