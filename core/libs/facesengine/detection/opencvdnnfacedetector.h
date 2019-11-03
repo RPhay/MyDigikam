@@ -65,6 +65,12 @@ public:
 
 private:
 
+    OpenCVDNNFaceDetector(const OpenCVDNNFaceDetector&);            // Disable
+    OpenCVDNNFaceDetector& operator=(const OpenCVDNNFaceDetector&); // Disable
+
+
+private:
+
     DetectorNNModel      m_modelType;
     DNNFaceDetectorBase* m_inferenceEngine;
 };

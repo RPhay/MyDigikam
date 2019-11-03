@@ -114,7 +114,10 @@ private:
 
 private:
 
-    OpenCVFaceDetector(const OpenCVFaceDetector&); // Disable
+    OpenCVFaceDetector(const OpenCVFaceDetector&);              // Disable
+    OpenCVFaceDetector& operator=(const OpenCVFaceDetector&);   // Disable
+
+private:
 
     class Private;
     Private* const d;

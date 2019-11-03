@@ -139,8 +139,8 @@ FaceDetector::FaceDetector()
 }
 
 FaceDetector::FaceDetector(const FaceDetector& other)
+    : d(other.d)
 {
-    d = other.d;
 }
 
 FaceDetector& FaceDetector::operator=(const FaceDetector& other)

@@ -51,11 +51,11 @@ class Q_DECL_HIDDEN DetectObjectParameters
 public:
 
     DetectObjectParameters()
+        : searchIncrement(0),
+          grouping(0),
+          flags(0),
+          minSize(cv::Size(0, 0))
     {
-        searchIncrement = 0;
-        grouping        = 0;
-        flags           = 0;
-        minSize         = cv::Size(0, 0);
     }
 
 public:
