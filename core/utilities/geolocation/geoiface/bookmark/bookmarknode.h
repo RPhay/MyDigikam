@@ -75,7 +75,9 @@ public:
 
 private:
 
-    BookmarkNode(const BookmarkNode&); // Disable
+    // Hidden copy constructor and assignment operator.
+    BookmarkNode(const BookmarkNode&);
+    BookmarkNode& operator=(const BookmarkNode&);
 
     class Private;
     Private* const d;

@@ -144,30 +144,30 @@ public:
                                LoadingTaskStatus loadingTaskStatus = LoadingTaskStatusLoading);
 
     virtual void execute()                                     override;
-            void progressInfo(DImg* const img, float progress) override;
-            bool continueQuery(DImg* const img)                override;
-            void setStatus(LoadingTaskStatus status)           override;
+    virtual void progressInfo(DImg* const img, float progress) override;
+    virtual bool continueQuery(DImg* const img)                override;
+    virtual void setStatus(LoadingTaskStatus status)           override;
 
-            bool needsPostProcessing() const;
+    virtual bool needsPostProcessing() const;
     virtual void postProcess();
 
     // LoadingProcess
 
-            bool completed()   const override;
-            QString filePath() const override;
-            QString cacheKey() const override;
-            void addListener(LoadingProcessListener* const listener)            override;
-            void removeListener(LoadingProcessListener* const listener)         override;
-            void notifyNewLoadingProcess(LoadingProcess* const process,
+    virtual bool completed()   const override;
+    virtual QString filePath() const override;
+    virtual QString cacheKey() const override;
+    virtual void addListener(LoadingProcessListener* const listener)            override;
+    virtual void removeListener(LoadingProcessListener* const listener)         override;
+    virtual void notifyNewLoadingProcess(LoadingProcess* const process,
                                          const LoadingDescription& description) override;
 
     // LoadingProcessListener
 
-            bool querySendNotifyEvent()          const override;
-            void setResult(const LoadingDescription& loadingDescription,
+    virtual bool querySendNotifyEvent()          const override;
+    virtual void setResult(const LoadingDescription& loadingDescription,
                            const DImg& img)            override;
-            LoadSaveNotifier* loadSaveNotifier() const override;
-            LoadSaveThread::AccessMode accessMode()    override;
+    virtual LoadSaveNotifier* loadSaveNotifier() const override;
+    virtual LoadSaveThread::AccessMode accessMode()    override;
 
     DImg img() { return m_img; }
 

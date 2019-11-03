@@ -69,7 +69,9 @@ public:
 
 private:
 
-    EffectMngr(const EffectMngr&); // Disable
+    // Hidden copy constructor and assignment operator.
+    EffectMngr(const EffectMngr&);
+    EffectMngr& operator=(const EffectMngr&);
 
     class Private;
     Private* const d;

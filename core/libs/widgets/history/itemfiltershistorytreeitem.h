@@ -58,7 +58,9 @@ public:
 
 private:
 
-    ItemFiltersHistoryTreeItem(const ItemFiltersHistoryTreeItem&); // disable
+    // Hidden copy constructor and assignment operator.
+    ItemFiltersHistoryTreeItem(const ItemFiltersHistoryTreeItem&);
+    ItemFiltersHistoryTreeItem& operator=(const ItemFiltersHistoryTreeItem&);
 
 private:
 

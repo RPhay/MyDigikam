@@ -82,7 +82,9 @@ public:
 
 private:
 
-    UndoAction(const UndoAction&); // Disable
+    // Hidden copy constructor and assignment operator.
+    UndoAction(const UndoAction&);
+    UndoAction& operator=(const UndoAction&);
 
     class Private;
     Private* const d;

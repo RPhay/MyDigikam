@@ -89,7 +89,9 @@ public:
 
 private:
 
-    TransitionMngr(const TransitionMngr&); // Disable
+    // Hidden copy constructor and assignment operator.
+    TransitionMngr(const TransitionMngr&);
+    TransitionMngr& operator=(const TransitionMngr&);
 
     class Private;
     Private* const d;
