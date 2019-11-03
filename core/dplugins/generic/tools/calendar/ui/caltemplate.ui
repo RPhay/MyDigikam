@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>715</width>
-    <height>425</height>
+    <width>848</width>
+    <height>429</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -81,14 +81,17 @@
           </item>
           <item row="1" column="1">
            <widget class="QComboBox" name="resolutionCombo">
+            <property name="currentText">
+             <string>High</string>
+            </property>
             <item>
              <property name="text">
-              <string>High</string>
+              <string comment="High resolution level">High</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>Low</string>
+              <string comment="Mow resolution level">Low</string>
              </property>
             </item>
            </widget>

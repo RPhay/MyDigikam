@@ -60,7 +60,7 @@
        <item>
         <widget class="QPushButton" name="parcourir">
          <property name="text">
-          <string notr="true">Select</string>
+          <string notr="true" comment="Select file source to upload">Select</string>
          </property>
         </widget>
        </item>

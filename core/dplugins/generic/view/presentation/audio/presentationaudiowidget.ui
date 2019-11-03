@@ -40,14 +40,14 @@
          <item row="1" column="0">
           <widget class="QPushButton" name="m_prevButton">
            <property name="text">
-            <string>Previous</string>
+            <string comment="Previous item to show">Previous</string>
            </property>
           </widget>
          </item>
          <item row="1" column="1">
           <widget class="QPushButton" name="m_nextButton">
            <property name="text">
-            <string>Next</string>
+            <string comment="Next item to show">Next</string>
            </property>
           </widget>
          </item>
@@ -90,7 +90,7 @@
            <item row="1" column="0">
             <widget class="QLabel" name="label_3">
              <property name="text">
-              <string>Total:</string>
+              <string comment="Total amount of time of presentation">Total:</string>
              </property>
             </widget>
            </item>

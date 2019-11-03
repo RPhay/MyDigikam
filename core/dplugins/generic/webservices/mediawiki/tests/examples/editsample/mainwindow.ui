@@ -64,7 +64,7 @@
          <enum>QFrame::NoFrame</enum>
         </property>
         <property name="text">
-         <string notr="true">Username:</string>
+         <string notr="true" comment="Logging account user name">Username:</string>
         </property>
        </widget>
       </item>
