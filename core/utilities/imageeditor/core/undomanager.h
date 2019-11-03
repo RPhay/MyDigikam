@@ -86,7 +86,9 @@ private:
 
 private:
 
-    UndoManager(const UndoManager&); // Disable
+    // Hidden copy constructor and assignment operator.
+    UndoManager(const UndoManager&);
+    UndoManager& operator=(const UndoManager&);
 
     class Private;
     Private* const d;

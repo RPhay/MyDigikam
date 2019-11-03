@@ -144,6 +144,10 @@ protected:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    ItemViewDelegate(const ItemViewDelegate&);
+    ItemViewDelegate& operator=(const ItemViewDelegate&);
+
     Q_DECLARE_PRIVATE(ItemViewDelegate)
 };
 

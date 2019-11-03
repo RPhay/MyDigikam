@@ -64,7 +64,9 @@ public:
 
 private:
 
-    UndoCache(const UndoCache&); // Disable
+    // Hidden copy constructor and assignment operator.
+    UndoCache(const UndoCache&);
+    UndoCache& operator=(const UndoCache&);
 
     class Private;
     Private* const d;

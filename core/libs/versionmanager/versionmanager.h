@@ -83,7 +83,9 @@ public:
 
 private:
 
-    VersionManager(const VersionManager&); // Disable
+    // Hidden copy constructor and assignment operator.
+    VersionManager(const VersionManager&);
+    VersionManager& operator=(const VersionManager&);
 
     class VersionManagerPriv;
     VersionManagerPriv* const d;

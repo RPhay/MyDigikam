@@ -174,7 +174,9 @@ public:
 
 private:
 
-    ImageIface(const ImageIface&); // Disable
+    // Hidden copy constructor and assignment operator.
+    ImageIface(const ImageIface&);
+    ImageIface& operator=(const ImageIface&);
 
     class Private;
     Private* const d;
