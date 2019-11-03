@@ -156,7 +156,7 @@ FacePipeline::~FacePipeline()
     delete d->parallelDetectors;
     delete d->recognitionWorker;
     delete d->databaseWriter;
-    delete d->trainer;
+    delete d->trainerWorker;
     qDeleteAll(d->thumbnailLoadThreads);
     delete d->detectionBenchmarker;
     delete d->recognitionBenchmarker;
@@ -258,7 +258,7 @@ void FacePipeline::plugDatabaseWriter(WriteMode mode)
 
 void FacePipeline::plugTrainer()
 {
-    d->trainer = new Trainer(d);
+    d->trainerWorker = new TrainerWorker(d);
     d->createThumbnailLoadThread();
 }
 
@@ -322,9 +322,9 @@ void FacePipeline::construct()
         qCDebug(DIGIKAM_GENERAL_LOG) << "Face PipeLine: add database writer";
     }
 
-    if (d->trainer)
+    if (d->trainerWorker)
     {
-        d->pipeline << d->trainer;
+        d->pipeline << d->trainerWorker;
         qCDebug(DIGIKAM_GENERAL_LOG) << "Face PipeLine: add faces trainer";
     }
 

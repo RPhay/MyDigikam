@@ -158,7 +158,7 @@ public:
 
 // ----------------------------------------------------------------------------------------
 
-Trainer::Trainer(FacePipeline::Private* const d)
+TrainerWorker::TrainerWorker(FacePipeline::Private* const d)
     : imageRetriever(d),
       d(d)
 {
@@ -171,9 +171,9 @@ Trainer::Trainer(FacePipeline::Private* const d)
     database.activeFaceRecognizer(algo);
 }
 
-void Trainer::process(FacePipelineExtendedPackage::Ptr package)
+void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
 {
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Trainer: processing one package";
+    //qCDebug(DIGIKAM_GENERAL_LOG) << "TrainerWorker: processing one package";
     // Get a list of faces with type FaceForTraining (probably type is ConfirmedFace)
 
     QList<FaceTagsIface> toTrain;
@@ -216,6 +216,7 @@ void Trainer::process(FacePipelineExtendedPackage::Ptr package)
         MapListTrainingDataProvider provider;
 
         // Group images by identity
+
         for (int i = 0 ; i < toTrain.size() ; ++i)
         {
             provider.imagesToTrain[identities[i]].list << images[i];
@@ -231,7 +232,7 @@ void Trainer::process(FacePipelineExtendedPackage::Ptr package)
     emit processed(package);
 }
 
-void Trainer::aboutToDeactivate()
+void TrainerWorker::aboutToDeactivate()
 {
     imageRetriever.cancel();
 }
@@ -343,7 +344,7 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
                 it->roles |= FacePipelineFaceTagsIface::Edited;
             }
 
-            // Training is done by trainer
+            // Training is done by trainerWorker
         }
 
         if (!package->image.isNull())

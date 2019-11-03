@@ -127,14 +127,14 @@ protected:
 
 // ----------------------------------------------------------------------------------------
 
-class Q_DECL_HIDDEN Trainer : public WorkerObject
+class Q_DECL_HIDDEN TrainerWorker : public WorkerObject
 {
     Q_OBJECT
 
 public:
 
-    explicit Trainer(FacePipeline::Private* const d);
-    ~Trainer()
+    explicit TrainerWorker(FacePipeline::Private* const d);
+    ~TrainerWorker()
     {
         wait();    // protect detector
     }

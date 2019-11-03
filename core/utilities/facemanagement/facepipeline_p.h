@@ -49,7 +49,7 @@ class DetectionBenchmarker;
 class RecognitionBenchmarker;
 class DetectionWorker;
 class RecognitionWorker;
-class Trainer;
+class TrainerWorker;
 class DatabaseWriter;
 class FacePreviewLoader;
 class FaceItemRetriever;
@@ -126,7 +126,7 @@ public:
     ParallelPipes*                          parallelDetectors;
     RecognitionWorker*                      recognitionWorker;
     DatabaseWriter*                         databaseWriter;
-    Trainer*                                trainer;
+    TrainerWorker*                          trainerWorker;
     DetectionBenchmarker*                   detectionBenchmarker;
     RecognitionBenchmarker*                 recognitionBenchmarker;
 

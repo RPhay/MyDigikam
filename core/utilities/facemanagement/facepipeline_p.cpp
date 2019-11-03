@@ -66,7 +66,7 @@ FacePipeline::Private::Private(FacePipeline* const q)
     parallelDetectors      = nullptr;
     recognitionWorker      = nullptr;
     databaseWriter         = nullptr;
-    trainer                = nullptr;
+    trainerWorker          = nullptr;
     detectionBenchmarker   = nullptr;
     recognitionBenchmarker = nullptr;
     priority               = QThread::LowPriority;
