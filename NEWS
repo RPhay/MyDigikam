@@ -15,4 +15,5 @@ BUGFIXES:
 005 ==> 382311 - Photos in collapsed groups are incorrectly excluded if first photo in group does not match filter.
 006 ==> 396337 - In tag filter view (or any other filitered view), grouped photos should not always have "group" thumbnail
 007 ==> 413704 - Filters do not work on hidden grouped images.
-007 ==> 
+007 ==> 413233 - Application crashes when click in Albums left panel.
+008 ==> 
