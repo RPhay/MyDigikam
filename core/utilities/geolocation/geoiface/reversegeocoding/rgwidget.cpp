@@ -304,7 +304,7 @@ RGWidget::RGWidget(GPSItemModel* const imageModel, QItemSelectionModel* const se
 
     d->LGridContainer->setLayout(LGridLayout);
 
-    d->buttonRGSelected = new QPushButton(i18n("Apply reverse geocoding"), this);
+    d->buttonRGSelected = new QPushButton(i18n("Process reverse geocoding"), this);
     vBoxLayout->addWidget(d->buttonRGSelected);
 
     d->backendRGList.append(new BackendOsmRG(this));
