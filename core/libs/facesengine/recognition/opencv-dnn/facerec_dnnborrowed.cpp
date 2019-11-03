@@ -96,7 +96,8 @@ void DNNFaceRecognizer::train(std::vector<std::vector<float> > _in_src,
     // check if data is well- aligned
     if (labels.total() != src.size())
     {
-        String error_message = format("The number of samples (src) must equal the number of labels (labels). Was len(samples)=%d, len(labels)=%d.", src.size(), m_labels.total());
+        String error_message = format("The number of samples (src) must equal the number of labels (labels). Was len(samples)=%d, len(labels)=%d.",
+                                      (int)src.size(), (int)m_labels.total());
         CV_Error(CV_StsBadArg, error_message);
     }
 

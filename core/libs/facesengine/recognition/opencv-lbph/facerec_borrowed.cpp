@@ -363,7 +363,8 @@ void LBPHFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_label
 
     if (labels.total() != src.size())
     {
-        String error_message = format("The number of samples (src) must equal the number of labels (labels). Was len(samples)=%d, len(labels)=%d.", src.size(), m_labels.total());
+        String error_message = format("The number of samples (src) must equal the number of labels (labels). Was len(samples)=%d, len(labels)=%d.",
+                                      (int)src.size(), (int)m_labels.total());
         CV_Error(CV_StsBadArg, error_message);
     }
 
