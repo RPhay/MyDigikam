@@ -207,6 +207,12 @@ protected:
     CustomStepsIntSpinBox* m_firstBox;
     CustomStepsIntSpinBox* m_secondBox;
     QLabel*                m_betweenLabel;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    SearchFieldRangeInt(const SearchFieldRangeInt&);
+    SearchFieldRangeInt& operator=(const SearchFieldRangeInt&);
 };
 
 //-----------------------------------------------------------------------------
@@ -249,6 +255,12 @@ protected:
     CustomStepsDoubleSpinBox* m_firstBox;
     CustomStepsDoubleSpinBox* m_secondBox;
     QLabel*                   m_betweenLabel;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    SearchFieldRangeDouble(const SearchFieldRangeDouble&);
+    SearchFieldRangeDouble& operator=(const SearchFieldRangeDouble&);
 };
 
 //-----------------------------------------------------------------------------
@@ -335,6 +347,12 @@ protected:
     QVariant::Type        m_type;
     QString               m_anyText;
     ChoiceSearchModel*    m_model;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    SearchFieldChoice(const SearchFieldChoice&);
+    SearchFieldChoice& operator=(const SearchFieldChoice&);
 };
 
 //-----------------------------------------------------------------------------
@@ -419,6 +437,12 @@ protected:
     RatingComboBox* m_firstBox;
     RatingComboBox* m_secondBox;
     QLabel*         m_betweenLabel;
+
+private:
+
+    // Hidden copy constructor and assignment operator.
+    SearchFieldRating(const SearchFieldRating&);
+    SearchFieldRating& operator=(const SearchFieldRating&);
 };
 
 //-----------------------------------------------------------------------------

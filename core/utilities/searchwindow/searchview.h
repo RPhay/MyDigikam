@@ -152,6 +152,10 @@ protected:
 
 private:
 
+    // Hidden copy constructor and assignment operator.
+    SearchView(const SearchView&);
+    SearchView& operator=(const SearchView&);
+
     class Private;
     Private* const d;
 };
