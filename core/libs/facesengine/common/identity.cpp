@@ -47,8 +47,8 @@ Identity::Identity()
 }
 
 Identity::Identity(const Identity& other)
+    : d(other.d)
 {
-    d = other.d;
 }
 
 Identity& Identity::operator=(const Identity& other)
