@@ -211,7 +211,7 @@ PointTransformAffine normalizing_tform(const cv::Rect& rect)
     tlcorner[0] = rect.x;
     tlcorner[1] = rect.y;
     std::vector<float> trcorner(2);
-    tlcorner[0] = rect.x + rect.width;
+    trcorner[0] = rect.x + rect.width;
     trcorner[1] = rect.y;
     std::vector<float> brcorner(2);
     brcorner[0] = rect.x + rect.width;
