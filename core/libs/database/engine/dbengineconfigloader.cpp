@@ -60,6 +60,7 @@ DbEngineConfigSettings DbEngineConfigSettingsLoader::readDatabase(QDomElement& d
 {
     DbEngineConfigSettings configElement;
     configElement.databaseID = QLatin1String("Unidentified");
+    (void)configElement.databaseID; // prevent cppcheck warning.
 
     if (!databaseElement.hasAttribute(QLatin1String("name")))
     {

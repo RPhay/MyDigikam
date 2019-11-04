@@ -427,6 +427,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     uchar* data  = nullptr;
     int colorMul = 1;       // color multiplier
     colorModel   = DImg::RGB;
+    (void)colorModel; // prevent cppcheck warning.
 
     if (colorDepth == 8)
     {

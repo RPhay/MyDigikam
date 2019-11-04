@@ -490,8 +490,10 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
             int captionW        = w - 2;
             double ratio        = photo->m_pAdvPrintCaptionInfo->m_captionSize * 0.01;
             int captionH        = (int)(qMin(w, h) * ratio);
-            int exifOrientation = DMetadata::ORIENTATION_NORMAL;
             int orientatation   = photo->m_rotation;
+            int exifOrientation = DMetadata::ORIENTATION_NORMAL;
+            (void)exifOrientation; // prevent cppcheck warning.
+
 
             if (photo->m_iface)
             {

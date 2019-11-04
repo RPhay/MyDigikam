@@ -1131,7 +1131,6 @@ void YFTalker::slotParseResponseUpdatePhotoFile()
     photo.m_apiSelfUrl  = tmpPhoto.m_apiSelfUrl;
     photo.m_apiMediaUrl = tmpPhoto.m_apiMediaUrl;
     photo.m_remoteUrl   = tmpPhoto.m_remoteUrl;
-    photo.m_remoteUrl   = tmpPhoto.m_remoteUrl;
     photo.m_author      = tmpPhoto.m_author;
 
     // update info
