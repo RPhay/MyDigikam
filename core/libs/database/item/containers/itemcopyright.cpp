@@ -92,10 +92,13 @@ ItemCopyright::~ItemCopyright()
 
 ItemCopyright& ItemCopyright::operator=(const ItemCopyright& other)
 {
-    delete m_cache;
-    m_cache = nullptr;
+    if (this != &other)
+    {
+        delete m_cache;
+        m_cache = nullptr;
+        m_id    = other.m_id;
+    }
 
-    m_id = other.m_id;
     return *this;
 }
 

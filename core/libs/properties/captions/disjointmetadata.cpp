@@ -180,8 +180,12 @@ DisjointMetadata::~DisjointMetadata()
 
 DisjointMetadata& DisjointMetadata::operator=(const DisjointMetadata& other)
 {
-    delete d;
-    d = new Private(*other.d);
+    if (this != &other)
+    {
+        delete d;
+        d = new Private(*other.d);
+    }
+
     return *this;
 }
 

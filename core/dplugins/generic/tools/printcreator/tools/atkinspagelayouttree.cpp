@@ -54,11 +54,14 @@ AtkinsPageLayoutTree::AtkinsPageLayoutTree(const AtkinsPageLayoutTree& other)
 
 AtkinsPageLayoutTree& AtkinsPageLayoutTree::operator=(const AtkinsPageLayoutTree& other)
 {
-    delete m_root;
-    m_root             = new AtkinsPageLayoutNode(*(other.m_root));
-    m_count            = other.m_count;
-    m_aspectRatioPage  = other.m_aspectRatioPage;
-    m_absoluteAreaPage = other.m_absoluteAreaPage;
+    if (this != &other)
+    {
+        delete m_root;
+        m_root             = new AtkinsPageLayoutNode(*(other.m_root));
+        m_count            = other.m_count;
+        m_aspectRatioPage  = other.m_aspectRatioPage;
+        m_absoluteAreaPage = other.m_absoluteAreaPage;
+    }
 
     return *this;
 }
