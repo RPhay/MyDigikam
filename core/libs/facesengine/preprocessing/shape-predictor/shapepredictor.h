@@ -111,7 +111,7 @@ inline std::vector<T> location(const std::vector<T>& shape,
                                unsigned long idx)
 {
     std::vector<T> temp(2);
-    temp[0] = shape[idx * 2];
+    temp[0] = shape[idx * 2    ];
     temp[1] = shape[idx * 2 + 1];
 
     return temp;

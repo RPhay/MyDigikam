@@ -50,12 +50,12 @@ QDataStream& operator >> (QDataStream& dataStream, SplitFeature& sp)
 
 unsigned long left_child(unsigned long idx)
 {
-    return 2*idx + 1;
+    return (2*idx + 1);
 }
 
 unsigned long right_child(unsigned long idx)
 {
-    return 2*idx + 2;
+    return (2*idx + 2);
 }
 
 // ----------------------------------------------------------------------------------------
@@ -356,7 +356,7 @@ FullObjectDetection ShapePredictor::operator()(const cv::Mat& img, const cv::Rec
     for (unsigned long iter = 0 ; iter < forests.size() ; ++iter)
     {
         extract_feature_pixel_values(img, rect, current_shape, initial_shape,
-                                        anchor_idx[iter], deltas[iter], feature_pixel_values);
+                                     anchor_idx[iter], deltas[iter], feature_pixel_values);
         unsigned long leaf_idx;
 
         // evaluate all the trees at this level of the cascade.
