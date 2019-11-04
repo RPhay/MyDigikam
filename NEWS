@@ -16,4 +16,5 @@ BUGFIXES:
 006 ==> 396337 - In tag filter view (or any other filitered view), grouped photos should not always have "group" thumbnail
 007 ==> 413704 - Filters do not work on hidden grouped images.
 007 ==> 413233 - Application crashes when click in Albums left panel.
-008 ==> 
+008 ==> 413759 - Tarball is missing translations.
+009 ==> 
