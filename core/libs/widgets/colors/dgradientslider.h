@@ -47,12 +47,13 @@ public:
     virtual ~DGradientSlider();
 
     void   showMiddleCursor(bool b);
-    double leftValue() const;
-    double rightValue() const;
-    double middleValue() const;
+    double leftValue()      const;
+    double rightValue()     const;
+    double middleValue()    const;
     int    gradientOffset() const;
 
-    void setColors(const QColor& lcolor, const QColor& rcolor);
+    void setColors(const QColor& lcolor,
+                   const QColor& rcolor);
 
 public Q_SLOTS:
 
@@ -68,17 +69,22 @@ Q_SIGNALS:
 
 protected:
 
-    void paintEvent(QPaintEvent*) override;
-    void mousePressEvent(QMouseEvent*) override;
+    void paintEvent(QPaintEvent*)        override;
+    void mousePressEvent(QMouseEvent*)   override;
     void mouseReleaseEvent(QMouseEvent*) override;
-    void mouseMoveEvent(QMouseEvent*) override;
-    void leaveEvent(QEvent*) override;
+    void mouseMoveEvent(QMouseEvent*)    override;
+    void leaveEvent(QEvent*)             override;
 
 private:
 
-    void adjustMiddleValue(double newLeftValue, double newRightValue);
-    inline void drawCursorAt(QPainter& painter, double pos, const QColor& brushColor,
-                             int width, int height, int gradientWidth);
+    void adjustMiddleValue(double newLeftValue,
+                           double newRightValue);
+    inline void drawCursorAt(QPainter& painter,
+                             double pos,
+                             const QColor& brushColor,
+                             int width,
+                             int height,
+                             int gradientWidth);
 
 private:
 
