@@ -91,7 +91,7 @@ SharedLoadingTask::SharedLoadingTask(LoadSaveThread* const thread, const Loading
       m_usedProcess(nullptr),
       m_resultLoadingDescription(description)
 {
-    if (m_accessMode == LoadSaveThread::AccessModeRead && SharedLoadingTask::needsPostProcessing())
+    if (m_accessMode == LoadSaveThread::AccessModeRead && needsPostProcessing())
     {
         m_accessMode = LoadSaveThread::AccessModeReadWrite;
     }

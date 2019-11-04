@@ -148,7 +148,7 @@ public:
     virtual bool continueQuery(DImg* const img)                override;
     virtual void setStatus(LoadingTaskStatus status)           override;
 
-    virtual bool needsPostProcessing() const;
+            bool needsPostProcessing() const;
     virtual void postProcess();
 
     // LoadingProcess
