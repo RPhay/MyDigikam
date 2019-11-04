@@ -66,11 +66,12 @@ namespace Digikam
 typedef QMap<qlonglong, Haar::SignatureData> SignatureCache;
 typedef QMap<qlonglong, int>                 AlbumCache;
 
-/** This class encapsulates the Haar signature in a QByteArray
- *  that can be stored as a BLOB in the database.
+/**
+ * This class encapsulates the Haar signature in a QByteArray
+ * that can be stored as a BLOB in the database.
  *
- *  Reading and writing is done in a platform-independent manner, which
- *  induces a certain overhead, but which is necessary IMO.
+ * Reading and writing is done in a platform-independent manner, which
+ * induces a certain overhead, but which is necessary IMO.
  */
 class Q_DECL_HIDDEN DatabaseBlob
 {
@@ -85,7 +86,8 @@ public:
 
     DatabaseBlob() = default;
 
-    /** Read the QByteArray into the Haar::SignatureData.
+    /**
+     * Read the QByteArray into the Haar::SignatureData.
      */
     void read(const QByteArray& array, Haar::SignatureData* const data)
     {

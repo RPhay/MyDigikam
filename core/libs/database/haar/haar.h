@@ -124,8 +124,9 @@ public:
 
 // ---------------------------------------------------------------------------------
 
-/** This class provides very fast lookup if a certain pixel
- *  is set (positive or negative) in the loaded coefficient set.
+/**
+ * This class provides very fast lookup if a certain pixel
+ * is set (positive or negative) in the loaded coefficient set.
  */
 class SignatureMap
 {
@@ -177,6 +178,10 @@ public:
 
     typedef bool MapIndexType;
     MapIndexType* m_indexList;
+
+private:
+
+    SignatureMap& operator=(const SignatureMap&); // Disable
 };
 
 // ---------------------------------------------------------------------------------
@@ -199,10 +204,11 @@ public:
     
 public:
 
-    /** Fixed weight mask for pixel positions (i,j).
-        Each entry x = i*NUM_PIXELS + j, gets value max(i,j) saturated at 5.
-        To be treated as a constant.
-    */
+    /**
+     * Fixed weight mask for pixel positions (i,j).
+     * Each entry x = i*NUM_PIXELS + j, gets value max(i,j) saturated at 5.
+     * To be treated as a constant.
+     */
     unsigned char m_bin[16384];
 };
 
