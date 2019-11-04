@@ -91,7 +91,7 @@
             </item>
             <item>
              <property name="text">
-              <string comment="Mow resolution level">Low</string>
+              <string comment="Low resolution level">Low</string>
              </property>
             </item>
            </widget>
