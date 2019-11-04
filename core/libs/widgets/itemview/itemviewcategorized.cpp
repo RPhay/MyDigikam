@@ -375,6 +375,8 @@ void ItemViewCategorized::slotActivated(const QModelIndex& index)
 {
     Qt::KeyboardModifiers modifiers = Qt::NoModifier;
     Qt::MouseButtons buttons        = Qt::NoButton;
+    (void)modifiers; // prevent cppcheck warning.
+    (void)buttons;   // prevent cppcheck warning.
 
     if (d->currentMouseEvent)
     {
