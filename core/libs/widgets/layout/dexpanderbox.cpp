@@ -170,7 +170,7 @@ void DAdjustableLabel::adjustTextToLabel()
     int lblW      = size().width();
     bool adjusted = false;
 
-    foreach(const QString& line, d->ajdText.split(QLatin1Char('\n')))
+    foreach (const QString& line, d->ajdText.split(QLatin1Char('\n')))
     {
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
         int lineW = fm.horizontalAdvance(line);

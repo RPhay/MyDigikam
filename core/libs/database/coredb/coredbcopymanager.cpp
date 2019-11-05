@@ -260,7 +260,7 @@ bool CoreDbCopyManager::copyTable(CoreDbBackend& fromDBbackend,
         QMap<QString, QVariant> tempBindingMap;
         int i = 0;
 
-        foreach(QString columnName, columnNames) // krazy:exclude=foreach
+        foreach (QString columnName, columnNames) // krazy:exclude=foreach
         {
             qCDebug(DIGIKAM_COREDB_LOG) << "Core database: column: ["
                                         << columnName << "] value ["

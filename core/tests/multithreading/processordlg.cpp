@@ -193,7 +193,7 @@ QProgressBar* ProcessorDlg::findProgressBar(const QUrl& url) const
 {
     QList<QProgressBar*> bars = findChildren<QProgressBar*>();
 
-    foreach(QProgressBar* const b, bars)
+    foreach (QProgressBar* const b, bars)
     {
         if (b->objectName() == url.toLocalFile())
         {

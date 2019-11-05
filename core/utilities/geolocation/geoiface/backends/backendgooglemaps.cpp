@@ -1303,7 +1303,7 @@ void BackendGoogleMaps::slotTrackManagerChanged()
         // store all tracks which are already in the manager as changed
         const TrackManager::Track::List trackList = s->trackManager->getTrackList();
 
-        foreach(const TrackManager::Track& t, trackList)
+        foreach (const TrackManager::Track& t, trackList)
         {
             storeTrackChanges(TrackManager::TrackChanges(t.id, TrackManager::ChangeAdd));
         }
@@ -1321,7 +1321,7 @@ void BackendGoogleMaps::slotTracksChanged(const QList<TrackManager::TrackChanges
 
     if (needToTrackChanges)
     {
-        foreach(const TrackManager::TrackChanges& tc, trackChanges)
+        foreach (const TrackManager::TrackChanges& tc, trackChanges)
         {
             storeTrackChanges(tc);
         }
@@ -1342,7 +1342,7 @@ void BackendGoogleMaps::slotTracksChanged(const QList<TrackManager::TrackChanges
         return;
     }
 
-    foreach(const TrackManager::TrackChanges& tc, trackChanges)
+    foreach (const TrackManager::TrackChanges& tc, trackChanges)
     {
         if (tc.second & TrackManager::ChangeRemoved)
         {
@@ -1424,7 +1424,7 @@ void BackendGoogleMaps::slotTrackVisibilityChanged(const bool newState)
         const TrackManager::Track::List trackList = s->trackManager->getTrackList();
         QList<TrackManager::TrackChanges> trackChanges;
 
-        foreach(const TrackManager::Track& t, trackList)
+        foreach (const TrackManager::Track& t, trackList)
         {
             trackChanges << TrackManager::TrackChanges(t.id, TrackManager::ChangeAdd);
         }

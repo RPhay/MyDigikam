@@ -495,7 +495,7 @@ void ItemPropertiesSideBarDB::refreshTagsView()
 
 void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
 {
-    foreach(const ItemInfo& info, d->currentInfos)
+    foreach (const ItemInfo& info, d->currentInfos)
     {
         if (info.fileUrl() == url)
         {

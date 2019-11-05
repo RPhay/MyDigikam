@@ -668,7 +668,7 @@ BdEngineBackend::QueryState BdEngineBackend::execDBAction(const DbEngineAction& 
         beginTransaction();
     }
 
-    foreach(const DbEngineActionElement& actionElement, action.dbActionElements)
+    foreach (const DbEngineActionElement& actionElement, action.dbActionElements)
     {
         BdEngineBackend::QueryState result;
 

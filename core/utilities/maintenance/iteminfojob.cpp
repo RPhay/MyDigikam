@@ -168,7 +168,7 @@ void ItemInfoJob::slotData(const QList<ItemListerRecord>& records)
 
     ItemInfoList itemsList;
 
-    foreach(const ItemListerRecord& record, records)
+    foreach (const ItemListerRecord& record, records)
     {
         ItemInfo info(record);
         itemsList.append(info);

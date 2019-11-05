@@ -172,7 +172,7 @@ void DigikamApp::fillSolidMenus()
 
     QList<Solid::Device> cameraDevices = Solid::Device::listFromType(Solid::DeviceInterface::Camera);
 
-    foreach(const Solid::Device& cameraDevice, cameraDevices)
+    foreach (const Solid::Device& cameraDevice, cameraDevices)
     {
         // USM camera: will be handled below
         if (cameraDevice.is<Solid::StorageAccess>())
@@ -213,7 +213,7 @@ void DigikamApp::fillSolidMenus()
 
     QList<Solid::Device> storageDevices = Solid::Device::listFromType(Solid::DeviceInterface::StorageAccess);
 
-    foreach(const Solid::Device& accessDevice, storageDevices)
+    foreach (const Solid::Device& accessDevice, storageDevices)
     {
         // check for StorageAccess
         if (!accessDevice.is<Solid::StorageAccess>())

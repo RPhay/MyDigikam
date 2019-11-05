@@ -44,7 +44,7 @@ QString ApplicationSettings::getImageFileFilter() const
     CoreDbAccess().db()->getFilterSettings(&imageSettings, nullptr, nullptr);
     QStringList wildcards;
 
-    foreach(const QString& suffix, imageSettings)
+    foreach (const QString& suffix, imageSettings)
     {
         wildcards << QLatin1String("*.") + suffix;
     }
@@ -58,7 +58,7 @@ QString ApplicationSettings::getMovieFileFilter() const
     CoreDbAccess().db()->getFilterSettings(nullptr, &movieSettings, nullptr);
     QStringList wildcards;
 
-    foreach(const QString& suffix, movieSettings)
+    foreach (const QString& suffix, movieSettings)
     {
         wildcards << QLatin1String("*.") + suffix;
     }
@@ -72,7 +72,7 @@ QString ApplicationSettings::getAudioFileFilter() const
     CoreDbAccess().db()->getFilterSettings(nullptr, nullptr, &audioSettings);
     QStringList wildcards;
 
-    foreach(const QString& suffix, audioSettings)
+    foreach (const QString& suffix, audioSettings)
     {
         wildcards << QLatin1String("*.") + suffix;
     }
@@ -101,7 +101,7 @@ QString ApplicationSettings::getRawFileFilter() const
 
     QStringList wildcards;
 
-    foreach(const QString& suffix, supportedRaws)
+    foreach (const QString& suffix, supportedRaws)
     {
         wildcards << QLatin1String("*.") + suffix;
     }
@@ -115,17 +115,17 @@ QString ApplicationSettings::getAllFileFilter() const
     CoreDbAccess().db()->getFilterSettings(&imageFilter, &videoFilter, &audioFilter);
     QStringList wildcards;
 
-    foreach(const QString& suffix, imageFilter)
+    foreach (const QString& suffix, imageFilter)
     {
         wildcards << QLatin1String("*.") + suffix;
     }
 
-    foreach(const QString& suffix, audioFilter)
+    foreach (const QString& suffix, audioFilter)
     {
         wildcards << QLatin1String("*.") + suffix;
     }
 
-    foreach(const QString& suffix, videoFilter)
+    foreach (const QString& suffix, videoFilter)
     {
         wildcards << QLatin1String("*.") + suffix;
     }

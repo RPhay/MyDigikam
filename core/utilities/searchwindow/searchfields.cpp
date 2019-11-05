@@ -271,17 +271,17 @@ SearchField* SearchField::createField(const QString& name, SearchFieldGroup* con
         field->setText(i18n("File Format"), i18n("Return items with the file format"));
         QStringList formats;
 
-        foreach(const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Image).keys())
+        foreach (const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Image).keys())
             formats << fmt << i18n("%1 [Image]", fmt);
 
-        foreach(const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Video).keys())
+        foreach (const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Video).keys())
             formats << fmt << i18n("%1 [Video]", fmt);
 
-        foreach(const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Audio).keys())
+        foreach (const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Audio).keys())
             formats << fmt << i18n("%1 [Audio]", fmt);
 
 /* FIXME: This can report 2 times JPG : one as image, one as other. Where is the problem ?
-        foreach(const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Other).keys())
+        foreach (const QString& fmt, CoreDbAccess().db()->getFormatStatistics(DatabaseItem::Other).keys())
             formats << fmt << i18n("%1 [Other]", fmt);
 */
         formats.sort();
@@ -1130,7 +1130,7 @@ void SearchFieldKeyword::write(SearchXmlWriter& writer)
 {
     QStringList keywordList = KeywordSearch::split(m_edit->text());
 
-    foreach(const QString& keyword, keywordList)
+    foreach (const QString& keyword, keywordList)
     {
         if (!keyword.isEmpty())
         {
@@ -2462,7 +2462,7 @@ void SearchFieldAlbum::read(SearchXmlCachingReader& reader)
 
     if (m_type == TypeAlbum)
     {
-        foreach(int id, ids)
+        foreach (int id, ids)
         {
             a = AlbumManager::instance()->findPAlbum(id);
             if (!a)
@@ -2485,7 +2485,7 @@ void SearchFieldAlbum::read(SearchXmlCachingReader& reader)
             m_operation->setCurrentIndex(Operation::OneOf);
         }
 
-        foreach(int id, ids)
+        foreach (int id, ids)
         {
             a = AlbumManager::instance()->findTAlbum(id);
 
@@ -2517,7 +2517,7 @@ void SearchFieldAlbum::write(SearchXmlWriter& writer)
 
     QList<int> albumIds;
 
-    foreach(Album* const album, checkedAlbums)
+    foreach (Album* const album, checkedAlbums)
     {
         albumIds << album->id();
     }
@@ -2983,7 +2983,7 @@ void SearchFieldLabels::read(SearchXmlCachingReader& reader)
     QList<ColorLabel> clabels;
     QList<PickLabel>  plabels;
 
-    foreach(int id, ids)
+    foreach (int id, ids)
     {
         a = AlbumManager::instance()->findTAlbum(id);
 
@@ -3022,7 +3022,7 @@ void SearchFieldLabels::write(SearchXmlWriter& writer)
 
     if (!clAlbums.isEmpty())
     {
-        foreach(TAlbum* const album, clAlbums)
+        foreach (TAlbum* const album, clAlbums)
         {
             albumIds << album->id();
         }
@@ -3032,7 +3032,7 @@ void SearchFieldLabels::write(SearchXmlWriter& writer)
 
     if (!plAlbums.isEmpty())
     {
-        foreach(TAlbum* const album, plAlbums)
+        foreach (TAlbum* const album, plAlbums)
         {
             albumIds << album->id();
         }

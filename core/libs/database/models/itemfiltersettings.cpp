@@ -650,7 +650,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
         }
 
         // Tag names
-        foreach(int id, info.tagIds())
+        foreach (int id, info.tagIds())
         {
             if (m_textFilterSettings.textFields & SearchTextFilterSettings::TagName &&
                 m_tagNameHash.value(id).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
@@ -842,7 +842,7 @@ bool VersionItemFilterSettings::isHiddenBySettings(const ItemInfo& info) const
 {
     QList<int> tagIds = info.tagIds();
 
-    foreach(int tagId, m_excludeTagFilter)
+    foreach (int tagId, m_excludeTagFilter)
     {
         if (tagIds.contains(tagId))
         {

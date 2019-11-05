@@ -93,7 +93,7 @@ Digikam::FilterAction HotPixelFixer::filterAction()
     DefaultFilterAction<HotPixelFixer> action;
     action.addParameter(QLatin1String("interpolationMethod"), m_interpolationMethod);
 
-    foreach(const HotPixel& hp, m_hpList)
+    foreach (const HotPixel& hp, m_hpList)
     {
         QString hpString = QString::fromUtf8("%1-%2x%3-%4x%5").arg(hp.luminosity)
                                                               .arg(hp.rect.x()).arg(hp.rect.y())
@@ -109,7 +109,7 @@ void HotPixelFixer::readParameters(const FilterAction& action)
     m_interpolationMethod = action.parameter(QLatin1String("interpolationMethod")).toInt();
     QRegExp exp(QLatin1String("(\\d+)-(\\d+)x(\\d+)-(\\d+)x(\\d+)"));
 
-    foreach(const QVariant& var, action.parameters().values(QLatin1String("hotPixel")))
+    foreach (const QVariant& var, action.parameters().values(QLatin1String("hotPixel")))
     {
         if (exp.exactMatch(var.toString()))
         {

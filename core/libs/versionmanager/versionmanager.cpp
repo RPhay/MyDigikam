@@ -620,7 +620,7 @@ QStringList VersionFileOperation::allFilePaths() const
     if (!intermediateForLoadedFile.isNull())
         paths << intermediateForLoadedFile.filePath();
 
-    foreach(const VersionFileInfo& intermediate, intermediates)
+    foreach (const VersionFileInfo& intermediate, intermediates)
     {
         paths << intermediate.filePath();
     }

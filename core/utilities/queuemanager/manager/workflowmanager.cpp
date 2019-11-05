@@ -157,7 +157,7 @@ Workflow WorkflowManager::findByTitle(const QString& title) const
 {
     QMutexLocker lock(&d->mutex);
 
-    foreach(const Workflow& q, d->qList)
+    foreach (const Workflow& q, d->qList)
     {
         if (q.title == title)
         {
@@ -177,7 +177,7 @@ void WorkflowManager::clear()
         d->qList.clear();
     }
 
-    foreach(const Workflow& q, d->qList)
+    foreach (const Workflow& q, d->qList)
     {
         emit signalQueueSettingsRemoved(q.title);
     }
@@ -203,7 +203,7 @@ bool WorkflowManager::save()
     {
         QMutexLocker lock(&d->mutex);
 
-        foreach(const Workflow& q, d->qList)
+        foreach (const Workflow& q, d->qList)
         {
 
             QDomElement elm = doc.createElement(QLatin1String("queue"));
@@ -285,7 +285,7 @@ bool WorkflowManager::save()
 
             // ----------------------
 
-            foreach(const BatchToolSet& set, q.aTools)
+            foreach (const BatchToolSet& set, q.aTools)
             {
                 QDomElement batchtool = doc.createElement(QLatin1String("tool"));
                 elm.appendChild(batchtool);

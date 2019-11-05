@@ -585,7 +585,7 @@ void GeolocationEdit::setImages(const QList<QUrl>& images)
 {
     QList<GPSItemContainer*> items;
 
-    foreach(const QUrl& u, images)
+    foreach (const QUrl& u, images)
     {
         items << new GPSItemContainer(u);
     }

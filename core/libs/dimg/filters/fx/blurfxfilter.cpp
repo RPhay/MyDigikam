@@ -285,7 +285,7 @@ void BlurFXFilter::zoomBlur(DImg* const orgImage, DImg* const destImage, int X, 
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -442,7 +442,7 @@ void BlurFXFilter::radialBlur(DImg* const orgImage, DImg* const destImage, int X
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -638,7 +638,7 @@ void BlurFXFilter::motionBlur(DImg* const orgImage, DImg* const destImage, int D
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -778,7 +778,7 @@ void BlurFXFilter::softenerBlur(DImg* const orgImage, DImg* const destImage)
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -909,7 +909,7 @@ void BlurFXFilter::shakeBlur(DImg* const orgImage, DImg* const destImage, int Di
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -936,7 +936,7 @@ void BlurFXFilter::shakeBlur(DImg* const orgImage, DImg* const destImage, int Di
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -1120,7 +1120,7 @@ void BlurFXFilter::focusBlur(DImg* const orgImage, DImg* const destImage,
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -1335,7 +1335,7 @@ void BlurFXFilter::smartBlur(DImg* const orgImage, DImg* const destImage, int Ra
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -1364,7 +1364,7 @@ void BlurFXFilter::smartBlur(DImg* const orgImage, DImg* const destImage, int Ra
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -1543,7 +1543,7 @@ void BlurFXFilter::mosaic(DImg* const orgImage, DImg* const destImage, int SizeW
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -1884,7 +1884,7 @@ void BlurFXFilter::MakeConvolution(DImg* const orgImage, DImg* const destImage, 
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -1913,7 +1913,7 @@ void BlurFXFilter::MakeConvolution(DImg* const orgImage, DImg* const destImage, 
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.

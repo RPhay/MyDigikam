@@ -339,7 +339,7 @@ QMimeData* AssignedListView::mimeData(const QList<QTreeWidgetItem*> items) const
     QDataStream stream(&encodedData, QIODevice::WriteOnly);
     stream << items.count();
 
-    foreach(QTreeWidgetItem* const itm, items)
+    foreach (QTreeWidgetItem* const itm, items)
     {
         AssignedListViewItem* const alwi = dynamic_cast<AssignedListViewItem*>(itm);
 

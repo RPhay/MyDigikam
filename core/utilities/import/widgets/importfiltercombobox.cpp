@@ -149,7 +149,7 @@ void ImportFilterComboBox::fillCombo()
 {
     clear();
 
-    foreach(Filter* const f, d->filters)
+    foreach (Filter* const f, d->filters)
     {
         addItem(f->name);
     }

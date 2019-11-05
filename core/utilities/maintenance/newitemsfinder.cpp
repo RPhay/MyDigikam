@@ -144,7 +144,7 @@ void NewItemsFinder::slotStart()
             qCDebug(DIGIKAM_GENERAL_LOG) << "scan mode: ScheduleCollectionScan :: " << d->foldersToScan;
             d->foldersScanned.clear();
 
-            foreach(const QString& folder, d->foldersToScan)
+            foreach (const QString& folder, d->foldersToScan)
             {
                 if (d->cancel)
                 {

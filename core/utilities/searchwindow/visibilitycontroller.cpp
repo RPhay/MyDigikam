@@ -182,7 +182,7 @@ void VisibilityController::step()
 {
     if (d->status == Showing)
     {
-        foreach(VisibilityObject* const o, d->objects)
+        foreach (VisibilityObject* const o, d->objects)
         {
             if (!o->isVisible())
             {
@@ -193,7 +193,7 @@ void VisibilityController::step()
     }
     else if (d->status == Hiding)
     {
-        foreach(VisibilityObject* const o, d->objects)
+        foreach (VisibilityObject* const o, d->objects)
         {
             if (o->isVisible())
             {
@@ -213,7 +213,7 @@ void VisibilityController::allSteps()
             d->containerWidget->setUpdatesEnabled(false);
         }
 
-        foreach(VisibilityObject* const o, d->objects)
+        foreach (VisibilityObject* const o, d->objects)
         {
             o->setVisible(true);
         }
@@ -230,7 +230,7 @@ void VisibilityController::allSteps()
             d->containerWidget->setUpdatesEnabled(false);
         }
 
-        foreach(VisibilityObject* const o, d->objects)
+        foreach (VisibilityObject* const o, d->objects)
         {
             o->setVisible(false);
         }

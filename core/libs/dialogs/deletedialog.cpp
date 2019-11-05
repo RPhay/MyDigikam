@@ -346,7 +346,7 @@ void DeleteWidget::setUrls(const QList<QUrl>& urls)
 {
     d->fileList->clear();
 
-    foreach(const QUrl& url, urls)
+    foreach (const QUrl& url, urls)
     {
         new DeleteItem(d->fileList, url);
     }

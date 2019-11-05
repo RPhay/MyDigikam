@@ -54,7 +54,7 @@ int main(int argc, char* argv[])
                                                           QStandardPaths::standardLocations(QStandardPaths::PicturesLocation).first(),
                                                           QLatin1String("Image Files (*.png *.jpg *.tif *.bmp *.gif)"));
 
-        foreach(const QString& f, files)
+        foreach (const QString& f, files)
         {
             list.append(QUrl::fromLocalFile(f));
         }

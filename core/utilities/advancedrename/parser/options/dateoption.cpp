@@ -96,7 +96,7 @@ QVariant DateFormat::format(const QString& identifier)
         return m_map.at(Standard).second;
     }
 
-    foreach(const DateFormatDescriptor& desc, m_map)
+    foreach (const DateFormatDescriptor& desc, m_map)
     {
         if (desc.first == identifier)
         {
@@ -128,7 +128,7 @@ DateOptionDialog::DateOptionDialog(Rule* parent)
     // fill the date format combobox
     DateFormat df;
 
-    foreach(const DateFormat::DateFormatDescriptor& desc, df.map())
+    foreach (const DateFormat::DateFormatDescriptor& desc, df.map())
     {
         ui->dateFormatPicker->addItem(desc.first);
     }

@@ -339,7 +339,7 @@ void RefocusFilter::convolveImage(const Args& prm)
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.

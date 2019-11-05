@@ -513,7 +513,7 @@ void DCategorizedView::Private::drawDraggedItems(QPainter* painter)
     QStyleOptionViewItem option = listView->viewOptions();
     option.state               &= ~QStyle::State_MouseOver;
 
-    foreach(const QModelIndex& index, listView->selectionModel()->selectedIndexes())
+    foreach (const QModelIndex& index, listView->selectionModel()->selectedIndexes())
     {
         const int dx = mousePosition.x() - initialPressPosition.x() + listView->horizontalOffset();
         const int dy = mousePosition.y() - initialPressPosition.y() + listView->verticalOffset();
@@ -1249,7 +1249,7 @@ void DCategorizedView::mouseMoveEvent(QMouseEvent* event)
     d->hoveredCategory.clear();
 
     // Redraw categories
-    foreach(const QString& category, d->categories)
+    foreach (const QString& category, d->categories)
     {
         if (d->categoryVisualRect(category).intersects(QRect(event->pos(), event->pos())))
         {

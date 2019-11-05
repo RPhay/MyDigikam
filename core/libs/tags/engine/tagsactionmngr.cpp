@@ -149,7 +149,7 @@ void TagsActionMngr::registerTagsActionCollections()
 
     QList<int> tagIds = TagsCache::instance()->tagsWithProperty(TagPropertyName::tagKeyboardShortcut());
 
-    foreach(int tagId, tagIds)
+    foreach (int tagId, tagIds)
     {
         createTagActionShortcut(tagId);
     }
@@ -190,7 +190,7 @@ void TagsActionMngr::registerActionsToWidget(QWidget* const wdg)
 
     if (win)
     {
-        foreach(QAction* const ac, win->actionCollection()->actions())
+        foreach (QAction* const ac, win->actionCollection()->actions())
         {
             if (ac->objectName().startsWith(d->ratingShortcutPrefix) ||
                 ac->objectName().startsWith(d->tagShortcutPrefix)    ||
@@ -289,7 +289,7 @@ bool TagsActionMngr::createTagActionShortcut(int tagId)
                                  << " to Tag " << talbum->title()
                                  << " (" << tagId << ")";
 
-    foreach(KActionCollection* const ac, d->actionCollectionList)
+    foreach (KActionCollection* const ac, d->actionCollectionList)
     {
         QAction* const action = ac->addAction(QString::fromUtf8("%1-%2").arg(d->tagShortcutPrefix).arg(tagId));
         action->setText(i18n("Assign Tag \"%1\"", talbum->title()));
@@ -381,7 +381,7 @@ bool TagsActionMngr::removeTagActionShortcut(int tagId)
         return false;
     }
 
-    foreach(QAction* const act, d->tagsActionMap.values(tagId))
+    foreach (QAction* const act, d->tagsActionMap.values(tagId))
     {
         if (act)
         {

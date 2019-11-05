@@ -269,7 +269,7 @@ void PreviewToolBar::setPreviewModeMask(int mask)
         {
             QList<QAbstractButton*> btns = d->previewButtons->buttons();
 
-            foreach(QAbstractButton* const btn, btns)
+            foreach (QAbstractButton* const btn, btns)
             {
                 if (btn && btn->isEnabled())
                 {

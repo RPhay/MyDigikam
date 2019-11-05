@@ -840,7 +840,7 @@ void TagsPopupMenu::slotTagThumbnail(Album* album, const QPixmap& pix)
 {
     QList<QAction*> actionList = actions();
 
-    foreach(QAction* const action, actionList)
+    foreach (QAction* const action, actionList)
     {
         if (action->data().toInt() == album->id())
         {

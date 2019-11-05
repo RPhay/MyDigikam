@@ -326,7 +326,7 @@ public:
     // cppcheck-suppress unusedPrivateFunction
     bool assertSelectionValid(const QItemSelection& selection) const
     {
-        foreach(const QItemSelectionRange& range, selection)
+        foreach (const QItemSelectionRange& range, selection)
         {
             if (!range.isValid())
             {

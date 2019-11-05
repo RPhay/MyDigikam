@@ -245,7 +245,7 @@ public:
 
         QList<GalleryElement> imageElementList;
 
-        foreach(const QUrl& url, imageList)
+        foreach (const QUrl& url, imageList)
         {
             const QString path = remoteUrlHash.value(url, url.toLocalFile());
 
@@ -289,7 +289,7 @@ public:
         }
 
         // Generate xml
-        foreach(const GalleryElement& element, imageElementList)
+        foreach (const GalleryElement& element, imageElementList)
         {
             element.appendToXML(xmlWriter, info->copyOriginalImage());
         }
@@ -375,7 +375,7 @@ public:
         Q_ASSERT(hash);
         QList<QUrl> list;
 
-        foreach(const QUrl& url, _list)
+        foreach (const QUrl& url, _list)
         {
             if (!url.isLocalFile())
             {
@@ -393,7 +393,7 @@ public:
         pbar->setMaximum(list.count());
         int count = 0;
 
-        foreach(const QUrl& url, list)
+        foreach (const QUrl& url, list)
         {
             if (cancel)
             {

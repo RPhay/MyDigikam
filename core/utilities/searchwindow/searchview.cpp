@@ -123,7 +123,7 @@ void AbstractSearchGroupContainer::finishReadingGroups()
 
 void AbstractSearchGroupContainer::writeGroups(SearchXmlWriter& writer) const
 {
-    foreach(SearchGroup* const group, m_groups)
+    foreach (SearchGroup* const group, m_groups)
     {
         group->write(writer);
     }
@@ -138,7 +138,7 @@ QList<QRect> AbstractSearchGroupContainer::startupAnimationAreaOfGroups() const
 {
     QList<QRect> list;
 
-    foreach(SearchGroup* const group, m_groups)
+    foreach (SearchGroup* const group, m_groups)
     {
         list += group->startupAnimationArea();
     }
@@ -365,7 +365,7 @@ void SearchView::paintEvent(QPaintEvent*)
         p.setPen(QPen(Qt::NoPen));
         p.setBrush(grad);
 
-        foreach(QRect rect, rects) // krazy:exclude=foreach
+        foreach (QRect rect, rects) // krazy:exclude=foreach
         {
             rect.adjust(-margin, -margin, margin, margin);
             p.drawRoundedRect(rect, 4, 4);

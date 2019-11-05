@@ -175,7 +175,7 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------------
 
-    foreach(SidebarWidget* const leftWidget, d->view->leftSidebarWidgets())
+    foreach (SidebarWidget* const leftWidget, d->view->leftSidebarWidgets())
     {
         QString actionName = QLatin1String("browse_") + leftWidget->objectName()
                                                         .remove(QLatin1Char(' '))

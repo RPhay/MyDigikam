@@ -125,7 +125,7 @@ QDebug operator<<(QDebug d, const YFPhoto& p)
     d.space() << "originalUrl:" << p.originalUrl() << ",\n";
     d.space() << "tags:" << "\n";
 
-    foreach(const QString& t, p.tags)
+    foreach (const QString& t, p.tags)
     {
         d.space() << t << ",";
     }

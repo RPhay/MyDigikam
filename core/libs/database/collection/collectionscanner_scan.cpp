@@ -464,7 +464,7 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
     // See bug #231598
     QHash<int, CollectionLocation> albumRoots;
 
-    foreach(const CollectionLocation& location, locations)
+    foreach (const CollectionLocation& location, locations)
     {
         albumRoots[location.id()] = location;
     }

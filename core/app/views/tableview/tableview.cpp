@@ -232,7 +232,7 @@ void TableView::setThumbnailSize(const ThumbnailSize& size)
     d->thumbnailSize                            = size;
     const QList<TableViewColumn*> columnObjects = s->tableViewModel->getColumnObjects();
 
-    foreach(TableViewColumn* const iColumn, columnObjects)
+    foreach (TableViewColumn* const iColumn, columnObjects)
     {
         iColumn->updateThumbnailSize();
     }

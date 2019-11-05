@@ -429,7 +429,7 @@ void CollectionScanner::scanAlbums()
         QStringList fileList(dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot));
         CoreDbTransaction transaction;
 
-        foreach(const QString& dir, fileList)
+        foreach (const QString& dir, fileList)
         {
             scanAlbum(*it, QLatin1Char('/') + dir);
         }

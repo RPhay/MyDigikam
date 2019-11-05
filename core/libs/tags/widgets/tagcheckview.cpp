@@ -170,7 +170,7 @@ QList<TAlbum*> TagCheckView::getCheckedTags() const
 {
     QList<TAlbum*> tags;
 
-    foreach(Album* const album, albumModel()->checkedAlbums())
+    foreach (Album* const album, albumModel()->checkedAlbums())
     {
         TAlbum* const tag = dynamic_cast<TAlbum*> (album);
 
@@ -187,7 +187,7 @@ QList<TAlbum*> TagCheckView::getPartiallyCheckedTags() const
 {
     QList<TAlbum*> tags;
 
-    foreach(Album* const album, albumModel()->partiallyCheckedAlbums())
+    foreach (Album* const album, albumModel()->partiallyCheckedAlbums())
     {
         TAlbum* const tag = dynamic_cast<TAlbum*> (album);
 
@@ -257,7 +257,7 @@ void TagCheckView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* al
 
     cmh.addAction(d->toggleAutoAction);
 
-    foreach(QAction* const action, d->toggleAutoAction->actions())
+    foreach (QAction* const action, d->toggleAutoAction->actions())
     {
         if (action->data().toInt() == d->toggleAutoTags)
         {

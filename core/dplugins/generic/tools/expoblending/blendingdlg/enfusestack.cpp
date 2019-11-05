@@ -271,7 +271,7 @@ void EnfuseStackList::clearSelected()
         ++it;
     }
 
-    foreach(QTreeWidgetItem* const item, list)
+    foreach (QTreeWidgetItem* const item, list)
         delete item;
 }
 

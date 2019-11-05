@@ -152,7 +152,7 @@ void EmbossFilter::filterImage()
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         progress = (int)(((double)h * 100.0) / m_orgImage.height());

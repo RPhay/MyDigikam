@@ -381,7 +381,7 @@ QModelIndex ItemCategorizedView::nextIndexHint(const QModelIndex& anchor, const 
             int minDiff                           = d->filterModel->rowCount();
             QList<QModelIndex> indexesForItemInfo = d->filterModel->mapListFromSource(d->model->indexesForItemInfo(info));
 
-            foreach(const QModelIndex& index, indexesForItemInfo)
+            foreach (const QModelIndex& index, indexesForItemInfo)
             {
                 if (index == anchor || !index.isValid() || removed.contains(index))
                 {
@@ -525,7 +525,7 @@ void ItemCategorizedView::setSelectedItemInfos(const QList<ItemInfo>& infos)
 {
     QItemSelection mySelection;
 
-    foreach(const ItemInfo& info, infos)
+    foreach (const ItemInfo& info, infos)
     {
         QModelIndex index = d->filterModel->indexForItemInfo(info);
         mySelection.select(index, index);

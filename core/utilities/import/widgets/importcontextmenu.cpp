@@ -174,7 +174,7 @@ void ImportContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
     QStringList    mimeTypes;
     KService::List offers;
 
-    foreach(const QUrl& item, d->selectedItems)
+    foreach (const QUrl& item, d->selectedItems)
     {
         const QString mimeType = QMimeDatabase().mimeTypeForFile(item.toLocalFile(), QMimeDatabase::MatchExtension).name();
 
@@ -191,7 +191,7 @@ void ImportContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
         const QString constraintTemplate = QString::fromUtf8("'%1' in ServiceTypes");
         QStringList   constraints;
 
-        foreach(const QString& mimeType, mimeTypes)
+        foreach (const QString& mimeType, mimeTypes)
         {
             constraints << constraintTemplate.arg(mimeType);
         }
@@ -225,7 +225,7 @@ void ImportContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
         QAction* const serviceAction = servicesMenu->menuAction();
         serviceAction->setText(i18nc("@title:menu", "Open With"));
 
-        foreach(KService::Ptr service, offers)
+        foreach (KService::Ptr service, offers)
         {
             QString name          = service->name().replace(QLatin1Char('&'), QLatin1String("&&"));
             QAction* const action = servicesMenu->addAction(name);

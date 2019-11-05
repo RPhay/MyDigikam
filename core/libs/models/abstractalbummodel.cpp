@@ -315,7 +315,7 @@ QMimeData* AbstractAlbumModel::mimeData(const QModelIndexList& indexes) const
 
     QList<Album*> albums;
 
-    foreach(const QModelIndex& index, indexes)
+    foreach (const QModelIndex& index, indexes)
     {
         Album* const a = albumForIndex(index);
 

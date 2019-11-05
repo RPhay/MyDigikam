@@ -97,7 +97,7 @@ void DynamicLayout::addItem(QLayoutItem* item)
         d->minItemWidth = qMax<int>(wid->sizeHint().width(), d->minItemWidth);
     }
 
-    foreach(QLayoutItem* const item, d->itemList)
+    foreach (QLayoutItem* const item, d->itemList)
     {
         QWidget* const wid = item->widget();
         wid->setMinimumWidth(d->minItemWidth);

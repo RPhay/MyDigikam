@@ -113,7 +113,7 @@ void ItemTagPairPriv::checkProperties()
     {
         QList<ImageTagProperty> props = CoreDbAccess().db()->getImageTagProperties(info.id(), tagId);
 
-        foreach(const ImageTagProperty& p, props)
+        foreach (const ImageTagProperty& p, props)
         {
             properties.insert(p.property, p.value);
         }
@@ -180,7 +180,7 @@ QList<ItemTagPair> ItemTagPair::availablePairs(const ItemInfo& info)
 
     QList<int> tagIds = CoreDbAccess().db()->getTagIdsWithProperties(info.id());
 
-    foreach(int tagId, tagIds)
+    foreach (int tagId, tagIds)
     {
         pairs << ItemTagPair(info, tagId);
     }
@@ -231,7 +231,7 @@ bool ItemTagPair::hasAnyProperty(const QStringList& keys) const
 {
     d->checkProperties();
 
-    foreach(const QString& key, keys)
+    foreach (const QString& key, keys)
     {
         if (d->properties.contains(key))
         {
@@ -259,7 +259,7 @@ QStringList ItemTagPair::allValues(const QStringList& keys) const
     d->checkProperties();
     QStringList values;
 
-    foreach(const QString& key, keys)
+    foreach (const QString& key, keys)
     {
         values << d->properties.values(key);
     }

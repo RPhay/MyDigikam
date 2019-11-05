@@ -96,10 +96,10 @@ DuplicatesFinder::DuplicatesFinder(const AlbumList& albums, const AlbumList& tag
     d->albumTagRelation         = albumTagRelation;
     d->searchResultRestriction  = searchResultRestriction;
 
-    foreach(Album* const a, albums)
+    foreach (Album* const a, albums)
         d->albumsIdList << a->id();
 
-    foreach(Album* const a, tags)
+    foreach (Album* const a, tags)
         d->tagsIdList << a->id();
 }
 
@@ -112,7 +112,7 @@ DuplicatesFinder::DuplicatesFinder(const int minSimilarity, int maxSimilarity,
     d->maxSimilarity            = maxSimilarity;
     d->searchResultRestriction  = searchResultRestriction;
 
-    foreach(Album* const a, AlbumManager::instance()->allPAlbums())
+    foreach (Album* const a, AlbumManager::instance()->allPAlbums())
         d->albumsIdList << a->id();
 }
 

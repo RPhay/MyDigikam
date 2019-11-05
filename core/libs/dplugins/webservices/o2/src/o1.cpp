@@ -241,7 +241,7 @@ void O1::link() {
     QUrl requestData = requestTokenUrl();
 #endif
     O0RequestParameter param("", "");
-    foreach(param, requestParameters())
+    foreach (param, requestParameters())
       requestData.addQueryItem(QString(param.name), QUrl::toPercentEncoding(QString(param.value)));
 
     // Get the request url and add parameters

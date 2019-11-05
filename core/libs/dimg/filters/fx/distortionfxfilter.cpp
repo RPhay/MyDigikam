@@ -305,7 +305,7 @@ void DistortionFXFilter::fisheye(DImg* orgImage, DImg* destImage, double Coeff, 
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -432,7 +432,7 @@ void DistortionFXFilter::twirl(DImg* orgImage, DImg* destImage, int dist, bool A
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -565,7 +565,7 @@ void DistortionFXFilter::cilindrical(DImg* orgImage, DImg* destImage, double Coe
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -662,7 +662,7 @@ void DistortionFXFilter::multipleCorners(DImg* orgImage, DImg* destImage, int Fa
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -782,7 +782,7 @@ void DistortionFXFilter::waves(DImg* orgImage, DImg* destImage,
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
     }
     else
@@ -800,7 +800,7 @@ void DistortionFXFilter::waves(DImg* orgImage, DImg* destImage,
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
     }
 }
@@ -898,7 +898,7 @@ void DistortionFXFilter::blockWaves(DImg* orgImage, DImg* destImage,
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -1004,7 +1004,7 @@ void DistortionFXFilter::circularWaves(DImg* orgImage, DImg* destImage, int X, i
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -1115,7 +1115,7 @@ void DistortionFXFilter::polarCoordinates(DImg* orgImage, DImg* destImage, bool 
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         // Update the progress bar in dialog.
@@ -1211,7 +1211,7 @@ void DistortionFXFilter::tile(DImg* orgImage, DImg* destImage,
                                       ));
     }
 
-    foreach(QFuture<void> t, tasks)
+    foreach (QFuture<void> t, tasks)
         t.waitForFinished();
 }
 

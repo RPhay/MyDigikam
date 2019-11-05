@@ -58,7 +58,7 @@ void CachedPixmaps::setMaxCount(int count)
 
 void CachedPixmaps::clear()
 {
-    foreach(const CachedPixmapKey& key, keys)
+    foreach (const CachedPixmapKey& key, keys)
     {
         QPixmapCache::remove(key.key);
     }

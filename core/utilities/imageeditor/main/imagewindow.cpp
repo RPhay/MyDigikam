@@ -1182,7 +1182,7 @@ void ImageWindow::slotOpenOriginal()
 
     QList<ItemInfo> imageInfos;
 
-    foreach(const HistoryImageId& id, originals)
+    foreach (const HistoryImageId& id, originals)
     {
         QUrl url = QUrl::fromLocalFile(id.m_filePath);
         url      = url.adjusted(QUrl::StripTrailingSlash);

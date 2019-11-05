@@ -193,7 +193,7 @@ void MaintenanceMngr::stage1()
         {
             QStringList paths;
 
-            foreach(Album* const a, d->settings.albums)
+            foreach (Album* const a, d->settings.albums)
             {
                 PAlbum* const palbum = dynamic_cast<PAlbum*>(a);
 

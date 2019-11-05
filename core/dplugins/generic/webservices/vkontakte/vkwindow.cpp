@@ -400,7 +400,7 @@ void VKWindow::slotStartTransfer()
 
         QStringList files;
 
-        foreach(const QUrl& url, d->imgList->imageUrls(true))
+        foreach (const QUrl& url, d->imgList->imageUrls(true))
             files.append(url.toLocalFile());
 
         Vkontakte::UploadPhotosJob* const job

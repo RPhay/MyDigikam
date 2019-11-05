@@ -79,7 +79,7 @@ void DImgFilterActionTest::testActions()
     DImg original(imageDir().filePath(originalImage()));
     QVERIFY(!original.isNull());
 
-    foreach(const QString& fileName, files)
+    foreach (const QString& fileName, files)
     {
         DImg ref(imageDir().filePath(fileName));
         QVERIFY(!ref.isNull());

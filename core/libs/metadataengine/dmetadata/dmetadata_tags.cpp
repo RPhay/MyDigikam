@@ -312,7 +312,7 @@ bool DMetadata::setACDSeeTagsPath(const QStringList &tagsPath) const
     QStringList splitTags;
     QStringList xmlTags;
 
-    foreach(const QString& tags, tagsPath)
+    foreach (const QString& tags, tagsPath)
     {
         splitTags   = tags.split(QLatin1Char('/'));
         int current = 0;

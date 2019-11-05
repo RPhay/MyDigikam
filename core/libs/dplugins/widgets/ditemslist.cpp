@@ -429,7 +429,7 @@ void DItemsListView::dropEvent(QDropEvent* e)
     QList<QUrl> list = e->mimeData()->urls();
     QList<QUrl> urls;
 
-    foreach(const QUrl& url, list)
+    foreach (const QUrl& url, list)
     {
         QFileInfo fi(url.toLocalFile());
 
@@ -1169,7 +1169,7 @@ void DItemsList::slotProgressTimerDone()
 {
     if (!d->processItems.isEmpty())
     {
-        foreach(const QUrl& url, d->processItems)
+        foreach (const QUrl& url, d->processItems)
         {
             DItemsListViewItem* const item = listView()->findItem(url);
 
@@ -1220,7 +1220,7 @@ void DItemsList::processed(const QUrl& url, bool success)
 
 void DItemsList::cancelProcess()
 {
-    foreach(const QUrl& url, d->processItems)
+    foreach (const QUrl& url, d->processItems)
     {
         processed(url, false);
     }

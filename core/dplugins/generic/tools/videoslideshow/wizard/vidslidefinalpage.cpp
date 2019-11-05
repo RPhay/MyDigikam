@@ -133,7 +133,7 @@ void VidSlideFinalPage::slotProcess()
     d->progressView->addEntry(i18n("%1 input images to process", d->settings->inputImages.count()),
                                   DHistoryView::ProgressEntry);
 
-    foreach(const QUrl& url, d->settings->inputImages)
+    foreach (const QUrl& url, d->settings->inputImages)
     {
         d->progressView->addEntry(QDir::toNativeSeparators(url.toLocalFile()),
                                   DHistoryView::ProgressEntry);
@@ -145,7 +145,7 @@ void VidSlideFinalPage::slotProcess()
                                        d->settings->inputAudio.count()),
                                   DHistoryView::ProgressEntry);
 
-        foreach(const QUrl& url, d->settings->inputAudio)
+        foreach (const QUrl& url, d->settings->inputAudio)
         {
             d->progressView->addEntry(QDir::toNativeSeparators(url.toLocalFile()),
                                       DHistoryView::ProgressEntry);

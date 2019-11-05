@@ -266,7 +266,7 @@ void FilmGrainFilter::filterImage()
                                       ));
     }
 
-    foreach(QFuture<void> t, tasks)
+    foreach (QFuture<void> t, tasks)
         t.waitForFinished();
 }
 

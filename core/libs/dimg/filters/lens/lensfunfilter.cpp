@@ -273,7 +273,7 @@ void LensFunFilter::filterImage()
                                            vals[j+1]));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         qCDebug(DIGIKAM_DIMG_LOG) << "Chromatic Aberration Corrections applied.";
@@ -295,7 +295,7 @@ void LensFunFilter::filterImage()
                                            vals[j+1]));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         qCDebug(DIGIKAM_DIMG_LOG) << "Vignetting and Color Corrections applied.";
@@ -327,7 +327,7 @@ void LensFunFilter::filterImage()
                                            vals[j+1]));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         qCDebug(DIGIKAM_DIMG_LOG) << "Distortion and Geometry Corrections applied.";

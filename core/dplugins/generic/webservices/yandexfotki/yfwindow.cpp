@@ -465,7 +465,7 @@ void YFWindow::slotListPhotosDoneForUpload(const QList <YFPhoto>& photosList)
     QMap<QString, int> dups;
     int i = 0;
 
-    foreach(const YFPhoto& photo, photosList)
+    foreach (const YFPhoto& photo, photosList)
     {
         dups.insert(photo.urn(), i);
         i++;
@@ -479,7 +479,7 @@ void YFWindow::slotListPhotosDoneForUpload(const QList <YFPhoto>& photosList)
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "----";
     d->transferQueue.clear();
 
-    foreach(const QUrl& url, d->imgList->imageUrls(true))
+    foreach (const QUrl& url, d->imgList->imageUrls(true))
     {
         DItemInfo info(d->iface->itemInfo(url));
 
@@ -512,7 +512,7 @@ void YFWindow::slotListPhotosDoneForUpload(const QList <YFPhoto>& photosList)
 
             if (policy == YFWidget::UpdatePolicy::POLICY_UPDATE_MERGE)
             {
-                foreach(const QString& t, d->transferQueue.top().tags)
+                foreach (const QString& t, d->transferQueue.top().tags)
                 {
                     oldtags.insert(t);
                 }
@@ -542,7 +542,7 @@ void YFWindow::slotListPhotosDoneForUpload(const QList <YFPhoto>& photosList)
         if (!photo.isAdult())
             photo.setAdult(d->adultCheck->isChecked());
 
-        foreach(const QString& t, tags)
+        foreach (const QString& t, tags)
         {
             if (!oldtags.contains(t))
             {
@@ -792,7 +792,7 @@ void YFWindow::slotListAlbumsDone(const QList<YandexFotkiAlbum>& albumsList)
 {
     d->albumsCombo->clear();
 
-    foreach(const YandexFotkiAlbum& album, albumsList)
+    foreach (const YandexFotkiAlbum& album, albumsList)
     {
         QString albumIcon;
 

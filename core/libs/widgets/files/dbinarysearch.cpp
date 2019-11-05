@@ -150,7 +150,7 @@ bool DBinarySearch::allBinariesFound()
 {
     bool ret = true;
 
-    foreach(DBinaryIface* const binary, d->binaryIfaces)
+    foreach (DBinaryIface* const binary, d->binaryIfaces)
     {
         int index = d->binaryIfaces.indexOf(binary);
 

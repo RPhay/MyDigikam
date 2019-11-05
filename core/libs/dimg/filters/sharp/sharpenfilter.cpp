@@ -260,7 +260,7 @@ bool SharpenFilter::convolveImage(const unsigned int order, const double* const 
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         progress = (int)(((double)y * 100.0) / m_destImage.height());

@@ -121,7 +121,7 @@ CameraFolderDialog::CameraFolderDialog(QWidget* const parent, const QMap<QString
 
             QString path(QLatin1Char('/'));
 
-            foreach(const QString& sub, folder.split(QLatin1Char('/'), QString::SkipEmptyParts))
+            foreach (const QString& sub, folder.split(QLatin1Char('/'), QString::SkipEmptyParts))
             {
                 qCDebug(DIGIKAM_IMPORTUI_LOG) << "Camera folder:" << path << "Subfolder:" << sub;
                 d->folderView->addFolder(path, sub, it.value());

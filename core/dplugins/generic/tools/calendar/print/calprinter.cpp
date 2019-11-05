@@ -81,7 +81,7 @@ void CalPrinter::run()
 
     int currPage = 0;
 
-    foreach(const int month, d->months.keys())
+    foreach (const int month, d->months.keys())
     {
         emit pageChanged(currPage);
 

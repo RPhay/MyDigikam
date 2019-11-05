@@ -128,7 +128,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
     // First attempt: Find by full name in "person" attribute
     QList<int> candidates = TagsCache::instance()->tagsWithProperty(TagPropertyName::person(), fullName);
 
-    foreach(int id, candidates)
+    foreach (int id, candidates)
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Candidate with set full name:" << id << fullName;
 
@@ -158,7 +158,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
         }
     }
 
-    foreach(int id, candidates)
+    foreach (int id, candidates)
     {
         // Is this tag already a person tag?
         if (FaceTags::isPerson(id))
@@ -390,7 +390,7 @@ int FaceTags::personParentTag()
         // we find the most toplevel parent tag of a person tag
         QMultiMap<int, int> tiers;
 
-        foreach(int tagId, personTags)
+        foreach (int tagId, personTags)
         {
             tiers.insert(TagsCache::instance()->parentTags(tagId).size(), tagId);
         }

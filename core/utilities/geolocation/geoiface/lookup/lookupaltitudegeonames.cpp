@@ -242,7 +242,7 @@ void LookupAltitudeGeonames::slotFinished(QNetworkReply* reply)
 
         const QIntList& currentRequestIndexes = currentMergedRequest.groupedRequestIndices.at(i).second;
 
-        foreach(const int requestIndex, currentRequestIndexes)
+        foreach (const int requestIndex, currentRequestIndexes)
         {
             if (haveAltitude)
             {

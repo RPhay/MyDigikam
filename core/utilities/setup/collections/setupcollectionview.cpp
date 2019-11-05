@@ -387,7 +387,7 @@ void SetupCollectionModel::loadCollections()
     m_collections.clear();
     QList<CollectionLocation> locations = CollectionManager::instance()->allLocations();
 
-    foreach(const CollectionLocation& location, locations)
+    foreach (const CollectionLocation& location, locations)
     {
         m_collections << Item(location);
     }

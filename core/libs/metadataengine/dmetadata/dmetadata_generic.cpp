@@ -572,7 +572,7 @@ QVariantList DMetadata::getMetadataFields(const MetadataFields& fields) const
 {
     QVariantList list;
 
-    foreach(MetadataInfo::Field field, fields) // krazy:exclude=foreach
+    foreach (MetadataInfo::Field field, fields) // krazy:exclude=foreach
     {
         list << getMetadataField(field);
     }

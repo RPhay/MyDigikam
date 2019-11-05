@@ -265,7 +265,7 @@ void WSAuthentication::prepareForUpload()
 
     if (d->wizard->settings()->imagesChangeProp)
     {
-        foreach(const QUrl& imgUrl, d->transferQueue)
+        foreach (const QUrl& imgUrl, d->transferQueue)
         {
             QString imgPath = imgUrl.toLocalFile();
             QImage image = PreviewLoadThread::loadHighQualitySynchronously(imgPath).copyQImage();

@@ -210,7 +210,7 @@ void UnsharpMaskFilter::filterImage()
                                            y));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         progress = (int)(10.0 + ((double)y * 90.0) / m_destImage.height());

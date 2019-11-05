@@ -67,7 +67,7 @@ QString TooltipCreator::additionalInformation()
                                                                                          QString::fromUtf8("' /></td>");
     information += QString::fromUtf8("<td><ol>");
 
-    foreach(const QString& infoItem, infoItems)
+    foreach (const QString& infoItem, infoItems)
     {
         information += QString::fromUtf8("<li>") + infoItem + QString::fromUtf8("</li>");
 
@@ -164,9 +164,9 @@ QString TooltipCreator::createEntries(const RulesList& data)
 {
     QString result;
 
-    foreach(Rule* const t, data)
+    foreach (Rule* const t, data)
     {
-        foreach(Token* const token, t->tokens())
+        foreach (Token* const token, t->tokens())
         {
             result += QString::fromUtf8("<tr>"
                               "<td style=\"background-color: %1;\">"

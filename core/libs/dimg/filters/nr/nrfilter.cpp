@@ -437,7 +437,7 @@ void NRFilter::waveletDenoise(float* fimg[3], unsigned int width, unsigned int h
                                         ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         stdev[0] = sqrt(stdev[0] / (samples[0] + 1));
@@ -460,7 +460,7 @@ void NRFilter::waveletDenoise(float* fimg[3], unsigned int width, unsigned int h
                                           ));
         }
 
-        foreach(QFuture<void> t, tasks)
+        foreach (QFuture<void> t, tasks)
             t.waitForFinished();
 
         hpass = lpass;

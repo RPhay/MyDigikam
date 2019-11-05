@@ -140,7 +140,7 @@ void MigrateFromDigikam4Page::doMigration()
     QString oldappdatadir   = migration.locateLocal("data", QLatin1String("digikam"));
     QStringList oldAppFiles = QDir(oldappdatadir).entryList(QDir::Files | QDir::Readable | QDir::NoDotAndDotDot);
 
-    foreach(const QString& configFileName, oldAppFiles)
+    foreach (const QString& configFileName, oldAppFiles)
     {
         const QString newConfigLocation = QStandardPaths::writableLocation(QStandardPaths::DataLocation) +
                                           QLatin1Char('/') + configFileName + QLatin1Char('5');

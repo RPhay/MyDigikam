@@ -1774,7 +1774,7 @@ bool EditorWindow::showFileSaveDialog(const QUrl& initialUrl, QUrl& newURL)
     const QString optionLastExtension = QLatin1String("LastSavedImageExtension");
     QString ext                       = group.readEntry(optionLastExtension, "png");
 
-    foreach(const QString& s, list)
+    foreach (const QString& s, list)
     {
         if (s.contains(QString::fromLatin1("*.%1").arg(ext)))
         {
@@ -2674,7 +2674,7 @@ void EditorWindow::addServicesMenuForUrl(const QUrl& url)
         QAction* const serviceAction = m_servicesMenu->menuAction();
         serviceAction->setText(i18n("Open With"));
 
-        foreach(const KService::Ptr& service, offers)
+        foreach (const KService::Ptr& service, offers)
         {
             QString name          = service->name().replace(QLatin1Char('&'), QLatin1String("&&"));
             QAction* const action = m_servicesMenu->addAction(name);

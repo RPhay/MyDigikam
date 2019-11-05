@@ -267,7 +267,7 @@ void ImportIconView::slotRotateLeft(const QList<QModelIndex>& /*indexes*/)
 /*
     QList<ItemInfo> imageInfos;
 
-    foreach(const QModelIndex& index, indexes)
+    foreach (const QModelIndex& index, indexes)
     {
         ItemInfo imageInfo(importFilterModel()->camItemInfo(index).url());
         imageInfos << imageInfo;
@@ -282,7 +282,7 @@ void ImportIconView::slotRotateRight(const QList<QModelIndex>& /*indexes*/)
 /*
     QList<ItemInfo> imageInfos;
 
-    foreach(const QModelIndex& index, indexes)
+    foreach (const QModelIndex& index, indexes)
     {
         ItemInfo imageInfo(importFilterModel()->camItemInfo(index).url());
         imageInfos << imageInfo;

@@ -428,7 +428,7 @@ void YFTalker::updatePhotoInfo(YFPhoto& photo)
     entryElem.appendChild(access);
 
     // FIXME: undocumented API
-    foreach(const QString& t, photo.tags)
+    foreach (const QString& t, photo.tags)
     {
         QDomElement tag = doc.createElement(QLatin1String("category"));
         tag.setAttribute(QLatin1String("scheme"), d->apiTagsUrl);

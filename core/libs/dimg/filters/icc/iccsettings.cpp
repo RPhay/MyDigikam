@@ -159,7 +159,7 @@ bool IccSettings::monitorProfileFromSystem() const
     {
         QMutexLocker lock(&d->mutex);
 
-        foreach(const IccProfile& profile, d->screenProfiles)
+        foreach (const IccProfile& profile, d->screenProfiles)
         {
             if (!profile.isNull())
             {
@@ -548,7 +548,7 @@ QList<IccProfile> IccSettings::displayProfiles()
 {
     QList<IccProfile> profiles;
 
-    foreach(IccProfile profile, allProfiles())  // krazy:exclude=foreach
+    foreach (IccProfile profile, allProfiles())  // krazy:exclude=foreach
     {
         if (profile.type() == IccProfile::Display)
         {
@@ -584,7 +584,7 @@ QList<IccProfile> IccSettings::outputProfiles()
 {
     QList<IccProfile> profiles;
 
-    foreach(IccProfile profile, allProfiles())  // krazy:exclude=foreach
+    foreach (IccProfile profile, allProfiles())  // krazy:exclude=foreach
     {
         if (profile.type() == IccProfile::Output)
         {

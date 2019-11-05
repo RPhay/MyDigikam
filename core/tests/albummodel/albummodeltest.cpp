@@ -118,7 +118,7 @@ void AlbumModelTest::initTestCase()
     AlbumList all = AlbumManager::instance()->allPAlbums();
     qDebug() << "PAlbum registered : " << all.size();
 
-    foreach(Album* const a, all)
+    foreach (Album* const a, all)
     {
         if (a)
         {
@@ -225,7 +225,7 @@ void AlbumModelTest::init()
 
     qDebug() << "AlbumManager now knows these PAlbums:";
 
-    foreach(Album* const a, AlbumManager::instance()->allPAlbums())
+    foreach (Album* const a, AlbumManager::instance()->allPAlbums())
     {
         qDebug() << "\t" << a->title();
     }
@@ -256,7 +256,7 @@ void AlbumModelTest::init()
     qDebug() << "copying images " << imageFiles << " to "
              << palbumChild0Root0->fileUrl();
 
-    foreach(const QString& imageFile, imageFiles)
+    foreach (const QString& imageFile, imageFiles)
     {
         QString src = IMAGE_PATH + QLatin1Char('/') + imageFile;
         QString dst = palbumChild0Root0->fileUrl().toLocalFile() + QLatin1Char('/') + imageFile;
@@ -280,7 +280,7 @@ void AlbumModelTest::init()
     QVERIFY(rootFromAlbumManager);
     DAlbum* rootFromList               = nullptr;
 
-    foreach(Album* const album, AlbumManager::instance()->allDAlbums())
+    foreach (Album* const album, AlbumManager::instance()->allDAlbums())
     {
         DAlbum* const dAlbum = dynamic_cast<DAlbum*> (album);
         QVERIFY(dAlbum);
@@ -529,7 +529,7 @@ void AlbumModelTest::testDAlbumContainsAlbums()
 
     QVERIFY(albumModel->rootAlbum());
 
-    foreach(Album* const album, AlbumManager::instance()->allDAlbums())
+    foreach (Album* const album, AlbumManager::instance()->allDAlbums())
     {
         DAlbum* const dAlbum = dynamic_cast<DAlbum*> (album);
         QVERIFY(dAlbum);

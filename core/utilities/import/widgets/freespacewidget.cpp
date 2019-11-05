@@ -197,7 +197,7 @@ void FreeSpaceWidget::addInformation(unsigned long kBSize,
     d->isValid     = false;
     d->percentUsed = -1;
 
-    foreach(const MountPointInfo& info, d->infos)
+    foreach (const MountPointInfo& info, d->infos)
     {
         if (info.isValid)
         {
@@ -258,7 +258,7 @@ unsigned long FreeSpaceWidget::kBAvail(const QString& path) const
     int mountPointMatch = 0;
     MountPointInfo selectedInfo;
 
-    foreach(const MountPointInfo& info, d->infos)
+    foreach (const MountPointInfo& info, d->infos)
     {
         if (info.isValid && !info.mountPoint.isEmpty() && path.startsWith(info.mountPoint))
         {
@@ -386,7 +386,7 @@ void FreeSpaceWidget::leaveEvent(QEvent* e)
 
 void FreeSpaceWidget::slotTimeout()
 {
-    foreach(const QString& path, d->paths)
+    foreach (const QString& path, d->paths)
     {
         QStorageInfo info(path);
 

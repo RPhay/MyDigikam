@@ -190,7 +190,7 @@ MetaEngineRotation& MetaEngineRotation::operator*=(TransformationAction action)
 
 MetaEngineRotation& MetaEngineRotation::operator*=(QList<TransformationAction> actions)
 {
-    foreach(const TransformationAction& action, actions)
+    foreach (const TransformationAction& action, actions)
     {
         *this *= Matrix::matrix(action);
     }

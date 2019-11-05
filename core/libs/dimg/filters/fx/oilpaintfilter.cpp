@@ -158,7 +158,7 @@ void OilPaintFilter::filterImage()
                                       ));
     }
 
-    foreach(QFuture<void> t, tasks)
+    foreach (QFuture<void> t, tasks)
         t.waitForFinished();
 }
 
