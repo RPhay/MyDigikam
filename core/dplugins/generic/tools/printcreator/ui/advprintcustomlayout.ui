@@ -385,7 +385,7 @@
    <item>
     <widget class="QPushButton" name="m_doneButton">
      <property name="text">
-      <string>Ok</string>
+      <string>OK</string>
      </property>
     </widget>
    </item>
