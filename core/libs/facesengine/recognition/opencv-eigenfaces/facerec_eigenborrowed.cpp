@@ -104,21 +104,18 @@ void EigenFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_labe
 {
     if (_in_src.kind() != _InputArray::STD_VECTOR_MAT && _in_src.kind() != _InputArray::STD_VECTOR_VECTOR)
     {
-        String error_message = "The images are expected as InputArray::STD_VECTOR_MAT (a std::vector<Mat>) "
-                               "or _InputArray::STD_VECTOR_VECTOR (a std::vector< std::vector<...> >).";
-        CV_Error(CV_StsBadArg, error_message);
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "The images are expected as InputArray::STD_VECTOR_MAT (a std::vector<Mat>) "
+                                               "or _InputArray::STD_VECTOR_VECTOR (a std::vector< std::vector<...> >).";
     }
 
     if (_in_src.total() == 0)
     {
-        String error_message = format("Empty training data was given. You'll need more than one sample to learn a model.");
-        CV_Error(CV_StsUnsupportedFormat, error_message);
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Empty training data was given. You'll need more than one sample to learn a model.";
     }
     else if (_inm_labels.getMat().type() != CV_32SC1)
     {
-        String error_message = format("Labels must be given as integer (CV_32SC1). "
-                                      "Expected %d, but was %d.", CV_32SC1, _inm_labels.type());
-        CV_Error(CV_StsUnsupportedFormat, error_message);
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "Labels must be given as integer (CV_32SC1). "
+                                               "Expected" << CV_32SC1 << ", but was" << _inm_labels.type();
     }
 
     // get the vector of matrices
@@ -134,10 +131,8 @@ void EigenFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_labe
 
     if (labels.total() != src.size())
     {
-        String error_message = format("The number of samples (src) must equal the number of labels "
-                                      "(labels). Was len(samples)=%d, len(labels)=%d.",
-                                      (int)src.size(), (int)m_labels.total());
-        CV_Error(CV_StsBadArg, error_message);
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "The number of samples (src) must equal the number of labels (labels). "
+                                               "Was len(samples)=" << src.size() << ", len(labels)=" << m_labels.total();
     }
 
     // if this model should be trained without preserving old data, delete old model data
@@ -197,8 +192,7 @@ void EigenFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<face::PredictColl
     if (m_projections.empty())
     {
         // throw error if no data (or simply return -1?)
-        String error_message = "This Eigenfaces model is not computed yet. Did you call the train method?";
-        CV_Error(CV_StsBadArg, error_message);
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "This Eigenfaces model is not computed yet. Did you call the train method?";
     }
 
     Mat src = _src.getMat(); //254*254
