@@ -69,8 +69,6 @@ private Q_SLOTS:
 
 private:
 
-    DarkTableRawImportPlugin();
-
     class Private;
     Private* const d;
 };
