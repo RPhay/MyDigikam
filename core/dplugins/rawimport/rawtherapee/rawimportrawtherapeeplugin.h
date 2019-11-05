@@ -38,6 +38,7 @@ using namespace Digikam;
 namespace DigikamRawImportRawTherapeePlugin
 {
 
+// cppcheck-suppress noConstructor
 class RawTherapeeRawImportPlugin : public DPluginRawImport
 {
     Q_OBJECT

@@ -38,6 +38,7 @@ using namespace Digikam;
 namespace DigikamRawImportDarkTablePlugin
 {
 
+// cppcheck-suppress noConstructor
 class DarkTableRawImportPlugin : public DPluginRawImport
 {
     Q_OBJECT
@@ -67,6 +68,8 @@ private Q_SLOTS:
     void slotProcessReadyRead();
 
 private:
+
+    DarkTableRawImportPlugin();
 
     class Private;
     Private* const d;

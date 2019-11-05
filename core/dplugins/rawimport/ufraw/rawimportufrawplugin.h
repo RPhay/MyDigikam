@@ -38,6 +38,7 @@ using namespace Digikam;
 namespace DigikamRawImportUFRawPlugin
 {
 
+// cppcheck-suppress noConstructor
 class UFRawRawImportPlugin : public DPluginRawImport
 {
     Q_OBJECT
