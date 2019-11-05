@@ -222,8 +222,6 @@ bool Rotate::toolOperations()
     }
     else
     {
-        DImgBuiltinFilter filter;
-
         switch (rotation)
         {
             case DImg::ROT90:
