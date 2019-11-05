@@ -223,13 +223,13 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         if (DIGIKAM_DIMG_LOG_PGF().isDebugEnabled())
         {
-            const PGFHeader* const header = pgf.GetHeader();
-            qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF width    = " << header->width;
-            qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF height   = " << header->height;
-            qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF bbp      = " << header->bpp;
-            qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF channels = " << header->channels;
-            qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF quality  = " << header->quality;
-            qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF mode     = " << header->mode;
+            const PGFHeader* const pgfHeader = pgf.GetHeader();
+            qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF width    = " << pgfHeader->width;
+            qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF height   = " << pgfHeader->height;
+            qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF bbp      = " << pgfHeader->bpp;
+            qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF channels = " << pgfHeader->channels;
+            qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF quality  = " << pgfHeader->quality;
+            qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF mode     = " << pgfHeader->mode;
             qCDebug(DIGIKAM_DIMG_LOG_PGF) << "Has Alpha    = " << m_hasAlpha;
             qCDebug(DIGIKAM_DIMG_LOG_PGF) << "Is 16 bits   = " << m_sixteenBit;
         }
