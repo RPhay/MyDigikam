@@ -415,7 +415,7 @@ void LBPHFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_label
     }
 }
 
-void LBPHFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<cv::face::PredictCollector> collector) const
+void LBPHFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<face::PredictCollector> collector) const
 {
     if (m_histograms.empty())
     {

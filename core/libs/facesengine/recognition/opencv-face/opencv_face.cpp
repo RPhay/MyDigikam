@@ -36,9 +36,9 @@
 
 // Local includes
 
-#include "digikam_opencv.h"
+#include "digikam_debug.h"
 
-namespace cv
+namespace Digikam
 {
 
 namespace face
@@ -170,11 +170,11 @@ void FaceRecognizer::setLabelInfo(int label, const String& strInfo)
 
 void FaceRecognizer::update(InputArrayOfArrays src, InputArray labels)
 {
-    (void)src;
-    (void)labels;
-    String error_msg = format("This FaceRecognizer does not support updating, "
-                              "you have to use FaceRecognizer::train to update it.");
-    CV_Error(Error::StsNotImplemented, error_msg);
+    Q_UNUSED(src);
+    Q_UNUSED(labels);
+
+    qCCritical(DIGIKAM_FACESENGINE_LOG) << "This FaceRecognizer does not support updating, "
+                                           "you have to use FaceRecognizer::train to update it.";
 }
 
 #if OPENCV_TEST_VERSION(3,4,0)
@@ -187,7 +187,7 @@ void FaceRecognizer::read(const String& filename)
 
     if (!fs.isOpened())
     {
-        CV_Error(Error::StsError, "File can't be opened for writing!");
+        qCCritical(DIGIKAM_FACESENGINE_LOG) <<  "File can't be opened for writing!";
     }
 
 #if OPENCV_TEST_VERSION(3,4,0)
@@ -209,7 +209,7 @@ void FaceRecognizer::write(const String& filename) const
 
     if (!fs.isOpened())
     {
-        CV_Error(Error::StsError, "File can't be opened for writing!");
+        qCCritical(DIGIKAM_FACESENGINE_LOG) << "File can't be opened for writing!";
     }
 
 #if OPENCV_TEST_VERSION(3,4,0)
@@ -245,4 +245,4 @@ void FaceRecognizer::predict(InputArray src,
 
 } // namespace face
 
-} // namespace cv
+} // namespace Digikam

@@ -38,7 +38,9 @@
 #include "digikam_opencv.h"
 #include "digikam_export.h"
 
-namespace cv
+using namespace cv;
+
+namespace Digikam
 {
 
 namespace face
@@ -310,7 +312,7 @@ public:
      * @code
      *      // Create a new LBPH model (it can be updated) and use the default parameters,
      *      // this is the most common usage of this specific FaceRecognizer:
-     *      Ptr<FaceRecognizer> model =  createLBPHFaceRecognizer();
+     *      Ptr<FaceRecognizer> model = createLBPHFaceRecognizer();
      *      // This is the common interface to train all of the available cv::FaceRecognizer
      *      // implementations:
      *      model->train(images, labels);
@@ -491,6 +493,6 @@ protected:
 
 } // namespace face
 
-} // namespace cv
+} // namespace Digikam
 
 #endif // DIGIKAM_OPENCV_FACE_H

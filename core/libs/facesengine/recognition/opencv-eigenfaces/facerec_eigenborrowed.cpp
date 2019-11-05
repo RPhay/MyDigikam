@@ -190,7 +190,7 @@ void EigenFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_labe
     }
 }
 
-void EigenFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<cv::face::PredictCollector> collector) const
+void EigenFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<face::PredictCollector> collector) const
 {
     qCWarning(DIGIKAM_FACESENGINE_LOG) << "Predicting face image";
 

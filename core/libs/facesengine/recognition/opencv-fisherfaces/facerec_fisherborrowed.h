@@ -40,7 +40,7 @@
 namespace Digikam
 {
 
-class FisherFaceRecognizer : public cv::face::FaceRecognizer
+class FisherFaceRecognizer : public face::FaceRecognizer
 {
 public:
 
@@ -69,14 +69,14 @@ public:
     {
     }
 
-    using cv::face::FaceRecognizer::predict;
+    using face::FaceRecognizer::predict;
 
 #if OPENCV_TEST_VERSION(3,4,0)
-    using cv::face::FaceRecognizer::save;
-    using cv::face::FaceRecognizer::load;
+    using face::FaceRecognizer::save;
+    using face::FaceRecognizer::load;
 #else
-    using cv::face::FaceRecognizer::write;
-    using cv::face::FaceRecognizer::read;
+    using face::FaceRecognizer::write;
+    using face::FaceRecognizer::read;
 #endif
 
     static cv::Ptr<FisherFaceRecognizer> create(double threshold = DBL_MAX);
@@ -96,7 +96,7 @@ public:
     /**
      * Predict
      */
-    void predict(cv::InputArray src, cv::Ptr<cv::face::PredictCollector> collector) const override;
+    void predict(cv::InputArray src, cv::Ptr<face::PredictCollector> collector)     const override;
 
     /**
      * See FaceRecognizer::load().
