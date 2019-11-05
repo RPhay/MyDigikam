@@ -1115,15 +1115,15 @@ QList<QAction*> ContextMenuHelper::groupMenuActions(const imageIds& ids)
 
         if (d->imageFilterModel)
         {
-            QAction* const openAction = new QAction(i18nc("@action:inmenu", "Show Grouped Images"), this);
+            QAction* const openAction   = new QAction(i18nc("@action:inmenu", "Show Grouped Images"), this);
             connect(openAction, SIGNAL(triggered()), this, SLOT(slotOpenGroups()));
             actions << openAction;
 
-            QAction* const closeAction = new QAction(i18nc("@action:inmenu", "Hide Grouped Images"), this);
-            connect(closeAction, SIGNAL(triggered()), this, SLOT(slotCloseGroups()));
-            actions << closeAction;
+            QAction* const hideAction = new QAction(i18nc("@action:inmenu", "Hide Grouped Images"), this);
+            connect(hideAction, SIGNAL(triggered()), this, SLOT(slotCloseGroups()));
+            actions << hideAction;
 
-            QAction* const separator2 = new QAction(this);
+            QAction* const separator2   = new QAction(this);
             separator2->setSeparator(true);
             actions << separator2;
         }
