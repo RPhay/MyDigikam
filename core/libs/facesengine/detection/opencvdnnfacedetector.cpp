@@ -84,7 +84,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage) con
 
     QImage image(inputImage);
     qint64 inputArea                    = image.width() * image.height();
-    const qint64 maxAcceptableInputArea = 1024*768;
+    const qint64 maxAcceptableInputArea = 1024 * 768;
 
     if (inputArea > maxAcceptableInputArea)
     {
@@ -125,7 +125,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage) con
     return cvImage;
 }
 
-cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const Digikam::DImg& inputImage) const
+cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage) const
 {
     if (inputImage.isNull() || !inputImage.size().isValid())
     {
@@ -134,7 +134,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const Digikam::DImg& inputIma
 
     Digikam::DImg image(inputImage);
     qint64 inputArea                    = image.width() * image.height();
-    const qint64 maxAcceptableInputArea = 1024*768;
+    const qint64 maxAcceptableInputArea = 1024 * 768;
 
     if (inputArea > maxAcceptableInputArea)
     {
@@ -161,10 +161,11 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QString& inputImagePath
 {
     cv::Mat image           = cv::imread(inputImagePath.toStdString()), imagePadded;
     cv::Size inputImageSize = m_inferenceEngine->nnInputSizeRequired();
-    float k                 = qMin(inputImageSize.width*1.0/image.cols, inputImageSize.height*1.0/image.rows);
+    float k                 = qMin(inputImageSize.width  * 1.0 / image.cols,
+                                   inputImageSize.height * 1.0 / image.rows);
 
-    int newWidth            = (int)(k*image.cols);
-    int newHeight           = (int)(k*image.rows);
+    int newWidth            = (int)(k * image.cols);
+    int newHeight           = (int)(k * image.rows);
     cv::resize(image, image, cv::Size(newWidth, newHeight));
 
     // Pad with black pixels
@@ -193,28 +194,28 @@ void OpenCVDNNFaceDetector::resizeBboxToStandardHumanFace(int& width, int& heigh
     // Human head sizes data
     // https://en.wikipedia.org/wiki/Human_head#Average_head_sizes
 
-    float maxRatioFrontalFace = 15.4 / 15.5;
-    float minRatioNonFrontalFace = 8.6 / 21.6;
+    float maxRatioFrontalFace    = 15.4 / 15.5;
+    float minRatioNonFrontalFace = 8.6  / 21.6;
 
     float r = width*1.0/height, rReference;
 
-    if ((r >= minRatioNonFrontalFace*0.9) && r <= (maxRatioFrontalFace*1.1))
+    if ((r >= minRatioNonFrontalFace*0.9) && r <= (maxRatioFrontalFace * 1.1))
     {
         rReference = r;
     }
     else if (r <= 0.25)
     {
-        rReference = r*1.5;
+        rReference = r * 1.5;
     }
     else if (r >= 4)
     {
-        rReference = r/1.5;
+        rReference = r / 1.5;
     }
-    else if (r < minRatioNonFrontalFace*0.9)
+    else if (r < minRatioNonFrontalFace * 0.9)
     {
         rReference = minRatioNonFrontalFace;
     }
-    else if (r > maxRatioFrontalFace*1.1)
+    else if (r > maxRatioFrontalFace * 1.1)
     {
         rReference = maxRatioFrontalFace;
     }
@@ -248,7 +249,7 @@ QList<QRect> OpenCVDNNFaceDetector::detectFaces(const cv::Mat& inputImage,
         qCDebug(DIGIKAM_FACESENGINE_LOG) << rect;
         cv::rectangle(imageTest, cv::Rect(bbox.x + paddedSize.width,
                                           bbox.y + paddedSize.height,
-                                          bbox.width, bbox.height), cv::Scalar(0,128,0));
+                                          bbox.width, bbox.height), cv::Scalar(0, 128, 0));
 */
     }
 /*
