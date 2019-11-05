@@ -122,31 +122,31 @@ public:
     /**
      * @brief Returns label with minimal distance
      */
-    CV_WRAP int getMinLabel() const;
+    int getMinLabel()                                                     const;
 
     /**
      * @brief Returns minimal distance value
      */
-    CV_WRAP double getMinDist() const;
+    double getMinDist()                                                   const;
 
     /**
      * @brief Return results as vector
      * @param sorted If set, results will be sorted by distance
      * Each values is a pair of label and distance.
      */
-    CV_WRAP std::vector< std::pair<int, double> > getResults(bool sorted = false) const;
+    std::vector< std::pair<int, double> > getResults(bool sorted = false) const;
 
     /**
      * @brief Return results as map
      * Labels are keys, values are minimal distances
      */
-    std::map<int, double> getResultsMap() const;
+    std::map<int, double> getResultsMap()                                 const;
 
     /**
      * @brief Static constructor
      * @param threshold set threshold
      */
-    CV_WRAP static Ptr<StandardCollector> create(double threshold = DBL_MAX);
+    static Ptr<StandardCollector> create(double threshold = DBL_MAX);
 };
 
 // -------------------------------------------------------------------------------------------------------
@@ -292,8 +292,8 @@ public:
      *      model->train(images, labels);
      * @endcode
      */
-    CV_WRAP virtual void train(InputArrayOfArrays src,
-                               InputArray labels) = 0;
+    virtual void train(InputArrayOfArrays src,
+                       InputArray labels) = 0;
 
     /**
      * @brief Updates a FaceRecognizer with given data and associated labels.
@@ -338,13 +338,13 @@ public:
      * memory intense and it's not the responsibility of te FaceRecognizer to do so. The caller is
      * responsible for maintaining the dataset, he want to work with.
      */
-    CV_WRAP virtual void update(InputArrayOfArrays src,
-                                InputArray labels);
+    virtual void update(InputArrayOfArrays src,
+                        InputArray labels);
 
     /**
      * @overload
      */
-    CV_WRAP_AS(predict_label) int predict(InputArray src) const;
+    int predict(InputArray src) const;
 
     /**
      * @brief Predicts a label and associated confidence (e.g. distance) for a given input image.
@@ -382,9 +382,9 @@ public:
      *      model->predict(img, predicted_label, predicted_confidence);
      * @endcode
      */
-    CV_WRAP void predict(InputArray src,
-                         CV_OUT int& label,
-                         CV_OUT double& confidence) const;
+    void predict(InputArray src,
+                 int& label,
+                 double& confidence) const;
 
     /**
      * @brief - if implemented - send all result of prediction to collector that can be used for somehow custom result handling
@@ -392,11 +392,11 @@ public:
      * @param src Sample image to get a prediction from.
      * @param collector User-defined collector object that accepts all results
      *
-     * To implement this method u just have to do same internal cycle as in predict(InputArray src, CV_OUT int &label, CV_OUT double &confidence) but
+     * To implement this method u just have to do same internal cycle as in predict(InputArray src, int& label, double& confidence) but
      * not try to get "best@ result, just resend it to caller side with given collector
      */
-    CV_WRAP_AS(predict_collect) virtual void predict(InputArray src,
-                                             Ptr<PredictCollector> collector) const = 0;
+    virtual void predict(InputArray src,
+                         Ptr<PredictCollector> collector) const = 0;
 
     /**
      * @brief Saves a FaceRecognizer and its model state.
@@ -412,9 +412,9 @@ public:
      * be safely called from within different threads.
      */
 #if OPENCV_TEST_VERSION(3,4,0)
-    CV_WRAP virtual void save(const String& filename)  const;
+    virtual void save(const String& filename)  const;
 #else
-    CV_WRAP virtual void write(const String& filename) const;
+    virtual void write(const String& filename) const;
 #endif
 
     /**
@@ -426,9 +426,9 @@ public:
      * FaceRecognizer::load(const String& filename), to ease saving a model.
      */
 #if OPENCV_TEST_VERSION(3,4,0)
-    CV_WRAP virtual void load(const String& filename);
+    virtual void load(const String& filename);
 #else
-    CV_WRAP virtual void read(const String& filename);
+    virtual void read(const String& filename);
 #endif
 
     /**
@@ -457,8 +457,8 @@ public:
      *
      * The string info is replaced by the provided value if it was set before for the specified label.
      */
-    CV_WRAP virtual void setLabelInfo(int label,
-                                      const String& strInfo);
+    virtual void setLabelInfo(int label,
+                              const String& strInfo);
 
     /**
      * @brief Gets string information by label.
@@ -466,7 +466,7 @@ public:
      * If an unknown label id is provided or there is no label information associated with the specified
      * label id the method returns an empty string.
      */
-    CV_WRAP virtual String getLabelInfo(int label) const;
+    virtual String getLabelInfo(int label) const;
 
     /**
      * @brief Gets vector of labels by string.
@@ -474,7 +474,7 @@ public:
      * The function searches for the labels containing the specified sub-string in the associated string
      * info.
      */
-    CV_WRAP virtual std::vector<int> getLabelsByString(const String& str) const;
+    virtual std::vector<int> getLabelsByString(const String& str) const;
 
     /**
      * @brief threshold parameter accessor - required for default BestMinDist collector

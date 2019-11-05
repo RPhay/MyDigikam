@@ -232,8 +232,8 @@ int FaceRecognizer::predict(InputArray src) const
 }
 
 void FaceRecognizer::predict(InputArray src,
-                             CV_OUT int& label,
-                             CV_OUT double& confidence) const
+                             int& label,
+                             double& confidence) const
 {
     Ptr<StandardCollector> collector = StandardCollector::create(getThreshold());
 
