@@ -547,7 +547,7 @@ void TableView::invertSelection()
 
     s->tableViewSelectionModel->clearSelection();
 
-    foreach(const int i, rowsToSelect)
+    foreach (const int i, rowsToSelect)
     {
         const QModelIndex iIndex = s->tableViewModel->deepRowIndex(i);
         const QItemSelection is  = s->tableViewSelectionModelSyncer->targetIndexToRowItemSelection(iIndex);
@@ -647,12 +647,12 @@ void TableView::rename()
 
         if (!newNamesList.isEmpty())
         {
-            QPointer<AdvancedRenameProcessDialog> dlg = new AdvancedRenameProcessDialog(newNamesList, this);
-            dlg->exec();
+            QPointer<AdvancedRenameProcessDialog> dlg2 = new AdvancedRenameProcessDialog(newNamesList, this);
+            dlg2->exec();
 
             s->tableViewModel->scheduleResort();
-            urls = dlg->failedUrls();
-            delete dlg;
+            urls = dlg2->failedUrls();
+            delete dlg2;
         }
     }
     while (!urls.isEmpty() && !newNamesList.isEmpty());
