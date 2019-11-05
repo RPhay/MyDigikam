@@ -1418,12 +1418,12 @@ int TimeLineWidget::statForDateTime(const QDateTime& dt, SelectionMode& selected
 
         case Year:
         {
-            QMap<int, Private::StatPair>::const_iterator it = d->yearStatMap.constFind(year);
+            QMap<int, Private::StatPair>::const_iterator it2 = d->yearStatMap.constFind(year);
 
-            if (it != d->yearStatMap.constEnd())
+            if (it2 != d->yearStatMap.constEnd())
             {
-                count     = it.value().first;
-                selected  = it.value().second;
+                count     = it2.value().first;
+                selected  = it2.value().second;
             }
 
             break;

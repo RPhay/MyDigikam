@@ -74,24 +74,24 @@ public:
     ~TimeLineWidget();
 
     void      setTimeUnit(TimeUnit timeUnit);
-    TimeUnit  timeUnit() const;
+    TimeUnit  timeUnit()                                                        const;
 
     void      setScaleMode(ScaleMode scaleMode);
-    ScaleMode scaleMode() const;
+    ScaleMode scaleMode()                                                       const;
 
     void      setCursorDateTime(const QDateTime& dateTime);
-    QDateTime cursorDateTime() const;
-    int       cursorInfo(QString& infoDate) const;
+    QDateTime cursorDateTime()                                                  const;
+    int       cursorInfo(QString& infoDate)                                     const;
 
     /**
      * Return a list of Date-Range based on selection performed on days-map
      */
-    DateRangeList selectedDateRange(int& totalCount) const;
+    DateRangeList selectedDateRange(int& totalCount)                            const;
     void          setSelectedDateRange(const DateRangeList& list);
 
-    int  totalIndex()             const;
-    int  indexForRefDateTime()    const;
-    int  indexForCursorDateTime() const;
+    int  totalIndex()                                                           const;
+    int  indexForRefDateTime()                                                  const;
+    int  indexForCursorDateTime()                                               const;
     void setCurrentIndex(int index);
 
 Q_SIGNALS:
@@ -116,42 +116,53 @@ private Q_SLOTS:
 
 private:
 
-    QDateTime     prevDateTime(const QDateTime& dt) const;
-    QDateTime     nextDateTime(const QDateTime& dt) const;
+    QDateTime     prevDateTime(const QDateTime& dt)                             const;
+    QDateTime     nextDateTime(const QDateTime& dt)                             const;
 
-    int           maxCount() const;
-    int           indexForDateTime(const QDateTime& date) const;
+    int           maxCount()                                                    const;
+    int           indexForDateTime(const QDateTime& date)                       const;
     int           statForDateTime(const QDateTime& dt, SelectionMode& selected) const;
     void          setRefDateTime(const QDateTime& dateTime);
 
-    void          paintEvent(QPaintEvent*) override;
-    void          wheelEvent(QWheelEvent*) override;
+    void          paintEvent(QPaintEvent*)        override;
+    void          wheelEvent(QWheelEvent*)        override;
 
-    void          mousePressEvent(QMouseEvent*) override;
-    void          mouseMoveEvent(QMouseEvent*) override;
+    void          mousePressEvent(QMouseEvent*)   override;
+    void          mouseMoveEvent(QMouseEvent*)    override;
     void          mouseReleaseEvent(QMouseEvent*) override;
 
-    void          keyPressEvent(QKeyEvent *e) override;
-    void          keyReleaseEvent(QKeyEvent *) override;
+    void          keyPressEvent(QKeyEvent *e)     override;
+    void          keyReleaseEvent(QKeyEvent *)    override;
     void          keyScroll(bool isScrollNext);
 
-    QDateTime     dateTimeForPoint(const QPoint& pt, bool& isOnSelectionArea);
-    QDateTime     firstDayOfWeek(int year, int weekNumber) const;
+    QDateTime     dateTimeForPoint(const QPoint& pt,
+                                   bool& isOnSelectionArea);
+    QDateTime     firstDayOfWeek(int year, int weekNumber)                      const;
 
     void          resetSelection();
-    void          setDateTimeSelected(const QDateTime& dt, SelectionMode selected);
-    void          setDaysRangeSelection(const QDateTime& dts, const QDateTime& dte, SelectionMode selected);
-    SelectionMode checkSelectionForDaysRange(const QDateTime& dts, const QDateTime& dte) const;
-    void          updateWeekSelection(const QDateTime& dts, const QDateTime& dte);
-    void          updateMonthSelection(const QDateTime& dts, const QDateTime& dte);
-    void          updateYearSelection(const QDateTime& dts, const QDateTime& dte);
+    void          setDateTimeSelected(const QDateTime& dt,
+                                      SelectionMode selected);
+    void          setDaysRangeSelection(const QDateTime& dts,
+                                        const QDateTime& dte,
+                                        SelectionMode selected);
+    SelectionMode checkSelectionForDaysRange(const QDateTime& dts,
+                                             const QDateTime& dte)              const;
+    void          updateWeekSelection(const QDateTime& dts,
+                                      const QDateTime& dte);
+    void          updateMonthSelection(const QDateTime& dts,
+                                       const QDateTime& dte);
+    void          updateYearSelection(const QDateTime& dts,
+                                      const QDateTime& dte);
     void          updateAllSelection();
 
     // helper methods for painting
-    int           calculateTop(int& val) const;
-    void          paintItem(QPainter& p, const QRect& barRect,
-                            const QDateTime& ref, const int& separatorPosition,
-                            const QColor& dateColor, const QColor& subDateColor);
+    int           calculateTop(int& val)                                        const;
+    void          paintItem(QPainter& p,
+                            const QRect& barRect,
+                            const QDateTime& ref,
+                            const int& separatorPosition,
+                            const QColor& dateColor,
+                            const QColor& subDateColor);
 
     void          handleSelectionRange(QDateTime& selEndDateTime);
 
