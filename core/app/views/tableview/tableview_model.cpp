@@ -854,12 +854,12 @@ void TableViewModel::addSourceModelIndex(const QModelIndex& imageModelIndex, con
         }
     }
 
-    Item* item      = createItemFromSourceIndex(imageModelIndex);
+    Item* const item = createItemFromSourceIndex(imageModelIndex);
 
     // Normally we do the sorting of items here on insertion.
     // However, if the sorting is currently outdated, we just
     // append the items because the model will be resorted later.
-    int newRowIndex = parentItem->children.count();
+    int newRowIndex  = parentItem->children.count();
 
     if (!d->sortRequired)
     {
@@ -901,14 +901,14 @@ void TableViewModel::addSourceModelIndex(const QModelIndex& imageModelIndex, con
             // Normally we do the sorting of items here on insertion.
             // However, if the sorting is currently outdated, we just
             // append the items because the model will be resorted later.
-            int newRowIndex = item->children.count();
+            int index = item->children.count();
 
             if (!d->sortRequired)
             {
-                newRowIndex = findChildSortedPosition(item, groupedItem);
+                index = findChildSortedPosition(item, groupedItem);
             }
 
-            item->insertChild(newRowIndex, groupedItem);
+            item->insertChild(index, groupedItem);
         }
 
         if (sendNotifications)
