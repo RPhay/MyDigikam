@@ -496,12 +496,12 @@ void MonthWidget::updateDays()
             continue;
         }
 
-        for (int i = 0 ; i < 42 ; ++i)
+        for (int j = 0 ; j < 42 ; ++j)
         {
-            if (d->days[i].day == dt.date().day())
+            if (d->days[j].day == dt.date().day())
             {
-                d->days[i].active = true;
-                d->days[i].numImages++;
+                d->days[j].active = true;
+                d->days[j].numImages++;
                 break;
             }
         }
