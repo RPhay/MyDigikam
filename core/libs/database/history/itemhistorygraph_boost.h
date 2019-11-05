@@ -43,7 +43,7 @@
 
 // Boost includes
 
-// prohibit boost using deprecated header files
+// Prohibit boost using deprecated header files
 #define BOOST_NO_HASH
 
 // C++ includes
@@ -92,8 +92,8 @@ class QMapForAdaptors : public QMap<Key, Value>
 {
 public:
 
-    typedef Key   key_type;
-    typedef Value data_type;
+    typedef Key                                  key_type;
+    typedef Value                                data_type;
     typedef typename std::pair<const Key, Value> value_type;
 
     QMapForAdaptors()
@@ -114,7 +114,9 @@ enum MeaningOfDirection
     ChildToParent
 };
 
-/* the graph base class template */
+/**
+ * The graph base class template
+ */
 template <class VertexProperties, class EdgeProperties>
 class DIGIKAM_DATABASE_EXPORT Graph
 {
@@ -127,7 +129,7 @@ public:
           boost::property<boost::vertex_index_t, int,
           boost::property<vertex_properties_t, VertexProperties> >,
           boost::property<edge_properties_t, EdgeProperties>            /// One property for each edge: EdgeProperties
-          > GraphContainer;
+    > GraphContainer;
 
     /**
      * a bunch of graph-specific typedefs that make the long boost types manageable
@@ -480,19 +482,19 @@ public:
                                                                          : OutboundEdges));
         }
 
-        QList<Vertex> vertices;
+        QList<Vertex> verticesLst;
 
         if (flags & OutboundEdges)
         {
-            vertices << toVertexList(boost::adjacent_vertices(v, graph));
+            verticesLst << toVertexList(boost::adjacent_vertices(v, graph));
         }
 
         if (flags & InboundEdges)
         {
-            vertices << toVertexList(boost::inv_adjacent_vertices(v, graph));
+            verticesLst << toVertexList(boost::inv_adjacent_vertices(v, graph));
         }
 
-        return vertices;
+        return verticesLst;
     }
 
     // for "hasAdjacentVertices", simply use hasEdges(v, flags)
@@ -634,11 +636,11 @@ public:
      */
     QList<Vertex> topologicalSort() const
     {
-        std::list<Vertex> vertices;
+        std::list<Vertex> verticesLst;
 
         try
         {
-            boost::topological_sort(graph, std::back_inserter(vertices));
+            boost::topological_sort(graph, std::back_inserter(verticesLst));
         }
         catch (boost::bad_graph& e)
         {
@@ -649,7 +651,7 @@ public:
 
         typedef typename std::list<Vertex>::iterator vertex_list_iter;
 
-        return toVertexList(std::pair<vertex_list_iter, vertex_list_iter>(vertices.begin(), vertices.end()));
+        return toVertexList(std::pair<vertex_list_iter, vertex_list_iter>(verticesLst.begin(), verticesLst.end()));
     }
 
     enum GraphCopyFlags
@@ -673,8 +675,10 @@ public:
 
         try
         {
-            boost::transitive_closure(graph, closure.graph,
-                                      orig_to_copy(make_iterator_property_map(copiedVertices.begin(), get(boost::vertex_index, graph)))
+            boost::transitive_closure(graph,
+                                      closure.graph,
+                                      orig_to_copy(make_iterator_property_map(copiedVertices.begin(),
+                                                                              get(boost::vertex_index, graph)))
                                      );
         }
         catch (boost::bad_graph& e)
@@ -826,15 +830,15 @@ public:
             return QList<Vertex>();
         }
 
-        QList<Vertex> vertices;
+        QList<Vertex> verticesLst;
 
         Path path;
         path.shortestPath(graph, v1);
 
         if (path.isReachable(v2))
         {
-            vertices = listPath(v2, v1, path.predecessors, ChildToParent);
-            vertices.prepend(v1);
+            verticesLst = listPath(v2, v1, path.predecessors, ChildToParent);
+            verticesLst.prepend(v1);
         }
         else
         {
@@ -843,12 +847,12 @@ public:
 
             if (path.isReachable(v1))
             {
-                vertices = listPath(v1, v2, path.predecessors);
-                vertices.append(v2);
+                verticesLst = listPath(v1, v2, path.predecessors);
+                verticesLst.append(v2);
             }
         }
 
-        return vertices;
+        return verticesLst;
     }
 
     /**
@@ -857,8 +861,7 @@ public:
      */
     QMap<Vertex, int> shortestDistancesFrom(const Vertex& v) const
     {
-        QList<Vertex> vertices;
-        Path          path;
+        Path path;
 
         if (direction == ParentToChild)
         {
@@ -980,33 +983,32 @@ public:
         if (ref.isNull())
             ref = roots().first();
 
-        QList<Vertex> vertices;
+        QList<Vertex> verticesLst;
+        verticesLst << rootsOf(ref);
 
-        vertices << rootsOf(ref);
-
-        if (vertices.size() == vertexCount())
-            return vertices;
+        if (verticesLst.size() == vertexCount())
+            return verticesLst;
 
         GraphSearch search;
-        search.breadthFirstSearch(graph, vertices.first(), direction == ChildToParent);
-        QList<Vertex> bfs = search.vertices;
+        search.breadthFirstSearch(graph, verticesLst.first(), direction == ChildToParent);
+        QList<Vertex> bfs = search.verticesLst;
 
-        foreach (const Vertex& v, vertices)
+        foreach (const Vertex& v, verticesLst)
         {
             bfs.removeOne(v);
         }
 
-        vertices << bfs;
+        verticesLst << bfs;
 
-        if (vertices.size() == vertexCount())
-            return vertices;
+        if (verticesLst.size() == vertexCount())
+            return verticesLst;
 
         // sort in any so far unreachable nodes
         vertex_range_t range = boost::vertices(graph);
 
         for (vertex_iter it = range.first ; it != range.second ; ++it)
         {
-            if (!vertices.contains(*it))
+            if (!verticesLst.contains(*it))
             {
                 GraphSearch childSearch;
                 childSearch.breadthFirstSearch(graph, *it, direction == ChildToParent);
@@ -1014,11 +1016,11 @@ public:
                 QList<Vertex> toInsert;
 
                 // any item reachable from *it should come after it
-                int minIndex = vertices.size();
+                int minIndex = verticesLst.size();
 
                 foreach (const Vertex& c, childBfs)
                 {
-                    int foundAt = vertices.indexOf(c);
+                    int foundAt = verticesLst.indexOf(c);
 
                     if (foundAt == -1)
                     {
@@ -1032,12 +1034,12 @@ public:
 
                 foreach (const Vertex& c, toInsert)
                 {
-                    vertices.insert(minIndex++, c);
+                    verticesLst.insert(minIndex++, c);
                 }
             }
         }
 
-        return vertices;
+        return verticesLst;
     }
 
     /**
@@ -1059,23 +1061,22 @@ public:
         if (ref.isNull())
             ref = roots().first();
 
-        QList<Vertex> vertices;
+        QList<Vertex> verticesLst;
+        verticesLst = rootsOf(ref);
 
-        vertices = rootsOf(ref);
-
-        if (vertices.size() == vertexCount() || vertices.isEmpty())
-            return vertices;
+        if (verticesLst.size() == vertexCount() || verticesLst.isEmpty())
+            return verticesLst;
 
         GraphSearch search;
-        search.depthFirstSearchSorted(graph, vertices.first(), direction == ChildToParent, lessThan);
+        search.depthFirstSearchSorted(graph, verticesLst.first(), direction == ChildToParent, lessThan);
         QList<Vertex> dfs = search.vertices;
 
-        foreach (const Vertex& v, vertices)
+        foreach (const Vertex& v, verticesLst)
         {
             dfs.removeOne(v);
         }
 
-        vertices << dfs;
+        verticesLst << dfs;
 
         return search.vertices;
     }
@@ -1084,11 +1085,11 @@ protected:
 
     QList<Vertex> treeFromPredecessors(const Vertex& v, const VertexVertexMap& predecessors) const
     {
-        QList<Vertex> vertices;
-        vertices << v;
-        treeFromPredecessorsRecursive(v, vertices, predecessors);
+        QList<Vertex> verticesLst;
+        verticesLst << v;
+        treeFromPredecessorsRecursive(v, verticesLst, predecessors);
 
-        return vertices;
+        return verticesLst;
     }
 
     void treeFromPredecessorsRecursive(const Vertex& v,
@@ -1228,18 +1229,19 @@ protected:
      */
     QList<Vertex> findZeroDegree(bool inOrOut) const
     {
-        QList<Vertex> vertices;
+        QList<Vertex> verticesLst;
         vertex_range_t range = boost::vertices(graph);
 
         for (vertex_iter it = range.first ; it != range.second ; ++it)
         {
-            if ( (inOrOut ? in_degree(*it, graph) : out_degree(*it, graph)) == 0)
+            if ( (inOrOut ? in_degree(*it, graph)
+                          : out_degree(*it, graph)) == 0)
             {
-                vertices << *it;
+                verticesLst << *it;
             }
         }
 
-        return vertices;
+        return verticesLst;
     }
 
     QList<Vertex> findZeroDegreeFrom(const Vertex& v, bool inOrOut) const
@@ -1252,18 +1254,18 @@ protected:
         GraphSearch search;
         search.breadthFirstSearch(graph, v, invertGraph);
 
-        QList<Vertex> vertices;
+        QList<Vertex> verticesLst;
 
         foreach (const Vertex& candidate, search.vertices)
         {
             if ( (inOrOut ? in_degree(candidate, graph)
                           : out_degree(candidate, graph)) == 0)
             {
-                vertices << candidate;
+                verticesLst << candidate;
             }
         }
 
-        return vertices;
+        return verticesLst;
      }
 
     /**
@@ -1597,18 +1599,18 @@ protected:
                            const VertexVertexMap& predecessors,
                            MeaningOfDirection dir = ParentToChild) const
     {
-        QList<Vertex> vertices;
+        QList<Vertex> verticesLst;
 
         for (Vertex v = root ; v != target ; v = predecessors.value(v))
         {
             //qDebug() << "Adding waypoint" << id(v);
             if (dir == ParentToChild)
             {
-                vertices.append(v);
+                verticesLst.append(v);
             }
             else
             {
-                vertices.prepend(v);
+                verticesLst.prepend(v);
             }
 
             // If a node is not reachable, it seems its entry in the predecessors map is itself
@@ -1619,7 +1621,7 @@ protected:
             }
         }
 
-        return vertices;
+        return verticesLst;
     }
 
 protected:
