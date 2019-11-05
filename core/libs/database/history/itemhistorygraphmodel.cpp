@@ -69,7 +69,7 @@ public:
 
     bool isType(HistoryTreeItemType t) const
     {
-        return type() == t;
+        return (type() == t);
     }
 
     void addItem(HistoryTreeItem* child);
@@ -269,14 +269,14 @@ public:
     {
     }
 
-    ItemHistoryGraphModel::Mode                       mode;
+    ItemHistoryGraphModel::Mode                        mode;
 
-    ItemHistoryGraph                                  historyGraph;
-    ItemInfo                                          info;
+    ItemHistoryGraph                                   historyGraph;
+    ItemInfo                                           info;
 
     HistoryTreeItem*                                   rootItem;
     QList<VertexItem*>                                 vertexItems;
-    ItemListModel                                     imageModel;
+    ItemListModel                                      imageModel;
     QList<HistoryGraph::Vertex>                        path;
     QHash<HistoryGraph::Vertex, HistoryImageId::Types> categories;
 
@@ -287,7 +287,7 @@ public:
         return historyGraph.data();
     }
 
-    inline HistoryTreeItem* item(const QModelIndex& index) const
+    inline HistoryTreeItem* historyItem(const QModelIndex& index) const
     {
         return index.isValid() ? static_cast<HistoryTreeItem*>(index.internalPointer()) : rootItem;
     }
@@ -317,10 +317,10 @@ public:
 // ------------------------------------------------------------------------
 
 VertexItem* ItemHistoryGraphModel::Private::createVertexItem(const HistoryGraph::Vertex& v,
-                                                              const ItemInfo& givenInfo)
+                                                             const ItemInfo& givenInfo)
 {
     const HistoryVertexProperties& props = graph().properties(v);
-    ItemInfo info                       = givenInfo.isNull() ? props.firstItemInfo() : givenInfo;
+    ItemInfo info                        = givenInfo.isNull() ? props.firstItemInfo() : givenInfo;
     QModelIndex index                    = imageModel.indexForItemInfo(info);
     //qCDebug(DIGIKAM_DATABASE_LOG) << "Added" << info.id() << index;
     VertexItem* item                     = new VertexItem(v);
@@ -694,21 +694,21 @@ ItemInfo ItemHistoryGraphModel::subject() const
 
 bool ItemHistoryGraphModel::isImage(const QModelIndex& index) const
 {
-    HistoryTreeItem* const item = d->item(index);
+    HistoryTreeItem* const item = d->historyItem(index);
 
     return (item && item->isType(HistoryTreeItem::VertexItemType));
 }
 
 bool ItemHistoryGraphModel::isFilterAction(const QModelIndex& index) const
 {
-    HistoryTreeItem* const item = d->item(index);
+    HistoryTreeItem* const item = d->historyItem(index);
 
     return (item && item->isType(HistoryTreeItem::FilterActionItemType));
 }
 
 FilterAction ItemHistoryGraphModel::filterAction(const QModelIndex& index) const
 {
-    HistoryTreeItem* const item = d->item(index);
+    HistoryTreeItem* const item = d->historyItem(index);
 
     if_isItem(FilterActionItem, filterActionItem, item)
     {
@@ -765,7 +765,7 @@ QVariant ItemHistoryGraphModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
-    HistoryTreeItem* const item = d->item(index);
+    HistoryTreeItem* const item = d->historyItem(index);
 
     if_isItem(VertexItem, vertexItem, item)
     {
@@ -879,7 +879,7 @@ QVariant ItemHistoryGraphModel::data(const QModelIndex& index, int role) const
 
 bool ItemHistoryGraphModel::setData(const QModelIndex& index, const QVariant& value, int role)
 {
-    HistoryTreeItem* const item = d->item(index);
+    HistoryTreeItem* const item = d->historyItem(index);
 
     if_isItem(VertexItem, vertexItem, item)
     {
@@ -899,7 +899,7 @@ ItemListModel* ItemHistoryGraphModel::imageModel() const
 
 QModelIndex ItemHistoryGraphModel::imageModelIndex(const QModelIndex& index) const
 {
-    HistoryTreeItem* const item = d->item(index);
+    HistoryTreeItem* const item = d->historyItem(index);
 
     if_isItem(VertexItem, vertexItem, item)
     {
@@ -920,7 +920,7 @@ QVariant ItemHistoryGraphModel::headerData(int section, Qt::Orientation orientat
 
 int ItemHistoryGraphModel::rowCount(const QModelIndex& parent) const
 {
-    return d->item(parent)->childCount();
+    return d->historyItem(parent)->childCount();
 }
 
 int ItemHistoryGraphModel::columnCount(const QModelIndex&) const
@@ -935,7 +935,7 @@ Qt::ItemFlags ItemHistoryGraphModel::flags(const QModelIndex& index) const
         return nullptr;
     }
 
-    HistoryTreeItem* const item = d->item(index);
+    HistoryTreeItem* const item = d->historyItem(index);
 
     if_isItem(VertexItem, vertexItem, item)
     {
@@ -966,7 +966,7 @@ QModelIndex ItemHistoryGraphModel::index(int row, int column , const QModelIndex
         return QModelIndex();
     }
 
-    HistoryTreeItem* item = d->item(parent);
+    HistoryTreeItem* const item = d->historyItem(parent);
 
     if (row >= item->childCount())
     {
@@ -978,12 +978,12 @@ QModelIndex ItemHistoryGraphModel::index(int row, int column , const QModelIndex
 
 bool ItemHistoryGraphModel::hasChildren(const QModelIndex& parent) const
 {
-    return d->item(parent)->childCount();
+    return d->historyItem(parent)->childCount();
 }
 
 QModelIndex ItemHistoryGraphModel::parent(const QModelIndex& index) const
 {
-    HistoryTreeItem* const item   = d->item(index);
+    HistoryTreeItem* const item   = d->historyItem(index);
     HistoryTreeItem* const parent = item->parent;
 
     if (!parent)

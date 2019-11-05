@@ -55,14 +55,14 @@ class HistoryVertexProperties
 {
 public:
 
-    ItemInfo firstItemInfo() const;
+    ItemInfo firstItemInfo()                    const;
 
-    bool markedAs(HistoryImageId::Type) const;
-    bool alwaysMarkedAs(HistoryImageId::Type) const;
+    bool markedAs(HistoryImageId::Type)         const;
+    bool alwaysMarkedAs(HistoryImageId::Type)   const;
 
-    bool operator==(const QString& uuid) const;
-    bool operator==(const ItemInfo& info) const;
-    bool operator==(qlonglong id) const;
+    bool operator==(const QString& uuid)        const;
+    bool operator==(const ItemInfo& info)       const;
+    bool operator==(qlonglong id)               const;
     bool operator==(const HistoryImageId& info) const;
 
     HistoryVertexProperties& operator+=(const QString& uuid);
@@ -73,7 +73,7 @@ public:
 
     QString               uuid;
     QList<HistoryImageId> referredImages;
-    QList<ItemInfo>      infos;
+    QList<ItemInfo>       infos;
 };
 
 QDebug operator<<(QDebug dbg, const HistoryVertexProperties& props);
@@ -101,7 +101,8 @@ typedef Graph<HistoryVertexProperties, HistoryEdgeProperties> HistoryGraph;
 
 // ------------------------------------------------------------------------------
 
-class ItemHistoryGraphData : public HistoryGraph, public QSharedData
+class ItemHistoryGraphData : public HistoryGraph,
+                             public QSharedData
 {
 public:
 
