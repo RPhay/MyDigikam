@@ -1339,13 +1339,13 @@ void ItemIconView::slotRefresh()
             // if physical album, schedule a collection scan of current album's path
             if (album->type() == Album::PHYSICAL)
             {
-                NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScheduleCollectionScan,
-                                                                QStringList() << static_cast<PAlbum*>(album)->folderPath());
+                NewItemsFinder* const tool2 = new NewItemsFinder(NewItemsFinder::ScheduleCollectionScan,
+                                                                 QStringList() << static_cast<PAlbum*>(album)->folderPath());
 
-                connect(tool, SIGNAL(signalComplete()),
+                connect(tool2, SIGNAL(signalComplete()),
                         this, SLOT(slotAlbumRefreshComplete()));
 
-                tool->start();
+                tool2->start();
             }
             break;
     }
