@@ -42,9 +42,6 @@
 
 using namespace Digikam;
 
-
-// --------------------------------------------------------------------------------------------------
-
 QStringList toPaths(char** argv, int startIndex, int argc)
 {
     QStringList files;
@@ -75,8 +72,9 @@ int main(int argc, char** argv)
 {
     if (argc < 2 || (QString::fromLatin1(argv[1]) == QString::fromLatin1("train") && argc < 3))
     {
-        qDebug() << "Bad Arguments!!!\nUsage: " << argv[0] << " identify <image1> <image2> ... | train name <image1> <image2> ... "
-                                                              "| ORL <path to orl_faces>";
+        qDebug() << "Bad Arguments!!!\nUsage: " << argv[0]
+                 << " identify <image1> <image2> ... | train name <image1> <image2> ... "
+                                                    "| ORL <path to orl_faces>";
         return 0;
     }
 
@@ -96,11 +94,14 @@ int main(int argc, char** argv)
         QList<Identity> identities = db.recognizeFaces(images);
         int elapsed                = time.elapsed();
 
-        qDebug() << "Recognition took " << elapsed << " for " << images.size() << ", " << ((float)elapsed/images.size()) << " per image";
+        qDebug() << "Recognition took " << elapsed
+                 << " for " << images.size() << ", "
+                 << ((float)elapsed/images.size()) << " per image";
 
         for (int i = 0 ; i < paths.size() ; ++i)
         {
-            qDebug() << "Identified " << identities[i].attribute(QString::fromLatin1("name")) << " in " << paths[i];
+            qDebug() << "Identified " << identities[i].attribute(QString::fromLatin1("name"))
+                     << " in " << paths[i];
         }
     }
     else if (QString::fromLatin1(argv[1]) == QString::fromLatin1("train"))
@@ -126,7 +127,9 @@ int main(int argc, char** argv)
         db.train(identity, images, QString::fromLatin1("test application"));
 
         int elapsed = time.elapsed();
-        qDebug() << "Training took " << elapsed << " for " << images.size() << ", " << ((float)elapsed/images.size()) << " per image";
+        qDebug() << "Training took " << elapsed << " for "
+                 << images.size() << ", "
+                 << ((float)elapsed/images.size()) << " per image";
     }
     else if (QString::fromLatin1(argv[1]) == QString::fromLatin1("orl"))
     {
@@ -160,9 +163,9 @@ int main(int argc, char** argv)
 
             if (identity.isNull())
             {
-                Identity identity = db.addIdentity(attributes);
-                idMap[i]          = identity;
-                qDebug() << "Created identity " << identity.id() << " for ORL directory " << i;
+                Identity identity2 = db.addIdentity(attributes);
+                idMap[i]           = identity2;
+                qDebug() << "Created identity " << identity2.id() << " for ORL directory " << i;
             }
             else
             {
@@ -201,7 +204,12 @@ int main(int argc, char** argv)
         QTime time;
         time.start();
 
-        int correct = 0, notRecognized = 0, falsePositive = 0, totalTrained = 0, totalRecognized = 0, elapsed = 0;
+        int correct         = 0;
+        int notRecognized   = 0;
+        int falsePositive   = 0;
+        int totalTrained    = 0;
+        int totalRecognized = 0;
+        int elapsed         = 0;
 
         for (QMap<int, QStringList>::const_iterator it = trainingImages.constBegin() ;
              it != trainingImages.constEnd() ; ++it)
@@ -223,7 +231,9 @@ int main(int argc, char** argv)
 
         if (totalTrained)
         {
-            qDebug() << "Training 5/10 or ORL took " << elapsed << " ms, " << ((float)elapsed/totalTrained) << " ms per image";
+            qDebug() << "Training 5/10 or ORL took " << elapsed
+                     << " ms, " << ((float)elapsed/totalTrained)
+                     << " ms per image";
         }
 
         for (QMap<int, QStringList>::const_iterator it = recognitionImages.constBegin() ;
@@ -233,7 +243,8 @@ int main(int argc, char** argv)
             QList<QImage> images    = toImages(it.value());
             QList<Identity> results = db.recognizeFaces(images);
 
-            qDebug() << "Result for " << it.value().first() << " is identity " << results.first().id();
+            qDebug() << "Result for " << it.value().first()
+                     << " is identity " << results.first().id();
 
             foreach (const Identity& foundId, results)
             {
