@@ -36,7 +36,7 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/yolov3-wider_16000.weights
 # ---------------------------------------------------------------
 
 # add_custom_command(OUTPUT face-funnel.data
-#                    COMMAND ${CMAKE_COMMAND} -E tar xz ${CMAKE_CURRENT_SOURCE_DIR}/face-funnel.data.tgz)
+#                    COMMAND ${CMAKE_COMMAND} -E tar xz ${CMAKE_CURRENT_SOURCE_DIR}/alignment/face-funnel.data.tgz)
 #
 # add_custom_target(extract_funnel_data ALL DEPENDS face-funnel.data)
 #
@@ -45,7 +45,7 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/yolov3-wider_16000.weights
 # )
 #
 # add_custom_command(OUTPUT flandmark_model.dat
-#                    COMMAND ${CMAKE_COMMAND} -E tar xz ${CMAKE_CURRENT_SOURCE_DIR}/flandmark_model.dat.tgz)
+#                    COMMAND ${CMAKE_COMMAND} -E tar xz ${CMAKE_CURRENT_SOURCE_DIR}/alignment/flandmark_model.dat.tgz)
 #
 # add_custom_target(extract_flandmark_data ALL DEPENDS flandmark_model.dat)
 #
