@@ -19,10 +19,6 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/shape-predictor/shapepredictor.dat
         DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
 )
 
-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/dlib_face_recognition_resnet_model_v1.dat
-        DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
-)
-
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/openface_nn4.small2.v1.t7
         DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
 )
