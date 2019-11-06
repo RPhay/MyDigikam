@@ -7,6 +7,7 @@
  * Description : Managing of face tag region items on a GraphicsDImgView
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2012-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -54,11 +55,11 @@ public:
     explicit FaceGroup(GraphicsDImgView* const view);
     ~FaceGroup();
 
-    bool isVisible() const;
-    ItemInfo info() const;
-    bool hasVisibleItems() const;
+    bool isVisible()                                                     const;
+    ItemInfo info()                                                      const;
+    bool hasVisibleItems()                                               const;
 
-    QList<RegionFrameItem*> items() const;
+    QList<RegionFrameItem*> items()                                      const;
 
     /**
      * Auto suggest applies if an image has not been scanned,
@@ -66,13 +67,13 @@ public:
      * In this case, a new scan will be triggered.
      */
     void setAutoSuggest(bool doAutoSuggest);
-    bool autoSuggest() const;
+    bool autoSuggest()                                                   const;
 
     /**
      * Even if visible() is false, show the item under the mouse cursor
      */
     void setShowOnHover(bool show);
-    bool showOnHover() const;
+    bool showOnHover()                                                   const;
 
     /**
      * Returns the item in this group closest to scene position p.
@@ -80,7 +81,8 @@ public:
      * p and the closest point of the returned item's bounding rectangle.
      * In particular, if p is inside the item's rectangle, manhattanLength is 0.
      */
-    RegionFrameItem* closestItem(const QPointF& p, qreal* const manhattanLength = nullptr) const;
+    RegionFrameItem* closestItem(const QPointF& p,
+                                 qreal* const manhattanLength = nullptr) const;
 
     bool acceptsMouseClick(const QPointF& scenePos);
     void itemHoverEnterEvent(QGraphicsSceneHoverEvent* event);
