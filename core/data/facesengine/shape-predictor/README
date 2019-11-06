@@ -1,0 +1,3 @@
+shapepredictor.dat: binary file for shape prediction model using face alignment with 68 points of face landmark extraction.
+
+Used by openfacepreprocessor.cpp and redeyecorrectionfilter.cpp
