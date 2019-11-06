@@ -87,7 +87,7 @@ void OpenfacePreprocessor::init()
     }
     else
     {
-        qCDebug(DIGIKAM_FACEDB_LOG) << "Error open file shapepredictor.dat\n";
+        qCDebug(DIGIKAM_FACEDB_LOG) << "Error open file shapepredictor.dat" << endl;
         delete temp;
         return;
     }
@@ -119,7 +119,7 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
     }
 
     cv::Rect new_rect(0, 0, image.cols, image.rows);
-    cv::Mat landmarks(3,2,CV_32F);
+    cv::Mat landmarks(3,2, CV_32F);
     FullObjectDetection object = sp(gray, new_rect);
 
     for (size_t i = 0 ; i < outerEyesNosePositions.size() ; ++i)
@@ -127,7 +127,11 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
         int index                = outerEyesNosePositions[i];
         landmarks.at<float>(i,0) = object.part(index)[0];
         landmarks.at<float>(i,1) = object.part(index)[1];
-        // qCDebug(DIGIKAM_FACESENGINE_LOG) << "index = " << index << ", landmarks: (" << landmarks.at<float>(i,0) << ", " << landmarks.at<float>(i,1) << ")\n";
+/*
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "index = " << index
+                                         << ", landmarks: (" << landmarks.at<float>(i, 0)
+                                         << ", " << landmarks.at<float>(i, 1) << ")" << endl;
+*/
     }
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Full object detection and landmard computation finished";
