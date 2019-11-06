@@ -80,7 +80,7 @@ public:
      *
      * Found faces are returned in relative coordinates.
      */
-    QList<QRectF> detectFaces(const Digikam::DImg& image, const QSize& originalSize = QSize());
+    QList<QRectF> detectFaces(const DImg& image, const QSize& originalSize = QSize());
 
     QList<QRectF> detectFaces(const QString& imagePath);
 

@@ -197,7 +197,7 @@ QList<QRectF> FaceDetector::detectFaces(const QImage& image, const QSize& origin
     return result;
 }
 
-QList<QRectF> FaceDetector::detectFaces(const Digikam::DImg& image, const QSize& originalSize)
+QList<QRectF> FaceDetector::detectFaces(const DImg& image, const QSize& originalSize)
 {
     QList<QRectF> result;
 
