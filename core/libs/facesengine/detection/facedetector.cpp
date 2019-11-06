@@ -111,11 +111,16 @@ public:
 
     void applyParameters()
     {
-/*
-        if (!m_dnnDetectorBackend)
+        if (!backend())
         {
             return;
         }
+
+#ifdef USE_DNN_BACKEND
+
+        // TODO
+
+#else
 
         for (QVariantMap::const_iterator it = m_parameters.constBegin() ;
              it != m_parameters.constEnd() ; ++it)
@@ -137,7 +142,9 @@ public:
                 backend()->setSpecificity(1.0 - it.value().toDouble());
             }
         }
-*/
+
+#endif
+
     }
 
 public:
