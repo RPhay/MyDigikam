@@ -17,4 +17,5 @@ BUGFIXES:
 007 ==> 413704 - Filters do not work on hidden grouped images.
 007 ==> 413233 - Application crashes when click in Albums left panel.
 008 ==> 413759 - Tarball is missing translations.
-009 ==> 
+009 ==> 413879 - Buttons without theme colors.
+010 ==> 
