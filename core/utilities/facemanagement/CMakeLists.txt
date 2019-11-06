@@ -11,7 +11,6 @@ set(libfacemanagement_SRCS
     facegroup.cpp
     facepipeline.cpp
     facepipeline_p.cpp
-    facebenchmarkers.cpp
     faceworkers.cpp
     faceitemretriever.cpp
     facepreviewloader.cpp
@@ -20,6 +19,8 @@ set(libfacemanagement_SRCS
     assignnamewidget_p.cpp
     parallelpipes.cpp
     scanstatefilter.cpp
+    detectionbenchmarker.cpp
+    recognitionbenchmarker.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>

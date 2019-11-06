@@ -21,13 +21,13 @@
  *
  * ============================================================ */
 
-#include "facepipeline.h"
 #include "facepipeline_p.h"
 
 // Local includes
 
 #include "digikam_debug.h"
-#include "facebenchmarkers.h"
+#include "detectionbenchmarker.h"
+#include "recognitionbenchmarker.h"
 #include "faceworkers.h"
 #include "facepreviewloader.h"
 #include "faceitemretriever.h"
