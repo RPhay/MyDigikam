@@ -72,8 +72,8 @@ double DNNDbscanPointCustomized::computeSimilarity(const DNNDbscanPointCustomize
 // -----------------------------------------------------------------------------------------
 
 DNNDbscan::DNNDbscan(double eps,
-               int minPts,
-               const std::vector<DNNDbscanPointCustomized>& pts)
+                     int minPts,
+                     const std::vector<DNNDbscanPointCustomized>& pts)
   : eps(eps),
     minPtsPerCluster(minPts),
     points(pts),
@@ -150,7 +150,7 @@ void DNNDbscan::run()
         {
             int pointIdx = neighbors.front();
             neighbors.pop_front();
-
+/*
             if (points[pointIdx].cluster == NOISE)
             {
                 points[pointIdx].cluster = nbOfClusters;
@@ -159,7 +159,7 @@ void DNNDbscan::run()
             {
                 continue;
             }
-
+*/
             points[pointIdx].cluster = nbOfClusters;
 
             std::list<int> newNeighbors;
@@ -167,10 +167,7 @@ void DNNDbscan::run()
 
             if ((int)newNeighbors.size() >= minPtsPerCluster)
             {
-                for (auto elm: newNeighbors)
-                {
-                    neighbors.push_back(elm);
-                }
+                std::copy(newNeighbors.begin(), newNeighbors.end(), neighbors.end());
             }
         }
     }
