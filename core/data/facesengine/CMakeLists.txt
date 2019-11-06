@@ -9,13 +9,19 @@
 # So we always generalize installation of these files directly through digiKam,
 # to be sure that Face Management always work.
 
+# Shape predictor model data file
+
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/shape-predictor/shapepredictor.dat
         DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
 )
 
+# Face recognition OpenFace model data file
+
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/openface_nn4.small2.v1.t7
         DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
 )
+
+# Face detection SSD model data files
 
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/deploy.prototxt
         DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
@@ -24,6 +30,8 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/deploy.prototxt
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/res10_300x300_ssd_iter_140000_fp16.caffemodel
         DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
 )
+
+# Face detection Yolo model data files
 
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/yolov3-face.cfg
         DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
@@ -34,6 +42,8 @@ install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/dnnface/yolov3-wider_16000.weights
 )
 
 # ---------------------------------------------------------------
+
+# NOTE: files not used for the moment.
 
 # add_custom_command(OUTPUT face-funnel.data
 #                    COMMAND ${CMAKE_COMMAND} -E tar xz ${CMAKE_CURRENT_SOURCE_DIR}/alignment/face-funnel.data.tgz)

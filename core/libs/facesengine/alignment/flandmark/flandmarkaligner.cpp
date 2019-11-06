@@ -96,6 +96,7 @@ cv::Mat FlandmarkAligner::align(const cv::Mat& inputImage)
     cv::Mat image;
 
     // ensure it's grayscale
+
     if (inputImage.channels() > 1)
     {
         cvtColor(inputImage, image, CV_RGB2GRAY);
@@ -109,6 +110,7 @@ cv::Mat FlandmarkAligner::align(const cv::Mat& inputImage)
     QVector<double> landmarks(2*d->model->data.options.M);
 
     // bbox with detected face (format: top_left_col top_left_row bottom_right_col bottom_right_row)
+
     int bbox[]        = {30, 30, 120, 120}; //{ 0, 0, image.cols, image.rows };
     IplImage iplImage = image;
     flandmark_detect(&iplImage, bbox, d->model, landmarks.data());
