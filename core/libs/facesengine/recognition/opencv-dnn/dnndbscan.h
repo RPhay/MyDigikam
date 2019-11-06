@@ -34,8 +34,9 @@
 namespace Digikam
 {
 
-/** This compute cosine distance between 2 vectors with formula:
- *      cos(a) = (v1*v2) / (||v1||*||v2||)
+/**
+ * This compute cosine distance between 2 vectors with formula:
+ * cos(a) = (v1*v2) / (||v1||*||v2||)
  */
 double s_DNNDbscanCosineSimilarity(const std::vector<float>& v1, const std::vector<float>& v2);
 
@@ -67,8 +68,8 @@ class DNNDbscan
 public:
 
     explicit DNNDbscan(double eps,
-                    int minPts,
-                    const std::vector<DNNDbscanPointCustomized>& pts);
+                       int minPts,
+                       const std::vector<DNNDbscanPointCustomized>& pts);
     ~DNNDbscan() = default;
 
     void run();
@@ -86,14 +87,14 @@ private:
 
 private:
 
-    double                        eps;
-    int                           minPtsPerCluster;
+    double                                eps;
+    int                                   minPtsPerCluster;
 
-    std::vector<DNNDbscanPointCustomized>  points;
-    std::vector<std::vector<int>> adjPoints;
+    std::vector<DNNDbscanPointCustomized> points;
+    std::vector<std::vector<int>>         adjPoints;
 
-    int                           nbOfClusters;
-    std::vector<int>              clusteredIdx;
+    int                                   nbOfClusters;
+    std::vector<int>                      clusteredIdx;
 };
 
 } // namespace Digikam

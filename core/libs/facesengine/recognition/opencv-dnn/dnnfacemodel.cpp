@@ -67,7 +67,9 @@ DNNFaceRecognizer* DNNFaceModel::ptr()
     DNNFaceRecognizer* const ptr = cv::Ptr<DNNFaceRecognizer>::operator Digikam::DNNFaceRecognizer*();
 
     if (!ptr)
+    {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "DNNFaceRecognizer pointer is null";
+    }
 
     return ptr;
 }
@@ -77,7 +79,9 @@ const DNNFaceRecognizer* DNNFaceModel::ptr() const
     const DNNFaceRecognizer* const ptr = cv::Ptr<DNNFaceRecognizer>::operator Digikam::DNNFaceRecognizer*();
 
     if (!ptr)
+    {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "DNNFaceRecognizer pointer is null";
+    }
 
     return ptr;
 }

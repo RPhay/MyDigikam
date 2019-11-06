@@ -137,10 +137,10 @@ cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(const QImage& inputImage)
             //cvtColor(cvImageWrapper, cvImage, CV_RGB2GRAY);
             break;
     }
-
-    //resize(cvImage, cvImage, Size(256, 256), (0, 0), (0, 0), INTER_LINEAR);
-    //equalizeHist(cvImage, cvImage);
-
+/*
+    resize(cvImage, cvImage, Size(256, 256), (0, 0), (0, 0), INTER_LINEAR);
+    equalizeHist(cvImage, cvImage);
+*/
     return cvImage;
 }
 
@@ -151,7 +151,8 @@ int OpenCVDNNFaceRecognizer::recognize(const cv::Mat& inputImage)
     d->dnn()->predict(inputImage, predictedLabel, confidence, d->m_extractor);
     qCDebug(DIGIKAM_FACESENGINE_LOG) << predictedLabel << confidence;
 
-    /** confidence must be greater than threshold, because distance used is cosine distance
+    /**
+     * confidence must be greater than threshold, because distance used is cosine distance
      * in case that we use euclidean distance, confidence must be less than threshold
      */
     if (confidence < m_threshold)
@@ -167,7 +168,6 @@ void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images,
                                       QStringList dataset,
                                       int /*nbOfClusters*/)
 {
-
     d->dnn();
 
 /**
@@ -267,8 +267,7 @@ void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images,
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "N LAbels = " << labels.size();
 
     std::copy(labels.begin(), labels.end(), clusteredIndices.begin());
-
-//*/
+*/
 
 /**
  * DNNDbscan clustering

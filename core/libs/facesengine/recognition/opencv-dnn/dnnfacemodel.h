@@ -75,7 +75,7 @@ public:
     DNNFaceRecognizer*       ptr();
     const DNNFaceRecognizer* ptr()                              const;
 
-    //Getter function
+    // Getter function
     std::vector<std::vector<float> > getSrc()                   const;
     void setSrc(std::vector<std::vector<float> > new_src);
 

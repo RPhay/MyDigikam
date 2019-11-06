@@ -45,8 +45,9 @@
 
 using namespace cv;
 
-/** This compute cosine distance between 2 vectors with formula:
- *      cos(a) = (v1*v2) / (||v1||*||v2||)
+/**
+ * This compute cosine distance between 2 vectors with formula:
+ * cos(a) = (v1*v2) / (||v1||*||v2||)
  */
 static double cosineDistance(std::vector<float> v1,
                              std::vector<float> v2)
@@ -73,6 +74,7 @@ void DNNFaceRecognizer::update(std::vector<std::vector<float> > _in_src,
                                InputArray _inm_labels)
 {
     // got no data, just return
+
     if (_in_src.size() == 0)
     {
         return;
@@ -81,19 +83,23 @@ void DNNFaceRecognizer::update(std::vector<std::vector<float> > _in_src,
     this->train(_in_src, _inm_labels, true);
 }
 
-/** This train function is used to store the face vectors, not training
+/**
+ * This train function is used to store the face vectors, not training
  */
 void DNNFaceRecognizer::train(std::vector<std::vector<float> > _in_src,
                               InputArray _inm_labels,
                               bool preserveData)
 {
     // get the vector of matrices
+
     std::vector<std::vector<float> > src = _in_src;
 
     // get the label matrix
+
     cv::Mat labels                       = _inm_labels.getMat();
 
     // check if data is well- aligned
+
     if (labels.total() != src.size())
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "The number of samples (src) must equal the number of labels (labels). "
@@ -101,6 +107,7 @@ void DNNFaceRecognizer::train(std::vector<std::vector<float> > _in_src,
     }
 
     // if this model should be trained without preserving old data, delete old model data
+
     if (!preserveData)
     {
         m_labels.release();
@@ -108,6 +115,7 @@ void DNNFaceRecognizer::train(std::vector<std::vector<float> > _in_src,
     }
 
     // append labels to m_labels matrix
+
     for (size_t labelIdx = 0 ; labelIdx < labels.total() ; ++labelIdx)
     {
         m_labels.push_back(labels.at<int>((int)labelIdx));
