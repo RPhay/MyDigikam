@@ -42,13 +42,13 @@ DNNFaceExtractor::DNNFaceExtractor(Preprocessor* const p)
     : preprocessor(p)
 {
     // Read pretrained neural network for face recognition
-
-    // QString nnproto = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-    //                                           QLatin1String("digikam/facesengine/dnnface/deep-residual-networks/ResNet-50-deploy.prototxt"));
-    // QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-    //                                           QLatin1String("digikam/facesengine/dnnface/deep-residual-networks/ResNet-50-model.caffemodel"));
-    // net = cv::dnn::readNetFromCaffe(nnproto, nnmodel);
-
+/*
+    QString nnproto = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QLatin1String("digikam/facesengine/dnnface/deep-residual-networks/ResNet-50-deploy.prototxt"));
+    QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                             QLatin1String("digikam/facesengine/dnnface/deep-residual-networks/ResNet-50-model.caffemodel"));
+    net = cv::dnn::readNetFromCaffe(nnproto, nnmodel);
+*/
     QString nnmodel   = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                QLatin1String("digikam/facesengine/openface_nn4.small2.v1.t7"));
     qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;
@@ -72,11 +72,12 @@ void DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage, std::vector<fl
 
     QTime timer;
     timer.start();
-
-    cv::Mat alignedFace = /*faceImage;*/ preprocessor->preprocess(faceImage);
+/*
+    cv::Mat alignedFace = faceImage;
+*/
+    cv::Mat alignedFace = preprocessor->preprocess(faceImage);
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Finish aligning face in " << timer.elapsed() << " ms";
-
     qCDebug(DIGIKAM_FACEDB_LOG) << "Start neural network";
 
     timer.start();
@@ -85,14 +86,16 @@ void DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage, std::vector<fl
     net.setInput(blob);
     face_descriptors = net.forward();
 
-    qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing face embedding in " << timer.elapsed() << " ms";
-
-    // cv::Mat blob = cv::dnn::blobFromImage(faceImage, 1.0 / 255, cv::Size(96, 96), cv::Scalar(0,0,0), false, true, CV_32F); // work for openface.nn4
-    // cv::Mat blob = cv::dnn::blobFromImage(faceImage, 1.0 / 255, cv::Size(224,224), cv::Scalar(0,0,0), false, true, CV_32F);
-    // net.setInput(blob);
-    // cv::Mat face_descriptors = net.forward();
-
-    qCDebug(DIGIKAM_FACEDB_LOG) << "Face descriptors size: (" << face_descriptors.rows << ", " << face_descriptors.cols << ")";
+    qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing face embedding in "
+                                << timer.elapsed() << " ms";
+/*
+    cv::Mat blob = cv::dnn::blobFromImage(faceImage, 1.0 / 255, cv::Size(96, 96), cv::Scalar(0,0,0), false, true, CV_32F); // work for openface.nn4
+    cv::Mat blob = cv::dnn::blobFromImage(faceImage, 1.0 / 255, cv::Size(224,224), cv::Scalar(0,0,0), false, true, CV_32F);
+    net.setInput(blob);
+    cv::Mat face_descriptors = net.forward();
+*/
+    qCDebug(DIGIKAM_FACEDB_LOG) << "Face descriptors size: (" << face_descriptors.rows
+                                << ", " << face_descriptors.cols << ")";
 
     for (int i = 0 ; i < face_descriptors.rows ; ++i)
     {

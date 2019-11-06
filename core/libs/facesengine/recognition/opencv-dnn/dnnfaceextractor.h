@@ -55,7 +55,6 @@ private:
     cv::Size      imageSize;
     float         scaleFactor;
     cv::Scalar    meanValToSubtract;
-
 };
 
 } // namespace Digikam
