@@ -74,21 +74,21 @@ public:
     ~LBPHFaceModel();
 
     LBPHFaceRecognizer*       ptr();
-    const LBPHFaceRecognizer* ptr() const;
+    const LBPHFaceRecognizer* ptr()                      const;
 
-    int  radius() const;
+    int  radius()                                        const;
     void setRadius(int radius);
 
-    int  neighbors() const;
+    int  neighbors()                                     const;
     void setNeighbors(int neighbors);
 
-    int  gridX() const;
+    int  gridX()                                         const;
     void setGridX(int grid_x);
 
-    int  gridY() const;
+    int  gridY()                                         const;
     void setGridY(int grid_y);
 
-    QList<LBPHistogramMetadata> histogramMetadata() const;
+    QList<LBPHistogramMetadata> histogramMetadata()      const;
     OpenCVMatData               histogramData(int index) const;
 
     void setWrittenToDatabase(int index, int databaseId);

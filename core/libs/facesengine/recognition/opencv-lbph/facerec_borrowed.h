@@ -104,16 +104,6 @@ public:
     {
     }
 
-    using face::FaceRecognizer::predict;
-
-#if OPENCV_TEST_VERSION(3,4,0)
-    using face::FaceRecognizer::save;
-    using face::FaceRecognizer::load;
-#else
-    using face::FaceRecognizer::write;
-    using face::FaceRecognizer::read;
-#endif
-
     static cv::Ptr<LBPHFaceRecognizer> create(int radius = 1,
                                               int neighbors = 8,
                                               int grid_x = 8,
@@ -136,7 +126,16 @@ public:
     /**
      * Predict
      */
+    using face::FaceRecognizer::predict;
     void predict(cv::InputArray src, cv::Ptr<face::PredictCollector> collector)     const override;
+
+#if OPENCV_TEST_VERSION(3,4,0)
+    using face::FaceRecognizer::save;
+    using face::FaceRecognizer::load;
+#else
+    using face::FaceRecognizer::write;
+    using face::FaceRecognizer::read;
+#endif
 
     /**
      * See FaceRecognizer::load().

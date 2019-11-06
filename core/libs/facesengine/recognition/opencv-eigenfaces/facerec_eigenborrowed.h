@@ -69,16 +69,6 @@ public:
     {
     }
 
-    using face::FaceRecognizer::predict;
-
-#if OPENCV_TEST_VERSION(3,4,0)
-    using face::FaceRecognizer::save;
-    using face::FaceRecognizer::load;
-#else
-    using face::FaceRecognizer::write;
-    using face::FaceRecognizer::read;
-#endif
-
     static cv::Ptr<EigenFaceRecognizer> create(double threshold = DBL_MAX);
 
     /**
@@ -96,7 +86,16 @@ public:
     /*
      * Predict
      */
+    using face::FaceRecognizer::predict;
     void predict(cv::InputArray src, cv::Ptr<face::PredictCollector> collector)     const override;
+
+#if OPENCV_TEST_VERSION(3,4,0)
+    using face::FaceRecognizer::save;
+    using face::FaceRecognizer::load;
+#else
+    using face::FaceRecognizer::write;
+    using face::FaceRecognizer::read;
+#endif
 
     /**
      * See FaceRecognizer::load().

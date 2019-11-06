@@ -246,9 +246,6 @@ class DIGIKAM_DATABASE_EXPORT FaceRecognizer : public Algorithm
 {
 public:
 
-#if !OPENCV_TEST_VERSION(3,4,0)
-    using cv::Algorithm::read;
-#endif
 
     /**
      * @brief Trains a FaceRecognizer with given data and associated labels.
@@ -294,8 +291,7 @@ public:
      *      model->train(images, labels);
      * @endcode
      */
-    virtual void train(InputArrayOfArrays src,
-                       InputArray labels) = 0;
+    virtual void train(InputArrayOfArrays src, InputArray labels) = 0;
 
     /**
      * @brief Updates a FaceRecognizer with given data and associated labels.
@@ -340,8 +336,7 @@ public:
      * memory intense and it's not the responsibility of te FaceRecognizer to do so. The caller is
      * responsible for maintaining the dataset, he want to work with.
      */
-    virtual void update(InputArrayOfArrays src,
-                        InputArray labels);
+    virtual void update(InputArrayOfArrays src, InputArray labels);
 
     /**
      * @overload
@@ -384,9 +379,7 @@ public:
      *      model->predict(img, predicted_label, predicted_confidence);
      * @endcode
      */
-    void predict(InputArray src,
-                 int& label,
-                 double& confidence) const;
+    void predict(InputArray src, int& label, double& confidence) const;
 
     /**
      * @brief - if implemented - send all result of prediction to collector that can be used for somehow custom result handling
@@ -397,8 +390,11 @@ public:
      * To implement this method u just have to do same internal cycle as in predict(InputArray src, int& label, double& confidence) but
      * not try to get "best@ result, just resend it to caller side with given collector
      */
-    virtual void predict(InputArray src,
-                         Ptr<PredictCollector> collector) const = 0;
+    virtual void predict(InputArray src, Ptr<PredictCollector> collector) const = 0;
+
+#if !OPENCV_TEST_VERSION(3,4,0)
+    using cv::Algorithm::read;
+#endif
 
     /**
      * @brief Saves a FaceRecognizer and its model state.
@@ -459,8 +455,7 @@ public:
      *
      * The string info is replaced by the provided value if it was set before for the specified label.
      */
-    virtual void setLabelInfo(int label,
-                              const String& strInfo);
+    virtual void setLabelInfo(int label, const String& strInfo);
 
     /**
      * @brief Gets string information by label.

@@ -75,16 +75,16 @@ public:
     ~EigenFaceModel();
 
     EigenFaceRecognizer*       ptr();
-    const EigenFaceRecognizer* ptr() const;
+    const EigenFaceRecognizer* ptr()               const;
 
     /// Getter function
-    std::vector<cv::Mat> getSrc() const;
+    std::vector<cv::Mat> getSrc()                  const;
     void setSrc(std::vector<cv::Mat> new_src);
 
-    cv::Mat getLabels() const;
+    cv::Mat getLabels()                            const;
     void setLabels(cv::Mat new_labels);
 
-    QList<EigenFaceMatMetadata> matMetadata() const;
+    QList<EigenFaceMatMetadata> matMetadata()      const;
     OpenCVMatData               matData(int index) const;
 
     void setWrittenToDatabase(int index, int databaseId);
