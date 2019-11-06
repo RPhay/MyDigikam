@@ -86,8 +86,7 @@ public:
 
     struct PredictResult
     {
-        PredictResult(int label_ = -1,
-                      double distance_ = DBL_MAX)
+        PredictResult(int label_ = -1, double distance_ = DBL_MAX)
             : label(label_),
               distance(distance_)
         {
@@ -246,7 +245,6 @@ class DIGIKAM_DATABASE_EXPORT FaceRecognizer : public Algorithm
 {
 public:
 
-
     /**
      * @brief Trains a FaceRecognizer with given data and associated labels.
      *
@@ -341,7 +339,7 @@ public:
     /**
      * @overload
      */
-    int predict(InputArray src) const;
+    int predict(InputArray src)                                           const;
 
     /**
      * @brief Predicts a label and associated confidence (e.g. distance) for a given input image.
@@ -379,7 +377,7 @@ public:
      *      model->predict(img, predicted_label, predicted_confidence);
      * @endcode
      */
-    void predict(InputArray src, int& label, double& confidence) const;
+    void predict(InputArray src, int& label, double& confidence)          const;
 
     /**
      * @brief - if implemented - send all result of prediction to collector that can be used for somehow custom result handling
@@ -405,7 +403,7 @@ public:
      * If an unknown label id is provided or there is no label information associated with the specified
      * label id the method returns an empty string.
      */
-    virtual String getLabelInfo(int label) const;
+    virtual String getLabelInfo(int label)                                const;
 
     /**
      * @brief Gets vector of labels by string.
@@ -413,12 +411,12 @@ public:
      * The function searches for the labels containing the specified sub-string in the associated string
      * info.
      */
-    virtual std::vector<int> getLabelsByString(const String& str) const;
+    virtual std::vector<int> getLabelsByString(const String& str)         const;
 
     /**
      * @brief threshold parameter accessor - required for default BestMinDist collector
      */
-    virtual double getThreshold() const = 0;
+    virtual double getThreshold()                                         const = 0;
 
 protected:
 
