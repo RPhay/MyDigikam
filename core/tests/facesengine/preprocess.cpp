@@ -21,11 +21,6 @@
  *
  * ============================================================ */
 
-// OpenCV includes
-
-#include "digikam_opencv.h"
-#include "asmopencv.h"
-
 // Qt includes
 
 #include <QApplication>
@@ -34,6 +29,10 @@
 #include <QImage>
 #include <QTime>
 #include <QDebug>
+
+// Local includes
+
+#include "qtopencv.h"
 
 // Implementation not exported with digiKam core.
 
@@ -119,7 +118,7 @@ public:
     void show()
     {
         QLabel label;
-        label.setPixmap(ASM::cvMatToQPixmap(bigImage));
+        label.setPixmap(QtOpenCV::cvMatToQPixmap(bigImage));
         label.show();
     }
 

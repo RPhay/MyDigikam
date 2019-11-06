@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_ASM_OPENCV_H
-#define DIGIKAM_ASM_OPENCV_H
+#ifndef DIGIKAM_QT_OPENCV_H
+#define DIGIKAM_QT_OPENCV_H
 
 // Qt includes
 
@@ -35,7 +35,7 @@
 
 #include "digikam_opencv.h"
 
-namespace ASM
+namespace QtOpenCV
 {
     // NOTE: This does not cover all cases - it should be easy to add new ones as required.
 
@@ -75,7 +75,7 @@ namespace ASM
             {
                 static QVector<QRgb> sColorTable(256);
 
-                // only create our color table the first time
+                // Only create our color table the first time
 
                 if (sColorTable.isEmpty())
                 {
@@ -197,6 +197,6 @@ namespace ASM
         return QImageToCvMat(inPixmap.toImage(), inCloneImageData);
     }
 
-} // namespace ASM
+} // namespace QtOpenCV
 
-#endif // DIGIKAM_ASM_OPENCV_H
+#endif // DIGIKAM_QT_OPENCV_H
