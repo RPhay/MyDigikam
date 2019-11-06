@@ -150,16 +150,17 @@ void DNNDbscan::run()
         {
             int pointIdx = neighbors.front();
             neighbors.pop_front();
-/*
+
             if (points[pointIdx].cluster == NOISE)
             {
                 points[pointIdx].cluster = nbOfClusters;
+                continue;
             }
             else if (points[pointIdx].cluster != NOT_CLASSIFIED)
             {
                 continue;
             }
-*/
+
             points[pointIdx].cluster = nbOfClusters;
 
             std::list<int> newNeighbors;
@@ -167,7 +168,7 @@ void DNNDbscan::run()
 
             if ((int)newNeighbors.size() >= minPtsPerCluster)
             {
-                std::copy(newNeighbors.begin(), newNeighbors.end(), neighbors.end());
+                std::copy(newNeighbors.begin(), newNeighbors.end(), std::back_inserter(neighbors));
             }
         }
     }
