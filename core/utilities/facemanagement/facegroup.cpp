@@ -109,6 +109,134 @@ public:
     FaceGroup* const           q;
 };
 
+QList<QGraphicsItem*> FaceGroup::Private::hotItems(const QPointF& scenePos)
+{
+    if (!q->hasVisibleItems())
+    {
+        return QList<QGraphicsItem*>();
+    }
+
+    const int distance               = 15;
+    QRectF hotSceneRect              = QRectF(scenePos, QSize(0, 0)).adjusted(-distance, -distance, distance, distance);
+    QList<QGraphicsItem*> closeItems = view->scene()->items(hotSceneRect, Qt::IntersectsItemBoundingRect);
+
+    closeItems.removeOne(view->previewItem());
+
+    return closeItems;
+
+/*
+    qreal distance;
+    d->faceGroup->closestItem(mapToScene(e->pos()), &distance);
+
+    if (distance < 15)
+        return false;
+*/
+}
+
+void FaceGroup::Private::applyVisible()
+{
+    if (state == NoFaces)
+    {
+        // If not yet loaded, load. load() will transitionToVisible after loading.
+        q->load();
+    }
+    else if (state == FacesLoaded)
+    {
+        // show existing faces, if we have an image
+        if (view->previewItem()->isLoaded())
+        {
+            visibilityController->show();
+        }
+    }
+}
+
+FaceItem* FaceGroup::Private::createItem(const FaceTagsIface& face)
+{
+    FaceItem* const item = new FaceItem(view->previewItem());
+    item->setFace(face);
+    item->setOriginalRect(face.region().toRect());
+    item->setVisible(false);
+
+    return item;
+}
+
+FaceItem* FaceGroup::Private::addItem(const FaceTagsIface& face)
+{
+    FaceItem* const item                 = createItem(face);
+
+    // for identification, use index in our list
+
+    AssignNameWidget* const assignWidget = createAssignNameWidget(face, items.size());
+    item->setHudWidget(assignWidget);
+    //new StyleSheetDebugger(assignWidget);
+
+    visibilityController->addItem(item);
+
+    items << item;
+
+    return item;
+}
+
+void FaceGroup::Private::checkModels()
+{
+    if (!tagModel)
+    {
+        tagModel = new TagModel(AbstractAlbumModel::IgnoreRootAlbum, q);
+    }
+
+    if (!filterModel)
+    {
+        filterModel = new CheckableAlbumFilterModel(q);
+    }
+
+    if (!filteredModel)
+    {
+        filteredModel = new TagPropertiesFilterModel(q);
+    }
+}
+
+AssignNameWidget::Mode FaceGroup::Private::assignWidgetMode(FaceTagsIface::Type type)
+{
+    switch (type)
+    {
+        case FaceTagsIface::UnknownName:
+        case FaceTagsIface::UnconfirmedName:
+            return AssignNameWidget::UnconfirmedEditMode;
+
+        case FaceTagsIface::ConfirmedName:
+            return AssignNameWidget::ConfirmedMode;
+
+        default:
+            return AssignNameWidget::InvalidMode;
+    }
+}
+
+AssignNameWidget* FaceGroup::Private::createAssignNameWidget(const FaceTagsIface& face, const QVariant& identifier)
+{
+    AssignNameWidget* const assignWidget = new AssignNameWidget(view);
+    assignWidget->setMode(assignWidgetMode(face.type()));
+    assignWidget->setTagEntryWidgetMode(AssignNameWidget::AddTagsComboBoxMode);
+    assignWidget->setVisualStyle(AssignNameWidget::TranslucentDarkRound);
+    assignWidget->setLayoutMode(AssignNameWidget::TwoLines);
+    assignWidget->setUserData(info, identifier);
+    checkModels();
+    assignWidget->setModel(tagModel, filteredModel, filterModel);
+    assignWidget->setParentTag(AlbumManager::instance()->findTAlbum(FaceTags::personParentTag()));
+
+    q->connect(assignWidget, SIGNAL(assigned(TaggingAction,ItemInfo,QVariant)),
+               q, SLOT(slotAssigned(TaggingAction,ItemInfo,QVariant)));
+
+    q->connect(assignWidget, SIGNAL(rejected(ItemInfo,QVariant)),
+               q, SLOT(slotRejected(ItemInfo,QVariant)));
+
+    q->connect(assignWidget, SIGNAL(labelClicked(ItemInfo,QVariant)),
+               q, SLOT(slotLabelClicked(ItemInfo,QVariant)));
+
+    return assignWidget;
+}
+
+// -------------------------------------------------------------------------------
+
 FaceGroup::FaceGroup(GraphicsDImgView* const view)
     : QObject(view),
       d(new Private(this))
@@ -209,22 +337,6 @@ bool FaceGroup::showOnHover() const
     return d->showOnHover;
 }
 
-void FaceGroup::Private::applyVisible()
-{
-    if (state == NoFaces)
-    {
-        // If not yet loaded, load. load() will transitionToVisible after loading.
-        q->load();
-    }
-    else if (state == FacesLoaded)
-    {
-        // show existing faces, if we have an image
-        if (view->previewItem()->isLoaded())
-        {
-            visibilityController->show();
-        }
-    }
-}
 
 void FaceGroup::setVisible(bool visible)
 {
@@ -331,29 +443,6 @@ RegionFrameItem* FaceGroup::closestItem(const QPointF& p, qreal* const manhattan
     return closestItem;
 }
 
-QList<QGraphicsItem*> FaceGroup::Private::hotItems(const QPointF& scenePos)
-{
-    if (!q->hasVisibleItems())
-    {
-        return QList<QGraphicsItem*>();
-    }
-
-    const int distance               = 15;
-    QRectF hotSceneRect              = QRectF(scenePos, QSize(0, 0)).adjusted(-distance, -distance, distance, distance);
-    QList<QGraphicsItem*> closeItems = view->scene()->items(hotSceneRect, Qt::IntersectsItemBoundingRect);
-
-    closeItems.removeOne(view->previewItem());
-
-    return closeItems;
-
-/*
-    qreal distance;
-    d->faceGroup->closestItem(mapToScene(e->pos()), &distance);
-
-    if (distance < 15)
-        return false;
-*/
-}
 
 bool FaceGroup::acceptsMouseClick(const QPointF& scenePos)
 {
@@ -369,6 +458,7 @@ void FaceGroup::itemHoverMoveEvent(QGraphicsSceneHoverEvent* e)
 
         // There's a possible nuisance when the direct mouse way from hovering pos to HUD widget
         // is not part of the condition. Maybe, we should add a exemption for this case.
+
         if (distance < 25)
         {
             setVisibleItem(item);
@@ -376,8 +466,11 @@ void FaceGroup::itemHoverMoveEvent(QGraphicsSceneHoverEvent* e)
         else
         {
             // get all items close to pos
+
             QList<QGraphicsItem*> hItems = d->hotItems(e->scenePos());
+
             // this will be the one item shown by mouse over
+
             QList<QObject*> visible      = d->visibilityController->visibleItems(ItemVisibilityController::ExcludeFadingOut);
 
             foreach (QGraphicsItem* const item, hItems)
@@ -416,90 +509,6 @@ void FaceGroup::enterEvent(QEvent*)
 {
 }
 
-FaceItem* FaceGroup::Private::createItem(const FaceTagsIface& face)
-{
-    FaceItem* const item = new FaceItem(view->previewItem());
-    item->setFace(face);
-    item->setOriginalRect(face.region().toRect());
-    item->setVisible(false);
-
-    return item;
-}
-
-FaceItem* FaceGroup::Private::addItem(const FaceTagsIface& face)
-{
-    FaceItem* const item                 = createItem(face);
-    // for identification, use index in our list
-
-    AssignNameWidget* const assignWidget = createAssignNameWidget(face, items.size());
-    item->setHudWidget(assignWidget);
-    //new StyleSheetDebugger(assignWidget);
-
-    visibilityController->addItem(item);
-
-    items << item;
-
-    return item;
-}
-
-void FaceGroup::Private::checkModels()
-{
-    if (!tagModel)
-    {
-        tagModel = new TagModel(AbstractAlbumModel::IgnoreRootAlbum, q);
-    }
-
-    if (!filterModel)
-    {
-        filterModel = new CheckableAlbumFilterModel(q);
-    }
-
-    if (!filteredModel)
-    {
-        filteredModel = new TagPropertiesFilterModel(q);
-    }
-}
-
-AssignNameWidget::Mode FaceGroup::Private::assignWidgetMode(FaceTagsIface::Type type)
-{
-    switch (type)
-    {
-        case FaceTagsIface::UnknownName:
-        case FaceTagsIface::UnconfirmedName:
-            return AssignNameWidget::UnconfirmedEditMode;
-
-        case FaceTagsIface::ConfirmedName:
-            return AssignNameWidget::ConfirmedMode;
-
-        default:
-            return AssignNameWidget::InvalidMode;
-    }
-}
-
-AssignNameWidget* FaceGroup::Private::createAssignNameWidget(const FaceTagsIface& face, const QVariant& identifier)
-{
-    AssignNameWidget* const assignWidget = new AssignNameWidget(view);
-    assignWidget->setMode(assignWidgetMode(face.type()));
-    assignWidget->setTagEntryWidgetMode(AssignNameWidget::AddTagsComboBoxMode);
-    assignWidget->setVisualStyle(AssignNameWidget::TranslucentDarkRound);
-    assignWidget->setLayoutMode(AssignNameWidget::TwoLines);
-    assignWidget->setUserData(info, identifier);
-    checkModels();
-    assignWidget->setModel(tagModel, filteredModel, filterModel);
-    assignWidget->setParentTag(AlbumManager::instance()->findTAlbum(FaceTags::personParentTag()));
-
-    q->connect(assignWidget, SIGNAL(assigned(TaggingAction,ItemInfo,QVariant)),
-               q, SLOT(slotAssigned(TaggingAction,ItemInfo,QVariant)));
-
-    q->connect(assignWidget, SIGNAL(rejected(ItemInfo,QVariant)),
-               q, SLOT(slotRejected(ItemInfo,QVariant)));
-
-    q->connect(assignWidget, SIGNAL(labelClicked(ItemInfo,QVariant)),
-               q, SLOT(slotLabelClicked(ItemInfo,QVariant)));
-
-    return assignWidget;
-}
-
 void FaceGroup::load()
 {
     if (d->state != NoFaces)
@@ -519,6 +528,7 @@ void FaceGroup::load()
     d->visibilityController->clear();
 
     // See bug 408982
+
     if (!faces.isEmpty())
     {
         d->view->setFocus();
@@ -780,6 +790,7 @@ void ItemPreviewView::trainFaces()
 void ItemPreviewView::suggestFaces()
 {
     // Assign tentative names to the face list
+
     QList<Face> recogList;
 
     foreach (Face f, d->currentFaces)
@@ -801,6 +812,7 @@ void ItemPreviewView::suggestFaces()
     qCDebug(DIGIKAM_GENERAL_LOG) << "Number of faceitems = " << d->faceitems.size();
 
     // Now find the relevant face items and suggest faces
+
     for (int i = 0 ; i < recogList.size() ; ++i)
     {
         for (int j = 0 ; j < d->faceitems.size() ; ++j)
