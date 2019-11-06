@@ -89,32 +89,6 @@ public:
     using face::FaceRecognizer::predict;
     void predict(cv::InputArray src, cv::Ptr<face::PredictCollector> collector)     const override;
 
-#if OPENCV_TEST_VERSION(3,4,0)
-    using face::FaceRecognizer::save;
-    using face::FaceRecognizer::load;
-#else
-    using face::FaceRecognizer::write;
-    using face::FaceRecognizer::read;
-#endif
-
-    /**
-     * See FaceRecognizer::load().
-     */
-#if OPENCV_TEST_VERSION(3,4,0)
-    void load(const cv::FileStorage&)  override {}
-#else
-    void read(const cv::FileStorage&)  override {}
-#endif
-
-    /**
-     * See FaceRecognizer::save().
-     */
-#if OPENCV_TEST_VERSION(3,4,0)
-    void save(cv::FileStorage&)  const override {}
-#else
-    void write(cv::FileStorage&) const override {}
-#endif
-
     /**
      * Getter functions.
      */

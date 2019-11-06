@@ -392,64 +392,6 @@ public:
      */
     virtual void predict(InputArray src, Ptr<PredictCollector> collector) const = 0;
 
-#if !OPENCV_TEST_VERSION(3,4,0)
-    using cv::Algorithm::read;
-#endif
-
-    /**
-     * @brief Saves a FaceRecognizer and its model state.
-     *
-     * Saves this model to a given filename, either as XML or YAML.
-     * @param filename The filename to store this FaceRecognizer to (either XML/YAML).
-     *
-     * Every FaceRecognizer overwrites FaceRecognizer::save(FileStorage& fs) to save the internal model
-     * state. FaceRecognizer::save(const String& filename) saves the state of a model to the given
-     * filename.
-     *
-     * The suffix const means that prediction does not affect the internal model state, so the method can
-     * be safely called from within different threads.
-     */
-#if OPENCV_TEST_VERSION(3,4,0)
-    virtual void save(const String& filename)  const;
-#else
-    virtual void write(const String& filename) const;
-#endif
-
-    /**
-     * @brief Loads a FaceRecognizer and its model state.
-     *
-     * Loads a persisted model and state from a given XML or YAML file . Every FaceRecognizer has to
-     * overwrite FaceRecognizer::load(FileStorage& fs) to enable loading the model state.
-     * FaceRecognizer::load(FileStorage& fs) in turn gets called by
-     * FaceRecognizer::load(const String& filename), to ease saving a model.
-     */
-#if OPENCV_TEST_VERSION(3,4,0)
-    virtual void load(const String& filename);
-#else
-    virtual void read(const String& filename);
-#endif
-
-    /**
-     * @overload
-     *
-     * Saves this model to a given FileStorage.
-     * @param fs The FileStorage to store this FaceRecognizer to.
-     */
-#if OPENCV_TEST_VERSION(3,4,0)
-    virtual void save(FileStorage& fs) const = 0;
-#else
-    virtual void write(FileStorage& fs) const = 0;
-#endif
-
-    /**
-     * @overload
-     */
-#if OPENCV_TEST_VERSION(3,4,0)
-    virtual void load(const FileStorage& fs) = 0;
-#else
-    virtual void read(const FileStorage& fs) = 0;
-#endif
-
     /**
      * @brief Sets string info for the specified model's label.
      *

@@ -296,32 +296,6 @@ static Mat elbp(InputArray src, int radius, int neighbors)
     return dst;
 }
 
-/*
- * Implementation not copied from OpenCV
-void LBPHFaceRecognizer::load(const FileStorage& fs)
-{
-    fs["radius"] >> m_radius;
-    fs["neighbors"] >> m_neighbors;
-    fs["grid_x"] >> m_grid_x;
-    fs["grid_y"] >> m_grid_y;
-    //read matrices
-    readFileNodeList(fs["histograms"], m_histograms);
-    fs["labels"] >> m_labels;
-}
-
-// See FaceRecognizer::save.
-void LBPHFaceRecognizer::save(FileStorage& fs) const
-{
-    fs << "radius" << m_radius;
-    fs << "neighbors" << m_neighbors;
-    fs << "grid_x" << m_grid_x;
-    fs << "grid_y" << m_grid_y;
-    // write matrices
-    writeFileNodeList(fs, "histograms", m_histograms);
-    fs << "labels" << m_labels;
-}
-*/
-
 void LBPHFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_labels)
 {
     this->train(_in_src, _inm_labels, false);
