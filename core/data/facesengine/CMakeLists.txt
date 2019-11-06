@@ -9,12 +9,6 @@
 # So we always generalize installation of these files directly through digiKam,
 # to be sure that Face Management always work.
 
-file(GLOB files "${CMAKE_CURRENT_SOURCE_DIR}/opencv3/haarcascade_*.xml")
-
-install(FILES ${files}
-        DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
-)
-
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/shape-predictor/shapepredictor.dat
         DESTINATION ${DATA_INSTALL_DIR}/digikam/facesengine
 )

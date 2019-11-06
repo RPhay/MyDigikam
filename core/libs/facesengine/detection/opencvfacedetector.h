@@ -56,8 +56,8 @@ public:
     explicit OpenCVFaceDetector(const QStringList& cascadeDirs);
     ~OpenCVFaceDetector();
 
-    cv::Mat prepareForDetection(const QImage& inputImage)        const;
-    cv::Mat prepareForDetection(const Digikam::DImg& inputImage) const;
+    cv::Mat prepareForDetection(const QImage& inputImage)            const;
+    cv::Mat prepareForDetection(const DImg& inputImage)              const;
     QList<QRect> detectFaces(const cv::Mat& inputImage,
                              const cv::Size& originalSize = cv::Size(0, 0));
 
@@ -73,8 +73,8 @@ public:
     void setAccuracy(double speedVsAccuracy);
     void setSpecificity(double sensitivityVsSpecificity);
 
-    double accuracy()    const;
-    double specificity() const;
+    double accuracy()                                                const;
+    double specificity()                                             const;
 
     /**
      * Returns the image size (one dimension)

@@ -58,7 +58,7 @@ public:
     FaceDetector(const FaceDetector& other);
     ~FaceDetector();
 
-    QString backendIdentifier() const;
+    QString backendIdentifier()                                     const;
 
     FaceDetector& operator=(const FaceDetector& other);
 
@@ -97,13 +97,13 @@ public:
      */
     void        setParameter(const QString& parameter, const QVariant& value);
     void        setParameters(const QVariantMap& parameters);
-    QVariantMap parameters() const;
+    QVariantMap parameters()                                        const;
 
     /**
      * Returns the recommended size if you want to scale images for detection.
      * Larger images can be passed, but may be downscaled.
      */
-    int recommendedImageSize(const QSize& availableSize = QSize()) const;
+    int recommendedImageSize(const QSize& availableSize = QSize())  const;
 
     static QRectF        toRelativeRect(const QRect& absoluteRect, const QSize& size);
     static QRect         toAbsoluteRect(const QRectF& relativeRect, const QSize& size);

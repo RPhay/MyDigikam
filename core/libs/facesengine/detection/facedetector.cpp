@@ -21,6 +21,9 @@
  *
  * ============================================================ */
 
+// Comment this line to switch face detector backend from DNN to HAAR_CASCADES
+#define USE_DNN_BACKEND 1
+
 #include "facedetector.h"
 
 // Qt includes
@@ -30,9 +33,13 @@
 
 // Local includes
 
-#include "opencvfacedetector.h"
-#include "opencvdnnfacedetector.h"
 #include "digikam_debug.h"
+
+#ifdef USE_DNN_BACKEND
+#   include "opencvdnnfacedetector.h"
+#else
+#   include "opencvfacedetector.h"
+#endif
 
 namespace Digikam
 {
@@ -42,64 +49,76 @@ class Q_DECL_HIDDEN FaceDetector::Private : public QSharedData
 public:
 
     explicit Private()
-        : m_HaarDetectorbackend(nullptr),
-          m_backend(nullptr)
+        :
+#ifdef USE_DNN_BACKEND
+          m_dnnDetectorBackend(nullptr)
+#else
+          m_haarDetectorbackend(nullptr)
+#endif
     {
     }
 
     ~Private()
     {
-        delete m_HaarDetectorbackend;
-        delete m_backend;
+#ifdef USE_DNN_BACKEND
+        delete m_dnnDetectorBackend;
+#else
+        delete m_haarDetectorbackend;
+#endif
     }
 
-    OpenCVFaceDetector* haarDetectorBackend()
-    {
-        if (!m_HaarDetectorbackend)
-        {
-            QStringList cascadeDirs;
-            cascadeDirs << QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("digikam/facesengine"),
-                                                     QStandardPaths::LocateDirectory);
-
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Try to find OpenCV Haar Cascade files in these directories: " << cascadeDirs;
-
-            m_HaarDetectorbackend = new OpenCVFaceDetector(cascadeDirs);
-            applyParameters();
-        }
-
-        return m_HaarDetectorbackend;
-    }
-
-    const OpenCVFaceDetector* constHaarDetectorBackend() const
-    {
-        return m_HaarDetectorbackend;
-    }
-
+#ifdef USE_DNN_BACKEND
 
     OpenCVDNNFaceDetector* backend()
     {
-        if (!m_backend)
+        if (!m_dnnDetectorBackend)
         {
-            m_backend = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
+            m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
         }
 
-        return m_backend;
+        return m_dnnDetectorBackend;
     }
 
     const OpenCVDNNFaceDetector* constBackend() const
     {
-        return m_backend;
+        return m_dnnDetectorBackend;
     }
+
+#else
+
+    OpenCVFaceDetector* backend()
+    {
+        if (!m_haarDetectorbackend)
+        {
+            QStringList cascadeDirs;
+            cascadeDirs << QString::fromUtf8(OPENCV_ROOT_PATH) + QLatin1String("/haarcascades");
+
+            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Try to find OpenCV Haar Cascade files in this directory: " << cascadeDirs;
+
+            m_haarDetectorbackend = new OpenCVFaceDetector(cascadeDirs);
+            applyParameters();
+        }
+
+        return m_haarDetectorbackend;
+    }
+
+    const OpenCVFaceDetector* constBackend() const
+    {
+        return m_haarDetectorbackend;
+    }
+
+#endif
 
     void applyParameters()
     {
 /*
-        if (!m_backend)
+        if (!m_dnnDetectorBackend)
         {
             return;
         }
 
-        for (QVariantMap::const_iterator it = m_parameters.constBegin() ; it != m_parameters.constEnd() ; ++it)
+        for (QVariantMap::const_iterator it = m_parameters.constBegin() ;
+             it != m_parameters.constEnd() ; ++it)
         {
             if      (it.key() == QLatin1String("accuracy"))
             {
@@ -127,8 +146,11 @@ public:
 
 private:
 
-    OpenCVFaceDetector*    m_HaarDetectorbackend;
-    OpenCVDNNFaceDetector* m_backend;
+#ifdef USE_DNN_BACKEND
+    OpenCVDNNFaceDetector* m_dnnDetectorBackend;
+#else
+    OpenCVFaceDetector*    m_haarDetectorbackend;
+#endif
 };
 
 // ---------------------------------------------------------------------------------
@@ -155,7 +177,11 @@ FaceDetector::~FaceDetector()
 
 QString FaceDetector::backendIdentifier() const
 {
-    return QLatin1String("OpenCV Cascades");
+#ifdef USE_DNN_BACKEND
+    return QLatin1String("Deep Neural Network");
+#else
+    return QLatin1String("Haar Cascades");
+#endif
 }
 
 QList<QRectF> FaceDetector::detectFaces(const QImage& image, const QSize& originalSize)
@@ -180,8 +206,8 @@ QList<QRectF> FaceDetector::detectFaces(const QImage& image, const QSize& origin
             cvOriginalSize = cv::Size(image.width(), image.height());
         }
 
-        cv::Mat cvImage       = d->haarDetectorBackend()->prepareForDetection(image);
-        QList<QRect> absRects = d->haarDetectorBackend()->detectFaces(cvImage, cvOriginalSize);
+        cv::Mat cvImage       = d->backend()->prepareForDetection(image);
+        QList<QRect> absRects = d->backend()->detectFaces(cvImage, cvOriginalSize);
         result                = toRelativeRects(absRects, QSize(cvImage.cols, cvImage.rows));
 
     }
@@ -189,7 +215,7 @@ QList<QRectF> FaceDetector::detectFaces(const QImage& image, const QSize& origin
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
     }
@@ -219,16 +245,15 @@ QList<QRectF> FaceDetector::detectFaces(const DImg& image, const QSize& original
             cvOriginalSize = cv::Size(image.width(), image.height());
         }
 
-        cv::Mat cvImage       = d->haarDetectorBackend()->prepareForDetection(image);
-        QList<QRect> absRects = d->haarDetectorBackend()->detectFaces(cvImage, cvOriginalSize);
+        cv::Mat cvImage       = d->backend()->prepareForDetection(image);
+        QList<QRect> absRects = d->backend()->detectFaces(cvImage, cvOriginalSize);
         result                = toRelativeRects(absRects, QSize(cvImage.cols, cvImage.rows));
-
     }
     catch (cv::Exception& e)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
     }
-    catch(...)
+    catch (...)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
     }
@@ -238,11 +263,13 @@ QList<QRectF> FaceDetector::detectFaces(const DImg& image, const QSize& original
 
 QList<QRectF> FaceDetector::detectFaces(const QString& imagePath)
 {
+#ifdef USE_DNN_BACKEND
+
     QList<QRectF> result;
 
     try
     {
-        cv::Size paddedSize(0,0);
+        cv::Size paddedSize(0, 0);
         cv::Mat cvImage       = d->backend()->prepareForDetection(imagePath, paddedSize);
         QList<QRect> absRects = d->backend()->detectFaces(cvImage, paddedSize);
         result                = toRelativeRects(absRects,
@@ -260,6 +287,19 @@ QList<QRectF> FaceDetector::detectFaces(const QString& imagePath)
     }
 
     return result;
+
+#else
+
+    DImg img;
+
+    if (!img.load(imagePath))
+    {
+        return QList<QRectF>();
+    }
+
+    return detectFaces(img, img.size());
+
+#endif
 }
 
 void FaceDetector::setParameter(const QString& parameter, const QVariant& value)
@@ -287,8 +327,12 @@ int FaceDetector::recommendedImageSize(const QSize& availableSize) const
 {
     Q_UNUSED(availableSize);
 
-    // return OpenCVFaceDetector::recommendedImageSizeForDetection();
+
+#ifdef USE_DNN_BACKEND
     return OpenCVDNNFaceDetector::recommendedImageSizeForDetection();
+#else
+    return OpenCVFaceDetector::recommendedImageSizeForDetection();
+#endif
 }
 
 // -- Static methods -------------------------------------------------------------
