@@ -7,8 +7,9 @@
  * Description : point transform class and its utilities that models
  *               affine transformations between two sets of 2d-points.
  *
- * Copyright (C) 2016 by Omar Amin <Omar dot moh dot amin at gmail dot com>
- * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2016      by Omar Amin <Omar dot moh dot amin at gmail dot com>
+ * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2016-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -93,7 +94,7 @@ PointTransformAffine operator* (const PointTransformAffine& lhs,
 
 PointTransformAffine inv (const PointTransformAffine& trans)
 {
-    std::vector<std::vector<float> > im = inv2(trans.get_m());
+    std::vector<std::vector<float> > im = MatrixOperations::inv2(trans.get_m());
 
     return PointTransformAffine(im, -(im * trans.get_b()));
 }
@@ -139,26 +140,31 @@ PointTransformAffine find_similarity_transform(const std::vector<std::vector<flo
     std::vector<std::vector<float> >  d(2,std::vector<float>(2));
     std::vector<std::vector<float> >  s(2,std::vector<float>(2,0));
 
-    svd(cov, u,d,vt);
+    MatrixOperations::svd(cov, u,d,vt);
     s[0][0] = 1;
     s[1][1] = 1;
 
-    if (determinant(cov) < 0 ||
-        (determinant(cov) == 0 && determinant(u) * determinant(v) < 0))
+    if (MatrixOperations::determinant(cov) < 0 ||
+        (MatrixOperations::determinant(cov) == 0 && 
+         MatrixOperations::determinant(u) * MatrixOperations::determinant(v) < 0))
     {
         if (d[1][1] < d[0][0])
+        {
             s[1][1] = -1;
+        }
         else
+        {
             s[0][0] = -1;
+        }
     }
 
-    transpose(vt,v);
+    MatrixOperations::transpose(vt,v);
     std::vector<std::vector<float> > r = u * s * v;
     float c                            = 1;
 
     if (sigma_from != 0)
     {
-        c = 1.0 / sigma_from * trace(d * s);
+        c = 1.0 / sigma_from * MatrixOperations::trace(d * s);
     }
 
     std::vector<float> t = mean_to - r * mean_from * c;
