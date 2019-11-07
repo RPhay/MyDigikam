@@ -21,6 +21,7 @@ set(libfacemanagement_SRCS
     parallelpipes.cpp
     scanstatefilter.cpp
     detectionbenchmarker.cpp
+    detectionworker.cpp
     recognitionbenchmarker.cpp
 )
 

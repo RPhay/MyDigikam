@@ -7,6 +7,7 @@
  * Description : Integrated, multithread face detection / recognition
  *
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2012-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,50 +35,6 @@
 
 namespace Digikam
 {
-
-DetectionWorker::DetectionWorker(FacePipeline::Private* const d)
-    : d(d)
-{
-}
-
-void DetectionWorker::process(FacePipelineExtendedPackage::Ptr package)
-{
-/*
-    QImage detectionImage  = scaleForDetection(package->image);
-    package->detectedFaces = detector.detectFaces(detectionImage, package->image.originalSize());
-*/
-    package->detectedFaces = detector.detectFaces(package->filePath);
-
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Found" << package->detectedFaces.size() << "faces in"
-                                 << package->info.name() << package->image.size()
-                                 << package->image.originalSize();
-
-    package->processFlags |= FacePipelinePackage::ProcessedByDetector;
-
-    emit processed(package);
-}
-
-QImage DetectionWorker::scaleForDetection(const DImg& image) const
-{
-    int recommendedSize = detector.recommendedImageSize(image.size());
-
-    if (qMax(image.width(), image.height()) > (uint)recommendedSize)
-    {
-        return image.smoothScale(recommendedSize, recommendedSize, Qt::KeepAspectRatio).copyQImage();
-    }
-
-    return image.copyQImage();
-}
-
-void DetectionWorker::setAccuracy(double accuracy)
-{
-    QVariantMap params;
-    params[QLatin1String("accuracy")]    = accuracy;
-    params[QLatin1String("specificity")] = 0.8; //TODO: add UI for sensitivity - specificity
-    detector.setParameters(params);
-}
-
-// ----------------------------------------------------------------------------------------
 
 RecognitionWorker::RecognitionWorker(FacePipeline::Private* const d)
     : imageRetriever(d),
