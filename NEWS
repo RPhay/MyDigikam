@@ -23,4 +23,5 @@ BUGFIXES:
 012 ==> 376629 - Face tagging dropdown: "Add in persons" adds person not label.
 013 ==> 413923 - The peoples list shows just one line of height (one name) when expanded for the first time.
 014 ==> 413924 - The face rectangle behavior when show face tags is OFF.
-015 ==> 
+015 ==> 341111 - MYSQL : deleting an image involves "too many" queries.
+016 ==> 
