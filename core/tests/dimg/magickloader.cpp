@@ -127,7 +127,7 @@ int main(int argc, char** argv)
 {
     MagickCoreGenesis((char*)NULL, MagickFalse);
 
-    ExceptionInfo ex;
+    ExceptionInfo ex = *AcquireExceptionInfo();
     size_t n                  = 0;
     const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 

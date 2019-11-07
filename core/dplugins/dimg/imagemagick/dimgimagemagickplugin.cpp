@@ -125,7 +125,7 @@ QMap<QString, QString> DImgImageMagickPlugin::extraAboutData() const
     QString mimes = typeMimes();
 
     QMap<QString, QString> map;
-    ExceptionInfo ex;
+    ExceptionInfo ex = *AcquireExceptionInfo();
     size_t n                  = 0;
     const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
@@ -219,7 +219,7 @@ int DImgImageMagickPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 int DImgImageMagickPlugin::canWrite(const QString& format) const
 {
     QStringList formats;
-    ExceptionInfo ex;
+    ExceptionInfo ex = *AcquireExceptionInfo();
     size_t n                  = 0;
     const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
@@ -266,7 +266,7 @@ DImgLoader* DImgImageMagickPlugin::loader(DImg* const image, const DRawDecoding&
 QStringList DImgImageMagickPlugin::decoderFormats() const
 {
     QStringList formats;
-    ExceptionInfo ex;
+    ExceptionInfo ex = *AcquireExceptionInfo();
     size_t n                  = 0;
     const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
