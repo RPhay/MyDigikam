@@ -21,4 +21,5 @@ BUGFIXES:
 010 ==> 392015 - Show "Unknown" faces in a more visible and preeminent place in the "People" list.
 011 ==> 413837 - Reverse geolocation deletes previous tags from the picture.
 012 ==> 376629 - Face tagging dropdown: "Add in persons" adds person not label.
-013 ==> 
+013 ==> 413923 - The peoples list shows just one line of height (one name) when expanded for the first time.
+014 ==> 
