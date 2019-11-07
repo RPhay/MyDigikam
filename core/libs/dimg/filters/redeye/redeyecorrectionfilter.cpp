@@ -57,12 +57,12 @@ public:
     }
 
     FaceDetector                   facedetector;
-    static redeye::ShapePredictor* sp;
+    static RedEye::ShapePredictor* sp;
 
     RedEyeCorrectionContainer      settings;
 };
 
-redeye::ShapePredictor* RedEyeCorrectionFilter::Private::sp = nullptr;
+RedEye::ShapePredictor* RedEyeCorrectionFilter::Private::sp = nullptr;
 
 RedEyeCorrectionFilter::RedEyeCorrectionFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
@@ -121,7 +121,7 @@ void RedEyeCorrectionFilter::filterImage()
 
         if (model.open(QIODevice::ReadOnly))
         {
-            redeye::ShapePredictor* const temp = new redeye::ShapePredictor();
+            RedEye::ShapePredictor* const temp = new RedEye::ShapePredictor();
             QDataStream dataStream(&model);
             dataStream.setFloatingPointPrecision(QDataStream::SinglePrecision);
             dataStream >> *temp;
@@ -161,7 +161,7 @@ void RedEyeCorrectionFilter::filterImage()
     }
 
     QList<QRectF> qrectfdets   = d->facedetector.detectFaces(temp);
-    redeye::ShapePredictor& sp = *(d->sp);
+    RedEye::ShapePredictor& sp = *(d->sp);
 
     if (runningFlag() && (qrectfdets.size() != 0))
     {

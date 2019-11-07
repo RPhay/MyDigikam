@@ -10,8 +10,9 @@
  *               positions, almost all codes are ported from dlib
  *               library (http://dlib.net/)
  *
- * Copyright (C) 2016 by Omar Amin <Omar dot moh dot amin at gmail dot com>
- * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2016      by Omar Amin <Omar dot moh dot amin at gmail dot com>
+ * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2016-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -31,7 +32,7 @@
 namespace Digikam
 {
 
-namespace redeye
+namespace RedEye
 {
 
 QDataStream& operator << (QDataStream& dataStream, const SplitFeature& sp)
@@ -71,10 +72,14 @@ const std::vector<float>& RegressionTree::operator()(const std::vector<float>& f
 
     while (i < splits.size())
     {
-        if (feature_pixel_values[splits[i].idx1] - feature_pixel_values[splits[i].idx2] > splits[i].thresh)
+        if ((feature_pixel_values[splits[i].idx1] - feature_pixel_values[splits[i].idx2]) > splits[i].thresh)
+        {
             i = left_child(i);
+        }
         else
+        {
             i = right_child(i);
+        }
     }
 
     i = i - splits.size();
@@ -140,6 +145,7 @@ unsigned long nearest_shape_point(const std::vector<float>& shape,
                                   const std::vector<float>& pt)
 {
     // find the nearest part of the shape to this pixel
+
     float best_dist                     = std::numeric_limits<float>::infinity();
     const unsigned long num_shape_parts = shape.size()/2;
     unsigned long best_idx              = 0;
@@ -218,14 +224,14 @@ PointTransformAffine normalizing_tform(const cv::Rect& rect)
     brcorner[1] = rect.y + rect.height;
 
     std::vector<float> pt1(2);
-    pt1[0] = 0;
-    pt1[1] = 0;
+    pt1[0]      = 0;
+    pt1[1]      = 0;
     std::vector<float> pt2(2);
-    pt2[0] = 1;
-    pt2[1] = 0;
+    pt2[0]      = 1;
+    pt2[1]      = 0;
     std::vector<float> pt3(2);
-    pt3[0] = 1;
-    pt3[1] = 1;
+    pt3[0]      = 1;
+    pt3[1]      = 1;
     from_points.push_back(tlcorner);
     to_points.push_back(pt1);
     from_points.push_back(trcorner);
@@ -252,14 +258,14 @@ PointTransformAffine unnormalizing_tform(const cv::Rect& rect)
     brcorner[1] = rect.y + rect.height;
 
     std::vector<float> pt1(2);
-    pt1[0] = 0;
-    pt1[1] = 0;
+    pt1[0]      = 0;
+    pt1[1]      = 0;
     std::vector<float> pt2(2);
-    pt2[0] = 1;
-    pt2[1] = 0;
+    pt2[0]      = 1;
+    pt2[1]      = 0;
     std::vector<float> pt3(2);
-    pt3[0] = 1;
-    pt3[1] = 1;
+    pt3[0]      = 1;
+    pt3[1]      = 1;
 
     to_points.push_back(tlcorner);
     from_points.push_back(pt1);
@@ -308,6 +314,7 @@ void extract_feature_pixel_values(const cv::Mat& img_,
     {
         // Compute the point in the current shape corresponding to the i-th pixel and
         // then map it from the normalized shape space into pixel space.
+
         std::vector<float> p = tform_to_img(tform*reference_pixel_deltas[i] + location(current_shape, reference_pixel_anchor_idx[i]));
 
         if (pointContained(area, p))
@@ -329,7 +336,7 @@ ShapePredictor::ShapePredictor()
 
 unsigned long ShapePredictor::num_parts() const
 {
-    return initial_shape.size() / 2;
+    return (initial_shape.size() / 2);
 }
 
 unsigned long ShapePredictor::num_features() const
@@ -349,7 +356,6 @@ unsigned long ShapePredictor::num_features() const
 
 FullObjectDetection ShapePredictor::operator()(const cv::Mat& img, const cv::Rect& rect) const
 {
-    using namespace redeye;
     std::vector<float> current_shape = initial_shape;
     std::vector<float> feature_pixel_values;
 
@@ -359,7 +365,7 @@ FullObjectDetection ShapePredictor::operator()(const cv::Mat& img, const cv::Rec
                                      anchor_idx[iter], deltas[iter], feature_pixel_values);
         unsigned long leaf_idx;
 
-        // evaluate all the trees at this level of the cascade.
+        // Evaluate all the trees at this level of the cascade.
 
         for (unsigned long i = 0 ; i < forests[iter].size() ; ++i)
         {
@@ -367,7 +373,8 @@ FullObjectDetection ShapePredictor::operator()(const cv::Mat& img, const cv::Rec
         }
     }
 
-    // convert the current_shape into a full_object_detection
+    // Convert the current_shape into a full_object_detection
+
     const PointTransformAffine tform_to_img = unnormalizing_tform(rect);
     std::vector<std::vector<float> > parts(current_shape.size() / 2);
 
@@ -487,6 +494,6 @@ QDataStream& operator >> (QDataStream& dataStream, ShapePredictor& shape)
     return dataStream;
 }
 
-} // namespace redeye
+} // namespace RedEye
 
 } // namespace Digikam

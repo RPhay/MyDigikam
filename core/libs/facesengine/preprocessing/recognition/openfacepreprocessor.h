@@ -55,7 +55,7 @@ private:
     cv::Mat                faceTemplate;
     std::array<int, 3>     outerEyesNosePositions;
 
-    redeye::ShapePredictor sp;
+    RedEye::ShapePredictor sp;
 };
 
 } // namespace Digikam

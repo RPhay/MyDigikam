@@ -73,7 +73,7 @@ void OpenfacePreprocessor::init()
     QString spdata = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                             QLatin1String("digikam/facesengine/shapepredictor.dat"));
     QFile model(spdata);
-    redeye::ShapePredictor* const temp = new redeye::ShapePredictor();
+    RedEye::ShapePredictor* const temp = new RedEye::ShapePredictor();
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Start reading shape predictor file";
 

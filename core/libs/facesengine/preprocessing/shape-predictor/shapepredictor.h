@@ -10,8 +10,9 @@
  *               positions, almost all codes are ported from dlib
  *               library (http://dlib.net/)
  *
- * Copyright (C) 2016 by Omar Amin <Omar dot moh dot amin at gmail dot com>
- * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2016      by Omar Amin <Omar dot moh dot amin at gmail dot com>
+ * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2016-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,7 +46,7 @@
 namespace Digikam
 {
 
-namespace redeye
+namespace RedEye
 {
 
 struct SplitFeature
@@ -58,7 +59,7 @@ struct SplitFeature
 QDataStream& operator << (QDataStream& dataStream, const SplitFeature& sp);
 QDataStream& operator >> (QDataStream& dataStream, SplitFeature& sp);
 
-// NOTE: a tree is just a std::vector<redeye::SplitFeature>. We use this function to navigate the tree nodes.
+// NOTE: a tree is just a std::vector<RedEye::SplitFeature>. We use this function to navigate the tree nodes.
 
 /*!
     ensures
@@ -206,7 +207,7 @@ public:
 public:
 
     std::vector<float>                                initial_shape;
-    std::vector<std::vector<redeye::RegressionTree> > forests;
+    std::vector<std::vector<RedEye::RegressionTree> > forests;
     std::vector<std::vector<unsigned long> >          anchor_idx;
     std::vector<std::vector<std::vector<float> > >    deltas;
 };
@@ -214,7 +215,7 @@ public:
 QDataStream& operator << (QDataStream& dataStream, const ShapePredictor& shape);
 QDataStream& operator >> (QDataStream& dataStream, ShapePredictor& shape);
 
-} // namespace redeye
+} // namespace RedEye
 
 } // namespace Digikam
 
