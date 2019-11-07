@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "faceworkers.h"
+#include "trainerworker.h"
 
 // KDE includes
 
@@ -75,13 +75,18 @@ TrainerWorker::TrainerWorker(FacePipeline::Private* const d)
     : imageRetriever(d),
       d(d)
 {
-    KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group        = config->group(QLatin1String("Face Detection Dialog"));
+    KSharedConfig::Ptr config                    = KSharedConfig::openConfig();
+    KConfigGroup group                           = config->group(QLatin1String("Face Detection Dialog"));
 
     RecognitionDatabase::RecognizeAlgorithm algo =
             (RecognitionDatabase::RecognizeAlgorithm)group.readEntry(QLatin1String("Recognize Algorithm"),
                                                                      (int)RecognitionDatabase::RecognizeAlgorithm::LBP);
     database.activeFaceRecognizer(algo);
+}
+
+TrainerWorker::~TrainerWorker()
+{
+    wait();    // protect detector
 }
 
 void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)

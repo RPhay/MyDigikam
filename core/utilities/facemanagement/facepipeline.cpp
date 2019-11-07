@@ -32,7 +32,7 @@
 #include "detectionworker.h"
 #include "recognitionbenchmarker.h"
 #include "recognitionworker.h"
-#include "faceworkers.h"
+#include "trainerworker.h"
 #include "facepreviewloader.h"
 #include "faceitemretriever.h"
 #include "parallelpipes.h"

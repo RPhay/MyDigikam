@@ -12,7 +12,6 @@ set(libfacemanagement_SRCS
     facegroup_p.cpp
     facepipeline.cpp
     facepipeline_p.cpp
-    faceworkers.cpp
     faceitemretriever.cpp
     facepreviewloader.cpp
     facescandialog.cpp
@@ -25,6 +24,7 @@ set(libfacemanagement_SRCS
     recognitionbenchmarker.cpp
     recognitionworker.cpp
     databasewriter.cpp
+    trainerworker.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>

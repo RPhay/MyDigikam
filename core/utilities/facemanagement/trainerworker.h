@@ -40,10 +40,7 @@ class Q_DECL_HIDDEN TrainerWorker : public WorkerObject
 public:
 
     explicit TrainerWorker(FacePipeline::Private* const d);
-    ~TrainerWorker()
-    {
-        wait();    // protect detector
-    }
+    ~TrainerWorker();
 
 protected:
 
