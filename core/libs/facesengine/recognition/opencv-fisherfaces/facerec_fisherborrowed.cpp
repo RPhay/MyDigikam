@@ -237,7 +237,7 @@ void FisherFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_lab
     }
 }
 
-void FisherFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<face::PredictCollector> collector) const
+void FisherFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<Face::PredictCollector> collector) const
 {
     qCWarning(DIGIKAM_FACESENGINE_LOG) << "Predicting face image using fisherfaces";
 

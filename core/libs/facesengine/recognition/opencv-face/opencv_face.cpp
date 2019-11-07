@@ -3,7 +3,7 @@
  * This file is a part of digiKam
  *
  * Date        : 2010-01-03
- * Description : Abstract base classes for all face prediction and recognition models.
+ * Description : Abstract base classes for all OpenCV based face prediction and recognition models.
  *               Inspired from OpenCV contrib module 'face'
  *               https://github.com/Itseez/opencv_contrib/tree/master/modules/face
  *
@@ -41,7 +41,7 @@
 namespace Digikam
 {
 
-namespace face
+namespace Face
 {
 
 static std::pair<int, double> toPair(const StandardCollector::PredictResult& val)
@@ -56,8 +56,8 @@ static bool pairLess(const std::pair<int, double>& lhs, const std::pair<int, dou
 
 // ---------------------------------------------------------------------------------------------
 
-StandardCollector::StandardCollector(double threshold_)
-    : threshold(threshold_)
+StandardCollector::StandardCollector(double thr)
+    : threshold(thr)
 {
     init(0);
 }
@@ -96,9 +96,9 @@ double StandardCollector::getMinDist() const
     return minRes.distance;
 }
 
-std::vector< std::pair<int, double> > StandardCollector::getResults(bool sorted) const
+std::vector<std::pair<int, double> > StandardCollector::getResults(bool sorted) const
 {
-    std::vector< std::pair<int, double> > res(data.size());
+    std::vector<std::pair<int, double> > res(data.size());
     std::transform(data.begin(), data.end(), res.begin(), &toPair);
 
     if (sorted)
@@ -142,8 +142,8 @@ std::vector<int> FaceRecognizer::getLabelsByString(const String& str) const
 {
     std::vector<int> labels;
 
-    for (std::map<int, String>::const_iterator it = _labelsInfo.begin() ;
-         it != _labelsInfo.end() ; ++it)
+    for (std::map<int, String>::const_iterator it = m_labelsInfo.begin() ;
+         it != m_labelsInfo.end() ; ++it)
     {
         size_t found = (it->second).find(str);
 
@@ -158,14 +158,14 @@ std::vector<int> FaceRecognizer::getLabelsByString(const String& str) const
 
 String FaceRecognizer::getLabelInfo(int label) const
 {
-    std::map<int, String>::const_iterator iter(_labelsInfo.find(label));
+    std::map<int, String>::const_iterator iter(m_labelsInfo.find(label));
 
-    return ((iter != _labelsInfo.end()) ? iter->second : "");
+    return ((iter != m_labelsInfo.end()) ? iter->second : String(""));
 }
 
 void FaceRecognizer::setLabelInfo(int label, const String& strInfo)
 {
-    _labelsInfo[label] = strInfo;
+    m_labelsInfo[label] = strInfo;
 }
 
 void FaceRecognizer::update(InputArrayOfArrays src, InputArray labels)
@@ -179,12 +179,12 @@ void FaceRecognizer::update(InputArrayOfArrays src, InputArray labels)
 
 int FaceRecognizer::predict(InputArray src) const
 {
-    int    _label = 0;
-    double _dist  = 0.0;
+    int    lbl = 0;
+    double dst = 0.0;
 
-    predict(src, _label, _dist);
+    predict(src, lbl, dst);
 
-    return _label;
+    return lbl;
 }
 
 void FaceRecognizer::predict(InputArray src,
@@ -199,6 +199,6 @@ void FaceRecognizer::predict(InputArray src,
     confidence                       = collector->getMinDist();
 }
 
-} // namespace face
+} // namespace Face
 
 } // namespace Digikam

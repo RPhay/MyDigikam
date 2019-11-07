@@ -3,7 +3,7 @@
  * This file is a part of digiKam
  *
  * Date        : 2010-01-03
- * Description : Abstract base classes for all face prediction and recognition models.
+ * Description : Abstract base classes for all OPenCV based face prediction and recognition models.
  *               Inspired from OpenCV contrib module 'face'
  *               https://github.com/Itseez/opencv_contrib/tree/master/modules/face
  *
@@ -33,6 +33,10 @@
 
 #include <map>
 
+// Qt includeq
+
+#include <QtGlobal>
+
 // Local includes
 
 #include "digikam_opencv.h"
@@ -43,7 +47,7 @@ using namespace cv;
 namespace Digikam
 {
 
-namespace face
+namespace Face
 {
 
 /**
@@ -63,7 +67,7 @@ public:
      */
     virtual void init(size_t size)
     {
-        (void)size;
+        Q_UNUSED(size);
     }
 
     /**
@@ -84,13 +88,17 @@ class DIGIKAM_DATABASE_EXPORT StandardCollector : public PredictCollector
 {
 public:
 
-    struct PredictResult
+    class PredictResult
     {
-        PredictResult(int label_ = -1, double distance_ = DBL_MAX)
-            : label(label_),
-              distance(distance_)
+    public:
+
+        explicit PredictResult(int lbl = -1, double dst = DBL_MAX)
+            : label(lbl),
+              distance(dst)
         {
         }
+
+    public:
 
         int    label;
         double distance;
@@ -106,9 +114,9 @@ public:
 
     /**
      * @brief Constructor
-     * @param threshold_ set threshold
+     * @param thr set threshold
      */
-    explicit StandardCollector(double threshold_ = DBL_MAX);
+    explicit StandardCollector(double thr = DBL_MAX);
 
     /**
      * @brief overloaded interface method
@@ -135,7 +143,7 @@ public:
      * @param sorted If set, results will be sorted by distance
      * Each values is a pair of label and distance.
      */
-    std::vector< std::pair<int, double> > getResults(bool sorted = false) const;
+    std::vector<std::pair<int, double> > getResults(bool sorted = false) const;
 
     /**
      * @brief Return results as map
@@ -174,8 +182,6 @@ public:
  *     ocvcvGetCaptureProperty, VideoCapture::set and VideoCapture::get. Algorithm provides similar
  *     method where instead of integer id's you specify the parameter names as text Strings. See
  *     Algorithm::set and Algorithm::get for details.
- * -   Reading and writing parameters from/to XML or YAML files. Every Algorithm derivative can store
- *     all its parameters and then read them back. There is no need to re-implement it each time.
  *
  * Moreover every FaceRecognizer supports the:
  *
@@ -418,15 +424,15 @@ public:
      */
     virtual double getThreshold()                                         const = 0;
 
-protected:
+private:
 
     /**
      * Stored pairs "label id - string info"
      */
-    std::map<int, String> _labelsInfo;
+    std::map<int, String> m_labelsInfo;
 };
 
-} // namespace face
+} // namespace Face
 
 } // namespace Digikam
 

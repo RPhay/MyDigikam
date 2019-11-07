@@ -40,7 +40,7 @@
 namespace Digikam
 {
 
-class LBPHFaceRecognizer : public face::FaceRecognizer
+class LBPHFaceRecognizer : public Face::FaceRecognizer
 {
 public:
 
@@ -126,8 +126,8 @@ public:
     /**
      * Predict
      */
-    using face::FaceRecognizer::predict;
-    void predict(cv::InputArray src, cv::Ptr<face::PredictCollector> collector)     const override;
+    using Face::FaceRecognizer::predict;
+    void predict(cv::InputArray src, cv::Ptr<Face::PredictCollector> collector)     const override;
 
     /**
      * Getter functions.
