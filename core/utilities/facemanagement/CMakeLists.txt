@@ -24,6 +24,7 @@ set(libfacemanagement_SRCS
     detectionworker.cpp
     recognitionbenchmarker.cpp
     recognitionworker.cpp
+    databasewriter.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>

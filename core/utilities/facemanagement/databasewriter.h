@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_WORKERS_H
-#define DIGIKAM_FACE_WORKERS_H
+#ifndef DIGIKAM_DATABASE_WRITER_H
+#define DIGIKAM_DATABASE_WRITER_H
 
 // Local includes
 
@@ -33,21 +33,13 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN TrainerWorker : public WorkerObject
+class Q_DECL_HIDDEN DatabaseWriter : public WorkerObject
 {
     Q_OBJECT
 
 public:
 
-    explicit TrainerWorker(FacePipeline::Private* const d);
-    ~TrainerWorker()
-    {
-        wait();    // protect detector
-    }
-
-protected:
-
-    virtual void aboutToDeactivate() override;
+    DatabaseWriter(FacePipeline::WriteMode mode, FacePipeline::Private* const d);
 
 public Q_SLOTS:
 
@@ -59,11 +51,11 @@ Q_SIGNALS:
 
 protected:
 
-    RecognitionDatabase          database;
-    FaceItemRetriever            imageRetriever;
+    FacePipeline::WriteMode      mode;
+    ThumbnailLoadThread*         thumbnailLoadThread;
     FacePipeline::Private* const d;
 };
 
 } // namespace Digikam
 
-#endif // DIGIKAM_FACE_WORKERS_H
+#endif // DIGIKAM_DATABASE_WRITER_H
