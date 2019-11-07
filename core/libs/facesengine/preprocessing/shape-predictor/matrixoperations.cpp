@@ -7,8 +7,9 @@
  * Description : Some matrix utility functions including singular value
  *               decomposition, inverse, and pseudo-inverse.
  *
- * Copyright (C) 2016 by Omar Amin <Omar dot moh dot amin at gmail dot com>
- * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2016      by Omar Amin <Omar dot moh dot amin at gmail dot com>
+ * Copyright (C) 2019      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
+ * Copyright (C) 2016-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -30,17 +31,19 @@ namespace Digikam
 
 std::vector<std::vector<float> > inv2(const std::vector<std::vector<float> >& mat)
 {
-    assert(mat.size() == 2 && mat[0].size() == 2);
+    assert((mat.size() == 2) && (mat[0].size() == 2));
 
     std::vector<std::vector<float> > m(2,std::vector<float>(2, 0));
-    float det = mat[0][0] * mat[1][1] - mat[0][1]*mat[1][0];
+
+    float det = mat[0][0]*mat[1][1] -
+                mat[0][1]*mat[1][0];
 
     assert(det != 0);
 
-    m[0][0] =   mat[1][1]/det;
-    m[0][1] = - mat[0][1]/det;
-    m[1][0] = - mat[1][0]/det;
-    m[1][1] =   mat[0][0]/det;
+    m[0][0] =  mat[1][1] / det;
+    m[0][1] = -mat[0][1] / det;
+    m[1][0] = -mat[1][0] / det;
+    m[1][1] =  mat[0][0] / det;
 
     return m;
 }
@@ -109,7 +112,7 @@ void transpose(std::vector<std::vector<float> >& src,
 
 float trace(const std::vector<std::vector<float> >& src)
 {
-    float result = 0;
+    float result = 0.0;
 
     for (unsigned int i = 0 ; i < src.size() ; ++i)
     {
@@ -134,22 +137,31 @@ bool svd3(std::vector<std::vector<float> >& a,
     const long max_iter = 300;
 
     // a is a square matrix
+
     // columns
     const long n        = a.size();
+
     // rows
     const long m        = a.size();
+
     const float eps     = std::numeric_limits<float>::epsilon();
     long nm             = 0;
     long l              = 0;
     float g             = 0.0;
     float scale         = 0.0;
     float anorm         = 0.0;
-    bool flag;
-    float c, f, h, s, x, y, z;
+    bool flag           = false;
+    float c             = 0.0;
+    float f             = 0.0;
+    float h             = 0.0;
+    float s             = 0.0;
+    float x             = 0.0;
+    float y             = 0.0;
+    float z             = 0.0;
 
     for (long i = 0 ; i < n ; ++i)
     {
-        l      = i+1;
+        l      = i + 1;
         rv1[i] = scale * g;
         g      = 0.0;
         s      = 0.0;
@@ -199,8 +211,7 @@ bool svd3(std::vector<std::vector<float> >& a,
             }
         }
 
-        w[i] = scale *g;
-
+        w[i]  = scale *g;
         g     = 0.0;
         s     = 0.0;
         scale = 0.0;
@@ -372,8 +383,10 @@ bool svd3(std::vector<std::vector<float> >& a,
                     f      = s * rv1[i];
                     rv1[i] = c * rv1[i];
 
-                    if (std::abs(f) <= eps * anorm)
+                    if (std::abs(f) <= (eps * anorm))
+                    {
                         break;
+                    }
 
                     g    = w[i];
                     h    = pythag(f, g);
@@ -410,7 +423,9 @@ bool svd3(std::vector<std::vector<float> >& a,
             }
 
             if (its == max_iter)
+            {
                 return false;
+            }
 
             x  = w[l];
             nm = k - 1;
@@ -506,14 +521,19 @@ void svd(const std::vector<std::vector<float> >& m,
     svd3(u,W,v,rv1);
 
     // get w from W
+
     for (unsigned int i = 0 ; i < 2 ; ++i)
     {
         for (unsigned int j = 0 ; j < 2 ; ++j)
         {
             if (i == j)
+            {
                 w[i][j] = W[i];
+            }
             else
-                w[i][j] = 0.00;
+            {
+                w[i][j] = 0.0;
+            }
         }
     }
 }
@@ -525,4 +545,4 @@ float determinant(const std::vector<std::vector<float> >& u)
     return result;
 }
 
-}; // namespace Digikam
+} // namespace Digikam
