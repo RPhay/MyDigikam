@@ -36,50 +36,6 @@
 namespace Digikam
 {
 
-RecognitionWorker::RecognitionWorker(FacePipeline::Private* const d)
-    : imageRetriever(d),
-      d(d)
-{
-}
-
-void RecognitionWorker::activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm algorithmType)
-{
-    database.activeFaceRecognizer(algorithmType);
-}
-
-void RecognitionWorker::process(FacePipelineExtendedPackage::Ptr package)
-{
-    FaceUtils     utils;
-    QList<QImage> images;
-
-    if (package->processFlags & FacePipelinePackage::ProcessedByDetector)
-    {
-        // assume we have an image
-        images = imageRetriever.getDetails(package->image, package->detectedFaces);
-    }
-    else if (!package->databaseFaces.isEmpty())
-    {
-        images = imageRetriever.getThumbnails(package->filePath, package->databaseFaces.toFaceTagsIfaceList());
-    }
-
-    package->recognitionResults  = database.recognizeFaces(images);
-    package->processFlags       |= FacePipelinePackage::ProcessedByRecognizer;
-
-    emit processed(package);
-}
-
-void RecognitionWorker::setThreshold(double threshold)
-{
-    database.setParameter(QLatin1String("threshold"), threshold);
-}
-
-void RecognitionWorker::aboutToDeactivate()
-{
-    imageRetriever.cancel();
-}
-
-// ----------------------------------------------------------------------------------------
-
 class Q_DECL_HIDDEN MapListTrainingDataProvider : public TrainingDataProvider
 {
 public:

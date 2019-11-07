@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_WORKERS_H
-#define DIGIKAM_FACE_WORKERS_H
+#ifndef DIGIKAM_RECOGNITION_WORKER_H
+#define DIGIKAM_RECOGNITION_WORKER_H
 
 // Local includes
 
@@ -33,62 +33,40 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN DatabaseWriter : public WorkerObject
+class Q_DECL_HIDDEN RecognitionWorker : public WorkerObject
 {
     Q_OBJECT
 
 public:
 
-    DatabaseWriter(FacePipeline::WriteMode mode, FacePipeline::Private* const d);
+    explicit RecognitionWorker(FacePipeline::Private* const d);
+    ~RecognitionWorker();
+
+    /**
+     * Set the face recognition algorithm type
+     */
+    void activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm  algorithmType);
 
 public Q_SLOTS:
 
     void process(FacePipelineExtendedPackage::Ptr package);
-
-Q_SIGNALS:
-
-    void processed(FacePipelineExtendedPackage::Ptr package);
-
-protected:
-
-    FacePipeline::WriteMode      mode;
-    ThumbnailLoadThread*         thumbnailLoadThread;
-    FacePipeline::Private* const d;
-};
-
-// ----------------------------------------------------------------------------------------
-
-class Q_DECL_HIDDEN TrainerWorker : public WorkerObject
-{
-    Q_OBJECT
-
-public:
-
-    explicit TrainerWorker(FacePipeline::Private* const d);
-    ~TrainerWorker()
-    {
-        wait();    // protect detector
-    }
+    void setThreshold(double threshold);
 
 protected:
 
     virtual void aboutToDeactivate() override;
 
-public Q_SLOTS:
-
-    void process(FacePipelineExtendedPackage::Ptr package);
-
 Q_SIGNALS:
 
     void processed(FacePipelineExtendedPackage::Ptr package);
 
 protected:
 
-    RecognitionDatabase          database;
     FaceItemRetriever            imageRetriever;
+    RecognitionDatabase          database;
     FacePipeline::Private* const d;
 };
 
 } // namespace Digikam
 
-#endif // DIGIKAM_FACE_WORKERS_H
+#endif // DIGIKAM_RECOGNITION_WORKER_H

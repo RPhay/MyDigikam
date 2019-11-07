@@ -28,8 +28,9 @@
 
 #include "digikam_debug.h"
 #include "detectionbenchmarker.h"
-#include "recognitionbenchmarker.h"
 #include "detectionworker.h"
+#include "recognitionbenchmarker.h"
+#include "recognitionworker.h"
 #include "faceworkers.h"
 #include "facepreviewloader.h"
 #include "faceitemretriever.h"
