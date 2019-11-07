@@ -19,4 +19,5 @@ BUGFIXES:
 008 ==> 413759 - Tarball is missing translations.
 009 ==> 413879 - Buttons without theme colors.
 010 ==> 392015 - Show "Unknown" faces in a more visible and preeminent place in the "People" list.
-011 ==> 
+011 ==> 413837 - Reverse geolocation deletes previous tags from the picture.
+012 ==> 

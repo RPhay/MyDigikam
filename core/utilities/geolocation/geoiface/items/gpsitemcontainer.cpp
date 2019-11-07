@@ -814,8 +814,7 @@ QString GPSItemContainer::saveChanges()
 
         if (!m_tagList.isEmpty() && m_writeXmpTags)
         {
-
-            QStringList tagSeq;
+            QStringList tagSeq = meta->getXmpTagStringSeq("Xmp.digiKam.TagsList", false);
 
             for (int i = 0 ; i < m_tagList.count() ; ++i)
             {
@@ -828,7 +827,11 @@ QString GPSItemContainer::saveChanges()
                 }
 
                 tag.remove(0, 1);
-                tagSeq.append(tag);
+
+                if (!tagSeq.contains(tag))
+                {
+                    tagSeq.append(tag);
+                }
             }
 
             bool success = meta->setXmpTagStringSeq("Xmp.digiKam.TagsList", tagSeq);
