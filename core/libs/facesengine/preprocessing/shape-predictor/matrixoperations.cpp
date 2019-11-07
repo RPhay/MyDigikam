@@ -29,6 +29,9 @@
 namespace Digikam
 {
 
+namespace MatrixOperations
+{
+
 std::vector<std::vector<float> > inv2(const std::vector<std::vector<float> >& mat)
 {
     assert((mat.size() == 2) && (mat[0].size() == 2));
@@ -544,5 +547,7 @@ float determinant(const std::vector<std::vector<float> >& u)
 
     return result;
 }
+
+} // namespace MatrixOperations
 
 } // namespace Digikam

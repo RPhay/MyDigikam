@@ -39,6 +39,9 @@
 namespace Digikam
 {
 
+namespace MatrixOperations
+{
+
 std::vector<std::vector<float> > inv2(const std::vector<std::vector<float> >& mat);
 
 std::vector<std::vector<float> > pinv(const std::vector<std::vector<float> >& mat);
@@ -105,6 +108,8 @@ void svd(const std::vector<std::vector<float> >& m,
          std::vector<std::vector<float> >& v);
 
 float determinant(const std::vector<std::vector<float> >& u);
+
+} // namespace MatrixOperations
 
 } // namespace Digikam
 
