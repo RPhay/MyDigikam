@@ -326,12 +326,12 @@ void WaterMark::registerSettingsWidget()
     QLabel* const placementDensityLabel = new QLabel(placementHBox);
     placementDensityLabel->setText(i18n("Density of watermark repetition (Disabled in \"Specific Location\" mode)"));
 
-    DHBox* const randomizeHBox   = new DHBox(vbox);
+    DHBox* const randomizeHBox          = new DHBox(vbox);
     randomizeHBox->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     randomizeHBox->setSpacing(5);
 
-    QLabel* const spaceLabel2 = new QLabel(randomizeHBox);
-    d->randomizeRotationCheckBox          = new QCheckBox(randomizeHBox);
+    QLabel* const spaceLabel2           = new QLabel(randomizeHBox);
+    d->randomizeRotationCheckBox        = new QCheckBox(randomizeHBox);
     d->randomizeRotationCheckBox->setWhatsThis(i18n("When you choose to have the watermark repeated randomly, you "
                                                     "can randomly rotate the watermark (0, 90, 180, 270 degrees)."));
     d->randomizeRotationCheckBox->setChecked(true);
