@@ -25,4 +25,5 @@ BUGFIXES:
 014 ==> 413924 - The face rectangle behavior when show face tags is OFF.
 015 ==> 341111 - MYSQL : deleting an image involves "too many" queries.
 016 ==> 413938 - Metadata is not written to all pictures in a tag hierarchy.
-017 ==> 
+017 ==> 413916 - Compile Error with lqr on neon.
+018 ==> 
