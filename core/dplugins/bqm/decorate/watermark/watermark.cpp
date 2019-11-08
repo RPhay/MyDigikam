@@ -332,10 +332,8 @@ void WaterMark::registerSettingsWidget()
 
     QLabel* const spaceLabel2 = new QLabel(randomizeHBox);
     d->randomizeRotationCheckBox          = new QCheckBox(randomizeHBox);
-    d->randomizeRotationCheckBox->setWhatsThis(i18n("When you choose to have the watermark repeated randomly, "
-                                                    "many times in the placement combo box, you can specify here "
-                                                    "whether the repetition, you can check this to make the watermark "
-                                                    "rotations random also [0, 90, 180, 270]."));
+    d->randomizeRotationCheckBox->setWhatsThis(i18n("When you choose to have the watermark repeated randomly, you "
+                                                    "can randomly rotate the watermark (0, 90, 180, 270 degrees)."));
     d->randomizeRotationCheckBox->setChecked(true);
     d->denseRepetitionCheckBox->setEnabled(false);
     spaceLabel2->setText(QLatin1String(" "));
