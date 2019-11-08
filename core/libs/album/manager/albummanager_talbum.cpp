@@ -988,7 +988,7 @@ void AlbumManager::slotImageTagChange(const ImageTagChangeset& changeset)
 
 void AlbumManager::askUserForWriteChangedTAlbumToFiles(TAlbum* const album)
 {
-    QList<qlonglong> imageIds = CoreDbAccess().db()->getItemIDsInTag(album->id());
+    QList<qlonglong> imageIds = CoreDbAccess().db()->getItemIDsInTag(album->id(), true);
     askUserForWriteChangedTAlbumToFiles(imageIds);
 }
 
