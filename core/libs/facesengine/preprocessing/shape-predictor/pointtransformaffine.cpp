@@ -86,53 +86,53 @@ const std::vector<float>& PointTransformAffine::get_b() const
 PointTransformAffine operator* (const PointTransformAffine& lhs,
                                 const PointTransformAffine& rhs)
 {
-    return PointTransformAffine(lhs.get_m() * rhs.get_m(),
-                                lhs.get_m() * rhs.get_b() + lhs.get_b());
+    return (PointTransformAffine(lhs.get_m() * rhs.get_m(),
+                                 lhs.get_m() * rhs.get_b() + lhs.get_b()));
 }
 
 // ----------------------------------------------------------------------------------------
 
-PointTransformAffine inv (const PointTransformAffine& trans)
+PointTransformAffine inv(const PointTransformAffine& trans)
 {
     std::vector<std::vector<float> > im = MatrixOperations::inv2(trans.get_m());
 
-    return PointTransformAffine(im, -(im * trans.get_b()));
+    return (PointTransformAffine(im, -(im * trans.get_b())));
 }
 
 // ----------------------------------------------------------------------------------------
 
-PointTransformAffine find_similarity_transform(const std::vector<std::vector<float> >& from_points,
-                                               const std::vector<std::vector<float> >& to_points)
+PointTransformAffine findSimilarityTransform(const std::vector<std::vector<float> >& fromPoints,
+                                             const std::vector<std::vector<float> >& toPoints)
 {
     // We use the formulas from the paper: Least-squares estimation of transformation
-    // parameters between two point patterns by Umeyama.  They are equations 34 through
-    // 43.
+    // parameters between two point patterns by Umeyama. They are equations 34 through 43.
 
-    std::vector<float> mean_from(2, 0), mean_to(2, 0);
-    float sigma_from = 0;
-    float sigma_to   = 0;
+    std::vector<float> meanFrom(2, 0);
+    std::vector<float> meanTo(2, 0);
+    float sigmaFrom = 0;
+    float sigmaTo   = 0;
     std::vector<std::vector<float> > cov(2, std::vector<float>(2, 0));
 
-    for (unsigned long i = 0 ; i < from_points.size() ; ++i)
+    for (unsigned long i = 0 ; i < fromPoints.size() ; ++i)
     {
-        mean_from = mean_from + from_points[i];
-        mean_to   = mean_to   + to_points[i];
+        meanFrom = meanFrom + fromPoints[i];
+        meanTo   = meanTo   + toPoints[i];
     }
 
-    mean_from = mean_from / from_points.size();
-    mean_to   = mean_to   / from_points.size();
+    meanFrom = meanFrom / fromPoints.size();
+    meanTo   = meanTo   / fromPoints.size();
 
-    for (unsigned long i = 0 ; i < from_points.size() ; ++i)
+    for (unsigned long i = 0 ; i < fromPoints.size() ; ++i)
     {
-        sigma_from = sigma_from + length_squared(from_points[i] - mean_from);
-        sigma_to   = sigma_to   + length_squared(to_points[i]   - mean_to);
-        cov        = cov + (to_points[i] - mean_to)*(from_points[i] - mean_from);
+        sigmaFrom = sigmaFrom + length_squared(fromPoints[i] - meanFrom);
+        sigmaTo   = sigmaTo   + length_squared(toPoints[i]   - meanTo);
+        cov       = cov + (toPoints[i] - meanTo)*(fromPoints[i] - meanFrom);
     }
 
-    sigma_from = sigma_from / from_points.size();
-    sigma_to   = sigma_to   / from_points.size();
-    cov        = cov        / from_points.size();
-    (void)sigma_to; // to silent clang scan-build
+    sigmaFrom = sigmaFrom / fromPoints.size();
+    sigmaTo   = sigmaTo   / fromPoints.size();
+    cov       = cov       / fromPoints.size();
+    (void)sigmaTo; // to silent clang scan-build
 
     std::vector<std::vector<float> >  u(2,std::vector<float>(2));
     std::vector<std::vector<float> >  v(2,std::vector<float>(2));
@@ -162,14 +162,14 @@ PointTransformAffine find_similarity_transform(const std::vector<std::vector<flo
     std::vector<std::vector<float> > r = u * s * v;
     float c                            = 1;
 
-    if (sigma_from != 0)
+    if (sigmaFrom != 0)
     {
-        c = 1.0 / sigma_from * MatrixOperations::trace(d * s);
+        c = 1.0 / sigmaFrom * MatrixOperations::trace(d * s);
     }
 
-    std::vector<float> t = mean_to - r * mean_from * c;
+    std::vector<float> t = meanTo - r * meanFrom * c;
 
-    return PointTransformAffine(r * c, t);
+    return (PointTransformAffine(r * c, t));
 }
 
 } // namespace Digikam

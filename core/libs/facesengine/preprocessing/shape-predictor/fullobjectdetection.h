@@ -8,7 +8,8 @@
  *               shape predictor class, containing 64 facial point including
  *               eye, nose, and mouth.
  *
- * Copyright (C) 2016 by Omar Amin <Omar dot moh dot amin at gmail dot com>
+ * Copyright (C)      2016 by Omar Amin <Omar dot moh dot amin at gmail dot com>
+ * Copyright (C) 2016-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -65,7 +66,7 @@ private:
 
 // -------------------------------------------------------------------
 
-std::vector<cv::Rect> geteyes(const FullObjectDetection& shape);
+std::vector<cv::Rect> getEyes(const FullObjectDetection& shape);
 
 } // namespace Digikam
 

@@ -141,8 +141,8 @@ QDataStream& operator >> (QDataStream& dataStream, RegressionTree& regtree)
 
 // ------------------------------------------------------------------------------------
 
-unsigned long nearest_shape_point(const std::vector<float>& shape,
-                                  const std::vector<float>& pt)
+unsigned long nearestShapePoint(const std::vector<float>& shape,
+                                const std::vector<float>& pt)
 {
     // find the nearest part of the shape to this pixel
 
@@ -166,27 +166,29 @@ unsigned long nearest_shape_point(const std::vector<float>& shape,
 
 // ------------------------------------------------------------------------------------
 
-void create_shape_relative_encoding(const std::vector<float>& shape,
-                                    const std::vector<std::vector<float> >& pixel_coordinates,
-                                    std::vector<unsigned long>& anchor_idx,
-                                    std::vector<std::vector<float> >& deltas)
+void createShapeRelativeEncoding(const std::vector<float>& shape,
+                                 const std::vector<std::vector<float> >& pixel_coordinates,
+                                 std::vector<unsigned long>& anchor_idx,
+                                 std::vector<std::vector<float> >& deltas)
 {
     anchor_idx.resize(pixel_coordinates.size());
     deltas.resize(pixel_coordinates.size());
 
     for (unsigned long i = 0 ; i < pixel_coordinates.size() ; ++i)
     {
-        anchor_idx[i] = nearest_shape_point(shape, pixel_coordinates[i]);
+        anchor_idx[i] = nearestShapePoint(shape, pixel_coordinates[i]);
         deltas[i]     = pixel_coordinates[i] - location(shape, anchor_idx[i]);
     }
 }
 
 // ------------------------------------------------------------------------------------
 
-PointTransformAffine find_tform_between_shapes(const std::vector<float>& from_shape,
-                                               const std::vector<float>& to_shape)
+PointTransformAffine findTformBetweenShapes(const std::vector<float>& from_shape,
+                                            const std::vector<float>& to_shape)
 {
-    assert(from_shape.size() == to_shape.size() && (from_shape.size()%2) == 0 && from_shape.size() > 0);
+    assert((from_shape.size() == to_shape.size()) &&
+           ((from_shape.size() % 2) == 0)         &&
+           (from_shape.size() > 0));
 
     std::vector<std::vector<float> > from_points, to_points;
     const unsigned long num = from_shape.size() / 2;
@@ -205,12 +207,12 @@ PointTransformAffine find_tform_between_shapes(const std::vector<float>& from_sh
         to_points.push_back(location(to_shape, i));
     }
 
-    return find_similarity_transform(from_points, to_points);
+    return (findSimilarityTransform(from_points, to_points));
 }
 
 // ------------------------------------------------------------------------------------
 
-PointTransformAffine normalizing_tform(const cv::Rect& rect)
+PointTransformAffine normalizingTform(const cv::Rect& rect)
 {
     std::vector<std::vector<float> > from_points, to_points;
     std::vector<float> tlcorner(2);
@@ -239,12 +241,12 @@ PointTransformAffine normalizing_tform(const cv::Rect& rect)
     from_points.push_back(brcorner);
     to_points.push_back(pt3);
 
-    return find_affine_transform(from_points, to_points);
+    return (findAffineTransform(from_points, to_points));
 }
 
 // ------------------------------------------------------------------------------------
 
-PointTransformAffine unnormalizing_tform(const cv::Rect& rect)
+PointTransformAffine unnormalizingTform(const cv::Rect& rect)
 {
     std::vector<std::vector<float> > from_points, to_points;
     std::vector<float> tlcorner(2);
@@ -274,7 +276,7 @@ PointTransformAffine unnormalizing_tform(const cv::Rect& rect)
     to_points.push_back(brcorner);
     from_points.push_back(pt3);
 
-    return find_affine_transform(from_points, to_points);
+    return (findAffineTransform(from_points, to_points));
 }
 
 bool pointContained(const cv::Rect& rect,
@@ -296,16 +298,16 @@ bool pointContained(const cv::Rect& rect,
 
 // ------------------------------------------------------------------------------------
 
-void extract_feature_pixel_values(const cv::Mat& img_,
-                                  const cv::Rect& rect,
-                                  const std::vector<float>& current_shape,
-                                  const std::vector<float>& reference_shape,
-                                  const std::vector<unsigned long>& reference_pixel_anchor_idx,
-                                  const std::vector<std::vector<float> >& reference_pixel_deltas,
-                                  std::vector<float>& feature_pixel_values)
+void extractFeaturePixelValues(const cv::Mat& img_,
+                               const cv::Rect& rect,
+                               const std::vector<float>& current_shape,
+                               const std::vector<float>& reference_shape,
+                               const std::vector<unsigned long>& reference_pixel_anchor_idx,
+                               const std::vector<std::vector<float> >& reference_pixel_deltas,
+                               std::vector<float>& feature_pixel_values)
 {
-    const std::vector<std::vector<float> > tform = find_tform_between_shapes(reference_shape, current_shape).get_m();
-    const PointTransformAffine tform_to_img      = unnormalizing_tform(rect);
+    const std::vector<std::vector<float> > tform = findTformBetweenShapes(reference_shape, current_shape).get_m();
+    const PointTransformAffine tform_to_img      = unnormalizingTform(rect);
     const cv::Rect area                          = cv::Rect(0, 0, img_.size().width, img_.size().height);
     cv::Mat img(img_);
     feature_pixel_values.resize(reference_pixel_deltas.size());
@@ -361,8 +363,8 @@ FullObjectDetection ShapePredictor::operator()(const cv::Mat& img, const cv::Rec
 
     for (unsigned long iter = 0 ; iter < forests.size() ; ++iter)
     {
-        extract_feature_pixel_values(img, rect, current_shape, initial_shape,
-                                     anchor_idx[iter], deltas[iter], feature_pixel_values);
+        extractFeaturePixelValues(img, rect, current_shape, initial_shape,
+                                  anchor_idx[iter], deltas[iter], feature_pixel_values);
         unsigned long leaf_idx;
 
         // Evaluate all the trees at this level of the cascade.
@@ -375,7 +377,7 @@ FullObjectDetection ShapePredictor::operator()(const cv::Mat& img, const cv::Rec
 
     // Convert the current_shape into a full_object_detection
 
-    const PointTransformAffine tform_to_img = unnormalizing_tform(rect);
+    const PointTransformAffine tform_to_img = unnormalizingTform(rect);
     std::vector<std::vector<float> > parts(current_shape.size() / 2);
 
     for (unsigned long i = 0 ; i < parts.size() ; ++i)

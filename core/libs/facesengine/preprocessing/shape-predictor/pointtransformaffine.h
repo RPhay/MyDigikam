@@ -66,25 +66,25 @@ PointTransformAffine operator* (const PointTransformAffine& lhs,
 
 // ----------------------------------------------------------------------------------------
 
-PointTransformAffine inv (const PointTransformAffine& trans);
+PointTransformAffine inv(const PointTransformAffine& trans);
 
 // ----------------------------------------------------------------------------------------
 
 template <typename T>
-PointTransformAffine find_affine_transform(const std::vector<std::vector<T> >& from_points,
-                                           const std::vector<std::vector<T> >& to_points)
+PointTransformAffine findAffineTransform(const std::vector<std::vector<T> >& fromPoints,
+                                         const std::vector<std::vector<T> >& toPoints)
 {
-    std::vector<std::vector<float> > P(3, std::vector<float>(from_points.size()));
-    std::vector<std::vector<float> > Q(2, std::vector<float>(from_points.size()));
+    std::vector<std::vector<float> > P(3, std::vector<float>(fromPoints.size()));
+    std::vector<std::vector<float> > Q(2, std::vector<float>(fromPoints.size()));
 
-    for (unsigned long i = 0 ; i < from_points.size() ; ++i)
+    for (unsigned long i = 0 ; i < fromPoints.size() ; ++i)
     {
-        P[0][i] = from_points[i][0];
-        P[1][i] = from_points[i][1];
+        P[0][i] = fromPoints[i][0];
+        P[1][i] = fromPoints[i][1];
         P[2][i] = 1;
 
-        Q[0][i] = to_points[i][0];
-        Q[1][i] = to_points[i][1];
+        Q[0][i] = toPoints[i][0];
+        Q[1][i] = toPoints[i][1];
     }
 
     const std::vector<std::vector<float> > m = Q * MatrixOperations::pinv(P);
@@ -94,8 +94,8 @@ PointTransformAffine find_affine_transform(const std::vector<std::vector<T> >& f
 
 // ----------------------------------------------------------------------------------------
 
-PointTransformAffine find_similarity_transform(const std::vector<std::vector<float> >& from_points,
-                                               const std::vector<std::vector<float> >& to_points);
+PointTransformAffine findSimilarityTransform(const std::vector<std::vector<float> >& fromPoints,
+                                             const std::vector<std::vector<float> >& toPoints);
 
 } // namespace Digikam
 

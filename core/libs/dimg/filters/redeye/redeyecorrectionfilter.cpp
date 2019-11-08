@@ -170,10 +170,11 @@ void RedEyeCorrectionFilter::filterImage()
         QRectFtocvRect(qrectdets, dets);
 
         // Eye Detection
+
         for (unsigned int i = 0 ; runningFlag() && (i < dets.size()) ; ++i)
         {
             FullObjectDetection object = sp(gray,dets[i]);
-            std::vector<cv::Rect> eyes = geteyes(object);
+            std::vector<cv::Rect> eyes = getEyes(object);
 
             for (unsigned int j = 0 ; runningFlag() && (j < eyes.size()) ; ++j)
             {
@@ -231,6 +232,7 @@ void RedEyeCorrectionFilter::correctRedEye(uchar* data, int type,
                 if (redIntensity > redratio)
                 {
                     // reduce red to the average of blue and green
+
                     twobytedata[2] = ((int)twobytedata[1] + (int)twobytedata[0]) / 2;
                 }
             }
@@ -241,6 +243,7 @@ void RedEyeCorrectionFilter::correctRedEye(uchar* data, int type,
                 if (redIntensity > redratio)
                 {
                     // reduce red to the average of blue and green
+
                     onebytedata[2] = ((int)onebytedata[1] + (int)onebytedata[0]) / 2;
                 }
             }

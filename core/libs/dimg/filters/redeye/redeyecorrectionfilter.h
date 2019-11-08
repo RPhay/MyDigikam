@@ -45,7 +45,9 @@ public:
     explicit RedEyeCorrectionFilter(DImg* const orgImage, QObject* const parent=nullptr,
                                     const RedEyeCorrectionContainer& settings=RedEyeCorrectionContainer());
 
-    // Constructor for slave mode: execute immediately in current thread with specified master filter
+    /**
+     * Constructor for slave mode: execute immediately in current thread with specified master filter
+     */
     explicit RedEyeCorrectionFilter(const RedEyeCorrectionContainer& settings,
                                     DImgThreadedFilter* const parentFilter, const DImg& orgImage, const DImg& destImage,
                                     int progressBegin=0, int progressEnd=100);

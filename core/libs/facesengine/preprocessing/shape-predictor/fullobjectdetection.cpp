@@ -8,7 +8,8 @@
  *               shape predictor class, containing 64 facial point including
  *               eye, nose, and mouth.
  *
- * Copyright (C) 2016 by Omar Amin <Omar dot moh dot amin at gmail dot com>
+ * Copyright (C)      2016 by Omar Amin <Omar dot moh dot amin at gmail dot com>
+ * Copyright (C) 2016-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -71,7 +72,7 @@ std::vector<float>& FullObjectDetection::part(unsigned long idx)
 
 // -------------------------------------------------------------------
 
-std::vector<cv::Rect> geteyes(const FullObjectDetection& shape)
+std::vector<cv::Rect> getEyes(const FullObjectDetection& shape)
 {
     std::vector<cv::Rect> eyes;
 
@@ -93,14 +94,22 @@ std::vector<cv::Rect> geteyes(const FullObjectDetection& shape)
             std::vector<float> x = shape.part(i);
 
             if (x[0] < tlx)
+            {
                 tlx = x[0];
+            }
             else if (x[0] > brx)
+            {
                 brx = x[0];
+            }
 
             if (x[1] < tly)
+            {
                 tly = x[1];
+            }
             else if (x[1] > bry)
+            {
                 bry = x[1];
+            }
         }
 
         eyes.push_back(cv::Rect(cv::Point(tlx, tly),
