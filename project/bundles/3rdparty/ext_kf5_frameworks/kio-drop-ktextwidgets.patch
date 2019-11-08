@@ -1,5 +1,5 @@
 diff --git a/autotests/jobtest.h b/autotests/jobtest.h
-index ec0cb2e..5c709b6 100644
+index 2b003c33..28b02768 100644
 --- a/autotests/jobtest.h
 +++ b/autotests/jobtest.h
 @@ -24,6 +24,8 @@
@@ -12,7 +12,7 @@ index ec0cb2e..5c709b6 100644
  {
      Q_OBJECT
 diff --git a/src/core/slaveinterface.h b/src/core/slaveinterface.h
-index 2cc4cd4..e4b9e34 100644
+index 327f44b3..4f5c34cf 100644
 --- a/src/core/slaveinterface.h
 +++ b/src/core/slaveinterface.h
 @@ -31,6 +31,8 @@
@@ -25,7 +25,7 @@ index 2cc4cd4..e4b9e34 100644
  {
  
 diff --git a/src/kcms/kio/CMakeLists.txt b/src/kcms/kio/CMakeLists.txt
-index 3bb827f..d165fca 100644
+index 3bb827fd..d165fca4 100644
 --- a/src/kcms/kio/CMakeLists.txt
 +++ b/src/kcms/kio/CMakeLists.txt
 @@ -1,7 +1,7 @@
@@ -47,7 +47,7 @@ index 3bb827f..d165fca 100644
      KF5::I18n)
  
 diff --git a/src/kcms/kio/netpref.cpp b/src/kcms/kio/netpref.cpp
-index b4d5922..e02378f 100644
+index de22b977..a63ffac0 100644
 --- a/src/kcms/kio/netpref.cpp
 +++ b/src/kcms/kio/netpref.cpp
 @@ -10,7 +10,7 @@
@@ -56,10 +56,10 @@ index b4d5922..e02378f 100644
  #include <KLocalizedString>
 -#include <KPluralHandlingSpinBox>
 +#include <QSpinBox>
- #include <QDialog>
  #include <kconfig.h>
  #include <kpluginfactory.h>
-@@ -40,29 +40,29 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
+ #include <KConfigGroup>
+@@ -39,29 +39,29 @@ KIOPreferences::KIOPreferences(QWidget *parent, const QVariantList &)
      mainLayout->addWidget( gb_Timeout );
  
      QFormLayout* timeoutLayout = new QFormLayout(gb_Timeout);
@@ -98,7 +98,7 @@ index b4d5922..e02378f 100644
              this, &KIOPreferences::configChanged);
      timeoutLayout->addRow(i18n("&Server response:"), sb_serverResponse);
 diff --git a/src/kcms/kio/netpref.h b/src/kcms/kio/netpref.h
-index d6d3f9d..a075c32 100644
+index d6d3f9d4..a075c324 100644
 --- a/src/kcms/kio/netpref.h
 +++ b/src/kcms/kio/netpref.h
 @@ -6,7 +6,7 @@
