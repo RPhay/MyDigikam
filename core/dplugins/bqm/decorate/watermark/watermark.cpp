@@ -134,7 +134,7 @@ public:
     QComboBox*       placementPositionComboBox;
     QComboBox*       placementTypeComboBox;
     QComboBox*       rotationComboBox;
-    QDoubleSpinBox * sparsityFactorSpinBox;
+    QDoubleSpinBox*  sparsityFactorSpinBox;
     DFontProperties* extendedFontChooserWidget;
 
     DColorSelector*  fontColorButton;
@@ -162,7 +162,6 @@ WaterMark::~WaterMark()
 
 void WaterMark::registerSettingsWidget()
 {
-
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     DVBox* const vbox = new DVBox;
@@ -183,8 +182,8 @@ void WaterMark::registerSettingsWidget()
     useAbsoluteSizeHBox->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     useAbsoluteSizeHBox->setSpacing(10);
     d->useAbsoluteSizeCheckBox         = new QCheckBox(useAbsoluteSizeHBox);
-    d->useAbsoluteSizeCheckBox->setWhatsThis(i18n("Check this if you want the watermark to use the given size of the font or the image "
-                                                  "without any adjustment to the actual image"));
+    d->useAbsoluteSizeCheckBox->setWhatsThis(i18n("Check this if you want the watermark to use the given size of "
+                                                  "the font or the image without any adjustment to the actual image."));
     QLabel* const useAbsoluteSizeLabel = new QLabel(useAbsoluteSizeHBox);
     useAbsoluteSizeLabel->setText(i18n("Use Absolute Size"));
     d->useAbsoluteSizeCheckBox->setChecked(false);
@@ -228,8 +227,8 @@ void WaterMark::registerSettingsWidget()
     ignoreWatermarkAspectRatioHBox->setSpacing(5);
 
     d->ignoreWatermarkAspectCheckBox              = new QCheckBox(ignoreWatermarkAspectRatioHBox);
-    d->ignoreWatermarkAspectCheckBox->setWhatsThis(i18n("Check this if you want the watermark to ignore "
-                                                        "its own aspect ratio and use the image's aspect ratio instead"));
+    d->ignoreWatermarkAspectCheckBox->setWhatsThis(i18n("Check this if you want the watermark to ignore its own "
+                                                        "aspect ratio and use the image's aspect ratio instead."));
 
     QLabel* const ignoreWatermarkAspectRatioLabel = new QLabel(ignoreWatermarkAspectRatioHBox);
     ignoreWatermarkAspectRatioLabel->setText(i18n("Ignore Watermark aspect Ratio"));
@@ -253,14 +252,14 @@ void WaterMark::registerSettingsWidget()
 
     d->extendedFontChooserWidget = new DFontProperties(nullptr, DFontProperties::NoDisplayFlags);
     d->extendedFontChooserWidget->setSampleBoxVisible(true);
-    d->extendedFontChooserWidget->enableColumn(0x04,false);
-    d->extendedFontChooserWidget->setWhatsThis(i18n("choose the font type and style. size is auto calculated"));
+    d->extendedFontChooserWidget->enableColumn(0x04, false);
+    d->extendedFontChooserWidget->setWhatsThis(i18n("Choose the font type and style. Size is auto calculated."));
     textSettingsGroupBoxLayout->addWidget(d->extendedFontChooserWidget);
 
     QLabel* const label3 = new QLabel();
     d->fontColorButton   = new DColorSelector();
     d->fontColorButton->setColor(Qt::black);
-    d->fontColorButton->setWhatsThis(i18n("Set the font color to use here"));
+    d->fontColorButton->setWhatsThis(i18n("Set the font color to use here."));
     label3->setText(i18n("Font color:"));
     textSettingsGroupBoxLayout->addWidget(label3);
     textSettingsGroupBoxLayout->addWidget(d->fontColorButton);
@@ -270,7 +269,8 @@ void WaterMark::registerSettingsWidget()
     d->textOpacity                 = new DIntNumInput();
     d->textOpacity->setRange(0, 100, 1);
     d->textOpacity->setDefaultValue(100);
-    d->textOpacity->setWhatsThis(i18n("Set the opacity of the watermark text. 100 is fully opaque, 0 is fully transparent."));
+    d->textOpacity->setWhatsThis(i18n("Set the opacity of the watermark text. "
+                                      "100 is fully opaque, 0 is fully transparent."));
     textSettingsGroupBoxLayout->addWidget(textOpacityLabel);
     textSettingsGroupBoxLayout->addWidget(d->textOpacity);
 
@@ -279,7 +279,7 @@ void WaterMark::registerSettingsWidget()
     useBackgroundHBox->setSpacing(5);
 
     d->useBackgroundCheckBox         = new QCheckBox(useBackgroundHBox);
-    d->useBackgroundCheckBox->setWhatsThis(i18n("Check this if you want a background fill behind the text"));
+    d->useBackgroundCheckBox->setWhatsThis(i18n("Check this if you want a background fill behind the text."));
     QLabel* const useBackgroundLabel = new QLabel(useBackgroundHBox);
     useBackgroundLabel->setText(i18n("Use background"));
     textSettingsGroupBoxLayout->addWidget(useBackgroundHBox);
@@ -287,7 +287,7 @@ void WaterMark::registerSettingsWidget()
     QLabel* const backgroundColorLabel = new QLabel();
     d->backgroundColorButton           = new DColorSelector();
     d->backgroundColorButton->setColor(QColor(0xCC, 0xCC, 0xCC));
-    d->backgroundColorButton->setWhatsThis(i18n("Choose the color of the watermark background"));
+    d->backgroundColorButton->setWhatsThis(i18n("Choose the color of the watermark background."));
     backgroundColorLabel ->setText(i18n("Background color:"));
     textSettingsGroupBoxLayout->addWidget(backgroundColorLabel);
     textSettingsGroupBoxLayout->addWidget(d->backgroundColorButton);
@@ -297,7 +297,8 @@ void WaterMark::registerSettingsWidget()
     d->backgroundOpacity                 = new DIntNumInput();
     d->backgroundOpacity->setRange(0, 100, 1);
     d->backgroundOpacity->setDefaultValue(100);
-    d->backgroundOpacity->setWhatsThis(i18n("Set the opacity of the watermark background. 100 is fully opaque, 0 is fully transparent."));
+    d->backgroundOpacity->setWhatsThis(i18n("Set the opacity of the watermark background. "
+                                            "100 is fully opaque, 0 is fully transparent."));
     textSettingsGroupBoxLayout->addWidget(backgroundOpacityLabel);
     textSettingsGroupBoxLayout->addWidget(d->backgroundOpacity);
 
@@ -317,7 +318,8 @@ void WaterMark::registerSettingsWidget()
 
     QLabel* const spaceLabel   = new QLabel(placementHBox);
     d->denseRepetitionCheckBox = new QCheckBox(placementHBox);
-    d->denseRepetitionCheckBox->setWhatsThis(i18n("When you choose to have the watermark repeated many times in the placement combo box, you can specify here whether the repetition"));
+    d->denseRepetitionCheckBox->setWhatsThis(i18n("When you choose to have the watermark repeated many times in the "
+                                                  "placement combo box, you can specify here whether the repetition."));
     d->denseRepetitionCheckBox->setChecked(false);
     d->denseRepetitionCheckBox->setEnabled(false);
     spaceLabel->setText(QLatin1String(" "));
@@ -330,8 +332,10 @@ void WaterMark::registerSettingsWidget()
 
     QLabel* const spaceLabel2 = new QLabel(randomizeHBox);
     d->randomizeRotationCheckBox          = new QCheckBox(randomizeHBox);
-    d->randomizeRotationCheckBox->setWhatsThis(i18n("When you choose to have the watermark repeated randomly, many times in the placement combo box, you can specify here whether the repetition, "
-                                               "you can check this to make the watermark rotations random also [0, 90, 180, 270]"));
+    d->randomizeRotationCheckBox->setWhatsThis(i18n("When you choose to have the watermark repeated randomly, "
+                                                    "many times in the placement combo box, you can specify here "
+                                                    "whether the repetition, you can check this to make the watermark "
+                                                    "rotations random also [0, 90, 180, 270]."));
     d->randomizeRotationCheckBox->setChecked(true);
     d->denseRepetitionCheckBox->setEnabled(false);
     spaceLabel2->setText(QLatin1String(" "));
@@ -347,9 +351,10 @@ void WaterMark::registerSettingsWidget()
     d->sparsityFactorSpinBox->setMinimum(0.0);
     d->sparsityFactorSpinBox->setValue(1);
     d->sparsityFactorSpinBox->setSingleStep(0.1);
-    d->sparsityFactorSpinBox->setWhatsThis(i18n("Use this to get more control over the sparsity of watermark repetition."
-                                           " The higher the value the sparser the watermarks get. Use floating point values,"
-                                           " typically between 1.0 and 3.0. It can also be less than 1.0"));
+    d->sparsityFactorSpinBox->setWhatsThis(i18n("Use this to get more control over the sparsity of watermark "
+                                           "repetition. The higher the value the sparser the watermarks get. "
+                                           "Use floating point values, typically between 1.0 and 3.0. It can "
+                                           "also be less than 1.0"));
     sparsityFactorLabel->setText(i18n("Sparsity Factor:"));
 
     QLabel* const label4         = new QLabel(vbox);
@@ -380,14 +385,14 @@ void WaterMark::registerSettingsWidget()
     d->xMarginInput      = new DIntNumInput(vbox);
     d->xMarginInput->setRange(0, 100, 1);
     d->xMarginInput->setDefaultValue(2);
-    d->xMarginInput->setWhatsThis(i18n("Margin from edge in X direction, as a percentage of the marked image"));
+    d->xMarginInput->setWhatsThis(i18n("Margin from edge in X direction, as a percentage of the marked image."));
     label6->setText(i18n("X margin (%):"));
 
     QLabel* const label7 = new QLabel(vbox);
     d->yMarginInput      = new DIntNumInput(vbox);
     d->yMarginInput->setRange(0, 100, 1);
     d->yMarginInput->setDefaultValue(2);
-    d->yMarginInput->setWhatsThis(i18n("Margin from edge in Y direction, as a percentage of the marked image"));
+    d->yMarginInput->setWhatsThis(i18n("Margin from edge in Y direction, as a percentage of the marked image."));
     label7->setText(i18n("Y margin (%):"));
 
     QLabel* const space = new QLabel(vbox);
@@ -527,7 +532,7 @@ void WaterMark::slotSettingsChanged()
     }
 
     d->waterMarkSizePercent->setEnabled(!d->useAbsoluteSizeCheckBox->isChecked());
-    d->extendedFontChooserWidget->enableColumn(0x04,d->useAbsoluteSizeCheckBox->isChecked());
+    d->extendedFontChooserWidget->enableColumn(0x04, d->useAbsoluteSizeCheckBox->isChecked());
     d->placementPositionComboBox->setEnabled(((int)d->placementTypeComboBox->currentIndex() == Private::SpecifiedLocation));
     d->denseRepetitionCheckBox->setEnabled(((int)d->placementTypeComboBox->currentIndex() != Private::SpecifiedLocation));
     d->sparsityFactorSpinBox->setEnabled(((int)d->placementTypeComboBox->currentIndex() != Private::SpecifiedLocation));
@@ -589,7 +594,6 @@ bool WaterMark::toolOperations()
     Qt::AspectRatioMode watermarkAspectRatioMode = settings()[QLatin1String("Ignore Watermark Aspect Ratio")].toBool() ?
                                                               Qt::IgnoreAspectRatio : Qt::KeepAspectRatio;
     bool useAbsoluteSize                         = settings()[QLatin1String("Use Absolute Size")].toBool();
-
 
     DImg watermarkImage;
     DColorComposer* const composer               = DColorComposer::getComposer(DColorComposer::PorterDuffNone);
@@ -767,7 +771,7 @@ bool WaterMark::toolOperations()
                     xAdditionalValue += watermarkRect.width() - watermarkRect.height();
                 }
 
-                watermarkRect.moveTopRight(QPoint(image().width() + xAdditionalValue -1 - marginW, marginH));
+                watermarkRect.moveTopRight(QPoint(image().width() + xAdditionalValue - 1 - marginW, marginH));
                 break;
 
             case Private::BottomLeft:
@@ -784,11 +788,12 @@ bool WaterMark::toolOperations()
 
                 if (rotationAngle == DImg::ANGLE::ROT90 || rotationAngle == DImg::ANGLE::ROT270)
                 {
-                    xAdditionalValue += (watermarkRect.width() - watermarkRect.height())/2;
-                    yAdditionalValue += (watermarkRect.height() - watermarkRect.width())/2;
+                    xAdditionalValue += (watermarkRect.width()  - watermarkRect.height()) / 2;
+                    yAdditionalValue += (watermarkRect.height() - watermarkRect.width())  / 2;
                 }
 
-                watermarkRect.moveCenter(QPoint((int)(image().width() / 2 + xAdditionalValue), (int)(image().height() / 2 + yAdditionalValue)));
+                watermarkRect.moveCenter(QPoint((int)(image().width()  / 2 + xAdditionalValue),
+                                                (int)(image().height() / 2 + yAdditionalValue)));
                 break;
 
             default :    // BottomRight
@@ -799,7 +804,8 @@ bool WaterMark::toolOperations()
                     yAdditionalValue += watermarkRect.height() - watermarkRect.width();
                 }
 
-                watermarkRect.moveBottomRight(QPoint(image().width() + xAdditionalValue - 1 - marginW, image().height() + yAdditionalValue -1 - marginH));
+                watermarkRect.moveBottomRight(QPoint(image().width()  + xAdditionalValue - 1 - marginW,
+                                                     image().height() + yAdditionalValue - 1 - marginH));
                 break;
         }
 
@@ -811,8 +817,8 @@ bool WaterMark::toolOperations()
     {
         const float DENSE_SPACING_FACTOR  = 1.2;
         const float SPARSE_SPACING_FACTOR = 1.8;
-        float widthRatio                  = (float)watermarkRect.width()/image().width();
-        float heightRatio                 = (float)watermarkRect.height()/image().height();
+        float widthRatio                  = (float)watermarkRect.width()  / image().width();
+        float heightRatio                 = (float)watermarkRect.height() / image().height();
         float spacingFactor               = (denseRepetition) ? DENSE_SPACING_FACTOR : SPARSE_SPACING_FACTOR;
         spacingFactor                    *= userSparsityFactor;
 
@@ -824,9 +830,9 @@ bool WaterMark::toolOperations()
                 heightRatio = (float)watermarkRect.width()/image().height();
             }
 
-            for (uint i = 0 ; i < image().width(); i += spacingFactor * widthRatio * image().width())
+            for (uint i = 0 ; i < image().width() ; i += spacingFactor * widthRatio * image().width())
             {
-                for (uint j = 0 ; j < image().height() ; j +=  spacingFactor * heightRatio * image().height())
+                for (uint j = 0 ; j < image().height() ; j += spacingFactor * heightRatio * image().height())
                 {
                     image().bitBlendImage(composer, &watermarkImage, 0, 0, watermarkImage.width(), watermarkImage.height(), i, j);
                 }
@@ -839,7 +845,7 @@ bool WaterMark::toolOperations()
 
             qsrand(static_cast<quint64>(QTime::currentTime().msecsSinceStartOfDay()));
 
-            for (uint i = 0 ; i < image().width(); i += spacingFactor * widthRatio * image().width())
+            for (uint i = 0 ; i < image().width() ; i += spacingFactor * widthRatio * image().width())
             {
                 for (uint j = 0 ; j < image().height() ; j += spacingFactor * heightRatio * image().height())
                 {
