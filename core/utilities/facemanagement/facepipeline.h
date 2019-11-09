@@ -95,9 +95,10 @@ public:
 
     void setRole(FacePipelineFaceTagsIface::Roles role);
     void clearRole(FacePipelineFaceTagsIface::Roles role);
-    void replaceRole(FacePipelineFaceTagsIface::Roles remove, FacePipelineFaceTagsIface::Roles add);
+    void replaceRole(FacePipelineFaceTagsIface::Roles remove,
+                     FacePipelineFaceTagsIface::Roles add);
 
-    QList<FaceTagsIface> toFaceTagsIfaceList() const;
+    QList<FaceTagsIface> toFaceTagsIfaceList()                                        const;
 
     FacePipelineFaceTagsIfaceList facesForRole(FacePipelineFaceTagsIface::Roles role) const;
 };
@@ -126,7 +127,7 @@ public:
 
 public:
 
-    ItemInfo                     info;
+    ItemInfo                      info;
     DImg                          image;
     QList<QRectF>                 detectedFaces;
     QList<Identity>               recognitionResults;
@@ -230,8 +231,8 @@ public:
      */
     void shutDown();
 
-    bool hasFinished() const;
-    QString benchmarkResult() const;
+    bool hasFinished()           const;
+    QString benchmarkResult()    const;
 
     /**
      * Set the priority of the threads used by this pipeline.
@@ -257,32 +258,45 @@ public Q_SLOTS:
      * it is not yet in the database (connect to signal processed() to react when the processing finished).
      * If a trainer is plugged, the face will be trained.
      */
-    FaceTagsIface confirm(const ItemInfo& info, const FaceTagsIface& face,
-                         int assignedTagId = 0, const TagRegion& assignedRegion = TagRegion());
-    FaceTagsIface confirm(const ItemInfo& info, const FaceTagsIface& face, const DImg& image,
-                         int assignedTagId = 0, const TagRegion& assignedRegion = TagRegion());
+    FaceTagsIface confirm(const ItemInfo& info,
+                          const FaceTagsIface& face,
+                          int assignedTagId = 0,
+                          const TagRegion& assignedRegion = TagRegion());
+    FaceTagsIface confirm(const ItemInfo& info,
+                          const FaceTagsIface& face,
+                          const DImg& image,
+                          int assignedTagId = 0,
+                          const TagRegion& assignedRegion = TagRegion());
     /**
      * Train the given faces.
      */
-    void train(const ItemInfo& info, const QList<FaceTagsIface>& faces);
-    void train(const ItemInfo& info, const QList<FaceTagsIface>& faces, const DImg& image);
+    void train(const ItemInfo& info,
+               const QList<FaceTagsIface>& faces);
+    void train(const ItemInfo& info,
+               const QList<FaceTagsIface>& faces,
+               const DImg& image);
 
     /**
      * Remove the given face.
      */
-    void remove(const ItemInfo& info, const FaceTagsIface& face);
+    void remove(const ItemInfo& info,
+                const FaceTagsIface& face);
 
     /**
      * Add an entry manually.
      */
-    FaceTagsIface addManually(const ItemInfo& info, const DImg& image, const TagRegion& assignedRegion);
+    FaceTagsIface addManually(const ItemInfo& info,
+                              const DImg& image,
+                              const TagRegion& assignedRegion);
 
     /**
      * Change the given face's region to newRegion.
      * Does not care for training atm.
      */
-    FaceTagsIface editRegion(const ItemInfo& info, const DImg& image,
-                            const FaceTagsIface& databaseFace, const TagRegion& newRegion);
+    FaceTagsIface editRegion(const ItemInfo& info,
+                             const DImg& image,
+                             const FaceTagsIface& databaseFace,
+                             const TagRegion& newRegion);
 
     /**
      * Batch processing. If a filter is installed, the skipped() signal
