@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_WORKERS_H
-#define DIGIKAM_FACE_WORKERS_H
+#ifndef DIGIKAM_TRAINER_WORKERS_H
+#define DIGIKAM_TRAINER_WORKERS_H
 
 // Local includes
 
@@ -63,4 +63,4 @@ protected:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_FACE_WORKERS_H
+#endif // DIGIKAM_TRAINER_WORKERS_H
