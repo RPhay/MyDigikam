@@ -27,4 +27,5 @@ BUGFIXES:
 016 ==> 413938 - Metadata is not written to all pictures in a tag hierarchy.
 017 ==> 413916 - Compile Error with lqr on neon.
 018 ==> 413972 - align_image_stack and enfuse use only 1 CPU core if called by digiKam plugin, 4 CPU core on command line.
-019 ==> 
+019 ==> 413981 - Refresh has no effect in Preview mode.
+020 ==> 
