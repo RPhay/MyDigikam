@@ -64,22 +64,22 @@ public:
     virtual ~TableView();
 
     void setThumbnailSize(const ThumbnailSize& size);
-    ThumbnailSize getThumbnailSize()                                     const;
-    ItemInfo currentInfo()                                              const;
-    Album* currentAlbum()                                                const;
-    int numberOfSelectedItems()                                          const;
-    ItemInfo nextInfo()                                                 const;
-    ItemInfo previousInfo()                                             const;
+    ThumbnailSize getThumbnailSize()                                   const;
+    ItemInfo currentInfo()                                             const;
+    Album* currentAlbum()                                              const;
+    int numberOfSelectedItems()                                        const;
+    ItemInfo nextInfo()                                                const;
+    ItemInfo previousInfo()                                            const;
     ItemInfo deepRowItemInfo(const int rowNumber, const bool relative) const;
 
     void selectAll();
     void clearSelection();
     void invertSelection();
 
-    ItemInfoList allItemInfos(bool grouping = false)                        const;
+    ItemInfoList allItemInfos(bool grouping = false)                  const;
     ItemInfoList selectedItemInfos(bool grouping = false)             const;
     ItemInfoList selectedItemInfosCurrentFirst(bool grouping = false) const;
-    bool          allNeedGroupResolving(const ApplicationSettings::OperationType type) const;
+    bool          allNeedGroupResolving(const ApplicationSettings::OperationType type)      const;
     bool          selectedNeedGroupResolving(const ApplicationSettings::OperationType type) const;
 
 protected:

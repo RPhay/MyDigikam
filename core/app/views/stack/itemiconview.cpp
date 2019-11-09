@@ -305,20 +305,20 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     d->addPageUpDownActions(this, d->stackedview->mediaPlayerView());
 #endif //HAVE_MEDIAPLAYER
 
-    d->rightSideBar = new ItemPropertiesSideBarDB(this, d->splitter, Qt::RightEdge, true);
+    d->rightSideBar        = new ItemPropertiesSideBarDB(this, d->splitter, Qt::RightEdge, true);
     d->rightSideBar->setObjectName(QLatin1String("Digikam Right Sidebar"));
 
     // album folder view
-    d->albumFolderSideBar = new AlbumFolderViewSideBarWidget(d->leftSideBar,
-                                                             d->modelCollection->getAlbumModel(),
-                                                             d->albumModificationHelper);
+    d->albumFolderSideBar  = new AlbumFolderViewSideBarWidget(d->leftSideBar,
+                                                              d->modelCollection->getAlbumModel(),
+                                                              d->albumModificationHelper);
     d->leftSideBarWidgets << d->albumFolderSideBar;
 
     connect(d->albumFolderSideBar, SIGNAL(signalFindDuplicates(PAlbum*)),
             this, SLOT(slotNewDuplicatesSearch(PAlbum*)));
 
     // Tags sidebar tab contents.
-    d->tagViewSideBar = new TagViewSideBarWidget(d->leftSideBar, d->modelCollection->getTagModel());
+    d->tagViewSideBar      = new TagViewSideBarWidget(d->leftSideBar, d->modelCollection->getTagModel());
     d->leftSideBarWidgets << d->tagViewSideBar;
 
     connect(d->tagViewSideBar, SIGNAL(signalFindDuplicates(QList<TAlbum*>)),
@@ -330,46 +330,46 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     d->labelsSearchHandler = new AlbumLabelsSearchHandler(d->labelsSideBar->labelsTree());
 
     // date view
-    d->dateViewSideBar = new DateFolderViewSideBarWidget(d->leftSideBar,
-                                                         d->modelCollection->getDateAlbumModel(),
-                                                         d->iconView->imageAlbumFilterModel());
+    d->dateViewSideBar     = new DateFolderViewSideBarWidget(d->leftSideBar,
+                                                             d->modelCollection->getDateAlbumModel(),
+                                                             d->iconView->imageAlbumFilterModel());
     d->leftSideBarWidgets << d->dateViewSideBar;
 
     // timeline side bar
-    d->timelineSideBar = new TimelineSideBarWidget(d->leftSideBar,
-                                                   d->modelCollection->getSearchModel(),
-                                                   d->searchModificationHelper);
+    d->timelineSideBar     = new TimelineSideBarWidget(d->leftSideBar,
+                                                       d->modelCollection->getSearchModel(),
+                                                       d->searchModificationHelper);
     d->leftSideBarWidgets << d->timelineSideBar;
 
     // Search sidebar tab contents.
-    d->searchSideBar = new SearchSideBarWidget(d->leftSideBar,
-                                               d->modelCollection->getSearchModel(),
-                                               d->searchModificationHelper);
+    d->searchSideBar       = new SearchSideBarWidget(d->leftSideBar,
+                                                     d->modelCollection->getSearchModel(),
+                                                     d->searchModificationHelper);
     d->leftSideBarWidgets << d->searchSideBar;
 
     // Fuzzy search
-    d->fuzzySearchSideBar = new FuzzySearchSideBarWidget(d->leftSideBar,
-                                                         d->modelCollection->getSearchModel(),
-                                                         d->searchModificationHelper);
+    d->fuzzySearchSideBar  = new FuzzySearchSideBarWidget(d->leftSideBar,
+                                                          d->modelCollection->getSearchModel(),
+                                                          d->searchModificationHelper);
     d->leftSideBarWidgets << d->fuzzySearchSideBar;
 
     connect(d->fuzzySearchSideBar,SIGNAL(signalActive(bool)),
             this, SIGNAL(signalFuzzySidebarActive(bool)));
 
 #ifdef HAVE_MARBLE
-    d->gpsSearchSideBar = new GPSSearchSideBarWidget(d->leftSideBar,
-                                                     d->modelCollection->getSearchModel(),
-                                                     d->searchModificationHelper,
-                                                     d->iconView->imageFilterModel(),
-                                                     d->iconView->getSelectionModel());
+    d->gpsSearchSideBar    = new GPSSearchSideBarWidget(d->leftSideBar,
+                                                        d->modelCollection->getSearchModel(),
+                                                        d->searchModificationHelper,
+                                                        d->iconView->imageFilterModel(),
+                                                        d->iconView->getSelectionModel());
 
     d->leftSideBarWidgets << d->gpsSearchSideBar;
 #endif // HAVE_MARBLE
 
     // People Sidebar
-    d->peopleSideBar = new PeopleSideBarWidget(d->leftSideBar,
-                                               d->modelCollection->getTagFacesModel(),
-                                               d->searchModificationHelper);
+    d->peopleSideBar       = new PeopleSideBarWidget(d->leftSideBar,
+                                                     d->modelCollection->getTagFacesModel(),
+                                                     d->searchModificationHelper);
 
     connect(d->peopleSideBar, SIGNAL(requestFaceMode(bool)),
             d->iconView, SLOT(setFaceMode(bool)));
