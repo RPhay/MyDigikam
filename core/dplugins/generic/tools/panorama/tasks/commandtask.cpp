@@ -22,6 +22,10 @@
 
 #include "commandtask.h"
 
+// Qt includes
+
+#include <QThread>
+
 // KDE includes
 
 #include <klocalizedstring.h>
@@ -61,7 +65,12 @@ void CommandTask::runProcess(QStringList& args)
     process.reset(new QProcess());
     process->setWorkingDirectory(tmpDir.toLocalFile());
     process->setProcessChannelMode(QProcess::MergedChannels);
-    process->setProcessEnvironment(Digikam::adjustedEnvironmentForAppImage());
+
+    QProcessEnvironment env = Digikam::adjustedEnvironmentForAppImage();
+    env.insert(QLatin1String("OMP_NUM_THREADS"),
+               QString::number(QThread::idealThreadCount()));
+    process->setProcessEnvironment(env);
+
     process->setProgram(commandPath);
     process->setArguments(args);
     process->start();

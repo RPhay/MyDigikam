@@ -591,7 +591,11 @@ bool ExpoBlendingThread::startPreProcessing(const QList<QUrl>& inUrls,
         d->alignProcess.reset(new QProcess());
         d->alignProcess->setProcessChannelMode(QProcess::MergedChannels);
         d->alignProcess->setWorkingDirectory(d->preprocessingTmpDir->path());
-        d->alignProcess->setProcessEnvironment(adjustedEnvironmentForAppImage());
+
+        QProcessEnvironment env = adjustedEnvironmentForAppImage();
+        env.insert(QLatin1String("OMP_NUM_THREADS"),
+                   QString::number(QThread::idealThreadCount()));
+        d->alignProcess->setProcessEnvironment(env);
 
         QStringList args;
         args << QLatin1String("-v");
@@ -783,7 +787,11 @@ bool ExpoBlendingThread::startEnfuse(const QList<QUrl>& inUrls, QUrl& outUrl,
     d->enfuseProcess.reset(new QProcess());
     d->enfuseProcess->setProcessChannelMode(QProcess::MergedChannels);
     d->enfuseProcess->setWorkingDirectory(d->preprocessingTmpDir->path());
-    d->enfuseProcess->setProcessEnvironment(adjustedEnvironmentForAppImage());
+
+    QProcessEnvironment env = adjustedEnvironmentForAppImage();
+    env.insert(QLatin1String("OMP_NUM_THREADS"),
+               QString::number(QThread::idealThreadCount()));
+    d->enfuseProcess->setProcessEnvironment(env);
 
     QStringList args;
 

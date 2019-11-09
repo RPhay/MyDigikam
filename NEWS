@@ -26,4 +26,5 @@ BUGFIXES:
 015 ==> 341111 - MYSQL : deleting an image involves "too many" queries.
 016 ==> 413938 - Metadata is not written to all pictures in a tag hierarchy.
 017 ==> 413916 - Compile Error with lqr on neon.
-018 ==> 
+018 ==> 413972 - align_image_stack and enfuse use only 1 CPU core if called by digiKam plugin, 4 CPU core on command line.
+019 ==> 
