@@ -36,7 +36,6 @@ AlbumTreeView::AlbumTreeView(QWidget* const parent, Flags flags)
 {
     setDragEnabled(true);
     setAcceptDrops(true);
-    setAutoScroll(false);   // Workaround for bug 400960
     setRootIsDecorated(false);
     setDropIndicatorShown(false);
     setAutoExpandDelay(AUTOEXPANDDELAY);

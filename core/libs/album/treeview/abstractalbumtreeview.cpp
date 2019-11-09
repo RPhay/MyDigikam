@@ -73,7 +73,9 @@ AbstractAlbumTreeView::AbstractAlbumTreeView(QWidget* const parent, Flags flags)
         setAlbumFilterModel(new AlbumFilterModel(this));
     }
 
+    setAutoScroll(false);
     setSortingEnabled(true);
+
     albumSettingsChanged();
 }
 
@@ -549,12 +551,16 @@ void AbstractAlbumTreeView::dragMoveEvent(QDragMoveEvent* e)
             e->setDropAction(action);
             e->accept();
         }
+        // Workaround for bug 400960
+        // setAutoScroll(false) in dragLeaveEvent() and dropEvent()
+        setAutoScroll(true);
     }
 }
 
 void AbstractAlbumTreeView::dragLeaveEvent(QDragLeaveEvent* e)
 {
     QTreeView::dragLeaveEvent(e);
+    setAutoScroll(false);
 }
 
 void AbstractAlbumTreeView::dropEvent(QDropEvent* e)
@@ -570,6 +576,8 @@ void AbstractAlbumTreeView::dropEvent(QDropEvent* e)
         {
             e->accept();
         }
+
+        setAutoScroll(false);
     }
 }
 
