@@ -52,36 +52,39 @@ class GLViewerWidget : public QOpenGLWidget
 
 public:
 
-    explicit GLViewerWidget(DPlugin* const plugin, DInfoInterface* const iface);
+    explicit GLViewerWidget(DPlugin* const plugin,
+                            DInfoInterface* const iface);
     ~GLViewerWidget();
 
     void prevImage();
     void nextImage();
-    bool listOfFilesIsEmpty() const;
+    bool listOfFilesIsEmpty()                  const;
 
-    OGLstate getOGLstate()    const;
+    OGLstate getOGLstate()                     const;
 
 private:
 
-    void initializeGL()                        override;
-    void resizeGL(int w, int h)                override;
-    void paintGL()                             override;
+    void initializeGL()                              override;
+    void resizeGL(int w, int h)                      override;
+    void paintGL()                                   override;
 
-    bool isReallyFullScreen() const;
+    bool isReallyFullScreen()                  const;
 
-    void keyPressEvent(QKeyEvent* e)           override;
-    void keyReleaseEvent(QKeyEvent* e)         override;
-    void wheelEvent(QWheelEvent* e)            override;
-    void mouseMoveEvent(QMouseEvent* e)        override;
-    void mousePressEvent(QMouseEvent* e)       override;
-    void mouseDoubleClickEvent(QMouseEvent* e) override;
-    void mouseReleaseEvent(QMouseEvent* e)     override;
+    void keyPressEvent(QKeyEvent* e)                 override;
+    void keyReleaseEvent(QKeyEvent* e)               override;
+    void wheelEvent(QWheelEvent* e)                  override;
+    void mouseMoveEvent(QMouseEvent* e)              override;
+    void mousePressEvent(QMouseEvent* e)             override;
+    void mouseDoubleClickEvent(QMouseEvent* e)       override;
+    void mouseReleaseEvent(QMouseEvent* e)           override;
 
     GLViewerTexture* loadImage(int file_index) const;
     void drawImage(GLViewerTexture* const tex);
     void downloadTexture(GLViewerTexture* const tex);
 
-    void zoom(int mdelta, const QPoint& pos, float factor);
+    void zoom(int mdelta,
+              const QPoint& pos,
+              float factor);
 
 private Q_SLOTS:
 

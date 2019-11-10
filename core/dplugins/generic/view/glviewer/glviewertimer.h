@@ -48,6 +48,8 @@ private:
     GLViewerTimer(const GLViewerTimer&);
     GLViewerTimer& operator=(const GLViewerTimer&);
 
+private:
+
     class Private;
     Private* const d;
 };

@@ -78,11 +78,11 @@ public:
 
     Private()
     {
-        texture    = nullptr;
-        firstImage = true;
+        texture                = nullptr;
+        firstImage             = true;
 
         // index of picture to be displayed
-        file_idx   = 0;
+        file_idx               = 0;
 
         // define zoomfactors for one zoom step
         zoomfactor_scrollwheel = 1.1F;
@@ -90,16 +90,16 @@ public:
         zoomfactor_keyboard    = 1.05F;
 
         // load cursors for zooming and panning
-        zoomCursor = QCursor(QIcon::fromTheme(QLatin1String("zoom-in")).pixmap(64));
-        moveCursor = QCursor(Qt::PointingHandCursor);
+        zoomCursor             = QCursor(QIcon::fromTheme(QLatin1String("zoom-in")).pixmap(64));
+        moveCursor             = QCursor(Qt::PointingHandCursor);
 
         // get path of nullImage in case QImage can't load the image
-        nullImage  = QIcon::fromTheme(QLatin1String("image-jpeg")).pixmap(256);
+        nullImage              = QIcon::fromTheme(QLatin1String("image-jpeg")).pixmap(256);
 
         // while zooming is performed, the image is downsampled to d->zoomsize. This seems to
         // be the optimal way for a PentiumM 1.4G, Nvidia FX5200. For a faster setup, this might
         // not be necessary anymore
-        zoomsize   = QSize(1024, 768);
+        zoomsize               = QSize(1024, 768);
 
         for (int i = 0 ; i < CACHESIZE ; ++i)
         {
@@ -107,18 +107,18 @@ public:
             cache[i].texture    = nullptr;
         }
 
-        ratio_view_x  = 0.0F;
-        ratio_view_y  = 0.0F;
-        delta         = 0.0F;
-        vertex_height = 0.0F;
-        vertex_width  = 0.0F;
-        vertex_left   = 0.0F;
-        vertex_top    = 0.0F;
-        vertex_right  = 0.0F;
-        vertex_bottom = 0.0F;
-        wheelAction   = zoomImage;
-        iface         = nullptr;
-        plugin        = nullptr;
+        ratio_view_x           = 0.0F;
+        ratio_view_y           = 0.0F;
+        delta                  = 0.0F;
+        vertex_height          = 0.0F;
+        vertex_width           = 0.0F;
+        vertex_left            = 0.0F;
+        vertex_top             = 0.0F;
+        vertex_right           = 0.0F;
+        vertex_bottom          = 0.0F;
+        wheelAction            = zoomImage;
+        iface                  = nullptr;
+        plugin                 = nullptr;
     }
 
     QStringList      files;
@@ -126,8 +126,15 @@ public:
     Cache            cache[CACHESIZE];
     GLViewerTexture* texture;
 
-    float            ratio_view_y, ratio_view_x, delta;
-    float            vertex_height, vertex_width, vertex_left, vertex_top, vertex_right, vertex_bottom;
+    float            ratio_view_y;
+    float            ratio_view_x;
+    float            delta;
+    float            vertex_height;
+    float            vertex_width;
+    float            vertex_left;
+    float            vertex_top;
+    float            vertex_right;
+    float            vertex_bottom;
 
     QPoint           startdrag, previous_pos;
     WheelAction      wheelAction;
@@ -135,7 +142,9 @@ public:
     QSize            zoomsize;
     QTimer           timerMouseMove;
     QCursor          moveCursor, zoomCursor;
-    float            zoomfactor_scrollwheel, zoomfactor_mousemove, zoomfactor_keyboard;
+    float            zoomfactor_scrollwheel;
+    float            zoomfactor_mousemove;
+    float            zoomfactor_keyboard;
     QPixmap          nullImage;
     QSize            screenSize;
 
@@ -152,16 +161,19 @@ GLViewerWidget::GLViewerWidget(DPlugin* const plugin, DInfoInterface* const ifac
     d->plugin = plugin;
     d->iface  = iface;
 
-    //determine screen size for isReallyFullScreen
+    // Determine screen size for isReallyFullScreen
+
     QScreen* screen = qApp->primaryScreen();
 
     if (QWidget* const widget = qApp->activeWindow())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
-    d->screenSize = screen->size();
+    d->screenSize         = screen->size();
 
     QList<QUrl> myfiles;                                            // pics which are displayed in imageviewer
     QList<QUrl> selection = d->iface->currentSelectedItems();
@@ -187,10 +199,12 @@ GLViewerWidget::GLViewerWidget(DPlugin* const plugin, DInfoInterface* const ifac
     }
 
     // populate QStringList::d->files
+
     for (QList<QUrl>::Iterator it = myfiles.begin() ; it != myfiles.end() ; ++it)
     {
         // find selected image in album in order to determine the first displayed image
         // in case one image was selected and the entire album was loaded
+
         QString s = it->toLocalFile();
 
         if (s == selectedImage)
@@ -200,13 +214,14 @@ GLViewerWidget::GLViewerWidget(DPlugin* const plugin, DInfoInterface* const ifac
         }
 
         // only add images to d->files
+
         QString mimeTypeName = QMimeDatabase().mimeTypeForUrl(QUrl::fromLocalFile(s)).name();
         bool isImage         = mimeTypeName.contains(QString::fromLatin1("image"), Qt::CaseInsensitive);
 
         if (isImage)
         {
             d->files.append(s);
-            foundNumber++;  //counter for searching the start image in case one image is selected
+            foundNumber++;      // counter for searching the start image in case one image is selected
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << s << "type=" << mimeTypeName;
         }
     }
@@ -214,11 +229,14 @@ GLViewerWidget::GLViewerWidget(DPlugin* const plugin, DInfoInterface* const ifac
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << d->files.count() << "images loaded";
 
     if (d->files.isEmpty())
+    {
         return;
+    }
 
     showFullScreen(); // krazy:exclude=qmethods
 
     // let the cursor dissapear after 2sec of inactivity
+
     connect(&d->timerMouseMove, SIGNAL(timeout()),
             this, SLOT(slotTimeoutMouseMove()));
 
@@ -226,6 +244,7 @@ GLViewerWidget::GLViewerWidget(DPlugin* const plugin, DInfoInterface* const ifac
     setMouseTracking(true);
 
     // other initialisations
+
     d->wheelAction = GLViewerWidget::Private::changeImage;
 }
 
@@ -241,7 +260,7 @@ GLViewerWidget::~GLViewerWidget()
 }
 
 /**
-    \todo blending
+ * \todo blending
  */
 void GLViewerWidget::initializeGL()
 {
@@ -274,27 +293,35 @@ bool GLViewerWidget::listOfFilesIsEmpty() const
 
 void GLViewerWidget::paintGL()
 {
-    //this test has to be performed here since QWidget::width() is only updated now
-    //qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "enter paintGL: isReallyFullscreen=" << isReallyFullScreen();
-    //prepare 1st image
+    // this test has to be performed here since QWidget::width() is only updated now
+/*
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "enter paintGL: isReallyFullscreen=" << isReallyFullScreen();
+*/
+    // prepare 1st image
+
     if (d->firstImage && isReallyFullScreen())
     {
-        //qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "first image";
+/*
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "first image";
+*/
         d->texture = loadImage(d->file_idx);
         d->texture->reset();
         downloadTexture(d->texture);
-
-        //qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "width=" << width();
+/*
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "width=" << width();
+*/
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glLoadIdentity();
         glTranslatef(0.0f, 0.0f, -5.0f);
         drawImage(d->texture);
 
-        //trigger a redraw NOW. the user wants to see a picture as soon as possible
+        // trigger a redraw NOW. the user wants to see a picture as soon as possible
         // only load the second image after the first is displayed
+
         glFlush();
 
-        //preload the 2nd image
+        // preload the 2nd image
+
         if (d->firstImage)
         {
             if (d->file_idx < (unsigned int)(d->files.count() - 1))
@@ -308,19 +335,24 @@ void GLViewerWidget::paintGL()
 
     if (!d->firstImage)
     {
-        //qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "width=" << width();
+/*
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "width=" << width();
+*/
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glLoadIdentity();
         glTranslatef(0.0f, 0.0f, -5.0f);
         drawImage(d->texture);
     }
-
-    //qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "exit paintGL";
+/*
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "exit paintGL";
+*/
 }
 
 void GLViewerWidget::resizeGL(int w, int h)
 {
-    //qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "resizeGL,w=" << w;
+/*
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "resizeGL,w=" << w;
+*/
     glViewport(0, 0, (GLint)w, (GLint)h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -341,7 +373,9 @@ void GLViewerWidget::resizeGL(int w, int h)
     glLoadIdentity();
 
     if (d->texture == nullptr)
+    {
         return;
+    }
 
     if (d->firstImage)
     {
@@ -350,7 +384,7 @@ void GLViewerWidget::resizeGL(int w, int h)
 }
 
 /**
-    render the image
+ * render the image
  */
 void GLViewerWidget::drawImage(GLViewerTexture* const tex)
 {
@@ -373,8 +407,8 @@ void GLViewerWidget::drawImage(GLViewerTexture* const tex)
 }
 
 /**
-    Handle all keyboard events. All events which are not handled trigger
-    a help window.
+ * Handle all keyboard events. All events which are not handled trigger
+ * a help window.
  */
 void GLViewerWidget::keyPressEvent(QKeyEvent* e)
 {
@@ -549,7 +583,7 @@ void GLViewerWidget::keyReleaseEvent(QKeyEvent* e)
 }
 
 /**
-    download texture to video memory
+ * download texture to video memory
  */
 void GLViewerWidget::downloadTexture(GLViewerTexture* const tex)
 {
@@ -565,8 +599,8 @@ void GLViewerWidget::downloadTexture(GLViewerTexture* const tex)
 }
 
 /**
-    load d->files[file_index] into a texture object if it is not already cached
-    \param file_index index to QStringList d->files
+ * load d->files[file_index] into a texture object if it is not already cached
+ * \param file_index index to QStringList d->files
  */
 GLViewerTexture* GLViewerWidget::loadImage(int file_index) const
 {
@@ -574,8 +608,9 @@ GLViewerTexture* GLViewerWidget::loadImage(int file_index) const
 
     if (d->cache[imod].file_index == file_index)
     {
-        //image is already cached
+        // image is already cached
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "image" << file_index << "is already in cache@" << imod;
+
         return d->cache[imod].texture;
     }
     else
@@ -607,6 +642,7 @@ GLViewerTexture* GLViewerWidget::loadImage(int file_index) const
         }
 
         d->cache[imod].texture->setViewport(size.width(), size.height());
+
         return d->cache[imod].texture;
     }
 }
@@ -730,7 +766,7 @@ void GLViewerWidget::mouseReleaseEvent(QMouseEvent*)
 }
 
 /**
-    a double click resets the view (zoom and move)
+ * a double click resets the view (zoom and move)
  */
 void GLViewerWidget::mouseDoubleClickEvent(QMouseEvent*)
 {
@@ -823,12 +859,12 @@ void GLViewerWidget::nextImage()
 }
 
 /**
-    \param mdelta delta of mouse movement:
-                                mdelta>0: zoom in
-                                mdelta<0: zoom out
-                                mdelta=0: do nothing
-    \param pos position of mouse
-    \param factor zoom factor:scrollwheel needs a higher factor that right click mouse move. factor=1 -> no zoom
+ * \param mdelta delta of mouse movement:
+ *                              mdelta>0: zoom in
+ *                              mdelta<0: zoom out
+ *                              mdelta=0: do nothing
+ * \param pos position of mouse
+ * \param factor zoom factor:scrollwheel needs a higher factor that right click mouse move. factor=1 -> no zoom
  */
 void GLViewerWidget::zoom(int mdelta, const QPoint& pos, float factor)
 {
@@ -855,7 +891,7 @@ void GLViewerWidget::zoom(int mdelta, const QPoint& pos, float factor)
 }
 
 /**
-    being called if user didn't move the mouse for longer than 2 sec
+ * being called if user didn't move the mouse for longer than 2 sec
  */
 void GLViewerWidget::slotTimeoutMouseMove()
 {
@@ -863,11 +899,11 @@ void GLViewerWidget::slotTimeoutMouseMove()
 }
 
 /**
-    check if OpenGL engine is ready. This function is called from outside the widget.
-    If OpenGL doen't work correctly, the widget can be destroyed
-    \return OGLstate::oglNoContext No OpenGl context could be retrieved
-    \return OGLstate::oglNoRectangularTexture GLGL_ARB_texture_rectangle is not supported
-    \return OGLstate::oglOK all is fine
+ * check if OpenGL engine is ready. This function is called from outside the widget.
+ * If OpenGL doen't work correctly, the widget can be destroyed
+ * \return OGLstate::oglNoContext No OpenGl context could be retrieved
+ * \return OGLstate::oglNoRectangularTexture GLGL_ARB_texture_rectangle is not supported
+ * \return OGLstate::oglOK all is fine
  */
 OGLstate GLViewerWidget::getOGLstate() const
 {
@@ -890,10 +926,10 @@ OGLstate GLViewerWidget::getOGLstate() const
 }
 
 /**
-    QGLWidget::isFullscreen() returns true if the internal state is already true
-    but the actually displayed size is still windowed. isReallyFullscreen() returns the
-    value of the visible size.
-    \return true if (screenwidth == widgedwidth)
+ * QGLWidget::isFullscreen() returns true if the internal state is already true
+ * but the actually displayed size is still windowed. isReallyFullscreen() returns the
+ * value of the visible size.
+ * \return true if (screenwidth == widgedwidth)
  */
 bool GLViewerWidget::isReallyFullScreen() const
 {
