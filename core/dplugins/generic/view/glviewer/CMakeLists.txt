@@ -6,11 +6,10 @@
 
 include(MacroDPlugins)
 
-if(NOT MSVC)
+if(APPLE)
     # Under MacOS 10.14 (Mojave), OpenGL API start to be deprecated in favor to Apple Metal API.
     # https://appleinsider.com/articles/18/06/28/why-macos-mojave-requires-metal----and-deprecates-opengl
-    
-    DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wno-deprecated-declarations")
+    add_definitions(-DGL_SILENCE_DEPRECATION)
 
 endif()
 
