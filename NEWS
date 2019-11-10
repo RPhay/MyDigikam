@@ -29,4 +29,5 @@ BUGFIXES:
 018 ==> 413972 - align_image_stack and enfuse use only 1 CPU core if called by digiKam plugin, 4 CPU core on command line.
 019 ==> 413981 - Refresh has no effect in Preview mode.
 020 ==> 413985 - Can't move an album too far down - no treeview scrolling.
-021 ==> 
+021 ==> 412678 - Renaming folder leads to an error.
+022 ==> 
