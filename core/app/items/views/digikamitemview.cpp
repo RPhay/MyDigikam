@@ -373,11 +373,12 @@ void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
 
     // fast-remove in the "unknown person" view
 
+    Album* const album  = currentAlbum();
     bool needFastRemove = false;
 
-    if (imageAlbumModel()->currentAlbums().size() == 1)
+    if (album)
     {
-        needFastRemove = d->faceMode && (tagId != imageAlbumModel()->currentAlbums().first()->id());
+        needFastRemove = (d->faceMode && (tagId != album->id()));
     }
 
     foreach (const QModelIndex& index, indexes)
