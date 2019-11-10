@@ -12,6 +12,7 @@ set(libfacemanagement_SRCS
     facegroup_p.cpp
     facepipeline.cpp
     facepipeline_p.cpp
+    facepipelinepackage.cpp
     faceitemretriever.cpp
     facepreviewloader.cpp
     facescandialog.cpp

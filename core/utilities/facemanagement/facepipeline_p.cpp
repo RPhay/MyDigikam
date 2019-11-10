@@ -38,26 +38,6 @@
 namespace Digikam
 {
 
-FacePipelineExtendedPackage::Ptr PackageLoadingDescriptionList::take(const LoadingDescription& description)
-{
-    FacePipelineExtendedPackage::Ptr                  package;
-    QList<FacePipelineExtendedPackage::Ptr>::iterator it;
-
-    for (it = begin() ; it != end() ; ++it)
-    {
-        if (*(*it) == description)
-        {
-            package = *it;
-            erase(it);
-            break;
-        }
-    }
-
-    return package;
-}
-
-// ----------------------------------------------------------------------------------------
-
 FacePipeline::Private::Private(FacePipeline* const q)
     : q(q)
 {

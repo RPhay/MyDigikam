@@ -25,118 +25,12 @@
 #ifndef DIGIKAM_FACE_PIPELINE_H
 #define DIGIKAM_FACE_PIPELINE_H
 
-// Qt includes
-
-#include <QFlags>
-#include <QThread>
-
 // Local includes
 
-#include "identity.h"
-#include "digikam_debug.h"
-#include "facetagsiface.h"
-#include "dimg.h"
-#include "iteminfo.h"
-#include "recognitiondatabase.h"
+#include "facepipelinepackage.h"
 
 namespace Digikam
 {
-
-class FacePipelineFaceTagsIface : public FaceTagsIface
-{
-public:
-
-    enum Role
-    {
-        NoRole             = 0,
-
-        /// Source
-        GivenAsArgument    = 1 << 0,
-        ReadFromDatabase   = 1 << 1,
-        DetectedFromImage  = 1 << 2,
-
-        /// Task
-        ForRecognition     = 1 << 10,
-        ForConfirmation    = 1 << 11,
-        ForTraining        = 1 << 12,
-        ForEditing         = 1 << 13, // Add, Change or remove
-
-        /// Executed action (task is cleared)
-        Confirmed          = 1 << 20,
-        Trained            = 1 << 21,
-        Edited             = 1 << 22
-    };
-    Q_DECLARE_FLAGS(Roles, Role)
-
-public:
-
-    FacePipelineFaceTagsIface();
-    explicit FacePipelineFaceTagsIface(const FaceTagsIface& face);
-
-public:
-
-    Roles     roles;
-    int       assignedTagId;
-    TagRegion assignedRegion;
-};
-
-// ------------------------------------------------------------------------------------
-
-class FacePipelineFaceTagsIfaceList : public QList<FacePipelineFaceTagsIface>
-{
-public:
-
-    FacePipelineFaceTagsIfaceList();
-    explicit FacePipelineFaceTagsIfaceList(const QList<FaceTagsIface>& faces);
-
-    FacePipelineFaceTagsIfaceList& operator=(const QList<FaceTagsIface>& faces);
-
-public:
-
-    void setRole(FacePipelineFaceTagsIface::Roles role);
-    void clearRole(FacePipelineFaceTagsIface::Roles role);
-    void replaceRole(FacePipelineFaceTagsIface::Roles remove,
-                     FacePipelineFaceTagsIface::Roles add);
-
-    QList<FaceTagsIface> toFaceTagsIfaceList()                                        const;
-
-    FacePipelineFaceTagsIfaceList facesForRole(FacePipelineFaceTagsIface::Roles role) const;
-};
-
-// ------------------------------------------------------------------------------------
-
-class FacePipelinePackage
-{
-public:
-
-    enum ProcessFlag
-    {
-        NotProcessed            = 0,
-        PreviewImageLoaded      = 1 << 0,
-        ProcessedByDetector     = 1 << 1,
-        ProcessedByRecognizer   = 1 << 2,
-        WrittenToDatabase       = 1 << 3,
-        ProcessedByTrainer      = 1 << 4
-    };
-    Q_DECLARE_FLAGS(ProcessFlags, ProcessFlag)
-
-public:
-
-    explicit FacePipelinePackage();
-    ~FacePipelinePackage();
-
-public:
-
-    ItemInfo                      info;
-    DImg                          image;
-    QList<QRectF>                 detectedFaces;
-    QList<Identity>               recognitionResults;
-    FacePipelineFaceTagsIfaceList databaseFaces;
-
-    ProcessFlags                  processFlags;
-};
-
-// ------------------------------------------------------------------------------------
 
 class FacePipeline : public QObject
 {
@@ -339,9 +233,5 @@ private:
 };
 
 } // namespace Digikam
-
-Q_DECLARE_METATYPE(Digikam::FacePipelinePackage)
-Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::FacePipelineFaceTagsIface::Roles)
-Q_DECLARE_OPERATORS_FOR_FLAGS(Digikam::FacePipelinePackage::ProcessFlags)
 
 #endif // DIGIKAM_FACE_PIPELINE_H

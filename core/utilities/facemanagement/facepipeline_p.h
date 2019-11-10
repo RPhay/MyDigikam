@@ -46,49 +46,6 @@
 namespace Digikam
 {
 
-class DetectionBenchmarker;
-class RecognitionBenchmarker;
-class DetectionWorker;
-class RecognitionWorker;
-class TrainerWorker;
-class DatabaseWriter;
-class FacePreviewLoader;
-class FaceItemRetriever;
-class ParallelPipes;
-class ScanStateFilter;
-
-class Q_DECL_HIDDEN FacePipelineExtendedPackage : public FacePipelinePackage,
-                                                  public QSharedData
-{
-public:
-
-    QString                                                           filePath;
-    DImg                                                              detectionImage; // image scaled to about 0.5 Mpx
-    typedef QExplicitlySharedDataPointer<FacePipelineExtendedPackage> Ptr;
-
-public:
-
-    bool operator==(const LoadingDescription& description) const
-    {
-        return filePath == description.filePath;
-    }
-};
-
-// ----------------------------------------------------------------------------------------
-
-class Q_DECL_HIDDEN PackageLoadingDescriptionList : public QList<FacePipelineExtendedPackage::Ptr>
-{
-public:
-
-    explicit PackageLoadingDescriptionList()
-    {
-    }
-
-    FacePipelineExtendedPackage::Ptr take(const LoadingDescription& description);
-};
-
-// ----------------------------------------------------------------------------------------
-
 class Q_DECL_HIDDEN FacePipeline::Private : public QObject
 {
     Q_OBJECT
