@@ -68,6 +68,7 @@ const QString ApplicationSettings::Private::configSidebarTitleStyleEntry(QLatin1
 const QString ApplicationSettings::Private::configRatingFilterConditionEntry(QLatin1String("Rating Filter Condition"));
 const QString ApplicationSettings::Private::configRecursiveAlbumsEntry(QLatin1String("Recursive Albums"));
 const QString ApplicationSettings::Private::configRecursiveTagsEntry(QLatin1String("Recursive Tags"));
+const QString ApplicationSettings::Private::configAllGroupsOpenEntry(QLatin1String("All Groups Open"));
 const QString ApplicationSettings::Private::configIconShowNameEntry(QLatin1String("Icon Show Name"));
 const QString ApplicationSettings::Private::configIconShowResolutionEntry(QLatin1String("Icon Show Resolution"));
 const QString ApplicationSettings::Private::configIconShowSizeEntry(QLatin1String("Icon Show Size"));
@@ -230,6 +231,7 @@ ApplicationSettings::Private::Private(ApplicationSettings* const qq)
       ratingFilterCond(0),
       recursiveAlbums(false),
       recursiveTags(false),
+      allGroupsOpen(false),
       scanAtStart(true),
       cleanAtStart(true),
       databaseDirSetAtCmd(false),
@@ -361,6 +363,7 @@ void ApplicationSettings::Private::init()
 
     recursiveAlbums                      = false;
     recursiveTags                        = true;
+    allGroupsOpen                        = false;
 
     showFolderTreeViewItemsCount         = false;
 

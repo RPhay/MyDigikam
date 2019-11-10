@@ -148,6 +148,7 @@ void ApplicationSettings::readSettings()
     d->albumMonitoring                   = group.readEntry(d->configAlbumMonitoringEntry,              false);
     d->recursiveAlbums                   = group.readEntry(d->configRecursiveAlbumsEntry,              false);
     d->recursiveTags                     = group.readEntry(d->configRecursiveTagsEntry,                true);
+    d->allGroupsOpen                     = group.readEntry(d->configAllGroupsOpenEntry,                false);
 
     d->iconShowName                      = group.readEntry(d->configIconShowNameEntry,                 false);
     d->iconShowResolution                = group.readEntry(d->configIconShowResolutionEntry,           false);
@@ -345,6 +346,7 @@ void ApplicationSettings::saveSettings()
     group.writeEntry(d->configAlbumMonitoringEntry,                    d->albumMonitoring);
     group.writeEntry(d->configRecursiveAlbumsEntry,                    d->recursiveAlbums);
     group.writeEntry(d->configRecursiveTagsEntry,                      d->recursiveTags);
+    group.writeEntry(d->configAllGroupsOpenEntry,                      d->allGroupsOpen);
     group.writeEntry(d->configThemeEntry,                              d->currentTheme);
     group.writeEntry(d->configSidebarTitleStyleEntry,                  (int)d->sidebarTitleStyle);
 

@@ -87,6 +87,7 @@ public:
     void toggleShowBar(bool);
     void setRecurseAlbums(bool recursive);
     void setRecurseTags(bool recursive);
+    void setAllGroupsOpen(bool open);
     void imageTransform(MetaEngineRotation::TransformationAction transform);
 
     void connectIconViewFilter(FilterStatusBar* const filter);

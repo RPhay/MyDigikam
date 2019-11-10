@@ -119,6 +119,8 @@ private Q_SLOTS:
     void slotRecurseAlbums(bool);
     void slotRecurseTags(bool);
 
+    void slotAllGroupsOpen(bool);
+
     void slotAboutToShowForwardMenu();
     void slotAboutToShowBackwardMenu();
 

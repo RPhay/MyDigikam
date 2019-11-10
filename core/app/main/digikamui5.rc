@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="615" name="digikam" translationDomain="digikam" >
+<gui version="616" name="digikam" translationDomain="digikam" >
 
  <MenuBar>
 
@@ -110,6 +110,8 @@
      <Action name="image_separation_sort_order" />
      <Action name="albums_recursive" />
      <Action name="tags_recursive" />
+     <Separator />
+     <Action name="all_groups_open" />
      <Separator />
      <Action name="color_managed_view" />
   </Menu>

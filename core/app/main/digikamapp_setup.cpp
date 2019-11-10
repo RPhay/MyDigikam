@@ -488,12 +488,18 @@ void DigikamApp::setupActions()
     connect(d->recurseAlbumsAction, SIGNAL(toggled(bool)), this, SLOT(slotRecurseAlbums(bool)));
     ac->addAction(QLatin1String("albums_recursive"), d->recurseAlbumsAction);
 
-    d->recurseTagsAction = new QAction(i18n("Include Tag Sub-Tree"), this);
+    d->recurseTagsAction   = new QAction(i18n("Include Tag Sub-Tree"), this);
     d->recurseTagsAction->setCheckable(true);
     d->recurseTagsAction->setWhatsThis(i18n("Activate this option to show all images marked by the given tag "
                                             "and all its sub-tags."));
     connect(d->recurseTagsAction, SIGNAL(toggled(bool)), this, SLOT(slotRecurseTags(bool)));
     ac->addAction(QLatin1String("tags_recursive"), d->recurseTagsAction);
+
+    d->allGroupsOpenAction = new QAction(i18n("Show All Grouped Items As Open"), this);
+    d->allGroupsOpenAction->setCheckable(true);
+    d->allGroupsOpenAction->setWhatsThis(i18n("Activate this option to show all grouped items as open."));
+    connect(d->allGroupsOpenAction, SIGNAL(toggled(bool)), this, SLOT(slotAllGroupsOpen(bool)));
+    ac->addAction(QLatin1String("all_groups_open"), d->allGroupsOpenAction);
 
     // -----------------------------------------------------------
 
@@ -1055,6 +1061,7 @@ void DigikamApp::initGui()
     d->imageSortOrderAction->setCurrentItem((int)ApplicationSettings::instance()->getImageSorting());
     d->imageSeparationAction->setCurrentItem((int)ApplicationSettings::instance()->getImageSeparationMode()-1); // no action for enum 0
     d->imageSeparationSortOrderAction->setCurrentItem((int)ApplicationSettings::instance()->getImageSeparationSortOrder());
+    d->allGroupsOpenAction->setChecked(ApplicationSettings::instance()->getAllGroupsOpen());
     d->recurseAlbumsAction->setChecked(ApplicationSettings::instance()->getRecurseAlbums());
     d->recurseTagsAction->setChecked(ApplicationSettings::instance()->getRecurseTags());
     d->showBarAction->setChecked(ApplicationSettings::instance()->getShowThumbbar());

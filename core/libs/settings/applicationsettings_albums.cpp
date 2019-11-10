@@ -96,6 +96,16 @@ bool ApplicationSettings::getRecurseTags() const
     return d->recursiveTags;
 }
 
+void ApplicationSettings::setAllGroupsOpen(bool val)
+{
+    d->allGroupsOpen = val;
+}
+
+bool ApplicationSettings::getAllGroupsOpen() const
+{
+    return d->allGroupsOpen;
+}
+
 void ApplicationSettings::setShowFolderTreeViewItemsCount(bool val)
 {
     d->showFolderTreeViewItemsCount = val;

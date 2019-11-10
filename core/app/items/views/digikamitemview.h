@@ -70,6 +70,7 @@ public Q_SLOTS:
 
     void assignRating(const QList<QModelIndex>& index, int rating);
 
+    bool getFaceMode() const;
     void setFaceMode(bool on);
     void confirmFaces(const QList<QModelIndex>& indexes, int tagId);
     void removeFaces(const QList<QModelIndex>& indexes);

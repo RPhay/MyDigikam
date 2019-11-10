@@ -41,6 +41,7 @@
 #include "coredbwatch.h"
 #include "itemfiltermodel.h"
 #include "itemfiltersettings.h"
+#include "applicationsettings.h"
 #include "iteminfo.h"
 #include "tableview_columnfactory.h"
 #include "tableview_selection_model_syncer.h"
@@ -826,7 +827,7 @@ void TableViewModel::addSourceModelIndex(const QModelIndex& imageModelIndex, con
 
     const ItemInfo imageInfo = s->imageModel->imageInfo(imageModelIndex);
     const bool passedFilter  = d->imageFilterSettings.matches(imageInfo);
-    const bool isFiltering   = d->imageFilterSettings.isFiltering();
+    const bool allGroupsOpen = ApplicationSettings::instance()->getAllGroupsOpen();
 
     if (!passedFilter)
     {
@@ -836,7 +837,7 @@ void TableViewModel::addSourceModelIndex(const QModelIndex& imageModelIndex, con
     /// @todo Implement Grouping and sorting
     Item* const parentItem = d->rootItem;
 
-    if (!isFiltering && imageInfo.isGrouped())
+    if (!allGroupsOpen && imageInfo.isGrouped())
     {
         switch (d->groupingMode)
         {
@@ -879,7 +880,7 @@ void TableViewModel::addSourceModelIndex(const QModelIndex& imageModelIndex, con
         endInsertRows();
     }
 
-    if (!isFiltering && (d->groupingMode == GroupingShowSubItems) && imageInfo.hasGroupedImages())
+    if (!allGroupsOpen && (d->groupingMode == GroupingShowSubItems) && imageInfo.hasGroupedImages())
     {
         // the item was a group leader, add its subitems
         const QList<ItemInfo> groupedImages = imageInfo.groupedImages();

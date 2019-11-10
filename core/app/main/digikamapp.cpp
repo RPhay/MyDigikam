@@ -721,6 +721,11 @@ void DigikamApp::slotRecurseTags(bool checked)
     d->view->setRecurseTags(checked);
 }
 
+void DigikamApp::slotAllGroupsOpen(bool checked)
+{
+    d->view->setAllGroupsOpen(checked);
+}
+
 void DigikamApp::slotZoomSliderChanged(int size)
 {
     d->view->setThumbSize(size);

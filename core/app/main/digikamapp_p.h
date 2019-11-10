@@ -249,6 +249,7 @@ public:
         imageSeparationAction(nullptr),
         imageSeparationSortOrderAction(nullptr),
         albumSortAction(nullptr),
+        allGroupsOpenAction(nullptr),
         recurseAlbumsAction(nullptr),
         recurseTagsAction(nullptr),
         showBarAction(nullptr),
@@ -374,6 +375,7 @@ public:
     KSelectAction*                      imageSeparationAction;
     KSelectAction*                      imageSeparationSortOrderAction;
     KSelectAction*                      albumSortAction;
+    QAction*                            allGroupsOpenAction;
     QAction*                            recurseAlbumsAction;
     QAction*                            recurseTagsAction;
     QAction*                            showBarAction;

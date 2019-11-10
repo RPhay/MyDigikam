@@ -185,6 +185,9 @@ public:
     void setRecurseTags(bool val);
     bool getRecurseTags() const;
 
+    void setAllGroupsOpen(bool val);
+    bool getAllGroupsOpen() const;
+
     void setAlbumCategoryNames(const QStringList& list);
     QStringList getAlbumCategoryNames() const;
 

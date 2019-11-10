@@ -2251,6 +2251,16 @@ void ItemIconView::setRecurseTags(bool recursive)
     d->iconView->imageAlbumModel()->setRecurseTags(recursive);
 }
 
+void ItemIconView::setAllGroupsOpen(bool open)
+{
+    if (!d->iconView->getFaceMode())
+    {
+        d->iconView->imageFilterModel()->setAllGroupsOpen(open);
+    }
+
+    ApplicationSettings::instance()->setAllGroupsOpen(open);
+}
+
 void ItemIconView::slotSidebarTabTitleStyleChanged()
 {
     d->leftSideBar->setStyle(ApplicationSettings::instance()->getSidebarTitleStyle());

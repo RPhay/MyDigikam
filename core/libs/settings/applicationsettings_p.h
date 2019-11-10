@@ -87,6 +87,7 @@ public:
     static const QString configRatingFilterConditionEntry;
     static const QString configRecursiveAlbumsEntry;
     static const QString configRecursiveTagsEntry;
+    static const QString configAllGroupsOpenEntry;
     static const QString configIconShowNameEntry;
     static const QString configIconShowResolutionEntry;
     static const QString configIconShowSizeEntry;
@@ -255,6 +256,7 @@ public:
     int                                          ratingFilterCond;
     bool                                         recursiveAlbums;
     bool                                         recursiveTags;
+    bool                                         allGroupsOpen;
 
     // theme settings
     QString                                      currentTheme;

@@ -293,9 +293,9 @@ void DigikamItemView::slotSetupChanged()
 
 bool DigikamItemView::hasHiddenGroupedImages(const ItemInfo& info) const
 {
-    return (info.hasGroupedImages()                     &&
-            !imageFilterModel()->isGroupOpen(info.id()) &&
-            !imageFilterModel()->imageFilterSettings().isFiltering());
+    return (info.hasGroupedImages()                &&
+            !imageFilterModel()->isAllGroupsOpen() &&
+            !imageFilterModel()->isGroupOpen(info.id()));
 }
 
 ItemInfoList DigikamItemView::imageInfos(const QList<QModelIndex>& indexes,
@@ -309,6 +309,11 @@ ItemInfoList DigikamItemView::imageInfos(const QList<QModelIndex>& indexes,
     }
 
     return infos;
+}
+
+bool DigikamItemView::getFaceMode() const
+{
+    return d->faceMode;
 }
 
 void DigikamItemView::setFaceMode(bool on)
@@ -327,7 +332,9 @@ void DigikamItemView::setFaceMode(bool on)
     {
         imageAlbumModel()->setSpecialTagListing(QString());
         setItemDelegate(d->normalDelegate);
-        imageFilterModel()->setAllGroupsOpen(false);
+
+        bool open = ApplicationSettings::instance()->getAllGroupsOpen();
+        imageFilterModel()->setAllGroupsOpen(open);
     }
 }
 

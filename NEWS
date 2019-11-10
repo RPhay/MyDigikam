@@ -30,4 +30,6 @@ BUGFIXES:
 019 ==> 413981 - Refresh has no effect in Preview mode.
 020 ==> 413985 - Can't move an album too far down - no treeview scrolling.
 021 ==> 412678 - Renaming folder leads to an error.
-022 ==> 
+022 ==> 303239 - GROUP : grouped images are found, but do not show in searches.
+023 ==> 321339 - GROUP : suppress display of albums containing only grouped images.
+024 ==> 
