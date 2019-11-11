@@ -26,6 +26,7 @@ set(flickrplugin_SRCS
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Flickr
                            SOURCES ${flickrplugin_SRCS}
+                           DEPENDS ${QWEB_BACKEND}
 )
 
 add_subdirectory(icons)

@@ -33,6 +33,7 @@
 #include <QFile>
 #include <QMap>
 #include <QImage>
+#include <QUrlQuery>
 #include <QStringList>
 #include <QMessageBox>
 #include <QApplication>
@@ -51,8 +52,15 @@
 #include "flickrmpform.h"
 #include "flickrwindow.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "digikam_version.h"
 #include "previewloadthread.h"
+
+#ifdef HAVE_QWEBENGINE
+#   include "webwidget_qwebengine.h"
+#else
+#   include "webwidget.h"
+#endif
 
 // OAuth2 library includes
 
@@ -88,6 +96,7 @@ public:
         o1              = nullptr;
         store           = nullptr;
         requestor       = nullptr;
+        view            = nullptr;
     }
 
     QWidget*               parent;
@@ -117,6 +126,8 @@ public:
     O1*                    o1;
     O0SettingsStore*       store;
     O1Requestor*           requestor;
+
+    WebWidget*             view;
 };
 
 FlickrTalker::FlickrTalker(QWidget* const parent,
@@ -169,6 +180,7 @@ FlickrTalker::FlickrTalker(QWidget* const parent,
     d->o1->setAuthorizeUrl(QUrl(d->authUrl));
     d->o1->setAccessTokenUrl(QUrl(d->accessUrl));
     d->o1->setRequestTokenUrl(QUrl(d->tokenUrl));
+    d->o1->setUseExternalWebInterceptor(true);
 
     d->settings = WSToolUtils::getOauthSettings(this);
     d->store    = new O0SettingsStore(d->settings, QLatin1String(O2_ENCRYPTION_KEY), this);
@@ -231,6 +243,29 @@ void FlickrTalker::removeUserName(const QString& userName)
     }
 }
 
+void FlickrTalker::slotCatchUrl(const QUrl& url)
+{
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Received URL from webview:" << url;
+
+    QString   str = url.toString();
+    QUrlQuery query(str.section(QLatin1Char('?'), -1, -1));
+
+    if (query.hasQueryItem(QLatin1String("oauth_token")))
+    {
+        QMultiMap<QString, QString> queryParams;
+        queryParams.insert(QLatin1String("oauth_token"),
+                                         query.queryItemValue(QLatin1String("oauth_token")));
+        queryParams.insert(QLatin1String("oauth_verifier"),
+                                         query.queryItemValue(QLatin1String("oauth_verifier")));
+
+        d->o1->onVerificationReceived(queryParams);
+    }
+    else
+    {
+        slotLinkingFailed();
+    }
+}
+
 void FlickrTalker::slotLinkingFailed()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Flickr fail";
@@ -245,6 +280,11 @@ void FlickrTalker::slotLinkingSucceeded()
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UNLINK to Flickr ok";
         d->username = QString();
         return;
+    }
+
+    if (d->view)
+    {
+        d->view->close();
     }
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Flickr ok";
@@ -278,7 +318,26 @@ void FlickrTalker::slotLinkingSucceeded()
 void FlickrTalker::slotOpenBrowser(const QUrl& url)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Open Browser... (" << url << ")";
-    QDesktopServices::openUrl(url);
+
+    delete d->view;
+    d->view = new WebWidget(d->parent);
+    d->view->resize(800, 600);
+
+    connect(d->view, SIGNAL(urlChanged(QUrl)),
+            this, SLOT(slotCatchUrl(QUrl)));
+
+    //connect(d->view, SIGNAL(closeView(bool)),
+    //        this, SIGNAL(signalBusy(bool)));
+
+#ifdef HAVE_QWEBENGINE
+    d->view->page()->profile()->cookieStore()->deleteAllCookies();
+#else
+    d->view->page()->networkAccessManager()->setCookieJar(new QNetworkCookieJar());
+#endif
+
+    d->view->setWindowFlags(Qt::Dialog);
+    d->view->load(url);
+    d->view->show();
 }
 
 QString FlickrTalker::getMaxAllowedFileSize()
