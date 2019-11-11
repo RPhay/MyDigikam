@@ -23,13 +23,17 @@
  *
  * ============================================================ */
 
-#include "metaengine.h"
 #include "metaengine_p.h"
 
 // Local includes
 
 #include "digikam_debug.h"
 #include "digikam_version.h"
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#endif
 
 namespace Digikam
 {
@@ -302,3 +306,7 @@ bool MetaEngine::applyChanges(bool setVersion) const
 }
 
 } // namespace Digikam
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
+#endif

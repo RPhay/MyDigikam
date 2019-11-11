@@ -25,9 +25,13 @@
 
 // Local includes
 
-#include "metaengine.h"
 #include "metaengine_p.h"
 #include "digikam_debug.h"
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#endif
 
 namespace Digikam
 {
@@ -902,3 +906,7 @@ MetaEngine::TagsMap MetaEngine::getIptcTagsList() const
 }
 
 } // namespace Digikam
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
+#endif

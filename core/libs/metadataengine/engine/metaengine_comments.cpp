@@ -26,8 +26,12 @@
 // Local includes
 
 #include "metaengine_p.h"
-#include "metaengine.h"
 #include "digikam_debug.h"
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#endif
 
 namespace Digikam
 {
@@ -107,3 +111,7 @@ QString MetaEngine::detectLanguageAlt(const QString& value, QString& lang)
 }
 
 } // namespace Digikam
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
+#endif

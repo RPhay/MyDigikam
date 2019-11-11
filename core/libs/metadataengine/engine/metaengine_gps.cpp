@@ -24,7 +24,6 @@
  *
  * ============================================================ */
 
-#include "metaengine.h"
 #include "metaengine_p.h"
 
 // C ANSI includes
@@ -39,6 +38,11 @@
 // Local includes
 
 #include "digikam_debug.h"
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#endif
 
 namespace Digikam
 {
@@ -980,3 +984,7 @@ void MetaEngine::convertToUserPresentableNumbers(const bool isLatitude, double c
 }
 
 } // namespace Digikam
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
+#endif

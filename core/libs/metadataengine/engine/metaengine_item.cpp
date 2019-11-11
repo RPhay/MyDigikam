@@ -23,7 +23,6 @@
  *
  * ============================================================ */
 
-#include "metaengine.h"
 #include "metaengine_p.h"
 
 // Qt includes
@@ -34,6 +33,11 @@
 
 #include "metaengine_rotation.h"
 #include "digikam_debug.h"
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wdeprecated-declarations"
+#endif
 
 namespace Digikam
 {
@@ -1197,3 +1201,7 @@ bool MetaEngine::setItemPreview(const QImage& preview) const
 }
 
 } // namespace Digikam
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
+#endif
