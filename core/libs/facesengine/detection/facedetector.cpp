@@ -73,7 +73,7 @@ public:
     {
         if (!m_dnnDetectorBackend)
         {
-            m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::YOLO);
+            m_dnnDetectorBackend = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
         }
 
         return m_dnnDetectorBackend;
