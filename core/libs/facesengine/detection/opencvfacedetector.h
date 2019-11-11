@@ -56,8 +56,8 @@ public:
     explicit OpenCVFaceDetector(const QStringList& cascadeDirs);
     ~OpenCVFaceDetector();
 
-    cv::Mat prepareForDetection(const QImage& inputImage)            const;
-    cv::Mat prepareForDetection(const DImg& inputImage)              const;
+    cv::Mat prepareForDetection(const QImage& inputImage)                   const;
+    cv::Mat prepareForDetection(const DImg& inputImage)                     const;
     QList<QRect> detectFaces(const cv::Mat& inputImage,
                              const cv::Size& originalSize = cv::Size(0, 0));
 
@@ -73,8 +73,8 @@ public:
     void setAccuracy(double speedVsAccuracy);
     void setSpecificity(double sensitivityVsSpecificity);
 
-    double accuracy()                                                const;
-    double specificity()                                             const;
+    double accuracy()                                                       const;
+    double specificity()                                                    const;
 
     /**
      * Returns the image size (one dimension)
@@ -94,9 +94,9 @@ private:
      */
     QList<QRect> cascadeResult(const cv::Mat& inputImage,
                                Cascade& cascade,
-                               const DetectObjectParameters& params) const;
+                               const DetectObjectParameters& params)        const;
 
-    bool verifyFace(const cv::Mat& inputImage, const QRect& face)    const;
+    bool verifyFace(const cv::Mat& inputImage, const QRect& face)           const;
 
     /**
      * Returns the faces from the detection results of multiple cascades
@@ -107,7 +107,7 @@ private:
      * @return The vector of the final faces
      */
     QList<QRect> mergeFaces(const cv::Mat& inputImage,
-                            const QList< QList<QRect> >& preliminaryResults) const;
+                            const QList<QList<QRect> >& preliminaryResults) const;
 
     void updateParameters(const cv::Size& scaledSize,
                           const cv::Size& originalSize);
