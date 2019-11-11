@@ -28,265 +28,10 @@
  *
  * ============================================================ */
 
-#include "opencvfacedetector.h"
-
-// Qt includes
-
-#include <QFile>
-#include <QMutex>
-#include <QMutexLocker>
-#include <qmath.h>
-
-// Local includes
-
-#include "digikam_debug.h"
-
-using namespace std;
+#include "opencvfacedetector_p.h"
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN DetectObjectParameters
-{
-public:
-
-    DetectObjectParameters()
-        : searchIncrement(0),
-          grouping(0),
-          flags(0),
-          minSize(cv::Size(0, 0))
-    {
-    }
-
-public:
-
-    double   searchIncrement;
-    int      grouping;
-    int      flags;
-    cv::Size minSize;
-};
-
-// --------------------------------------------------------------------------------
-
-static QString findFileInDirs(const QStringList& dirs, const QString& fileName)
-{
-    foreach (const QString& dir, dirs)
-    {
-        const QString file = dir + (dir.endsWith(QLatin1Char('/')) ? QLatin1String("")
-                                                                   : QLatin1String("/"))
-                                 + fileName;
-
-        if (QFile::exists(file))
-        {
-            return file;
-        }
-    }
-
-    return QString();
-}
-
-static int distanceOfCenters(const QRect& r1, const QRect& r2)
-{
-    QPointF diff = r1.center() - r2.center();
-
-    return (lround(sqrt(diff.x() * diff.x() + diff.y() * diff.y())));    // Euclidean distance
-}
-
-static QRect toQRect(const cv::Rect& rect)
-{
-    return (QRect(rect.x, rect.y, rect.width, rect.height));
-}
-
-static cv::Rect fromQRect(const QRect& rect)
-{
-    return (cv::Rect(rect.x(), rect.y(), rect.width(), rect.height()));
-}
-
-// --------------------------------------------------------------------------------
-
-class Q_DECL_HIDDEN Cascade : public cv::CascadeClassifier
-{
-public:
-
-    Cascade(const QStringList& dirs, const QString& fileName)
-        : primaryCascade(false),
-          verifyingCascade(true)
-    {
-        const QString file = findFileInDirs(dirs, fileName);
-
-        if (file.isEmpty())
-        {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Failed to locate cascade" << fileName << "in" << dirs;
-            return;
-        }
-
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "Loading cascade" << file;
-
-        if (!load(file.toStdString()))
-        {
-            qCDebug(DIGIKAM_FACESENGINE_LOG) << "Failed to load cascade" << file;
-            return;
-        }
-    }
-
-    cv::Size getOriginalWindowSize() const
-    {
-        return cv::Size(0, 0);
-    }
-
-    /**
-     * Assumptions on the relation of the size of a facial feature to the whole face.
-     * Basically, we say the size is between 1/10 and 1/4, approx 1/6
-     */
-    static double faceToFeatureRelationMin()      { return 10; }
-    static double faceToFeatureRelationMax()      { return 4;  }
-    static double faceToFeatureRelationPresumed() { return 6;  }
-
-    /**
-     * A primary cascade does the initial scan on the whole image area
-     * A verifying cascade scans the area reported by the primary cascade
-     */
-    void setPrimaryCascade(bool isPrimary = true)
-    {
-        primaryCascade   = isPrimary;
-        verifyingCascade = !isPrimary;
-    }
-
-    void setROI(double x, double y, double width, double height)
-    {
-        roi = QRectF(x, y, width, height);
-    }
-
-    bool isFacialFeature() const
-    {
-        return roi.isValid();
-    }
-
-    /**
-     * given the full face rect (relative to whole image), returns the rectangle
-     * of the region of interest of this cascade (still relative to whole image).
-     * For frontal face cascades, returns the given parameter unchanged.
-     */
-    cv::Rect faceROI(const CvRect& faceRect) const
-    {
-        return (cv::Rect(lround(faceRect.x + roi.x()      * faceRect.width),
-                         lround(faceRect.y + roi.y()      * faceRect.height),
-                         lround(             roi.width()  * faceRect.width),
-                         lround(             roi.height() * faceRect.height)));
-    }
-
-    /**
-     * Verifying cascades: Returns the minSize parameter for cvHaarDetectObjects.
-     * For frontal faces, starts the scan in the same order of magnitude as the presumed face,
-     * slightly smaller.
-     * For facial features, which are smaller than a face, uses the faceToFeatureRelation
-     * assumptions made above. Often may end using the minimum.
-     */
-    cv::Size minSizeForFace(const cv::Size& faceSize) const
-    {
-        cv::Size minSize;
-
-        if (!isFacialFeature())
-        {
-            // Start with a size slightly smaller than the presumed face
-
-            minSize = cv::Size(lround(double(faceSize.width)  * 0.6),
-                               lround(double(faceSize.height) * 0.6));
-        }
-        else
-        {
-            // for a feature, which is smaller than the face, start with a significantly smaller min size
-
-            minSize = cv::Size(lround(double(faceSize.width)  / faceToFeatureRelationMin()),
-                               lround(double(faceSize.height) / faceToFeatureRelationMin()));
-        }
-
-        if (lessThanWindowSize(minSize))
-        {
-            return cv::Size(0, 0);
-        }
-
-        return minSize;
-    }
-
-    /**
-     * For facial features:
-     * For the case that a feature ROI is small and shall be scaled up.
-     * Give the real face size.
-     * Returns a scale factor (>1) by which the face, or rather only the ROI,
-     * should be scaled up to fit with the windowSize of this cascade.
-     */
-    double requestedInputScaleFactor(const cv::Size& faceSize) const
-    {
-        if (!isFacialFeature())
-        {
-            return 1.0;
-        }
-
-        // getOriginalWindowSize is the size on which the cascade was trained, read from the XML file
-
-        if ((faceSize.width  / faceToFeatureRelationMin() >= getOriginalWindowSize().width)  &&
-            (faceSize.height / faceToFeatureRelationMin() >= getOriginalWindowSize().height))
-        {
-            return 1.0;
-        }
-
-        return (cv::max(double(getOriginalWindowSize().width)  * faceToFeatureRelationPresumed() / faceSize.width,
-                        double(getOriginalWindowSize().height) * faceToFeatureRelationPresumed() / faceSize.height));
-    }
-
-    bool lessThanWindowSize(const cv::Size& size) const
-    {
-        return ((size.width  < getOriginalWindowSize().width)   ||
-                (size.height < getOriginalWindowSize().height));
-    }
-
-public:
-
-    bool   primaryCascade;
-    bool   verifyingCascade;
-
-    /**
-     * Facial features have a region of interest, e.g., the left eye is typically
-     * located in the left upper region of the presumed face.
-     * For frontal face cascades, this is 0,0 - 1x1.
-     */
-    QRectF roi;
-};
-
-// ---------------------------------------------------------------------------------------------------
-
-class Q_DECL_HIDDEN OpenCVFaceDetector::Private
-{
-
-public:
-
-    explicit Private()
-    {
-        maxDistance              = 0;
-        minDuplicates            = 0;
-        speedVsAccuracy          = 0.8;
-        sensitivityVsSpecificity = 0.8;
-    }
-
-public:
-
-    QList<Cascade>         cascades;
-
-    int                    maxDistance;    // Maximum distance between two faces to call them unique
-    int                    minDuplicates;  // Minimum number of duplicates required to qualify as a genuine face
-
-    // Tunable values, for accuracy
-    DetectObjectParameters primaryParams;
-    DetectObjectParameters verifyingParams;
-
-    double                 speedVsAccuracy;
-    double                 sensitivityVsSpecificity;
-
-    QMutex                 mutex;
-};
-
-// --------------------------------------------------------------------------------
 
 OpenCVFaceDetector::OpenCVFaceDetector(const QStringList& cascadeDirs)
     : d(new Private)
@@ -515,7 +260,7 @@ QList<QRect> OpenCVFaceDetector::cascadeResult(const cv::Mat& inputImage,
 
     for (std::vector<cv::Rect>::const_iterator it = faces.begin() ; it != faces.end() ; ++it)
     {
-        results << toQRect(*it);
+        results << s_opencvFaceDetectorToQRect(*it);
     }
 
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "detectMultiScale gave" << results;
@@ -544,7 +289,7 @@ bool OpenCVFaceDetector::verifyFace(const cv::Mat& inputImage, const QRect& face
     }
 
     // Face coordinates. Add a certain margin for the other frontal cascades.
-    const cv::Rect faceRect = fromQRect(face);
+    const cv::Rect faceRect = s_opencvFaceDetectorFromQRect(face);
     const cv::Size faceSize = cv::Size(face.width(), face.height());
     const int margin        = cv::min(40, cv::max(faceRect.width, faceRect.height));
 
@@ -579,7 +324,9 @@ bool OpenCVFaceDetector::verifyFace(const cv::Mat& inputImage, const QRect& face
 
                 cv::Rect roi      = d->cascades[i].faceROI(faceRect);
                 cv::Mat  feature  = inputImage(roi);
-                qCDebug(DIGIKAM_FACESENGINE_LOG) << "feature" << d->cascades[i].roi << toQRect(faceRect) << toQRect(roi);
+                qCDebug(DIGIKAM_FACESENGINE_LOG) << "feature" << d->cascades[i].roi
+                                                 << s_opencvFaceDetectorToQRect(faceRect)
+                                                 << s_opencvFaceDetectorToQRect(roi);
                 foundFaces        = cascadeResult(feature, d->cascades[i], d->verifyingParams);
 
                 if (!foundFaces.isEmpty())
@@ -728,7 +475,7 @@ QList<QRect> OpenCVFaceDetector::mergeFaces(const cv::Mat& inputImage, const QLi
         {
             ++ctr;
 
-            if (distanceOfCenters(*first, *second) < d->maxDistance)
+            if (s_opencvFaceDetectorDistanceOfCenters(*first, *second) < d->maxDistance)
             {
                 second = results.erase(second);
                 ++duplicates;

@@ -25,6 +25,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR}/..
 
                     ${CMAKE_CURRENT_SOURCE_DIR}/detection
                     ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-dnn
+                    ${CMAKE_CURRENT_SOURCE_DIR}/detection/opencv-face
 
                     ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-face
                     ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph
@@ -45,9 +46,11 @@ set(facesengine_LIB_SRCS common/identity.cpp
                          common/opencvmatdata.cpp
 
                          detection/facedetector.cpp
-                         detection/opencvfacedetector.cpp
-                         detection/opencvdnnfacedetector.cpp
 
+                         detection/opencv-face/opencvfacedetector.cpp
+                         detection/opencv-face/opencvfacedetector_p.cpp
+
+                         detection/opencv-dnn/opencvdnnfacedetector.cpp
                          detection/opencv-dnn/dnnfacedetectorssd.cpp
                          detection/opencv-dnn/dnnfacedetectoryolo.cpp
                          detection/opencv-dnn/dnnfacedetectorbase.cpp
