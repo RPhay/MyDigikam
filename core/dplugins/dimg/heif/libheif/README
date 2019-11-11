@@ -1,4 +1,4 @@
 https://github.com/strukturag/libheif
-branch "iptc"
+tag v1.6.0
 *fuzzer* files removed
 heif_emscripten.h removed
