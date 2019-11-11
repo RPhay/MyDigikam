@@ -98,6 +98,7 @@ void AlbumManager::slotDatesJobResult()
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to list dates";
 
         // Pop-up a message about the error.
+        
         DNotificationWrapper(QString(), d->dateListJob->errorsList().first(),
                              nullptr, i18n("digiKam"));
     }
@@ -115,6 +116,7 @@ void AlbumManager::slotDatesJobData(const QMap<QDateTime, int>& datesStatMap)
     }
 
     // insert all the DAlbums into a qmap for quick access
+
     QMap<QDate, DAlbum*> mAlbumMap;
     QMap<int, DAlbum*>   yAlbumMap;
 
@@ -138,34 +140,35 @@ void AlbumManager::slotDatesJobData(const QMap<QDateTime, int>& datesStatMap)
 
     QMap<YearMonth, int> yearMonthMap;
 
-    for (QMap<QDateTime, int>::const_iterator it = datesStatMap.constBegin() ;
-         it != datesStatMap.constEnd() ; ++it)
+    for (QMap<QDateTime, int>::const_iterator it3 = datesStatMap.constBegin() ;
+         it3 != datesStatMap.constEnd() ; ++it3)
     {
-        YearMonth yearMonth = YearMonth(it.key().date().year(), it.key().date().month());
+        YearMonth yearMonth = YearMonth(it3.key().date().year(), it3.key().date().month());
 
         QMap<YearMonth, int>::iterator it2 = yearMonthMap.find(yearMonth);
 
         if (it2 == yearMonthMap.end())
         {
-            yearMonthMap.insert(yearMonth, *it);
+            yearMonthMap.insert(yearMonth, *it3);
         }
         else
         {
-            *it2 += *it;
+            *it2 += *it3;
         }
     }
 
     int year, month;
 
-    for (QMap<YearMonth, int>::const_iterator iter = yearMonthMap.constBegin() ;
-         iter != yearMonthMap.constEnd() ; ++iter)
+    for (QMap<YearMonth, int>::const_iterator it4 = yearMonthMap.constBegin() ;
+         it4 != yearMonthMap.constEnd() ; ++it4)
     {
-        year  = iter.key().first;
-        month = iter.key().second;
+        year  = it4.key().first;
+        month = it4.key().second;
 
         QDate md(year, month, 1);
 
         // Do we already have this Month album
+
         if (mAlbumMap.contains(md))
         {
             // already there. remove Month album from map
@@ -181,12 +184,13 @@ void AlbumManager::slotDatesJobData(const QMap<QDateTime, int>& datesStatMap)
         }
 
         // Check if Year Album already exist.
-        DAlbum* yAlbum = nullptr;
-        AlbumIterator it(d->rootDAlbum);
 
-        while (it.current())
+        DAlbum* yAlbum = nullptr;
+        AlbumIterator it5(d->rootDAlbum);
+
+        while (it5.current())
         {
-            DAlbum* const a = (DAlbum*)(*it);
+            DAlbum* const a = (DAlbum*)(*it5);
 
             if (a->date() == QDate(year, 1, 1) && a->range() == DAlbum::Year)
             {
@@ -194,10 +198,11 @@ void AlbumManager::slotDatesJobData(const QMap<QDateTime, int>& datesStatMap)
                 break;
             }
 
-            ++it;
+            ++it5;
         }
 
         // If no, create Year album.
+
         if (!yAlbum)
         {
             yAlbum = new DAlbum(QDate(year, 1, 1), false, DAlbum::Year);
@@ -220,10 +225,11 @@ void AlbumManager::slotDatesJobData(const QMap<QDateTime, int>& datesStatMap)
 
     // Now the items contained in the maps are the ones which
     // have been deleted.
-    for (QMap<QDate, DAlbum*>::const_iterator it = mAlbumMap.constBegin() ;
-         it != mAlbumMap.constEnd() ; ++it)
+
+    for (QMap<QDate, DAlbum*>::const_iterator it6 = mAlbumMap.constBegin() ;
+         it6 != mAlbumMap.constEnd() ; ++it6)
     {
-        DAlbum* const album = it.value();
+        DAlbum* const album = it6.value();
         emit signalAlbumAboutToBeDeleted(album);
         d->allAlbumsIdHash.remove(album->globalID());
 
@@ -235,10 +241,10 @@ void AlbumManager::slotDatesJobData(const QMap<QDateTime, int>& datesStatMap)
         emit signalAlbumHasBeenDeleted(deletedAlbum);
     }
 
-    for (QMap<int, DAlbum*>::const_iterator it = yAlbumMap.constBegin() ;
-         it != yAlbumMap.constEnd() ; ++it)
+    for (QMap<int, DAlbum*>::const_iterator it7 = yAlbumMap.constBegin() ;
+         it7 != yAlbumMap.constEnd() ; ++it7)
     {
-        DAlbum* const album = it.value();
+        DAlbum* const album = it7.value();
         emit signalAlbumAboutToBeDeleted(album);
         d->allAlbumsIdHash.remove(album->globalID());
 
@@ -259,6 +265,7 @@ void AlbumManager::slotDatesJobData(const QMap<QDateTime, int>& datesStatMap)
 void AlbumManager::scanDAlbumsScheduled()
 {
     // Avoid a cycle of killing a job which takes longer than the timer interval
+
     if (d->dateListJob)
     {
         d->scanDAlbumsTimer->start();
