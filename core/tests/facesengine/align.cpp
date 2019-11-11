@@ -73,10 +73,10 @@ class Q_DECL_HIDDEN OpenCVSideBySideDisplay
 public:
 
     OpenCVSideBySideDisplay(int rows, int uiSize = 200)
-        : uiSize(uiSize),
+        : bigImage(cv::Mat::zeros(uiSize*rows, 2*uiSize, CV_8UC3)),
+          uiSize(uiSize),
           currentRow(0)
     {
-        bigImage = cv::Mat::zeros(uiSize*rows, 2*uiSize, CV_8UC3);
     }
 
     void add(const cv::Mat& left, const cv::Mat& right)
@@ -86,8 +86,9 @@ public:
         size.scale(uiSize, uiSize, Qt::KeepAspectRatio);
         cv::Size scaleSize(size.height(), size.width());
 
-        const int top = currentRow*uiSize;
-        cv::Mat scaledLeft, scaledRight;
+        const int top = currentRow * uiSize;
+        cv::Mat scaledLeft;
+        cv::Mat scaledRight;
         cv::resize(left,  scaledLeft,  scaleSize);
         cv::resize(right, scaledRight, scaleSize);
 
@@ -101,10 +102,10 @@ public:
             cv::cvtColor(scaledRight, scaledRight, CV_GRAY2BGR);
         }
 
-        scaledLeft.copyTo(bigImage.colRange(0, scaledLeft.cols).rowRange(top, top+scaledLeft.rows));
-        scaledRight.copyTo(bigImage.colRange(uiSize, uiSize+scaledRight.cols).rowRange(top, top+scaledRight.rows));
+        scaledLeft.copyTo(bigImage.colRange(0, scaledLeft.cols).rowRange(top, top + scaledLeft.rows));
+        scaledRight.copyTo(bigImage.colRange(uiSize, uiSize + scaledRight.cols).rowRange(top, top + scaledRight.rows));
 
-        currentRow++;
+        ++currentRow;
     }
 
     void show()
