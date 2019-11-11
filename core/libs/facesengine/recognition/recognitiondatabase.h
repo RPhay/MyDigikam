@@ -83,17 +83,17 @@ public:
     {
         /**
          * Local Binary Patterns Histograms
-         * http://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html#local-binary-patterns-histograms
+         * https://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html#local-binary-patterns-histograms
          */
         LBP,
 
         /**
-         * http://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html#eigenfaces
+         * https://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html#eigenfaces
          */
         EigenFace,
 
         /**
-         * http://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html#Fisherfaces
+         * https://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html#Fisherfaces
          * NOTE: cannot be used in production as model registration in database is not implemented.
          *       See OpenCVFISHERFaceRecognizer::train() for details.
          */

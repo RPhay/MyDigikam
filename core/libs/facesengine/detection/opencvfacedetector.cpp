@@ -6,7 +6,7 @@
  * Description : Class to perform faces detection.
  *               Modesto Castrillón, Oscar Déniz, Daniel Hernández, Javier Lorenzo
  *               A comparison of face and facial feature detectors based on the
- *               http://en.wikipedia.org/wiki/Viola-Jones_object_detection_framework
+ *               https://en.wikipedia.org/wiki/Viola-Jones_object_detection_framework
  *               Machine Vision and Applications, 01/2008
  *               DOI 10.1007/s00138-010-0250-7
  *

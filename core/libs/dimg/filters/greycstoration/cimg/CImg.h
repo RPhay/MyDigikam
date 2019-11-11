@@ -244,7 +244,7 @@ extern "C" {
 #endif
 
 // LibJPEG configuration.
-// (http://en.wikipedia.org/wiki/Libjpeg)
+// (https://en.wikipedia.org/wiki/Libjpeg)
 //
 // Define 'cimg_use_jpeg' to enable LibJPEG support.
 //

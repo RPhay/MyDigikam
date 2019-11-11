@@ -186,7 +186,7 @@ WBSettings::WBSettings(QWidget* const parent)
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QGridLayout* const grid = new QGridLayout(parent);
-    d->temperatureLabel     = new QLabel(i18n("<a href='http://en.wikipedia.org/wiki/Color_temperature'>"
+    d->temperatureLabel     = new QLabel(i18n("<a href='https://en.wikipedia.org/wiki/Color_temperature'>"
                                               "Color Temperature</a> (K): "));
     d->temperatureLabel->setOpenExternalLinks(true);
 
@@ -285,7 +285,7 @@ WBSettings::WBSettings(QWidget* const parent)
 
     // -------------------------------------------------------------
 
-    d->exposureLabel = new QLabel(i18n("<a href='http://en.wikipedia.org/wiki/Exposure_value'>"
+    d->exposureLabel = new QLabel(i18n("<a href='https://en.wikipedia.org/wiki/Exposure_value'>"
                                        "Exposure Compensation</a> (E.V): "));
     d->exposureLabel->setOpenExternalLinks(true);
 

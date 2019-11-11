@@ -70,7 +70,7 @@ ExpoBlendingIntroPage::ExpoBlendingIntroPage(ExpoBlendingManager* const mngr, QW
     title->setText(i18n("<qt>"
                         "<p><h1><b>Welcome to Stacked Images Tool</b></h1></p>"
                         "<p>This tool fuses bracketed images with different exposure to make pseudo "
-                        "<a href='http://en.wikipedia.org/wiki/High_dynamic_range_imaging'>HDR image</a>.</p>"
+                        "<a href='https://en.wikipedia.org/wiki/High_dynamic_range_imaging'>HDR image</a>.</p>"
                         "<p>It can also be used to <a href='https://en.wikipedia.org/wiki/Focus_stacking'>merge focus bracketed stack</a> "
                         "to get a single image with increased depth of field.</p>"
                         "<p>This assistant will help you to configure how to import images before "
@@ -78,7 +78,7 @@ ExpoBlendingIntroPage::ExpoBlendingIntroPage(ExpoBlendingManager* const mngr, QW
                         "<p>Bracketed images must be taken with the same camera, "
                         "in the same conditions, and if possible using a tripod.</p>"
                         "<p>For more information, please take a look at "
-                        "<a href='http://en.wikipedia.org/wiki/Bracketing'>this page</a></p>"
+                        "<a href='https://en.wikipedia.org/wiki/Bracketing'>this page</a></p>"
                         "</qt>"));
 
     QGroupBox* const binaryBox      = new QGroupBox(vbox);

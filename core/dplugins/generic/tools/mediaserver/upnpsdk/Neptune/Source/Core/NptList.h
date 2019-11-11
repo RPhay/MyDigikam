@@ -186,7 +186,7 @@ public:
     }
 
     // Merge sort algorithm
-    // http://en.wikipedia.org/wiki/Mergesort
+    // https://en.wikipedia.org/wiki/Mergesort
     template <typename X> 
     NPT_Result Sort(const X& function)
     {   

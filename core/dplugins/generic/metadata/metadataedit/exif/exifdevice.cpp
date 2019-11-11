@@ -157,7 +157,7 @@ EXIFDevice::EXIFDevice(QWidget* const parent)
                                        "take the picture."));
 
     QLabel* const warning = new QLabel(i18n("<b>Warning: EXIF <b><a href="
-                 "'http://en.wikipedia.org/wiki/Exchangeable_image_file_format#MakerNote_data'>"
+                 "'https://en.wikipedia.org/wiki/Exchangeable_image_file_format#MakerNote_data'>"
                  "Makernotes</a></b> can be unreadable if you set "
                  "wrong device manufacturer/model description.</b>"), this);
     warning->setOpenExternalLinks(true);
@@ -322,9 +322,9 @@ EXIFDevice::EXIFDevice(QWidget* const parent)
     // --------------------------------------------------------
 
     QLabel* const note = new QLabel(i18n("<b>Note: "
-                 "<b><a href='http://en.wikipedia.org/wiki/EXIF'>EXIF</a></b> "
+                 "<b><a href='https://en.wikipedia.org/wiki/EXIF'>EXIF</a></b> "
                  "text tags marked by (*) only support printable "
-                 "<b><a href='http://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
+                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
                  "characters.</b>"), this);
     note->setOpenExternalLinks(true);
     note->setWordWrap(true);

@@ -73,7 +73,7 @@ DNGConvertSettings::DNGConvertSettings(QWidget* const parent)
     d->dngSettings              = new DNGSettings(this);
 
     QLabel* const dngLinkLabel  = new QLabel(this);
-    dngLinkLabel->setText(i18n("<p><a href='http://en.wikipedia.org/wiki/Digital_Negative_(file_format)'>"
+    dngLinkLabel->setText(i18n("<p><a href='https://en.wikipedia.org/wiki/Digital_Negative_(file_format)'>"
                                "DNG container</a></p>"));
     dngLinkLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     dngLinkLabel->setOpenExternalLinks(true);

@@ -3,7 +3,7 @@
  * This file is a part of digiKam
  *
  * Date        : 2012-01-03
- * Description : http://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html#local-binary-patterns-histograms
+ * Description : https://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html#local-binary-patterns-histograms
  *               Ahonen T, Hadid A. and Pietikäinen M. "Face description with local binary
  *               patterns: Application to face recognition." IEEE Transactions on Pattern
  *               Analysis and Machine Intelligence, 28(12):2037-2041.

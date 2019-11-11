@@ -95,7 +95,7 @@ JPEGSettings::JPEGSettings(QWidget* const parent)
                                           "<p><b>Note: JPEG always uses lossy compression.</b></p>"));
 
     d->labelWarning = new QLabel(i18n("<font color='red'><i>"
-                                      "Warning: <a href='http://en.wikipedia.org/wiki/JPEG'>JPEG</a> is a "
+                                      "Warning: <a href='https://en.wikipedia.org/wiki/JPEG'>JPEG</a> is a "
                                       "lossy image compression format."
                                       "</i></font>"), this);
 

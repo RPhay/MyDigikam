@@ -196,23 +196,23 @@ private Q_SLOTS:
         page.setStarttimestamp(QDateTime::fromString(QStringLiteral("2010-11-25T16:14:51Z"), QStringLiteral("yyyy'-'MM'-'dd'T'hh':'mm':'ss'Z'")));
         page.setEditToken(QStringLiteral("+\\"));
         page.setTalkid(5477418);
-        page.setFullurl(QUrl(QStringLiteral("http://en.wikipedia.org/wiki/API")));
-        page.setEditurl(QUrl(QStringLiteral("http://en.wikipedia.org/w/index.php?title=API&action=edit")));
+        page.setFullurl(QUrl(QStringLiteral("https://en.wikipedia.org/wiki/API")));
+        page.setEditurl(QUrl(QStringLiteral("https://en.wikipedia.org/w/index.php?title=API&action=edit")));
         page.setReadable(QString());
         page.setPreload(QString());
 
         QTest::newRow("No protection")
-                << QStringLiteral("<api><query><pages><page pageid=\"27697087\" ns=\"0\" title=\"API\" touched=\"2010-11-25T13:59:03Z\" lastrevid=\"367741756\" counter=\"0\" length=\"70\" redirect=\"\" starttimestamp=\"2010-11-25T16:14:51Z\" edittoken=\"+\\\" talkid=\"5477418\" fullurl=\"http://en.wikipedia.org/wiki/API\" editurl=\"http://en.wikipedia.org/w/index.php?title=API&action=edit\" ><protection /></page></pages></query></api>")
+                << QStringLiteral("<api><query><pages><page pageid=\"27697087\" ns=\"0\" title=\"API\" touched=\"2010-11-25T13:59:03Z\" lastrevid=\"367741756\" counter=\"0\" length=\"70\" redirect=\"\" starttimestamp=\"2010-11-25T16:14:51Z\" edittoken=\"+\\\" talkid=\"5477418\" fullurl=\"https://en.wikipedia.org/wiki/API\" editurl=\"https://en.wikipedia.org/w/index.php?title=API&action=edit\" ><protection /></page></pages></query></api>")
                 << page
                 << QVector<Protection>();
 
         QTest::newRow("One pages and one protection")
-                << QStringLiteral("<api><query><pages><page pageid=\"27697087\" ns=\"0\" title=\"API\" touched=\"2010-11-25T13:59:03Z\" lastrevid=\"367741756\" counter=\"0\" length=\"70\" redirect=\"\" starttimestamp=\"2010-11-25T16:14:51Z\" edittoken=\"+\\\" talkid=\"5477418\" fullurl=\"http://en.wikipedia.org/wiki/API\" editurl=\"http://en.wikipedia.org/w/index.php?title=API&action=edit\" ><protection><pr type=\"edit\" level=\"sysop\" expiry=\"infinity\"/></protection></page></pages></query></api>")
+                << QStringLiteral("<api><query><pages><page pageid=\"27697087\" ns=\"0\" title=\"API\" touched=\"2010-11-25T13:59:03Z\" lastrevid=\"367741756\" counter=\"0\" length=\"70\" redirect=\"\" starttimestamp=\"2010-11-25T16:14:51Z\" edittoken=\"+\\\" talkid=\"5477418\" fullurl=\"https://en.wikipedia.org/wiki/API\" editurl=\"https://en.wikipedia.org/w/index.php?title=API&action=edit\" ><protection><pr type=\"edit\" level=\"sysop\" expiry=\"infinity\"/></protection></page></pages></query></api>")
                 << page
                 << (QVector<Protection>() << pr1);
 
         QTest::newRow("One pages and two protection")
-                << QStringLiteral("<api><query><pages><page pageid=\"27697087\" ns=\"0\" title=\"API\" touched=\"2010-11-25T13:59:03Z\" lastrevid=\"367741756\" counter=\"0\" length=\"70\" redirect=\"\" starttimestamp=\"2010-11-25T16:14:51Z\" edittoken=\"+\\\" talkid=\"5477418\" fullurl=\"http://en.wikipedia.org/wiki/API\" editurl=\"http://en.wikipedia.org/w/index.php?title=API&action=edit\" ><protection><pr type=\"edit\" level=\"sysop\" expiry=\"infinity\"/><pr type=\"move\" level=\"sysop\" expiry=\"infinity\"/></protection></page></pages></query></api>")
+                << QStringLiteral("<api><query><pages><page pageid=\"27697087\" ns=\"0\" title=\"API\" touched=\"2010-11-25T13:59:03Z\" lastrevid=\"367741756\" counter=\"0\" length=\"70\" redirect=\"\" starttimestamp=\"2010-11-25T16:14:51Z\" edittoken=\"+\\\" talkid=\"5477418\" fullurl=\"https://en.wikipedia.org/wiki/API\" editurl=\"https://en.wikipedia.org/w/index.php?title=API&action=edit\" ><protection><pr type=\"edit\" level=\"sysop\" expiry=\"infinity\"/><pr type=\"move\" level=\"sysop\" expiry=\"infinity\"/></protection></page></pages></query></api>")
                 << page
                 << (QVector<Protection>() << pr1 << pr2);
     }

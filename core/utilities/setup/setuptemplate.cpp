@@ -104,10 +104,10 @@ SetupTemplate::SetupTemplate(QWidget* const parent)
     // --------------------------------------------------------
 
     QLabel* const note = new QLabel(i18n("<b>Note: These information are used to set "
-                                   "<b><a href='http://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a></b> "
-                                   "and <b><a href='http://en.wikipedia.org/wiki/IPTC'>IPTC</a></b> tag contents. "
+                                   "<b><a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a></b> "
+                                   "and <b><a href='https://en.wikipedia.org/wiki/IPTC'>IPTC</a></b> tag contents. "
                                    "There is no limitation with XMP, but note that IPTC text tags "
-                                   "only support the printable <b><a href='http://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
+                                   "only support the printable <b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
                                    "character set, and tag sizes are limited. "
                                    "Use contextual help for details.</b>"), panel);
     note->setOpenExternalLinks(true);

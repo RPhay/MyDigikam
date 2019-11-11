@@ -92,9 +92,9 @@ IPTCSubjects::IPTCSubjects(QWidget* const parent)
                                     "This field is limited to 64 ASCII characters."));
 
     m_note->setText(i18n("<b>Note: "
-                 "<b><a href='http://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
+                 "<b><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a></b> "
                  "text tags only support the printable "
-                 "<b><a href='http://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
+                 "<b><a href='https://en.wikipedia.org/wiki/Ascii'>ASCII</a></b> "
                  "characters and limit string sizes. "
                  "Use contextual help for details.</b>"));
 

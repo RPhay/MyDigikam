@@ -313,16 +313,16 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     explanation->setWordWrap(true);
     QString txt;
 
-    txt.append(i18n("<p><a href='http://en.wikipedia.org/wiki/Exif'>EXIF</a> - "
+    txt.append(i18n("<p><a href='https://en.wikipedia.org/wiki/Exif'>EXIF</a> - "
                     "a standard used by most digital cameras today to store technical "
                     "information (like aperture and shutter speed) about an image.</p>"));
 
-    txt.append(i18n("<p><a href='http://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> - "
+    txt.append(i18n("<p><a href='https://en.wikipedia.org/wiki/IPTC_Information_Interchange_Model'>IPTC</a> - "
                     "an older standard used in digital photography to store "
                     "photographer information in images.</p>"));
 
     if (MetaEngine::supportXmp())
-        txt.append(i18n("<p><a href='http://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> - "
+        txt.append(i18n("<p><a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> - "
                         "a new standard used in digital photography, designed to replace IPTC.</p>"));
 
     explanation->setText(txt);

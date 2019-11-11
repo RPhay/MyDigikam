@@ -164,7 +164,7 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     jpeg_set_defaults(&cinfo);
 
     // bug #149578: set horizontal and vertical chroma subsampling factor to encoder.
-    // See this page for details: http://en.wikipedia.org/wiki/Chroma_subsampling
+    // See this page for details: https://en.wikipedia.org/wiki/Chroma_subsampling
 
     switch (subsampling)
     {

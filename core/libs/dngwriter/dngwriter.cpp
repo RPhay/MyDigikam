@@ -478,13 +478,13 @@ int DNGWriter::convert()
         {
             case Private::Standard:
                 // Standard bayer mosaicing. All work fine there.
-                // Bayer CCD mask: http://en.wikipedia.org/wiki/Bayer_filter
+                // Bayer CCD mask: https://en.wikipedia.org/wiki/Bayer_filter
                 negative->SetBayerMosaic(filter);
                 break;
             case Private::Fuji:
                 // TODO: Fuji is special case. Need to setup different bayer rules here.
                 // It do not work in all settings. Need indeep investiguations.
-                // Fuji superCCD: http://en.wikipedia.org/wiki/Super_CCD
+                // Fuji superCCD: https://en.wikipedia.org/wiki/Super_CCD
                 negative->SetFujiMosaic(filter);
                 break;
             case Private::FourColor:

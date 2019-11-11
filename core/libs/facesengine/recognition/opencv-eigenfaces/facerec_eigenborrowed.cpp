@@ -4,7 +4,7 @@
  *
  * Date        : 2017-05-22
  * Description : Face Recognition based on Eigenfaces
- *               http://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html#eigenfaces
+ *               https://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html#eigenfaces
  *               Turk, Matthew A and Pentland, Alex P. "Face recognition using eigenfaces."
  *               Computer Vision and Pattern Recognition, 1991. Proceedings {CVPR'91.},
  *               {IEEE} Computer Society Conference on 1991.

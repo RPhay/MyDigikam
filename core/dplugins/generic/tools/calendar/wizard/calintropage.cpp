@@ -61,8 +61,8 @@ CalIntroPage::CalIntroPage(QWizard* const dialog, const QString& title)
 
     str.append(i18n("<p>This tool will also permit to set specific dates "
                     "on your calendar using external data event files as "
-                    "<a href='http://en.wikipedia.org/wiki/VCalendar'>vCalendar</a>, and "
-                    "<a href='http://en.wikipedia.org/wiki/Icalendar'>iCalendar</a> formats.</p>"));
+                    "<a href='https://en.wikipedia.org/wiki/VCalendar'>vCalendar</a>, and "
+                    "<a href='https://en.wikipedia.org/wiki/Icalendar'>iCalendar</a> formats.</p>"));
 
 #endif
 

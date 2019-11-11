@@ -12,7 +12,7 @@
  *
  * Original AntiVignettingFilter algorithm copyrighted 2003 by
  * John Walker from 'pnmctrfilt' implementation. See
- * http://www.fourmilab.ch/netpbm/pnmctrfilt for more
+ * https://www.fourmilab.ch/netpbm/pnmctrfilt for more
  * information.
  *
  * This program is free software; you can redistribute it
