@@ -10,8 +10,8 @@ SET(PREFIX_ext_jasper "${EXTPREFIX}")
 
 ExternalProject_Add(ext_jasper
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-    URL https://github.com/mdadams/jasper/archive/version-2.0.14.tar.gz
-    URL_MD5 9ef0e943d5b2c364ae84974a753841b8
+    URL https://github.com/mdadams/jasper/archive/version-2.0.16.tar.gz
+    URL_MD5 6291678a9481c41f18679ccc22afac82
 
     INSTALL_DIR ${PREFIX_ext_jasper}
 
