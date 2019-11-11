@@ -90,7 +90,7 @@ private:
 
 private Q_SLOTS:
 
-    void slotSetupChanged() override;
+    void slotSetupChanged()                                                override;
 
 private:
 

@@ -57,7 +57,7 @@ void removeAnyInInterval(Container& list, const T& begin, const T& end)
 {
     typename Container::iterator it;
 
-    for (it = list.begin(); it != list.end();)
+    for (it = list.begin() ; it != list.end() ; )
     {
         if ((*it) >= begin && (*it) <= end)
         {
@@ -75,7 +75,8 @@ class Q_DECL_HIDDEN LightTableItemListModel : public ItemListModel
 public:
 
     explicit LightTableItemListModel(QObject* const parent = nullptr)
-        : ItemListModel(parent), m_exclusive(false)
+        : ItemListModel(parent),
+          m_exclusive(false)
     {
     }
 
@@ -168,7 +169,7 @@ public:
         dragDropHandler  = nullptr;
     }
 
-    bool                      navigateByPair;
+    bool                     navigateByPair;
 
     LightTableItemListModel* imageInfoModel;
     ItemFilterModel*         imageFilterModel;
@@ -180,7 +181,9 @@ LightTableThumbBar::LightTableThumbBar(QWidget* const parent)
       d(new Private)
 {
     d->imageInfoModel   = new LightTableItemListModel(this);
+
     // only one is left, only one is right at a time
+
     d->imageInfoModel->setExclusiveLightTableState(true);
 
     d->imageFilterModel = new ItemFilterModel(this);
@@ -194,7 +197,7 @@ LightTableThumbBar::LightTableThumbBar(QWidget* const parent)
     d->imageFilterModel->setSortRole((ItemSortSettings::SortRole)ApplicationSettings::instance()->getImageSortOrder());
     d->imageFilterModel->setSortOrder((ItemSortSettings::SortOrder)ApplicationSettings::instance()->getImageSorting());
     d->imageFilterModel->setAllGroupsOpen(true); // disable filtering out by group, see bug #308948
-    d->imageFilterModel->sort(0); // an initial sorting is necessary
+    d->imageFilterModel->sort(0);                // an initial sorting is necessary
 
     d->dragDropHandler  = new ItemDragDropHandler(d->imageInfoModel);
     d->dragDropHandler->setReadOnlyDrop(true);
@@ -301,7 +304,7 @@ void LightTableThumbBar::showContextMenuOnInfo(QContextMenuEvent* e, const ItemI
 
     if (choice)
     {
-        if (choice == leftPanelAction)
+        if      (choice == leftPanelAction)
         {
             emit signalSetItemOnLeftPanel(info);
         }
@@ -398,7 +401,9 @@ void LightTableThumbBar::toggleTag(const ItemInfo& info, int tagID)
 void LightTableThumbBar::setOnLeftPanel(const ItemInfo& info)
 {
     QModelIndex index = d->imageInfoModel->indexForItemInfo(info);
+
     // model has exclusiveLightTableState, so any previous index will be reset
+
     d->imageInfoModel->setData(index, true, ItemModel::LTLeftPanelRole);
     viewport()->update();
 }
@@ -406,7 +411,9 @@ void LightTableThumbBar::setOnLeftPanel(const ItemInfo& info)
 void LightTableThumbBar::setOnRightPanel(const ItemInfo& info)
 {
     QModelIndex index = d->imageInfoModel->indexForItemInfo(info);
+
     // model has exclusiveLightTableState, so any previous index will be reset
+
     d->imageInfoModel->setData(index, true, ItemModel::LTRightPanelRole);
     viewport()->update();
 }
@@ -466,6 +473,7 @@ void LightTableThumbBar::paintEvent(QPaintEvent* e)
                    Qt::AlignCenter | Qt::TextWordWrap,
                    i18n("Drag and drop images here"));
         p.end();
+
         return;
     }
 
