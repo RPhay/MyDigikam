@@ -3,7 +3,7 @@
 # ============================================================
 #
 # This file is a part of digiKam project
-# http://www.digikam.org
+# https://www.digikam.org
 #
 # Date        : 2019-08-11
 # Description : A script to perform face recognition with OpenFace collection
