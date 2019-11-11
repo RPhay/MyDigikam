@@ -22,6 +22,7 @@ set(libalbum_SRCS
     treeview/abstractcheckablealbumtreeview.cpp
     treeview/albumtreeview.cpp
     treeview/labelstreeview.cpp
+    treeview/albumlabelssearchhandler.cpp
     treeview/tagtreeview.cpp
     treeview/searchtreeview.cpp
     treeview/datetreeview.cpp

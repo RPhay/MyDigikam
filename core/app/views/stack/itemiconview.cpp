@@ -92,6 +92,7 @@
 #include "trashview.h"
 #include "versionmanagersettings.h"
 #include "contextmenuhelper.h"
+#include "albumlabelssearchhandler.h"
 
 #ifdef HAVE_MEDIAPLAYER
 #   include "mediaplayerview.h"

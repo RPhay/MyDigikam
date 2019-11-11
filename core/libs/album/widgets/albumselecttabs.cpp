@@ -51,6 +51,7 @@
 #include "abstractalbummodel.h"
 #include "searchtextbar.h"
 #include "albummanager.h"
+#include "albumlabelssearchhandler.h"
 
 namespace Digikam
 {
