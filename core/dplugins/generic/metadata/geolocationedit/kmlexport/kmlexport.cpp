@@ -266,7 +266,7 @@ void KmlExport::generateImagesthumb(const QUrl& imageURL, QDomElement& kmlAlbum)
         // we try to load exif value if any otherwise, try the application db
 
         /** we need to take the DateTimeOriginal
-          * if we refer to http://www.exif.org/Exif2-2.PDF
+          * if we refer to https://www.exif.org/Exif2-2.PDF
           * (standard)DateTime: is The date and time of image creation. In this standard it is the date and time the file was changed
           * DateTimeOriginal: The date and time when the original image data was generated.
           *                   For a DSC the date and time the picture was taken are recorded.

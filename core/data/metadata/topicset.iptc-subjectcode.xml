@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <NewsML>
-	<Catalog Href="http://www.iptc.org/IPTC/catalog/catalog.IptcMasterCatalog.xml"/>
+	<Catalog Href="https://www.iptc.org/IPTC/catalog/catalog.IptcMasterCatalog.xml"/>
 	<NewsEnvelope>
 		<DateAndTime>20080915T120000+0000</DateAndTime>
 	</NewsEnvelope>

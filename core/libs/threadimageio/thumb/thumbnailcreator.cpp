@@ -306,7 +306,7 @@ QImage ThumbnailCreator::scaleForStorage(const QImage& qimage) const
     {
 /*      Cheat scaling is disabled because of quality problems - see bug #224999
 
-        // Perform cheat scaling (http://labs.trolltech.com/blogs/2009/01/26/creating-thumbnail-preview)
+        // Perform cheat scaling (https://www.qtcentre.org/threads/28415-Creating-thumbnails-efficiently)
         int cheatSize = maxSize - (3*(maxSize - d->storageSize()) / 4);
         qimage        = qimage.scaled(cheatSize, cheatSize, Qt::KeepAspectRatio, Qt::FastTransformation);
 */

@@ -5,11 +5,11 @@
  *
  * Date        : 2006-09-15
  * Description : Exiv2 library interface
- *               Exiv2: http://www.exiv2.org
- *               Exif : http://www.exif.org/Exif2-2.PDF
- *               Iptc : http://www.iptc.org/std/IIM/4.1/specification/IIMV4.1.pdf
- *               Xmp  : http://www.adobe.com/devnet/xmp/pdfs/xmp_specification.pdf
- *                      http://www.iptc.org/std/Iptc4xmpCore/1.0/specification/Iptc4xmpCore_1.0-spec-XMPSchema_8.pdf
+ *               Exiv2: https://www.exiv2.org
+ *               Exif : https://www.exif.org/Exif2-2.PDF
+ *               Iptc : https://www.iptc.org/std/IIM/4.1/specification/IIMV4.1.pdf
+ *               Xmp  : https://www.adobe.com/devnet/xmp/pdfs/xmp_specification.pdf
+ *                      https://www.iptc.org/std/Iptc4xmpCore/1.0/specification/Iptc4xmpCore_1.0-spec-XMPSchema_8.pdf
  *               Paper: http://www.metadataworkinggroup.com/pdf/mwg_guidance.pdf
  *
  * Copyright (C) 2006-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>

@@ -1209,7 +1209,7 @@ RDF_ParseTypeOtherPropertyElement ( XMP_Node * xmpParent, const XML_Node & xmlNo
 //		end-element()
 //
 //	<ns:Prop1/>  <!-- a simple property with an empty value -->
-//	<ns:Prop2 rdf:resource="http://www.adobe.com/"/> <!-- a URI value -->
+//	<ns:Prop2 rdf:resource="https://www.adobe.com/"/> <!-- a URI value -->
 //	<ns:Prop3 rdf:value="..." ns:Qual="..."/> <!-- a simple qualified property -->
 //	<ns:Prop4 ns:Field1="..." ns:Field2="..."/> <!-- a struct with simple fields -->
 //

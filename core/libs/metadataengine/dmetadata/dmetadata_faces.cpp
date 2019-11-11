@@ -91,7 +91,7 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString,QVariant>& faces) const
      */
 
     // Read face tags as saved by Picasa
-    // http://www.exiv2.org/tags-xmp-mwg-rs.html
+    // https://www.exiv2.org/tags-xmp-mwg-rs.html
     const QString mwg_personPathTemplate  = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList[%1]/mwg-rs:Name");
     const QString mwg_rect_x_PathTemplate = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList[%1]/mwg-rs:Area/stArea:x");
     const QString mwg_rect_y_PathTemplate = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList[%1]/mwg-rs:Area/stArea:y");

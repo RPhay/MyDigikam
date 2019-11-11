@@ -71,7 +71,7 @@ QValidator::State DatePickerValidator::validate(QString& text, int&) const
 // ------------------------------------------------------------------------------
 
 // Week numbers are defined by ISO 8601
-// See http://www.merlyn.demon.co.uk/weekinfo.htm for details
+// See https://en.wikipedia.org/wiki/Week#Week_numbering for details
 
 DatePickerYearSelector::DatePickerYearSelector(const QDate& currentDate, QWidget* const parent)
     : QLineEdit(parent),

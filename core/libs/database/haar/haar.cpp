@@ -8,7 +8,7 @@
  *               Wavelet algorithms, metric and query ideas based on the paper
  *               "Fast Multiresolution Image Querying"
  *               by Charles E. Jacobs, Adam Finkelstein and David H. Salesin.
- *               http://www.cs.washington.edu/homes/salesin/abstracts.html
+ *               https://www.cs.washington.edu/homes/salesin/abstracts.html
  *
  * Copyright (C) 2003      by Ricardo Niederberger Cabral <nieder at mail dot ru>
  * Copyright (C) 2008-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>

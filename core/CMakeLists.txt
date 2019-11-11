@@ -252,7 +252,7 @@ find_package(exiv2 REQUIRED)
 
 set_package_properties("exiv2"     PROPERTIES
                        DESCRIPTION "Required to build digiKam"
-                       URL         "http://www.exiv2.org"
+                       URL         "https://www.exiv2.org"
                        TYPE        RECOMMENDED
                        PURPOSE     "Library to manage image metadata"
 )
@@ -583,7 +583,7 @@ PRINT_COMPONENT_COMPILE_STATUS("QWebEngine Support"      ENABLE_QWEBENGINE)
 # ==============================================================================
 
 PRINT_LIBRARY_STATUS("libboostgraph" "http://www.boost.org/doc/libs"                    "(version >= 1.43.0)"                Boost_FOUND)
-PRINT_LIBRARY_STATUS("libexiv2"      "http://www.exiv2.org"                             "(version >= ${EXIV2_MIN_VERSION}"   exiv2_FOUND)
+PRINT_LIBRARY_STATUS("libexiv2"      "https://www.exiv2.org"                             "(version >= ${EXIV2_MIN_VERSION}"   exiv2_FOUND)
 PRINT_LIBRARY_STATUS("libexpat"      "http://expat.sourceforge.net"                     "(version >= 2.0.0)"                 EXPAT_FOUND)
 PRINT_LIBRARY_STATUS("libjpeg"       "http://www.ijg.org"                               "(version >= 6b)"                    JPEG_FOUND)
 PRINT_LIBRARY_STATUS("libkde"        "http://www.kde.org"                               "(version >= ${KF5_MIN_VERSION})"    KF5_FOUND)
