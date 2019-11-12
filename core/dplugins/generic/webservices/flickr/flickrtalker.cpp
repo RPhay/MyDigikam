@@ -261,10 +261,6 @@ void FlickrTalker::slotCatchUrl(const QUrl& url)
 
         d->o1->onVerificationReceived(queryParams);
     }
-    else
-    {
-        slotLinkingFailed();
-    }
 }
 
 void FlickrTalker::slotLinkingFailed()
@@ -326,9 +322,6 @@ void FlickrTalker::slotOpenBrowser(const QUrl& url)
 
     connect(d->view, SIGNAL(urlChanged(QUrl)),
             this, SLOT(slotCatchUrl(QUrl)));
-
-    //connect(d->view, SIGNAL(closeView(bool)),
-    //        this, SIGNAL(signalBusy(bool)));
 
 #ifdef HAVE_QWEBENGINE
     d->view->page()->profile()->cookieStore()->deleteAllCookies();
