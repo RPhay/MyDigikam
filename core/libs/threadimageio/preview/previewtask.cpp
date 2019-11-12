@@ -293,6 +293,7 @@ void PreviewLoadingTask::execute()
         {
             if (!m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
             {
+                LoadingCache::CacheLock lock(cache);
                 LoadSaveThread::exifRotate(&m_img, m_loadingDescription.filePath);
             }
 
@@ -396,6 +397,7 @@ void PreviewLoadingTask::execute()
 
         if (needExifRotate)
         {
+            LoadingCache::CacheLock lock(cache);
             LoadSaveThread::exifRotate(&m_img, m_loadingDescription.filePath);
         }
 
