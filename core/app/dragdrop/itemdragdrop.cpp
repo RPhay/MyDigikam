@@ -93,7 +93,10 @@ static QAction* addCancelAction(QMenu* const menu)
     return menu->addAction(QIcon::fromTheme(QLatin1String("dialog-cancel")), i18n("C&ancel"));
 }
 
-static DropAction copyOrMove(const QDropEvent* const e, QWidget* const view, bool allowMove = true, bool askForGrouping = false)
+static DropAction copyOrMove(const QDropEvent* const e,
+                             QWidget* const view,
+                             bool allowMove = true,
+                             bool askForGrouping = false)
 {
     if (e->keyboardModifiers() & Qt::ControlModifier)
     {
@@ -259,6 +262,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
 
     // Note that the drop event does not have to be in an ItemCategorizedView.
     // It can also be a TableViewTreeView.
+
     ItemCategorizedView* const view = qobject_cast<ItemCategorizedView*>(abstractview);
 
     if (view)
@@ -276,6 +280,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
     }
 
     // unless we are readonly anyway, we always want an album
+
     if (!m_readOnly && (!album || album->isRoot()))
     {
         return false;
@@ -315,6 +320,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
     if (DItemDrag::canDecode(e->mimeData()))
     {
         // Drag & drop inside of digiKam
+
         QList<QUrl>      urls;
         QList<int>       albumIDs;
         QList<qlonglong> imageIDs;
@@ -355,6 +361,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
         else if (palbum)
         {
             // Check if items dropped come from outside current album.
+
             QList<ItemInfo> extImages, intImages;
 
             if (imageIDs.isEmpty())
@@ -382,7 +389,9 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             bool mixed        = (!intImages.isEmpty() && !extImages.isEmpty());
 
             // Check for drop of image on itself
-            if (intImages.size() == 1 && intImages.first() == droppedOnInfo)
+
+            if ((intImages.size()  == 1) &&
+                (intImages.first() == droppedOnInfo))
             {
                 return false;
             }
@@ -397,6 +406,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             {
                 // Determine action. Show Menu only if there are any album-external items.
                 // Ask for grouping if dropped-on is valid (gives LinkAction)
+
                 action = copyOrMove(e, view, mixed || onlyExternal, !droppedOnInfo.isNull());
             }
 
@@ -551,8 +561,9 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
             return false;
         }
 
-        //Face tags
-        if (talbum->hasProperty(TagPropertyName::person()))
+        // Face tags
+
+        if (talbum && talbum->hasProperty(TagPropertyName::person()))
         {
             if (tagIDs.first() == FaceTags::unconfirmedPersonTagId() ||
                 tagIDs.first() == FaceTags::unknownPersonTagId()     ||
@@ -604,6 +615,7 @@ bool ItemDragDropHandler::dropEvent(QAbstractItemView* abstractview, const QDrop
         }
 
         // Standart tags
+
         QMenu popMenu(view);
 
         QList<ItemInfo> selectedInfos   = view->selectedItemInfosCurrentFirst();
