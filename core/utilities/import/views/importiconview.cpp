@@ -22,7 +22,6 @@
  *
  * ============================================================ */
 
-#include "importiconview.h"
 #include "importiconview_p.h"
 
 // Qt includes
@@ -191,9 +190,9 @@ void ImportIconView::rename()
 
     if (!newNamesList.isEmpty())
     {
-        QPointer<AdvancedRenameProcessDialog> dlg = new AdvancedRenameProcessDialog(newNamesList);
-        dlg->exec();
-        delete dlg;
+        QPointer<AdvancedRenameProcessDialog> dlg2 = new AdvancedRenameProcessDialog(newNamesList);
+        dlg2->exec();
+        delete dlg2;
     }
 }
 
