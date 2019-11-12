@@ -44,7 +44,6 @@
 #include "jpegutils.h"
 #include "freerotationfilter.h"
 #include "freerotationsettings.h"
-#include "loadsavethread.h"
 
 namespace DigikamBqmRotatePlugin
 {
@@ -218,7 +217,7 @@ bool Rotate::toolOperations()
     if (useExif)
     {
         // Exif rotation is currently not recorded to image history
-        image().rotateAndFlip(LoadSaveThread::exifOrientation(&image(), inputUrl().toLocalFile()));
+        image().rotateAndFlip(image().exifOrientation(inputUrl().toLocalFile()));
     }
     else
     {

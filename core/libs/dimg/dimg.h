@@ -210,7 +210,7 @@ public:
 
     bool        load(const QString& filePath, int loadFlags, DImgLoaderObserver* const observer,
                      const DRawDecoding& rawDecodingSettings=DRawDecoding());
-    
+
     bool        save(const QString& filePath, FORMAT frm, DImgLoaderObserver* const observer = nullptr);
     bool        save(const QString& filePath, const QString& format, DImgLoaderObserver* const observer = nullptr);
 
@@ -433,6 +433,12 @@ public:
      */
     void addCurrentUniqueImageId(const QString& uuid);
 
+    /**
+     * Retrieves the Exif orientation, either from the LoadSaveThread info provider if available,
+     * or from the metadata
+     */
+   int  exifOrientation(const QString& filePath);
+
     /** When loaded from a file, some attributes like format and isReadOnly still depend on this
         originating file. When saving in a different format to a different file,
         you may wish to switch these attributes to the new file.
@@ -571,6 +577,21 @@ public:
     /** Reverses the previous function.
      */
     bool       reverseRotateAndFlip(int orientation);
+
+    /**
+     * Utility to make sure that an image is rotated according to Exif tag.
+     * Detects if an image has previously already been rotated: You can
+     * call this method more than one time on the same image.
+     * Returns true if the image has actually been rotated or flipped.
+     * Returns false if a rotation was not needed.
+     */
+    bool       wasExifRotated();
+    bool       exifRotate(const QString& filePath);
+
+    /**
+     * Reverses the previous function
+     */
+    bool       reverseExifRotate(const QString& filePath);
 
     /** Rotates and/or flip the DImg according to the given transform action,
      *  which is a MetaEngineRotation::TransformAction.

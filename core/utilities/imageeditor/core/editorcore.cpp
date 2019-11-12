@@ -265,11 +265,9 @@ void EditorCore::slotImageLoaded(const LoadingDescription& loadingDescription, c
         else if (d->exifOrient)
         {
             // Do not rotate twice if already rotated, e.g. for full size preview.
-            QVariant attribute(d->image.attribute(QLatin1String("exifRotated")));
-
-            if (!attribute.isValid() || !attribute.toBool())
+            if (!d->image.wasExifRotated())
             {
-                d->rotatedOrFlipped = d->image.rotateAndFlip(LoadSaveThread::exifOrientation(&d->image, loadingDescription.filePath));
+                d->rotatedOrFlipped = d->image.rotateAndFlip(d->image.exifOrientation(loadingDescription.filePath));
             }
         }
 

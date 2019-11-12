@@ -293,8 +293,7 @@ void PreviewLoadingTask::execute()
         {
             if (!m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
             {
-                LoadingCache::CacheLock lock(cache);
-                LoadSaveThread::exifRotate(&m_img, m_loadingDescription.filePath);
+                m_img.exifRotate(m_loadingDescription.filePath);
             }
 
             {
@@ -369,7 +368,7 @@ void PreviewLoadingTask::execute()
         // We check before to find out if we need to provide a deep copy
 
         const bool needExifRotate        = MetaEngineSettings::instance()->settings().exifRotate &&
-                                           !LoadSaveThread::wasExifRotated(&m_img);
+                                           !m_img.wasExifRotated();
         const bool needImageScale        = needToScale();
         const bool needPostProcess       = needsPostProcessing();
         const bool needConvertToEightBit = m_loadingDescription.previewParameters.previewSettings.convertToEightBit;
@@ -397,8 +396,7 @@ void PreviewLoadingTask::execute()
 
         if (needExifRotate)
         {
-            LoadingCache::CacheLock lock(cache);
-            LoadSaveThread::exifRotate(&m_img, m_loadingDescription.filePath);
+           m_img.exifRotate(m_loadingDescription.filePath);
         }
 
         if (needPostProcess)

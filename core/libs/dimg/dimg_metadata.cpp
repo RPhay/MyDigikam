@@ -424,4 +424,14 @@ bool DImg::isAnimatedImage(const QString& filePath)
     return false;
 }
 
+int DImg::exifOrientation(const QString& filePath)
+{
+    QVariant attribute = m_priv->attributes.value(QLatin1String("fromRawEmbeddedPreview"));
+
+    return LoadSaveThread::exifOrientation(filePath,
+                                           DMetadata(getMetadata()),
+                                           (detectedFormat() == DImg::RAW),
+                                           (attribute.isValid() && attribute.toBool()));
+}
+
 } // namespace Digikam

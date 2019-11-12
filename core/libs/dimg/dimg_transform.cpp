@@ -543,4 +543,29 @@ bool DImg::transform(int transformAction)
     return true;
 }
 
+bool DImg::wasExifRotated()
+{
+    QVariant attribute(m_priv->attributes.value(QLatin1String("exifRotated")));
+    return (attribute.isValid() && attribute.toBool());
+}
+
+bool DImg::exifRotate(const QString& filePath)
+{
+    if (wasExifRotated())
+    {
+        return false;
+    }
+
+    // Rotate image based on metadata orientation information
+    bool rotatedOrFlipped = rotateAndFlip(exifOrientation(filePath));
+    m_priv->attributes.insert(QLatin1String("exifRotated"), true);
+    return rotatedOrFlipped;
+}
+
+bool DImg::reverseExifRotate(const QString& filePath)
+{
+    bool rotatedOrFlipped = reverseRotateAndFlip(exifOrientation(filePath));
+    return rotatedOrFlipped;
+}
+
 } // namespace Digikam
