@@ -33,7 +33,6 @@
 
 #include <QMap>
 #include <QString>
-#include <QByteArray>
 #include <QVariant>
 
 // Local includes

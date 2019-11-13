@@ -50,9 +50,8 @@ QByteArray DImg::getUniqueHash() const
 
     FileReadLocker lock(filePath);
 
-    QByteArray ba;
-    DMetadata metadata(getMetadata());
-    ba = metadata.getExifEncoded();
+    DMetadata meta(getMetadata());
+    QByteArray ba = meta.getExifEncoded();
 
     QByteArray hash = createUniqueHash(filePath, ba);
     const_cast<DImg*>(this)->setAttribute(QLatin1String("uniqueHash"), hash);
@@ -62,9 +61,8 @@ QByteArray DImg::getUniqueHash() const
 
 QByteArray DImg::getUniqueHash(const QString& filePath)
 {
-    QByteArray ba;
-    DMetadata metadata(filePath);
-    ba = metadata.getExifEncoded();
+    DMetadata meta(filePath);
+    QByteArray ba = meta.getExifEncoded();
 
     return createUniqueHash(filePath, ba);
 }
