@@ -4,7 +4,7 @@
  *
  * Date        : 2010-01-03
  * Description : Class to perform faces detection.
- *               Modesto Castrillón, Oscar Déniz, Daniel Hernández, Javier Lorenzo
+ *               Based on work from Modesto Castrillón, Oscar Déniz, Daniel Hernández, and Javier Lorenzo
  *               A comparison of face and facial feature detectors based on the
  *               https://en.wikipedia.org/wiki/Viola-Jones_object_detection_framework
  *               Machine Vision and Applications, 01/2008

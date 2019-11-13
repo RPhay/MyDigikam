@@ -4,6 +4,7 @@
  *
  * Date        : 2010-01-03
  * Description : Class to perform faces detection.
+ *               Based on work from Modesto Castrillón, Oscar Déniz, Daniel Hernández, and Javier Lorenzo
  *               Modesto Castrillón, Oscar Déniz, Daniel Hernández, Javier Lorenzo
  *               A comparison of face and facial feature detectors based on the
  *               https://en.wikipedia.org/wiki/Viola-Jones_object_detection_framework
@@ -151,8 +152,8 @@ public:
 
     QList<Cascade>         cascades;
 
-    int                    maxDistance;    // Maximum distance between two faces to call them unique
-    int                    minDuplicates;  // Minimum number of duplicates required to qualify as a genuine face
+    int                    maxDistance;    /// Maximum distance between two faces to call them unique
+    int                    minDuplicates;  /// Minimum number of duplicates required to qualify as a genuine face
 
     // Tunable values, for accuracy
     DetectObjectParameters primaryParams;

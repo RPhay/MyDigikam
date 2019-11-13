@@ -4,7 +4,7 @@
  *
  * Date        : 2010-01-03
  * Description : Class to perform faces detection.
- *               Modesto Castrillón, Oscar Déniz, Daniel Hernández, Javier Lorenzo
+ *               Based on work from Modesto Castrillón, Oscar Déniz, Daniel Hernández, and Javier Lorenzo
  *               A comparison of face and facial feature detectors based on the
  *               https://en.wikipedia.org/wiki/Viola-Jones_object_detection_framework
  *               Machine Vision and Applications, 01/2008
@@ -189,12 +189,12 @@ void OpenCVFaceDetector::updateParameters(const cv::Size& /*scaledSize*/,
 
 /*
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "updateParameters: accuracy " << d->speedVsAccuracy
-             << " sensitivity " << d->sensitivityVsSpecificity
-             << " - searchIncrement " << d->primaryParams.searchIncrement
-             << " grouping " << d->primaryParams.grouping
-             << " flags " << d->primaryParams.flags
-             << " min size " << d->primaryParams.minSize.width << endl
-             << " primary cascades: ";
+                                     << " sensitivity " << d->sensitivityVsSpecificity
+                                     << " - searchIncrement " << d->primaryParams.searchIncrement
+                                     << " grouping " << d->primaryParams.grouping
+                                     << " flags " << d->primaryParams.flags
+                                     << " min size " << d->primaryParams.minSize.width << endl
+                                     << " primary cascades: ";
 
     for (unsigned int i = 0 ; i < d->cascadeProperties.size() ; ++i)
     {
@@ -231,6 +231,7 @@ QList<QRect> OpenCVFaceDetector::cascadeResult(const cv::Mat& inputImage,
                                                const DetectObjectParameters& params) const
 {
     // Check whether the cascade has loaded successfully. Else report and error and quit
+
     if (cascade.empty())
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Cascade XML data are not loaded.";
@@ -289,11 +290,13 @@ bool OpenCVFaceDetector::verifyFace(const cv::Mat& inputImage, const QRect& face
     }
 
     // Face coordinates. Add a certain margin for the other frontal cascades.
+
     const cv::Rect faceRect = s_opencvFaceDetectorFromQRect(face);
     const cv::Size faceSize = cv::Size(face.width(), face.height());
     const int margin        = cv::min(40, cv::max(faceRect.width, faceRect.height));
 
     // Clip to bounds of image, after adding the margin
+
     cv::Rect extendedRect   = cv::Rect(cv::max(0, faceRect.x - margin),
                                        cv::max(0, faceRect.y - margin),
                                                faceRect.width  + 2*margin,
@@ -304,6 +307,7 @@ bool OpenCVFaceDetector::verifyFace(const cv::Mat& inputImage, const QRect& face
 
 
     // shallow copy by ROI
+
     cv::Mat extendedFaceImg = inputImage(extendedRect);
 
     QList<QRect> foundFaces;
@@ -348,7 +352,7 @@ bool OpenCVFaceDetector::verifyFace(const cv::Mat& inputImage, const QRect& face
                 {
                     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Feature face " << it->getX1() << " " << it->getY1() << " " << it->getWidth() << "x" << it->getHeight();
 
-                    double widthScaled  = it->getWidth() / factor;
+                    double widthScaled  = it->getWidth()  / factor;
                     double heightScaled = it->getHeight() / factor;
 
                     // qCDebug(DIGIKAM_FACESENGINE_LOG) << "Hit feature size " << widthScaled << " " << heightScaled << " "
@@ -522,12 +526,13 @@ cv::Mat OpenCVFaceDetector::prepareForDetection(const QImage& inputImage) const
     {
         // Resize to 1024 * 768 (or comparable area for different aspect ratio)
         // Looking for scale factor z where A = w*z * h*z => z = sqrt(A/(w*h))
+
         qreal z          = qSqrt(qreal(maxAcceptableInputArea) / image.width() / image.height());
         QSize scaledSize = image.size() * z;
         image            = image.scaled(scaledSize, Qt::KeepAspectRatio);
     }
 
-    //TODO: move to common utils, opentldrecognition
+    // TODO: move to common utils, opentldrecognition
 
     cv::Mat cvImageWrapper, cvImage;
 
@@ -596,7 +601,7 @@ cv::Mat OpenCVFaceDetector::prepareForDetection(const DImg& inputImage) const
             break;
     }
 
-    if (type == CV_16UC4 || type == CV_16UC3)
+    if ((type == CV_16UC4) || (type == CV_16UC3))
     {
         cvImage.convertTo(cvImage, CV_8UC1, 1/255.0);
     }
