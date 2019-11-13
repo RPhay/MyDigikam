@@ -52,7 +52,9 @@ class AlbumSelectionTreeView: public AlbumTreeView
 
 public:
 
-    AlbumSelectionTreeView(QWidget* const parent, AlbumModel* const model, AlbumModificationHelper* const albumModificationHelper);
+    AlbumSelectionTreeView(QWidget* const parent,
+                           AlbumModel* const model,
+                           AlbumModificationHelper* const albumModificationHelper);
     ~AlbumSelectionTreeView();
 
     /**
@@ -75,7 +77,6 @@ private Q_SLOTS:
     void slotScanForFaces();
     void slotRepairHiddenItems();
     void slotRebuildThumbs();
-
 
 private:
 

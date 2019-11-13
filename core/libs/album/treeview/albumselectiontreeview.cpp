@@ -60,8 +60,8 @@ class Q_DECL_HIDDEN AlbumViewToolTip: public ItemViewToolTip
 {
 public:
 
-    explicit AlbumViewToolTip(AlbumSelectionTreeView* const view) :
-        ItemViewToolTip(view)
+    explicit AlbumViewToolTip(AlbumSelectionTreeView* const view)
+        : ItemViewToolTip(view)
     {
     }
 
@@ -119,7 +119,7 @@ public:
 // ----------------------------------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN AlbumSelectionTreeView::Private::AlbumSelectionTreeViewContextMenuElement
-      : public AbstractAlbumTreeView::ContextMenuElement
+    : public AbstractAlbumTreeView::ContextMenuElement
 {
 public:
 
@@ -138,7 +138,9 @@ public:
         PAlbum* const album = dynamic_cast<PAlbum*>(a);
 
         if (!album)
+        {
             return;
+        }
 
         if (album->isAlbumRoot())
         {
@@ -149,15 +151,20 @@ public:
         }
 
         // --------------------------------------------------------
+
         cmh.addActionNewAlbum(d->albumModificationHelper, album);
         cmh.addAction(QLatin1String("album_openinfilemanager"));
         cmh.addAction(QLatin1String("album_openinterminal"));
         cmh.addSeparator();
+
         // --------------------------------------------------------
+
         cmh.addActionRenameAlbum(d->albumModificationHelper, album);
         cmh.addActionResetAlbumIcon(d->albumModificationHelper, album);
         cmh.addSeparator();
+
         // --------------------------------------------------------
+
         cmh.addAction(d->findDuplAction);
         d->albumModificationHelper->bindAlbum(d->findDuplAction, album);
         cmh.addAction(d->scanFacesAction);
@@ -168,14 +175,20 @@ public:
         cmh.addExportMenu();
         cmh.addAlbumActions();
         cmh.addSeparator();
+
         // --------------------------------------------------------
+
         cmh.addAction(d->repairHiddenAction);
         d->albumModificationHelper->bindAlbum(d->repairHiddenAction, album);
         cmh.addSeparator();
+
         // --------------------------------------------------------
+
         cmh.addActionDeleteAlbum(d->albumModificationHelper, album);
         cmh.addSeparator();
+
         // --------------------------------------------------------
+
         cmh.addActionEditAlbum(d->albumModificationHelper, album);
     }
 
@@ -186,7 +199,8 @@ public:
 
 // ----------------------------------------------------------------------------------------------------
 
-AlbumSelectionTreeView::AlbumSelectionTreeView(QWidget* const parent, AlbumModel* const model,
+AlbumSelectionTreeView::AlbumSelectionTreeView(QWidget* const parent,
+                                               AlbumModel* const model,
                                                AlbumModificationHelper* const albumModificationHelper)
     : AlbumTreeView(parent),
       d(new Private)
@@ -280,8 +294,8 @@ void AlbumSelectionTreeView::slotRepairHiddenItems()
         return;
     }
 
-   int needTaggingTag     = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::needTaggingHistoryGraph());
-   int originalVersionTag = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::originalVersion());
+    int needTaggingTag     = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::needTaggingHistoryGraph());
+    int originalVersionTag = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::originalVersion());
 
     foreach (const qlonglong& id, CoreDbAccess().db()->getItemIDsInAlbum(album->id()))
     {
@@ -316,29 +330,33 @@ void AlbumSelectionTreeView::slotRebuildThumbs()
     tool->start();
 
     // if physical album, schedule a collection scan of current album's path
+
     if (album && album->type() == Album::PHYSICAL)
     {
-        NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScheduleCollectionScan,
-                                                        QStringList() << static_cast<PAlbum*>(album)->folderPath());
-        tool->start();
+        NewItemsFinder* const tool2 = new NewItemsFinder(NewItemsFinder::ScheduleCollectionScan,
+                                                         QStringList() << static_cast<PAlbum*>(album)->folderPath());
+        tool2->start();
     }
 }
 
 bool AlbumSelectionTreeView::viewportEvent(QEvent* event)
 {
     // let the base class handle the event if it is not a tool tip request
+
     if (event->type() != QEvent::ToolTip)
     {
         return AlbumTreeView::viewportEvent(event);
     }
 
     // only show tool tips if requested
+
     if (!d->enableToolTips)
     {
         return false;
     }
 
     // check that we got a correct event
+
     QHelpEvent* const helpEvent = dynamic_cast<QHelpEvent*> (event);
 
     if (!helpEvent)
@@ -349,6 +367,7 @@ bool AlbumSelectionTreeView::viewportEvent(QEvent* event)
     }
 
     // find the item this tool tip belongs to
+
     QModelIndex index = indexAt(helpEvent->pos());
 
     if (!index.isValid())
@@ -373,7 +392,9 @@ bool AlbumSelectionTreeView::viewportEvent(QEvent* event)
 
     QStyleOptionViewItem option = viewOptions();
     option.rect                 = itemRect;
+
     // visualRect can be larger than viewport, intersect with viewport rect
+
     option.rect                 &= viewport()->rect();
     option.state                |= (index == currentIndex() ? QStyle::State_HasFocus : QStyle::State_None);
     d->toolTip->show(option, index);
