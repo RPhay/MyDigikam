@@ -70,11 +70,10 @@ HotPixelFixer::HotPixelFixer(QObject* const parent)
 
 HotPixelFixer::HotPixelFixer(DImg* const orgImage, QObject* const parent, const QList<HotPixel>& hpList,
                              int interpolationMethod)
-    : DImgThreadedFilter(orgImage, parent, QLatin1String("HotPixels"))
+    : DImgThreadedFilter(orgImage, parent, QLatin1String("HotPixels")),
+      m_interpolationMethod(interpolationMethod),
+      m_hpList(hpList)
 {
-    m_hpList              = hpList;
-    m_interpolationMethod = interpolationMethod;
-
     initFilter();
 }
 

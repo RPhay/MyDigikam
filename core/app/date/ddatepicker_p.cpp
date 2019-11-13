@@ -76,10 +76,9 @@ QValidator::State DatePickerValidator::validate(QString& text, int&) const
 DatePickerYearSelector::DatePickerYearSelector(const QDate& currentDate, QWidget* const parent)
     : QLineEdit(parent),
       val(new QIntValidator(this)),
-      result(0)
+      result(0),
+      oldDate(currentDate)
 {
-    oldDate = currentDate;
-
     setFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont));
 
     setFrame(false);

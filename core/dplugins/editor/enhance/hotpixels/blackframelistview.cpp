@@ -61,11 +61,11 @@ BlackFrameListView::BlackFrameListView(QWidget* const parent)
 
 BlackFrameListViewItem::BlackFrameListViewItem(BlackFrameListView* const parent, const QUrl& url)
     : QObject(parent),
-      QTreeWidgetItem(parent)
+      QTreeWidgetItem(parent),
+      m_blackFrameURL(url),
+      m_parent(parent)
 {
-    m_parent        = parent;
-    m_blackFrameURL = url;
-    m_parser        = new BlackFrameParser(parent);
+    m_parser = new BlackFrameParser(parent);
     m_parser->parseBlackFrame(url);
 
     connect(m_parser, SIGNAL(signalParsed(QList<HotPixel>)),
