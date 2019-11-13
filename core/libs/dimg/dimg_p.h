@@ -48,12 +48,12 @@ extern "C"
 
 // Qt includes
 
+#include <QCryptographicHash>
 #include <QString>
 #include <QByteArray>
 #include <QVariant>
 #include <QMap>
 #include <QFile>
-#include <QFileInfo>
 #include <QImage>
 #include <QImageReader>
 #include <QPaintEngine>

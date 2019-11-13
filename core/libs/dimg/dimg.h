@@ -29,6 +29,7 @@
 // Qt includes
 
 #include <QByteArray>
+#include <QFileInfo>
 #include <QFlags>
 #include <QSize>
 #include <QRect>
@@ -125,12 +126,12 @@ public:
     /** Load image using QByteArray as file path
      */
     explicit DImg(const QByteArray& filePath, DImgLoaderObserver* const observer = nullptr,
-                  const DRawDecoding& rawDecodingSettings=DRawDecoding());
+                  const DRawDecoding& rawDecodingSettings = DRawDecoding());
 
     /** Load image using QString as file path
      */
     explicit DImg(const QString& filePath, DImgLoaderObserver* const observer = nullptr,
-                  const DRawDecoding& rawDecodingSettings=DRawDecoding());
+                  const DRawDecoding& rawDecodingSettings = DRawDecoding());
 
     /** Copy image: Creates a shallow copy that refers to the same shared data.
         The two images will be equal. Call detach() or copy() to create deep copies.
@@ -201,15 +202,15 @@ public:
     uchar*      stripImageData();
 
     bool        load(const QString& filePath, DImgLoaderObserver* const observer = nullptr,
-                     const DRawDecoding& rawDecodingSettings=DRawDecoding());
+                     const DRawDecoding& rawDecodingSettings = DRawDecoding());
 
     bool        load(const QString& filePath,
                      bool loadMetadata, bool loadICCData, bool loadUniqueHash, bool loadHistory,
                      DImgLoaderObserver* const observer = nullptr,
-                     const DRawDecoding& rawDecodingSettings=DRawDecoding());
+                     const DRawDecoding& rawDecodingSettings = DRawDecoding());
 
     bool        load(const QString& filePath, int loadFlags, DImgLoaderObserver* const observer,
-                     const DRawDecoding& rawDecodingSettings=DRawDecoding());
+                     const DRawDecoding& rawDecodingSettings = DRawDecoding());
 
     bool        save(const QString& filePath, FORMAT frm, DImgLoaderObserver* const observer = nullptr);
     bool        save(const QString& filePath, const QString& format, DImgLoaderObserver* const observer = nullptr);
@@ -687,6 +688,11 @@ private:
     void setImageData(bool null, uint width, uint height, bool sixteenBit, bool alpha);
     void setImageDimension(uint width, uint height);
     size_t allocateData();
+
+    QDateTime         creationDateFromFilesystem(const QFileInfo& fileInfo) const;
+
+    static QByteArray createUniqueHash(const QString& filePath, const QByteArray& ba);
+    static QByteArray createUniqueHashV2(const QString& filePath);
 
     static void bitBlt(const uchar* const src, uchar* const dest,
                        int sx, int sy, int w, int h, int dx, int dy,

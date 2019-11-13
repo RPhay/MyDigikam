@@ -91,10 +91,6 @@ public:
     virtual bool sixteenBit()    const = 0;
     virtual bool isReadOnly()    const = 0;
 
-    static QByteArray     uniqueHash(const QString& filePath, const DImg* const img = nullptr);
-    static QByteArray     uniqueHashV2(const QString& filePath, const DImg* const img = nullptr);
-    static HistoryImageId createHistoryImageId(const QString& filePath, const DImg* const img, const DMetadata& metadata);
-
     static unsigned char*  new_failureTolerant(size_t unsecureSize);
     static unsigned char*  new_failureTolerant(quint64 w, quint64 h, uint typesPerPixel);
     static unsigned short* new_short_failureTolerant(size_t unsecureSize);

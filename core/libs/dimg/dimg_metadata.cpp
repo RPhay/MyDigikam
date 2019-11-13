@@ -49,16 +49,24 @@ QByteArray DImg::getUniqueHash() const
     }
 
     FileReadLocker lock(filePath);
-    QByteArray hash = DImgLoader::uniqueHash(filePath, this);
 
-    // attribute is written by DImgLoader
+    QByteArray ba;
+    DMetadata metadata(getMetadata());
+    ba = metadata.getExifEncoded();
+
+    QByteArray hash = createUniqueHash(filePath, ba);
+    const_cast<DImg*>(this)->setAttribute(QLatin1String("uniqueHash"), hash);
 
     return hash;
 }
 
 QByteArray DImg::getUniqueHash(const QString& filePath)
 {
-    return DImgLoader::uniqueHash(filePath);
+    QByteArray ba;
+    DMetadata metadata(filePath);
+    ba = metadata.getExifEncoded();
+
+    return createUniqueHash(filePath, ba);
 }
 
 QByteArray DImg::getUniqueHashV2() const
@@ -83,12 +91,15 @@ QByteArray DImg::getUniqueHashV2() const
 
     FileReadLocker lock(filePath);
 
-    return DImgLoader::uniqueHashV2(filePath, this);
+    QByteArray hash = createUniqueHashV2(filePath);
+    const_cast<DImg*>(this)->setAttribute(QLatin1String("uniqueHashV2"), hash);
+
+    return hash;
 }
 
 QByteArray DImg::getUniqueHashV2(const QString& filePath)
 {
-    return DImgLoader::uniqueHashV2(filePath);
+    return createUniqueHashV2(filePath);
 }
 
 QByteArray DImg::createImageUniqueId() const
@@ -280,7 +291,27 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
 
 HistoryImageId DImg::createHistoryImageId(const QString& filePath, HistoryImageId::Type type) const
 {
-    HistoryImageId id = DImgLoader::createHistoryImageId(filePath, this, DMetadata(getMetadata()));
+    QFileInfo fileInfo(filePath);
+
+    if (!fileInfo.exists())
+    {
+        return HistoryImageId();
+    }
+
+    DMetadata metadata(getMetadata());
+    HistoryImageId id(metadata.getItemUniqueId());
+
+    QDateTime dt = metadata.getItemDateTime();
+
+    if (dt.isNull())
+    {
+        dt = creationDateFromFilesystem(fileInfo);
+    }
+
+    id.setCreationDate(dt);
+    id.setFileName(fileInfo.fileName());
+    id.setPath(fileInfo.path());
+    id.setUniqueHash(QString::fromUtf8(getUniqueHashV2()), fileInfo.size());
     id.setType(type);
 
     return id;
@@ -432,6 +463,79 @@ int DImg::exifOrientation(const QString& filePath)
                                            DMetadata(getMetadata()),
                                            (detectedFormat() == DImg::RAW),
                                            (attribute.isValid() && attribute.toBool()));
+}
+
+QByteArray DImg::createUniqueHash(const QString& filePath, const QByteArray& ba)
+{
+    // Create the unique ID
+
+    QCryptographicHash md5(QCryptographicHash::Md5);
+
+    // First, read the Exif data into the hash
+    md5.addData(ba);
+
+    // Second, read in the first 8KB of the file
+    QFile qfile(filePath);
+
+    char databuf[8192];
+    QByteArray hash;
+
+    if (qfile.open(QIODevice::Unbuffered | QIODevice::ReadOnly))
+    {
+        int readlen = 0;
+
+        if ((readlen = qfile.read(databuf, 8192)) > 0)
+        {
+            QByteArray size;
+            md5.addData(databuf, readlen);
+            md5.addData(size.setNum(qfile.size()));
+            hash = md5.result().toHex();
+        }
+
+        qfile.close();
+    }
+
+    return hash;
+}
+
+QByteArray DImg::createUniqueHashV2(const QString& filePath)
+{
+    QFile file(filePath);
+
+    if (!file.open(QIODevice::Unbuffered | QIODevice::ReadOnly))
+    {
+        return QByteArray();
+    }
+
+    QCryptographicHash md5(QCryptographicHash::Md5);
+
+    // Specified size: 100 kB; but limit to file size
+    const qint64 specifiedSize = 100 * 1024; // 100 kB
+    qint64 size                = qMin(file.size(), specifiedSize);
+
+    if (size)
+    {
+        QScopedArrayPointer<char> databuf(new char[size]);
+        int read;
+
+        // Read first 100 kB
+        if ((read = file.read(databuf.data(), size)) > 0)
+        {
+            md5.addData(databuf.data(), read);
+        }
+
+        // Read last 100 kB
+        file.seek(file.size() - size);
+
+        if ((read = file.read(databuf.data(), size)) > 0)
+        {
+            md5.addData(databuf.data(), read);
+        }
+    }
+
+    file.close();
+
+    return md5.result().toHex();
 }
 
 } // namespace Digikam
