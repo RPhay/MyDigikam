@@ -34,6 +34,7 @@ void AlbumManager::scanTAlbums()
 
     // list TAlbums directly from the db
     // first insert all the current TAlbums into a map for quick lookup
+
     typedef QMap<int, TAlbum*> TagMap;
     TagMap                     tmap;
 
@@ -43,12 +44,13 @@ void AlbumManager::scanTAlbums()
 
     while (it.current())
     {
-        TAlbum* t = (TAlbum*)(*it);
+        TAlbum* const t = (TAlbum*)(*it);
         tmap.insert(t->id(), t);
         ++it;
     }
 
     // Retrieve the list of tags from the database
+
     TagInfo::List tList = CoreDbAccess().db()->scanTags();
 
     // sort the list. needed because we want the tags can be read in any order,
@@ -59,6 +61,7 @@ void AlbumManager::scanTAlbums()
         QHash<int, TAlbum*> tagHash;
 
         // insert items into a dict for quick lookup
+
         for (TagInfo::List::const_iterator iter = tList.constBegin() ; iter != tList.constEnd() ; ++iter)
         {
             TagInfo info        = *iter;
@@ -72,10 +75,12 @@ void AlbumManager::scanTAlbums()
         tList.clear();
 
         // also add root tag
+
         TAlbum* const rootTag = new TAlbum(QLatin1String("root"), 0, true);
         tagHash.insert(0, rootTag);
 
         // build tree
+
         for (QHash<int, TAlbum*>::const_iterator iter = tagHash.constBegin() ; iter != tagHash.constEnd() ; ++iter)
         {
             TAlbum* album = *iter;
@@ -103,12 +108,13 @@ void AlbumManager::scanTAlbums()
         tagHash.clear();
 
         // now insert the items into the list. becomes sorted
-        AlbumIterator it(rootTag);
 
-        while (it.current())
+        AlbumIterator it2(rootTag);
+
+        while (it2.current())
         {
             TagInfo info;
-            TAlbum* const album = static_cast<TAlbum*>(it.current());
+            TAlbum* const album = static_cast<TAlbum*>(it2.current());
 
             if (album)
             {
@@ -120,24 +126,27 @@ void AlbumManager::scanTAlbums()
             }
 
             tList.append(info);
-            ++it;
+            ++it2;
         }
 
         // this will also delete all child albums
+
         delete rootTag;
     }
 
-    for (TagInfo::List::const_iterator it = tList.constBegin() ; it != tList.constEnd() ; ++it)
+    for (TagInfo::List::const_iterator it3 = tList.constBegin() ; it3 != tList.constEnd() ; ++it3)
     {
-        TagInfo info = *it;
+        TagInfo info = *it3;
 
         // check if we have already added this tag
+
         if (tmap.contains(info.id))
         {
             continue;
         }
 
         // Its a new album. Find the parent of the album
+
         TagMap::const_iterator iter = tmap.constFind(info.pid);
 
         if (iter == tmap.constEnd())
@@ -152,12 +161,14 @@ void AlbumManager::scanTAlbums()
         TAlbum* const parent = iter.value();
 
         // Create the new TAlbum
+
         TAlbum* const album = new TAlbum(info.name, info.id, false);
         album->m_icon       = info.icon;
         album->m_iconId     = info.iconId;
         insertTAlbum(album, parent);
 
         // also insert it in the map we are doing lookup of parent tags
+
         tmap.insert(info.id, album);
     }
 
@@ -222,11 +233,11 @@ AlbumList AlbumManager::allTAlbums() const
     return list;
 }
 
+/**
+ * This method is not yet used
+ */
 QList<TAlbum*> AlbumManager::currentTAlbums() const
 {
-    /**
-     * This method is not yet used
-     */
     QList<TAlbum*> talbums;
     QList<Album*>::iterator it;
 
@@ -235,7 +246,9 @@ QList<TAlbum*> AlbumManager::currentTAlbums() const
         TAlbum* const temp = dynamic_cast<TAlbum*>(*it);
 
         if (temp)
+        {
             talbums.append(temp);
+        }
     }
 
     return talbums;
@@ -256,6 +269,7 @@ TAlbum* AlbumManager::findTAlbum(int id) const
 TAlbum* AlbumManager::findTAlbum(const QString& tagPath) const
 {
     // handle gracefully with or without leading slash
+
     bool withLeadingSlash = tagPath.startsWith(QLatin1Char('/'));
     AlbumIterator it(d->rootTAlbum);
 
@@ -285,6 +299,7 @@ TAlbum* AlbumManager::createTAlbum(TAlbum* parent, const QString& name,
     }
 
     // sanity checks
+
     if (name.isEmpty())
     {
         errMsg = i18n("Tag name cannot be empty");
@@ -298,6 +313,7 @@ TAlbum* AlbumManager::createTAlbum(TAlbum* parent, const QString& name,
     }
 
     // first check if we have another album with the same name
+
     if (hasDirectChildAlbumWithTitle(parent, name))
     {
         errMsg = i18n("Tag name already exists");
@@ -318,7 +334,7 @@ TAlbum* AlbumManager::createTAlbum(TAlbum* parent, const QString& name,
 
     insertTAlbum(album, parent);
 
-    TAlbum* personParentTag = findTAlbum(FaceTags::personParentTag());
+    TAlbum* const personParentTag = findTAlbum(FaceTags::personParentTag());
 
     if (personParentTag && personParentTag->isAncestorOf(album))
     {
@@ -333,9 +349,11 @@ TAlbum* AlbumManager::createTAlbum(TAlbum* parent, const QString& name,
 AlbumList AlbumManager::findOrCreateTAlbums(const QStringList& tagPaths)
 {
     // find tag ids for tag paths in list, create if they don't exist
+
     QList<int> tagIDs = TagsCache::instance()->getOrCreateTags(tagPaths);
 
     // create TAlbum objects for the newly created tags
+
     scanTAlbums();
 
     AlbumList resultList;
@@ -418,6 +436,7 @@ bool AlbumManager::renameTAlbum(TAlbum* album,
     }
 
     // first check if we have another sibling with the same name
+
     if (hasDirectChildAlbumWithTitle(album->m_parent, name))
     {
         errMsg = i18n("Another tag with the same name already exists.\n"
@@ -518,7 +537,7 @@ bool AlbumManager::moveTAlbum(TAlbum* album, TAlbum* newParent, QString& errMsg)
     emit signalAlbumsUpdated(Album::TAG);
     d->currentlyMovingAlbum = nullptr;
 
-    TAlbum* personParentTag = findTAlbum(FaceTags::personParentTag());
+    TAlbum* const personParentTag = findTAlbum(FaceTags::personParentTag());
 
     if (personParentTag && personParentTag->isAncestorOf(album))
     {
@@ -891,6 +910,7 @@ void AlbumManager::slotTagsJobResult()
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to list face tags";
 
         // Pop-up a message about the error.
+
         DNotificationWrapper(QString(), d->personListJob->errorsList().first(),
                              nullptr, i18n("digiKam"));
     }
