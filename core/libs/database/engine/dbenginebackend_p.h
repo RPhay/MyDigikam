@@ -25,6 +25,8 @@
 #ifndef DIGIKAM_DB_ENGINE_BACKEND_PRIVATE_H
 #define DIGIKAM_DB_ENGINE_BACKEND_PRIVATE_H
 
+#include "dbenginebackend.h"
+
 // Qt includes
 
 #include <QHash>
@@ -51,11 +53,15 @@ public:
 
     void closeDatabase();
 
+public:
+
     QSqlDatabase database;
     int          valid;
     int          transactionCount;
     QSqlError    lastError;
 };
+
+// ------------------------------------------------------------------------
 
 class DIGIKAM_EXPORT BdEngineBackendPrivate : public DbEngineErrorAnswer
 {

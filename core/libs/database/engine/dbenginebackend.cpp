@@ -22,7 +22,6 @@
  *
  * ============================================================ */
 
-#include "dbenginebackend.h"
 #include "dbenginebackend_p.h"
 
 // Qt includes
@@ -1195,13 +1194,14 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
 
                     for (iterator = placeHolderMap.constBegin(); iterator != placeHolderMap.constEnd(); ++iterator)
                     {
-                        const QString& key    = iterator.key();
-                        const QVariant& value = iterator.value();
+                        const QString& key     = iterator.key();
+                        const QVariant& value2 = iterator.value();
                         replaceStr.append(key);
                         replaceStr.append(QLatin1String("= ?"));
-                        valuesToBind.append(value);
+                        valuesToBind.append(value2);
 
                         // Add a semicolon to the statement, if we are not on the last entry
+
                         if ((iterator+1) != placeHolderMap.constEnd())
                         {
                             replaceStr.append(QLatin1String(", "));
@@ -1228,6 +1228,7 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
                         }
 
                         // Add a semicolon to the statement, if we are not on the last entry
+
                         if ((iterator+1) != placeHolderList.constEnd())
                         {
                             replaceStr.append(QLatin1String(", "));
@@ -1254,6 +1255,7 @@ DbEngineSqlQuery BdEngineBackend::execQuery(const QString& sql, const QMap<QStri
                         }
 
                         // Add a semicolon to the statement, if we are not on the last entry
+
                         if ((iterator+1) != placeHolderList.constEnd())
                         {
                             replaceStr.append(QLatin1String(", "));
