@@ -151,7 +151,7 @@ DDateEdit::DDateEdit(QWidget* const parent, const QString& name)
             this, SLOT(lineEnterPressed()));
 
     connect(this, SIGNAL(currentTextChanged(QString)),
-            SLOT(slotTextChanged(QString)));
+            this, SLOT(slotTextChanged(QString)));
 
     d->popup = new DDatePickerPopup(DDatePickerPopup::DatePicker | DDatePickerPopup::Words);
     d->popup->hide();
@@ -273,7 +273,8 @@ void DDateEdit::showPopup()
 
 void DDateEdit::dateSelected(const QDate& date)
 {
-    if (assignDate(date))
+    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+    if (this->assignDate(date))
     {
         updateView();
         emit dateChanged(date);
@@ -297,10 +298,11 @@ void DDateEdit::dateEntered(const QDate& date)
 void DDateEdit::lineEnterPressed()
 {
     bool replaced = false;
+    QDate date    = parseDate(&replaced);
 
-    QDate date = parseDate(&replaced);
+    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
 
-    if (assignDate(date))
+    if (this->assignDate(date))
     {
         if (replaced)
         {
@@ -332,14 +334,15 @@ QDate DDateEdit::parseDate(bool* replaced) const
 
         if (i >= 100)
         {
-            /* A day name has been entered. Convert to offset from today.
-            * This uses some math tricks to figure out the offset in days
-            * to the next date the given day of the week occurs. There
-            * are two cases, that the new day is >= the current day, which means
-            * the new day has not occurred yet or that the new day < the current day,
-            * which means the new day is already passed (so we need to find the
-            * day in the next week).
-            */
+            /*
+             * A day name has been entered. Convert to offset from today.
+             * This uses some math tricks to figure out the offset in days
+             * to the next date the given day of the week occurs. There
+             * are two cases, that the new day is >= the current day, which means
+             * the new day has not occurred yet or that the new day < the current day,
+             * which means the new day is already passed (so we need to find the
+             * day in the next week).
+             */
             i -= 100;
             int currentDay = today.dayOfWeek();
 
@@ -466,7 +469,8 @@ void DDateEdit::slotTextChanged(const QString&)
 {
     QDate date = parseDate();
 
-    if (assignDate(date))
+    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+    if (this->assignDate(date))
     {
         emit dateChanged(date);
     }
