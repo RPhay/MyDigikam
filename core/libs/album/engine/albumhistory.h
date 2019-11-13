@@ -26,8 +26,6 @@
 #ifndef DIGIKAM_ALBUM_HISTORY_H
 #define DIGIKAM_ALBUM_HISTORY_H
 
-/** @file albumhistory.h */
-
 // Qt includes
 
 #include <QList>
@@ -62,8 +60,12 @@ public:
     explicit AlbumHistory();
     ~AlbumHistory();
 
-    void addAlbums(const QList<Album*>& albums, QWidget* const widget = nullptr);
-    void addAlbums(const QList<Album*>& albums, QWidget* const widget, QHash<LabelsTreeView::Labels, QList<int> > selectedLabels);
+    void addAlbums(const QList<Album*>& albums,
+                   QWidget* const widget = nullptr);
+    void addAlbums(const QList<Album*>& albums,
+                   QWidget* const widget,
+                   QHash<LabelsTreeView::Labels, QList<int> > selectedLabels);
+
     void deleteAlbum(Album* const album);
     void clearHistory();
     void back(QList<Album*>& album, QWidget** const widget, unsigned int steps=1);
@@ -71,10 +73,10 @@ public:
     void getCurrentAlbum(Album** const album, QWidget** const widget) const;
 
     void getBackwardHistory(QStringList& list) const;
-    void getForwardHistory(QStringList& list) const;
+    void getForwardHistory(QStringList& list)  const;
 
-    bool isForwardEmpty() const;
-    bool isBackwardEmpty() const;
+    bool isForwardEmpty()                      const;
+    bool isBackwardEmpty()                     const;
 
     QHash<LabelsTreeView::Labels, QList<int> > neededLabels();
 

@@ -45,7 +45,9 @@ namespace Digikam
 inline uint qHash(const QList<Album*>& key)
 {
     if (key.isEmpty())
+    {
         return 0;
+    }
 
     Album* const temp = key.first();
     quint64 myint     = (unsigned long long)temp;
@@ -54,8 +56,8 @@ inline uint qHash(const QList<Album*>& key)
     for (int it = 1 ; it < key.size() ; ++it)
     {
         Album* const al = key.at(it);
-        quint64 myint   = (unsigned long long)al;
-        value          ^= ::qHash(myint);
+        quint64 myint2  = (unsigned long long)al;
+        value          ^= ::qHash(myint2);
     }
 
     return value;
@@ -97,8 +99,8 @@ public:
         return albums == item.albums;
     }
 
-    QList<Album*>                                   albums;
-    QWidget*                                        widget;
+    QList<Album*>                              albums;
+    QWidget*                                   widget;
     QHash<LabelsTreeView::Labels, QList<int> > labels;
 };
 
@@ -143,12 +145,12 @@ public:
 
 public:
 
-    bool                                            moving;
-    bool                                            blockSelection;
+    bool                                       moving;
+    bool                                       blockSelection;
 
-    QList<HistoryItem>                              backwardStack;
-    QList<HistoryItem>                              forwardStack;
-    QHash<QList<Album*>, HistoryPosition>           historyPos;
+    QList<HistoryItem>                         backwardStack;
+    QList<HistoryItem>                         forwardStack;
+    QHash<QList<Album*>, HistoryPosition>      historyPos;
     QHash<LabelsTreeView::Labels, QList<int> > neededLabels;
 };
 
@@ -198,6 +200,7 @@ void AlbumHistory::addAlbums(const QList<Album*>& albums, QWidget* const widget)
     }
 
     // Same album as before in the history
+
     if (!d->backwardStack.isEmpty() && d->backwardStack.last().albums == albums)
     {
         d->backwardStack.last().widget = widget;
@@ -207,6 +210,7 @@ void AlbumHistory::addAlbums(const QList<Album*>& albums, QWidget* const widget)
     d->backwardStack << HistoryItem(albums, widget);
 
     // The forward stack has to be cleared, if backward stack was changed
+
     d->forwardStack.clear();
 }
 
@@ -239,6 +243,7 @@ void AlbumHistory::addAlbums(const QList<Album*>& albums,
     d->backwardStack << HistoryItem(albums, widget, selectedLabels);
 
     // The forward stack has to be cleared, if backward stack was changed
+
     d->forwardStack.clear();
 }
 
@@ -248,12 +253,13 @@ void AlbumHistory::deleteAlbum(Album* const album)
     {
         return;
     }
+
     QList<Album*> albums;
     albums << album;
 
     //  Search all HistoryItems, with album and delete them
-    QList<HistoryItem>::iterator it = d->backwardStack.begin();
 
+    QList<HistoryItem>::iterator it = d->backwardStack.begin();
 
     while (it != d->backwardStack.end())
     {
@@ -288,6 +294,7 @@ void AlbumHistory::deleteAlbum(Album* const album)
 
     // If backwardStack is empty, then there is no current album.
     // So make the first album of the forwardStack the current one.
+
     if (d->backwardStack.isEmpty())
     {
         d->forward();
@@ -295,6 +302,7 @@ void AlbumHistory::deleteAlbum(Album* const album)
 
     // After the album is deleted from the history it has to be ensured,
     // that neighboring albums are different
+
     QList<HistoryItem>::iterator lhs = d->backwardStack.begin();
     QList<HistoryItem>::iterator rhs = lhs;
     ++rhs;
@@ -323,7 +331,8 @@ void AlbumHistory::deleteAlbum(Album* const album)
         }
         else
         {
-            if (lhs == (d->backwardStack.isEmpty() ? d->backwardStack.end() : --d->backwardStack.end()))
+            if (lhs == (d->backwardStack.isEmpty() ? d->backwardStack.end() 
+                                                   : --d->backwardStack.end()))
             {
                 lhs = d->forwardStack.begin();
             }
@@ -352,13 +361,15 @@ void AlbumHistory::getBackwardHistory(QStringList& list) const
 
     QList<HistoryItem>::const_iterator it = d->backwardStack.constBegin();
 
-    for ( ; it != (d->backwardStack.isEmpty() ? d->backwardStack.constEnd() : --d->backwardStack.constEnd()) ; ++it)
+    for ( ; it != (d->backwardStack.isEmpty() ? d->backwardStack.constEnd()
+                                              : --d->backwardStack.constEnd())
+          ; ++it)
     {
         if (!(it->albums.isEmpty()))
         {
             QString name;
 
-            for (int iter = 0; iter < it->albums.size(); ++iter)
+            for (int iter = 0 ; iter < it->albums.size() ; ++iter)
             {
                 name.append(it->albums.at(iter)->title());
 
@@ -407,7 +418,7 @@ void AlbumHistory::back(QList<Album*>& album, QWidget** const widget, unsigned i
 {
     *widget = nullptr;
 
-    if (d->backwardStack.count() <= 1 || (int)steps > d->backwardStack.count())
+    if ((d->backwardStack.count() <= 1) || ((int)steps > d->backwardStack.count()))
     {
         return;    // Only the current album available
     }
@@ -478,6 +489,7 @@ bool AlbumHistory::isBackwardEmpty() const
 {
     // the last album of the backwardStack is the currently shown
     // album, and therefore not really a previous album
+
     return (d->backwardStack.count() <= 1) ? true : false;
 }
 
