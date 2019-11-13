@@ -42,9 +42,9 @@ namespace Digikam
 {
 
 DImgLoader::DImgLoader(DImg* const image)
-    : m_image(image)
+    : m_image(image),
+      m_loadFlags(LoadAll)
 {
-    m_loadFlags = LoadAll;
 }
 
 DImgLoader::~DImgLoader()
