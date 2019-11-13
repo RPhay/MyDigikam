@@ -465,6 +465,7 @@ bool DImg::rotateAndFlip(int orientation)
 
     return rotatedOrFlipped;
 }
+
 bool DImg::reverseRotateAndFlip(int orientation)
 {
     bool rotatedOrFlipped = false;
@@ -557,15 +558,13 @@ bool DImg::exifRotate(const QString& filePath)
     }
 
     // Rotate image based on metadata orientation information
-    bool rotatedOrFlipped = rotateAndFlip(exifOrientation(filePath));
     m_priv->attributes.insert(QLatin1String("exifRotated"), true);
-    return rotatedOrFlipped;
+    return rotateAndFlip(exifOrientation(filePath));
 }
 
 bool DImg::reverseExifRotate(const QString& filePath)
 {
-    bool rotatedOrFlipped = reverseRotateAndFlip(exifOrientation(filePath));
-    return rotatedOrFlipped;
+    return reverseRotateAndFlip(exifOrientation(filePath));
 }
 
 } // namespace Digikam
