@@ -33,16 +33,16 @@ FlickrWidget::FlickrWidget(QWidget* const parent,
     : WSSettingsWidget(parent, iface, serviceName),
       d(new Private)
 {
-    d->serviceName = serviceName;
+    d->serviceName         = serviceName;
 
     //Adding Remove Account button
-    d->removeAccount              = new QPushButton(getAccountBox());
+    d->removeAccount       = new QPushButton(getAccountBox());
     d->removeAccount->setText(i18n("Remove Account"));
     getAccountBoxLayout()->addWidget(d->removeAccount, 2, 0, 1, 4);
 
     // -- The image list --------------------------------------------------
 
-    d->imglst               = new FlickrList(this, (serviceName == QLatin1String("23")));
+    d->imglst              = new FlickrList(this);
 
     // For figuring out the width of the permission columns.
     QHeaderView* const hdr = d->imglst->listView()->header();
@@ -65,54 +65,51 @@ FlickrWidget::FlickrWidget(QWidget* const parent,
     d->imglst->listView()->setColumn(static_cast<DItemsListView::ColumnType>(FlickrList::TAGS),
                                     i18n("Extra tags"), true);
 
-    if (serviceName != QLatin1String("23"))
+    int tmpWidth;
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+    if ((tmpWidth = hdrFont.horizontalAdvance(i18nc("photo permissions", "Family"))) > permColWidth)
+#else
+    if ((tmpWidth = hdrFont.width(i18nc("photo permissions", "Family"))) > permColWidth)
+#endif
     {
-        int tmpWidth;
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
-        if ((tmpWidth = hdrFont.horizontalAdvance(i18nc("photo permissions", "Family"))) > permColWidth)
-#else
-        if ((tmpWidth = hdrFont.width(i18nc("photo permissions", "Family"))) > permColWidth)
-#endif
-        {
-            permColWidth = tmpWidth;
-        }
-
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
-        if ((tmpWidth = hdrFont.horizontalAdvance(i18nc("photo permissions", "Friends"))) > permColWidth)
-#else
-        if ((tmpWidth = hdrFont.width(i18nc("photo permissions", "Friends"))) > permColWidth)
-#endif
-        {
-            permColWidth = tmpWidth;
-        }
-
-        d->imglst->listView()->setColumn(static_cast<DItemsListView::ColumnType>(FlickrList::FAMILY),
-                                        i18nc("photo permissions", "Family"), true);
-        d->imglst->listView()->setColumn(static_cast<DItemsListView::ColumnType>(FlickrList::FRIENDS),
-                                        i18nc("photo permissions", "Friends"), true);
-        hdr->setSectionResizeMode(FlickrList::FAMILY,  QHeaderView::Interactive);
-        hdr->setSectionResizeMode(FlickrList::FRIENDS, QHeaderView::Interactive);
-        hdr->resizeSection(FlickrList::FAMILY,  permColWidth);
-        hdr->resizeSection(FlickrList::FRIENDS, permColWidth);
-
-        d->imglst->listView()->setColumn(static_cast<DItemsListView::ColumnType>(FlickrList::SAFETYLEVEL),
-                                        i18n("Safety level"), true);
-        d->imglst->listView()->setColumn(static_cast<DItemsListView::ColumnType>(FlickrList::CONTENTTYPE),
-                                        i18n("Content type"), true);
-        QMap<int, QString> safetyLevelItems;
-        QMap<int, QString> contentTypeItems;
-        safetyLevelItems[FlickrList::SAFE]       = i18nc("photo safety level", "Safe");
-        safetyLevelItems[FlickrList::MODERATE]   = i18nc("photo safety level", "Moderate");
-        safetyLevelItems[FlickrList::RESTRICTED] = i18nc("photo safety level", "Restricted");
-        contentTypeItems[FlickrList::PHOTO]      = i18nc("photo content type", "Photo");
-        contentTypeItems[FlickrList::SCREENSHOT] = i18nc("photo content type", "Screenshot");
-        contentTypeItems[FlickrList::OTHER]      = i18nc("photo content type", "Other");
-        ComboBoxDelegate* const safetyLevelDelegate = new ComboBoxDelegate(d->imglst, safetyLevelItems);
-        ComboBoxDelegate* const contentTypeDelegate = new ComboBoxDelegate(d->imglst, contentTypeItems);
-        d->imglst->listView()->setItemDelegateForColumn(static_cast<DItemsListView::ColumnType>(FlickrList::SAFETYLEVEL), safetyLevelDelegate);
-        d->imglst->listView()->setItemDelegateForColumn(static_cast<DItemsListView::ColumnType>(FlickrList::CONTENTTYPE), contentTypeDelegate);
+        permColWidth = tmpWidth;
     }
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+    if ((tmpWidth = hdrFont.horizontalAdvance(i18nc("photo permissions", "Friends"))) > permColWidth)
+#else
+    if ((tmpWidth = hdrFont.width(i18nc("photo permissions", "Friends"))) > permColWidth)
+#endif
+    {
+        permColWidth = tmpWidth;
+    }
+
+    d->imglst->listView()->setColumn(static_cast<DItemsListView::ColumnType>(FlickrList::FAMILY),
+                                     i18nc("photo permissions", "Family"), true);
+    d->imglst->listView()->setColumn(static_cast<DItemsListView::ColumnType>(FlickrList::FRIENDS),
+                                     i18nc("photo permissions", "Friends"), true);
+    hdr->setSectionResizeMode(FlickrList::FAMILY,  QHeaderView::Interactive);
+    hdr->setSectionResizeMode(FlickrList::FRIENDS, QHeaderView::Interactive);
+    hdr->resizeSection(FlickrList::FAMILY,  permColWidth);
+    hdr->resizeSection(FlickrList::FRIENDS, permColWidth);
+
+    d->imglst->listView()->setColumn(static_cast<DItemsListView::ColumnType>(FlickrList::SAFETYLEVEL),
+                                     i18n("Safety level"), true);
+    d->imglst->listView()->setColumn(static_cast<DItemsListView::ColumnType>(FlickrList::CONTENTTYPE),
+                                     i18n("Content type"), true);
+    QMap<int, QString> safetyLevelItems;
+    QMap<int, QString> contentTypeItems;
+    safetyLevelItems[FlickrList::SAFE]       = i18nc("photo safety level", "Safe");
+    safetyLevelItems[FlickrList::MODERATE]   = i18nc("photo safety level", "Moderate");
+    safetyLevelItems[FlickrList::RESTRICTED] = i18nc("photo safety level", "Restricted");
+    contentTypeItems[FlickrList::PHOTO]      = i18nc("photo content type", "Photo");
+    contentTypeItems[FlickrList::SCREENSHOT] = i18nc("photo content type", "Screenshot");
+    contentTypeItems[FlickrList::OTHER]      = i18nc("photo content type", "Other");
+    ComboBoxDelegate* const safetyLevelDelegate = new ComboBoxDelegate(d->imglst, safetyLevelItems);
+    ComboBoxDelegate* const contentTypeDelegate = new ComboBoxDelegate(d->imglst, contentTypeItems);
+    d->imglst->listView()->setItemDelegateForColumn(static_cast<DItemsListView::ColumnType>(FlickrList::SAFETYLEVEL), safetyLevelDelegate);
+    d->imglst->listView()->setItemDelegateForColumn(static_cast<DItemsListView::ColumnType>(FlickrList::CONTENTTYPE), contentTypeDelegate);
 
     hdr->setSectionResizeMode(FlickrList::PUBLIC, QHeaderView::Interactive);
     hdr->resizeSection(FlickrList::PUBLIC, permColWidth);
@@ -243,46 +240,26 @@ FlickrWidget::FlickrWidget(QWidget* const parent,
     connect(d->addExtraTagsCheckBox, SIGNAL(toggled(bool)),
             this, SLOT(slotAddExtraTagsToggled(bool)));
 
-    // 23HQ doesn't support the Family and Friends concept.
-    if (serviceName != QLatin1String("23"))
-    {
-        connect(d->familyCheckBox, SIGNAL(stateChanged(int)),
-                this, SLOT(slotMainFamilyToggled(int)));
+    connect(d->familyCheckBox, SIGNAL(stateChanged(int)),
+            this, SLOT(slotMainFamilyToggled(int)));
 
-        connect(d->friendsCheckBox, SIGNAL(stateChanged(int)),
-                this, SLOT(slotMainFriendsToggled(int)));
-    }
-    else
-    {
-        d->familyCheckBox->hide();
-        d->friendsCheckBox->hide();
-    }
+    connect(d->friendsCheckBox, SIGNAL(stateChanged(int)),
+            this, SLOT(slotMainFriendsToggled(int)));
 
-    // 23HQ don't support the Safety Level and Content Type concept.
-    if (serviceName != QLatin1String("23"))
-    {
-        connect(d->safetyLevelComboBox, SIGNAL(currentIndexChanged(int)),
-                this, SLOT(slotMainSafetyLevelChanged(int)));
+    connect(d->safetyLevelComboBox, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotMainSafetyLevelChanged(int)));
 
-        connect(d->contentTypeComboBox, SIGNAL(currentIndexChanged(int)),
-                this, SLOT(slotMainContentTypeChanged(int)));
+    connect(d->contentTypeComboBox, SIGNAL(currentIndexChanged(int)),
+            this, SLOT(slotMainContentTypeChanged(int)));
 
-        connect(d->extendedPublicationButton, SIGNAL(toggled(bool)),
-                this, SLOT(slotExtendedPublicationToggled(bool)));
+    connect(d->extendedPublicationButton, SIGNAL(toggled(bool)),
+            this, SLOT(slotExtendedPublicationToggled(bool)));
 
-        connect(d->imglst, SIGNAL(signalSafetyLevelChanged(FlickrList::SafetyLevel)),
-                this, SLOT(slotSafetyLevelChanged(FlickrList::SafetyLevel)));
+    connect(d->imglst, SIGNAL(signalSafetyLevelChanged(FlickrList::SafetyLevel)),
+            this, SLOT(slotSafetyLevelChanged(FlickrList::SafetyLevel)));
 
-        connect(d->imglst, SIGNAL(signalContentTypeChanged(FlickrList::ContentType)),
-                this, SLOT(slotContentTypeChanged(FlickrList::ContentType)));
-    }
-    else
-    {
-        d->extendedPublicationBox->hide();
-        d->extendedPublicationButton->hide();
-        d->imglst->listView()->setColumnEnabled(static_cast<DItemsListView::ColumnType>(FlickrList::SAFETYLEVEL), false);
-        d->imglst->listView()->setColumnEnabled(static_cast<DItemsListView::ColumnType>(FlickrList::CONTENTTYPE), false);
-    }
+    connect(d->imglst, SIGNAL(signalContentTypeChanged(FlickrList::ContentType)),
+            this, SLOT(slotContentTypeChanged(FlickrList::ContentType)));
 }
 
 FlickrWidget::~FlickrWidget()
@@ -292,21 +269,11 @@ FlickrWidget::~FlickrWidget()
 
 void FlickrWidget::updateLabels(const QString& /*name*/, const QString& /*url*/)
 {
-    if (d->serviceName == QLatin1String("23"))
-    {
-        getHeaderLbl()->setText(i18n("<b><h2><a href='http://www.23hq.com'>"
-                                  "<font color=\"#7CD164\">23</font></a>"
-                                  " Export"
-                                  "</h2></b>"));
-    }
-    else
-    {
-        getHeaderLbl()->setText(i18n("<b><h2><a href='http://www.flickr.com'>"
-                                  "<font color=\"#0065DE\">flick</font>"
-                                  "<font color=\"#FF0084\">r</font></a>"
-                                  " Export"
-                                  "</h2></b>"));
-    }
+    getHeaderLbl()->setText(i18n("<b><h2><a href='http://www.flickr.com'>"
+                                 "<font color=\"#0065DE\">flick</font>"
+                                 "<font color=\"#FF0084\">r</font></a>"
+                                 " Export"
+                                 "</h2></b>"));
 }
 
 void FlickrWidget::slotPermissionChanged(FlickrList::FieldType checkbox, Qt::CheckState state)

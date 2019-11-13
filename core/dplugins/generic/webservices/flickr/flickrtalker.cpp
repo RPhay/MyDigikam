@@ -143,29 +143,15 @@ FlickrTalker::FlickrTalker(QWidget* const parent,
     m_photoSetsList   = nullptr;
     m_authProgressDlg = nullptr;
 
-    if (d->serviceName == QLatin1String("23"))
-    {
-        d->apiUrl      = QLatin1String("http://www.23hq.com/services/rest/");
-        d->authUrl     = QLatin1String("http://www.23hq.com/services/auth/");
-        d->uploadUrl   = QLatin1String("http://www.23hq.com/services/upload/");
+    d->apiUrl      = QLatin1String("https://www.flickr.com/services/rest/");
+    d->authUrl     = QLatin1String("https://www.flickr.com/services/oauth/authorize?perms=write");
+    d->tokenUrl    = QLatin1String("https://www.flickr.com/services/oauth/request_token");
+    d->accessUrl   = QLatin1String("https://www.flickr.com/services/oauth/access_token");
+    d->uploadUrl   = QLatin1String("https://up.flickr.com/services/upload/");
+    d->callbackUrl = QLatin1String("https://www.flickr.com");
 
-        // bshanks: do 23 and flickr really share API keys? or does 23 not need
-        // one?
-        d->apikey      = QLatin1String("49d585bafa0758cb5c58ab67198bf632");
-        d->secret      = QLatin1String("34b39925e6273ffd");
-    }
-    else
-    {
-        d->apiUrl      = QLatin1String("https://www.flickr.com/services/rest/");
-        d->authUrl     = QLatin1String("https://www.flickr.com/services/oauth/authorize?perms=write");
-        d->tokenUrl    = QLatin1String("https://www.flickr.com/services/oauth/request_token");
-        d->accessUrl   = QLatin1String("https://www.flickr.com/services/oauth/access_token");
-        d->uploadUrl   = QLatin1String("https://up.flickr.com/services/upload/");
-        d->callbackUrl = QLatin1String("https://www.flickr.com");
-
-        d->apikey    = QLatin1String("74f882bf4dabe22baaaace1f6d33c66b");
-        d->secret    = QLatin1String("537d58e3ead2d6d5");
-    }
+    d->apikey      = QLatin1String("74f882bf4dabe22baaaace1f6d33c66b");
+    d->secret      = QLatin1String("537d58e3ead2d6d5");
 
     d->netMngr = new QNetworkAccessManager(this);
 

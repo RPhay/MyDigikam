@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2009-05-22
- * Description : Flickr/23HQ file list view and items.
+ * Description : Flickr file list view and items.
  *
  * Copyright (C) 2009      by Pieter Edelman <pieter dot edelman at gmx dot net>
  * Copyright (C) 2008-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -52,7 +52,6 @@ public:
         isFriends     = Qt::Unchecked;
         safetyLevel   = FlickrList::SAFE;
         contentType   = FlickrList::PHOTO;
-        is23          = false;
         userIsEditing = false;
     }
 
@@ -65,16 +64,12 @@ public:
     // Used to separate the ImagesList::itemChanged signals that were caused
     // programmatically from those caused by the user.
     bool                    userIsEditing;
-
-    bool                    is23;
 };
 
-FlickrList::FlickrList(QWidget* const parent, bool is_23)
+FlickrList::FlickrList(QWidget* const parent)
     : DItemsList(parent),
       d(new Private)
 {
-    d->is23 = is_23;
-
     // Catch a click on the items.
     connect(listView(), SIGNAL(itemClicked(QTreeWidgetItem*,int)),
             this, SLOT(slotItemClicked(QTreeWidgetItem*,int)));
@@ -407,7 +402,7 @@ void FlickrList::slotAddImages(const QList<QUrl>& list)
         if (!found)
         {
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Inserting new item " << imageUrl.fileName();
-            new FlickrListViewItem(listView(), imageUrl, d->is23,
+            new FlickrListViewItem(listView(), imageUrl,
                                    isPublic, isFamily, isFriends,
                                    safetyLevel, contentType);
             added_urls.append(imageUrl);
@@ -427,7 +422,6 @@ public:
 
     explicit Private()
     {
-        is23        = false;
         isPublic    = true;
         isFamily    = true;
         isFriends   = true;
@@ -435,8 +429,6 @@ public:
         contentType = FlickrList::PHOTO;
         tagLineEdit = nullptr;
     }
-
-    bool                    is23;
 
     bool                    isPublic;
     bool                    isFamily;
@@ -452,7 +444,6 @@ public:
 
 FlickrListViewItem::FlickrListViewItem(DItemsListView* const view,
                                        const QUrl& url,
-                                       bool is23 = false,
                                        bool accessPublic  = true,
                                        bool accessFamily  = true,
                                        bool accessFriends = true,
@@ -461,12 +452,8 @@ FlickrListViewItem::FlickrListViewItem(DItemsListView* const view,
     : DItemsListViewItem(view, url),
       d(new Private)
 {
-    d->is23 = is23;
-
     /* Initialize the FlickrListViewItem with the ImagesListView and a QUrl
      * object pointing to the location on disk.
-     * If the photo is meant for 23HQ, the service_23 flag should be set to
-     * true.
      * The access_public, access_family and access_friends flags determine if
      * the public, family and friends permissions of this particular photo. */
 
@@ -534,17 +521,14 @@ void FlickrListViewItem::toggled()
 {
     // The d->isFamily and d->isFriends states should be set first, so that the
     // setPublic method has the proper values to work with.
-    if (!d->is23)
+    if (data(FlickrList::FAMILY, Qt::CheckStateRole) != QVariant())
     {
-        if (data(FlickrList::FAMILY, Qt::CheckStateRole) != QVariant())
-        {
-            setFamily(checkState(static_cast<DItemsListView::ColumnType>(FlickrList::FAMILY)));
-        }
+        setFamily(checkState(static_cast<DItemsListView::ColumnType>(FlickrList::FAMILY)));
+    }
 
-        if (data(FlickrList::FRIENDS, Qt::CheckStateRole) != QVariant())
-        {
-            setFriends(checkState(static_cast<DItemsListView::ColumnType>(FlickrList::FRIENDS)));
-        }
+    if (data(FlickrList::FRIENDS, Qt::CheckStateRole) != QVariant())
+    {
+        setFriends(checkState(static_cast<DItemsListView::ColumnType>(FlickrList::FRIENDS)));
     }
 
     setPublic(checkState(static_cast<DItemsListView::ColumnType>(FlickrList::PUBLIC)));
@@ -559,23 +543,20 @@ void FlickrListViewItem::setPublic(bool status)
     d->isPublic = status;
 
     // Toggle the family and friends checkboxes, if applicable.
-    if (!d->is23)
+    if (d->isPublic)
     {
-        if (d->isPublic)
-        {
-            // Hide the checkboxes by feeding them a bogus QVariant for the
-            // CheckStateRole. This might seem like a hack, but it's described in
-            // the Qt FAQ at
-            // http://www.qtsoftware.com/developer/faqs/faq.2007-04-23.8353273326.
-            setData(static_cast<DItemsListView::ColumnType>(FlickrList::FAMILY),  Qt::CheckStateRole, QVariant());
-            setData(static_cast<DItemsListView::ColumnType>(FlickrList::FRIENDS), Qt::CheckStateRole, QVariant());
-        }
-        else
-        {
-            // Show the checkboxes.
-            setCheckState(static_cast<DItemsListView::ColumnType>(FlickrList::FAMILY),  d->isFamily  ? Qt::Checked : Qt::Unchecked);
-            setCheckState(static_cast<DItemsListView::ColumnType>(FlickrList::FRIENDS), d->isFriends ? Qt::Checked : Qt::Unchecked);
-        }
+        // Hide the checkboxes by feeding them a bogus QVariant for the
+        // CheckStateRole. This might seem like a hack, but it's described in
+        // the Qt FAQ at
+        // http://www.qtsoftware.com/developer/faqs/faq.2007-04-23.8353273326.
+        setData(static_cast<DItemsListView::ColumnType>(FlickrList::FAMILY),  Qt::CheckStateRole, QVariant());
+        setData(static_cast<DItemsListView::ColumnType>(FlickrList::FRIENDS), Qt::CheckStateRole, QVariant());
+    }
+    else
+    {
+        // Show the checkboxes.
+        setCheckState(static_cast<DItemsListView::ColumnType>(FlickrList::FAMILY),  d->isFamily  ? Qt::Checked : Qt::Unchecked);
+        setCheckState(static_cast<DItemsListView::ColumnType>(FlickrList::FRIENDS), d->isFriends ? Qt::Checked : Qt::Unchecked);
     }
 
     // Toggle the public checkboxes
@@ -596,7 +577,7 @@ void FlickrListViewItem::setFamily(bool status)
     /* Set the family status. */
     d->isFamily = status;
 
-    if ((!d->is23) && (data(FlickrList::FAMILY, Qt::CheckStateRole) != QVariant()))
+    if (data(FlickrList::FAMILY, Qt::CheckStateRole) != QVariant())
     {
         setCheckState(FlickrList::FAMILY, d->isFamily ? Qt::Checked : Qt::Unchecked);
     }
@@ -609,7 +590,7 @@ void FlickrListViewItem::setFriends(bool status)
     /* Set the family status. */
     d->isFriends = status;
 
-    if ((!d->is23) && (data(FlickrList::FRIENDS, Qt::CheckStateRole) != QVariant()))
+    if (data(FlickrList::FRIENDS, Qt::CheckStateRole) != QVariant())
     {
         setCheckState(FlickrList::FRIENDS, d->isFriends ? Qt::Checked : Qt::Unchecked);
     }

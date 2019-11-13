@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2009-05-22
- * Description : Flickr/23HQ file list view and items.
+ * Description : Flickr file list view and items.
  *
  * Copyright (C) 2009      by Pieter Edelman <pieter dot edelman at gmx dot net>
  * Copyright (C) 2008-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -79,7 +79,7 @@ public:
 
 public:
 
-    explicit FlickrList(QWidget* const parent = nullptr, bool = false);
+    explicit FlickrList(QWidget* const parent = nullptr);
     ~FlickrList();
 
     void setPublic(Qt::CheckState);
@@ -129,7 +129,7 @@ public:
 
     explicit FlickrListViewItem(DItemsListView* const view,
                                 const QUrl& url,
-                                bool, bool, bool, bool,
+                                bool, bool, bool,
                                 FlickrList::SafetyLevel,
                                 FlickrList::ContentType);
     ~FlickrListViewItem();
