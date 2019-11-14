@@ -97,6 +97,7 @@ EditorTool::EditorTool(QObject* const parent)
 {
     d->timer = new QTimer(this);
 
+    // cppcheck-suppress virtualCallInConstructor
     connect(d->timer, SIGNAL(timeout()),
             this, SLOT(slotPreview()));
 }
