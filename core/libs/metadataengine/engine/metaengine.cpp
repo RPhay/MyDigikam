@@ -28,7 +28,6 @@
  *
  * ============================================================ */
 
-#include "metaengine.h"
 #include "metaengine_p.h"
 #include "metaengine_data_p.h"
 
