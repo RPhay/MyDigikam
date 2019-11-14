@@ -59,6 +59,7 @@ MaintenanceTool::MaintenanceTool(const QString& id, ProgressItem* const parent)
     : ProgressItem(parent, id, QString(), QString(), true, true),
       d(new Private)
 {
+    // cppcheck-suppress virtualCallInConstructor
     connect(this, SIGNAL(progressItemCanceled(QString)),
             this, SLOT(slotCancel()));
 }
