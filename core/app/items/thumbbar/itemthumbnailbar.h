@@ -55,8 +55,8 @@ public:
 
     QModelIndex nextIndex(const QModelIndex& index)     const;
     QModelIndex previousIndex(const QModelIndex& index) const;
-    QModelIndex firstIndex() const;
-    QModelIndex lastIndex()  const;
+    QModelIndex firstIndex()                            const;
+    QModelIndex lastIndex()                             const;
 
 public Q_SLOTS:
 
@@ -66,7 +66,7 @@ public Q_SLOTS:
 protected:
 
     virtual void slotSetupChanged() override;
-    virtual bool event(QEvent*) override;
+    virtual bool event(QEvent*)     override;
 
 private:
 

@@ -53,7 +53,7 @@ public:
         duplicatesFilter = nullptr;
     }
 
-    Qt::ScrollBarPolicy           scrollPolicy;
+    Qt::ScrollBarPolicy          scrollPolicy;
     NoDuplicatesItemFilterModel* duplicatesFilter;
 };
 
@@ -74,9 +74,8 @@ ItemThumbnailBar::ItemThumbnailBar(QWidget* const parent)
     setScrollCurrentToCenter(ApplicationSettings::instance()->getScrollItemToCenter());
     setToolTipEnabled(ApplicationSettings::instance()->showToolTipsIsValid());
 
-    // cppcheck-suppress virtualCallInConstructor
-    connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
-            this, SLOT(slotSetupChanged()));
+    connect(ApplicationSettings::instance(), &ApplicationSettings::setupChanged,
+            this,  &ItemThumbnailBar::slotSetupChanged);
 
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
     this->slotSetupChanged();
