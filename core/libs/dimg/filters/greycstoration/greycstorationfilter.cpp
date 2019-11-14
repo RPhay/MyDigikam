@@ -219,7 +219,8 @@ void GreycstorationFilter::setup()
                            m_orgImage.sixteenBit(), m_orgImage.hasAlpha());
     }
 
-    initFilter();
+    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+    this->initFilter();
 }
 
 QString GreycstorationFilter::cimgVersionString()
