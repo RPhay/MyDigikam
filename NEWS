@@ -33,4 +33,5 @@ BUGFIXES:
 022 ==> 303239 - GROUP : grouped images are found, but do not show in searches.
 023 ==> 321339 - GROUP : suppress display of albums containing only grouped images.
 024 ==> 289911 - 23HQ should be split from flickr uploader as a new export tool.
-025 ==> 
+025 ==> 414112 - Rounding problems in Resize Image function.
+026 ==> 

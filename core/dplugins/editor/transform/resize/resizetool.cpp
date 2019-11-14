@@ -745,7 +745,7 @@ void ResizeTool::slotValuesChanged()
 
         if (d->preserveRatioBox->isChecked())
         {
-            double h = pixelsToUnits((int)(pval * d->orgHeight / 100));
+            double h = pixelsToUnits(qRound(pval * d->orgHeight / 100));
             d->hpInput->setValue(pval);
             d->hInput->setValue(h);
         }
@@ -759,7 +759,7 @@ void ResizeTool::slotValuesChanged()
 
         if (d->preserveRatioBox->isChecked())
         {
-            double w = pixelsToUnits((int)(pval * d->orgWidth / 100));
+            double w = pixelsToUnits(qRound(pval * d->orgWidth / 100));
             d->wpInput->setValue(pval);
             d->wInput->setValue(w);
         }
@@ -767,12 +767,12 @@ void ResizeTool::slotValuesChanged()
     else if (s == QLatin1String("wpInput"))
     {
         double val = d->wpInput->value();
-        double w   = pixelsToUnits((int)(val * d->orgWidth / 100));
+        double w   = pixelsToUnits(qRound(val * d->orgWidth / 100));
         d->wInput->setValue(w);
 
         if (d->preserveRatioBox->isChecked())
         {
-            double h = pixelsToUnits((int)(val * d->orgHeight / 100));
+            double h = pixelsToUnits(qRound(val * d->orgHeight / 100));
             d->hpInput->setValue(val);
             d->hInput->setValue(h);
         }
@@ -780,12 +780,12 @@ void ResizeTool::slotValuesChanged()
     else if (s == QLatin1String("hpInput"))
     {
         double val = d->hpInput->value();
-        double h   = pixelsToUnits((int)(val * d->orgHeight / 100));
+        double h   = pixelsToUnits(qRound(val * d->orgHeight / 100));
         d->hInput->setValue(h);
 
         if (d->preserveRatioBox->isChecked())
         {
-            double w = pixelsToUnits((int)(val * d->orgWidth / 100));
+            double w = pixelsToUnits(qRound(val * d->orgWidth / 100));
             d->wpInput->setValue(val);
             d->wInput->setValue(w);
         }
