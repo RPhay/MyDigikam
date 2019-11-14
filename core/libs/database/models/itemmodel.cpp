@@ -56,6 +56,8 @@ public:
         incrementalRefreshRequested = false;
     }
 
+public:
+
     ItemInfoList                       infos;
     ItemInfo                           itemInfo;
 
@@ -79,6 +81,8 @@ public:
     ItemInfoList                       pendingInfos;
     QList<QVariant>                    pendingExtraValues;
 
+public:
+
     inline bool isValid(const QModelIndex& index)
     {
         if (!index.isValid())
@@ -94,6 +98,7 @@ public:
 
         return true;
     }
+
     inline bool extraValueValid(const QModelIndex& index)
     {
         // we assume isValid() being called before, no duplicate checks
@@ -106,6 +111,8 @@ public:
         return true;
     }
 };
+
+// -------------------------------------------------------------------------------------
 
 typedef QPair<int, int> IntPair; // to make foreach macro happy
 typedef QList<IntPair>  IntPairList;
@@ -131,13 +138,17 @@ public:
     QList<IntPairList>    modelRemovals;
 };
 
+// -------------------------------------------------------------------------------------
+
 ItemModel::ItemModel(QObject* const parent)
     : QAbstractListModel(parent),
       d(new Private)
 {
+    // cppcheck-suppress virtualCallInConstructor
     connect(CoreDbAccess::databaseWatch(), SIGNAL(imageChange(ImageChangeset)),
             this, SLOT(slotImageChange(ImageChangeset)));
 
+    // cppcheck-suppress virtualCallInConstructor
     connect(CoreDbAccess::databaseWatch(), SIGNAL(imageTagChange(ImageTagChangeset)),
             this, SLOT(slotImageTagChange(ImageTagChangeset)));
 }
@@ -226,7 +237,7 @@ QList<qlonglong> ItemModel::imageIds(const QList<QModelIndex>& indexes) const
 
 ItemInfo ItemModel::imageInfo(int row) const
 {
-    if (row < 0 || row >= d->infos.size())
+    if ((row < 0) || (row >= d->infos.size()))
     {
         return ItemInfo();
     }
@@ -236,7 +247,7 @@ ItemInfo ItemModel::imageInfo(int row) const
 
 ItemInfo& ItemModel::imageInfoRef(int row) const
 {
-    if (row < 0 || row >= d->infos.size())
+    if ((row < 0) || (row >= d->infos.size()))
     {
         return d->itemInfo;
     }
@@ -246,7 +257,7 @@ ItemInfo& ItemModel::imageInfoRef(int row) const
 
 qlonglong ItemModel::imageId(int row) const
 {
-    if (row < 0 || row >= d->infos.size())
+    if ((row < 0) || (row >= d->infos.size()))
     {
         return -1;
     }
@@ -284,14 +295,18 @@ QModelIndex ItemModel::indexForImageId(qlonglong id) const
 QModelIndex ItemModel::indexForImageId(qlonglong id, const QVariant& extraValue) const
 {
     if (d->extraValues.isEmpty())
+    {
         return indexForImageId(id);
+    }
 
     QHash<qlonglong, int>::const_iterator it;
 
     for (it = d->idHash.constFind(id) ; it != d->idHash.constEnd() && it.key() == id ; ++it)
     {
         if (d->extraValues.at(it.value()) == extraValue)
+        {
             return createIndex(it.value(), 0);
+        }
     }
 
     return QModelIndex();
@@ -614,14 +629,18 @@ bool ItemModel::hasImage(const ItemInfo& info, const QVariant& extraValue) const
 bool ItemModel::hasImage(qlonglong id, const QVariant& extraValue) const
 {
     if (d->extraValues.isEmpty())
+    {
         return hasImage(id);
+    }
 
     QHash<qlonglong, int>::const_iterator it;
 
     for (it = d->idHash.constFind(id) ; it != d->idHash.constEnd() && it.key() == id ; ++it)
     {
         if (d->extraValues.at(it.value()) == extraValue)
+        {
             return true;
+        }
     }
 
     return false;;
@@ -690,9 +709,14 @@ void ItemModel::unsetPreprocessor(QObject* const preprocessor)
 {
     if (preprocessor && d->preprocessor == preprocessor)
     {
-        disconnect(this, SIGNAL(preprocess(QList<ItemInfo>,QList<QVariant>)), nullptr, nullptr);
-        disconnect(d->preprocessor, nullptr, this, SLOT(reAddItemInfos(QList<ItemInfo>,QList<QVariant>)));
-        disconnect(d->preprocessor, nullptr, this, SLOT(reAddingFinished()));
+        disconnect(this, SIGNAL(preprocess(QList<ItemInfo>,QList<QVariant>)),
+                   nullptr, nullptr);
+
+        disconnect(d->preprocessor, nullptr,
+                   this, SLOT(reAddItemInfos(QList<ItemInfo>,QList<QVariant>)));
+
+        disconnect(d->preprocessor, nullptr,
+                   this, SLOT(reAddingFinished()));
     }
 }
 
@@ -735,7 +759,7 @@ void ItemModel::appendInfosChecked(const QList<ItemInfo>& infos, const QList<QVa
     else
     {
         QList<ItemInfo> checkedInfos;
-        QList<QVariant>  checkedExtraValues;
+        QList<QVariant> checkedExtraValues;
         const int size = infos.size();
 
         for (int i = 0 ; i < size ; ++i)
@@ -784,6 +808,7 @@ void ItemModel::cleanSituationChecks()
     // For starting an incremental refresh we want a clear situation:
     // Any remaining batches from non-incremental refreshing subclasses have been received in appendInfos(),
     // any batches sent to preprocessor for re-adding have been re-added.
+
     if (d->refreshing || d->reAdding)
     {
         return;
@@ -816,7 +841,8 @@ void ItemModel::publiciseInfos(const QList<ItemInfo>& infos, const QList<QVarian
         return;
     }
 
-    Q_ASSERT(infos.size() == extraValues.size() || (extraValues.isEmpty() && d->extraValues.isEmpty()));
+    Q_ASSERT(infos.size() == extraValues.size() ||
+             (extraValues.isEmpty() && d->extraValues.isEmpty()));
 
     emit imageInfosAboutToBeAdded(infos);
     const int firstNewIndex = d->infos.size();
@@ -828,7 +854,7 @@ void ItemModel::publiciseInfos(const QList<ItemInfo>& infos, const QList<QVarian
     for (int i = firstNewIndex ; i <= lastNewIndex ; ++i)
     {
         const ItemInfo& info = d->infos.at(i);
-        qlonglong id          = info.id();
+        qlonglong id         = info.id();
         d->idHash.insertMulti(id, i);
 
         if (d->keepFilePathCache)
@@ -873,10 +899,12 @@ void ItemModel::finishIncrementalRefresh()
     }
 
     // remove old entries
+
     QList<QPair<int, int> > pairs = d->incrementalUpdater->oldIndexes();
     removeRowPairs(pairs);
 
     // add new indexes
+
     appendInfos(d->incrementalUpdater->newInfos, d->incrementalUpdater->newExtraValues);
 
     delete d->incrementalUpdater;
@@ -926,6 +954,7 @@ void ItemModel::removeItemInfos(const QList<ItemInfo>& infos)
             listIndexes << index.row();
         }
     }
+
     removeRowPairsWithCheck(ItemModelIncrementalUpdater::toContiguousPairs(listIndexes));
 }
 
@@ -971,14 +1000,14 @@ static bool pairsContain(const List& list, T value)
         half   = n >> 1;
         middle = begin + half;
 
-        if (middle->first <= value && middle->second >= value)
+        if ((middle->first <= value) && (middle->second >= value))
         {
             return true;
         }
         else if (middle->second < value)
         {
             begin = middle + 1;
-            n     -= half + 1;
+            n    -= half   + 1;
         }
         else
         {
@@ -1057,6 +1086,7 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
         }
 
         // remove from list
+
         d->infos.erase(d->infos.begin() + begin, d->infos.begin() + (end + 1));
 
         if (!d->extraValues.isEmpty())
@@ -1073,6 +1103,7 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
     }
 
     // tidy up: remove old indexes from file path hash now
+
     if (d->keepFilePathCache)
     {
         QHash<QString, qlonglong>::iterator it;
@@ -1126,6 +1157,7 @@ void ItemModelIncrementalUpdater::appendInfos(const QList<ItemInfo>& infos, cons
             for (it = oldIds.find(info.id()) ; it != oldIds.end() && it.key() == info.id() ; ++it)
             {
                 // first check is for bug #262596. Not sure if needed.
+
                 if (it.value() < oldExtraValues.size() && extraValues.at(i) == oldExtraValues.at(it.value()))
                 {
                     found = true;
@@ -1136,6 +1168,7 @@ void ItemModelIncrementalUpdater::appendInfos(const QList<ItemInfo>& infos, cons
             if (found)
             {
                 oldIds.erase(it);
+
                 // do not erase from oldExtraValues - oldIds is a hash id -> index.
             }
             else
@@ -1156,9 +1189,11 @@ QList<QPair<int, int> > ItemModelIncrementalUpdater::oldIndexes()
 {
     // first, apply all changes to indexes by direct removal in model
     // while the updater was active
+
     foreach (const IntPairList& list, modelRemovals)
     {
-        int removedRows = 0, offset = 0;
+        int removedRows = 0;
+        int offset      = 0;
 
         foreach (const IntPair& pair, list)
         {
@@ -1167,9 +1202,11 @@ QList<QPair<int, int> > ItemModelIncrementalUpdater::oldIndexes()
             removedRows     = end - begin + 1;
 
             // when removing from the list, all subsequent indexes are affected
+
             offset += removedRows;
 
             // update idHash - which points to indexes of d->infos, and these change now!
+
             QHash<qlonglong, int>::iterator it;
 
             for (it = oldIds.begin() ; it != oldIds.end() ; )
@@ -1179,11 +1216,13 @@ QList<QPair<int, int> > ItemModelIncrementalUpdater::oldIndexes()
                     if (it.value() > end)
                     {
                         // after the removed interval: adjust index
+
                         it.value() -= removedRows;
                     }
                     else
                     {
                         // in the removed interval
+
                         it = oldIds.erase(it);
                         continue;
                     }
@@ -1285,6 +1324,7 @@ QVariant ItemModel::headerData(int section, Qt::Orientation orientation, int rol
     Q_UNUSED(section)
     Q_UNUSED(orientation)
     Q_UNUSED(role)
+
     return QVariant();
 }
 
@@ -1307,14 +1347,14 @@ Qt::ItemFlags ItemModel::flags(const QModelIndex& index) const
 
     Qt::ItemFlags f = Qt::ItemIsSelectable | Qt::ItemIsEnabled;
 
-    f |= dragDropFlags(index);
+    f              |= dragDropFlags(index);
 
     return f;
 }
 
 QModelIndex ItemModel::index(int row, int column, const QModelIndex& parent) const
 {
-    if (column != 0 || row < 0 || parent.isValid() || row >= d->infos.size())
+    if ((column != 0) || (row < 0) || parent.isValid() || (row >= d->infos.size()))
     {
         return QModelIndex();
     }
