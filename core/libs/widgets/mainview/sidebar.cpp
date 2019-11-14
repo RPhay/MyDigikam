@@ -77,9 +77,13 @@ DMultiTabBarFrame::DMultiTabBarFrame(QWidget* const parent, Qt::Edge pos)
     d->position = pos;
 
     if (pos == Qt::LeftEdge || pos == Qt::RightEdge)
+    {
         d->mainLayout = new QVBoxLayout(this);
+    }
     else
+    {
         d->mainLayout = new QHBoxLayout(this);
+    }
 
     d->mainLayout->setContentsMargins(QMargins());
     d->mainLayout->setSpacing(0);
@@ -100,7 +104,9 @@ void DMultiTabBarFrame::setStyle(DMultiTabBar::TextStyle style)
     d->style = style;
 
     for (int i = 0 ; i < d->tabs.count() ; ++i)
+    {
         d->tabs.at(i)->setStyle(d->style);
+    }
 
     updateGeometry();
 }
@@ -124,7 +130,9 @@ DMultiTabBarTab* DMultiTabBarFrame::tab(int id) const
         DMultiTabBarTab* const tab = it.next();
 
         if (tab->id() == id)
+        {
             return tab;
+        }
     }
 
     return nullptr;
@@ -138,6 +146,7 @@ int DMultiTabBarFrame::appendTab(const QPixmap& pic, int id, const QString& text
     // Insert before the stretch.
     d->mainLayout->insertWidget(d->tabs.size()-1, tab);
     tab->show();
+
     return 0;
 }
 
@@ -159,7 +168,9 @@ void DMultiTabBarFrame::setPosition(Qt::Edge pos)
     d->position = pos;
 
     for (int i = 0 ; i < d->tabs.count() ; ++i)
+    {
         d->tabs.at(i)->setPosition(d->position);
+    }
 
     updateGeometry();
 }
@@ -213,7 +224,9 @@ void DMultiTabBarButton::hideEvent(QHideEvent* e)
     DMultiTabBar* const tb = dynamic_cast<DMultiTabBar*>(parentWidget());
 
     if (tb)
+    {
         tb->updateSeparator();
+    }
 }
 
 void DMultiTabBarButton::showEvent(QShowEvent* e)
@@ -222,7 +235,9 @@ void DMultiTabBarButton::showEvent(QShowEvent* e)
     DMultiTabBar* const tb = dynamic_cast<DMultiTabBar*>(parentWidget());
 
     if (tb)
+    {
         tb->updateSeparator();
+    }
 }
 
 void DMultiTabBarButton::paintEvent(QPaintEvent*)
@@ -282,6 +297,7 @@ void DMultiTabBarTab::setStyle(DMultiTabBar::TextStyle style)
 QPixmap DMultiTabBarTab::iconPixmap() const
 {
     int iconSize = style()->pixelMetric(QStyle::PM_SmallIconSize, nullptr, this);
+
     return icon().pixmap(iconSize);
 }
 
@@ -298,13 +314,19 @@ void DMultiTabBarTab::initStyleOption(QStyleOptionToolButton* opt) const
 
     // Should we draw text?
     if (shouldDrawText())
+    {
         opt->text = text();
+    }
 
     if (underMouse())
+    {
         opt->state |= QStyle::State_AutoRaise | QStyle::State_MouseOver | QStyle::State_Raised;
+    }
 
     if (isChecked())
+    {
         opt->state |= QStyle::State_Sunken | QStyle::State_On;
+    }
 
     opt->font            = font();
     opt->toolButtonStyle = shouldDrawText() ? Qt::ToolButtonTextBesideIcon : Qt::ToolButtonIconOnly;
@@ -332,8 +354,8 @@ void DMultiTabBarTab::computeMargins(int* hMargin, int* vMargin) const
     QSize trialSize  = iconPix.size();
     QSize expandSize = style()->sizeFromContents(QStyle::CT_ToolButton, &opt, trialSize, this);
 
-    *hMargin = (expandSize.width()  - trialSize.width())/2;
-    *vMargin = (expandSize.height() - trialSize.height())/2;
+    *hMargin         = (expandSize.width()  - trialSize.width())/2;
+    *vMargin         = (expandSize.height() - trialSize.height())/2;
 }
 
 QSize DMultiTabBarTab::computeSizeHint(bool withText) const
@@ -347,11 +369,11 @@ QSize DMultiTabBarTab::computeSizeHint(bool withText) const
 
     // Compute interior size, starting from pixmap..
     QPixmap iconPix = iconPixmap();
-    QSize size = iconPix.size();
+    QSize size      = iconPix.size();
 
     // Always include text height in computation, to avoid resizing the minor direction
     // when expanding text..
-    QSize textSize = fontMetrics().size(0, text());
+    QSize textSize  = fontMetrics().size(0, text());
     size.setHeight(qMax(size.height(), textSize.height()));
 
     // Pick margins for major/minor direction, depending on orientation
@@ -472,10 +494,14 @@ void DMultiTabBarTab::paintEvent(QPaintEvent*)
     if (isVertical())
     {
         if (d->position == Qt::LeftEdge && !rtl)
+        {
             bottomIcon = true;
-
+        }
+ 
         if (d->position == Qt::RightEdge && rtl)
-            bottomIcon = true;
+        { 
+           bottomIcon = true;
+        }
     }
 
     if (isVertical())
@@ -558,7 +584,7 @@ DMultiTabBar::DMultiTabBar(Qt::Edge pos, QWidget* const parent)
     : QWidget(parent),
       d(new Private)
 {
-    if (pos == Qt::LeftEdge || pos == Qt::RightEdge)
+    if ((pos == Qt::LeftEdge) || (pos == Qt::RightEdge))
     {
         d->layout = new QVBoxLayout(this);
         setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Expanding);
@@ -602,6 +628,7 @@ int DMultiTabBar::appendButton(const QPixmap &pic, int id, QMenu *popup, const Q
     d->layout->insertWidget(0,btn);
     btn->show();
     d->btnTabSep->show();
+
     return 0;
 }
 
@@ -620,14 +647,19 @@ void DMultiTabBar::updateSeparator()
     }
 
     if (hideSep)
+    {
         d->btnTabSep->hide();
+    }
     else
-        d->btnTabSep->show();
+    {
+       d->btnTabSep->show();
+    }
 }
 
 int DMultiTabBar::appendTab(const QPixmap& pic, int id, const QString& text)
 {
     d->internal->appendTab(pic,id,text);
+
     return 0;
 }
 
@@ -663,7 +695,9 @@ void DMultiTabBar::removeButton(int id)
     }
 
     if (d->buttons.count() == 0)
+    {
         d->btnTabSep->hide();
+    }
 }
 
 void DMultiTabBar::removeTab(int id)
@@ -676,7 +710,9 @@ void DMultiTabBar::setTab(int id,bool state)
     DMultiTabBarTab* const ttab = tab(id);
 
     if (ttab)
+    {
         ttab->setState(state);
+    }
 }
 
 bool DMultiTabBar::isTabRaised(int id) const
@@ -684,7 +720,9 @@ bool DMultiTabBar::isTabRaised(int id) const
     DMultiTabBarTab* const ttab = tab(id);
 
     if (ttab)
+    {
         return ttab->isChecked();
+    }
 
     return false;
 }
@@ -831,10 +869,10 @@ SidebarSplitter* Sidebar::splitter() const
 
 void Sidebar::doLoadState()
 {
-    KConfigGroup group        = getConfigGroup();
-    int tab                   = group.readEntry(entryName(d->optionActiveTabEntry),   0);
-    bool minimized            = group.readEntry(entryName(d->optionMinimizedEntry),   d->minimizedDefault);
-    d->restoreSize            = group.readEntry(entryName(d->optionRestoreSizeEntry), -1);
+    KConfigGroup group = getConfigGroup();
+    int tab            = group.readEntry(entryName(d->optionActiveTabEntry),   0);
+    bool minimized     = group.readEntry(entryName(d->optionMinimizedEntry),   d->minimizedDefault);
+    d->restoreSize     = group.readEntry(entryName(d->optionRestoreSizeEntry), -1);
 
     // validate
     if (tab >= d->tabs || tab < 0)
@@ -1043,9 +1081,13 @@ void Sidebar::activePreviousTab()
     int tab = d->stack->indexOf(d->stack->currentWidget());
 
     if (tab == 0)
+    {
         tab = d->tabs-1;
+    }
     else
+    {
         tab--;
+    }
 
     setActiveTab(d->stack->widget(tab));
 }
@@ -1054,10 +1096,14 @@ void Sidebar::activeNextTab()
 {
     int tab = d->stack->indexOf(d->stack->currentWidget());
 
-    if (tab== d->tabs-1)
+    if (tab == d->tabs-1)
+    {
         tab = 0;
+    }
     else
+    {
         tab++;
+    }
 
     setActiveTab(d->stack->widget(tab));
 }
@@ -1139,6 +1185,7 @@ bool Sidebar::eventFilter(QObject* obj, QEvent* ev)
                 QDragEnterEvent* const e = static_cast<QDragEnterEvent*>(ev);
                 enterEvent(e);
                 e->accept();
+
                 return false;
             }
             else if (ev->type() == QEvent::DragMove)
@@ -1157,6 +1204,7 @@ bool Sidebar::eventFilter(QObject* obj, QEvent* ev)
                 d->dragSwitchTimer->stop();
                 QDragLeaveEvent* const e = static_cast<QDragLeaveEvent*>(ev);
                 leaveEvent(e);
+
                 return false;
             }
             else if (ev->type() == QEvent::Drop)
@@ -1164,6 +1212,7 @@ bool Sidebar::eventFilter(QObject* obj, QEvent* ev)
                 d->dragSwitchTimer->stop();
                 QDropEvent* const e = static_cast<QDropEvent*>(ev);
                 leaveEvent(e);
+
                 return false;
             }
             else
@@ -1289,7 +1338,7 @@ void SidebarSplitter::setSize(QWidget* const widget, int size)
     }
 
     QList<int> sizeList = sizes();
-    sizeList[index] = size;
+    sizeList[index]     = size;
     setSizes(sizeList);
 }
 

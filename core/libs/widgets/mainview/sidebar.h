@@ -112,7 +112,7 @@ public:
     /**
      * return the state of a tab, identified by its ID
      */
-    bool isTabRaised(int id) const;
+    bool isTabRaised(int id)           const;
 
     /**
      * get a pointer to a button within the button area identified by its ID
@@ -122,7 +122,7 @@ public:
     /**
      * get a pointer to a tab within the tab area, identified by its ID
      */
-    DMultiTabBarTab* tab(int id) const;
+    DMultiTabBarTab* tab(int id)       const;
 
     /**
      * set the real position of the widget.
@@ -134,7 +134,7 @@ public:
      * get the tabbar position.
      * @return position
      */
-    Qt::Edge position() const;
+    Qt::Edge position()                const;
 
     /**
      * set the display style of the tabs
@@ -145,7 +145,7 @@ public:
      * get the display style of the tabs
      * @return display style
      */
-    TextStyle tabStyle() const;
+    TextStyle tabStyle()               const;
 
 protected:
 
@@ -192,8 +192,8 @@ protected:
 
     DMultiTabBarButton(const QPixmap& pic, const QString&, int id, QWidget* const parent);
 
-    virtual void hideEvent(QHideEvent*) override;
-    virtual void showEvent(QShowEvent*) override;
+    virtual void hideEvent(QHideEvent*)   override;
+    virtual void showEvent(QShowEvent*)   override;
     virtual void paintEvent(QPaintEvent*) override;
 
 private:
@@ -414,12 +414,12 @@ protected:
     /**
      * load the last view state from disk - called by StateSavingObject#loadState()
      */
-    void doLoadState() override;
+    void doLoadState()                      override;
 
     /**
      * save the view state to disk - called by StateSavingObject#saveState()
      */
-    void doSaveState() override;
+    void doSaveState()                      override;
 
 private:
 
@@ -501,7 +501,7 @@ public:
     /**
      * Returns the value of sizes() that corresponds to the given Sidebar or splitter child widget.
      */
-    int size(Sidebar* const bar) const;
+    int size(Sidebar* const bar)    const;
     int size(QWidget* const widget) const;
     /**
      * Sets the splitter size for the given sidebar or splitter child widget to size.
