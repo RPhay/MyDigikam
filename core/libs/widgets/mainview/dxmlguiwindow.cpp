@@ -205,7 +205,10 @@ QString DXmlGuiWindow::configGroupName() const
 void DXmlGuiWindow::closeEvent(QCloseEvent* e)
 {
     if (fullScreenIsActive())
+    {
         slotToggleFullScreen(false);
+        qApp->processEvents();
+    }
 
     if (!testAttribute(Qt::WA_DeleteOnClose))
     {
