@@ -7,6 +7,7 @@
  * Description : Multithreaded worker object
  *
  * Copyright (C) 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2012-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -70,6 +71,7 @@ WorkerObject::WorkerObject()
 WorkerObject::~WorkerObject()
 {
     shutDown();
+
     delete d;
 }
 
@@ -79,6 +81,7 @@ void WorkerObject::shutDown()
         QMutexLocker locker(&d->mutex);
         d->inDestruction = true;
     }
+
     deactivate(PhaseOut);
     wait();
 }
@@ -104,15 +107,20 @@ bool WorkerObject::connectAndSchedule(const QObject* sender, const char* signal,
                                       const WorkerObject* receiver, const char* method,
                                       Qt::ConnectionType type)
 {
-    connect(sender, signal, receiver, SLOT(schedule()), Qt::DirectConnection);
-    return QObject::connect(sender, signal, receiver, method, type);
+    connect(sender, signal,
+            receiver, SLOT(schedule()),
+            Qt::DirectConnection);
+
+    return (QObject::connect(sender, signal, receiver, method, type));
 }
 
 bool WorkerObject::disconnectAndSchedule(const QObject* sender, const char* signal,
-        const WorkerObject* receiver, const char* method)
+                                         const WorkerObject* receiver, const char* method)
 {
-    disconnect(sender, signal, receiver, SLOT(schedule()));
-    return QObject::disconnect(sender, signal, receiver, method);
+    disconnect(sender, signal,
+               receiver, SLOT(schedule()));
+
+    return (QObject::disconnect(sender, signal, receiver, method));
 }
 
 WorkerObject::State WorkerObject::state() const
@@ -151,6 +159,7 @@ bool WorkerObject::event(QEvent* e)
     {
         aboutToQuitLoop();
         d->eventLoop->quit();
+
         return true;
     }
 
@@ -176,7 +185,8 @@ void WorkerObject::removeRunnable(WorkerObjectRunnable* runnable)
 {
     QMutexLocker locker(&d->mutex);
 
-    // there could be a second runnable in the meantime, waiting for the other, leaving runnable to park
+    // There could be a second runnable in the meantime, waiting for the other, leaving runnable to park
+
     if (d->runnable == runnable)
     {
         d->runnable = nullptr;
@@ -221,20 +231,23 @@ void WorkerObject::deactivate(DeactivatingMode mode)
             case Running:
                 d->state = Deactivating;
                 break;
+
             case Inactive:
             case Deactivating:
                 return;
         }
     }
 
-    aboutToDeactivate();
+    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+    this->aboutToDeactivate();
 
     if (mode == FlushSignals)
     {
         QCoreApplication::removePostedEvents(this, QEvent::MetaCall);
     }
 
-    // cannot say that this is thread-safe: thread()->quit();
+    // Cannot say that this is thread-safe: thread()->quit();
+
     if (mode == KeepSignals)
     {
         QCoreApplication::postEvent(this, new QEvent(QEvent::User), Qt::HighEventPriority);
@@ -259,6 +272,7 @@ bool WorkerObject::transitionToRunning()
         case Scheduled:
             d->state = Running;
             return true;
+
         case Deactivating:
         default:
             return false;
@@ -273,6 +287,7 @@ void WorkerObject::transitionToInactive()
     {
         case Scheduled:
             break;
+
         case Deactivating:
         default:
             d->state = Inactive;
