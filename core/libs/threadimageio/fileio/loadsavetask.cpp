@@ -303,7 +303,7 @@ bool SharedLoadingTask::needsPostProcessing() const
 void SharedLoadingTask::postProcess()
 {
     // to receive progress info again. Should be safe now, we are alone.
-    addListener(this);
+    //addListener(this);
 
     // ---- Color management ---- //
 
@@ -344,7 +344,7 @@ void SharedLoadingTask::postProcess()
         }
     }
 
-    removeListener(this);
+    //removeListener(this);
 }
 
 void SharedLoadingTask::progressInfo(DImg* const img, float progress)
