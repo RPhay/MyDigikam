@@ -64,7 +64,9 @@ RawProcessingFilter::RawProcessingFilter(const DRawDecoding& settings,
       m_observer(nullptr)
 {
     setSettings(settings);
-    filterImage();
+
+    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+    this->filterImage();
 }
 
 RawProcessingFilter::~RawProcessingFilter()
@@ -102,6 +104,7 @@ FilterAction RawProcessingFilter::filterAction()
 {
     DefaultFilterAction<RawProcessingFilter> action;
     m_settings.writeToFilterAction(action);
+
     return std::move(action);
 }
 

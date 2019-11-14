@@ -114,19 +114,19 @@ public:
 
     void                    readParameters(const FilterAction& action) override;
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier() const                   override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
+    virtual FilterAction    filterAction()                             override;
 
 protected:
 
     void postProgress(int);     // not virtual
     bool continueQuery() const; // not virtual
 
-    virtual void filterImage() override;
+    virtual void filterImage()                                         override;
 
 protected:
 
