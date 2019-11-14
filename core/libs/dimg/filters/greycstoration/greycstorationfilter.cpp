@@ -161,7 +161,9 @@ GreycstorationFilter::GreycstorationFilter(DImg* const orgImage,
 
 GreycstorationFilter::~GreycstorationFilter()
 {
-    cancelFilter();
+    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+    this->cancelFilter();
+
     delete d;
 }
 
@@ -203,7 +205,7 @@ void GreycstorationFilter::setup()
         d->gfact = 1.0 / 256.0;
     }
 
-    if (d->mode == Resize || d->mode == SimpleResize)
+    if ((d->mode == Resize) || (d->mode == SimpleResize))
     {
         m_destImage = DImg(d->newSize.width(), d->newSize.height(),
                            m_orgImage.sixteenBit(), m_orgImage.hasAlpha());
