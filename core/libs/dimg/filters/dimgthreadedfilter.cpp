@@ -76,7 +76,8 @@ DImgThreadedFilter::DImgThreadedFilter(DImgThreadedFilter* const master, const D
 
 DImgThreadedFilter::~DImgThreadedFilter()
 {
-    cancelFilter();
+    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+    this->cancelFilter();
 
     if (m_master)
     {
