@@ -1,5 +1,6 @@
 [Global]
 IconName=digikam
+DesktopEntry=org.kde.digikam
 Comment=digiKam
 Comment[ar]=دِجي‌كام
 Comment[bg]=digiKam
