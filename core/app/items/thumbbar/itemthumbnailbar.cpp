@@ -74,10 +74,13 @@ ItemThumbnailBar::ItemThumbnailBar(QWidget* const parent)
     setScrollCurrentToCenter(ApplicationSettings::instance()->getScrollItemToCenter());
     setToolTipEnabled(ApplicationSettings::instance()->showToolTipsIsValid());
 
+    // cppcheck-suppress virtualCallInConstructor
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
             this, SLOT(slotSetupChanged()));
 
-    slotSetupChanged();
+    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+    this->slotSetupChanged();
+
     setFlow(LeftToRight);
 }
 
