@@ -122,8 +122,11 @@ SubjectWidget::SubjectWidget(QWidget* const parent)
     QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                           QLatin1String("digikam/metadata/topicset.iptc-subjectcode.xml"));
 
-    if (!loadSubjectCodesFromXML(QUrl::fromLocalFile(path)))
+    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+    if (!this->loadSubjectCodesFromXML(QUrl::fromLocalFile(path)))
+    {
         qCDebug(DIGIKAM_WIDGETS_LOG) << "Cannot load IPTC/NAA subject codes XML database";
+    }
 
     // --------------------------------------------------------
 
@@ -304,7 +307,8 @@ SubjectWidget::SubjectWidget(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    slotEditOptionChanged(d->btnGroup->id(d->btnGroup->checkedButton()));
+    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+    this->slotEditOptionChanged(d->btnGroup->id(d->btnGroup->checkedButton()));
 }
 
 SubjectWidget::~SubjectWidget()
@@ -350,8 +354,8 @@ void SubjectWidget::slotRefChanged()
     QString key = d->refCB->currentText();
     QString name, matter, detail;
 
-    for (Private::SubjectCodesMap::Iterator it = d->subMap.begin();
-         it != d->subMap.end(); ++it)
+    for (Private::SubjectCodesMap::Iterator it = d->subMap.begin() ;
+         it != d->subMap.end() ; ++it)
     {
         if (key == it.key())
         {
@@ -392,9 +396,13 @@ void SubjectWidget::slotDelSubject()
 {
     QListWidgetItem* const item = d->subjectsBox->currentItem();
 
-    if (!item) return;
+    if (!item)
+    {
+        return;
+    }
 
     d->subjectsBox->takeItem(d->subjectsBox->row(item));
+
     delete item;
 }
 
@@ -402,7 +410,10 @@ void SubjectWidget::slotRepSubject()
 {
     QString newSubject = buildSubject();
 
-    if (newSubject.isEmpty()) return;
+    if (newSubject.isEmpty())
+    {
+        return;
+    }
 
     if (!d->subjectsBox->selectedItems().isEmpty())
     {
@@ -439,7 +450,10 @@ void SubjectWidget::slotAddSubject()
 {
     QString newSubject = buildSubject();
 
-    if (newSubject.isEmpty()) return;
+    if (newSubject.isEmpty())
+    {
+        return;
+    }
 
     bool found = false;
 
@@ -470,7 +484,9 @@ bool SubjectWidget::loadSubjectCodesFromXML(const QUrl& url)
     QFile xmlfile(url.toLocalFile());
 
     if (!xmlfile.open(QIODevice::ReadOnly))
+    {
         return false;
+    }
 
     QDomDocument xmlDoc(QLatin1String("NewsML"));
 
@@ -488,8 +504,8 @@ bool SubjectWidget::loadSubjectCodesFromXML(const QUrl& url)
         return false;
     }
 
-    for (QDomNode nbE1 = xmlDocElem.firstChild();
-         !nbE1.isNull(); nbE1 = nbE1.nextSibling())
+    for (QDomNode nbE1 = xmlDocElem.firstChild() ;
+         !nbE1.isNull() ; nbE1 = nbE1.nextSibling())
     {
         QDomElement newsItemElement = nbE1.toElement();
 
@@ -548,8 +564,8 @@ bool SubjectWidget::loadSubjectCodesFromXML(const QUrl& url)
 
     // Set the Subject Name everywhere on the map.
 
-    for (Private::SubjectCodesMap::Iterator it = d->subMap.begin();
-         it != d->subMap.end(); ++it)
+    for (Private::SubjectCodesMap::Iterator it = d->subMap.begin() ;
+         it != d->subMap.end() ; ++it)
     {
         QString name, keyPrefix;
 
@@ -558,8 +574,8 @@ bool SubjectWidget::loadSubjectCodesFromXML(const QUrl& url)
             keyPrefix = it.key().left(3);
             name      = it.value().name;
 
-            for (Private::SubjectCodesMap::Iterator it2 = d->subMap.begin();
-                it2 != d->subMap.end(); ++it2)
+            for (Private::SubjectCodesMap::Iterator it2 = d->subMap.begin() ;
+                it2 != d->subMap.end() ; ++it2)
             {
                 if (it2.key().startsWith(keyPrefix) &&
                     !it2.key().endsWith(QLatin1String("00000")))
@@ -572,8 +588,8 @@ bool SubjectWidget::loadSubjectCodesFromXML(const QUrl& url)
 
     // Set the Subject Matter Name everywhere on the map.
 
-    for (Private::SubjectCodesMap::Iterator it = d->subMap.begin();
-         it != d->subMap.end(); ++it)
+    for (Private::SubjectCodesMap::Iterator it = d->subMap.begin() ;
+         it != d->subMap.end() ; ++it)
     {
         QString matter, keyPrefix;
 
@@ -582,8 +598,8 @@ bool SubjectWidget::loadSubjectCodesFromXML(const QUrl& url)
             keyPrefix = it.key().left(5);
             matter    = it.value().matter;
 
-            for (Private::SubjectCodesMap::Iterator it2 = d->subMap.begin();
-                it2 != d->subMap.end(); ++it2)
+            for (Private::SubjectCodesMap::Iterator it2 = d->subMap.begin() ;
+                it2 != d->subMap.end() ; ++it2)
             {
                 if (it2.key().startsWith(keyPrefix) &&
                     !it2.key().endsWith(QLatin1String("000")))
@@ -605,20 +621,26 @@ void SubjectWidget::setSubjectsList(const QStringList& list)
     d->subjectsBox->clear();
 
     if (m_subjectsCheck->isEnabled())
+    {
         m_subjectsCheck->setChecked(false);
+    }
 
     if (!d->subjectsList.isEmpty())
     {
         d->subjectsBox->insertItems(0, d->subjectsList);
 
         if (m_subjectsCheck->isEnabled())
+        {
             m_subjectsCheck->setChecked(true);
+        }
     }
 
     blockSignals(false);
 
     if (m_subjectsCheck->isEnabled())
+    {
         slotSubjectsToggled(m_subjectsCheck->isChecked());
+    }
 }
 
 QStringList SubjectWidget::subjectsList() const
