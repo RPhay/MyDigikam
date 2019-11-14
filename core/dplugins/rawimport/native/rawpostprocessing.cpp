@@ -52,7 +52,9 @@ RawPostProcessing::RawPostProcessing(DImgThreadedFilter* const parentFilter,
                          parentFilter->filterName() + ": RawPostProcessing")
 {
     m_customRawSettings = settings;
-    filterImage();
+
+    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+    this->filterImage();
 }
 
 RawPostProcessing::~RawPostProcessing()
