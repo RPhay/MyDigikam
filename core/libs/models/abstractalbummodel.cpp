@@ -8,6 +8,7 @@
  *
  * Copyright (C) 2008-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010      by Andi Clemens <andi dot clemens at gmail dot com>
+ * Copyright (C) 2012-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -83,26 +84,30 @@ AbstractAlbumModel::AbstractAlbumModel(Album::Type albumType,
     d->rootAlbum    = rootAlbum;
     d->rootBehavior = rootBehavior;
 
-    connect(AlbumManager::instance(), SIGNAL(signalAlbumAboutToBeAdded(Album*,Album*,Album*)),
-            this, SLOT(slotAlbumAboutToBeAdded(Album*,Album*,Album*)));
+    // --- NOTE: use dynamic binding as all slots above are virtual methods which can be re-implemented in derived classes.
 
-    connect(AlbumManager::instance(), SIGNAL(signalAlbumAdded(Album*)),
-            this, SLOT(slotAlbumAdded(Album*)));
+    connect(AlbumManager::instance(), &AlbumManager::signalAlbumAboutToBeAdded,
+            this, &AbstractAlbumModel::slotAlbumAboutToBeAdded);
 
-    connect(AlbumManager::instance(), SIGNAL(signalAlbumAboutToBeDeleted(Album*)),
-            this, SLOT(slotAlbumAboutToBeDeleted(Album*)));
+    connect(AlbumManager::instance(), &AlbumManager::signalAlbumAdded,
+            this, &AbstractAlbumModel::slotAlbumAdded);
+
+    connect(AlbumManager::instance(), &AlbumManager::signalAlbumAboutToBeDeleted,
+            this, &AbstractAlbumModel::slotAlbumAboutToBeDeleted);
 
     connect(AlbumManager::instance(), &AlbumManager::signalAlbumHasBeenDeleted,
             this, &AbstractAlbumModel::slotAlbumHasBeenDeleted);
 
-    connect(AlbumManager::instance(), SIGNAL(signalAlbumsCleared()),
-            this, SLOT(slotAlbumsCleared()));
+    connect(AlbumManager::instance(), &AlbumManager::signalAlbumsCleared,
+            this, &AbstractAlbumModel::slotAlbumsCleared);
 
-    connect(AlbumManager::instance(), SIGNAL(signalAlbumIconChanged(Album*)),
-            this, SLOT(slotAlbumIconChanged(Album*)));
+    connect(AlbumManager::instance(), &AlbumManager::signalAlbumIconChanged,
+            this, &AbstractAlbumModel::slotAlbumIconChanged);
 
-    connect(AlbumManager::instance(), SIGNAL(signalAlbumRenamed(Album*)),
-            this, SLOT(slotAlbumRenamed(Album*)));
+    connect(AlbumManager::instance(), &AlbumManager::signalAlbumRenamed,
+            this, &AbstractAlbumModel::slotAlbumRenamed);
+
+    // ---
 }
 
 AbstractAlbumModel::~AbstractAlbumModel()

@@ -161,7 +161,7 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
     connect(d->utilities, SIGNAL(editorCurrentUrlChanged(QUrl)),
             this, SLOT(setCurrentUrlWhenAvailable(QUrl)));
 
-    // --- NOTE: use dynamic binding as slotSetupChenged() is a virtual method which can be re-implemented in derived classes.
+    // --- NOTE: use dynamic binding as slotSetupChanged() is a virtual method which can be re-implemented in derived classes.
     connect(settings, &ApplicationSettings::setupChanged,
             this, &DigikamItemView::slotSetupChanged);
 
