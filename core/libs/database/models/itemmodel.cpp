@@ -7,6 +7,7 @@
  * Description : Qt item model for database entries
  *
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2012-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -144,13 +145,22 @@ ItemModel::ItemModel(QObject* const parent)
     : QAbstractListModel(parent),
       d(new Private)
 {
-    // cppcheck-suppress virtualCallInConstructor
+/* NOTE: old signal/slot syntax ported to new syntax fooloing paper https://wiki.qt.io/New_Signal_Slot_Syntax
+
     connect(CoreDbAccess::databaseWatch(), SIGNAL(imageChange(ImageChangeset)),
             this, SLOT(slotImageChange(ImageChangeset)));
 
-    // cppcheck-suppress virtualCallInConstructor
     connect(CoreDbAccess::databaseWatch(), SIGNAL(imageTagChange(ImageTagChangeset)),
             this, SLOT(slotImageTagChange(ImageTagChangeset)));
+*/
+
+    // --- NOTE: use dynamic binding as slotImageChenge() is a virtual slot which can be re-implemented in derived classes.
+    connect(CoreDbAccess::databaseWatch(), static_cast<void (CoreDbWatch::*)(const ImageChangeset&)>(&CoreDbWatch::imageChange),
+            this, &ItemModel::slotImageChange);
+
+    // --- NOTE: use dynamic binding as slotImageTagChenge() is a virtual slot which can be re-implemented in derived classes.
+    connect(CoreDbAccess::databaseWatch(), static_cast<void (CoreDbWatch::*)(const ImageTagChangeset&)>(&CoreDbWatch::imageTagChange),
+            this, &ItemModel::slotImageTagChange);
 }
 
 ItemModel::~ItemModel()
@@ -1151,7 +1161,7 @@ void ItemModelIncrementalUpdater::appendInfos(const QList<ItemInfo>& infos, cons
         for (int i = 0 ; i < infos.size() ; ++i)
         {
             const ItemInfo& info = infos.at(i);
-            bool found            = false;
+            bool found           = false;
             QHash<qlonglong, int>::iterator it;
 
             for (it = oldIds.find(info.id()) ; it != oldIds.end() && it.key() == info.id() ; ++it)
@@ -1346,7 +1356,6 @@ Qt::ItemFlags ItemModel::flags(const QModelIndex& index) const
     }
 
     Qt::ItemFlags f = Qt::ItemIsSelectable | Qt::ItemIsEnabled;
-
     f              |= dragDropFlags(index);
 
     return f;

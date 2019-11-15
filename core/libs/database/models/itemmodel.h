@@ -7,6 +7,7 @@
  * Description : Qt item model for database entries
  *
  * Copyright (C) 2009-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2012-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,7 +48,8 @@ namespace DatabaseFields
 class Set;
 }
 
-class DIGIKAM_DATABASE_EXPORT ItemModel : public QAbstractListModel, public DragDropModelImplementation
+class DIGIKAM_DATABASE_EXPORT ItemModel : public QAbstractListModel,
+                                          public DragDropModelImplementation
 {
     Q_OBJECT
 
@@ -129,15 +131,15 @@ public:
     /**
      * Return the index for the given ItemInfo or id, if contained in this model.
      */
-    QModelIndex        indexForItemInfo(const ItemInfo& info) const;
+    QModelIndex        indexForItemInfo(const ItemInfo& info)                             const;
     QModelIndex        indexForItemInfo(const ItemInfo& info, const QVariant& extraValue) const;
-    QModelIndex        indexForImageId(qlonglong id) const;
-    QModelIndex        indexForImageId(qlonglong id, const QVariant& extraValue) const;
-    QList<QModelIndex> indexesForItemInfo(const ItemInfo& info) const;
-    QList<QModelIndex> indexesForImageId(qlonglong id) const;
+    QModelIndex        indexForImageId(qlonglong id)                                      const;
+    QModelIndex        indexForImageId(qlonglong id, const QVariant& extraValue)          const;
+    QList<QModelIndex> indexesForItemInfo(const ItemInfo& info)                           const;
+    QList<QModelIndex> indexesForImageId(qlonglong id)                                    const;
 
-    int numberOfIndexesForItemInfo(const ItemInfo& info) const;
-    int numberOfIndexesForImageId(qlonglong id) const;
+    int numberOfIndexesForItemInfo(const ItemInfo& info)                                  const;
+    int numberOfIndexesForImageId(qlonglong id)                                           const;
 
     /**
      * Returns the index or ItemInfo object from the underlying data
@@ -205,16 +207,16 @@ public:
      */
     void ensureHasGroupedImages(const ItemInfo& groupLeader);
 
-    QList<ItemInfo>  imageInfos()      const;
-    QList<qlonglong> imageIds()        const;
-    QList<ItemInfo>  uniqueItemInfos() const;
+    QList<ItemInfo>  imageInfos()                                   const;
+    QList<qlonglong> imageIds()                                     const;
+    QList<ItemInfo>  uniqueItemInfos()                              const;
 
-    bool hasImage(qlonglong id) const;
-    bool hasImage(const ItemInfo& info) const;
+    bool hasImage(qlonglong id)                                     const;
+    bool hasImage(const ItemInfo& info)                             const;
     bool hasImage(const ItemInfo& info, const QVariant& extraValue) const;
-    bool hasImage(qlonglong id, const QVariant& extraValue) const;
+    bool hasImage(qlonglong id, const QVariant& extraValue)         const;
 
-    bool isEmpty() const;
+    bool isEmpty()                                                  const;
 
     // Drag and Drop
     DECLARE_MODEL_DRAG_DROP_METHODS
@@ -247,11 +249,11 @@ public:
      */
     void setSendRemovalSignals(bool send);
 
-    virtual QVariant      data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
+    virtual QVariant      data(const QModelIndex& index, int role = Qt::DisplayRole)                       const override;
     virtual QVariant      headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
-    virtual int           rowCount(const QModelIndex& parent = QModelIndex()) const override;
-    virtual Qt::ItemFlags flags(const QModelIndex& index) const override;
-    virtual QModelIndex   index(int row, int column = 0, const QModelIndex& parent = QModelIndex()) const override;
+    virtual int           rowCount(const QModelIndex& parent = QModelIndex())                              const override;
+    virtual Qt::ItemFlags flags(const QModelIndex& index)                                                  const override;
+    virtual QModelIndex   index(int row, int column = 0, const QModelIndex& parent = QModelIndex())        const override;
 
     /**
      * Retrieves the imageInfo object from the data() method of the given index.
