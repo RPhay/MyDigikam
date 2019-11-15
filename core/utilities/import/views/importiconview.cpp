@@ -111,10 +111,14 @@ ImportIconView::ImportIconView(QWidget* const parent)
     //TODO: connect(importItemModel()->dragDropHandler(), SIGNAL(addToGroup(CamItemInfo,QList<CamItemInfo>)),
             //FileActionMngr::instance(), SLOT(addToGroup(CamItemInfo,QList<CamItemInfo>)));
 
-    connect(settings, SIGNAL(setupChanged()),
-            this, SLOT(slotSetupChanged()));
+    // --- NOTE: use dynamic binding as slotSetupChanged() is a virtual method which can be re-implemented in derived classes.
 
-    slotSetupChanged();
+    connect(settings, &ImportSettings::setupChanged,
+            this, &ImportIconView::slotSetupChanged);
+
+    this->slotSetupChanged();
+
+    // ---
 }
 
 ImportIconView::~ImportIconView()

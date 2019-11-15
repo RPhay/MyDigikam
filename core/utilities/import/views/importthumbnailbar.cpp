@@ -67,10 +67,15 @@ ImportThumbnailBar::ImportThumbnailBar(QWidget* const parent)
     setScrollCurrentToCenter(ApplicationSettings::instance()->getScrollItemToCenter());
     setToolTipEnabled(ImportSettings::instance()->showToolTipsIsValid());
 
-    connect(ImportSettings::instance(), SIGNAL(setupChanged()),
-            this, SLOT(slotSetupChanged()));
+    // --- NOTE: use dynamic binding as slotSetupChanged() is a virtual method which can be re-implemented in derived classes.
 
-    slotSetupChanged();
+    connect(ImportSettings::instance(), &ImportSettings::setupChanged,
+            this, &ImportThumbnailBar::slotSetupChanged);
+
+    this->slotSetupChanged();
+
+    // ---
+
     setFlow(LeftToRight);
 }
 
