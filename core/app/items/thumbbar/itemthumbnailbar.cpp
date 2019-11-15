@@ -74,7 +74,7 @@ ItemThumbnailBar::ItemThumbnailBar(QWidget* const parent)
     setScrollCurrentToCenter(ApplicationSettings::instance()->getScrollItemToCenter());
     setToolTipEnabled(ApplicationSettings::instance()->showToolTipsIsValid());
 
-    // --- NOTE: use dynamic binding as slotSetupChenged() is a virtual slot which can be re-implemented in derived classes.
+    // --- NOTE: use dynamic binding as slotSetupChanged() is a virtual slot which can be re-implemented in derived classes.
     connect(ApplicationSettings::instance(), &ApplicationSettings::setupChanged,
             this, &ItemThumbnailBar::slotSetupChanged);
 

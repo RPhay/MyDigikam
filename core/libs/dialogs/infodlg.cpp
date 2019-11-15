@@ -78,7 +78,7 @@ InfoDlg::InfoDlg(QWidget* const parent)
     buttons->button(QDialogButtonBox::Ok)->setDefault(true);
     buttons->button(QDialogButtonBox::Apply)->setText(i18n("Copy to Clipboard"));
 
-    d->page     = new QWidget(this);
+    d->page                 = new QWidget(this);
     QGridLayout* const grid = new QGridLayout(d->page);
 
     // --------------------------------------------------------
@@ -107,7 +107,7 @@ InfoDlg::InfoDlg(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->listView = new QTreeWidget(d->page);
+    d->listView             = new QTreeWidget(d->page);
     d->listView->setSortingEnabled(false);
     d->listView->setRootIsDecorated(false);
     d->listView->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -138,11 +138,12 @@ InfoDlg::InfoDlg(QWidget* const parent)
     connect(buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(accept()));
 
-    connect(buttons->button(QDialogButtonBox::Apply), SIGNAL(clicked()),
-            this, SLOT(slotCopy2ClipBoard()));
-
     connect(buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
             this, SLOT(slotHelp()));
+
+    // --- NOTE: use dynamic binding as slotCopy2ClipBoard() is a virtual slot which can be re-implemented in derived classes.
+    connect(buttons->button(QDialogButtonBox::Apply), &QPushButton::clicked,
+            this, &InfoDlg::slotCopy2ClipBoard);
 
     resize(400, 500);
 }
@@ -164,7 +165,8 @@ QWidget* InfoDlg::mainWidget() const
 
 void InfoDlg::setInfoMap(const QMap<QString, QString>& list)
 {
-    for (QMap<QString, QString>::const_iterator it = list.constBegin(); it != list.constEnd() ; ++it)
+    for (QMap<QString, QString>::const_iterator it = list.constBegin() ;
+         it != list.constEnd() ; ++it)
     {
         new QTreeWidgetItem(d->listView, QStringList() << it.key() << it.value());
     }
