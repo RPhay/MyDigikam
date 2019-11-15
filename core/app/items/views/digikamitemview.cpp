@@ -161,12 +161,12 @@ DigikamItemView::DigikamItemView(QWidget* const parent)
     connect(d->utilities, SIGNAL(editorCurrentUrlChanged(QUrl)),
             this, SLOT(setCurrentUrlWhenAvailable(QUrl)));
 
-    // cppcheck-suppress virtualCallInConstructor
-    connect(settings, SIGNAL(setupChanged()),
-            this, SLOT(slotSetupChanged()));
+    // --- NOTE: use dynamic binding as slotSetupChenged() is a virtual method which can be re-implemented in derived classes.
+    connect(settings, &ApplicationSettings::setupChanged,
+            this, &DigikamItemView::slotSetupChanged);
 
-    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
     this->slotSetupChanged();
+    // ---
 }
 
 DigikamItemView::~DigikamItemView()
