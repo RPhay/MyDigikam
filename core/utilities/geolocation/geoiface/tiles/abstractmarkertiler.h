@@ -161,25 +161,25 @@ public:
     virtual Tile* tileNew();
     virtual void tileDeleteInternal(Tile* const tile);
     virtual void prepareTiles(const GeoCoordinates& upperLeft, const GeoCoordinates& lowerRight, int level) = 0;
-    virtual void regenerateTiles() = 0;
-    virtual Tile* getTile(const TileIndex& tileIndex, const bool stopIfEmpty = false) = 0;
-    virtual int getTileMarkerCount(const TileIndex& tileIndex) = 0;
-    virtual int getTileSelectedCount(const TileIndex& tileIndex) = 0;
+    virtual void regenerateTiles()                                                                          = 0;
+    virtual Tile* getTile(const TileIndex& tileIndex, const bool stopIfEmpty = false)                       = 0;
+    virtual int getTileMarkerCount(const TileIndex& tileIndex)                                              = 0;
+    virtual int getTileSelectedCount(const TileIndex& tileIndex)                                            = 0;
 
     // these should be implemented for thumbnail handling
-    virtual QVariant getTileRepresentativeMarker(const TileIndex& tileIndex, const int sortKey) = 0;
-    virtual QVariant bestRepresentativeIndexFromList(const QList<QVariant>& indices, const int sortKey) = 0;
-    virtual QPixmap pixmapFromRepresentativeIndex(const QVariant& index, const QSize& size) = 0;
-    virtual bool indicesEqual(const QVariant& a, const QVariant& b) const = 0;
-    virtual GeoGroupState getTileGroupState(const TileIndex& tileIndex) = 0;
-    virtual GeoGroupState getGlobalGroupState() = 0;
+    virtual QVariant getTileRepresentativeMarker(const TileIndex& tileIndex, const int sortKey)             = 0;
+    virtual QVariant bestRepresentativeIndexFromList(const QList<QVariant>& indices, const int sortKey)     = 0;
+    virtual QPixmap pixmapFromRepresentativeIndex(const QVariant& index, const QSize& size)                 = 0;
+    virtual bool indicesEqual(const QVariant& a, const QVariant& b) const                                   = 0;
+    virtual GeoGroupState getTileGroupState(const TileIndex& tileIndex)                                     = 0;
+    virtual GeoGroupState getGlobalGroupState()                                                             = 0;
 
     // these can be implemented if you want to react to actions in geolocation interface
     virtual void onIndicesClicked(const ClickInfo& clickInfo);
     virtual void onIndicesMoved(const TileIndex::List& tileIndicesList, const GeoCoordinates& targetCoordinates,
                                 const QPersistentModelIndex& targetSnapIndex);
 
-    virtual void setActive(const bool state) = 0;
+    virtual void setActive(const bool state)                                                                = 0;
     Tile* rootTile();
     bool indicesEqual(const QIntList& a, const QIntList& b, const int upToLevel) const;
     bool isDirty() const;

@@ -122,7 +122,9 @@ AbstractMarkerTiler::Tile* AbstractMarkerTiler::tileNew()
 void AbstractMarkerTiler::tileDelete(AbstractMarkerTiler::Tile* const tile)
 {
     tileDeleteChildren(tile);
-    tileDeleteInternal(tile);
+
+    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+    this->tileDeleteInternal(tile);
 }
 
 void AbstractMarkerTiler::tileDeleteInternal(AbstractMarkerTiler::Tile* const tile)
@@ -133,7 +135,9 @@ void AbstractMarkerTiler::tileDeleteInternal(AbstractMarkerTiler::Tile* const ti
 void AbstractMarkerTiler::tileDeleteChildren(AbstractMarkerTiler::Tile* const tile)
 {
     if (!tile)
+    {
         return;
+    }
 
     QVector<Tile*> tileChildren = tile->takeChildren();
 
@@ -442,13 +446,13 @@ TileIndex AbstractMarkerTiler::NonEmptyIterator::nextIndex()
         int compareLevel = currentLevel;
 
         // determine the limits for the next level:
-        int limitLatBL = 0;
-        int limitLonBL = 0;
-        int limitLatTR = TileIndex::Tiling-1;
-        int limitLonTR = TileIndex::Tiling-1;
+        int limitLatBL  = 0;
+        int limitLonBL  = 0;
+        int limitLatTR  = TileIndex::Tiling-1;
+        int limitLonTR  = TileIndex::Tiling-1;
 
         // check limit on the left side:
-        bool onLimit   = true;
+        bool onLimit    = true;
 
         for (int i = 0 ; onLimit&&(i <= compareLevel) ; ++i)
         {
@@ -551,7 +555,7 @@ AbstractMarkerTiler::Tile* AbstractMarkerTiler::Tile::getChild(const int linearI
 
 void AbstractMarkerTiler::Tile::addChild(const int linearIndex, Tile* const tilePointer)
 {
-    if ((tilePointer==nullptr) && children.isEmpty())
+    if ((tilePointer == nullptr) && children.isEmpty())
     {
         return;
     }

@@ -75,7 +75,8 @@ ShowfotoThumbnailBar::ShowfotoThumbnailBar(QWidget* const parent)
     setAcceptDrops(true);
     setDropIndicatorShown(true);
 
-    slotSetupChanged();
+    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+    this->slotSetupChanged();
 
     d->kScroller = new ShowfotoKineticScroller();
     d->kScroller->enableKineticScrollFor(this);

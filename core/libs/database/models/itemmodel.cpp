@@ -145,20 +145,11 @@ ItemModel::ItemModel(QObject* const parent)
     : QAbstractListModel(parent),
       d(new Private)
 {
-/* NOTE: old signal/slot syntax ported to new syntax fooloing paper https://wiki.qt.io/New_Signal_Slot_Syntax
-
-    connect(CoreDbAccess::databaseWatch(), SIGNAL(imageChange(ImageChangeset)),
-            this, SLOT(slotImageChange(ImageChangeset)));
-
-    connect(CoreDbAccess::databaseWatch(), SIGNAL(imageTagChange(ImageTagChangeset)),
-            this, SLOT(slotImageTagChange(ImageTagChangeset)));
-*/
-
-    // --- NOTE: use dynamic binding as slotImageChenge() is a virtual slot which can be re-implemented in derived classes.
+    // --- NOTE: use dynamic binding as slotImageChange() is a virtual slot which can be re-implemented in derived classes.
     connect(CoreDbAccess::databaseWatch(), static_cast<void (CoreDbWatch::*)(const ImageChangeset&)>(&CoreDbWatch::imageChange),
             this, &ItemModel::slotImageChange);
 
-    // --- NOTE: use dynamic binding as slotImageTagChenge() is a virtual slot which can be re-implemented in derived classes.
+    // --- NOTE: use dynamic binding as slotImageTagChange() is a virtual slot which can be re-implemented in derived classes.
     connect(CoreDbAccess::databaseWatch(), static_cast<void (CoreDbWatch::*)(const ImageTagChangeset&)>(&CoreDbWatch::imageTagChange),
             this, &ItemModel::slotImageTagChange);
 }

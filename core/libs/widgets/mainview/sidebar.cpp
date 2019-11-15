@@ -187,7 +187,7 @@ DMultiTabBarButton::DMultiTabBarButton(const QPixmap& pic, const QString& text,
     : QPushButton(QIcon(pic), text, parent),
       m_id(id)
 {
-    // --- NOTE: use dynamic binding as slotChangedTab() is a virtual method which can be re-implemented in derived classes.
+    // --- NOTE: use dynamic binding as slotClicked() is a virtual method which can be re-implemented in derived classes.
 
     connect(this, &DMultiTabBarButton::clicked,
             this, &DMultiTabBarButton::slotClicked);

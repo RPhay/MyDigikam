@@ -65,8 +65,10 @@ ModelMenu::ModelMenu(QWidget* const parent)
     : QMenu(parent),
       d(new Private)
 {
-    connect(this, SIGNAL(aboutToShow()),
-            this, SLOT(slotAboutToShow()));
+    // --- NOTE: use dynamic binding as slotAboutToShow() is a virtual method which can be re-implemented in derived classes.
+
+    connect(this, &ModelMenu::aboutToShow,
+            this, &ModelMenu::slotAboutToShow);
 }
 
 ModelMenu::~ModelMenu()
@@ -163,13 +165,18 @@ void ModelMenu::slotAboutToShow()
 
     clear();
 
-    if (prePopulated())
+    // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+    if (this->prePopulated())
+    {
         addSeparator();
+    }
 
     int max = d->maxRows;
 
     if (max != -1)
+    {
         max += d->firstSeparator;
+    }
 
     createMenu(d->root, max, this, this);
     postPopulated();
@@ -197,7 +204,9 @@ void ModelMenu::createMenu(const QModelIndex& parent, int max, QMenu* parentMenu
     int end = d->model->rowCount(parent);
 
     if (max != -1)
+    {
         end = qMin(max, end);
+    }
 
     connect(menu, SIGNAL(triggered(QAction*)),
             this, SLOT(triggered(QAction*)));

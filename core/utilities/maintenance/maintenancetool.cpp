@@ -59,9 +59,10 @@ MaintenanceTool::MaintenanceTool(const QString& id, ProgressItem* const parent)
     : ProgressItem(parent, id, QString(), QString(), true, true),
       d(new Private)
 {
-    // cppcheck-suppress virtualCallInConstructor
-    connect(this, SIGNAL(progressItemCanceled(QString)),
-            this, SLOT(slotCancel()));
+    // --- NOTE: use dynamic binding as slotCancel() is a virtual method which can be re-implemented in derived classes.
+
+    connect(this, static_cast<void (ProgressItem::*)(const QString&)>(&ProgressItem::progressItemCanceled),
+            this, &MaintenanceTool::slotCancel);
 }
 
 MaintenanceTool::~MaintenanceTool()

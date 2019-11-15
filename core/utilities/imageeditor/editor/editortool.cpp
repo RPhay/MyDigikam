@@ -97,9 +97,10 @@ EditorTool::EditorTool(QObject* const parent)
 {
     d->timer = new QTimer(this);
 
-    // cppcheck-suppress virtualCallInConstructor
-    connect(d->timer, SIGNAL(timeout()),
-            this, SLOT(slotPreview()));
+    // --- NOTE: use dynamic binding as slotPreview() is a virtual method which can be re-implemented in derived classes.
+
+    connect(d->timer, &QTimer::timeout,
+            this, &EditorTool::slotPreview);
 }
 
 EditorTool::~EditorTool()

@@ -169,16 +169,16 @@ NamespaceEditDlg::NamespaceEditDlg(bool create,
 
     setupTagGui(entry);
 
-    // --------------------------------------------------------
+    // --- NOTE: use dynamic binding as slots below are virtual method which can be re-implemented in derived classes.
 
-    connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
-            this, SLOT(accept()));
+    connect(d->buttons->button(QDialogButtonBox::Ok), &QPushButton::clicked,
+            this, &NamespaceEditDlg::accept);
 
-    connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
-            this, SLOT(reject()));
+    connect(d->buttons->button(QDialogButtonBox::Cancel), &QPushButton::clicked,
+            this, &NamespaceEditDlg::reject);
 
-    connect(d->buttons->button(QDialogButtonBox::Help), SIGNAL(clicked()),
-            this, SLOT(slotHelp()));
+    connect(d->buttons->button(QDialogButtonBox::Help), &QPushButton::clicked,
+            this, &NamespaceEditDlg::slotHelp);
 
     // --------------------------------------------------------
 
