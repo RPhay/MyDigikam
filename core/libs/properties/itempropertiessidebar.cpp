@@ -77,8 +77,11 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
     m_colorTab           = new ItemPropertiesColorsTab(parent);
 
     // NOTE: Special case with Showfoto which will only be able to load image, not video.
+
     if (QApplication::applicationName() != QLatin1String("digikam"))
+    {
         m_propertiesTab->setVideoInfoDisable(true);
+    }
 
     appendTab(m_propertiesTab, QIcon::fromTheme(QLatin1String("configure")),        i18n("Properties"));
     appendTab(m_metadataTab,   QIcon::fromTheme(QLatin1String("format-text-code")), i18n("Metadata")); // krazy:exclude=iconnames
@@ -89,11 +92,13 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
     appendTab(m_gpsTab,        QIcon::fromTheme(QLatin1String("globe")),            i18n("Map"));
 #endif // HAVE_MARBLE
 
-    connect(this, SIGNAL(signalChangedTab(QWidget*)),
-            this, SLOT(slotChangedTab(QWidget*)));
-
     connect(m_metadataTab, SIGNAL(signalSetupMetadataFilters(int)),
             this, SIGNAL(signalSetupMetadataFilters(int)));
+
+    // --- NOTE: use dynamic binding as slotChangedTab() is a virtual method which can be re-implemented in derived classes.
+
+    connect(this, &ItemPropertiesSideBar::signalChangedTab,
+            this, &ItemPropertiesSideBar::slotChangedTab);
 }
 
 ItemPropertiesSideBar::~ItemPropertiesSideBar()
@@ -159,6 +164,7 @@ void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
 #ifdef HAVE_MARBLE
         m_gpsTab->setActive(tab == m_gpsTab);
 #endif // HAVE_MARBLE
+
         return;
     }
 
@@ -235,7 +241,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     {
         m_propertiesTab->setImageMime(QMimeDatabase().mimeTypeForFile(fileInfo).comment());
 
-        dims = metaData.getPixelSize();
+        dims      = metaData.getPixelSize();
 
         DImg img;
         img.loadItemInfo(url.toLocalFile(), false, false, false, false);
@@ -249,8 +255,14 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
             dims.width(), dims.height(), mpixels);
     m_propertiesTab->setItemDimensions(str);
 
-    if (!dims.isValid()) str = i18n("Unknown");
-    else m_propertiesTab->aspectRatioToString(dims.width(), dims.height(), str);
+    if (!dims.isValid())
+    {
+        str = i18n("Unknown");
+    }
+    else
+    {
+        m_propertiesTab->aspectRatioToString(dims.width(), dims.height(), str);
+    }
 
     m_propertiesTab->setImageRatio(str);
     m_propertiesTab->setImageColorMode(colorMode.isEmpty() ? unavailable : colorMode);
@@ -334,9 +346,13 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     QString caption;
 
     if (captions.contains(QLatin1String("x-default")))
+    {
         caption = captions.value(QLatin1String("x-default")).caption;
+    }
     else if (!captions.isEmpty())
+    {
         caption = captions.begin().value().caption;
+    }
 
     m_propertiesTab->setCaption(caption);
 

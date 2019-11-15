@@ -135,17 +135,21 @@ ItemViewCategorized::ItemViewCategorized(QWidget* const parent)
     viewport()->setAcceptDrops(true);
     setMouseTracking(true);
 
-    connect(this, SIGNAL(activated(QModelIndex)),
-            this, SLOT(slotActivated(QModelIndex)));
-
     connect(this, SIGNAL(clicked(QModelIndex)),
             this, SLOT(slotClicked(QModelIndex)));
 
     connect(this, SIGNAL(entered(QModelIndex)),
             this, SLOT(slotEntered(QModelIndex)));
 
-    connect(ThemeManager::instance(), SIGNAL(signalThemeChanged()),
-            this, SLOT(slotThemeChanged()));
+    // --- NOTE: use dynamic binding as slots below are virtual methods which can be re-implemented in derived classes.
+
+    connect(this, &ItemViewCategorized::activated,
+            this, &ItemViewCategorized::slotActivated);
+
+    connect(ThemeManager::instance(), &ThemeManager::signalThemeChanged,
+            this, &ItemViewCategorized::slotThemeChanged);
+
+    // ---
 }
 
 ItemViewCategorized::~ItemViewCategorized()

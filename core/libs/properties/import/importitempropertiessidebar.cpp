@@ -101,10 +101,10 @@ ImportItemPropertiesSideBarImport::ImportItemPropertiesSideBarImport(QWidget* co
     appendTab(d->gpsTab,        QIcon::fromTheme(QLatin1String("globe")), i18n("Geolocation"));
 #endif // HAVE_MARBLE
 
-    // ----------------------------------------------------------
+    // --- NOTE: use dynamic binding as slotChangedTab() is a virtual method which can be re-implemented in derived classes.
 
-    connect(this, SIGNAL(signalChangedTab(QWidget*)),
-            this, SLOT(slotChangedTab(QWidget*)));
+    connect(this, &ImportItemPropertiesSideBarImport::signalChangedTab,
+            this, &ImportItemPropertiesSideBarImport::slotChangedTab);
 }
 
 ImportItemPropertiesSideBarImport::~ImportItemPropertiesSideBarImport()
