@@ -189,7 +189,7 @@ DMultiTabBarButton::DMultiTabBarButton(const QPixmap& pic, const QString& text,
 {
     // --- NOTE: use dynamic binding as slotClicked() is a virtual method which can be re-implemented in derived classes.
 
-    connect(this, &DMultiTabBarButton::clicked,
+    connect(this, &QPushButton::clicked,
             this, &DMultiTabBarButton::slotClicked);
 
     // we can't see the focus, so don't take focus. #45557
