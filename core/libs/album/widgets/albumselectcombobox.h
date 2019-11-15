@@ -8,6 +8,7 @@
  *
  * Copyright (C) 2008-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010-2011 by Andi Clemens <andi dot clemens at gmail dot com>
+ * Copyright (C) 2012-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,41 +47,49 @@ public:
     explicit AlbumSelectComboBox(QWidget* const parent = nullptr);
     ~AlbumSelectComboBox();
 
-    /** Once after creation, call one of these three methods.
-        Use the first one if you want a standard combo box for PAlbums and
-        the second one for tags, while the third allows you to provide
-        custom source and filter models.
-        The first two also set a default noSelectionText. Customize afterwards if required.
-    */
+    /**
+     * Once after creation, call one of these three methods.
+     * Use the first one if you want a standard combo box for PAlbums and
+     *  the second one for tags, while the third allows you to provide
+     *  custom source and filter models.
+     *  The first two also set a default noSelectionText. Customize afterwards if required.
+     */
     void setDefaultAlbumModel();
     void setDefaultTagModel();
-    void setModel(AbstractCheckableAlbumModel* model, AlbumFilterModel* filterModel = nullptr);
+    void setModel(AbstractCheckableAlbumModel* model,
+                  AlbumFilterModel* filterModel = nullptr);
 
-    /** Enable checkboxes next to the items. Default: true
+    /**
+     * Enable checkboxes next to the items. Default: true
      */
     void setCheckable(bool checkable);
     bool isCheckable() const;
 
-    /** Enable closing when an item was activated (clicked). Default: false.
+    /**
+     * Enable closing when an item was activated (clicked). Default: false.
      */
     void setCloseOnActivate(bool close);
 
-    /** If the box is checkable, enable showing a resume a la "3 Albums checked"
-     *  in the combo box text. Default: True
+    /**
+     * If the box is checkable, enable showing a resume a la "3 Albums checked"
+     * in the combo box text. Default: True
      */
     void setShowCheckStateSummary(bool show);
 
-    /** Sets the text that is used to describe the state when no album is selected.
-        This may be something like "Any album" or "No tag selected".
-        Depends on the default line edit implementation of TreeViewLineEditComboBox.
+    /**
+     * Sets the text that is used to describe the state when no album is selected.
+     * This may be something like "Any album" or "No tag selected".
+     * Depends on the default line edit implementation of TreeViewLineEditComboBox.
      */
     void setNoSelectionText(const QString& text);
 
-    /** Returns the source model. Retrieve selection information from here.
+    /**
+     * Returns the source model. Retrieve selection information from here.
      */
     AbstractCheckableAlbumModel* model() const;
 
-    /** Return the filter model in use.
+    /**
+     * Return the filter model in use.
      */
     QSortFilterProxyModel* filterModel() const;
 
@@ -88,8 +97,9 @@ public Q_SLOTS:
 
     virtual void hidePopup();
 
-    /** Updates the text describing the selection ("3 Albums selected").
-        Can be overridden to customize the default text.
+    /**
+     * Updates the text describing the selection ("3 Albums selected").
+     * Can be overridden to customize the default text.
      */
     virtual void updateText();
 
@@ -162,7 +172,8 @@ public:
     explicit AlbumTreeViewSelectComboBox(QWidget* const parent = nullptr);
 
     void setDefaultModel();
-    void setModel(AlbumModel* model, CheckableAlbumFilterModel* filterModel = nullptr);
+    void setModel(AlbumModel* model,
+                  CheckableAlbumFilterModel* filterModel = nullptr);
     AlbumTreeView* view() const;
 };
 
@@ -177,7 +188,9 @@ public:
     explicit TagTreeViewSelectComboBox(QWidget* const parent = nullptr);
 
     void setDefaultModel();
-    void setModel(TagModel* model, TagPropertiesFilterModel* filteredModel = nullptr, CheckableAlbumFilterModel* filterModel = nullptr);
+    void setModel(TagModel* model,
+                  TagPropertiesFilterModel* filteredModel = nullptr,
+                  CheckableAlbumFilterModel* filterModel = nullptr);
     TagTreeView* view() const;
 };
 
