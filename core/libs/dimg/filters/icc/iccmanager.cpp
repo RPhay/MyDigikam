@@ -42,15 +42,14 @@ class Q_DECL_HIDDEN IccManager::Private
 {
 public:
 
-    explicit Private(DImg& _image)
-        : image(_image),
-          profileMismatch(false),
+    explicit Private()
+        : profileMismatch(false),
           settings(ICCSettingsContainer()),
           observer(nullptr)
     {
     }
 
-    DImg&                image;
+    DImg                 image;
     IccProfile           embeddedProfile;
     IccProfile           workspaceProfile;
     bool                 profileMismatch;
@@ -58,9 +57,10 @@ public:
     DImgLoaderObserver*  observer;
 };
 
-IccManager::IccManager(DImg& image, const ICCSettingsContainer& settings)
-    : d(new Private(image))
+IccManager::IccManager(const DImg& image, const ICCSettingsContainer& settings)
+    : d(new Private)
 {
+    d->image    = image;
     d->settings = settings;
 
     if (d->image.isNull())
