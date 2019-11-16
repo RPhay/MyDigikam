@@ -31,6 +31,7 @@ extern "C"
 // C++ includes
 
 #include <cstdio>
+#include <cmath>
 
 // Qt includes
 
@@ -291,14 +292,15 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     return false;
                 }
 
-                if ((planar_config == PLANARCONFIG_SEPARATE) &&
-                    (num_of_strips != 0)                     &&
-                    (samples_per_pixel != 0)                 &&                    
-                    (st % (num_of_strips / samples_per_pixel)) == 0)
+                if ((num_of_strips != 0) && (samples_per_pixel != 0))
                 {
-                    offset = 0;
+                    if ((planar_config == PLANARCONFIG_SEPARATE) &&
+                        (remainder((double)st, (double)(num_of_strips / samples_per_pixel)) == 0.0))
+                    {
+                        offset = 0;
+                    }
                 }
-
+                
                 ushort* stripPtr = reinterpret_cast<ushort*>(strip.data());
                 ushort* dataPtr  = reinterpret_cast<ushort*>(data.data() + offset);
                 ushort* p        = nullptr;
@@ -307,15 +309,15 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                 if (samples_per_pixel == 1)   // See bug #148400: Greyscale pictures only have _one_ sample per pixel
                 {
-                    for (int i = 0 ; i < bytesRead / 2 ; ++i)
+                    for (int i = 0 ; i < (bytesRead / 2) ; ++i)
                     {
                         // We have to read two bytes for one pixel
-                        p = dataPtr;
+                        p        = dataPtr;
 
-                        p[0] = *stripPtr;      // RGB have to be set to the _same_ value
-                        p[1] = *stripPtr;
-                        p[2] = *stripPtr++;
-                        p[3] = 0xFFFF;         // set alpha to 100%
+                        p[0]     = *stripPtr;      // RGB have to be set to the _same_ value
+                        p[1]     = *stripPtr;
+                        p[2]     = *stripPtr++;
+                        p[3]     = 0xFFFF;         // set alpha to 100%
 
                         dataPtr += 4;
                     }
@@ -325,14 +327,14 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 else if ((samples_per_pixel == 3) &&
                          (planar_config == PLANARCONFIG_CONTIG))
                 {
-                    for (int i = 0 ; i < bytesRead / 6 ; ++i)
+                    for (int i = 0 ; i < (bytesRead / 6) ; ++i)
                     {
-                        p = dataPtr;
+                        p        = dataPtr;
 
-                        p[2] = *stripPtr++;
-                        p[1] = *stripPtr++;
-                        p[0] = *stripPtr++;
-                        p[3] = 0xFFFF;
+                        p[2]     = *stripPtr++;
+                        p[1]     = *stripPtr++;
+                        p[0]     = *stripPtr++;
+                        p[3]     = 0xFFFF;
 
                         dataPtr += 4;
                     }
@@ -342,29 +344,36 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 else if ((samples_per_pixel == 3) &&
                          (planar_config == PLANARCONFIG_SEPARATE))
                 {
-                    for (int i = 0 ; i < bytesRead / 2 ; ++i)
+                    for (int i = 0 ; i < (bytesRead / 2) ; ++i)
                     {
                         p = dataPtr;
 
-                        if ((num_of_strips != 0) && (samples_per_pixel != 0))
+                        if (samples_per_pixel != 0)
                         {
-                            switch (st / (num_of_strips / samples_per_pixel))
+                            int den = (int)num_of_strips / (int)samples_per_pixel;
+
+                            if (den != 0)
                             {
-                                case 0:
-                                    p[2] = *stripPtr++;
-                                    p[3] = 0xFFFF;
-                                    break;
+                                int val = st / den;
 
-                                case 1:
-                                    p[1] = *stripPtr++;
-                                    break;
+                                switch (val)
+                                {
+                                    case 0:
+                                        p[2] = *stripPtr++;
+                                        p[3] = 0xFFFF;
+                                        break;
 
-                                case 2:
-                                    p[0] = *stripPtr++;
-                                    break;
+                                    case 1:
+                                        p[1] = *stripPtr++;
+                                        break;
+
+                                    case 2:
+                                        p[0] = *stripPtr++;
+                                        break;
+                                }
+
+                                dataPtr += 4;
                             }
-
-                            dataPtr += 4;
                         }
                     }
 
@@ -373,14 +382,14 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 else if ((samples_per_pixel == 4) &&
                          (planar_config == PLANARCONFIG_CONTIG))
                 {
-                    for (int i = 0 ; i < bytesRead / 8 ; ++i)
+                    for (int i = 0 ; i < (bytesRead / 8) ; ++i)
                     {
-                        p = dataPtr;
+                        p        = dataPtr;
 
-                        p[2] = *stripPtr++;
-                        p[1] = *stripPtr++;
-                        p[0] = *stripPtr++;
-                        p[3] = *stripPtr++;
+                        p[2]     = *stripPtr++;
+                        p[1]     = *stripPtr++;
+                        p[0]     = *stripPtr++;
+                        p[3]     = *stripPtr++;
 
                         dataPtr += 4;
                     }
@@ -390,32 +399,39 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 else if ((samples_per_pixel == 4) &&
                          (planar_config == PLANARCONFIG_SEPARATE))
                 {
-                    for (int i = 0 ; i < bytesRead / 2 ; ++i)
+                    for (int i = 0 ; i < (bytesRead / 2) ; ++i)
                     {
                         p = dataPtr;
 
-                        if ((num_of_strips != 0) && (samples_per_pixel != 0))
+                        if (samples_per_pixel != 0)
                         {
-                            switch (st / (num_of_strips / samples_per_pixel))
+                            int den = (int)num_of_strips / (int)samples_per_pixel;
+
+                            if (den != 0)
                             {
-                                case 0:
-                                    p[2] = *stripPtr++;
-                                    break;
+                                int val = st / den;
 
-                                case 1:
-                                    p[1] = *stripPtr++;
-                                    break;
+                                switch (val)
+                                {
+                                    case 0:
+                                        p[2] = *stripPtr++;
+                                        break;
 
-                                case 2:
-                                    p[0] = *stripPtr++;
-                                    break;
+                                    case 1:
+                                        p[1] = *stripPtr++;
+                                        break;
 
-                                case 3:
-                                    p[3] = *stripPtr++;
-                                    break;
+                                    case 2:
+                                        p[0] = *stripPtr++;
+                                        break;
+
+                                    case 3:
+                                        p[3] = *stripPtr++;
+                                        break;
+                                }
+
+                                dataPtr += 4;
                             }
-
-                            dataPtr += 4;
                         }
                     }
 
@@ -462,7 +478,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                 float* stripPtr = reinterpret_cast<float*>(strip.data());
 
-                for (int i = 0 ; i < bytesRead / 4 ; ++i)
+                for (int i = 0 ; i < (bytesRead / 4) ; ++i)
                 {
                     maxValue = qMax(maxValue, *stripPtr++);
                 }
@@ -506,7 +522,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 if ((num_of_strips != 0) && (samples_per_pixel != 0))
                 {
                     if ((planar_config == PLANARCONFIG_SEPARATE) &&
-                        (st % (num_of_strips / samples_per_pixel)) == 0)
+                        (remainder((double)st, (double)(num_of_strips / samples_per_pixel)) == 0.0))
                     {
                         offset = 0;
                     }
@@ -519,7 +535,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 if ((samples_per_pixel == 3) &&
                     (planar_config == PLANARCONFIG_CONTIG))
                 {
-                    for (int i = 0 ; i < bytesRead / 12 ; ++i)
+                    for (int i = 0 ; i < (bytesRead / 12) ; ++i)
                     {
                         p = dataPtr;
 
@@ -536,29 +552,36 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 else if ((samples_per_pixel == 3) &&
                          (planar_config == PLANARCONFIG_SEPARATE))
                 {
-                    for (int i = 0 ; i < bytesRead / 4 ; ++i)
+                    for (int i = 0 ; i < (bytesRead / 4) ; ++i)
                     {
                         p = dataPtr;
 
-                        if ((num_of_strips != 0) && (samples_per_pixel != 0))
+                        if (samples_per_pixel != 0)
                         {
-                            switch (st / (num_of_strips / samples_per_pixel))
+                            int den = (int)num_of_strips / (int)samples_per_pixel;
+
+                            if (den != 0)
                             {
-                                case 0:
-                                    p[2] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
-                                    p[3] = 0xFFFF;
-                                    break;
+                                int val = st / den;
 
-                                case 1:
-                                    p[1] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
-                                    break;
+                                switch (val)
+                                {
+                                    case 0:
+                                        p[2] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
+                                        p[3] = 0xFFFF;
+                                        break;
 
-                                case 2:
-                                    p[0] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
-                                    break;
+                                    case 1:
+                                        p[1] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
+                                        break;
+
+                                    case 2:
+                                        p[0] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
+                                        break;
+                                }
+
+                                dataPtr += 4;
                             }
-
-                            dataPtr += 4;
                         }
                     }
 
@@ -567,7 +590,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 else if ((samples_per_pixel == 4) &&
                          (planar_config == PLANARCONFIG_CONTIG))
                 {
-                    for (int i = 0 ; i < bytesRead / 16 ; ++i)
+                    for (int i = 0 ; i < (bytesRead / 16) ; ++i)
                     {
                         p = dataPtr;
 
@@ -588,28 +611,35 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     {
                         p = dataPtr;
 
-                        if ((num_of_strips != 0) && (samples_per_pixel != 0))
+                        if (samples_per_pixel != 0)
                         {
-                            switch (st / (num_of_strips / samples_per_pixel))
+                            int den = (int)num_of_strips / (int)samples_per_pixel;
+
+                            if (den != 0)
                             {
-                                case 0:
-                                    p[2] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
-                                    break;
+                                int val = st / den;
 
-                                case 1:
-                                    p[1] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
-                                    break;
+                                switch (val)                        
+                                {
+                                    case 0:
+                                        p[2] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
+                                        break;
 
-                                case 2:
-                                    p[0] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
-                                    break;
+                                    case 1:
+                                        p[1] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
+                                        break;
 
-                                case 3:
-                                    p[3] = (ushort)qBound(0.0, (double)*stripPtr++ * 65535.0, 65535.0);
-                                    break;
+                                    case 2:
+                                        p[0] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
+                                        break;
+
+                                    case 3:
+                                        p[3] = (ushort)qBound(0.0, (double)*stripPtr++ * 65535.0, 65535.0);
+                                        break;
+                                }
+
+                                dataPtr += 4;
                             }
-
-                            dataPtr += 4;
                         }
                     }
 
@@ -703,12 +733,12 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                 for (int i = 0 ; i < pixelsRead ; ++i)
                 {
-                    p = dataPtr;
+                    p        = dataPtr;
 
-                    p[2] = *stripPtr++;
-                    p[1] = *stripPtr++;
-                    p[0] = *stripPtr++;
-                    p[3] = *stripPtr++;
+                    p[2]     = *stripPtr++;
+                    p[1]     = *stripPtr++;
+                    p[0]     = *stripPtr++;
+                    p[3]     = *stripPtr++;
 
                     dataPtr += 4;
                 }
