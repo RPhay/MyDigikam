@@ -163,6 +163,7 @@ kde_source_files_enable_exceptions(history/itemhistorygraph.cpp history/itemhist
 set(libhaar_SRCS
     haar/haar.cpp
     haar/haariface.cpp
+    haar/haariface_p.cpp
 )
 
 # Shared libdigikamdatabase ########################################################
