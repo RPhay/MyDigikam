@@ -39,7 +39,7 @@
 namespace DigikamGenericRajcePlugin
 {
 
-class RajceCommand
+class RajceCommand : public QObject
 {
 public:
 

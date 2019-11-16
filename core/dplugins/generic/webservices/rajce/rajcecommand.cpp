@@ -125,7 +125,8 @@ public:
 };
 
 RajceCommand::RajceCommand(const QString& name, RajceCommandType type)
-    : d(new Private)
+    : QObject(0),
+      d(new Private)
 {
     d->name        = name;
     d->commandType = type;
