@@ -568,8 +568,8 @@ void DImgScale::dimgSampleRGBA(DImgScaleInfo* const isi, uint* const dest,
 {
     Q_UNUSED(dw);
     Q_UNUSED(dh);
-    uint* sptr=nullptr;
-    uint* dptr=nullptr;
+    uint* sptr = nullptr;
+    uint* dptr = nullptr;
     int x, y;
     uint** ypoints    = isi->ypoints;
     int* xpoints      = isi->xpoints;
@@ -608,8 +608,8 @@ void DImgScale::dimgSampleRGBA16(DImgScaleInfo* const isi, ullong* const dest,
 {
     Q_UNUSED(dw);
     Q_UNUSED(dh);
-    ullong* sptr=nullptr;
-    ullong* dptr=nullptr;
+    ullong* sptr = nullptr;
+    ullong* dptr = nullptr;
     int x, y;
     ullong** ypoints  = isi->ypoints16;
     int* xpoints      = isi->xpoints;
@@ -667,8 +667,8 @@ void DImgScale::dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
 {
     Q_UNUSED(dw);
     Q_UNUSED(dh);
-    uint* sptr=nullptr;
-    uint* dptr=nullptr;
+    uint* sptr = nullptr;
+    uint* dptr = nullptr;
     int x, y;
     uint** ypoints    = isi->ypoints;
     int* xpoints      = isi->xpoints;
@@ -695,7 +695,7 @@ void DImgScale::dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
                 for (x = x_begin; x < x_end; ++x)
                 {
                     int r, g, b, a;
-                    uint* pix=nullptr;
+                    uint* pix = nullptr;
 
                     if (XAP > 0)
                     {
@@ -763,7 +763,7 @@ void DImgScale::dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
             {
                 for (x = x_begin; x < x_end; ++x)
                 {
-                    uint* pix=nullptr;
+                    uint* pix = nullptr;
 
                     if (XAP > 0)
                     {
@@ -804,7 +804,7 @@ void DImgScale::dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
     {
         /*\ 'Correct' version, with math units prepared for MMXification \*/
         int Cy, j;
-        uint* pix=nullptr;
+        uint* pix = nullptr;
         int r, g, b, a, rr, gg, bb, aa;
         int yap;
 
@@ -898,7 +898,7 @@ void DImgScale::dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
     {
         /*\ 'Correct' version, with math units prepared for MMXification \*/
         int Cx, j;
-        uint* pix=nullptr;
+        uint* pix = nullptr;
         int r, g, b, a, rr, gg, bb, aa;
         int xap;
 
@@ -996,7 +996,7 @@ void DImgScale::dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
         |*|  psllw (16 - d), %mmb; pmulh %mmc, %mmb
         \*/
         int Cx, Cy, i, j;
-        uint* pix=nullptr;
+        uint* pix = nullptr;
         int a, r, g, b, ax, rx, gx, bx;
         int xap, yap;
 
@@ -1011,39 +1011,9 @@ void DImgScale::dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
                 Cx  = XAP >> 16;
                 xap = XAP & 0xffff;
 
-                sptr = ypoints[dyy + y] + xpoints[x];
-                pix  = sptr;
-                sptr += sow;
-                rx   = (R_VAL(pix) * xap) >> 9;
-                gx   = (G_VAL(pix) * xap) >> 9;
-                bx   = (B_VAL(pix) * xap) >> 9;
-                ax   = (A_VAL(pix) * xap) >> 9;
-                ++pix;
-
-                for (i = (1 << 14) - xap; i > Cx; i -= Cx)
+                if (ypoints && xpoints)
                 {
-                    rx += (R_VAL(pix) * Cx) >> 9;
-                    gx += (G_VAL(pix) * Cx) >> 9;
-                    bx += (B_VAL(pix) * Cx) >> 9;
-                    ax += (A_VAL(pix) * Cx) >> 9;
-                    ++pix;
-                }
-
-                if (i > 0)
-                {
-                    rx += (R_VAL(pix) * i) >> 9;
-                    gx += (G_VAL(pix) * i) >> 9;
-                    bx += (B_VAL(pix) * i) >> 9;
-                    ax += (A_VAL(pix) * i) >> 9;
-                }
-
-                r = (rx * yap) >> 14;
-                g = (gx * yap) >> 14;
-                b = (bx * yap) >> 14;
-                a = (ax * yap) >> 14;
-
-                for (j = (1 << 14) - yap; j > Cy; j -= Cy)
-                {
+                    sptr = ypoints[dyy + y] + xpoints[x];
                     pix  = sptr;
                     sptr += sow;
                     rx   = (R_VAL(pix) * xap) >> 9;
@@ -1069,52 +1039,85 @@ void DImgScale::dimgScaleAARGBA(DImgScaleInfo* const isi, uint* const dest,
                         ax += (A_VAL(pix) * i) >> 9;
                     }
 
-                    r += (rx * Cy) >> 14;
-                    g += (gx * Cy) >> 14;
-                    b += (bx * Cy) >> 14;
-                    a += (ax * Cy) >> 14;
-                }
+                    r = (rx * yap) >> 14;
+                    g = (gx * yap) >> 14;
+                    b = (bx * yap) >> 14;
+                    a = (ax * yap) >> 14;
 
-                if (j > 0)
-                {
-                    pix   = sptr;
-                    sptr += sow;
-                    (void)sptr;    // disable clang warning.
-
-                    rx   = (R_VAL(pix) * xap) >> 9;
-                    gx   = (G_VAL(pix) * xap) >> 9;
-                    bx   = (B_VAL(pix) * xap) >> 9;
-                    ax   = (A_VAL(pix) * xap) >> 9;
-                    ++pix;
-
-                    for (i = (1 << 14) - xap; i > Cx; i -= Cx)
+                    for (j = (1 << 14) - yap; j > Cy; j -= Cy)
                     {
-                        rx += (R_VAL(pix) * Cx) >> 9;
-                        gx += (G_VAL(pix) * Cx) >> 9;
-                        bx += (B_VAL(pix) * Cx) >> 9;
-                        ax += (A_VAL(pix) * Cx) >> 9;
+                        pix  = sptr;
+                        sptr += sow;
+                        rx   = (R_VAL(pix) * xap) >> 9;
+                        gx   = (G_VAL(pix) * xap) >> 9;
+                        bx   = (B_VAL(pix) * xap) >> 9;
+                        ax   = (A_VAL(pix) * xap) >> 9;
                         ++pix;
+
+                        for (i = (1 << 14) - xap; i > Cx; i -= Cx)
+                        {
+                            rx += (R_VAL(pix) * Cx) >> 9;
+                            gx += (G_VAL(pix) * Cx) >> 9;
+                            bx += (B_VAL(pix) * Cx) >> 9;
+                            ax += (A_VAL(pix) * Cx) >> 9;
+                            ++pix;
+                        }
+
+                        if (i > 0)
+                        {
+                            rx += (R_VAL(pix) * i) >> 9;
+                            gx += (G_VAL(pix) * i) >> 9;
+                            bx += (B_VAL(pix) * i) >> 9;
+                            ax += (A_VAL(pix) * i) >> 9;
+                        }
+
+                        r += (rx * Cy) >> 14;
+                        g += (gx * Cy) >> 14;
+                        b += (bx * Cy) >> 14;
+                        a += (ax * Cy) >> 14;
                     }
 
-                    if (i > 0)
+                    if (j > 0)
                     {
-                        rx += (R_VAL(pix) * i) >> 9;
-                        gx += (G_VAL(pix) * i) >> 9;
-                        bx += (B_VAL(pix) * i) >> 9;
-                        ax += (A_VAL(pix) * i) >> 9;
+                        pix   = sptr;
+                        sptr += sow;
+                        (void)sptr;    // disable clang warning.
+
+                        rx   = (R_VAL(pix) * xap) >> 9;
+                        gx   = (G_VAL(pix) * xap) >> 9;
+                        bx   = (B_VAL(pix) * xap) >> 9;
+                        ax   = (A_VAL(pix) * xap) >> 9;
+                        ++pix;
+
+                        for (i = (1 << 14) - xap; i > Cx; i -= Cx)
+                        {
+                            rx += (R_VAL(pix) * Cx) >> 9;
+                            gx += (G_VAL(pix) * Cx) >> 9;
+                            bx += (B_VAL(pix) * Cx) >> 9;
+                            ax += (A_VAL(pix) * Cx) >> 9;
+                            ++pix;
+                        }
+
+                        if (i > 0)
+                        {
+                            rx += (R_VAL(pix) * i) >> 9;
+                            gx += (G_VAL(pix) * i) >> 9;
+                            bx += (B_VAL(pix) * i) >> 9;
+                            ax += (A_VAL(pix) * i) >> 9;
+                        }
+
+                        r += (rx * j) >> 14;
+                        g += (gx * j) >> 14;
+                        b += (bx * j) >> 14;
+                        a += (ax * j) >> 14;
                     }
 
-                    r += (rx * j) >> 14;
-                    g += (gx * j) >> 14;
-                    b += (bx * j) >> 14;
-                    a += (ax * j) >> 14;
+                    R_VAL(dptr) = r >> 5;
+                    G_VAL(dptr) = g >> 5;
+                    B_VAL(dptr) = b >> 5;
+                    A_VAL(dptr) = a >> 5;
+                    ++dptr;
                 }
-
-                R_VAL(dptr) = r >> 5;
-                G_VAL(dptr) = g >> 5;
-                B_VAL(dptr) = b >> 5;
-                A_VAL(dptr) = a >> 5;
-                ++dptr;
             }
         }
     }
@@ -1139,8 +1142,8 @@ void DImgScale::dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
 {
     Q_UNUSED(dw);
     Q_UNUSED(dh);
-    uint* sptr=nullptr;
-    uint* dptr=nullptr;
+    uint* sptr = nullptr;
+    uint* dptr = nullptr;
     int x, y;
     uint** ypoints    = isi->ypoints;
     int* xpoints      = isi->xpoints;
@@ -1167,7 +1170,7 @@ void DImgScale::dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
                 for (x = x_begin; x < x_end; ++x)
                 {
                     int   r = 0, g = 0, b = 0;
-                    uint* pix=nullptr;
+                    uint* pix = nullptr;
 
                     if (XAP > 0)
                     {
@@ -1227,7 +1230,7 @@ void DImgScale::dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
             {
                 for (x = x_begin; x < x_end; ++x)
                 {
-                    uint* pix=nullptr;
+                    uint* pix = nullptr;
 
                     if (XAP > 0)
                     {
@@ -1265,7 +1268,7 @@ void DImgScale::dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
     {
         /*\ 'Correct' version, with math units prepared for MMXification \*/
         int Cy, j;
-        uint* pix=nullptr;
+        uint* pix = nullptr;
         int r, g, b, rr, gg, bb;
         int yap;
 
@@ -1350,7 +1353,7 @@ void DImgScale::dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
     {
         /*\ 'Correct' version, with math units prepared for MMXification \*/
         int Cx, j;
-        uint* pix=nullptr;
+        uint* pix = nullptr;
         int r, g, b, rr, gg, bb;
         int xap;
 
@@ -1436,7 +1439,7 @@ void DImgScale::dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
     {
         /*\ 'Correct' version, with math units prepared for MMXification \*/
         int Cx, Cy, i, j;
-        uint* pix=nullptr;
+        uint* pix = nullptr;
         int r, g, b, rx, gx, bx;
         int xap, yap;
 
@@ -1450,35 +1453,10 @@ void DImgScale::dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
             {
                 Cx   = XAP >> 16;
                 xap  = XAP & 0xffff;
-                sptr = ypoints[dyy + y] + xpoints[x];
-                pix  = sptr;
-                sptr += sow;
-                rx   = (R_VAL(pix) * xap) >> 9;
-                gx   = (G_VAL(pix) * xap) >> 9;
-                bx   = (B_VAL(pix) * xap) >> 9;
-                ++pix;
 
-                for (i = (1 << 14) - xap; i > Cx; i -= Cx)
+                if (ypoints && xpoints)
                 {
-                    rx += (R_VAL(pix) * Cx) >> 9;
-                    gx += (G_VAL(pix) * Cx) >> 9;
-                    bx += (B_VAL(pix) * Cx) >> 9;
-                    ++pix;
-                }
-
-                if (i > 0)
-                {
-                    rx += (R_VAL(pix) * i) >> 9;
-                    gx += (G_VAL(pix) * i) >> 9;
-                    bx += (B_VAL(pix) * i) >> 9;
-                }
-
-                r = (rx * yap) >> 14;
-                g = (gx * yap) >> 14;
-                b = (bx * yap) >> 14;
-
-                for (j = (1 << 14) - yap; j > Cy; j -= Cy)
-                {
+                    sptr = ypoints[dyy + y] + xpoints[x];
                     pix  = sptr;
                     sptr += sow;
                     rx   = (R_VAL(pix) * xap) >> 9;
@@ -1501,47 +1479,76 @@ void DImgScale::dimgScaleAARGB(DImgScaleInfo* const isi, uint* const dest,
                         bx += (B_VAL(pix) * i) >> 9;
                     }
 
-                    r += (rx * Cy) >> 14;
-                    g += (gx * Cy) >> 14;
-                    b += (bx * Cy) >> 14;
-                }
+                    r = (rx * yap) >> 14;
+                    g = (gx * yap) >> 14;
+                    b = (bx * yap) >> 14;
 
-                if (j > 0)
-                {
-                    pix  = sptr;
-                    sptr += sow;
-                    (void)sptr;    // disable clang warning.
-
-                    rx   = (R_VAL(pix) * xap) >> 9;
-                    gx   = (G_VAL(pix) * xap) >> 9;
-                    bx   = (B_VAL(pix) * xap) >> 9;
-                    ++pix;
-
-                    for (i = (1 << 14) - xap; i > Cx; i -= Cx)
+                    for (j = (1 << 14) - yap; j > Cy; j -= Cy)
                     {
-                        rx += (R_VAL(pix) * Cx) >> 9;
-                        gx += (G_VAL(pix) * Cx) >> 9;
-                        bx += (B_VAL(pix) * Cx) >> 9;
+                        pix  = sptr;
+                        sptr += sow;
+                        rx   = (R_VAL(pix) * xap) >> 9;
+                        gx   = (G_VAL(pix) * xap) >> 9;
+                        bx   = (B_VAL(pix) * xap) >> 9;
                         ++pix;
+
+                        for (i = (1 << 14) - xap; i > Cx; i -= Cx)
+                        {
+                            rx += (R_VAL(pix) * Cx) >> 9;
+                            gx += (G_VAL(pix) * Cx) >> 9;
+                            bx += (B_VAL(pix) * Cx) >> 9;
+                            ++pix;
+                        }
+
+                        if (i > 0)
+                        {
+                            rx += (R_VAL(pix) * i) >> 9;
+                            gx += (G_VAL(pix) * i) >> 9;
+                            bx += (B_VAL(pix) * i) >> 9;
+                        }
+
+                        r += (rx * Cy) >> 14;
+                        g += (gx * Cy) >> 14;
+                        b += (bx * Cy) >> 14;
                     }
 
-                    if (i > 0)
+                    if (j > 0)
                     {
-                        rx += (R_VAL(pix) * i) >> 9;
-                        gx += (G_VAL(pix) * i) >> 9;
-                        bx += (B_VAL(pix) * i) >> 9;
+                        pix  = sptr;
+                        sptr += sow;
+                        (void)sptr;    // disable clang warning.
+
+                        rx   = (R_VAL(pix) * xap) >> 9;
+                        gx   = (G_VAL(pix) * xap) >> 9;
+                        bx   = (B_VAL(pix) * xap) >> 9;
+                        ++pix;
+
+                        for (i = (1 << 14) - xap; i > Cx; i -= Cx)
+                        {
+                            rx += (R_VAL(pix) * Cx) >> 9;
+                            gx += (G_VAL(pix) * Cx) >> 9;
+                            bx += (B_VAL(pix) * Cx) >> 9;
+                            ++pix;
+                        }
+
+                        if (i > 0)
+                        {
+                            rx += (R_VAL(pix) * i) >> 9;
+                            gx += (G_VAL(pix) * i) >> 9;
+                            bx += (B_VAL(pix) * i) >> 9;
+                        }
+
+                        r += (rx * j) >> 14;
+                        g += (gx * j) >> 14;
+                        b += (bx * j) >> 14;
                     }
 
-                    r += (rx * j) >> 14;
-                    g += (gx * j) >> 14;
-                    b += (bx * j) >> 14;
+                    R_VAL(dptr) = r >> 5;
+                    G_VAL(dptr) = g >> 5;
+                    B_VAL(dptr) = b >> 5;
+                    A_VAL(dptr) = 0xFF;
+                    ++dptr;
                 }
-
-                R_VAL(dptr) = r >> 5;
-                G_VAL(dptr) = g >> 5;
-                B_VAL(dptr) = b >> 5;
-                A_VAL(dptr) = 0xFF;
-                ++dptr;
             }
         }
     }
@@ -1570,8 +1577,8 @@ void DImgScale::dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
 {
     Q_UNUSED(dw);
     Q_UNUSED(dh);
-    ullong* sptr=nullptr;
-    ullong* dptr=nullptr;
+    ullong* sptr = nullptr;
+    ullong* dptr = nullptr;
     int x, y;
     ullong** ypoints  = isi->ypoints16;
     int*     xpoints  = isi->xpoints;
@@ -1598,7 +1605,7 @@ void DImgScale::dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
                 for (x = x_begin; x < x_end; ++x)
                 {
                     llong r = 0, g = 0, b = 0;
-                    ullong* pix=nullptr;
+                    ullong* pix = nullptr;
 
                     if (XAP > 0)
                     {
@@ -1658,7 +1665,7 @@ void DImgScale::dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
             {
                 for (x = x_begin; x < x_end; ++x)
                 {
-                    ullong* pix=nullptr;
+                    ullong* pix = nullptr;
 
                     if (XAP > 0)
                     {
@@ -1696,7 +1703,7 @@ void DImgScale::dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
     {
         // 'Correct' version, with math units prepared for MMXification
         int Cy, j;
-        ullong* pix=nullptr;
+        ullong* pix = nullptr;
         llong r, g, b, rr, gg, bb;
         int yap;
 
@@ -1780,7 +1787,7 @@ void DImgScale::dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
     {
         // 'Correct' version, with math units prepared for MMXification
         int Cx, j;
-        ullong* pix=nullptr;
+        ullong* pix = nullptr;
         llong r, g, b, rr, gg, bb;
         int xap;
 
@@ -1865,7 +1872,7 @@ void DImgScale::dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
     {
         // 'Correct' version, with math units prepared for MMXification
         int Cx, Cy, i, j;
-        ullong* pix=nullptr;
+        ullong* pix = nullptr;
         llong r, g, b, rx, gx, bx;
         int xap, yap;
 
@@ -1879,35 +1886,10 @@ void DImgScale::dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
             {
                 Cx   = XAP >> 16;
                 xap  = XAP & 0xffff;
-                sptr = ypoints[dyy + y] + xpoints[x];
-                pix  = sptr;
-                sptr += sow;
-                rx   = (R_VAL16(pix) * xap) >> 9;
-                gx   = (G_VAL16(pix) * xap) >> 9;
-                bx   = (B_VAL16(pix) * xap) >> 9;
-                ++pix;
-
-                for (i = (1 << 14) - xap; i > Cx; i -= Cx)
+                
+                if (ypoints && xpoints)
                 {
-                    rx += (R_VAL16(pix) * Cx) >> 9;
-                    gx += (G_VAL16(pix) * Cx) >> 9;
-                    bx += (B_VAL16(pix) * Cx) >> 9;
-                    ++pix;
-                }
-
-                if (i > 0)
-                {
-                    rx += (R_VAL16(pix) * i) >> 9;
-                    gx += (G_VAL16(pix) * i) >> 9;
-                    bx += (B_VAL16(pix) * i) >> 9;
-                }
-
-                r = (rx * yap) >> 14;
-                g = (gx * yap) >> 14;
-                b = (bx * yap) >> 14;
-
-                for (j = (1 << 14) - yap; j > Cy; j -= Cy)
-                {
+                    sptr = ypoints[dyy + y] + xpoints[x];
                     pix  = sptr;
                     sptr += sow;
                     rx   = (R_VAL16(pix) * xap) >> 9;
@@ -1930,47 +1912,76 @@ void DImgScale::dimgScaleAARGB16(DImgScaleInfo* const isi, ullong* const dest,
                         bx += (B_VAL16(pix) * i) >> 9;
                     }
 
-                    r += (rx * Cy) >> 14;
-                    g += (gx * Cy) >> 14;
-                    b += (bx * Cy) >> 14;
-                }
+                    r = (rx * yap) >> 14;
+                    g = (gx * yap) >> 14;
+                    b = (bx * yap) >> 14;
 
-                if (j > 0)
-                {
-                    pix  = sptr;
-                    sptr += sow;
-                    (void)sptr;    // disable clang warning.
-
-                    rx   = (R_VAL16(pix) * xap) >> 9;
-                    gx   = (G_VAL16(pix) * xap) >> 9;
-                    bx   = (B_VAL16(pix) * xap) >> 9;
-                    ++pix;
-
-                    for (i = (1 << 14) - xap; i > Cx; i -= Cx)
+                    for (j = (1 << 14) - yap; j > Cy; j -= Cy)
                     {
-                        rx += (R_VAL16(pix) * Cx) >> 9;
-                        gx += (G_VAL16(pix) * Cx) >> 9;
-                        bx += (B_VAL16(pix) * Cx) >> 9;
+                        pix  = sptr;
+                        sptr += sow;
+                        rx   = (R_VAL16(pix) * xap) >> 9;
+                        gx   = (G_VAL16(pix) * xap) >> 9;
+                        bx   = (B_VAL16(pix) * xap) >> 9;
                         ++pix;
+
+                        for (i = (1 << 14) - xap; i > Cx; i -= Cx)
+                        {
+                            rx += (R_VAL16(pix) * Cx) >> 9;
+                            gx += (G_VAL16(pix) * Cx) >> 9;
+                            bx += (B_VAL16(pix) * Cx) >> 9;
+                            ++pix;
+                        }
+
+                        if (i > 0)
+                        {
+                            rx += (R_VAL16(pix) * i) >> 9;
+                            gx += (G_VAL16(pix) * i) >> 9;
+                            bx += (B_VAL16(pix) * i) >> 9;
+                        }
+
+                        r += (rx * Cy) >> 14;
+                        g += (gx * Cy) >> 14;
+                        b += (bx * Cy) >> 14;
                     }
 
-                    if (i > 0)
+                    if (j > 0)
                     {
-                        rx += (R_VAL16(pix) * i) >> 9;
-                        gx += (G_VAL16(pix) * i) >> 9;
-                        bx += (B_VAL16(pix) * i) >> 9;
+                        pix  = sptr;
+                        sptr += sow;
+                        (void)sptr;    // disable clang warning.
+
+                        rx   = (R_VAL16(pix) * xap) >> 9;
+                        gx   = (G_VAL16(pix) * xap) >> 9;
+                        bx   = (B_VAL16(pix) * xap) >> 9;
+                        ++pix;
+
+                        for (i = (1 << 14) - xap; i > Cx; i -= Cx)
+                        {
+                            rx += (R_VAL16(pix) * Cx) >> 9;
+                            gx += (G_VAL16(pix) * Cx) >> 9;
+                            bx += (B_VAL16(pix) * Cx) >> 9;
+                            ++pix;
+                        }
+
+                        if (i > 0)
+                        {
+                            rx += (R_VAL16(pix) * i) >> 9;
+                            gx += (G_VAL16(pix) * i) >> 9;
+                            bx += (B_VAL16(pix) * i) >> 9;
+                        }
+
+                        r += (rx * j) >> 14;
+                        g += (gx * j) >> 14;
+                        b += (bx * j) >> 14;
                     }
 
-                    r += (rx * j) >> 14;
-                    g += (gx * j) >> 14;
-                    b += (bx * j) >> 14;
+                    R_VAL16(dptr) = r >> 5;
+                    G_VAL16(dptr) = g >> 5;
+                    B_VAL16(dptr) = b >> 5;
+                    A_VAL16(dptr) = 0xFFFF;
+                    ++dptr;
                 }
-
-                R_VAL16(dptr) = r >> 5;
-                G_VAL16(dptr) = g >> 5;
-                B_VAL16(dptr) = b >> 5;
-                A_VAL16(dptr) = 0xFFFF;
-                ++dptr;
             }
         }
     }
@@ -1996,8 +2007,8 @@ void DImgScale::dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
 {
     Q_UNUSED(dw);
     Q_UNUSED(dh);
-    ullong* sptr=nullptr;
-    ullong* dptr=nullptr;
+    ullong* sptr = nullptr;
+    ullong* dptr = nullptr;
     int x, y;
     ullong** ypoints  = isi->ypoints16;
     int* xpoints      = isi->xpoints;
@@ -2025,7 +2036,7 @@ void DImgScale::dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
                 {
                     llong r, g, b, a;
                     llong rr, gg, bb, aa;
-                    ullong* pix=nullptr;
+                    ullong* pix = nullptr;
 
                     if (XAP > 0)
                     {
@@ -2092,7 +2103,7 @@ void DImgScale::dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
                 for (x = x_begin; x < x_end; ++x)
                 {
                     llong r, g, b, a;
-                    ullong* pix=nullptr;
+                    ullong* pix = nullptr;
 
                     if (XAP > 0)
                     {
@@ -2131,7 +2142,7 @@ void DImgScale::dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
     {
         /*\ 'Correct' version, with math units prepared for MMXification \*/
         int Cy, j;
-        ullong* pix=nullptr;
+        ullong* pix = nullptr;
         llong r, g, b, a, rr, gg, bb, aa;
         int yap;
 
@@ -2225,7 +2236,7 @@ void DImgScale::dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
     {
         /*\ 'Correct' version, with math units prepared for MMXification \*/
         int Cx, j;
-        ullong* pix=nullptr;
+        ullong* pix = nullptr;
         llong r, g, b, a, rr, gg, bb, aa;
         int xap;
 
@@ -2323,7 +2334,7 @@ void DImgScale::dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
         |*|  psllw (16 - d), %mmb; pmulh %mmc, %mmb
         \*/
         int Cx, Cy, i, j;
-        ullong* pix=nullptr;
+        ullong* pix = nullptr;
         llong a, r, g, b, ax, rx, gx, bx;
         int xap, yap;
 
@@ -2337,40 +2348,10 @@ void DImgScale::dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
             {
                 Cx   = XAP >> 16;
                 xap  = XAP & 0xffff;
-                sptr = ypoints[dyy + y] + xpoints[x];
-                pix  = sptr;
-                sptr += sow;
-                rx   = (R_VAL16(pix) * xap) >> 9;
-                gx   = (G_VAL16(pix) * xap) >> 9;
-                bx   = (B_VAL16(pix) * xap) >> 9;
-                ax   = (A_VAL16(pix) * xap) >> 9;
-                ++pix;
 
-                for (i = (1 << 14) - xap; i > Cx; i -= Cx)
+                if (ypoints && xpoints)
                 {
-                    rx += (R_VAL16(pix) * Cx) >> 9;
-                    gx += (G_VAL16(pix) * Cx) >> 9;
-                    bx += (B_VAL16(pix) * Cx) >> 9;
-                    ax += (A_VAL16(pix) * Cx) >> 9;
-                    ++pix;
-                }
-
-                if (i > 0)
-                {
-                    rx += (R_VAL16(pix) * i) >> 9;
-                    gx += (G_VAL16(pix) * i) >> 9;
-                    bx += (B_VAL16(pix) * i) >> 9;
-                    ax += (A_VAL16(pix) * i) >> 9;
-                }
-
-                r = (rx * yap) >> 14;
-                g = (gx * yap) >> 14;
-                b = (bx * yap) >> 14;
-                a = (ax * yap) >> 14;
-
-
-                for (j = (1 << 14) - yap; j > Cy; j -= Cy)
-                {
+                    sptr = ypoints[dyy + y] + xpoints[x];
                     pix  = sptr;
                     sptr += sow;
                     rx   = (R_VAL16(pix) * xap) >> 9;
@@ -2396,52 +2377,86 @@ void DImgScale::dimgScaleAARGBA16(DImgScaleInfo* const isi, ullong* const dest,
                         ax += (A_VAL16(pix) * i) >> 9;
                     }
 
-                    r += (rx * Cy) >> 14;
-                    g += (gx * Cy) >> 14;
-                    b += (bx * Cy) >> 14;
-                    a += (ax * Cy) >> 14;
-                }
+                    r = (rx * yap) >> 14;
+                    g = (gx * yap) >> 14;
+                    b = (bx * yap) >> 14;
+                    a = (ax * yap) >> 14;
 
-                if (j > 0)
-                {
-                    pix  = sptr;
-                    sptr += sow;
-                    (void)sptr;    // disable clang warning.
 
-                    rx   = (R_VAL16(pix) * xap) >> 9;
-                    gx   = (G_VAL16(pix) * xap) >> 9;
-                    bx   = (B_VAL16(pix) * xap) >> 9;
-                    ax   = (A_VAL16(pix) * xap) >> 9;
-                    ++pix;
-
-                    for (i = (1 << 14) - xap; i > Cx; i -= Cx)
+                    for (j = (1 << 14) - yap; j > Cy; j -= Cy)
                     {
-                        rx += (R_VAL16(pix) * Cx) >> 9;
-                        gx += (G_VAL16(pix) * Cx) >> 9;
-                        bx += (B_VAL16(pix) * Cx) >> 9;
-                        ax += (A_VAL16(pix) * Cx) >> 9;
+                        pix  = sptr;
+                        sptr += sow;
+                        rx   = (R_VAL16(pix) * xap) >> 9;
+                        gx   = (G_VAL16(pix) * xap) >> 9;
+                        bx   = (B_VAL16(pix) * xap) >> 9;
+                        ax   = (A_VAL16(pix) * xap) >> 9;
                         ++pix;
+
+                        for (i = (1 << 14) - xap; i > Cx; i -= Cx)
+                        {
+                            rx += (R_VAL16(pix) * Cx) >> 9;
+                            gx += (G_VAL16(pix) * Cx) >> 9;
+                            bx += (B_VAL16(pix) * Cx) >> 9;
+                            ax += (A_VAL16(pix) * Cx) >> 9;
+                            ++pix;
+                        }
+
+                        if (i > 0)
+                        {
+                            rx += (R_VAL16(pix) * i) >> 9;
+                            gx += (G_VAL16(pix) * i) >> 9;
+                            bx += (B_VAL16(pix) * i) >> 9;
+                            ax += (A_VAL16(pix) * i) >> 9;
+                        }
+
+                        r += (rx * Cy) >> 14;
+                        g += (gx * Cy) >> 14;
+                        b += (bx * Cy) >> 14;
+                        a += (ax * Cy) >> 14;
                     }
 
-                    if (i > 0)
+                    if (j > 0)
                     {
-                        rx += (R_VAL16(pix) * i) >> 9;
-                        gx += (G_VAL16(pix) * i) >> 9;
-                        bx += (B_VAL16(pix) * i) >> 9;
-                        ax += (A_VAL16(pix) * i) >> 9;
+                        pix  = sptr;
+                        sptr += sow;
+                        (void)sptr;    // disable clang warning.
+
+                        rx   = (R_VAL16(pix) * xap) >> 9;
+                        gx   = (G_VAL16(pix) * xap) >> 9;
+                        bx   = (B_VAL16(pix) * xap) >> 9;
+                        ax   = (A_VAL16(pix) * xap) >> 9;
+                        ++pix;
+
+                        for (i = (1 << 14) - xap; i > Cx; i -= Cx)
+                        {
+                            rx += (R_VAL16(pix) * Cx) >> 9;
+                            gx += (G_VAL16(pix) * Cx) >> 9;
+                            bx += (B_VAL16(pix) * Cx) >> 9;
+                            ax += (A_VAL16(pix) * Cx) >> 9;
+                            ++pix;
+                        }
+
+                        if (i > 0)
+                        {
+                            rx += (R_VAL16(pix) * i) >> 9;
+                            gx += (G_VAL16(pix) * i) >> 9;
+                            bx += (B_VAL16(pix) * i) >> 9;
+                            ax += (A_VAL16(pix) * i) >> 9;
+                        }
+
+                        r += (rx * j) >> 14;
+                        g += (gx * j) >> 14;
+                        b += (bx * j) >> 14;
+                        a += (ax * j) >> 14;
                     }
 
-                    r += (rx * j) >> 14;
-                    g += (gx * j) >> 14;
-                    b += (bx * j) >> 14;
-                    a += (ax * j) >> 14;
+                    R_VAL16(dptr) = r >> 5;
+                    G_VAL16(dptr) = g >> 5;
+                    B_VAL16(dptr) = b >> 5;
+                    A_VAL16(dptr) = a >> 5;
+                    ++dptr;
                 }
-
-                R_VAL16(dptr) = r >> 5;
-                G_VAL16(dptr) = g >> 5;
-                B_VAL16(dptr) = b >> 5;
-                A_VAL16(dptr) = a >> 5;
-                ++dptr;
             }
         }
     }
