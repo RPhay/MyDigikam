@@ -462,7 +462,9 @@ IccTransform IccManager::displaySoftProofingTransform(const IccProfile& devicePr
     IccTransform transform = displayTransform(displayProfile);
     transform.setProofProfile(deviceProfile);
     transform.setCheckGamut(d->settings.doGamutCheck);
+    transform.setProofIntent(d->settings.proofingRenderingIntent);
     transform.setCheckGamutMaskColor(d->settings.gamutCheckMaskColor);
+
     return transform;
 }
 
