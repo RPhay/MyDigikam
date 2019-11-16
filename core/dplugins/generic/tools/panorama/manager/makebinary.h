@@ -46,7 +46,7 @@ public:
 #ifdef Q_OS_WIN
                        QLatin1String("http://gnuwin32.sourceforge.net/packages/make.htm"),
 #else
-                       QLatin1String("http://www.gnu.org/software/make/"),
+                       QLatin1String("https://www.gnu.org/software/make/"),
 #endif
                        QLatin1String("Panorama"),
                        QStringList(QLatin1String("-v"))
