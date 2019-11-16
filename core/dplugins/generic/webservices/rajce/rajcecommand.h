@@ -41,6 +41,8 @@ namespace DigikamGenericRajcePlugin
 
 class RajceCommand : public QObject
 {
+    Q_OBJECT
+
 public:
 
     explicit RajceCommand(const QString& name, RajceCommandType commandType);
