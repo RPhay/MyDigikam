@@ -502,12 +502,14 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     return false;
                 }
 
-                if ((planar_config == PLANARCONFIG_SEPARATE) &&
-                    (num_of_strips != 0)                     &&
-                    (samples_per_pixel != 0)                 &&
-                    (st % (num_of_strips / samples_per_pixel)) == 0)
+
+                if ((num_of_strips != 0) && (samples_per_pixel != 0))
                 {
-                    offset = 0;
+                    if ((planar_config == PLANARCONFIG_SEPARATE) &&
+                        (st % (num_of_strips / samples_per_pixel)) == 0)
+                    {
+                        offset = 0;
+                    }
                 }
 
                 float*  stripPtr = reinterpret_cast<float*>(strip.data());
