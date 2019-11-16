@@ -281,6 +281,8 @@ public:
     QSet<int>        albumRootsToSearch;
 };
 
+// -----------------------------------------------------------------------------------------------------
+
 HaarIface::HaarIface()
     : d(new Private())
 {
@@ -1232,15 +1234,13 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicates(cons
 
         ++progress;
 
-        if (observer            &&
-            (progressStep != 0) &&
-               (
-                    (progress                  == total) ||
-                    ((progress % progressStep) == 0)
-               )
-           )
+        if (observer && (progressStep != 0))
         {
-            observer->processedNumber(progress);
+            if ((progress == total) ||
+                (remainder((double)progress, (double)progressStep) == 0.0))
+            {
+                observer->processedNumber(progress);
+            }
         }
     }
 
