@@ -117,7 +117,8 @@ bool HaarIface::indexImage(qlonglong imageid, const DImg& image)
     return indexImage(imageid);
 }
 
-// private method: d->data has been filled
+// NOTE: private method: d->data has been filled
+
 bool HaarIface::indexImage(qlonglong imageid)
 {
     Haar::Calculator haar;
@@ -127,6 +128,7 @@ bool HaarIface::indexImage(qlonglong imageid)
     haar.calcHaar(d->data, &sig);
 
     // Store main entry
+
     DatabaseBlob blob;
     QByteArray array = blob.write(&sig);
 
@@ -214,9 +216,11 @@ QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesForImageWithThresh
     haar.calcHaar(d->data, &sig);
 
     // Remove all previous similarities from pictures
+
     SimilarityDbAccess().db()->removeImageSimilarity(0);
 
     // Apply duplicates search for the image. Use the image id 0 which cannot be present.
+
     return bestMatchesWithThreshold(0,
                                     &sig,
                                     requiredPercentage,
@@ -254,6 +258,7 @@ QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesForImageWithThresh
     else
     {
         // reference for easier access
+
         SignatureCache& signatureCache = *d->signatureCache;
         Haar::SignatureData& sig       = signatureCache[imageid];
 
@@ -294,12 +299,15 @@ QMap<qlonglong,double> HaarIface::bestMatchesForSignature(const QString& signatu
     blobReader.read(bytes, &sig);
 
     // Get all matching images with their score and save their similarity to the signature, i.e. id -2
+
     QMultiMap<double, qlonglong> matches = bestMatches(&sig, numberOfResults, targetAlbums, type);
     QMap<qlonglong, double> result;
 
-    for (QMultiMap<double, qlonglong>::const_iterator it = matches.constBegin() ; it != matches.constEnd() ; ++it)
+    for (QMultiMap<double, qlonglong>::const_iterator it = matches.constBegin() ;
+         it != matches.constEnd() ; ++it)
     {
         // Add the image id and the normalised score (make sure that it is positive and between 0 and 1.
+
         result.insert(it.value(), ( 0.0 - ( it.key()/100) ));
     }
 
@@ -316,12 +324,14 @@ QMultiMap<double, qlonglong> HaarIface::bestMatches(Haar::SignatureData* const q
     // Find out the best matches, those with the lowest score
     // We make use of the feature that QMap keys are sorted in ascending order
     // Of course, images can have the same score, so we need a multi map
+
     QMultiMap<double, qlonglong> bestMatches;
     bool                         initialFill = false;
     double                       score, worstScore, bestScore;
     qlonglong                    id;
 
-    for (QMap<qlonglong, double>::const_iterator it = scores.constBegin() ; it != scores.constEnd() ; ++it)
+    for (QMap<qlonglong, double>::const_iterator it = scores.constBegin() ;
+         it != scores.constEnd() ; ++it)
     {
         score = it.value();
         id    = it.key();
@@ -329,17 +339,20 @@ QMultiMap<double, qlonglong> HaarIface::bestMatches(Haar::SignatureData* const q
         if (!initialFill)
         {
             // as long as the maximum number of results is not reached, just fill up the map
+
             bestMatches.insert(score, id);
             initialFill = (bestMatches.size() >= numberOfResults);
         }
         else
         {
             // find the last entry, the one with the highest (=worst) score
+
             QMap<double, qlonglong>::iterator last = bestMatches.end();
             --last;
             worstScore = last.key();
 
             // if the new entry has a higher score, put it in the list and remove that last one
+
             if (score < worstScore)
             {
                 bestMatches.erase(last);
@@ -350,6 +363,7 @@ QMultiMap<double, qlonglong> HaarIface::bestMatches(Haar::SignatureData* const q
                 bestScore = bestMatches.begin().key();
 
                 // if the score is identical for all entries, increase the maximum result number
+
                 if (score == bestScore)
                 {
                     bestMatches.insert(score, id);
@@ -387,13 +401,16 @@ QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesWithThreshold(qlon
 
     // The range between the highest (worst) and lowest (best) score
     // example: 0.2 and 0.5 -> 0.3
+
     double scoreRange      = highest - lowest;
 
     // The lower the requiredPercentage is, the higher will the result be.
     // example: 0.7 -> 0.3
+
     double percentageRange = 1.0 - requiredPercentage;
 
     // example: 0.2 + (0.3 * 0.3) = 0.2 + 0.09 = 0.29
+
     double requiredScore   = lowest + scoreRange * percentageRange;
 
     // Set the supremum which solves the problem that if
@@ -401,6 +418,7 @@ QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesWithThreshold(qlon
     // Eg, id required == maximum == 50.0, only images with exactly this
     // similarity are returned. But users expect also to see images
     // with similarity 50,x.
+
     double supremum = (floor(maximumPercentage*100 + 1.0))/100;
 
     QMap<qlonglong, double> bestMatches;
@@ -408,25 +426,31 @@ QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesWithThreshold(qlon
     QPair<double, QMap<qlonglong, double> > result;
     qlonglong id;
 
-    for (QMap<qlonglong, double>::const_iterator it = scores.constBegin() ; it != scores.constEnd() ; ++it)
+    for (QMap<qlonglong, double>::const_iterator it = scores.constBegin() ;
+         it != scores.constEnd() ; ++it)
     {
         score = it.value();
         id    = it.key();
 
         // If the score of the picture is at most the required (maximum) score and
+
         if (score <= requiredScore)
         {
             percentage = 1.0 - (score - lowest) / scoreRange;
 
             // If the found image is the original one (check by id) or the percentage is below the maximum.
+
             if ((id == imageid) || (percentage < supremum))
             {
                 bestMatches.insert(id, percentage);
+
                 // If the current image is not the original, use the images similarity for the average percentage
                 // Also, save the similarity of the found image to the original image.
+
                 if (id != imageid)
                 {
                     // Store the similarity if the reference image has a valid image id
+
                     if (imageid > 0)
                     {
                         SimilarityDbAccess().db()->setImageSimilarity(id, imageid, percentage);
@@ -439,11 +463,13 @@ QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesWithThreshold(qlon
     }
 
     // Debug output
+
     if (bestMatches.count() > 1)
     {
         // The average percentage is the sum of all percentages
         // (without the original picture) divided by the count of pictures -1.
         // Subtracting 1 is necessary since the original picture is not used for the calculation.
+
         avgPercentage = avgPercentage / (bestMatches.count() - 1);
 
         qCDebug(DIGIKAM_DATABASE_LOG) << "Duplicates with id and score:";
@@ -481,7 +507,9 @@ bool HaarIface::fulfillsRestrictions(qlonglong imageId, int albumId,
     }
 }
 
-/// This method is the core functionality: It assigns a score to every image in the db
+/**
+ * This method is the core functionality: It assigns a score to every image in the database.
+ */
 QMap<qlonglong, double> HaarIface::searchDatabase(Haar::SignatureData* const querySig,
                                                   SketchType type, const QList<int>& targetAlbums,
                                                   DuplicatesSearchRestrictions searchResultRestriction,
@@ -491,9 +519,11 @@ QMap<qlonglong, double> HaarIface::searchDatabase(Haar::SignatureData* const que
     d->createWeightBin();
 
     // The table of constant weight factors applied to each channel and bin
+
     Haar::Weights weights((Haar::Weights::SketchType)type);
 
     // layout the query signature for fast lookup
+
     Haar::SignatureMap queryMapY, queryMapI, queryMapQ;
     queryMapY.fill(querySig->sig[0]);
     queryMapI.fill(querySig->sig[1]);
@@ -502,21 +532,25 @@ QMap<qlonglong, double> HaarIface::searchDatabase(Haar::SignatureData* const que
 
     // Map imageid -> score. Lowest score is best.
     // any newly inserted value will be initialized with a score of 0, as required
+
     QMap<qlonglong, double> scores;
 
     // Variables for data read from DB
+
     DatabaseBlob        blob;
     qlonglong           imageid;
     int                 albumid;
     Haar::SignatureData targetSig;
 
     // reference for easier access
+
     SignatureCache& signatureCache = *d->signatureCache;
     AlbumCache&     albumCache     = *d->albumCache;
 
     bool filterByAlbumRoots = !d->albumRootsToSearch.isEmpty();
 
     // if no cache is used or the cache signature map is empty, query the database
+
     if (!d->useSignatureCache || (signatureCache.isEmpty() && d->useSignatureCache))
     {
         DbEngineSqlQuery query = SimilarityDbAccess().backend()->prepareQuery(d->signatureQuery);
@@ -530,6 +564,7 @@ QMap<qlonglong, double> HaarIface::searchDatabase(Haar::SignatureData* const que
 
         // We don't use SimilarityDb's convenience calls, as the result set is large
         // and we try to avoid copying in a temporary QList<QVariant>
+
         while (query.next())
         {
             imageid = query.value(0).toLongLong();
@@ -561,6 +596,7 @@ QMap<qlonglong, double> HaarIface::searchDatabase(Haar::SignatureData* const que
                 // DifferentAlbum restriction applies and the albums differ
                 // then calculate the score.
                 // Also, restrict to target album
+
                 if (fulfillsRestrictions(imageid, albumid, originalImageId,
                                          originalAlbumId, targetAlbums, searchResultRestriction))
                 {
@@ -573,8 +609,7 @@ QMap<qlonglong, double> HaarIface::searchDatabase(Haar::SignatureData* const que
             }
         }
     }
-    // read cached signature map if possible
-    else
+    else   // read cached signature map if possible
     {
         foreach (const qlonglong& imageid, signatureCache.keys())
         {
@@ -585,6 +620,7 @@ QMap<qlonglong, double> HaarIface::searchDatabase(Haar::SignatureData* const que
             // SameAlbum restriction applies and the albums are equal or
             // DifferentAlbum restriction applies and the albums differ
             // then calculate the score.
+
             if (fulfillsRestrictions(imageid, albumid, originalImageId,
                                      originalAlbumId, targetAlbums, searchResultRestriction))
             {
@@ -609,9 +645,11 @@ QImage HaarIface::loadQImage(const QString& filename)
     if (JPEGUtils::isJpegImage(filename))
     {
         // use fast jpeg loading
+
         if (!JPEGUtils::loadJPEGScaled(image, filename, Haar::NumberOfPixels))
         {
             // try QT now.
+
             if (!image.load(filename))
             {
                 return QImage();
@@ -621,6 +659,7 @@ QImage HaarIface::loadQImage(const QString& filename)
     else
     {
         // use default QT image loading
+
         if (!image.load(filename))
         {
             return QImage();
@@ -657,6 +696,7 @@ void HaarIface::getBestAndWorstPossibleScore(Haar::SignatureData* const sig,
 
     // In the first step, the score is initialized with the weighted color channel averages.
     // We don't know the target channel average here, we only now its not negative => assume 0
+
     for (int channel = 0 ; channel < 3 ; ++channel)
     {
         score += weights.weightForAverage(channel) * fabs(sig->avg[channel] /*- targetSig.avg[channel]*/);
@@ -668,6 +708,7 @@ void HaarIface::getBestAndWorstPossibleScore(Haar::SignatureData* const sig,
     // The first step (see above) will result in 0 - skip it.
     // In the second step, for every coefficient in the sig that have query and target in common,
     // so in our case all 3*40, subtract the specifically assigned weighting.
+
     score = 0;
 
     for (int channel = 0 ; channel < 3 ; ++channel)
@@ -688,9 +729,11 @@ QMap<QString, QString> HaarIface::writeSAlbumQueries(const QMap<double,
                                                      QMap<qlonglong, QList<qlonglong> > >& searchResults)
 {
     // Build search XML from the results. Store list of ids of similar images.
+
     QMap<QString, QString> queries;
 
     // Iterate over the similarity
+
     for (QMap<double, QMap<qlonglong, QList<qlonglong> > >::const_iterator similarity_it = searchResults.constBegin() ;
          similarity_it != searchResults.constEnd() ; ++similarity_it)
     {
@@ -698,6 +741,7 @@ QMap<QString, QString> HaarIface::writeSAlbumQueries(const QMap<double,
         QMap<qlonglong, QList<qlonglong> > sameSimilarityMap = similarity_it.value();
 
         // Iterate ofer
+
         for (QMap<qlonglong, QList<qlonglong> >::const_iterator it = sameSimilarityMap.constBegin() ;
              it != sameSimilarityMap.constEnd() ; ++it)
         {
@@ -706,13 +750,17 @@ QMap<QString, QString> HaarIface::writeSAlbumQueries(const QMap<double,
             writer.writeField(QLatin1String("imageid"), SearchXml::OneOf);
             writer.writeValue(it.value());
             writer.finishField();
+
             // Add the average similarity as field
+
             writer.writeField(QLatin1String("noeffect_avgsim"), SearchXml::Equal);
             writer.writeValue(similarity);
             writer.finishField();
             writer.finishGroup();
             writer.finish();
+
             // Use the id of the first duplicate as name of the search
+
             queries.insert(QString::number(it.key()), writer.xml());
         }
     }
@@ -736,12 +784,15 @@ void HaarIface::rebuildDuplicatesAlbums(const QList<qlonglong>& imageIds,
     QMap<QString, QString> queries = writeSAlbumQueries(results);
 
     // Write the new search albums to the database
+
     {
         CoreDbAccess access;
         CoreDbTransaction transaction(&access);
 
         // Update existing searches by deleting and adding them.
-        for (QMap<QString, QString>::const_iterator it = queries.constBegin() ; it != queries.constEnd() ; ++it)
+
+        for (QMap<QString, QString>::const_iterator it = queries.constBegin() ;
+             it != queries.constEnd() ; ++it)
         {
             access.db()->deleteSearch(it.key().toInt());
             access.db()->addSearch(DatabaseSearch::DuplicatesSearch, it.key(), it.value());
@@ -759,6 +810,7 @@ void HaarIface::rebuildDuplicatesAlbums(const QList<int>& albums2Scan,
                                         HaarProgressObserver* const observer)
 {
     // Carry out search. This takes long.
+
     QMap<double, QMap<qlonglong, QList<qlonglong> > > results = findDuplicatesInAlbumsAndTags(albums2Scan,
                                                                                               tags2Scan,
                                                                                               relation,
@@ -768,18 +820,23 @@ void HaarIface::rebuildDuplicatesAlbums(const QList<int>& albums2Scan,
                                                                                               observer);
 
     // Build search XML from the results. Store list of ids of similar images.
+
     QMap<QString, QString> queries = writeSAlbumQueries(results);
 
     // Write search albums to database
+
     {
         CoreDbAccess access;
         CoreDbTransaction transaction(&access);
 
         // delete all old searches
+
         access.db()->deleteSearches(DatabaseSearch::DuplicatesSearch);
 
         // create new groups
-        for (QMap<QString, QString>::const_iterator it = queries.constBegin() ; it != queries.constEnd() ; ++it)
+
+        for (QMap<QString, QString>::const_iterator it = queries.constBegin() ;
+             it != queries.constEnd() ; ++it)
         {
             access.db()->addSearch(DatabaseSearch::DuplicatesSearch, it.key(), it.value());
         }
@@ -787,13 +844,14 @@ void HaarIface::rebuildDuplicatesAlbums(const QList<int>& albums2Scan,
 }
 
 QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlbums(const QList<int>& albums2Scan,
-                                                                                     double requiredPercentage,
-                                                                                     double maximumPercentage,
-                                                                                     HaarProgressObserver* const observer)
+                                                                                    double requiredPercentage,
+                                                                                    double maximumPercentage,
+                                                                                    HaarProgressObserver* const observer)
 {
     QSet<qlonglong> idList;
 
     // Get all items DB id from all albums and all collections
+
     foreach (int albumId, albums2Scan)
     {
         idList.unite(CoreDbAccess().db()->getItemIDsInAlbum(albumId).toSet());
@@ -821,12 +879,14 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlb
     QSet<qlonglong> idList;
 
     // Get all items DB id from all albums and all collections
+
     foreach (int albumId, albums2Scan)
     {
         imagesFromAlbums.unite(CoreDbAccess().db()->getItemIDsInAlbum(albumId).toSet());
     }
 
     // Get all items DB id from all tags
+
     foreach (int albumId, tags2Scan)
     {
         imagesFromTags.unite(CoreDbAccess().db()->getItemIDsInTag(albumId).toSet());
@@ -837,38 +897,49 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlb
         case Union:
         {
             // ({} UNION A) UNION T = A UNION T
+
             idList.unite(imagesFromAlbums).unite(imagesFromTags);
             break;
         }
         case Intersection:
         {
             // ({} UNION A) INTERSECT T = A INTERSECT T
+
             idList.unite(imagesFromAlbums).intersect(imagesFromTags);
             break;
         }
         case AlbumExclusive:
         {
             // ({} UNION A) = A
+
             idList.unite(imagesFromAlbums);
+
             // (A INTERSECT T) = A'
+
             imagesFromAlbums.intersect(imagesFromTags);
+
             // A\A' = albums without tags
+
             idList.subtract(imagesFromAlbums);
             break;
         }
         case TagExclusive:
         {
             // ({} UNION T) = TT
+
             idList.unite(imagesFromTags);
+
             // (A INTERSECT T) = A' = T'
+
             imagesFromAlbums.intersect(imagesFromTags);
+
             // T\T' = tags without albums
+
             idList.subtract(imagesFromAlbums);
             break;
         }
         case NoMix:
         {
-            //
             if ((albums2Scan.isEmpty() && tags2Scan.isEmpty()))
             {
                 qCWarning(DIGIKAM_GENERAL_LOG) << "Duplicates search: Both the albums and the tags "
@@ -879,6 +950,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlb
             else
             {
                 // ({} UNION A) UNION T = A UNION T = A Xor T
+
                 idList.unite(imagesFromAlbums).unite(imagesFromTags);
             }
         }
@@ -999,6 +1071,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicates(cons
     }
 
     // disable cache
+
     d->setSignatureCacheEnabled(false);
 
     return resultsMap;

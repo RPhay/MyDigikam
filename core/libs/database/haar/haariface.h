@@ -292,13 +292,14 @@ private:
                                                                         searchResultRestriction,
                                                                      SketchType type);
 
-    /** This function generates the scores for all images in database.
-     *  @param data The signature of the original image for score calculation.
-     *  @param type The type of the sketch, e.g. scanned.
-     *  @param searchResultRestriction restrictions to apply to the generated map, i.e. None (default), same album or different album.
-     *  @param originalImageId the id of the original image to compare to other images. -1 is only used for sketch search.
-     *  @param albumId The album which images must or must not belong to (depending on searchResultRestriction).
-     *  @return The map of image ids and scores which fulfill the restrictions, if any.
+    /**
+     * This function generates the scores for all images in database.
+     * @param data The signature of the original image for score calculation.
+     * @param type The type of the sketch, e.g. scanned.
+     * @param searchResultRestriction restrictions to apply to the generated map, i.e. None (default), same album or different album.
+     * @param originalImageId the id of the original image to compare to other images. -1 is only used for sketch search.
+     * @param albumId The album which images must or must not belong to (depending on searchResultRestriction).
+     * @return The map of image ids and scores which fulfill the restrictions, if any.
      */
     QMap<qlonglong, double> searchDatabase(Haar::SignatureData* const data,
                                            SketchType type,

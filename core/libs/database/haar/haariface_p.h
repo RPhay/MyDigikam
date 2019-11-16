@@ -25,6 +25,9 @@
  *
  * ============================================================ */
 
+#ifndef DIGIKAM_HAAR_IFACE_P_H
+#define DIGIKAM_HAAR_IFACE_P_H
+
 #include "haariface.h"
 
 // C++ includes
@@ -123,3 +126,5 @@ public:
 };
 
 } // namespace Digikam
+
+#endif // DIGIKAM_HAAR_IFACE_P_H

@@ -48,11 +48,12 @@ class DImg;
 namespace Haar
 {
 
-/** Weights for the Haar coefficients. Straight from the referenced paper
-    "Fast Multiresolution Image Querying"
-    by Charles E. Jacobs, Adam Finkelstein and David H. Salesin.
-    https://www.cs.washington.edu/homes/salesin/abstracts.html
-*/
+/**
+ * Weights for the Haar coefficients. Straight from the referenced paper
+ * "Fast Multiresolution Image Querying"
+ * by Charles E. Jacobs, Adam Finkelstein and David H. Salesin.
+ * https://www.cs.washington.edu/homes/salesin/abstracts.html
+ */
 static const float s_haar_weights[2][6][3] =
 {
     // For scanned picture (sketch=0):
@@ -76,15 +77,18 @@ static const float s_haar_weights[2][6][3] =
     }
 };
 
-/** Number of pixels on one side of image; required to be a power of 2.
+/**
+ * Number of pixels on one side of image; required to be a power of 2.
  */
 enum { NumberOfPixels = 128 };
 
-/** Total pixels in a square image.
+/**
+ * Total pixels in a square image.
  */
 enum { NumberOfPixelsSquared = NumberOfPixels * NumberOfPixels };
 
-/** Number of Haar coefficients we retain as signature for an image.
+/**
+ * Number of Haar coefficients we retain as signature for an image.
  */
 enum { NumberOfCoefficients = 40 };
 
@@ -113,11 +117,13 @@ class SignatureData
 {
 public:
 
-    /** Y/I/Q positions with largest magnitude
+    /**
+     * Y/I/Q positions with largest magnitude
      */
     Haar::Idx sig[3][Haar::NumberOfCoefficients];
 
-    /** YIQ for position [0,0]
+    /**
+     * YIQ for position [0,0]
      */
     double    avg[3];
 };
@@ -143,15 +149,17 @@ public:
     }
 
     /// Load a set of coefficients
+
     void fill(Haar::Idx* const coefs)
     {
         // For maximum performance, we use a flat array.
         // First 16k for negative values, second 16k for positive values.
         // All values or false, only 2*40 are true.
+
         memset(m_indexList, 0, sizeof(MapIndexType[2 * Haar::NumberOfPixelsSquared]));
         int x;
 
-        for (int i=0; i < Haar::NumberOfCoefficients; ++i)
+        for (int i = 0 ; i < Haar::NumberOfCoefficients ; ++i)
         {
             x              = coefs[i] + Haar::NumberOfPixelsSquared;
             m_indexList[x] = true;
@@ -160,6 +168,7 @@ public:
 
     /// Query if the given index is set.
     /// Index must be in the range -16383..16383.
+
     bool operator[](Haar::Idx index) const
     {
         return m_indexList[index + Haar::NumberOfPixelsSquared];
@@ -168,6 +177,7 @@ public:
 private:
 
     // To prevent cppcheck warnings.
+
     explicit SignatureMap(const SignatureMap& other)
     {
         m_indexList = new MapIndexType[2 * Haar::NumberOfPixelsSquared];
@@ -199,9 +209,9 @@ public:
 
     unsigned char binAbs(int index) const
     {
-        return (index > 0) ? m_bin[index] : m_bin[-index];
+        return ((index > 0) ? m_bin[index] : m_bin[-index]);
     }
-    
+
 public:
 
     /**
