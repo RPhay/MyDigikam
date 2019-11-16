@@ -1164,6 +1164,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicates(cons
     }
 
     // create signature cache map for fast lookup
+
     d->setSignatureCacheEnabled(true, images2Scan);
 
     for (it = images2Scan.constBegin() ; it != images2Scan.constEnd() ; ++it)
@@ -1178,6 +1179,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicates(cons
             QList<int> targetAlbums;
 
             // find images with required similarity
+
             bestMatches = bestMatchesForImageWithThreshold(*it,
                                                            requiredPercentage,
                                                            maximumPercentage,
@@ -1186,18 +1188,22 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicates(cons
                                                            ScannedSketch);
 
             // We need only the image ids from the best matches map.
+
             imageIdList = bestMatches.second.keys();
 
             if (!imageIdList.isEmpty())
             {
                 // the list will usually contain one image: the original. Filter out.
+
                 if (!(imageIdList.count() == 1 && imageIdList.first() == *it))
                 {
                     // make a lookup for the average similarity
+
                     similarity_it = resultsMap.find(bestMatches.first);
 
                     // If there is an entry for this similarity, add the result set.
                     // Else, create a new similarity entry.
+
                     if (similarity_it != resultsMap.end())
                     {
                         similarity_it->insert(*it, imageIdList);
@@ -1218,6 +1224,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicates(cons
         // if an imageid is not a results candidate, remove it
         // from the cached signature map as well,
         // to greatly improve speed
+
         if (!resultsCandidates.contains(*it))
         {
             d->signatureCache->remove(*it);
@@ -1225,7 +1232,8 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicates(cons
 
         ++progress;
 
-        if (observer &&
+        if (observer            &&
+            (progressStep != 0) &&
                (
                     (progress                  == total) ||
                     ((progress % progressStep) == 0)
@@ -1237,6 +1245,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicates(cons
     }
 
     // make sure the progress bar is really set to 100% when search is finished
+
     if (observer)
     {
         observer->processedNumber(total);
@@ -1256,12 +1265,14 @@ double HaarIface::calculateScore(Haar::SignatureData& querySig,
     double score = 0.0;
 
     // Step 1: Initialize scores with average intensity values of all three channels
+
     for (int channel = 0 ; channel < 3 ; ++channel)
     {
         score += weights.weightForAverage(channel) * fabs(querySig.avg[channel] - targetSig.avg[channel]);
     }
 
     // Step 2: Decrease the score if query and target have significant coefficients in common
+
     Haar::Idx* sig               = nullptr;
     Haar::SignatureMap* queryMap = nullptr;
     int x                        = 0;
@@ -1274,11 +1285,13 @@ double HaarIface::calculateScore(Haar::SignatureData& querySig,
         for (int coef = 0 ; coef < Haar::NumberOfCoefficients ; ++coef)
         {
             // x is a pixel index, either positive or negative, 0..16384
+
             x = sig[coef];
 
             // If x is a significant coefficient with the same sign in the query signature as well,
             // decrease the score (lower is better)
             // Note: both method calls called with x accept positive or negative values
+
             if ((*queryMap)[x])
             {
                 score -= weights.weight(d->bin->binAbs(x), channel);
