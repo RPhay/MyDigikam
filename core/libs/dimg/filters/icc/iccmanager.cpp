@@ -42,14 +42,15 @@ class Q_DECL_HIDDEN IccManager::Private
 {
 public:
 
-    explicit Private()
-        : profileMismatch(false),
+    explicit Private(DImg& _image)
+        : image(_image),
+          profileMismatch(false),
           settings(ICCSettingsContainer()),
           observer(nullptr)
     {
     }
 
-    DImg                 image;
+    DImg&                image;
     IccProfile           embeddedProfile;
     IccProfile           workspaceProfile;
     bool                 profileMismatch;
@@ -58,9 +59,8 @@ public:
 };
 
 IccManager::IccManager(DImg& image, const ICCSettingsContainer& settings)
-    : d(new Private)
+    : d(new Private(image))
 {
-    d->image    = image;
     d->settings = settings;
 
     if (d->image.isNull())
@@ -78,8 +78,8 @@ IccManager::IccManager(DImg& image, const ICCSettingsContainer& settings)
 
     if (!d->workspaceProfile.open())
     {
-        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot open workspace color profile" << d->workspaceProfile.filePath();
-        d->image = DImg();
+        qCDebug(DIGIKAM_DIMG_LOG) << "Cannot open workspace color profile"
+                                  << d->workspaceProfile.filePath();
         return;
     }
 
@@ -87,7 +87,8 @@ IccManager::IccManager(DImg& image, const ICCSettingsContainer& settings)
     {
         // Treat as missing profile
         d->embeddedProfile = IccProfile();
-        qCWarning(DIGIKAM_DIMG_LOG) << "Encountered invalid embedded color profile in file" << d->image.attribute(QLatin1String("originalFilePath")).toString();
+        qCWarning(DIGIKAM_DIMG_LOG) << "Encountered invalid embedded color profile in file"
+                                    << d->image.attribute(QLatin1String("originalFilePath")).toString();
     }
 
     if (!d->embeddedProfile.isNull())

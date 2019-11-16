@@ -270,7 +270,10 @@ void SharedLoadingTask::execute()
             m_img.detach();
         }
 
+        // to receive progress info again. Should be safe now, we are alone.
+        addListener(this);
         postProcess();
+        removeListener(this);
     }
     else if (continueQuery(&m_img))
     {
@@ -302,9 +305,6 @@ bool SharedLoadingTask::needsPostProcessing() const
 
 void SharedLoadingTask::postProcess()
 {
-    // to receive progress info again. Should be safe now, we are alone.
-    //addListener(this);
-
     // ---- Color management ---- //
 
     switch (m_loadingDescription.postProcessingParameters.colorManagement)
@@ -343,8 +343,6 @@ void SharedLoadingTask::postProcess()
             break;
         }
     }
-
-    //removeListener(this);
 }
 
 void SharedLoadingTask::progressInfo(DImg* const img, float progress)

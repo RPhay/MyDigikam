@@ -138,7 +138,7 @@ void PreviewLoadingTask::execute()
                 // Load it here and now, add this LoadingProcess to cache list.
                 cache->addLoadingProcess(this);
                 // Add this to the list of listeners
-                //addListener(this);
+                addListener(this);
                 // for use in setStatus
                 m_usedProcess = this;
                 // Notify other processes that we are now loading this image.
@@ -341,7 +341,7 @@ void PreviewLoadingTask::execute()
                 }
 
                 // remove myself from list of listeners
-                //removeListener(this);
+                removeListener(this);
 
                 // wake all listeners waiting on cache condVar, so that they remove themselves
                 lock.wakeAll();
@@ -401,7 +401,10 @@ void PreviewLoadingTask::execute()
 
         if (needPostProcess)
         {
+            // to receive progress info again. Should be safe now, we are alone.
+            addListener(this);
             postProcess();
+            removeListener(this);
         }
     }
     else if (continueQuery(&m_img))
