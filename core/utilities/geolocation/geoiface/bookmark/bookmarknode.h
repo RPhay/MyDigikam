@@ -26,6 +26,7 @@
 
 // Qt includes
 
+#include <QObject>
 #include <QString>
 #include <QList>
 #include <QDateTime>
@@ -56,11 +57,11 @@ public:
 
     bool operator==(const BookmarkNode& other) const;
 
-    Type type() const;
+    Type type()                                const;
     void setType(Type type);
 
-    QList<BookmarkNode*> children() const;
-    BookmarkNode*        parent()   const;
+    QList<BookmarkNode*> children()            const;
+    BookmarkNode*        parent()              const;
 
     void add(BookmarkNode* const child, int offset = -1);
     void remove(BookmarkNode* const child);
