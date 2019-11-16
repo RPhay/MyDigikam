@@ -34,4 +34,5 @@ BUGFIXES:
 023 ==> 321339 - GROUP : suppress display of albums containing only grouped images.
 024 ==> 289911 - 23HQ should be split from flickr uploader as a new export tool.
 025 ==> 414112 - Rounding problems in Resize Image function.
-026 ==> 
+026 ==> 414052 - Packaging error of digikam-6.4.0.tar.xz, archive file contains a huge number of unnecessary files.
+027 ==> 
