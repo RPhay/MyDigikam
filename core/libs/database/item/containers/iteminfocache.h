@@ -27,14 +27,14 @@
 
 // Qt includes
 
-#include <QMultiHash>
 #include <QHash>
 #include <QObject>
+#include <QMultiHash>
+#include <QExplicitlySharedDataPointer>
 
 // Local includes
 
 #include "coredbwatch.h"
-#include "dshareddata.h"
 
 namespace Digikam
 {
@@ -57,7 +57,7 @@ public:
      * A new object is created, or an existing object is returned.
      * If a new object is created, the id field will be initialized.
      */
-    DSharedDataPointer<ItemInfoData> infoForId(qlonglong id);
+    QExplicitlySharedDataPointer<ItemInfoData> infoForId(qlonglong id);
 
     /**
      * Call this when the data has been dereferenced,
@@ -77,7 +77,8 @@ public:
      * Works if previously cached with cacheByName.
      * Returns 0 if not found.
      */
-    DSharedDataPointer<ItemInfoData> infoForPath(int albumRootId, const QString& relativePath, const QString& name);
+    QExplicitlySharedDataPointer<ItemInfoData> infoForPath(int albumRootId,
+                                                           const QString& relativePath, const QString& name);
 
     /**
      * Returns the cached relativePath for the given album id.
@@ -110,10 +111,10 @@ private:
     QHash<qlonglong, ItemInfoData*>    m_infos;
     QHash<ItemInfoData*, QString>      m_dataHash;
     QMultiHash<QString, ItemInfoData*> m_nameHash;
-    volatile bool                       m_needUpdateAlbums;
-    volatile bool                       m_needUpdateGrouped;
-    QList<qlonglong>                    m_grouped;
-    QList<AlbumShortInfo>               m_albums;
+    volatile bool                      m_needUpdateAlbums;
+    volatile bool                      m_needUpdateGrouped;
+    QList<qlonglong>                   m_grouped;
+    QList<AlbumShortInfo>              m_albums;
 };
 
 } // namespace Digikam
