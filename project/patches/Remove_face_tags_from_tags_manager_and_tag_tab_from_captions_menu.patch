@@ -1,0 +1,33 @@
+diff --git a/core/libs/properties/captions/itemdescedittab.cpp b/core/libs/properties/captions/itemdescedittab.cpp
+index 4f4c7e01f5..74d5500e50 100644
+--- a/core/libs/properties/captions/itemdescedittab.cpp
++++ b/core/libs/properties/captions/itemdescedittab.cpp
+@@ -283,14 +283,11 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
+     d->tagModel->setRootCheckable(false);
+     d->tagCheckView = new TagCheckView(tagsArea, d->tagModel);
+     d->tagCheckView->setCheckNewTags(true);
+-    d->tagCheckView->filteredModel()->doNotListTagsWithProperty(TagPropertyName::person());
+-    d->tagCheckView->filteredModel()->setFilterBehavior(AlbumFilterModel::StrictFiltering);
+ 
+     d->openTagMngr = new QPushButton( i18n("Open Tag Manager"));
+ 
+     d->newTagEdit  = new AddTagsLineEdit(tagsArea);
+     d->newTagEdit->setSupportingTagModel(d->tagModel);
+-    d->newTagEdit->setFilterModel(d->tagCheckView->filteredModel());
+     d->newTagEdit->setTagTreeView(d->tagCheckView);
+     //, "ItemDescEditTabNewTagEdit",
+     //d->newTagEdit->setCaseSensitive(false);
+diff --git a/core/libs/tags/manager/tagsmanager.cpp b/core/libs/tags/manager/tagsmanager.cpp
+index b0fca1a9c9..ebab900aa7 100644
+--- a/core/libs/tags/manager/tagsmanager.cpp
++++ b/core/libs/tags/manager/tagsmanager.cpp
+@@ -194,9 +194,6 @@ void TagsManager::setupUi()
+      d->tagMngrView = new TagMngrTreeView(this, d->tagModel);
+      d->tagMngrView->setConfigGroup(getConfigGroup());
+ 
+-     d->tagMngrView->getFilterModel()->doNotListTagsWithProperty(TagPropertyName::person());
+-     d->tagMngrView->getFilterModel()->setFilterBehavior(AlbumFilterModel::StrictFiltering);
+-
+      d->searchBar   = new SearchTextBar(this, QLatin1String("ItemIconViewTagSearchBar"));
+      d->searchBar->setHighlightOnResult(true);
+      d->searchBar->setModel(d->tagMngrView->filteredModel(),
