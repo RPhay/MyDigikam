@@ -123,14 +123,14 @@ void RajceTalker::login(const QString& username, const QString& password)
 
 void RajceTalker::loadAlbums()
 {
-    AlbumListCommand* const command = new AlbumListCommand(d->session);
-    enqueueCommand(command);
+    QSharedPointer<AlbumListCommand> command = QSharedPointer<AlbumListCommand>(new AlbumListCommand(d->session));
+    enqueueCommand(command.get());
 }
 
 void RajceTalker::createAlbum(const QString& name, const QString& description, bool visible)
 {
-    CreateAlbumCommand* const command = new CreateAlbumCommand(name, description, visible, d->session);
-    enqueueCommand(command);
+    QSharedPointer<CreateAlbumCommand> command = QSharedPointer<CreateAlbumCommand>(new CreateAlbumCommand(name, description, visible, d->session));
+    enqueueCommand(command.get());
 }
 
 void RajceTalker::slotFinished(QNetworkReply* reply)
@@ -190,16 +190,16 @@ void RajceTalker::logout()
 
 void RajceTalker::openAlbum(const RajceAlbum& album)
 {
-    OpenAlbumCommand* const command = new OpenAlbumCommand(album.id, d->session);
-    enqueueCommand(command);
+    QSharedPointer<OpenAlbumCommand> command = QSharedPointer<OpenAlbumCommand>(new OpenAlbumCommand(album.id, d->session));
+    enqueueCommand(command.get());
 }
 
 void RajceTalker::closeAlbum()
 {
     if (!d->session.openAlbumToken().isEmpty())
     {
-        CloseAlbumCommand* const command = new CloseAlbumCommand(d->session);
-        enqueueCommand(command);
+        QSharedPointer<CloseAlbumCommand> command = QSharedPointer<CloseAlbumCommand>(new CloseAlbumCommand(d->session));
+        enqueueCommand(command.get());
     }
     else
     {
@@ -209,8 +209,8 @@ void RajceTalker::closeAlbum()
 
 void RajceTalker::uploadPhoto(const QString& path, unsigned dimension, int jpgQuality)
 {
-    AddPhotoCommand* const command = new AddPhotoCommand(d->tmpDir, path, dimension, jpgQuality, d->session);
-    enqueueCommand(command);
+    QSharedPointer<AddPhotoCommand> command = QSharedPointer<AddPhotoCommand>(new AddPhotoCommand(d->tmpDir, path, dimension, jpgQuality, d->session));
+    enqueueCommand(command.get());
 }
 
 void RajceTalker::clearLastError()
