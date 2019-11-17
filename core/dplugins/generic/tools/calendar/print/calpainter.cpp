@@ -66,12 +66,11 @@ public:
     int        orientation;
 
     QImage     image;
-
     QUrl       imagePath;
 };
 
-CalPainter::CalPainter(QPaintDevice* const pd)
-    : QPainter(pd),
+CalPainter::CalPainter(QPaintDevice* const pDevice)
+    : QPainter(pDevice),
       d(new Private)
 {
 }
@@ -111,7 +110,7 @@ void CalPainter::paint(int month)
     int days[42];
     int startDayOffset = QLocale().weekdays().first();
 
-    for (int i = 0; i < 42; ++i)
+    for (int i = 0 ; i < 42 ; ++i)
     {
         days[i] = -1;
     }
@@ -124,7 +123,7 @@ void CalPainter::paint(int month)
         s = s - 7;
     }
 
-    for (int i = s; i < (s + CalSystem().daysInMonth(date)); ++i)
+    for (int i = s ; i < (s + CalSystem().daysInMonth(date)) ; ++i)
     {
         days[i + (7 - startDayOffset)] = i - s + 1;
     }
@@ -242,7 +241,7 @@ void CalPainter::paint(int month)
     setPen(Qt::red);
     sy = rCal.top();
 
-    for (int i = 0; i < 7; ++i)
+    for (int i = 0 ; i < 7 ; ++i)
     {
         int dayname = i + startDayOffset;
 
@@ -261,11 +260,11 @@ void CalPainter::paint(int month)
 
     restore();
 
-    for (int j = 0; j < 6; ++j)
+    for (int j = 0 ; j < 6 ; ++j)
     {
         sy = cellSizeY * (j + 1) + rCal.top();
 
-        for (int i = 0; i < 7; ++i)
+        for (int i = 0 ; i < 7 ; ++i)
         {
             sx     = cellSizeX * i + rCal.left();
             r.moveTopLeft(QPoint(sx, sy));
@@ -315,7 +314,7 @@ void CalPainter::paint(int month)
     {
         sx = rCal.left();
 
-        for (int j = 0; j < 8; ++j)
+        for (int j = 0 ; j < 8 ; ++j)
         {
             sy = cellSizeY * j + rCal.top();
             drawLine(sx, sy, rCal.right(), sy);
@@ -323,7 +322,7 @@ void CalPainter::paint(int month)
 
         sy = rCal.top();
 
-        for (int i = 0; i < 8; ++i)
+        for (int i = 0 ; i < 8 ; ++i)
         {
             sx = cellSizeX * i + rCal.left();
             drawLine(sx, sy, sx, rCal.bottom());
@@ -346,18 +345,20 @@ void CalPainter::paint(int month)
 
         emit signalProgress(0);
 
-        d->image = d->image.scaled(rImage.width(), rImage.height(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        d->image = d->image.scaled(rImage.width(),
+                                   rImage.height(),
+                                   Qt::KeepAspectRatio,
+                                   Qt::SmoothTransformation);
 
         emit signalTotal(d->image.height());
 
-        int h = d->image.height();
-        int x = rImage.bottomLeft().x() + (rImage.width() - d->image.width()) / 2;
-        int y = (rImage.height() - h) / 2;
-
+        int h         = d->image.height();
+        int x         = rImage.bottomLeft().x() + (rImage.width() - d->image.width()) / 2;
+        int y         = (rImage.height() - h) / 2;
         int blockSize = 10;
         int block     = 0;
 
-        while (block < h && !d->cancelled)
+        while ((block < h) && !d->cancelled)
         {
             if (block + blockSize > h)
             {

@@ -42,8 +42,8 @@ class CalPainter : public QObject, public QPainter
 
 public:
 
-    explicit CalPainter(QPaintDevice* const pd);
-    ~CalPainter();
+    explicit CalPainter(QPaintDevice* const pDevice);
+    virtual ~CalPainter();
 
     void setImage(const QUrl& imagePath);
     void paint(int month);
