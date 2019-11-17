@@ -10,7 +10,7 @@
 # $DKCoverityEmail with email adress to send SCAN result.
 #
 # See this url to see how to prepare your computer with Coverity SCAN tool:
-# http://scan.coverity.com/projects/285/upload_form
+# https://scan.coverity.com/projects/digikam/builds/new
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
