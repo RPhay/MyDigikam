@@ -45,39 +45,39 @@ class GLViewerTexture::Private
 {
 public:
 
-    Private()
+    explicit Private()
+      : rdx(0.0),
+        rdy(0.0),
+        z(0.0),
+        ux(0.0),
+        uy(0.0),
+        rtx(0.0),
+        rty(0.0),
+        vtop(0.0),
+        vbottom(0.0),
+        vleft(0.0),
+        vright(0.0),
+        display_x(0),
+        display_y(0),
+        rotate_idx(0),
+        iface(nullptr)
     {
-        rdx            = 0.0;
-        rdy            = 0.0;
-        z              = 0.0;
-        ux             = 0.0;
-        uy             = 0.0;
-        rtx            = 0.0;
-        rty            = 0.0;
-        vtop           = 0.0;
-        vbottom        = 0.0;
-        vleft          = 0.0;
-        vright         = 0.0;
-        display_x      = 0;
-        display_y      = 0;
-        rotate_idx     = 0;
         rotate_list[0] = DMetadata::ORIENTATION_ROT_90;
         rotate_list[1] = DMetadata::ORIENTATION_ROT_180;
         rotate_list[2] = DMetadata::ORIENTATION_ROT_270;
         rotate_list[3] = DMetadata::ORIENTATION_ROT_180;
-        iface          = nullptr;
     }
 
-    float                              rdx, rdy, z, ux, uy, rtx, rty;
-    float                              vtop, vbottom, vleft, vright;
-    int                                display_x, display_y;
-    QString                            filename;
-    QImage                             qimage;
-    QSize                              initial_size;
-    DMetadata::ImageOrientation        rotate_list[4];
-    int                                rotate_idx;
-    IccProfile                         iccProfile;
-    DInfoInterface*                    iface;
+    float                       rdx, rdy, z, ux, uy, rtx, rty;
+    float                       vtop, vbottom, vleft, vright;
+    int                         display_x, display_y;
+    QString                     filename;
+    QImage                      qimage;
+    QSize                       initial_size;
+    DMetadata::ImageOrientation rotate_list[4];
+    int                         rotate_idx;
+    IccProfile                  iccProfile;
+    DInfoInterface*             iface;
 
 private:
 
@@ -89,8 +89,7 @@ GLViewerTexture::GLViewerTexture(DInfoInterface* const iface)
     : QOpenGLTexture(QOpenGLTexture::TargetRectangle),
       d(new Private)
 {
-    d->iface = iface;
-
+    d->iface                      = iface;
     ICCSettingsContainer settings = IccSettings::instance()->settings();
 
     if (settings.enableCM && settings.useManagedPreviews)
@@ -130,6 +129,7 @@ bool GLViewerTexture::load(const QString& fn, const QSize& size)
     loadInternal();
     reset();
     d->rotate_idx = 0;
+    
     return true;
 }
 
@@ -148,6 +148,7 @@ bool GLViewerTexture::load(const QImage& im, const QSize& size)
     loadInternal();
     reset();
     d->rotate_idx   = 0;
+
     return true;
 }
 
@@ -170,6 +171,7 @@ bool GLViewerTexture::loadFullSize()
     loadInternal();
     reset();
     d->rotate_idx = 0;
+
     return true;
 }
 
@@ -185,7 +187,7 @@ bool GLViewerTexture::loadInternal()
 
     destroy();
 
-    if (w == 0 || w > d->qimage.width() || h > d->qimage.height())
+    if ((w == 0) || (w > d->qimage.width()) || (h > d->qimage.height()))
     {
         setData(d->qimage.mirrored());
     }
@@ -356,22 +358,22 @@ void GLViewerTexture::reset()
     d->z            = 1.0;
     float zoomdelta = 0;
 
-    if ((d->rtx < d->rty) && (d->rdx < d->rdy) && (d->rtx / d->rty < d->rdx / d->rdy))
+    if ((d->rtx < d->rty) && (d->rdx < d->rdy) && ((d->rtx / d->rty) < (d->rdx / d->rdy)))
     {
         zoomdelta = d->z - d->rdx / d->rdy;
     }
 
-    if ((d->rtx < d->rty) && (d->rtx / d->rty > d->rdx / d->rdy))
+    if ((d->rtx < d->rty) && ((d->rtx / d->rty) > (d->rdx / d->rdy)))
     {
         zoomdelta = d->z - d->rtx;
     }
 
-    if ((d->rtx >= d->rty) && (d->rdy < d->rdx) && (d->rty / d->rtx < d->rdy / d->rdx))
+    if ((d->rtx >= d->rty) && (d->rdy < d->rdx) && ((d->rty / d->rtx) < (d->rdy / d->rdx)))
     {
         zoomdelta = d->z - d->rdy / d->rdx;
     }
 
-    if ((d->rtx >= d->rty) && (d->rty / d->rtx > d->rdy / d->rdx))
+    if ((d->rtx >= d->rty) && ((d->rty / d->rtx) > (d->rdy / d->rdx)))
     {
         zoomdelta = d->z - d->rty;
     }
@@ -459,12 +461,13 @@ void GLViewerTexture::zoomToOriginal()
 
     if (float(d->qimage.width()) / float(d->qimage.height()) > float(d->display_x) / float(d->display_y))
     {
-        //image touches right and left edge of window
+        // Image touches right and left edge of window
+
         zoomfactorToOriginal = float(d->display_x) / d->qimage.width();
     }
     else
     {
-        //image touches upper and lower edge of window
+        // Image touches upper and lower edge of window
         zoomfactorToOriginal = float(d->display_y) / d->qimage.height();
     }
 

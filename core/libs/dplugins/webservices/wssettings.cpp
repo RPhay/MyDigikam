@@ -49,6 +49,7 @@ WSSettings::WSSettings(QObject* const parent)
     imagesChangeProp    = false;
     removeMetadata      = false;
     imageCompression    = 75;
+    attLimitInMbytes    = 17;
     webService          = FLICKR;
     currentAlbumId      = QString();
     userName            = QString();
@@ -76,6 +77,8 @@ void WSSettings::readSettings(KConfigGroup& group)
                         false);
     imageCompression  = group.readEntry("ImageCompression",
                         75);
+    attLimitInMbytes  = group.readEntry("AttLimitInMbytes",
+                        17);
     webService        = (WebService)group.readEntry("WebService",
                         (int)FLICKR);
     userName          = group.readEntry("UserName",
@@ -95,6 +98,7 @@ void WSSettings::writeSettings(KConfigGroup& group)
     group.writeEntry("ImagesChangeProp",   imagesChangeProp);
     group.writeEntry("RemoveMetadata",     removeMetadata);
     group.writeEntry("ImageCompression",   imageCompression);
+    group.writeEntry("AttLimitInMbytes",   attLimitInMbytes);
     group.writeEntry("WebService",         (int)webService);
     group.writeEntry("UserName",           userName);
     group.writeEntry("Album",              currentAlbumId);

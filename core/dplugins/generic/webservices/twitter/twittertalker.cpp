@@ -95,14 +95,13 @@ public:
         clientId        = QLatin1String("lkRgRsucipXsUEvKh0ECblreC");
         clientSecret    = QLatin1String("6EThTiPQHZTMo7F83iLHrfNO89fkDVvM9hVWaYH9D49xEOyMBe");
         //scope          = QLatin1String("User.Read Files.ReadWrite");
-
         requestTokenUrl = QLatin1String("https://api.twitter.com/oauth/request_token");
         authUrl         = QLatin1String("https://api.twitter.com/oauth/authenticate");
         accessTokenUrl  = QLatin1String("https://api.twitter.com/oauth/access_token");
-
         redirectUrl     = QLatin1String("http://127.0.0.1:8000");
-
         uploadUrl       = QLatin1String("https://upload.twitter.com/1.1/media/upload.json");
+
+        segmentIndex    = 0;
 
         state           = TW_USERNAME;
 
@@ -111,6 +110,7 @@ public:
         reply           = nullptr;
         settings        = nullptr;
         o1Twitter       = nullptr;
+        requestor       = nullptr;
     }
 
 public:
