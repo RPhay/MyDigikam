@@ -1516,7 +1516,7 @@ void PeopleSideBarWidget::slotScanForFaces()
     if (dialog.exec() == QDialog::Accepted)
     {
         FaceScanSettings faceScanSettings = dialog.settings();
-        if(!dialog.settingsConflicted())
+        if (!dialog.settingsConflicted())
         {
             FacesDetector* const tool = new FacesDetector(faceScanSettings);
             tool->start();

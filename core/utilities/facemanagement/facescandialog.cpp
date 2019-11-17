@@ -445,6 +445,7 @@ FaceScanSettings FaceScanDialog::settings() const
     // TODO: why does the original code append but not assign here???
     // settings.albums << d->albumSelectors->selectedAlbumsAndTags();
     settings.albums                 = d->albumSelectors->selectedAlbumsAndTags();
+/*
     AlbumList tagAlbums             = AlbumManager::instance()->allTAlbums();
 
     for (int i = 0 ; i < tagAlbums.size() ; ++i)
@@ -466,6 +467,8 @@ FaceScanSettings FaceScanDialog::settings() const
             d->settingsConflicted = false;
         }
     }
+*/
+    d->settingsConflicted = false;
 
     settings.useFullCpu             = d->useFullCpuButton->isChecked();
 
