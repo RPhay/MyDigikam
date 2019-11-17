@@ -59,7 +59,8 @@ nslookup scan5.coverity.com
 # To mesure uploading time
 SECONDS=0
 
-curl --insecure \
+rsync -r -v --progress -e \
+     curl --insecure \
      --progress-bar \
      --form token=$DKCoverityToken \
      --form email=$DKCoverityEmail \
