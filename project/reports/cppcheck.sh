@@ -49,6 +49,7 @@ cppcheck -j$CPU_CORES \
          --suppress=unreadVariable \
          --suppress=unusedVariable \
          --suppress=unusedStructMember \
+         --suppress=unknownMacro \
          --suppress=class_X_Y \
          --suppress=ConfigurationNotChecked \
          --suppress=unmatchedSuppression \
