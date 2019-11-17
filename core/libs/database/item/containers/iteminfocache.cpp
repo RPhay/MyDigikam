@@ -65,12 +65,12 @@ ItemInfoCache::~ItemInfoCache()
 }
 
 template <class T>
-DSharedDataPointer<T> toStrongRef(T* weakRef)
+QExplicitlySharedDataPointer<T> toStrongRef(T* weakRef)
 {
     // Called under read lock
     if (!weakRef)
     {
-        return DSharedDataPointer<T>();
+        return QExplicitlySharedDataPointer<T>();
     }
     // The weak ref is a data object which is not deleted
     // (because deletion is done under mutex protection)
@@ -88,11 +88,11 @@ DSharedDataPointer<T> toStrongRef(T* weakRef)
     {
         // drop weakRef
         weakRef->ref.deref();
-        return DSharedDataPointer<T>();
+        return QExplicitlySharedDataPointer<T>();
     }
 
     // Convert to a strong reference. Will ref() the weakRef once again
-    DSharedDataPointer<ItemInfoData> ptr(weakRef);
+    QExplicitlySharedDataPointer<ItemInfoData> ptr(weakRef);
     // decrease counter, which we incremented twice now
     weakRef->ref.deref();
 
@@ -132,11 +132,11 @@ int ItemInfoCache::getImageGroupedCount(qlonglong id)
     return m_grouped.count(id);
 }
 
-DSharedDataPointer<ItemInfoData> ItemInfoCache::infoForId(qlonglong id)
+QExplicitlySharedDataPointer<ItemInfoData> ItemInfoCache::infoForId(qlonglong id)
 {
     {
         ItemInfoReadLocker lock;
-        DSharedDataPointer<ItemInfoData> ptr = toStrongRef(m_infos.value(id));
+        QExplicitlySharedDataPointer<ItemInfoData> ptr = toStrongRef(m_infos.value(id));
 
         if (ptr)
         {
@@ -149,7 +149,7 @@ DSharedDataPointer<ItemInfoData> ItemInfoCache::infoForId(qlonglong id)
     data->id                  = id;
     m_infos[id]               = data;
 
-    return DSharedDataPointer<ItemInfoData>(data);
+    return QExplicitlySharedDataPointer<ItemInfoData>(data);
 }
 
 void ItemInfoCache::cacheByName(ItemInfoData* const data)
@@ -167,7 +167,8 @@ void ItemInfoCache::cacheByName(ItemInfoData* const data)
     m_dataHash.insert(data, data->name);
 }
 
-DSharedDataPointer<ItemInfoData> ItemInfoCache::infoForPath(int albumRootId, const QString& relativePath, const QString& name)
+QExplicitlySharedDataPointer<ItemInfoData> ItemInfoCache::infoForPath(int albumRootId,
+                                                                      const QString& relativePath, const QString& name)
 {
     ItemInfoReadLocker lock;
     // We check all entries in the multi hash with matching file name
@@ -193,7 +194,7 @@ DSharedDataPointer<ItemInfoData> ItemInfoCache::infoForPath(int albumRootId, con
         return toStrongRef(it.value());
     }
 
-    return DSharedDataPointer<ItemInfoData>();
+    return QExplicitlySharedDataPointer<ItemInfoData>();
 }
 
 void ItemInfoCache::dropInfo(ItemInfoData* const infodata)
@@ -210,7 +211,6 @@ void ItemInfoCache::dropInfo(ItemInfoData* const infodata)
     m_nameHash.remove(m_dataHash.value(infodata), infodata);
     m_nameHash.remove(infodata->name, infodata);
     m_dataHash.remove(infodata);
-    delete infodata;
 }
 
 QList<AlbumShortInfo>::const_iterator ItemInfoCache::findAlbum(int id)
@@ -253,7 +253,7 @@ void ItemInfoCache::invalidate()
 
     for (it = m_infos.begin() ; it != m_infos.end() ; ++it)
     {
-        if ((*it)->isReferenced())
+        if ((*it)->ref > 0)
         {
             (*it)->invalid = true;
             (*it)->id      = -1;

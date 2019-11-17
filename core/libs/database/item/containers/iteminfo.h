@@ -29,16 +29,16 @@
 
 // Qt includes
 
-#include <QString>
-#include <QDateTime>
+#include <QUrl>
 #include <QList>
 #include <QSize>
-#include <QUrl>
+#include <QString>
+#include <QDateTime>
+#include <QExplicitlySharedDataPointer>
 
 // Local includes
 
 #include "digikam_export.h"
-#include "dshareddata.h"
 #include "coredbalbuminfo.h"
 #include "coredburl.h"
 #include "coredbfields.h"
@@ -528,7 +528,7 @@ private:
     friend class ItemInfoCache;
     friend class ItemInfoList;
 
-    DSharedDataPointer<ItemInfoData> m_data;
+    QExplicitlySharedDataPointer<ItemInfoData> m_data;
 };
 
 inline uint qHash(const ItemInfo& info)
