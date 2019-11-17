@@ -48,6 +48,7 @@ AtkinsPageLayoutTree::AtkinsPageLayoutTree(double aspectRatioPage,
 }
 
 AtkinsPageLayoutTree::AtkinsPageLayoutTree(const AtkinsPageLayoutTree& other)
+    : m_root(nullptr)
 {
     (*this) = other;
 }
