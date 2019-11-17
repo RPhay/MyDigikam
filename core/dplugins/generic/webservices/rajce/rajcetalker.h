@@ -28,6 +28,7 @@
 
 #include <QObject>
 #include <QString>
+#include <QSharedPointer>
 
 // Local includes
 
@@ -80,8 +81,8 @@ private Q_SLOTS:
 
 private:
 
-    void startCommand(RajceCommand* const);
-    void enqueueCommand(RajceCommand* const);
+    void startCommand(const QSharedPointer<RajceCommand>&);
+    void enqueueCommand(const QSharedPointer<RajceCommand>&);
 
 private:
 
