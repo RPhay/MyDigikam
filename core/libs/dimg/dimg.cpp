@@ -140,8 +140,8 @@ DImg::DImg(const DImg& image, int w, int h)
     // This private constructor creates a copy of everything except the data.
     // The image size is set to the given values and a buffer corresponding to these values is allocated.
     // This is used by copy and scale.
-    copyImageData(image.m_priv);
-    copyMetaData(image.m_priv);
+    copyImageData(image.m_priv.constData());
+    copyMetaData(image.m_priv.constData());
     setImageDimension(w, h);
     allocateData();
 }

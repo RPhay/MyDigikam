@@ -28,6 +28,7 @@
 
 // Qt includes
 
+#include <QExplicitlySharedDataPointer>
 #include <QByteArray>
 #include <QFileInfo>
 #include <QFlags>
@@ -38,7 +39,6 @@
 // Local includes
 
 #include "digikam_export.h"
-#include "dshareddata.h"
 #include "drawdecoding.h"
 #include "dcolor.h"
 #include "dcolorcomposer.h"
@@ -712,7 +712,7 @@ private:
 
 private:
 
-    DSharedDataPointer<Private> m_priv;
+    QExplicitlySharedDataPointer<Private> m_priv;
 
     friend class DImgLoader;
 };

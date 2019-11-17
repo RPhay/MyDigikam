@@ -50,16 +50,16 @@ void DImg::reset()
 void DImg::detach()
 {
     // are we being shared?
-    if (!m_priv->hasMoreReferences())
+    if (m_priv->ref == 1)
     {
         return;
     }
 
-    DSharedDataPointer<Private> old = m_priv;
+    QExplicitlySharedDataPointer<Private> old = m_priv;
 
     m_priv = new Private;
-    copyImageData(old);
-    copyMetaData(old);
+    copyImageData(old.constData());
+    copyMetaData(old.constData());
 
     if (old->data)
     {

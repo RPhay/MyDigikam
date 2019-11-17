@@ -49,6 +49,7 @@ extern "C"
 // Qt includes
 
 #include <QCryptographicHash>
+#include <QSharedData>
 #include <QString>
 #include <QByteArray>
 #include <QVariant>
@@ -73,7 +74,6 @@ extern "C"
 #include "digikam_export.h"
 #include "digikam_debug.h"
 #include "dmetadata.h"
-#include "dshareddata.h"
 #include "dimagehistory.h"
 #include "iccprofile.h"
 #include "metaengine_rotation.h"
@@ -120,7 +120,7 @@ typedef int64_t  llong;     // krazy:exclude=typedefs
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DImg::Private : public DSharedData
+class DIGIKAM_EXPORT DImg::Private : public QSharedData
 {
 public:
 

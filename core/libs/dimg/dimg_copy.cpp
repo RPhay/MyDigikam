@@ -47,9 +47,9 @@ DImg DImg::copyMetaData() const
 {
     DImg img;
     // copy width, height, alpha, sixteenBit, null
-    img.copyImageData(m_priv);
+    img.copyImageData(m_priv.constData());
     // deeply copy metadata
-    img.copyMetaData(m_priv);
+    img.copyMetaData(m_priv.constData());
     // set image to null
     img.m_priv->null = true;
 
