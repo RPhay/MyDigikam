@@ -21,6 +21,9 @@
  *
  * ============================================================ */
 
+// Disable static analysis with clang as it report false positives.
+#ifndef __clang_analyzer__
+
 #include "statesavingobjecttest.h"
 
 // Qt includes
@@ -282,3 +285,5 @@ void StateSavingObjectTest::testRecursiveChildrenSaving()
 
     delete parentSaver;
 }
+
+#endif .. __clang_analyzer__
