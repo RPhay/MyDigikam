@@ -46,6 +46,9 @@ tar czvf myproject.tgz cov-int
 
 echo "-- SCAN Import description --"
 echo $desc
+echo "Analysis archive to upload:"
+file myproject.tgz
+du -H myproject.tgz
 echo "-----------------------------"
 
 echo "Coverity Scan tarball 'myproject.tgz' uploading in progress..."
@@ -61,7 +64,7 @@ curl --insecure \
      --form token=$DKCoverityToken \
      --form email=$DKCoverityEmail \
      --form file=@myproject.tgz \
-     --form version=git-frameworks \
+     --form version=git \
      --form description="$desc" \
      https://scan.coverity.com/builds?project=digiKam
      > /dev/null
