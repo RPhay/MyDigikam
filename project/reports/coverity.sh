@@ -5,7 +5,7 @@
 # Run Coverity Scan static analyzer on whole digiKam source code.
 # https://scan.coverity.com/
 #
-# before to run this script you must set these sheel variable :
+# Before to run this script you must set these Shell variable:
 # $DKCoverityToken with token of digiKam project given by Coverity SCAN.
 # $DKCoverityEmail with email adress to send SCAN result.
 #
