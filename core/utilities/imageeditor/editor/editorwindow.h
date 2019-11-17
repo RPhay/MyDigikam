@@ -116,7 +116,6 @@ protected:
     bool                      m_setExifOrientationTag;
     bool                      m_editingOriginalImage;
     bool                      m_actionEnabledState;
-    bool                      m_cancelSlideShow;
 
     DAdjustableLabel*         m_resLabel;
 
