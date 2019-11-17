@@ -67,7 +67,8 @@ curl --insecure \
      --form version=git \
      --form description="$desc" \
      https://scan.coverity.com/builds?project=digiKam
-     > /dev/null
+
+#     > /dev/null
 
 echo "Done. Coverity Scan tarball 'myproject.tgz' is uploaded."
 echo "That took approximately $SECONDS seconds to upload."

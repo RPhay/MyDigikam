@@ -84,7 +84,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage) con
     }
 
     QImage image(inputImage);
-    qint64 inputArea                    = image.width() * image.height();
+    qint64 inputArea                    = (qint64)image.width() * (qint64)image.height();
     const qint64 maxAcceptableInputArea = 1024 * 768;
 
     if (inputArea > maxAcceptableInputArea)
@@ -134,7 +134,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage) const
     }
 
     Digikam::DImg image(inputImage);
-    qint64 inputArea                    = image.width() * image.height();
+    qint64 inputArea                    = (qint64)image.width() * (qint64)image.height();
     const qint64 maxAcceptableInputArea = 1024 * 768;
 
     if (inputArea > maxAcceptableInputArea)
@@ -149,7 +149,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage) const
 
     cv::Mat cvImageWrapper, cvImage;
 
-    cvImageWrapper = cv::Mat(image.height(), image.width(), CV_8UC3, image.bits());
+    cvImageWrapper                      = cv::Mat(image.height(), image.width(), CV_8UC3, image.bits());
     cv::cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
 /*
     cv::equalizeHist(cvImage, cvImage);
