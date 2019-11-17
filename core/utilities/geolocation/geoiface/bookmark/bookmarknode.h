@@ -37,8 +37,10 @@
 namespace Digikam
 {
 
-class BookmarkNode
+class BookmarkNode : public QObject
 {
+    Q_OBJECT
+
 public:
 
     enum Type
