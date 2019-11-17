@@ -137,26 +137,43 @@ int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
     for (NamespaceEntry entry : settings.getReadMapping(NamespaceEntry::DM_RATING_CONTAINER()))
     {
         if (entry.isDisabled)
+        {
             continue;
+        }
 
         const std::string myStr = entry.namespaceName.toStdString();
         const char* nameSpace   = myStr.data();
         QString value;
 
-        switch(entry.subspace)
+        switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
+
                 if (xmpSupported)
+                {
                     value = getXmpTagString(nameSpace, false);
+                }
+
                 break;
+
             case NamespaceEntry::IPTC:
+
                 if (iptcSupported)
+                {
                     value = QString::fromUtf8(getIptcTagData(nameSpace));
+                }
+
                 break;
+
             case NamespaceEntry::EXIF:
+
                 if (exivSupported)
-                    getExifTagLong(nameSpace, rating);
+                {
+                    value = getExifTagLong(nameSpace, rating);
+                }
+
                 break;
+
             default:
                 break;
         }
