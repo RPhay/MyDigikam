@@ -51,7 +51,8 @@ using namespace Digikam;
 
 // Function to return the
 // intersection vector of v1 and v2
-void intersection(const std::vector<int>& v1, const std::vector<int>& v2,
+void intersection(const std::vector<int>& v1,
+                  const std::vector<int>& v2,
                   std::vector<int>& vout)
 {
     // Find the intersection of the two sets
@@ -60,18 +61,19 @@ void intersection(const std::vector<int>& v1, const std::vector<int>& v2,
 }
 
 // Function to return the Jaccard distance of two vectors
-double jaccard_distance(const std::vector<int>& v1, const std::vector<int>& v2)
+double jaccard_distance(const std::vector<int>& v1,
+                        const std::vector<int>& v2)
 {
     // Sizes of both the sets
-    double size_v1 = v1.size();
-    double size_v2 = v2.size();
+    double size_v1       = v1.size();
+    double size_v2       = v2.size();
 
     // Get the intersection set
     std::vector<int> intersect;
     intersection(v1, v2, intersect);
 
     // Size of the intersection set
-    double size_in = intersect.size();
+    double size_in       = intersect.size();
 
     // Calculate the Jaccard index
     // using the formula
@@ -79,7 +81,7 @@ double jaccard_distance(const std::vector<int>& v1, const std::vector<int>& v2)
 
     // Calculate the Jaccard distance
     // using the formula
-    double jaccard_dist = 1 - jaccard_index;
+    double jaccard_dist  = 1 - jaccard_index;
 
     // Return the Jaccard distance
     return jaccard_dist;
@@ -109,9 +111,11 @@ QList<QImage> toImages(const QStringList& paths)
     return images;
 }
 
-int prepareForTrain(QString datasetPath, QStringList& images, std::vector<int>& testClusteredIndices)
+int prepareForTrain(QString datasetPath,
+                    QStringList& images,
+                    std::vector<int>& testClusteredIndices)
 {
-    if(!datasetPath.endsWith(QLatin1String("/")))
+    if (!datasetPath.endsWith(QLatin1String("/")))
     {
         datasetPath.append(QLatin1String("/"));
     }
@@ -125,11 +129,12 @@ int prepareForTrain(QString datasetPath, QStringList& images, std::vector<int>& 
 
     for (int i = 1 ; i <= nbOfClusters ; ++i)
     {
-        QString subjectPath = QString::fromLatin1("%1%2").arg(datasetPath)
-                                                         .arg(subjects.takeFirst());
+        QString subjectPath               = QString::fromLatin1("%1%2")
+                                                     .arg(datasetPath)
+                                                     .arg(subjects.takeFirst());
         QDir subjectDir(subjectPath);
 
-        QStringList files = subjectDir.entryList(QDir::Files);
+        QStringList files                 = subjectDir.entryList(QDir::Files);
         unsigned int nbOfFacesPerClusters = files.size();
 
         for (unsigned j = 1 ; j <= nbOfFacesPerClusters ; ++j)
@@ -165,7 +170,7 @@ QList<QImage> retrieveFaces(const QList<QImage>& images, const QList<QRectF>& re
     {
         DImg temp(images.at(index));
         faces << temp.copyQImage(rect);
-        index++;
+        ++index;
     }
 
     return faces;
@@ -176,7 +181,7 @@ void createClustersFromClusterIndices(const std::vector<int>& clusteredIndices,
 {
     int nbOfClusters = 0;
 
-    for (size_t i = 0 ; i < clusteredIndices.size() ; i++)
+    for (size_t i = 0 ; i < clusteredIndices.size() ; ++i)
     {
         int nb = clusteredIndices[i];
 
@@ -188,14 +193,14 @@ void createClustersFromClusterIndices(const std::vector<int>& clusteredIndices,
 
     nbOfClusters++;
 
-    for (int i = 0 ; i < nbOfClusters ; i++)
+    for (int i = 0 ; i < nbOfClusters ; ++i)
     {
         clusters << std::vector<int>();
     }
 
     qDebug() << "nbOfClusters " << clusters.size();
 
-    for (size_t i = 0 ; i < clusteredIndices.size() ; i++)
+    for (size_t i = 0 ; i < clusteredIndices.size() ; ++i)
     {
         clusters[clusteredIndices[i]].push_back(i);
     }
@@ -215,20 +220,19 @@ void verifyClusteringResults(const std::vector<int>& clusteredIndices,
     std::vector<float> visited(testClustersSize, 1.0);
     std::vector<std::set<int>> lastVisit(testClustersSize, std::set<int>{});
 
-    for(int i = 0 ; i < testClustersSize ; i++)
+    for (int i = 0 ; i < testClustersSize ; ++i)
     {
         std::vector<int> refSet = testClusters.at(i);
+        double minDist          = 1.0;
+        int indice              = 0;
 
-        double minDist = 1.0;
-        int indice = 0;
-
-        for (int j = 0 ; j < clusters.size() ; j++)
+        for (int j = 0 ; j < clusters.size() ; ++j)
         {
             double dist = jaccard_distance(refSet, clusters.at(j));
 
             if (dist < minDist)
             {
-                indice = j;
+                indice  = j;
                 minDist = dist;
             }
         }
@@ -239,7 +243,7 @@ void verifyClusteringResults(const std::vector<int>& clusteredIndices,
 
         if (minDist < visited[indice])
         {
-            visited[indice] = minDist;
+            visited[indice]            = minDist;
             std::set<int> lastVisitSet = lastVisit[indice];
             std::set<int> newVisitSet;
             std::set_symmetric_difference(refSet.begin(), refSet.end(), similarSet.begin(), similarSet.end(), 
@@ -276,7 +280,9 @@ int main(int argc, char* argv[])
     // Options for commandline parser
 
     QCommandLineParser parser;
-    parser.addOption(QCommandLineOption(QLatin1String("db"), QLatin1String("Faces database"), QLatin1String("path to db folder")));
+    parser.addOption(QCommandLineOption(QLatin1String("db"),
+                     QLatin1String("Faces database"),
+                     QLatin1String("path to db folder")));
     parser.addHelpOption();
     parser.process(app);
 
@@ -286,13 +292,13 @@ int main(int argc, char* argv[])
 
     if (parser.optionNames().empty())
     {
-        qWarning() << "NO options!!!";
+        qWarning() << "No options!!!";
         optionErrors = true;
     }
     else if (!parser.isSet(QLatin1String("db")))
     {
-        qWarning() << "MISSING database for test!!!";
-        optionErrors =true;
+        qWarning() << "Missing database for test!!!";
+        optionErrors = true;
     }
 
     if (optionErrors)
@@ -340,11 +346,10 @@ int main(int argc, char* argv[])
         if (detectedBoundingBox.size())
         {
             detectedFaces << image;
-            bboxes << detectedBoundingBox.first();
+            bboxes        << detectedBoundingBox.first();
+            dataset       << imagePath;
 
-            dataset << imagePath;
-
-            totalClustered++;
+            ++totalClustered;
         }
         else
         {
@@ -359,7 +364,7 @@ int main(int argc, char* argv[])
 
     timer.start();
     db.clusterFaces(faces, clusteredIndices, dataset, nbOfClusters);
-    elapsedClustering += timer.elapsed();
+    elapsedClustering  += timer.elapsed();
 
     // Verify clustering
 

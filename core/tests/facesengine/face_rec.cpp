@@ -78,9 +78,12 @@ QList<QImage> toImages(const QStringList& paths)
     return images;
 }
 
-void prepareForTrain(QString testSetPath, QMap<unsigned, QStringList>& testset,
-                     QMap<unsigned, QStringList>& trainingset, double ratio,
-                     unsigned int nbOfSamples, unsigned int& nbOfIdentities)
+void prepareForTrain(const QString& testSetPath,
+                     QMap<unsigned, QStringList>& testset,
+                     QMap<unsigned, QStringList>& trainingset,
+                     double ratio,
+                     unsigned int nbOfSamples,
+                     unsigned int& nbOfIdentities)
 {
     QDir testSet(testSetPath);
     QStringList subjects = testSet.entryList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks);
@@ -98,7 +101,7 @@ void prepareForTrain(QString testSetPath, QMap<unsigned, QStringList>& testset,
                                                          .arg(subjects.takeFirst());
         QDir subjectDir(subjectPath);
 
-        QStringList files = subjectDir.entryList(QDir::Files);
+        QStringList files                  = subjectDir.entryList(QDir::Files);
         unsigned int nbOfSamplePerIdentity = (nbOfSamples == 0) ? files.size() : nbOfSamples;
 
         for (unsigned j = 1 ; j <= nbOfSamplePerIdentity ; ++j)
@@ -120,7 +123,7 @@ void prepareForTrain(QString testSetPath, QMap<unsigned, QStringList>& testset,
     }
 }
 
-QImage scaleForDetection(const DImg& image, FaceDetector detector)
+QImage scaleForDetection(const DImg& image, FaceDetector& detector)
 {
     int recommendedSize = detector.recommendedImageSize(image.size());
 
@@ -132,10 +135,10 @@ QImage scaleForDetection(const DImg& image, FaceDetector detector)
     return image.copyQImage();
 }
 
-QList<QRectF> processFaceDetection(const QImage& image, FaceDetector detector)
+QList<QRectF> processFaceDetection(const QImage& image, FaceDetector& detector)
 {
     DImg img(image);
-    QImage detectionImage = scaleForDetection(img, detector);
+    QImage detectionImage       = scaleForDetection(img, detector);
     QList<QRectF> detectedFaces = detector.detectFaces(detectionImage, img.originalSize());
 
     qDebug() << "Found " << detectedFaces.size() << " faces";
@@ -143,7 +146,7 @@ QList<QRectF> processFaceDetection(const QImage& image, FaceDetector detector)
     return detectedFaces;
 }
 
-QList<QRectF> processFaceDetection(const QString& imagePath, FaceDetector detector)
+QList<QRectF> processFaceDetection(const QString& imagePath, FaceDetector& detector)
 {
     QList<QRectF> detectedFaces = detector.detectFaces(imagePath);
 
@@ -154,7 +157,7 @@ QList<QRectF> processFaceDetection(const QString& imagePath, FaceDetector detect
 
 QImage retrieveFace(const DImg& image, const QList<QRectF>& rects)
 {
-    if(rects.size() > 1)
+    if (rects.size() > 1)
     {
         qWarning() << "More than 1 face found in image, strange for our test set!!!";
         assert(0);
@@ -175,7 +178,7 @@ QList<QImage> retrieveFaces(const QList<QImage>& images, const QList<QRectF>& re
     {
         DImg temp(images.at(index));
         faces << temp.copyQImage(rect);
-        index++;
+        ++index;
     }
 
     return faces;
@@ -213,23 +216,23 @@ int main(int argc, char* argv[])
     else if (!parser.isSet(QLatin1String("db")))
     {
         qWarning() << "MISSING database for test!!!";
-        optionErrors =true;
+        optionErrors = true;
     }
     else if (!parser.isSet(QLatin1String("as")) &&
              (!parser.isSet(QLatin1String("ni")) || !parser.isSet(QLatin1String("ns"))))
     {
         qWarning() << "UNKNOWN training set / test set separation!!!";
-        optionErrors =true;
+        optionErrors = true;
     }
     else if (parser.isSet(QLatin1String("ts")) && !parser.isSet(QLatin1String("ds")))
     {
         qWarning() << "UNKNOWN Dev set!!!";
-        optionErrors =true;
+        optionErrors = true;
     }
     else if (parser.isSet(QLatin1String("ds")) && !parser.isSet(QLatin1String("ts")))
     {
         qWarning() << "UNKNOWN Test set!!!";
-        optionErrors =true;
+        optionErrors = true;
     }
 
     if (optionErrors)
@@ -238,13 +241,13 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    QString facedb = parser.value(QLatin1String("db"));
-
-    unsigned int nbOfSamples = 0, nbOfIdentities = 0;
+    QString facedb              = parser.value(QLatin1String("db"));
+    unsigned int nbOfSamples    = 0;
+    unsigned int nbOfIdentities = 0;
 
     if (!parser.isSet(QLatin1String("as")))
     {
-        nbOfSamples = parser.value(QLatin1String("ns")).toUInt();
+        nbOfSamples    = parser.value(QLatin1String("ns")).toUInt();
         nbOfIdentities = parser.value(QLatin1String("ni")).toUInt();
     }
 
@@ -287,7 +290,7 @@ int main(int argc, char* argv[])
     {
         QMap<QString, QString> attributes;
         attributes[QLatin1String("name")] = QString::number(i);
-        idMap[i] = db.addIdentityDebug(attributes);
+        idMap[i]                          = db.addIdentityDebug(attributes);
     }
 
     db.createDNNDebug(); // Create OpenCVDNNFaceRecognizer instance without loading recognition database
@@ -298,9 +301,9 @@ int main(int argc, char* argv[])
     FaceDetector detector;
 
     // Evaluation metrics
-    unsigned correct = 0, notRecognized = 0, falsePositive = 0, totalTrained = 0, totalRecognized = 0;
-    unsigned elapsedTraining = 0, elapsedTesting = 0;
-    unsigned detectingTime = 0;
+    unsigned int correct = 0, notRecognized = 0, falsePositive = 0, totalTrained = 0, totalRecognized = 0;
+    unsigned int elapsedTraining = 0, elapsedTesting = 0;
+    unsigned int detectingTime = 0;
 
 /*
  *  // Without using detector
@@ -338,15 +341,15 @@ int main(int argc, char* argv[])
         {
             if (foundId.isNull())
             {
-                notRecognized++;
+                ++notRecognized;
             }
             else if (foundId == identity)
             {
-                correct++;
+                ++correct;
             }
             else
             {
-                falsePositive++;
+                ++falsePositive;
             }
         }
 
@@ -357,7 +360,6 @@ int main(int argc, char* argv[])
 
     QStringList undetectedTrainedFaces;
     QStringList undetectedTestedFaces;
-
     QStringList falsePositiveFaces;
 
     QLatin1String trainingContext("Debug");
@@ -366,7 +368,6 @@ int main(int argc, char* argv[])
          it != trainingset.constEnd() ; ++it)
     {
         Identity identity      = idMap.value(it.key());
-
         QStringList imagePaths = it.value();
 
         QList<QImage> detectedFaces;
@@ -391,8 +392,8 @@ int main(int argc, char* argv[])
             if (detectedBoundingBox.size())
             {
                 detectedFaces << image;
-                bboxes << detectedBoundingBox.first();
-                totalTrained++;
+                bboxes        << detectedBoundingBox.first();
+                ++totalTrained;
             }
             else
             {
@@ -417,7 +418,6 @@ int main(int argc, char* argv[])
     {
         Identity identity       = idMap.value(it.key());
         QList<QImage> rawImages = toImages(it.value());
-
         QStringList imagePaths  = it.value();
 
         QList<QImage> detectedFaces;
@@ -433,14 +433,13 @@ int main(int argc, char* argv[])
             time.start();
 
             QList<QRectF> detectedBoundingBox = processFaceDetection(imagePath, detector);
-
-            detectingTime += time.elapsed();
+            detectingTime                    += time.elapsed();
 
             if (detectedBoundingBox.size())
             {
                 detectedFaces << image;
-                bboxes << detectedBoundingBox.first();
-                totalRecognized++;
+                bboxes        << detectedBoundingBox.first();
+                ++totalRecognized;
             }
             else
             {
@@ -458,8 +457,7 @@ int main(int argc, char* argv[])
         time.start();
 
         QList<Identity> results = db.recognizeFaces(faces);
-
-        elapsedTesting += time.elapsed();
+        elapsedTesting         += time.elapsed();
 
         // qDebug() << "Result for " << it.value().first() << " is identity " << results.first().id();
 
@@ -469,18 +467,18 @@ int main(int argc, char* argv[])
 
             if (foundId.isNull())
             {
-                notRecognized++;
+                ++notRecognized;
             }
             else if (foundId == identity)
             {
-                correct++;
+                ++correct;
             }
             else
             {
-                falsePositive++;
+                ++falsePositive;
                 falsePositiveFaces << QString::fromLatin1("Image at %1 with identity %2")
-                                        .arg(imagePath)
-                                        .arg(foundId.id());
+                                               .arg(imagePath)
+                                               .arg(foundId.id());
             }
         }
 
@@ -499,7 +497,9 @@ int main(int argc, char* argv[])
 
     if (totalTrained)
     {
-        qDebug() << "Training " << totalTrained << "of " << nbOfIdentities << " different objects took " << elapsedTraining << " ms, " << ((float)elapsedTraining/totalTrained) << " ms per image";
+        qDebug() << "Training " << totalTrained << "of " << nbOfIdentities
+                 << " different objects took " << elapsedTraining << " ms, "
+                 << ((float)elapsedTraining/totalTrained) << " ms per image";
     }
 
     unsigned nbUndetectedTestedFaces = undetectedTestedFaces.size();
