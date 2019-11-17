@@ -69,5 +69,6 @@ curl --insecure \
      https://scan.coverity.com/builds?project=digiKam
      > /dev/null
 
-echo "Done. Coverity Scan tarball 'myproject.tgz' is uploaded and ready for analyse."
+echo "Done. Coverity Scan tarball 'myproject.tgz' is uploaded."
 echo "That took approximately $SECONDS seconds to upload."
+echo "File will be post processed for analyse. A mail notification will be send to digikam-bugs-null@kde.org."
