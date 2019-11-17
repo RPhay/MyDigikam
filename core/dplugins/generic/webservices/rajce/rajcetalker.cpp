@@ -28,6 +28,7 @@
 #include <QWidget>
 #include <QMutex>
 #include <QQueue>
+#include <QSharedPointer>
 #include <QNetworkReply>
 #include <QNetworkAccessManager>
 #include <QCryptographicHash>
@@ -116,8 +117,8 @@ void RajceTalker::startCommand(RajceCommand* const command)
 
 void RajceTalker::login(const QString& username, const QString& password)
 {
-    LoginCommand* const command = new LoginCommand(username, password);
-    enqueueCommand(command);
+    QSharedPointer<LoginCommand> command = QSharedPointer<LoginCommand>(new LoginCommand(username, password));
+    enqueueCommand(command.get());
 }
 
 void RajceTalker::loadAlbums()
