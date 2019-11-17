@@ -28,7 +28,6 @@
 #include <QWidget>
 #include <QMutex>
 #include <QQueue>
-#include <QSharedPointer>
 #include <QNetworkReply>
 #include <QNetworkAccessManager>
 #include <QCryptographicHash>
@@ -65,14 +64,14 @@ public:
     {
     }
 
-    QQueue<RajceCommand*>  commandQueue;
-    QMutex                 queueAccess;
-    QString                tmpDir;
+    QQueue<QSharedPointer<RajceCommand> > commandQueue;
+    QMutex                                queueAccess;
+    QString                               tmpDir;
 
-    QNetworkAccessManager* netMngr;
-    QNetworkReply*         reply;
+    QNetworkAccessManager*                netMngr;
+    QNetworkReply*                        reply;
 
-    RajceSession           session;
+    RajceSession                          session;
 };
 
 RajceTalker::RajceTalker(QWidget* const parent)
@@ -98,39 +97,39 @@ const RajceSession& RajceTalker::session() const
     return d->session;
 }
 
-void RajceTalker::startCommand(RajceCommand* const command)
+void RajceTalker::startCommand(const QSharedPointer<RajceCommand>& command)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Sending command:\n" << command->getXml();
 
-    QByteArray data = command->encode();
+    QByteArray data = command.get()->encode();
 
     QNetworkRequest netRequest(RAJCE_URL);
-    netRequest.setHeader(QNetworkRequest::ContentTypeHeader, command->contentType());
+    netRequest.setHeader(QNetworkRequest::ContentTypeHeader, command.get()->contentType());
 
     d->reply = d->netMngr->post(netRequest, data);
 
     connect(d->reply, SIGNAL(uploadProgress(qint64,qint64)),
             SLOT(slotUploadProgress(qint64,qint64)));
 
-    emit signalBusyStarted(command->commandType());
+    emit signalBusyStarted(command.get()->commandType());
 }
 
 void RajceTalker::login(const QString& username, const QString& password)
 {
-    QSharedPointer<LoginCommand> command = QSharedPointer<LoginCommand>(new LoginCommand(username, password));
-    enqueueCommand(command.get());
+    QSharedPointer<RajceCommand> command = QSharedPointer<LoginCommand>(new LoginCommand(username, password));
+    enqueueCommand(command);
 }
 
 void RajceTalker::loadAlbums()
 {
-    QSharedPointer<AlbumListCommand> command = QSharedPointer<AlbumListCommand>(new AlbumListCommand(d->session));
-    enqueueCommand(command.get());
+    QSharedPointer<RajceCommand> command = QSharedPointer<AlbumListCommand>(new AlbumListCommand(d->session));
+    enqueueCommand(command);
 }
 
 void RajceTalker::createAlbum(const QString& name, const QString& description, bool visible)
 {
-    QSharedPointer<CreateAlbumCommand> command = QSharedPointer<CreateAlbumCommand>(new CreateAlbumCommand(name, description, visible, d->session));
-    enqueueCommand(command.get());
+    QSharedPointer<RajceCommand> command = QSharedPointer<CreateAlbumCommand>(new CreateAlbumCommand(name, description, visible, d->session));
+    enqueueCommand(command);
 }
 
 void RajceTalker::slotFinished(QNetworkReply* reply)
@@ -146,14 +145,12 @@ void RajceTalker::slotFinished(QNetworkReply* reply)
 
     d->queueAccess.lock();
 
-    RajceCommand* const c = d->commandQueue.head();
-    d->reply              = nullptr;
+    QSharedPointer<RajceCommand> c = d->commandQueue.head();
+    d->reply                       = nullptr;
 
     c->processResponse(response, d->session);
 
-    RajceCommandType type = c->commandType();
-
-    delete c;
+    RajceCommandType type = c.get()->commandType();
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "State after command: " << d->session;
 
@@ -190,16 +187,16 @@ void RajceTalker::logout()
 
 void RajceTalker::openAlbum(const RajceAlbum& album)
 {
-    QSharedPointer<OpenAlbumCommand> command = QSharedPointer<OpenAlbumCommand>(new OpenAlbumCommand(album.id, d->session));
-    enqueueCommand(command.get());
+    QSharedPointer<RajceCommand> command = QSharedPointer<OpenAlbumCommand>(new OpenAlbumCommand(album.id, d->session));
+    enqueueCommand(command);
 }
 
 void RajceTalker::closeAlbum()
 {
     if (!d->session.openAlbumToken().isEmpty())
     {
-        QSharedPointer<CloseAlbumCommand> command = QSharedPointer<CloseAlbumCommand>(new CloseAlbumCommand(d->session));
-        enqueueCommand(command.get());
+        QSharedPointer<RajceCommand> command = QSharedPointer<CloseAlbumCommand>(new CloseAlbumCommand(d->session));
+        enqueueCommand(command);
     }
     else
     {
@@ -209,8 +206,8 @@ void RajceTalker::closeAlbum()
 
 void RajceTalker::uploadPhoto(const QString& path, unsigned dimension, int jpgQuality)
 {
-    QSharedPointer<AddPhotoCommand> command = QSharedPointer<AddPhotoCommand>(new AddPhotoCommand(d->tmpDir, path, dimension, jpgQuality, d->session));
-    enqueueCommand(command.get());
+    QSharedPointer<RajceCommand> command = QSharedPointer<AddPhotoCommand>(new AddPhotoCommand(d->tmpDir, path, dimension, jpgQuality, d->session));
+    enqueueCommand(command);
 }
 
 void RajceTalker::clearLastError()
@@ -230,10 +227,11 @@ void RajceTalker::slotUploadProgress(qint64 bytesSent, qint64 bytesTotal)
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Percent signalled: " << percent;
 
-    emit signalBusyProgress(d->commandQueue.head()->commandType(), percent);
+    QSharedPointer<RajceCommand> c = d->commandQueue.head();
+    emit signalBusyProgress(c.get()->commandType(), percent);
 }
 
-void RajceTalker::enqueueCommand(RajceCommand* const command)
+void RajceTalker::enqueueCommand(const QSharedPointer<RajceCommand>& command)
 {
     if (d->session.lastErrorCode() != 0)
     {
