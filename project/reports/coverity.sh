@@ -17,7 +17,7 @@
 #
 
 cd ../..
-
+if [ ] ; then
 # Manage build sub-dir
 if [ -d "build" ]; then
     rm -rfv ./build
@@ -31,7 +31,7 @@ else
     echo "Unsupported platform..."
     exit -1
 fi
-
+fi
 # Get active git branches to create report description string
 ./gits branch | sed -e "s/*/#/g" | sed -e "s/On:/#On:/g" | grep "#" | sed -e "s/#On:/On:/g" | sed -e "s/#/BRANCH:/g" > ./build/git_branches.txt
 desc=$(<build/git_branches.txt)
@@ -41,8 +41,8 @@ cd ./build
 CPU_CORES=$(grep -c ^processor /proc/cpuinfo 2>/dev/null || sysctl -n hw.ncpu)
 echo "CPU cores detected to compile : $CPU_CORES."
 
-cov-build --dir cov-int --tmpdir ~/tmp make -j$CPU_CORES
-tar czvf myproject.tgz cov-int
+#cov-build --dir cov-int --tmpdir ~/tmp make -j$CPU_CORES
+#tar czvf myproject.tgz cov-int
 
 echo "-- SCAN Import description --"
 echo $desc
@@ -59,15 +59,16 @@ nslookup scan5.coverity.com
 # To mesure uploading time
 SECONDS=0
 
-rsync -r -v --progress -e \
-     curl --insecure \
+curl https://scan.coverity.com/builds?project=digiKam \
+     --insecure \
      --progress-bar \
+     --verbose \
      --form token=$DKCoverityToken \
      --form email=$DKCoverityEmail \
      --form file=@myproject.tgz \
      --form version=git \
      --form description="$desc" \
-     https://scan.coverity.com/builds?project=digiKam
+     | tee -a "${LOG_FILE}" ; test ${PIPESTATUS[0]} -eq 0
 
 echo "Done. Coverity Scan tarball 'myproject.tgz' is uploaded."
 echo "That took approximately $SECONDS seconds to upload."
