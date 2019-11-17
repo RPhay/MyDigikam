@@ -73,16 +73,19 @@ public:
 
     explicit Private()
     {
-        view           = nullptr;
-        mainLayout     = nullptr;
-        filterBtn      = nullptr;
-        toolBtn        = nullptr;
-        searchBar      = nullptr;
-        optionsMenu    = nullptr;
         noneAction     = nullptr;
         photoAction    = nullptr;
         customAction   = nullptr;
         settingsAction = nullptr;
+        mainLayout     = nullptr;
+        filterBtn      = nullptr;
+        toolBtn        = nullptr;
+        saveMetadata   = nullptr;
+        printMetadata  = nullptr;
+        copy2ClipBoard = nullptr;
+        optionsMenu    = nullptr;
+        view           = nullptr;
+        searchBar      = nullptr;
     }
 
     QAction*               noneAction;
