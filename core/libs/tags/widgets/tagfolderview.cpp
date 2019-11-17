@@ -144,13 +144,23 @@ void TagFolderView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
     cmh.addExportMenu();
     cmh.addSeparator();
 
-    if (tag->id() != FaceTags::unconfirmedPersonTagId() &&
-        tag->id() != FaceTags::unknownPersonTagId())
+    if (d->showDeleteFaceTagsAction)
+    {
+        cmh.addActionDeleteFaceTag(tagModificationHelper(), tag);
+        cmh.addSeparator();
+    }
+    else
     {
         cmh.addActionDeleteTag(tagModificationHelper(), tag);
         cmh.addSeparator();
-        cmh.addActionEditTag(tagModificationHelper(), tag);
+        // If the tag is no face tag, add the option to set it as face tag.
+        if (!FaceTags::isPerson(tag->id()) && !tag->isRoot())
+        {
+            cmh.addActionTagToFaceTag(tagModificationHelper(), tag);
+        }
     }
+
+    cmh.addActionEditTag(tagModificationHelper(), tag);
 
     connect(&cmh, SIGNAL(signalAddNewTagFromABCMenu(QString)),
             this, SLOT(slotTagNewFromABCMenu(QString)));
