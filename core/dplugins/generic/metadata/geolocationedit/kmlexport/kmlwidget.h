@@ -109,7 +109,7 @@ public:
     QSpinBox*         GPXTracksOpacityInput_;
     QSpinBox*         GPXLineWidthInput_;
 
-    GPSItemModel*    m_model;
+    GPSItemModel*     m_model;
     GeolocationEdit*  m_dlg;
 
 Q_SIGNALS:
@@ -132,9 +132,6 @@ protected Q_SLOTS:
     void slotKMLGenerate();
 
 protected:
-
-    QSpacerItem* spacer3;
-    QSpacerItem* spacer4;
 
     QGridLayout* KMLExportConfigLayout;
     QGridLayout* SizeGroupBoxLayout;
