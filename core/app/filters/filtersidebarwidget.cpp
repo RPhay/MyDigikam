@@ -72,6 +72,11 @@ public:
         tagOrCondAction(nullptr),
         tagAndCondAction(nullptr),
         tagMatchCond(ItemFilterSettings::OrCondition),
+        faceFilterView(nullptr),
+        faceFilterSearchBar(nullptr),
+        faceOptionsBtn(nullptr),
+        faceOptionsMenu(nullptr),
+        faceFilterModel(nullptr),
         colorLabelFilter(nullptr),
         geolocationFilter(nullptr),
         pickLabelFilter(nullptr),
@@ -79,6 +84,7 @@ public:
         mimeFilter(nullptr),
         textFilter(nullptr),
         withoutTagCheckBox(nullptr),
+        withoutFaceCheckBox(nullptr),
         expbox(nullptr)
     {
     }
@@ -104,9 +110,6 @@ public:
     QToolButton*                           faceOptionsBtn;
     QMenu*                                 faceOptionsMenu;
     TagModel*                              faceFilterModel;
-    QAction*                               faceOrCondAction;
-    QAction*                               faceAndCondAction;
-    ItemFilterSettings::MatchingCondition  faceMatchCond;
 
     ColorLabelFilter*                      colorLabelFilter;
     GeolocationFilter*                     geolocationFilter;
@@ -157,9 +160,9 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
 
     // --------------------------------------------------------------------------------------------------------
 
-    QWidget* const box3   = new QWidget(d->expbox);
-    d->tagFilterModel     = tagFilterModel;
-    d->tagFilterView      = new TagFilterView(box3, tagFilterModel);
+    QWidget* const box3 = new QWidget(d->expbox);
+    d->tagFilterModel   = tagFilterModel;
+    d->tagFilterView    = new TagFilterView(box3, tagFilterModel);
     d->tagFilterView->setObjectName(QLatin1String("ItemIconViewTagFilterView"));
 
     d->tagFilterView->filteredModel()->doNotListTagsWithProperty(TagPropertyName::person());
@@ -170,8 +173,8 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
                                     AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
     d->tagFilterSearchBar->setFilterModel(d->tagFilterView->albumFilterModel());
 
-    const QString notTaggedTitle   = i18n("Images Without Tags");
-    d->withoutTagCheckBox          = new QCheckBox(notTaggedTitle, box3);
+    const QString notTaggedTitle = i18n("Images Without Tags");
+    d->withoutTagCheckBox        = new QCheckBox(notTaggedTitle, box3);
     d->withoutTagCheckBox->setWhatsThis(i18n("Show images without a tag."));
 
     d->tagOptionsBtn = new QToolButton(box3);
@@ -182,7 +185,7 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
                                         "to filter the images. This also includes the '%1' check box.",
                                         notTaggedTitle));
 
-    d->tagOptionsMenu  = new QMenu(d->tagOptionsBtn);
+    d->tagOptionsMenu = new QMenu(d->tagOptionsBtn);
     d->tagOrCondAction = d->tagOptionsMenu->addAction(i18n("OR"));
     d->tagOrCondAction->setCheckable(true);
     d->tagAndCondAction = d->tagOptionsMenu->addAction(i18n("AND"));
@@ -203,9 +206,9 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
 
     // --------------------------------------------------------------------------------------------------------
 
-    QWidget* const box5   = new QWidget(d->expbox);
-    d->faceFilterModel     = tagFilterModel;
-    d->faceFilterView      = new TagFilterView(box5, tagFilterModel);
+    QWidget* const box5 = new QWidget(d->expbox);
+    d->faceFilterModel  = tagFilterModel;
+    d->faceFilterView   = new TagFilterView(box5, tagFilterModel);
     d->faceFilterView->setObjectName(QLatin1String("ItemIconViewFaceTagFilterView"));
 
     d->faceFilterView->filteredModel()->listOnlyTagsWithProperty(TagPropertyName::person());
@@ -216,8 +219,8 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
                                     AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
     d->faceFilterSearchBar->setFilterModel(d->faceFilterView->albumFilterModel());
 
-    const QString notfaceTaggedTitle   = i18n("Images Without Face tags");
-    d->withoutFaceCheckBox          = new QCheckBox(notfaceTaggedTitle, box5);
+    const QString notfaceTaggedTitle = i18n("Images Without Face tags");
+    d->withoutFaceCheckBox           = new QCheckBox(notfaceTaggedTitle, box5);
     d->withoutFaceCheckBox->setWhatsThis(i18n("Show images without a face tag."));
 
     d->faceOptionsBtn = new QToolButton(box5);
@@ -228,7 +231,7 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
                                         "to filter the images. This also includes the '%1' check box.",
                                         notfaceTaggedTitle));
 
-    d->faceOptionsMenu  = new QMenu(d->faceOptionsBtn);
+    d->faceOptionsMenu = new QMenu(d->faceOptionsBtn);
     d->tagOrCondAction = d->faceOptionsMenu->addAction(i18n("OR"));
     d->tagOrCondAction->setCheckable(true);
     d->tagAndCondAction = d->faceOptionsMenu->addAction(i18n("AND"));
