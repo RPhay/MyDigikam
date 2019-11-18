@@ -78,9 +78,14 @@ QList<DPluginAuthor> RedEyeToolPlugin::authors() const
             << DPluginAuthor(QString::fromUtf8("Renchi Raju"),
                              QString::fromUtf8("renchi dot raju at gmail dot com"),
                              QString::fromUtf8("(C) 2004-2005"))
+
+            << DPluginAuthor(QString::fromUtf8("Omar Amin"),
+                             QString::fromUtf8("Omar dot moh dot amin at gmail dot com"),
+                             QString::fromUtf8("(C) 2016"))
+
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2019"))
+                             QString::fromUtf8("(C) 2005-2019"))
             ;
 }
 
