@@ -62,6 +62,8 @@
 #include "albummanager.h"
 #include "applicationsettings.h"
 #include "dexpanderbox.h"
+#include "facedbaccess.h"
+#include "facedb.h"
 
 namespace Digikam
 {

@@ -445,30 +445,9 @@ FaceScanSettings FaceScanDialog::settings() const
     // TODO: why does the original code append but not assign here???
     // settings.albums << d->albumSelectors->selectedAlbumsAndTags();
     settings.albums                 = d->albumSelectors->selectedAlbumsAndTags();
-/*
-    AlbumList tagAlbums             = AlbumManager::instance()->allTAlbums();
 
-    for (int i = 0 ; i < tagAlbums.size() ; ++i)
-    {
-        Album* const album = tagAlbums[i];
-        QString albumTitle = album->title();
-
-        if (albumTitle == QLatin1String("People"))
-        {
-            continue;
-        }
-
-        if (album->parent()          != nullptr                              &&
-            album->parent()->title() == QString::fromLatin1("People")        &&
-            albumTitle               != QString::fromLatin1("Unknown")       &&
-            albumTitle               != QString::fromLatin1("Unconfirmed"))
-        {
-            // set settingsConflicted back to false in case that there are tags to recognize
-            d->settingsConflicted = false;
-        }
-    }
-*/
-    d->settingsConflicted = false;
+    int numberOfIdentities          = FaceDbAccess().db()->getNumberOfIdentities();
+    d->settingsConflicted           = (numberOfIdentities == 0);
 
     settings.useFullCpu             = d->useFullCpuButton->isChecked();
 
