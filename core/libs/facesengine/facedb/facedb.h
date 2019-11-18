@@ -75,6 +75,7 @@ public:
     // --- Identity management (facedb_identity.cpp)
 
     int  addIdentity() const;
+    int  getNumberOfIdentities() const;
     void updateIdentity(const Identity& p);
     void deleteIdentity(int id);
     void deleteIdentity(const QString& uuid);

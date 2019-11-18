@@ -30,13 +30,17 @@ namespace Digikam
 int FaceDb::addIdentity() const
 {
     QVariant id;
-    d->db->execSql(QLatin1String("INSERT INTO Identities (`type`) VALUES (0);"), nullptr, &id);
+    d->db->execSql(QLatin1String("INSERT INTO Identities (`type`) VALUES (0);"),
+                   nullptr, &id);
+
     return id.toInt();
 }
 
 void FaceDb::updateIdentity(const Identity& p)
 {
-    d->db->execSql(QLatin1String("DELETE FROM IdentityAttributes WHERE id=?;"), p.id());
+    d->db->execSql(QLatin1String("DELETE FROM IdentityAttributes WHERE id=?;"),
+                   p.id());
+
     const QMap<QString, QString> map = p.attributesMap();
     QMap<QString, QString>::const_iterator it;
 
@@ -58,7 +62,9 @@ void FaceDb::deleteIdentity(const QString & uuid)
     QList<QVariant> ids;
     d->db->execSql(QLatin1String("SELECT Identities.id FROM Identities LEFT JOIN IdentityAttributes ON "
                                  " Identities.id=IdentityAttributes.id WHERE "
-                                 " IdentityAttributes.attribute='uuid' AND IdentityAttributes.value=?;"), uuid, &ids);
+                                 " IdentityAttributes.attribute='uuid' AND IdentityAttributes.value=?;"),
+                   uuid, &ids);
+
     if (ids.size() == 1)
     {
         deleteIdentity(ids.first().toInt());
@@ -75,14 +81,16 @@ QList<Identity> FaceDb::identities() const
 {
     QList<QVariant> ids;
     QList<Identity> results;
-    d->db->execSql(QLatin1String("SELECT id FROM Identities;"), &ids);
+    d->db->execSql(QLatin1String("SELECT id FROM Identities;"),
+                   &ids);
 
     foreach (const QVariant& v, ids)
     {
         QList<QVariant> values;
         Identity p;
         p.setId(v.toInt());
-        d->db->execSql(QLatin1String("SELECT attribute, `value` FROM IdentityAttributes WHERE id=?;"), p.id(), &values);
+        d->db->execSql(QLatin1String("SELECT attribute, `value` FROM IdentityAttributes WHERE id=?;"),
+                       p.id(), &values);
 
         for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
         {
@@ -103,7 +111,8 @@ QList<Identity> FaceDb::identities() const
 QList<int> FaceDb::identityIds() const
 {
     QList<QVariant> ids;
-    d->db->execSql(QLatin1String("SELECT id FROM Identities;"), &ids);
+    d->db->execSql(QLatin1String("SELECT id FROM Identities;"),
+                   &ids);
 
     QList<int> results;
 
@@ -113,6 +122,21 @@ QList<int> FaceDb::identityIds() const
     }
 
     return results;
+}
+
+int FaceDb::getNumberOfIdentities() const
+{
+    QList<QVariant> values;
+
+    d->db->execSql(QString::fromUtf8("SELECT COUNT(id) FROM Identities;"),
+                   &values);
+
+    if (values.isEmpty())
+    {
+        return 0;
+    }
+
+    return values.first().toInt();
 }
 
 } // namespace Digikam
