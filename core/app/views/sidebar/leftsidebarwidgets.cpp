@@ -1511,24 +1511,27 @@ void PeopleSideBarWidget::changeAlbumFromHistory(const QList<Album*>& album)
 
 void PeopleSideBarWidget::slotScanForFaces()
 {
-    FaceScanDialog dialog;
+    QPointer<FaceScanDialog> dlg = new FaceScanDialog(this) ;
 
-    if (dialog.exec() == QDialog::Accepted)
+    if (dlg->exec() == QDialog::Accepted)
     {
-        FaceScanSettings faceScanSettings = dialog.settings();
-        if (!dialog.settingsConflicted())
+        FaceScanSettings faceScanSettings = dlg->settings();
+
+        if (!dlg->settingsConflicted())
         {
             FacesDetector* const tool = new FacesDetector(faceScanSettings);
             tool->start();
         }
         else
         {
-            QMessageBox::warning(&dialog, i18n("Face recognition aborted"),
+            QMessageBox::warning(dlg, i18n("Face recognition aborted"),
                                  i18n("Face recognition is aborted, because "
                                       "there are no identities to recognize. "
                                       "Please add new identities."));
         }
     }
+
+    delete dlg;
 }
 
 const QIcon PeopleSideBarWidget::getIcon()
