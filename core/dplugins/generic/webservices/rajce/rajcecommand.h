@@ -52,10 +52,10 @@ public:
 
     void processResponse(const QString& response, RajceSession& state);
 
-    QString            getXml()      const;
-    RajceCommandType   commandType() const;
-    virtual QByteArray encode()      const;
-    virtual QString    contentType() const;
+    QString            getXml()          const;
+    RajceCommandType   commandType()     const;
+    virtual QByteArray encode()          const;
+    virtual QString    contentType()     const;
 
 protected:
 
@@ -66,7 +66,7 @@ protected:
     QMap<QString, QString>& parameters() const;
 
     // Aooend additional xml after the "parameters"
-    virtual QString additionalXml() const;
+    virtual QString additionalXml()      const;
 
 private:
 
@@ -77,6 +77,8 @@ private:
     // Hidden copy constructor and assignment operator.
     RajceCommand(const RajceCommand&);
     RajceCommand& operator=(const RajceCommand&);
+
+private:
 
     class Private;
     Private* const d;
@@ -170,14 +172,14 @@ public:
 
 public:
 
-    QByteArray encode()      const override;
-    QString    contentType() const override;
+    QByteArray encode()                                          const override;
+    QString    contentType()                                     const override;
 
 protected:
 
-    void    cleanUpOnError(RajceSession& state)                  override;
-    void    parseResponse(QXmlQuery& query, RajceSession& state) override;
-    QString additionalXml() const                                override;
+    void    cleanUpOnError(RajceSession& state)                        override;
+    void    parseResponse(QXmlQuery& query, RajceSession& state)       override;
+    QString additionalXml()                                      const override;
 
 private:
 

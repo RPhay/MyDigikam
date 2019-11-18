@@ -101,17 +101,17 @@ void RajceTalker::startCommand(const QSharedPointer<RajceCommand>& command)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Sending command:\n" << command->getXml();
 
-    QByteArray data = command.get()->encode();
+    QByteArray data = command.data()->encode();
 
     QNetworkRequest netRequest(RAJCE_URL);
-    netRequest.setHeader(QNetworkRequest::ContentTypeHeader, command.get()->contentType());
+    netRequest.setHeader(QNetworkRequest::ContentTypeHeader, command.data()->contentType());
 
     d->reply = d->netMngr->post(netRequest, data);
 
     connect(d->reply, SIGNAL(uploadProgress(qint64,qint64)),
             SLOT(slotUploadProgress(qint64,qint64)));
 
-    emit signalBusyStarted(command.get()->commandType());
+    emit signalBusyStarted(command.data()->commandType());
 }
 
 void RajceTalker::login(const QString& username, const QString& password)
@@ -145,12 +145,12 @@ void RajceTalker::slotFinished(QNetworkReply* reply)
 
     d->queueAccess.lock();
 
-    QSharedPointer<RajceCommand> c = d->commandQueue.head();
-    d->reply                       = nullptr;
+    QSharedPointer<RajceCommand> command = d->commandQueue.head();
+    d->reply                             = nullptr;
 
-    c->processResponse(response, d->session);
+    command->processResponse(response, d->session);
 
-    RajceCommandType type = c.get()->commandType();
+    RajceCommandType type = command.data()->commandType();
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "State after command: " << d->session;
 
@@ -227,8 +227,8 @@ void RajceTalker::slotUploadProgress(qint64 bytesSent, qint64 bytesTotal)
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Percent signalled: " << percent;
 
-    QSharedPointer<RajceCommand> c = d->commandQueue.head();
-    emit signalBusyProgress(c.get()->commandType(), percent);
+    QSharedPointer<RajceCommand> command = d->commandQueue.head();
+    emit signalBusyProgress(command.data()->commandType(), percent);
 }
 
 void RajceTalker::enqueueCommand(const QSharedPointer<RajceCommand>& command)

@@ -38,7 +38,7 @@ using namespace Digikam;
 
 namespace DigikamGenericRajcePlugin
 {
-   
+
 class RajceWidget : public WSSettingsWidget
 {
     Q_OBJECT
@@ -55,12 +55,12 @@ Q_SIGNALS:
 public Q_SLOTS:
 
     void slotStartUpload();
-    
+
 public:
 
     void reactivate();
     void cancelUpload();
-    
+
     void writeSettings();
     void readSettings();
 
@@ -85,7 +85,7 @@ private:
 
     void updateLabels(const QString& name = QString(),
                       const QString& url = QString()) override;
-    
+
     void setEnabledWidgets(bool);
 
 private:
