@@ -6,26 +6,26 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set(libfacemanagement_SRCS
-    faceutils.cpp
-    faceitem.cpp
-    facegroup.cpp
-    facegroup_p.cpp
-    facepipeline.cpp
-    facepipeline_p.cpp
-    facepipelinepackage.cpp
-    faceitemretriever.cpp
-    facepreviewloader.cpp
-    facescandialog.cpp
-    assignnamewidget.cpp
-    assignnamewidget_p.cpp
-    parallelpipes.cpp
-    scanstatefilter.cpp
-    detectionbenchmarker.cpp
-    detectionworker.cpp
-    recognitionbenchmarker.cpp
-    recognitionworker.cpp
-    databasewriter.cpp
-    trainerworker.cpp
+    database/faceutils.cpp
+    database/faceitemretriever.cpp
+    items/faceitem.cpp
+    items/facegroup.cpp
+    items/facegroup_p.cpp
+    threads/facepreviewloader.cpp
+    threads/facepipeline.cpp
+    threads/facepipeline_p.cpp
+    threads/facepipelinepackage.cpp
+    threads/parallelpipes.cpp
+    threads/scanstatefilter.cpp
+    widgets/facescandialog.cpp
+    widgets/assignnamewidget.cpp
+    widgets/assignnamewidget_p.cpp
+    bench/detectionbenchmarker.cpp
+    bench/recognitionbenchmarker.cpp
+    workers/detectionworker.cpp
+    workers/recognitionworker.cpp
+    workers/databasewriter.cpp
+    workers/trainerworker.cpp
 )
 
 include_directories($<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
