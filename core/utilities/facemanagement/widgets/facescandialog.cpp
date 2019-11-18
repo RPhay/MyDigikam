@@ -365,13 +365,14 @@ void FaceScanDialog::slotPrepareForRecognize(bool /*status*/)
 
     // Set default for Tag tab so that People and its children are checked
     AlbumList tagAlbums = AlbumManager::instance()->allTAlbums();
+    QString people      = i18nc("People on your photos", "People");
 
     for (int i = 0 ; i < tagAlbums.size() ; ++i)
     {
         Album* const album = tagAlbums[i];
 
-        if (album->title() == QLatin1String("People") ||
-           ((album->parent() != nullptr) && (album->parent()->title() == QLatin1String("People"))))
+        if (album->title() == people ||
+           ((album->parent() != nullptr) && (album->parent()->title() == people)))
         {
             d->albumSelectors->setTagSelected(album, false);
         }
