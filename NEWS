@@ -1,4 +1,4 @@
-digiKam 7.0.0 - Release date: 2019-xx-xx
+ digiKam 7.0.0 - Release date: 2019-xx-xx
 
 *****************************************************************************************************
 NEW FEATURES:
@@ -36,4 +36,6 @@ BUGFIXES:
 025 ==> 414112 - Rounding problems in Resize Image function.
 026 ==> 414052 - Packaging error of digikam-6.4.0.tar.xz, archive file contains a huge number of unnecessary files.
 027 ==> 404667 - Bug of proofing for illuminant A and color cast.
-028 ==> 
+028 ==> 414247 - digikam: error while loading shared libraries: libcudart.so.8.0.
+029 ==> 
+
