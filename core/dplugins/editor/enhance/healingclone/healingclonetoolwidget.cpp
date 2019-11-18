@@ -45,12 +45,12 @@ namespace DigikamEditorHealingCloneToolPlugin
 
 class Q_DECL_HIDDEN HealingCloneToolWidget::Private
 {
-
 public:
 
     explicit Private()
       : srcSet(true),
         isLassoPointsVectorEmpty(true),
+        src(QPoint(0, 0)),
         amIFocused(false),
         proceedInMoveEvent(false),
         cloneVectorChanged(true),
@@ -62,7 +62,6 @@ public:
         sourceCursor(nullptr),
         sourceCursorCenter(nullptr)
     {
-        src = QPoint(0, 0);
     }
 
     bool                  srcSet;
@@ -207,6 +206,7 @@ void HealingCloneToolWidget::mouseMoveEvent(QMouseEvent* e)
                                    currentSrc.y() + currentDst.y() - orgDst.y());
 
         // Source Cursor Update in scene coordinates
+
         QPointF tempCursorPosition = mapToScene(mapFromImageCoordinates(currentSrc));
         setSourceCursorPosition(tempCursorPosition);
 
@@ -576,7 +576,7 @@ void HealingCloneToolWidget::setDrawCursorPosition(const QPointF& topLeftPos)
     double d1          = d->drawCursor->rect().width() / 2.0;
     QPointF shiftedPos = QPointF(topLeftPos.x() - d1, topLeftPos.y() - d1);
 
-    // check if source is outside scene
+    // Check if source is outside scene
 
     bool drawCursorOutsideScene = (topLeftPos.x() < 0)                ||
                                   (topLeftPos.x() > scene()->width()) ||
@@ -605,7 +605,7 @@ void HealingCloneToolWidget::setSourceCursorPosition(const QPointF& topLeftPos)
     double d2           = d->sourceCursorCenter->rect().width() / 2.0;
     QPointF shiftedPos2 = QPointF(topLeftPos.x() - d2, topLeftPos.y() - d2);
 
-    // check if source is outside scene
+    // Check if source is outside scene
 
     bool sourceCursorOutsideScene = (topLeftPos.x() < 0)                ||
                                     (topLeftPos.x() > scene()->width()) ||

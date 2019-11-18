@@ -310,7 +310,8 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
     connect(d->previewWidget, SIGNAL(signalDecreaseBrushRadius()),
             this, SLOT(slotDecreaseBrushRadius()));
 
-    // undo - redo
+    // Undo - redo
+
     connect(d->previewWidget, SIGNAL(signalPushToUndoStack()),
             this, SLOT(slotPushToUndoStack()));
 
@@ -485,7 +486,9 @@ std::vector<QPoint> HealingCloneTool::interpolate(const QPoint& start, const QPo
     points.push_back(start);
     QPointF distanceVec = QPoint(end.x()-start.x(), end.y() - start.y());
     double distance     = sqrt(distanceVec.x() * distanceVec.x() + distanceVec.y() * distanceVec.y());
-    //creating a unit vector
+
+    // Creating a unit vector
+
     distanceVec.setX(distanceVec.x() / distance);
     distanceVec.setY(distanceVec.y() / distance);
     int steps           = (int) distance;
@@ -550,9 +553,9 @@ void HealingCloneTool::slotContinuePolygon()
         return;
     }
 
-    QPoint& start              = d->startLassoPoint;
-    QPoint& end                = d->previousLassoPoint;
-    std::vector<QPoint> points = interpolate(end,start);
+    QPoint& start              = d->previousLassoPoint;
+    QPoint& end                = d->startLassoPoint;
+    std::vector<QPoint> points = interpolate(start, end);
     updateLasso(points);
 
     d->lassoPoints.push_back(start);
