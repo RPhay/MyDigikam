@@ -401,10 +401,18 @@ void PreviewLoadingTask::execute()
 
         if (needPostProcess)
         {
-            // to receive progress info again. Should be safe now, we are alone.
-            addListener(this);
+            // To receive progress info again.
+            {
+                LoadingCache::CacheLock lock(cache);
+                addListener(this);
+            }
+
             postProcess();
-            removeListener(this);
+
+            {
+                LoadingCache::CacheLock lock(cache);
+                removeListener(this);
+            }
         }
     }
     else if (continueQuery(&m_img))

@@ -269,11 +269,18 @@ void SharedLoadingTask::execute()
         {
             m_img.detach();
         }
+        // To receive progress info again.
+        {
+            LoadingCache::CacheLock lock(cache);
+            addListener(this);
+        }
 
-        // to receive progress info again. Should be safe now, we are alone.
-        addListener(this);
         postProcess();
-        removeListener(this);
+
+        {
+            LoadingCache::CacheLock lock(cache);
+            removeListener(this);
+        }
     }
     else if (continueQuery(&m_img))
     {
