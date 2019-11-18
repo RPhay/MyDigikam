@@ -235,29 +235,29 @@ void XbelReader::readFolder(BookmarkNode* const parent)
     Q_ASSERT(isStartElement() && name() == QLatin1String("folder"));
 
     QSharedPointer<BookmarkNode> folder = QSharedPointer<BookmarkNode>(new BookmarkNode(BookmarkNode::Folder, parent));
-    folder.get()->expanded              = (attributes().value(QLatin1String("folded")) == QLatin1String("no"));
+    folder.data()->expanded              = (attributes().value(QLatin1String("folded")) == QLatin1String("no"));
 
     while (readNextStartElement())
     {
         if      (name() == QLatin1String("title"))
         {
-            readTitle(folder.get());
+            readTitle(folder.data());
         }
         else if (name() == QLatin1String("desc"))
         {
-            readDescription(folder.get());
+            readDescription(folder.data());
         }
         else if (name() == QLatin1String("folder"))
         {
-            readFolder(folder.get());
+            readFolder(folder.data());
         }
         else if (name() == QLatin1String("bookmark"))
         {
-            readBookmarkNode(folder.get());
+            readBookmarkNode(folder.data());
         }
         else if (name() == QLatin1String("separator"))
         {
-            readSeparator(folder.get());
+            readSeparator(folder.data());
         }
         else
         {
@@ -291,19 +291,19 @@ void XbelReader::readBookmarkNode(BookmarkNode* const parent)
     Q_ASSERT(isStartElement() && name() == QLatin1String("bookmark"));
 
     QSharedPointer<BookmarkNode> bookmark = QSharedPointer<BookmarkNode>(new BookmarkNode(BookmarkNode::Bookmark, parent));
-    bookmark.get()->url                   = attributes().value(QLatin1String("href")).toString();
+    bookmark.data()->url                  = attributes().value(QLatin1String("href")).toString();
     QString date                          = attributes().value(QLatin1String("added")).toString();
-    bookmark.get()->dateAdded             = QDateTime::fromString(date, Qt::ISODate);
+    bookmark.data()->dateAdded            = QDateTime::fromString(date, Qt::ISODate);
 
     while (readNextStartElement())
     {
         if (name() == QLatin1String("title"))
         {
-            readTitle(bookmark.get());
+            readTitle(bookmark.data());
         }
         else if (name() == QLatin1String("desc"))
         {
-            readDescription(bookmark.get());
+            readDescription(bookmark.data());
         }
         else
         {
@@ -311,9 +311,9 @@ void XbelReader::readBookmarkNode(BookmarkNode* const parent)
         }
     }
 
-    if (bookmark.get()->title.isEmpty())
+    if (bookmark.data()->title.isEmpty())
     {
-        bookmark.get()->title = i18n("Unknown title");
+        bookmark.data()->title = i18n("Unknown title");
     }
 }
 
