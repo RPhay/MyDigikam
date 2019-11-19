@@ -4,9 +4,11 @@
  * https://www.digikam.org
  *
  * Date        : 2010-09-17
- * Description : Face tag region item
+ * Description : Visibility states controller for assignment and confirmation of names for faces
  *
+ * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2012-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,46 +23,32 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_ITEM_H
-#define DIGIKAM_FACE_ITEM_H
-
-// Qt includes
-
-#include <QObject>
-#include <QGraphicsWidget>
+#ifndef DIGIKAM_ASSIGN_NAME_WIDGET_STATES_H
+#define DIGIKAM_ASSIGN_NAME_WIDGET_STATES_H
 
 // Local includes
 
-#include "facetagsiface.h"
-#include "assignnamewidget.h"
-#include "regionframeitem.h"
+#include "itemvisibilitycontroller.h"
 
 namespace Digikam
 {
 
-class HidingStateChanger;
+class FaceItem;
 
-class Q_DECL_HIDDEN FaceItem : public RegionFrameItem
+class AssignNameWidgetStates : public HidingStateChanger
 {
+    Q_OBJECT
+
 public:
 
-    explicit FaceItem(QGraphicsItem* const parent = nullptr);
+    explicit AssignNameWidgetStates(FaceItem* const item);
+    ~AssignNameWidgetStates();
 
-    void setFace(const FaceTagsIface& face);
-    FaceTagsIface face()                                const;
-    void setHudWidget(AssignNameWidget* const widget);
-    AssignNameWidget* widget()                          const;
-    void switchMode(AssignNameWidget::Mode mode);
-    void setEditable(bool allowEdit);
-    void updateCurrentTag();
+protected Q_SLOTS:
 
-protected:
-
-    FaceTagsIface       m_face;
-    AssignNameWidget*   m_widget;
-    HidingStateChanger* m_changer;
+    void slotStateChanged();
 };
 
 } // namespace Digikam
 
-#endif // DIGIKAM_FACE_ITEM_H
+#endif // DIGIKAM_ASSIGN_NAME_WIDGET_STATES_H

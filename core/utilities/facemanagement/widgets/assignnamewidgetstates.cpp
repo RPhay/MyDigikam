@@ -6,7 +6,9 @@
  * Date        : 2010-09-17
  * Description : Face tag region item
  *
+ * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2012-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,46 +23,39 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_ITEM_H
-#define DIGIKAM_FACE_ITEM_H
-
-// Qt includes
-
-#include <QObject>
-#include <QGraphicsWidget>
+#include "assignnamewidgetstates.h"
 
 // Local includes
 
-#include "facetagsiface.h"
+#include "digikam_debug.h"
+#include "faceitem.h"
 #include "assignnamewidget.h"
-#include "regionframeitem.h"
 
 namespace Digikam
 {
 
-class HidingStateChanger;
-
-class Q_DECL_HIDDEN FaceItem : public RegionFrameItem
+AssignNameWidgetStates::AssignNameWidgetStates(FaceItem* const item)
+    : HidingStateChanger(item->widget(), "mode", item)
 {
-public:
+    // The WidgetProxyItem
 
-    explicit FaceItem(QGraphicsItem* const parent = nullptr);
+    addItem(item->hudWidget());
 
-    void setFace(const FaceTagsIface& face);
-    FaceTagsIface face()                                const;
-    void setHudWidget(AssignNameWidget* const widget);
-    AssignNameWidget* widget()                          const;
-    void switchMode(AssignNameWidget::Mode mode);
-    void setEditable(bool allowEdit);
-    void updateCurrentTag();
+    connect(this, SIGNAL(stateChanged()),
+            this, SLOT(slotStateChanged()));
+}
 
-protected:
+AssignNameWidgetStates::~AssignNameWidgetStates()
+{
+}
 
-    FaceTagsIface       m_face;
-    AssignNameWidget*   m_widget;
-    HidingStateChanger* m_changer;
-};
+void AssignNameWidgetStates::slotStateChanged()
+{
+    FaceItem* const item = static_cast<FaceItem*>(parent());
+
+    // Show resize handles etc. only in edit modes
+
+    item->setEditable(item->widget()->mode() != AssignNameWidget::ConfirmedMode);
+}
 
 } // namespace Digikam
-
-#endif // DIGIKAM_FACE_ITEM_H

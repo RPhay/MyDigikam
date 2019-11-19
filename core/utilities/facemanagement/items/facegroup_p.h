@@ -48,6 +48,7 @@
 #include "metadatahub.h"
 #include "taggingaction.h"
 #include "digikam_debug.h"
+#include "itemvisibilitycontroller.h"
 
 namespace Digikam
 {

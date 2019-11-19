@@ -20,6 +20,7 @@ set(libfacemanagement_SRCS
     widgets/facescandialog.cpp
     widgets/assignnamewidget.cpp
     widgets/assignnamewidget_p.cpp
+    widgets/assignnamewidgetstates.cpp
     bench/detectionbenchmarker.cpp
     bench/recognitionbenchmarker.cpp
     workers/detectionworker.cpp

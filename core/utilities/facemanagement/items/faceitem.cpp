@@ -27,6 +27,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "assignnamewidgetstates.h"
 
 namespace Digikam
 {
@@ -68,14 +69,14 @@ AssignNameWidget* FaceItem::widget() const
 
 void FaceItem::switchMode(AssignNameWidget::Mode mode)
 {
-    if (!m_widget || m_widget->mode() == mode)
+    if (!m_widget || (m_widget->mode() == mode))
     {
         return;
     }
 
     if (!m_changer)
     {
-        m_changer = new AssignNameWidgetHidingStateChanger(this);
+        m_changer = new AssignNameWidgetStates(this);
     }
 
     m_changer->changeValue(mode);
@@ -92,28 +93,6 @@ void FaceItem::updateCurrentTag()
     {
         m_widget->setCurrentFace(m_face);
     }
-}
-
-//-------------------------------------------------------------------------------
-
-AssignNameWidgetHidingStateChanger::AssignNameWidgetHidingStateChanger(FaceItem* const item)
-    : HidingStateChanger(item->widget(), "mode", item)
-{
-    // The WidgetProxyItem
-
-    addItem(item->hudWidget());
-
-    connect(this, SIGNAL(stateChanged()),
-            this, SLOT(slotStateChanged()));
-}
-
-void AssignNameWidgetHidingStateChanger::slotStateChanged()
-{
-    FaceItem* const item = static_cast<FaceItem*>(parent());
-
-    // Show resize handles etc. only in edit modes
-
-    item->setEditable(item->widget()->mode() != AssignNameWidget::ConfirmedMode);
 }
 
 } // namespace Digikam
