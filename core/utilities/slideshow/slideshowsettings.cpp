@@ -7,6 +7,7 @@
  * Description : slide show settings container.
  *
  * Copyright (C) 2007-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2019 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,6 +44,7 @@ const QString SlideShowSettings::configGroupName(QLatin1String("ImageViewer Sett
 const QString SlideShowSettings::configSlideShowStartCurrentEntry(QLatin1String("SlideShowStartCurrent"));
 const QString SlideShowSettings::configSlideShowDelayEntry(QLatin1String("SlideShowDelay"));
 const QString SlideShowSettings::configSlideShowLoopEntry(QLatin1String("SlideShowLoop"));
+const QString SlideShowSettings::configSlideShowSuffleEntry(QLatin1String("SlideShowSuffle"));
 const QString SlideShowSettings::configSlideShowPrintApertureFocalEntry(QLatin1String("SlideShowPrintApertureFocal"));
 const QString SlideShowSettings::configSlideShowPrintCommentEntry(QLatin1String("SlideShowPrintComment"));
 const QString SlideShowSettings::configSlideShowPrintTitleEntry(QLatin1String("SlideShowPrintTitle"));
@@ -73,6 +75,7 @@ SlideShowSettings::SlideShowSettings()
       printLabels(false),
       printRating(false),
       loop(false),
+      suffle(false),
       delay(5),
       autoPlayEnabled(true),
       slideScreen(-2),
@@ -94,6 +97,7 @@ void SlideShowSettings::readFromConfig()
     startWithCurrent          = group.readEntry(configSlideShowStartCurrentEntry,         false);
     delay                     = group.readEntry(configSlideShowDelayEntry,                5);
     loop                      = group.readEntry(configSlideShowLoopEntry,                 false);
+    suffle                    = group.readEntry(configSlideShowSuffleEntry,               false);
     printName                 = group.readEntry(configSlideShowPrintNameEntry,            true);
     printDate                 = group.readEntry(configSlideShowPrintDateEntry,            false);
     printApertureFocal        = group.readEntry(configSlideShowPrintApertureFocalEntry,   false);
@@ -120,6 +124,7 @@ void SlideShowSettings::writeToConfig()
     group.writeEntry(configSlideShowStartCurrentEntry,         startWithCurrent);
     group.writeEntry(configSlideShowDelayEntry,                delay);
     group.writeEntry(configSlideShowLoopEntry,                 loop);
+    group.writeEntry(configSlideShowSuffleEntry,               suffle);
     group.writeEntry(configSlideShowPrintNameEntry,            printName);
     group.writeEntry(configSlideShowPrintDateEntry,            printDate);
     group.writeEntry(configSlideShowPrintApertureFocalEntry,   printApertureFocal);
@@ -145,6 +150,24 @@ int SlideShowSettings::indexOf(const QUrl& url) const
 int SlideShowSettings::count() const
 {
     return fileList.count();
+}
+
+void SlideShowSettings::suffleImages()
+{
+    qsrand(QTime::currentTime().msec());
+
+    QList<QUrl>::iterator it = fileList.begin();
+    QList<QUrl>::iterator it1;
+
+    for (uint i = 0 ; i < (uint)count() ; ++i)
+    {
+        int inc = (int) (float(count()) * qrand() / (RAND_MAX + 1.0));
+
+        it1     = fileList.begin();
+        it1    += inc;
+
+        std::swap(*(it++), *(it1));
+     }
 }
 
 } // namespace Digikam

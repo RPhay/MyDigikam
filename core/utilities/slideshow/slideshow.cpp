@@ -7,7 +7,8 @@
  * Description : slide show tool using preview of pictures.
  *
  * Copyright (C) 2005-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2004      by Enrico Ros <eros dot kde at email dot it>
+ * Copyright (C)      2004 by Enrico Ros <eros dot kde at email dot it>
+ * Copyright (C)      2019 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -203,6 +204,11 @@ SlideShow::SlideShow(DInfoInterface* const iface, const SlideShowSettings& setti
         screenIndex             = activeScreenIndex;
         d->settings.slideScreen = -2;
         d->settings.writeToConfig();
+    }
+
+    if (d->settings.suffle)
+    {
+        d->settings.suffleImages();
     }
 
     slotScreenSelected(screenIndex);

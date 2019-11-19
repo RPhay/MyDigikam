@@ -7,6 +7,7 @@
  * Description : setup tab for slideshow options.
  *
  * Copyright (C) 2005-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C)      2019 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -56,6 +57,7 @@ public:
     explicit Private()
       : startWithCurrent(nullptr),
         loopMode(nullptr),
+        suffleMode(nullptr),
         showName(nullptr),
         showDate(nullptr),
         showApertureFocal(nullptr),
@@ -76,6 +78,7 @@ public:
 
     QCheckBox*    startWithCurrent;
     QCheckBox*    loopMode;
+    QCheckBox*    suffleMode;
     QCheckBox*    showName;
     QCheckBox*    showDate;
     QCheckBox*    showApertureFocal;
@@ -126,6 +129,9 @@ SetupSlideShow::SetupSlideShow(QWidget* const parent)
 
     d->loopMode            = new QCheckBox(i18n("Slideshow runs in a loop"), panel);
     d->loopMode->setWhatsThis(i18n("Run the slideshow in a loop."));
+
+    d->suffleMode          = new QCheckBox(i18n("Suffle images"), panel);
+    d->suffleMode->setWhatsThis(i18n("If this option is enabled, the Slideshow will run in random order"));
 
     d->showProgress        = new QCheckBox(i18n("Show progress indicator"), panel);
     d->showProgress->setWhatsThis(i18n("Show a progress indicator with pending items to show and time progression."));
@@ -204,6 +210,7 @@ SetupSlideShow::SetupSlideShow(QWidget* const parent)
     layout->addWidget(hbox1);
     layout->addWidget(d->startWithCurrent);
     layout->addWidget(d->loopMode);
+    layout->addWidget(d->suffleMode);
     layout->addWidget(d->showProgress);
     layout->addWidget(d->showName);
     layout->addWidget(d->showDate);
@@ -242,6 +249,7 @@ void SetupSlideShow::applySettings()
     settings.delay                 = d->delayInput->value();
     settings.startWithCurrent      = d->startWithCurrent->isChecked();
     settings.loop                  = d->loopMode->isChecked();
+    settings.suffle                = d->suffleMode->isChecked();
     settings.printName             = d->showName->isChecked();
     settings.printDate             = d->showDate->isChecked();
     settings.printApertureFocal    = d->showApertureFocal->isChecked();
@@ -267,6 +275,7 @@ void SetupSlideShow::readSettings()
     d->delayInput->setValue(settings.delay);
     d->startWithCurrent->setChecked(settings.startWithCurrent);
     d->loopMode->setChecked(settings.loop);
+    d->suffleMode->setChecked(settings.suffle);
     d->showName->setChecked(settings.printName);
     d->showDate->setChecked(settings.printDate);
     d->showApertureFocal->setChecked(settings.printApertureFocal);

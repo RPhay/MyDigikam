@@ -4,6 +4,7 @@
 NEW FEATURES:
 
 FaceManagement: new Neural Network engine based on OpenCV to detect and recognize faces.
+SlideShow     ; Add new shuffle mode.
 
 *****************************************************************************************************
 BUGFIXES:
