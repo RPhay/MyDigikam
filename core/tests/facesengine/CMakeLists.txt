@@ -117,7 +117,7 @@ target_link_libraries(traindb
 
 set(facesenginedemo_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/demo/main.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/demo/mainwindow.cpp
-                         ${CMAKE_CURRENT_SOURCE_DIR}/demo/faceitem.cpp
+                         ${CMAKE_CURRENT_SOURCE_DIR}/demo/demofaceitem.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/demo/button.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/demo/marquee.cpp
                          ${CMAKE_CURRENT_SOURCE_DIR}/demo/fancyrect.cpp

@@ -39,7 +39,7 @@
 
 #include "recognitiondatabase.h"
 #include "facedetector.h"
-#include "faceitem.h"
+#include "demofaceitem.h"
 #include "dfiledialog.h"
 
 using namespace std;

@@ -23,7 +23,7 @@
  *
  * ============================================================ */
 
-#include "faceitem.h"
+#include "demofaceitem.h"
 
 // Qt includes
 
