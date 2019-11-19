@@ -58,18 +58,8 @@ public:
 
 public:
 
-    explicit FaceScanSettings()
-      : useFullCpu(false),
-        accuracy(70),
-        task(Detect),
-        alreadyScannedHandling(Skip),
-        recognizeAlgorithm(RecognitionDatabase::RecognizeAlgorithm::DNN) // Default is DNN with 7.0.0
-    {
-    }
-
-    ~FaceScanSettings()
-    {
-    }
+    explicit FaceScanSettings();
+    ~FaceScanSettings();
 
 public:
 

@@ -8,6 +8,7 @@
 set(libfacemanagement_SRCS
     database/faceutils.cpp
     database/faceitemretriever.cpp
+    database/facescansettings.cpp
     items/faceitem.cpp
     items/facegroup.cpp
     items/facegroup_p.cpp
