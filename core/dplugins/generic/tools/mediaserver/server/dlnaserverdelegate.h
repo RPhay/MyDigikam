@@ -46,12 +46,12 @@ class DLNAMediaServerDelegate : public PLT_MediaServerDelegate
 {
 public:
 
-    // constructor & destructor
+    // Constructor & destructor
     explicit DLNAMediaServerDelegate(const char* url_root,
                                      bool use_cache = false);
     ~DLNAMediaServerDelegate() override;
 
-    // class methods
+    // Class methods
     static NPT_String BuildSafeResourceUri(const NPT_HttpUrl& base_uri,
                                            const char*        host,
                                            const char*        file_path);
@@ -67,7 +67,7 @@ protected:
                                 NPT_UInt32                    starting_index,
                                 NPT_UInt32                    requested_count,
                                 const char*                   sort_criteria,
-                                const PLT_HttpRequestContext& context) override;
+                                const PLT_HttpRequestContext& context)          override;
 
     NPT_Result OnBrowseDirectChildren(PLT_ActionReference&          action,
                                       const char*                   object_id,
@@ -75,7 +75,7 @@ protected:
                                       NPT_UInt32                    starting_index,
                                       NPT_UInt32                    requested_count,
                                       const char*                   sort_criteria,
-                                      const PLT_HttpRequestContext& context) override;
+                                      const PLT_HttpRequestContext& context)    override;
 
     NPT_Result OnSearchContainer(PLT_ActionReference&          action,
                                  const char*                   object_id,
@@ -84,20 +84,21 @@ protected:
                                  NPT_UInt32                    starting_index,
                                  NPT_UInt32                    requested_count,
                                  const char*                   sort_criteria,
-                                 const PLT_HttpRequestContext& context) override;
+                                 const PLT_HttpRequestContext& context)         override;
 
     NPT_Result ProcessFileRequest(NPT_HttpRequest&              request,
                                   const NPT_HttpRequestContext& context,
-                                  NPT_HttpResponse&             response) override;
+                                  NPT_HttpResponse&             response)       override;
 
     NPT_Result OnUpdateObject(PLT_ActionReference&            action,
                               const char*                     object_id,
                               NPT_Map<NPT_String,NPT_String>& current_vals,
                               NPT_Map<NPT_String,NPT_String>& new_vals,
-                              const PLT_HttpRequestContext&   context) override;
+                              const PLT_HttpRequestContext&   context)          override;
 
-    // overridable methods
-    virtual NPT_Result ExtractResourcePath(const NPT_HttpUrl& url, NPT_String& file_path);
+    // Overridable methods
+    virtual NPT_Result ExtractResourcePath(const NPT_HttpUrl& url,
+                                           NPT_String& file_path);
 
     virtual NPT_String BuildResourceUri(const NPT_HttpUrl& base_uri,
                                         const char* host,
