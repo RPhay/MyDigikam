@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2010-06-21
- * Description : GUI test program for FacesEngine
+ * Description : Demo test program for FacesEngine
  *
  * Copyright (C) 2009-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2010 by Alex Jironkin <alexjironkin at gmail dot com>
@@ -23,8 +23,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DEMO_FACE_ITEM_H
-#define DIGIKAM_DEMO_FACE_ITEM_H
+#ifndef DIGIKAM_FACE_ENGINE_DEMO_FACE_ITEM_H
+#define DIGIKAM_FACE_ENGINE_DEMO_FACE_ITEM_H
 
 // Qt includes
 
@@ -37,9 +37,9 @@
 
 // Local includes
 
-#include "button.h"
+#include "demobutton.h"
 
-namespace Digikam
+namespace FaceEngineDemo
 {
 
 class FaceItem : public QGraphicsObject
@@ -97,6 +97,6 @@ private:
     Private* const d;
 };
 
-} // namespace Digikam
+} // namespace FaceEngineDemo
 
-#endif // DIGIKAM_DEMO_FACE_ITEM_H
+#endif // DIGIKAM_FACE_ENGINE_DEMO_FACE_ITEM_H

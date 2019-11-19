@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2010-06-21
- * Description : GUI test program for FacesEngine
+ * Description : Demo test program for FacesEngine
  *
  * Copyright (C) 2009-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2010 by Alex Jironkin <alexjironkin at gmail dot com>
@@ -39,10 +39,10 @@
 
 // Local includes
 
-#include "marquee.h"
-#include "fancyrect.h"
+#include "demomarquee.h"
+#include "demofancyrect.h"
 
-namespace Digikam
+namespace FaceEngineDemo
 {
 
 class Q_DECL_HIDDEN FaceItem::Private
@@ -93,8 +93,12 @@ public:
     Button*            suggestionAcceptButton;
 };
 
-FaceItem::FaceItem(QGraphicsItem* const parent, QGraphicsScene* const scene, const QRect& rect,
-                   double scale, const QString& name, double originalscale)
+FaceItem::FaceItem(QGraphicsItem* const parent,
+                   QGraphicsScene* const scene,
+                   const QRect& rect,
+                   double scale,
+                   const QString& name,
+                   double originalscale)
         : QGraphicsObject(parent),
           d(new Private)
 {
@@ -371,4 +375,4 @@ void FaceItem::paint(QPainter*, const QStyleOptionGraphicsItem*, QWidget*)
 {
 }
 
-} // namespace Digikam
+} // namespace FaceEngineDemo

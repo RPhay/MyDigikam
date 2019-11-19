@@ -23,27 +23,48 @@
  *
  * ============================================================ */
 
+#ifndef DIGIKAM_FACE_ENGINE_DEMO_MAIN_WINDOW_H
+#define DIGIKAM_FACE_ENGINE_DEMO_MAIN_WINDOW_H
+
 // Qt includes
 
-#include <QApplication>
+#include <QMainWindow>
 
-// Local includes
-
-#include "mainwindow.h"
-#include "coredbaccess.h"
-#include "dbengineparameters.h"
-
-using namespace Digikam;
-
-int main(int argc, char* argv[])
+namespace FaceEngineDemo
 {
-    QApplication a(argc, argv);
-    a.setApplicationName(QString::fromLatin1("digikam"));          // for DB init.
-    DbEngineParameters prm    = DbEngineParameters::parametersFromConfig();
-    CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
 
-    MainWindow w;
-    w.show();
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
 
-    return a.exec();
-}
+public:
+
+    explicit MainWindow(QWidget* const parent = nullptr);
+    ~MainWindow();
+
+public Q_SLOTS:
+
+    void slotOpenImage();
+    void slotDetectFaces();
+    void slotUpdateDatabase();
+    void slotRecognise();
+    void slotUpdateAccuracy();
+    void slotUpdateSensitivity();
+
+protected:
+
+    void changeEvent(QEvent* e) override;
+
+private:
+
+    void clearScene();
+
+private:
+
+    class Private;
+    Private* const d;
+};
+
+} // namespace FaceEngineDemo
+
+#endif // DIGIKAM_FACE_ENGINE_DEMO_MAIN_WINDOW_H

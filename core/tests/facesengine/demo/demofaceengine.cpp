@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2010-06-21
- * Description : GUI test program for FacesEngine
+ * Description : GUI demo program for FacesEngine
  *
  * Copyright (C) 2010-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2010 by Alex Jironkin <alexjironkin at gmail dot com>
@@ -23,43 +23,28 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DEMO_MAIN_WINDOW_H
-#define DIGIKAM_DEMO_MAIN_WINDOW_H
-
 // Qt includes
 
-#include <QMainWindow>
+#include <QApplication>
 
-class MainWindow : public QMainWindow
+// Local includes
+
+#include "demomainwindow.h"
+#include "coredbaccess.h"
+#include "dbengineparameters.h"
+
+using namespace Digikam;
+using namespace FaceEngineDemo;
+
+int main(int argc, char* argv[])
 {
-    Q_OBJECT
+    QApplication a(argc, argv);
+    a.setApplicationName(QString::fromLatin1("digikam"));          // for DB init.
+    DbEngineParameters prm = DbEngineParameters::parametersFromConfig();
+    CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
 
-public:
+    MainWindow w;
+    w.show();
 
-    explicit MainWindow(QWidget* const parent = nullptr);
-    ~MainWindow();
-
-public Q_SLOTS:
-
-    void slotOpenImage();
-    void slotDetectFaces();
-    void slotUpdateDatabase();
-    void slotRecognise();
-    void slotUpdateAccuracy();
-    void slotUpdateSensitivity();
-
-protected:
-
-    void changeEvent(QEvent* e) override;
-
-private:
-
-    void clearScene();
-
-private:
-
-    class Private;
-    Private* const d;
-};
-
-#endif // DIGIKAM_DEMO_MAIN_WINDOW_H
+    return a.exec();
+}

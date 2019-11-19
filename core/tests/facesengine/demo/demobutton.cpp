@@ -22,13 +22,13 @@
  *
  * ============================================================ */
 
-#include "button.h"
+#include "demobutton.h"
 
 // Qt includes
 
 #include <QGraphicsScene>
 
-namespace Digikam
+namespace FaceEngineDemo
 {
 
 class Q_DECL_HIDDEN Button::Private
@@ -147,4 +147,4 @@ void Button::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
     }
 }
 
-} // namespace Digikam
+} // namespace FaceEngineDemo

@@ -23,8 +23,8 @@
  *
  * ============================================================ */
 
-#include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "demomainwindow.h"
+#include "ui_demomainwindow.h"
 
 // Qt includes
 
@@ -44,6 +44,9 @@
 
 using namespace std;
 using namespace Digikam;
+
+namespace FaceEngineDemo
+{
 
 // --------------------------------------------------------------------------------------------------
 
@@ -310,3 +313,5 @@ void MainWindow::slotUpdateDatabase()
 
     unsetCursor();
 }
+
+} // namespace FaceEngineDemo

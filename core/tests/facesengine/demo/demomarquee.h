@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2010-07-23
- * Description : face marquer widget for FacesEngine
+ * Description : face marquer widget for FacesEngine Demo
  *
  * Copyright (C) 2009-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2010 by Adrien Bustany <madcat at mymadcat dot com>
@@ -23,8 +23,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_MARQUEE_H
-#define DIGIKAM_MARQUEE_H
+#ifndef DIGIKAM_FACE_ENGINE_DEMO_MARQUEE_H
+#define DIGIKAM_FACE_ENGINE_DEMO_MARQUEE_H
 
 // Qt includes
 
@@ -34,7 +34,7 @@
 #include <QGraphicsItem>
 #include <QGraphicsSceneMouseEvent>
 
-namespace Digikam
+namespace FaceEngineDemo
 {
 
 class FancyRect;
@@ -76,6 +76,6 @@ private:
     Private* const d;
 };
 
-} // namespace Digikam
+} // namespace FaceEngineDemo
 
-#endif // DIGIKAM_MARQUEE_H
+#endif // DIGIKAM_FACE_ENGINE_DEMO_MARQUEE_H

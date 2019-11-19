@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_DEMO_BUTTON_H
-#define DIGIKAM_DEMO_BUTTON_H
+#ifndef DIGIKAM_FACE_ENGINE_DEMO_BUTTON_H
+#define DIGIKAM_FACE_ENGINE_DEMO_BUTTON_H
 
 // Qt includes
 
@@ -32,7 +32,7 @@
 #include <QGraphicsItem>
 #include <QGraphicsSceneMouseEvent>
 
-namespace Digikam
+namespace FaceEngineDemo
 {
 
 class Button : public QObject,
@@ -69,6 +69,6 @@ private:
     Private* const d;
 };
 
-} // namespace Digikam
+} // namespace FaceEngineDemo
 
-#endif // DIGIKAM_DEMO_BUTTON_H
+#endif // DIGIKAM_FACE_ENGINE_DEMO_BUTTON_H

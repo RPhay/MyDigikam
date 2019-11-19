@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2008-07-23
- * Description : QGraphicsRectItem wrapper for FacesEngine
+ * Description : QGraphicsRectItem wrapper for FacesEngine Demo
  *
  * Copyright (C) 2009-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2008 by Adrien Bustany <madcat at mymadcat dot com>
@@ -23,7 +23,7 @@
  *
  * ============================================================ */
 
-#include "fancyrect.h"
+#include "demofancyrect.h"
 
 // Qt includes
 
@@ -32,7 +32,7 @@
 #include <QRectF>
 #include <QPainter>
 
-namespace Digikam
+namespace FaceEngineDemo
 {
 
 FancyRect::FancyRect(QGraphicsItem* const parent)
@@ -73,4 +73,4 @@ void FancyRect::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
     }
 }
 
-}   // Namespace FacesEngine
+} // Namespace FacesEngineDemo
