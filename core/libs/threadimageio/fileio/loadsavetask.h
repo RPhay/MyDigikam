@@ -149,7 +149,7 @@ public:
     virtual void setStatus(LoadingTaskStatus status)           override;
 
             bool needsPostProcessing() const;
-    virtual void postProcess();
+    virtual void postProcess(DImgLoaderObserver* const observer);
 
     // LoadingProcess
 

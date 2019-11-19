@@ -275,7 +275,7 @@ void SharedLoadingTask::execute()
             addListener(this);
         }
 
-        postProcess();
+        postProcess(this);
 
         {
             LoadingCache::CacheLock lock(cache);
@@ -310,7 +310,7 @@ bool SharedLoadingTask::needsPostProcessing() const
     return m_loadingDescription.postProcessingParameters.needsProcessing();
 }
 
-void SharedLoadingTask::postProcess()
+void SharedLoadingTask::postProcess(DImgLoaderObserver* const observer)
 {
     // ---- Color management ---- //
 
@@ -321,7 +321,7 @@ void SharedLoadingTask::postProcess()
         case LoadingDescription::ApplyTransform:
         {
             IccTransform trans = m_loadingDescription.postProcessingParameters.transform();
-            trans.apply(m_img, this);
+            trans.apply(m_img, observer);
             m_img.setIccProfile(trans.outputProfile());
             break;
         }

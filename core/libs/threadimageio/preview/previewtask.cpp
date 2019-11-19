@@ -407,7 +407,7 @@ void PreviewLoadingTask::execute()
                 addListener(this);
             }
 
-            postProcess();
+            postProcess(this);
 
             {
                 LoadingCache::CacheLock lock(cache);
