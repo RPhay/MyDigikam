@@ -447,8 +447,11 @@ FaceScanSettings FaceScanDialog::settings() const
     // settings.albums << d->albumSelectors->selectedAlbumsAndTags();
     settings.albums                 = d->albumSelectors->selectedAlbumsAndTags();
 
-    int numberOfIdentities          = FaceDbAccess().db()->getNumberOfIdentities();
-    d->settingsConflicted           = (numberOfIdentities == 0);
+    if (d->settingsConflicted)
+    {
+        int numberOfIdentities      = FaceDbAccess().db()->getNumberOfIdentities();
+        d->settingsConflicted       = (numberOfIdentities == 0);
+    }
 
     settings.useFullCpu             = d->useFullCpuButton->isChecked();
 
