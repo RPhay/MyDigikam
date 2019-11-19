@@ -4,10 +4,11 @@
  * https://www.digikam.org
  *
  * Date        : 2010-08-08
- * Description : database interface, also allowing easy manipulation of face tags
+ * Description : FaceEngine database interface allowing easy manipulation of face tags
  *
  * Copyright (C) 2010-2011 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2012-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -105,6 +106,7 @@ QList<FaceTagsIface> FaceUtils::toFaceTagsIfaces(qlonglong imageid,
         }
 
         // We'll get the unknownPersonTagId if the identity is null
+
         int tagId                = FaceTags::getOrCreateTagForIdentity(identity.attributesMap());
         QRect fullSizeRect       = TagRegion::relativeToAbsolute(detectedFaces[i], fullSize);
         FaceTagsIface::Type type = identity.isNull() ? FaceTagsIface::UnknownName : FaceTagsIface::UnconfirmedName;
@@ -114,8 +116,9 @@ QList<FaceTagsIface> FaceUtils::toFaceTagsIfaces(qlonglong imageid,
             faces << FaceTagsIface();
             continue;
         }
-
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "New Entry" << fullSizeRect << tagId;
+/*
+        qCDebug(DIGIKAM_GENERAL_LOG) << "New Entry" << fullSizeRect << tagId;
+*/
         faces << FaceTagsIface(type, imageid, tagId, TagRegion(fullSizeRect));
     }
 
@@ -153,6 +156,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
                                                         const QSize& fullSize)
 {
     // Build list of new entries
+
     QList<FaceTagsIface> newFaces = toFaceTagsIfaces(imageid, detectedFaces, recognitionResults, fullSize);
 
     if (newFaces.isEmpty())
@@ -161,9 +165,11 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
     }
 
     // list of existing entries
+
     QList<FaceTagsIface> currentFaces = databaseFaces(imageid);
 
     // merge new with existing entries
+
     for (int i = 0 ; i < newFaces.size() ; ++i)
     {
         FaceTagsIface& newFace = newFaces[i];
@@ -184,11 +190,13 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
         // The purpose if the next scope is to merge entries:
         // A confirmed face will never be overwritten.
         // If a name is set to an old face, it will only be replaced by a new face with a name.
+
         if (!overlappingEntries.isEmpty())
         {
             if (newFace.isUnknownName())
             {
                 // we have no name in the new face. Do we have one in the old faces?
+
                 for (int j = 0 ; j < overlappingEntries.size() ; ++j)
                 {
                     const FaceTagsIface& oldFace = overlappingEntries.at(j);
@@ -200,6 +208,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
                     else
                     {
                         // skip new entry if any overlapping face has a name, and we do not
+
                         newFace = FaceTagsIface();
                         break;
                     }
@@ -208,6 +217,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
             else
             {
                 // we have a name in the new face. Do we have names in overlapping faces?
+
                 for (int j = 0 ; j < overlappingEntries.size() ; ++j)
                 {
                     FaceTagsIface& oldFace = overlappingEntries[j];
@@ -221,6 +231,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
                         if (oldFace.tagId() == newFace.tagId())
                         {
                             // remove smaller face
+
                             if (oldFace.region().intersects(newFace.region(), 1))
                             {
                                 newFace = FaceTagsIface();
@@ -237,6 +248,7 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
                     else if (oldFace.isConfirmedName())
                     {
                         // skip new entry, confirmed has of course priority
+
                         newFace = FaceTagsIface();
                     }
                 }
@@ -244,17 +256,21 @@ QList<FaceTagsIface> FaceUtils::writeUnconfirmedResults(qlonglong imageid,
         }
 
         // if we did not decide to skip this face, add is to the db now
+
         if (!newFace.isNull())
         {
             // list will contain all old entries that should still be removed
+
             removeFaces(overlappingEntries);
 
             ItemTagPair pair(imageid, newFace.tagId());
 
             // UnconfirmedName and UnknownName have the same attribute
+
             addFaceAndTag(pair, newFace, FaceTagsIface::attributesForFlags(FaceTagsIface::UnconfirmedName), false);
 
             // If the face is unconfirmed and the tag is not the unknown person tag, set the unconfirmed person property.
+
             if (newFace.isUnconfirmedType() && !FaceTags::isTheUnknownPerson(newFace.tagId()))
             {
                 ItemTagPair unconfirmedPair(imageid, FaceTags::unconfirmedPersonTagId());
@@ -278,7 +294,7 @@ Identity FaceUtils::identityForTag(int tagId, RecognitionDatabase& db) const
     }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Adding new FacesEngine identity with attributes" << attributes;
-    identity = db.addIdentity(attributes);
+    identity                          = db.addIdentity(attributes);
 
     FaceTags::applyTagIdentityMapping(tagId, identity.attributesMap());
 

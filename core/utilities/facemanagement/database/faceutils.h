@@ -4,10 +4,11 @@
  * https://www.digikam.org
  *
  * Date        : 2010-08-08
- * Description : FacesEngine interface, also allowing easy manipulation of face tags
+ * Description : FacesEngine database interface allowing easy manipulation of face tags
  *
  * Copyright (C) 2010-2011 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  * Copyright (C) 2010-2011 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2012-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -58,7 +59,7 @@ public:
 
 public:
 
-    FaceUtils();
+    explicit FaceUtils();
     virtual ~FaceUtils();
 
     // --- Face detection and recognition ---
@@ -70,17 +71,17 @@ public:
      * If a face was skipped (because of an existing entry), a null FaceTagsIface will be at this place.
      */
     QList<FaceTagsIface> writeUnconfirmedResults(qlonglong imageid,
-                                                const QList<QRectF>& detectedFaces,
-                                                const QList<Identity> recognitionResults,
-                                                const QSize& fullSize);
+                                                 const QList<QRectF>& detectedFaces,
+                                                 const QList<Identity> recognitionResults,
+                                                 const QSize& fullSize);
 
     // --- Status flags ---
 
     /**
      * Tells if the image has been scanned for faces or not
      */
-    bool                hasBeenScanned(const ItemInfo& info) const;
-    bool                hasBeenScanned(qlonglong imageid) const;
+    bool                hasBeenScanned(const ItemInfo& info)                            const;
+    bool                hasBeenScanned(qlonglong imageid)                               const;
 
     /**
      * Marks the image as scanned for faces.
@@ -95,8 +96,10 @@ public:
      * If requested, the faces will be scaled to the given (fixed) size.
      */
 /*
-    void                fillImageInFaces(ThumbnailImageCatcher* const catcher, const QString& filePath,
-                                         QList<Face>& faceList, const QSize& scaleSize = QSize()) const;
+    void                fillImageInFaces(ThumbnailImageCatcher* const catcher,
+                                         const QString& filePath,
+                                         QList<Face>& faceList,
+                                         const QSize& scaleSize = QSize())              const;
 */
 
     /**
@@ -114,7 +117,7 @@ public:
     QList<FaceTagsIface> toFaceTagsIfaces(qlonglong imageid,
                                          const QList<QRectF>& detectedFaces,
                                          const QList<Identity> recognitionResults,
-                                         const QSize& fullSize) const;
+                                         const QSize& fullSize)                         const;
 
     /**
      * For display, it may be desirable to display a slightly larger region than the strict
@@ -123,12 +126,12 @@ public:
      */
     static int          faceRectDisplayMargin();
 
-    Identity identityForTag(int tagId, RecognitionDatabase& db)   const;
-    int                  tagForIdentity(const Identity& identity) const;
+    Identity identityForTag(int tagId, RecognitionDatabase& db)                         const;
+    int                  tagForIdentity(const Identity& identity)                       const;
 
 protected:
 
-    /* Reimplemented */
+    // Reimplemented
     virtual void addNormalTag(qlonglong imageid, int tagId);
     virtual void removeNormalTag(qlonglong imageid, int tagId);
     virtual void removeNormalTags(qlonglong imageid, QList<int> tagId);
