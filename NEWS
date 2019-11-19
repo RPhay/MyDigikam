@@ -38,5 +38,5 @@ BUGFIXES:
 026 ==> 414052 - Packaging error of digikam-6.4.0.tar.xz, archive file contains a huge number of unnecessary files.
 027 ==> 404667 - Bug of proofing for illuminant A and color cast.
 028 ==> 414247 - digikam: error while loading shared libraries: libcudart.so.8.0.
-029 ==> 
-
+029 ==> 392758 - Slideshow with random pictures [patch].
+030 ==> 
