@@ -1,0 +1,233 @@
+[Desktop Entry]
+Type=Theme
+Name=HTML5 Responsive
+Name[en_GB]=HTML5 Responsive
+Comment=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
+Comment[en_GB]=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
+
+[X-HTMLGallery Author]
+Name=Bobulous
+Url=https://www.bobulous.org.uk/
+
+[X-HTMLGallery Preview]
+Name=HTML5 Responsive
+Name[en_GB]=HTML5 Responsive
+Url=preview.png
+
+[X-HTMLGallery Options]
+Allow-non-square-thumbnails=true
+
+[X-HTMLGallery Parameter author]
+Name=Author
+Name[en_GB]=Author
+Name[es]=Autor
+Name[eu]=Egilea
+Name[fi]=Tekijä
+Name[fr]=Auteur
+Name[gl]=Autor
+Name[is]=Höfundur
+Name[it]=Autore
+Name[nl]=Auteur
+Name[nn]=Opphavsperson
+Name[pl]=Autor
+Name[pt]=Autor
+Name[pt_BR]=Autor
+Name[ru]=Автор
+Name[sv]=Upphovsman
+Name[tr]=Yazar
+Name[uk]=Автор
+Name[x-test]=xxAuthorxx
+Name[zh_CN]=作者
+Type=string
+Default=
+
+[X-HTMLGallery Parameter style]
+Name=Style
+Name[ca]=Estil
+Name[ca@valencia]=Estil
+Name[cs]=Styl
+Name[de]=Stil
+Name[el]=Στιλ
+Name[en_GB]=Style
+Name[es]=Estilo
+Name[eu]=Estiloa
+Name[fi]=Tyyli
+Name[fr]=Style
+Name[gl]=Estilo
+Name[is]=Stíll
+Name[it]=Stile
+Name[nb]=Stil
+Name[nl]=Stijl
+Name[nn]=Stil
+Name[pl]=Wygląd
+Name[pt]=Estilo
+Name[pt_BR]=Estilo
+Name[ru]=Цветовая гамма
+Name[se]=Stiila
+Name[sv]=Stil
+Name[tr]=Stil
+Name[uk]=Стиль
+Name[x-test]=xxStylexx
+Name[zh_CN]=样式
+Type=list
+Default=basic.css
+Value-0=basic.css
+Caption-0=Basic
+Value-1=lightbox.css
+Caption-1=Lightbox
+Value-2=feed.css
+Caption-2=Feed
+Value-3=brownCard.css
+Caption-3=Brown Card
+
+[X-HTMLGallery Parameter pageSize]
+Name=Images per page
+Name[ca]=Imatges per pàgina
+Name[ca@valencia]=Imatges per pàgina
+Name[cs]=Obrázků na stránku
+Name[de]=Bilder pro Seite
+Name[el]=Εικόνες ανά σελίδα
+Name[en_GB]=Images per page
+Name[es]=Imágenes por página
+Name[eu]=Irudiak orriko
+Name[fi]=Kuvaa/sivu
+Name[fr]=Images par page
+Name[gl]=Imaxes por páxina
+Name[is]=Myndir á hverri síðu
+Name[it]=Immagini per pagina
+Name[nl]=Afbeeldingen per pagina
+Name[nn]=Bilete per side
+Name[pl]=Obrazów na stronę
+Name[pt]=Imagens por página
+Name[pt_BR]=Imagens por página
+Name[ru]=Изображений на странице
+Name[sv]=Bilder per sida
+Name[tr]=Sayfa başına resim
+Name[uk]=Кількість зображень на сторінку
+Name[x-test]=xxImages per pagexx
+Name[zh_CN]=每页的图像
+Type=int
+Default=20
+
+[X-HTMLGallery Parameter paginationLocation]
+Name=Page links location
+Name[ca]=La pàgina enllaça amb la ubicació
+Name[ca@valencia]=La pàgina enllaça amb la ubicació
+Name[el]=Θέση δεσμών σελίδας
+Name[en_GB]=Page links location
+Name[es]=Ubicación de los enlaces de páginas
+Name[eu]=Orriko esteken kokalekua
+Name[fi]=Kuvalinkkien sijainti
+Name[fr]=Position des liens de page
+Name[gl]=Lugar das ligazóns das páxinas
+Name[is]=Staðsetning síðutengla
+Name[it]=Posizione collegamenti della pagina
+Name[nl]=Locatie van paginakoppelingen
+Name[nn]=Plassering av sidelenkjer
+Name[pl]=Położenie odsyłaczy stron
+Name[pt]=Localização das ligações à página
+Name[pt_BR]=Localização dos links da página
+Name[ru]=Расположение ссылок на страницы
+Name[sv]=Plats för sidlänkar
+Name[tr]=Sayfa bağlantıları konumu
+Name[uk]=Розташування посилань на сторінці
+Name[x-test]=xxPage links locationxx
+Name[zh_CN]=页面链接位置
+Type=list
+Default=top
+Value-0=bottom
+Caption-0=Bottom
+Value-1=top
+Caption-1=Top
+Value-2=both
+Caption-2=Both
+
+[X-HTMLGallery Parameter paginationModeTop]
+Name=Top pagination mode
+Name[en_GB]=Top pagination mode
+Type=list
+Default=currentOfTotal
+Value-0=currentOfTotal
+Caption-0=Current
+Value-1=fullList
+Caption-1=List all
+
+[X-HTMLGallery Parameter paginationModeBottom]
+Name=Bottom pagination mode
+Name[en_GB]=Bottom pagination mode
+Type=list
+Default=fullList
+Value-0=currentOfTotal
+Caption-0=Current
+Value-1=fullList
+Caption-1=List all
+
+[X-HTMLGallery Parameter usePhotoSwipe]
+Name=Use PhotoSwipe
+Name[ca]=Usa el PhotoSwipe
+Name[ca@valencia]=Usa el PhotoSwipe
+Name[cs]=Použít PhotoSwipe
+Name[el]=Χρήση PhotoSwipe
+Name[en_GB]=Use PhotoSwipe
+Name[es]=Usar PhotoSwipe
+Name[eu]=Erabili PhotoSwipe
+Name[fi]=Käytä PhotoSwipe
+Name[fr]=Utiliser PhotoSwipe
+Name[gl]=Usar PhotoSwipe
+Name[is]=Nota PhotoSwipe
+Name[it]=Usa PhotoSwipe
+Name[nl]=PhotoSwipe gebruiken
+Name[nn]=Bruk PhotoSwipe
+Name[pl]=Użyj PhotoSwipe
+Name[pt]=Usar o PhotoSwipe
+Name[pt_BR]=Usar o PhotoSwipe
+Name[ru]=Использовать PhotoSwipe
+Name[sv]=Använd PhotoSwipe
+Name[tr]=PhotoSwipe Kullan
+Name[uk]=Використання PhotoSwipe
+Name[x-test]=xxUse PhotoSwipexx
+Name[zh_CN]=使用 PhotoSwipe
+Type=list
+Default=true
+Value-0=true
+Caption-0=Yes
+Value-1=false
+Caption-1=No
+
+[X-HTMLGallery Parameter photoSwipeBackgroundOpacity]
+Name=PhotoSwipe Background Opacity
+Name[en_GB]=PhotoSwipe Background Opacity
+Type=int
+Default=10
+Min=0
+Max=10
+
+[X-HTMLGallery Parameter photoSwipeShowSharingButton]
+Name=PhotoSwipe sharing button
+Name[en_GB]=PhotoSwipe sharing button
+Type=list
+Default=false
+Value-0=true
+Caption-0=Yes
+Value-1=false
+Caption-1=No
+
+[X-HTMLGallery Parameter addJiggle]
+Name=Add jiggle
+Name[en_GB]=Add jiggle
+Type=list
+Default=true
+Value-0=true
+Caption-0=Yes
+Value-1=false
+Caption-1=No
+
+[X-HTMLGallery Parameter showGPS]
+Name=Show GPS data
+Name[en_GB]=Show GPS data
+Type=list
+Default=false
+Value-0=true
+Caption-0=Yes
+Value-1=false
+Caption-1=No
