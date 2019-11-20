@@ -27,9 +27,9 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QPointer>
-#include <QDebug>
 #include <QByteArray>
 #include <QFileInfo>
+#include <QStandardPaths>
 #include <QTemporaryFile>
 
 // KDE includes
@@ -39,6 +39,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "digikam_globals.h"
 #include "dimg.h"
 #include "loadingdescription.h"
@@ -59,7 +60,6 @@ public:
     QProcess*          rawtherapee;
     DImg               decoded;
     LoadingDescription props;
-    QFileInfo          fileInfo;
     QTemporaryFile*    tempFile;
 };
 
@@ -117,9 +117,9 @@ void RawTherapeeRawImportPlugin::setup(QObject* const /*parent*/)
 
 bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*/)
 {
-    d->fileInfo = QFileInfo(filePath);
-    d->props    = LoadingDescription(d->fileInfo.filePath(), LoadingDescription::ConvertForEditor);
-    d->decoded  = DImg();
+    QFileInfo fileInfo(filePath);
+    d->props   = LoadingDescription(fileInfo.filePath(), LoadingDescription::ConvertForEditor);
+    d->decoded = DImg();
 
     delete d->tempFile;
 
@@ -128,7 +128,7 @@ bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding
 
     d->rawtherapee = new QProcess(this);
     d->rawtherapee->setProcessChannelMode(QProcess::MergedChannels);
-    d->rawtherapee->setWorkingDirectory(d->fileInfo.path());
+    d->rawtherapee->setWorkingDirectory(fileInfo.path());
     d->rawtherapee->setProcessEnvironment(adjustedEnvironmentForAppImage());
 
     connect(d->rawtherapee, SIGNAL(errorOccurred(QProcess::ProcessError)),
@@ -142,12 +142,21 @@ bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding
 
     // --------
 
-    d->fileInfo = QFileInfo(filePath);
+    QStringList binPaths;
 
-    d->rawtherapee->setProgram(QLatin1String("rawtherapee"));
-    d->rawtherapee->setArguments(QStringList() << QLatin1String("-gimp")   // Special mode used initialy as Gimp plugin
-                                              << filePath                 // Input file
-                                              << d->tempFile->fileName()); // Output file
+#ifdef Q_OS_WIN
+    binPaths << QLatin1String("C:/Program Files/RawTherapee/5.4/");
+    binPaths << QLatin1String("C:/Program Files/RawTherapee/5.5/");
+    binPaths << QLatin1String("C:/Program Files/RawTherapee/5.6/");
+    binPaths << QLatin1String("C:/Program Files/RawTherapee/5.7/");
+#endif
+
+    QString binary = QStandardPaths::findExecutable(QLatin1String("rawtherapee"), binPaths);
+
+    d->rawtherapee->setProgram(binary);
+    d->rawtherapee->setArguments(QStringList() << QLatin1String("-gimp")    // Special mode used initialy as Gimp plugin
+                                               << filePath                  // Input file
+                                               << d->tempFile->fileName()); // Output file
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "RawTherapee arguments:" << d->rawtherapee->arguments();
 
