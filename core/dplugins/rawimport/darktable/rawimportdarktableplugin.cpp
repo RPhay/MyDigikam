@@ -29,10 +29,10 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QPointer>
-#include <QDebug>
 #include <QByteArray>
 #include <QTextStream>
 #include <QFileInfo>
+#include <QStandardPaths>
 #include <QTemporaryFile>
 
 // KDE includes
@@ -42,6 +42,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "digikam_globals.h"
 #include "dimg.h"
 #include "loadingdescription.h"
@@ -164,18 +165,18 @@ void DarkTableRawImportPlugin::setup(QObject* const /*parent*/)
 
 bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& /*def*/)
 {
-    d->fileInfo = QFileInfo(filePath);
-    d->props    = LoadingDescription(d->fileInfo.filePath(), LoadingDescription::ConvertForEditor);
-    d->decoded  = DImg();
+    QFileInfo fileInfo(filePath);
+    d->props     = LoadingDescription(fileInfo.filePath(), LoadingDescription::ConvertForEditor);
+    d->decoded   = DImg();
 
     delete d->tempFile;
 
-    d->tempFile = new QTemporaryFile();
+    d->tempFile  = new QTemporaryFile();
     d->tempFile->open();
 
-    d->darktable    = new QProcess(this);
+    d->darktable = new QProcess(this);
     d->darktable->setProcessChannelMode(QProcess::MergedChannels);
-    d->darktable->setWorkingDirectory(d->fileInfo.path());
+    d->darktable->setWorkingDirectory(fileInfo.path());
     d->darktable->setProcessEnvironment(adjustedEnvironmentForAppImage());
 
     connect(d->darktable, SIGNAL(errorOccurred(QProcess::ProcessError)),
@@ -189,20 +190,26 @@ bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& 
 
     // --------
 
-    d->fileInfo = QFileInfo(filePath);
+    QStringList binPaths;
 
-    d->darktable->setProgram(QLatin1String("darktable"));
+#ifdef Q_OS_WIN
+    binPaths << QLatin1String("C:/Program Files/darktable/bin/");
+#endif
+
+    QString binary = QStandardPaths::findExecutable(QLatin1String("darktable"), binPaths);
+
+    d->darktable->setProgram(binary);
     d->darktable->setArguments(QStringList() << QLatin1String("--library")
-                                            << QLatin1String(":memory:")                                    // Run DarkTable to process only one file
-                                            << QLatin1String("--luacmd")
-                                            << QString::fromUtf8("dofile('%1')")
-                                               .arg(d->luaFile.fileName())                                   // LUA script to run in DarkTable
-                                            << QLatin1String("--conf")
-                                            << QLatin1String("plugins/lighttable/export/icctype=3")         // Output color-space
-                                            << QLatin1String("--conf")
-                                            << QString::fromUtf8("lua/export_on_exit/export_filename=%1")
-                                               .arg(d->tempFile->fileName())                                 // Output file
-                                            << filePath);                                                   // Input file
+                                             << QLatin1String(":memory:")                                  // Run DarkTable to process only one file
+                                             << QLatin1String("--luacmd")
+                                             << QString::fromUtf8("dofile('%1')")
+                                                .arg(d->luaFile.fileName())                                // LUA script to run in DarkTable
+                                             << QLatin1String("--conf")
+                                             << QLatin1String("plugins/lighttable/export/icctype=3")       // Output color-space
+                                             << QLatin1String("--conf")
+                                             << QString::fromUtf8("lua/export_on_exit/export_filename=%1")
+                                                .arg(d->tempFile->fileName())                              // Output file
+                                             << filePath);                                                 // Input file
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable arguments:" << d->darktable->arguments();
 
