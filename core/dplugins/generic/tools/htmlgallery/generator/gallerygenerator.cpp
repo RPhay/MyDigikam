@@ -34,6 +34,7 @@
 #include <QUrl>
 #include <QList>
 #include <QTemporaryFile>
+#include <QSharedPointer>
 
 // KDE includes
 
@@ -82,17 +83,21 @@ public:
     {
     }
 
-    GalleryGenerator* that;
-    GalleryInfo*      info;
-    GalleryTheme::Ptr theme;
+public:
+
+    GalleryGenerator*           that;
+    GalleryInfo*                info;
+    GalleryTheme::Ptr           theme;
 
     // State info
-    bool              warnings;
-    QString           xmlFileName;
+    bool                        warnings;
+    QString                     xmlFileName;
 
-    bool              cancel;
-    DHistoryView*     pview;
-    DProgressWdg*     pbar;
+    bool                        cancel;
+    DHistoryView*               pview;
+    DProgressWdg*               pbar;
+
+    QSharedPointer<const char*> params;
 
 public:
 
@@ -156,7 +161,9 @@ public:
         QString baseDestDir = info->destUrl().toLocalFile();
 
         if (!createDir(baseDestDir))
+        {
             return false;
+        }
 
         xmlFileName         = baseDestDir + QLatin1String("/gallery.xml");
         XMLWriter xmlWriter;
@@ -182,7 +189,9 @@ public:
                 DInfoInterface::DInfoMap   inf;
 
                 if (info->m_iface)
+                {
                     inf = info->m_iface->albumInfo(id);
+                }
 
                 DAlbumInfo anf(inf);
                 QString title              = anf.title();
@@ -200,6 +209,7 @@ public:
                 xmlWriter.writeElement("comment",  anf.caption());
 
                 // Gather image element list
+
                 QList<QUrl> imageList;
 
                 if (info->m_iface)
@@ -208,7 +218,9 @@ public:
                 }
 
                 if (!processImages(xmlWriter, imageList, title, destDir))
+                {
                     return false;
+                }
             }
         }
         else
@@ -227,7 +239,9 @@ public:
             xmlWriter.writeElement("fileName", collectionFileName);
 
             if (!processImages(xmlWriter, info->m_imageList, title, destDir))
+            {
                 return false;
+            }
         }
 
         return true;
@@ -257,7 +271,9 @@ public:
             DInfoInterface::DInfoMap inf;
 
             if (info->m_iface)
+            {
                 inf = info->m_iface->itemInfo(url);
+            }
 
             GalleryElement element = GalleryElement(inf);
             element.m_path         = remoteUrlHash.value(url, url.toLocalFile());
@@ -265,6 +281,7 @@ public:
         }
 
         // Generate images
+
         logInfo(i18n("Generating files for \"%1\"", title));
         GalleryElementFunctor functor(that, info, destDir);
         QFuture<void> future = QtConcurrent::map(imageElementList, functor);
@@ -289,6 +306,7 @@ public:
         }
 
         // Generate xml
+
         foreach (const GalleryElement& element, imageElementList)
         {
             element.appendToXML(xmlWriter, info->copyOriginalImage());
@@ -321,14 +339,15 @@ public:
         }
 
         // Prepare parameters
+
         XsltParameterMap map;
         addI18nParameters(map);
         addThemeParameters(map);
 
-        const char** params            = new const char*[map.size()*2+1];
+        params                         = QSharedPointer<const char*>(new const char*[map.size()*2+1]);
         XsltParameterMap::Iterator it  = map.begin();
         XsltParameterMap::Iterator end = map.end();
-        const char** ptr               = params;
+        const char** ptr               = params.data();
 
         for ( ; it != end ; ++it)
         {
@@ -340,15 +359,14 @@ public:
 
         *ptr = nullptr;
 
-        // Move to the destination dir, so that external documents get correctly
-        // produced
+        // Move to the destination dir, so that external documents get correctly produced.
+
         QString oldCD                             = QDir::currentPath();
         QDir::setCurrent(info->destUrl().toLocalFile());
 
-        CWrapper<xmlDocPtr, xmlFreeDoc> xmlOutput = xsltApplyStylesheet(xslt, xmlGallery, params);
+        CWrapper<xmlDocPtr, xmlFreeDoc> xmlOutput = xsltApplyStylesheet(xslt, xmlGallery, params.data());
 
         QDir::setCurrent(oldCD);
-        //delete []params;
 
         if (!xmlOutput)
         {
@@ -475,7 +493,7 @@ public:
         GalleryTheme::ParameterList::ConstIterator it  = parameterList.constBegin();
         GalleryTheme::ParameterList::ConstIterator end = parameterList.constEnd();
 
-        for (; it != end ; ++it)
+        for ( ; it != end ; ++it)
         {
             AbstractThemeParameter* const themeParameter = *it;
             QByteArray internalName                      = themeParameter->internalName();
@@ -513,6 +531,7 @@ public:
         else
         {
             // Forth case: both apos and quote :-(
+
             const QStringList lst = txt.split(QLatin1Char(apos), QString::KeepEmptyParts);
 
             QStringList::ConstIterator it  = lst.constBegin();
@@ -521,7 +540,7 @@ public:
             param                         += QLatin1Char(apos) + *it + QLatin1Char(apos);
             ++it;
 
-            for (; it != end ; ++it)
+            for ( ; it != end ; ++it)
             {
                 param += QLatin1String(", \"'\", ");
                 param += QLatin1Char(apos) + *it + QLatin1Char(apos);
@@ -529,9 +548,9 @@ public:
 
             param += QLatin1Char(')');
         }
-
-        //qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "param: " << txt << " => " << param;
-
+/*
+        qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "param: " << txt << " => " << param;
+*/
         return param.toUtf8();
     }
 
@@ -574,19 +593,27 @@ GalleryGenerator::~GalleryGenerator()
 bool GalleryGenerator::run()
 {
     if (!d->init())
+    {
         return false;
+    }
 
     QString destDir = d->info->destUrl().toLocalFile();
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << destDir;
 
     if (!d->createDir(destDir))
+    {
         return false;
+    }
 
     if (!d->copyTheme())
+    {
         return false;
+    }
 
     if (!d->generateImagesAndXML())
+    {
         return false;
+    }
 
     exsltRegisterAll();
 
