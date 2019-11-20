@@ -130,7 +130,7 @@ SetupSlideShow::SetupSlideShow(QWidget* const parent)
     d->loopMode            = new QCheckBox(i18n("Slideshow runs in a loop"), panel);
     d->loopMode->setWhatsThis(i18n("Run the slideshow in a loop."));
 
-    d->suffleMode          = new QCheckBox(i18n("Suffle images"), panel);
+    d->suffleMode          = new QCheckBox(i18n("Shuffle images"), panel);
     d->suffleMode->setWhatsThis(i18n("If this option is enabled, the Slideshow will run in random order"));
 
     d->showProgress        = new QCheckBox(i18n("Show progress indicator"), panel);
