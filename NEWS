@@ -41,4 +41,5 @@ BUGFIXES:
 028 ==> 414247 - digikam: error while loading shared libraries: libcudart.so.8.0.
 029 ==> 392758 - Slideshow with random pictures [patch].
 030 ==> 414300 - Buttons on either side completely unresponsive.
-031 ==> 
+031 ==> 414320 - Performance regression when scanning directories with many sub-directories.
+032 ==> 

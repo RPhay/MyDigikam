@@ -487,14 +487,15 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
             QFileInfo fileInfo(location.albumRootPath() + (*it).relativePath);
             bool dirExist = (fileInfo.exists() && fileInfo.isDir());
 
-            if (!(*it).relativePath.endsWith(QLatin1Char('/')))
+#ifdef Q_OS_WIN
+            if (dirExist && !(*it).relativePath.endsWith(QLatin1Char('/')))
             {
                 QDir dir(fileInfo.dir());
                 dirExist = dir.entryList(QDir::Dirs |
                                          QDir::NoDotAndDotDot)
                                          .contains(fileInfo.fileName());
             }
-
+#endif
             // let digikam think that ignored directories got deleted
             // (if they already exist in the database, this will delete them)
             if (!dirExist || d->ignoreDirectory.contains(fileInfo.fileName()))
@@ -550,14 +551,15 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
                     QFileInfo fileInfo(location.albumRootPath() + it.key().relativePath);
                     bool dirExist = (fileInfo.exists() && fileInfo.isDir());
 
-                    if (!it.key().relativePath.endsWith(QLatin1Char('/')))
+#ifdef Q_OS_WIN
+                    if (dirExist && !it.key().relativePath.endsWith(QLatin1Char('/')))
                     {
                         QDir dir(fileInfo.dir());
                         dirExist = dir.entryList(QDir::Dirs |
                                                  QDir::NoDotAndDotDot)
                                                  .contains(fileInfo.fileName());
                     }
-
+#endif
                     // Make sure ignored directories are not used in renaming operations
                     if (dirExist && d->ignoreDirectory.contains(fileInfo.fileName()))
                     {
