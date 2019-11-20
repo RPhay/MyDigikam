@@ -44,8 +44,8 @@ public:
 
     explicit ThumbnailLoadingTask(LoadSaveThread* const thread, const LoadingDescription& description);
 
-    void execute()                                       override;
-    void postProcess(DImgLoaderObserver* const observer) override;
+    void execute()     override;
+    void postProcess() override;
     void setThumbResult(const LoadingDescription& loadingDescription, const QImage& qimage);
 
 private:

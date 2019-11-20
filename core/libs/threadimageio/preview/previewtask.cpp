@@ -401,18 +401,7 @@ void PreviewLoadingTask::execute()
 
         if (needPostProcess)
         {
-            // To receive progress info again.
-            {
-                LoadingCache::CacheLock lock(cache);
-                addListener(this);
-            }
-
-            postProcess(this);
-
-            {
-                LoadingCache::CacheLock lock(cache);
-                removeListener(this);
-            }
+            postProcess();
         }
     }
     else if (continueQuery(&m_img))

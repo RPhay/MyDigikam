@@ -269,18 +269,8 @@ void SharedLoadingTask::execute()
         {
             m_img.detach();
         }
-        // To receive progress info again.
-        {
-            LoadingCache::CacheLock lock(cache);
-            addListener(this);
-        }
 
-        postProcess(this);
-
-        {
-            LoadingCache::CacheLock lock(cache);
-            removeListener(this);
-        }
+        postProcess();
     }
     else if (continueQuery(&m_img))
     {
@@ -310,7 +300,7 @@ bool SharedLoadingTask::needsPostProcessing() const
     return m_loadingDescription.postProcessingParameters.needsProcessing();
 }
 
-void SharedLoadingTask::postProcess(DImgLoaderObserver* const observer)
+void SharedLoadingTask::postProcess()
 {
     // ---- Color management ---- //
 
@@ -321,7 +311,7 @@ void SharedLoadingTask::postProcess(DImgLoaderObserver* const observer)
         case LoadingDescription::ApplyTransform:
         {
             IccTransform trans = m_loadingDescription.postProcessingParameters.transform();
-            trans.apply(m_img, observer);
+            trans.apply(m_img);
             m_img.setIccProfile(trans.outputProfile());
             break;
         }

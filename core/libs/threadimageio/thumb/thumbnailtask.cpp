@@ -229,7 +229,7 @@ void ThumbnailLoadingTask::execute()
 
     if (continueQuery(nullptr) && !m_qimage.isNull())
     {
-        postProcess(this);
+        postProcess();
     }
     else
     {
@@ -258,7 +258,7 @@ void ThumbnailLoadingTask::setThumbResult(const LoadingDescription& loadingDescr
     m_qimage                                            = qimage;
 }
 
-void ThumbnailLoadingTask::postProcess(DImgLoaderObserver* const /*observer*/)
+void ThumbnailLoadingTask::postProcess()
 {
     m_loadingDescription.postProcessingParameters.profile().description();
 
