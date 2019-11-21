@@ -156,7 +156,7 @@ SetupRaw::SetupRaw(QTabWidget* const tab)
     d->toolAbout = new QPushButton;
     d->toolAbout->setIcon(QIcon::fromTheme(QLatin1String("help-about")));
     d->toolAbout->setToolTip(i18n("About this Raw Import tool..."));
-    
+
     // ----------------------------------------------
 
     boxLayout->addWidget(openIcon,         0, 0);
@@ -284,11 +284,14 @@ void SetupRaw::slotAboutRawImportPlugin()
     {
         DPluginRawImport* const raw = dynamic_cast<DPluginRawImport*>(p);
 
-        if (raw && (raw->iid() == iid))
+        if (raw)
         {
-            QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(dynamic_cast<DPlugin*>(raw));
-            dlg->exec();
-            delete dlg;
+            if (raw->iid() == iid)
+            {
+                QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(dynamic_cast<DPlugin*>(raw));
+                dlg->exec();
+                delete dlg;
+            }
         }
     }
 }
