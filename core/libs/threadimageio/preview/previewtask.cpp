@@ -320,8 +320,7 @@ void PreviewLoadingTask::execute()
 
                 for (int i = 0 ; i < m_listeners.count() ; ++i)
                 {
-                    LoadingProcessListener* const l  = m_listeners.at(i);
-                    LoadSaveNotifier* const notifier = l->loadSaveNotifier();
+                    LoadingProcessListener* const l = m_listeners.at(i);
 
                     if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
                     {
@@ -332,11 +331,6 @@ void PreviewLoadingTask::execute()
                     else
                     {
                         l->setResult(m_loadingDescription, m_img);
-                    }
-
-                    if (notifier)
-                    {
-                        notifier->imageLoaded(m_loadingDescription, m_img);
                     }
                 }
 
