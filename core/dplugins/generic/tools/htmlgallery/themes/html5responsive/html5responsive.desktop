@@ -1,9 +1,7 @@
 [Desktop Entry]
 Type=Theme
 Name=HTML5 Responsive
-Name[en_GB]=HTML5 Responsive
 Comment=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
-Comment[en_GB]=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
 
 [X-HTMLGallery Author]
 Name=Bobulous
@@ -11,7 +9,6 @@ Url=https://www.bobulous.org.uk/
 
 [X-HTMLGallery Preview]
 Name=HTML5 Responsive
-Name[en_GB]=HTML5 Responsive
 Url=preview.png
 
 [X-HTMLGallery Options]
@@ -19,6 +16,11 @@ Allow-non-square-thumbnails=true
 
 [X-HTMLGallery Parameter author]
 Name=Author
+Name[ca]=Autor
+Name[ca@valencia]=Autor
+Name[cs]=Autor
+Name[de]=Autor
+Name[el]=Συγγραφέας
 Name[en_GB]=Author
 Name[es]=Autor
 Name[eu]=Egilea
@@ -144,7 +146,6 @@ Caption-2=Both
 
 [X-HTMLGallery Parameter paginationModeTop]
 Name=Top pagination mode
-Name[en_GB]=Top pagination mode
 Type=list
 Default=currentOfTotal
 Value-0=currentOfTotal
@@ -154,7 +155,6 @@ Caption-1=List all
 
 [X-HTMLGallery Parameter paginationModeBottom]
 Name=Bottom pagination mode
-Name[en_GB]=Bottom pagination mode
 Type=list
 Default=fullList
 Value-0=currentOfTotal
@@ -164,29 +164,6 @@ Caption-1=List all
 
 [X-HTMLGallery Parameter usePhotoSwipe]
 Name=Use PhotoSwipe
-Name[ca]=Usa el PhotoSwipe
-Name[ca@valencia]=Usa el PhotoSwipe
-Name[cs]=Použít PhotoSwipe
-Name[el]=Χρήση PhotoSwipe
-Name[en_GB]=Use PhotoSwipe
-Name[es]=Usar PhotoSwipe
-Name[eu]=Erabili PhotoSwipe
-Name[fi]=Käytä PhotoSwipe
-Name[fr]=Utiliser PhotoSwipe
-Name[gl]=Usar PhotoSwipe
-Name[is]=Nota PhotoSwipe
-Name[it]=Usa PhotoSwipe
-Name[nl]=PhotoSwipe gebruiken
-Name[nn]=Bruk PhotoSwipe
-Name[pl]=Użyj PhotoSwipe
-Name[pt]=Usar o PhotoSwipe
-Name[pt_BR]=Usar o PhotoSwipe
-Name[ru]=Использовать PhotoSwipe
-Name[sv]=Använd PhotoSwipe
-Name[tr]=PhotoSwipe Kullan
-Name[uk]=Використання PhotoSwipe
-Name[x-test]=xxUse PhotoSwipexx
-Name[zh_CN]=使用 PhotoSwipe
 Type=list
 Default=true
 Value-0=true
@@ -196,7 +173,6 @@ Caption-1=No
 
 [X-HTMLGallery Parameter photoSwipeBackgroundOpacity]
 Name=PhotoSwipe Background Opacity
-Name[en_GB]=PhotoSwipe Background Opacity
 Type=int
 Default=10
 Min=0
@@ -204,7 +180,6 @@ Max=10
 
 [X-HTMLGallery Parameter photoSwipeShowSharingButton]
 Name=PhotoSwipe sharing button
-Name[en_GB]=PhotoSwipe sharing button
 Type=list
 Default=false
 Value-0=true
@@ -214,7 +189,6 @@ Caption-1=No
 
 [X-HTMLGallery Parameter addJiggle]
 Name=Add jiggle
-Name[en_GB]=Add jiggle
 Type=list
 Default=true
 Value-0=true
@@ -224,7 +198,6 @@ Caption-1=No
 
 [X-HTMLGallery Parameter showGPS]
 Name=Show GPS data
-Name[en_GB]=Show GPS data
 Type=list
 Default=false
 Value-0=true

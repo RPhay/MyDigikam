@@ -30,10 +30,7 @@ namespace Digikam
 
 DImg& DImg::operator=(const DImg& image)
 {
-    //qCDebug(DIGIKAM_DIMG_LOG) << "Original image: " << m_priv->imageHistory.entries().count() << " | " << &m_priv;
-    //qCDebug(DIGIKAM_DIMG_LOG) << "New image: " << image.m_priv->imageHistory.entries().count() << " | " << &(image.m_priv);
     m_priv = image.m_priv;
-    //qCDebug(DIGIKAM_DIMG_LOG) << "Original new image: " << m_priv->imageHistory.entries().count() << " | " << &m_priv;
     return *this;
 }
 
@@ -63,8 +60,10 @@ void DImg::detach()
 
     if (old->data)
     {
-        size_t size = allocateData();
-        memcpy(m_priv->data, old->data, size);
+        if (size_t size = allocateData())
+        {
+            memcpy(m_priv->data, old->data, size);
+        }
     }
 }
 
