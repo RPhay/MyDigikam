@@ -103,9 +103,9 @@ ToolSettingsView::ToolSettingsView(QWidget* const parent)
 
     DVBox* const vbox            = new DVBox(this);
     QFrame* const toolDescriptor = new QFrame(vbox);
-    d->settingsViewIcon    = new QLabel();
-    d->settingsViewTitle   = new QLabel();
-    QFont font             = d->settingsViewTitle->font();
+    d->settingsViewIcon          = new QLabel();
+    d->settingsViewTitle         = new QLabel();
+    QFont font                   = d->settingsViewTitle->font();
     font.setBold(true);
     d->settingsViewTitle->setFont(font);
 
@@ -182,11 +182,14 @@ ToolSettingsView::~ToolSettingsView()
 
 void ToolSettingsView::slotAboutPlugin()
 {
-    if (d->tool && d->tool->plugin())
+    if (d->tool)
     {
-        QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(dynamic_cast<DPlugin*>(d->tool->plugin()));
-        dlg->exec();
-        delete dlg;
+        if (d->tool->plugin())
+        {
+            QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(dynamic_cast<DPlugin*>(d->tool->plugin()));
+            dlg->exec();
+            delete dlg;
+        }
     }
 }
 
@@ -233,7 +236,7 @@ int ToolSettingsView::viewMode() const
 
 void ToolSettingsView::setViewMode(int mode)
 {
-    if (mode != Private::MessageView && mode != Private::SettingsView)
+    if ((mode != Private::MessageView) && (mode != Private::SettingsView))
     {
         return;
     }
