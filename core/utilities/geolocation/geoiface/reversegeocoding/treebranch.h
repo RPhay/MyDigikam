@@ -30,6 +30,10 @@
 #include <QPersistentModelIndex>
 #include <QList>
 
+// Local includes
+
+#include "gpsitemcontainer.h"
+
 namespace Digikam
 {
 
@@ -38,7 +42,8 @@ class TreeBranch
 public:
 
     explicit TreeBranch()
-      : parent(nullptr)
+      : parent(nullptr),
+        type(TypeChild)
     {
     }
 
