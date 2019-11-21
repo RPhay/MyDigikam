@@ -104,67 +104,66 @@ SetupSlideShow::SetupSlideShow(QWidget* const parent)
     : QScrollArea(parent),
       d(new Private)
 {
-    QWidget* const panel        = new QWidget(viewport());
+    QWidget* const panel      = new QWidget(viewport());
     setWidget(panel);
     setWidgetResizable(true);
 
-    const int spacing           = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-    QGridLayout* const layout   = new QGridLayout(panel);
+    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    DHBox* const hbox1     = new DHBox(panel);
+    DHBox* const hbox1        = new DHBox(panel);
     new QLabel(i18n("Delay between images:"), hbox1);
-    d->delayInput          = new DIntNumInput(hbox1);
+    d->delayInput             = new DIntNumInput(hbox1);
     d->delayInput->setDefaultValue(5);
     d->delayInput->setRange(1, 3600, 1);
     d->delayInput->setWhatsThis(i18n("The delay, in seconds, between images."));
 
-    d->startWithCurrent    = new QCheckBox(i18n("Start with current image"), panel);
+    d->startWithCurrent       = new QCheckBox(i18n("Start with current image"), panel);
     d->startWithCurrent->setWhatsThis(i18n("If this option is enabled, the Slideshow will be started "
                                            "with the current image selected in the images list."));
 
-    d->loopMode            = new QCheckBox(i18n("Slideshow runs in a loop"), panel);
+    d->loopMode               = new QCheckBox(i18n("Slideshow runs in a loop"), panel);
     d->loopMode->setWhatsThis(i18n("Run the slideshow in a loop."));
 
-    d->suffleMode          = new QCheckBox(i18n("Shuffle images"), panel);
+    d->suffleMode             = new QCheckBox(i18n("Shuffle images"), panel);
     d->suffleMode->setWhatsThis(i18n("If this option is enabled, the Slideshow will run in random order"));
 
-    d->showProgress        = new QCheckBox(i18n("Show progress indicator"), panel);
+    d->showProgress           = new QCheckBox(i18n("Show progress indicator"), panel);
     d->showProgress->setWhatsThis(i18n("Show a progress indicator with pending items to show and time progression."));
 
-    d->showName            = new QCheckBox(i18n("Show image file name"), panel);
+    d->showName               = new QCheckBox(i18n("Show image file name"), panel);
     d->showName->setWhatsThis(i18n("Show the image file name at the bottom of the screen."));
 
-    d->showDate            = new QCheckBox(i18n("Show image creation date"), panel);
+    d->showDate               = new QCheckBox(i18n("Show image creation date"), panel);
     d->showDate->setWhatsThis(i18n("Show the image creation time/date at the bottom of the screen."));
 
-    d->showApertureFocal   = new QCheckBox(i18n("Show camera aperture and focal length"), panel);
+    d->showApertureFocal      = new QCheckBox(i18n("Show camera aperture and focal length"), panel);
     d->showApertureFocal->setWhatsThis(i18n("Show the camera aperture and focal length at the bottom of the screen."));
 
-    d->showExpoSensitivity = new QCheckBox(i18n("Show camera exposure and sensitivity"), panel);
+    d->showExpoSensitivity    = new QCheckBox(i18n("Show camera exposure and sensitivity"), panel);
     d->showExpoSensitivity->setWhatsThis(i18n("Show the camera exposure and sensitivity at the bottom of the screen."));
 
-    d->showMakeModel       = new QCheckBox(i18n("Show camera make and model"), panel);
+    d->showMakeModel          = new QCheckBox(i18n("Show camera make and model"), panel);
     d->showMakeModel->setWhatsThis(i18n("Show the camera make and model at the bottom of the screen."));
 
-    d->showComment         = new QCheckBox(i18n("Show image caption"), panel);
+    d->showComment            = new QCheckBox(i18n("Show image caption"), panel);
     d->showComment->setWhatsThis(i18n("Show the image caption at the bottom of the screen."));
 
-    d->showTitle           = new QCheckBox(i18n("Show image title"), panel);
+    d->showTitle              = new QCheckBox(i18n("Show image title"), panel);
     d->showTitle->setWhatsThis(i18n("Show the image title at the bottom of the screen."));
 
-    d->showCapIfNoTitle    = new QCheckBox(i18n("Show image caption if it has not title"), panel);
+    d->showCapIfNoTitle       = new QCheckBox(i18n("Show image caption if it has not title"), panel);
     d->showCapIfNoTitle->setWhatsThis(i18n("Show the image caption at the bottom of the screen if no titles existed."));
 
-    d->showTags            = new QCheckBox(i18n("Show image tags"), panel);
+    d->showTags               = new QCheckBox(i18n("Show image tags"), panel);
     d->showTags->setWhatsThis(i18n("Show the digiKam image tag names at the bottom of the screen."));
 
-    d->showLabels          = new QCheckBox(i18n("Show image labels"), panel);
+    d->showLabels             = new QCheckBox(i18n("Show image labels"), panel);
     d->showLabels->setWhatsThis(i18n("Show the digiKam image color label and pick label at the bottom of the screen."));
 
-    d->showRating          = new QCheckBox(i18n("Show image rating"), panel);
+    d->showRating             = new QCheckBox(i18n("Show image rating"), panel);
     d->showRating->setWhatsThis(i18n("Show the digiKam image rating at the bottom of the screen."));
 
-    d->captionFont         = new DFontSelect(i18n("Caption font:"), panel);
+    d->captionFont            = new DFontSelect(i18n("Caption font:"), panel);
     d->captionFont->setToolTip(i18n("Select here the font used to display text in the slideshow."));
 
     DHBox* const screenSelectBox = new DHBox(panel);
@@ -186,6 +185,7 @@ SetupSlideShow::SetupSlideShow(QWidget* const parent)
     d->screenPlacement->addItems(choices);
 
     // Disable and uncheck the "Show captions if no title" checkbox if the "Show comment" checkbox enabled
+
     connect(d->showComment, SIGNAL(stateChanged(int)),
             this, SLOT(slotSetUnchecked(int)));
 
@@ -193,6 +193,7 @@ SetupSlideShow::SetupSlideShow(QWidget* const parent)
             d->showCapIfNoTitle, SLOT(setDisabled(bool)));
 
     // Only digiKam support this feature, showFoto do not support digiKam database information.
+
     if (qApp->applicationName() == QLatin1String("showfoto"))
     {
         d->showCapIfNoTitle->hide();
@@ -202,29 +203,28 @@ SetupSlideShow::SetupSlideShow(QWidget* const parent)
         d->showTags->hide();
     }
 
-    layout->addWidget(hbox1, 0, 0);
-
-    layout->addWidget(d->startWithCurrent, 1, 0);
-    layout->addWidget(d->loopMode, 1, 1);
-    layout->addWidget(d->suffleMode, 2, 0);
-    layout->addWidget(d->showProgress, 2, 1);
-    layout->addWidget(d->showName, 3, 0);
-    layout->addWidget(d->showDate, 3, 1);
-    layout->addWidget(d->showApertureFocal, 4, 0);
-    layout->addWidget(d->showExpoSensitivity, 4, 1);
-    layout->addWidget(d->showMakeModel, 5, 0);
-    layout->addWidget(d->showComment, 5, 1);
-    layout->addWidget(d->showTitle, 6, 0);
-    layout->addWidget(d->showCapIfNoTitle, 6, 1);
-    layout->addWidget(d->showTags,7, 0);
-    layout->addWidget(d->showLabels, 7, 1);
-    layout->addWidget(d->showRating, 8, 0);
-    layout->addWidget(d->captionFont, 9, 0);
-    layout->addWidget(screenSelectBox, 9, 1);
-
-    //layout->rowStretch(9);
-    layout->setContentsMargins(spacing, spacing, spacing, spacing);
-    layout->setSpacing(spacing);
+    QGridLayout* const grid   = new QGridLayout(panel);
+    grid->addWidget(hbox1,                   0, 0, 1, 2);
+    grid->addWidget(d->startWithCurrent,     1, 0, 1, 1);
+    grid->addWidget(d->loopMode,             1, 1, 1, 1);
+    grid->addWidget(d->suffleMode,           2, 0, 1, 1);
+    grid->addWidget(d->showProgress,         2, 1, 1, 1);
+    grid->addWidget(d->showName,             3, 0, 1, 1);
+    grid->addWidget(d->showDate,             3, 1, 1, 1);
+    grid->addWidget(d->showApertureFocal,    4, 0, 1, 1);
+    grid->addWidget(d->showExpoSensitivity,  4, 1, 1, 1);
+    grid->addWidget(d->showMakeModel,        5, 0, 1, 1);
+    grid->addWidget(d->showComment,          5, 1, 1, 1);
+    grid->addWidget(d->showTitle,            6, 0, 1, 1);
+    grid->addWidget(d->showCapIfNoTitle,     6, 1, 1, 1);
+    grid->addWidget(d->showTags,             7, 0, 1, 1);
+    grid->addWidget(d->showLabels,           7, 1, 1, 1);
+    grid->addWidget(d->showRating,           8, 0, 1, 1);
+    grid->addWidget(d->captionFont,          9, 0, 1, 2);
+    grid->addWidget(screenSelectBox,        10, 0, 1, 2);
+    grid->setRowStretch(11, 10);
+    grid->setContentsMargins(spacing, spacing, spacing, spacing);
+    grid->setSpacing(spacing);
 
     readSettings();
 }
