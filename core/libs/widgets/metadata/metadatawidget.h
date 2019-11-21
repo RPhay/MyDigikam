@@ -58,7 +58,7 @@ public:
     explicit MetadataWidget(QWidget* const parent, const QString& name=QString());
     ~MetadataWidget();
 
-    int     getMode() const;
+    int     getMode()           const;
     void    setMode(int mode);
 
     QStringList getTagsFilter() const;
@@ -72,8 +72,10 @@ public:
     virtual QString getTagTitle(const QString& key);
     virtual QString getTagDescription(const QString& key);
 
-    virtual bool loadFromData(const QString& fileName, const DMetadata& data=DMetadata());
-    virtual bool loadFromURL(const QUrl& url)=0;
+    virtual bool loadFromData(const QString& fileName,
+                              const DMetadata& data=DMetadata());
+
+    virtual bool loadFromURL(const QUrl& url) = 0;
 
 Q_SIGNALS:
 
@@ -81,7 +83,7 @@ Q_SIGNALS:
 
 protected Q_SLOTS:
 
-    virtual void slotSaveMetadataToFile()=0;
+    virtual void slotSaveMetadataToFile() = 0;
 
 protected:
 
@@ -105,8 +107,8 @@ protected:
     virtual void buildView();
     virtual void setMetadataEmpty();
 
-    virtual bool    decodeMetadata()=0;
-    virtual QString getMetadataTitle()=0;
+    virtual bool    decodeMetadata()   = 0;
+    virtual QString getMetadataTitle() = 0;
 
 private Q_SLOTS :
 

@@ -300,6 +300,7 @@ bool MetadataWidget::storeMetadataToFile(const QUrl& url, const QByteArray& meta
     QDataStream stream( &file );
     stream.writeRawData(metaData.data(), metaData.size());
     file.close();
+
     return true;
 }
 
@@ -347,14 +348,18 @@ void MetadataWidget::slotCopy2Clipboard()
             do
             {
                 item2                               = dynamic_cast<QTreeWidgetItem*>(lvItem)->child(j);
-                MetadataListViewItem* const lvItem2 = dynamic_cast<MetadataListViewItem*>(item2);
 
-                if (lvItem2)
+                if (item2)
                 {
-                    textmetadata.append(lvItem2->text(0));
-                    textmetadata.append(QLatin1String(" : "));
-                    textmetadata.append(lvItem2->text(1));
-                    textmetadata.append(QLatin1Char('\n'));
+                    MetadataListViewItem* const lvItem2 = dynamic_cast<MetadataListViewItem*>(item2);
+
+                    if (lvItem2)
+                    {
+                        textmetadata.append(lvItem2->text(0));
+                        textmetadata.append(QLatin1String(" : "));
+                        textmetadata.append(lvItem2->text(1));
+                        textmetadata.append(QLatin1Char('\n'));
+                    }
                 }
 
                 ++j;
@@ -452,6 +457,7 @@ QUrl MetadataWidget::saveMetadataToFile(const QString& caption, const QString& f
     }
 
     delete fileSaveDialog;
+
     return (!urls.isEmpty() ? urls[0] : QUrl());
 }
 
@@ -463,11 +469,17 @@ void MetadataWidget::setMode(int mode)
     }
 
     if (mode == NONE)
+    {
         d->noneAction->setChecked(true);
+    }
     else if (mode == PHOTO)
+    {
         d->photoAction->setChecked(true);
+    }
     else
+    {
         d->customAction->setChecked(true);
+    }
 
     buildView();
 }
@@ -475,9 +487,13 @@ void MetadataWidget::setMode(int mode)
 int MetadataWidget::getMode() const
 {
     if (d->noneAction->isChecked())
+    {
         return NONE;
+    }
     else if (d->photoAction->isChecked())
+    {
         return PHOTO;
+    }
 
     return CUSTOM;
 }
