@@ -84,19 +84,19 @@ public:
     int marginHint();
     int spacingHint();
 
-    QWidget*      plainPage()    const;
-    HistogramBox* histogramBox() const;
+    QWidget*      plainPage()           const;
+    HistogramBox* histogramBox()        const;
 
-    QColor guideColor() const;
+    QColor guideColor()                 const;
     void setGuideColor(const QColor& color);
 
-    int guideSize() const;
+    int guideSize()                     const;
     void setGuideSize(int size);
 
     QPushButton* button(int buttonCode) const;
     void enableButton(int buttonCode, bool state);
 
-    virtual QSize minimumSizeHint() const override;
+    virtual QSize minimumSizeHint()     const override;
     virtual void setBusy(bool)   {};
     virtual void writeSettings() {};
     virtual void readSettings()  {};

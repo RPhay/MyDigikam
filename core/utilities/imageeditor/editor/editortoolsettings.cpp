@@ -147,7 +147,7 @@ EditorToolSettings::EditorToolSettings(QWidget* const parent)
     font.setBold(true);
     d->toolName->setFont(font);
 
-    d->toolAbout         = new QPushButton();
+    d->toolAbout                 = new QPushButton();
     d->toolAbout->setIcon(QIcon::fromTheme(QLatin1String("help-about")));
     d->toolAbout->setToolTip(i18n("About this tool..."));
 
@@ -310,12 +310,15 @@ QSize EditorToolSettings::minimumSizeHint() const
     // Set scroll area to a horizontal minimum size sufficient for the settings.
     // Do not touch vertical size hint.
     // Limit to 40% of the desktop width.
+
     QScreen* screen = qApp->primaryScreen();
 
     if (QWidget* const widget = d->settingsArea->nativeParentWidget())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     QRect desktopRect = screen->geometry();
@@ -442,11 +445,14 @@ void EditorToolSettings::setTool(EditorTool* const tool)
 
 void EditorToolSettings::slotAboutPlugin()
 {
-    if (d->tool && d->tool->plugin())
+    if (d->tool)
     {
-        QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(dynamic_cast<DPlugin*>(d->tool->plugin()));
-        dlg->exec();
-        delete dlg;
+        if (d->tool->plugin())
+        {
+            QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(dynamic_cast<DPlugin*>(d->tool->plugin()));
+            dlg->exec();
+            delete dlg;
+        }
     }
 }
 
