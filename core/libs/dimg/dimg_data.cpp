@@ -131,9 +131,11 @@ void DImg::resetMetaData()
 
 uchar* DImg::stripImageData()
 {
-    uchar* const data  = m_priv->data;
-    m_priv->data       = nullptr;
-    m_priv->null       = true;
+    uchar* const data = m_priv->data;
+    m_priv->data      = nullptr;
+    m_priv->null      = true;
+    m_priv->width     = 0;
+    m_priv->height    = 0;
     return data;
 }
 
