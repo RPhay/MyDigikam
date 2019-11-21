@@ -104,24 +104,19 @@ SetupSlideShow::SetupSlideShow(QWidget* const parent)
     : QScrollArea(parent),
       d(new Private)
 {
-    QWidget* const panel      = new QWidget(viewport());
+    QWidget* const panel        = new QWidget(viewport());
     setWidget(panel);
     setWidgetResizable(true);
 
-    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-    QVBoxLayout* const layout = new QVBoxLayout(panel);
+    const int spacing           = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    QGridLayout* const layout   = new QGridLayout(panel);
 
     DHBox* const hbox1     = new DHBox(panel);
-    QLabel* const lbl1     = new QLabel(i18n("Delay between images:"), hbox1);
-    lbl1->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    hbox1->setStretchFactor(lbl1, 5);
-    QWidget* const space   = new QWidget(hbox1);
-    hbox1->setStretchFactor(space, 5);
+    new QLabel(i18n("Delay between images:"), hbox1);
     d->delayInput          = new DIntNumInput(hbox1);
     d->delayInput->setDefaultValue(5);
     d->delayInput->setRange(1, 3600, 1);
     d->delayInput->setWhatsThis(i18n("The delay, in seconds, between images."));
-    hbox1->setStretchFactor(d->delayInput, 10);
 
     d->startWithCurrent    = new QCheckBox(i18n("Start with current image"), panel);
     d->startWithCurrent->setWhatsThis(i18n("If this option is enabled, the Slideshow will be started "
@@ -207,25 +202,27 @@ SetupSlideShow::SetupSlideShow(QWidget* const parent)
         d->showTags->hide();
     }
 
-    layout->addWidget(hbox1);
-    layout->addWidget(d->startWithCurrent);
-    layout->addWidget(d->loopMode);
-    layout->addWidget(d->suffleMode);
-    layout->addWidget(d->showProgress);
-    layout->addWidget(d->showName);
-    layout->addWidget(d->showDate);
-    layout->addWidget(d->showApertureFocal);
-    layout->addWidget(d->showExpoSensitivity);
-    layout->addWidget(d->showMakeModel);
-    layout->addWidget(d->showComment);
-    layout->addWidget(d->showTitle);
-    layout->addWidget(d->showCapIfNoTitle);
-    layout->addWidget(d->showTags);
-    layout->addWidget(d->showLabels);
-    layout->addWidget(d->showRating);
-    layout->addWidget(d->captionFont);
-    layout->addWidget(screenSelectBox);
-    layout->addStretch();
+    layout->addWidget(hbox1, 0, 0);
+
+    layout->addWidget(d->startWithCurrent, 1, 0);
+    layout->addWidget(d->loopMode, 1, 1);
+    layout->addWidget(d->suffleMode, 2, 0);
+    layout->addWidget(d->showProgress, 2, 1);
+    layout->addWidget(d->showName, 3, 0);
+    layout->addWidget(d->showDate, 3, 1);
+    layout->addWidget(d->showApertureFocal, 4, 0);
+    layout->addWidget(d->showExpoSensitivity, 4, 1);
+    layout->addWidget(d->showMakeModel, 5, 0);
+    layout->addWidget(d->showComment, 5, 1);
+    layout->addWidget(d->showTitle, 6, 0);
+    layout->addWidget(d->showCapIfNoTitle, 6, 1);
+    layout->addWidget(d->showTags,7, 0);
+    layout->addWidget(d->showLabels, 7, 1);
+    layout->addWidget(d->showRating, 8, 0);
+    layout->addWidget(d->captionFont, 9, 0);
+    layout->addWidget(screenSelectBox, 9, 1);
+
+    //layout->rowStretch(9);
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
     layout->setSpacing(spacing);
 
