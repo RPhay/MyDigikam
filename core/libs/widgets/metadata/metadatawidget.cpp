@@ -347,7 +347,7 @@ void MetadataWidget::slotCopy2Clipboard()
 
             do
             {
-                item2                               = dynamic_cast<QTreeWidgetItem*>(lvItem)->child(j);
+                item2 = dynamic_cast<QTreeWidgetItem*>(lvItem)->child(j);
 
                 if (item2)
                 {
@@ -400,15 +400,19 @@ void MetadataWidget::slotPrintMetadata()
 
             do
             {
-                item2                               = dynamic_cast<QTreeWidgetItem*>(lvItem)->child(j);
-                MetadataListViewItem* const lvItem2 = dynamic_cast<MetadataListViewItem*>(item2);
+                item2 = dynamic_cast<QTreeWidgetItem*>(lvItem)->child(j);
 
-                if (lvItem2)
+                if (item2)
                 {
-                    textmetadata.append(lvItem2->text(0));
-                    textmetadata.append(QLatin1String(" : <i>"));
-                    textmetadata.append(lvItem2->text(1));
-                    textmetadata.append(QLatin1String("</i><br/>"));
+                    MetadataListViewItem* const lvItem2 = dynamic_cast<MetadataListViewItem*>(item2);
+
+                    if (lvItem2)
+                    {
+                        textmetadata.append(lvItem2->text(0));
+                        textmetadata.append(QLatin1String(" : <i>"));
+                        textmetadata.append(lvItem2->text(1));
+                        textmetadata.append(QLatin1String("</i><br/>"));
+                    }
                 }
 
                 ++j;
