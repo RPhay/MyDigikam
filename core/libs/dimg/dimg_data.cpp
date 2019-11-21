@@ -60,10 +60,8 @@ void DImg::detach()
 
     if (old->data)
     {
-        if (size_t size = allocateData())
-        {
-            memcpy(m_priv->data, old->data, size);
-        }
+        size_t size = allocateData();
+        memcpy(m_priv->data, old->data, size);
     }
 }
 
