@@ -83,7 +83,15 @@ void MainWindow::loginHandle(KJob* login)
     {
         Upload* const e1  = new Upload( MediaWiki );
         QFile* const file = new QFile(this->ui->lineEdit->text());
-        file->open(QIODevice::ReadOnly);
+
+        if (!file->open(QIODevice::ReadOnly))
+        {
+            QMessageBox popup;
+            popup.setText(QString::fromLatin1("Cannot open file %1.").arg(this->ui->lineEdit->text()));
+            popup.exec();
+            return;
+        }
+
         e1->setFile(file);
         e1->setFilename(this->ui->lineEdit_2->text());
 
@@ -126,9 +134,13 @@ void MainWindow::uploadHandle(KJob* job)
     QString errorMessage;
 
     if (job->error() == 0)
+    {
         errorMessage = QLatin1String("Image uploaded successfully.");
+    }
     else
+    {
         errorMessage = QLatin1String("Image upload failed.");
+    }
 
     QMessageBox popup;
     popup.setText(errorMessage);
@@ -166,7 +178,7 @@ void MainWindow::on_parcourir_clicked()
     }
 }
 
-void MainWindow::on_lineEdit_textChanged(QString text)
+void MainWindow::on_lineEdit_textChanged(const QString& text)
 {
     this->ui->pushButton->setEnabled(!text.isEmpty() && !text.isNull());
 }
