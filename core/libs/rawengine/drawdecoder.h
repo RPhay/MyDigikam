@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2006-12-09
- * Description : a tread-safe libraw C++ program interface
+ * Description : a tread-safe libraw Qt interface
  *
  * Copyright (C) 2006-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
@@ -171,34 +171,36 @@ public:
 
 public:
 
-    /** Extract Raw image data undemosaiced and without post processing from 'filePath' picture file.
-        This is a cancelable method which require a class instance to run because RAW pictures loading
-        can take a while.
-
-        This method return:
-
-            - A byte array container 'rawData' with raw data.
-            - All info about Raw image into 'identify' container.
-            - 'false' is returned if loading failed, else 'true'.
+    /**
+     * Extract Raw image data undemosaiced and without post processing from 'filePath' picture file.
+     * This is a cancelable method which require a class instance to run because RAW pictures loading
+     * can take a while.
+     *
+     * This method return:
+     *
+     *     - A byte array container 'rawData' with raw data.
+     *     - All info about Raw image into 'identify' container.
+     *     - 'false' is returned if loading failed, else 'true'.
      */
     bool extractRAWData(const QString& filePath,
                         QByteArray& rawData,
                         DRawInfo& identify,
                         unsigned int shotSelect=0);
 
-    /** Extract a small size of decode RAW data from 'filePath' picture file using
-        'DRawDecoderSettings' settings. This is a cancelable method which require
-        a class instance to run because RAW pictures decoding can take a while.
-
-        This method return:
-
-            - A byte array container 'imageData' with picture data. Pixels order is RGB.
-              Color depth can be 8 or 16. In 8 bits you can access to color component
-              using (uchar*), in 16 bits using (ushort*).
-
-            - Size size of image in number of pixels ('width' and 'height').
-            - The max average of RGB components from decoded picture.
-            - 'false' is returned if decoding failed, else 'true'.
+    /**
+     * Extract a small size of decode RAW data from 'filePath' picture file using
+     * 'DRawDecoderSettings' settings. This is a cancelable method which require
+     * a class instance to run because RAW pictures decoding can take a while.
+     *
+     * This method return:
+     *
+     *     - A byte array container 'imageData' with picture data. Pixels order is RGB.
+     *       Color depth can be 8 or 16. In 8 bits you can access to color component
+     *       using (uchar*), in 16 bits using (ushort*).
+     *
+     *     - Size size of image in number of pixels ('width' and 'height').
+     *     - The max average of RGB components from decoded picture.
+     *     - 'false' is returned if decoding failed, else 'true'.
      */
     bool decodeHalfRAWImage(const QString& filePath,
                             const DRawDecoderSettings& DRawDecoderSettings,
@@ -207,19 +209,20 @@ public:
                             int& height,
                             int& rgbmax);
 
-    /** Extract a full size of RAW data from 'filePath' picture file using
-        'DRawDecoderSettings' settings. This is a cancelable method which require
-        a class instance to run because RAW pictures decoding can take a while.
-
-        This method return:
-
-            - A byte array container 'imageData' with picture data. Pixels order is RGB.
-              Color depth can be 8 or 16. In 8 bits you can access to color component
-              using (uchar*), in 16 bits using (ushort*).
-
-            - Size size of image in number of pixels ('width' and 'height').
-            - The max average of RGB components from decoded picture.
-            - 'false' is returned if decoding failed, else 'true'.
+    /**
+     * Extract a full size of RAW data from 'filePath' picture file using
+     * 'DRawDecoderSettings' settings. This is a cancelable method which require
+     * a class instance to run because RAW pictures decoding can take a while.
+     *
+     * This method return:
+     *
+     *     - A byte array container 'imageData' with picture data. Pixels order is RGB.
+     *       Color depth can be 8 or 16. In 8 bits you can access to color component
+     *       using (uchar*), in 16 bits using (ushort*).
+     *
+     *     - Size size of image in number of pixels ('width' and 'height').
+     *     - The max average of RGB components from decoded picture.
+     *     - 'false' is returned if decoding failed, else 'true'.
      */
     bool decodeRAWImage(const QString& filePath,
                         const DRawDecoderSettings& DRawDecoderSettings,

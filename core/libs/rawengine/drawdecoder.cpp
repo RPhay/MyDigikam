@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2006-12-09
- * Description : a tread-safe libraw C++ program interface
+ * Description : a tread-safe libraw Qt interface
  *
  * Copyright (C) 2006-2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
