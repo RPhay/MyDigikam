@@ -52,97 +52,118 @@ class DIGIKAM_EXPORT DRawDecoder : public QObject
 
 public:
 
-    /** Standard constructor.
+    /**
+     * Standard constructor.
      */
     explicit DRawDecoder();
 
-    /** Standard destructor.
+    /**
+     * Standard destructor.
      */
     virtual ~DRawDecoder();
 
 public:
 
-    /** Get the preview of RAW picture as a QImage.
-        It tries loadEmbeddedPreview() first and if it fails, calls loadHalfPreview().
+    /**
+     * Get the preview of RAW picture as a QImage.
+     * It tries loadEmbeddedPreview() first and if it fails, calls loadHalfPreview().
      */
     static bool loadRawPreview(QImage& image, const QString& path);
 
-    /** Get the preview of RAW picture as a QByteArray holding JPEG data.
-        It tries loadEmbeddedPreview() first and if it fails, calls loadHalfPreview().
+    /**
+     * Get the preview of RAW picture as a QByteArray holding JPEG data.
+     * It tries loadEmbeddedPreview() first and if it fails, calls loadHalfPreview().
      */
     static bool loadRawPreview(QByteArray& imgData, const QString& path);
 
-    /** Get the preview of RAW picture passed in QBuffer as a QByteArray holding JPEG data.
-        It tries loadEmbeddedPreview() first and if it fails, calls loadHalfPreview().
+    /**
+     * Get the preview of RAW picture passed in QBuffer as a QByteArray holding JPEG data.
+     * It tries loadEmbeddedPreview() first and if it fails, calls loadHalfPreview().
      */
     static bool loadRawPreview(QByteArray& imgData, const QBuffer& inBuffer);
 
-    /** Get the embedded JPEG preview image from RAW picture as a QByteArray which will include Exif Data.
-        This is fast and non cancelable. This method does not require a class instance to run.
+    /**
+     * Get the embedded JPEG preview image from RAW picture as a QByteArray which will include Exif Data.
+     * This is fast and non cancelable. This method does not require a class instance to run.
      */
     static bool loadEmbeddedPreview(QByteArray& imgData, const QString& path);
 
-    /** Get the embedded JPEG preview image from RAW picture as a QImage. This is fast and non cancelable
-        This method does not require a class instance to run.
+    /**
+     * Get the embedded JPEG preview image from RAW picture as a QImage. This is fast and non cancelable
+     * This method does not require a class instance to run.
      */
     static bool loadEmbeddedPreview(QImage& image, const QString& path);
 
-    /** Get the embedded JPEG preview image from RAW image passed in QBuffer as a QByteArray which will include Exif Data.
-        This is fast and non cancelable. This method does not require a class instance to run.
+    /**
+     * Get the embedded JPEG preview image from RAW image passed in QBuffer as a QByteArray which will include Exif Data.
+     * This is fast and non cancelable. This method does not require a class instance to run.
      */
     static bool loadEmbeddedPreview(QByteArray& imgData, const QBuffer& inBuffer);
 
-    /** Get the half decoded RAW picture. This is slower than loadEmbeddedPreview() method
-        and non cancelable. This method does not require a class instance to run.
+    /**
+     * Get the half decoded RAW picture. This is slower than loadEmbeddedPreview() method
+     * and non cancelable. This method does not require a class instance to run.
      */
     static bool loadHalfPreview(QImage& image, const QString& path);
 
-    /** Get the half decoded RAW picture as JPEG data in QByteArray. This is slower than loadEmbeddedPreview()
-        method and non cancelable. This method does not require a class instance to run.
+    /**
+     * Get the half decoded RAW picture as JPEG data in QByteArray. This is slower than loadEmbeddedPreview()
+     * method and non cancelable. This method does not require a class instance to run.
      */
     static bool loadHalfPreview(QByteArray& imgData, const QString& path);
 
-    /** Get the half decoded RAW picture passed in QBuffer as JPEG data in QByteArray. This is slower than loadEmbeddedPreview()
-        method and non cancelable. This method does not require a class instance to run.
+    /**
+     * Get the half decoded RAW picture passed in QBuffer as JPEG data in QByteArray. This is slower than loadEmbeddedPreview()
+     * method and non cancelable. This method does not require a class instance to run.
      */
     static bool loadHalfPreview(QByteArray& imgData, const QBuffer& inBuffer);
 
-    /** Get the full decoded RAW picture. This is a more slower than loadHalfPreview() method
-        and non cancelable. This method does not require a class instance to run.
+    /**
+     * Get the full decoded RAW picture. This is a more slower than loadHalfPreview() method
+     * and non cancelable. This method does not require a class instance to run.
      */
-    static bool loadFullImage(QImage& image, const QString& path, const DRawDecoderSettings& settings = DRawDecoderSettings());
+    static bool loadFullImage(QImage& image,
+                              const QString& path,
+                              const DRawDecoderSettings& settings = DRawDecoderSettings());
 
-    /** Get the camera settings which have taken RAW file. Look into rawinfo.h
-        for more details. This is a fast and non cancelable method which do not require
-        a class instance to run.
+    /**
+     * Get the camera settings which have taken RAW file. Look into rawinfo.h
+     * for more details. This is a fast and non cancelable method which do not require
+     * a class instance to run.
      */
     static bool rawFileIdentify(DRawInfo& identify, const QString& path);
 
-    /** Return the string of all RAW file type mime supported.
+    /**
+     * Return the string of all RAW file type mime supported.
      */
     static QString rawFiles();
 
-    /** Return the list of all RAW file type mime supported,
-        as a QStringList, without wildcard and suffix dot.
+    /**
+     * Return the list of all RAW file type mime supported,
+     * as a QStringList, without wildcard and suffix dot.
      */
     static QStringList rawFilesList();
 
-    /** Returns a version number for the list of supported RAW file types.
-        This version is incremented if the list of supported formats has changed
-        between library releases.
+    /**
+     * Returns a version number for the list of supported RAW file types.
+     * This version is incremented if the list of supported formats has changed
+     * between library releases.
      */
     static int rawFilesVersion();
 
-    /** Provide a list of supported RAW Camera name.
+    /**
+     * Provide a list of supported RAW Camera name.
      */
     static QStringList supportedCamera();
 
-    /** Return LibRaw version string.
+    /**
+     * Return LibRaw version string.
      */
     static QString librawVersion();
 
-    /** Return true or false if LibRaw use parallel demosaicing or not (libgomp support).
-     *  Return -1 if undefined.
+    /**
+     * Return true or false if LibRaw use parallel demosaicing or not (libgomp support).
+     * Return -1 if undefined.
      */
     static int librawUseGomp();
 
@@ -160,7 +181,10 @@ public:
             - All info about Raw image into 'identify' container.
             - 'false' is returned if loading failed, else 'true'.
      */
-    bool extractRAWData(const QString& filePath, QByteArray& rawData, DRawInfo& identify, unsigned int shotSelect=0);
+    bool extractRAWData(const QString& filePath,
+                        QByteArray& rawData,
+                        DRawInfo& identify,
+                        unsigned int shotSelect=0);
 
     /** Extract a small size of decode RAW data from 'filePath' picture file using
         'DRawDecoderSettings' settings. This is a cancelable method which require
@@ -176,8 +200,12 @@ public:
             - The max average of RGB components from decoded picture.
             - 'false' is returned if decoding failed, else 'true'.
      */
-    bool decodeHalfRAWImage(const QString& filePath, const DRawDecoderSettings& DRawDecoderSettings,
-                            QByteArray& imageData, int& width, int& height, int& rgbmax);
+    bool decodeHalfRAWImage(const QString& filePath,
+                            const DRawDecoderSettings& DRawDecoderSettings,
+                            QByteArray& imageData,
+                            int& width,
+                            int& height,
+                            int& rgbmax);
 
     /** Extract a full size of RAW data from 'filePath' picture file using
         'DRawDecoderSettings' settings. This is a cancelable method which require
@@ -193,37 +221,46 @@ public:
             - The max average of RGB components from decoded picture.
             - 'false' is returned if decoding failed, else 'true'.
      */
-    bool decodeRAWImage(const QString& filePath, const DRawDecoderSettings& DRawDecoderSettings,
-                        QByteArray& imageData, int& width, int& height, int& rgbmax);
+    bool decodeRAWImage(const QString& filePath,
+                        const DRawDecoderSettings& DRawDecoderSettings,
+                        QByteArray& imageData,
+                        int& width,
+                        int& height,
+                        int& rgbmax);
 
-    /** To cancel 'decodeHalfRAWImage' and 'decodeRAWImage' methods running
-        in a separate thread.
+    /**
+     * To cancel 'decodeHalfRAWImage' and 'decodeRAWImage' methods running
+     * in a separate thread.
      */
     void cancel();
 
 protected:
 
-    /** Used internally to cancel RAW decoding operation. Normally, you don't need to use it
-        directly, excepted if you derivated this class. Usual way is to use cancel() method
+    /**
+     * Used internally to cancel RAW decoding operation. Normally, you don't need to use it
+     * directly, excepted if you derivated this class. Usual way is to use cancel() method
      */
     bool                m_cancel;
 
-    /** The settings container used to perform RAW pictures decoding. See 'rawdecodingsetting.h'
-        for details.
+    /**
+     * The settings container used to perform RAW pictures decoding. See 'rawdecodingsetting.h'
+     * for details.
      */
     DRawDecoderSettings m_decoderSettings;
 
 protected:
 
-    /** Re-implement this method to control the cancelisation of loop which wait data
-        from RAW decoding process with your proper environment.
-        By default, this method check if m_cancel is true.
+    /**
+     * Re-implement this method to control the cancelisation of loop which wait data
+     * from RAW decoding process with your proper environment.
+     * By default, this method check if m_cancel is true.
      */
     virtual bool checkToCancelWaitingData();
 
-    /** Re-implement this method to control the pseudo progress value during RAW decoding (when dcraw run with an
-        internal loop without feedback) with your proper environment. By default, this method does nothing.
-        Progress value average for this stage is 0%-n%, with 'n' == 40% max (see setWaitingDataProgress() method).
+    /**
+     * Re-implement this method to control the pseudo progress value during RAW decoding (when dcraw run with an
+     * internal loop without feedback) with your proper environment. By default, this method does nothing.
+     * Progress value average for this stage is 0%-n%, with 'n' == 40% max (see setWaitingDataProgress() method).
      */
     virtual void setWaitingDataProgress(double value);
 

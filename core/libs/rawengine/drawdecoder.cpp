@@ -66,12 +66,16 @@ void DRawDecoder::cancel()
 bool DRawDecoder::loadRawPreview(QImage& image, const QString& path)
 {
     // In first, try to extract the embedded JPEG preview. Very fast.
+
     bool ret = loadEmbeddedPreview(image, path);
 
     if (ret)
+    {
         return true;
+    }
 
     // In second, decode and half size of RAW picture. More slow.
+
     return (loadHalfPreview(image, path));
 }
 
@@ -91,6 +95,7 @@ bool DRawDecoder::loadEmbeddedPreview(QImage& image, const QString& path)
     }
 
     qCDebug(DIGIKAM_RAWENGINE_LOG) << "Failed to load embedded RAW preview";
+
     return false;
 }
 
@@ -101,7 +106,9 @@ bool DRawDecoder::loadEmbeddedPreview(QByteArray& imgData, const QString& path)
     QString   ext         = fileInfo.suffix().toUpper();
 
     if (!fileInfo.exists() || ext.isEmpty() || !rawFilesExt.toUpper().contains(ext))
+    {
         return false;
+    }
 
     LibRaw* const raw = new LibRaw;
 
@@ -144,7 +151,9 @@ bool DRawDecoder::loadHalfPreview(QImage& image, const QString& path)
     QString   ext = fileInfo.suffix().toUpper();
 
     if (!fileInfo.exists() || ext.isEmpty() || !rawFilesExt.toUpper().contains(ext))
+    {
         return false;
+    }
 
     qCDebug(DIGIKAM_RAWENGINE_LOG) << "Try to use reduced RAW picture extraction";
 
@@ -244,14 +253,18 @@ bool DRawDecoder::loadHalfPreview(QByteArray& imgData, const QBuffer& inBuffer)
     return true;
 }
 
-bool DRawDecoder::loadFullImage(QImage& image, const QString& path, const DRawDecoderSettings& settings)
+bool DRawDecoder::loadFullImage(QImage& image,
+                                const QString& path,
+                                const DRawDecoderSettings& settings)
 {
     QFileInfo fileInfo(path);
     QString   rawFilesExt = rawFiles();
     QString   ext         = fileInfo.suffix().toUpper();
 
     if (!fileInfo.exists() || ext.isEmpty() || !rawFilesExt.toUpper().contains(ext))
+    {
         return false;
+    }
 
     qCDebug(DIGIKAM_RAWENGINE_LOG) << "Try to load full RAW picture...";
 
@@ -307,7 +320,9 @@ bool DRawDecoder::rawFileIdentify(DRawInfo& identify, const QString& path)
     identify.isDecodable = false;
 
     if (!fileInfo.exists() || ext.isEmpty() || !rawFilesExt.toUpper().contains(ext))
+    {
         return false;
+    }
 
     LibRaw* const raw = new LibRaw;
 
@@ -334,12 +349,16 @@ bool DRawDecoder::rawFileIdentify(DRawInfo& identify, const QString& path)
     Private::fillIndentifyInfo(raw, identify);
     raw->recycle();
     delete raw;
+
     return true;
 }
 
 // ----------------------------------------------------------------------------------
 
-bool DRawDecoder::extractRAWData(const QString& filePath, QByteArray& rawData, DRawInfo& identify, unsigned int shotSelect)
+bool DRawDecoder::extractRAWData(const QString& filePath,
+                                 QByteArray& rawData,
+                                 DRawInfo& identify,
+                                 unsigned int shotSelect)
 {
     QFileInfo fileInfo(filePath);
     QString rawFilesExt  = rawFiles();
@@ -347,10 +366,14 @@ bool DRawDecoder::extractRAWData(const QString& filePath, QByteArray& rawData, D
     identify.isDecodable = false;
 
     if (!fileInfo.exists() || ext.isEmpty() || !rawFilesExt.toUpper().contains(ext))
+    {
         return false;
+    }
 
     if (m_cancel)
+    {
         return false;
+    }
 
     d->setProgress(0.1);
 
@@ -432,7 +455,7 @@ bool DRawDecoder::extractRAWData(const QString& filePath, QByteArray& rawData, D
 
     if (raw->imgdata.idata.filters == 0)
     {
-        rawData.resize((int)(raw->imgdata.sizes.iwidth * raw->imgdata.sizes.iheight  * raw->imgdata.idata.colors * sizeof(unsigned short)));
+        rawData.resize((int)((int)raw->imgdata.sizes.iwidth * (int)raw->imgdata.sizes.iheight  * (int)raw->imgdata.idata.colors * sizeof(unsigned short)));
 
         unsigned short* output = reinterpret_cast<unsigned short*>(rawData.data());
 
@@ -450,7 +473,7 @@ bool DRawDecoder::extractRAWData(const QString& filePath, QByteArray& rawData, D
     }
     else
     {
-        rawData.resize((int)(raw->imgdata.sizes.iwidth * raw->imgdata.sizes.iheight * sizeof(unsigned short)));
+        rawData.resize((int)((int)raw->imgdata.sizes.iwidth * (int)raw->imgdata.sizes.iheight * sizeof(unsigned short)));
 
         unsigned short* output = reinterpret_cast<unsigned short*>(rawData.data());
 
@@ -471,18 +494,28 @@ bool DRawDecoder::extractRAWData(const QString& filePath, QByteArray& rawData, D
     return true;
 }
 
-bool DRawDecoder::decodeHalfRAWImage(const QString& filePath, const DRawDecoderSettings& DRawDecoderSettings,
-                                     QByteArray& imageData, int& width, int& height, int& rgbmax)
+bool DRawDecoder::decodeHalfRAWImage(const QString& filePath,
+                                     const DRawDecoderSettings& DRawDecoderSettings,
+                                     QByteArray& imageData,
+                                     int& width,
+                                     int& height,
+                                     int& rgbmax)
 {
     m_decoderSettings                    = DRawDecoderSettings;
     m_decoderSettings.halfSizeColorImage = true;
+
     return (d->loadFromLibraw(filePath, imageData, width, height, rgbmax));
 }
 
-bool DRawDecoder::decodeRAWImage(const QString& filePath, const DRawDecoderSettings& DRawDecoderSettings,
-                                 QByteArray& imageData, int& width, int& height, int& rgbmax)
+bool DRawDecoder::decodeRAWImage(const QString& filePath,
+                                 const DRawDecoderSettings& DRawDecoderSettings,
+                                 QByteArray& imageData,
+                                 int& width,
+                                 int& height,
+                                 int& rgbmax)
 {
     m_decoderSettings = DRawDecoderSettings;
+
     return (d->loadFromLibraw(filePath, imageData, width, height, rgbmax));
 }
 
@@ -503,6 +536,7 @@ QString DRawDecoder::rawFiles()
 QStringList DRawDecoder::rawFilesList()
 {
     QString string = rawFiles();
+
     return string.remove(QLatin1String("*.")).split(QLatin1Char(' '));
 }
 

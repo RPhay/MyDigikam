@@ -273,9 +273,11 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
             DRawInfo identify;
             T = m_parent->m_decoderSettings.customWhiteBalance;
 
-            /* Here starts the code picked and adapted from ufraw (0.12.1)
-               to convert Temperature + green multiplier to RGB multipliers
-            */
+            /*
+             * Here starts the code picked and adapted from ufraw (0.12.1)
+             * to convert Temperature + green multiplier to RGB multipliers
+             */
+
             /* Convert between Temperature and RGB.
              * Base on information from http://www.brucelindbloom.com/
              * The fit for D-illuminant between 4000K and 12000K are from CIE
@@ -289,6 +291,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
                                             };
 
             // Fit for CIE Daylight illuminant
+
             if (T <= 4000)
             {
                 xD = 0.27475e9/(T*T*T) - 0.98598e6/(T*T) + 1.17444e3/T + 0.145986;
@@ -309,8 +312,10 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
             RGB[0] = X*XYZ_to_RGB[0][0] + Y*XYZ_to_RGB[1][0] + Z*XYZ_to_RGB[2][0];
             RGB[1] = X*XYZ_to_RGB[0][1] + Y*XYZ_to_RGB[1][1] + Z*XYZ_to_RGB[2][1];
             RGB[2] = X*XYZ_to_RGB[0][2] + Y*XYZ_to_RGB[1][2] + Z*XYZ_to_RGB[2][2];
-            /* End of the code picked to ufraw
-            */
+
+            /*
+             * End of the code picked to ufraw
+             */
 
             RGB[1] = RGB[1] / m_parent->m_decoderSettings.customWhiteBalanceGreen;
 
@@ -651,7 +656,9 @@ bool DRawDecoder::Private::loadHalfPreview(QImage& image, LibRaw* const raw)
     }
 
     Private::createPPMHeader(imgData, halfImg);
+
     // Clear memory allocation. Introduced with LibRaw 0.11.0
+
     raw->dcraw_clear_mem(halfImg);
     raw->recycle();
     delete raw;
