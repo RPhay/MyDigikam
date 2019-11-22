@@ -677,7 +677,6 @@ void BackendGoogleMaps::slotHTMLEvents(const QStringList& events)
 
     if (!clickedClusters.isEmpty())
     {
-        qCDebug(DIGIKAM_GEOIFACE_LOG) << clickedClusters;
         emit signalClustersClicked(clickedClusters);
     }
 
@@ -708,7 +707,12 @@ void BackendGoogleMaps::slotHTMLEvents(const QStringList& events)
     if (mapBoundsProbablyChanged)
     {
         const QString mapBoundsString = d->htmlWidget->runScript(QLatin1String("kgeomapGetBounds();"), false).toString();
-        GeoIfaceHelperParseBoundsString(mapBoundsString, &d->cacheBounds);
+        const bool isValid            = GeoIfaceHelperParseBoundsString(mapBoundsString, &d->cacheBounds);
+
+        if (!isValid)
+        {
+            qCDebug(DIGIKAM_GEOIFACE_LOG) << "Invalid map bounds";
+        }
     }
 
     if (mapBoundsProbablyChanged || !movedClusters.isEmpty())
