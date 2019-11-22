@@ -1,14 +1,30 @@
 [Desktop Entry]
 Type=Theme
 Name=HTML5 Responsive
+Name[ca]=HTML5 responsiu
+Name[nl]=Reageert op HTML5
+Name[pt]=HTML5 Responsivo
+Name[x-test]=xxHTML5 Responsivexx
 Comment=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
+Comment[ca]=Genera una galeria usant HTML5 responsiu i CSS3 i codificació UTF-8. Opcionalment usa el PhotoSwipe del Dmitry Semenov por mostrar les imatges.
+Comment[nl]=Genereert een galerij met op reagerend HTML5 en CSS3 en UTF-8 codering. Gebruikt als optie PhotoSwipe door Dmitry Semenov om de afbeeldingen te tonen.
+Comment[pt]=Gera uma galeria que usa HTML5 responsivo ou adaptativo, CSS3 e codificação em UTF-8. Opcionalmente, usa o PhotoSwipe de Dmitry Semenov para mostrar as imagens.
+Comment[x-test]=xxGenerates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.xx
 
 [X-HTMLGallery Author]
 Name=Bobulous
+Name[ca]=Bobulous
+Name[nl]=Bobulous
+Name[pt]=Bolhas
+Name[x-test]=xxBobulousxx
 Url=https://www.bobulous.org.uk/
 
 [X-HTMLGallery Preview]
 Name=HTML5 Responsive
+Name[ca]=HTML5 responsiu
+Name[nl]=Reageert op HTML5
+Name[pt]=HTML5 Responsivo
+Name[x-test]=xxHTML5 Responsivexx
 Url=preview.png
 
 [X-HTMLGallery Options]
@@ -146,6 +162,10 @@ Caption-2=Both
 
 [X-HTMLGallery Parameter paginationModeTop]
 Name=Top pagination mode
+Name[ca]=Mode de paginació de la part superior
+Name[nl]=Modus met paginering bovenaan
+Name[pt]=Modo de paginação no topo
+Name[x-test]=xxTop pagination modexx
 Type=list
 Default=currentOfTotal
 Value-0=currentOfTotal
@@ -155,6 +175,10 @@ Caption-1=List all
 
 [X-HTMLGallery Parameter paginationModeBottom]
 Name=Bottom pagination mode
+Name[ca]=Mode de paginació de la part inferior
+Name[nl]=Modus met paginering onderaan
+Name[pt]=Modo de paginação no fundo
+Name[x-test]=xxBottom pagination modexx
 Type=list
 Default=fullList
 Value-0=currentOfTotal
@@ -164,6 +188,10 @@ Caption-1=List all
 
 [X-HTMLGallery Parameter usePhotoSwipe]
 Name=Use PhotoSwipe
+Name[ca]=Usa el PhotoSwipe
+Name[nl]=PhotoSwipe gebruiken
+Name[pt]=Usar o PhotoSwipe
+Name[x-test]=xxUse PhotoSwipexx
 Type=list
 Default=true
 Value-0=true
@@ -173,6 +201,10 @@ Caption-1=No
 
 [X-HTMLGallery Parameter photoSwipeBackgroundOpacity]
 Name=PhotoSwipe Background Opacity
+Name[ca]=Opacitat del fons del PhotoSwipe
+Name[nl]=Achtergronddekking van PhotoSwipe
+Name[pt]=Opacidade do Fundo do PhotoSwipe
+Name[x-test]=xxPhotoSwipe Background Opacityxx
 Type=int
 Default=10
 Min=0
@@ -180,6 +212,10 @@ Max=10
 
 [X-HTMLGallery Parameter photoSwipeShowSharingButton]
 Name=PhotoSwipe sharing button
+Name[ca]=Botó de compartició del PhotoSwipe
+Name[nl]=Delenknop van PhotoSwipe
+Name[pt]=Botão de partilha do PhotoSwipe
+Name[x-test]=xxPhotoSwipe sharing buttonxx
 Type=list
 Default=false
 Value-0=true
@@ -189,6 +225,10 @@ Caption-1=No
 
 [X-HTMLGallery Parameter addJiggle]
 Name=Add jiggle
+Name[ca]=Afegeix un sacseig
+Name[nl]=Wiegelen toevoegen
+Name[pt]=Adicionar uma agitação
+Name[x-test]=xxAdd jigglexx
 Type=list
 Default=true
 Value-0=true
@@ -198,6 +238,10 @@ Caption-1=No
 
 [X-HTMLGallery Parameter showGPS]
 Name=Show GPS data
+Name[ca]=Mostra les dades del GPS
+Name[nl]=GPS gegevens tonen
+Name[pt]=Mostrar os dados de GPS
+Name[x-test]=xxShow GPS dataxx
 Type=list
 Default=false
 Value-0=true
