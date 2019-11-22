@@ -268,9 +268,9 @@ void PWindow::slotStartTransfer()
     if (!(d->talker->authenticated()))
     {
         QPointer<QMessageBox> warn = new QMessageBox(QMessageBox::Warning,
-                         i18n("Warning"),
-                         i18n("Authentication failed. Click \"Continue\" to authenticate."),
-                         QMessageBox::Yes | QMessageBox::No);
+            i18n("Warning"),
+            i18n("Authentication failed. Click \"Continue\" to authenticate."),
+            QMessageBox::Yes | QMessageBox::No);
 
         (warn->button(QMessageBox::Yes))->setText(i18n("Continue"));
         (warn->button(QMessageBox::No))->setText(i18n("Cancel"));
@@ -298,8 +298,8 @@ void PWindow::slotStartTransfer()
     d->currentAlbumName = d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString();
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "StartTransfer:" << d->currentAlbumName
                                      << "INDEX: " << d->widget->getAlbumsCoB()->currentIndex();
-    d->imagesTotal = d->transferQueue.count();
-    d->imagesCount = 0;
+    d->imagesTotal      = d->transferQueue.count();
+    d->imagesCount      = 0;
 
     d->widget->progressBar()->setFormat(i18n("%v / %m"));
     d->widget->progressBar()->setMaximum(d->imagesTotal);

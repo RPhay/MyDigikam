@@ -314,7 +314,9 @@ void PTalker::createBoard(QString& boardName)
     netRequest.setRawHeader("Authorization", QString::fromLatin1("Bearer %1").arg(d->accessToken).toUtf8());
 
     QByteArray postData = QString::fromUtf8("{\"name\": \"%1\"}").arg(boardName).toUtf8();
-    //qCDebug(DIGIKAM_WEBSERVICES_LOG) << "createBoard:" << postData;
+/*
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "createBoard:" << postData;
+*/
     d->reply = d->netMngr->post(netRequest, postData);
 
     d->state = Private::P_CREATEBOARD;
@@ -333,7 +335,8 @@ void PTalker::getUserName()
     emit signalBusy(true);
 }
 
-/** Get list of boards by parsing json sent by pinterest
+/**
+ * Get list of boards by parsing json sent by pinterest
  */
 void PTalker::listBoards(const QString& /*path*/)
 {
@@ -349,7 +352,11 @@ void PTalker::listBoards(const QString& /*path*/)
     emit signalBusy(true);
 }
 
-bool PTalker::addPin(const QString& imgPath, const QString& uploadBoard, bool rescale, int maxDim, int imageQuality)
+bool PTalker::addPin(const QString& imgPath,
+                     const QString& uploadBoard,
+                     bool rescale,
+                     int maxDim,
+                     int imageQuality)
 {
     if (d->reply)
     {
@@ -385,12 +392,14 @@ bool PTalker::addPin(const QString& imgPath, const QString& uploadBoard, bool re
         d->meta.save(path, true);
     }
 
-    QString boardParam = d->userName + QLatin1Char('/') + uploadBoard;
+    QString boardParam              = d->userName + QLatin1Char('/') + uploadBoard;
 
     QUrl url(QString::fromLatin1("https://api.pinterest.com/v1/pins/?access_token=%1").arg(d->accessToken));
 
     QHttpMultiPart* const multiPart = new QHttpMultiPart(QHttpMultiPart::FormDataType);
-    ///Board Section
+
+    // Board Section
+
     QHttpPart board;
     QString boardHeader = QLatin1String("form-data; name=\"board\"") ;
     board.setHeader(QNetworkRequest::ContentDispositionHeader, boardHeader);
@@ -399,19 +408,30 @@ bool PTalker::addPin(const QString& imgPath, const QString& uploadBoard, bool re
     board.setBody(postData);
     multiPart->append(board);
 
-    ///Note section
+    // Note section
+
     QHttpPart note;
     QString noteHeader = QLatin1String("form-data; name=\"note\"") ;
     note.setHeader(QNetworkRequest::ContentDispositionHeader, noteHeader);
 
-    postData = QByteArray();
+    postData           = QByteArray();
 
     note.setBody(postData);
     multiPart->append(note);
 
-    ///image section
-    QFile* const file = new QFile(imgPath);
-    file->open(QIODevice::ReadOnly);
+    // image section
+
+    QFile* const file  = new QFile(imgPath);
+
+    if (!file)
+    {
+        return false;
+    }
+
+    if (!file->open(QIODevice::ReadOnly))
+    {
+        return false;
+    }
 
     QHttpPart imagePart;
     QString imagePartHeader = QLatin1String("form-data; name=\"image\"; filename=\"") +
@@ -428,10 +448,12 @@ bool PTalker::addPin(const QString& imgPath, const QString& uploadBoard, bool re
     netRequest.setHeader(QNetworkRequest::ContentTypeHeader, content);
 
     d->reply = d->netMngr->post(netRequest, multiPart);
-    // delete the multiPart and file with the reply
-    multiPart->setParent(d->reply);
 
+    // delete the multiPart and file with the reply
+
+    multiPart->setParent(d->reply);
     d->state = Private::P_ADDPIN;
+
     return true;
 }
 
@@ -451,16 +473,18 @@ void PTalker::slotFinished(QNetworkReply* reply)
             emit signalBusy(false);
             QMessageBox::critical(QApplication::activeWindow(),
                                   i18n("Error"), reply->errorString());
-
-            //qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error content: " << QString(reply->readAll());
+/*
+            qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Error content: " << QString(reply->readAll());
+*/
             reply->deleteLater();
             return;
         }
     }
 
     QByteArray buffer = reply->readAll();
-    //qCDebug(DIGIKAM_WEBSERVICES_LOG) << "BUFFER" << QString(buffer);
-
+/*
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "BUFFER" << QString(buffer);
+*/
     switch (d->state)
     {
         case Private::P_LISTBOARDS:
@@ -549,7 +573,9 @@ void PTalker::parseResponseListBoards(const QByteArray& data)
     }
 
     QJsonObject jsonObject = doc.object();
-    //qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Json Listing Boards : " << doc;
+/*
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Json Listing Boards : " << doc;
+*/
     QJsonArray jsonArray   = jsonObject[QLatin1String("data")].toArray();
 
     QList<QPair<QString, QString> > list;

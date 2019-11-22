@@ -31,8 +31,8 @@ namespace DigikamGenericPinterestPlugin
 {
 
 PWidget::PWidget(QWidget* const parent,
-                   DInfoInterface* const iface,
-                   const QString& toolName)
+                 DInfoInterface* const iface,
+                 const QString& toolName)
     : WSSettingsWidget(parent, iface, toolName)
 {
     getUploadBox()->hide();
@@ -48,7 +48,9 @@ void PWidget::updateLabels(const QString& name, const QString& url)
     QString web(QLatin1String("https://www.pinterest.com/"));
 
     if (!url.isEmpty())
+    {
         web = url;
+    }
 
     getHeaderLbl()->setText(QString::fromLatin1(
         "<b><h2><a href='%1'>"

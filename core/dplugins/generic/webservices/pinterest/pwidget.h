@@ -47,8 +47,8 @@ class PWidget : public WSSettingsWidget
 public:
 
     explicit PWidget(QWidget* const parent,
-                      DInfoInterface* const iface,
-                      const QString& toolName);
+                     DInfoInterface* const iface,
+                     const QString& toolName);
     ~PWidget();
 
     void updateLabels(const QString& name = QString(),
