@@ -363,6 +363,7 @@ void BOXWindow::slotAddPhotoFailed(const QString& msg)
 void BOXWindow::slotAddPhotoSucceeded()
 {
     // Remove photo uploaded from the list
+
     d->widget->imagesList()->removeItemByUrl(d->transferQueue.first());
     d->transferQueue.pop_front();
     d->imagesCount++;

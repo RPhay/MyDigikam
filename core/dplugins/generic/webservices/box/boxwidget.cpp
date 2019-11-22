@@ -55,9 +55,9 @@ void BOXWidget::updateLabels(const QString& name, const QString& url)
     }
 
     getHeaderLbl()->setText(QString::fromLatin1(
-                                "<b><h2><a href='%1'>"
-                                "<font color=\"#9ACD32\">Box</font>"
-                                "</a></h2></b>").arg(web));
+                            "<b><h2><a href='%1'>"
+                            "<font color=\"#9ACD32\">Box</font>"
+                            "</a></h2></b>").arg(web));
 
     if (name.isEmpty())
     {

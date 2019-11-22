@@ -243,6 +243,7 @@ void BOXTalker::createFolder(QString& path)
 
     d->reply = d->netMngr->post(netRequest, postData);
     d->state = Private::BOX_CREATEFOLDER;
+
     emit signalBusy(true);
 }
 
@@ -256,6 +257,7 @@ void BOXTalker::getUserName()
 
     d->reply = d->netMngr->get(netRequest);
     d->state = Private::BOX_USERNAME;
+
     emit signalBusy(true);
 }
 
@@ -268,8 +270,8 @@ void BOXTalker::listFolders(const QString& /*path*/)
     netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
 
     d->reply = d->netMngr->get(netRequest);
-
     d->state = Private::BOX_LISTFOLDERS;
+
     emit signalBusy(true);
 }
 
@@ -340,7 +342,16 @@ bool BOXTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, bo
     multiPart->append(attributes);
 
     QFile* const file = new QFile(path);
-    file->open(QIODevice::ReadOnly);
+
+    if (!file)
+    {
+        return false;
+    }
+
+    if (!file->open(QIODevice::ReadOnly))
+    {
+        return false;
+    }
 
     QHttpPart imagePart;
     QString imagePartHeader = QLatin1String("form-data; name=\"file\"; filename=\"") +
@@ -358,10 +369,13 @@ bool BOXTalker::addPhoto(const QString& imgPath, const QString& uploadFolder, bo
     QString content = QLatin1String("multipart/form-data;boundary=") + QString::fromUtf8(multiPart->boundary());
     netRequest.setHeader(QNetworkRequest::ContentTypeHeader, content);
     d->reply        = d->netMngr->post(netRequest, multiPart);
+
     // delete the multiPart and file with the reply
+
     multiPart->setParent(d->reply);
 
     d->state        = Private::BOX_ADDPHOTO;
+
     return true;
 }
 
