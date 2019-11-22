@@ -55,8 +55,7 @@ class Q_DECL_HIDDEN DarkTableRawImportPlugin::Private
 public:
 
     explicit Private()
-      : darktable(nullptr),
-        tempFile(nullptr)
+      : darktable(nullptr)
     {
     }
 
@@ -65,8 +64,7 @@ public:
     QProcess*            darktable;
     DImg                 decoded;
     LoadingDescription   props;
-    QFileInfo            fileInfo;
-    QTemporaryFile*      tempFile;
+    QString              tempName;
     QTemporaryFile       luaFile;
 };
 
@@ -169,10 +167,9 @@ bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& 
     d->props     = LoadingDescription(fileInfo.filePath(), LoadingDescription::ConvertForEditor);
     d->decoded   = DImg();
 
-    delete d->tempFile;
-
-    d->tempFile  = new QTemporaryFile();
-    d->tempFile->open();
+    QTemporaryFile tempFile;
+    tempFile.open();
+    d->tempName = tempFile.fileName();
 
     d->darktable = new QProcess(this);
     d->darktable->setProcessChannelMode(QProcess::MergedChannels);
@@ -208,7 +205,7 @@ bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& 
                                              << QLatin1String("plugins/lighttable/export/icctype=3")       // Output color-space
                                              << QLatin1String("--conf")
                                              << QString::fromUtf8("lua/export_on_exit/export_filename=%1")
-                                                .arg(d->tempFile->fileName())                              // Output file
+                                                .arg(d->tempName)                                          // Output file
                                              << filePath);                                                 // Input file
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable arguments:" << d->darktable->arguments();
@@ -247,7 +244,7 @@ void DarkTableRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatu
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "DarkTable :: return code:" << code << ":: Exit status:" << status;
 
-    d->decoded = DImg(d->tempFile->fileName());
+    d->decoded = DImg(d->tempName);
 
     if (d->decoded.isNull())
     {
@@ -262,12 +259,11 @@ void DarkTableRawImportPlugin::slotProcessFinished(int code, QProcess::ExitStatu
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is not null...";
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
-        d->props = LoadingDescription(d->tempFile->fileName(), LoadingDescription::ConvertForEditor);
+        d->props = LoadingDescription(d->tempName, LoadingDescription::ConvertForEditor);
         emit signalDecodedImage(d->props, d->decoded);
     }
 
-    delete d->tempFile;
-    d->tempFile = nullptr;
+    QFile::remove(d->tempName);
 }
 
 void DarkTableRawImportPlugin::slotProcessReadyRead()
