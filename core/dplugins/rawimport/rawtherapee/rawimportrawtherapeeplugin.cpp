@@ -59,7 +59,7 @@ public:
     QProcess*          rawtherapee;
     DImg               decoded;
     LoadingDescription props;
-    QString            fileName;
+    QString            tempName;
 };
 
 RawTherapeeRawImportPlugin::RawTherapeeRawImportPlugin(QObject* const parent)
@@ -122,7 +122,7 @@ bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding
 
     QTemporaryFile tempFile;
     tempFile.open();
-    d->fileName = tempFile.fileName();
+    d->tempName = tempFile.fileName();
 
     d->rawtherapee = new QProcess(this);
     d->rawtherapee->setProcessChannelMode(QProcess::MergedChannels);
@@ -154,7 +154,7 @@ bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding
     d->rawtherapee->setProgram(binary);
     d->rawtherapee->setArguments(QStringList() << QLatin1String("-gimp") // Special mode used initialy as Gimp plugin
                                                << filePath               // Input file
-                                               << d->fileName);          // Output file
+                                               << d->tempName);          // Output file
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "RawTherapee arguments:" << d->rawtherapee->arguments();
 
@@ -192,7 +192,7 @@ void RawTherapeeRawImportPlugin::slotProcessFinished(int code, QProcess::ExitSta
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "RawTherapee :: return code:" << code << ":: Exit status:" << status;
 
-    d->decoded = DImg(d->fileName);
+    d->decoded = DImg(d->tempName);
 
     if (d->decoded.isNull())
     {
@@ -207,11 +207,11 @@ void RawTherapeeRawImportPlugin::slotProcessFinished(int code, QProcess::ExitSta
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Decoded image is not null...";
         qCDebug(DIGIKAM_GENERAL_LOG) << d->props.filePath;
-        d->props = LoadingDescription(d->fileName, LoadingDescription::ConvertForEditor);
+        d->props = LoadingDescription(d->tempName, LoadingDescription::ConvertForEditor);
         emit signalDecodedImage(d->props, d->decoded);
     }
 
-    QFile::remove(d->fileName);
+    QFile::remove(d->tempName);
 }
 
 void RawTherapeeRawImportPlugin::slotProcessReadyRead()
