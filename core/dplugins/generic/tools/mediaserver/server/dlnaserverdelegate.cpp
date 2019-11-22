@@ -151,7 +151,7 @@ NPT_Result DLNAMediaServerDelegate::OnBrowseMetadata(PLT_ActionReference&       
     {
         // error
 
-        qCDebug(DIGIKAM_MEDIASRV_LOG) << "OnBrowseMetadata()" 
+        qCDebug(DIGIKAM_MEDIASRV_LOG) << "OnBrowseMetadata()"
                                       << ":: ObjectID not found \""
                                       << object_id << "\"";
         action->SetError(701, "No Such Object.");
@@ -270,6 +270,10 @@ NPT_Result DLNAMediaServerDelegate::OnBrowseDirectChildren(PLT_ActionReference& 
         {
             d->dirCache.Put(uuid, dir, entries, &info.m_ModificationTime);
         }
+    }
+    else
+    {
+        entries = new NPT_List<NPT_String>();
     }
 
     unsigned long cur_index     = 0;
