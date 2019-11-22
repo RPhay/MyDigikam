@@ -71,8 +71,8 @@ public:
 
 private:
 
-    double rnd()     const;
-    double rndSign() const;
+    double rnd()            const;
+    double rndSign()        const;
 
 private:
 
@@ -122,11 +122,11 @@ public:
     static QStringList            effectNames();
     static QMap<QString, QString> effectNamesI18N();
 
-    bool checkOpenGL() const;
+    bool checkOpenGL()                      const;
 
 private:
 
-    float    aspect() const;
+    float    aspect()                       const;
     bool     setupNewImage(int imageIndex);
     void     startSlideShowOnce();
     void     swapImages();

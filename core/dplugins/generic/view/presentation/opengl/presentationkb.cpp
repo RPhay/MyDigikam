@@ -67,7 +67,8 @@ KBViewTrans::KBViewTrans(bool zoomIn, float relAspect)
     int i        = 0;
 
     // randomly select sizes of start and end viewport
-    double s[2];
+
+    double s[2]  = { 0.0 };
 
     do
     {
@@ -76,8 +77,7 @@ KBViewTrans::KBViewTrans(bool zoomIn, float relAspect)
     }
     while ((fabs(s[0] - s[1]) < 0.15) && (++i < 10));
 
-    if ((!zoomIn ||  (s[0] > s[1])) ||
-        ( zoomIn || !(s[0] > s[1])))
+    if (zoomIn ^ (s[0] > s[1]))
     {
         double tmp = s[0];
         s[0]       = s[1];
@@ -88,8 +88,14 @@ KBViewTrans::KBViewTrans(bool zoomIn, float relAspect)
     m_baseScale  = s[0];
 
     // additional scale factors to ensure proper m_aspect of the displayed image
-    double x[2], y[2], xMargin[2], yMargin[2], bestDist;
-    double sx, sy;
+
+    double x[2]       = { 0.0 };
+    double y[2]       = { 0.0 };
+    double xMargin[2] = { 0.0 };
+    double yMargin[2] = { 0.0 };
+    double bestDist   = 0.0;;
+    double sx         = 0.0;
+    double sy         = 0.0;
 
     if (relAspect > 1.0)
     {
@@ -201,7 +207,9 @@ KBImage::KBImage(KBViewTrans* const viewTrans, float aspect)
 KBImage::~KBImage()
 {
     if (m_texture)
+    {
         m_texture->destroy();
+    }
 
     delete m_viewTrans;
     delete m_texture;
@@ -221,7 +229,9 @@ PresentationKB::PresentationKB(PresentationContainer* const sharedData)
     if (QWidget* const widget = qApp->activeWindow())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     QRect deskRect  = screen->geometry();
@@ -296,7 +306,9 @@ PresentationKB::PresentationKB(PresentationContainer* const sharedData)
 #ifdef HAVE_MEDIAPLAYER
 
     if (d->sharedData->soundtrackPlay)
+    {
         d->playbackWidget->slotPlay();
+    }
 
 #endif
 }
@@ -315,7 +327,9 @@ PresentationKB::~PresentationKB()
     delete d->image[1];
 
     if (d->endTexture)
+    {
         d->endTexture->destroy();
+    }
 
     delete d->endTexture;
 
@@ -345,11 +359,17 @@ void PresentationKB::setNewKBEffect()
     // we currently only have two effects
 
     if      (d->disableFadeInOut)
+    {
         type = KBEffect::Blend;
+    }
     else if (d->disableCrossFade)
+    {
         type = KBEffect::Fade;
+    }
     else
+    {
         type = KBEffect::chooseKBEffect((d->effect) ? d->effect->type() : KBEffect::Fade);
+    }
 
     delete d->effect;
 
@@ -392,9 +412,11 @@ bool PresentationKB::setupNewImage(int idx)
     Q_ASSERT(idx >= 0 && idx < 2);
 
     if (!d->haveImages)
+    {
         return false;
+    }
 
-    bool ok  = false;
+    bool ok   = false;
     d->zoomIn = !d->zoomIn;
 
     if (d->imageLoadThread->grabImage())
@@ -559,10 +581,14 @@ void PresentationKB::readSettings()
     d->forceFrameRate   = group.readEntry("KB Force Framerate", 0);
 
     if (d->delay < 5)
+    {
         d->delay = 5;
+    }
 
     if (d->forceFrameRate > 120)
+    {
         d->forceFrameRate = 120;
+    }
 }
 
 void PresentationKB::endOfShow()
@@ -633,23 +659,31 @@ QMap<QString, QString> PresentationKB::effectNamesI18N()
 void PresentationKB::keyPressEvent(QKeyEvent* event)
 {
     if (!event)
+    {
         return;
+    }
 
 #ifdef HAVE_MEDIAPLAYER
     d->playbackWidget->keyPressEvent(event);
 #endif
 
     if (event->key() == Qt::Key_Escape)
+    {
         close();
+    }
 }
 
 void PresentationKB::mousePressEvent(QMouseEvent* e)
 {
     if (!e)
+    {
         return;
+    }
 
     if (d->endOfShow && d->showingEnd)
+    {
         slotClose();
+    }
 }
 
 void PresentationKB::mouseMoveEvent(QMouseEvent* e)
@@ -659,7 +693,9 @@ void PresentationKB::mouseMoveEvent(QMouseEvent* e)
 
 #ifdef HAVE_MEDIAPLAYER
     if (!d->playbackWidget->canHide())
+    {
         return;
+    }
 
     QPoint pos(e->pos());
 
@@ -675,6 +711,7 @@ void PresentationKB::mouseMoveEvent(QMouseEvent* e)
             d->playbackWidget->hide();
             setFocus();
         }
+
         return;
     }
 
@@ -694,7 +731,9 @@ void PresentationKB::slotMouseMoveTimeOut()
         || d->playbackWidget->underMouse()
 #endif
        )
+    {
         return;
+    }
 
     setCursor(QCursor(Qt::BlankCursor));
 }
