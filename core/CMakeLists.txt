@@ -53,16 +53,16 @@ set(DBCORECONFIG_XML_VERSION "3")
 
 set(CMAKE_MIN_VERSION     "3.0.0")
 set(ECM_MIN_VERSION       "1.7.0")
-set(KF5_MIN_VERSION       "5.1.0")
-set(QT_MIN_VERSION        "5.6.0")
+set(KF5_MIN_VERSION       "5.5.0")
+set(QT_MIN_VERSION        "5.9.0")
 set(LENSFUN_MIN_VERSION   "0.2.6.0")
 set(EXIV2_MIN_VERSION     "0.27.0")
 set(OPENCV_MIN_VERSION    "3.1.0")
 set(QTAV_MIN_VERSION      "1.12.0")
-set(KSANE_MIN_VERSION     "5.0.0")         # For digital scanner support.
-set(CALENDAR_MIN_VERSION  "4.81.0")        # Calendar Core dependency
-set(AKONADI_MIN_VERSION   "4.89.0")        # Akonadi Contact dependency
-set(VKONTAKTE_MIN_VERSION "4.70.0")        # VKontakte library dependency
+set(KSANE_MIN_VERSION     "5.5.0")        # For digital scanner support.
+set(CALENDAR_MIN_VERSION  "5.5.0")        # Calendar Core dependency
+set(AKONADI_MIN_VERSION   "4.89.0")       # Akonadi Contact dependency
+set(VKONTAKTE_MIN_VERSION "5.0.0")        # VKontakte library dependency
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
@@ -604,7 +604,7 @@ PRINT_OPTIONAL_LIBRARY_STATUS("libmagick++"       "https://www.imagemagick.org" 
 PRINT_OPTIONAL_LIBRARY_STATUS("libeigen3"         "https://github.com/eigenteam/eigen-git-mirror"                   "(version >= 3.0.0)"                    "digiKam will be compiled without Refocus tool support."                      Eigen3_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libgphoto2"        "https://github.com/gphoto"                                       "(version >= 2.4.0)"                    "digiKam will be compiled without GPhoto2 camera drivers support."            Gphoto2_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libjasper"         "https://github.com/mdadams/jasper"                               "(version >= 1.7.0)"                    "digiKam will be compiled without JPEG2000 support."                          Jasper_FOUND)
-PRINT_OPTIONAL_LIBRARY_STATUS("libkcalendarcore"  "https://cgit.kde.org/kcalcore.git/about/"                        "(version >= ${CALENDAR_MIN_VERSION})"  "digiKam will be compiled without advanced calendar support."                 KF5CalendarCore_FOUND)
+PRINT_OPTIONAL_LIBRARY_STATUS("libkcalendarcore"  "https://cgit.kde.org/kcalendarcore.git/about/"                   "(version >= ${CALENDAR_MIN_VERSION})"  "digiKam will be compiled without advanced calendar support."                 KF5CalendarCore_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libkvkontakte"     "https://cgit.kde.org/libkvkontatke.git/about/"                   "(version >= ${VKONTAKTE_MIN_VERSION})" "digiKam will be compiled without libkvkontakte support."                     KF5Vkontakte_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libkfilemetadata"  "https://cgit.kde.org/kfilemetadata.git/about/"                   "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without KDE desktop file metadata support."         KF5FileMetaData_FOUND)
 PRINT_OPTIONAL_LIBRARY_STATUS("libkiconthemes"    "https://cgit.kde.org/kiconthemes.git/about/"                     "(version >= ${KF5_MIN_VERSION})"       "digiKam will be compiled without KDE desktop icon themes support."           KF5IconThemes_FOUND)
