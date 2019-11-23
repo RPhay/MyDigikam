@@ -405,7 +405,10 @@ endif()
 # More Optional Dependencies
 
 find_package(Doxygen)
-find_package(Lqr-1)
+
+if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
+    find_package(Lqr-1)
+endif()
 
 # -- libgphoto2 rules ----------------------------------------------------------
 
