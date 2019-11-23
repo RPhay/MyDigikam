@@ -28,17 +28,17 @@
 
 // Qt includes
 
+#include <QDateTime>
 #include <QList>
 #include <QSize>
-#include <QDateTime>
-#include <QSharedData>
 #include <QReadWriteLock>
-#include <QWriteLocker>
 #include <QReadLocker>
+#include <QWriteLocker>
 
 // Local includes
 
 #include "coredburl.h"
+#include "dshareddata.h"
 #include "coredbalbuminfo.h"
 #include "iteminfocache.h"
 
@@ -57,7 +57,7 @@ public:
 public:
 
     ItemInfoCache          m_cache;
-    QReadWriteLock         m_lock;
+    QReadWriteLock          m_lock;
 
     static ItemInfoStatic* m_instance;
 };
@@ -88,7 +88,7 @@ public:
 
 // -----------------------------------------------------------------------------------
 
-class ItemInfoData : public QSharedData
+class ItemInfoData : public DSharedData
 {
 public:
 
