@@ -566,7 +566,7 @@ void XMPOrigin::applyMetadata(QByteArray& exifData, QByteArray& xmpData)
     meta.setExif(exifData);
     meta.setXmp(xmpData);
 
-    QString xmpDateTimeFormat = QLatin1String("yyyy:MM:ddThh:mm:ss");
+    QString xmpDateTimeFormat = QLatin1String("yyyy-MM-ddThh:mm:ss");
 
     if (d->dateCreatedCheck->isChecked())
     {

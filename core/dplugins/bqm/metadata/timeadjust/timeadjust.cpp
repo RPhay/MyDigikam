@@ -215,7 +215,7 @@ bool TimeAdjust::toolOperations()
     QDateTime orgDateTime;
 
     QString exifDateTimeFormat = QLatin1String("yyyy:MM:dd hh:mm:ss");
-    QString xmpDateTimeFormat  = QLatin1String("yyyy:MM:ddThh:mm:ss");
+    QString xmpDateTimeFormat  = QLatin1String("yyyy-MM-ddThh:mm:ss");
 
     switch (prm.dateSource)
     {

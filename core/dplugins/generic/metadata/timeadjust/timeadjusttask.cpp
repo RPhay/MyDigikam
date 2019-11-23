@@ -126,7 +126,7 @@ void TimeAdjustTask::run()
         if (ret)
         {
             QString exifDateTimeFormat = QLatin1String("yyyy:MM:dd hh:mm:ss");
-            QString xmpDateTimeFormat  = QLatin1String("yyyy:MM:ddThh:mm:ss");
+            QString xmpDateTimeFormat  = QLatin1String("yyyy-MM-ddThh:mm:ss");
 
             if (writeToSidecar || meta.canWriteExif(d->url.toLocalFile()))
             {

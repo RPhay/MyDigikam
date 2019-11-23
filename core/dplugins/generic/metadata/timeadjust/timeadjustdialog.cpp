@@ -378,7 +378,7 @@ void TimeAdjustDialog::readMetadataTimestamps()
         QDateTime curImageDateTime;
         TimeAdjustContainer prm    = d->settingsView->settings();
         QString exifDateTimeFormat = QLatin1String("yyyy:MM:dd hh:mm:ss");
-        QString xmpDateTimeFormat  = QLatin1String("yyyy:MM:ddThh:mm:ss");
+        QString xmpDateTimeFormat  = QLatin1String("yyyy-MM-ddThh:mm:ss");
 
         switch (prm.metadataSource)
         {
