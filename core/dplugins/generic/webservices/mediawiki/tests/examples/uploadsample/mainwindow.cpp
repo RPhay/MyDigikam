@@ -81,7 +81,6 @@ void MainWindow::loginHandle(KJob* login)
     }
     else
     {
-        Upload* const e1  = new Upload( MediaWiki );
         QFile* const file = new QFile(this->ui->lineEdit->text());
 
         if (!file->open(QIODevice::ReadOnly))
@@ -92,6 +91,7 @@ void MainWindow::loginHandle(KJob* login)
             return;
         }
 
+        Upload* const e1  = new Upload(MediaWiki);
         e1->setFile(file);
         e1->setFilename(this->ui->lineEdit_2->text());
 
