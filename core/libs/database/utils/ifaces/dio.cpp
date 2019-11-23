@@ -672,19 +672,4 @@ void DIO::addAlbumChildrenToList(QList<int>& list, Album* const album)
     }
 }
 
-void DIO::slotDateTimeForUrl(const QUrl& url, const QDateTime& dt, bool updModDate)
-{
-    ItemInfo info = ItemInfo::fromUrl(url);
-
-    if (!info.isNull())
-    {
-        info.setDateTime(dt);
-
-        if (updModDate)
-        {
-            info.setModDateTime(dt);
-        }
-    }
-}
-
 } // namespace Digikam

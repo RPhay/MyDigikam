@@ -150,7 +150,7 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
             this, SLOT(slotProcessEnded(QUrl,int)));
 
     connect(d->thread, SIGNAL(signalDateTimeForUrl(QUrl,QDateTime,bool)),
-            this, SIGNAL(signalDateTimeForUrl(QUrl,QDateTime,bool)));
+            d->iface, SLOT(slotDateTimeForUrl(QUrl,QDateTime,bool)));
 
     connect(d->progressBar, SIGNAL(signalProgressCanceled()),
             this, SLOT(slotCancelThread()));
@@ -171,9 +171,6 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
 
     connect(d->settingsView, SIGNAL(signalSettingsChangedTool()),
             this, SLOT(slotReadTimestamps()));
-
-    connect(this, SIGNAL(signalDateTimeForUrl(QUrl,QDateTime,bool)),
-            d->iface, SLOT(slotDateTimeForUrl(QUrl,QDateTime,bool)));
 
     // -----------------------------------------------------------------------
 

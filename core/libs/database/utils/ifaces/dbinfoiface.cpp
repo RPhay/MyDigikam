@@ -295,7 +295,19 @@ DBInfoIface::~DBInfoIface()
 
 void DBInfoIface::slotDateTimeForUrl(const QUrl& url, const QDateTime& dt, bool updModDate)
 {
-    DIO::instance()->slotDateTimeForUrl(url, dt, updModDate);
+    ItemInfo info = ItemInfo::fromUrl(url);
+
+    if (!info.isNull())
+    {
+        info.setDateTime(dt);
+
+        if (updModDate)
+        {
+            info.setModDateTime(dt);
+        }
+    }
+
+    ItemAttributesWatch::instance()->fileMetadataChanged(url);
 }
 
 void DBInfoIface::slotMetadataChangedForUrl(const QUrl& url)

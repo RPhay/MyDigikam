@@ -43,4 +43,5 @@ BUGFIXES:
 030 ==> 414300 - Buttons on either side completely unresponsive.
 031 ==> 414320 - Performance regression when scanning directories with many sub-directories.
 032 ==> 414284 - Improve Setup/Slideshow View Options Layout.
-033 ==> 
+033 ==> 414420 - Date/time in sidecar files for Videos seems to be ignored by digikam.
+034 ==> 

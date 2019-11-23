@@ -51,10 +51,6 @@ public:
     explicit TimeAdjustDialog(QWidget* const parent, DInfoInterface* const iface);
     ~TimeAdjustDialog();
 
-Q_SIGNALS:
-
-    void signalDateTimeForUrl(const QUrl&, const QDateTime&, bool);
-
 private Q_SLOTS:
 
     void slotApplyClicked();
