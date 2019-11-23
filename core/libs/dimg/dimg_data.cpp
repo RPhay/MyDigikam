@@ -55,8 +55,8 @@ void DImg::detach()
     QExplicitlySharedDataPointer<Private> old = m_priv;
 
     m_priv = new Private;
-    copyImageData(old.constData());
-    copyMetaData(old.constData());
+    copyImageData(old);
+    copyMetaData(old);
 
     if (old->data)
     {
@@ -139,7 +139,7 @@ uchar* DImg::stripImageData()
     return data;
 }
 
-void DImg::copyMetaData(const Private* const src)
+void DImg::copyMetaData(const QExplicitlySharedDataPointer<Private>& src)
 {
     m_priv->metaData     = src->metaData;
     m_priv->attributes   = src->attributes;
@@ -149,7 +149,7 @@ void DImg::copyMetaData(const Private* const src)
     //FIXME: what about sharing and deleting lanczos_func?
 }
 
-void DImg::copyImageData(const Private* const src)
+void DImg::copyImageData(const QExplicitlySharedDataPointer<Private>& src)
 {
     setImageData(src->null, src->width, src->height, src->sixteenBit, src->alpha);
 }

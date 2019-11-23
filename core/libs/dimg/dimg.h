@@ -683,8 +683,8 @@ private:
 
     DImg(const DImg& image, int w, int h);
 
-    void copyMetaData(const Private* const src);
-    void copyImageData(const Private* const src);
+    void copyMetaData(const QExplicitlySharedDataPointer<Private>& src);
+    void copyImageData(const QExplicitlySharedDataPointer<Private>& src);
     void setImageData(bool null, uint width, uint height, bool sixteenBit, bool alpha);
     void setImageDimension(uint width, uint height);
     size_t allocateData();
