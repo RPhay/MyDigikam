@@ -49,11 +49,12 @@
 
 using namespace Digikam;
 
-
 const QString IMAGE_PATH(QFINDTESTDATA("data/testimages/"));
 
 int main(int argc, char** argv)
 {
+    QApplication app(argc, argv);
+
     if (argc != 2)
     {
         qDebug() << "testdatabaseinit - test database initialization";
@@ -65,7 +66,6 @@ int main(int argc, char** argv)
                          QLatin1String("digiKam"), // No need i18n here.
                          digiKamVersion());
 
-    QApplication app(argc, argv);
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
