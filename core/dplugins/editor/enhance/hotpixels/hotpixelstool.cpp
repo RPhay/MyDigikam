@@ -180,7 +180,7 @@ void HotPixelsTool::readSettings()
     if (d->blackFrameURL.isValid())
     {
         EditorToolIface::editorToolIface()->setToolStartProgress(i18n("Loading: "));
-        BlackFrameListViewItem* item = new BlackFrameListViewItem(d->blackFrameListView, d->blackFrameURL);
+        BlackFrameListViewItem* const item = new BlackFrameListViewItem(d->blackFrameListView, d->blackFrameURL);
 
         connect(item, SIGNAL(signalLoadingProgress(float)),
                 this, SLOT(slotLoadingProgress(float)));
@@ -226,7 +226,7 @@ void HotPixelsTool::slotAddBlackFrame()
 
         d->blackFrameURL = url;
         d->blackFrameListView->clear();
-        BlackFrameListViewItem* item = new BlackFrameListViewItem(d->blackFrameListView, d->blackFrameURL);
+        BlackFrameListViewItem* const item = new BlackFrameListViewItem(d->blackFrameListView, d->blackFrameURL);
 
         connect(item, SIGNAL(signalLoadingProgress(float)),
                 this, SLOT(slotLoadingProgress(float)));
@@ -244,7 +244,8 @@ void HotPixelsTool::preparePreview()
     QList<HotPixel> hotPixelsRegion;
     QRect area = d->previewWidget->getOriginalImageRegionToRender();
 
-    for (QList<HotPixel>::const_iterator it = d->hotPixelsList.constBegin() ; it != d->hotPixelsList.constEnd() ; ++it)
+    for (QList<HotPixel>::const_iterator it = d->hotPixelsList.constBegin() ;
+         it != d->hotPixelsList.constEnd() ; ++it)
     {
         HotPixel hp = (*it);
 

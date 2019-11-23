@@ -39,31 +39,10 @@
 namespace DigikamEditorHotPixelsToolPlugin
 {
 
-BlackFrameListView::BlackFrameListView(QWidget* const parent)
-    : QTreeWidget(parent)
-{
-    setColumnCount(3);
-    setRootIsDecorated(false);
-    setSelectionMode(QAbstractItemView::SingleSelection);
-    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    setAllColumnsShowFocus(true);
-    setIconSize(QSize(THUMB_WIDTH, THUMB_WIDTH));
-
-    QStringList labels;
-    labels.append( i18n("Preview") );
-    labels.append( i18n("Size") );
-    labels.append( i18nc("This is a column which will contain the amount of HotPixels "
-                         "found in the black frame file", "HP") );
-    setHeaderLabels(labels);
-}
-
-// ----------------------------------------------------------------------------
-
-BlackFrameListViewItem::BlackFrameListViewItem(BlackFrameListView* const parent, const QUrl& url)
+BlackFrameListViewItem::BlackFrameListViewItem(QTreeWidget* const parent, const QUrl& url)
     : QObject(parent),
       QTreeWidgetItem(parent),
-      m_blackFrameURL(url),
-      m_parent(parent)
+      m_blackFrameURL(url)
 {
     m_parser = new BlackFrameParser(parent);
     m_parser->parseBlackFrame(url);
@@ -83,7 +62,8 @@ BlackFrameListViewItem::BlackFrameListViewItem(BlackFrameListView* const parent,
 
 void BlackFrameListViewItem::activate()
 {
-    m_parent->setToolTip(m_blackFrameDesc);
+    static_cast<QTreeWidgetItem*>(this)->treeWidget()->setToolTip(m_blackFrameDesc);
+
     emit signalParsed(m_hotPixels, m_blackFrameURL);
 }
 
@@ -104,7 +84,8 @@ void BlackFrameListViewItem::slotParsed(const QList<HotPixel>& hotPixels)
 
     m_blackFrameDesc = QString::fromUtf8("<p><b>%1</b>:<p>").arg(m_blackFrameURL.fileName());
 
-    for (QList <HotPixel>::const_iterator it = m_hotPixels.constBegin() ; it != m_hotPixels.constEnd() ; ++it)
+    for (QList <HotPixel>::const_iterator it = m_hotPixels.constBegin() ;
+         it != m_hotPixels.constEnd() ; ++it)
     {
         m_blackFrameDesc.append( QString::fromUtf8("[%1,%2] ").arg((*it).x()).arg((*it).y()) );
     }
@@ -125,8 +106,8 @@ QPixmap BlackFrameListViewItem::thumb(const QSize& size)
     float hpThumbX, hpThumbY;
     QRect hpRect;
 
-    xRatio = (float)size.width()/(float)m_image.width();
-    yRatio = (float)size.height()/(float)m_image.height();
+    xRatio = (float)size.width()  / (float)m_image.width();
+    yRatio = (float)size.height() / (float)m_image.height();
 
     //Draw hot pixels one by one
     QList<HotPixel>::const_iterator it;
@@ -149,5 +130,26 @@ QPixmap BlackFrameListViewItem::thumb(const QSize& size)
 
     return thumb;
 }
+
+// ----------------------------------------------------------------------------
+
+BlackFrameListView::BlackFrameListView(QWidget* const parent)
+    : QTreeWidget(parent)
+{
+    setColumnCount(3);
+    setRootIsDecorated(false);
+    setSelectionMode(QAbstractItemView::SingleSelection);
+    setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    setAllColumnsShowFocus(true);
+    setIconSize(QSize(THUMB_WIDTH, THUMB_WIDTH));
+
+    QStringList labels;
+    labels.append( i18n("Preview") );
+    labels.append( i18n("Size") );
+    labels.append( i18nc("This is a column which will contain the amount of HotPixels "
+                         "found in the black frame file", "HP") );
+    setHeaderLabels(labels);
+}
+
 
 } // namespace DigikamEditorHotPixelsToolPlugin

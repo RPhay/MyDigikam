@@ -44,36 +44,13 @@
 namespace DigikamEditorHotPixelsToolPlugin
 {
 
-class BlackFrameListView : public QTreeWidget
-{
-    Q_OBJECT
-
-public:
-
-    explicit BlackFrameListView(QWidget* const parent=nullptr);
-    ~BlackFrameListView() {};
-
-Q_SIGNALS:
-
-    void signalBlackFrameSelected(const QList<HotPixel>&, const QUrl&);
-
-private Q_SLOTS:
-
-    void slotParsed(const QList<HotPixel>& hotPixels, const QUrl& blackFrameURL)
-    {
-        emit signalBlackFrameSelected(hotPixels, blackFrameURL);
-    };
-};
-
-//-----------------------------------------------------------------------------------
-
 class BlackFrameListViewItem : public QObject, QTreeWidgetItem
 {
     Q_OBJECT
 
 public:
 
-    explicit BlackFrameListViewItem(BlackFrameListView* const parent, const QUrl& url);
+    explicit BlackFrameListViewItem(QTreeWidget* const parent, const QUrl& url);
     ~BlackFrameListViewItem() {};
 
 Q_SIGNALS:
@@ -97,20 +74,41 @@ private Q_SLOTS:
 private:
 
     // Data contained within each listview item
-    QImage              m_thumb;
-    QImage              m_image;
+    QImage            m_thumb;
+    QImage            m_image;
 
-    QSize               m_imageSize;
+    QSize             m_imageSize;
 
-    QList<HotPixel>     m_hotPixels;
+    QList<HotPixel>   m_hotPixels;
 
-    QString             m_blackFrameDesc;
+    QString           m_blackFrameDesc;
 
-    QUrl                m_blackFrameURL;
+    QUrl              m_blackFrameURL;
 
-    BlackFrameParser*   m_parser;
+    BlackFrameParser* m_parser;
+};
 
-    BlackFrameListView* m_parent;
+//-----------------------------------------------------------------------------------
+
+class BlackFrameListView : public QTreeWidget
+{
+    Q_OBJECT
+
+public:
+
+    explicit BlackFrameListView(QWidget* const parent=nullptr);
+    ~BlackFrameListView() {};
+
+Q_SIGNALS:
+
+    void signalBlackFrameSelected(const QList<HotPixel>&, const QUrl&);
+
+private Q_SLOTS:
+
+    void slotParsed(const QList<HotPixel>& hotPixels, const QUrl& blackFrameURL)
+    {
+        emit signalBlackFrameSelected(hotPixels, blackFrameURL);
+    };
 };
 
 } // namespace DigikamEditorHotPixelsToolPlugin
