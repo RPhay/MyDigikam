@@ -468,20 +468,20 @@ void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, 
 
     // https://en.wikipedia.org/wiki/Image_file_formats
 
-    defaultItemFilter << QLatin1String("jpg")   << QLatin1String("jpeg") << QLatin1String("jpe")                                                 // JPEG
-                       << QLatin1String("jp2")  << QLatin1String("j2k")  << QLatin1String("jpx") << QLatin1String("jpc") << QLatin1String("pgx") // JPEG-2000
-                       << QLatin1String("tif")  << QLatin1String("tiff")                                                                         // TIFF
-                       << QLatin1String("png")                                                                                                  // PNG
-                       << QLatin1String("gif")  << QLatin1String("xpm")  << QLatin1String("ppm") << QLatin1String("pnm") << QLatin1String("pgf")
-                       << QLatin1String("bmp")  << QLatin1String("pcx")
-                       << QLatin1String("heic") << QLatin1String("heif")
-                       << QLatin1String("webp");
+    defaultItemFilter << QLatin1String("jpg") << QLatin1String("jpeg") << QLatin1String("jpe")   // JPEG
+                      << QLatin1String("jp2") << QLatin1String("j2k")  << QLatin1String("jpx")   // JPEG-2000
+                      << QLatin1String("jpc") << QLatin1String("pgx")
+                      << QLatin1String("tif") << QLatin1String("tiff")                           // TIFF
+                      << QLatin1String("png")                                                    // PNG
+                      << QLatin1String("gif") << QLatin1String("xpm")  << QLatin1String("ppm")
+                      << QLatin1String("pnm") << QLatin1String("pgf")  << QLatin1String("bmp")
+                      << QLatin1String("pcx") << QLatin1String("heic") << QLatin1String("heif")
+                      << QLatin1String("webp");
 
     // Raster graphics editor containers: https://en.wikipedia.org/wiki/Raster_graphics_editor
 
-    defaultItemFilter << QLatin1String("xcf")
-                       << QLatin1String("psd") << QLatin1String("psb")
-                       << QLatin1String("kra") << QLatin1String("ora");
+    defaultItemFilter << QLatin1String("xcf") << QLatin1String("psd") << QLatin1String("psb")
+                      << QLatin1String("kra") << QLatin1String("ora");
 
     // Raw images: https://en.wikipedia.org/wiki/Raw_image_format
 
@@ -489,21 +489,25 @@ void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, 
 
     // Video files: https://en.wikipedia.org/wiki/Video_file_format
 
-    defaultVideoFilter << QLatin1String("mpeg") << QLatin1String("mpg")  << QLatin1String("mpo") << QLatin1String("mpe") << QLatin1String("mts") << QLatin1String("vob")    // MPEG
-                       << QLatin1String("avi")  << QLatin1String("divx")                                                                                                    // RIFF
-                       << QLatin1String("wmv")  << QLatin1String("wmf")  << QLatin1String("asf")                                                                            // ASF
-                       << QLatin1String("mp4")  << QLatin1String("3gp")  << QLatin1String("mov") << QLatin1String("3g2") << QLatin1String("m4v") << QLatin1String("m2v")    // QuickTime
-                       << QLatin1String("mkv")  << QLatin1String("webm")                                                                                                    // Matroska
-                       << QLatin1String("mng");                                                                                                                             // Animated PNG image
+    defaultVideoFilter << QLatin1String("mpeg") << QLatin1String("mpg") << QLatin1String("mpo")
+                       << QLatin1String("mpe")  << QLatin1String("mts") << QLatin1String("vob")  // MPEG
+                       << QLatin1String("avi")  << QLatin1String("divx")                         // RIFF
+                       << QLatin1String("wmv")  << QLatin1String("wmf") << QLatin1String("asf")  // ASF
+                       << QLatin1String("mp4")  << QLatin1String("3gp") << QLatin1String("mov")  // QuickTime
+                       << QLatin1String("3g2")  << QLatin1String("m4v") << QLatin1String("m2v")
+                       << QLatin1String("mkv")  << QLatin1String("webm")                         // Matroska
+                       << QLatin1String("mng");                                                  // Animated PNG image
 
     // Audio files: https://en.wikipedia.org/wiki/Audio_file_format
 
-    defaultAudioFilter << QLatin1String("ogg") << QLatin1String("oga") << QLatin1String("flac") << QLatin1String("wv")  << QLatin1String("ape") // Linux audio
-                       << QLatin1String("mpc") << QLatin1String("au")                                                                           // Linux audio
-                       << QLatin1String("m4b") << QLatin1String("aax") << QLatin1String("aa")                                                   // Book audio
-                       << QLatin1String("mp3") << QLatin1String("aac")                                                                          // MPEG based audio
-                       << QLatin1String("m4a") << QLatin1String("m4p") << QLatin1String("caf") << QLatin1String("aiff")                         // Apple audio
-                       << QLatin1String("wma") << QLatin1String("wav");                                                                         // Windows audio
+    defaultAudioFilter << QLatin1String("ogg") << QLatin1String("oga") << QLatin1String("flac")  // Linux audio
+                       << QLatin1String("wv")  << QLatin1String("ape") << QLatin1String("mpc")
+                       << QLatin1String("au")
+                       << QLatin1String("m4b") << QLatin1String("aax") << QLatin1String("aa")    // Book audio
+                       << QLatin1String("mp3") << QLatin1String("aac")                           // MPEG based audio
+                       << QLatin1String("m4a") << QLatin1String("m4p") << QLatin1String("caf")   // Apple audio
+                       << QLatin1String("aiff")
+                       << QLatin1String("wma") << QLatin1String("wav");                          // Windows audio
 }
 
 void CoreDbSchemaUpdater::defaultIgnoreDirectoryFilterSettings(QStringList& defaultIgnoreDirectoryFilter)
