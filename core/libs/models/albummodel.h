@@ -48,8 +48,9 @@ public:
 
 protected:
 
-    virtual QVariant decorationRoleData(Album* a) const override;
-    virtual Album*   albumForId(int id) const override;
+    virtual QVariant albumData(Album* a, int role) const override;
+    virtual QVariant decorationRoleData(Album* a)  const override;
+    virtual Album*   albumForId(int id)            const override;
 };
 
 // ------------------------------------------------------------------
@@ -80,9 +81,9 @@ public:
 
 protected:
 
-    virtual QVariant albumData(Album *a, int role) const override;
-    virtual QVariant decorationRoleData(Album* a) const override;
-    virtual Album*   albumForId(int id) const override;
+    virtual QVariant albumData(Album* a, int role) const override;
+    virtual QVariant decorationRoleData(Album* a)  const override;
+    virtual Album*   albumForId(int id)            const override;
 
 private:
     QMap<int, int> m_unconfirmedFaceCount;
@@ -117,7 +118,7 @@ public:
 protected:
 
     virtual QVariant albumData(Album* a, int role) const override;
-    virtual Album*   albumForId(int id) const override;
+    virtual Album*   albumForId(int id)            const override;
 
 private Q_SLOTS:
 
@@ -169,10 +170,10 @@ public Q_SLOTS:
 
 protected:
 
-    virtual QString  albumName(Album* a) const override;
+    virtual QString  albumName(Album* a)          const override;
     virtual QVariant decorationRoleData(Album* a) const override;
-    virtual QVariant sortRoleData(Album* a) const override;
-    virtual Album*   albumForId(int id) const override;
+    virtual QVariant sortRoleData(Album* a)       const override;
+    virtual Album*   albumForId(int id)           const override;
 
 protected:
 

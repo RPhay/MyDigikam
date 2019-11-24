@@ -25,6 +25,7 @@
 
 // Qt includes
 
+#include <QDir>
 #include <QIcon>
 #include <QLocale>
 
@@ -79,6 +80,25 @@ Album* AlbumModel::albumForId(int id) const
     return AlbumManager::instance()->findPAlbum(id);
 }
 
+QVariant AlbumModel::albumData(Album* a, int role) const
+{
+    if (role == Qt::DisplayRole && showCount() && a->isTrashAlbum())
+    {
+        PAlbum* const palbum = AlbumManager::instance()->findPAlbum(a->parent()->id());
+
+        if (palbum)
+        {
+            QString path = palbum->folderPath();
+            path.append(QLatin1String(".dtrash/files"));
+            QDir dir(path, QLatin1String(""), QDir::Unsorted, QDir::Files);
+
+            return QString::fromUtf8("%1 (%2)").arg(albumName(a)).arg(dir.count());
+        }
+    }
+
+    return AbstractCheckableAlbumModel::albumData(a, role);
+}
+
 // ------------------------------------------------------------------
 
 TagModel::TagModel(RootAlbumBehavior rootBehavior, QObject* const parent)
@@ -102,7 +122,7 @@ TAlbum* TagModel::albumForIndex(const QModelIndex& index) const
     return static_cast<TAlbum*>(AbstractCheckableAlbumModel::albumForIndex(index));
 }
 
-QVariant TagModel::albumData(Album *a, int role) const
+QVariant TagModel::albumData(Album* a, int role) const
 {
     if (role == Qt::DisplayRole && !a->isRoot() &&
             m_unconfirmedFaceCount.contains(a->id()) && a->id() != FaceTags::unknownPersonTagId())
@@ -111,6 +131,7 @@ QVariant TagModel::albumData(Album *a, int role) const
                 QString::fromUtf8(" (%1 new)").arg(m_unconfirmedFaceCount.find(a->id()).value());
         return res;
     }
+
     return AbstractCheckableAlbumModel::albumData(a, role);
 }
 
@@ -129,7 +150,7 @@ Album* TagModel::albumForId(int id) const
 void TagModel::setTagCount(TagCountMode mode)
 {
     disconnect(AlbumManager::instance(), SIGNAL(signalTAlbumsDirty(QMap<int,int>)),
-            this, SLOT(setCountMap(QMap<int,int>)));
+               this, SLOT(setCountMap(QMap<int,int>)));
 
     if (mode == NormalTagCount)
     {
@@ -164,6 +185,7 @@ SearchModel::SearchModel(QObject* const parent)
 
     // handle search icons
     albumSettingsChanged();
+
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
             this, SLOT(albumSettingsChanged()));
 }
