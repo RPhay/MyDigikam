@@ -16,13 +16,12 @@
 // Derived XML parser adapter for Expat.
 // =================================================================================================
 struct XML_ParserStruct;	// ! Hack to avoid exposing expat.h to all clients.
+namespace DngXmpSdk {
 typedef struct XML_ParserStruct *XML_Parser;
 
 #ifndef BanAllEntityUsage
     #define BanAllEntityUsage	0
 #endif
-
-namespace DngXmpSdk {
 
 
 class ExpatAdapter : public XMLParserAdapter {
