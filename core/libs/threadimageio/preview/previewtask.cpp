@@ -414,6 +414,30 @@ void PreviewLoadingTask::execute()
     }
 }
 
+void PreviewLoadingTask::setStatus(LoadingTaskStatus status)
+{
+    m_loadingTaskStatus = status;
+
+    if (m_loadingTaskStatus == LoadingTaskStatusStopping)
+    {
+        LoadingCache* const cache = LoadingCache::cache();
+        LoadingCache::CacheLock lock(cache);
+
+        // check for m_usedProcess, to avoid race condition that it has finished before
+        if (m_usedProcess)
+        {
+            // remove this from the list of loading processes in cache
+            cache->removeLoadingProcess(this);
+            // remove this from list of listeners - check in continueQuery() of active thread
+            m_usedProcess->removeListener(this);
+            // set m_usedProcess to 0, signalling that we have detached already
+            m_usedProcess = nullptr;
+            // wake all listeners - particularly this - from waiting on cache condvar
+            lock.wakeAll();
+        }
+    }
+}
+
 bool PreviewLoadingTask::needToScale()
 {
     switch (m_loadingDescription.previewParameters.previewSettings.quality)
