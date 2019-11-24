@@ -248,6 +248,10 @@ bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
                 d->lineEdit->completer()->popup()->hide();
             }
         }
+        else if (event->type() == QEvent::Show)
+        {
+            adjustSize();
+        }
 
         return false;
     }
