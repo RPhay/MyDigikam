@@ -62,7 +62,7 @@ int CoreDbSchemaUpdater::schemaVersion()
 
 int CoreDbSchemaUpdater::filterSettingsVersion()
 {
-    return 9;
+    return 10;
 }
 
 int CoreDbSchemaUpdater::uniqueHashVersion()
@@ -496,7 +496,8 @@ void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, 
                        << QLatin1String("mp4")  << QLatin1String("3gp") << QLatin1String("mov")  // QuickTime
                        << QLatin1String("3g2")  << QLatin1String("m4v") << QLatin1String("m2v")
                        << QLatin1String("mkv")  << QLatin1String("webm")                         // Matroska
-                       << QLatin1String("mng");                                                  // Animated PNG image
+                       << QLatin1String("mng")                                                   // Animated PNG image
+                       << QLatin1String("m2ts");                                                 // Blu-ray
 
     // Audio files: https://en.wikipedia.org/wiki/Audio_file_format
 
