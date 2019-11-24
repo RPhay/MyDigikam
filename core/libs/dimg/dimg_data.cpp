@@ -52,7 +52,7 @@ void DImg::detach()
         return;
     }
 
-    QExplicitlySharedDataPointer<Private> old = m_priv;
+    QExplicitlySharedDataPointer<Private> old(m_priv.data());
 
     m_priv = new Private;
     copyImageData(old);
