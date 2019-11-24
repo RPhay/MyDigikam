@@ -2,6 +2,8 @@
 Type=Theme
 Name=HTML5 Responsive
 Name[ca]=HTML5 responsiu
+Name[en_GB]=HTML5 Responsive
+Name[es]=HTML5 adaptable
 Name[nl]=Reageert op HTML5
 Name[pt]=HTML5 Responsivo
 Name[sv]=HTML5 Responsive
@@ -9,6 +11,8 @@ Name[uk]=Інтерактивний HTML5
 Name[x-test]=xxHTML5 Responsivexx
 Comment=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
 Comment[ca]=Genera una galeria usant HTML5 responsiu i CSS3 i codificació UTF-8. Opcionalment usa el PhotoSwipe del Dmitry Semenov por mostrar les imatges.
+Comment[en_GB]=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
+Comment[es]=Genera una galería usando HTML5 adaptable con CSS3 y codificación UTF-8. Opcionalmente usa PhotoSwipe, por Dmitry Semenov, para mostrar las imágenes.
 Comment[nl]=Genereert een galerij met op reagerend HTML5 en CSS3 en UTF-8 codering. Gebruikt als optie PhotoSwipe door Dmitry Semenov om de afbeeldingen te tonen.
 Comment[pt]=Gera uma galeria que usa HTML5 responsivo ou adaptativo, CSS3 e codificação em UTF-8. Opcionalmente, usa o PhotoSwipe de Dmitry Semenov para mostrar as imagens.
 Comment[sv]=Skapar ett galleri med användning av HTML5 Responsive, CCS3 och UTF-8 kodning. Använder valfritt PhotoSwipe av Dmitry Semenov för att visa bilderna.
@@ -18,6 +22,8 @@ Comment[x-test]=xxGenerates a gallery using responsive HTML5 and CSS3 and UTF-8 
 [X-HTMLGallery Author]
 Name=Bobulous
 Name[ca]=Bobulous
+Name[en_GB]=Bobulous
+Name[es]=Bobulous
 Name[nl]=Bobulous
 Name[pt]=Bolhas
 Name[sv]=Bobulous
@@ -28,6 +34,8 @@ Url=https://www.bobulous.org.uk/
 [X-HTMLGallery Preview]
 Name=HTML5 Responsive
 Name[ca]=HTML5 responsiu
+Name[en_GB]=HTML5 Responsive
+Name[es]=HTML5 adaptable
 Name[nl]=Reageert op HTML5
 Name[pt]=HTML5 Responsivo
 Name[sv]=HTML5 Responsive
@@ -171,6 +179,8 @@ Caption-2=Both
 [X-HTMLGallery Parameter paginationModeTop]
 Name=Top pagination mode
 Name[ca]=Mode de paginació de la part superior
+Name[en_GB]=Top pagination mode
+Name[es]=Modo de paginación superior
 Name[nl]=Modus met paginering bovenaan
 Name[pt]=Modo de paginação no topo
 Name[sv]=Övre pagineringsläge
@@ -186,6 +196,8 @@ Caption-1=List all
 [X-HTMLGallery Parameter paginationModeBottom]
 Name=Bottom pagination mode
 Name[ca]=Mode de paginació de la part inferior
+Name[en_GB]=Bottom pagination mode
+Name[es]=Modo de paginación inferior
 Name[nl]=Modus met paginering onderaan
 Name[pt]=Modo de paginação no fundo
 Name[sv]=Nedre pagineringsläge
@@ -201,6 +213,8 @@ Caption-1=List all
 [X-HTMLGallery Parameter usePhotoSwipe]
 Name=Use PhotoSwipe
 Name[ca]=Usa el PhotoSwipe
+Name[en_GB]=Use PhotoSwipe
+Name[es]=Usar PhotoSwipe
 Name[nl]=PhotoSwipe gebruiken
 Name[pt]=Usar o PhotoSwipe
 Name[sv]=Använd PhotoSwipe
@@ -216,6 +230,8 @@ Caption-1=No
 [X-HTMLGallery Parameter photoSwipeBackgroundOpacity]
 Name=PhotoSwipe Background Opacity
 Name[ca]=Opacitat del fons del PhotoSwipe
+Name[en_GB]=PhotoSwipe Background Opacity
+Name[es]=Opacidad de fondo de PhotoSwipe
 Name[nl]=Achtergronddekking van PhotoSwipe
 Name[pt]=Opacidade do Fundo do PhotoSwipe
 Name[sv]=PhotoSwipe bakgrundsogenomskinlighet
@@ -229,6 +245,8 @@ Max=10
 [X-HTMLGallery Parameter photoSwipeShowSharingButton]
 Name=PhotoSwipe sharing button
 Name[ca]=Botó de compartició del PhotoSwipe
+Name[en_GB]=PhotoSwipe sharing button
+Name[es]=Botón para compartir en PhotoSwipe
 Name[nl]=Delenknop van PhotoSwipe
 Name[pt]=Botão de partilha do PhotoSwipe
 Name[sv]=PhotoSwipe delningsknapp
@@ -244,6 +262,8 @@ Caption-1=No
 [X-HTMLGallery Parameter addJiggle]
 Name=Add jiggle
 Name[ca]=Afegeix un sacseig
+Name[en_GB]=Add jiggle
+Name[es]=Añadir sacudida
 Name[nl]=Wiegelen toevoegen
 Name[pt]=Adicionar uma agitação
 Name[sv]=Lägg till vickning
@@ -259,6 +279,8 @@ Caption-1=No
 [X-HTMLGallery Parameter showGPS]
 Name=Show GPS data
 Name[ca]=Mostra les dades del GPS
+Name[en_GB]=Show GPS data
+Name[es]=Mostrar datos GPS
 Name[nl]=GPS gegevens tonen
 Name[pt]=Mostrar os dados de GPS
 Name[sv]=Visa GPS-data
