@@ -60,6 +60,10 @@ BlackFrameListViewItem::BlackFrameListViewItem(QTreeWidget* const parent, const 
             this, SIGNAL(signalLoadingComplete()));
 }
 
+BlackFrameListViewItem::~BlackFrameListViewItem()
+{
+}
+
 void BlackFrameListViewItem::activate()
 {
     static_cast<QTreeWidgetItem*>(this)->treeWidget()->setToolTip(m_blackFrameDesc);
@@ -95,13 +99,16 @@ void BlackFrameListViewItem::slotParsed(const QList<HotPixel>& hotPixels)
 
 QPixmap BlackFrameListViewItem::thumb(const QSize& size)
 {
-    //First scale it down to the size
+    // First scale it down to the size
+
     QPixmap thumb = QPixmap::fromImage(m_image.scaled(size, Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
-    //And draw the hot pixel positions on the thumb
+    // And draw the hot pixel positions on the thumb
+
     QPainter p(&thumb);
 
-    //Take scaling into account
+    // Take scaling into account
+
     float xRatio, yRatio;
     float hpThumbX, hpThumbY;
     QRect hpRect;
@@ -109,7 +116,8 @@ QPixmap BlackFrameListViewItem::thumb(const QSize& size)
     xRatio = (float)size.width()  / (float)m_image.width();
     yRatio = (float)size.height() / (float)m_image.height();
 
-    //Draw hot pixels one by one
+    // Draw hot pixels one by one
+
     QList<HotPixel>::const_iterator it;
 
     for (it = m_hotPixels.constBegin() ; it != m_hotPixels.constEnd() ; ++it)
@@ -151,5 +159,13 @@ BlackFrameListView::BlackFrameListView(QWidget* const parent)
     setHeaderLabels(labels);
 }
 
+BlackFrameListView::~BlackFrameListView()
+{
+}
+
+void BlackFrameListView::slotParsed(const QList<HotPixel>& hotPixels, const QUrl& blackFrameURL)
+{
+    emit signalBlackFrameSelected(hotPixels, blackFrameURL);
+}
 
 } // namespace DigikamEditorHotPixelsToolPlugin

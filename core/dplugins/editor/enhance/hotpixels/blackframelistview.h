@@ -51,7 +51,7 @@ class BlackFrameListViewItem : public QObject, QTreeWidgetItem
 public:
 
     explicit BlackFrameListViewItem(QTreeWidget* const parent, const QUrl& url);
-    ~BlackFrameListViewItem() {};
+    ~BlackFrameListViewItem();
 
 Q_SIGNALS:
 
@@ -74,6 +74,7 @@ private Q_SLOTS:
 private:
 
     // Data contained within each listview item
+
     QImage            m_thumb;
     QImage            m_image;
 
@@ -97,7 +98,7 @@ class BlackFrameListView : public QTreeWidget
 public:
 
     explicit BlackFrameListView(QWidget* const parent=nullptr);
-    ~BlackFrameListView() {};
+    ~BlackFrameListView();
 
 Q_SIGNALS:
 
@@ -105,10 +106,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void slotParsed(const QList<HotPixel>& hotPixels, const QUrl& blackFrameURL)
-    {
-        emit signalBlackFrameSelected(hotPixels, blackFrameURL);
-    };
+    void slotParsed(const QList<HotPixel>&, const QUrl&);
 };
 
 } // namespace DigikamEditorHotPixelsToolPlugin
