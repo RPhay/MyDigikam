@@ -302,8 +302,8 @@ void PreviewLoadingTask::execute()
                 // Put valid image into cache of loaded images
                 if (!m_img.isNull())
                 {
-                    //cache->putImage(m_loadingDescription.cacheKey(), m_img,
-                    //                m_loadingDescription.filePath);
+                    cache->putImage(m_loadingDescription.cacheKey(), m_img,
+                                    m_loadingDescription.filePath);
                 }
 
                 // remove this from the list of loading processes in cache
