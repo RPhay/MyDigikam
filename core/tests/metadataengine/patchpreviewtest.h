@@ -40,6 +40,9 @@ private:
 private Q_SLOTS:
 
     void testExtractPreviewAndFixMetadata();
+
+    void initTestCase();
+    void cleanupTestCase();
 };
 
 #endif // DIGIKAM_PATCH_PREVIEW_TEST_H

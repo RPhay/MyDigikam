@@ -31,6 +31,7 @@
 
 // Local includes
 
+#include "dpluginloader.h"
 #include "previewloadthread.h"
 
 QTEST_MAIN(PatchPreviewTest)
@@ -96,4 +97,16 @@ void PatchPreviewTest::patchPreview(const QString& file, bool rescale, int maxDi
     meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
     ret = meta.applyChanges(true);
     QVERIFY(ret);
+}
+
+void PatchPreviewTest::initTestCase()
+{
+    QDir dir(QFINDTESTDATA("../../dplugins/dimg"));
+    qputenv("DK_PLUGIN_PATH", dir.canonicalPath().toUtf8());
+    DPluginLoader::instance()->init();
+}
+
+void PatchPreviewTest::cleanupTestCase()
+{
+    DPluginLoader::instance()->cleanUp();
 }
