@@ -143,10 +143,15 @@ bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding
     QStringList binPaths;
 
 #ifdef Q_OS_WIN
-    binPaths << QLatin1String("C:/Program Files/RawTherapee/5.4/");
-    binPaths << QLatin1String("C:/Program Files/RawTherapee/5.5/");
-    binPaths << QLatin1String("C:/Program Files/RawTherapee/5.6/");
-    binPaths << QLatin1String("C:/Program Files/RawTherapee/5.7/");
+    QString paths = QString::fromUtf8(qgetenv("PATH")).toLower();
+
+    if (!paths.contains(QLatin1String("rawtherapee")))
+    {
+        binPaths << QLatin1String("C:/Program Files/RawTherapee/5.4/");
+        binPaths << QLatin1String("C:/Program Files/RawTherapee/5.5/");
+        binPaths << QLatin1String("C:/Program Files/RawTherapee/5.6/");
+        binPaths << QLatin1String("C:/Program Files/RawTherapee/5.7/");
+    }
 #endif
 
     QString binary = QStandardPaths::findExecutable(QLatin1String("rawtherapee"), binPaths);

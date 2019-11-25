@@ -190,7 +190,12 @@ bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& 
     QStringList binPaths;
 
 #ifdef Q_OS_WIN
-    binPaths << QLatin1String("C:/Program Files/darktable/bin/");
+    QString paths = QString::fromUtf8(qgetenv("PATH")).toLower();
+
+    if (!paths.contains(QLatin1String("darktable")))
+    {
+        binPaths << QLatin1String("C:/Program Files/darktable/bin/");
+    }
 #endif
 
     QString binary = QStandardPaths::findExecutable(QLatin1String("darktable"), binPaths);
