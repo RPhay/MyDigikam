@@ -187,7 +187,7 @@ public:
     QSize                                       pixelSize;
     QString                                     mimeType;
 
-    QSharedDataPointer<MetaEngineData::Private> data;
+    QExplicitlySharedDataPointer<MetaEngineData::Private> data;
 };
 
 } // namespace Digikam

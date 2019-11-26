@@ -28,7 +28,7 @@
 
 // Qt includes
 
-#include <QSharedDataPointer>
+#include <QExplicitlySharedDataPointer>
 
 // Local includes
 
@@ -54,7 +54,7 @@ public:
 
 private:
 
-    QSharedDataPointer<Private> d;
+    QExplicitlySharedDataPointer<Private> d;
 
     friend class MetaEngine;
 };
