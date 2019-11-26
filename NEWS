@@ -46,4 +46,5 @@ BUGFIXES:
 033 ==> 414420 - Date/time in sidecar files for Videos seems to be ignored by digikam.
 034 ==> 414340 - RawTherapee plugin.
 035 ==> 414473 - Importing problem with M2Ts video files.
-036 ==> 
+036 ==> 414521 - File management is broken.
+037 ==> 
