@@ -50,5 +50,6 @@ BUGFIXES:
 037 ==> 205406 - Add Javascript to scaling images in html gallery [patch].
 038 ==> 334680 - Allow to limit exported files by type-mime in html gallery.
 039 ==> 092462 - Add a new option to limit amount of thumbnails per index page.
-040 ==> 
+040 ==> 136389 - Add new option to show image date and time in html gallery.
+041 ==> 
 
