@@ -48,5 +48,6 @@ BUGFIXES:
 035 ==> 414473 - Importing problem with M2Ts video files.
 036 ==> 414521 - File management is broken.
 037 ==> 205406 - Add Javascript to scaling images in html gallery [patch].
-038 ==> 
+038 ==> 334680 - Allow to limit exported files by type-mime in html gallery.
+039 ==> 
 
