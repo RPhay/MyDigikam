@@ -47,4 +47,6 @@ BUGFIXES:
 034 ==> 414340 - RawTherapee plugin.
 035 ==> 414473 - Importing problem with M2Ts video files.
 036 ==> 414521 - File management is broken.
-037 ==> 
+037 ==> 205406 - Add Javascript to scaling images in html gallery [patch].
+038 ==> 
+
