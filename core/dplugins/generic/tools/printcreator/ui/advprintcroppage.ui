@@ -69,7 +69,7 @@ Enable &quot;Do not crop&quot; to avoid cropping all of the photos.</string>
           <string>Rotate photo to the left</string>
          </property>
          <property name="text">
-          <string>&amp;Rotate left</string>
+          <string>Rotate &amp;left</string>
          </property>
         </widget>
        </item>
@@ -82,7 +82,7 @@ Enable &quot;Do not crop&quot; to avoid cropping all of the photos.</string>
           <string>Rotate photo to the right</string>
          </property>
          <property name="text">
-          <string>&amp;Rotate right</string>
+          <string>Rotate &amp;right</string>
          </property>
         </widget>
        </item>
