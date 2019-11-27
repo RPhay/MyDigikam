@@ -136,8 +136,6 @@ void RedEyeCorrectionFilter::filterImage()
     }
 
     cv::Mat intermediateImage;
-    // Deep copy
-    DImg temp         = m_orgImage.copy();
     int type          = m_orgImage.sixteenBit() ? CV_16UC3 : CV_8UC3;
     type              = m_orgImage.hasAlpha()   ? type     : type + 8;
 
@@ -160,13 +158,13 @@ void RedEyeCorrectionFilter::filterImage()
         gray.convertTo(gray, CV_8UC1, 1 / 255.0);
     }
 
-    QList<QRectF> qrectfdets   = d->facedetector.detectFaces(temp);
+    QList<QRectF> qrectfdets   = d->facedetector.detectFaces(m_filePath);
     RedEye::ShapePredictor& sp = *(d->sp);
 
     if (runningFlag() && (qrectfdets.size() != 0))
     {
         std::vector<cv::Rect> dets;
-        QList<QRect> qrectdets = FaceDetector::toAbsoluteRects(qrectfdets, temp.size());
+        QList<QRect> qrectdets = FaceDetector::toAbsoluteRects(qrectfdets, m_orgImage.size());
         QRectFtocvRect(qrectdets, dets);
 
         // Eye Detection
@@ -189,8 +187,8 @@ void RedEyeCorrectionFilter::filterImage()
 
     if (runningFlag())
     {
-        m_destImage.putImageData(m_orgImage.width(), m_orgImage.height(), temp.sixteenBit(),
-                                 !temp.hasAlpha(), intermediateImage.data, true);
+        m_destImage.putImageData(m_orgImage.width(), m_orgImage.height(), m_orgImage.sixteenBit(),
+                                 !m_orgImage.hasAlpha(), intermediateImage.data, true);
     }
 }
 
