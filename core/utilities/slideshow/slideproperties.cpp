@@ -53,7 +53,7 @@ public:
 
     explicit Private()
         : maxStringLen(80),
-         paintEnabled(true)
+          paintEnabled(true)
     {
     }
 
@@ -87,7 +87,9 @@ void SlideProperties::setCurrentUrl(const QUrl& url)
     if (QWidget* const widget = nativeParentWidget())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     setFixedSize(screen->availableGeometry().size() / 1.5);
@@ -288,9 +290,9 @@ void SlideProperties::printInfoText(QPainter& p, int& offset, const QString& str
         offset += QFontMetrics(p.font()).lineSpacing();
         p.setPen(Qt::black);
 
-        for (int x = -1; x <= 1; ++x)
+        for (int x = -1 ; x <= 1 ; ++x)
         {
-            for (int y = offset + 1; y >= offset - 1; --y)
+            for (int y = offset + 1 ; y >= offset - 1 ; --y)
             {
                 p.drawText(x, p.window().height() - y, str);
             }
