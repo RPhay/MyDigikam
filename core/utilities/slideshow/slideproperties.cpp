@@ -57,12 +57,14 @@ public:
     {
     }
 
-    const int         maxStringLen;
-    bool              paintEnabled;
+    const int                maxStringLen;
+    bool                     paintEnabled;
 
-    QUrl              url;
+    QUrl                     url;
 
-    SlideShowSettings settings;
+    SlideShowSettings        settings;
+
+    DInfoInterface::DInfoMap infoMap;
 };
 
 SlideProperties::SlideProperties(const SlideShowSettings& settings, QWidget* const parent)
@@ -89,7 +91,9 @@ void SlideProperties::setCurrentUrl(const QUrl& url)
     }
 
     setFixedSize(screen->availableGeometry().size() / 1.5);
-    d->url  = url;
+    d->infoMap = d->settings.iface->itemInfo(url);
+    d->url     = url;
+
     update();
 }
 
@@ -103,9 +107,8 @@ void SlideProperties::paintEvent(QPaintEvent*)
     QPainter p(this);
     p.setFont(d->settings.captionFont);
 
-    DInfoInterface::DInfoMap info = d->settings.iface->itemInfo(d->url);
-    DItemInfo item(info);
- 
+    DItemInfo item(d->infoMap);
+
     QString str;
     //PhotoInfoContainer photoInfo = d->info.photoInfo;
     QString comment  = item.comment();
