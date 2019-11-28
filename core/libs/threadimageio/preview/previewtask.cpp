@@ -291,6 +291,8 @@ void PreviewLoadingTask::execute()
 
         if (continueQuery(&m_img))
         {
+            qDebug(DIGIKAM_GENERAL_LOG) << "Loading task status:" << m_loadingTaskStatus;
+
             if (!m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
             {
                 m_img.exifRotate(m_loadingDescription.filePath);
