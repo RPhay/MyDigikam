@@ -26,6 +26,7 @@
 
 // Qt includes
 
+#include <QSettings>
 #include <QMessageBox>
 #include <QApplication>
 #include <QPointer>
@@ -194,7 +195,13 @@ bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& 
 
     if (!paths.contains(QLatin1String("darktable")))
     {
-        binPaths << QLatin1String("C:/Program Files/darktable/bin/");
+        QSettings settings(QLatin1String("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\"
+                                         "CurrentVersion\\App Paths\\darktable.exe"),
+                                         QSettings::NativeFormat);
+
+        QUrl pathUrl = QUrl::fromLocalFile(settings.value(QLatin1String("Default"),
+                                                          QString()).toString());
+        binPaths << pathUrl.adjusted(QUrl::RemoveFilename).toLocalFile();
     }
 #endif
 
