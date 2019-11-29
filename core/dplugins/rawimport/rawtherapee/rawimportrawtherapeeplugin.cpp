@@ -24,13 +24,12 @@
 
 // Qt includes
 
-#include <QSettings>
 #include <QMessageBox>
 #include <QApplication>
 #include <QPointer>
 #include <QByteArray>
 #include <QFileInfo>
-#include <QStandardPaths>
+#include <QSettings>
 #include <QTemporaryFile>
 
 // KDE includes
@@ -141,24 +140,17 @@ bool RawTherapeeRawImportPlugin::run(const QString& filePath, const DRawDecoding
 
     // --------
 
-    QStringList binPaths;
+    QString binary;
 
 #ifdef Q_OS_WIN
-    QString paths = QString::fromUtf8(qgetenv("PATH")).toLower();
+    QSettings settings(QLatin1String("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\"
+                                     "CurrentVersion\\App Paths\\rawtherapee.exe"),
+                                     QSettings::NativeFormat);
 
-    if (!paths.contains(QLatin1String("rawtherapee")))
-    {
-        QSettings settings(QLatin1String("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\"
-                                         "CurrentVersion\\App Paths\\rawtherapee.exe"),
-                                         QSettings::NativeFormat);
-
-        QUrl pathUrl = QUrl::fromLocalFile(settings.value(QLatin1String("Default"),
-                                                          QString()).toString());
-        binPaths << pathUrl.adjusted(QUrl::RemoveFilename).toLocalFile();
-    }
+    binary = settings.value(QLatin1String("Default"), QString()).toString();
+#else
+    binary = QLatin1String("rawtherapee");
 #endif
-
-    QString binary = QStandardPaths::findExecutable(QLatin1String("rawtherapee"), binPaths);
 
     d->rawtherapee->setProgram(binary);
     d->rawtherapee->setArguments(QStringList() << QLatin1String("-gimp") // Special mode used initialy as Gimp plugin

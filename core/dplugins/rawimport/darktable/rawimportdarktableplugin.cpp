@@ -26,14 +26,13 @@
 
 // Qt includes
 
-#include <QSettings>
 #include <QMessageBox>
 #include <QApplication>
 #include <QPointer>
 #include <QByteArray>
 #include <QTextStream>
 #include <QFileInfo>
-#include <QStandardPaths>
+#include <QSettings>
 #include <QTemporaryFile>
 
 // KDE includes
@@ -188,24 +187,17 @@ bool DarkTableRawImportPlugin::run(const QString& filePath, const DRawDecoding& 
 
     // --------
 
-    QStringList binPaths;
+    QString binary;
 
 #ifdef Q_OS_WIN
-    QString paths = QString::fromUtf8(qgetenv("PATH")).toLower();
+    QSettings settings(QLatin1String("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\"
+                                     "CurrentVersion\\App Paths\\darktable.exe"),
+                                     QSettings::NativeFormat);
 
-    if (!paths.contains(QLatin1String("darktable")))
-    {
-        QSettings settings(QLatin1String("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\"
-                                         "CurrentVersion\\App Paths\\darktable.exe"),
-                                         QSettings::NativeFormat);
-
-        QUrl pathUrl = QUrl::fromLocalFile(settings.value(QLatin1String("Default"),
-                                                          QString()).toString());
-        binPaths << pathUrl.adjusted(QUrl::RemoveFilename).toLocalFile();
-    }
+    binary = settings.value(QLatin1String("Default"), QString()).toString();
+#else
+    binary = QLatin1String("darktable");
 #endif
-
-    QString binary = QStandardPaths::findExecutable(QLatin1String("darktable"), binPaths);
 
     d->darktable->setProgram(binary);
     d->darktable->setArguments(QStringList() << QLatin1String("--library")
