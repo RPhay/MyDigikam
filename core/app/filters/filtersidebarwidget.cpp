@@ -165,8 +165,8 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
     d->tagFilterView    = new TagFilterView(box3, tagFilterModel);
     d->tagFilterView->setObjectName(QLatin1String("ItemIconViewTagFilterView"));
 
-    d->tagFilterView->filteredModel()->doNotListTagsWithProperty(TagPropertyName::person());
-    d->tagFilterView->filteredModel()->setFilterBehavior(AlbumFilterModel::StrictFiltering);
+    //d->tagFilterView->filteredModel()->doNotListTagsWithProperty(TagPropertyName::person());
+    //d->tagFilterView->filteredModel()->setFilterBehavior(AlbumFilterModel::StrictFiltering);
 
     d->tagFilterSearchBar = new SearchTextBar(box3, QLatin1String("ItemIconViewTagFilterSearchBar"));
     d->tagFilterSearchBar->setModel(d->tagFilterView->filteredModel(),
