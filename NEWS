@@ -59,4 +59,5 @@ BUGFIXES:
 046 ==> 414484 - Cannot use Rawtherapee or Darktable for raw image import on Windows.
 047 ==> 166577 - List of available cameras in search.
 048 ==> 414637 - New option for search.
-049 ==> 
+049 ==> 414401 - RawTherapee does not work as Raw Import Tool if both are AppImages.
+050 ==> 
