@@ -421,6 +421,7 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     d->ratingWidget->installEventFilter(this);
     // TODO update, what does this filter?
     d->tagCheckView->installEventFilter(this);
+    d->newTagEdit->installEventFilter(this);
     updateRecentTags();
 
     // Connect to attribute watch ------------------------------
@@ -871,7 +872,7 @@ void ItemDescEditTab::slotWriteToFileMetadataFromDatabase()
 
 bool ItemDescEditTab::eventFilter(QObject* o, QEvent* e)
 {
-    if ( e->type() == QEvent::KeyPress )
+    if (e->type() == QEvent::KeyPress)
     {
         QKeyEvent* const k = static_cast<QKeyEvent*>(e);
 
@@ -903,6 +904,24 @@ bool ItemDescEditTab::eventFilter(QObject* o, QEvent* e)
             d->lastSelectedWidget = qobject_cast<QWidget*>(o);
             emit signalNextItem();
             return true;
+        }
+
+        if ((d->newTagEdit == o) &&
+            !d->newTagEdit->completer()->popup()->isVisible())
+        {
+            if (k->key() == Qt::Key_Up)
+            {
+                d->lastSelectedWidget = qobject_cast<QWidget*>(o);
+                emit signalPrevItem();
+                return true;
+            }
+
+            if (k->key() == Qt::Key_Down)
+            {
+                d->lastSelectedWidget = qobject_cast<QWidget*>(o);
+                emit signalNextItem();
+                return true;
+            }
         }
     }
 

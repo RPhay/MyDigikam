@@ -55,4 +55,5 @@ BUGFIXES:
 042 ==> 114216 - Add a new option to export and merge more than one album in html gallery.
 043 ==> 414516 - digikam crash when double-clicking on Google Maps when editing geolocation.
 044 ==> 414603 - Pictures sort by freehand - drag & drop.
-045 ==> 
+045 ==> 414630 - Shortcut bug in caption (tag).
+046 ==> 
