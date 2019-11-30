@@ -41,8 +41,8 @@ private Q_SLOTS:
 
     void testExtractPreviewAndFixMetadata();
 
-    void initTestCase();
-    void cleanupTestCase();
+    void initTestCase()    override;
+    void cleanupTestCase() override;
 };
 
 #endif // DIGIKAM_PATCH_PREVIEW_TEST_H

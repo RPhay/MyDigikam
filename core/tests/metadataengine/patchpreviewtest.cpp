@@ -101,6 +101,8 @@ void PatchPreviewTest::patchPreview(const QString& file, bool rescale, int maxDi
 
 void PatchPreviewTest::initTestCase()
 {
+    AbstractUnitTest::initTestCase();
+
     QDir dir(QFINDTESTDATA("../../dplugins/dimg"));
     qputenv("DK_PLUGIN_PATH", dir.canonicalPath().toUtf8());
     DPluginLoader::instance()->init();
@@ -108,5 +110,7 @@ void PatchPreviewTest::initTestCase()
 
 void PatchPreviewTest::cleanupTestCase()
 {
+    AbstractUnitTest::cleanupTestCase();
+
     DPluginLoader::instance()->cleanUp();
 }
