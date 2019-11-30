@@ -47,8 +47,7 @@ public:
     {
     }
 
-    void execute()                           override;
-    void setStatus(LoadingTaskStatus status) override;
+    void execute() override;
 
 private:
 

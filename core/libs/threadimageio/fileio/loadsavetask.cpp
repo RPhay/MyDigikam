@@ -374,12 +374,12 @@ bool SharedLoadingTask::continueQuery(DImg* const img)
 
 void SharedLoadingTask::setStatus(LoadingTaskStatus status)
 {
-    m_loadingTaskStatus = status;
-
-    if (m_loadingTaskStatus == LoadingTaskStatusStopping)
+    if (status == LoadingTaskStatusStopping)
     {
         LoadingCache* const cache = LoadingCache::cache();
         LoadingCache::CacheLock lock(cache);
+
+        m_loadingTaskStatus = status;
 
         // check for m_usedProcess, to avoid race condition that it has finished before
         if (m_usedProcess)
@@ -393,6 +393,10 @@ void SharedLoadingTask::setStatus(LoadingTaskStatus status)
             // wake all listeners - particularly this - from waiting on cache condvar
             lock.wakeAll();
         }
+    }
+    else
+    {
+        m_loadingTaskStatus = status;
     }
 }
 
