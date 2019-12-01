@@ -118,7 +118,7 @@ void CalPainter::paint(int month)
     QDate date = CalSystem().date(params.year, month, 1);
     int s      = date.dayOfWeek();
 
-    if (s + 7 - startDayOffset >= 7)
+    if ((s + 7 - startDayOffset) >= 7)
     {
         s = s - 7;
     }
@@ -255,7 +255,8 @@ void CalPainter::paint(int month)
         rsmall = r;
         rsmall.setWidth(r.width() - 2);
         rsmall.setHeight(r.height() - 2);
-        drawText(rsmall, Qt::AlignRight | Qt::AlignBottom, QLocale().standaloneDayName(dayname, QLocale::ShortFormat));
+        drawText(rsmall, Qt::AlignRight | Qt::AlignBottom,
+                 QLocale().standaloneDayName(dayname, QLocale::ShortFormat));
     }
 
     restore();
@@ -284,14 +285,14 @@ void CalPainter::paint(int month)
                     QString descr = settings->getDayDescr(month, days[index]);
 
                     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Painting special info: '" << descr
-                             << "' for date " << days[index] << "/"
-                             << month;
+                                                         << "' for date " << days[index] << "/"
+                                                         << month;
 
                     rSpecial = rsmall;
                     rSpecial.translate(2, 0);
-                    QFont f(params.baseFont);
-                    f.setPixelSize(f.pixelSize() / 3);
-                    setFont(f);
+                    QFont fnt(params.baseFont);
+                    fnt.setPixelSize(fnt.pixelSize() / 3);
+                    setFont(fnt);
 
                     drawText(rSpecial, Qt::AlignLeft | Qt::AlignTop, descr);
 
