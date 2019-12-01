@@ -140,7 +140,7 @@ void SharedLoadingTask::execute()
         if (cachedImg)
         {
             // image is found in image cache, loading is successful
-            m_img = *cachedImg;
+            m_img = DImg(*cachedImg);
         }
         else
         {

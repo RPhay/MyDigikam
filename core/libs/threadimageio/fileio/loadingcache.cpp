@@ -184,9 +184,7 @@ LoadingCache::~LoadingCache()
 
 DImg* LoadingCache::retrieveImage(const QString& cacheKey) const
 {
-    DImg* const img = d->imageCache[cacheKey];
-
-    return img ? new DImg(*img) : img;
+    return d->imageCache[cacheKey];
 }
 
 bool LoadingCache::putImage(const QString& cacheKey, const DImg& img, const QString& filePath) const
