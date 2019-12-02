@@ -88,8 +88,10 @@ public:
 
     void updateInformation();
 
-    // implement this, if you have special item widgets, e.g. an edit line
-    // they will be set automatically when adding items, changing order, etc.
+    /**
+     * implement this, if you have special item widgets, e.g. an edit line
+     * they will be set automatically when adding items, changing order, etc.
+     */
     virtual void updateItemWidgets() {};
 
 protected:
@@ -223,11 +225,13 @@ public:
 
     void                loadImagesFromCurrentSelection();
 
-    /** A function to load all the images from the album if no image has been selected by user.
+    /**
+     * A function to load all the images from the album if no image has been selected by user.
      */
     void                loadImagesFromCurrentAlbum();
 
-    /** a function to check whether an image has been selected or not.
+    /**
+     * a function to check whether an image has been selected or not.
      */
     bool                checkSelection();
 

@@ -57,23 +57,26 @@ class DIGIKAM_EXPORT DInfoInterface : public QObject
 
 public:
 
-    typedef QMap<QString, QVariant> DInfoMap;  // Map of properties name and value.
-    typedef QList<int>              DAlbumIDs; // List of Album ids.
+    typedef QMap<QString, QVariant> DInfoMap;  ///< Map of properties name and value.
+    typedef QList<int>              DAlbumIDs; ///< List of Album ids.
 
 public:
 
     explicit DInfoInterface(QObject* const parent);
     ~DInfoInterface();
 
-    // Slot to call when date time stamp from item is changed.
+public:
+
+    /// Slot to call when date time stamp from item is changed.
     Q_SLOT virtual void slotDateTimeForUrl(const QUrl& url, const QDateTime& dt, bool updModDate);
 
-    // Slot to call when something in metadata from item is changed.
+    /// Slot to call when something in metadata from item is changed.
     Q_SLOT virtual void slotMetadataChangedForUrl(const QUrl& url);
 
 public:
 
-    // Low level items and albums methods
+    ///@{
+    /// Low level items and albums methods
 
     virtual QList<QUrl> currentSelectedItems()                 const;
     virtual QList<QUrl> currentAlbumItems()                    const;
@@ -87,30 +90,35 @@ public:
 
     virtual DInfoMap itemInfo(const QUrl&)                     const;
     virtual void     setItemInfo(const QUrl&, const DInfoMap&) const;
+    ///@}
 
 public:
 
+    ///@{
     // Albums chooser view methods (to use items from albums before to process).
 
-    virtual QWidget*  albumChooser(QWidget* const parent) const;
-    virtual DAlbumIDs albumChooserItems()                 const;
-    virtual bool      supportAlbums()                     const;
+    virtual QWidget*  albumChooser(QWidget* const parent)      const;
+    virtual DAlbumIDs albumChooserItems()                      const;
+    virtual bool      supportAlbums()                          const;
 
     Q_SIGNAL void signalAlbumChooserSelectionChanged();
+    ///@}
 
 public:
 
+    ///@{
     // Album selector view methods (to upload items from an external place).
 
-    virtual QWidget* uploadWidget(QWidget* const parent) const;
-    virtual QUrl     uploadUrl()                         const;
+    virtual QWidget* uploadWidget(QWidget* const parent)       const;
+    virtual QUrl     uploadUrl()                               const;
 
     Q_SIGNAL void signalUploadUrlChanged();
 
-    // Url to upload new items without to use album selector.
-    virtual QUrl     defaultUploadUrl()                  const;
+    /// Url to upload new items without to use album selector.
+    virtual QUrl     defaultUploadUrl()                        const;
 
     Q_SIGNAL void signalImportedImage(const QUrl&);
+    ///@}
 
 public:
 
@@ -118,7 +126,7 @@ public:
     virtual QAbstractItemModel* tagFilterModel();
 
 #ifdef HAVE_MARBLE
-    virtual QList<GPSItemContainer*> currentGPSItems()   const;
+    virtual QList<GPSItemContainer*> currentGPSItems()         const;
 #endif
 
 };
@@ -162,41 +170,41 @@ public:
 
 public:
 
-    QString            name()             const;
-    QString            comment()          const;
-    QString            title()            const;
-    QSize              dimensions()       const;
-    QDateTime          dateTime()         const;
-    QStringList        tagsPath()         const;
-    QStringList        keywords()         const;
+    QString            name()                 const;
+    QString            comment()              const;
+    QString            title()                const;
+    QSize              dimensions()           const;
+    QDateTime          dateTime()             const;
+    QStringList        tagsPath()             const;
+    QStringList        keywords()             const;
 
-    int                orientation()      const;
+    int                orientation()          const;
     void               setOrientation(int);
-    int                rating()           const;
+    int                rating()               const;
     void               setRating(int);
-    int                colorLabel()       const;
+    int                colorLabel()           const;
     void               setColorLabel(int);
-    int                pickLabel()        const;
+    int                pickLabel()            const;
     void               setPickLabel(int);
 
-    double             latitude()         const;
-    double             longitude()        const;
-    double             altitude()         const;
-    qlonglong          fileSize()         const;
-    QStringList        creators()         const;
-    QString            credit()           const;
-    QString            rights()           const;
-    QString            source()           const;
-    QString            make()             const;
-    QString            model()            const;
-    QString            exposureTime()     const;
-    QString            sensitivity()      const;
-    QString            aperture()         const;
-    QString            focalLength()      const;
-    QString            focalLength35mm()  const;
-    QString            videoCodec()       const;
+    double             latitude()             const;
+    double             longitude()            const;
+    double             altitude()             const;
+    qlonglong          fileSize()             const;
+    QStringList        creators()             const;
+    QString            credit()               const;
+    QString            rights()               const;
+    QString            source()               const;
+    QString            make()                 const;
+    QString            model()                const;
+    QString            exposureTime()         const;
+    QString            sensitivity()          const;
+    QString            aperture()             const;
+    QString            focalLength()          const;
+    QString            focalLength35mm()      const;
+    QString            videoCodec()           const;
 
-    bool hasGeolocationInfo() const;
+    bool hasGeolocationInfo()                 const;
 
 private:
 

@@ -41,12 +41,14 @@ public:
     explicit Private();
     ~Private();
 
-    /** Try to find plugin files from Qt5 plugins install dir:
+    /**
+     * Try to find plugin files from Qt5 plugins install dir:
      */
     QFileInfoList pluginEntriesList() const;
 
-    /** Stage to load plugins in memory
-    */
+    /**
+     * Stage to load plugins in memory
+     */
     bool        appendPlugin(QObject* const obj,
                              QPluginLoader* const loader);
     void        loadPlugins();

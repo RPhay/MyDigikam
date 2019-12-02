@@ -51,7 +51,7 @@ class DIGIKAM_EXPORT WSSettings : public QObject
 
 public:
 
-    // Images selection mode
+    /// Images selection mode
     enum Selection
     {
         EXPORT = 0,
@@ -80,24 +80,28 @@ public:
     explicit WSSettings(QObject* const parent=nullptr);
     ~WSSettings();
 
-    // Read and write settings in config file between sessions.
+    ///@{
+    /// Read and write settings in config file between sessions.
     void  readSettings(KConfigGroup& group);
     void  writeSettings(KConfigGroup& group);
+    ///@}
 
     QString format() const;
 
-    // Helper methods to fill settings from GUI.
+    ///@{
+    /// Helper methods to fill settings from GUI.
     static QMap<WebService,  QString> webServiceNames();
     static QMap<ImageFormat, QString> imageFormatNames();
+    ///@}
 
-    // Helper method to list all user accounts (of all web service) that user logged in before.
+    /// Helper method to list all user accounts (of all web service) that user logged in before.
     QStringList allUserNames(const QString& serviceName);
 
 public:
 
-    Selection           selMode;             // Items selection mode
+    Selection           selMode;             ///< Items selection mode
 
-    QList<QUrl>         inputImages;         // Selected items to upload.
+    QList<QUrl>         inputImages;         ///< Selected items to upload.
 
     bool                addFileProperties;
     bool                imagesChangeProp;
@@ -115,13 +119,13 @@ public:
     QSettings*          oauthSettings;
     O0SettingsStore*    oauthSettingsStore;
 
-    QString             currentAlbumId;     // Selected album to upload to
+    QString             currentAlbumId;     ///< Selected album to upload to
 
     int                 imageSize;
 
     ImageFormat         imageFormat;
 
-    QMap<QUrl, QUrl>    itemsList;          // Map of original item and attached item (can be resized).
+    QMap<QUrl, QUrl>    itemsList;          ///< Map of original item and attached item (can be resized).
 };
 
 } // namespace Digikam

@@ -52,19 +52,23 @@ public:
     explicit ComboBoxDelegate(DItemsList* const, const QMap<int, QString>&);
     ~ComboBoxDelegate();
 
-    /* Whenever an element needs to be edited, this method should be called.
+    /**
+     * Whenever an element needs to be edited, this method should be called.
      * It's actually a hack to prevent the item text shining through whenever
      * editing occurs.
      */
     void startEditing(QTreeWidgetItem*, int);
 
-    /* Overloaded functions to provide the delegate functionality.
+    ///@{
+    /**
+     * Overloaded functions to provide the delegate functionality.
      */
-    void     paint(QPainter*, const QStyleOptionViewItem&, const QModelIndex&) const       override;
-    QSize    sizeHint(const QStyleOptionViewItem&, const QModelIndex&) const               override;
+    void     paint(QPainter*, const QStyleOptionViewItem&, const QModelIndex&)       const override;
+    QSize    sizeHint(const QStyleOptionViewItem&, const QModelIndex&)               const override;
     QWidget* createEditor(QWidget*, const QStyleOptionViewItem&, const QModelIndex&) const override;
-    void     setEditorData(QWidget*, const QModelIndex&) const                             override;
-    void     setModelData(QWidget*, QAbstractItemModel*, const QModelIndex&) const         override;
+    void     setEditorData(QWidget*, const QModelIndex&)                             const override;
+    void     setModelData(QWidget*, QAbstractItemModel*, const QModelIndex&)         const override;
+    ///@}
 
 private Q_SLOTS:
 

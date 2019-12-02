@@ -49,7 +49,7 @@ public:
     {
     }
 
-    /*
+    /**
      * This method is used by derived class of WSAblum,
      * to set the attributes inherited from WSAlbum, knowing
      * a WSAlbum.
@@ -77,7 +77,7 @@ public:
     bool      uploadable;
 };
 
-/*
+/**
  * This class is used when parsing response of listAlbums().
  * It contains only the most important attributes of an album,
  * which is needed for further usage (e.g upload photos, create new album).

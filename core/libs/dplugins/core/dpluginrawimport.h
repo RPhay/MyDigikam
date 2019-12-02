@@ -53,15 +53,18 @@ public:
 
 public:
 
-    /** This kind of plugin only provide one tool.
+    /**
+     * This kind of plugin only provide one tool.
      */
     int count() const override { return 1; };
 
-    /** This kind of plugin do not use a category.
+    /**
+     * This kind of plugin do not use a category.
      */
     QStringList categories() const override { return QStringList(); };
 
-    /** This kind of plugin do not have GUI visibility attribute.
+    /**
+     * This kind of plugin do not have GUI visibility attribute.
      */
     void setVisible(bool) override {};
 
@@ -72,18 +75,21 @@ public:
 
 public:
 
-    /** Function to re-implement to invoke Raw processor for a Raw file path.
-     *  Default Raw decoding settings is also availalble.
+    /**
+     * Function to re-implement to invoke Raw processor for a Raw file path.
+     * Default Raw decoding settings is also availalble.
      */
     virtual bool run(const QString& path, const DRawDecoding& def) = 0;
 
 Q_SIGNALS:
 
-    /** Signal to emit to notify host application to load Raw with these decoding settings.
+    /**
+     * Signal to emit to notify host application to load Raw with these decoding settings.
      */
     void signalLoadRaw(const Digikam::LoadingDescription&);
 
-    /** Signal to emit to notify host application to load pre-decoded Raw preprocessed with these decoding settings.
+    /**
+     * Signal to emit to notify host application to load pre-decoded Raw preprocessed with these decoding settings.
      */
     void signalDecodedImage(const Digikam::LoadingDescription&, const Digikam::DImg&);
 };

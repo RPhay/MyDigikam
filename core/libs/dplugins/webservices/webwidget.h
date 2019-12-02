@@ -41,8 +41,8 @@ class DIGIKAM_EXPORT WebWidget : public QWebView
 
 public:
 
-  explicit WebWidget(QWidget* const parent = 0);
-  ~WebWidget();
+    explicit WebWidget(QWidget* const parent = 0);
+    ~WebWidget();
 
 Q_SIGNALS:
 
@@ -50,7 +50,7 @@ Q_SIGNALS:
 
 protected:
 
-    void closeEvent(QCloseEvent *event) override;
+    void closeEvent(QCloseEvent* event) override;
 
 private:
 

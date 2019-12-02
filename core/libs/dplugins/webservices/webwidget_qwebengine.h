@@ -45,17 +45,16 @@ class DIGIKAM_EXPORT WebWidget : public QWebEngineView
 
 public:
 
-  explicit WebWidget(QWidget* const parent = nullptr);
-  ~WebWidget();
+    explicit WebWidget(QWidget* const parent = nullptr);
+    ~WebWidget();
 
 protected:
 
-  void closeEvent(QCloseEvent *event) override;
+    void closeEvent(QCloseEvent *event) override;
 
 Q_SIGNALS:
 
     void closeView(bool val);
-
 
 private:
 

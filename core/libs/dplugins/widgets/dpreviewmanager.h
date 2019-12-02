@@ -66,6 +66,7 @@ public:
     void setButtonVisible(bool b);
     void setSelectionAreaPossible(bool b);
 
+    ///@{
     /**
      * Manage a selection area and show it
      *
@@ -73,6 +74,7 @@ public:
      */
     void   setSelectionArea(const QRectF& rectangle);
     QRectF getSelectionArea() const;
+    ///@}
 
 Q_SIGNALS:
 

@@ -43,10 +43,10 @@ public:
     /// Plugin action types to resume where they can be used.
     enum ActionType
     {
-        InvalidType   = -1,
+        InvalidType   = -1,     ///< An invalid action category.
 
-        Generic       = 0,      /// Generic action available everywhere (AlbumView, Editor, and LightTable).
-        Editor                  /// Specific action for Image Editor and Showfoto.
+        Generic       = 0,      ///< Generic action available everywhere (AlbumView, Editor, and LightTable).
+        Editor                  ///< Specific action for Image Editor and Showfoto.
     };
 
     /// Plugin action categories.
@@ -54,18 +54,18 @@ public:
     {
         InvalidCat    = -1,
 
-        GenericExport = 0,      /// Generic export action.
-        GenericImport,          /// Generic import action.
-        GenericTool,            /// Generic processing action.
-        GenericMetadata,        /// Generic Metadata adjustement action.
-        GenericView,            /// Generic View action (as Slideshow).
+        GenericExport = 0,      ///< Generic export action.
+        GenericImport,          ///< Generic import action.
+        GenericTool,            ///< Generic processing action.
+        GenericMetadata,        ///< Generic Metadata adjustement action.
+        GenericView,            ///< Generic View action (as Slideshow).
 
-        EditorFile,             /// Image Editor file action.
-        EditorColors,           /// Image Editor color correction action.
-        EditorEnhance,          /// Image Editor enhance action.
-        EditorTransform,        /// Image Editor transform action.
-        EditorDecorate,         /// Image Editor decorate action.
-        EditorFilters           /// Image Editor special effects action.
+        EditorFile,             ///< Image Editor file action.
+        EditorColors,           ///< Image Editor color correction action.
+        EditorEnhance,          ///< Image Editor enhance action.
+        EditorTransform,        ///< Image Editor transform action.
+        EditorDecorate,         ///< Image Editor decorate action.
+        EditorFilters           ///< Image Editor special effects action.
     };
 
 public:

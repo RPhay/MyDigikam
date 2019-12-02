@@ -43,7 +43,8 @@ public:
     explicit WSToolUtils() {};
     ~WSToolUtils()         {};
 
-    /** Generates random string.
+    /**
+     * Generates random string.
      */
     static QString randomString(const int& length);
 

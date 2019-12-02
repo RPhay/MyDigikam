@@ -129,13 +129,16 @@ public Q_SLOTS:
 //  void slotZoomSel();      // TODO: add a button for that purpose
     void slotZoom2Fit();
 
-    // Selection area specific slots (TL = TopLeft, BR = BottomRight)
+    ///@{
+    /// Selection area specific slots (TL = TopLeft, BR = BottomRight)
     void slotSetTLX(float ratio);
     void slotSetTLY(float ratio);
     void slotSetBRX(float ratio);
     void slotSetBRY(float ratio);
+    ///@}
 
-    /** This function is used to set a selection without the user setting it.
+    /**
+     * This function is used to set a selection without the user setting it.
      * \note all parameters must be in the range 0.0 -> 1.0.
      * \param tl_x is the x coordinate of the top left corner 0=0 1=image with.
      * \param tl_y is the y coordinate of the top left corner 0=0 1=image height.
@@ -145,7 +148,8 @@ public Q_SLOTS:
     void slotSetSelection(float tl_x, float tl_y, float br_x, float br_y);
     void slotClearActiveSelection();
 
-    /** This function is used to darken everything except what is inside the given area.
+    /**
+     * This function is used to darken everything except what is inside the given area.
      * \note all parameters must be in the range 0.0 -> 1.0.
      * \param tl_x is the x coordinate of the top left corner 0=0 1=image with.
      * \param tl_y is the y coordinate of the top left corner 0=0 1=image height.
@@ -154,14 +158,16 @@ public Q_SLOTS:
      */
     void slotSetHighlightArea(float tl_x, float tl_y, float br_x, float br_y);
 
-    /** This function sets the percentage of the highlighted area that is visible.
-     *  The rest is hidden. This stacks with the previous highlight area.
+    /**
+     * This function sets the percentage of the highlighted area that is visible.
+     * The rest is hidden. This stacks with the previous highlight area.
      * \param percentage is the percentage of the highlighted area that is shown.
      * \param hideColor is the color to use to hide the highlighted area of the image.
      */
     void slotSetHighlightShown(int percentage, QColor highLightColor = Qt::white);
 
-    /** This function removes the highlight area.
+    /**
+     * This function removes the highlight area.
      */
     void slotClearHighlight();
 

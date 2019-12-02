@@ -45,46 +45,56 @@ class DIGIKAM_EXPORT DPluginConfView : public QTreeWidget
 
 public:
 
-    /** Default constructor.
+    /**
+     * Default constructor.
      */
     explicit DPluginConfView(QWidget* const parent=nullptr);
     ~DPluginConfView();
 
-    /** Apply all changes about plugins selected to be hosted in host application.
+    /**
+     * Apply all changes about plugins selected to be hosted in host application.
      */
     void apply();
 
-    /** Return the number of plugins actived in the list.
+    /**
+     * Return the number of plugins actived in the list.
      */
-    int actived() const;
+    int actived()                                const;
 
-    /** Return the total number of plugins in the list.
+    /**
+     * Return the total number of plugins in the list.
      */
-    int count()   const;
+    int count()                                  const;
 
-    /** Return the number of visible plugins in the list.
+    /**
+     * Return the number of visible plugins in the list.
      */
-    int itemsVisible() const;
+    int itemsVisible()                           const;
 
-    /** Return the number of plugins in the list with visibly properties availalble.
+    /**
+     * Return the number of plugins in the list with visibly properties availalble.
      */
-    int itemsWithVisiblyProperty() const;
+    int itemsWithVisiblyProperty()               const;
 
-    /** Select all plugins in the list.
+    /**
+     * Select all plugins in the list.
      */
-    void selectAll() override;
+    void selectAll()                                   override;
 
-    /** Clear all selected plugins in the list.
+    /**
+     * Clear all selected plugins in the list.
      */
     void clearAll();
 
-    /** Set the string used to filter the plugins list. signalSearchResult() is emitted when all is done.
+    /**
+     * Set the string used to filter the plugins list. signalSearchResult() is emitted when all is done.
      */
     void setFilter(const QString& filter, Qt::CaseSensitivity cs);
 
-    /** Return the current string used to filter the plugins list.
+    /**
+     * Return the current string used to filter the plugins list.
      */
-    QString filter() const;
+    QString filter()                             const;
 
     DPlugin* plugin(QTreeWidgetItem* const item) const;
 

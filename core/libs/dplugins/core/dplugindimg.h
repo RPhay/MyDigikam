@@ -73,48 +73,56 @@ public:
      */
     QString ifaceIid() const override { return QLatin1String(DIGIKAM_DPLUGIN_DIMG_IID); };
 
-    /** This kind of plugin do not need to be configurable
+    /**
+     * This kind of plugin do not need to be configurable
      */
     bool hasVisibilityProperty() const override { return false; };
 
-    /** With this kind of plugin, we will display the type-mimes list on about dialog.
+    /**
+     * With this kind of plugin, we will display the type-mimes list on about dialog.
      */
     QMap<QString, QString> extraAboutData() const override;
     QString extraAboutDataTitle()           const override;
 
 public:
 
-    /** Return a single capitalized word to identify the format supported by the loader.
-     *  Ex: jpeg => "JPG" ; tiff => "TIF", etc.
+    /**
+     * Return a single capitalized word to identify the format supported by the loader.
+     * Ex: jpeg => "JPG" ; tiff => "TIF", etc.
      */
     virtual QString loaderName() const = 0;
 
-    /** Return the list of white-listed type-mimes supported by the loader,
-     *  as a string of file-name suffix separated by spaces.
-     *  Ex: "jpeg jpg thm"
+    /**
+     * Return the list of white-listed type-mimes supported by the loader,
+     * as a string of file-name suffix separated by spaces.
+     * Ex: "jpeg jpg thm"
      */
     virtual QString typeMimes() const = 0;
 
-    /** Return true if the loader can read a preview image.
+    /**
+     * Return true if the loader can read a preview image.
      */
     virtual bool previewSupported() const { return false; };
 
-    /** Return > 0 if source file path is supported by the loader and contents can be loaded.
-     *  The return value (1 - 100) is a priority.
-     *  DigiKam default loaders have a priority of 10, the
-     *  QImage loader has a priority of 80 and the
-     *  ImageMagick loader has a priority of 90.
-     *  If the loader is to be used before the default loader,
-     *  the value must be less than 10.
+    /**
+     * Return > 0 if source file path is supported by the loader and contents can be loaded.
+     * The return value (1 - 100) is a priority.
+     * digiKam default loaders have a priority of 10, the
+     * QImage loader has a priority of 80 and the
+     * ImageMagick loader has a priority of 90.
+     * If the loader is to be used before the default loader,
+     * the value must be less than 10.
      */
     virtual int canRead(const QFileInfo& fileInfo, bool magic) const = 0;
 
-    /** Return > 0 if target file format is supported by the loader and contents can be written.
-     *  The return value (1 - 100) is a priority.
+    /**
+     * Return > 0 if target file format is supported by the loader and contents can be written.
+     * The return value (1 - 100) is a priority.
      */
     virtual int canWrite(const QString& format) const = 0;
 
-    /** Return the image loader instance for the DImg instance.
+    /**
+     * Return the image loader instance for the DImg instance.
      */
     virtual DImgLoader* loader(DImg* const image, const DRawDecoding& rawSettings = DRawDecoding()) const = 0;
 };

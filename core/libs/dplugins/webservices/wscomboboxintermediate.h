@@ -49,13 +49,15 @@ class DIGIKAM_EXPORT WSComboBoxIntermediate : public QComboBox
 
 public:
 
-    /* Initialize the combobox with a parent and a string to indicate the
+    /**
+     * Initialize the combobox with a parent and a string to indicate the
      * intermediate state.
      */
     explicit WSComboBoxIntermediate(QWidget* const = nullptr, const QString& = QString());
     ~WSComboBoxIntermediate();
 
-    /* Set the state of the combobox to intermediate. The intermediate state is
+    /**
+     * Set the state of the combobox to intermediate. The intermediate state is
      * 'unset' when another index is selected.
      */
     void setIntermediate(bool);

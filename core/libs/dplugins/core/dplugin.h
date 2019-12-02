@@ -41,8 +41,9 @@
 #include "dpluginauthor.h"
 #include "digikam_export.h"
 
-/** The plugin interface identifier definitions shared between DPlugins and Loader to
- *  check the binary compatibility at run-time.
+/**
+ * The plugin interface identifier definitions shared between DPlugins and Loader to
+ * check the binary compatibility at run-time.
  */
 #define DIGIKAM_DPLUGIN_GENERIC_IID   "org.kde.digikam.DPluginGeneric/1.1.0"
 #define DIGIKAM_DPLUGIN_EDITOR_IID    "org.kde.digikam.DPluginEditor/1.1.0"

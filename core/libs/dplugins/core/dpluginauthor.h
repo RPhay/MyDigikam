@@ -58,10 +58,10 @@ public:
 
 public:
 
-    QString name;    // Author name and surname
-    QString email;   // Email anti-spammed
-    QString years;   // Copyrights years
-    QString roles;   // Author roles, as "Developer", "Designer", "Translator", etc.
+    QString name;    ///< Author name and surname
+    QString email;   ///< Email anti-spammed
+    QString years;   ///< Copyrights years
+    QString roles;   ///< Author roles, as "Developer", "Designer", "Translator", etc.
 };
 
 } // namespace Digikam

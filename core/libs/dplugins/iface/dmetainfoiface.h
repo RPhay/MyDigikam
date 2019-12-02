@@ -42,29 +42,31 @@ public:
     explicit DMetaInfoIface(QObject* const, const QList<QUrl>&);
     ~DMetaInfoIface();
 
-    Q_SLOT void slotDateTimeForUrl(const QUrl& url, const QDateTime& dt, bool updModDate) override;
-    Q_SLOT void slotMetadataChangedForUrl(const QUrl& url) override;
+    Q_SLOT void slotDateTimeForUrl(const QUrl& url,
+                                   const QDateTime& dt,
+                                   bool updModDate)               override;
+    Q_SLOT void slotMetadataChangedForUrl(const QUrl& url)        override;
 
     Q_SIGNAL void signalItemChanged(const QUrl& url);
 
 public:
 
-    QList<QUrl> currentSelectedItems()            const override;
-    QList<QUrl> currentAlbumItems()               const override;
-    QList<QUrl> allAlbumItems()                   const override;
+    QList<QUrl> currentSelectedItems()                      const override;
+    QList<QUrl> currentAlbumItems()                         const override;
+    QList<QUrl> allAlbumItems()                             const override;
 
-    DInfoMap    itemInfo(const QUrl&)                     const override;
-    void        setItemInfo(const QUrl&, const DInfoMap&) const override;
+    DInfoMap    itemInfo(const QUrl&)                       const override;
+    void        setItemInfo(const QUrl&, const DInfoMap&)   const override;
 
-    bool        supportAlbums()                   const override;
+    bool        supportAlbums()                             const override;
 
-    QWidget* uploadWidget(QWidget* const parent)  const override;
-    QUrl     uploadUrl()                          const override;
+    QWidget* uploadWidget(QWidget* const parent)            const override;
+    QUrl     uploadUrl()                                    const override;
 
-    QUrl     defaultUploadUrl()                   const override;
+    QUrl     defaultUploadUrl()                             const override;
 
 #ifdef HAVE_MARBLE
-    QList<GPSItemContainer*> currentGPSItems()    const override;
+    QList<GPSItemContainer*> currentGPSItems()              const override;
 #endif
 
 private:
