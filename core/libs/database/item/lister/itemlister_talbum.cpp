@@ -62,34 +62,34 @@ void ItemLister::listTag(ItemListerReceiver* const receiver,
 
         int width, height;
 
-        for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ;)
+        for (QList<QVariant>::const_iterator it2 = values.constBegin() ; it2 != values.constEnd() ; )
         {
             ItemListerRecord record;
 
-            record.imageID           = (*it).toLongLong();
-            ++it;
-            record.name              = (*it).toString();
-            ++it;
-            record.albumID           = (*it).toInt();
-            ++it;
-            record.albumRootID       = (*it).toInt();
-            ++it;
-            record.rating            = (*it).toInt();
-            ++it;
-            record.category          = (DatabaseItem::Category)(*it).toInt();
-            ++it;
-            record.format            = (*it).toString();
-            ++it;
-            record.creationDate      = (*it).toDateTime();
-            ++it;
-            record.modificationDate  = (*it).toDateTime();
-            ++it;
-            record.fileSize          = d->toInt32BitSafe(it);
-            ++it;
-            width                    = (*it).toInt();
-            ++it;
-            height                   = (*it).toInt();
-            ++it;
+            record.imageID           = (*it2).toLongLong();
+            ++it2;
+            record.name              = (*it2).toString();
+            ++it2;
+            record.albumID           = (*it2).toInt();
+            ++it2;
+            record.albumRootID       = (*it2).toInt();
+            ++it2;
+            record.rating            = (*it2).toInt();
+            ++it2;
+            record.category          = (DatabaseItem::Category)(*it2).toInt();
+            ++it2;
+            record.format            = (*it2).toString();
+            ++it2;
+            record.creationDate      = (*it2).toDateTime();
+            ++it2;
+            record.modificationDate  = (*it2).toDateTime();
+            ++it2;
+            record.fileSize          = d->toInt32BitSafe(it2);
+            ++it2;
+            width                    = (*it2).toInt();
+            ++it2;
+            height                   = (*it2).toInt();
+            ++it2;
 
             if (d->listOnlyAvailableImages && !albumRoots.contains(record.albumRootID))
             {
@@ -102,9 +102,9 @@ void ItemLister::listTag(ItemListerReceiver* const receiver,
         }
     }
 
-    for (QSet<ItemListerRecord>::iterator it = records.begin() ; it != records.end() ; ++it)
+    for (QSet<ItemListerRecord>::iterator it3 = records.begin() ; it3 != records.end() ; ++it3)
     {
-        receiver->receive(*it);
+        receiver->receive(*it3);
     }
 }
 
@@ -170,7 +170,7 @@ void ItemLister::listImageTagPropertySearch(ItemListerReceiver* const receiver, 
 
     int width, height;
 
-    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ;)
+    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
         ItemListerRecord record(d->allowExtraValues ? ItemListerRecord::ExtraValueFormat : ItemListerRecord::TraditionalFormat);
 
@@ -211,13 +211,13 @@ void ItemLister::listImageTagPropertySearch(ItemListerReceiver* const receiver, 
         {
             // If we split the value by ',' we must have the segments tagId, property, region
             // Set the values.
-            QStringList values = value.toString().split(QLatin1Char(','));
+            QStringList vals = value.toString().split(QLatin1Char(','));
 
-            if (values.size() == 3)
+            if (vals.size() == 3)
             {
-                value    = values.at(2);
-                property = values.at(1);
-                tagId    = values.at(0);
+                value    = vals.at(2);
+                property = vals.at(1);
+                tagId    = vals.at(0);
             }
         }
 
