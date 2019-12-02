@@ -870,6 +870,7 @@ void GSWindow::slotGetPhotoDone(int errCode, const QString& errMsg,
     {
         QFileInfo info(fileName);
         itemName = info.completeBaseName();
+        suffix   = info.suffix();
     }
 
     if (itemName.isEmpty())
