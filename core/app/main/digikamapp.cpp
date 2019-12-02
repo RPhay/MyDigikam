@@ -155,7 +155,10 @@ DigikamApp::DigikamApp()
 
     // Read albums from database
 
-    AlbumManager::instance()->startScan();
+    if (CoreDbAccess().backend()->isOpen())
+    {
+        AlbumManager::instance()->startScan();
+    }
 
     // Setting the initial menu options after all tools have been loaded
     QList<Album*> albumList = AlbumManager::instance()->currentAlbums();
