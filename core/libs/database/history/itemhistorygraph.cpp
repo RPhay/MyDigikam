@@ -425,14 +425,14 @@ QHash<HistoryGraph::Vertex, HistoryImageId::Types> ItemHistoryGraphData::categor
 
             foreach (const Edge& e, edges(v, EdgesToLeaf))
             {
-                const HistoryEdgeProperties& props = properties(e);
+                const HistoryEdgeProperties& props2 = properties(e);
 
-                if (props.actions.isEmpty())
+                if (props2.actions.isEmpty())
                 {
                     continue; // unclear situation, ignore
                 }
 
-                if (!(props.actions.first().flags() & FilterAction::ExplicitBranch))
+                if (!(props2.actions.first().flags() & FilterAction::ExplicitBranch))
                 {
                     allBranches = false;
                     break;

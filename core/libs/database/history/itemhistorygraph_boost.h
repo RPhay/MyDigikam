@@ -70,7 +70,9 @@
 #include "digikam_debug.h"
 #include "digikam_export.h"
 
-/** Install custom property ids, out-of-namespace */
+/**
+ * Install custom property ids, out-of-namespace
+ */
 enum vertex_properties_t { vertex_properties };
 enum edge_properties_t   { edge_properties   };
 
@@ -123,12 +125,12 @@ class DIGIKAM_DATABASE_EXPORT Graph
 public:
 
     typedef boost::adjacency_list<
-          boost::vecS,                                                  /// Standard storage. listS was desirable, but many algorithms work only with vecS
+          boost::vecS,                                                  ///< Standard storage. listS was desirable, but many algorithms work only with vecS
           boost::vecS,
-          boost::bidirectionalS,                                        /// directed graph
+          boost::bidirectionalS,                                        ///< directed graph
           boost::property<boost::vertex_index_t, int,
           boost::property<vertex_properties_t, VertexProperties> >,
-          boost::property<edge_properties_t, EdgeProperties>            /// One property for each edge: EdgeProperties
+          boost::property<edge_properties_t, EdgeProperties>            ///< One property for each edge: EdgeProperties
     > GraphContainer;
 
     /**
@@ -952,7 +954,7 @@ public:
 
         QList<Vertex> dominatedTree = treeFromPredecessors(v, tree.predecessors);
 
-        // remove all vertices from the DFS of v that are not in the dominated tree
+        /// remove all vertices from the DFS of v that are not in the dominated tree
         QList<Vertex> orderedTree;
 
         foreach (const Vertex& v, presortedVertices)
@@ -1003,7 +1005,7 @@ public:
         if (verticesLst.size() == vertexCount())
             return verticesLst;
 
-        // sort in any so far unreachable nodes
+        /// sort in any so far unreachable nodes
         vertex_range_t range = boost::vertices(graph);
 
         for (vertex_iter it = range.first ; it != range.second ; ++it)
@@ -1284,9 +1286,9 @@ protected:
             try
             {
                 boost::dag_shortest_paths(graph, v,
-                                          // we provide a constant weight of 1
+                                          /// we provide a constant weight of 1
                                           weight_map(boost::ref_property_map<typename boost::graph_traits<GraphType>::edge_descriptor,int>(weight)).
-                                          // Store distance and predecessors in QMaps, wrapped to serve as property maps
+                                          /// Store distance and predecessors in QMaps, wrapped to serve as property maps
                                           distance_map(VertexIntMapAdaptor(distances)).
                                           predecessor_map(VertexVertexMapAdaptor(predecessors))
                                          );
@@ -1305,13 +1307,13 @@ protected:
             try
             {
                 boost::dag_shortest_paths(graph, v,
-                                          // we provide a constant weight of 1
+                                          /// we provide a constant weight of 1
                                           weight_map(boost::ref_property_map<typename boost::graph_traits<GraphType>::edge_descriptor,int>(weight)).
-                                          // Invert the default compare method: With greater, we get the longest path
+                                          /// Invert the default compare method: With greater, we get the longest path
                                           distance_compare(std::greater<int>()).
-                                          // will be returned if a node is unreachable
+                                          /// will be returned if a node is unreachable
                                           distance_inf(-1).
-                                          // Store distance and predecessors in QMaps, wrapped to serve as property maps
+                                          /// Store distance and predecessors in QMaps, wrapped to serve as property maps
                                           distance_map(VertexIntMapAdaptor(distances)).
                                           predecessor_map(VertexVertexMapAdaptor(predecessors))
                                          );
@@ -1510,7 +1512,7 @@ protected:
             VertexLessThan   vertexLessThan;
         };
 
-        // This is boost's simple, old, recursive DFS algorithm adapted with lessThan
+        /// This is boost's simple, old, recursive DFS algorithm adapted with lessThan
         template <class IncidenceGraph, class DFSVisitor, class ColorMap, typename LessThan>
         void depth_first_search_sorted(const IncidenceGraph& g, Vertex u,
                                        DFSVisitor& vis, ColorMap color, LessThan lessThan)
@@ -1525,8 +1527,10 @@ protected:
             vis.discover_vertex(u, g);
 
             outEdges = toList<edge_descriptor>(boost::out_edges(u, g));
-            // Sort edges. The lessThan we have takes vertices, so we use a lessThan which
-            // maps the given edges to their targets, and calls our vertex lessThan.
+            /**
+             * Sort edges. The lessThan we have takes vertices, so we use a lessThan which
+             * maps the given edges to their targets, and calls our vertex lessThan.
+             */
             std::sort(outEdges.begin(),
                       outEdges.end(),
                       lessThanMapEdgeToTarget<IncidenceGraph, LessThan>(g, lessThan));
@@ -1557,7 +1561,9 @@ protected:
         }
     };
 
-    /** Get the list of vertices with the largest value in the given distance map */
+    /**
+     * Get the list of vertices with the largest value in the given distance map
+     */
     QList<Vertex> mostRemoteNodes(const VertexIntMap& distances) const
     {
         typename VertexIntMap::const_iterator it;

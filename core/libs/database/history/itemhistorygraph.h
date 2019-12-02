@@ -116,7 +116,9 @@ public:
      */
     void addRelations(const QList<QPair<qlonglong, qlonglong> >& pairs);
 
-    /** Clears this graph. */
+    /**
+     * Clears this graph.
+     */
     void clear();
 
     /**
