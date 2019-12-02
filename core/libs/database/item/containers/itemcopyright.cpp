@@ -502,9 +502,9 @@ int ItemCopyright::languageMatch(const QList<CopyrightInfo> infos, const QString
     {
         // find local language
 
-        QString spec     = QLocale().name().toLower();
-        QString langCode = spec.left(spec.indexOf(QLatin1Char('_'))) + QLatin1Char('-');
-        QString fullCode = spec.replace(QLatin1Char('_'), QLatin1Char('-'));
+        QString spec = QLocale().name().toLower();
+        langCode     = spec.left(spec.indexOf(QLatin1Char('_'))) + QLatin1Char('-');
+        fullCode     = spec.replace(QLatin1Char('_'), QLatin1Char('-'));
     }
     else if (languageCode == QLatin1String("x-default"))
     {
@@ -549,7 +549,7 @@ int ItemCopyright::languageMatch(const QList<CopyrightInfo> infos, const QString
             fullCodeMatch = i;
             break;
         }
-        else if (info.extraValue.startsWith(langCode) && langCodeMatch == -1)
+        else if (info.extraValue.startsWith(langCode) && (langCodeMatch == -1))
         {
             langCodeMatch = i;
         }
