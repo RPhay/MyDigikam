@@ -1440,9 +1440,9 @@ QList<int> CoreDB::getItemCommonTagIDs(const QList<qlonglong>& imageIDList) cons
         return ids;
     }
 
-    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; ++it)
+    for (QList<QVariant>::const_iterator it2 = values.constBegin() ; it2 != values.constEnd() ; ++it2)
     {
-        ids << it->toInt();
+        ids << it2->toInt();
     }
 
     return ids;
@@ -3511,7 +3511,7 @@ QList<int> CoreDB::getAlbumAndSubalbumsForPath(int albumRootId, const QString& r
     {
         id = (*it).toInt();
         ++it;
-        QString albumRelativePath = (*it).toString();
+        albumRelativePath = (*it).toString();
         ++it;
 
         // bug #223050: The LIKE operator is case insensitive
@@ -4455,16 +4455,16 @@ void CoreDB::clearMetadataFromImage(qlonglong imageID)
 
     if (!properties.isEmpty())
     {
-        QList<int> tagIds;
+        QList<int> tids;
 
         foreach (const ImageTagProperty& property, properties)
         {
-            tagIds << property.imageId;
+            tids << property.imageId;
         }
 
         d->db->execSql(QString::fromUtf8("DELETE FROM ImageTagProperties WHERE imageid=?;"),
                        imageID);
-        d->db->recordChangeset(ImageTagChangeset(imageID, tagIds, ImageTagChangeset::PropertiesChanged));
+        d->db->recordChangeset(ImageTagChangeset(imageID, tids, ImageTagChangeset::PropertiesChanged));
     }
 }
 
