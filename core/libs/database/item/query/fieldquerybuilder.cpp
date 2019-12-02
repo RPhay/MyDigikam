@@ -50,10 +50,10 @@ namespace Digikam
 {
 
 FieldQueryBuilder::FieldQueryBuilder(QString& sql,
-                  SearchXmlCachingReader& reader,
-                  QList<QVariant>* boundValues,
-                  ItemQueryPostHooks* const hooks,
-                  SearchXml::Relation relation)
+                                     SearchXmlCachingReader& reader,
+                                     QList<QVariant>* boundValues,
+                                     ItemQueryPostHooks* const hooks,
+                                     SearchXml::Relation relation)
     : sql(sql),
       reader(reader),
       boundValues(boundValues),
@@ -64,7 +64,7 @@ FieldQueryBuilder::FieldQueryBuilder(QString& sql,
 
 QString FieldQueryBuilder::prepareForLike(const QString& str) const
 {
-    if (relation == SearchXml::Like || relation == SearchXml::NotLike)
+    if ((relation == SearchXml::Like) || (relation == SearchXml::NotLike))
     {
         return QLatin1Char('%') + str + QLatin1Char('%');
     }
@@ -76,7 +76,7 @@ QString FieldQueryBuilder::prepareForLike(const QString& str) const
 
 void FieldQueryBuilder::addIntField(const QString& name)
 {
-    if (relation == SearchXml::Interval || relation == SearchXml::IntervalOpen)
+    if ((relation == SearchXml::Interval) || (relation == SearchXml::IntervalOpen))
     {
         QList<int> values = reader.valueToIntList();
 
@@ -107,7 +107,7 @@ void FieldQueryBuilder::addIntField(const QString& name)
 
 void FieldQueryBuilder::addDoubleField(const QString& name)
 {
-    if (relation == SearchXml::Interval || relation == SearchXml::IntervalOpen)
+    if ((relation == SearchXml::Interval) || (relation == SearchXml::IntervalOpen))
     {
         QList<double> values = reader.valueToDoubleList();
 
@@ -149,6 +149,7 @@ void FieldQueryBuilder::addDateField(const QString& name)
     if (relation == SearchXml::Equal)
     {
         // special case: split in < and >
+
         QDateTime date = QDateTime::fromString(reader.value(), Qt::ISODate);
 
         if (!date.isValid())
@@ -157,11 +158,10 @@ void FieldQueryBuilder::addDateField(const QString& name)
             return;
         }
 
-        QDateTime startDate, endDate;
-
         if (date.time() == QTime(0, 0, 0, 0))
         {
             // day precision
+
             QDate startDate, endDate;
             startDate = date.date().addDays(-1);
             endDate   = date.date().addDays(1);
@@ -171,6 +171,7 @@ void FieldQueryBuilder::addDateField(const QString& name)
         else
         {
             // sub-day precision
+
             QDateTime startDate, endDate;
             int diff;
 
@@ -287,12 +288,12 @@ void FieldQueryBuilder::addIntBitmaskField(const QString& name)
 {
     if (relation == SearchXml::OneOf)
     {
-        QList<int> values = reader.valueToIntList();
+        QList<int> values  = reader.valueToIntList();
         bool searchForNull = values.removeAll(-1);
-        sql += QLatin1String("( ");
-        bool first = true;
+        sql               += QLatin1String("( ");
+        bool first         = true;
 
-        for (int i=0; i<values.size(); ++i)
+        for (int i = 0 ; i < values.size() ; ++i)
         {
             if (!first)
             {
@@ -300,7 +301,7 @@ void FieldQueryBuilder::addIntBitmaskField(const QString& name)
             }
 
             first = false;
-            sql += name + QLatin1String(" & ? ");
+            sql  += name + QLatin1String(" & ? ");
         }
 
         if (searchForNull)
@@ -357,12 +358,12 @@ void FieldQueryBuilder::addChoiceStringField(const QString& name)
         }
 
         bool firstCondition =  true;
-        sql                 += QLatin1String(" (");
+        sql                += QLatin1String(" (");
 
         if (!simpleValues.isEmpty())
         {
             firstCondition =  false;
-            sql            += name + QLatin1String(" IN (");
+            sql           += name + QLatin1String(" IN (");
             CoreDB::addBoundValuePlaceholders(sql, simpleValues.size());
 
             foreach (const QString& value, simpleValues)
@@ -396,10 +397,11 @@ void FieldQueryBuilder::addChoiceStringField(const QString& name)
         if (relation == SearchXml::Like && value.contains(QLatin1Char('*')))
         {
             // Handle special case: * denotes the place if the wildcard,
-            // Don't automatically prepend and append %
-            sql += QLatin1String(" (") + name + QLatin1Char(' ');
+            // Don't automatically prepend and append %.
+
+            sql             += QLatin1String(" (") + name + QLatin1Char(' ');
             ItemQueryBuilder::addSqlRelation(sql, SearchXml::Like);
-            sql += QLatin1String(" ?) ");
+            sql             += QLatin1String(" ?) ");
             QString wildcard = reader.value();
             wildcard.replace(QLatin1Char('*'), QLatin1Char('%'));
             *boundValues << wildcard;
@@ -416,9 +418,12 @@ void FieldQueryBuilder::addPosition()
     if (relation == SearchXml::Near)
     {
         // First read attributes
+
         QStringRef type           = reader.attributes().value(QLatin1String("type"));
         QStringRef distanceString = reader.attributes().value(QLatin1String("distance"));
+
         // Distance in meters
+
         double distance           = 100;
 
         if (!distanceString.isEmpty())
@@ -427,7 +432,8 @@ void FieldQueryBuilder::addPosition()
         }
 
         // Search type, "radius" or "rectangle"
-        bool radiusSearch = true;
+
+        bool radiusSearch         = true;
 
         if (type == QLatin1String("radius"))
         {
@@ -440,7 +446,8 @@ void FieldQueryBuilder::addPosition()
 
         // Get a list of doubles:
         // Longitude and Latitude in (decimal) degrees
-        QList<double> list = reader.valueToDoubleList();
+
+        QList<double> list        = reader.valueToDoubleList();
 
         if (list.size() != 2)
         {
@@ -451,7 +458,7 @@ void FieldQueryBuilder::addPosition()
         double lon = list.at(0);
         double lat = list.at(1);
 
-        sql += QLatin1String(" ( ");
+        sql       += QLatin1String(" ( ");
 
         // Part 1: Rectangle search.
         // Get the coordinates of the (spherical) rectangle enclosing
@@ -462,6 +469,7 @@ void FieldQueryBuilder::addPosition()
         // From the point (lon,lat) we go East, North, West, South,
         // and get the coordinates in degrees of a rectangle
         // of width and height 2*distance enclosing (lon,lat)
+
         QRectF rect;
         GeodeticCalculator calc;
         calc.setStartingGeographicPoint(lon, lat);
@@ -532,6 +540,7 @@ void FieldQueryBuilder::addPosition()
             };
 
             // get radius (of the ellipsoid) in dependence of the latitude.
+
             double R = calc.ellipsoid().radiusOfCurvature(lat);
             hooks->addHook(new HaversinePostHook(lat, lon, R, distance));
         }
@@ -541,9 +550,11 @@ void FieldQueryBuilder::addPosition()
     else if (relation == SearchXml::Inside)
     {
         // First read attributes
+
         QStringRef type = reader.attributes().value(QLatin1String("type"));
 
         // Search type, currently only "rectangle"
+
         if (type != QLatin1String("rectangle"))
         {
             qCWarning(DIGIKAM_DATABASE_LOG) << "Relation 'Inside' supports no other type than 'rectangle'";
@@ -552,6 +563,7 @@ void FieldQueryBuilder::addPosition()
 
         // Get a list of doubles:
         // Longitude and Latitude in (decimal) degrees
+
         QList<double> list = reader.valueToDoubleList();
 
         if (list.size() != 4)
@@ -564,8 +576,9 @@ void FieldQueryBuilder::addPosition()
         // like (x,y), (right,bottom) of a rectangle,
         // or like (West,North), (East,South),
         // where the searched region contains any lon,lat
-        //  where lon1 < lon < lon2 and lat1 < lat < lat2.
-        double lon1,lat1,lon2,lat2;
+        // where lon1 < lon < lon2 and lat1 < lat < lat2.
+
+        double lon1, lat1, lon2, lat2;
         lon1 = list.at(0);
         lat1 = list.at(1);
         lon2 = list.at(2);
@@ -580,6 +593,7 @@ void FieldQueryBuilder::addPosition()
 void FieldQueryBuilder::addRectanglePositionSearch(double lon1, double lat1, double lon2, double lat2) const
 {
     // lon1 is always West of lon2. If the rectangle crosses 180 longitude, we have to treat a special case.
+
     if (lon1 <= lon2)
     {
         sql += QString::fromUtf8(" ImagePositions.LongitudeNumber > ? AND ImagePositions.LatitudeNumber < ? "
@@ -590,6 +604,7 @@ void FieldQueryBuilder::addRectanglePositionSearch(double lon1, double lat1, dou
     {
         // this effectively means splitting the rectangle is two parts, one East, one West
         // to the 180 line. But no need to check for less/greater than -180/180.
+
         sql += QString::fromUtf8(" (ImagePositions.LongitudeNumber > ? OR ImagePositions.LongitudeNumber < ?) "
                " AND ImagePositions.LatitudeNumber < ? AND ImagePositions.LatitudeNumber > ? ");
         *boundValues << lon1 << lon2 << lat1 << lat2;

@@ -1333,14 +1333,14 @@ QString ItemQueryBuilder::buildQueryFromUrl(const QUrl& url, QList<QVariant>* bo
                     todo.append( RATING );
 
                     sqlQuery += QLatin1Char('(');
-                    QList<SKey>::const_iterator it = todo.constBegin();
+                    QList<SKey>::const_iterator it2 = todo.constBegin();
 
-                    while (it != todo.constEnd())
+                    while (it2 != todo.constEnd())
                     {
-                        sqlQuery += subQuery.build(*it, rule.op, rule.val, boundValues);
-                        ++it;
+                        sqlQuery += subQuery.build(*it2, rule.op, rule.val, boundValues);
+                        ++it2;
 
-                        if (it != todo.constEnd())
+                        if (it2 != todo.constEnd())
                         {
                             sqlQuery += QLatin1String(" OR ");
                         }
@@ -1380,7 +1380,7 @@ QString ItemQueryBuilder::possibleDate(const QString& str, bool& exact) const
     if (ok)
     {
         // ok. its an int, does it look like a year?
-        if (1970 <= num && num <= QDate::currentDate().year())
+        if ((1970 <= num) && (num <= QDate::currentDate().year()))
         {
             // very sure its a year
             return QString::fromUtf8("%1-%-%").arg(num);
@@ -1391,12 +1391,13 @@ QString ItemQueryBuilder::possibleDate(const QString& str, bool& exact) const
         // hmm... not a year. is it a particular month?
         for (int i = 1 ; i <= 12 ; ++i)
         {
-            if (str.toLower() == m_shortMonths[i-1] ||
-                str.toLower() == m_longMonths[i-1])
+            if ((str.toLower() == m_shortMonths[i-1]) ||
+                (str.toLower() == m_longMonths[i-1]))
             {
                 QString monGlob;
                 monGlob.sprintf("%.2d", i);
                 monGlob = QString::fromUtf8("%-") + monGlob + QString::fromUtf8("-%");
+
                 return monGlob;
             }
         }

@@ -40,7 +40,7 @@ class Q_DECL_HIDDEN ItemQueryPostHook
 {
 public:
 
-    // This is the single hook, ItemQueryPostHookS is the container
+    /// This is the single hook, ItemQueryPostHookS is the container
     virtual ~ItemQueryPostHook()
     {
     };
@@ -60,12 +60,14 @@ public:
     explicit ItemQueryPostHooks();
     ~ItemQueryPostHooks();
 
-    /** Call this method after passing the object to buildQuery
-     *  and executing the statement. Returns true if the search is matched.
+    /**
+     * Call this method after passing the object to buildQuery
+     * and executing the statement. Returns true if the search is matched.
      */
     bool checkPosition(double latitudeNumber, double longitudeNumber);
 
-    /** Called by ItemQueryBuilder. Ownership of the object is passed.
+    /**
+     * Called by ItemQueryBuilder. Ownership of the object is passed.
      */
     void addHook(ItemQueryPostHook* const hook);
 
