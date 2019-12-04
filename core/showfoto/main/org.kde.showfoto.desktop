@@ -150,7 +150,6 @@ Comment[zh_TW]=運用開放原始碼的力量像專業人士般管理您的照�
 Exec=showfoto -qwindowtitle %c %U
 Icon=showfoto
 Type=Application
-# TODO: What is image/x-eim? Register it to freedesktop.org if you need it.
 MimeType=image/gif;image/x-xpixmap;image/x-xbitmap;image/jpeg;image/png;image/tiff;image/x-bmp;image/x-psd;image/x-portable-bitmap;image/x-portable-pixmap;image/x-portable-graymap;image/x-dcraw;
 Terminal=false
 Categories=Qt;Graphics;Photography;
