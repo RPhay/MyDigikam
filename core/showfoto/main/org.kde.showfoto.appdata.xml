@@ -92,6 +92,7 @@
   <url type="homepage">https://www.digikam.org/</url>
   <url type="bugtracker">https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=digikam</url>
   <url type="help">http://docs.kde.org/development/en/extragear-graphics/showfoto/</url>
+  <url type="donation">https://www.digikam.org/donation</url>
   <screenshots>
     <screenshot type="default">
       <caption>Editing photo in Showfoto</caption>
@@ -116,7 +117,7 @@
       <caption xml:lang="uk">Редагування фотографій у Showfoto</caption>
       <caption xml:lang="x-test">xxEditing photo in Showfotoxx</caption>
       <caption xml:lang="zh-TW">在 Showfoto 編輯圖片</caption>
-      <image>https://cdn.kde.org/screenshots/digikam/showfoto.png</image>
+      <image>https://www.digikam.org/img/content/about/overview_imageeditor.png</image>
     </screenshot>
   </screenshots>
   <project_group>KDE</project_group>
