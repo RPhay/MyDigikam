@@ -88,8 +88,7 @@ SharedLoadingTask::SharedLoadingTask(LoadSaveThread* const thread, const Loading
     : LoadingTask(thread, description, loadingTaskStatus),
       m_completed(false),
       m_accessMode(mode),
-      m_usedProcess(nullptr),
-      m_resultLoadingDescription(description)
+      m_usedProcess(nullptr)
 {
     if (m_accessMode == LoadSaveThread::AccessModeRead && needsPostProcessing())
     {
@@ -207,57 +206,52 @@ void SharedLoadingTask::execute()
 
         if (continueQuery(&m_img))
         {
+            LoadingCache::CacheLock lock(cache);
+
+            // put valid image into cache of loaded images
+            if (!m_img.isNull())
             {
-                LoadingCache::CacheLock lock(cache);
-
-                // put (valid) image into cache of loaded images
-                if (!m_img.isNull())
-                {
-                    cache->putImage(m_loadingDescription.cacheKey(), m_img,
-                                    m_loadingDescription.filePath);
-                }
-
-                // remove this from the list of loading processes in cache
-                cache->removeLoadingProcess(this);
+                cache->putImage(m_loadingDescription.cacheKey(), m_img,
+                                m_loadingDescription.filePath);
             }
 
+            // remove this from the list of loading processes in cache
+            cache->removeLoadingProcess(this);
+
+            // indicate that loading has finished so that listeners can stop waiting
+            m_completed = true;
+
+            // dispatch image to all listeners, including this
+            for (int i = 0 ; i < m_listeners.count() ; ++i)
             {
-                LoadingCache::CacheLock lock(cache);
+                LoadingProcessListener* const l = m_listeners.at(i);
 
-                // indicate that loading has finished so that listeners can stop waiting
-                m_completed = true;
-
-                // dispatch image to all listeners, including this
-                for (int i = 0 ; i < m_listeners.count() ; ++i)
+                if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
                 {
-                    LoadingProcessListener* const l = m_listeners.at(i);
-
-                    if (l->accessMode() == LoadSaveThread::AccessModeReadWrite)
-                    {
-                        // If a listener requested ReadWrite access, it gets a deep copy.
-                        // DImg is explicitly shared.
-                        l->setResult(m_loadingDescription, m_img.copy());
-                    }
-                    else
-                    {
-                        l->setResult(m_loadingDescription, m_img);
-                    }
+                    // If a listener requested ReadWrite access, it gets a deep copy.
+                    // DImg is explicitly shared.
+                    l->setResult(m_loadingDescription, m_img.copy());
                 }
-
-                // remove myself from list of listeners
-                removeListener(this);
-                // wake all listeners waiting on cache condVar, so that they remove themselves
-                lock.wakeAll();
-
-                // wait until all listeners have removed themselves
-                while (m_listeners.count() != 0)
+                else
                 {
-                    lock.timedWait();
+                    l->setResult(m_loadingDescription, m_img);
                 }
-
-                // set to 0, as checked in setStatus
-                m_usedProcess = nullptr;
             }
+
+            // remove myself from list of listeners
+            removeListener(this);
+
+            // wake all listeners waiting on cache condVar, so that they remove themselves
+            lock.wakeAll();
+
+            // wait until all listeners have removed themselves
+            while (m_listeners.count() != 0)
+            {
+                lock.timedWait();
+            }
+
+            // set to 0, as checked in setStatus
+            m_usedProcess = nullptr;
         }
     }
 
@@ -289,10 +283,12 @@ void SharedLoadingTask::setResult(const LoadingDescription& loadingDescription, 
 {
     // this is called from another process's execute while this task is waiting on m_usedProcess.
     // Note that loadingDescription need not equal m_loadingDescription (may be superior)
-    m_resultLoadingDescription                          = loadingDescription;
+    LoadingDescription tempDescription       = loadingDescription;
+
     // these are taken from our own description
-    m_resultLoadingDescription.postProcessingParameters = m_loadingDescription.postProcessingParameters;
-    m_img                                               = img;
+    tempDescription.postProcessingParameters = m_loadingDescription.postProcessingParameters;
+    m_loadingDescription                     = tempDescription;
+    m_img                                    = img;
 }
 
 bool SharedLoadingTask::needsPostProcessing() const
@@ -369,17 +365,17 @@ bool SharedLoadingTask::continueQuery(DImg* const img)
     Q_UNUSED(img);
     // If this is called, the thread is currently loading an image.
     // In shared loading, we cannot stop until all listeners have been removed as well
-    return (m_loadingTaskStatus != LoadingTaskStatusStopping) || (m_listeners.count() != 0);
+    return ((m_loadingTaskStatus != LoadingTaskStatusStopping) || (m_listeners.count() != 0));
 }
 
 void SharedLoadingTask::setStatus(LoadingTaskStatus status)
 {
-    if (status == LoadingTaskStatusStopping)
+    m_loadingTaskStatus = status;
+
+    if (m_loadingTaskStatus == LoadingTaskStatusStopping)
     {
         LoadingCache* const cache = LoadingCache::cache();
         LoadingCache::CacheLock lock(cache);
-
-        m_loadingTaskStatus = status;
 
         // check for m_usedProcess, to avoid race condition that it has finished before
         if (m_usedProcess)
@@ -393,10 +389,6 @@ void SharedLoadingTask::setStatus(LoadingTaskStatus status)
             // wake all listeners - particularly this - from waiting on cache condvar
             lock.wakeAll();
         }
-    }
-    else
-    {
-        m_loadingTaskStatus = status;
     }
 }
 
