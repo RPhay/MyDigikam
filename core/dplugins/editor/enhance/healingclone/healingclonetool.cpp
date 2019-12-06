@@ -133,7 +133,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     d->previewWidget->setFocusPolicy(Qt::StrongFocus);
     setToolView(d->previewWidget);
-    setPreviewModeMask(PreviewToolBar::UnSplitPreviewModes);
+    setPreviewModeMask(PreviewToolBar::NoPreviewMode);
 
     // --------------------------------------------------------
 
