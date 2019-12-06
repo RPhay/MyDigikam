@@ -348,13 +348,13 @@ void LabelsTreeView::initRatingsTree()
     QTreeWidgetItem* const noRate = new QTreeWidgetItem(d->ratings);
     noRate->setText(0, i18n("No Rating"));
     noRate->setFont(0, d->regularFont);
-    QPixmap pix(goldenStarPixmap().size());
-    pix.fill(Qt::transparent);
-    QPainter p(&pix);
-    p.setRenderHint(QPainter::Antialiasing, true);
-    p.setPen(palette().color(QPalette::Active, foregroundRole()));
-    p.drawPixmap(0, 0, goldenStarPixmap(false));
-    noRate->setIcon(0, QIcon(pix));
+    QPixmap pix2(goldenStarPixmap().size());
+    pix2.fill(Qt::transparent);
+    QPainter p2(&pix2);
+    p2.setRenderHint(QPainter::Antialiasing, true);
+    p2.setPen(palette().color(QPalette::Active, foregroundRole()));
+    p2.drawPixmap(0, 0, goldenStarPixmap(false));
+    noRate->setIcon(0, QIcon(pix2));
     noRate->setSizeHint(0, d->iconSize);
 
     for (int rate = 1 ; rate <= 5 ; ++rate)

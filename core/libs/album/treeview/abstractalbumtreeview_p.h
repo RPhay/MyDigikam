@@ -120,7 +120,7 @@ public:
         int h = qMax(AlbumThumbnailLoader::instance()->thumbnailSize() + 2,
                      m_treeView->fontMetrics().height());
 
-        if (h % 2 > 0)
+        if ((h % 2) > 0)
         {
             ++h;
         }

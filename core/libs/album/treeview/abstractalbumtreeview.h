@@ -70,11 +70,14 @@ public:
     {
         /** Create a default model. Not supported by abstract classes. Not part of default flags! */
         CreateDefaultModel,
+
         /** Create a default filter model. */
         CreateDefaultFilterModel,
+
         /** Create a delegate which paints according to settings.
          *  If not set, the Qt default delegate of the view is used. */
         CreateDefaultDelegate,
+
         /** Show the count according to the settings. If not set, call
          *  setShowCount() on the model yourself. */
         ShowCountAccordingToSettings,
@@ -155,6 +158,7 @@ public:
      */
     bool expandMatches(const QModelIndex& index);
 
+    //@{
     /**
      * Implements state loading for the album tree view in a somewhat clumsy
      * procedure because the model may not be fully loaded when this method is
@@ -170,6 +174,7 @@ public:
      */
     virtual void doLoadState() override;
     virtual void doSaveState() override;
+    //@}
 
     /**
      * Some treeviews shall control the global current album kept by AlbumManager.
@@ -193,13 +198,13 @@ public:
         }
 
         /**
-        * Add actions to the context menu being generated
-        *
-        * @param view The AbstractAlbumTreeView which generates the menu
-        * @param cmh helper object to create the context menu
-        * @param album album on which the context menu will be created. May be null if
-        *              it is requested on no tag entry
-        */
+         * Add actions to the context menu being generated
+         *
+         * @param view The AbstractAlbumTreeView which generates the menu
+         * @param cmh helper object to create the context menu
+         * @param album album on which the context menu will be created. May be null if
+         *              it is requested on no tag entry
+         */
         virtual void addActions(AbstractAlbumTreeView* view, ContextMenuHelper& cmh, Album* album) = 0;
     };
 
@@ -360,6 +365,7 @@ private:
      * @param stateStore states indexed by album id
      */
     void restoreStateForHierarchy(const QModelIndex& index, const QMap<int, Digikam::State>& stateStore);
+
     /**
      * Restore the state for this index.
      */
