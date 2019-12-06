@@ -286,4 +286,4 @@ void StateSavingObjectTest::testRecursiveChildrenSaving()
     delete parentSaver;
 }
 
-#endif .. __clang_analyzer__
+#endif // __clang_analyzer__
