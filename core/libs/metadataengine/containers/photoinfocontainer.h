@@ -49,7 +49,6 @@ public:
     bool isNull() const;
 
     bool operator==(const PhotoInfoContainer& t) const;
-    PhotoInfoContainer(PhotoInfoContainer&& o) = default;
 
 public:
 
