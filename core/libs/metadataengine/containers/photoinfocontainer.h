@@ -49,6 +49,7 @@ public:
     bool isNull() const;
 
     bool operator==(const PhotoInfoContainer& t) const;
+    PhotoInfoContainer(PhotoInfoContainer&& o) = default;
 
 public:
 
@@ -67,7 +68,7 @@ public:
 
     QDateTime dateTime;
 
-    bool      hasCoordinates;  // GPS info are present
+    bool      hasCoordinates;  ///< GPS info are present
 };
 
 DIGIKAM_EXPORT QDataStream& operator<<(QDataStream& ds, const PhotoInfoContainer& info);
