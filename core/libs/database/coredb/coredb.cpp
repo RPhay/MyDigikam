@@ -3279,7 +3279,7 @@ QMap<int, int> CoreDB::getNumberOfImagesInAlbums() const
 
     // initialize allAbumIDs with all existing albums from db to prevent
     // wrong album image counters
-    d->db->execSql(QString::fromUtf8("SELECT id from Albums"),
+    d->db->execSql(QString::fromUtf8("SELECT id from Albums;"),
                    &allAbumIDs);
 
     for (QList<QVariant>::const_iterator it = allAbumIDs.constBegin() ; it != allAbumIDs.constEnd() ; ++it)
@@ -3313,7 +3313,8 @@ QMap<int, int> CoreDB::getNumberOfImagesInTags() const
 
     // initialize allTagIDs with all existing tags from db to prevent
     // wrong tag counters
-    d->db->execSql(QString::fromUtf8("SELECT id from Tags"), &allTagIDs);
+    d->db->execSql(QString::fromUtf8("SELECT id from Tags;"),
+                   &allTagIDs);
 
     for (QList<QVariant>::const_iterator it = allTagIDs.constBegin() ; it != allTagIDs.constEnd() ; ++it)
     {
@@ -3371,7 +3372,7 @@ int CoreDB::getNumberOfImagesInTagProperties(int tagId, const QString& property)
     d->db->execSql(QString::fromUtf8("SELECT COUNT(*) FROM ImageTagProperties "
                                      "LEFT JOIN Images ON Images.id=ImageTagProperties.imageid "
                                      " WHERE ImageTagProperties.property=? AND Images.status=1 "
-                                     " AND ImageTagProperties.tagid=? ;"),
+                                     " AND ImageTagProperties.tagid=?;"),
                    property, tagId, &values);
 
     if (values.isEmpty())
@@ -3389,7 +3390,7 @@ QList<qlonglong> CoreDB::getImagesWithImageTagProperty(int tagId, const QString&
     d->db->execSql(QString::fromUtf8("SELECT DISTINCT Images.id FROM ImageTagProperties "
                                      "LEFT JOIN Images ON Images.id=ImageTagProperties.imageid "
                                      " WHERE ImageTagProperties.property=? AND Images.status=1 "
-                                     " AND ImageTagProperties.tagid=? ;"),
+                                     " AND ImageTagProperties.tagid=?;"),
                    property, tagId, &values);
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; ++it)
@@ -3416,10 +3417,10 @@ QMap<QString, int> CoreDB::getFormatStatistics(DatabaseItem::Category category) 
 
     if (category != DatabaseItem::UndefinedCategory)
     {
-        queryString.append(QString::fromUtf8("AND Images.category=%1").arg(category));
+        queryString.append(QString::fromUtf8("AND Images.category=%1 ").arg(category));
     }
 
-    queryString.append(QString::fromUtf8(" GROUP BY II.format;"));
+    queryString.append(QString::fromUtf8("GROUP BY II.format;"));
     qCDebug(DIGIKAM_DATABASE_LOG) << queryString;
 
     DbEngineSqlQuery query = d->db->prepareQuery(queryString);
@@ -3688,26 +3689,31 @@ QStringList CoreDB::getItemURLsInAlbum(int albumID, ItemSortOrder sortOrder) con
     switch (sortOrder)
     {
         case ByItemName:
-            d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemName")), bindingMap, &values);
+            d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemName")),
+                                bindingMap, &values);
             break;
 
         case ByItemPath:
             // Don't collate on the path - this is to maintain the same behavior
             // that happens when sort order is "By Path"
-            d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemPath")), bindingMap, &values);
+            d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemPath")),
+                                bindingMap, &values);
             break;
 
         case ByItemDate:
-            d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemDate")), bindingMap, &values);
+            d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemDate")),
+                                bindingMap, &values);
             break;
 
         case ByItemRating:
-            d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemRating")), bindingMap, &values);
+            d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumByItemRating")),
+                                bindingMap, &values);
             break;
 
         case NoItemSorting:
         default:
-            d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumNoItemSorting")), bindingMap, &values);
+            d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("getItemURLsInAlbumNoItemSorting")),
+                                bindingMap, &values);
             break;
     }
 
