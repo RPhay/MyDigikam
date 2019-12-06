@@ -175,10 +175,9 @@ protected:
 
     volatile bool                  m_completed;
     LoadSaveThread::AccessMode     m_accessMode;
-    LoadingProcess* volatile       m_usedProcess;
+    LoadingProcess*                m_usedProcess;
     QList<LoadingProcessListener*> m_listeners;
     DImg                           m_img;
-    LoadingDescription             m_resultLoadingDescription;
 };
 
 //---------------------------------------------------------------------------------------------------
