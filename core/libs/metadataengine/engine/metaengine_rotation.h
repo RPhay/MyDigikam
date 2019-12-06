@@ -51,20 +51,22 @@ public:
      */
     enum TransformationAction
     {
-        NoTransformation = 0, /// no transformation
-        FlipHorizontal   = 1, /// horizontal flip
-        FlipVertical     = 2, /// vertical flip
-        Rotate90         = 5, /// 90-degree clockwise rotation
-        Rotate180        = 6, /// 180-degree rotation
-        Rotate270        = 7  /// 270-degree clockwise (or 90 ccw)
+        NoTransformation = 0, ///< no transformation
+        FlipHorizontal   = 1, ///< horizontal flip
+        FlipVertical     = 2, ///< vertical flip
+        Rotate90         = 5, ///< 90-degree clockwise rotation
+        Rotate180        = 6, ///< 180-degree rotation
+        Rotate270        = 7  ///< 270-degree clockwise (or 90 ccw)
     };
 
 public:
 
     /// Constructs the identity matrix (the matrix describing no transformation)
     MetaEngineRotation();
+
     /// Returns the matrix corresponding to the given TransformationAction
     explicit MetaEngineRotation(TransformationAction action);
+
     /// Returns the matrix corresponding to the given TransformationAction
     explicit MetaEngineRotation(MetaEngine::ImageOrientation exifOrientation);
 
@@ -88,7 +90,8 @@ public:
     /** Returns the actions described by this matrix. The order matters.
      *  Not all possible matrices are supported, but all those that can be combined
      *  by Exif rotation flags and the transform actions above.
-     *  If isNoTransform() or the matrix is not supported returns an empty list. */
+     *  If isNoTransform() or the matrix is not supported returns an empty list.
+     */
     QList<TransformationAction> transformations() const;
 
     /** Returns the Exif orientation flag describing this matrix.

@@ -526,20 +526,24 @@ bool MetaEngine::setIptcTagsStringList(const char* iptcTagName, int maxSize,
 
         // Remove all old values.
         Exiv2::IptcData iptcData(d->iptcMetadata());
-        Exiv2::IptcData::iterator it = iptcData.begin();
+        Exiv2::IptcData::iterator it2 = iptcData.begin();
 
-        while(it != iptcData.end())
+        while (it2 != iptcData.end())
         {
-            QString key = QString::fromLocal8Bit(it->key().c_str());
-            QString val = QString::fromUtf8(it->toString().c_str());
+            QString key = QString::fromLocal8Bit(it2->key().c_str());
+            QString val = QString::fromUtf8(it2->toString().c_str());
 
             // Also remove new values to avoid duplicates. They will be added again below.
             if ( key == QLatin1String(iptcTagName) &&
                  (oldvals.contains(val) || newvals.contains(val))
                )
-                it = iptcData.erase(it);
+            {
+                it2 = iptcData.erase(it2);
+            }
             else
-                ++it;
+            {
+                ++it2;
+            }
         };
 
         // Add new values.
@@ -628,20 +632,24 @@ bool MetaEngine::setIptcKeywords(const QStringList& oldKeywords, const QStringLi
 
         // Remove all old keywords.
         Exiv2::IptcData iptcData(d->iptcMetadata());
-        Exiv2::IptcData::iterator it = iptcData.begin();
+        Exiv2::IptcData::iterator it2 = iptcData.begin();
 
-        while(it != iptcData.end())
+        while (it2 != iptcData.end())
         {
-            QString key = QString::fromLocal8Bit(it->key().c_str());
-            QString val = QString::fromUtf8(it->toString().c_str());
+            QString key = QString::fromLocal8Bit(it2->key().c_str());
+            QString val = QString::fromUtf8(it2->toString().c_str());
 
             // Also remove new keywords to avoid duplicates. They will be added again below.
             if ( key == QLatin1String("Iptc.Application2.Keywords") &&
                  (oldKeywords.contains(val) || newKeywords.contains(val))
                )
-                it = iptcData.erase(it);
+            {
+                it2 = iptcData.erase(it2);
+            }
             else
-                ++it;
+            {
+                ++it2;
+            }
         };
 
         // Add new keywords. Note that Keywords Iptc tag is limited to 64 char but can be redondant.
@@ -725,17 +733,21 @@ bool MetaEngine::setIptcSubjects(const QStringList& oldSubjects, const QStringLi
 
         // Remove all old subjects.
         Exiv2::IptcData iptcData(d->iptcMetadata());
-        Exiv2::IptcData::iterator it = iptcData.begin();
+        Exiv2::IptcData::iterator it2 = iptcData.begin();
 
-        while(it != iptcData.end())
+        while (it2 != iptcData.end())
         {
-            QString key = QString::fromLocal8Bit(it->key().c_str());
-            QString val = QString::fromUtf8(it->toString().c_str());
+            QString key = QString::fromLocal8Bit(it2->key().c_str());
+            QString val = QString::fromUtf8(it2->toString().c_str());
 
             if (key == QLatin1String("Iptc.Application2.Subject") && oldDef.contains(val))
-                it = iptcData.erase(it);
+            {
+                it2 = iptcData.erase(it2);
+            }
             else
-                ++it;
+            {
+                ++it2;
+            }
         };
 
         // Add new subjects. Note that Keywords Iptc tag is limited to 236 char but can be redondant.
@@ -819,17 +831,21 @@ bool MetaEngine::setIptcSubCategories(const QStringList& oldSubCategories, const
 
         // Remove all old Sub Categories.
         Exiv2::IptcData iptcData(d->iptcMetadata());
-        Exiv2::IptcData::iterator it = iptcData.begin();
+        Exiv2::IptcData::iterator it2 = iptcData.begin();
 
-        while(it != iptcData.end())
+        while (it2 != iptcData.end())
         {
-            QString key = QString::fromLocal8Bit(it->key().c_str());
-            QString val = QString::fromUtf8(it->toString().c_str());
+            QString key = QString::fromLocal8Bit(it2->key().c_str());
+            QString val = QString::fromUtf8(it2->toString().c_str());
 
             if (key == QLatin1String("Iptc.Application2.SuppCategory") && oldSubCategories.contains(val))
-                it = iptcData.erase(it);
+            {
+                it2 = iptcData.erase(it2);
+            }
             else
-                ++it;
+            {
+                ++it2;
+            }
         };
 
         // Add new Sub Categories. Note that SubCategories Iptc tag is limited to 32
@@ -888,7 +904,7 @@ MetaEngine::TagsMap MetaEngine::getIptcTagsList() const
                 tagsMap.insert(key, values);
                 ++(*it);
             }
-            while((*it)->number_ != 0xffff);
+            while ((*it)->number_ != 0xffff);
         }
 
         return tagsMap;
