@@ -133,7 +133,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     d->previewWidget->setFocusPolicy(Qt::StrongFocus);
     setToolView(d->previewWidget);
-    setPreviewModeMask(PreviewToolBar::PreviewTargetImage);
+    setPreviewModeMask(PreviewToolBar::UnSplitPreviewModes);
 
     // --------------------------------------------------------
 
@@ -259,9 +259,7 @@ HealingCloneTool::HealingCloneTool(QObject* const parent)
 
     // --------------------------------------------------------
 
-    setPreviewModeMask(PreviewToolBar::PreviewTargetImage);
     setToolSettings(d->gboxSettings);
-    setToolView(d->previewWidget);
 
     // --------------------------------------------------------
 
