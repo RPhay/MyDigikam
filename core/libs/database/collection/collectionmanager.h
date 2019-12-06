@@ -271,6 +271,7 @@ public:
      */
     QString albumRootLabel(int id);
 
+    //@{
     /**
      * For a given path, the part of the path that forms the album root is returned,
      * ending without a slash. Example: "/media/fotos/Paris 2007" gives "/media/fotos".
@@ -279,6 +280,7 @@ public:
     QUrl    albumRoot(const QUrl& fileUrl);
     QString albumRootPath(const QUrl& fileUrl);
     QString albumRootPath(const QString& filePath);
+    //@}
 
     /**
      * Returns true if the given path forms an album root.
@@ -295,6 +297,7 @@ public:
      */
     bool    isAlbumRoot(const QString& filePath);
 
+    //@{
     /**
      * Returns the album part of the given file path, i.e. the album root path
      * at the beginning is removed and the second part, starting with "/", ending without a slash,
@@ -310,7 +313,9 @@ public:
     QString album(const QString& filePath);
     QString album(const CollectionLocation& location, const QUrl& fileUrl);
     QString album(const CollectionLocation& location, const QString& filePath);
+    //@}
 
+    //@{
     /**
      * Returns just one album root, out of the list of available location,
      * the one that is most suitable to serve as a default, e.g.
@@ -318,6 +323,7 @@ public:
      */
     QUrl    oneAlbumRoot();
     QString oneAlbumRootPath();
+    //@}
 
 private Q_SLOTS:
 

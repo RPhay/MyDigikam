@@ -198,13 +198,13 @@ public:
 
 public:
 
-    QString udi;            // Solid device UDI of the StorageAccess device
-    QString path;           // mount path of volume, with trailing slash
-    QString uuid;           // UUID as from Solid
-    QString label;          // volume label (think of CDs)
-    bool    isRemovable;    // may be removed
-    bool    isOpticalDisc;  // is an optical disk device as CD/DVD/BR
-    bool    isMounted;      // is mounted on File System.
+    QString udi;            ///< Solid device UDI of the StorageAccess device
+    QString path;           ///< mount path of volume, with trailing slash
+    QString uuid;           ///< UUID as from Solid
+    QString label;          ///< volume label (think of CDs)
+    bool    isRemovable;    ///< may be removed
+    bool    isOpticalDisc;  ///< is an optical disk device as CD/DVD/BR
+    bool    isMounted;      ///< is mounted on File System.
 };
 
 // -------------------------------------------------

@@ -470,25 +470,25 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
     }
 */
 
-    QList<AlbumShortInfo>::const_iterator it;
+    QList<AlbumShortInfo>::const_iterator it3;
 
-    for (it = albumList.constBegin() ; it != albumList.constEnd() ; ++it)
+    for (it3 = albumList.constBegin() ; it3 != albumList.constEnd() ; ++it3)
     {
-        if (!locationIdsToScan.contains((*it).albumRootId))
+        if (!locationIdsToScan.contains((*it3).albumRootId))
         {
             continue;
         }
 
-        CollectionLocation location = CollectionManager::instance()->locationForAlbumRootId((*it).albumRootId);
+        CollectionLocation location = CollectionManager::instance()->locationForAlbumRootId((*it3).albumRootId);
 
         // Only handle albums on available locations
         if (location.isAvailable())
         {
-            QFileInfo fileInfo(location.albumRootPath() + (*it).relativePath);
+            QFileInfo fileInfo(location.albumRootPath() + (*it3).relativePath);
             bool dirExist = (fileInfo.exists() && fileInfo.isDir());
 
 #ifdef Q_OS_WIN
-            if (dirExist && !(*it).relativePath.endsWith(QLatin1Char('/')))
+            if (dirExist && !(*it3).relativePath.endsWith(QLatin1Char('/')))
             {
                 QDir dir(fileInfo.dir());
                 dirExist = dir.entryList(QDir::Dirs |
@@ -500,8 +500,8 @@ void CollectionScanner::scanForStaleAlbums(const QList<int>& locationIdsToScan)
             // (if they already exist in the database, this will delete them)
             if (!dirExist || d->ignoreDirectory.contains(fileInfo.fileName()))
             {
-                toBeDeleted << (*it).id;
-                d->scannedAlbums << (*it).id;
+                toBeDeleted      << (*it3).id;
+                d->scannedAlbums << (*it3).id;
             }
         }
     }

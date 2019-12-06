@@ -26,7 +26,7 @@
 
 namespace Digikam
 {
-    
+
 void ItemScanner::scanImageHistory()
 {
     /** Stage 1 of history scanning */
@@ -153,11 +153,11 @@ void ItemScanner::tagItemHistoryGraph(qlonglong id)
     }
 
     // get category info
-    QList<qlonglong>                                        originals, intermediates, currents;
-    QHash<ItemInfo, HistoryImageId::Types>                 types = graph.categorize();
+    QList<qlonglong>                                       originals, intermediates, currents;
+    QHash<ItemInfo, HistoryImageId::Types>                 grpTypes = graph.categorize();
     QHash<ItemInfo, HistoryImageId::Types>::const_iterator it;
 
-    for (it = types.constBegin() ; it != types.constEnd() ; ++it)
+    for (it = grpTypes.constBegin() ; it != grpTypes.constEnd() ; ++it)
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Image" << it.key().id() << "type" << it.value();
         HistoryImageId::Types types = it.value();

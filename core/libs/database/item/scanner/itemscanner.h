@@ -310,6 +310,7 @@ public:
      */
     bool hasHistoryToResolve() const;
 
+    //@{
     /**
      * Resolves the image history of the image id by filling the ImageRelations table
      * for all contained referred images.
@@ -317,6 +318,7 @@ public:
      */
     static bool resolveImageHistory(qlonglong id, QList<qlonglong>* needTaggingIds = nullptr);
     static bool resolveImageHistory(qlonglong imageId, const QString& historyXml, QList<qlonglong>* needTaggingIds = nullptr);
+    //@}
 
     /**
      * Takes the history graph reachable from the given image, and assigns

@@ -82,6 +82,7 @@ public:
     explicit CollectionScanner();
     virtual ~CollectionScanner();
 
+    //@{
     /**
      * Hints give the scanner additional info about things that happened in the past
      * carried out by higher level which the collection scanner cannot know.
@@ -92,6 +93,7 @@ public:
     static CollectionScannerHintContainer* createHintContainer();
     void setHintContainer(CollectionScannerHintContainer* const container);
     void setUpdateHashHint(bool hint = true);
+    //@}
 
     /**
      * Call this to enable the progress info signals.
@@ -250,6 +252,7 @@ Q_SIGNALS:
      */
     void totalFilesToScan(int count);
 
+    //@{
     /**
      * Notifies the begin of the scanning of the specified album root,
      * album, of stale files, or of the whole collection (after stale files)
@@ -259,7 +262,9 @@ Q_SIGNALS:
     void startScanningForStaleAlbums();
     void startScanningAlbumRoots();
     void startCompleteScan();
+    //@}
 
+    //@{
     /**
      * Emitted when the scanning has finished.
      * Note that start/finishScanningAlbum may be emitted recursively.
@@ -268,6 +273,7 @@ Q_SIGNALS:
     void finishedScanningAlbum(const QString& albumRoot, const QString& album, int filesScanned);
     void finishedScanningForStaleAlbums();
     void finishedCompleteScan();
+    //@}
 
     /**
      * Emitted between startScanningAlbum and finishedScanningAlbum.
@@ -275,6 +281,7 @@ Q_SIGNALS:
      * equals the one reported by finishedScanningAlbum()
      */
     void scannedFiles(int filesScanned);
+
     /**
      * Emitted when the observer told to cancel the scan
      */
