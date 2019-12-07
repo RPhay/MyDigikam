@@ -397,7 +397,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
     {
         if (m_file != m_destFile)
         {
-            copyFile(m_file, m_destFile);
+            QFile::copy(m_file, m_destFile);
         }
 
         return true;
@@ -790,42 +790,6 @@ bool isJpegImage(const QString& file)
     {
         return false;
     }
-
-    return true;
-}
-
-bool copyFile(const QString& src, const QString& dst)
-{
-    QFile sFile(src);
-    QFile dFile(dst);
-
-    if (!sFile.open(QIODevice::ReadOnly))
-    {
-        return false;
-    }
-
-    if (!dFile.open(QIODevice::WriteOnly))
-    {
-        sFile.close();
-        return false;
-    }
-
-    const  int MAX_IPC_SIZE = (1024*32);
-    char   buffer[MAX_IPC_SIZE];
-    qint64 len;
-
-    while ((len = sFile.read(buffer, MAX_IPC_SIZE)) != 0)
-    {
-        if (len == -1 || dFile.write(buffer, (qint64)len) == -1)
-        {
-            sFile.close();
-            dFile.close();
-            return false;
-        }
-    }
-
-    sFile.close();
-    dFile.close();
 
     return true;
 }
