@@ -134,8 +134,8 @@ void DatabaseServer::run()
         }
 
         QThread::sleep(waitTime);
-        runningTime++;
-        debugTime--;
+        ++runningTime;
+        --debugTime;
     }
     while (databaseServerStateEnum != stopped);
 
@@ -183,14 +183,14 @@ void DatabaseServer::stopDatabaseProcess()
 
     d->databaseProcess->terminate();
 
-    if (d->databaseProcess->state() == QProcess::Running && !d->databaseProcess->waitForFinished(5000))
+    if ((d->databaseProcess->state() == QProcess::Running) && !d->databaseProcess->waitForFinished(5000))
     {
         qCDebug(DIGIKAM_DATABASESERVER_LOG) << "Database process will be killed now";
         d->databaseProcess->kill();
         d->databaseProcess->waitForFinished();
     }
 
-    d->databaseProcess->~QProcess();
+    delete d->databaseProcess;
     d->databaseProcess = nullptr;
 
     databaseServerStateEnum = stopped;
@@ -199,7 +199,7 @@ void DatabaseServer::stopDatabaseProcess()
 
 bool DatabaseServer::isRunning() const
 {
-    if (d->databaseProcess == nullptr)
+    if (!d->databaseProcess)
     {
         return false;
     }
@@ -312,8 +312,8 @@ DatabaseServerError DatabaseServer::initMysqlConfig() const
 {
     DatabaseServerError result;
 
-    QString localConfig  = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                  QLatin1String("digikam/database/mysql-local.conf"));
+    QString localConfig = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
+                                                 QLatin1String("digikam/database/mysql-local.conf"));
 
     if (!d->globalConfig.isEmpty())
     {
