@@ -276,8 +276,9 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         deviceIconLabel->setPixmap(QIcon::fromTheme(QLatin1String("drive-harddisk")).pixmap(64));
         mainLayout->addWidget(deviceIconLabel, 0, 0);
 
-        QLabel* const mainLabel = new QLabel(i18n("<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently not found on your system.<br/> "
-                                                  "Please choose the most appropriate option to handle this situation:</p>",
+        QLabel* const mainLabel = new QLabel(i18n("<p>The collection </p><p><b>%1</b><br/>(%2)</p><p> is currently "
+                                                  "not found on your system.<br/> Please choose the most "
+                                                  "appropriate  option to handle this situation:</p>",
                                              loc.label(), QDir::toNativeSeparators(locDescription)));
         mainLabel->setWordWrap(true);
         mainLayout->addWidget(mainLabel, 0, 1);
@@ -313,8 +314,8 @@ bool AlbumManager::setDatabase(const DbEngineParameters& params, bool priority, 
         }
 
         QRadioButton* const isRemovableButton = new QRadioButton;
-        QLabel* const isRemovableLabel        = new QLabel(i18n("The collection is located on a storage device which is not always attached. "
-                                                                "Mark the collection as a removable collection."));
+        QLabel* const isRemovableLabel        = new QLabel(i18n("The collection is located on a storage device which is not "
+                                                                "always attached. Mark the collection as a removable collection."));
         isRemovableLabel->setWordWrap(true);
         layout->addWidget(isRemovableButton, 2, 0, Qt::AlignTop);
         layout->addWidget(isRemovableLabel,  2, 1);
@@ -670,7 +671,9 @@ bool AlbumManager::moveToBackup(const QFileInfo& info)
 {
     if (info.exists())
     {
-        QFileInfo backup(info.dir(), info.fileName() + QLatin1String("-backup-") + QDateTime::currentDateTime().toString(Qt::ISODate));
+        QFileInfo backup(info.dir(), info.fileName() +
+                                     QLatin1String("-backup-") +
+                                     QDateTime::currentDateTime().toString(Qt::ISODate));
 
         bool ret = QDir().rename(info.filePath(), backup.filePath());
 
