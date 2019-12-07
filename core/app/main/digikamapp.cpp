@@ -253,10 +253,7 @@ DigikamApp::~DigikamApp()
     DIO::cleanUp();
 
     // close database server
-    if (ApplicationSettings::instance()->getDbEngineParameters().internalServer)
-    {
-        DatabaseServerStarter::instance()->stopServerManagerProcess();
-    }
+    DatabaseServerStarter::instance()->stopServerManagerProcess();
 
     AlbumManager::instance()->removeFakeConnection();
 

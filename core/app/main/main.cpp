@@ -270,6 +270,8 @@ int main(int argc, char* argv[])
     if (!AlbumManager::instance()->setDatabase(params, !commandLineDBPath.isNull(), firstAlbumPath))
     {
         DatabaseServerStarter::instance()->stopServerManagerProcess();
+        AlbumManager::instance()->removeFakeConnection();
+
         CoreDbAccess::cleanUpDatabase();
         ThumbsDbAccess::cleanUpDatabase();
         FaceDbAccess::cleanUpDatabase();
