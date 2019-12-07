@@ -707,7 +707,7 @@ void AbstractCountingAlbumModel::includeChildrenCount(const QModelIndex& index)
 {
     Album* const album = albumForIndex(index);
 
-    if (!album || (album->type() == Album::TAG))
+    if (!album)
     {
         return;
     }
