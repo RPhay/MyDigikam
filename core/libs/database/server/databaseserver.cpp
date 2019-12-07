@@ -58,12 +58,10 @@ public:
 
     explicit Private()
     {
-        app             = nullptr;
         databaseProcess = nullptr;
     }
 
     DbEngineParameters     params;
-    DatabaseServerStarter* app;
     QProcess*              databaseProcess;
 
     QString                internalDBName;
@@ -80,7 +78,6 @@ DatabaseServer::DatabaseServer(const DbEngineParameters& params, DatabaseServerS
     : QThread(parent),
       d(new Private)
 {
-    d->app    = parent;
     d->params = params;
 
     qCDebug(DIGIKAM_DATABASESERVER_LOG) << d->params;
