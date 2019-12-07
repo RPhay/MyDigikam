@@ -82,6 +82,7 @@ using namespace Magick;
 #include "dxmlguiwindow.h"
 #include "applicationsettings.h"
 #include "similaritydbaccess.h"
+#include "databaseserverstarter.h"
 
 #ifdef Q_OS_WIN
 #   include <windows.h>
@@ -268,6 +269,7 @@ int main(int argc, char* argv[])
     // initialize database
     if (!AlbumManager::instance()->setDatabase(params, !commandLineDBPath.isNull(), firstAlbumPath))
     {
+        DatabaseServerStarter::instance()->stopServerManagerProcess();
         CoreDbAccess::cleanUpDatabase();
         ThumbsDbAccess::cleanUpDatabase();
         FaceDbAccess::cleanUpDatabase();

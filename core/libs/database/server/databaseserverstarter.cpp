@@ -116,7 +116,9 @@ DatabaseServerError DatabaseServerStarter::startServerManagerProcess(const DbEng
 void DatabaseServerStarter::stopServerManagerProcess()
 {
     if (!d->internalServer)
+    {
         return;
+    }
 
     QSystemSemaphore sem(QLatin1String("DigikamDBSrvAccess"), 1, QSystemSemaphore::Open);
     sem.acquire();
