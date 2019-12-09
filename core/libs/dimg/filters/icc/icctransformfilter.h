@@ -73,8 +73,8 @@ public:
 
 protected:
 
-    virtual void progressInfo(DImg* const img, float progress) override;
-    virtual void filterImage()                                 override;
+    virtual void progressInfo(float progress) override;
+    virtual void filterImage()                override;
 
 private:
 

@@ -84,7 +84,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     if (observer)
     {
-        observer->progressInfo(m_image, 0.1F);
+        observer->progressInfo(0.1F);
     }
 
     // -------------------------------------------------------------------
@@ -321,7 +321,7 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
 
     if (m_observer)
     {
-        m_observer->progressInfo(m_image, 0.2F);
+        m_observer->progressInfo(0.2F);
     }
 
     if (m_loadFlags & LoadPreview)
@@ -388,7 +388,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
 
     if (m_observer)
     {
-        m_observer->progressInfo(m_image, 0.3F);
+        m_observer->progressInfo(0.3F);
     }
 
     heif_decoding_options_free(decode_options);
@@ -462,7 +462,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
 
     if (m_observer)
     {
-        m_observer->progressInfo(m_image, 0.4F);
+        m_observer->progressInfo(0.4F);
     }
 
     uchar* dst              = data;
@@ -532,7 +532,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
         {
             checkPoint += granularity(m_observer, y, 0.8F);
 
-            if (!m_observer->continueQuery(m_image))
+            if (!m_observer->continueQuery())
             {
                 heif_image_release(heif_image);
                 heif_image_handle_release(image_handle);
@@ -541,7 +541,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
                 return false;
             }
 
-            m_observer->progressInfo(m_image, 0.4 + (0.8 * (((float)y) / ((float)imageHeight()))));
+            m_observer->progressInfo(0.4 + (0.8 * (((float)y) / ((float)imageHeight()))));
         }
     }
 
@@ -553,7 +553,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
 
     if (m_observer)
     {
-        m_observer->progressInfo(m_image, 0.9F);
+        m_observer->progressInfo(0.9F);
     }
 
     heif_image_release(heif_image);

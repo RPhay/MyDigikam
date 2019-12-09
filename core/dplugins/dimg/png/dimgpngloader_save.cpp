@@ -311,7 +311,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
     if (observer)
     {
-        observer->progressInfo(m_image, 0.2F);
+        observer->progressInfo(0.2F);
     }
 
     // -------------------------------------------------------------------
@@ -331,7 +331,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         {
             checkPoint += granularity(observer, imageHeight(), 0.8F);
 
-            if (!observer->continueQuery(m_image))
+            if (!observer->continueQuery())
             {
                 png_destroy_write_struct(&png_ptr, (png_infopp) & info_ptr);
                 png_destroy_info_struct(png_ptr, (png_infopp) & info_ptr);
@@ -339,7 +339,7 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
                 return false;
             }
 
-            observer->progressInfo(m_image, 0.2 + (0.8 * (((float)y) / ((float)imageHeight()))));
+            observer->progressInfo(0.2 + (0.8 * (((float)y) / ((float)imageHeight()))));
         }
 
         j = 0;

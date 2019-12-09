@@ -215,7 +215,7 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
         if (observer)
         {
-            observer->progressInfo(m_image, 1.0);
+            observer->progressInfo(1.0);
         }
 
         imageSetAttribute(QLatin1String("savedFormat"), QLatin1String("PGF"));

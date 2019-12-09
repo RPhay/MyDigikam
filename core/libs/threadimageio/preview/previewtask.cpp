@@ -148,7 +148,7 @@ void PreviewLoadingTask::execute()
         }
     }
 
-    if (continueQuery(&m_img) && m_img.isNull())
+    if (continueQuery() && m_img.isNull())
     {
         // Preview is not in cache, we will load image from file.
 
@@ -289,7 +289,7 @@ void PreviewLoadingTask::execute()
             }
         }
 
-        if (continueQuery(&m_img))
+        if (continueQuery())
         {
             if (!m_img.isNull() && MetaEngineSettings::instance()->settings().exifRotate)
             {
@@ -347,7 +347,7 @@ void PreviewLoadingTask::execute()
 
     // following the golden rule to avoid deadlocks, do this when CacheLock is not held
 
-    if (continueQuery(&m_img) && !m_img.isNull())
+    if (continueQuery() && !m_img.isNull())
     {
         // The image from the cache may or may not be rotated and post processed.
         // exifRotate() and postProcess() will detect if work is needed.
@@ -390,7 +390,7 @@ void PreviewLoadingTask::execute()
             postProcess();
         }
     }
-    else if (continueQuery(&m_img))
+    else if (continueQuery())
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot extract preview for" << m_loadingDescription.filePath;
     }
@@ -431,7 +431,7 @@ bool PreviewLoadingTask::needToScale()
 
 bool PreviewLoadingTask::loadExiv2Preview(MetaEnginePreviews& previews, int sizeLimit)
 {
-    if (previews.isEmpty() || !continueQuery(&m_img))
+    if (previews.isEmpty() || !continueQuery())
     {
         return false;
     }
@@ -452,7 +452,7 @@ bool PreviewLoadingTask::loadExiv2Preview(MetaEnginePreviews& previews, int size
 
 bool PreviewLoadingTask::loadLibRawPreview(int sizeLimit)
 {
-    if (!continueQuery(&m_img))
+    if (!continueQuery())
     {
         return false;
     }
@@ -473,7 +473,7 @@ bool PreviewLoadingTask::loadLibRawPreview(int sizeLimit)
 
 bool PreviewLoadingTask::loadHalfSizeRaw()
 {
-    if (!continueQuery(&m_img))
+    if (!continueQuery())
     {
         return false;
     }
@@ -484,7 +484,7 @@ bool PreviewLoadingTask::loadHalfSizeRaw()
 
 void PreviewLoadingTask::convertQImageToDImg()
 {
-    if (!continueQuery(&m_img))
+    if (!continueQuery())
     {
         return;
     }

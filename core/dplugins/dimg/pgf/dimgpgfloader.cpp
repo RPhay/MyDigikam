@@ -116,11 +116,11 @@ bool DImgPGFLoader::progressCallback(double percent, bool escapeAllowed)
 {
     if (m_observer)
     {
-        m_observer->progressInfo(m_image, percent);
+        m_observer->progressInfo(percent);
 
         if (escapeAllowed)
         {
-            return (!m_observer->continueQuery(m_image));
+            return (!m_observer->continueQuery());
         }
     }
 

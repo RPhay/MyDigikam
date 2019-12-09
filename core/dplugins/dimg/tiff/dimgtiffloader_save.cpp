@@ -179,7 +179,7 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     if (observer)
     {
-        observer->progressInfo(m_image, 0.1F);
+        observer->progressInfo(0.1F);
     }
 
     uchar*  pixel        = nullptr;
@@ -216,14 +216,14 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         {
             checkpoint += granularity(observer, h, 0.8F);
 
-            if (!observer->continueQuery(m_image))
+            if (!observer->continueQuery())
             {
                 _TIFFfree(buf);
                 TIFFClose(tif);
                 return false;
             }
 
-            observer->progressInfo(m_image, 0.1 + (0.8 * (((float)y) / ((float)h))));
+            observer->progressInfo(0.1 + (0.8 * (((float)y) / ((float)h))));
         }
 
         i = 0;
@@ -363,7 +363,7 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     if (observer)
     {
-        observer->progressInfo(m_image, 1.0);
+        observer->progressInfo(1.0);
     }
 
     imageSetAttribute(QLatin1String("savedFormat"), QLatin1String("TIFF"));

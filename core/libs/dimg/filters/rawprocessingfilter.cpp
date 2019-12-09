@@ -119,13 +119,13 @@ void RawProcessingFilter::postProgress(int)
 
     if (m_observer)
     {
-        m_observer->progressInfo(&m_destImage, float(modulateProgress(20)) / 100);
+        m_observer->progressInfo(float(modulateProgress(20)) / 100);
     }
 }
 
 bool RawProcessingFilter::continueQuery() const
 {
-    if (m_observer && !m_observer->continueQuery(nullptr))
+    if (m_observer && !m_observer->continueQuery())
     {
         return false;
     }

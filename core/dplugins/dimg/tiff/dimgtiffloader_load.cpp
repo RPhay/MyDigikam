@@ -243,7 +243,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     {
         if (observer)
         {
-            observer->progressInfo(m_image, 0.1F);
+            observer->progressInfo(0.1F);
         }
 
         strip_size    = TIFFStripSize(tif);
@@ -272,14 +272,14 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 {
                     checkpoint += granularity(observer, num_of_strips, 0.8F);
 
-                    if (!observer->continueQuery(m_image))
+                    if (!observer->continueQuery())
                     {
                         TIFFClose(tif);
                         loadingFailed();
                         return false;
                     }
 
-                    observer->progressInfo(m_image, 0.1 + (0.8 * (((float)st) / ((float)num_of_strips))));
+                    observer->progressInfo(0.1 + (0.8 * (((float)st) / ((float)num_of_strips))));
                 }
 
                 bytesRead = TIFFReadEncodedStrip(tif, st, strip.data(), strip_size);
@@ -459,7 +459,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
             for (tstrip_t st = 0 ; st < num_of_strips ; ++st)
             {
-                if (observer && !observer->continueQuery(m_image))
+                if (observer && !observer->continueQuery())
                 {
                     TIFFClose(tif);
                     loadingFailed();
@@ -498,14 +498,14 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 {
                     checkpoint += granularity(observer, num_of_strips, 0.8F);
 
-                    if (!observer->continueQuery(m_image))
+                    if (!observer->continueQuery())
                     {
                         TIFFClose(tif);
                         loadingFailed();
                         return false;
                     }
 
-                    observer->progressInfo(m_image, 0.1 + (0.8 * (((float)st) / ((float)num_of_strips))));
+                    observer->progressInfo(0.1 + (0.8 * (((float)st) / ((float)num_of_strips))));
                 }
 
                 bytesRead = TIFFReadEncodedStrip(tif, st, strip.data(), strip_size);
@@ -691,14 +691,14 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 {
                     checkpoint += granularity(observer, h, 0.8F);
 
-                    if (!observer->continueQuery(m_image))
+                    if (!observer->continueQuery())
                     {
                         TIFFClose(tif);
                         loadingFailed();
                         return false;
                     }
 
-                    observer->progressInfo(m_image, 0.1 + (0.8 * (((float)row) / ((float)h))));
+                    observer->progressInfo(0.1 + (0.8 * (((float)row) / ((float)h))));
                 }
 
                 img.row_offset  = row;
@@ -756,7 +756,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     if (observer)
     {
-        observer->progressInfo(m_image, 1.0);
+        observer->progressInfo(1.0);
     }
 
     imageWidth()  = w;

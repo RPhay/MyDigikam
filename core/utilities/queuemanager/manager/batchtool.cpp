@@ -124,9 +124,8 @@ public:
     {
     }
 
-    bool continueQuery(DImg* const img)
+    bool continueQuery() override
     {
-        Q_UNUSED(img);
         return (!d->cancel);
     }
 

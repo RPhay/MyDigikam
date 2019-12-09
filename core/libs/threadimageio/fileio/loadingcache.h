@@ -49,7 +49,7 @@ public:
     virtual bool querySendNotifyEvent() const = 0;
     virtual void setResult(const LoadingDescription& loadingDescription, const DImg& img) = 0;
     virtual LoadSaveNotifier* loadSaveNotifier() const = 0;
-    virtual LoadSaveThread::AccessMode accessMode() = 0;
+    virtual LoadSaveThread::AccessMode accessMode() const = 0;
 };
 
 // --------------------------------------------------------------------------------------------------------------

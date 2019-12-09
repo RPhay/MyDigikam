@@ -78,9 +78,8 @@ public:
     {
     }
 
-    bool continueQuery(DImg* const img)
+    bool continueQuery() override
     {
-        Q_UNUSED(img);
         return (!parent->isAbortedFlag);
     }
 
@@ -95,7 +94,7 @@ PreProcessTask::PreProcessTask(const QString& workDirPath, int id, PanoramaPrepr
       id(id),
       d(new Private(targetUrls, sourceUrl))
 {
-    d->observer        = new PanoObserver(this);
+    d->observer = new PanoObserver(this);
 }
 
 PreProcessTask::~PreProcessTask()

@@ -119,7 +119,7 @@ bool DImg::load(const QString& filePath,
 
     foreach (DPluginDImg* const plug, pluginList)
     {
-        if (observer && !observer->continueQuery(nullptr))
+        if (observer && !observer->continueQuery())
         {
             return false;
         }
@@ -149,7 +149,7 @@ bool DImg::load(const QString& filePath,
         delete loader;
     }
 
-    if (observer && !observer->continueQuery(nullptr))
+    if (observer && !observer->continueQuery())
     {
         return false;
     }
@@ -160,7 +160,7 @@ bool DImg::load(const QString& filePath,
 
     foreach (DPluginDImg* const plug, pluginList)
     {
-        if (observer && !observer->continueQuery(nullptr))
+        if (observer && !observer->continueQuery())
         {
             return false;
         }
@@ -196,8 +196,8 @@ bool DImg::load(const QString& filePath,
         return false;
     }
 
-    if (observer                         &&
-        observer->continueQuery(nullptr) &&
+    if (observer                  &&
+        observer->continueQuery() &&
         !(loadFlags & DImgLoader::LoadPreview))
     {
         qCWarning(DIGIKAM_DIMG_LOG) << filePath << ": Cannot load file !!!";

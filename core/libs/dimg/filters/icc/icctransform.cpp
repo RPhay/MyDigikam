@@ -644,7 +644,7 @@ bool IccTransform::apply(DImg& image, DImgLoaderObserver* const observer)
 
     if (observer)
     {
-        observer->progressInfo(&image, 0.1F);
+        observer->progressInfo(0.1F);
     }
 
     transform(image, description, observer);
@@ -725,7 +725,7 @@ void IccTransform::transform(DImg& image, const TransformDescription& descriptio
             if (observer && p <= checkPoint)
             {
                 checkPoint -= granularity;
-                observer->progressInfo(&image, 0.1 + 0.9 * (1.0 - float(p) / float(pixels)));
+                observer->progressInfo(0.1 + 0.9 * (1.0 - float(p) / float(pixels)));
             }
         }
     }
@@ -745,7 +745,7 @@ void IccTransform::transform(DImg& image, const TransformDescription& descriptio
             if (observer && p <= checkPoint)
             {
                 checkPoint -= granularity;
-                observer->progressInfo(&image, 0.1 + 0.9 * (1.0 - float(p) / float(pixels)));
+                observer->progressInfo(0.1 + 0.9 * (1.0 - float(p) / float(pixels)));
             }
         }
     }

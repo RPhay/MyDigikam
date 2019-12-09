@@ -140,14 +140,14 @@ bool DImgRAWLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
 bool DImgRAWLoader::checkToCancelWaitingData()
 {
-    return (m_observer ? !m_observer->continueQuery(m_image) : false);
+    return (m_observer ? !m_observer->continueQuery() : false);
 }
 
 void DImgRAWLoader::setWaitingDataProgress(double value)
 {
     if (m_observer)
     {
-        m_observer->progressInfo(m_image, value);
+        m_observer->progressInfo(value);
     }
 }
 
@@ -180,13 +180,13 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
             {
                 checkpoint += granularity(observer, height, 1.0);
 
-                if (!observer->continueQuery(m_image))
+                if (!observer->continueQuery())
                 {
                     delete [] image;
                     return false;
                 }
 
-                observer->progressInfo(m_image, 0.7 + 0.2 * (((float)h) / ((float)height)));
+                observer->progressInfo(0.7 + 0.2 * (((float)h) / ((float)height)));
             }
 
             for (int w = 0 ; w < width ; ++w)
@@ -236,13 +236,13 @@ bool DImgRAWLoader::loadedFromRawData(const QByteArray& data,
             {
                 checkpoint += granularity(observer, height, 1.0);
 
-                if (!observer->continueQuery(m_image))
+                if (!observer->continueQuery())
                 {
                     delete [] image;
                     return false;
                 }
 
-                observer->progressInfo(m_image, 0.7 + 0.2 * (((float)h) / ((float)height)));
+                observer->progressInfo(0.7 + 0.2 * (((float)h) / ((float)height)));
             }
 
             for (int w = 0 ; w < width ; ++w)

@@ -125,7 +125,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
 
     if (observer)
     {
-        observer->progressInfo(m_image, 0.1F);
+        observer->progressInfo(0.1F);
     }
 
     // -------------------------------------------------------------------
@@ -208,7 +208,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
         {
             checkpoint += granularity(observer, imageHeight(), 0.8F);
 
-            if (!observer->continueQuery(m_image))
+            if (!observer->continueQuery())
             {
                 jas_image_destroy(jp2_image);
 
@@ -222,7 +222,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
                 return false;
             }
 
-            observer->progressInfo(m_image, 0.1 + (0.8 * (((float)y) / ((float)imageHeight()))));
+            observer->progressInfo(0.1 + (0.8 * (((float)y) / ((float)imageHeight()))));
         }
 
         for (x = 0 ; x < (long)imageWidth() ; ++x)
@@ -330,7 +330,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
 
     if (observer)
     {
-        observer->progressInfo(m_image, 1.0);
+        observer->progressInfo(1.0);
     }
 
     jas_image_destroy(jp2_image);

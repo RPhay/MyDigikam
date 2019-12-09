@@ -254,7 +254,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         if (observer)
         {
-            observer->progressInfo(m_image, 1.0);
+            observer->progressInfo(1.0);
         }
 
         imageWidth()  = cleanupData->size.width();
@@ -452,7 +452,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         if (observer)
         {
-            observer->progressInfo(m_image, 0.1F);
+            observer->progressInfo(0.1F);
         }
 
         // -------------------------------------------------------------------
@@ -517,7 +517,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                 {
                     checkPoint += granularity(observer, height, 0.7F);
 
-                    if (!observer->continueQuery(m_image))
+                    if (!observer->continueQuery())
                     {
                         png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) nullptr);
                         delete cleanupData;
@@ -526,7 +526,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
                     }
 
                     // use 10% - 80% for progress while reading rows
-                    observer->progressInfo(m_image, 0.1 + (0.7 * (((float)y) / ((float)height))));
+                    observer->progressInfo(0.1 + (0.7 * (((float)y) / ((float)height))));
                 }
 
                 png_read_rows(png_ptr, lines + y, nullptr, 1);
@@ -562,7 +562,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
     if (observer)
     {
-        observer->progressInfo(m_image, 0.9F);
+        observer->progressInfo(0.9F);
     }
 
     // -------------------------------------------------------------------
@@ -646,7 +646,7 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
     if (observer)
     {
-        observer->progressInfo(m_image, 1.0);
+        observer->progressInfo(1.0);
     }
 
     imageWidth()  = width;

@@ -56,10 +56,8 @@ LoadingTask::TaskType LoadingTask::type()
     return TaskTypeLoading;
 }
 
-void LoadingTask::progressInfo(DImg* const img, float progress)
+void LoadingTask::progressInfo(float progress)
 {
-    Q_UNUSED(img);
-
     if (m_loadingTaskStatus == LoadingTaskStatusLoading)
     {
         if (m_thread && m_thread->querySendNotifyEvent())
@@ -69,10 +67,8 @@ void LoadingTask::progressInfo(DImg* const img, float progress)
     }
 }
 
-bool LoadingTask::continueQuery(DImg* const img)
+bool LoadingTask::continueQuery()
 {
-    Q_UNUSED(img);
-
     return (m_loadingTaskStatus != LoadingTaskStatusStopping);
 }
 
@@ -198,13 +194,13 @@ void SharedLoadingTask::execute()
         }
     }
 
-    if (continueQuery(&m_img) && m_img.isNull())
+    if (continueQuery() && m_img.isNull())
     {
         // load image
 
         m_img = DImg(m_loadingDescription.filePath, this, m_loadingDescription.rawDecodingSettings);
 
-        if (continueQuery(&m_img))
+        if (continueQuery())
         {
             LoadingCache::CacheLock lock(cache);
 
@@ -257,7 +253,7 @@ void SharedLoadingTask::execute()
 
     // following the golden rule to avoid deadlocks, do this when CacheLock is not held
 
-    if (continueQuery(&m_img) && !m_img.isNull())
+    if (continueQuery() && !m_img.isNull())
     {
         if (accessMode() == LoadSaveThread::AccessModeReadWrite)
         {
@@ -266,7 +262,7 @@ void SharedLoadingTask::execute()
 
         postProcess();
     }
-    else if (continueQuery(&m_img))
+    else if (continueQuery())
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot load image for" << m_loadingDescription.filePath;
     }
@@ -338,10 +334,8 @@ void SharedLoadingTask::postProcess()
     }
 }
 
-void SharedLoadingTask::progressInfo(DImg* const img, float progress)
+void SharedLoadingTask::progressInfo(float progress)
 {
-    Q_UNUSED(img);
-
     if (m_loadingTaskStatus == LoadingTaskStatusLoading)
     {
         LoadingCache* const cache = LoadingCache::cache();
@@ -360,9 +354,8 @@ void SharedLoadingTask::progressInfo(DImg* const img, float progress)
     }
 }
 
-bool SharedLoadingTask::continueQuery(DImg* const img)
+bool SharedLoadingTask::continueQuery()
 {
-    Q_UNUSED(img);
     // If this is called, the thread is currently loading an image.
     // In shared loading, we cannot stop until all listeners have been removed as well
     return ((m_loadingTaskStatus != LoadingTaskStatusStopping) || (m_listeners.count() != 0));
@@ -448,7 +441,7 @@ LoadSaveNotifier* SharedLoadingTask::loadSaveNotifier() const
     return m_thread;
 }
 
-LoadSaveThread::AccessMode SharedLoadingTask::accessMode()
+LoadSaveThread::AccessMode SharedLoadingTask::accessMode() const
 {
     return m_accessMode;
 }
@@ -468,20 +461,16 @@ LoadingTask::TaskType SavingTask::type()
     return TaskTypeSaving;
 }
 
-void SavingTask::progressInfo(DImg* const img, float progress)
+void SavingTask::progressInfo(float progress)
 {
-    Q_UNUSED(img);
-
     if (m_thread->querySendNotifyEvent())
     {
         m_thread->savingProgress(m_filePath, progress);
     }
 }
 
-bool SavingTask::continueQuery(DImg* const img)
+bool SavingTask::continueQuery()
 {
-    Q_UNUSED(img);
-
     return (m_savingTaskStatus != SavingTaskStatusStopping);
 }
 

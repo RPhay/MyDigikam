@@ -155,7 +155,7 @@ void ThumbnailLoadingTask::execute()
         }
     }
 
-    if (continueQuery(nullptr) && m_qimage.isNull())
+    if (continueQuery() && m_qimage.isNull())
     {
         // Load or create thumbnail
 
@@ -174,7 +174,7 @@ void ThumbnailLoadingTask::execute()
                 break;
         }
 
-        if (continueQuery(nullptr))
+        if (continueQuery())
         {
             LoadingCache::CacheLock lock(cache);
 
@@ -221,7 +221,7 @@ void ThumbnailLoadingTask::execute()
 
     // following the golden rule to avoid deadlocks, do this when CacheLock is not held
 
-    if (continueQuery(nullptr) && !m_qimage.isNull())
+    if (continueQuery() && !m_qimage.isNull())
     {
         postProcess();
     }

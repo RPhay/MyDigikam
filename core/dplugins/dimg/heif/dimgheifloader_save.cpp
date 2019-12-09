@@ -340,14 +340,14 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         {
             checkpoint += granularity(m_observer, imageHeight(), 0.8F);
 
-            if (!m_observer->continueQuery(m_image))
+            if (!m_observer->continueQuery())
             {
                 heif_encoder_release(encoder);
                 heif_context_free(ctx);
                 return false;
             }
 
-            m_observer->progressInfo(m_image, 0.1 + (0.8 * (((float)y) / ((float)imageHeight()))));
+            m_observer->progressInfo(0.1 + (0.8 * (((float)y) / ((float)imageHeight()))));
         }
     }
 

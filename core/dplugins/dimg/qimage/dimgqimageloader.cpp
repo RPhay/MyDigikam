@@ -62,7 +62,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
 
     if (observer)
     {
-        observer->progressInfo(m_image, 0.9F);
+        observer->progressInfo(0.9F);
     }
 
     if (image.isNull())
@@ -136,7 +136,7 @@ bool DImgQImageLoader::load(const QString& filePath, DImgLoaderObserver* const o
 
     if (observer)
     {
-        observer->progressInfo(m_image, 1.0F);
+        observer->progressInfo(1.0F);
     }
 
     imageWidth()  = w;
@@ -173,7 +173,7 @@ bool DImgQImageLoader::save(const QString& filePath, DImgLoaderObserver* const o
 
     if (observer)
     {
-        observer->progressInfo(m_image, 0.1F);
+        observer->progressInfo(0.1F);
     }
 
     // Saving is opaque to us. No support for stopping from observer,
@@ -182,7 +182,7 @@ bool DImgQImageLoader::save(const QString& filePath, DImgLoaderObserver* const o
 
     if (observer && success)
     {
-        observer->progressInfo(m_image, 1.0F);
+        observer->progressInfo(1.0F);
     }
 
     imageSetAttribute(QLatin1String("format"), format.toUpper());

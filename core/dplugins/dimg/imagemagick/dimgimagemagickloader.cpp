@@ -79,7 +79,7 @@ bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* co
 
     if (observer)
     {
-        observer->progressInfo(m_image, 0.5F);
+        observer->progressInfo(0.5F);
     }
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Try to load image with ImageMagick codecs";
@@ -101,7 +101,7 @@ bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* co
 
             if (observer)
             {
-                observer->progressInfo(m_image, 0.8F);
+                observer->progressInfo(0.8F);
             }
 
             qCDebug(DIGIKAM_DIMG_LOG) << "IM to DImg      :" << image.columns() << image.rows();
@@ -116,7 +116,7 @@ bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* co
 
             if (observer)
             {
-                observer->progressInfo(m_image, 0.9F);
+                observer->progressInfo(0.9F);
             }
 
             if (m_loadFlags & LoadICCData)
@@ -132,7 +132,7 @@ bool DImgImageMagickLoader::load(const QString& filePath, DImgLoaderObserver* co
 
             if (observer)
             {
-                observer->progressInfo(m_image, 1.0F);
+                observer->progressInfo(1.0F);
             }
 
             imageWidth()  = image.columns();
@@ -198,7 +198,7 @@ bool DImgImageMagickLoader::save(const QString& filePath, DImgLoaderObserver* co
 
     if (observer)
     {
-        observer->progressInfo(m_image, 0.5F);
+        observer->progressInfo(0.5F);
     }
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Try to save image with ImageMagick codecs";
@@ -210,7 +210,7 @@ bool DImgImageMagickLoader::save(const QString& filePath, DImgLoaderObserver* co
 
         if (observer)
         {
-            observer->progressInfo(m_image, 0.8F);
+            observer->progressInfo(0.8F);
         }
 
         Blob pixelBlob(imageData(), imageNumBytes());
@@ -241,7 +241,7 @@ bool DImgImageMagickLoader::save(const QString& filePath, DImgLoaderObserver* co
 
         if (observer)
         {
-            observer->progressInfo(m_image, 1.0F);
+            observer->progressInfo(1.0F);
         }
 
         imageSetAttribute(QLatin1String("format"), format.toUpper());

@@ -224,7 +224,7 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     if (observer)
     {
-        observer->progressInfo(m_image, 0.1F);
+        observer->progressInfo(0.1F);
     }
 
     // -------------------------------------------------------------------
@@ -240,7 +240,7 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     if (observer)
     {
-        observer->progressInfo(m_image, 0.2F);
+        observer->progressInfo(0.2F);
     }
 
     // -------------------------------------------------------------------
@@ -263,7 +263,7 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
             {
                 checkPoint += granularity(observer, h, 0.8F);
 
-                if (!observer->continueQuery(m_image))
+                if (!observer->continueQuery())
                 {
                     jpeg_destroy_compress(&cinfo);
                     delete cleanupData;
@@ -271,7 +271,7 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                 }
 
                 // use 0-20% for pseudo-progress, now fill 20-100%
-                observer->progressInfo(m_image, 0.2 + (0.8 * (((float)j) / ((float)h))));
+                observer->progressInfo(0.2 + (0.8 * (((float)j) / ((float)h))));
             }
 
             dstPtr = line;
@@ -300,7 +300,7 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
             {
                 checkPoint += granularity(observer, h, 0.8F);
 
-                if (!observer->continueQuery(m_image))
+                if (!observer->continueQuery())
                 {
                     jpeg_destroy_compress(&cinfo);
                     delete cleanupData;
@@ -308,7 +308,7 @@ bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                 }
 
                 // use 0-20% for pseudo-progress, now fill 20-100%
-                observer->progressInfo(m_image, 0.2 + (0.8 * (((float)j) / ((float)h))));
+                observer->progressInfo(0.2 + (0.8 * (((float)j) / ((float)h))));
             }
 
             dstPtr = line;

@@ -49,18 +49,16 @@ public:
     /**
      * Posts progress information about image IO
      */
-    virtual void progressInfo(DImg* const img, float progress)
+    virtual void progressInfo(float progress)
     {
-        Q_UNUSED(img);
         Q_UNUSED(progress);
     };
 
     /**
      * Queries whether the image IO operation shall be continued
      */
-    virtual bool continueQuery(DImg* const img)
+    virtual bool continueQuery()
     {
-        Q_UNUSED(img);
         return true;
     };
 
