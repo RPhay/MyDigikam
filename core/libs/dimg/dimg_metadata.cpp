@@ -30,18 +30,18 @@ namespace Digikam
 
 QByteArray DImg::getUniqueHash() const
 {
-    if (m_priv->attributes.contains(QLatin1String("uniqueHash")))
+    if (hasAttribute(QLatin1String("uniqueHash")))
     {
-        return m_priv->attributes[QLatin1String("uniqueHash")].toByteArray();
+        return attribute(QLatin1String("uniqueHash")).toByteArray();
     }
 
-    if (!m_priv->attributes.contains(QLatin1String("originalFilePath")))
+    if (!hasAttribute(QLatin1String("originalFilePath")))
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "DImg::getUniqueHash called without originalFilePath property set!";
         return QByteArray();
     }
 
-    QString filePath = m_priv->attributes.value(QLatin1String("originalFilePath")).toString();
+    QString filePath = attribute(QLatin1String("originalFilePath")).toString();
 
     if (filePath.isEmpty())
     {
@@ -69,18 +69,18 @@ QByteArray DImg::getUniqueHash(const QString& filePath)
 
 QByteArray DImg::getUniqueHashV2() const
 {
-    if (m_priv->attributes.contains(QLatin1String("uniqueHashV2")))
+    if (hasAttribute(QLatin1String("uniqueHashV2")))
     {
-        return m_priv->attributes[QLatin1String("uniqueHashV2")].toByteArray();
+        return attribute(QLatin1String("uniqueHashV2")).toByteArray();
     }
 
-    if (!m_priv->attributes.contains(QLatin1String("originalFilePath")))
+    if (!hasAttribute(QLatin1String("originalFilePath")))
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "DImg::getUniqueHash called without originalFilePath property set!";
         return QByteArray();
     }
 
-    QString filePath = m_priv->attributes.value(QLatin1String("originalFilePath")).toString();
+    QString filePath = attribute(QLatin1String("originalFilePath")).toString();
 
     if (filePath.isEmpty())
     {
@@ -455,12 +455,12 @@ bool DImg::isAnimatedImage(const QString& filePath)
 
 int DImg::exifOrientation(const QString& filePath)
 {
-    QVariant attribute = m_priv->attributes.value(QLatin1String("fromRawEmbeddedPreview"));
+    QVariant preview(attribute(QLatin1String("fromRawEmbeddedPreview")));
 
     return LoadSaveThread::exifOrientation(filePath,
                                            DMetadata(getMetadata()),
                                            (detectedFormat() == DImg::RAW),
-                                           (attribute.isValid() && attribute.toBool()));
+                                           (preview.isValid() && preview.toBool()));
 }
 
 QByteArray DImg::createUniqueHash(const QString& filePath, const QByteArray& ba)

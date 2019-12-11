@@ -88,9 +88,9 @@ bool DImg::isReadOnly() const
 
 DImg::COLORMODEL DImg::originalColorModel() const
 {
-    if (m_priv->attributes.contains(QLatin1String("originalColorModel")))
+    if (hasAttribute(QLatin1String("originalColorModel")))
     {
-        return (COLORMODEL)m_priv->attributes.value(QLatin1String("originalColorModel")).toInt();
+        return (COLORMODEL)attribute(QLatin1String("originalColorModel")).toInt();
     }
     else
     {
@@ -100,14 +100,14 @@ DImg::COLORMODEL DImg::originalColorModel() const
 
 int DImg::originalBitDepth() const
 {
-    return m_priv->attributes.value(QLatin1String("originalBitDepth")).toInt();
+    return attribute(QLatin1String("originalBitDepth")).toInt();
 }
 
 QSize DImg::originalSize() const
 {
-    if (m_priv->attributes.contains(QLatin1String("originalSize")))
+    if (hasAttribute(QLatin1String("originalSize")))
     {
-        QSize size = m_priv->attributes.value(QLatin1String("originalSize")).toSize();
+        QSize size = attribute(QLatin1String("originalSize")).toSize();
 
         if (size.isValid() && !size.isNull())
         {
@@ -120,9 +120,9 @@ QSize DImg::originalSize() const
 
 DImg::FORMAT DImg::detectedFormat() const
 {
-    if (m_priv->attributes.contains(QLatin1String("detectedFileFormat")))
+    if (hasAttribute(QLatin1String("detectedFileFormat")))
     {
-        return (FORMAT)m_priv->attributes.value(QLatin1String("detectedFileFormat")).toInt();
+        return (FORMAT)attribute(QLatin1String("detectedFileFormat")).toInt();
     }
     else
     {
@@ -132,19 +132,19 @@ DImg::FORMAT DImg::detectedFormat() const
 
 QString DImg::format() const
 {
-    return m_priv->attributes.value(QLatin1String("format")).toString();
+    return attribute(QLatin1String("format")).toString();
 }
 
 QString DImg::savedFormat() const
 {
-    return m_priv->attributes.value(QLatin1String("savedFormat")).toString();
+    return attribute(QLatin1String("savedFormat")).toString();
 }
 
 DRawDecoding DImg::rawDecodingSettings() const
 {
-    if (m_priv->attributes.contains(QLatin1String("rawDecodingSettings")))
+    if (hasAttribute(QLatin1String("rawDecodingSettings")))
     {
-        return m_priv->attributes.value(QLatin1String("rawDecodingSettings")).value<DRawDecoding>();
+        return attribute(QLatin1String("rawDecodingSettings")).value<DRawDecoding>();
     }
     else
     {
@@ -154,21 +154,29 @@ DRawDecoding DImg::rawDecodingSettings() const
 
 IccProfile DImg::getIccProfile() const
 {
+    QMutexLocker lock(&m_priv->mutex);
+
     return m_priv->iccProfile;
 }
 
 void DImg::setIccProfile(const IccProfile& profile)
 {
+    QMutexLocker lock(&m_priv->mutex);
+
     m_priv->iccProfile = profile;
 }
 
 MetaEngineData DImg::getMetadata() const
 {
+    QMutexLocker lock(&m_priv->mutex);
+
     return m_priv->metaData;
 }
 
 void DImg::setMetadata(const MetaEngineData& data)
 {
+    QMutexLocker lock(&m_priv->mutex);
+
     m_priv->metaData = data;
 }
 
@@ -204,11 +212,15 @@ int DImg::bitsDepth() const
 
 void DImg::setAttribute(const QString& key, const QVariant& value)
 {
+    QMutexLocker lock(&m_priv->mutex);
+
     m_priv->attributes.insert(key, value);
 }
 
 QVariant DImg::attribute(const QString& key) const
 {
+    QMutexLocker lock(&m_priv->mutex);
+
     if (m_priv->attributes.contains(key))
     {
         return m_priv->attributes[key];
@@ -219,21 +231,29 @@ QVariant DImg::attribute(const QString& key) const
 
 bool DImg::hasAttribute(const QString& key) const
 {
+    QMutexLocker lock(&m_priv->mutex);
+
     return m_priv->attributes.contains(key);
 }
 
 void DImg::removeAttribute(const QString& key)
 {
+    QMutexLocker lock(&m_priv->mutex);
+
     m_priv->attributes.remove(key);
 }
 
 void DImg::setEmbeddedText(const QString& key, const QString& text)
 {
+    QMutexLocker lock(&m_priv->mutex);
+
     m_priv->embeddedText.insert(key, text);
 }
 
 QString DImg::embeddedText(const QString& key) const
 {
+    QMutexLocker lock(&m_priv->mutex);
+
     if (m_priv->embeddedText.contains(key))
     {
         return m_priv->embeddedText[key];

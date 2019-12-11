@@ -140,6 +140,8 @@ void DImgLoader::imageSetAttribute(const QString& key, const QVariant& value)
 
 QMap<QString, QString>& DImgLoader::imageEmbeddedText() const
 {
+    QMutexLocker lock(&m_image->m_priv->mutex);
+
     return m_image->m_priv->embeddedText;
 }
 

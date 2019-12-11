@@ -266,6 +266,8 @@ void DImg::rotate(ANGLE angle)
 
     if (switchDims)
     {
+        QMutexLocker lock(&m_priv->mutex);
+
         setImageDimension(height(), width());
         QMap<QString, QVariant>::iterator it = m_priv->attributes.find(QLatin1String("originalSize"));
 
@@ -546,8 +548,8 @@ bool DImg::transform(int transformAction)
 
 bool DImg::wasExifRotated()
 {
-    QVariant attribute(m_priv->attributes.value(QLatin1String("exifRotated")));
-    return (attribute.isValid() && attribute.toBool());
+    QVariant rotated(attribute(QLatin1String("exifRotated")));
+    return (rotated.isValid() && rotated.toBool());
 }
 
 bool DImg::exifRotate(const QString& filePath)
@@ -558,7 +560,7 @@ bool DImg::exifRotate(const QString& filePath)
     }
 
     // Rotate image based on metadata orientation information
-    m_priv->attributes.insert(QLatin1String("exifRotated"), true);
+    setAttribute(QLatin1String("exifRotated"), true);
     return rotateAndFlip(exifOrientation(filePath));
 }
 

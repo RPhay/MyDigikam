@@ -124,6 +124,8 @@ void DImg::putImageData(uchar* const data, bool copyData)
 
 void DImg::resetMetaData()
 {
+    QMutexLocker lock(&m_priv->mutex);
+
     m_priv->attributes.clear();
     m_priv->embeddedText.clear();
     m_priv->metaData = MetaEngineData();
@@ -139,6 +141,8 @@ uchar* DImg::stripImageData()
 
 void DImg::copyMetaData(const QExplicitlySharedDataPointer<Private>& src)
 {
+    QMutexLocker lock(&m_priv->mutex);
+
     m_priv->metaData     = src->metaData;
     m_priv->attributes   = src->attributes;
     m_priv->embeddedText = src->embeddedText;
