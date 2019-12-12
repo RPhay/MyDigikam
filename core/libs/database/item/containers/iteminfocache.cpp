@@ -64,41 +64,6 @@ ItemInfoCache::~ItemInfoCache()
 {
 }
 
-template <class T>
-DSharedDataPointer<T> toStrongRef(T* weakRef)
-{
-    // Called under read lock
-    if (!weakRef)
-    {
-        return DSharedDataPointer<T>();
-    }
-    // The weak ref is a data object which is not deleted
-    // (because deletion is done under mutex protection)
-    // but may have a ref count of 0.
-    // If the ref count is 0 and we gave the object away to another
-    // thread, it might get deleted by this thread before the mutex
-    // is acquired in the first thread which initially dropped the ref
-    // count to 0 and also intends to delete it, then operating
-    // on deleted data and crashing.
-    // That means if the weakRef had a ref count of 0 before we incremented,
-    // we need to drop it.
-    int previousRef = weakRef->ref.fetchAndAddOrdered(1);
-
-    if (previousRef == 0)
-    {
-        // drop weakRef
-        weakRef->ref.deref();
-        return DSharedDataPointer<T>();
-    }
-
-    // Convert to a strong reference. Will ref() the weakRef once again
-    DSharedDataPointer<ItemInfoData> ptr(weakRef);
-    // decrease counter, which we incremented twice now
-    weakRef->ref.deref();
-
-    return ptr;
-}
-
 static bool lessThanForAlbumShortInfo(const AlbumShortInfo& first, const AlbumShortInfo& second)
 {
     return first.id < second.id;
@@ -132,11 +97,11 @@ int ItemInfoCache::getImageGroupedCount(qlonglong id)
     return m_grouped.count(id);
 }
 
-DSharedDataPointer<ItemInfoData> ItemInfoCache::infoForId(qlonglong id)
+QExplicitlySharedDataPointer<ItemInfoData> ItemInfoCache::infoForId(qlonglong id)
 {
     {
         ItemInfoReadLocker lock;
-        DSharedDataPointer<ItemInfoData> ptr = toStrongRef(m_infos.value(id));
+        QExplicitlySharedDataPointer<ItemInfoData> ptr(m_infos.value(id));
 
         if (ptr)
         {
@@ -146,10 +111,10 @@ DSharedDataPointer<ItemInfoData> ItemInfoCache::infoForId(qlonglong id)
 
     ItemInfoWriteLocker lock;
     ItemInfoData* const data = new ItemInfoData();
-    data->id                  = id;
-    m_infos[id]               = data;
+    data->id                 = id;
+    m_infos[id]              = data;
 
-    return DSharedDataPointer<ItemInfoData>(data);
+    return QExplicitlySharedDataPointer<ItemInfoData>(data);
 }
 
 void ItemInfoCache::cacheByName(ItemInfoData* const data)
@@ -167,7 +132,8 @@ void ItemInfoCache::cacheByName(ItemInfoData* const data)
     m_dataHash.insert(data, data->name);
 }
 
-DSharedDataPointer<ItemInfoData> ItemInfoCache::infoForPath(int albumRootId, const QString& relativePath, const QString& name)
+QExplicitlySharedDataPointer<ItemInfoData> ItemInfoCache::infoForPath(int albumRootId,
+                                                                      const QString& relativePath, const QString& name)
 {
     ItemInfoReadLocker lock;
     // We check all entries in the multi hash with matching file name
@@ -190,27 +156,26 @@ DSharedDataPointer<ItemInfoData> ItemInfoCache::infoForPath(int albumRootId, con
         }
 
         // we have now a match by name, albumRootId and relativePath
-        return toStrongRef(it.value());
+        return QExplicitlySharedDataPointer<ItemInfoData>(it.value());
     }
 
-    return DSharedDataPointer<ItemInfoData>();
+    return QExplicitlySharedDataPointer<ItemInfoData>();
 }
 
-void ItemInfoCache::dropInfo(ItemInfoData* const infodata)
+void ItemInfoCache::dropInfo(ItemInfoData* const data)
 {
-    if (!infodata)
+    ItemInfoWriteLocker lock;
+
+    if (!data || (data->ref > 1))
     {
         return;
     }
 
-    ItemInfoWriteLocker lock;
+    m_infos.remove(data->id);
 
-    m_infos.remove(infodata->id);
-
-    m_nameHash.remove(m_dataHash.value(infodata), infodata);
-    m_nameHash.remove(infodata->name, infodata);
-    m_dataHash.remove(infodata);
-    delete infodata;
+    m_nameHash.remove(m_dataHash.value(data), data);
+    m_nameHash.remove(data->name, data);
+    m_dataHash.remove(data);
 }
 
 QList<AlbumShortInfo>::const_iterator ItemInfoCache::findAlbum(int id)
@@ -253,15 +218,8 @@ void ItemInfoCache::invalidate()
 
     for (it = m_infos.begin() ; it != m_infos.end() ; ++it)
     {
-        if ((*it)->isReferenced())
-        {
-            (*it)->invalid = true;
-            (*it)->id      = -1;
-        }
-        else
-        {
-            delete *it;
-        }
+        (*it)->invalid = true;
+        (*it)->id      = -1;
     }
 
     m_infos.clear();
