@@ -62,12 +62,13 @@ ShowHideVersionsOverlay::Button::Button(QAbstractItemView* const parentView)
 
 QSize ShowHideVersionsOverlay::Button::sizeHint() const
 {
-    return QSize(16, 16);
+    return QSize(24, 24);
 }
 
 QIcon ShowHideVersionsOverlay::Button::icon()
 {
-    QString icon = isChecked() ? QLatin1String("edit-bomb") : QLatin1String("edit-clear-history");
+    QString icon = isChecked() ? QLatin1String("edit-bomb")
+                               : QLatin1String("edit-clear-history");
     return QIcon::fromTheme(icon);
 }
 
@@ -115,12 +116,12 @@ void ShowHideVersionsOverlay::updateButton(const QModelIndex& index)
     const QRect rect = m_view->visualRect(index);
     const QSize size = button()->size();
 
-    const int gap    = 5;
-    const int x      = rect.right() - gap - size.width();
-    const int y      = rect.bottom() - gap - size.height();
+    const int gap = 5;
+    const int x   = rect.right()  - gap - size.width();
+    const int y   = rect.bottom() - gap - size.height();
     button()->move(QPoint(x, y));
 
-    ItemInfo info   = ItemModel::retrieveItemInfo(index);
+    ItemInfo info = ItemModel::retrieveItemInfo(index);
     button()->setChecked(m_filter.isExemptedBySettings(info));
 }
 
@@ -131,7 +132,7 @@ void ShowHideVersionsOverlay::slotClicked(bool checked)
     if (index.isValid())
     {
         ItemInfo info = ItemModel::retrieveItemInfo(index);
-        int tagId      = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::versionAlwaysVisible());
+        int tagId     = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::versionAlwaysVisible());
 
         if (checked)
         {
@@ -187,7 +188,7 @@ ActionVersionsOverlay::Button::Button(QAbstractItemView* const parentView, const
 
 QSize ActionVersionsOverlay::Button::sizeHint() const
 {
-    return QSize(16, 16);
+    return QSize(24, 24);
 }
 
 QIcon ActionVersionsOverlay::Button::icon()
@@ -248,7 +249,7 @@ void ActionVersionsOverlay::updateButton(const QModelIndex& index)
 
     const int gap    = 5;
     const int x      = rect.right() - gap - size.width();
-    const int y      = rect.top() + gap;
+    const int y      = rect.top()   + gap;
     button()->move(QPoint(x, y));
 }
 

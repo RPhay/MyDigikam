@@ -62,4 +62,5 @@ BUGFIXES:
 049 ==> 414401 - RawTherapee does not work as Raw Import Tool if both are AppImages.
 050 ==> 412067 - I get a error message: "Error while opening the database".
 051 ==> 414902 - After using the "healing clone" tool only preview is available from other tools.
-052 ==> 
+052 ==> 402894 - Display of original image.
+053 ==> 
