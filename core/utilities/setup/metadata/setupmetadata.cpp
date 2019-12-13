@@ -576,7 +576,7 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->writingModeCombo->setEnabled(false);
 
     d->sidecarFileNameBox = new QCheckBox;
-    d->sidecarFileNameBox->setText(i18nc("@option:check", "Sidecar file names use compatibility for commercial programs"));
+    d->sidecarFileNameBox->setText(i18nc("@option:check", "Sidecar file names are compatible with commercial programs"));
     d->sidecarFileNameBox->setWhatsThis(i18nc("@info:whatsthis",
                                               "Turn on this option to create the XMP sidecar files with a compatible "
                                               "file name (BASENAME.xmp) used by many commercial programs. "
