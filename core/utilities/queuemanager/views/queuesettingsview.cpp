@@ -93,6 +93,7 @@ public:
         extractJPEGButton(nullptr),
         demosaicingButton(nullptr),
         useOrgAlbum(nullptr),
+        asNewVersion(nullptr),
         useMutiCoreCPU(nullptr),
         conflictBox(nullptr),
         albumSel(nullptr),
@@ -123,6 +124,7 @@ public:
     QRadioButton*          demosaicingButton;
 
     QCheckBox*             useOrgAlbum;
+    QCheckBox*             asNewVersion;
     QCheckBox*             useMutiCoreCPU;
 
     FileSaveConflictBox*   conflictBox;
@@ -226,6 +228,10 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
 
     d->conflictBox    = new FileSaveConflictBox(panel);
 
+    d->asNewVersion   = new QCheckBox(i18nc("@option:check", "Save image as a newly created branch"), panel);
+    d->asNewVersion->setWhatsThis(i18n("Turn on this option to save the current modifications "
+                                       "to a new version of the file"));
+
     d->useMutiCoreCPU = new QCheckBox(i18nc("@option:check", "Work on all processor cores"), panel);
     d->useMutiCoreCPU->setWhatsThis(i18n("Turn on this option to use all CPU core from your computer "
                                          "to process more than one item from a queue at the same time."));
@@ -234,6 +240,7 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
     layout->addWidget(d->rawLoadingLabel);
     layout->addWidget(rawLoadingBox);
     layout->addWidget(d->conflictBox);
+    layout->addWidget(d->asNewVersion);
     layout->addWidget(d->useMutiCoreCPU);
     layout->setContentsMargins(spacing, spacing, spacing, spacing);
     layout->setSpacing(spacing);
@@ -314,6 +321,9 @@ QueueSettingsView::QueueSettingsView(QWidget* const parent)
 
     connect(d->useOrgAlbum, SIGNAL(toggled(bool)),
             this, SLOT(slotUseOrgAlbum()));
+
+    connect(d->asNewVersion, SIGNAL(toggled(bool)),
+            this, SLOT(slotSettingsChanged()));
 
     connect(d->useMutiCoreCPU, SIGNAL(toggled(bool)),
             this, SLOT(slotSettingsChanged()));
@@ -400,6 +410,7 @@ void QueueSettingsView::slotResetSettings()
 {
     blockSignals(true);
     d->useOrgAlbum->setChecked(true);
+    d->asNewVersion->setChecked(true);
     d->useMutiCoreCPU->setChecked(false);
     // TODO: reset d->albumSel
     d->renamingButtonGroup->button(QueueSettings::USEORIGINAL)->setChecked(true);
@@ -428,6 +439,7 @@ void QueueSettingsView::slotResetSettings()
 void QueueSettingsView::slotQueueSelected(int, const QueueSettings& settings, const AssignedBatchTools&)
 {
     d->useOrgAlbum->setChecked(settings.useOrgAlbum);
+    d->asNewVersion->setChecked(settings.saveAsNewVersion);
     d->useMutiCoreCPU->setChecked(settings.useMultiCoreCPU);
     d->albumSel->setEnabled(!settings.useOrgAlbum);
     d->albumSel->setCurrentAlbumUrl(settings.workingUrl);
@@ -466,6 +478,7 @@ void QueueSettingsView::slotSettingsChanged()
 
     d->albumSel->setEnabled(!d->useOrgAlbum->isChecked());
     settings.useOrgAlbum         = d->useOrgAlbum->isChecked();
+    settings.saveAsNewVersion    = d->asNewVersion->isChecked();
     settings.useMultiCoreCPU     = d->useMutiCoreCPU->isChecked();
     settings.workingUrl          = d->albumSel->currentAlbumUrl();
 

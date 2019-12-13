@@ -65,6 +65,7 @@ public:
     explicit Private()
       : exifResetOrientation(false),
         exifCanEditOrientation(true),
+        saveAsNewVersion(true),
         branchHistory(true),
         cancel(false),
         last(false),
@@ -77,6 +78,7 @@ public:
 
     bool                          exifResetOrientation;
     bool                          exifCanEditOrientation;
+    bool                          saveAsNewVersion;
     bool                          branchHistory;
     bool                          cancel;
     bool                          last;
@@ -336,6 +338,11 @@ void BatchTool::setRawLoadingRules(QueueSettings::RawLoadingRule rule)
     d->rawLoadingRule = rule;
 }
 
+void BatchTool::setSaveAsNewVersion(bool fork)
+{
+    d->saveAsNewVersion = fork;
+}
+
 void BatchTool::setBranchHistory(bool branch)
 {
     d->branchHistory = branch;
@@ -466,7 +473,7 @@ bool BatchTool::savefromDImg() const
     if (d->branchHistory)
     {
         // image has its original history
-        d->image.setHistoryBranch();
+        d->image.setHistoryBranch(d->saveAsNewVersion);
     }
 
     if (frm.isEmpty())

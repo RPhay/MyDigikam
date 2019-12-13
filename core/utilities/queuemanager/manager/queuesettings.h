@@ -60,6 +60,7 @@ public:
     QueueSettings()
     {
         useMultiCoreCPU    = false;
+        saveAsNewVersion   = true;
         exifSetOrientation = true;
         useOrgAlbum        = true;
         conflictRule       = FileSaveConflictBox::DIFFNAME;
@@ -70,6 +71,8 @@ public:
 public:
 
     bool                              useMultiCoreCPU;
+
+    bool                              saveAsNewVersion;
 
     /// Setting managed through Metadata control panel.
     bool                              exifSetOrientation;

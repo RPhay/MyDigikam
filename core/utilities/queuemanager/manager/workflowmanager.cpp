@@ -225,6 +225,10 @@ bool WorkflowManager::save()
             data.setAttribute(QLatin1String("value"), q.qSettings.useOrgAlbum);
             elm.appendChild(data);
 
+            data = doc.createElement(QLatin1String("saveasnewversion"));
+            data.setAttribute(QLatin1String("value"), q.qSettings.saveAsNewVersion);
+            elm.appendChild(data);
+
             data = doc.createElement(QLatin1String("usemulticorecpu"));
             data.setAttribute(QLatin1String("value"), q.qSettings.useMultiCoreCPU);
             elm.appendChild(data);
@@ -414,6 +418,10 @@ bool WorkflowManager::load(QStringList& failed)
                 else if (name2 == QLatin1String("useoriginalalbum"))
                 {
                     q.qSettings.useOrgAlbum = (bool)val2.toUInt(&ok);
+                }
+                else if (name2 == QLatin1String("saveasnewversion"))
+                {
+                    q.qSettings.saveAsNewVersion = (bool)val2.toUInt(&ok);
                 }
                 else if (name2 == QLatin1String("usemulticorecpu"))
                 {

@@ -182,6 +182,7 @@ void Task::run()
             d->tool->setLastChainedTool(false);
         }
 
+        d->tool->setSaveAsNewVersion(d->settings.saveAsNewVersion);
         d->tool->setOutputUrlFromInputUrl();
         d->tool->setBranchHistory(true);
 

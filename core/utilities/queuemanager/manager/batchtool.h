@@ -182,8 +182,11 @@ public:
      */
     void setRawLoadingRules(QueueSettings::RawLoadingRule rule);
 
+    /** Sets if the history added by tools shall be made a branch (new version).
+     */
+    void setSaveAsNewVersion(bool fork = true);
+
     /**
-     * Sets if the history added by tools shall be made a branch (new version).
      * Applies only when the file is actually saved on disk, and takes the history
      * since the loading from disk to set the first added step as creating a branch.
      */
