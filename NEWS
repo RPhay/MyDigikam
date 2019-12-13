@@ -65,4 +65,5 @@ BUGFIXES:
 051 ==> 414902 - After using the "healing clone" tool only preview is available from other tools.
 052 ==> 402894 - Display of original image.
 053 ==> 380345 - Batch converting RAW to JPEG saves as new version.
-054 ==> 
+054 ==> 383716 - "Save Changes" button same as "Save As New Version" Button.
+055 ==> 
