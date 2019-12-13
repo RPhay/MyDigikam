@@ -66,4 +66,5 @@ BUGFIXES:
 052 ==> 402894 - Display of original image.
 053 ==> 380345 - Batch converting RAW to JPEG saves as new version.
 054 ==> 383716 - "Save Changes" button same as "Save As New Version" Button.
-055 ==> 
+055 ==> 307374 - Wrong image count in album view with versioning.
+056 ==> 
