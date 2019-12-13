@@ -6,6 +6,7 @@ NEW FEATURES:
 FaceManagement: New Neural Network engine based on OpenCV to detect and recognize faces.
 SlideShow     ; Add new shuffle mode.
 HTMLGallery   : Add new theme "Html5Responsive".
+General       : Update internal libraw engine to last 201910 snapshot (https://www.libraw.org/news/libraw-snapshot-201910)
 
 *****************************************************************************************************
 BUGFIXES:
