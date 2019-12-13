@@ -33,15 +33,27 @@ macro(LIBRAW_BUILD_SAMPLES)
 
     set(_filename ${ARGV0})
     string(REPLACE "." ";" _temp ${_filename})
-    list(GET _temp 0 _target) 
+    list(GET _temp 0 _target)
+    list(GET _temp 1 _ext)
+
 
     set(${_target}_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/../../libs/rawengine/libraw/samples/${_filename})
+
+    if ("${_ext}" STREQUAL "c")
+        while(CMAKE_C_FLAGS MATCHES "-std=iso9899:1990")
+
+            string(REPLACE "-std=iso9899:1990" "" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+
+        endwhile()
+    endif()
+
     set_source_files_properties(${${_target}_SRCS} PROPERTIES COMPILE_FLAGS -w)
 
     add_executable(${_target} ${${_target}_SRCS})
 
     target_link_libraries(${_target}
                           ${OPENMP_LDFLAGS}
+                          ${JPEG_LIBRARIES}
                           ${CMAKE_THREAD_LIBS_INIT}
                           digikamcore
 
@@ -54,15 +66,16 @@ macro(LIBRAW_BUILD_SAMPLES)
 
 endmacro()
 
-LIBRAW_BUILD_SAMPLES(simple_dcraw.cpp)
-LIBRAW_BUILD_SAMPLES(mem_image.cpp)
-LIBRAW_BUILD_SAMPLES(dcraw_emu.cpp)
 LIBRAW_BUILD_SAMPLES(4channels.cpp)
-LIBRAW_BUILD_SAMPLES(unprocessed_raw.cpp)
-LIBRAW_BUILD_SAMPLES(raw-identify.cpp)
+LIBRAW_BUILD_SAMPLES(dcraw_emu.cpp)
+LIBRAW_BUILD_SAMPLES(mem_image_sample.cpp)
 LIBRAW_BUILD_SAMPLES(multirender_test.cpp)
 LIBRAW_BUILD_SAMPLES(openbayer_sample.cpp)
 LIBRAW_BUILD_SAMPLES(postprocessing_benchmark.cpp)
+LIBRAW_BUILD_SAMPLES(raw-identify.cpp)
+LIBRAW_BUILD_SAMPLES(rawtextdump.cpp)
+LIBRAW_BUILD_SAMPLES(simple_dcraw.cpp)
+LIBRAW_BUILD_SAMPLES(unprocessed_raw.cpp)
 
 # C sample files which must be compiled only if LCMS v2 is detected, to prevent broken compilation
 

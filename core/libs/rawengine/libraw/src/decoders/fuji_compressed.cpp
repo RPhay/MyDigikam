@@ -1,6 +1,6 @@
 /* -*- C++ -*-
  * File: libraw_fuji_compressed.cpp
- * Copyright (C) 2016 Alexey Danilchenko
+ * Copyright (C) 2016-2019 Alexey Danilchenko
  *
  * Adopted to LibRaw by Alex Tutubalin, lexa@lexa.ru
  * LibRaw Fujifilm/compressed decoder
@@ -16,7 +16,7 @@ it under the terms of the one of two licenses as you choose:
 
  */
 
-// This file is #included in libraw_cxx
+#include "../../internal/libraw_cxx_defs.h"
 
 #ifdef _abs
 #undef _abs
@@ -72,14 +72,6 @@ struct fuji_compressed_block
   ushort *linebuf[_ltotal];
 };
 
-static unsigned sgetn(int n, uchar *s)
-{
-  unsigned result = 0;
-  while (n-- > 0)
-    result = (result << 8) | (*s++);
-  return result;
-}
-
 void LibRaw::init_fuji_compr(struct fuji_compressed_params *info)
 {
   int cur_val, i;
@@ -91,11 +83,13 @@ void LibRaw::init_fuji_compr(struct fuji_compressed_params *info)
        libraw_internal_data.unpacker_data.fuji_raw_type == 0))
     derror();
 
-  info->q_table = (int8_t *)malloc(32768);
+  info->q_table =
+      (int8_t *)malloc(2 << libraw_internal_data.unpacker_data.fuji_bits);
   merror(info->q_table, "init_fuji_compr()");
 
   if (libraw_internal_data.unpacker_data.fuji_raw_type == 16)
-    info->line_width = (libraw_internal_data.unpacker_data.fuji_block_width * 2) / 3;
+    info->line_width =
+        (libraw_internal_data.unpacker_data.fuji_block_width * 2) / 3;
   else
     info->line_width = libraw_internal_data.unpacker_data.fuji_block_width >> 1;
 
@@ -130,22 +124,10 @@ void LibRaw::init_fuji_compr(struct fuji_compressed_params *info)
   }
 
   // populting gradients
-  if (info->q_point[4] == 0x3FFF)
-  {
-    info->total_values = 0x4000;
-    info->raw_bits = 14;
-    info->max_bits = 56;
-    info->maxDiff = 256;
-  }
-  else if (info->q_point[4] == 0xFFF)
-  {
-    info->total_values = 4096;
-    info->raw_bits = 12;
-    info->max_bits = 48;
-    info->maxDiff = 64;
-  }
-  else
-    derror();
+  info->total_values = (1 << libraw_internal_data.unpacker_data.fuji_bits);
+  info->raw_bits = libraw_internal_data.unpacker_data.fuji_bits;
+  info->max_bits = 4 * info->raw_bits;
+  info->maxDiff = info->total_values >> 6;
 }
 
 #define XTRANS_BUF_SIZE 0x10000
@@ -164,7 +146,8 @@ static inline void fuji_fill_buffer(struct fuji_compressed_block *info)
       info->input->lock();
 #endif
       info->input->seek(info->cur_buf_offset, SEEK_SET);
-      info->cur_buf_size = info->input->read(info->cur_buf, 1, _min(info->max_read_size, XTRANS_BUF_SIZE));
+      info->cur_buf_size = info->input->read(
+          info->cur_buf, 1, _min(info->max_read_size, XTRANS_BUF_SIZE));
 #ifndef LIBRAW_USE_OPENMP
       info->input->unlock();
 #endif
@@ -184,14 +167,17 @@ static inline void fuji_fill_buffer(struct fuji_compressed_block *info)
   }
 }
 
-void LibRaw::init_fuji_block(struct fuji_compressed_block *info, const struct fuji_compressed_params *params,
+void LibRaw::init_fuji_block(struct fuji_compressed_block *info,
+                             const struct fuji_compressed_params *params,
                              INT64 raw_offset, unsigned dsize)
 {
-  info->linealloc = (ushort *)calloc(sizeof(ushort), _ltotal * (params->line_width + 2));
+  info->linealloc =
+      (ushort *)calloc(sizeof(ushort), _ltotal * (params->line_width + 2));
   merror(info->linealloc, "init_fuji_block()");
 
   INT64 fsize = libraw_internal_data.internal_data.input->size();
-  info->max_read_size = _min(unsigned(fsize - raw_offset), dsize); // Data size may be incorrect?
+  info->max_read_size =
+      _min(unsigned(fsize - raw_offset), dsize); // Data size may be incorrect?
   info->fillbytes = 1;
 
   info->input = libraw_internal_data.internal_data.input;
@@ -218,7 +204,9 @@ void LibRaw::init_fuji_block(struct fuji_compressed_block *info, const struct fu
   fuji_fill_buffer(info);
 }
 
-void LibRaw::copy_line_to_xtrans(struct fuji_compressed_block *info, int cur_line, int cur_block, int cur_block_width)
+void LibRaw::copy_line_to_xtrans(struct fuji_compressed_block *info,
+                                 int cur_line, int cur_block,
+                                 int cur_block_width)
 {
   ushort *lineBufB[3];
   ushort *lineBufG[6];
@@ -227,7 +215,8 @@ void LibRaw::copy_line_to_xtrans(struct fuji_compressed_block *info, int cur_lin
   ushort *line_buf;
   int index;
 
-  int offset = libraw_internal_data.unpacker_data.fuji_block_width * cur_block + 6 * imgdata.sizes.raw_width * cur_line;
+  int offset = libraw_internal_data.unpacker_data.fuji_block_width * cur_block +
+               6 * imgdata.sizes.raw_width * cur_line;
   ushort *raw_block_data = imgdata.rawdata.raw_image + offset;
   int row_count = 0;
 
@@ -258,7 +247,8 @@ void LibRaw::copy_line_to_xtrans(struct fuji_compressed_block *info, int cur_lin
         break;
       }
 
-      index = (((pixel_count * 2 / 3) & 0x7FFFFFFE) | ((pixel_count % 3) & 1)) + ((pixel_count % 3) >> 1);
+      index = (((pixel_count * 2 / 3) & 0x7FFFFFFE) | ((pixel_count % 3) & 1)) +
+              ((pixel_count % 3) >> 1);
       raw_block_data[pixel_count] = line_buf[index];
 
       ++pixel_count;
@@ -268,7 +258,9 @@ void LibRaw::copy_line_to_xtrans(struct fuji_compressed_block *info, int cur_lin
   }
 }
 
-void LibRaw::copy_line_to_bayer(struct fuji_compressed_block *info, int cur_line, int cur_block, int cur_block_width)
+void LibRaw::copy_line_to_bayer(struct fuji_compressed_block *info,
+                                int cur_line, int cur_block,
+                                int cur_block_width)
 {
   ushort *lineBufB[3];
   ushort *lineBufG[6];
@@ -281,7 +273,8 @@ void LibRaw::copy_line_to_bayer(struct fuji_compressed_block *info, int cur_line
     for (int c = 0; c < 2; c++)
       fuji_bayer[r][c] = FC(r, c); // We'll downgrade G2 to G below
 
-  int offset = libraw_internal_data.unpacker_data.fuji_block_width * cur_block + 6 * imgdata.sizes.raw_width * cur_line;
+  int offset = libraw_internal_data.unpacker_data.fuji_block_width * cur_block +
+               6 * imgdata.sizes.raw_width * cur_line;
   ushort *raw_block_data = imgdata.rawdata.raw_image + offset;
   int row_count = 0;
 
@@ -321,7 +314,8 @@ void LibRaw::copy_line_to_bayer(struct fuji_compressed_block *info, int cur_line
   }
 }
 
-#define fuji_quant_gradient(i, v1, v2) (9 * i->q_table[i->q_point[4] + (v1)] + i->q_table[i->q_point[4] + (v2)])
+#define fuji_quant_gradient(i, v1, v2)                                         \
+  (9 * i->q_table[i->q_point[4] + (v1)] + i->q_table[i->q_point[4] + (v2)])
 
 static inline void fuji_zerobits(struct fuji_compressed_block *info, int *count)
 {
@@ -343,7 +337,8 @@ static inline void fuji_zerobits(struct fuji_compressed_block *info, int *count)
   }
 }
 
-static inline void fuji_read_code(struct fuji_compressed_block *info, int *data, int bits_to_read)
+static inline void fuji_read_code(struct fuji_compressed_block *info, int *data,
+                                  int bits_to_read)
 {
   uchar bits_left = bits_to_read;
   uchar bits_left_in_byte = 8 - (info->cur_bit & 7);
@@ -369,7 +364,8 @@ static inline void fuji_read_code(struct fuji_compressed_block *info, int *data,
   }
   *data <<= bits_left;
   bits_left_in_byte -= bits_left;
-  *data |= ((1 << bits_left) - 1) & ((unsigned)info->cur_buf[info->cur_pos] >> bits_left_in_byte);
+  *data |= ((1 << bits_left) - 1) &
+           ((unsigned)info->cur_buf[info->cur_pos] >> bits_left_in_byte);
   info->cur_bit = (8 - (bits_left_in_byte & 7)) & 7;
 }
 
@@ -377,14 +373,15 @@ static inline int bitDiff(int value1, int value2)
 {
   int decBits = 0;
   if (value2 < value1)
-    while (decBits <= 12 && (value2 << ++decBits) < value1)
+    while (decBits <= 14 && (value2 << ++decBits) < value1)
       ;
   return decBits;
 }
 
-static inline int fuji_decode_sample_even(struct fuji_compressed_block *info,
-                                          const struct fuji_compressed_params *params, ushort *line_buf, int pos,
-                                          struct int_pair *grads)
+static inline int
+fuji_decode_sample_even(struct fuji_compressed_block *info,
+                        const struct fuji_compressed_params *params,
+                        ushort *line_buf, int pos, struct int_pair *grads)
 {
   int interp_val = 0;
   // ushort decBits;
@@ -457,9 +454,10 @@ static inline int fuji_decode_sample_even(struct fuji_compressed_block *info,
   return errcnt;
 }
 
-static inline int fuji_decode_sample_odd(struct fuji_compressed_block *info,
-                                         const struct fuji_compressed_params *params, ushort *line_buf, int pos,
-                                         struct int_pair *grads)
+static inline int
+fuji_decode_sample_odd(struct fuji_compressed_block *info,
+                       const struct fuji_compressed_params *params,
+                       ushort *line_buf, int pos, struct int_pair *grads)
 {
   int interp_val = 0;
   int errcnt = 0;
@@ -527,7 +525,8 @@ static inline int fuji_decode_sample_odd(struct fuji_compressed_block *info,
   return errcnt;
 }
 
-static void fuji_decode_interpolation_even(int line_width, ushort *line_buf, int pos)
+static void fuji_decode_interpolation_even(int line_width, ushort *line_buf,
+                                           int pos)
 {
   ushort *line_buf_cur = line_buf + pos;
   int Rb = line_buf_cur[-2 - line_width];
@@ -545,7 +544,8 @@ static void fuji_decode_interpolation_even(int line_width, ushort *line_buf, int
     *line_buf_cur = (Rd + Rc + 2 * Rb) >> 2;
 }
 
-static void fuji_extend_generic(ushort *linebuf[_ltotal], int line_width, int start, int end)
+static void fuji_extend_generic(ushort *linebuf[_ltotal], int line_width,
+                                int start, int end)
 {
   for (int i = start; i <= end; i++)
   {
@@ -569,7 +569,8 @@ static void fuji_extend_blue(ushort *linebuf[_ltotal], int line_width)
   fuji_extend_generic(linebuf, line_width, _B2, _B4);
 }
 
-void LibRaw::xtrans_decode_block(struct fuji_compressed_block *info, const struct fuji_compressed_params *params,
+void LibRaw::xtrans_decode_block(struct fuji_compressed_block *info,
+                                 const struct fuji_compressed_params *params,
                                  int cur_line)
 {
   int r_even_pos = 0, r_odd_pos = 1;
@@ -584,16 +585,20 @@ void LibRaw::xtrans_decode_block(struct fuji_compressed_block *info, const struc
   {
     if (g_even_pos < line_width)
     {
-      fuji_decode_interpolation_even(line_width, info->linebuf[_R2] + 1, r_even_pos);
+      fuji_decode_interpolation_even(line_width, info->linebuf[_R2] + 1,
+                                     r_even_pos);
       r_even_pos += 2;
-      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G2] + 1, g_even_pos, info->grad_even[0]);
+      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G2] + 1,
+                                        g_even_pos, info->grad_even[0]);
       g_even_pos += 2;
     }
     if (g_even_pos > 8)
     {
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_R2] + 1, r_odd_pos, info->grad_odd[0]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_R2] + 1,
+                                       r_odd_pos, info->grad_odd[0]);
       r_odd_pos += 2;
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G2] + 1, g_odd_pos, info->grad_odd[0]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G2] + 1,
+                                       g_odd_pos, info->grad_odd[0]);
       g_odd_pos += 2;
     }
   }
@@ -607,16 +612,20 @@ void LibRaw::xtrans_decode_block(struct fuji_compressed_block *info, const struc
   {
     if (g_even_pos < line_width)
     {
-      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G3] + 1, g_even_pos, info->grad_even[1]);
+      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G3] + 1,
+                                        g_even_pos, info->grad_even[1]);
       g_even_pos += 2;
-      fuji_decode_interpolation_even(line_width, info->linebuf[_B2] + 1, b_even_pos);
+      fuji_decode_interpolation_even(line_width, info->linebuf[_B2] + 1,
+                                     b_even_pos);
       b_even_pos += 2;
     }
     if (g_even_pos > 8)
     {
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G3] + 1, g_odd_pos, info->grad_odd[1]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G3] + 1,
+                                       g_odd_pos, info->grad_odd[1]);
       g_odd_pos += 2;
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_B2] + 1, b_odd_pos, info->grad_odd[1]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_B2] + 1,
+                                       b_odd_pos, info->grad_odd[1]);
       b_odd_pos += 2;
     }
   }
@@ -632,18 +641,23 @@ void LibRaw::xtrans_decode_block(struct fuji_compressed_block *info, const struc
     if (g_even_pos < line_width)
     {
       if (r_even_pos & 3)
-        errcnt += fuji_decode_sample_even(info, params, info->linebuf[_R3] + 1, r_even_pos, info->grad_even[2]);
+        errcnt += fuji_decode_sample_even(info, params, info->linebuf[_R3] + 1,
+                                          r_even_pos, info->grad_even[2]);
       else
-        fuji_decode_interpolation_even(line_width, info->linebuf[_R3] + 1, r_even_pos);
+        fuji_decode_interpolation_even(line_width, info->linebuf[_R3] + 1,
+                                       r_even_pos);
       r_even_pos += 2;
-      fuji_decode_interpolation_even(line_width, info->linebuf[_G4] + 1, g_even_pos);
+      fuji_decode_interpolation_even(line_width, info->linebuf[_G4] + 1,
+                                     g_even_pos);
       g_even_pos += 2;
     }
     if (g_even_pos > 8)
     {
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_R3] + 1, r_odd_pos, info->grad_odd[2]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_R3] + 1,
+                                       r_odd_pos, info->grad_odd[2]);
       r_odd_pos += 2;
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G4] + 1, g_odd_pos, info->grad_odd[2]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G4] + 1,
+                                       g_odd_pos, info->grad_odd[2]);
       g_odd_pos += 2;
     }
   }
@@ -658,19 +672,24 @@ void LibRaw::xtrans_decode_block(struct fuji_compressed_block *info, const struc
   {
     if (g_even_pos < line_width)
     {
-      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G5] + 1, g_even_pos, info->grad_even[0]);
+      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G5] + 1,
+                                        g_even_pos, info->grad_even[0]);
       g_even_pos += 2;
       if ((b_even_pos & 3) == 2)
-        fuji_decode_interpolation_even(line_width, info->linebuf[_B3] + 1, b_even_pos);
+        fuji_decode_interpolation_even(line_width, info->linebuf[_B3] + 1,
+                                       b_even_pos);
       else
-        errcnt += fuji_decode_sample_even(info, params, info->linebuf[_B3] + 1, b_even_pos, info->grad_even[0]);
+        errcnt += fuji_decode_sample_even(info, params, info->linebuf[_B3] + 1,
+                                          b_even_pos, info->grad_even[0]);
       b_even_pos += 2;
     }
     if (g_even_pos > 8)
     {
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G5] + 1, g_odd_pos, info->grad_odd[0]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G5] + 1,
+                                       g_odd_pos, info->grad_odd[0]);
       g_odd_pos += 2;
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_B3] + 1, b_odd_pos, info->grad_odd[0]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_B3] + 1,
+                                       b_odd_pos, info->grad_odd[0]);
       b_odd_pos += 2;
     }
   }
@@ -686,18 +705,23 @@ void LibRaw::xtrans_decode_block(struct fuji_compressed_block *info, const struc
     if (g_even_pos < line_width)
     {
       if ((r_even_pos & 3) == 2)
-        fuji_decode_interpolation_even(line_width, info->linebuf[_R4] + 1, r_even_pos);
+        fuji_decode_interpolation_even(line_width, info->linebuf[_R4] + 1,
+                                       r_even_pos);
       else
-        errcnt += fuji_decode_sample_even(info, params, info->linebuf[_R4] + 1, r_even_pos, info->grad_even[1]);
+        errcnt += fuji_decode_sample_even(info, params, info->linebuf[_R4] + 1,
+                                          r_even_pos, info->grad_even[1]);
       r_even_pos += 2;
-      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G6] + 1, g_even_pos, info->grad_even[1]);
+      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G6] + 1,
+                                        g_even_pos, info->grad_even[1]);
       g_even_pos += 2;
     }
     if (g_even_pos > 8)
     {
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_R4] + 1, r_odd_pos, info->grad_odd[1]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_R4] + 1,
+                                       r_odd_pos, info->grad_odd[1]);
       r_odd_pos += 2;
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G6] + 1, g_odd_pos, info->grad_odd[1]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G6] + 1,
+                                       g_odd_pos, info->grad_odd[1]);
       g_odd_pos += 2;
     }
   }
@@ -712,19 +736,24 @@ void LibRaw::xtrans_decode_block(struct fuji_compressed_block *info, const struc
   {
     if (g_even_pos < line_width)
     {
-      fuji_decode_interpolation_even(line_width, info->linebuf[_G7] + 1, g_even_pos);
+      fuji_decode_interpolation_even(line_width, info->linebuf[_G7] + 1,
+                                     g_even_pos);
       g_even_pos += 2;
       if (b_even_pos & 3)
-        errcnt += fuji_decode_sample_even(info, params, info->linebuf[_B4] + 1, b_even_pos, info->grad_even[2]);
+        errcnt += fuji_decode_sample_even(info, params, info->linebuf[_B4] + 1,
+                                          b_even_pos, info->grad_even[2]);
       else
-        fuji_decode_interpolation_even(line_width, info->linebuf[_B4] + 1, b_even_pos);
+        fuji_decode_interpolation_even(line_width, info->linebuf[_B4] + 1,
+                                       b_even_pos);
       b_even_pos += 2;
     }
     if (g_even_pos > 8)
     {
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G7] + 1, g_odd_pos, info->grad_odd[2]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G7] + 1,
+                                       g_odd_pos, info->grad_odd[2]);
       g_odd_pos += 2;
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_B4] + 1, b_odd_pos, info->grad_odd[2]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_B4] + 1,
+                                       b_odd_pos, info->grad_odd[2]);
       b_odd_pos += 2;
     }
   }
@@ -736,8 +765,9 @@ void LibRaw::xtrans_decode_block(struct fuji_compressed_block *info, const struc
     derror();
 }
 
-void LibRaw::fuji_bayer_decode_block(struct fuji_compressed_block *info, const struct fuji_compressed_params *params,
-                                     int cur_line)
+void LibRaw::fuji_bayer_decode_block(
+    struct fuji_compressed_block *info,
+    const struct fuji_compressed_params *params, int cur_line)
 {
   int r_even_pos = 0, r_odd_pos = 1;
   int g_even_pos = 0, g_odd_pos = 1;
@@ -751,16 +781,20 @@ void LibRaw::fuji_bayer_decode_block(struct fuji_compressed_block *info, const s
   {
     if (g_even_pos < line_width)
     {
-      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_R2] + 1, r_even_pos, info->grad_even[0]);
+      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_R2] + 1,
+                                        r_even_pos, info->grad_even[0]);
       r_even_pos += 2;
-      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G2] + 1, g_even_pos, info->grad_even[0]);
+      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G2] + 1,
+                                        g_even_pos, info->grad_even[0]);
       g_even_pos += 2;
     }
     if (g_even_pos > 8)
     {
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_R2] + 1, r_odd_pos, info->grad_odd[0]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_R2] + 1,
+                                       r_odd_pos, info->grad_odd[0]);
       r_odd_pos += 2;
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G2] + 1, g_odd_pos, info->grad_odd[0]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G2] + 1,
+                                       g_odd_pos, info->grad_odd[0]);
       g_odd_pos += 2;
     }
   }
@@ -774,16 +808,20 @@ void LibRaw::fuji_bayer_decode_block(struct fuji_compressed_block *info, const s
   {
     if (g_even_pos < line_width)
     {
-      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G3] + 1, g_even_pos, info->grad_even[1]);
+      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G3] + 1,
+                                        g_even_pos, info->grad_even[1]);
       g_even_pos += 2;
-      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_B2] + 1, b_even_pos, info->grad_even[1]);
+      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_B2] + 1,
+                                        b_even_pos, info->grad_even[1]);
       b_even_pos += 2;
     }
     if (g_even_pos > 8)
     {
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G3] + 1, g_odd_pos, info->grad_odd[1]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G3] + 1,
+                                       g_odd_pos, info->grad_odd[1]);
       g_odd_pos += 2;
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_B2] + 1, b_odd_pos, info->grad_odd[1]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_B2] + 1,
+                                       b_odd_pos, info->grad_odd[1]);
       b_odd_pos += 2;
     }
   }
@@ -798,16 +836,20 @@ void LibRaw::fuji_bayer_decode_block(struct fuji_compressed_block *info, const s
   {
     if (g_even_pos < line_width)
     {
-      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_R3] + 1, r_even_pos, info->grad_even[2]);
+      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_R3] + 1,
+                                        r_even_pos, info->grad_even[2]);
       r_even_pos += 2;
-      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G4] + 1, g_even_pos, info->grad_even[2]);
+      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G4] + 1,
+                                        g_even_pos, info->grad_even[2]);
       g_even_pos += 2;
     }
     if (g_even_pos > 8)
     {
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_R3] + 1, r_odd_pos, info->grad_odd[2]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_R3] + 1,
+                                       r_odd_pos, info->grad_odd[2]);
       r_odd_pos += 2;
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G4] + 1, g_odd_pos, info->grad_odd[2]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G4] + 1,
+                                       g_odd_pos, info->grad_odd[2]);
       g_odd_pos += 2;
     }
   }
@@ -822,16 +864,20 @@ void LibRaw::fuji_bayer_decode_block(struct fuji_compressed_block *info, const s
   {
     if (g_even_pos < line_width)
     {
-      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G5] + 1, g_even_pos, info->grad_even[0]);
+      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G5] + 1,
+                                        g_even_pos, info->grad_even[0]);
       g_even_pos += 2;
-      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_B3] + 1, b_even_pos, info->grad_even[0]);
+      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_B3] + 1,
+                                        b_even_pos, info->grad_even[0]);
       b_even_pos += 2;
     }
     if (g_even_pos > 8)
     {
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G5] + 1, g_odd_pos, info->grad_odd[0]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G5] + 1,
+                                       g_odd_pos, info->grad_odd[0]);
       g_odd_pos += 2;
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_B3] + 1, b_odd_pos, info->grad_odd[0]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_B3] + 1,
+                                       b_odd_pos, info->grad_odd[0]);
       b_odd_pos += 2;
     }
   }
@@ -846,16 +892,20 @@ void LibRaw::fuji_bayer_decode_block(struct fuji_compressed_block *info, const s
   {
     if (g_even_pos < line_width)
     {
-      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_R4] + 1, r_even_pos, info->grad_even[1]);
+      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_R4] + 1,
+                                        r_even_pos, info->grad_even[1]);
       r_even_pos += 2;
-      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G6] + 1, g_even_pos, info->grad_even[1]);
+      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G6] + 1,
+                                        g_even_pos, info->grad_even[1]);
       g_even_pos += 2;
     }
     if (g_even_pos > 8)
     {
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_R4] + 1, r_odd_pos, info->grad_odd[1]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_R4] + 1,
+                                       r_odd_pos, info->grad_odd[1]);
       r_odd_pos += 2;
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G6] + 1, g_odd_pos, info->grad_odd[1]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G6] + 1,
+                                       g_odd_pos, info->grad_odd[1]);
       g_odd_pos += 2;
     }
   }
@@ -870,16 +920,20 @@ void LibRaw::fuji_bayer_decode_block(struct fuji_compressed_block *info, const s
   {
     if (g_even_pos < line_width)
     {
-      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G7] + 1, g_even_pos, info->grad_even[2]);
+      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_G7] + 1,
+                                        g_even_pos, info->grad_even[2]);
       g_even_pos += 2;
-      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_B4] + 1, b_even_pos, info->grad_even[2]);
+      errcnt += fuji_decode_sample_even(info, params, info->linebuf[_B4] + 1,
+                                        b_even_pos, info->grad_even[2]);
       b_even_pos += 2;
     }
     if (g_even_pos > 8)
     {
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G7] + 1, g_odd_pos, info->grad_odd[2]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_G7] + 1,
+                                       g_odd_pos, info->grad_odd[2]);
       g_odd_pos += 2;
-      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_B4] + 1, b_odd_pos, info->grad_odd[2]);
+      errcnt += fuji_decode_sample_odd(info, params, info->linebuf[_B4] + 1,
+                                       b_odd_pos, info->grad_odd[2]);
       b_odd_pos += 2;
     }
   }
@@ -891,8 +945,8 @@ void LibRaw::fuji_bayer_decode_block(struct fuji_compressed_block *info, const s
     derror();
 }
 
-void LibRaw::fuji_decode_strip(const struct fuji_compressed_params *info_common, int cur_block, INT64 raw_offset,
-                               unsigned dsize)
+void LibRaw::fuji_decode_strip(const struct fuji_compressed_params *info_common,
+                               int cur_block, INT64 raw_offset, unsigned dsize)
 {
   int cur_block_width, cur_line;
   unsigned line_size;
@@ -904,9 +958,12 @@ void LibRaw::fuji_decode_strip(const struct fuji_compressed_params *info_common,
   cur_block_width = libraw_internal_data.unpacker_data.fuji_block_width;
   if (cur_block + 1 == libraw_internal_data.unpacker_data.fuji_total_blocks)
   {
-    cur_block_width = imgdata.sizes.raw_width - (libraw_internal_data.unpacker_data.fuji_block_width * cur_block);
-    /* Old code, may get incorrect results on GFX50, but luckily large optical black
-    cur_block_width = imgdata.sizes.raw_width % libraw_internal_data.unpacker_data.fuji_block_width;
+    cur_block_width =
+        imgdata.sizes.raw_width -
+        (libraw_internal_data.unpacker_data.fuji_block_width * cur_block);
+    /* Old code, may get incorrect results on GFX50, but luckily large optical
+    black cur_block_width = imgdata.sizes.raw_width %
+    libraw_internal_data.unpacker_data.fuji_block_width;
     */
   }
 
@@ -914,9 +971,12 @@ void LibRaw::fuji_decode_strip(const struct fuji_compressed_params *info_common,
   {
     int a, b;
   };
-  const i_pair mtable[6] = {{_R0, _R3}, {_R1, _R4}, {_G0, _G6}, {_G1, _G7}, {_B0, _B3}, {_B1, _B4}},
+  const i_pair mtable[6] = {{_R0, _R3}, {_R1, _R4}, {_G0, _G6},
+                            {_G1, _G7}, {_B0, _B3}, {_B1, _B4}},
                ztable[3] = {{_R2, 3}, {_G2, 6}, {_B2, 3}};
-  for (cur_line = 0; cur_line < libraw_internal_data.unpacker_data.fuji_total_lines; cur_line++)
+  for (cur_line = 0;
+       cur_line < libraw_internal_data.unpacker_data.fuji_total_lines;
+       cur_line++)
   {
     if (libraw_internal_data.unpacker_data.fuji_raw_type == 16)
       xtrans_decode_block(&info, info_common, cur_line);
@@ -936,7 +996,8 @@ void LibRaw::fuji_decode_strip(const struct fuji_compressed_params *info_common,
     {
       memset(info.linebuf[ztable[i].a], 0, ztable[i].b * line_size);
       info.linebuf[ztable[i].a][0] = info.linebuf[ztable[i].a - 1][1];
-      info.linebuf[ztable[i].a][info_common->line_width + 1] = info.linebuf[ztable[i].a - 1][info_common->line_width];
+      info.linebuf[ztable[i].a][info_common->line_width + 1] =
+          info.linebuf[ztable[i].a - 1][info_common->line_width];
     }
   }
 
@@ -957,40 +1018,53 @@ void LibRaw::fuji_compressed_load_raw()
   line_size = sizeof(ushort) * (common_info.line_width + 2);
 
   // read block sizes
-  block_sizes = (unsigned *)malloc(sizeof(unsigned) * libraw_internal_data.unpacker_data.fuji_total_blocks);
+  block_sizes = (unsigned *)malloc(
+      sizeof(unsigned) * libraw_internal_data.unpacker_data.fuji_total_blocks);
   merror(block_sizes, "fuji_compressed_load_raw()");
-  raw_block_offsets = (INT64 *)malloc(sizeof(INT64) * libraw_internal_data.unpacker_data.fuji_total_blocks);
+  raw_block_offsets = (INT64 *)malloc(
+      sizeof(INT64) * libraw_internal_data.unpacker_data.fuji_total_blocks);
   merror(raw_block_offsets, "fuji_compressed_load_raw()");
 
-  raw_offset = sizeof(unsigned) * libraw_internal_data.unpacker_data.fuji_total_blocks;
+  raw_offset =
+      sizeof(unsigned) * libraw_internal_data.unpacker_data.fuji_total_blocks;
   if (raw_offset & 0xC)
     raw_offset += 0x10 - (raw_offset & 0xC);
 
   raw_offset += libraw_internal_data.unpacker_data.data_offset;
 
-  libraw_internal_data.internal_data.input->seek(libraw_internal_data.unpacker_data.data_offset, SEEK_SET);
+  libraw_internal_data.internal_data.input->seek(
+      libraw_internal_data.unpacker_data.data_offset, SEEK_SET);
   libraw_internal_data.internal_data.input->read(
-      block_sizes, 1, sizeof(unsigned) * libraw_internal_data.unpacker_data.fuji_total_blocks);
+      block_sizes, 1,
+      sizeof(unsigned) * libraw_internal_data.unpacker_data.fuji_total_blocks);
 
   raw_block_offsets[0] = raw_offset;
   // calculating raw block offsets
-  for (cur_block = 0; cur_block < libraw_internal_data.unpacker_data.fuji_total_blocks; cur_block++)
+  for (cur_block = 0;
+       cur_block < libraw_internal_data.unpacker_data.fuji_total_blocks;
+       cur_block++)
   {
     unsigned bsize = sgetn(4, (uchar *)(block_sizes + cur_block));
     block_sizes[cur_block] = bsize;
   }
 
-  for (cur_block = 1; cur_block < libraw_internal_data.unpacker_data.fuji_total_blocks; cur_block++)
-    raw_block_offsets[cur_block] = raw_block_offsets[cur_block - 1] + block_sizes[cur_block - 1];
+  for (cur_block = 1;
+       cur_block < libraw_internal_data.unpacker_data.fuji_total_blocks;
+       cur_block++)
+    raw_block_offsets[cur_block] =
+        raw_block_offsets[cur_block - 1] + block_sizes[cur_block - 1];
 
-  fuji_decode_loop(&common_info, libraw_internal_data.unpacker_data.fuji_total_blocks, raw_block_offsets, block_sizes);
+  fuji_decode_loop(&common_info,
+                   libraw_internal_data.unpacker_data.fuji_total_blocks,
+                   raw_block_offsets, block_sizes);
 
   free(block_sizes);
   free(raw_block_offsets);
   free(common_info.q_table);
 }
 
-void LibRaw::fuji_decode_loop(const struct fuji_compressed_params *common_info, int count, INT64 *raw_block_offsets,
+void LibRaw::fuji_decode_loop(const struct fuji_compressed_params *common_info,
+                              int count, INT64 *raw_block_offsets,
                               unsigned *block_sizes)
 {
   int cur_block;
@@ -999,18 +1073,21 @@ void LibRaw::fuji_decode_loop(const struct fuji_compressed_params *common_info, 
 #endif
   for (cur_block = 0; cur_block < count; cur_block++)
   {
-    fuji_decode_strip(common_info, cur_block, raw_block_offsets[cur_block], block_sizes[cur_block]);
+    fuji_decode_strip(common_info, cur_block, raw_block_offsets[cur_block],
+                      block_sizes[cur_block]);
   }
 }
 
 void LibRaw::parse_fuji_compressed_header()
 {
-  unsigned signature, version, h_raw_type, h_raw_bits, h_raw_height, h_raw_rounded_width, h_raw_width, h_block_size,
-      h_blocks_in_row, h_total_lines;
+  unsigned signature, version, h_raw_type, h_raw_bits, h_raw_height,
+      h_raw_rounded_width, h_raw_width, h_block_size, h_blocks_in_row,
+      h_total_lines;
 
   uchar header[16];
 
-  libraw_internal_data.internal_data.input->seek(libraw_internal_data.unpacker_data.data_offset, SEEK_SET);
+  libraw_internal_data.internal_data.input->seek(
+      libraw_internal_data.unpacker_data.data_offset, SEEK_SET);
   libraw_internal_data.internal_data.input->read(header, 1, sizeof(header));
 
   // read all header
@@ -1026,12 +1103,17 @@ void LibRaw::parse_fuji_compressed_header()
   h_total_lines = sgetn(2, header + 14);
 
   // general validation
-  if (signature != 0x4953 || version != 1 || h_raw_height > 0x3000 || h_raw_height < 6 || h_raw_height % 6 ||
-      h_block_size < 1 || h_raw_width > 0x3000 || h_raw_width < 0x300 || h_raw_width % 24 ||
-      h_raw_rounded_width > 0x3000 || h_raw_rounded_width < h_block_size || h_raw_rounded_width % h_block_size ||
-      h_raw_rounded_width - h_raw_width >= h_block_size || h_block_size != 0x300 || h_blocks_in_row > 0x10 ||
-      h_blocks_in_row == 0 || h_blocks_in_row != h_raw_rounded_width / h_block_size || h_total_lines > 0x800 ||
-      h_total_lines == 0 || h_total_lines != h_raw_height / 6 || (h_raw_bits != 12 && h_raw_bits != 14) ||
+  if (signature != 0x4953 || version != 1 || h_raw_height > 0x3000 ||
+      h_raw_height < 6 || h_raw_height % 6 || h_block_size < 1 ||
+      h_raw_width > 0x3000 || h_raw_width < 0x300 || h_raw_width % 24 ||
+      h_raw_rounded_width > 0x3000 || h_raw_rounded_width < h_block_size ||
+      h_raw_rounded_width % h_block_size ||
+      h_raw_rounded_width - h_raw_width >= h_block_size ||
+      h_block_size != 0x300 || h_blocks_in_row > 0x10 || h_blocks_in_row == 0 ||
+      h_blocks_in_row != h_raw_rounded_width / h_block_size ||
+      h_total_lines > 0x800 || h_total_lines == 0 ||
+      h_total_lines != h_raw_height / 6 ||
+      (h_raw_bits != 12 && h_raw_bits != 14 && h_raw_bits != 16) ||
       (h_raw_type != 16 && h_raw_type != 0))
     return;
 
