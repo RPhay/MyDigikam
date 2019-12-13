@@ -52,6 +52,10 @@ libraw_inline void _BitScanReverse(DWORD *Index, unsigned long Mask)
 #endif
 #endif
 
+#ifdef __MINGW32__
+typedef uint8_t byte;
+#endif
+
 struct CrxBitstream
 {
   uint8_t mdatBuf[CRX_BUF_SIZE];
