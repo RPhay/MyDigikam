@@ -73,4 +73,5 @@ BUGFIXES:
 059 ==> 397919 - Segmentation fault during maintenance.
 060 ==> 365354 - MYSQL : Application crash on scanning for faces in large picture set.
 061 ==> 391014 - Crashes on close.
-062 ==> 
+062 ==> 387821 - Face Recognition and Finding crashs after reaching 50%.
+063 ==> 
