@@ -71,4 +71,5 @@ BUGFIXES:
 057 ==> 399923 - Segmentation fault during face detection.
 058 ==> 392651 - Digikam crashes when Face scanning reaches 29%.
 059 ==> 397919 - Segmentation fault during maintenance.
-060 ==> 
+060 ==> 365354 - MYSQL : Application crash on scanning for faces in large picture set.
+061 ==> 
