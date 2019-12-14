@@ -72,4 +72,5 @@ BUGFIXES:
 058 ==> 392651 - Digikam crashes when Face scanning reaches 29%.
 059 ==> 397919 - Segmentation fault during maintenance.
 060 ==> 365354 - MYSQL : Application crash on scanning for faces in large picture set.
-061 ==> 
+061 ==> 391014 - Crashes on close.
+062 ==> 
