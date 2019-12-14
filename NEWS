@@ -68,4 +68,11 @@ BUGFIXES:
 054 ==> 383716 - "Save Changes" button same as "Save As New Version" Button.
 055 ==> 307374 - Wrong image count in album view with versioning.
 056 ==> 412961 - All image versions remain visible.
-057 ==> 
+057 ==> 399923 - Segmentation fault during face detection.
+058 ==> 392651 - Digikam crashes when Face scanning reaches 29%.
+059 ==> 397919 - Segmentation fault during maintenance.
+060 ==> 365354 - MYSQL : Application crash on scanning for faces in large picture set.
+061 ==> 391014 - Crashes on close.
+062 ==> 387821 - Face Recognition and Finding crashs after reaching 50%.
+063 ==> 414749 - Export google photos: error transmission date creation.
+064 ==> 
