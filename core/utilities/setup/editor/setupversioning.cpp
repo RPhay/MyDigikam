@@ -308,7 +308,7 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
                                   "will be shown in the main thumbnail view. "
                                   "From the <interface>right sidebar</interface>, you always have access to all hidden files.</para> "
                                   "<para>With the options here, you can choose to show certain files permanently.</para> "
-                                  "If you activate non-destructive editing and image versioning for the first time, "
+                                  "<para>If you activate non-destructive editing and image versioning for the first time, "
                                   "it will only be work for newly saved images.</para>");
     d->viewGB->setWhatsThis(viewWhatsThis);
 
