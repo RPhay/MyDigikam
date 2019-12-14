@@ -69,4 +69,5 @@ BUGFIXES:
 055 ==> 307374 - Wrong image count in album view with versioning.
 056 ==> 412961 - All image versions remain visible.
 057 ==> 399923 - Segmentation fault during face detection.
-058 ==> 
+058 ==> 392651 - Digikam crashes when Face scanning reaches 29%.
+059 ==> 
