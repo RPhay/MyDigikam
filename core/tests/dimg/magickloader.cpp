@@ -223,6 +223,7 @@ int main(int argc, char** argv)
         app.exec();
     }
 
+    free(inflst);
     MagickCoreTerminus();
 
     return 0;

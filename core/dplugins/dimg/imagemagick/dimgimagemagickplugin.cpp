@@ -155,6 +155,8 @@ QMap<QString, QString> DImgImageMagickPlugin::extraAboutData() const
         }
     }
 
+    free(inflst);
+
     return map;
 }
 
@@ -243,6 +245,8 @@ int DImgImageMagickPlugin::canWrite(const QString& format) const
         }
     }
 
+    free(inflst);
+
     if (formats.contains(format.toUpper()))
     {
         if (format.toUpper() == QLatin1String("WEBP"))
@@ -266,7 +270,7 @@ DImgLoader* DImgImageMagickPlugin::loader(DImg* const image, const DRawDecoding&
 QStringList DImgImageMagickPlugin::decoderFormats() const
 {
     QStringList formats;
-    ExceptionInfo ex = *AcquireExceptionInfo();
+    ExceptionInfo ex          = *AcquireExceptionInfo();
     size_t n                  = 0;
     const MagickInfo** inflst = GetMagickInfoList("*", &n, &ex);
 
@@ -298,6 +302,8 @@ QStringList DImgImageMagickPlugin::decoderFormats() const
 
     // Remove known formats that are not stable.
     formats.removeAll(QLatin1String("XCF"));
+
+    free(inflst);
 
     return formats;
 }
