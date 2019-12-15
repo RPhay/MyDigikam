@@ -9,11 +9,14 @@
 #  Eigen3_FOUND       - system has eigen lib with correct version
 #  EIGEN3_INCLUDE_DIR - the eigen include directory
 #  EIGEN3_VERSION     - eigen version
-
-# Copyright (c) 2006, 2007 Montel Laurent, <montel@kde.org>
-# Copyright (c) 2008, 2009 Gael Guennebaud, <g.gael@free.fr>
-# Copyright (c) 2009 Benoit Jacob <jacob.benoit.1@gmail.com>
-# Redistribution and use is allowed according to the terms of the 2-clause BSD license.
+#
+# Copyright (c) 2006-2007 by Montel Laurent, <montel@kde.org>
+# Copyright (c) 2008-2009 by Gael Guennebaud, <g.gael@free.fr>
+# Copyright (c) 2009      by Benoit Jacob <jacob.benoit.1@gmail.com>
+#
+# Redistribution and use is allowed according to the terms of the BSD license.
+# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+#
 
 if(NOT Eigen3_FIND_VERSION)
   if(NOT Eigen3_FIND_VERSION_MAJOR)

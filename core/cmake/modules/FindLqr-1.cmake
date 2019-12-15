@@ -5,11 +5,10 @@
 #  LQR-1_INCLUDE_DIRS - the lqr-1 library include directory
 #  LQR-1_LIBRARIES    - Link these to use the lqr-1 library
 #
-#  Copyright (c) 2009 Pino Toscano <pino@kde.org>
+#  Copyright (c) 2009 by Pino Toscano <pino@kde.org>
 #
-#  Redistribution and use is allowed according to the terms of the New
-#  BSD license.
-#  For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+# Redistribution and use is allowed according to the terms of the BSD license.
+# For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
 IF (LQR-1_LIBRARIES AND LQR-1_INCLUDE_DIRS)

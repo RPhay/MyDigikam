@@ -1,18 +1,19 @@
 # - Find LCMS2
 # Find the LCMS2 includes and library
+#
 # This module defines
+#
 #  LCMS2_INCLUDE_DIR, where to find lcms.h
 #  LCMS2_LIBRARIES, the libraries needed to use LCMS2.
 #  LCMS2_VERSION, The value of LCMS_VERSION defined in lcms.h
 #  LCMS2_FOUND, If false, do not try to use LCMS2.
-
-
-# Copyright (c) 2008, Adrian Page, <adrian@pagenet.plus.com>
-# Copyright (c) 2009, Cyrille Berger, <cberger@cberger.net>
+#
+# Copyright (c) 2008 by Adrian Page, <adrian@pagenet.plus.com>
+# Copyright (c) 2009 by Cyrille Berger, <cberger@cberger.net>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
-
+#
 
 # use pkg-config to get the directories and then use these values
 # in the FIND_PATH() and FIND_LIBRARY() calls
