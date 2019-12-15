@@ -3,13 +3,12 @@
 # ===========================================================
 #
 # This file is a part of digiKam project
-# <a href="http://www.digikam.org">http://www.digikam.org</a>
+# https://www.digikam.org
 #
-# @date   2016-08-15
-# @brief  Script to find no really internationlized source code.
+# Date:        2016-08-15
+# Description: Script to find no really internationlized source code.
 #
-# @author Copyright (C) 2016 by Gilles Caulier
-#         <a href="mailto:caulier dot gilles at gmail dot com">caulier dot gilles at gmail dot com</a>
+# Copyright (C) 2016-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
 #
 # This program is free software; you can redistribute it
 # and/or modify it under the terms of the GNU General

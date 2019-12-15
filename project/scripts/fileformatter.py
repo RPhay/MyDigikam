@@ -3,7 +3,7 @@
 # ============================================================
 #
 # This file is a part of digiKam project
-# http://www.digikam.org
+# https://www.digikam.org
 #
 # Date         : 2011-03-09
 # Description  : a helper script for formatting the digiKam source code

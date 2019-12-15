@@ -3,7 +3,7 @@
 # ============================================================
 #
 # This file is a part of digiKam project
-# http://www.digikam.org
+# https://www.digikam.org
 #
 # Date        : 2012-07-14
 # Description : A simple script that extracts config group entry
