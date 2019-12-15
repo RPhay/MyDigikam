@@ -6,7 +6,7 @@
  * Date        : 2019-09-26
  * Description : A HEIF IO file for DImg framework
  *
- * Copyright (C) 2019 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * Other HEIF loader implementions:
  *     https://github.com/KDE/krita/tree/master/plugins/impex/heif
