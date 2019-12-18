@@ -39,11 +39,14 @@ AbstractCountingAlbumTreeView::AbstractCountingAlbumTreeView(QWidget* const pare
         setAlbumFilterModel(new AlbumFilterModel(this));
     }
 
-    connect(this, SIGNAL(expanded(QModelIndex)),
-            this, SLOT(slotExpanded(QModelIndex)));
+    if (!(flags & AlwaysShowInclusiveCounts))
+    {
+        connect(this, SIGNAL(expanded(QModelIndex)),
+                this, SLOT(slotExpanded(QModelIndex)));
 
-    connect(this, SIGNAL(collapsed(QModelIndex)),
-            this, SLOT(slotCollapsed(QModelIndex)));
+        connect(this, SIGNAL(collapsed(QModelIndex)),
+                this, SLOT(slotCollapsed(QModelIndex)));
+    }
 
     if (flags & ShowCountAccordingToSettings)
     {
@@ -72,7 +75,7 @@ void AbstractCountingAlbumTreeView::setAlbumFilterModel(AlbumFilterModel* const 
 
 void AbstractCountingAlbumTreeView::updateShowCountState(const QModelIndex& index, bool recurse)
 {
-    if (isExpanded(index))
+    if (isExpanded(index) && !(m_flags & AlwaysShowInclusiveCounts))
     {
         slotExpanded(index);
     }

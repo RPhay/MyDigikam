@@ -68,19 +68,34 @@ public:
 
     enum Flag
     {
-        /** Create a default model. Not supported by abstract classes. Not part of default flags! */
+        /**
+         * Create a default model. Not supported by abstract classes.
+         * Not part of default flags!
+         */
         CreateDefaultModel,
 
-        /** Create a default filter model. */
+        /**
+         * Create a default filter model.
+         */
         CreateDefaultFilterModel,
 
-        /** Create a delegate which paints according to settings.
-         *  If not set, the Qt default delegate of the view is used. */
+        /**
+         * Create a delegate which paints according to settings.
+         * If not set, the Qt default delegate of the view is used.
+         */
         CreateDefaultDelegate,
 
-        /** Show the count according to the settings. If not set, call
-         *  setShowCount() on the model yourself. */
+        /**
+         * Show the count according to the settings.
+         * If not set, call setShowCount() on the model yourself.
+         */
         ShowCountAccordingToSettings,
+
+        /**
+         * Always show the inclusive counts.
+         * Not part of default flags!
+         */
+        AlwaysShowInclusiveCounts,
 
         DefaultFlags = CreateDefaultFilterModel | CreateDefaultDelegate | ShowCountAccordingToSettings
     };

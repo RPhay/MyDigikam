@@ -75,4 +75,5 @@ BUGFIXES:
 061 ==> 391014 - Crashes on close.
 062 ==> 387821 - Face Recognition and Finding crashs after reaching 50%.
 063 ==> 414749 - Export google photos: error transmission date creation.
-064 ==> 
+064 ==> 377127 - Wrong item count on years in Dates View.
+065 ==> 

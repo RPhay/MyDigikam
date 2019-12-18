@@ -32,15 +32,8 @@ namespace Digikam
 {
 
 DateTreeView::DateTreeView(QWidget* const parent, Flags flags)
-    : AbstractCountingAlbumTreeView(parent, flags)
+    : AbstractCountingAlbumTreeView(parent, flags | AlwaysShowInclusiveCounts)
 {
-    // this view should always show the inclusive counts
-    disconnect(this, SIGNAL(expanded(QModelIndex)),
-               this, SLOT(slotExpanded(QModelIndex)));
-
-    disconnect(this, SIGNAL(collapsed(QModelIndex)),
-               this, SLOT(slotCollapsed(QModelIndex)));
-
     if (flags & CreateDefaultModel)
     {
         setAlbumModel(new DateAlbumModel(this));
