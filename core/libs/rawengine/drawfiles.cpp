@@ -129,7 +129,10 @@ QMap<QString, QString> s_rawFileExtensionsdWithDesc()
 
     // NOTE: VERSION 4
 
-    map.insert(QLatin1String("srw"),  i18n("Samnsung Raw Image Format"));
+    map.insert(QLatin1String("srw"),  i18n("Samsung Raw Image Format"));
+
+    // NOTE: VERSION 5
+    map.insert(QLatin1String("cr3"),  i18n("Canon Digital Camera RAW Image Format version 3.0"));
 
 /*
     TODO: check if these format are supported
@@ -147,8 +150,8 @@ QMap<QString, QString> s_rawFileExtensionsdWithDesc()
 
 int s_rawFileExtensionsVersion()
 {
-    // NOTE: increment this number whenever you change the above string
-    return 4;
+    // NOTE: increment this number whenever you change the above strings
+    return 5;
 }
 
 } // namespace Digikam
