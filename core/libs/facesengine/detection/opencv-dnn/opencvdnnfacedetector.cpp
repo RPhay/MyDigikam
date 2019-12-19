@@ -160,7 +160,22 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage) const
 
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QString& inputImagePath, cv::Size& paddedSize) const
 {
-    cv::Mat image           = cv::imread(inputImagePath.toStdString()), imagePadded;
+    std::vector<char> buffer;
+    QFile file(inputImagePath);
+    buffer.resize(file.size());
+
+    if (!file.open(QIODevice::ReadOnly))
+    {
+        return cv::Mat();
+    }
+
+    file.read(buffer.data(), file.size());
+    file.close();
+
+    cv::Mat image           = cv::imdecode(std::vector<char>(buffer.begin(), buffer.end()),
+                                           cv::IMREAD_COLOR);
+    cv::Mat imagePadded;
+
     cv::Size inputImageSize = m_inferenceEngine->nnInputSizeRequired();
     float k                 = qMin(inputImageSize.width  * 1.0 / image.cols,
                                    inputImageSize.height * 1.0 / image.rows);
@@ -178,7 +193,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QString& inputImagePath
                        padY, padY,
                        padX, padX,
                        cv::BORDER_CONSTANT,
-                       cv::Scalar(0,0,0));
+                       cv::Scalar(0, 0, 0));
 
     paddedSize              = cv::Size(padX, padY);
 
