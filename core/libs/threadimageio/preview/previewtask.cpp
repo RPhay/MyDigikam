@@ -504,6 +504,13 @@ void PreviewLoadingTask::convertQImageToDImg()
         orgSize = LoadSaveThread::infoProvider()->dimensionsHint(m_loadingDescription.filePath);
     }
 
+    // In case we don't get the original size from the metadata.
+
+    if (orgSize.isNull())
+    {
+        orgSize = QSize(m_img.width(), m_img.height());
+    }
+
     // Set the ratio of width and height of the
     // original size to the same ratio of the loaded image.
     // Because a half RAW preview was probably already rotated.
