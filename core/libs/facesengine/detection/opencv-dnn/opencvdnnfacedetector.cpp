@@ -84,8 +84,24 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
     }
 
     cv::Mat cvImage;
-    cv::Mat cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC4, inputImage.bits());
-    cv::cvtColor(cvImageWrapper, cvImage, cv::COLOR_BGRA2BGR);
+    cv::Mat cvImageWrapper;
+    int type = inputImage.sixteenBit() ? CV_16UC3 : CV_8UC3;
+    type     = inputImage.hasAlpha()   ? type     : type + 8;
+
+    switch (type)
+    {
+        case CV_8UC4:
+        case CV_16UC4:
+            cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
+            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
+            break;
+
+        case CV_8UC3:
+        case CV_16UC3:
+            cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), type, inputImage.bits());
+            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
+            break;
+    }
 
     return prepareForDetection(cvImage, paddedSize);
 }
