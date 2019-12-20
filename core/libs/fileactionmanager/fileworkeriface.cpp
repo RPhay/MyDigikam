@@ -36,6 +36,7 @@
 #include "itemattributeswatch.h"
 #include "iteminfotasksplitter.h"
 #include "loadingcacheinterface.h"
+#include "collectionscanner.h"
 #include "facetagseditor.h"
 #include "scancontroller.h"
 #include "jpegutils.h"
@@ -278,6 +279,8 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
 
         if (rotatedPixels)
         {
+            CollectionScanner scanner;
+            scanner.scanFile(info, CollectionScanner::NormalScan);
             // reset for DB. Metadata is already edited.
             finalOrientation = MetaEngine::ORIENTATION_NORMAL;
         }
