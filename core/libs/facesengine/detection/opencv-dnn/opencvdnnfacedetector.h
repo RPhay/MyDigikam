@@ -70,7 +70,7 @@ private:
     OpenCVDNNFaceDetector(const OpenCVDNNFaceDetector&);            // Disable
     OpenCVDNNFaceDetector& operator=(const OpenCVDNNFaceDetector&); // Disable
 
-    cv::Mat prepareForDetection(cv::Mat& image, cv::Size& paddedSize) const;
+    cv::Mat prepareForDetection(cv::Mat& cvImage, cv::Size& paddedSize) const;
 
 private:
 

@@ -83,11 +83,11 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::S
         return cv::Mat();
     }
 
-    cv::Mat image;
+    cv::Mat cvImage;
     cv::Mat cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC4, inputImage.bits());
-    cv::cvtColor(cvImageWrapper, image, cv::COLOR_BGRA2BGR);
+    cv::cvtColor(cvImageWrapper, cvImage, cv::COLOR_BGRA2BGR);
 
-    return prepareForDetection(image, paddedSize);
+    return prepareForDetection(cvImage, paddedSize);
 }
 
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage, cv::Size& paddedSize) const
@@ -97,7 +97,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage, cv:
         return cv::Mat();
     }
 
-    cv::Mat image;
+    cv::Mat cvImage;
     cv::Mat cvImageWrapper;
     QImage qimage(inputImage);
 
@@ -111,19 +111,18 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage, cv:
 
             cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC4,
                                      qimage.scanLine(0), qimage.bytesPerLine());
-            cvtColor(cvImageWrapper, image, cv::COLOR_RGBA2BGR);
+            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2BGR);
             break;
 
         default:
             qimage         = qimage.convertToFormat(QImage::Format_RGB888);
             cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC3,
                                      qimage.scanLine(0), qimage.bytesPerLine());
-            cvtColor(cvImageWrapper, image, cv::COLOR_RGB2BGR);
-
+            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
             break;
     }
 
-    return prepareForDetection(image, paddedSize);
+    return prepareForDetection(cvImage, paddedSize);
 }
 
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QString& inputImagePath, cv::Size& paddedSize) const
@@ -140,20 +139,20 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QString& inputImagePath
     file.read(buffer.data(), file.size());
     file.close();
 
-    cv::Mat image = cv::imdecode(std::vector<char>(buffer.begin(), buffer.end()), cv::IMREAD_COLOR);
+    cv::Mat cvImage = cv::imdecode(std::vector<char>(buffer.begin(), buffer.end()), cv::IMREAD_COLOR);
 
-    return prepareForDetection(image, paddedSize);
+    return prepareForDetection(cvImage, paddedSize);
 }
 
-cv::Mat OpenCVDNNFaceDetector::prepareForDetection(cv::Mat& image, cv::Size& paddedSize) const
+cv::Mat OpenCVDNNFaceDetector::prepareForDetection(cv::Mat& cvImage, cv::Size& paddedSize) const
 {
     cv::Size inputImageSize = m_inferenceEngine->nnInputSizeRequired();
-    float k                 = qMin(inputImageSize.width  * 1.0 / image.cols,
-                                   inputImageSize.height * 1.0 / image.rows);
+    float k                 = qMin(inputImageSize.width  * 1.0 / cvImage.cols,
+                                   inputImageSize.height * 1.0 / cvImage.rows);
 
-    int newWidth            = (int)(k * image.cols);
-    int newHeight           = (int)(k * image.rows);
-    cv::resize(image, image, cv::Size(newWidth, newHeight));
+    int newWidth            = (int)(k * cvImage.cols);
+    int newHeight           = (int)(k * cvImage.rows);
+    cv::resize(cvImage, cvImage, cv::Size(newWidth, newHeight));
 
     // Pad with black pixels
 
@@ -162,7 +161,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(cv::Mat& image, cv::Size& pad
 
     cv::Mat imagePadded;
 
-    cv::copyMakeBorder(image, imagePadded,
+    cv::copyMakeBorder(cvImage, imagePadded,
                        padY, padY,
                        padX, padX,
                        cv::BORDER_CONSTANT,
