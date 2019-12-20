@@ -274,10 +274,6 @@ protected:
      */
     QString             m_name;
 
-    /** File path from original image.
-     */
-    QString             m_filePath;
-
     /** Copy of original Image data.
      */
     DImg                m_orgImage;

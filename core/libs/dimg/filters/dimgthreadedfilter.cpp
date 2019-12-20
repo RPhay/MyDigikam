@@ -54,7 +54,6 @@ DImgThreadedFilter::DImgThreadedFilter(DImg* const orgImage, QObject* const pare
 {
     // remove meta data
     setOriginalImage(orgImage->copyImageData());
-    m_filePath     = orgImage->originalFilePath();
     setFilterName(name);
     m_version      = 1;
     m_wasCancelled = false;
@@ -68,7 +67,6 @@ DImgThreadedFilter::DImgThreadedFilter(DImgThreadedFilter* const master, const D
 {
     setFilterName(name);
     setOriginalImage(orgImage);
-    m_filePath     = orgImage.originalFilePath();
     m_destImage    = destImage;
     m_version      = 1;
     m_wasCancelled = false;
@@ -122,7 +120,6 @@ void DImgThreadedFilter::setupAndStartDirectly(const DImg& orgImage, DImgThreade
 {
     initSlave(master, progressBegin, progressEnd);
     setupFilter(orgImage);
-    m_filePath = orgImage.originalFilePath();
 }
 
 void DImgThreadedFilter::setOriginalImage(const DImg& orgImage)

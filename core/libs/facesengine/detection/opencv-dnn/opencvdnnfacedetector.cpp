@@ -76,30 +76,32 @@ int OpenCVDNNFaceDetector::recommendedImageSizeForDetection()
     return 800;
 }
 
-cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage) const
+cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage, cv::Size& paddedSize) const
 {
     if (inputImage.isNull() || !inputImage.size().isValid())
     {
         return cv::Mat();
     }
 
-    QImage image(inputImage);
-    qint64 inputArea                    = (qint64)image.width() * (qint64)image.height();
-    const qint64 maxAcceptableInputArea = 1024 * 768;
+    cv::Mat image;
+    cv::Mat cvImageWrapper = cv::Mat(inputImage.height(), inputImage.width(), CV_8UC4, inputImage.bits());
+    cv::cvtColor(cvImageWrapper, image, cv::COLOR_BGRA2BGR);
 
-    if (inputArea > maxAcceptableInputArea)
+    return prepareForDetection(image, paddedSize);
+}
+
+cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage, cv::Size& paddedSize) const
+{
+    if (inputImage.isNull() || !inputImage.size().isValid())
     {
-        // Resize to 1024 * 768 (or comparable area for different aspect ratio)
-        // Looking for scale factor z where A = w*z * h*z => z = sqrt(A/(w*h))
-
-        qreal z          = qSqrt(qreal(maxAcceptableInputArea) / image.width() / image.height());
-        QSize scaledSize = image.size() * z;
-        image            = image.scaled(scaledSize, Qt::KeepAspectRatio);
+        return cv::Mat();
     }
 
-    cv::Mat cvImageWrapper, cvImage;
+    cv::Mat image;
+    cv::Mat cvImageWrapper;
+    QImage qimage(inputImage);
 
-    switch (image.format())
+    switch (qimage.format())
     {
         case QImage::Format_RGB32:
         case QImage::Format_ARGB32:
@@ -107,55 +109,21 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QImage& inputImage) con
 
             // I think we can ignore premultiplication when converting to grayscale
 
-            cvImageWrapper = cv::Mat(image.height(), image.width(), CV_8UC4, image.scanLine(0), image.bytesPerLine());
-            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGBA2RGB);
+            cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC4,
+                                     qimage.scanLine(0), qimage.bytesPerLine());
+            cvtColor(cvImageWrapper, image, cv::COLOR_RGBA2BGR);
             break;
 
         default:
-            image          = image.convertToFormat(QImage::Format_RGB888);
-            cvImage        = cv::Mat(image.height(), image.width(), CV_8UC3, image.scanLine(0), image.bytesPerLine());
-/*
-            cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
-*/
+            qimage         = qimage.convertToFormat(QImage::Format_RGB888);
+            cvImageWrapper = cv::Mat(qimage.height(), qimage.width(), CV_8UC3,
+                                     qimage.scanLine(0), qimage.bytesPerLine());
+            cvtColor(cvImageWrapper, image, cv::COLOR_RGB2BGR);
+
             break;
     }
-/*
-    cv::equalizeHist(cvImage, cvImage);
-    cv::cvtColor(cvImage, cvImage, cv::COLOR_GRAY2BGR);
-*/
-    return cvImage;
-}
 
-cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const DImg& inputImage) const
-{
-    if (inputImage.isNull() || !inputImage.size().isValid())
-    {
-        return cv::Mat();
-    }
-
-    Digikam::DImg image(inputImage);
-    qint64 inputArea                    = (qint64)image.width() * (qint64)image.height();
-    const qint64 maxAcceptableInputArea = 1024 * 768;
-
-    if (inputArea > maxAcceptableInputArea)
-    {
-        // Resize to 1024 * 768 (or comparable area for different aspect ratio)
-        // Looking for scale factor z where A = w*z * h*z => z = sqrt(A/(w*h))
-
-        qreal z          = qSqrt(qreal(maxAcceptableInputArea) / image.width() / image.height());
-        QSize scaledSize = image.size() * z;
-        image            = image.smoothScale(scaledSize, Qt::KeepAspectRatio);
-    }
-
-    cv::Mat cvImageWrapper, cvImage;
-
-    cvImageWrapper                      = cv::Mat(image.height(), image.width(), CV_8UC3, image.bits());
-    cv::cvtColor(cvImageWrapper, cvImage, cv::COLOR_RGB2BGR);
-/*
-    cv::equalizeHist(cvImage, cvImage);
-    cv::cvtColor(cvImage, cvImage, cv::COLOR_GRAY2BGR);
-*/
-    return cvImage;
+    return prepareForDetection(image, paddedSize);
 }
 
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QString& inputImagePath, cv::Size& paddedSize) const
@@ -172,10 +140,13 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QString& inputImagePath
     file.read(buffer.data(), file.size());
     file.close();
 
-    cv::Mat image           = cv::imdecode(std::vector<char>(buffer.begin(), buffer.end()),
-                                           cv::IMREAD_COLOR);
-    cv::Mat imagePadded;
+    cv::Mat image = cv::imdecode(std::vector<char>(buffer.begin(), buffer.end()), cv::IMREAD_COLOR);
 
+    return prepareForDetection(image, paddedSize);
+}
+
+cv::Mat OpenCVDNNFaceDetector::prepareForDetection(cv::Mat& image, cv::Size& paddedSize) const
+{
     cv::Size inputImageSize = m_inferenceEngine->nnInputSizeRequired();
     float k                 = qMin(inputImageSize.width  * 1.0 / image.cols,
                                    inputImageSize.height * 1.0 / image.rows);
@@ -188,6 +159,8 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QString& inputImagePath
 
     int padX                = (inputImageSize.width  - newWidth)  / 2;
     int padY                = (inputImageSize.height - newHeight) / 2;
+
+    cv::Mat imagePadded;
 
     cv::copyMakeBorder(image, imagePadded,
                        padY, padY,

@@ -158,7 +158,7 @@ void RedEyeCorrectionFilter::filterImage()
         gray.convertTo(gray, CV_8UC1, 1 / 255.0);
     }
 
-    QList<QRectF> qrectfdets   = d->facedetector.detectFaces(m_filePath);
+    QList<QRectF> qrectfdets   = d->facedetector.detectFaces(m_orgImage);
     RedEye::ShapePredictor& sp = *(d->sp);
 
     if (runningFlag() && (qrectfdets.size() != 0))
