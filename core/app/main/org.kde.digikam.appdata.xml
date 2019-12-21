@@ -14,6 +14,7 @@
   <name xml:lang="el">digiKam</name>
   <name xml:lang="en-GB">digiKam</name>
   <name xml:lang="es">digiKam</name>
+  <name xml:lang="et">digiKam</name>
   <name xml:lang="fi">digiKam</name>
   <name xml:lang="fr">digiKam</name>
   <name xml:lang="gl">digiKam</name>
@@ -43,6 +44,7 @@
   <summary xml:lang="el">Πρόγραμμα διαχείρισης φωτογραφιών</summary>
   <summary xml:lang="en-GB">Photo Management Program</summary>
   <summary xml:lang="es">Programa de gestión de fotos</summary>
+  <summary xml:lang="et">Fotohalduse rakendus</summary>
   <summary xml:lang="fi">Valokuvahallintaohjelma</summary>
   <summary xml:lang="fr">Application de gestion de photos</summary>
   <summary xml:lang="gl">Xestor de álbums de fotos</summary>
@@ -77,6 +79,7 @@
     <p xml:lang="el">Το digiKam είναι μια προηγμένη εφαρμογή διαχείρισης φωτογραφιών, που κάνει πανεύκολη την εισαγωγή και οργάνωση φωτογραφιών. Οι φωτογραφίες οργανώνονται σε άλμπουμ με χρονολογική ταξινόμηση, ανάλογα με τη διάταξη του φακέλου ή τις προσαρμοσμένες συλλογές.</p>
     <p xml:lang="en-GB">digiKam is an advanced digital photo management application, which makes importing and organizing digital photos a "snap". The photos are organized in albums which can be sorted chronologically, by folder layout or by custom collections.</p>
     <p xml:lang="es">digiKam es una aplicación avanzada de gestión de fotos digitales que facilita la importación y la organización de fotos digitales. Las fotos se organizan en álbumes, que se pueden ordenar cronológicamente, por esquemas de carpetas o por colecciones personalizadas.</p>
+    <p xml:lang="et">digiKam on võimas digitaalfotode haldamise rakendus, mis muudab digitaalfotode importimise ja korraldamise imelihtsaks. Fotod paigutatakse albumitesse, mida saab sortida aja, kataloogide või kohandatud kogude järgi.</p>
     <p xml:lang="fi">digiKam on edistynyt digikuvien hallintaohjelma, joka tekee digitaalikuvien tuonnista ja järjestelystä vaivatonta. Kuva järjestetään albumeiksi, jotka voi lajitella ajan tai kansioasettelun mukaan tai mukautetuiksi kokoelmiksi.</p>
     <p xml:lang="fr">digiKam est une application de gestion de photos avancée, qui rend l'import et l'organisation des photos comme un jeu d'enfant. Les photos sont organisées dans des albums qui peuvent être triés de manière chronologique, selon l'organisation des dossiers, ou par collections personnalisées.</p>
     <p xml:lang="gl">digiKam é unha aplicación de administración avanzada de fotografía dixital que facilita a importación e organización de fotografías dixitais. As fotos organízanse en álbums, que poden ordenarse de maneira cronolóxica, por distribución do cartafol ou por coleccións personalizadas.</p>
@@ -107,6 +110,7 @@
     <p xml:lang="el">Χαρακτηριστικά:</p>
     <p xml:lang="en-GB">Features:</p>
     <p xml:lang="es">Funciones:</p>
+    <p xml:lang="et">Omadused:</p>
     <p xml:lang="fi">Ominaisuuksia:</p>
     <p xml:lang="fr">Fonctionnalités :</p>
     <p xml:lang="gl">Funcionalidades:</p>
@@ -139,6 +143,7 @@
       <li xml:lang="el">Οργάνωση φωτογραφιών σε άλμπουμ και υπο-άλμπουμ (με υποστήριξη για ετικέτες και σχόλια)</li>
       <li xml:lang="en-GB">Organisation of photos in albums and sub-albums (with tags and comments support)</li>
       <li xml:lang="es">Organización de fotos en álbumes y álbumes anidados (con uso de etiquetas y comentarios)</li>
+      <li xml:lang="et">Fotode paigutamine albumitesse ja alamalbumitesse (toetatud on sildid ja kommentaarid)</li>
       <li xml:lang="fi">Valokuvien järjestely albumeiksi ja alialbumeiksi (tunniste- ja kommenttituella)</li>
       <li xml:lang="fr">Organisation de photos en albums et sous-albums (avec prise en charge des étiquettes et des commentaires)</li>
       <li xml:lang="gl">Organización de fotos en álbums e subálbums (con funcionalidade de etiquetas e comentarios).</li>
@@ -167,6 +172,7 @@
       <li xml:lang="el">Υποστήριξη για Exif, Iptc, Xmp, Makernotes</li>
       <li xml:lang="en-GB">Support for Exif, Iptc, Xmp, Makernotes</li>
       <li xml:lang="es">Uso de Exif, Iptc, Xmp y notas del fabricante</li>
+      <li xml:lang="et">Exif'i, Iptc, Xmp, Makernotes'i toetus</li>
       <li xml:lang="fi">Exif-, IPTC-, XMP ja Makernotes-tuki</li>
       <li xml:lang="fr">Prise en charge des données EXIF, IPTC, XMP, MakerNotes</li>
       <li xml:lang="gl">Compatíbel con Exif, Iptc, Xmp e Makernotes.</li>
@@ -194,6 +200,7 @@
       <li xml:lang="el">Αποθηκευτικός χώρος με SQLite ή Mysql για τα άλμπουμ και τα μεταδεδομένα τους με προηγμένα εργαλεία αναζήτησης</li>
       <li xml:lang="en-GB">SQLite or Mysql powered storage for the album contents and its metadata with advanced search tools</li>
       <li xml:lang="es">Almacenamiento basado en SQLite o Mysql para los álbumes y sus metadatos con herramientas de búsqueda avanzadas</li>
+      <li xml:lang="et">SQLite'i või Mysql'i baasil salvesti albumite sisule ja metaandmetele ühes võimsa otsingutööriistaga</li>
       <li xml:lang="fi">SQLite- tai MySQL-tallennustila albumien sisällölle ja matatiedoille sekä edistyneet hakutyökalut</li>
       <li xml:lang="fr">Stockage du contenu des albums et des métadonnées fonctionnant avec SQLite ou MySQL et des outils de recherche avancée</li>
       <li xml:lang="gl">Almacenamento mediante SQLite ou MySQL para o contido dos álbums e os seus metadatos con ferramentas de busca avanzadas.</li>
@@ -222,6 +229,7 @@
       <li xml:lang="el">Υποστήριξη για φιλτράρισμα και ταξινόμηση των άλμπουμ</li>
       <li xml:lang="en-GB">Support for filtering and sorting albums</li>
       <li xml:lang="es">Implementación de filtrado y ordenación de álbumes</li>
+      <li xml:lang="et">Albumite filtreerimise ja sortimise toetus</li>
       <li xml:lang="fi">Albumien suodatuksen ja lajittelun tuki</li>
       <li xml:lang="fr">Prise en charge du filtrage et du tri des albums</li>
       <li xml:lang="gl">Permite filtrar e ordenar os álbums.</li>
@@ -252,6 +260,7 @@
       <li xml:lang="el">Εισαγωγή από περισσότερες από 1100 ψηφιακές κάμερες</li>
       <li xml:lang="en-GB">Import from more than 1100 digital camera devices</li>
       <li xml:lang="es">Permite importar de más de 1100 cámaras digitales</li>
+      <li xml:lang="et">Import enam kui 1100 digitaalkaamerast</li>
       <li xml:lang="fi">Tuontituki yli 1100 eri digikameralle</li>
       <li xml:lang="fr">Importe à partir de plus de 1100 appareils photos numériques</li>
       <li xml:lang="gl">Permite importar desde máis de 1100 dispositivos de cámara dixital.</li>
@@ -280,6 +289,7 @@
       <li xml:lang="el">Υποστήριξη για περισσότερους από 900 τύπους RAW εικόνων</li>
       <li xml:lang="en-GB">Support for more than 900 RAW format pictures</li>
       <li xml:lang="es">Permite imágenes en más de 900 formatos RAW</li>
+      <li xml:lang="et">Enam kui 900 toorpildivormingu toetus</li>
       <li xml:lang="fi">Yli 900 RAW-kuvamuodon tuki</li>
       <li xml:lang="fr">Prise en charge de plus de 900 formats d'image RAW</li>
       <li xml:lang="gl">Compatíbel con imaxes en máis de 900 formatos en cru (RAW).</li>
@@ -307,6 +317,7 @@
       <li xml:lang="el">Ελαφρύς πίνακας για σύγκριση φωτογραφιών κατ' αντιπαράθεση</li>
       <li xml:lang="en-GB">Light Table to compare photo side by side</li>
       <li xml:lang="es">Mesa de luz para comparar fotos una junto a otra</li>
+      <li xml:lang="et">Valguslaud fotode vahetuks võrdlemiseks</li>
       <li xml:lang="fi">Valotaulu kuvien vertailemiseksi rinnakkain</li>
       <li xml:lang="fr">Table lumineuse pour comparer des photos côte-à-côte</li>
       <li xml:lang="gl">Táboa de luz para comparar fotos unha ao lado da outra.</li>
@@ -332,6 +343,7 @@
       <li xml:lang="el">Επεκτάσεις χαρακτηριστικών με χρήση επιπλέον εργαλείων</li>
       <li xml:lang="en-GB">Extended features using extra tools</li>
       <li xml:lang="es">Funciones extendidas mediante herramientas adicionales</li>
+      <li xml:lang="et">Avarad võimalused lisatööriistade abil</li>
       <li xml:lang="fi">Lisää ominaisuuksia lisätyökaluilla</li>
       <li xml:lang="fr">Fonctionnalités étendues par des outils externes</li>
       <li xml:lang="gl">Funcionalidades estendidas usando ferramentas adicionais.</li>
@@ -359,6 +371,7 @@
       <li xml:lang="el">Μοιραστείτε τις φωτογραφίες σας με HTML ή με δημοσίευση σε απομακρυσμένες υπηρεσίες ιστού</li>
       <li xml:lang="en-GB">Share your photos using HTML or publishing them to remote web services</li>
       <li xml:lang="es">Compartir fotos usando HTML o publicándolas en servicios web remotos</li>
+      <li xml:lang="et">Fotode jagamine HTML-i vahendusel või nende avaldamine veebiteenustes</li>
       <li xml:lang="fi">Valokuvien jako HTML:ksi tai julkaisu etäverkkopalvelimiin</li>
       <li xml:lang="fr">Permet de partager vos photos avec des pages HTML ou de les publier sur des services web distants</li>
       <li xml:lang="gl">Permite compartir imaxes usando HTML ou publicándoas en servizos web remotos.</li>
@@ -385,6 +398,7 @@
       <li xml:lang="el">Περιλαμβάνεται επεξεργαστής εικόνων με προηγμένα εργαλεία για γρήγορη διόρθωση φωτογραφιών</li>
       <li xml:lang="en-GB">Image editor included with advanced tools to fix photo quickly</li>
       <li xml:lang="es">Editor de imágenes incluido con herramientas avanzadas para corregir las fotos de forma rápida</li>
+      <li xml:lang="et">Pildiredaktor võimsate tööriistadega fotode kiireks parandamiseks</li>
       <li xml:lang="fi">Lisätyökaluissa kuvamuokkain kuvien pikakorjauksiin</li>
       <li xml:lang="fr">Éditeur d'images inclus, avec des fonctionnalités pour réparer rapidement une photo</li>
       <li xml:lang="gl">Inclúe un editor de imaxes con ferramentas avanzadas para arranxar fotos rapidamente.</li>
@@ -419,6 +433,7 @@
       <caption xml:lang="de">Fotoverwaltung in digiKam</caption>
       <caption xml:lang="en-GB">Photo management in digiKam</caption>
       <caption xml:lang="es">Gestión de fotos en digiKam</caption>
+      <caption xml:lang="et">Fotohaldus digiKamis</caption>
       <caption xml:lang="fi">Valokuvien hallinta digiKamissä</caption>
       <caption xml:lang="fr">Gestion de photos dans digiKam</caption>
       <caption xml:lang="gl">Xestión de fotos en digiKam</caption>
@@ -450,6 +465,7 @@
   <developer_name xml:lang="el">digiKam Project</developer_name>
   <developer_name xml:lang="en-GB">digiKam Project</developer_name>
   <developer_name xml:lang="es">Proyecto digiKam</developer_name>
+  <developer_name xml:lang="et">digiKami projekt</developer_name>
   <developer_name xml:lang="fi">digiKam-projekti</developer_name>
   <developer_name xml:lang="fr">Projet digiKam</developer_name>
   <developer_name xml:lang="gl">Proxecto digiKam</developer_name>
