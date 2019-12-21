@@ -20,17 +20,6 @@
  *
  * ============================================================ */
 
-// ImageMagick includes
-
-#include <Magick++.h>
-
-#if MagickLibVersion < 0x700
-#   include <magick/magick.h>
-#endif
-
-using namespace Magick;
-using namespace MagickCore;
-
 // Qt includes
 
 #include <QImage>
@@ -44,6 +33,17 @@ using namespace MagickCore;
 #include <QStandardPaths>
 #include <QFileDialog>
 #include <QMimeDatabase>
+
+// ImageMagick includes
+
+#include <Magick++.h>
+
+#if MagickLibVersion < 0x700
+#   include <magick/magick.h>
+#endif
+
+using namespace Magick;
+using namespace MagickCore;
 
 /** Convert from QImage to IM::Image
  */

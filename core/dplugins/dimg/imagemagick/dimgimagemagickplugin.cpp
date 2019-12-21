@@ -22,6 +22,14 @@
 
 #include "dimgimagemagickplugin.h"
 
+// Qt includes
+
+#include <QMimeDatabase>
+
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Image Magick includes
 
 #if defined(Q_CC_CLANG)
@@ -41,14 +49,6 @@ using namespace MagickCore;
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic pop
 #endif
-
-// Qt includes
-
-#include <QMimeDatabase>
-
-// KDE includes
-
-#include <klocalizedstring.h>
 
 // Local includes
 

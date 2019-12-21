@@ -24,22 +24,6 @@
 
 #include "digikam_config.h"
 
-// ImageMagick includes
-
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wkeyword-macro"
-#endif
-
-#ifdef HAVE_IMAGE_MAGICK
-#   include <Magick++.h>
-using namespace Magick;
-#endif
-
-#if defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
-#endif
-
 // Qt includes
 
 #include <QFile>
@@ -60,6 +44,22 @@ using namespace Magick;
 #include <kaboutdata.h>
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
+
+// ImageMagick includes
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic push
+#   pragma clang diagnostic ignored "-Wkeyword-macro"
+#endif
+
+#ifdef HAVE_IMAGE_MAGICK
+#   include <Magick++.h>
+using namespace Magick;
+#endif
+
+#if defined(Q_CC_CLANG)
+#   pragma clang diagnostic pop
+#endif
 
 // Local includes
 
