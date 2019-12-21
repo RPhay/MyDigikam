@@ -121,7 +121,7 @@ bool Cascade::isFacialFeature() const
     return roi.isValid();
 }
 
-cv::Rect Cascade::faceROI(const CvRect& faceRect) const
+cv::Rect Cascade::faceROI(const cv::Rect& faceRect) const
 {
     return (cv::Rect(lround(faceRect.x + roi.x()      * faceRect.width),
                      lround(faceRect.y + roi.y()      * faceRect.height),

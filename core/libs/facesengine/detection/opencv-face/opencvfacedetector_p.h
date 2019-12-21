@@ -104,7 +104,7 @@ public:
      * of the region of interest of this cascade (still relative to whole image).
      * For frontal face cascades, returns the given parameter unchanged.
      */
-    cv::Rect faceROI(const CvRect& faceRect) const;
+    cv::Rect faceROI(const cv::Rect& faceRect) const;
 
     /**
      * Verifying cascades: Returns the minSize parameter for cvHaarDetectObjects.
