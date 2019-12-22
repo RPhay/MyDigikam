@@ -51,12 +51,12 @@ public:
         imageVersionModel = nullptr;
     }
 
-    AlbumModel*         albumModel;
-    TagModel*           tagModel;
-    TagModel*           tagFilterModel;
-    TagModel*           tagFacesModel;
-    SearchModel*        searchModel;
-    DateAlbumModel*     dateAlbumModel;
+    AlbumModel*        albumModel;
+    TagModel*          tagModel;
+    TagModel*          tagFilterModel;
+    TagModel*          tagFacesModel;
+    SearchModel*       searchModel;
+    DateAlbumModel*    dateAlbumModel;
     ItemVersionsModel* imageVersionModel;
 };
 
@@ -129,8 +129,9 @@ ItemVersionsModel* DModelFactory::getItemVersionsModel() const
 
 void DModelFactory::slotApplicationSettingsChanged()
 {
-    d->dateAlbumModel->setPixmaps(QIcon::fromTheme(QLatin1String("view-calendar-list")).pixmap(ApplicationSettings::instance()->getTreeViewIconSize()),
-                                  QIcon::fromTheme(QLatin1String("view-calendar")).pixmap(ApplicationSettings::instance()->getTreeViewIconSize()));
+    int size = ApplicationSettings::instance()->getTreeViewIconSize();
+    d->dateAlbumModel->setPixmaps(QIcon::fromTheme(QLatin1String("view-calendar-list")).pixmap(size),
+                                  QIcon::fromTheme(QLatin1String("view-calendar")).pixmap(size));
 }
 
 } // namespace Digikam
