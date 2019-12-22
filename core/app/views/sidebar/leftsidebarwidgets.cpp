@@ -371,13 +371,13 @@ void TagViewSideBarWidget::setNoTagsAlbum()
     if (album)
     {
         id = album->id();
-        CoreDbAccess().db()->updateSearch(id,DatabaseSearch::AdvancedSearch,
-                                            SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch), d->noTagsSearchXml);
+        CoreDbAccess().db()->updateSearch(id, DatabaseSearch::AdvancedSearch,
+                                          SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch), d->noTagsSearchXml);
     }
     else
     {
         id = CoreDbAccess().db()->addSearch(DatabaseSearch::AdvancedSearch,
-                                              SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch), d->noTagsSearchXml);
+                                            SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch), d->noTagsSearchXml);
     }
 
     album = new SAlbum(i18n("No Tags Album"), id);

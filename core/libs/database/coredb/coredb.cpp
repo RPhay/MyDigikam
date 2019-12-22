@@ -585,23 +585,23 @@ void CoreDB::deleteTag(int tagID)
 
 void CoreDB::setTagIcon(int tagID, const QString& iconKDE, qlonglong iconID)
 {
-    int     _iconID  = iconKDE.isEmpty() ? iconID : 0;
-    QString _iconKDE = iconKDE;
+    int     dbIconID  = iconKDE.isEmpty() ? iconID : 0;
+    QString dbIconKDE = iconKDE;
 
     if (iconKDE.isEmpty() || iconKDE.toLower() == QLatin1String("tag"))
     {
-        _iconKDE.clear();
+        dbIconKDE.clear();
     }
 
-    if (_iconID == 0)
+    if (dbIconID == 0)
     {
         d->db->execSql(QString::fromUtf8("UPDATE Tags SET iconkde=?, icon=NULL WHERE id=?;"),
-                       _iconKDE, tagID);
+                       dbIconKDE, tagID);
     }
     else
     {
         d->db->execSql(QString::fromUtf8("UPDATE Tags SET iconkde=?, icon=? WHERE id=?;"),
-                       _iconKDE, _iconID, tagID);
+                       dbIconKDE, dbIconID, tagID);
     }
 
     d->db->recordChangeset(TagChangeset(tagID, TagChangeset::IconChanged));
@@ -791,7 +791,7 @@ int CoreDB::addSearch(DatabaseSearch::Type type, const QString& name, const QStr
 }
 
 void CoreDB::updateSearch(int searchID, DatabaseSearch::Type type,
-                           const QString& name, const QString& query)
+                          const QString& name, const QString& query)
 {
     d->db->execSql(QString::fromUtf8("UPDATE Searches SET type=?, name=?, query=? WHERE id=?;"),
                    type, name, query, searchID);

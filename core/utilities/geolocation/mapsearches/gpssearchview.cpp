@@ -640,7 +640,7 @@ void GPSSearchView::showNonGeolocatedItems()
     if (album)
     {
         id = album->id();
-        CoreDbAccess().db()->updateSearch(id,DatabaseSearch::AdvancedSearch,
+        CoreDbAccess().db()->updateSearch(id, DatabaseSearch::AdvancedSearch,
                                           SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch), d->nonGeonlocatedItemsXml);
     }
     else
