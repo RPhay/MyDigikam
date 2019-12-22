@@ -53,6 +53,7 @@
 #include "ratingfilter.h"
 #include "mimefilter.h"
 #include "tagfilterview.h"
+#include "tagscache.h"
 
 namespace Digikam
 {
@@ -91,6 +92,7 @@ public:
 
     static const QString                   configSearchTextFilterFieldsEntry;
     static const QString                   configLastShowUntaggedEntry;
+    static const QString                   configLastShowWithoutFaceEntry;
     static const QString                   configMatchingConditionEntry;
 
     QWidget*                               space;
@@ -126,6 +128,7 @@ public:
 
 const QString FilterSideBarWidget::Private::configSearchTextFilterFieldsEntry(QLatin1String("Search Text Filter Fields"));
 const QString FilterSideBarWidget::Private::configLastShowUntaggedEntry(QLatin1String("Show Untagged"));
+const QString FilterSideBarWidget::Private::configLastShowWithoutFaceEntry(QLatin1String("Show Without Face"));
 const QString FilterSideBarWidget::Private::configMatchingConditionEntry(QLatin1String("Matching Condition"));
 
 // ---------------------------------------------------------------------------------------------------
@@ -298,6 +301,9 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
     connect(d->withoutTagCheckBox, SIGNAL(stateChanged(int)),
             this, SLOT(slotWithoutTagChanged(int)));
 
+    connect(d->withoutFaceCheckBox, SIGNAL(stateChanged(int)),
+            this, SLOT(slotWithoutTagChanged(int)));
+
     connect(d->tagOptionsMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(slotTagOptionsTriggered(QAction*)));
 
@@ -354,6 +360,7 @@ void FilterSideBarWidget::slotResetFilters()
     d->geolocationFilter->setGeolocationFilter(ItemFilterSettings::GeolocationNoFilter);
     d->tagFilterView->slotResetCheckState();
     d->withoutTagCheckBox->setChecked(false);
+    d->withoutFaceCheckBox->setChecked(false);
     d->colorLabelFilter->reset();
     d->pickLabelFilter->reset();
     d->ratingFilter->setRating(0);
@@ -407,7 +414,8 @@ void FilterSideBarWidget::slotWithoutTagChanged(int newState)
 
 void FilterSideBarWidget::filterChanged()
 {
-    bool showUntagged = d->withoutTagCheckBox->checkState() == Qt::Checked;
+    bool showUntagged    = d->withoutTagCheckBox->checkState() == Qt::Checked;
+    bool showWithoutFace = d->withoutFaceCheckBox->checkState() == Qt::Checked;
 
     QList<int> includedTagIds;
     QList<int> excludedTagIds;
@@ -423,6 +431,7 @@ void FilterSideBarWidget::filterChanged()
                 includedTagIds << tag->id();
             }
         }
+
         foreach (TAlbum* tag, d->tagFilterView->getPartiallyCheckedTags())
         {
             if (tag)
@@ -430,6 +439,7 @@ void FilterSideBarWidget::filterChanged()
                 excludedTagIds << tag->id();
             }
         }
+
         foreach (TAlbum* tag, d->colorLabelFilter->getCheckedColorLabelTags())
         {
             if (tag)
@@ -437,12 +447,18 @@ void FilterSideBarWidget::filterChanged()
                 clTagIds << tag->id();
             }
         }
+
         foreach (TAlbum* tag, d->pickLabelFilter->getCheckedPickLabelTags())
         {
             if (tag)
             {
                 plTagIds << tag->id();
             }
+        }
+
+        if (showWithoutFace)
+        {
+            excludedTagIds << TagsCache::instance()->tagsWithProperty(TagPropertyName::person());
         }
     }
 
@@ -476,10 +492,16 @@ void FilterSideBarWidget::doLoadState()
                                                   (int)ItemFilterSettings::OrCondition));
 
     d->tagFilterView->loadState();
+    d->faceFilterView->loadState();
 
     if (d->tagFilterView->isRestoreCheckState())
     {
         d->withoutTagCheckBox->setChecked(group.readEntry(entryName(d->configLastShowUntaggedEntry), false));
+    }
+
+    if (d->faceFilterView->isRestoreCheckState())
+    {
+        d->withoutFaceCheckBox->setChecked(group.readEntry(entryName(d->configLastShowWithoutFaceEntry), false));
     }
 
     filterChanged();
@@ -498,7 +520,10 @@ void FilterSideBarWidget::doSaveState()
     group.writeEntry(entryName(d->configMatchingConditionEntry), (int)d->tagMatchCond);
 
     d->tagFilterView->saveState();
-    group.writeEntry(entryName(d->configLastShowUntaggedEntry), d->withoutTagCheckBox->isChecked());
+    d->faceFilterView->saveState();
+
+    group.writeEntry(entryName(d->configLastShowUntaggedEntry),    d->withoutTagCheckBox->isChecked());
+    group.writeEntry(entryName(d->configLastShowWithoutFaceEntry), d->withoutFaceCheckBox->isChecked());
     group.sync();
 }
 
