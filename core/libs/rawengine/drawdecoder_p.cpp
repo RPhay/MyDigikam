@@ -64,7 +64,7 @@ DRawDecoder::Private::~Private()
 
 void DRawDecoder::Private::createPPMHeader(QByteArray& imgData, libraw_processed_image_t* const img)
 {
-    QString header = QString::fromUtf8("P%1\n%2 %3\n%4\n").arg(img->colors == 3 ? QLatin1String("6") : QLatin1String("5"))
+    QString header = QString::fromUtf8("P%1\n%2 %3\n%4\n").arg((img->colors == 3) ? QLatin1String("6") : QLatin1String("5"))
                                                           .arg(img->width)
                                                           .arg(img->height)
                                                           .arg((1 << img->bits)-1);
@@ -75,7 +75,7 @@ void DRawDecoder::Private::createPPMHeader(QByteArray& imgData, libraw_processed
 int DRawDecoder::Private::progressCallback(enum LibRaw_progress p, int iteration, int expected)
 {
     qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw progress: " << libraw_strprogress(p) << " pass "
-                           << iteration << " of " << expected;
+                                   << iteration << " of " << expected;
 
     // post a little change in progress indicator to show raw processor activity.
     setProgress(progressValue()+0.01);
@@ -273,12 +273,12 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
             DRawInfo identify;
             T = m_parent->m_decoderSettings.customWhiteBalance;
 
-            /*
-             * Here starts the code picked and adapted from ufraw (0.12.1)
-             * to convert Temperature + green multiplier to RGB multipliers
-             */
+            // -----------------------------------------------------------------------
+            // Here starts the code picked and adapted from ufraw (0.12.1)
+            // to convert Temperature + green multiplier to RGB multipliers
 
-            /* Convert between Temperature and RGB.
+            /*
+             * Convert between Temperature and RGB.
              * Base on information from http://www.brucelindbloom.com/
              * The fit for D-illuminant between 4000K and 12000K are from CIE
              * The generalization to 2000K < T < 4000K and the blackbody fits
@@ -305,25 +305,25 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
                 xD = -2.0064e9/(T*T*T) + 1.9018e6/(T*T) + 0.24748e3/T + 0.237040;
             }
 
-            yD     = -3*xD*xD + 2.87*xD - 0.275;
-            X      = xD/yD;
+            yD     = -3 * xD * xD + 2.87 * xD - 0.275;
+            X      = xD / yD;
             Y      = 1;
-            Z      = (1-xD-yD)/yD;
+            Z      = (1 - xD - yD) / yD;
             RGB[0] = X*XYZ_to_RGB[0][0] + Y*XYZ_to_RGB[1][0] + Z*XYZ_to_RGB[2][0];
             RGB[1] = X*XYZ_to_RGB[0][1] + Y*XYZ_to_RGB[1][1] + Z*XYZ_to_RGB[2][1];
             RGB[2] = X*XYZ_to_RGB[0][2] + Y*XYZ_to_RGB[1][2] + Z*XYZ_to_RGB[2][2];
 
-            /*
-             * End of the code picked to ufraw
-             */
+            // End of the code picked to ufraw
+            // -----------------------------------------------------------------------
 
             RGB[1] = RGB[1] / m_parent->m_decoderSettings.customWhiteBalanceGreen;
 
-            /* By default, decraw override his default D65 WB
-               We need to keep it as a basis : if not, colors with some
-               DSLR will have a high dominant of color that will lead to
-               a completely wrong WB
-            */
+            /*
+             * By default, decraw override his default D65 WB
+             * We need to keep it as a basis : if not, colors with some
+             * DSLR will have a high dominant of color that will lead to
+             * a completely wrong WB
+             */
             if (rawFileIdentify(identify, filePath))
             {
                 RGB[0] = identify.daylightMult[0] / RGB[0];
@@ -567,8 +567,8 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     setProgress(0.4);
 
     qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: data info: width=" << width
-             << " height=" << height
-             << " rgbmax=" << rgbmax;
+                                   << " height=" << height
+                                   << " rgbmax=" << rgbmax;
 
     return true;
 }
