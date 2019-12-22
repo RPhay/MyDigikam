@@ -273,9 +273,13 @@ QVariant AlbumFilterModel::dataForCurrentSortRole(Album* album) const
         {
             return static_cast<TAlbum*>(album)->title();
         }
-        else
+        else if (album->type() == Album::DATE)
         {
             return static_cast<DAlbum*>(album)->date();
+        }
+        else if (album->type() == Album::SEARCH)
+        {
+            return static_cast<SAlbum*>(album)->title();
         }
     }
 
