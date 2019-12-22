@@ -93,7 +93,6 @@ PAlbum* AlbumTreeView::albumForIndex(const QModelIndex& index) const
 void AlbumTreeView::setCurrentAlbums(const QList<Album*>& albums, bool selectInAlbumManager)
 {
     AbstractCheckableAlbumTreeView::setCurrentAlbums(albums, selectInAlbumManager);
-    scrollToSelectedAlbum();   // Workaround for bug 400960
 }
 
 void AlbumTreeView::setCurrentAlbum(int albumId, bool selectInAlbumManager)
