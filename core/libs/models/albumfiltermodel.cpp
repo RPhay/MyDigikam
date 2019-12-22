@@ -394,22 +394,23 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
             (rightAlbum->id() == FaceTags::unconfirmedPersonTagId()))
     {
         // unconfirmed tag album go to the top, regardless of sort role
-        return (sortOrder() == Qt::AscendingOrder) ?
-                    leftAlbum->id() == FaceTags::unconfirmedPersonTagId() : leftAlbum->id() != FaceTags::unconfirmedPersonTagId();
+        return (sortOrder() == Qt::AscendingOrder) ? leftAlbum->id() == FaceTags::unconfirmedPersonTagId()
+                                                   : leftAlbum->id() != FaceTags::unconfirmedPersonTagId();
     }
 
     if ((leftAlbum->id() == FaceTags::unknownPersonTagId()) !=
             (rightAlbum->id() == FaceTags::unknownPersonTagId()))
     {
         // unknown tag albums go to the top, regardless of sort role
-        return (sortOrder() == Qt::AscendingOrder) ?
-                    leftAlbum->id() == FaceTags::unknownPersonTagId() : leftAlbum->id() != FaceTags::unknownPersonTagId();
+        return (sortOrder() == Qt::AscendingOrder) ? leftAlbum->id() == FaceTags::unknownPersonTagId()
+                                                   : leftAlbum->id() != FaceTags::unknownPersonTagId();
     }
 
     if (leftAlbum->isTrashAlbum() != rightAlbum->isTrashAlbum())
     {
         // trash albums go to the bottom, regardless of sort role
-        return (sortOrder() == Qt::AscendingOrder) ? !leftAlbum->isTrashAlbum() : leftAlbum->isTrashAlbum();
+        return (sortOrder() == Qt::AscendingOrder) ? !leftAlbum->isTrashAlbum()
+                                                   : leftAlbum->isTrashAlbum();
     }
 
     QVariant valLeft  = dataForCurrentSortRole(leftAlbum);
