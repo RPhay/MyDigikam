@@ -414,15 +414,14 @@ void FilterSideBarWidget::slotWithoutTagChanged(int newState)
 
 void FilterSideBarWidget::filterChanged()
 {
-    bool showUntagged    = d->withoutTagCheckBox->checkState() == Qt::Checked;
-    bool showWithoutFace = d->withoutFaceCheckBox->checkState() == Qt::Checked;
+    bool showUntagged = d->withoutTagCheckBox->isChecked();
 
     QList<int> includedTagIds;
     QList<int> excludedTagIds;
     QList<int> clTagIds;
     QList<int> plTagIds;
 
-    if (!showUntagged || d->tagMatchCond == ItemFilterSettings::OrCondition)
+    if (!showUntagged || (d->tagMatchCond == ItemFilterSettings::OrCondition))
     {
         foreach (TAlbum* tag, d->tagFilterView->getCheckedTags())
         {
@@ -456,7 +455,7 @@ void FilterSideBarWidget::filterChanged()
             }
         }
 
-        if (showWithoutFace)
+        if (d->withoutFaceCheckBox->isChecked())
         {
             excludedTagIds << TagsCache::instance()->tagsWithProperty(TagPropertyName::person());
         }
