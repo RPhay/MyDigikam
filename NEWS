@@ -249,4 +249,5 @@ BUGFIXES:
 235 ==> 265022 - UI's handling of People tags is confusing.
 236 ==> 262180 - The toggle button to show/hide faces is difficult to see.
 237 ==> 316161 - Reuse face tags from another picture.
-238 ==> 
+238 ==> 412999 - Some photos downloaded in previous version of digikam no more recognized as already downloaded.
+239 ==> 
