@@ -80,6 +80,7 @@ BUGFIXES:
 066 ==> 342191 - digiKam keeps crashing after crash with face-detection and manual tagging at the same time.
 067 ==> 309769 - Crash on startup: 'Program received signal SIGILL, Illegal instruction.' (libopencv_nonfree).
 068 ==> 286418 - digikam crashed during face recognition.
-069 ==> 
+069 ==> 402470 - Crashed While I Walked Away During Face Detection.
+070 ==> 
 
 
