@@ -282,16 +282,26 @@ BUGFIXES:
 268 ==> 126151 - Raw (NEF) thumbnail not correctly showed.
 269 ==> 143244 - Error processing RAW files.
 270 ==> 235321 - Tried to open X3F file. Was showing up in preview but crashed while opening in editor.
-271 ==> 
-272 ==> 
-273 ==> 
-274 ==> 
-275 ==> 
-276 ==> 
-277 ==> 
-278 ==> 
-279 ==> 
-280 ==> 
+271 ==> 306843 - Raw-pics rotating.
+272 ==> 149328 - Let RawEngine use raw decoding options when generating thumbnails.
+273 ==> 150872 - Crash during during RAW conversion.
+274 ==> 182013 - Sensitivity is not shown for rw2 files.
+275 ==> 157619 - Let digiKam use preview images from raw files for more speed.
+276 ==> 220322 - Crash when reading nef data: Warning: Exif tag Exif.NikonPreview.JPEGInterchangeFormatLength not encoded.
+277 ==> 165176 - Previews of raw pics are not created when "create all previews new" is selected.
+278 ==> 149086 - RAF-picture finepix not show in Imageeditor (thumbnails are displayed).
+279 ==> 123950 - Crashing on raw files (.nef).
+280 ==> 320049 - RawEngine is crashing on decoding some sigma raw files.
+281 ==> 
+282 ==> 
+283 ==> 
+284 ==> 
+285 ==> 
+286 ==> 
+287 ==> 
+288 ==> 
+289 ==> 
+290 ==> 
 
 
 
