@@ -192,4 +192,18 @@ BUGFIXES:
 178 ==> 392142 - Use Tensorflow for face and object recognition.
 179 ==> 303501 - Double free or corruption during face tagging.
 180 ==> 314646 - digikam crash when (tagging) scanning collection for faces.
-181 ==> 
+181 ==> 317450 - Attempting to name a person while face tagging is in progress.
+182 ==> 318640 - Face detection crash.
+183 ==> 325385 - Face scan and using all processor cores.
+184 ==> 325712 - Face tagging has massive memory leak.
+185 ==> 326323 - Running Face Scan.
+186 ==> 329164 - Changing face tags in an image causes digiKam to eat up all the virtual memory.
+187 ==> 331912 - Face detection and recognition dos not work, tags and factags counts for one person are different, memory goes up and up without any result.
+188 ==> 334509 - Person Detection.
+189 ==> 337936 - Assigning a new person.
+190 ==> 
+
+
+
+
+
