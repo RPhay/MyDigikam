@@ -223,4 +223,7 @@ BUGFIXES:
 209 ==> 268761 - Segfault when tagging people without existing tag in preview mode.
 210 ==> 374165 - Tag Change in Menu Person search crashes.
 211 ==> 347753 - Surface freezes after some faces tagged.
-212 ==> 
+212 ==> 375945 - Face detection not scanning my images.
+213 ==> 343314 - Mass face tagging pictures when writing the tags into the files often crashes at the end of the writing.
+214 ==> 345909 - digiKam crashed when face taging multiple photos.
+215 ==> 
