@@ -219,6 +219,8 @@ BUGFIXES:
 205 ==> 339823 - Detect and recognice faces crashes.
 206 ==> 351077 - Crash during facial detection and recognition.
 207 ==> 375317 - MYSQL: digikam crashes during face recognition.
-208 ==> 
-
-
+208 ==> 299066 - digiKam crashed while tagging a large amount of people.
+209 ==> 268761 - Segfault when tagging people without existing tag in preview mode.
+210 ==> 374165 - Tag Change in Menu Person search crashes.
+211 ==> 347753 - Surface freezes after some faces tagged.
+212 ==> 
