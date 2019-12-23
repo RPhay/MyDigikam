@@ -189,4 +189,7 @@ BUGFIXES:
 175 ==> 339263 - digiKam crash.
 176 ==> 379470 - Crash when performing face detection or recognition on large collection.
 177 ==> 284154 - Crash upon exit.
-178 ==> 
+178 ==> 392142 - Use Tensorflow for face and object recognition.
+179 ==> 303501 - Double free or corruption during face tagging.
+180 ==> 314646 - digikam crash when (tagging) scanning collection for faces.
+181 ==> 
