@@ -78,5 +78,6 @@ BUGFIXES:
 064 ==> 377127 - Wrong item count on years in Dates View.
 065 ==> 350350 - Moving images notifies me moving finished when it did not finish yet.
 066 ==> 342191 - digiKam keeps crashing after crash with face-detection and manual tagging at the same time.
-067 ==> 
+067 ==> 309769 - Crash on startup: 'Program received signal SIGILL, Illegal instruction.' (libopencv_nonfree).
+068 ==> 
 
