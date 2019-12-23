@@ -209,8 +209,8 @@ BUGFIXES:
 195 ==> 338072 - digiKam face detection.
 196 ==> 387870 - undefined reference to typeinfo for cv::face::FaceRecognizer.
 197 ==> 327197 - When add one face tag in mainview/albums/one pictures view digikam and/or opencv fullfill the memory.
-198 ==> 
-
+198 ==> 353859 - FaceEngine multi threaded ?
+199 ==> 
 
 
 
