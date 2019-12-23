@@ -83,6 +83,38 @@ BUGFIXES:
 069 ==> 402470 - Crashed While I Walked Away During Face Detection.
 070 ==> 415046 - Facial Recognition crash during scan.
 071 ==> 360477 - Crash when adding a new face tag.
-072 ==> 
+072 ==> 351638 - digiKam crash after facemarking.
+073 ==> 350599 - Crash after maintenance.
+074 ==> 350549 - Massive memory usage when assigning a tag to a recognized face.
+075 ==> 312243 - digiKam crash when detected face moved or resized.
+076 ==> 329108 - Crash when running Scanning faces/Clear and rebuild all training data.
+077 ==> 280958 - Removing non-faces crashes digiKam.
+078 ==> 312289 - Face Scan Crash.
+079 ==> 285444 - Crash when adding face tag.
+080 ==> 328413 - Crash while tagging faces - no background detection in process.
+081 ==> 303328 - digiKam crashes repeatedly while tagging faces.
+082 ==> 307554 - digiKam crash when scanning faces.
+083 ==> 301506 - Crash while Tagging and Grouping Faces.
+084 ==> 309306 - Crash during face-recognition.
+085 ==> 284137 - digiKam crashed while moving a face tag after rotating a picture.
+086 ==> 299173 - Crash during face tagging.
+087 ==> 328560 - Crash when attempting to exit digiKam after aborted face recognition.
+088 ==> 323828 - Crash when assigning a name to a single unknown face.
+089 ==> 344735 - Crash if I name a face.
+090 ==> 275688 - Crash during face detection, whilst tagging.
+091 ==> 322022 - Faces and crash.
+092 ==> 326750 - digiKam sometimes crashes when tagging recogniced faces with names.
+093 ==> 314877 - Face Scan Crash.
+094 ==> 271791 - digiKam crashes when removing a "face image" from the current list when the list is not yet loaded completely.
+095 ==> 270410 - digiKam crashes when confirming faces.
+096 ==> 283197 - Crash during tagging faces.
+097 ==> 326689 - digiKam crashes while tagging faces.
+098 ==> 284398 - Crash while tagging persons.
+099 ==> 334158 - digiKam crash while tagging faces.
+100 ==> 321851 - Face scan crash but only on multithread.
+101 ==> 
+
+
+
 
 
