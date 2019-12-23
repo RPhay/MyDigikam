@@ -226,4 +226,9 @@ BUGFIXES:
 212 ==> 375945 - Face detection not scanning my images.
 213 ==> 343314 - Mass face tagging pictures when writing the tags into the files often crashes at the end of the writing.
 214 ==> 345909 - digiKam crashed when face taging multiple photos.
-215 ==> 
+215 ==> 401306 - digiKam doesn't compile with Opencv 4.
+216 ==> 376766 - Face detection is using all CPU cores regardless of the checked option.
+217 ==> 402320 - Memory hole (>1.5GB resident after 2 minutes) when detecting faces.
+218 ==> 389031 - Scanning collection for faces causes produces lots of OpenCV errors.
+219 ==> 325331 - MySQL : when adding a new face, tag is created with a new _Digikam_root_ tag in database.
+220 ==> 
