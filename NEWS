@@ -201,7 +201,13 @@ BUGFIXES:
 187 ==> 331912 - Face detection and recognition dos not work, tags and factags counts for one person are different, memory goes up and up without any result.
 188 ==> 334509 - Person Detection.
 189 ==> 337936 - Assigning a new person.
-190 ==> 
+190 ==> 342144 - Face detection.
+191 ==> 344661 - Face recognition makes digikam fill all the available memory.
+192 ==> 345395 - Face Management the Memory and Swap growed to max.
+193 ==> 365669 - Face Recognition improvement suggestion.
+194 ==> 376901 - Face Recognition Algorithm Improvements.
+195 ==> 
+
 
 
 
