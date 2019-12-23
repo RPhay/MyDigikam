@@ -231,4 +231,22 @@ BUGFIXES:
 217 ==> 402320 - Memory hole (>1.5GB resident after 2 minutes) when detecting faces.
 218 ==> 389031 - Scanning collection for faces causes produces lots of OpenCV errors.
 219 ==> 325331 - MySQL : when adding a new face, tag is created with a new _Digikam_root_ tag in database.
-220 ==> 
+220 ==> 262577 - Scanning collection for new faces (skip already scanned images) does not do anything.
+221 ==> 330143 - "Detect and recognize faces" does no detection.
+222 ==> 392527 - "Add A Face Tag" Dialogue Is Too Small.
+223 ==> 372761 - Face Tag selection needs extra confirm now.
+224 ==> 375418 - Glitch in face selection in album view.
+225 ==> 281792 - When tagging with 'Return', too many faces are tagged.
+226 ==> 282592 - Rejecting multiple faces at a time doesn't work properly.
+227 ==> 376681 - Region Coordinates Are Sometimes inf / Large Numbers.
+228 ==> 380251 - "Show only face tags..." not working properly.
+229 ==> 326538 - When a picture is in portrait, face thumbnails are not rotated.
+230 ==> 279208 - After the upgrade to Plasma and digiKam Faces Are Not Detected Anymore.
+231 ==> 316856 - I suggest to extend face recognition to text-recognition system.
+232 ==> 381378 - Face rectangle from XMP sidecar drawn incorrectly for EXIF rotated images.
+233 ==> 326035 - Stepping through previews with "show face tags" enabled does not always show the tags.
+234 ==> 326033 - Adding or changing face tag in preview window causes all tags on that preview to "hide".
+235 ==> 265022 - UI's handling of People tags is confusing.
+236 ==> 262180 - The toggle button to show/hide faces is difficult to see.
+237 ==> 316161 - Reuse face tags from another picture.
+238 ==> 
