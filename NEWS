@@ -188,4 +188,5 @@ BUGFIXES:
 174 ==> 307110 - digiKam crashes when manually adding face tags, then moving to next image.
 175 ==> 339263 - digiKam crash.
 176 ==> 379470 - Crash when performing face detection or recognition on large collection.
-177 ==> 
+177 ==> 284154 - Crash upon exit.
+178 ==> 
