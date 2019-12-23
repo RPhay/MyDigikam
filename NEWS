@@ -112,9 +112,63 @@ BUGFIXES:
 098 ==> 284398 - Crash while tagging persons.
 099 ==> 334158 - digiKam crash while tagging faces.
 100 ==> 321851 - Face scan crash but only on multithread.
-101 ==> 
-
-
-
-
-
+101 ==> 308393 - Crash while scanning faces.
+102 ==> 326570 - digiKam crashes while recognizing/tagging faces.
+103 ==> 343014 - Crashed when select another tag (face tag management).
+104 ==> 327699 - Crashing while face detection.
+105 ==> 308645 - digiKam crashed when I clicked scan faces while another scan was already running.
+106 ==> 287961 - Crash while face-tagging pictures and doing import.
+107 ==> 317863 - digiKam crashes as detected faces are being assigned to people or being removed while face detection is running.
+108 ==> 302354 - Crash finding again faces (probably a duplicate of 262596).
+109 ==> 320861 - Crash when adding tag to photo of the face scan result.
+110 ==> 326794 - Tagging faces crashed digiKam.
+111 ==> 274850 - digiKam crash on face scanning.
+112 ==> 283165 - Crash happened while running face recognition.
+113 ==> 280521 - digiKam crashes when deselecting two pictures in in quick succession from the face view.
+114 ==> 303304 - Crash during face detection.
+115 ==> 329596 - digiKam crashes during face recognition.
+116 ==> 298599 - digiKam crashed while scaning for faces in the background.
+117 ==> 304360 - Crash during face tagging.
+118 ==> 280620 - digiKam crashes when tagging multiple non-faces.
+119 ==> 302437 - Crash when re-searching for faces.
+120 ==> 274727 - Crash on scan of faces.
+121 ==> 333582 - Scanning for faces crashes.
+122 ==> 290826 - digiKam crashed while tagging faces.
+123 ==> 289003 - Crash when trying to face-scan all images.
+124 ==> 280618 - digiKam crashes when tagging multiple faces.
+125 ==> 329651 - Face detection crashes when reaches 3 GB of Memory, the computer has 6GB and 2 are still free.
+126 ==> 294452 - digiKam crash in "Scan collection for faces".
+127 ==> 268102 - Crash when finding faces.
+128 ==> 323823 - Crash while first face detection after update.
+129 ==> 336236 - Crash while tagging faces on more than one image at same time.
+130 ==> 279266 - digiKam crashes while trying to tag faces.
+131 ==> 312442 - digiKam crashed when editing face tags.
+132 ==> 275827 - digiKam crash whilst scanning for faces, starting to enter tag.
+133 ==> 330828 - Crash while detecting faces.
+134 ==> 324711 - Crash when scaning faces.
+135 ==> 323654 - digiKam crashed while i was tagging faces.
+136 ==> 283540 - digiKam crashes on entering people tages (face recognition).
+137 ==> 277099 - digiKam crash when adding a tag to a face.
+138 ==> 296281 - digiKam crashed while manually adding a face.
+139 ==> 325526 - Crash while tagging faces.
+140 ==> 275637 - Performing multiple scans and recognises causes crash.
+141 ==> 289228 - Crash when detecting faces.
+142 ==> 317413 - digiKam crashed while tagging faces.
+143 ==> 334580 - Face detection crashes digiKam.
+144 ==> 301781 - digiKam crashed while scanning photos for faces.
+145 ==> 
+146 ==> 
+147 ==> 
+148 ==> 
+149 ==> 
+150 ==> 
+151 ==> 
+152 ==> 
+153 ==> 
+154 ==> 
+155 ==> 
+156 ==> 
+157 ==> 
+158 ==> 
+159 ==> 
+160 ==> 
