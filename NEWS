@@ -302,14 +302,14 @@ BUGFIXES:
 288 ==> 272725 - Some PEF/jpeg files not recognized as raw/non raw
 289 ==> 154922 - Start to use libopenraw instead of libraw.
 290 ==> 359949 - Bad canon raw file makes digikam to crash at startup.
-291 ==> 
-292 ==> 
-293 ==> 
-294 ==> 
-295 ==> 
-296 ==> 
-297 ==> 
-298 ==> 
-299 ==> 
-300 ==> 
+291 ==> 101281 - EXIF info from RAW images not woking properly.
+292 ==> 342233 - Crash when decoding pentax k-r raw photo.
+293 ==> 139550 - Autocorrect levels for raw photos (which are shown too dark).
+294 ==> 099437 - Incorrect Libraw option.
+295 ==> 155156 - Raw file conversion crash single/batch mode.
+296 ==> 146259 - Raw Converter won't convert to 16bit PNG.
+297 ==> 151523 - RAW converter crashes on startup.
+298 ==> 242479 - Crashes on appling refocus tool to raw image.
+299 ==> 361678 - Dng Converter crashes when opening a raw file (*.NEF in my case).
+300 ==> 382576 - DNG Image Converter crashed trying to convert a RAW image.
 301 ==> 
