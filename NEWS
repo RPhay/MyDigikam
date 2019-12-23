@@ -81,6 +81,7 @@ BUGFIXES:
 067 ==> 309769 - Crash on startup: 'Program received signal SIGILL, Illegal instruction.' (libopencv_nonfree).
 068 ==> 286418 - digikam crashed during face recognition.
 069 ==> 402470 - Crashed While I Walked Away During Face Detection.
-070 ==> 
+070 ==> 415046 - Facial Recognition crash during scan.
+071 ==> 
 
 
