@@ -250,4 +250,53 @@ BUGFIXES:
 236 ==> 262180 - The toggle button to show/hide faces is difficult to see.
 237 ==> 316161 - Reuse face tags from another picture.
 238 ==> 412999 - Some photos downloaded in previous version of digikam no more recognized as already downloaded.
-239 ==> 
+239 ==> 334215 - Cannot open RAW files from Sony A7R.
+240 ==> 340595 - Convertion Sony A7 raw file turns to red the result.
+241 ==> 307313 - digiKam uses wrong darkness/saturation values.
+242 ==> 315156 - CR2 files from Canon PowerShot G1 X the colours are messed up.
+243 ==> 332126 - LibRaw_r_LIBRARIES CMake Error: The following variables are used in this project, but they are set to NOTFOUND.
+244 ==> 352996 - digiKam crashes while scanning for new files in Collection.
+245 ==> 362779 - Can't decode PEF image from Pentax K-1 (36mp).
+246 ==> 364063 - Crash on startup (related to crashing on conversion to DNG?).
+247 ==> 221984 - Choosing manual WB does not allow user to tweak the previously selected WB setting.
+248 ==> 182611 - Segfault with Samsung S85 RAW images.
+249 ==> 178760 - Conversion of Canon .cr2 files broken as used in Darkroom.
+250 ==> 364230 - Crash on startup.
+251 ==> 244142 - digiKam crash.
+252 ==> 362418 - Crashes on launch.
+253 ==> 253091 - digiKam will not launch.
+254 ==> 338075 - Tagging RAW images for Canon EOS-1Ds corrupts them.
+255 ==> 205006 - On first run, digikam crashes while creating the index.
+256 ==> 409148 - Sony A7r3 ARW files are displayed blurred in preview.
+257 ==> 388339 - Crash when importing Pentax DNG file.
+258 ==> 329230 - Crash when tuning a raw image.
+259 ==> 253877 - digiKam Crash when loading.
+260 ==> 134700 - CR2 thumbnails are not rotated.
+261 ==> 090875 - Preview of RAW-Files in album.
+262 ==> 143681 - Can't edit/view NEF anymore.
+263 ==> 341024 - digiKam crash in a dir with only Canon Raw and JPEG files.
+264 ==> 132695 - CR2 RAW files do not open.
+265 ==> 339924 - RAW preview using embedded JPG.
+266 ==> 142057 - Speed to view raw pictures.
+267 ==> 187015 - Libraw breaks RW2 file handling.
+268 ==> 126151 - Raw (NEF) thumbnail not correctly showed.
+269 ==> 143244 - Error processing RAW files.
+270 ==> 235321 - Tried to open X3F file. Was showing up in preview but crashed while opening in editor.
+271 ==> 
+272 ==> 
+273 ==> 
+274 ==> 
+275 ==> 
+276 ==> 
+277 ==> 
+278 ==> 
+279 ==> 
+280 ==> 
+
+
+
+
+
+
+
+
