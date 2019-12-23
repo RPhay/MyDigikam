@@ -206,7 +206,10 @@ BUGFIXES:
 192 ==> 345395 - Face Management the Memory and Swap growed to max.
 193 ==> 365669 - Face Recognition improvement suggestion.
 194 ==> 376901 - Face Recognition Algorithm Improvements.
-195 ==> 
+195 ==> 338072 - digiKam face detection.
+196 ==> 387870 - undefined reference to typeinfo for cv::face::FaceRecognizer.
+197 ==> 
+
 
 
 
