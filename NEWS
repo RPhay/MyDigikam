@@ -185,6 +185,7 @@ BUGFIXES:
 171 ==> 268046 - Switch foto with face recognition.
 172 ==> 277163 - digikam valgrind issues during face recognition testing.
 173 ==> 302359 - Crash creating a tag while scanning faces.
-174 ==> 
-
-
+174 ==> 307110 - digiKam crashes when manually adding face tags, then moving to next image.
+175 ==> 339263 - digiKam crash.
+176 ==> 379470 - Crash when performing face detection or recognition on large collection.
+177 ==> 
