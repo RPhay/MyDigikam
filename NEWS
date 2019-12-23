@@ -214,6 +214,7 @@ BUGFIXES:
 200 ==> 406838 - digiKam crashes while labeling unconfirmed faces.
 201 ==> 409437 - Crash when doing any face detection.
 202 ==> 404853 - digiKam faces engine fails to compile on PowerPC.
-203 ==> 
+203 ==> 405625 - digiKam faces engine fails to compile on PowerPC with AltiVec enabled.
+204 ==> 
 
 
