@@ -292,21 +292,24 @@ BUGFIXES:
 278 ==> 149086 - RAF-picture finepix not show in Imageeditor (thumbnails are displayed).
 279 ==> 123950 - Crashing on raw files (.nef).
 280 ==> 320049 - RawEngine is crashing on decoding some sigma raw files.
-281 ==> 
-282 ==> 
-283 ==> 
-284 ==> 
-285 ==> 
-286 ==> 
-287 ==> 
-288 ==> 
-289 ==> 
-290 ==> 
-
-
-
-
-
-
-
-
+281 ==> 277707 - Easy way to convert Raw, to get same image as seen in preview.
+282 ==> 146738 - Fuji *.RAF files aren't recognized as RAW files.
+283 ==> 331397 - Preview and thumbnails colors are wrong for cr2.
+284 ==> 210659 - Inconsistent Save / Save As handling in image editor after raw import.
+285 ==> 155950 - Raw file open with action causes two instances.
+286 ==> 337601 - digiKam crashed on closing after interrupted raw processing.
+287 ==> 219748 - Image editor doesn't import raw images twice.
+288 ==> 272725 - Some PEF/jpeg files not recognized as raw/non raw
+289 ==> 154922 - Start to use libopenraw instead of libraw.
+290 ==> 359949 - Bad canon raw file makes digikam to crash at startup.
+291 ==> 
+292 ==> 
+293 ==> 
+294 ==> 
+295 ==> 
+296 ==> 
+297 ==> 
+298 ==> 
+299 ==> 
+300 ==> 
+301 ==> 
