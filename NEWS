@@ -82,6 +82,7 @@ BUGFIXES:
 068 ==> 286418 - digikam crashed during face recognition.
 069 ==> 402470 - Crashed While I Walked Away During Face Detection.
 070 ==> 415046 - Facial Recognition crash during scan.
-071 ==> 
+071 ==> 360477 - Crash when adding a new face tag.
+072 ==> 
 
 
