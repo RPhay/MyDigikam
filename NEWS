@@ -181,4 +181,10 @@ BUGFIXES:
 167 ==> 280901 - Crash when rejecting faces in different albums.
 168 ==> 290891 - digiKam Crash while Face Recognition.
 169 ==> 293418 - Crashes when scanning for faces.
-170 ==> 
+170 ==> 273161 - digiKam: malloc(): smallbin double linked list corrupted.
+171 ==> 268046 - Switch foto with face recognition.
+172 ==> 277163 - digikam valgrind issues during face recognition testing.
+173 ==> 302359 - Crash creating a tag while scanning faces.
+174 ==> 
+
+
