@@ -218,6 +218,7 @@ BUGFIXES:
 204 ==> 194401 - Face detection / recognition for digiKam for tags.
 205 ==> 339823 - Detect and recognice faces crashes.
 206 ==> 351077 - Crash during facial detection and recognition.
-207 ==> 
+207 ==> 375317 - MYSQL: digikam crashes during face recognition.
+208 ==> 
 
 
