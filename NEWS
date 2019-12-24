@@ -315,10 +315,21 @@ BUGFIXES:
 301 ==> 326268 - SONY SLT A58.
 302 ==> 140087 - Sony Alpha Super SteadyShot Meta Info.
 303 ==> 282116 - DNG Converter fails to convert Nikon NEF to DNG.
-304 ==> 
-305 ==> 
-306 ==> 
-307 ==> 
-308 ==> 
-309 ==> 
-310 ==> 
+304 ==> 270457 - Crash when opening a NIKON-jpg with 1.3 MB.
+305 ==> 135011 - Sort images by EXIF date seems buggy for Nikon (or not just Nikon?).
+306 ==> 141249 - CANON EOS 5D not support.
+307 ==> 240750 - DNG Converter produces black files (Canon 5D mkII)
+308 ==> 361660 - DNG Image Converter crashes when converting Canon cr2 file.
+309 ==> 211908 - TIF (RAW from Phase One and old Canon, not TIFF/EP) opens as thumbnail.
+310 ==> 388222 - high RAM memory consumption of digiKam.
+311 ==> 338249 - digiKam uses all free memory and gets terminated.
+312 ==> 131277 - Memory leak in image editor.
+313 ==> 252443 - digiKam leaves a zombie after quit. doesn't free memory.
+314 ==> 321784 - Recreating fingerprints leaks memory.
+315 ==> 381877 - digiKam start allocating all memory when scans a new collection.
+316 ==> 098227 - Huge memory leak when downloading from camera.
+317 ==> 330227 - Image quality sorter leaks memory.
+318 ==> 412893 - Application windows are incorrectly magnified in macOS.
+319 ==> 413656 - Manage Tags window appears with messed up double size graphics.
+320 ==> 
+
