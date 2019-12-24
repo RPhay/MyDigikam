@@ -333,11 +333,11 @@ BUGFIXES:
 319 ==> 413656 - Manage Tags window appears with messed up double size graphics.
 320 ==> 092783 - Usabilitiy of RAW file support.
 321 ==> 158911 - digiKam crashes before RAW convert.
-322 ==> 
-323 ==> 
-324 ==> 
-325 ==> 
-326 ==> 
+322 ==> 362870 - DNG Convert crash on convert NEF file.
+323 ==> 367859 - DNG Converter crashed after trying to nconvert CR2 file.
+324 ==> 369289 - DNG converter crashes when converting Olympus (.ORF) files.
+325 ==> 407203 - Crash on trying to convert a .NEF file.
+326 ==> 370623 - digiKam converter to DNG report an error while to process NEF image.
 327 ==> 
 328 ==> 
 329 ==> 
