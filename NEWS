@@ -338,7 +338,7 @@ BUGFIXES:
 324 ==> 369289 - DNG converter crashes when converting Olympus (.ORF) files.
 325 ==> 407203 - Crash on trying to convert a .NEF file.
 326 ==> 370623 - digiKam converter to DNG report an error while to process NEF image.
-327 ==> 
-328 ==> 
-329 ==> 
+327 ==> 354364 - Crash of DNG converter.
+328 ==> 338842 - Moving DNG images to another album corrupts DNG properties.
+329 ==> 401849 - Cannot Save Current Search.
 330 ==> 
