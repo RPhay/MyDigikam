@@ -341,4 +341,15 @@ BUGFIXES:
 327 ==> 354364 - Crash of DNG converter.
 328 ==> 338842 - Moving DNG images to another album corrupts DNG properties.
 329 ==> 401849 - Cannot Save Current Search.
-330 ==> 
+330 ==> 372972 - Find duplicates "search in drop down" only shows 1 item.
+331 ==> 351521 - digiKam crashes when searching by date.
+332 ==> 335978 - digiKam crashes when using timeline.
+333 ==> 335052 - Crash on looking for duplicate.
+334 ==> 333952 - Crashed when trying to search for duplicates.
+335 ==> 218022 - Albums are sorted alphabetically within the month.
+336 ==> 326495 - Calendar: higher flexibility in the layout.
+337 ==> 281848 - Search for images with no goelocation.
+338 ==> 283045 - Crash when searching with timeline.
+339 ==> 281895 - digiKam crashed the selection date in the calendar.
+340 ==> 280760 - Find duplicates should handle raw files more intelligently.
+341 ==> 
