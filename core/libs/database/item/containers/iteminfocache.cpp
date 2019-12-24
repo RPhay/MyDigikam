@@ -101,7 +101,7 @@ QExplicitlySharedDataPointer<ItemInfoData> ItemInfoCache::infoForId(qlonglong id
 {
     {
         ItemInfoReadLocker lock;
-        QExplicitlySharedDataPointer<ItemInfoData> ptr(m_infos.value(id));
+        QExplicitlySharedDataPointer<ItemInfoData> ptr(m_infoHash.value(id));
 
         if (ptr)
         {
@@ -112,16 +112,16 @@ QExplicitlySharedDataPointer<ItemInfoData> ItemInfoCache::infoForId(qlonglong id
     ItemInfoWriteLocker lock;
     ItemInfoData* const data = new ItemInfoData();
     data->id                 = id;
-    m_infos[id]              = data;
+    m_infoHash[id]           = data;
 
     return QExplicitlySharedDataPointer<ItemInfoData>(data);
 }
 
-void ItemInfoCache::cacheByName(const QExplicitlySharedDataPointer<ItemInfoData>& ptr)
+void ItemInfoCache::cacheByName(const QExplicitlySharedDataPointer<ItemInfoData>& infoPtr)
 {
     // Called with Write lock
 
-    ItemInfoData* const data = ptr.data();
+    ItemInfoData* const data = infoPtr.data();
 
     if (!data || data->id == -1 || data->name.isEmpty())
     {
@@ -164,25 +164,24 @@ QExplicitlySharedDataPointer<ItemInfoData> ItemInfoCache::infoForPath(int albumR
     return QExplicitlySharedDataPointer<ItemInfoData>();
 }
 
-void ItemInfoCache::dropInfo(const QExplicitlySharedDataPointer<ItemInfoData>& ptr)
+void ItemInfoCache::dropInfo(const QExplicitlySharedDataPointer<ItemInfoData>& infoPtr)
 {
-    if (!ptr)
+    if (!infoPtr)
     {
         return;
     }
 
     ItemInfoWriteLocker lock;
-    ItemInfoData* const data = ptr.data();
+    ItemInfoData* const data = infoPtr.data();
 
     if (!data || (data->ref > 1))
     {
         return;
     }
 
-    m_infos.remove(data->id);
-
     m_nameHash.remove(m_dataHash.value(data), data);
     m_nameHash.remove(data->name, data);
+    m_infoHash.remove(data->id);
     m_dataHash.remove(data);
 }
 
@@ -224,16 +223,16 @@ void ItemInfoCache::invalidate()
     ItemInfoWriteLocker lock;
     QHash<qlonglong, ItemInfoData*>::iterator it;
 
-    for (it = m_infos.begin() ; it != m_infos.end() ; ++it)
+    for (it = m_infoHash.begin() ; it != m_infoHash.end() ; ++it)
     {
         (*it)->invalid = true;
         (*it)->id      = -1;
     }
 
-    m_infos.clear();
     m_albums.clear();
     m_grouped.clear();
     m_nameHash.clear();
+    m_infoHash.clear();
     m_dataHash.clear();
     m_needUpdateAlbums  = true;
     m_needUpdateGrouped = true;
@@ -245,9 +244,9 @@ void ItemInfoCache::slotImageChanged(const ImageChangeset& changeset)
 
     foreach (const qlonglong& imageId, changeset.ids())
     {
-        QHash<qlonglong, ItemInfoData*>::iterator it = m_infos.find(imageId);
+        QHash<qlonglong, ItemInfoData*>::iterator it = m_infoHash.find(imageId);
 
-        if (it != m_infos.end())
+        if (it != m_infoHash.end())
         {
             // invalidate the relevant field. It will be lazy-loaded at first access.
             DatabaseFields::Set changes = changeset.changes();
@@ -357,9 +356,9 @@ void ItemInfoCache::slotImageTagChanged(const ImageTagChangeset& changeset)
 
     foreach (const qlonglong& imageId, changeset.ids())
     {
-        QHash<qlonglong, ItemInfoData*>::iterator it = m_infos.find(imageId);
+        QHash<qlonglong, ItemInfoData*>::iterator it = m_infoHash.find(imageId);
 
-        if (it != m_infos.end())
+        if (it != m_infoHash.end())
         {
             (*it)->tagIdsCached     = false;
             (*it)->colorLabelCached = false;

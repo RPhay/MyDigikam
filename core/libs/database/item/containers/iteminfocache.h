@@ -63,14 +63,14 @@ public:
      * Call this when the data has been dereferenced,
      * before deletion.
      */
-    void dropInfo(const QExplicitlySharedDataPointer<ItemInfoData>& ptr);
+    void dropInfo(const QExplicitlySharedDataPointer<ItemInfoData>& infoPtr);
 
     /**
      * Call this to put data in the hash by file name if you have newly created data
      * and the name is filled.
      * Call under write lock.
      */
-    void cacheByName(const QExplicitlySharedDataPointer<ItemInfoData>& ptr);
+    void cacheByName(const QExplicitlySharedDataPointer<ItemInfoData>& infoPtr);
 
     /**
      * Return an ItemInfoData object for the given album root, relativePath and file name triple.
@@ -108,9 +108,9 @@ private:
 
 private:
 
-    QHash<qlonglong, ItemInfoData*>    m_infos;
-    QHash<ItemInfoData*, QString>      m_dataHash;
     QMultiHash<QString, ItemInfoData*> m_nameHash;
+    QHash<qlonglong, ItemInfoData*>    m_infoHash;
+    QHash<ItemInfoData*, QString>      m_dataHash;
     volatile bool                      m_needUpdateAlbums;
     volatile bool                      m_needUpdateGrouped;
     QList<qlonglong>                   m_grouped;
