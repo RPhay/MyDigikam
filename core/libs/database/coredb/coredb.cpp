@@ -26,13 +26,6 @@
 
 #include "coredb.h"
 
-// Qt includes
-
-#include <QFile>
-#include <QFileInfo>
-#include <QDir>
-#include <QVariant>
-
 // KDE includes
 
 #include <ksharedconfig.h>

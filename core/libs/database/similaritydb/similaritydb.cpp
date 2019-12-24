@@ -26,12 +26,6 @@
 
 #include "similaritydb.h"
 
-// Qt includes
-
-#include <QFile>
-#include <QFileInfo>
-#include <QDir>
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -50,8 +44,6 @@ public:
     }
 
     SimilarityDbBackend* db;
-    //bool                 dbAvailable;
-
 };
 
 SimilarityDb::SimilarityDb(SimilarityDbBackend* const backend)
@@ -70,6 +62,7 @@ bool SimilarityDb::setSetting(const QString& keyword, const QString& value )
     QMap<QString, QVariant> parameters;
     parameters.insert(QLatin1String(":keyword"), keyword);
     parameters.insert(QLatin1String(":value"), value);
+
     BdEngineBackend::QueryState queryStateResult =
             d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("ReplaceSimilaritySetting")),
                                                    parameters);
@@ -82,6 +75,7 @@ QString SimilarityDb::getSetting(const QString& keyword)
     QMap<QString, QVariant> parameters;
     parameters.insert(QLatin1String(":keyword"), keyword);
     QList<QVariant> values;
+
     // TODO Should really check return status here
     BdEngineBackend::QueryState queryStateResult =
             d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("SelectSimilaritySetting")),
@@ -93,10 +87,8 @@ QString SimilarityDb::getSetting(const QString& keyword)
     {
         return QString();
     }
-    else
-    {
-        return values.first().toString();
-    }
+
+    return values.first().toString();
 }
 
 QString SimilarityDb::getLegacySetting(const QString& keyword)
@@ -104,6 +96,7 @@ QString SimilarityDb::getLegacySetting(const QString& keyword)
     QMap<QString, QVariant> parameters;
     parameters.insert(QLatin1String(":keyword"), keyword);
     QList<QVariant> values;
+
     // TODO Should really check return status here
     BdEngineBackend::QueryState queryStateResult =
             d->db->execDBAction(d->db->getDBAction(QString::fromUtf8("SelectSimilarityLegacySetting")),
@@ -115,10 +108,8 @@ QString SimilarityDb::getLegacySetting(const QString& keyword)
     {
         return QString();
     }
-    else
-    {
-        return values.first().toString();
-    }
+
+    return values.first().toString();
 }
 
 // ----------- General methods for entry access ----------
@@ -126,32 +117,29 @@ QString SimilarityDb::getLegacySetting(const QString& keyword)
 QSet<qlonglong> SimilarityDb::registeredImageIds() const
 {
     QSet<qlonglong> imageIds;
+    QList<QVariant> values;
 
+    // Get all image ids from the first and second imageid column of the ImageSimilarity table.
+    d->db->execSql(QString::fromUtf8("SELECT imageid1, imageId2 FROM ImageSimilarity;"),
+                   &values);
+
+    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
     {
-        // Get all image ids from the first and second imageid column of the ImageSimilarity table.
-        QList<QVariant> values;
-        d->db->execSql(QString::fromUtf8("SELECT imageid1, imageId2 FROM ImageSimilarity;"),
-                       &values);
-
-        for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; )
-        {
-            imageIds << (*it).toLongLong();
-            ++it;
-            imageIds << (*it).toLongLong();
-            ++it;
-        }
+        imageIds << (*it).toLongLong();
+        ++it;
+        imageIds << (*it).toLongLong();
+        ++it;
     }
 
-    {
-        // get all image ids from the ImageHaarMatrix table.
-        QList<QVariant> values;
-        d->db->execSql(QString::fromUtf8("SELECT imageid FROM ImageHaarMatrix;"),
-                       &values);
+    values.clear();
 
-        foreach (const QVariant& var, values)
-        {
-            imageIds << var.toLongLong();
-        }
+    // get all image ids from the ImageHaarMatrix table.
+    d->db->execSql(QString::fromUtf8("SELECT imageid FROM ImageHaarMatrix;"),
+                   &values);
+
+    foreach (const QVariant& var, values)
+    {
+        imageIds << var.toLongLong();
     }
 
     return imageIds;
@@ -172,10 +160,8 @@ bool SimilarityDb::hasFingerprint(qlonglong imageId, FuzzyAlgorithm algorithm) c
         // return true if there is at least one fingerprint
         return !values.isEmpty();
     }
-    else
-    {
-        return false;
-    }
+
+    return false;
 }
 
 
@@ -197,10 +183,8 @@ bool SimilarityDb::hasFingerprints(FuzzyAlgorithm algorithm) const
         // return true if there is at least one fingerprint
         return !values.isEmpty();
     }
-    else
-    {
-        return false;
-    }
+
+    return false;
 }
 
 bool SimilarityDb::hasDirtyOrMissingFingerprint(const ItemInfo& imageInfo, FuzzyAlgorithm algorithm) const
@@ -208,6 +192,7 @@ bool SimilarityDb::hasDirtyOrMissingFingerprint(const ItemInfo& imageInfo, Fuzzy
     if (algorithm == FuzzyAlgorithm::Haar)
     {
         QList<QVariant> values;
+
         d->db->execSql(QString::fromUtf8("SELECT modificationDate, uniqueHash FROM ImageHaarMatrix "
                                          "WHERE imageid=?;"),
                        imageInfo.id(), &values);
@@ -244,6 +229,7 @@ QList<qlonglong> SimilarityDb::getDirtyOrMissingFingerprints(const QList<ItemInf
         foreach (const ItemInfo& info, imageInfos)
         {
             QList<QVariant> values;
+
             d->db->execSql(QString::fromUtf8("SELECT modificationDate, uniqueHash FROM ImageHaarMatrix "
                                              "WHERE imageid=?;"),
                            info.id(), &values);
@@ -281,6 +267,7 @@ QStringList SimilarityDb::getDirtyOrMissingFingerprintURLs(const QList<ItemInfo>
         foreach (const ItemInfo& info, imageInfos)
         {
             QList<QVariant> values;
+
             d->db->execSql(QString::fromUtf8("SELECT modificationDate, uniqueHash FROM ImageHaarMatrix "
                                              "WHERE imageid=?;"),
                            info.id(), &values);
@@ -437,6 +424,7 @@ QList<FuzzyAlgorithm> SimilarityDb::getImageSimilarityAlgorithms(qlonglong image
     QPair<qlonglong, qlonglong> orderedIds = orderIds(imageID1, imageID2);
 
     QList<QVariant> values;
+
     d->db->execSql(QString::fromUtf8("SELECT algorithm FROM ImageSimilarity "
                                      "WHERE imageid1=? AND imageid2=?;"),
                    orderedIds.first, orderedIds.second, &values);
@@ -482,7 +470,7 @@ bool SimilarityDb::integrityCheck()
                 return false;
             }
 
-            for (QList<QVariant>::iterator it = values.begin(); it != values.end(); )
+            for (QList<QVariant>::iterator it = values.begin() ; it != values.end() ; )
             {
                 QString tableName   = (*it).toString();
                 ++it;
@@ -551,14 +539,12 @@ QString SimilarityDb::getImageSimilarityOrdered(qlonglong imageID1, qlonglong im
                    imageID1, imageID2, (int)algorithm,
                    &values);
 
-    if (!values.isEmpty())
-    {
-        return values.first().toString();
-    }
-    else
+    if (values.isEmpty())
     {
         return QString();
     }
+
+    return values.first().toString();
 }
 
 } // namespace Digikam
