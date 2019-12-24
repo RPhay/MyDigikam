@@ -314,7 +314,7 @@ BUGFIXES:
 300 ==> 382576 - DNG Image Converter crashed trying to convert a RAW image.
 301 ==> 326268 - SONY SLT A58.
 302 ==> 140087 - Sony Alpha Super SteadyShot Meta Info.
-303 ==> 
+303 ==> 282116 - DNG Converter fails to convert Nikon NEF to DNG.
 304 ==> 
 305 ==> 
 306 ==> 
