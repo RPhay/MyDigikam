@@ -281,7 +281,7 @@ ItemInfo::ItemInfo(const ItemListerRecord& record)
 
     if (newlyCreated)
     {
-        ItemInfoStatic::cache()->cacheByName(m_data.data());
+        ItemInfoStatic::cache()->cacheByName(m_data);
     }
 }
 
@@ -293,7 +293,7 @@ ItemInfo::ItemInfo(qlonglong ID)
     if (m_data->albumId == -1)
     {
         // retrieve immutable values now, the rest on demand
-        ItemShortInfo info  = CoreDbAccess().db()->getItemShortInfo(ID);
+        ItemShortInfo info = CoreDbAccess().db()->getItemShortInfo(ID);
 
         if (info.id)
         {
@@ -301,18 +301,13 @@ ItemInfo::ItemInfo(qlonglong ID)
             m_data->albumId     = info.albumID;
             m_data->albumRootId = info.albumRootID;
             m_data->name        = info.itemName;
-            ItemInfoStatic::cache()->cacheByName(m_data.data());
+            ItemInfoStatic::cache()->cacheByName(m_data);
         }
         else
         {
             // invalid image id
-            ItemInfoData* const olddata = m_data.data();
-
-            if (olddata)
-            {
-                ItemInfoStatic::cache()->dropInfo(olddata);
-                m_data = nullptr;
-            }
+            ItemInfoStatic::cache()->dropInfo(m_data);
+            m_data.reset();
         }
     }
 }
@@ -360,7 +355,7 @@ ItemInfo ItemInfo::fromLocationAlbumAndName(int locationId, const QString& album
         if (!shortInfo.id)
         {
             qCWarning(DIGIKAM_DATABASE_LOG) << "No itemShortInfo could be retrieved from the database for image" << name;
-            info.m_data = nullptr;
+            info.m_data.reset();
             return info;
         }
 
@@ -371,7 +366,7 @@ ItemInfo ItemInfo::fromLocationAlbumAndName(int locationId, const QString& album
         info.m_data->albumRootId = shortInfo.albumRootID;
         info.m_data->name        = shortInfo.itemName;
 
-        ItemInfoStatic::cache()->cacheByName(info.m_data.data());
+        ItemInfoStatic::cache()->cacheByName(info.m_data);
     }
 
     return info;
@@ -379,13 +374,8 @@ ItemInfo ItemInfo::fromLocationAlbumAndName(int locationId, const QString& album
 
 ItemInfo::~ItemInfo()
 {
-    ItemInfoData* const olddata = m_data.data();
-
-    if (olddata)
-    {
-        ItemInfoStatic::cache()->dropInfo(olddata);
-        m_data = nullptr;
-    }
+    ItemInfoStatic::cache()->dropInfo(m_data);
+    m_data.reset();
 }
 
 ItemInfo::ItemInfo(const ItemInfo& info)
@@ -400,14 +390,8 @@ ItemInfo& ItemInfo::operator=(const ItemInfo& info)
         return *this;
     }
 
-    ItemInfoData* const olddata = m_data.data();
-
-    if (olddata)
-    {
-        ItemInfoStatic::cache()->dropInfo(olddata);
-    }
-
-    m_data                      = info.m_data;
+    ItemInfoStatic::cache()->dropInfo(m_data);
+    m_data = info.m_data;
 
     return *this;
 }
@@ -1739,7 +1723,7 @@ void ItemInfo::setName(const QString& newName)
 
     ItemInfoWriteLocker lock;
     m_data->name = newName;
-    ItemInfoStatic::cache()->cacheByName(m_data.data());
+    ItemInfoStatic::cache()->cacheByName(m_data);
 }
 
 void ItemInfo::setDateTime(const QDateTime& dateTime)

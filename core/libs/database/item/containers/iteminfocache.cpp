@@ -117,9 +117,11 @@ QExplicitlySharedDataPointer<ItemInfoData> ItemInfoCache::infoForId(qlonglong id
     return QExplicitlySharedDataPointer<ItemInfoData>(data);
 }
 
-void ItemInfoCache::cacheByName(ItemInfoData* const data)
+void ItemInfoCache::cacheByName(const QExplicitlySharedDataPointer<ItemInfoData>& ptr)
 {
     // Called with Write lock
+
+    ItemInfoData* const data = ptr.data();
 
     if (!data || data->id == -1 || data->name.isEmpty())
     {
@@ -162,9 +164,15 @@ QExplicitlySharedDataPointer<ItemInfoData> ItemInfoCache::infoForPath(int albumR
     return QExplicitlySharedDataPointer<ItemInfoData>();
 }
 
-void ItemInfoCache::dropInfo(ItemInfoData* const data)
+void ItemInfoCache::dropInfo(const QExplicitlySharedDataPointer<ItemInfoData>& ptr)
 {
+    if (!ptr)
+    {
+        return;
+    }
+
     ItemInfoWriteLocker lock;
+    ItemInfoData* const data = ptr.data();
 
     if (!data || (data->ref > 1))
     {
