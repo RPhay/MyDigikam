@@ -331,5 +331,14 @@ BUGFIXES:
 317 ==> 330227 - Image quality sorter leaks memory.
 318 ==> 412893 - Application windows are incorrectly magnified in macOS.
 319 ==> 413656 - Manage Tags window appears with messed up double size graphics.
-320 ==> 
-
+320 ==> 092783 - Usabilitiy of RAW file support.
+321 ==> 158911 - digiKam crashes before RAW convert.
+322 ==> 
+323 ==> 
+324 ==> 
+325 ==> 
+326 ==> 
+327 ==> 
+328 ==> 
+329 ==> 
+330 ==> 
