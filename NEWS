@@ -373,4 +373,22 @@ BUGFIXES:
 159 ==> 169404 - Color selector in fuzzy search is black.
 160 ==> 214665 - Crash when cleaning duplicated images.
 161 ==> 243136 - Fingerprints.
-162 ==> 
+162 ==> 247550 - digiKam does not quit gracefully.
+163 ==> 406228 - Getting random unextpected 'Database is locked' events.
+164 ==> 409884 - digiKam Crash.
+165 ==> 413944 - digiKam crashes while album browsing.
+166 ==> 134817 - Introduce symlinks for album collection.
+167 ==> 149983 - Show recursively sub-album images.
+168 ==> 226770 - digiKam edit photo shift+space.
+169 ==> 237161 - digiKam crashes on album viewing.
+170 ==> 240436 - digiKam crashes when selecting a photo in an album.
+171 ==> 
+172 ==> 
+173 ==> 
+174 ==> 
+175 ==> 
+176 ==> 
+177 ==> 
+178 ==> 
+179 ==> 
+180 ==> 
