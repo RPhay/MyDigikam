@@ -352,4 +352,25 @@ BUGFIXES:
 338 ==> 283045 - Crash when searching with timeline.
 339 ==> 281895 - digiKam crashed the selection date in the calendar.
 340 ==> 280760 - Find duplicates should handle raw files more intelligently.
-341 ==> 
+341 ==> 182029 - Duplicate item count not changed after duplicates deleted.
+142 ==> 182043 - Duplicates search result in an inconsistent/broken state.
+143 ==> 182492 - No photos are displayed when selecting a timeframe in the timeline.
+144 ==> 140732 - Show all pictures of year when selecting year in date-tree.
+145 ==> 240738 - Batch deletion of duplicate or similar files.
+146 ==> 241536 - Reproducible crash when bilding fingerprint.
+147 ==> 242438 - Crashes while creating fingerprints.
+148 ==> 246500 - Fingerprint.
+149 ==> 246635 - Crash when rebuilding fingerprints.
+150 ==> 253382 - digiKam crashs creating fingerprints.
+151 ==> 265670 - digiKam crashes when generating thumbnails and fingerprints in parallel.
+152 ==> 265245 - Crash upon selecting certain month in timeline.
+153 ==> 261418 - Improved handling of duplicate images.
+154 ==> 263002 - Crash during browsing timeline.
+155 ==> 147981 - Ability to move images to different albums from seach results.
+156 ==> 149025 - Do not sort images in Search by album.
+157 ==> 147407 - Root folders/years should display all child images.
+158 ==> 155286 - Crash during duplicate search.
+159 ==> 169404 - Color selector in fuzzy search is black.
+160 ==> 214665 - Crash when cleaning duplicated images.
+161 ==> 243136 - Fingerprints.
+162 ==> 
