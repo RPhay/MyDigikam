@@ -429,6 +429,6 @@ BUGFIXES:
 415 ==> 365668 - Face tagger allows text input when hovered over, then does crazy stuff.
 416 ==> 413923 - The peoples list shows just one line of height (one name) when expanded for the first time.
 417 ==> 326034 - Allow to add "unknown" face tags in Preview mode.
-418 ==> 
+418 ==> 388649 - Face tag rectangle cursor sometimes disappear.
 419 ==> 
 420 ==> 
