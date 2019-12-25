@@ -202,7 +202,7 @@ void FaceScanDialog::setupUi()
     d->alreadyScannedBox->addItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"), FaceScanSettings::Rescan);
     d->alreadyScannedBox->setCurrentIndex(FaceScanSettings::Skip);
 
-    d->reRecognizeButton            = new QRadioButton(i18nc("@option:radio", "Recognize faces (experimental)"));
+    d->reRecognizeButton            = new QRadioButton(i18nc("@option:radio", "Recognize faces"));
     d->reRecognizeButton->setToolTip(i18nc("@info", "Try again to recognize the people depicted on marked but yet unconfirmed faces."));
 
     optionLayout->addWidget(d->alreadyScannedBox,          0, 0, 1, 2);
@@ -275,7 +275,7 @@ void FaceScanDialog::setupUi()
     cpuExplanation->setWordWrap(true);
 
     d->useFullCpuButton = new QCheckBox(advancedTab);
-    d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores (experimental)"));
+    d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));
 
     // ---- Recognize algorithm ComboBox -----
 

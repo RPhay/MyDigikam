@@ -88,12 +88,15 @@ public:
 
 public:
 
-    /** Please take care: you must set all four modes before usage! */
-
+    /**
+     * Please take care: you must set all four modes before usage!
+     */
     explicit AssignNameWidget(QWidget* const parent = nullptr);
     ~AssignNameWidget();
 
-    /** Set the tag model to use for completion. */
+    /**
+     * Set the tag model to use for completion.
+     */
     void setModel(TagModel* const model, TagPropertiesFilterModel* const filteredModel, CheckableAlbumFilterModel* const filterModel);
     void setDefaultModel();
 
@@ -118,15 +121,21 @@ public:
 
 public Q_SLOTS:
 
-    /** The identifying information emitted with the signals */
+    /**
+     * The identifying information emitted with the signals
+     */
     void setUserData(const ItemInfo& info, const QVariant& faceIdentifier = QVariant());
 
-    /** Sets the suggested (UnconfirmedEditMode) or assigned (ConfirmedMode) tag to be displayed. */
+    /**
+     * Sets the suggested (UnconfirmedEditMode) or assigned (ConfirmedMode) tag to be displayed.
+     */
     void setCurrentTag(int tagId);
     void setCurrentTag(TAlbum* album);
     void setCurrentFace(const FaceTagsIface& face);
 
-    /** Set a parent tag for suggesting a parent tag for a new tag, and a default action. */
+    /**
+     * Set a parent tag for suggesting a parent tag for a new tag, and a default action.
+     */
     void setParentTag(TAlbum* album);
 
 Q_SIGNALS:
