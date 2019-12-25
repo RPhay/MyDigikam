@@ -422,7 +422,7 @@ BUGFIXES:
 408 ==> 246534 - digiKam crashes at every start.
 409 ==> 250418 - digiKam crashes on startup.
 410 ==> 261624 - Moving an album from one collection to another doesn't update the source collection.
-411 ==> 
+411 ==> 338171 - When automatic recognition guesses the same name for multiple faces in one picture, assigning a different name deletes all the face boxes except one.
 412 ==> 
 413 ==> 
 414 ==> 
