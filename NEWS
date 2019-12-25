@@ -427,7 +427,7 @@ BUGFIXES:
 413 ==> 286452 - No way to scan untagged photos for faces, or scan ALL folders.
 414 ==> 411732 - UI for assigning people tag is very fragile.
 415 ==> 365668 - Face tagger allows text input when hovered over, then does crazy stuff.
-416 ==> 
+416 ==> 413923 - The peoples list shows just one line of height (one name) when expanded for the first time.
 417 ==> 
 418 ==> 
 419 ==> 
