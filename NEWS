@@ -353,42 +353,62 @@ BUGFIXES:
 339 ==> 281895 - digiKam crashed the selection date in the calendar.
 340 ==> 280760 - Find duplicates should handle raw files more intelligently.
 341 ==> 182029 - Duplicate item count not changed after duplicates deleted.
-142 ==> 182043 - Duplicates search result in an inconsistent/broken state.
-143 ==> 182492 - No photos are displayed when selecting a timeframe in the timeline.
-144 ==> 140732 - Show all pictures of year when selecting year in date-tree.
-145 ==> 240738 - Batch deletion of duplicate or similar files.
-146 ==> 241536 - Reproducible crash when bilding fingerprint.
-147 ==> 242438 - Crashes while creating fingerprints.
-148 ==> 246500 - Fingerprint.
-149 ==> 246635 - Crash when rebuilding fingerprints.
-150 ==> 253382 - digiKam crashs creating fingerprints.
-151 ==> 265670 - digiKam crashes when generating thumbnails and fingerprints in parallel.
-152 ==> 265245 - Crash upon selecting certain month in timeline.
-153 ==> 261418 - Improved handling of duplicate images.
-154 ==> 263002 - Crash during browsing timeline.
-155 ==> 147981 - Ability to move images to different albums from seach results.
-156 ==> 149025 - Do not sort images in Search by album.
-157 ==> 147407 - Root folders/years should display all child images.
-158 ==> 155286 - Crash during duplicate search.
-159 ==> 169404 - Color selector in fuzzy search is black.
-160 ==> 214665 - Crash when cleaning duplicated images.
-161 ==> 243136 - Fingerprints.
-162 ==> 247550 - digiKam does not quit gracefully.
-163 ==> 406228 - Getting random unextpected 'Database is locked' events.
-164 ==> 409884 - digiKam Crash.
-165 ==> 413944 - digiKam crashes while album browsing.
-166 ==> 134817 - Introduce symlinks for album collection.
-167 ==> 149983 - Show recursively sub-album images.
-168 ==> 226770 - digiKam edit photo shift+space.
-169 ==> 237161 - digiKam crashes on album viewing.
-170 ==> 240436 - digiKam crashes when selecting a photo in an album.
-171 ==> 
-172 ==> 
-173 ==> 
-174 ==> 
-175 ==> 
-176 ==> 
-177 ==> 
-178 ==> 
-179 ==> 
-180 ==> 
+342 ==> 182043 - Duplicates search result in an inconsistent/broken state.
+343 ==> 182492 - No photos are displayed when selecting a timeframe in the timeline.
+344 ==> 140732 - Show all pictures of year when selecting year in date-tree.
+345 ==> 240738 - Batch deletion of duplicate or similar files.
+346 ==> 241536 - Reproducible crash when bilding fingerprint.
+347 ==> 242438 - Crashes while creating fingerprints.
+348 ==> 246500 - Fingerprint.
+349 ==> 246635 - Crash when rebuilding fingerprints.
+350 ==> 253382 - digiKam crashs creating fingerprints.
+351 ==> 265670 - digiKam crashes when generating thumbnails and fingerprints in parallel.
+352 ==> 265245 - Crash upon selecting certain month in timeline.
+353 ==> 261418 - Improved handling of duplicate images.
+354 ==> 263002 - Crash during browsing timeline.
+355 ==> 147981 - Ability to move images to different albums from seach results.
+356 ==> 149025 - Do not sort images in Search by album.
+357 ==> 147407 - Root folders/years should display all child images.
+358 ==> 155286 - Crash during duplicate search.
+359 ==> 169404 - Color selector in fuzzy search is black.
+360 ==> 214665 - Crash when cleaning duplicated images.
+361 ==> 243136 - Fingerprints.
+362 ==> 247550 - digiKam does not quit gracefully.
+363 ==> 406228 - Getting random unextpected 'Database is locked' events.
+364 ==> 409884 - digiKam Crash.
+365 ==> 413944 - digiKam crashes while album browsing.
+366 ==> 134817 - Introduce symlinks for album collection.
+367 ==> 149983 - Show recursively sub-album images.
+268 ==> 226770 - digiKam edit photo shift+space.
+369 ==> 237161 - digiKam crashes on album viewing.
+370 ==> 240436 - digiKam crashes when selecting a photo in an album.
+371 ==> 291514 - Suggestions for improving face recognition performance.
+372 ==> 
+373 ==> 
+374 ==> 
+375 ==> 
+376 ==> 
+377 ==> 
+378 ==> 
+379 ==> 
+380 ==> 
+381 ==> 
+382 ==> 
+383 ==> 
+384 ==> 
+385 ==> 
+386 ==> 
+387 ==> 
+388 ==> 
+389 ==> 
+390 ==> 
+391 ==> 
+392 ==> 
+393 ==> 
+394 ==> 
+395 ==> 
+396 ==> 
+397 ==> 
+398 ==> 
+399 ==> 
+400 ==> 
