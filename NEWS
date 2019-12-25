@@ -394,17 +394,17 @@ BUGFIXES:
 380 ==> 277620 - Face recognition should propose the tagged name as default in the face identification page.
 381 ==> 414308 - On a person, be able to view only the news found.
 382 ==> 404167 - Improve confirmation process.
-383 ==> 
-384 ==> 
-385 ==> 
-386 ==> 
-387 ==> 
-388 ==> 
-389 ==> 
-390 ==> 
-391 ==> 
-392 ==> 
-393 ==> 
+383 ==> 247571 - Crash while browsing in album view.
+384 ==> 263209 - New Album crash.
+385 ==> 275684 - Crash during tagging.
+386 ==> 297044 - digiKam crashes when moving images to a new Album.
+387 ==> 305108 - Crash during import of images.
+388 ==> 317440 - digiKam crashes after deleting a tag.
+389 ==> 335708 - Crash on image import.
+390 ==> 337839 - I experience many crashes, without precise action.
+391 ==> 339720 - Very slow tagging when missing Plasma icons have been used for tags.
+392 ==> 343026 - Crashes when downloading.
+393 ==> 361084 - Crash while importing.
 394 ==> 
 395 ==> 
 396 ==> 
