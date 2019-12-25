@@ -388,7 +388,7 @@ BUGFIXES:
 374 ==> 321297 - Name not set on face recognition run.
 375 ==> 314744 - Face do not recognize.
 376 ==> 402021 - Face recognition not working.
-377 ==> 
+377 ==> 392518 - Face recognition using the deep learning algo, dont move faces to Unconfirmed.
 378 ==> 
 379 ==> 
 380 ==> 
