@@ -390,7 +390,7 @@ BUGFIXES:
 376 ==> 402021 - Face recognition not working.
 377 ==> 392518 - Face recognition using the deep learning algo, dont move faces to Unconfirmed.
 378 ==> 391671 - Face recognition fails giving a lot of addition effort to correct the errors.
-379 ==> 
+379 ==> 392010 - Face recognition assigns faces to people without confirmation, leading to false positives.
 380 ==> 
 381 ==> 
 382 ==> 
