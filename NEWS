@@ -405,10 +405,11 @@ BUGFIXES:
 391 ==> 339720 - Very slow tagging when missing Plasma icons have been used for tags.
 392 ==> 343026 - Crashes when downloading.
 393 ==> 361084 - Crash while importing.
-394 ==> 
-395 ==> 
-396 ==> 
-397 ==> 
-398 ==> 
-399 ==> 
-400 ==> 
+394 ==> 117561 - Should store hashes of files if file is moved.
+395 ==> 186920 - Too many open files.
+396 ==> 135051 - digiKam crashes when building database from existing directory.
+397 ==> 135689 - New folders not visible.
+398 ==> 150181 - digiKam wants to delete the whole database (24.000Images) at startup when USB-Disk with the Photos is not connected.
+399 ==> 194630 - digiKam fails to start ? after Plasma update.
+400 ==> 202956 - Crashing on start up.
+401 ==> 
