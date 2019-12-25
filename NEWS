@@ -425,7 +425,7 @@ BUGFIXES:
 411 ==> 338171 - When automatic recognition guesses the same name for multiple faces in one picture, assigning a different name deletes all the face boxes except one.
 412 ==> 392016 - Confirmed and unconfirmed faces look the same in a person's face list.
 413 ==> 286452 - No way to scan untagged photos for faces, or scan ALL folders.
-414 ==> 
+414 ==> 411732 - UI for assigning people tag is very fragile.
 415 ==> 
 416 ==> 
 417 ==> 
