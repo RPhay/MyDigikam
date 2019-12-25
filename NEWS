@@ -426,7 +426,7 @@ BUGFIXES:
 412 ==> 392016 - Confirmed and unconfirmed faces look the same in a person's face list.
 413 ==> 286452 - No way to scan untagged photos for faces, or scan ALL folders.
 414 ==> 411732 - UI for assigning people tag is very fragile.
-415 ==> 
+415 ==> 365668 - Face tagger allows text input when hovered over, then does crazy stuff.
 416 ==> 
 417 ==> 
 418 ==> 
