@@ -69,7 +69,8 @@ void FaceScanDialog::doLoadState()
     }
     else if (mainTask == d->configValueDetectAndRecognize)
     {
-        d->detectAndRecognizeButton->setChecked(true);
+        //d->detectAndRecognizeButton->setChecked(true);
+        d->detectButton->setChecked(true);
     }
     else
     {
