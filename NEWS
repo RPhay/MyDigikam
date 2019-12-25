@@ -430,5 +430,5 @@ BUGFIXES:
 416 ==> 413923 - The peoples list shows just one line of height (one name) when expanded for the first time.
 417 ==> 326034 - Allow to add "unknown" face tags in Preview mode.
 418 ==> 388649 - Face tag rectangle cursor sometimes disappear.
-419 ==> 
+419 ==> 415560 - No default selection for Scan Collection.
 420 ==> 
