@@ -393,7 +393,7 @@ BUGFIXES:
 379 ==> 392010 - Face recognition assigns faces to people without confirmation, leading to false positives.
 380 ==> 277620 - Face recognition should propose the tagged name as default in the face identification page.
 381 ==> 414308 - On a person, be able to view only the news found.
-382 ==> 
+382 ==> 404167 - Improve confirmation process.
 383 ==> 
 384 ==> 
 385 ==> 
