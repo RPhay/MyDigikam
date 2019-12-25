@@ -383,11 +383,11 @@ BUGFIXES:
 369 ==> 237161 - digiKam crashes on album viewing.
 370 ==> 240436 - digiKam crashes when selecting a photo in an album.
 371 ==> 291514 - Suggestions for improving face recognition performance.
-372 ==> 
-373 ==> 
-374 ==> 
-375 ==> 
-376 ==> 
+372 ==> 271679 - digiKam detects but does not recognize faces.
+373 ==> 292248 - Recognize faces does nothing.
+374 ==> 321297 - Name not set on face recognition run.
+375 ==> 314744 - Face do not recognize.
+376 ==> 402021 - Face recognition not working.
 377 ==> 
 378 ==> 
 379 ==> 
