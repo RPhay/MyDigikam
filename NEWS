@@ -431,4 +431,5 @@ BUGFIXES:
 417 ==> 326034 - Allow to add "unknown" face tags in Preview mode.
 418 ==> 388649 - Face tag rectangle cursor sometimes disappear.
 419 ==> 415560 - No default selection for Scan Collection.
-420 ==> 
+420 ==> 415460 - JFIF files have APP0 marker after SOI where there should be APP1.
+421 ==> 

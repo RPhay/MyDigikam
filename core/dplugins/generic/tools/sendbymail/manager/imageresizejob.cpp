@@ -176,23 +176,29 @@ bool ImageResizeJob::imageResize(MailSettings* const settings,
             }
         }
 
+        DMetadata meta;
+
+        if (!meta.load(destName))
+        {
+            return false;
+        }
+
         if (settings->removeMetadata)
         {
-            DMetadata meta;
-
-            if (!meta.load(destName))
-            {
-                return false;
-            }
-
             meta.clearExif();
             meta.clearIptc();
             meta.clearXmp();
+        }
+        else
+        {
+            meta.setItemOrientation(MetaEngine::ORIENTATION_NORMAL);
+        }
 
-            if (!meta.save(destName))
-            {
-                return false;
-            }
+        meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
+
+        if (!meta.save(destName))
+        {
+            return false;
         }
 
         return true;
