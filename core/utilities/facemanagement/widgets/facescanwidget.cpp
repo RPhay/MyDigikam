@@ -205,7 +205,7 @@ void FaceScanWidget::setupUi()
     QWidget* const settingsTab        = new QWidget(d->tabWidget);
     QGridLayout* const settingsLayout = new QGridLayout(settingsTab);
 
-    QLabel* const detectionLabel      = new QLabel(i18nc("@label", "Face detection and Recognition"), settingsTab);
+    QLabel* const detectionLabel      = new QLabel(i18nc("@label", "Face Accuracy:"), settingsTab);
 
     QLabel* const accuracyLabel       = new QLabel(i18nc("@label Two extremities of a scale", "Sensitivity     -     Specificity"), settingsTab);
     accuracyLabel->setAlignment(Qt::AlignTop | Qt::AlignHCenter);
@@ -213,9 +213,9 @@ void FaceScanWidget::setupUi()
     d->accuracyInput->setDefaultValue(70);
     d->accuracyInput->setRange(0, 100, 10);
     d->accuracyInput->setToolTip(i18nc("@info:tooltip",
-                                       "Adjust sensitivity versus specificity: The higher the value, the more accurately faces will "
+                                       "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will "
                                        "be recognized, but less faces will be recognized "
-                                       "(only faces that are very similar to pretagged faces are recognized)"));
+                                       "(only faces that are very similar to pre-tagged faces are recognized)."));
 
     d->useFullCpuButton = new QCheckBox(settingsTab);
     d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));

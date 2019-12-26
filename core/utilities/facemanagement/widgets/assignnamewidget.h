@@ -97,27 +97,29 @@ public:
     /**
      * Set the tag model to use for completion.
      */
-    void setModel(TagModel* const model, TagPropertiesFilterModel* const filteredModel, CheckableAlbumFilterModel* const filterModel);
+    void setModel(TagModel* const model,
+                  TagPropertiesFilterModel* const filteredModel,
+                  CheckableAlbumFilterModel* const filterModel);
     void setDefaultModel();
 
     void setMode(Mode mode);
-    Mode mode() const;
+    Mode mode()                             const;
 
     void setTagEntryWidgetMode(TagEntryWidgetMode mode);
     TagEntryWidgetMode tagEntryWidgetMode() const;
 
     void setLayoutMode(LayoutMode mode);
-    LayoutMode layoutMode()     const;
+    LayoutMode layoutMode()                 const;
 
     void setVisualStyle(VisualStyle style);
-    VisualStyle visualStyle()   const;
+    VisualStyle visualStyle()               const;
 
-    ItemInfo info()             const;
-    QVariant  faceIdentifier()  const;
+    ItemInfo info()                         const;
+    QVariant  faceIdentifier()              const;
 
     /// The combo box or line edit in use, if any
-    AddTagsComboBox* comboBox() const;
-    AddTagsLineEdit* lineEdit() const;
+    AddTagsComboBox* comboBox()             const;
+    AddTagsLineEdit* lineEdit()             const;
 
 public Q_SLOTS:
 

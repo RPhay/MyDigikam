@@ -39,23 +39,23 @@ namespace Digikam
 {
 
 FacePipeline::Private::Private(FacePipeline* const q)
-    : q(q)
+    : databaseFilter(nullptr),
+      previewThread(nullptr),
+      detectionWorker(nullptr),
+      parallelDetectors(nullptr),
+      recognitionWorker(nullptr),
+      databaseWriter(nullptr),
+      trainerWorker(nullptr),
+      detectionBenchmarker(nullptr),
+      recognitionBenchmarker(nullptr),
+      priority(QThread::LowPriority),
+      started(false),
+      infosForFiltering(0),
+      packagesOnTheRoad(0),
+      maxPackagesOnTheRoad(50),
+      totalPackagesAdded(0),
+      q(q)
 {
-    databaseFilter         = nullptr;
-    previewThread          = nullptr;
-    detectionWorker        = nullptr;
-    parallelDetectors      = nullptr;
-    recognitionWorker      = nullptr;
-    databaseWriter         = nullptr;
-    trainerWorker          = nullptr;
-    detectionBenchmarker   = nullptr;
-    recognitionBenchmarker = nullptr;
-    priority               = QThread::LowPriority;
-    started                = false;
-    infosForFiltering      = 0;
-    packagesOnTheRoad      = 0;
-    maxPackagesOnTheRoad   = 50;
-    totalPackagesAdded     = 0;
 }
 
 void FacePipeline::Private::processBatch(const QList<ItemInfo>& infos)
@@ -153,9 +153,11 @@ void FacePipeline::Private::send(FacePipelineExtendedPackage::Ptr package)
 
 void FacePipeline::Private::finishProcess(FacePipelineExtendedPackage::Ptr package)
 {
-    packagesOnTheRoad--;
+    --packagesOnTheRoad;
+
     emit q->processed(*package);
     emit q->progressValueChanged(float(packagesOnTheRoad + delayedPackages.size()) / totalPackagesAdded);
+
     package = nullptr;
 
     if (previewThread)
@@ -221,11 +223,11 @@ void FacePipeline::Private::start()
 
     foreach (QObject* const element, pipeline)
     {
-        if ((workerObject = qobject_cast<WorkerObject*>(element)))
+        if (workerObject = qobject_cast<WorkerObject*>(element))
         {
             workerObject->schedule();
         }
-        else if ((pipes = qobject_cast<ParallelPipes*>(element)))
+        else if (pipes = qobject_cast<ParallelPipes*>(element))
         {
             pipes->schedule();
         }
@@ -258,15 +260,15 @@ void FacePipeline::Private::stop()
 
     foreach (QObject* const element, pipeline)
     {
-        if ((workerObject = qobject_cast<WorkerObject*>(element)))
+        if (workerObject = qobject_cast<WorkerObject*>(element))
         {
             workerObject->deactivate();
         }
-        else if ((pipes = qobject_cast<ParallelPipes*>(element)))
+        else if (pipes = qobject_cast<ParallelPipes*>(element))
         {
             pipes->deactivate();
         }
-        else if ((thread = qobject_cast<DynamicThread*>(element)))
+        else if (thread = qobject_cast<DynamicThread*>(element))
         {
             thread->stop();
         }
@@ -298,15 +300,15 @@ void FacePipeline::Private::wait()
 
     foreach (QObject* const element, pipeline)
     {
-        if ((workerObject = qobject_cast<WorkerObject*>(element)))
+        if (workerObject = qobject_cast<WorkerObject*>(element))
         {
             workerObject->wait();
         }
-        else if ((pipes = qobject_cast<ParallelPipes*>(element)))
+        else if (pipes = qobject_cast<ParallelPipes*>(element))
         {
             pipes->wait();
         }
-        else if ((thread = qobject_cast<DynamicThread*>(element)))
+        else if (thread = qobject_cast<DynamicThread*>(element))
         {
             thread->wait();
         }
@@ -322,11 +324,11 @@ void FacePipeline::Private::applyPriority()
 
     foreach (QObject* const element, pipeline)
     {
-        if ((workerObject = qobject_cast<WorkerObject*>(element)))
+        if (workerObject = qobject_cast<WorkerObject*>(element))
         {
             workerObject->setPriority(priority);
         }
-        else if ((pipes = qobject_cast<ParallelPipes*>(element)))
+        else if (pipes = qobject_cast<ParallelPipes*>(element))
         {
             pipes->setPriority(priority);
         }
