@@ -233,35 +233,22 @@ void FaceScanDialog::setupUi()
     d->albumSelectors = new AlbumSelectors(i18nc("@label", "Search in:"), d->configName, d->tabWidget);
     d->tabWidget->addTab(d->albumSelectors, i18nc("@title:tab", "Albums"));
 
-    // ---- Parameters tab ----
+    // ---- Settings tab ------
 
-    QWidget* const parametersTab        = new QWidget(d->tabWidget);
-    QGridLayout* const parametersLayout = new QGridLayout(parametersTab);
+    QWidget* const advancedTab        = new QWidget(d->tabWidget);
+    QGridLayout* const advancedLayout = new QGridLayout(advancedTab);
 
-    QLabel* const detectionLabel        = new QLabel(i18nc("@label", "Face detection and Recognition"), parametersTab);
+    QLabel* const detectionLabel        = new QLabel(i18nc("@label", "Face detection and Recognition"), advancedTab);
 
-    QLabel* const accuracyLabel         = new QLabel(i18nc("@label Two extremities of a scale", "Sensitivity     -     Specificity"), parametersTab);
+    QLabel* const accuracyLabel         = new QLabel(i18nc("@label Two extremities of a scale", "Sensitivity     -     Specificity"), advancedTab);
     accuracyLabel->setAlignment(Qt::AlignTop | Qt::AlignHCenter);
-    d->accuracyInput                    = new DIntNumInput(parametersTab);
+    d->accuracyInput                    = new DIntNumInput(advancedTab);
     d->accuracyInput->setDefaultValue(70);
     d->accuracyInput->setRange(0, 100, 10);
     d->accuracyInput->setToolTip(i18nc("@info:tooltip",
                                        "Adjust sensitivity versus specificity: The higher the value, the more accurately faces will "
                                        "be recognized, but less faces will be recognized "
                                        "(only faces that are very similar to pretagged faces are recognized)"));
-
-    parametersLayout->addWidget(detectionLabel,   0, 0, 1, 1);
-    parametersLayout->addWidget(d->accuracyInput, 1, 0, 1, 1);
-    parametersLayout->addWidget(accuracyLabel,    2, 0, 1, 1);
-    parametersLayout->setColumnStretch(0, 10);
-    parametersLayout->setRowStretch(3, 10);
-
-    d->tabWidget->addTab(parametersTab, i18nc("@title:tab", "Parameters"));
-
-    // ---- Advanced tab ------
-
-    QWidget* const advancedTab        = new QWidget(d->tabWidget);
-    QGridLayout* const advancedLayout = new QGridLayout(advancedTab);
 
     d->useFullCpuButton = new QCheckBox(advancedTab);
     d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));
@@ -276,12 +263,16 @@ void FaceScanDialog::setupUi()
                                           "This will clear all training data for recognition "
                                           "and rebuild it from all available faces."));
 
-    advancedLayout->addWidget(d->useFullCpuButton,             0, 0);
-    advancedLayout->addWidget(new DLineWidget(Qt::Horizontal), 1, 0);
-    advancedLayout->addWidget(d->retrainAllButton,             2, 0);
-    advancedLayout->setRowStretch(3, 10);
+    advancedLayout->addWidget(detectionLabel,                  0, 0, 1, 1);
+    advancedLayout->addWidget(d->accuracyInput,                1, 0, 1, 1);
+    advancedLayout->addWidget(accuracyLabel,                   2, 0, 1, 1);
+    advancedLayout->addWidget(new DLineWidget(Qt::Horizontal), 3, 0, 1, 1);
+    advancedLayout->addWidget(d->useFullCpuButton,             4, 0, 1, 1);
+    advancedLayout->addWidget(d->retrainAllButton,             5, 0, 1, 1);
+    advancedLayout->setColumnStretch(0, 10);
+    advancedLayout->setRowStretch(6, 10);
 
-    d->tabWidget->addTab(advancedTab, i18nc("@title:tab", "Advanced"));
+    d->tabWidget->addTab(advancedTab, i18nc("@title:tab", "Settings"));
 
     // ------------------------
 
