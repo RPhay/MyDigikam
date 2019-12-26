@@ -432,4 +432,5 @@ BUGFIXES:
 418 ==> 388649 - Face tag rectangle cursor sometimes disappear.
 419 ==> 415560 - No default selection for Scan Collection.
 420 ==> 415460 - JFIF files have APP0 marker after SOI where there should be APP1.
-421 ==> 
+421 ==> 415582 - People Unknown faces does not decrease to zero.
+422 ==> 
