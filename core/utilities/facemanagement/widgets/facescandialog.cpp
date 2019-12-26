@@ -163,26 +163,12 @@ void FaceScanDialog::doSaveState()
 
 void FaceScanDialog::setupUi()
 {
-    QWidget* const mainWidget     = new QWidget;
-    QGridLayout* const mainLayout = new QGridLayout;
-    d->tabWidget                  = new QTabWidget;
-
-    // ---- Introductory labels ----
-
-    QLabel* const personIcon      = new QLabel;
-    personIcon->setPixmap(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(48));
-
-    QLabel* const introduction    = new QLabel;
-    introduction->setWordWrap(true);
-    introduction->setText(i18nc("@info",
-                                "digiKam can search for faces in your photos. "
-                                "When you have identified your friends on a number of photos, "
-                                "it can also recognize the people shown on your photos."));
+    const int spacing               = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     // ---- Main option box --------
 
     d->optionGroupBox               = new QGroupBox;
-    QGridLayout* const optionLayout = new QGridLayout;
+    QVBoxLayout* const optionLayout = new QVBoxLayout;
 
     d->alreadyScannedBox            = new SqueezedComboBox;
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Skip images already scanned"),          FaceScanSettings::Skip);
@@ -201,14 +187,14 @@ void FaceScanDialog::setupUi()
     d->reRecognizeButton            = new QRadioButton(i18nc("@option:radio", "Recognize faces"));
     d->reRecognizeButton->setToolTip(i18nc("@info", "Try again to recognize the people depicted on marked but yet unconfirmed faces."));
 
-    optionLayout->addWidget(d->alreadyScannedBox,          0, 0, 1, 2);
-    optionLayout->addWidget(d->detectButton,               1, 0, 1, 2);
+    optionLayout->addWidget(d->alreadyScannedBox);
+    optionLayout->addWidget(d->detectButton);
 
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
-    optionLayout->addWidget(d->detectAndRecognizeButton,   2, 0, 1, 2);
+    optionLayout->addWidget(d->detectAndRecognizeButton);
 #endif
 
-    optionLayout->addWidget(d->reRecognizeButton,          2, 0, 1, 2);
+    optionLayout->addWidget(d->reRecognizeButton);
 
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
     QStyleOptionButton buttonOption;
@@ -219,17 +205,9 @@ void FaceScanDialog::setupUi()
 
     d->optionGroupBox->setLayout(optionLayout);
 
-    // ------------------------
-
-    mainLayout->addWidget(personIcon,        0, 0);
-    mainLayout->addWidget(introduction,      0, 1);
-    mainLayout->addWidget(d->optionGroupBox, 1, 0, 1, -1);
-    mainLayout->setColumnStretch(1, 1);
-    mainLayout->setRowStretch(2, 1);
-    mainWidget->setLayout(mainLayout);
-
     // ---- Album tab ---------
 
+    d->tabWidget      = new QTabWidget;
     d->albumSelectors = new AlbumSelectors(i18nc("@label", "Search in:"), d->configName, d->tabWidget);
     d->tabWidget->addTab(d->albumSelectors, i18nc("@title:tab", "Albums"));
 
@@ -277,7 +255,7 @@ void FaceScanDialog::setupUi()
     // ------------------------
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
-    vbx->addWidget(mainWidget);
+    vbx->addWidget(d->optionGroupBox);
     vbx->addWidget(d->tabWidget);
     vbx->addWidget(d->buttons);
     setLayout(vbx);
