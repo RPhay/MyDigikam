@@ -169,11 +169,11 @@ void FaceScanDialog::setupUi()
     personIcon->setPixmap(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(48));
 
     QLabel* const introduction    = new QLabel;
-    introduction->setTextFormat(Qt::RichText);
+    introduction->setWordWrap(true);
     introduction->setText(i18nc("@info",
-                                "<qt>digiKam can search for faces in your photos.<br/> "
-                                "When you have identified your friends on a number of photos,<br/> "
-                                "it can also recognize the people shown on your photos.</qt>"));
+                                "digiKam can search for faces in your photos. "
+                                "When you have identified your friends on a number of photos, "
+                                "it can also recognize the people shown on your photos."));
 
     // ---- Main option box --------
 
@@ -231,7 +231,7 @@ void FaceScanDialog::setupUi()
     QWidget* const parametersTab        = new QWidget(d->tabWidget);
     QGridLayout* const parametersLayout = new QGridLayout(parametersTab);
 
-    QLabel* const detectionLabel        = new QLabel(i18nc("@label", "Parameters for face detection and Recognition"), parametersTab);
+    QLabel* const detectionLabel        = new QLabel(i18nc("@label", "Face detection and Recognition"), parametersTab);
 
     QLabel* const accuracyLabel         = new QLabel(i18nc("@label Two extremities of a scale", "Sensitivity     -     Specificity"), parametersTab);
     accuracyLabel->setAlignment(Qt::AlignTop | Qt::AlignHCenter);
