@@ -194,7 +194,7 @@ void FaceScanDialog::setupUi()
     d->detectButton                 = new QRadioButton(i18nc("@option:radio", "Detect faces"));
     d->detectButton->setToolTip(i18nc("@info", "Find all faces in your photos"));
 
-    d->detectAndRecognizeButton     = new QRadioButton(i18nc("@option:radio", "Detect and recognize faces (experimental)"));
+    d->detectAndRecognizeButton     = new QRadioButton(i18nc("@option:radio", "Detect and recognize faces"));
     d->detectAndRecognizeButton->setToolTip(i18nc("@info", "Find all faces in your photos and try to recognize which person is depicted"));
 
     d->alreadyScannedBox            = new QComboBox;
@@ -271,8 +271,7 @@ void FaceScanDialog::setupUi()
     cpuExplanation->setText(i18nc("@info",
                                   "Face detection is a time-consuming task. "
                                   "You can choose if you wish to employ all processor cores "
-                                  "on your system, or work in the background only on one core. "
-                                  "Warning: this features still experimental and it is disabled by default."));
+                                  "on your system, or work in the background only on one core."));
     cpuExplanation->setWordWrap(true);
 
     d->useFullCpuButton = new QCheckBox(advancedTab);
