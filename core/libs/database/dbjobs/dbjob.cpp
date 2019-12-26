@@ -186,13 +186,13 @@ void TagsJob::run()
         QMap<QString, QMap<int, int> > facesNumberMap;
 
         facesNumberMap[ImageTagPropertyName::autodetectedFace()]   =
-            CoreDbAccess().db()->getNumberOfImagesInTagProperties(Digikam::ImageTagPropertyName::autodetectedFace());
-
-        facesNumberMap[ImageTagPropertyName::tagRegion()]          =
-            CoreDbAccess().db()->getNumberOfImagesInTagProperties(Digikam::ImageTagPropertyName::tagRegion());
+            CoreDbAccess().db()->getNumberOfImagesInTagProperties(ImageTagPropertyName::autodetectedFace());
 
         facesNumberMap[ImageTagPropertyName::autodetectedPerson()] =
-            CoreDbAccess().db()->getNumberOfImagesInTagProperties(Digikam::ImageTagPropertyName::autodetectedPerson());
+            CoreDbAccess().db()->getNumberOfImagesInTagProperties(ImageTagPropertyName::autodetectedPerson());
+
+        facesNumberMap[ImageTagPropertyName::tagRegion()]          =
+            CoreDbAccess().db()->getNumberOfImagesInTagProperties(ImageTagPropertyName::tagRegion());
 
         emit faceFoldersData(facesNumberMap);
     }

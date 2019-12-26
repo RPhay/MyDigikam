@@ -492,10 +492,10 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
             if (!allPersonTagsToDelete.contains(tAlbum))
             {
                 QSet<qlonglong> assignedItems = CoreDbAccess().db()->getImagesWithImageTagProperty(
-                    tAlbum->id(), Digikam::ImageTagPropertyName::tagRegion()).toSet();
+                    tAlbum->id(), ImageTagPropertyName::tagRegion()).toSet();
 
                 assignedItems.unite(CoreDbAccess().db()->getImagesWithImageTagProperty(
-                    tAlbum->id(), Digikam::ImageTagPropertyName::autodetectedFace()).toSet());
+                    tAlbum->id(), ImageTagPropertyName::autodetectedFace()).toSet());
 
                 if (!assignedItems.isEmpty())
                 {
