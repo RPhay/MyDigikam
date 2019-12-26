@@ -53,7 +53,7 @@
 #include "ratingfilter.h"
 #include "mimefilter.h"
 #include "tagfilterview.h"
-#include "tagscache.h"
+#include "facetags.h"
 
 namespace Digikam
 {
@@ -457,7 +457,7 @@ void FilterSideBarWidget::filterChanged()
 
         if (d->withoutFaceCheckBox->isChecked())
         {
-            excludedTagIds << TagsCache::instance()->tagsWithProperty(TagPropertyName::person());
+            excludedTagIds << FaceTags::allPersonTags();
         }
     }
 
