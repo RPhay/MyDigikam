@@ -40,7 +40,7 @@ FaceScanDialog::FaceScanDialog(QWidget* const parent)
     setWindowTitle(i18nc("@title:window", "Scanning faces"));
     setModal(true);
 
-    d->buttons = new QDialogButtonBox(QDialogButtonBox::Reset | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
     d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "Scan"));
 
@@ -103,9 +103,6 @@ void FaceScanDialog::doLoadState()
     d->useFullCpuButton->setChecked(group.readEntry(entryName(d->configUseFullCpu), false));
 
     // do not load retrainAllButton state from config, dangerous
-
-    d->tabWidget->setVisible(group.readEntry(entryName(d->configSettingsVisible), false));
-    adjustDetailsButton(d->tabWidget->isVisible());
 }
 
 void FaceScanDialog::doSaveState()
@@ -153,8 +150,7 @@ void FaceScanDialog::doSaveState()
     ApplicationSettings::instance()->setFaceDetectionAccuracy(double(d->accuracyInput->value()) / 100);
     d->albumSelectors->saveState();
 
-    group.writeEntry(entryName(d->configUseFullCpu),         d->useFullCpuButton->isChecked());
-    group.writeEntry(entryName(d->configSettingsVisible),    d->tabWidget->isVisible());
+    group.writeEntry(entryName(d->configUseFullCpu), d->useFullCpuButton->isChecked());
 }
 
 void FaceScanDialog::setupUi()
@@ -283,6 +279,8 @@ void FaceScanDialog::setupUi()
     vbx->addWidget(d->tabWidget);
     vbx->addWidget(d->buttons);
     setLayout(vbx);
+
+    adjustSize();
 }
 
 void FaceScanDialog::setupConnections()
@@ -308,9 +306,6 @@ void FaceScanDialog::setupConnections()
 
     connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
             this, SLOT(reject()));
-
-    connect(d->buttons->button(QDialogButtonBox::Reset), SIGNAL(clicked()),
-            this, SLOT(slotDetails()));
 }
 
 void FaceScanDialog::slotPrepareForDetect(bool status)
@@ -347,20 +342,6 @@ void FaceScanDialog::slotPrepareForRecognize(bool /*status*/)
             d->albumSelectors->setTagSelected(album, false);
         }
     }
-}
-
-void FaceScanDialog::slotDetails()
-{
-    bool on = !d->tabWidget->isVisible();
-    d->tabWidget->setVisible(on);
-    adjustSize();
-    adjustDetailsButton(on);
-}
-
-void FaceScanDialog::adjustDetailsButton(bool on)
-{
-    d->buttons->button(QDialogButtonBox::Reset)->setText(on ? i18nc("@action:button", "Options <<")
-                                                            : i18nc("@action:button", "Options >>"));
 }
 
 void FaceScanDialog::slotOk()

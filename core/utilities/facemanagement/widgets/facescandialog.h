@@ -64,14 +64,11 @@ private:
 
     void setupUi();
     void setupConnections();
-    void adjustDetailsButton(bool on);
 
 private Q_SLOTS:
 
     void slotPrepareForDetect(bool status);
     void slotPrepareForRecognize(bool status);
-
-    void slotDetails();
     void slotOk();
 
 private:

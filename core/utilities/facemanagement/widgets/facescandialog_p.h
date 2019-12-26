@@ -91,7 +91,6 @@ public:
           configValueRecognizedMarkedFaces(QLatin1String("Recognize Marked Faces")),
           configAlreadyScannedHandling(QLatin1String("Already Scanned Handling")),
           configUseFullCpu(QLatin1String("Use Full CPU")),
-          configSettingsVisible(QLatin1String("Settings Widget Visible")),
           settingsConflicted(false)
     {
     }
@@ -120,7 +119,6 @@ public:
     const QString                configValueRecognizedMarkedFaces;
     const QString                configAlreadyScannedHandling;
     const QString                configUseFullCpu;
-    const QString                configSettingsVisible;
 
     bool                         settingsConflicted;
 };
