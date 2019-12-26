@@ -1447,6 +1447,13 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
                               AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
     d->tagSearchBar->setFilterModel(d->tagFolderView->albumFilterModel());
 
+    QLabel* const introduction    = new QLabel;
+    introduction->setWordWrap(true);
+    introduction->setText(i18nc("@info",
+                                "digiKam can search for faces in your photos. "
+                                "When you have identified your friends on a number of photos, "
+                                "it can also recognize the people shown on your photos."));
+
     d->rescanButton   = new QPushButton;
     d->rescanButton->setText(i18n("Scan collection for faces"));
 
@@ -1459,6 +1466,7 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
     hlay->addWidget(d->textLabel);
 
     layout->addLayout(hlay);
+    layout->addWidget(introduction);
     layout->addWidget(d->rescanButton);
     layout->addWidget(d->tagFolderView);
     layout->addWidget(d->tagSearchBar);

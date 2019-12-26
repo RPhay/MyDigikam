@@ -163,28 +163,26 @@ void FaceScanDialog::doSaveState()
 
 void FaceScanDialog::setupUi()
 {
-    const int spacing               = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-
     // ---- Main option box --------
 
-    d->optionGroupBox               = new QGroupBox(i18n("Workflow"));
-    QVBoxLayout* const optionLayout = new QVBoxLayout;
+    d->optionGroupBox                 = new QGroupBox(i18n("Workflow"));
+    QVBoxLayout* const optionLayout   = new QVBoxLayout;
 
-    d->alreadyScannedBox            = new SqueezedComboBox;
+    d->alreadyScannedBox              = new SqueezedComboBox;
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Skip images already scanned"),          FaceScanSettings::Skip);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan again and merge results"),         FaceScanSettings::Merge);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"), FaceScanSettings::Rescan);
     d->alreadyScannedBox->setCurrentIndex(FaceScanSettings::Skip);
 
-    d->detectButton                 = new QRadioButton(i18nc("@option:radio", "Detect faces"));
+    d->detectButton                   = new QRadioButton(i18nc("@option:radio", "Detect faces"));
     d->detectButton->setToolTip(i18nc("@info", "Find all faces in your photos"));
 
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
-    d->detectAndRecognizeButton     = new QRadioButton(i18nc("@option:radio", "Detect and recognize faces"));
+    d->detectAndRecognizeButton       = new QRadioButton(i18nc("@option:radio", "Detect and recognize faces"));
     d->detectAndRecognizeButton->setToolTip(i18nc("@info", "Find all faces in your photos and try to recognize which person is depicted"));
 #endif
 
-    d->reRecognizeButton            = new QRadioButton(i18nc("@option:radio", "Recognize faces"));
+    d->reRecognizeButton              = new QRadioButton(i18nc("@option:radio", "Recognize faces"));
     d->reRecognizeButton->setToolTip(i18nc("@info", "Try again to recognize the people depicted on marked but yet unconfirmed faces."));
 
     optionLayout->addWidget(d->alreadyScannedBox);
@@ -207,10 +205,10 @@ void FaceScanDialog::setupUi()
 
     // ---- Album tab ---------
 
-    d->tabWidget                 = new QTabWidget;
-    QWidget* const selWidget     = new QWidget(d->tabWidget);
-    QVBoxLayout* const selLayout = new QVBoxLayout;
-    d->albumSelectors            = new AlbumSelectors(i18nc("@label", "Search in:"), d->configName, selWidget);
+    d->tabWidget                      = new QTabWidget;
+    QWidget* const selWidget          = new QWidget(d->tabWidget);
+    QVBoxLayout* const selLayout      = new QVBoxLayout;
+    d->albumSelectors                 = new AlbumSelectors(i18nc("@label", "Search in:"), d->configName, selWidget);
     selLayout->addWidget(d->albumSelectors);
     selLayout->addStretch(10);
     selWidget->setLayout(selLayout);
@@ -219,14 +217,14 @@ void FaceScanDialog::setupUi()
 
     // ---- Settings tab ------
 
-    QWidget* const advancedTab        = new QWidget(d->tabWidget);
-    QGridLayout* const advancedLayout = new QGridLayout(advancedTab);
+    QWidget* const settingsTab        = new QWidget(d->tabWidget);
+    QGridLayout* const settingsLayout = new QGridLayout(settingsTab);
 
-    QLabel* const detectionLabel        = new QLabel(i18nc("@label", "Face detection and Recognition"), advancedTab);
+    QLabel* const detectionLabel      = new QLabel(i18nc("@label", "Face detection and Recognition"), settingsTab);
 
-    QLabel* const accuracyLabel         = new QLabel(i18nc("@label Two extremities of a scale", "Sensitivity     -     Specificity"), advancedTab);
+    QLabel* const accuracyLabel       = new QLabel(i18nc("@label Two extremities of a scale", "Sensitivity     -     Specificity"), settingsTab);
     accuracyLabel->setAlignment(Qt::AlignTop | Qt::AlignHCenter);
-    d->accuracyInput                    = new DIntNumInput(advancedTab);
+    d->accuracyInput                  = new DIntNumInput(settingsTab);
     d->accuracyInput->setDefaultValue(70);
     d->accuracyInput->setRange(0, 100, 10);
     d->accuracyInput->setToolTip(i18nc("@info:tooltip",
@@ -234,29 +232,29 @@ void FaceScanDialog::setupUi()
                                        "be recognized, but less faces will be recognized "
                                        "(only faces that are very similar to pretagged faces are recognized)"));
 
-    d->useFullCpuButton = new QCheckBox(advancedTab);
+    d->useFullCpuButton = new QCheckBox(settingsTab);
     d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));
     d->useFullCpuButton->setToolTip(i18nc("@info:tooltip",
                                           "Face detection and recognition are time-consuming tasks. "
                                           "You can choose if you wish to employ all processor cores "
                                           "on your system, or work in the background only on one core."));
 
-    d->retrainAllButton = new QCheckBox(advancedTab);
+    d->retrainAllButton = new QCheckBox(settingsTab);
     d->retrainAllButton->setText(i18nc("@option:check", "Clear and rebuild all training data"));
     d->retrainAllButton->setToolTip(i18nc("@info:tooltip",
                                           "This will clear all training data for recognition "
                                           "and rebuild it from all available faces."));
 
-    advancedLayout->addWidget(detectionLabel,                  0, 0, 1, 1);
-    advancedLayout->addWidget(d->accuracyInput,                1, 0, 1, 1);
-    advancedLayout->addWidget(accuracyLabel,                   2, 0, 1, 1);
-    advancedLayout->addWidget(new DLineWidget(Qt::Horizontal), 3, 0, 1, 1);
-    advancedLayout->addWidget(d->useFullCpuButton,             4, 0, 1, 1);
-    advancedLayout->addWidget(d->retrainAllButton,             5, 0, 1, 1);
-    advancedLayout->setColumnStretch(0, 10);
-    advancedLayout->setRowStretch(6, 10);
+    settingsLayout->addWidget(detectionLabel,                  0, 0, 1, 1);
+    settingsLayout->addWidget(d->accuracyInput,                1, 0, 1, 1);
+    settingsLayout->addWidget(accuracyLabel,                   2, 0, 1, 1);
+    settingsLayout->addWidget(new DLineWidget(Qt::Horizontal), 3, 0, 1, 1);
+    settingsLayout->addWidget(d->useFullCpuButton,             4, 0, 1, 1);
+    settingsLayout->addWidget(d->retrainAllButton,             5, 0, 1, 1);
+    settingsLayout->setColumnStretch(0, 10);
+    settingsLayout->setRowStretch(6, 10);
 
-    d->tabWidget->addTab(advancedTab, i18nc("@title:tab", "Settings"));
+    d->tabWidget->addTab(settingsTab, i18nc("@title:tab", "Settings"));
 
     // ------------------------
 
