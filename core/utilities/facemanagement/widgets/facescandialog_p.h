@@ -73,7 +73,18 @@ class Q_DECL_HIDDEN FaceScanDialog::Private
 public:
 
     explicit Private()
-        : configName(QLatin1String("Face Detection Dialog")),
+        : buttons(nullptr),
+          optionGroupBox(nullptr),
+          detectAndRecognizeButton(nullptr),
+          detectButton(nullptr),
+          alreadyScannedBox(nullptr),
+          reRecognizeButton(nullptr),
+          tabWidget(nullptr),
+          albumSelectors(nullptr),
+          accuracyInput(nullptr),
+          useFullCpuButton(nullptr),
+          retrainAllButton(nullptr),
+          configName(QLatin1String("Face Detection Dialog")),
           configMainTask(QLatin1String("Face Scan Main Task")),
           configValueDetect(QLatin1String("Detect")),
           configValueDetectAndRecognize(QLatin1String("Detect and Recognize Faces")),
@@ -81,21 +92,8 @@ public:
           configAlreadyScannedHandling(QLatin1String("Already Scanned Handling")),
           configUseFullCpu(QLatin1String("Use Full CPU")),
           configSettingsVisible(QLatin1String("Settings Widget Visible")),
-          configRecognizeAlgorithm(QLatin1String("Recognize Algorithm")),
           settingsConflicted(false)
     {
-        buttons                    = nullptr;
-        optionGroupBox             = nullptr;
-        detectAndRecognizeButton   = nullptr;
-        detectButton               = nullptr;
-        alreadyScannedBox          = nullptr;
-        reRecognizeButton          = nullptr;
-        tabWidget                  = nullptr;
-        albumSelectors             = nullptr;
-        accuracyInput              = nullptr;
-        useFullCpuButton           = nullptr;
-        retrainAllButton           = nullptr;
-        recognizeBox               = nullptr;
     }
 
     QDialogButtonBox*            buttons;
@@ -115,8 +113,6 @@ public:
     QCheckBox*                   useFullCpuButton;
     QCheckBox*                   retrainAllButton;
 
-    QComboBox*                   recognizeBox;
-
     const QString                configName;
     const QString                configMainTask;
     const QString                configValueDetect;
@@ -125,7 +121,6 @@ public:
     const QString                configAlreadyScannedHandling;
     const QString                configUseFullCpu;
     const QString                configSettingsVisible;
-    const QString                configRecognizeAlgorithm;
 
     bool                         settingsConflicted;
 };

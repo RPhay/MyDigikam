@@ -29,22 +29,22 @@ namespace Digikam
 {
 
 AssignNameWidget::Private::Private(AssignNameWidget* const q)
-    : q(q)
+    : mode(InvalidMode),
+      layoutMode(InvalidLayout),
+      visualStyle(InvalidVisualStyle),
+      widgetMode(InvalidTagEntryWidgetMode),
+      comboBox(nullptr),
+      lineEdit(nullptr),
+      confirmButton(nullptr),
+      rejectButton(nullptr),
+      clickLabel(nullptr),
+      layout(nullptr),
+      modelsGiven(0),
+      tagModel(nullptr),
+      tagFilterModel(nullptr),
+      tagFilteredModel(nullptr),
+      q(q)
 {
-    mode             = InvalidMode;
-    layoutMode       = InvalidLayout;
-    visualStyle      = InvalidVisualStyle;
-    widgetMode       = InvalidTagEntryWidgetMode;
-    comboBox         = nullptr;
-    lineEdit         = nullptr;
-    confirmButton    = nullptr;
-    rejectButton     = nullptr;
-    clickLabel       = nullptr;
-    layout           = nullptr;
-    modelsGiven      = 0;
-    tagModel         = nullptr;
-    tagFilterModel   = nullptr;
-    tagFilteredModel = nullptr;
 }
 
 QWidget* AssignNameWidget::Private::addTagsWidget() const
@@ -70,7 +70,7 @@ bool AssignNameWidget::Private::isValid() const
 void AssignNameWidget::Private::clearWidgets()
 {
     delete comboBox;
-    comboBox       = nullptr;
+    comboBox      = nullptr;
 
     delete lineEdit;
     lineEdit      = nullptr;
@@ -139,18 +139,22 @@ void AssignNameWidget::Private::checkWidgets()
     switch (mode)
     {
         case InvalidMode:
+        {
             break;
+        }
 
         case UnconfirmedEditMode:
         case ConfirmedEditMode:
-
+        {
             switch (widgetMode)
             {
                 case InvalidTagEntryWidgetMode:
+                {
                     break;
+                }
 
                 case AddTagsComboBoxMode:
-
+                {
                     if (!comboBox)
                     {
                         comboBox = new AddTagsComboBox(q);
@@ -159,9 +163,9 @@ void AssignNameWidget::Private::checkWidgets()
                     }
 
                     break;
-
+                }
                 case AddTagsLineEditMode:
-
+                {
                     if (!lineEdit)
                     {
                         lineEdit = new AddTagsLineEdit(q);
@@ -169,6 +173,7 @@ void AssignNameWidget::Private::checkWidgets()
                     }
 
                     break;
+                }
             }
 
             if (!confirmButton)
@@ -194,6 +199,7 @@ void AssignNameWidget::Private::checkWidgets()
             }
 
             break;
+        }
 
         case ConfirmedMode:
         {
@@ -246,15 +252,19 @@ void AssignNameWidget::Private::updateLayout()
     switch (mode)
     {
         case InvalidMode:
+        {
             break;
+        }
 
         case UnconfirmedEditMode:
         case ConfirmedEditMode:
-
+        {
             switch (layoutMode)
             {
                 case InvalidLayout:
+                {
                     break;
+                }
 
                 case FullLine:
                 {
@@ -295,11 +305,13 @@ void AssignNameWidget::Private::updateLayout()
             }
 
             break;
+        }
 
         case ConfirmedMode:
-
+        {
             layout->addWidget(clickLabel, 0, 0);
             break;
+        }
     }
 
     layout->setContentsMargins(1, 1, 1, 1);
@@ -339,7 +351,9 @@ void AssignNameWidget::Private::updateVisualStyle()
     switch (visualStyle)
     {
         case InvalidVisualStyle:
+        {
             break;
+        }
 
         case TranslucentDarkRound:
         {

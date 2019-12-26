@@ -102,16 +102,6 @@ void FaceScanDialog::doLoadState()
 
     d->useFullCpuButton->setChecked(group.readEntry(entryName(d->configUseFullCpu), false));
 
-    RecognitionDatabase::RecognizeAlgorithm algo =
-            (RecognitionDatabase::RecognizeAlgorithm)group.readEntry(entryName(d->configRecognizeAlgorithm),
-            (int)RecognitionDatabase::RecognizeAlgorithm::DNN); // Default is DNN with 7.0.0
-
-    int index = d->recognizeBox->findData(algo);
-
-    d->recognizeBox->setCurrentIndex((index == -1) ?
-                                     (int)RecognitionDatabase::RecognizeAlgorithm::DNN // Default is DNN with 7.0.0
-                                     : index);
-
     // do not load retrainAllButton state from config, dangerous
 
     d->tabWidget->setVisible(group.readEntry(entryName(d->configSettingsVisible), false));
@@ -165,7 +155,6 @@ void FaceScanDialog::doSaveState()
 
     group.writeEntry(entryName(d->configUseFullCpu),         d->useFullCpuButton->isChecked());
     group.writeEntry(entryName(d->configSettingsVisible),    d->tabWidget->isVisible());
-    group.writeEntry(entryName(d->configRecognizeAlgorithm), d->recognizeBox->itemData(d->recognizeBox->currentIndex()));
 }
 
 void FaceScanDialog::setupUi()
@@ -267,29 +256,12 @@ void FaceScanDialog::setupUi()
     QWidget* const advancedTab        = new QWidget(d->tabWidget);
     QGridLayout* const advancedLayout = new QGridLayout(advancedTab);
 
-    QLabel* const cpuExplanation      = new QLabel(advancedTab);
-    cpuExplanation->setText(i18nc("@info",
-                                  "Face detection is a time-consuming task. "
-                                  "You can choose if you wish to employ all processor cores "
-                                  "on your system, or work in the background only on one core."));
-    cpuExplanation->setWordWrap(true);
-
     d->useFullCpuButton = new QCheckBox(advancedTab);
     d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));
-
-    // ---- Recognize algorithm ComboBox -----
-
-    d->recognizeBox     = new QComboBox;
-/*
-    NOTE: with 7.0.0, DNN will become the default algoritm as it give better performance and results than other ones.
-
-    d->recognizeBox->addItem(i18nc("@label:listbox", "Recognize faces using LBP algorithm"),           RecognitionDatabase::RecognizeAlgorithm::LBP);
-    d->recognizeBox->addItem(i18nc("@label:listbox", "Recognize faces using EigenFaces algorithm"),    RecognitionDatabase::RecognizeAlgorithm::EigenFace);
-    d->recognizeBox->addItem(i18nc("@label:listbox", "Recognize faces using FisherFaces algorithm"),   RecognitionDatabase::RecognizeAlgorithm::FisherFace);
-*/
-    d->recognizeBox->addItem(i18nc("@label:listbox", "Recognize faces using Deep Learning algorithm"), RecognitionDatabase::RecognizeAlgorithm::DNN);
-
-    d->recognizeBox->setCurrentIndex(RecognitionDatabase::RecognizeAlgorithm::DNN); // Default now change to DNN
+    d->useFullCpuButton->setToolTip(i18nc("@info:tooltip",
+                                          "Face detection and recognition are time-consuming tasks. "
+                                          "You can choose if you wish to employ all processor cores "
+                                          "on your system, or work in the background only on one core."));
 
     d->retrainAllButton = new QCheckBox(advancedTab);
     d->retrainAllButton->setText(i18nc("@option:check", "Clear and rebuild all training data"));
@@ -297,12 +269,10 @@ void FaceScanDialog::setupUi()
                                           "This will clear all training data for recognition "
                                           "and rebuild it from all available faces."));
 
-    advancedLayout->addWidget(cpuExplanation,                  0, 0);
-    advancedLayout->addWidget(d->useFullCpuButton,             1, 0);
-    advancedLayout->addWidget(new DLineWidget(Qt::Horizontal), 2, 0);
-    advancedLayout->addWidget(d->retrainAllButton,             3, 0);
-    advancedLayout->addWidget(d->recognizeBox,                 4, 0);
-    advancedLayout->setRowStretch(5, 10);
+    advancedLayout->addWidget(d->useFullCpuButton,             0, 0);
+    advancedLayout->addWidget(new DLineWidget(Qt::Horizontal), 1, 0);
+    advancedLayout->addWidget(d->retrainAllButton,             2, 0);
+    advancedLayout->setRowStretch(3, 10);
 
     d->tabWidget->addTab(advancedTab, i18nc("@title:tab", "Advanced"));
 
@@ -403,7 +373,6 @@ void FaceScanDialog::retrainAllButtonToggled(bool on)
 {
     d->optionGroupBox->setEnabled(!on);
     d->albumSelectors->setEnabled(!on);
-    d->recognizeBox->setEnabled(!on);
 }
 
 bool FaceScanDialog::settingsConflicted() const
@@ -454,9 +423,6 @@ FaceScanSettings FaceScanDialog::settings() const
     }
 
     settings.useFullCpu             = d->useFullCpuButton->isChecked();
-
-    settings.recognizeAlgorithm     = (RecognitionDatabase::RecognizeAlgorithm)
-                                      d->recognizeBox->itemData(d->recognizeBox->currentIndex()).toInt();
 
     return settings;
 }

@@ -276,7 +276,7 @@ void AssignNameWidget::keyPressEvent(QKeyEvent* e)
 
 void AssignNameWidget::showEvent(QShowEvent* e)
 {
-    if (d->mode == UnconfirmedEditMode || d->mode == ConfirmedEditMode)
+    if ((d->mode == UnconfirmedEditMode) || (d->mode == ConfirmedEditMode))
     {
         if (d->comboBox)
         {

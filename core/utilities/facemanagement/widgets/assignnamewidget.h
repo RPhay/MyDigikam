@@ -112,7 +112,7 @@ public:
     void setVisualStyle(VisualStyle style);
     VisualStyle visualStyle()   const;
 
-    ItemInfo info()            const;
+    ItemInfo info()             const;
     QVariant  faceIdentifier()  const;
 
     /// The combo box or line edit in use, if any
@@ -168,7 +168,7 @@ Q_SIGNALS:
 protected:
 
     void keyPressEvent(QKeyEvent* e) override;
-    void showEvent(QShowEvent* e) override;
+    void showEvent(QShowEvent* e)    override;
 
 protected Q_SLOTS:
 
