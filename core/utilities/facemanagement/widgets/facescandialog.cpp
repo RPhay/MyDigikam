@@ -22,6 +22,10 @@
  *
  * ============================================================ */
 
+// NOTE: Uncomment this line to enable detect and recognize option
+// Currently this option is hiden, since it's not handled properly and provides confusing functionality => Fix it later
+//#define ENABLE_DETECT_AND_RECOGNIZE
+
 #include "facescandialog_p.h"
 
 namespace Digikam
@@ -69,7 +73,9 @@ void FaceScanDialog::doLoadState()
     }
     else if (mainTask == d->configValueDetectAndRecognize)
     {
-        //d->detectAndRecognizeButton->setChecked(true);
+#ifdef ENABLE_DETECT_AND_RECOGNIZE
+        d->detectAndRecognizeButton->setChecked(true);
+#endif
         d->detectButton->setChecked(true);
     }
     else
@@ -117,10 +123,12 @@ void FaceScanDialog::doSaveState()
     {
         mainTask = d->configValueDetect;
     }
+#ifdef ENABLE_DETECT_AND_RECOGNIZE
     else if (d->detectAndRecognizeButton->isChecked())
     {
         mainTask = d->configValueDetectAndRecognize;
     }
+#endif
     else // d->reRecognizeButton
     {
         mainTask = d->configValueRecognizedMarkedFaces;
@@ -176,17 +184,19 @@ void FaceScanDialog::setupUi()
     d->optionGroupBox               = new QGroupBox;
     QGridLayout* const optionLayout = new QGridLayout;
 
+    d->alreadyScannedBox            = new SqueezedComboBox;
+    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Skip images already scanned"),          FaceScanSettings::Skip);
+    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan again and merge results"),         FaceScanSettings::Merge);
+    d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"), FaceScanSettings::Rescan);
+    d->alreadyScannedBox->setCurrentIndex(FaceScanSettings::Skip);
+
     d->detectButton                 = new QRadioButton(i18nc("@option:radio", "Detect faces"));
     d->detectButton->setToolTip(i18nc("@info", "Find all faces in your photos"));
 
+#ifdef ENABLE_DETECT_AND_RECOGNIZE
     d->detectAndRecognizeButton     = new QRadioButton(i18nc("@option:radio", "Detect and recognize faces"));
     d->detectAndRecognizeButton->setToolTip(i18nc("@info", "Find all faces in your photos and try to recognize which person is depicted"));
-
-    d->alreadyScannedBox            = new QComboBox;
-    d->alreadyScannedBox->addItem(i18nc("@label:listbox", "Skip images already scanned"),          FaceScanSettings::Skip);
-    d->alreadyScannedBox->addItem(i18nc("@label:listbox", "Scan again and merge results"),         FaceScanSettings::Merge);
-    d->alreadyScannedBox->addItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"), FaceScanSettings::Rescan);
-    d->alreadyScannedBox->setCurrentIndex(FaceScanSettings::Skip);
+#endif
 
     d->reRecognizeButton            = new QRadioButton(i18nc("@option:radio", "Recognize faces"));
     d->reRecognizeButton->setToolTip(i18nc("@info", "Try again to recognize the people depicted on marked but yet unconfirmed faces."));
@@ -194,17 +204,18 @@ void FaceScanDialog::setupUi()
     optionLayout->addWidget(d->alreadyScannedBox,          0, 0, 1, 2);
     optionLayout->addWidget(d->detectButton,               1, 0, 1, 2);
 
-/*  TODO:
-    Currently hiden this option, since it's not handled properly and provides confusing functionality
-    Fix it later
-    // optionLayout->addWidget(d->detectAndRecognizeButton,   2, 0, 1, 2);
-*/
+#ifdef ENABLE_DETECT_AND_RECOGNIZE
+    optionLayout->addWidget(d->detectAndRecognizeButton,   2, 0, 1, 2);
+#endif
+
     optionLayout->addWidget(d->reRecognizeButton,          2, 0, 1, 2);
 
+#ifdef ENABLE_DETECT_AND_RECOGNIZE
     QStyleOptionButton buttonOption;
     buttonOption.initFrom(d->detectAndRecognizeButton);
     int indent = style()->subElementRect(QStyle::SE_RadioButtonIndicator, &buttonOption, d->detectAndRecognizeButton).width();
     optionLayout->setColumnMinimumWidth(0, indent);
+#endif
 
     d->optionGroupBox->setLayout(optionLayout);
 
@@ -286,14 +297,15 @@ void FaceScanDialog::setupUi()
 void FaceScanDialog::setupConnections()
 {
 /*
-    connect(d->detectButton, SIGNAL(toggled(bool)),
+     connect(d->detectButton, SIGNAL(toggled(bool)),
             d->alreadyScannedBox, SLOT(setEnabled(bool)));
 */
-    connect(d->detectButton, SIGNAL(toggled(bool)),
-            this, SLOT(slotPrepareForDetect(bool)));
-
+#ifdef ENABLE_DETECT_AND_RECOGNIZE
     connect(d->detectAndRecognizeButton, SIGNAL(toggled(bool)),
             d->alreadyScannedBox, SLOT(setEnabled(bool)));
+#endif
+    connect(d->detectButton, SIGNAL(toggled(bool)),
+            this, SLOT(slotPrepareForDetect(bool)));
 
     connect(d->reRecognizeButton, SIGNAL(toggled(bool)),
             this, SLOT(slotPrepareForRecognize(bool)));
@@ -375,11 +387,13 @@ FaceScanSettings FaceScanDialog::settings() const
     }
     else
     {
+#ifdef ENABLE_DETECT_AND_RECOGNIZE
         if (d->detectAndRecognizeButton->isChecked())
         {
             settings.task = FaceScanSettings::DetectAndRecognize;
         }
         else // recognize only
+#endif
         {
             settings.task = FaceScanSettings::RecognizeMarkedFaces;
 

@@ -32,7 +32,6 @@
 #include <QApplication>
 #include <QButtonGroup>
 #include <QCheckBox>
-#include <QComboBox>
 #include <QGridLayout>
 #include <QGroupBox>
 #include <QLabel>
@@ -61,6 +60,7 @@
 #include "albumselectors.h"
 #include "albummanager.h"
 #include "applicationsettings.h"
+#include "squeezedcombobox.h"
 #include "dexpanderbox.h"
 #include "facedbaccess.h"
 #include "facedb.h"
@@ -100,7 +100,7 @@ public:
     QGroupBox*                   optionGroupBox;
     QRadioButton*                detectAndRecognizeButton;
     QRadioButton*                detectButton;
-    QComboBox*                   alreadyScannedBox;
+    SqueezedComboBox*            alreadyScannedBox;
     QRadioButton*                reRecognizeButton;
 
     QTabWidget*                  tabWidget;
