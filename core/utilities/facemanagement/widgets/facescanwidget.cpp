@@ -246,6 +246,7 @@ void FaceScanWidget::setupUi()
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(d->optionGroupBox);
     vbx->addWidget(d->tabWidget);
+    vbx->setContentsMargins(QMargins());
     setLayout(vbx);
 }
 
