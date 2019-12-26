@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2010-10-09
- * Description : Dialog to choose options for face scanning
+ * Description : Widget to choose options for face scanning
  *
  * Copyright (C) 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -22,13 +22,12 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_SCAN_DIALOG_H
-#define DIGIKAM_FACE_SCAN_DIALOG_H
+#ifndef DIGIKAM_FACE_SCAN_WIDGET_H
+#define DIGIKAM_FACE_SCAN_WIDGET_H
 
 // Qt includes
 
-#include <QList>
-#include <QDialog>
+#include <QWidget>
 
 // Local includes
 
@@ -38,18 +37,18 @@
 namespace Digikam
 {
 
-class FaceScanDialog : public QDialog,
+class FaceScanWidget : public QWidget,
                        public StateSavingObject
 {
     Q_OBJECT
 
 public:
 
-    explicit FaceScanDialog(QWidget* const parent = nullptr);
-    ~FaceScanDialog();
+    explicit FaceScanWidget(QWidget* const parent = nullptr);
+    ~FaceScanWidget();
 
     bool             settingsConflicted() const;
-    FaceScanSettings settings() const;
+    FaceScanSettings settings()           const;
 
 protected:
 
@@ -69,7 +68,6 @@ private Q_SLOTS:
 
     void slotPrepareForDetect(bool status);
     void slotPrepareForRecognize(bool status);
-    void slotOk();
 
 private:
 
@@ -79,4 +77,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_FACE_SCAN_DIALOG_H
+#endif // DIGIKAM_FACE_SCAN_WIDGET_H

@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2010-10-09
- * Description : Dialog to choose options for face scanning
+ * Description : Widget to choose options for face scanning
  *
  * Copyright (C) 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -22,10 +22,10 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_FACE_SCAN_DIALOG_P_H
-#define DIGIKAM_FACE_SCAN_DIALOG_P_H
+#ifndef DIGIKAM_FACE_SCAN_WIDGET_P_H
+#define DIGIKAM_FACE_SCAN_WIDGET_P_H
 
-#include "facescandialog.h"
+#include "facescanwidget.h"
 
 // Qt includes
 
@@ -41,10 +41,10 @@
 #include <QToolButton>
 #include <QTabWidget>
 #include <QIcon>
-#include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QStyle>
+#include <QList>
 
 // KDE includes
 
@@ -69,13 +69,12 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN FaceScanDialog::Private
+class Q_DECL_HIDDEN FaceScanWidget::Private
 {
 public:
 
     explicit Private()
-        : buttons(nullptr),
-          optionGroupBox(nullptr),
+        : optionGroupBox(nullptr),
           detectAndRecognizeButton(nullptr),
           detectButton(nullptr),
           alreadyScannedBox(nullptr),
@@ -95,8 +94,6 @@ public:
           settingsConflicted(false)
     {
     }
-
-    QDialogButtonBox*            buttons;
 
     QGroupBox*                   optionGroupBox;
     QRadioButton*                detectAndRecognizeButton;
@@ -126,4 +123,4 @@ public:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_FACE_SCAN_DIALOG_P_H
+#endif // DIGIKAM_FACE_SCAN_WIDGET_P_H

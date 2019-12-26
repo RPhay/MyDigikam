@@ -18,7 +18,7 @@ set(libfacemanagement_SRCS
     threads/facepipelinepackage.cpp
     threads/parallelpipes.cpp
     threads/scanstatefilter.cpp
-    widgets/facescandialog.cpp
+    widgets/facescanwidget.cpp
     widgets/assignnamewidget.cpp
     widgets/assignnamewidget_p.cpp
     widgets/assignnamewidgetstates.cpp

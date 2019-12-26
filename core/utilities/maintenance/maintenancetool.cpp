@@ -106,6 +106,7 @@ void MaintenanceTool::slotDone()
 void MaintenanceTool::slotCancel()
 {
     setComplete();
+    emit signalCanceled();
 }
 
 } // namespace Digikam

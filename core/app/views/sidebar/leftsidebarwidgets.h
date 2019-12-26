@@ -403,6 +403,7 @@ private Q_SLOTS:
 
     void slotInit();
     void slotScanForFaces();
+    void slotScanComplete();
 
 Q_SIGNALS:
 

@@ -46,20 +46,28 @@ public:
     explicit MaintenanceTool(const QString& id, ProgressItem* const parent = nullptr);
     virtual ~MaintenanceTool();
 
-    /** If true, show a notification message on desktop notification manager
+    /**
+     * If true, show a notification message on desktop notification manager
      * with time elpased to run process.
      */
     void setNotificationEnabled(bool b);
 
-    /** Re-implement this method if your tool is able to use multi-core CPU to process item in parallel
+    /**
+     * Re-implement this method if your tool is able to use multi-core CPU to process item in parallel
      */
     virtual void setUseMultiCoreCPU(bool) {};
 
 Q_SIGNALS:
 
-    /** Emit when process is done (not canceled).
+    /**
+     * Emit when process is done (not canceled).
      */
     void signalComplete();
+
+    /**
+     * Emit when process is canceled.
+     */
+    void signalCanceled();
 
 public Q_SLOTS:
 

@@ -223,7 +223,7 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
             this, SLOT(slotCancel()));
 
     if ((settings.albums.isEmpty() && settings.infos.isEmpty()) ||
-         settings.task == FaceScanSettings::RetrainAll)
+        (settings.task == FaceScanSettings::RetrainAll))
     {
         d->albumTodoList = AlbumManager::instance()->allPAlbums();
     }

@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2010-10-09
- * Description : Dialog to choose options for face scanning
+ * Description : Widget to choose options for face scanning
  *
  * Copyright (C) 2010-2012 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -26,41 +26,27 @@
 // Currently this option is hiden, since it's not handled properly and provides confusing functionality => Fix it later
 //#define ENABLE_DETECT_AND_RECOGNIZE
 
-#include "facescandialog_p.h"
+#include "facescanwidget_p.h"
 
 namespace Digikam
 {
 
-FaceScanDialog::FaceScanDialog(QWidget* const parent)
-    : QDialog(parent),
+FaceScanWidget::FaceScanWidget(QWidget* const parent)
+    : QWidget(parent),
       StateSavingObject(this),
       d(new Private)
 {
-    setWindowFlags((windowFlags() & ~Qt::Dialog) |
-                   Qt::Window                    |
-                   Qt::WindowCloseButtonHint     |
-                   Qt::WindowMinMaxButtonsHint);
-
-    setWindowTitle(i18nc("@title:window", "Scanning faces"));
-    setModal(true);
-
-    d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
-    d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "Scan"));
-
+    setObjectName(d->configName);
     setupUi();
     setupConnections();
-
-    setObjectName(d->configName);
-    loadState();
 }
 
-FaceScanDialog::~FaceScanDialog()
+FaceScanWidget::~FaceScanWidget()
 {
     delete d;
 }
 
-void FaceScanDialog::doLoadState()
+void FaceScanWidget::doLoadState()
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << getConfigGroup().name();
     KConfigGroup group = getConfigGroup();
@@ -111,7 +97,7 @@ void FaceScanDialog::doLoadState()
     // do not load retrainAllButton state from config, dangerous
 }
 
-void FaceScanDialog::doSaveState()
+void FaceScanWidget::doSaveState()
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << getConfigGroup().name();
 
@@ -161,7 +147,7 @@ void FaceScanDialog::doSaveState()
     group.writeEntry(entryName(d->configUseFullCpu), d->useFullCpuButton->isChecked());
 }
 
-void FaceScanDialog::setupUi()
+void FaceScanWidget::setupUi()
 {
     // ---- Main option box --------
 
@@ -210,7 +196,6 @@ void FaceScanDialog::setupUi()
     QVBoxLayout* const selLayout      = new QVBoxLayout;
     d->albumSelectors                 = new AlbumSelectors(i18nc("@label", "Search in:"), d->configName, selWidget);
     selLayout->addWidget(d->albumSelectors);
-    selLayout->addStretch(10);
     selWidget->setLayout(selLayout);
 
     d->tabWidget->addTab(selWidget, i18nc("@title:tab", "Albums"));
@@ -261,13 +246,10 @@ void FaceScanDialog::setupUi()
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(d->optionGroupBox);
     vbx->addWidget(d->tabWidget);
-    vbx->addWidget(d->buttons);
     setLayout(vbx);
-
-    adjustSize();
 }
 
-void FaceScanDialog::setupConnections()
+void FaceScanWidget::setupConnections()
 {
 /*
      connect(d->detectButton, SIGNAL(toggled(bool)),
@@ -285,15 +267,9 @@ void FaceScanDialog::setupConnections()
 
     connect(d->retrainAllButton, SIGNAL(toggled(bool)),
             this, SLOT(retrainAllButtonToggled(bool)));
-
-    connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
-            this, SLOT(slotOk()));
-
-    connect(d->buttons->button(QDialogButtonBox::Cancel), SIGNAL(clicked()),
-            this, SLOT(reject()));
 }
 
-void FaceScanDialog::slotPrepareForDetect(bool status)
+void FaceScanWidget::slotPrepareForDetect(bool status)
 {
     d->alreadyScannedBox->setEnabled(status);
 
@@ -301,7 +277,7 @@ void FaceScanDialog::slotPrepareForDetect(bool status)
     d->albumSelectors->resetTAlbumSelection();
 }
 
-void FaceScanDialog::slotPrepareForRecognize(bool /*status*/)
+void FaceScanWidget::slotPrepareForRecognize(bool /*status*/)
 {
     /**
      * TODO:
@@ -329,24 +305,18 @@ void FaceScanDialog::slotPrepareForRecognize(bool /*status*/)
     }
 }
 
-void FaceScanDialog::slotOk()
-{
-    accept();
-    saveState();
-}
-
-void FaceScanDialog::retrainAllButtonToggled(bool on)
+void FaceScanWidget::retrainAllButtonToggled(bool on)
 {
     d->optionGroupBox->setEnabled(!on);
     d->albumSelectors->setEnabled(!on);
 }
 
-bool FaceScanDialog::settingsConflicted() const
+bool FaceScanWidget::settingsConflicted() const
 {
     return d->settingsConflicted;
 }
 
-FaceScanSettings FaceScanDialog::settings() const
+FaceScanSettings FaceScanWidget::settings() const
 {
     FaceScanSettings settings;
 

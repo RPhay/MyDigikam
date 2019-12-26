@@ -53,13 +53,13 @@ public:
 
 private Q_SLOTS:
 
-    void slotStart() override;
+    void slotStart()                                        override;
     void slotContinueAlbumListing();
     void slotItemsInfo(const ItemInfoList&);
     void slotImagesSkipped(const QList<ItemInfo>&);
     void slotShowOneDetected(const FacePipelinePackage&);
-    void slotDone() override;
-    void slotCancel() override;
+    void slotDone()                                         override;
+    void slotCancel()                                       override;
 
 private:
 

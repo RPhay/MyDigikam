@@ -64,7 +64,7 @@
 #include "coredbsearchxml.h"
 #include "tagfolderview.h"
 #include "timelinewidget.h"
-#include "facescandialog.h"
+#include "facescanwidget.h"
 #include "facesdetector.h"
 #include "tagsmanager.h"
 #include "labelstreeview.h"
@@ -1404,18 +1404,19 @@ class Q_DECL_HIDDEN PeopleSideBarWidget::Private : public TagViewSideBarWidget::
 public:
 
     explicit Private()
+      : personIcon(nullptr),
+        textLabel(nullptr),
+        rescanButton(nullptr),
+        searchModificationHelper(nullptr),
+        settingsWdg(nullptr)
     {
-        personIcon               = nullptr;
-        textLabel                = nullptr;
-        rescanButton             = nullptr;
-        searchModificationHelper = nullptr;
     }
 
     QLabel*                   personIcon;
     QLabel*                   textLabel;
     QPushButton*              rescanButton;
-
     SearchModificationHelper* searchModificationHelper;
+    FaceScanWidget*           settingsWdg;
 };
 
 PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
@@ -1441,35 +1442,38 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
     d->tagFolderView->filteredModel()->listOnlyTagsWithProperty(TagPropertyName::person());
     d->tagFolderView->filteredModel()->setFilterBehavior(AlbumFilterModel::StrictFiltering);
 
-    d->tagSearchBar   = new SearchTextBar(this, QLatin1String("ItemIconViewPeopleSearchBar"));
+    d->tagSearchBar             = new SearchTextBar(this, QLatin1String("ItemIconViewPeopleSearchBar"));
     d->tagSearchBar->setHighlightOnResult(true);
     d->tagSearchBar->setModel(d->tagFolderView->filteredModel(),
                               AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
     d->tagSearchBar->setFilterModel(d->tagFolderView->albumFilterModel());
-
-    QLabel* const introduction    = new QLabel;
-    introduction->setWordWrap(true);
-    introduction->setText(i18nc("@info",
-                                "digiKam can search for faces in your photos. "
-                                "When you have identified your friends on a number of photos, "
-                                "it can also recognize the people shown on your photos."));
-
-    d->rescanButton   = new QPushButton;
-    d->rescanButton->setText(i18n("Scan collection for faces"));
 
     d->personIcon     = new QLabel;
     d->personIcon->setPixmap(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(48));
 
     d->textLabel      = new QLabel(i18n("People"));
 
+    QLabel* const introduction  = new QLabel;
+    introduction->setWordWrap(true);
+    introduction->setText(i18nc("@info",
+                                "digiKam can search for faces in your photos. "
+                                "When you have identified your friends on a number of photos, "
+                                "it can also recognize the people shown on your photos."));
+
+    d->settingsWdg    = new FaceScanWidget(this);
+
+    d->rescanButton   = new QPushButton;
+    d->rescanButton->setText(i18n("Scan collection for faces"));
+
     hlay->addWidget(d->personIcon);
     hlay->addWidget(d->textLabel);
 
     layout->addLayout(hlay);
-    layout->addWidget(introduction);
-    layout->addWidget(d->rescanButton);
-    layout->addWidget(d->tagFolderView);
+    layout->addWidget(d->tagFolderView, 10);
     layout->addWidget(d->tagSearchBar);
+    layout->addWidget(introduction);
+    layout->addWidget(d->settingsWdg);
+    layout->addWidget(d->rescanButton);
     layout->setContentsMargins(0, 0, spacing, 0);
 
     setLayout(layout);
@@ -1504,11 +1508,13 @@ void PeopleSideBarWidget::setActive(bool active)
 void PeopleSideBarWidget::doLoadState()
 {
     d->tagFolderView->loadState();
+    d->settingsWdg->loadState();
 }
 
 void PeopleSideBarWidget::doSaveState()
 {
     d->tagFolderView->saveState();
+    d->settingsWdg->saveState();
 }
 
 void PeopleSideBarWidget::applySettings()
@@ -1522,27 +1528,35 @@ void PeopleSideBarWidget::changeAlbumFromHistory(const QList<Album*>& album)
 
 void PeopleSideBarWidget::slotScanForFaces()
 {
-    QPointer<FaceScanDialog> dlg = new FaceScanDialog(this) ;
+    FaceScanSettings faceScanSettings = d->settingsWdg->settings();
 
-    if (dlg->exec() == QDialog::Accepted)
+    if (!d->settingsWdg->settingsConflicted())
     {
-        FaceScanSettings faceScanSettings = dlg->settings();
+        FacesDetector* const tool = new FacesDetector(faceScanSettings);
+        tool->start();
 
-        if (!dlg->settingsConflicted())
-        {
-            FacesDetector* const tool = new FacesDetector(faceScanSettings);
-            tool->start();
-        }
-        else
-        {
-            QMessageBox::warning(dlg, i18n("Face recognition aborted"),
-                                 i18n("Face recognition is aborted, because "
-                                      "there are no identities to recognize. "
-                                      "Please add new identities."));
-        }
+        d->settingsWdg->setEnabled(false);
+        d->rescanButton->setEnabled(false);
+
+        connect(tool, SIGNAL(signalComplete()),
+                this, SLOT(slotScanComplete()));
+
+        connect(tool, SIGNAL(signalCanceled()),
+                this, SLOT(slotScanComplete()));
     }
+    else
+    {
+        QMessageBox::warning(0, i18n("Face recognition aborted"),
+                             i18n("Face recognition is aborted, because "
+                                  "there are no identities to recognize. "
+                                  "Please add new identities."));
+    }
+}
 
-    delete dlg;
+void PeopleSideBarWidget::slotScanComplete()
+{
+    d->settingsWdg->setEnabled(true);
+    d->rescanButton->setEnabled(true);
 }
 
 const QIcon PeopleSideBarWidget::getIcon()
