@@ -167,7 +167,7 @@ void FaceScanDialog::setupUi()
 
     // ---- Main option box --------
 
-    d->optionGroupBox               = new QGroupBox;
+    d->optionGroupBox               = new QGroupBox(i18n("Workflow"));
     QVBoxLayout* const optionLayout = new QVBoxLayout;
 
     d->alreadyScannedBox            = new SqueezedComboBox;
@@ -207,9 +207,15 @@ void FaceScanDialog::setupUi()
 
     // ---- Album tab ---------
 
-    d->tabWidget      = new QTabWidget;
-    d->albumSelectors = new AlbumSelectors(i18nc("@label", "Search in:"), d->configName, d->tabWidget);
-    d->tabWidget->addTab(d->albumSelectors, i18nc("@title:tab", "Albums"));
+    d->tabWidget                 = new QTabWidget;
+    QWidget* const selWidget     = new QWidget(d->tabWidget);
+    QVBoxLayout* const selLayout = new QVBoxLayout;
+    d->albumSelectors            = new AlbumSelectors(i18nc("@label", "Search in:"), d->configName, selWidget);
+    selLayout->addWidget(d->albumSelectors);
+    selLayout->addStretch(10);
+    selWidget->setLayout(selLayout);
+
+    d->tabWidget->addTab(selWidget, i18nc("@title:tab", "Albums"));
 
     // ---- Settings tab ------
 
