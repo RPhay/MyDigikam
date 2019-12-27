@@ -28,6 +28,7 @@
 #include "coredbaccess.h"
 #include "dbengineparameters.h"
 #include "coredb.h"
+#include "facetags.h"
 #include "itemlister.h"
 #include "digikam_export.h"
 #include "digikam_debug.h"
@@ -183,16 +184,37 @@ void TagsJob::run()
     }
     else if (m_jobInfo.isFaceFoldersJob())
     {
+        QString property;
+        QMap<int, int> counts;
         QMap<QString, QMap<int, int> > facesNumberMap;
 
-        facesNumberMap[ImageTagPropertyName::autodetectedFace()]   =
-            CoreDbAccess().db()->getNumberOfImagesInTagProperties(ImageTagPropertyName::autodetectedFace());
+        property = ImageTagPropertyName::autodetectedFace();
+        counts   = CoreDbAccess().db()->getNumberOfImagesInTagProperties(property);
 
-        facesNumberMap[ImageTagPropertyName::autodetectedPerson()] =
-            CoreDbAccess().db()->getNumberOfImagesInTagProperties(ImageTagPropertyName::autodetectedPerson());
+        if (!counts.contains(FaceTags::unknownPersonTagId()))
+        {
+            counts[FaceTags::unknownPersonTagId()] = 0;
+        }
 
-        facesNumberMap[ImageTagPropertyName::tagRegion()]          =
-            CoreDbAccess().db()->getNumberOfImagesInTagProperties(ImageTagPropertyName::tagRegion());
+        facesNumberMap.insert(property, counts);
+
+        property = ImageTagPropertyName::autodetectedPerson();
+        counts   = CoreDbAccess().db()->getNumberOfImagesInTagProperties(property);
+
+        facesNumberMap.insert(property, counts);
+
+        property = ImageTagPropertyName::tagRegion();
+        counts   = CoreDbAccess().db()->getNumberOfImagesInTagProperties(property);
+
+        foreach (int tagId, FaceTags::allPersonTags())
+        {
+            if (!counts.contains(tagId))
+            {
+                counts[tagId] = 0;
+            }
+        }
+
+        facesNumberMap.insert(property, counts);
 
         emit faceFoldersData(facesNumberMap);
     }

@@ -40,7 +40,6 @@
 #include "collectionlocation.h"
 #include "dbengineactiontype.h"
 #include "tagscache.h"
-#include "facetags.h"
 #include "album.h"
 
 namespace Digikam
@@ -3339,18 +3338,6 @@ QMap<int, int> CoreDB::getNumberOfImagesInTagProperties(const QString& property)
     QList<QVariant> values;
     QMap<int, int>  tagsStatMap;
     int             tagID, count;
-
-    if (property == ImageTagPropertyName::tagRegion())
-    {
-        foreach (int tagId, FaceTags::allPersonTags())
-        {
-            tagsStatMap[tagId] = 0;
-        }
-    }
-    else if (property == ImageTagPropertyName::autodetectedFace())
-    {
-        tagsStatMap[FaceTags::unknownPersonTagId()] = 0;
-    }
 
     d->db->execSql(QString::fromUtf8("SELECT tagid, COUNT(*) FROM ImageTagProperties "
                                      "LEFT JOIN Images ON Images.id=ImageTagProperties.imageid "
