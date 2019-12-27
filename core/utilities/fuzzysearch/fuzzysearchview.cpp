@@ -79,6 +79,7 @@
 #include "drangebox.h"
 #include "similaritydbaccess.h"
 #include "similaritydb.h"
+#include "dnotificationwidget.h"
 
 namespace Digikam
 {
@@ -697,7 +698,7 @@ void FuzzySearchView::setActive(bool val)
                                "The Similarity Search Tools will not be operational "
                                "without pre-generated fingerprints. Please generate "
                                "the fingerprints first.");
-            QMessageBox::information(this, i18n("No Fingerprints"), msg);
+            emit signalNofificationError(msg, DNotificationWidget::Warning);
         }
 
         d->fingerprintsChecked = true;

@@ -108,7 +108,7 @@ AlbumFolderViewSideBarWidget::AlbumFolderViewSideBarWidget(QWidget* const parent
     d->albumFolderView->setConfigGroup(getConfigGroup());
     d->albumFolderView->setExpandNewCurrentItem(true);
     d->albumFolderView->setAlbumManagerCurrentAlbum(true);
-    d->searchTextBar   = new SearchTextBar(this, QLatin1String("ItemIconViewFolderSearchBar"));
+    d->searchTextBar           = new SearchTextBar(this, QLatin1String("ItemIconViewFolderSearchBar"));
     d->searchTextBar->setHighlightOnResult(true);
     d->searchTextBar->setModel(model, AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
     d->searchTextBar->setFilterModel(d->albumFolderView->albumFilterModel());
@@ -332,14 +332,14 @@ void TagViewSideBarWidget::changeAlbumFromHistory(const QList<Album*>& album)
         d->tagsBtn->setChecked(true);
         d->tagFolderView->setEnabled(true);
         d->ExistingTagsWasChecked = true;
-        d->noTagsWasChecked = false;
+        d->noTagsWasChecked       = false;
         d->tagFolderView->setCurrentAlbums(album);
     }
     else
     {
         d->noTagsBtn->setChecked(true);
         d->tagFolderView->setDisabled(true);
-        d->noTagsWasChecked = true;
+        d->noTagsWasChecked       = true;
         d->ExistingTagsWasChecked = false;
     }
 }
@@ -421,9 +421,10 @@ void TagViewSideBarWidget::slotToggleTagsSelection(int radioClicked)
             {
                 setNoTagsAlbum();
                 d->tagFolderView->setDisabled(true);
-                d->noTagsWasChecked = d->noTagsBtn->isChecked();
+                d->noTagsWasChecked       = d->noTagsBtn->isChecked();
                 d->ExistingTagsWasChecked = d->tagsBtn->isChecked();
             }
+
             break;
         }
         case Private::ExistingTags:
@@ -432,9 +433,10 @@ void TagViewSideBarWidget::slotToggleTagsSelection(int radioClicked)
             {
                 d->tagFolderView->setEnabled(true);
                 setActive(true);
-                d->noTagsWasChecked = d->noTagsBtn->isChecked();
+                d->noTagsWasChecked       = d->noTagsBtn->isChecked();
                 d->ExistingTagsWasChecked = d->tagsBtn->isChecked();
             }
+
             break;
         }
     }
@@ -873,6 +875,7 @@ void TimelineSideBarWidget::setActive(bool active)
         {
             d->currentTimelineSearch = d->timeLineFolderView->currentAlbum();
         }
+
         if (d->currentTimelineSearch)
         {
             AlbumManager::instance()->setCurrentAlbums(QList<Album*>() << d->currentTimelineSearch);
@@ -979,7 +982,9 @@ void TimelineSideBarWidget::slotSelectionChanged()
     d->timer->start(500);
 }
 
-/** Called from d->timer event.*/
+/**
+ * Called from d->timer event.
+ */
 void TimelineSideBarWidget::slotUpdateCurrentDateSearchAlbum()
 {
     slotCheckAboutSelection();
@@ -987,7 +992,9 @@ void TimelineSideBarWidget::slotUpdateCurrentDateSearchAlbum()
     DateRangeList dateRanges = d->timeLineWidget->selectedDateRange(totalCount);
     d->currentTimelineSearch = d->searchModificationHelper->
         slotCreateTimeLineSearch(SAlbum::getTemporaryTitle(DatabaseSearch::TimeLineSearch), dateRanges, true);
-    d->timeLineFolderView->setCurrentAlbum(0); // "temporary" search is not listed in view
+
+    // NOTE: "temporary" search is not listed in view
+    d->timeLineFolderView->setCurrentAlbum(0);
 }
 
 void TimelineSideBarWidget::slotSaveSelection()
@@ -1210,6 +1217,7 @@ void SearchSideBarWidget::newAdvancedSearch()
 class Q_DECL_HIDDEN FuzzySearchSideBarWidget::Private
 {
 public:
+
     explicit Private()
       : fuzzySearchView(nullptr),
         searchModificationHelper(nullptr)
@@ -1234,6 +1242,9 @@ FuzzySearchSideBarWidget::FuzzySearchSideBarWidget(QWidget* const parent,
     d->fuzzySearchView        = new FuzzySearchView(searchModel, searchModificationHelper, this);
     d->fuzzySearchView->setConfigGroup(getConfigGroup());
 
+    connect(d->fuzzySearchView, SIGNAL(signalNofificationError(QString,int)),
+            this, SIGNAL(signalNofificationError(QString,int)));
+    
     QVBoxLayout* const layout = new QVBoxLayout(this);
 
     layout->addWidget(d->fuzzySearchView);

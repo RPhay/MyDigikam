@@ -38,11 +38,11 @@ AssignNameWidget::Private::Private(AssignNameWidget* const q)
       confirmButton(nullptr),
       rejectButton(nullptr),
       clickLabel(nullptr),
-      layout(nullptr),
       modelsGiven(0),
       tagModel(nullptr),
       tagFilterModel(nullptr),
       tagFilteredModel(nullptr),
+      layout(nullptr),
       q(q)
 {
 }

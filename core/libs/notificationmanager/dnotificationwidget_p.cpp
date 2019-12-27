@@ -46,16 +46,16 @@ namespace Digikam
 {
 
 DNotificationWidget::Private::Private(DNotificationWidget* const q_ptr)
-    : QObject(q_ptr)
+    : QObject(q_ptr),
+      q(q_ptr),
+      content(nullptr),
+      iconLabel(nullptr),
+      textLabel(nullptr),
+      closeButton(nullptr),
+      timeLine(nullptr),
+      messageType(DNotificationWidget::Information),
+      wordWrap(false)
 {
-    q           = q_ptr;
-    content     = nullptr;
-    iconLabel   = nullptr;
-    textLabel   = nullptr;
-    closeButton = nullptr;
-    timeLine    = nullptr;
-    messageType = DNotificationWidget::Information;
-    wordWrap    = false;
 }
 
 DNotificationWidget::Private::~Private()

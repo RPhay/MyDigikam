@@ -81,9 +81,13 @@ public:
 
 protected:
 
-    void dragEnterEvent(QDragEnterEvent* e) override;
-    void dragMoveEvent(QDragMoveEvent* e)   override;
-    void dropEvent(QDropEvent* e)           override;
+    void dragEnterEvent(QDragEnterEvent* e)                override;
+    void dragMoveEvent(QDragMoveEvent* e)                  override;
+    void dropEvent(QDropEvent* e)                          override;
+
+Q_SIGNALS:
+    
+    void signalNofificationError(const QString& message, int type);
 
 private Q_SLOTS:
 
