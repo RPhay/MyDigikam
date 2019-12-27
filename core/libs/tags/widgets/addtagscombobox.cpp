@@ -65,6 +65,7 @@ AddTagsComboBox::AddTagsComboBox(QWidget* const parent)
 {
     setInsertPolicy(QComboBox::NoInsert); // do not let Qt interfere when Enter is pressed
     setCloseOnActivate(true);
+    setMaxVisibleItems(10);
     setCheckable(false);
     setParent(nullptr);
 
