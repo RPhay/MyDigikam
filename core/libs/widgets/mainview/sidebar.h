@@ -315,7 +315,8 @@ class SidebarSplitter;
  * call QObject#setObjectName(), StateSavingObject#setEntryPrefix() or
  * StateSavingObject#setConfigGroup() first.
  */
-class DIGIKAM_EXPORT Sidebar : public DMultiTabBar, public StateSavingObject
+class DIGIKAM_EXPORT Sidebar : public DMultiTabBar,
+                               public StateSavingObject
 {
     Q_OBJECT
 
@@ -377,12 +378,12 @@ public:
     void shrink();
 
     /**
-     * redisplays the whole sidebar
+     * Redisplays the whole sidebar
      */
     void expand();
 
     /**
-     * hide sidebar and backup minimized state.
+     * Hide sidebar and backup minimized state.
      */
     void backup();
 
@@ -394,7 +395,7 @@ public:
     void backup(const QList<QWidget*> thirdWidgetsToBackup, QList<int>* const sizes);
 
     /**
-     * show sidebar and restore minimized state.
+     * Show sidebar and restore minimized state.
      */
     void restore();
 
@@ -405,19 +406,19 @@ public:
     void restore(const QList<QWidget*> thirdWidgetsToRestore, const QList<int>& sizes);
 
     /**
-     * return the visible status of current sidebar tab.
+     * Return the visible status of current sidebar tab.
      */
     bool isExpanded() const;
 
 protected:
 
     /**
-     * load the last view state from disk - called by StateSavingObject#loadState()
+     * Load the last view state from disk - called by StateSavingObject#loadState()
      */
     void doLoadState()                      override;
 
     /**
-     * save the view state to disk - called by StateSavingObject#saveState()
+     * Save the view state to disk - called by StateSavingObject#saveState()
      */
     void doSaveState()                      override;
 
@@ -441,12 +442,12 @@ private Q_SLOTS:
 Q_SIGNALS:
 
     /**
-     * is emitted, when another tab is activated
+     * Is emitted, when another tab is activated
      */
     void signalChangedTab(QWidget* w);
 
     /**
-     * is emitted, when tab is shrink or expanded
+     * Is emitted, when tab is shrink or expanded
      */
     void signalViewChanged();
 

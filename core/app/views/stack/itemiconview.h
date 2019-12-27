@@ -104,20 +104,20 @@ public:
      * only the first or all items in a group are returned.
      * Ideally only the latter (giving an operation) is used.
      */
-    QList<QUrl>   selectedUrls(bool grouping = false)                         const;
-    QList<QUrl>   selectedUrls(const ApplicationSettings::OperationType type) const;
+    QList<QUrl>   selectedUrls(bool grouping = false)                              const;
+    QList<QUrl>   selectedUrls(const ApplicationSettings::OperationType type)      const;
     ItemInfoList selectedInfoList(const bool currentFirst = false,
-                                   const bool grouping = false)               const;
+                                   const bool grouping = false)                    const;
     ItemInfoList selectedInfoList(const ApplicationSettings::OperationType type,
-                                   const bool currentFirst = false)           const;
+                                   const bool currentFirst = false)                const;
     /**
      * Get all items in the current view.
      * Whether only the first or all grouped items are returned is determined
      * as described above.
      */
-    QList<QUrl>  allUrls(bool grouping = false)                         const;
-    ItemInfoList allInfo(const bool grouping = false)                   const;
-    ItemInfoList allInfo(const ApplicationSettings::OperationType type) const;
+    QList<QUrl>  allUrls(bool grouping = false)                                    const;
+    ItemInfoList allInfo(const bool grouping = false)                              const;
+    ItemInfoList allInfo(const ApplicationSettings::OperationType type)            const;
 
     /**
      * Query whether the operation to be performed on currently selected or all
@@ -133,8 +133,8 @@ public:
     void toggleTag(int tagID);
     void toggleFullScreen(bool set);
 
-    QList<SidebarWidget*>        leftSidebarWidgets() const;
-    StackedView::StackedViewMode viewMode()           const;
+    QList<SidebarWidget*>        leftSidebarWidgets()                              const;
+    StackedView::StackedViewMode viewMode()                                        const;
 
 Q_SIGNALS:
 
@@ -160,6 +160,8 @@ Q_SIGNALS:
 public Q_SLOTS:
 
     void setZoomFactor(double zoom);
+
+    void slotNofificationError(const QString& message, int type);
 
     // View Action slots
     void slotZoomIn();

@@ -140,110 +140,113 @@ public:
     {
     }
 
-    static const QString          configGroupName;
-    static const QString          configUseFileMetadata;
-    static const QString          configUseDefaultTargetAlbum;
-    static const QString          configLastTargetAlbum;
-    static const QString          configDefaultTargetAlbumId;
-    static const QString          configFileSaveConflictRule;
-    static const QString          importFiltersConfigGroupName;
+    static const QString               configGroupName;
+    static const QString               configUseFileMetadata;
+    static const QString               configUseDefaultTargetAlbum;
+    static const QString               configLastTargetAlbum;
+    static const QString               configDefaultTargetAlbumId;
+    static const QString               configFileSaveConflictRule;
+    static const QString               importFiltersConfigGroupName;
+                                 
+    bool                               deleteAfter;
+    bool                               busy;
+    bool                               closed;
+                                 
+    QString                            cameraTitle;
+                                 
+    QStringList                        autoRotateItemsList;
+    QStringList                        currentlyDeleting;
+    QSet<QString>                      foldersToScan;
+                                 
+    QMenu*                             downloadMenu;
+    QMenu*                             deleteMenu;
+    QMenu*                             imageMenu;
+                                 
+    QAction*                           cameraCancelAction;
+    QAction*                           cameraCaptureAction;
+    QAction*                           cameraInfoAction;
+    QAction*                           increaseThumbsAction;
+    QAction*                           decreaseThumbsAction;
+    QAction*                           zoomFitToWindowAction;
+    QAction*                           zoomTo100percents;
+    QMenu*                             deleteAction;
+    QAction*                           deleteNewAction;
+    QAction*                           deleteAllAction;
+    QAction*                           deleteSelectedAction;
+    QMenu*                             downloadAction;
+    QAction*                           downloadNewAction;
+    QAction*                           downloadAllAction;
+    QAction*                           downloadSelectedAction;
+    QAction*                           downloadDelNewAction;
+    QAction*                           downloadDelAllAction;
+    QAction*                           downloadDelSelectedAction;
+    QAction*                           lockAction;
+    QAction*                           selectAllAction;
+    QAction*                           selectInvertAction;
+    QAction*                           selectLockedItemsAction;
+    QAction*                           selectNewItemsAction;
+    QAction*                           selectNoneAction;
+    QAction*                           uploadAction;
+    QAction*                           markAsDownloadedAction;
+    QAction*                           resumeAction;
+    QAction*                           pauseAction;
+    QAction*                           connectAction;
+    KSelectAction*                     itemSortAction;
+    KSelectAction*                     itemSortOrderAction;
+    KSelectAction*                     itemsGroupAction;
+    QAction*                           showPreferencesAction;
+    QAction*                           showLogAction;
+    QAction*                           showBarAction;
+    KSelectAction*                     imageViewSelectionAction;
+    QAction*                           iconViewAction;
+    QAction*                           camItemPreviewAction;
 
-    bool                          deleteAfter;
-    bool                          busy;
-    bool                          closed;
-
-    QString                       cameraTitle;
-
-    QStringList                   autoRotateItemsList;
-    QStringList                   currentlyDeleting;
-    QSet<QString>                 foldersToScan;
-
-    QMenu*                        downloadMenu;
-    QMenu*                        deleteMenu;
-    QMenu*                        imageMenu;
-
-    QAction*                      cameraCancelAction;
-    QAction*                      cameraCaptureAction;
-    QAction*                      cameraInfoAction;
-    QAction*                      increaseThumbsAction;
-    QAction*                      decreaseThumbsAction;
-    QAction*                      zoomFitToWindowAction;
-    QAction*                      zoomTo100percents;
-    QMenu*                        deleteAction;
-    QAction*                      deleteNewAction;
-    QAction*                      deleteAllAction;
-    QAction*                      deleteSelectedAction;
-    QMenu*                        downloadAction;
-    QAction*                      downloadNewAction;
-    QAction*                      downloadAllAction;
-    QAction*                      downloadSelectedAction;
-    QAction*                      downloadDelNewAction;
-    QAction*                      downloadDelAllAction;
-    QAction*                      downloadDelSelectedAction;
-    QAction*                      lockAction;
-    QAction*                      selectAllAction;
-    QAction*                      selectInvertAction;
-    QAction*                      selectLockedItemsAction;
-    QAction*                      selectNewItemsAction;
-    QAction*                      selectNoneAction;
-    QAction*                      uploadAction;
-    QAction*                      markAsDownloadedAction;
-    QAction*                      resumeAction;
-    QAction*                      pauseAction;
-    QAction*                      connectAction;
-    KSelectAction*                itemSortAction;
-    KSelectAction*                itemSortOrderAction;
-    KSelectAction*                itemsGroupAction;
-    QAction*                      showPreferencesAction;
-    QAction*                      showLogAction;
-    QAction*                      showBarAction;
-    KSelectAction*                imageViewSelectionAction;
-    QAction*                      iconViewAction;
-    QAction*                      camItemPreviewAction;
 #ifdef HAVE_MARBLE
-    QAction*                      mapViewAction;
+    QAction*                           mapViewAction;
 #endif // HAVE_MARBLE
-    QAction*                      viewCMViewAction;
 
-    QActionGroup*                 cameraActions;
+    QAction*                           viewCMViewAction;
 
-    QUrl                          lastDestURL;
+    QActionGroup*                      cameraActions;
 
-    DExpanderBox*                 advBox;
+    QUrl                               lastDestURL;
 
-    SidebarSplitter*              splitter;
+    DExpanderBox*                      advBox;
 
-    CameraThumbsCtrl*             camThumbsCtrl;
-    CameraController*             controller;
-    //CameraHistoryUpdater*         historyUpdater;
+    SidebarSplitter*                   splitter;
 
-    ImportView*                   view;
+    CameraThumbsCtrl*                  camThumbsCtrl;
+    CameraController*                  controller;
+/*
+    CameraHistoryUpdater*              historyUpdater;
+*/
+    ImportView*                        view;
 
-    RenameCustomizer*             renameCustomizer;
-    AlbumCustomizer*              albumCustomizer;
-    AdvancedSettings*             advancedSettings;
-    DNGConvertSettings*           dngConvertSettings;
-    ScriptingSettings*            scriptingSettings;
+    RenameCustomizer*                  renameCustomizer;
+    AlbumCustomizer*                   albumCustomizer;
+    AdvancedSettings*                  advancedSettings;
+    DNGConvertSettings*                dngConvertSettings;
+    ScriptingSettings*                 scriptingSettings;
 
-    FilterStatusBar*              filterStatusBar;
+    FilterStatusBar*                   filterStatusBar;
     ImportItemPropertiesSideBarImport* rightSideBar;
 
-    DZoomBar*                     zoomBar;
-    StatusProgressBar*            statusProgressBar;
+    DZoomBar*                          zoomBar;
+    StatusProgressBar*                 statusProgressBar;
 
-    FreeSpaceWidget*              albumLibraryFreeSpace;
-    FreeSpaceWidget*              cameraFreeSpace;
+    FreeSpaceWidget*                   albumLibraryFreeSpace;
+    FreeSpaceWidget*                   cameraFreeSpace;
 
-    QTimer*                       progressTimer;
+    QTimer*                            progressTimer;
 
-    float                         progressValue;
+    float                              progressValue;
 
-    DHistoryView*                 historyView;
-    ImportFilterComboBox*         filterComboBox;
-
-    //CHUpdateItemMap               map;
-
-    DNotificationWidget*          errorWidget;
+    DHistoryView*                      historyView;
+    ImportFilterComboBox*              filterComboBox;
+/*
+    CHUpdateItemMap                    map;
+*/
+    DNotificationWidget*               errorWidget;
 };
 
 const QString ImportUI::Private::configGroupName(QLatin1String("Camera Settings"));

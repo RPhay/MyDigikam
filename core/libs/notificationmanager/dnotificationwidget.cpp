@@ -153,12 +153,14 @@ void DNotificationWidget::setMessageType(DNotificationWidget::MessageType type)
 QSize DNotificationWidget::sizeHint() const
 {
     ensurePolished();
+
     return d->content->sizeHint();
 }
 
 QSize DNotificationWidget::minimumSizeHint() const
 {
     ensurePolished();
+
     return d->content->minimumSizeHint();
 }
 

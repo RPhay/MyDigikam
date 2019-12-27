@@ -93,6 +93,7 @@
 #include "versionmanagersettings.h"
 #include "contextmenuhelper.h"
 #include "albumlabelssearchhandler.h"
+#include "dnotificationwidget.h"
 
 #ifdef HAVE_MEDIAPLAYER
 #   include "mediaplayerview.h"
@@ -149,7 +150,8 @@ public:
         filterWidget(nullptr),
         optionAlbumViewPrefix(QLatin1String("AlbumView")),
         modelCollection(nullptr),
-        labelsSearchHandler(nullptr)
+        labelsSearchHandler(nullptr),
+        errorWidget(nullptr)
     {
     }
 
@@ -187,10 +189,10 @@ public:
 
     PeopleSideBarWidget*          peopleSideBar;
     DigikamApp*                   parent;
-    DigikamItemView*             iconView;
+    DigikamItemView*              iconView;
     TableView*                    tableView;
     TrashView*                    trashView;
-    ItemViewUtilities*           utilities;
+    ItemViewUtilities*            utilities;
     AlbumManager*                 albumManager;
     AlbumHistory*                 albumHistory;
     StackedView*                  stackedview;
@@ -201,7 +203,7 @@ public:
     SearchModificationHelper*     searchModificationHelper;
 
     Sidebar*                      leftSideBar;
-    ItemPropertiesSideBarDB*     rightSideBar;
+    ItemPropertiesSideBarDB*      rightSideBar;
 
     FilterSideBarWidget*          filterWidget;
 
@@ -209,13 +211,14 @@ public:
 
     QList<SidebarWidget*>         leftSideBarWidgets;
 
-    DModelFactory*       modelCollection;
+    DModelFactory*                modelCollection;
     AlbumLabelsSearchHandler*     labelsSearchHandler;
+    DNotificationWidget*          errorWidget;
 };
 
 QString ItemIconView::Private::userPresentableAlbumTitle(const QString& title) const
 {
-    if (title == SAlbum::getTemporaryHaarTitle(DatabaseSearch::HaarSketchSearch))
+    if      (title == SAlbum::getTemporaryHaarTitle(DatabaseSearch::HaarSketchSearch))
     {
         return i18n("Fuzzy Sketch Search");
     }
@@ -278,14 +281,26 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     d->leftSideBar = new Sidebar(this, d->splitter, Qt::LeftEdge);
     d->leftSideBar->setObjectName(QLatin1String("Digikam Left Sidebar"));
     d->leftSideBar->setContentsMargins(0, 0, spacing, 0);
+    
     d->splitter->setParent(this);
 
     // The dock area where the thumbnail bar is allowed to go.
     d->dockArea    = new QMainWindow(this, Qt::Widget);
     d->dockArea->setContentsMargins(QMargins());
     d->splitter->addWidget(d->dockArea);
-    d->stackedview = new StackedView(d->dockArea);
-    d->dockArea->setCentralWidget(d->stackedview);
+    
+    DVBox* const vbox = new DVBox(d->dockArea);
+    d->errorWidget    = new DNotificationWidget(vbox);
+    d->errorWidget->setCloseButtonVisible(true);
+    d->errorWidget->setWordWrap(true);
+    d->errorWidget->hide();
+
+    connect(d->leftSideBar, SIGNAL(signalChangedTab(QWidget*)),
+            d->errorWidget, SLOT(animatedHide()));
+
+    d->stackedview = new StackedView(vbox);
+
+    d->dockArea->setCentralWidget(vbox);
     d->stackedview->setDockArea(d->dockArea);
 
     d->iconView  = d->stackedview->imageIconView();
@@ -356,6 +371,9 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
 
     connect(d->fuzzySearchSideBar,SIGNAL(signalActive(bool)),
             this, SIGNAL(signalFuzzySidebarActive(bool)));
+
+    connect(d->fuzzySearchSideBar, SIGNAL(signalNofificationError(QString,int)),
+            this, SLOT(slotNofificationError(QString,int)));
 
 #ifdef HAVE_MARBLE
     d->gpsSearchSideBar    = new GPSSearchSideBarWidget(d->leftSideBar,
@@ -2814,6 +2832,13 @@ void ItemIconView::slotRemoveSelectedFromGroup()
 void ItemIconView::slotUngroupSelected()
 {
     FileActionMngr::instance()->ungroup(selectedInfoList(false, true));
+}
+
+void ItemIconView::slotNofificationError(const QString& message, int type)
+{
+    d->errorWidget->setMessageType((DNotificationWidget::MessageType)type);
+    d->errorWidget->setText(message);
+    d->errorWidget->animatedShow();
 }
 
 } // namespace Digikam
