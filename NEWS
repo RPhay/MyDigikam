@@ -450,10 +450,10 @@ BUGFIXES:
 436 ==> 222273 - Run fingerprint scan on new images.
 437 ==> 231047 - Crash when updating fingerprints on a large photo collection (100GB).
 438 ==> 235763 - Reproducible crash, when attempting to rebuild all fingerprints.
-439 ==> 
-440 ==> 
-441 ==> 
-442 ==> 
+439 ==> 167168 - Timeline view shows redundant extra sections.
+440 ==> 168004 - Timeline gives zero height column for dates with a single entry.
+441 ==> 279674 - Incorporate "event view".
+442 ==> 261216 - Debugging doesn´t work with installed.
 443 ==> 
 444 ==> 
 445 ==> 
