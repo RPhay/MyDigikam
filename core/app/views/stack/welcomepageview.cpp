@@ -132,16 +132,10 @@ void WelcomePageView::slotUrlOpen(const QUrl& url)
 QStringList WelcomePageView::featuresTabContent() const
 {
     QStringList newFeatures;
-    newFeatures << i18n("Image Editor: Add Web services Import and Export tools;");
-    newFeatures << i18n("Showfoto: Add Web services Import and Export tools;");
-    newFeatures << i18n("Light Table: Add Web services Import and Export tools;");
-    newFeatures << i18n("New video metadata parser based on ffmpeg to populate database;");
-    newFeatures << i18n("Add video support to find files based on properties registered on database.");
-    newFeatures << i18n("Similarity database has been moved to a dedicated file to not bloat core database with computed "
-                        "finger-prints. This will speed-up query in core database in case of Similarity feature is used.");
-    newFeatures << i18n("Add possibility to merge tags by drag & drop.");
-    newFeatures << i18n("HTML Gallery: New Vanilla theme to emulate export to HTML from Adobe LightRoom.");
-    newFeatures << i18n("HTML Gallery: New Blue Frame theme.");
+    newFeatures << i18n("FaceManagement: New Neural Network engine based on OpenCV Deep Learning module to detect and recognize faces.");
+    newFeatures << i18n("SlideShow: Add new shuffle mode.");
+    newFeatures << i18n("HTMLGallery: Add new theme Html5Responsive");
+    newFeatures << i18n("General: Update internal libraw engine to last 0.20.0 release including Canon CR3 and Sony A7R4 support");
 
     // Add new features here...
     newFeatures << i18n("...and much more.");
