@@ -70,6 +70,7 @@
 #include "labelstreeview.h"
 #include "coredb.h"
 #include "dexpanderbox.h"
+#include "dnotificationwidget.h"
 
 namespace Digikam
 {
@@ -1244,7 +1245,7 @@ FuzzySearchSideBarWidget::FuzzySearchSideBarWidget(QWidget* const parent,
 
     connect(d->fuzzySearchView, SIGNAL(signalNofificationError(QString,int)),
             this, SIGNAL(signalNofificationError(QString,int)));
-    
+
     QVBoxLayout* const layout = new QVBoxLayout(this);
 
     layout->addWidget(d->fuzzySearchView);
@@ -1557,10 +1558,10 @@ void PeopleSideBarWidget::slotScanForFaces()
     }
     else
     {
-        QMessageBox::warning(0, i18n("Face recognition aborted"),
-                             i18n("Face recognition is aborted, because "
-                                  "there are no identities to recognize. "
-                                  "Please add new identities."));
+        emit signalNofificationError(i18n("Face recognition is aborted, because "
+                                          "there are no identities to recognize. "
+                                          "Please add new identities."),
+                                     DNotificationWidget::Information);
     }
 }
 
