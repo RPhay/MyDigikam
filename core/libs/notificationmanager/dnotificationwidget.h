@@ -176,6 +176,11 @@ public:
      */
     bool isShowAnimationRunning() const;
 
+    /**
+     * Show the widget using an animation. The widget is automatically hidden after the delay (in ms).
+     */
+    void animatedShowTemporized(int delay);
+
 public Q_SLOTS:
 
     /**
@@ -278,6 +283,7 @@ protected:
     void paintEvent(QPaintEvent* event)   override;
     bool event(QEvent* event)             override;
     void resizeEvent(QResizeEvent* event) override;
+    void timerEvent(QTimerEvent* event)   override;
 
 private:
 

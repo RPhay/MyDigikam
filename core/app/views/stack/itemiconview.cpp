@@ -281,14 +281,14 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     d->leftSideBar = new Sidebar(this, d->splitter, Qt::LeftEdge);
     d->leftSideBar->setObjectName(QLatin1String("Digikam Left Sidebar"));
     d->leftSideBar->setContentsMargins(0, 0, spacing, 0);
-    
+
     d->splitter->setParent(this);
 
     // The dock area where the thumbnail bar is allowed to go.
     d->dockArea    = new QMainWindow(this, Qt::Widget);
     d->dockArea->setContentsMargins(QMargins());
     d->splitter->addWidget(d->dockArea);
-    
+
     DVBox* const vbox = new DVBox(d->dockArea);
     d->errorWidget    = new DNotificationWidget(vbox);
     d->errorWidget->setCloseButtonVisible(true);
@@ -2838,7 +2838,7 @@ void ItemIconView::slotNofificationError(const QString& message, int type)
 {
     d->errorWidget->setMessageType((DNotificationWidget::MessageType)type);
     d->errorWidget->setText(message);
-    d->errorWidget->animatedShow();
+    d->errorWidget->animatedShowTemporized(15000);   // Notification will be closed automatically in 15s
 }
 
 } // namespace Digikam

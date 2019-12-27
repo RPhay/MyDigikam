@@ -333,4 +333,15 @@ void DNotificationWidget::setIcon(const QIcon &icon)
     }
 }
 
+void DNotificationWidget::animatedShowTemporized(int delay)
+{
+    animatedShow();
+    startTimer(delay);
+}
+
+void DNotificationWidget::timerEvent(QTimerEvent*)
+{
+    animatedHide();
+}
+
 } // namespace Digikam
