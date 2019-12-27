@@ -433,4 +433,5 @@ BUGFIXES:
 419 ==> 415560 - No default selection for Scan Collection.
 420 ==> 415460 - JFIF files have APP0 marker after SOI where there should be APP1.
 421 ==> 415582 - People Unknown faces does not decrease to zero.
-422 ==> 
+422 ==> 415599 - Add date to help DNN face recognition for baby/kid/adult distinction.
+423 ==> 
