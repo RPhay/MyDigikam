@@ -435,4 +435,5 @@ BUGFIXES:
 421 ==> 415582 - People Unknown faces does not decrease to zero.
 422 ==> 415599 - Add date to help DNN face recognition for baby/kid/adult distinction.
 423 ==> 415602 - How to erase faces rectangles for an album.
-424 ==> 
+424 ==> 316897 - Face Detection improvements by colors filtering and using EXIF orientation.
+425 ==> 
