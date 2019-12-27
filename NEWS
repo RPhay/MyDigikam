@@ -454,11 +454,12 @@ BUGFIXES:
 440 ==> 168004 - Timeline gives zero height column for dates with a single entry.
 441 ==> 279674 - Incorporate "event view".
 442 ==> 261216 - Debugging doesn´t work with installed.
-443 ==> 
-444 ==> 
-445 ==> 
-446 ==> 
-447 ==> 
-448 ==> 
-449 ==> 
-450 ==> 
+443 ==> 109022 - Iphoto like calendar search.
+444 ==> 109703 - Updating of calendar view in Date panel.
+445 ==> 109705 - When quit date panel with day selected no images in other panels.
+446 ==> 130230 - Wrong date in header using date-view.
+447 ==> 213619 - Add a new view of albums based on due date.
+448 ==> 375306 - Add 'Go to album' in search results.
+449 ==> 128101 - Crash when selecting "Comments&Tags" tab, after selecting "Search" tab, with no search results selected.
+450 ==> 146091 - Displaying raw photos by Tag or Date takes very long to load.
+451 ==> 
