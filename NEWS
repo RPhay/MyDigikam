@@ -436,4 +436,29 @@ BUGFIXES:
 422 ==> 415599 - Add date to help DNN face recognition for baby/kid/adult distinction.
 423 ==> 415602 - How to erase faces rectangles for an album.
 424 ==> 316897 - Face Detection improvements by colors filtering and using EXIF orientation.
-425 ==> 
+425 ==> 088895 - Stops after a few percent with: Unknown event: 3.
+426 ==> 091548 - Find duplicate images claims no album is selected although one is
+427 ==> 101958 - Can not select duplicate images by clicking on a line instead of the select box of 6 pix square.
+428 ==> 107095 - Double image removal: Use trashcan.
+429 ==> 113557 - digiKam crashes during "Find Duplicate Images" with SIGSEGV.
+430 ==> 117578 - Bad UI fpr searching duplicate images.
+431 ==> 181698 - Cannot delete fuzzy searches.
+432 ==> 181720 - Can't rename fuzzy searches.
+433 ==> 183008 - Fuzzy image search requires two clicks to navigate back.
+434 ==> 199045 - Find duplicates in a directory/directories.
+435 ==> 199732 - Deleting duplicated images crashes digiKam.
+436 ==> 222273 - Run fingerprint scan on new images.
+437 ==> 231047 - Crash when updating fingerprints on a large photo collection (100GB).
+438 ==> 235763 - Reproducible crash, when attempting to rebuild all fingerprints.
+439 ==> 
+440 ==> 
+441 ==> 
+442 ==> 
+443 ==> 
+444 ==> 
+445 ==> 
+446 ==> 
+447 ==> 
+448 ==> 
+449 ==> 
+450 ==> 
