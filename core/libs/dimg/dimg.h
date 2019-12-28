@@ -689,26 +689,28 @@ private:
     void setImageDimension(uint width, uint height);
     size_t allocateData();
 
+    bool clipped(int& x, int& y, int& w, int& h, uint width, uint height) const;
+
     QDateTime         creationDateFromFilesystem(const QFileInfo& fileInfo) const;
 
     static QByteArray createUniqueHash(const QString& filePath, const QByteArray& ba);
     static QByteArray createUniqueHashV2(const QString& filePath);
 
-    static void bitBlt(const uchar* const src, uchar* const dest,
-                       int sx, int sy, int w, int h, int dx, int dy,
-                       uint swidth, uint sheight, uint dwidth, uint dheight,
-                       bool sixteenBit, int sdepth, int ddepth);
-    static void bitBlend(DColorComposer* const composer, uchar* const src, uchar* const dest,
-                         int sx, int sy, int w, int h, int dx, int dy,
-                         uint swidth, uint sheight, uint dwidth, uint dheight,
-                         bool sixteenBit, int sdepth, int ddepth,
+    void bitBlt(const uchar* const src, uchar* const dest,
+                int sx, int sy, int w, int h, int dx, int dy,
+                uint swidth, uint sheight, uint dwidth, uint dheight,
+                bool sixteenBit, int sdepth, int ddepth);
+    void bitBlend(DColorComposer* const composer, uchar* const src, uchar* const dest,
+                  int sx, int sy, int w, int h, int dx, int dy,
+                  uint swidth, uint sheight, uint dwidth, uint dheight,
+                  bool sixteenBit, int sdepth, int ddepth,
+                  DColorComposer::MultiplicationFlags multiplicationFlags);
+    void bitBlendOnColor(DColorComposer* const composer, const DColor& color,
+                         uchar* data, int x, int y, int w, int h,
+                         uint width, uint height, bool sixteenBit, int depth,
                          DColorComposer::MultiplicationFlags multiplicationFlags);
-    static void bitBlendOnColor(DColorComposer* const composer, const DColor& color,
-                                uchar* data, int x, int y, int w, int h,
-                                uint width, uint height, bool sixteenBit, int depth,
-                                DColorComposer::MultiplicationFlags multiplicationFlags);
-    static bool normalizeRegionArguments(int& sx, int& sy, int& w, int& h, int& dx, int& dy,
-                                         uint swidth, uint sheight, uint dwidth, uint dheight);
+    bool normalizeRegionArguments(int& sx, int& sy, int& w, int& h, int& dx, int& dy,
+                                  uint swidth, uint sheight, uint dwidth, uint dheight);
 
 private:
 

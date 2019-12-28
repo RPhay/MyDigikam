@@ -203,7 +203,7 @@ DImg DImg::smoothScaleClipped(int dw, int dh, int clipx, int clipy, int clipw, i
     }
 
     // ensure clip is valid
-    if (!Private::clipped(clipx, clipy, clipw, cliph, dw, dh))
+    if (!clipped(clipx, clipy, clipw, cliph, dw, dh))
     {
         return DImg();
     }
@@ -292,7 +292,7 @@ DImg DImg::smoothScaleSection(int sx, int sy,
     psw = sw;
     psh = sh;
 
-    if (!Private::clipped(sx, sy, sw, sh, w, h))
+    if (!clipped(sx, sy, sw, sh, w, h))
     {
         return DImg();
     }

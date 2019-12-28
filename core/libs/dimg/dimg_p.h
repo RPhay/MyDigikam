@@ -245,30 +245,6 @@ public:
         return list;
     }
 
-    /**
-     * x,y, w x h is a section of the image. The image size is width x height.
-     * Clips the section to the bounds of the image.
-     * Returns if the (clipped) section is a valid rectangle.
-     */
-    static bool clipped(int& x, int& y, int& w, int& h, uint width, uint height)
-    {
-        QRect inner(x, y, w, h);
-        QRect outer(0, 0, width, height);
-
-        if (!outer.contains(inner))
-        {
-            QRect pt = inner.intersected(outer);
-            x        = pt.x();
-            y        = pt.y();
-            w        = pt.width();
-            h        = pt.height();
-
-            return pt.isValid();
-        }
-
-        return inner.isValid();
-    }
-
 public:
 
     bool                    null;

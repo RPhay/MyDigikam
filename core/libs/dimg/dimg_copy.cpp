@@ -88,7 +88,7 @@ DImg DImg::copy(int x, int y, int w, int h) const
         return DImg();
     }
 
-    if (!Private::clipped(x, y, w, h, m_priv->width, m_priv->height))
+    if (clipped(x, y, w, h, m_priv->width, m_priv->height))
     {
         return DImg();
     }
@@ -97,6 +97,30 @@ DImg DImg::copy(int x, int y, int w, int h) const
     image.bitBltImage(this, x, y, w, h, 0, 0);
 
     return image;
+}
+
+/**
+* x,y, w x h is a section of the image. The image size is width x height.
+* Clips the section to the bounds of the image.
+* Returns if the (clipped) section is a valid rectangle.
+*/
+bool DImg::clipped(int& x, int& y, int& w, int& h, uint width, uint height) const
+{
+    QRect inner(x, y, w, h);
+    QRect outer(0, 0, width, height);
+
+    if (!outer.contains(inner))
+    {
+        QRect pt = inner.intersected(outer);
+        x        = pt.x();
+        y        = pt.y();
+        w        = pt.width();
+        h        = pt.height();
+
+        return pt.isValid();
+    }
+
+    return inner.isValid();
 }
 
 } // namespace Digikam
