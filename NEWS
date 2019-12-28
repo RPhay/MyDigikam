@@ -473,4 +473,5 @@ BUGFIXES:
 459 ==> 120922 - Clicking on Advanced search crashes application.
 460 ==> 141035 - Advanced Search gives error when trying to search by rating.
 461 ==> 147429 - "and not" option in search function.
-462 ==> 
+462 ==> 415489 - Win32 7.0.0 Beta 1 Crash On Opening Preview.
+463 ==> 
