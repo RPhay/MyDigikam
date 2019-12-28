@@ -33,6 +33,7 @@
 #include <QPainter>
 #include <QShowEvent>
 #include <QStyle>
+#include <QTime>
 
 namespace Digikam
 {
@@ -49,7 +50,8 @@ DNotificationWidget::DNotificationWidget(const QString& text, QWidget* const par
       d(new Private(this))
 {
     d->init();
-    setText(text);
+    d->text = text;
+    setText(d->text);
 }
 
 DNotificationWidget::~DNotificationWidget()
@@ -64,7 +66,19 @@ QString DNotificationWidget::text() const
 
 void DNotificationWidget::setText(const QString& text)
 {
-    d->textLabel->setText(text);
+    d->text = text;
+
+    if (d->delay > 0)
+    {
+        QTime t(0, 0);
+        t = t.addMSecs(d->delay);
+        d->textLabel->setText(QString::fromUtf8("%1 [%2]").arg(text).arg(t.toString(QLatin1String("mm:ss"))));
+    }
+    else
+    {
+        d->textLabel->setText(text);
+    }
+
     updateGeometry();
 }
 
@@ -335,13 +349,24 @@ void DNotificationWidget::setIcon(const QIcon &icon)
 
 void DNotificationWidget::animatedShowTemporized(int delay)
 {
+    d->delay = delay;
+    setText(d->text);
     animatedShow();
-    startTimer(delay);
+    startTimer(1000);
 }
 
 void DNotificationWidget::timerEvent(QTimerEvent*)
 {
-    animatedHide();
+    d->delay -= 1000;
+
+    if (d->delay > 0)
+    {
+        setText(d->text);
+    }
+    else
+    {
+        animatedHide();
+    }
 }
 
 } // namespace Digikam

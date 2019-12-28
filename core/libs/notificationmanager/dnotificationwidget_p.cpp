@@ -54,7 +54,8 @@ DNotificationWidget::Private::Private(DNotificationWidget* const q_ptr)
       closeButton(nullptr),
       timeLine(nullptr),
       messageType(DNotificationWidget::Information),
-      wordWrap(false)
+      wordWrap(false),
+      delay(-1)
 {
 }
 
@@ -134,8 +135,8 @@ void DNotificationWidget::Private::createLayout()
     {
         QGridLayout* const layout = new QGridLayout(content);
         // Set alignment to make sure icon does not move down if text wraps
-        layout->addWidget(iconLabel, 0, 0, 1, 1, Qt::AlignHCenter | Qt::AlignTop);
-        layout->addWidget(textLabel, 0, 1);
+        layout->addWidget(iconLabel,  0, 0, 1, 1, Qt::AlignHCenter | Qt::AlignTop);
+        layout->addWidget(textLabel,  0, 1);
 
         QHBoxLayout* const buttonLayout = new QHBoxLayout;
         buttonLayout->addStretch();

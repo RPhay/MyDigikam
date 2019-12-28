@@ -66,11 +66,13 @@ public:
     QToolButton*                     closeButton;
     QTimeLine*                       timeLine;
     QIcon                            icon;
+    QString                          text;
 
     DNotificationWidget::MessageType messageType;
     bool                             wordWrap;
     QList<QToolButton*>              buttons;
     QPixmap                          contentSnapShot;
+    int                              delay;
 
 private Q_SLOTS:
 
