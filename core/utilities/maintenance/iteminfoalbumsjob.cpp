@@ -39,14 +39,16 @@ class Q_DECL_HIDDEN ItemInfoAlbumsJob::Private
 {
 public:
 
-    explicit Private() {}
+    explicit Private()
+    {
+    }
 
     AlbumList           albumsList;
     AlbumList::Iterator albumIt;
 
-    ItemInfoList       itemsList;
+    ItemInfoList        itemsList;
 
-    ItemInfoJob        imageInfoJob;
+    ItemInfoJob         imageInfoJob;
 };
 
 ItemInfoAlbumsJob::ItemInfoAlbumsJob()

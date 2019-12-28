@@ -39,8 +39,8 @@ class Q_DECL_HIDDEN MaintenanceData::Private
 public:
 
     explicit Private()
+      : rebuildAllFingerprints(true)
     {
-        rebuildAllFingerprints = true;
     }
 
     QList<qlonglong>              imageIdList;

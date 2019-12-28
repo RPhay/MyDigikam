@@ -121,13 +121,14 @@ private:
      * @param toChunk The list to chunk
      * @param chunkSize The chunk size (0 for take everything)
      */
-    /*
+/*
     template<typename T>
     QList<QList<T>> chunkList(const QList<T>& toChunk, int chunkSize=0)
     {
         QList<QList<T>> chunks;
 
         // Chunk size 0 means all
+
         if (chunkSize == 0)
         {
             chunks << toChunk;
@@ -137,6 +138,7 @@ private:
         // Buffer the input list
         QList<T> toChunkList = toChunk;
         QList<T> currentChunk;
+
         while (!toChunkList.isEmpty())
         {
             // Set the current chunk to the first n elements
@@ -148,11 +150,12 @@ private:
             toChunkList  = toChunkList.mid(chunkSize);
             chunks << currentChunk;
         }
+
         return chunks;
     }
 
     int getChunkSize(int elementCount);
-    */
+*/
 
     MaintenanceData* const data;
 };

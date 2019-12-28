@@ -47,8 +47,8 @@ class Q_DECL_HIDDEN MaintenanceTool::Private
 public:
 
     explicit Private()
+       : notification(true)
     {
-        notification = true;
     }
 
     bool  notification;

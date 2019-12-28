@@ -310,7 +310,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     d->faceScannedHandling->addItem(i18n("Scan again and merge results"),         FaceScanSettings::Merge);
     d->faceScannedHandling->addItem(i18n("Clear unconfirmed results and rescan"), FaceScanSettings::Rescan);
     d->expanderBox->insertItem(Private::FaceManagement, d->hbox3, QIcon::fromTheme(QLatin1String("edit-image-face-detect")),
-                               i18n("Detect and recognize Faces (experimental)"), QLatin1String("FaceManagement"), false);
+                               i18n("Detect and recognize Faces"), QLatin1String("FaceManagement"), false);
     d->expanderBox->setCheckBoxVisible(Private::FaceManagement, true);
 
     // --------------------------------------------------------------------------------------

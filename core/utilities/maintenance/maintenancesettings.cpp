@@ -27,36 +27,28 @@ namespace Digikam
 {
 
 MaintenanceSettings::MaintenanceSettings()
+    : wholeAlbums(true),
+      wholeTags(true),
+      useMutiCoreCPU(false),
+      newItems(false),
+      thumbnails(false),
+      scanThumbs(false),
+      fingerPrints(false),
+      scanFingerPrints(false),
+      duplicates(false),
+      minSimilarity(90),
+      maxSimilarity(100),
+      duplicatesRestriction(HaarIface::DuplicatesSearchRestrictions::None),
+      faceManagement(false),
+      qualitySort(false),
+      qualityScanMode(true),   // NOTE: turn on by default to prevent clearing whole Pick Labels from Collection
+      metadataSync(false),
+      syncDirection(MetadataSynchronizer::WriteFromDatabaseToFile),
+      databaseCleanup(false),
+      cleanThumbDb(false),
+      cleanFacesDb(false),
+      shrinkDatabases(false)
 {
-    wholeAlbums           = true;
-    wholeTags             = true;
-    useMutiCoreCPU        = false;
-
-    newItems              = false;
-
-    thumbnails            = false;
-    scanThumbs            = false;
-
-    fingerPrints          = false;
-    scanFingerPrints      = false;
-
-    duplicates            = false;
-    minSimilarity         = 90;
-    maxSimilarity         = 100;
-    duplicatesRestriction = HaarIface::DuplicatesSearchRestrictions::None;
-
-    faceManagement        = false;
-
-    qualitySort           = false;
-    qualityScanMode       = true;   // NOTE: turn on by default to prevent clearing whole Pick Labels from Collection
-
-    metadataSync          = false;
-    syncDirection         = MetadataSynchronizer::WriteFromDatabaseToFile;
-
-    databaseCleanup       = false;
-    cleanThumbDb          = false;
-    cleanFacesDb          = false;
-    shrinkDatabases       = false;
 }
 
 MaintenanceSettings::~MaintenanceSettings()

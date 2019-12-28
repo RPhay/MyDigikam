@@ -58,16 +58,16 @@ class Q_DECL_HIDDEN MaintenanceMngr::Private
 public:
 
     explicit Private()
+      : running(false),
+        newItemsFinder(nullptr),
+        thumbsGenerator(nullptr),
+        fingerPrintsGenerator(nullptr),
+        duplicatesFinder(nullptr),
+        metadataSynchronizer(nullptr),
+        imageQualitySorter(nullptr),
+        facesDetector(nullptr),
+        databaseCleaner(nullptr)
     {
-        running               = false;
-        newItemsFinder        = nullptr;
-        thumbsGenerator       = nullptr;
-        fingerPrintsGenerator = nullptr;
-        duplicatesFinder      = nullptr;
-        metadataSynchronizer  = nullptr;
-        imageQualitySorter    = nullptr;
-        facesDetector         = nullptr;
-        databaseCleaner       = nullptr;
     }
 
     bool                   running;
@@ -122,7 +122,7 @@ void MaintenanceMngr::slotToolCompleted(ProgressItem* tool)
     // from ProgressManager. This will disable multiple triggering in this method.
     // There is no memory leak. Each tool instance are delete later by ProgressManager.
 
-    if (tool == dynamic_cast<ProgressItem*>(d->newItemsFinder))
+    if      (tool == dynamic_cast<ProgressItem*>(d->newItemsFinder))
     {
         d->newItemsFinder = nullptr;
         stage2();
@@ -356,8 +356,8 @@ void MaintenanceMngr::stage8()
 
 void MaintenanceMngr::done()
 {
-    d->running   = false;
-    QTime t = QTime::fromMSecsSinceStartOfDay(d->duration.elapsed());
+    d->running = false;
+    QTime t    = QTime::fromMSecsSinceStartOfDay(d->duration.elapsed());
 
     // Pop-up a message to bring user when all is done.
     DNotificationWrapper(QLatin1String("digiKam Maintenance"), // not i18n

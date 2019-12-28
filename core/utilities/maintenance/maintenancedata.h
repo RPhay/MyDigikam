@@ -50,12 +50,12 @@ public:
 
     void      setRebuildAllFingerprints(bool b);
 
-    qlonglong getImageId()                 const;
-    int       getThumbnailId()             const;
-    QString   getImagePath()               const;
-    ItemInfo getItemInfo()                 const;
-    Identity  getIdentity()                const;
-    qlonglong getSimilarityImageId()       const;
+    qlonglong getImageId()                const;
+    int       getThumbnailId()            const;
+    QString   getImagePath()              const;
+    ItemInfo getItemInfo()                const;
+    Identity  getIdentity()               const;
+    qlonglong getSimilarityImageId()      const;
 
     bool      getRebuildAllFingerprints() const;
 

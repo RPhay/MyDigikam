@@ -59,17 +59,17 @@ private Q_SLOTS:
 
 private:
 
-    void stage1();  // New items
-    void stage2();  // Thumbnails
-    void stage3();  // Finger-prints
-    void stage4();  // Duplicates
-    void stage5();  // Faces Management
-    void stage6();  // Image Quality Sorter
-    void stage7();  // Metadata
-    void stage8();  // Database cleanup
+    void stage1();  ///< Find New items
+    void stage2();  ///< Update Thumbnails
+    void stage3();  ///< Build Similarity Finger-prints
+    void stage4();  ///< Find Duplicates
+    void stage5();  ///< Faces Management
+    void stage6();  ///< Image Quality Sorter
+    void stage7();  ///< Metadata Synchronizer
+    void stage8();  ///< Database Cleanup
 
-    void done();    // Called when all scheduled tools are done.
-    void cancel();  // Called when a tool is canceled.
+    void done();    ///< Called when all scheduled tools are done.
+    void cancel();  ///< Called when a tool is canceled.
 
 private:
 
@@ -79,4 +79,4 @@ private:
 
 } // namespace Digikam
 
-#endif /* DIGIKAM_MAINTENANCE_MNGR_H */
+#endif // DIGIKAM_MAINTENANCE_MNGR_H
