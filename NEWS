@@ -474,4 +474,6 @@ BUGFIXES:
 460 ==> 141035 - Advanced Search gives error when trying to search by rating.
 461 ==> 147429 - "and not" option in search function.
 462 ==> 415489 - Win32 7.0.0 Beta 1 Crash On Opening Preview.
-463 ==> 
+463 ==> 407540 - Missing EXIF parameter in DNG when converting Panasonic RW2 images.
+464 ==> 399159 - Lenses name lost on converting to DNG.
+465 ==> 
