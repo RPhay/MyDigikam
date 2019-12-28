@@ -203,12 +203,17 @@ void FaceScanWidget::setupUi()
     // ---- Settings tab ------
 
     QWidget* const settingsTab        = new QWidget(d->tabWidget);
-    QGridLayout* const settingsLayout = new QGridLayout(settingsTab);
+    QVBoxLayout* const settingsLayout = new QVBoxLayout(settingsTab);
 
-    QLabel* const detectionLabel      = new QLabel(i18nc("@label", "Face Accuracy:"), settingsTab);
+    QGroupBox* const accuracyBox      = new QGroupBox(i18nc("@groupbox", "Face Accuracy"), settingsTab);
+    QGridLayout* const accuracyGrid   = new QGridLayout(accuracyBox);
 
-    QLabel* const accuracyLabel       = new QLabel(i18nc("@label Two extremities of a scale", "Sensitivity     -     Specificity"), settingsTab);
-    accuracyLabel->setAlignment(Qt::AlignTop | Qt::AlignHCenter);
+    QLabel* const sensitivityLabel    = new QLabel(i18nc("@label left extremities of a scale", "Sensitivity"), settingsTab);
+    sensitivityLabel->setAlignment(Qt::AlignTop | Qt::AlignLeft);
+
+    QLabel* const specificityLabel    = new QLabel(i18nc("@label right extremities of a scale", "Specificity"), settingsTab);
+    specificityLabel->setAlignment(Qt::AlignTop | Qt::AlignRight);
+
     d->accuracyInput                  = new DIntNumInput(settingsTab);
     d->accuracyInput->setDefaultValue(70);
     d->accuracyInput->setRange(0, 100, 10);
@@ -216,6 +221,11 @@ void FaceScanWidget::setupUi()
                                        "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will "
                                        "be recognized, but less faces will be recognized "
                                        "(only faces that are very similar to pre-tagged faces are recognized)."));
+
+    accuracyGrid->addWidget(d->accuracyInput, 0, 0, 1, 3);
+    accuracyGrid->addWidget(sensitivityLabel, 1, 0, 1, 1);
+    accuracyGrid->addWidget(specificityLabel, 1, 2, 1, 1);
+    accuracyGrid->setColumnStretch(1, 10);
 
     d->useFullCpuButton = new QCheckBox(settingsTab);
     d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));
@@ -230,14 +240,10 @@ void FaceScanWidget::setupUi()
                                           "This will clear all training data for recognition "
                                           "and rebuild it from all available faces."));
 
-    settingsLayout->addWidget(detectionLabel,                  0, 0, 1, 1);
-    settingsLayout->addWidget(d->accuracyInput,                1, 0, 1, 1);
-    settingsLayout->addWidget(accuracyLabel,                   2, 0, 1, 1);
-    settingsLayout->addWidget(new DLineWidget(Qt::Horizontal), 3, 0, 1, 1);
-    settingsLayout->addWidget(d->useFullCpuButton,             4, 0, 1, 1);
-    settingsLayout->addWidget(d->retrainAllButton,             5, 0, 1, 1);
-    settingsLayout->setColumnStretch(0, 10);
-    settingsLayout->setRowStretch(6, 10);
+    settingsLayout->addWidget(accuracyBox);
+    settingsLayout->addWidget(d->useFullCpuButton);
+    settingsLayout->addWidget(d->retrainAllButton);
+    settingsLayout->addStretch(10);
 
     d->tabWidget->addTab(settingsTab, i18nc("@title:tab", "Settings"));
 
@@ -256,10 +262,12 @@ void FaceScanWidget::setupConnections()
      connect(d->detectButton, SIGNAL(toggled(bool)),
             d->alreadyScannedBox, SLOT(setEnabled(bool)));
 */
+
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
     connect(d->detectAndRecognizeButton, SIGNAL(toggled(bool)),
             d->alreadyScannedBox, SLOT(setEnabled(bool)));
 #endif
+
     connect(d->detectButton, SIGNAL(toggled(bool)),
             this, SLOT(slotPrepareForDetect(bool)));
 
