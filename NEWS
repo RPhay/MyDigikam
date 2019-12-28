@@ -476,4 +476,10 @@ BUGFIXES:
 462 ==> 415489 - Win32 7.0.0 Beta 1 Crash On Opening Preview.
 463 ==> 407540 - Missing EXIF parameter in DNG when converting Panasonic RW2 images.
 464 ==> 399159 - Lenses name lost on converting to DNG.
-465 ==> 
+465 ==> 118396 - Ability to search through image comments.
+466 ==> 139283 - IPTC Caption comment in search function
+467 ==> 155735 - Make it possible to seach on IPTC-text.
+468 ==> 
+
+
+
