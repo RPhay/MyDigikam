@@ -462,4 +462,15 @@ BUGFIXES:
 448 ==> 375306 - Add 'Go to album' in search results.
 449 ==> 128101 - Crash when selecting "Comments&Tags" tab, after selecting "Search" tab, with no search results selected.
 450 ==> 146091 - Displaying raw photos by Tag or Date takes very long to load.
-451 ==> 
+451 ==> 091372 - Make searching for multiple tags possible.
+452 ==> 098846 - Searching photos with no tag.
+453 ==> 113806 - Is it possible to have the size of the quick search window saved?
+454 ==> 114848 - Search dialog: images not rotated correctly.
+455 ==> 115536 - Quick search dialog box: wrong attached tips.
+456 ==> 133294 - Advanced search dialog - combo box with tag names (when tag is to be matched) doesn't stretch with the dialog.
+457 ==> 149555 - Always present search box instead of search by right-clicking and selecting simple or advanced search.
+458 ==> 185106 - Advanced search is not saved/restored correctly.
+459 ==> 120922 - Clicking on Advanced search crashes application.
+460 ==> 141035 - Advanced Search gives error when trying to search by rating.
+461 ==> 147429 - "and not" option in search function.
+462 ==> 
