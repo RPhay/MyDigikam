@@ -132,40 +132,6 @@ private:
 /**
  * SideBarWidget for the date folder view.
  */
-class DateFolderViewSideBarWidget : public SidebarWidget
-{
-    Q_OBJECT
-
-public:
-
-    explicit DateFolderViewSideBarWidget(QWidget* const parent,
-                                         DateAlbumModel* const model,
-                                         ItemAlbumFilterModel* const imageFilterModel);
-    virtual ~DateFolderViewSideBarWidget();
-
-    void          setActive(bool active)                             override;
-    void          doLoadState()                                      override;
-    void          doSaveState()                                      override;
-    void          applySettings()                                    override;
-    void          changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon()                                          override;
-    const QString getCaption()                                       override;
-
-    AlbumPointer<DAlbum> currentAlbum() const;
-
-    void gotoDate(const QDate& date);
-
-private:
-
-    class Private;
-    Private* const d;
-};
-
-// -----------------------------------------------------------------------------------------
-
-/**
- * SideBarWidget for the date folder view.
- */
 class TimelineSideBarWidget : public SidebarWidget
 {
     Q_OBJECT

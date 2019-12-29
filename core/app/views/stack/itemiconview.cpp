@@ -71,6 +71,7 @@
 #include "itemthumbnailbar.h"
 #include "itemviewutilities.h"
 #include "albumfolderviewsidebarwidget.h"
+#include "datefolderviewsidebarwidget.h"
 //#include "labelsidebarwidgets.h"
 #include "leftsidebarwidgets.h"
 #include "loadingcacheinterface.h"
