@@ -129,45 +129,6 @@ private:
 
 // -----------------------------------------------------------------------------------------
 
-/**
- * SideBarWidget for the fuzzy search.
- */
-class FuzzySearchSideBarWidget : public SidebarWidget
-{
-    Q_OBJECT
-
-public:
-
-    explicit FuzzySearchSideBarWidget(QWidget* const parent,
-                                      SearchModel* const searchModel,
-                                      SearchModificationHelper* const searchModificationHelper);
-    virtual ~FuzzySearchSideBarWidget();
-
-    void          setActive(bool active)                             override;
-    void          doLoadState()                                      override;
-    void          doSaveState()                                      override;
-    void          applySettings()                                    override;
-    void          changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon()                                          override;
-    const QString getCaption()                                       override;
-
-    void newDuplicatesSearch(PAlbum* album);
-    void newDuplicatesSearch(const QList<PAlbum*>& albums);
-    void newDuplicatesSearch(const QList<TAlbum*>& albums);
-    void newSimilarSearch(const ItemInfo& imageInfo);
-
-Q_SIGNALS:
-
-    void signalActive(bool);
-
-private:
-
-    class Private;
-    Private* const d;
-};
-
-// -----------------------------------------------------------------------------------------
-
 #ifdef HAVE_MARBLE
 
 /**
