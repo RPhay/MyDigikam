@@ -265,8 +265,7 @@ void AlbumSelectionTreeView::slotScanForFaces()
     if (album->childCount())
     {
         if (QMessageBox::question(this, i18n("Scan for Faces"),
-                                  i18n("Should be scanned in the "
-                                       "sub-albums also for faces?"))
+                                  i18n("Should sub-albums be scanned too?"))
             == QMessageBox::Yes)
         {
             albums << album->childAlbums(true);
