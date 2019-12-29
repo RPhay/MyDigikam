@@ -25,7 +25,10 @@
  *
  * ============================================================ */
 
-#include "leftsidebarwidgets.h"
+#ifndef DIGIKAM_TAG_VIEW_SIDE_BAR_WIDGET_P_H
+#define DIGIKAM_TAG_VIEW_SIDE_BAR_WIDGET_P_H
+
+#include "tagviewsidebarwidget.h"
 
 // Qt includes
 
@@ -94,7 +97,8 @@ public:
         noTagsBtn(nullptr),
         tagsBtn(nullptr),
         noTagsWasChecked(false),
-        ExistingTagsWasChecked(false)
+        ExistingTagsWasChecked(false),
+        configTagsSourceEntry(QLatin1String("TagsSource"))
     {
     }
 
@@ -112,9 +116,9 @@ public:
 
     QString              noTagsSearchXml;
 
-    static const QString configTagsSourceEntry;
+    const QString configTagsSourceEntry;
 };
 
-const QString TagViewSideBarWidget::Private::configTagsSourceEntry(QLatin1String("TagsSource"));
-
 } // namespace Digikam
+
+#endif // DIGIKAM_TAG_VIEW_SIDE_BAR_WIDGET_P_H

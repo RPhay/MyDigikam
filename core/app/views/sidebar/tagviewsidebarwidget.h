@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2009-12-05
- * Description : left sidebar widgets
+ * Description : Side Bar Widget for the tag view.
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
@@ -24,18 +24,14 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LEFT_SIDE_BAR_WIDGETS_H
-#define DIGIKAM_LEFT_SIDE_BAR_WIDGETS_H
+#ifndef DIGIKAM_TAG_VIEW_SIDE_BAR_WIDGET_H
+#define DIGIKAM_TAG_VIEW_SIDE_BAR_WIDGET_H
 
 // Local includes
 
 #include "digikam_config.h"
 #include "albummodel.h"
-#include "albummodificationhelper.h"
-#include "itemalbumfiltermodel.h"
-#include "searchmodificationhelper.h"
 #include "sidebarwidget.h"
-#include "itemfiltermodel.h"
 
 namespace Digikam
 {
@@ -43,9 +39,6 @@ namespace Digikam
 template <class T>
 class AlbumPointer;
 
-/**
- * SideBarWidget for the tag view.
- */
 class TagViewSideBarWidget : public SidebarWidget
 {
 
@@ -90,48 +83,6 @@ private:
     Private* const d;
 };
 
-// -----------------------------------------------------------------------------------------
-
-/**
- * SideBarWidget for People
- */
-class PeopleSideBarWidget : public SidebarWidget
-{
-    Q_OBJECT
-
-public:
-
-    explicit PeopleSideBarWidget(QWidget* const parent,
-                                 TagModel* const tagModel,
-                                 SearchModificationHelper* const searchModificationHelper);
-    virtual ~PeopleSideBarWidget();
-
-    void          setActive(bool active)                             override;
-    void          doLoadState()                                      override;
-    void          doSaveState()                                      override;
-    void          applySettings()                                    override;
-    void          changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon()                                          override;
-    const QString getCaption()                                       override;
-
-private Q_SLOTS:
-
-    void slotInit();
-    void slotScanForFaces();
-    void slotScanComplete();
-
-Q_SIGNALS:
-
-    void requestFaceMode(bool on);
-
-    void signalFindDuplicates(const QList<TAlbum*>& albums);
-
-private:
-
-    class Private;
-    Private* const d;
-};
-
 } // namespace Digikam
 
-#endif // DIGIKAM_LEFT_SIDE_BAR_WIDGETS_H
+#endif // DIGIKAM_TAG_VIEW_SIDE_BAR_WIDGET_H

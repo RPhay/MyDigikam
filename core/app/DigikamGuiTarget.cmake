@@ -95,7 +95,8 @@ set(libdigikamgui_SRCS
     views/sidebar/fuzzysearchsidebarwidget.cpp
     views/sidebar/gpssearchsidebarwidget.cpp
     views/sidebar/labelssidebarwidget.cpp
-    views/sidebar/leftsidebarwidgets.cpp
+    views/sidebar/peoplesidebarwidget.cpp
+    views/sidebar/tagviewsidebarwidget.cpp
     views/sidebar/sidebarwidget.cpp
 
     views/utils/dmodelfactory.cpp
