@@ -38,7 +38,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_config.h"
 #include "digikam_export.h"
 #include "dimg.h"
 
@@ -159,7 +158,7 @@ Q_INLINE_TEMPLATE Type* DImgLoader::new_failureTolerant(quint64 w, quint64 h, ui
     if (requested > maximum)
     {
         qCCritical(DIGIKAM_DIMG_LOG) << "Requested memory of" << requested*quint64(sizeof(Type))
-                                        << "is larger than size_t supported by platform.";
+                                     << "is larger than size_t supported by platform.";
         return nullptr;
     }
 
@@ -183,34 +182,12 @@ Q_INLINE_TEMPLATE Type* DImgLoader::new_failureTolerant(size_t size)
             break;
     }
 
-    Type* reserved = nullptr;
-
-    try
-    {
-        reserved = new Type[size];
-    }
-
-#ifdef Q_OS_WIN
-
-    catch (std::bad_alloc& ex)
-    {
-        qCCritical(DIGIKAM_DIMG_LOG) << "Ignore exception to allocate chunk of memory" << ex.what();
-    }
+    Type* const reserved = new (std::nothrow) Type[size];
 
     if (!reserved)
     {
         qCCritical(DIGIKAM_DIMG_LOG) << "Failed to allocate chunk of memory of size" << size;
     }
-
-#else
-
-    catch (std::bad_alloc& ex)
-    {
-        qCCritical(DIGIKAM_DIMG_LOG) << "Failed to allocate chunk of memory of size" << size << ex.what();
-        reserved = nullptr;
-    }
-
-#endif
 
     return reserved;
 }
