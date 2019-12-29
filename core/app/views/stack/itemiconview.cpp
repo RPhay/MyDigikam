@@ -73,6 +73,7 @@
 #include "albumfolderviewsidebarwidget.h"
 #include "datefolderviewsidebarwidget.h"
 #include "timelinesidebarwidget.h"
+#include "searchsidebarwidget.h"
 //#include "labelsidebarwidgets.h"
 #include "leftsidebarwidgets.h"
 #include "loadingcacheinterface.h"

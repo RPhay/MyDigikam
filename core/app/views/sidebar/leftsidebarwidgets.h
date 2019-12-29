@@ -130,39 +130,6 @@ private:
 // -----------------------------------------------------------------------------------------
 
 /**
- * SideBarWidget for the search.
- */
-class SearchSideBarWidget : public SidebarWidget
-{
-    Q_OBJECT
-
-public:
-
-    explicit SearchSideBarWidget(QWidget* const parent,
-                                 SearchModel* const searchModel,
-                                 SearchModificationHelper* const searchModificationHelper);
-    virtual ~SearchSideBarWidget();
-
-    void          setActive(bool active)                             override;
-    void          doLoadState()                                      override;
-    void          doSaveState()                                      override;
-    void          applySettings()                                    override;
-    void          changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon()                                          override;
-    const QString getCaption()                                       override;
-
-    void newKeywordSearch();
-    void newAdvancedSearch();
-
-private:
-
-    class Private;
-    Private* const d;
-};
-
-// -----------------------------------------------------------------------------------------
-
-/**
  * SideBarWidget for the fuzzy search.
  */
 class FuzzySearchSideBarWidget : public SidebarWidget

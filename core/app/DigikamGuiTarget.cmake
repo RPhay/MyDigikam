@@ -90,6 +90,7 @@ set(libdigikamgui_SRCS
     views/sidebar/albumfolderviewsidebarwidget.cpp
     views/sidebar/datefolderviewsidebarwidget.cpp
     views/sidebar/timelinesidebarwidget.cpp
+    views/sidebar/searchsidebarwidget.cpp
 #    views/sidebar/labelssidebarwidget.cpp
     views/sidebar/leftsidebarwidgets.cpp
     views/sidebar/sidebarwidget.cpp

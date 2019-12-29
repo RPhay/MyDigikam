@@ -41,7 +41,6 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include <QIcon>
-#include <QMessageBox>
 
 // KDE includes
 
@@ -422,120 +421,6 @@ const QString LabelsSideBarWidget::getCaption()
 QHash<LabelsTreeView::Labels, QList<int> > LabelsSideBarWidget::selectedLabels()
 {
     return d->labelsTree->selectedLabels();
-}
-
-// -----------------------------------------------------------------------------
-
-class Q_DECL_HIDDEN SearchSideBarWidget::Private
-{
-public:
-
-    explicit Private()
-      : searchSearchBar(nullptr),
-        searchTreeView(nullptr),
-        searchTabHeader(nullptr)
-    {
-    }
-
-    SearchTextBar*        searchSearchBar;
-    NormalSearchTreeView* searchTreeView;
-    SearchTabHeader*      searchTabHeader;
-};
-
-SearchSideBarWidget::SearchSideBarWidget(QWidget* const parent,
-                                         SearchModel* const searchModel,
-                                         SearchModificationHelper* const searchModificationHelper)
-    : SidebarWidget(parent),
-      d(new Private)
-{
-    setObjectName(QLatin1String("Search Sidebar"));
-    setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F6);
-
-    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-
-    QVBoxLayout* const layout = new QVBoxLayout(this);
-
-    d->searchTabHeader  = new SearchTabHeader(this);
-    d->searchTreeView   = new NormalSearchTreeView(this, searchModel, searchModificationHelper);
-    d->searchTreeView->setConfigGroup(getConfigGroup());
-    d->searchTreeView->filteredModel()->listNormalSearches();
-    d->searchTreeView->filteredModel()->setListTemporarySearches(true);
-    d->searchTreeView->setAlbumManagerCurrentAlbum(true);
-    d->searchSearchBar  = new SearchTextBar(this, QLatin1String("ItemIconViewSearchSearchBar"));
-    d->searchSearchBar->setModel(d->searchTreeView->filteredModel(),
-                                 AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
-    d->searchSearchBar->setFilterModel(d->searchTreeView->albumFilterModel());
-
-    layout->addWidget(d->searchTabHeader);
-    layout->addWidget(d->searchTreeView);
-    layout->setStretchFactor(d->searchTreeView, 1);
-    layout->addWidget(d->searchSearchBar);
-    layout->setContentsMargins(0, 0, spacing, 0);
-
-    connect(d->searchTreeView, SIGNAL(newSearch()),
-            d->searchTabHeader, SLOT(newAdvancedSearch()));
-
-    connect(d->searchTreeView, SIGNAL(editSearch(SAlbum*)),
-            d->searchTabHeader, SLOT(editSearch(SAlbum*)));
-
-    connect(d->searchTreeView, SIGNAL(currentAlbumChanged(Album*)),
-            d->searchTabHeader, SLOT(selectedSearchChanged(Album*)));
-
-    connect(d->searchTabHeader, SIGNAL(searchShallBeSelected(QList<Album*>)),
-            d->searchTreeView, SLOT(setCurrentAlbums(QList<Album*>)));
-}
-
-SearchSideBarWidget::~SearchSideBarWidget()
-{
-    delete d;
-}
-
-void SearchSideBarWidget::setActive(bool active)
-{
-    if (active)
-    {
-        AlbumManager::instance()->setCurrentAlbums(QList<Album*>() << d->searchTreeView->currentAlbum());
-        d->searchTabHeader->selectedSearchChanged(d->searchTreeView->currentAlbum());
-    }
-}
-
-void SearchSideBarWidget::doLoadState()
-{
-    d->searchTreeView->loadState();
-}
-
-void SearchSideBarWidget::doSaveState()
-{
-    d->searchTreeView->saveState();
-}
-
-void SearchSideBarWidget::applySettings()
-{
-}
-
-void SearchSideBarWidget::changeAlbumFromHistory(const QList<Album*>& album)
-{
-    d->searchTreeView->setCurrentAlbums(album);
-}
-
-const QIcon SearchSideBarWidget::getIcon()
-{
-    return QIcon::fromTheme(QLatin1String("edit-find"));
-}
-
-const QString SearchSideBarWidget::getCaption()
-{
-    return i18nc("Advanced search images, access stored searches", "Search");
-}
-
-void SearchSideBarWidget::newKeywordSearch()
-{
-    d->searchTabHeader->newKeywordSearch();
-}
-
-void SearchSideBarWidget::newAdvancedSearch()
-{
-    d->searchTabHeader->newAdvancedSearch();
 }
 
 // -----------------------------------------------------------------------------
