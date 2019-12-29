@@ -63,12 +63,12 @@ class Q_DECL_HIDDEN DImgScaleInfo
 public:
 
     DImgScaleInfo()
-        : xpoints(nullptr),
-          ypoints(nullptr),
-          ypoints16(nullptr),
-          xapoints(nullptr),
-          yapoints(nullptr),
-          xup_yup(0)
+      : xpoints(nullptr),
+        ypoints(nullptr),
+        ypoints16(nullptr),
+        xapoints(nullptr),
+        yapoints(nullptr),
+        xup_yup(0)
     {
     }
 

@@ -125,13 +125,13 @@ class DIGIKAM_EXPORT DImg::Private : public QSharedData
 public:
 
     explicit Private()
-        : null(true),
-          alpha(false),
-          sixteenBit(false),
-          width(0),
-          height(0),
-          data(nullptr),
-          lanczos_func(nullptr)
+      : null(true),
+        alpha(false),
+        sixteenBit(false),
+        width(0),
+        height(0),
+        data(nullptr),
+        lanczos_func(nullptr)
     {
     }
 
@@ -182,12 +182,12 @@ public:
             }
         }
 
-        if (!pluginMap.isEmpty())
+        if (pluginMap.isEmpty())
         {
-            return pluginMap.first();
+            return nullptr;
         }
 
-        return nullptr;
+        return pluginMap.first();
     }
 
     static DImg::FORMAT loaderNameToFormat(const QString& name)
