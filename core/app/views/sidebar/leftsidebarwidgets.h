@@ -130,51 +130,6 @@ private:
 // -----------------------------------------------------------------------------------------
 
 /**
- * SideBarWidget for the date folder view.
- */
-class TimelineSideBarWidget : public SidebarWidget
-{
-    Q_OBJECT
-
-public:
-
-    explicit TimelineSideBarWidget(QWidget* const parent,
-                                   SearchModel* const searchModel,
-                                   SearchModificationHelper* const searchModificationHelper);
-    virtual ~TimelineSideBarWidget();
-
-    void          setActive(bool active)                             override;
-    void          doLoadState()                                      override;
-    void          doSaveState()                                      override;
-    void          applySettings()                                    override;
-    void          changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon()                                          override;
-    const QString getCaption()                                       override;
-
-private Q_SLOTS:
-
-    void slotInit();
-    void slotScrollBarValueChanged(int);
-    void slotRefDateTimeChanged();
-    void slotScaleChanged(int);
-    void slotTimeUnitChanged(int);
-    void slotCursorPositionChanged();
-    void slotSelectionChanged();
-    void slotResetSelection();
-    void slotSaveSelection();
-    void slotUpdateCurrentDateSearchAlbum();
-    void slotAlbumSelected(Album*);
-    void slotCheckAboutSelection();
-
-private:
-
-    class Private;
-    Private* const d;
-};
-
-// -----------------------------------------------------------------------------------------
-
-/**
  * SideBarWidget for the search.
  */
 class SearchSideBarWidget : public SidebarWidget
