@@ -223,11 +223,11 @@ void FacePipeline::Private::start()
 
     foreach (QObject* const element, pipeline)
     {
-        if (workerObject = qobject_cast<WorkerObject*>(element))
+        if ((workerObject = qobject_cast<WorkerObject*>(element)))
         {
             workerObject->schedule();
         }
-        else if (pipes = qobject_cast<ParallelPipes*>(element))
+        else if ((pipes = qobject_cast<ParallelPipes*>(element)))
         {
             pipes->schedule();
         }
@@ -260,15 +260,15 @@ void FacePipeline::Private::stop()
 
     foreach (QObject* const element, pipeline)
     {
-        if (workerObject = qobject_cast<WorkerObject*>(element))
+        if ((workerObject = qobject_cast<WorkerObject*>(element)))
         {
             workerObject->deactivate();
         }
-        else if (pipes = qobject_cast<ParallelPipes*>(element))
+        else if ((pipes = qobject_cast<ParallelPipes*>(element)))
         {
             pipes->deactivate();
         }
-        else if (thread = qobject_cast<DynamicThread*>(element))
+        else if ((thread = qobject_cast<DynamicThread*>(element)))
         {
             thread->stop();
         }
@@ -300,15 +300,15 @@ void FacePipeline::Private::wait()
 
     foreach (QObject* const element, pipeline)
     {
-        if (workerObject = qobject_cast<WorkerObject*>(element))
+        if ((workerObject = qobject_cast<WorkerObject*>(element)))
         {
             workerObject->wait();
         }
-        else if (pipes = qobject_cast<ParallelPipes*>(element))
+        else if ((pipes = qobject_cast<ParallelPipes*>(element)))
         {
             pipes->wait();
         }
-        else if (thread = qobject_cast<DynamicThread*>(element))
+        else if ((thread = qobject_cast<DynamicThread*>(element)))
         {
             thread->wait();
         }
@@ -324,11 +324,11 @@ void FacePipeline::Private::applyPriority()
 
     foreach (QObject* const element, pipeline)
     {
-        if (workerObject = qobject_cast<WorkerObject*>(element))
+        if ((workerObject = qobject_cast<WorkerObject*>(element)))
         {
             workerObject->setPriority(priority);
         }
-        else if (pipes = qobject_cast<ParallelPipes*>(element))
+        else if ((pipes = qobject_cast<ParallelPipes*>(element)))
         {
             pipes->setPriority(priority);
         }
