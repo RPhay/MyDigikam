@@ -488,8 +488,8 @@ BUGFIXES:
 474 ==> 228879 - Geolocation Editor: Missing progress bar.
 475 ==> 272158 - More user feedback about background operations.
 476 ==> 301064 - Async task UI persists on leaving geolocation UI.
-477 ==> 
-478 ==> 
-479 ==> 
-480 ==>
+477 ==> 164600 - No picture in view pane.
+478 ==> 297295 - Zooming: full picture thumbnail to show position.
+479 ==> 160894 - Add new picLens like 3D view mode.
+480 ==> 325530 - Preview and Editor return "Failed to Load Image" error when viewing JPEG (only) files.
 481 ==> 
