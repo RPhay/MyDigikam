@@ -92,6 +92,7 @@ set(libdigikamgui_SRCS
     views/sidebar/timelinesidebarwidget.cpp
     views/sidebar/searchsidebarwidget.cpp
     views/sidebar/fuzzysearchsidebarwidget.cpp
+    views/sidebar/gpssearchsidebarwidget.cpp
 #    views/sidebar/labelssidebarwidget.cpp
     views/sidebar/leftsidebarwidgets.cpp
     views/sidebar/sidebarwidget.cpp

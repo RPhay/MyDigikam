@@ -75,6 +75,7 @@
 #include "timelinesidebarwidget.h"
 #include "searchsidebarwidget.h"
 #include "fuzzysearchsidebarwidget.h"
+#include "gpssearchsidebarwidget.h"
 //#include "labelsidebarwidgets.h"
 #include "leftsidebarwidgets.h"
 #include "loadingcacheinterface.h"

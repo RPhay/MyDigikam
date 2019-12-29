@@ -38,10 +38,6 @@
 #include "itemfiltermodel.h"
 #include "labelstreeview.h"
 
-#ifdef HAVE_MARBLE
-#   include "gpssearchview.h"
-#endif // HAVE_MARBLE
-
 namespace Digikam
 {
 
@@ -126,46 +122,6 @@ private:
     class Private;
     Private* const d;
 };
-
-// -----------------------------------------------------------------------------------------
-
-#ifdef HAVE_MARBLE
-
-/**
- * SideBarWidget for the gps search.
- */
-class GPSSearchSideBarWidget : public SidebarWidget
-{
-    Q_OBJECT
-
-public:
-
-    explicit GPSSearchSideBarWidget(QWidget* const parent,
-                                    SearchModel* const searchModel,
-                                    SearchModificationHelper* const searchModificationHelper,
-                                    ItemFilterModel* const imageFilterModel,
-                                    QItemSelectionModel* const itemSelectionModel);
-    virtual ~GPSSearchSideBarWidget();
-
-    void          setActive(bool active)                             override;
-    void          doLoadState()                                      override;
-    void          doSaveState()                                      override;
-    void          applySettings()                                    override;
-    void          changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon()                                          override;
-    const QString getCaption()                                       override;
-
-Q_SIGNALS:
-
-    void signalMapSoloItems(const QList<qlonglong>&, const QString&);
-
-private:
-
-    class Private;
-    Private* const d;
-};
-
-#endif // HAVE_MARBLE
 
 // -----------------------------------------------------------------------------------------
 
