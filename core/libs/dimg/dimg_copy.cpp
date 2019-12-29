@@ -88,7 +88,7 @@ DImg DImg::copy(int x, int y, int w, int h) const
         return DImg();
     }
 
-    if (clipped(x, y, w, h, m_priv->width, m_priv->height))
+    if (!clipped(x, y, w, h, m_priv->width, m_priv->height))
     {
         return DImg();
     }
