@@ -492,4 +492,24 @@ BUGFIXES:
 478 ==> 297295 - Zooming: full picture thumbnail to show position.
 479 ==> 160894 - Add new picLens like 3D view mode.
 480 ==> 325530 - Preview and Editor return "Failed to Load Image" error when viewing JPEG (only) files.
-481 ==> 
+481 ==> 256309 - Wish to save settings in batch queue manager.
+482 ==> 271198 - Make queues saveable and use them as single action.
+483 ==> 287407 - Save tools with settings in BQM.
+484 ==> 318771 - Saved process don't remember settings in BQM.
+485 ==> 320358 - Files randomly fail to process.
+486 ==> 342433 - Crashes after tagging a few batches of photos.
+487 ==> 171073 - Statistic of database, all pictures?
+488 ==> 119228 - Storage of images on removable media.
+489 ==> 144724 - Freezing by using NAS.
+490 ==> 189362 - After moving the collection on a new HD, Digikam doesn't find it.
+491 ==> 249375 - Crash when device with open window is removed.
+492 ==> 272918 - digiKam crash after scanning ssh network drive.
+493 ==> 275559 - digiKam crashes while browsing over NFS.
+494 ==> 
+495 ==> 
+496 ==> 
+497 ==> 
+498 ==> 
+499 ==> 
+500 ==> 
+501 ==> 
