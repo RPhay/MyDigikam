@@ -3,10 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2000-12-05
+ * Date        : 2009-12-05
  * Description : base class for sidebar widgets
  *
- * Copyright (C) 2009 by Johannes Wienke <languitar at semipol dot de>
+ * Copyright (C) 2009      by Johannes Wienke <languitar at semipol dot de>
+ * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,8 +41,6 @@ namespace Digikam
 
 /**
  * Abstract base class for widgets that are use in one of digikams's sidebars.
- *
- * @author jwienke
  */
 class SidebarWidget : public QWidget, public StateSavingObject
 {
@@ -67,13 +66,13 @@ public:
      * @param active if true, this widget is the new active widget, if false another
      *        widget is active
      */
-    virtual void setActive(bool active) = 0;
+    virtual void setActive(bool active)                             = 0;
 
     /**
      * This method is invoked when the application settings should be (re-)
      * applied to this widget.
      */
-    virtual void applySettings() = 0;
+    virtual void applySettings()                                    = 0;
 
     /**
      * This is called on this widget when the history requires to move back to
@@ -87,14 +86,14 @@ public:
      *
      * @return pixmap icon
      */
-    virtual const QIcon getIcon() = 0;
+    virtual const QIcon getIcon()                                   = 0;
 
     /**
      * Must be implemented to return the title of this sidebar's tab.
      *
      * @return localized title string
      */
-    virtual const QString getCaption() = 0;
+    virtual const QString getCaption()                              = 0;
 
 Q_SIGNALS:
 

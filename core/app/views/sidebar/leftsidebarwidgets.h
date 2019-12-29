@@ -9,6 +9,7 @@
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
  * Copyright (C) 2010-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2014      by Mohamed_Anwer <m_dot_anwer at gmx dot com>
+ * Copyright (C) 2010      by Aditya Bhatt <adityabhatt1991 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -49,8 +50,6 @@ class AlbumPointer;
 
 /**
  * SideBarWidget for the folder view.
- *
- * @author jwienke
  */
 class AlbumFolderViewSideBarWidget : public SidebarWidget
 {
@@ -91,8 +90,6 @@ private:
 
 /**
  * SideBarWidget for the tag view.
- *
- * @author jwienke
  */
 class TagViewSideBarWidget : public SidebarWidget
 {
@@ -142,8 +139,6 @@ private:
 
 /**
  * SideBarWidget for the Labels.
- *
- * @author Mohamed_Anwer
  */
 class LabelsSideBarWidget : public SidebarWidget
 {
@@ -176,8 +171,6 @@ private:
 
 /**
  * SideBarWidget for the date folder view.
- *
- * @author jwienke
  */
 class DateFolderViewSideBarWidget : public SidebarWidget
 {
@@ -212,8 +205,6 @@ private:
 
 /**
  * SideBarWidget for the date folder view.
- *
- * @author jwienke
  */
 class TimelineSideBarWidget : public SidebarWidget
 {
@@ -259,8 +250,6 @@ private:
 
 /**
  * SideBarWidget for the search.
- *
- * @author jwienke
  */
 class SearchSideBarWidget : public SidebarWidget
 {
@@ -294,8 +283,6 @@ private:
 
 /**
  * SideBarWidget for the fuzzy search.
- *
- * @author jwienke
  */
 class FuzzySearchSideBarWidget : public SidebarWidget
 {
@@ -337,8 +324,6 @@ private:
 
 /**
  * SideBarWidget for the gps search.
- *
- * @author jwienke
  */
 class GPSSearchSideBarWidget : public SidebarWidget
 {
@@ -377,8 +362,6 @@ private:
 
 /**
  * SideBarWidget for People
- *
- * @author Aditya Bhatt
  */
 class PeopleSideBarWidget : public SidebarWidget
 {

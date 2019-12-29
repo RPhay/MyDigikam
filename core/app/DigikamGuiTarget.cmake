@@ -165,8 +165,8 @@ endif()
 target_link_libraries(digikamgui
                       PRIVATE
 
-                      digikamdatabase
                       digikamcore
+                      digikamdatabase
 
                       Qt5::Core
                       Qt5::Gui
