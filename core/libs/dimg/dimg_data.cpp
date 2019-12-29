@@ -163,9 +163,7 @@ size_t DImg::allocateData() const
 
     if (!m_priv->data)
     {
-        m_priv->null   = true;
-        m_priv->width  = 0;
-        m_priv->height = 0;
+        m_priv->null = true;
         return 0;
     }
 
