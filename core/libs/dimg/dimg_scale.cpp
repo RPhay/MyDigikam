@@ -63,13 +63,13 @@ class Q_DECL_HIDDEN DImgScaleInfo
 public:
 
     DImgScaleInfo()
+        : xpoints(nullptr),
+          ypoints(nullptr),
+          ypoints16(nullptr),
+          xapoints(nullptr),
+          yapoints(nullptr),
+          xup_yup(0)
     {
-        xpoints   = nullptr;
-        ypoints   = nullptr;
-        ypoints16 = nullptr;
-        xapoints  = nullptr;
-        yapoints  = nullptr;
-        xup_yup   = 0;
     }
 
     ~DImgScaleInfo()
@@ -97,7 +97,6 @@ int*     dimgCalcApoints(int s, int d, int up);
 DImgScaleInfo* dimgCalcScaleInfo(const DImg& img,
                                  int sw, int sh,
                                  int dw, int dh,
-                                 bool sixteenBit,
                                  bool aa);
 
 // 8 bit, not smoothed
@@ -221,7 +220,7 @@ DImg DImg::smoothScaleClipped(int dw, int dh, int clipx, int clipy, int clipw, i
         }
     }
 
-    DImgScaleInfo* scaleinfo = dimgCalcScaleInfo(*this, w, h, dw, dh, sixteenBit(), true);
+    DImgScaleInfo* const scaleinfo = dimgCalcScaleInfo(*this, w, h, dw, dh, true);
 
     DImg buffer(*this, clipw, cliph);
 
@@ -328,7 +327,7 @@ DImg DImg::smoothScaleSection(int sx, int sy,
     }
 
     // calculate scaleinfo
-    DImgScaleInfo* scaleinfo = dimgCalcScaleInfo(*this, sw, sh, dw, dh, sixteenBit(), true);
+    DImgScaleInfo* const scaleinfo = dimgCalcScaleInfo(*this, sw, sh, dw, dh, true);
 
     DImg buffer(*this, dw, dh);
 
@@ -504,10 +503,9 @@ int* DImgScale::dimgCalcApoints(int s, int d, int up)
 DImgScaleInfo* DImgScale::dimgCalcScaleInfo(const DImg& img,
                                             int sw, int sh,
                                             int dw, int dh,
-                                            bool /*sixteenBit*/,
                                             bool aa)
 {
-    DImgScaleInfo* isi = new DImgScaleInfo;
+    DImgScaleInfo* const isi = new DImgScaleInfo;
     int scw, sch;
 
     scw = dw * img.width()  / sw;
