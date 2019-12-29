@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2000-12-05
+ * Date        : 2009-12-05
  * Description : left sidebar widgets
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
@@ -75,111 +75,6 @@
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN AlbumFolderViewSideBarWidget::Private
-{
-public:
-
-    explicit Private()
-      : albumModificationHelper(nullptr),
-        albumFolderView(nullptr),
-        searchTextBar(nullptr)
-    {
-    }
-
-    AlbumModificationHelper* albumModificationHelper;
-    AlbumSelectionTreeView*  albumFolderView;
-    SearchTextBar*           searchTextBar;
-};
-
-AlbumFolderViewSideBarWidget::AlbumFolderViewSideBarWidget(QWidget* const parent,
-                                                           AlbumModel* const model,
-                                                           AlbumModificationHelper* const albumModificationHelper)
-    : SidebarWidget(parent),
-      d(new Private)
-{
-    setObjectName(QLatin1String("AlbumFolderView Sidebar"));
-    setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F1);
-    d->albumModificationHelper = albumModificationHelper;
-
-    const int spacing          = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-
-    QVBoxLayout* const layout  = new QVBoxLayout(this);
-    d->albumFolderView         = new AlbumSelectionTreeView(this, model, d->albumModificationHelper);
-    d->albumFolderView->setObjectName(QLatin1String("AlbumFolderView"));
-    d->albumFolderView->setConfigGroup(getConfigGroup());
-    d->albumFolderView->setExpandNewCurrentItem(true);
-    d->albumFolderView->setAlbumManagerCurrentAlbum(true);
-    d->searchTextBar           = new SearchTextBar(this, QLatin1String("ItemIconViewFolderSearchBar"));
-    d->searchTextBar->setHighlightOnResult(true);
-    d->searchTextBar->setModel(model, AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
-    d->searchTextBar->setFilterModel(d->albumFolderView->albumFilterModel());
-
-    layout->addWidget(d->albumFolderView);
-    layout->addWidget(d->searchTextBar);
-    layout->setContentsMargins(0, 0, spacing, 0);
-
-    // setup connection
-    connect(d->albumFolderView, SIGNAL(signalFindDuplicates(PAlbum*)),
-            this, SIGNAL(signalFindDuplicates(PAlbum*)));
-}
-
-AlbumFolderViewSideBarWidget::~AlbumFolderViewSideBarWidget()
-{
-    delete d;
-}
-
-void AlbumFolderViewSideBarWidget::setActive(bool active)
-{
-    if (active)
-    {
-        AlbumManager::instance()->setCurrentAlbums(QList<Album*>() << d->albumFolderView->currentAlbum());
-    }
-}
-
-void AlbumFolderViewSideBarWidget::doLoadState()
-{
-    d->albumFolderView->loadState();
-}
-
-void AlbumFolderViewSideBarWidget::doSaveState()
-{
-    d->albumFolderView->saveState();
-}
-
-void AlbumFolderViewSideBarWidget::applySettings()
-{
-    ApplicationSettings* const settings = ApplicationSettings::instance();
-    d->albumFolderView->setEnableToolTips(settings->getShowAlbumToolTips());
-}
-
-void AlbumFolderViewSideBarWidget::changeAlbumFromHistory(const QList<Album*>& album)
-{
-    d->albumFolderView->setCurrentAlbums(album);
-}
-
-AlbumPointer<PAlbum> AlbumFolderViewSideBarWidget::currentAlbum() const
-{
-    return AlbumPointer<PAlbum> (d->albumFolderView->currentAlbum());
-}
-
-void AlbumFolderViewSideBarWidget::setCurrentAlbum(PAlbum* album)
-{
-    // Change the current album in list view.
-    d->albumFolderView->setCurrentAlbums(QList<Album*>() << album);
-}
-
-const QIcon AlbumFolderViewSideBarWidget::getIcon()
-{
-    return QIcon::fromTheme(QLatin1String("folder-pictures"));
-}
-
-const QString AlbumFolderViewSideBarWidget::getCaption()
-{
-    return i18n("Albums");
-}
-
-// -----------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN TagViewSideBarWidget::Private
 {

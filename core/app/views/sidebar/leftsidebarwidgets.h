@@ -3,7 +3,7 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2000-12-05
+ * Date        : 2009-12-05
  * Description : left sidebar widgets
  *
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
@@ -47,46 +47,6 @@ namespace Digikam
 
 template <class T>
 class AlbumPointer;
-
-/**
- * SideBarWidget for the folder view.
- */
-class AlbumFolderViewSideBarWidget : public SidebarWidget
-{
-    Q_OBJECT
-
-public:
-
-    explicit AlbumFolderViewSideBarWidget(QWidget* const parent,
-                                          AlbumModel* const model,
-                                          AlbumModificationHelper* const albumModificationHelper);
-    virtual ~AlbumFolderViewSideBarWidget();
-
-    void          setActive(bool active)                             override;
-    void          doLoadState()                                      override;
-    void          doSaveState()                                      override;
-    void          applySettings()                                    override;
-    void          changeAlbumFromHistory(const QList<Album*>& album) override;
-    const QIcon   getIcon()                                          override;
-    const QString getCaption()                                       override;
-
-    AlbumPointer<PAlbum> currentAlbum() const;
-
-public Q_SLOTS:
-
-    void setCurrentAlbum(PAlbum* album);
-
-Q_SIGNALS:
-
-    void signalFindDuplicates(PAlbum* album);
-
-private:
-
-    class Private;
-    Private* const d;
-};
-
-// -----------------------------------------------------------------------------------------
 
 /**
  * SideBarWidget for the tag view.

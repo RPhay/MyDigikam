@@ -87,6 +87,7 @@ set(libdigikamgui_SRCS
     views/stack/stackedview.cpp
     views/preview/itempreviewcanvas.cpp
     views/preview/itempreviewview.cpp
+    views/sidebar/albumfolderviewsidebarwidget.cpp
     views/sidebar/leftsidebarwidgets.cpp
     views/sidebar/sidebarwidget.cpp
     views/utils/dmodelfactory.cpp
