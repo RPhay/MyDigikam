@@ -112,6 +112,8 @@ public:
 
     void updateDNNFaceModel(DNNFaceModel& model);
     DNNFaceModel dnnFaceModel(bool debug) const;
+    void clearDNNTraining(const QString& context = QString());
+    void clearDNNTraining(const QList<int>& identities, const QString& context = QString());
 
 
 private:

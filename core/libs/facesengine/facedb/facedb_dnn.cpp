@@ -163,4 +163,34 @@ DNNFaceModel FaceDb::dnnFaceModel(bool debug) const
     return model;
 }
 
+void FaceDb::clearDNNTraining(const QString& context)
+{
+    if (context.isNull())
+    {
+        d->db->execSql(QLatin1String("DELETE FROM FaceMatrices;"));
+    }
+    else
+    {
+        d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE `context`=?;"),
+                       context);
+    }
+}
+
+void FaceDb::clearDNNTraining(const QList<int>& identities, const QString& context)
+{
+    foreach (int id, identities)
+    {
+        if (context.isNull())
+        {
+            d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE identity=?;"),
+                           id);
+        }
+        else
+        {
+            d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE identity=? AND `context`=?;"),
+                           id, context);
+        }
+    }
+}
+
 } // namespace Digikam

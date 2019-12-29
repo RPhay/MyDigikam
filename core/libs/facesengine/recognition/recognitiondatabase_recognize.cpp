@@ -74,12 +74,21 @@ void RecognitionDatabase::Private::clear(OpenCVFISHERFaceRecognizer* const,
 }
 
 void RecognitionDatabase::Private::clear(OpenCVDNNFaceRecognizer* const,
-                                         const QList<int>&,
-                                         const QString&)
+                                         const QList<int>& idsToClear,
+                                         const QString& trainingContext)
 {
     // force later reload
     delete opencvdnn;
     opencvdnn = nullptr;
+
+    if (idsToClear.isEmpty())
+    {
+        FaceDbAccess().db()->clearDNNTraining(trainingContext);
+    }
+    else
+    {
+        FaceDbAccess().db()->clearDNNTraining(idsToClear, trainingContext);
+    }
 }
 
 // ------------------------------------------------------------------------------

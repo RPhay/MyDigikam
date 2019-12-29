@@ -176,7 +176,8 @@ void FaceDb::clearEIGENTraining(const QString& context)
     }
     else
     {
-        d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE `context`=?;"), context);
+        d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE `context`=?;"),
+                       context);
     }
 }
 
@@ -186,11 +187,13 @@ void FaceDb::clearEIGENTraining(const QList<int>& identities, const QString& con
     {
         if (context.isNull())
         {
-            d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE identity=?;"), id);
+            d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE identity=?;"),
+                           id);
         }
         else
         {
-            d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE identity=? AND `context`=?;"), id, context);
+            d->db->execSql(QLatin1String("DELETE FROM FaceMatrices WHERE identity=? AND `context`=?;"),
+                           id, context);
         }
     }
 }

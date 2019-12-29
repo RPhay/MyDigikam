@@ -219,7 +219,8 @@ void FaceDb::clearLBPHTraining(const QString& context)
     }
     else
     {
-        d->db->execSql(QLatin1String("DELETE FROM OpenCVLBPHistograms WHERE `context`=?;"), context);
+        d->db->execSql(QLatin1String("DELETE FROM OpenCVLBPHistograms WHERE `context`=?;"),
+                       context);
     }
 }
 
@@ -229,11 +230,13 @@ void FaceDb::clearLBPHTraining(const QList<int>& identities, const QString& cont
     {
         if (context.isNull())
         {
-            d->db->execSql(QLatin1String("DELETE FROM OpenCVLBPHistograms WHERE identity=?;"), id);
+            d->db->execSql(QLatin1String("DELETE FROM OpenCVLBPHistograms WHERE identity=?;"),
+                           id);
         }
         else
         {
-            d->db->execSql(QLatin1String("DELETE FROM OpenCVLBPHistograms WHERE identity=? AND `context`=?;"), id, context);
+            d->db->execSql(QLatin1String("DELETE FROM OpenCVLBPHistograms WHERE identity=? AND `context`=?;"),
+                           id, context);
         }
     }
 }
