@@ -479,7 +479,17 @@ BUGFIXES:
 465 ==> 118396 - Ability to search through image comments.
 466 ==> 139283 - IPTC Caption comment in search function
 467 ==> 155735 - Make it possible to seach on IPTC-text.
-468 ==> 
-
-
-
+468 ==> 095584 - No indication of the end of download from camera.
+469 ==> 179712 - Open image in embeded editor lead to digikam crash.
+470 ==> 297293 - Option to use libnotify for non-blocking errors/message.
+471 ==> 316928 - Servicing: statut of each servicing option should be searchable.
+472 ==> 375521 - Progress bars waste useful space.
+473 ==> 218583 - Showfoto customizing toolbar freerotation.
+474 ==> 228879 - Geolocation Editor: Missing progress bar.
+475 ==> 272158 - More user feedback about background operations.
+476 ==> 301064 - Async task UI persists on leaving geolocation UI.
+477 ==> 
+478 ==> 
+479 ==> 
+480 ==>
+481 ==> 
