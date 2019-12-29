@@ -76,7 +76,7 @@
 #include "searchsidebarwidget.h"
 #include "fuzzysearchsidebarwidget.h"
 #include "gpssearchsidebarwidget.h"
-//#include "labelsidebarwidgets.h"
+#include "labelssidebarwidget.h"
 #include "leftsidebarwidgets.h"
 #include "loadingcacheinterface.h"
 #include "metadatahub.h"

@@ -36,7 +36,6 @@
 #include "searchmodificationhelper.h"
 #include "sidebarwidget.h"
 #include "itemfiltermodel.h"
-#include "labelstreeview.h"
 
 namespace Digikam
 {
@@ -88,38 +87,6 @@ public:
 
 private:
 
-    Private* const d;
-};
-
-// -----------------------------------------------------------------------------------------
-
-/**
- * SideBarWidget for the Labels.
- */
-class LabelsSideBarWidget : public SidebarWidget
-{
-    Q_OBJECT
-
-public:
-
-    explicit LabelsSideBarWidget(QWidget* const parent);
-    virtual ~LabelsSideBarWidget();
-
-    LabelsTreeView* labelsTree();
-
-    void          setActive(bool active)                             override;
-    void          applySettings()                                    override;
-    void          changeAlbumFromHistory(const QList<Album*>& album) override;
-    void          doLoadState()                                      override;
-    void          doSaveState()                                      override;
-    const QIcon   getIcon()                                          override;
-    const QString getCaption()                                       override;
-
-    QHash<LabelsTreeView::Labels, QList<int> > selectedLabels();
-
-private:
-
-    class Private;
     Private* const d;
 };
 

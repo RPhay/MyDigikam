@@ -24,29 +24,17 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_LABELS_SIDE_BAR_WIDGETS_H
-#define DIGIKAM_LABELS_SIDE_BAR_WIDGETS_H
+#ifndef DIGIKAM_LABELS_SIDE_BAR_WIDGET_H
+#define DIGIKAM_LABELS_SIDE_BAR_WIDGET_H
 
 // Local includes
 
-#include "digikam_config.h"
-#include "albummodel.h"
-#include "albummodificationhelper.h"
-#include "itemalbumfiltermodel.h"
-#include "searchmodificationhelper.h"
+#include "album.h"
 #include "sidebarwidget.h"
-#include "itemfiltermodel.h"
 #include "labelstreeview.h"
-
-#ifdef HAVE_MARBLE
-#   include "gpssearchview.h"
-#endif // HAVE_MARBLE
 
 namespace Digikam
 {
-
-template <class T>
-class AlbumPointer;
 
 class LabelsSideBarWidget : public SidebarWidget
 {
@@ -77,4 +65,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_LABELS_SIDE_BAR_WIDGETS_H
+#endif // DIGIKAM_LABELS_SIDE_BAR_WIDGET_H

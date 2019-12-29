@@ -67,7 +67,6 @@
 #include "facescanwidget.h"
 #include "facesdetector.h"
 #include "tagsmanager.h"
-#include "labelstreeview.h"
 #include "coredb.h"
 #include "dexpanderbox.h"
 #include "dnotificationwidget.h"
@@ -338,92 +337,7 @@ void TagViewSideBarWidget::slotToggleTagsSelection(int radioClicked)
     }
 }
 
-// -----------------------------------------------------------------------------
-
-class Q_DECL_HIDDEN LabelsSideBarWidget::Private
-{
-
-public:
-
-    explicit Private()
-      : labelsTree(nullptr)
-    {
-    }
-
-    LabelsTreeView* labelsTree;
-};
-
-LabelsSideBarWidget::LabelsSideBarWidget(QWidget* const parent)
-    : SidebarWidget(parent),
-      d(new Private)
-{
-    setObjectName(QLatin1String("Labels Sidebar"));
-    setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F3);
-
-    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-
-    QVBoxLayout* const layout = new QVBoxLayout(this);
-
-    d->labelsTree = new LabelsTreeView(this);
-    d->labelsTree->setConfigGroup(getConfigGroup());
-
-    layout->addWidget(d->labelsTree);
-    layout->setContentsMargins(0, 0, spacing, 0);
-}
-
-LabelsSideBarWidget::~LabelsSideBarWidget()
-{
-    delete d;
-}
-
-LabelsTreeView *LabelsSideBarWidget::labelsTree()
-{
-    return d->labelsTree;
-}
-
-void LabelsSideBarWidget::setActive(bool active)
-{
-    if (active)
-    {
-        d->labelsTree->setCurrentAlbum();
-    }
-}
-
-void LabelsSideBarWidget::applySettings()
-{
-}
-
-void LabelsSideBarWidget::changeAlbumFromHistory(const QList<Album*>& album)
-{
-    Q_UNUSED(album);
-}
-
-void LabelsSideBarWidget::doLoadState()
-{
-    d->labelsTree->doLoadState();
-}
-
-void LabelsSideBarWidget::doSaveState()
-{
-    d->labelsTree->doSaveState();
-}
-
-const QIcon LabelsSideBarWidget::getIcon()
-{
-    return QIcon::fromTheme(QLatin1String("folder-favorites"));
-}
-
-const QString LabelsSideBarWidget::getCaption()
-{
-    return i18n("Labels");
-}
-
-QHash<LabelsTreeView::Labels, QList<int> > LabelsSideBarWidget::selectedLabels()
-{
-    return d->labelsTree->selectedLabels();
-}
-
-// -----------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------
 
 class Q_DECL_HIDDEN PeopleSideBarWidget::Private : public TagViewSideBarWidget::Private
 {

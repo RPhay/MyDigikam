@@ -25,23 +25,14 @@
  *
  * ============================================================ */
 
-#include "labelssidebarwidgets.h"
+#include "labelssidebarwidget.h"
 
 // Qt includes
 
-#include <QButtonGroup>
-#include <QLabel>
-#include <QScrollBar>
-#include <QTimer>
-#include <QToolButton>
-#include <QRadioButton>
+#include <QVBoxLayout>
 #include <QApplication>
 #include <QStyle>
-#include <QComboBox>
-#include <QPushButton>
-#include <QLineEdit>
 #include <QIcon>
-#include <QMessageBox>
 
 // KDE includes
 
@@ -52,26 +43,8 @@
 
 #include "digikam_debug.h"
 #include "albummanager.h"
-#include "albummodificationhelper.h"
-#include "albumselectiontreeview.h"
 #include "applicationsettings.h"
-#include "datefolderview.h"
-#include "editablesearchtreeview.h"
-#include "fuzzysearchview.h"
-#include "searchfolderview.h"
-#include "searchtabheader.h"
-#include "searchtextbar.h"
-#include "searchtreeview.h"
-#include "coredbsearchxml.h"
-#include "tagfolderview.h"
-#include "timelinewidget.h"
-#include "facescanwidget.h"
-#include "facesdetector.h"
-#include "tagsmanager.h"
 #include "labelstreeview.h"
-#include "coredb.h"
-#include "dexpanderbox.h"
-#include "dnotificationwidget.h"
 
 namespace Digikam
 {

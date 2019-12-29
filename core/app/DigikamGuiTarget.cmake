@@ -87,15 +87,17 @@ set(libdigikamgui_SRCS
     views/stack/stackedview.cpp
     views/preview/itempreviewcanvas.cpp
     views/preview/itempreviewview.cpp
+
     views/sidebar/albumfolderviewsidebarwidget.cpp
     views/sidebar/datefolderviewsidebarwidget.cpp
     views/sidebar/timelinesidebarwidget.cpp
     views/sidebar/searchsidebarwidget.cpp
     views/sidebar/fuzzysearchsidebarwidget.cpp
     views/sidebar/gpssearchsidebarwidget.cpp
-#    views/sidebar/labelssidebarwidget.cpp
+    views/sidebar/labelssidebarwidget.cpp
     views/sidebar/leftsidebarwidgets.cpp
     views/sidebar/sidebarwidget.cpp
+
     views/utils/dmodelfactory.cpp
     views/utils/slideshowbuilder.cpp
     views/utils/componentsinfodlg.cpp
