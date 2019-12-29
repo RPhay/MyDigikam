@@ -86,7 +86,7 @@ void DImg::bitBltImage(const uchar* const src, int sx, int sy, int w, int h, int
 }
 
 bool DImg::normalizeRegionArguments(int& sx, int& sy, int& w, int& h, int& dx, int& dy,
-                                    uint swidth, uint sheight, uint dwidth, uint dheight)
+                                    uint swidth, uint sheight, uint dwidth, uint dheight) const
 {
     if (sx < 0)
     {

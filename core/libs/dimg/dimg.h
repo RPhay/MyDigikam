@@ -687,7 +687,7 @@ private:
     void copyImageData(const QExplicitlySharedDataPointer<Private>& src);
     void setImageData(bool null, uint width, uint height, bool sixteenBit, bool alpha);
     void setImageDimension(uint width, uint height);
-    size_t allocateData();
+    size_t allocateData() const;
 
     bool clipped(int& x, int& y, int& w, int& h, uint width, uint height) const;
 
@@ -710,7 +710,7 @@ private:
                          uint width, uint height, bool sixteenBit, int depth,
                          DColorComposer::MultiplicationFlags multiplicationFlags);
     bool normalizeRegionArguments(int& sx, int& sy, int& w, int& h, int& dx, int& dy,
-                                  uint swidth, uint sheight, uint dwidth, uint dheight);
+                                  uint swidth, uint sheight, uint dwidth, uint dheight) const;
 
 private:
 
