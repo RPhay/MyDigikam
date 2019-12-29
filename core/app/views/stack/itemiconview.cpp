@@ -404,6 +404,9 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     connect(d->peopleSideBar, SIGNAL(signalFindDuplicates(QList<TAlbum*>)),
             this, SLOT(slotNewDuplicatesSearch(QList<TAlbum*>)));
 
+    connect(d->peopleSideBar, SIGNAL(signalNofificationError(QString,int)),
+            this, SLOT(slotNofificationError(QString,int)));
+
     d->leftSideBarWidgets << d->peopleSideBar;
 
     foreach (SidebarWidget* const leftWidget, d->leftSideBarWidgets)
