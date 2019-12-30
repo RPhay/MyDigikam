@@ -561,20 +561,17 @@ void ManagedLoadSaveThread::removeLoadingTasks(const LoadingDescription& descrip
     }
 
     // remove relevant tasks from list
-    QList<LoadSaveTask*>::iterator it;
-
-    for (it = m_todo.begin() ; it != m_todo.end() ; )
+    for (int i = 0 ; i < m_todo.size() ; ++i)
     {
-        if ((loadingTask = checkLoadingTask(*it, filter)))
+        LoadSaveTask* const task = m_todo[i];
+
+        if ((loadingTask = checkLoadingTask(task, filter)))
         {
             if (description.filePath.isNull() || loadingTask->loadingDescription() == description)
             {
-                it = m_todo.erase(it);
-                continue;
+                delete m_todo.takeAt(i--);
             }
         }
-
-        ++it;
     }
 }
 
