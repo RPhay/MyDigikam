@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="616" name="imageeditor" translationDomain="digikam" >
+<gui version="615" name="imageeditor" translationDomain="digikam" >
 
 <MenuBar>
 
@@ -39,7 +39,7 @@
     </Menu>
 
     <Menu name="View" ><text>&amp;View</text>
-        <Action name="fullscreen" />
+        <Action name="editorwindow_fullscreen" />
         <Action name="editorwindow_slideshow" />
 
         <!-- _DPLUGINS_GENERIC_VIEW_ACTIONS_ -->

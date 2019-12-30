@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="602" name="importui" translationDomain="digikam" >
+<gui version="601" name="importui" translationDomain="digikam" >
 
 <MenuBar>
 
@@ -45,7 +45,7 @@
         <Action name="importui_item_view" />
         <Action name="importui_map_view" />
         <Separator/>
-        <Action name="fullscreen" />
+        <Action name="importui_fullscreen" />
         <Action name="importui_showlog" />
         <Separator/>
         <Action name="importui_zoomplus" />
@@ -100,7 +100,7 @@
      <Action name="importui_item_view" />
      <Action name="importui_map_view" />
      <Separator/>
-     <Action name="fullscreen" />
+     <Action name="importui_fullscreen" />
      <Merge />
      <WeakSeparator/>
      <Action name="logo_action" />

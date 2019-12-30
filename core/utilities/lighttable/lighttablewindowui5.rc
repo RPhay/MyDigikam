@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="617" name="lighttablewindow" translationDomain="digikam" >
+<gui version="616" name="lighttablewindow" translationDomain="digikam" >
 
 <MenuBar>
 
@@ -24,7 +24,7 @@
     </Menu>
 
     <Menu name="View" ><text>&amp;View</text>
-        <Action name="fullscreen" />
+        <Action name="lighttable_fullscreen" />
         <Action name="lighttable_slideshow" />
 
         <!-- _DPLUGINS_GENERIC_VIEW_ACTIONS_ -->
@@ -115,7 +115,7 @@
      <Action name="lighttable_navigatebypair" />
      <Separator/>
      <Action name="lighttable_slideshow" />
-     <Action name="fullscreen" />
+     <Action name="lighttable_fullscreen" />
      <Merge />
      <WeakSeparator/>
      <Action name="logo_action" />
