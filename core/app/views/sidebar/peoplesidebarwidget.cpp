@@ -26,12 +26,37 @@
  * ============================================================ */
 
 #include "peoplesidebarwidget.h"
-#include "tagviewsidebarwidget_p.h"
+
+// Qt includes
+
+#include <QLabel>
+#include <QScrollArea>
+#include <QApplication>
+#include <QStyle>
+#include <QPushButton>
+#include <QIcon>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+
+// KDE includes
+
+#include <kconfiggroup.h>
+#include <klocalizedstring.h>
+
+// Local includes
+
+#include "digikam_debug.h"
+#include "searchtextbar.h"
+#include "tagfolderview.h"
+#include "timelinewidget.h"
+#include "facescanwidget.h"
+#include "facesdetector.h"
+#include "dnotificationwidget.h"
 
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN PeopleSideBarWidget::Private : public TagViewSideBarWidget::Private
+class Q_DECL_HIDDEN PeopleSideBarWidget::Private
 {
 public:
 
@@ -40,7 +65,9 @@ public:
         textLabel(nullptr),
         rescanButton(nullptr),
         searchModificationHelper(nullptr),
-        settingsWdg(nullptr)
+        settingsWdg(nullptr),
+        tagFolderView(nullptr),
+        tagSearchBar(nullptr)
     {
     }
 
@@ -49,6 +76,8 @@ public:
     QPushButton*              rescanButton;
     SearchModificationHelper* searchModificationHelper;
     FaceScanWidget*           settingsWdg;
+    TagFolderView*            tagFolderView;
+    SearchTextBar*            tagSearchBar;
 };
 
 PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
@@ -59,11 +88,20 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
 {
     setObjectName(QLatin1String("People Sidebar"));
     setProperty("Shortcut", Qt::CTRL + Qt::SHIFT + Qt::Key_F9);
+    d->searchModificationHelper   = searchModificationHelper;
 
-    const int spacing           = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing             = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    d->searchModificationHelper = searchModificationHelper;
-    QVBoxLayout* const layout   = new QVBoxLayout;
+    QWidget* const     mainView   = new QWidget(this);
+    QScrollArea* const scrollArea = new QScrollArea(this);
+    QVBoxLayout* const mainLayout = new QVBoxLayout(this);
+
+    mainLayout->addWidget(scrollArea);
+    mainLayout->setContentsMargins(0, 0, spacing, 0);
+    scrollArea->setWidget(mainView);
+    scrollArea->setWidgetResizable(true);
+
+    QVBoxLayout* const vlay     = new QVBoxLayout;
     QHBoxLayout* const hlay     = new QHBoxLayout;
     d->tagFolderView            = new TagFolderView(this, model);
     d->tagFolderView->setConfigGroup(getConfigGroup());
@@ -98,14 +136,14 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
     hlay->addWidget(d->personIcon);
     hlay->addWidget(d->textLabel);
 
-    layout->addLayout(hlay);
-    layout->addWidget(d->tagFolderView, 10);
-    layout->addWidget(d->tagSearchBar);
-    layout->addWidget(d->settingsWdg);
-    layout->addWidget(d->rescanButton);
-    layout->setContentsMargins(0, 0, spacing, 0);
+    vlay->addLayout(hlay);
+    vlay->addWidget(d->tagFolderView, 10);
+    vlay->addWidget(d->tagSearchBar);
+    vlay->addWidget(d->settingsWdg);
+    vlay->addWidget(d->rescanButton);
+    vlay->setContentsMargins(0, 0, spacing, 0);
 
-    setLayout(layout);
+    mainView->setLayout(vlay);
 
     connect(d->tagFolderView, SIGNAL(signalFindDuplicates(QList<TAlbum*>)),
             this, SIGNAL(signalFindDuplicates(QList<TAlbum*>)));

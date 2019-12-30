@@ -25,10 +25,77 @@
  *
  * ============================================================ */
 
-#include "tagviewsidebarwidget_p.h"
+#include "tagviewsidebarwidget.h"
+
+// Qt includes
+
+#include <QButtonGroup>
+#include <QRadioButton>
+#include <QApplication>
+#include <QStyle>
+#include <QPushButton>
+#include <QIcon>
+
+// KDE includes
+
+#include <kconfiggroup.h>
+#include <klocalizedstring.h>
+
+// Local includes
+
+#include "digikam_debug.h"
+#include "applicationsettings.h"
+#include "searchtextbar.h"
+#include "tagfolderview.h"
+#include "tagsmanager.h"
+#include "coredb.h"
+#include "coredbsearchxml.h"
 
 namespace Digikam
 {
+
+class Q_DECL_HIDDEN TagViewSideBarWidget::Private
+{
+public:
+
+    enum TagsSource
+    {
+        NoTags = 0,
+        ExistingTags
+    };
+
+public:
+
+    explicit Private()
+      : openTagMngr(nullptr),
+        tagSearchBar(nullptr),
+        tagFolderView(nullptr),
+        btnGroup(nullptr),
+        noTagsBtn(nullptr),
+        tagsBtn(nullptr),
+        noTagsWasChecked(false),
+        ExistingTagsWasChecked(false)
+    {
+    }
+
+public:
+
+    QPushButton*         openTagMngr;
+    SearchTextBar*       tagSearchBar;
+    TagFolderView*       tagFolderView;
+    QButtonGroup*        btnGroup;
+    QRadioButton*        noTagsBtn;
+    QRadioButton*        tagsBtn;
+
+    bool                 noTagsWasChecked;
+    bool                 ExistingTagsWasChecked;
+
+    QString              noTagsSearchXml;
+
+    static const QString configTagsSourceEntry;
+};
+
+const QString TagViewSideBarWidget::Private::configTagsSourceEntry(QLatin1String("TagsSource"));
 
 TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* const model)
     : SidebarWidget(parent),
