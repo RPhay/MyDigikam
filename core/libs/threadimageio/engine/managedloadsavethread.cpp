@@ -133,7 +133,7 @@ LoadingTask* ManagedLoadSaveThread::findExistingTask(const LoadingDescription& l
 
     for (int i = 0 ; i < m_todo.size() ; ++i)
     {
-        LoadSaveTask* const task = m_todo[i];
+        LoadSaveTask* const task = m_todo.at(i);
 
         if (task->type() == LoadSaveTask::TaskTypeLoading)
         {
@@ -533,7 +533,7 @@ void ManagedLoadSaveThread::stopSaving(const QString& filePath)
     // remove relevant tasks from list
     for (int i = 0 ; i < m_todo.size() ; ++i)
     {
-        LoadSaveTask* const task = m_todo[i];
+        LoadSaveTask* const task = m_todo.at(i);
 
         if (task->type() ==  LoadSaveTask::TaskTypeSaving)
         {
@@ -563,7 +563,7 @@ void ManagedLoadSaveThread::removeLoadingTasks(const LoadingDescription& descrip
     // remove relevant tasks from list
     for (int i = 0 ; i < m_todo.size() ; ++i)
     {
-        LoadSaveTask* const task = m_todo[i];
+        LoadSaveTask* const task = m_todo.at(i);
 
         if ((loadingTask = checkLoadingTask(task, filter)))
         {
@@ -592,7 +592,7 @@ void ManagedLoadSaveThread::save(DImg& image, const QString& filePath, const QSt
 
     for (i = 0 ; i < m_todo.count() ; ++i)
     {
-        LoadSaveTask* const task = m_todo[i];
+        LoadSaveTask* const task = m_todo.at(i);
 
         if (checkLoadingTask(task, LoadingTaskFilterPreloading))
         {
