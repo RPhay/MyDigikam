@@ -506,10 +506,11 @@ BUGFIXES:
 492 ==> 272918 - digiKam crash after scanning ssh network drive.
 493 ==> 275559 - digiKam crashes while browsing over NFS.
 494 ==> 415679 - Faces are not recognized.
-495 ==> 
-496 ==> 
-497 ==> 
-498 ==> 
-499 ==> 
-500 ==> 
-501 ==> 
+495 ==> 220903 - Duplicate records in ImageComments table after migration.
+496 ==> 267800 - Keywords from IPTC-Metadata are not imported.
+497 ==> 280678 - MIGRATION : cannot migrate from sqlite database.
+498 ==> 301075 - MySQL : external database empty after migration.
+499 ==> 328729 - digiKam crash while switching MySQL to SQLite
+500 ==> 329849 - MIGRATION : db conversion fails.
+501 ==> 361809 - Migration failed from SQLite to MySQL.
+502 ==> 
