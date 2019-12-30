@@ -1,5 +1,5 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="601" name="queuemgrwindow" translationDomain="digikam" >
+<gui version="602" name="queuemgrwindow" translationDomain="digikam" >
 
 <MenuBar>
 
@@ -27,7 +27,7 @@
     </Menu>
 
     <Menu name="View" ><text>&amp;View</text>
-        <Action name="queuemgr_fullscreen" />
+        <Action name="fullscreen" />
     </Menu>
 
 
@@ -72,7 +72,7 @@
      <Action name="queuemgr_tooldown" />
      <Action name="queuemgr_toolremove" />
      <Separator/>
-     <Action name="queuemgr_fullscreen" />
+     <Action name="fullscreen" />
      <Merge />
      <WeakSeparator/>
      <Action name="logo_action" />
