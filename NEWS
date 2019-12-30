@@ -505,7 +505,7 @@ BUGFIXES:
 491 ==> 249375 - Crash when device with open window is removed.
 492 ==> 272918 - digiKam crash after scanning ssh network drive.
 493 ==> 275559 - digiKam crashes while browsing over NFS.
-494 ==> 
+494 ==> 415679 - Faces are not recognized.
 495 ==> 
 496 ==> 
 497 ==> 
