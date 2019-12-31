@@ -724,44 +724,6 @@ void ItemIconView::slotRenameAlbum()
     d->albumModificationHelper->slotAlbumRename(d->albumFolderSideBar->currentAlbum());
 }
 
-void ItemIconView::slotNewTag()
-{
-    QList<TAlbum*> talbums = AlbumManager::instance()->currentTAlbums();
-
-    if (!talbums.isEmpty())
-        d->tagModificationHelper->slotTagNew(talbums.first());
-}
-
-void ItemIconView::slotDeleteTag()
-{
-    QList<TAlbum*> talbums = AlbumManager::instance()->currentTAlbums();
-
-    if (!talbums.isEmpty())
-        d->tagModificationHelper->slotTagDelete(talbums.first());
-}
-
-void ItemIconView::slotEditTag()
-{
-    QList<TAlbum*> talbums = AlbumManager::instance()->currentTAlbums();
-
-    if (!talbums.isEmpty())
-        d->tagModificationHelper->slotTagEdit(talbums.first());
-}
-
-void ItemIconView::slotOpenTagsManager()
-{
-    TagsManager* const tagMngr = TagsManager::instance();
-    tagMngr->show();
-    tagMngr->activateWindow();
-    tagMngr->raise();
-}
-
-void ItemIconView::slotAssignTag()
-{
-    d->rightSideBar->setActiveTab(d->rightSideBar->imageDescEditTab());
-    d->rightSideBar->imageDescEditTab()->setFocusToNewTagEdit();
-}
-
 void ItemIconView::slotAlbumsCleared()
 {
     emit signalAlbumSelected(nullptr);
@@ -1573,48 +1535,6 @@ void ItemIconView::slotImagePaste()
     }
 }
 
-void ItemIconView::toggleTag(int tagID)
-{
-    ItemInfoList tagToRemove, tagToAssign;
-    const ItemInfoList selectedList = selectedInfoList(ApplicationSettings::Metadata);
-
-    foreach (const ItemInfo& info, selectedList)
-    {
-        if (info.tagIds().contains(tagID))
-            tagToRemove.append(info);
-        else
-            tagToAssign.append(info);
-    }
-
-    FileActionMngr::instance()->assignTag(tagToAssign, tagID);
-    FileActionMngr::instance()->removeTag(tagToRemove, tagID);
-}
-
-void ItemIconView::slotAssignPickLabel(int pickId)
-{
-    FileActionMngr::instance()->assignPickLabel(selectedInfoList(ApplicationSettings::Metadata), pickId);
-}
-
-void ItemIconView::slotAssignColorLabel(int colorId)
-{
-    FileActionMngr::instance()->assignColorLabel(selectedInfoList(ApplicationSettings::Metadata), colorId);
-}
-
-void ItemIconView::slotAssignRating(int rating)
-{
-    FileActionMngr::instance()->assignRating(selectedInfoList(ApplicationSettings::Metadata), rating);
-}
-
-void ItemIconView::slotAssignTag(int tagID)
-{
-    FileActionMngr::instance()->assignTags(selectedInfoList(ApplicationSettings::Metadata), QList<int>() << tagID);
-}
-
-void ItemIconView::slotRemoveTag(int tagID)
-{
-    FileActionMngr::instance()->removeTags(selectedInfoList(ApplicationSettings::Metadata), QList<int>() << tagID);
-}
-
 void ItemIconView::toggleShowBar(bool b)
 {
     d->stackedview->thumbBarDock()->showThumbBar(b);
@@ -1626,11 +1546,6 @@ void ItemIconView::toggleShowBar(bool b)
 void ItemIconView::setRecurseAlbums(bool recursive)
 {
     d->iconView->imageAlbumModel()->setRecurseAlbums(recursive);
-}
-
-void ItemIconView::setRecurseTags(bool recursive)
-{
-    d->iconView->imageAlbumModel()->setRecurseTags(recursive);
 }
 
 void ItemIconView::slotImageChangeFailed(const QString& message, const QStringList& fileNames)
@@ -1645,50 +1560,6 @@ void ItemIconView::slotImageChangeFailed(const QString& message, const QStringLi
                                      qApp->applicationName(),
                                      message,
                                      fileNames);
-}
-
-void ItemIconView::slotRatingChanged(const QUrl& url, int rating)
-{
-    rating = qMin(RatingMax, qMax(RatingMin, rating));
-    ItemInfo info = ItemInfo::fromUrl(url);
-
-    if (!info.isNull())
-    {
-        FileActionMngr::instance()->assignRating(info, rating);
-    }
-}
-
-void ItemIconView::slotColorLabelChanged(const QUrl& url, int color)
-{
-    ItemInfo info = ItemInfo::fromUrl(url);
-
-    if (!info.isNull())
-    {
-        FileActionMngr::instance()->assignColorLabel(info, color);
-    }
-}
-
-void ItemIconView::slotPickLabelChanged(const QUrl& url, int pick)
-{
-    ItemInfo info = ItemInfo::fromUrl(url);
-
-    if (!info.isNull())
-    {
-        FileActionMngr::instance()->assignPickLabel(info, pick);
-    }
-}
-
-void ItemIconView::slotToggleTag(const QUrl& url, int tagID)
-{
-    ItemInfo info = ItemInfo::fromUrl(url);
-
-    if (!info.isNull())
-    {
-        if (info.tagIds().contains(tagID))
-            FileActionMngr::instance()->removeTag(info, tagID);
-        else
-            FileActionMngr::instance()->assignTag(info, tagID);
-    }
 }
 
 bool ItemIconView::hasCurrentItem() const
