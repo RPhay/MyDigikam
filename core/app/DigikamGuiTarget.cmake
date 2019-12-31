@@ -82,6 +82,7 @@ set(libdigikamgui_SRCS
     views/tableview/tableview_selection_model_syncer.cpp
 
     views/stack/itemiconview.cpp
+    views/stack/itemiconview_albums.cpp
     views/stack/itemiconview_tools.cpp
     views/stack/itemiconview_slideshow.cpp
     views/stack/itemiconview_groups.cpp

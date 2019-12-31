@@ -69,9 +69,6 @@ public:
 
     void applySettings();
     void refreshView();
-    void clearHistory();
-    void getForwardHistory(QStringList& titles);
-    void getBackwardHistory(QStringList& titles);
 
     void setToolsIconView(DCategorizedView* const view);
     void setThumbSize(int size);
@@ -113,7 +110,6 @@ private:
     void setupConnections();
     void loadViewState();
     void saveViewState();
-    void changeAlbumFromHistory(const QList<Album*>& album, QWidget* const widget);
 
 Q_SIGNALS:
 
@@ -317,6 +313,9 @@ public:
 
     Album* currentAlbum()                                                          const;
     void setRecurseAlbums(bool recursive);
+    void clearHistory();
+    void getForwardHistory(QStringList& titles);
+    void getBackwardHistory(QStringList& titles);
 
 public Q_SLOTS:
 
@@ -341,10 +340,15 @@ public Q_SLOTS:
     void slotSetCurrentWhenAvailable(const qlonglong id);
 
     void slotSetAsAlbumThumbnail(const ItemInfo& info);
+    void slotMoveSelectionToAlbum();
 
 Q_SIGNALS:
 
     void signalAlbumSelected(Album*);
+
+private:
+    
+    void changeAlbumFromHistory(const QList<Album*>& album, QWidget* const widget);
 
 private Q_SLOTS:
 
@@ -365,6 +369,8 @@ public Q_SLOTS:
     void slotNewDuplicatesSearch(PAlbum* album = nullptr);
     void slotNewDuplicatesSearch(const QList<PAlbum*>& albums);
     void slotNewDuplicatesSearch(const QList<TAlbum*>& albums);
+    void slotImageFindSimilar();
+    void slotImageScanForFaces();
     //@}
 
     // ----------------------------------------------------------------------------------------
@@ -414,8 +420,6 @@ public Q_SLOTS:
     void slotMapWidgetView();
     void slotTableView();
     void slotIconView();
-    void slotImageFindSimilar();
-    void slotImageScanForFaces();
     void slotImageExifOrientation(int orientation);
     void slotImageRename();
     void slotImageDelete();
@@ -431,7 +435,6 @@ public Q_SLOTS:
     void slotSortImagesOrder(int order);
     void slotSeparateImages(int mode);
     void slotImageSeparationSortOrder(int order);
-    void slotMoveSelectionToAlbum();
     void slotImagePaste();
     void slotFocusAndNextImage();
 

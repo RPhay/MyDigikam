@@ -62,4 +62,34 @@ void ItemIconView::slotNewDuplicatesSearch(const QList<TAlbum*>& albums)
     d->fuzzySearchSideBar->newDuplicatesSearch(albums);
 }
 
+
+void ItemIconView::slotImageFindSimilar()
+{
+    const ItemInfo current = currentInfo();
+
+    if (!current.isNull())
+    {
+        d->fuzzySearchSideBar->newSimilarSearch(current);
+        slotLeftSideBarActivate(d->fuzzySearchSideBar);
+    }
+}
+
+void ItemIconView::slotImageScanForFaces()
+{
+    FaceScanSettings settings;
+
+    settings.accuracy               = ApplicationSettings::instance()->getFaceDetectionAccuracy();
+    settings.recognizeAlgorithm     = RecognitionDatabase::RecognizeAlgorithm::DNN; // Default now change to DNN
+    settings.task                   = FaceScanSettings::DetectAndRecognize;
+    settings.alreadyScannedHandling = FaceScanSettings::Rescan;
+    settings.infos                  = selectedInfoList(ApplicationSettings::Tools);
+
+    FacesDetector* const tool = new FacesDetector(settings);
+
+    connect(tool, SIGNAL(signalComplete()),
+            this, SLOT(slotRefreshImagePreview()));
+
+    tool->start();
+}
+
 } // namespace Digikam
