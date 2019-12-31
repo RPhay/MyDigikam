@@ -160,12 +160,32 @@ Q_SIGNALS:
 
 public Q_SLOTS:
 
-    void setZoomFactor(double zoom);
-
     void slotNofificationError(const QString& message, int type);
+
+    void slotLeftSideBarActivate(QWidget* widget);
+    void slotLeftSideBarActivate(SidebarWidget* widget);
+    void slotLeftSideBarActivateAlbums();
+    void slotLeftSideBarActivateTags();
+
+    void slotRightSideBarActivateTitles();
+    void slotRightSideBarActivateComments();
+    void slotRightSideBarActivateAssignedTags();
+
+    void slotFocusAndNextImage();
+
+    void slotCreateGroupFromSelection();
+    void slotCreateGroupByTimeFromSelection();
+    void slotCreateGroupByFilenameFromSelection();
+    void slotCreateGroupByTimelapseFromSelection();
+    void slotRemoveSelectedFromGroup();
+    void slotUngroupSelected();
+
+    void setZoomFactor(double zoom);
 
     //@{
     /// View Action slots
+
+public Q_SLOTS:
 
     void slotZoomIn();
     void slotZoomOut();
@@ -180,6 +200,9 @@ public Q_SLOTS:
 
     //@{
     /// Album action slots
+
+public Q_SLOTS:
+
     void slotRefresh();
     void slotNewAlbum();
     void slotSortAlbums(int role);
@@ -205,6 +228,9 @@ public Q_SLOTS:
 
     //@{
     /// Tag action slots
+
+public Q_SLOTS:
+
     void slotNewTag();
     void slotDeleteTag();
     void slotEditTag();
@@ -214,6 +240,9 @@ public Q_SLOTS:
 
     //@{
     /// Search action slots
+
+public Q_SLOTS:
+
     void slotNewKeywordSearch();
     void slotNewAdvancedSearch();
     void slotNewDuplicatesSearch(PAlbum* album = nullptr);
@@ -223,16 +252,13 @@ public Q_SLOTS:
 
     //@{
     /// Image action slots
-    void slotImageLightTable();
-    void slotImageAddToLightTable();
-    void slotImageAddToCurrentQueue();
-    void slotImageAddToNewQueue();
-    void slotImageAddToExistingQueue(int);
+
+public Q_SLOTS:
+
     void slotImagePreview();
     void slotMapWidgetView();
     void slotTableView();
     void slotIconView();
-    void slotImageEdit();
     void slotImageFindSimilar();
     void slotImageScanForFaces();
     void slotImageExifOrientation(int orientation);
@@ -261,31 +287,23 @@ public Q_SLOTS:
     //@}
 
     //@{
-    /// Tools action slots.
+    /// Tools methods (Editor, BQM, Light Table) - itemiconview_tools.cpp.
+
+public Q_SLOTS:
+
+    void slotImageEdit();
     void slotEditor();
     void slotLightTable();
     void slotQueueMgr();
     void slotFileWithDefaultApplication();
+    void slotImageLightTable();
+    void slotImageAddToLightTable();
+    void slotImageAddToCurrentQueue();
+    void slotImageAddToNewQueue();
+    void slotImageAddToExistingQueue(int);
+
     //@}
-
-    void slotLeftSideBarActivate(QWidget* widget);
-    void slotLeftSideBarActivate(SidebarWidget* widget);
-    void slotLeftSideBarActivateAlbums();
-    void slotLeftSideBarActivateTags();
-
-    void slotRightSideBarActivateTitles();
-    void slotRightSideBarActivateComments();
-    void slotRightSideBarActivateAssignedTags();
-
-    void slotFocusAndNextImage();
-
-    void slotCreateGroupFromSelection();
-    void slotCreateGroupByTimeFromSelection();
-    void slotCreateGroupByFilenameFromSelection();
-    void slotCreateGroupByTimelapseFromSelection();
-    void slotRemoveSelectedFromGroup();
-    void slotUngroupSelected();
-
+    
 private:
 
     void toggleZoomActions();

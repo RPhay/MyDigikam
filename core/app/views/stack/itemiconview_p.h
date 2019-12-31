@@ -166,8 +166,45 @@ public:
     {
     }
 
-    QString userPresentableAlbumTitle(const QString& album) const;
-    void    addPageUpDownActions(ItemIconView* const q, QWidget* const w);
+public:
+
+    QString userPresentableAlbumTitle(const QString& title) const
+    {
+        if      (title == SAlbum::getTemporaryHaarTitle(DatabaseSearch::HaarSketchSearch))
+        {
+            return i18n("Fuzzy Sketch Search");
+        }
+        else if (title == SAlbum::getTemporaryHaarTitle(DatabaseSearch::HaarImageSearch))
+        {
+            return i18n("Fuzzy Image Search");
+        }
+        else if (title == SAlbum::getTemporaryTitle(DatabaseSearch::MapSearch))
+        {
+            return i18n("Map Search");
+        }
+        else if (title == SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch) ||
+                 title == SAlbum::getTemporaryTitle(DatabaseSearch::KeywordSearch))
+        {
+            return i18n("Last Search");
+        }
+        else if (title == SAlbum::getTemporaryTitle(DatabaseSearch::TimeLineSearch))
+        {
+            return i18n("Timeline");
+        }
+
+        return title;
+    }
+
+    void addPageUpDownActions(ItemIconView* const q, QWidget* const w)
+    {
+        defineShortcut(w, Qt::Key_PageDown, q, SLOT(slotNextItem()));
+        defineShortcut(w, Qt::Key_Down,     q, SLOT(slotNextItem()));
+        defineShortcut(w, Qt::Key_Right,    q, SLOT(slotNextItem()));
+
+        defineShortcut(w, Qt::Key_PageUp,   q, SLOT(slotPrevItem()));
+        defineShortcut(w, Qt::Key_Up,       q, SLOT(slotPrevItem()));
+        defineShortcut(w, Qt::Key_Left,     q, SLOT(slotPrevItem()));
+    }
 
 public:
 
@@ -227,43 +264,6 @@ public:
     DNotificationWidget*          errorWidget;
 };
 
-QString ItemIconView::Private::userPresentableAlbumTitle(const QString& title) const
-{
-    if      (title == SAlbum::getTemporaryHaarTitle(DatabaseSearch::HaarSketchSearch))
-    {
-        return i18n("Fuzzy Sketch Search");
-    }
-    else if (title == SAlbum::getTemporaryHaarTitle(DatabaseSearch::HaarImageSearch))
-    {
-        return i18n("Fuzzy Image Search");
-    }
-    else if (title == SAlbum::getTemporaryTitle(DatabaseSearch::MapSearch))
-    {
-        return i18n("Map Search");
-    }
-    else if (title == SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch) ||
-             title == SAlbum::getTemporaryTitle(DatabaseSearch::KeywordSearch))
-    {
-        return i18n("Last Search");
-    }
-    else if (title == SAlbum::getTemporaryTitle(DatabaseSearch::TimeLineSearch))
-    {
-        return i18n("Timeline");
-    }
-
-    return title;
-}
-
-void ItemIconView::Private::addPageUpDownActions(ItemIconView* const q, QWidget* const w)
-{
-    defineShortcut(w, Qt::Key_PageDown, q, SLOT(slotNextItem()));
-    defineShortcut(w, Qt::Key_Down,     q, SLOT(slotNextItem()));
-    defineShortcut(w, Qt::Key_Right,    q, SLOT(slotNextItem()));
-
-    defineShortcut(w, Qt::Key_PageUp,   q, SLOT(slotPrevItem()));
-    defineShortcut(w, Qt::Key_Up,       q, SLOT(slotPrevItem()));
-    defineShortcut(w, Qt::Key_Left,     q, SLOT(slotPrevItem()));
-}
 
 } // namespace Digikam
 

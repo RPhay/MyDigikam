@@ -81,10 +81,11 @@ set(libdigikamgui_SRCS
     views/tableview/tableview_columnfactory.cpp
     views/tableview/tableview_selection_model_syncer.cpp
 
-    views/stack/welcomepageview.cpp
     views/stack/itemiconview.cpp
+    views/stack/itemiconview_tools.cpp
     views/stack/trashview.cpp
     views/stack/stackedview.cpp
+    views/stack/welcomepageview.cpp
     views/preview/itempreviewcanvas.cpp
     views/preview/itempreviewview.cpp
 
