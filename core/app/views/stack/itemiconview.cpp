@@ -1844,16 +1844,6 @@ void ItemIconView::setRecurseTags(bool recursive)
     d->iconView->imageAlbumModel()->setRecurseTags(recursive);
 }
 
-void ItemIconView::setAllGroupsOpen(bool open)
-{
-    if (!d->iconView->getFaceMode())
-    {
-        d->iconView->imageFilterModel()->setAllGroupsOpen(open);
-    }
-
-    ApplicationSettings::instance()->setAllGroupsOpen(open);
-}
-
 void ItemIconView::slotSidebarTabTitleStyleChanged()
 {
     d->leftSideBar->setStyle(ApplicationSettings::instance()->getSidebarTitleStyle());
@@ -2087,40 +2077,6 @@ ItemInfoList ItemIconView::allInfo(const bool grouping) const
 ItemInfoList ItemIconView::allInfo(const ApplicationSettings::OperationType type) const
 {
     return allInfo(allNeedGroupResolving(type));
-}
-
-bool ItemIconView::allNeedGroupResolving(const ApplicationSettings::OperationType type) const
-{
-    switch (viewMode())
-    {
-        case StackedView::TableViewMode:
-            return d->tableView->allNeedGroupResolving(type);
-        case StackedView::MapWidgetMode:
-        case StackedView::PreviewImageMode:
-        case StackedView::MediaPlayerMode:
-        case StackedView::IconViewMode:
-            // all of these modes use the same selection model and data as the IconViewMode
-            return d->iconView->allNeedGroupResolving(type);
-        default:
-            return false;
-    }
-}
-
-bool ItemIconView::selectedNeedGroupResolving(const ApplicationSettings::OperationType type) const
-{
-    switch (viewMode())
-    {
-        case StackedView::TableViewMode:
-            return d->tableView->selectedNeedGroupResolving(type);
-        case StackedView::MapWidgetMode:
-        case StackedView::PreviewImageMode:
-        case StackedView::MediaPlayerMode:
-        case StackedView::IconViewMode:
-            // all of these modes use the same selection model and data as the IconViewMode
-            return d->iconView->selectedNeedGroupResolving(type);
-        default:
-            return false;
-    }
 }
 
 QUrl ItemIconView::currentUrl() const
@@ -2376,36 +2332,6 @@ void ItemIconView::slotShowGroupContextMenu(QContextMenuEvent* event,
 void ItemIconView::slotSetAsAlbumThumbnail(const ItemInfo& info)
 {
     d->utilities->setAsAlbumThumbnail(currentAlbum(), info);
-}
-
-void ItemIconView::slotCreateGroupFromSelection()
-{
-    FileActionMngr::instance()->addToGroup(currentInfo(), selectedInfoList(false, true));
-}
-
-void ItemIconView::slotCreateGroupByTimeFromSelection()
-{
-    d->utilities->createGroupByTimeFromInfoList(selectedInfoList(false, true));
-}
-
-void ItemIconView::slotCreateGroupByFilenameFromSelection()
-{
-    d->utilities->createGroupByFilenameFromInfoList(selectedInfoList(false, true));
-}
-
-void ItemIconView::slotCreateGroupByTimelapseFromSelection()
-{
-    d->utilities->createGroupByTimelapseFromInfoList(selectedInfoList(false, true));
-}
-
-void ItemIconView::slotRemoveSelectedFromGroup()
-{
-    FileActionMngr::instance()->removeFromGroup(selectedInfoList(false, true));
-}
-
-void ItemIconView::slotUngroupSelected()
-{
-    FileActionMngr::instance()->ungroup(selectedInfoList(false, true));
 }
 
 void ItemIconView::slotNofificationError(const QString& message, int type)
