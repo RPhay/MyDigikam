@@ -449,11 +449,12 @@ DatabaseServerError DatabaseServer::createMysqlFiles() const
         // Synthesize the server initialization command line arguments
 
         QStringList mysqlInitCmdArgs;
-        mysqlInitCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--datadir=%1").arg(d->dataDir));
 
 #ifndef Q_OS_WIN
         mysqlInitCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--defaults-file=%1").arg(d->globalConfig));
 #endif
+
+        mysqlInitCmdArgs << QDir::toNativeSeparators(QString::fromLatin1("--datadir=%1").arg(d->dataDir));
 
         QProcess initProcess;
         initProcess.setProcessEnvironment(adjustedEnvironmentForAppImage());
