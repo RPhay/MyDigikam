@@ -329,6 +329,8 @@ FaceScanSettings FaceScanWidget::settings() const
 {
     FaceScanSettings settings;
 
+    d->settingsConflicted = false;
+
     if (d->retrainAllButton->isChecked())
     {
         settings.task = FaceScanSettings::RetrainAll;
