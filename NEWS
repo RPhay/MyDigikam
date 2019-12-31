@@ -517,4 +517,5 @@ BUGFIXES:
 502 ==> 415700 - "Welcome to" screen still mentions v5.0.
 503 ==> 415566 - Use existing face rectangles to improve recognition.
 504 ==> 415603 - Add "Face Recognition" optional item in toolbar.
-505 ==> 
+505 ==> 415592 - When renaming a tag, if I say no to updating, clicking Save won't trigger update again.
+506 ==> 
