@@ -73,29 +73,16 @@ public:
     void getForwardHistory(QStringList& titles);
     void getBackwardHistory(QStringList& titles);
 
-    void showSideBars();
-    void hideSideBars();
-    void toggleLeftSidebar();
-    void toggleRightSidebar();
-    void previousLeftSideBarTab();
-    void nextLeftSideBarTab();
-    void previousRightSideBarTab();
-    void nextRightSideBarTab();
-
     void setToolsIconView(DCategorizedView* const view);
     void setThumbSize(int size);
     void toggleShowBar(bool);
-    void setRecurseAlbums(bool recursive);
-    void setRecurseTags(bool recursive);
-    void setAllGroupsOpen(bool open);
-    void imageTransform(MetaEngineRotation::TransformationAction transform);
 
     void connectIconViewFilter(FilterStatusBar* const filter);
 
     QUrl      currentUrl()                                                         const;
     bool      hasCurrentItem()                                                     const;
     ItemInfo  currentInfo()                                                        const;
-    Album*    currentAlbum()                                                       const;
+    StackedView::StackedViewMode viewMode()                                        const;
 
     /**
      * Get currently selected items. By default only the first images in groups are
@@ -104,8 +91,8 @@ public:
      * only the first or all items in a group are returned.
      * Ideally only the latter (giving an operation) is used.
      */
-    QList<QUrl>   selectedUrls(bool grouping = false)                              const;
-    QList<QUrl>   selectedUrls(const ApplicationSettings::OperationType type)      const;
+    QList<QUrl>  selectedUrls(bool grouping = false)                               const;
+    QList<QUrl>  selectedUrls(const ApplicationSettings::OperationType type)       const;
     ItemInfoList selectedInfoList(const bool currentFirst = false,
                                    const bool grouping = false)                    const;
     ItemInfoList selectedInfoList(const ApplicationSettings::OperationType type,
@@ -119,33 +106,23 @@ public:
     ItemInfoList allInfo(const bool grouping = false)                              const;
     ItemInfoList allInfo(const ApplicationSettings::OperationType type)            const;
 
-    /**
-     * Query whether the operation to be performed on currently selected or all
-     * all items in the currently active view should be performed on all
-     * grouped items or just the first.
-     */
-    bool allNeedGroupResolving(const ApplicationSettings::OperationType type)      const;
-    bool selectedNeedGroupResolving(const ApplicationSettings::OperationType type) const;
-
-    double zoomMin()                                                               const;
-    double zoomMax()                                                               const;
-
-    void toggleTag(int tagID);
     void toggleFullScreen(bool set);
 
-    QList<SidebarWidget*>        leftSidebarWidgets()                              const;
-    StackedView::StackedViewMode viewMode()                                        const;
+private:
+
+    void setupConnections();
+    void loadViewState();
+    void saveViewState();
+    void changeAlbumFromHistory(const QList<Album*>& album, QWidget* const widget);
 
 Q_SIGNALS:
 
-    void signalAlbumSelected(Album*);
     void signalImageSelected(const ItemInfoList& selectedImage,
                              const ItemInfoList& allImages);
     void signalNoCurrentItem();
     void signalSelectionChanged(int numberOfSelectedItems);
     void signalTrashSelectionChanged(const QString& text);
     void signalThumbSizeChanged(int);
-    void signalZoomChanged(double);
     void signalSwitchedToPreview();
     void signalSwitchedToIconView();
     void signalSwitchedToMapView();
@@ -155,8 +132,107 @@ Q_SIGNALS:
     void signalGotoAlbumAndItem(const ItemInfo&);
     void signalGotoDateAndItem(AlbumIconItem*);
     void signalGotoTagAndItem(int tagID);
-    void signalChangedTab(QWidget*);
-    void signalFuzzySidebarActive(bool active);
+
+private Q_SLOTS:
+
+    void slotTogglePreviewMode(const ItemInfo& info);
+    void slotEscapePreview();
+    void slotRefreshImagePreview();
+
+    void slotFirstItem();
+    void slotPrevItem();
+    void slotNextItem();
+    void slotLastItem();
+    void slotSelectItemByUrl(const QUrl&);
+    void slotAwayFromSelection();
+
+    void slotViewModeChanged();
+
+    void slotThumbSizeEffect();
+
+    void slotPopupFiltersView();
+    void slotSetupMetadataFilters(int);
+
+
+    void slotShowContextMenu(QContextMenuEvent* event,
+                             const QList<QAction*>& extraGroupingActions = QList<QAction*>());
+
+    void slotShowContextMenuOnInfo(QContextMenuEvent* event, const ItemInfo& info,
+                                   const QList<QAction*>& extraGroupingActions = QList<QAction*>(),
+                                   ItemFilterModel* imageFilterModel = nullptr);
+
+    void slotShowGroupContextMenu(QContextMenuEvent* event,
+                                  const QList<ItemInfo>& selectedInfos,
+                                  ItemFilterModel* imageFilterModel = nullptr);
+
+    // ----------------------------------------------------------------------------------------
+
+    //@{
+    /// Tools methods (Editor, BQM, Light Table) - itemiconview_tools.cpp.
+
+public Q_SLOTS:
+
+    void slotImageEdit();
+    void slotEditor();
+    void slotLightTable();
+    void slotQueueMgr();
+    void slotFileWithDefaultApplication();
+    void slotImageLightTable();
+    void slotImageAddToLightTable();
+    void slotImageAddToCurrentQueue();
+    void slotImageAddToNewQueue();
+    void slotImageAddToExistingQueue(int);
+    //@}
+
+    // ----------------------------------------------------------------------------------------
+
+    //@{
+    /// Zoom management methods - itemiconview_zoom.cpp
+
+public:
+
+    double zoomMin()                                                               const;
+    double zoomMax()                                                               const;
+
+Q_SIGNALS:
+
+    void signalZoomChanged(double);
+
+private:
+
+    void toggleZoomActions();
+
+public Q_SLOTS:
+
+    void setZoomFactor(double zoom);
+    void slotZoomIn();
+    void slotZoomOut();
+    void slotZoomTo100Percents();
+    void slotFitToWindow();
+
+private Q_SLOTS:
+
+    void slotZoomFactorChanged(double);
+
+    //@}
+
+    // ----------------------------------------------------------------------------------------
+
+    //@{
+    /// Side-bars handling methods - itemiconview_sidebars.cpp
+
+public:
+
+    QList<SidebarWidget*> leftSidebarWidgets()                                   const;
+
+    void showSideBars();
+    void hideSideBars();
+    void toggleLeftSidebar();
+    void toggleRightSidebar();
+    void previousLeftSideBarTab();
+    void nextLeftSideBarTab();
+    void previousRightSideBarTab();
+    void nextRightSideBarTab();
 
 public Q_SLOTS:
 
@@ -171,7 +247,35 @@ public Q_SLOTS:
     void slotRightSideBarActivateComments();
     void slotRightSideBarActivateAssignedTags();
 
-    void slotFocusAndNextImage();
+Q_SIGNALS:
+
+    void signalChangedTab(QWidget*);
+    void signalFuzzySidebarActive(bool active);
+
+private Q_SLOTS:
+
+    void slotLeftSidebarChangedTab(QWidget* w);
+    void slotSidebarTabTitleStyleChanged();
+
+    //@}
+
+    // ----------------------------------------------------------------------------------------
+
+    //@{
+    /// Item Group methods - itemiconview_groups.cpp
+
+public:
+
+    /**
+     * Query whether the operation to be performed on currently selected or all
+     * all items in the currently active view should be performed on all
+     * grouped items or just the first.
+     */
+    bool allNeedGroupResolving(const ApplicationSettings::OperationType type)      const;
+    bool selectedNeedGroupResolving(const ApplicationSettings::OperationType type) const;
+    void setAllGroupsOpen(bool open);
+
+public Q_SLOTS:
 
     void slotCreateGroupFromSelection();
     void slotCreateGroupByTimeFromSelection();
@@ -179,27 +283,40 @@ public Q_SLOTS:
     void slotCreateGroupByTimelapseFromSelection();
     void slotRemoveSelectedFromGroup();
     void slotUngroupSelected();
+    //@}
 
-    void setZoomFactor(double zoom);
+    // ----------------------------------------------------------------------------------------
 
     //@{
-    /// View Action slots
+    /// Slide-show methods - itemiconview_slideshow.cpp
+
+private:
+
+    void slideShow(const ItemInfoList& infoList);
 
 public Q_SLOTS:
 
-    void slotZoomIn();
-    void slotZoomOut();
-    void slotZoomTo100Percents();
-    void slotFitToWindow();
     void slotSlideShowAll();
     void slotSlideShowSelection();
     void slotSlideShowRecursive();
     void slotSlideShowManualFromCurrent();
     void slotSlideShowManualFrom(const ItemInfo& info);
+
+private Q_SLOTS:
+
+    void slotSlideShowBuilderComplete(const SlideShowSettings& settings);
+
     //@}
 
+    // ----------------------------------------------------------------------------------------
+
     //@{
-    /// Album action slots
+    /// Album management methods - itemiconview_album.cpp
+
+public:
+
+    Album* currentAlbum()                                                          const;
+    void setRecurseAlbums(bool recursive);
 
 public Q_SLOTS:
 
@@ -224,22 +341,22 @@ public Q_SLOTS:
     void slotSetCurrentWhenAvailable(const qlonglong id);
 
     void slotSetAsAlbumThumbnail(const ItemInfo& info);
+
+Q_SIGNALS:
+
+    void signalAlbumSelected(Album*);
+
+private Q_SLOTS:
+
+    void slotAllAlbumsLoaded();
+    void slotAlbumsCleared();
+    void slotAlbumRefreshComplete();
     //@}
 
-    //@{
-    /// Tag action slots
-
-public Q_SLOTS:
-
-    void slotNewTag();
-    void slotDeleteTag();
-    void slotEditTag();
-    void slotOpenTagsManager();
-    void slotAssignTag();
-    //@}
+    // ----------------------------------------------------------------------------------------
 
     //@{
-    /// Search action slots
+    /// Search management methods - itemiconview_search.cpp
 
 public Q_SLOTS:
 
@@ -250,8 +367,46 @@ public Q_SLOTS:
     void slotNewDuplicatesSearch(const QList<TAlbum*>& albums);
     //@}
 
+    // ----------------------------------------------------------------------------------------
+
     //@{
-    /// Image action slots
+    /// Tags management methods - itemiconview_tags.cpp
+
+public:
+
+    void setRecurseTags(bool recursive);
+    void toggleTag(int tagID);
+
+public Q_SLOTS:
+
+    void slotNewTag();
+    void slotDeleteTag();
+    void slotEditTag();
+    void slotOpenTagsManager();
+    void slotAssignTag();
+    void slotAssignPickLabel(int pickId);
+    void slotAssignColorLabel(int colorId);
+    void slotAssignRating(int rating);
+    void slotAssignTag(int tagID);
+    void slotRemoveTag(int tagID);
+
+private Q_SLOTS:
+
+    void slotRatingChanged(const QUrl&, int);
+    void slotColorLabelChanged(const QUrl&, int);
+    void slotPickLabelChanged(const QUrl&, int);
+    void slotToggleTag(const QUrl&, int);
+
+    //@}
+
+    // ----------------------------------------------------------------------------------------
+
+    //@{
+    /// Image management methods - itemiconview_image.cpp
+
+public:
+
+    void imageTransform(MetaEngineRotation::TransformationAction transform);
 
 public Q_SLOTS:
 
@@ -278,94 +433,16 @@ public Q_SLOTS:
     void slotImageSeparationSortOrder(int order);
     void slotMoveSelectionToAlbum();
     void slotImagePaste();
-
-    void slotAssignPickLabel(int pickId);
-    void slotAssignColorLabel(int colorId);
-    void slotAssignRating(int rating);
-    void slotAssignTag(int tagID);
-    void slotRemoveTag(int tagID);
-    //@}
-
-    //@{
-    /// Tools methods (Editor, BQM, Light Table) - itemiconview_tools.cpp.
-
-public Q_SLOTS:
-
-    void slotImageEdit();
-    void slotEditor();
-    void slotLightTable();
-    void slotQueueMgr();
-    void slotFileWithDefaultApplication();
-    void slotImageLightTable();
-    void slotImageAddToLightTable();
-    void slotImageAddToCurrentQueue();
-    void slotImageAddToNewQueue();
-    void slotImageAddToExistingQueue(int);
-
-    //@}
-    
-private:
-
-    void toggleZoomActions();
-    void setupConnections();
-    void loadViewState();
-    void saveViewState();
-    void changeAlbumFromHistory(const QList<Album*>& album, QWidget* const widget);
-    void slideShow(const ItemInfoList& infoList);
+    void slotFocusAndNextImage();
 
 private Q_SLOTS:
 
-    void slotAllAlbumsLoaded();
-
-    void slotAlbumsCleared();
-
     void slotImageSelected();
-    void slotTogglePreviewMode(const ItemInfo& info);
     void slotDispatchImageSelected();
-
-    void slotLeftSidebarChangedTab(QWidget* w);
-
-    void slotFirstItem();
-    void slotPrevItem();
-    void slotNextItem();
-    void slotLastItem();
-    void slotSelectItemByUrl(const QUrl&);
-    void slotAwayFromSelection();
-
-    void slotViewModeChanged();
-    void slotEscapePreview();
-
-    void slotSlideShowBuilderComplete(const SlideShowSettings& settings);
-
-    void slotThumbSizeEffect();
-    void slotZoomFactorChanged(double);
-
-    void slotSidebarTabTitleStyleChanged();
-
     void slotImageChangeFailed(const QString& message, const QStringList& fileNames);
+    //@}
 
-    void slotRatingChanged(const QUrl&, int);
-    void slotColorLabelChanged(const QUrl&, int);
-    void slotPickLabelChanged(const QUrl&, int);
-    void slotToggleTag(const QUrl&, int);
-
-    void slotPopupFiltersView();
-    void slotSetupMetadataFilters(int);
-
-    void slotAlbumRefreshComplete();
-
-    void slotRefreshImagePreview();
-
-    void slotShowContextMenu(QContextMenuEvent* event,
-                             const QList<QAction*>& extraGroupingActions = QList<QAction*>());
-
-    void slotShowContextMenuOnInfo(QContextMenuEvent* event, const ItemInfo& info,
-                                   const QList<QAction*>& extraGroupingActions = QList<QAction*>(),
-                                   ItemFilterModel* imageFilterModel = nullptr);
-
-    void slotShowGroupContextMenu(QContextMenuEvent* event,
-                                  const QList<ItemInfo>& selectedInfos,
-                                  ItemFilterModel* imageFilterModel = nullptr);
+    // ----------------------------------------------------------------------------------------
 
 private:
 

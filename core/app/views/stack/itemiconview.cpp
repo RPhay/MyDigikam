@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2002-16-10
- * Description : implementation of item icon view interface.
+ * Description : Item icon view interface - Core implementation.
  *
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
