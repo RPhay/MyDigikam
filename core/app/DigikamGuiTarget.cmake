@@ -87,6 +87,8 @@ set(libdigikamgui_SRCS
     views/stack/itemiconview_groups.cpp
     views/stack/itemiconview_zoom.cpp
     views/stack/itemiconview_search.cpp
+    views/stack/itemiconview_sidebars.cpp
+    views/stack/itemiconview_tags.cpp
     views/stack/trashview.cpp
     views/stack/stackedview.cpp
     views/stack/welcomepageview.cpp
