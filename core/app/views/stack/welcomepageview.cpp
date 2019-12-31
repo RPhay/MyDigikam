@@ -132,10 +132,11 @@ void WelcomePageView::slotUrlOpen(const QUrl& url)
 QStringList WelcomePageView::featuresTabContent() const
 {
     QStringList newFeatures;
-    newFeatures << i18n("FaceManagement: New Neural Network engine based on OpenCV Deep Learning module to detect and recognize faces.");
-    newFeatures << i18n("SlideShow: Add new shuffle mode.");
-    newFeatures << i18n("HTMLGallery: Add new theme Html5Responsive");
-    newFeatures << i18n("General: Update internal libraw engine to last 0.20.0 release including Canon CR3 and Sony A7R4 support");
+    newFeatures << i18n("New Neural Network engine based on OpenCV Deep Learning module to detect and recognize faces.");
+    newFeatures << i18n("Add new shuffle mode in SlideShow.");
+    newFeatures << i18n("Add new theme Html5Responsive for HtmlGallery plugin.");
+    newFeatures << i18n("Update internal RAW engine to last Libraw 0.20.0 release including Canon CR3 and Sony A7R4 support.");
+    newFeatures << i18n("Face Scan dialog contents is now simplified and embeded into left side-bar.");
 
     // Add new features here...
     newFeatures << i18n("...and much more.");
