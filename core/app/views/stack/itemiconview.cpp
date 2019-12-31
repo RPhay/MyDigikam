@@ -811,36 +811,6 @@ void ItemIconView::slotAssignTag()
     d->rightSideBar->imageDescEditTab()->setFocusToNewTagEdit();
 }
 
-void ItemIconView::slotNewKeywordSearch()
-{
-    slotLeftSideBarActivate(d->searchSideBar);
-    d->searchSideBar->newKeywordSearch();
-}
-
-void ItemIconView::slotNewAdvancedSearch()
-{
-    slotLeftSideBarActivate(d->searchSideBar);
-    d->searchSideBar->newAdvancedSearch();
-}
-
-void ItemIconView::slotNewDuplicatesSearch(PAlbum* album)
-{
-    slotLeftSideBarActivate(d->fuzzySearchSideBar);
-    d->fuzzySearchSideBar->newDuplicatesSearch(album);
-}
-
-void ItemIconView::slotNewDuplicatesSearch(const QList<PAlbum*>& albums)
-{
-    slotLeftSideBarActivate(d->fuzzySearchSideBar);
-    d->fuzzySearchSideBar->newDuplicatesSearch(albums);
-}
-
-void ItemIconView::slotNewDuplicatesSearch(const QList<TAlbum*>& albums)
-{
-    slotLeftSideBarActivate(d->fuzzySearchSideBar);
-    d->fuzzySearchSideBar->newDuplicatesSearch(albums);
-}
-
 void ItemIconView::slotAlbumsCleared()
 {
     emit signalAlbumSelected(nullptr);

@@ -223,7 +223,7 @@ private Q_SLOTS:
 
 public:
 
-    QList<SidebarWidget*> leftSidebarWidgets()                                   const;
+    QList<SidebarWidget*> leftSidebarWidgets()                                     const;
 
     void showSideBars();
     void hideSideBars();
