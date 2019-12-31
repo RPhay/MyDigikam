@@ -146,5 +146,4 @@ void ItemIconView::slotImageAddToExistingQueue(int queueid)
     }
 }
 
-
 } // namespace Digikam

@@ -1234,27 +1234,6 @@ void ItemIconView::slotDispatchImageSelected()
     }
 }
 
-double ItemIconView::zoomMin() const
-{
-    return d->stackedview->zoomMin();
-}
-
-double ItemIconView::zoomMax() const
-{
-    return d->stackedview->zoomMax();
-}
-
-void ItemIconView::setZoomFactor(double zoom)
-{
-    d->stackedview->setZoomFactorSnapped(zoom);
-}
-
-void ItemIconView::slotZoomFactorChanged(double zoom)
-{
-    toggleZoomActions();
-    emit signalZoomChanged(zoom);
-}
-
 void ItemIconView::setThumbSize(int size)
 {
     if (viewMode() == StackedView::PreviewImageMode)
@@ -1293,104 +1272,6 @@ void ItemIconView::slotThumbSizeEffect()
     toggleZoomActions();
 
     ApplicationSettings::instance()->setDefaultIconSize(d->thumbSize);
-}
-
-void ItemIconView::toggleZoomActions()
-{
-    if (viewMode() == StackedView::PreviewImageMode)
-    {
-        d->parent->enableZoomMinusAction(true);
-        d->parent->enableZoomPlusAction(true);
-
-        if (d->stackedview->maxZoom())
-        {
-            d->parent->enableZoomPlusAction(false);
-        }
-
-        if (d->stackedview->minZoom())
-        {
-            d->parent->enableZoomMinusAction(false);
-        }
-    }
-    else if (viewMode() == StackedView::IconViewMode ||
-             viewMode() == StackedView::TableViewMode)
-    {
-        d->parent->enableZoomMinusAction(true);
-        d->parent->enableZoomPlusAction(true);
-
-        if (d->thumbSize >= ThumbnailSize::maxThumbsSize())
-        {
-            d->parent->enableZoomPlusAction(false);
-        }
-
-        if (d->thumbSize <= ThumbnailSize::Small)
-        {
-            d->parent->enableZoomMinusAction(false);
-        }
-    }
-    else
-    {
-        d->parent->enableZoomMinusAction(false);
-        d->parent->enableZoomPlusAction(false);
-    }
-}
-
-void ItemIconView::slotZoomIn()
-{
-    if (viewMode() == StackedView::IconViewMode ||
-        viewMode() == StackedView::TableViewMode)
-    {
-        setThumbSize(d->thumbSize + ThumbnailSize::Step);
-        toggleZoomActions();
-        emit signalThumbSizeChanged(d->thumbSize);
-    }
-    else if (viewMode() == StackedView::PreviewImageMode)
-    {
-        d->stackedview->increaseZoom();
-    }
-}
-
-void ItemIconView::slotZoomOut()
-{
-    if (viewMode() == StackedView::IconViewMode ||
-        viewMode() == StackedView::TableViewMode)
-    {
-        setThumbSize(d->thumbSize - ThumbnailSize::Step);
-        toggleZoomActions();
-        emit signalThumbSizeChanged(d->thumbSize);
-    }
-    else if (viewMode() == StackedView::PreviewImageMode)
-    {
-        d->stackedview->decreaseZoom();
-    }
-}
-
-void ItemIconView::slotZoomTo100Percents()
-{
-    if (viewMode() == StackedView::PreviewImageMode)
-    {
-        d->stackedview->toggleFitToWindowOr100();
-    }
-}
-
-void ItemIconView::slotFitToWindow()
-{
-    if (viewMode() == StackedView::TableViewMode)
-    {
-        /// @todo We should choose an appropriate thumbnail size here
-    }
-    else if (viewMode() == StackedView::IconViewMode)
-    {
-        int nts = d->iconView->fitToWidthIcons();
-        qCDebug(DIGIKAM_GENERAL_LOG) << "new thumb size = " << nts;
-        setThumbSize(nts);
-        toggleZoomActions();
-        emit signalThumbSizeChanged(d->thumbSize);
-    }
-    else if (viewMode() == StackedView::PreviewImageMode)
-    {
-        d->stackedview->fitToWindow();
-    }
 }
 
 void ItemIconView::slotAlbumPropsEdit()
@@ -1826,97 +1707,6 @@ void ItemIconView::slotRemoveTag(int tagID)
     FileActionMngr::instance()->removeTags(selectedInfoList(ApplicationSettings::Metadata), QList<int>() << tagID);
 }
 
-void ItemIconView::slotSlideShowAll()
-{
-    slideShow(allInfo(ApplicationSettings::Slideshow));
-}
-
-void ItemIconView::slotSlideShowSelection()
-{
-    slideShow(selectedInfoList(ApplicationSettings::Slideshow));
-}
-
-void ItemIconView::slotSlideShowRecursive()
-{
-    QList<Album*> albumList = AlbumManager::instance()->currentAlbums();
-    Album* album            = nullptr;
-
-    if (!albumList.isEmpty())
-    {
-        album = albumList.first();
-    }
-
-    if (album)
-    {
-        SlideShowBuilder* const builder = new SlideShowBuilder(album);
-
-        connect(builder, SIGNAL(signalComplete(SlideShowSettings)),
-                this, SLOT(slotSlideShowBuilderComplete(SlideShowSettings)));
-
-        builder->run();
-    }
-}
-
-void ItemIconView::slotSlideShowManualFromCurrent()
-{
-    slotSlideShowManualFrom(currentInfo());
-}
-
-void ItemIconView::slotSlideShowManualFrom(const ItemInfo& info)
-{
-   SlideShowBuilder* const builder
-           = new SlideShowBuilder(allInfo(ApplicationSettings::Slideshow));
-   builder->setOverrideStartFrom(info);
-   builder->setAutoPlayEnabled(false);
-
-   connect(builder, SIGNAL(signalComplete(SlideShowSettings)),
-           this, SLOT(slotSlideShowBuilderComplete(SlideShowSettings)));
-
-   builder->run();
-}
-
-void ItemIconView::slideShow(const ItemInfoList& infoList)
-{
-    SlideShowBuilder* const builder = new SlideShowBuilder(infoList);
-
-    connect(builder, SIGNAL(signalComplete(SlideShowSettings)),
-            this, SLOT(slotSlideShowBuilderComplete(SlideShowSettings)));
-
-    builder->run();
-}
-
-void ItemIconView::slotSlideShowBuilderComplete(const SlideShowSettings& settings)
-{
-    QPointer<Digikam::SlideShow> slide = new SlideShow(new DBInfoIface(this, QList<QUrl>()), settings);
-    TagsActionMngr::defaultManager()->registerActionsToWidget(slide);
-
-    if (settings.imageUrl.isValid())
-    {
-        slide->setCurrentItem(settings.imageUrl);
-    }
-    else if (settings.startWithCurrent)
-    {
-        slide->setCurrentItem(currentInfo().fileUrl());
-    }
-
-    connect(slide, SIGNAL(signalRatingChanged(QUrl,int)),
-            this, SLOT(slotRatingChanged(QUrl,int)));
-
-    connect(slide, SIGNAL(signalColorLabelChanged(QUrl,int)),
-            this, SLOT(slotColorLabelChanged(QUrl,int)));
-
-    connect(slide, SIGNAL(signalPickLabelChanged(QUrl,int)),
-            this, SLOT(slotPickLabelChanged(QUrl,int)));
-
-    connect(slide, SIGNAL(signalToggleTag(QUrl,int)),
-            this, SLOT(slotToggleTag(QUrl,int)));
-
-    connect(slide, SIGNAL(signalLastItemUrl(QUrl)),
-            d->iconView, SLOT(setCurrentUrl(QUrl)));
-
-    slide->show();
-}
-
 void ItemIconView::toggleShowBar(bool b)
 {
     d->stackedview->thumbBarDock()->showThumbBar(b);
@@ -1933,16 +1723,6 @@ void ItemIconView::setRecurseAlbums(bool recursive)
 void ItemIconView::setRecurseTags(bool recursive)
 {
     d->iconView->imageAlbumModel()->setRecurseTags(recursive);
-}
-
-void ItemIconView::setAllGroupsOpen(bool open)
-{
-    if (!d->iconView->getFaceMode())
-    {
-        d->iconView->imageFilterModel()->setAllGroupsOpen(open);
-    }
-
-    ApplicationSettings::instance()->setAllGroupsOpen(open);
 }
 
 void ItemIconView::slotSidebarTabTitleStyleChanged()
@@ -2178,40 +1958,6 @@ ItemInfoList ItemIconView::allInfo(const bool grouping) const
 ItemInfoList ItemIconView::allInfo(const ApplicationSettings::OperationType type) const
 {
     return allInfo(allNeedGroupResolving(type));
-}
-
-bool ItemIconView::allNeedGroupResolving(const ApplicationSettings::OperationType type) const
-{
-    switch (viewMode())
-    {
-        case StackedView::TableViewMode:
-            return d->tableView->allNeedGroupResolving(type);
-        case StackedView::MapWidgetMode:
-        case StackedView::PreviewImageMode:
-        case StackedView::MediaPlayerMode:
-        case StackedView::IconViewMode:
-            // all of these modes use the same selection model and data as the IconViewMode
-            return d->iconView->allNeedGroupResolving(type);
-        default:
-            return false;
-    }
-}
-
-bool ItemIconView::selectedNeedGroupResolving(const ApplicationSettings::OperationType type) const
-{
-    switch (viewMode())
-    {
-        case StackedView::TableViewMode:
-            return d->tableView->selectedNeedGroupResolving(type);
-        case StackedView::MapWidgetMode:
-        case StackedView::PreviewImageMode:
-        case StackedView::MediaPlayerMode:
-        case StackedView::IconViewMode:
-            // all of these modes use the same selection model and data as the IconViewMode
-            return d->iconView->selectedNeedGroupResolving(type);
-        default:
-            return false;
-    }
 }
 
 QUrl ItemIconView::currentUrl() const
@@ -2467,36 +2213,6 @@ void ItemIconView::slotShowGroupContextMenu(QContextMenuEvent* event,
 void ItemIconView::slotSetAsAlbumThumbnail(const ItemInfo& info)
 {
     d->utilities->setAsAlbumThumbnail(currentAlbum(), info);
-}
-
-void ItemIconView::slotCreateGroupFromSelection()
-{
-    FileActionMngr::instance()->addToGroup(currentInfo(), selectedInfoList(false, true));
-}
-
-void ItemIconView::slotCreateGroupByTimeFromSelection()
-{
-    d->utilities->createGroupByTimeFromInfoList(selectedInfoList(false, true));
-}
-
-void ItemIconView::slotCreateGroupByFilenameFromSelection()
-{
-    d->utilities->createGroupByFilenameFromInfoList(selectedInfoList(false, true));
-}
-
-void ItemIconView::slotCreateGroupByTimelapseFromSelection()
-{
-    d->utilities->createGroupByTimelapseFromInfoList(selectedInfoList(false, true));
-}
-
-void ItemIconView::slotRemoveSelectedFromGroup()
-{
-    FileActionMngr::instance()->removeFromGroup(selectedInfoList(false, true));
-}
-
-void ItemIconView::slotUngroupSelected()
-{
-    FileActionMngr::instance()->ungroup(selectedInfoList(false, true));
 }
 
 void ItemIconView::slotNofificationError(const QString& message, int type)
