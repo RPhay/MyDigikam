@@ -92,10 +92,10 @@ public:
 
     void connectIconViewFilter(FilterStatusBar* const filter);
 
-    QUrl      currentUrl()     const;
-    bool      hasCurrentItem() const;
-    ItemInfo  currentInfo()    const;
-    Album*    currentAlbum()   const;
+    QUrl      currentUrl()                                                         const;
+    bool      hasCurrentItem()                                                     const;
+    ItemInfo  currentInfo()                                                        const;
+    Album*    currentAlbum()                                                       const;
 
     /**
      * Get currently selected items. By default only the first images in groups are
@@ -127,8 +127,8 @@ public:
     bool allNeedGroupResolving(const ApplicationSettings::OperationType type)      const;
     bool selectedNeedGroupResolving(const ApplicationSettings::OperationType type) const;
 
-    double zoomMin() const;
-    double zoomMax() const;
+    double zoomMin()                                                               const;
+    double zoomMax()                                                               const;
 
     void toggleTag(int tagID);
     void toggleFullScreen(bool set);
@@ -139,7 +139,8 @@ public:
 Q_SIGNALS:
 
     void signalAlbumSelected(Album*);
-    void signalImageSelected(const ItemInfoList& selectedImage, const ItemInfoList& allImages);
+    void signalImageSelected(const ItemInfoList& selectedImage,
+                             const ItemInfoList& allImages);
     void signalNoCurrentItem();
     void signalSelectionChanged(int numberOfSelectedItems);
     void signalTrashSelectionChanged(const QString& text);
@@ -163,7 +164,9 @@ public Q_SLOTS:
 
     void slotNofificationError(const QString& message, int type);
 
-    // View Action slots
+    //@{
+    /// View Action slots
+
     void slotZoomIn();
     void slotZoomOut();
     void slotZoomTo100Percents();
@@ -173,8 +176,10 @@ public Q_SLOTS:
     void slotSlideShowRecursive();
     void slotSlideShowManualFromCurrent();
     void slotSlideShowManualFrom(const ItemInfo& info);
+    //@}
 
-    // Album action slots
+    //@{
+    /// Album action slots
     void slotRefresh();
     void slotNewAlbum();
     void slotSortAlbums(int role);
@@ -196,22 +201,28 @@ public Q_SLOTS:
     void slotSetCurrentWhenAvailable(const qlonglong id);
 
     void slotSetAsAlbumThumbnail(const ItemInfo& info);
+    //@}
 
-    // Tag action slots
+    //@{
+    /// Tag action slots
     void slotNewTag();
     void slotDeleteTag();
     void slotEditTag();
     void slotOpenTagsManager();
     void slotAssignTag();
+    //@}
 
-    // Search action slots
+    //@{
+    /// Search action slots
     void slotNewKeywordSearch();
     void slotNewAdvancedSearch();
     void slotNewDuplicatesSearch(PAlbum* album = nullptr);
     void slotNewDuplicatesSearch(const QList<PAlbum*>& albums);
     void slotNewDuplicatesSearch(const QList<TAlbum*>& albums);
+    //@}
 
-    // Image action slots
+    //@{
+    /// Image action slots
     void slotImageLightTable();
     void slotImageAddToLightTable();
     void slotImageAddToCurrentQueue();
@@ -247,12 +258,15 @@ public Q_SLOTS:
     void slotAssignRating(int rating);
     void slotAssignTag(int tagID);
     void slotRemoveTag(int tagID);
+    //@}
 
-    // Tools action slots.
+    //@{
+    /// Tools action slots.
     void slotEditor();
     void slotLightTable();
     void slotQueueMgr();
     void slotFileWithDefaultApplication();
+    //@}
 
     void slotLeftSideBarActivate(QWidget* widget);
     void slotLeftSideBarActivate(SidebarWidget* widget);
