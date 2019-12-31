@@ -57,7 +57,7 @@ void FaceDb::deleteIdentity(int id)
     d->db->execSql(QLatin1String("DELETE FROM Identities WHERE id=?;"), id);
 }
 
-void FaceDb::deleteIdentity(const QString & uuid)
+void FaceDb::deleteIdentity(const QString& uuid)
 {
     QList<QVariant> ids;
     d->db->execSql(QLatin1String("SELECT Identities.id FROM Identities LEFT JOIN IdentityAttributes ON "
@@ -75,6 +75,11 @@ void FaceDb::deleteIdentity(const QString & uuid)
                                       << uuid << ". There are " << ids.size()
                                       << " identities with this uuid.";
     }
+}
+
+void FaceDb::clearIdentities()
+{
+    d->db->execSql(QLatin1String("DELETE FROM Identities;"));
 }
 
 QList<Identity> FaceDb::identities() const

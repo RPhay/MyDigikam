@@ -76,9 +76,12 @@ public:
 
     int  addIdentity() const;
     int  getNumberOfIdentities() const;
+
     void updateIdentity(const Identity& p);
     void deleteIdentity(int id);
     void deleteIdentity(const QString& uuid);
+    void clearIdentities();
+
     QList<Identity> identities()  const;
     QList<int>      identityIds() const;
 
