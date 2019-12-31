@@ -1574,7 +1574,7 @@ void ItemIconView::slotImageScanForFaces()
 
     settings.accuracy               = ApplicationSettings::instance()->getFaceDetectionAccuracy();
     settings.recognizeAlgorithm     = RecognitionDatabase::RecognizeAlgorithm::DNN; // Default now change to DNN
-    settings.task                   = FaceScanSettings::Detect;
+    settings.task                   = FaceScanSettings::DetectAndRecognize;
     settings.alreadyScannedHandling = FaceScanSettings::Rescan;
     settings.infos                  = selectedInfoList(ApplicationSettings::Tools);
 
