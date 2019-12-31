@@ -516,4 +516,5 @@ BUGFIXES:
 501 ==> 361809 - Migration failed from SQLite to MySQL.
 502 ==> 415700 - "Welcome to" screen still mentions v5.0.
 503 ==> 415566 - Use existing face rectangles to improve recognition.
-504 ==> 
+504 ==> 415603 - Add "Face Recognition" optional item in toolbar.
+505 ==> 
