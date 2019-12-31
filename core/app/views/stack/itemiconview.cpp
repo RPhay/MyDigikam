@@ -585,11 +585,6 @@ void ItemIconView::saveViewState()
     d->rightSideBar->saveState();
 }
 
-QList<SidebarWidget*> ItemIconView::leftSidebarWidgets() const
-{
-    return d->leftSideBarWidgets;
-}
-
 QList<QUrl> ItemIconView::allUrls(bool grouping) const
 {
     /// @todo This functions seems not to be used anywhere right now
@@ -605,50 +600,6 @@ QList<QUrl> ItemIconView::selectedUrls(bool grouping) const
 QList<QUrl> ItemIconView::selectedUrls(const ApplicationSettings::OperationType type) const
 {
     return selectedInfoList(type).toImageUrlList();
-}
-
-void ItemIconView::showSideBars()
-{
-    d->leftSideBar->restore();
-    d->rightSideBar->restore();
-}
-
-void ItemIconView::hideSideBars()
-{
-    d->leftSideBar->backup();
-    d->rightSideBar->backup();
-}
-
-void ItemIconView::toggleLeftSidebar()
-{
-    d->leftSideBar->isExpanded() ? d->leftSideBar->shrink()
-                                 : d->leftSideBar->expand();
-}
-
-void ItemIconView::toggleRightSidebar()
-{
-    d->rightSideBar->isExpanded() ? d->rightSideBar->shrink()
-                                  : d->rightSideBar->expand();
-}
-
-void ItemIconView::previousLeftSideBarTab()
-{
-    d->leftSideBar->activePreviousTab();
-}
-
-void ItemIconView::nextLeftSideBarTab()
-{
-    d->leftSideBar->activeNextTab();
-}
-
-void ItemIconView::previousRightSideBarTab()
-{
-    d->rightSideBar->activePreviousTab();
-}
-
-void ItemIconView::nextRightSideBarTab()
-{
-    d->rightSideBar->activeNextTab();
 }
 
 void ItemIconView::slotFirstItem()
@@ -1622,19 +1573,6 @@ void ItemIconView::slotImagePaste()
     }
 }
 
-
-void ItemIconView::slotLeftSidebarChangedTab(QWidget* w)
-{
-    // TODO update, temporary cast
-    SidebarWidget* const widget = dynamic_cast<SidebarWidget*>(w);
-
-    foreach (SidebarWidget* const sideBarWidget, d->leftSideBarWidgets)
-    {
-        bool active = (widget && (widget == sideBarWidget));
-        sideBarWidget->setActive(active);
-    }
-}
-
 void ItemIconView::toggleTag(int tagID)
 {
     ItemInfoList tagToRemove, tagToAssign;
@@ -1695,15 +1633,6 @@ void ItemIconView::setRecurseTags(bool recursive)
     d->iconView->imageAlbumModel()->setRecurseTags(recursive);
 }
 
-void ItemIconView::slotSidebarTabTitleStyleChanged()
-{
-    d->leftSideBar->setStyle(ApplicationSettings::instance()->getSidebarTitleStyle());
-    d->rightSideBar->setStyle(ApplicationSettings::instance()->getSidebarTitleStyle());
-
-    /// @todo Which settings actually have to be reloaded?
-    //     d->rightSideBar->applySettings();
-}
-
 void ItemIconView::slotImageChangeFailed(const QString& message, const QStringList& fileNames)
 {
     if (fileNames.isEmpty())
@@ -1716,44 +1645,6 @@ void ItemIconView::slotImageChangeFailed(const QString& message, const QStringLi
                                      qApp->applicationName(),
                                      message,
                                      fileNames);
-}
-
-void ItemIconView::slotLeftSideBarActivateAlbums()
-{
-    d->leftSideBar->setActiveTab(d->albumFolderSideBar);
-}
-
-void ItemIconView::slotLeftSideBarActivateTags()
-{
-    d->leftSideBar->setActiveTab(d->tagViewSideBar);
-}
-
-void ItemIconView::slotLeftSideBarActivate(SidebarWidget* widget)
-{
-    d->leftSideBar->setActiveTab(widget);
-}
-
-void ItemIconView::slotLeftSideBarActivate(QWidget* widget)
-{
-    slotLeftSideBarActivate(static_cast<SidebarWidget*>(widget));
-}
-
-void ItemIconView::slotRightSideBarActivateTitles()
-{
-    d->rightSideBar->setActiveTab(d->rightSideBar->imageDescEditTab());
-    d->rightSideBar->imageDescEditTab()->setFocusToTitlesEdit();
-}
-
-void ItemIconView::slotRightSideBarActivateComments()
-{
-    d->rightSideBar->setActiveTab(d->rightSideBar->imageDescEditTab());
-    d->rightSideBar->imageDescEditTab()->setFocusToCommentsEdit();
-}
-
-void ItemIconView::slotRightSideBarActivateAssignedTags()
-{
-    d->rightSideBar->setActiveTab(d->rightSideBar->imageDescEditTab());
-    d->rightSideBar->imageDescEditTab()->activateAssignedTagsButton();
 }
 
 void ItemIconView::slotRatingChanged(const QUrl& url, int rating)
@@ -2183,13 +2074,6 @@ void ItemIconView::slotShowGroupContextMenu(QContextMenuEvent* event,
 void ItemIconView::slotSetAsAlbumThumbnail(const ItemInfo& info)
 {
     d->utilities->setAsAlbumThumbnail(currentAlbum(), info);
-}
-
-void ItemIconView::slotNofificationError(const QString& message, int type)
-{
-    d->errorWidget->setMessageType((DNotificationWidget::MessageType)type);
-    d->errorWidget->setText(message);
-    d->errorWidget->animatedShowTemporized(15000);   // Notification will be closed automatically in 15s
 }
 
 } // namespace Digikam
