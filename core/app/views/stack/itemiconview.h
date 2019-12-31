@@ -24,8 +24,8 @@
  *
  * ============================================================ */
 
-#ifndef ITEM_ICON_VIEW_H
-#define ITEM_ICON_VIEW_H
+#ifndef DIGIKAM_ITEM_ICON_VIEW_H
+#define DIGIKAM_ITEM_ICON_VIEW_H
 
 // Qt includes
 
@@ -34,9 +34,9 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "applicationsettings.h"
 #include "metaengine_rotation.h"
-#include "digikam_config.h"
 #include "searchtextbar.h"
 #include "iteminfo.h"
 #include "dmodelfactory.h"
@@ -343,4 +343,4 @@ private:
 
 } // namespace Digikam
 
-#endif // ITEM_ICON_VIEW_H
+#endif // DIGIKAM_ITEM_ICON_VIEW_H
