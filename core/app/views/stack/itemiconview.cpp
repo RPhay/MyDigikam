@@ -1234,27 +1234,6 @@ void ItemIconView::slotDispatchImageSelected()
     }
 }
 
-double ItemIconView::zoomMin() const
-{
-    return d->stackedview->zoomMin();
-}
-
-double ItemIconView::zoomMax() const
-{
-    return d->stackedview->zoomMax();
-}
-
-void ItemIconView::setZoomFactor(double zoom)
-{
-    d->stackedview->setZoomFactorSnapped(zoom);
-}
-
-void ItemIconView::slotZoomFactorChanged(double zoom)
-{
-    toggleZoomActions();
-    emit signalZoomChanged(zoom);
-}
-
 void ItemIconView::setThumbSize(int size)
 {
     if (viewMode() == StackedView::PreviewImageMode)
@@ -1293,104 +1272,6 @@ void ItemIconView::slotThumbSizeEffect()
     toggleZoomActions();
 
     ApplicationSettings::instance()->setDefaultIconSize(d->thumbSize);
-}
-
-void ItemIconView::toggleZoomActions()
-{
-    if (viewMode() == StackedView::PreviewImageMode)
-    {
-        d->parent->enableZoomMinusAction(true);
-        d->parent->enableZoomPlusAction(true);
-
-        if (d->stackedview->maxZoom())
-        {
-            d->parent->enableZoomPlusAction(false);
-        }
-
-        if (d->stackedview->minZoom())
-        {
-            d->parent->enableZoomMinusAction(false);
-        }
-    }
-    else if (viewMode() == StackedView::IconViewMode ||
-             viewMode() == StackedView::TableViewMode)
-    {
-        d->parent->enableZoomMinusAction(true);
-        d->parent->enableZoomPlusAction(true);
-
-        if (d->thumbSize >= ThumbnailSize::maxThumbsSize())
-        {
-            d->parent->enableZoomPlusAction(false);
-        }
-
-        if (d->thumbSize <= ThumbnailSize::Small)
-        {
-            d->parent->enableZoomMinusAction(false);
-        }
-    }
-    else
-    {
-        d->parent->enableZoomMinusAction(false);
-        d->parent->enableZoomPlusAction(false);
-    }
-}
-
-void ItemIconView::slotZoomIn()
-{
-    if (viewMode() == StackedView::IconViewMode ||
-        viewMode() == StackedView::TableViewMode)
-    {
-        setThumbSize(d->thumbSize + ThumbnailSize::Step);
-        toggleZoomActions();
-        emit signalThumbSizeChanged(d->thumbSize);
-    }
-    else if (viewMode() == StackedView::PreviewImageMode)
-    {
-        d->stackedview->increaseZoom();
-    }
-}
-
-void ItemIconView::slotZoomOut()
-{
-    if (viewMode() == StackedView::IconViewMode ||
-        viewMode() == StackedView::TableViewMode)
-    {
-        setThumbSize(d->thumbSize - ThumbnailSize::Step);
-        toggleZoomActions();
-        emit signalThumbSizeChanged(d->thumbSize);
-    }
-    else if (viewMode() == StackedView::PreviewImageMode)
-    {
-        d->stackedview->decreaseZoom();
-    }
-}
-
-void ItemIconView::slotZoomTo100Percents()
-{
-    if (viewMode() == StackedView::PreviewImageMode)
-    {
-        d->stackedview->toggleFitToWindowOr100();
-    }
-}
-
-void ItemIconView::slotFitToWindow()
-{
-    if (viewMode() == StackedView::TableViewMode)
-    {
-        /// @todo We should choose an appropriate thumbnail size here
-    }
-    else if (viewMode() == StackedView::IconViewMode)
-    {
-        int nts = d->iconView->fitToWidthIcons();
-        qCDebug(DIGIKAM_GENERAL_LOG) << "new thumb size = " << nts;
-        setThumbSize(nts);
-        toggleZoomActions();
-        emit signalThumbSizeChanged(d->thumbSize);
-    }
-    else if (viewMode() == StackedView::PreviewImageMode)
-    {
-        d->stackedview->fitToWindow();
-    }
 }
 
 void ItemIconView::slotAlbumPropsEdit()
