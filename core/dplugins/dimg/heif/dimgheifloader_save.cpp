@@ -66,19 +66,14 @@ int DImgHEIFLoader::x265MaxBitsDepth()
 
 #ifdef HAVE_X265
 
-    for (int i = 16 ; i >= 8 ; i-=2)
+    qDebug() << "Check HEVC encoder for" << x265_max_bit_depth << "bits encoding...";
+    const x265_api* const api = x265_api_get(x265_max_bit_depth);
+
+    if (api)
     {
-        qDebug() << "Check HEVC encoder for" << i << "bits encoding...";
-        const x265_api* const api = x265_api_get(i);
-
-        if (api)
-        {
-            maxOutputBitsDepth = i;
-            break;
-        }
+        maxOutputBitsDepth = x265_max_bit_depth;
+        qDebug() << "HEVC encoder max bits depth:" << maxOutputBitsDepth;
     }
-
-    qDebug() << "HEVC encoder max bits depth:" << maxOutputBitsDepth;
 
 #endif
 
