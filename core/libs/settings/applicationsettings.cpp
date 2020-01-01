@@ -295,7 +295,7 @@ void ApplicationSettings::readSettings()
     // ---------------------------------------------------------------------
 
     group                    = config->group(d->configGroupFaceDetection);
-    d->faceDetectionAccuracy = group.readEntry(d->configFaceDetectionAccuracyEntry, double(0.8));
+    d->faceDetectionAccuracy = group.readEntry(d->configFaceDetectionAccuracyEntry, double(0.7));
 
     // ---------------------------------------------------------------------
 

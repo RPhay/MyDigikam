@@ -246,7 +246,7 @@ ApplicationSettings::Private::Private(ApplicationSettings* const qq)
       itemLeftClickAction(ApplicationSettings::ShowPreview),
       syncToDigikam(false),
       syncToBaloo(false),
-      faceDetectionAccuracy(0.8),
+      faceDetectionAccuracy(0.7),
       stringComparisonType(ApplicationSettings::Natural),
       minimumSimilarityBound(40),
       duplicatesSearchLastMinSimilarity(90),
@@ -371,7 +371,7 @@ void ApplicationSettings::Private::init()
     syncToBaloo                          = false;
     albumSortChanged                     = false;
 
-    faceDetectionAccuracy                = 0.8;
+    faceDetectionAccuracy                = 0.7;
 
     minimumSimilarityBound               = 40;
     duplicatesSearchLastMinSimilarity    = 90;
