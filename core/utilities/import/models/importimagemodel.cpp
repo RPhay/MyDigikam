@@ -41,14 +41,14 @@ class Q_DECL_HIDDEN ImportItemModel::Private
 public:
 
     explicit Private()
+      : controller(nullptr),
+        keepFileUrlCache(false),
+        refreshing(false),
+        reAdding(false),
+        incrementalRefreshRequested(false),
+        sendRemovalSignals(false),
+        incrementalUpdater(nullptr)
     {
-        keepFileUrlCache            = false;
-        refreshing                  = false;
-        reAdding                    = false;
-        incrementalRefreshRequested = false;
-        sendRemovalSignals          = false;
-        incrementalUpdater          = nullptr;
-        controller                  = nullptr;
     }
 
     inline bool isValid(const QModelIndex& index)
@@ -241,7 +241,7 @@ QList<QModelIndex> ImportItemModel::indexesForCamItemInfo(const CamItemInfo& inf
 
 QModelIndex ImportItemModel::indexForCamItemId(qlonglong id) const
 {
-    int index = d->idHash.value(id, 0);
+    int index = d->idHash.value(id, -1);
 
     if (index != -1)
     {
