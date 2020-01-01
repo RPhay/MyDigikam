@@ -50,15 +50,17 @@ public:
     QImage  sketchImage() const;
     void    setSketchImage(const QImage& image);
 
-    /** This method return the drawing line history
-     *  as XML, to be stored in database as SAlbum data.
+    /**
+     * This method return the drawing line history
+     * as XML, to be stored in database as SAlbum data.
      */
     void sketchImageToXML(QXmlStreamWriter& writer);
     QString sketchImageToXML();
 
-    /** This method set sketch image using XML data based
-     *  on drawing line history.
-     *  Return true if data are imported successfully.
+    /**
+     * This method set sketch image using XML data based
+     * on drawing line history.
+     * Return true if data are imported successfully.
      */
     bool setSketchImageFromXML(QXmlStreamReader& reader);
     bool setSketchImageFromXML(const QString& xml);
@@ -80,13 +82,13 @@ public Q_SLOTS:
 
 protected:
 
-    void mousePressEvent(QMouseEvent*) override;
-    void mouseMoveEvent(QMouseEvent*) override;
-    void wheelEvent(QWheelEvent*) override;
-    void mouseReleaseEvent(QMouseEvent*) override;
-    void keyPressEvent(QKeyEvent*) override;
-    void keyReleaseEvent(QKeyEvent*) override;
-    void paintEvent(QPaintEvent*) override;
+    void mousePressEvent(QMouseEvent*)      override;
+    void mouseMoveEvent(QMouseEvent*)       override;
+    void wheelEvent(QWheelEvent*)           override;
+    void mouseReleaseEvent(QMouseEvent*)    override;
+    void keyPressEvent(QKeyEvent*)          override;
+    void keyReleaseEvent(QKeyEvent*)        override;
+    void paintEvent(QPaintEvent*)           override;
 
 private:
 
@@ -96,9 +98,10 @@ private:
     void drawLineTo(int width, const QColor& color, const QPoint& start, const QPoint& end);
     void drawPath(int width, const QColor& color, const QPainterPath& path);
     void addPath(QXmlStreamReader& reader);
-    //QDomElement addXmlTextElement(QDomDocument& document, QDomElement& target,
-    //                              const QString& tag, const QString& text);
-
+/*
+    QDomElement addXmlTextElement(QDomDocument& document, QDomElement& target,
+                                  const QString& tag, const QString& text);
+*/
 private:
 
     class Private;

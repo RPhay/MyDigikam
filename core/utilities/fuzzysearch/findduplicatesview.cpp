@@ -68,21 +68,21 @@ class Q_DECL_HIDDEN FindDuplicatesView::Private
 public:
 
     explicit Private()
+      : includeAlbumsLabel(nullptr),
+        similarityLabel(nullptr),
+        restrictResultsLabel(nullptr),
+        albumTagRelationLabel(nullptr),
+        similarityRange(nullptr),
+        searchResultRestriction(nullptr),
+        albumTagRelation(nullptr),
+        scanDuplicatesBtn(nullptr),
+        updateFingerPrtBtn(nullptr),
+        listView(nullptr),
+        progressItem(nullptr),
+        albumSelectors(nullptr),
+        settings(nullptr),
+        active(false)
     {
-        includeAlbumsLabel      = nullptr;
-        listView                = nullptr;
-        scanDuplicatesBtn       = nullptr;
-        updateFingerPrtBtn      = nullptr;
-        progressItem            = nullptr;
-        similarityLabel         = nullptr;
-        similarityRange         = nullptr;
-        restrictResultsLabel    = nullptr;
-        albumTagRelationLabel   = nullptr;
-        searchResultRestriction = nullptr;
-        albumTagRelation        = nullptr;
-        albumSelectors          = nullptr;
-        settings                = nullptr;
-        active                  = false;
     }
 
     QLabel*              includeAlbumsLabel;
@@ -452,7 +452,7 @@ void FindDuplicatesView::slotFindDuplicates()
 
     if (d->albumTagRelation->itemData(d->albumTagRelation->currentIndex()).toInt() == HaarIface::AlbumTagRelation::NoMix)
     {
-        if (d->albumSelectors->typeSelection() == AlbumSelectors::AlbumType::PhysAlbum)
+        if      (d->albumSelectors->typeSelection() == AlbumSelectors::AlbumType::PhysAlbum)
         {
             albums = d->albumSelectors->selectedAlbums();
         }

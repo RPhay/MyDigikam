@@ -51,13 +51,13 @@ public:
       : penWidth(10),
         penColor(Qt::black)
     {
-    };
+    }
 
     DrawEvent(int width, const QColor& color)
       : penWidth(width),
         penColor(color)
     {
-    };
+    }
 
     void lineTo(const QPoint& pos)
     {
@@ -82,9 +82,9 @@ public:
         drawing(false),
         penWidth(10),
         eventIndex(-1),
-        penColor(Qt::black)
+        penColor(Qt::black),
+        pixmap(QPixmap(256, 256))
     {
-        pixmap = QPixmap(256, 256);
     }
 
     void startDrawEvent(const QPoint& pos)
@@ -247,7 +247,7 @@ void SketchWidget::replayEvents(int index)
 {
     d->pixmap.fill(qRgb(255, 255, 255));
 
-    for (int i = 0; i <= index; ++i)
+    for (int i = 0 ; i <= index ; ++i)
     {
         const DrawEvent& drawEvent = d->drawEventList.at(i);
         drawPath(drawEvent.penWidth, drawEvent.penColor, drawEvent.path);
@@ -337,6 +337,7 @@ bool SketchWidget::setSketchImageFromXML(QXmlStreamReader& reader)
     QXmlStreamReader::TokenType element;
 
     // We assume that the reader is positioned at the start element for our XML
+
     if (!reader.isStartElement() ||
         reader.name() != QLatin1String("SketchImage"))
     {
@@ -344,7 +345,9 @@ bool SketchWidget::setSketchImageFromXML(QXmlStreamReader& reader)
     }
 
     d->isClear = false;
+
     // rebuild list of drawing chunks
+
     d->drawEventList.clear();
 
     while (!reader.atEnd())
@@ -354,6 +357,7 @@ bool SketchWidget::setSketchImageFromXML(QXmlStreamReader& reader)
         if (element == QXmlStreamReader::StartElement)
         {
             // every chunk (DrawEvent) is stored as a vector path
+
             if (reader.name() == QLatin1String("Path"))
             {
                 addPath(reader);    // recurse
@@ -362,6 +366,7 @@ bool SketchWidget::setSketchImageFromXML(QXmlStreamReader& reader)
         else if (element == QXmlStreamReader::EndElement)
         {
             // we have finished
+
             if (reader.name() == QLatin1String("SketchImage"))
             {
                 break;
@@ -370,9 +375,11 @@ bool SketchWidget::setSketchImageFromXML(QXmlStreamReader& reader)
     }
 
     // set current event to the last event
+
     d->eventIndex = d->drawEventList.count() - 1;
 
     // apply events to our pixmap
+
     replayEvents(d->eventIndex);
     emit signalUndoRedoStateChanged(d->eventIndex != -1, false);
 
@@ -386,6 +393,7 @@ void SketchWidget::addPath(QXmlStreamReader& reader)
     DrawEvent event;
 
     // Retrieve pen color and size
+
     QStringRef size  = reader.attributes().value(QLatin1String("Size"));
     QStringRef color = reader.attributes().value(QLatin1String("Color"));
 
@@ -408,6 +416,7 @@ void SketchWidget::addPath(QXmlStreamReader& reader)
         if (element == QXmlStreamReader::StartElement)
         {
             // The line element has four attributes, x1,y1,x2,y2
+
             if (reader.name() == QLatin1String("Line"))
             {
                 QStringRef x1 = reader.attributes().value(QLatin1String("x1"));
@@ -432,14 +441,18 @@ void SketchWidget::addPath(QXmlStreamReader& reader)
                 }
 
                 // move to starting point
+
                 event.path.moveTo(begin);
+
                 // draw line
+
                 event.path.lineTo(end);
             }
         }
         else if (element == QXmlStreamReader::EndElement)
         {
             // we have finished
+
             if (reader.name() == QLatin1String("Path"))
             {
                 break;
@@ -544,7 +557,7 @@ void SketchWidget::wheelEvent(QWheelEvent* e)
 
 void SketchWidget::mouseReleaseEvent(QMouseEvent* e)
 {
-    if (e->button() == Qt::LeftButton && d->drawing)
+    if ((e->button() == Qt::LeftButton) && d->drawing)
     {
         QPoint currentPos = e->pos();
         d->currentDrawEvent().lineTo(currentPos);

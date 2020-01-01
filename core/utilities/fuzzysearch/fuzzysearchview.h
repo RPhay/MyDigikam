@@ -54,7 +54,8 @@ class SearchModel;
 class SearchModificationHelper;
 class SearchTextBar;
 
-class FuzzySearchView : public QScrollArea, public StateSavingObject
+class FuzzySearchView : public QScrollArea,
+                        public StateSavingObject
 {
     Q_OBJECT
 
@@ -86,7 +87,7 @@ protected:
     void dropEvent(QDropEvent* e)                          override;
 
 Q_SIGNALS:
-    
+
     void signalNofificationError(const QString& message, int type);
 
 private Q_SLOTS:
@@ -128,8 +129,8 @@ private:
 
     void setColor(QColor c);
 
-    QWidget* setupFindSimilarPanel() const;
-    QWidget* setupSketchPanel()      const;
+    QWidget* setupFindSimilarPanel()             const;
+    QWidget* setupSketchPanel()                  const;
     void     setupConnections();
 
 private:

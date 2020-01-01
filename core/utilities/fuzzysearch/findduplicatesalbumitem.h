@@ -56,7 +56,7 @@ public:
     explicit FindDuplicatesAlbumItem(QTreeWidget* const parent, SAlbum* const album);
     virtual ~FindDuplicatesAlbumItem();
 
-    bool hasValidThumbnail() const;
+    bool hasValidThumbnail()                     const;
 
     /**
      * Calculates the duplicates count and average similarity.
@@ -66,10 +66,10 @@ public:
     /**
      * Returns the item count.
      **/
-    int itemCount()  const;
+    int itemCount()                              const;
 
-    SAlbum* album()  const;
-    QUrl    refUrl() const;
+    SAlbum* album()                              const;
+    QUrl    refUrl()                             const;
 
     void setThumb(const QPixmap& pix, bool hasThumb = true);
 
