@@ -90,6 +90,7 @@ set(libdigikamgui_SRCS
     views/stack/itemiconview_slideshow.cpp
     views/stack/itemiconview_tags.cpp
     views/stack/itemiconview_tools.cpp
+    views/stack/itemiconview_views.cpp
     views/stack/itemiconview_zoom.cpp
     views/stack/trashview.cpp
     views/stack/stackedview.cpp
