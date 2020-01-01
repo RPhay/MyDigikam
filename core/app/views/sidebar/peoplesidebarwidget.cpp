@@ -224,6 +224,7 @@ void PeopleSideBarWidget::slotScanComplete()
 {
     d->settingsWdg->setEnabled(true);
     d->rescanButton->setEnabled(true);
+    d->settingsWdg->resetRetrainAllButton();
 }
 
 const QIcon PeopleSideBarWidget::getIcon()

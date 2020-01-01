@@ -50,6 +50,8 @@ public:
     bool             settingsConflicted() const;
     FaceScanSettings settings()           const;
 
+    void             resetRetrainAllButton();
+
 protected:
 
     void doLoadState();

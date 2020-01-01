@@ -376,4 +376,9 @@ FaceScanSettings FaceScanWidget::settings() const
     return settings;
 }
 
+void FaceScanWidget::resetRetrainAllButton()
+{
+    d->retrainAllButton->setChecked(false);
+}
+
 } // namespace Digikam
