@@ -72,26 +72,27 @@ class Q_DECL_HIDDEN StackedView::Private
 public:
 
     explicit Private()
-    {
-        dockArea           = nullptr;
-        splitter           = nullptr;
-        thumbBar           = nullptr;
-        thumbBarDock       = nullptr;
-        imageIconView      = nullptr;
-        imagePreviewView   = nullptr;
-        welcomePageView    = nullptr;
-        needUpdateBar      = false;
-        syncingSelection   = false;
-        tableView          = nullptr;
-        trashView          = nullptr;
+      : needUpdateBar(false),
+        syncingSelection(false),
+        dockArea(nullptr),
+        splitter(nullptr),
+        imageIconView(nullptr),
+        thumbBar(nullptr),
+        imagePreviewView(nullptr),
+        thumbBarDock(nullptr),
+        welcomePageView(nullptr),
 
 #ifdef HAVE_MEDIAPLAYER
-        mediaPlayerView    = nullptr;
+        mediaPlayerView(nullptr),
 #endif //HAVE_MEDIAPLAYER
 
 #ifdef HAVE_MARBLE
-        mapWidgetView      = nullptr;
+        mapWidgetView(nullptr),
 #endif // HAVE_MARBLE
+
+        tableView(nullptr),
+        trashView(nullptr)
+    {
     }
 
     bool              needUpdateBar;
@@ -105,18 +106,19 @@ public:
     ItemPreviewView*  imagePreviewView;
     ThumbBarDock*     thumbBarDock;
     WelcomePageView*  welcomePageView;
-    TableView*        tableView;
-    TrashView*        trashView;
 
     QMap<int, int>    stackMap;
 
 #ifdef HAVE_MEDIAPLAYER
-    MediaPlayerView*   mediaPlayerView;
+    MediaPlayerView*  mediaPlayerView;
 #endif //HAVE_MEDIAPLAYER
 
 #ifdef HAVE_MARBLE
-    MapWidgetView*     mapWidgetView;
+    MapWidgetView*    mapWidgetView;
 #endif // HAVE_MARBLE
+
+    TableView*        tableView;
+    TrashView*        trashView;
 };
 
 StackedView::StackedView(QWidget* const parent)
@@ -310,19 +312,20 @@ MediaPlayerView* StackedView::mediaPlayerView() const
 
 bool StackedView::isInSingleFileMode() const
 {
-    return viewMode() == PreviewImageMode || viewMode() == MediaPlayerMode;
+    return ((viewMode() == PreviewImageMode) ||
+            (viewMode() == MediaPlayerMode));
 }
 
 bool StackedView::isInMultipleFileMode() const
 {
-    return (viewMode() == IconViewMode  ||
-            viewMode() == MapWidgetMode ||
-            viewMode() == TableViewMode);
+    return ((viewMode() == IconViewMode)  ||
+            (viewMode() == MapWidgetMode) ||
+            (viewMode() == TableViewMode));
 }
 
 bool StackedView::isInAbstractMode() const
 {
-    return viewMode() == WelcomePageMode;
+    return (viewMode() == WelcomePageMode);
 }
 
 void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous, const ItemInfo& next)
@@ -342,8 +345,8 @@ void StackedView::setPreviewItem(const ItemInfo& info, const ItemInfo& previous,
     }
     else
     {
-        if (info.category() == DatabaseItem::Audio      ||
-            info.category() == DatabaseItem::Video      ||
+        if ((info.category() == DatabaseItem::Audio)      ||
+            (info.category() == DatabaseItem::Video)      ||
             DImg::isAnimatedImage(info.fileUrl().toLocalFile()))    // Special case for animated image as GIF or NMG
         {
             // Stop image viewer
@@ -396,7 +399,7 @@ void StackedView::setViewMode(const StackedViewMode mode)
         return;
     }
 
-    if (mode == PreviewImageMode || mode == MediaPlayerMode)
+    if ((mode == PreviewImageMode) || (mode == MediaPlayerMode))
     {
         d->thumbBarDock->restoreVisibility();
         syncSelection(d->imageIconView, d->thumbBar);
@@ -406,7 +409,10 @@ void StackedView::setViewMode(const StackedViewMode mode)
         d->thumbBarDock->hide();
     }
 
-    if (mode == IconViewMode || mode == WelcomePageMode || mode == MapWidgetMode || mode == TableViewMode)
+    if ((mode == IconViewMode)    ||
+        (mode == WelcomePageMode) ||
+        (mode == MapWidgetMode)   ||
+        (mode == TableViewMode))
     {
         setPreviewItem();
         setCurrentIndex(d->stackMap.key(mode));
@@ -473,7 +479,7 @@ void StackedView::syncSelection(ItemCategorizedView* from, ItemCategorizedView* 
 
 void StackedView::slotThumbBarSelectionChanged()
 {
-    if (viewMode() != PreviewImageMode && viewMode() != MediaPlayerMode)
+    if ((viewMode() != PreviewImageMode) && (viewMode() != MediaPlayerMode))
     {
         return;
     }

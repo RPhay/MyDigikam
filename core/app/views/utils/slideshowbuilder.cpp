@@ -54,11 +54,11 @@ public:
     {
     }
 
-    bool          cancel;
+    bool         cancel;
     ItemInfoList infoList;
-    Album*        album;
-    bool          autoPlayEnabled;
-    QUrl          startFrom;           // Overrides the startFromCurrent flag read from settings.
+    Album*       album;
+    bool         autoPlayEnabled;
+    QUrl         startFrom;           // Overrides the startFromCurrent flag read from settings.
 };
 
 SlideShowBuilder::SlideShowBuilder(const ItemInfoList& infoList)
@@ -150,7 +150,7 @@ void SlideShowBuilder::slotParseItemInfoList(const ItemInfoList& list)
     for (ItemInfoList::const_iterator it = list.constBegin();
          !d->cancel && (it != list.constEnd()) ; ++it)
     {
-        ItemInfo info       = *it;
+        ItemInfo info = *it;
         settings.fileList.append(info.fileUrl());
 
         advance(i++);

@@ -46,12 +46,12 @@ public:
     /**
      * @return model used for the view
      */
-    DTrashItemModel* model() const;
+    DTrashItemModel* model()            const;
 
     /**
      * @return current thumbnail size
      */
-    ThumbnailSize getThumbnailSize() const;
+    ThumbnailSize getThumbnailSize()    const;
 
     /**
      * @brief set thumbnail size to give to model
@@ -62,7 +62,7 @@ public:
     /**
      * @return QUrl to the last selected item in view
      */
-    QUrl lastSelectedItemUrl() const;
+    QUrl lastSelectedItemUrl()          const;
 
     /**
      * @brief Highlights the last selected item when the view gets focus
@@ -72,7 +72,7 @@ public:
     /**
      * @return text for the main status bar
      */
-    QString statusBarText() const;
+    QString statusBarText()             const;
 
 private Q_SLOTS:
 

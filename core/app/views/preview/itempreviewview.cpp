@@ -75,24 +75,24 @@ class Q_DECL_HIDDEN ItemPreviewView::Private
 public:
 
     explicit Private()
+      : fullSize(false),
+        scale(1.0),
+        isValid(false),
+        rotationLock(false),
+        mode(ItemPreviewView::IconViewPreview),
+        item(nullptr),
+        prevAction(nullptr),
+        nextAction(nullptr),
+        rotLeftAction(nullptr),
+        rotRightAction(nullptr),
+        toolBar(nullptr),
+        faceGroup(nullptr),
+        peopleToggleAction(nullptr),
+        addPersonAction(nullptr),
+        forgetFacesAction(nullptr),
+        fullscreenAction(nullptr),
+        currAlbum(nullptr)
     {
-        fullSize            = 0;
-        scale               = 1.0;
-        item                = nullptr;
-        isValid             = false;
-        rotationLock        = false;
-        toolBar             = nullptr;
-        prevAction          = nullptr;
-        nextAction          = nullptr;
-        rotLeftAction       = nullptr;
-        rotRightAction      = nullptr;
-        mode                = ItemPreviewView::IconViewPreview;
-        faceGroup           = nullptr;
-        peopleToggleAction  = nullptr;
-        addPersonAction     = nullptr;
-        forgetFacesAction   = nullptr;
-        fullscreenAction    = nullptr;
-        currAlbum           = nullptr;
     }
 
     bool                   fullSize;
@@ -100,9 +100,9 @@ public:
     bool                   isValid;
     bool                   rotationLock;
 
-    ItemPreviewView::Mode mode;
+    ItemPreviewView::Mode  mode;
 
-    ItemPreviewCanvas*  item;
+    ItemPreviewCanvas*     item;
 
     QAction*               prevAction;
     QAction*               nextAction;
@@ -157,17 +157,17 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
 
     // ------------------------------------------------------------
 
-    d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),         i18nc("go to previous image", "Back"),  this);
-    d->nextAction          = new QAction(QIcon::fromTheme(QLatin1String("go-next")),             i18nc("go to next image", "Forward"),   this);
-    d->rotLeftAction       = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-left")),  i18nc("@info:tooltip", "Rotate Left"),  this);
-    d->rotRightAction      = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-right")), i18nc("@info:tooltip", "Rotate Right"), this);
+    d->prevAction          = new QAction(QIcon::fromTheme(QLatin1String("go-previous")),          i18nc("go to previous image", "Back"),  this);
+    d->nextAction          = new QAction(QIcon::fromTheme(QLatin1String("go-next")),              i18nc("go to next image", "Forward"),   this);
+    d->rotLeftAction       = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-left")),   i18nc("@info:tooltip", "Rotate Left"),  this);
+    d->rotRightAction      = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-right")),  i18nc("@info:tooltip", "Rotate Right"), this);
 
-    d->addPersonAction     = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),       i18n("Add a Face Tag"),                 this);
-    d->forgetFacesAction   = new QAction(QIcon::fromTheme(QLatin1String("list-remove-user")),    i18n("Clear all faces on this image"),  this);
-    d->peopleToggleAction  = new QAction(QIcon::fromTheme(QLatin1String("im-user")),             i18n("Show Face Tags"),                 this);
+    d->addPersonAction     = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),        i18n("Add a Face Tag"),                 this);
+    d->forgetFacesAction   = new QAction(QIcon::fromTheme(QLatin1String("list-remove-user")),     i18n("Clear all faces on this image"),  this);
+    d->peopleToggleAction  = new QAction(QIcon::fromTheme(QLatin1String("im-user")),              i18n("Show Face Tags"),                 this);
     d->peopleToggleAction->setCheckable(true);
 
-    d->fullscreenAction    = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")), i18n("Show Fullscreen"), this);
+    d->fullscreenAction    = new QAction(QIcon::fromTheme(QLatin1String("media-playback-start")), i18n("Show Fullscreen"),                this);
     d->toolBar             = new QToolBar(this);
     d->toolBar->setStyleSheet(toolButtonStyleSheet());
 
@@ -378,6 +378,7 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
     {
         cmHelper.addStandardActionThumbnail(idList, d->currAlbum);
     }
+
     cmHelper.addAssignTagsMenu(idList);
     cmHelper.addRemoveTagsMenu(idList);
     cmHelper.addLabelsAction();
@@ -462,7 +463,9 @@ void ItemPreviewView::slotSetupChanged()
 void ItemPreviewView::slotRotateLeft()
 {
     if (d->rotationLock)
+    {
         return;
+    }
 
     d->rotationLock = true;
 
@@ -482,7 +485,9 @@ void ItemPreviewView::slotRotateLeft()
 void ItemPreviewView::slotRotateRight()
 {
     if (d->rotationLock)
+    {
         return;
+    }
 
     d->rotationLock = true;
 
@@ -568,7 +573,7 @@ void ItemPreviewView::dropEvent(QDropEvent* e)
 
 void ItemPreviewView::mousePressEvent(QMouseEvent* e)
 {
-    if (e->button() == Qt::LeftButton && QApplication::keyboardModifiers() == Qt::ControlModifier)
+    if ((e->button() == Qt::LeftButton) && (QApplication::keyboardModifiers() == Qt::ControlModifier))
     {
         d->faceGroup->addFace();
     }

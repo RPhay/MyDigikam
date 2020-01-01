@@ -68,9 +68,9 @@ public:
 
     void openAlbum(Album* const album);
     void setActive(const bool state);
-    bool getActiveState() const;
+    bool getActiveState()            const;
 
-    ItemInfo   currentItemInfo()   const;
+    ItemInfo   currentItemInfo()     const;
     CamItemInfo currentCamItemInfo() const;
 
 protected:

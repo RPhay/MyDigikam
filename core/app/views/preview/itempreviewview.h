@@ -56,12 +56,14 @@ public:
 
 public:
 
-    explicit ItemPreviewView(QWidget* const parent, Mode mode=IconViewPreview, Album* const currAlbum = nullptr);
+    explicit ItemPreviewView(QWidget* const parent,
+                             Mode mode=IconViewPreview,
+                             Album* const currAlbum = nullptr);
     ~ItemPreviewView();
 
     void setItemInfo(const ItemInfo& info     = ItemInfo(),
-                      const ItemInfo& previous = ItemInfo(),
-                      const ItemInfo& next     = ItemInfo());
+                     const ItemInfo& previous = ItemInfo(),
+                     const ItemInfo& next     = ItemInfo());
 
     ItemInfo getItemInfo() const;
 
@@ -86,13 +88,13 @@ Q_SIGNALS:
 
 protected:
 
-    bool acceptsMouseClick(QMouseEvent* e) override;
-    void mousePressEvent(QMouseEvent* e) override;
-    void enterEvent(QEvent* e) override;
-    void leaveEvent(QEvent* e) override;
-    void showEvent(QShowEvent* e) override;
-    void dropEvent(QDropEvent* e) override;
-    void dragMoveEvent(QDragMoveEvent* e) override;
+    bool acceptsMouseClick(QMouseEvent* e)  override;
+    void mousePressEvent(QMouseEvent* e)    override;
+    void enterEvent(QEvent* e)              override;
+    void leaveEvent(QEvent* e)              override;
+    void showEvent(QShowEvent* e)           override;
+    void dropEvent(QDropEvent* e)           override;
+    void dragMoveEvent(QDragMoveEvent* e)   override;
     void dragEnterEvent(QDragEnterEvent* e) override;
 
 private Q_SLOTS:

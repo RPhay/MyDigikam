@@ -91,11 +91,11 @@ public:
     TrashView*        trashView()        const;
 
 #ifdef HAVE_MEDIAPLAYER
-    MediaPlayerView*   mediaPlayerView()  const;
+    MediaPlayerView*  mediaPlayerView()  const;
 #endif //HAVE_MEDIAPLAYER
 
 #ifdef HAVE_MARBLE
-    MapWidgetView*     mapWidgetView()    const;
+    MapWidgetView*    mapWidgetView()    const;
 #endif // HAVE_MARBLE
 
     /**
@@ -103,14 +103,14 @@ public:
      * multi-file is icon view or map,
      * abstract modes do not handle files (welcome page)
      */
-    bool isInSingleFileMode()   const;
-    bool isInMultipleFileMode() const;
-    bool isInAbstractMode()     const;
+    bool isInSingleFileMode()            const;
+    bool isInMultipleFileMode()          const;
+    bool isInAbstractMode()              const;
 
     void setPreviewItem(const ItemInfo& info = ItemInfo(),
                         const ItemInfo& previous = ItemInfo(),
                         const ItemInfo& next = ItemInfo());
-    StackedViewMode viewMode() const;
+    StackedViewMode viewMode()           const;
     void setViewMode(const StackedViewMode mode);
     void previewLoaded();
 

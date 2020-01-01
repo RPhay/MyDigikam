@@ -84,8 +84,8 @@ public:
 private:
 
     QByteArray  fileToString(const QString& aFileName) const;
-    QStringList featuresTabContent() const;
-    QStringList aboutTabContent() const;
+    QStringList featuresTabContent()                   const;
+    QStringList aboutTabContent()                      const;
 
 private Q_SLOTS:
 

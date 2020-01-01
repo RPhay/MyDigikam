@@ -117,12 +117,12 @@ TrashView::TrashView(QWidget* const parent)
     d->tableView->sortByColumn(2, Qt::DescendingOrder);
 
     // Action Buttons
-    d->undoButton      = new QPushButton(i18n("Undo"), this);
-    d->restoreButton   = new QPushButton(i18n("Restore"), this);
-    d->deleteButton    = new QPushButton(i18n("Delete..."), this);
+    d->undoButton      = new QPushButton(i18n("Undo"),                   this);
+    d->restoreButton   = new QPushButton(i18n("Restore"),                this);
+    d->deleteButton    = new QPushButton(i18n("Delete..."),              this);
 
     d->deleteAction    = new QAction(i18n("Selected Items Permanently"), this);
-    d->deleteAllAction = new QAction(i18n("All Items Permanently"), this);
+    d->deleteAllAction = new QAction(i18n("All Items Permanently"),      this);
 
     d->undoButton->setIcon(QIcon::fromTheme(QLatin1String("edit-undo")));
     d->restoreButton->setIcon(QIcon::fromTheme(QLatin1String("edit-copy")));

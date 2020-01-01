@@ -82,16 +82,16 @@ public:
     {
     }
 
-    DVBox*                      vbox;
-    MapWidget*                  mapWidget;
+    DVBox*                     vbox;
+    MapWidget*                 mapWidget;
     ItemFilterModel*           imageFilterModel;
     ItemAlbumModel*            imageModel;
-    ImportFilterModel*          importFilterModel;
+    ImportFilterModel*         importFilterModel;
     ImportItemModel*           importModel;
-    QItemSelectionModel*        selectionModel;
-    MapViewModelHelper*         mapViewModelHelper;
+    QItemSelectionModel*       selectionModel;
+    MapViewModelHelper*        mapViewModelHelper;
     GPSItemInfoSorter*         gpsItemInfoSorter;
-    MapWidgetView::Application  application;
+    MapWidgetView::Application application;
 };
 
 /**
@@ -111,7 +111,7 @@ MapWidgetView::MapWidgetView(QItemSelectionModel* const selectionModel,
     d->application    = application;
     d->selectionModel = selectionModel;
 
-    switch(d->application)
+    switch (d->application)
     {
         case ApplicationDigikam:
             d->imageFilterModel   = dynamic_cast<ItemFilterModel*>(imageFilterModel);
@@ -154,7 +154,7 @@ void MapWidgetView::doLoadState()
     KConfigGroup group = getConfigGroup();
 
     d->gpsItemInfoSorter->setSortOptions(GPSItemInfoSorter::SortOptions(group.readEntry(QLatin1String("Sort Order"),
-                                                                                          int(d->gpsItemInfoSorter->getSortOptions()))));
+                                                                                        int(d->gpsItemInfoSorter->getSortOptions()))));
 
     const KConfigGroup groupCentralMap = KConfigGroup(&group, QLatin1String("Central Map Widget"));
     d->mapWidget->readSettingsFromGroup(&groupCentralMap);
@@ -590,7 +590,7 @@ void MapViewModelHelper::onIndicesClicked(const QList<QPersistentModelIndex>& cl
 #if 0
     QList<QModelIndex> indexList;
 
-    for (int i=0; i<clickedIndices.count(); ++i)
+    for (int i = 0 ; i < clickedIndices.count() ; ++i)
     {
         const QModelIndex newIndex(clickedIndices.at(i));
         indexList.append(newIndex);
@@ -600,7 +600,7 @@ void MapViewModelHelper::onIndicesClicked(const QList<QPersistentModelIndex>& cl
 
     QList<qlonglong> imagesIdList;
 
-    for (int i=0; i < imageInfoList.count(); ++i)
+    for (int i = 0 ; i < imageInfoList.count() ; ++i)
     {
         imagesIdList.append(imageInfoList[i].id());
     }
