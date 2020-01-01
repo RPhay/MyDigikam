@@ -531,7 +531,7 @@ BUGFIXES:
 516 ==> 396765 - Schema update to V 9 failed.
 517 ==> 190411 - Metadata are invisible on older pictures.
 518 ==> 110066 - Md5 Checksums to identify pictures.
-519 ==> 
+519 ==> 415767 - Thumbnails for Portrait oriented images aren't rotated properly.
 520 ==> 
 521 ==> 
 522 ==> 
