@@ -136,7 +136,7 @@ QStringList WelcomePageView::featuresTabContent() const
     newFeatures << i18n("Add new shuffle mode in SlideShow.");
     newFeatures << i18n("Add new theme Html5Responsive for HtmlGallery plugin.");
     newFeatures << i18n("Update internal RAW engine to last Libraw 0.20.0 release including Canon CR3 and Sony A7R4 support.");
-    newFeatures << i18n("Face Scan dialog contents is now simplified and embeded into left side-bar.");
+    newFeatures << i18n("Face Scan dialog contents is now simplified and embedded into left sidebar.");
 
     // Add new features here...
     newFeatures << i18n("...and much more.");
