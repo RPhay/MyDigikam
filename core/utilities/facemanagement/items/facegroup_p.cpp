@@ -29,18 +29,18 @@ namespace Digikam
 {
 
 FaceGroup::Private::Private(FaceGroup* const q)
-    : q(q)
+    : view(nullptr),
+      autoSuggest(false),
+      showOnHover(false),
+      manuallyAddWrapItem(nullptr),
+      manuallyAddedItem(nullptr),
+      state(NoFaces),
+      visibilityController(nullptr),
+      tagModel(nullptr),
+      filterModel(nullptr),
+      filteredModel(nullptr),
+      q(q)
 {
-    view                 = nullptr;
-    autoSuggest          = false;
-    showOnHover          = false;
-    manuallyAddWrapItem  = nullptr;
-    manuallyAddedItem    = nullptr;
-    visibilityController = nullptr;
-    state                = NoFaces;
-    tagModel             = nullptr;
-    filterModel          = nullptr;
-    filteredModel        = nullptr;
 }
 
 QList<QGraphicsItem*> FaceGroup::Private::hotItems(const QPointF& scenePos)
