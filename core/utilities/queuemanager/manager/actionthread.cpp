@@ -111,7 +111,9 @@ void ActionThread::processQueueItems(const QList<AssignedBatchTools>& items)
 void ActionThread::cancel()
 {
     if (isRunning())
+    {
         emit signalCancelTask();
+    }
 
     ActionThreadBase::cancel();
 }
@@ -122,7 +124,7 @@ void ActionThread::slotUpdateItemInfo(const Digikam::ActionData& ad)
     {
         CollectionScanner scanner;
         ItemInfo source = ItemInfo::fromUrl(ad.fileUrl);
-        qlonglong id     = scanner.scanFile(ad.destUrl.toLocalFile(), CollectionScanner::NormalScan);
+        qlonglong id    = scanner.scanFile(ad.destUrl.toLocalFile(), CollectionScanner::NormalScan);
         ItemInfo info(id);
         // Copy the digiKam attributes from original file to the new file
         CollectionScanner::copyFileProperties(source, info);

@@ -192,20 +192,28 @@ QString BatchTool::toolGroupToString() const
     {
         case BaseTool:
             return i18n("Base");
+
         case CustomTool:
             return i18n("Custom");
+
         case ColorTool:
             return i18n("Colors");
+
         case EnhanceTool:
             return i18n("Enhance");
+
         case TransformTool:
             return i18n("Transform");
+
         case DecorateTool:
             return i18n("Decorate");
+
         case FiltersTool:
             return i18n("Filters");
+
         case ConvertTool:
             return i18n("Convert");
+
         case MetadataTool:
             return i18n("Metadata");
 
@@ -434,6 +442,7 @@ bool BatchTool::isRawFile(const QUrl& url) const
 {
     QString   rawFilesExt = DRawDecoder::rawFiles();
     QFileInfo fileInfo(url.toLocalFile());
+
     return (rawFilesExt.toUpper().contains(fileInfo.suffix().toUpper()));
 }
 
@@ -444,7 +453,7 @@ bool BatchTool::loadToDImg() const
         return true;
     }
 
-    if (d->rawLoadingRule == QueueSettings::USEEMBEDEDJPEG && isRawFile(inputUrl()))
+    if ((d->rawLoadingRule == QueueSettings::USEEMBEDEDJPEG) && isRawFile(inputUrl()))
     {
         QImage img;
         bool   ret = DRawDecoder::loadRawPreview(img, inputUrl().toLocalFile());
@@ -452,6 +461,7 @@ bool BatchTool::loadToDImg() const
         meta.setItemDimensions(QSize(img.width(), img.height()));
         d->image   = DImg(img);
         d->image.setMetadata(meta.data());
+
         return ret;
     }
 
@@ -468,18 +478,20 @@ bool BatchTool::savefromDImg() const
     DImg::FORMAT detectedFormat = d->image.detectedFormat();
     QString frm                 = outputSuffix().toUpper();
     bool resetOrientation       = getResetExifOrientationAllowed() &&
-                                  (getNeedResetExifOrientation() || detectedFormat == DImg::RAW);
+                                  (getNeedResetExifOrientation() || (detectedFormat == DImg::RAW));
 
     if (d->branchHistory)
     {
         // image has its original history
+
         d->image.setHistoryBranch(d->saveAsNewVersion);
     }
 
     if (frm.isEmpty())
     {
         // In case of output support is not set for ex. with all tool which do not convert to new format.
-        if (detectedFormat == DImg::JPEG)
+
+        if      (detectedFormat == DImg::JPEG)
         {
             d->image.setAttribute(QLatin1String("quality"),     JPEGSettings::convertCompressionForLibJpeg(ioFileSettings().JPEGCompression));
             d->image.setAttribute(QLatin1String("subsampling"), ioFileSettings().JPEGSubSampling);
@@ -511,6 +523,7 @@ bool BatchTool::savefromDImg() const
     d->image.prepareMetadataToSave(outputUrl().toLocalFile(), frm, resetOrientation);
     bool b   = d->image.save(outputUrl().toLocalFile(), frm, d->observer);
     d->image = DImg();
+
     return b;
 }
 
@@ -619,7 +632,7 @@ void BatchTool::registerSettingsWidget()
         label->setText(i18n("No setting available"));
         label->setAlignment(Qt::AlignCenter);
         label->setWordWrap(true);
-        m_settingsWidget = label;
+        m_settingsWidget    = label;
     }
 }
 

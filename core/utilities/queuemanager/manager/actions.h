@@ -53,8 +53,8 @@ public:
 public:
 
     explicit ActionData()
+        : status(None)
     {
-        status = None;
     }
 
     ActionStatus status;

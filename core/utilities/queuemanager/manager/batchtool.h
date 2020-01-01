@@ -59,16 +59,16 @@ public:
 
     enum BatchToolGroup
     {
-        BaseTool = 0,             // digiKam core tools.
-        CustomTool,               // List of tools grouped and customized by users.
+        BaseTool = 0,             ///< digiKam core tools.
+        CustomTool,               ///< List of tools grouped and customized by users.
 
-        ColorTool,                // Tools to manage image colors (Curves, BCG, etc...)
-        EnhanceTool,              // Tools to enhance images (NR, sharp, etc...)
-        TransformTool,            // Tools to transform images geometry (resize, rotate, flip, etc...)
-        DecorateTool,             // Tools to decorate images (Border, watermark, etc...)
-        FiltersTool,              // Tools to apply filters and special effects (film grain, BlurFx, etc...)
-        ConvertTool,              // Tools to convert images format (PNG, JPEG, TIFF, etc...)
-        MetadataTool              // Tools to play with metadata.
+        ColorTool,                ///< Tools to manage image colors (Curves, BCG, etc...)
+        EnhanceTool,              ///< Tools to enhance images (NR, sharp, etc...)
+        TransformTool,            ///< Tools to transform images geometry (resize, rotate, flip, etc...)
+        DecorateTool,             ///< Tools to decorate images (Border, watermark, etc...)
+        FiltersTool,              ///< Tools to apply filters and special effects (film grain, BlurFx, etc...)
+        ConvertTool,              ///< Tools to convert images format (PNG, JPEG, TIFF, etc...)
+        MetadataTool              ///< Tools to play with metadata.
     };
 
 /// Tool data and properties management. NOTE: these methods can be used safely in multi-threading part (ActionThread).
@@ -79,70 +79,70 @@ public:
     ~BatchTool();
 
     void setPlugin(DPluginBqm* const plugin);
-    DPluginBqm* plugin() const;
+    DPluginBqm* plugin()                                    const;
 
     /** Get description of an error which appear during apply() method.
      */
-    QString errorDescription() const;
+    QString errorDescription()                              const;
 
     /** Return group of tool. See BatchToolGroup enum for details.
      */
-    BatchToolGroup toolGroup() const;
+    BatchToolGroup toolGroup()                              const;
 
     /** Return group of tool name as string.
      */
-    QString toolGroupToString() const;
+    QString toolGroupToString()                             const;
 
     /** Manage Tool title.
      */
     void setToolTitle(const QString& toolTitle);
-    QString toolTitle() const;
+    QString toolTitle()                                     const;
 
     /** Manage Tool description.
      */
     void setToolDescription(const QString& toolDescription);
-    QString toolDescription() const;
+    QString toolDescription()                               const;
 
     /** Manage Tool icon name.
      */
     void setToolIconName(const QString& iconName);
     void setToolIcon(const QIcon& icon);
-    QIcon toolIcon() const;
+    QIcon toolIcon()                                        const;
 
     /** Manage settings values to tool. See BatchToolSettings container for details.
      */
     void setSettings(const BatchToolSettings& settings);
-    BatchToolSettings settings() const;
+    BatchToolSettings settings()                            const;
 
     /** Manage current input url processed by this tool.
      */
     void setInputUrl(const QUrl& inputUrl);
-    QUrl inputUrl() const;
+    QUrl inputUrl()                                         const;
 
     /** Manage current output url processed by this tool.
      */
     void setOutputUrl(const QUrl& outputUrl);
-    QUrl outputUrl() const;
+    QUrl outputUrl()                                        const;
 
     /** Manage current working url used by this tool to process items.
      */
     void setWorkingUrl(const QUrl& workingUrl);
-    QUrl workingUrl() const;
+    QUrl workingUrl()                                       const;
 
     /** Manage instance of current image data container loaded by this tool.
      */
     void setImageData(const DImg& img);
-    DImg imageData() const;
+    DImg imageData()                                        const;
 
     /** Manage instance of current image info loaded by this tool.
      */
     void setItemInfo(const ItemInfo& info);
-    ItemInfo imageInfo() const;
+    ItemInfo imageInfo()                                    const;
 
     /** Manage flag properties to indicate if this tool is last one to process on current item.
      */
     void setLastChainedTool(bool last);
-    bool isLastChainedTool() const;
+    bool isLastChainedTool()                                const;
 
     /** Set output url using input url content + annotation based on time stamp + file
         extension defined by outputSuffix().
@@ -153,14 +153,14 @@ public:
     /** Load image data using input Url set by setInputUrl() to instance of internal
         DImg container.
      */
-    bool loadToDImg() const;
+    bool loadToDImg()                                       const;
 
     /** Save image data from instance of internal DImg container using :
         - output Url set by setOutputUrl() or setOutputUrlFromInputUrl()
         - output file format set by outputSuffix(). If this one is empty,
           format of original image is used instead.
      */
-    bool savefromDImg() const;
+    bool savefromDImg()                                     const;
 
     /** Set that the Exif orientation flag is allowed be reset to NORMAL after tool operation
      */
@@ -168,7 +168,7 @@ public:
 
     /** Returns true if the Exif orientation tag is allowed to be reset after tool operation
      */
-    bool getResetExifOrientationAllowed() const;
+    bool getResetExifOrientationAllowed()                   const;
 
     /** Set that the Exif orientation flag should be reset to NORMAL after tool operation
      */
@@ -176,7 +176,7 @@ public:
 
     /** Returns true if the Exif orientation tag should be reset after tool operation
      */
-    bool getNeedResetExifOrientation() const;
+    bool getNeedResetExifOrientation()                      const;
 
     /** Set that RAW files loading rule to use (demosaicing or JPEG embedded).
      */
@@ -191,7 +191,7 @@ public:
      * since the loading from disk to set the first added step as creating a branch.
      */
     void setBranchHistory(bool branch = true);
-    bool getBranchHistory() const;
+    bool getBranchHistory()                                 const;
 
     /** Set-up RAW decoding settings no use during tool operations.
      */
@@ -199,7 +199,7 @@ public:
 
     /** Return RAW decoding settings used during tool operations.
      */
-    DRawDecoderSettings rawDecodingSettings() const;
+    DRawDecoderSettings rawDecodingSettings()               const;
 
     /** Set-up IOFile settings no use during tool operations.
      */
@@ -207,7 +207,7 @@ public:
 
     /** Return IOFile settings used during tool operations.
      */
-    IOFileSettings ioFileSettings() const;
+    IOFileSettings ioFileSettings()                         const;
 
     /** Apply all change to perform by this tool. This method call customized toolOperations().
      */
@@ -215,7 +215,10 @@ public:
 
     /** Return version of tool. By default, ID is 1. Re-implement this method and increase this ID when tool settings change.
      */
-    virtual int toolVersion() const { return 1; };
+    virtual int toolVersion()                               const
+    {
+        return 1;
+     };
 
     /** Re-implement this method is you want customize cancellation of tool, for ex. to call
         a dedicated method to kill sub-threads parented to this tool instance.
@@ -227,11 +230,11 @@ public:
         Typically, this is used with tool which convert to new file format.
         This method return and empty string by default.
      */
-    virtual QString outputSuffix() const;
+    virtual QString outputSuffix()                          const;
 
     /** Re-implement this method to initialize Settings Widget value with default settings.
      */
-    virtual BatchToolSettings defaultSettings() = 0;
+    virtual BatchToolSettings defaultSettings()                   = 0;
 
     /** Clone this tool without to create settings widget.
      *  It's a safe construction of tools instance used in multithreading (ActionThread) to process items in parallel.
@@ -252,7 +255,7 @@ protected:
 
     /** Method to check if file pointed by url is a RAW image
      */
-    bool isRawFile(const QUrl& url) const;
+    bool isRawFile(const QUrl& url)                         const;
 
     /** Set string to describe an error which appear during apply() method.
      */
@@ -260,11 +263,11 @@ protected:
 
     /** Return a reference of internal DImg container used to modify image data.
      */
-    DImg& image() const;
+    DImg& image()                                           const;
 
     /** Return true if cancel() have been called. Use this method to stop loop in your toolOperations() implementation.
      */
-    bool isCancelled() const;
+    bool isCancelled()                                      const;
 
     /**
      * Use this if you have a filter ready to run.
@@ -289,7 +292,7 @@ public:
 
     /** Return dedicated settings widget registered with registerSettingsWidget().
      */
-    QWidget* settingsWidget() const;
+    QWidget* settingsWidget()                               const;
 
     /** Delete dedicated settings widget registered with registerSettingsWidget().
      */
