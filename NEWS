@@ -519,4 +519,28 @@ BUGFIXES:
 504 ==> 415603 - Add "Face Recognition" optional item in toolbar.
 505 ==> 415592 - When renaming a tag, if I say no to updating, clicking Save won't trigger update again.
 506 ==> 415766 - HEIF thumbnails are not shown in Timeline view.
-507 ==> 
+507 ==> 396734 - Error while executing DBAction [ "UpdateSchemaFromV7ToV9" ] Statement [ "DROP TRIGGER IF EXISTS delete_image;" ].
+508 ==> 268204 - MYSQL : file-names are case-INsensitive.
+509 ==> 383927 - OpenSuse digikam.coredb: Core database: schema update to V 8 failed!
+510 ==> 319420 - Failed to update the database schema from version 5 to version 6.
+511 ==> 288599 - Schema update to V6 failed.
+512 ==> 218571 - Schema update version 4 to 5 failed.
+513 ==> 230606 - digiKam doesn’t display images imported from database.
+514 ==> 288839 - Failed to update the database schema from version 5 to version 6.
+515 ==> 392179 - Database Upgrade to v9 fails.
+516 ==> 396765 - Schema update to V 9 failed.
+517 ==> 190411 - Metadata are invisible on older pictures.
+518 ==> 110066 - Md5 Checksums to identify pictures.
+519 ==> 
+520 ==> 
+521 ==> 
+522 ==> 
+523 ==> 
+524 ==> 
+525 ==> 
+526 ==> 
+527 ==> 
+528 ==> 
+529 ==> 
+530 ==> 
+531 ==> 
