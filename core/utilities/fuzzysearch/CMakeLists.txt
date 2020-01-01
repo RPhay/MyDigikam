@@ -7,6 +7,8 @@
 
 set(libfuzzysearch_SRCS
     fuzzysearchview.cpp
+    fuzzysearchview_sketch.cpp
+    fuzzysearchview_similar.cpp
     findduplicatesview.cpp
     findduplicatesalbum.cpp
     findduplicatesalbumitem.cpp
