@@ -78,6 +78,7 @@ void FingerprintsTask::setMaintenanceData(MaintenanceData* const data)
 void FingerprintsTask::run()
 {
     // While we have data (using this as check for non-null)
+
     while (d->data)
     {
         if (m_cancel)
@@ -107,6 +108,7 @@ void FingerprintsTask::run()
             if (!dimg.isNull())
             {
                 // compute Haar fingerprint and store it to DB
+
                 HaarIface haarIface;
                 haarIface.indexImage(info.id(), dimg);
             }

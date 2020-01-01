@@ -150,6 +150,7 @@ void ItemInfoJob::slotResult()
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to list url: " << d->jobThread->errorsList().first();
 
         // Pop-up a message about the error.
+
         DNotificationWrapper(QString(), d->jobThread->errorsList().first(),
                              DigikamApp::instance(), DigikamApp::instance()->windowTitle());
     }
@@ -175,6 +176,7 @@ void ItemInfoJob::slotData(const QList<ItemListerRecord>& records)
     }
 
     // Sort the itemList based on name
+
     std::sort(itemsList.begin(), itemsList.end(), ItemInfoList::namefileLessThan);
 
     emit signalItemsInfo(itemsList);

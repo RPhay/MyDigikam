@@ -113,6 +113,7 @@ void LightTableWindow::closeEvent(QCloseEvent* e)
     // This only needs to be done when closing a visible window and not when
     // destroying a closed window, since the latter case will always report that
     // the thumbnail bar isn't visible.
+
     if (isVisible())
     {
         d->barViewDock->hide();
@@ -129,27 +130,33 @@ void LightTableWindow::showEvent(QShowEvent*)
     d->barViewDock->restoreVisibility();
 }
 
-// Deal with items dropped onto the thumbbar (e.g. from the Album view)
+/**
+ * Deal with items dropped onto the thumbbar (e.g. from the Album view)
+ */
 void LightTableWindow::slotThumbbarDroppedItems(const QList<ItemInfo>& list)
 {
     // Setting the third parameter of loadItemInfos to true
     // means that the images are added to the presently available images.
+
     loadItemInfos(ItemInfoList(list), ItemInfo(), true);
 }
 
-// We get here either
-// - via CTRL+L (from the albumview)
-//     a) digikamapp.cpp:  CTRL+key_L leads to slotImageLightTable())
-//     b) digikamview.cpp: void ItemIconView::slotImageLightTable()
-//          calls d->iconView->insertToLightTable(list, info);
-//     c) albumiconview.cpp: AlbumIconView::insertToLightTable
-//          calls ltview->loadItemInfos(list, current);
-// - via drag&drop, i.e. calls issued by the ...Dropped... routines
+/**
+ * We get here either
+ * - via CTRL+L (from the albumview)
+ *     a) digikamapp.cpp:  CTRL+key_L leads to slotImageLightTable())
+ *     b) digikamview.cpp: void ItemIconView::slotImageLightTable()
+ *          calls d->iconView->insertToLightTable(list, info);
+ *     c) albumiconview.cpp: AlbumIconView::insertToLightTable
+ *          calls ltview->loadItemInfos(list, current);
+ * - via drag&drop, i.e. calls issued by the ...Dropped... routines
+ */
 void LightTableWindow::loadItemInfos(const ItemInfoList& list,
                                       const ItemInfo& givenItemInfoCurrent,
                                       bool  addTo)
 {
     // Clear all items before adding new images to the light table.
+
     qCDebug(DIGIKAM_GENERAL_LOG) << "Clearing LT" << (!addTo);
 
     if (!addTo)
@@ -195,6 +202,7 @@ void LightTableWindow::slotRefreshStatusBar()
 void LightTableWindow::slotFileChanged(const QString& path)
 {
     QUrl url = QUrl::fromLocalFile(path);
+
     // NOTE: Thumbbar handle change through ItemCategorizedView
 
     if (!d->previewView->leftItemInfo().isNull())
@@ -229,6 +237,7 @@ void LightTableWindow::slotLeftPanelLeftButtonClicked()
 void LightTableWindow::slotRightPanelLeftButtonClicked()
 {
     // With navigate by pair option, only the left panel can be selected.
+
     if (d->navigateByPairAction->isChecked())
     {
         return;
@@ -342,16 +351,21 @@ void LightTableWindow::slotItemSelected(const ItemInfo& info)
     d->previewView->checkForSelection(info);
 }
 
-// Deal with one (or more) items dropped onto the left panel
+/**
+ * Deal with one (or more) items dropped onto the left panel
+ */
 void LightTableWindow::slotLeftDroppedItems(const ItemInfoList& list)
 {
     ItemInfo info = list.first();
+
     // add the image to the existing images
+
     loadItemInfos(list, info, true);
 
     // We will check if first item from list is already stored in thumbbar
     // Note that the thumbbar stores all ItemInfo reference
     // in memory for preview object.
+
     QModelIndex index = d->thumbView->findItemByInfo(info);
 
     if (index.isValid())
@@ -360,27 +374,36 @@ void LightTableWindow::slotLeftDroppedItems(const ItemInfoList& list)
     }
 }
 
-// Deal with one (or more) items dropped onto the right panel
+/**
+ * Deal with one (or more) items dropped onto the right panel
+ */
 void LightTableWindow::slotRightDroppedItems(const ItemInfoList& list)
 {
     ItemInfo info = list.first();
+
     // add the image to the existing images
+
     loadItemInfos(list, info, true);
 
     // We will check if first item from list is already stored in thumbbar
     // Note that the thumbbar stores all ItemInfo reference
     // in memory for preview object.
+
     QModelIndex index = d->thumbView->findItemByInfo(info);
 
     if (index.isValid())
     {
         slotSetItemOnRightPanel(info);
+
         // Make this item the current one.
+
         d->thumbView->setCurrentInfo(info);
     }
 }
 
-// Set the images for the left and right panel.
+/**
+ * Set the images for the left and right panel.
+ */
 void LightTableWindow::setLeftRightItems(const ItemInfoList& list, bool addTo)
 {
     ItemInfoList l = list;
@@ -396,6 +419,7 @@ void LightTableWindow::setLeftRightItems(const ItemInfoList& list, bool addTo)
     if (l.count() == 1 && !addTo)
     {
         // Just one item; this is used for the left panel.
+
         d->thumbView->setOnLeftPanel(info);
         slotSetItemOnLeftPanel(info);
         d->thumbView->setCurrentInfo(info);
@@ -405,6 +429,7 @@ void LightTableWindow::setLeftRightItems(const ItemInfoList& list, bool addTo)
     if (index.isValid())
     {
         // The first item is used for the left panel.
+
         if (!addTo)
         {
             d->thumbView->setOnLeftPanel(info);
@@ -412,6 +437,7 @@ void LightTableWindow::setLeftRightItems(const ItemInfoList& list, bool addTo)
         }
 
         // The subsequent item is used for the right panel.
+
         QModelIndex next = d->thumbView->nextIndex(index);
 
         if (next.isValid() && !addTo)
@@ -428,6 +454,7 @@ void LightTableWindow::setLeftRightItems(const ItemInfoList& list, bool addTo)
 
         // If navigate by pairs is active, the left panel item is selected.
         // (Fixes parts of bug #150296)
+
         if (d->navigateByPairAction->isChecked())
         {
             d->thumbView->setCurrentInfo(info);
@@ -602,6 +629,7 @@ void LightTableWindow::slotRemoveItem(const ItemInfo& info)
     qint64 infoId        = info.id();
 
     // First determine the next images to the current left and right image:
+
     ItemInfo next_linfo;
     ItemInfo next_rinfo;
 
@@ -638,6 +666,7 @@ void LightTableWindow::slotRemoveItem(const ItemInfo& info)
     d->thumbView->removeItemByInfo(info);
 
     // Make sure that next_linfo and next_rinfo are still available:
+
     if (!d->thumbView->findItemByInfo(next_linfo).isValid())
     {
         next_linfo = ItemInfo();
@@ -649,11 +678,13 @@ void LightTableWindow::slotRemoveItem(const ItemInfo& info)
     }
 
     // removal of the left panel item?
+
     if (!curr_linfo.isNull())
     {
         if (curr_linfo.id() == infoId)
         {
             leftPanelActive = true;
+
             // Delete the item A_L of the left panel:
             // 1)  A_L  B_R  C    D   ->   B_L  C_R  D
             // 2)  A_L  B    C_R  D   ->   B    C_L  D_R
@@ -668,15 +699,19 @@ void LightTableWindow::slotRemoveItem(const ItemInfo& info)
             // When removing the left panel image,
             // put the right panel image into the left panel.
             // Check if this one is not the same (i.e. also removed).
+
             if (!curr_rinfo.isNull())
             {
                 if (curr_rinfo.id() != infoId)
                 {
                     new_linfo = curr_rinfo;
+
                     // Set the right panel to the next image:
+
                     new_rinfo = next_rinfo;
 
                     // set the right panel active, but not in pair mode
+
                     if (!d->navigateByPairAction->isChecked())
                     {
                         leftPanelActive = false;
@@ -687,19 +722,24 @@ void LightTableWindow::slotRemoveItem(const ItemInfo& info)
     }
 
     // removal of the right panel item?
+
     if (!curr_rinfo.isNull())
     {
         if (curr_rinfo.id() == infoId)
         {
             // Leave the left panel as the current one
+
             new_linfo = curr_linfo;
+
             // Set the right panel to the next image
+
             new_rinfo = next_rinfo;
         }
     }
 
     // Now we deal with the corner cases, where no left or right item exists.
     // If the right panel would be set, but not the left-one, then swap
+
     if (new_linfo.isNull() && !new_rinfo.isNull())
     {
         new_linfo       = new_rinfo;
@@ -719,6 +759,7 @@ void LightTableWindow::slotRemoveItem(const ItemInfo& info)
     // Make sure that new_linfo and new_rinfo exist.
     // This addresses a crash occurring if the last image is removed
     // in the navigate by pairs mode.
+
     if (!d->thumbView->findItemByInfo(new_linfo).isValid())
     {
         new_linfo = ItemInfo();
@@ -730,12 +771,15 @@ void LightTableWindow::slotRemoveItem(const ItemInfo& info)
     }
 
     // no right item defined?
+
     if (new_rinfo.isNull())
     {
         // If there are at least two items, we can find reasonable right image.
+
         if (d->thumbView->countItems() > 1)
         {
             // See if there is an item next to the left one:
+
             QModelIndex index = d->thumbView->findItemByInfo(new_linfo);
             QModelIndex next;
 
@@ -753,6 +797,7 @@ void LightTableWindow::slotRemoveItem(const ItemInfo& info)
                 // If there is no item to the right of new_linfo
                 // then we can choose the first item for new_rinfo
                 // (as we made sure that there are at least two items)
+
                 QModelIndex first = d->thumbView->firstIndex();
                 new_rinfo         = d->thumbView->findItemByIndex(first);
             }
@@ -760,17 +805,20 @@ void LightTableWindow::slotRemoveItem(const ItemInfo& info)
     }
 
     // Check if left and right are set to the same
+
     if (!new_linfo.isNull() && !new_rinfo.isNull())
     {
         if (new_linfo.id() == new_rinfo.id())
         {
             // Only keep the left one
+
             new_rinfo = ItemInfo();
         }
     }
 
     // If the right panel would be set, but not the left-one, then swap
     // (note that this has to be done here again!)
+
     if (new_linfo.isNull() && !new_rinfo.isNull())
     {
         new_linfo       = new_rinfo;
@@ -779,12 +827,14 @@ void LightTableWindow::slotRemoveItem(const ItemInfo& info)
     }
 
     // set the image for the left panel
+
     if (!new_linfo.isNull())
     {
         d->thumbView->setOnLeftPanel(new_linfo);
         slotSetItemOnLeftPanel(new_linfo);
 
         //  make this the selected item if the left was active before
+
         if (leftPanelActive)
         {
             d->thumbView->setCurrentInfo(new_linfo);
@@ -797,12 +847,14 @@ void LightTableWindow::slotRemoveItem(const ItemInfo& info)
     }
 
     // set the image for the right panel
+
     if (!new_rinfo.isNull())
     {
         d->thumbView->setOnRightPanel(new_rinfo);
         slotSetItemOnRightPanel(new_rinfo);
 
         //  make this the selected item if the left was active before
+
         if (!leftPanelActive)
         {
             d->thumbView->setCurrentInfo(new_rinfo);
@@ -1041,15 +1093,19 @@ DInfoInterface* LightTableWindow::infoIface(DPluginAction* const ac)
         case DPluginAction::GenericImport:
             aset = ApplicationSettings::ImportExport;
             break;
+
         case DPluginAction::GenericMetadata:
             aset = ApplicationSettings::Metadata;
             break;
+
         case DPluginAction::GenericTool:
             aset = ApplicationSettings::Tools;
             break;
+
         case DPluginAction::GenericView:
             aset = ApplicationSettings::Slideshow;
             break;
+
         default:
             break;
     }

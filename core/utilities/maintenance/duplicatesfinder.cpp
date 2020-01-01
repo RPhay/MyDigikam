@@ -97,10 +97,14 @@ DuplicatesFinder::DuplicatesFinder(const AlbumList& albums, const AlbumList& tag
     d->searchResultRestriction  = searchResultRestriction;
 
     foreach (Album* const a, albums)
+    {
         d->albumsIdList << a->id();
+    }
 
     foreach (Album* const a, tags)
+    {
         d->tagsIdList << a->id();
+    }
 }
 
 DuplicatesFinder::DuplicatesFinder(const int minSimilarity, int maxSimilarity,
@@ -113,7 +117,9 @@ DuplicatesFinder::DuplicatesFinder(const int minSimilarity, int maxSimilarity,
     d->searchResultRestriction  = searchResultRestriction;
 
     foreach (Album* const a, AlbumManager::instance()->allPAlbums())
+    {
         d->albumsIdList << a->id();
+    }
 }
 
 DuplicatesFinder::~DuplicatesFinder()
@@ -140,10 +146,14 @@ void DuplicatesFinder::slotStart()
     jobInfo.setSearchResultRestriction(d->searchResultRestriction);
 
     if (d->isAlbumUpdate)
+    {
         jobInfo.setAlbumUpdate();
+    }
 
     if (!d->tagsIdList.isEmpty())
+    {
         jobInfo.setTagsIds(d->tagsIdList);
+    }
 
     d->job = DBJobsManager::instance()->startSearchesJobThread(jobInfo);
 

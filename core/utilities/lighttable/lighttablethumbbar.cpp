@@ -162,11 +162,11 @@ class Q_DECL_HIDDEN LightTableThumbBar::Private
 public:
 
     explicit Private()
+      : navigateByPair(false),
+        imageInfoModel(nullptr),
+        imageFilterModel(nullptr),
+        dragDropHandler(nullptr)
     {
-        navigateByPair   = false;
-        imageInfoModel   = nullptr;
-        imageFilterModel = nullptr;
-        dragDropHandler  = nullptr;
     }
 
     bool                     navigateByPair;
@@ -237,7 +237,7 @@ void LightTableThumbBar::setItems(const ItemInfoList& list)
 
 void LightTableThumbBar::slotDockLocationChanged(Qt::DockWidgetArea area)
 {
-    if (area == Qt::LeftDockWidgetArea || area == Qt::RightDockWidgetArea)
+    if ((area == Qt::LeftDockWidgetArea) || (area == Qt::RightDockWidgetArea))
     {
         setFlow(TopToBottom);
     }

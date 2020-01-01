@@ -69,8 +69,8 @@ private:
 
 private Q_SLOTS:
 
-    void slotStart() override;
-    void slotCancel() override;
+    void slotStart()                override;
+    void slotCancel()               override;
     void slotAdvance(const QImage&);
 
 private:

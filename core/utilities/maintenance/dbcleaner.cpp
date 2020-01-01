@@ -111,15 +111,15 @@ DbCleaner::DbCleaner(bool cleanThumbsDb,
         d->databasesToAnalyseCount = d->databasesToAnalyseCount + 1;
     }
 
-    d->shrinkDatabases = shrinkDatabases;
+    d->shrinkDatabases   = shrinkDatabases;
 
     if (shrinkDatabases)
     {
         d->databasesToShrinkCount = 4;
-        d->shrinkDlg = new DbShrinkDialog(DigikamApp::instance());
+        d->shrinkDlg              = new DbShrinkDialog(DigikamApp::instance());
     }
 
-    d->thread          = new MaintenanceThread(this);
+    d->thread            = new MaintenanceThread(this);
 
     connect(d->thread, SIGNAL(signalAdvance()),
             this, SLOT(slotAdvance()));
@@ -139,7 +139,9 @@ void DbCleaner::slotStart()
     ProgressManager::addProgressItem(this);
 
     // Set one item to make sure that the progress bar is shown.
+
     setTotalItems(d->databasesToAnalyseCount + d->databasesToShrinkCount);
+
     //qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items at start: " << completedItems() << "/" << totalItems();
 
     connect(d->thread, SIGNAL(signalCompleted()),
@@ -149,11 +151,13 @@ void DbCleaner::slotStart()
             this, SLOT(slotAddItemsToProcess(int)));
 
     // Set the wiring from the data signal to the data slot.
+
     connect(d->thread,SIGNAL(signalData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)),
             this, SLOT(slotFetchedData(QList<qlonglong>,QList<int>,QList<Identity>,QList<qlonglong>)));
 
     // Compute the database junk. This will lead to the call of the slot
     // slotFetchedData.
+
     d->thread->computeDatabaseJunk(d->cleanThumbsDb, d->cleanFacesDb, d->cleanSimilarityDb);
     d->thread->start();
 }
@@ -169,6 +173,7 @@ void DbCleaner::slotFetchedData(const QList<qlonglong>& staleImageIds,
                                 const QList<qlonglong>& staleImageSimilarities)
 {
     // We have data now. Store it and trigger the core db cleaning
+
     d->imagesToRemove         = staleImageIds;
     d->staleThumbnails        = staleThumbIds;
     d->staleIdentities        = staleIdentities;
@@ -199,6 +204,7 @@ void DbCleaner::slotFetchedData(const QList<qlonglong>& staleImageIds,
     }
 
     setTotalItems(totalItems() + d->imagesToRemove.size() + d->staleThumbnails.size() + d->staleIdentities.size());
+
     //qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items after analysis: " << completedItems() << "/" << totalItems();
 }
 
@@ -264,6 +270,7 @@ void DbCleaner::slotCleanedItems()
 void DbCleaner::slotCleanedThumbnails()
 {
     // We cleaned the thumbnails. Now clean the recognition db
+
     disconnect(d->thread, SIGNAL(signalCompleted()),
                this, SLOT(slotCleanedThumbnails()));
 
@@ -275,10 +282,12 @@ void DbCleaner::slotCleanedThumbnails()
             setLabel(i18n("Clean up the databases : ") + i18n("cleaning recognition db"));
 
             // GO! and don't forget the signal!
+
             connect(d->thread, SIGNAL(signalCompleted()),
                     this, SLOT(slotCleanedFaces()));
 
             // We cleaned the thumbs db. Now clean the faces db.
+
             d->thread->cleanFacesDb(d->staleIdentities);
             d->thread->start();
         }
@@ -297,12 +306,14 @@ void DbCleaner::slotCleanedThumbnails()
 void DbCleaner::slotCleanedFaces()
 {
     // We cleaned the recognition db. Now clean the similarity db
+
     disconnect(d->thread, SIGNAL(signalCompleted()),
                this, SLOT(slotCleanedFaces()));
 
     if (d->cleanSimilarityDb)
     {
         // TODO: implement similarity db cleanup
+
         if (!d->staleImageSimilarities.isEmpty())
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Found" << d->staleImageSimilarities.size()
@@ -310,10 +321,12 @@ void DbCleaner::slotCleanedFaces()
             setLabel(i18n("Clean up the databases : ") + i18n("cleaning similarity db"));
 
             // GO! and don't forget the signal!
+
             connect(d->thread, SIGNAL(signalCompleted()),
                     this, SLOT(slotCleanedSimilarity()));
 
             // We cleaned the thumbs db. Now clean the faces db.
+
             d->thread->cleanSimilarityDb(d->staleImageSimilarities);
             d->thread->start();
         }
@@ -334,6 +347,7 @@ void DbCleaner::slotCleanedFaces()
 void DbCleaner::slotCleanedSimilarity()
 {
     // We cleaned the similarity db. We are done.
+
     if (d->shrinkDatabases)
     {
         slotShrinkDatabases();
@@ -367,6 +381,7 @@ void DbCleaner::slotShrinkDatabases()
 //                                 << d->progressTimer->isActive();
 
     d->thread->start();
+
 //    qCDebug(DIGIKAM_GENERAL_LOG) << "Is timer active after start():"
 //                                 << d->progressTimer->isActive();
 //    d->progressTimer->start(300);

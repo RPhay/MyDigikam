@@ -111,6 +111,7 @@ qlonglong MaintenanceData::getImageId() const
     }
 
     d->mutex.unlock();
+
     return id;
 }
 
@@ -125,6 +126,7 @@ int MaintenanceData::getThumbnailId() const
     }
 
     d->mutex.unlock();
+
     return id;
 }
 
@@ -139,6 +141,7 @@ QString MaintenanceData::getImagePath() const
     }
 
     d->mutex.unlock();
+
     return path;
 }
 
@@ -153,6 +156,7 @@ ItemInfo MaintenanceData::getItemInfo() const
     }
 
     d->mutex.unlock();
+
     return info;
 }
 
@@ -167,6 +171,7 @@ Identity MaintenanceData::getIdentity() const
     }
 
     d->mutex.unlock();
+
     return identity;
 }
 
@@ -181,6 +186,7 @@ qlonglong MaintenanceData::getSimilarityImageId() const
     }
 
     d->mutex.unlock();
+
     return id;
 }
 

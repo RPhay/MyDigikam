@@ -54,7 +54,7 @@ public:
     void   setLeftItemInfo(const ItemInfo& info = ItemInfo());
     void   setRightItemInfo(const ItemInfo& info = ItemInfo());
 
-    ItemInfo leftItemInfo() const;
+    ItemInfo leftItemInfo()  const;
     ItemInfo rightItemInfo() const;
 
     void setPreviewSettings(const PreviewSettings& settings);
@@ -62,17 +62,17 @@ public:
     void   checkForSelection(const ItemInfo& info);
     void   toggleFullScreen(bool set);
 
-    double leftZoomMax()  const;
-    double leftZoomMin()  const;
+    double leftZoomMax()     const;
+    double leftZoomMin()     const;
 
-    double rightZoomMax() const;
-    double rightZoomMin() const;
+    double rightZoomMax()    const;
+    double rightZoomMin()    const;
 
-    bool   leftMaxZoom()  const;
-    bool   leftMinZoom()  const;
+    bool   leftMaxZoom()     const;
+    bool   leftMinZoom()     const;
 
-    bool   rightMaxZoom() const;
-    bool   rightMinZoom() const;
+    bool   rightMaxZoom()    const;
+    bool   rightMinZoom()    const;
 
     void   leftReload();
     void   rightReload();

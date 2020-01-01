@@ -104,6 +104,7 @@ void ImageQualityTask::run()
 
         // Get item preview to perform quality analysis. No need to load whole image, this will be slower.
         // 1024 pixels size image must be enough to get suitable Quality results.
+
         DImg dimg = PreviewLoadThread::loadFastSynchronously(path, 1024);
 
         if (!dimg.isNull() && !m_cancel)
@@ -127,8 +128,9 @@ void ImageQualityTask::run()
             delete d->imgqsort; //delete image data after setting label
             d->imgqsort = nullptr;
         }
- 
+
         // Dispatch progress to Progress Manager
+
         QImage qimg = dimg.smoothScale(22, 22, Qt::KeepAspectRatio).copyQImage();
         emit signalFinished(qimg);
     }
