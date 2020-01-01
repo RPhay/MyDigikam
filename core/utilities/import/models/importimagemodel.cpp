@@ -243,12 +243,12 @@ QModelIndex ImportItemModel::indexForCamItemId(qlonglong id) const
 {
     int index = d->idHash.value(id, -1);
 
-    if (index != -1)
+    if (index == -1)
     {
-        return createIndex(index, 0);
+        return QModelIndex();
     }
 
-    return QModelIndex();
+    return createIndex(index, 0);
 }
 
 QList<QModelIndex> ImportItemModel::indexesForCamItemId(qlonglong id) const
@@ -292,7 +292,7 @@ CamItemInfo ImportItemModel::retrieveCamItemInfo(const QModelIndex& index)
     }
 
     ImportItemModel* const model = index.data(ImportItemModelPointerRole).value<ImportItemModel*>();
-    int row                       = index.data(ImportItemModelInternalId).toInt();
+    int                    row   = index.data(ImportItemModelInternalId).toInt();
 
     if (!model)
     {
@@ -311,7 +311,7 @@ qlonglong ImportItemModel::retrieveCamItemId(const QModelIndex& index)
     }
 
     ImportItemModel* const model = index.data(ImportItemModelPointerRole).value<ImportItemModel*>();
-    int                     row   = index.data(ImportItemModelInternalId).toInt();
+    int                    row   = index.data(ImportItemModelInternalId).toInt();
 
     if (!model)
     {
