@@ -147,4 +147,10 @@ void ItemIconView::slotSidebarTabTitleStyleChanged()
     //     d->rightSideBar->applySettings();
 }
 
+void ItemIconView::slotPopupFiltersView()
+{
+    d->rightSideBar->setActiveTab(d->filterWidget);
+    d->filterWidget->setFocusToTextFilter();
+}
+
 } // namespace Digikam

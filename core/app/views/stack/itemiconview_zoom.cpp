@@ -151,4 +151,44 @@ void ItemIconView::slotFitToWindow()
     }
 }
 
+void ItemIconView::setThumbSize(int size)
+{
+    if (viewMode() == StackedView::PreviewImageMode)
+    {
+        double z = DZoomBar::zoomFromSize(size, zoomMin(), zoomMax());
+        setZoomFactor(z);
+    }
+    else if (viewMode() == StackedView::IconViewMode  ||
+             viewMode() == StackedView::TableViewMode ||
+             viewMode() == StackedView::TrashViewMode)
+    {
+        if (size > ThumbnailSize::maxThumbsSize())
+        {
+            d->thumbSize = ThumbnailSize::maxThumbsSize();
+        }
+        else if (size < ThumbnailSize::Small)
+        {
+            d->thumbSize = ThumbnailSize::Small;
+        }
+        else
+        {
+            d->thumbSize = size;
+        }
+
+        emit signalThumbSizeChanged(d->thumbSize);
+
+        d->thumbSizeTimer->start();
+    }
+}
+
+void ItemIconView::slotThumbSizeEffect()
+{
+    d->iconView->setThumbnailSize(ThumbnailSize(d->thumbSize));
+    d->tableView->setThumbnailSize(ThumbnailSize(d->thumbSize));
+    d->trashView->setThumbnailSize(ThumbnailSize(d->thumbSize));
+    toggleZoomActions();
+
+    ApplicationSettings::instance()->setDefaultIconSize(d->thumbSize);
+}
+
 } // namespace Digikam

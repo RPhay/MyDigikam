@@ -46,14 +46,14 @@
 
 // Local includes
 
+#include "digikam_config.h"
+#include "digikam_debug.h"
+#include "digikam_globals.h"
 #include "albumhistory.h"
 #include "labelstreeview.h"
 #include "albumpointer.h"
 #include "coredbsearchxml.h"
 #include "dbinfoiface.h"
-#include "digikam_config.h"
-#include "digikam_debug.h"
-#include "digikam_globals.h"
 #include "digikamapp.h"
 #include "digikamitemview.h"
 #include "dfileoperations.h"

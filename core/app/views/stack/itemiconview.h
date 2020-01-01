@@ -68,98 +68,12 @@ public:
     ~ItemIconView();
 
     void applySettings();
-    void refreshView();
-
-    void setToolsIconView(DCategorizedView* const view);
-    void setThumbSize(int size);
-    void toggleShowBar(bool);
-
-    void connectIconViewFilter(FilterStatusBar* const filter);
-
-    QUrl      currentUrl()                                                         const;
-    bool      hasCurrentItem()                                                     const;
-    ItemInfo  currentInfo()                                                        const;
-    StackedView::StackedViewMode viewMode()                                        const;
-
-    /**
-     * Get currently selected items. By default only the first images in groups are
-     * given, while all can be obtained by setting the grouping parameter to true.
-     * Given an operation, it will be determined from settings/user query whether
-     * only the first or all items in a group are returned.
-     * Ideally only the latter (giving an operation) is used.
-     */
-    QList<QUrl>  selectedUrls(bool grouping = false)                               const;
-    QList<QUrl>  selectedUrls(const ApplicationSettings::OperationType type)       const;
-    ItemInfoList selectedInfoList(const bool currentFirst = false,
-                                   const bool grouping = false)                    const;
-    ItemInfoList selectedInfoList(const ApplicationSettings::OperationType type,
-                                   const bool currentFirst = false)                const;
-    /**
-     * Get all items in the current view.
-     * Whether only the first or all grouped items are returned is determined
-     * as described above.
-     */
-    QList<QUrl>  allUrls(bool grouping = false)                                    const;
-    ItemInfoList allInfo(const bool grouping = false)                              const;
-    ItemInfoList allInfo(const ApplicationSettings::OperationType type)            const;
-
-    void toggleFullScreen(bool set);
 
 private:
 
     void setupConnections();
     void loadViewState();
     void saveViewState();
-
-Q_SIGNALS:
-
-    void signalImageSelected(const ItemInfoList& selectedImage,
-                             const ItemInfoList& allImages);
-    void signalNoCurrentItem();
-    void signalSelectionChanged(int numberOfSelectedItems);
-    void signalTrashSelectionChanged(const QString& text);
-    void signalThumbSizeChanged(int);
-    void signalSwitchedToPreview();
-    void signalSwitchedToIconView();
-    void signalSwitchedToMapView();
-    void signalSwitchedToTableView();
-    void signalSwitchedToTrashView();
-
-    void signalGotoAlbumAndItem(const ItemInfo&);
-    void signalGotoDateAndItem(AlbumIconItem*);
-    void signalGotoTagAndItem(int tagID);
-
-private Q_SLOTS:
-
-    void slotTogglePreviewMode(const ItemInfo& info);
-    void slotEscapePreview();
-    void slotRefreshImagePreview();
-
-    void slotFirstItem();
-    void slotPrevItem();
-    void slotNextItem();
-    void slotLastItem();
-    void slotSelectItemByUrl(const QUrl&);
-    void slotAwayFromSelection();
-
-    void slotViewModeChanged();
-
-    void slotThumbSizeEffect();
-
-    void slotPopupFiltersView();
-    void slotSetupMetadataFilters(int);
-
-
-    void slotShowContextMenu(QContextMenuEvent* event,
-                             const QList<QAction*>& extraGroupingActions = QList<QAction*>());
-
-    void slotShowContextMenuOnInfo(QContextMenuEvent* event, const ItemInfo& info,
-                                   const QList<QAction*>& extraGroupingActions = QList<QAction*>(),
-                                   ItemFilterModel* imageFilterModel = nullptr);
-
-    void slotShowGroupContextMenu(QContextMenuEvent* event,
-                                  const QList<ItemInfo>& selectedInfos,
-                                  ItemFilterModel* imageFilterModel = nullptr);
 
     // ----------------------------------------------------------------------------------------
 
@@ -189,10 +103,12 @@ public:
 
     double zoomMin()                                                               const;
     double zoomMax()                                                               const;
+    void setThumbSize(int size);
 
 Q_SIGNALS:
 
     void signalZoomChanged(double);
+    void signalThumbSizeChanged(int);
 
 private:
 
@@ -209,6 +125,7 @@ public Q_SLOTS:
 private Q_SLOTS:
 
     void slotZoomFactorChanged(double);
+    void slotThumbSizeEffect();
 
     //@}
 
@@ -252,7 +169,7 @@ private Q_SLOTS:
 
     void slotLeftSidebarChangedTab(QWidget* w);
     void slotSidebarTabTitleStyleChanged();
-
+    void slotPopupFiltersView();
     //@}
 
     // ----------------------------------------------------------------------------------------
@@ -408,11 +325,45 @@ private Q_SLOTS:
     // ----------------------------------------------------------------------------------------
 
     //@{
-    /// Image management methods - itemiconview_image.cpp
+    /// Items management methods - itemiconview_items.cpp
 
 public:
 
+    QUrl      currentUrl()                                                         const;
+    bool      hasCurrentItem()                                                     const;
+    ItemInfo  currentInfo()                                                        const;
+
+    /**
+     * Get currently selected items. By default only the first images in groups are
+     * given, while all can be obtained by setting the grouping parameter to true.
+     * Given an operation, it will be determined from settings/user query whether
+     * only the first or all items in a group are returned.
+     * Ideally only the latter (giving an operation) is used.
+     */
+    QList<QUrl>  selectedUrls(bool grouping = false)                               const;
+    QList<QUrl>  selectedUrls(const ApplicationSettings::OperationType type)       const;
+    ItemInfoList selectedInfoList(const bool currentFirst = false,
+                                   const bool grouping = false)                    const;
+    ItemInfoList selectedInfoList(const ApplicationSettings::OperationType type,
+                                   const bool currentFirst = false)                const;
+    /**
+     * Get all items in the current view.
+     * Whether only the first or all grouped items are returned is determined
+     * as described above.
+     */
+    QList<QUrl>  allUrls(bool grouping = false)                                    const;
+    ItemInfoList allInfo(const bool grouping = false)                              const;
+    ItemInfoList allInfo(const ApplicationSettings::OperationType type)            const;
+
     void imageTransform(MetaEngineRotation::TransformationAction transform);
+
+Q_SIGNALS:
+    
+    void signalNoCurrentItem();
+    void signalSelectionChanged(int numberOfSelectedItems);
+    void signalTrashSelectionChanged(const QString& text);
+    void signalImageSelected(const ItemInfoList& selectedImage,
+                             const ItemInfoList& allImages);
 
 public Q_SLOTS:
 
@@ -440,9 +391,61 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
+    void slotFirstItem();
+    void slotPrevItem();
+    void slotNextItem();
+    void slotLastItem();
+    void slotSelectItemByUrl(const QUrl&);
+    void slotAwayFromSelection();
     void slotImageSelected();
     void slotDispatchImageSelected();
     void slotImageChangeFailed(const QString& message, const QStringList& fileNames);
+    //@}
+
+    // ----------------------------------------------------------------------------------------
+
+    //@{
+    /// Views management methods - itemiconview_views.cpp
+
+public:
+
+    void setToolsIconView(DCategorizedView* const view);
+    void toggleShowBar(bool);
+    void toggleFullScreen(bool set);
+    void refreshView();
+    void connectIconViewFilter(FilterStatusBar* const filter);
+    StackedView::StackedViewMode viewMode()                                        const;
+
+Q_SIGNALS:
+
+    void signalSwitchedToPreview();
+    void signalSwitchedToIconView();
+    void signalSwitchedToMapView();
+    void signalSwitchedToTableView();
+    void signalSwitchedToTrashView();
+
+    void signalGotoAlbumAndItem(const ItemInfo&);
+    void signalGotoDateAndItem(AlbumIconItem*);
+    void signalGotoTagAndItem(int tagID);
+
+private Q_SLOTS:
+
+    void slotTogglePreviewMode(const ItemInfo& info);
+    void slotEscapePreview();
+    void slotRefreshImagePreview();
+    void slotViewModeChanged();
+    void slotSetupMetadataFilters(int);
+
+    void slotShowContextMenu(QContextMenuEvent* event,
+                             const QList<QAction*>& extraGroupingActions = QList<QAction*>());
+
+    void slotShowContextMenuOnInfo(QContextMenuEvent* event, const ItemInfo& info,
+                                   const QList<QAction*>& extraGroupingActions = QList<QAction*>(),
+                                   ItemFilterModel* imageFilterModel = nullptr);
+
+    void slotShowGroupContextMenu(QContextMenuEvent* event,
+                                  const QList<ItemInfo>& selectedInfos,
+                                  ItemFilterModel* imageFilterModel = nullptr);
     //@}
 
     // ----------------------------------------------------------------------------------------
