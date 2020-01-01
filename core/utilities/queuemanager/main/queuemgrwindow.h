@@ -89,7 +89,7 @@ Q_SIGNALS:
 
 protected:
 
-    void moveEvent(QMoveEvent* e) override;
+    void moveEvent(QMoveEvent* e)           override;
 
 public Q_SLOTS:
 
@@ -122,9 +122,9 @@ private:
 
 private Q_SLOTS:
 
-    void slotSetup()          override;
-    void slotComponentsInfo() override;
-    void slotDBStat()         override;
+    void slotSetup()                        override;
+    void slotComponentsInfo()               override;
+    void slotDBStat()                       override;
     void slotAction(const Digikam::ActionData&);
     void slotHistoryEntryClicked(int, qlonglong);
     void slotAssignedToolsChanged(const AssignedBatchTools&);

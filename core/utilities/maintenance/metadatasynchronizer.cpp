@@ -58,9 +58,9 @@ public:
     AlbumList                           palbumList;
     AlbumList::Iterator                 albumsIt;
 
-    ItemInfoJob*                       imageInfoJob;
+    ItemInfoJob*                        imageInfoJob;
 
-    ItemInfoList                       imageInfoList;
+    ItemInfoList                        imageInfoList;
 
     MaintenanceThread*                  thread;
 

@@ -45,9 +45,9 @@ public:
 
     enum FinderMode
     {
-        CompleteCollectionScan,   /** Scan whole collection immediately.                  */
-        ScanDeferredFiles,        /** Defer whole collection scan.                      */
-        ScheduleCollectionScan    /** Scan immediately folders list passed in constructor. */
+        CompleteCollectionScan,   ///< Scan whole collection immediately.
+        ScanDeferredFiles,        ///< Defer whole collection scan.
+        ScheduleCollectionScan    ///< Scan immediately folders list passed in constructor.
     };
 
 public:

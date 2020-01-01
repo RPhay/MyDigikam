@@ -166,14 +166,14 @@ void MaintenanceMngr::slotToolCompleted(ProgressItem* tool)
 
 void MaintenanceMngr::slotToolCanceled(ProgressItem* tool)
 {
-    if (tool == dynamic_cast<ProgressItem*>(d->newItemsFinder)        ||
-        tool == dynamic_cast<ProgressItem*>(d->thumbsGenerator)       ||
-        tool == dynamic_cast<ProgressItem*>(d->fingerPrintsGenerator) ||
-        tool == dynamic_cast<ProgressItem*>(d->duplicatesFinder)      ||
-        tool == dynamic_cast<ProgressItem*>(d->databaseCleaner)       ||
-        tool == dynamic_cast<ProgressItem*>(d->facesDetector)         ||
-        tool == dynamic_cast<ProgressItem*>(d->imageQualitySorter)    ||
-        tool == dynamic_cast<ProgressItem*>(d->metadataSynchronizer))
+    if ((tool == dynamic_cast<ProgressItem*>(d->newItemsFinder))        ||
+        (tool == dynamic_cast<ProgressItem*>(d->thumbsGenerator))       ||
+        (tool == dynamic_cast<ProgressItem*>(d->fingerPrintsGenerator)) ||
+        (tool == dynamic_cast<ProgressItem*>(d->duplicatesFinder))      ||
+        (tool == dynamic_cast<ProgressItem*>(d->databaseCleaner))       ||
+        (tool == dynamic_cast<ProgressItem*>(d->facesDetector))         ||
+        (tool == dynamic_cast<ProgressItem*>(d->imageQualitySorter))    ||
+        (tool == dynamic_cast<ProgressItem*>(d->metadataSynchronizer)))
     {
         cancel();
     }
@@ -198,7 +198,9 @@ void MaintenanceMngr::stage1()
                 PAlbum* const palbum = dynamic_cast<PAlbum*>(a);
 
                 if (palbum)
+                {
                     paths << palbum->folderPath();
+                }
             }
 
             d->newItemsFinder = new NewItemsFinder(NewItemsFinder::ScheduleCollectionScan, paths);
@@ -331,7 +333,6 @@ void MaintenanceMngr::stage7()
         stage8();
     }
 }
-
 
 void MaintenanceMngr::stage8()
 {

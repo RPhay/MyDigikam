@@ -21,7 +21,6 @@
  *
  * ============================================================ */
 
-#include "queuemgrwindow.h"
 #include "queuemgrwindow_p.h"
 
 // Qt includes
@@ -658,7 +657,7 @@ void QueueMgrWindow::populateToolsList()
 
 void QueueMgrWindow::slotRun()
 {
-    d->currentQueueToProcess = 0;
+    d->currentQueueToProcess   = 0;
 
     QueueListView* const queue = d->queuePool->currentQueue();
     QString msg;

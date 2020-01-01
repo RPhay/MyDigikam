@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_BQM_QUEUE_MGR_WINDOW_PRIVATE_H
 #define DIGIKAM_BQM_QUEUE_MGR_WINDOW_PRIVATE_H
 
+#include "queuemgrwindow.h"
+
 // Qt includes
 
 #include <QLabel>
@@ -53,41 +55,41 @@ class Q_DECL_HIDDEN QueueMgrWindow::Private
 public:
 
     explicit Private()
-        : TOP_SPLITTER_CONFIG_KEY(QLatin1String("BqmTopSplitter")),
+        : busy(false),
+          processingAllQueues(false),
+          currentQueueToProcess(0),
+          statusLabel(nullptr),
+          clearQueueAction(nullptr),
+          removeItemsSelAction(nullptr),
+          removeItemsDoneAction(nullptr),
+          moveUpToolAction(nullptr),
+          moveDownToolAction(nullptr),
+          removeToolAction(nullptr),
+          clearToolsAction(nullptr),
+          runAction(nullptr),
+          runAllAction(nullptr),
+          stopAction(nullptr),
+          removeQueueAction(nullptr),
+          newQueueAction(nullptr),
+          saveQueueAction(nullptr),
+          donateMoneyAction(nullptr),
+          contributeAction(nullptr),
+          rawCameraListAction(nullptr),
+          topSplitter(nullptr),
+          bottomSplitter(nullptr),
+          verticalSplitter(nullptr),
+          batchToolsMgr(nullptr),
+          statusProgressBar(nullptr),
+          thread(nullptr),
+          toolsView(nullptr),
+          toolSettings(nullptr),
+          assignedList(nullptr),
+          queuePool(nullptr),
+          queueSettingsView(nullptr),
+          TOP_SPLITTER_CONFIG_KEY(QLatin1String("BqmTopSplitter")),
           BOTTOM_SPLITTER_CONFIG_KEY(QLatin1String("BqmBottomSplitter")),
           VERTICAL_SPLITTER_CONFIG_KEY(QLatin1String("BqmVerticalSplitter"))
     {
-        busy                   = false;
-        processingAllQueues    = false;
-        clearQueueAction       = nullptr;
-        moveUpToolAction       = nullptr;
-        moveDownToolAction     = nullptr;
-        removeToolAction       = nullptr;
-        removeItemsSelAction   = nullptr;
-        removeItemsDoneAction  = nullptr;
-        clearToolsAction       = nullptr;
-        donateMoneyAction      = nullptr;
-        statusProgressBar      = nullptr;
-        statusLabel            = nullptr;
-        runAction              = nullptr;
-        runAllAction           = nullptr;
-        stopAction             = nullptr;
-        removeQueueAction      = nullptr;
-        newQueueAction         = nullptr;
-        saveQueueAction        = nullptr;
-        rawCameraListAction    = nullptr;
-        topSplitter            = nullptr;
-        bottomSplitter         = nullptr;
-        verticalSplitter       = nullptr;
-        contributeAction       = nullptr;
-        assignedList           = nullptr;
-        queuePool              = nullptr;
-        queueSettingsView      = nullptr;
-        toolsView              = nullptr;
-        batchToolsMgr          = nullptr;
-        toolSettings           = nullptr;
-        thread                 = nullptr;
-        currentQueueToProcess  = 0;
     }
 
     bool                     busy;
