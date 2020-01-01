@@ -375,19 +375,19 @@ QPixmap ImportDelegate::pixmapForDrag(const QStyleOptionViewItem& option, const 
 }
 
 bool ImportDelegate::acceptsToolTip(const QPoint& pos, const QRect& visualRect, const QModelIndex& index,
-                                   QRect* toolTipRect) const
+                                    QRect* toolTipRect) const
 {
     return onActualPixmapRect(pos, visualRect, index, toolTipRect);
 }
 
 bool ImportDelegate::acceptsActivation(const QPoint& pos, const QRect& visualRect, const QModelIndex& index,
-                                      QRect* activationRect) const
+                                       QRect* activationRect) const
 {
     return onActualPixmapRect(pos, visualRect, index, activationRect);
 }
 
 bool ImportDelegate::onActualPixmapRect(const QPoint& pos, const QRect& visualRect, const QModelIndex& index,
-                                       QRect* returnRect) const
+                                        QRect* returnRect) const
 {
     QRect actualRect = actualPixmapRect(index);
 

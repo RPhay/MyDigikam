@@ -245,10 +245,10 @@ class Q_DECL_HIDDEN ImportFilterModel::ImportFilterModelPrivate : public QObject
 public:
 
     ImportFilterModelPrivate()
+      : q(nullptr),
+        importItemModel(nullptr),
+        filter(nullptr)
     {
-        q               = nullptr;
-        importItemModel = nullptr;
-        filter          = nullptr;
     }
 
     void init(ImportFilterModel* const _q);
@@ -424,9 +424,12 @@ void ImportFilterModel::setDirectSourceImportModel(ImportItemModel* const source
     if (d->importItemModel)
     {
         //disconnect(d->importItemModel, SIGNAL(modelReset()),
-                           //this, SLOT(slotModelReset()));
+        //           this, SLOT(slotModelReset()));
+
         //TODO: slotModelReset(); will be added when implementing filtering options
-        disconnect(d->importItemModel, SIGNAL(processAdded(QList<CamItemInfo>)), this, SLOT(slotProcessAdded(QList<CamItemInfo>)));
+
+        disconnect(d->importItemModel, SIGNAL(processAdded(QList<CamItemInfo>)),
+                   this, SLOT(slotProcessAdded(QList<CamItemInfo>)));
     }
 
     // TODO do we need to delete the old one?
@@ -435,13 +438,16 @@ void ImportFilterModel::setDirectSourceImportModel(ImportItemModel* const source
     if (d->importItemModel)
     {
         //connect(d, SIGNAL(reAddCamItemInfos(QList<CamItemInfo>)),
-                //d->importItemModel, SLOT(reAddCamItemInfos(QList<CamItemInfo>)));
+        //        d->importItemModel, SLOT(reAddCamItemInfos(QList<CamItemInfo>)));
 
         //connect(d, SIGNAL(reAddingFinished()),
-                //d->importItemModel, SLOT(reAddingFinished()));
+        //        d->importItemModel, SLOT(reAddingFinished()));
 
-        //TODO: connect(d->importItemModel, SIGNAL(modelReset()), this, SLOT(slotModelReset()));
-        connect(d->importItemModel, SIGNAL(processAdded(QList<CamItemInfo>)), this, SLOT(slotProcessAdded(QList<CamItemInfo>)));
+        //TODO: connect(d->importItemModel, SIGNAL(modelReset()),
+        //              this, SLOT(slotModelReset()));
+
+        connect(d->importItemModel, SIGNAL(processAdded(QList<CamItemInfo>)),
+                this, SLOT(slotProcessAdded(QList<CamItemInfo>)));
     }
 
     setSourceModel(d->importItemModel);
@@ -534,7 +540,7 @@ bool ImportFilterModel::filterAcceptsRow(int source_row, const QModelIndex& sour
         return true;
     }
 
-    QModelIndex idx = sourceModel()->index(source_row, 0, source_parent);
+    QModelIndex idx         = sourceModel()->index(source_row, 0, source_parent);
     const CamItemInfo &info = d->importItemModel->camItemInfo(idx);
 
     if (d->filter->matchesCurrentFilter(info))

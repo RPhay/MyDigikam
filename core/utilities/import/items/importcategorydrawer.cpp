@@ -47,9 +47,9 @@ class Q_DECL_HIDDEN ImportCategoryDrawer::Private
 public:
 
     explicit Private()
+      : lowerSpacing(0),
+        view(nullptr)
     {
-        lowerSpacing = 0;
-        view         = nullptr;
     }
 
     QFont                  font;
