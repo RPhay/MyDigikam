@@ -136,7 +136,7 @@ void FaceUtils::storeThumbnails(ThumbnailLoadThread* const thread,
     {
         QList<QRect> rects;
         rects << face.region().toRect();
-        const int margin = faceRectDisplayMargin();
+        const int margin = faceRectDisplayMargin(face.region().toRect());
         rects << face.region().toRect().adjusted(-margin, -margin, margin, margin);
 
         foreach (const QRect& rect, rects)
@@ -325,14 +325,17 @@ void FaceUtils::removeNormalTags(qlonglong imageId, QList<int> tagIds)
 
 // --- Utilities ---
 
-int FaceUtils::faceRectDisplayMargin()
+int FaceUtils::faceRectDisplayMargin(const QRect& rect)
 {
     /*
      * Do not change that value unless you know what you do.
      * There are a lot of pregenerated thumbnails in user's databases,
      * expensive to regenerate, depending on this very value.
      */
-    return 70;
+    int margin = qMax(rect.width(), rect.height());
+    margin    /= 10;
+
+    return margin;
 }
 
 } // Namespace Digikam

@@ -99,7 +99,7 @@ QRect ItemFaceDelegate::largerFaceRect(const QModelIndex& index) const
         return rect;
     }
 
-    const int margin = FaceUtils::faceRectDisplayMargin();
+    const int margin = FaceUtils::faceRectDisplayMargin(rect);
 
     return rect.adjusted(-margin, -margin, margin, margin);
 }

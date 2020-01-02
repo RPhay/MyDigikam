@@ -124,7 +124,7 @@ public:
      * face rectangle. This returns a pixel margin commonly used to increase the rectangle size
      * in all four directions.
      */
-    static int          faceRectDisplayMargin();
+    static int          faceRectDisplayMargin(const QRect& rect);
 
     Identity identityForTag(int tagId, RecognitionDatabase& db)                         const;
     int                  tagForIdentity(const Identity& identity)                       const;
