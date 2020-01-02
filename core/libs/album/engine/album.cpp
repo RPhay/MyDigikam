@@ -43,12 +43,12 @@ namespace Digikam
 {
 
 Album::Album(Album::Type type, int id, bool root)
+    : m_root(root),
+      m_usedByLabelsTree(false),
+      m_id(id),
+      m_type(type),
+      m_parent(nullptr)
 {
-    m_parent           = nullptr;
-    m_type             = type;
-    m_id               = id;
-    m_root             = root;
-    m_usedByLabelsTree = false;
 }
 
 Album::~Album()
@@ -105,7 +105,7 @@ Album* Album::next() const
 
     int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
 
-    if (row < 0 || row + 1 >= m_parent->m_childCache.count())
+    if (row < 0 || (row + 1 >= m_parent->m_childCache.count()))
     {
         return nullptr;
     }
@@ -250,7 +250,7 @@ int Album::rowFromAlbum() const
 
     int row = m_parent->m_childCache.indexOf(const_cast<Album*>(this));
 
-    return (row != -1) ? row : 0;
+    return ((row != -1) ? row : 0);
 }
 
 void Album::setTitle(const QString& title)
@@ -314,7 +314,7 @@ bool Album::isUsedByLabelsTree() const
 
 bool Album::isTrashAlbum() const
 {
-    if (m_id < -1 && m_type == PHYSICAL)
+    if ((m_id < -1) && (m_type == PHYSICAL))
     {
         return true;
     }
@@ -333,50 +333,49 @@ int PAlbum::m_uniqueTrashId = -2;
 
 PAlbum::PAlbum(const QString& title)
     : Album(Album::PHYSICAL, 0, true),
+      m_isAlbumRootAlbum(false),
+      m_albumRootId(-1),
+      m_parentPath(QLatin1Char('/')),
       m_iconId(0)
 {
     setTitle(title);
-    m_isAlbumRootAlbum = false;
-    m_albumRootId      = -1;
-    m_parentPath       = QLatin1Char('/');
     m_path.clear();
 }
 
 PAlbum::PAlbum(int albumRoot, const QString& label)
     : Album(Album::PHYSICAL, -1, false),
+      m_isAlbumRootAlbum(true),
+      m_albumRootId(albumRoot),
+      m_parentPath(QLatin1Char('/')),
       m_iconId(0)
 {
     // set the id to -1 (line above). AlbumManager may change that later.
     setTitle(label);
-    m_albumRootId      = albumRoot;
-    m_isAlbumRootAlbum = true;
-    m_parentPath       = QLatin1Char('/');
     m_path.clear();
 }
 
 PAlbum::PAlbum(int albumRoot, const QString& parentPath, const QString& title, int id)
     : Album(Album::PHYSICAL, id, false),
-      m_iconId(0)
+      m_isAlbumRootAlbum(false),
+      m_albumRootId(albumRoot),
+      m_path(title),
+      m_parentPath(parentPath + QLatin1Char('/')),
+      m_iconId(0),
+      m_date(QDate::currentDate())
 {
     // If path is /holidays/2007, title is only "2007", path is "/holidays"
     setTitle(title);
-    m_albumRootId      = albumRoot;
-    m_isAlbumRootAlbum = false;
-    m_parentPath       = parentPath + QLatin1Char('/');
-    m_path             = title;
-    m_date             = QDate::currentDate();
 }
 
 PAlbum::PAlbum(const QString& parentPath, int albumRoot)
     : Album(Album::PHYSICAL, m_uniqueTrashId--, false),
+      m_isAlbumRootAlbum(false),
+      m_albumRootId(albumRoot),
+      m_path(QLatin1String("Trash")),
+      m_parentPath(parentPath + QLatin1Char('/')),
       m_iconId(0)
 {
     setTitle(i18n("Trash"));
-
-    m_albumRootId      = albumRoot;
-    m_isAlbumRootAlbum = false;
-    m_parentPath       = parentPath + QLatin1Char('/');
-    m_path             = QLatin1String("Trash");
 }
 
 PAlbum::~PAlbum()
@@ -460,7 +459,9 @@ QString PAlbum::prettyUrl() const
                                  albumPath();
 
     if (u.endsWith(QLatin1Char('/')))
+    {
         u.chop(1);
+    }
 
     return u;
 }
@@ -483,7 +484,8 @@ QString PAlbum::folderPath() const
 // --------------------------------------------------------------------------
 
 TAlbum::TAlbum(const QString& title, int id, bool root)
-    : Album(Album::TAG, id, root), m_pid(0),
+    : Album(Album::TAG, id, root),
+      m_pid(0),
       m_iconId(0)
 {
     setTitle(title);
@@ -529,7 +531,7 @@ CoreDbUrl TAlbum::databaseUrl() const
 
 QList<int> TAlbum::tagIDs() const
 {
-    if (isRoot())
+    if      (isRoot())
     {
         return QList<int>();
     }
@@ -671,41 +673,40 @@ bool SAlbum::isNormalSearch() const
 
 bool SAlbum::isAdvancedSearch() const
 {
-    return m_searchType == DatabaseSearch::AdvancedSearch;
+    return (m_searchType == DatabaseSearch::AdvancedSearch);
 }
 
 bool SAlbum::isKeywordSearch() const
 {
-    return m_searchType == DatabaseSearch::KeywordSearch;
+    return (m_searchType == DatabaseSearch::KeywordSearch);
 }
 
 bool SAlbum::isTimelineSearch() const
 {
-    return m_searchType == DatabaseSearch::TimeLineSearch;
+    return (m_searchType == DatabaseSearch::TimeLineSearch);
 }
 
 bool SAlbum::isHaarSearch() const
 {
-    return m_searchType == DatabaseSearch::HaarSearch;
+    return (m_searchType == DatabaseSearch::HaarSearch);
 }
 
 bool SAlbum::isMapSearch() const
 {
-    return m_searchType == DatabaseSearch::MapSearch;
+    return (m_searchType == DatabaseSearch::MapSearch);
 }
 
 bool SAlbum::isDuplicatesSearch() const
 {
-    return m_searchType == DatabaseSearch::DuplicatesSearch;
+    return (m_searchType == DatabaseSearch::DuplicatesSearch);
 }
 
 bool SAlbum::isTemporarySearch() const
 {
-
     if (isHaarSearch())
     {
-        return (title() == getTemporaryHaarTitle(DatabaseSearch::HaarImageSearch)) ||
-                title() == getTemporaryHaarTitle(DatabaseSearch::HaarSketchSearch);
+        return ((title() == getTemporaryHaarTitle(DatabaseSearch::HaarImageSearch))) ||
+                (title() == getTemporaryHaarTitle(DatabaseSearch::HaarSketchSearch));
     }
 
     return (title() == getTemporaryTitle(m_searchType));
@@ -799,9 +800,9 @@ QString SAlbum::getTemporaryHaarTitle(DatabaseSearch::HaarSearchType haarType)
 // --------------------------------------------------------------------------
 
 AlbumIterator::AlbumIterator(Album* const album)
+    : m_current(album ? album->firstChild() : nullptr),
+      m_root(album)
 {
-    m_root    = album;
-    m_current = album ? album->firstChild() : nullptr;
 }
 
 AlbumIterator::~AlbumIterator()

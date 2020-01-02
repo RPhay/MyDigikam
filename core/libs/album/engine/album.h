@@ -68,46 +68,46 @@ public:
 
     enum Type
     {
-        PHYSICAL=0, /**<  PHYSICAL: A physical album type @see PAlbum */
-        TAG,        /**<  TAG:      A tag      album type @see TAlbum */
-        DATE,       /**<  DATE:     A date     album type @see DAlbum */
-        SEARCH,     /**<  SEARCH:   A search   album type @see SAlbum */
-        FACE        /**<  FACE:     A faces    album type @see FAlbum */
+        PHYSICAL=0, ///< A physical album type @see PAlbum
+        TAG,        ///< A tag      album type @see TAlbum
+        DATE,       ///< A date     album type @see DAlbum
+        SEARCH,     ///< A search   album type @see SAlbum
+        FACE        ///< A faces    album type @see FAlbum
     };
 
     /**
      * @return the parent album for this album
      */
-    Album*  parent() const;
+    Album* parent()                         const;
 
     /**
      * @return the first child of this album or 0 if no children
      */
-    Album*  firstChild() const;
+    Album* firstChild()                     const;
 
     /**
      * @return the last child of this album or 0 if no children
      */
-    Album*  lastChild() const;
+    Album* lastChild()                      const;
 
     /**
      * @return the next sibling of this album of this album or 0
      * if no next sibling
      * @see AlbumIterator
      */
-    Album*  next() const;
+    Album* next()                           const;
 
     /**
      * @return the previous sibling of this album of this album or 0 if no
      * previous sibling
      * @see AlbumIterator
      */
-    Album*  prev() const;
+    Album* prev()                           const;
 
     /**
      * @return the child of this album at row
      */
-    Album*  childAtRow(int row) const;
+    Album* childAtRow(int row)              const;
 
     /**
      * @return a list of all child Albums
@@ -117,13 +117,13 @@ public:
     /**
      * @return a list of all child Albums
      */
-    QList<int>  childAlbumIds(bool recursive = false);
+    QList<int> childAlbumIds(bool recursive = false);
 
     /**
      * @return the type of album
      * @see Type
      */
-    Type    type() const;
+    Type type()                             const;
 
     /**
      * Each album has a @p ID uniquely identifying it in the set of Albums of
@@ -134,7 +134,7 @@ public:
      * @return the @p ID of the album
      * @see globalID()
      */
-    int     id() const;
+    int id()                                const;
 
     /**
      * An album ID is only unique among the set of all Albums of its Type.
@@ -153,32 +153,32 @@ public:
      * @return the @p globalID of the album
      * @see id()
      */
-    int     globalID() const;
+    int globalID()                          const;
 
     /**
      * @return the @p childCount of the album
      */
-    int     childCount() const;
+    int childCount()                        const;
 
     /**
      * @return the @p rowFromAlbum of the album
      */
-    int     rowFromAlbum() const;
+    int rowFromAlbum()                      const;
 
     /**
      * @return the @p title aka name of the album
      */
-    QString title() const;
+    QString title()                         const;
 
     /**
      * @return the kde url of the album
      */
-    virtual CoreDbUrl databaseUrl() const = 0;
+    virtual CoreDbUrl databaseUrl()         const = 0;
 
     /**
      * @return true is the album is a Root Album
      */
-    bool    isRoot() const;
+    bool isRoot()                           const;
 
     /**
      * @return true if the @p album is in the parent hierarchy
@@ -186,19 +186,19 @@ public:
      * @param album Album to check whether it belongs in the child
      * hierarchy
      */
-    bool    isAncestorOf(Album* const album) const;
+    bool isAncestorOf(Album* const album)   const;
 
     /**
      * @return true if the Album was created by Labels Tree
      *
      */
-    bool    isUsedByLabelsTree() const;
+    bool isUsedByLabelsTree()               const;
 
     /**
      * @return true if the album was created to be a trash
      *         virtual album
      */
-    bool    isTrashAlbum() const;
+    bool isTrashAlbum()                     const;
 
     /**
      * This allows to associate some "extra" data to a Album. As one
@@ -229,7 +229,7 @@ public:
      * @see extraData
      * @see removeExtraData
      */
-    void    setExtraData(const void* const key, void* const value);
+    void setExtraData(const void* const key, void* const value);
 
     /**
      * Remove the associated extra data associated with @p key
@@ -238,7 +238,7 @@ public:
      * @see setExtraData
      * @see extraData
      */
-    void    removeExtraData(const void* const key);
+    void removeExtraData(const void* const key);
 
     /**
      * Retrieve the associated extra data associated with @p key
@@ -247,7 +247,7 @@ public:
      * @see setExtraData
      * @see extraData
      */
-    void*   extraData(const void* const key) const;
+    void* extraData(const void* const key)  const;
 
     /**
      * Sets the property m_usedByLabelsTree to true if the search album
@@ -282,7 +282,7 @@ protected:
     /**
      * Delete all child albums and also remove any associated extra data
      */
-    void    clear();
+    void clear();
 
     /**
      * @internal use only
@@ -425,16 +425,16 @@ public:
      *         The root TAlbum returns "/" resp. "".
      */
     QString                tagPath(bool leadingSlash = true) const;
-    CoreDbUrl              databaseUrl() const override;
-    QString                prettyUrl() const;
-    QString                icon() const;
-    qlonglong              iconId() const;
-    QList<int>             tagIDs() const;
+    CoreDbUrl              databaseUrl()                     const override;
+    QString                prettyUrl()                       const;
+    QString                icon()                            const;
+    qlonglong              iconId()                          const;
+    QList<int>             tagIDs()                          const;
 
-    bool                   isInternalTag() const;
-    bool                   hasProperty(const QString& key) const;
-    QString                property(const QString& key) const;
-    QMap<QString, QString> properties() const;
+    bool                   isInternalTag()                   const;
+    bool                   hasProperty(const QString& key)   const;
+    QString                property(const QString& key)      const;
+    QMap<QString, QString> properties()                      const;
 
 private:
 
@@ -466,8 +466,8 @@ public:
     explicit DAlbum(const QDate& date, bool root=false, Range range=Month);
     ~DAlbum();
 
-    QDate       date()      const;
-    Range       range()     const;
+    QDate     date()        const;
+    Range     range()       const;
     CoreDbUrl databaseUrl() const override;
 
 private:
@@ -507,9 +507,9 @@ public:
      *
      * @return true if this is a temporary search album, else false
      */
-    bool                 isTemporarySearch() const;
+    bool                 isTemporarySearch()  const;
 
-    QString              displayTitle() const;
+    QString              displayTitle()       const;
 
     /**
      * Returns the title of search albums that is used to mark them as a
