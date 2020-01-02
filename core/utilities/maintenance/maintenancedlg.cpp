@@ -401,7 +401,7 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
             this, SLOT(slotQualitySetup()));
 
     connect(d->retrainAllFaces, &QCheckBox::toggled,
-            [=](bool on)
+            [hbox3](bool on)
             {
                 hbox3->setEnabled(!on);
             });
