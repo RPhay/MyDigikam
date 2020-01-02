@@ -152,6 +152,11 @@ void FaceScanWidget::setupUi()
     // ---- Main option box --------
 
     d->optionGroupBox                 = new QGroupBox(i18n("Workflow"));
+    d->optionGroupBox->setToolTip(i18nc("@tooltip",
+                                        "digiKam can search for faces in your photos.\n"
+                                        "When you have identified your friends on a number of photos,\n"
+                                        "it can also recognize the people shown on your photos."));
+
     QVBoxLayout* const optionLayout   = new QVBoxLayout;
 
     d->alreadyScannedBox              = new SqueezedComboBox;

@@ -61,9 +61,7 @@ class Q_DECL_HIDDEN PeopleSideBarWidget::Private
 public:
 
     explicit Private()
-      : personIcon(nullptr),
-        textLabel(nullptr),
-        rescanButton(nullptr),
+      : rescanButton(nullptr),
         searchModificationHelper(nullptr),
         settingsWdg(nullptr),
         tagFolderView(nullptr),
@@ -71,8 +69,6 @@ public:
     {
     }
 
-    QLabel*                   personIcon;
-    QLabel*                   textLabel;
     QPushButton*              rescanButton;
     SearchModificationHelper* searchModificationHelper;
     FaceScanWidget*           settingsWdg;
@@ -102,7 +98,6 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
     scrollArea->setWidgetResizable(true);
 
     QVBoxLayout* const vlay     = new QVBoxLayout;
-    QHBoxLayout* const hlay     = new QHBoxLayout;
     d->tagFolderView            = new TagFolderView(this, model);
     d->tagFolderView->setConfigGroup(getConfigGroup());
     d->tagFolderView->setExpandNewCurrentItem(true);
@@ -118,31 +113,16 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
                               AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
     d->tagSearchBar->setFilterModel(d->tagFolderView->albumFilterModel());
 
-    d->personIcon     = new QLabel;
-    d->personIcon->setPixmap(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(48));
-
-    d->textLabel      = new QLabel;
-    d->textLabel->setWordWrap(true);
-    d->textLabel->setText(i18nc("@info",
-                                "digiKam can search for faces in your photos. "
-                                "When you have identified your friends on a number of photos, "
-                                "it can also recognize the people shown on your photos."));
-
     d->settingsWdg    = new FaceScanWidget(this);
 
     d->rescanButton   = new QPushButton;
     d->rescanButton->setText(i18n("Scan collection for faces"));
 
-    hlay->addWidget(d->personIcon);
-    hlay->addWidget(d->textLabel);
-
-    vlay->addLayout(hlay);
     vlay->addWidget(d->tagFolderView, 10);
     vlay->addWidget(d->tagSearchBar);
     vlay->addWidget(d->settingsWdg);
     vlay->addWidget(d->rescanButton);
     vlay->setContentsMargins(spacing, spacing, spacing, spacing);
-
 
     mainView->setLayout(vlay);
 
