@@ -270,7 +270,7 @@ void AlbumSelectWidget::setCurrentAlbumUrl(const QUrl& albumUrl)
 
 void AlbumSelectWidget::slotAlbumRenamed(Album* album)
 {
-    if (!album || album->type() != Album::PHYSICAL)
+    if (!album || (album->type() != Album::PHYSICAL))
     {
         return;
     }

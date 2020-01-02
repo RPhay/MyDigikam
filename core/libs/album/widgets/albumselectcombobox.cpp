@@ -50,14 +50,19 @@ class Q_DECL_HIDDEN AlbumSelectComboBox::Private
 public:
 
     explicit Private(AlbumSelectComboBox* q)
-        : q(q)
+      : model(nullptr),
+        filterModel(nullptr),
+        isCheckable(true),
+        closeOnActivate(false),
+        showCheckStateSummary(true),
+        q(q)
     {
-        model                 = nullptr;
-        filterModel           = nullptr;
-        isCheckable           = true;
-        closeOnActivate       = false;
-        showCheckStateSummary = true;
     }
+
+    void updateCheckable();
+    void updateCloseOnActivate();
+
+public:
 
     AbstractCheckableAlbumModel* model;
     AlbumFilterModel*            filterModel;
@@ -65,9 +70,6 @@ public:
     bool                         isCheckable;
     bool                         closeOnActivate;
     bool                         showCheckStateSummary;
-
-    void                         updateCheckable();
-    void                         updateCloseOnActivate();
 
     AlbumSelectComboBox* const   q;
 };

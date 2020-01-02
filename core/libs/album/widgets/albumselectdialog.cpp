@@ -60,10 +60,10 @@ class Q_DECL_HIDDEN AlbumSelectDialog::Private
 public:
 
     explicit Private()
+      : buttons(nullptr),
+        albumSel(nullptr),
+        searchBar(nullptr)
     {
-        buttons   = nullptr;
-        albumSel  = nullptr;
-        searchBar = nullptr;
     }
 
     QDialogButtonBox*  buttons;

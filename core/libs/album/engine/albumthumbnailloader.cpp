@@ -51,7 +51,7 @@ namespace Digikam
 {
 
 typedef QMap<QPair<qlonglong, QString>, QList<int> > IdAlbumMap;
-typedef QMap<int, QPixmap>           AlbumThumbnailMap;
+typedef QMap<int, QPixmap>                           AlbumThumbnailMap;
 
 class Q_DECL_HIDDEN AlbumThumbnailLoaderCreator
 {
@@ -69,11 +69,11 @@ class Q_DECL_HIDDEN AlbumThumbnailLoader::Private
 public:
 
     explicit Private()
+      : iconSize(ApplicationSettings::instance()->getTreeViewIconSize()),
+        minBlendSize(20),
+        iconTagThumbThread(nullptr),
+        iconAlbumThumbThread(nullptr)
     {
-        iconSize             = ApplicationSettings::instance()->getTreeViewIconSize();
-        minBlendSize         = 20;
-        iconAlbumThumbThread = nullptr;
-        iconTagThumbThread   = nullptr;
     }
 
     int                                  iconSize;
@@ -93,11 +93,11 @@ bool operator<(const ThumbnailIdentifier& a, const ThumbnailIdentifier& b)
 {
     if (a.id || b.id)
     {
-        return a.id < b.id;
+        return (a.id < b.id);
     }
     else
     {
-        return a.filePath < b.filePath;
+        return (a.filePath < b.filePath);
     }
 }
 
@@ -179,7 +179,7 @@ QPixmap AlbumThumbnailLoader::getStandardAlbumRootIcon(RelativeSize relativeSize
 
 QPixmap AlbumThumbnailLoader::getStandardAlbumIcon(PAlbum* const album, RelativeSize relativeSize)
 {
-    if (album->isRoot() || album->isAlbumRoot())
+    if      (album->isRoot() || album->isAlbumRoot())
     {
         return getStandardAlbumRootIcon(relativeSize);
     }
@@ -219,7 +219,7 @@ QPixmap AlbumThumbnailLoader::loadIcon(const QString& name, int size) const
 
 bool AlbumThumbnailLoader::getTagThumbnail(TAlbum* const album, QPixmap& icon)
 {
-    if (album->iconId() && d->iconSize > d->minBlendSize)
+    if      (album->iconId() && (d->iconSize > d->minBlendSize))
     {
         addUrl(album, album->iconId());
         icon = QPixmap();
@@ -232,12 +232,13 @@ bool AlbumThumbnailLoader::getTagThumbnail(TAlbum* const album, QPixmap& icon)
     }
 
     icon = QPixmap();
+
     return false;
 }
 
 QPixmap AlbumThumbnailLoader::getTagThumbnailDirectly(TAlbum* const album)
 {
-    if (album->iconId() && d->iconSize > d->minBlendSize)
+    if      (album->iconId() && (d->iconSize > d->minBlendSize))
     {
         // icon cached?
         AlbumThumbnailMap::const_iterator it = d->thumbnailMap.constFind(album->globalID());
@@ -260,7 +261,7 @@ QPixmap AlbumThumbnailLoader::getTagThumbnailDirectly(TAlbum* const album)
 
 bool AlbumThumbnailLoader::getAlbumThumbnail(PAlbum* const album)
 {
-    if (album->iconId() && d->iconSize > d->minBlendSize)
+    if (album->iconId() && (d->iconSize > d->minBlendSize))
     {
         addUrl(album, album->iconId());
     }
@@ -274,7 +275,7 @@ bool AlbumThumbnailLoader::getAlbumThumbnail(PAlbum* const album)
 
 QPixmap AlbumThumbnailLoader::getAlbumThumbnailDirectly(PAlbum* const album)
 {
-    if (album->iconId() && d->iconSize > d->minBlendSize)
+    if (album->iconId() && (d->iconSize > d->minBlendSize))
     {
         // icon cached?
         AlbumThumbnailMap::const_iterator it = d->thumbnailMap.constFind(album->globalID());
@@ -297,6 +298,7 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
     // We use a private cache which is actually a map to be sure to cache _all_ album thumbnails.
     // At startup, this is not relevant, as the views will add their requests in a row.
     // This is to speed up context menu and IE imagedescedit
+
     AlbumThumbnailMap::const_iterator ttit = d->thumbnailMap.constFind(album->globalID());
 
     if (ttit != d->thumbnailMap.constEnd())
@@ -304,22 +306,30 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
         // It is not necessary to return cached icon asynchronously - they could be
         // returned by getTagThumbnail already - but this would make the API
         // less elegant, it feels much better this way.
+
         emit signalDispatchThumbnailInternal(album->globalID(), *ttit);
         return;
     }
 
-    //Finding face rect to identify correct tag
+    // Finding face rect to identify correct tag
+
     QRect faceRect = QRect();
-    if (album->type() == Album::TAG && static_cast<TAlbum*>(album)->hasProperty(TagPropertyName::person())) {
+
+    if (album->type() == Album::TAG && static_cast<TAlbum*>(album)->hasProperty(TagPropertyName::person()))
+    {
         QList<FaceTagsIface> faces = FaceTagsEditor().databaseFaces(id);
-        foreach (const FaceTagsIface& face, faces) {
-            if (face.tagId() == album->id()) {
+
+        foreach (const FaceTagsIface& face, faces)
+        {
+            if (face.tagId() == album->id())
+            {
                 faceRect = face.region().toRect();
             }
         }
     }
 
-    //Simple way to put QRect into QMap
+    // Simple way to put QRect into QMap
+
     QString faceRectStr = QString(QLatin1String("%1%2%3%4"))
             .arg(faceRect.x()).arg(faceRect.y()).arg(faceRect.right()).arg(faceRect.bottom());
 
@@ -344,9 +354,12 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
                         Qt::QueuedConnection);
             }
 
-            if (static_cast<TAlbum*>(album)->hasProperty(TagPropertyName::person())) {
+            if (static_cast<TAlbum*>(album)->hasProperty(TagPropertyName::person()))
+            {
                 d->iconTagThumbThread->find(ItemInfo::thumbnailIdentifier(id), faceRect);
-            } else {
+            }
+            else
+            {
                 d->iconTagThumbThread->find(ItemInfo::thumbnailIdentifier(id));
             }
         }
@@ -420,14 +433,18 @@ void AlbumThumbnailLoader::slotGotThumbnailFromIcon(const LoadingDescription& lo
     // and emit a signal for each album.
 
     QRect faceRect = QRect();
-    if (loadingDescription.previewParameters.extraParameter.type() == QVariant::Rect){
+
+    if (loadingDescription.previewParameters.extraParameter.type() == QVariant::Rect)
+    {
         faceRect = loadingDescription.previewParameters.extraParameter.toRect();
     }
-    //Simple way to put QRect into QMap
-    QString faceRectStr = QString(QLatin1String("%1%2%3%4"))
+
+    // Simple way to put QRect into QMap
+
+    QString faceRectStr     = QString(QLatin1String("%1%2%3%4"))
             .arg(faceRect.x()).arg(faceRect.y()).arg(faceRect.right()).arg(faceRect.bottom());
 
-    ThumbnailIdentifier id = loadingDescription.thumbnailIdentifier();
+    ThumbnailIdentifier id  = loadingDescription.thumbnailIdentifier();
     IdAlbumMap::iterator it = d->idAlbumMap.find(QPair<qlonglong, QString>(id.id, faceRectStr));
 
     if (it != d->idAlbumMap.end())
@@ -437,7 +454,7 @@ void AlbumThumbnailLoader::slotGotThumbnailFromIcon(const LoadingDescription& lo
         if (thumbnail.isNull())
         {
             // Loading failed
-            for (QList<int>::const_iterator vit = (*it).constBegin(); vit != (*it).constEnd(); ++vit)
+            for (QList<int>::const_iterator vit = (*it).constBegin() ; vit != (*it).constEnd() ; ++vit)
             {
                 Album* const album = manager->findAlbum(*vit);
 
@@ -451,7 +468,7 @@ void AlbumThumbnailLoader::slotGotThumbnailFromIcon(const LoadingDescription& lo
         {
             // Loading succeeded
 
-            for (QList<int>::const_iterator vit = (*it).constBegin(); vit != (*it).constEnd(); ++vit)
+            for (QList<int>::const_iterator vit = (*it).constBegin() ; vit != (*it).constEnd() ; ++vit)
             {
                 // look up with global id
                 Album* const album = manager->findAlbum(*vit);
