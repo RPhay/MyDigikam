@@ -59,7 +59,7 @@ std::vector<std::vector<float> > pinv(const std::vector<std::vector<float> >& ma
 
     for (unsigned int i = 0 ; i < mat.size() ; ++i)
     {
-        for (unsigned int j =0 ; j < mat[0].size() ; ++j)
+        for (unsigned int j = 0 ; j < mat[0].size() ; ++j)
         {
             A.at<float>(i, j) = mat[i][j];
         }

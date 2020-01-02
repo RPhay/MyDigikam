@@ -78,8 +78,9 @@ bool FaceDb::integrityCheck()
 
             // For SQLite the integrity check returns a single row with one string column "ok" on success and multiple rows on error.
 
-            return( (values.size() == 1) &&
-                     (values.first().toString().toLower().compare(QLatin1String("ok")) == 0)
+            return(
+                    (values.size() == 1) &&
+                    (values.first().toString().toLower().compare(QLatin1String("ok")) == 0)
                   );
 
         case BdEngineBackend::DbType::MySQL:

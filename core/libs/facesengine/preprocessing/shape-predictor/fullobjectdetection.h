@@ -48,11 +48,11 @@ public:
     FullObjectDetection(const cv::Rect& rect_,
                         const std::vector<std::vector<float> >& parts_);
 
-    const cv::Rect& get_rect() const;
+    const cv::Rect& get_rect()                        const;
 
     cv::Rect& get_rect();
 
-    unsigned long num_parts() const;
+    unsigned long num_parts()                         const;
 
     const std::vector<float>& part(unsigned long idx) const;
 

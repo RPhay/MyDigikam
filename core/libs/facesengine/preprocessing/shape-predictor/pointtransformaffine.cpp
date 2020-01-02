@@ -144,9 +144,9 @@ PointTransformAffine findSimilarityTransform(const std::vector<std::vector<float
     s[0][0] = 1;
     s[1][1] = 1;
 
-    if (MatrixOperations::determinant(cov) < 0 ||
-        (MatrixOperations::determinant(cov) == 0 && 
-         MatrixOperations::determinant(u) * MatrixOperations::determinant(v) < 0))
+    if ((MatrixOperations::determinant(cov) < 0) ||
+        ((MatrixOperations::determinant(cov) == 0) &&
+         (MatrixOperations::determinant(u) * MatrixOperations::determinant(v) < 0)))
     {
         if (d[1][1] < d[0][0])
         {

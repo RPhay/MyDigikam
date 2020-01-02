@@ -56,7 +56,6 @@ private:
     void postprocess(const std::vector<cv::Mat>& outs,
                      const cv::Size& paddedSize,
                      std::vector<cv::Rect>& detectedBboxes);
-
 };
 
 } // namespace Digikam

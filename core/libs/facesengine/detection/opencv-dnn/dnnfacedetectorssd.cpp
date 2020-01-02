@@ -92,10 +92,10 @@ void DNNFaceDetectorSSD::postprocess(cv::Mat detection,
             float rightRatio  = detectionMat.at<float>(i, 5);
             float bottomRatio = detectionMat.at<float>(i, 6);
 
-            int left          = (int)(leftRatio*inputImageSize.width);
-            int right         = (int)(rightRatio*inputImageSize.width);
-            int top           = (int)(topRatio*inputImageSize.height);
-            int bottom        = (int)(bottomRatio*inputImageSize.height);
+            int left          = (int)(leftRatio   * inputImageSize.width);
+            int right         = (int)(rightRatio  * inputImageSize.width);
+            int top           = (int)(topRatio    * inputImageSize.height);
+            int bottom        = (int)(bottomRatio * inputImageSize.height);
 
             selectBbox(paddedSize,
                        confidence,

@@ -53,7 +53,7 @@ private:
 
 RecognitionPreprocessor::Private::Private()
   : preprocessingMode(-1),
-    ofpreprocessor(0)
+    ofpreprocessor(nullptr)
 {
 }
 

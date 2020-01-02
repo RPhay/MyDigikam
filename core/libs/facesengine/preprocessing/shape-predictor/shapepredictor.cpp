@@ -285,8 +285,8 @@ bool pointContained(const cv::Rect& rect,
     int x = std::round(point[0]);
     int y = std::round(point[1]);
 
-    if (x >= 0 && x < rect.width   &&
-        y >= 0 && y < rect.height)
+    if ((x >= 0) && (x < rect.width)   &&
+        (y >= 0) && (y < rect.height))
     {
         return true;
     }

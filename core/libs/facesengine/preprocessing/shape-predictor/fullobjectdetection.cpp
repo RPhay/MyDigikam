@@ -93,7 +93,7 @@ std::vector<cv::Rect> getEyes(const FullObjectDetection& shape)
         {
             std::vector<float> x = shape.part(i);
 
-            if (x[0] < tlx)
+            if      (x[0] < tlx)
             {
                 tlx = x[0];
             }
@@ -102,7 +102,7 @@ std::vector<cv::Rect> getEyes(const FullObjectDetection& shape)
                 brx = x[0];
             }
 
-            if (x[1] < tly)
+            if      (x[1] < tly)
             {
                 tly = x[1];
             }

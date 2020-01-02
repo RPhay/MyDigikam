@@ -104,7 +104,7 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
 
     cv::Mat gray;
 
-    if (type == CV_8UC3 || type == CV_16UC3)
+    if ((type == CV_8UC3) || (type == CV_16UC3))
     {
         cv::cvtColor(image, gray, CV_RGB2GRAY);   // 3 channels
     }
@@ -113,7 +113,7 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
         cv::cvtColor(image, gray, CV_RGBA2GRAY);  // 4 channels
     }
 
-    if (type == CV_16UC3 || type == CV_16UC4)
+    if ((type == CV_16UC3) || (type == CV_16UC4))
     {
         gray.convertTo(gray, CV_8UC1, 1 / 255.0);
     }
@@ -124,9 +124,9 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
 
     for (size_t i = 0 ; i < outerEyesNosePositions.size() ; ++i)
     {
-        int index                = outerEyesNosePositions[i];
-        landmarks.at<float>(i,0) = object.part(index)[0];
-        landmarks.at<float>(i,1) = object.part(index)[1];
+        int index                 = outerEyesNosePositions[i];
+        landmarks.at<float>(i, 0) = object.part(index)[0];
+        landmarks.at<float>(i, 1) = object.part(index)[1];
 /*
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "index = " << index
                                          << ", landmarks: (" << landmarks.at<float>(i, 0)

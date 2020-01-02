@@ -74,23 +74,23 @@ public:
 
     // --- Identity management (facedb_identity.cpp)
 
-    int  addIdentity() const;
-    int  getNumberOfIdentities() const;
+    int  addIdentity()                      const;
+    int  getNumberOfIdentities()            const;
 
     void updateIdentity(const Identity& p);
     void deleteIdentity(int id);
     void deleteIdentity(const QString& uuid);
     void clearIdentities();
 
-    QList<Identity> identities()  const;
-    QList<int>      identityIds() const;
+    QList<Identity> identities()            const;
+    QList<int>      identityIds()           const;
 
 public:
 
     // --- OpenCV LBPH
 
     void updateLBPHFaceModel(LBPHFaceModel& model);
-    LBPHFaceModel lbphFaceModel() const;
+    LBPHFaceModel lbphFaceModel()           const;
     void clearLBPHTraining(const QString& context = QString());
     void clearLBPHTraining(const QList<int>& identities, const QString& context = QString());
 
@@ -99,7 +99,7 @@ public:
     // --- OpenCV EIGEN
 
     void updateEIGENFaceModel(EigenFaceModel& model, const std::vector<cv::Mat>& images_rgb);
-    EigenFaceModel eigenFaceModel() const;
+    EigenFaceModel eigenFaceModel()         const;
     void clearEIGENTraining(const QString& context = QString());
     void clearEIGENTraining(const QList<int>& identities, const QString& context = QString());
 
@@ -107,14 +107,14 @@ public:
 
     // --- OpenCV FISHER
 
-    FisherFaceModel fisherFaceModel() const;
+    FisherFaceModel fisherFaceModel()       const;
 
 public:
 
     // --- OpenCV DNN
 
     void updateDNNFaceModel(DNNFaceModel& model);
-    DNNFaceModel dnnFaceModel(bool debug) const;
+    DNNFaceModel dnnFaceModel(bool debug)   const;
     void clearDNNTraining(const QString& context = QString());
     void clearDNNTraining(const QList<int>& identities, const QString& context = QString());
 

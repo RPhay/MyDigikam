@@ -98,7 +98,7 @@ void OpenCVFaceDetector::updateParameters(const cv::Size& /*scaledSize*/,
      * But with fewer passes, we will miss some faces.
      */
 
-    if (d->speedVsAccuracy <= 0.159)
+    if      (d->speedVsAccuracy <= 0.159)
     {
         d->primaryParams.searchIncrement = 1.5;
     }
@@ -117,7 +117,7 @@ void OpenCVFaceDetector::updateParameters(const cv::Size& /*scaledSize*/,
      * 3 is the best parameter for normal use.
      */
 
-    if (d->sensitivityVsSpecificity < 0.25)
+    if      (d->sensitivityVsSpecificity < 0.25)
     {
         d->primaryParams.grouping = 1;
     }
@@ -211,7 +211,7 @@ void OpenCVFaceDetector::updateParameters(const cv::Size& /*scaledSize*/,
     if (d->speedVsAccuracy < 0.5)
     {
         d->primaryCascades[0] = true;
-        d->minDuplicates = 0;
+        d->minDuplicates      = 0;
     }
     else
     {
@@ -603,7 +603,7 @@ cv::Mat OpenCVFaceDetector::prepareForDetection(const DImg& inputImage) const
 
     if ((type == CV_16UC4) || (type == CV_16UC3))
     {
-        cvImage.convertTo(cvImage, CV_8UC1, 1/255.0);
+        cvImage.convertTo(cvImage, CV_8UC1, 1 / 255.0);
     }
 
     equalizeHist(cvImage, cvImage);
