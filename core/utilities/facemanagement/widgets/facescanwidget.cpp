@@ -93,8 +93,6 @@ void FaceScanWidget::doLoadState()
     d->albumSelectors->loadState();
 
     d->useFullCpuButton->setChecked(group.readEntry(entryName(d->configUseFullCpu), false));
-
-    // do not load retrainAllButton state from config, dangerous
 }
 
 void FaceScanWidget::doSaveState()
@@ -234,15 +232,8 @@ void FaceScanWidget::setupUi()
                                           "You can choose if you wish to employ all processor cores "
                                           "on your system, or work in the background only on one core."));
 
-    d->retrainAllButton = new QCheckBox(settingsTab);
-    d->retrainAllButton->setText(i18nc("@option:check", "Clear and rebuild all training data"));
-    d->retrainAllButton->setToolTip(i18nc("@info:tooltip",
-                                          "This will clear all training data for recognition "
-                                          "and rebuild it from all available faces."));
-
     settingsLayout->addWidget(accuracyBox);
     settingsLayout->addWidget(d->useFullCpuButton);
-    settingsLayout->addWidget(d->retrainAllButton);
     settingsLayout->addStretch(10);
 
     addTab(settingsTab, i18nc("@title:tab", "Settings"));
@@ -265,9 +256,6 @@ void FaceScanWidget::setupConnections()
 
     connect(d->reRecognizeButton, SIGNAL(toggled(bool)),
             this, SLOT(slotPrepareForRecognize(bool)));
-
-    connect(d->retrainAllButton, SIGNAL(toggled(bool)),
-            this, SLOT(retrainAllButtonToggled(bool)));
 }
 
 void FaceScanWidget::slotPrepareForDetect(bool status)
@@ -306,12 +294,6 @@ void FaceScanWidget::slotPrepareForRecognize(bool /*status*/)
     }
 }
 
-void FaceScanWidget::retrainAllButtonToggled(bool on)
-{
-    d->workflowWidget->setEnabled(!on);
-    d->albumSelectors->setEnabled(!on);
-}
-
 bool FaceScanWidget::settingsConflicted() const
 {
     return d->settingsConflicted;
@@ -323,11 +305,7 @@ FaceScanSettings FaceScanWidget::settings() const
 
     d->settingsConflicted = false;
 
-    if (d->retrainAllButton->isChecked())
-    {
-        settings.task = FaceScanSettings::RetrainAll;
-    }
-    else if (d->detectButton->isChecked())
+    if (d->detectButton->isChecked())
     {
         settings.task = FaceScanSettings::Detect;
     }
@@ -366,11 +344,6 @@ FaceScanSettings FaceScanWidget::settings() const
     settings.useFullCpu             = d->useFullCpuButton->isChecked();
 
     return settings;
-}
-
-void FaceScanWidget::resetRetrainAllButton()
-{
-    d->retrainAllButton->setChecked(false);
 }
 
 } // namespace Digikam

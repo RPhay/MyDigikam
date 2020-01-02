@@ -50,16 +50,10 @@ public:
     bool settingsConflicted()   const;
     FaceScanSettings settings() const;
 
-    void resetRetrainAllButton();
-
 protected:
 
     void doLoadState();
     void doSaveState();
-
-protected Q_SLOTS:
-
-    void retrainAllButtonToggled(bool on);
 
 private:
 

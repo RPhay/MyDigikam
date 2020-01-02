@@ -89,6 +89,7 @@ public:
         useMutiCoreCPU(nullptr),
         cleanThumbsDb(nullptr),
         cleanFacesDb(nullptr),
+        retrainAllFaces(nullptr),
         shrinkDatabases(nullptr),
         qualityScanMode(nullptr),
         metadataSetup(nullptr),
@@ -99,8 +100,8 @@ public:
         vbox(nullptr),
         vbox2(nullptr),
         vbox3(nullptr),
+        vbox4(nullptr),
         duplicatesBox(nullptr),
-        hbox3(nullptr),
         similarityRange(nullptr),
         faceScannedHandling(nullptr),
         searchResultRestriction(nullptr),
@@ -139,6 +140,7 @@ public:
     QCheckBox*           useMutiCoreCPU;
     QCheckBox*           cleanThumbsDb;
     QCheckBox*           cleanFacesDb;
+    QCheckBox*           retrainAllFaces;
     QCheckBox*           shrinkDatabases;
     QComboBox*           qualityScanMode;
     QPushButton*         metadataSetup;
@@ -149,8 +151,8 @@ public:
     DVBox*               vbox;
     DVBox*               vbox2;
     DVBox*               vbox3;
+    DVBox*               vbox4;
     DVBox*               duplicatesBox;
-    DHBox*               hbox3;
     DIntRangeBox*        similarityRange;
     QComboBox*           faceScannedHandling;
     QComboBox*           searchResultRestriction;
@@ -301,15 +303,22 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
 
     // --------------------------------------------------------------------------------------
 
-    d->hbox3               = new DHBox;
-    new QLabel(i18n("Faces data management: "), d->hbox3);
-    QWidget* const space3  = new QWidget(d->hbox3);
-    d->hbox3->setStretchFactor(space3, 10);
-    d->faceScannedHandling = new QComboBox(d->hbox3);
+    d->vbox4               = new DVBox;
+    DHBox* const hbox3     = new DHBox(d->vbox4);
+    new QLabel(i18n("Faces data management: "), hbox3);
+    QWidget* const space3  = new QWidget(hbox3);
+    hbox3->setStretchFactor(space3, 10);
+    d->faceScannedHandling = new QComboBox(hbox3);
     d->faceScannedHandling->addItem(i18n("Skip images already scanned"),          FaceScanSettings::Skip);
     d->faceScannedHandling->addItem(i18n("Scan again and merge results"),         FaceScanSettings::Merge);
     d->faceScannedHandling->addItem(i18n("Clear unconfirmed results and rescan"), FaceScanSettings::Rescan);
-    d->expanderBox->insertItem(Private::FaceManagement, d->hbox3, QIcon::fromTheme(QLatin1String("edit-image-face-detect")),
+
+    d->retrainAllFaces    = new QCheckBox(d->vbox4);
+    d->retrainAllFaces->setText(i18nc("@option:check", "Clear and rebuild all training data"));
+    d->retrainAllFaces->setToolTip(i18nc("@info:tooltip",
+                                         "This will clear all training data for recognition "
+                                         "and rebuild it from all available faces."));
+    d->expanderBox->insertItem(Private::FaceManagement, d->vbox4, QIcon::fromTheme(QLatin1String("edit-image-face-detect")),
                                i18n("Detect and recognize Faces"), QLatin1String("FaceManagement"), false);
     d->expanderBox->setCheckBoxVisible(Private::FaceManagement, true);
 
@@ -391,6 +400,12 @@ MaintenanceDlg::MaintenanceDlg(QWidget* const parent)
     connect(d->qualitySetup, SIGNAL(clicked()),
             this, SLOT(slotQualitySetup()));
 
+    connect(d->retrainAllFaces, &QCheckBox::toggled,
+            [=](bool on)
+            {
+                hbox3->setEnabled(!on);
+            });
+
     // --------------------------------------------------------------------------------------
 
     readSettings();
@@ -432,6 +447,8 @@ MaintenanceSettings MaintenanceDlg::settings() const
     prm.faceManagement                      = d->expanderBox->isChecked(Private::FaceManagement);
     prm.faceSettings.alreadyScannedHandling = (FaceScanSettings::AlreadyScannedHandling)
                                                   d->faceScannedHandling->itemData(d->faceScannedHandling->currentIndex()).toInt();
+    prm.faceSettings.task                   = d->retrainAllFaces->isChecked() ? FaceScanSettings::RetrainAll
+                                                                              : FaceScanSettings::DetectAndRecognize;
     prm.faceSettings.albums                 = d->albumSelectors->selectedAlbums();
     prm.qualitySort                         = d->expanderBox->isChecked(Private::ImageQualitySorter);
     prm.qualityScanMode                     = d->qualityScanMode->itemData(d->qualityScanMode->currentIndex()).toInt();
@@ -542,7 +559,7 @@ void MaintenanceDlg::slotItemToggled(int index, bool b)
             break;
 
         case Private::FaceManagement:
-            d->hbox3->setEnabled(b);
+            d->vbox4->setEnabled(b);
             break;
 
         case Private::ImageQualitySorter:

@@ -82,7 +82,6 @@ public:
           albumSelectors(nullptr),
           accuracyInput(nullptr),
           useFullCpuButton(nullptr),
-          retrainAllButton(nullptr),
           configName(QLatin1String("Face Detection Dialog")),
           configMainTask(QLatin1String("Face Scan Main Task")),
           configValueDetect(QLatin1String("Detect")),
@@ -107,7 +106,6 @@ public:
     DIntNumInput*                accuracyInput;
 
     QCheckBox*                   useFullCpuButton;
-    QCheckBox*                   retrainAllButton;
 
     const QString                configName;
     const QString                configMainTask;
