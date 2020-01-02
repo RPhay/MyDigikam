@@ -534,7 +534,7 @@ BUGFIXES:
 519 ==> 415767 - Thumbnails for Portrait oriented images aren't rotated properly.
 520 ==> 415791 - TimeAdjust can not adjust time by 1 unit - only by 2.
 521 ==> 415557 - Face detection - Advanced settings : restricted folder scope not taken into account.
-522 ==> 
+522 ==> 415702 - Cannot abort or stop find Duplicate process.
 523 ==> 
 524 ==> 
 525 ==> 

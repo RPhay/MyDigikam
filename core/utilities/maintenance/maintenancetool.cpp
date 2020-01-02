@@ -37,6 +37,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "dnotificationwrapper.h"
 
 namespace Digikam
@@ -47,7 +48,7 @@ class Q_DECL_HIDDEN MaintenanceTool::Private
 public:
 
     explicit Private()
-       : notification(true)
+      : notification(true)
     {
     }
 
@@ -61,8 +62,13 @@ MaintenanceTool::MaintenanceTool(const QString& id, ProgressItem* const parent)
 {
     // --- NOTE: use dynamic binding as slotCancel() is a virtual method which can be re-implemented in derived classes.
 
-    connect(this, static_cast<void (MaintenanceTool::*)(const QString&)>(&MaintenanceTool::progressItemCanceled),
+#ifdef Q_OS_WIN
+    connect(this, SIGNAL(progressItemCanceled(QString)),
+            this, SLOT(slotCancel()));
+#else
+    connect(this, static_cast<void (ProgressItem::*)(const QString&)>(&ProgressItem::progressItemCanceled),
             this, &MaintenanceTool::slotCancel);
+#endif
 }
 
 MaintenanceTool::~MaintenanceTool()
