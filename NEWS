@@ -532,7 +532,7 @@ BUGFIXES:
 517 ==> 190411 - Metadata are invisible on older pictures.
 518 ==> 110066 - Md5 Checksums to identify pictures.
 519 ==> 415767 - Thumbnails for Portrait oriented images aren't rotated properly.
-520 ==> 
+520 ==> 415791 - TimeAdjust can not adjust time by 1 unit - only by 2.
 521 ==> 
 522 ==> 
 523 ==> 

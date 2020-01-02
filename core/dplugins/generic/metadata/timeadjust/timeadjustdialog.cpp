@@ -38,6 +38,7 @@
 #include <QGroupBox>
 #include <QLabel>
 #include <QMap>
+#include <QTimer>
 #include <QPointer>
 #include <QPushButton>
 #include <QRadioButton>
@@ -49,6 +50,7 @@
 #include <QApplication>
 #include <QMessageBox>
 #include <QWindow>
+
 
 // KDE includes
 
@@ -76,12 +78,13 @@ class Q_DECL_HIDDEN TimeAdjustDialog::Private
 public:
 
     explicit Private()
+      : settingsView(nullptr),
+        updateTimer(nullptr),
+        progressBar(nullptr),
+        listView(nullptr),
+        thread(nullptr),
+        iface(nullptr)
     {
-        settingsView = nullptr;
-        progressBar  = nullptr;
-        listView     = nullptr;
-        thread       = nullptr;
-        iface        = nullptr;
     }
 
     TimeAdjustSettings*   settingsView;
@@ -89,6 +92,8 @@ public:
     QMap<QUrl, QDateTime> itemsUsedMap;           // Map of item urls and Used Timestamps.
     QMap<QUrl, QDateTime> itemsUpdatedMap;        // Map of item urls and Updated Timestamps.
     QMap<QUrl, int>       itemsStatusMap;         // Map of item urls and status flag.
+
+    QTimer*               updateTimer;
 
     DProgressWdg*         progressBar;
     TimeAdjustList*       listView;
@@ -136,6 +141,15 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
     mainLayout->setRowStretch(0, 10);
     mainLayout->setContentsMargins(QMargins());
 
+    // ----------------------------------------------------------------------------
+
+    d->updateTimer = new QTimer(this);
+    d->updateTimer->setSingleShot(true);
+    d->updateTimer->setInterval(500);
+
+    connect(d->updateTimer, SIGNAL(timeout()),
+            this, SLOT(slotReadTimestamps()));
+
     // -- Thread Slots/Signals ----------------------------------------------
 
     d->thread = new TimeAdjustThread(this);
@@ -167,10 +181,10 @@ TimeAdjustDialog::TimeAdjustDialog(QWidget* const parent, DInfoInterface* const 
             this, SLOT(slotDialogFinished()));
 
     connect(d->settingsView, SIGNAL(signalSettingsChanged()),
-            this, SLOT(slotReadTimestamps()));
+            this, SLOT(slotUpdateTimestamps()));
 
     connect(d->settingsView, SIGNAL(signalSettingsChangedTool()),
-            this, SLOT(slotReadTimestamps()));
+            this, SLOT(slotUpdateTimestamps()));
 
     // -----------------------------------------------------------------------
 
@@ -512,6 +526,11 @@ void TimeAdjustDialog::updateListView()
     d->listView->setItemDates(d->itemsUpdatedMap, TimeAdjustList::TIMESTAMP_UPDATED);
 
     QApplication::restoreOverrideCursor();
+}
+
+void TimeAdjustDialog::slotUpdateTimestamps()
+{
+    d->updateTimer->start();
 }
 
 }  // namespace DigikamGenericTimeAdjustPlugin

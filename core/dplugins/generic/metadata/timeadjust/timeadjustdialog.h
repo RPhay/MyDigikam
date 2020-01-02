@@ -67,6 +67,7 @@ private Q_SLOTS:
      *  this will also implicitly update listview info.
      */
     void slotReadTimestamps();
+    void slotUpdateTimestamps();
 
 private:
 
