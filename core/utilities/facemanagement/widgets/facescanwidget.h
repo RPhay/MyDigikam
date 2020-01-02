@@ -27,7 +27,7 @@
 
 // Qt includes
 
-#include <QWidget>
+#include <QTabWidget>
 
 // Local includes
 
@@ -37,7 +37,7 @@
 namespace Digikam
 {
 
-class FaceScanWidget : public QWidget,
+class FaceScanWidget : public QTabWidget,
                        public StateSavingObject
 {
     Q_OBJECT
@@ -47,10 +47,10 @@ public:
     explicit FaceScanWidget(QWidget* const parent = nullptr);
     ~FaceScanWidget();
 
-    bool             settingsConflicted() const;
-    FaceScanSettings settings()           const;
+    bool settingsConflicted()   const;
+    FaceScanSettings settings() const;
 
-    void             resetRetrainAllButton();
+    void resetRetrainAllButton();
 
 protected:
 

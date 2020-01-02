@@ -76,17 +76,17 @@ class Q_DECL_HIDDEN AlbumSelectors::Private
 public:
 
     explicit Private()
+      : albumSelectCB(nullptr),
+        tagSelectCB(nullptr),
+        albumClearButton(nullptr),
+        tagClearButton(nullptr),
+        wholeAlbums(nullptr),
+        wholeTags(nullptr),
+        tabWidget(nullptr),
+        albumWidget(nullptr),
+        tagWidget(nullptr),
+        selectionMode(All)
     {
-        albumSelectCB    = nullptr;
-        tagSelectCB      = nullptr;
-        albumClearButton = nullptr;
-        tagClearButton   = nullptr;
-        wholeAlbums      = nullptr;
-        wholeTags        = nullptr;
-        tabWidget        = nullptr;
-        albumWidget      = nullptr;
-        tagWidget        = nullptr;
-        selectionMode    = All;
     }
 
     static const QString         configUseWholeAlbumsEntry;
@@ -94,17 +94,18 @@ public:
     static const QString         configAlbumTypeEntry;
 
     QString                      configName;
+
+    AlbumTreeViewSelectComboBox* albumSelectCB;
+    TagTreeViewSelectComboBox*   tagSelectCB;
+    ModelClearButton*            albumClearButton;
+    ModelClearButton*            tagClearButton;
+
     QCheckBox*                   wholeAlbums;
     QCheckBox*                   wholeTags;
 
     QTabWidget*                  tabWidget;
     QWidget*                     albumWidget;
     QWidget*                     tagWidget;
-
-    AlbumTreeViewSelectComboBox* albumSelectCB;
-    TagTreeViewSelectComboBox*   tagSelectCB;
-    ModelClearButton*            albumClearButton;
-    ModelClearButton*            tagClearButton;
 
     AlbumType                    selectionMode;
 };
@@ -113,17 +114,24 @@ const QString AlbumSelectors::Private::configUseWholeAlbumsEntry(QLatin1String("
 const QString AlbumSelectors::Private::configUseWholeTagsEntry(QLatin1String("UseWholeTagsEntry"));
 const QString AlbumSelectors::Private::configAlbumTypeEntry(QLatin1String("AlbumTypeEntry"));
 
-AlbumSelectors::AlbumSelectors(const QString& label, const QString& configName, QWidget* const parent, AlbumType albumType)
+AlbumSelectors::AlbumSelectors(const QString& label,
+                               const QString& configName,
+                               QWidget* const parent,
+                               AlbumType albumType)
     : QWidget(parent),
       d(new Private)
 {
-    d->configName = configName;
+    d->configName                 = configName;
     setObjectName(d->configName);
 
-    d->selectionMode = albumType;
+    d->selectionMode              = albumType;
 
-    QVBoxLayout* mainLayout = new QVBoxLayout(this);
-    mainLayout->addWidget(new QLabel(label));
+    QVBoxLayout* const mainLayout = new QVBoxLayout(this);
+
+    if (!label.isEmpty())
+    {
+        mainLayout->addWidget(new QLabel(label));
+    }
 
     switch (d->selectionMode)
     {
@@ -140,12 +148,14 @@ AlbumSelectors::AlbumSelectors(const QString& label, const QString& configName, 
             mainLayout->addWidget(d->tabWidget);
             break;
         }
+
         case PhysAlbum:
         {
             initAlbumWidget();
             mainLayout->addWidget(d->albumWidget);
             break;
         }
+
         case TagsAlbum:
         {
             initTagWidget();
@@ -231,7 +241,7 @@ void AlbumSelectors::initTagWidget()
 
 void AlbumSelectors::slotWholeAlbums(bool b)
 {
-    if (d->selectionMode == PhysAlbum || d->selectionMode == All)
+    if ((d->selectionMode == PhysAlbum) || (d->selectionMode == All))
     {
         d->albumSelectCB->setEnabled(!b);
         d->albumClearButton->setEnabled(!b);
@@ -240,7 +250,7 @@ void AlbumSelectors::slotWholeAlbums(bool b)
 
 void AlbumSelectors::slotWholeTags(bool b)
 {
-    if (d->selectionMode == TagsAlbum || d->selectionMode == All)
+    if ((d->selectionMode == TagsAlbum) || (d->selectionMode == All))
     {
         d->tagSelectCB->setEnabled(!b);
         d->tagClearButton->setEnabled(!b);
@@ -251,13 +261,13 @@ void AlbumSelectors::slotUpdateClearButtons()
 {
     bool selectionChanged = false;
 
-    if (d->selectionMode == PhysAlbum || d->selectionMode == All)
+    if ((d->selectionMode == PhysAlbum) || (d->selectionMode == All))
     {
         d->albumClearButton->animateVisible(!d->albumSelectCB->model()->checkedAlbums().isEmpty());
         selectionChanged = true;
     }
 
-    if (d->selectionMode == TagsAlbum || d->selectionMode == All)
+    if ((d->selectionMode == TagsAlbum) || (d->selectionMode == All))
     {
         d->tagClearButton->animateVisible(!d->tagSelectCB->model()->checkedAlbums().isEmpty());
         selectionChanged = true;
@@ -271,7 +281,7 @@ void AlbumSelectors::slotUpdateClearButtons()
 
 bool AlbumSelectors::wholeAlbumsChecked() const
 {
-    return d->wholeAlbums && d->wholeAlbums->isChecked();
+    return (d->wholeAlbums && d->wholeAlbums->isChecked());
 }
 
 AlbumList AlbumSelectors::selectedAlbums() const
@@ -342,6 +352,7 @@ AlbumList AlbumSelectors::selectedAlbumsAndTags() const
     AlbumList albums;
     albums << selectedAlbums();
     albums << selectedTags();
+
     return albums;
 }
 

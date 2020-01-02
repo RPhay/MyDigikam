@@ -50,41 +50,53 @@ public:
 
 public:
 
-    /** Default Contructor. 'label' is front text of label which title widget. 'configName' is name used to store
-     *  Albums configuration in settings file. 'parent' is parent widget.
+    /**
+     * Default Contructor. 'label' is front text of label which title widget. 'configName' is name used to store
+     * Albums configuration in settings file. 'parent' is parent widget.
      */
-    explicit AlbumSelectors(const QString& label, const QString& configName, QWidget* const parent = nullptr, AlbumType albumType = All);
+    explicit AlbumSelectors(const QString& label,
+                            const QString& configName,
+                            QWidget* const parent = nullptr,
+                            AlbumType albumType = All);
     ~AlbumSelectors();
 
-    /** Return list of selected physical albums
+    /**
+     * Return list of selected physical albums
      */
-    AlbumList selectedAlbums() const;
+    AlbumList selectedAlbums()          const;
 
-    /** Return list of selected physical album ids
+    /**
+     * Return list of selected physical album ids
      */
-    QList<int> selectedAlbumIds() const;
+    QList<int> selectedAlbumIds()       const;
 
-    /** Return list of selected tag albums
+    /**
+     * Return list of selected tag albums
      */
-    AlbumList selectedTags() const;
+    AlbumList selectedTags()            const;
 
-    /** Return list of selected tag album ids
+    /**
+     * Return list of selected tag album ids
      */
-    QList<int> selectedTagIds() const;
+    QList<int> selectedTagIds()         const;
 
-    /** Return list of selected physical and tag albums.
+    /**
+     * Return list of selected physical and tag albums.
      */
-    AlbumList selectedAlbumsAndTags() const;
+    AlbumList selectedAlbumsAndTags()   const;
 
-    /** Reset all Physical Albums selection.
+    /**
+     * Reset all Physical Albums selection.
      */
     void resetPAlbumSelection();
 
-    /** Reset all Tag Albums selection.
+    /**
+     * Reset all Tag Albums selection.
      */
     void resetTAlbumSelection();
 
-    /** Reset all Physical and Tag Albums selection.
+    /**
+     * Reset all Physical and Tag Albums selection.
      */
     void resetSelection();
 
@@ -97,32 +109,36 @@ public:
      *  selected from tree-view and all others are deselected.
      */
     void setTagSelected(Album* const album, bool singleSelection=true);
-    
+
     /**
      * Sets the search type selection with the AlbumType.
-     **/
+     */
     void setTypeSelection(int albumType);
 
     /**
      * Returns the selected album type.
-     **/
+     */
     int typeSelection() const;
 
-    /** Return true if whole Albums collection option is checked.
+    /**
+     * Return true if whole Albums collection option is checked.
      */
     bool wholeAlbumsChecked() const;
 
-    /** Return true if whole Tags collection option is checked.
+    /**
+     * Return true if whole Tags collection option is checked.
      */
     bool wholeTagsChecked() const;
 
 public Q_SLOTS:
 
-    /** Called in constructor. Restore previous settings saved in configuration file.
-    */
+    /**
+     * Called in constructor. Restore previous settings saved in configuration file.
+     */
     void loadState();
 
-    /** Save settings in configuration file. Must be called explicitly by host implementation.
+    /**
+     * Save settings in configuration file. Must be called explicitly by host implementation.
      */
     void saveState();
 

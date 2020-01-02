@@ -32,7 +32,7 @@ namespace Digikam
 {
 
 FaceScanWidget::FaceScanWidget(QWidget* const parent)
-    : QWidget(parent),
+    : QTabWidget(parent),
       StateSavingObject(this),
       d(new Private)
 {
@@ -149,10 +149,10 @@ void FaceScanWidget::doSaveState()
 
 void FaceScanWidget::setupUi()
 {
-    // ---- Main option box --------
+    // ---- Workflow tab --------
 
-    d->optionGroupBox                 = new QGroupBox(i18n("Workflow"));
-    d->optionGroupBox->setToolTip(i18nc("@tooltip",
+    d->workflowWidget                 = new QWidget(this);
+    d->workflowWidget->setToolTip(i18nc("@tooltip",
                                         "digiKam can search for faces in your photos.\n"
                                         "When you have identified your friends on a number of photos,\n"
                                         "it can also recognize the people shown on your photos."));
@@ -192,22 +192,17 @@ void FaceScanWidget::setupUi()
     optionLayout->setColumnMinimumWidth(0, indent);
 #endif
 
-    d->optionGroupBox->setLayout(optionLayout);
+    d->workflowWidget->setLayout(optionLayout);
+    addTab(d->workflowWidget, i18nc("@title:tab", "Workflow"));
 
     // ---- Album tab ---------
 
-    d->tabWidget                      = new QTabWidget;
-    QWidget* const selWidget          = new QWidget(d->tabWidget);
-    QVBoxLayout* const selLayout      = new QVBoxLayout;
-    d->albumSelectors                 = new AlbumSelectors(i18nc("@label", "Search in:"), d->configName, selWidget);
-    selLayout->addWidget(d->albumSelectors);
-    selWidget->setLayout(selLayout);
-
-    d->tabWidget->addTab(selWidget, i18nc("@title:tab", "Albums"));
+    d->albumSelectors = new AlbumSelectors(QString(), d->configName, this);
+    addTab(d->albumSelectors, i18nc("@title:tab", "Search in"));
 
     // ---- Settings tab ------
 
-    QWidget* const settingsTab        = new QWidget(d->tabWidget);
+    QWidget* const settingsTab        = new QWidget(this);
     QVBoxLayout* const settingsLayout = new QVBoxLayout(settingsTab);
 
     QGroupBox* const accuracyBox      = new QGroupBox(i18nc("@groupbox", "Face Accuracy"), settingsTab);
@@ -250,15 +245,7 @@ void FaceScanWidget::setupUi()
     settingsLayout->addWidget(d->retrainAllButton);
     settingsLayout->addStretch(10);
 
-    d->tabWidget->addTab(settingsTab, i18nc("@title:tab", "Settings"));
-
-    // ------------------------
-
-    QVBoxLayout* const vbx = new QVBoxLayout(this);
-    vbx->addWidget(d->optionGroupBox);
-    vbx->addWidget(d->tabWidget);
-    vbx->setContentsMargins(QMargins());
-    setLayout(vbx);
+    addTab(settingsTab, i18nc("@title:tab", "Settings"));
 }
 
 void FaceScanWidget::setupConnections()
@@ -321,7 +308,7 @@ void FaceScanWidget::slotPrepareForRecognize(bool /*status*/)
 
 void FaceScanWidget::retrainAllButtonToggled(bool on)
 {
-    d->optionGroupBox->setEnabled(!on);
+    d->workflowWidget->setEnabled(!on);
     d->albumSelectors->setEnabled(!on);
 }
 

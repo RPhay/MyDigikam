@@ -31,15 +31,14 @@
 
 #include <QApplication>
 #include <QButtonGroup>
+#include <QGroupBox>
 #include <QCheckBox>
 #include <QGridLayout>
-#include <QGroupBox>
 #include <QLabel>
 #include <QMouseEvent>
 #include <QKeyEvent>
 #include <QRadioButton>
 #include <QToolButton>
-#include <QTabWidget>
 #include <QIcon>
 #include <QVBoxLayout>
 #include <QPushButton>
@@ -74,7 +73,7 @@ class Q_DECL_HIDDEN FaceScanWidget::Private
 public:
 
     explicit Private()
-        : optionGroupBox(nullptr),
+        : workflowWidget(nullptr),
           detectAndRecognizeButton(nullptr),
           detectButton(nullptr),
           alreadyScannedBox(nullptr),
@@ -95,7 +94,7 @@ public:
     {
     }
 
-    QGroupBox*                   optionGroupBox;
+    QWidget*                     workflowWidget;
     QRadioButton*                detectAndRecognizeButton;
     QRadioButton*                detectButton;
     SqueezedComboBox*            alreadyScannedBox;
