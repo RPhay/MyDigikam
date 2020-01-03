@@ -26,6 +26,13 @@
 namespace Digikam
 {
 
+DBJobInfo::DBJobInfo()
+    : m_folders(false),
+      m_listAvailableImagesOnly(false),
+      m_recursive(false)
+{
+}
+
 void DBJobInfo::setFoldersJob()
 {
     m_folders = true;
@@ -56,19 +63,12 @@ bool DBJobInfo::isRecursive() const
     return m_recursive;
 }
 
-DBJobInfo::DBJobInfo()
-{
-    m_folders                 = false;
-    m_listAvailableImagesOnly = false;
-    m_recursive               = false;
-}
-
 // ---------------------------------------------
 
 AlbumsDBJobInfo::AlbumsDBJobInfo()
-    : DBJobInfo()
+    : DBJobInfo(),
+      m_albumRootId(-1)
 {
-    m_albumRootId = -1;
 }
 
 void AlbumsDBJobInfo::setAlbumRootId(int id)
@@ -94,9 +94,9 @@ QString AlbumsDBJobInfo::album()
 // ---------------------------------------------
 
 TagsDBJobInfo::TagsDBJobInfo()
-    : DBJobInfo()
+    : DBJobInfo(),
+      m_faceFolders(false)
 {
-    m_faceFolders = false;
 }
 
 void TagsDBJobInfo::setFaceFoldersJob()
@@ -132,13 +132,13 @@ QList<int> TagsDBJobInfo::tagsIds() const
 // ---------------------------------------------
 
 GPSDBJobInfo::GPSDBJobInfo()
-    : DBJobInfo()
+    : DBJobInfo(),
+      m_directQuery(false),
+      m_lat1(0),
+      m_lng1(0),
+      m_lat2(0),
+      m_lng2(0)
 {
-    m_directQuery = false;
-    m_lat1        = 0;
-    m_lng1        = 0;
-    m_lat2        = 0;
-    m_lng2        = 0;
 }
 
 void GPSDBJobInfo::setDirectQuery()
@@ -194,15 +194,15 @@ qreal GPSDBJobInfo::lng2() const
 // ---------------------------------------------
 
 SearchesDBJobInfo::SearchesDBJobInfo()
-    : DBJobInfo()
+    : DBJobInfo(),
+      m_duplicates(false),
+      m_albumUpdate(false),
+      m_albumTagRelation(0),
+      m_searchResultRestriction(0),
+      m_searchIds(QList<int>()),
+      m_minThreshold(0),
+      m_maxThreshold(1)
 {
-    m_duplicates              = false;
-    m_albumUpdate             = false;
-    m_minThreshold            = 0;
-    m_maxThreshold            = 1;
-    m_albumTagRelation        = 0;
-    m_searchResultRestriction = 0;
-    m_searchIds               = QList<int>();
 }
 
 void SearchesDBJobInfo::setDuplicatesJob()

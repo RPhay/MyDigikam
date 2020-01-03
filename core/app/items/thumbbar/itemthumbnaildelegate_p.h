@@ -42,9 +42,8 @@ class Q_DECL_HIDDEN ItemThumbnailDelegatePrivate : public ItemDelegate::ItemDele
 public:
 
     explicit ItemThumbnailDelegatePrivate()
+        : flow(QListView::LeftToRight)
     {
-        flow                = QListView::LeftToRight;
-
         // switch off drawing of frames
         drawMouseOverFrame  = false;
         drawFocusFrame      = false;

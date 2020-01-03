@@ -45,10 +45,10 @@ public:
     explicit ItemCopyrightCache(ItemCopyright* const object)
         : object(object)
     {
-        // set this as cache
-        object->m_cache = this;
-        // read all properties
-        infos = CoreDbAccess().db()->getItemCopyright(object->m_id, QString());
+          // set this as cache
+          object->m_cache = this;
+          // read all properties
+          infos = CoreDbAccess().db()->getItemCopyright(object->m_id, QString());
     }
 
     ~ItemCopyrightCache()
@@ -122,7 +122,7 @@ void ItemCopyright::replaceFrom(const ItemCopyright& source)
     foreach (const CopyrightInfo& info, infos)
     {
         access.db()->setItemCopyrightProperty(m_id, info.property, info.value,
-                                               info.extraValue, CoreDB::PropertyNoConstraint);
+                                              info.extraValue, CoreDB::PropertyNoConstraint);
     }
 }
 
@@ -153,7 +153,7 @@ void ItemCopyright::setCreator(const QString& creator, ReplaceMode mode)
     }
 
     CoreDbAccess().db()->setItemCopyrightProperty(m_id, ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreCreator),
-                                                   creator, QString(), uniqueness);
+                                                  creator, QString(), uniqueness);
 }
 
 void ItemCopyright::removeCreators()
@@ -278,14 +278,14 @@ IptcCoreContactInfo ItemCopyright::contactInfo()
 
 void ItemCopyright::setContactInfo(const IptcCoreContactInfo& info)
 {
-    setSimpleProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreContactInfoCity), info.city);
-    setSimpleProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreContactInfoCountry), info.country);
-    setSimpleProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreContactInfoAddress), info.address);
-    setSimpleProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreContactInfoPostalCode), info.postalCode);
+    setSimpleProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreContactInfoCity),          info.city);
+    setSimpleProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreContactInfoCountry),       info.country);
+    setSimpleProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreContactInfoAddress),       info.address);
+    setSimpleProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreContactInfoPostalCode),    info.postalCode);
     setSimpleProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreContactInfoProvinceState), info.provinceState);
-    setSimpleProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreContactInfoEmail), info.email);
-    setSimpleProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreContactInfoPhone), info.phone);
-    setSimpleProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreContactInfoWebUrl), info.webUrl);
+    setSimpleProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreContactInfoEmail),         info.email);
+    setSimpleProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreContactInfoPhone),         info.phone);
+    setSimpleProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreContactInfoWebUrl),        info.webUrl);
 }
 
 void ItemCopyright::removeContactInfo()
@@ -445,11 +445,11 @@ MetaEngine::AltLangMap ItemCopyright::readLanguageProperties(const QString& prop
 }
 
 void ItemCopyright::setLanguageProperty(const QString& property, const QString& value,
-                                         const QString& languageCode, ReplaceMode mode)
+                                        const QString& languageCode, ReplaceMode mode)
 {
     CoreDB::CopyrightPropertyUnique uniqueness;
 
-    if (mode == ReplaceAllEntries)
+    if      (mode == ReplaceAllEntries)
     {
         uniqueness = CoreDB::PropertyUnique;
     }
@@ -498,7 +498,7 @@ int ItemCopyright::languageMatch(const QList<CopyrightInfo> infos, const QString
     QString langCode;
     QString fullCode = languageCode;
 
-    if (languageCode.isNull())
+    if      (languageCode.isNull())
     {
         // find local language
 
@@ -544,7 +544,7 @@ int ItemCopyright::languageMatch(const QList<CopyrightInfo> infos, const QString
     {
         const CopyrightInfo& info = infos.at(i);
 
-        if (info.extraValue == fullCode)
+        if      (info.extraValue == fullCode)
         {
             fullCodeMatch = i;
             break;

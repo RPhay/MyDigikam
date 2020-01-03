@@ -9,7 +9,7 @@
  * Copyright (C) 2007-2008 by Marcel Wiesweg  <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2010      by Holger Foerster <hamsi2k at freenet dot de>
  * Copyright (C) 2010-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
- * Copyright (C)      2018 by Mario Frank     <mario dot frank at uni minus potsdam dot de>
+ * Copyright (C) 2018      by Mario Frank     <mario dot frank at uni minus potsdam dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -120,19 +120,18 @@ DbEngineParameters::DbEngineParameters(const QString& _type,
 {
 }
 
-// Note no need to 
 DbEngineParameters::DbEngineParameters(const QUrl& url)
-    : port(-1),
-      internalServer(false)
+    : databaseType(QUrlQuery(url).queryItemValue(QLatin1String("databaseType"))),
+      databaseNameCore(QUrlQuery(url).queryItemValue(QLatin1String("databaseNameCore"))),
+      connectOptions(QUrlQuery(url).queryItemValue(QLatin1String("connectOptions"))),
+      hostName(QUrlQuery(url).queryItemValue(QLatin1String("hostName"))),
+      port(-1),
+      internalServer(false),
+      databaseNameThumbnails(QUrlQuery(url).queryItemValue(QLatin1String("databaseNameThumbnails"))),
+      databaseNameFace(QUrlQuery(url).queryItemValue(QLatin1String("databaseNameFace"))),
+      databaseNameSimilarity(QUrlQuery(url).queryItemValue(QLatin1String("databaseNameSimilarity")))
 {
-    databaseType           = QUrlQuery(url).queryItemValue(QLatin1String("databaseType"));
-    databaseNameCore       = QUrlQuery(url).queryItemValue(QLatin1String("databaseNameCore"));
-    databaseNameThumbnails = QUrlQuery(url).queryItemValue(QLatin1String("databaseNameThumbnails"));
-    databaseNameFace       = QUrlQuery(url).queryItemValue(QLatin1String("databaseNameFace"));
-    databaseNameSimilarity = QUrlQuery(url).queryItemValue(QLatin1String("databaseNameSimilarity"));
-    connectOptions         = QUrlQuery(url).queryItemValue(QLatin1String("connectOptions"));
-    hostName               = QUrlQuery(url).queryItemValue(QLatin1String("hostName"));
-    QString queryPort      = QUrlQuery(url).queryItemValue(QLatin1String("port"));
+    QString queryPort = QUrlQuery(url).queryItemValue(QLatin1String("port"));
 
     if (!queryPort.isNull())
     {

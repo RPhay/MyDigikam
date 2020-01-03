@@ -97,7 +97,8 @@ public:
                 {
                     firstMatch = i;
                 }
-                if (info.language == fullCode)
+
+                if      (info.language == fullCode)
                 {
                     fullCodeMatch = i;
                     break;
@@ -120,7 +121,7 @@ public:
 
         foreach (int index, set)
         {
-            if (index > removedIndex)
+            if      (index > removedIndex)
             {
                 newSet << index - 1;
             }
@@ -138,7 +139,7 @@ public:
     void adjustStoredIndexes(int removedIndex)
     {
         adjustStoredIndexes(dirtyIndices, removedIndex);
-        adjustStoredIndexes(newIndices, removedIndex);
+        adjustStoredIndexes(newIndices,   removedIndex);
     }
 
 public:
@@ -170,8 +171,8 @@ ItemComments::ItemComments(CoreDbAccess& access, qlonglong imageid)
 }
 
 ItemComments::ItemComments(const ItemComments& other)
+    : d(other.d)
 {
-    d = other.d;
 }
 
 ItemComments::~ItemComments()
@@ -238,8 +239,8 @@ QString ItemComments::defaultComment(int* const index, DatabaseComment::Type typ
 }
 
 QString ItemComments::commentForLanguage(const QString& languageCode,
-                                          int* const index,
-                                          LanguageChoiceBehavior behavior) const
+                                         int* const index,
+                                         LanguageChoiceBehavior behavior) const
 {
     if (!d)
     {
@@ -269,11 +270,11 @@ QString ItemComments::commentForLanguage(const QString& languageCode,
         chosen = langCodeMatch;
     }
 
-    if (chosen == -1 && behavior > ReturnMatchingLanguageOnly)
+    if ((chosen == -1) && (behavior > ReturnMatchingLanguageOnly))
     {
         chosen = defaultCodeMatch;
 
-        if (chosen == -1 && behavior == ReturnMatchingDefaultOrFirstLanguage)
+        if ((chosen == -1) && (behavior == ReturnMatchingDefaultOrFirstLanguage))
         {
             chosen = firstMatch;
         }
@@ -365,10 +366,10 @@ void ItemComments::setUniqueBehavior(UniqueBehavior behavior)
 }
 
 void ItemComments::addComment(const QString& comment,
-                               const QString& lang,
-                               const QString& author_,
-                               const QDateTime& date,
-                               DatabaseComment::Type type)
+                              const QString& lang,
+                              const QString& author_,
+                              const QDateTime& date,
+                              DatabaseComment::Type type)
 {
     if (!d)
     {
@@ -396,7 +397,7 @@ void ItemComments::addComment(const QString& comment,
         CommentInfo& info = d->infos[i];
 
         // some extra considerations on replacing
-        if (info.type == type && info.type == DatabaseComment::Comment && info.language == language)
+        if ((info.type == type) && (info.type == DatabaseComment::Comment) && (info.language == language))
         {
             if (!multipleCommentsPerLanguage || (info.author == author))
             {
@@ -410,7 +411,7 @@ void ItemComments::addComment(const QString& comment,
 
         // simulate unique restrictions of db.
         // There is a problem that a NULL value is never unique, see #189080
-        if ((info.type == type) &&
+        if ((info.type == type)         &&
             (info.language == language) &&
             ((info.author == author) || (info.author.isEmpty() && author.isEmpty())))
         {
@@ -445,7 +446,7 @@ void ItemComments::replaceComments(const CaptionsMap& map, DatabaseComment::Type
 
     d->dirtyIndices.clear();
 
-    for (CaptionsMap::const_iterator it = map.constBegin(); it != map.constEnd(); ++it)
+    for (CaptionsMap::const_iterator it = map.constBegin() ; it != map.constEnd() ; ++it)
     {
         CaptionValues val = it.value();
         addComment(val.caption, it.key(), val.author, val.date, type);
@@ -454,7 +455,7 @@ void ItemComments::replaceComments(const CaptionsMap& map, DatabaseComment::Type
     // remove all comments of this type that have not been touched above
     for (int i = 0 ; i < d->infos.size() /* changing! */ ; )
     {
-        if (!d->dirtyIndices.contains(i) && !d->newIndices.contains(i) && d->infos[i].type == type)
+        if (!d->dirtyIndices.contains(i) && !d->newIndices.contains(i) && (d->infos[i].type == type))
         {
             remove(i);
         }
@@ -498,10 +499,10 @@ void ItemComments::replaceFrom(const ItemComments& source)
 }
 
 void ItemComments::addCommentDirectly(const QString& comment,
-                                       const QString& language,
-                                       const QString& author,
-                                       DatabaseComment::Type type,
-                                       const QDateTime& date)
+                                      const QString& language,
+                                      const QString& author,
+                                      DatabaseComment::Type type,
+                                      const QDateTime& date)
 {
     CommentInfo info;
     info.comment  = comment;

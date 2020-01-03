@@ -62,10 +62,10 @@ public:
         : backend(nullptr),
           db(nullptr),
           databaseWatch(nullptr),
+          // Create a unique identifier for this application (as an application accessing a database
+          applicationIdentifier(QUuid::createUuid()),
           initializing(false)
     {
-        // Create a unique identifier for this application (as an application accessing a database
-        applicationIdentifier = QUuid::createUuid();
     };
 
     ~CoreDbAccessStaticPriv()
