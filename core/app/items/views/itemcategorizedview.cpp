@@ -147,6 +147,7 @@ void ItemCategorizedView::installDefaultModels()
     filterModel->sort(0); // an initial sorting is necessary
 
     // set flags that we want to get dataChanged() signals for
+
     model->setWatchFlags(filterModel->suggestedWatchFlags());
 
     setModels(model, filterModel);
@@ -247,9 +248,12 @@ void ItemCategorizedView::setItemDelegate(ItemDelegate* delegate)
         hideIndexNotification();
         d->delegate->setAllOverlaysActive(false);
         d->delegate->setViewOnAllOverlays(nullptr);
+
         // Note: Be precise, no wildcard disconnect!
+
         disconnect(d->delegate, SIGNAL(requestNotification(QModelIndex,QString)),
                    this, SLOT(showIndexNotification(QModelIndex,QString)));
+
         disconnect(d->delegate, SIGNAL(hideNotification()),
                    this, SLOT(hideIndexNotification()));
     }
@@ -279,7 +283,9 @@ void ItemCategorizedView::setItemDelegate(ItemDelegate* delegate)
 Album* ItemCategorizedView::currentAlbum() const
 {
     ItemAlbumModel* const albumModel = imageAlbumModel();
-    /** TODO: Change to QList return type **/
+    
+    // TODO: Change to QList return type
+
     if (albumModel && !(albumModel->currentAlbums().isEmpty()))
     {
         return albumModel->currentAlbums().first();
@@ -417,8 +423,11 @@ ThumbnailSize ItemCategorizedView::thumbnailSize() const
 {
 /*
     ItemThumbnailModel* const thumbModel = imageThumbnailModel();
+
     if (thumbModel)
+    {
         return thumbModel->thumbnailSize();
+    }
 */
     if (d->delegate)
     {
@@ -501,7 +510,7 @@ void ItemCategorizedView::setSelectedUrls(const QList<QUrl>& urlList)
 {
     QItemSelection mySelection;
 
-    for (QList<QUrl>::const_iterator it = urlList.constBegin(); it!=urlList.constEnd(); ++it)
+    for (QList<QUrl>::const_iterator it = urlList.constBegin() ; it!=urlList.constEnd() ; ++it)
     {
         const QString path      = it->toLocalFile();
         const QModelIndex index = d->filterModel->indexForPath(path);
@@ -570,7 +579,7 @@ void ItemCategorizedView::addOverlay(ItemDelegateOverlay* overlay, ItemDelegate*
 
 void ItemCategorizedView::removeOverlay(ItemDelegateOverlay* overlay)
 {
-    ItemDelegate* delegate = dynamic_cast<ItemDelegate*>(overlay->delegate());
+    ItemDelegate* const delegate = dynamic_cast<ItemDelegate*>(overlay->delegate());
 
     if (delegate)
     {
@@ -589,6 +598,7 @@ void ItemCategorizedView::updateGeometries()
 void ItemCategorizedView::slotDelayedEnter()
 {
     // re-emit entered() for index under mouse (after layout).
+
     QModelIndex mouseIndex = indexAt(mapFromGlobal(QCursor::pos()));
 
     if (mouseIndex.isValid())
@@ -686,6 +696,7 @@ Album* ItemCategorizedView::albumAt(const QPoint& pos) const
         if (categoryIndex.isValid())
         {
             int albumId = categoryIndex.data(ItemFilterModel::CategoryAlbumIdRole).toInt();
+
             return AlbumManager::instance()->findPAlbum(albumId);
         }
     }

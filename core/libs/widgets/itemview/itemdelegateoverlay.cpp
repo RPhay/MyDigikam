@@ -348,7 +348,7 @@ QString AbstractWidgetDelegateOverlay::notifyMultipleMessage(const QModelIndex&,
 
 bool AbstractWidgetDelegateOverlay::eventFilter(QObject* obj, QEvent* event)
 {
-    if (m_widget && obj == m_widget->parent())   // events on view's viewport
+    if (m_widget && (obj == m_widget->parent()))   // events on view's viewport
     {
         switch (event->type())
         {
