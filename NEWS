@@ -537,7 +537,7 @@ BUGFIXES:
 522 ==> 415702 - Cannot abort or stop find Duplicate process.
 523 ==> 415796 - Face thumbnail zoom level too wide.
 524 ==> 366551 - Unclear icon-item overlay when associating people to faces.
-525 ==> 
+525 ==> 415535 - Import from a local/remote folder.
 526 ==> 
 527 ==> 
 528 ==> 

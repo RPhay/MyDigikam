@@ -340,8 +340,10 @@ void AbstractWidgetDelegateOverlay::widgetLeaveNotifyMultiple()
 
 QString AbstractWidgetDelegateOverlay::notifyMultipleMessage(const QModelIndex&, int number)
 {
-    return i18ncp("@info", "<i>Applying operation to<br/>the selected picture</i>",
-                  "<i>Applying operation to <br/><b>%1</b> selected pictures</i>", number);
+    return i18ncp("@info",
+                  "<i>Applying operation to<br/>the selected picture</i>",
+                  "<i>Applying operation to <br/><b>%1</b> selected pictures</i>",
+                  number);
 }
 
 bool AbstractWidgetDelegateOverlay::eventFilter(QObject* obj, QEvent* event)
@@ -351,11 +353,13 @@ bool AbstractWidgetDelegateOverlay::eventFilter(QObject* obj, QEvent* event)
         switch (event->type())
         {
             case QEvent::Leave:
+            {
                 viewportLeaveEvent(obj, event);
                 break;
+            }
 
             case QEvent::MouseMove:
-
+            {
                 if (m_mouseButtonPressedOnWidget)
                 {
                     // Don't forward mouse move events to the viewport,
@@ -364,14 +368,20 @@ bool AbstractWidgetDelegateOverlay::eventFilter(QObject* obj, QEvent* event)
                     // above the viewport.
                     return true;
                 }
+
                 break;
+            }
 
             case QEvent::MouseButtonRelease:
+            {
                 m_mouseButtonPressedOnWidget = false;
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
     }
     else if (obj == m_widget)
@@ -379,28 +389,37 @@ bool AbstractWidgetDelegateOverlay::eventFilter(QObject* obj, QEvent* event)
         switch (event->type())
         {
             case QEvent::MouseButtonPress:
-
+            {
                 if (static_cast<QMouseEvent*>(event)->buttons() & Qt::LeftButton)
                 {
                     m_mouseButtonPressedOnWidget = true;
                 }
 
                 break;
+            }
 
             case QEvent::MouseButtonRelease:
+            {
                 m_mouseButtonPressedOnWidget = false;
                 break;
+            }
 
             case QEvent::Enter:
+            {
                 widgetEnterEvent();
                 break;
+            }
 
             case QEvent::Leave:
+            {
                 widgetLeaveEvent();
                 break;
+            }
 
             default:
+            {
                 break;
+            }
         }
     }
 
@@ -535,7 +554,7 @@ void PersistentWidgetDelegateOverlay::setPersistent(bool persistent)
 
     d->persistent = persistent;
 
-    if (d->persistent && d->index.isValid())
+    if      (d->persistent && d->index.isValid())
     {
         showOnIndex(d->index);
     }
@@ -670,12 +689,14 @@ void ItemDelegateOverlayContainer::installOverlay(ItemDelegateOverlay* overlay)
 {
     if (!overlay->acceptsDelegate(asDelegate()))
     {
-        qCDebug(DIGIKAM_WIDGETS_LOG) << "Cannot accept delegate" << asDelegate() << "for installing" << overlay;
+        qCDebug(DIGIKAM_WIDGETS_LOG) << "Cannot accept delegate" << asDelegate()
+                                     << "for installing" << overlay;
         return;
     }
 
     overlay->setDelegate(asDelegate());
     m_overlays << overlay;
+
     // let the view call setActive
 
     QObject::connect(overlay, SIGNAL(destroyed(QObject*)),

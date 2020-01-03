@@ -46,17 +46,19 @@ public:
     explicit ItemDelegateOverlay(QObject* const parent = nullptr);
     ~ItemDelegateOverlay();
 
-    /** Called when the overlay was installed and shall begin working,
-     *  and before it is removed and shall stop.
-     *  Setup your connections to view and delegate here.
-     *  You will be disconnected automatically on removal.
+    /**
+     * Called when the overlay was installed and shall begin working,
+     * and before it is removed and shall stop.
+     * Setup your connections to view and delegate here.
+     * You will be disconnected automatically on removal.
      */
     virtual void setActive(bool active);
 
-    /** Only these two methods are implemented as virtual methods.
-     *  For all other events, connect to the view's signals.
-     *  There are a few signals specifically for overlays and all
-     *  QAbstractItemView standard signals.
+    /**
+     * Only these two methods are implemented as virtual methods.
+     * For all other events, connect to the view's signals.
+     * There are a few signals specifically for overlays and all
+     * QAbstractItemView standard signals.
      */
     virtual void mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index);
     virtual void paint(QPainter* p, const QStyleOptionViewItem& option, const QModelIndex& index);
@@ -78,8 +80,9 @@ Q_SIGNALS:
 
 protected Q_SLOTS:
 
-    /** Called when any change from the delegate occurs - when the overlay is installed,
-     *  when size hints, styles or fonts change
+    /**
+     * Called when any change from the delegate occurs - when the overlay is installed,
+     * when size hints, styles or fonts change
      */
     virtual void visualChange();
 
@@ -122,53 +125,62 @@ class DIGIKAM_EXPORT AbstractWidgetDelegateOverlay : public ItemDelegateOverlay
 
 public:
 
-    /** This class provides functionality for using a widget in an overlay.
-     *  You must reimplement at least createWidget to return your widget.
-     *  Per default it will be shown when the cursor enters an index and hidden when left.
-     *  Reimplement slotEntered() and mouseMove() for more fine grained control.
+    /**
+     * This class provides functionality for using a widget in an overlay.
+     * You must reimplement at least createWidget to return your widget.
+     * Per default it will be shown when the cursor enters an index and hidden when left.
+     * Reimplement slotEntered() and mouseMove() for more fine grained control.
      */
     explicit AbstractWidgetDelegateOverlay(QObject* const parent);
 
-    /** If active is true, this will call createWidget(), initialize the widget for use,
-     *  and setup connections for the virtual slots.
-     *  If active is false, this will delete the widget and
-     *  disconnect all signal from model and view to this object (!)
+    /**
+     * If active is true, this will call createWidget(), initialize the widget for use,
+     * and setup connections for the virtual slots.
+     * If active is false, this will delete the widget and
+     * disconnect all signal from model and view to this object (!)
      */
     virtual void setActive(bool active) override;
 
 protected:
 
-    /** Create your widget here. When creating the object, pass parentWidget() as parent widget.
-     *  Ownership of the object is passed. It will be deleted in setActive(false).
+    /**
+     * Create your widget here. When creating the object, pass parentWidget() as parent widget.
+     * Ownership of the object is passed. It will be deleted in setActive(false).
      */
     virtual QWidget* createWidget() = 0;
 
-    /** Called when the widget shall be hidden (mouse cursor left index, viewport, uninstalled etc.).
-     *  Default implementation hide()s m_widget.
+    /**
+     * Called when the widget shall be hidden (mouse cursor left index, viewport, uninstalled etc.).
+     * Default implementation hide()s m_widget.
      */
     virtual void hide();
 
-    /** Returns the widget to be used as parent for your widget created in createWidget()
+    /**
+     * Returns the widget to be used as parent for your widget created in createWidget()
      */
     QWidget* parentWidget() const;
 
-    /** Return true here if you want to show the overlay for the given index.
-     *  The default implementation returns true.
+    /**
+     * Return true here if you want to show the overlay for the given index.
+     * The default implementation returns true.
      */
     virtual bool checkIndex(const QModelIndex& index) const;
 
-    /** Called when a QEvent::Leave of the viewport is received.
-     *  The default implementation hide()s.
+    /**
+     * Called when a QEvent::Leave of the viewport is received.
+     * The default implementation hide()s.
      */
     virtual void viewportLeaveEvent(QObject* obj, QEvent* event);
 
-    /** Called when a QEvent::Enter resp. QEvent::Leave event for the widget is received.
-     *  The default implementation does nothing.
+    /**
+     * Called when a QEvent::Enter resp. QEvent::Leave event for the widget is received.
+     * The default implementation does nothing.
      */
     virtual void widgetEnterEvent();
     virtual void widgetLeaveEvent();
 
-    /** A sample implementation for above methods
+    /**
+     * A sample implementation for above methods
      */
     void widgetEnterNotifyMultiple(const QModelIndex& index);
     void widgetLeaveNotifyMultiple();
@@ -181,11 +193,13 @@ protected:
 
 protected Q_SLOTS:
 
-    /** Default implementation shows the widget iff the index is valid and checkIndex returns true.
+    /**
+     * Default implementation shows the widget iff the index is valid and checkIndex returns true.
      */
     virtual void slotEntered(const QModelIndex& index);
 
-    /** Default implementations of these three slots call hide()
+    /**
+     * Default implementations of these three slots call hide()
      */
     virtual void slotReset();
     virtual void slotViewportEntered();
@@ -213,7 +227,8 @@ public:
 
     explicit HoverButtonDelegateOverlay(QObject* const parent);
 
-    /** Will call createButton().
+    /**
+     * Will call createButton().
      */
     virtual void setActive(bool active) override;
 
@@ -221,12 +236,14 @@ public:
 
 protected:
 
-    /** Create your widget here. Pass view() as parent.
+    /**
+     * Create your widget here. Pass view() as parent.
      */
     virtual ItemViewHoverButton* createButton() = 0;
 
-    /** Called when a new index is entered. Reposition your button here,
-     *  adjust and store state.
+    /**
+     * Called when a new index is entered. Reposition your button here,
+     * adjust and store state.
      */
     virtual void updateButton(const QModelIndex& index) = 0;
 
@@ -330,10 +347,12 @@ public:
     void removeAllOverlays();
     void mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index);
 
+/*
     /// Provide as signal in the delegate:
-    ///  void visualChange();
-    ///  void requestNotification(const QModelIndex& index, const QString& message);
-    ///  void hideNotification();
+    void visualChange();
+    void requestNotification(const QModelIndex& index, const QString& message);
+    void hideNotification();
+*/
 
 protected:
 
