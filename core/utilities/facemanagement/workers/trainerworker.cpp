@@ -80,7 +80,7 @@ TrainerWorker::TrainerWorker(FacePipeline::Private* const d)
 
     RecognitionDatabase::RecognizeAlgorithm algo =
             (RecognitionDatabase::RecognizeAlgorithm)group.readEntry(QLatin1String("Recognize Algorithm"),
-                                                                     (int)RecognitionDatabase::RecognizeAlgorithm::LBP);
+                                                                     (int)RecognitionDatabase::RecognizeAlgorithm::DNN);
     database.activeFaceRecognizer(algo);
 }
 

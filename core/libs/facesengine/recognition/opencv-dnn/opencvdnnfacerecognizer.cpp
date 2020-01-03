@@ -149,7 +149,7 @@ int OpenCVDNNFaceRecognizer::recognize(const cv::Mat& inputImage)
     int predictedLabel = -1;
     double confidence  = 0;
     d->dnn()->predict(inputImage, predictedLabel, confidence, d->m_extractor);
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << predictedLabel << confidence;
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "predictedLabel: " << predictedLabel << ", confidence: " << confidence;
 
     /**
      * confidence must be greater than threshold, because distance used is cosine distance

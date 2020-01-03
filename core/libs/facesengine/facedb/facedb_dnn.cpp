@@ -29,6 +29,7 @@ namespace Digikam
 
 void FaceDb::updateDNNFaceModel(DNNFaceModel& model)
 {
+    qCDebug(DIGIKAM_FACEDB_LOG) << "updateDNNFaceModel";
     QList<DNNFaceVecMetadata> metadataList = model.vecMetadata();
 
     for (size_t i = 0 ; i < (size_t)metadataList.size() ; ++i)
