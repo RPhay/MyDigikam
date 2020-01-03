@@ -78,7 +78,7 @@ QList<DPluginAuthor> JAlbumPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QString::fromUtf8("Andrew Goodbody"),
                              QString::fromUtf8("ajg zero two at elfringham dot co dot uk"),
-                             QString::fromUtf8("(c) 2013-2019"),
+                             QString::fromUtf8("(c) 2013-2020"),
                              i18n("Author and Maintainer"))
             ;
 }

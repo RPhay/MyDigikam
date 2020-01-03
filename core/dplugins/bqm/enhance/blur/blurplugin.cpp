@@ -79,7 +79,7 @@ QList<DPluginAuthor> BlurPlugin::authors() const
     return QList<DPluginAuthor>()
             << DPluginAuthor(QLatin1String("Gilles Caulier"),
                              QLatin1String("caulier dot gilles at gmail dot com"),
-                             QLatin1String("(C) 2009-2019"))
+                             QLatin1String("(C) 2009-2020"))
             ;
 }
 

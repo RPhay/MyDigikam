@@ -89,10 +89,10 @@ QList<DPluginAuthor> ImgUrPlugin::authors() const
                              QString::fromUtf8("(C) 2014"))
             << DPluginAuthor(QString::fromUtf8("Maik Qualmann"),
                              QString::fromUtf8("metzpinguin at gmail dot com"),
-                             QString::fromUtf8("(C) 2017-2019"))
+                             QString::fromUtf8("(C) 2017-2020"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2012-2019"))
+                             QString::fromUtf8("(C) 2012-2020"))
             ;
 }
 

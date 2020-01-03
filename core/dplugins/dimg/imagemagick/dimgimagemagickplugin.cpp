@@ -111,7 +111,7 @@ QList<DPluginAuthor> DImgImageMagickPlugin::authors() const
                              QString::fromUtf8("(C) 2019"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2006-2019"))
+                             QString::fromUtf8("(C) 2006-2020"))
             ;
 }
 

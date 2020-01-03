@@ -84,7 +84,7 @@ QList<DPluginAuthor> SendByMailPlugin::authors() const
                              QString::fromUtf8("(C) 2007"))
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
-                             QString::fromUtf8("(C) 2004-2019"),
+                             QString::fromUtf8("(C) 2004-2020"),
                              i18n("Author and Maintainer"))
             ;
 }
