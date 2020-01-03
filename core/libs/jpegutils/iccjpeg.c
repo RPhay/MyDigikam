@@ -1,41 +1,26 @@
-/*
- * Little cms
- * Copyright (C) 1998-2004 Marti Maria <info at littlecms dot com>
+/* ============================================================
  *
- * Permission is hereby granted, free of charge, to any person obtaining
- * a copy of this software and associated documentation files (the
- * "Software"), to deal in the Software without restriction, including
- * without limitation the rights to use, copy, modify, merge, publish,
- * distribute, sublicense, and/or sell copies of the Software, and to
- * permit persons to whom the Software is furnished to do so, subject to
- * the following conditions:
+ * This file is a part of digiKam project
+ * https://www.digikam.org
  *
- * The above copyright notice and this permission notice shall be included
- * in all copies or substantial portions of the Software.
+ * Date        : 1998-01-25
+ * Description : helper methods to handle ICC color profile with JPEG file.
  *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
- * KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
- * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
- * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
- * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
- * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * Copyright (C) 1998-2004 by Marti Maria <info at littlecms dot com>
+ * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
- * This file provides code to read and write International Color Consortium
- * (ICC) device profiles embedded in JFIF JPEG image files.  The ICC has
- * defined a standard format for including such data in JPEG "APP2" markers.
- * The code given here does not know anything about the internal structure
- * of the ICC profile data; it just knows how to put the profile data into
- * a JPEG file being written, or get it back out when reading.
+ * This program is free software; you can redistribute it
+ * and/or modify it under the terms of the GNU General
+ * Public License as published by the Free Software Foundation;
+ * either version 2, or (at your option)
+ * any later version.
  *
- * This code depends on new features added to the IJG JPEG library as of
- * IJG release 6b; it will not compile or work with older IJG versions.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
  *
- * NOTE: this code would need surgery to work on 16-bit-int machines
- * with ICC profiles exceeding 64K bytes in size. If you need to do that,
- * change all the "unsigned int" variables to "INT32". You'll also need
- * to find a malloc() replacement that can allocate more than 64K.
- */
+ * ============================================================ */
 
 #include "iccjpeg.h"
 
@@ -79,7 +64,9 @@ void write_icc_profile(j_compress_ptr cinfo,
     num_markers = icc_data_len / MAX_DATA_BYTES_IN_MARKER;
 
     if (num_markers * MAX_DATA_BYTES_IN_MARKER != icc_data_len)
+    {
         num_markers++;
+    }
 
     while (icc_data_len > 0)
     {
@@ -87,7 +74,9 @@ void write_icc_profile(j_compress_ptr cinfo,
         length = icc_data_len;
 
         if (length > MAX_DATA_BYTES_IN_MARKER)
+        {
             length = MAX_DATA_BYTES_IN_MARKER;
+        }
 
         icc_data_len -= length;
 
@@ -187,36 +176,47 @@ boolean read_icc_profile(j_decompress_ptr cinfo,
 
 #define MAX_SEQ_NO  255 /* sufficient since marker numbers are bytes */
 
-    char marker_present[MAX_SEQ_NO+1];      /* 1 if marker found              */
-    unsigned int data_length[MAX_SEQ_NO+1]; /* size of profile data in marker */
-    unsigned int data_offset[MAX_SEQ_NO+1]; /* offset for data in marker      */
+    char marker_present[MAX_SEQ_NO+1];      /* 1 if marker found               */
+    unsigned int data_length[MAX_SEQ_NO+1]; /* size of profile data in marker  */
+    unsigned int data_offset[MAX_SEQ_NO+1]; /* offset for data in marker       */
 
     *icc_data_ptr = NULL;                   /* avoid confusion if FALSE return */
     *icc_data_len = 0;
 
-    /* This first pass over the saved markers discovers whether there are
+    /*
+     * This first pass over the saved markers discovers whether there are
      * any ICC markers and verifies the consistency of the marker numbering.
      */
 
     for (seq_no = 1 ; seq_no <= MAX_SEQ_NO ; seq_no++)
+    {
         marker_present[seq_no] = 0;
+    }
 
     for (marker = cinfo->marker_list ; marker != NULL ; marker = marker->next)
     {
         if (marker_is_icc(marker))
         {
             if (num_markers == 0)
+            {
                 num_markers = GETJOCTET(marker->data[13]);
+            }
             else if (num_markers != GETJOCTET(marker->data[13]))
+            {
                 return FALSE;       /* inconsistent num_markers fields */
+            }
 
             seq_no = GETJOCTET(marker->data[12]);
 
             if (seq_no <= 0 || seq_no > num_markers)
+            {
                 return FALSE;       /* bogus sequence number */
+            }
 
             if (marker_present[seq_no])
+            {
                 return FALSE;       /* duplicate sequence numbers */
+            }
 
             marker_present[seq_no] = 1;
             data_length[seq_no]    = marker->data_length - ICC_OVERHEAD_LEN;
@@ -224,9 +224,12 @@ boolean read_icc_profile(j_decompress_ptr cinfo,
     }
 
     if (num_markers == 0)
+    {
         return FALSE;
+    }
 
-    /* Check for missing markers, count total space needed,
+    /*
+     * Check for missing markers, count total space needed,
      * compute offset of each marker's part of the data.
      */
 
@@ -235,20 +238,26 @@ boolean read_icc_profile(j_decompress_ptr cinfo,
     for (seq_no = 1 ; seq_no <= num_markers ; seq_no++)
     {
         if (marker_present[seq_no] == 0)
+        {
             return FALSE;        /* missing sequence number */
+        }
 
         data_offset[seq_no] = total_length;
         total_length       += data_length[seq_no];
     }
 
     if (total_length == 0)
+    {
         return FALSE;        /* found only empty markers? */
+    }
 
     /* Allocate space for assembled data */
     icc_data = (JOCTET*) malloc(total_length * sizeof(JOCTET));
 
     if (icc_data == NULL)
+    {
         return FALSE;        /* oops, out of memory */
+    }
 
     /* and fill it in */
     for (marker = cinfo->marker_list ; marker != NULL ; marker = marker->next)

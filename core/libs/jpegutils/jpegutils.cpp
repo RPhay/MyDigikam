@@ -203,7 +203,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     // libjpeg supports 1/1, 1/2, 1/4, 1/8
     int scale=1;
 
-    while(maximumSize*scale*2 <= imgSize)
+    while (maximumSize*scale*2 <= imgSize)
     {
         scale *= 2;
     }
@@ -221,15 +221,18 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     {
         case JCS_UNKNOWN:
             break;
+
         case JCS_GRAYSCALE:
         case JCS_RGB:
         case JCS_YCbCr:
             cinfo.out_color_space = JCS_RGB;
             break;
+
         case JCS_CMYK:
         case JCS_YCCK:
             cinfo.out_color_space = JCS_CMYK;
             break;
+
         default:
             break;
     }
@@ -240,9 +243,15 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
 
     // We only take RGB with 1 or 3 components, or CMYK with 4 components
     if (!(
-           (cinfo.out_color_space == JCS_RGB  && (cinfo.output_components == 3 || cinfo.output_components == 1)) ||
-           (cinfo.out_color_space == JCS_CMYK &&  cinfo.output_components == 4)
-        ))
+           (
+            (cinfo.out_color_space    == JCS_RGB)  &&
+            ((cinfo.output_components == 3) || (cinfo.output_components == 1))
+           ) ||
+           (
+            (cinfo.out_color_space    == JCS_CMYK) &&
+            (cinfo.output_components  == 4)
+           )
+       ))
     {
         jpeg_destroy_decompress(&cinfo);
         fclose(inputFile);
@@ -255,6 +264,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
         case 4:
             img = QImage(cinfo.output_width, cinfo.output_height, QImage::Format_RGB32);
             break;
+
         case 1: // B&W image
             img = QImage(cinfo.output_width, cinfo.output_height, QImage::Format_Indexed8);
             img.setColorCount(256);
@@ -281,6 +291,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     if (cinfo.output_components == 3)
     {
         // Expand 24->32 bpp.
+
         for (uint j = 0 ; j < cinfo.output_height ; ++j)
         {
             uchar* in       = img.scanLine(j) + cinfo.output_width * 3;
@@ -309,7 +320,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
         }
     }
 
-    if (cinfo.density_unit == 1)
+    if      (cinfo.density_unit == 1)
     {
         img.setDotsPerMeterX(int(100. * cinfo.X_density / 2.54));
         img.setDotsPerMeterY(int(100. * cinfo.Y_density / 2.54));
@@ -321,8 +332,8 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     }
 
     //int newMax = qMax(cinfo.output_width, cinfo.output_height);
-    //int newx = maximumSize*cinfo.output_width / newMax;
-    //int newy = maximumSize*cinfo.output_height / newMax;
+    //int newx   = maximumSize*cinfo.output_width  / newMax;
+    //int newy   = maximumSize*cinfo.output_height / newMax;
 
     jpeg_destroy_decompress(&cinfo);
     fclose(inputFile);
@@ -369,6 +380,7 @@ bool JpegRotator::exifTransform(TransformAction action)
     MetaEngineRotation matrix;
     matrix *= m_orientation;
     matrix *= action;
+
     return exifTransform(matrix);
 }
 
@@ -414,6 +426,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
         temp->setAutoRemove(false);
         temp->open();
         QString tempFile = temp->fileName();
+
         // Crash fix: a QTemporaryFile is not properly closed until its destructor is called.
         delete temp;
 
@@ -421,7 +434,8 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "JPEG lossless transform failed for" << src;
 
-             // See bug 320107 : if lossless transform cannot be achieve, do lossy transform.
+            // See bug 320107 : if lossless transform cannot be achieve, do lossy transform.
+
             DImg srcImg;
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "Trying lossy transform for " << src;
@@ -468,7 +482,9 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
             QString sidecarTemp = DMetadata::sidecarPath(tempFile);
             QString sidecarDest = DMetadata::sidecarPath(dest);
 
-            if (sidecarTemp != sidecarDest && QFile::exists(sidecarTemp) && QFile::exists(sidecarDest))
+            if ((sidecarTemp != sidecarDest) &&
+                QFile::exists(sidecarTemp)   &&
+                QFile::exists(sidecarDest))
             {
                 QFile::remove(sidecarDest);
             }
@@ -481,7 +497,9 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
             }
         }
 
-        if (tempFile != dest && QFile::exists(tempFile) && QFile::exists(dest))
+        if ((tempFile != dest)      &&
+            QFile::exists(tempFile) &&
+            QFile::exists(dest))
         {
             QFile::remove(dest);
         }
@@ -610,19 +628,19 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
     jvirt_barray_ptr* dst_coef_arrays = nullptr;
 
     // Initialize the JPEG decompression object with default error handling
-    srcinfo.err                 = jpeg_std_error(&jsrcerr);
-    srcinfo.err->error_exit     = jpegutils_jpeg_error_exit;
-    srcinfo.err->emit_message   = jpegutils_jpeg_emit_message;
-    srcinfo.err->output_message = jpegutils_jpeg_output_message;
+    srcinfo.err                       = jpeg_std_error(&jsrcerr);
+    srcinfo.err->error_exit           = jpegutils_jpeg_error_exit;
+    srcinfo.err->emit_message         = jpegutils_jpeg_emit_message;
+    srcinfo.err->output_message       = jpegutils_jpeg_output_message;
 
     // Initialize the JPEG compression object with default error handling
-    dstinfo.err                 = jpeg_std_error(&jdsterr);
-    dstinfo.err->error_exit     = jpegutils_jpeg_error_exit;
-    dstinfo.err->emit_message   = jpegutils_jpeg_emit_message;
-    dstinfo.err->output_message = jpegutils_jpeg_output_message;
+    dstinfo.err                       = jpeg_std_error(&jdsterr);
+    dstinfo.err->error_exit           = jpegutils_jpeg_error_exit;
+    dstinfo.err->emit_message         = jpegutils_jpeg_emit_message;
+    dstinfo.err->output_message       = jpegutils_jpeg_output_message;
 
-    FILE* input_file  = nullptr;
-    FILE* output_file = nullptr;
+    FILE* input_file                  = nullptr;
+    FILE* output_file                 = nullptr;
     // To prevent cppcheck warnings.
     (void)input_file;
     (void)output_file;
@@ -670,12 +688,12 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
     jtransform_request_workspace(&srcinfo, &transformoption);
 
     // Read source file as DCT coefficients
-    src_coef_arrays = jpeg_read_coefficients(&srcinfo);
+    src_coef_arrays         = jpeg_read_coefficients(&srcinfo);
 
     // Initialize destination compression parameters from source values
     jpeg_copy_critical_parameters(&srcinfo, &dstinfo);
 
-    dst_coef_arrays = jtransform_adjust_parameters(&srcinfo, &dstinfo, src_coef_arrays, &transformoption);
+    dst_coef_arrays         = jtransform_adjust_parameters(&srcinfo, &dstinfo, src_coef_arrays, &transformoption);
 
     // Specify data destination for compression
     jpeg_stdio_dest(&dstinfo, output_file);
@@ -703,7 +721,10 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
 
 bool jpegConvert(const QString& src, const QString& dest, const QString& documentName, const QString& format)
 {
-    qCDebug(DIGIKAM_GENERAL_LOG) << "Converting " << src << " to " << dest << " format: " << format << " documentName: " << documentName;
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Converting " << src
+                                 << " to " << dest
+                                 << " format: " << format
+                                 << " documentName: " << documentName;
     QFileInfo fi(src);
 
     if (!fi.exists())
@@ -729,8 +750,9 @@ bool jpegConvert(const QString& src, const QString& dest, const QString& documen
         // will be found into Exiv2.
         // Note : There is no limitation with TIFF and PNG about IPTC byte array size.
 
-        if (format.toUpper() != QLatin1String("JPG") && format.toUpper() != QLatin1String("JPEG") &&
-            format.toUpper() != QLatin1String("JPE"))
+        if ((format.toUpper() != QLatin1String("JPG"))  &&
+            (format.toUpper() != QLatin1String("JPEG")) &&
+            (format.toUpper() != QLatin1String("JPE")))
         {
             meta.setItemPreview(preview);
         }
@@ -752,21 +774,26 @@ bool jpegConvert(const QString& src, const QString& dest, const QString& documen
             image.setAttribute(QLatin1String("quality"), 9);
         }
 
-        if (format.toUpper() == QLatin1String("TIFF") || format.toUpper() == QLatin1String("TIF"))
+        if ((format.toUpper() == QLatin1String("TIFF")) || (format.toUpper() == QLatin1String("TIF")))
         {
             image.setAttribute(QLatin1String("compress"), true);
         }
 
-        if (format.toUpper() == QLatin1String("JP2") || format.toUpper() == QLatin1String("JPX") ||
-            format.toUpper() == QLatin1String("JPC") || format.toUpper() == QLatin1String("PGX") ||
-            format.toUpper() == QLatin1String("J2K"))
+        if ((format.toUpper() == QLatin1String("JP2")) || (format.toUpper() == QLatin1String("JPX")) ||
+            (format.toUpper() == QLatin1String("JPC")) || (format.toUpper() == QLatin1String("PGX")) ||
+            (format.toUpper() == QLatin1String("J2K")))
         {
             image.setAttribute(QLatin1String("quality"), 100);    // LossLess
         }
 
         if (format.toUpper() == QLatin1String("PGF"))
         {
-            image.setAttribute(QLatin1String("quality"), 0);    // LossLess
+            image.setAttribute(QLatin1String("quality"), 0);      // LossLess
+        }
+
+        if ((format.toUpper() == QLatin1String("HEIF")) || (format.toUpper() == QLatin1String("HEIC")))
+        {
+            image.setAttribute(QLatin1String("quality"), 0);      // LossLess
         }
 
         return (image.save(dest, format));
@@ -786,7 +813,7 @@ bool isJpegImage(const QString& file)
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "mimetype = " << format << " ext = " << ext;
 
-    if (format != QLatin1String("JPEG") || ext == QLatin1String("MPO"))
+    if ((format != QLatin1String("JPEG")) || (ext == QLatin1String("MPO")))
     {
         return false;
     }
@@ -883,9 +910,9 @@ int getJpegQuality(const QString& file)
                    128,     0
              };
 
-        value = (long)(jpeg_info.quant_tbl_ptrs[0]->quantval[2]+
-                       jpeg_info.quant_tbl_ptrs[0]->quantval[53]+
-                       jpeg_info.quant_tbl_ptrs[1]->quantval[0]+
+        value = (long)(jpeg_info.quant_tbl_ptrs[0]->quantval[2]  +
+                       jpeg_info.quant_tbl_ptrs[0]->quantval[53] +
+                       jpeg_info.quant_tbl_ptrs[1]->quantval[0]  +
                        jpeg_info.quant_tbl_ptrs[1]->quantval[DCTSIZE2 - 1]);
 
         for (i = 0 ; i < 100 ; ++i)
@@ -935,7 +962,7 @@ int getJpegQuality(const QString& file)
                     64,     0
              };
 
-        value = (long)(jpeg_info.quant_tbl_ptrs[0]->quantval[2]+
+        value = (long)(jpeg_info.quant_tbl_ptrs[0]->quantval[2] +
                        jpeg_info.quant_tbl_ptrs[0]->quantval[53]);
 
         for (i = 0 ; i < 100 ; ++i)
