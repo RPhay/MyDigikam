@@ -39,9 +39,9 @@ class Q_DECL_HIDDEN ItemPositionPriv : public QSharedData
 
 public:
 
-    ItemPositionPriv() :
-        empty(true),
-        //Note: Do not initialize the QVariants here, they are expected to be null
+    ItemPositionPriv()
+      : empty(true),
+        // NOTE: Do not initialize the QVariants here, they are expected to be null
         imageId(-1),
         dirtyFields(DatabaseFields::ItemPositionsNone)
     {
@@ -62,6 +62,10 @@ public:
         dirtyFields     = DatabaseFields::ItemPositionsNone;
     }
 
+    void init(CoreDbAccess& access, qlonglong imageId);
+
+public:
+
     bool                           empty;
 
     QVariant                       latitudeNumber;
@@ -78,9 +82,7 @@ public:
     QString                        latitude;
     QString                        longitude;
 
-    DatabaseFields::ItemPositions dirtyFields;
-
-    void init(CoreDbAccess& access, qlonglong imageId);
+    DatabaseFields::ItemPositions  dirtyFields;
 };
 
 void ItemPositionPriv::init(CoreDbAccess& access, qlonglong id)
@@ -147,7 +149,7 @@ bool ItemPosition::isNull() const
 
 bool ItemPosition::isEmpty() const
 {
-    return !d || d->empty;
+    return (!d || d->empty);
 }
 
 QString ItemPosition::latitude() const
@@ -302,32 +304,32 @@ QString ItemPosition::description() const
 
 bool ItemPosition::hasCoordinates() const
 {
-    return d && !d->latitudeNumber.isNull() && !d->longitudeNumber.isNull();
+    return (d && !d->latitudeNumber.isNull() && !d->longitudeNumber.isNull());
 }
 
 bool ItemPosition::hasAltitude() const
 {
-    return d && !d->altitude.isNull();
+    return (d && !d->altitude.isNull());
 }
 
 bool ItemPosition::hasOrientation() const
 {
-    return d && !d->orientation.isNull();
+    return (d && !d->orientation.isNull());
 }
 
 bool ItemPosition::hasTilt() const
 {
-    return d && !d->tilt.isNull();
+    return (d && !d->tilt.isNull());
 }
 
 bool ItemPosition::hasRoll() const
 {
-    return d && !d->roll.isNull();
+    return (d && !d->roll.isNull());
 }
 
 bool ItemPosition::hasAccuracy() const
 {
-    return d && !d->accuracy.isNull();
+    return (d && !d->accuracy.isNull());
 }
 
 bool ItemPosition::setLatitude(const QString& latitude)
@@ -344,9 +346,10 @@ bool ItemPosition::setLatitude(const QString& latitude)
         return false;
     }
 
-    d->latitude = latitude;
+    d->latitude       = latitude;
     d->latitudeNumber = number;
-    d->dirtyFields |= DatabaseFields::Latitude | DatabaseFields::LatitudeNumber;
+    d->dirtyFields   |= DatabaseFields::Latitude | DatabaseFields::LatitudeNumber;
+
     return true;
 }
 
@@ -364,9 +367,10 @@ bool ItemPosition::setLongitude(const QString& longitude)
         return false;
     }
 
-    d->longitude = longitude;
+    d->longitude       = longitude;
     d->longitudeNumber = number;
-    d->dirtyFields |= DatabaseFields::Longitude | DatabaseFields::LongitudeNumber;
+    d->dirtyFields    |= DatabaseFields::Longitude | DatabaseFields::LongitudeNumber;
+
     return true;
 }
 
@@ -384,9 +388,10 @@ bool ItemPosition::setLatitude(double latitudeNumber)
         return false;
     }
 
-    d->latitude = string;
+    d->latitude       = string;
     d->latitudeNumber = latitudeNumber;
-    d->dirtyFields |= DatabaseFields::Latitude | DatabaseFields::LatitudeNumber;
+    d->dirtyFields   |= DatabaseFields::Latitude | DatabaseFields::LatitudeNumber;
+
     return true;
 }
 
@@ -404,9 +409,10 @@ bool ItemPosition::setLongitude(double longitudeNumber)
         return false;
     }
 
-    d->longitude = string;
+    d->longitude       = string;
     d->longitudeNumber = longitudeNumber;
-    d->dirtyFields |= DatabaseFields::Longitude | DatabaseFields::LongitudeNumber;
+    d->dirtyFields    |= DatabaseFields::Longitude | DatabaseFields::LongitudeNumber;
+
     return true;
 }
 
@@ -417,7 +423,7 @@ void ItemPosition::setAltitude(double altitude)
         return;
     }
 
-    d->altitude = altitude;
+    d->altitude     = altitude;
     d->dirtyFields |= DatabaseFields::Altitude;
 }
 
@@ -428,7 +434,7 @@ void ItemPosition::setOrientation(double orientation)
         return;
     }
 
-    d->orientation = orientation;
+    d->orientation  = orientation;
     d->dirtyFields |= DatabaseFields::PositionOrientation;
 }
 
@@ -439,7 +445,7 @@ void ItemPosition::setTilt(double tilt)
         return;
     }
 
-    d->tilt = tilt;
+    d->tilt         = tilt;
     d->dirtyFields |= DatabaseFields::PositionTilt;
 }
 
@@ -450,7 +456,7 @@ void ItemPosition::setRoll(double roll)
         return;
     }
 
-    d->roll = roll;
+    d->roll         = roll;
     d->dirtyFields |= DatabaseFields::PositionRoll;
 }
 
@@ -461,7 +467,7 @@ void ItemPosition::setAccuracy(double accuracy)
         return;
     }
 
-    d->accuracy = accuracy;
+    d->accuracy     = accuracy;
     d->dirtyFields |= DatabaseFields::PositionAccuracy;
 }
 
@@ -472,7 +478,7 @@ void ItemPosition::setDescription(const QString& description)
         return;
     }
 
-    d->description = description;
+    d->description  = description;
     d->dirtyFields |= DatabaseFields::PositionDescription;
 }
 
@@ -563,7 +569,7 @@ void ItemPosition::removeAltitude()
 {
     CoreDbAccess().db()->removeItemPositionAltitude(d->imageId);
     d->dirtyFields &= ~DatabaseFields::Altitude;
-    d->altitude = QVariant();
+    d->altitude     = QVariant();
 }
 
 } // namespace Digikam

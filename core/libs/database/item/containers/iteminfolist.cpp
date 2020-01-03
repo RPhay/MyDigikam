@@ -87,7 +87,7 @@ ItemInfo ItemInfoList::singleGroupMainItem() const
     ItemInfo mainItem;
     ItemInfoList grouped;
 
-    if (first().isGrouped())
+    if      (first().isGrouped())
     {
         mainItem = first().groupImage();
 

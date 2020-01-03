@@ -78,7 +78,8 @@ public:
      * Returns 0 if not found.
      */
     QExplicitlySharedDataPointer<ItemInfoData> infoForPath(int albumRootId,
-                                                           const QString& relativePath, const QString& name);
+                                                           const QString& relativePath,
+                                                           const QString& name);
 
     /**
      * Returns the cached relativePath for the given album id.

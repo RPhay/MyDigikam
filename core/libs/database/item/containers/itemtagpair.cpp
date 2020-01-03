@@ -49,10 +49,10 @@ public:
     static ItemTagPairPrivSharedPointer createGuarded(qlonglong imageId, int tagId);
 
     ItemTagPairPriv()
+      : tagId(-1),
+        isAssigned(false),
+        propertiesLoaded(false)
     {
-        tagId            = -1;
-        isAssigned       = false;
-        propertiesLoaded = false;
     }
 
     bool isNull() const;
@@ -86,7 +86,7 @@ Q_GLOBAL_STATIC(ItemTagPairPrivSharedNull, imageTagPairPrivSharedNull)
 
 ItemTagPairPrivSharedPointer ItemTagPairPriv::createGuarded(qlonglong imageId, int tagId)
 {
-    if (imageId <= 0 || tagId <= 0)
+    if ((imageId <= 0) || (tagId <= 0))
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Attempt to create invalid tag pair image id" << imageId << "tag id" << tagId;
         return *imageTagPairPrivSharedNull;
@@ -102,8 +102,8 @@ void ItemTagPairPriv::init(const ItemInfo& i, int t)
         return;
     }
 
-    tagId = t;
-    info  = i;
+    tagId      = t;
+    info       = i;
     isAssigned = info.tagIds().contains(tagId);
 }
 
@@ -124,7 +124,7 @@ void ItemTagPairPriv::checkProperties()
 
 bool ItemTagPairPriv::isNull() const
 {
-    return this == imageTagPairPrivSharedNull->constData();
+    return (this == imageTagPairPrivSharedNull->constData());
 }
 
 ItemTagPair::ItemTagPair()
@@ -156,12 +156,13 @@ ItemTagPair::ItemTagPair(const ItemTagPair& other)
 ItemTagPair& ItemTagPair::operator=(const ItemTagPair& other)
 {
     d = other.d;
+
     return *this;
 }
 
 bool ItemTagPair::isNull() const
 {
-    return d == *imageTagPairPrivSharedNull;
+    return (d == *imageTagPairPrivSharedNull);
 }
 
 QList<ItemTagPair> ItemTagPair::availablePairs(qlonglong imageId)
@@ -245,12 +246,14 @@ bool ItemTagPair::hasAnyProperty(const QStringList& keys) const
 bool ItemTagPair::hasValue(const QString& key, const QString& value) const
 {
     d->checkProperties();
+
     return d->properties.contains(key, value);
 }
 
 QString ItemTagPair::value(const QString& key) const
 {
     d->checkProperties();
+
     return d->properties.value(key);
 }
 
@@ -270,19 +273,21 @@ QStringList ItemTagPair::allValues(const QStringList& keys) const
 QStringList ItemTagPair::values(const QString& key) const
 {
     d->checkProperties();
+
     return d->properties.values(key);
 }
-
 
 QStringList ItemTagPair::propertyKeys() const
 {
     d->checkProperties();
+
     return d->properties.keys();
 }
 
 QMap<QString, QString> ItemTagPair::properties() const
 {
     d->checkProperties();
+
     return d->properties;
 }
 

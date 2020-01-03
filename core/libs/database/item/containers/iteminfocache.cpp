@@ -123,7 +123,7 @@ void ItemInfoCache::cacheByName(const QExplicitlySharedDataPointer<ItemInfoData>
 
     ItemInfoData* const data = infoPtr.data();
 
-    if (!data || data->id == -1 || data->name.isEmpty())
+    if (!data || (data->id == -1) || data->name.isEmpty())
     {
         return;
     }
@@ -141,7 +141,7 @@ QExplicitlySharedDataPointer<ItemInfoData> ItemInfoCache::infoForPath(int albumR
     // We check all entries in the multi hash with matching file name
     QMultiHash<QString, ItemInfoData*>::const_iterator it;
 
-    for (it = m_nameHash.constFind(name) ; it != m_nameHash.constEnd() && it.key() == name ; ++it)
+    for (it = m_nameHash.constFind(name) ; (it != m_nameHash.constEnd()) && (it.key() == name) ; ++it)
     {
         // first check that album root matches
         if (it.value()->albumRootId != albumRootId)
@@ -152,7 +152,7 @@ QExplicitlySharedDataPointer<ItemInfoData> ItemInfoCache::infoForPath(int albumR
         // check that relativePath matches. We get relativePath from entry's id and compare to given name.
         QList<AlbumShortInfo>::const_iterator albumIt = findAlbum(it.value()->albumId);
 
-        if (albumIt == m_albums.constEnd() || albumIt->relativePath != relativePath)
+        if ((albumIt == m_albums.constEnd()) || (albumIt->relativePath != relativePath))
         {
             continue;
         }
@@ -196,7 +196,7 @@ QList<AlbumShortInfo>::const_iterator ItemInfoCache::findAlbum(int id)
                           m_albums.constEnd(), info,
                           lessThanForAlbumShortInfo);
 
-    if (it == m_albums.constEnd() || info.id < (*it).id)
+    if ((it == m_albums.constEnd()) || (info.id < (*it).id))
     {
         return m_albums.constEnd();
     }
@@ -377,6 +377,7 @@ void ItemInfoCache::slotAlbumChange(const AlbumChangeset& changeset)
         case AlbumChangeset::PropertiesChanged:
             m_needUpdateAlbums = true;
             break;
+
         case AlbumChangeset::Unknown:
             break;
     }

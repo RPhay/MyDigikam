@@ -79,7 +79,7 @@ public:
      *  A Text value in the form ?DDD,MM,SSk? or ?DDD,MM.mmk?.
      *  This provides lossless storage.
      */
-    QString latitude() const;
+    QString latitude()  const;
     QString longitude() const;
 
     /**
@@ -89,14 +89,14 @@ public:
      * concerns, and possible problems finding the exact text form when
      * converting _back_ to fractions.
      */
-    double latitudeNumber() const;
+    double latitudeNumber()  const;
     double longitudeNumber() const;
 
     /**
      * Returns the latitude/longitude in a user-presentable version,
      * in the form "30°45'55.123'' East"
      */
-    QString latitudeFormatted() const;
+    QString latitudeFormatted()  const;
     QString longitudeFormatted() const;
 
     /**
@@ -109,26 +109,27 @@ public:
     bool latitudeUserPresentableNumbers(int* degrees, int* minutes, double* seconds, char* directionReference);
     bool longitudeUserPresentableNumbers(int* degrees, int* minutes, double* seconds, char* directionReference);
 
-    /** The altitude in meters
+    /**
+     * The altitude in meters
      */
-    double altitude() const;
+    double altitude()           const;
 
     /**
      * Returns the altitude formatted in a user-presentable way in the form "43.45m"
      */
     QString altitudeFormatted() const;
-    double orientation() const;
-    double tilt() const;
-    double roll() const;
-    double accuracy() const;
-    QString description() const;
+    double orientation()        const;
+    double tilt()               const;
+    double roll()               const;
+    double accuracy()           const;
+    QString description()       const;
 
-    bool hasCoordinates() const;
-    bool hasAltitude() const;
-    bool hasOrientation() const;
-    bool hasTilt() const;
-    bool hasRoll() const;
-    bool hasAccuracy() const;
+    bool hasCoordinates()       const;
+    bool hasAltitude()          const;
+    bool hasOrientation()       const;
+    bool hasTilt()              const;
+    bool hasRoll()              const;
+    bool hasAccuracy()          const;
 
     /**
      * Sets the latitude/longitude from the GPSCoordinate string as described by XMP.

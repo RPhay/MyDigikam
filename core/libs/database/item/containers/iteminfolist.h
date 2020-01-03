@@ -54,8 +54,8 @@ public:
     QList<qlonglong> toImageIdList()  const;
     QList<QUrl>      toImageUrlList() const;
 
-    void loadGroupImageIds() const;
-    void loadTagIds()        const;
+    void loadGroupImageIds()          const;
+    void loadTagIds()                 const;
 
     bool static namefileLessThan(const ItemInfo& d1, const ItemInfo& d2);
 
