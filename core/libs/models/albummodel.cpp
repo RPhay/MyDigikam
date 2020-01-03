@@ -72,6 +72,7 @@ QVariant AlbumModel::decorationRoleData(Album* album) const
     // asynchronous signals are handled by parent class
     QPixmap pix = AlbumThumbnailLoader::instance()->getAlbumThumbnailDirectly(static_cast<PAlbum*>(album));
     prepareAddExcludeDecoration(album, pix);
+
     return pix;
 }
 
@@ -82,7 +83,9 @@ Album* AlbumModel::albumForId(int id) const
 
 QVariant AlbumModel::albumData(Album* a, int role) const
 {
-    if (role == Qt::DisplayRole && showCount() && a->isTrashAlbum())
+    if ((role == Qt::DisplayRole) &&
+         showCount()              &&
+         a->isTrashAlbum())
     {
         PAlbum* const palbum = AlbumManager::instance()->findPAlbum(a->parent()->id());
 
@@ -124,8 +127,10 @@ TAlbum* TagModel::albumForIndex(const QModelIndex& index) const
 
 QVariant TagModel::albumData(Album* a, int role) const
 {
-    if (role == Qt::DisplayRole && !a->isRoot() &&
-            m_unconfirmedFaceCount.contains(a->id()) && a->id() != FaceTags::unknownPersonTagId())
+    if ((role == Qt::DisplayRole)                 &&
+        !a->isRoot()                              &&
+        m_unconfirmedFaceCount.contains(a->id())  &&
+        (a->id() != FaceTags::unknownPersonTagId()))
     {
         QString res = AbstractCheckableAlbumModel::albumData(a, role).toString() +
                 QString::fromUtf8(" (%1 new)").arg(m_unconfirmedFaceCount.find(a->id()).value());
@@ -139,6 +144,7 @@ QVariant TagModel::decorationRoleData(Album* album) const
 {
     QPixmap pix = AlbumThumbnailLoader::instance()->getTagThumbnailDirectly(static_cast<TAlbum*>(album));
     prepareAddExcludeDecoration(album, pix);
+
     return pix;
 }
 
@@ -237,7 +243,7 @@ void SearchModel::setPixmapForDuplicatesSearches(const QPixmap& pix)
 
 QVariant SearchModel::albumData(Album* a, int role) const
 {
-    if (role == Qt::DisplayRole || role == AlbumTitleRole || role == Qt::ToolTipRole)
+    if      ((role == Qt::DisplayRole) || (role == AlbumTitleRole) || (role == Qt::ToolTipRole))
     {
         SAlbum* const salbum = static_cast<SAlbum*>(a);
         QString title        = a->title();
@@ -303,7 +309,7 @@ DAlbum* DateAlbumModel::albumForIndex(const QModelIndex& index) const
 QModelIndex DateAlbumModel::monthIndexForDate(const QDate& date) const
 {
     // iterate over all years
-    for (int yearIndex = 0; yearIndex < rowCount(); ++yearIndex)
+    for (int yearIndex = 0 ; yearIndex < rowCount() ; ++yearIndex)
     {
         QModelIndex year        = index(yearIndex, 0);
         DAlbum* const yearAlbum = albumForIndex(year);
@@ -318,13 +324,14 @@ QModelIndex DateAlbumModel::monthIndexForDate(const QDate& date) const
         }
 
         // search the album with the correct month
-        for (int monthIndex = 0; monthIndex < rowCount(year); ++monthIndex)
+        for (int monthIndex = 0 ; monthIndex < rowCount(year) ; ++monthIndex)
         {
             QModelIndex month        = index(monthIndex, 0, year);
             DAlbum* const monthAlbum = albumForIndex(month);
 
-            if (monthAlbum && (monthAlbum->range() == DAlbum::Month) &&
-                (monthAlbum->date().year() == date.year())           &&
+            if (monthAlbum                                  &&
+                (monthAlbum->range() == DAlbum::Month)      &&
+                (monthAlbum->date().year() == date.year())  &&
                 (monthAlbum->date().month() == date.month()))
             {
                 return month;
@@ -380,6 +387,7 @@ QVariant DateAlbumModel::sortRoleData(Album* a) const
     }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "There must be a data album.";
+
     return QDate();
 }
 
@@ -412,10 +420,12 @@ void DateAlbumModel::setYearMonthMap(const QMap<YearMonth, int>& yearMonthMap)
 
                 break;
             }
+
             case DAlbum::Year:
                 // a year itself cannot contain images and therefore always has count 0
                 albumToCountMap.insert((*it)->id(), 0);
                 break;
+
             default:
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Untreated DAlbum range " << dalbum->range();
                 albumToCountMap.insert((*it)->id(), 0);

@@ -48,9 +48,9 @@ public:
 
 protected:
 
-    virtual QVariant albumData(Album* a, int role) const override;
-    virtual QVariant decorationRoleData(Album* a)  const override;
-    virtual Album*   albumForId(int id)            const override;
+    virtual QVariant albumData(Album* a, int role)  const override;
+    virtual QVariant decorationRoleData(Album* a)   const override;
+    virtual Album*   albumForId(int id)             const override;
 };
 
 // ------------------------------------------------------------------
@@ -81,11 +81,12 @@ public:
 
 protected:
 
-    virtual QVariant albumData(Album* a, int role) const override;
-    virtual QVariant decorationRoleData(Album* a)  const override;
-    virtual Album*   albumForId(int id)            const override;
+    virtual QVariant albumData(Album* a, int role)  const override;
+    virtual QVariant decorationRoleData(Album* a)   const override;
+    virtual Album*   albumForId(int id)             const override;
 
 private:
+
     QMap<int, int> m_unconfirmedFaceCount;
 };
 
@@ -148,7 +149,7 @@ public:
      */
     explicit DateAlbumModel(QObject* const parent = nullptr);
 
-    DAlbum* albumForIndex(const QModelIndex& index) const;
+    DAlbum* albumForIndex(const QModelIndex& index)  const;
 
     /**
      * Finds an album index based on a date. The given date is therefore
@@ -161,7 +162,9 @@ public:
      */
     QModelIndex monthIndexForDate(const QDate& date) const;
 
-    /** Set pixmaps for the DecorationRole */
+    /**
+     * Set pixmaps for the DecorationRole
+     */
     void setPixmaps(const QPixmap& forYearAlbums, const QPixmap& forMonthAlbums);
 
 public Q_SLOTS:
@@ -170,10 +173,10 @@ public Q_SLOTS:
 
 protected:
 
-    virtual QString  albumName(Album* a)          const override;
-    virtual QVariant decorationRoleData(Album* a) const override;
-    virtual QVariant sortRoleData(Album* a)       const override;
-    virtual Album*   albumForId(int id)           const override;
+    virtual QString  albumName(Album* a)             const override;
+    virtual QVariant decorationRoleData(Album* a)    const override;
+    virtual QVariant sortRoleData(Album* a)          const override;
+    virtual Album*   albumForId(int id)              const override;
 
 protected:
 
