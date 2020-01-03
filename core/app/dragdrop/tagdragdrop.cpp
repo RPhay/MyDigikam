@@ -170,7 +170,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             return false;
         }
 
-        if (imageIDs.size() == 1 && ItemInfo(imageIDs.first()).tagIds().contains(destAlbum->id()))
+        if ((imageIDs.size() == 1) && ItemInfo(imageIDs.first()).tagIds().contains(destAlbum->id()))
         {
             // Setting the dropped image as the album thumbnail
             // If the ctrl key is pressed, when dropping the image, the
@@ -226,7 +226,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
             if (temp)
             {
                 tagIdList << temp->id();
-                tagNames << temp->title();
+                tagNames  << temp->title();
             }
         }
 
@@ -235,7 +235,7 @@ bool TagDragDropHandler::dropEvent(QAbstractItemView* view,
         if (tagIdList.isEmpty())
         {
             tagIdList << destAlbum->id();
-            tagNames << destAlbum->title();
+            tagNames  << destAlbum->title();
         }
 
         if (e->keyboardModifiers() == Qt::ControlModifier)

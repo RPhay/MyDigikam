@@ -173,8 +173,8 @@ QList<TaggingAction> TaggingActionFactory::actions() const
     d->recentIndex         = 0;
 
     // We use this action to find the right entry to select
-    TaggingAction defaultAction = defaultTaggingAction();
 
+    TaggingAction defaultAction = defaultTaggingAction();
     TaggingAction newUnderParent;
 
     if (d->parentTagId)
@@ -199,6 +199,7 @@ QList<TaggingAction> TaggingActionFactory::actions() const
 
     // order the matched tags by chronological order, based on
     // recently assigned tags
+
     QList<int> recentTagIDs = CoreDbAccess().db()->getRecentlyAssignedTags();
 
     QListIterator<int> recent_iter(recentTagIDs);
@@ -228,11 +229,12 @@ QList<TaggingAction> TaggingActionFactory::actions() const
     if (defaultAction.shallCreateNewTag())
     {
         // If it is the default action, we place the "Create Tag" entry at the top of the list.
+
         if (newUnderParent.isValid() && newUnderParent == defaultAction)
         {
-            //Case A
-            //a tag is currently selected in the listbox, we have the choice of toplevel and underparent for a new tag
-            //the entire text currently written by the user doesn't exist as a tag. However, it might be a part of a tag
+            // Case A
+            // a tag is currently selected in the listbox, we have the choice of toplevel and underparent for a new tag
+            // the entire text currently written by the user doesn't exist as a tag. However, it might be a part of a tag
 
             foreach (const TaggingAction& assignAction, assignActions)
             {
@@ -244,9 +246,9 @@ QList<TaggingAction> TaggingActionFactory::actions() const
         }
         else // if (createItemTopLevel && createItemTopLevel->action() == defaultAction)
         {
-            //Case B
-            //no tag is currently selected in the listbox, only toplevel choice for a new tag
-            //the entire text currently written by the user doesn't exist as a tag. However, it might be a part of a tag
+            // Case B
+            // no tag is currently selected in the listbox, only toplevel choice for a new tag
+            // the entire text currently written by the user doesn't exist as a tag. However, it might be a part of a tag
             foreach (const TaggingAction& assignAction, assignActions)
             {
                 actions << assignAction;
@@ -257,8 +259,8 @@ QList<TaggingAction> TaggingActionFactory::actions() const
     }
     else
     {
-        //Case C
-        //the entire text currently written by the user exists as a tag
+        // Case C
+        // the entire text currently written by the user exists as a tag
 
         foreach (const TaggingAction& assignAction, assignActions)
         {
@@ -351,6 +353,7 @@ AddTagsCompletionBoxItem* AddTagsCompletionBox::Private::createItemForNewTag(con
     int parentTagId = parent ? parent->id() : 0;
 
     // If tag exists, do not add an entry to create it
+
     if (TagsCache::instance()->tagForName(newName, parentTagId))
     {
         return 0;
@@ -379,7 +382,8 @@ QString TaggingActionFactory::suggestedUIString(const TaggingAction& action) con
         int tagsParentTagId = TagsCache::instance()->parentTag(action.tagId());
 
         // check if it is a toplevel tag or there is only one tag with this name - then simply the tag name is sufficient
-        if (tagsParentTagId == 0 || TagsCache::instance()->tagsForName(tagName).size() == 1)
+
+        if (tagsParentTagId == 0 || (TagsCache::instance()->tagsForName(tagName).size() == 1))
         {
             return tagName;
         }
