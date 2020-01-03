@@ -397,7 +397,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
     {
         if (m_file != m_destFile)
         {
-            QFile::copy(m_file, m_destFile);
+            return QFile::copy(m_file, m_destFile);
         }
 
         return true;
