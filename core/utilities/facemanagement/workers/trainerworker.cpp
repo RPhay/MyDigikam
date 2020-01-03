@@ -76,7 +76,7 @@ TrainerWorker::TrainerWorker(FacePipeline::Private* const d)
       d(d)
 {
     KSharedConfig::Ptr config                    = KSharedConfig::openConfig();
-    KConfigGroup group                           = config->group(QLatin1String("Face Detection Dialog"));
+    KConfigGroup group                           = config->group(QLatin1String("Face Management Settings"));
 
     RecognitionDatabase::RecognizeAlgorithm algo =
             (RecognitionDatabase::RecognizeAlgorithm)group.readEntry(QLatin1String("Recognize Algorithm"),
@@ -145,8 +145,8 @@ void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
 
     utils.removeFaces(toTrain);
     package->databaseFaces.replaceRole(FacePipelineFaceTagsIface::ForTraining, FacePipelineFaceTagsIface::Trained);
-
     package->processFlags |= FacePipelinePackage::ProcessedByTrainer;
+
     emit processed(package);
 }
 

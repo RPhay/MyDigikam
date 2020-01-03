@@ -82,7 +82,7 @@ public:
           albumSelectors(nullptr),
           accuracyInput(nullptr),
           useFullCpuButton(nullptr),
-          configName(QLatin1String("Face Detection Dialog")),
+          configName(QLatin1String("Face Management Settings")),
           configMainTask(QLatin1String("Face Scan Main Task")),
           configValueDetect(QLatin1String("Detect")),
           configValueDetectAndRecognize(QLatin1String("Detect and Recognize Faces")),
@@ -93,29 +93,29 @@ public:
     {
     }
 
-    QWidget*                     workflowWidget;
-    QRadioButton*                detectAndRecognizeButton;
-    QRadioButton*                detectButton;
-    SqueezedComboBox*            alreadyScannedBox;
-    QRadioButton*                reRecognizeButton;
+    QWidget*          workflowWidget;
+    QRadioButton*     detectAndRecognizeButton;
+    QRadioButton*     detectButton;
+    SqueezedComboBox* alreadyScannedBox;
+    QRadioButton*     reRecognizeButton;
 
-    QTabWidget*                  tabWidget;
+    QTabWidget*       tabWidget;
 
-    AlbumSelectors*              albumSelectors;
+    AlbumSelectors*   albumSelectors;
 
-    DIntNumInput*                accuracyInput;
+    DIntNumInput*     accuracyInput;
 
-    QCheckBox*                   useFullCpuButton;
+    QCheckBox*        useFullCpuButton;
 
-    const QString                configName;
-    const QString                configMainTask;
-    const QString                configValueDetect;
-    const QString                configValueDetectAndRecognize;
-    const QString                configValueRecognizedMarkedFaces;
-    const QString                configAlreadyScannedHandling;
-    const QString                configUseFullCpu;
+    const QString     configName;
+    const QString     configMainTask;
+    const QString     configValueDetect;
+    const QString     configValueDetectAndRecognize;
+    const QString     configValueRecognizedMarkedFaces;
+    const QString     configAlreadyScannedHandling;
+    const QString     configUseFullCpu;
 
-    bool                         settingsConflicted;
+    bool              settingsConflicted;
 };
 
 } // namespace Digikam
