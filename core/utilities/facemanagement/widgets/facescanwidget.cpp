@@ -168,11 +168,13 @@ void FaceScanWidget::setupUi()
 
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
     d->detectAndRecognizeButton       = new QRadioButton(i18nc("@option:radio", "Detect and recognize faces"));
-    d->detectAndRecognizeButton->setToolTip(i18nc("@info", "Find all faces in your photos and try to recognize which person is depicted"));
+    d->detectAndRecognizeButton->setToolTip(i18nc("@info", "Find all faces in your photos and\n"
+                                                           "try to recognize which person is depicted"));
 #endif
 
     d->reRecognizeButton              = new QRadioButton(i18nc("@option:radio", "Recognize faces"));
-    d->reRecognizeButton->setToolTip(i18nc("@info", "Try again to recognize the people depicted on marked but yet unconfirmed faces."));
+    d->reRecognizeButton->setToolTip(i18nc("@info", "Try again to recognize the people depicted\n"
+                                                    "on marked but yet unconfirmed faces."));
 
     optionLayout->addWidget(d->alreadyScannedBox);
     optionLayout->addWidget(d->detectButton);
@@ -216,8 +218,8 @@ void FaceScanWidget::setupUi()
     d->accuracyInput->setDefaultValue(70);
     d->accuracyInput->setRange(0, 100, 10);
     d->accuracyInput->setToolTip(i18nc("@info:tooltip",
-                                       "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will "
-                                       "be recognized, but less faces will be recognized "
+                                       "Adjust sensitivity versus specificity: the higher the value, the more accurately faces will\n"
+                                       "be recognized, but less faces will be recognized\n"
                                        "(only faces that are very similar to pre-tagged faces are recognized)."));
 
     accuracyGrid->addWidget(d->accuracyInput, 0, 0, 1, 3);
@@ -228,8 +230,8 @@ void FaceScanWidget::setupUi()
     d->useFullCpuButton = new QCheckBox(settingsTab);
     d->useFullCpuButton->setText(i18nc("@option:check", "Work on all processor cores"));
     d->useFullCpuButton->setToolTip(i18nc("@info:tooltip",
-                                          "Face detection and recognition are time-consuming tasks. "
-                                          "You can choose if you wish to employ all processor cores "
+                                          "Face detection and recognition are time-consuming tasks.\n"
+                                          "You can choose if you wish to employ all processor cores\n"
                                           "on your system, or work in the background only on one core."));
 
     settingsLayout->addWidget(accuracyBox);
@@ -286,8 +288,8 @@ void FaceScanWidget::slotPrepareForRecognize(bool /*status*/)
     {
         Album* const album = tagAlbums[i];
 
-        if (album->title() == people ||
-           ((album->parent() != nullptr) && (album->parent()->title() == people)))
+        if ((album->title() == people) ||
+            ((album->parent() != nullptr) && (album->parent()->title() == people)))
         {
             d->albumSelectors->setTagSelected(album, false);
         }

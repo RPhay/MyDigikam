@@ -61,7 +61,7 @@ void AssignNameWidget::setModel(TagModel* const model,
         }
     }
 
-    if (d->comboBox)
+    if      (d->comboBox)
     {
         d->comboBox->setModel(model, filteredModel, filterModel);
     }
@@ -223,7 +223,7 @@ void AssignNameWidget::setCurrentTag(TAlbum* album)
 
 void AssignNameWidget::slotConfirm()
 {
-    if (d->comboBox)
+    if      (d->comboBox)
     {
         emit assigned(d->comboBox->currentTaggingAction(), d->info, d->faceIdentifier);
     }
@@ -278,7 +278,7 @@ void AssignNameWidget::showEvent(QShowEvent* e)
 {
     if ((d->mode == UnconfirmedEditMode) || (d->mode == ConfirmedEditMode))
     {
-        if (d->comboBox)
+        if      (d->comboBox)
         {
             d->comboBox->lineEdit()->selectAll();
             d->comboBox->lineEdit()->setFocus();

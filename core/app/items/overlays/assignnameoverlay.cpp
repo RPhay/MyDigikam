@@ -71,6 +71,7 @@ public:
         }
 
         // isAncestorOf may not work if widgets are located in different windows
+
         while (widget)
         {
             if (widget == parent)
@@ -99,7 +100,9 @@ AssignNameOverlay::AssignNameOverlay(QObject* const parent)
 {
     d->filteredModel.setSourceAlbumModel(&d->tagModel);
     d->filterModel.setSourceFilterModel(&d->filteredModel);
+
     // Restrict the tag properties filter model to people if configured.
+
     ApplicationSettings* const settings = ApplicationSettings::instance();
 
     if (settings)
@@ -134,9 +137,9 @@ QWidget* AssignNameOverlay::createWidget()
     d->assignNameWidget->lineEdit()->installEventFilter(this);
 
     vbox->setStretchFactor(space, 4);
-
-    //new StyleSheetDebugger(d->assignNameWidget);
-
+/*
+    new StyleSheetDebugger(d->assignNameWidget);
+*/
     return vbox;
 }
 
@@ -169,8 +172,10 @@ void AssignNameOverlay::setActive(bool active)
 
 /*
         if (view()->model())
+        {
             connect(view()->model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)),
                     this, SLOT(slotDataChanged(QModelIndex,QModelIndex)));
+        }
 */
     }
     else
@@ -179,7 +184,9 @@ void AssignNameOverlay::setActive(bool active)
 
 /*
         if (view() && view()->model())
+        {
             disconnect(view()->model(), 0, this, 0);
+        }
 */
     }
 }
@@ -269,8 +276,11 @@ void AssignNameOverlay::showOnIndex(const QModelIndex& index)
 /*
     // TODO: add again when fading in
     // see bug 228810, this is a small workaround
-    if (m_widget && m_widget->isVisible() && index().isValid() && index == index())
+
+    if (m_widget && m_widget->isVisible() && index().isValid() && (index == index()))
+    {
         addTagsLineEdit()->setVisibleImmediately;
+    }
 */
 
     updatePosition();
@@ -285,6 +295,7 @@ void AssignNameOverlay::viewportLeaveEvent(QObject* o, QEvent* e)
     }
 
     // Do not hide when hovering the pop-up of the line edit.
+
     if (d->isChildWidget(qApp->widgetAt(QCursor::pos()), assignNameWidget()))
     {
         return;
@@ -307,7 +318,7 @@ void AssignNameOverlay::slotAssigned(const TaggingAction& action, const ItemInfo
 
     int tagId = 0;
 
-    if (action.shallAssignTag())
+    if      (action.shallAssignTag())
     {
         tagId = action.tagId();
     }
@@ -360,6 +371,7 @@ bool AssignNameOverlay::eventFilter(QObject* o, QEvent* e)
             enterPersistentMode();
             break;
         }
+
         case QEvent::FocusOut:
         {
             if (!d->isChildWidget(QApplication::focusWidget(), assignNameWidget()))
@@ -368,6 +380,7 @@ bool AssignNameOverlay::eventFilter(QObject* o, QEvent* e)
             }
             break;
         }
+    
         default:
             break;
     }

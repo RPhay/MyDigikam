@@ -739,7 +739,9 @@ void ItemDelegateOverlayContainer::overlayDestroyed(QObject* o)
     }
 }
 
-void ItemDelegateOverlayContainer::mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index)
+void ItemDelegateOverlayContainer::mouseMoved(QMouseEvent* e,
+                                              const QRect& visualRect,
+                                              const QModelIndex& index)
 {
     foreach (ItemDelegateOverlay* const overlay, m_overlays)
     {
@@ -747,8 +749,9 @@ void ItemDelegateOverlayContainer::mouseMoved(QMouseEvent* e, const QRect& visua
     }
 }
 
-void ItemDelegateOverlayContainer::drawOverlays(QPainter* p, const QStyleOptionViewItem& option,
-                                                 const QModelIndex& index) const
+void ItemDelegateOverlayContainer::drawOverlays(QPainter* p,
+                                                const QStyleOptionViewItem& option,
+                                                const QModelIndex& index) const
 {
     foreach (ItemDelegateOverlay* const overlay, m_overlays)
     {

@@ -61,10 +61,12 @@ QWidget* AssignNameWidget::Private::addTagsWidget() const
 
 bool AssignNameWidget::Private::isValid() const
 {
-    return ((mode        != InvalidMode)                  &&
+    return (
+            (mode        != InvalidMode)                  &&
             (layoutMode  != InvalidLayout)                &&
             (visualStyle != InvalidVisualStyle)           &&
-            (widgetMode  != InvalidTagEntryWidgetMode));
+            (widgetMode  != InvalidTagEntryWidgetMode)
+           );
 }
 
 void AssignNameWidget::Private::clearWidgets()
@@ -164,6 +166,7 @@ void AssignNameWidget::Private::checkWidgets()
 
                     break;
                 }
+
                 case AddTagsLineEditMode:
                 {
                     if (!lineEdit)
@@ -185,7 +188,8 @@ void AssignNameWidget::Private::checkWidgets()
                     confirmButton->setText(i18n("Confirm"));
                 }
 
-                //confirmButton->setToolTip(i18n("Confirm that the selected person is shown here"));
+                confirmButton->setToolTip(i18nc("@info:tooltip", "Confirm that the selected person is shown here"));
+
                 q->connect(confirmButton, SIGNAL(clicked()),
                            q, SLOT(slotConfirm()));
             }
@@ -193,6 +197,8 @@ void AssignNameWidget::Private::checkWidgets()
             if (!rejectButton)
             {
                 rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18n("Remove"));
+
+                rejectButton->setToolTip(i18nc("@info:tooltip", "If this is not a face, click to reject it."));
 
                 q->connect(rejectButton, SIGNAL(clicked()),
                            q, SLOT(slotReject()));
@@ -455,7 +461,8 @@ void AssignNameWidget::Private::setAddTagsWidgetContents(T* const widget)
     if (widget)
     {
         widget->setCurrentTag(currentTag);
-        widget->setPlaceholderText((mode == UnconfirmedEditMode) ? i18n("Who is this?") : QString());
+        widget->setPlaceholderText((mode == UnconfirmedEditMode) ? i18n("Who is this?")
+                                                                 : QString());
 
         if (confirmButton)
         {
@@ -471,7 +478,7 @@ void AssignNameWidget::Private::updateContents()
         return;
     }
 
-    if (comboBox)
+    if      (comboBox)
     {
         setAddTagsWidgetContents(comboBox);
     }
