@@ -36,7 +36,7 @@ bool RecognitionDatabase::Private::identityContains(const Identity& identity,
     const QMap<QString, QString> map          = identity.attributesMap();
     QMap<QString, QString>::const_iterator it = map.constFind(attribute);
 
-    for ( ; it != map.constEnd() && it.key() == attribute ; ++it)
+    for ( ; (it != map.constEnd()) && (it.key() == attribute) ; ++it)
     {
         if (it.value() == value)
         {
@@ -67,7 +67,7 @@ Identity RecognitionDatabase::Private::findByAttributes(const QString& attribute
 {
     QMap<QString, QString>::const_iterator it = valueMap.find(attribute);
 
-    for ( ; it != valueMap.end() && it.key() == attribute ; ++it)
+    for ( ; (it != valueMap.end()) && (it.key() == attribute) ; ++it)
     {
         foreach (const Identity& identity, identityCache)
         {
@@ -166,9 +166,9 @@ Identity RecognitionDatabase::findIdentity(const QMap<QString, QString>& attribu
 
     for (it = attributes.begin() ; it != attributes.end() ; ++it)
     {
-        if (it.key() == QLatin1String("uuid")     ||
-            it.key() == QLatin1String("fullName") ||
-            it.key() == QLatin1String("name"))
+        if ((it.key() == QLatin1String("uuid"))     ||
+            (it.key() == QLatin1String("fullName")) ||
+            (it.key() == QLatin1String("name")))
         {
             continue;
         }

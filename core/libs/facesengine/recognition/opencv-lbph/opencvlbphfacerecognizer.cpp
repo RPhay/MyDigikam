@@ -91,7 +91,7 @@ void OpenCVLBPHFaceRecognizer::setThreshold(float threshold) const
     float t         = (8.0 * qBound(0.f, threshold, 1.f)) - 4.0;
     // 1/(1+e^(t))
     float factor    = 1.0 / (1.0 + exp(t));
-    d->m_threshold    = min + factor*(max-min);
+    d->m_threshold  = min + factor*(max-min);
 }
 
 namespace
@@ -106,7 +106,7 @@ cv::Mat OpenCVLBPHFaceRecognizer::prepareForRecognition(const QImage& inputImage
 {
     QImage image(inputImage);
 
-    if (inputImage.width() > TargetInputSize || inputImage.height() > TargetInputSize)
+    if ((inputImage.width() > TargetInputSize) || (inputImage.height() > TargetInputSize))
     {
         image = inputImage.scaled(TargetInputSize, TargetInputSize, Qt::IgnoreAspectRatio);
     }
@@ -155,7 +155,7 @@ void OpenCVLBPHFaceRecognizer::train(const std::vector<cv::Mat>& images,
                                      const std::vector<int>& labels,
                                      const QString& context)
 {
-    if (images.empty() || labels.size() != images.size())
+    if (images.empty() || (labels.size() != images.size()))
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "LBPH Train: nothing to train...";
         return;

@@ -99,7 +99,7 @@ cv::Mat OpenCVFISHERFaceRecognizer::prepareForRecognition(const QImage& inputIma
 {
     QImage image(inputImage);
 
-    if (inputImage.width() > TargetInputSize || inputImage.height() > TargetInputSize)
+    if ((inputImage.width() > TargetInputSize) || (inputImage.height() > TargetInputSize))
     {
         image = inputImage.scaled(TargetInputSize, TargetInputSize, Qt::IgnoreAspectRatio);
     }
@@ -149,7 +149,7 @@ void OpenCVFISHERFaceRecognizer::train(const std::vector<cv::Mat>& images,
                                        const std::vector<int>& labels,
                                        const QString& context)
 {
-    if (images.empty() || labels.size() != images.size())
+    if (images.empty() || (labels.size() != images.size()))
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Fisherfaces Train: nothing to train...";
         return;

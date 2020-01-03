@@ -315,7 +315,7 @@ void OpenCVDNNFaceRecognizer::train(const std::vector<cv::Mat>& images,
                                     const QString& context,
                                     const std::vector<cv::Mat>& images_rgb)
 {
-    if (images.empty() || labels.size() != images.size())
+    if (images.empty() || (labels.size() != images.size()))
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "DNN Train: nothing to train...";
         return;

@@ -66,7 +66,9 @@ LBPHFaceRecognizer* LBPHFaceModel::ptr()
     LBPHFaceRecognizer* const ptr = cv::Ptr<LBPHFaceRecognizer>::operator Digikam::LBPHFaceRecognizer*();
 
     if (!ptr)
+    {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "LBPHFaceRecognizer pointer is null";
+    }
 
     return ptr;
 }
@@ -76,7 +78,9 @@ const LBPHFaceRecognizer* LBPHFaceModel::ptr() const
     const LBPHFaceRecognizer* const ptr = cv::Ptr<LBPHFaceRecognizer>::operator Digikam::LBPHFaceRecognizer*();
 
     if (!ptr)
+    {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "LBPHFaceRecognizer pointer is null";
+    }
 
     return ptr;
 }

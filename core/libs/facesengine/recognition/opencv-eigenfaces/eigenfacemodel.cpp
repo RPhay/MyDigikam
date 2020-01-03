@@ -66,7 +66,9 @@ EigenFaceRecognizer* EigenFaceModel::ptr()
     EigenFaceRecognizer* const ptr = cv::Ptr<EigenFaceRecognizer>::operator Digikam::EigenFaceRecognizer*();
 
     if (!ptr)
+    {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "EigenFaceRecognizer pointer is null";
+    }
 
     return ptr;
 }
@@ -76,7 +78,9 @@ const EigenFaceRecognizer* EigenFaceModel::ptr() const
     const EigenFaceRecognizer* const ptr = cv::Ptr<EigenFaceRecognizer>::operator Digikam::EigenFaceRecognizer*();
 
     if (!ptr)
+    {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "EigenFaceRecognizer pointer is null";
+    }
 
     return ptr;
 }
@@ -150,7 +154,9 @@ void EigenFaceModel::setMats(const QList<OpenCVMatData>& mats,
 
     //ptr()->setSrc(currentSrcs);
     //ptr()->setLabels(currentLabels);
-    //make sure that there exits training data
+
+    // make sure that there exits training data
+
     if (currentSrcs.size()>0)
     {
         ptr()->train(currentSrcs, currentLabels);
@@ -165,6 +171,7 @@ void EigenFaceModel::update(const std::vector<cv::Mat>& images,
 
     // Update local information
     // We assume new labels are simply appended
+
     cv::Mat currentLabels = ptr()->getLabels();
 
     for (int i = m_matMetadata.size() ; i < currentLabels.rows ; ++i)

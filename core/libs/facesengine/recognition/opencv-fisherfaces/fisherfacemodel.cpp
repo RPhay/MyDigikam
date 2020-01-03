@@ -66,7 +66,9 @@ FisherFaceRecognizer* FisherFaceModel::ptr()
     FisherFaceRecognizer* const ptr = cv::Ptr<FisherFaceRecognizer>::operator Digikam::FisherFaceRecognizer*();
 
     if (!ptr)
+    {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "FisherFaceRecognizer pointer is null";
+    }
 
     return ptr;
 }
@@ -76,7 +78,9 @@ const FisherFaceRecognizer* FisherFaceModel::ptr() const
     const FisherFaceRecognizer* const ptr = cv::Ptr<FisherFaceRecognizer>::operator Digikam::FisherFaceRecognizer*();
 
     if (!ptr)
+    {
         qCWarning(DIGIKAM_FACESENGINE_LOG) << "FisherFaceRecognizer pointer is null";
+    }
 
     return ptr;
 }

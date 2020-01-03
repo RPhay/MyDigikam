@@ -72,11 +72,11 @@ void olbp_(InputArray _src, OutputArray _dst)
             code |= (src.at<_Tp>(i-1, j-1) >= center) << 7;
             code |= (src.at<_Tp>(i-1, j)   >= center) << 6;
             code |= (src.at<_Tp>(i-1, j+1) >= center) << 5;
-            code |= (src.at<_Tp>(i, j+1)   >= center) << 4;
+            code |= (src.at<_Tp>(i,   j+1) >= center) << 4;
             code |= (src.at<_Tp>(i+1, j+1) >= center) << 3;
             code |= (src.at<_Tp>(i+1, j)   >= center) << 2;
             code |= (src.at<_Tp>(i+1, j-1) >= center) << 1;
-            code |= (src.at<_Tp>(i, j-1)   >= center) << 0;
+            code |= (src.at<_Tp>(i,   j-1) >= center) << 0;
             dst.at<unsigned char>(i-1, j-1) = code;
         }
     }
@@ -306,14 +306,16 @@ void LBPHFaceRecognizer::update(InputArrayOfArrays _in_src, InputArray _inm_labe
     // got no data, just return
 
     if (_in_src.total() == 0)
+    {
         return;
+    }
 
     this->train(_in_src, _inm_labels, true);
 }
 
 void LBPHFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_labels, bool preserveData)
 {
-    if (_in_src.kind() != _InputArray::STD_VECTOR_MAT && _in_src.kind() != _InputArray::STD_VECTOR_VECTOR)
+    if ((_in_src.kind() != _InputArray::STD_VECTOR_MAT) && (_in_src.kind() != _InputArray::STD_VECTOR_VECTOR))
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "The images are expected as InputArray::STD_VECTOR_MAT (a std::vector<Mat>) "
                                                "or _InputArray::STD_VECTOR_VECTOR (a std::vector< std::vector<...> >).";
@@ -372,7 +374,8 @@ void LBPHFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_label
 
         // get spatial histogram from this lbp image
 
-        Mat p = spatial_histogram(lbp_image,                                                         /* lbp_image                   */
+        Mat p = spatial_histogram(
+                                  lbp_image,                                                         /* lbp_image                   */
                                   static_cast<int>(std::pow(2.0, static_cast<double>(m_neighbors))), /* number of possible patterns */
                                   m_grid_x,                                                          /* grid size x                 */
                                   m_grid_y,                                                          /* grid size y                 */
@@ -399,12 +402,14 @@ void LBPHFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<Face::PredictColle
     // get the spatial histogram from input image
 
     Mat lbp_image = elbp(src, m_radius, m_neighbors);
-    Mat query     = spatial_histogram(lbp_image,                                                         /* lbp_image                   */
+    Mat query     = spatial_histogram(
+                                      lbp_image,                                                         /* lbp_image                   */
                                       static_cast<int>(std::pow(2.0, static_cast<double>(m_neighbors))), /* number of possible patterns */
                                       m_grid_x,                                                          /* grid size x                 */
                                       m_grid_y,                                                          /* grid size y                 */
                                       true                                                               /* normed histograms           */
                                      );
+
     collector->init((int)m_histograms.size());
 
     // This is the standard method

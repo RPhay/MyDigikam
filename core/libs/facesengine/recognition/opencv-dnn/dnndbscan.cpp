@@ -241,7 +241,7 @@ void DNNDbscan::checkNearPoints()
 
 bool DNNDbscan::isCoreObject(int idx)
 {
-    return points[idx].ptsCount >= minPtsPerCluster;
+    return (points[idx].ptsCount >= minPtsPerCluster);
 }
 
 void DNNDbscan::findNeighbors(const DNNDbscanPointCustomized& p, int pointIdx, std::list<int>& neighbors)
@@ -258,7 +258,7 @@ void DNNDbscan::findNeighbors(const DNNDbscanPointCustomized& p, int pointIdx, s
 int DNNDbscan::getCluster(std::vector<int>& clusteredIndices)
 {
     if (clusteredIndices.empty() ||
-        clusteredIndices.size() < clusteredIdx.size())
+        (clusteredIndices.size() < clusteredIdx.size()))
     {
         clusteredIndices.shrink_to_fit();
         std::copy(clusteredIdx.begin(), clusteredIdx.end(), std::back_inserter(clusteredIndices));

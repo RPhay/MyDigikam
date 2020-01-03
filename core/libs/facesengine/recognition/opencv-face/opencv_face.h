@@ -143,7 +143,7 @@ public:
      * @param sorted If set, results will be sorted by distance
      * Each values is a pair of label and distance.
      */
-    std::vector<std::pair<int, double> > getResults(bool sorted = false) const;
+    std::vector<std::pair<int, double> > getResults(bool sorted = false)  const;
 
     /**
      * @brief Return results as map
@@ -295,7 +295,7 @@ public:
      *      model->train(images, labels);
      * @endcode
      */
-    virtual void train(InputArrayOfArrays src, InputArray labels) = 0;
+    virtual void train(InputArrayOfArrays src, InputArray labels)               = 0;
 
     /**
      * @brief Updates a FaceRecognizer with given data and associated labels.

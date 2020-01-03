@@ -99,7 +99,7 @@ cv::Mat OpenCVEIGENFaceRecognizer::prepareForRecognition(const QImage& inputImag
 {
     QImage image(inputImage);
 
-    if (inputImage.width() > TargetInputSize || inputImage.height() > TargetInputSize)
+    if ((inputImage.width() > TargetInputSize) || (inputImage.height() > TargetInputSize))
     {
         image = inputImage.scaled(TargetInputSize, TargetInputSize, Qt::IgnoreAspectRatio);
     }
@@ -150,7 +150,7 @@ void OpenCVEIGENFaceRecognizer::train(const std::vector<cv::Mat>& images,
                                       const QString& context,
                                       const std::vector<cv::Mat>& images_rgb)
 {
-    if (images.empty() || labels.size() != images.size())
+    if (images.empty() || (labels.size() != images.size()))
     {
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "Eigenfaces Train: nothing to train...";
         return;

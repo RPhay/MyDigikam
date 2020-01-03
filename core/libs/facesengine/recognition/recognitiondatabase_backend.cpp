@@ -36,7 +36,7 @@ void RecognitionDatabase::Private::applyParameters()
     {
         for (QVariantMap::const_iterator it = parameters.constBegin() ; it != parameters.constEnd() ; ++it)
         {
-            if (it.key() == QLatin1String("threshold") || it.key() == QLatin1String("accuracy"))
+            if ((it.key() == QLatin1String("threshold")) || (it.key() == QLatin1String("accuracy")))
             {
                 if      (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::LBP)
                 {

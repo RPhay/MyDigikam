@@ -55,7 +55,9 @@ inline Mat asRowMatrix(std::vector<Mat> src, int rtype, double alpha=1, double b
     // return empty matrix if no matrices given
 
     if (n == 0)
+    {
         return Mat();
+    }
 
     // dimensionality of (reshaped) samples
 
@@ -96,12 +98,16 @@ inline std::vector<_Tp> remove_dups(const std::vector<_Tp>& src)
     std::set<_Tp> set_elems;
 
     for (constVecIterator it = src.begin() ; it != src.end() ; ++it)
+    {
         set_elems.insert(*it);
+    }
 
     std::vector<_Tp> elems;
 
     for (constSetIterator it = set_elems.begin() ; it != set_elems.end() ; ++it)
+    {
         elems.push_back(*it);
+    }
 
     return elems;
 }
@@ -114,8 +120,11 @@ void FisherFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_lab
 void FisherFaceRecognizer::update(InputArrayOfArrays _in_src, InputArray _inm_labels)
 {
     // got no data, just return
+
     if (_in_src.total() == 0)
+    {
         return;
+    }
 
     this->train(_in_src, _inm_labels, true);
 }
@@ -179,15 +188,15 @@ void FisherFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_lab
 
     int n = data.rows;
 
-    /*
-     LDA needs more than one class
-     We have to check the labels first
-    */
+    /**
+     * LDA needs more than one class
+     * We have to check the labels first
+     */
     bool label_flag = false;
 
     for (int i = 1 ; i < m_labels.rows ; ++i)
     {
-        if (m_labels.at<int>(i, 0)!=m_labels.at<int>(i-1, 0))
+        if (m_labels.at<int>(i, 0) != m_labels.at<int>(i-1, 0))
         {
             label_flag = true;
             break;

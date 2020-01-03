@@ -55,7 +55,9 @@ inline Mat asRowMatrix(std::vector<Mat> src, int rtype, double alpha=1, double b
     // return empty matrix if no matrices given
 
     if (n == 0)
+    {
         return Mat();
+    }
 
     // dimensionality of (reshaped) samples
 
@@ -95,14 +97,16 @@ void EigenFaceRecognizer::update(InputArrayOfArrays _in_src, InputArray _inm_lab
     // got no data, just return
 
     if (_in_src.total() == 0)
+    {
         return;
+    }
 
     this->train(_in_src, _inm_labels, true);
 }
 
 void EigenFaceRecognizer::train(InputArrayOfArrays _in_src, InputArray _inm_labels, bool preserveData)
 {
-    if (_in_src.kind() != _InputArray::STD_VECTOR_MAT && _in_src.kind() != _InputArray::STD_VECTOR_VECTOR)
+    if ((_in_src.kind() != _InputArray::STD_VECTOR_MAT) && (_in_src.kind() != _InputArray::STD_VECTOR_VECTOR))
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "The images are expected as InputArray::STD_VECTOR_MAT (a std::vector<Mat>) "
                                                "or _InputArray::STD_VECTOR_VECTOR (a std::vector< std::vector<...> >).";
@@ -199,7 +203,7 @@ void EigenFaceRecognizer::predict(cv::InputArray _src, cv::Ptr<Face::PredictColl
 
     // make sure the size of input image is the same as training image
 
-    if (m_src.size() >= 1 && (src.rows != m_src[0].rows || src.cols != m_src[0].cols))
+    if (m_src.size() >= 1 && ((src.rows != m_src[0].rows) || (src.cols != m_src[0].cols)))
     {
         resize(src, src, Size(m_src[0].rows, m_src[0].cols), 0, 0, INTER_LINEAR);
     }

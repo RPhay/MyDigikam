@@ -57,7 +57,7 @@ DNNFaceExtractor::DNNFaceExtractor(Preprocessor* const p)
 
     // As we use OpenFace, we need to set appropriate values for image color space and image size
 
-    imageSize         = cv::Size(96,96);
+    imageSize         = cv::Size(96, 96);
     scaleFactor       = 1.0 / 255.0;
     meanValToSubtract = cv::Scalar(0.0, 0.0, 0.0);
 }
