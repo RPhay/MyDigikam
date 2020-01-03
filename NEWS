@@ -536,7 +536,7 @@ BUGFIXES:
 521 ==> 415557 - Face detection - Advanced settings : restricted folder scope not taken into account.
 522 ==> 415702 - Cannot abort or stop find Duplicate process.
 523 ==> 415796 - Face thumbnail zoom level too wide.
-524 ==> 
+524 ==> 366551 - Unclear icon-item overlay when associating people to faces.
 525 ==> 
 526 ==> 
 527 ==> 
