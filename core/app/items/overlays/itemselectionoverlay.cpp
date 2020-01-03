@@ -55,8 +55,8 @@ QIcon ItemSelectionOverlayButton::icon()
 
 void ItemSelectionOverlayButton::updateToolTip()
 {
-    setToolTip(isChecked() ? i18nc("@info:tooltip", "Deselect Item") :
-               i18nc("@info:tooltip", "Select Item"));
+    setToolTip(isChecked() ? i18nc("@info:tooltip", "Deselect Item")
+                           : i18nc("@info:tooltip", "Select Item"));
 }
 
 // --------------------------------------------------------------------

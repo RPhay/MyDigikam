@@ -50,6 +50,7 @@ QWidget* ItemRatingOverlay::createWidget()
     RatingWidget* const w = new RatingWidget(parentWidget());
     w->setFading(true);
     w->setTracking(false);
+
     return w;
 }
 

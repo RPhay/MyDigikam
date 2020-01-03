@@ -117,7 +117,7 @@ void GroupIndicatorOverlay::updatePosition()
 bool GroupIndicatorOverlay::checkIndex(const QModelIndex& index) const
 {
     ItemInfo info = ItemModel::retrieveItemInfo(index);
-    QRect rect     = static_cast<ItemDelegate*>(delegate())->groupIndicatorRect();
+    QRect rect    = static_cast<ItemDelegate*>(delegate())->groupIndicatorRect();
 
     if (!rect.isNull() && info.hasGroupedImages())
     {

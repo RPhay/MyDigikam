@@ -58,9 +58,9 @@ class Q_DECL_HIDDEN AssignNameOverlay::Private
 public:
 
     explicit Private()
-        : tagModel(AbstractAlbumModel::IgnoreRootAlbum)
+        : tagModel(AbstractAlbumModel::IgnoreRootAlbum),
+          assignNameWidget(nullptr)
     {
-        assignNameWidget = nullptr;
     }
 
     bool isChildWidget(QWidget* widget, QWidget* const parent) const
