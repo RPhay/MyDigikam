@@ -103,6 +103,7 @@ set(libdatabase_SRCS
     dbjobs/duplicatesprogressobserver.cpp
 
     item/containers/iteminfo.cpp
+    item/containers/iteminfodata.cpp
     item/containers/iteminfolist.cpp
     item/containers/iteminfocache.cpp
     item/containers/itemcomments.cpp
