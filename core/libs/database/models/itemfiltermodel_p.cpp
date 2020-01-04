@@ -36,21 +36,21 @@ namespace Digikam
 {
 
 ItemFilterModel::ItemFilterModelPrivate::ItemFilterModelPrivate()
+    : imageModel(nullptr),
+      version(0),
+      lastDiscardVersion(0),
+      sentOut(0),
+      sentOutForReAdd(0),
+      updateFilterTimer(nullptr),
+      needPrepare(false),
+      needPrepareComments(false),
+      needPrepareTags(false),
+      needPrepareGroups(false),
+      preparer(nullptr),
+      filterer(nullptr),
+      hasOneMatch(false),
+      hasOneMatchForText(false)
 {
-    imageModel            = nullptr;
-    version               = 0;
-    lastDiscardVersion    = 0;
-    sentOut               = 0;
-    sentOutForReAdd       = 0;
-    updateFilterTimer     = nullptr;
-    needPrepare           = false;
-    needPrepareComments   = false;
-    needPrepareTags       = false;
-    needPrepareGroups     = false;
-    preparer              = nullptr;
-    filterer              = nullptr;
-    hasOneMatch           = false;
-    hasOneMatchForText    = false;
 
     setupWorkers();
 }
@@ -58,6 +58,7 @@ ItemFilterModel::ItemFilterModelPrivate::ItemFilterModelPrivate()
 ItemFilterModel::ItemFilterModelPrivate::~ItemFilterModelPrivate()
 {
     // facilitate thread stopping
+
     ++version;
     preparer->deactivate();
     filterer->deactivate();
@@ -77,6 +78,7 @@ void ItemFilterModel::ItemFilterModelPrivate::init(ItemFilterModel* _q)
             q, SLOT(slotUpdateFilter()));
 
     // inter-thread redirection
+
     qRegisterMetaType<ItemFilterModelTodoPackage>("ItemFilterModelTodoPackage");
 }
 
@@ -88,6 +90,7 @@ void ItemFilterModel::ItemFilterModelPrivate::preprocessInfos(const QList<ItemIn
 void ItemFilterModel::ItemFilterModelPrivate::processAddedInfos(const QList<ItemInfo>& infos, const QList<QVariant>& extraValues)
 {
     // These have already been added, we just process them afterwards
+
     infosToProcess(infos, extraValues, false);
 }
 
@@ -142,10 +145,11 @@ void ItemFilterModel::ItemFilterModelPrivate::infosToProcess(const QList<ItemInf
     Q_ASSERT(extraValues.isEmpty() || infos.size() == extraValues.size());
 
     // prepare and filter in chunks
+
     const int size                      = infos.size();
     const int maxChunkSize              = needPrepare ? PrepareChunkSize : FilterChunkSize;
     const bool hasExtraValues           = !extraValues.isEmpty();
-    QList<ItemInfo>::const_iterator it = infos.constBegin(), end;
+    QList<ItemInfo>::const_iterator it  = infos.constBegin(), end;
     QList<QVariant>::const_iterator xit = extraValues.constBegin(), xend;
     int index                           = 0;
     QVector<ItemInfo>  infoVector;
@@ -155,7 +159,7 @@ void ItemFilterModel::ItemFilterModelPrivate::infosToProcess(const QList<ItemInf
     {
         const int chunkSize = qMin(maxChunkSize, size - index);
         infoVector.resize(chunkSize);
-        end = it + chunkSize;
+        end                 = it + chunkSize;
         std::copy(it, end, infoVector.begin());
 
         if (hasExtraValues)
@@ -163,10 +167,10 @@ void ItemFilterModel::ItemFilterModelPrivate::infosToProcess(const QList<ItemInf
             extraValueVector.resize(chunkSize);
             xend = xit + chunkSize;
             std::copy(xit, xend, extraValueVector.begin());
-            xit = xend;
+            xit  = xend;
         }
 
-        it    = end;
+        it     = end;
         index += chunkSize;
 
         ++sentOut;
@@ -190,6 +194,7 @@ void ItemFilterModel::ItemFilterModelPrivate::infosToProcess(const QList<ItemInf
 void ItemFilterModel::ItemFilterModelPrivate::packageFinished(const ItemFilterModelTodoPackage& package)
 {
     // check if it got discarded on the journey
+
     if (package.version != version)
     {
         packageDiscarded(package);
@@ -197,14 +202,16 @@ void ItemFilterModel::ItemFilterModelPrivate::packageFinished(const ItemFilterMo
     }
 
     // incorporate result
+
     QHash<qlonglong, bool>::const_iterator it = package.filterResults.constBegin();
 
-    for (; it != package.filterResults.constEnd(); ++it)
+    for ( ; it != package.filterResults.constEnd() ; ++it)
     {
         filterResults.insert(it.key(), it.value());
     }
 
     // re-add if necessary
+
     if (package.isForReAdd)
     {
         emit reAddItemInfos(package.infos.toList(), package.extraValues.toList());
@@ -216,6 +223,7 @@ void ItemFilterModel::ItemFilterModelPrivate::packageFinished(const ItemFilterMo
     }
 
     // decrement counters
+
     --sentOut;
 
     if (package.isForReAdd)
@@ -225,7 +233,8 @@ void ItemFilterModel::ItemFilterModelPrivate::packageFinished(const ItemFilterMo
 
     // If all packages have returned, filtered and readded, and no more are expected,
     // and there is need to tell the filter result to the view, do that
-    if (sentOut == 0 && sentOutForReAdd == 0 && !imageModel->isRefreshing())
+
+    if ((sentOut == 0) && (sentOutForReAdd == 0) && !imageModel->isRefreshing())
     {
         q->invalidate(); // use invalidate, not invalidateFilter only. Sorting may have changed as well.
         emit (q->filterMatches(hasOneMatch));
@@ -239,6 +248,7 @@ void ItemFilterModel::ItemFilterModelPrivate::packageDiscarded(const ItemFilterM
 {
     // Either, the model was reset, or the filter changed
     // In the former case throw all away, in the latter case, recycle
+
     if (package.version > lastDiscardVersion)
     {
         // Recycle packages: Send again with current version

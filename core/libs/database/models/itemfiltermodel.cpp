@@ -237,7 +237,7 @@ QModelIndex ImageSortFilterModel::indexForImageId(qlonglong id) const
 QList<ItemInfo> ImageSortFilterModel::imageInfosSorted() const
 {
     QList<ItemInfo>  infos;
-    const int         size  = rowCount();
+    const int         size = rowCount();
     ItemModel* const model = sourceItemModel();
 
     for (int i = 0 ; i < size ; ++i)
@@ -326,25 +326,32 @@ QVariant ItemFilterModel::data(const QModelIndex& index, int role) const
 
     switch (role)
     {
-            // Attention: This breaks should there ever be another filter model between this and the ItemModel
+        // Attention: This breaks should there ever be another filter model between this and the ItemModel
 
         case DCategorizedSortFilterProxyModel::CategoryDisplayRole:
             return categoryIdentifier(d->imageModel->imageInfoRef(mapToSource(index)));
+
         case CategorizationModeRole:
             return d->sorter.categorizationMode;
+
         case SortOrderRole:
             return d->sorter.sortRole;
             //case CategoryCountRole:
             //  return categoryCount(d->imageModel->imageInfoRef(mapToSource(index)));
+
         case CategoryAlbumIdRole:
             return d->imageModel->imageInfoRef(mapToSource(index)).albumId();
+
         case CategoryFormatRole:
             return d->imageModel->imageInfoRef(mapToSource(index)).format();
+
         case CategoryDateRole:
             return d->imageModel->imageInfoRef(mapToSource(index)).dateTime();
+
         case GroupIsOpenRole:
             return (d->groupFilter.isAllOpen() ||
                     d->groupFilter.isOpen(d->imageModel->imageInfoRef(mapToSource(index)).id()));
+
         case ItemFilterModelPointerRole:
             return QVariant::fromValue(const_cast<ItemFilterModel*>(this));
     }
@@ -366,6 +373,7 @@ DatabaseFields::Set ItemFilterModel::suggestedWatchFlags() const
                   DatabaseFields::Width  | DatabaseFields::Height;
     watchFlags |= DatabaseFields::Comment;
     watchFlags |= DatabaseFields::ImageRelations;
+
     return watchFlags;
 }
 
@@ -379,8 +387,8 @@ void ItemFilterModel::setDayFilter(const QList<QDateTime>& days)
 }
 
 void ItemFilterModel::setTagFilter(const QList<int>& includedTags, const QList<int>& excludedTags,
-                                    ItemFilterSettings::MatchingCondition matchingCond,
-                                    bool showUnTagged, const QList<int>& clTagIds, const QList<int>& plTagIds)
+                                   ItemFilterSettings::MatchingCondition matchingCond,
+                                   bool showUnTagged, const QList<int>& clTagIds, const QList<int>& plTagIds)
 {
     Q_D(ItemFilterModel);
     d->filter.setTagFilter(includedTags, excludedTags, matchingCond, showUnTagged, clTagIds, plTagIds);
@@ -451,9 +459,10 @@ void ItemFilterModel::setItemFilterSettings(const ItemFilterSettings& settings)
     }
 
     d->filterResults.clear();
-
-    //d->categoryCountHashInt.clear();
-    //d->categoryCountHashString.clear();
+/*
+    d->categoryCountHashInt.clear();
+    d->categoryCountHashString.clear();
+*/
     if (d->imageModel)
     {
         d->infosToProcess(d->imageModel->imageInfos());
@@ -486,12 +495,14 @@ void ItemFilterModel::setVersionItemFilterSettings(const VersionItemFilterSettin
 bool ItemFilterModel::isGroupOpen(qlonglong group) const
 {
     Q_D(const ItemFilterModel);
+
     return d->groupFilter.isOpen(group);
 }
 
 bool ItemFilterModel::isAllGroupsOpen() const
 {
     Q_D(const ItemFilterModel);
+
     return d->groupFilter.isAllOpen();
 }
 
@@ -530,30 +541,35 @@ void ItemFilterModel::slotUpdateFilter()
 ItemFilterSettings ItemFilterModel::imageFilterSettings() const
 {
     Q_D(const ItemFilterModel);
+
     return d->filter;
 }
 
 ItemSortSettings ItemFilterModel::imageSortSettings() const
 {
     Q_D(const ItemFilterModel);
+
     return d->sorter;
 }
 
 VersionItemFilterSettings ItemFilterModel::versionItemFilterSettings() const
 {
     Q_D(const ItemFilterModel);
+
     return d->versionFilter;
 }
 
 GroupItemFilterSettings ItemFilterModel::groupItemFilterSettings() const
 {
     Q_D(const ItemFilterModel);
+
     return d->groupFilter;
 }
 
 void ItemFilterModel::slotModelReset()
 {
     Q_D(ItemFilterModel);
+
     {
         QMutexLocker lock(&d->mutex);
         // discard all packages on the way that are marked as send out for re-add
@@ -566,6 +582,7 @@ void ItemFilterModel::slotModelReset()
         d->hasOneMatch        = false;
         d->hasOneMatchForText = false;
     }
+
     d->filterResults.clear();
 }
 
@@ -588,8 +605,8 @@ bool ItemFilterModel::filterAcceptsRow(int source_row, const QModelIndex& source
 
     // usually done in thread and cache, unless source model changed
     ItemInfo info = d->imageModel->imageInfo(source_row);
-    bool match     = d->filter.matches(info);
-    match          = match ? d->versionFilter.matches(info) : false;
+    bool match    = d->filter.matches(info);
+    match         = match ? d->versionFilter.matches(info) : false;
 
     return match ? d->groupFilter.matches(info) : false;
 }
@@ -692,6 +709,7 @@ void ItemFilterModelPreparer::process(ItemFilterModelTodoPackage package)
     // The downside of QVector: At some point, we may need a QList for an API.
     // Nonetheless, QList and ItemInfo is fast. We could as well
     // reimplement ItemInfoList to ItemInfoVector (internally with templates?)
+
     ItemInfoList infoList;
 
     if (needPrepareTags || needPrepareGroups)
@@ -861,15 +879,17 @@ int ItemFilterModel::compareCategories(const QModelIndex& left, const QModelInde
         return -1;
     }
 
-    const ItemInfo& leftInfo  = d->imageModel->imageInfoRef(left);
-    const ItemInfo& rightInfo = d->imageModel->imageInfoRef(right);
+    const ItemInfo& leftInfo    = d->imageModel->imageInfoRef(left);
+    const ItemInfo& rightInfo   = d->imageModel->imageInfoRef(right);
 
     // Check grouping
     qlonglong leftGroupImageId  = leftInfo.groupImageId();
     qlonglong rightGroupImageId = rightInfo.groupImageId();
 
-    return compareInfosCategories(leftGroupImageId  == -1 ? leftInfo  : ItemInfo(leftGroupImageId),
-                                  rightGroupImageId == -1 ? rightInfo : ItemInfo(rightGroupImageId));
+    return compareInfosCategories(
+                                  (leftGroupImageId  == -1) ? leftInfo  : ItemInfo(leftGroupImageId),
+                                  (rightGroupImageId == -1) ? rightInfo : ItemInfo(rightGroupImageId)
+                                 );
 }
 
 bool ItemFilterModel::subSortLessThan(const QModelIndex& left, const QModelIndex& right) const
@@ -887,8 +907,8 @@ bool ItemFilterModel::subSortLessThan(const QModelIndex& left, const QModelIndex
         return false;
     }
 
-    const ItemInfo& leftInfo  = d->imageModel->imageInfoRef(left);
-    const ItemInfo& rightInfo = d->imageModel->imageInfoRef(right);
+    const ItemInfo& leftInfo    = d->imageModel->imageInfoRef(left);
+    const ItemInfo& rightInfo   = d->imageModel->imageInfoRef(right);
 
     if (leftInfo == rightInfo)
     {
@@ -919,14 +939,17 @@ bool ItemFilterModel::subSortLessThan(const QModelIndex& left, const QModelIndex
     }
 
     // Use the group leader for sorting
-    return infosLessThan(leftGroupImageId  == -1 ? leftInfo  : ItemInfo(leftGroupImageId),
-                         rightGroupImageId == -1 ? rightInfo : ItemInfo(rightGroupImageId));
+    return infosLessThan(
+                         (leftGroupImageId  == -1) ? leftInfo  : ItemInfo(leftGroupImageId),
+                         (rightGroupImageId == -1) ? rightInfo : ItemInfo(rightGroupImageId)
+                        );
 }
 
 int ItemFilterModel::compareInfosCategories(const ItemInfo& left, const ItemInfo& right) const
 {
     // Note: reimplemented in ItemAlbumFilterModel
     Q_D(const ItemFilterModel);
+
     return d->sorter.compareCategories(left, right);
 }
 
@@ -936,11 +959,11 @@ static inline QString fastNumberToString(int id)
     const int size = sizeof(int) * 2;
     int number     = id;
     char c[size + 1];
-    c[size] = '\0';
+    c[size]        = '\0';
 
     for (int i = 0 ; i < size ; ++i)
     {
-        c[i] = 'a' + (number & 0xF);
+        c[i]     = 'a' + (number & 0xF);
         number >>= 4;
     }
 
@@ -963,14 +986,19 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i) const
     {
         case ItemSortSettings::NoCategories:
             return QString();
+
         case ItemSortSettings::OneCategory:
             return QString();
+
         case ItemSortSettings::CategoryByAlbum:
             return fastNumberToString(info.albumId());
+
         case ItemSortSettings::CategoryByFormat:
             return info.format();
+
         case ItemSortSettings::CategoryByMonth:
             return info.dateTime().date().toString(QLatin1String("MMyyyy"));
+
         default:
             return QString();
     }
@@ -979,6 +1007,7 @@ QString ItemFilterModel::categoryIdentifier(const ItemInfo& i) const
 bool ItemFilterModel::infosLessThan(const ItemInfo& left, const ItemInfo& right) const
 {
     Q_D(const ItemFilterModel);
+
     return d->sorter.lessThan(left, right);
 }
 
@@ -1143,6 +1172,7 @@ void NoDuplicatesItemFilterModel::slotRowsAboutToBeRemoved(const QModelIndex& pa
             needInvalidate = true;
         }
     }
-}*/
+}
+*/
 
 } // namespace Digikam

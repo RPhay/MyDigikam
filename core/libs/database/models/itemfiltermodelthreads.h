@@ -38,7 +38,7 @@ namespace Digikam
 {
 
 class ItemFilterModelTodoPackage;
-    
+
 class DIGIKAM_DATABASE_EXPORT ItemFilterModelWorker : public WorkerObject
 {
     Q_OBJECT

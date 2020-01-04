@@ -1126,10 +1126,12 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
     }
 }
 
+// ---------------------------------------------------------------------------------
+
 ItemModelIncrementalUpdater::ItemModelIncrementalUpdater(ItemModel::Private* d)
+    : oldIds(d->idHash),
+      oldExtraValues(d->extraValues)
 {
-    oldIds         = d->idHash;
-    oldExtraValues = d->extraValues;
 }
 
 void ItemModelIncrementalUpdater::appendInfos(const QList<ItemInfo>& infos, const QList<QVariant>& extraValues)

@@ -38,7 +38,7 @@ ItemFilterModelWorker::ItemFilterModelWorker(ItemFilterModel::ItemFilterModelPri
 
 bool ItemFilterModelWorker::checkVersion(const ItemFilterModelTodoPackage& package)
 {
-    return d->version == package.version;
+    return (d->version == package.version);
 }
 
 } // namespace Digikam

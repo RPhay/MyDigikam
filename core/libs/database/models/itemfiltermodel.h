@@ -63,36 +63,37 @@ public:
     explicit ImageSortFilterModel(QObject* const parent = nullptr);
 
     void        setSourceItemModel(ItemModel* const model);
-    ItemModel* sourceItemModel() const;
+    ItemModel* sourceItemModel()                                                            const;
 
     void                  setSourceFilterModel(ImageSortFilterModel* const model);
-    ImageSortFilterModel* sourceFilterModel() const;
+    ImageSortFilterModel* sourceFilterModel()                                               const;
 
-    QModelIndex mapToSourceItemModel(const QModelIndex& index) const;
-    QModelIndex mapFromSourceItemModel(const QModelIndex& imagemodel_index) const;
-    QModelIndex mapFromDirectSourceToSourceItemModel(const QModelIndex& sourceModel_index) const;
+    QModelIndex mapToSourceItemModel(const QModelIndex& index)                              const;
+    QModelIndex mapFromSourceItemModel(const QModelIndex& imagemodel_index)                 const;
+    QModelIndex mapFromDirectSourceToSourceItemModel(const QModelIndex& sourceModel_index)  const;
 
     /// Convenience methods mapped to ItemModel.
     /// Mentioned indexes returned come from the source image model.
-    QList<QModelIndex> mapListToSource(const QList<QModelIndex>& indexes) const;
-    QList<QModelIndex> mapListFromSource(const QList<QModelIndex>& sourceIndexes) const;
+    QList<QModelIndex> mapListToSource(const QList<QModelIndex>& indexes)                   const;
+    QList<QModelIndex> mapListFromSource(const QList<QModelIndex>& sourceIndexes)           const;
 
-    ItemInfo        imageInfo(const QModelIndex& index) const;
-    qlonglong        imageId(const QModelIndex& index) const;
-    QList<ItemInfo> imageInfos(const QList<QModelIndex>& indexes) const;
-    QList<qlonglong> imageIds(const QList<QModelIndex>& indexes) const;
+    ItemInfo         imageInfo(const QModelIndex& index)                                    const;
+    qlonglong        imageId(const QModelIndex& index)                                      const;
+    QList<ItemInfo>  imageInfos(const QList<QModelIndex>& indexes)                          const;
+    QList<qlonglong> imageIds(const QList<QModelIndex>& indexes)                            const;
 
-    QModelIndex indexForPath(const QString& filePath) const;
-    QModelIndex indexForItemInfo(const ItemInfo& info) const;
-    QModelIndex indexForImageId(qlonglong id) const;
+    QModelIndex indexForPath(const QString& filePath)                                       const;
+    QModelIndex indexForItemInfo(const ItemInfo& info)                                      const;
+    QModelIndex indexForImageId(qlonglong id)                                               const;
 
-    /** Returns a list of all image infos, sorted according to this model.
-     *  If you do not need a sorted list, use ItemModel's imageInfos() method.
+    /**
+     * Returns a list of all image infos, sorted according to this model.
+     * If you do not need a sorted list, use ItemModel's imageInfos() method.
      */
-    QList<ItemInfo> imageInfosSorted() const;
+    QList<ItemInfo> imageInfosSorted()                                                      const;
 
     /// Returns this, any chained ItemFilterModel, or 0.
-    virtual ItemFilterModel* imageFilterModel() const;
+    virtual ItemFilterModel* imageFilterModel()                                             const;
 
 protected:
 
@@ -100,7 +101,7 @@ protected:
     virtual void setDirectSourceItemModel(ItemModel* const model);
 
     // made protected
-    virtual void setSourceModel(QAbstractItemModel* const model) override;
+    virtual void setSourceModel(QAbstractItemModel* const model)                                   override;
 
 protected:
 
@@ -131,7 +132,7 @@ public:
         CategoryDateRole            = ItemModel::FilterModelRoles + 5,
         /// Returns true if the given image is a group leader, and the group is opened
         GroupIsOpenRole             = ItemModel::FilterModelRoles + 6,
-        ItemFilterModelPointerRole = ItemModel::FilterModelRoles + 50
+        ItemFilterModelPointerRole  = ItemModel::FilterModelRoles + 50
     };
 
 public:
@@ -139,28 +140,32 @@ public:
     explicit ItemFilterModel(QObject* const parent = nullptr);
     ~ItemFilterModel();
 
-    /** Add a hook to get added images for preparation tasks before they are added in the model */
+    /**
+     * Add a hook to get added images for preparation tasks before they are added in the model
+     */
     void addPrepareHook(ItemFilterModelPrepareHook* const hook);
     void removePrepareHook(ItemFilterModelPrepareHook* const hook);
 
-    /** Returns a set of DatabaseFields suggested to set as watch flags on the source ItemModel.
-     *  The contained flags will be those that this model can sort or filter by. */
-    DatabaseFields::Set suggestedWatchFlags() const;
+    /**
+     * Returns a set of DatabaseFields suggested to set as watch flags on the source ItemModel.
+     * The contained flags will be those that this model can sort or filter by.
+     */
+    DatabaseFields::Set suggestedWatchFlags()                                               const;
 
-    ItemFilterSettings        imageFilterSettings() const;
-    VersionItemFilterSettings versionItemFilterSettings() const;
-    GroupItemFilterSettings   groupItemFilterSettings() const;
-    ItemSortSettings          imageSortSettings() const;
+    ItemFilterSettings        imageFilterSettings()                                         const;
+    VersionItemFilterSettings versionItemFilterSettings()                                   const;
+    GroupItemFilterSettings   groupItemFilterSettings()                                     const;
+    ItemSortSettings          imageSortSettings()                                           const;
 
     // group is identified by the id of its group leader
-    bool isGroupOpen(qlonglong group) const;
-    bool isAllGroupsOpen() const;
+    bool isGroupOpen(qlonglong group)                                                       const;
+    bool isAllGroupsOpen()                                                                  const;
 
     /// Enables sending imageInfosAdded and imageInfosAboutToBeRemoved
     void setSendItemInfoSignals(bool sendSignals);
 
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
-    virtual ItemFilterModel* imageFilterModel() const override;
+    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)             const override;
+    virtual ItemFilterModel* imageFilterModel()                                             const override;
 
 public Q_SLOTS:
 
@@ -241,27 +246,28 @@ protected:
 
     ItemFilterModel(ItemFilterModelPrivate& dd, QObject* const parent);
 
-    virtual void setDirectSourceItemModel(ItemModel* const model) override;
+    virtual void setDirectSourceItemModel(ItemModel* const model)                                 override;
 
-    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const override;
+    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent)         const override;
 
-    virtual int  compareCategories(const QModelIndex& left, const QModelIndex& right) const override;
-    virtual bool subSortLessThan(const QModelIndex& left, const QModelIndex& right) const override;
-    //virtual int  categoryCount(const ItemInfo& info) const;
-
+    virtual int  compareCategories(const QModelIndex& left, const QModelIndex& right)       const override;
+    virtual bool subSortLessThan(const QModelIndex& left, const QModelIndex& right)         const override;
+/*
+    virtual int  categoryCount(const ItemInfo& info)                                        const;
+*/
     /** Reimplement to customize category sorting,
      *  Return negative if category of left < category right,
      *  Return 0 if left and right are in the same category, else return positive.
      */
-    virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right) const;
+    virtual int compareInfosCategories(const ItemInfo& left, const ItemInfo& right)         const;
 
     /** Reimplement to customize sorting. Do not take categories into account here.
      */
-    virtual bool infosLessThan(const ItemInfo& left, const ItemInfo& right) const;
+    virtual bool infosLessThan(const ItemInfo& left, const ItemInfo& right)                 const;
 
     /** Returns a unique identifier for the category if info. The string need not be for user display.
      */
-    virtual QString categoryIdentifier(const ItemInfo& info) const;
+    virtual QString categoryIdentifier(const ItemInfo& info)                                const;
 
 protected Q_SLOTS:
 
@@ -291,7 +297,7 @@ public:
 
 protected:
 
-    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const override;
+    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent)         const override;
 };
 
 } // namespace Digikam

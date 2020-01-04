@@ -132,15 +132,20 @@ public:
     QList<ItemFilterModelPrepareHook*> prepareHooks;
 
 /*
-    QHash<int, QSet<qlonglong> >        categoryCountHashInt;
-    QHash<QString, QSet<qlonglong> >    categoryCountHashString;
+    QHash<int, QSet<qlonglong> >       categoryCountHashInt;
+    QHash<QString, QSet<qlonglong> >   categoryCountHashString;
 
 public:
 
         void cacheCategoryCount(int id, qlonglong imageid) const
-        { const_cast<ItemFilterModelPrivate*>(this)->categoryCountHashInt[id].insert(imageid); }
+        {
+            const_cast<ItemFilterModelPrivate*>(this)->categoryCountHashInt[id].insert(imageid);
+        }
+
         void cacheCategoryCount(const QString& id, qlonglong imageid) const
-        { const_cast<ItemFilterModelPrivate*>(this)->categoryCountHashString[id].insert(imageid); }
+        {
+            const_cast<ItemFilterModelPrivate*>(this)->categoryCountHashString[id].insert(imageid);
+        }
 */
 
 public Q_SLOTS:
