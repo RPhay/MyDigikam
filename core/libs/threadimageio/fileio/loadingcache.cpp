@@ -46,10 +46,9 @@ class Q_DECL_HIDDEN LoadingCache::Private
 public:
 
     explicit Private(LoadingCache* const q)
-        : q(q)
+      : watch(nullptr),
+        q(q)
     {
-        // Note: Don't make the mutex recursive, we need to use a wait condition on it
-        watch = nullptr;
     }
 
     void mapImageFilePath(const QString& filePath, const QString& cacheKey);
@@ -66,6 +65,7 @@ public:
     QMultiMap<QString, QString>     imageFilePathHash;
     QMultiMap<QString, QString>     thumbnailFilePathHash;
     QMap<QString, LoadingProcess*>  loadingDict;
+    // Note: Don't make the mutex recursive, we need to use a wait condition on it
     QMutex                          mutex;
     QWaitCondition                  condVar;
     LoadingCacheFileWatch*          watch;
