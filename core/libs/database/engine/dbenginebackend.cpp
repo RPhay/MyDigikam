@@ -124,7 +124,7 @@ BdEngineBackendPrivate::~BdEngineBackendPrivate()
 {
     // Must be shut down from the main thread.
     // Clean up the QThreadStorage. It deletes any stored data.
-    threadDataStorage.setLocalData(0);
+    threadDataStorage.setLocalData(nullptr);
 }
 
 void BdEngineBackendPrivate::init(const QString& name, DbEngineLocking* const l)
