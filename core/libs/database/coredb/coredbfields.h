@@ -36,6 +36,7 @@
 
 #include <QFlags>
 #include <QHash>
+#include <QVariant>
 
 // Local includes
 
@@ -161,7 +162,7 @@ enum ItemPositionsField
     PositionRoll        = 1 << 7,
     PositionAccuracy    = 1 << 8,
     PositionDescription = 1 << 9,
-    ItemPositionsAll   = Latitude            |
+    ItemPositionsAll    = Latitude            |
                           LatitudeNumber      |
                           Longitude           |
                           LongitudeNumber     |
@@ -180,11 +181,11 @@ typedef uint16_t ItemPositionsMinSizeType;
 enum ItemCommentsField
 {
     ItemCommentsNone  = 0,
-    CommentType        = 1 << 0,
-    CommentLanguage    = 1 << 1,
-    CommentAuthor      = 1 << 2,
-    CommentDate        = 1 << 3,
-    Comment            = 1 << 4,
+    CommentType       = 1 << 0,
+    CommentLanguage   = 1 << 1,
+    CommentAuthor     = 1 << 2,
+    CommentDate       = 1 << 3,
+    Comment           = 1 << 4,
     ItemCommentsAll   = CommentType     |
                          CommentAuthor   |
                          CommentLanguage |
@@ -235,10 +236,10 @@ enum VideoMetadataField
 typedef uint8_t VideoMetadataMinSizeType;
 
 Q_DECLARE_FLAGS(Images,           ImagesField)
-Q_DECLARE_FLAGS(ItemInformation, ItemInformationField)
+Q_DECLARE_FLAGS(ItemInformation,  ItemInformationField)
 Q_DECLARE_FLAGS(ImageMetadata,    ImageMetadataField)
-Q_DECLARE_FLAGS(ItemComments,    ItemCommentsField)
-Q_DECLARE_FLAGS(ItemPositions,   ItemPositionsField)
+Q_DECLARE_FLAGS(ItemComments,     ItemCommentsField)
+Q_DECLARE_FLAGS(ItemPositions,    ItemPositionsField)
 Q_DECLARE_FLAGS(ImageHistoryInfo, ImageHistoryInfoField)
 Q_DECLARE_FLAGS(VideoMetadata,    VideoMetadataField)
 
@@ -408,11 +409,11 @@ public:
 public:
 
     DATABASEFIELDS_SET_DECLARE_METHODS(Images,           images)
-    DATABASEFIELDS_SET_DECLARE_METHODS(ItemInformation, imageInformation)
+    DATABASEFIELDS_SET_DECLARE_METHODS(ItemInformation,  imageInformation)
     DATABASEFIELDS_SET_DECLARE_METHODS(VideoMetadata,    videoMetadata)
     DATABASEFIELDS_SET_DECLARE_METHODS(ImageMetadata,    imageMetadata)
-    DATABASEFIELDS_SET_DECLARE_METHODS(ItemComments,    imageComments)
-    DATABASEFIELDS_SET_DECLARE_METHODS(ItemPositions,   imagePositions)
+    DATABASEFIELDS_SET_DECLARE_METHODS(ItemComments,     imageComments)
+    DATABASEFIELDS_SET_DECLARE_METHODS(ItemPositions,    imagePositions)
     DATABASEFIELDS_SET_DECLARE_METHODS(ImageHistoryInfo, imageHistory)
 
     inline bool operator&(const Set& other)
@@ -482,11 +483,11 @@ public:
 private:
 
     Images           images;
-    ItemInformation imageInformation;
+    ItemInformation  imageInformation;
     ImageMetadata    imageMetadata;
     VideoMetadata    videoMetadata;
-    ItemComments    imageComments;
-    ItemPositions   imagePositions;
+    ItemComments     imageComments;
+    ItemPositions    imagePositions;
     ImageHistoryInfo imageHistory;
     CustomEnum       customEnum;
 };
@@ -574,11 +575,11 @@ public:
 
     // override relevant methods from QHash
     DATABASEFIELDS_HASH_DECLARE_METHODS(Images,           uniqueKey);
-    DATABASEFIELDS_HASH_DECLARE_METHODS(ItemInformation, uniqueKey);
+    DATABASEFIELDS_HASH_DECLARE_METHODS(ItemInformation,  uniqueKey);
     DATABASEFIELDS_HASH_DECLARE_METHODS(ImageMetadata,    uniqueKey);
     DATABASEFIELDS_HASH_DECLARE_METHODS(VideoMetadata,    uniqueKey);
-    DATABASEFIELDS_HASH_DECLARE_METHODS(ItemComments,    uniqueKey);
-    DATABASEFIELDS_HASH_DECLARE_METHODS(ItemPositions,   uniqueKey);
+    DATABASEFIELDS_HASH_DECLARE_METHODS(ItemComments,     uniqueKey);
+    DATABASEFIELDS_HASH_DECLARE_METHODS(ItemPositions,    uniqueKey);
     DATABASEFIELDS_HASH_DECLARE_METHODS(ImageHistoryInfo, uniqueKey);
     DATABASEFIELDS_HASH_DECLARE_METHODS(CustomEnum,       uniqueKey);
 };

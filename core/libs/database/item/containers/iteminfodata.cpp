@@ -25,6 +25,10 @@
 
 #include "iteminfodata.h"
 
+// Qt includes
+
+#include <QHash>
+
 // Local includes
 
 #include "digikam_globals.h"
