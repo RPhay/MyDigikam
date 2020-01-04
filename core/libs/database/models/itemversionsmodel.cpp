@@ -40,9 +40,9 @@ class Q_DECL_HIDDEN ItemVersionsModel::Private
 public:
 
     explicit Private()
+      : data(nullptr),
+        paintTree(false)
     {
-        data      = nullptr;
-        paintTree = false;
     }
 
     /// Complete paths with filenames and tree level
@@ -87,15 +87,15 @@ QVariant ItemVersionsModel::data(const QModelIndex& index, int role) const
         return QVariant();
     }
 
-    if (role == Qt::DisplayRole && !d->data->isEmpty())
+    if      ((role == Qt::DisplayRole) && !d->data->isEmpty())
     {
         return d->data->at(index.row()).first;
     }
-    else if (role == Qt::UserRole && !d->data->isEmpty())
+    else if ((role == Qt::UserRole &&) !d->data->isEmpty())
     {
         return d->data->at(index.row()).second;
     }
-    else if (role == Qt::DisplayRole && d->data->isEmpty())
+    else if ((role == Qt::DisplayRole) && d->data->isEmpty())
     {
         //TODO: make this text Italic
         return QVariant(QString(i18n("No image selected")));
@@ -107,6 +107,7 @@ QVariant ItemVersionsModel::data(const QModelIndex& index, int role) const
 int ItemVersionsModel::rowCount(const QModelIndex& parent) const
 {
     Q_UNUSED(parent)
+
     return d->data->count();
 }
 

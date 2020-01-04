@@ -98,6 +98,31 @@ class DIGIKAM_DATABASE_EXPORT ItemFilterSettings
 {
 public:
 
+    /// Possible logical matching condition used to sort tags id.
+    enum MatchingCondition
+    {
+        OrCondition,
+        AndCondition
+    };
+
+    /// Possible conditions used to filter rating: >=, =, <=
+    enum RatingCondition
+    {
+        GreaterEqualCondition,
+        EqualCondition,
+        LessEqualCondition
+    };
+
+    /// Possible logical matching condition used to sort geolocation.
+    enum GeolocationCondition
+    {
+        GeolocationNoFilter       = 0,
+        GeolocationNoCoordinates  = 1 << 1,
+        GeolocationHasCoordinates = 1 << 2
+    };
+
+public:
+
     explicit ItemFilterSettings();
 
     /**
@@ -110,13 +135,6 @@ public:
 
     /// --- Tags filter ---
 
-    /// Possible logical matching condition used to sort tags id.
-    enum MatchingCondition
-    {
-        OrCondition,
-        AndCondition
-    };
-
     void setTagFilter(const QList<int>& includedTags,
                       const QList<int>& excludedTags,
                       MatchingCondition matchingCond,
@@ -127,15 +145,6 @@ public:
 public:
 
     /// --- Rating filter ---
-
-    /// Possible conditions used to filter rating: >=, =, <=
-    enum RatingCondition
-    {
-        GreaterEqualCondition,
-        EqualCondition,
-        LessEqualCondition
-    };
-
     void setRatingFilter(int rating, RatingCondition ratingCond, bool isUnratedExcluded);
 
 public:
@@ -158,43 +167,36 @@ public:
 public:
 
     /// --- Geolocation filter
-    enum GeolocationCondition
-    {
-        GeolocationNoFilter       = 0,
-        GeolocationNoCoordinates  = 1 << 1,
-        GeolocationHasCoordinates = 1 << 2
-    };
-
     void setGeolocationFilter(const GeolocationCondition& condition);
 
 public:
 
     /// Returns if the day is a filter criteria
-    bool isFilteringByDay()         const;
+    bool isFilteringByDay()                                 const;
 
     /// Returns if the type mime is a filter criteria
-    bool isFilteringByTypeMime()    const;
+    bool isFilteringByTypeMime()                            const;
 
     /// Returns whether geolocation is a filter criteria
-    bool isFilteringByGeolocation() const;
+    bool isFilteringByGeolocation()                         const;
 
     /// Returns if the rating is a filter criteria
-    bool isFilteringByRating()      const;
+    bool isFilteringByRating()                              const;
 
     /// Returns if the pick labels is a filter criteria
-    bool isFilteringByPickLabels()  const;
+    bool isFilteringByPickLabels()                          const;
 
     /// Returns if the color labels is a filter criteria
-    bool isFilteringByColorLabels() const;
+    bool isFilteringByColorLabels()                         const;
 
     /// Returns if the tag is a filter criteria
-    bool isFilteringByTags()        const;
+    bool isFilteringByTags()                                const;
 
     /// Returns if the text (including comment) is a filter criteria
-    bool isFilteringByText()        const;
+    bool isFilteringByText()                                const;
 
     /// Returns if images will be filtered by these criteria at all
-    bool isFiltering()              const;
+    bool isFiltering()                                      const;
 
 public:
 
@@ -221,7 +223,7 @@ private:
     /**
      * @brief Returns whether some internal filtering (whitelist by id or URL) or normal filtering is going on
      */
-    bool isFilteringInternally() const;
+    bool isFilteringInternally()                            const;
 
 private:
 

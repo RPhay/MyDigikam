@@ -57,6 +57,7 @@ void ItemListModel::slotCollectionImageChange(const CollectionImageChangeset& ch
     {
         case CollectionImageChangeset::Added:
             break;
+
         case CollectionImageChangeset::Deleted:
         case CollectionImageChangeset::Removed:
         case CollectionImageChangeset::RemovedAll:

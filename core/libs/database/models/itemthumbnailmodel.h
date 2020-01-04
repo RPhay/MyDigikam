@@ -52,11 +52,12 @@ public:
     explicit ItemThumbnailModel(QObject* const parent);
     ~ItemThumbnailModel();
 
-    /** Enable thumbnail loading and set the thread that shall be used.
-     *  The thumbnail size of this thread will be adjusted.
+    /**
+     * Enable thumbnail loading and set the thread that shall be used.
+     * The thumbnail size of this thread will be adjusted.
      */
     void setThumbnailLoadThread(ThumbnailLoadThread* const thread);
-    ThumbnailLoadThread* thumbnailLoadThread() const;
+    ThumbnailLoadThread* thumbnailLoadThread()                                  const;
 
     /// Set the thumbnail size to use
     void setThumbnailSize(const ThumbnailSize& thumbSize);
@@ -67,9 +68,9 @@ public:
     void setExifRotate(bool rotate);
 
     /**
-     *  Enable emitting dataChanged() when a thumbnail becomes available.
-     *  The thumbnailAvailable() signal will be emitted in any case.
-     *  Default is true.
+     * Enable emitting dataChanged() when a thumbnail becomes available.
+     * The thumbnailAvailable() signal will be emitted in any case.
+     * Default is true.
      */
     void setEmitDataChanged(bool emitSignal);
 
@@ -80,13 +81,13 @@ public:
      */
     void setPreloadThumbnails(bool preload);
 
-    ThumbnailSize thumbnailSize() const;
+    ThumbnailSize thumbnailSize()                                               const;
 
     /**
-     *  Handles the ThumbnailRole.
-     *  If the pixmap is available, returns it in the QVariant.
-     *  If it still needs to be loaded, returns a null QVariant and emits
-     *  thumbnailAvailable() as soon as it is available.
+     * Handles the ThumbnailRole.
+     * If the pixmap is available, returns it in the QVariant.
+     * If it still needs to be loaded, returns a null QVariant and emits
+     * thumbnailAvailable() as soon as it is available.
      */
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
 
@@ -95,22 +96,26 @@ public:
      * Set a null QVariant to use the thumbnail size set by setThumbnailSize() again.
      * The index given here is ignored for this purpose.
      */
-    virtual bool setData(const QModelIndex& index, const QVariant& value, int role = Qt::DisplayRole) override;
+    virtual bool setData(const QModelIndex& index,
+                         const QVariant& value,
+                         int role = Qt::DisplayRole)                                  override;
 
 public Q_SLOTS:
 
-    /** Prepare the thumbnail loading for the given indexes
+    /**
+     * Prepare the thumbnail loading for the given indexes
      */
     void prepareThumbnails(const QList<QModelIndex>& indexesToPrepare);
-    void prepareThumbnails(const QList<QModelIndex>& indexesToPrepare, const ThumbnailSize& thumbSize);
+    void prepareThumbnails(const QList<QModelIndex>& indexesToPrepare,
+                           const ThumbnailSize& thumbSize);
 
     /**
-     *  Preload thumbnail for the given infos resp. indexes.
-     *  Note: Use setPreloadThumbnails to automatically preload all entries in the model.
-     *  Note: This only ensures thumbnail generation. It is not guaranteed that pixmaps
-     *  are stored in the cache. For thumbnails that are expect to be drawn immediately,
-     *  include them in prepareThumbnails().
-     *  Note: Stops preloading of previously added thumbnails.
+     * Preload thumbnail for the given infos resp. indexes.
+     * Note: Use setPreloadThumbnails to automatically preload all entries in the model.
+     * Note: This only ensures thumbnail generation. It is not guaranteed that pixmaps
+     * are stored in the cache. For thumbnails that are expect to be drawn immediately,
+     * include them in prepareThumbnails().
+     * Note: Stops preloading of previously added thumbnails.
      */
     void preloadThumbnails(const QList<ItemInfo>&);
     void preloadThumbnails(const QList<QModelIndex>&);
@@ -123,11 +128,12 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void imageInfosCleared() override;
+    virtual void imageInfosCleared()                                                  override;
 
 protected Q_SLOTS:
 
-    void slotThumbnailLoaded(const LoadingDescription& loadingDescription, const QPixmap& thumb);
+    void slotThumbnailLoaded(const LoadingDescription& loadingDescription,
+                             const QPixmap& thumb);
 
 private:
 

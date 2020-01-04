@@ -45,19 +45,19 @@ public:
     explicit ItemVersionsModel(QObject* const parent = nullptr);
     ~ItemVersionsModel();
 
-    Qt::ItemFlags flags(const QModelIndex& index) const override;
+    Qt::ItemFlags flags(const QModelIndex& index)                            const override;
     QVariant      data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
-    int           rowCount(const QModelIndex& parent = QModelIndex()) const override;
+    int           rowCount(const QModelIndex& parent = QModelIndex())        const override;
 
     void setupModelData(QList<QPair<QString, int> >& data);
     void clearModelData();
 
-    QString     currentSelectedImage() const;
+    QString     currentSelectedImage()                                       const;
     void        setCurrentSelectedImage(const QString& path);
-    QModelIndex currentSelectedImageIndex() const;
+    QModelIndex currentSelectedImageIndex()                                  const;
 
-    bool paintTree() const;
-    int  listIndexOf(const QString& item) const;
+    bool paintTree()                                                         const;
+    int  listIndexOf(const QString& item)                                    const;
 
 public Q_SLOTS:
 

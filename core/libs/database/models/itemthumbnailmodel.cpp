@@ -64,6 +64,8 @@ public:
 
     bool                   emitDataChanged;
 
+public:
+
     int preloadThumbnailSize() const
     {
         if (preloadThumbSize.size())
@@ -109,7 +111,7 @@ ThumbnailSize ItemThumbnailModel::thumbnailSize() const
 void ItemThumbnailModel::setThumbnailSize(const ThumbnailSize& size)
 {
     d->lastGlobalThumbSize = size;
-    d->thumbSize = size;
+    d->thumbSize           = size;
 }
 
 void ItemThumbnailModel::setPreloadThumbnailSize(const ThumbnailSize& size)
@@ -218,9 +220,9 @@ void ItemThumbnailModel::imageInfosCleared()
 
 QVariant ItemThumbnailModel::data(const QModelIndex& index, int role) const
 {
-    if (role == ThumbnailRole && d->thread && index.isValid())
+    if ((role == ThumbnailRole) && (d->thread && index.isValid()))
     {
-        QPixmap   thumbnail;
+        QPixmap thumbnail;
         ItemInfo info = imageInfo(index);
 
         if (info.isNull())
@@ -261,6 +263,7 @@ bool ItemThumbnailModel::setData(const QModelIndex& index, const QVariant& value
             case QVariant::Invalid:
                 d->thumbSize  = d->lastGlobalThumbSize;
                 d->detailRect = QRect();
+
                 break;
 
             case QVariant::Int:
@@ -273,6 +276,7 @@ bool ItemThumbnailModel::setData(const QModelIndex& index, const QVariant& value
                 {
                     d->thumbSize = ThumbnailSize(value.toInt());
                 }
+
                 break;
 
             case QVariant::Rect:
@@ -285,6 +289,7 @@ bool ItemThumbnailModel::setData(const QModelIndex& index, const QVariant& value
                 {
                     d->detailRect = value.toRect();
                 }
+
                 break;
 
             default:
