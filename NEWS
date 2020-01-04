@@ -538,7 +538,7 @@ BUGFIXES:
 523 ==> 415796 - Face thumbnail zoom level too wide.
 524 ==> 366551 - Unclear icon-item overlay when associating people to faces.
 525 ==> 415535 - Import from a local/remote folder.
-526 ==> 
+526 ==> 415643 - digiKam crashes Face detection.
 527 ==> 
 528 ==> 
 529 ==> 
