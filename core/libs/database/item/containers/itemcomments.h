@@ -66,25 +66,34 @@ public:
          *  is identical. Else returns a null QString.
          */
         ReturnMatchingLanguageOnly,
-        /// If no matching language as above is found, return the default language.
+        /**
+         * If no matching language as above is found, return the default language.
+         */
         ReturnMatchingOrDefaultLanguage,
-        /** If no matching or default language is found, return the first comment.
-         *  Returns a null string only if no comment is available.
+        /**
+         * If no matching or default language is found, return the first comment.
+         * Returns a null string only if no comment is available.
          */
         ReturnMatchingDefaultOrFirstLanguage
     };
 
     enum UniqueBehavior
     {
-        /** Allow only one comment per language. Default setting. */
+        /**
+         * Allow only one comment per language. Default setting.
+         */
         UniquePerLanguage,
-        /** Allow multiple comments per language, each with a different author */
+        /**
+         * Allow multiple comments per language, each with a different author
+         */
         UniquePerLanguageAndAuthor
     };
 
 public:
 
-    /** Create a null ItemComments object */
+    /**
+     * Create a null ItemComments object
+     */
     ItemComments();
 
     /**
@@ -133,10 +142,14 @@ public:
     QString commentForLanguage(const QString& languageCode, int* const index = nullptr,
                                LanguageChoiceBehavior behavior = ReturnMatchingDefaultOrFirstLanguage) const;
 
-    /** Returns the number of comments available. */
+    /**
+     * Returns the number of comments available.
+     */
     int numberOfComments()                const;
 
-    /// Access individual properties. Please ensure that the specified index is a valid index
+    /**
+     * Access individual properties. Please ensure that the specified index is a valid index
+     */
     DatabaseComment::Type type(int index) const;
     QString language(int index)           const; /// RFC 3066 notation, or "x-default"
     QString author(int index)             const;
@@ -156,13 +169,17 @@ public:
                     const QDateTime& date = QDateTime(),
                     DatabaseComment::Type type = DatabaseComment::Comment);
 
-    /** Convenience method to add a comment of type Headline. Calls addComment, see above for more info. */
+    /**
+     * Convenience method to add a comment of type Headline. Calls addComment, see above for more info.
+     */
     void addHeadline(const QString& headline,
                      const QString& language = QString(),
                      const QString& author = QString(),
                      const QDateTime& date = QDateTime());
 
-    /** Convenience method to add a comment of type Headline. Calls addComment, see above for more info. */
+    /**
+     * Convenience method to add a comment of type Headline. Calls addComment, see above for more info.
+     */
     void addTitle(const QString& title,
                   const QString& language = QString(),
                   const QString& author = QString(),
@@ -221,8 +238,6 @@ public:
      * Replaces all entries in this object with all entries from source.
      */
     void replaceFrom(const ItemComments& source);
-
-    // If you need more methods, add your methods here!
 
 protected:
 

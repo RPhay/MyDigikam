@@ -64,7 +64,7 @@ public:
      * @return If the list contains of items of only one group including the
      * main item, this main item is returned, otherwise a null ItemInfo.
      */
-    ItemInfo singleGroupMainItem() const;
+    ItemInfo singleGroupMainItem()    const;
 };
 
 typedef ItemInfoList::iterator ItemInfoListIterator;

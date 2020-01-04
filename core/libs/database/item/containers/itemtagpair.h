@@ -46,15 +46,18 @@ class DIGIKAM_DATABASE_EXPORT ItemTagPair
 {
 public:
 
-    /** This class provides a wrapper over the Database methods
-     *  to access the properties of tag / image association. It is meant to be a
-     *  short-lived object, it does not listen to external database changes.
+    /**
+     * This class provides a wrapper over the Database methods
+     * to access the properties of tag / image association. It is meant to be a
+     * short-lived object, it does not listen to external database changes.
      */
 
     /// Creates a null pair
     ItemTagPair();
 
-    /** Access the properties of the given image - tag pair */
+    /**
+     * Access the properties of the given image - tag pair
+     */
     ItemTagPair(qlonglong imageId, int tagId);
     ItemTagPair(const ItemInfo& info, int tagId);
 
@@ -74,15 +77,18 @@ public:
     qlonglong imageId() const;
     int tagId() const;
 
-    /** Returns if the tag is assigned to the image
+    /**
+     * Returns if the tag is assigned to the image
      */
     bool isAssigned() const;
 
-    /** Assigns the tag to the image
+    /**
+     * Assigns the tag to the image
      */
     void assignTag();
 
-    /** Removes the tag from the image
+    /**
+     * Removes the tag from the image
      */
     void unAssignTag();
 
@@ -106,9 +112,10 @@ public:
     /// Set the given property. Replaces all previous occurrences of this property.
     void setProperty(const QString& key, const QString& value);
 
-    /** Adds the given property. Does not change any previous occurrences of this property,
-     *  allowing multiple properties with the same key.
-     *  (duplicates of same key _and_ value are not added, though)
+    /**
+     * Adds the given property. Does not change any previous occurrences of this property,
+     * allowing multiple properties with the same key.
+     * (duplicates of same key _and_ value are not added, though)
      */
     void addProperty(const QString& key, const QString& value);
 

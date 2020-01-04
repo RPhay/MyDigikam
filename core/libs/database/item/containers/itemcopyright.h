@@ -62,7 +62,8 @@ public:
 
     explicit ItemCopyright(qlonglong imageid);
 
-    /** Create a null ItemCopyright object
+    /**
+     * Create a null ItemCopyright object
      */
     ItemCopyright();
 
@@ -71,19 +72,20 @@ public:
 
     ItemCopyright& operator=(const ItemCopyright& other);
 
-    /** Returns the author/creator/byline.
-     *  This is Photoshop Author.
-     *  This is IPTC By-line.
-     *  This is DC creator.
-     *  This is dc:creator in XMP.
-     *  &ldquo;Contains preferably the name of the person who created the content of this news object, a
-     *  photographer for photos, a graphic artist for graphics, or a writer for textual news. If it is not
-     *  appropriate to add the name of a person the name of a company or organization could be
-     *  applied as well.
-     *  Aligning with IIM notions IPTC Core intents to have only one creator for this news object
-     *  despite the underlying XMP property dc:creator allows for more than one item to be
-     *  included. If there are more than one item in this array the first one should be considered as
-     *  the IPTC Core Creator value.&rdquo;
+    /**
+     * Returns the author/creator/byline.
+     * This is Photoshop Author.
+     * This is IPTC By-line.
+     * This is DC creator.
+     * This is dc:creator in XMP.
+     * Contains preferably the name of the person who created the content of this news object, a
+     * photographer for photos, a graphic artist for graphics, or a writer for textual news. If it is not
+     * appropriate to add the name of a person the name of a company or organization could be
+     * applied as well.
+     * Aligning with IIM notions IPTC Core intents to have only one creator for this news object
+     * despite the underlying XMP property dc:creator allows for more than one item to be
+     * included. If there are more than one item in this array the first one should be considered as
+     * the IPTC Core Creator value.
      */
     QStringList creator() const;
 
@@ -97,10 +99,11 @@ public:
         return creator();
     }
 
-    /** Sets the creator.
-     *  If you want to specify only one creator, set the replace mode to ReplaceAllEntries.
-     *  If you want to add it to a list of existing entries, pass AddEntryToExisting.
-     *  You shall not use ReplaceLanguageEntry for this method, creators have no language associated.
+    /**
+     * Sets the creator.
+     * If you want to specify only one creator, set the replace mode to ReplaceAllEntries.
+     * If you want to add it to a list of existing entries, pass AddEntryToExisting.
+     * You shall not use ReplaceLanguageEntry for this method, creators have no language associated.
      */
     void setCreator(const QString& creator, ReplaceMode mode = ReplaceAllEntries);
 
@@ -116,11 +119,12 @@ public:
 
     void removeCreators();
 
-    /** Returns the credit/provider.
-     *  This is Photoshop Credit.
-     *  This is IPTC Credit.
-     *  This is photoshop:Credit in XMP
-     *  &ldquo;Identifies the provider of the news object, who is not necessarily the owner/creator.&rdquo;
+    /**
+     * Returns the credit/provider.
+     * This is Photoshop Credit.
+     * This is IPTC Credit.
+     * This is photoshop:Credit in XMP
+     * Identifies the provider of the news object, who is not necessarily the owner/creator.
      */
     QString provider() const;
 
@@ -138,21 +142,22 @@ public:
 
     void removeProvider();
 
-    /** Returns the copyright notice.
-     *  This is Photoshop Copyright Notice.
-     *  This is IPTC Copyright Notice.
-     *  This is DC Rights.
-     *  This is dc:rights in XMP.
-     *  &ldquo; Contains any necessary copyright notice for claiming the intellectual property for this news
-     *    object and should identify the current owner of the copyright for the news object. Other
-     *    entities like the creator of the news object may be added. Notes on usage rights should be
-     *    provided in &lsquo;Rights usage terms&rsquo;. &rdquo;
-     *  Note on language matching:
-     *  You can specify a language code.
-     *  If the requested language is not available, the entry with default
-     *  language code is returned.
-     *  If a default-language entry is not available, the first entry is returned.
-     *  If you pass a null string as languageCode, the local language is returned.
+    /**
+     * Returns the copyright notice.
+     * This is Photoshop Copyright Notice.
+     * This is IPTC Copyright Notice.
+     * This is DC Rights.
+     * This is dc:rights in XMP.
+     * Contains any necessary copyright notice for claiming the intellectual property for this news
+     * object and should identify the current owner of the copyright for the news object. Other
+     * entities like the creator of the news object may be added. Notes on usage rights should be
+     * provided in Rights usage terms.
+     * Note on language matching:
+     * You can specify a language code.
+     * If the requested language is not available, the entry with default
+     * language code is returned.
+     * If a default-language entry is not available, the first entry is returned.
+     * If you pass a null string as languageCode, the local language is returned.
      */
     QString copyrightNotice(const QString& languageCode = QString());
 
@@ -163,9 +168,10 @@ public:
 
     MetaEngine::AltLangMap allCopyrightNotices();
 
-    /** Sets the copyright notice. If you supply a null QString as language code,
-     *  this is regarded as an entry for the default language (&ldquo;x-default&rdquo;).
-     *  The ReplaceMode determines how existing entries are handled.
+    /**
+     * Sets the copyright notice. If you supply a null QString as language code,
+     * this is regarded as an entry for the default language (&ldquo;x-default&rdquo;).
+     * The ReplaceMode determines how existing entries are handled.
      */
     void setCopyrightNotice(const QString& notice, const QString& languageCode = QString(),
                             ReplaceMode mode = ReplaceLanguageEntry);
@@ -178,11 +184,12 @@ public:
 
     void removeCopyrightNotices();
 
-    /** Returns the right usage terms.
-     *  This has no equivalent in Photoshop, IPTC, or DC.
-     *  This is xmpRights:UsageTerms in XMP.
-     *  Language matching is done as with copyrightNotice().
-     *  &ldquo;Free text instructions on how this news object can be legally used.&rdquo;
+    /**
+     * Returns the right usage terms.
+     * This has no equivalent in Photoshop, IPTC, or DC.
+     * This is xmpRights:UsageTerms in XMP.
+     * Language matching is done as with copyrightNotice().
+     * Free text instructions on how this news object can be legally used.
      */
     QString rightsUsageTerms(const QString& languageCode = QString());
     MetaEngine::AltLangMap allRightsUsageTerms();
@@ -192,28 +199,30 @@ public:
 
     void removeRightsUsageTerms();
 
-    /** Returns the source.
-     *  This is Photoshop Source.
-     *  This is IPTC Source.
-     *  This is photoshop::Source in XMP.
-     *  &ldquo; Identifies the original owner of the copyright for the intellectual content of the news object.
-     *    This could be an agency, a member of an agency or an individual. Source could be
-     *    different from Creator and from the entities in the CopyrightNotice.
-     *    As the original owner can not change the content of this property should never be changed
-     *    or deleted after the information is entered following the news object's initial creation.&rdquo;
+    /**
+     * Returns the source.
+     * This is Photoshop Source.
+     * This is IPTC Source.
+     * This is photoshop::Source in XMP.
+     * Identifies the original owner of the copyright for the intellectual content of the news object.
+     * This could be an agency, a member of an agency or an individual. Source could be
+     * different from Creator and from the entities in the CopyrightNotice.
+     * As the original owner can not change the content of this property should never be changed
+     * or deleted after the information is entered following the news object's initial creation.
      */
     QString source();
     void setSource(const QString& source);
 
     void removeSource();
 
-    /** Returns the creator's job title.
-     *  This is Photoshop AuthorsPosition.
-     *  This is IPTC By-line Title.
-     *  This is photoshop:AuthorsPosition in XMP.
-     *  &ldquo; Contains the job title of the person who created the content of this news object. As this is
-     *    sort of a qualifier the Creator element has to be filled in as mandatory prerequisite for
-     *    using Creator's Jobtitle.&rdquo;
+    /**
+     * Returns the creator's job title.
+     * This is Photoshop AuthorsPosition.
+     * This is IPTC By-line Title.
+     * This is photoshop:AuthorsPosition in XMP.
+     * Contains the job title of the person who created the content of this news object. As this is
+     * sort of a qualifier the Creator element has to be filled in as mandatory prerequisite for
+     * using Creator's Jobtitle.
      */
     QString creatorJobTitle() const;
 
@@ -241,43 +250,52 @@ public:
 
     void removeCreatorJobTitle();
 
-    /** Returns the instructions.
-     *  This is Photoshop Instructions.
-     *  This is IPTC Special Instruction.
-     *  This is photoshop:Instructions in XMP.
-     *  &ldquo; Any of a number of instructions from the provider or creator to the receiver of the news
-     *    object which might include any of the following: embargoes (NewsMagazines OUT) and
-     *    other restrictions not covered by the &lsquo;Rights Usage Terms&rsquo; field; information regarding the
-     *    original means of capture (scanning notes, colorspace info) or other specific text
-     *    information that the user may need for accurate reproduction; additional permissions or
-     *    credits required when publishing. &rdquo;
+    /**
+     * Returns the instructions.
+     * This is Photoshop Instructions.
+     * This is IPTC Special Instruction.
+     * This is photoshop:Instructions in XMP.
+     * Any of a number of instructions from the provider or creator to the receiver of the news
+     * object which might include any of the following: embargoes (NewsMagazines OUT) and
+     * other restrictions not covered by the Rights Usage Terms field; information regarding the
+     * original means of capture (scanning notes, colorspace info) or other specific text
+     * information that the user may need for accurate reproduction; additional permissions or
+     * credits required when publishing.
      */
     QString instructions();
     void setInstructions(const QString& instructions);
     void removeInstructions();
 
-    /** Returns the creator's contact info.
-     *  This is Iptc4xmpCore:CreatorContactInfo in XMP.
-     *  &ldquo;  The creator's contact information provides all necessary information to get in contact with
-     *     the creator of this news object and comprises a set of sub-properties for proper addressing.&rdquo;
+    /**
+     * Returns the creator's contact info.
+     * This is Iptc4xmpCore:CreatorContactInfo in XMP.
+     * The creator's contact information provides all necessary information to get in contact with
+     * the creator of this news object and comprises a set of sub-properties for proper addressing.
      */
     IptcCoreContactInfo contactInfo();
     void setContactInfo(const IptcCoreContactInfo& info);
     void removeContactInfo();
 
-    /** Fills the information fields in template concerning copyright info
-     *  (note there are other fields in the a Template. There will not be touched)
+    /**
+     * Fills the information fields in template concerning copyright info
+     * (note there are other fields in the a Template. There will not be touched)
      */
     void fillTemplate(Template& t);
 
-    /** Sets all database copyright fields from the template.
-     *  This does not clear any fields before. */
+    /**
+     * Sets all database copyright fields from the template.
+     *  This does not clear any fields before.
+     */
     void setFromTemplate(const Template& t);
 
-    /** Calls all remove...() methods in this class */
+    /**
+     * Calls all remove...() methods in this class
+     */
     void removeAll();
 
-    /** Removes all entries and replaces them with the entries from source. */
+    /**
+     * Removes all entries and replaces them with the entries from source.
+     */
     void replaceFrom(const ItemCopyright& source);
 
 protected:

@@ -47,7 +47,9 @@ public:
 
     explicit ItemExtendedProperties(qlonglong imageid);
 
-    /** Create a null ItemExtendedProperties object */
+    /**
+     * Create a null ItemExtendedProperties object
+     */
     ItemExtendedProperties();
 
     /**

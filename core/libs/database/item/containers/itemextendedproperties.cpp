@@ -80,6 +80,7 @@ double ItemExtendedProperties::similarityTo(const qlonglong imageId)
 {
     // TODO: extend for additional algorithms
     double similarity = SimilarityDbAccess().db()->getImageSimilarity(m_id, imageId);
+
     return (similarity > 0) ? similarity : 0.0;
 }
 
@@ -133,6 +134,7 @@ IptcCoreLocationInfo ItemExtendedProperties::location()
     location.city          = readProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreCity));
     location.location      = readProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreLocation));
     location.provinceState = readProperty(ItemScanner::iptcCorePropertyName(MetadataInfo::IptcCoreProvinceState));
+
     return location;
 }
 
@@ -170,6 +172,7 @@ void ItemExtendedProperties::setProperty(const QString& property, const QString&
 QStringList ItemExtendedProperties::readFakeListProperty(const QString& property)
 {
     QString value = CoreDbAccess().db()->getImageProperty(m_id, property);
+
     return value.split(QLatin1Char(';'), QString::SkipEmptyParts);
 }
 
