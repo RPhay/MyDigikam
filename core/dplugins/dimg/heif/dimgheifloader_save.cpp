@@ -428,7 +428,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     // --- write HEIF file
 
     qDebug() << "HEIF flush to file...";
-    qDebug() << "HEIF encoding took:" << QTime(0, 0, 0, time.elapsed()).toString();
+    qDebug() << "HEIF encoding took:" << time.elapsed() << "ms";
 
     error = heif_context_write_to_file(ctx, QFile::encodeName(filePath).constData());
 
