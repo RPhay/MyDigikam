@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QFile>
+#include <QTime>
 #include <QVariant>
 #include <QByteArray>
 #include <QTextStream>
@@ -141,6 +142,8 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     // --- use standard HEVC encoder
 
+    QTime time;
+    time.start();
     qDebug() << "HEVC encoder setup...";
 
     struct heif_context* const ctx = heif_context_alloc();
@@ -205,7 +208,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
                                                heif_channel_interleaved,
                                                &stride);
 
-    if (!data || stride <= 0)
+    if (!data || (stride <= 0))
     {
         qWarning() << "HEIF data pixels information not valid!";
         heif_encoder_release(encoder);
@@ -375,6 +378,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
         heif_image_handle_release(image_handle);
         heif_encoder_release(encoder);
         heif_context_free(ctx);
+
         return false;
     }
 
@@ -403,6 +407,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
             heif_image_handle_release(image_handle);
             heif_encoder_release(encoder);
             heif_context_free(ctx);
+
             return false;
         }
 
@@ -423,12 +428,14 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     // --- write HEIF file
 
     qDebug() << "HEIF flush to file...";
+    qDebug() << "HEIF encoding took:" << QTime(0, 0, 0, time.elapsed()).toString();
 
     error = heif_context_write_to_file(ctx, QFile::encodeName(filePath).constData());
 
     if (!isHeifSuccess(&error))
     {
         heif_context_free(ctx);
+
         return false;
     }
 
