@@ -130,11 +130,11 @@ void ThumbnailLoadingTask::execute()
                     m_usedProcess->removeListener(this);
                 }
 
-                // wake up the process which is waiting until all listeners have removed themselves
-                lock.wakeAll();
-
                 // set to 0, as checked in setStatus
                 m_usedProcess = nullptr;
+
+                // wake up the process which is waiting until all listeners have removed themselves
+                lock.wakeAll();
             }
             else
             {

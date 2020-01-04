@@ -172,10 +172,11 @@ void SharedLoadingTask::execute()
                     m_usedProcess->removeListener(this);
                 }
 
-                // wake up the process which is waiting until all listeners have removed themselves
-                lock.wakeAll();
                 // set to 0, as checked in setStatus
                 m_usedProcess = nullptr;
+
+                // wake up the process which is waiting until all listeners have removed themselves
+                lock.wakeAll();
                 // m_img is now set to the result
             }
             else
@@ -183,10 +184,13 @@ void SharedLoadingTask::execute()
                 // Neither in cache, nor currently loading in different thread.
                 // Load it here and now, add this LoadingProcess to cache list.
                 cache->addLoadingProcess(this);
+
                 // Add this to the list of listeners
                 addListener(this);
+
                 // for use in setStatus
                 m_usedProcess = this;
+
                 // Notify other processes that we are now loading this image.
                 // They might be interested - see notifyNewLoadingProcess below
                 cache->notifyNewLoadingProcess(this, m_loadingDescription);
