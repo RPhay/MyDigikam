@@ -114,21 +114,21 @@ ItemPosition::ItemPosition()
 }
 
 ItemPosition::ItemPosition(qlonglong imageId)
+    : d(new ItemPositionPriv)
 {
-    d = new ItemPositionPriv;
     CoreDbAccess access;
     d->init(access, imageId);
 }
 
 ItemPosition::ItemPosition(CoreDbAccess& access, qlonglong imageId)
+    : d(new ItemPositionPriv)
 {
-    d = new ItemPositionPriv;
     d->init(access, imageId);
 }
 
 ItemPosition::ItemPosition(const ItemPosition& other)
+    : d(other.d)
 {
-    d = other.d;
 }
 
 ItemPosition::~ItemPosition()
@@ -139,6 +139,7 @@ ItemPosition::~ItemPosition()
 ItemPosition& ItemPosition::operator=(const ItemPosition& other)
 {
     d = other.d;
+
     return *this;
 }
 

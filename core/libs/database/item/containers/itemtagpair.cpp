@@ -127,6 +127,8 @@ bool ItemTagPairPriv::isNull() const
     return (this == imageTagPairPrivSharedNull->constData());
 }
 
+// -----------------------------------------------------------------------
+
 ItemTagPair::ItemTagPair()
     : d(*imageTagPairPrivSharedNull)
 {
@@ -144,13 +146,13 @@ ItemTagPair::ItemTagPair(const ItemInfo& info, int tagId)
     d->init(info, tagId);
 }
 
-ItemTagPair::~ItemTagPair()
+ItemTagPair::ItemTagPair(const ItemTagPair& other)
+    : d(other.d)
 {
 }
 
-ItemTagPair::ItemTagPair(const ItemTagPair& other)
+ItemTagPair::~ItemTagPair()
 {
-    d = other.d;
 }
 
 ItemTagPair& ItemTagPair::operator=(const ItemTagPair& other)
@@ -225,6 +227,7 @@ void ItemTagPair::unAssignTag()
 bool ItemTagPair::hasProperty(const QString& key) const
 {
     d->checkProperties();
+
     return d->properties.contains(key);
 }
 

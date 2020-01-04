@@ -316,7 +316,7 @@ protected:
 
     friend class ItemCopyrightCache;
 
-    qlonglong            m_id;
+    qlonglong           m_id;
     ItemCopyrightCache* m_cache;
 };
 

@@ -169,9 +169,8 @@ ItemInfo::ItemInfo()
 }
 
 ItemInfo::ItemInfo(const ItemListerRecord& record)
+    : m_data(ItemInfoStatic::cache()->infoForId(record.imageID))
 {
-    m_data                         = ItemInfoStatic::cache()->infoForId(record.imageID);
-
     ItemInfoWriteLocker lock;
     bool newlyCreated              = m_data->albumId == -1;
 
@@ -210,13 +209,14 @@ ItemInfo::ItemInfo(const ItemListerRecord& record)
 }
 
 ItemInfo::ItemInfo(qlonglong ID)
+    : m_data(ItemInfoStatic::cache()->infoForId(ID))
 {
-    m_data = ItemInfoStatic::cache()->infoForId(ID);
-
     // is this a newly created structure, need to populate?
+
     if (m_data->albumId == -1)
     {
         // retrieve immutable values now, the rest on demand
+
         ItemShortInfo info = CoreDbAccess().db()->getItemShortInfo(ID);
 
         if (info.id)
@@ -230,9 +230,75 @@ ItemInfo::ItemInfo(qlonglong ID)
         else
         {
             // invalid image id
+
             ItemInfoStatic::cache()->dropInfo(m_data);
             m_data.reset();
         }
+    }
+}
+
+ItemInfo::~ItemInfo()
+{
+    ItemInfoStatic::cache()->dropInfo(m_data);
+    m_data.reset();
+}
+
+ItemInfo::ItemInfo(const ItemInfo& info)
+    : m_data(info.m_data)
+{
+}
+
+ItemInfo& ItemInfo::operator=(const ItemInfo& info)
+{
+    if (m_data == info.m_data)
+    {
+        return *this;
+    }
+
+    ItemInfoStatic::cache()->dropInfo(m_data);
+    m_data = info.m_data;
+
+    return *this;
+}
+
+bool ItemInfo::operator==(const ItemInfo& info) const
+{
+    if (m_data && info.m_data)
+    {
+        // not null, compare id
+        return (m_data->id == info.m_data->id);
+    }
+    else
+    {
+        // both null?
+        return (m_data == info.m_data);
+    }
+}
+
+bool ItemInfo::operator!=(const ItemInfo& info) const
+{
+    return !operator==(info);
+}
+
+bool ItemInfo::operator<(const ItemInfo& info) const
+{
+    if (m_data)
+    {
+        if (info.m_data)
+            // both not null, sort by id
+        {
+            return (m_data->id < info.m_data->id);
+        }
+        else
+            // only other is null, this is greater than
+        {
+            return false;
+        }
+    }
+    else
+    {
+        // this is less than if the other is not null
+        return info.m_data;
     }
 }
 
@@ -296,74 +362,9 @@ ItemInfo ItemInfo::fromLocationAlbumAndName(int locationId, const QString& album
     return info;
 }
 
-ItemInfo::~ItemInfo()
-{
-    ItemInfoStatic::cache()->dropInfo(m_data);
-    m_data.reset();
-}
-
-ItemInfo::ItemInfo(const ItemInfo& info)
-{
-    m_data = info.m_data;
-}
-
-ItemInfo& ItemInfo::operator=(const ItemInfo& info)
-{
-    if (m_data == info.m_data)
-    {
-        return *this;
-    }
-
-    ItemInfoStatic::cache()->dropInfo(m_data);
-    m_data = info.m_data;
-
-    return *this;
-}
-
 bool ItemInfo::isNull() const
 {
     return !m_data;
-}
-
-bool ItemInfo::operator==(const ItemInfo& info) const
-{
-    if (m_data && info.m_data)
-    {
-        // not null, compare id
-        return (m_data->id == info.m_data->id);
-    }
-    else
-    {
-        // both null?
-        return (m_data == info.m_data);
-    }
-}
-
-bool ItemInfo::operator!=(const ItemInfo& info) const
-{
-    return !operator==(info);
-}
-
-bool ItemInfo::operator<(const ItemInfo& info) const
-{
-    if (m_data)
-    {
-        if (info.m_data)
-            // both not null, sort by id
-        {
-            return (m_data->id < info.m_data->id);
-        }
-        else
-            // only other is null, this is greater than
-        {
-            return false;
-        }
-    }
-    else
-    {
-        // this is less than if the other is not null
-        return info.m_data;
-    }
 }
 
 uint ItemInfo::hash() const
