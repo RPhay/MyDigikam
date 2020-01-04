@@ -86,7 +86,9 @@ void FaceTagsHelper::makeFaceTag(int tagId, const QString& fullName)
     /*
      *    // find a unique FacesEngineId
      *    for (int i=0; d->findFirstTagWithProperty(TagPropertyName::FacesEngineId(), FacesEngineId); ++i)
+     *    {
      *        FacesEngineId = fullName + QString::fromUtf8(" (%1)").arg(i);
+     *    }
      */
     TagProperties props(tagId);
     props.setProperty(TagPropertyName::person(),         fullName);
@@ -108,6 +110,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
         if (FaceTags::isPerson(tagId))
         {
             //qCDebug(DIGIKAM_DATABASE_LOG) << "Proposed tag is already a person";
+
             return tagId;
         }
         else if (convert)
@@ -119,6 +122,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
 
             qCDebug(DIGIKAM_DATABASE_LOG) << "Converting proposed tag to person, full name" << fullName;
             makeFaceTag(tagId, fullName);
+
             return tagId;
         }
 
@@ -126,6 +130,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
     }
 
     // First attempt: Find by full name in "person" attribute
+
     QList<int> candidates = TagsCache::instance()->tagsWithProperty(TagPropertyName::person(), fullName);
 
     foreach (int id, candidates)
@@ -143,6 +148,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
     }
 
     // Second attempt: Find by tag name
+
     if (parentId == -1)
     {
         candidates = TagsCache::instance()->tagsForName(name);
@@ -161,6 +167,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
     foreach (int id, candidates)
     {
         // Is this tag already a person tag?
+
         if (FaceTags::isPerson(id))
         {
             qCDebug(DIGIKAM_DATABASE_LOG) << "Found tag with name" << name << "is already a person." << id;
@@ -175,6 +182,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
     }
 
     // Third: If desired, create a new tag
+
     if (create)
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Creating new tag for name" << name << "fullName" << fullName;
@@ -186,6 +194,7 @@ int FaceTagsHelper::tagForName(const QString& name, int tagId, int parentId, con
 
         tagId = TagsCache::instance()->getOrCreateTag(tagPath(name, parentId));
         makeFaceTag(tagId, fullName);
+
         return tagId;
     }
 
@@ -287,6 +296,7 @@ void FaceTags::applyTagIdentityMapping(int tagId, const QMap<QString, QString>& 
     }
 
     // we do not change the digikam tag name at this point, but we have this extra tag property
+
     if (attributes.contains(QLatin1String("name")))
     {
         props.setProperty(TagPropertyName::faceEngineName(), attributes.value(QLatin1String("name")));
@@ -299,6 +309,7 @@ int FaceTags::getOrCreateTagForIdentity(const QMap<QString, QString>& attributes
 {
     // Attributes from FacesEngine's Identity object.
     // The text constants are defines in FacesEngine's API docs
+
     if (attributes.isEmpty())
     {
         return FaceTags::unknownPersonTagId();
@@ -307,6 +318,7 @@ int FaceTags::getOrCreateTagForIdentity(const QMap<QString, QString>& attributes
     int tagId;
 
     // First, look for UUID
+
     if (!attributes.value(QLatin1String("uuid")).isEmpty())
     {
         if ((tagId = FaceTagsHelper::findFirstTagWithProperty(TagPropertyName::faceEngineUuid(), attributes.value(QLatin1String("uuid")))))
@@ -316,6 +328,7 @@ int FaceTags::getOrCreateTagForIdentity(const QMap<QString, QString>& attributes
     }
 
     // Second, look for full name
+
     if (!attributes.value(QLatin1String("fullName")).isEmpty())
     {
         if ((tagId = FaceTagsHelper::findFirstTagWithProperty(TagPropertyName::person(), attributes.value(QLatin1String("fullName")))))
@@ -326,6 +339,7 @@ int FaceTags::getOrCreateTagForIdentity(const QMap<QString, QString>& attributes
 
     // Third, look for either name or full name
     // TODO: better support for "fullName"
+
     QString name = attributes.value(QLatin1String("name"));
 
     if (name.isEmpty())
@@ -351,6 +365,7 @@ int FaceTags::getOrCreateTagForIdentity(const QMap<QString, QString>& attributes
     // identity is in FacesEngine's database, but not in ours, so create.
     tagId = FaceTagsHelper::tagForName(name, 0, -1, attributes.value(QLatin1String("fullName")), true, true);
     applyTagIdentityMapping(tagId, attributes);
+
     return tagId;
 }
 
@@ -374,6 +389,7 @@ QString FaceTags::faceNameForTag(int tagId)
 int FaceTags::personParentTag()
 {
     // check default
+
     QString i18nName = i18nc("People on your photos", "People");
     int tagId        = TagsCache::instance()->tagForPath(i18nName);
 
@@ -383,11 +399,13 @@ int FaceTags::personParentTag()
     }
 
     // employ a heuristic
+
     QList<int> personTags = allPersonTags();
 
     if (!personTags.isEmpty())
     {
         // we find the most toplevel parent tag of a person tag
+
         QMultiMap<int, int> tiers;
 
         foreach (int tagId, personTags)
@@ -398,12 +416,14 @@ int FaceTags::personParentTag()
         QList<int> mosttoplevelTags = tiers.values(tiers.begin().key());
 
         // as a pretty weak criterion, take the largest id which usually corresponds to the latest tag creation.
+
         std::sort(mosttoplevelTags.begin(), mosttoplevelTags.end());
 
         return TagsCache::instance()->parentTag(mosttoplevelTags.last());
     }
 
     // create default
+
     return TagsCache::instance()->getOrCreateTag(i18nName);
 }
 

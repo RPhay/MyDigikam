@@ -45,8 +45,8 @@ public:
 
     enum LeadingSlashPolicy
     {
-        NoLeadingSlash,      /// Ex: "Places/Cities/Paris"
-        IncludeLeadingSlash  /// Ex: "/Places/Cities/Paris"
+        NoLeadingSlash,      ///< Ex: "Places/Cities/Paris"
+        IncludeLeadingSlash  ///< Ex: "/Places/Cities/Paris"
     };
 
     enum HiddenTagsPolicy
@@ -63,48 +63,48 @@ public:
      * If there is no tag for the given id a null string is returned.
      */
     QString     tagName(int id) const;
-    QStringList tagNames(const QList<int>& ids, HiddenTagsPolicy hiddenTagsPolicy = IncludeHiddenTags) const;
+    QStringList tagNames(const QList<int>& ids, HiddenTagsPolicy hiddenTagsPolicy = IncludeHiddenTags)  const;
 
     /**
      * Returns the path of the tag with the given id.
      * For the tag Places/Cities/Paris, this is Places/Cities/Paris.
      * If there is no tag for the given id a null string is returned.
      */
-    QString     tagPath(int id, LeadingSlashPolicy slashPolicy = IncludeLeadingSlash) const;
+    QString     tagPath(int id, LeadingSlashPolicy slashPolicy = IncludeLeadingSlash)                   const;
     QStringList tagPaths(const QList<int>& ids,
                          LeadingSlashPolicy slashPolicy = IncludeLeadingSlash,
-                         HiddenTagsPolicy hiddenTagsPolicy = IncludeHiddenTags) const;
+                         HiddenTagsPolicy hiddenTagsPolicy = IncludeHiddenTags)                         const;
 
     /**
      * Returns true if the tag for the given id exists.
      */
-    bool hasTag(int id) const;
+    bool hasTag(int id)                                                                                 const;
 
     /**
      * Returns the parent tag id, or 0 if a toplevel tag or tag does not exist.
      */
-    int parentTag(int id) const;
+    int parentTag(int id)                                                                               const;
 
     /**
      * Returns the parent tag ids of the given tag, starting with the toplevel tag,
      * ending with the direct parent tag.
      * If the tag is a toplevel tag or does not exist, an empty list is returned.
      */
-    QList<int> parentTags(int id) const;
+    QList<int> parentTags(int id)                                                                       const;
 
     /**
      * Finds all tags with the given name.
      * For "Paris", this may give "Places/Cities/Paris" and "Places/USA/Texas/Paris".
      * If there is no tag with the given name at all, returns an empty list.
      */
-    QList<int> tagsForName(const QString& tagName, HiddenTagsPolicy hiddenTagsPolicy = NoHiddenTags) const;
+    QList<int> tagsForName(const QString& tagName, HiddenTagsPolicy hiddenTagsPolicy = NoHiddenTags)    const;
 
     /**
      * Returns the id of the tag with the given name and parent tag.
      * If parentId is 0, the tag is a toplevel tag.
      * Returns 0 if there is no such tag.
      */
-    int tagForName(const QString& tagName, int parentId = 0) const;
+    int tagForName(const QString& tagName, int parentId = 0)                                            const;
 
     /**
      * Returns the tag matched exactly by the given path.
@@ -113,8 +113,8 @@ public:
      * If you want to create the tag if it does not yet exist,
      * use getOrCreateTag.
      */
-    int tagForPath(const QString& tagPath) const;
-    QList<int> tagsForPaths(const QStringList& tagPaths) const;
+    int tagForPath(const QString& tagPath)                                                              const;
+    QList<int> tagsForPaths(const QStringList& tagPaths)                                                const;
 
     /**
      * Add the tag described by the given tag path,
@@ -139,14 +139,16 @@ public:
      * and ensures that the tag has assigned the given property.
      * If you pass a null string as value, then the value is not checked and not changed.
      */
-    int getOrCreateTagWithProperty(const QString& tagPath, const QString& property, const QString& value = QString());
+    int getOrCreateTagWithProperty(const QString& tagPath,
+                                   const QString& property,
+                                   const QString& value = QString());
 
     /**
      * Tests if the tag has the given property
      *  a) just has the property
      *  b) has the property with the given value (value not null)
      */
-    bool hasProperty(int tagId, const QString& property, const QString& value = QString()) const;
+    bool hasProperty(int tagId, const QString& property, const QString& value = QString())              const;
 
     /**
      * Returns the value of the property.
@@ -154,14 +156,14 @@ public:
      * with a null value, or the property not set.
      * The first method returns any property, if multiple are set with the same key.
      */
-    QString     propertyValue(int tagId, const QString& property) const;
-    QStringList propertyValues(int tagId, const QString& property) const;
+    QString     propertyValue(int tagId, const QString& property)                                       const;
+    QStringList propertyValues(int tagId, const QString& property)                                      const;
 
     /**
      * Returns a list or a map of the properties of the tag.
      * Note: The list and map may be constructed for each call. Prefer hasProperty() and property().
      */
-    QMap<QString, QString> properties(int tagId) const;
+    QMap<QString, QString> properties(int tagId)                                                        const;
 
     /**
      * Finds all tags with the given property. The tag
@@ -169,7 +171,7 @@ public:
      *  b) has the property with the given value (value not null)
      * Note: The returned list is sorted.
      */
-    QList<int> tagsWithProperty(const QString& property, const QString& value = QString()) const;
+    QList<int> tagsWithProperty(const QString& property, const QString& value = QString())              const;
 
     /**
      * This method is equivalent to calling tagsWithProperty(property), but the immediate result
@@ -177,31 +179,31 @@ public:
      * Use it for queries for which you know that they will be issued very often,
      * so that it's worth caching the result of the already pretty fast tagsWithProperty().
      */
-    QList<int> tagsWithPropertyCached(const QString& property) const;
+    QList<int> tagsWithPropertyCached(const QString& property)                                          const;
 
     /**
      * Returns if a tag is to be regarded program-internal, that is,
      * a technical implementation detail not visible to the user at any time.
      */
-    bool isInternalTag(int tagId) const;
+    bool isInternalTag(int tagId)                                                                       const;
 
     /**
      * From the given list of tag ids, filter out any internal tags
      * and return only public tags.
      */
-    QList<int> publicTags(const QList<int>& tagIds) const;
+    QList<int> publicTags(const QList<int>& tagIds)                                                     const;
 
     /**
      * Returns true if the given list of tag ids contains at
      * least one non-internal tag
      */
-    bool  containsPublicTags(const QList<int>& tagIds) const;
+    bool  containsPublicTags(const QList<int>& tagIds)                                                  const;
 
     /**
      * Returns if a tag shall be written to the metadata of a file.
      * Always returns false if the tag is a program-internal tag.
      */
-    bool canBeWrittenToMetadata(int tagId) const;
+    bool canBeWrittenToMetadata(int tagId)                                                              const;
 
     /**
      * For the given tag name (not path!), find the existing tag or
@@ -278,10 +280,11 @@ public:
      */
     QStringList shortenedTagPaths(const QList<int>& ids,
                                   LeadingSlashPolicy slashPolicy = IncludeLeadingSlash,
-                                  HiddenTagsPolicy hiddenTagsPolicy = IncludeHiddenTags) const;
+                                  HiddenTagsPolicy hiddenTagsPolicy = IncludeHiddenTags)                const;
+
     QStringList shortenedTagPaths(const QList<int>& ids, QList<int>* sortedIds,
                                   LeadingSlashPolicy slashPolicy = IncludeLeadingSlash,
-                                  HiddenTagsPolicy hiddenTagsPolicy = IncludeHiddenTags) const;
+                                  HiddenTagsPolicy hiddenTagsPolicy = IncludeHiddenTags)                const;
 
 public:
 

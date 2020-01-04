@@ -78,6 +78,7 @@ TagPropertiesPrivSharedPointer TagProperties::TagPropertiesPriv::createGuarded(i
     if (tagId <= 0)
     {
         qCDebug(DIGIKAM_DATABASE_LOG) << "Attempt to create tag properties for tag id" << tagId;
+
         return *tagPropertiesPrivSharedNull;
     }
 
@@ -86,7 +87,7 @@ TagPropertiesPrivSharedPointer TagProperties::TagPropertiesPriv::createGuarded(i
 
 bool TagProperties::TagPropertiesPriv::isNull() const
 {
-    return this == tagPropertiesPrivSharedNull->constData();
+    return (this == tagPropertiesPrivSharedNull->constData());
 }
 
 // ------------------------------------------------------------------------------------------------
@@ -106,6 +107,7 @@ TagProperties::TagProperties(int tagId)
 
     d->tagId                      = tagId;
     QList<TagProperty> properties = CoreDbAccess().db()->getTagProperties(tagId);
+
     foreach (const TagProperty& p, properties)
     {
         d->properties.insert(p.property, p.value);
@@ -117,24 +119,26 @@ TagProperties::~TagProperties()
 }
 
 TagProperties::TagProperties(const TagProperties& other)
+    : d(other.d)
 {
-    d = other.d;
 }
 
 TagProperties& TagProperties::operator=(const TagProperties& other)
 {
     d = other.d;
+
     return *this;
 }
 
 bool TagProperties::isNull() const
 {
-    return d == *tagPropertiesPrivSharedNull;
+    return (d == *tagPropertiesPrivSharedNull);
 }
 
 TagProperties TagProperties::getOrCreate(const QString& tagPath)
 {
     int tagId = TagsCache::instance()->getOrCreateTag(tagPath);
+
     return TagProperties(tagId);
 }
 

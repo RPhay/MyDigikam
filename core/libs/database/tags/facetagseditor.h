@@ -57,26 +57,26 @@ public:
     /**
      * Returns the number of faces present in an image.
      */
-    int                  numberOfFaces(qlonglong imageid) const;
+    int                  numberOfFaces(qlonglong imageid)                                   const;
 
     /**
      * Returns the number of faces a particular person has in the specified image
      */
-    int                  faceCountForPersonInImage(qlonglong imageid, int tagId) const;
+    int                  faceCountForPersonInImage(qlonglong imageid, int tagId)            const;
 
     /**
      * Reads the FaceTagsIfaces for the given image id from the database
      */
-    QList<FaceTagsIface> databaseFaces(qlonglong imageid) const;
-    QList<FaceTagsIface> unconfirmedFaceTagsIfaces(qlonglong imageid) const;
-    QList<FaceTagsIface> databaseFacesForTraining(qlonglong imageid) const;
-    QList<FaceTagsIface> confirmedFaceTagsIfaces(qlonglong imageid) const;
+    QList<FaceTagsIface> databaseFaces(qlonglong imageid)                                   const;
+    QList<FaceTagsIface> unconfirmedFaceTagsIfaces(qlonglong imageid)                       const;
+    QList<FaceTagsIface> databaseFacesForTraining(qlonglong imageid)                        const;
+    QList<FaceTagsIface> confirmedFaceTagsIfaces(qlonglong imageid)                         const;
 
     /**
      * Returns a list of all tag rectangles for the image. Unlike findAndTagFaces, this does not take a DImg,
      * because it returns only a QRect, not a Face, so no need of cropping a face rectangle.
      */
-    QList<QRect>         getTagRects(qlonglong imageid) const;
+    QList<QRect>         getTagRects(qlonglong imageid)                                     const;
 
     // --- Add / Confirm ---
 
@@ -93,7 +93,7 @@ public:
     /**
      * Switches an unknownPersonEntry or unconfirmedEntry to an unconfirmedEntry (with a different suggested name)
      */
-    FaceTagsIface        changeSuggestedName(const FaceTagsIface& previousEntry, int unconfirmedNameTagId);
+    FaceTagsIface changeSuggestedName(const FaceTagsIface& previousEntry, int unconfirmedNameTagId);
 
     /**
      * Assign the name tag for given face entry.
@@ -104,12 +104,13 @@ public:
      * The confirmed tag will, if necessary, be converted to a person tag.
      * Returns the newly inserted entry.
      */
-    FaceTagsIface        confirmName(const FaceTagsIface& face, int tagId = -1, const TagRegion& confirmedRegion = TagRegion());
+    FaceTagsIface confirmName(const FaceTagsIface& face, int tagId = -1, const TagRegion& confirmedRegion = TagRegion());
 
     /**
      * Returns the entry that would be added if the given face is confirmed.
      */
     static FaceTagsIface confirmedEntry(const FaceTagsIface& face, int tagId = -1, const TagRegion& confirmedRegion = TagRegion());
+
     /**
      * Returns the entry that would be added if the given face is autodetected.
      * If tagId is -1, the unknown person will be taken.
@@ -145,7 +146,7 @@ public:
 
     // --- Utilities ---
 
-    QList<FaceTagsIface> databaseFaces(qlonglong imageId, FaceTagsIface::TypeFlags flags)     const;
+    QList<FaceTagsIface> databaseFaces(qlonglong imageId, FaceTagsIface::TypeFlags flags)   const;
     QList<ItemTagPair>  faceItemTagPairs(qlonglong imageid, FaceTagsIface::TypeFlags flags) const;
 
 protected:

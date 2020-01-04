@@ -79,13 +79,20 @@ TagRegion::Type TagRegion::type() const
 
 bool TagRegion::isValid() const
 {
-    return m_type != Invalid;
+    return (m_type != Invalid);
 }
 
 bool TagRegion::operator==(const TagRegion& other) const
 {
-    return ((m_type  == other.m_type) &&
-            (m_value == other.m_value));
+    return (
+            (m_type  == other.m_type) &&
+            (m_value == other.m_value)
+           );
+}
+
+bool TagRegion::operator!=(const TagRegion& other) const
+{
+    return (!operator==(other));
 }
 
 QString TagRegion::toXml() const
@@ -136,8 +143,10 @@ TagRegion TagRegion::fromVariant(const QVariant& var)
     {
         case QVariant::Rect:
             return TagRegion(var.toRect());
+
         case QVariant::String:
             return TagRegion(var.toString());
+
         default:
             return TagRegion();
     }
@@ -145,7 +154,7 @@ TagRegion TagRegion::fromVariant(const QVariant& var)
 
 bool TagRegion::intersects(const TagRegion& other, double fraction)
 {
-    if (m_type == Invalid || other.m_type == Invalid)
+    if ((m_type == Invalid) || (other.m_type == Invalid))
     {
         return false;
     }
@@ -158,7 +167,7 @@ bool TagRegion::intersects(const TagRegion& other, double fraction)
         {
             QRect r2 = other.toRect();
 
-            if (fraction == 0)
+            if      (fraction == 0)
             {
                 return r.intersects(r2);
             }
@@ -170,7 +179,7 @@ bool TagRegion::intersects(const TagRegion& other, double fraction)
             {
                 QRect i = r.intersected(r2);
 
-                return ( (double(i.width() * i.height()) / double(r.width() * r.height())) > fraction );
+                return ((double(i.width() * i.height()) / double(r.width() * r.height())) > fraction);
             }
         }
     }
@@ -245,9 +254,9 @@ QSize TagRegion::adjustToOrientation(QRect& region, int rotation, const QSize& f
 {
     QSize size = fullSize;
 
-    if (rotation == MetaEngine::ORIENTATION_ROT_90       ||
-        rotation == MetaEngine::ORIENTATION_ROT_90_HFLIP ||
-        rotation == MetaEngine::ORIENTATION_ROT_90_VFLIP)
+    if ((rotation == MetaEngine::ORIENTATION_ROT_90)       ||
+        (rotation == MetaEngine::ORIENTATION_ROT_90_HFLIP) ||
+        (rotation == MetaEngine::ORIENTATION_ROT_90_VFLIP))
     {
         region.moveTo(size.height() - region.y() - region.height(), region.x());
         region.setSize(region.size().transposed());
@@ -266,13 +275,13 @@ QSize TagRegion::adjustToOrientation(QRect& region, int rotation, const QSize& f
         size.transpose();
     }
 
-    if (rotation == MetaEngine::ORIENTATION_HFLIP ||
-        rotation == MetaEngine::ORIENTATION_ROT_90_HFLIP)
+    if ((rotation == MetaEngine::ORIENTATION_HFLIP) ||
+        (rotation == MetaEngine::ORIENTATION_ROT_90_HFLIP))
     {
         region.moveTo(size.width() - region.x() - region.width(), region.y());
     }
-    else if (rotation == MetaEngine::ORIENTATION_VFLIP ||
-             rotation == MetaEngine::ORIENTATION_ROT_90_VFLIP)
+    else if ((rotation == MetaEngine::ORIENTATION_VFLIP) ||
+             (rotation == MetaEngine::ORIENTATION_ROT_90_VFLIP))
     {
         region.moveTo(region.x(), size.height() - region.y() - region.height());
     }
@@ -322,9 +331,11 @@ QDebug operator<<(QDebug dbg, const TagRegion& r)
         case QVariant::Rect:
             dbg.nospace() << var.toRect();
             break;
+
         case QVariant::String:
             dbg.nospace() << var.toString();
             break;
+
         default:
             dbg.nospace() << var;
             break;

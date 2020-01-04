@@ -66,36 +66,36 @@ public:
     FaceTagsIface(Type type, qlonglong imageId, int tagId, const TagRegion& region);
     FaceTagsIface(const QString& attribute, qlonglong imageId, int tagId, const TagRegion& region);
 
-    bool      isNull() const;
+    bool      isNull()                          const;
 
-    Type      type()    const;
-    qlonglong imageId() const;
-    int       tagId()   const;
-    TagRegion region()  const;
+    Type      type()                            const;
+    qlonglong imageId()                         const;
+    int       tagId()                           const;
+    TagRegion region()                          const;
 
-    bool      isUnknownName() const
+    bool      isUnknownName()                   const
     {
-        return type() == UnknownName;
+        return (type() == UnknownName);
     }
 
-    bool      isUnconfirmedName() const
+    bool      isUnconfirmedName()               const
     {
-        return type() == UnconfirmedName;
+        return (type() == UnconfirmedName);
     }
 
-    bool      isUnconfirmedType() const
+    bool      isUnconfirmedType()               const
     {
-        return type() & UnconfirmedTypes;
+        return (type() & UnconfirmedTypes);
     }
 
-    bool      isConfirmedName() const
+    bool      isConfirmedName()                 const
     {
-        return type() == ConfirmedName;
+        return (type() == ConfirmedName);
     }
 
-    bool      isForTraining() const
+    bool      isForTraining()                   const
     {
-        return type() == FaceForTraining;
+        return (type() == FaceForTraining);
     }
 
     void setType(Type type);
@@ -106,18 +106,20 @@ public:
 
     /// Returns a list of all image tag properties for which flags are set
     static QStringList attributesForFlags(TypeFlags flags);
+
     /// Return the corresponding image tag property for the given type
-    static QString     attributeForType(Type type);
+    static QString attributeForType(Type type);
+
     /**
      * Return the Type for the given attribute. To distinguish between UnknownName
      * and UnconfirmedName, the tagId must be given.
      */
-    static Type        typeForAttribute(const QString& attribute, int tagId = 0);
+    static Type typeForAttribute(const QString& attribute, int tagId = 0);
 
     /**
      * Returns the string tagId + ',' + unconfirmedFace + ',' + regionXml
      */
-    QString getAutodetectedPersonString() const;
+    QString getAutodetectedPersonString()       const;
 
     /**
      * Writes the contents of this face - in a compact way - in the QVariant.
@@ -125,7 +127,7 @@ public:
      * thus it can be compared by value by operator==.
      */
     static FaceTagsIface fromVariant(const QVariant& var);
-    QVariant toVariant() const;
+    QVariant toVariant()                        const;
 
     /**
      * Create a FaceTagsIface from the extraValues returned from ItemLister.

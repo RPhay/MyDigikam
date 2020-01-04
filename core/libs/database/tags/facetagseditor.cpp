@@ -55,6 +55,7 @@ FaceTagsEditor::~FaceTagsEditor()
 int FaceTagsEditor::faceCountForPersonInImage(qlonglong imageid, int tagId ) const
 {
     ItemTagPair pair(imageid, tagId);
+
     return pair.values(ImageTagPropertyName::tagRegion()).size();
 }
 
@@ -113,6 +114,7 @@ QList<ItemTagPair> FaceTagsEditor::faceItemTagPairs(qlonglong imageid, FaceTagsI
     foreach (const ItemTagPair& pair, ItemTagPair::availablePairs(imageid))
     {
         //qCDebug(DIGIKAM_DATABASE_LOG) << pair.tagId() << pair.properties();
+
         if (!FaceTags::isPerson(pair.tagId()))
         {
             continue;
@@ -182,14 +184,17 @@ FaceTagsIface FaceTagsEditor::unknownPersonEntry(qlonglong imageId, const TagReg
 
 FaceTagsIface FaceTagsEditor::unconfirmedEntry(qlonglong imageId, int tagId, const TagRegion& region)
 {
-    return FaceTagsIface(FaceTagsIface::UnconfirmedName, imageId,
-                         tagId == -1 ? FaceTags::unknownPersonTagId() : tagId, region);
+    return FaceTagsIface(FaceTagsIface::UnconfirmedName,
+                         imageId,
+                         (tagId == -1) ? FaceTags::unknownPersonTagId() : tagId,
+                         region);
 }
 
 FaceTagsIface FaceTagsEditor::confirmedEntry(const FaceTagsIface& face, int tagId, const TagRegion& confirmedRegion)
 {
-    return FaceTagsIface(FaceTagsIface::ConfirmedName, face.imageId(),
-                         tagId == -1 ? face.tagId() : tagId,
+    return FaceTagsIface(FaceTagsIface::ConfirmedName,
+                         face.imageId(),
+                         (tagId == -1) ? face.tagId() : tagId,
                          confirmedRegion.isValid() ? confirmedRegion : face.region());
 }
 
@@ -197,6 +202,7 @@ FaceTagsIface FaceTagsEditor::addManually(const FaceTagsIface& face)
 {
     ItemTagPair pair(face.imageId(), face.tagId());
     addFaceAndTag(pair, face, FaceTagsIface::attributesForFlags(face.type()), false);
+
     return face;
 }
 
@@ -220,11 +226,15 @@ FaceTagsIface FaceTagsEditor::changeSuggestedName(const FaceTagsIface& previousE
     QStringList attributesList = FaceTagsIface::attributesForFlags(FaceTagsIface::UnconfirmedName);
 
     ItemTagPair pair(newEntry.imageId(), newEntry.tagId());
+
     // UnconfirmedName and UnknownName have the same attribute
+
     addFaceAndTag(pair, newEntry, attributesList, false);
 
     // Add the image to the face to the unconfirmed tag, if it is not the unknown or unconfirmed tag.
-    if (!FaceTags::isTheUnknownPerson(unconfirmedNameTagId) && !FaceTags::isTheUnconfirmedPerson(unconfirmedNameTagId))
+
+    if (!FaceTags::isTheUnknownPerson(unconfirmedNameTagId) &&
+        !FaceTags::isTheUnconfirmedPerson(unconfirmedNameTagId))
     {
         ItemTagPair unconfirmedAssociation(newEntry.imageId(),FaceTags::unconfirmedPersonTagId());
         unconfirmedAssociation.addProperty(ImageTagPropertyName::autodetectedPerson(), newEntry.getAutodetectedPersonString());
@@ -246,6 +256,7 @@ FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face, int tagId, 
     ItemTagPair pair(newEntry.imageId(), newEntry.tagId());
 
     // Remove entry from autodetection
+
     if (newEntry.tagId() == face.tagId())
     {
         removeFaceAndTag(pair, face, false);
@@ -257,6 +268,7 @@ FaceTagsIface FaceTagsEditor::confirmName(const FaceTagsIface& face, int tagId, 
     }
 
     // Add new full entry
+
     addFaceAndTag(pair, newEntry,
                   FaceTagsIface::attributesForFlags(FaceTagsIface::ConfirmedName | FaceTagsIface::FaceForTraining),
                   true);
@@ -269,6 +281,7 @@ FaceTagsIface FaceTagsEditor::add(qlonglong imageId, int tagId, const TagRegion&
     qCDebug(DIGIKAM_DATABASE_LOG) << "Adding face with rectangle  " << region.toRect () << " to database";
     FaceTagsIface newEntry(FaceTagsIface::ConfirmedName, imageId, tagId, region);
     add(newEntry, trainFace);
+
     return newEntry;
 }
 
@@ -391,10 +404,12 @@ void FaceTagsEditor::removeFaceAndTag(ItemTagPair& pair, const FaceTagsIface& fa
     }
 
     // Remove the unconfirmed property for the image id and the unconfirmed tag with the original tag id and the confirmed region
+
     ItemTagPair unconfirmedAssociation(face.imageId(),FaceTags::unconfirmedPersonTagId());
     unconfirmedAssociation.removeProperty(ImageTagPropertyName::autodetectedPerson(),face.getAutodetectedPersonString());
 
     // Tag assigned and no other entry left?
+
     if (touchTags            &&
         pair.isAssigned()    &&
         !pair.hasProperty(FaceTagsIface::attributeForType(FaceTagsIface::ConfirmedName)))
@@ -405,7 +420,7 @@ void FaceTagsEditor::removeFaceAndTag(ItemTagPair& pair, const FaceTagsIface& fa
 
 FaceTagsIface FaceTagsEditor::changeRegion(const FaceTagsIface& face, const TagRegion& newRegion)
 {
-    if (face.isNull() || face.region() == newRegion)
+    if (face.isNull() || (face.region() == newRegion))
     {
         return face;
     }
@@ -416,6 +431,7 @@ FaceTagsIface FaceTagsEditor::changeRegion(const FaceTagsIface& face, const TagR
     FaceTagsIface newFace = face;
     newFace.setRegion(newRegion);
     addFaceAndTag(pair, newFace, FaceTagsIface::attributesForFlags(face.type()), false);
+
     return newFace;
 
     // todo: the Training entry is cleared.

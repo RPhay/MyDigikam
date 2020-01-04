@@ -63,28 +63,28 @@ public:
 
     /// Invalid region
     TagRegion();
+
     /// Construct with the textual descriptor
     explicit TagRegion(const QString& descriptor);
+
     /// Construct with the region
     explicit TagRegion(const QRect& rect);
 
-    Type type() const;
-    bool isValid() const;
+    Type type()                             const;
+    bool isValid()                          const;
 
     bool operator==(const TagRegion& other) const;
-    bool operator!=(const TagRegion& other) const
-    {
-        return !operator==(other);
-    }
+
+    bool operator!=(const TagRegion& other) const;
 
     /// Returns an XML textual representation of this region
-    QString toXml() const;
+    QString toXml()                         const;
 
     /// If type is Rect, returns the contained rectangle
-    QRect toRect() const;
+    QRect toRect()                          const;
 
     /// Stores in / loads from a variant. Will only use native QVariant types.
-    QVariant toVariant() const;
+    QVariant toVariant()                    const;
     static TagRegion fromVariant(const QVariant& var);
 
     /**
@@ -103,6 +103,7 @@ public:
      */
     static QRect mapToOriginalSize(const QSize& fullImageSize, const QSize& reducedImageSize, const QRect& reducedSizeDetail);
     static QRect mapFromOriginalSize(const QSize& fullImageSize, const QSize& reducedImageSize, const QRect& fullSizeDetail);
+
     /// Takes the original and reduced size from the DImg
     static QRect mapToOriginalSize(const DImg& reducedSizeImage, const QRect& reducedSizeDetail);
     static QRect mapFromOriginalSize(const DImg& reducedSizeImage, const QRect& fullSizeDetail);

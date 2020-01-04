@@ -62,7 +62,7 @@ FaceTagsIface::FaceTagsIface(const QString& attribute, qlonglong imageId, int ta
 
 bool FaceTagsIface::isNull() const
 {
-    return m_type == InvalidFace;
+    return (m_type == InvalidFace);
 }
 
 FaceTagsIface::Type FaceTagsIface::type() const
@@ -102,17 +102,19 @@ void FaceTagsIface::setRegion(const TagRegion& region)
 
 bool FaceTagsIface::operator==(const FaceTagsIface& other) const
 {
-    return m_tagId   == other.m_tagId   &&
-           m_imageId == other.m_imageId &&
-           m_type    == other.m_type    &&
-           m_region  == other.m_region;
+    return (
+            (m_tagId   == other.m_tagId)   &&
+            (m_imageId == other.m_imageId) &&
+            (m_type    == other.m_type)    &&
+            (m_region  == other.m_region)
+           );
 }
 
 QStringList FaceTagsIface::attributesForFlags(TypeFlags flags)
 {
     QStringList attributes;
 
-    for (int i = FaceTagsIface::TypeFirst; i <= FaceTagsIface::TypeLast; i <<= 1)
+    for (int i = FaceTagsIface::TypeFirst ; i <= FaceTagsIface::TypeLast ; i <<= 1)
     {
         if (flags & FaceTagsIface::Type(i))
         {
@@ -130,7 +132,7 @@ QStringList FaceTagsIface::attributesForFlags(TypeFlags flags)
 
 QString FaceTagsIface::attributeForType(Type type)
 {
-    if (type == FaceTagsIface::UnknownName || type == FaceTagsIface::UnconfirmedName)
+    if ((type == FaceTagsIface::UnknownName) || (type == FaceTagsIface::UnconfirmedName))
     {
         return ImageTagPropertyName::autodetectedFace();
     }
@@ -150,7 +152,7 @@ QString FaceTagsIface::attributeForType(Type type)
 
 FaceTagsIface::Type FaceTagsIface::typeForAttribute(const QString& attribute, int tagId)
 {
-    if (attribute == ImageTagPropertyName::autodetectedFace())
+    if      (attribute == ImageTagPropertyName::autodetectedFace())
     {
         if (tagId && TagsCache::instance()->hasProperty(tagId, TagPropertyName::unknownPerson()))
         {
@@ -182,9 +184,9 @@ FaceTagsIface FaceTagsIface::fromVariant(const QVariant& var)
         if (list.size() == 4)
         {
             return FaceTagsIface((Type)list.at(0).toInt(),
-                                list.at(1).toLongLong(),
-                                list.at(2).toInt(),
-                                TagRegion::fromVariant(list.at(3)));
+                                 list.at(1).toLongLong(),
+                                 list.at(2).toInt(),
+                                 TagRegion::fromVariant(list.at(3)));
         }
     }
 
@@ -200,6 +202,7 @@ QVariant FaceTagsIface::toVariant() const
     list << m_imageId;
     list << m_tagId;
     list << m_region.toVariant();
+
     return list;
 }
 
@@ -226,7 +229,7 @@ QString FaceTagsIface::getAutodetectedPersonString() const
 {
     if (isUnconfirmedType())
     {
-        return QString::number(tagId()) + QLatin1Char(',') + ImageTagPropertyName::autodetectedFace() + QLatin1Char(',') + (TagRegion(region().toRect())).toXml();
+        return (QString::number(tagId()) + QLatin1Char(',') + ImageTagPropertyName::autodetectedFace() + QLatin1Char(',') + (TagRegion(region().toRect())).toXml());
     }
     else
     {
