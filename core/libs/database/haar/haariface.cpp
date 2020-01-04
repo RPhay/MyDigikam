@@ -308,7 +308,7 @@ QMap<qlonglong,double> HaarIface::bestMatchesForSignature(const QString& signatu
     {
         // Add the image id and the normalised score (make sure that it is positive and between 0 and 1.
 
-        result.insert(it.value(), ( 0.0 - ( it.key()/100) ));
+        result.insert(it.value(), (0.0 - (it.key() / 100)));
     }
 
     return result;
@@ -374,7 +374,9 @@ QMultiMap<double, qlonglong> HaarIface::bestMatches(Haar::SignatureData* const q
 
 /*
     for (QMap<double, qlonglong>::iterator it = bestMatches.begin(); it != bestMatches.end(); ++it)
+    {
         qCDebug(DIGIKAM_DATABASE_LOG) << it.key() << it.value();
+    }
 */
 
     return bestMatches;
@@ -482,6 +484,7 @@ QPair<double, QMap<qlonglong, double> > HaarIface::bestMatchesWithThreshold(qlon
 
     result.first  = avgPercentage;
     result.second = bestMatches;
+
     return result;
 }
 
@@ -901,6 +904,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlb
             idList.unite(imagesFromAlbums).unite(imagesFromTags);
             break;
         }
+
         case Intersection:
         {
             // ({} UNION A) INTERSECT T = A INTERSECT T
@@ -908,6 +912,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlb
             idList.unite(imagesFromAlbums).intersect(imagesFromTags);
             break;
         }
+
         case AlbumExclusive:
         {
             // ({} UNION A) = A
@@ -923,6 +928,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlb
             idList.subtract(imagesFromAlbums);
             break;
         }
+
         case TagExclusive:
         {
             // ({} UNION T) = TT
@@ -938,6 +944,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicatesInAlb
             idList.subtract(imagesFromAlbums);
             break;
         }
+
         case NoMix:
         {
             if ((albums2Scan.isEmpty() && tags2Scan.isEmpty()))
@@ -1016,7 +1023,7 @@ QMap<double, QMap<qlonglong, QList<qlonglong> > > HaarIface::findDuplicates(cons
             {
                 // the list will usually contain one image: the original. Filter out.
 
-                if (!(imageIdList.count() == 1 && imageIdList.first() == *it))
+                if (!((imageIdList.count() == 1) && (imageIdList.first() == *it)))
                 {
                     // make a lookup for the average similarity
 

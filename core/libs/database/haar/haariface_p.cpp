@@ -99,7 +99,6 @@ HaarIface::Private::Private()
     signatureCache    = nullptr;
     albumCache        = nullptr;
     useSignatureCache = false;
-
     signatureQuery    = QString::fromUtf8("SELECT imageid, matrix FROM ImageHaarMatrix;");
 }
 
@@ -156,9 +155,9 @@ void HaarIface::Private::setSignatureCacheEnabled(bool cache, const QSet<qlonglo
 void HaarIface::Private::setSignatureCacheEnabled(bool cache)
 {
     delete signatureCache;
-    signatureCache = nullptr;
+    signatureCache    = nullptr;
     delete albumCache;
-    albumCache     = nullptr;
+    albumCache        = nullptr;
 
     if (cache)
     {
@@ -175,16 +174,18 @@ void HaarIface::Private::setSignatureCacheEnabled(bool cache)
     }
 
     // Variables for data read from DB
+
     DatabaseBlob        blob;
     qlonglong           imageid;
     int                 albumid;
     Haar::SignatureData targetSig;
 
     // reference for easier access
+
     SignatureCache& signatureCache = *this->signatureCache;
     AlbumCache&     albumCache     = *this->albumCache;
 
-    DbEngineSqlQuery query = SimilarityDbAccess().backend()->prepareQuery(signatureQuery);
+    DbEngineSqlQuery query         = SimilarityDbAccess().backend()->prepareQuery(signatureQuery);
 
     if (!SimilarityDbAccess().backend()->exec(query))
     {

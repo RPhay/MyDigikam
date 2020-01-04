@@ -64,7 +64,7 @@ public:
 
     bool operator< (const valStruct& right) const
     {
-        return d > right.d;
+        return (d > right.d);
     }
 };
 
@@ -174,12 +174,15 @@ void Calculator::haar2D(Unit a[])
     Unit t[NumberOfPixels >> 1];
 
     // scale by 1/sqrt(128) = 0.08838834764831843:
-    /*
-    for (i = 0; i < NUM_PIXELS_SQUARED; ++i)
+/*
+    for (i = 0 ; i < NUM_PIXELS_SQUARED ; ++i)
+    {
         a[i] *= 0.08838834764831843;
-    */
+    }
+*/
 
     // Decompose rows:
+
     for (i = 0 ; i < NumberOfPixelsSquared ; i += NumberOfPixels)
     {
         int h, h1;

@@ -51,7 +51,7 @@ public:
      * @param pix: Pixmap to fill
      * @return true if there is an available thumbnail
      */
-    bool pixmapForItem(const QString& path, QPixmap& pix) const;
+    bool pixmapForItem(const QString& path, QPixmap& pix)                   const;
 
     /**
      * @brief Clears all data from model and informs the view
@@ -77,7 +77,7 @@ public:
     /**
      * @brief returns the index for the DTrashItemInfo in model
      */
-    QModelIndex indexForItem(const DTrashItemInfo& itemInfo) const;
+    QModelIndex indexForItem(const DTrashItemInfo& itemInfo)                const;
 
     /**
      * @brief returns a list of all items in model
@@ -98,10 +98,10 @@ public:
 /// QAbstractItemModel interface
 public:
 
-    int rowCount(const QModelIndex&) const;
-    int columnCount(const QModelIndex&) const;
+    int rowCount(const QModelIndex&)                                        const;
+    int columnCount(const QModelIndex&)                                     const;
 
-    QVariant data(const QModelIndex& index, int role) const;
+    QVariant data(const QModelIndex& index, int role)                       const;
     QVariant headerData(int section, Qt::Orientation orientation, int role) const;
 
     virtual void sort(int column, Qt::SortOrder order = Qt::AscendingOrder);

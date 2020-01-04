@@ -186,7 +186,7 @@ private:
 
 public:
 
-    typedef bool MapIndexType;
+    typedef bool  MapIndexType;
     MapIndexType* m_indexList;
 
 private:

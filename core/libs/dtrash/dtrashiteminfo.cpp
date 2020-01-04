@@ -31,18 +31,20 @@ namespace Digikam
 {
 
 DTrashItemInfo::DTrashItemInfo()
+    : imageId(-1)
 {
-    imageId = -1;
 }
 
 bool DTrashItemInfo::isNull() const
 {
-    return trashPath.isEmpty()              &&
-           jsonFilePath.isEmpty()           &&
-           collectionPath.isEmpty()         &&
-           collectionRelativePath.isEmpty() &&
-           deletionTimestamp.isNull()       &&
-           imageId == -1;
+    return (
+            trashPath.isEmpty()              &&
+            jsonFilePath.isEmpty()           &&
+            collectionPath.isEmpty()         &&
+            collectionRelativePath.isEmpty() &&
+            deletionTimestamp.isNull()       &&
+            (imageId == -1)
+           );
 }
 
 bool DTrashItemInfo::operator==(const DTrashItemInfo& itemInfo) const
@@ -59,6 +61,7 @@ QDebug operator<<(QDebug dbg, const DTrashItemInfo& info)
     dbg.nospace() << "\nRelativePath: "      << info.collectionRelativePath;
     dbg.nospace() << "\nDeletionTimestamp: " << info.deletionTimestamp.toString();
     dbg.nospace() << "\nImage id: "          << QString::number(info.imageId) << "\n";
+
     return dbg.space();
 }
 

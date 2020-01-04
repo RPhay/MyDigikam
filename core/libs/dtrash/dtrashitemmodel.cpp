@@ -104,10 +104,12 @@ int DTrashItemModel::columnCount(const QModelIndex&) const
 
 QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
 {
-    if (role != Qt::DisplayRole       &&
-        role != Qt::DecorationRole    &&
-        role != Qt::TextAlignmentRole &&
-        role != Qt::ToolTipRole)
+    if (
+        (role != Qt::DisplayRole)       &&
+        (role != Qt::DecorationRole)    &&
+        (role != Qt::TextAlignmentRole) &&
+        (role != Qt::ToolTipRole)
+       )
     {
         return QVariant();
     }
@@ -115,14 +117,16 @@ QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
     const DTrashItemInfo& item = d->data[index.row()];
 
     if (role == Qt::TextAlignmentRole)
+    {
         return Qt::AlignCenter;
+    }
 
     if (role == Qt::DecorationRole && index.column() == 0)
     {
         QPixmap pix;
         QString thumbPath;
 
-        if (!d->failedThumbnails.contains(item.collectionPath))
+        if      (!d->failedThumbnails.contains(item.collectionPath))
         {
             d->failedThumbnails << item.collectionPath;
             thumbPath = item.collectionPath;
@@ -152,13 +156,16 @@ QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
         }
     }
 
-    if (role == Qt::ToolTipRole && index.column() == 1)
+    if ((role == Qt::ToolTipRole) && (index.column() == 1))
+    {
         return item.collectionRelativePath;
+    }
 
     switch (index.column())
     {
         case 1:
             return item.collectionRelativePath;
+
         case 2:
         {
             QString dateTimeFormat = QLocale().dateTimeFormat();
@@ -171,6 +178,7 @@ QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
 
             return item.deletionTimestamp.toString(dateTimeFormat);
         }
+
         default:
             return QVariant();
     };
@@ -187,27 +195,28 @@ void DTrashItemModel::sort(int column, Qt::SortOrder order)
     }
 
     std::sort(d->data.begin(), d->data.end(),
-                [column, order](const DTrashItemInfo& a, const DTrashItemInfo& b)
+        [column, order](const DTrashItemInfo& a, const DTrashItemInfo& b)
+        {
+            if ((column == 2) && (a.deletionTimestamp != b.deletionTimestamp))
+            {
+                if (order == Qt::DescendingOrder)
                 {
-                    if (column == 2 && a.deletionTimestamp != b.deletionTimestamp)
-                    {
-                        if (order == Qt::DescendingOrder)
-                        {
-                            return a.deletionTimestamp > b.deletionTimestamp;
-                        }
-                        else
-                        {
-                            return a.deletionTimestamp < b.deletionTimestamp;
-                        }
-                    }
+                    return (a.deletionTimestamp > b.deletionTimestamp);
+                }
+                else
+                {
+                    return (a.deletionTimestamp < b.deletionTimestamp);
+                }
+            }
 
-                    if (order == Qt::DescendingOrder)
-                    {
-                        return a.collectionRelativePath > b.collectionRelativePath;
-                    }
+            if (order == Qt::DescendingOrder)
+            {
+                return (a.collectionRelativePath > b.collectionRelativePath);
+            }
 
-                    return a.collectionRelativePath < b.collectionRelativePath;
-                });
+            return (a.collectionRelativePath < b.collectionRelativePath);
+        }
+    );
 
     const QModelIndex topLeft     = index(0, 0);
     const QModelIndex bottomRight = index(rowCount(QModelIndex())-1,
@@ -229,19 +238,26 @@ bool DTrashItemModel::pixmapForItem(const QString& path, QPixmap& pix) const
 QVariant DTrashItemModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
     if (orientation != Qt::Horizontal)
+    {
         return QVariant();
+    }
 
     if (role != Qt::DisplayRole)
+    {
         return QVariant();
+    }
 
     switch (section)
     {
         case 0:
             return i18n("Thumbnail");
+
         case 1:
             return i18n("Relative Path");
+
         case 2:
             return i18n("Deletion Time");
+
         default:
             return QVariant();
     }
@@ -250,7 +266,9 @@ QVariant DTrashItemModel::headerData(int section, Qt::Orientation orientation, i
 void DTrashItemModel::append(const DTrashItemInfo& itemInfo)
 {
     if (d->itemsLoadingThread != sender())
+    {
         return;
+    }
 
     beginInsertRows(QModelIndex(), d->data.count(), d->data.count());
     d->data.append(itemInfo);
@@ -274,7 +292,9 @@ void DTrashItemModel::removeItems(const QModelIndexList& indexes)
     foreach (const QPersistentModelIndex& index, persistentIndexes)
     {
         if (!index.isValid())
+        {
             continue;
+        }
 
         const DTrashItemInfo& item = d->data[index.row()];
 
@@ -339,7 +359,9 @@ void DTrashItemModel::loadItemsForCollection(const QString& colPath)
 DTrashItemInfo DTrashItemModel::itemForIndex(const QModelIndex& index)
 {
     if (!index.isValid())
+    {
         return DTrashItemInfo();
+    }
 
     return d->data.at(index.row());
 }
@@ -351,7 +373,9 @@ DTrashItemInfoList DTrashItemModel::itemsForIndexes(const QList<QModelIndex>& in
     foreach (const QModelIndex& index, indexes)
     {
         if (!index.isValid())
+        {
             continue;
+        }
 
         items << itemForIndex(index);
     }
@@ -386,7 +410,9 @@ void DTrashItemModel::changeThumbSize(int size)
     d->thumbSize = size;
 
     if (isEmpty())
+    {
         return;
+    }
 
     QTimer::singleShot(100, this, SLOT(refreshLayout()));
 }
