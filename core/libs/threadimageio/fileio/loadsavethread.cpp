@@ -40,10 +40,10 @@ class Q_DECL_HIDDEN LoadSaveThread::Private
 public:
 
     explicit Private()
+      : running(true),
+        blockNotification(false),
+        lastTask(nullptr)
     {
-        running           = true;
-        blockNotification = false;
-        lastTask          = nullptr;
     }
 
     bool                             running;
@@ -62,10 +62,10 @@ LoadSaveFileInfoProvider* LoadSaveThread::Private::infoProvider = nullptr;
 
 LoadSaveThread::LoadSaveThread(QObject* const parent)
     : DynamicThread(parent),
+      m_currentTask(nullptr),
+      m_notificationPolicy(NotificationPolicyTimeLimited),
       d(new Private)
 {
-    m_currentTask        = nullptr;
-    m_notificationPolicy = NotificationPolicyTimeLimited;
 }
 
 LoadSaveThread::~LoadSaveThread()

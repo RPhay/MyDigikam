@@ -51,6 +51,7 @@ void LoadingCacheInterface::fileChanged(const QString& filePath, bool notify)
 void LoadingCacheInterface::connectToSignalFileChanged(QObject* const object, const char* slot)
 {
     LoadingCache* const cache = LoadingCache::cache();
+
     QObject::connect(cache, SIGNAL(fileChanged(QString)),
                      object, slot,
                      Qt::QueuedConnection);
@@ -61,6 +62,7 @@ void LoadingCacheInterface::cleanCache()
 {
     LoadingCache* const cache = LoadingCache::cache();
     LoadingCache::CacheLock lock(cache);
+
     cache->removeImages();
 }
 
@@ -68,6 +70,7 @@ void LoadingCacheInterface::cleanThumbnailCache()
 {
     LoadingCache* const cache = LoadingCache::cache();
     LoadingCache::CacheLock lock(cache);
+
     cache->removeThumbnails();
 }
 
@@ -94,6 +97,7 @@ void LoadingCacheInterface::setCacheOptions(int cacheSize)
 {
     LoadingCache* const cache = LoadingCache::cache();
     LoadingCache::CacheLock lock(cache);
+
     cache->setCacheSize(cacheSize);
 }
 
