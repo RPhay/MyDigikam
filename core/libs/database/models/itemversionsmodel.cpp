@@ -91,7 +91,7 @@ QVariant ItemVersionsModel::data(const QModelIndex& index, int role) const
     {
         return d->data->at(index.row()).first;
     }
-    else if ((role == Qt::UserRole &&) !d->data->isEmpty())
+    else if ((role == Qt::UserRole) && !d->data->isEmpty())
     {
         return d->data->at(index.row()).second;
     }
