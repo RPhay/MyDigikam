@@ -540,7 +540,7 @@ BUGFIXES:
 525 ==> 415535 - Import from a local/remote folder.
 526 ==> 415643 - digiKam crashes Face detection.
 527 ==> 415685 - digiKam crashes when scanning faces.
-528 ==> 
+528 ==> 415877 - "Reset" button in Tag Manager not always working to reset icon.
 529 ==> 
 530 ==> 
 531 ==> 

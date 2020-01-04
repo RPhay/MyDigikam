@@ -303,7 +303,7 @@ void TagPropWidget::slotFocusTitleEdit()
 
 void TagPropWidget::slotIconResetClicked()
 {
-    if (d->icon.isEmpty() || d->icon == QLatin1String("tag"))
+    if (d->icon == QLatin1String("tag"))
     {
         return;
     }
