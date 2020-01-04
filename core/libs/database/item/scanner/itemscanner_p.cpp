@@ -102,7 +102,7 @@ bool LessThanByProximityToSubject::operator()(const ItemInfo& a, const ItemInfo&
 
     if (a.modDateTime() != b.modDateTime())
     {
-        return a.modDateTime() < b.modDateTime();
+        return (a.modDateTime() < b.modDateTime());
     }
 
     if (a.name() != b.name())

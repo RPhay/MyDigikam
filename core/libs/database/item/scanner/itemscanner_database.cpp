@@ -40,10 +40,12 @@ void ItemScanner::commit()
     {
         case ItemScannerCommit::NoOp:
             return;
+
         case ItemScannerCommit::AddItem:
             if (!commitAddImage())
                 return;
             break;
+
         case ItemScannerCommit::UpdateItem:
             commitUpdateImage();
             break;
@@ -179,8 +181,8 @@ bool ItemScanner::copyFromSource(qlonglong srcId)
 
 void ItemScanner::prepareAddImage(int albumId)
 {
-    d->scanInfo.albumID          = albumId;
-    d->scanInfo.status           = DatabaseItem::Visible;
+    d->scanInfo.albumID = albumId;
+    d->scanInfo.status  = DatabaseItem::Visible;
 
     qCDebug(DIGIKAM_DATABASE_LOG) << "Adding new item" << d->fileInfo.filePath();
     d->commit.operation = ItemScannerCommit::AddItem;

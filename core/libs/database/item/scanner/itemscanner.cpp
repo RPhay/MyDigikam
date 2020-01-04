@@ -170,7 +170,7 @@ QString ItemScanner::formatToString(const QString& format)
 {
     // image -------------------------------------------------------------------
 
-    if (format == QLatin1String("JPG"))
+    if      (format == QLatin1String("JPG"))
     {
         return QLatin1String("JPEG");
     }
@@ -186,7 +186,7 @@ QString ItemScanner::formatToString(const QString& format)
     {
         return format;
     }
-    else if (format == QLatin1String("JP2") || format == QLatin1String("JP2k") || format == QLatin1String("JP2K"))
+    else if ((format == QLatin1String("JP2")) || (format == QLatin1String("JP2k")) || (format == QLatin1String("JP2K")))
     {
         return QLatin1String("JPEG 2000");
     }

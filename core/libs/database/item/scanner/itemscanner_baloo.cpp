@@ -68,7 +68,7 @@ void ItemScanner::scanBalooInfo()
         if (!d->commit.captions.contains(QLatin1String("x-default")))
         {
             CaptionValues val;
-            val.caption                   = bInfo.comment;
+            val.caption                  = bInfo.comment;
             d->commit.commitItemComments = true;
             d->commit.captions.insert(QLatin1String("x-default"), val);
         }

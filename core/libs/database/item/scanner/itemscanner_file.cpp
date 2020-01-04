@@ -104,7 +104,7 @@ void ItemScanner::scanItemInformation()
 {
     d->commit.commitItemInformation = true;
 
-    if (d->scanMode == NewScan || d->scanMode == Rescan)
+    if ((d->scanMode == NewScan) || (d->scanMode == Rescan))
     {
         d->commit.imageInformationFields = DatabaseFields::ItemInformationAll;
 
@@ -199,8 +199,8 @@ void ItemScanner::scanFile(ScanMode mode)
             scanItemInformation();
             scanImageHistoryIfModified();
         }
-        else if (d->scanInfo.category == DatabaseItem::Video ||
-                 d->scanInfo.category == DatabaseItem::Audio)
+        else if ((d->scanInfo.category == DatabaseItem::Video) ||
+                 (d->scanInfo.category == DatabaseItem::Audio))
         {
             scanVideoInformation();
 
@@ -220,13 +220,14 @@ void ItemScanner::scanFile(ScanMode mode)
     }
     else
     {
-        if (d->scanMode == Rescan && d->scanInfo.id != -1 &&
+        if ((d->scanMode == Rescan) &&
+            (d->scanInfo.id != -1)  &&
             MetaEngineSettings::instance()->settings().clearMetadataIfRescan)
         {
             CoreDbAccess().db()->clearMetadataFromImage(d->scanInfo.id);
         }
 
-        if (d->scanInfo.category == DatabaseItem::Image)
+        if      (d->scanInfo.category == DatabaseItem::Image)
         {
             scanItemInformation();
 
@@ -243,8 +244,8 @@ void ItemScanner::scanFile(ScanMode mode)
                 scanBalooInfo();
             }
         }
-        else if (d->scanInfo.category == DatabaseItem::Video ||
-                 d->scanInfo.category == DatabaseItem::Audio)
+        else if ((d->scanInfo.category == DatabaseItem::Video) ||
+                 (d->scanInfo.category == DatabaseItem::Audio))
         {
             scanVideoInformation();
 

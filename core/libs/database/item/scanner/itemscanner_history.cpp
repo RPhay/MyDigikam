@@ -144,8 +144,11 @@ void ItemScanner::tagItemHistoryGraph(qlonglong id)
     int needTaggingTag         = TagsCache::instance()->getOrCreateInternalTag(InternalTagName::needTaggingHistoryGraph());
 
     // Remove all relevant tags
-    CoreDbAccess().db()->removeTagsFromItems(graph.allImageIds(), QList<int>() << originalVersionTag
-        << currentVersionTag << intermediateVersionTag << needTaggingTag);
+    CoreDbAccess().db()->removeTagsFromItems(graph.allImageIds(),
+                                             QList<int>() << originalVersionTag
+                                                          << currentVersionTag
+                                                          << intermediateVersionTag
+                                                          << needTaggingTag);
 
     if (!graph.hasEdges())
     {
@@ -256,26 +259,27 @@ bool ItemScanner::sameReferredImage(const HistoryImageId& id1, const HistoryImag
      */
     if (id1.hasUuid() && id2.hasUuid())
     {
-        return id1.m_uuid == id2.m_uuid;
+        return (id1.m_uuid == id2.m_uuid);
     }
 
-    if (id1.hasUniqueHashIdentifier()        &&
-        id1.m_uniqueHash == id2.m_uniqueHash &&
-        id1.m_fileSize   == id2.m_fileSize)
+    if (id1.hasUniqueHashIdentifier()          &&
+        (id1.m_uniqueHash == id2.m_uniqueHash) &&
+        (id1.m_fileSize   == id2.m_fileSize))
     {
         return true;
     }
 
-    if (id1.hasFileName() && id1.hasCreationDate() &&
-        id1.m_fileName     == id2.m_fileName       &&
-        id1.m_creationDate == id2.m_creationDate)
+    if (id1.hasFileName()                      &&
+        id1.hasCreationDate()                  &&
+        (id1.m_fileName     == id2.m_fileName) &&
+        (id1.m_creationDate == id2.m_creationDate))
     {
         return true;
     }
 
-    if (id1.hasFileOnDisk()              &&
-        id1.m_filePath == id2.m_filePath &&
-        id1.m_fileName == id2.m_fileName)
+    if (id1.hasFileOnDisk()                    &&
+        (id1.m_filePath == id2.m_filePath)     &&
+        (id1.m_fileName == id2.m_fileName))
     {
         return true;
     }
