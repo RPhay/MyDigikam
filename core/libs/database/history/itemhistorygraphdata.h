@@ -119,6 +119,7 @@ public:
     ItemHistoryGraphData& operator=(const HistoryGraph& g)
     {
         HistoryGraph::operator=(g);
+
         return *this;
     }
 

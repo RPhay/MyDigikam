@@ -205,6 +205,7 @@ QDebug operator<<(QDebug dbg, const HistoryImageId& id)
 HistoryEdgeProperties& HistoryEdgeProperties::operator+=(const FilterAction& action)
 {
     actions << action;
+
     return *this;
 }
 
@@ -325,8 +326,8 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertexScanned(qlonglong id)
 }
 
 void ItemHistoryGraphData::applyProperties(Vertex& v,
-                                            const QList<ItemInfo>& infos,
-                                            const QList<HistoryImageId>& ids)
+                                           const QList<ItemInfo>& infos,
+                                           const QList<HistoryImageId>& ids)
 {
     // if needed, add a new vertex; or retrieve properties to add possibly new entries
     if (v.isNull())
@@ -470,6 +471,7 @@ ItemHistoryGraph::~ItemHistoryGraph()
 ItemHistoryGraph& ItemHistoryGraph::operator=(const ItemHistoryGraph& other)
 {
     d = other.d;
+
     return *this;
 }
 
@@ -884,7 +886,7 @@ QDebug operator<<(QDebug dbg, const ItemHistoryGraph& g)
         if (!sourceVertexTexts.isEmpty())
         {
             dbg.nospace() << QLatin1String("{ ")    + targetString + QLatin1String(" } ") +
-                             QLatin1String("-> { ") + sourceVertexTexts.join(QLatin1String(" }, { ")) + 
+                             QLatin1String("-> { ") + sourceVertexTexts.join(QLatin1String(" }, { ")) +
                              QLatin1String(" }") << endl;
         }
         else if (g.data().outDegree(target) == 0)
