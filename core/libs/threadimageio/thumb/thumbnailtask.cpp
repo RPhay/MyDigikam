@@ -188,9 +188,6 @@ void ThumbnailLoadingTask::execute()
             // remove this from the list of loading processes in cache
             cache->removeLoadingProcess(this);
 
-            // indicate that loading has finished so that listeners can stop waiting
-            m_completed = true;
-
             // dispatch image to all listeners
             for (int i = 0 ; i < m_listeners.count() ; ++i)
             {
@@ -204,6 +201,9 @@ void ThumbnailLoadingTask::execute()
 
             // remove myself from list of listeners
             removeListener(this);
+
+            // indicate that loading has finished so that listeners can stop waiting
+            m_completed = true;
 
             // wake all listeners waiting on cache condVar, so that they remove themselves
             lock.wakeAll();

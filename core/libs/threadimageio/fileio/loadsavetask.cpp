@@ -218,9 +218,6 @@ void SharedLoadingTask::execute()
             // remove this from the list of loading processes in cache
             cache->removeLoadingProcess(this);
 
-            // indicate that loading has finished so that listeners can stop waiting
-            m_completed = true;
-
             // dispatch image to all listeners, including this
             for (int i = 0 ; i < m_listeners.count() ; ++i)
             {
@@ -240,6 +237,9 @@ void SharedLoadingTask::execute()
 
             // remove myself from list of listeners
             removeListener(this);
+
+            // indicate that loading has finished so that listeners can stop waiting
+            m_completed = true;
 
             // wake all listeners waiting on cache condVar, so that they remove themselves
             lock.wakeAll();
