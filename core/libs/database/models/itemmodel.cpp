@@ -47,14 +47,14 @@ class Q_DECL_HIDDEN ItemModel::Private
 public:
 
     explicit Private()
+      : keepFilePathCache(false),
+        sendRemovalSignals(false),
+        preprocessor(nullptr),
+        refreshing(false),
+        reAdding(false),
+        incrementalRefreshRequested(false),
+        incrementalUpdater(nullptr)
     {
-        preprocessor                = nullptr;
-        keepFilePathCache           = false;
-        sendRemovalSignals          = false;
-        incrementalUpdater          = nullptr;
-        refreshing                  = false;
-        reAdding                    = false;
-        incrementalRefreshRequested = false;
     }
 
 public:
@@ -842,14 +842,16 @@ void ItemModel::publiciseInfos(const QList<ItemInfo>& infos, const QList<QVarian
         return;
     }
 
-    Q_ASSERT(infos.size() == extraValues.size() ||
-             (extraValues.isEmpty() && d->extraValues.isEmpty()));
+    Q_ASSERT(
+             (infos.size() == extraValues.size()) ||
+             (extraValues.isEmpty() && d->extraValues.isEmpty())
+            );
 
     emit imageInfosAboutToBeAdded(infos);
     const int firstNewIndex = d->infos.size();
     const int lastNewIndex  = d->infos.size() + infos.size() - 1;
     beginInsertRows(QModelIndex(), firstNewIndex, lastNewIndex);
-    d->infos << infos;
+    d->infos       << infos;
     d->extraValues << extraValues;
 
     for (int i = firstNewIndex ; i <= lastNewIndex ; ++i)
@@ -1001,7 +1003,7 @@ static bool pairsContain(const List& list, T value)
         half   = n >> 1;
         middle = begin + half;
 
-        if ((middle->first <= value) && (middle->second >= value))
+        if      ((middle->first <= value) && (middle->second >= value))
         {
             return true;
         }
@@ -1040,7 +1042,8 @@ void ItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
     // Keep in mind that when calling beginRemoveRows all structures announced to be removed
     // must still be valid, and this includes our hashes as well, which limits what we can optimize
 
-    int removedRows = 0, offset = 0;
+    int removedRows = 0;
+    int offset      = 0;
     typedef QPair<int, int> IntPair; // to make foreach macro happy
 
     foreach (const IntPair& pair, toRemove)
@@ -1204,7 +1207,7 @@ QList<QPair<int, int> > ItemModelIncrementalUpdater::oldIndexes()
 
             // when removing from the list, all subsequent indexes are affected
 
-            offset += removedRows;
+            offset         += removedRows;
 
             // update idHash - which points to indexes of d->infos, and these change now!
 
@@ -1313,6 +1316,7 @@ QVariant ItemModel::data(const QModelIndex& index, int role) const
         case ExtraDataDuplicateCount:
         {
             qlonglong id = d->infos.at(index.row()).id();
+
             return numberOfIndexesForImageId(id);
         }
     }

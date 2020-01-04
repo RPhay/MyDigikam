@@ -61,8 +61,10 @@ public:
         ItemModelPointerRole    = Qt::UserRole,
         ItemModelInternalId     = Qt::UserRole + 1,
 
-        /// Returns a thumbnail pixmap. May be implemented by subclasses.
-        /// Returns either a valid pixmap or a null QVariant.
+        /**
+         * Returns a thumbnail pixmap. May be implemented by subclasses.
+         * Returns either a valid pixmap or a null QVariant.
+         */
         ThumbnailRole           = Qt::UserRole + 2,
 
         /// Returns a QDateTime with the creation date
@@ -74,8 +76,10 @@ public:
         /// Returns the number of duplicate indexes for the same image id
         ExtraDataDuplicateCount = Qt::UserRole + 6,
 
-        /// Roles which are defined here but not implemented by ItemModel
-        /// Returns position of item in Left Light Table preview.
+        /**
+         * Roles which are defined here but not implemented by ItemModel
+         * Returns position of item in Left Light Table preview.
+         */
         LTLeftPanelRole         = Qt::UserRole + 50,
 
         /// Returns position of item in Right Light Table preview.
@@ -98,7 +102,7 @@ public:
      * without a cache it is O(n). Default is false.
      */
     void setKeepsFilePathCache(bool keepCache);
-    bool keepsFilePathCache() const;
+    bool keepsFilePathCache()                                                                               const;
 
     /**
      * Set a set of database fields to watch.
@@ -113,33 +117,33 @@ public:
      * If the index is not valid, imageInfo will return a null ItemInfo, imageId will
      * return 0, imageInfoRef must not be called with an invalid index.
      */
-    ItemInfo         imageInfo(const QModelIndex& index)           const;
-    ItemInfo&        imageInfoRef(const QModelIndex& index)        const;
-    qlonglong        imageId(const QModelIndex& index)             const;
-    QList<ItemInfo>  imageInfos(const QList<QModelIndex>& indexes) const;
-    QList<qlonglong> imageIds(const QList<QModelIndex>& indexes)   const;
+    ItemInfo         imageInfo(const QModelIndex& index)                                                    const;
+    ItemInfo&        imageInfoRef(const QModelIndex& index)                                                 const;
+    qlonglong        imageId(const QModelIndex& index)                                                      const;
+    QList<ItemInfo>  imageInfos(const QList<QModelIndex>& indexes)                                          const;
+    QList<qlonglong> imageIds(const QList<QModelIndex>& indexes)                                            const;
 
     /**
      * Returns the ItemInfo object, reference or image id from the underlying data
      * of the given row (parent is the invalid QModelIndex, column is 0).
      * Note that imageInfoRef will crash if index is invalid.
      */
-    ItemInfo   imageInfo(int row)    const;
-    ItemInfo&  imageInfoRef(int row) const;
-    qlonglong  imageId(int row)      const;
+    ItemInfo   imageInfo(int row)                                                                           const;
+    ItemInfo&  imageInfoRef(int row)                                                                        const;
+    qlonglong  imageId(int row)                                                                             const;
 
     /**
      * Return the index for the given ItemInfo or id, if contained in this model.
      */
-    QModelIndex        indexForItemInfo(const ItemInfo& info)                             const;
-    QModelIndex        indexForItemInfo(const ItemInfo& info, const QVariant& extraValue) const;
-    QModelIndex        indexForImageId(qlonglong id)                                      const;
-    QModelIndex        indexForImageId(qlonglong id, const QVariant& extraValue)          const;
-    QList<QModelIndex> indexesForItemInfo(const ItemInfo& info)                           const;
-    QList<QModelIndex> indexesForImageId(qlonglong id)                                    const;
+    QModelIndex        indexForItemInfo(const ItemInfo& info)                                               const;
+    QModelIndex        indexForItemInfo(const ItemInfo& info, const QVariant& extraValue)                   const;
+    QModelIndex        indexForImageId(qlonglong id)                                                        const;
+    QModelIndex        indexForImageId(qlonglong id, const QVariant& extraValue)                            const;
+    QList<QModelIndex> indexesForItemInfo(const ItemInfo& info)                                             const;
+    QList<QModelIndex> indexesForImageId(qlonglong id)                                                      const;
 
-    int numberOfIndexesForItemInfo(const ItemInfo& info)                                  const;
-    int numberOfIndexesForImageId(qlonglong id)                                           const;
+    int numberOfIndexesForItemInfo(const ItemInfo& info)                                                    const;
+    int numberOfIndexesForImageId(qlonglong id)                                                             const;
 
     /**
      * Returns the index or ItemInfo object from the underlying data
@@ -148,10 +152,10 @@ public:
      * In case of multiple occurrences of the same file, the simpler variants return
      * any one found first, use the QList methods to retrieve all occurrences.
      */
-    QModelIndex        indexForPath(const QString& filePath)   const;
-    ItemInfo           imageInfo(const QString& filePath)      const;
-    QList<QModelIndex> indexesForPath(const QString& filePath) const;
-    QList<ItemInfo>    imageInfos(const QString& filePath)     const;
+    QModelIndex        indexForPath(const QString& filePath)                                                const;
+    ItemInfo           imageInfo(const QString& filePath)                                                   const;
+    QList<QModelIndex> indexesForPath(const QString& filePath)                                              const;
+    QList<ItemInfo>    imageInfos(const QString& filePath)                                                  const;
 
     /**
      * Main entry point for subclasses adding image infos to the model.
@@ -207,16 +211,16 @@ public:
      */
     void ensureHasGroupedImages(const ItemInfo& groupLeader);
 
-    QList<ItemInfo>  imageInfos()                                   const;
-    QList<qlonglong> imageIds()                                     const;
-    QList<ItemInfo>  uniqueItemInfos()                              const;
+    QList<ItemInfo>  imageInfos()                                                                           const;
+    QList<qlonglong> imageIds()                                                                             const;
+    QList<ItemInfo>  uniqueItemInfos()                                                                      const;
 
-    bool hasImage(qlonglong id)                                     const;
-    bool hasImage(const ItemInfo& info)                             const;
-    bool hasImage(const ItemInfo& info, const QVariant& extraValue) const;
-    bool hasImage(qlonglong id, const QVariant& extraValue)         const;
+    bool hasImage(qlonglong id)                                                                             const;
+    bool hasImage(const ItemInfo& info)                                                                     const;
+    bool hasImage(const ItemInfo& info, const QVariant& extraValue)                                         const;
+    bool hasImage(qlonglong id, const QVariant& extraValue)                                                 const;
 
-    bool isEmpty()                                                  const;
+    bool isEmpty()                                                                                          const;
 
     // Drag and Drop
     DECLARE_MODEL_DRAG_DROP_METHODS
@@ -241,7 +245,7 @@ public:
      * For a preprocessor this means that, although the preprocessor may currently have
      * processed all it got, more batches are to be expected.
      */
-    bool isRefreshing() const;
+    bool isRefreshing()                                                                                     const;
 
     /**
      * Enable sending of imageInfosAboutToBeRemoved and imageInfosRemoved signals.
@@ -249,11 +253,11 @@ public:
      */
     void setSendRemovalSignals(bool send);
 
-    virtual QVariant      data(const QModelIndex& index, int role = Qt::DisplayRole)                       const override;
-    virtual QVariant      headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
-    virtual int           rowCount(const QModelIndex& parent = QModelIndex())                              const override;
-    virtual Qt::ItemFlags flags(const QModelIndex& index)                                                  const override;
-    virtual QModelIndex   index(int row, int column = 0, const QModelIndex& parent = QModelIndex())        const override;
+    virtual QVariant      data(const QModelIndex& index, int role = Qt::DisplayRole)                        const override;
+    virtual QVariant      headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole)  const override;
+    virtual int           rowCount(const QModelIndex& parent = QModelIndex())                               const override;
+    virtual Qt::ItemFlags flags(const QModelIndex& index)                                                   const override;
+    virtual QModelIndex   index(int row, int column = 0, const QModelIndex& parent = QModelIndex())         const override;
 
     /**
      * Retrieves the imageInfo object from the data() method of the given index.
@@ -345,7 +349,7 @@ protected:
      * if the model is ready right now.
      */
     void requestIncrementalRefresh();
-    bool hasIncrementalRefreshPending() const;
+    bool hasIncrementalRefreshPending()                                                                     const;
 
     /**
      * Starts an incremental refresh operation. You shall only call this method from a slot

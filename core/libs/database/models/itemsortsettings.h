@@ -50,66 +50,21 @@ class DIGIKAM_DATABASE_EXPORT ItemSortSettings
 {
 public:
 
-    explicit ItemSortSettings();
-
-    bool operator==(const ItemSortSettings& other) const;
-
-    /** Compares the categories of left and right.
-     *  Return -1 if left is less than right, 0 if both fall in the same category,
-     *  and 1 if left is greater than right.
-     *  Adheres to set categorization mode and current category sort order.
-     */
-    int compareCategories(const ItemInfo& left, const ItemInfo& right) const;
-
-    /** Returns true if left is less than right.
-     *  Adheres to current sort role and sort order.
-     */
-    bool lessThan(const ItemInfo& left, const ItemInfo& right) const;
-
-    /** Compares the ItemInfos left and right.
-     *  Return -1 if left is less than right, 1 if left is greater than right,
-     *  and 0 if left equals right comparing the current sort role's value.
-     *  Adheres to set sort role and sort order.
-     */
-    int compare(const ItemInfo& left, const ItemInfo& right) const;
-
-    /** Returns true if left QVariant is less than right.
-     *  Adheres to current sort role and sort order.
-     *  Use for extraValue, if necessary.
-     */
-    bool lessThan(const QVariant& left, const QVariant& right) const;
-
     enum SortOrder
     {
         AscendingOrder  = Qt::AscendingOrder,
         DescendingOrder = Qt::DescendingOrder,
-        DefaultOrder /// sort order depends on the chosen sort role
+        DefaultOrder                ///< sort order depends on the chosen sort role
     };
-
-    /// --- Categories ---
 
     enum CategorizationMode
     {
-        NoCategories, /// categorization switched off
-        OneCategory, /// all items in one global category
+        NoCategories,               ///< categorization switched off
+        OneCategory,                ///< all items in one global category
         CategoryByAlbum,
         CategoryByFormat,
         CategoryByMonth
     };
-
-    CategorizationMode      categorizationMode;
-    SortOrder               categorizationSortOrder;
-
-    void setCategorizationMode(CategorizationMode mode);
-    void setCategorizationSortOrder(SortOrder order);
-
-    /// Only Ascending or Descending, never DefaultOrder
-    Qt::SortOrder           currentCategorizationSortOrder;
-    Qt::CaseSensitivity     categorizationCaseSensitivity;
-
-    bool isCategorized() const { return categorizationMode >= CategoryByAlbum; }
-
-    /// --- Image Sorting ---
 
     enum SortRole
     {
@@ -120,53 +75,103 @@ public:
         SortByModificationDate,
         SortByFileSize,
         SortByRating,
-        SortByImageSize,            // pixel number
-        SortByAspectRatio,          // width / height * 100000
+        SortByImageSize,            ///< pixel number
+        SortByAspectRatio,          ///< width / height * 100000
         SortBySimilarity,
         SortByManualOrderAndName,
         SortByManualOrderAndDate
     };
 
-    SortRole                sortRole;
-    SortOrder               sortOrder;
-    bool                    strTypeNatural;
+public:
+
+    explicit ItemSortSettings();
+
+    bool operator==(const ItemSortSettings& other) const;
+
+    /**
+     * Compares the categories of left and right.
+     * Return -1 if left is less than right, 0 if both fall in the same category,
+     * and 1 if left is greater than right.
+     * Adheres to set categorization mode and current category sort order.
+     */
+    int compareCategories(const ItemInfo& left, const ItemInfo& right) const;
+
+    /**
+     * Returns true if left is less than right.
+     * Adheres to current sort role and sort order.
+     */
+    bool lessThan(const ItemInfo& left, const ItemInfo& right) const;
+
+    /**
+     * Compares the ItemInfos left and right.
+     * Return -1 if left is less than right, 1 if left is greater than right,
+     * and 0 if left equals right comparing the current sort role's value.
+     * Adheres to set sort role and sort order.
+     */
+    int compare(const ItemInfo& left, const ItemInfo& right) const;
+
+    /**
+     * Returns true if left QVariant is less than right.
+     * Adheres to current sort role and sort order.
+     * Use for extraValue, if necessary.
+     */
+    bool lessThan(const QVariant& left, const QVariant& right) const;
 
     void setSortRole(SortRole role);
     void setSortOrder(SortOrder order);
     void setStringTypeNatural(bool natural);
 
-    Qt::SortOrder           currentSortOrder;
-    Qt::CaseSensitivity     sortCaseSensitivity;
+public:
+
+    /// --- Categories ---
+
+    void setCategorizationMode(CategorizationMode mode);
+    void setCategorizationSortOrder(SortOrder order);
+
+
+    bool isCategorized() const
+    {
+        return (categorizationMode >= CategoryByAlbum);
+    }
+
+public:
+
+    /// --- Image Sorting ---
 
     int compare(const ItemInfo& left, const ItemInfo& right, SortRole sortRole) const;
-
-    // --- ---
 
     static Qt::SortOrder defaultSortOrderForCategorizationMode(CategorizationMode mode);
     static Qt::SortOrder defaultSortOrderForSortRole(SortRole role);
 
+public:
+
     /// --- Change notification ---
 
-    /** Returns database fields a change in which would affect the current sorting.
+    /**
+     * Returns database fields a change in which would affect the current sorting.
      */
     DatabaseFields::Set watchFlags() const;
 
+public:
+
     /// --- Utilities ---
 
-    /** Returns a < b if sortOrder is Ascending, or b < a if order is descending.
+    /**
+     * Returns a < b if sortOrder is Ascending, or b < a if order is descending.
      */
     template <typename T>
     static inline bool lessThanByOrder(const T& a, const T& b, Qt::SortOrder sortOrder)
     {
         if (sortOrder == Qt::AscendingOrder)
         {
-            return a < b;
+            return (a < b);
         }
 
-        return b < a;
+        return (b < a);
     }
 
-    /** Returns the usual compare result of -1, 0, or 1 for lessThan, equals and greaterThan.
+    /**
+     * Returns the usual compare result of -1, 0, or 1 for lessThan, equals and greaterThan.
      */
     template <typename T>
     static inline int compareValue(const T& a, const T& b)
@@ -181,20 +186,21 @@ public:
             return 1;
         }
 
-        return -1;
+        return (-1);
     }
 
-    /** Takes a typical result from a compare method (0 is equal, -1 is less than, 1 is greater than)
-     *  and applies the given sort order to it.
+    /**
+     * Takes a typical result from a compare method (0 is equal, -1 is less than, 1 is greater than)
+     * and applies the given sort order to it.
      */
-    static inline int compareByOrder(int compareResult,  Qt::SortOrder sortOrder)
+    static inline int compareByOrder(int compareResult, Qt::SortOrder sortOrder)
     {
         if (sortOrder == Qt::AscendingOrder)
         {
             return compareResult;
         }
 
-        return - compareResult;
+        return (- compareResult);
     }
 
     template <typename T>
@@ -203,9 +209,12 @@ public:
         return compareByOrder(compareValue(a, b), sortOrder);
     }
 
-    /** Compares the two string by natural comparison and adheres to given sort order
+    /**
+     * Compares the two string by natural comparison and adheres to given sort order
      */
-    static inline int naturalCompare(const QString& a, const QString& b, Qt::SortOrder sortOrder,
+    static inline int naturalCompare(const QString& a,
+                                     const QString& b,
+                                     Qt::SortOrder sortOrder,
                                      Qt::CaseSensitivity caseSensitive = Qt::CaseSensitive,
                                      bool natural = true)
     {
@@ -220,8 +229,24 @@ public:
             return collator.compare(a, b);
         }
 
-        return - collator.compare(a, b);
+        return (- collator.compare(a, b));
     }
+
+public:
+
+    CategorizationMode   categorizationMode;
+    SortOrder            categorizationSortOrder;
+
+    /// Only Ascending or Descending, never DefaultOrder
+    Qt::SortOrder        currentCategorizationSortOrder;
+    Qt::CaseSensitivity  categorizationCaseSensitivity;
+
+    SortRole             sortRole;
+    SortOrder            sortOrder;
+    bool                 strTypeNatural;
+
+    Qt::SortOrder        currentSortOrder;
+    Qt::CaseSensitivity  sortCaseSensitivity;
 };
 
 } // namespace Digikam

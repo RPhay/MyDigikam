@@ -214,7 +214,7 @@ public:
      *  To find out if an image tag change affects filtering, test isFilteringByTags().
      *  The text filter will also be affected by changes in tags and album names.
      */
-    DatabaseFields::Set watchFlags() const;
+    DatabaseFields::Set watchFlags()                        const;
 
 private:
 
@@ -275,10 +275,10 @@ public:
     /**
      *  Returns true if the given ItemInfo matches the filter criteria.
      */
-    bool matches(const ItemInfo& info) const;
+    bool matches(const ItemInfo& info)                      const;
 
-    bool isHiddenBySettings(const ItemInfo& info)   const;
-    bool isExemptedBySettings(const ItemInfo& info) const;
+    bool isHiddenBySettings(const ItemInfo& info)           const;
+    bool isExemptedBySettings(const ItemInfo& info)         const;
 
     /// --- Tags filter ---
 
@@ -290,10 +290,10 @@ public:
     void setExceptionList(const QList<qlonglong>& idlist, const QString& id);
 
     /// Returns if images will be filtered by these criteria at all
-    bool isFiltering() const;
+    bool isFiltering()                                      const;
 
     /// Returns if the tag is a filter criteria
-    bool isFilteringByTags() const;
+    bool isFilteringByTags()                                const;
 
     /// DatabaseFields::Set watchFlags() const: Would return 0
 
@@ -313,29 +313,29 @@ public:
 
     explicit GroupItemFilterSettings();
 
-    bool operator==(const GroupItemFilterSettings& other) const;
+    bool operator==(const GroupItemFilterSettings& other)   const;
 
     /**
      *  Returns true if the given ItemInfo matches the filter criteria.
      */
-    bool matches(const ItemInfo& info) const;
+    bool matches(const ItemInfo& info)                      const;
 
     /**
      * Open or close a group.
      */
     void setOpen(qlonglong group, bool open);
-    bool isOpen(qlonglong group) const;
+    bool isOpen(qlonglong group)                            const;
 
     /**
      * Open all groups
      */
     void setAllOpen(bool open);
-    bool isAllOpen() const;
+    bool isAllOpen()                                        const;
 
     /// Returns if images will be filtered by these criteria at all
-    bool isFiltering() const;
+    bool isFiltering()                                      const;
 
-    DatabaseFields::Set watchFlags() const;
+    DatabaseFields::Set watchFlags()                        const;
 
 protected:
 

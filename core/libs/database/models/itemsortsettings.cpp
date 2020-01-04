@@ -38,27 +38,28 @@ namespace Digikam
 {
 
 ItemSortSettings::ItemSortSettings()
+    : categorizationMode(NoCategories),
+      categorizationSortOrder(DefaultOrder),
+      currentCategorizationSortOrder(Qt::AscendingOrder),
+      categorizationCaseSensitivity(Qt::CaseSensitive),
+      sortRole(SortByFileName),
+      sortOrder(DefaultOrder),
+      strTypeNatural(true),
+      currentSortOrder(Qt::AscendingOrder),
+      sortCaseSensitivity(Qt::CaseSensitive)
 {
-    categorizationMode             = NoCategories;
-    categorizationSortOrder        = DefaultOrder;
-    categorizationCaseSensitivity  = Qt::CaseSensitive;
-    sortRole                       = SortByFileName;
-    sortOrder                      = DefaultOrder;
-    strTypeNatural                 = true;
-    sortCaseSensitivity            = Qt::CaseSensitive;
-    currentCategorizationSortOrder = Qt::AscendingOrder;
-    currentSortOrder               = Qt::AscendingOrder;
 }
 
 bool ItemSortSettings::operator==(const ItemSortSettings& other) const
 {
-    return
-        categorizationMode            == other.categorizationMode            &&
-        categorizationSortOrder       == other.categorizationSortOrder       &&
-        categorizationCaseSensitivity == other.categorizationCaseSensitivity &&
-        sortRole                      == other.sortRole                      &&
-        sortOrder                     == other.sortOrder                     &&
-        sortCaseSensitivity           == other.sortCaseSensitivity;
+    return (
+            (categorizationMode            == other.categorizationMode)            &&
+            (categorizationSortOrder       == other.categorizationSortOrder)       &&
+            (categorizationCaseSensitivity == other.categorizationCaseSensitivity) &&
+            (sortRole                      == other.sortRole)                      &&
+            (sortOrder                     == other.sortOrder)                     &&
+            (sortCaseSensitivity           == other.sortCaseSensitivity)
+           );
 }
 
 void ItemSortSettings::setCategorizationMode(CategorizationMode mode)
@@ -139,12 +140,14 @@ Qt::SortOrder ItemSortSettings::defaultSortOrderForSortRole(SortRole role)
         case SortByManualOrderAndName:
         case SortByManualOrderAndDate:
             return Qt::AscendingOrder;
+
         case SortByRating:
         case SortByFileSize:
         case SortByImageSize:
         case SortBySimilarity:
         case SortByAspectRatio:
             return Qt::DescendingOrder;
+
         default:
             return Qt::AscendingOrder;
     }
@@ -157,13 +160,14 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
         case NoCategories:
         case OneCategory:
             return 0;
+
         case CategoryByAlbum:
         {
-            int leftAlbum = left.albumId();
+            int leftAlbum  = left.albumId();
             int rightAlbum = right.albumId();
 
             // return comparison result
-            if (leftAlbum == rightAlbum)
+            if      (leftAlbum == rightAlbum)
             {
                 return 0;
             }
@@ -177,18 +181,21 @@ int ItemSortSettings::compareCategories(const ItemInfo& left, const ItemInfo& ri
                 return 1;
             }
         }
+
         case CategoryByFormat:
         {
             return naturalCompare(left.format(), right.format(),
                                   currentCategorizationSortOrder,
                                   categorizationCaseSensitivity, strTypeNatural);
         }
+
         case CategoryByMonth:
         {
             return compareByOrder(left.dateTime().date(),
                                   right.dateTime().date(),
                                   currentCategorizationSortOrder);
         }
+
         default:
             return 0;
     }
@@ -200,7 +207,7 @@ bool ItemSortSettings::lessThan(const ItemInfo& left, const ItemInfo& right) con
 
     if (result != 0)
     {
-        return result < 0;
+        return (result < 0);
     }
 
     // are they identical?
@@ -212,42 +219,42 @@ bool ItemSortSettings::lessThan(const ItemInfo& left, const ItemInfo& right) con
     // If left and right equal for first sort order, use a hierarchy of all sort orders
     if ((result = compare(left, right, SortByFileName)) != 0)
     {
-        return result < 0;
+        return (result < 0);
     }
 
     if ((result = compare(left, right, SortByCreationDate)) != 0)
     {
-        return result < 0;
+        return (result < 0);
     }
 
     if ((result = compare(left, right, SortByModificationDate)) != 0)
     {
-        return result < 0;
+        return (result < 0);
     }
 
     if ((result = compare(left, right, SortByFilePath)) != 0)
     {
-        return result < 0;
+        return (result < 0);
     }
 
     if ((result = compare(left, right, SortByFileSize)) != 0)
     {
-        return result < 0;
+        return (result < 0);
     }
 
     if ((result = compare(left, right, SortBySimilarity)) != 0)
     {
-        return result < 0;
+        return (result < 0);
     }
 
     if ((result = compare(left, right, SortByManualOrderAndName)) != 0)
     {
-        return result < 0;
+        return (result < 0);
     }
 
     if ((result = compare(left, right, SortByManualOrderAndDate)) != 0)
     {
-        return result < 0;
+        return (result < 0);
     }
 
     return false;
@@ -267,18 +274,24 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
             return naturalCompare(left.name(), right.name(),
                                   currentSortOrder, sortCaseSensitivity, strTypeNatural);
         }
+
         case SortByFilePath:
             return naturalCompare(left.filePath(), right.filePath(),
                                   currentSortOrder, sortCaseSensitivity, strTypeNatural);
+
         case SortByFileSize:
             return compareByOrder(left.fileSize(), right.fileSize(), currentSortOrder);
+
         case SortByCreationDate:
             return compareByOrder(left.dateTime(), right.dateTime(), currentSortOrder);
+
         case SortByModificationDate:
             return compareByOrder(left.modDateTime(), right.modDateTime(), currentSortOrder);
+
         case SortByRating:
             // I have the feeling that inverting the sort order for rating is the natural order
             return - compareByOrder(left.rating(), right.rating(), currentSortOrder);
+
         case SortByImageSize:
         {
             QSize leftSize  = left.dimensions();
@@ -287,6 +300,7 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
             int rightPixels = rightSize.width() * rightSize.height();
             return compareByOrder(leftPixels, rightPixels, currentSortOrder);
         }
+
         case SortByAspectRatio:
         {
             QSize leftSize  = left.dimensions();
@@ -295,15 +309,17 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
             int rightAR     = (double(rightSize.width()) / double(rightSize.height())) * 1000000;
             return compareByOrder(leftAR, rightAR, currentSortOrder);
         }
+
         case SortBySimilarity:
         {
             qlonglong leftReferenceImageId  = left.currentReferenceImage();
             qlonglong rightReferenceImageId = right.currentReferenceImage();
             // make sure that the original image has always the highest similarity.
-            double leftSimilarity  = left.id()  == leftReferenceImageId  ? 1.1 : left.currentSimilarity();
-            double rightSimilarity = right.id() == rightReferenceImageId ? 1.1 : right.currentSimilarity();
+            double leftSimilarity           = left.id()  == leftReferenceImageId  ? 1.1 : left.currentSimilarity();
+            double rightSimilarity          = right.id() == rightReferenceImageId ? 1.1 : right.currentSimilarity();
             return compareByOrder(leftSimilarity, rightSimilarity, currentSortOrder);
         }
+
         case SortByManualOrderAndName:
         case SortByManualOrderAndDate:
         {
@@ -322,6 +338,7 @@ int ItemSortSettings::compare(const ItemInfo& left, const ItemInfo& right, SortR
             return naturalCompare(left.name(), right.name(),
                                   currentSortOrder, sortCaseSensitivity, strTypeNatural);
         }
+
         default:
             return 1;
     }
@@ -338,20 +355,28 @@ bool ItemSortSettings::lessThan(const QVariant& left, const QVariant& right) con
     {
         case QVariant::Int:
             return compareByOrder(left.toInt(), right.toInt(), currentSortOrder);
+
         case QVariant::UInt:
             return compareByOrder(left.toUInt(), right.toUInt(), currentSortOrder);
+
         case QVariant::LongLong:
             return compareByOrder(left.toLongLong(), right.toLongLong(), currentSortOrder);
+
         case QVariant::ULongLong:
             return compareByOrder(left.toULongLong(), right.toULongLong(), currentSortOrder);
+
         case QVariant::Double:
             return compareByOrder(left.toDouble(), right.toDouble(), currentSortOrder);
+
         case QVariant::Date:
             return compareByOrder(left.toDate(), right.toDate(), currentSortOrder);
+
         case QVariant::DateTime:
             return compareByOrder(left.toDateTime(), right.toDateTime(), currentSortOrder);
+
         case QVariant::Time:
             return compareByOrder(left.toTime(), right.toTime(), currentSortOrder);
+
         case QVariant::Rect:
         case QVariant::RectF:
         {
@@ -361,12 +386,12 @@ bool ItemSortSettings::lessThan(const QVariant& left, const QVariant& right) con
 
             if ((result = compareByOrder(rectLeft.top(), rectRight.top(), currentSortOrder)) != 0)
             {
-                return result < 0;
+                return (result < 0);
             }
 
             if ((result = compareByOrder(rectLeft.left(), rectRight.left(), currentSortOrder)) != 0)
             {
-                return result < 0;
+                return (result < 0);
             }
 
             QSizeF sizeLeft  = rectLeft.size();
@@ -374,13 +399,14 @@ bool ItemSortSettings::lessThan(const QVariant& left, const QVariant& right) con
 
             if ((result = compareByOrder(sizeLeft.width()*sizeLeft.height(), sizeRight.width()*sizeRight.height(), currentSortOrder)) != 0)
             {
-                return result < 0;
+                return (result < 0);
             }
 
 #if __GNUC__ >= 7       // krazy:exclude=cpp
             [[fallthrough]];
 #endif
         }
+
         default:
         {
             return naturalCompare(left.toString(), right.toString(), currentSortOrder, sortCaseSensitivity, strTypeNatural);
@@ -397,31 +423,40 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
         case SortByFileName:
             set |= DatabaseFields::Name;
             break;
+
         case SortByFilePath:
             set |= DatabaseFields::Name;
             break;
+
         case SortByFileSize:
             set |= DatabaseFields::FileSize;
             break;
+
         case SortByModificationDate:
             set |= DatabaseFields::ModificationDate;
             break;
+
         case SortByCreationDate:
             set |= DatabaseFields::CreationDate;
             break;
+
         case SortByRating:
             set |= DatabaseFields::Rating;
             break;
+
         case SortByImageSize:
             set |= DatabaseFields::Width | DatabaseFields::Height;
             break;
+
         case SortByAspectRatio:
             set |= DatabaseFields::Width | DatabaseFields::Height;
             break;
+
         case SortBySimilarity:
             // TODO: Not sure what to do here....
             set |= DatabaseFields::Name;
             break;
+
         case SortByManualOrderAndName:
         case SortByManualOrderAndDate:
             set |= DatabaseFields::ManualOrder;
@@ -433,12 +468,15 @@ DatabaseFields::Set ItemSortSettings::watchFlags() const
         case OneCategory:
         case NoCategories:
             break;
+
         case CategoryByAlbum:
             set |= DatabaseFields::Album;
             break;
+
         case CategoryByFormat:
             set |= DatabaseFields::Format;
             break;
+
         case CategoryByMonth:
             set |= DatabaseFields::CreationDate;
             break;

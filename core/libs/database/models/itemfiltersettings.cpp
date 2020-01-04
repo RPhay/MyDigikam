@@ -48,14 +48,14 @@ namespace Digikam
 {
 
 ItemFilterSettings::ItemFilterSettings()
+    : m_untaggedFilter(false),
+      m_matchingCond(OrCondition),
+      m_ratingFilter(0),
+      m_ratingCond(GreaterEqualCondition),
+      m_isUnratedExcluded(false),
+      m_mimeTypeFilter(MimeFilter::AllFiles),
+      m_geolocationCondition(GeolocationNoFilter)
 {
-    m_untaggedFilter       = false;
-    m_isUnratedExcluded    = false;
-    m_ratingFilter         = 0;
-    m_mimeTypeFilter       = MimeFilter::AllFiles;
-    m_ratingCond           = GreaterEqualCondition;
-    m_matchingCond         = OrCondition;
-    m_geolocationCondition = GeolocationNoFilter;
 }
 
 DatabaseFields::Set ItemFilterSettings::watchFlags() const
@@ -169,7 +169,7 @@ bool ItemFilterSettings::isFilteringByGeolocation() const
 
 bool ItemFilterSettings::isFilteringByRating() const
 {
-    if (m_ratingFilter != 0 || m_ratingCond != GreaterEqualCondition || m_isUnratedExcluded)
+    if ((m_ratingFilter != 0) || (m_ratingCond != GreaterEqualCondition) || m_isUnratedExcluded)
     {
         return true;
     }
@@ -184,32 +184,32 @@ bool ItemFilterSettings::isFilteringInternally() const
 
 bool ItemFilterSettings::isFiltering() const
 {
-    return isFilteringByDay()         ||
-           isFilteringByTags()        ||
-           isFilteringByText()        ||
-           isFilteringByRating()      ||
-           isFilteringByTypeMime()    ||
-           isFilteringByColorLabels() ||
-           isFilteringByPickLabels()  ||
-           isFilteringByGeolocation();
+    return (isFilteringByDay()         ||
+            isFilteringByTags()        ||
+            isFilteringByText()        ||
+            isFilteringByRating()      ||
+            isFilteringByTypeMime()    ||
+            isFilteringByColorLabels() ||
+            isFilteringByPickLabels()  ||
+            isFilteringByGeolocation());
 }
 
 void ItemFilterSettings::setDayFilter(const QList<QDateTime>& days)
 {
     m_dayFilter.clear();
 
-    for (QList<QDateTime>::const_iterator it = days.constBegin(); it != days.constEnd(); ++it)
+    for (QList<QDateTime>::const_iterator it = days.constBegin() ; it != days.constEnd() ; ++it)
     {
         m_dayFilter.insert(*it, true);
     }
 }
 
 void ItemFilterSettings::setTagFilter(const QList<int>& includedTags,
-                                       const QList<int>& excludedTags,
-                                       MatchingCondition matchingCondition,
-                                       bool showUnTagged,
-                                       const QList<int>& clTagIds,
-                                       const QList<int>& plTagIds)
+                                      const QList<int>& excludedTags,
+                                      MatchingCondition matchingCondition,
+                                      bool showUnTagged,
+                                      const QList<int>& clTagIds,
+                                      const QList<int>& plTagIds)
 {
     m_includeTagFilter    = includedTags;
     m_excludeTagFilter    = excludedTags;
@@ -285,6 +285,7 @@ bool containsAnyOf(const ContainerA& listA, const ContainerB& listB)
             return true;
         }
     }
+
     return false;
 }
 
@@ -298,6 +299,7 @@ bool containsNoneOfExcept(const ContainerA& list, const ContainerB& noneOfList, 
             return false;
         }
     }
+
     return true;
 }
 
@@ -340,7 +342,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             // m_untaggedFilter and non-empty tag filter, combined with AND, is logically no match
             if (!m_untaggedFilter)
             {
-                for (it = m_includeTagFilter.begin(); it != m_includeTagFilter.end(); ++it)
+                for (it = m_includeTagFilter.begin() ; it != m_includeTagFilter.end() ; ++it)
                 {
                     if (!tagIds.contains(*it))
                     {
@@ -491,6 +493,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
             break;
         }
+
         case MimeFilter::JPGFiles:
         {
             if (info.format() != QLatin1String("JPG"))
@@ -500,6 +503,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
             break;
         }
+
         case MimeFilter::PNGFiles:
         {
             if (info.format() != QLatin1String("PNG"))
@@ -509,6 +513,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
             break;
         }
+
         case MimeFilter::HEIFFiles:
         {
             if (info.format() != QLatin1String("HEIF"))
@@ -518,6 +523,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
             break;
         }
+
         case MimeFilter::PGFFiles:
         {
             if (info.format() != QLatin1String("PGF"))
@@ -527,6 +533,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
             break;
         }
+
         case MimeFilter::TIFFiles:
         {
             if (info.format() != QLatin1String("TIFF"))
@@ -536,6 +543,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
             break;
         }
+
         case MimeFilter::DNGFiles:
         {
             if (info.format() != QLatin1String("RAW-DNG"))
@@ -545,6 +553,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
             break;
         }
+
         case MimeFilter::NoRAWFiles:
         {
             if (info.format().startsWith(QLatin1String("RAW")))
@@ -554,6 +563,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
             break;
         }
+
         case MimeFilter::RAWFiles:
         {
             if (!info.format().startsWith(QLatin1String("RAW")))
@@ -563,6 +573,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
             break;
         }
+
         case MimeFilter::MoviesFiles:
         {
             if (info.category() != DatabaseItem::Video)
@@ -572,6 +583,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
             break;
         }
+
         case MimeFilter::AudioFiles:
         {
             if (info.category() != DatabaseItem::Audio)
@@ -581,9 +593,11 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
             break;
         }
+
         case MimeFilter::RasterGraphics:
         {
-            if (info.format() != QLatin1String("PSD") &&         // Adobe Photoshop Document
+            if (
+                info.format() != QLatin1String("PSD") &&         // Adobe Photoshop Document
                 info.format() != QLatin1String("PSB") &&         // Adobe Photoshop Big
                 info.format() != QLatin1String("XCF") &&         // Gimp
                 info.format() != QLatin1String("KRA") &&         // Krita
@@ -595,6 +609,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
 
             break;
         }
+
         default:
         {
             // All Files: do nothing...
@@ -629,21 +644,21 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
         bool textMatch = false;
 
         // Image name
-        if (m_textFilterSettings.textFields & SearchTextFilterSettings::ImageName &&
+        if ((m_textFilterSettings.textFields & SearchTextFilterSettings::ImageName) &&
             info.name().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
         {
             textMatch = true;
         }
 
         // Image title
-        if (m_textFilterSettings.textFields & SearchTextFilterSettings::ImageTitle &&
+        if ((m_textFilterSettings.textFields & SearchTextFilterSettings::ImageTitle) &&
             info.title().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
         {
             textMatch = true;
         }
 
         // Image comment
-        if (m_textFilterSettings.textFields & SearchTextFilterSettings::ImageComment &&
+        if ((m_textFilterSettings.textFields & SearchTextFilterSettings::ImageComment) &&
             info.comment().contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
         {
             textMatch = true;
@@ -652,7 +667,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
         // Tag names
         foreach (int id, info.tagIds())
         {
-            if (m_textFilterSettings.textFields & SearchTextFilterSettings::TagName &&
+            if ((m_textFilterSettings.textFields & SearchTextFilterSettings::TagName) &&
                 m_tagNameHash.value(id).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
             {
                 textMatch = true;
@@ -660,7 +675,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
         }
 
         // Album names
-        if (m_textFilterSettings.textFields & SearchTextFilterSettings::AlbumName &&
+        if ((m_textFilterSettings.textFields & SearchTextFilterSettings::AlbumName) &&
             m_albumNameHash.value(info.albumId()).contains(m_textFilterSettings.text, m_textFilterSettings.caseSensitive))
         {
             textMatch = true;
@@ -672,7 +687,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             QRegExp expRatio (QLatin1String("^\\d+:\\d+$"));
             QRegExp expFloat (QLatin1String("^\\d+(.\\d+)?$"));
 
-            if (expRatio.indexIn(m_textFilterSettings.text) > -1 && m_textFilterSettings.text.contains(QRegExp(QLatin1String(":\\d+"))))
+            if ((expRatio.indexIn(m_textFilterSettings.text) > -1) && m_textFilterSettings.text.contains(QRegExp(QLatin1String(":\\d+"))))
             {
                 QString trimmedTextFilterSettingsText = m_textFilterSettings.text;
                 QStringList numberStringList          = trimmedTextFilterSettingsText.split(QLatin1Char(':'), QString::SkipEmptyParts);
@@ -687,7 +702,9 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
                     if (canConverseNum && canConverseDenom)
                     {
                         if (fabs(info.aspectRatio() - (double)num / denom) < 0.1)
+                        {
                             textMatch = true;
+                        }
                     }
                 }
             }
@@ -700,7 +717,9 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
                 if (canConverse)
                 {
                     if (fabs(info.aspectRatio() - ratio) < 0.1)
+                    {
                         textMatch = true;
+                    }
                 }
             }
         }
@@ -714,15 +733,18 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             int pixelSize = size.height()*size.width();
             QString text  = m_textFilterSettings.text;
 
-            if (text.contains(QRegExp(QLatin1String("^>\\d{1,15}$"))) && pixelSize > (text.remove(0, 1)).toInt())
+            if      (text.contains(QRegExp(QLatin1String("^>\\d{1,15}$"))) && 
+                (pixelSize > (text.remove(0, 1)).toInt()))
             {
                 textMatch = true;
             }
-            else if (text.contains(QRegExp(QLatin1String("^<\\d{1,15}$"))) && pixelSize < (text.remove(0, 1)).toInt())
+            else if (text.contains(QRegExp(QLatin1String("^<\\d{1,15}$"))) &&
+                     (pixelSize < (text.remove(0, 1)).toInt()))
             {
                 textMatch = true;
             }
-            else if (text.contains(QRegExp(QLatin1String("^\\d+$"))) && pixelSize == text.toInt())
+            else if (text.contains(QRegExp(QLatin1String("^\\d+$"))) &&
+                     (pixelSize == text.toInt()))
             {
                 textMatch = true;
             }
@@ -743,7 +765,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
     {
         const QUrl url = info.fileUrl();
 
-        for (QHash<QString, QList<QUrl>>::const_iterator it = m_urlWhitelists.constBegin();
+        for (QHash<QString, QList<QUrl>>::const_iterator it = m_urlWhitelists.constBegin() ;
              it != m_urlWhitelists.constEnd() ; ++it)
         {
             match = it->contains(url);
@@ -759,7 +781,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
     {
         const qlonglong id = info.id();
 
-        for (QHash<QString, QList<qlonglong> >::const_iterator it = m_idWhitelists.constBegin();
+        for (QHash<QString, QList<qlonglong> >::const_iterator it = m_idWhitelists.constBegin() ;
              it != m_idWhitelists.constEnd() ; ++it)
         {
             match = it->contains(id);
@@ -789,8 +811,8 @@ VersionItemFilterSettings::VersionItemFilterSettings(const VersionManagerSetting
 
 bool VersionItemFilterSettings::operator==(const VersionItemFilterSettings& other) const
 {
-    return m_excludeTagFilter == other.m_excludeTagFilter &&
-           m_exceptionLists   == other.m_exceptionLists;
+    return ((m_excludeTagFilter == other.m_excludeTagFilter) &&
+            (m_exceptionLists   == other.m_exceptionLists));
 }
 
 bool VersionItemFilterSettings::matches(const ItemInfo& info) const
@@ -802,7 +824,7 @@ bool VersionItemFilterSettings::matches(const ItemInfo& info) const
 
     const qlonglong id = info.id();
 
-    for (QHash<QString, QList<qlonglong> >::const_iterator it = m_exceptionLists.constBegin();
+    for (QHash<QString, QList<qlonglong> >::const_iterator it = m_exceptionLists.constBegin() ;
          it != m_exceptionLists.constEnd() ; ++it)
     {
         if (it->contains(id))
@@ -816,7 +838,7 @@ bool VersionItemFilterSettings::matches(const ItemInfo& info) const
 
     if (!tagIds.contains(m_includeTagFilter))
     {
-        for (QList<int>::const_iterator it = m_excludeTagFilter.begin();
+        for (QList<int>::const_iterator it = m_excludeTagFilter.begin() ;
              it != m_excludeTagFilter.end() ; ++it)
         {
             if (tagIds.contains(*it))
@@ -912,8 +934,8 @@ GroupItemFilterSettings::GroupItemFilterSettings()
 
 bool GroupItemFilterSettings::operator==(const GroupItemFilterSettings& other) const
 {
-    return (m_allOpen    == other.m_allOpen &&
-            m_openGroups == other.m_openGroups);
+    return ((m_allOpen    == other.m_allOpen) &&
+            (m_openGroups == other.m_openGroups));
 }
 
 bool GroupItemFilterSettings::matches(const ItemInfo& info) const
