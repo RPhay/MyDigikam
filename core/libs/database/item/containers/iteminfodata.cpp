@@ -56,52 +56,52 @@ ItemInfoCache* ItemInfoStatic::cache()
 // ---------------------------------------------------------------
 
 ItemInfoData::ItemInfoData()
+    : id(-1),
+      currentReferenceImage(-1),
+      albumId(-1),
+      albumRootId(-1),
+
+      pickLabel(NoPickLabel),
+      colorLabel(NoColorLabel),
+      rating(-1),
+      category(DatabaseItem::UndefinedCategory),
+      fileSize(0),
+      manualOrder(0),
+
+      longitude(0),
+      latitude(0),
+      altitude(0),
+      currentSimilarity(0.0),
+
+      groupImage(-1),
+
+      hasCoordinates(false),
+      hasAltitude(false),
+
+      defaultTitleCached(false),
+      defaultCommentCached(false),
+      pickLabelCached(false),
+      colorLabelCached(false),
+      ratingCached(false),
+      categoryCached(false),
+      formatCached(false),
+      creationDateCached(false),
+      modificationDateCached(false),
+      fileSizeCached(false),
+      manualOrderCached(false),
+      uniqueHashCached(false),
+      imageSizeCached(false),
+      tagIdsCached(false),
+      positionsCached(false),
+      groupImageCached(false),
+
+      invalid(false),
+
+      hasVideoMetadata(true),
+      hasImageMetadata(true),
+      videoMetadataCached(DatabaseFields::VideoMetadataNone),
+      imageMetadataCached(DatabaseFields::ImageMetadataNone)
 {
-    id                     = -1;
-    currentReferenceImage  = -1;
-    albumId                = -1;
-    albumRootId            = -1;
-
-    pickLabel              = NoPickLabel;
-    colorLabel             = NoColorLabel;
-    rating                 = -1;
-    category               = DatabaseItem::UndefinedCategory;
-    fileSize               = 0;
-    manualOrder            = 0;
-
-    longitude              = 0;
-    latitude               = 0;
-    altitude               = 0;
-    currentSimilarity      = 0.0;
-
-    hasCoordinates         = false;
-    hasAltitude            = false;
-
-    groupImage             = -1;
-
-    defaultTitleCached     = false;
-    defaultCommentCached   = false;
-    pickLabelCached        = false;
-    colorLabelCached       = false;
-    ratingCached           = false;
-    categoryCached         = false;
-    formatCached           = false;
-    creationDateCached     = false;
-    modificationDateCached = false;
-    fileSizeCached         = false;
-    manualOrderCached      = false;
-    imageSizeCached        = false;
-    tagIdsCached           = false;
-    positionsCached        = false;
-    groupImageCached       = false;
-    uniqueHashCached       = false;
-
-    invalid                = false;
-
-    videoMetadataCached    = DatabaseFields::VideoMetadataNone;
-    imageMetadataCached    = DatabaseFields::ImageMetadataNone;
-    hasVideoMetadata       = true;
-    hasImageMetadata       = true;
 }
 
 ItemInfoData::~ItemInfoData()
