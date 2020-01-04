@@ -112,120 +112,117 @@ public:
 
     ItemInfo& operator=(const ItemInfo& info);
 
-    bool operator==(const ItemInfo& info) const;
-    bool operator!=(const ItemInfo& info) const
-    {
-        return !operator==(info);
-    }
-    bool operator<(const ItemInfo& info)  const;
-    uint hash()                            const;
+    bool operator==(const ItemInfo& info)                                               const;
+    bool operator!=(const ItemInfo& info)                                               const;
+    bool operator<(const ItemInfo& info)                                                const;
+    uint hash()                                                                         const;
 
     /**
      * Returns if this objects contains valid data
      */
-    bool isNull() const;
+    bool isNull()                                                                       const;
 
     /**
      * @return the name of the image
      */
-    QString name() const;
+    QString name()                                                                      const;
 
     /**
      * @return the datetime of the image
      */
-    QDateTime dateTime() const;
+    QDateTime dateTime()                                                                const;
 
     /**
      * @return the modification datetime of the image
      */
-    QDateTime modDateTime() const;
+    QDateTime modDateTime()                                                             const;
 
     /**
      * @return the filesize of the image
      */
-    qlonglong fileSize() const;
+    qlonglong fileSize()                                                                const;
 
     /**
      * @return the unique hash of the image.
      */
-    QString uniqueHash() const;
+    QString uniqueHash()                                                                const;
 
     /**
      * @return the dimensions of the image (valid only if dimensions
      * have been requested)
      */
-    QSize dimensions() const;
+    QSize dimensions()                                                                  const;
 
     /**
      * Returns the file:// url.
      * This is equivalent to QUrl::fromLocalFile(filePath())
      */
-    QUrl fileUrl() const;
+    QUrl fileUrl()                                                                      const;
 
     /**
      * Returns the file path to the image
      */
-    QString filePath() const;
+    QString filePath()                                                                  const;
 
     /**
      * @return the unique image id for this item
      */
-    qlonglong id() const;
+    qlonglong id()                                                                      const;
 
     /**
      * @return the id of the PAlbum to which this item belongs
      */
-    int albumId() const;
+    int albumId()                                                                       const;
 
     /**
      * The album root id
      */
-    int albumRootId() const;
+    int albumRootId()                                                                   const;
 
     /**
      * @return the default title for this item
      */
-    QString title() const;
+    QString title()                                                                     const;
 
     /**
      * @return the default comment for this item
      */
-    QString comment() const;
+    QString comment()                                                                   const;
 
     /**
      * @return the id of the Aspect Ratio for this item
      */
-    double aspectRatio() const;
+    double aspectRatio()                                                                const;
 
     /**
      * Returns the Pick Label Id (see PickLabel values in globals.h)
      */
-    int pickLabel() const;
+    int pickLabel()                                                                     const;
 
     /**
      * Returns the Color Label Id (see ColorLabel values in globals.h)
      */
-    int colorLabel() const;
+    int colorLabel()                                                                    const;
 
     /**
      * Returns the rating
      */
-    int rating() const;
+    int rating()                                                                        const;
 
     /**
      * Returns the manual sort order
      */
-    qlonglong manualOrder() const;
+    qlonglong manualOrder()                                                             const;
 
     /**
      * Returns the category of the item: Image, Audio, Video
      */
-    DatabaseItem::Category category() const;
+    DatabaseItem::Category category()                                                   const;
 
     /** Returns the image format / mimetype as a standardized
      *  string (see project/documents/DBSCHEMA.ODS).
      */
-    QString format() const;
+    QString format()                                                                    const;
 
     /**
      * @return a list of IDs of tags assigned to this item
@@ -233,23 +230,23 @@ public:
      * @see tagPaths
      * @see Album::id()
      */
-    QList<int> tagIds() const;
+    QList<int> tagIds()                                                                 const;
 
     /**
      * Returns true if the image is marked as visible in the database.
      */
-    bool isVisible() const;
+    bool isVisible()                                                                    const;
 
     /**
      * Returns true if the corresponding file was not deleted.
      */
-    bool isRemoved() const;
+    bool isRemoved()                                                                    const;
 
     /**
      * Returns the orientation of the image,
      * (MetaEngine::ImageOrientation, EXIF standard)
      */
-    int orientation() const;
+    int orientation()                                                                   const;
 
     /**
      * Retrieve the ItemComments object for this item.
@@ -258,44 +255,44 @@ public:
      * You need to hold CoreDbAccess to ensure the validity.
      * For simple, cached read access see comment().
      */
-    ItemComments imageComments(CoreDbAccess& access) const;
+    ItemComments imageComments(CoreDbAccess& access)                                    const;
 
     /**
      * Retrieve the ItemCopyright object for this item.
      * This object allows full read and write access to all copyright
      * values.
      */
-    ItemCopyright imageCopyright() const;
+    ItemCopyright imageCopyright()                                                      const;
 
     /**
      * Retrieve the ItemExtendedProperties object for this item.
      * This object allows full read and write access to all extended properties
      * values.
      */
-    ItemExtendedProperties imageExtendedProperties() const;
+    ItemExtendedProperties imageExtendedProperties()                                    const;
 
     /**
      * Retrieve the ItemPosition object for this item.
      */
-    ItemPosition imagePosition() const;
+    ItemPosition imagePosition()                                                        const;
 
     /**
      * Retrieves the coordinates and the altitude.
      * Returns 0 if hasCoordinates(), or hasAltitude resp, is false.
      */
-    double longitudeNumber() const;
-    double latitudeNumber()  const;
-    double altitudeNumber()  const;
-    bool   hasCoordinates()  const;
-    bool   hasAltitude()     const;
+    double longitudeNumber()                                                            const;
+    double latitudeNumber()                                                             const;
+    double altitudeNumber()                                                             const;
+    bool   hasCoordinates()                                                             const;
+    bool   hasAltitude()                                                                const;
 
     /**
      * Retrieve an ItemTagPair object for a single tag, or for all
      * image/tag pairs for which properties are available
      * (not necessarily the assigned tags)
      */
-    ItemTagPair imageTagPair(int tagId)         const;
-    QList<ItemTagPair> availableItemTagPairs() const;
+    ItemTagPair imageTagPair(int tagId)                                                 const;
+    QList<ItemTagPair> availableItemTagPairs()                                          const;
 
     /**
      * Retrieves and sets the image history from the database.
@@ -304,37 +301,37 @@ public:
      * itself.
      *
      */
-    DImageHistory imageHistory() const;
+    DImageHistory imageHistory()                                                        const;
     void setItemHistory(const DImageHistory& history);
-    bool hasImageHistory()       const;
+    bool hasImageHistory()                                                              const;
 
     /**
      * Retrieves and sets this' images UUID
      */
-    QString uuid() const;
+    QString uuid()                                                                      const;
     void setUuid(const QString& uuid);
 
     /**
      * Constructs a HistoryImageId with all available information for this image.
      */
-    HistoryImageId historyImageId() const;
+    HistoryImageId historyImageId()                                                     const;
 
     /**
      * Retrieve information about images from which this image
      * is derived (ancestorImages) and images that have been derived
      * from this images (derivedImages).
      */
-    bool hasDerivedImages()           const;
-    bool hasAncestorImages()          const;
+    bool hasDerivedImages()                                                             const;
+    bool hasAncestorImages()                                                            const;
 
-    QList<ItemInfo> derivedImages()  const;
-    QList<ItemInfo> ancestorImages() const;
+    QList<ItemInfo> derivedImages()                                                     const;
+    QList<ItemInfo> ancestorImages()                                                    const;
 
     /**
      * Returns the cloud of all directly or indirectly related images,
      * derived images or ancestors, in from of "a derived from b" pairs.
      */
-    QList<QPair<qlonglong, qlonglong> > relationCloud() const;
+    QList<QPair<qlonglong, qlonglong> > relationCloud()                                 const;
 
     /**
      * Add a relation to the database:
@@ -345,26 +342,26 @@ public:
     /**
      * The image is grouped in the group of another (leading) image.
      */
-    bool isGrouped() const;
+    bool isGrouped()                                                                    const;
     /**
      * The image is the leading image of a group,
      * there are other images grouped behind this one.
      */
-    bool hasGroupedImages()      const;
-    int  numberOfGroupedImages() const;
+    bool hasGroupedImages()                                                             const;
+    int  numberOfGroupedImages()                                                        const;
 
     /**
      * Returns the leading image of the group.
      * Returns a null image if this image is not grouped (isGrouped())
      */
-    ItemInfo groupImage()   const;
-    qlonglong groupImageId() const;
+    ItemInfo groupImage()                                                               const;
+    qlonglong groupImageId()                                                            const;
 
     /**
      * Returns the list of images grouped behind this image (not including this
      * image itself) and an empty list if there is none.
      */
-    QList<ItemInfo> groupedImages() const;
+    QList<ItemInfo> groupedImages()                                                     const;
 
     /**
      * Group this image behind the given image
@@ -388,11 +385,11 @@ public:
      * in form of numbers and user presentable strings,
      * for certain defined fields of information (see databaseinfocontainers.h)
      */
-    ImageCommonContainer   imageCommonContainer()   const;
-    ImageMetadataContainer imageMetadataContainer() const;
-    VideoMetadataContainer videoMetadataContainer() const;
-    PhotoInfoContainer     photoInfoContainer()     const;
-    VideoInfoContainer     videoInfoContainer()     const;
+    ImageCommonContainer   imageCommonContainer()                                       const;
+    ImageMetadataContainer imageMetadataContainer()                                     const;
+    VideoMetadataContainer videoMetadataContainer()                                     const;
+    PhotoInfoContainer     photoInfoContainer()                                         const;
+    VideoInfoContainer     videoInfoContainer()                                         const;
 
     typedef DatabaseFields::Hash<QVariant> DatabaseFieldsHashRaw;
 
@@ -400,12 +397,12 @@ public:
      * @todo Supports only VideoMetadataField and ImageMetadataField values for now.
      */
     DatabaseFieldsHashRaw getDatabaseFieldsRaw(const DatabaseFields::Set& requestedSet) const;
-    QVariant getDatabaseFieldRaw(const DatabaseFields::Set& requestedField) const;
+    QVariant getDatabaseFieldRaw(const DatabaseFields::Set& requestedField)             const;
 
     /**
      * Retrieve metadata template information about the image.
      */
-    Template metadataTemplate() const;
+    Template metadataTemplate()                                                         const;
 
     /**
      * Set metadata template information (write it to database)
@@ -502,7 +499,7 @@ public:
      * and the location of the image is currently available
      * (information freshly obtained from CollectionManager)
      */
-    bool isLocationAvailable() const;
+    bool isLocationAvailable()                                                          const;
 
     /**
      * Scans the database for items with the given signature.
@@ -512,16 +509,17 @@ public:
     /**
      * Fills a ThumbnailIdentifier / ThumbnailInfo from this ItemInfo
      */
-    ThumbnailIdentifier thumbnailIdentifier() const;
-    ThumbnailInfo thumbnailInfo() const;
+    ThumbnailIdentifier thumbnailIdentifier()                                           const;
+    ThumbnailInfo thumbnailInfo()                                                       const;
     static ThumbnailIdentifier thumbnailIdentifier(qlonglong id);
 
-    double similarityTo(const qlonglong imageId) const;
-    double currentSimilarity() const;
+    double similarityTo(const qlonglong imageId)                                        const;
+    double currentSimilarity()                                                          const;
+
     /**
      * Returns the id of the current fuzzy search reference image.
      */
-    qlonglong currentReferenceImage() const;
+    qlonglong currentReferenceImage()                                                   const;
 
 private:
 

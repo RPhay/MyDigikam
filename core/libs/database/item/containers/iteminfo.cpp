@@ -9,7 +9,7 @@
  * Copyright (C) 2005      by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2007-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2009-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C)      2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -159,7 +159,9 @@ MetadataInfo::Field DatabaseImageMetadataFieldsToMetadataInfoField(const Databas
     return MetadataInfo::Field();
 }
 
-}
+} // namespace
+
+// ---------------------------------------------------------------
 
 ItemInfoStatic* ItemInfoStatic::m_instance = nullptr;
 
@@ -406,13 +408,18 @@ bool ItemInfo::operator==(const ItemInfo& info) const
     if (m_data && info.m_data)
     {
         // not null, compare id
-        return m_data->id == info.m_data->id;
+        return (m_data->id == info.m_data->id);
     }
     else
     {
         // both null?
-        return m_data == info.m_data;
+        return (m_data == info.m_data);
     }
+}
+
+bool ItemInfo::operator!=(const ItemInfo& info) const
+{
+    return !operator==(info);
 }
 
 bool ItemInfo::operator<(const ItemInfo& info) const
@@ -422,7 +429,7 @@ bool ItemInfo::operator<(const ItemInfo& info) const
         if (info.m_data)
             // both not null, sort by id
         {
-            return m_data->id < info.m_data->id;
+            return (m_data->id < info.m_data->id);
         }
         else
             // only other is null, this is greater than
@@ -457,17 +464,17 @@ uint ItemInfo::hash() const
  */
 qlonglong ItemInfo::id() const
 {
-    return m_data ? m_data->id : -1;
+    return (m_data ? m_data->id : -1);
 }
 
 int ItemInfo::albumId() const
 {
-    return m_data ? m_data->albumId : -1;
+    return (m_data ? m_data->albumId : -1);
 }
 
 int ItemInfo::albumRootId() const
 {
-    return m_data ? m_data->albumRootId : -1;
+    return (m_data ? m_data->albumRootId : -1);
 }
 
 QString ItemInfo::name() const
@@ -481,34 +488,34 @@ QString ItemInfo::name() const
     return m_data->name;
 }
 
-#define RETURN_IF_CACHED(x)      \
-    if (m_data->x##Cached)       \
-    {                            \
-        ItemInfoReadLocker lock; \
-        if (m_data->x##Cached)   \
-        {                        \
-            return m_data->x;    \
-        }                        \
+#define RETURN_IF_CACHED(x)                             \
+    if (m_data->x##Cached)                              \
+    {                                                   \
+        ItemInfoReadLocker lock;                        \
+        if (m_data->x##Cached)                          \
+        {                                               \
+            return m_data->x;                           \
+        }                                               \
     }
 
-#define RETURN_ASPECTRATIO_IF_IMAGESIZE_CACHED()       \
-    if (m_data->imageSizeCached)                       \
-    {                                                  \
-        ItemInfoReadLocker lock;                       \
-        if (m_data->imageSizeCached)                   \
-        {                                              \
-            return (double)m_data->imageSize.width()/  \
-                           m_data->imageSize.height(); \
-        }                                              \
+#define RETURN_ASPECTRATIO_IF_IMAGESIZE_CACHED()        \
+    if (m_data->imageSizeCached)                        \
+    {                                                   \
+        ItemInfoReadLocker lock;                        \
+        if (m_data->imageSizeCached)                    \
+        {                                               \
+            return (double)m_data->imageSize.width()/   \
+                           m_data->imageSize.height();  \
+        }                                               \
     }
 
-#define STORE_IN_CACHE_AND_RETURN(x, retrieveMethod) \
-    ItemInfoWriteLocker lock;                        \
-    m_data.data()->x##Cached = true;                 \
-    if (!values.isEmpty())                           \
-    {                                                \
-        m_data.data()->x = retrieveMethod;           \
-    }                                                \
+#define STORE_IN_CACHE_AND_RETURN(x, retrieveMethod)    \
+    ItemInfoWriteLocker lock;                           \
+    m_data.data()->x##Cached = true;                    \
+    if (!values.isEmpty())                              \
+    {                                                   \
+        m_data.data()->x = retrieveMethod;              \
+    }                                                   \
     return m_data->x;
 
 qlonglong ItemInfo::fileSize() const
@@ -558,6 +565,7 @@ QString ItemInfo::title() const
     ItemInfoWriteLocker lock;
     m_data.data()->defaultTitle       = title;
     m_data.data()->defaultTitleCached = true;
+
     return m_data->defaultTitle;
 }
 
@@ -580,6 +588,7 @@ QString ItemInfo::comment() const
     ItemInfoWriteLocker lock;
     m_data.data()->defaultComment       = comment;
     m_data.data()->defaultCommentCached = true;
+
     return m_data->defaultComment;
 }
 
@@ -609,6 +618,7 @@ int ItemInfo::pickLabel() const
     ItemInfoWriteLocker lock;
     m_data.data()->pickLabel       = (pickLabel == -1) ? NoPickLabel : pickLabel;
     m_data.data()->pickLabelCached = true;
+
     return m_data->pickLabel;
 }
 
@@ -626,6 +636,7 @@ int ItemInfo::colorLabel() const
     ItemInfoWriteLocker lock;
     m_data.data()->colorLabel       = (colorLabel == -1) ? NoColorLabel : colorLabel;
     m_data.data()->colorLabelCached = true;
+
     return m_data->colorLabel;
 }
 
@@ -749,6 +760,7 @@ QList<int> ItemInfo::tagIds() const
     ItemInfoWriteLocker lock;
     m_data.data()->tagIds       = ids;
     m_data.data()->tagIdsCached = true;
+
     return ids;
 }
 
@@ -775,7 +787,7 @@ void ItemInfoList::loadTagIds() const
 
     for (int i = 0 ; i < infoList.size() ; ++i)
     {
-        const ItemInfo& info = infoList.at(i);
+        const ItemInfo& info  = infoList.at(i);
         const QList<int>& ids = allTagIds.at(i);
 
         if (!info.m_data)
@@ -824,16 +836,16 @@ QString ItemInfo::filePath() const
         return QString();
     }
 
-    QString album = ItemInfoStatic::cache()->albumRelativePath(m_data->albumId);
+    QString album     = ItemInfoStatic::cache()->albumRelativePath(m_data->albumId);
     ItemInfoReadLocker lock;
 
     if (album == QLatin1String("/"))
     {
-        return albumRoot + album + m_data->name;
+        return (albumRoot + album + m_data->name);
     }
     else
     {
-        return albumRoot + album + QLatin1Char('/') + m_data->name;
+        return (albumRoot + album + QLatin1Char('/') + m_data->name);
     }
 }
 
@@ -848,7 +860,7 @@ bool ItemInfo::isVisible() const
 
     if (!value.isEmpty())
     {
-        return value.first().toInt() == DatabaseItem::Visible;
+        return (value.first().toInt() == DatabaseItem::Visible);
     }
 
     return false;
@@ -978,6 +990,7 @@ qlonglong ItemInfo::groupImageId() const
     ItemInfoWriteLocker lock;
     m_data.data()->groupImage       = groupImage;
     m_data.data()->groupImageCached = true;
+
     return m_data->groupImage;
 }
 
@@ -1020,7 +1033,7 @@ void ItemInfoList::loadGroupImageIds() const
 
 bool ItemInfo::isGrouped() const
 {
-    return groupImageId() != -1;
+    return (groupImageId() != -1);
 }
 
 ItemInfo ItemInfo::groupImage() const
@@ -1047,7 +1060,7 @@ QList<ItemInfo> ItemInfo::groupedImages() const
 
 void ItemInfo::addToGroup(const ItemInfo& givenLeader)
 {
-    if (!m_data || givenLeader.isNull() || givenLeader.id() == m_data->id)
+    if (!m_data || givenLeader.isNull() || (givenLeader.id() == m_data->id))
     {
         return;
     }
@@ -1060,10 +1073,12 @@ void ItemInfo::addToGroup(const ItemInfo& givenLeader)
     QList<qlonglong> alreadySeen;
     alreadySeen << m_data->id;
 
-    for (leader = givenLeader ; leader.isGrouped() ;)
+    for (leader = givenLeader ; leader.isGrouped() ; )
     {
         ItemInfo nextLeader = leader.groupImage();
+
         // is the new leader currently grouped on this image, or do we have a circular grouping?
+
         if (alreadySeen.contains(nextLeader.id()))
         {
             // break loop (special case: remove b->a where we want to add a->b)
@@ -1078,6 +1093,7 @@ void ItemInfo::addToGroup(const ItemInfo& givenLeader)
     }
 
     // Already grouped correctly?
+
     if (groupImageId() == leader.id())
     {
         return;
@@ -1283,6 +1299,7 @@ DImageHistory ItemInfo::imageHistory() const
     }
 
     ImageHistoryEntry entry = CoreDbAccess().db()->getItemHistory(m_data->id);
+
     return DImageHistory::fromXml(entry.history);
 }
 
@@ -1356,6 +1373,7 @@ ImageCommonContainer ItemInfo::imageCommonContainer() const
 
     ImageCommonContainer container;
     ItemScanner::fillCommonContainer(m_data->id, &container);
+
     return container;
 }
 
@@ -1580,6 +1598,7 @@ Template ItemInfo::metadataTemplate() const
     ItemExtendedProperties ep = imageExtendedProperties();
     t.setLocationInfo(ep.location());
     t.setIptcSubjects(ep.subjectCode());
+
     return t;
 }
 
@@ -1614,7 +1633,7 @@ void ItemInfo::removeMetadataTemplate()
 
 void ItemInfo::setPickLabel(int pickId)
 {
-    if (!m_data || pickId < FirstPickLabel || pickId > LastPickLabel)
+    if (!m_data || (pickId < FirstPickLabel) || (pickId > LastPickLabel))
     {
         return;
     }
@@ -1645,7 +1664,7 @@ void ItemInfo::setPickLabel(int pickId)
 
 void ItemInfo::setColorLabel(int colorId)
 {
-    if (!m_data || colorId < FirstColorLabel || colorId > LastColorLabel)
+    if (!m_data || (colorId < FirstColorLabel) || (colorId > LastColorLabel))
     {
         return;
     }
@@ -1756,7 +1775,7 @@ void ItemInfo::setModDateTime(const QDateTime& dateTime)
 
 void ItemInfo::setTag(int tagID)
 {
-    if (!m_data || tagID <= 0)
+    if (!m_data || (tagID <= 0))
     {
         return;
     }
@@ -1807,7 +1826,7 @@ ItemInfo ItemInfo::copyItem(int dstAlbumID, const QString& dstFileName)
     {
         ItemInfoReadLocker lock;
 
-        if (dstAlbumID == m_data->albumId && dstFileName == m_data->name)
+        if ((dstAlbumID == m_data->albumId) && (dstFileName == m_data->name))
         {
             return (*this);
         }
@@ -1881,6 +1900,7 @@ ThumbnailIdentifier ItemInfo::thumbnailIdentifier() const
     ThumbnailIdentifier id;
     id.id       = m_data->id;
     id.filePath = filePath();
+
     return id;
 }
 
@@ -1902,7 +1922,7 @@ ThumbnailInfo ItemInfo::thumbnailInfo() const
     thumbinfo.uniqueHash       = uniqueHash();
     thumbinfo.fileSize         = fileSize();
 
-    if (category() == DatabaseItem::Image)
+    if      (category() == DatabaseItem::Image)
     {
         thumbinfo.mimeType = QLatin1String("image");
     }
@@ -1917,6 +1937,7 @@ ThumbnailInfo ItemInfo::thumbnailInfo() const
 ThumbnailIdentifier ItemInfo::thumbnailIdentifier(qlonglong id)
 {
     ItemInfo info(id);
+
     return info.thumbnailIdentifier();
 }
 
@@ -1936,6 +1957,7 @@ ItemInfo::DatabaseFieldsHashRaw ItemInfo::getDatabaseFieldsRaw(const DatabaseFie
     DatabaseFields::VideoMetadataMinSizeType cachedVideoMetadata;
     DatabaseFields::ImageMetadataMinSizeType cachedImageMetadata;
     ItemInfo::DatabaseFieldsHashRaw cachedHash;
+
     // consolidate to one ReadLocker. In particular, the shallow copy of the QHash must be done under protection
     {
         ItemInfoReadLocker lock;
@@ -1957,7 +1979,7 @@ ItemInfo::DatabaseFieldsHashRaw ItemInfo::getDatabaseFieldsRaw(const DatabaseFie
 
             if (fieldValues.isEmpty())
             {
-                m_data.data()->hasVideoMetadata = false;
+                m_data.data()->hasVideoMetadata    = false;
                 m_data.data()->databaseFieldsHashRaw.removeAllFields(DatabaseFields::VideoMetadataAll);
                 m_data.data()->videoMetadataCached = DatabaseFields::VideoMetadataNone;
             }
@@ -1975,6 +1997,7 @@ ItemInfo::DatabaseFieldsHashRaw ItemInfo::getDatabaseFieldsRaw(const DatabaseFie
 
                 m_data.data()->videoMetadataCached |= missingVideoMetadata;
             }
+
             // update for return value
             cachedHash = m_data->databaseFieldsHashRaw;
         }
@@ -1993,7 +2016,7 @@ ItemInfo::DatabaseFieldsHashRaw ItemInfo::getDatabaseFieldsRaw(const DatabaseFie
 
             if (fieldValues.isEmpty())
             {
-                m_data.data()->hasImageMetadata = false;
+                m_data.data()->hasImageMetadata    = false;
                 m_data.data()->databaseFieldsHashRaw.removeAllFields(DatabaseFields::ImageMetadataAll);
                 m_data.data()->imageMetadataCached = DatabaseFields::ImageMetadataNone;
             }
@@ -2027,7 +2050,7 @@ QVariant ItemInfo::getDatabaseFieldRaw(const DatabaseFields::Set& requestedField
     if (requestedField.hasFieldsFromImageMetadata())
     {
         const DatabaseFields::ImageMetadata requestedFieldFlag = requestedField;
-        const QVariant value = rawHash.value(requestedFieldFlag);
+        const QVariant value                                   = rawHash.value(requestedFieldFlag);
 
         return value;
     }
@@ -2035,7 +2058,7 @@ QVariant ItemInfo::getDatabaseFieldRaw(const DatabaseFields::Set& requestedField
     if (requestedField.hasFieldsFromVideoMetadata())
     {
         const DatabaseFields::VideoMetadata requestedFieldFlag = requestedField;
-        const QVariant value = rawHash.value(requestedFieldFlag);
+        const QVariant value                                   = rawHash.value(requestedFieldFlag);
 
         return value;
     }
