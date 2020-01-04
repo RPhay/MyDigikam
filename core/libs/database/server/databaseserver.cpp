@@ -57,8 +57,8 @@ class Q_DECL_HIDDEN DatabaseServer::Private
 public:
 
     explicit Private()
+        : databaseProcess(nullptr)
     {
-        databaseProcess = nullptr;
     }
 
     DbEngineParameters     params;
@@ -188,7 +188,7 @@ void DatabaseServer::stopDatabaseProcess()
     }
 
     delete d->databaseProcess;
-    d->databaseProcess = nullptr;
+    d->databaseProcess      = nullptr;
 
     databaseServerStateEnum = stopped;
     wait();
@@ -323,7 +323,7 @@ DatabaseServerError DatabaseServer::initMysqlConfig() const
         // so it will get updated too
 
         if ((QFileInfo(d->globalConfig).lastModified() > QFileInfo(actualFile).lastModified()) ||
-            (QFileInfo(localConfig).lastModified()  > QFileInfo(actualFile).lastModified()))
+            (QFileInfo(localConfig).lastModified()     > QFileInfo(actualFile).lastModified()))
         {
             confShouldUpdate = true;
 
@@ -359,10 +359,9 @@ DatabaseServerError DatabaseServer::initMysqlConfig() const
 
         if (confUpdate)
         {
-            const QFile::Permissions allowedPerms
-                = actualFile.permissions()
-                  & (QFile::ReadOwner | QFile::WriteOwner |
-                     QFile::ReadGroup | QFile::WriteGroup | QFile::ReadOther);
+            const QFile::Permissions allowedPerms = actualFile.permissions() &
+                                                    (QFile::ReadOwner | QFile::WriteOwner |
+                                                     QFile::ReadGroup | QFile::WriteGroup | QFile::ReadOther);
 
             if (allowedPerms != actualFile.permissions())
             {
@@ -464,7 +463,7 @@ DatabaseServerError DatabaseServer::createMysqlFiles() const
                                             << initProcess.program()
                                             << initProcess.arguments();
 
-        if (!initProcess.waitForFinished() || initProcess.exitCode() != 0)
+        if (!initProcess.waitForFinished() || (initProcess.exitCode() != 0))
         {
             return DatabaseServerError(DatabaseServerError::StartError,
                                        processErrorLog(&initProcess,
@@ -502,7 +501,7 @@ DatabaseServerError DatabaseServer::startMysqlServer()
                                         << d->databaseProcess->program()
                                         << d->databaseProcess->arguments();
 
-    if (!d->databaseProcess->waitForStarted() || d->databaseProcess->exitCode() != 0)
+    if (!d->databaseProcess->waitForStarted() || (d->databaseProcess->exitCode() != 0))
     {
         QString errorMsg = processErrorLog(d->databaseProcess,
                                            i18n("Could not start database server."));

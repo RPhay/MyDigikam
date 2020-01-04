@@ -77,7 +77,7 @@ public:
     /**
      * Returns true if the server process is running.
      */
-    bool isRunning() const;
+    bool isRunning()                        const;
 
 Q_SIGNALS:
 
@@ -98,23 +98,23 @@ private:
      * Checks if Mysql binaries and database directories exists and creates
      * the latter if necessary.
      */
-    DatabaseServerError checkDatabaseDirs() const;
+    DatabaseServerError checkDatabaseDirs()                              const;
 
     /**
      * Finds and updates (if necessary) configuration files for the mysql
      * server.
      */
-    DatabaseServerError initMysqlConfig() const;
+    DatabaseServerError initMysqlConfig()                                const;
 
     /**
      * Remove mysql error log files.
      */
-    void removeMysqlLogs() const;
+    void removeMysqlLogs()                                               const;
 
     /**
      * Creates initial Mysql database files for internal server.
      */
-    DatabaseServerError createMysqlFiles() const;
+    DatabaseServerError createMysqlFiles()                               const;
 
     /**
      * Starts the server for the internal database.
@@ -124,12 +124,12 @@ private:
     /**
      * Creates or connects to database digikam in mysql.
      */
-    DatabaseServerError initMysqlDatabase() const;
+    DatabaseServerError initMysqlDatabase()                              const;
 
     /**
      * Return the current user account name.
      */
-    QString getcurrentAccountUserName() const;
+    QString getcurrentAccountUserName()                                  const;
 
     /**
      * Returns i18n converted error message and writes to qCDebug.

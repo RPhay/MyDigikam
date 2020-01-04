@@ -28,15 +28,15 @@ namespace Digikam
 {
 
 DatabaseServerError::DatabaseServerError(DatabaseServerErrorEnum errorType, const QString& errorText)
+    : m_ErrorText(errorText),
+      m_ErrorType(errorType)
 {
-    m_ErrorText = errorText;
-    m_ErrorType = errorType;
 }
 
 DatabaseServerError::DatabaseServerError(const DatabaseServerError& dbServerError)
+    : m_ErrorText(dbServerError.m_ErrorText),
+      m_ErrorType(dbServerError.m_ErrorType)
 {
-    m_ErrorText = dbServerError.m_ErrorText;
-    m_ErrorType = dbServerError.m_ErrorType;
 }
 
 DatabaseServerError::~DatabaseServerError()
