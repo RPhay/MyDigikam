@@ -63,15 +63,21 @@ public:
 
     enum FilterBehavior
     {
-        /** If an index does not matched, the index and all its children are filtered out.
-         *  This is the Qt default behavior, but undesirable for album trees. */
+        /**
+         * If an index does not matched, the index and all its children are filtered out.
+         * This is the Qt default behavior, but undesirable for album trees.
+         */
         SimpleFiltering,
-        /** Default behavior.
-         *  If an index matches, it is shown, which directly means all its parents are shown as well.
-         *  In addition, all its children are shown as well. */
+        /**
+         * Default behavior.
+         * If an index matches, it is shown, which directly means all its parents are shown as well.
+         * In addition, all its children are shown as well.
+         */
         FullFiltering,
-        /** If an index matches, it is shown, which directly means all its parents are shown as well.
-         *  Its children are not shown unless they also match. */
+        /**
+         * If an index matches, it is shown, which directly means all its parents are shown as well.
+         * Its children are not shown unless they also match.
+         */
         StrictFiltering
     };
 
@@ -85,7 +91,7 @@ public:
      * the source album model will be made source of the chained filter model.
      */
     void                setSourceAlbumModel(AbstractAlbumModel* const source);
-    AbstractAlbumModel* sourceAlbumModel() const;
+    AbstractAlbumModel* sourceAlbumModel()                                      const;
 
     /**
      * Sets a chained filter model.
@@ -93,23 +99,23 @@ public:
      * sourceAlbumModel of the new source filter model.
      */
     void              setSourceFilterModel(AlbumFilterModel* const source);
-    AlbumFilterModel* sourceFilterModel() const;
+    AlbumFilterModel* sourceFilterModel()                                       const;
 
-    QModelIndex       mapToSourceAlbumModel(const QModelIndex& index) const;
-    QModelIndex       mapFromSourceAlbumModel(const QModelIndex& index) const;
+    QModelIndex       mapToSourceAlbumModel(const QModelIndex& index)           const;
+    QModelIndex       mapFromSourceAlbumModel(const QModelIndex& index)         const;
 
     /// Convenience methods
-    Album*      albumForIndex(const QModelIndex& index) const;
-    QModelIndex indexForAlbum(Album* album) const;
-    QModelIndex rootAlbumIndex() const;
-    QVariant    dataForCurrentSortRole(Album* album) const;
+    Album*      albumForIndex(const QModelIndex& index)                         const;
+    QModelIndex indexForAlbum(Album* album)                                     const;
+    QModelIndex rootAlbumIndex()                                                const;
+    QVariant    dataForCurrentSortRole(Album* album)                            const;
 
     /**
      * Returns the settings currently used for filtering.
      *
      * @return current settings for filtering.
      */
-    SearchTextSettings searchTextSettings() const;
+    SearchTextSettings searchTextSettings()                                     const;
 
     /**
      * Sets the filter behavior. Default is FullFiltering.
@@ -121,7 +127,7 @@ public:
      * Never returns NoMatch for a valid index, because in this case,
      * the index would rather be filtered out.
      **/
-    MatchResult matchResult(const QModelIndex& index) const;
+    MatchResult matchResult(const QModelIndex& index)                           const;
 
     /**
      * Returns if the currently applied filters will result in any filtering.
@@ -129,9 +135,11 @@ public:
      * @return <code>true</code> if the current selected filter could result in
      *         any filtering without checking if this really happens.
      */
-    virtual bool isFiltering() const;
+    virtual bool isFiltering()                                                  const;
 
-    /** Returns the usual compare result of -1, 0, or 1 for lessThan, equals and greaterThan. */
+    /**
+     * Returns the usual compare result of -1, 0, or 1 for lessThan, equals and greaterThan.
+     */
     template <typename T>
     static inline int compareValue(const T& a, const T& b)
     {
@@ -150,8 +158,10 @@ public:
         }
     }
 
-    /** Takes a typical result from a compare method (0 is equal, -1 is less than, 1 is greater than)
-     *  and applies the given sort order to it. */
+    /**
+     * Takes a typical result from a compare method (0 is equal, -1 is less than, 1 is greater than)
+     * and applies the given sort order to it.
+     */
     static inline int compareByOrder(int compareResult,  Qt::SortOrder sortOrder)
     {
         if (sortOrder == Qt::AscendingOrder)
@@ -160,7 +170,7 @@ public:
         }
         else
         {
-            return - compareResult;
+            return (- compareResult);
         }
     }
 
@@ -224,7 +234,7 @@ protected:
      * in the album's title or in a child album's title, or if it is a special album (root)
      * that is never filtered out.
      **/
-    MatchResult matchResult(Album* album) const;
+    MatchResult matchResult(Album* album)                                           const;
 
     /**
      * This method provides the basic match checking algorithm.
@@ -233,7 +243,7 @@ protected:
      *
      * @param album album to tell if it matches the filter criteria or not.
      */
-    virtual bool matches(Album* album) const;
+    virtual bool matches(Album* album)                                              const;
 
     /**
      * Use setSourceAlbumModel.
@@ -241,22 +251,15 @@ protected:
      * @see setSourceAlbumModel
      * @param model source model
      */
-    virtual void setSourceModel(QAbstractItemModel* const model) override;
+    virtual void setSourceModel(QAbstractItemModel* const model)                          override;
 
     virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const override;
-    virtual bool lessThan(const QModelIndex& left, const QModelIndex& right) const override;
+    virtual bool lessThan(const QModelIndex& left, const QModelIndex& right)        const override;
 
 protected Q_SLOTS:
 
     void slotAlbumRenamed(Album* album);
     void slotAlbumsHaveBeenUpdated(int type);
-
-protected:
-
-    FilterBehavior             m_filterBehavior;
-    SearchTextSettings         m_settings;
-    QPointer<AlbumFilterModel> m_chainedModel;
-    QObject*                   m_parent;
 
 private:
 
@@ -266,7 +269,14 @@ private:
      * @return <code>true</code> if the provided settings result in filtering
      *         the model
      */
-    bool settingsFilter(const SearchTextSettings& settings) const;
+    bool settingsFilter(const SearchTextSettings& settings)                         const;
+
+protected:
+
+    FilterBehavior             m_filterBehavior;
+    SearchTextSettings         m_settings;
+    QPointer<AlbumFilterModel> m_chainedModel;
+    QObject*                   m_parent;
 };
 
 // -----------------------------------------------------------------------------------
@@ -283,22 +293,24 @@ public:
 
     explicit CheckableAlbumFilterModel(QObject* const parent = nullptr);
 
-    void                         setSourceAlbumModel(AbstractCheckableAlbumModel* const source);
-    AbstractCheckableAlbumModel* sourceAlbumModel() const;
+    void setSourceAlbumModel(AbstractCheckableAlbumModel* const source);
+    AbstractCheckableAlbumModel* sourceAlbumModel()                                     const;
 
     void setSourceFilterModel(CheckableAlbumFilterModel* const source);
 
     void setFilterChecked(bool filter);
     void setFilterPartiallyChecked(bool filter);
 
-    virtual bool isFiltering() const override;
+    virtual bool isFiltering()                                                          const override;
+
+protected:
+
+    virtual bool matches(Album* album)                                                  const override;
 
 protected:
 
     bool m_filterChecked;
     bool m_filterPartiallyChecked;
-
-    virtual bool matches(Album* album) const override;
 };
 
 // -----------------------------------------------------------------------------------
@@ -314,10 +326,12 @@ public:
 
     explicit SearchFilterModel(QObject* const parent = nullptr);
 
-    void         setSourceSearchModel(SearchModel* const source);
-    SearchModel* sourceSearchModel() const;
+    void setSourceSearchModel(SearchModel* const source);
+    SearchModel* sourceSearchModel()                                                    const;
 
-    /** Set the DatabaseSearch::Type. */
+    /**
+     * Set the DatabaseSearch::Type.
+     */
     void setFilterSearchType(DatabaseSearch::Type);
     void listAllSearches();
     void listNormalSearches();
@@ -326,10 +340,12 @@ public:
     void listMapSearches();
     void listDuplicatesSearches();
 
-    /** Sets if temporary search albums shall be listed */
+    /**
+     * Sets if temporary search albums shall be listed
+     */
     void setListTemporarySearches(bool list);
 
-    virtual bool isFiltering() const override;
+    virtual bool isFiltering()                                                          const override;
 
 protected:
 
@@ -338,7 +354,7 @@ protected:
 
     void setTypeFilter(int type);
 
-    virtual bool matches(Album* album) const override;
+    virtual bool matches(Album* album)                                                  const override;
 
 protected:
 
@@ -360,14 +376,14 @@ public:
     explicit TagPropertiesFilterModel(QObject* const parent = nullptr);
 
     void      setSourceAlbumModel(TagModel* const source);
-    TagModel* sourceTagModel() const;
+    TagModel* sourceTagModel()                                                          const;
 
     void listOnlyTagsWithProperty(const QString& property);
     void removeListOnlyProperty(const QString& property);
     void doNotListTagsWithProperty(const QString& property);
     void removeDoNotListProperty(const QString& property);
 
-    virtual bool isFiltering() const override;
+    virtual bool isFiltering()                                                          const override;
 
 protected Q_SLOTS:
 
@@ -375,7 +391,7 @@ protected Q_SLOTS:
 
 protected:
 
-    virtual bool matches(Album* album) const override;
+    virtual bool matches(Album* album)                                                  const override;
 
 protected:
 
@@ -397,7 +413,7 @@ public:
 
 protected:
 
-    virtual bool matches(Album* album) const override;
+    virtual bool matches(Album* album)                                                  const override;
 
 protected:
 
