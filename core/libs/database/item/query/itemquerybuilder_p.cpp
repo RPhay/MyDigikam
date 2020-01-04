@@ -43,43 +43,47 @@ QString SubQueryBuilder::build(enum SKey key,
     QString query;
     QString val = passedVal;
 
-    if (op == LIKE || op == NLIKE)
+    if ((op == LIKE) || (op == NLIKE))
     {
         val = QLatin1Char('%') + val + QLatin1Char('%');
     }
 
     switch (key)
     {
-        case(ALBUM):
+        case (ALBUM):
         {
             query = QString::fromUtf8(" (Images.dirid $$##$$ ?) ");
             *boundValues << val;
             break;
         }
-        case(ALBUMNAME):
+
+        case (ALBUMNAME):
         {
             query = QString::fromUtf8(" (Images.dirid IN "
                     "  (SELECT id FROM Albums WHERE url $$##$$ ?)) ");
             *boundValues << val;
             break;
         }
-        case(ALBUMCAPTION):
+
+        case (ALBUMCAPTION):
         {
             query = QString::fromUtf8(" (Images.dirid IN "
                     "  (SELECT id FROM Albums WHERE caption $$##$$ ?)) ");
             *boundValues << val;
             break;
         }
-        case(ALBUMCOLLECTION):
+
+        case (ALBUMCOLLECTION):
         {
             query = QString::fromUtf8(" (Images.dirid IN "
                     "  (SELECT id FROM Albums WHERE collection $$##$$ ?)) ");
             *boundValues << val;
             break;
         }
-        case(TAG):
+
+        case (TAG):
         {
-            if (op == EQ)
+            if      (op == EQ)
             {
                 query = QString::fromUtf8(" (Images.id IN "
                         "   (SELECT imageid FROM ImageTags "
@@ -114,7 +118,8 @@ QString SubQueryBuilder::build(enum SKey key,
 
             break;
         }
-        case(TAGNAME):
+
+        case (TAGNAME):
         {
             query = QString::fromUtf8(" (Images.id IN "
                     "  (SELECT imageid FROM ImageTags "
@@ -123,30 +128,35 @@ QString SubQueryBuilder::build(enum SKey key,
             *boundValues << val;
             break;
         }
-        case(IMAGENAME):
+
+        case (IMAGENAME):
         {
             query = QString::fromUtf8(" (Images.name $$##$$ ?) ");
             *boundValues << val;
             break;
         }
-        case(IMAGECAPTION):
+
+        case (IMAGECAPTION):
         {
             query = QString::fromUtf8(" (Images.caption $$##$$ ?) ");
             *boundValues << val;
             break;
         }
-        case(IMAGEDATE):
+
+        case (IMAGEDATE):
         {
             query = QString::fromUtf8(" (Images.datetime $$##$$ ?) ");
             *boundValues << val;
             break;
         }
+
         case (KEYWORD):
         {
             qCWarning(DIGIKAM_DATABASE_LOG) << "KEYWORD Detected which is not possible";
             break;
         }
-        case(RATING):
+
+        case (RATING):
         {
             query = QString::fromUtf8(" (ImageProperties.value $$##$$ ? and ImageProperties.property='Rating') ");
             *boundValues << val;
@@ -158,42 +168,49 @@ QString SubQueryBuilder::build(enum SKey key,
     {
         switch (op)
         {
-            case(EQ):
+            case (EQ):
             {
                 query.replace(QString::fromUtf8("$$##$$"), QString::fromUtf8("="));
                 break;
             }
-            case(NE):
+
+            case (NE):
             {
                 query.replace(QString::fromUtf8("$$##$$"), QString::fromUtf8("<>"));
                 break;
             }
-            case(LT):
+
+            case (LT):
             {
                 query.replace(QString::fromUtf8("$$##$$"), QString::fromUtf8("<"));
                 break;
             }
-            case(GT):
+
+            case (GT):
             {
                 query.replace(QString::fromUtf8("$$##$$"), QString::fromUtf8(">"));
                 break;
             }
-            case(LTE):
+
+            case (LTE):
             {
                 query.replace(QString::fromUtf8("$$##$$"), QString::fromUtf8("<="));
                 break;
             }
-            case(GTE):
+
+            case (GTE):
             {
                 query.replace(QString::fromUtf8("$$##$$"), QString::fromUtf8(">="));
                 break;
             }
-            case(LIKE):
+
+            case (LIKE):
             {
                 query.replace(QString::fromUtf8("$$##$$"), QString::fromUtf8("LIKE"));
                 break;
             }
-            case(NLIKE):
+
+            case (NLIKE):
             {
                 query.replace(QString::fromUtf8("$$##$$"), QString::fromUtf8("NOT LIKE"));
                 break;
@@ -203,7 +220,7 @@ QString SubQueryBuilder::build(enum SKey key,
 
     // special case for imagedate. If the key is imagedate and the operator is EQ,
     // we need to split it into two rules
-    if (key == IMAGEDATE && op == EQ)
+    if ((key == IMAGEDATE) && (op == EQ))
     {
         QDate date = QDate::fromString(val, Qt::ISODate);
 

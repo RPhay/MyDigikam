@@ -152,19 +152,19 @@ void ItemQueryBuilder::buildGroup(QString& sql, SearchXmlCachingReader& reader,
 }
 
 bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, const QString& name,
-                                   QList<QVariant>* boundValues, ItemQueryPostHooks* const hooks) const
+                                  QList<QVariant>* boundValues, ItemQueryPostHooks* const hooks) const
 {
     SearchXml::Relation relation = reader.fieldRelation();
     FieldQueryBuilder fieldQuery(sql, reader, boundValues, hooks, relation);
 
     // First catch all noeffect fields. Those are only used for message passing when no Signal-Slot-communication is possible
-    if (name.startsWith(QLatin1String("noeffect_")))
+    if      (name.startsWith(QLatin1String("noeffect_")))
     {
         return false;
     }
     else if (name == QLatin1String("albumid"))
     {
-        if (relation == SearchXml::Equal || relation == SearchXml::Unequal)
+        if ((relation == SearchXml::Equal) || (relation == SearchXml::Unequal))
         {
             fieldQuery.addIntField(QLatin1String("Images.album"));
         }
@@ -227,7 +227,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
     {
         fieldQuery.addChoiceStringField(QLatin1String("Albums.collection"));
     }
-    else if (name == QLatin1String("tagid") || name == QLatin1String("labels"))
+    else if ((name == QLatin1String("tagid")) || (name == QLatin1String("labels")))
     {
         if (relation == SearchXml::Equal)
         {
@@ -243,7 +243,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
                    "    WHERE tagid = ?)) ");
             *boundValues << reader.valueToInt();
         }
-        else if (relation == SearchXml::InTree || relation == SearchXml::NotInTree)
+        else if ((relation == SearchXml::InTree) || (relation == SearchXml::NotInTree))
         {
             QList<int> ids = reader.valueToIntOrIntList();
 
@@ -852,7 +852,7 @@ bool ItemQueryBuilder::buildField(QString& sql, SearchXmlCachingReader& reader, 
             // read values: one or two strings
             QStringList values = reader.valueToStringOrStringList();
 
-            if (values.size() < 1 || values.size() > 2)
+            if ((values.size() < 1) || (values.size() > 2))
             {
                 qCDebug(DIGIKAM_DATABASE_LOG) << "The imagetagproperty field requires one value (property) or two values (property, value).";
                 return false;
@@ -950,7 +950,7 @@ void ItemQueryBuilder::addSqlOperator(QString& sql, SearchXml::Operator op, bool
 {
     if (isFirst)
     {
-        if (op == SearchXml::AndNot || op == SearchXml::OrNot)
+        if ((op == SearchXml::AndNot) || (op == SearchXml::OrNot))
         {
             sql += QLatin1String("NOT");
         }
@@ -1044,7 +1044,7 @@ QString ItemQueryBuilder::convertFromUrlToXml(const QUrl& url) const
         QString key = QUrlQuery(url).queryItemValue(QString::number(i) + QLatin1String(".key")).toLower();
         QString op  = QUrlQuery(url).queryItemValue(QString::number(i) + QLatin1String(".op")).toLower();
 
-        if (key == QLatin1String("album"))
+        if      (key == QLatin1String("album"))
         {
             rule.key = QLatin1String("albumid");
         }
@@ -1071,7 +1071,7 @@ QString ItemQueryBuilder::convertFromUrlToXml(const QUrl& url) const
             rule.key = key;
         }
 
-        if (op == QLatin1String("eq"))
+        if      (op == QLatin1String("eq"))
         {
             rule.op = SearchXml::Equal;
         }
@@ -1131,7 +1131,7 @@ QString ItemQueryBuilder::convertFromUrlToXml(const QUrl& url) const
 
     QStringList strList = url.path().split(QLatin1Char(' '), QString::SkipEmptyParts);
 
-    for ( QStringList::const_iterator it = strList.constBegin(); it != strList.constEnd(); ++it )
+    for (QStringList::const_iterator it = strList.constBegin() ; it != strList.constEnd() ; ++it)
     {
         bool ok;
         int  num = (*it).toInt(&ok);
@@ -1147,7 +1147,7 @@ QString ItemQueryBuilder::convertFromUrlToXml(const QUrl& url) const
         {
             QString expr = (*it).trimmed();
 
-            if (expr == QLatin1String("AND"))
+            if      (expr == QLatin1String("AND"))
             {
                 // add another field
             }
@@ -1194,7 +1194,7 @@ QString ItemQueryBuilder::buildQueryFromUrl(const QUrl& url, QList<QVariant>* bo
         QString key = QUrlQuery(url).queryItemValue(QString::number(i) + QLatin1String(".key")).toLower();
         QString op  = QUrlQuery(url).queryItemValue(QString::number(i) + QLatin1String(".op")).toLower();
 
-        if (key == QLatin1String("album"))
+        if      (key == QLatin1String("album"))
         {
             rule.key = ALBUM;
         }
@@ -1244,7 +1244,7 @@ QString ItemQueryBuilder::buildQueryFromUrl(const QUrl& url, QList<QVariant>* bo
             continue;
         }
 
-        if (op == QLatin1String("eq"))
+        if      (op == QLatin1String("eq"))
         {
             rule.op = EQ;
         }
