@@ -539,7 +539,7 @@ BUGFIXES:
 524 ==> 366551 - Unclear icon-item overlay when associating people to faces.
 525 ==> 415535 - Import from a local/remote folder.
 526 ==> 415643 - digiKam crashes Face detection.
-527 ==> 
+527 ==> 415685 - digiKam crashes when scanning faces.
 528 ==> 
 529 ==> 
 530 ==> 
