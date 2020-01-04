@@ -58,7 +58,7 @@ void ItemLister::setAllowExtraValues(bool useExtraValue)
 void ItemLister::list(ItemListerReceiver* const receiver,
                       const CoreDbUrl& url)
 {
-    if (url.isAlbumUrl())
+    if      (url.isAlbumUrl())
     {
         int albumRootId = url.albumRootId();
         QString album   = url.album();

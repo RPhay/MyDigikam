@@ -47,7 +47,7 @@ class DIGIKAM_DATABASE_EXPORT ItemListerReceiver
 
 public:
 
-    virtual ~ItemListerReceiver() {};
+    virtual ~ItemListerReceiver()                 {};
     virtual void receive(const ItemListerRecord& record) = 0;
     virtual void error(const QString& /*errMsg*/) {};
 };
@@ -62,11 +62,13 @@ public:
 
     explicit ItemListerValueListReceiver();
 
-    QList<ItemListerRecord> records;
-    bool                     hasError;
-
     virtual void receive(const ItemListerRecord& record) override;
     virtual void error(const QString& errMsg) override;
+
+public:
+
+    QList<ItemListerRecord> records;
+    bool                    hasError;
 };
 
 // ------------------------------------------------------------------------------------------------

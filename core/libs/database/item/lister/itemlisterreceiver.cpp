@@ -77,7 +77,6 @@ ItemListerJobPartsSendingReceiver::ItemListerJobPartsSendingReceiver(DBJob* cons
 
 void ItemListerJobPartsSendingReceiver::receive(const ItemListerRecord &record)
 {
-
     ItemListerJobReceiver::receive(record);
 
     if (++m_count > m_limit)
@@ -99,7 +98,9 @@ ItemListerJobGrowingPartsSendingReceiver::
 void ItemListerJobGrowingPartsSendingReceiver::receive(const ItemListerRecord& record)
 {
     ItemListerJobPartsSendingReceiver::receive(record);
+
     // limit was reached?
+
     if (m_count == 0)
     {
         m_limit = qMin(m_limit + m_increment, m_maxLimit);

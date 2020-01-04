@@ -60,30 +60,34 @@ public:
 
 Q_SIGNALS:
 
-    /** Indicates that tags have been assigned or removed
-     *  for image with given imageId.
-     *  There is no guarantee that the tags were actually changed.
-     *  This signal, the signal below, or both may be sent.
+    /**
+     * Indicates that tags have been assigned or removed
+     * for image with given imageId.
+     * There is no guarantee that the tags were actually changed.
+     * This signal, the signal below, or both may be sent.
      */
     void signalImageTagsChanged(qlonglong imageId);
 
-    /** Indicates that images in the given album id may have changed their tags.
-     *  This signal, the signal above, or both may be sent.
+    /**
+     * Indicates that images in the given album id may have changed their tags.
+     * This signal, the signal above, or both may be sent.
      */
     void signalImagesChanged(int albumId);
 
-    /** These signals indicated that the rating, data or caption
-     *  of the image with given imageId was set.
-     *  There is no guarantee that it actually changed.
+    /**
+     * These signals indicated that the rating, data or caption
+     * of the image with given imageId was set.
+     * There is no guarantee that it actually changed.
      */
     void signalImageRatingChanged(qlonglong imageId);
     void signalImageDateChanged(qlonglong imageId);
     void signalImageCaptionChanged(qlonglong imageId);
 
-    /** Indicates that the metadata if the given file
-     *  has been changed (a write operation on the file on disk).
-     *  Usually, the database is updated accordingly, so then this
-     *  signal is sent in combination with one or more of the above signals.
+    /**
+     * Indicates that the metadata if the given file
+     * has been changed (a write operation on the file on disk).
+     * Usually, the database is updated accordingly, so then this
+     * signal is sent in combination with one or more of the above signals.
      */
     void signalFileMetadataChanged(const QUrl& url);
 

@@ -81,10 +81,10 @@ class Q_DECL_HIDDEN ItemLister::Private
 public:
 
     explicit Private()
+      : recursive(true),
+        listOnlyAvailableImages(true),
+        allowExtraValues(false)
     {
-        recursive               = true;
-        listOnlyAvailableImages = true;
-        allowExtraValues        = false;
     }
 
     /*
@@ -96,7 +96,7 @@ public:
     {
         qlonglong v = (*it).toLongLong();
 
-        if (v > std::numeric_limits<int>::max() || v < 0)
+        if ((v > std::numeric_limits<int>::max()) || (v < 0))
         {
             return -1;
         }
