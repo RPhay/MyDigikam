@@ -23,11 +23,11 @@
  *
  * ============================================================ */
 
+
+#include "metaengine_data_p.h"
+
 // Local includes
 
-#include "metaengine_data.h"
-#include "metaengine_data_p.h"
-#include "metaengine.h"
 #include "metaengine_p.h"
 
 namespace Digikam
@@ -39,8 +39,8 @@ MetaEngineData::MetaEngineData()
 }
 
 MetaEngineData::MetaEngineData(const MetaEngineData& other)
+    : d(other.d)
 {
-    d = other.d;
 }
 
 MetaEngineData::~MetaEngineData()
@@ -50,6 +50,7 @@ MetaEngineData::~MetaEngineData()
 MetaEngineData& MetaEngineData::operator=(const MetaEngineData& other)
 {
     d = other.d;
+
     return *this;
 }
 

@@ -127,23 +127,26 @@ public:
     bool saveToFile(const QFileInfo& finfo)                                       const;
     bool saveOperations(const QFileInfo& finfo, Exiv2::Image::AutoPtr image)      const;
 
-    /** Wrapper method to convert a Comments content to a QString.
+    /**
+     * Wrapper method to convert a Comments content to a QString.
      */
     QString convertCommentValue(const Exiv2::Exifdatum& exifDatum)                const;
 
-    /** Charset autodetection to convert a string to a QString.
+    /**
+     * Charset autodetection to convert a string to a QString.
      */
     QString detectEncodingAndDecode(const std::string& value)                     const;
 
-    /** UTF8 autodetection from a string.
+    /**
+     * UTF8 autodetection from a string.
      */
     bool isUtf8(const char* const buffer)                                         const;
 
     int getXMPTagsListFromPrefix(const QString& pf, MetaEngine::TagsMap& tagsMap) const;
 
-    const Exiv2::ExifData& exifMetadata() const;
-    const Exiv2::IptcData& iptcMetadata() const;
-    const std::string&     itemComments() const;
+    const Exiv2::ExifData& exifMetadata()                                         const;
+    const Exiv2::IptcData& iptcMetadata()                                         const;
+    const std::string&     itemComments()                                         const;
 
     Exiv2::ExifData&       exifMetadata();
     Exiv2::IptcData&       iptcMetadata();
@@ -151,7 +154,7 @@ public:
 
 #ifdef _XMP_SUPPORT_
 
-    const Exiv2::XmpData&  xmpMetadata()  const;
+    const Exiv2::XmpData&  xmpMetadata()                                          const;
     Exiv2::XmpData&        xmpMetadata();
 
     void loadSidecarData(Exiv2::Image::AutoPtr xmpsidecar);
@@ -159,33 +162,35 @@ public:
 
 public:
 
-    /** Generic method to print the Exiv2 C++ Exception error message from 'e'.
-     *  'msg' string is printed using qDebug rules.
+    /**
+     * Generic method to print the Exiv2 C++ Exception error message from 'e'.
+     * 'msg' string is printed using qDebug rules.
      */
     static void printExiv2ExceptionError(const QString& msg, Exiv2::AnyError& e);
 
-    /** Generic method to print debug message from Exiv2.
-     *  'msg' string is printed using qDebug rules. 'lvl' is the debug level of Exiv2 message.
+    /**
+     * Generic method to print debug message from Exiv2.
+     * 'msg' string is printed using qDebug rules. 'lvl' is the debug level of Exiv2 message.
      */
     static void printExiv2MessageHandler(int lvl, const char* msg);
 
 public:
 
-    bool                                        writeRawFiles;
-    bool                                        updateFileTimeStamp;
+    bool                                                  writeRawFiles;
+    bool                                                  updateFileTimeStamp;
 
-    bool                                        useXMPSidecar4Reading;
-    bool                                        useCompatibleFileName;
+    bool                                                  useXMPSidecar4Reading;
+    bool                                                  useCompatibleFileName;
 
     /// A mode from #MetadataWritingMode enum.
-    int                                         metadataWritingMode;
+    int                                                   metadataWritingMode;
 
     /// XMP, and parts of EXIF/IPTC, were loaded from an XMP sidecar file
-    bool                                        loadedFromSidecar;
+    bool                                                  loadedFromSidecar;
 
-    QString                                     filePath;
-    QSize                                       pixelSize;
-    QString                                     mimeType;
+    QString                                               filePath;
+    QSize                                                 pixelSize;
+    QString                                               mimeType;
 
     QExplicitlySharedDataPointer<MetaEngineData::Private> data;
 };

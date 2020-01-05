@@ -67,16 +67,15 @@ namespace Digikam
 QMutex s_metaEngineMutex(QMutex::Recursive);
 
 MetaEngine::Private::Private()
-    : data(new MetaEngineData::Private)
+    : writeRawFiles(false),
+      updateFileTimeStamp(false),
+      useXMPSidecar4Reading(false),
+      useCompatibleFileName(false),
+      metadataWritingMode(WRITE_TO_FILE_ONLY),
+      loadedFromSidecar(false),
+      data(new MetaEngineData::Private)
 {
     QMutexLocker lock(&s_metaEngineMutex);
-
-    writeRawFiles         = false;
-    updateFileTimeStamp   = false;
-    useXMPSidecar4Reading = false;
-    useCompatibleFileName = false;
-    metadataWritingMode   = WRITE_TO_FILE_ONLY;
-    loadedFromSidecar     = false;
     Exiv2::LogMsg::setHandler(MetaEngine::Private::printExiv2MessageHandler);
 }
 
@@ -455,7 +454,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
 
         // libexiv2 will prepend "charset=\"SomeCharset\" " if charset is specified
         // Before conversion to QString, we must know the charset, so we stay with std::string for a while
-        if (comment.length() > 8 && comment.substr(0, 8) == "charset=")
+        if ((comment.length() > 8) && (comment.substr(0, 8) == "charset="))
         {
             // the prepended charset specification is followed by a blank
             std::string::size_type pos = comment.find_first_of(' ');
@@ -469,7 +468,7 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
             }
         }
 
-        if (charset == "\"Unicode\"")
+        if      (charset == "\"Unicode\"")
         {
             return QString::fromUtf8(comment.data());
         }
@@ -596,7 +595,7 @@ bool MetaEngine::Private::isUtf8(const char* const buffer) const
 
     for (i = 0 ; (c = buffer[i]) ; ++i)
     {
-        if ((c & 0x80) == 0)
+        if      ((c & 0x80) == 0)
         {
             // 0xxxxxxx is plain ASCII
 
@@ -618,7 +617,7 @@ bool MetaEngine::Private::isUtf8(const char* const buffer) const
             // 11xxxxxx begins UTF-8
             int following = 0;
 
-            if ((c & 0x20) == 0)
+            if      ((c & 0x20) == 0)
             {
                 // 110xxxxx
                 following = 1;
@@ -657,7 +656,7 @@ bool MetaEngine::Private::isUtf8(const char* const buffer) const
                     goto done;
                 }
 
-                if ((c & 0x80) == 0 || (c & 0x40))
+                if (((c & 0x80) == 0) || (c & 0x40))
                 {
                     return false;
                 }
@@ -800,17 +799,17 @@ void MetaEngine::Private::loadSidecarData(Exiv2::Image::AutoPtr xmpsidecar)
      * TODO: Exiv2 (referring to 0.23) does not correctly synchronize all times values as given below.
      * Time values and their synchronization:
      * Original Date/Time – Creation date of the intellectual content (e.g. the photograph),
-       rather than the creatio*n date of the content being shown
-        Exif DateTimeOriginal (36867, 0x9003) and SubSecTimeOriginal (37521, 0x9291)
-        IPTC DateCreated (IIM 2:55, 0x0237) and TimeCreated (IIM 2:60, 0x023C)
-        XMP (photoshop:DateCreated)
+     * rather than the creatio*n date of the content being shown
+     *  Exif DateTimeOriginal (36867, 0x9003) and SubSecTimeOriginal (37521, 0x9291)
+     *  IPTC DateCreated (IIM 2:55, 0x0237) and TimeCreated (IIM 2:60, 0x023C)
+     *  XMP (photoshop:DateCreated)
      * Digitized Date/Time – Creation date of the digital representation
-        Exif DateTimeDigitized (36868, 0x9004) and SubSecTimeDigitized (37522, 0x9292)
-        IPTC DigitalCreationDate (IIM 2:62, 0x023E) and DigitalCreationTime (IIM 2:63, 0x023F)
-        XMP (xmp:CreateDate)
+     *  Exif DateTimeDigitized (36868, 0x9004) and SubSecTimeDigitized (37522, 0x9292)
+     *  IPTC DigitalCreationDate (IIM 2:62, 0x023E) and DigitalCreationTime (IIM 2:63, 0x023F)
+     *  XMP (xmp:CreateDate)
      * Modification Date/Time – Modification date of the digital image file
-        Exif DateTime (306, 0x132) and SubSecTime (37520, 0x9290)
-        XMP (xmp:ModifyDate)
+     *  Exif DateTime (306, 0x132) and SubSecTime (37520, 0x9290)
+     *  XMP (xmp:ModifyDate)
      */
 }
 #endif // _XMP_SUPPORT_
