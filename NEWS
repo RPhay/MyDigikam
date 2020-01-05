@@ -541,6 +541,6 @@ BUGFIXES:
 526 ==> 415643 - digiKam crashes Face detection.
 527 ==> 415685 - digiKam crashes when scanning faces.
 528 ==> 415877 - "Reset" button in Tag Manager not always working to reset icon.
-529 ==> 
+529 ==> 415561 - Face detection based on deep learning leads to no result under Windows.
 530 ==> 
 531 ==> 
