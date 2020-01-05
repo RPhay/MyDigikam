@@ -436,7 +436,7 @@ void DXmlGuiWindow::slotNewToolbarConfig()
 
 void DXmlGuiWindow::createFullScreenAction(const QString& name)
 {
-    d->fullScreenAction = KStandardAction::fullScreen(nullptr, nullptr, this, actionCollection());
+    d->fullScreenAction = KStandardAction::fullScreen(nullptr, nullptr, this, this);
     actionCollection()->addAction(name, d->fullScreenAction);
     d->fullScreenBtn    = new QToolButton(this);
     d->fullScreenBtn->setDefaultAction(d->fullScreenAction);
