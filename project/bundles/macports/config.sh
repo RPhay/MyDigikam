@@ -23,7 +23,7 @@ BUILDING_DIR="`pwd`/temp.build"
 #
 # Uncompress the archive to /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
 # and adjust the property "MinimumSDKVersion" from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
-# sudo /usr/libexec/PlistBuddy -c "Set MinimumSDKVersion 10.11" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
+# sudo /usr/libexec/PlistBuddy -c "Set MinimumSDKVersion 10.12" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
 #
 # Possible values:
 # 10.15 : Catalina     :          : Qt                                ????, ????, ????
