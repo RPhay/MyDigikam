@@ -45,10 +45,10 @@ public:
     explicit VideoInfoContainer();
     ~VideoInfoContainer();
 
-    bool isEmpty() const;
-    bool isNull() const;
+    bool isEmpty()                                  const;
+    bool isNull()                                   const;
 
-    bool operator==(const VideoInfoContainer& t) const;
+    bool operator==(const VideoInfoContainer& t)    const;
 
 public:
 

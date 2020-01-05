@@ -48,6 +48,8 @@ public:
 
     bool operator==(const CaptionValues& val) const;
 
+public:
+
     QString   caption;
     QString   author;
     QDateTime date;
@@ -76,17 +78,18 @@ public:
                  const MetaEngine::AltLangMap& dates);
 
     void fromAltLangMap(const MetaEngine::AltLangMap& map);
-    MetaEngine::AltLangMap toAltLangMap() const;
+    MetaEngine::AltLangMap toAltLangMap()   const;
 
-    /** Sets the author for the comments in the specified languages.
-     *  If commonAuthor is not null, it will be used to set the author of all comments
-     *  for which the author is not specified in the map.
+    /**
+     * Sets the author for the comments in the specified languages.
+     * If commonAuthor is not null, it will be used to set the author of all comments
+     * for which the author is not specified in the map.
      */
     void setAuthorsList(const MetaEngine::AltLangMap& map, const QString& commonAuthor = QString());
-    MetaEngine::AltLangMap authorsList() const;
+    MetaEngine::AltLangMap authorsList()    const;
 
     void setDatesList(const MetaEngine::AltLangMap& map);
-    MetaEngine::AltLangMap datesList() const;
+    MetaEngine::AltLangMap datesList()      const;
 };
 
 } // namespace Digikam

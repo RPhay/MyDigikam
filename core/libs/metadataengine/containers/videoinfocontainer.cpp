@@ -40,26 +40,28 @@ VideoInfoContainer::~VideoInfoContainer()
 
 bool VideoInfoContainer::operator==(const VideoInfoContainer& t) const
 {
-    bool b1  = aspectRatio        == t.aspectRatio;
-    bool b2  = duration           == t.duration;
-    bool b3  = frameRate          == t.frameRate;
-    bool b4  = videoCodec         == t.videoCodec;
-    bool b5  = audioBitRate       == t.audioBitRate;
-    bool b6  = audioChannelType   == t.audioChannelType;
-    bool b7  = audioCodec         == t.audioCodec;
+    bool b1  = (aspectRatio        == t.aspectRatio);
+    bool b2  = (duration           == t.duration);
+    bool b3  = (frameRate          == t.frameRate);
+    bool b4  = (videoCodec         == t.videoCodec);
+    bool b5  = (audioBitRate       == t.audioBitRate);
+    bool b6  = (audioChannelType   == t.audioChannelType);
+    bool b7  = (audioCodec         == t.audioCodec);
 
-    return b1 && b2 && b3 && b4 && b5 && b6 && b7;
+    return (b1 && b2 && b3 && b4 && b5 && b6 && b7);
 }
 
 bool VideoInfoContainer::isEmpty() const
 {
-    if (aspectRatio.isEmpty()            &&
+    if (
+        aspectRatio.isEmpty()            &&
         duration.isEmpty()               &&
         frameRate.isEmpty()              &&
         videoCodec.isEmpty()             &&
         audioBitRate.isEmpty()           &&
         audioChannelType.isEmpty()       &&
-        audioCodec.isEmpty())
+        audioCodec.isEmpty()
+       )
     {
         return true;
     }
@@ -71,13 +73,15 @@ bool VideoInfoContainer::isEmpty() const
 
 bool VideoInfoContainer::isNull() const
 {
-    return(aspectRatio.isEmpty()            &&
-           duration.isEmpty()               &&
-           frameRate.isEmpty()              &&
-           videoCodec.isEmpty()             &&
-           audioBitRate.isEmpty()           &&
-           audioChannelType.isEmpty()       &&
-           audioCodec.isEmpty());
+    return (
+            aspectRatio.isEmpty()            &&
+            duration.isEmpty()               &&
+            frameRate.isEmpty()              &&
+            videoCodec.isEmpty()             &&
+            audioBitRate.isEmpty()           &&
+            audioChannelType.isEmpty()       &&
+            audioCodec.isEmpty()
+           );
 }
 
 QDataStream& operator<<(QDataStream& ds, const VideoInfoContainer& info)
@@ -122,6 +126,7 @@ QDebug operator<<(QDebug dbg, const VideoInfoContainer& t)
                   << t.audioChannelType << ", ";
     dbg.nospace() << "VideoInfoContainer::audioCodec: "
                   << t.audioCodec << ", ";
+
     return dbg.space();
 }
 

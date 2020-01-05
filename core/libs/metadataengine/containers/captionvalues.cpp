@@ -51,6 +51,7 @@ QDebug operator<<(QDebug dbg, const CaptionValues& val)
                   << val.author << ", ";
     dbg.nospace() << "CaptionValues::date: "
                   << val.date;
+
     return dbg.space();
 }
 
@@ -116,7 +117,7 @@ void CaptionsMap::setAuthorsList(const MetaEngine::AltLangMap& map, const QStrin
     {
         MetaEngine::AltLangMap::const_iterator authorIt = map.find(it.key());
 
-        if (authorIt != map.constEnd())
+        if      (authorIt != map.constEnd())
         {
             (*it).author = authorIt.value();
         }

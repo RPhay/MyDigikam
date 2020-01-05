@@ -42,8 +42,10 @@ class DIGIKAM_EXPORT IptcCoreLocationInfo
 public:
 
     bool operator==(const IptcCoreLocationInfo& t) const;
-    bool isEmpty() const;
-    bool isNull() const;
+    bool isEmpty()                                 const;
+    bool isNull()                                  const;
+
+public:
 
     QString country;
     QString countryCode;
@@ -62,8 +64,10 @@ class DIGIKAM_EXPORT IptcCoreContactInfo
 public:
 
     bool operator==(const IptcCoreContactInfo& t) const;
-    bool isEmpty() const;
-    bool isNull() const;
+    bool isEmpty()                                const;
+    bool isNull()                                 const;
+
+public:
 
     QString city;
     QString country;
@@ -85,82 +89,82 @@ namespace MetadataInfo
 
 enum Field
 {
-    Comment,                          /// String (one of the following three values)
-    CommentJfif,                      /// String
-    CommentExif,                      /// String
-    CommentIptc,                      /// String (see also IptcCoreDescription)
-    Description,                      /// Map language -> String
-    Title,                            /// Map language -> String
-    Headline,                         /// String
-    DescriptionWriter,                /// String
+    Comment,                          ///< String (one of the following three values)
+    CommentJfif,                      ///< String
+    CommentExif,                      ///< String
+    CommentIptc,                      ///< String (see also IptcCoreDescription)
+    Description,                      ///< Map language -> String
+    Title,                            ///< Map language -> String
+    Headline,                         ///< String
+    DescriptionWriter,                ///< String
 
-    Keywords,                         /// StringList
+    Keywords,                         ///< StringList
 
-    Rating,                           /// Int
-    CreationDate,                     /// DateTime
-    DigitizationDate,                 /// DateTime
-    Orientation,                      /// Int, enum from libMetaEngine
+    Rating,                           ///< Int
+    CreationDate,                     ///< DateTime
+    DigitizationDate,                 ///< DateTime
+    Orientation,                      ///< Int, enum from libMetaEngine
 
-    Make,                             /// String
-    Model,                            /// String
-    Lens,                             /// String
-    Aperture,                         /// Double, FNumber
-    FocalLength,                      /// Double, mm
-    FocalLengthIn35mm,                /// Double, mm
-    ExposureTime,                     /// Double, s
-    ExposureProgram,                  /// Int, enum from Exif
-    ExposureMode,                     /// Int, enum from Exif
-    Sensitivity,                      /// Int, ISO sensitivity
-    FlashMode,                        /// Int, bit mask from Exif
-    WhiteBalance,                     /// Int, enum from Exif
-    WhiteBalanceColorTemperature,     /// double, color temperature in K
-    MeteringMode,                     /// Int, enum from Exif
-    SubjectDistance,                  /// double, m
-    SubjectDistanceCategory,          /// int, enum from Exif
+    Make,                             ///< String
+    Model,                            ///< String
+    Lens,                             ///< String
+    Aperture,                         ///< Double, FNumber
+    FocalLength,                      ///< Double, mm
+    FocalLengthIn35mm,                ///< Double, mm
+    ExposureTime,                     ///< Double, s
+    ExposureProgram,                  ///< Int, enum from Exif
+    ExposureMode,                     ///< Int, enum from Exif
+    Sensitivity,                      ///< Int, ISO sensitivity
+    FlashMode,                        ///< Int, bit mask from Exif
+    WhiteBalance,                     ///< Int, enum from Exif
+    WhiteBalanceColorTemperature,     ///< double, color temperature in K
+    MeteringMode,                     ///< Int, enum from Exif
+    SubjectDistance,                  ///< double, m
+    SubjectDistanceCategory,          ///< int, enum from Exif
 
-    Latitude,                         /// String (as XMP GPSCoordinate)
-    LatitudeNumber,                   /// double, degrees
-    Longitude,                        /// String (as XMP GPSCoordinate)
-    LongitudeNumber,                  /// double, degrees
-    Altitude,                         /// double, m
-    PositionOrientation,              /// double, ?
-    PositionTilt,                     /// double, ?
-    PositionRoll,                     /// double, ?
-    PositionAccuracy,                 /// double, m
-    PositionDescription,              /// String
+    Latitude,                         ///< String (as XMP GPSCoordinate)
+    LatitudeNumber,                   ///< double, degrees
+    Longitude,                        ///< String (as XMP GPSCoordinate)
+    LongitudeNumber,                  ///< double, degrees
+    Altitude,                         ///< double, m
+    PositionOrientation,              ///< double, ?
+    PositionTilt,                     ///< double, ?
+    PositionRoll,                     ///< double, ?
+    PositionAccuracy,                 ///< double, m
+    PositionDescription,              ///< String
 
-    IptcCoreCopyrightNotice,          /// Map language -> String
-    IptcCoreCreator,                  /// List of type String
-    IptcCoreProvider,                 /// String
-    IptcCoreRightsUsageTerms,         /// Map language -> String
-    IptcCoreSource,                   /// String
+    IptcCoreCopyrightNotice,          ///< Map language -> String
+    IptcCoreCreator,                  ///< List of type String
+    IptcCoreProvider,                 ///< String
+    IptcCoreRightsUsageTerms,         ///< Map language -> String
+    IptcCoreSource,                   ///< String
 
-    IptcCoreCreatorJobTitle,          /// String
-    IptcCoreInstructions,             /// String
+    IptcCoreCreatorJobTitle,          ///< String
+    IptcCoreInstructions,             ///< String
 
-    IptcCoreLocationInfo,             /// object of IptcCoreLocation, including:
-    IptcCoreCountryCode,              /// String
-    IptcCoreCountry,                  /// String
-    IptcCoreCity,                     /// String
-    IptcCoreLocation,                 /// String
-    IptcCoreProvinceState,            /// String
+    IptcCoreLocationInfo,             ///< object of IptcCoreLocation, including:
+    IptcCoreCountryCode,              ///< String
+    IptcCoreCountry,                  ///< String
+    IptcCoreCity,                     ///< String
+    IptcCoreLocation,                 ///< String
+    IptcCoreProvinceState,            ///< String
 
-    IptcCoreIntellectualGenre,        /// String
-    IptcCoreJobID,                    /// String
-    IptcCoreScene,                    /// List of type String
-    IptcCoreSubjectCode,              /// List of type String
+    IptcCoreIntellectualGenre,        ///< String
+    IptcCoreJobID,                    ///< String
+    IptcCoreScene,                    ///< List of type String
+    IptcCoreSubjectCode,              ///< List of type String
 
-    IptcCoreContactInfo,              /// object of IptcCoreContactInfo, including:
-    IptcCoreContactInfoCity,          /// String
-    IptcCoreContactInfoCountry,       /// String
-    IptcCoreContactInfoAddress,       /// String
-    IptcCoreContactInfoPostalCode,    /// String
-    IptcCoreContactInfoProvinceState, /// String
-    IptcCoreContactInfoEmail,         /// String
-    IptcCoreContactInfoPhone,         /// String
-    IptcCoreContactInfoWebUrl,        /// String
+    IptcCoreContactInfo,              ///< object of IptcCoreContactInfo, including:
+    IptcCoreContactInfoCity,          ///< String
+    IptcCoreContactInfoCountry,       ///< String
+    IptcCoreContactInfoAddress,       ///< String
+    IptcCoreContactInfoPostalCode,    ///< String
+    IptcCoreContactInfoProvinceState, ///< String
+    IptcCoreContactInfoEmail,         ///< String
+    IptcCoreContactInfoPhone,         ///< String
+    IptcCoreContactInfoWebUrl,        ///< String
 
-    Faces,                            /// QMap<QString, QVariant>
+    Faces,                            ///< QMap<QString, QVariant>
 
     // Description, DescriptionWriter, Headline, Title: see above
     // DateCreated: see above, CreationDate
@@ -169,17 +173,17 @@ enum Field
 
     // Dublin Core: Description, Title, Subject (keywords) see above
 
-    AspectRatio,                      /// String
-    AudioBitRate,                     /// String
-    AudioChannelType,                 /// String
-    AudioCodec,                       /// String
-    Duration,                         /// String
-    FrameRate,                        /// String
-    VideoCodec,                       /// String
-    VideoBitDepth,                    /// String
-    VideoHeight,                      /// String
-    VideoWidth,                       /// String
-    VideoColorSpace                   /// String
+    AspectRatio,                      ///< String
+    AudioBitRate,                     ///< String
+    AudioChannelType,                 ///< String
+    AudioCodec,                       ///< String
+    Duration,                         ///< String
+    FrameRate,                        ///< String
+    VideoCodec,                       ///< String
+    VideoBitDepth,                    ///< String
+    VideoHeight,                      ///< String
+    VideoWidth,                       ///< String
+    VideoColorSpace                   ///< String
 };
 
 } // namespace MetadataInfo

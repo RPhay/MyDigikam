@@ -45,8 +45,8 @@ public:
     explicit PhotoInfoContainer();
     ~PhotoInfoContainer();
 
-    bool isEmpty() const;
-    bool isNull() const;
+    bool isEmpty()                               const;
+    bool isNull()                                const;
 
     bool operator==(const PhotoInfoContainer& t) const;
 

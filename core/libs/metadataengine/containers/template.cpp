@@ -23,8 +23,6 @@
 
 #include "template.h"
 
-// KDE includes
-
 namespace Digikam
 {
 
@@ -43,16 +41,16 @@ bool Template::isNull() const
 
 bool Template::operator==(const Template& t) const
 {
-    bool b1  = m_authors         == t.m_authors;
-    bool b2  = m_authorsPosition == t.m_authorsPosition;
-    bool b3  = m_credit          == t.m_credit;
-    bool b4  = m_copyright       == t.m_copyright;
-    bool b5  = m_rightUsageTerms == t.m_rightUsageTerms;
-    bool b6  = m_source          == t.m_source;
-    bool b7  = m_instructions    == t.m_instructions;
-    bool b8  = m_locationInfo    == t.m_locationInfo;
-    bool b9  = m_contactInfo     == t.m_contactInfo;
-    bool b10 = m_subjects        == t.m_subjects;
+    bool b1  = (m_authors         == t.m_authors);
+    bool b2  = (m_authorsPosition == t.m_authorsPosition);
+    bool b3  = (m_credit          == t.m_credit);
+    bool b4  = (m_copyright       == t.m_copyright);
+    bool b5  = (m_rightUsageTerms == t.m_rightUsageTerms);
+    bool b6  = (m_source          == t.m_source);
+    bool b7  = (m_instructions    == t.m_instructions);
+    bool b8  = (m_locationInfo    == t.m_locationInfo);
+    bool b9  = (m_contactInfo     == t.m_contactInfo);
+    bool b10 = (m_subjects        == t.m_subjects);
     /*
         qCDebug(DIGIKAM_METAENGINE_LOG) << t.authors()         << m_authors         << b1;
         qCDebug(DIGIKAM_METAENGINE_LOG) << t.authorsPosition() << m_authorsPosition << b2;
@@ -65,12 +63,13 @@ bool Template::operator==(const Template& t) const
         qCDebug(DIGIKAM_METAENGINE_LOG) << t.contactInfo()     << m_contactInfo     << b9;
         qCDebug(DIGIKAM_METAENGINE_LOG) << t.IptcSubjects()    << m_subjects        << b10;
     */
-    return b1 && b2 && b3 && b4 && b5 && b6 && b7 && b8 && b9 && b10;
+    return (b1 && b2 && b3 && b4 && b5 && b6 && b7 && b8 && b9 && b10);
 }
 
 bool Template::isEmpty() const
 {
-    return (m_authors.isEmpty()         &&
+    return (
+            m_authors.isEmpty()         &&
             m_authorsPosition.isEmpty() &&
             m_credit.isEmpty()          &&
             m_copyright.isEmpty()       &&
@@ -219,6 +218,7 @@ QDebug operator<<(QDebug dbg, const Template& t)
                   << t.contactInfo();
     dbg.nospace() << "Template::IptcSubjects: "
                   << t.IptcSubjects();
+
     return dbg.space();
 }
 

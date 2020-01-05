@@ -52,20 +52,20 @@ public:
     /**
      * Return true if Template title is null
      */
-    bool isNull() const;
+    bool isNull()                               const;
 
     /**
      * Return true if Template contents is empty
      */
-    bool isEmpty() const;
+    bool isEmpty()                              const;
 
     /**
      * Compare for metadata equality, not including "templateTitle" value.
      */
-    bool operator==(const Template& t) const;
+    bool operator==(const Template& t)          const;
 
     void setTemplateTitle(const QString& title);
-    QString templateTitle() const;
+    QString templateTitle()                     const;
 
     void setAuthors(const QStringList& authors);
     void setAuthorsPosition(const QString& authorPosition);
@@ -78,16 +78,16 @@ public:
     void setContactInfo(const IptcCoreContactInfo& inf);
     void setIptcSubjects(const QStringList& subjects);
 
-    QStringList            authors()         const;
-    QString                authorsPosition() const;
-    QString                credit()          const;
-    MetaEngine::AltLangMap copyright()       const;
-    MetaEngine::AltLangMap rightUsageTerms() const;
-    QString                source()          const;
-    QString                instructions()    const;
-    IptcCoreLocationInfo   locationInfo()    const;
-    IptcCoreContactInfo    contactInfo()     const;
-    QStringList            IptcSubjects()    const;
+    QStringList            authors()            const;
+    QString                authorsPosition()    const;
+    QString                credit()             const;
+    MetaEngine::AltLangMap copyright()          const;
+    MetaEngine::AltLangMap rightUsageTerms()    const;
+    QString                source()             const;
+    QString                instructions()       const;
+    IptcCoreLocationInfo   locationInfo()       const;
+    IptcCoreContactInfo    contactInfo()        const;
+    QStringList            IptcSubjects()       const;
 
     static QString removeTemplateTitle()
     {
