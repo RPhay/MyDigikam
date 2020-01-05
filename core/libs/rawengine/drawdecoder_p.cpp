@@ -53,9 +53,9 @@ int callbackForLibRaw(void* data, enum LibRaw_progress p, int iteration, int exp
 // --------------------------------------------------------------------------------------------------
 
 DRawDecoder::Private::Private(DRawDecoder* const p)
+    : m_progress(0.0),
+      m_parent(p)
 {
-    m_progress = 0.0;
-    m_parent   = p;
 }
 
 DRawDecoder::Private::~Private()
@@ -86,6 +86,7 @@ int DRawDecoder::Private::progressCallback(enum LibRaw_progress p, int iteration
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw process terminaison invoked...";
         m_parent->m_cancel = true;
         m_progress         = 0.0;
+
         return 1;
     }
 
@@ -170,7 +171,7 @@ void DRawDecoder::Private::fillIndentifyInfo(LibRaw* const raw, DRawInfo& identi
 }
 
 bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& imageData,
-                                     int& width, int& height, int& rgbmax)
+                                          int& width, int& height, int& rgbmax)
 {
     m_parent->m_cancel = false;
 
@@ -251,21 +252,25 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         {
             break;
         }
+
         case DRawDecoderSettings::CAMERA:
         {
             // (-w) Use camera white balance, if possible.
             raw->imgdata.params.use_camera_wb = 1;
             break;
         }
+
         case DRawDecoderSettings::AUTO:
         {
             // (-a) Use automatic white balance.
             raw->imgdata.params.use_auto_wb = 1;
             break;
         }
+
         case DRawDecoderSettings::CUSTOM:
         {
-            /* Convert between Temperature and RGB.
+            /*
+             * Convert between Temperature and RGB.
              */
             double T;
             double RGB[3];
@@ -345,6 +350,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
             raw->imgdata.params.user_mul[3] = RGB[1];
             break;
         }
+
         case DRawDecoderSettings::AERA:
         {
             // (-A) Calculate the white balance by averaging a rectangular area from image.
@@ -367,12 +373,14 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
             raw->imgdata.params.threshold    = m_parent->m_decoderSettings.NRThreshold;
             break;
         }
+
         case DRawDecoderSettings::FBDDNR:
         {
             // (100 - 1000) => (1 - 10) conversion
             raw->imgdata.params.fbdd_noiserd = lround(m_parent->m_decoderSettings.NRThreshold / 100.0);
             break;
         }
+
         default:   // No Noise Reduction
         {
             raw->imgdata.params.threshold    = 0;
@@ -394,6 +402,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
             raw->imgdata.params.camera_profile = (char*)"embed";
             break;
         }
+
         case DRawDecoderSettings::CUSTOMINPUTCS:
         {
             if (!m_parent->m_decoderSettings.inputProfile.isEmpty())
@@ -401,8 +410,10 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
                 // (-p) Use input profile file to define the camera's raw colorspace.
                 raw->imgdata.params.camera_profile = cameraProfile.data();
             }
+
             break;
         }
+
         default:
         {
             // No input profile
@@ -419,8 +430,10 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
                 // (-o) Use ICC profile file to define the output colorspace.
                 raw->imgdata.params.output_profile = outputProfile.data();
             }
+
             break;
         }
+
         default:
         {
             // (-o) Define the output colorspace.
@@ -448,6 +461,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: failed to run open_file: " << libraw_strerror(ret);
         raw->recycle();
         delete raw;
+
         return false;
     }
 
@@ -455,6 +469,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     {
         raw->recycle();
         delete raw;
+
         return false;
     }
 
@@ -467,6 +482,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: failed to run unpack: " << libraw_strerror(ret);
         raw->recycle();
         delete raw;
+
         return false;
     }
 
@@ -474,6 +490,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     {
         raw->recycle();
         delete raw;
+
         return false;
     }
 
@@ -499,6 +516,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: failed to run dcraw_process: " << libraw_strerror(ret);
         raw->recycle();
         delete raw;
+
         return false;
     }
 
@@ -506,6 +524,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     {
         raw->recycle();
         delete raw;
+
         return false;
     }
 
@@ -518,6 +537,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: failed to run dcraw_make_mem_image: " << libraw_strerror(ret);
         raw->recycle();
         delete raw;
+
         return false;
     }
 
@@ -527,6 +547,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         raw->dcraw_clear_mem(img);
         raw->recycle();
         delete raw;
+
         return false;
     }
 
@@ -582,6 +603,7 @@ bool DRawDecoder::Private::loadEmbeddedPreview(QByteArray& imgData, LibRaw* cons
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: failed to run unpack_thumb: " << libraw_strerror(ret);
         raw->recycle();
         delete raw;
+
         return false;
     }
 
@@ -592,6 +614,7 @@ bool DRawDecoder::Private::loadEmbeddedPreview(QByteArray& imgData, LibRaw* cons
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: failed to run dcraw_make_mem_thumb: " << libraw_strerror(ret);
         raw->recycle();
         delete raw;
+
         return false;
     }
 
@@ -632,6 +655,7 @@ bool DRawDecoder::Private::loadHalfPreview(QImage& image, LibRaw* const raw)
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: failed to run unpack: " << libraw_strerror(ret);
         raw->recycle();
         delete raw;
+
         return false;
     }
 
@@ -642,6 +666,7 @@ bool DRawDecoder::Private::loadHalfPreview(QImage& image, LibRaw* const raw)
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: failed to run dcraw_process: " << libraw_strerror(ret);
         raw->recycle();
         delete raw;
+
         return false;
     }
 
@@ -652,6 +677,7 @@ bool DRawDecoder::Private::loadHalfPreview(QImage& image, LibRaw* const raw)
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: failed to run dcraw_make_mem_image: " << libraw_strerror(ret);
         raw->recycle();
         delete raw;
+
         return false;
     }
 

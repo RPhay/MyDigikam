@@ -227,8 +227,7 @@ void DRawDecoderWidget::setup(int advSettings)
 
     d->demosaicingSettings               = new QWidget(this);
     QGridLayout* const demosaicingLayout = new QGridLayout(d->demosaicingSettings);
-
-    int line = 0;
+    int line                             = 0;
 
     d->sixteenBitsImage = new QCheckBox(i18nc("@option:check", "16 bits color depth"), d->demosaicingSettings);
     d->sixteenBitsImage->setWhatsThis(xi18nc("@info:whatsthis", "<para>If enabled, all RAW files will "

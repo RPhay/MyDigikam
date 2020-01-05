@@ -99,19 +99,19 @@ public:
     }
 
     NamespaceEntry(const NamespaceEntry& other)
+      : nsType(other.nsType),
+        subspace(other.subspace),
+        isDefault(other.isDefault),
+        isDisabled(other.isDisabled),
+        index(other.index),
+        namespaceName(other.namespaceName),
+        alternativeName(other.alternativeName),
+        tagPaths(other.tagPaths),
+        separator(other.separator),
+        convertRatio(QList<int>(other.convertRatio)),
+        specialOpts(other.specialOpts),
+        secondNameOpts(other.secondNameOpts)
     {
-        namespaceName   = other.namespaceName;
-        alternativeName = other.alternativeName;
-        tagPaths        = other.tagPaths;
-        separator       = other.separator;
-        nsType          = other.nsType;
-        convertRatio    = QList<int>(other.convertRatio);
-        specialOpts     = other.specialOpts;
-        secondNameOpts  = other.secondNameOpts;
-        index           = other.index;
-        subspace        = other.subspace;
-        isDefault       = other.isDefault;
-        isDisabled      = other.isDisabled;
     }
 
     ~NamespaceEntry()
@@ -184,7 +184,7 @@ public:
 
     QList<NamespaceEntry>& getWriteMapping(const QString& key)                                      const;
 
-    QList<QString>         mappingKeys()                                                            const;
+    QList<QString> mappingKeys()                                                                    const;
 
 private:
 

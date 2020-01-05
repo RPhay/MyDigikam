@@ -44,7 +44,8 @@ class DIGIKAM_EXPORT DRawDecoderSettings
 
 public:
 
-    /** RAW decoding Interpolation methods
+    /**
+     * RAW decoding Interpolation methods
      *
      * NOTE: from original dcraw demosaic
      *
@@ -78,7 +79,8 @@ public:
         AAHD     = 12
     };
 
-    /** White balances alternatives
+    /**
+     * White balances alternatives
      *  NONE:     no white balance used : reverts to standard daylight D65 WB.
      *  CAMERA:   Use the camera embedded WB if available. Reverts to NONE if not.
      *  AUTO:     Averages an auto WB on the entire image.
@@ -94,7 +96,8 @@ public:
         AERA    = 4
     };
 
-    /** Noise Reduction method to apply before demosaicing
+    /**
+     * Noise Reduction method to apply before demosaicing
      *  NONR:       No noise reduction.
      *  WAVELETSNR: wavelets correction to erase noise while preserving real detail. It's applied after interpolation.
      *  FBDDNR:     Fake Before Demosaicing Denoising noise reduction. It's applied before interpolation.
@@ -106,7 +109,8 @@ public:
         FBDDNR
     };
 
-    /** Input color profile used to decoded image
+    /**
+     * Input color profile used to decoded image
      *  NOINPUTCS:     No input color profile.
      *  EMBEDDED:      Use the camera profile embedded in RAW file if exist.
      *  CUSTOMINPUTCS: Use a custom input color space profile.
@@ -118,7 +122,8 @@ public:
         CUSTOMINPUTCS
     };
 
-    /** Output RGB color space used to decoded image
+    /**
+     * Output RGB color space used to decoded image
      *  RAWCOLOR:       No output color profile (Linear RAW).
      *  SRGB:           Use standard sRGB color space.
      *  ADOBERGB:       Use standard Adobe RGB color space.
@@ -136,68 +141,82 @@ public:
         CUSTOMOUTPUTCS
     };
 
-    /** Standard constructor with default settings
+    /**
+     * Standard constructor with default settings
      */
     DRawDecoderSettings();
 
-    /** Equivalent to the copy constructor
+    /**
+     * Equivalent to the copy constructor
      */
     DRawDecoderSettings(const DRawDecoderSettings& o);
     DRawDecoderSettings& operator=(const DRawDecoderSettings& o);
 
-    /** Compare for equality
+    /**
+     * Compare for equality
      */
     bool operator==(const DRawDecoderSettings& o) const;
 
-    /** Standard destructor
+    /**
+     * Standard destructor
      */
     virtual ~DRawDecoderSettings();
 
-    /** Method to use a settings to optimize time loading, for example to compute image histogram
+    /**
+     * Method to use a settings to optimize time loading, for example to compute image histogram
      */
     void optimizeTimeLoading();
 
 public:
 
-    /** If true, images with overblown channels are processed much more accurate,
-     *  without 'pink clouds' (and blue highlights under tungsten lamps).
+    /**
+     * If true, images with overblown channels are processed much more accurate,
+     * without 'pink clouds' (and blue highlights under tungsten lamps).
      */
     bool fixColorsHighlights;
 
-    /** If false, use a fixed white level, ignoring the image histogram.
+    /**
+     * If false, use a fixed white level, ignoring the image histogram.
      */
     bool autoBrightness;
 
-    /** Turn on RAW file decoding in 16 bits per color per pixel instead 8 bits.
+    /**
+     * Turn on RAW file decoding in 16 bits per color per pixel instead 8 bits.
      */
     bool sixteenBitsImage;
 
-    /** Half-size color image decoding (twice as fast as "enableRAWQuality").
-     *  Turn on this option to reduce time loading to render histogram for example,
-     *  no to render an image to screen.
+    /**
+     * Half-size color image decoding (twice as fast as "enableRAWQuality").
+     * Turn on this option to reduce time loading to render histogram for example,
+     * no to render an image to screen.
      */
     bool halfSizeColorImage;
 
-    /** White balance type to use. See WhiteBalance values for detail
+    /**
+     * White balance type to use. See WhiteBalance values for detail
      */
     WhiteBalance whiteBalance;
 
-    /** The temperature and the green multiplier of the custom white balance
+    /**
+     * The temperature and the green multiplier of the custom white balance
      */
     int    customWhiteBalance;
     double customWhiteBalanceGreen;
 
-    /** Turn on RAW file decoding using RGB interpolation as four colors.
+    /**
+     * Turn on RAW file decoding using RGB interpolation as four colors.
      */
     bool RGBInterpolate4Colors;
 
-    /** For cameras with non-square pixels, do not stretch the image to its
-     *  correct aspect ratio. In any case, this option guarantees that each
-     *  output pixel corresponds to one RAW pixel.
+    /**
+     * For cameras with non-square pixels, do not stretch the image to its
+     * correct aspect ratio. In any case, this option guarantees that each
+     * output pixel corresponds to one RAW pixel.
      */
     bool DontStretchPixels;
 
-    /** Unclip Highlight color level:
+    /**
+     * Unclip Highlight color level:
      *  0   = Clip all highlights to solid white.
      *  1   = Leave highlights unclipped in various shades of pink.
      *  2   = Blend clipped and unclipped values together for a gradual
@@ -207,68 +226,83 @@ public:
      */
     int unclipColors;
 
-    /** RAW quality decoding factor value. See DecodingQuality values
-     *  for details.
+    /**
+     * RAW quality decoding factor value. See DecodingQuality values
+     * for details.
      */
     DecodingQuality RAWQuality;
 
-    /** After interpolation, clean up color artifacts by repeatedly applying
-     *  a 3x3 median filter to the R-G and B-G channels.
+    /**
+     * After interpolation, clean up color artifacts by repeatedly applying
+     * a 3x3 median filter to the R-G and B-G channels.
      */
     int medianFilterPasses;
 
-    /** Noise reduction method to apply before demosaicing.
+    /**
+     * Noise reduction method to apply before demosaicing.
      */
     NoiseReduction NRType;
 
-    /** Noise reduction threshold value. Null value disable NR. Range is between 100 and 1000.
-     *  For IMPULSENR : set the amount of Luminance impulse denoise.
+    /**
+     * Noise reduction threshold value. Null value disable NR. Range is between 100 and 1000.
+     * For IMPULSENR : set the amount of Luminance impulse denoise.
      */
     int NRThreshold;
 
-    /** Brightness of output image.
+    /**
+     * Brightness of output image.
      */
     double brightness;
 
-    /** Turn on the black point setting to decode RAW image.
+    /**
+     * Turn on the black point setting to decode RAW image.
      */
     bool enableBlackPoint;
 
-    /** Black Point value of output image.
+    /**
+     * Black Point value of output image.
      */
     int blackPoint;
 
-    /** Turn on the white point setting to decode RAW image.
+    /**
+     * Turn on the white point setting to decode RAW image.
      */
     bool enableWhitePoint;
 
-    /** White Point value of output image.
+    /**
+     * White Point value of output image.
      */
     int whitePoint;
 
-    /** The input color profile used to decoded RAW data. See OutputColorProfile
-     *  values for details.
+    /**
+     * The input color profile used to decoded RAW data. See OutputColorProfile
+     * values for details.
      */
     InputColorSpace inputColorSpace;
 
-    /** Path to custom input ICC profile to define the camera's raw colorspace.
+    /**
+     * Path to custom input ICC profile to define the camera's raw colorspace.
      */
     QString inputProfile;
 
-    /** The output color profile used to decoded RAW data. See OutputColorProfile
-     *  values for details.
+    /**
+     * The output color profile used to decoded RAW data. See OutputColorProfile
+     * values for details.
      */
     OutputColorSpace outputColorSpace;
 
-    /** Path to custom output ICC profile to define the color workspace.
+    /**
+     * Path to custom output ICC profile to define the color workspace.
      */
     QString outputProfile;
 
-    /** Path to text file including dead pixel list.
+    /**
+     * Path to text file including dead pixel list.
      */
     QString deadPixelMap;
 
-    /** Rectangle used to calculate the white balance by averaging the region of image.
+    /**
+     * Rectangle used to calculate the white balance by averaging the region of image.
      */
     QRect whiteBalanceArea;
 
@@ -276,28 +310,33 @@ public:
 
     /// For DCB interpolation.
 
-    /** Number of DCB median filtering correction passes.
+    /**
+     * Number of DCB median filtering correction passes.
      * -1   : disable (default)
      * 1-10 : DCB correction passes
      */
     int dcbIterations;
 
-    /** Turn on the DCB interpolation with enhance interpolated colors.
+    /**
+     * Turn on the DCB interpolation with enhance interpolated colors.
      */
     bool dcbEnhanceFl;
 
-    /** Turn on the Exposure Correction before interpolation.
+    /**
+     * Turn on the Exposure Correction before interpolation.
      */
     bool expoCorrection;
 
-    /** Shift of Exposure Correction before interpolation in linear scale.
-     *  Usable range is from 0.25 (darken image 1 stop : -2EV) to 8.0 (lighten ~1.5 photographic stops : +3EV).
+    /**
+     * Shift of Exposure Correction before interpolation in linear scale.
+     * Usable range is from 0.25 (darken image 1 stop : -2EV) to 8.0 (lighten ~1.5 photographic stops : +3EV).
      */
     double expoCorrectionShift;
 
-    /** Amount of highlight preservation for exposure correction before interpolation in E.V.
-     *  Usable range is from 0.0 (linear exposure shift, highlights may blow) to 1.0 (maximum highlights preservation)
-     *  This settings can only take effect if expoCorrectionShift > 1.0.
+    /**
+     * Amount of highlight preservation for exposure correction before interpolation in E.V.
+     * Usable range is from 0.0 (linear exposure shift, highlights may blow) to 1.0 (maximum highlights preservation)
+     * This settings can only take effect if expoCorrectionShift > 1.0.
      */
     double expoCorrectionHighlight;
 };

@@ -79,14 +79,14 @@ public:
     void setup(int advSettings);
 
     void setEnabledBrightnessSettings(bool b);
-    bool brightnessSettingsIsEnabled() const;
+    bool brightnessSettingsIsEnabled()    const;
 
     void updateMinimumWidth();
 
     void resetToDefault();
 
     void setSettings(const DRawDecoderSettings& settings);
-    DRawDecoderSettings settings() const;
+    DRawDecoderSettings settings()        const;
 
     void readSettings(KConfigGroup& group) override;
     void writeSettings(KConfigGroup& group) override;

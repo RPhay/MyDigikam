@@ -29,47 +29,40 @@ namespace Digikam
 {
 
 DRawDecoderSettings::DRawDecoderSettings()
+    : fixColorsHighlights(false),
+      autoBrightness(true),
+      sixteenBitsImage(false),
+      halfSizeColorImage(false),
+      whiteBalance(CAMERA),
+      customWhiteBalance(6500),
+      customWhiteBalanceGreen(1.0),
+      RGBInterpolate4Colors(false),
+      DontStretchPixels(false),
+      unclipColors(0),
+      RAWQuality(BILINEAR),
+      medianFilterPasses(0),
+      NRType(NONR),
+      NRThreshold(0),
+      brightness(1.0),
+      enableBlackPoint(false),
+      blackPoint(0),
+      enableWhitePoint(false),
+      whitePoint(0),
+      inputColorSpace(NOINPUTCS),
+      inputProfile(QString()),
+      outputColorSpace(SRGB),
+      outputProfile(QString()),
+      deadPixelMap(QString()),
+      whiteBalanceArea(QRect()),
+
+      //-- Extended demosaicing settings ----------------------------------------------------------
+
+      dcbIterations(-1),
+      dcbEnhanceFl(false),
+      expoCorrection(false),
+      expoCorrectionShift(1.0),
+      expoCorrectionHighlight(0.0)
 {
-    fixColorsHighlights        = false;
-    autoBrightness             = true;
-    sixteenBitsImage           = false;
-    brightness                 = 1.0;
-    RAWQuality                 = BILINEAR;
-    inputColorSpace            = NOINPUTCS;
-    outputColorSpace           = SRGB;
-    RGBInterpolate4Colors      = false;
-    DontStretchPixels          = false;
-    unclipColors               = 0;
-    whiteBalance               = CAMERA;
-    customWhiteBalance         = 6500;
-    customWhiteBalanceGreen    = 1.0;
-    medianFilterPasses         = 0;
-
-    halfSizeColorImage         = false;
-
-    enableBlackPoint           = false;
-    blackPoint                 = 0;
-
-    enableWhitePoint           = false;
-    whitePoint                 = 0;
-
-    NRType                     = NONR;
-    NRThreshold                = 0;
-
-    inputProfile               = QString();
-    outputProfile              = QString();
-
-    deadPixelMap               = QString();
-
-    whiteBalanceArea           = QRect();
-
-    //-- Extended demosaicing settings ----------------------------------------------------------
-
-    dcbIterations              = -1;
-    dcbEnhanceFl               = false;
-    expoCorrection             = false;
-    expoCorrectionShift        = 1.0;
-    expoCorrectionHighlight    = 0.0;
 }
 
 DRawDecoderSettings::~DRawDecoderSettings()
@@ -77,40 +70,40 @@ DRawDecoderSettings::~DRawDecoderSettings()
 }
 
 DRawDecoderSettings::DRawDecoderSettings(const DRawDecoderSettings& o)
+    : fixColorsHighlights(o.fixColorsHighlights),
+      autoBrightness(o.autoBrightness),
+      sixteenBitsImage(o.sixteenBitsImage),
+      halfSizeColorImage(o.halfSizeColorImage),
+      whiteBalance(o.whiteBalance),
+      customWhiteBalance(o.customWhiteBalance),
+      customWhiteBalanceGreen(o.customWhiteBalanceGreen),
+      RGBInterpolate4Colors(o.RGBInterpolate4Colors),
+      DontStretchPixels(o.DontStretchPixels),
+      unclipColors(o.unclipColors),
+      RAWQuality(o.RAWQuality),
+      medianFilterPasses(o.medianFilterPasses),
+      NRType(o.NRType),
+      NRThreshold(o.NRThreshold),
+      brightness(o.brightness),
+      enableBlackPoint(o.enableBlackPoint),
+      blackPoint(o.blackPoint),
+      enableWhitePoint(o.enableWhitePoint),
+      whitePoint(o.whitePoint),
+      inputColorSpace(o.inputColorSpace),
+      inputProfile(o.inputProfile),
+      outputColorSpace(o.outputColorSpace),
+      outputProfile(o.outputProfile),
+      deadPixelMap(o.deadPixelMap),
+      whiteBalanceArea(o.whiteBalanceArea),
+
+      //-- Extended demosaicing settings ----------------------------------------------------------
+
+      dcbIterations(o.dcbIterations),
+      dcbEnhanceFl(o.dcbEnhanceFl),
+      expoCorrection(o.expoCorrection),
+      expoCorrectionShift(o.expoCorrectionShift),
+      expoCorrectionHighlight(o.expoCorrectionHighlight)
 {
-    fixColorsHighlights     = o.fixColorsHighlights;
-    autoBrightness          = o.autoBrightness;
-    sixteenBitsImage        = o.sixteenBitsImage;
-    brightness              = o.brightness;
-    RAWQuality              = o.RAWQuality;
-    inputColorSpace         = o.inputColorSpace;
-    outputColorSpace        = o.outputColorSpace;
-    RGBInterpolate4Colors   = o.RGBInterpolate4Colors;
-    DontStretchPixels       = o.DontStretchPixels;
-    unclipColors            = o.unclipColors;
-    whiteBalance            = o.whiteBalance;
-    customWhiteBalance      = o.customWhiteBalance;
-    customWhiteBalanceGreen = o.customWhiteBalanceGreen;
-    halfSizeColorImage      = o.halfSizeColorImage;
-    enableBlackPoint        = o.enableBlackPoint;
-    blackPoint              = o.blackPoint;
-    enableWhitePoint        = o.enableWhitePoint;
-    whitePoint              = o.whitePoint;
-    NRType                  = o.NRType;
-    NRThreshold             = o.NRThreshold;
-    medianFilterPasses      = o.medianFilterPasses;
-    inputProfile            = o.inputProfile;
-    outputProfile           = o.outputProfile;
-    deadPixelMap            = o.deadPixelMap;
-    whiteBalanceArea        = o.whiteBalanceArea;
-
-    //-- Extended demosaicing settings ----------------------------------------------------------
-
-    dcbIterations           = o.dcbIterations;
-    dcbEnhanceFl            = o.dcbEnhanceFl;
-    expoCorrection          = o.expoCorrection;
-    expoCorrectionShift     = o.expoCorrectionShift;
-    expoCorrectionHighlight = o.expoCorrectionHighlight;
 }
 
 DRawDecoderSettings& DRawDecoderSettings::operator=(const DRawDecoderSettings& o)
@@ -154,40 +147,41 @@ DRawDecoderSettings& DRawDecoderSettings::operator=(const DRawDecoderSettings& o
 
 bool DRawDecoderSettings::operator==(const DRawDecoderSettings& o) const
 {
-    return fixColorsHighlights     == o.fixColorsHighlights
-        && autoBrightness          == o.autoBrightness
-        && sixteenBitsImage        == o.sixteenBitsImage
-        && brightness              == o.brightness
-        && RAWQuality              == o.RAWQuality
-        && inputColorSpace         == o.inputColorSpace
-        && outputColorSpace        == o.outputColorSpace
-        && RGBInterpolate4Colors   == o.RGBInterpolate4Colors
-        && DontStretchPixels       == o.DontStretchPixels
-        && unclipColors            == o.unclipColors
-        && whiteBalance            == o.whiteBalance
-        && customWhiteBalance      == o.customWhiteBalance
-        && customWhiteBalanceGreen == o.customWhiteBalanceGreen
-        && halfSizeColorImage      == o.halfSizeColorImage
-        && enableBlackPoint        == o.enableBlackPoint
-        && blackPoint              == o.blackPoint
-        && enableWhitePoint        == o.enableWhitePoint
-        && whitePoint              == o.whitePoint
-        && NRType                  == o.NRType
-        && NRThreshold             == o.NRThreshold
-        && medianFilterPasses      == o.medianFilterPasses
-        && inputProfile            == o.inputProfile
-        && outputProfile           == o.outputProfile
-        && deadPixelMap            == o.deadPixelMap
-        && whiteBalanceArea        == o.whiteBalanceArea
+    return (
+            (fixColorsHighlights     == o.fixColorsHighlights)      &&
+            (autoBrightness          == o.autoBrightness)           &&
+            (sixteenBitsImage        == o.sixteenBitsImage)         &&
+            (brightness              == o.brightness)               &&
+            (RAWQuality              == o.RAWQuality)               &&
+            (inputColorSpace         == o.inputColorSpace)          &&
+            (outputColorSpace        == o.outputColorSpace)         &&
+            (RGBInterpolate4Colors   == o.RGBInterpolate4Colors)    &&
+            (DontStretchPixels       == o.DontStretchPixels)        &&
+            (unclipColors            == o.unclipColors)             &&
+            (whiteBalance            == o.whiteBalance)             &&
+            (customWhiteBalance      == o.customWhiteBalance)       &&
+            (customWhiteBalanceGreen == o.customWhiteBalanceGreen)  &&
+            (halfSizeColorImage      == o.halfSizeColorImage)       &&
+            (enableBlackPoint        == o.enableBlackPoint)         &&
+            (blackPoint              == o.blackPoint)               &&
+            (enableWhitePoint        == o.enableWhitePoint)         &&
+            (whitePoint              == o.whitePoint)               &&
+            (NRType                  == o.NRType)                   &&
+            (NRThreshold             == o.NRThreshold)              &&
+            (medianFilterPasses      == o.medianFilterPasses)       &&
+            (inputProfile            == o.inputProfile)             &&
+            (outputProfile           == o.outputProfile)            &&
+            (deadPixelMap            == o.deadPixelMap)             &&
+            (whiteBalanceArea        == o.whiteBalanceArea)         &&
 
-        //-- Extended demosaicing settings ----------------------------------------------------------
+            //-- Extended demosaicing settings ----------------------------------------------------------
 
-        && dcbIterations           == o.dcbIterations
-        && dcbEnhanceFl            == o.dcbEnhanceFl
-        && expoCorrection          == o.expoCorrection
-        && expoCorrectionShift     == o.expoCorrectionShift
-        && expoCorrectionHighlight == o.expoCorrectionHighlight
-        ;
+            (dcbIterations           == o.dcbIterations)            &&
+            (dcbEnhanceFl            == o.dcbEnhanceFl)             &&
+            (expoCorrection          == o.expoCorrection)           &&
+            (expoCorrectionShift     == o.expoCorrectionShift)      &&
+            (expoCorrectionHighlight == o.expoCorrectionHighlight)
+           );
 }
 
 void DRawDecoderSettings::optimizeTimeLoading()
