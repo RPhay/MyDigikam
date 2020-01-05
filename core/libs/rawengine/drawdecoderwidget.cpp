@@ -90,52 +90,52 @@ class Q_DECL_HIDDEN DRawDecoderWidget::Private
 public:
 
     explicit Private()
+      : demosaicingSettings(nullptr),
+        whiteBalanceSettings(nullptr),
+        correctionsSettings(nullptr),
+        colormanSettings(nullptr),
+        whiteBalanceLabel(nullptr),
+        customWhiteBalanceLabel(nullptr),
+        customWhiteBalanceGreenLabel(nullptr),
+        brightnessLabel   (nullptr),
+        RAWQualityLabel(nullptr),
+        NRLabel1(nullptr),
+        unclipColorLabel(nullptr),
+        reconstructLabel(nullptr),
+        inputColorSpaceLabel(nullptr),
+        outputColorSpaceLabel(nullptr),
+        medianFilterPassesLabel(nullptr),
+        noiseReductionLabel(nullptr),
+        expoCorrectionShiftLabel(nullptr),
+        expoCorrectionHighlightLabel(nullptr),
+        blackPointCheckBox(nullptr),
+        whitePointCheckBox(nullptr),
+        sixteenBitsImage  (nullptr),
+        autoBrightnessBox (nullptr),
+        fourColorCheckBox (nullptr),
+        dontStretchPixelsCheckBox(nullptr),
+        fixColorsHighlightsBox(nullptr),
+        refineInterpolationBox(nullptr),
+        expoCorrectionBox(nullptr),
+        inIccUrlEdit(nullptr),
+        outIccUrlEdit(nullptr),
+        noiseReductionComboBox(nullptr),
+        whiteBalanceComboBox(nullptr),
+        RAWQualityComboBox(nullptr),
+        unclipColorComboBox(nullptr),
+        inputColorSpaceComboBox(nullptr),
+        outputColorSpaceComboBox(nullptr),
+        customWhiteBalanceSpinBox(nullptr),
+        reconstructSpinBox(nullptr),
+        blackPointSpinBox (nullptr),
+        whitePointSpinBox (nullptr),
+        NRSpinBox1(nullptr),
+        medianFilterPassesSpinBox(nullptr),
+        customWhiteBalanceGreenSpinBox(nullptr),
+        brightnessSpinBox (nullptr),
+        expoCorrectionShiftSpinBox(nullptr),
+        expoCorrectionHighlightSpinBox(nullptr)
     {
-        autoBrightnessBox              = nullptr;
-        sixteenBitsImage               = nullptr;
-        fourColorCheckBox              = nullptr;
-        brightnessLabel                = nullptr;
-        brightnessSpinBox              = nullptr;
-        blackPointCheckBox             = nullptr;
-        blackPointSpinBox              = nullptr;
-        whitePointCheckBox             = nullptr;
-        whitePointSpinBox              = nullptr;
-        whiteBalanceComboBox           = nullptr;
-        whiteBalanceLabel              = nullptr;
-        customWhiteBalanceSpinBox      = nullptr;
-        customWhiteBalanceLabel        = nullptr;
-        customWhiteBalanceGreenSpinBox = nullptr;
-        customWhiteBalanceGreenLabel   = nullptr;
-        unclipColorLabel               = nullptr;
-        dontStretchPixelsCheckBox      = nullptr;
-        RAWQualityComboBox             = nullptr;
-        RAWQualityLabel                = nullptr;
-        noiseReductionComboBox         = nullptr;
-        NRSpinBox1                     = nullptr;
-        NRLabel1                       = nullptr;
-        unclipColorComboBox            = nullptr;
-        reconstructLabel               = nullptr;
-        reconstructSpinBox             = nullptr;
-        outputColorSpaceLabel          = nullptr;
-        outputColorSpaceComboBox       = nullptr;
-        demosaicingSettings            = nullptr;
-        whiteBalanceSettings           = nullptr;
-        correctionsSettings            = nullptr;
-        colormanSettings               = nullptr;
-        medianFilterPassesSpinBox      = nullptr;
-        medianFilterPassesLabel        = nullptr;
-        inIccUrlEdit                   = nullptr;
-        outIccUrlEdit                  = nullptr;
-        inputColorSpaceLabel           = nullptr;
-        inputColorSpaceComboBox        = nullptr;
-        fixColorsHighlightsBox         = nullptr;
-        refineInterpolationBox         = nullptr;
-        noiseReductionLabel            = nullptr;
-        expoCorrectionBox              = nullptr;
-        expoCorrectionShiftSpinBox     = nullptr;
-        expoCorrectionHighlightSpinBox = nullptr;
-        expoCorrectionShiftLabel       = nullptr;
-        expoCorrectionHighlightLabel   = nullptr;
     }
 
     /** Convert Exposure correction shift E.V value from GUI to Linear value needs by libraw decoder.
@@ -851,7 +851,7 @@ void DRawDecoderWidget::slotNoiseReductionChanged(int item)
     d->NRSpinBox1->setWhatsThis(xi18nc("@info:whatsthis", "<title>Threshold</title>"
                                 "<para>Set here the noise reduction threshold value to use.</para>"));
 
-    switch(item)
+    switch (item)
     {
         case DRawDecoderSettings::WAVELETSNR:
         case DRawDecoderSettings::FBDDNR:
@@ -933,21 +933,25 @@ void DRawDecoderWidget::setSettings(const DRawDecoderSettings& settings)
 {
     d->sixteenBitsImage->setChecked(settings.sixteenBitsImage);
 
-    switch(settings.whiteBalance)
+    switch (settings.whiteBalance)
     {
         case DRawDecoderSettings::CAMERA:
             d->whiteBalanceComboBox->setCurrentIndex(1);
             break;
+
         case DRawDecoderSettings::AUTO:
             d->whiteBalanceComboBox->setCurrentIndex(2);
             break;
+
         case DRawDecoderSettings::CUSTOM:
             d->whiteBalanceComboBox->setCurrentIndex(3);
             break;
+
         default:
             d->whiteBalanceComboBox->setCurrentIndex(0);
             break;
     }
+
     slotWhiteBalanceToggled(d->whiteBalanceComboBox->currentIndex());
 
     d->customWhiteBalanceSpinBox->setValue(settings.customWhiteBalance);
@@ -956,22 +960,26 @@ void DRawDecoderWidget::setSettings(const DRawDecoderSettings& settings)
     d->autoBrightnessBox->setChecked(settings.autoBrightness);
     d->fixColorsHighlightsBox->setChecked(settings.fixColorsHighlights);
 
-    switch(settings.unclipColors)
+    switch (settings.unclipColors)
     {
         case 0:
             d->unclipColorComboBox->setCurrentIndex(0);
             break;
+
         case 1:
             d->unclipColorComboBox->setCurrentIndex(1);
             break;
+
         case 2:
             d->unclipColorComboBox->setCurrentIndex(2);
             break;
+
         default:         // Reconstruct Highlight method
             d->unclipColorComboBox->setCurrentIndex(3);
             d->reconstructSpinBox->setValue(settings.unclipColors-3);
             break;
     }
+
     slotUnclipColorActivated(d->unclipColorComboBox->currentIndex());
 
     d->dontStretchPixelsCheckBox->setChecked(settings.DontStretchPixels);
@@ -986,7 +994,9 @@ void DRawDecoderWidget::setSettings(const DRawDecoderSettings& settings)
     int q = d->RAWQualityComboBox->combo()->findData(settings.RAWQuality);
 
     if (q == -1)
+    {
         q = 0;      // Fail back to bilinear
+    }
 
     d->RAWQualityComboBox->setCurrentIndex(q);
 
@@ -996,6 +1006,7 @@ void DRawDecoderWidget::setSettings(const DRawDecoderSettings& settings)
             d->medianFilterPassesSpinBox->setValue(settings.dcbIterations);
             d->refineInterpolationBox->setChecked(settings.dcbEnhanceFl);
             break;
+
         default:
             d->medianFilterPassesSpinBox->setValue(settings.medianFilterPasses);
             d->refineInterpolationBox->setChecked(false); // option not used.
@@ -1027,17 +1038,20 @@ DRawDecoderSettings DRawDecoderWidget::settings() const
     DRawDecoderSettings prm;
     prm.sixteenBitsImage = d->sixteenBitsImage->isChecked();
 
-    switch(d->whiteBalanceComboBox->currentIndex())
+    switch (d->whiteBalanceComboBox->currentIndex())
     {
         case 1:
             prm.whiteBalance = DRawDecoderSettings::CAMERA;
             break;
+
         case 2:
             prm.whiteBalance = DRawDecoderSettings::AUTO;
             break;
+
         case 3:
             prm.whiteBalance = DRawDecoderSettings::CUSTOM;
             break;
+
         default:
             prm.whiteBalance = DRawDecoderSettings::NONE;
             break;
@@ -1049,17 +1063,20 @@ DRawDecoderSettings DRawDecoderWidget::settings() const
     prm.autoBrightness          = d->autoBrightnessBox->isChecked();
     prm.fixColorsHighlights     = d->fixColorsHighlightsBox->isChecked();
 
-    switch(d->unclipColorComboBox->currentIndex())
+    switch (d->unclipColorComboBox->currentIndex())
     {
         case 0:
             prm.unclipColors = 0;
             break;
+
         case 1:
             prm.unclipColors = 1;
             break;
+
         case 2:
             prm.unclipColors = 2;
             break;
+
         default:         // Reconstruct Highlight method
             prm.unclipColors =  d->reconstructSpinBox->value()+3;
             break;
@@ -1074,12 +1091,13 @@ DRawDecoderSettings DRawDecoderWidget::settings() const
 
     prm.RAWQuality           = (DRawDecoderSettings::DecodingQuality)d->RAWQualityComboBox->combo()->currentData().toInt();
 
-    switch(prm.RAWQuality)
+    switch (prm.RAWQuality)
     {
         case DRawDecoderSettings::DCB:
             prm.dcbIterations      = d->medianFilterPassesSpinBox->value();
             prm.dcbEnhanceFl       = d->refineInterpolationBox->isChecked();
             break;
+
         default:
             prm.medianFilterPasses = d->medianFilterPassesSpinBox->value();
             break;
@@ -1094,6 +1112,7 @@ DRawDecoderSettings DRawDecoderWidget::settings() const
             prm.NRThreshold     = 0;
             break;
         }
+
         default:    // WAVELETSNR and FBDDNR
         {
             prm.NRThreshold     = d->NRSpinBox1->value();
