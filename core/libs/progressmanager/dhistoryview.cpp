@@ -49,33 +49,38 @@ class Q_DECL_HIDDEN DHistoryViewItem : public QTreeWidgetItem
 public:
 
     DHistoryViewItem(QTreeWidget* const parent, const QString& msg, DHistoryView::EntryType type, const QVariant& metadata)
-        : QTreeWidgetItem(parent, QStringList())
+        : QTreeWidgetItem(parent, QStringList()),
+          m_metadata(metadata)
     {
-        m_metadata = metadata;
-
         switch (type)
         {
             case DHistoryView::StartingEntry:
                 setIcon(0, QIcon::fromTheme(QLatin1String("system-run")));
                 break;
+
             case DHistoryView::SuccessEntry:
                 setIcon(0, QIcon::fromTheme(QLatin1String("dialog-ok-apply")));
                 break;
+
             case DHistoryView::WarningEntry:
                 setIcon(0, QIcon::fromTheme(QLatin1String("dialog-warning")));
                 setForeground(2, QBrush(QColor(Qt::darkYellow)));
                 break;
+
             case DHistoryView::ErrorEntry:
                 setIcon(0, QIcon::fromTheme(QLatin1String("dialog-error")));
                 setForeground(2, QBrush(QColor(Qt::red)));
                 break;
+
             case DHistoryView::ProgressEntry:
                 setIcon(0, QIcon::fromTheme(QLatin1String("dialog-information")));
                 break;
+
             case DHistoryView::CancelEntry:
                 setIcon(0, QIcon::fromTheme(QLatin1String("dialog-cancel")));
                 setForeground(2, QBrush(QColor(Qt::darkBlue)));
                 break;
+
             default:
                 setIcon(0, QIcon::fromTheme(QLatin1String("dialog-information")));
                 break;

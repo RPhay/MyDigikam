@@ -64,9 +64,9 @@ DWorkingPixmap::DWorkingPixmap()
 
     int pos = 0;
 
-    for (int row = 0; row < rowCount; ++row)
+    for (int row = 0 ; row < rowCount ; ++row)
     {
-        for (int col = 0; col < colCount; ++col)
+        for (int col = 0 ; col < colCount ; ++col)
         {
             QPixmap frm     = pix.copy(col * size.width(), row * size.height(), size.width(), size.height());
             m_frames[pos++] = frm;

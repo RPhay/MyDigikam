@@ -46,41 +46,59 @@ OverlayWidget::~OverlayWidget()
 
 void OverlayWidget::reposition()
 {
-    if ( !mAlignWidget )
+    if (!mAlignWidget)
+    {
         return;
+    }
 
     // p is in the alignWidget's coordinates
+
     QPoint p;
+
     // We are always above the alignWidget, right-aligned with it.
+
     p.setX(mAlignWidget->width() - width());
     p.setY(-height());
+
     // Position in the toplevelwidget's coordinates
+
     QPoint pTopLevel = mAlignWidget->mapTo(topLevelWidget(), p);
+
     // Position in the widget's parentWidget coordinates
+
     QPoint pParent   = parentWidget()->mapFrom(topLevelWidget(), pTopLevel);
+
     // Move 'this' to that position.
+
     move(pParent);
 }
 
 void OverlayWidget::setAlignWidget(QWidget* const w)
 {
     if (w == mAlignWidget)
+    {
         return;
+    }
 
     if (mAlignWidget)
+    {
         mAlignWidget->removeEventFilter(this);
+    }
 
     mAlignWidget = w;
 
     if (mAlignWidget)
+    {
         mAlignWidget->installEventFilter(this);
+    }
 
     reposition();
 }
 
 bool OverlayWidget::eventFilter(QObject* o, QEvent* e)
 {
-    if (o == mAlignWidget && ( e->type() == QEvent::Move || e->type() == QEvent::Resize ))
+    if ((o == mAlignWidget) &&
+        ((e->type() == QEvent::Move) || (e->type() == QEvent::Resize)))
     {
         reposition();
     }

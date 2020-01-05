@@ -104,12 +104,14 @@ QSize TransactionItemView::sizeHint() const
 QSize TransactionItemView::minimumSizeHint() const
 {
     int f      = 2 * frameWidth();
+
     // Make room for a vertical scrollbar in all cases, to avoid a horizontal one
+
     int vsbExt = verticalScrollBar()->sizeHint().width();
-    int minw   = topLevelWidget()->width() / 3;
+    int minw   = topLevelWidget()->width()  / 3;
     int maxh   = topLevelWidget()->height() / 2;
     QSize sz( m_bigBox->minimumSizeHint() );
-    sz.setWidth( qMax( sz.width(), minw ) + f + vsbExt );
+    sz.setWidth(  qMax( sz.width(), minw )  + f + vsbExt );
     sz.setHeight( qMin( sz.height(), maxh ) + f );
 
     return sz;
@@ -284,7 +286,7 @@ void TransactionItem::setTotalSteps(int totalSteps)
 
 void TransactionItem::slotItemCanceled()
 {
-    if ( d->item )
+    if (d->item)
     {
         d->item->cancel();
     }
@@ -388,12 +390,12 @@ void ProgressView::slotTransactionAdded(ProgressItem* item)
 {
     TransactionItem* parent = nullptr;
 
-    if ( item->parent() )
+    if (item->parent())
     {
-        if ( d->transactionsToListviewItems.contains( item->parent() ) )
+        if (d->transactionsToListviewItems.contains(item->parent()))
         {
-            parent = d->transactionsToListviewItems[ item->parent() ];
-            parent->addSubTransaction( item );
+            parent = d->transactionsToListviewItems[item->parent()];
+            parent->addSubTransaction(item);
         }
     }
     else
@@ -401,7 +403,7 @@ void ProgressView::slotTransactionAdded(ProgressItem* item)
         const bool first          = d->transactionsToListviewItems.isEmpty();
         TransactionItem* const ti = d->scrollView->addTransactionItem( item, first );
 
-        if ( ti )
+        if (ti)
         {
             d->transactionsToListviewItems.insert( item, ti );
         }
@@ -409,14 +411,15 @@ void ProgressView::slotTransactionAdded(ProgressItem* item)
         if (item->showAtStart())
         {
             // Force to show progress view for 5 seconds to inform user about new process add in queue.
-            QTimer::singleShot( 1000, this, SLOT(slotShow()) );
-            QTimer::singleShot( 6000, this, SLOT(slotClose()) );
+
+            QTimer::singleShot(1000, this, SLOT(slotShow()));
+            QTimer::singleShot(6000, this, SLOT(slotClose()));
             return;
         }
 
         if (first && d->wasLastShown)
         {
-            QTimer::singleShot( 1000, this, SLOT(slotShow()) );
+            QTimer::singleShot(1000, this, SLOT(slotShow()));
         }
     }
 }
@@ -431,11 +434,13 @@ void ProgressView::slotTransactionCompleted(ProgressItem* item)
         QTimer::singleShot( 3000, ti, SLOT(deleteLater()) );
 
         // see the slot for comments as to why that works
+
         connect ( ti, SIGNAL(destroyed()),
                 d->scrollView, SLOT(slotLayoutFirstItem()) );
     }
 
     // This was the last item, hide.
+
     if ( d->transactionsToListviewItems.isEmpty() )
     {
         QTimer::singleShot( 3000, this, SLOT(slotHide()) );
@@ -507,6 +512,7 @@ void ProgressView::slotShow()
 void ProgressView::slotHide()
 {
     // check if a new item showed up since we started the timer. If not, hide
+
     if ( d->transactionsToListviewItems.isEmpty() )
     {
         setVisible(false);
@@ -527,7 +533,8 @@ void ProgressView::setVisible(bool b)
 
 void ProgressView::slotToggleVisibility()
 {
-    /* Since we are only hiding with a timeout, there is a short period of
+    /*
+     * Since we are only hiding with a timeout, there is a short period of
      * time where the last item is still visible, but clicking on it in
      * the statusbarwidget should not display the dialog, because there
      * are no items to be shown anymore. Guard against that.

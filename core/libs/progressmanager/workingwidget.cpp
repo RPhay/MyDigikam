@@ -88,7 +88,7 @@ void WorkingWidget::slotChangeImage()
 
 void WorkingWidget::toggleTimer(bool turnOn)
 {
-    if (turnOn && !d->timer.isActive())
+    if      (turnOn && !d->timer.isActive())
     {
         d->timer.start();
     }

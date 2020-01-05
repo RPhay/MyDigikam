@@ -281,7 +281,8 @@ public:
      */
     bool isEmpty() const;
 
-    /** @return the progressitem for this id if it exist, else null.
+    /**
+     * @return the progressitem for this id if it exist, else null.
      */
     ProgressItem* findItembyId(const QString& id) const;
 
@@ -380,28 +381,44 @@ public:
 
 Q_SIGNALS:
 
-    /** @see ProgressItem::progressItemAdded() */
+    /**
+     * @see ProgressItem::progressItemAdded()
+     */
     void progressItemAdded(ProgressItem*);
 
-    /** @see ProgressItem::progressItemProgress() */
+    /**
+     * @see ProgressItem::progressItemProgress()
+     */
     void progressItemProgress(ProgressItem*, unsigned int);
 
-    /** @see ProgressItem::progressItemCompleted() */
+    /**
+     * @see ProgressItem::progressItemCompleted()
+     */
     void progressItemCompleted(ProgressItem*);
 
-    /** @see ProgressItem::progressItemCanceled() */
+    /**
+     * @see ProgressItem::progressItemCanceled()
+     */
     void progressItemCanceled(ProgressItem*);
 
-    /** @see ProgressItem::progressItemStatus() */
+    /**
+     * @see ProgressItem::progressItemStatus()
+     */
     void progressItemStatus(ProgressItem*, const QString&);
 
-    /** @see ProgressItem::progressItemLabel() */
+    /**
+     * @see ProgressItem::progressItemLabel()
+     */
     void progressItemLabel(ProgressItem*, const QString&);
 
-    /** @see ProgressItem::progressItemUsesBusyIndicator */
+    /**
+     * @see ProgressItem::progressItemUsesBusyIndicator
+     */
     void progressItemUsesBusyIndicator(ProgressItem*, bool);
 
-    /** @see ProgressItem::progressItemThumbnail */
+    /**
+     * @see ProgressItem::progressItemThumbnail
+     */
     void progressItemThumbnail(ProgressItem*, const QPixmap&);
 
     /**

@@ -57,7 +57,7 @@ public:
 
 protected:
 
-    void resizeEvent(QResizeEvent* ev) override;
+    void resizeEvent(QResizeEvent* ev)      override;
     bool eventFilter(QObject* o, QEvent* e) override;
 
 private:

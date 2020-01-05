@@ -48,7 +48,9 @@ public:
         return ProgressManager::instance()->findItembyId(progressId);
     }
 
-    QString    progressId;
+public:
+
+    QString progressId;
 };
 
 DProgressWdg::DProgressWdg(QWidget* const parent)

@@ -49,7 +49,7 @@ public:
 
     enum WidgetStackEnum
     {
-        TextLabel=0,
+        TextLabel = 0,
         ProgressBar
     };
 
@@ -93,7 +93,8 @@ StatusProgressBar::StatusProgressBar(QWidget* const parent)
     setProgressTotalSteps(100);
 
     // Parent widget will probably have the wait cursor set.
-    // Set arrow cursor to indicate the button can be clicked
+    // Set arrow cursor to indicate the button can be clicked.
+
     d->cancelButton->setCursor(Qt::ArrowCursor);
 
     hBox->addWidget(d->progressBar);
@@ -171,7 +172,9 @@ void StatusProgressBar::setProgressTotalSteps(int v)
         ProgressItem* const item = currentProgressItem();
 
         if (item)
+        {
             item->setTotalItems(v);
+        }
     }
 }
 
@@ -185,7 +188,9 @@ void StatusProgressBar::setProgressText(const QString& text)
         ProgressItem* const item = currentProgressItem();
 
         if (item)
+        {
             item->setStatus(text);
+        }
     }
 }
 
@@ -202,7 +207,9 @@ void StatusProgressBar::setProgressBarMode(int mode, const QString& text)
             ProgressItem* const item = currentProgressItem();
 
             if (item)
+            {
                 item->setComplete();
+            }
         }
     }
     else if (mode == ProgressBarMode)
@@ -218,7 +225,9 @@ void StatusProgressBar::setProgressBarMode(int mode, const QString& text)
             item->setCompletedItems(d->progressBar->value());
 
             if (!d->icon.isNull())
+            {
                 item->setThumbnail(d->icon);
+            }
 
             connect(item, SIGNAL(progressItemCanceled(ProgressItem*)),
                     this, SIGNAL(signalCancelButtonPressed()));
@@ -239,7 +248,9 @@ void StatusProgressBar::setProgressBarMode(int mode, const QString& text)
             item->setCompletedItems(d->progressBar->value());
 
             if (!d->icon.isNull())
+            {
                 item->setThumbnail(d->icon);
+            }
 
             connect(item, SIGNAL(progressItemCanceled(ProgressItem*)),
                     this, SIGNAL(signalCancelButtonPressed()));

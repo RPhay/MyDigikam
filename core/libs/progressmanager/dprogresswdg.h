@@ -44,28 +44,33 @@ public:
     explicit DProgressWdg(QWidget* const parent);
     ~DProgressWdg();
 
-    /** Call this method to start a new instance of progress notification into progress manager
-     *  You can pass title string to name progress item, and set it as cancelable. In this case,
-     *  signalProgressCanceled() is fired when user press cancel button from progress manager.
-     *  This item can also accept a thumbnail that you can change through progresssThumbnailChanged().
+    /**
+     * Call this method to start a new instance of progress notification into progress manager
+     * You can pass title string to name progress item, and set it as cancelable. In this case,
+     * signalProgressCanceled() is fired when user press cancel button from progress manager.
+     * This item can also accept a thumbnail that you can change through progresssThumbnailChanged().
      */
     void progressScheduled(const QString& title, bool canBeCanceled, bool hasThumb);
 
-    /** Change thumbnail in progress manager
+    /**
+     * Change thumbnail in progress manager
      */
     void progressThumbnailChanged(const QPixmap& thumb);
 
-    /** Change status string in progress manager
+    /**
+     * Change status string in progress manager
      */
     void progressStatusChanged(const QString& status);
 
-    /** Call this method to query progress manager that process is done.
+    /**
+     * Call this method to query progress manager that process is done.
      */
     void progressCompleted();
 
 Q_SIGNALS:
 
-    /** Fired when user press cancel button from progress manager.
+    /**
+     * Fired when user press cancel button from progress manager.
      */
     void signalProgressCanceled();
 

@@ -54,16 +54,16 @@ class Q_DECL_HIDDEN DLogoAction::Private
 public:
 
     explicit Private()
+      : alignOnright(true),
+        progressCount(0),
+        progressTimer(nullptr),
+        urlLabel(nullptr)
     {
-        alignOnright  = true;
-        progressTimer = nullptr;
-        urlLabel      = nullptr;
-        progressCount = 0;
     }
 
     bool          alignOnright;
 
-    int           progressCount;         // Position of animation.
+    int           progressCount;         ///< Position of animation.
 
     QTimer*       progressTimer;
 

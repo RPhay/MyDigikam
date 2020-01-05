@@ -47,7 +47,7 @@ public:
 
     enum StatusProgressBarMode
     {
-        TextMode=0,
+        TextMode = 0,
         ProgressBarMode,
         CancelProgressBarMode
     };
@@ -59,9 +59,9 @@ public:
 
     void setAlignment(Qt::Alignment a);
 
-    void setProgressBarMode(int mode, const QString& text=QString());
+    void setProgressBarMode(int mode, const QString& text = QString());
 
-    int  progressValue() const;
+    int  progressValue()      const;
 
     int  progressTotalSteps() const;
     void setProgressTotalSteps(int v);

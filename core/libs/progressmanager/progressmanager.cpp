@@ -144,6 +144,7 @@ void ProgressItem::removeChild(ProgressItem* const kiddo)
     d->children.remove(kiddo);
 
     // in case we were waiting for the last kid to go away, now is the time
+
     if (d->children.count() == 0 && d->waitingForKids)
     {
         emit progressItemCompleted(this);
@@ -160,6 +161,7 @@ void ProgressItem::cancel()
     d->canceled = true;
 
     // Cancel all children.
+
     QList<ProgressItem*> kids = d->children.keys();
     QList<ProgressItem*>::Iterator it(kids.begin());
     QList<ProgressItem*>::Iterator end(kids.end());
@@ -262,7 +264,8 @@ unsigned int ProgressItem::totalItems() const
 bool ProgressItem::setCompletedItems(unsigned int v)
 {
     d->completed.fetchAndStoreOrdered(v);
-    return v == (unsigned int)d->total;
+
+    return (v == (unsigned int)d->total);
 }
 
 unsigned int ProgressItem::completedItems() const
@@ -273,12 +276,13 @@ unsigned int ProgressItem::completedItems() const
 bool ProgressItem::incCompletedItems(unsigned int v)
 {
     unsigned int previous = d->completed.fetchAndAddOrdered(v);
-    return (previous+v) == (unsigned int) d->total;
+
+    return ((previous+v) == (unsigned int) d->total);
 }
 
 bool ProgressItem::totalCompleted() const
 {
-    return d->completed == d->total;
+    return (d->completed == d->total);
 }
 
 bool ProgressItem::canceled() const
@@ -426,6 +430,7 @@ ProgressItem* ProgressManager::findItembyId(const QString& id) const
     }
 
     QMutexLocker lock(&d->mutex);
+
     return d->transactions.value(id);
 }
 
@@ -465,6 +470,7 @@ ProgressItem* ProgressManager::createProgressItemImpl(const QString& parent,
                                                       bool  hasThumb)
 {
     ProgressItem* const p = findItembyId(parent);
+
     return createProgressItemImpl(p, id, label, status, canBeCanceled, hasThumb);
 }
 
@@ -473,12 +479,14 @@ bool ProgressManager::addProgressItem(ProgressItem* const t, ProgressItem* const
     if (!instance()->findItembyId(t->id()))
     {
         instance()->addProgressItemImpl(t, parent);
+
         return true;
     }
     else
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "A tool identified as " << t->id() << " is already running.";
         t->setComplete();
+
         return false;
     }
 }
@@ -540,7 +548,9 @@ void ProgressManager::slotTransactionCompleted(ProgressItem* item)
     }
 
     d->removeItem(item);
+
     // move to UI thread
+
     emit completeTransactionDeferred(item);
 }
 
