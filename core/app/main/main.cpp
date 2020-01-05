@@ -96,6 +96,8 @@ int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
+    digikamSetDebugFilterRules();
+
     tryInitDrMingw();
 
 #ifdef HAVE_IMAGE_MAGICK
