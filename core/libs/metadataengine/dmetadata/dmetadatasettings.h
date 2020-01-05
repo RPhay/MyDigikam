@@ -58,12 +58,11 @@ public:
      */
     void setSettings(const DMetadataSettingsContainer& settings);
 
-
 Q_SIGNALS:
 
     void dmetadataSettingsChanged();
     void dmetadataSettingsChanged(const DMetadataSettingsContainer& current,
-                         const DMetadataSettingsContainer& previous);
+                                  const DMetadataSettingsContainer& previous);
 
 private:
 

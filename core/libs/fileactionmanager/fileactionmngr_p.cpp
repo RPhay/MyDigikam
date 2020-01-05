@@ -122,7 +122,6 @@ void FileActionMngr::Private::connectDatabaseToFileWorker()
     connect(dbWorker, SIGNAL(writeOrientationToFiles(FileActionItemInfoList,int)),
             fileWorker, SLOT(writeOrientationToFiles(FileActionItemInfoList,int)),
             Qt::DirectConnection);
-
 }
 
 FileActionMngr::Private::~Private()
@@ -146,6 +145,7 @@ bool FileActionMngr::Private::shallSendForWriting(qlonglong id)
     }
 
     scheduledToWrite << id;
+
     return true;
 }
 
@@ -178,12 +178,14 @@ void FileActionMngr::Private::slotLastProgressItemCompleted()
     {
         emit signalTasksFinished();
     }
+
     sleepTimer->start();
 }
 
 void FileActionMngr::Private::slotImageDataChanged(const QString& path, bool removeThumbnails, bool notifyCache)
 {
     // must be done from the UI thread, touches pixmaps
+
     if (removeThumbnails)
     {
         ThumbnailLoadThread::deleteThumbnail(path);

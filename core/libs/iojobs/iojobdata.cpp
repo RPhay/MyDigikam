@@ -218,6 +218,7 @@ QUrl IOJobData::getNextUrl() const
     }
 
     d->mutex.unlock();
+
     return url;
 }
 

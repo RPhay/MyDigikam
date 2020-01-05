@@ -96,8 +96,8 @@ class Q_DECL_HIDDEN DMetadataSettingsContainer::Private
 public:
 
     explicit Private()
+      : unifyReadWrite(false)
     {
-        unifyReadWrite = false;
     }
 
 public:
@@ -124,6 +124,7 @@ DMetadataSettingsContainer::DMetadataSettingsContainer(const DMetadataSettingsCo
 DMetadataSettingsContainer& DMetadataSettingsContainer::operator=(const DMetadataSettingsContainer& other)
 {
     *d = *other.d;
+
     return *this;
 }
 
@@ -187,6 +188,7 @@ void DMetadataSettingsContainer::writeToConfig(KConfigGroup& group) const
     foreach (const QString& str, mappingKeys())
     {
         // Remove all old group elements.
+
         group.group(readNameSpace.arg(str)).deleteGroup();
         group.group(writeNameSpace.arg(str)).deleteGroup();
 
@@ -494,7 +496,7 @@ void DMetadataSettingsContainer::writeOneGroup(KConfigGroup& group, const QStrin
     for (NamespaceEntry e : container)
     {
         QString groupNumber = QString::fromLatin1("#%1")
-                              .arg(++index, 4, 10, QLatin1Char('0'));
+                              .arg(index++, 4, 10, QLatin1Char('0'));
 
         KConfigGroup tmp = namespacesGroup.group(groupNumber);
         tmp.writeEntry("namespaceName",   e.namespaceName);

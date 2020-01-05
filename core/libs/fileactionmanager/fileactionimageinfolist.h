@@ -45,7 +45,7 @@ public:
 
     virtual ~FileActionProgressItemCreator() {}
     virtual ProgressItem* createProgressItem(const QString& action) const = 0;
-    virtual void addProgressItem(ProgressItem* const item) = 0;
+    virtual void addProgressItem(ProgressItem* const item)                = 0;
 };
 
 // -------------------------------------------------------------------------------------------------------------------
@@ -56,6 +56,8 @@ protected:
 
     QAtomicPointer<ProgressItem> firstItem;
     QAtomicPointer<ProgressItem> secondItem;
+
+protected:
 
     // Note: It is currently not safe to schedule after the framework had a chance to
     // advance all already scheduled items. For this, we'd need to add a mechanism (flag to block completion?)
@@ -97,9 +99,9 @@ public:
     }
 
     FileActionItemInfoList(const FileActionItemInfoList& copy)
-        : QList(copy)
+        : QList(copy),
+          container(copy.container)
     {
-        this->container = copy.container;
     }
 
     ~FileActionItemInfoList()
@@ -109,7 +111,8 @@ public:
 public:
 
     static FileActionItemInfoList create(const QList<ItemInfo>& list);
-    static FileActionItemInfoList continueTask(const QList<ItemInfo>& list, FileActionProgressItemContainer* const container);
+    static FileActionItemInfoList continueTask(const QList<ItemInfo>& list,
+                                               FileActionProgressItemContainer* const container);
 
     FileActionProgressItemContainer* progress() const
     {
@@ -150,9 +153,11 @@ public:
     }
 
     /// file worker calls this when finished
-    void writtenToOne()             { written(1);                         }
-    void written(int numberOfInfos) { progress()->written(numberOfInfos); }
-    void finishedWriting()          { progress()->finishedWriting();      }
+    void writtenToOne()                 { written(1);                             }
+    void written(int numberOfInfos)     { progress()->written(numberOfInfos);     }
+    void finishedWriting()              { progress()->finishedWriting();          }
+
+public:
 
     QExplicitlySharedDataPointer<FileActionProgressItemContainer> container;
 

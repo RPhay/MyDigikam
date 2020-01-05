@@ -69,7 +69,7 @@ void FileActionMngrDatabaseWorker::changeTags(FileActionItemInfoList infos,
 
             hub.load(info);
 
-            for (QList<int>::const_iterator tagIt = tagIDs.constBegin(); tagIt != tagIDs.constEnd(); ++tagIt)
+            for (QList<int>::const_iterator tagIt = tagIDs.constBegin() ; tagIt != tagIDs.constEnd() ; ++tagIt)
             {
                 if (addOrRemove)
                 {
@@ -83,7 +83,8 @@ void FileActionMngrDatabaseWorker::changeTags(FileActionItemInfoList infos,
 
             hub.write(info, DisjointMetadata::PartialWrite);
 
-            if (hub.willWriteMetadata(DisjointMetadata::FullWriteIfChanged) && d->shallSendForWriting(info.id()))
+            if (hub.willWriteMetadata(DisjointMetadata::FullWriteIfChanged) &&
+                d->shallSendForWriting(info.id()))
             {
                 forWriting << info;
             }
@@ -94,6 +95,7 @@ void FileActionMngrDatabaseWorker::changeTags(FileActionItemInfoList infos,
     }
 
     // send for writing file metadata
+
     if (!forWriting.isEmpty())
     {
         FileActionItemInfoList forWritingTaskList = FileActionItemInfoList::continueTask(forWriting, infos.progress());
@@ -130,7 +132,8 @@ void FileActionMngrDatabaseWorker::assignPickLabel(FileActionItemInfoList infos,
             hub.setPickLabel(pickId);
             hub.write(info, DisjointMetadata::PartialWrite);
 
-            if (hub.willWriteMetadata(DisjointMetadata::FullWriteIfChanged) && d->shallSendForWriting(info.id()))
+            if (hub.willWriteMetadata(DisjointMetadata::FullWriteIfChanged) &&
+                d->shallSendForWriting(info.id()))
             {
                 forWriting << info;
             }
@@ -141,6 +144,7 @@ void FileActionMngrDatabaseWorker::assignPickLabel(FileActionItemInfoList infos,
     }
 
     // send for writing file metadata
+
     if (!forWriting.isEmpty())
     {
         FileActionItemInfoList forWritingTaskList = FileActionItemInfoList::continueTask(forWriting, infos.progress());
@@ -175,7 +179,8 @@ void FileActionMngrDatabaseWorker::assignColorLabel(FileActionItemInfoList infos
             hub.setColorLabel(colorId);
             hub.write(info, DisjointMetadata::PartialWrite);
 
-            if (hub.willWriteMetadata(DisjointMetadata::FullWriteIfChanged) && d->shallSendForWriting(info.id()))
+            if (hub.willWriteMetadata(DisjointMetadata::FullWriteIfChanged) &&
+                d->shallSendForWriting(info.id()))
             {
                 forWriting << info;
             }
@@ -186,6 +191,7 @@ void FileActionMngrDatabaseWorker::assignColorLabel(FileActionItemInfoList infos
     }
 
     // send for writing file metadata
+
     if (!forWriting.isEmpty())
     {
         FileActionItemInfoList forWritingTaskList = FileActionItemInfoList::continueTask(forWriting, infos.progress());
@@ -221,7 +227,8 @@ void FileActionMngrDatabaseWorker::assignRating(FileActionItemInfoList infos, in
             hub.setRating(rating);
             hub.write(info, DisjointMetadata::PartialWrite);
 
-            if (hub.willWriteMetadata(DisjointMetadata::FullWriteIfChanged) && d->shallSendForWriting(info.id()))
+            if (hub.willWriteMetadata(DisjointMetadata::FullWriteIfChanged) &&
+                d->shallSendForWriting(info.id()))
             {
                 forWriting << info;
             }
@@ -232,6 +239,7 @@ void FileActionMngrDatabaseWorker::assignRating(FileActionItemInfoList infos, in
     }
 
     // send for writing file metadata
+
     if (!forWriting.isEmpty())
     {
         FileActionItemInfoList forWritingTaskList = FileActionItemInfoList::continueTask(forWriting, infos.progress());
@@ -266,9 +274,11 @@ void FileActionMngrDatabaseWorker::editGroup(int groupAction, const ItemInfo& pi
                 case AddToGroup:
                     info.addToGroup(pick);
                     break;
+
                 case RemoveFromGroup:
                     info.removeFromGroup();
                     break;
+
                 case Ungroup:
                     info.clearGroup();
                     break;
@@ -324,6 +334,7 @@ void FileActionMngrDatabaseWorker::applyMetadata(FileActionItemInfoList infos, D
             }
 
             // apply to database
+
             hub->write(info);
             infos.dbProcessedOne();
             group.allowLift();
@@ -333,7 +344,9 @@ void FileActionMngrDatabaseWorker::applyMetadata(FileActionItemInfoList infos, D
     if (hub->willWriteMetadata(DisjointMetadata::FullWriteIfChanged), Qt::DirectConnection)
     {
         int flags = hub->changedFlags();
+
         // don't filter by shallSendForWriting here; we write from the hub, not from freshly loaded data
+
         infos.schedulingForWrite(infos.size(), i18n("Writing metadata to files"), d->fileProgressCreator());
 
         for (ItemInfoTaskSplitter splitter(infos) ; splitter.hasNext() ; )

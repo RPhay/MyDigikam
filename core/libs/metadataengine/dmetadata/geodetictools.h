@@ -80,6 +80,7 @@ class DIGIKAM_EXPORT Ellipsoid
 {
 
 public:
+
     /**
      * WGS 1984 ellipsoid with axis in metres. This ellipsoid is used
      * in GPS systems and is the default for most <code>org.geotools</code> packages.

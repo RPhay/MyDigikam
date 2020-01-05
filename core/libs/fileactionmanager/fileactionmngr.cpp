@@ -22,7 +22,6 @@
  *
  * ============================================================ */
 
-#include "fileactionmngr.h"
 #include "fileactionmngr_p.h"
 
 // Qt includes
@@ -94,8 +93,10 @@ bool FileActionMngr::requestShutDown()
             dialog, SLOT(accept()));
 
     dialog->exec();
+
     // Either, we finished and all is fine, or the user cancelled and we kill
     shutDown();
+
     return true;
 }
 
@@ -235,14 +236,16 @@ void FileActionMngr::setExifOrientation(const QList<ItemInfo>& infos, int orient
     d->setExifOrientation(taskList, orientation);
 }
 
-//void FileActionMngr::applyMetadata(const QList<ItemInfo>& infos, const MetadataHub& hub)
-//{
-//    FileActionItemInfoList taskList = FileActionItemInfoList::create(infos);
-//    taskList.schedulingForDB(i18n("Applying metadata"), d->dbProgressCreator());
-//    // create hub parent-less, we will need to clone() it in a thread,
-//    // and that does not work with parent in a different thread
-////    d->applyMetadata(taskList, new MetadataHubOnTheRoad(hub));
-//}
+/*
+void FileActionMngr::applyMetadata(const QList<ItemInfo>& infos, const MetadataHub& hub)
+{
+    FileActionItemInfoList taskList = FileActionItemInfoList::create(infos);
+    taskList.schedulingForDB(i18n("Applying metadata"), d->dbProgressCreator());
+    // create hub parent-less, we will need to clone() it in a thread,
+    // and that does not work with parent in a different thread
+    // d->applyMetadata(taskList, new MetadataHubOnTheRoad(hub));
+}
+*/
 
 void FileActionMngr::applyMetadata(const QList<ItemInfo>& infos, const DisjointMetadata &hub)
 {
@@ -253,13 +256,14 @@ void FileActionMngr::applyMetadata(const QList<ItemInfo>& infos, const DisjointM
 
 void FileActionMngr::applyMetadata(const QList<ItemInfo>& infos, DisjointMetadata* hub)
 {
-//    if (hub->parent())
-//    {
-//        qCDebug(DIGIKAM_GENERAL_LOG) << "MetadataHubOnTheRoad object must not have a QObject parent";
-//        delete hub;
-//        return;
-//    }
-
+/*
+    if (hub->parent())
+    {
+        qCDebug(DIGIKAM_GENERAL_LOG) << "MetadataHubOnTheRoad object must not have a QObject parent";
+        delete hub;
+        return;
+    }
+*/
     FileActionItemInfoList taskList = FileActionItemInfoList::create(infos);
     taskList.schedulingForDB(i18n("Applying metadata"), d->dbProgressCreator());
     d->applyMetadata(taskList, hub);

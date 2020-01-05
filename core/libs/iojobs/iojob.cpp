@@ -55,8 +55,8 @@ IOJob::IOJob()
 // --------------------------------------------
 
 CopyOrMoveJob::CopyOrMoveJob(IOJobData* const data)
+    : m_data(data)
 {
-    m_data = data;
 }
 
 void CopyOrMoveJob::run()
@@ -96,9 +96,9 @@ void CopyOrMoveJob::run()
             continue;
         }
 
-        if (m_data->operation() == IOJobData::MoveAlbum ||
-            m_data->operation() == IOJobData::MoveImage ||
-            m_data->operation() == IOJobData::MoveFiles)
+        if ((m_data->operation() == IOJobData::MoveAlbum) ||
+            (m_data->operation() == IOJobData::MoveImage) ||
+            (m_data->operation() == IOJobData::MoveFiles))
         {
             if (srcInfo.isDir())
             {
@@ -107,6 +107,7 @@ void CopyOrMoveJob::run()
                 if (!srcDir.rename(srcDir.path(), destenation))
                 {
                     // If QDir::rename fails, try copy and remove.
+
                     if (!DFileOperations::copyFolderRecursively(srcDir.path(), dstDir.path(), &m_cancel))
                     {
                         if (m_cancel)
@@ -183,8 +184,8 @@ void CopyOrMoveJob::run()
 // --------------------------------------------
 
 DeleteJob::DeleteJob(IOJobData* const data)
+    : m_data(data)
 {
-    m_data = data;
 }
 
 void DeleteJob::run()
@@ -273,8 +274,8 @@ void DeleteJob::run()
 // --------------------------------------------
 
 RenameFileJob::RenameFileJob(IOJobData* const data)
+    : m_data(data)
 {
-    m_data = data;
 }
 
 void RenameFileJob::run()
@@ -337,8 +338,8 @@ void RenameFileJob::run()
 // ----------------------------------------------
 
 DTrashItemsListingJob::DTrashItemsListingJob(const QString& collectionPath)
+    : m_collectionPath(collectionPath)
 {
-    m_collectionPath = collectionPath;
 }
 
 void DTrashItemsListingJob::run()
@@ -368,8 +369,8 @@ void DTrashItemsListingJob::run()
 // ----------------------------------------------
 
 RestoreDTrashItemsJob::RestoreDTrashItemsJob(const DTrashItemInfoList& infos)
+    : m_dtrashItemInfoList(infos)
 {
-    m_dtrashItemInfoList = infos;
 }
 
 void RestoreDTrashItemsJob::run()
@@ -402,8 +403,8 @@ void RestoreDTrashItemsJob::run()
 // ----------------------------------------------
 
 DeleteDTrashItemsJob::DeleteDTrashItemsJob(const DTrashItemInfoList& infos)
+    : m_dtrashItemInfoList(infos)
 {
-    m_dtrashItemInfoList = infos;
 }
 
 void DeleteDTrashItemsJob::run()

@@ -21,9 +21,10 @@
  *
  * ============================================================ */
 
+#include "fileactionimageinfolist.h"
+
 // Local includes
 
-#include "fileactionimageinfolist.h"
 #include "digikam_debug.h"
 #include "progressmanager.h"
 
@@ -88,7 +89,9 @@ void FileActionProgressItemContainer::dbProcessed(int numberOfInfos)
 
 void FileActionProgressItemContainer::dbFinished()
 {
-    //checkFinish(firstItem);
+/*
+    checkFinish(firstItem);
+*/
 }
 
 void FileActionProgressItemContainer::schedulingForWrite(int numberOfInfos,
@@ -108,7 +111,9 @@ void FileActionProgressItemContainer::written(int numberOfInfos)
 
 void FileActionProgressItemContainer::finishedWriting()
 {
-//    checkFinish(secondItem);
+/*
+    checkFinish(secondItem);
+*/
 }
 
 FileActionItemInfoList FileActionItemInfoList::create(const QList<ItemInfo>& infos)
@@ -116,15 +121,17 @@ FileActionItemInfoList FileActionItemInfoList::create(const QList<ItemInfo>& inf
     FileActionItemInfoList list;
     list           = FileActionItemInfoList(infos);
     list.container = new FileActionProgressItemContainer;
+
     return list;
 }
 
 FileActionItemInfoList FileActionItemInfoList::continueTask(const QList<ItemInfo>& infos,
-                                                              FileActionProgressItemContainer* const container)
+                                                            FileActionProgressItemContainer* const container)
 {
     FileActionItemInfoList list;
     list           = FileActionItemInfoList(infos);
     list.container = container;
+
     return list;
 }
 

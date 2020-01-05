@@ -57,10 +57,10 @@ public:
 public:
 
     explicit Private()
+      : status(None),
+        info(nullptr),
+        applyBtn(nullptr)
     {
-        status      = None;
-        info        = nullptr;
-        applyBtn    = nullptr;
     }
 
     int               status;
@@ -106,9 +106,13 @@ MetadataStatusBar::MetadataStatusBar(QWidget* const parent)
             this, SLOT(slotSetPendingItems(int)));
 
     if (MetaEngineSettings::instance()->settings().useLazySync)
-        this->show();
+    {
+        show();
+    }
     else
-        this->hide();
+    {
+        hide();
+    }
 }
 
 MetadataStatusBar::~MetadataStatusBar()
@@ -119,9 +123,13 @@ MetadataStatusBar::~MetadataStatusBar()
 void MetadataStatusBar::slotSettingsChanged()
 {
     if (MetaEngineSettings::instance()->settings().useLazySync)
-        this->show();
+    {
+        show();
+    }
     else
-        this->hide();
+    {
+        hide();
+    }
 }
 
 void MetadataStatusBar::slotSetPendingItems(int number)

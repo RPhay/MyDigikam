@@ -48,7 +48,7 @@ IOJobsManager::IOJobsManager()
 
 IOJobsManager* IOJobsManager::instance()
 {
-    return& creator->object;
+    return (&creator->object);
 }
 
 IOJobsThread* IOJobsManager::startIOJobs(IOJobData* const data)
@@ -65,13 +65,16 @@ IOJobsThread* IOJobsManager::startIOJobs(IOJobData* const data)
         case IOJobData::MoveFiles:
             thread->copyOrMove(data);
             break;
+
         case IOJobData::Trash:
         case IOJobData::Delete:
             thread->deleteFiles(data);
             break;
+
         case IOJobData::Rename:
             thread->renameFile(data);
             break;
+
         default:
             break;
     }

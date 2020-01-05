@@ -87,15 +87,15 @@ public:
 public:
 
     explicit NamespaceEntry()
+      : nsType(TAGS),
+        subspace(XMP),
+        isDefault(true),
+        isDisabled(false),
+        index(-1),
+        tagPaths(TAGPATH),
+        specialOpts(NO_OPTS),
+        secondNameOpts(NO_OPTS)
     {
-        specialOpts    = NO_OPTS;
-        secondNameOpts = NO_OPTS;
-        isDefault      = true;
-        isDisabled     = false;
-        nsType         = TAGS;
-        subspace       = XMP;
-        index          = -1;
-        tagPaths       = TAGPATH;
     }
 
     NamespaceEntry(const NamespaceEntry& other)
@@ -168,23 +168,23 @@ public:
 public:
 
     void readFromConfig(KConfigGroup& group);
-    void writeToConfig(KConfigGroup& group) const;
+    void writeToConfig(KConfigGroup& group)                                                         const;
 
     /**
      * @brief defaultValues - default namespaces used by digiKam
      */
     void defaultValues();
 
-    bool unifyReadWrite() const;
+    bool unifyReadWrite()                                                                           const;
     void setUnifyReadWrite(bool b);
 
     void addMapping(const QString& key);
 
-    QList<NamespaceEntry>& getReadMapping(const QString& key)  const;
+    QList<NamespaceEntry>& getReadMapping(const QString& key)                                       const;
 
-    QList<NamespaceEntry>& getWriteMapping(const QString& key) const;
+    QList<NamespaceEntry>& getWriteMapping(const QString& key)                                      const;
 
-    QList<QString>         mappingKeys()                       const;
+    QList<QString>         mappingKeys()                                                            const;
 
 private:
 
@@ -192,7 +192,7 @@ private:
     void defaultRatingValues();
     void defaultCommentValues();
     void readOneGroup(KConfigGroup& group, const QString& name, QList<NamespaceEntry>& container);
-    void writeOneGroup(KConfigGroup& group, const QString& name, QList<NamespaceEntry>& container) const;
+    void writeOneGroup(KConfigGroup& group, const QString& name, QList<NamespaceEntry>& container)  const;
 
 private:
 

@@ -89,9 +89,9 @@ public: // File I/O helpers
      * Re-implemented from libMetaEngine to use libraw identify and
      * ffmpeg probe methods if Exiv2 failed.
      */
-    bool load(const QString& filePath) override;
-    bool save(const QString& filePath, bool setVersion = false) const;
-    bool applyChanges(bool setVersion = false) const;
+    bool load(const QString& filePath)                                                                                        override;
+    bool save(const QString& filePath, bool setVersion = false)                                                         const;
+    bool applyChanges(bool setVersion = false)                                                                          const;
 
     /**
      * Try to extract metadata using Raw Engine identify method (libraw).
@@ -100,12 +100,12 @@ public: // File I/O helpers
 
 public: // History helpers
 
-    QString getItemHistory() const;
-    bool    setItemHistory(QString& imageHistoryXml) const;
-    bool    hasItemHistoryTag() const;
+    QString getItemHistory()                                                                                            const;
+    bool    setItemHistory(QString& imageHistoryXml)                                                                    const;
+    bool    hasItemHistoryTag()                                                                                         const;
 
-    QString getItemUniqueId() const;
-    bool    setItemUniqueId(const QString& uuid) const;
+    QString getItemUniqueId()                                                                                           const;
+    bool    setItemUniqueId(const QString& uuid)                                                                        const;
 
 public: // Faces helpers
 
@@ -113,7 +113,7 @@ public: // Faces helpers
      * Get Images Face Map based on tags stored in Picassa/Metadatagroup
      * format.
      */
-    bool getItemFacesMap(QMultiMap<QString, QVariant>& facesPath) const;
+    bool getItemFacesMap(QMultiMap<QString, QVariant>& facesPath)                                                       const;
 
     /**
      * Set Images Face Map tags in Picassa/Metadatagroup format.
@@ -121,7 +121,7 @@ public: // Faces helpers
      * @param write : if true all faces will be written, else update mode:
      *                search if at least a face tag exist and write if true.
      */
-    bool setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool write) const;
+    bool setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool write)                                           const;
 
     /**
      * Remove Images Face Map tags from Picassa/Metadatagroup format.
@@ -131,48 +131,48 @@ public: // Faces helpers
 public: // Tags helpers
 
     bool getItemTagsPath(QStringList& tagsPath,
-                         const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings()) const;
+                         const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings())        const;
     bool setItemTagsPath(const QStringList& tagsPath,
-                         const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings()) const;
+                         const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings())        const;
 
-    bool getACDSeeTagsPath(QStringList& tagsPath) const;
+    bool getACDSeeTagsPath(QStringList& tagsPath)                                                                       const;
 
-    bool setACDSeeTagsPath(const QStringList& tagsPath) const;
+    bool setACDSeeTagsPath(const QStringList& tagsPath)                                                                 const;
 
 public: // Comments helpers
 
     CaptionsMap getItemComments(const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings()) const;
     bool setItemComments(const CaptionsMap& comments,
-                         const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings()) const;
+                         const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings())        const;
 
-    CaptionsMap getItemTitles() const;
-    bool setItemTitles(const CaptionsMap& title) const;
+    CaptionsMap getItemTitles()                                                                                         const;
+    bool setItemTitles(const CaptionsMap& title)                                                                        const;
 
     static MetaEngine::AltLangMap toAltLangMap(const QVariant& var);
 
 public: // Labels helpers
 
-    int  getItemRating(const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings()) const;
+    int  getItemRating(const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings())          const;
     bool setItemRating(int rating,
-                       const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings()) const;
+                       const DMetadataSettingsContainer& settings = DMetadataSettings::instance()->settings())          const;
 
-    int  getItemPickLabel() const;
-    bool setItemPickLabel(int pickId) const;
+    int  getItemPickLabel()                                                                                             const;
+    bool setItemPickLabel(int pickId)                                                                                   const;
 
-    int  getItemColorLabel() const;
-    bool setItemColorLabel(int colorId) const;
+    int  getItemColorLabel()                                                                                            const;
+    bool setItemColorLabel(int colorId)                                                                                 const;
 
 public: // Template helpers
 
-    bool     setMetadataTemplate(const Template& t) const;
-    Template getMetadataTemplate() const;
-    bool     removeMetadataTemplate() const;
+    bool     setMetadataTemplate(const Template& t)                                                                     const;
+    Template getMetadataTemplate()                                                                                      const;
+    bool     removeMetadataTemplate()                                                                                   const;
 
     /**
      * Fills only the copyright values in the template. Use getMetadataTemplate() usually.
      * Returns true if valid fields were read.
      */
-    bool getCopyrightInformation(Template& t) const;
+    bool getCopyrightInformation(Template& t)                                                                           const;
 
 public: // EXIF helpers
 
@@ -182,7 +182,7 @@ public: // EXIF helpers
      * e.g. embedded profiles in JPEG images.
      * Returns a null profile if no profile is found.
      */
-    IccProfile getIccProfile() const;
+    IccProfile getIccProfile()                                                                                          const;
 
     /**
      * Sets the IccProfile embedded in the Exif metadata.
@@ -192,37 +192,37 @@ public: // EXIF helpers
     /**
      * Remove the Exif color space identification from the image.
      */
-    bool removeExifColorSpace() const;
+    bool removeExifColorSpace()                                                                                         const;
 
     /**
      * Returns millisecond time-stamp from Exif tags or 0 if not found.
      */
-    int  getMSecsInfo() const;
+    int  getMSecsInfo()                                                                                                 const;
 
     /**
      * Extract milliseconds time-stamp of photo from an Exif tag and store it to 'ms'.
      * Returns true if data are extracted.
      */
-    bool mSecTimeStamp(const char* const exifTagName, int& ms) const;
+    bool mSecTimeStamp(const char* const exifTagName, int& ms)                                                          const;
 
     bool removeExifTags(const QStringList& tagFilters);
 
 private:
 
-    QString getExifTagStringFromTagsList(const QStringList& tagsList) const;
+    QString getExifTagStringFromTagsList(const QStringList& tagsList)                                                   const;
 
 public: // IPTC helpers
 
-    IptcCoreContactInfo getCreatorContactInfo()                    const;
-    bool setCreatorContactInfo(const IptcCoreContactInfo& info)    const;
+    IptcCoreContactInfo getCreatorContactInfo()                                                                         const;
+    bool setCreatorContactInfo(const IptcCoreContactInfo& info)                                                         const;
 
-    IptcCoreLocationInfo getIptcCoreLocation()                     const;
-    bool setIptcCoreLocation(const IptcCoreLocationInfo& location) const;
+    IptcCoreLocationInfo getIptcCoreLocation()                                                                          const;
+    bool setIptcCoreLocation(const IptcCoreLocationInfo& location)                                                      const;
 
-    QStringList getIptcCoreSubjects()                              const;
+    QStringList getIptcCoreSubjects()                                                                                   const;
 
     bool removeIptcTags(const QStringList& tagFilters);
-    
+
     static CountryCodeMap countryCodeMap();
 
 private:
@@ -230,10 +230,10 @@ private:
     bool setIptcTag(const QString& text,
                     int maxLength,
                     const char* const debugLabel,
-                    const char* const tagKey)                      const;
+                    const char* const tagKey)                                                                           const;
 
-    QVariant fromIptcEmulateList(const char* const iptcTagName)    const;
-    QVariant fromIptcEmulateLangAlt(const char* const iptcTagName) const;
+    QVariant fromIptcEmulateList(const char* const iptcTagName)                                                         const;
+    QVariant fromIptcEmulateLangAlt(const char* const iptcTagName)                                                      const;
 
 public: // XMP helpers
 
@@ -245,19 +245,19 @@ public: // XMP helpers
      * all new with all already existing entries to prevent duplicates in the image.
      * Return true if the entries have been added to metadata.
      */
-    bool addToXmpTagStringBag(const char* const xmpTagName, const QStringList& entriesToAdd) const;
+    bool addToXmpTagStringBag(const char* const xmpTagName, const QStringList& entriesToAdd)                            const;
 
     /**
      * Remove those Xmp tag entries that are listed in entriesToRemove from the entries in metadata.
      * Return true if tag entries are no longer contained in metadata.
      * All other entries are preserved.
      */
-    bool removeFromXmpTagStringBag(const char* const xmpTagName, const QStringList& entriesToRemove) const;
+    bool removeFromXmpTagStringBag(const char* const xmpTagName, const QStringList& entriesToRemove)                    const;
 
     /**
      * Return a strings list of Xmp keywords from image. Return an empty list if no keyword are set.
      */
-    QStringList getXmpKeywords() const;
+    QStringList getXmpKeywords()                                                                                        const;
 
     /**
      * Set Xmp keywords using a list of strings defined by 'newKeywords' parameter.
@@ -265,7 +265,7 @@ public: // XMP helpers
      * all new keywords with all already existing keywords to prevent duplicate entries in image.
      * Return true if keywords have been changed in metadata.
      */
-    bool setXmpKeywords(const QStringList& newKeywords) const;
+    bool setXmpKeywords(const QStringList& newKeywords)                                                                 const;
 
     /**
      * Remove those Xmp keywords that are listed in keywordsToRemove from the keywords in metadata.
@@ -276,7 +276,7 @@ public: // XMP helpers
     /**
      * Return a strings list of Xmp subjects from image. Return an empty list if no subject are set.
      */
-    QStringList getXmpSubjects() const;
+    QStringList getXmpSubjects()                                                                                        const;
 
     /**
      * Set Xmp subjects using a list of strings defined by 'newSubjects' parameter.
@@ -284,7 +284,7 @@ public: // XMP helpers
      * all new subject with all already existing subject to prevent duplicate entries in image.
      * Return true if subjects have been changed in metadata.
      */
-    bool setXmpSubjects(const QStringList& newSubjects) const;
+    bool setXmpSubjects(const QStringList& newSubjects)                                                                 const;
 
     /**
      * Remove those Xmp subjects that are listed in subjectsToRemove from the subjects in metadata.
@@ -296,7 +296,7 @@ public: // XMP helpers
      * Return a strings list of Xmp sub-categories from image. Return an empty list if no sub-category
      * are set.
      */
-    QStringList getXmpSubCategories() const;
+    QStringList getXmpSubCategories()                                                                                   const;
 
     /**
      * Set Xmp sub-categories using a list of strings defined by 'newSubCategories' parameter.
@@ -304,7 +304,7 @@ public: // XMP helpers
      * all new sub-categories with all already existing sub-categories to prevent duplicate entries in image.
      *  Return true if sub-categories have been changed in metadata.
      */
-    bool setXmpSubCategories(const QStringList& newSubCategories) const;
+    bool setXmpSubCategories(const QStringList& newSubCategories)                                                       const;
 
     /**
      * Remove those Xmp sub-categories that are listed in categoriesToRemove from the sub-categories in metadata.
@@ -316,8 +316,8 @@ public: // XMP helpers
 
 private:
 
-    QVariant fromXmpList(const char* const xmpTagName) const;
-    QVariant fromXmpLangAlt(const char* const xmpTagName) const;
+    QVariant fromXmpList(const char* const xmpTagName)                                                                  const;
+    QVariant fromXmpLangAlt(const char* const xmpTagName)                                                               const;
 
 public: // Video helpers
 
@@ -329,7 +329,7 @@ public: // Video helpers
     /**
      * Returns video metadata from Xmp tags.
      */
-    VideoInfoContainer getVideoInformation() const;
+    VideoInfoContainer getVideoInformation()                                                                            const;
 
     /**
      * Helper method to translate enum values to user presentable strings
@@ -345,7 +345,7 @@ public: // Photo helpers
      * Take a care : lens information are not standardized and string content is not homogeneous between
      * camera model/maker.
      */
-    QString getLensDescription() const;
+    QString getLensDescription()                                                                                        const;
 
     PhotoInfoContainer getPhotographInformation() const;
 
@@ -358,8 +358,8 @@ public: // Generic helpers
      * Returns the requested metadata field as a QVariant. See metadatainfo.h for a specification
      * of the format of the QVariant.
      */
-    QVariant     getMetadataField(MetadataInfo::Field field)     const;
-    QVariantList getMetadataFields(const MetadataFields& fields) const;
+    QVariant     getMetadataField(MetadataInfo::Field field)                                                            const;
+    QVariantList getMetadataFields(const MetadataFields& fields)                                                        const;
 
     /**
      * Convert a QVariant value of the specified field to a user-presentable, i18n'ed string.
@@ -376,10 +376,10 @@ public: // Generic helpers
 
 private:
 
-    QVariant fromExifOrXmp(const char* const exifTagName, const char* const xmpTagName) const;
-    QVariant fromIptcOrXmp(const char* const iptcTagName, const char* const xmpTagName) const;
-    bool hasValidField(const QVariantList& list)                                        const;
-    QVariant toStringListVariant(const QStringList& list)                               const;
+    QVariant fromExifOrXmp(const char* const exifTagName, const char* const xmpTagName)                                 const;
+    QVariant fromIptcOrXmp(const char* const iptcTagName, const char* const xmpTagName)                                 const;
+    bool hasValidField(const QVariantList& list)                                                                        const;
+    QVariant toStringListVariant(const QStringList& list)                                                               const;
 };
 
 } // namespace Digikam

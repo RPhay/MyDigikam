@@ -107,6 +107,7 @@ bool GeodeticCalculator::checkLatitude(double* latitude)
     if (*latitude >= -90.0 && *latitude <= 90.0)
     {
         *latitude = toRadians(*latitude);
+
         return true;
     }
 
@@ -118,6 +119,7 @@ bool GeodeticCalculator::checkLongitude(double* longitude)
     if (*longitude >= -180.0 && *longitude <= 180.0)
     {
         *longitude = toRadians(*longitude);
+
         return true;
     }
 
@@ -129,6 +131,7 @@ bool GeodeticCalculator::checkAzimuth(double* azimuth)
     if (*azimuth >= -180.0 && *azimuth <= 180.0)
     {
         *azimuth = toRadians(*azimuth);
+
         return true;
     }
 
@@ -153,6 +156,7 @@ void GeodeticCalculator::setStartingGeographicPoint(double longitude, double lat
     }
 
     // Check passed. Now performs the changes in this object.
+
     m_long1            = longitude;
     m_lat1             = latitude;
     m_destinationValid = false;
@@ -167,6 +171,7 @@ void GeodeticCalculator::setDestinationGeographicPoint(double longitude, double 
     }
 
     // Check passed. Now performs the changes in this object.
+
     m_long2            = longitude;
     m_lat2             = latitude;
     m_destinationValid = true;
@@ -205,6 +210,7 @@ void GeodeticCalculator::setDirection(double azimuth, double distance)
 {
     // Check first in case an exception is raised
     // (in other words, we change all or nothing).
+
     if (!checkAzimuth(&azimuth))
     {
         return;
@@ -216,6 +222,7 @@ void GeodeticCalculator::setDirection(double azimuth, double distance)
     }
 
     // Check passed. Now performs the changes in this object.
+
     m_azimuth          = azimuth;
     m_distance         = distance;
     m_destinationValid = false;
@@ -260,25 +267,27 @@ bool GeodeticCalculator::computeDestinationPoint()
     }
 
     // Protect internal variables from changes
+
     const double lat1     = m_lat1;
     const double long1    = m_long1;
     const double azimuth  = m_azimuth;
     const double distance = m_distance;
+
     /*
-    * Solution of the geodetic direct problem after T.Vincenty.
-    * Modified Rainsford's method with Helmert's elliptical terms.
-    * Effective in any azimuth and at any distance short of antipodal.
-    *
-    * Latitudes and longitudes in radians positive North and East.
-    * Forward azimuths at both points returned in radians from North.
-    *
-    * Programmed for CDC-6600 by LCDR L.Pfeifer NGS ROCKVILLE MD 18FEB75
-    * Modified for IBM SYSTEM 360 by John G.Gergen NGS ROCKVILLE MD 7507
-    * Ported from Fortran to Java by Daniele Franzoni.
-    *
-    * Source: ftp://ftp.ngs.noaa.gov/pub/pcsoft/for_inv.3d/source/forward.for
-    *         subroutine DIRECT1
-    */
+     * Solution of the geodetic direct problem after T.Vincenty.
+     * Modified Rainsford's method with Helmert's elliptical terms.
+     * Effective in any azimuth and at any distance short of antipodal.
+     *
+     * Latitudes and longitudes in radians positive North and East.
+     * Forward azimuths at both points returned in radians from North.
+     *
+     * Programmed for CDC-6600 by LCDR L.Pfeifer NGS ROCKVILLE MD 18FEB75
+     * Modified for IBM SYSTEM 360 by John G.Gergen NGS ROCKVILLE MD 7507
+     * Ported from Fortran to Java by Daniele Franzoni.
+     *
+     * Source: ftp://ftp.ngs.noaa.gov/pub/pcsoft/for_inv.3d/source/forward.for
+     *         subroutine DIRECT1
+     */
     double TU  = fo*sin(lat1) / cos(lat1);
     double SF  = sin(azimuth);
     double CF  = cos(azimuth);
@@ -337,43 +346,49 @@ double GeodeticCalculator::meridianArcLength(double latitude1, double latitude2)
 double GeodeticCalculator::meridianArcLengthRadians(double P1, double P2)
 {
     /*
-    * Latitudes P1 and P2 in radians positive North and East.
-    * Forward azimuths at both points returned in radians from North.
-    *
-    * Source: ftp://ftp.ngs.noaa.gov/pub/pcsoft/for_inv.3d/source/inverse.for
-    *         subroutine GPNARC
-    *         version    200005.26
-    *         written by Robert (Sid) Safford
-    *
-    * Ported from Fortran to Java by Daniele Franzoni.
-    */
+     * Latitudes P1 and P2 in radians positive North and East.
+     * Forward azimuths at both points returned in radians from North.
+     *
+     * Source: ftp://ftp.ngs.noaa.gov/pub/pcsoft/for_inv.3d/source/inverse.for
+     *         subroutine GPNARC
+     *         version    200005.26
+     *         written by Robert (Sid) Safford
+     *
+     * Ported from Fortran to Java by Daniele Franzoni.
+     */
     double S1 = fabs(P1);
     double S2 = fabs(P2);
     double DA = (P2-P1);
 
     // Check for a 90 degree lookup
-    if (S1 > TOLERANCE_0 || S2 <= (M_PI/2-TOLERANCE_0) || S2 >= (M_PI/2+TOLERANCE_0))
+
+    if ((S1 > TOLERANCE_0) || (S2 <= (M_PI/2-TOLERANCE_0)) || (S2 >= (M_PI/2+TOLERANCE_0)))
     {
         const double DB = sin(P2* 2.0) - sin(P1* 2.0);
         const double DC = sin(P2* 4.0) - sin(P1* 4.0);
         const double DD = sin(P2* 6.0) - sin(P1* 6.0);
         const double DE = sin(P2* 8.0) - sin(P1* 8.0);
         const double DF = sin(P2*10.0) - sin(P1*10.0);
+
         // Compute the S2 part of the series expansion
+
         S2              = -DB*B/2.0 + DC*C/4.0 - DD*D/6.0 + DE*E/8.0 - DF*F/10.0;
     }
 
     // Compute the S1 part of the series expansion
+
     S1 = DA*A;
+
     // Compute the arc length
+
     return fabs(m_semiMajorAxis * (1.0-m_eccentricitySquared) * (S1+S2));
 }
 
 /**
-* Computes the azimuth and orthodromic distance from the
-* startingGeographicPoint() and the
-* destinationGeographicPoint().
-*/
+ * Computes the azimuth and orthodromic distance from the
+ * startingGeographicPoint() and the
+ * destinationGeographicPoint().
+ */
 bool GeodeticCalculator::computeDirection()
 {
     if (!m_destinationValid)
@@ -386,23 +401,24 @@ bool GeodeticCalculator::computeDirection()
     const double lat1  = m_lat1;
     const double long2 = m_long2;
     const double lat2  = m_lat2;
+
     /*
-    * Solution of the geodetic inverse problem after T.Vincenty.
-    * Modified Rainsford's method with Helmert's elliptical terms.
-    * Effective in any azimuth and at any distance short of antipodal.
-    *
-    * Latitudes and longitudes in radians positive North and East.
-    * Forward azimuths at both points returned in radians from North.
-    *
-    * Programmed for CDC-6600 by LCDR L.Pfeifer NGS ROCKVILLE MD 18FEB75
-    * Modified for IBM SYSTEM 360 by John G.Gergen NGS ROCKVILLE MD 7507
-    * Ported from Fortran to Java by Daniele Franzoni.
-    *
-    * Source: ftp://ftp.ngs.noaa.gov/pub/pcsoft/for_inv.3d/source/inverse.for
-    *         subroutine GPNHRI
-    *         version    200208.09
-    *         written by robert (sid) safford
-    */
+     * Solution of the geodetic inverse problem after T.Vincenty.
+     * Modified Rainsford's method with Helmert's elliptical terms.
+     * Effective in any azimuth and at any distance short of antipodal.
+     *
+     * Latitudes and longitudes in radians positive North and East.
+     * Forward azimuths at both points returned in radians from North.
+     *
+     * Programmed for CDC-6600 by LCDR L.Pfeifer NGS ROCKVILLE MD 18FEB75
+     * Modified for IBM SYSTEM 360 by John G.Gergen NGS ROCKVILLE MD 7507
+     * Ported from Fortran to Java by Daniele Franzoni.
+     *
+     * Source: ftp://ftp.ngs.noaa.gov/pub/pcsoft/for_inv.3d/source/inverse.for
+     *         subroutine GPNHRI
+     *         version    200208.09
+     *         written by robert (sid) safford
+     */
     const double dlon = castToAngleRange(long2-long1);
     const double ss   = fabs(dlon);
 
@@ -415,17 +431,21 @@ bool GeodeticCalculator::computeDirection()
     }
 
     /*
-    * Computes the limit in longitude (alimit), it is equal
-    * to twice  the distance from the equator to the pole,
-    * as measured along the equator
-    */
+     * Computes the limit in longitude (alimit), it is equal
+     * to twice  the distance from the equator to the pole,
+     * as measured along the equator
+     */
+
     // tests for antinodal difference
+
     const double ESQP   = m_eccentricitySquared / (1.0-m_eccentricitySquared);
     const double alimit = M_PI*fo;
 
-    if (ss >= alimit                              &&
-        lat1 < TOLERANCE_3 && lat1 > -TOLERANCE_3 &&
-        lat2 < TOLERANCE_3 && lat2 > -TOLERANCE_3)
+    if ((ss >= alimit)        &&
+        (lat1 < TOLERANCE_3)  &&
+        (lat1 > -TOLERANCE_3) &&
+        (lat2 < TOLERANCE_3)  &&
+        (lat2 > -TOLERANCE_3))
     {
         // Computes an approximate AZ
         const double CONS = (M_PI-ss)/(M_PI*f);
@@ -443,7 +463,9 @@ bool GeodeticCalculator::computeDirection()
 
             S                 = cos(AZ);
             const double C2   = S*S;
+
             // Compute new AO
+
             AO                = T1 + T2*C2 + T4*C2*C2 + T6*C2*C2*C2;
             const double _CS_ = CONS/AO;
             S                 = asin(_CS_);
@@ -454,10 +476,13 @@ bool GeodeticCalculator::computeDirection()
 
         const double AZ1 = (dlon < 0.0) ? 2.0*M_PI - S : S;
         m_azimuth        = castToAngleRange(AZ1);
+
         //const double AZ2 = 2.0*M_PI - AZ1;
+
         S                = cos(AZ1);
 
         // Equatorial - geodesic(S-s) SMS
+
         const double U2 = ESQP*S*S;
         const double U4 = U2*U2;
         const double U6 = U4*U2;
@@ -476,6 +501,7 @@ bool GeodeticCalculator::computeDirection()
     }
 
     // the reduced latitudes
+
     const double  u1 = atan(fo*sin(lat1)/cos(lat1));
     const double  u2 = atan(fo*sin(lat2)/cos(lat2));
     const double su1 = sin(u1);
@@ -504,12 +530,14 @@ bool GeodeticCalculator::computeDirection()
         const double t6   = w*t4;
 
         // the coefficients of type a
+
         const double ao   = f+a01*w+a02*t4+a03*t6;
         const double a2   =   a21*w+a22*t4+a23*t6;
         const double a4   =         a42*t4+a43*t6;
         const double a6   =                a63*t6;
 
         // the multiple angle functions
+
         double qo         = 0.0;
 
         if (w > TOLERANCE_0)
@@ -524,6 +552,7 @@ bool GeodeticCalculator::computeDirection()
         r3 = ssig*(3.0 - 4.0*ssig*ssig);
 
         // the longitude difference
+
         const double s = sinalf*(ao*sig + a2*ssig*q2 + a4*r2*q4 + a6*r3*q6);
         double xz      = dlon+s;
         xy             = fabs(xz-ab);
@@ -538,16 +567,19 @@ bool GeodeticCalculator::computeDirection()
     const double b6 =                                  z*z*z*(-1.0/1536.0 + z*(  5.0/ 6144.0));
 
     // The distance in ellispoid axis units.
+
     m_distance = m_semiMinorAxis * (bo*sig + b2*ssig*q2 + b4*r2*q4 + b6*r3*q6);
     double az1 = (dlon < 0.0) ? M_PI*(3.0/2.0) : M_PI/2.0;
 
     // now compute the az1 & az2 for latitudes not on the equator
+
     if ((fabs(su1)>=TOLERANCE_0) || (fabs(su2)>=TOLERANCE_0))
     {
         const double tana1 = slon*cu2 / (su2*cu1 - clon*su1*cu2);
         const double sina1 = sinalf/cu1;
 
         // azimuths from north,longitudes positive east
+
         az1 = atan2(sina1, sina1/tana1);
     }
 
@@ -559,22 +591,22 @@ bool GeodeticCalculator::computeDirection()
 
 /*
 / **
-* Calculates the geodetic curve between two points in the referenced ellipsoid.
-* A curve in the ellipsoid is a path which points contain the longitude and latitude
-* of the points in the geodetic curve. The geodetic curve is computed from the
-* {@linkplain #getStartingGeographicPoint starting point} to the
-* {@linkplain #getDestinationGeographicPoint destination point}.
-*
-* @param  numberOfPoints The number of vertex in the geodetic curve.
-*         NOTE: This argument is only a hint and may be ignored
-*         in future version (if we compute a real curve rather than a list of line
-*         segments).
-* @return The path that represents the geodetic curve from the
-*         {@linkplain #getStartingGeographicPoint starting point} to the
-*         {@linkplain #getDestinationGeographicPoint destination point}.
-*
-* @todo We should check for cases where the path cross the 90N, 90S, 90E or 90W boundaries.
-* /
+ * Calculates the geodetic curve between two points in the referenced ellipsoid.
+ * A curve in the ellipsoid is a path which points contain the longitude and latitude
+ * of the points in the geodetic curve. The geodetic curve is computed from the
+ * {@linkplain #getStartingGeographicPoint starting point} to the
+ * {@linkplain #getDestinationGeographicPoint destination point}.
+ *
+ * @param  numberOfPoints The number of vertex in the geodetic curve.
+ *         NOTE: This argument is only a hint and may be ignored
+ *         in future version (if we compute a real curve rather than a list of line
+ *         segments).
+ * @return The path that represents the geodetic curve from the
+ *         {@linkplain #getStartingGeographicPoint starting point} to the
+ *         {@linkplain #getDestinationGeographicPoint destination point}.
+ *
+ * @todo We should check for cases where the path cross the 90N, 90S, 90E or 90W boundaries.
+ * /
 public Shape getGeodeticCurve(const int numberOfPoints) {
     if (numberOfPoints < 0)
         return Shape;
@@ -606,16 +638,16 @@ public Shape getGeodeticCurve(const int numberOfPoints) {
 }
 
 / **
-* Calculates the geodetic curve between two points in the referenced ellipsoid.
-* A curve in the ellipsoid is a path which points contain the longitude and latitude
-* of the points in the geodetic curve. The geodetic curve is computed from the
-* {@linkplain #getStartingGeographicPoint starting point} to the
-* {@linkplain #getDestinationGeographicPoint destination point}.
-*
-* @return The path that represents the geodetic curve from the
-*         {@linkplain #getStartingGeographicPoint starting point} to the
-*         {@linkplain #getDestinationGeographicPoint destination point}.
-* /
+ * Calculates the geodetic curve between two points in the referenced ellipsoid.
+ * A curve in the ellipsoid is a path which points contain the longitude and latitude
+ * of the points in the geodetic curve. The geodetic curve is computed from the
+ * {@linkplain #getStartingGeographicPoint starting point} to the
+ * {@linkplain #getDestinationGeographicPoint destination point}.
+ *
+ * @return The path that represents the geodetic curve from the
+ *         {@linkplain #getStartingGeographicPoint starting point} to the
+ *         {@linkplain #getDestinationGeographicPoint destination point}.
+ * /
 public Shape getGeodeticCurve() {
     return getGeodeticCurve(10);
 }
@@ -748,21 +780,22 @@ double Ellipsoid::orthodromicDistance(double x1, double y1, double x2, double y2
     y1 = toRadians(y1);
     x2 = toRadians(x2);
     y2 = toRadians(y2);
+
     /*
-    * Solution of the geodetic inverse problem after T.Vincenty.
-    * Modified Rainsford's method with Helmert's elliptical terms.
-    * Effective in any azimuth and at any distance short of antipodal.
-    *
-    * Latitudes and longitudes in radians positive North and East.
-    * Forward azimuths at both points returned in radians from North.
-    *
-    * Programmed for CDC-6600 by LCDR L.Pfeifer NGS ROCKVILLE MD 18FEB75
-    * Modified for IBM SYSTEM 360 by John G.Gergen NGS ROCKVILLE MD 7507
-    * Ported from Fortran to Java by Martin Desruisseaux.
-    *
-    * Source: ftp://ftp.ngs.noaa.gov/pub/pcsoft/for_inv.3d/source/inverse.for
-    *         subroutine INVER1
-    */
+     * Solution of the geodetic inverse problem after T.Vincenty.
+     * Modified Rainsford's method with Helmert's elliptical terms.
+     * Effective in any azimuth and at any distance short of antipodal.
+     *
+     * Latitudes and longitudes in radians positive North and East.
+     * Forward azimuths at both points returned in radians from North.
+     *
+     * Programmed for CDC-6600 by LCDR L.Pfeifer NGS ROCKVILLE MD 18FEB75
+     * Modified for IBM SYSTEM 360 by John G.Gergen NGS ROCKVILLE MD 7507
+     * Ported from Fortran to Java by Martin Desruisseaux.
+     *
+     * Source: ftp://ftp.ngs.noaa.gov/pub/pcsoft/for_inv.3d/source/inverse.for
+     *         subroutine INVER1
+     */
     const int    MAX_ITERATIONS = 100;
     const double EPS            = 0.5E-13;
     const double F              = 1/m_inverseFlattening;
@@ -809,6 +842,7 @@ double Ellipsoid::orthodromicDistance(double x1, double y1, double x2, double y2
                 // 'faz' and 'baz' are forward azimuths at both points.
                 // Since the current API can't returns this result, it
                 // doesn't worth to compute it at this time.
+
                 faz = atan2(tu1, tu2);
                 baz = atan2(cu1*sx, baz*cx - su1*cu2)+M_PI;
             }
@@ -828,27 +862,31 @@ double Ellipsoid::orthodromicDistance(double x1, double y1, double x2, double y2
 
     // No convergence. It may be because coordinate points
     // are equals or because they are at antipodes.
+
     const double LEPS = 1E-10;
 
-    if (fabs(x1-x2) <= LEPS && fabs(y1-y2) <= LEPS)
+    if ((fabs(x1-x2) <= LEPS) && (fabs(y1-y2) <= LEPS))
     {
         return 0.0; // Coordinate points are equals
     }
 
-    if (fabs(y1) <= LEPS && fabs(y2) <= LEPS)
+    if ((fabs(y1) <= LEPS) && (fabs(y2) <= LEPS))
     {
         return fabs(x1-x2) * m_semiMajorAxis; // Points are on the equator.
     }
 
     // Other cases: no solution for this algorithm.
+
     return 0.0;
 }
 
 double Ellipsoid::radiusOfCurvature(double latitude)
 {
     // WARNING: Code not from geotools
+
     double esquare = pow(eccentricity(), 2);
-    return m_semiMajorAxis * sqrt(1 - esquare) / (1 - esquare * pow( sin(toRadians(latitude)), 2));
+
+    return (m_semiMajorAxis * sqrt(1 - esquare) / (1 - esquare * pow( sin(toRadians(latitude)), 2)));
 }
 
 } // namespace Digikam

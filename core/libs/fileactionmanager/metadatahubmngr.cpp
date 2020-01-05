@@ -71,7 +71,9 @@ MetadataHubMngr::~MetadataHubMngr()
 MetadataHubMngr* MetadataHubMngr::instance()
 {
     if (internalPtr.isNull())
+    {
         internalPtr = new MetadataHubMngr();
+    }
 
     return internalPtr;
 }
@@ -86,7 +88,9 @@ void MetadataHubMngr::addPending(const ItemInfo& info)
     QMutexLocker locker(&d->mutex);
 
     if (!d->pendingItemIds.contains(info.id()))
+    {
         d->pendingItemIds.append(info.id());
+    }
 
     emit signalPendingMetadata(d->pendingItemIds.size());
 }
@@ -96,7 +100,9 @@ void MetadataHubMngr::slotApplyPending()
     QMutexLocker lock(&d->mutex);
 
     if (d->pendingItemIds.isEmpty())
+    {
         return;
+    }
 
     ItemInfoList infos;
 
@@ -115,7 +121,9 @@ void MetadataHubMngr::slotApplyPending()
     emit signalPendingMetadata(0);
 
     if (infos.isEmpty())
+    {
         return;
+    }
 
     MetadataSynchronizer* const tool = new MetadataSynchronizer(infos,
                                            MetadataSynchronizer::WriteFromDatabaseToFile);
@@ -127,7 +135,9 @@ void MetadataHubMngr::requestShutDown()
     QMutexLocker lock(&d->mutex);
 
     if (d->pendingItemIds.isEmpty())
+    {
         return;
+    }
 
     ItemInfoList infos;
 
@@ -146,7 +156,9 @@ void MetadataHubMngr::requestShutDown()
     emit signalPendingMetadata(0);
 
     if (infos.isEmpty())
+    {
         return;
+    }
 
     QPointer<QProgressDialog> dialog = new QProgressDialog;
     dialog->setMinimum(0);

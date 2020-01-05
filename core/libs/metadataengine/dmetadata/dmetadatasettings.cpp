@@ -60,7 +60,7 @@ public:
 public:
 
     DMetadataSettingsContainer readFromConfig() const;
-    void                       writeToConfig() const;
+    void                       writeToConfig()  const;
     DMetadataSettingsContainer setSettings(const DMetadataSettingsContainer& s);
 };
 
@@ -125,6 +125,7 @@ DMetadataSettingsContainer DMetadataSettings::settings() const
 {
     QMutexLocker lock(&d->mutex);
     DMetadataSettingsContainer s(d->settings);
+
     return s;
 }
 

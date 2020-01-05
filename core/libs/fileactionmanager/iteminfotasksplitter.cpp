@@ -54,8 +54,10 @@ FileActionItemInfoList ItemInfoTaskSplitter::next()
         list.reserve(m_n);
 
         // qCopy does not work with QList
-        for (int i = 0;  i < m_n ; ++i)
+        for (int i = 0 ;  i < m_n ; ++i)
+        {
             list << at(i);
+        }
 
         erase(begin(), begin() + m_n);
     }

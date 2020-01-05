@@ -76,15 +76,15 @@ public:
 
 public:
 
-    void assignTags(FileActionItemInfoList infos, const QList<int>& tagIDs) override;
-    void removeTags(FileActionItemInfoList infos, const QList<int>& tagIDs) override;
-    void assignPickLabel(FileActionItemInfoList infos, int pickId) override;
-    void assignColorLabel(FileActionItemInfoList infos, int colorId) override;
-    void assignRating(FileActionItemInfoList infos, int rating) override;
+    void assignTags(FileActionItemInfoList infos, const QList<int>& tagIDs)             override;
+    void removeTags(FileActionItemInfoList infos, const QList<int>& tagIDs)             override;
+    void assignPickLabel(FileActionItemInfoList infos, int pickId)                      override;
+    void assignColorLabel(FileActionItemInfoList infos, int colorId)                    override;
+    void assignRating(FileActionItemInfoList infos, int rating)                         override;
     void editGroup(int groupAction, const ItemInfo& pick, FileActionItemInfoList infos) override;
-    void setExifOrientation(FileActionItemInfoList infos, int orientation) override;
-    void applyMetadata(FileActionItemInfoList infos, DisjointMetadata* hub) override;
-    void copyAttributes(FileActionItemInfoList infos, const QStringList& derivedPaths) override;
+    void setExifOrientation(FileActionItemInfoList infos, int orientation)              override;
+    void applyMetadata(FileActionItemInfoList infos, DisjointMetadata* hub)             override;
+    void copyAttributes(FileActionItemInfoList infos, const QStringList& derivedPaths)  override;
 
 private:
 

@@ -33,10 +33,10 @@
 
 // Local includes
 
-#include "databaseworkeriface.h"
 #include "fileactionmngr.h"
 #include "fileworkeriface.h"
 #include "fileactionimageinfolist.h"
+#include "databaseworkeriface.h"
 #include "metadatahub.h"
 #include "parallelworkers.h"
 

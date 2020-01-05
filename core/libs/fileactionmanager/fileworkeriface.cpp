@@ -114,6 +114,7 @@ void FileActionMngrFileWorker::writeMetadataToFiles(FileActionItemInfoList infos
         }
 
         // hub emits fileMetadataChanged
+
         infos.writtenToOne();
     }
 
@@ -138,7 +139,9 @@ void FileActionMngrFileWorker::writeMetadata(FileActionItemInfoList infos, int f
         }
 
         hub.load(info);
+
         // apply to file metadata
+
         if (MetaEngineSettings::instance()->settings().useLazySync)
         {
             hub.writeToMetadata(info, (MetadataHub::WriteComponents)flags);
@@ -150,6 +153,7 @@ void FileActionMngrFileWorker::writeMetadata(FileActionItemInfoList infos, int f
         }
 
         // hub emits fileMetadataChanged
+
         infos.writtenToOne();
     }
 
@@ -185,6 +189,7 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
 
         // Check if rotation by content, as desired, is feasible
         // We'll later check again if it was successful
+
         if (behavior & MetaEngineSettingsContainer::RotatingPixels)
         {
             if (format == QLatin1String("JPG") && JPEGUtils::isJpegImage(path))
@@ -205,6 +210,7 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
                     case DImg::PGF:
                     case DImg::HEIF:
                         rotateLossy = true;
+
                     default:
                         break;
                 }
@@ -241,6 +247,7 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
         else if (rotateLossy)
         {
             // Non-JPEG image: DImg
+
             DImg image;
 
             if (!image.load(path))
@@ -260,6 +267,7 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
 
                 // TODO: Atomic operation!!
                 // prepare metadata, including to reset Exif tag
+
                 image.prepareMetadataToSave(path, image.format(), true);
 
                 if (image.save(path, image.detectedFormat()))
@@ -281,7 +289,9 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
         {
             CollectionScanner scanner;
             scanner.scanFile(info, CollectionScanner::NormalScan);
+
             // reset for DB. Metadata is already edited.
+
             finalOrientation = MetaEngine::ORIENTATION_NORMAL;
         }
 
@@ -289,6 +299,7 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
         {
             // Setting the rotation flag on Raws with embedded JPEG is a mess
             // Can apply to the RAW data, or to the embedded JPEG, or to both.
+
             if (!isRaw)
             {
                 DMetadata metadata(path);
@@ -304,6 +315,7 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
         }
 
         // DB rotation
+
         ItemInfo(info).setOrientation(finalOrientation);
 
         infos.writtenToOne();
@@ -398,7 +410,9 @@ void FileActionMngrFileWorker::adjustFaceRectangles(const ItemInfo& info, bool r
      */
     MetadataHub hub;
     hub.load(info);
+
     // Adjusted newSize
+
     hub.loadFaceTags(info, newSize);
     hub.write(info.filePath(), MetadataHub::WRITE_ALL);
 }
