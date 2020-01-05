@@ -4,7 +4,7 @@
 # and create a PKG file with Packages application (http://s.sudre.free.fr/Software/Packages/about.html)
 # This script must be run as sudo
 #
-# Copyright (c) 2015,      Shanti, <listaccount at revenant dot org>
+# Copyright (c) 2015      by Shanti, <listaccount at revenant dot org>
 # Copyright (c) 2015-2020 by Gilles Caulier  <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
