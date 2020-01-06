@@ -539,6 +539,10 @@ public:
      */
     QList<int> tagIds()                                                                 const;
 
+private:
+
+    void loadTagIds()                                                                   const;
+    
     //@}
 
 public:

@@ -432,60 +432,6 @@ QSize ItemInfo::dimensions() const
     return m_data->imageSize;
 }
 
-QList<int> ItemInfo::tagIds() const
-{
-    if (!m_data)
-    {
-        return QList<int>();
-    }
-
-    RETURN_IF_CACHED(tagIds)
-
-    QList<int> ids = CoreDbAccess().db()->getItemTagIDs(m_data->id);
-
-    ItemInfoWriteLocker lock;
-    m_data.data()->tagIds       = ids;
-    m_data.data()->tagIdsCached = true;
-
-    return ids;
-}
-
-void ItemInfoList::loadTagIds() const
-{
-    ItemInfoList infoList;
-
-    foreach (const ItemInfo& info, *this)
-    {
-        if (info.m_data && !info.m_data->tagIdsCached)
-        {
-            infoList << info;
-        }
-    }
-
-    if (infoList.isEmpty())
-    {
-        return;
-    }
-
-    QVector<QList<int> > allTagIds = CoreDbAccess().db()->getItemsTagIDs(infoList.toImageIdList());
-
-    ItemInfoWriteLocker lock;
-
-    for (int i = 0 ; i < infoList.size() ; ++i)
-    {
-        const ItemInfo& info  = infoList.at(i);
-        const QList<int>& ids = allTagIds.at(i);
-
-        if (!info.m_data)
-        {
-            continue;
-        }
-
-        info.m_data.data()->tagIds       = ids;
-        info.m_data.data()->tagIdsCached = true;
-    }
-}
-
 int ItemInfo::orientation() const
 {
     if (!m_data)
@@ -966,26 +912,6 @@ bool ItemInfo::hasAltitude() const
     return m_data->hasAltitude;
 }
 
-ItemTagPair ItemInfo::imageTagPair(int tagId) const
-{
-    if (!m_data)
-    {
-        return ItemTagPair();
-    }
-
-    return ItemTagPair(*this, tagId);
-}
-
-QList<ItemTagPair> ItemInfo::availableItemTagPairs() const
-{
-    if (!m_data)
-    {
-        return QList<ItemTagPair>();
-    }
-
-    return ItemTagPair::availablePairs(*this);
-}
-
 DImageHistory ItemInfo::imageHistory() const
 {
     if (!m_data)
@@ -1392,49 +1318,6 @@ void ItemInfo::setModDateTime(const QDateTime& dateTime)
     ItemInfoWriteLocker lock;
     m_data->modificationDate       = dateTime;
     m_data->modificationDateCached = true;
-}
-
-void ItemInfo::setTag(int tagID)
-{
-    if (!m_data || (tagID <= 0))
-    {
-        return;
-    }
-
-    CoreDbAccess().db()->addItemTag(m_data->id, tagID);
-}
-
-void ItemInfo::removeTag(int tagID)
-{
-    if (!m_data)
-    {
-        return;
-    }
-
-    CoreDbAccess access;
-    access.db()->removeItemTag(m_data->id, tagID);
-    access.db()->removeImageTagProperties(m_data->id, tagID);
-}
-
-void ItemInfo::removeAllTags()
-{
-    if (!m_data)
-    {
-        return;
-    }
-
-    CoreDbAccess().db()->removeItemAllTags(m_data->id, tagIds());
-}
-
-void ItemInfo::addTagPaths(const QStringList& tagPaths)
-{
-    if (!m_data)
-    {
-        return;
-    }
-
-    QList<int> tagIds = TagsCache::instance()->tagsForPaths(tagPaths);
-    CoreDbAccess().db()->addTagsToItems(QList<qlonglong>() << m_data->id, tagIds);
 }
 
 ItemInfo ItemInfo::copyItem(int dstAlbumID, const QString& dstFileName)
