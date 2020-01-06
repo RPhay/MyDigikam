@@ -594,6 +594,11 @@ public:
      */
     bool       reverseExifRotate(const QString& filePath);
 
+    /**
+     * Returns DMetadata::Orientation from rotates and/or flip the DImg
+     */
+    int        orientation() const;
+
     /** Rotates and/or flip the DImg according to the given transform action,
      *  which is a MetaEngineRotation::TransformAction.
      *  Returns true if the image was actually rotated or flipped.

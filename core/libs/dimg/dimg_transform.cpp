@@ -420,6 +420,7 @@ void DImg::flip(FLIP direction)
 bool DImg::rotateAndFlip(int orientation)
 {
     bool rotatedOrFlipped = false;
+    m_priv->orientation   = orientation;
 
     switch (orientation)
     {
@@ -471,6 +472,7 @@ bool DImg::rotateAndFlip(int orientation)
 bool DImg::reverseRotateAndFlip(int orientation)
 {
     bool rotatedOrFlipped = false;
+    m_priv->orientation   = orientation;
 
     switch (orientation)
     {
@@ -567,6 +569,11 @@ bool DImg::exifRotate(const QString& filePath)
 bool DImg::reverseExifRotate(const QString& filePath)
 {
     return reverseRotateAndFlip(exifOrientation(filePath));
+}
+
+int DImg::orientation() const
+{
+    return m_priv->orientation;
 }
 
 } // namespace Digikam
