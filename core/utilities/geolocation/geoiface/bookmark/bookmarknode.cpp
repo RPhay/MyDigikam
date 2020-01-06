@@ -27,7 +27,6 @@
 
 #include <QFile>
 #include <QDateTime>
-#include <QSharedPointer>
 
 // KDE includes
 
@@ -56,9 +55,10 @@ public:
 };
 
 BookmarkNode::BookmarkNode(BookmarkNode::Type type, BookmarkNode* const parent)
-    : QObject(0),
+    : QObject(nullptr),
       d(new Private)
 {
+    qDebug() << "Created";
     expanded  = false;
     d->parent = parent;
     d->type   = type;
@@ -75,7 +75,7 @@ BookmarkNode::~BookmarkNode()
     {
         d->parent->remove(this);
     }
-
+qDebug() << "Deleted";
     qDeleteAll(d->children);
     d->parent = nullptr;
     d->type   = BookmarkNode::Root;
@@ -234,30 +234,30 @@ void XbelReader::readFolder(BookmarkNode* const parent)
 {
     Q_ASSERT(isStartElement() && name() == QLatin1String("folder"));
 
-    QSharedPointer<BookmarkNode> folder = QSharedPointer<BookmarkNode>(new BookmarkNode(BookmarkNode::Folder, parent));
-    folder.data()->expanded              = (attributes().value(QLatin1String("folded")) == QLatin1String("no"));
+    BookmarkNode* const folder = new BookmarkNode(BookmarkNode::Folder, parent);
+    folder->expanded           = (attributes().value(QLatin1String("folded")) == QLatin1String("no"));
 
     while (readNextStartElement())
     {
         if      (name() == QLatin1String("title"))
         {
-            readTitle(folder.data());
+            readTitle(folder);
         }
         else if (name() == QLatin1String("desc"))
         {
-            readDescription(folder.data());
+            readDescription(folder);
         }
         else if (name() == QLatin1String("folder"))
         {
-            readFolder(folder.data());
+            readFolder(folder);
         }
         else if (name() == QLatin1String("bookmark"))
         {
-            readBookmarkNode(folder.data());
+            readBookmarkNode(folder);
         }
         else if (name() == QLatin1String("separator"))
         {
-            readSeparator(folder.data());
+            readSeparator(folder);
         }
         else
         {
@@ -280,7 +280,7 @@ void XbelReader::readDescription(BookmarkNode* const parent)
 
 void XbelReader::readSeparator(BookmarkNode* const parent)
 {
-    QSharedPointer<BookmarkNode>(new BookmarkNode(BookmarkNode::Separator, parent));
+    new BookmarkNode(BookmarkNode::Separator, parent);
 
     // empty elements have a start and end element
     readNext();
@@ -290,20 +290,20 @@ void XbelReader::readBookmarkNode(BookmarkNode* const parent)
 {
     Q_ASSERT(isStartElement() && name() == QLatin1String("bookmark"));
 
-    QSharedPointer<BookmarkNode> bookmark = QSharedPointer<BookmarkNode>(new BookmarkNode(BookmarkNode::Bookmark, parent));
-    bookmark.data()->url                  = attributes().value(QLatin1String("href")).toString();
-    QString date                          = attributes().value(QLatin1String("added")).toString();
-    bookmark.data()->dateAdded            = QDateTime::fromString(date, Qt::ISODate);
+    BookmarkNode* const bookmark = new BookmarkNode(BookmarkNode::Bookmark, parent);
+    bookmark->url                = attributes().value(QLatin1String("href")).toString();
+    QString date                 = attributes().value(QLatin1String("added")).toString();
+    bookmark->dateAdded          = QDateTime::fromString(date, Qt::ISODate);
 
     while (readNextStartElement())
     {
         if (name() == QLatin1String("title"))
         {
-            readTitle(bookmark.data());
+            readTitle(bookmark);
         }
         else if (name() == QLatin1String("desc"))
         {
-            readDescription(bookmark.data());
+            readDescription(bookmark);
         }
         else
         {
@@ -311,9 +311,9 @@ void XbelReader::readBookmarkNode(BookmarkNode* const parent)
         }
     }
 
-    if (bookmark.data()->title.isEmpty())
+    if (bookmark->title.isEmpty())
     {
-        bookmark.data()->title = i18n("Unknown title");
+        bookmark->title = i18n("Unknown title");
     }
 }
 
