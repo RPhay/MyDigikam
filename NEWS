@@ -542,5 +542,5 @@ BUGFIXES:
 527 ==> 415685 - digiKam crashes when scanning faces.
 528 ==> 415877 - "Reset" button in Tag Manager not always working to reset icon.
 529 ==> 415561 - Face detection based on deep learning leads to no result under Windows.
-530 ==> 
+530 ==> 415920 - The unconfirmed faces count in the left sidebar is missing.
 531 ==> 

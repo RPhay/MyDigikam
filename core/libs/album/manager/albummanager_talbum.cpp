@@ -186,6 +186,7 @@ void AlbumManager::getTagItemsCount()
 
     if (!ApplicationSettings::instance()->getShowFolderTreeViewItemsCount())
     {
+        personItemsCount();
         return;
     }
 

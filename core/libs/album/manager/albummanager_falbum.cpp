@@ -92,15 +92,19 @@ void AlbumManager::slotPeopleJobData(const QMap<QString, QMap<int, int> >& faces
         d->uAlbumsCount = *facesStatMap.find(ImageTagPropertyName::autodetectedFace()); //autodetectedPerson
 
     d->fAlbumsCount.clear();
-    typedef QMap<int, int> IntIntMap;
 
-    foreach (const IntIntMap& counts, facesStatMap)
+    if (ApplicationSettings::instance()->getShowFolderTreeViewItemsCount())
     {
-        QMap<int, int>::const_iterator it;
+        typedef QMap<int, int> IntIntMap;
 
-        for (it = counts.begin() ; it != counts.end() ; ++it)
+        foreach (const IntIntMap& counts, facesStatMap)
         {
-            d->fAlbumsCount[it.key()] += it.value();
+            QMap<int, int>::const_iterator it;
+
+            for (it = counts.begin() ; it != counts.end() ; ++it)
+            {
+                d->fAlbumsCount[it.key()] += it.value();
+            }
         }
     }
 
