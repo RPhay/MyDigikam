@@ -38,6 +38,7 @@
 
 #include "digikam_debug.h"
 #include "iteminfo.h"
+#include "diofinders.h"
 #include "albummanager.h"
 #include "tagscache.h"
 #include "coredb.h"

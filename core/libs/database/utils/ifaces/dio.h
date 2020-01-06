@@ -122,31 +122,6 @@ private:
     friend class DIOCreator;
 };
 
-// -----------------------------------------------------------------------------------------
-
-class SidecarFinder
-{
-
-public:
-
-    explicit SidecarFinder(const QList<QUrl>& files);
-
-    QList<QUrl>    localFiles;
-    QList<QString> localFileSuffixes;
-};
-
-// -----------------------------------------------------------------------------------------
-
-class GroupedImagesFinder
-{
-
-public:
-
-    explicit GroupedImagesFinder(const QList<ItemInfo>& source);
-
-    QList<ItemInfo> infos;
-};
-
 } // namespace Digikam
 
 #endif // DIGIKAM_DIO_H
