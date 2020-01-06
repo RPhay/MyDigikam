@@ -7,6 +7,9 @@
 
 set(libversionmanager_SRCS
     versionmanager.cpp
+    versionmanagersettings.cpp
+    versionnamingscheme.cpp
+    versionfileoperation.cpp
 )
 
 include_directories(

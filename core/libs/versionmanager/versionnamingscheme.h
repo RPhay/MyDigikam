@@ -103,6 +103,22 @@ public:
     virtual QVariant incrementedCounter(const QVariant& counter) = 0;
 };
 
+class Q_DECL_HIDDEN DefaultVersionNamingScheme : public VersionNamingScheme
+{
+public:
+
+    virtual QString baseName(const QString& currentPath, const QString& filename,
+                             QVariant* counter, QVariant* intermediateCounter)                  override;
+    virtual QString versionFileName(const QString& currentPath, const QString& filename,
+                                    const QVariant& counter)                                    override;
+    virtual QString intermediateFileName(const QString& currentPath, const QString& filename,
+                                         const QVariant& version, const QVariant& counter)      override;
+    virtual QString directory(const QString& currentPath, const QString& filename)              override;
+    virtual QString intermediateDirectory(const QString& currentPath, const QString& fileName)  override;
+    virtual QVariant initialCounter()                                                           override;
+    virtual QVariant incrementedCounter(const QVariant& counter)                                override;
+};
+
 } // namespace Digikam
 
 #endif // DIGIKAM_VERSION_NAMING_SCHEME_H
