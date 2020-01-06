@@ -68,6 +68,11 @@ class ThumbnailInfo;
 /**
  * The ItemInfo class contains provides access to the database for a single image.
  * The properties can be read and written. Information will be cached.
+ *
+ * NOTE: access rules for all methods in this class:
+ * ItemInfoData members shall be accessed only under CoreDbAccess lock.
+ * The id and albumId are the exception to this rule, as they are
+ * primitive and will never change during the lifetime of an object.
  */
 class DIGIKAM_DATABASE_EXPORT ItemInfo
 {

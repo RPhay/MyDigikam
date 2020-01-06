@@ -230,6 +230,12 @@ ItemInfo ItemInfo::fromLocationAlbumAndName(int locationId, const QString& album
     return info;
 }
 
+QDebug operator<<(QDebug stream, const ItemInfo& info)
+{
+    return stream << "ItemInfo [id = " << info.id() << ", path = "
+                  << info.filePath() << "]";
+}
+
 bool ItemInfo::isNull() const
 {
     return !m_data;
@@ -247,12 +253,6 @@ uint ItemInfo::hash() const
     }
 }
 
-/**
- * Access rules for all methods in this class:
- * ItemInfoData members shall be accessed only under CoreDbAccess lock.
- * The id and albumId are the exception to this rule, as they are
- * primitive and will never change during the lifetime of an object.
- */
 qlonglong ItemInfo::id() const
 {
     return (m_data ? m_data->id : -1);
@@ -858,9 +858,11 @@ void ItemInfo::addToGroup(const ItemInfo& givenLeader)
     }
 
     // Take care: Once we start this, we cannot rely on change notifications and cache invalidation!
+
     CoreDbOperationGroup group;
 
     // Handle grouping on an already grouped image, and prevent circular grouping
+
     ItemInfo leader;
     QList<qlonglong> alreadySeen;
     alreadySeen << m_data->id;
@@ -874,6 +876,7 @@ void ItemInfo::addToGroup(const ItemInfo& givenLeader)
         if (alreadySeen.contains(nextLeader.id()))
         {
             // break loop (special case: remove b->a where we want to add a->b)
+
             leader.removeFromGroup();
             break;
         }
@@ -892,15 +895,21 @@ void ItemInfo::addToGroup(const ItemInfo& givenLeader)
     }
 
     // All images grouped on this image need a new group leader
+
     QList<qlonglong> idsToBeGrouped  = CoreDbAccess().db()->getImagesRelatingTo(m_data->id, DatabaseRelation::Grouped);
+
     // and finally, this image needs to be grouped
+
     idsToBeGrouped << m_data->id;
 
     foreach (const qlonglong& ids, idsToBeGrouped)
     {
         // remove current grouping
+
         CoreDbAccess().db()->removeAllImageRelationsFrom(ids, DatabaseRelation::Grouped);
+
         // add the new grouping
+
         CoreDbAccess().db()->addImageRelation(ids, leader.id(), DatabaseRelation::Grouped);
     }
 }
@@ -1260,6 +1269,7 @@ ImageMetadataContainer ItemInfo::imageMetadataContainer() const
     }
 
     // store whether we have at least one valid field
+
     container.allFieldsNull = allFieldsNull;
 
     return container;
@@ -1324,6 +1334,7 @@ VideoMetadataContainer ItemInfo::videoMetadataContainer() const
     }
 
     // store whether we have at least one valid field
+
     container.allFieldsNull = allFieldsNull;
 
     return container;
@@ -1435,6 +1446,7 @@ void ItemInfo::setPickLabel(int pickId)
 
     // Pick Label is an exclusive tag.
     // Perform "switch" operation atomic
+
     {
         CoreDbAccess access;
 
@@ -1466,6 +1478,7 @@ void ItemInfo::setColorLabel(int colorId)
 
     // Color Label is an exclusive tag.
     // Perform "switch" operation atomic
+
     {
         CoreDbAccess access;
 
@@ -1682,62 +1695,6 @@ QList<ItemInfo> ItemInfo::fromUniqueHash(const QString& uniqueHash, qlonglong fi
     return infos;
 }
 
-ThumbnailIdentifier ItemInfo::thumbnailIdentifier() const
-{
-    if (!m_data)
-    {
-        return ThumbnailIdentifier();
-    }
-
-    ThumbnailIdentifier id;
-    id.id       = m_data->id;
-    id.filePath = filePath();
-
-    return id;
-}
-
-ThumbnailInfo ItemInfo::thumbnailInfo() const
-{
-    if (!m_data)
-    {
-        return ThumbnailInfo();
-    }
-
-    ThumbnailInfo thumbinfo;
-
-    thumbinfo.id               = m_data->id;
-    thumbinfo.filePath         = filePath();
-    thumbinfo.fileName         = name();
-    thumbinfo.isAccessible     = CollectionManager::instance()->locationForAlbumRootId(m_data->albumRootId).isAvailable();
-    thumbinfo.modificationDate = modDateTime();
-    thumbinfo.orientationHint  = orientation();
-    thumbinfo.uniqueHash       = uniqueHash();
-    thumbinfo.fileSize         = fileSize();
-
-    if      (category() == DatabaseItem::Image)
-    {
-        thumbinfo.mimeType = QLatin1String("image");
-    }
-    else if (category() == DatabaseItem::Video)
-    {
-        thumbinfo.mimeType = QLatin1String("video");
-    }
-
-    return thumbinfo;
-}
-
-ThumbnailIdentifier ItemInfo::thumbnailIdentifier(qlonglong id)
-{
-    ItemInfo info(id);
-
-    return info.thumbnailIdentifier();
-}
-
-QDebug operator<<(QDebug stream, const ItemInfo& info)
-{
-    return stream << "ItemInfo [id = " << info.id() << ", path = "
-                  << info.filePath() << "]";
-}
 
 ItemInfo::DatabaseFieldsHashRaw ItemInfo::getDatabaseFieldsRaw(const DatabaseFields::Set& requestedSet) const
 {
@@ -1751,6 +1708,7 @@ ItemInfo::DatabaseFieldsHashRaw ItemInfo::getDatabaseFieldsRaw(const DatabaseFie
     ItemInfo::DatabaseFieldsHashRaw cachedHash;
 
     // consolidate to one ReadLocker. In particular, the shallow copy of the QHash must be done under protection
+
     {
         ItemInfoReadLocker lock;
         cachedVideoMetadata = m_data->videoMetadataCached;
@@ -1791,6 +1749,7 @@ ItemInfo::DatabaseFieldsHashRaw ItemInfo::getDatabaseFieldsRaw(const DatabaseFie
             }
 
             // update for return value
+
             cachedHash = m_data->databaseFieldsHashRaw;
         }
     }
@@ -1832,6 +1791,7 @@ ItemInfo::DatabaseFieldsHashRaw ItemInfo::getDatabaseFieldsRaw(const DatabaseFie
     }
 
     // We always return all fields, the caller can just retrieve the ones he needs.
+
     return cachedHash;
 }
 
