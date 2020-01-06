@@ -87,7 +87,8 @@ void DatabaseCopyThread::run()
     m_copyManager.copyDatabases(d->fromDbEngineParameters, d->toDbEngineParameters);
 }
 
-void DatabaseCopyThread::init(const DbEngineParameters& fromDbEngineParameters, const DbEngineParameters& toDbEngineParameters)
+void DatabaseCopyThread::init(const DbEngineParameters& fromDbEngineParameters,
+                              const DbEngineParameters& toDbEngineParameters)
 {
     d->fromDbEngineParameters = fromDbEngineParameters;
     d->toDbEngineParameters   = toDbEngineParameters;
@@ -190,6 +191,7 @@ void DatabaseMigrationDialog::setupMainArea()
             this, SLOT(slotPerformCopy()));
 
     // connect signal handlers for copy d->copyThread
+
     connect(&(d->copyThread->m_copyManager), SIGNAL(finished(int,QString)),
             this, SLOT(slotHandleFinish(int,QString)));
 
@@ -243,7 +245,7 @@ void DatabaseMigrationDialog::slotPerformCopy()
 void DatabaseMigrationDialog::dataInit()
 {
     d->fromDatabaseSettingsWidget->setParametersFromSettings(ApplicationSettings::instance(), true);
-    d->toDatabaseSettingsWidget->setParametersFromSettings(ApplicationSettings::instance(), true);
+    d->toDatabaseSettingsWidget->setParametersFromSettings(ApplicationSettings::instance(),   true);
 }
 
 void DatabaseMigrationDialog::slotUnlockInputFields()
@@ -273,10 +275,12 @@ void DatabaseMigrationDialog::slotHandleFinish(int finishState, const QString& e
             QMessageBox::critical(this, qApp->applicationName(), errorMsg);
             slotUnlockInputFields();
             break;
+
         case CoreDbCopyManager::success:
             QMessageBox::information(this, qApp->applicationName(), i18n("Database copied successfully."));
             slotUnlockInputFields();
             break;
+
         case CoreDbCopyManager::canceled:
             QMessageBox::information(this, qApp->applicationName(), i18n("Database conversion canceled."));
             slotUnlockInputFields();

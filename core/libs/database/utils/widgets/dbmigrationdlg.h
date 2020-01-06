@@ -50,7 +50,8 @@ public:
     explicit DatabaseCopyThread(QWidget* const parent);
     ~DatabaseCopyThread();
 
-    void init(const DbEngineParameters& fromDatabaseSettingsWidget, const DbEngineParameters& toDatabaseSettingsWidget);
+    void init(const DbEngineParameters& fromDatabaseSettingsWidget,
+              const DbEngineParameters& toDatabaseSettingsWidget);
     void run() override;
 
 public:

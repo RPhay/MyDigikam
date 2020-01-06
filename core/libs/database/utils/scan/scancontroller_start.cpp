@@ -40,10 +40,12 @@ ScanController::Advice ScanController::databaseInitialization()
         d->condVar.wakeAll();
     }
 
-    // loop is quit by signal
+    // NOTE: loop is quit by signal
+
     d->eventLoop->exec();
 
     // setup file watch service for LoadingCache - now that we are sure we have a CoreDbWatch
+
     if (!d->fileWatchInstalled)
     {
         d->fileWatchInstalled     = true; // once per application lifetime only
@@ -69,6 +71,7 @@ void ScanController::completeCollectionScan(bool defer)
 
     // we only need to count the files in advance
     // if we show a progress percentage in progress dialog
+
     completeCollectionScanCore(!CollectionScanner::databaseInitialScanDone(), defer);
 
     delete d->progressDialog;
@@ -91,7 +94,8 @@ void ScanController::completeCollectionScanCore(bool needTotalFiles, bool defer)
         d->condVar.wakeAll();
     }
 
-    // loop is quit by signal
+    // NOTE: loop is quit by signal
+
     d->eventLoop->exec();
 
     d->needTotalFiles = false;

@@ -118,7 +118,7 @@ private:
     void setInitializationMessage();
     void createProgressDialog();
 
-    virtual bool continueQuery() override;
+    virtual bool continueQuery()                                            override;
     virtual void connectCollectionScanner(CollectionScanner* const scanner) override;
 
     // -----------------------------------------------------------------------------
@@ -264,7 +264,7 @@ public:
      */
     void hintAtModificationOfItems(const QList<qlonglong> ids);
     void hintAtModificationOfItem(qlonglong id);
-    
+
 Q_SIGNALS:
 
     void totalFilesToScan(int);

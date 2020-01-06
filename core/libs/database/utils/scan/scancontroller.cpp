@@ -37,7 +37,7 @@ ScanController::FileMetadataWrite::FileMetadataWrite(const ItemInfo& info)
 
 void ScanController::FileMetadataWrite::changed(bool wasChanged)
 {
-    m_changed = m_changed || wasChanged;
+    m_changed = (m_changed || wasChanged);
 }
 
 ScanController::FileMetadataWrite::~FileMetadataWrite()
@@ -72,6 +72,7 @@ ScanController::ScanController()
             d->eventLoop, SLOT(quit()));
 
     // create timer to show progress dialog
+
     d->showTimer = new QTimer(this);
     d->showTimer->setSingleShot(true);
 
@@ -82,6 +83,7 @@ ScanController::ScanController()
             this, &ScanController::slotTriggerShowProgressDialog);
 
     // create timer for relaxed scheduling
+
     d->relaxedTimer = new QTimer(this);
     d->relaxedTimer->setSingleShot(true);
     d->relaxedTimer->setInterval(500);
@@ -90,6 +92,7 @@ ScanController::ScanController()
             this, &ScanController::slotRelaxedScanning);
 
     // create timer for external scheduling
+
     d->externalTimer = new QTimer(this);
     d->externalTimer->setSingleShot(true);
     d->externalTimer->setInterval(1500);
@@ -97,7 +100,8 @@ ScanController::ScanController()
     connect(d->externalTimer, &QTimer::timeout,
             this, &ScanController::slotRelaxedScanning);
 
-    // interthread connections
+    // inter-thread connections
+
     connect(this, &ScanController::errorFromInitialization,
             this, &ScanController::slotErrorFromInitialization);
 
@@ -105,6 +109,7 @@ ScanController::ScanController()
             this, &ScanController::slotProgressFromInitialization);
 
     // start thread
+
     d->running = true;
     start();
 }
@@ -128,7 +133,7 @@ void ScanController::setInitializationMessage()
     }
 }
 
-// implementing InitializationObserver
+/// implementing InitializationObserver
 bool ScanController::continueQuery()
 {
     // not from main thread
@@ -173,7 +178,7 @@ void ScanController::run()
         {
             QMutexLocker lock(&d->mutex);
 
-            if (d->needsInitialization)
+            if      (d->needsInitialization)
             {
                 d->needsInitialization = false;
                 doInit                 = true;
@@ -210,11 +215,14 @@ void ScanController::run()
         if (doInit)
         {
             d->continueInitialization = true;
+
             // pass "this" as InitializationObserver
+
             bool success              = CoreDbAccess::checkReadyForUse(this);
 
             // If d->advice has not been adjusted to a value indicating failure, do this here
-            if (!success && d->advice == Success)
+
+            if (!success && (d->advice == Success))
             {
                 d->advice = ContinueWithoutDatabase;
             }
@@ -240,7 +248,7 @@ void ScanController::run()
             if (doScanDeferred)
             {
                 d->completeScanDeferredAlbums = scanner.deferredAlbumPaths();
-                d->finishScanAllowed = false;
+                d->finishScanAllowed          = false;
             }
         }
         else if (doFinishScan)
@@ -272,7 +280,9 @@ void ScanController::run()
         {
             CollectionScanner scanner;
             scanner.setHintContainer(d->hints);
+
             //connectCollectionScanner(&scanner);
+
             SimpleCollectionScannerObserver observer(&d->continuePartialScan);
             scanner.setObserver(&observer);
             scanner.partialScan(task);
@@ -290,7 +300,7 @@ void ScanController::run()
     }
 }
 
-// (also implementing InitializationObserver)
+/// (also implementing InitializationObserver)
 void ScanController::connectCollectionScanner(CollectionScanner* const scanner)
 {
     scanner->setSignalsEnabled(true);
@@ -330,6 +340,7 @@ void ScanController::updateUniqueHash()
 
     // we only need to count the files in advance
     //if we show a progress percentage in progress dialog
+
     d->needTotalFiles = true;
 
     {
@@ -338,7 +349,8 @@ void ScanController::updateUniqueHash()
         d->condVar.wakeAll();
     }
 
-    // loop is quit by signal
+    // NOTE: loop is quit by signal
+
     d->eventLoop->exec();
 
     delete d->progressDialog;

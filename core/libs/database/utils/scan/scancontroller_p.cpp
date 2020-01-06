@@ -122,7 +122,7 @@ void ScanController::Private::garbageCollectHints(bool setAccessTime)
 
     if (idle                    &&
         lastHintAdded.isValid() &&
-        lastHintAdded.secsTo(current) > (5*60))
+        (lastHintAdded.secsTo(current) > (5*60)))
     {
         hints->clear();
     }
@@ -140,6 +140,7 @@ ScanControllerLoadingCacheFileWatch::ScanControllerLoadingCacheFileWatch()
     CoreDbWatch* const dbwatch = CoreDbAccess::databaseWatch();
 
     // we opt for a queued connection to make stuff a bit relaxed
+
     connect(dbwatch, SIGNAL(imageChange(ImageChangeset)),
             this, SLOT(slotImageChanged(ImageChangeset)),
             Qt::QueuedConnection);
@@ -151,10 +152,12 @@ void ScanControllerLoadingCacheFileWatch::slotImageChanged(const ImageChangeset&
     {
         DatabaseFields::Set changes = changeset.changes();
 
-        if (changes & DatabaseFields::ModificationDate || changes & DatabaseFields::Orientation)
+        if ((changes & DatabaseFields::ModificationDate) || (changes & DatabaseFields::Orientation))
         {
             ItemInfo info(imageId);
+
             //qCDebug(DIGIKAM_DATABASE_LOG) << imageId << info.filePath();
+
             notifyFileChanged(info.filePath());
         }
     }

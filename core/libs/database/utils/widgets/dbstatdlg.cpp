@@ -55,6 +55,7 @@ DBStatDlg::DBStatDlg(QWidget* const parent)
     listView()->setHeaderLabels(QStringList() << i18n("Format") << i18n("Count"));
 
     // get image format statistics
+
     int totalImages = generateItemsList(DatabaseItem::Image, i18n("Images"));
     int totalVideos = generateItemsList(DatabaseItem::Video, i18n("Videos"));
     int totalAudio  = generateItemsList(DatabaseItem::Audio, i18n("Audio"));
@@ -63,17 +64,21 @@ DBStatDlg::DBStatDlg(QWidget* const parent)
     // --------------------------------------------------------
 
     // To see total count of items at end of list.
+
     new QTreeWidgetItem(listView(), QStringList() << i18n("Total Items") << QString::number(total));
 
     // get album statistics
+
     int albums   = CoreDbAccess().db()->scanAlbums().count();
     new QTreeWidgetItem(listView(), QStringList() << i18n("Albums") << QString::number(albums));
 
     // get tags statistics
+
     int tags     = CoreDbAccess().db()->scanTags().count();
     new QTreeWidgetItem(listView(), QStringList() << i18n("Tags") << QString::number(tags));
 
     // Database Backend information
+
     new QTreeWidgetItem(listView(), QStringList());
     DbEngineParameters prm = ApplicationSettings::instance()->getDbEngineParameters();
     QString dbBe           = prm.databaseType;
@@ -112,9 +117,11 @@ DBStatDlg::~DBStatDlg()
 int DBStatDlg::generateItemsList(DatabaseItem::Category category, const QString& title)
 {
     // get image format statistics
+
     QMap<QString, int> stat = CoreDbAccess().db()->getFormatStatistics(category);
 
     // do not add items if the map is empty
+
     if (stat.isEmpty())
     {
         return 0;
@@ -123,7 +130,7 @@ int DBStatDlg::generateItemsList(DatabaseItem::Category category, const QString&
     int total = 0;
     QMap<QString, QString> map;
 
-    for (QMap<QString, int>::const_iterator it = stat.constBegin(); it != stat.constEnd(); ++it)
+    for (QMap<QString, int>::const_iterator it = stat.constBegin() ; it != stat.constEnd() ; ++it)
     {
         total += it.value();
         map.insert(it.key(), QString::number(it.value()));

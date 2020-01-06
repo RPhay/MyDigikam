@@ -53,18 +53,20 @@ void ScanController::slotScannedFiles(int scanned)
     }
 }
 
-// implementing InitializationObserver
+/// implementing InitializationObserver
 void ScanController::moreSchemaUpdateSteps(int numberOfSteps)
 {
     // not from main thread
+
     emit triggerShowProgressDialog();
     emit incrementProgressDialog(numberOfSteps);
 }
 
-// implementing InitializationObserver
+/// implementing InitializationObserver
 void ScanController::schemaUpdateProgress(const QString& message, int numberOfSteps)
 {
     // not from main thread
+
     emit progressFromInitialization(message, numberOfSteps);
 }
 
@@ -78,16 +80,19 @@ void ScanController::slotProgressFromInitialization(const QString& message, int 
         d->progressDialog->advance(numberOfSteps);
     }
 }
-// implementing InitializationObserver
+
+/// implementing InitializationObserver
 void ScanController::error(const QString& errorMessage)
 {
     // not from main thread
+
     emit errorFromInitialization(errorMessage);
 }
 
 void ScanController::slotErrorFromInitialization(const QString& errorMessage)
 {
     // main thread
+
     QString message = i18n("Error");
 
     if (d->progressDialog)
@@ -102,7 +107,9 @@ void ScanController::slotShowProgressDialog()
 {
     if (d->progressDialog)
     {
-        //if (!CollectionScanner::databaseInitialScanDone())
+/*
+        if (!CollectionScanner::databaseInitialScanDone())
+*/
         {
             d->progressDialog->show();
         }
@@ -164,6 +171,7 @@ void ScanController::hintAtMoveOrCopyOfAlbum(const PAlbum* const album,
                                              const QString& newAlbumName)
 {
     // get album root and album from dst path
+
     CollectionLocation location = CollectionManager::instance()->locationForPath(dstPath);
 
     if (location.isNull())
@@ -181,8 +189,10 @@ void ScanController::hintAtMoveOrCopyOfAlbum(const PAlbum* const album,
                                                       newAlbumName.isNull() ? album->title()
                                                                             : newAlbumName);
 
-    //QMutexLocker lock(&d->mutex);
-    //d->albumHints << newHints;
+/*
+    QMutexLocker lock(&d->mutex);
+    d->albumHints << newHints;
+*/
     d->hints->recordHints(newHints);
 }
 
@@ -196,8 +206,10 @@ void ScanController::hintAtMoveOrCopyOfAlbum(const PAlbum* const album,
                                                       newAlbumName.isNull() ? album->title()
                                                                             : newAlbumName);
 
-    //QMutexLocker lock(&d->mutex);
-    //d->albumHints << newHints;
+/*
+    QMutexLocker lock(&d->mutex);
+    d->albumHints << newHints;
+*/
     d->hints->recordHints(newHints);
 }
 
@@ -211,7 +223,9 @@ void ScanController::hintAtMoveOrCopyOfItems(const QList<qlonglong> ids,
                           itemNames);
 
     d->garbageCollectHints(true);
-    //d->itemHints << hint;
+/*
+    d->itemHints << hint;
+*/
     d->hints->recordHints(QList<ItemCopyMoveHint>() << hint);
 }
 
@@ -225,7 +239,9 @@ void ScanController::hintAtMoveOrCopyOfItem(qlonglong id,
                           QStringList() << itemName);
 
     d->garbageCollectHints(true);
-    //d->itemHints << hint;
+/*
+    d->itemHints << hint;
+*/
     d->hints->recordHints(QList<ItemCopyMoveHint>() << hint);
 }
 
@@ -234,7 +250,9 @@ void ScanController::hintAtModificationOfItems(const QList<qlonglong> ids)
     ItemChangeHint hint(ids, ItemChangeHint::ItemModified);
 
     d->garbageCollectHints(true);
-    //d->itemHints << hint;
+/*
+    d->itemHints << hint;
+*/
     d->hints->recordHints(QList<ItemChangeHint>() << hint);
 }
 
@@ -243,7 +261,9 @@ void ScanController::hintAtModificationOfItem(qlonglong id)
     ItemChangeHint hint(QList<qlonglong>() << id, ItemChangeHint::ItemModified);
 
     d->garbageCollectHints(true);
-    //d->itemHints << hint;
+/*
+    d->itemHints << hint;
+*/
     d->hints->recordHints(QList<ItemChangeHint>() << hint);
 }
 

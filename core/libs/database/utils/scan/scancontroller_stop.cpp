@@ -79,18 +79,21 @@ void ScanController::suspendCollectionScan()
     d->scanSuspended++;
 }
 
-// implementing InitializationObserver
+/// implementing InitializationObserver
 void ScanController::finishedSchemaUpdate(UpdateResult result)
 {
     // not from main thread
+
     switch (result)
     {
         case InitializationObserver::UpdateSuccess:
             d->advice = Success;
             break;
+
         case InitializationObserver::UpdateError:
             d->advice = ContinueWithoutDatabase;
             break;
+
         case InitializationObserver::UpdateErrorMustAbort:
             d->advice = AbortImmediately;
             break;
