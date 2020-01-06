@@ -28,12 +28,11 @@
 // Qt includes
 
 #include <QWidget>
+#include <QString>
 
 // Local includes
 
 #include "digikam_export.h"
-
-class QString;
 
 namespace Digikam
 {
@@ -63,17 +62,17 @@ public:
 
     void setParametersFromSettings(const ApplicationSettings* const settings,
                                    const bool& migration = false);
-    DbEngineParameters getDbEngineParameters() const;
+    DbEngineParameters getDbEngineParameters()  const;
 
     void    setDatabaseType(int type);
-    int     databaseType()    const;
+    int     databaseType()                      const;
 
-    QString databaseBackend() const;
+    QString databaseBackend()                   const;
 
     void setDatabasePath(const QString& path);
-    QString databasePath() const;
+    QString databasePath()                      const;
 
-    DbEngineParameters orgDatabasePrm() const;
+    DbEngineParameters orgDatabasePrm()         const;
 
     /**
      * For Sqlite or MysqlInternal, check properties of local path to store database files.

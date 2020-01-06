@@ -22,121 +22,10 @@
  *
  * ============================================================ */
 
-#include "dbsettingswidget.h"
-
-// Qt includes
-
-#include <QApplication>
-#include <QComboBox>
-#include <QDir>
-#include <QFileInfo>
-#include <QFormLayout>
-#include <QGridLayout>
-#include <QGroupBox>
-#include <QHeaderView>
-#include <QLabel>
-#include <QLineEdit>
-#include <QMessageBox>
-#include <QSpinBox>
-#include <QSqlDatabase>
-#include <QSqlError>
-#include <QStandardPaths>
-#include <QString>
-#include <QStyle>
-#include <QTabWidget>
-#include <QTemporaryFile>
-#include <QTextBrowser>
-#include <QTimer>
-#include <QVBoxLayout>
-
-// KDE includes
-
-#include <klocalizedstring.h>
-
-// Local includes
-
-#include "applicationsettings.h"
-#include "dfileselector.h"
-#include "dbengineparameters.h"
-#include "dbinarysearch.h"
-#include "dexpanderbox.h"
-#include "digikam_config.h"
-#include "digikam_debug.h"
-#include "dlayoutbox.h"
-#include "mysqlinitbinary.h"
-#include "mysqlservbinary.h"
-#include "albummanager.h"
+#include "dbsettingswidget_p.h"
 
 namespace Digikam
 {
-
-class Q_DECL_HIDDEN DatabaseSettingsWidget::Private
-{
-
-public:
-
-    explicit Private()
-    {
-        mysqlCmdBox            = nullptr;
-        dbType                 = nullptr;
-        dbPathLabel            = nullptr;
-        expertSettings         = nullptr;
-        dbNoticeBox            = nullptr;
-        sqlInit                = nullptr;
-        dbNameCore             = nullptr;
-        dbNameThumbs           = nullptr;
-        dbNameFace             = nullptr;
-        dbNameSimilarity       = nullptr;
-        hostName               = nullptr;
-        connectOpts            = nullptr;
-        userName               = nullptr;
-        password               = nullptr;
-        hostPort               = nullptr;
-        dbPathEdit             = nullptr;
-        dbBinariesWidget       = nullptr;
-        tab                    = nullptr;
-        dbDetailsBox           = nullptr;
-        ignoreDirectoriesBox   = nullptr;
-        ignoreDirectoriesEdit  = nullptr;
-        ignoreDirectoriesLabel = nullptr;
-    }
-
-    DVBox*             mysqlCmdBox;
-
-    QLineEdit*         dbNameCore;
-    QLineEdit*         dbNameThumbs;
-    QLineEdit*         dbNameFace;
-    QLineEdit*         dbNameSimilarity;
-    QLineEdit*         hostName;
-    QLineEdit*         connectOpts;
-    QLineEdit*         userName;
-    QLineEdit*         password;
-
-    QSpinBox*          hostPort;
-
-    QComboBox*         dbType;
-    QLabel*            dbPathLabel;
-    QTextBrowser*      sqlInit;
-    QGroupBox*         expertSettings;
-    QGroupBox*         dbNoticeBox;
-    QGroupBox*         dbDetailsBox;
-    QTabWidget*        tab;
-
-    DFileSelector*     dbPathEdit;
-
-    DBinarySearch*     dbBinariesWidget;
-
-    MysqlInitBinary    mysqlInitBin;
-    MysqlServBinary    mysqlServBin;
-
-    DbEngineParameters orgPrms;
-
-    QMap<int, int>     dbTypeMap;
-
-    QGroupBox*         ignoreDirectoriesBox;
-    QLineEdit*         ignoreDirectoriesEdit;
-    QLabel*            ignoreDirectoriesLabel;
-};
 
 DatabaseSettingsWidget::DatabaseSettingsWidget(QWidget* const parent)
     : QWidget(parent),
@@ -508,6 +397,7 @@ QString DatabaseSettingsWidget::databaseBackend() const
         {
             return DbEngineParameters::MySQLDatabaseType();
         }
+
         default: // SQlite
         {
             return DbEngineParameters::SQLiteDatabaseType();
@@ -547,6 +437,7 @@ void DatabaseSettingsWidget::setDatabaseInputFields(int index)
 
             break;
         }
+
         case MysqlInternal:
         {
             d->dbPathLabel->setVisible(true);
@@ -559,6 +450,7 @@ void DatabaseSettingsWidget::setDatabaseInputFields(int index)
 
             break;
         }
+
         default: // MysqlServer
         {
             d->dbPathLabel->setVisible(false);
