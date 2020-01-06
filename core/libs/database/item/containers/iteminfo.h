@@ -136,6 +136,13 @@ public:
      */
     ItemInfo copyItem(int dstAlbumID, const QString& dstFileName);
 
+    /**
+     * Returns true if this is a valid ItemInfo,
+     * and the location of the image is currently available
+     * (information freshly obtained from CollectionManager)
+     */
+    bool isLocationAvailable()                                                          const;
+
 public:
 
     // -----------------------------------------------------------------------------
@@ -312,13 +319,6 @@ public:
     double altitudeNumber()                                                             const;
     bool   hasCoordinates()                                                             const;
     bool   hasAltitude()                                                                const;
-
-    /**
-     * Returns true if this is a valid ItemInfo,
-     * and the location of the image is currently available
-     * (information freshly obtained from CollectionManager)
-     */
-    bool isLocationAvailable()                                                          const;
 
     //@}
 

@@ -105,6 +105,7 @@ set(libdatabase_SRCS
     item/containers/iteminfo.cpp
     item/containers/iteminfo_p.cpp
     item/containers/iteminfo_containers.cpp
+    item/containers/iteminfo_geolocation.cpp
     item/containers/iteminfo_groups.cpp
     item/containers/iteminfo_history.cpp
     item/containers/iteminfo_labels.cpp
