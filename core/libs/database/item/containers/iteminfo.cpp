@@ -241,18 +241,6 @@ bool ItemInfo::isNull() const
     return !m_data;
 }
 
-uint ItemInfo::hash() const
-{
-    if (m_data)
-    {
-        return ::qHash(m_data->id);
-    }
-    else
-    {
-        return ::qHash((int)0);
-    }
-}
-
 qlonglong ItemInfo::id() const
 {
     return (m_data ? m_data->id : -1);
@@ -280,36 +268,6 @@ QString ItemInfo::name() const
     return m_data->name;
 }
 
-#define RETURN_IF_CACHED(x)                             \
-    if (m_data->x##Cached)                              \
-    {                                                   \
-        ItemInfoReadLocker lock;                        \
-        if (m_data->x##Cached)                          \
-        {                                               \
-            return m_data->x;                           \
-        }                                               \
-    }
-
-#define RETURN_ASPECTRATIO_IF_IMAGESIZE_CACHED()        \
-    if (m_data->imageSizeCached)                        \
-    {                                                   \
-        ItemInfoReadLocker lock;                        \
-        if (m_data->imageSizeCached)                    \
-        {                                               \
-            return (double)m_data->imageSize.width()/   \
-                           m_data->imageSize.height();  \
-        }                                               \
-    }
-
-#define STORE_IN_CACHE_AND_RETURN(x, retrieveMethod)    \
-    ItemInfoWriteLocker lock;                           \
-    m_data.data()->x##Cached = true;                    \
-    if (!values.isEmpty())                              \
-    {                                                   \
-        m_data.data()->x = retrieveMethod;              \
-    }                                                   \
-    return m_data->x;
-
 qlonglong ItemInfo::fileSize() const
 {
     if (!m_data)
@@ -322,20 +280,6 @@ qlonglong ItemInfo::fileSize() const
     QVariantList values = CoreDbAccess().db()->getImagesFields(m_data->id, DatabaseFields::FileSize);
 
     STORE_IN_CACHE_AND_RETURN(fileSize, values.first().toLongLong())
-}
-
-QString ItemInfo::uniqueHash() const
-{
-    if (!m_data)
-    {
-        return QString();
-    }
-
-    RETURN_IF_CACHED(uniqueHash)
-
-    QVariantList values = CoreDbAccess().db()->getImagesFields(m_data->id, DatabaseFields::UniqueHash);
-
-    STORE_IN_CACHE_AND_RETURN(uniqueHash, values.first().toString())
 }
 
 QString ItemInfo::title() const
@@ -1656,45 +1600,6 @@ bool ItemInfo::isLocationAvailable() const
 
     return CollectionManager::instance()->locationForAlbumRootId(m_data->albumRootId).isAvailable();
 }
-
-double ItemInfo::similarityTo(const qlonglong imageId) const
-{
-    return imageExtendedProperties().similarityTo(imageId);
-}
-
-double ItemInfo::currentSimilarity() const
-{
-    if (!m_data)
-    {
-        return 0.0;
-    }
-
-    return m_data->currentSimilarity;
-}
-
-qlonglong ItemInfo::currentReferenceImage() const
-{
-    if (!m_data)
-    {
-        return -1;
-    }
-
-    return m_data->currentReferenceImage;
-}
-
-QList<ItemInfo> ItemInfo::fromUniqueHash(const QString& uniqueHash, qlonglong fileSize)
-{
-    QList<ItemScanInfo> scanInfos = CoreDbAccess().db()->getIdenticalFiles(uniqueHash, fileSize);
-    QList<ItemInfo> infos;
-
-    foreach (const ItemScanInfo& scanInfo, scanInfos)
-    {
-        infos << ItemInfo(scanInfo.id);
-    }
-
-    return infos;
-}
-
 
 ItemInfo::DatabaseFieldsHashRaw ItemInfo::getDatabaseFieldsRaw(const DatabaseFields::Set& requestedSet) const
 {

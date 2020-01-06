@@ -77,6 +77,10 @@ class ThumbnailInfo;
 class DIGIKAM_DATABASE_EXPORT ItemInfo
 {
 public:
+    
+    typedef DatabaseFields::Hash<QVariant> DatabaseFieldsHashRaw;
+
+public:
 
     /**
      * Constructor
@@ -276,23 +280,6 @@ public:
      * Set the visibility flag - triggers between Visible and Hidden
      */
     void setVisible(bool isVisible);
-
-    /**
-     * Return a signature for the item.
-     */
-    uint hash()                                                                         const;
-
-    /**
-     * Scans the database for items with the given signature.
-     */
-    QList<ItemInfo> fromUniqueHash(const QString& uniqueHash, qlonglong fileSize);
-
-    /**
-     * @return the unique hash of the image.
-     */
-    QString uniqueHash()                                                                const;
-
-    typedef DatabaseFields::Hash<QVariant> DatabaseFieldsHashRaw;
 
     /**
      * @todo Supports only VideoMetadataField and ImageMetadataField values for now.
@@ -629,6 +616,21 @@ public:
      * Returns the id of the current fuzzy search reference image.
      */
     qlonglong currentReferenceImage()                                                   const;
+
+    /**
+     * Return a signature for the item.
+     */
+    uint hash()                                                                         const;
+
+    /**
+     * Scans the database for items with the given signature.
+     */
+    QList<ItemInfo> fromUniqueHash(const QString& uniqueHash, qlonglong fileSize);
+
+    /**
+     * @return the unique hash signature as string of the image.
+     */
+    QString uniqueHash()                                                                const;
 
     //@}
 
