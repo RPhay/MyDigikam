@@ -543,4 +543,5 @@ BUGFIXES:
 528 ==> 415877 - "Reset" button in Tag Manager not always working to reset icon.
 529 ==> 415561 - Face detection based on deep learning leads to no result under Windows.
 530 ==> 415920 - The unconfirmed faces count in the left sidebar is missing.
-531 ==> 
+531 ==> 415944 - 7.0.0beta2 removed all my Geolocation bookmarks.
+532 ==> 

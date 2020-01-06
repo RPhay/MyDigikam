@@ -682,6 +682,7 @@ BookmarksManager::BookmarksManager(const QString& bookmarksFile, QObject* const 
 
 BookmarksManager::~BookmarksManager()
 {
+    delete d->bookmarkRootNode;
     delete d;
 }
 

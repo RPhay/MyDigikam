@@ -58,7 +58,6 @@ BookmarkNode::BookmarkNode(BookmarkNode::Type type, BookmarkNode* const parent)
     : QObject(nullptr),
       d(new Private)
 {
-    qDebug() << "Created";
     expanded  = false;
     d->parent = parent;
     d->type   = type;
@@ -75,7 +74,7 @@ BookmarkNode::~BookmarkNode()
     {
         d->parent->remove(this);
     }
-qDebug() << "Deleted";
+
     qDeleteAll(d->children);
     d->parent = nullptr;
     d->type   = BookmarkNode::Root;
