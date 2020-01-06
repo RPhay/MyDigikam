@@ -382,7 +382,7 @@ public:
 
     // -----------------------------------------------------------------------------
 
-    /** @name Operations with Group
+    /** @name Operations with Groups
      */
 
     //@{
