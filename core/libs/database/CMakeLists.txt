@@ -104,10 +104,11 @@ set(libdatabase_SRCS
 
     item/containers/iteminfo.cpp
     item/containers/iteminfo_p.cpp
-    item/containers/iteminfo_thumbnail.cpp
-    item/containers/iteminfo_similarity.cpp
+    item/containers/iteminfo_containers.cpp
     item/containers/iteminfo_labels.cpp
+    item/containers/iteminfo_similarity.cpp
     item/containers/iteminfo_tags.cpp
+    item/containers/iteminfo_thumbnail.cpp
     item/containers/iteminfodata.cpp
     item/containers/iteminfolist.cpp
     item/containers/iteminfocache.cpp
