@@ -24,144 +24,10 @@
  *
  * ============================================================ */
 
-#include "iteminfo.h"
-
-// Qt includes
-
-#include <QFile>
-#include <QFileInfo>
-#include <QHash>
-
-// Local includes
-
-#include "digikam_debug.h"
-#include "digikam_globals.h"
-#include "coredb.h"
-#include "coredbaccess.h"
-#include "coredbinfocontainers.h"
-#include "coredboperationgroup.h"
-#include "dimagehistory.h"
-#include "collectionmanager.h"
-#include "collectionlocation.h"
-#include "iteminfodata.h"
-#include "iteminfocache.h"
-#include "itemlister.h"
-#include "itemlisterrecord.h"
-#include "iteminfolist.h"
-#include "itemcomments.h"
-#include "itemcopyright.h"
-#include "itemextendedproperties.h"
-#include "itemposition.h"
-#include "itemscanner.h"
-#include "itemtagpair.h"
-#include "tagscache.h"
-#include "template.h"
-#include "thumbnailinfo.h"
-#include "photoinfocontainer.h"
-#include "videoinfocontainer.h"
+#include "iteminfo_p.h"
 
 namespace Digikam
 {
-
-namespace
-{
-
-MetadataInfo::Field DatabaseVideoMetadataFieldsToMetadataInfoField(const DatabaseFields::VideoMetadata videoMetadataField)
-{
-    switch (videoMetadataField)
-    {
-        case DatabaseFields::AspectRatio:
-            return MetadataInfo::AspectRatio;
-
-        case DatabaseFields::AudioBitRate:
-            return MetadataInfo::AudioBitRate;
-
-        case DatabaseFields::AudioChannelType:
-            return MetadataInfo::AudioChannelType;
-
-        case DatabaseFields::AudioCodec:
-            return MetadataInfo::AudioCodec;
-
-        case DatabaseFields::Duration:
-            return MetadataInfo::Duration;
-
-        case DatabaseFields::FrameRate:
-            return MetadataInfo::FrameRate;
-
-        case DatabaseFields::VideoCodec:
-            return MetadataInfo::VideoCodec;
-
-        default:
-            break;
-    }
-
-    /// @todo Invalid request...
-    return MetadataInfo::Field();
-}
-
-MetadataInfo::Field DatabaseImageMetadataFieldsToMetadataInfoField(const DatabaseFields::ImageMetadata imageMetadataField)
-{
-    switch (imageMetadataField)
-    {
-        case DatabaseFields::Make:
-            return MetadataInfo::Make;
-
-        case DatabaseFields::Model:
-            return MetadataInfo::Model;
-
-        case DatabaseFields::Lens:
-            return MetadataInfo::Lens;
-
-        case DatabaseFields::Aperture:
-            return MetadataInfo::Aperture;
-
-        case DatabaseFields::FocalLength:
-            return MetadataInfo::FocalLength;
-
-        case DatabaseFields::FocalLength35:
-            return MetadataInfo::FocalLengthIn35mm;
-
-        case DatabaseFields::ExposureTime:
-            return MetadataInfo::ExposureTime;
-
-        case DatabaseFields::ExposureProgram:
-            return MetadataInfo::ExposureProgram;
-
-        case DatabaseFields::ExposureMode:
-            return MetadataInfo::ExposureMode;
-
-        case DatabaseFields::Sensitivity:
-            return MetadataInfo::Sensitivity;
-
-        case DatabaseFields::FlashMode:
-            return MetadataInfo::FlashMode;
-
-        case DatabaseFields::WhiteBalance:
-            return MetadataInfo::WhiteBalance;
-
-        case DatabaseFields::WhiteBalanceColorTemperature:
-            return MetadataInfo::WhiteBalanceColorTemperature;
-
-        case DatabaseFields::MeteringMode:
-            return MetadataInfo::MeteringMode;
-
-        case DatabaseFields::SubjectDistance:
-            return MetadataInfo::SubjectDistance;
-
-        case DatabaseFields::SubjectDistanceCategory:
-            return MetadataInfo::SubjectDistanceCategory;
-
-        default:
-            break;
-    }
-
-    /// @todo Invalid request...
-    return MetadataInfo::Field();
-}
-
-} // namespace
-
-// ---------------------------------------------------------------
 
 ItemInfo::ItemInfo()
     : m_data(nullptr)
@@ -172,7 +38,7 @@ ItemInfo::ItemInfo(const ItemListerRecord& record)
     : m_data(ItemInfoStatic::cache()->infoForId(record.imageID))
 {
     ItemInfoWriteLocker lock;
-    bool newlyCreated              = m_data->albumId == -1;
+    bool newlyCreated              = (m_data->albumId == -1);
 
     m_data->albumId                = record.albumID;
     m_data->albumRootId            = record.albumRootID;
@@ -193,8 +59,10 @@ ItemInfo::ItemInfo(const ItemListerRecord& record)
     m_data->formatCached           = true;
     m_data->creationDateCached     = true;
     m_data->modificationDateCached = true;
+
     // field is only signed 32 bit in the protocol. -1 indicates value is larger, reread
-    m_data->fileSizeCached         = m_data->fileSize != -1;
+
+    m_data->fileSizeCached         = (m_data->fileSize != -1);
     m_data->imageSizeCached        = true;
     m_data->videoMetadataCached    = DatabaseFields::VideoMetadataNone;
     m_data->imageMetadataCached    = DatabaseFields::ImageMetadataNone;
@@ -277,7 +145,7 @@ bool ItemInfo::operator==(const ItemInfo& info) const
 
 bool ItemInfo::operator!=(const ItemInfo& info) const
 {
-    return !operator==(info);
+    return (!operator==(info));
 }
 
 bool ItemInfo::operator<(const ItemInfo& info) const
@@ -285,13 +153,13 @@ bool ItemInfo::operator<(const ItemInfo& info) const
     if (m_data)
     {
         if (info.m_data)
-            // both not null, sort by id
         {
+            // both not null, sort by id
             return (m_data->id < info.m_data->id);
         }
         else
-            // only other is null, this is greater than
         {
+            // only other is null, this is greater than
             return false;
         }
     }
@@ -408,6 +276,7 @@ QString ItemInfo::name() const
     }
 
     ItemInfoReadLocker lock;
+
     return m_data->name;
 }
 
