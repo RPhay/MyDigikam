@@ -206,12 +206,16 @@ void DisjointMetadata::load(const ItemInfo& info)
     int rating;
 
     if (d->dateTimeStatus == MetadataDisjoint)
+    {
         dateTime = d->dateTime;
+    }
     else
+    {
         dateTime = info.dateTime();
+    }
 
-    if (d->titlesStatus   == MetadataDisjoint &&
-        d->commentsStatus == MetadataDisjoint)
+    if ((d->titlesStatus   == MetadataDisjoint) &&
+        (d->commentsStatus == MetadataDisjoint))
     {
         commentMap = d->comments;
         titleMap   = d->titles;
@@ -225,19 +229,31 @@ void DisjointMetadata::load(const ItemInfo& info)
     }
 
     if (d->colorLabelStatus == MetadataDisjoint)
+    {
         colorLabel = d->colorLabel;
+    }
     else
+    {
         colorLabel = info.colorLabel();
+    }
 
     if (d->pickLabelStatus == MetadataDisjoint)
+    {
         pickLabel = d->pickLabel;
+    }
     else
+    {
         pickLabel = info.pickLabel();
+    }
 
     if (d->ratingStatus == MetadataDisjoint)
+    {
         rating = d->rating;
+    }
     else
+    {
         rating = info.rating();
+    }
 
     if (d->templateStatus == MetadataDisjoint)
     {
@@ -436,7 +452,7 @@ bool DisjointMetadata::write(ItemInfo info, WriteMode writeMode)
 
     bool writeAllFields;
 
-    if (writeMode == FullWrite)
+    if      (writeMode == FullWrite)
     {
         writeAllFields = true;
     }
@@ -463,7 +479,7 @@ bool DisjointMetadata::write(ItemInfo info, WriteMode writeMode)
         CoreDbAccess access;
         ItemComments comments = info.imageComments(access);
         comments.replaceComments(d->titles, DatabaseComment::Title);
-        changed                = true;
+        changed               = true;
     }
 
     if (saveComment && (writeAllFields || d->commentsChanged))
@@ -471,7 +487,7 @@ bool DisjointMetadata::write(ItemInfo info, WriteMode writeMode)
         CoreDbAccess access;
         ItemComments comments = info.imageComments(access);
         comments.replaceComments(d->comments);
-        changed                = true;
+        changed               = true;
     }
 
     if (saveDateTime && (writeAllFields || d->dateTimeChanged))
@@ -557,7 +573,7 @@ bool DisjointMetadata::willWriteMetadata(DisjointMetadata::WriteMode writeMode, 
 
     bool writeAllFields;
 
-    if (writeMode == FullWrite)
+    if      (writeMode == FullWrite)
     {
         writeAllFields = true;
     }
@@ -596,21 +612,44 @@ int DisjointMetadata::changedFlags()
     int value = 0;
 
     if (d->titlesChanged)
+    {
         value |= MetadataHub::WRITE_TITLE;
+    }
+
     if (d->commentsChanged)
+    {
         value |= MetadataHub::WRITE_COMMENTS;
+    }
+
     if (d->dateTimeChanged)
+    {
         value |= MetadataHub::WRITE_DATETIME;
+    }
+
     if (d->pickLabelChanged)
+    {
         value |= MetadataHub::WRITE_PICKLABEL;
+    }
+
     if (d->colorLabelChanged)
+    {
         value |= MetadataHub::WRITE_COLORLABEL;
+    }
+
     if (d->ratingChanged)
+    {
         value |= MetadataHub::WRITE_RATING;
+    }
+
     if (d->tagsChanged)
+    {
         value |= MetadataHub::WRITE_TAGS;
+    }
+
     if (d->templateChanged)
+    {
         value |= MetadataHub::WRITE_TEMPLATE;
+    }
 
     return value;
 }
@@ -686,6 +725,7 @@ void DisjointMetadata::loadTags(const QList<int>& tagIds)
     }
 
     std::sort(loadedTagIds.begin(), loadedTagIds.end());
+
     // We search for metadata available tags, and
     // it is not present in current list, set it to
     // disjoint
@@ -705,6 +745,7 @@ void DisjointMetadata::loadTags(const QList<int>& tagIds)
 
     // new tags which are not yet in the set,
     // are added as Disjoint
+
     foreach (int tagId, loadedTagIds)
     {
         if (!d->tags.contains(tagId))
@@ -794,9 +835,11 @@ void DisjointMetadata::dateTimeInterval(QDateTime& lowest, QDateTime& highest) c
         case MetadataInvalid:
             lowest = highest = QDateTime();
             break;
+
         case MetadataAvailable:
             lowest = highest = d->dateTime;
             break;
+
         case MetadataDisjoint:
             lowest  = d->dateTime;
             highest = d->lastDateTime;
@@ -811,9 +854,11 @@ void DisjointMetadata::pickLabelInterval(int& lowest, int& highest) const
         case MetadataInvalid:
             lowest = highest = -1;
             break;
+
         case MetadataAvailable:
             lowest = highest = d->pickLabel;
             break;
+
         case MetadataDisjoint:
             lowest  = d->pickLabel;
             highest = d->highestPickLabel;
@@ -828,9 +873,11 @@ void DisjointMetadata::colorLabelInterval(int& lowest, int& highest) const
         case MetadataInvalid:
             lowest = highest = -1;
             break;
+
         case MetadataAvailable:
             lowest = highest = d->colorLabel;
             break;
+
         case MetadataDisjoint:
             lowest  = d->colorLabel;
             highest = d->highestColorLabel;
@@ -843,11 +890,15 @@ void DisjointMetadata::ratingInterval(int& lowest, int& highest) const
     switch (d->ratingStatus)
     {
         case MetadataInvalid:
-            lowest = highest = -1;
+            lowest  = -1;
+            highest = -1;
             break;
+
         case MetadataAvailable:
-            lowest = highest = d->rating;
+            lowest  = d->rating;
+            highest = d->rating;
             break;
+
         case MetadataDisjoint:
             lowest  = d->rating;
             highest = d->highestRating;

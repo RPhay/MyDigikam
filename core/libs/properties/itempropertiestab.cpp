@@ -114,11 +114,11 @@ public:
     {
     }
 
-    DTextLabelName* caption;
-    DTextLabelName* pickLabel;
-    DTextLabelName* colorLabel;
-    DTextLabelName* rating;
-    DTextLabelName* tags;
+    DTextLabelName*  caption;
+    DTextLabelName*  pickLabel;
+    DTextLabelName*  colorLabel;
+    DTextLabelName*  rating;
+    DTextLabelName*  tags;
 
     DTextLabelValue* labelFile;
     DTextLabelValue* labelFolder;
@@ -603,7 +603,11 @@ void ItemPropertiesTab::showOrHideCaptionAndTags()
     d->tags->setVisible(hasTags);
     d->labelTags->setVisible(hasTags);
 
-    widget(ItemPropertiesTab::Private::digiKamProperties)->setVisible(hasCaption || hasRating || hasTags || hasPickLabel || hasColorLabel);
+    widget(ItemPropertiesTab::Private::digiKamProperties)->setVisible(hasCaption   ||
+                                                                      hasRating    ||
+                                                                      hasTags      ||
+                                                                      hasPickLabel ||
+                                                                      hasColorLabel);
 }
 
 void ItemPropertiesTab::setCaption(const QString& str)
@@ -713,7 +717,7 @@ void ItemPropertiesTab::setVideoDuration(const QString& str)
 void ItemPropertiesTab::setVideoFrameRate(const QString& str)
 {
     // use string given as parameter by default because it contains the value for "unavailable" if needed
-    QString frameRateString = str;
+    QString frameRateString      = str;
     bool ok;
     const double frameRateDouble = str.toDouble(&ok);
 
@@ -780,10 +784,12 @@ QStringList ItemPropertiesTab::shortenedTagPaths(const QStringList& tagPaths, QL
         QStringList previousPath = previous.split(QLatin1Char('/'), QString::SkipEmptyParts);
         int depth;
 
-        for (depth = 0 ; depth < currentPath.size() && depth < previousPath.size() ; ++depth)
+        for (depth = 0 ; (depth < currentPath.size()) && (depth < previousPath.size()) ; ++depth)
         {
             if (currentPath.at(depth) != previousPath.at(depth))
+            {
                 break;
+            }
         }
 
         if (depth)

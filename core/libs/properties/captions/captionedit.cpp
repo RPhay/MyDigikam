@@ -44,14 +44,14 @@ class Q_DECL_HIDDEN CaptionEdit::Private
 public:
 
     explicit Private()
+      : altLangStrEdit(nullptr),
+        authorEdit(nullptr)
     {
-        altLangStrEdit = nullptr;
-        authorEdit     = nullptr;
     }
 
-    QLineEdit*      authorEdit;
-
     AltLangStrEdit* altLangStrEdit;
+
+    QLineEdit*      authorEdit;
 
     CaptionsMap     captionsValues;
 
@@ -132,6 +132,7 @@ void CaptionEdit::slotAddValue(const QString& lang, const QString& text)
     val.date    = QDateTime::currentDateTime();
 
     // The user may have removed the text and directly entered a new one. Do not drop author then.
+
     if (val.author.isEmpty() && d->lastDeletedLanguage == lang)
     {
         val.author = d->lastDeletedValues.author;

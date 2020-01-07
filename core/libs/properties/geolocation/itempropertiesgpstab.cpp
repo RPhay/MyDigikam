@@ -22,10 +22,10 @@
  *
  * ============================================================ */
 
-/*
-Good explanations about GPS (in French) can be found at this url :
-http://www.gpspassion.com/forumsen/topic.asp?TOPIC_ID=16593
-*/
+/**
+ * NOTE: Good explanations about GPS (in French) can be found at this url :
+ * http://www.gpspassion.com/forumsen/topic.asp?TOPIC_ID=16593
+ */
 
 #include "itempropertiesgpstab.h"
 
@@ -108,11 +108,11 @@ public:
 
     MapWidget*                 map;
     ItemMarkerTiler*           itemMarkerTiler;
-    GPSItemInfo::List         gpsInfoList;
+    GPSItemInfo::List          gpsInfoList;
 
     QStandardItemModel*        itemModel;
-    ItemGPSModelHelper*       gpsModelHelper;
-    GPSItemInfoSorter*        gpsItemInfoSorter;
+    ItemGPSModelHelper*        gpsModelHelper;
+    GPSItemInfoSorter*         gpsItemInfoSorter;
     bool                       boundariesShouldBeAdjusted;
 };
 
@@ -390,7 +390,7 @@ void ItemPropertiesGPSTab::setGPSInfoList(const GPSItemInfo::List& list)
 
     if (list.count() == 1)
     {
-        const GPSItemInfo info           = list.first();
+        const GPSItemInfo info            = list.first();
         const GeoCoordinates& coordinates = info.coordinates;
 
         if (!coordinates.hasAltitude())

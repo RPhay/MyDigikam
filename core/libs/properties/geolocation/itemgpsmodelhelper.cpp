@@ -31,10 +31,10 @@ class Q_DECL_HIDDEN ItemGPSModelHelper::Private
 public:
 
     explicit Private()
+      : itemModel(nullptr),
+        itemSelectionModel(nullptr),
+        thumbnailLoadThread(nullptr)
     {
-        itemModel           = nullptr;
-        itemSelectionModel  = nullptr;
-        thumbnailLoadThread = nullptr;
     }
 
     QStandardItemModel*  itemModel;
@@ -108,7 +108,8 @@ QPixmap ItemGPSModelHelper::pixmapFromRepresentativeIndex(const QPersistentModel
     if (d->thumbnailLoadThread->find(thumbId, thumbnail, qMax(size.width(), size.height())))
     {
         // digikam returns thumbnails with a border around them,
-        // but the geolocation interface expects them without a border
+        // but the geolocation interface expects them without a border.
+
         return thumbnail.copy(1, 1, thumbnail.size().width()-2, thumbnail.size().height()-2);
     }
     else
@@ -120,7 +121,7 @@ QPixmap ItemGPSModelHelper::pixmapFromRepresentativeIndex(const QPersistentModel
 QPersistentModelIndex ItemGPSModelHelper::bestRepresentativeIndexFromList(const QList<QPersistentModelIndex>& list,
                                                                           const int sortKey)
 {
-    QModelIndex bestIndex         = list.first();
+    QModelIndex bestIndex       = list.first();
     GPSItemInfo bestGPSItemInfo = bestIndex.data(RoleGPSItemInfo).value<GPSItemInfo>();
 
     for (int i = 1 ; i < list.count() ; ++i)
@@ -137,7 +138,7 @@ QPersistentModelIndex ItemGPSModelHelper::bestRepresentativeIndexFromList(const 
         if (currentFitsBetter)
         {
             bestGPSItemInfo = currentGPSItemInfo;
-            bestIndex        = currentIndex;
+            bestIndex       = currentIndex;
         }
     }
 

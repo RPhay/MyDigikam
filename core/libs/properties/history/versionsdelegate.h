@@ -49,17 +49,17 @@ public:
     explicit VersionsDelegate(QObject* const parent);
     ~VersionsDelegate();
 
-    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
+    QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index)                const;
     void paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const;
 
     void beginPainting();
     void finishPainting();
 
-    int animationState() const;
+    int animationState()                                                                        const;
     void setAnimationState(int animationState);
 
-    void setThumbnailSize(int size) const;
-    int  thumbnailSize() const;
+    void setThumbnailSize(int size)                                                             const;
+    int  thumbnailSize()                                                                        const;
 
 Q_SIGNALS:
 
@@ -79,7 +79,7 @@ protected Q_SLOTS:
 
 protected:
 
-    void initStyleOption(QStyleOptionViewItem* option, const QModelIndex& index) const;
+    void initStyleOption(QStyleOptionViewItem* option, const QModelIndex& index)                const;
 
     /// Returns the delegate, typically, the derived class
     virtual QAbstractItemDelegate* asDelegate()

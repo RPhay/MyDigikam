@@ -57,19 +57,19 @@ class Q_DECL_HIDDEN ItemPropertiesHistoryTab::Private
 public:
 
     explicit Private()
+      : view(nullptr),
+        model(nullptr),
+        layout(nullptr),
+        delegate(nullptr),
+        headerLabel(nullptr)
     {
-        view        = 0;
-        model       = 0;
-        layout      = 0;
-        delegate    = 0;
-        headerLabel = 0;
     }
 
-    QTreeView*                       view;
+    QTreeView*                      view;
     ItemFiltersHistoryModel*        model;
-    QGridLayout*                     layout;
+    QGridLayout*                    layout;
     ItemFiltersHistoryItemDelegate* delegate;
-    QLabel*                          headerLabel;
+    QLabel*                         headerLabel;
 };
 
 ItemPropertiesHistoryTab::ItemPropertiesHistoryTab(QWidget* const parent)
@@ -151,4 +151,3 @@ void ItemPropertiesHistoryTab::disableEntry(bool disable)
 }
 
 } // namespace Digikam
-

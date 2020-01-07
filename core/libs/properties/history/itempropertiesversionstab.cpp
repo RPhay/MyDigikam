@@ -59,15 +59,15 @@ class Q_DECL_HIDDEN ItemPropertiesVersionsTab::Private
 public:
 
     explicit Private()
+      : versionsWidget(nullptr),
+        filtersHistoryWidget(nullptr)
     {
-        versionsWidget       = nullptr;
-        filtersHistoryWidget = nullptr;
     }
 
     VersionsWidget*       versionsWidget;
     FiltersHistoryWidget* filtersHistoryWidget;
     DImageHistory         history;
-    ItemInfo             info;
+    ItemInfo              info;
 
     static const QString  configActiveTab;
 };
@@ -98,16 +98,20 @@ void ItemPropertiesVersionsTab::readSettings(KConfigGroup& group)
     QString tab = group.readEntry(d->configActiveTab, "versions");
 
     if (tab == QLatin1String("versions"))
+    {
         setCurrentWidget(d->versionsWidget);
+    }
     else
+    {
         setCurrentWidget(d->filtersHistoryWidget);
+    }
 
     d->versionsWidget->readSettings(group);
 }
 
 void ItemPropertiesVersionsTab::writeSettings(KConfigGroup& group)
 {
-    group.writeEntry(d->configActiveTab, currentWidget() == d->versionsWidget ? "versions" : "filters");
+    group.writeEntry(d->configActiveTab, (currentWidget() == d->versionsWidget ? "versions" : "filters"));
 
     d->versionsWidget->writeSettings(group);
 }

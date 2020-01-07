@@ -105,9 +105,9 @@ protected:
 
 protected:
 
-    QIcon             m_icon;
-    QString           m_text;
-    QString           m_tip;
+    QIcon            m_icon;
+    QString          m_text;
+    QString          m_tip;
     const ItemModel* m_referenceModel;
 };
 

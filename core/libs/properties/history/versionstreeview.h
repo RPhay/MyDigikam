@@ -54,7 +54,7 @@ public:
     void addOverlay(ItemDelegateOverlay* overlay);
     void removeOverlay(ItemDelegateOverlay* overlay);
 
-    VersionsDelegate* delegate() const;
+    VersionsDelegate* delegate()                                         const;
 
 protected:
 

@@ -101,21 +101,25 @@ public:
      */
     static QStringList shortenedTagPaths(const QStringList& tagPaths, QList<QVariant>* identifiers = nullptr);
 
-    /** This methods shortens make an model camera info to prevent bloating GUI
-     *  See bug #265231 for details.
+    /**
+     * This methods shortens make an model camera info to prevent bloating GUI
+     * See bug #265231 for details.
      */
     static void shortenedMakeInfo(QString& make);
     static void shortenedModelInfo(QString& model);
 
-    /** Write a string with aspect ratio information formatted
+    /**
+     * Write a string with aspect ratio information formatted
      */
     static bool aspectRatioToString(int width, int height, QString& arString);
 
-    /** Return file permissions string.
+    /**
+     * Return file permissions string.
      */
     static QString permissionsString(const QFileInfo& fi);
 
-    /** Return human readable string of file size in bytes.
+    /**
+     * Return human readable string of file size in bytes.
      */
     static QString humanReadableBytesCount(qint64 bytes, bool si=false);
 

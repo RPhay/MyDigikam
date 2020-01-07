@@ -78,15 +78,21 @@ protected:
         {
             default:
             case InvalidMode:
+            {
                 return QString();
+            }
+
             case ImageMode:
             {
                 ItemInfo info = ItemModel::retrieveItemInfo(currentIndex());
+
                 return ToolTipFiller::imageInfoTipContents(info);
             }
+
             case FilterActionMode:
             {
                 FilterAction action = currentIndex().data(ItemHistoryGraphModel::FilterActionRole).value<FilterAction>();
+
                 return ToolTipFiller::filterActionTipContents(action);
             }
         }
@@ -139,7 +145,9 @@ void VersionsTreeView::removeOverlay(ItemDelegateOverlay* overlay)
 void VersionsTreeView::setToolTipEnabled(bool on)
 {
     if (on == m_showToolTip)
+    {
         return;
+    }
 
     m_showToolTip = on;
 
@@ -248,8 +256,11 @@ bool VersionsTreeView::viewportEvent(QEvent* event)
 
             return true;
         }
+
         default:
+        {
             break;
+        }
     }
 
     return QTreeView::viewportEvent(event);

@@ -98,35 +98,34 @@ public:
     };
 
     explicit Private()
+      : modified(false),
+        ignoreItemAttributesWatch(false),
+        ignoreTagChanges(false),
+        togglingSearchSettings(false),
+        recentTagsBtn(nullptr),
+        assignedTagsBtn(nullptr),
+        revertBtn(nullptr),
+        openTagMngr(nullptr),
+        moreMenu(nullptr),
+        applyBtn(nullptr),
+        moreButton(nullptr),
+        applyToAllVersionsButton(nullptr),
+        lastSelectedWidget(nullptr),
+        titleEdit(nullptr),
+        captionsEdit(nullptr),
+        dateTimeEdit(nullptr),
+        tabWidget(nullptr),
+        tagsSearchBar(nullptr),
+        newTagEdit(nullptr),
+        tagCheckView(nullptr),
+        templateSelector(nullptr),
+        templateViewer(nullptr),
+        ratingWidget(nullptr),
+        colorLabelSelector(nullptr),
+        pickLabelSelector(nullptr),
+        tagModel(nullptr),
+        metadataChangeTimer(nullptr)
     {
-        modified                   = false;
-        ignoreItemAttributesWatch = false;
-        ignoreTagChanges           = false;
-        togglingSearchSettings     = false;
-        recentTagsBtn              = nullptr;
-        titleEdit                  = nullptr;
-        captionsEdit               = nullptr;
-        tagsSearchBar              = nullptr;
-        dateTimeEdit               = nullptr;
-        tagCheckView               = nullptr;
-        ratingWidget               = nullptr;
-        assignedTagsBtn            = nullptr;
-        applyBtn                   = nullptr;
-        moreButton                 = nullptr;
-        revertBtn                  = nullptr;
-        openTagMngr                = nullptr;
-        moreMenu                   = nullptr;
-        applyToAllVersionsButton   = nullptr;
-        newTagEdit                 = nullptr;
-        lastSelectedWidget         = nullptr;
-        templateSelector           = nullptr;
-        templateViewer             = nullptr;
-        tabWidget                  = nullptr;
-        tagModel                   = nullptr;
-        tagCheckView               = nullptr;
-        colorLabelSelector         = nullptr;
-        pickLabelSelector          = nullptr;
-        metadataChangeTimer        = nullptr;
     }
 
     bool                 modified;
@@ -158,7 +157,7 @@ public:
     SearchTextBar*       tagsSearchBar;
     AddTagsLineEdit*     newTagEdit;
 
-    ItemInfoList        currInfos;
+    ItemInfoList         currInfos;
 
     TagCheckView*        tagCheckView;
 
@@ -496,7 +495,8 @@ void ItemDescEditTab::setFocusToTagsView()
 
 void ItemDescEditTab::setFocusToNewTagEdit()
 {
-    //select "Tags" tab and focus the NewTagLineEdit widget
+    // select "Tags" tab and focus the NewTagLineEdit widget
+
     d->tabWidget->setCurrentIndex(Private::TAGS);
     d->newTagEdit->setFocus();
 }
@@ -539,6 +539,7 @@ void ItemDescEditTab::slotChangingItems()
     if (!ApplicationSettings::instance()->getApplySidebarChangesDirectly())
     {
         // Open dialog via queued connection out-of-scope, see bug 302311
+
         emit askToApplyChanges(d->currInfos, new DisjointMetadata(d->hub));
         reset();
     }
@@ -591,7 +592,7 @@ void ItemDescEditTab::slotAskToApplyChanges(const QList<ItemInfo>& infos, Disjoi
 
     if (changedFields == 1)
     {
-        if (hub->commentsChanged())
+        if      (hub->commentsChanged())
             text = i18np("You have edited the image caption. ",
                          "You have edited the captions of %1 images. ",
                          infos.count());
@@ -876,9 +877,9 @@ bool ItemDescEditTab::eventFilter(QObject* o, QEvent* e)
     {
         QKeyEvent* const k = static_cast<QKeyEvent*>(e);
 
-        if (k->key() == Qt::Key_Enter || k->key() == Qt::Key_Return)
+        if ((k->key() == Qt::Key_Enter) || (k->key() == Qt::Key_Return))
         {
-            if (k->modifiers() == Qt::ControlModifier)
+            if      (k->modifiers() == Qt::ControlModifier)
             {
                 d->lastSelectedWidget = qobject_cast<QWidget*>(o);
                 emit signalNextItem();
@@ -949,6 +950,7 @@ void ItemDescEditTab::slotTagStateChanged(Album* album, Qt::CheckState checkStat
         case Qt::Checked:
             d->hub.setTag(tag->id());
             break;
+
         default:
             d->hub.setTag(tag->id(), DisjointMetadata::MetadataInvalid);
             break;
@@ -1096,12 +1098,15 @@ void ItemDescEditTab::setTagState(TAlbum* const tag, DisjointMetadata::Status st
         case DisjointMetadata::MetadataDisjoint:
             d->tagModel->setCheckState(tag, Qt::PartiallyChecked);
             break;
+
         case DisjointMetadata::MetadataAvailable:
             d->tagModel->setChecked(tag, true);
             break;
+
         case DisjointMetadata::MetadataInvalid:
             d->tagModel->setChecked(tag, false);
             break;
+
         default:
             qCWarning(DIGIKAM_GENERAL_LOG) << "Untreated tag status enum value " << status;
             d->tagModel->setCheckState(tag, Qt::PartiallyChecked);
@@ -1126,7 +1131,7 @@ void ItemDescEditTab::updateTagsView()
     for (QMap<int, DisjointMetadata::Status>::const_iterator it = hubMap.begin() ;
          it != hubMap.end() ; ++it)
     {
-        TAlbum* tag = AlbumManager::instance()->findTAlbum(it.key());
+        TAlbum* const tag = AlbumManager::instance()->findTAlbum(it.key());
         setTagState(tag, it.value());
     }
 
@@ -1135,6 +1140,7 @@ void ItemDescEditTab::updateTagsView()
 
     // The condition is a temporary fix not to destroy name filtering on image change.
     // See comments in these methods.
+
     if (d->assignedTagsBtn->isChecked())
     {
         slotAssignedTagsToggled(d->assignedTagsBtn->isChecked());
@@ -1223,7 +1229,8 @@ void ItemDescEditTab::setMetadataWidgetStatus(int status, QWidget* const widget)
 {
     if (status == DisjointMetadata::MetadataDisjoint)
     {
-        // For text widgets: Set text color to color of disabled text
+        // For text widgets: Set text color to color of disabled text.
+
         QPalette palette = widget->palette();
         palette.setColor(QPalette::Text, palette.color(QPalette::Disabled, QPalette::Text));
         widget->setPalette(palette);
@@ -1248,12 +1255,14 @@ void ItemDescEditTab::slotMoreMenu()
         // Adding the option will confuse users: Does the apply button not write to file?
         // Removing the option will confuse users: There is not option to write to file! (not visible in single selection)
         // Disabling will confuse users: Why is it disabled?
+
         writeAction->setEnabled(false);
     }
     else
     {
         // We need to make clear that this action is different from the Apply button,
         // which saves the same changes to all files. These batch operations operate on each single file.
+
         d->moreMenu->addAction(i18n("Read metadata from each file to database"), this, SLOT(slotReadFromFileMetadataToDatabase()));
         d->moreMenu->addAction(i18n("Write metadata to each file"), this, SLOT(slotWriteToFileMetadataFromDatabase()));
     }
@@ -1276,7 +1285,7 @@ void ItemDescEditTab::slotImagesChanged(int albumId)
 
     Album* const a = AlbumManager::instance()->findAlbum(albumId);
 
-    if (d->currInfos.isEmpty() || !a || a->isRoot() || a->type() != Album::TAG)
+    if (d->currInfos.isEmpty() || !a || a->isRoot() || (a->type() != Album::TAG))
     {
         return;
     }
@@ -1432,7 +1441,8 @@ void ItemDescEditTab::slotTagsSearchChanged(const SearchTextSettings& settings)
 {
     Q_UNUSED(settings);
 
-    // if we filter, we should reset the assignedTagsBtn again
+    // if we filter, we should reset the assignedTagsBtn again.
+
     if (d->assignedTagsBtn->isChecked() && !d->togglingSearchSettings)
     {
         d->togglingSearchSettings = true;
@@ -1450,7 +1460,8 @@ void ItemDescEditTab::slotAssignedTagsToggled(bool t)
 
     if (t)
     {
-        // if we filter by assigned, we should initially clear the normal search
+        // if we filter by assigned, we should initially clear the normal search.
+
         if (!d->togglingSearchSettings)
         {
             d->togglingSearchSettings = true;
@@ -1458,7 +1469,8 @@ void ItemDescEditTab::slotAssignedTagsToggled(bool t)
             d->togglingSearchSettings = false;
         }
 
-        // Only after above change, do this
+        // Only after above change, do this.
+
         d->tagCheckView->expandMatches(d->tagCheckView->rootIndex());
    }
 }
@@ -1480,7 +1492,8 @@ void ItemDescEditTab::slotApplyChangesToAllVersions()
 
     foreach (const ItemInfo& info, d->currInfos)
     {
-        // Collect all ids in all image's relations
+        // Collect all ids in all image's relations.
+
         relations.append(info.relationCloud());
     }
 
@@ -1492,7 +1505,8 @@ void ItemDescEditTab::slotApplyChangesToAllVersions()
 
     for (int i = 0 ; i < relations.size() ; ++i)
     {
-        // Use QSet to prevent duplicates
+        // Use QSet to prevent duplicates.
+
         tmpSet.insert(relations.at(i).first);
         tmpSet.insert(relations.at(i).second);
     }

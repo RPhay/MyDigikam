@@ -212,7 +212,7 @@ ItemPropertiesColorsTab::ItemPropertiesColorsTab(QWidget* const parent)
     DTextLabelName* const label12 = new DTextLabelName(i18n("Source: "), gbox);
     d->labelImageRegion           = new DTextLabelValue(QString(), gbox);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing             = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     grid->addWidget(label5,                  0, 0, 1, 1);
     grid->addWidget(d->labelPixelsValue,     0, 1, 1, 1);
@@ -357,6 +357,7 @@ void ItemPropertiesColorsTab::setData(const QUrl& url, const QRect& selectionAre
     // this will completely mess up the timing of progress info in the histogram widget.
     // So filter here, before the stopHistogramComputation!
     // But do not filter if current path is null, as it would not disable the widget on first run.
+
     if (!img && !d->currentFilePath.isNull() && url.toLocalFile() == d->currentFilePath)
     {
         return;
@@ -364,6 +365,7 @@ void ItemPropertiesColorsTab::setData(const QUrl& url, const QRect& selectionAre
 
     // This is necessary to stop computation because d->image.bits() is currently used by
     // threaded histogram algorithm.
+
     d->histogramBox->histogram()->stopHistogramComputation();
     d->redHistogram->stopHistogramComputation();
     d->greenHistogram->stopHistogramComputation();
@@ -374,6 +376,7 @@ void ItemPropertiesColorsTab::setData(const QUrl& url, const QRect& selectionAre
     d->iccProfileWidget->loadFromURL(QUrl());
 
     // Clear information.
+
     d->labelMeanValue->setAdjustedText();
     d->labelPixelsValue->setAdjustedText();
     d->labelStdDevValue->setAdjustedText();
@@ -408,6 +411,7 @@ void ItemPropertiesColorsTab::setData(const QUrl& url, const QRect& selectionAre
 
             // If a selection area is done in Image Editor and if the current image is the same
             // in Image Editor, then compute too the histogram for this selection.
+
             if (d->selectionArea.isValid())
             {
                 d->imageSelection = d->image.copy(d->selectionArea);
@@ -444,6 +448,7 @@ void ItemPropertiesColorsTab::setData(const QUrl& url, const QRect& selectionAre
 void ItemPropertiesColorsTab::loadImageFromUrl(const QUrl& url)
 {
     // create thread on demand
+
     if (!d->imageLoaderThread)
     {
         d->imageLoaderThread = new SharedLoadSaveThread();
@@ -488,9 +493,10 @@ void ItemPropertiesColorsTab::loadImageFromUrl(const QUrl& url)
 }
 
 void ItemPropertiesColorsTab::slotLoadImageFromUrlComplete(const LoadingDescription& loadingDescription,
-                                                            const DImg& img)
+                                                           const DImg& img)
 {
     // Discard any leftover messages from previous, possibly aborted loads
+
     if (!loadingDescription.equalsOrBetterThan(d->currentLoadingDescription))
     {
         return;
@@ -505,6 +511,7 @@ void ItemPropertiesColorsTab::slotLoadImageFromUrlComplete(const LoadingDescript
 
         // As a safety precaution, this must be changed only after updateData is called,
         // which stops computation because d->image.bits() is currently used by threaded histogram algorithm.
+
         d->image = img;
         updateInformation();
         getICCData();
@@ -521,14 +528,15 @@ void ItemPropertiesColorsTab::slotLoadImageFromUrlComplete(const LoadingDescript
 }
 
 void ItemPropertiesColorsTab::slotMoreCompleteLoadingAvailable(const LoadingDescription& oldLoadingDescription,
-                                                                const LoadingDescription& newLoadingDescription)
+                                                               const LoadingDescription& newLoadingDescription)
 {
-    if (oldLoadingDescription == d->currentLoadingDescription &&
+    if ((oldLoadingDescription == d->currentLoadingDescription) &&
         newLoadingDescription.equalsOrBetterThan(d->currentLoadingDescription))
     {
         // Yes, we do want to stop our old time-optimized loading and chain to the current, more complete loading.
         // Even the time-optimized raw loading takes significant time, and we must avoid two Raw engine instances running
         // at a time.
+
         d->currentLoadingDescription = newLoadingDescription;
         d->imageLoaderThread->load(newLoadingDescription,
                                    SharedLoadSaveThread::AccessModeRead,
@@ -545,6 +553,7 @@ void ItemPropertiesColorsTab::setSelection(const QRect& selectionArea)
 
     // This is necessary to stop computation because d->image.bits() is currently used by
     // threaded histogram algorithm.
+
     d->histogramBox->histogram()->stopHistogramComputation();
     d->redHistogram->stopHistogramComputation();
     d->greenHistogram->stopHistogramComputation();
@@ -613,6 +622,7 @@ void ItemPropertiesColorsTab::slotMinValueChanged(int min)
     // Communicate the change to histogram widget.
 
     // make the one control "push" the other
+
     if (min == d->maxInterv->value()+1)
     {
         d->maxInterv->setValue(min);
@@ -653,6 +663,7 @@ void ItemPropertiesColorsTab::slotUpdateInterval(int min, int max)
     // Called when value is set from within histogram widget.
     // Block signals to prevent slotMinValueChanged and
     // slotMaxValueChanged being called.
+
     d->minInterv->blockSignals(true);
     d->minInterv->setMaximum(max+1);
     d->minInterv->setValue(min);

@@ -73,26 +73,24 @@ public:
         hasPrevious(false),
         hasNext(false),
         hasItemInfoOwnership(false),
-        desceditTab(nullptr)
+        desceditTab(nullptr),
+        versionsHistoryTab(nullptr)
     {
-        desceditTab        = nullptr;
-        versionsHistoryTab = nullptr;
-        dirtyDesceditTab   = false;
     }
 
-    bool                        dirtyDesceditTab;
-    bool                        hasPrevious;
-    bool                        hasNext;
-    bool                        hasItemInfoOwnership;
+    bool                       dirtyDesceditTab;
+    bool                       hasPrevious;
+    bool                       hasNext;
+    bool                       hasItemInfoOwnership;
 
     ItemInfoList               currentInfos;
-    DImageHistory               currentHistory;
+    DImageHistory              currentHistory;
     ItemDescEditTab*           desceditTab;
     ItemPropertiesVersionsTab* versionsHistoryTab;
 };
 
 ItemPropertiesSideBarDB::ItemPropertiesSideBarDB(QWidget* const parent, SidebarSplitter* const splitter,
-                                                   Qt::Edge side, bool mimimizedDefault)
+                                                 Qt::Edge side, bool mimimizedDefault)
     : ItemPropertiesSideBar(parent, splitter, side, mimimizedDefault),
       d(new Private)
 {
@@ -132,7 +130,7 @@ ItemPropertiesSideBarDB::~ItemPropertiesSideBarDB()
 }
 
 void ItemPropertiesSideBarDB::itemChanged(const ItemInfo& info, const QRect& rect,
-                                           DImg* const img, const DImageHistory& history)
+                                          DImg* const img, const DImageHistory& history)
 {
     itemChanged(info.fileUrl(), info, rect, img, history);
 }
@@ -143,7 +141,7 @@ void ItemPropertiesSideBarDB::itemChanged(const QUrl& url, const QRect& rect, DI
 }
 
 void ItemPropertiesSideBarDB::itemChanged(const QUrl& url, const ItemInfo& info,
-                                           const QRect& rect, DImg* const img, const DImageHistory& history)
+                                          const QRect& rect, DImg* const img, const DImageHistory& history)
 {
     if (!url.isValid())
     {
@@ -189,7 +187,8 @@ void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos, const QRect
 
     // slotChangedTab only handles the active tab.
     // Any tab that holds information reset above shall be reset here,
-    // unless it is the active tab
+    // unless it is the active tab.
+
     if (getActiveTab() != d->desceditTab)
     {
         d->desceditTab->setItem();
@@ -204,6 +203,7 @@ void ItemPropertiesSideBarDB::slotNoCurrentItem()
 
     // All tabs that store the ItemInfo list and access it after selection change
     // must release the image info here. slotChangedTab only handles the active tab!
+
     d->desceditTab->setItem();
     d->currentInfos.clear();
     d->dirtyDesceditTab = false;
@@ -218,7 +218,7 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
 {
     setCursor(Qt::WaitCursor);
 
-    if (tab == m_propertiesTab && !m_dirtyPropertiesTab)
+    if      ((tab == m_propertiesTab) && !m_dirtyPropertiesTab)
     {
         m_propertiesTab->setCurrentURL(m_currentURL);
 
@@ -233,12 +233,13 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
 
         m_dirtyPropertiesTab = true;
     }
-    else if (tab == m_metadataTab && !m_dirtyMetadataTab)
+    else if ((tab == m_metadataTab) && !m_dirtyMetadataTab)
     {
         if (d->currentInfos.count() > 1)
         {
             // No multiple selection supported. Only if all items belong to
             // the same group display metadata of main item.
+
             ItemInfo mainItem = d->currentInfos.singleGroupMainItem();
 
             if (!mainItem.isNull())
@@ -262,12 +263,13 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
 
         m_dirtyMetadataTab = true;
     }
-    else if (tab == m_colorTab && !m_dirtyColorTab)
+    else if ((tab == m_colorTab) && !m_dirtyColorTab)
     {
         if (d->currentInfos.count() > 1)
         {
             // No multiple selection supported. Only if all items belong to
             // the same group display metadata of main item.
+
             ItemInfo mainItem = d->currentInfos.singleGroupMainItem();
 
             if (!mainItem.isNull())
@@ -286,11 +288,12 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
 
         m_dirtyColorTab = true;
     }
-    else if (tab == d->desceditTab && !d->dirtyDesceditTab)
+    else if ((tab == d->desceditTab) && !d->dirtyDesceditTab)
     {
         if (d->currentInfos.count() == 0)
         {
             // Do nothing here. We cannot get data from database !
+
             d->desceditTab->setItem();
         }
         else if (d->currentInfos.count() == 1)
@@ -305,7 +308,7 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
         d->dirtyDesceditTab = true;
     }
 #ifdef HAVE_MARBLE
-    else if (tab == m_gpsTab && !m_dirtyGpsTab)
+    else if ((tab == m_gpsTab) && !m_dirtyGpsTab)
     {
         if (d->currentInfos.count() == 0)
         {
@@ -315,8 +318,8 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
         {
             GPSItemInfo::List list;
 
-            for (ItemInfoList::const_iterator it = d->currentInfos.constBegin();
-                 it != d->currentInfos.constEnd(); ++it)
+            for (ItemInfoList::const_iterator it = d->currentInfos.constBegin() ;
+                 it != d->currentInfos.constEnd() ; ++it)
             {
                 GPSItemInfo info;
 
@@ -341,10 +344,12 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
 #endif // HAVE_MARBLE
     else if (tab == d->versionsHistoryTab && !m_dirtyHistoryTab)
     {
-        //TODO: Make a database-less parent class with only the filters tab
-        if (d->currentInfos.count() == 0 || d->currentInfos.count() > 1)
+        // TODO: Make a database-less parent class with only the filters tab
+
+        if ((d->currentInfos.count() == 0) || d->currentInfos.count() > 1)
         {
             // FIXME: Any sensible multi-selection functionality? Must scale for large n!
+
             d->versionsHistoryTab->clear();
         }
         else
@@ -367,11 +372,13 @@ void ItemPropertiesSideBarDB::slotFileMetadataChanged(const QUrl& url)
     if (url == m_currentURL)
     {
         // trigger an update
+
         m_dirtyMetadataTab = false;
 
         if (getActiveTab() == m_metadataTab)
         {
             // update now - reuse code form slotChangedTab
+
             slotChangedTab( getActiveTab() );
         }
     }
@@ -399,12 +406,13 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
             if (changeset.ids().contains(info.id()))
             {
                 // trigger an update, if changes touch the tab's information
+
                 DatabaseFields::Set set = changeset.changes();
 
-                if ((set & DatabaseFields::ImagesAll)           ||
+                if ((set & DatabaseFields::ImagesAll)          ||
                     (set & DatabaseFields::ItemInformationAll) ||
-                    (set & DatabaseFields::ImageMetadataAll)    ||
-                    (set & DatabaseFields::VideoMetadataAll)    ||
+                    (set & DatabaseFields::ImageMetadataAll)   ||
+                    (set & DatabaseFields::VideoMetadataAll)   ||
                     (set & DatabaseFields::ItemCommentsAll))
                 {
                     m_dirtyPropertiesTab = false;
@@ -517,12 +525,13 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
             m_propertiesTab->setFileSize(str);
 
             //  These infos are not stored in DB
+
             m_propertiesTab->setFileOwner(QString::fromUtf8("%1 - %2").arg(fileInfo.owner()).arg(fileInfo.group()));
             m_propertiesTab->setFilePermissions(ItemPropertiesTab::permissionsString(fileInfo));
 
             // -- Image Properties --------------------------------------------------
 
-            if (commonInfo.width == 0 || commonInfo.height == 0)
+            if ((commonInfo.width == 0) || (commonInfo.height == 0))
             {
                 str = i18n("Unknown");
             }
@@ -536,7 +545,7 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
 
             m_propertiesTab->setItemDimensions(str);
 
-            if (commonInfo.width == 0 || commonInfo.height == 0)
+            if ((commonInfo.width == 0) || (commonInfo.height == 0))
             {
                 str = i18n("Unknown");
             }
@@ -585,7 +594,7 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
             m_propertiesTab->setPhotoExposureTime(photoInfo.exposureTime.isEmpty() ? unavailable : photoInfo.exposureTime);
             m_propertiesTab->setPhotoSensitivity(photoInfo.sensitivity.isEmpty()   ? unavailable : i18n("%1 ISO", photoInfo.sensitivity));
 
-            if (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
+            if      (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
             {
                 m_propertiesTab->setPhotoExposureMode(unavailable);
             }

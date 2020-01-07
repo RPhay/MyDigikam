@@ -187,7 +187,7 @@ ImportItemPropertiesTab::ImportItemPropertiesTab(QWidget* const parent)
 
     // --------------------------------------------------
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QWidget* w1               = new QWidget(this);
     QGridLayout* glay1        = new QGridLayout(w1);
@@ -405,7 +405,7 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, const 
     d->labelFile->setAdjustedText(itemInfo.name);
     d->labelFolder->setAdjustedText(itemInfo.folder);
 
-    if (itemInfo.readPermissions < 0)
+    if      (itemInfo.readPermissions < 0)
     {
         str = unknown;
     }
@@ -420,7 +420,7 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, const 
 
     d->labelFileIsReadable->setAdjustedText(str);
 
-    if (itemInfo.writePermissions < 0)
+    if      (itemInfo.writePermissions < 0)
     {
         str = unknown;
     }
@@ -470,7 +470,7 @@ void ImportItemPropertiesTab::setCurrentItem(const CamItemInfo& itemInfo, const 
     QString mpixels;
     QSize dims;
 
-    if (itemInfo.width == -1 && itemInfo.height == -1)
+    if ((itemInfo.width == -1) && (itemInfo.height == -1))
     {
         // delayed loading to list faster from UMSCamera
         if (itemInfo.mime == QLatin1String("image/x-raw"))

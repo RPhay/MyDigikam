@@ -121,7 +121,7 @@ void ItemPropertiesSideBar::itemChanged(const QUrl& url, const QRect& rect, DImg
     m_dirtyGpsTab        = false;
     m_dirtyHistoryTab    = false;
 
-    slotChangedTab( getActiveTab() );
+    slotChangedTab(getActiveTab());
 }
 
 void ItemPropertiesSideBar::slotNoCurrentItem()
@@ -170,24 +170,24 @@ void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
 
     setCursor(Qt::WaitCursor);
 
-    if (tab == m_propertiesTab && !m_dirtyPropertiesTab)
+    if      ((tab == m_propertiesTab) && !m_dirtyPropertiesTab)
     {
         m_propertiesTab->setCurrentURL(m_currentURL);
         setImagePropertiesInformation(m_currentURL);
         m_dirtyPropertiesTab = true;
     }
-    else if (tab == m_metadataTab && !m_dirtyMetadataTab)
+    else if ((tab == m_metadataTab) && !m_dirtyMetadataTab)
     {
         m_metadataTab->setCurrentURL(m_currentURL);
         m_dirtyMetadataTab = true;
     }
-    else if (tab == m_colorTab && !m_dirtyColorTab)
+    else if ((tab == m_colorTab) && !m_dirtyColorTab)
     {
         m_colorTab->setData(m_currentURL, m_currentRect, m_image);
         m_dirtyColorTab = true;
     }
 #ifdef HAVE_MARBLE
-    else if (tab == m_gpsTab && !m_dirtyGpsTab)
+    else if ((tab == m_gpsTab) && !m_dirtyGpsTab)
     {
         m_gpsTab->setCurrentURL(m_currentURL);
         m_dirtyGpsTab = true;
@@ -305,7 +305,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     m_propertiesTab->setPhotoExposureTime(photoInfo.exposureTime.isEmpty() ? unavailable : photoInfo.exposureTime);
     m_propertiesTab->setPhotoSensitivity(photoInfo.sensitivity.isEmpty()   ? unavailable : i18n("%1 ISO", photoInfo.sensitivity));
 
-    if (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
+    if      (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
     {
         m_propertiesTab->setPhotoExposureMode(unavailable);
     }
@@ -345,7 +345,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     CaptionsMap captions = metaData.getItemComments();
     QString caption;
 
-    if (captions.contains(QLatin1String("x-default")))
+    if      (captions.contains(QLatin1String("x-default")))
     {
         caption = captions.value(QLatin1String("x-default")).caption;
     }

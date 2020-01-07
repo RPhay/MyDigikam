@@ -127,14 +127,22 @@ ItemPropertiesMetadataTab::~ItemPropertiesMetadataTab()
 
 void ItemPropertiesMetadataTab::slotSetupMetadataFilters()
 {
-    if (sender() == d->exifWidget)
+    if      (sender() == d->exifWidget)
+    {
         emit signalSetupMetadataFilters(Private::EXIF);
+    }
     else if (sender() == d->makernoteWidget)
+    {
         emit signalSetupMetadataFilters(Private::MAKERNOTE);
+    }
     else if (sender() == d->iptcWidget)
+    {
         emit signalSetupMetadataFilters(Private::IPTC);
+    }
     else if (sender() == d->xmpWidget)
+    {
         emit signalSetupMetadataFilters(Private::XMP);
+    }
 }
 
 void ItemPropertiesMetadataTab::readSettings(const KConfigGroup& group)

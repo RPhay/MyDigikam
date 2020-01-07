@@ -50,13 +50,17 @@ public:
     explicit ItemGPSModelHelper(QStandardItemModel* const itemModel, QObject* const parent = nullptr);
     virtual ~ItemGPSModelHelper();
 
-    virtual QAbstractItemModel* model()           const override;
-    virtual QItemSelectionModel* selectionModel() const override;
+    virtual QAbstractItemModel* model()                                              const override;
+    virtual QItemSelectionModel* selectionModel()                                    const override;
 
-    virtual bool itemCoordinates(const QModelIndex& index, GeoCoordinates* const coordinates) const override;
+    virtual bool itemCoordinates(const QModelIndex& index,
+                                 GeoCoordinates* const coordinates)                  const override;
 
-    virtual QPixmap pixmapFromRepresentativeIndex(const QPersistentModelIndex& index, const QSize& size) override;
-    virtual QPersistentModelIndex bestRepresentativeIndexFromList(const QList<QPersistentModelIndex>& list, const int sortKey) override;
+    virtual QPixmap pixmapFromRepresentativeIndex(const QPersistentModelIndex& index,
+                                                  const QSize& size)                       override;
+
+    virtual QPersistentModelIndex bestRepresentativeIndexFromList(const QList<QPersistentModelIndex>& list,
+                                                                  const int sortKey)       override;
 
 private Q_SLOTS:
 

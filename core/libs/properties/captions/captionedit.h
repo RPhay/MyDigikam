@@ -49,14 +49,14 @@ public:
     ~CaptionEdit();
 
     void setValues(const CaptionsMap& values);
-    CaptionsMap& values() const;
+    CaptionsMap& values()           const;
 
     void setCurrentLanguageCode(const QString& lang);
-    QString currentLanguageCode() const;
+    QString currentLanguageCode()   const;
 
     void reset();
 
-    QTextEdit* textEdit() const;
+    QTextEdit* textEdit()           const;
 
 Q_SIGNALS:
 

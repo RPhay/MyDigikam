@@ -67,20 +67,20 @@ public:
     {
     }
 
-    bool                        dirtyMetadataTab;
-    bool                        dirtyCameraItemTab;
-    bool                        dirtyGpsTab;
+    bool                       dirtyMetadataTab;
+    bool                       dirtyCameraItemTab;
+    bool                       dirtyGpsTab;
 
-    DMetadata                   metaData;
+    DMetadata                  metaData;
 
-    CamItemInfo                 itemInfo;
+    CamItemInfo                itemInfo;
 
 #ifdef HAVE_MARBLE
     ItemPropertiesGPSTab*      gpsTab;
 #endif // HAVE_MARBLE
 
     ItemPropertiesMetadataTab* metadataTab;
-    ImportItemPropertiesTab*    cameraItemTab;
+    ImportItemPropertiesTab*   cameraItemTab;
 };
 
 ImportItemPropertiesSideBarImport::ImportItemPropertiesSideBarImport(QWidget* const parent,
@@ -165,19 +165,19 @@ void ImportItemPropertiesSideBarImport::slotChangedTab(QWidget* tab)
 
     setCursor(Qt::WaitCursor);
 
-    if (tab == d->cameraItemTab && !d->dirtyCameraItemTab)
+    if      ((tab == d->cameraItemTab) && !d->dirtyCameraItemTab)
     {
         d->cameraItemTab->setCurrentItem(d->itemInfo, d->metaData);
 
         d->dirtyCameraItemTab = true;
     }
-    else if (tab == d->metadataTab && !d->dirtyMetadataTab)
+    else if ((tab == d->metadataTab) && !d->dirtyMetadataTab)
     {
         d->metadataTab->setCurrentData(d->metaData, d->itemInfo.name);
         d->dirtyMetadataTab = true;
     }
 #ifdef HAVE_MARBLE
-    else if (tab == d->gpsTab && !d->dirtyGpsTab)
+    else if ((tab == d->gpsTab) && !d->dirtyGpsTab)
     {
         d->gpsTab->setMetadata(d->metaData, d->itemInfo.url());
         d->dirtyGpsTab = true;

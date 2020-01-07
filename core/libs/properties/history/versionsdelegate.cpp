@@ -58,12 +58,12 @@ public:
           filterItemExtraSpacing(4),
           animationState(0),
           animation(nullptr),
+          workingPixmap(DWorkingPixmap()),
           categoryDrawer(nullptr),
           thumbnailSize(64),
           thumbsWaitingFor(0),
           inSizeHint(false)
     {
-        workingPixmap = DWorkingPixmap();
     }
 
     const int                     categoryExtraSpacing;
@@ -83,7 +83,9 @@ public:
     inline const QWidget* widget(const QStyleOptionViewItem& option)
     {
         if (const QStyleOptionViewItem* v3 = qstyleoption_cast<const QStyleOptionViewItem*>(&option))
+        {
             return v3->widget;
+        }
 
         return nullptr;
     }
@@ -91,7 +93,8 @@ public:
     inline const QStyle* style(const QStyleOptionViewItem& option)
     {
         const QWidget* w = widget(option);
-        return w ? w->style() : QApplication::style();
+
+        return (w ? w->style() : QApplication::style());
     }
 };
 
@@ -120,7 +123,9 @@ int VersionsDelegate::animationState() const
 void VersionsDelegate::setAnimationState(int animationState)
 {
     if (d->animationState == animationState)
+    {
         return;
+    }
 
     d->animationState = animationState;
     emit animationStateChanged();
@@ -144,6 +149,7 @@ void VersionsDelegate::beginPainting()
 void VersionsDelegate::finishPainting()
 {
     //qCDebug(DIGIKAM_GENERAL_LOG) << "painting finished" << d->thumbsWaitingFor;
+
     if (d->thumbsWaitingFor)
     {
         d->animation->start();
@@ -156,23 +162,26 @@ void VersionsDelegate::finishPainting()
 
 QSize VersionsDelegate::sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
-    if (index.data(ItemHistoryGraphModel::IsImageItemRole).toBool())
+    if      (index.data(ItemHistoryGraphModel::IsImageItemRole).toBool())
     {
         d->inSizeHint = true;
         QSize size    = QStyledItemDelegate::sizeHint(option, index);
         d->inSizeHint = false;
+
         return size;
     }
     else if (index.data(ItemHistoryGraphModel::IsFilterActionItemRole).toBool())
     {
         QSize size = QStyledItemDelegate::sizeHint(option, index);
         size      += QSize(0, d->filterItemExtraSpacing);
+
         return size;
     }
     else if (index.data(ItemHistoryGraphModel::IsCategoryItemRole).toBool())
     {
         int height = d->categoryDrawer->categoryHeight(index, option) + d->categoryExtraSpacing;
         QSize size = QStyledItemDelegate::sizeHint(option, index);
+
         return size.expandedTo(QSize(0, height));
     }
     else if (index.data(ItemHistoryGraphModel::IsSeparatorItemRole).toBool())
@@ -180,6 +189,7 @@ QSize VersionsDelegate::sizeHint(const QStyleOptionViewItem& option, const QMode
         //int pm = d->style(option)->pixelMetric(QStyle::PM_DefaultFrameWidth, 0, d->widget(option));
         int pm = d->style(option)->pixelMetric(QStyle::PM_ToolBarSeparatorExtent, nullptr, d->widget(option));
         //int spacing = d->style(option)->pixelMetric(QStyle::PM_LayoutVerticalSpacing, &option);
+
         return QSize(1, pm);
     }
     else
@@ -190,7 +200,7 @@ QSize VersionsDelegate::sizeHint(const QStyleOptionViewItem& option, const QMode
 
 void VersionsDelegate::paint(QPainter* painter, const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
-    if (index.data(ItemHistoryGraphModel::IsCategoryItemRole).toBool())
+    if      (index.data(ItemHistoryGraphModel::IsCategoryItemRole).toBool())
     {
         QStyleOption opt = option;
         opt.rect.adjust(d->categoryExtraSpacing / 2, d->categoryExtraSpacing / 2, - d->categoryExtraSpacing / 2, 0);
@@ -238,7 +248,7 @@ void VersionsDelegate::initStyleOption(QStyleOptionViewItem* option, const QMode
 */
     option->font.setWeight(QFont::Bold);
 
-    if (QStyleOptionViewItem* v4 = qstyleoption_cast<QStyleOptionViewItem*>(option))
+    if (QStyleOptionViewItem* const v4 = qstyleoption_cast<QStyleOptionViewItem*>(option))
     {
         v4->features |= QStyleOptionViewItem::HasDecoration;
 
