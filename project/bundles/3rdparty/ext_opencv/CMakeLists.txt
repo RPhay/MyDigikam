@@ -96,8 +96,8 @@ if(MINGW)
 
     ExternalProject_Add(ext_opencv
 
-        URL https://github.com/opencv/opencv/archive/3.4.8.tar.gz
-        URL_MD5 5aa8240c28c00a7dacdf51698e0ced77
+        URL https://github.com/opencv/opencv/archive/3.4.9.tar.gz
+        URL_MD5 013936f80fa8536486f2ed8ef3808aa3
 
         CMAKE_ARGS -DCMAKE_BUILD_TYPE=${GLOBAL_BUILD_TYPE}
                    -DCMAKE_TOOLCHAIN_FILE=${MXE_TOOLCHAIN}
