@@ -165,6 +165,7 @@ endforeach()
 add_library(mediaserverbackend STATIC ${libmediaserver_SRCS})
 
 target_link_libraries(mediaserverbackend
+                      PRIVATE
                       digikamcore
                       ${CMAKE_THREAD_LIBS_INIT}
 )
