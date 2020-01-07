@@ -169,6 +169,10 @@ target_link_libraries(mediaserverbackend
                       ${CMAKE_THREAD_LIBS_INIT}
 )
 
+if(WIN32)
+    target_link_libraries(mediaserverbackend PRIVATE wsock32 ws2_32)
+endif()
+
 # ---------------------------------------------------------------------------------------------------
 
 set(mediaserverplugin_SRCS
