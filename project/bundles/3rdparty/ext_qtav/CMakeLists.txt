@@ -23,7 +23,7 @@ if(MINGW)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         GIT_REPOSITORY https://github.com/wang-bin/QtAV.git
-        GIT_TAG ${QTAV_VERSION}
+#        GIT_TAG ${QTAV_VERSION}
 
         CONFIGURE_COMMAND git submodule update --init &&
                           rm -rfv ${MXE_INSTALL_PREFIX}/qt5/include/QtAV &&
@@ -95,7 +95,7 @@ else() #Linux
 #        URL_MD5 59d858d19706d75099a9dba531572529
 
         GIT_REPOSITORY https://github.com/wang-bin/QtAV.git
-        GIT_TAG ${QTAV_VERSION}
+#        GIT_TAG ${QTAV_VERSION}
 
         CONFIGURE_COMMAND cd <SOURCE_DIR> && git submodule update --init &&
                           rm -rfv ${INSTALL_ROOT}/include/QtAV &&
