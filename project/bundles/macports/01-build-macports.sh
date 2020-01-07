@@ -253,6 +253,7 @@ port install \
              qt5-qtdeclarative \
              qt5-qtmacextras \
              qt5-qtquickcontrols \
+             qt5-qtxmlpatterns \
              qt5-qtsvg \
              qt5-qttools \
              qt5-qttranslations \
