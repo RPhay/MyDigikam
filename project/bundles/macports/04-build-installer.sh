@@ -119,11 +119,11 @@ libexec/qt5/plugins/imageformats/*.dylib \
 libexec/qt5/plugins/sqldrivers/*.dylib \
 libexec/qt5/plugins/printsupport/*.dylib \
 libexec/qt5/plugins/platforms/*.dylib \
-libexec/qt5/plugins/mediaservice/*.dylib \
+libexec/qt5/plugins/platformthemes/*.dylib \
 libexec/qt5/plugins/iconengines/*.dylib \
-libexec/qt5/plugins/audio/*.dylib \
-libexec/qt5/plugins/position/*.dylib \
-libexec/qt5/plugins/geoservices/*.dylib \
+libexec/qt5/plugins/digikam/*.dylib \
+libexec/qt5/plugins/generic/*.dylib \
+libexec/qt5/plugins/style/*.dylib \
 "
 
 #lib/sane/*.so \
