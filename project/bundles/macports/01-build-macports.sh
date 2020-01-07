@@ -300,6 +300,8 @@ cmake --build . --config RelWithDebInfo --target ext_qtav        -- -j$CPU_CORES
 
 #################################################################################################
 
+ln -s $INSTALL_PREFIX/lib/cmake/Qt5WebKitWidgets $INSTALL_PREFIX/libexec/qt5/lib/cmake/
+
 export PATH=$ORIG_PATH
 
 TerminateScript
