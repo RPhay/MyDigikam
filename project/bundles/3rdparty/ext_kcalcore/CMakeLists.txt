@@ -7,7 +7,7 @@
 #
 
 set(EXTPREFIX_kcalcore "${EXTPREFIX}" )
-set(KA_VERSION 19.08.2)
+set(KA_VERSION 19.08.3)
 
 GetKF5ApplicationMd5Sums(kcalcore ${KA_VERSION})
 

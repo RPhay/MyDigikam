@@ -200,7 +200,7 @@ endfunction()
 if(MINGW)
     set(KF5_VERSION 5.63) # we have Qt 5.12.1 available.
 elseif(APPLE)
-    set(KF5_VERSION 5.63) # we have Qt 5.11.3 available.
+    set(KF5_VERSION 5.65) # we have Qt 5.14.0 available.
 else()
     set(KF5_VERSION 5.63) # we have Qt 5.11.3 available.
 endif()

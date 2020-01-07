@@ -7,7 +7,7 @@
 #
 
 set(EXTPREFIX_marble "${EXTPREFIX}" )
-set(KA_VERSION 19.08.2)
+set(KA_VERSION 19.08.3)
 
 GetKF5ApplicationMd5Sums(marble ${KA_VERSION})
 
