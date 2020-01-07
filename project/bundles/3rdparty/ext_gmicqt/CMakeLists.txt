@@ -31,7 +31,7 @@ ExternalProject_Add(ext_gmic_base
     CONFIGURE_COMMAND ""
 
     BUILD_COMMAND $(MAKE) -C <SOURCE_DIR>/src gmic_stdlib.h &&
-                  wget -O <SOURCE_DIR>/src/CImg.h -N https://framagit.org/dtschump/CImg/raw/${GMIC_VERSION}/CImg.h
+                  wget -O <SOURCE_DIR>/src/CImg.h -N https://raw.githubusercontent.com/dtschump/CImg/${GMIC_VERSION}/CImg.h
 
     INSTALL_COMMAND ""
 )
