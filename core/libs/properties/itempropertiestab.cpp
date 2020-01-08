@@ -203,7 +203,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     glay1->addWidget(d->labelFilePermissions,  5, 1, 1, 1);
     glay1->setContentsMargins(spacing, spacing, spacing, spacing);
     glay1->setColumnStretch(0, 10);
-    glay1->setColumnStretch(1, 10);
+    glay1->setColumnStretch(1, 25);
     glay1->setSpacing(0);
 
     insertItem(ItemPropertiesTab::Private::FileProperties,
@@ -243,7 +243,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     glay2->addWidget(d->labelHasSidecar,      5, 1, 1, 1);
     glay2->setContentsMargins(spacing, spacing, spacing, spacing);
     glay2->setColumnStretch(0, 10);
-    glay2->setColumnStretch(1, 10);
+    glay2->setColumnStretch(1, 25);
     glay2->setSpacing(0);
 
     insertItem(ItemPropertiesTab::Private::ImageProperties,
@@ -303,7 +303,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     glay3->addWidget(d->labelPhotoWhiteBalance, 10, 1, 1, 1);
     glay3->setContentsMargins(spacing, spacing, spacing, spacing);
     glay3->setColumnStretch(0, 10);
-    glay3->setColumnStretch(1, 10);
+    glay3->setColumnStretch(1, 25);
     glay3->setSpacing(0);
 
     insertItem(ItemPropertiesTab::Private::PhotoProperties,
@@ -347,7 +347,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     glay4->addWidget(d->labelVideoAudioCodec,       6, 1, 1, 1);
     glay4->setContentsMargins(spacing, spacing, spacing, spacing);
     glay4->setColumnStretch(0, 10);
-    glay4->setColumnStretch(1, 10);
+    glay4->setColumnStretch(1, 25);
     glay4->setSpacing(0);
 
     insertItem(ItemPropertiesTab::Private::VideoProperties,
@@ -384,7 +384,7 @@ ItemPropertiesTab::ItemPropertiesTab(QWidget* const parent)
     glay5->addWidget(d->labelRating,     4, 1, 1, 1);
     glay5->setContentsMargins(spacing, spacing, spacing, spacing);
     glay5->setColumnStretch(0, 10);
-    glay5->setColumnStretch(1, 10);
+    glay5->setColumnStretch(1, 25);
     glay5->setSpacing(0);
 
     insertItem(ItemPropertiesTab::Private::digiKamProperties,
