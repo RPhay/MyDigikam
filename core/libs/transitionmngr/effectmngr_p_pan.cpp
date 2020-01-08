@@ -48,7 +48,9 @@ int EffectMngr::Private::effectKenBurnsPanLR(bool aInit)
     eff_step++;
 
     if (eff_step != eff_imgFrames)
+    {
         return 15;
+    }
 
     return -1;
 }
@@ -76,7 +78,9 @@ int EffectMngr::Private::effectKenBurnsPanRL(bool aInit)
     eff_step++;
 
     if (eff_step != eff_imgFrames)
+    {
         return 15;
+    }
 
     return -1;
 }
@@ -104,7 +108,9 @@ int EffectMngr::Private::effectKenBurnsPanTB(bool aInit)
     eff_step++;
 
     if (eff_step != eff_imgFrames)
+    {
         return 15;
+    }
 
     return -1;
 }
@@ -132,7 +138,9 @@ int EffectMngr::Private::effectKenBurnsPanBT(bool aInit)
     eff_step++;
 
     if (eff_step != eff_imgFrames)
+    {
         return 15;
+    }
 
     return -1;
 }

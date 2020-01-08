@@ -40,7 +40,9 @@ int TransitionMngr::Private::transitionMeltdown(bool aInit)
         eff_intArray = new int[eff_ix];
 
         for (i = eff_ix - 1 ; i >= 0 ; --i)
+        {
             eff_intArray[i] = 0;
+        }
     }
 
     eff_pdone = true;
@@ -53,12 +55,16 @@ int TransitionMngr::Private::transitionMeltdown(bool aInit)
         y = eff_intArray[i];
 
         if (y >= eff_h)
+        {
             continue;
+        }
 
         eff_pdone = false;
 
         if ((qrand() & 15) < 6)
+        {
             continue;
+        }
 
         //bufferPainter.drawImage(x, y + eff_dy, eff_curFrame, x, y, eff_dx, eff_h - y - eff_dy);
         bufferPainter.drawImage(x, y, eff_outImage, x, y, eff_dx, eff_dy);
@@ -117,7 +123,10 @@ int TransitionMngr::Private::transitionMosaic(bool aInit)
         {
             if (eff_pixelMatrix[x][y] == true)
             {
-                if (y != 0) y--;
+                if (y != 0)
+                {
+                    y--;
+                }
 
                 continue;
             }
@@ -197,9 +206,9 @@ int TransitionMngr::Private::transitionBlobs(bool aInit)
         return -1;
     }
 
-    eff_x   = qrand() % eff_w;
-    eff_y   = qrand() % eff_h;
-    r      = (qrand() % 200) + 50;
+    eff_x    = qrand() % eff_w;
+    eff_y    = qrand() % eff_h;
+    r        = (qrand() % 200) + 50;
     eff_px   = eff_x - r;
     eff_py   = eff_y - r;
     eff_psx  = r;

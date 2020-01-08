@@ -42,10 +42,10 @@ class Q_DECL_HIDDEN TransitionPreview::Private
 public:
 
     explicit Private()
+      : mngr(nullptr),
+        curTransition(TransitionMngr::None),
+        previewSize(QSize(192, 144))
     {
-        mngr          = nullptr;
-        curTransition = TransitionMngr::None;
-        previewSize   = QSize(192, 144);
     }
 
     QTimer                    restartTimer;

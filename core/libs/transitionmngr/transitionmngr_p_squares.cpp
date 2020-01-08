@@ -81,7 +81,7 @@ int TransitionMngr::Private::transitionGrowing(bool aInit)
     eff_y = (eff_h >> 1) - (int)(eff_i * eff_fy);
     eff_i++;
 
-    if (eff_x < 0 || eff_y < 0)
+    if ((eff_x < 0) || (eff_y < 0))
     {
         eff_curFrame = eff_outImage;
         return -1;
@@ -119,34 +119,34 @@ int TransitionMngr::Private::transitionSpiralIn(bool aInit)
         eff_y  = 0;
     }
 
-    if (eff_i == 0 && eff_x0 >= eff_x1)
+    if ((eff_i == 0) && (eff_x0 >= eff_x1))
     {
         eff_curFrame = eff_outImage;
         return -1;
     }
 
-    if (eff_i == 0 && eff_x >= eff_x1)      // switch to: down on right side
+    if      ((eff_i == 0) && (eff_x >= eff_x1))      // switch to: down on right side
     {
         eff_i   = 1;
         eff_dx  = 0;
         eff_dy  = eff_iy;
         eff_x1 -= eff_ix;
     }
-    else if (eff_i == 1 && eff_y >= eff_y1) // switch to: right to left on bottom side
+    else if ((eff_i == 1) && eff_y >= eff_y1)) // switch to: right to left on bottom side
     {
         eff_i   = 2;
         eff_dx  = -eff_ix;
         eff_dy  = 0;
         eff_y1 -= eff_iy;
     }
-    else if (eff_i == 2 && eff_x <= eff_x0) // switch to: up on left side
+    else if ((eff_i == 2) && (eff_x <= eff_x0)) // switch to: up on left side
     {
         eff_i   = 3;
         eff_dx  = 0;
         eff_dy  = -eff_iy;
         eff_x0 += eff_ix;
     }
-    else if (eff_i == 3 && eff_y <= eff_y0) // switch to: left to right on top side
+    else if ((eff_i == 3) && (eff_y <= eff_y0)) // switch to: left to right on top side
     {
         eff_i   = 0;
         eff_dx  = eff_ix;

@@ -42,10 +42,10 @@ class Q_DECL_HIDDEN EffectPreview::Private
 public:
 
     explicit Private()
+      : mngr(nullptr),
+        curEffect(EffectMngr::None),
+        previewSize(QSize(192, 144))
     {
-        mngr        = nullptr;
-        curEffect   = EffectMngr::None;
-        previewSize = QSize(192, 144);
     }
 
     QTimer                 restartTimer;

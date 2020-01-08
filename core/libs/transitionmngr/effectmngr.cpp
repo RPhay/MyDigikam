@@ -59,9 +59,13 @@ void EffectMngr::setOutputSize(const QSize& size)
 void EffectMngr::setEffect(EffectType type)
 {
     if (type == Random)
+    {
         d->eff_curEffect = d->getRandomEffect();
+    }
     else
+    {
         d->eff_curEffect = type;
+    }
 
     d->eff_isRunning = false;
 }

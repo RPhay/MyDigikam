@@ -40,10 +40,11 @@ int TransitionMngr::Private::transitionSweep(bool aInit)
         eff_y       = (eff_subType == 3 ? 0  : eff_h);
     }
 
-    if (eff_subType == 0 || eff_subType == 1)
+    if ((eff_subType == 0) || (eff_subType == 1))
     {
         // horizontal sweep
-        if ((eff_subType == 0 && eff_x < -64) || (eff_subType == 1 && eff_x > eff_w + 64))
+        if (((eff_subType == 0) && (eff_x < -64)) ||
+            ((eff_subType == 1) && (eff_x > eff_w + 64)))
         {
             eff_curFrame = eff_outImage;
             return -1;
@@ -70,7 +71,8 @@ int TransitionMngr::Private::transitionSweep(bool aInit)
     else
     {
         // vertical sweep
-        if ((eff_subType == 2 && eff_y < -64) || (eff_subType == 3 && eff_y > eff_h + 64))
+        if (((eff_subType == 2) && (eff_y < -64)) ||
+            ((eff_subType == 3) && (eff_y > eff_h + 64)))
         {
             eff_curFrame = eff_outImage;
             return -1;
@@ -110,7 +112,9 @@ int TransitionMngr::Private::transitionHorizLines(bool aInit)
     }
 
     if (iyPos[eff_i] < 0)
+    {
         return -1;
+    }
 
     int until    = eff_h;
 
@@ -118,14 +122,18 @@ int TransitionMngr::Private::transitionHorizLines(bool aInit)
     QBrush brush = QBrush(eff_outImage);
 
     for (int iPos = iyPos[eff_i] ; iPos < until ; iPos += 8)
+    {
         bufferPainter.fillRect(0, iPos, eff_w, 1, brush);
+    }
 
     bufferPainter.end();
 
     eff_i++;
 
     if (iyPos[eff_i] >= 0)
+    {
         return 160;
+    }
 
     eff_curFrame = eff_outImage;
 
@@ -144,23 +152,29 @@ int TransitionMngr::Private::transitionVertLines(bool aInit)
     }
 
     if (ixPos[eff_i] < 0)
+    {
         return -1;
+    }
 
     int iPos;
-    int until = eff_w;
+    int until    = eff_w;
 
     QPainter bufferPainter(&eff_curFrame);
     QBrush brush = QBrush(eff_outImage);
 
     for (iPos = ixPos[eff_i] ; iPos < until ; iPos += 8)
+    {
         bufferPainter.fillRect(iPos, 0, 1, eff_h, brush);
+    }
 
     bufferPainter.end();
 
     eff_i++;
 
     if (ixPos[eff_i] >= 0)
+    {
         return 160;
+    }
 
     eff_curFrame = eff_outImage;
 

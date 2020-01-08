@@ -45,7 +45,7 @@ QImage TransitionMngr::Private::fastBlur(const QImage& image, int radius) const
     int x, y, w, h, mx, my, mw, mh, mt, xx, yy;
     int a, r, g, b;
 
-    if (radius < 1 || image.isNull() || image.width() < (radius << 1))
+    if ((radius < 1) || image.isNull() || (image.width() < (radius << 1)))
     {
         return image;
     }
@@ -166,7 +166,7 @@ int TransitionMngr::Private::transitionFade(bool aInit)
     {
         return 15;
     }
- 
+
     eff_curFrame = eff_outImage;
 
     return -1;

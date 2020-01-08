@@ -43,6 +43,7 @@ EffectMngr::EffectType EffectMngr::Private::getRandomEffect() const
 
     int count = effs.count();
     int i     = qrand() % count;
+
     return effs[i];
 }
 

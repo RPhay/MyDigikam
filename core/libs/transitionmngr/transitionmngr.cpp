@@ -59,9 +59,13 @@ void TransitionMngr::setOutputSize(const QSize& size)
 void TransitionMngr::setTransition(TransType type)
 {
     if (type == Random)
+    {
         d->eff_curTransition = d->getRandomTransition();
+    }
     else
+    {
         d->eff_curTransition = type;
+    }
 
     d->eff_isRunning = false;
 }

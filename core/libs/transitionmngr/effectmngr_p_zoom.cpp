@@ -45,7 +45,9 @@ int EffectMngr::Private::effectKenBurnsZoomIn(bool aInit)
     eff_step++;
 
     if (eff_step != eff_imgFrames)
+    {
         return 15;
+    }
 
     return -1;
 }
@@ -70,7 +72,9 @@ int EffectMngr::Private::effectKenBurnsZoomOut(bool aInit)
     eff_step--;
 
     if (eff_step != 0)
+    {
         return 15;
+    }
 
     return -1;
 }

@@ -40,8 +40,10 @@ int TransitionMngr::Private::transitionSwapL2R(bool aInit)
 
     eff_i = eff_i + lround(eff_fx);
 
-    if (eff_i <= 0)
+    if (eff_i <= 0)*
+    {
         return 15;
+    }
 
     eff_curFrame = eff_outImage;
 
@@ -64,7 +66,9 @@ int TransitionMngr::Private::transitionSwapR2L(bool aInit)
     eff_i = eff_i - lround(eff_fx);
 
     if (eff_i >= 0)
+    {
         return 15;
+    }
 
     eff_curFrame = eff_outImage;
 
@@ -87,7 +91,9 @@ int TransitionMngr::Private::transitionSwapT2B(bool aInit)
     eff_i = eff_i + lround(eff_fy);
 
     if (eff_i <= 0)
+    {
         return 15;
+    }
 
     eff_curFrame = eff_outImage;
 
@@ -110,7 +116,9 @@ int TransitionMngr::Private::transitionSwapB2T(bool aInit)
     eff_i = eff_i - lround(eff_fy);
 
     if (eff_i >= 0)
+    {
         return 15;
+    }
 
     eff_curFrame = eff_outImage;
 

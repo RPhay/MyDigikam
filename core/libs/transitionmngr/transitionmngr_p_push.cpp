@@ -41,7 +41,9 @@ int TransitionMngr::Private::transitionPushL2R(bool aInit)
     eff_i = eff_i + lround(eff_fx);
 
     if (eff_i <= eff_outSize.width())
+    {
         return 15;
+    }
 
     eff_curFrame = eff_outImage;
 
@@ -64,7 +66,9 @@ int TransitionMngr::Private::transitionPushR2L(bool aInit)
     eff_i = eff_i - lround(eff_fx);
 
     if (eff_i >= -eff_outSize.width())
+    {
         return 15;
+    }
 
     eff_curFrame = eff_outImage;
 
@@ -87,7 +91,9 @@ int TransitionMngr::Private::transitionPushT2B(bool aInit)
     eff_i = eff_i + lround(eff_fy);
 
     if (eff_i <= eff_outSize.height())
+    {
         return 15;
+    }
 
     eff_curFrame = eff_outImage;
 
@@ -110,7 +116,9 @@ int TransitionMngr::Private::transitionPushB2T(bool aInit)
     eff_i = eff_i - lround(eff_fy);
 
     if (eff_i >= -eff_outSize.height())
+    {
         return 15;
+    }
 
     eff_curFrame = eff_outImage;
 
