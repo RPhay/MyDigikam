@@ -87,6 +87,7 @@ blacklist = [
     "wtsapi32.dll",
     "d2d1.dll",
     "d3d11.dll",
+    "dxgi.dll",
     "dwrite.dll",
     "dbghelp.dll",      # blacklisted dll from DrMinGW as it use MSVC dll to show debg dialog.
 ]
