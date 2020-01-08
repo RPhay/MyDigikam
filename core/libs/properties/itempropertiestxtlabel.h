@@ -28,13 +28,9 @@
 // Qt includes
 
 #include <QLabel>
-#include <QPalette>
-#include <QColor>
 #include <QString>
-#include <QFontMetrics>
-#include <QTextBrowser>
 #include <QListWidget>
-#include <QFontDatabase>
+#include <QTextBrowser>
 
 // Local includes
 
@@ -43,25 +39,13 @@
 namespace Digikam
 {
 
-class DTextLabelName : public QLabel
+class DTextLabelName : public DAdjustableLabel
 {
 
 public:
 
-    explicit DTextLabelName(const QString& name, QWidget* const parent=nullptr)
-        : QLabel(parent)
-    {
-        setText(name);
-        QFont fnt;
-        fnt.setItalic(true);
-        setFont(fnt);
-        setAlignment(Qt::AlignRight | Qt::AlignTop);
-        setWordWrap(false);
-    };
-
-    ~DTextLabelName()
-    {
-    };
+    explicit DTextLabelName(const QString& name, QWidget* const parent=nullptr);
+    ~DTextLabelName();
 };
 
 // -------------------------------------------------------------------
@@ -71,18 +55,8 @@ class DTextLabelValue : public DAdjustableLabel
 
 public:
 
-    explicit DTextLabelValue(const QString& value, QWidget* const parent=nullptr)
-        : DAdjustableLabel(parent)
-    {
-        setAdjustedText(value);
-        setAlignment(Qt::AlignLeft | Qt::AlignTop);
-        setWordWrap(false);
-        setElideMode(Qt::ElideRight);
-    };
-
-    ~DTextLabelValue()
-    {
-    };
+    explicit DTextLabelValue(const QString& value, QWidget* const parent=nullptr);
+    ~DTextLabelValue();
 };
 
 // -------------------------------------------------------------------
@@ -91,28 +65,10 @@ class DTextBrowser : public QTextBrowser
 {
 public:
 
-    explicit DTextBrowser(const QString& text, QWidget* const parent=nullptr)
-        : QTextBrowser(parent)
-    {
-        setOpenExternalLinks(false);
-        setOpenLinks(false);
-        setText(text);
-        setLinesNumber(3);
-        setFocusPolicy(Qt::NoFocus);
-    };
+    explicit DTextBrowser(const QString& text, QWidget* const parent=nullptr);
+    ~DTextBrowser();
 
-    ~DTextBrowser()
-    {
-    };
-
-    void setLinesNumber(int l)
-    {
-        QFont fnt;
-        document()->setDefaultFont(fnt);
-        int left, top, right, bottom;
-        getContentsMargins(&left, &top, &right, &bottom);
-        setFixedHeight(top + bottom + frameWidth() + fontMetrics().lineSpacing()*l);
-    };
+    void setLinesNumber(int l);
 };
 
 // -------------------------------------------------------------------
@@ -121,27 +77,10 @@ class DTextList : public QListWidget
 {
 public:
 
-    explicit DTextList(const QStringList& list, QWidget* const parent=nullptr)
-        : QListWidget(parent)
-    {
-        addItems(list);
-        setLinesNumber(6);
-        setFocusPolicy(Qt::NoFocus);
-        sortItems();
-    };
+    explicit DTextList(const QStringList& list, QWidget* const parent=nullptr);
+    ~DTextList();
 
-    ~DTextList()
-    {
-    };
-
-    void setLinesNumber(int l)
-    {
-        QFont fnt;
-        setFont(fnt);
-        int left, top, right, bottom;
-        getContentsMargins(&left, &top, &right, &bottom);
-        setFixedHeight(top + bottom + frameWidth() + fontMetrics().lineSpacing()*l);
-    };
+    void setLinesNumber(int l);
 };
 
 } // namespace Digikam

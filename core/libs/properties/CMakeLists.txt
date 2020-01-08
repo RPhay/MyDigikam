@@ -10,6 +10,7 @@ set(libitemproperties_SRCS
     itempropertiestab.cpp
     itempropertiesmetadatatab.cpp
     itempropertiescolorstab.cpp
+    itempropertiestxtlabel.cpp
 )
 
 set(libitemversionssidebar_SRCS
