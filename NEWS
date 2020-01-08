@@ -544,4 +544,7 @@ BUGFIXES:
 529 ==> 415561 - Face detection based on deep learning leads to no result under Windows.
 530 ==> 415920 - The unconfirmed faces count in the left sidebar is missing.
 531 ==> 415944 - 7.0.0beta2 removed all my Geolocation bookmarks.
-532 ==> 
+532 ==> 414016 - Log file /var/log/syslog grows in size very fast.
+533 ==> 414028 - digiKam spamming journal with details of almost everything it does...
+534 ==> 415882 - digiKam 6.4 crashes on processing a large number of new HEIC/HEIF files.
+535 ==> 
