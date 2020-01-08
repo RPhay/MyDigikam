@@ -40,7 +40,7 @@ int TransitionMngr::Private::transitionSwapL2R(bool aInit)
 
     eff_i = eff_i + lround(eff_fx);
 
-    if (eff_i <= 0)*
+    if (eff_i <= 0)
     {
         return 15;
     }

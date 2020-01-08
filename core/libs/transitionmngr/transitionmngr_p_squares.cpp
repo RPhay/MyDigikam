@@ -132,7 +132,7 @@ int TransitionMngr::Private::transitionSpiralIn(bool aInit)
         eff_dy  = eff_iy;
         eff_x1 -= eff_ix;
     }
-    else if ((eff_i == 1) && eff_y >= eff_y1)) // switch to: right to left on bottom side
+    else if ((eff_i == 1) && (eff_y >= eff_y1)) // switch to: right to left on bottom side
     {
         eff_i   = 2;
         eff_dx  = -eff_ix;
