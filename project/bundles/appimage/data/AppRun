@@ -49,7 +49,7 @@ echo "-- Notes: to integrate this bundle to your desktop, use AppImageLauncher."
 echo "--        to enable all debug messages on the console, use 'export QT_LOGGING_RULES=\"digikam*=true\"'."
 
 # See bugs #414016, #414028, #415882, Qt fill log files with unwanted debug trace about locale rules.
-export QT_LOGGING_RULES="qt.*=false;"$QT_LOGGING_RULES
+export QT_LOGGING_RULES="default*=false;"$QT_LOGGING_RULES
 
 DIR="`dirname \"$0\"`"
 DIR="`( cd \"$DIR\" && pwd )`"
