@@ -43,9 +43,10 @@ public:
     explicit ClockPhotoDialog(QWidget* const parent, const QUrl& defaultUrl);
     ~ClockPhotoDialog();
 
-    /** Try to load the photo specified by the QUrl, and set the datetime widget
-     *  to the photo time. Return true on success, or false if either the photo
-     *  can't be read or the datetime information can't be read.
+    /**
+     * Try to load the photo specified by the QUrl, and set the datetime widget
+     * to the photo time. Return true on success, or false if either the photo
+     * can't be read or the datetime information can't be read.
      */
     bool setImage(const QUrl&);
 
@@ -55,6 +56,10 @@ private Q_SLOTS:
 
     void slotLoadPhoto();
     void slotOk();
+
+    /**
+     * If the cancel button is clicked, reject the dialog.
+     */
     void slotCancel();
 
 private:

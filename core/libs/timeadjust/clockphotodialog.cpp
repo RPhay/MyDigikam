@@ -62,11 +62,11 @@ class Q_DECL_HIDDEN ClockPhotoDialog::Private
 public:
 
     explicit Private()
+      : buttons(nullptr),
+        calendar(nullptr),
+        dtLabel(nullptr),
+        previewManager(nullptr)
     {
-        buttons        = nullptr;
-        calendar       = nullptr;
-        dtLabel        = nullptr;
-        previewManager = nullptr;
     }
 
     DeltaTime         deltaValues;
@@ -280,8 +280,6 @@ void ClockPhotoDialog::slotOk()
     accept();
 }
 
-/** If the cancel button is clicked, reject the dialog.
- */
 void ClockPhotoDialog::slotCancel()
 {
     saveSettings();

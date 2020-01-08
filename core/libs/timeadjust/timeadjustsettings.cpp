@@ -9,7 +9,7 @@
  * Copyright (C) 2012      by Smit Mehta <smit dot meh at gmail dot com>
  * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (c) 2018      by Maik Qualmann <metzpinguin at gmail dot com>
- * 
+ *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
  * Public License as published by the Free Software Foundation;
@@ -61,37 +61,37 @@ class Q_DECL_HIDDEN TimeAdjustSettings::Private
 public:
 
     explicit Private()
+      : useSettingsBox(nullptr),
+        adjustSettingsBox(nullptr),
+        updateSettingsBox(nullptr),
+        useButtonGroup(nullptr),
+        useApplDateBtn(nullptr),
+        useFileDateBtn(nullptr),
+        useFileNameBtn(nullptr),
+        useMetaDateBtn(nullptr),
+        useCustomDateBtn(nullptr),
+        updIfAvailableCheck(nullptr),
+        updFileModDateCheck(nullptr),
+        updEXIFModDateCheck(nullptr),
+        updEXIFOriDateCheck(nullptr),
+        updEXIFDigDateCheck(nullptr),
+        updEXIFThmDateCheck(nullptr),
+        updIPTCDateCheck(nullptr),
+        updXMPVideoCheck(nullptr),
+        updXMPDateCheck(nullptr),
+        useFileDateTypeChooser(nullptr),
+        useMetaDateTypeChooser(nullptr),
+        adjTypeChooser(nullptr),
+        useApplDateLbl(nullptr),
+        adjDaysLabel(nullptr),
+        adjDaysInput(nullptr),
+        adjDetByClockPhotoBtn(nullptr),
+        useCustDateInput(nullptr),
+        useCustTimeInput(nullptr),
+        adjTimeInput(nullptr),
+        useCustomDateTodayBtn(nullptr),
+        settingsExpander(nullptr)
     {
-        useSettingsBox         = nullptr;
-        adjustSettingsBox      = nullptr;
-        updateSettingsBox      = nullptr;
-        useButtonGroup         = nullptr;
-        useApplDateBtn         = nullptr;
-        useFileDateBtn         = nullptr;
-        useFileNameBtn         = nullptr;
-        useMetaDateBtn         = nullptr;
-        useCustomDateBtn       = nullptr;
-        updIfAvailableCheck    = nullptr;
-        updFileModDateCheck    = nullptr;
-        updEXIFModDateCheck    = nullptr;
-        updEXIFOriDateCheck    = nullptr;
-        updEXIFDigDateCheck    = nullptr;
-        updEXIFThmDateCheck    = nullptr;
-        updIPTCDateCheck       = nullptr;
-        updXMPVideoCheck       = nullptr;
-        updXMPDateCheck        = nullptr;
-        useFileDateTypeChooser = nullptr;
-        useMetaDateTypeChooser = nullptr;
-        adjTypeChooser         = nullptr;
-        useApplDateLbl         = nullptr;
-        adjDaysLabel           = nullptr;
-        adjDaysInput           = nullptr;
-        adjDetByClockPhotoBtn  = nullptr;
-        useCustDateInput       = nullptr;
-        useCustTimeInput       = nullptr;
-        adjTimeInput           = nullptr;
-        useCustomDateTodayBtn  = nullptr;
-        settingsExpander       = nullptr;
     }
 
     QWidget*               useSettingsBox;
@@ -181,10 +181,10 @@ TimeAdjustSettings::TimeAdjustSettings(QWidget* const parent)
     d->useFileDateTypeChooser   = new QComboBox(d->useSettingsBox);
     d->useFileDateTypeChooser->insertItem(TimeAdjustContainer::FILELASTMOD, i18n("File last modified"));
 
-    /*
+/*
     // NOTE: not supported by Linux, although supported by Qt (read-only)
     d->useFileDateTypeChooser->insertItem(TimeAdjustContainer::FILECREATED, i18n("File created"));
-    */
+*/
 
     d->useMetaDateBtn         = new QRadioButton(QString(), d->useSettingsBox);
     d->useMetaDateTypeChooser = new QComboBox(d->useSettingsBox);
@@ -382,8 +382,9 @@ TimeAdjustSettings::~TimeAdjustSettings()
 
 void TimeAdjustSettings::setSettings(const TimeAdjustContainer& settings)
 {
-    //d->settingsExpander->readSettings(group);
-
+/*
+    d->settingsExpander->readSettings(group);
+*/
     int useTimestampType = settings.dateSource;
     if      (useTimestampType == TimeAdjustContainer::APPDATE)      d->useApplDateBtn->setChecked(true);
     else if (useTimestampType == TimeAdjustContainer::FILENAME)     d->useFileNameBtn->setChecked(true);
@@ -459,7 +460,7 @@ void TimeAdjustSettings::detAdjustmentByClockPhotoUrl(const QUrl& url)
     {
         DeltaTime dvalues = dlg->deltaValues();
 
-        if (dvalues.isNull())
+        if      (dvalues.isNull())
         {
             d->adjTypeChooser->setCurrentIndex(TimeAdjustContainer::COPYVALUE);
         }
@@ -491,7 +492,7 @@ void TimeAdjustSettings::slotSrcTimestampChanged()
     d->useCustTimeInput->setEnabled(false);
     d->useCustomDateTodayBtn->setEnabled(false);
 
-    if (d->useFileDateBtn->isChecked())
+    if      (d->useFileDateBtn->isChecked())
     {
         d->useFileDateTypeChooser->setEnabled(true);
     }

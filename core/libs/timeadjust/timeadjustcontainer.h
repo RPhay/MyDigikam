@@ -110,7 +110,8 @@ public:
 
 // -------------------------------------------------------------------
 
-/** Container that hold the time difference for clock photo dialog.
+/**
+ * Container that hold the time difference for clock photo dialog.
  */
 class DeltaTime
 {

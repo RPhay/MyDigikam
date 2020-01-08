@@ -26,26 +26,24 @@ namespace Digikam
 {
 
 TimeAdjustContainer::TimeAdjustContainer()
+    : customDate(QDateTime::currentDateTime()),
+      customTime(QDateTime::currentDateTime()),
+      adjustmentTime(QDateTime()),
+      updIfAvailable(true),
+      updEXIFModDate(false),
+      updEXIFOriDate(false),
+      updEXIFDigDate(false),
+      updEXIFThmDate(false),
+      updIPTCDate(false),
+      updXMPVideo(false),
+      updXMPDate(false),
+      updFileModDate(false),
+      dateSource(APPDATE),
+      metadataSource(EXIFIPTCXMP),
+      fileDateSource(FILELASTMOD),
+      adjustmentType(COPYVALUE),
+      adjustmentDays(0)
 {
-    customDate     = QDateTime::currentDateTime();
-    customTime     = QDateTime::currentDateTime();
-    adjustmentTime = QDateTime();
-
-    updIfAvailable = true;
-    updEXIFModDate = false;
-    updEXIFOriDate = false;
-    updEXIFDigDate = false;
-    updEXIFThmDate = false;
-    updIPTCDate    = false;
-    updXMPVideo    = false;
-    updXMPDate     = false;
-    updFileModDate = false;
-
-    dateSource     = APPDATE;
-    metadataSource = EXIFIPTCXMP;
-    fileDateSource = FILELASTMOD;
-    adjustmentType = COPYVALUE;
-    adjustmentDays = 0;
 }
 
 TimeAdjustContainer::~TimeAdjustContainer()
@@ -54,14 +52,16 @@ TimeAdjustContainer::~TimeAdjustContainer()
 
 bool TimeAdjustContainer::atLeastOneUpdateToProcess() const
 {
-    return (updFileModDate ||
+    return (
+            updFileModDate ||
             updEXIFModDate ||
             updEXIFOriDate ||
             updEXIFDigDate ||
             updEXIFThmDate ||
             updIPTCDate    ||
             updXMPVideo    ||
-            updXMPDate);
+            updXMPDate
+           );
 }
 
 QDateTime TimeAdjustContainer::calculateAdjustedDate(const QDateTime& originalTime) const
@@ -73,9 +73,11 @@ QDateTime TimeAdjustContainer::calculateAdjustedDate(const QDateTime& originalTi
         case ADDVALUE:
             sign = 1;
             break;
+
         case SUBVALUE:
             sign = -1;
             break;
+
         default: // COPYVALUE
             return originalTime;
     }
@@ -147,7 +149,7 @@ QDateTime TimeAdjustContainer::getDateTimeFromUrl(const QUrl& url) const
                 dateTime = QDateTime::fromString(dateString, format);
             }
 
-            if (dateTime.isValid() && format.count(QLatin1Char('y')) == 2)
+            if (dateTime.isValid() && (format.count(QLatin1Char('y')) == 2))
             {
                 if (dateTime.date().year() < 1970)
                 {
@@ -155,9 +157,9 @@ QDateTime TimeAdjustContainer::getDateTimeFromUrl(const QUrl& url) const
                 }
             }
 
-            if (dateTime.isValid()             &&
-                dateTime.date().year() >= 1900 &&
-                dateTime.date().year() <= 2100)
+            if (dateTime.isValid()               &&
+                (dateTime.date().year() >= 1900) &&
+                (dateTime.date().year() <= 2100))
             {
                 break;
             }
@@ -170,12 +172,12 @@ QDateTime TimeAdjustContainer::getDateTimeFromUrl(const QUrl& url) const
 // -------------------------------------------------------------------
 
 DeltaTime::DeltaTime()
+    : deltaNegative(false),
+      deltaDays(0),
+      deltaHours(0),
+      deltaMinutes(0),
+      deltaSeconds(0)
 {
-    deltaNegative = false;
-    deltaDays     = 0;
-    deltaHours    = 0;
-    deltaMinutes  = 0;
-    deltaSeconds  = 0;
 }
 
 DeltaTime::~DeltaTime()
@@ -184,10 +186,12 @@ DeltaTime::~DeltaTime()
 
 bool DeltaTime::isNull() const
 {
-    return (deltaDays    == 0 &&
-            deltaHours   == 0 &&
-            deltaMinutes == 0 &&
-            deltaSeconds == 0);
+    return (
+            (deltaDays    == 0) &&
+            (deltaHours   == 0) &&
+            (deltaMinutes == 0) &&
+            (deltaSeconds == 0)
+           );
 }
 
 } // namespace Digikam

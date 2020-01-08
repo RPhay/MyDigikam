@@ -37,11 +37,7 @@ class DetByClockPhotoButton : public QPushButton
 
 public:
 
-    explicit DetByClockPhotoButton(const QString& text)
-        : QPushButton(text)
-    {
-        setAcceptDrops(true);
-    };
+    explicit DetByClockPhotoButton(const QString& text);
 
     void dragEnterEvent(QDragEnterEvent* event) override;
     void dragMoveEvent(QDragMoveEvent* event) override;

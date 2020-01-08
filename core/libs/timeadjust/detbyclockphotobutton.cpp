@@ -33,6 +33,12 @@
 namespace Digikam
 {
 
+DetByClockPhotoButton::DetByClockPhotoButton(const QString& text)
+    : QPushButton(text)
+{
+    setAcceptDrops(true);
+}
+
 void DetByClockPhotoButton::dragEnterEvent(QDragEnterEvent* event)
 {
     event->acceptProposedAction();
