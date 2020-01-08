@@ -300,11 +300,11 @@ cmake --build . --config RelWithDebInfo --target ext_qtav        -- -j$CPU_CORES
 
 #################################################################################################
 
-ln -s $INSTALL_PREFIX/lib/cmake/Qt5WebKitWidgets           $INSTALL_PREFIX/libexec/qt5/lib/cmake/
-ln -s $INSTALL_PREFIX/lib/QtWebKitWidgets.framework        $INSTALL_PREFIX/libexec/qt5/lib/
-ln -s $INSTALL_PREFIX/lib/QtWebKit.framework               $INSTALL_PREFIX/libexec/qt5/lib/
-ln -s $INSTALL_PREFIX/include/QtWebKitWidgets              $INSTALL_PREFIX/libexec/qt5/include/
-ln -s $INSTALL_PREFIX/include/QtWebKit                     $INSTALL_PREFIX/libexec/qt5/include/
+#ln -s $INSTALL_PREFIX/lib/cmake/Qt5WebKitWidgets           $INSTALL_PREFIX/libexec/qt5/lib/cmake/
+#ln -s $INSTALL_PREFIX/lib/QtWebKitWidgets.framework        $INSTALL_PREFIX/libexec/qt5/lib/
+#ln -s $INSTALL_PREFIX/lib/QtWebKit.framework               $INSTALL_PREFIX/libexec/qt5/lib/
+#ln -s $INSTALL_PREFIX/include/QtWebKitWidgets              $INSTALL_PREFIX/libexec/qt5/include/
+#ln -s $INSTALL_PREFIX/include/QtWebKit                     $INSTALL_PREFIX/libexec/qt5/include/
 
 export PATH=$ORIG_PATH
 
