@@ -42,18 +42,18 @@ class Q_DECL_HIDDEN DynamicThread::Private : public QRunnable
 public:
 
     explicit Private(DynamicThread* const q)
-        : q(q)
+        : q(q),
+          assignedThread(nullptr),
+          running(true),
+          emitSignals(false),
+          inDestruction(false),
+          threadRequested(false),
+          state(DynamicThread::Inactive),
+          priority(QThread::InheritPriority),
+          previousPriority(QThread::InheritPriority)
     {
         setAutoDelete(false);
 
-        state            = DynamicThread::Inactive;
-        running          = true;
-        assignedThread   = nullptr;
-        emitSignals      = false;
-        inDestruction    = false;
-        threadRequested  = false;
-        priority         = QThread::InheritPriority;
-        previousPriority = QThread::InheritPriority;
     };
 
     virtual void run() override;
@@ -83,7 +83,9 @@ public:
 void DynamicThread::Private::takingThread()
 {
     QMutexLocker locker(&mutex);
+
     // The thread we requested from the pool has now "arrived"
+
     threadRequested = false;
 }
 
@@ -97,6 +99,7 @@ bool DynamicThread::Private::transitionToRunning()
         {
             // ensure that a newly scheduled thread does not run
             // while an old, deactivated one has not yet called transitionToInactive
+
             while (assignedThread)
             {
                 condVar.wait(&mutex);
@@ -114,20 +117,24 @@ bool DynamicThread::Private::transitionToRunning()
 
             return true;
         }
+
         case DynamicThread::Deactivating:
         {
             return false;
         }
+
         case DynamicThread::Running:
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Transition to Running: Invalid Running state" << q;
             return false;
         }
+
         case DynamicThread::Inactive:
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Transition to Running: Invalid Inactive state" << q;
             return false;
         }
+
         default:
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Transition to Running: Should never reach here: assert?" << q;
@@ -162,6 +169,7 @@ void DynamicThread::Private::transitionToInactive()
             condVar.wakeAll();
             break;
         }
+
         case DynamicThread::Inactive:
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Transition to Inactive: Invalid Inactive state" << q;
@@ -193,6 +201,7 @@ void DynamicThread::Private::run()
     }
 
     transitionToInactive();
+
     // as soon as we are inactive, we may get deleted!
 }
 
@@ -227,7 +236,7 @@ DynamicThread::State DynamicThread::state() const
 
 bool DynamicThread::isRunning() const
 {
-    return d->state == Scheduled || d->state == Running || d->state == Deactivating;
+    return ((d->state == Scheduled) || (d->state == Running) || (d->state == Deactivating));
 }
 
 QMutex* DynamicThread::threadMutex() const
@@ -304,6 +313,7 @@ void DynamicThread::start(QMutexLocker& locker)
             d->state   = Scheduled;
             break;
         }
+
         case Running:
         case Scheduled:
         {
@@ -335,6 +345,7 @@ void DynamicThread::stop(QMutexLocker& locker)
             d->state   = Deactivating;
             break;
         }
+
         case Inactive:
         case Deactivating:
         {

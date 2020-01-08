@@ -45,12 +45,12 @@ class Q_DECL_HIDDEN WorkerObject::Private
 public:
 
     Private()
+      : state(WorkerObject::Inactive),
+        eventLoop(nullptr),
+        runnable(nullptr),
+        inDestruction(false),
+        priority(QThread::InheritPriority)
     {
-        state         = WorkerObject::Inactive;
-        eventLoop     = nullptr;
-        runnable      = nullptr;
-        inDestruction = false;
-        priority      = QThread::InheritPriority;
     }
 
     volatile WorkerObject::State state;
@@ -90,7 +90,7 @@ void WorkerObject::wait()
 {
     QMutexLocker locker(&d->mutex);
 
-    while (d->state != Inactive || d->runnable)
+    while ((d->state != Inactive) || d->runnable)
     {
         d->condVar.wait(&d->mutex);
     }
@@ -99,8 +99,11 @@ void WorkerObject::wait()
 bool WorkerObject::connectAndSchedule(const QObject* sender, const char* signal, const char* method,
                                       Qt::ConnectionType type) const
 {
-    connect(sender, signal, this, SLOT(schedule()), Qt::DirectConnection);
-    return QObject::connect(sender, signal, method, type);
+    connect(sender, signal,
+            this, SLOT(schedule()),
+            Qt::DirectConnection);
+
+    return (QObject::connect(sender, signal, method, type));
 }
 
 bool WorkerObject::connectAndSchedule(const QObject* sender, const char* signal,
@@ -211,6 +214,7 @@ void WorkerObject::schedule()
             case Deactivating:
                 d->state = Scheduled;
                 break;
+
             case Scheduled:
             case Running:
                 return;
@@ -239,6 +243,7 @@ void WorkerObject::deactivate(DeactivatingMode mode)
     }
 
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+
     this->aboutToDeactivate();
 
     if (mode == FlushSignals)

@@ -56,27 +56,31 @@ public:
 
 public:
 
-    /** This class extends QRunnable, so you have to reimplement
-     *  virtual void run(). In all aspects the class will act similar to a QThread.
+    /**
+     * This class extends QRunnable, so you have to reimplement
+     * virtual void run(). In all aspects the class will act similar to a QThread.
      */
     explicit DynamicThread(QObject* const parent = nullptr);
 
-    /** The destructor calls stop() and wait(), but if you, in your destructor,
+    /**
+     * The destructor calls stop() and wait(), but if you, in your destructor,
      *  delete any data that is accessed by your run() method,
-     *  you must call stop() and wait() before yourself. */
+     *  you must call stop() and wait() before yourself.
+     */
     virtual ~DynamicThread();
 
-    State state() const;
-    bool  isRunning() const;
-    bool  isFinished() const;
+    State state()               const;
+    bool  isRunning()           const;
+    bool  isFinished()          const;
 
     void setEmitSignals(bool emitThem);
 
-    /** Sets the priority for this dynamic thread.
-     *  Can be set anytime. If the thread is currently not running,
-     *  the priority will be set when it is run next time.
-     *  When you set QThread::InheritPriority (default), the
-     *  priority is not changed but inherited from the thread pool.
+    /**
+     * Sets the priority for this dynamic thread.
+     * Can be set anytime. If the thread is currently not running,
+     * the priority will be set when it is run next time.
+     * When you set QThread::InheritPriority (default), the
+     * priority is not changed but inherited from the thread pool.
      */
     void setPriority(QThread::Priority priority);
     QThread::Priority priority() const;
@@ -85,10 +89,14 @@ public Q_SLOTS:
 
     void start();
 
-    /** Stop computation, sets the running flag to false. */
+    /**
+     * Stop computation, sets the running flag to false.
+     */
     void stop();
 
-    /** Waits until the thread finishes. Typically, call stop() before. */
+    /**
+     * Waits until the thread finishes. Typically, call stop() before.
+     */
     void wait();
 
 Q_SIGNALS:
@@ -115,8 +123,10 @@ protected:
      */
     void shutDown();
 
-    /** In you run() method, you shall regularly check for runningFlag()
-     *  and cleanup and return if false. */
+    /**
+     * In you run() method, you shall regularly check for runningFlag()
+     *  and cleanup and return if false.
+     */
     bool runningFlag() const volatile;
 
     /**

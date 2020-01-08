@@ -47,7 +47,8 @@ class Q_DECL_HIDDEN ParkingThread : public QThread
 public:
 
     explicit ParkingThread(QObject* const parent = nullptr)
-        : QThread(parent), running(true)
+        : QThread(parent),
+          running(true)
     {
         start();
     }
@@ -80,17 +81,21 @@ public:
         QMutexLocker locker(&mutex);
 
         // first, wait until the object has been parked in ParkingThread by its owning thread.
+
         while (parkedObject->thread() != this)
         {
             condVar.wait(&mutex);
         }
 
         QThread* targetThread = QThread::currentThread();
+
         // then, now that it's parked in ParkingThread, make ParkingThread move it to the current thread.
+
         todo << qMakePair(parkedObject, targetThread);
         condVar.wakeAll();
 
         // wait until ParkingThread has pushed the object to current thread
+
         while (parkedObject->thread() != targetThread)
         {
             condVar.wait(&mutex);
@@ -121,6 +126,7 @@ public:
                     todo.clear();
                 }
             }
+
             foreach (const TodoPair& pair, copyTodo)
             {
                 pair.first->moveToThread(pair.second);
@@ -172,10 +178,12 @@ void WorkerObjectRunnable::run()
     }
 
     // if another thread should still be running, wait until the object is parked in ParkingThread
+
     parkingThread->moveToCurrentThread(object);
 
     // The object is in state Scheduled or Deactivating now.
     // It won't be deleted until Inactive, and as long a runnable is set.
+
     object->addRunnable(this);
 
     emit (object->started());
@@ -183,6 +191,7 @@ void WorkerObjectRunnable::run()
     if (object->transitionToRunning())
     {
         QThread::Priority previousPriority = QThread::currentThread()->priority();
+
         if (object->priority() != QThread::InheritPriority)
         {
             QThread::currentThread()->setPriority(object->priority());
@@ -203,9 +212,11 @@ void WorkerObjectRunnable::run()
     emit (object->finished());
 
     // if this is rescheduled, it will wait in the other thread at moveToCurrentThread() above until we park
+
     parkingThread->parkObject(object);
 
     // now, free the object - in case it wants to get deleted
+
     object->removeRunnable(this);
 }
 
@@ -216,13 +227,15 @@ class Q_DECL_HIDDEN ThreadManager::Private
 public:
 
     Private()
+      : parkingThread(nullptr),
+        pool(nullptr)
     {
-        parkingThread = nullptr;
-        pool          = nullptr;
     }
 
     ParkingThread* parkingThread;
     QThreadPool*   pool;
+
+public:
 
     void changeMaxThreadCount(int diff)
     {

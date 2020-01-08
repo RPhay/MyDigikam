@@ -104,7 +104,7 @@ public:
 
     /** Return the maximum number of threads used to parallelize collection of job processing.
      */
-    int  maximumNumberOfThreads() const;
+    int  maximumNumberOfThreads()   const;
 
     /** Reset maximum number of threads used to parallelize collection of job processing to max core detected on computer.
      *  This method is called in contructor.
@@ -119,7 +119,7 @@ protected:
 
     /** Main thread loop used to process jobs in todo list.
      */
-    void run() override;
+    void run()                            override;
 
     /** Append a collection of jobs to process into QThreadPool.
      *  Jobs are add to pending lists and will be deleted by ActionThreadBase, not QThreadPool.
@@ -128,11 +128,11 @@ protected:
 
     /** Return true if list of pending jobs to process is empty.
      */
-    bool isEmpty() const;
+    bool isEmpty()                  const;
 
     /** Return the number of pending jobs to process.
      */
-    int pendingCount() const;
+    int pendingCount()              const;
 
 protected Q_SLOTS:
 

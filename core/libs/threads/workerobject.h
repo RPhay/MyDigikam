@@ -87,19 +87,21 @@ public:
 
     void wait();
 
-    /** Sets the priority for this dynamic thread.
-     *  Can be set anytime. If the thread is currently not running,
-     *  the priority will be set when it is run next time.
-     *  When you set QThread::InheritPriority (default), the
-     *  priority is not changed but inherited from the thread pool.
+    /**
+     * Sets the priority for this dynamic thread.
+     * Can be set anytime. If the thread is currently not running,
+     * the priority will be set when it is run next time.
+     * When you set QThread::InheritPriority (default), the
+     * priority is not changed but inherited from the thread pool.
      */
     void setPriority(QThread::Priority priority);
     QThread::Priority priority() const;
 
-    /** You must normally call schedule() to ensure that the object is active when you send
-     *  a signal with work data. Instead, you can use these connect() methods
-     *  when connecting your signal to this object, the signal that carries work data.
-     *  Then the object will be scheduled each time you emit the signal.
+    /**
+     * You must normally call schedule() to ensure that the object is active when you send
+     * a signal with work data. Instead, you can use these connect() methods
+     * when connecting your signal to this object, the signal that carries work data.
+     * Then the object will be scheduled each time you emit the signal.
      */
     bool connectAndSchedule(const QObject* sender, const char* signal, const char* method,
                             Qt::ConnectionType type = Qt::AutoConnection) const;

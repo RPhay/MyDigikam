@@ -64,9 +64,9 @@ class Q_DECL_HIDDEN ActionThreadBase::Private
 public:
 
     explicit Private()
+      : running(false),
+        pool(nullptr)
     {
-        running = false;
-        pool    = nullptr;
     }
 
     volatile bool       running;
