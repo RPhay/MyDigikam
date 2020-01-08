@@ -6,7 +6,11 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 #
 
-SET(EXTPREFIX_qtwebkit "${EXTPREFIX}")
+if(APPLE)
+    SET(EXTPREFIX_qtwebkit "${EXTPREFIX}/libexec/qt5/")
+else()
+    SET(EXTPREFIX_qtwebkit "${EXTPREFIX}")
+endif()
 
 ExternalProject_Add(ext_qtwebkit
     DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
@@ -22,7 +26,7 @@ ExternalProject_Add(ext_qtwebkit
     CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_qtwebkit}
                -DCMAKE_BUILD_TYPE=MinSizeRel
                ${GLOBAL_PROFILE}
-               -DCMAKE_SYSTEM_PREFIX_PATH=${EXTPREFIX_qtwebkit}
+               -DCMAKE_SYSTEM_PREFIX_PATH=${EXTPREFIX}
                -DENABLE_GEOLOCATION=OFF
                -DENABLE_DEVICE_ORIENTATION=OFF
                -DENABLE_QT_WEBCHANNEL=OFF
