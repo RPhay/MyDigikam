@@ -75,9 +75,9 @@ void FaceDb::updateDNNFaceModel(DNNFaceModel& model)
                                              "WHERE identity=? AND `context`=?;"),
                                metadata.identity, metadata.context, &values);
 
-                if (values.count() > 20)
+                if (values.count() > 100)
                 {
-                    for (int j = 0 ; j < values.count() - 20 ; ++j)
+                    for (int j = 0 ; j < values.count() - 100 ; ++j)
                     {
                         qCDebug(DIGIKAM_FACEDB_LOG) << "Delete face mat data " << values.at(j).toInt()
                                                     << " for identity " << metadata.identity;
