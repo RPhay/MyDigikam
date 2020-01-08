@@ -78,7 +78,7 @@ protected:
 
     bool eventFilter(QObject* obj, QEvent* event)
     {
-        if (event->type() == QEvent::MouseButtonRelease || event->type() == QEvent::MouseButtonDblClick)
+        if ((event->type() == QEvent::MouseButtonRelease) || (event->type() == QEvent::MouseButtonDblClick))
         {
             bool singleClick = qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick);
             QMouseEvent* const mouseEvent = dynamic_cast<QMouseEvent*>(event);
@@ -89,14 +89,14 @@ protected:
 
                 if (mplayer)
                 {
-                    if (mouseEvent->button() == Qt::LeftButton &&
-                        ((singleClick  && event->type() == QEvent::MouseButtonRelease) ||
-                         (!singleClick && event->type() == QEvent::MouseButtonDblClick)))
+                    if      ((mouseEvent->button() == Qt::LeftButton) &&
+                             ((singleClick && (event->type() == QEvent::MouseButtonRelease)) ||
+                             (!singleClick && (event->type() == QEvent::MouseButtonDblClick))))
                     {
                         mplayer->slotEscapePressed();
                     }
-                    else if (mouseEvent->button() == Qt::RightButton &&
-                             event->type() == QEvent::MouseButtonRelease)
+                    else if ((mouseEvent->button() == Qt::RightButton) &&
+                             (event->type() == QEvent::MouseButtonRelease))
                     {
                         mplayer->slotRotateVideo();
                     }
@@ -147,8 +147,8 @@ public:
 
 public:
 
-    explicit Private() :
-        errorView(nullptr),
+    explicit Private()
+      : errorView(nullptr),
         playerView(nullptr),
         prevAction(nullptr),
         nextAction(nullptr),
@@ -218,9 +218,9 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
 
     // --------------------------------------------------------------------------
 
-    d->playerView  = new QFrame(this);
-    d->videoWidget = new WidgetRenderer(this);
-    d->player      = new AVPlayer(this);
+    d->playerView     = new QFrame(this);
+    d->videoWidget    = new WidgetRenderer(this);
+    d->player         = new AVPlayer(this);
 
     DHBox* const hbox = new DHBox(this);
     d->slider         = new QSlider(Qt::Horizontal, hbox);
@@ -270,8 +270,8 @@ MediaPlayerView::MediaPlayerView(QWidget* const parent)
     d->videoWidget->installEventFilter(new MediaPlayerMouseClickFilter(this));
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group = config->group("Media Player Settings");
-    int volume         = group.readEntry("Volume", 50);
+    KConfigGroup group        = config->group("Media Player Settings");
+    int volume                = group.readEntry("Volume", 50);
 
     d->volume->setValue(volume);
     d->player->audio()->setVolume((qreal)volume / 100.0);
@@ -347,9 +347,10 @@ void MediaPlayerView::reload()
 
 void MediaPlayerView::slotPlayerStateChanged(QtAV::AVPlayer::State state)
 {
-    if (state == QtAV::AVPlayer::PlayingState)
+    if      (state == QtAV::AVPlayer::PlayingState)
     {
         int rotate = 0;
+
 #if QTAV_VERSION > QTAV_VERSION_CHK(1, 12, 0)
         // fix wrong rotation from QtAV git/master
         rotate     = d->player->statistics().video_only.rotate;
@@ -360,8 +361,8 @@ void MediaPlayerView::slotPlayerStateChanged(QtAV::AVPlayer::State state)
 
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
     }
-    else if (state == QtAV::AVPlayer::PausedState ||
-             state == QtAV::AVPlayer::StoppedState)
+    else if ((state == QtAV::AVPlayer::PausedState) ||
+             (state == QtAV::AVPlayer::StoppedState))
     {
         d->playAction->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
     }
@@ -409,12 +410,15 @@ void MediaPlayerView::slotRotateVideo()
             case 0:
                 orientation = 90;
                 break;
+
             case 90:
                 orientation = 180;
                 break;
+
             case 180:
                 orientation = 270;
                 break;
+
             default:
                 orientation = 0;
         }
@@ -441,7 +445,7 @@ int MediaPlayerView::previewMode()
 
 void MediaPlayerView::setPreviewMode(int mode)
 {
-    if (mode != Private::ErrorView && mode != Private::PlayerView)
+    if ((mode != Private::ErrorView) && (mode != Private::PlayerView))
     {
         return;
     }
@@ -495,12 +499,15 @@ void MediaPlayerView::setCurrentItem(const QUrl& url, bool hasPrevious, bool has
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
             d->videoOrientation = 90;
             break;
+
         case MetaEngine::ORIENTATION_ROT_180:
             d->videoOrientation = 180;
             break;
+
         case MetaEngine::ORIENTATION_ROT_270:
             d->videoOrientation = 270;
             break;
+
         default:
             d->videoOrientation = 0;
             break;
@@ -544,7 +551,7 @@ void MediaPlayerView::slotVolumeChanged(int volume)
     }
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group = config->group("Media Player Settings");
+    KConfigGroup group        = config->group("Media Player Settings");
     group.writeEntry("Volume", volume);
 }
 

@@ -67,10 +67,10 @@ class Q_DECL_HIDDEN VidSlideTask::Private
 public:
 
     explicit Private()
+      : settings(nullptr),
+        astream(0),
+        adec(AudioDecoder::create("FFmpeg"))
     {
-        settings = nullptr;
-        astream  = 0;
-        adec     = AudioDecoder::create("FFmpeg");
     }
 
     ~Private()
@@ -191,7 +191,7 @@ AudioFrame VidSlideTask::Private::nextAudioFrame(const AudioFormat& afmt)
     {
         if (!apkt.isValid())
         {
-            if (!demuxer.readFrame() || demuxer.stream() != astream)
+            if (!demuxer.readFrame() || (demuxer.stream() != astream))
                 continue;
 
             apkt = demuxer.packet();
@@ -258,7 +258,7 @@ void VidSlideTask::run()
     QString outFile = dest.toLocalFile();
     QFileInfo fi(outFile);
 
-    if (fi.exists() && d->settings->conflictRule != FileSaveConflictBox::OVERWRITE)
+    if (fi.exists() && (d->settings->conflictRule != FileSaveConflictBox::OVERWRITE))
     {
         outFile = DFileOperations::getUniqueFileUrl(dest).toLocalFile();
     }
@@ -419,12 +419,16 @@ void VidSlideTask::run()
         Packet vpkt(venc->encoded());
 
         if (vpkt.isValid())
+        {
             mux.writeVideo(vpkt);
+        }
 
         Packet apkt(aenc->encoded());
 
         if (apkt.isValid())
+        {
             mux.writeAudio(apkt);
+        }
     }
 
     // ---------------------------------------------

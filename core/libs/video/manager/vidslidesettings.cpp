@@ -36,20 +36,20 @@ namespace Digikam
 {
 
 VidSlideSettings::VidSlideSettings()
+    : selMode(IMAGES),
+      transition(TransitionMngr::None),
+      imgFrames(125),
+      abitRate(64000),
+      vbitRate(VBR12),
+      vStandard(PAL),
+      vType(BLUERAY),
+      vCodec(X264),
+      vFormat(MP4),
+      vEffect(EffectMngr::None),
+      conflictRule(FileSaveConflictBox::OVERWRITE),
+      outputDir(QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::MoviesLocation))),
+      outputPlayer(INTERNAL)
 {
-    selMode      = IMAGES;
-    imgFrames    = 125;
-    vType        = BLUERAY;
-    vStandard    = PAL;
-    vbitRate     = VBR12;
-    vCodec       = X264;
-    vFormat      = MP4;
-    vEffect      = EffectMngr::None;
-    transition   = TransitionMngr::None;
-    abitRate     = 64000;
-    conflictRule = FileSaveConflictBox::OVERWRITE;
-    outputDir    = QUrl::fromLocalFile(QStandardPaths::writableLocation(QStandardPaths::MoviesLocation));
-    outputPlayer = INTERNAL;
 }
 
 VidSlideSettings::~VidSlideSettings()
@@ -173,7 +173,7 @@ int VidSlideSettings::videoBitRate() const
 {
     int b;
 
-    switch(vbitRate)
+    switch (vbitRate)
     {
         case VBR04:
             b = 400000;
@@ -235,7 +235,7 @@ qreal VidSlideSettings::videoFrameRate() const
 {
     qreal fr;
 
-    switch(vStandard)
+    switch (vStandard)
     {
         case NTSC:
             fr = 29.97;
@@ -253,7 +253,7 @@ QString VidSlideSettings::videoCodec() const
 {
     QString cod;
 
-    switch(vCodec)
+    switch (vCodec)
     {
         case MJPEG:
             cod = QLatin1String("mjpeg");
@@ -303,7 +303,7 @@ QString VidSlideSettings::videoFormat() const
 {
     QString frm;
 
-    switch(vFormat)
+    switch (vFormat)
     {
         case AVI:
             frm = QLatin1String("avi");

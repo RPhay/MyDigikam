@@ -6,7 +6,7 @@
  * Date        : 2014-09-22
  * Description : Slideshow video viewer
  *
- * Copyright (C) 2014-2019 Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2020 Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -222,12 +222,15 @@ void SlideVideo::setCurrentUrl(const QUrl& url)
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
             d->videoOrientation = 90;
             break;
+
         case MetaEngine::ORIENTATION_ROT_180:
             d->videoOrientation = 180;
             break;
+
         case MetaEngine::ORIENTATION_ROT_270:
             d->videoOrientation = 270;
             break;
+
         default:
             d->videoOrientation = 0;
             break;
@@ -257,6 +260,7 @@ void SlideVideo::slotPlayerStateChanged(QtAV::AVPlayer::State state)
     if (state == QtAV::AVPlayer::PlayingState)
     {
         int rotate = 0;
+
 #if QTAV_VERSION > QTAV_VERSION_CHK(1, 12, 0)
         // fix wrong rotation from QtAV git/master
         rotate     = d->player->statistics().video_only.rotate;
@@ -274,12 +278,15 @@ void SlideVideo::slotMediaStatusChanged(QtAV::MediaStatus status)
         case EndOfMedia:
             emit signalVideoFinished();
             break;
+
         case LoadedMedia:
             emit signalVideoLoaded(true);
             break;
+
         case InvalidMedia:
             emit signalVideoLoaded(false);
             break;
+
         default:
             break;
     }

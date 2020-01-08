@@ -41,8 +41,8 @@ class Q_DECL_HIDDEN VidPlayerDlg::Private
 public:
 
     explicit Private()
+      : player(nullptr)
     {
-        player = nullptr;
     }
 
 public:
@@ -57,7 +57,7 @@ VidPlayerDlg::VidPlayerDlg(const QString& file, QWidget* const parent)
     setModal(false);
     setWindowTitle(file);
 
-    d->player = new MediaPlayerView(this);
+    d->player               = new MediaPlayerView(this);
     d->player->setCurrentItem(QUrl::fromLocalFile(file));
 
     // ----------------------
