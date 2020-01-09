@@ -95,15 +95,17 @@ public:
 
     explicit Private() :
         benchmark(false),
-        useItemInfos(false)
+        source(FacesDetector::Albums)
     {
     }
 
     bool                 benchmark;
-    bool                 useItemInfos;
+    InputSource          source;
 
     AlbumPointerList<>   albumTodoList;
     ItemInfoList         infoTodoList;
+    QList<qlonglong>     idsTodoList;
+
     ItemInfoJob          albumListing;
     FacePipeline         pipeline;
 };
@@ -223,28 +225,29 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
     connect(this, SIGNAL(progressItemCanceled(ProgressItem*)),
             this, SLOT(slotCancel()));
 
-    if ((settings.albums.isEmpty() && settings.infos.isEmpty()) ||
-        (settings.task == FaceScanSettings::RetrainAll))
+    if (settings.task == FaceScanSettings::RecognizeMarkedFaces)
     {
-        d->albumTodoList = AlbumManager::instance()->allPAlbums();
-    }
-    else if (settings.task == FaceScanSettings::RecognizeMarkedFaces)
-    {
-        QList<qlonglong> itemIds = CoreDbAccess().db()->
+        d->idsTodoList = CoreDbAccess().db()->
             getImagesWithImageTagProperty(FaceTags::unknownPersonTagId(),
                                           ImageTagPropertyName::autodetectedFace());
 
-        d->infoTodoList = ItemInfoList(itemIds);
-        d->useItemInfos = true;
+        d->source = FacesDetector::Ids;
+    }
+    else if ((settings.albums.isEmpty() && settings.infos.isEmpty()) ||
+             (settings.task == FaceScanSettings::RetrainAll))
+    {
+        d->albumTodoList = AlbumManager::instance()->allPAlbums();
+        d->source = FacesDetector::Albums;
     }
     else if (!settings.albums.isEmpty())
     {
         d->albumTodoList = settings.albums;
+        d->source = FacesDetector::Albums;
     }
     else
     {
         d->infoTodoList = settings.infos;
-        d->useItemInfos = true;
+        d->source = FacesDetector::Infos;
     }
 }
 
@@ -259,7 +262,7 @@ void FacesDetector::slotStart()
 
     setThumbnail(QIcon::fromTheme(QLatin1String("edit-image-face-show")).pixmap(22));
 
-    if (d->useItemInfos)
+    if (d->source == FacesDetector::Infos)
     {
         int total = d->infoTodoList.count();
         qCDebug(DIGIKAM_GENERAL_LOG) << "Total is" << total;
@@ -272,6 +275,22 @@ void FacesDetector::slotStart()
         }
 
         return slotItemsInfo(d->infoTodoList);
+    }
+    else if (d->source == FacesDetector::Ids)
+    {
+        ItemInfoList itemInfos(d->idsTodoList);
+
+        int total = itemInfos.count();
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Total is" << total;
+
+        setTotalItems(total);
+
+        if (itemInfos.isEmpty())
+        {
+            return slotDone();
+        }
+
+        return slotItemsInfo(itemInfos);
     }
 
     setUsesBusyIndicator(true);
@@ -349,7 +368,7 @@ void FacesDetector::slotStart()
 
 void FacesDetector::slotContinueAlbumListing()
 {
-    if (d->useItemInfos)
+    if (d->source != FacesDetector::Albums)
     {
         return slotDone();
     }

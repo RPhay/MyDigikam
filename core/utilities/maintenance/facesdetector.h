@@ -48,6 +48,15 @@ class FacesDetector : public MaintenanceTool
 
 public:
 
+    enum InputSource
+    {
+        Albums = 0,
+        Infos,
+        Ids
+    };
+
+public:
+
     explicit FacesDetector(const FaceScanSettings& settings, ProgressItem* const parent = nullptr);
     ~FacesDetector();
 
