@@ -121,7 +121,6 @@ libexec/qt5/plugins/printsupport/*.dylib \
 libexec/qt5/plugins/platforms/*.dylib \
 libexec/qt5/plugins/platformthemes/*.dylib \
 libexec/qt5/plugins/iconengines/*.dylib \
-libexec/qt5/plugins/digikam/*.dylib \
 libexec/qt5/plugins/generic/*.dylib \
 libexec/qt5/plugins/style/*.dylib \
 libexec/qt5/plugins/bearer/*.dylib \
