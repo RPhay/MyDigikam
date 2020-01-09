@@ -42,21 +42,21 @@ namespace Digikam
 {
 
 WSSettings::WSSettings(QObject* const parent)
-    : QObject(parent)
+    : QObject(parent),
+      selMode(EXPORT),
+      addFileProperties(false),
+      imagesChangeProp(false),
+      removeMetadata(false),
+      imageCompression(75),
+      attLimitInMbytes(17),
+      webService(FLICKR),
+      userName(QString()),
+      currentAlbumId(QString()),
+      imageSize(1024),
+      imageFormat(JPEG)
 {
-    selMode             = EXPORT;
-    addFileProperties   = false;
-    imagesChangeProp    = false;
-    removeMetadata      = false;
-    imageCompression    = 75;
-    attLimitInMbytes    = 17;
-    webService          = FLICKR;
-    currentAlbumId      = QString();
-    userName            = QString();
     oauthSettings       = WSToolUtils::getOauthSettings(parent);
     oauthSettingsStore  = new O0SettingsStore(oauthSettings, QLatin1String(O2_ENCRYPTION_KEY), this);
-    imageSize           = 1024;
-    imageFormat         = JPEG;
 }
 
 WSSettings::~WSSettings()
@@ -109,7 +109,9 @@ void WSSettings::writeSettings(KConfigGroup& group)
 QString WSSettings::format() const
 {
     if (imageFormat == JPEG)
+    {
         return QLatin1String("JPEG");
+    }
 
     return QLatin1String("PNG");
 }

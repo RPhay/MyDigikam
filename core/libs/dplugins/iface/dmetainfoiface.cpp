@@ -50,8 +50,8 @@ class Q_DECL_HIDDEN DMetaInfoIface::Private
 public:
 
     explicit Private()
+      : dirSelector(nullptr)
     {
-        dirSelector = nullptr;
     }
 
     DFileSelector* dirSelector;
@@ -184,13 +184,13 @@ void DMetaInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
         keys.removeAll(QLatin1String("rating"));
     }
 
-    if  (map.contains(QLatin1String("colorlabel")))
+    if (map.contains(QLatin1String("colorlabel")))
     {
         meta.setItemColorLabel(map[QLatin1String("colorlabel")].toInt());
         keys.removeAll(QLatin1String("colorlabel"));
     }
 
-    if  (map.contains(QLatin1String("picklabel")))
+    if (map.contains(QLatin1String("picklabel")))
     {
         meta.setItemPickLabel(map[QLatin1String("picklabel")].toInt());
         keys.removeAll(QLatin1String("picklabel"));
@@ -238,7 +238,9 @@ QUrl DMetaInfoIface::defaultUploadUrl() const
     QStringList pics = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
 
     if (!pics.isEmpty())
+    {
         place = QUrl::fromLocalFile(pics.first());
+    }
 
     QList<QUrl> lst = currentAlbumItems();
 
@@ -247,7 +249,9 @@ QUrl DMetaInfoIface::defaultUploadUrl() const
         QUrl trg = lst.first().adjusted(QUrl::RemoveFilename);
 
         if (!trg.isEmpty())
+        {
             place = trg;
+        }
     }
 
     return place;

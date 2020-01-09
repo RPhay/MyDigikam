@@ -49,9 +49,13 @@ public:
     /**
      * Stage to load plugins in memory
      */
-    bool        appendPlugin(QObject* const obj,
-                             QPluginLoader* const loader);
-    void        loadPlugins();
+    void loadPlugins();
+
+    /**
+     * Append object to the given plugins list.
+     */
+    bool appendPlugin(QObject* const obj,
+                      QPluginLoader* const loader);
 
 public:
 

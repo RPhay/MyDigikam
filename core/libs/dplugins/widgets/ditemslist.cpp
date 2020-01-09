@@ -73,20 +73,20 @@ class Q_DECL_HIDDEN DItemsListViewItem::Private
 public:
 
     explicit Private()
+      : rating(-1),
+        view(nullptr),
+        state(Waiting),
+        hasThumb(false)
     {
-        rating   = -1;
-        view     = nullptr;
-        state    = Waiting;
-        hasThumb = false;
     }
 
-    bool             hasThumb;       // True if thumbnails is a real photo thumbs
+    bool             hasThumb;       ///< True if thumbnails is a real photo thumbs
 
-    int              rating;         // Image Rating from host.
-    QString          comments;       // Image comments from host.
-    QStringList      tags;           // List of keywords from host.
-    QUrl             url;            // Image url provided by host.
-    QPixmap          thumb;          // Image thumbnail.
+    int              rating;         ///< Image Rating from host.
+    QString          comments;       ///< Image comments from host.
+    QStringList      tags;           ///< List of keywords from host.
+    QUrl             url;            ///< Image url provided by host.
+    QPixmap          thumb;          ///< Image thumbnail.
     DItemsListView*  view;
     State            state;
 };
@@ -174,7 +174,9 @@ int DItemsListViewItem::rating() const
 void DItemsListViewItem::setPixmap(const QPixmap& pix)
 {
     QIcon icon = QIcon(pix);
-    //  We make sure the preview icon stays the same regardless of the role
+
+    // We make sure the preview icon stays the same regardless of the role.
+
     icon.addPixmap(pix, QIcon::Selected, QIcon::On);
     icon.addPixmap(pix, QIcon::Selected, QIcon::Off);
     icon.addPixmap(pix, QIcon::Active,   QIcon::On);
@@ -201,7 +203,8 @@ void DItemsListViewItem::setThumb(const QPixmap& pix, bool hasThumb)
     QPixmap pixmap(iconSize + 2, iconSize + 2);
     pixmap.fill(Qt::transparent);
     QPainter p(&pixmap);
-    p.drawPixmap((pixmap.width() / 2) - (pix.width() / 2), (pixmap.height() / 2) - (pix.height() / 2), pix);
+    p.drawPixmap((pixmap.width()  / 2) - (pix.width()  / 2),
+                 (pixmap.height() / 2) - (pix.height() / 2), pix);
     d->thumb     = pixmap;
     setPixmap(d->thumb);
 
@@ -215,14 +218,17 @@ void DItemsListViewItem::setProgressAnimation(const QPixmap& pix)
     mask.fill(QColor(128, 128, 128, 192));
     QPainter p(&overlay);
     p.drawPixmap(0, 0, mask);
-    p.drawPixmap((overlay.width() / 2) - (pix.width() / 2), (overlay.height() / 2) - (pix.height() / 2), pix);
+    p.drawPixmap((overlay.width()  / 2) - (pix.width()  / 2),
+                 (overlay.height() / 2) - (pix.height() / 2), pix);
     setPixmap(overlay);
 }
 
 void DItemsListViewItem::setProcessedIcon(const QIcon& icon)
 {
     setIcon(DItemsListView::Filename, icon);
-    // reset thumbnail back to no animation pix
+
+    // reset thumbnail back to no animation pix.
+
     setPixmap(d->thumb);
 }
 
@@ -381,7 +387,7 @@ DItemsListViewItem* DItemsListView::findItem(const QUrl& url)
     {
         DItemsListViewItem* const lvItem = dynamic_cast<DItemsListViewItem*>(*it);
 
-        if (lvItem && lvItem->url() == url)
+        if (lvItem && (lvItem->url() == url))
         {
             return lvItem;
         }
@@ -468,24 +474,24 @@ class Q_DECL_HIDDEN DItemsList::Private
 public:
 
     explicit Private()
+      : listView(nullptr),
+        addButton(nullptr),
+        removeButton(nullptr),
+        moveUpButton(nullptr),
+        moveDownButton(nullptr),
+        clearButton(nullptr),
+        loadButton(nullptr),
+        saveButton(nullptr),
+        iconSize(DEFAULTSIZE),
+        allowRAW(true),
+        controlButtonsEnabled(true),
+        allowDuplicate(false),
+        progressCount(0),
+        progressTimer(nullptr),
+        iface(nullptr)
     {
-        listView               = nullptr;
-        addButton              = nullptr;
-        removeButton           = nullptr;
-        moveUpButton           = nullptr;
-        moveDownButton         = nullptr;
-        clearButton            = nullptr;
-        loadButton             = nullptr;
-        saveButton             = nullptr;
-        iconSize               = DEFAULTSIZE;
-        allowRAW               = true;
-        controlButtonsEnabled  = true;
-        allowDuplicate         = false;
-        progressCount          = 0;
-        progressTimer          = nullptr;
-        progressPix            = DWorkingPixmap();
-        thumbLoadThread        = ThumbnailLoadThread::defaultThread();
-        iface                  = nullptr;
+        progressPix     = DWorkingPixmap();
+        thumbLoadThread = ThumbnailLoadThread::defaultThread();
     }
 
     bool                       allowRAW;
@@ -813,7 +819,7 @@ void DItemsList::slotAddImages(const QList<QUrl>& list)
     QList<QUrl> urls;
     bool raw = false;
 
-    for (QList<QUrl>::ConstIterator it = list.constBegin(); it != list.constEnd(); ++it)
+    for (QList<QUrl>::ConstIterator it = list.constBegin() ; it != list.constEnd() ; ++it)
     {
         QUrl imageUrl = *it;
 
@@ -826,7 +832,7 @@ void DItemsList::slotAddImages(const QList<QUrl>& list)
         {
             DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(*iter);
 
-            if (item && item->url() == imageUrl)
+            if (item && (item->url() == imageUrl))
             {
                 found = true;
             }
@@ -876,8 +882,8 @@ void DItemsList::slotRemoveItems()
     QList<QTreeWidgetItem*> selectedItemsList = d->listView->selectedItems();
     QList<int> itemsIndex;
 
-    for (QList<QTreeWidgetItem*>::const_iterator it = selectedItemsList.constBegin();
-         it != selectedItemsList.constEnd(); ++it)
+    for (QList<QTreeWidgetItem*>::const_iterator it = selectedItemsList.constBegin() ;
+         it != selectedItemsList.constEnd() ; ++it)
     {
         DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(*it);
 
@@ -1119,7 +1125,7 @@ void DItemsList::removeItemByUrl(const QUrl& url)
         {
             DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(*it);
 
-            if (item && item->url() == url)
+            if (item && (item->url() == url))
             {
                 itemsIndex.append(d->listView->indexFromItem(item).row());
 
@@ -1174,7 +1180,9 @@ void DItemsList::slotProgressTimerDone()
             DItemsListViewItem* const item = listView()->findItem(url);
 
             if (item)
+            {
                 item->setProgressAnimation(d->progressPix.frameAt(d->progressCount));
+            }
         }
 
         d->progressCount++;
@@ -1282,7 +1290,7 @@ void DItemsList::slotThumbnail(const LoadingDescription& desc, const QPixmap& pi
     {
         DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(*it);
 
-        if (item && item->url() == QUrl::fromLocalFile(desc.filePath))
+        if (item && (item->url() == QUrl::fromLocalFile(desc.filePath)))
         {
             if (!pix.isNull())
             {

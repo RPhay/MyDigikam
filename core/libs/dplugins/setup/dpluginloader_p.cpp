@@ -109,8 +109,6 @@ QFileInfoList DPluginLoader::Private::pluginEntriesList() const
     return allFiles;
 }
 
-/** Append object to the given plugins list.
- */
 bool DPluginLoader::Private::appendPlugin(QObject* const obj,
                                           QPluginLoader* const loader)
 {

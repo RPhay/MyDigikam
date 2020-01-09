@@ -43,11 +43,11 @@ class Q_DECL_HIDDEN DSaveSettingsWidget::Private
 public:
 
     explicit Private()
+      : formatLabel(nullptr),
+        grid(nullptr),
+        formatComboBox(nullptr),
+        conflictBox(nullptr)
     {
-        formatLabel    = nullptr;
-        formatComboBox = nullptr;
-        conflictBox    = nullptr;
-        grid           = nullptr;
     }
 
     QLabel*              formatLabel;
@@ -174,17 +174,20 @@ QString DSaveSettingsWidget::typeMime() const
 {
     QString mime;
 
-    switch(fileFormat())
+    switch (fileFormat())
     {
         case OUTPUT_JPEG:
             mime = QLatin1String("image/jpeg");
             break;
+
         case OUTPUT_TIFF:
             mime = QLatin1String("image/tiff");
             break;
+
         case OUTPUT_PPM:
             mime = QLatin1String("image/ppm");
             break;
+
         case OUTPUT_PNG:
             mime = QLatin1String("image/png");
             break;
@@ -197,17 +200,20 @@ QString DSaveSettingsWidget::extensionForFormat(DSaveSettingsWidget::OutputForma
 {
     QString ext;
 
-    switch(format)
+    switch (format)
     {
         case OUTPUT_JPEG:
             ext = QLatin1String(".jpg");
             break;
+
         case OUTPUT_TIFF:
             ext = QLatin1String(".tif");
             break;
+
         case OUTPUT_PPM:
             ext = QLatin1String(".ppm");
             break;
+
         case OUTPUT_PNG:
             ext = QLatin1String(".png");
             break;

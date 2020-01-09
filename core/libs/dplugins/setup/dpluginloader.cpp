@@ -130,6 +130,7 @@ QList<DPluginAction*> DPluginLoader::pluginsActions(DPluginAction::ActionType ty
     }
 
     std::sort(list.begin(), list.end(), DPluginAction::pluginActionLessThan);
+
     return list;
 }
 

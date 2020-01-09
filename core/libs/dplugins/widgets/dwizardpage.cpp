@@ -41,14 +41,14 @@ class Q_DECL_HIDDEN DWizardPage::Private
 public:
 
     explicit Private()
+      : isComplete(true),
+        id(-1),
+        leftView(nullptr),
+        logo(nullptr),
+        leftBottomPix(nullptr),
+        hlay(nullptr),
+        dlg(nullptr)
     {
-        hlay          = nullptr;
-        logo          = nullptr;
-        leftBottomPix = nullptr;
-        leftView      = nullptr;
-        isComplete    = true;
-        id            = -1;
-        dlg           = nullptr;
     }
 
     bool         isComplete;

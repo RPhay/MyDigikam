@@ -222,7 +222,7 @@ WSSettingsWidget::WSSettingsWidget(QWidget* const parent,
     d->reloadAlbumsBtn->setIcon(QIcon::fromTheme(QLatin1String("view-refresh")).pixmap(16));
     d->reloadAlbumsBtn->setToolTip(i18n("Reload album list"));
 
-    d->albumsBoxLayout->addWidget(albLbl,               0, 0, 1, 1);
+    d->albumsBoxLayout->addWidget(albLbl,             0, 0, 1, 1);
     d->albumsBoxLayout->addWidget(d->albumsCoB,       0, 1, 1, 4);
     d->albumsBoxLayout->addWidget(d->newAlbumBtn,     1, 3, 1, 1);
     d->albumsBoxLayout->addWidget(d->reloadAlbumsBtn, 1, 4, 1, 1);
@@ -357,7 +357,8 @@ void WSSettingsWidget::addWidgetToSettingsBox(QWidget* const widget)
 
     // NOTE: This is important because progress bar always has to be at the end of settings box layout.
     // So we remove it and then add it back.
-    d->settingsBoxLayout->removeWidget(d->progressBar); 
+
+    d->settingsBoxLayout->removeWidget(d->progressBar);
 
     d->settingsBoxLayout->addWidget(d->progressBar);
 }

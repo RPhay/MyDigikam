@@ -60,14 +60,14 @@ public:
 
     void setCustomSettingsWidget(QWidget* const custom);
 
-    OutputFormat fileFormat() const;
+    OutputFormat fileFormat()                           const;
     void setFileFormat(OutputFormat f);
 
-    FileSaveConflictBox::ConflictRule conflictRule() const;
+    FileSaveConflictBox::ConflictRule conflictRule()    const;
     void setConflictRule(FileSaveConflictBox::ConflictRule r);
 
-    QString extension() const;
-    QString typeMime()  const;
+    QString extension()                                 const;
+    QString typeMime()                                  const;
 
     void resetToDefault();
 

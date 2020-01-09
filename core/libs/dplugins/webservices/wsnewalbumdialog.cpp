@@ -46,13 +46,14 @@ class Q_DECL_HIDDEN WSNewAlbumDialog::Private
 public:
 
     explicit Private(QWidget* const widget, const QString& name)
+      : toolName(name),
+        mainWidget(widget)
     {
         titleEdt       = new QLineEdit;
         descEdt        = new QTextEdit;
         locEdt         = new QLineEdit;
         dtEdt          = new QDateTimeEdit(QDateTime::currentDateTime());
 
-        mainWidget     = widget;
         mainLayout     = new QVBoxLayout(mainWidget);
 
         albumBox       = new QGroupBox(i18n("Album"), mainWidget);
@@ -64,8 +65,6 @@ public:
         locLabel       = new QLabel(i18n("Location: "), albumBox);
 
         buttonBox      = new QDialogButtonBox();
-
-        toolName       = name;
     }
 
     QLineEdit*         titleEdt;
@@ -150,9 +149,13 @@ WSNewAlbumDialog::~WSNewAlbumDialog()
 void WSNewAlbumDialog::slotTextChanged(const QString& /*text*/)
 {
     if (QString::compare(getTitleEdit()->text(), QLatin1String(""), Qt::CaseInsensitive) == 0)
+    {
         d->buttonBox->button( QDialogButtonBox::Ok )->setEnabled(false);
+    }
     else
+    {
         d->buttonBox->button( QDialogButtonBox::Ok )->setEnabled(true);
+    }
 }
 
 void WSNewAlbumDialog::hideDateTime()

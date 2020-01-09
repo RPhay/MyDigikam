@@ -94,6 +94,7 @@ void WSToolDialog::setMainWidget(QWidget* const widget)
     if (d->mainWidget)
     {
         // Replace existing widget
+
         layout()->removeWidget(d->mainWidget);
         delete d->mainWidget;
     }

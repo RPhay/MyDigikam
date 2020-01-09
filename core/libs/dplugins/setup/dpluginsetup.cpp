@@ -139,7 +139,10 @@ void DPluginSetup::applySettings()
 
 void DPluginSetup::slotAboutPlugin(QTreeWidgetItem* item, int col)
 {
-    if (!item || col == 0) return;
+    if (!item || (col == 0))
+    {
+        return;
+    }
 
     QPointer<DPluginAboutDlg> dlg = new DPluginAboutDlg(d->pluginsList->plugin(item));
     dlg->exec();
@@ -164,16 +167,24 @@ void DPluginSetup::updateInfo()
         int cnt = d->pluginsList->count();
 
         if (cnt > 0)
+        {
             d->pluginsNumber->setText(i18np("1 plugin installed", "%1 plugins installed", cnt));
+        }
         else
+        {
             d->pluginsNumber->setText(i18n("No plugin installed"));
+        }
 
         int act = d->pluginsList->actived();
 
         if (act > 0)
+        {
             d->pluginsNumberActivated->setText(i18ncp("%1: number of plugins activated", "(%1 activated)", "(%1 activated)", act));
+        }
         else
+        {
             d->pluginsNumberActivated->setText(QString());
+        }
     }
     else
     {
@@ -181,9 +192,13 @@ void DPluginSetup::updateInfo()
         int cnt = d->pluginsList->itemsVisible();
 
         if (cnt > 0)
+        {
             d->pluginsNumber->setText(i18np("1 plugin found", "%1 plugins found", cnt));
+        }
         else
+        {
             d->pluginsNumber->setText(i18n("No plugin found"));
+        }
 
         d->pluginsNumberActivated->setText(QString());
     }

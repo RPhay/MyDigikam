@@ -55,11 +55,11 @@ public:
     void setShowLeftView(bool v);
 
     void setComplete(bool b);
-    bool isComplete() const override;
+    bool isComplete()       const override;
 
-    int  id() const;
+    int  id()               const;
 
-    QWizard* assistant() const;
+    QWizard* assistant()    const;
 
 private:
 

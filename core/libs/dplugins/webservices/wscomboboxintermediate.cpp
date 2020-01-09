@@ -55,6 +55,7 @@ WSComboBoxIntermediate::WSComboBoxIntermediate(QWidget* const parent, const QStr
 
     // Whenever the signal changes, there's a chance that the combobox should
     // be changed from intermediate to normal.
+
     connect(this, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotIndexChanged(int)));
 }
@@ -70,11 +71,13 @@ void WSComboBoxIntermediate::setIntermediate(bool state)
     {
         // If the combobox should be set to intermediate and is not yet done so,
         // append a separator and the intermediate text.
+
         insertSeparator(count());
         addItem(d->intermediateText, QVariant(-1));
 
         // Set the combobox to the intermediate index, while avoiding that it is
         // directly unset by the currentIndexChanged signal.
+
         blockSignals(true);
         setCurrentIndex(count() - 1);
         blockSignals(false);
@@ -85,6 +88,7 @@ void WSComboBoxIntermediate::setIntermediate(bool state)
     {
         // If the intermediate state should be removed, simply remove the latest
         // two items, the intermediate text and the separator.
+
         removeItem(count() - 1);
         removeItem(count() - 1);
         d->isIntermediate = false;

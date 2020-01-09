@@ -41,15 +41,16 @@ class Q_DECL_HIDDEN ComboBoxDelegate::Private
 public:
 
     explicit Private()
+      : parent(nullptr),
+        rowEdited(-1)
     {
-        parent    = nullptr;
-        rowEdited = -1;
     }
 
     DItemsList*       parent;
     QMap<int, QString> items;
 
-    /* The row in the view that is currently being edited. Should be -1 to
+    /*
+     * The row in the view that is currently being edited. Should be -1 to
      * indicate that no row is edited.
      */
     int                rowEdited;
@@ -66,8 +67,9 @@ ComboBoxDelegate::ComboBoxDelegate(DItemsList* const parent, const QMap<int, QSt
 
     // Figure out the maximum width of a displayed item from the items list and
     // save it in the d->size parameter.
+
     QFontMetrics listFont = parent->fontMetrics();
-    d->size                = QSize(0, listFont.height());
+    d->size               = QSize(0, listFont.height());
     int tmpWidth          = 0;
     QMapIterator<int, QString> i(d->items);
 
@@ -99,6 +101,7 @@ void ComboBoxDelegate::startEditing(QTreeWidgetItem* item, int column)
     // doesn't get painted whenever a combobox is drawn (otherwise the text can
     // be seen around the edges of the combobox. This method breaks the OO
     // paradigm.
+
     d->rowEdited = d->parent->listView()->currentIndex().row();
     item->setFlags(item->flags() | Qt::ItemIsEditable);
     d->parent->listView()->editItem(item, column);
@@ -110,6 +113,7 @@ void ComboBoxDelegate::paint(QPainter* painter,
                              const QModelIndex& index) const
 {
     // Draw a panel item primitive element as background.
+
     QStyle* const style = QApplication::style();
     style->drawPrimitive(QStyle::PE_PanelItemViewItem, &option, painter);
 
@@ -119,13 +123,16 @@ void ComboBoxDelegate::paint(QPainter* painter,
     // to work around the fact that there's no reliable way to detect if an item
     // is being edited from the parameters (although the documentation suggests
     // QStyle::State_Editing should be set in the option.flags parameter).
+
     if (d->rowEdited != index.row())
     {
         // Get the currently selected index in the items list.
+
         int currIndex = (index.data()).value<int>();
 
         // PE: These values are found by trial and error. I don't have any idea
         // if it's actually correct, but it seems to work across all themes.
+
         QPalette::ColorRole textColor = QPalette::Text;
 
         if (option.state & QStyle::State_Selected)
@@ -134,6 +141,7 @@ void ComboBoxDelegate::paint(QPainter* painter,
         }
 
         // Draw the text.
+
         style->drawItemText(painter, option.rect, option.displayAlignment,
                             option.palette, true, d->items[currIndex],
                             textColor);
@@ -143,6 +151,7 @@ void ComboBoxDelegate::paint(QPainter* painter,
 QSize ComboBoxDelegate::sizeHint(const QStyleOptionViewItem&, const QModelIndex&) const
 {
     // Return the size based on the widest item in the items list.
+
     return d->size;
 }
 
@@ -153,6 +162,7 @@ QWidget* ComboBoxDelegate::createEditor(QWidget* parent,
     // This method returns the widget that should be used to edit the current
     // element, which is in this case a QComboBox with the items supplied by
     // the user items list on construction.
+
     QComboBox* const cb = new QComboBox(parent);
     QMapIterator<int, QString> i(d->items);
 
@@ -163,15 +173,18 @@ QWidget* ComboBoxDelegate::createEditor(QWidget* parent,
     }
 
     // Set the geometry
+
     cb->setGeometry(option.rect);
 
     // If the index is changed, the editing should be finished and the editor
     // destroyed.
+
     connect(cb, SIGNAL(activated(int)),
             this, SLOT(slotCommitAndCloseEditor(int)));
 
     // To keep track of the item being edited, the d->rowEdited parameter should
     // be reset when the editor is destroyed.
+
     connect(cb, SIGNAL(destroyed(QObject*)),
             this, SLOT(slotResetEditedState(QObject*)));
 
@@ -181,9 +194,10 @@ QWidget* ComboBoxDelegate::createEditor(QWidget* parent,
 void ComboBoxDelegate::setEditorData(QWidget* editor, const QModelIndex& index) const
 {
     // Scroll the combobox to the current selected state on initialization.
+
     QComboBox* const cb = qobject_cast<QComboBox*>(editor);
 
-    for (int i = 0; i < cb->count(); ++i)
+    for (int i = 0 ; i < cb->count() ; ++i)
     {
         if (cb->itemData(i).toInt() == index.data().toInt())
         {
@@ -197,6 +211,7 @@ void ComboBoxDelegate::setModelData(QWidget* editor,
                                     const QModelIndex& index) const
 {
     // Write the data to the model when finishing has completed.
+
     QComboBox* const cb = qobject_cast<QComboBox*>(editor);
     int selected        = cb->itemData(cb->currentIndex()).toInt();
     model->setData(index, selected);
@@ -205,6 +220,7 @@ void ComboBoxDelegate::setModelData(QWidget* editor,
 void ComboBoxDelegate::slotCommitAndCloseEditor(int)
 {
     // Emit the proper signals when editing has finished.
+
     QComboBox* const editor = qobject_cast<QComboBox*>(sender());
     emit commitData(editor);
     emit closeEditor(editor);

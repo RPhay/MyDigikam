@@ -54,16 +54,16 @@ class Q_DECL_HIDDEN DPreviewManager::Private
 public:
 
     explicit Private()
+      : busy(false),
+        textLabel(nullptr),
+        thumbLabel(nullptr),
+        button(nullptr),
+        progressCount(0),
+        progressPix(DWorkingPixmap()),
+        progressTimer(nullptr),
+        progressLabel(nullptr),
+        preview(nullptr)
     {
-        progressPix   = DWorkingPixmap();
-        progressCount = 0;
-        progressTimer = nullptr;
-        progressLabel = nullptr;
-        thumbLabel    = nullptr;
-        busy          = false;
-        textLabel     = nullptr;
-        preview       = nullptr;
-        button        = nullptr;
     }
 
     bool           busy;
@@ -261,7 +261,9 @@ void DPreviewManager::slotProgressTimerDone()
     d->progressCount++;
 
     if (d->progressCount == 8)
+    {
         d->progressCount = 0;
+    }
 
     d->progressTimer->start(300);
 }

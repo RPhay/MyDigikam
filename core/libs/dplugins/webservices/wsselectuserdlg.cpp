@@ -46,10 +46,10 @@ class Q_DECL_HIDDEN WSSelectUserDlg::Private
 public:
 
     explicit Private()
+      : userComboBox(nullptr),
+        label(nullptr),
+        okButton(nullptr)
     {
-        userComboBox = nullptr;
-        label        = nullptr;
-        okButton     = nullptr;
     }
 
     QComboBox*   userComboBox;
@@ -130,12 +130,16 @@ void WSSelectUserDlg::reactivate()
     foreach (const QString& group, config.groupList())
     {
         if (!(group.contains(d->serviceName)))
+        {
             continue;
+        }
 
         KConfigGroup grp = config.group(group);
 
         if (QString::compare(grp.readEntry(QLatin1String("username")), QString(), Qt::CaseInsensitive) == 0)
+        {
             continue;
+        }
 
         d->userComboBox->addItem(grp.readEntry(QLatin1String("username")));
     }

@@ -62,15 +62,15 @@ class Q_DECL_HIDDEN DSelectionItem::Private
 public:
 
     explicit Private()
+      : maxX(0.0),
+        maxY(0.0),
+        hasMaxX(false),
+        hasMaxY(false),
+        hasMax(false),
+        invZoom(1.0),
+        selMargin(0.0),
+        showAnchors(true)
     {
-        selMargin   = 0.0;
-        invZoom     = 1.0;
-        maxX        = 0.0;
-        maxY        = 0.0;
-        showAnchors = true;
-        hasMaxX     = false;
-        hasMaxY     = false;
-        hasMax      = false;
     }
 
     QPen        penDark;
@@ -169,10 +169,14 @@ DSelectionItem::Intersects DSelectionItem::intersects(QPointF& point)
     if (point.x() < (d->rect.left() + d->selMargin))
     {
         if (point.y() < (d->rect.top()    + d->selMargin))
+        {
             return TopLeft;
+        }
 
         if (point.y() > (d->rect.bottom() - d->selMargin))
+        {
             return BottomLeft;
+        }
 
         return Left;
     }
@@ -180,10 +184,14 @@ DSelectionItem::Intersects DSelectionItem::intersects(QPointF& point)
     if (point.x() > (d->rect.right() - d->selMargin))
     {
         if (point.y() < (d->rect.top()    + d->selMargin))
+        {
             return TopRight;
+        }
 
         if (point.y() > (d->rect.bottom() - d->selMargin))
+        {
             return BottomRight;
+        }
 
         return Right;
     }
@@ -378,13 +386,13 @@ void DSelectionItem::updateAnchors()
         if (horizontalCondition)
         {
             // Only the left & right lines & middle line plus two corners are drawn
-            d->anchorTop    = QLineF(d->rect.topLeft() + QPointF(0.0, d->rect.height() / 2.0),
-                                     d->rect.topRight() + QPointF(0.0, d->rect.height() / 2.0));
-            d->anchorBottom = QLineF();
-            d->anchorLeft   = QLineF(d->rect.topLeft() + moveRight,
-                                     d->rect.bottomLeft() + moveRight);
-            d->anchorRight  = QLineF(d->rect.topRight() - moveRight,
-                                     d->rect.bottomRight() - moveRight);
+            d->anchorTop            = QLineF(d->rect.topLeft() + QPointF(0.0, d->rect.height() / 2.0),
+                                             d->rect.topRight() + QPointF(0.0, d->rect.height() / 2.0));
+            d->anchorBottom         = QLineF();
+            d->anchorLeft           = QLineF(d->rect.topLeft() + moveRight,
+                                             d->rect.bottomLeft() + moveRight);
+            d->anchorRight          = QLineF(d->rect.topRight() - moveRight,
+                                             d->rect.bottomRight() - moveRight);
 
             d->anchorTopLeft        = QRectF(d->rect.topLeft(),
                                              d->rect.bottomLeft() + moveRight);
@@ -395,10 +403,10 @@ void DSelectionItem::updateAnchors()
         }
         else
         {
-            d->anchorTop    = QLineF();
-            d->anchorBottom = QLineF();
-            d->anchorLeft   = QLineF();
-            d->anchorRight  = QLineF();
+            d->anchorTop            = QLineF();
+            d->anchorBottom         = QLineF();
+            d->anchorLeft           = QLineF();
+            d->anchorRight          = QLineF();
 
             d->anchorTopLeft        = QRectF();
             d->anchorTopRight       = QRectF();
@@ -639,7 +647,9 @@ void DPreviewImage::slotZoom2Fit()
 void DPreviewImage::slotSetTLX(float ratio)
 {
     if (!d->selection->isVisible())
+    {
         return; // only correct the selection if it is visible
+    }
 
     QRectF rect = d->selection->rect();
     rect.setLeft(ratio * d->scene->width());
@@ -650,7 +660,9 @@ void DPreviewImage::slotSetTLX(float ratio)
 void DPreviewImage::slotSetTLY(float ratio)
 {
     if (!d->selection->isVisible())
+    {
         return; // only correct the selection if it is visible
+    }
 
     QRectF rect = d->selection->rect();
     rect.setTop(ratio * d->scene->height());
@@ -661,7 +673,9 @@ void DPreviewImage::slotSetTLY(float ratio)
 void DPreviewImage::slotSetBRX(float ratio)
 {
     if (!d->selection->isVisible())
+    {
         return; // only correct the selection if it is visible
+    }
 
     QRectF rect = d->selection->rect();
     rect.setRight(ratio * d->scene->width());
@@ -672,7 +686,9 @@ void DPreviewImage::slotSetBRX(float ratio)
 void DPreviewImage::slotSetBRY(float ratio)
 {
     if (!d->selection->isVisible())
+    {
         return; // only correct the selection if it is visible
+    }
 
     QRectF rect = d->selection->rect();
     rect.setBottom(ratio * d->scene->height());
@@ -1091,30 +1107,39 @@ void DPreviewImage::mouseMoveEvent(QMouseEvent* e)
             case DSelectionItem::None:
                 setCursor(Qt::CrossCursor);
                 break;
+
             case DSelectionItem::Top:
                 setCursor(Qt::SizeVerCursor);
                 break;
+
             case DSelectionItem::TopRight:
                 setCursor(Qt::SizeBDiagCursor);
                 break;
+
             case DSelectionItem::Right:
                 setCursor(Qt::SizeHorCursor);
                 break;
+
             case DSelectionItem::BottomRight:
                 setCursor(Qt::SizeFDiagCursor);
                 break;
+
             case DSelectionItem::Bottom:
                 setCursor(Qt::SizeVerCursor);
                 break;
+
             case DSelectionItem::BottomLeft:
                 setCursor(Qt::SizeBDiagCursor);
                 break;
+
             case DSelectionItem::Left:
                 setCursor(Qt::SizeHorCursor);
                 break;
+
             case DSelectionItem::TopLeft:
                 setCursor(Qt::SizeFDiagCursor);
                 break;
+
             case DSelectionItem::Move:
                 setCursor(Qt::SizeAllCursor);
                 break;
@@ -1145,27 +1170,39 @@ bool DPreviewImage::eventFilter(QObject* obj, QEvent* ev)
     if (obj == d->toolBar)
     {
         if (ev->type() == QEvent::Enter)
+        {
             setCursor(Qt::ArrowCursor);
+        }
         else if (ev->type() == QEvent::Leave)
+        {
             unsetCursor();
+        }
 
         return false;
     }
     else if (obj == verticalScrollBar() && verticalScrollBar()->isVisible())
     {
         if (ev->type() == QEvent::Enter)
+        {
             setCursor(Qt::ArrowCursor);
+        }
         else if (ev->type() == QEvent::Leave)
+        {
             unsetCursor();
+        }
 
         return false;
     }
     else if (obj == horizontalScrollBar() && horizontalScrollBar()->isVisible())
     {
         if (ev->type() == QEvent::Enter)
+        {
             setCursor(Qt::ArrowCursor);
+        }
         else if (ev->type() == QEvent::Leave)
+        {
             unsetCursor();
+        }
 
         return false;
     }

@@ -78,14 +78,16 @@ public:
     void saveZoom(qreal zoom);
 
     void    setRect(const QRectF& rect);
-    QRectF  rect()                     const;
-    QPointF fixTranslation(QPointF dp) const;
+    QRectF  rect()                                      const;
+    QPointF fixTranslation(QPointF dp)                  const;
 
 public:
 
     // Graphics Item methods
-    QRectF boundingRect() const override;
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
+    QRectF boundingRect() const                               override;
+    void paint(QPainter* painter,
+               const QStyleOptionGraphicsItem* option,
+               QWidget* widget)                               override;
 
 private:
 
@@ -110,8 +112,8 @@ public:
 
 public:
 
-    bool load(const QUrl& file)      const;
-    bool setImage(const QImage& img) const;
+    bool load(const QUrl& file)         const;
+    bool setImage(const QImage& img)    const;
     void enableSelectionArea(bool b);
 
     /**
@@ -120,7 +122,7 @@ public:
      * @param rectangle This rectangle should have height and width of 1.0
      */
     void   setSelectionArea(const QRectF& rectangle);
-    QRectF getSelectionArea() const;
+    QRectF getSelectionArea()           const;
 
 public Q_SLOTS:
 
