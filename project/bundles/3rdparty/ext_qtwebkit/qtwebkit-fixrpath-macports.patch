@@ -1,0 +1,13 @@
+diff --git a/Source/cmake/OptionsQt.cmake b/Source/cmake/OptionsQt.cmake
+index 13419a20ab5..7159205105e 100644
+--- a/Source/cmake/OptionsQt.cmake
++++ b/Source/cmake/OptionsQt.cmake
+@@ -147,7 +147,7 @@ macro(QTWEBKIT_GENERATE_MOC_FILES_H _target)
+     endforeach ()
+ endmacro()
+ 
+-set(CMAKE_MACOSX_RPATH ON)
++#set(CMAKE_MACOSX_RPATH ON)
+ 
+ add_definitions(-DBUILDING_QT__=1)
+ add_definitions(-DQT_NO_EXCEPTIONS)
