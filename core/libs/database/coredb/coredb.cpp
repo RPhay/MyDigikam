@@ -3380,11 +3380,30 @@ QList<qlonglong> CoreDB::getImagesWithImageTagProperty(int tagId, const QString&
 {
     QList<QVariant> values;
     QList<qlonglong> imageIds;
+
     d->db->execSql(QString::fromUtf8("SELECT DISTINCT Images.id FROM ImageTagProperties "
                                      "LEFT JOIN Images ON Images.id=ImageTagProperties.imageid "
                                      " WHERE ImageTagProperties.property=? AND Images.status=1 "
                                      " AND ImageTagProperties.tagid=?;"),
                    property, tagId, &values);
+
+    for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; ++it)
+    {
+        imageIds.append((*it).toInt());
+    }
+
+    return imageIds;
+}
+
+QList<qlonglong> CoreDB::getImagesWithProperty(const QString& property) const
+{
+    QList<QVariant> values;
+    QList<qlonglong> imageIds;
+
+    d->db->execSql(QString::fromUtf8("SELECT DISTINCT Images.id FROM ImageTagProperties "
+                                     "LEFT JOIN Images ON Images.id=ImageTagProperties.imageid "
+                                     " WHERE ImageTagProperties.property=? AND Images.status=1;"),
+                   property, &values);
 
     for (QList<QVariant>::const_iterator it = values.constBegin() ; it != values.constEnd() ; ++it)
     {

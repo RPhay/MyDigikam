@@ -1269,6 +1269,11 @@ public:
     QList<qlonglong> getImagesWithImageTagProperty(int tagId, const QString& property) const;
 
     /**
+     * Returns all image ids that are associated to the given property.
+     */
+    QList<qlonglong> getImagesWithProperty(const QString& property) const;
+
+    /**
      * Returns a QMap<QString,int> of ItemInformation.format
      * -> count of items with that format.
      */
