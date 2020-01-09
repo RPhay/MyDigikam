@@ -61,8 +61,9 @@ void FaceScanWidget::doLoadState()
     {
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
         d->detectAndRecognizeButton->setChecked(true);
-#endif
+#else
         d->detectButton->setChecked(true);
+#endif
     }
     else
     {
@@ -75,7 +76,11 @@ void FaceScanWidget::doLoadState()
 
     if (skipHandling == QLatin1String("Rescan"))
     {
+#ifdef ENABLE_DETECT_AND_RECOGNIZE
         handling = FaceScanSettings::Rescan;
+#else
+        handling = FaceScanSettings::Skip;
+#endif
     }
     else if (skipHandling == QLatin1String("Merge"))
     {
@@ -160,7 +165,11 @@ void FaceScanWidget::setupUi()
     d->alreadyScannedBox              = new SqueezedComboBox;
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Skip images already scanned"),          FaceScanSettings::Skip);
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan again and merge results"),         FaceScanSettings::Merge);
+
+#ifdef ENABLE_DETECT_AND_RECOGNIZE
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"), FaceScanSettings::Rescan);
+#endif
+
     d->alreadyScannedBox->setCurrentIndex(FaceScanSettings::Skip);
 
     d->detectButton                   = new QRadioButton(i18nc("@option:radio", "Detect faces"));
