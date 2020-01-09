@@ -547,4 +547,5 @@ BUGFIXES:
 532 ==> 414016 - Log file /var/log/syslog grows in size very fast.
 533 ==> 414028 - digiKam spamming journal with details of almost everything it does...
 534 ==> 415882 - digiKam 6.4 crashes on processing a large number of new HEIC/HEIF files.
-535 ==> 
+535 ==> 414115 - G'mic plugin not available on Mac.
+536 ==> 
