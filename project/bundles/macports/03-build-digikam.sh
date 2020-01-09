@@ -170,6 +170,8 @@ cmake $ORIG_WD/../3rdparty \
 
 cmake --build . --config RelWithDebInfo --target ext_gmic_qt -- -j$CPU_CORES
 
+mv -f $INSTALL_PREFIX/libexec/qt5/plugins/digikam/editor/*.so $INSTALL_PREFIX/lib/plugins/digikam/editor/
+
 #################################################################################################
 
 export PATH=$ORIG_PATH
