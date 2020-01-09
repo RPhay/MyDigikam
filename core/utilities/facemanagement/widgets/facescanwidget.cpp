@@ -272,11 +272,13 @@ void FaceScanWidget::setupConnections()
 void FaceScanWidget::slotPrepareForDetect(bool status)
 {
     d->alreadyScannedBox->setEnabled(status);
+    d->albumSelectors->setEnabled(status);
 }
 
 void FaceScanWidget::slotPrepareForRecognize(bool /*status*/)
 {
     d->alreadyScannedBox->setEnabled(false);
+    d->albumSelectors->setEnabled(false);
 }
 
 bool FaceScanWidget::settingsConflicted() const
