@@ -236,11 +236,6 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
 
         d->infoTodoList = ItemInfoList(itemIds);
         d->useItemInfos = true;
-
-        if (d->infoTodoList.isEmpty())
-        {
-            slotCancel();
-        }
     }
     else if (!settings.albums.isEmpty())
     {
@@ -270,6 +265,11 @@ void FacesDetector::slotStart()
         qCDebug(DIGIKAM_GENERAL_LOG) << "Total is" << total;
 
         setTotalItems(total);
+
+        if (d->infoTodoList.isEmpty())
+        {
+            return slotDone();
+        }
 
         return slotItemsInfo(d->infoTodoList);
     }
