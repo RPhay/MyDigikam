@@ -53,6 +53,7 @@
 #include "facescansettings.h"
 #include "iteminfo.h"
 #include "iteminfojob.h"
+#include "facetags.h"
 
 namespace Digikam
 {
@@ -226,6 +227,20 @@ FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* con
         (settings.task == FaceScanSettings::RetrainAll))
     {
         d->albumTodoList = AlbumManager::instance()->allPAlbums();
+    }
+    else if (settings.task == FaceScanSettings::RecognizeMarkedFaces)
+    {
+        QList<qlonglong> itemIds = CoreDbAccess().db()->
+            getImagesWithImageTagProperty(FaceTags::unknownPersonTagId(),
+                                          ImageTagPropertyName::autodetectedFace());
+
+        d->infoTodoList = ItemInfoList(itemIds);
+        d->useItemInfos = true;
+
+        if (d->infoTodoList.isEmpty())
+        {
+            slotCancel();
+        }
     }
     else if (!settings.albums.isEmpty())
     {

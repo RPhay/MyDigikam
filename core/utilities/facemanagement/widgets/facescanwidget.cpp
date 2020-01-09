@@ -272,37 +272,11 @@ void FaceScanWidget::setupConnections()
 void FaceScanWidget::slotPrepareForDetect(bool status)
 {
     d->alreadyScannedBox->setEnabled(status);
-
-    // Set default for Tag tab as all unchecked
-    d->albumSelectors->resetTAlbumSelection();
 }
 
 void FaceScanWidget::slotPrepareForRecognize(bool /*status*/)
 {
-    /**
-     * TODO:
-     * reRecognizeButton always disables d->alreadyScannedBox, while it should be
-     * Find out why and fix it.
-     */
     d->alreadyScannedBox->setEnabled(false);
-
-    // First we set all tags unchecked
-    d->albumSelectors->resetTAlbumSelection();
-
-    // Set default for Tag tab so that People and its children are checked
-    AlbumList tagAlbums = AlbumManager::instance()->allTAlbums();
-    QString people      = i18nc("People on your photos", "People");
-
-    for (int i = 0 ; i < tagAlbums.size() ; ++i)
-    {
-        Album* const album = tagAlbums[i];
-
-        if ((album->title() == people) ||
-            ((album->parent() != nullptr) && (album->parent()->title() == people)))
-        {
-            d->albumSelectors->setTagSelected(album, false);
-        }
-    }
 }
 
 bool FaceScanWidget::settingsConflicted() const
@@ -341,9 +315,6 @@ FaceScanSettings FaceScanWidget::settings() const
                                       d->alreadyScannedBox->itemData(d->alreadyScannedBox->currentIndex()).toInt();
 
     settings.accuracy               = double(d->accuracyInput->value()) / 100;
-
-    // TODO: why does the original code append but not assign here???
-    // settings.albums << d->albumSelectors->selectedAlbumsAndTags();
     settings.albums                 = d->albumSelectors->selectedAlbumsAndTags();
 
     if (d->settingsConflicted)
