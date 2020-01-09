@@ -93,21 +93,21 @@ class Q_DECL_HIDDEN FacesDetector::Private
 {
 public:
 
-    explicit Private() :
-        benchmark(false),
-        source(FacesDetector::Albums)
+    explicit Private()
+      : source(FacesDetector::Albums),
+        benchmark(false)
     {
     }
 
-    bool                 benchmark;
-    InputSource          source;
+    FacesDetector::InputSource source;
+    bool                       benchmark;
 
-    AlbumPointerList<>   albumTodoList;
-    ItemInfoList         infoTodoList;
-    QList<qlonglong>     idsTodoList;
+    AlbumPointerList<>         albumTodoList;
+    ItemInfoList               infoTodoList;
+    QList<qlonglong>           idsTodoList;
 
-    ItemInfoJob          albumListing;
-    FacePipeline         pipeline;
+    ItemInfoJob                albumListing;
+    FacePipeline               pipeline;
 };
 
 FacesDetector::FacesDetector(const FaceScanSettings& settings, ProgressItem* const parent)
