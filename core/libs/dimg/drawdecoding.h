@@ -49,31 +49,38 @@ class DIGIKAM_EXPORT DRawDecoding
 
 public:
 
-    /** Standard constructor with default settings
+    /**
+     * Standard constructor with default settings
      */
     DRawDecoding();
 
-    /** Copy constructor. Creates a copy of a DRawDecoderSettings object.
+    /**
+     * Copy constructor. Creates a copy of a DRawDecoderSettings object.
      */
     explicit DRawDecoding(const DRawDecoderSettings& prm);
 
-    /** Standard destructor
+    /**
+     * Standard destructor
      */
     virtual ~DRawDecoding();
 
-    /** Method to use a settings to optimize time loading, for example to compute image histogram
+    /**
+     * Method to use a settings to optimize time loading, for example to compute image histogram
      */
     void optimizeTimeLoading();
 
-    /** Method to reset to default values all Raw processing settings.
+    /**
+     * Method to reset to default values all Raw processing settings.
      */
     void resetPostProcessingSettings();
 
-    /** Method to check is a post-processing setting have been changed
+    /**
+     * Method to check is a post-processing setting have been changed
      */
     bool postProcessingSettingsIsDirty() const;
 
-    /** Equality operator.
+    /**
+     * Equality operator.
      */
     bool operator==(const DRawDecoding& other) const;
 
@@ -83,29 +90,34 @@ public:
 
     static DRawDecoding fromFilterAction(const FilterAction& action, const QString& prefix = QString());
 
-    /** Used by BQM to read/store Queue Raw decoding settings from/to configuration file
+    /**
+     * Used by BQM to read/store Queue Raw decoding settings from/to configuration file
      */
     static void decodingSettingsToXml(const DRawDecoderSettings& prm, QDomElement& elm);
     static void decodingSettingsFromXml(const QDomElement& elm, DRawDecoderSettings& prm);
 
 public:
 
-    /** All Raw decoding settings provided by RawEngine.
+    /**
+     * All Raw decoding settings provided by RawEngine.
      */
     DRawDecoderSettings rawPrm;
 
     /// Post Processing settings ----------------------------------------------------
 
-    /** BCG correction values.
-    */
+    /**
+     * BCG correction values.
+     */
     BCGContainer        bcg;
 
-    /** White Balance correction values.
-    */
+    /**
+     * White Balance correction values.
+     */
     WBContainer         wb;
 
-    /** Curve adjustments.
-    */
+    /**
+     * Curve adjustments.
+     */
     CurvesContainer     curvesAdjust;
 };
 

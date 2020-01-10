@@ -41,16 +41,14 @@ class DIGIKAM_EXPORT ExposureSettingsContainer
 public:
 
     explicit ExposureSettingsContainer()
+        : underExposureIndicator(false),
+          overExposureIndicator(false),
+          exposureIndicatorMode(true),
+          underExposurePercent(1.0),
+          overExposurePercent(1.0),
+          underExposureColor(Qt::white),
+          overExposureColor(Qt::black)
     {
-        underExposureIndicator = false;
-        overExposureIndicator  = false;
-        exposureIndicatorMode  = true;
-
-        underExposurePercent   = 1.0;
-        overExposurePercent    = 1.0;
-
-        underExposureColor     = Qt::white;
-        overExposureColor      = Qt::black;
     };
 
     virtual ~ExposureSettingsContainer()
@@ -62,10 +60,11 @@ public:
     bool   underExposureIndicator;
     bool   overExposureIndicator;
 
-    /** If this option is true, over and under exposure indicators will be displayed
-        only when pure white and pure black color matches, as all color components match
-        the condition in the same time.
-        Else indicators are turn on when one of color components match the condition.
+    /**
+     * If this option is true, over and under exposure indicators will be displayed
+     * only when pure white and pure black color matches, as all color components match
+     * the condition in the same time.
+     * Else indicators are turn on when one of color components match the condition.
      */
     bool   exposureIndicatorMode;
 

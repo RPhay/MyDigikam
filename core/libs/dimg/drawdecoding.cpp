@@ -52,7 +52,7 @@ public:
 
     inline QString combinedKey(const QString& key)
     {
-        return prefix + key;
+        return (prefix + key);
     }
 
     template <typename T>
@@ -182,7 +182,8 @@ class Q_DECL_HIDDEN DRawDecoderSettingsReader
 public:
 
     DRawDecoderSettingsReader(const FilterAction& action, const QString& prefix = QString())
-        : action(action), prefix(prefix)
+        : action(action),
+          prefix(prefix)
     {
     }
 
@@ -305,9 +306,8 @@ DRawDecoding::DRawDecoding()
 }
 
 DRawDecoding::DRawDecoding(const DRawDecoderSettings& prm)
+    : rawPrm(prm)
 {
-    rawPrm = prm;
-
     resetPostProcessingSettings();
 }
 
@@ -330,17 +330,17 @@ void DRawDecoding::resetPostProcessingSettings()
 
 bool DRawDecoding::postProcessingSettingsIsDirty() const
 {
-    return !(bcg == BCGContainer() &&
-             wb  == WBContainer()  &&
+    return !((bcg == BCGContainer()) &&
+             (wb  == WBContainer())  &&
              curvesAdjust.isEmpty());
 }
 
 bool DRawDecoding::operator==(const DRawDecoding& other) const
 {
-    return (rawPrm       == other.rawPrm       &&
-            bcg          == other.bcg          &&
-            wb           == other.wb           &&
-            curvesAdjust == other.curvesAdjust);
+    return ((rawPrm       == other.rawPrm)       &&
+            (bcg          == other.bcg)          &&
+            (wb           == other.wb)           &&
+            (curvesAdjust == other.curvesAdjust));
 }
 
 DRawDecoding DRawDecoding::fromFilterAction(const FilterAction& action, const QString& prefix)
@@ -533,7 +533,7 @@ void DRawDecoding::decodingSettingsFromXml(const QDomElement& elm, DRawDecoderSe
         QString key        = echild.tagName();
         QString val        = echild.attribute(QLatin1String("value"));
 
-        if (key == QLatin1String("autobrightness"))
+        if      (key == QLatin1String("autobrightness"))
         {
             prm.autoBrightness = (bool)val.toInt(&ok);
         }

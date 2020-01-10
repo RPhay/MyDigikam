@@ -62,16 +62,17 @@ public:
      */
     inline bool isReferenced() const
     {
-        return (int)ref > 0;
+        return ((int)ref > 0);
     }
 
     inline bool hasMoreReferences() const
     {
-        return (int)ref != 1;
+        return ((int)ref != 1);
     }
 
 private:
-    // using the assignment operator would lead to corruption in the ref-counting
+
+    /// using the assignment operator would lead to corruption in the ref-counting
     DSharedData& operator=(const DSharedData&);
 };
 
@@ -153,12 +154,12 @@ public:
 
     inline bool operator==(const DSharedDataPointer<T>& other) const
     {
-        return d == other.d;
+        return (d == other.d);
     }
 
     inline bool operator!=(const DSharedDataPointer<T>& other) const
     {
-        return d != other.d;
+        return (d != other.d);
     }
 
     inline DSharedDataPointer()
