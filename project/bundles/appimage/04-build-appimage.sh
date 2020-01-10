@@ -135,9 +135,15 @@ cp -r /usr/${LIBSUFFIX}/libexec/kf5       ./usr/lib/libexec/
 cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml   ./usr/share/metainfo/digikam.appdata.xml
 cp -r /usr/share/metainfo/org.kde.showfoto.appdata.xml  ./usr/share/metainfo/showfoto.appdata.xml
 
-# QWebEngine bin data files.
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
+
+    # QWebEngine bin data files.
     cp -r /usr/resources ./usr
+
+else
+
+    # Sound like no ressources data are provided with QtWebKit
+
 fi
 
 # copy libgphoto2 drivers
@@ -221,8 +227,20 @@ cp /usr/bin/showfoto                ./usr/bin
 cp /usr/bin/kbuildsycoca5           ./usr/bin
 cp /usr/bin/solid-hardware5         ./usr/bin
 
-# QWebEngine runtime process
-[[ -e /usr/libexec/QtWebEngineProcess ]] && cp /usr/libexec/QtWebEngineProcess ./usr/bin
+if [[ $DK_QTWEBENGINE = 1 ]] ; then
+
+    # QtWebEngine runtime process
+    [[ -e /usr/libexec/QtWebEngineProcess ]] && cp /usr/libexec/QtWebEngineProcess ./usr/bin
+
+else
+
+    # QtWebKit runtime process
+    [[ -e /usr/libexec/QtWebNetworkProcess ]] && cp /usr/libexec/QtWebNetworkProcess ./usr/bin
+    [[ -e /usr/libexec/QtWebProcess ]]        && cp /usr/libexec/QtWebProcess        ./usr/bin
+    [[ -e /usr/libexec/QtWebStorageProcess ]] && cp /usr/libexec/QtWebStorageProcess ./usr/bin
+    [[ -e /usr/libexec/QtWebPluginProcess ]]  && cp /usr/libexec/QtWebPluginProcess  ./usr/bin
+
+fi
 
 # For Solid action when camera is connected to computer
 cp /usr/bin/qdbus                   ./usr/share/digikam/utils
