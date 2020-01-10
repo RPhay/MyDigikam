@@ -135,14 +135,11 @@ cp -r /usr/${LIBSUFFIX}/libexec/kf5       ./usr/lib/libexec/
 cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml   ./usr/share/metainfo/digikam.appdata.xml
 cp -r /usr/share/metainfo/org.kde.showfoto.appdata.xml  ./usr/share/metainfo/showfoto.appdata.xml
 
+# QWebEngine bin data files.
+# NOTE: no ressources data are provided with QtWebKit
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
 
-    # QWebEngine bin data files.
     cp -r /usr/resources ./usr
-
-else
-
-    # Sound like no ressources data are provided with QtWebKit
 
 fi
 
