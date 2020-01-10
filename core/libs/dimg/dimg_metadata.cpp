@@ -28,7 +28,7 @@
 namespace Digikam
 {
 
-QByteArray DImg::getUniqueHash() const
+QByteArray DImg::getUniqueHash()
 {
     if (hasAttribute(QLatin1String("uniqueHash")))
     {
@@ -53,8 +53,8 @@ QByteArray DImg::getUniqueHash() const
     DMetadata meta(getMetadata());
     QByteArray ba = meta.getExifEncoded();
 
-    QByteArray hash = createUniqueHash(filePath, ba);
-    const_cast<DImg*>(this)->setAttribute(QLatin1String("uniqueHash"), hash);
+    QByteArray hash = DImg::createUniqueHash(filePath, ba);
+    setAttribute(QLatin1String("uniqueHash"), hash);
 
     return hash;
 }
@@ -64,10 +64,10 @@ QByteArray DImg::getUniqueHash(const QString& filePath)
     DMetadata meta(filePath);
     QByteArray ba = meta.getExifEncoded();
 
-    return createUniqueHash(filePath, ba);
+    return DImg::createUniqueHash(filePath, ba);
 }
 
-QByteArray DImg::getUniqueHashV2() const
+QByteArray DImg::getUniqueHashV2()
 {
     if (hasAttribute(QLatin1String("uniqueHashV2")))
     {
@@ -89,15 +89,15 @@ QByteArray DImg::getUniqueHashV2() const
 
     FileReadLocker lock(filePath);
 
-    QByteArray hash = createUniqueHashV2(filePath);
-    const_cast<DImg*>(this)->setAttribute(QLatin1String("uniqueHashV2"), hash);
+    QByteArray hash = DImg::createUniqueHashV2(filePath);
+    setAttribute(QLatin1String("uniqueHashV2"), hash);
 
     return hash;
 }
 
 QByteArray DImg::getUniqueHashV2(const QString& filePath)
 {
-    return createUniqueHashV2(filePath);
+    return DImg::createUniqueHashV2(filePath);
 }
 
 QByteArray DImg::createImageUniqueId() const

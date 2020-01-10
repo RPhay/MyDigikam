@@ -648,7 +648,7 @@ public:
         You do not need a DImg object of the file to retrieve the unique hash;
         Use the static method and pass just the file path.
      */
-    QByteArray getUniqueHash() const;
+    QByteArray getUniqueHash();
     static QByteArray getUniqueHash(const QString& filePath);
 
     /** This methods return a 128-bit MD5 hex digest which is meant to uniquely identify
@@ -663,7 +663,7 @@ public:
         You do not need a DImg object of the file to retrieve the unique hash;
         Use the static method and pass just the file path.
      */
-    QByteArray getUniqueHashV2() const;
+    QByteArray getUniqueHashV2();
     static QByteArray getUniqueHashV2(const QString& filePath);
 
     /** This method creates a new 256-bit UUID meant to be globally unique.
