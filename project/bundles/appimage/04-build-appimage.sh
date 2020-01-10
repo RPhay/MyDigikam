@@ -129,7 +129,7 @@ cp -r /usr/share/solid                    ./usr/share
 cp -r /usr/share/OpenCV                   ./usr/share
 cp -r /usr/share/dbus-1/interfaces/kf5*   ./usr/share/dbus-1/interfaces/
 cp -r /usr/share/dbus-1/services/*kde*    ./usr/share/dbus-1/services/
-cp -r /usr/${LIBSUFFIX}/libexec/kf5      ./usr/lib/libexec/
+cp -r /usr/${LIBSUFFIX}/libexec/kf5       ./usr/lib/libexec/
 
 # AppImage stream data file
 cp -r /usr/share/metainfo/org.kde.digikam.appdata.xml   ./usr/share/metainfo/digikam.appdata.xml
@@ -196,7 +196,7 @@ cp -r /usr/${LIBSUFFIX}/marble/plugins/ ./usr/bin/
 cp -r /usr/share/marble/data            ./usr/bin/
 
 # otherwise segfaults!?
-cp $(ldconfig -p | grep /$LIBSUFFIX/libsasl2.so.3    | cut -d ">" -f 2 | xargs) ./usr/lib/
+cp $(ldconfig -p | grep /$LIBSUFFIX/libsasl2.so.3      | cut -d ">" -f 2 | xargs) ./usr/lib/
 cp $(ldconfig -p | grep /${LIBSUFFIX}/libGL.so.1       | cut -d ">" -f 2 | xargs) ./usr/lib/
 cp $(ldconfig -p | grep /${LIBSUFFIX}/libGLU.so.1      | cut -d ">" -f 2 | xargs) ./usr/lib/
 
@@ -448,9 +448,9 @@ cp ${ORIG_WD}/data/AppRun ./
 
 # desktop integration files
 
-cp /usr/share/applications/org.kde.digikam.desktop ./
-cp /usr/share/icons/hicolor/256x256/apps/digikam.png ./digikam.png
-cp /usr/share/icons/hicolor/256x256/apps/digikam.png ./.DirIcon
+cp /usr/share/applications/org.kde.digikam.desktop      ./
+cp /usr/share/icons/hicolor/256x256/apps/digikam.png    ./digikam.png
+cp /usr/share/icons/hicolor/256x256/apps/digikam.png    ./.DirIcon
 
 mkdir -p $APP_IMG_DIR/usr/share/icons/default/128x128/apps
 cp -r /usr/share/icons/hicolor/128x128/apps/digikam.png ./usr/share/icons/default/128x128/apps/digikam.png
