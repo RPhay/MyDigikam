@@ -148,16 +148,19 @@ echo -e "\n---------- Copy executables with recursive dependencies in bundle dir
 # Executables and plugins shared libraries dependencies scan ---------------------------------
 
 EXE_FILES="\
-gdb.exe \
-digikam.exe \
-showfoto.exe \
-kbuildsycoca5.exe \
+$MXE_INSTALL_PREFIX/bin/gdb.exe \
+$MXE_INSTALL_PREFIX/bin/digikam.exe \
+$MXE_INSTALL_PREFIX/bin/showfoto.exe \
+$MXE_INSTALL_PREFIX/bin/kbuildsycoca5.exe \
+$MXE_INSTALL_PREFIX/qt5/bin/QtWebNetworkProcess.exe \
+$MXE_INSTALL_PREFIX/qt5/bin/QtWebProcess.exe \
+$MXE_INSTALL_PREFIX/qt5/bin/QtWebStorageProcess.exe \
 "
 
 for app in $EXE_FILES ; do
 
-    cp $MXE_INSTALL_PREFIX/bin/$app $BUNDLEDIR/
-    $ORIG_WD/rll.py --copy --installprefix $MXE_INSTALL_PREFIX --odir $BUNDLEDIR --efile $BUNDLEDIR/$app
+    cp $app $BUNDLEDIR/
+    $ORIG_WD/rll.py --copy --installprefix $MXE_INSTALL_PREFIX --odir $BUNDLEDIR --efile $app
 
 done
 
