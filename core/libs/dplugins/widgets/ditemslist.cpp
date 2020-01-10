@@ -73,10 +73,10 @@ class Q_DECL_HIDDEN DItemsListViewItem::Private
 public:
 
     explicit Private()
-      : rating(-1),
+      : hasThumb(false),
+        rating(-1),
         view(nullptr),
-        state(Waiting),
-        hasThumb(false)
+        state(Waiting)
     {
     }
 
