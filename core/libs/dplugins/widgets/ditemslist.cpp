@@ -474,7 +474,10 @@ class Q_DECL_HIDDEN DItemsList::Private
 public:
 
     explicit Private()
-      : listView(nullptr),
+      : allowRAW(true),
+        allowDuplicate(false),
+        controlButtonsEnabled(true),
+        iconSize(DEFAULTSIZE),
         addButton(nullptr),
         removeButton(nullptr),
         moveUpButton(nullptr),
@@ -482,12 +485,9 @@ public:
         clearButton(nullptr),
         loadButton(nullptr),
         saveButton(nullptr),
-        iconSize(DEFAULTSIZE),
-        allowRAW(true),
-        controlButtonsEnabled(true),
-        allowDuplicate(false),
         progressCount(0),
         progressTimer(nullptr),
+        listView(nullptr),
         iface(nullptr)
     {
         progressPix     = DWorkingPixmap();
