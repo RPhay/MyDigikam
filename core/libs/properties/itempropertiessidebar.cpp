@@ -57,24 +57,37 @@
 
 namespace Digikam
 {
+    bool                       m_dirtyPropertiesTab;
+    bool                       m_dirtyMetadataTab;
+    bool                       m_dirtyColorTab;
+    bool                       m_dirtyGpsTab;
+    bool                       m_dirtyHistoryTab;
+    QRect                      m_currentRect;
+    QUrl                       m_currentURL;
+    DImg*                      m_image;
+    ItemPropertiesTab*         m_propertiesTab;
+    ItemPropertiesMetadataTab* m_metadataTab;
+    ItemPropertiesColorsTab*   m_colorTab;
+#ifdef HAVE_MARBLE
+    ItemPropertiesGPSTab*      m_gpsTab;
+#endif // HAVE_MARBLE
 
 ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
                                              SidebarSplitter* const splitter,
                                              Qt::Edge side,
                                              bool mimimizedDefault)
-    : Sidebar(parent, splitter, side, mimimizedDefault)
+    : Sidebar(parent, splitter, side, mimimizedDefault),
+      m_dirtyPropertiesTab(false),
+      m_dirtyMetadataTab(false),
+      m_dirtyColorTab(false),
+      m_dirtyGpsTab(false),
+      m_dirtyHistoryTab(false),
+      m_currentRect(QRect()),
+      m_image(nullptr)
 {
-    m_image              = nullptr;
-    m_currentRect        = QRect();
-    m_dirtyPropertiesTab = false;
-    m_dirtyMetadataTab   = false;
-    m_dirtyColorTab      = false;
-    m_dirtyGpsTab        = false;
-    m_dirtyHistoryTab    = false;
-
-    m_propertiesTab      = new ItemPropertiesTab(parent);
-    m_metadataTab        = new ItemPropertiesMetadataTab(parent);
-    m_colorTab           = new ItemPropertiesColorsTab(parent);
+    m_propertiesTab = new ItemPropertiesTab(parent);
+    m_metadataTab   = new ItemPropertiesMetadataTab(parent);
+    m_colorTab      = new ItemPropertiesColorsTab(parent);
 
     // NOTE: Special case with Showfoto which will only be able to load image, not video.
 

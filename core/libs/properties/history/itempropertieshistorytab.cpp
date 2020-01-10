@@ -45,9 +45,9 @@ namespace Digikam
 {
 
 RemoveFilterAction::RemoveFilterAction(const QString& label, const QModelIndex& index, QObject* const parent)
-    : QAction(label, parent)
+    : QAction(label, parent),
+      m_index(index)
 {
-    m_index = index;
 }
 
 // -------------------------------------------------------------------------------------------------------
