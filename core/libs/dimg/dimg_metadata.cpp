@@ -100,7 +100,7 @@ QByteArray DImg::getUniqueHashV2(const QString& filePath)
     return DImg::createUniqueHashV2(filePath);
 }
 
-QByteArray DImg::createImageUniqueId() const
+QByteArray DImg::createImageUniqueId()
 {
     NonDeterministicRandomData randomData(16);
     QByteArray imageUUID = randomData.toHex();
@@ -287,7 +287,7 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
     setMetadata(meta.data());
 }
 
-HistoryImageId DImg::createHistoryImageId(const QString& filePath, HistoryImageId::Type type) const
+HistoryImageId DImg::createHistoryImageId(const QString& filePath, HistoryImageId::Type type)
 {
     QFileInfo fileInfo(filePath);
 

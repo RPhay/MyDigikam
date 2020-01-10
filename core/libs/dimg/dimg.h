@@ -411,7 +411,7 @@ public:
                                bool           resetExifOrientationTag);
 
     /** Create a HistoryImageId for _this_ image _already_ saved at the given file path.*/
-    HistoryImageId createHistoryImageId(const QString& filePath, HistoryImageId::Type type) const;
+    HistoryImageId createHistoryImageId(const QString& filePath, HistoryImageId::Type type);
 
     /** If you have saved this DImg to filePath, and want to continue using this DImg object
      *  to add further changes to the image history, you can call this method to add to the image history
@@ -673,7 +673,7 @@ public:
      *  This method only generates a new UUID for this image without in any way changing this image object
      *  or saving the UUID anywhere.
      */
-    QByteArray createImageUniqueId() const;
+    QByteArray createImageUniqueId();
 
     /**
      * Helper method to translate enum values to user presentable strings
