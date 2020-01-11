@@ -39,7 +39,6 @@
 #include <QDesktopServices>
 #include <QUrlQuery>
 #include <QHttpMultiPart>
-#include <QNetworkCookieJar>
 #include <QNetworkAccessManager>
 
 // KDE includes
@@ -49,19 +48,13 @@
 
 // Local includes
 
-#include "digikam_config.h"
 #include "digikam_debug.h"
 #include "digikam_version.h"
 #include "wstoolutils.h"
 #include "pwindow.h"
 #include "pitem.h"
+#include "webbrowserdlg.h"
 #include "previewloadthread.h"
-
-#ifdef HAVE_QWEBENGINE
-#   include "webwidget_qwebengine.h"
-#else
-#   include "webwidget.h"
-#endif
 
 namespace DigikamGenericPinterestPlugin
 {
@@ -82,26 +75,21 @@ public:
 public:
 
     explicit Private()
+      : clientId(QLatin1String("4983380570301022071")),
+        clientSecret(QLatin1String("2a698db679125930d922a2dfb897e16b668a67c6f614593636e83fc3d8d9b47d")),
+        authUrl(QLatin1String("https://api.pinterest.com/oauth/")),
+        tokenUrl(QLatin1String("https://api.pinterest.com/v1/oauth/token")),
+        redirectUrl(QLatin1String("https://login.live.com/oauth20_desktop.srf")),
+        scope(QLatin1String("read_public,write_public")),
+        serviceName(QLatin1String("Pinterest")),
+        serviceKey(QLatin1String("access_token")),
+        parent(nullptr),
+        netMngr(nullptr),
+        reply(nullptr),
+        settings(nullptr),
+        state(P_USERNAME),
+        browser(nullptr)
     {
-        clientId     = QLatin1String("4983380570301022071");
-        clientSecret = QLatin1String("2a698db679125930d922a2dfb897e16b668a67c6f614593636e83fc3d8d9b47d");
-
-        authUrl      = QLatin1String("https://api.pinterest.com/oauth/");
-        tokenUrl     = QLatin1String("https://api.pinterest.com/v1/oauth/token");
-        redirectUrl  = QLatin1String("https://login.live.com/oauth20_desktop.srf");
-
-        scope        = QLatin1String("read_public,write_public");
-
-        serviceName  = QLatin1String("Pinterest");
-        serviceKey   = QLatin1String("access_token");
-
-        state        = P_USERNAME;
-
-        parent       = nullptr;
-        netMngr      = nullptr;
-        reply        = nullptr;
-        settings     = nullptr;
-        view         = nullptr;
     }
 
 public:
@@ -130,7 +118,7 @@ public:
 
     QMap<QString, QString> urlParametersMap;
 
-    WebWidget*             view;
+    WebBrowserDlg*         browser;
 };
 
 PTalker::PTalker(QWidget* const parent)
@@ -138,14 +126,7 @@ PTalker::PTalker(QWidget* const parent)
 {
     d->parent   = parent;
     d->netMngr  = new QNetworkAccessManager(this);
-    d->view     = new WebWidget(d->parent);
-    d->view->resize(800, 600);
-
     d->settings = WSToolUtils::getOauthSettings(this);
-
-#ifndef HAVE_QWEBENGINE
-    d->view->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
-#endif
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));
@@ -155,12 +136,6 @@ PTalker::PTalker(QWidget* const parent)
 
     connect(this, SIGNAL(pinterestLinkingSucceeded()),
             this, SLOT(slotLinkingSucceeded()));
-
-    connect(d->view, SIGNAL(urlChanged(QUrl)),
-            this, SLOT(slotCatchUrl(QUrl)));
-
-    connect(d->view, SIGNAL(closeView(bool)),
-            this, SIGNAL(signalBusy(bool)));
 }
 
 PTalker::~PTalker()
@@ -187,9 +162,17 @@ void PTalker::link()
     query.addQueryItem(QLatin1String("response_type"), QLatin1String("code"));
     url.setQuery(query);
 
-    d->view->setWindowFlags(Qt::Dialog);
-    d->view->load(url);
-    d->view->show();
+    delete d->browser;
+    d->browser = new WebBrowserDlg(url, d->parent, true);
+    d->browser->setModal(true);
+
+    connect(d->browser, SIGNAL(urlChanged(QUrl)),
+            this, SLOT(slotCatchUrl(QUrl)));
+
+    connect(d->browser, SIGNAL(closeView(bool)),
+            this, SIGNAL(signalBusy(bool)));
+
+    d->browser->show();
 }
 
 void PTalker::unLink()
@@ -199,12 +182,6 @@ void PTalker::unLink()
     d->settings->beginGroup(d->serviceName);
     d->settings->remove(QString());
     d->settings->endGroup();
-
-#ifdef HAVE_QWEBENGINE
-    d->view->page()->profile()->cookieStore()->deleteAllCookies();
-#else
-    d->view->page()->networkAccessManager()->setCookieJar(new QNetworkCookieJar());
-#endif
 
     emit pinterestLinkingSucceeded();
 }
@@ -218,7 +195,7 @@ void PTalker::slotCatchUrl(const QUrl& url)
     if (!code.isEmpty())
     {
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "CODE Received";
-        d->view->close();
+        d->browser->close();
         getToken(code);
         emit signalBusy(false);
     }

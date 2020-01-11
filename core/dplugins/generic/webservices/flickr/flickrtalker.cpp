@@ -40,7 +40,6 @@
 #include <QProgressDialog>
 #include <QDesktopServices>
 #include <QNetworkAccessManager>
-#include <QNetworkCookieJar>
 
 // KDE includes
 
@@ -52,16 +51,11 @@
 #include "wstoolutils.h"
 #include "flickrmpform.h"
 #include "flickrwindow.h"
+#include "webbrowserdlg.h"
 #include "digikam_debug.h"
 #include "digikam_config.h"
 #include "digikam_version.h"
 #include "previewloadthread.h"
-
-#ifdef HAVE_QWEBENGINE
-#   include "webwidget_qwebengine.h"
-#else
-#   include "webwidget.h"
-#endif
 
 // OAuth2 library includes
 
@@ -87,17 +81,17 @@ class Q_DECL_HIDDEN FlickrTalker::Private
 public:
 
     explicit Private()
+      : parent(nullptr),
+        netMngr(nullptr),
+        reply(nullptr),
+        settings(nullptr),
+        state(FE_LOGOUT),
+        iface(nullptr),
+        o1(nullptr),
+        store(nullptr),
+        requestor(nullptr),
+        browser(nullptr)
     {
-        parent          = nullptr;
-        netMngr         = nullptr;
-        reply           = nullptr;
-        settings        = nullptr;
-        state           = FE_LOGOUT;
-        iface           = nullptr;
-        o1              = nullptr;
-        store           = nullptr;
-        requestor       = nullptr;
-        view            = nullptr;
     }
 
     QWidget*               parent;
@@ -129,7 +123,7 @@ public:
     O0SettingsStore*       store;
     O1Requestor*           requestor;
 
-    WebWidget*             view;
+    WebBrowserDlg*         browser;
 };
 
 FlickrTalker::FlickrTalker(QWidget* const parent,
@@ -153,7 +147,7 @@ FlickrTalker::FlickrTalker(QWidget* const parent,
     d->apikey      = QLatin1String("74f882bf4dabe22baaaace1f6d33c66b");
     d->secret      = QLatin1String("537d58e3ead2d6d5");
 
-    d->netMngr = new QNetworkAccessManager(this);
+    d->netMngr     = new QNetworkAccessManager(this);
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));
@@ -269,9 +263,9 @@ void FlickrTalker::slotLinkingSucceeded()
         return;
     }
 
-    if (d->view)
+    if (d->browser)
     {
-        d->view->close();
+        d->browser->close();
     }
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Flickr ok";
@@ -306,22 +300,17 @@ void FlickrTalker::slotOpenBrowser(const QUrl& url)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Open Browser... (" << url << ")";
 
-    delete d->view;
-    d->view = new WebWidget(d->parent);
-    d->view->resize(800, 600);
+    delete d->browser;
+    d->browser = new WebBrowserDlg(url, d->parent, true);
+    d->browser->setModal(true);
 
-    connect(d->view, SIGNAL(urlChanged(QUrl)),
+    connect(d->browser, SIGNAL(urlChanged(QUrl)),
             this, SLOT(slotCatchUrl(QUrl)));
 
-#ifdef HAVE_QWEBENGINE
-    d->view->page()->profile()->cookieStore()->deleteAllCookies();
-#else
-    d->view->page()->networkAccessManager()->setCookieJar(new QNetworkCookieJar());
-#endif
+    connect(d->browser, SIGNAL(closeView(bool)),
+            this, SIGNAL(signalBusy(bool)));
 
-    d->view->setWindowFlags(Qt::Dialog);
-    d->view->load(url);
-    d->view->show();
+    d->browser->show();
 }
 
 QString FlickrTalker::getMaxAllowedFileSize()

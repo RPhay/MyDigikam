@@ -39,7 +39,6 @@
 #include <QMimeDatabase>
 #include <QDesktopServices>
 #include <QUrlQuery>
-#include <QNetworkCookieJar>
 #include <QNetworkAccessManager>
 
 // KDE includes
@@ -49,20 +48,14 @@
 
 // Local includes
 
-#include "digikam_config.h"
 #include "digikam_debug.h"
 #include "digikam_version.h"
 #include "wstoolutils.h"
 #include "odwindow.h"
 #include "oditem.h"
 #include "odmpform.h"
+#include "webbrowserdlg.h"
 #include "previewloadthread.h"
-
-#ifdef HAVE_QWEBENGINE
-#   include "webwidget_qwebengine.h"
-#else
-#   include "webwidget.h"
-#endif
 
 namespace DigikamGenericOneDrivePlugin
 {
@@ -82,26 +75,22 @@ public:
 public:
 
     explicit Private()
+      : clientId(QLatin1String("4c20a541-2ca8-4b98-8847-a375e4d33f34")),
+        clientSecret(QLatin1String("wtdcaXADCZ0|tcDA7633|@*")),
+        authUrl(QLatin1String("https://login.live.com/oauth20_authorize.srf")),
+        tokenUrl(QLatin1String("https://login.live.com/oauth20_token.srf")),
+        scope(QLatin1String("Files.ReadWrite User.Read")),
+        redirectUrl(QLatin1String("https://login.live.com/oauth20_desktop.srf")),
+        serviceName(QLatin1String("Onedrive")),
+        serviceTime(QLatin1String("token_time")),
+        serviceKey(QLatin1String("access_token")),
+        state(OD_USERNAME),
+        parent(nullptr),
+        netMngr(nullptr),
+        reply(nullptr),
+        settings(nullptr),
+        browser(nullptr)
     {
-        clientId     = QLatin1String("4c20a541-2ca8-4b98-8847-a375e4d33f34");
-        clientSecret = QLatin1String("wtdcaXADCZ0|tcDA7633|@*");
-        scope        = QLatin1String("Files.ReadWrite User.Read");
-
-        authUrl      = QLatin1String("https://login.live.com/oauth20_authorize.srf");
-        tokenUrl     = QLatin1String("https://login.live.com/oauth20_token.srf");
-        redirectUrl  = QLatin1String("https://login.live.com/oauth20_desktop.srf");
-
-        serviceName = QLatin1String("Onedrive");
-        serviceTime = QLatin1String("token_time");
-        serviceKey  = QLatin1String("access_token");
-
-        state        = OD_USERNAME;
-
-        parent       = nullptr;
-        netMngr      = nullptr;
-        reply        = nullptr;
-        settings     = nullptr;
-        view         = nullptr;
     }
 
 public:
@@ -128,7 +117,7 @@ public:
 
     QSettings*                      settings;
 
-    WebWidget*                      view;
+    WebBrowserDlg*                  browser;
 
     QList<QPair<QString, QString> > folderList;
     QList<QString>                  nextFolder;
@@ -139,9 +128,6 @@ ODTalker::ODTalker(QWidget* const parent)
 {
     d->parent   = parent;
     d->netMngr  = new QNetworkAccessManager(this);
-    d->view     = new WebWidget(d->parent);
-    d->view->resize(800, 600);
-
     d->settings = WSToolUtils::getOauthSettings(this);
 
     connect(this, SIGNAL(oneDriveLinkingFailed()),
@@ -152,12 +138,6 @@ ODTalker::ODTalker(QWidget* const parent)
 
     connect(d->netMngr, SIGNAL(finished(QNetworkReply*)),
             this, SLOT(slotFinished(QNetworkReply*)));
-
-    connect(d->view, SIGNAL(urlChanged(QUrl)),
-            this, SLOT(slotCatchUrl(QUrl)));
-
-    connect(d->view, SIGNAL(closeView(bool)),
-            this, SIGNAL(signalBusy(bool)));
 }
 
 ODTalker::~ODTalker()
@@ -184,9 +164,17 @@ void ODTalker::link()
     query.addQueryItem(QLatin1String("response_type"), QLatin1String("token"));
     url.setQuery(query);
 
-    d->view->setWindowFlags(Qt::Dialog);
-    d->view->load(url);
-    d->view->show();
+    delete d->browser;
+    d->browser = new WebBrowserDlg(url, d->parent, true);
+    d->browser->setModal(true);
+
+    connect(d->browser, SIGNAL(urlChanged(QUrl)),
+            this, SLOT(slotCatchUrl(QUrl)));
+
+    connect(d->browser, SIGNAL(closeView(bool)),
+            this, SIGNAL(signalBusy(bool)));
+
+    d->browser->show();
 }
 
 void ODTalker::unLink()
@@ -196,12 +184,6 @@ void ODTalker::unLink()
     d->settings->beginGroup(d->serviceName);
     d->settings->remove(QString());
     d->settings->endGroup();
-
-#ifdef HAVE_QWEBENGINE
-    d->view->page()->profile()->cookieStore()->deleteAllCookies();
-#else
-    d->view->page()->networkAccessManager()->setCookieJar(new QNetworkCookieJar());
-#endif
 
     emit oneDriveLinkingSucceeded();
 }
@@ -247,7 +229,11 @@ void ODTalker::slotLinkingSucceeded()
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Onedrive";
 
-    d->view->close();
+    if (d->browser)
+    {
+        d->browser->close();
+    }
+
     emit signalLinkingSucceeded();
 }
 
