@@ -75,21 +75,22 @@ public:
 public:
 
     explicit Private()
-      : clientId(QLatin1String("4983380570301022071")),
-        clientSecret(QLatin1String("2a698db679125930d922a2dfb897e16b668a67c6f614593636e83fc3d8d9b47d")),
-        authUrl(QLatin1String("https://api.pinterest.com/oauth/")),
-        tokenUrl(QLatin1String("https://api.pinterest.com/v1/oauth/token")),
-        redirectUrl(QLatin1String("https://login.live.com/oauth20_desktop.srf")),
-        scope(QLatin1String("read_public,write_public")),
-        serviceName(QLatin1String("Pinterest")),
-        serviceKey(QLatin1String("access_token")),
-        parent(nullptr),
+      : parent(nullptr),
         netMngr(nullptr),
         reply(nullptr),
         settings(nullptr),
         state(P_USERNAME),
         browser(nullptr)
     {
+        clientId     = QLatin1String("4983380570301022071");
+        clientSecret = QLatin1String("2a698db679125930d922a2dfb897e16b668a67c6f614593636e83fc3d8d9b47d");
+
+        authUrl      = QLatin1String("https://api.pinterest.com/oauth/");
+        tokenUrl     = QLatin1String("https://api.pinterest.com/v1/oauth/token");
+        redirectUrl  = QLatin1String("https://login.live.com/oauth20_desktop.srf");
+        scope        = QLatin1String("read_public,write_public");
+        serviceName  = QLatin1String("Pinterest");
+        serviceKey   = QLatin1String("access_token");
     }
 
 public:

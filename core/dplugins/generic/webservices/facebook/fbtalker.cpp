@@ -47,22 +47,19 @@
 #include <QUrlQuery>
 #include <QSettings>
 #include <QMessageBox>
-#include <QNetworkCookieJar>
 #include <QNetworkAccessManager>
+
+// KDE includes
+
+#include <klocalizedstring.h>
 
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_config.h"
 #include "digikam_version.h"
 #include "fbmpform.h"
 #include "wstoolutils.h"
-
-#ifdef HAVE_QWEBENGINE
-#   include "webwidget_qwebengine.h"
-#else
-#   include "webwidget.h"
-#endif
+#include "webbrowserdlg.h"
 
 using namespace Digikam;
 
@@ -97,26 +94,25 @@ public:
 public:
 
     explicit Private()
+      : dialog(nullptr),
+        parent(nullptr),
+        settings(nullptr),
+        netMngr(nullptr),
+        reply(nullptr),
+        browser(nullptr),
+        state(FB_GETLOGGEDINUSER)
     {
-        apiURL             = QLatin1String("https://graph.facebook.com/%1/%2");
-        authUrl            = QLatin1String("https://www.facebook.com/dialog/oauth");
-        tokenUrl           = QLatin1String("https://graph.facebook.com/oauth/access_token");
-        redirectUrl        = QLatin1String("https://www.facebook.com/connect/login_success.html");
-        scope              = QLatin1String("user_photos,publish_pages,manage_pages"); //publish_to_groups,user_friends not necessary?
-        apikey             = QLatin1String("400589753481372");
-        clientSecret       = QLatin1String("5b0b5cd096e110cd4f4c72f517e2c544");
+        apiURL       = QLatin1String("https://graph.facebook.com/%1/%2");
+        authUrl      = QLatin1String("https://www.facebook.com/dialog/oauth");
+        tokenUrl     = QLatin1String("https://graph.facebook.com/oauth/access_token");
+        redirectUrl  = QLatin1String("https://www.facebook.com/connect/login_success.html");
+        scope        = QLatin1String("user_photos,publish_pages,manage_pages"); //publish_to_groups,user_friends not necessary?
+        apikey       = QLatin1String("400589753481372");
+        clientSecret = QLatin1String("5b0b5cd096e110cd4f4c72f517e2c544");
 
-        serviceName        = QLatin1String("Facebook");
-        serviceTime        = QLatin1String("token_time");
-        serviceKey         = QLatin1String("access_token");
-
-        dialog             = nullptr;
-        parent             = nullptr;
-        settings           = nullptr;
-        netMngr            = nullptr;
-        reply              = nullptr;
-        view               = nullptr;
-        state              = FB_GETLOGGEDINUSER;
+        serviceName  = QLatin1String("Facebook");
+        serviceTime  = QLatin1String("token_time");
+        serviceKey   = QLatin1String("access_token");
     }
 
     QString                apiURL;
@@ -141,7 +137,7 @@ public:
     QNetworkAccessManager* netMngr;
     QNetworkReply*         reply;
 
-    WebWidget*             view;
+    WebBrowserDlg*         browser;
 
     State                  state;
 
@@ -155,7 +151,6 @@ FbTalker::FbTalker(QWidget* const parent)
 {
     d->parent   = parent;
     d->netMngr  = new QNetworkAccessManager(this);
-
     d->settings = WSToolUtils::getOauthSettings(this);
 
     connect(this, SIGNAL(linkingSucceeded()),
@@ -171,8 +166,6 @@ FbTalker::~FbTalker()
     {
         d->reply->abort();
     }
-
-    clearCookies();
 
     delete d;
 }
@@ -192,21 +185,17 @@ void FbTalker::link()
     query.addQueryItem(QLatin1String("scope"), d->scope);
     url.setQuery(query);
 
-    if (!d->view)
-    {
-        d->view = new WebWidget(d->parent);
-        d->view->setWindowFlags(Qt::Dialog);
-        d->view->resize(800, 600);
+    delete d->browser;
+    d->browser = new WebBrowserDlg(url, d->parent, true);
+    d->browser->setModal(true);
 
-        connect(d->view, SIGNAL(urlChanged(QUrl)),
-                this, SLOT(slotCatchUrl(QUrl)));
+    connect(d->browser, SIGNAL(urlChanged(QUrl)),
+            this, SLOT(slotCatchUrl(QUrl)));
 
-        connect(d->view, SIGNAL(closeView(bool)),
-                this, SIGNAL(signalBusy(bool)));
-    }
+    connect(d->browser, SIGNAL(closeView(bool)),
+            this, SIGNAL(signalBusy(bool)));
 
-    d->view->load(url);
-    d->view->show();
+    d->browser->show();
 }
 
 void FbTalker::unlink()
@@ -217,8 +206,6 @@ void FbTalker::unlink()
     d->settings->beginGroup(d->serviceName);
     d->settings->remove(QString());
     d->settings->endGroup();
-
-    clearCookies();
 
     emit linkingSucceeded();
 }
@@ -245,9 +232,9 @@ void FbTalker::slotLinkingSucceeded()
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to Facebook";
 
-    if (d->view)
+    if (d->browser)
     {
-        d->view->close();
+        d->browser->close();
     }
 
     getLoggedInUser();
@@ -286,21 +273,6 @@ FbUser FbTalker::getUser() const
 bool FbTalker::linked()
 {
     return (!d->accessToken.isEmpty());
-}
-
-void FbTalker::clearCookies()
-{
-#ifdef HAVE_QWEBENGINE
-    if (d->view)
-    {
-        d->view->page()->profile()->cookieStore()->deleteAllCookies();
-    }
-#else
-    if (d->view)
-    {
-        d->view->page()->networkAccessManager()->setCookieJar(new QNetworkCookieJar());
-    }
-#endif
 }
 
 void FbTalker::getLoggedInUser()

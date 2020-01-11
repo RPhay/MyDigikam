@@ -92,6 +92,15 @@ public:
         requestor(nullptr),
         browser(nullptr)
     {
+        apiUrl      = QLatin1String("https://www.flickr.com/services/rest/");
+        authUrl     = QLatin1String("https://www.flickr.com/services/oauth/authorize?perms=write");
+        tokenUrl    = QLatin1String("https://www.flickr.com/services/oauth/request_token");
+        accessUrl   = QLatin1String("https://www.flickr.com/services/oauth/access_token");
+        uploadUrl   = QLatin1String("https://up.flickr.com/services/upload/");
+        callbackUrl = QLatin1String("https://www.flickr.com");
+
+        apikey      = QLatin1String("74f882bf4dabe22baaaace1f6d33c66b");
+        secret      = QLatin1String("537d58e3ead2d6d5");
     }
 
     QWidget*               parent;
@@ -136,16 +145,6 @@ FlickrTalker::FlickrTalker(QWidget* const parent,
     d->iface          = iface;
     m_photoSetsList   = nullptr;
     m_authProgressDlg = nullptr;
-
-    d->apiUrl      = QLatin1String("https://www.flickr.com/services/rest/");
-    d->authUrl     = QLatin1String("https://www.flickr.com/services/oauth/authorize?perms=write");
-    d->tokenUrl    = QLatin1String("https://www.flickr.com/services/oauth/request_token");
-    d->accessUrl   = QLatin1String("https://www.flickr.com/services/oauth/access_token");
-    d->uploadUrl   = QLatin1String("https://up.flickr.com/services/upload/");
-    d->callbackUrl = QLatin1String("https://www.flickr.com");
-
-    d->apikey      = QLatin1String("74f882bf4dabe22baaaace1f6d33c66b");
-    d->secret      = QLatin1String("537d58e3ead2d6d5");
 
     d->netMngr     = new QNetworkAccessManager(this);
 

@@ -75,22 +75,23 @@ public:
 public:
 
     explicit Private()
-      : clientId(QLatin1String("4c20a541-2ca8-4b98-8847-a375e4d33f34")),
-        clientSecret(QLatin1String("wtdcaXADCZ0|tcDA7633|@*")),
-        authUrl(QLatin1String("https://login.live.com/oauth20_authorize.srf")),
-        tokenUrl(QLatin1String("https://login.live.com/oauth20_token.srf")),
-        scope(QLatin1String("Files.ReadWrite User.Read")),
-        redirectUrl(QLatin1String("https://login.live.com/oauth20_desktop.srf")),
-        serviceName(QLatin1String("Onedrive")),
-        serviceTime(QLatin1String("token_time")),
-        serviceKey(QLatin1String("access_token")),
-        state(OD_USERNAME),
+      : state(OD_USERNAME),
         parent(nullptr),
         netMngr(nullptr),
         reply(nullptr),
         settings(nullptr),
         browser(nullptr)
     {
+        clientId     = QLatin1String("4c20a541-2ca8-4b98-8847-a375e4d33f34");
+        clientSecret = QLatin1String("wtdcaXADCZ0|tcDA7633|@*");
+
+        authUrl      = QLatin1String("https://login.live.com/oauth20_authorize.srf");
+        tokenUrl     = QLatin1String("https://login.live.com/oauth20_token.srf");
+        scope        = QLatin1String("Files.ReadWrite User.Read");
+        redirectUrl  = QLatin1String("https://login.live.com/oauth20_desktop.srf");
+        serviceName  = QLatin1String("Onedrive");
+        serviceTime  = QLatin1String("token_time");
+        serviceKey   = QLatin1String("access_token");
     }
 
 public:
