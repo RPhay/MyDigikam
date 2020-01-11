@@ -37,6 +37,8 @@
 #ifdef HAVE_QWEBENGINE
 #   include <QWebEngineView>
 #   include <QWebEnginePage>
+#   include <QWebEngineProfile>
+#   include <QWebEngineCookieStore>
 #else
 #   include <qwebview.h>
 #endif
