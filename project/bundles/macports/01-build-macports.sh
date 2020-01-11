@@ -263,6 +263,10 @@ port install \
              wget +ssl \
              ImageMagick
 
+if [[ $DK_QTWEBENGINE = 1 ]] ; then
+    port install qt5-qtwebengine
+fi
+
 #             sane-backends
 
 echo -e "\n"
@@ -291,20 +295,18 @@ cmake $ORIG_WD/../3rdparty \
        -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
        -DINSTALL_ROOT=$INSTALL_PREFIX \
        -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
        -Wno-dev
 
-cmake --build . --config RelWithDebInfo --target ext_qtwebkit    -- -j$CPU_CORES
+if [[ $DK_QTWEBENGINE = 0 ]] ; then
+    cmake --build . --config RelWithDebInfo --target ext_qtwebkit    -- -j$CPU_CORES
+fi
+
 cmake --build . --config RelWithDebInfo --target ext_opencv      -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_exiv2       -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_qtav        -- -j$CPU_CORES
 
 #################################################################################################
-
-#ln -s $INSTALL_PREFIX/lib/cmake/Qt5WebKitWidgets           $INSTALL_PREFIX/libexec/qt5/lib/cmake/
-#ln -s $INSTALL_PREFIX/lib/QtWebKitWidgets.framework        $INSTALL_PREFIX/libexec/qt5/lib/
-#ln -s $INSTALL_PREFIX/lib/QtWebKit.framework               $INSTALL_PREFIX/libexec/qt5/lib/
-#ln -s $INSTALL_PREFIX/include/QtWebKitWidgets              $INSTALL_PREFIX/libexec/qt5/include/
-#ln -s $INSTALL_PREFIX/include/QtWebKit                     $INSTALL_PREFIX/libexec/qt5/include/
 
 export PATH=$ORIG_PATH
 
