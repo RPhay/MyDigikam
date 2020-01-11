@@ -149,7 +149,7 @@ GSWindow::GSWindow(DInfoInterface* const iface,
             startButton()->setText(i18n("Start Upload"));
             startButton()->setToolTip(i18n("Start upload to Google Drive"));
 
-            d->widget->setMinimumSize(700,500);
+            d->widget->setMinimumSize(700, 500);
 
             d->albumDlg = new GSNewAlbumDlg(this, d->serviceName, d->toolName);
             d->talker   = new GDTalker(this);
@@ -475,18 +475,14 @@ void GSWindow::slotListAlbumsDone(int code, const QString& errMsg, const QList <
 
 void GSWindow::slotBusy(bool val)
 {
-    if (val)
-    {
-        setCursor(Qt::WaitCursor);
-        d->widget->getChangeUserBtn()->setEnabled(false);
-        buttonStateChange(false);
-    }
-    else
-    {
-        setCursor(Qt::ArrowCursor);
-        d->widget->getChangeUserBtn()->setEnabled(true);
-        buttonStateChange(true);
-    }
+    setCursor(val ? Qt::WaitCursor
+                  : Qt::ArrowCursor);
+
+    d->widget->imagesList()->enableControlButtons(!val);
+    d->widget->imagesList()->enableDragAndDrop(!val);
+    d->widget->getChangeUserBtn()->setEnabled(!val);
+    d->widget->getOptionsBox()->setEnabled(!val);
+    buttonStateChange(!val);
 }
 
 void GSWindow::slotStartTransfer()

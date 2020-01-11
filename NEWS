@@ -550,4 +550,5 @@ BUGFIXES:
 535 ==> 414115 - G'mic plugin not available on Mac.
 536 ==> 416018 - Face detection: specified list of albums not taken into account.
 537 ==> 416028 - "Search in Tags" selection for Face detection/recognition unduly changes.
-538 ==> 
+538 ==> 416120 - Error transfering.
+539 ==> 
