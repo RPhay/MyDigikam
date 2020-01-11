@@ -43,36 +43,37 @@ class DIGIKAM_EXPORT DImgFilterGenerator
 {
 public:
 
-    DImgFilterGenerator() {};
+    DImgFilterGenerator()          {};
     virtual ~DImgFilterGenerator() {};
 
     /// Returns a list with identifiers of supported filters
-    virtual QStringList supportedFilters() = 0;
+    virtual QStringList supportedFilters()                                  = 0;
 
     /// Returns a list with the supported versions for the given identifier
-    virtual QList<int>  supportedVersions(const QString& filterIdentifier) = 0;
+    virtual QList<int>  supportedVersions(const QString& filterIdentifier)  = 0;
 
     /// Returns a QString with filter name for displaying in views
-    virtual QString displayableName(const QString& filterIdentifier) = 0;
+    virtual QString displayableName(const QString& filterIdentifier)        = 0;
 
     /// Convenience methods
     virtual bool isSupported(const QString& filterIdentifier);
     virtual bool isSupported(const QString& filterIdentifier, int version);
 
     /// Create the filter for the given combination of identifier and version
-    virtual DImgThreadedFilter* createFilter(const QString& filterIdentifier, int version) = 0;
+    virtual DImgThreadedFilter* createFilter(const QString& filterIdentifier,
+                                             int version)                   = 0;
 };
 
 // -----------------------------------------------------------------------------------
 
 template <class T>
-
 class BasicDImgFilterGenerator : public DImgFilterGenerator
 {
 public:
 
-    /** A sample implementation for one DImgThreadedFilter class.
-     *  The class must provide two static methods, FilterIdentifier() and SupportedVersions().
+    /**
+     * A sample implementation for one DImgThreadedFilter class.
+     * The class must provide two static methods, FilterIdentifier() and SupportedVersions().
      */
 
     BasicDImgFilterGenerator()
@@ -96,11 +97,12 @@ public:
 
     DImgThreadedFilter* createFilter(const QString& filterIdentifier, int version) override
     {
-        if (filterIdentifier == T::FilterIdentifier() &&
+        if ((filterIdentifier == T::FilterIdentifier()) &&
             T::SupportedVersions().contains(version))
         {
-            T* t = new T;
+            T* const t = new T;
             t->setFilterVersion(version);
+
             return t;
         }
 

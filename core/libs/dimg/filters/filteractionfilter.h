@@ -59,7 +59,7 @@ public:
     void setFilterAction(const FilterAction& action);
     void addFilterAction(const FilterAction& action);
 
-    QList<FilterAction> filterActions() const;
+    QList<FilterAction> filterActions()         const;
 
     /**
      * Returns the list of applied filter actions. This is probably identical
@@ -69,12 +69,12 @@ public:
      *   actions with an older version, still supported by the filter,
      *   the filter will now possibly return the newer, current version
      */
-    QList<FilterAction> appliedFilterActions() const;
+    QList<FilterAction> appliedFilterActions()  const;
 
     /**
      * Returns true if all FilterActions are reproducible
      */
-    bool isReproducible() const;
+    bool isReproducible()                       const;
 
     /**
      * Returns true if all FilterActions are reproducible
@@ -82,12 +82,12 @@ public:
      * may not be reproducible, but a sufficiently similar result
      * may be available and apply will probably complete.
      */
-    bool isComplexAction() const;
+    bool isComplexAction()                      const;
 
     /**
      * Returns true if all actions are supported.
      */
-    bool isSupported() const;
+    bool isSupported()                          const;
 
     /**
      * After the thread was run, you can find out if application was successful.
@@ -100,31 +100,31 @@ public:
      * an optional error message.
      * Note that finished(true) does not mean that completelyApplied() is also true.
      */
-    bool         completelyApplied()   const;
-    FilterAction failedAction()        const;
-    int          failedActionIndex()   const;
-    QString      failedActionMessage() const;
+    bool         completelyApplied()            const;
+    FilterAction failedAction()                 const;
+    int          failedActionIndex()            const;
+    QString      failedActionMessage()          const;
 
     /**
      * These methods do not make sense here. Use filterActions.
      */
-    virtual FilterAction filterAction() override
+    virtual FilterAction filterAction()                override
     {
         return FilterAction();
     }
 
-    virtual void readParameters(const FilterAction&) override
+    virtual void readParameters(const FilterAction&)  override
     {
     }
 
-    virtual QString filterIdentifier() const override
+    virtual QString filterIdentifier()          const override
     {
         return QString();
     }
 
 protected:
 
-    virtual void filterImage() override;
+    virtual void filterImage()                        override;
 
 private:
 

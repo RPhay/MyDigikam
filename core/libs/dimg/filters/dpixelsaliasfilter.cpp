@@ -175,13 +175,13 @@ void DPixelsAliasFilter::pixelAntiAliasing16(unsigned short* data,
 }
 
 inline int DPixelsAliasFilter::setPositionAdjusted(int Width,
-                                                        int Height,
-                                                        int X,
-                                                        int Y)
+                                                   int Height,
+                                                   int X,
+                                                   int Y)
 {
     X = (X < 0) ? 0 : (X >= Width)  ? Width  - 1 : X;
     Y = (Y < 0) ? 0 : (Y >= Height) ? Height - 1 : Y;
-    
+
     return (Y * Width * 4 + 4 * X);
 }
 

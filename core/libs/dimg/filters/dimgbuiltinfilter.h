@@ -52,15 +52,17 @@ public:
         Rotate270,
         FlipHorizontally,
         FlipVertically,
-        Crop,             /// Argument: QRect
-        Resize,           /// Argument: QSize
+        Crop,             ///< Argument: QRect
+        Resize,           ///< Argument: QSize
         ConvertTo8Bit,
         ConvertTo16Bit
     };
 
 public:
 
-    /// Create a filter performing no operation
+    /**
+     * Create a filter performing no operation
+     */
     DImgBuiltinFilter();
 
     /**
@@ -75,7 +77,9 @@ public:
      */
     explicit DImgBuiltinFilter(Type type, const QVariant& arg = QVariant());
 
-    /// same as constructor
+    /**
+     * same as constructor
+     */
     void setAction(const FilterAction& action);
     void setAction(Type type, const QVariant& arg = QVariant());
 
@@ -83,29 +87,35 @@ public:
      * Returns the reverse action of this filter.
      * If the current action is not revertible, returns an invalid filter.
      */
-    DImgBuiltinFilter reverseFilter() const;
-    bool isReversible()               const;
+    DImgBuiltinFilter reverseFilter()                                                               const;
+    bool isReversible()                                                                             const;
 
     /**
      * Checks that the action is supported and valid arguments are set
      */
-    bool isValid() const;
+    bool isValid()                                                                                  const;
 
-    /// Apply the described change to the given image reference
-    void apply(DImg& image) const;
+    /**
+     * Apply the described change to the given image reference
+     */
+    void apply(DImg& image)                                                                         const;
 
     /**
      * NOTE: The following methods are also accessed by the more general
      * DImgFilterManager methods, so you usually do not need to call these directly.
      */
 
-    /// Returns the FilterAction describing this filter.
-    FilterAction filterAction() const;
+    /**
+     * Returns the FilterAction describing this filter.
+     */
+    FilterAction filterAction()                                                                     const;
 
-    /// Returns a displayableName for this filter
-    QString displayableName()     const;
-    QString i18nDisplayableName() const;
-    QString filterIcon()          const;
+    /**
+     * Returns a displayableName for this filter
+     */
+    QString displayableName()                                                                       const;
+    QString i18nDisplayableName()                                                                   const;
+    QString filterIcon()                                                                            const;
 
     /**
      * Returns a DImgThreadedFilter which executes this builtin action.
@@ -120,10 +130,14 @@ public:
 
     static QStringList supportedFilters();
 
-    /// Returns a list of supported versions of the given filter
+    /**
+     * Returns a list of supported versions of the given filter
+     */
     static QList<int> supportedVersions(const QString& filterIdentifier);
 
-    /// Returns if the given filter and version are supported by DImgBuiltinFilter
+    /**
+     * Returns if the given filter and version are supported by DImgBuiltinFilter
+     */
     static bool isSupported(const QString& filterIdentifier);
     static bool isSupported(const QString& filterIdentifier, int version);
 

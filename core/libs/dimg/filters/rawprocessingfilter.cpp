@@ -138,9 +138,11 @@ void RawProcessingFilter::filterImage()
     m_destImage = m_orgImage;
 
     // emulate LibRaw custom output profile
+
     if (!m_customOutputProfile.isNull())
     {
         // Note the m_destImage is not yet ready in load()!
+
         IccTransform trans;
         trans.setIntent(IccTransform::Perceptual);
         trans.setEmbeddedProfile(m_destImage);

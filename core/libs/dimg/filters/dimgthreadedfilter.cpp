@@ -38,25 +38,26 @@ namespace Digikam
 {
 
 DImgThreadedFilter::DImgThreadedFilter(QObject* const parent, const QString& name)
-    : DynamicThread(parent)
+    : DynamicThread(parent),
+      m_version(1),
+      m_wasCancelled(false)
 {
     setOriginalImage(DImg());
     setFilterName(name);
-    m_version      = 1;
-    m_wasCancelled = false;
 
     initMaster();
 }
 
 DImgThreadedFilter::DImgThreadedFilter(DImg* const orgImage, QObject* const parent,
                                        const QString& name)
-    : DynamicThread(parent)
+    : DynamicThread(parent),
+      m_version(1),
+      m_wasCancelled(false)
 {
     // remove meta data
+
     setOriginalImage(orgImage->copyImageData());
     setFilterName(name);
-    m_version      = 1;
-    m_wasCancelled = false;
 
     initMaster();
 }
@@ -64,12 +65,12 @@ DImgThreadedFilter::DImgThreadedFilter(DImg* const orgImage, QObject* const pare
 DImgThreadedFilter::DImgThreadedFilter(DImgThreadedFilter* const master, const DImg& orgImage,
                                        const DImg& destImage, int progressBegin, int progressEnd,
                                        const QString& name)
+    : m_version(1),
+      m_wasCancelled(false),
+      m_destImage(destImage)
 {
     setFilterName(name);
     setOriginalImage(orgImage);
-    m_destImage    = destImage;
-    m_version      = 1;
-    m_wasCancelled = false;
 
     initSlave(master, progressBegin, progressEnd);
 }
@@ -77,6 +78,7 @@ DImgThreadedFilter::DImgThreadedFilter(DImgThreadedFilter* const master, const D
 DImgThreadedFilter::~DImgThreadedFilter()
 {
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+
     this->cancelFilter();
 
     if (m_master)
@@ -111,7 +113,9 @@ void DImgThreadedFilter::initMaster()
 void DImgThreadedFilter::setupFilter(const DImg& orgImage)
 {
     setOriginalImage(orgImage);
+
     // some filters may require that initFilter is called
+
     initFilter();
 }
 
@@ -134,7 +138,7 @@ void DImgThreadedFilter::setFilterName(const QString& name)
 
 QList<int> DImgThreadedFilter::supportedVersions() const
 {
-    return QList<int>() << 1;
+    return (QList<int>() << 1);
 }
 
 void DImgThreadedFilter::setFilterVersion(int version)
@@ -166,7 +170,7 @@ void DImgThreadedFilter::prepareDestImage()
 
     if (!m_orgImage.isNull())
     {
-        m_destImage = DImg(m_orgImage.width(), m_orgImage.height(),
+        m_destImage = DImg(m_orgImage.width(),      m_orgImage.height(),
                            m_orgImage.sixteenBit(), m_orgImage.hasAlpha());
     }
 }
@@ -200,7 +204,7 @@ void DImgThreadedFilter::startFilterDirectly()
         }
         catch (std::bad_alloc& ex)
         {
-            //TODO: User notification
+            // TODO: User notification
             qCCritical(DIGIKAM_DIMG_LOG) << "Caught out-of-memory exception! Aborting operation" << ex.what();
             emit finished(false);
             return;
@@ -232,6 +236,7 @@ void DImgThreadedFilter::cancelFilter()
     if (m_slave)
     {
         m_slave->stop();
+
         // do not wait on slave, it is not running in its own separate thread!
         //m_slave->cleanupFilter();
     }
@@ -283,7 +288,9 @@ QList<int> DImgThreadedFilter::multithreadedSteps(int stop, int start) const
     vals << start;
 
     for (uint i = 1 ; i < nbCore ; ++i)
+    {
         vals << vals.last() + step;
+    }
 
     vals << stop;
 

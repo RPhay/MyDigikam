@@ -175,6 +175,7 @@ RandomNumberGenerator::~RandomNumberGenerator()
 quint32 RandomNumberGenerator::nonDeterministicSeed()
 {
     NonDeterministicRandomData seed(sizeof(quint32));
+
     return *reinterpret_cast<quint32*>(seed.data());
 }
 
@@ -182,6 +183,7 @@ quint32 RandomNumberGenerator::timeSeed()
 {
     uint seed;
     seed = quintptr(&seed) + QDateTime::currentDateTime().toTime_t();
+
     return seed;
 }
 
@@ -189,6 +191,7 @@ quint32 RandomNumberGenerator::seedNonDeterministic()
 {
     d->seed = nonDeterministicSeed();
     d->engine.seed(d->seed);
+
     return d->seed;
 }
 
@@ -196,6 +199,7 @@ quint32 RandomNumberGenerator::seedByTime()
 {
     d->seed = timeSeed();
     d->engine.seed(d->seed);
+
     return d->seed;
 }
 
