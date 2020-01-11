@@ -78,7 +78,7 @@ void StretchFilter::filterImage()
 /**
  * Performs histogram normalization of the image. The algorithm normalizes
  * the pixel values from an image for to span the full range
- *  of color values. This is a contrast enhancement technique.
+ * of color values. This is a contrast enhancement technique.
  */
 void StretchFilter::stretchContrastImage()
 {
@@ -95,6 +95,7 @@ void StretchFilter::stretchContrastImage()
     unsigned long        threshold_intensity;
 
     // Create an histogram of the reference image.
+
     QScopedPointer<ImageHistogram> histogram(new ImageHistogram(m_refImage));
 
     if (histogram.isNull())
@@ -106,6 +107,7 @@ void StretchFilter::stretchContrastImage()
     histogram->calculate();
 
     // Memory allocation.
+
     QScopedArrayPointer<int_packet> normalize_map(new int_packet[histogram->getHistogramSegments()]);
 
     if (normalize_map.isNull())
@@ -288,11 +290,11 @@ void StretchFilter::stretchContrastImage()
     }
 
     // Stretch the histogram to create the normalized image mapping.
-
     // TODO magic number 256
+
     for (i = 0 ; runningFlag() && (i <= (long)histogram->getMaxSegmentIndex()) ; ++i)
     {
-        if (i < (long) low.red)
+        if      (i < (long) low.red)
         {
             normalize_map[i].red = 0;
         }
@@ -305,7 +307,7 @@ void StretchFilter::stretchContrastImage()
             normalize_map[i].red = (int)(((256 * histogram->getHistogramSegments() - 1) * (i - low.red)) / (high.red - low.red));
         }
 
-        if (i < (long) low.green)
+        if      (i < (long) low.green)
         {
             normalize_map[i].green = 0;
         }
@@ -318,7 +320,7 @@ void StretchFilter::stretchContrastImage()
             normalize_map[i].green = (int)(((256 * histogram->getHistogramSegments() - 1) * (i - low.green)) / (high.green - low.green));
         }
 
-        if (i < (long) low.blue)
+        if      (i < (long) low.blue)
         {
             normalize_map[i].blue = 0;
         }
@@ -331,7 +333,7 @@ void StretchFilter::stretchContrastImage()
             normalize_map[i].blue = (int)(((256 * histogram->getHistogramSegments() - 1) * (i - low.blue)) / (high.blue - low.blue));
         }
 
-        if (i < (long) low.alpha)
+        if      (i < (long) low.alpha)
         {
             normalize_map[i].alpha = 0;
         }
@@ -354,6 +356,7 @@ void StretchFilter::stretchContrastImage()
     int size        = w * h;
 
     // TODO magic number 257
+
     if (!sixteenBit)        // 8 bits image.
     {
         uchar  red, green, blue, alpha;
@@ -390,11 +393,11 @@ void StretchFilter::stretchContrastImage()
             ptr[1] = green;
             ptr[2] = red;
             ptr[3] = alpha;
-            ptr += 4;
+            ptr   += 4;
 
             progress = (int)(((double)i * 100.0) / size);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }
@@ -436,11 +439,11 @@ void StretchFilter::stretchContrastImage()
             ptr[1] = green;
             ptr[2] = red;
             ptr[3] = alpha;
-            ptr += 4;
+            ptr   += 4;
 
             progress = (int)(((double)i * 100.0) / size);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }

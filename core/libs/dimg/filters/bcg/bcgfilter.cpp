@@ -56,10 +56,12 @@ bool BCGContainer::isDefault() const
 
 bool BCGContainer::operator==(const BCGContainer& other) const
 {
-    return (channel    == other.channel    &&
-            brightness == other.brightness &&
-            contrast   == other.contrast   &&
-            gamma      == other.gamma);
+    return (
+            (channel    == other.channel)    &&
+            (brightness == other.brightness) &&
+            (contrast   == other.contrast)   &&
+            (gamma      == other.gamma)
+           );
 }
 
 void BCGContainer::writeToFilterAction(FilterAction& action, const QString& prefix) const
@@ -140,6 +142,7 @@ FilterAction BCGFilter::filterAction()
 {
     DefaultFilterAction<BCGFilter> action;
     d->settings.writeToFilterAction(action);
+
     return std::move(action);
 }
 
@@ -161,12 +164,12 @@ void BCGFilter::setGamma(double val)
 {
     val = (val < 0.01) ? 0.01 : val;
 
-    for (int i = 0; i < 65536; ++i)
+    for (int i = 0 ; i < 65536 ; ++i)
     {
         d->map16[i] = lround(pow(((double)d->map16[i] / 65535.0), (1.0 / val)) * 65535.0);
     }
 
-    for (int i = 0; i < 256; ++i)
+    for (int i = 0 ; i < 256 ; ++i)
     {
         d->map[i] = lround(pow(((double)d->map[i] / 255.0), (1.0 / val)) * 255.0);
     }
@@ -176,14 +179,14 @@ void BCGFilter::setBrightness(double val)
 {
     int val1 = lround(val * 65535);
 
-    for (int i = 0; i < 65536; ++i)
+    for (int i = 0 ; i < 65536 ; ++i)
     {
         d->map16[i] = d->map16[i] + val1;
     }
 
     val1 = lround(val * 255);
 
-    for (int i = 0; i < 256; ++i)
+    for (int i = 0 ; i < 256 ; ++i)
     {
         d->map[i] = d->map[i] + val1;
     }
@@ -191,12 +194,12 @@ void BCGFilter::setBrightness(double val)
 
 void BCGFilter::setContrast(double val)
 {
-    for (int i = 0; i < 65536; ++i)
+    for (int i = 0 ; i < 65536 ; ++i)
     {
         d->map16[i] = lround((d->map16[i] - 32767) * val) + 32767;
     }
 
-    for (int i = 0; i < 256; ++i)
+    for (int i = 0 ; i < 256 ; ++i)
     {
         d->map[i] = lround((d->map[i] - 127) * val) + 127;
     }
@@ -206,12 +209,12 @@ void BCGFilter::reset()
 {
     // initialize to linear mapping
 
-    for (int i = 0; i < 65536; ++i)
+    for (int i = 0 ; i < 65536 ; ++i)
     {
         d->map16[i] = i;
     }
 
-    for (int i = 0; i < 256; ++i)
+    for (int i = 0 ; i < 256 ; ++i)
     {
         d->map[i] = i;
     }
@@ -241,7 +244,7 @@ void BCGFilter::applyBCG(uchar* const bits, uint width, uint height, bool sixtee
     {
         uchar* data = bits;
 
-        for (uint i = 0; runningFlag() && (i < size); ++i)
+        for (uint i = 0 ; runningFlag() && (i < size) ; ++i)
         {
             switch (d->settings.channel)
             {
@@ -268,7 +271,7 @@ void BCGFilter::applyBCG(uchar* const bits, uint width, uint height, bool sixtee
 
             progress = (int)(((double)i * 100.0) / size);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }
@@ -278,7 +281,7 @@ void BCGFilter::applyBCG(uchar* const bits, uint width, uint height, bool sixtee
     {
         ushort* data = reinterpret_cast<ushort*>(bits);
 
-        for (uint i = 0; runningFlag() && (i < size); ++i)
+        for (uint i = 0 ; runningFlag() && (i < size) ; ++i)
         {
             switch (d->settings.channel)
             {
@@ -305,7 +308,7 @@ void BCGFilter::applyBCG(uchar* const bits, uint width, uint height, bool sixtee
 
             progress = (int)(((double)i * 100.0) / size);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }

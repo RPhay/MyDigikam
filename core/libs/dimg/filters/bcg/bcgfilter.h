@@ -66,18 +66,18 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
+    virtual FilterAction    filterAction()                                    override;
 
-    void                    readParameters(const FilterAction& action) override;
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
 
     void reset();
     void setGamma(double val);

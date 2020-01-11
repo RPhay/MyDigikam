@@ -61,18 +61,18 @@ public:
 
     static QString DisplayableName();
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
+    virtual FilterAction    filterAction()                                    override;
 
-    void                    readParameters(const FilterAction& action) override;
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
     void stretchContrastImage();
 
 private:

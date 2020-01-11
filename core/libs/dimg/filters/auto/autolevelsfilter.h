@@ -39,6 +39,7 @@ class DIGIKAM_EXPORT AutoLevelsFilter : public DImgThreadedFilter
 {
 
 public:
+
     explicit AutoLevelsFilter(QObject* const parent = nullptr);
     AutoLevelsFilter(DImg* const orgImage, const DImg* const refImage, QObject* const parent=nullptr);
     virtual ~AutoLevelsFilter();
@@ -60,18 +61,18 @@ public:
 
     static QString DisplayableName();
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
+    virtual FilterAction    filterAction()                                    override;
 
-    void                    readParameters(const FilterAction& action) override;
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
     void autoLevelsCorrectionImage();
 
 private:

@@ -106,6 +106,7 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
     int sizeEightBit   = w * h * 4;
 
     // Create the new empty destination image data space.
+
     if (runningFlag())
     {
         if (sixteenBit)
@@ -121,6 +122,7 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
     }
 
     // Create an histogram of the reference image.
+
     if (runningFlag())
     {
         histogram.reset(new ImageHistogram(m_refImage));
@@ -129,6 +131,7 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
     }
 
     // Create an empty instance of levels to use.
+
     if (runningFlag())
     {
         levels.reset(new ImageLevels(sixteenBit));
@@ -136,6 +139,7 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
     }
 
     // Initialize an auto levels correction of the histogram.
+
     if (runningFlag())
     {
         levels->levelsAuto(histogram.data());
@@ -143,6 +147,7 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
     }
 
     // Calculate the LUT to apply on the image.
+
     if (runningFlag())
     {
         levels->levelsLutSetup(AlphaChannel);
@@ -150,6 +155,7 @@ void AutoLevelsFilter::autoLevelsCorrectionImage()
     }
 
     // Apply the lut to the image.
+
     if (runningFlag())
     {
         levels->levelsLutProcess(data, desData.data(), w, h);

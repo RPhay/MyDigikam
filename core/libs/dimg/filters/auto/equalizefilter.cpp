@@ -98,10 +98,12 @@ void EqualizeFilter::equalizeImage()
     int                   progress;
 
     // Create an histogram of the reference image.
+
     QScopedPointer<ImageHistogram> histogram(new ImageHistogram(m_refImage));
     histogram->calculate();
 
     // Memory allocation.
+
     QScopedArrayPointer<double_packet> map(new double_packet[histogram->getHistogramSegments()]);
     QScopedArrayPointer<int_packet> equalize_map(new int_packet[histogram->getHistogramSegments()]);
 
@@ -128,6 +130,7 @@ void EqualizeFilter::equalizeImage()
     high = map[histogram->getHistogramSegments() - 1];
 
     // TODO magic number 256
+
     for (i = 0 ; runningFlag() && (i < histogram->getHistogramSegments()) ; ++i)
     {
         if (high.red != low.red)
@@ -155,6 +158,7 @@ void EqualizeFilter::equalizeImage()
 
     // Apply results to image.
     // TODO magic number 257
+
     if (!sixteenBit)        // 8 bits image.
     {
         uchar  red, green, blue, alpha;
@@ -195,7 +199,7 @@ void EqualizeFilter::equalizeImage()
 
             progress = (int)(((double)i * 100.0) / size);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }
@@ -241,7 +245,7 @@ void EqualizeFilter::equalizeImage()
 
             progress = (int)(((double)i * 100.0) / size);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }
