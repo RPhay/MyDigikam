@@ -45,20 +45,26 @@ public:
 
     enum Category
     {
-        // Do not change existing values, they are written to XML in files!
-        /** When given the set of stored parameters and the original data,
-         *  an identical result will be produced. */
+        /**
+         * NOTE: Do not change existing values, they are written to XML in files!
+         */
+
+        /**
+         * When given the set of stored parameters and the original data,
+         *  an identical result will be produced.
+         */
         ReproducibleFilter = 0,
 
         /**
-         *  The operation is documented and a number of parameters may be known,
-         *  but the identical result cannot be reproduced.
-         *  It may be possible to produce a sufficiently similar result.
+         * The operation is documented and a number of parameters may be known,
+         * but the identical result cannot be reproduced.
+         * It may be possible to produce a sufficiently similar result.
          */
         ComplexFilter      = 1,
 
-        /** The source images are known, a textual description may be added,
-         *  but there is no way to automatically replay
+        /**
+         * The source images are known, a textual description may be added,
+         * but there is no way to automatically replay
          */
         DocumentedHistory  = 2,
 
@@ -68,8 +74,9 @@ public:
 
     enum Flag
     {
-        /** The editing step of this filter action explicitly branches from the parent.
-         *  This is an optional hint that the result is meant as a new version.
+        /**
+         * The editing step of this filter action explicitly branches from the parent.
+         * This is an optional hint that the result is meant as a new version.
          */
         ExplicitBranch     = 1 << 0
     };
@@ -80,36 +87,36 @@ public:
     FilterAction();
     FilterAction(const QString& identifier, int version, Category category = ReproducibleFilter);
 
-    bool isNull() const;
+    bool isNull()                                                   const;
 
-    bool operator==(const FilterAction& other) const;
+    bool operator==(const FilterAction& other)                      const;
 
-    Category category() const;
+    Category category()                                             const;
 
     /**
      * Returns a technical identifier for the filter used to produce this action.
      * Can include a namespace. Example: digikam:charcoal
      */
-    QString  identifier() const;
+    QString  identifier()                                           const;
 
     /**
      * Returns the version (>= 1) of the filter used to produce this action.
      * When a filter / tool is found by the identifier, it can decide
      * by the version if it supports this action and which parameters it expects.
      */
-    int      version() const;
+    int      version()                                              const;
 
     /**
      * Returns a description / comment for this action.
      * In the case of DocumentedHistory, this may be the most useful value.
      */
-    QString  description() const;
+    QString  description()                                          const;
     void     setDescription(const QString& description);
 
-    QString  displayableName() const;
+    QString  displayableName()                                      const;
     void     setDisplayableName(const QString& displayableName);
 
-    Flags flags() const;
+    Flags flags()                                                   const;
     void  setFlags(Flags flags);
     void  addFlag(Flags flags);
     void  removeFlag(Flags flags);
@@ -120,17 +127,19 @@ public:
      * Keys need not be unique, but you can decide to use unique keys.
      * There are accessors for both contexts.
      */
-    bool                           hasParameters() const;
-    const QHash<QString,QVariant>& parameters()    const;
+    bool                           hasParameters()                  const;
+    const QHash<QString,QVariant>& parameters()                     const;
     QHash<QString, QVariant>&      parameters();
 
     bool                           hasParameter(const QString& key) const;
     const QVariant                 parameter(const QString& key)    const;
     QVariant&                      parameter(const QString& key);
 
-    /// Returns parameter converted from QVariant to given type
+    /**
+     * Returns parameter converted from QVariant to given type
+     */
     template <typename T>
-    T parameter(const QString& key) const
+    T parameter(const QString& key)                                 const
     {
         return parameter(key).value<T>();
     }
@@ -142,7 +151,7 @@ public:
      * If there is no parameter, return the given default value.
      */
     template <typename T>
-    T parameter(const QString& key, const T& defaultValue) const
+    T parameter(const QString& key, const T& defaultValue)          const
     {
         QVariant var = parameter(key);
         return (var.isValid()) ? var.value<T>() : defaultValue;
