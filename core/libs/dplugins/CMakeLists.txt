@@ -65,17 +65,17 @@ set(libdpluginsinterface_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wssettings.cpp
 )
 
-if(ENABLE_QWEBENGINE)
-    set(libdpluginsinterface_SRCS
-        ${libdpluginsinterface_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/webservices/webwidget_qwebengine.cpp
-       )
-else()
-    set(libdpluginsinterface_SRCS
-        ${libdpluginsinterface_SRCS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/webservices/webwidget.cpp
-       )
-endif()
+#if(ENABLE_QWEBENGINE)
+#    set(libdpluginsinterface_SRCS
+#        ${libdpluginsinterface_SRCS}
+#        ${CMAKE_CURRENT_SOURCE_DIR}/webservices/webwidget_qwebengine.cpp
+#       )
+#else()
+#    set(libdpluginsinterface_SRCS
+#        ${libdpluginsinterface_SRCS}
+#        ${CMAKE_CURRENT_SOURCE_DIR}/webservices/webwidget.cpp
+#       )
+#endif()
 
 add_library(dpluginsinterface_src OBJECT ${libdpluginsinterface_SRCS})
 
