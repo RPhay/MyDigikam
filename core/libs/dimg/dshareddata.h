@@ -36,7 +36,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DSharedData
+class DIGIKAM_EXPORT Q_DECL_DEPRECATED DSharedData
 {
     /**
      * Classes that are used with a DSharedDataPointer shall inherit from

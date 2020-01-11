@@ -57,6 +57,7 @@ uchar* DImg::copyBits() const
 {
     uchar* const data = new uchar[numBytes()];
     memcpy(data, bits(), numBytes());
+
     return data;
 }
 
@@ -68,6 +69,7 @@ uchar* DImg::scanLine(uint i) const
     }
 
     uchar* const data = bits() + (width() * bytesDepth() * i);
+
     return data;
 }
 
@@ -359,7 +361,7 @@ void DImg::switchOriginToLastSaved()
 
 DColor DImg::getPixelColor(uint x, uint y) const
 {
-    if (m_priv->null || x >= m_priv->width || y >= m_priv->height)
+    if (m_priv->null || (x >= m_priv->width) || (y >= m_priv->height))
     {
         return DColor();
     }
@@ -380,7 +382,7 @@ void DImg::prepareSubPixelAccess()
     /* Precompute the Lanczos kernel */
     LANCZOS_DATA_TYPE* lanczos_func = new LANCZOS_DATA_TYPE[LANCZOS_SUPPORT * LANCZOS_SUPPORT * LANCZOS_TABLE_RES];
 
-    for (int i = 0; i < LANCZOS_SUPPORT * LANCZOS_SUPPORT * LANCZOS_TABLE_RES; ++i)
+    for (int i = 0 ; (i < LANCZOS_SUPPORT * LANCZOS_SUPPORT * LANCZOS_TABLE_RES) ; ++i)
     {
         if (i == 0)
         {
@@ -409,7 +411,7 @@ static inline int normalizeAndClamp(float norm, int sum, int max)
         r = sum / norm;
     }
 
-    if (r < 0)
+    if      (r < 0)
     {
         r = 0;
     }
@@ -432,7 +434,7 @@ static inline int normalizeAndClamp(int norm, int sum, int max)
         r = sum / norm;
     }
 
-    if (r < 0)
+    if      (r < 0)
     {
         r = 0;
     }
@@ -472,7 +474,7 @@ DColor DImg::getSubPixelColor(float x, float y) const
     float ys = ::ceilf(y)  - LANCZOS_SUPPORT;
     float ye = ::floorf(y) + LANCZOS_SUPPORT;
 
-    if (xs >= 0 && ys >= 0 && xe < width() && ye < height())
+    if ((xs >= 0) && (ys >= 0) && (xe < width()) && (ye < height()))
     {
         float norm = 0.0;
         float sumR = 0.0;
@@ -481,11 +483,11 @@ DColor DImg::getSubPixelColor(float x, float y) const
         float _dx  = x - xs;
         float dy   = y - ys;
 
-        for (; ys <= ye; ys += 1.0, dy -= 1.0)
+        for ( ; ys <= ye ; ys += 1.0, dy -= 1.0)
         {
             float xc, dx = _dx;
 
-            for (xc = xs; xc <= xe; xc += 1.0, dx -= 1.0)
+            for (xc = xs ; xc <= xe ; xc += 1.0, dx -= 1.0)
             {
                 uchar* const data = bits() + (int)(xs * bytesDepth()) + (int)(width() * ys * bytesDepth());
                 DColor src        = DColor(data, sixteenBit());
@@ -512,7 +514,8 @@ DColor DImg::getSubPixelColor(float x, float y) const
 
 #else /* LANCZOS_DATA_FLOAT */
 
-    /* Do it in integer arithmetic, it's faster */
+    // Do it in integer arithmetic, it's faster
+
     int xx   = (int)x;
     int yy   = (int)y;
     int xs   = xx + 1 - LANCZOS_SUPPORT;
@@ -526,15 +529,16 @@ DColor DImg::getSubPixelColor(float x, float y) const
     int _dx  = (int)(x * 4096.0) - (xs << 12);
     int dy   = (int)(y * 4096.0) - (ys << 12);
 
-    for (; ys <= ye; ++ys, dy -= 4096)
+    for ( ; ys <= ye ; ++ys, dy -= 4096)
     {
-        int xc, dx = _dx;
+        int xc;
+        int dx = _dx;
 
-        for (xc = xs; xc <= xe; ++xc, dx -= 4096)
+        for (xc = xs ; xc <= xe ; ++xc, dx -= 4096)
         {
             DColor src(0, 0, 0, 0xFFFF, sixteenBit());
 
-            if (xc >= 0 && ys >= 0 && xc < (int)width() && ys < (int)height())
+            if ((xc >= 0) && (ys >= 0) && (xc < (int)width()) && (ys < (int)height()))
             {
                 uchar* const data = bits() + xc * bytesDepth() + width() * ys * bytesDepth();
                 src.setColor(data, sixteenBit());
@@ -542,7 +546,7 @@ DColor DImg::getSubPixelColor(float x, float y) const
 
             int d = (dx * dx + dy * dy) >> 12;
 
-            if (d >= 4096 * LANCZOS_SUPPORT * LANCZOS_SUPPORT)
+            if (d >= (4096 * LANCZOS_SUPPORT * LANCZOS_SUPPORT))
             {
                 continue;
             }
@@ -600,7 +604,7 @@ DColor DImg::getSubPixelColorFast(float x, float y) const
         d01.setColor(data, sixteenBit());
     }
 
-    if ((xx + 1) < (int)width() && (yy + 1) < (int)height())
+    if (((xx + 1) < (int)width()) && ((yy + 1) < (int)height()))
     {
         data = bits() + (xx + 1) * bytesDepth() + (yy + 1) * width() * bytesDepth();
         d11.setColor(data, sixteenBit());
@@ -637,7 +641,7 @@ DColor DImg::getSubPixelColorFast(float x, float y) const
 
 void DImg::setPixelColor(uint x, uint y, const DColor& color)
 {
-    if (m_priv->null || x >= m_priv->width || y >= m_priv->height)
+    if (m_priv->null || (x >= m_priv->width) || (y >= m_priv->height))
     {
         return;
     }
@@ -666,9 +670,9 @@ bool DImg::hasTransparentPixels() const
     {
         uchar* srcPtr = m_priv->data;
 
-        for (uint j = 0; j < h; ++j)
+        for (uint j = 0 ; j < h ; ++j)
         {
-            for (uint i = 0; i < w; ++i)
+            for (uint i = 0 ; i < w ; ++i)
             {
                 if (srcPtr[3] != 0xFF)
                 {
@@ -683,9 +687,9 @@ bool DImg::hasTransparentPixels() const
     {
         unsigned short* srcPtr = reinterpret_cast<unsigned short*>(m_priv->data);
 
-        for (uint j = 0; j < h; ++j)
+        for (uint j = 0 ; j < h ; ++j)
         {
-            for (uint i = 0; i < w; ++i)
+            for (uint i = 0 ; i < w ; ++i)
             {
                 if (srcPtr[3] != 0xFFFF)
                 {

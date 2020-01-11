@@ -26,16 +26,18 @@
  * ============================================================ */
 
 #include "dcolor.h"
-#include "digikam_globals.h"
 
 // Local includes
 
+#include "digikam_globals.h"
 #include "digikam_debug.h"
 
 namespace Digikam
 {
 
 DColor::DColor(const QColor& color, bool sixteenBit)
+    : m_alpha(255),
+      m_sixteenBit(false)
 {
     // initialize as eight bit
     if (color.isValid())
@@ -52,8 +54,6 @@ DColor::DColor(const QColor& color, bool sixteenBit)
         m_blue  = 0;
     }
 
-    m_alpha      = 255;
-    m_sixteenBit = false;
 
     // convert to sixteen bit if requested
     if (sixteenBit)
@@ -68,6 +68,7 @@ QColor DColor::getQColor() const
     {
         DColor eightBit(*this);
         eightBit.convertToEightBit();
+
         return eightBit.getQColor();
     }
 
@@ -219,7 +220,10 @@ void DColor::setHSL(int h, int s, int l, bool sixteenBit)
     }
     else
     {
-        double r, g, b, m2;
+        double r;
+        double g;
+        double b;
+        double m2;
         double hue        = (double)(h * 360.0 / range);
         double lightness  = (double)(l         / range);
         double saturation = (double)(s         / range);
@@ -332,6 +336,7 @@ void DColor::setHSL(int h, int s, int l, bool sixteenBit)
     m_sixteenBit = sixteenBit;
 
     // Fully opaque color.
+
     if (m_sixteenBit)
     {
         m_alpha = 65535;
@@ -366,6 +371,7 @@ void DColor::setYCbCr(double y, double cb, double cr, bool sixteenBit)
     m_sixteenBit = sixteenBit;
 
     // Fully opaque color.
+
     if (m_sixteenBit)
     {
         m_alpha = 65535;

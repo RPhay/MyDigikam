@@ -337,6 +337,30 @@ for path in $OTHER_DATA ; do
     cp -a "$INSTALL_PREFIX/$path" "$TEMPROOT/Applications/KF5/digikam.app/Contents/Resources/"
 done
 
+echo "---------- Copying Qt Web Backend files..."
+
+# QWebEngine bin data files.
+# NOTE: no ressources data are provided with QtWebKit
+if [[ $DK_QTWEBENGINE = 1 ]] ; then
+
+    cp -a "$INSTALL_PREFIX/ressources" "$TEMPROOT"
+
+fi
+
+if [[ $DK_QTWEBENGINE = 1 ]] ; then
+
+    # QtWebEngine runtime process
+    [[ -e $INSTALL_PREFIX/libexec/qt5/libexec/QtWebEngineProcess  ]] && cp -a "$INSTALL_PREFIX/libexec/qt5/libexec/QtWebEngineProcess"  "$TEMPROOT/libexec/qt5/libexec/"
+
+else
+
+    # QtWebKit runtime process
+    [[ -e $INSTALL_PREFIX/libexec/qt5/libexec/QtWebNetworkProcess ]] && cp -a "$INSTALL_PREFIX/libexec/qt5/libexec/QtWebNetworkProcess" "$TEMPROOT/libexec/qt5/libexec/"
+    [[ -e $INSTALL_PREFIX/libexec/qt5/libexec/QtWebProcess ]]        && cp -a "$INSTALL_PREFIX/libexec/qt5/libexec/QtWebProcess"        "$TEMPROOT/libexec/qt5/libexec/"
+    [[ -e $INSTALL_PREFIX/libexec/qt5/libexec/QtWebStorageProcess ]] && cp -a "$INSTALL_PREFIX/libexec/qt5/libexec/QtWebStorageProcess" "$TEMPROOT/libexec/qt5/libexec/"
+
+fi
+
 echo "---------- Copying i18n..."
 
 i18nprefix=$INSTALL_PREFIX/share/

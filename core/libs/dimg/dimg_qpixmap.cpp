@@ -48,7 +48,7 @@ private:
     {
         QPixmap pix(1, 1);
         QPainter p(&pix);
-        return (p.paintEngine() && p.paintEngine()->type() == QPaintEngine::Raster);
+        return (p.paintEngine() && (p.paintEngine()->type() == QPaintEngine::Raster));
     }
 
     const bool m_isRaster;
@@ -67,7 +67,8 @@ QPixmap DImg::convertToPixmap() const
 
     if (sixteenBit())
     {
-        // make fastaaaa...
+        // make faster...
+
         return QPixmap::fromImage(copyQImage(0, 0, width(), height()));
     }
 
@@ -79,27 +80,31 @@ QPixmap DImg::convertToPixmap() const
         uint*  dptr = reinterpret_cast<uint*>(img.bits());
         uint dim    = width() * height();
 
-        for (uint i = 0; i < dim; ++i)
+        for (uint i = 0 ; i < dim ; ++i)
         {
             *dptr++ = qRgba(sptr[2], sptr[1], sptr[0], sptr[3]);
-            sptr += 4;
+            sptr   += 4;
         }
 
         // alpha channel is auto-detected during QImage->QPixmap conversion
+
         return QPixmap::fromImage(img);
     }
     else
     {
         // This is a temporary image operating on the DImg buffer
+
         QImage img(bits(), width(), height(), hasAlpha() ? QImage::Format_ARGB32 : QImage::Format_RGB32);
 
         // For paint engines which base the QPixmap internally on a QImage, we must use a persistent QImage
+
         if (pixmapPaintEngineDetector->isRaster())
         {
             img = img.copy();
         }
 
         // alpha channel is auto-detected during QImage->QPixmap conversion
+
         return QPixmap::fromImage(img);
     }
 }
@@ -147,6 +152,7 @@ QImage DImg::pureColorMask(ExposureSettingsContainer* const expoSettings) const
     // --------------------------------------------------------
 
     // caching
+
     int u_red   = expoSettings->underExposureColor.red();
     int u_green = expoSettings->underExposureColor.green();
     int u_blue  = expoSettings->underExposureColor.blue();
@@ -170,7 +176,7 @@ QImage DImg::pureColorMask(ExposureSettingsContainer* const expoSettings) const
     {
         unsigned short* sptr = reinterpret_cast<unsigned short*>(m_priv->data);
 
-        for (uint i = 0; i < dim; ++i)
+        for (uint i = 0 ; i < dim ; ++i)
         {
             s_blue  = *sptr++;
             s_green = *sptr++;
@@ -225,7 +231,7 @@ QImage DImg::pureColorMask(ExposureSettingsContainer* const expoSettings) const
     {
         uchar* sptr = m_priv->data;
 
-        for (uint i = 0; i < dim; ++i)
+        for (uint i = 0 ; i < dim ; ++i)
         {
             s_blue  = *sptr++;
             s_green = *sptr++;

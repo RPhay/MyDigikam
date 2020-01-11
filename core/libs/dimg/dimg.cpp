@@ -137,9 +137,11 @@ DImg::DImg(uint width, uint height, bool sixteenBit, bool alpha, uchar* const da
 DImg::DImg(const DImg& image, int w, int h)
     : m_priv(new Private)
 {
-    // This private constructor creates a copy of everything except the data.
-    // The image size is set to the given values and a buffer corresponding to these values is allocated.
-    // This is used by copy and scale.
+    /**
+     * This private constructor creates a copy of everything except the data.
+     * The image size is set to the given values and a buffer corresponding to these values is allocated.
+     * This is used by copy and scale.
+     */
     copyImageData(image.m_priv);
     copyMetaData(image.m_priv);
     setImageDimension(w, h);
@@ -153,7 +155,7 @@ DImg::DImg(const QImage& image)
     {
         QImage target;
 
-        if (image.format() == QImage::Format_RGB32 || image.format() == QImage::Format_ARGB32)
+        if ((image.format() == QImage::Format_RGB32) || (image.format() == QImage::Format_ARGB32))
         {
             target = image;
         }
@@ -176,8 +178,7 @@ DImg::DImg(const QImage& image)
                 dptr[1] = qGreen(*sptr);
                 dptr[2] = qRed(*sptr);
                 dptr[3] = qAlpha(*sptr);
-
-                dptr += 4;
+                dptr   += 4;
                 ++sptr;
             }
         }

@@ -66,6 +66,7 @@ cmake $ORIG_WD/../3rdparty \
        -DCMAKE_INSTALL_PREFIX:PATH=$INSTALL_PREFIX \
        -DINSTALL_ROOT=$INSTALL_PREFIX \
        -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
+       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE \
        -Wno-dev
 
 # NOTE: The order to compile each component here is very important.

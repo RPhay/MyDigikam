@@ -35,7 +35,7 @@ void DImg::crop(const QRect& rect)
 
 void DImg::crop(int x, int y, int w, int h)
 {
-    if (isNull() || w <= 0 || h <= 0)
+    if (isNull() || (w <= 0) || (h <= 0))
     {
         return;
     }
@@ -45,16 +45,18 @@ void DImg::crop(int x, int y, int w, int h)
     QScopedArrayPointer<uchar> old(stripImageData());
 
     // set new image data, bits(), width(), height() change
+
     setImageDimension(w, h);
     allocateData();
 
     // copy image region (x|y), wxh, from old data to point (0|0) of new data
+
     bitBlt(old.data(), bits(), x, y, w, h, 0, 0, oldw, oldh, width(), height(), sixteenBit(), bytesDepth(), bytesDepth());
 }
 
 void DImg::resize(int w, int h)
 {
-    if (isNull() || w <= 0 || h <= 0)
+    if (isNull() || (w <= 0) || (h <= 0))
     {
         return;
     }
@@ -88,11 +90,11 @@ void DImg::rotate(ANGLE angle)
                 ullong* from    = reinterpret_cast<ullong*>(m_priv->data);
                 ullong* to      = nullptr;
 
-                for (int y = w - 1; y >= 0; --y)
+                for (int y = w - 1 ; y >= 0 ; --y)
                 {
                     to = newData + y;
 
-                    for (uint x = 0; x < h; ++x)
+                    for (uint x = 0 ; x < h ; ++x)
                     {
                         *to = *from++;
                         to += w;
@@ -110,11 +112,11 @@ void DImg::rotate(ANGLE angle)
                 uint* from    = reinterpret_cast<uint*>(m_priv->data);
                 uint* to      = nullptr;
 
-                for (int y = w - 1; y >= 0; --y)
+                for (int y = w - 1 ; y >= 0 ; --y)
                 {
                     to = newData + y;
 
-                    for (uint x = 0; x < h; ++x)
+                    for (uint x = 0 ; x < h ; ++x)
                     {
                         *to = *from++;
                         to += w;
@@ -149,14 +151,15 @@ void DImg::rotate(ANGLE angle)
                 ullong  tmp;
 
                 // can be done inplace
+
                 uint ymax = (h + 1) / 2;
 
-                for (uint y = 0; y < ymax; ++y)
+                for (uint y = 0 ; y < ymax ; ++y)
                 {
                     line1 = data + y * w;
                     line2 = data + (h - y) * w - 1;
 
-                    for (uint x = 0; x < w; ++x)
+                    for (uint x = 0 ; x < w ; ++x)
                     {
                         tmp    = *line1;
                         *line1 = *line2;
@@ -165,7 +168,7 @@ void DImg::rotate(ANGLE angle)
                         ++line1;
                         --line2;
 
-                        if ((int)y == middle_line && x * 2 >= w)
+                        if (((int)y == middle_line) && ((x * 2) >= w))
                         {
                             break;
                         }
@@ -180,14 +183,15 @@ void DImg::rotate(ANGLE angle)
                 uint  tmp;
 
                 // can be done inplace
+
                 uint ymax = (h + 1) / 2;
 
-                for (uint y = 0; y < ymax; ++y)
+                for (uint y = 0 ; y < ymax ; ++y)
                 {
                     line1 = data + y * w;
                     line2 = data + (h - y) * w - 1;
 
-                    for (uint x = 0; x < w; ++x)
+                    for (uint x = 0 ; x < w ; ++x)
                     {
                         tmp    = *line1;
                         *line1 = *line2;
@@ -196,7 +200,7 @@ void DImg::rotate(ANGLE angle)
                         ++line1;
                         --line2;
 
-                        if ((int)y == middle_line && x * 2 >= w)
+                        if (((int)y == middle_line) && ((x * 2) >= w))
                         {
                             break;
                         }
@@ -218,11 +222,11 @@ void DImg::rotate(ANGLE angle)
                 ullong* from    = reinterpret_cast<ullong*>(m_priv->data);
                 ullong* to      = nullptr;
 
-                for (uint y = 0; y < w; ++y)
+                for (uint y = 0 ; y < w ; ++y)
                 {
                     to = newData + y + w * (h - 1);
 
-                    for (uint x = 0; x < h; ++x)
+                    for (uint x = 0 ; x < h ; ++x)
                     {
                         *to = *from++;
                         to -= w;
@@ -240,11 +244,11 @@ void DImg::rotate(ANGLE angle)
                 uint* from    = reinterpret_cast<uint*>(m_priv->data);
                 uint* to      = nullptr;
 
-                for (uint y = 0; y < w; ++y)
+                for (uint y = 0 ; y < w ; ++y)
                 {
                     to = newData + y + w * (h - 1);
 
-                    for (uint x = 0; x < h; ++x)
+                    for (uint x = 0 ; x < h ; ++x)
                     {
                         *to = *from++;
                         to -= w;
@@ -312,9 +316,9 @@ void DImg::flip(FLIP direction)
 
                     for (uint x = 0 ; x < wHalf ; ++x)
                     {
-                        memcpy(&tmp, beg, 8);
-                        memcpy(beg, end, 8);
-                        memcpy(end, &tmp, 8);
+                        memcpy(&tmp, beg,  8);
+                        memcpy(beg,  end,  8);
+                        memcpy(end,  &tmp, 8);
 
                         beg += 4;
                         end -= 4;
@@ -329,6 +333,7 @@ void DImg::flip(FLIP direction)
                 uchar* data = bits();
 
                 // can be done inplace
+
                 uint wHalf = (w / 2);
 
                 for (uint y = 0 ; y < h ; ++y)
@@ -338,9 +343,9 @@ void DImg::flip(FLIP direction)
 
                     for (uint x = 0 ; x < wHalf ; ++x)
                     {
-                        memcpy(&tmp, beg, 4);
-                        memcpy(beg, end, 4);
-                        memcpy(end, &tmp, 4);
+                        memcpy(&tmp, beg,  4);
+                        memcpy(beg,  end,  4);
+                        memcpy(end,  &tmp, 4);
 
                         beg += 4;
                         end -= 4;
@@ -364,6 +369,7 @@ void DImg::flip(FLIP direction)
                 unsigned short* data  = reinterpret_cast<unsigned short*>(bits());
 
                 // can be done inplace
+
                 uint hHalf = (h / 2);
 
                 for (uint y = 0 ; y < hHalf ; ++y)
@@ -373,9 +379,9 @@ void DImg::flip(FLIP direction)
 
                     for (uint x = 0 ; x < w ; ++x)
                     {
-                        memcpy(&tmp, line1, 8);
+                        memcpy(&tmp,  line1, 8);
                         memcpy(line1, line2, 8);
-                        memcpy(line2, &tmp, 8);
+                        memcpy(line2, &tmp,  8);
 
                         line1 += 4;
                         line2 += 4;
@@ -390,6 +396,7 @@ void DImg::flip(FLIP direction)
                 uchar* data  = bits();
 
                 // can be done inplace
+
                 uint hHalf = (h / 2);
 
                 for (uint y = 0 ; y < hHalf ; ++y)
@@ -399,9 +406,9 @@ void DImg::flip(FLIP direction)
 
                     for (uint x = 0 ; x < w ; ++x)
                     {
-                        memcpy(&tmp, line1, 4);
+                        memcpy(&tmp,  line1, 4);
                         memcpy(line1, line2, 4);
-                        memcpy(line2, &tmp, 4);
+                        memcpy(line2, &tmp,  4);
 
                         line1 += 4;
                         line2 += 4;
@@ -529,22 +536,28 @@ bool DImg::transform(int transformAction)
         default:
             return false;
             break;
+
         case MetaEngineRotation::FlipHorizontal:
             flip(DImg::HORIZONTAL);
             break;
+
         case MetaEngineRotation::FlipVertical:
             flip(DImg::VERTICAL);
             break;
+
         case MetaEngineRotation::Rotate90:
             rotate(DImg::ROT90);
             break;
+
         case MetaEngineRotation::Rotate180:
             rotate(DImg::ROT180);
             break;
+
         case MetaEngineRotation::Rotate270:
             rotate(DImg::ROT270);
             break;
     }
+
     return true;
 }
 
@@ -562,7 +575,9 @@ bool DImg::exifRotate(const QString& filePath)
     }
 
     // Rotate image based on metadata orientation information
+
     setAttribute(QLatin1String("exifRotated"), true);
+
     return rotateAndFlip(exifOrientation(filePath));
 }
 
