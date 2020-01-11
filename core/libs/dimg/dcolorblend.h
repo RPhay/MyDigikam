@@ -5,8 +5,16 @@
  *
  * Date        : 2006-03-01
  * Description : DColor methods for blending
+ *               Integer arithmetic inspired by DirectFB,
+ *               src/gfx/generic/generic.c and src/display/idirectfbsurface.c
  *
  * Copyright (C) 2006-2009 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
+ * Copyright (C) 2000-2002 by convergence integrated media GmbH <curanz@convergence.de>
+ * Copyright (C) 2002-2005 by Denis Oliver Kropp <dok at directfb dot org>
+ * Copyright (C) 2002-2005 by Andreas Hundt <andi at fischlustig dot de>
+ * Copyright (C) 2002-2005 by Sven Neumann <neo at directfb dot org>
+ * Copyright (C) 2002-2005 by Ville Syrj <syrjala at sci dot fi>
+ * Copyright (C) 2002-2005 by Claudio Ciccani <klan at users dot sf dot net>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -20,21 +28,6 @@
  * GNU General Public License for more details.
  *
  * ============================================================ */
-
-/*
-   Inspired by DirectFB, src/gfx/generic/generic.c:
-
-   (c) Copyright 2000-2002  convergence integrated media GmbH <curanz@convergence.de>
-   (c) Copyright 2002-2005  convergence GmbH.
-
-   All rights reserved.
-
-   Written by Denis Oliver Kropp <dok@directfb.org>,
-              Andreas Hundt <andi@fischlustig.de>,
-              Sven Neumann <neo@directfb.org>,
-              Ville Syrjala <syrjala@sci.fi> and
-              Claudio Ciccani <klan@users.sf.net>.
-*/
 
 #ifndef DIGIKAM_DCOLOR_BLEND_H
 #define DIGIKAM_DCOLOR_BLEND_H

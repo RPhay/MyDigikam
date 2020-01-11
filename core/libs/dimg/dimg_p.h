@@ -154,11 +154,11 @@ public:
 
             if (plug && ((prio = plug->canRead(fileInfo, magic)) > 0))
             {
-                /*
+ /*
                 qCDebug(DIGIKAM_DIMG_LOG) << "File path:" << filePath
                                           << "Priority:"  << prio
                                           << "Loader:"    << plug->loaderName();
-                */
+ */
                 pluginMap.insertMulti(prio, plug);
             }
         }
@@ -194,7 +194,7 @@ public:
 
     static DImg::FORMAT loaderNameToFormat(const QString& name)
     {
-        if (name.isNull())
+        if      (name.isNull())
         {
             return DImg::NONE;
         }
