@@ -31,12 +31,13 @@ namespace Digikam
 DImg& DImg::operator=(const DImg& image)
 {
     m_priv = image.m_priv;
+
     return *this;
 }
 
 bool DImg::operator==(const DImg& image) const
 {
-    return m_priv == image.m_priv;
+    return (m_priv == image.m_priv);
 }
 
 void DImg::reset()
@@ -47,6 +48,7 @@ void DImg::reset()
 void DImg::detach()
 {
     // are we being shared?
+
     if (m_priv->ref == 1)
     {
         return;
@@ -70,15 +72,19 @@ void DImg::putImageData(uint width, uint height, bool sixteenBit, bool alpha, uc
     // set image data, metadata is untouched
 
     bool null = (width == 0) || (height == 0);
+
     // allocateData, or code below will set null to false
+
     setImageData(true, width, height, sixteenBit, alpha);
 
     // replace data
+
     delete [] m_priv->data;
 
     if (null)
     {
         // image is null - no data
+
         m_priv->data = nullptr;
     }
     else if (copyData)
@@ -136,6 +142,7 @@ uchar* DImg::stripImageData()
     uchar* const data  = m_priv->data;
     m_priv->data       = nullptr;
     m_priv->null       = true;
+
     return data;
 }
 
@@ -148,7 +155,8 @@ void DImg::copyMetaData(const QExplicitlySharedDataPointer<Private>& src)
     m_priv->embeddedText = src->embeddedText;
     m_priv->iccProfile   = src->iccProfile;
     m_priv->imageHistory = src->imageHistory;
-    //FIXME: what about sharing and deleting lanczos_func?
+
+    // FIXME: what about sharing and deleting lanczos_func?
 }
 
 void DImg::copyImageData(const QExplicitlySharedDataPointer<Private>& src)
@@ -164,10 +172,12 @@ size_t DImg::allocateData() const
     if (!m_priv->data)
     {
         m_priv->null = true;
+
         return 0;
     }
 
     m_priv->null = false;
+
     return size;
 }
 

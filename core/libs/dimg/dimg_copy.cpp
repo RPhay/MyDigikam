@@ -46,11 +46,17 @@ DImg DImg::copyImageData() const
 DImg DImg::copyMetaData() const
 {
     DImg img;
+
     // copy width, height, alpha, sixteenBit, null
+
     img.copyImageData(m_priv);
+
     // deeply copy metadata
+
     img.copyMetaData(m_priv);
+
     // set image to null
+
     img.m_priv->null = true;
 
     return img;
@@ -80,7 +86,7 @@ DImg DImg::copy(const QRectF& rel) const
 
 DImg DImg::copy(int x, int y, int w, int h) const
 {
-    if (isNull() || w <= 0 || h <= 0)
+    if (isNull() || (w <= 0) || (h <= 0))
     {
         qCDebug(DIGIKAM_DIMG_LOG) << " : return null image! ("
                                   << isNull() << ", " << w
@@ -100,10 +106,10 @@ DImg DImg::copy(int x, int y, int w, int h) const
 }
 
 /**
-* x,y, w x h is a section of the image. The image size is width x height.
-* Clips the section to the bounds of the image.
-* Returns if the (clipped) section is a valid rectangle.
-*/
+ * x,y, w x h is a section of the image. The image size is width x height.
+ * Clips the section to the bounds of the image.
+ * Returns if the (clipped) section is a valid rectangle.
+ */
 bool DImg::clipped(int& x, int& y, int& w, int& h, uint width, uint height) const
 {
     QRect inner(x, y, w, h);

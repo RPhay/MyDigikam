@@ -23,7 +23,6 @@
  *
  * ============================================================ */
 
-#include "dimg.h"
 #include "dimg_p.h"
 
 namespace Digikam
@@ -289,10 +288,11 @@ bool DImg::save(const QString& filePath, const QString& format, DImgLoaderObserv
     DPluginDImg* const plug = m_priv->pluginForFormat(frm);
     DImg copyForSave        = copy();
 
-    if (frm == QLatin1String("JPEG") || frm == QLatin1String("JPG") || frm == QLatin1String("JPE"))
+    if ((frm == QLatin1String("JPEG")) || (frm == QLatin1String("JPG")) || (frm == QLatin1String("JPE")))
     {
         // JPEG does not support transparency, so we shall provide an image without alpha channel.
         // This is only necessary if the image has an alpha channel, and there are actually transparent pixels
+
         if (hasTransparentPixels())
         {
             copyForSave.removeAlphaChannel();

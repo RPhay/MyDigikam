@@ -51,9 +51,9 @@ QByteArray DImg::getUniqueHash()
     FileReadLocker lock(filePath);
 
     DMetadata meta(getMetadata());
-    QByteArray ba = meta.getExifEncoded();
+    QByteArray ba    = meta.getExifEncoded();
 
-    QByteArray hash = DImg::createUniqueHash(filePath, ba);
+    QByteArray hash  = DImg::createUniqueHash(filePath, ba);
     setAttribute(QLatin1String("uniqueHash"), hash);
 
     return hash;
@@ -132,6 +132,7 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
     }
 
     // Get image Exif/IPTC data.
+
     DMetadata meta(getMetadata());
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Prepare Metadata to save for" << intendedDestPath;
@@ -139,22 +140,26 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
     if (flags & RemoveOldMetadataPreviews || flags & CreateNewMetadataPreview)
     {
         // Clear IPTC preview
+
         meta.removeIptcTag("Iptc.Application2.Preview");
         meta.removeIptcTag("Iptc.Application2.PreviewFormat");
         meta.removeIptcTag("Iptc.Application2.PreviewVersion");
 
         // Clear Exif thumbnail
+
         meta.removeExifThumbnail();
 
         // Clear Tiff thumbnail
+
         MetaEngine::MetaDataMap tiffThumbTags = meta.getExifTagsDataList(QStringList() << QLatin1String("SubImage1"));
 
-        for (MetaEngine::MetaDataMap::iterator it = tiffThumbTags.begin(); it != tiffThumbTags.end(); ++it)
+        for (MetaEngine::MetaDataMap::iterator it = tiffThumbTags.begin() ; it != tiffThumbTags.end() ; ++it)
         {
             meta.removeExifTag(it.key().toLatin1().constData());
         }
 
         // Clear Xmp preview from digiKam namespace
+
         meta.removeXmpTag("Xmp.digiKam.Preview");
     }
 
@@ -163,6 +168,7 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
 
     // Refuse preview creation for images with transparency
     // as long as we have no format to support this. See bug 286127
+
     bool skipPreviewCreation = hasTransparentPixels();
 
     if (flags & CreateNewMetadataPreview && !skipPreviewCreation)
@@ -171,6 +177,7 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
         previewSize = size();
 
         // Scale to standard preview size. Only scale down, not up
+
         if (width() > (uint)standardPreviewSize.width() && height() > (uint)standardPreviewSize.height())
         {
             previewSize.scale(standardPreviewSize, Qt::KeepAspectRatio);
@@ -222,39 +229,48 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
         // broken. Note that IPTC image preview tag is limited to 256K!!!
         // There is no limitation with TIFF and PNG about IPTC byte array size.
         // So for a JPEG file, we don't store the IPTC preview.
-        if ((destMimeType.toUpper() != QLatin1String("JPG") && destMimeType.toUpper() != QLatin1String("JPEG") &&
-             destMimeType.toUpper() != QLatin1String("JPE"))
+
+        if (((destMimeType.toUpper() != QLatin1String("JPG"))  &&
+             (destMimeType.toUpper() != QLatin1String("JPEG")) &&
+             (destMimeType.toUpper() != QLatin1String("JPE")))
            )
         {
             // Non JPEG file, we update IPTC and XMP preview
+
             meta.setItemPreview(preview);
         }
 
-        if (destMimeType.toUpper() == QLatin1String("TIFF") || destMimeType.toUpper() == QLatin1String("TIF"))
+        if ((destMimeType.toUpper() == QLatin1String("TIFF")) ||
+            (destMimeType.toUpper() == QLatin1String("TIF")))
         {
             // With TIFF file, we don't store JPEG thumbnail, we even need to erase it and store
             // a thumbnail at a special location. See bug #211758
+
             QImage thumb = preview.scaled(160, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation);
             meta.setTiffThumbnail(thumb);
         }
         else
         {
             // Update Exif thumbnail.
+
             QImage thumb = preview.scaled(160, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation);
             meta.setExifThumbnail(thumb);
         }
     }
 
     // Update Exif Image dimensions.
+
     meta.setItemDimensions(size());
 
     // Update Exif Document Name tag with the original file name.
+
     if (!originalFileName.isEmpty())
     {
         meta.setExifTagString("Exif.Image.DocumentName", originalFileName);
     }
 
     // Update Exif Orientation tag if necessary.
+
     if (flags & ResetExifOrientationTag)
     {
         meta.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
@@ -284,6 +300,7 @@ void DImg::prepareMetadataToSave(const QString& intendedDestPath, const QString&
     }
 
     // Store new Exif/IPTC/XMP data into image.
+
     setMetadata(meta.data());
 }
 
@@ -508,6 +525,7 @@ QByteArray DImg::createUniqueHashV2(const QString& filePath)
     QCryptographicHash md5(QCryptographicHash::Md5);
 
     // Specified size: 100 kB; but limit to file size
+
     const qint64 specifiedSize = 100 * 1024; // 100 kB
     qint64 size                = qMin(file.size(), specifiedSize);
 
@@ -517,12 +535,14 @@ QByteArray DImg::createUniqueHashV2(const QString& filePath)
         int read;
 
         // Read first 100 kB
+
         if ((read = file.read(databuf.data(), size)) > 0)
         {
             md5.addData(databuf.data(), read);
         }
 
         // Read last 100 kB
+
         file.seek(file.size() - size);
 
         if ((read = file.read(databuf.data(), size)) > 0)

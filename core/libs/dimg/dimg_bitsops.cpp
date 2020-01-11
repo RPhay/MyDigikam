@@ -52,7 +52,7 @@ void DImg::bitBltImage(const DImg* const src, int sx, int sy, int w, int h, int 
         return;
     }
 
-    if (w == -1 && h == -1)
+    if ((w == -1) && (h == -1))
     {
         w = src->width();
         h = src->height();
@@ -76,7 +76,7 @@ void DImg::bitBltImage(const uchar* const src, int sx, int sy, int w, int h, int
         return;
     }
 
-    if (w == -1 && h == -1)
+    if ((w == -1) && (h == -1))
     {
         w = swidth;
         h = sheight;
@@ -91,54 +91,56 @@ bool DImg::normalizeRegionArguments(int& sx, int& sy, int& w, int& h, int& dx, i
     if (sx < 0)
     {
         // sx is negative, so + is - and - is +
+
         dx -= sx;
         w  += sx;
-        sx = 0;
+        sx  = 0;
     }
 
     if (sy < 0)
     {
         dy -= sy;
         h  += sy;
-        sy = 0;
+        sy  = 0;
     }
 
     if (dx < 0)
     {
         sx -= dx;
         w  += dx;
-        dx = 0;
+        dx  = 0;
     }
 
     if (dy < 0)
     {
         sy -= dy;
         h  += dy;
-        dy = 0;
+        dy  = 0;
     }
 
-    if (sx + w > (int)swidth)
+    if ((sx + w) > (int)swidth)
     {
         w = swidth - sx;
     }
 
-    if (sy + h > (int)sheight)
+    if ((sy + h) > (int)sheight)
     {
         h = sheight - sy;
     }
 
-    if (dx + w > (int)dwidth)
+    if ((dx + w) > (int)dwidth)
     {
         w = dwidth - dx;
     }
 
-    if (dy + h > (int)dheight)
+    if ((dy + h) > (int)dheight)
     {
         h = dheight - dy;
     }
 
     // Nothing left to copy
-    if (w <= 0 || h <= 0)
+
+    if ((w <= 0) || (h <= 0))
     {
         return false;
     }
@@ -152,13 +154,15 @@ void DImg::bitBlt(const uchar* const src, uchar* const dest,
                   bool /*sixteenBit*/, int sdepth, int ddepth)
 {
     // Normalize
+
     if (!normalizeRegionArguments(sx, sy, w, h, dx, dy, swidth, sheight, dwidth, dheight))
     {
         return;
     }
 
     // Same pixels
-    if (src == dest && dx == sx && dy == sy)
+
+    if ((src == dest) && (dx == sx) && (dy == sy))
     {
         return;
     }
@@ -177,6 +181,7 @@ void DImg::bitBlt(const uchar* const src, uchar* const dest,
         dptr  = &dest[ dcurY * dlinelength ] + dx * ddepth;
 
         // plain and simple bitBlt
+
         for (int i = 0; i < sdepthlength ; ++i, ++sptr, ++dptr)
         {
             *dptr = *sptr;
@@ -212,6 +217,7 @@ void DImg::bitBlend(DColorComposer* const composer, uchar* const src, uchar* con
                     DColorComposer::MultiplicationFlags multiplicationFlags)
 {
     // Normalize
+
     if (!normalizeRegionArguments(sx, sy, w, h, dx, dy, swidth, sheight, dwidth, dheight))
     {
         return;
@@ -230,12 +236,14 @@ void DImg::bitBlend(DColorComposer* const composer, uchar* const src, uchar* con
         dptr = &dest[ dcurY * dlinelength ] + dx * ddepth;
 
         // blend src and destination
+
         for (int i = 0 ; i < w ; ++i, sptr += sdepth, dptr += ddepth)
         {
             DColor src(sptr, sixteenBit);
             DColor dst(dptr, sixteenBit);
 
             // blend colors
+
             composer->compose(dst, src, multiplicationFlags);
 
             dst.setPixel(dptr);
@@ -251,8 +259,11 @@ void DImg::bitBlendImageOnColor(const DColor& color)
 void DImg::bitBlendImageOnColor(const DColor& color, int x, int y, int w, int h)
 {
     // get composer for compositing rule
+
     DColorComposer* const composer = DColorComposer::getComposer(DColorComposer::PorterDuffNone);
+
     // flags would be MultiplicationFlagsDImg for anything but PorterDuffNone
+
     bitBlendImageOnColor(composer, color, x, y, w, h, DColorComposer::NoMultiplication);
 
     delete composer;
@@ -288,6 +299,7 @@ void DImg::bitBlendOnColor(DColorComposer* const composer, const DColor& color,
                            DColorComposer::MultiplicationFlags multiplicationFlags)
 {
     // Normalize
+
     if (!normalizeRegionArguments(x, y, w, h, x, y, width, height, width, height))
     {
         return;
@@ -302,12 +314,14 @@ void DImg::bitBlendOnColor(DColorComposer* const composer, const DColor& color,
         ptr = &data[ curY * linelength ] + x * depth;
 
         // blend src and destination
+
         for (int i = 0 ; i < w ; ++i, ptr += depth)
         {
             DColor src(ptr, sixteenBit);
             DColor dst(color);
 
             // blend colors
+
             composer->compose(dst, src, multiplicationFlags);
 
             dst.setPixel(ptr);

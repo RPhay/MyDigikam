@@ -57,7 +57,7 @@ void DImg::convertDepth(int depth)
         return;
     }
 
-    if (depth != 32 && depth != 64)
+    if ((depth != 32) && (depth != 64))
     {
         qCDebug(DIGIKAM_DIMG_LOG) << " : wrong color depth!";
         return;
@@ -96,6 +96,7 @@ void DImg::convertDepth(int depth)
         uchar*  sptr = bits();
 
         // use default seed of the generator
+
         RandomNumberGenerator generator;
         ushort noise = 0;
 
@@ -178,7 +179,9 @@ void DImg::removeAlphaChannel(const DColor& destColor)
     }
 
     bitBlendImageOnColor(destColor);
+
     // unsure if alpha value is always 0xFF now
+
     m_priv->alpha = false;
 }
 
