@@ -46,9 +46,9 @@ class Q_DECL_HIDDEN TIFFSettings::Private
 public:
 
     explicit Private()
+      : TIFFGrid(nullptr),
+        TIFFcompression(nullptr)
     {
-        TIFFGrid        = nullptr;
-        TIFFcompression = nullptr;
     }
 
     QGridLayout* TIFFGrid;
@@ -62,7 +62,7 @@ TIFFSettings::TIFFSettings(QWidget* const parent)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing   = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     d->TIFFGrid        = new QGridLayout(this);
     d->TIFFcompression = new QCheckBox(i18n("Compress TIFF files"), this);

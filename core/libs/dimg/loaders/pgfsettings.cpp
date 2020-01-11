@@ -50,11 +50,11 @@ class Q_DECL_HIDDEN PGFSettings::Private
 public:
 
     explicit Private()
+      : PGFGrid(nullptr),
+        labelPGFcompression(nullptr),
+        PGFLossLess(nullptr),
+        PGFcompression(nullptr)
     {
-        PGFGrid             = nullptr;
-        labelPGFcompression = nullptr;
-        PGFcompression      = nullptr;
-        PGFLossLess         = nullptr;
     }
 
     QGridLayout*  PGFGrid;
@@ -74,8 +74,8 @@ PGFSettings::PGFSettings(QWidget* const parent)
 
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    d->PGFGrid     = new QGridLayout(this);
-    d->PGFLossLess = new QCheckBox(i18n("Lossless PGF files"), this);
+    d->PGFGrid        = new QGridLayout(this);
+    d->PGFLossLess    = new QCheckBox(i18n("Lossless PGF files"), this);
 
     d->PGFLossLess->setWhatsThis(i18n("<p>Toggle lossless compression for PGF images.</p>"
                                       "<p>If this option is enabled, a lossless method will be used "

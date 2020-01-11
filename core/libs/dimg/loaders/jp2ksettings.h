@@ -45,7 +45,7 @@ public:
     ~JP2KSettings();
 
     void setCompressionValue(int val);
-    int  getCompressionValue() const;
+    int  getCompressionValue()    const;
 
     void setLossLessCompression(bool b);
     bool getLossLessCompression() const;

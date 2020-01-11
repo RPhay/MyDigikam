@@ -58,7 +58,7 @@ void DImgLoader::setLoadFlags(LoadFlags flags)
 
 bool DImgLoader::hasLoadedData() const
 {
-    return (m_loadFlags & LoadImageData) && m_image->m_priv->data;
+    return ((m_loadFlags & LoadImageData) && m_image->m_priv->data);
 }
 
 int DImgLoader::granularity(DImgLoaderObserver* const observer, int total, float progressSlice)
@@ -75,7 +75,7 @@ int DImgLoader::granularity(DImgLoaderObserver* const observer, int total, float
         granularity = (int)((total / (20 * progressSlice)) / observer->granularity());
     }
 
-    return granularity ? granularity : 1;
+    return (granularity ? granularity : 1);
 }
 
 unsigned char*& DImgLoader::imageData()
@@ -178,7 +178,7 @@ qint64 DImgLoader::checkAllocation(qint64 fullSize)
 
         int res = memory.isValid();
 
-        if (res == -1)
+        if      (res == -1)
         {
             qCWarning(DIGIKAM_DIMG_LOG) << "Not a recognized platform to get memory information";
             return -1;
