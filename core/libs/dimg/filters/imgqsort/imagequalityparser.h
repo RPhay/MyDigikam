@@ -46,33 +46,36 @@ public:
                                 PickLabel* const label);
     ~ImageQualityParser();
 
-    /** Perform quality estimation and fill Pick Label value accordingly.
+    /**
+     * Perform quality estimation and fill Pick Label value accordingly.
      */
     void startAnalyse();
     void cancelAnalyse();
 
 private:
 
-    /** Internal method dedicated to convert DImg pixels from integer values to float values.
-     *  These ones will by used internally by ImageQualityParser through OpenCV API.
+    /**
+     * Internal method dedicated to convert DImg pixels from integer values to float values.
+     * These ones will by used internally by ImageQualityParser through OpenCV API.
      */
-    void readImage() const;
+    void readImage()                                    const;
 
     /**
      * @function cannyThreshold
      * @brief Trackbar callback - Canny thresholds input with a ratio 1:3
      */
-    void   cannyThreshold(int, void*) const;
+    void   cannyThreshold(int, void*)                   const;
 
-    double blurDetector()             const;
-    short  blurDetector2()            const;
-    double noiseDetector()            const;
-    int    compressionDetector()      const;
+    double blurDetector()                               const;
+    short  blurDetector2()                              const;
+    double noiseDetector()                              const;
+    int    compressionDetector()                        const;
 
-    /** Detect under and over exposure amount in image. A pure white mask is computed and
-     *  a count of pure color pixels is used to evaluate the over-exposition of shot.
+    /**
+     * Detect under and over exposure amount in image. A pure white mask is computed and
+     * a count of pure color pixels is used to evaluate the over-exposition of shot.
      */
-    void exposureAmount(double& under, double& over) const;
+    void exposureAmount(double& under, double& over)    const;
 
 private:
 

@@ -106,15 +106,18 @@ void ImageQualityParser::startAnalyse()
     double overLevel        = 0.0;
 
     // If blur option is selected in settings, run the blur detection algorithms
+
     if (d->running && d->imq.detectBlur)
     {
         // Returns blur value between 0 and 1.
         // If NaN is returned just assign NoPickLabel
+
         blur  = blurDetector();
         qCDebug(DIGIKAM_DIMG_LOG) << "Amount of Blur present in image is:" << blur;
 
         // Returns blur value between 1 and 32767.
         // If 1 is returned just assign NoPickLabel
+
         blur2 = blurDetector2();
         qCDebug(DIGIKAM_DIMG_LOG) << "Amount of Blur present in image [using LoG Filter] is:" << blur2;
     }
@@ -123,6 +126,7 @@ void ImageQualityParser::startAnalyse()
     {
         // Some images give very low noise value. Assign NoPickLabel in that case.
         // Returns noise value between 0 and 1.
+
         noise = noiseDetector();
         qCDebug(DIGIKAM_DIMG_LOG) << "Amount of Noise present in image is:" << noise;
     }
@@ -130,6 +134,7 @@ void ImageQualityParser::startAnalyse()
     if (d->running && d->imq.detectCompression)
     {
         // Returns number of blocks in the image.
+
         compressionLevel = compressionDetector();
         qCDebug(DIGIKAM_DIMG_LOG) << "Amount of compression artifacts present in image is:" << compressionLevel;
     }
@@ -137,6 +142,7 @@ void ImageQualityParser::startAnalyse()
     if (d->running && d->imq.detectExposure)
     {
         // Returns percents of over-exposure in the image
+
         exposureAmount(underLevel, overLevel);
         qCDebug(DIGIKAM_DIMG_LOG) << "Under-exposure percents in image is: " << underLevel;
         qCDebug(DIGIKAM_DIMG_LOG) << "Over-exposure percents in image is:  " << overLevel;
@@ -183,9 +189,10 @@ void ImageQualityParser::startAnalyse()
     if (d->running)
     {
         // All the results to have a range of 1 to 100.
+
         double finalBlur          = (blur * 100.0)  + ((blur2 / 32767) * 100.0);
         double finalNoise         = noise * 100.0;
-        double finalCompression   = (compressionLevel / 1024.0) * 100.0; // we are processing 1024 pixels size image
+        double finalCompression   = (compressionLevel / 1024.0) * 100.0;        // we are processing 1024 pixels size image
         double finalExposure      = 100.0 - (underLevel + overLevel) * 100.0;
 
         finalQuality            = finalBlur          * d->imq.blurWeight        +
@@ -197,9 +204,10 @@ void ImageQualityParser::startAnalyse()
 
         // Assigning PickLabels
 
-        if (finalQuality == 0.0)
+        if      (finalQuality == 0.0)
         {
             // Algorithms have not been run. So return noPickLabel
+
             *d->label = NoPickLabel;
         }
         else if ((int)finalQuality < d->imq.rejectedThreshold)

@@ -34,15 +34,19 @@ double ImageQualityParser::noiseDetector() const
     //--convert fimg to CvMat*-------------------------------------------------------------------------------
 
     // Convert the image into YCrCb color model.
+
     NRFilter::srgb2ycbcr(d->fimg, d->neimage.numPixels());
 
     // One dimensional CvMat which stores the image.
+
     CvMat* points    = cvCreateMat(d->neimage.numPixels(), 3, CV_32FC1);
 
     // Matrix to store the index of the clusters.
+
     CvMat* clusters  = cvCreateMat(d->neimage.numPixels(), 1, CV_32SC1);
 
     // Pointer variable to handle the CvMat* points (the image in CvMat format).
+
     float* pointsPtr = reinterpret_cast<float*>(points->data.ptr);
 
     for (uint x = 0 ; d->running && (x < d->neimage.numPixels()) ; ++x)
@@ -54,6 +58,7 @@ double ImageQualityParser::noiseDetector() const
     }
 
     // Array to store the centers of the clusters.
+
     CvArr* centers = nullptr;
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Everything ready for the cvKmeans2 or as it seems to";
@@ -84,6 +89,7 @@ double ImageQualityParser::noiseDetector() const
     for (uint i = 0 ; d->running && (i < d->clusterCount) ; ++i)
     {
         // Initializing the cluster count array.
+
         rowPosition[i] = 0;
     }
 
@@ -173,7 +179,7 @@ double ImageQualityParser::noiseDetector() const
     CvMat*   stdStore     = nullptr;
     float*   meanStorePtr = nullptr;
     float*   stdStorePtr  = nullptr;
-    int      totalcount   = 0; // Number of non-empty clusters.
+    int      totalcount   = 0;          // Number of non-empty clusters.
 
     if (d->running)
     {
@@ -214,6 +220,7 @@ double ImageQualityParser::noiseDetector() const
     }
 
     // Remove clang warnings.
+
     (void)meanStorePtr;
     (void)stdStorePtr;
 

@@ -33,9 +33,11 @@ namespace Digikam
 void ImageQualityParser::cannyThreshold(int, void*) const
 {
     // Reduce noise with a kernel 3x3.
+
     blur(d->src_gray, d->detected_edges, Size(3, 3));
 
     // Canny detector.
+
     Canny(d->detected_edges,
           d->detected_edges,
           d->lowThreshold,
@@ -68,14 +70,17 @@ double ImageQualityParser::blurDetector() const
 short ImageQualityParser::blurDetector2() const
 {
     // Algorithm using Laplacian of Gaussian Filter to detect blur.
+
     Mat out;
     Mat noise_free;
     qCDebug(DIGIKAM_DIMG_LOG) << "Algorithm using LoG Filter started";
 
     // To remove noise from the image.
+
     GaussianBlur(d->src_gray, noise_free, Size(3, 3), 0, 0, BORDER_DEFAULT);
 
     // Aperture size of 1 corresponds to the correct matrix.
+
     int kernel_size = 3;
     int scale       = 1;
     int delta       = 0;

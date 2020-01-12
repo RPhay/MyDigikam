@@ -30,6 +30,7 @@ namespace Digikam
 int ImageQualityParser::compressionDetector() const
 {
     // FIXME: set threshold value to an acceptable standard to get the number of blocking artifacts
+
     const int THRESHOLD  = 30;
     const int block_size = 8;
     int countblocks      = 0;

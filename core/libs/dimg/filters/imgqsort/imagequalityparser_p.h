@@ -61,7 +61,7 @@ class Q_DECL_HIDDEN ImageQualityParser::Private
 public:
 
     explicit Private()
-      : clusterCount(30),                   // used for k-means clustering algorithm in noise detection
+      : clusterCount(30),                   ///< used for k-means clustering algorithm in noise detection
         size(512)
     {
         for (int c = 0 ; c < 3 ; ++c)
@@ -86,20 +86,20 @@ public:
 
     float*                fimg[3];
     const uint            clusterCount;
-    const uint            size;              // Size of squared original image.
+    const uint            size;              ///< Size of squared original image.
 
-    Mat                   src_gray;          // Matrix of the grayscaled source image
-    Mat                   detected_edges;    // Matrix containing only edges in the image
+    Mat                   src_gray;          ///< Matrix of the grayscaled source image
+    Mat                   detected_edges;    ///< Matrix containing only edges in the image
 
-    int                   edgeThresh;        // threshold above which we say that edges are present at a point
-    int                   ratio;             // lower:upper threshold for canny edge detector algorithm
-    int                   kernel_size;       // kernel size for the Sobel operations to be performed internally by the edge detector
+    int                   edgeThresh;        ///< threshold above which we say that edges are present at a point
+    int                   ratio;             ///< lower:upper threshold for canny edge detector algorithm
+    int                   kernel_size;       ///< kernel size for the Sobel operations to be performed internally by the edge detector
 
     double                lowThreshold;
 
-    DImg                  image;             // original image
-    DImg                  neimage;           // noise estimation image[for color]
-    DImg                  img8;              // compression detector image on 8 bits
+    DImg                  image;             ///< original image
+    DImg                  neimage;           ///< noise estimation image[for color]
+    DImg                  img8;              ///< compression detector image on 8 bits
 
     ImageQualityContainer imq;
 
@@ -110,7 +110,7 @@ public:
     double                pendingThreshold;
     double                rejectedThreshold;
 
-    QString               path;              // Path to host result file
+    QString               path;              ///< Path to host result file
 
     PickLabel*            label;
 
