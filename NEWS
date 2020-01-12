@@ -551,4 +551,16 @@ BUGFIXES:
 536 ==> 416018 - Face detection: specified list of albums not taken into account.
 537 ==> 416028 - "Search in Tags" selection for Face detection/recognition unduly changes.
 538 ==> 416120 - Error transfering.
-539 ==> 
+539 ==> 392304 - digiKam crash on exit (accessing stale QScreen instance during global destruction).
+540 ==> 397694 - Missing text on selected tabs from QTabWidget.
+541 ==> 380969 - Copy and paste text to comment field.
+542 ==> 402914 - Crash when selecting custom icon for tag.
+543 ==> 406507 - digiKam crashes when trying to select custom icon in the tag manager a second time.
+544 ==> 
+545 ==> 
+546 ==> 
+547 ==> 
+548 ==> 
+549 ==> 
+550 ==> 
+
