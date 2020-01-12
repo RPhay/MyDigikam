@@ -556,7 +556,7 @@ BUGFIXES:
 541 ==> 380969 - Copy and paste text to comment field.
 542 ==> 402914 - Crash when selecting custom icon for tag.
 543 ==> 406507 - digiKam crashes when trying to select custom icon in the tag manager a second time.
-544 ==> 
+544 ==> 401912 - Crash on adding GPS coordinates to multiple images.
 545 ==> 
 546 ==> 
 547 ==> 
