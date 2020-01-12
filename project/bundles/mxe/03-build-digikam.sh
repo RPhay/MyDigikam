@@ -65,6 +65,7 @@ ${MXE_BUILD_TARGETS}-cmake $ORIG_WD/../3rdparty \
                            -DINSTALL_ROOT=${MXE_INSTALL_PREFIX} \
                            -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR
 
+${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_qtav       -- -j$CPU_CORES
 ${MXE_BUILD_TARGETS}-cmake --build . --config RelWithDebInfo --target ext_lensfun    -- -j$CPU_CORES
 
 #################################################################################################
