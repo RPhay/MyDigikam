@@ -159,9 +159,9 @@ LocalContrastSettings::LocalContrastSettings(QWidget* const parent)
     : QWidget(parent),
       d(new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing        = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    QGridLayout* const grid = new QGridLayout(parent);
+    QGridLayout* const grid  = new QGridLayout(parent);
 
     QWidget* const firstPage = new QWidget();
     QGridLayout* const grid1 = new QGridLayout(firstPage);
@@ -462,10 +462,10 @@ LocalContrastContainer LocalContrastSettings::settings() const
 {
     LocalContrastContainer prm;
 
-    prm.stretchContrast = d->stretchContrastCheck->isChecked();
-    prm.lowSaturation   = d->lowSaturationInput->value();
-    prm.highSaturation  = d->highSaturationInput->value();
-    prm.functionId      = d->functionInput->currentIndex();
+    prm.stretchContrast  = d->stretchContrastCheck->isChecked();
+    prm.lowSaturation    = d->lowSaturationInput->value();
+    prm.highSaturation   = d->highSaturationInput->value();
+    prm.functionId       = d->functionInput->currentIndex();
 
     prm.stage[0].enabled = d->expanderBox->isChecked(1);
     prm.stage[0].power   = d->powerInput1->value();
@@ -555,10 +555,10 @@ LocalContrastContainer LocalContrastSettings::defaultSettings() const
 {
     LocalContrastContainer prm;
 
-    prm.stretchContrast = true;
-    prm.lowSaturation   = d->lowSaturationInput->defaultValue();
-    prm.highSaturation  = d->highSaturationInput->defaultValue();
-    prm.functionId      = d->functionInput->defaultIndex();
+    prm.stretchContrast  = true;
+    prm.lowSaturation    = d->lowSaturationInput->defaultValue();
+    prm.highSaturation   = d->highSaturationInput->defaultValue();
+    prm.functionId       = d->functionInput->defaultIndex();
 
     prm.stage[0].enabled = true;
     prm.stage[0].power   = d->powerInput1->defaultValue();
@@ -584,10 +584,10 @@ void LocalContrastSettings::readSettings(KConfigGroup& group)
     LocalContrastContainer prm;
     LocalContrastContainer defaultPrm = defaultSettings();
 
-    prm.stretchContrast = group.readEntry(d->configStretchContrastEntry, defaultPrm.stretchContrast);
-    prm.lowSaturation   = group.readEntry(d->configLowSaturationEntry,   defaultPrm.lowSaturation);
-    prm.highSaturation  = group.readEntry(d->configHighSaturationEntry,  defaultPrm.highSaturation);
-    prm.functionId      = group.readEntry(d->configFunctionInputEntry,   defaultPrm.functionId);
+    prm.stretchContrast  = group.readEntry(d->configStretchContrastEntry, defaultPrm.stretchContrast);
+    prm.lowSaturation    = group.readEntry(d->configLowSaturationEntry,   defaultPrm.lowSaturation);
+    prm.highSaturation   = group.readEntry(d->configHighSaturationEntry,  defaultPrm.highSaturation);
+    prm.functionId       = group.readEntry(d->configFunctionInputEntry,   defaultPrm.functionId);
 
     prm.stage[0].enabled = group.readEntry(d->configStageOneEntry,        defaultPrm.stage[0].enabled);
     prm.stage[0].power   = group.readEntry(d->configPower1Entry,          defaultPrm.stage[0].power);

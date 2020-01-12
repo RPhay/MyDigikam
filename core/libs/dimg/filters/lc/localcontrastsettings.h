@@ -48,10 +48,10 @@ public:
     explicit LocalContrastSettings(QWidget* const parent);
     ~LocalContrastSettings();
 
-    LocalContrastContainer defaultSettings() const;
+    LocalContrastContainer defaultSettings()    const;
     void resetToDefault();
 
-    LocalContrastContainer settings() const;
+    LocalContrastContainer settings()           const;
     void setSettings(const LocalContrastContainer& settings);
 
     void readSettings(KConfigGroup& group);

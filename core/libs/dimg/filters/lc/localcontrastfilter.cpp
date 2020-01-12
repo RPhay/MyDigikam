@@ -49,11 +49,11 @@ class Q_DECL_HIDDEN LocalContrastFilter::Private
 public:
 
     explicit Private()
+      : current_process_power_value(20.0)
     {
-        current_process_power_value = 20.0;
     }
 
-    // preprocessed values
+    /// preprocessed values
     float                  current_process_power_value;
 
     LocalContrastContainer par;
@@ -100,10 +100,11 @@ void LocalContrastFilter::filterImage()
         if (m_orgImage.sixteenBit())
         {
             // sixteen bit image
+
             QScopedArrayPointer<unsigned short> data(new unsigned short[size]);
             unsigned short* dataImg = reinterpret_cast<unsigned short*>(m_orgImage.bits());
 
-            for (i = 0, j = 0; runningFlag() && (i < size); i += 3, j += 4)
+            for (i = 0, j = 0 ; runningFlag() && (i < size) ; i += 3, j += 4)
             {
                 data[i]     = dataImg[j];
                 data[i + 1] = dataImg[j + 1];
@@ -114,9 +115,9 @@ void LocalContrastFilter::filterImage()
 
             process16bitRgbImage(data.data(), m_orgImage.width(), m_orgImage.height());
 
-            for (uint x = 0; runningFlag() && (x < m_orgImage.width()); ++x)
+            for (uint x = 0 ; runningFlag() && (x < m_orgImage.width()) ; ++x)
             {
-                for (uint y = 0; runningFlag() && (y < m_orgImage.height()); ++y)
+                for (uint y = 0 ; runningFlag() && (y < m_orgImage.height()) ; ++y)
                 {
                     i = (m_orgImage.width() * y + x) * 3;
                     m_destImage.setPixelColor(x, y, DColor((unsigned short)data[i + 2],
@@ -131,9 +132,10 @@ void LocalContrastFilter::filterImage()
         else
         {
             // eight bit image
+
             QScopedArrayPointer<uchar> data(new uchar[size]);
 
-            for (i = 0, j = 0; runningFlag() && (i < size); i += 3, j += 4)
+            for (i = 0, j = 0 ; runningFlag() && (i < size) ; i += 3, j += 4)
             {
                 data[i]     = m_orgImage.bits()[j];
                 data[i + 1] = m_orgImage.bits()[j + 1];
@@ -144,9 +146,9 @@ void LocalContrastFilter::filterImage()
 
             process8bitRgbImage(data.data(), m_orgImage.width(), m_orgImage.height());
 
-            for (uint x = 0; runningFlag() && (x < m_orgImage.width()); ++x)
+            for (uint x = 0 ; runningFlag() && (x < m_orgImage.width()) ; ++x)
             {
-                for (uint y = 0; runningFlag() && (y < m_orgImage.height()); ++y)
+                for (uint y = 0 ; runningFlag() && (y < m_orgImage.height()) ; ++y)
                 {
                     i = (m_orgImage.width() * y + x) * 3;
                     m_destImage.setPixelColor(x, y, DColor(data[i + 2], data[i + 1], data[i], 255, false));
@@ -168,6 +170,7 @@ void LocalContrastFilter::process8bitRgbImage(unsigned char* const img, int size
     for (int i = 0 ; runningFlag() && (i < size * 3) ; ++i)
     {
         // convert to floating point
+
         tmpimage[i] = (float)(img[i] / 255.0);
     }
 
@@ -176,6 +179,7 @@ void LocalContrastFilter::process8bitRgbImage(unsigned char* const img, int size
     processRgbImage(tmpimage.data(), sizex, sizey);
 
     // convert back to 8 bits (with dithering)
+
     int pos = 0;
 
     for (int i = 0 ; runningFlag() && (i < size) ; ++i)
@@ -184,7 +188,7 @@ void LocalContrastFilter::process8bitRgbImage(unsigned char* const img, int size
         img[pos]     = (int)(tmpimage[pos]     * 255.0 + dither);
         img[pos + 1] = (int)(tmpimage[pos + 1] * 255.0 + dither);
         img[pos + 2] = (int)(tmpimage[pos + 2] * 255.0 + dither);
-        pos += 3;
+        pos         += 3;
     }
 
     postProgress(80);
@@ -198,6 +202,7 @@ void LocalContrastFilter::process16bitRgbImage(unsigned short* const img, int si
     for (int i = 0 ; runningFlag() && (i < size * 3) ; ++i)
     {
         // convert to floating point
+
         tmpimage[i] = (float)(img[i] / 65535.0);
     }
 
@@ -206,6 +211,7 @@ void LocalContrastFilter::process16bitRgbImage(unsigned short* const img, int si
     processRgbImage(tmpimage.data(), sizex, sizey);
 
     // convert back to 16 bits (with dithering)
+
     int pos = 0;
 
     for (int i = 0 ; runningFlag() && (i < size) ; ++i)
@@ -214,7 +220,7 @@ void LocalContrastFilter::process16bitRgbImage(unsigned short* const img, int si
         img[pos]     = (int)(tmpimage[pos]     * 65535.0 + dither);
         img[pos + 1] = (int)(tmpimage[pos + 1] * 65535.0 + dither);
         img[pos + 2] = (int)(tmpimage[pos + 2] * 65535.0 + dither);
-        pos += 3;
+        pos         += 3;
     }
 
     postProgress(80);
@@ -274,7 +280,7 @@ void LocalContrastFilter::blurMultithreaded(uint start, uint stop, float* const 
         img[pos + 1] = dest_g;
         img[pos + 2] = dest_b;
 
-        pos += 3;
+        pos         += 3;
     }
 }
 
@@ -303,7 +309,7 @@ void LocalContrastFilter::saturationMultithreaded(uint start, uint stop, float* 
 
         hsv2rgb(dest_h, destSaturation, dest_v, img[pos], img[pos + 1], img[pos + 2]);
 
-        pos += 3;
+        pos           += 3;
     }
 }
 
@@ -364,7 +370,9 @@ void LocalContrastFilter::processRgbImage(float* const img, int sizex, int sizey
             }
 
             foreach (QFuture<void> t, tasks)
+            {
                 t.waitForFinished();
+            }
         }
 
         postProgress(50 + nstage * 5);
@@ -389,7 +397,9 @@ void LocalContrastFilter::processRgbImage(float* const img, int sizex, int sizey
         }
 
         foreach (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
     }
 
     postProgress(70);
@@ -487,7 +497,9 @@ void LocalContrastFilter::inplaceBlur(float* const data, int sizex, int sizey, f
         }
 
         foreach (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         tasks.clear();
 
@@ -502,21 +514,21 @@ void LocalContrastFilter::inplaceBlur(float* const data, int sizex, int sizey, f
         }
 
         foreach (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
     }
 }
 
 void LocalContrastFilter::stretchContrast(float* const data, int datasize)
 {
     // stretch the contrast
-    const unsigned int histogram_size = 256;
-    // first, we compute the histogram
-    unsigned int histogram[histogram_size];
 
-    for (unsigned int i = 0 ; i < histogram_size ; ++i)
-    {
-        histogram[i] = 0;
-    }
+    const unsigned int histogram_size = 256;
+
+    // first, we compute the histogram
+
+    unsigned int histogram[histogram_size] = { 0 };
 
     for (unsigned int i = 0 ; runningFlag() && (i < (unsigned int)datasize) ; ++i)
     {
@@ -576,6 +588,7 @@ void LocalContrastFilter::stretchContrast(float* const data, int datasize)
     for (int i = 0 ; runningFlag() && (i < datasize) ; ++i)
     {
         // stretch the contrast
+
         float x = data[i];
         x       = (x - min_src_val) / (max_src_val - min_src_val);
 
@@ -601,7 +614,8 @@ void LocalContrastFilter::rgb2hsv(const float& r, const float& g, const float& b
     float min   = (minrg < b) ? minrg : b;
     float delta = max - min;
 
-    //hue
+    // hue
+
     if (min == max)
     {
         h = 0.0;
@@ -620,13 +634,14 @@ void LocalContrastFilter::rgb2hsv(const float& r, const float& g, const float& b
             }
             else
             {
-                //max==b
+                // max==b
                 h = (float)(60.0 * (r - g) / delta + 240.0);
             }
         }
     }
 
-    //saturation
+    // saturation
+
     if (max < 1e-6)
     {
         s = 0;
@@ -636,7 +651,8 @@ void LocalContrastFilter::rgb2hsv(const float& r, const float& g, const float& b
         s = (float)(1.0 - min / max);
     }
 
-    //value
+    // value
+
     v = max;
 }
 

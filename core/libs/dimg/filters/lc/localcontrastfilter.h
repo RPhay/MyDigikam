@@ -44,6 +44,20 @@ namespace Digikam
 class DIGIKAM_EXPORT LocalContrastFilter : public DImgThreadedFilter
 {
 
+private:
+
+    struct Args
+    {
+        uint   start;
+        uint   stop;
+        float  a;
+        float* data;
+        int    sizex;
+        int    sizey;
+        float  blur;
+        float  denormal_remove;
+    };
+
 public:
 
     explicit LocalContrastFilter(QObject* const parent = nullptr);
@@ -67,32 +81,18 @@ public:
         return 2;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
+    virtual FilterAction    filterAction()                                    override;
 
-    void                    readParameters(const FilterAction& action) override;
-
-private:
-
-    struct Args
-    {
-        uint   start;
-        uint   stop;
-        float  a;
-        float* data;
-        int    sizex;
-        int    sizey;
-        float  blur;
-        float  denormal_remove;
-    };
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
 
     void  processRgbImage(float* const img, int sizex, int sizey);
     void  process8bitRgbImage(unsigned char* const img, int sizex, int sizey);
