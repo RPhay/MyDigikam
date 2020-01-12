@@ -53,7 +53,7 @@ public:
     CurvesContainer defaultSettings() const;
     void resetToDefault();
 
-    CurvesContainer settings() const;
+    CurvesContainer settings()        const;
     void setSettings(const CurvesContainer& settings);
 
     void readSettings(KConfigGroup& group);

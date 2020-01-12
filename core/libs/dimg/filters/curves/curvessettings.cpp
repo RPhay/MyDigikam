@@ -89,6 +89,7 @@ CurvesSettings::CurvesSettings(QWidget* const parent, DImg* const img)
     QGridLayout* const grid = new QGridLayout(this);
 
     // NOTE: add a method to be able to use curves widget without image data as simple curve editor.
+
     if (!img->isNull())
     {
         d->curvesBox = new CurvesBox(256, 192, *img);
@@ -148,6 +149,7 @@ void CurvesSettings::slotSpotColorChanged(const DColor& color)
         case CurvesBox::BlackTonal:
         {
             // Black tonal curves point.
+
             d->curvesBox->curves()->setCurvePoint(LuminosityChannel, 1,
                                                   QPoint(qMax(qMax(sc.red(), sc.green()), sc.blue()), 42 * d->histoSegments / 256));
             d->curvesBox->curves()->setCurvePoint(RedChannel, 1, QPoint(sc.red(), 42 * d->histoSegments / 256));
@@ -160,6 +162,7 @@ void CurvesSettings::slotSpotColorChanged(const DColor& color)
         case CurvesBox::GrayTonal:
         {
             // Gray tonal curves point.
+
             d->curvesBox->curves()->setCurvePoint(LuminosityChannel, 8,
                                                   QPoint(qMax(qMax(sc.red(), sc.green()), sc.blue()), 128 * d->histoSegments / 256));
             d->curvesBox->curves()->setCurvePoint(RedChannel, 8, QPoint(sc.red(), 128 * d->histoSegments / 256));
@@ -172,6 +175,7 @@ void CurvesSettings::slotSpotColorChanged(const DColor& color)
         case CurvesBox::WhiteTonal:
         {
             // White tonal curves point.
+
             d->curvesBox->curves()->setCurvePoint(LuminosityChannel, 15,
                                                   QPoint(qMax(qMax(sc.red(), sc.green()), sc.blue()), 213 * d->histoSegments / 256));
             d->curvesBox->curves()->setCurvePoint(RedChannel, 15, QPoint(sc.red(), 213 * d->histoSegments / 256));

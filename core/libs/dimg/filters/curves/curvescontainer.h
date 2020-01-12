@@ -50,7 +50,6 @@ public:
      * Initially, the values are empty.
      * Call initialize() before adjusting values manually.
      */
-
     CurvesContainer();
     CurvesContainer(int type, bool sixteenBit);
 
@@ -65,17 +64,17 @@ public:
      * of the resulting ImageCurves.
      * Note: If an ImageCurves is linear, it will return an empty container.
      */
-    bool isEmpty() const;
+    bool isEmpty()                                                                      const;
 
-    bool operator==(const CurvesContainer& other) const;
+    bool operator==(const CurvesContainer& other)                                       const;
 
     /**
      * Serialize from and to FilterAction.
      * isStoredLosslessly returns false if the curve cannot be losslessly stored
      * in XML because it would be too large (free 16 bit). It is then lossily compressed.
      */
-    bool isStoredLosslessly() const;
-    void writeToFilterAction(FilterAction& action, const QString& prefix = QString()) const;
+    bool isStoredLosslessly()                                                           const;
+    void writeToFilterAction(FilterAction& action, const QString& prefix = QString())   const;
     static CurvesContainer fromFilterAction(const FilterAction& action, const QString& prefix = QString());
 
 public:

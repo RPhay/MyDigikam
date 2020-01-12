@@ -68,33 +68,35 @@ public:
 
     enum RepaintType
     {
-        HistogramDataLoading = 0, // Image Data loading in progress.
-        HistogramNone,            // No current histogram values calculation.
-        HistogramStarted,         // Histogram values calculation started.
-        HistogramCompleted,       // Histogram values calculation completed.
-        HistogramFailed           // Histogram values calculation failed.
+        HistogramDataLoading = 0, ///< Image Data loading in progress.
+        HistogramNone,            ///< No current histogram values calculation.
+        HistogramStarted,         ///< Histogram values calculation started.
+        HistogramCompleted,       ///< Histogram values calculation completed.
+        HistogramFailed           ///< Histogram values calculation failed.
     };
 
+public:
+
     explicit Private(CurvesWidget* const q)
-        : q(q)
+        : readOnlyMode(false),
+          guideVisible(false),
+          clearFlag(HistogramNone),
+          leftMost(0),
+          rightMost(0),
+          grabPoint(-1),
+          last(0),
+          xMouseOver(-1),
+          yMouseOver(-1),
+          progressCount(0),
+          channelType(LuminosityChannel),
+          scaleType(LinScaleHistogram),
+          imageHistogram(nullptr),
+          progressTimer(nullptr),
+          progressPix(DWorkingPixmap()),
+          curves(nullptr),
+          histogramPainter(nullptr),
+          q(q)
     {
-        readOnlyMode     = false;
-        leftMost         = 0;
-        rightMost        = 0;
-        channelType      = LuminosityChannel;
-        scaleType        = LinScaleHistogram;
-        imageHistogram   = nullptr;
-        histogramPainter = nullptr;
-        curves           = nullptr;
-        grabPoint        = -1;
-        last             = 0;
-        guideVisible     = false;
-        xMouseOver       = -1;
-        yMouseOver       = -1;
-        clearFlag        = HistogramNone;
-        progressCount    = 0;
-        progressTimer    = nullptr;
-        progressPix      = DWorkingPixmap();
     }
 
     bool                           readOnlyMode;
@@ -121,6 +123,13 @@ public:
     ImageCurves*                   curves;             // Curves data instance.
 
     HistogramPainter*              histogramPainter;
+
+
+private:
+
+    CurvesWidget* q;
+
+public:
 
     // --- misc methods ---
 
@@ -158,6 +167,7 @@ public:
         }
 
         // TODO magic number, what is this?
+
         if (distance > 8)
         {
             closestPoint = (x + getDelta() / 2) / getDelta();
@@ -300,7 +310,7 @@ public:
         // Drawing X,Y point position dragged by mouse over widget.
         p1.setPen(QPen(Qt::red, 1, Qt::DotLine));
 
-        if (xMouseOver != -1 && yMouseOver != -1)
+        if ((xMouseOver != -1) && (yMouseOver != -1))
         {
             QString string = i18n("x:%1\ny:%2", xMouseOver, yMouseOver);
             QFontMetrics fontMt(string);
@@ -346,14 +356,11 @@ public:
     {
         return QString(prefix + QString::fromLatin1("Channel%1Point%2")).arg(channel).arg(point);
     }
-
-private:
-
-    CurvesWidget* q;
 };
 
 CurvesWidget::CurvesWidget(int w, int h, QWidget* const parent, bool readOnly)
-    : QWidget(parent), d(new Private(this))
+    : QWidget(parent),
+      d(new Private(this))
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setup(w, h, readOnly);
@@ -404,9 +411,10 @@ void CurvesWidget::saveCurve(KConfigGroup& group, const QString& prefix)
         {
             QPoint p = curves()->getCurvePoint(channel, point);
 
-            if (!isSixteenBits() && p != ImageCurves::getDisabledValue())
+            if (!isSixteenBits() && (p != ImageCurves::getDisabledValue()))
             {
                 // Store point as 16 bits depth.
+
                 p.setX(p.x() * ImageCurves::MULTIPLIER_16BIT);
                 p.setY(p.y() * ImageCurves::MULTIPLIER_16BIT);
             }
@@ -434,10 +442,11 @@ void CurvesWidget::restoreCurve(KConfigGroup& group, const QString& prefix)
         for (int point = 0 ; point <= ImageCurves::NUM_POINTS ; ++point)
         {
             QPoint p = group.readEntry(Private::getPointOption(prefix,
-                                                                        channel, point), ImageCurves::getDisabledValue());
+                                                               channel, point),
+                                                               ImageCurves::getDisabledValue());
 
             // always load a 16 bit curve and stretch it to 8 bit if necessary
-            if (!isSixteenBits() && p != ImageCurves::getDisabledValue())
+            if (!isSixteenBits() && (p != ImageCurves::getDisabledValue()))
             {
                 p.setX(p.x() / ImageCurves::MULTIPLIER_16BIT);
                 p.setY(p.y() / ImageCurves::MULTIPLIER_16BIT);
@@ -576,6 +585,7 @@ void CurvesWidget::slotCalculationFinished(bool success)
     if (success)
     {
         // Repaint histogram
+
         d->clearFlag = Private::HistogramCompleted;
         d->progressTimer->stop();
         update();
@@ -633,6 +643,7 @@ void CurvesWidget::paintEvent(QPaintEvent*)
     }
 
     // render subelements on a pixmap (double buffering)
+
     QPixmap pm(size());
 
     d->histogramPainter->setScale(d->scaleType);
@@ -655,6 +666,7 @@ void CurvesWidget::paintEvent(QPaintEvent*)
     d->renderFrame(pm);
 
     // render pixmap on widget
+
     QPainter p2(this);
     p2.drawPixmap(0, 0, pm);
     p2.end();
@@ -707,7 +719,7 @@ void CurvesWidget::mousePressEvent(QMouseEvent* e)
 
             d->grabPoint = closest_point;
 
-            if (e->button() == Qt::LeftButton)
+            if      (e->button() == Qt::LeftButton)
             {
                 d->curves->setCurvePoint(d->channelType, d->grabPoint,
                                          QPoint(x, d->imageHistogram->getHistogramSegments() - y));
@@ -747,8 +759,8 @@ void CurvesWidget::mouseReleaseEvent(QMouseEvent* e)
         return;
     }
 
-    if ((e->button() == Qt::LeftButton          &&
-         e->button() == Qt::RightButton)        ||
+    if (((e->button() == Qt::LeftButton)          &&
+         (e->button() == Qt::RightButton))        ||
         d->clearFlag == Private::HistogramStarted)
     {
         return;
@@ -765,8 +777,8 @@ void CurvesWidget::mouseMoveEvent(QMouseEvent* e)
         return;
     }
 
-    if (e->buttons() == Qt::RightButton ||
-        d->clearFlag == Private::HistogramStarted)
+    if ((e->buttons() == Qt::RightButton) ||
+        (d->clearFlag == Private::HistogramStarted))
     {
         return;
     }

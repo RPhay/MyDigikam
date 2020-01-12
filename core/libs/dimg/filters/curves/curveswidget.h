@@ -81,7 +81,9 @@ public:
      */
     void updateData(const DImg& img);
 
-    // Stop current histogram computations.
+    /**
+     * Stop current histogram computations.
+     */
     void stopHistogramComputation();
 
     void setDataLoading();
@@ -91,6 +93,7 @@ public:
      * Resets the ui including the user specified curve.
      */
     void reset();
+
     /**
      * Resets only the ui and keeps the curve.
      */
@@ -121,11 +124,11 @@ protected Q_SLOTS:
 
 protected:
 
-    void paintEvent(QPaintEvent*) override;
-    void mousePressEvent(QMouseEvent*) override;
-    void mouseReleaseEvent(QMouseEvent*) override;
-    void mouseMoveEvent(QMouseEvent*) override;
-    void leaveEvent(QEvent*) override;
+    void paintEvent(QPaintEvent*)           override;
+    void mousePressEvent(QMouseEvent*)      override;
+    void mouseReleaseEvent(QMouseEvent*)    override;
+    void mouseMoveEvent(QMouseEvent*)       override;
+    void leaveEvent(QEvent*)                override;
 
 private:
 

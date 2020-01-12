@@ -68,6 +68,7 @@ CurvesFilter::CurvesFilter(const CurvesContainer& settings,
       m_settings(settings)
 {
     // cannot operate in-place, so allocate dest image
+
     initFilter();
     destImage = m_destImage;
 }
@@ -101,6 +102,7 @@ void CurvesFilter::filterImage()
     postProgress(50);
 
     // Process all channels curves
+
     curves.curvesLutSetup(AlphaChannel);
     postProgress(75);
 

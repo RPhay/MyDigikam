@@ -43,7 +43,7 @@ CurvesContainer::CurvesContainer(int type, bool sixteenBit)
 
 bool CurvesContainer::isEmpty() const
 {
-    for (int i = 0; i < ColorChannels; ++i)
+    for (int i = 0 ; i < ColorChannels ; ++i)
     {
         if (!values[i].isEmpty())
         {
@@ -61,12 +61,12 @@ bool CurvesContainer::operator==(const CurvesContainer& other) const
         return true;
     }
 
-    if (sixteenBit != other.sixteenBit || curvesType != other.curvesType)
+    if ((sixteenBit != other.sixteenBit) || (curvesType != other.curvesType))
     {
         return false;
     }
 
-    for (int i = 0; i < ColorChannels; ++i)
+    for (int i = 0 ; i < ColorChannels ; ++i)
     {
         if (values[i] != other.values[i])
         {
@@ -85,7 +85,7 @@ void CurvesContainer::initialize()
 
     if (curvesType == ImageCurves::CURVE_FREE)
     {
-        for (int i = 0; i < ColorChannels; ++i)
+        for (int i = 0 ; i < ColorChannels ; ++i)
         {
             values[i].resize(segmentMax + 1);
 
@@ -97,11 +97,11 @@ void CurvesContainer::initialize()
     }
     else // SMOOTH
     {
-        for (int i = 0; i < ColorChannels; ++i)
+        for (int i = 0 ; i < ColorChannels ; ++i)
         {
             values[i].resize(ImageCurves::NUM_POINTS);
 
-            for (int j = 1 ; j < ImageCurves::NUM_POINTS - 1 ; ++j)
+            for (int j = 1 ; j < (ImageCurves::NUM_POINTS - 1) ; ++j)
             {
                 values[i].setPoint(j, -1, -1);
             }
@@ -133,6 +133,7 @@ void CurvesContainer::writeToFilterAction(FilterAction& action, const QString& p
     }
 
     // Convert to 8bit: 16 bits curves takes 85kb, 8 bits only 400 bytes.
+
     if (curves.isSixteenBits())
     {
         ImageCurves depthCurve(false);
@@ -142,7 +143,7 @@ void CurvesContainer::writeToFilterAction(FilterAction& action, const QString& p
 
     action.addParameter(prefix + QLatin1String("curveBitDepth"), 8);
 
-    for (int i = 0; i < ColorChannels; ++i)
+    for (int i = 0 ; i < ColorChannels ; ++i)
     {
         action.addParameter(prefix + QString::fromLatin1("curveData[%1]").arg(i), curves.channelToBinary(i).toBase64());
     }
@@ -157,14 +158,17 @@ CurvesContainer CurvesContainer::fromFilterAction(const FilterAction& action, co
 
     ImageCurves curves(action.parameter(prefix + QLatin1String("curveBitDepth"), 8) == 16);
 
-    for (int i = 0; i < ColorChannels; ++i)
+    for (int i = 0 ; i < ColorChannels ; ++i)
     {
         QByteArray base64 = action.parameter(prefix + QString::fromLatin1("curveData[%1]").arg(i), QByteArray());
+
         // check return value and set readParametersError?
+
         curves.setChannelFromBinary(i, QByteArray::fromBase64(base64));
     }
 
     // We don't need to call curves.curvesCalculateAllCurves() here ???
+
     return curves.getContainer();
 }
 

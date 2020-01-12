@@ -279,7 +279,7 @@ void CBFilter::applyCBFilter(DImg& image, double r, double g, double b, double a
 
             progress = (int)(((double)i * 100.0) / size);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }
@@ -300,7 +300,7 @@ void CBFilter::applyCBFilter(DImg& image, double r, double g, double b, double a
 
             progress = (int)(((double)i * 100.0) / size);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }
@@ -346,7 +346,7 @@ void CBFilter::setGamma(double val)
 
 void CBFilter::adjustRGB(double r, double g, double b, double a, bool sixteenBit)
 {
-    if (r == 1.0 && g == 1.0 && b == 1.0 && a == 1.0)
+    if ((r == 1.0) && (g == 1.0) && (b == 1.0) && (a == 1.0))
     {
         // Nothing to do.
         return ;
@@ -375,7 +375,7 @@ void CBFilter::adjustRGB(double r, double g, double b, double a, bool sixteenBit
         dummy_table = new int[256];
     }
 
-    if (r == g && r == b && r == a)
+    if ((r == g) && (r == b) && (r == a))
     {
         setGamma(r);
     }

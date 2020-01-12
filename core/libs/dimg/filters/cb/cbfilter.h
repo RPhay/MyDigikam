@@ -42,12 +42,12 @@ class DIGIKAM_EXPORT CBContainer
 public:
 
     explicit CBContainer()
+      : red(1.0),
+        green(1.0),
+        blue(1.0),
+        alpha(1.0),
+        gamma(1.0)
     {
-        red   = 1.0;
-        green = 1.0;
-        blue  = 1.0;
-        alpha = 1.0;
-        gamma = 1.0;
     };
 
     ~CBContainer()
@@ -99,18 +99,18 @@ public:
         return 1;
     }
 
-    void                    readParameters(const FilterAction& action) override;
+    void                    readParameters(const FilterAction& action)        override;
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
+    virtual FilterAction    filterAction()                                    override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
 
     void reset();
     void setGamma(double val);

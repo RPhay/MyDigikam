@@ -49,12 +49,12 @@ public:
     /**
      * The max number of points contained in a curve.
      */
-    const static int NUM_POINTS = 17;
+    const static int NUM_POINTS       = 17;
 
     /**
      * Number of channels in a curve.
      */
-    const static int NUM_CHANNELS = 5;
+    const static int NUM_CHANNELS     = 5;
 
     /**
      * Curve points have to multiplied with this value for 16 bit images.
@@ -63,8 +63,8 @@ public:
 
     enum CurveType
     {
-        CURVE_SMOOTH = 0,            // Smooth curve type
-        CURVE_FREE                   // Freehand curve type.
+        CURVE_SMOOTH = 0,            ///< Smooth curve type
+        CURVE_FREE                   ///< Freehand curve type.
     };
 
     typedef double CRMatrix[4][4];
@@ -87,7 +87,7 @@ public:
     void fillFromOtherCurves(ImageCurves* const otherCurves);
 
 
-    // Methods for to manipulate the curves data.
+    /// Methods for to manipulate the curves data.
 
     void   curvesReset();
     void   curvesChannelReset(int channel);
@@ -97,7 +97,7 @@ public:
     void   curvesLutSetup(int nchannels);
     void   curvesLutProcess(uchar* const srcPR, uchar* const destPR, int w, int h);
 
-    // Methods for to set manually the curves values.
+    /// Methods for to set manually the curves values.
 
     void   setCurveValue(int channel, int bin, int val);
     void   setCurvePointX(int channel, int point, int x);
@@ -111,7 +111,7 @@ public:
 
     void   unsetCurvePoint(int channel, int point);
 
-    // Properties.
+    /// Curves properties.
 
     bool   isDirty()                                     const;
     bool   isSixteenBits()                               const;
@@ -132,27 +132,27 @@ public:
     /**
      * Returns a container with the settings for all channels of this Curves object
      */
-    CurvesContainer getContainer() const;
+    CurvesContainer getContainer()                       const;
 
     /**
      * Returns a container containing the values of this Curves
      * object for the given channel, and linear values for all
      * other channels.
      */
-    CurvesContainer getContainer(int channel) const;
+    CurvesContainer getContainer(int channel)            const;
 
     /**
      * Returns true if the curve is linear for the given channel, or all channels.
      */
-    bool isLinear(int channel) const;
-    bool isLinear()            const;
+    bool isLinear(int channel)                           const;
+    bool isLinear()                                      const;
 
     /**
      * Writes the given channel to a raw binary representation.
      * Note that 16bit free curves take a lot of memory (~85kB)
      * while all other forms take less than 400 bytes.
      */
-    QByteArray channelToBinary(int channel) const;
+    QByteArray channelToBinary(int channel)              const;
 
     /**
      * Set the channel from the given raw binary representation.
