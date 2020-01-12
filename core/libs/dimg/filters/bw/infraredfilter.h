@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2006-2010 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
- * Copyright (C) 2010 by Martin Klapetek <martin dot klapetek at gmail dot com>
+ * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -40,11 +40,11 @@ class DIGIKAM_EXPORT InfraredContainer
 public:
 
     explicit InfraredContainer()
+        : sensibility(200),
+          redGain(0.4),
+          greenGain(2.1),
+          blueGain(-0.8)
     {
-        sensibility = 200;
-        redGain     = 0.4;
-        greenGain   = 2.1;
-        blueGain    = -0.8;
     };
 
     ~InfraredContainer()
@@ -53,7 +53,7 @@ public:
 
 public:
 
-    // Sensibility: 200..2600 ISO
+    /// Sensibility: 200..2600 ISO
     int    sensibility;
 
     double redGain;
@@ -91,17 +91,17 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
-    void                    readParameters(const FilterAction& action) override;
+    virtual FilterAction    filterAction()                                    override;
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
 
     inline int intMult8(uint a, uint b);
     inline int intMult16(uint a, uint b);

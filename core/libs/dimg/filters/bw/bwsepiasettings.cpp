@@ -338,6 +338,7 @@ BWSepiaSettings::BWSepiaSettings(QWidget* const parent, DImg* const img)
     QWidget* lumBox = new QWidget();
 
     // NOTE: add a method to be able to use curves widget without image data as simple curve editor.
+
     if (!img->isNull())
     {
         d->curvesBox = new CurvesBox(256, 192, *img, lumBox);
@@ -372,6 +373,7 @@ BWSepiaSettings::BWSepiaSettings(QWidget* const parent, DImg* const img)
     // -------------------------------------------------------------
 
     // Some new icons may be needed : a film roll, a lens filter and ?
+
     d->tab->addItem(d->bwFilm, QIcon::fromTheme(QLatin1String("filmgrain")),
                     i18n("Film"), QLatin1String("Film"), true);
     d->tab->addItem(vbox, QIcon::fromTheme(QLatin1String("lensautofix")),
@@ -579,7 +581,7 @@ void BWSepiaSettings::loadSettings()
             p.setX(stream.readLine().toInt());
             p.setY(stream.readLine().toInt());
 
-            if (d->curvesBox->curves()->isSixteenBits() && p != disable)
+            if (d->curvesBox->curves()->isSixteenBits() && (p != disable))
             {
                 p.setX(p.x()*ImageCurves::MULTIPLIER_16BIT);
                 p.setY(p.y()*ImageCurves::MULTIPLIER_16BIT);
@@ -624,6 +626,7 @@ void BWSepiaSettings::saveAsSettings()
         stream << d->cInput->value() << "\n";
 
         // TODO cant we use the kconfig mechanisms provided by CurveWidget here?
+
         for (int j = 0 ; j < ImageCurves::NUM_POINTS ; ++j)
         {
             QPoint p = d->curvesBox->curves()->getCurvePoint(LuminosityChannel, j);

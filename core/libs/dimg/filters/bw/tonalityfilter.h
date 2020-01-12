@@ -42,10 +42,10 @@ class DIGIKAM_EXPORT TonalityContainer
 public:
 
     explicit TonalityContainer()
+      : redMask(0),
+        greenMask(0),
+        blueMask(0)
     {
-        redMask   = 0;
-        greenMask = 0;
-        blueMask  = 0;
     };
 
     ~TonalityContainer()
@@ -89,17 +89,17 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
-    void                    readParameters(const FilterAction& action) override;
+    virtual FilterAction    filterAction()                                    override;
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
 
 private:
 

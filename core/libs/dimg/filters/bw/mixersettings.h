@@ -50,7 +50,7 @@ public:
     MixerContainer defaultSettings() const;
     void resetToDefault();
 
-    MixerContainer settings() const;
+    MixerContainer settings()        const;
     void setSettings(const MixerContainer& settings);
 
     void readSettings(KConfigGroup& group);

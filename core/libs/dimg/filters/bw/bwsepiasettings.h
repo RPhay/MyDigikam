@@ -51,7 +51,7 @@ public:
     BWSepiaContainer defaultSettings() const;
     void resetToDefault();
 
-    BWSepiaContainer settings() const;
+    BWSepiaContainer settings()        const;
     void setSettings(const BWSepiaContainer& settings);
 
     void readSettings(KConfigGroup& group);

@@ -7,7 +7,7 @@
  * Description : Chanels mixer filter
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2010 by Martin Klapetek <martin dot klapetek at gmail dot com>
+ * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -42,21 +42,21 @@ class DIGIKAM_EXPORT MixerContainer
 public:
 
     explicit MixerContainer()
+      : bPreserveLum(true),
+        bMonochrome(false),
+        redRedGain(1.0),
+        redGreenGain(0.0),
+        redBlueGain(0.0),
+        greenRedGain(0.0),
+        greenGreenGain(1.0),
+        greenBlueGain(0.0),
+        blueRedGain(0.0),
+        blueGreenGain(0.0),
+        blueBlueGain(1.0),
+        blackRedGain(1.0),
+        blackGreenGain(0.0),
+        blackBlueGain(0.0)
     {
-        bPreserveLum   = true;
-        bMonochrome    = false;
-        redRedGain     = 1.0;
-        redGreenGain   = 0.0;
-        redBlueGain    = 0.0;
-        greenRedGain   = 0.0;
-        greenGreenGain = 1.0;
-        greenBlueGain  = 0.0;
-        blueRedGain    = 0.0;
-        blueGreenGain  = 0.0;
-        blueBlueGain   = 1.0;
-        blackRedGain   = 1.0;
-        blackGreenGain = 0.0;
-        blackBlueGain  = 0.0;
     };
 
     ~MixerContainer()
@@ -115,17 +115,17 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
-    void                    readParameters(const FilterAction& action) override;
+    virtual FilterAction    filterAction()                                    override;
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
 
     inline double CalculateNorm(double RedGain, double GreenGain, double BlueGain, bool bPreserveLum);
 

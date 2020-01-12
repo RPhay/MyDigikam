@@ -7,7 +7,7 @@
  * Description : black and white image filter.
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2010 by Martin Klapetek <martin dot klapetek at gmail dot com>
+ * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,7 +50,7 @@ public:
 
     enum BlackWhiteConversionType
     {
-        BWNoFilter = 0,       // B&W filter to the front of lens.
+        BWNoFilter = 0,       ///< B&W filter to the front of lens.
         BWGreenFilter,
         BWOrangeFilter,
         BWRedFilter,
@@ -58,7 +58,7 @@ public:
         BWYellowGreenFilter,
         BWBlueFilter,
 
-        BWGeneric,            // B&W film simulation.
+        BWGeneric,            ///< B&W film simulation.
         BWAgfa200X,
         BWAgfapan25,
         BWAgfapan100,
@@ -74,11 +74,11 @@ public:
         BWKodakTmax400,
         BWKodakTriX,
 
-        BWIlfordSFX200,       // Infrared film simulation.
+        BWIlfordSFX200,       ///< Infrared film simulation.
         BWIlfordSFX400,
         BWIlfordSFX800,
 
-        BWNoTone,             // Chemical color tone filter.
+        BWNoTone,             ///< Chemical color tone filter.
         BWSepiaTone,
         BWBrownTone,
         BWColdTone,
@@ -87,43 +87,45 @@ public:
         BWGreenTone,
 
         // Filter version 2
-        BWKodakHIE            // Infrared film simulation.
+        BWKodakHIE            ///< Infrared film simulation.
     };
 
 public:
 
     BWSepiaContainer()
+        : preview(false),
+          previewType(BWGeneric),
+          filmType(BWGeneric),
+          filterType(BWNoFilter),
+          toneType(BWNoTone),
+          strength(1.0)
     {
-        previewType = BWGeneric;
-        preview     = false;
-        filmType    = BWGeneric;
-        filterType  = BWNoFilter;
-        toneType    = BWNoTone;
-        strength    = 1.0;
     };
 
     explicit BWSepiaContainer(int ptype)
+        : preview(true),
+          previewType(ptype),
+          filmType(BWGeneric),
+          filterType(BWNoFilter),
+          toneType(BWNoTone),
+          strength(1.0)
     {
-        previewType = ptype;
-        preview     = true;
-        strength    = 1.0;
-        filmType    = BWGeneric;
-        filterType  = BWNoFilter;
-        toneType    = BWNoTone;
     };
 
     BWSepiaContainer(int ptype, const CurvesContainer& container)
+        : preview(true),
+          previewType(ptype),
+          filmType(BWGeneric),
+          filterType(BWNoFilter),
+          toneType(BWNoTone),
+          strength(1.0),
+          curvesPrm(container)
     {
-        previewType = ptype;
-        preview     = true;
-        strength    = 1.0;
-        filmType    = BWGeneric;
-        filterType  = BWNoFilter;
-        toneType    = BWNoTone;
-        curvesPrm   = container;
     };
 
-    ~BWSepiaContainer() {};
+    ~BWSepiaContainer()
+    {
+    };
 
 public:
 
@@ -149,7 +151,9 @@ class DIGIKAM_EXPORT BWSepiaFilter : public DImgThreadedFilter
 public:
 
     explicit BWSepiaFilter(QObject* const parent = nullptr);
-    explicit BWSepiaFilter(DImg* orgImage, QObject* const parent=nullptr, const BWSepiaContainer& settings=BWSepiaContainer());
+    explicit BWSepiaFilter(DImg* orgImage,
+                           QObject* const parent=nullptr,
+                           const BWSepiaContainer& settings=BWSepiaContainer());
     virtual ~BWSepiaFilter();
 
     static QString          FilterIdentifier()
@@ -169,17 +173,17 @@ public:
         return 2;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
-    void                    readParameters(const FilterAction& action) override;
+    virtual FilterAction    filterAction()                                    override;
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
 
     DImg getThumbnailForEffect(DImg& img);
 
