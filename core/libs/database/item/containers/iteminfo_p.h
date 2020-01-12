@@ -24,6 +24,9 @@
  *
  * ============================================================ */
 
+#ifndef DIGIKAM_ITEM_INFO_P_H
+#define DIGIKAM_ITEM_INFO_P_H
+
 #include "iteminfo.h"
 
 // Qt includes
@@ -97,3 +100,5 @@ MetadataInfo::Field DatabaseImageMetadataFieldsToMetadataInfoField(const Databas
     return m_data->x;
 
 } // namespace Digikam
+
+#endif // DIGIKAM_ITEM_INFO_P_H
