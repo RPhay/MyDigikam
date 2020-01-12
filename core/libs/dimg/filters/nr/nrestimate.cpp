@@ -67,11 +67,11 @@ public:
 
     NRContainer prm;
 
-    QString     path;   // Path to host log files.
+    QString     path;   ///< Path to host log files.
 
     float*      fimg[3];
     const uint  clusterCount;
-    const uint  size;   // Size of squared original image.
+    const uint  size;   ///< Size of squared original image.
 };
 
 NREstimate::NREstimate(DImg* const img, QObject* const parent)
@@ -80,6 +80,7 @@ NREstimate::NREstimate(DImg* const img, QObject* const parent)
 {
     // Use the Top/Left corner of 256x256 pixels to analys noise contents from image.
     // This will speed-up computation time with OpenCV
+
     int w = (img->width()  > d->size) ? d->size : img->width();
     int h = (img->height() > d->size) ? d->size : img->height();
     setOriginalImage(img->copy(0, 0, w, h));
@@ -132,15 +133,19 @@ void NREstimate::startAnalyse()
     //--convert fimg to CvMat*-------------------------------------------------------------------------------
 
     // convert the image into YCrCb color model
+
     NRFilter::srgb2ycbcr(d->fimg, m_orgImage.numPixels());
 
     // One dimensional CvMat which stores the image
+
     CvMat* points    = cvCreateMat(m_orgImage.numPixels(), 3, CV_32FC1);
 
     // matrix to store the index of the clusters
+
     CvMat* clusters  = cvCreateMat(m_orgImage.numPixels(), 1, CV_32SC1);
 
     // pointer variable to handle the CvMat* points (the image in CvMat format)
+
     float* pointsPtr = reinterpret_cast<float*>(points->data.ptr);
 
     for (uint x = 0 ; runningFlag() && (x < m_orgImage.numPixels()) ; ++x)
@@ -152,6 +157,7 @@ void NREstimate::startAnalyse()
     }
 
     // Array to store the centers of the clusters
+
     CvArr* centers = nullptr;
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Everything ready for the cvKmeans2 or as it seems to";
@@ -174,6 +180,7 @@ void NREstimate::startAnalyse()
     for (uint i = 0 ; runningFlag() && (i < d->clusterCount) ; ++i)
     {
         //initializing the cluster count array
+
         rowPosition[i] = 0;
     }
 
@@ -242,9 +249,11 @@ void NREstimate::startAnalyse()
         rowIndex    = rPosition[columnIndex];
 
         //moving to the right row
+
         ptr         = reinterpret_cast<float*>(sd->data.ptr + rowIndex*(sd->step));
 
         //moving to the right column
+
         for (int j = 0 ; runningFlag() && (j < columnIndex) ; ++j)
         {
             for (int z = 0 ; runningFlag() && (z < (points->cols)) ; ++z)
@@ -432,49 +441,74 @@ void NREstimate::startAnalyse()
     if (runningFlag())
     {
         // for 16 bits images only
+
         if (m_orgImage.sixteenBit())
         {
             for (int i = 0 ; i < points->cols ; ++i)
             {
                 if (i < 3)
+                {
                     datasd[i] = datasd[i] / 256;
+                }
             }
         }
 
-        if (datasd[0] < 7)
+        if      (datasd[0] < 7)
+        {
             L = datasd[0] - 0.98;
+        }
         else if (datasd[0] >= 7 && datasd[0] < 8)
+        {
             L = datasd[0] - 1.2;
+        }
         else if (datasd[0] >= 8 && datasd[0] < 9)
+        {
             L = datasd[0] - 1.5;
+        }
         else
+        {
             L = datasd[0] - 1.7;
+        }
 
         if (L < 0)
+        {
             L = 0;
+        }
 
         if (L > 9)
+        {
             L = 9;
+        }
 
         Cr = datasd[2] * 0.8;
         Cb = datasd[1] * 0.8;
 
         if (Cr > 7)
+        {
             Cr = 7;
+        }
 
         if (Cb > 7)
+        {
             Cb = 7;
+        }
 
         L  = floorf(L  * 100) / 100;
         Cb = floorf(Cb * 100) / 100;
         Cr = floorf(Cr * 100) / 100;
 
-        if ( L > 9 )
+        if      ( L > 9 )
+        {
             LSoft = CrSoft = CbSoft = 0.8;
+        }
         else if ( L > 3)
+        {
             LSoft = CrSoft = CbSoft = 0.7;
+        }
         else
+        {
             LSoft = CrSoft = CbSoft = 0.6;
+        }
     }
 
     d->prm.thresholds[0] = L;

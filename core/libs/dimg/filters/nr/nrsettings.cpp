@@ -356,7 +356,9 @@ void NRSettings::readSettings(KConfigGroup& group)
     slotDisableParameters(b);
 
     if (!b)
+    {
         setSettings(prm);
+    }
 }
 
 void NRSettings::writeSettings(KConfigGroup& group)

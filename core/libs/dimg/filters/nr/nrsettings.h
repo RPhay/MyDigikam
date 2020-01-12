@@ -47,14 +47,14 @@ public:
     explicit NRSettings(QWidget* const parent);
     ~NRSettings();
 
-    NRContainer defaultSettings() const;
+    NRContainer defaultSettings()   const;
     void resetToDefault();
 
-    NRContainer settings() const;
+    NRContainer settings()          const;
     void setSettings(const NRContainer& settings);
 
     void setEstimateNoise(bool b);
-    bool estimateNoise() const;
+    bool estimateNoise()            const;
 
     void readSettings(KConfigGroup& group);
     void writeSettings(KConfigGroup& group);

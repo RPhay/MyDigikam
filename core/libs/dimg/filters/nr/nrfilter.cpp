@@ -48,12 +48,12 @@ namespace Digikam
 
 NRContainer::NRContainer()
 {
-    thresholds[0] = 1.2;     // Y
-    thresholds[1] = 1.2;     // Cr
-    thresholds[2] = 1.2;     // Cb
-    softness[0]   = 0.9;     // Y
-    softness[1]   = 0.9;     // Cr
-    softness[2]   = 0.9;     // Cb
+    thresholds[0] = 1.2;     ///< Y
+    thresholds[1] = 1.2;     ///< Cr
+    thresholds[2] = 1.2;     ///< Cb
+    softness[0]   = 0.9;     ///< Y
+    softness[1]   = 0.9;     ///< Cr
+    softness[2]   = 0.9;     ///< Cb
 }
 
 NRContainer::~NRContainer()
@@ -74,6 +74,7 @@ QDebug operator<<(QDebug dbg, const NRContainer& inf)
                   << inf.thresholds[2] << ", ";
     dbg.nospace() << "Cr Softness: "
                   << inf.softness[2];
+
     return dbg.space();
 }
 
@@ -226,7 +227,7 @@ void NRFilter::filterImage()
 
             progress = (int)(30.0 + ((double)c * 60.0) / 4);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }
@@ -293,9 +294,9 @@ void NRFilter::calculteStdevMultithreaded(const Args& prm)
     {
         prm.fimg[*prm.hpass][i] -= prm.fimg[*prm.lpass][i];
 
-        if (prm.fimg[*prm.hpass][i] < *prm.thold && prm.fimg[*prm.hpass][i] > -*prm.thold)
+        if ((prm.fimg[*prm.hpass][i] < *prm.thold) && (prm.fimg[*prm.hpass][i] > -*prm.thold))
         {
-            if (prm.fimg[*prm.lpass][i] > 0.8)
+            if      (prm.fimg[*prm.lpass][i] > 0.8)
             {
                 prm.stdev[4] += prm.fimg[*prm.hpass][i] * prm.fimg[*prm.hpass][i];
                 prm.samples[4]++;
@@ -438,7 +439,9 @@ void NRFilter::waveletDenoise(float* fimg[3], unsigned int width, unsigned int h
         }
 
         foreach (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         stdev[0] = sqrt(stdev[0] / (samples[0] + 1));
         stdev[1] = sqrt(stdev[1] / (samples[1] + 1));
@@ -461,7 +464,9 @@ void NRFilter::waveletDenoise(float* fimg[3], unsigned int width, unsigned int h
         }
 
         foreach (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         hpass = lpass;
     }

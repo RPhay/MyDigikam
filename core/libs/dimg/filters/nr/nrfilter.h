@@ -49,10 +49,11 @@ public:
 
 public:
 
-    /** Separated values per chanel
+    /**
+     * Separated values per chanel
      */
-    double thresholds[3];    // Y, Cb, Cr thresholds.
-    double softness[3];      // Y, Cb, Cr softness.
+    double thresholds[3];    ///< Y, Cb, Cr thresholds.
+    double softness[3];      ///< Y, Cb, Cr softness.
 };
 
 //! qDebug() stream operator. Writes property @a inf to the debug output in a nicely formatted way.
@@ -63,28 +64,23 @@ DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const NRContainer& inf);
 class DIGIKAM_EXPORT NRFilter : public DImgThreadedFilter
 {
 
-public:
-
-    explicit NRFilter(QObject* const parent = nullptr);
-    NRFilter(DImg* const orgImage, QObject* const parent, const NRContainer& settings);
-    ~NRFilter();
-
-    void readParameters(const FilterAction& action) override;
-
-    virtual FilterAction    filterAction() override;
-    virtual QString         filterIdentifier() const override;
-
-    static QString          FilterIdentifier();
-    static QString          DisplayableName();
-    static QList<int>       SupportedVersions();
-    static int              CurrentVersion();
-
-    static void srgb2ycbcr(float** const fimg, int size);
-
 private:
 
     struct Args
     {
+        explicit Args()
+          : start(0),
+            stop(0),
+            thold(nullptr),
+            lpass(nullptr),
+            hpass(nullptr),
+            stdev(nullptr),
+            samples(nullptr),
+            threshold(0.0),
+            softness(0.0)
+        {
+        }
+
         uint    start;
         uint    stop;
         float*  thold;
@@ -97,9 +93,27 @@ private:
         double  softness;
     };
 
+public:
+
+    explicit NRFilter(QObject* const parent = nullptr);
+    NRFilter(DImg* const orgImage, QObject* const parent, const NRContainer& settings);
+    ~NRFilter();
+
+    void readParameters(const FilterAction& action)       override;
+
+    virtual FilterAction    filterAction()                override;
+    virtual QString         filterIdentifier()      const override;
+
+    static QString          FilterIdentifier();
+    static QString          DisplayableName();
+    static QList<int>       SupportedVersions();
+    static int              CurrentVersion();
+
+    static void srgb2ycbcr(float** const fimg, int size);
+
 private:
 
-    void filterImage() override;
+    void filterImage()                                    override;
 
     void waveletDenoise(float* fimg[3], unsigned int width, unsigned int height,
                         float threshold, double softness);
