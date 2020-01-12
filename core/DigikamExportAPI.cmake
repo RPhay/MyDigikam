@@ -53,12 +53,10 @@ install(FILES
               ${CMAKE_CURRENT_SOURCE_DIR}/utilities/imageeditor/widgets/previewtoolbar.h
 
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dimg.h
-              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dcolor.h
-              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dcolorpixelaccess.h
-              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dcolorcomposer.h
-              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dcolorblend.h
-              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/dshareddata.h
-              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/drawdecoding.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/color/dcolor.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/color/dcolorpixelaccess.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/color/dcolorcomposer.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/color/dcolorblend.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/loaders/dimgloaderobserver.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/history/historyimageid.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/history/filteraction.h
@@ -70,6 +68,7 @@ install(FILES
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/bcg/bcgcontainer.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/wb/wbcontainer.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/curves/curvescontainer.h
+              ${CMAKE_CURRENT_SOURCE_DIR}/libs/dimg/filters/raw/drawdecoding.h
 
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/metadataengine/engine/metaengine.h
               ${CMAKE_CURRENT_SOURCE_DIR}/libs/metadataengine/engine/metaengine_data.h
