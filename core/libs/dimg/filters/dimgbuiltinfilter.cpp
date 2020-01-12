@@ -338,7 +338,7 @@ QString DImgBuiltinFilter::displayableName() const
             return QString::fromUtf8(I18N_NOOP("Rotate Right"));
 
         case Rotate180:
-            return QString::fromUtf8(I18N_NOOP("Rotate 180°"));
+            return QString::fromUtf8(I18N_NOOP("Rotate 180 degrees"));
 
         case Rotate270:
             return QString::fromUtf8(I18N_NOOP("Rotate Left"));
