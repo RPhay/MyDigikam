@@ -340,12 +340,6 @@ done
 echo "---------- Copying Qt Web Backend files..."
 
 # QWebEngine bin data files.
-# NOTE: no ressources data are provided with QtWebKit
-if [[ $DK_QTWEBENGINE = 1 ]] ; then
-
-    cp -a "$INSTALL_PREFIX/ressources" "$TEMPROOT"
-
-fi
 
 if [[ $DK_QTWEBENGINE = 1 ]] ; then
 
