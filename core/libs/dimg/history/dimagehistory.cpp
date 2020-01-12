@@ -84,12 +84,13 @@ DImageHistory::~DImageHistory()
 DImageHistory& DImageHistory::operator=(const DImageHistory& other)
 {
     d = other.d;
+
     return *this;
 }
 
 bool DImageHistory::isNull() const
 {
-    return d == *imageHistoryPrivSharedNull;
+    return (d == *imageHistoryPrivSharedNull);
 }
 
 bool DImageHistory::isEmpty() const
@@ -103,8 +104,8 @@ bool DImageHistory::isValid() const
     {
         return false;
     }
-    else if (d->entries.count() == 1                        &&
-             d->entries.first().referredImages.count() == 1 &&
+    else if ((d->entries.count() == 1)                        &&
+             (d->entries.first().referredImages.count() == 1) &&
              d->entries.first().referredImages.first().isCurrentFile())
     {
         return false;
@@ -137,13 +138,13 @@ int DImageHistory::size() const
 
 static bool operator==(const DImageHistory::Entry& e1, const DImageHistory::Entry& e2)
 {
-    return e1.action         == e2.action &&
-           e1.referredImages == e2.referredImages;
+    return ((e1.action         == e2.action) &&
+            (e1.referredImages == e2.referredImages));
 }
 
 bool DImageHistory::operator==(const DImageHistory& other) const
 {
-    return d->entries == other.d->entries;
+    return (d->entries == other.d->entries);
 }
 
 bool DImageHistory::operator<(const Digikam::DImageHistory& other) const
@@ -197,12 +198,14 @@ DImageHistory& DImageHistory::operator<<(const FilterAction& action)
     entry.action = action;
     d->entries << entry;
     //qCDebug(DIGIKAM_DIMG_LOG) << "Entry added, total count " << d->entries.count();
+
     return *this;
 }
 
 DImageHistory& DImageHistory::operator<<(const HistoryImageId& id)
 {
     appendReferredImage(id);
+
     return *this;
 }
 
@@ -404,7 +407,7 @@ HistoryImageId DImageHistory::originalReferredImage() const
 
 void DImageHistory::clearReferredImages()
 {
-    for (int i=0; i<d->entries.size(); ++i)
+    for (int i = 0 ; i < d->entries.size() ; ++i)
     {
         d->entries[i].referredImages.clear();
     }
@@ -412,17 +415,17 @@ void DImageHistory::clearReferredImages()
 
 void DImageHistory::adjustReferredImages()
 {
-    for (int i=0; i<d->entries.size(); ++i)
+    for (int i = 0 ; i < d->entries.size() ; ++i)
     {
         Entry& entry = d->entries[i];
 
-        for (int e=0; e<entry.referredImages.size(); ++e)
+        for (int e = 0 ; e < entry.referredImages.size() ; ++e)
         {
             HistoryImageId& id = entry.referredImages[e];
 
             if (id.isCurrentFile())
             {
-                id.m_type = i==0 ? HistoryImageId::Original : HistoryImageId::Intermediate;
+                id.m_type = (i == 0) ? HistoryImageId::Original : HistoryImageId::Intermediate;
             }
         }
     }
@@ -430,11 +433,11 @@ void DImageHistory::adjustReferredImages()
 
 void DImageHistory::adjustCurrentUuid(const QString& uuid)
 {
-    for (int i=0; i<d->entries.size(); ++i)
+    for (int i = 0 ; i < d->entries.size() ; ++i)
     {
         Entry& entry = d->entries[i];
 
-        for (int e=0; e<entry.referredImages.size(); ++e)
+        for (int e = 0 ; e < entry.referredImages.size() ; ++e)
         {
             HistoryImageId& id = entry.referredImages[e];
 
@@ -451,15 +454,15 @@ void DImageHistory::adjustCurrentUuid(const QString& uuid)
 
 void DImageHistory::purgePathFromReferredImages(const QString& path, const QString& fileName)
 {
-    for (int i=0; i<d->entries.size(); ++i)
+    for (int i = 0 ; i < d->entries.size() ; ++i)
     {
         Entry& entry = d->entries[i];
 
-        for (int e=0; e<entry.referredImages.size(); ++e)
+        for (int e = 0 ; e < entry.referredImages.size() ; ++e)
         {
             HistoryImageId& id = entry.referredImages[e];
             {
-                if (id.m_filePath == path && id.m_fileName == fileName)
+                if ((id.m_filePath == path) && (id.m_fileName == fileName))
                 {
                     id.m_filePath.clear();
                     id.m_fileName.clear();
@@ -471,11 +474,11 @@ void DImageHistory::purgePathFromReferredImages(const QString& path, const QStri
 
 void DImageHistory::moveCurrentReferredImage(const QString& newPath, const QString& newFileName)
 {
-    for (int i=0; i<d->entries.size(); ++i)
+    for (int i = 0 ; i < d->entries.size() ; ++i)
     {
         Entry& entry = d->entries[i];
 
-        for (int e=0; e<entry.referredImages.size(); ++e)
+        for (int e = 0 ; e < entry.referredImages.size() ; ++e)
         {
             HistoryImageId& id = entry.referredImages[e];
 
@@ -498,7 +501,7 @@ QString DImageHistory::toXml() const
     stream.writeStartElement(QLatin1String("history"));
     stream.writeAttribute(QLatin1String("version"), QString::number(1));
 
-    for (int i = 0; i < entries().count(); ++i)
+    for (int i = 0 ; i < entries().count() ; ++i)
     {
         const Entry& step = entries().at(i);
 
@@ -514,9 +517,11 @@ QString DImageHistory::toXml() const
                 case FilterAction::ReproducibleFilter:
                     stream.writeAttribute(QLatin1String("filterCategory"), QLatin1String("reproducible"));
                     break;
+
                 case FilterAction::ComplexFilter:
                     stream.writeAttribute(QLatin1String("filterCategory"), QLatin1String("complex"));
                     break;
+
                 case FilterAction::DocumentedHistory:
                     stream.writeAttribute(QLatin1String("filterCategory"), QLatin1String("documentedHistory"));
                     break;
@@ -540,7 +545,7 @@ QString DImageHistory::toXml() const
                 {
                     QHash<QString, QVariant>::const_iterator it;
 
-                    for (it = params.find(key); it != params.end() && it.key() == key; ++it)
+                    for (it = params.find(key) ; it != params.end() && it.key() == key ; ++it)
                     {
                         stream.writeStartElement(QLatin1String("param"));
                         stream.writeAttribute(QLatin1String("name"), key);
@@ -703,7 +708,7 @@ DImageHistory DImageHistory::fromXml(const QString& xml) //DImageHistory
 
             if (imageId.isOriginalFile())
             {
-                originalUUID = imageId.m_uuid;
+                originalUUID         = imageId.m_uuid;
                 originalCreationDate = imageId.m_creationDate;
             }
             else
@@ -728,7 +733,7 @@ DImageHistory DImageHistory::fromXml(const QString& xml) //DImageHistory
             FilterAction::Category c = FilterAction::ComplexFilter;
             QStringRef categoryString = stream.attributes().value(QLatin1String("filterCategory"));
 
-            if (categoryString == QLatin1String("reproducible"))
+            if      (categoryString == QLatin1String("reproducible"))
             {
                 c = FilterAction::ReproducibleFilter;
             }

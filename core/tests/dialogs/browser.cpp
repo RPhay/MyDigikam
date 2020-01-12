@@ -44,7 +44,7 @@ int main(int argc, char* argv[])
         return -1;
     }
 
-    WebBrowserDlg browser(QUrl(QString::fromUtf8(argv[1])));
+    WebBrowserDlg browser(QUrl(QString::fromUtf8(argv[1])), nullptr);
     browser.show();
 
     return a.exec();

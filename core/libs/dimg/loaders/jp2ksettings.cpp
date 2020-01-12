@@ -50,11 +50,11 @@ class Q_DECL_HIDDEN JP2KSettings::Private
 public:
 
     explicit Private()
+      : JPEG2000Grid(nullptr),
+        labelJPEG2000compression(nullptr),
+        JPEG2000LossLess(nullptr),
+        JPEG2000compression(nullptr)
     {
-        JPEG2000Grid             = nullptr;
-        labelJPEG2000compression = nullptr;
-        JPEG2000compression      = nullptr;
-        JPEG2000LossLess         = nullptr;
     }
 
     QGridLayout*  JPEG2000Grid;

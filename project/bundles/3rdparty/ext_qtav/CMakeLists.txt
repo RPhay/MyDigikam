@@ -91,9 +91,6 @@ else() #Linux
 
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
-#        URL https://sourceforge.net/projects/qtav/files/v1.12.0/v1.12.0.tar.gz/download
-#        URL_MD5 59d858d19706d75099a9dba531572529
-
         GIT_REPOSITORY https://github.com/wang-bin/QtAV.git
 #        GIT_TAG ${QTAV_VERSION}
 

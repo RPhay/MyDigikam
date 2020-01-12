@@ -56,11 +56,11 @@ void DImgBuiltinFilter::setAction(const FilterAction& action)
 {
     m_type = NoOperation;
 
-    if (action.identifier() == QLatin1String("transform:rotate") && action.version() == 1)
+    if      ((action.identifier() == QLatin1String("transform:rotate")) && (action.version() == 1))
     {
         int angle = action.parameter(QLatin1String("angle")).toInt();
 
-        if (angle == 90)
+        if      (angle == 90)
         {
             m_type = Rotate90;
         }
@@ -73,7 +73,7 @@ void DImgBuiltinFilter::setAction(const FilterAction& action)
             m_type = Rotate270;
         }
     }
-    else if (action.identifier() == QLatin1String("transform:flip") && action.version() == 1)
+    else if ((action.identifier() == QLatin1String("transform:flip")) && (action.version() == 1))
     {
         QString direction = action.parameter(QLatin1String("direction")).toString();
 
@@ -86,7 +86,7 @@ void DImgBuiltinFilter::setAction(const FilterAction& action)
             m_type = FlipHorizontally;
         }
     }
-    else if (action.identifier() == QLatin1String("transform:crop") && action.version() == 1)
+    else if ((action.identifier() == QLatin1String("transform:crop")) && (action.version() == 1))
     {
         m_type     = Crop;
         int x      = action.parameter(QLatin1String("x")).toInt();
@@ -95,14 +95,14 @@ void DImgBuiltinFilter::setAction(const FilterAction& action)
         int height = action.parameter(QLatin1String("height")).toInt();
         m_arg      = QRect(x, y, width, height);
     }
-    else if (action.identifier() == QLatin1String("transform:resize") && action.version() == 1)
+    else if ((action.identifier() == QLatin1String("transform:resize")) && (action.version() == 1))
     {
         m_type     = Resize;
         int width  = action.parameter(QLatin1String("width")).toInt();
         int height = action.parameter(QLatin1String("height")).toInt();
         m_arg      = QSize(width, height);
     }
-    else if (action.identifier() == QLatin1String("transform:convertDepth") && action.version() == 1)
+    else if ((action.identifier() == QLatin1String("transform:convertDepth")) && (action.version() == 1))
     {
         int depth = action.parameter(QLatin1String("depth")).toInt();
 
@@ -206,7 +206,7 @@ FilterAction DImgBuiltinFilter::filterAction() const
             action = FilterAction(QLatin1String("transform:rotate"), 1);
             int angle;
 
-            if (m_type == Rotate90)
+            if      (m_type == Rotate90)
             {
                 angle = 90;
             }
@@ -227,7 +227,8 @@ FilterAction DImgBuiltinFilter::filterAction() const
         case FlipVertically:
         {
             action = FilterAction(QLatin1String("transform:flip"), 1);
-            action.addParameter(QLatin1String("direction"), m_type == FlipHorizontally ? QLatin1String("horizontal") : QLatin1String("vertical"));
+            action.addParameter(QLatin1String("direction"), (m_type == FlipHorizontally) ? QLatin1String("horizontal")
+                                                                                         : QLatin1String("vertical"));
             break;
         }
 
@@ -255,7 +256,7 @@ FilterAction DImgBuiltinFilter::filterAction() const
         case ConvertTo16Bit:
         {
             action = FilterAction(QLatin1String("transform:convertDepth"), 1);
-            action.addParameter(QLatin1String("depth"), m_type == ConvertTo8Bit ? 8 : 16);
+            action.addParameter(QLatin1String("depth"), (m_type == ConvertTo8Bit) ? 8 : 16);
             break;
         }
     }
@@ -310,6 +311,7 @@ QList<int> DImgBuiltinFilter::supportedVersions(const QString& filterIdentifier)
     QList<int> versions;
 
     // So far, all filters are at version 1
+
     if (isSupported(filterIdentifier))
     {
         versions << 1;
@@ -321,6 +323,7 @@ QList<int> DImgBuiltinFilter::supportedVersions(const QString& filterIdentifier)
 QString DImgBuiltinFilter::i18nDisplayableName() const
 {
     QByteArray latin1 = displayableName().toLatin1();
+
     return i18n(latin1.data());
 }
 
@@ -402,7 +405,7 @@ QString DImgBuiltinFilter::filterIcon() const
 
 QString DImgBuiltinFilter::i18nDisplayableName(const QString& filterIdentifier)
 {
-    if (filterIdentifier == QLatin1String("transform:rotate"))
+    if      (filterIdentifier == QLatin1String("transform:rotate"))
     {
         return i18nc("Rotate image", "Rotate");
     }
@@ -428,7 +431,7 @@ QString DImgBuiltinFilter::i18nDisplayableName(const QString& filterIdentifier)
 
 QString DImgBuiltinFilter::filterIcon(const QString& filterIdentifier)
 {
-    if (filterIdentifier == QLatin1String("transform:rotate"))
+    if      (filterIdentifier == QLatin1String("transform:rotate"))
     {
         return QLatin1String("transform-rotate");
     }
@@ -465,7 +468,8 @@ bool DImgBuiltinFilter::isSupported(const QString& filterIdentifier, int version
     }
 
     // at the moment, all filters are at version 1
-    return version == 1;
+
+    return (version == 1);
 }
 
 // -------------------------------------------------------------------------------------------------------------------

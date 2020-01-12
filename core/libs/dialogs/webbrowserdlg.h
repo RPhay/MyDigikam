@@ -47,8 +47,15 @@ class DIGIKAM_EXPORT WebBrowserDlg : public QDialog
 
 public:
 
-    explicit WebBrowserDlg(const QUrl& url, QWidget* const parent = nullptr);
+    explicit WebBrowserDlg(const QUrl& url,
+                           QWidget* const parent,
+                           bool hideDeskBrowser = false);
     ~WebBrowserDlg();
+
+Q_SIGNALS:
+
+    void urlChanged(const QUrl& url);
+    void closeView(bool val);
 
 private Q_SLOTS:
 

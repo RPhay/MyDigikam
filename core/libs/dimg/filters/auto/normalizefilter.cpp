@@ -217,6 +217,7 @@ void NormalizeFilter::normalizeImage()
     uint size   = w * h;
 
     // Apply LUT to image.
+
     int progress = 0;
 
     if (!sixteenBit)        // 8 bits image.
@@ -234,11 +235,11 @@ void NormalizeFilter::normalizeImage()
             ptr[1] = param.lut[green];
             ptr[2] = param.lut[red];
 
-            ptr += 4;
+            ptr   += 4;
 
             progress = (int)(((double)i * 100.0) / size);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }
@@ -259,11 +260,11 @@ void NormalizeFilter::normalizeImage()
             ptr[1] = param.lut[green];
             ptr[2] = param.lut[red];
 
-            ptr += 4;
+            ptr   += 4;
 
             progress = (int)(((double)i * 100.0) / size);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }

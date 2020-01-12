@@ -71,14 +71,14 @@ QString InfraredFilter::DisplayableName()
     return QString::fromUtf8(I18N_NOOP("Infrared Filter"));
 }
 
-/** This method is based on the Simulate Infrared Film tutorial from GimpGuru.org web site
-    available at this url : http://www.gimpguru.org/Tutorials/SimulatedInfrared/
-
-    More info about IR film can be seen at this url :
-
-    http://www.pauck.de/marco/photo/infrared/comparison_of_films/comparison_of_films.html
-*/
-
+/**
+ * This method is based on the Simulate Infrared Film tutorial from GimpGuru.org web site
+ *  available at this url : http://www.gimpguru.org/Tutorials/SimulatedInfrared/
+ *
+ *  More info about IR film can be seen at this url :
+ *
+ *  http://www.pauck.de/marco/photo/infrared/comparison_of_films/comparison_of_films.html
+ */
 void InfraredFilter::filterImage()
 {
     m_destImage.putImageData(m_orgImage.bits());
@@ -168,9 +168,9 @@ void InfraredFilter::filterImage()
 
     outData.setSixteenBit(sixteenBit);
 
-    for (int x = 0 ; runningFlag() && x < Width ; ++x)
+    for (int x = 0 ; runningFlag() && (x < Width) ; ++x)
     {
-        for (int y = 0 ; runningFlag() && y < Height ; ++y)
+        for (int y = 0 ; runningFlag() && (y < Height) ; ++y)
         {
             offset = x * bytesDepth + (y * Width * bytesDepth);
 
@@ -197,7 +197,7 @@ void InfraredFilter::filterImage()
         // Update progress bar in dialog.
         progress = (int)(50.0 + ((double)x * 50.0) / Width);
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
@@ -207,12 +207,14 @@ void InfraredFilter::filterImage()
 int InfraredFilter::intMult8(uint a, uint b)
 {
     uint t = a * b + 0x80;
+
     return ((t >> 8) + t) >> 8;
 }
 
 int InfraredFilter::intMult16(uint a, uint b)
 {
     uint t = a * b + 0x8000;
+
     return ((t >> 16) + t) >> 16;
 }
 

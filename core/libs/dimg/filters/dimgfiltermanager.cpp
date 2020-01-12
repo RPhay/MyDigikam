@@ -145,9 +145,11 @@ void DImgFilterManager::Private::setupCoreGenerators()
             << ImgFilterPtr(new BasicDImgFilterGenerator<CBFilter>())
             << ImgFilterPtr(new BasicDImgFilterGenerator<CharcoalFilter>())
             << ImgFilterPtr(new BasicDImgFilterGenerator<ColorFXFilter>())
+
 #ifdef HAVE_LIBLQR_1
             << ImgFilterPtr(new BasicDImgFilterGenerator<ContentAwareFilter>())
 #endif // HAVE_LIBLQR_1
+
             << ImgFilterPtr(new BasicDImgFilterGenerator<CurvesFilter>())
             << ImgFilterPtr(new BasicDImgFilterGenerator<DistortionFXFilter>())
             << ImgFilterPtr(new BasicDImgFilterGenerator<EmbossFilter>())
@@ -161,9 +163,11 @@ void DImgFilterManager::Private::setupCoreGenerators()
             << ImgFilterPtr(new BasicDImgFilterGenerator<InfraredFilter>())
             << ImgFilterPtr(new BasicDImgFilterGenerator<InvertFilter>())
             << ImgFilterPtr(new BasicDImgFilterGenerator<LensDistortionFilter>())
+
 #ifdef HAVE_LENSFUN
             << ImgFilterPtr(new BasicDImgFilterGenerator<LensFunFilter>())
 #endif // HAVE_LENSFUN
+
             << ImgFilterPtr(new BasicDImgFilterGenerator<LevelsFilter>())
             << ImgFilterPtr(new BasicDImgFilterGenerator<LocalContrastFilter>())
             << ImgFilterPtr(new BasicDImgFilterGenerator<MixerFilter>())
@@ -172,9 +176,11 @@ void DImgFilterManager::Private::setupCoreGenerators()
             << ImgFilterPtr(new BasicDImgFilterGenerator<OilPaintFilter>())
             << ImgFilterPtr(new BasicDImgFilterGenerator<RainDropFilter>())
             << ImgFilterPtr(new BasicDImgFilterGenerator<RedEyeCorrectionFilter>())
+
 #ifdef HAVE_EIGEN3
             << ImgFilterPtr(new BasicDImgFilterGenerator<RefocusFilter>())
 #endif // HAVE_EIGEN3
+
             << ImgFilterPtr(new BasicDImgFilterGenerator<SharpenFilter>())
             << ImgFilterPtr(new BasicDImgFilterGenerator<ShearFilter>())
             << ImgFilterPtr(new BasicDImgFilterGenerator<StretchFilter>())
@@ -302,7 +308,7 @@ void DImgFilterManager::removeGenerator(DImgFilterGenerator* const /*generator*/
     QMutexLocker lock(&d->mutex);
     QMap<QString, DImgFilterGenerator*>::iterator it;
 
-    for (it = d->filterMap.begin(); it != d->filterMap.end();)
+    for (it = d->filterMap.begin() ; it != d->filterMap.end() ; )
     {
         if (it.value() == generator)
         {
@@ -330,7 +336,7 @@ QList<int> DImgFilterManager::supportedVersions(const QString& filterIdentifier)
     }
 
     QMutexLocker lock(&d->mutex);
-    DImgFilterGenerator* gen = d->filterMap.value(filterIdentifier).data();
+    DImgFilterGenerator* const gen = d->filterMap.value(filterIdentifier).data();
 
     if (gen)
     {
@@ -343,7 +349,7 @@ QList<int> DImgFilterManager::supportedVersions(const QString& filterIdentifier)
 QString DImgFilterManager::displayableName(const QString& filterIdentifier)
 {
     QMutexLocker lock(&d->mutex);
-    DImgFilterGenerator* gen = d->filterMap.value(filterIdentifier).data();
+    DImgFilterGenerator* const gen = d->filterMap.value(filterIdentifier).data();
 
     if (gen)
     {
@@ -361,6 +367,7 @@ QString DImgFilterManager::filterIcon(const QString& filterIdentifier)
     }
 
     QMutexLocker lock(&d->mutex);
+
     return d->filterIcons.value(filterIdentifier);
 }
 
@@ -427,7 +434,7 @@ QString DImgFilterManager::i18nDisplayableName(const FilterAction& action)
         QString i18nDispName     = i18nDisplayableName(action.identifier());
         QString metadataDispName = action.displayableName();
 
-        if (!i18nDispName.isEmpty())
+        if      (!i18nDispName.isEmpty())
         {
             return i18nDispName;
         }
@@ -463,7 +470,7 @@ bool DImgFilterManager::isSupported(const QString& filterIdentifier, int version
         return true;
     }
 
-    DImgFilterGenerator* gen = d->filterMap.value(filterIdentifier).data();
+    DImgFilterGenerator* const gen = d->filterMap.value(filterIdentifier).data();
 
     if (gen)
     {
@@ -482,7 +489,7 @@ DImgThreadedFilter* DImgFilterManager::createFilter(const QString& filterIdentif
 {
     QMutexLocker lock(&d->mutex);
     qCDebug(DIGIKAM_DIMG_LOG) << "Creating filter " << filterIdentifier;
-    DImgFilterGenerator* gen = d->filterMap.value(filterIdentifier).data();
+    DImgFilterGenerator* const gen = d->filterMap.value(filterIdentifier).data();
 
     if (gen)
     {

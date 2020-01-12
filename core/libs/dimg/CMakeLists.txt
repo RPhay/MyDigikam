@@ -23,9 +23,8 @@ set(libdimg_SRCS
     dimg_qpixmap.cpp
     dimg_scale.cpp
     dimg_transform.cpp
-    drawdecoding.cpp
-    dcolor.cpp
-    dcolorcomposer.cpp
+    color/dcolor.cpp
+    color/dcolorcomposer.cpp
     history/dimagehistory.cpp
     history/filteraction.cpp
     history/historyimageid.cpp
@@ -40,7 +39,8 @@ set(libdimgfilters_SRCS
     filters/dpixelsaliasfilter.cpp
     filters/filteractionfilter.cpp
     filters/randomnumbergenerator.cpp
-    filters/rawprocessingfilter.cpp
+    filters/raw/rawprocessingfilter.cpp
+    filters/raw/drawdecoding.cpp
     filters/decorate/borderfilter.cpp
     filters/decorate/bordersettings.cpp
     filters/decorate/texturefilter.cpp
@@ -218,5 +218,4 @@ add_library(dimg_src OBJECT
             ${libdimgloaders_SRCS}
             ${libdimgfilters_SRCS}
             ${libdimg_SRCS}
-            ${libdlib_SRCS}
 )

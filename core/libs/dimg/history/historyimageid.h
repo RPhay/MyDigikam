@@ -89,31 +89,31 @@ public:
     explicit HistoryImageId(const QString& uuid, Type type = Current);
 
     /// A valid id needs at least a valid type and a UUID or a filename
-    bool isValid() const;
+    bool isValid()                                  const;
 
-    Type type() const;
+    Type type()                                     const;
 
-    bool isOriginalFile() const
+    bool isOriginalFile()                           const
     {
-        return type() == Original;
+        return (type() == Original);
     }
 
-    bool isSourceFile() const
+    bool isSourceFile()                             const
     {
-        return type() == Source;
+        return (type() == Source);
     }
 
-    bool isIntermediateFile() const
+    bool isIntermediateFile()                       const
     {
-        return type() == Intermediate;
+        return (type() == Intermediate);
     }
 
-    bool isCurrentFile() const
+    bool isCurrentFile()                            const
     {
-        return type() == Current;
+        return (type() == Current);
     }
 
-    bool operator==(const HistoryImageId& other) const;
+    bool operator==(const HistoryImageId& other)    const;
 
     void setType(HistoryImageId::Type type);
     void setUuid(const QString& uuid);
@@ -123,27 +123,27 @@ public:
     void setPath(const QString& path);
     void setUniqueHash(const QString& uniqueHash, qlonglong fileSize);
 
-    bool hasFileOnDisk() const;
+    bool hasFileOnDisk()                            const;
 
-    ///If a file on disk is referenced: Returns the path, without filename, with a trailing slash
-    QString path() const;
+    /// If a file on disk is referenced: Returns the path, without filename, with a trailing slash
+    QString path()                                  const;
 
     /// If a file on disk is referenced: Returns the full file path (folder + filename)
-    QString filePath() const;
+    QString filePath()                              const;
 
-    bool hasFileName() const;
+    bool hasFileName()                              const;
 
     /// If a file on disk is referenced: Returns the file name (without folder)
-    QString fileName() const;
+    QString fileName()                              const;
 
-    bool      hasUuid()                 const;
-    QString   uuid()                    const;
-    bool      hasCreationDate()         const;
-    QDateTime creationDate()            const;
-    bool      hasUniqueHashIdentifier() const;
-    QString   uniqueHash()              const;
-    qlonglong fileSize()                const;
-    QString   originalUuid()            const;
+    bool      hasUuid()                             const;
+    QString   uuid()                                const;
+    bool      hasCreationDate()                     const;
+    QDateTime creationDate()                        const;
+    bool      hasUniqueHashIdentifier()             const;
+    QString   uniqueHash()                          const;
+    qlonglong fileSize()                            const;
+    QString   originalUuid()                        const;
 
 public:
 
@@ -158,14 +158,19 @@ public:
 
     /// The filename of the referred file
     QString   m_fileName;
+
     /// The creationDate of the original image
     QDateTime m_creationDate;
+
     /// The path of the referred file (NOTE: without file name!, including trailing slash)
     QString   m_filePath;
+
     /// The uniqueHash of the referred file
     QString   m_uniqueHash;
+
     /// The file size of the referred file
     qlonglong m_fileSize;
+
     /**
      * A unique identifier designating the _original image_ from which the referred
      * image was created. Typically, this is a RAW or JPEG created by the camera in

@@ -48,8 +48,8 @@ class Q_DECL_HIDDEN FilterActionFilter::Private
 public:
 
     explicit Private()
+      : continueOnError(false)
     {
-        continueOnError = false;
     }
 
     bool                continueOnError;
@@ -107,7 +107,8 @@ bool FilterActionFilter::isReproducible() const
 {
     foreach (const FilterAction& action, d->actions)
     {
-        if (!action.isNull() && action.category() != FilterAction::ReproducibleFilter)
+        if (!action.isNull() &&
+            (action.category() != FilterAction::ReproducibleFilter))
         {
             return false;
         }
@@ -120,8 +121,9 @@ bool FilterActionFilter::isComplexAction() const
 {
     foreach (const FilterAction& action, d->actions)
     {
-        if (!action.isNull() && action.category() != FilterAction::ReproducibleFilter &&
-            action.category() != FilterAction::ComplexFilter)
+        if (!action.isNull()                                        &&
+            (action.category() != FilterAction::ReproducibleFilter) &&
+            (action.category() != FilterAction::ComplexFilter))
         {
             return false;
         }
@@ -145,7 +147,7 @@ bool FilterActionFilter::isSupported() const
 
 bool FilterActionFilter::completelyApplied() const
 {
-    return d->appliedActions.size() == d->actions.size();
+    return (d->appliedActions.size() == d->actions.size());
 }
 
 QList<FilterAction> FilterActionFilter::appliedFilterActions() const

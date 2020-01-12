@@ -50,11 +50,11 @@ class Q_DECL_HIDDEN HEIFSettings::Private
 public:
 
     explicit Private()
+      : HEIFGrid(nullptr),
+        labelHEIFcompression(nullptr),
+        HEIFLossLess(nullptr),
+        HEIFcompression(nullptr)
     {
-        HEIFGrid             = nullptr;
-        labelHEIFcompression = nullptr;
-        HEIFcompression      = nullptr;
-        HEIFLossLess         = nullptr;
     }
 
     QGridLayout*  HEIFGrid;

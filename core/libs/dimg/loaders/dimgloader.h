@@ -81,22 +81,23 @@ public:
 
     virtual ~DImgLoader();
 
-    virtual bool load(const QString& filePath, DImgLoaderObserver* const observer) = 0;
-    virtual bool save(const QString& filePath, DImgLoaderObserver* const observer) = 0;
+    virtual bool load(const QString& filePath, DImgLoaderObserver* const observer)        = 0;
+    virtual bool save(const QString& filePath, DImgLoaderObserver* const observer)        = 0;
 
-    virtual bool hasLoadedData() const;
-    virtual bool hasAlpha()      const = 0;
-    virtual bool sixteenBit()    const = 0;
-    virtual bool isReadOnly()    const = 0;
+    virtual bool hasLoadedData()                                                    const;
+    virtual bool hasAlpha()                                                         const = 0;
+    virtual bool sixteenBit()                                                       const = 0;
+    virtual bool isReadOnly()                                                       const = 0;
 
     static unsigned char*  new_failureTolerant(size_t unsecureSize);
     static unsigned char*  new_failureTolerant(quint64 w, quint64 h, uint typesPerPixel);
     static unsigned short* new_short_failureTolerant(size_t unsecureSize);
     static unsigned short* new_short_failureTolerant(quint64 w, quint64 h, uint typesPerPixel);
 
-    /** Value returned : -1 : unsupported platform
-     *                    0 : parse failure from supported platform
-     *                    1 : parse done with success from supported platform
+    /**
+     * Value returned : -1 : unsupported platform
+     *                   0 : parse failure from supported platform
+     *                   1 : parse done with success from supported platform
      */
     static qint64 checkAllocation(qint64 fullSize);
 
@@ -111,23 +112,25 @@ protected:
     unsigned int&           imageWidth();
     unsigned int&           imageHeight();
 
-    bool                    imageHasAlpha()   const;
-    bool                    imageSixteenBit() const;
+    bool                    imageHasAlpha()                                         const;
+    bool                    imageSixteenBit()                                       const;
 
-    unsigned int            imageNumBytes() const;
-    int                     imageBitsDepth()  const;
-    int                     imageBytesDepth() const;
+    unsigned int            imageNumBytes()                                         const;
+    int                     imageBitsDepth()                                        const;
+    int                     imageBytesDepth()                                       const;
 
     void                    imageSetIccProfile(const IccProfile& profile);
-    QVariant                imageGetAttribute(const QString& key) const;
-    void                    imageSetAttribute(const QString& key, const QVariant& value);
+    QVariant                imageGetAttribute(const QString& key)                   const;
+    void                    imageSetAttribute(const QString& key,
+                                              const QVariant& value);
 
-    QMap<QString, QString>& imageEmbeddedText()                      const;
-    QString                 imageGetEmbbededText(const QString& key) const;
-    void                    imageSetEmbbededText(const QString& key, const QString& text);
+    QMap<QString, QString>& imageEmbeddedText()                                     const;
+    QString                 imageGetEmbbededText(const QString& key)                const;
+    void                    imageSetEmbbededText(const QString& key,
+                                                 const QString& text);
 
     void                    loadingFailed();
-    bool                    checkExifWorkingColorSpace() const;
+    bool                    checkExifWorkingColorSpace()                            const;
     void                    purgeExifWorkingColorSpace();
     void                    storeColorProfileInMetadata();
 
@@ -170,14 +173,16 @@ Q_INLINE_TEMPLATE Type* DImgLoader::new_failureTolerant(size_t size)
 {
     qint64 res = checkAllocation(size);
 
-    switch(res)
+    switch (res)
     {
         case 0:       // parse failure from supported platform
             return nullptr;
             break;
+
         case -1:      // unsupported platform
             // We will try to continue to allocate
             break;
+
         default:     // parse done with success from supported platform
             break;
     }

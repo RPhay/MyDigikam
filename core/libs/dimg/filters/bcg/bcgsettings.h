@@ -47,10 +47,10 @@ public:
     explicit BCGSettings(QWidget* const parent);
     ~BCGSettings();
 
-    BCGContainer defaultSettings() const;
+    BCGContainer defaultSettings()  const;
     void resetToDefault();
 
-    BCGContainer settings() const;
+    BCGContainer settings()         const;
     void setSettings(const BCGContainer& settings);
 
     void readSettings(KConfigGroup& group);

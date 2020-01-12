@@ -7,7 +7,7 @@
  * Description : black and white image filter.
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2010 by Martin Klapetek <martin dot klapetek at gmail dot com>
+ * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -62,7 +62,7 @@ public:
     double           greenAttn;
     double           blueAttn;
 
-    // Channel mixer color multiplier.
+    /// Channel mixer color multiplier.
     double           redMult;
     double           greenMult;
     double           blueMult;
@@ -497,6 +497,7 @@ void BWSepiaFilter::applyInfraredFilter(DImg& img, int sensibility)
 void BWSepiaFilter::applyToneFilter(DImg& img, TonalityContainer& settings)
 {
     // Value to multiply RGB 8 bits component of mask used by TonalityFilter.
+
     int mul            = img.sixteenBit() ? 255 : 1;
     settings.redMask   = settings.redMask   * mul;
     settings.greenMask = settings.greenMask * mul;
@@ -519,6 +520,7 @@ FilterAction BWSepiaFilter::filterAction()
     action.addParameter(QLatin1String("toneType"),    d->settings.toneType);
 
     // Version 2: BWKodakHIE added
+
     action.supportOlderVersionIf(1, d->settings.filmType < BWSepiaContainer::BWKodakHIE);
 
     d->settings.curvesPrm.writeToFilterAction(action);
@@ -539,6 +541,5 @@ void BWSepiaFilter::readParameters(const FilterAction& action)
     d->settings.curvesPrm   = CurvesContainer::fromFilterAction(action);
     d->settings.bcgPrm      = BCGContainer::fromFilterAction(action);
 }
-
 
 } // namespace Digikam

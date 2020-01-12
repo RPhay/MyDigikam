@@ -59,8 +59,8 @@ class Q_DECL_HIDDEN MixerSettings::Private
 {
 public:
 
-    explicit Private() :
-        currentChannel(RedChannel),
+    explicit Private()
+      : currentChannel(RedChannel),
         monochromeTips(nullptr),
         totalPercents(nullptr),
         outChannelLabel(nullptr),
@@ -130,7 +130,7 @@ MixerSettings::MixerSettings(QWidget* const parent)
     : QWidget(parent),
       d(new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QGridLayout* const grid = new QGridLayout(this);
 
@@ -247,7 +247,8 @@ MixerSettings::~MixerSettings()
 
 void MixerSettings::setMonochromeTipsVisible(bool b)
 {
-    b ? d->monochromeTips->show() : d->monochromeTips->hide();
+    b ? d->monochromeTips->show()
+      : d->monochromeTips->hide();
 }
 
 void MixerSettings::slotOutChannelChanged()

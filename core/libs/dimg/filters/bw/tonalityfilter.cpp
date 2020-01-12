@@ -7,7 +7,7 @@
  * Description : Change tonality image filter
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2010 by Martin Klapetek <martin dot klapetek at gmail dot com>
+ * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -65,7 +65,7 @@ QString TonalityFilter::DisplayableName()
 {
     return QString::fromUtf8(I18N_NOOP("Tonality Filter"));
 }
-    
+
 /**
  * Change color tonality of an image for applying a RGB color mask.
  */
@@ -103,7 +103,7 @@ void TonalityFilter::filterImage()
 
             progress = (int)(((double)i * 100.0) / size);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }
@@ -128,7 +128,7 @@ void TonalityFilter::filterImage()
 
             progress = (int)(((double)i * 100.0) / size);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }

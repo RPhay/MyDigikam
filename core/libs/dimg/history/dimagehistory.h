@@ -80,12 +80,12 @@ public:
     /**
      * A history is null if it is constructed with the default constructor
      */
-    bool isNull() const;
+    bool isNull()                                                           const;
 
     /**
      * A history is considered empty if there are no entries.
      */
-    bool isEmpty() const;
+    bool isEmpty()                                                          const;
 
     /**
      * A history is a valid history (telling something about the past),
@@ -93,15 +93,18 @@ public:
      * referred image other than the "Current" entry,
      * or there is a valid action.
      */
-    bool isValid() const;
+    bool isValid()                                                          const;
 
     /// Returns the number of entries
-    int size() const;
+    int size()                                                              const;
 
-    bool operator==(const DImageHistory& other) const;
-    bool operator!=(const DImageHistory& other) const { return !operator==(other); }
-    bool operator<(const DImageHistory& other) const;
-    bool operator>(const DImageHistory& other) const;
+    bool operator==(const DImageHistory& other)                             const;
+    bool operator!=(const DImageHistory& other)                             const
+    {
+        return !operator==(other);
+    }
+    bool operator<(const DImageHistory& other)                              const;
+    bool operator>(const DImageHistory& other)                              const;
 
     /**
      * Appends a new filter action to the history.
@@ -126,9 +129,9 @@ public:
      * There are size() entries.
      */
     QList<DImageHistory::Entry>&       entries();
-    const QList<DImageHistory::Entry>& entries() const;
+    const QList<DImageHistory::Entry>& entries()                            const;
     Entry&                             operator[](int i);
-    const Entry&                       operator[](int i) const;
+    const Entry&                       operator[](int i)                    const;
 
     /**
      * Access actions.
@@ -137,29 +140,32 @@ public:
      * but the action may be null.
      */
     /// Returns if there is any non-null action
-    bool hasActions() const;
-    bool hasFilters() const { return hasActions(); }
+    bool hasActions()                                                       const;
+    bool hasFilters()                                                       const
+    {
+        return hasActions();
+    }
 
     /// Returns the number of non-null actions
-    int actionCount() const;
+    int actionCount()                                                       const;
 
     /// Gets all actions which are not null
-    QList<FilterAction> allActions() const;
-    const FilterAction& action(int i) const;
+    QList<FilterAction> allActions()                                        const;
+    const FilterAction& action(int i)                                       const;
 
     /**
      * Access referred images
      */
     QList<HistoryImageId>& referredImages(int i);
-    const QList<HistoryImageId>& referredImages(int i) const;
-    QList<HistoryImageId> allReferredImages() const;
-    HistoryImageId currentReferredImage() const;
-    HistoryImageId originalReferredImage() const;
-    QList<HistoryImageId> referredImagesOfType(HistoryImageId::Type type) const;
-    bool hasReferredImages() const;
-    bool hasReferredImageOfType(HistoryImageId::Type type) const;
-    bool hasCurrentReferredImage() const;
-    bool hasOriginalReferredImage() const;
+    const QList<HistoryImageId>& referredImages(int i)                      const;
+    QList<HistoryImageId> allReferredImages()                               const;
+    HistoryImageId currentReferredImage()                                   const;
+    HistoryImageId originalReferredImage()                                  const;
+    QList<HistoryImageId> referredImagesOfType(HistoryImageId::Type type)   const;
+    bool hasReferredImages()                                                const;
+    bool hasReferredImageOfType(HistoryImageId::Type type)                  const;
+    bool hasCurrentReferredImage()                                          const;
+    bool hasOriginalReferredImage()                                         const;
 
     /**
      * Edit referred images
@@ -194,13 +200,13 @@ public:
     void moveCurrentReferredImage(const QString& newPath, const QString& newFileName);
 
     /**
-     * Serialize to and from XML.
+     * Serialize toand from XML.
      *
      * Note: The "Current" entry is skipped when writing to XML,
      * so make sure the file into the metadata of which you write the XML,
      * is the file marked as "Current" in this history.
      */
-    QString toXml() const;
+    QString toXml()                                                         const;
     static DImageHistory fromXml(const QString& xml);
 
 public:

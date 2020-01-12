@@ -7,7 +7,7 @@
  * Description : Chanels mixer filter
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2010 by Martin Klapetek <martin dot klapetek at gmail dot com>
+ * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -131,7 +131,7 @@ void MixerFilter::filterImage()
 
             progress = (int)(((double)i * 100.0) / size);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }
@@ -168,7 +168,7 @@ void MixerFilter::filterImage()
 
             progress = (int)(((double)i * 100.0) / size);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }
@@ -193,6 +193,7 @@ unsigned short MixerFilter::MixPixel(double RedGain, double GreenGain, double Bl
                                      double Norm)
 {
     double lfMix = Norm * (RedGain * (double)R + GreenGain * (double)G + BlueGain * (double)B);
+
     return ((unsigned short)CLAMP((int)lfMix, 0, sixteenBit ? 65535 : 255));
 }
 

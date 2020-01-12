@@ -80,7 +80,7 @@ public:
      * the libraw settings are needed to construct the FilterAction.
      */
     void setSettings(const DRawDecoding& settings);
-    DRawDecoding settings() const;
+    DRawDecoding settings()                                     const;
 
     /**
      * As additional and first post-processing step, convert the image's
@@ -114,7 +114,7 @@ public:
 
     void                    readParameters(const FilterAction& action) override;
 
-    virtual QString         filterIdentifier() const                   override
+    virtual QString         filterIdentifier()                   const override
     {
         return FilterIdentifier();
     }
@@ -123,8 +123,8 @@ public:
 
 protected:
 
-    void postProgress(int);     // not virtual
-    bool continueQuery() const; // not virtual
+    void postProgress(int);                                            // not virtual
+    bool continueQuery()                                        const; // not virtual
 
     virtual void filterImage()                                         override;
 

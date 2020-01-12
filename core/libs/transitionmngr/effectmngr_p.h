@@ -52,8 +52,8 @@ public:
 public:
 
     explicit Private()
-      : eff_curEffect(EffectMngr::None),
-        eff_isRunning(false),
+      : eff_isRunning(false),
+        eff_curEffect(EffectMngr::None),
         eff_step(0),
         eff_imgFrames(125)
     {

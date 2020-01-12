@@ -67,7 +67,7 @@ void HistoryImageId::setCreationDate(const QDateTime& creationDate)
 
 void HistoryImageId::setPathOnDisk(const QString& filePath)
 {
-    QUrl url = QUrl::fromLocalFile(filePath);
+    QUrl url   = QUrl::fromLocalFile(filePath);
     m_filePath = url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash).toLocalFile() + QLatin1Char('/');
 }
 
@@ -89,8 +89,10 @@ void HistoryImageId::setUniqueHash(const QString& uniqueHash, qlonglong fileSize
 
 bool HistoryImageId::isValid() const
 {
-    return (m_type != InvalidType)
-           && (!m_uuid.isEmpty() || !m_fileName.isEmpty());
+    return (
+            (m_type != InvalidType) &&
+            (!m_uuid.isEmpty() || !m_fileName.isEmpty())
+           );
 }
 
 HistoryImageId::Type HistoryImageId::type() const
@@ -105,12 +107,12 @@ QString HistoryImageId::path() const
 
 QString HistoryImageId::filePath() const
 {
-    return m_filePath + m_fileName;
+    return (m_filePath + m_fileName);
 }
 
 bool HistoryImageId::hasFileOnDisk() const
 {
-    return !m_filePath.isEmpty() && !m_fileName.isEmpty();
+    return (!m_filePath.isEmpty() && !m_fileName.isEmpty());
 }
 
 bool HistoryImageId::hasFileName() const
@@ -145,7 +147,7 @@ QDateTime HistoryImageId::creationDate() const
 
 bool HistoryImageId::hasUniqueHashIdentifier() const
 {
-    return !m_uniqueHash.isEmpty() && m_fileSize;
+    return (!m_uniqueHash.isEmpty() && m_fileSize);
 }
 
 QString HistoryImageId::uniqueHash() const
@@ -165,14 +167,16 @@ QString HistoryImageId::originalUuid() const
 
 bool HistoryImageId::operator==(const HistoryImageId& other) const
 {
-    return m_uuid         == other.m_uuid           &&
-           m_type         == other.m_type           &&
-           m_fileName     == other.m_fileName       &&
-           m_filePath     == other.m_filePath       &&
-           m_creationDate == other.m_creationDate   &&
-           m_uniqueHash   == other.m_uniqueHash     &&
-           m_fileSize     == other.m_fileSize       &&
-           m_originalUUID == other.m_originalUUID;
+    return (
+            (m_uuid         == other.m_uuid)           &&
+            (m_type         == other.m_type)           &&
+            (m_fileName     == other.m_fileName)       &&
+            (m_filePath     == other.m_filePath)       &&
+            (m_creationDate == other.m_creationDate)   &&
+            (m_uniqueHash   == other.m_uniqueHash)     &&
+            (m_fileSize     == other.m_fileSize)       &&
+            (m_originalUUID == other.m_originalUUID)
+           );
 }
 
 } // namespace Digikam

@@ -32,11 +32,13 @@
 #include <QIcon>
 #include <QToolBar>
 #include <QDesktopServices>
-#include <QDebug>
+#include <QNetworkCookieJar>
 
 #ifdef HAVE_QWEBENGINE
 #   include <QWebEngineView>
 #   include <QWebEnginePage>
+#   include <QWebEngineProfile>
+#   include <QWebEngineCookieStore>
 #else
 #   include <qwebview.h>
 #endif
@@ -44,14 +46,15 @@
 // KDE includes
 
 #include <kconfiggroup.h>
-#include <klocalizedstring.h>
 #include <ksharedconfig.h>
+#include <klocalizedstring.h>
 
 // Local includes
 
 #include "statusprogressbar.h"
 #include "searchtextbar.h"
 #include "dxmlguiwindow.h"
+#include "digikam_debug.h"
 
 namespace Digikam
 {
@@ -83,7 +86,7 @@ public:
     SearchTextBar*     searchbar;
 };
 
-WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent)
+WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDeskBrowser)
     : QDialog(parent),
       d(new Private)
 {
@@ -92,8 +95,11 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent)
 
 #ifdef HAVE_QWEBENGINE
     d->browser = new QWebEngineView(this);
+    d->browser->page()->profile()->cookieStore()->deleteAllCookies();
 #else
     d->browser = new QWebView(this);
+    d->browser->settings()->setAttribute(QWebSettings::LocalStorageEnabled, true);
+    d->browser->page()->networkAccessManager()->setCookieJar(new QNetworkCookieJar());
 #endif
 
     // --------------------------
@@ -121,7 +127,11 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent)
     QAction* const deskweb = new QAction(QIcon::fromTheme(QLatin1String("internet-web-browser")),
                                          i18n("Desktop Browser"), this);
     deskweb->setToolTip(i18n("Open Home page with default desktop Web browser"));
-    d->toolbar->addAction(deskweb);
+
+    if (!hideDeskBrowser)
+    {
+        d->toolbar->addAction(deskweb);
+    }
 
     // --------------------------
 
@@ -198,12 +208,14 @@ void WebBrowserDlg::closeEvent(QCloseEvent* e)
     KConfigGroup group = KSharedConfig::openConfig()->group(QLatin1String("WebBrowserDlg"));
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
 
+    emit closeView(false);
     e->accept();
 }
 
 void WebBrowserDlg::slotUrlChanged(const QUrl& url)
 {
     d->progressbar->setText(url.toString());
+    emit urlChanged(url);
 }
 
 void WebBrowserDlg::slotTitleChanged(const QString& title)
