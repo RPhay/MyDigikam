@@ -44,17 +44,17 @@ namespace Digikam
 {
 
 TextureFilter::TextureFilter(QObject* const parent)
-    : DImgThreadedFilter(parent)
+    : DImgThreadedFilter(parent),
+      m_blendGain(200)
 {
-    m_blendGain = 200;
     initFilter();
 }
 
 TextureFilter::TextureFilter(DImg* const orgImage, QObject* const parent, int blendGain, const QString& texturePath)
-    : DImgThreadedFilter(orgImage, parent, QLatin1String("Texture"))
+    : DImgThreadedFilter(orgImage, parent, QLatin1String("Texture")),
+      m_blendGain(blendGain),
+      m_texturePath(texturePath)
 {
-    m_blendGain   = blendGain;
-    m_texturePath = texturePath;
 
     initFilter();
 }
@@ -69,22 +69,25 @@ QString TextureFilter::DisplayableName()
     return QString::fromUtf8(I18N_NOOP("Texture Filter"));
 }
 
-/** This method is based on the Simulate Texture Film tutorial from GimpGuru.org web site
-  * available at this url : http://www.gimpguru.org/Tutorials/SimulatedTexture/
-  */
+/**
+ * This method is based on the Simulate Texture Film tutorial from GimpGuru.org web site
+ * available at this url : http://www.gimpguru.org/Tutorials/SimulatedTexture/
+ */
 
 //#define INT_MULT(a,b,t)  ((t) = (a) * (b) + 0x80, ( ( (t >> 8) + t ) >> 8))
 
 inline static int intMult8(uint a, uint b)
 {
     uint t = a * b + 0x80;
-    return ((t >> 8) + t) >> 8;
+
+    return (((t >> 8) + t) >> 8);
 }
 
 inline static int intMult16(uint a, uint b)
 {
     uint t = a * b + 0x8000;
-    return ((t >> 16) + t) >> 16;
+
+    return (((t >> 16) + t) >> 16);
 }
 
 void TextureFilter::filterImage()
@@ -151,6 +154,7 @@ void TextureFilter::filterImage()
             (void)ptr; // Remove clang warnings.
 
             // Read color
+
             teData.setColor(tptr, sixteenBit);
 
             // in the old algorithm, this was
@@ -169,13 +173,15 @@ void TextureFilter::filterImage()
             }
 
             // Overwrite RGB.
+
             teData.setPixel(tptr);
         }
 
         // Update progress bar in dialog.
+
         progress = (int)(((double) x * 50.0) / w);
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
@@ -216,7 +222,7 @@ void TextureFilter::filterImage()
         // Update progress bar in dialog.
         progress = (int)(50.0 + ((double) x * 50.0) / w);
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }

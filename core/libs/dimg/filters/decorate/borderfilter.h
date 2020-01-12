@@ -73,26 +73,28 @@ public:
 public:
 
     explicit BorderContainer()
+      : preserveAspectRatio(true),
+        orgWidth(0),
+        orgHeight(0),
+        borderType(0),
+        borderWidth1(0),
+        borderWidth2(0),
+        borderWidth3(0),
+        borderWidth4(0),
+        borderPercent(0.1),
+        solidColor(QColor(0, 0, 0)),
+        niepceBorderColor(QColor(255, 255, 255)),
+        niepceLineColor(QColor(0, 0, 0)),
+        bevelUpperLeftColor(QColor(192, 192, 192)),
+        bevelLowerRightColor(QColor(128, 128, 128)),
+        decorativeFirstColor(QColor(0, 0, 0)),
+        decorativeSecondColor(QColor(0, 0, 0))
     {
-        preserveAspectRatio   = true;
-        orgWidth              = 0;
-        orgHeight             = 0;
-        borderType            = 0;
-        borderPercent         = 0.1;
-        borderWidth1          = 0;
-        borderWidth2          = 0;
-        borderWidth3          = 0;
-        borderWidth4          = 0;
-        solidColor            = QColor(0, 0, 0);
-        niepceBorderColor     = QColor(255, 255, 255);
-        niepceLineColor       = QColor(0, 0, 0);
-        bevelUpperLeftColor   = QColor(192, 192, 192);
-        bevelLowerRightColor  = QColor(128, 128, 128);
-        decorativeFirstColor  = QColor(0, 0, 0);
-        decorativeSecondColor = QColor(0, 0, 0);
     };
 
-    ~BorderContainer() {};
+    ~BorderContainer()
+    {
+    };
 
 public:
 
@@ -126,7 +128,8 @@ class DIGIKAM_EXPORT BorderFilter : public DImgThreadedFilter
 
 public:
 
-    /** Constructor using settings to preserve aspect ratio of image.
+    /**
+     * Constructor using settings to preserve aspect ratio of image.
      */
     explicit BorderFilter(QObject* const parent = nullptr);
     explicit BorderFilter(DImg* orgImage, QObject* const parent=nullptr, const BorderContainer& settings = BorderContainer());
@@ -149,19 +152,21 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
-    void                    readParameters(const FilterAction& action) override;
+    virtual FilterAction    filterAction()                                    override;
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
 
-    /** Methods to preserve aspect ratio of image. */
+    /**
+     * Methods to preserve aspect ratio of image.
+     */
     void solid(DImg& src, DImg& dest, const DColor& fg, int borderWidth);
     void niepce(DImg& src, DImg& dest, const DColor& fg, int borderWidth,
                 const DColor& bg, int lineWidth);
@@ -170,7 +175,9 @@ private:
     void pattern(DImg& src, DImg& dest, int borderWidth, const DColor& firstColor,
                  const DColor& secondColor, int firstWidth, int secondWidth);
 
-    /** Methods to not-preserve aspect ratio of image. */
+    /**
+     * Methods to not-preserve aspect ratio of image.
+     */
     void solid2(DImg& src, DImg& dest, const DColor& fg, int borderWidth);
     void niepce2(DImg& src, DImg& dest, const DColor& fg, int borderWidth,
                  const DColor& bg, int lineWidth);

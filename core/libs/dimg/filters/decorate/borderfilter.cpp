@@ -98,6 +98,7 @@ void BorderFilter::Private::setup(const DImg& m_orgImage)
         border2ndWidth  = (int)(size * 0.005);
 
         // Clamp internal border with to 1 pixel to be visible with small image.
+
         if (border2ndWidth < 1)
         {
             border2ndWidth = 1;
@@ -153,22 +154,30 @@ void BorderFilter::filterImage()
         case BorderContainer::NiepceBorder:
 
             if (d->settings.preserveAspectRatio)
+            {
                 niepce(m_orgImage, m_destImage, d->niepceBorderColor, d->borderMainWidth,
                        d->niepceLineColor, d->border2ndWidth);
+            }
             else
+            {
                 niepce2(m_orgImage, m_destImage, d->niepceBorderColor, d->settings.borderWidth1,
                         d->niepceLineColor, d->settings.borderWidth4);
+            }
 
             break;
 
         case BorderContainer::BeveledBorder:
 
             if (d->settings.preserveAspectRatio)
+            {
                 bevel(m_orgImage, m_destImage, d->bevelUpperLeftColor,
                       d->bevelLowerRightColor, d->borderMainWidth);
+            }
             else
+            {
                 bevel2(m_orgImage, m_destImage, d->bevelUpperLeftColor,
                        d->bevelLowerRightColor, d->settings.borderWidth1);
+            }
 
             break;
 
@@ -190,13 +199,17 @@ void BorderFilter::filterImage()
         case BorderContainer::WallBorder:
 
             if (d->settings.preserveAspectRatio)
+            {
                 pattern(m_orgImage, m_destImage, d->borderMainWidth,
                         d->decorativeFirstColor, d->decorativeSecondColor,
                         d->border2ndWidth, d->border2ndWidth);
+            }
             else
+            {
                 pattern2(m_orgImage, m_destImage, d->settings.borderWidth1,
                          d->decorativeFirstColor, d->decorativeSecondColor,
                          d->settings.borderWidth2, d->settings.borderWidth2);
+            }
 
             break;
     }
@@ -256,13 +269,13 @@ void BorderFilter::bevel(DImg& src, DImg& dest, const DColor& topColor,
     QRegion btRegion(btTriangle);
 
     // paint upper right corner
-    QPoint upperRightCorner((width - ((width - src.width()) / 2) - 2),
-                            ((0 + (height - src.height())) / 2 + 2)
-                           );
 
-    for (int x = upperRightCorner.x(); x < width; ++x)
+    QPoint upperRightCorner((width - ((width - src.width()) / 2) - 2),
+                            ((0 + (height - src.height())) / 2 + 2));
+
+    for (int x = upperRightCorner.x() ; x < width ; ++x)
     {
-        for (int y = 0; y < upperRightCorner.y(); ++y)
+        for (int y = 0 ; y < upperRightCorner.y() ; ++y)
         {
             if (btRegion.contains(QPoint(x, y)))
             {
@@ -272,22 +285,23 @@ void BorderFilter::bevel(DImg& src, DImg& dest, const DColor& topColor,
     }
 
     // paint right border
-    for (int x = upperRightCorner.x(); x < width; ++x)
+
+    for (int x = upperRightCorner.x() ; x < width ; ++x)
     {
-        for (int y = upperRightCorner.y(); y < height; ++y)
+        for (int y = upperRightCorner.y() ; y < height ; ++y)
         {
             dest.setPixelColor(x, y, btmColor);
         }
     }
 
     // paint lower left corner
-    QPoint lowerLeftCorner((0 + ((width - src.width()) / 2) + 2),
-                           (height - ((height - src.height()) / 2) - 2)
-                          );
 
-    for (int x = 0; x < lowerLeftCorner.x(); ++x)
+    QPoint lowerLeftCorner((0 + ((width - src.width()) / 2) + 2),
+                           (height - ((height - src.height()) / 2) - 2));
+
+    for (int x = 0 ; x < lowerLeftCorner.x() ; ++x)
     {
-        for (int y = lowerLeftCorner.y(); y < height; ++y)
+        for (int y = lowerLeftCorner.y() ; y < height ; ++y)
         {
             if (btRegion.contains(QPoint(x, y)))
             {
@@ -297,9 +311,10 @@ void BorderFilter::bevel(DImg& src, DImg& dest, const DColor& topColor,
     }
 
     // paint bottom border
-    for (int x = lowerLeftCorner.x(); x < width; ++x)
+
+    for (int x = lowerLeftCorner.x() ; x < width ; ++x)
     {
-        for (int y = lowerLeftCorner.y(); y < height; ++y)
+        for (int y = lowerLeftCorner.y() ; y < height ; ++y)
         {
             dest.setPixelColor(x, y, btmColor);
         }
@@ -320,10 +335,12 @@ void BorderFilter::pattern(DImg& src, DImg& dest, int borderWidth,
                            int firstWidth, int secondWidth)
 {
     // Original image with the first solid border around.
+
     DImg tmp;
     solid(src, tmp, firstColor, firstWidth);
 
     // Border tiled image using pattern with second solid border around.
+
     int width, height;
 
     if (d->settings.orgWidth > d->settings.orgHeight)
@@ -359,6 +376,7 @@ void BorderFilter::pattern(DImg& src, DImg& dest, int borderWidth,
     solid(tmp2, dest, secondColor, secondWidth);
 
     // Merge both images to one.
+
     if (d->settings.orgWidth > d->settings.orgHeight)
     {
         dest.bitBltImage(&tmp, (dest.width() - tmp.width()) / 2, borderWidth);
@@ -370,7 +388,6 @@ void BorderFilter::pattern(DImg& src, DImg& dest, int borderWidth,
 }
 
 // -- Methods to not-preserve aspect ratio of image ------------------------------------------
-
 
 void BorderFilter::solid2(DImg& src, DImg& dest, const DColor& fg, int borderWidth)
 {
@@ -394,20 +411,20 @@ void BorderFilter::bevel2(DImg& src, DImg& dest, const DColor& topColor,
     int x, y;
     int wc;
 
-    dest = DImg(src.width() + borderWidth * 2,
+    dest = DImg(src.width()  + borderWidth * 2,
                 src.height() + borderWidth * 2,
                 src.sixteenBit(), src.hasAlpha());
 
     // top
 
-    for (y = 0, wc = (int)dest.width() - 1; y < borderWidth; ++y, --wc)
+    for (y = 0, wc = (int)dest.width() - 1 ; y < borderWidth ; ++y, --wc)
     {
         for (x = 0; x < wc; ++x)
         {
             dest.setPixelColor(x, y, topColor);
         }
 
-        for (; x < (int)dest.width(); ++x)
+        for ( ; x < (int)dest.width() ; ++x)
         {
             dest.setPixelColor(x, y, btmColor);
         }
@@ -415,14 +432,14 @@ void BorderFilter::bevel2(DImg& src, DImg& dest, const DColor& topColor,
 
     // left and right
 
-    for (; y < (int)dest.height() - borderWidth; ++y)
+    for ( ; y < (int)dest.height() - borderWidth ; ++y)
     {
-        for (x = 0; x < borderWidth; ++x)
+        for (x = 0 ; x < borderWidth ; ++x)
         {
             dest.setPixelColor(x, y, topColor);
         }
 
-        for (x = (int)dest.width() - 1; x > (int)dest.width() - borderWidth - 1; --x)
+        for (x = (int)dest.width() - 1 ; x > (int)dest.width() - borderWidth - 1 ; --x)
         {
             dest.setPixelColor(x, y, btmColor);
         }
@@ -430,14 +447,14 @@ void BorderFilter::bevel2(DImg& src, DImg& dest, const DColor& topColor,
 
     // bottom
 
-    for (wc = borderWidth; y < (int)dest.height(); ++y, --wc)
+    for (wc = borderWidth ; y < (int)dest.height() ; ++y, --wc)
     {
-        for (x = 0; x < wc; ++x)
+        for (x = 0 ; x < wc ; ++x)
         {
             dest.setPixelColor(x, y, topColor);
         }
 
-        for (; x < (int)dest.width(); ++x)
+        for ( ; x < (int)dest.width() ; ++x)
         {
             dest.setPixelColor(x, y, btmColor);
         }
@@ -475,16 +492,19 @@ void BorderFilter::pattern2(DImg& src, DImg& dest, int borderWidth,
     }
 
     // First line around the pattern tile.
+
     DImg tmp = borderImg.smoothScale(src.width()  + borderWidth * 2,
                                      src.height() + borderWidth * 2);
 
     solid2(tmp, dest, firstColor, firstWidth);
 
     // Second line around original image.
+
     tmp.reset();
     solid2(src, tmp, secondColor, secondWidth);
 
     // Copy original image.
+
     dest.bitBltImage(&tmp, borderWidth, borderWidth);
 }
 

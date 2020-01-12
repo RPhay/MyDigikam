@@ -51,7 +51,7 @@ public:
     BorderContainer defaultSettings() const;
     void resetToDefault();
 
-    BorderContainer settings() const;
+    BorderContainer settings()        const;
     void setSettings(const BorderContainer& settings);
 
     void readSettings(KConfigGroup& group);
