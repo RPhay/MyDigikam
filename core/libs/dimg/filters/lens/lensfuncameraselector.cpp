@@ -62,7 +62,16 @@ class Q_DECL_HIDDEN LensFunCameraSelector::Private
 public:
 
     explicit Private()
-        : configUseMetadata(QLatin1String("UseMetadata")),
+        : passiveMetadataUsage(false),
+          metadataUsage(nullptr),
+          metadataResult(nullptr),
+          makeLabel(nullptr),
+          modelLabel(nullptr),
+          lensLabel(nullptr),
+          focalLabel(nullptr),
+          aperLabel(nullptr),
+          distLabel(nullptr),
+          configUseMetadata(QLatin1String("UseMetadata")),
           configCameraModel(QLatin1String("CameraModel")),
           configCameraMake(QLatin1String("CameraMake")),
           configLensModel(QLatin1String("LensModel")),
@@ -72,27 +81,18 @@ public:
           configAperture(QLatin1String("Aperture")),
           redStyle(QLatin1String("QLabel {color: red;}")),
           orangeStyle(QLatin1String("QLabel {color: orange;}")),
-          greenStyle(QLatin1String("QLabel {color: green;}"))
+          greenStyle(QLatin1String("QLabel {color: green;}")),
+          lensDescription(nullptr),
+          makeDescription(nullptr),
+          modelDescription(nullptr),
+          make(nullptr),
+          model(nullptr),
+          lens(nullptr),
+          focal(nullptr),
+          aperture(nullptr),
+          distance(nullptr),
+          iface(nullptr)
     {
-        metadataUsage        = nullptr;
-        make                 = nullptr;
-        model                = nullptr;
-        lens                 = nullptr;
-        focal                = nullptr;
-        aperture             = nullptr;
-        distance             = nullptr;
-        iface                = nullptr;
-        metadataResult       = nullptr;
-        makeLabel            = nullptr;
-        modelLabel           = nullptr;
-        lensLabel            = nullptr;
-        focalLabel           = nullptr;
-        aperLabel            = nullptr;
-        distLabel            = nullptr;
-        lensDescription      = nullptr;
-        makeDescription      = nullptr;
-        modelDescription     = nullptr;
-        passiveMetadataUsage = false;
     }
 
     bool                passiveMetadataUsage;
@@ -136,7 +136,8 @@ public:
 };
 
 LensFunCameraSelector::LensFunCameraSelector(QWidget* const parent)
-    : QWidget(parent), d(new Private)
+    : QWidget(parent),
+      d(new Private)
 {
     d->iface                = new LensFunIface();
 
@@ -428,6 +429,7 @@ LensFunIface::MetadataMatch LensFunCameraSelector::findFromMetadata()
     refreshSettingsView();
     slotModelSelected();
     slotLensSelected();
+
     return ret;
 }
 
@@ -628,6 +630,7 @@ void LensFunCameraSelector::populateDeviceCombos()
     const lfCamera* const* it = d->iface->lensFunCameras();
 
     // reset box
+
     d->model->clear();
 
     bool firstRun = false;
@@ -642,6 +645,7 @@ void LensFunCameraSelector::populateDeviceCombos()
         if (firstRun)
         {
             // Maker DB does not change, so we fill it only once.
+
             if ((*it)->Maker)
             {
                 QString t = QLatin1String((*it)->Maker);
@@ -719,8 +723,9 @@ void LensFunCameraSelector::populateLensCombo()
     {
         d->lens->addSqueezedItem(it.key(), it.value());
     }
-
-    //d->lens->model()->sort(0, Qt::AscendingOrder);
+/*
+    d->lens->model()->sort(0, Qt::AscendingOrder);
+*/
     d->lens->blockSignals(false);
 }
 
@@ -729,7 +734,8 @@ void LensFunCameraSelector::slotMakeSelected()
     populateDeviceCombos();
     slotModelSelected();
 
-    // Fill Lens list for current Maker & Model and fire signalLensSettingsChanged()
+    // Fill Lens list for current Maker & Model and fire signalLensSettingsChanged().
+
     populateLensCombo();
     slotLensSelected();
 }
@@ -757,7 +763,7 @@ void LensFunCameraSelector::slotLensSelected()
     LensFunContainer settings = d->iface->settings();
 
     if (d->iface->usedLens() &&
-        settings.cropFactor <= 0.0) // this should not happen
+        (settings.cropFactor <= 0.0)) // this should not happen
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "No crop factor is set for camera, using lens calibration data: "
                                   << d->iface->usedLens()->CropFactor;
@@ -771,8 +777,8 @@ void LensFunCameraSelector::slotLensSelected()
 void LensFunCameraSelector::slotFocalChanged()
 {
     LensFunContainer settings = d->iface->settings();
-    settings.focalLength = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0 :
-                           d->focal->value();
+    settings.focalLength      = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0
+                                                                                         : d->focal->value();
     d->iface->setSettings(settings);
     emit signalLensSettingsChanged();
 }
@@ -780,8 +786,8 @@ void LensFunCameraSelector::slotFocalChanged()
 void LensFunCameraSelector::slotApertureChanged()
 {
     LensFunContainer settings = d->iface->settings();
-    settings.aperture = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0 :
-                        d->aperture->value();
+    settings.aperture = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0
+                                                                                 : d->aperture->value();
     d->iface->setSettings(settings);
     emit signalLensSettingsChanged();
 }
@@ -789,8 +795,8 @@ void LensFunCameraSelector::slotApertureChanged()
 void LensFunCameraSelector::slotDistanceChanged()
 {
     LensFunContainer settings = d->iface->settings();
-    settings.subjectDistance  = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0 :
-                                d->distance->value();
+    settings.subjectDistance  = d->metadataUsage->isChecked() && d->passiveMetadataUsage ? -1.0
+                                                                                         : d->distance->value();
     d->iface->setSettings(settings);
     emit signalLensSettingsChanged();
 }

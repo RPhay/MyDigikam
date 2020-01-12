@@ -89,6 +89,7 @@ void AntiVignettingFilter::filterImage()
     int Height                = m_orgImage.height();
 
     // Determine the shift in pixels from the shift in percentage.
+
     m_settings.yshift         = m_settings.yshift * Height / 200.0;
     m_settings.xshift         = m_settings.xshift * Width  / 200.0;
 
@@ -136,9 +137,10 @@ void AntiVignettingFilter::filterImage()
         }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)row * 100.0) / Width);
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
@@ -152,7 +154,7 @@ inline double AntiVignettingFilter::hypothenuse(double x, double y)
 
 double AntiVignettingFilter::attenuation(double r1, double r2, double dist_center)
 {
-    if (dist_center < r1)
+    if      (dist_center < r1)
     {
         return 1.0;
     }
@@ -180,7 +182,7 @@ double AntiVignettingFilter::real_attenuation(double r1, double r2, double dist_
 
 uchar AntiVignettingFilter::clamp8bits(double x)
 {
-    if (x < 0)
+    if      (x < 0)
     {
         return 0;
     }
@@ -196,7 +198,7 @@ uchar AntiVignettingFilter::clamp8bits(double x)
 
 unsigned short  AntiVignettingFilter::clamp16bits(double x)
 {
-    if (x < 0)
+    if      (x < 0)
     {
         return 0;
     }

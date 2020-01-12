@@ -34,20 +34,17 @@ namespace Digikam
 {
 
 LensDistortionPixelAccess::LensDistortionPixelAccess(DImg* srcImage)
+    : m_image(srcImage),
+      m_width(LensDistortionPixelAccessWidth),
+      m_height(LensDistortionPixelAccessHeight),
+      m_depth(m_image->bytesDepth()),
+      m_imageWidth(m_image->width()),
+      m_imageHeight(m_image->height()),
+      m_sixteenBit(m_image->sixteenBit())
 {
-    m_image       = srcImage;
-
-    m_width       = LensDistortionPixelAccessWidth;
-    m_height      = LensDistortionPixelAccessHeight;
-
-    m_depth       = m_image->bytesDepth();
-    m_imageWidth  = m_image->width();
-    m_imageHeight = m_image->height();
-    m_sixteenBit  = m_image->sixteenBit();
-
     for (int i = 0 ; i < LensDistortionPixelAccessRegions ; ++i)
     {
-        m_buffer[i] = new DImg(m_image->copy(0, 0, m_width, m_height));
+        m_buffer[i]   = new DImg(m_image->copy(0, 0, m_width, m_height));
 
         m_tileMinX[i] = 1;
         m_tileMaxX[i] = m_width - 2;
@@ -66,7 +63,7 @@ LensDistortionPixelAccess::~LensDistortionPixelAccess()
 
 uchar* LensDistortionPixelAccess::pixelAccessAddress(int i, int j)
 {
-    return m_buffer[0]->bits() + m_depth * (m_width * (j + 1 - m_tileMinY[0]) + (i + 1 - m_tileMinX[0]));
+    return (m_buffer[0]->bits() + m_depth * (m_width * (j + 1 - m_tileMinY[0]) + (i + 1 - m_tileMinX[0])));
 }
 
 // Swap region[n] with region[0].
@@ -98,7 +95,7 @@ void LensDistortionPixelAccess::pixelAccessSelectRegion(int n)
     m_tileMaxY[0] = d;
 }
 
-// Buffer[0] is cleared, should start at [i, j], fill rows that overlap image.
+// NOTE: Buffer[0] is cleared, should start at [i, j], fill rows that overlap image.
 void LensDistortionPixelAccess::pixelAccessDoEdge(int i, int j)
 {
     int    lineStart, lineEnd;
@@ -160,7 +157,7 @@ void LensDistortionPixelAccess::pixelAccessReposition(int xInt, int yInt)
     m_tileMaxY[0] = newStartY + m_height - 2;
 
 
-    if ((newStartX < 0) || ((newStartX + m_width) >= m_imageWidth) ||
+    if ((newStartX < 0) || ((newStartX + m_width)  >= m_imageWidth) ||
         (newStartY < 0) || ((newStartY + m_height) >= m_imageHeight))
     {
         // some data is off edge of image
@@ -169,9 +166,10 @@ void LensDistortionPixelAccess::pixelAccessReposition(int xInt, int yInt)
 
         // This could probably be done by bitBltImage but I did not figure out how,
         // so leave the working code here. And no, it is not this:
-        //m_buffer[0]->bitBltImage(m_image, newStartX, newStartY, m_width, m_height, 0, 0);
-
-        if (((newStartX + m_width) < 0) || (newStartX >= m_imageWidth) ||
+/*
+        m_buffer[0]->bitBltImage(m_image, newStartX, newStartY, m_width, m_height, 0, 0);
+*/
+        if (((newStartX + m_width)  < 0) || (newStartX >= m_imageWidth) ||
             ((newStartY + m_height) < 0) || (newStartY >= m_imageHeight))
         {
             // totally outside, just leave it.
@@ -193,10 +191,10 @@ void LensDistortionPixelAccess::pixelAccessGetCubic(double srcX, double srcY, do
     double dx, dy;
     uchar* corner = nullptr;
 
-    xInt = (int)floor(srcX);
-    dx   = srcX - xInt;
-    yInt = (int)floor(srcY);
-    dy   = srcY - yInt;
+    xInt          = (int)floor(srcX);
+    dx            = srcX - xInt;
+    yInt          = (int)floor(srcY);
+    dy            = srcY - yInt;
 
     // We need 4x4 pixels, xInt-1 to xInt+2 horz, yInt-1 to yInt+2 vert
     // they're probably in the last place we looked...
@@ -247,7 +245,7 @@ void LensDistortionPixelAccess::pixelAccessGetCubic(double srcX, double srcY, do
  *
  */
 void LensDistortionPixelAccess::cubicInterpolate(uchar* src, int rowStride, uchar* dst,
-                                   bool sixteenBit, double dx, double dy, double brighten)
+                                                 bool sixteenBit, double dx, double dy, double brighten)
 {
     float um1, u, up1, up2;
     float vm1, v, vp1, vp2;
@@ -282,11 +280,11 @@ void LensDistortionPixelAccess::cubicInterpolate(uchar* src, int rowStride, ucha
         for (c = 0 ; c < numberOfComponents ; ++c)
         {
             float result;
-            result = um1 * verts[c] + u * verts[c + numberOfComponents]
-                     + up1 * verts[c + numberOfComponents * 2] + up2 * verts[c + numberOfComponents * 3];
+            result  = um1 * verts[c] + u * verts[c + numberOfComponents] +
+                      up1 * verts[c + numberOfComponents * 2] + up2 * verts[c + numberOfComponents * 3];
             result *= brighten;
 
-            if (result < 0.0)
+            if      (result < 0.0)
             {
                 dst16[c] = 0;
             }
@@ -310,11 +308,12 @@ void LensDistortionPixelAccess::cubicInterpolate(uchar* src, int rowStride, ucha
         for (c = 0 ; c < numberOfComponents ; ++c)
         {
             float result;
-            result = um1 * verts[c] + u * verts[c + numberOfComponents]
-                     + up1 * verts[c + numberOfComponents * 2] + up2 * verts[c + numberOfComponents * 3];
+            result  = um1 * verts[c] + u * verts[c + numberOfComponents] +
+                      up1 * verts[c + numberOfComponents * 2] + up2 * verts[c + numberOfComponents * 3];
+
             result *= brighten;
 
-            if (result < 0.0)
+            if      (result < 0.0)
             {
                 dst[c] = 0;
             }

@@ -37,18 +37,18 @@ class DIGIKAM_EXPORT LensFunContainer
 public:
 
     explicit LensFunContainer()
+      : filterCCA(true),
+        filterVIG(true),
+        filterDST(true),
+        filterGEO(true),
+        cropFactor(-1.0),
+        focalLength(-1.0),
+        aperture(-1.0),
+        subjectDistance(-1.0),
+        cameraMake(QString()),
+        cameraModel(QString()),
+        lensModel(QString())
     {
-        filterCCA       = true;
-        filterVIG       = true;
-        filterDST       = true;
-        filterGEO       = true;
-        focalLength     = -1.0;
-        aperture        = -1.0;
-        subjectDistance = -1.0;
-        cropFactor      = -1.0;
-        cameraMake      = QString();
-        cameraModel     = QString();
-        lensModel       = QString();
     };
 
     ~LensFunContainer()
@@ -57,10 +57,10 @@ public:
 
 public:
 
-    bool      filterCCA;       /// Chromatic Aberration Corrections
-    bool      filterVIG;       /// Vignetting Corrections
-    bool      filterDST;       /// Distortion Corrections
-    bool      filterGEO;       /// Geometry Corrections
+    bool      filterCCA;       ///< Chromatic Aberration Corrections
+    bool      filterVIG;       ///< Vignetting Corrections
+    bool      filterDST;       ///< Distortion Corrections
+    bool      filterGEO;       ///< Geometry Corrections
 
     double    cropFactor;
     double    focalLength;
@@ -71,6 +71,8 @@ public:
     QString   cameraModel;
     QString   lensModel;
 };
+
+// -----------------------------------------------------------------
 
 class DIGIKAM_EXPORT LensFunFilter : public DImgThreadedFilter
 {

@@ -43,29 +43,28 @@ namespace Digikam
 {
 
 LensDistortionFilter::LensDistortionFilter(QObject* const parent)
-    : DImgThreadedFilter(parent)
+    : DImgThreadedFilter(parent),
+      m_main(0.0),
+      m_edge(0.0),
+      m_rescale(0.0),
+      m_brighten(0.0),
+      m_centre_x(0),
+      m_centre_y(0)
 {
-    m_main     = 0.0;
-    m_edge     = 0.0;
-    m_rescale  = 0.0;
-    m_brighten = 0.0;
-    m_centre_x = 0;
-    m_centre_y = 0;
-
     initFilter();
 }
 
 LensDistortionFilter::LensDistortionFilter(DImg* const orgImage, QObject* const parent, double main,
                                            double edge, double rescale, double brighten,
                                            int center_x, int center_y)
-    : DImgThreadedFilter(orgImage, parent, QLatin1String("LensDistortionFilter"))
+    : DImgThreadedFilter(orgImage, parent, QLatin1String("LensDistortionFilter")),
+      m_main(main),
+      m_edge(edge),
+      m_rescale(rescale),
+      m_brighten(brighten),
+      m_centre_x(center_x),
+      m_centre_y(center_y)
 {
-    m_main     = main;
-    m_edge     = edge;
-    m_rescale  = rescale;
-    m_brighten = brighten;
-    m_centre_x = center_x;
-    m_centre_y = center_y;
 
     initFilter();
 }
@@ -109,6 +108,7 @@ void LensDistortionFilter::filterImage()
      */
 
     // We are working on the full image.
+
     int    dstWidth  = Width;
     int    dstHeight = Height;
     uchar* dst       = (uchar*)data;
@@ -125,6 +125,7 @@ void LensDistortionFilter::filterImage()
         for (int dstI = 0 ; runningFlag() && (dstI < iLimit) ; dstI += step)
         {
             // Get source Coordinates.
+
             double radius_sq;
             double off_x;
             double off_y;
@@ -143,16 +144,16 @@ void LensDistortionFilter::filterImage()
             srcX        = center_x + radius_mult * off_x;
             srcY        = center_y + radius_mult * off_y;
 
-            brighten = 1.0 + mag * brighten;
+            brighten    = 1.0 + mag * brighten;
             pa->pixelAccessGetCubic(srcX, srcY, brighten, dst);
-            dst += bytesDepth;
+            dst        += bytesDepth;
         }
 
         // Update progress bar in dialog.
 
         progress = (int)(((double)dstJ * 100.0) / jLimit);
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }

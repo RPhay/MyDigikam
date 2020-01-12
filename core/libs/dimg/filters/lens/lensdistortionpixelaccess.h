@@ -39,7 +39,8 @@
 namespace Digikam
 {
 
-/** LensDistortionPixelAccess class: solving the eternal problem: random, cubic-interpolated,
+/**
+ * LensDistortionPixelAccess class: solving the eternal problem: random, cubic-interpolated,
  * sub-pixel coordinate access to an image.
  * Assuming that accesses are at least slightly coherent,
  * LensDistortionPixelAccess keeps LensDistortionPixelAccessRegions buffers, each containing a

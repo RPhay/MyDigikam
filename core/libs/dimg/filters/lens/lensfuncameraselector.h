@@ -54,7 +54,7 @@ public:
     void setEnabledUseMetadata(bool b);
 
     void setUseMetadata(bool b);
-    bool useMetadata() const;
+    bool useMetadata()      const;
 
     LensFunContainer settings();
     void             setSettings(const LensFunContainer& settings);
@@ -68,7 +68,7 @@ public:
      */
     void setPassiveMetadataUsage(bool b);
 
-    LensFunIface* iface() const;
+    LensFunIface* iface()   const;
 
     void setMetadata(const DMetadata&);
 

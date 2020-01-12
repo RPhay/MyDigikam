@@ -39,14 +39,14 @@ class DIGIKAM_EXPORT AntiVignettingContainer
 public:
 
     explicit AntiVignettingContainer()
+      : addvignetting(true),
+        density(2.0),
+        power(1.0),
+        innerradius(1.0),
+        outerradius(1.0),
+        xshift(0.0),
+        yshift(0.0)
     {
-        addvignetting = true;
-        density       = 2.0;
-        power         = 1.0;
-        innerradius   = 1.0;
-        outerradius   = 1.0;
-        xshift        = 0.0;
-        yshift        = 0.0;
     };
 
     ~AntiVignettingContainer()
@@ -78,15 +78,6 @@ public:
 
     ~AntiVignettingFilter();
 
-    void                    readParameters(const FilterAction& action) override;
-
-    virtual QString         filterIdentifier() const override
-    {
-        return FilterIdentifier();
-    }
-
-    virtual FilterAction    filterAction() override;
-
     static QString          FilterIdentifier()
     {
         return QLatin1String("digikam:AntiVignettingFilter");
@@ -104,9 +95,18 @@ public:
         return 1;
     }
 
+    void                    readParameters(const FilterAction& action)        override;
+
+    virtual QString         filterIdentifier()                          const override
+    {
+        return FilterIdentifier();
+    }
+
+    virtual FilterAction    filterAction()                                    override;
+
 private:
 
-    void           filterImage() override;
+    void           filterImage()                                              override;
 
     double         hypothenuse(double x, double y);
     uchar          clamp8bits(double x);

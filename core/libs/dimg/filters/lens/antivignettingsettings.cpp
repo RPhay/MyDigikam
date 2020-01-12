@@ -65,7 +65,8 @@ public:
         outerRadiusInput(nullptr),
         xOffsetInput(nullptr),
         yOffsetInput(nullptr)
-    {}
+    {
+    }
 
     static const QString  configAddVignettingAdjustmentEntry;
     static const QString  configDensityAdjustmentEntry;
@@ -103,18 +104,18 @@ AntiVignettingSettings::AntiVignettingSettings(QWidget* parent)
     : QWidget(parent),
       d(new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QGridLayout* const grid = new QGridLayout(parent);
 
-    d->addVignettingCheck = new QCheckBox(i18n("Add vignetting"));
+    d->addVignettingCheck   = new QCheckBox(i18n("Add vignetting"));
     d->addVignettingCheck->setWhatsThis(i18n("This option adds vignetting to the image instead of removing it. "
                                              "Use it for creative effects."));
     d->addVignettingCheck->setChecked(false);
 
     // -------------------------------------------------------------
 
-    d->maskPreviewLabel = new QLabel();
+    d->maskPreviewLabel     = new QLabel();
     d->maskPreviewLabel->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     d->maskPreviewLabel->setPixmap(QPixmap(120, 120));
     d->maskPreviewLabel->setWhatsThis(i18n("You can see here a thumbnail preview of the anti-vignetting "
@@ -275,6 +276,7 @@ void AntiVignettingSettings::resetToDefault()
 AntiVignettingContainer AntiVignettingSettings::defaultSettings() const
 {
     AntiVignettingContainer prm;
+
     return prm;
 }
 
@@ -310,6 +312,7 @@ void AntiVignettingSettings::writeSettings(KConfigGroup& group)
 void AntiVignettingSettings::slotSettingsChanged()
 {
     // Compute preview mask.
+
     DImg preview(120, 120, false);
     memset(preview.bits(), 255, preview.numBytes());
     AntiVignettingFilter maskPreview(&preview, nullptr, settings());

@@ -49,11 +49,11 @@ class Q_DECL_HIDDEN LensFunIface::Private
 public:
 
     explicit Private()
+      : lfDb(nullptr),
+        lfCameras(nullptr),
+        usedLens(nullptr),
+        usedCamera(nullptr)
     {
-        usedLens   = nullptr;
-        usedCamera = nullptr;
-        lfDb       = nullptr;
-        lfCameras  = nullptr;
     }
 
     // To be used for modification
@@ -77,6 +77,7 @@ LensFunIface::LensFunIface()
     d->lfDb          = lf_db_new();
 
     // Lensfun host XML files in a dedicated sub-directory.
+
     QString lensPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                               QLatin1String("lensfun"),
                                               QStandardPaths::LocateDirectory);
@@ -84,6 +85,7 @@ LensFunIface::LensFunIface()
     QDir lensDir;
 
     // In first try to use last Lensfun version data dir.
+
     lensDir = QDir(lensPath + QLatin1String("/version_2"), QLatin1String("*.xml"));
 
     if (lensDir.entryList().isEmpty())
@@ -95,6 +97,7 @@ LensFunIface::LensFunIface()
         if (lensDir.entryList().isEmpty())
         {
            // Fail-back to revision 0 which host XML data in root data directory.
+
            lensDir = QDir(lensPath, QLatin1String("*.xml"));
         }
     }
@@ -196,8 +199,8 @@ LensFunIface::DevicePtr LensFunIface::findCamera(const QString& make, const QStr
         DevicePtr cam = *cameras;
 //      qCDebug(DIGIKAM_DIMG_LOG) << "Query camera:" << cam->Maker << "-" << cam->Model;
 
-        if (QString::fromLatin1(cam->Maker).toLower() == make.toLower() &&
-            QString::fromLatin1(cam->Model).toLower() == model.toLower())
+        if ((QString::fromLatin1(cam->Maker).toLower() == make.toLower()) &&
+            (QString::fromLatin1(cam->Model).toLower() == model.toLower()))
         {
             qCDebug(DIGIKAM_DIMG_LOG) << "Search for camera " << make << "-" << model << " ==> true";
             return cam;
@@ -281,6 +284,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
     {
         // NOTE: see bug #184156:
         // Some rules to wrap unknown camera device from Lensfun database, which have equivalent in fact.
+
         if (d->makeDescription == QLatin1String("Canon"))
         {
             if (d->modelDescription == QLatin1String("Canon EOS Kiss Digital X"))
@@ -318,11 +322,13 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
                 LensList lensList;
 
                 // STAGE 1, search in LensFun database as well.
+
                 lensList = findLenses(d->usedCamera, d->lensDescription);
                 qCDebug(DIGIKAM_DIMG_LOG) << "* Check for lens by direct query (" << d->lensDescription << " : " << lensList.count() << ")";
                 lensMatches.append(lensList);
 
                 // STAGE 2, Adapt exiv2 strings to lensfun strings for Nikon.
+
                 lensCutted = d->lensDescription;
 
                 if (lensCutted.contains(QLatin1String("Nikon")))
@@ -339,6 +345,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
 
                 // LAST STAGE, Adapt exiv2 strings to lensfun strings. Some lens description use something like that :
                 // "10.0 - 20.0 mm". This must be adapted like this : "10-20mm"
+
                 lensCutted = d->lensDescription;
                 lensCutted.replace(QRegExp(QLatin1String("\\.[0-9]")), QLatin1String("")); //krazy:exclude=doublequote_chars
                 lensCutted.replace(QLatin1String(" - "), QLatin1String("-"));
@@ -348,6 +355,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
                 lensMatches.append(lensList);
 
                 // Remove all duplicate lenses in the list by using QSet.
+
                 lensMatches = lensMatches.toSet().toList();
             }
             else
@@ -359,6 +367,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
                 if (lensList.count() == 1)
                 {
                     // NOTE: see bug #407157
+
                     qCDebug(DIGIKAM_DIMG_LOG) << "For the camera " << d->settings.cameraModel
                                               << " there is exactly one lens in the database: "
                                               << lensList.first()->Model;
@@ -372,7 +381,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
 
             // Display the results.
 
-            if (lensMatches.isEmpty())
+            if      (lensMatches.isEmpty())
             {
                 qCDebug(DIGIKAM_DIMG_LOG) << "lens matches   : NOT FOUND";
                 exactMatch = false;
@@ -380,6 +389,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
             else if (lensMatches.count() == 1)
             {
                 // Best case for an exact match is to have only one item returned by Lensfun searches.
+
                 setUsedLens(lensMatches.first());
                 qCDebug(DIGIKAM_DIMG_LOG) << "Lens found     : " << d->settings.lensModel;
                 qCDebug(DIGIKAM_DIMG_LOG) << "Crop Factor    : " << d->settings.cropFactor;
@@ -446,35 +456,41 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
     // Try to get subject distance value.
 
     // From standard Exif.
+
     temp = meta.getExifTagString("Exif.Photo.SubjectDistance");
 
     if (temp.isEmpty())
     {
         // From standard XMP.
+
         temp = meta.getXmpTagString("Xmp.exif.SubjectDistance");
     }
 
     if (temp.isEmpty())
     {
         // From Canon Makernote.
+
         temp = meta.getExifTagString("Exif.CanonSi.SubjectDistance");
     }
 
     if (temp.isEmpty())
     {
         // From Nikon Makernote.
+
         temp = meta.getExifTagString("Exif.NikonLd2.FocusDistance");
     }
 
     if (temp.isEmpty())
     {
         // From Nikon Makernote.
+
         temp = meta.getExifTagString("Exif.NikonLd3.FocusDistance");
     }
 
     if (temp.isEmpty())
     {
         // From Olympus Makernote.
+
         temp = meta.getExifTagString("Exif.OlympusFi.FocusDistance");
     }
 

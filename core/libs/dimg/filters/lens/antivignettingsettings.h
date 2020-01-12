@@ -50,7 +50,7 @@ public:
     AntiVignettingContainer defaultSettings() const;
     void resetToDefault();
 
-    AntiVignettingContainer settings() const;
+    AntiVignettingContainer settings()        const;
     void setSettings(const AntiVignettingContainer& settings);
 
     void readSettings(KConfigGroup& group);
