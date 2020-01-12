@@ -53,9 +53,9 @@ public:
     }
 
     explicit Private(const Private& other)
-        : QSharedData(other)
+        : QSharedData(other),
+          handle(nullptr)
     {
-        handle   = nullptr;
         operator = (other);
     }
 
@@ -67,6 +67,7 @@ public:
         type        = other.type;
         close();
         handle      = nullptr;
+
         return *this;
     }
 
@@ -223,6 +224,7 @@ IccProfile::~IccProfile()
 IccProfile& IccProfile::operator=(const IccProfile& other)
 {
     d = other.d;
+
     return *this;
 }
 
@@ -311,7 +313,7 @@ bool IccProfile::open()
         return true;
     }
 
-    if (!d->data.isEmpty())
+    if      (!d->data.isEmpty())
     {
         LcmsLock lock;
         d->handle = dkCmsOpenProfileFromMem(d->data.data(), (DWORD)d->data.size());
@@ -412,7 +414,7 @@ IccProfile::ProfileType IccProfile::type()
     switch ((int)dkCmsGetDeviceClass(d->handle))
     {
         case icSigInputClass:
-        case 0x6e6b7066: // 'nkbf', proprietary in Nikon profiles
+        case 0x6e6b7066:        ///< 'nkbf', proprietary in Nikon profiles
             d->type = Input;
             break;
 

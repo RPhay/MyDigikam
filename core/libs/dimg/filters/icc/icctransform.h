@@ -71,10 +71,14 @@ public:
      */
     bool apply(DImg& image, DImgLoaderObserver* const observer = nullptr);
 
-    /// Apply this transform to the QImage. This has only basic functionality.
+    /**
+     * Apply this transform to the QImage. This has only basic functionality.
+     */
     bool apply(QImage& qimage);
 
-    /// Closes the transform, not the profiles. Called at desctruction.
+    /**
+     * Closes the transform, not the profiles. Called at desctruction.
+     */
     void close();
 
     /**
@@ -87,10 +91,14 @@ public:
     void setEmbeddedProfile(const DImg& image);
     void setInputProfile(const IccProfile& profile);
 
-    /// Sets the output transform
+    /**
+     * Sets the output transform
+     */
     void setOutputProfile(const IccProfile& profile);
 
-    /// Makes this transform a proofing transform, if profile is not null
+    /**
+     * Makes this transform a proofing transform, if profile is not null
+     */
     void setProofProfile(const IccProfile& profile);
 
     /**
@@ -100,7 +108,9 @@ public:
      */
     void setDoNotEmbedOutputProfile(bool doNotEmbed);
 
-    /// Set options
+    /**
+     * Set options
+     */
     void setIntent(RenderingIntent intent);
     void setIntent(int intent)
     {
@@ -117,7 +127,9 @@ public:
     void setCheckGamut(bool checkGamut);
     void setCheckGamutMaskColor(const QColor& color);
 
-    /// Returns the contained profiles
+    /**
+     * Returns the contained profiles
+     */
     IccProfile embeddedProfile()         const;
     IccProfile inputProfile()            const;
     IccProfile outputProfile()           const;
@@ -136,12 +148,14 @@ public:
     bool willHaveEffect();
 
     /**
-     *  Returns the embedded profile; if none is set, the input profile;
-     *  if none is set, sRGB.
+     * Returns the embedded profile; if none is set, the input profile;
+     * if none is set, sRGB.
      */
-    IccProfile effectiveInputProfile() const;
+    IccProfile effectiveInputProfile()   const;
 
-    /// Initialize LittleCMS library
+    /**
+     * Initialize LittleCMS library
+     */
     static void init();
 
 private:
@@ -152,7 +166,8 @@ private:
     TransformDescription getDescription(const QImage& image);
     bool open(TransformDescription& description);
     bool openProofing(TransformDescription& description);
-    void transform(DImg& img, const TransformDescription&, DImgLoaderObserver* const observer = nullptr);
+    void transform(DImg& img, const TransformDescription&,
+                   DImgLoaderObserver* const observer = nullptr);
     void transform(QImage& img, const TransformDescription&);
 
 public:

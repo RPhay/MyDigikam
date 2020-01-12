@@ -47,7 +47,7 @@ public:
 
     enum BehaviorEnum
     {
-        // Note: Values are stored in config - keep them constant
+        /// Note: Values are stored in config - keep them constant
 
         InvalidBehavior          = 0,
 
@@ -91,9 +91,9 @@ public:
     ~ICCSettingsContainer() {};
 
     void readFromConfig(KConfigGroup& group);
-    void writeToConfig(KConfigGroup& group) const;
-    void writeManagedViewToConfig(KConfigGroup& group) const;
-    void writeManagedPreviewsToConfig(KConfigGroup& group) const;
+    void writeToConfig(KConfigGroup& group)                 const;
+    void writeManagedViewToConfig(KConfigGroup& group)      const;
+    void writeManagedPreviewsToConfig(KConfigGroup& group)  const;
 
 public:
 
@@ -123,7 +123,7 @@ public:
     bool     useBPC;
     int      renderingIntent;
 
-    // Settings specific for soft proofing
+    /// Settings specific for soft proofing
     int      proofingRenderingIntent;
     int      doGamutCheck;
     QColor   gamutCheckMaskColor;

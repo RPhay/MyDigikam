@@ -155,18 +155,20 @@ public:
         Restore = 0,
         InPainting,
         Resize,
-        SimpleResize    // Mode to resize image without to use Greycstoration algorithm.
+        SimpleResize    ///< Mode to resize image without to use Greycstoration algorithm.
     };
 
 public:
 
-    /** Contructor without argument. Before to use it,
-        you need to call in order: setSettings(), setMode(), optionally setInPaintingMask(),
-        setOriginalImage(), and necessary setup() at end.
+    /**
+     * Contructor without argument. Before to use it,
+     * you need to call in order: setSettings(), setMode(), optionally setInPaintingMask(),
+     * setOriginalImage(), and necessary setup() at end.
      */
     explicit GreycstorationFilter(QObject* const parent=nullptr);
 
-    /** Contructor with all arguments. Ready to use.
+    /**
+     * Contructor with all arguments. Ready to use.
      */
     GreycstorationFilter(DImg* const orgImage,
                          const GreycstorationContainer& settings,
@@ -204,13 +206,13 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
-    void                    readParameters(const FilterAction& action) override;
+    virtual FilterAction    filterAction()                                    override;
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
@@ -221,8 +223,8 @@ private:
     void simpleResize();
     void iterationLoop(uint iter);
 
-    virtual void initFilter() override;
-    virtual void filterImage() override;
+    virtual void initFilter()                                                 override;
+    virtual void filterImage()                                                override;
 
 private:
 

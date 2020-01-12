@@ -353,6 +353,7 @@ bool GreycstorationSettings::loadSettings(QFile& file, const QString& header)
     setSettings(prm);
 
     blockSignals(false);
+
     return true;
 }
 

@@ -128,12 +128,14 @@ ICCSettingsContainer IccSettings::settings()
 {
     QMutexLocker lock(&d->mutex);
     ICCSettingsContainer s(d->settings);
+
     return s;
 }
 
 IccProfile IccSettings::monitorProfile(QWidget* const widget)
 {
     // system-wide profile set?
+
     IccProfile profile = d->profileFromWindowSystem(widget);
 
     if (!profile.isNull())
@@ -156,6 +158,7 @@ IccProfile IccSettings::monitorProfile(QWidget* const widget)
 bool IccSettings::monitorProfileFromSystem() const
 {
     // First, look into cache
+
     {
         QMutexLocker lock(&d->mutex);
 
@@ -169,6 +172,7 @@ bool IccSettings::monitorProfileFromSystem() const
     }
 
     // Second, check all toplevel widgets
+
     QList<QWidget*> topLevels = qApp->topLevelWidgets();
 
     foreach (QWidget* const widget, topLevels)
@@ -348,6 +352,7 @@ void IccSettings::readFromConfig()
 {
     ICCSettingsContainer old, s;
     s = d->readFromConfig();
+
     {
         QMutexLocker lock(&d->mutex);
         old         = d->settings;
@@ -361,6 +366,7 @@ void IccSettings::readFromConfig()
 void IccSettings::setSettings(const ICCSettingsContainer& settings)
 {
     ICCSettingsContainer old;
+
     {
         QMutexLocker lock(&d->mutex);
 
@@ -381,6 +387,7 @@ void IccSettings::setSettings(const ICCSettingsContainer& settings)
 void IccSettings::setUseManagedView(bool useManagedView)
 {
     ICCSettingsContainer old, current;
+
     {
         QMutexLocker lock(&d->mutex);
         old                        = d->settings;
@@ -397,6 +404,7 @@ void IccSettings::setUseManagedView(bool useManagedView)
 void IccSettings::setUseManagedPreviews(bool useManagedPreviews)
 {
     ICCSettingsContainer old, current;
+
     {
         QMutexLocker lock(&d->mutex);
         old                            = d->settings;
@@ -413,6 +421,7 @@ void IccSettings::setUseManagedPreviews(bool useManagedPreviews)
 void IccSettings::setIccPath(const QString& path)
 {
     ICCSettingsContainer old, current;
+
     {
         QMutexLocker lock(&d->mutex);
 

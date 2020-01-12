@@ -47,10 +47,10 @@ public:
     explicit HSLSettings(QWidget* const parent);
     ~HSLSettings();
 
-    HSLContainer defaultSettings() const;
+    HSLContainer defaultSettings()  const;
     void resetToDefault();
 
-    HSLContainer settings() const;
+    HSLContainer settings()         const;
     void setSettings(const HSLContainer& settings);
 
     void readSettings(KConfigGroup& group);

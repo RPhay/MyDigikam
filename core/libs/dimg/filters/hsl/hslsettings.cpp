@@ -175,7 +175,7 @@ void HSLSettings::slotHSChanged(int h, int s)
 {
     double hue = (double)(h);
 
-    if (h >= 180 && h <= 359)
+    if ((h >= 180) && (h <= 359))
     {
         hue = (double)(h) - 359.0;
     }
@@ -197,7 +197,7 @@ void HSLSettings::slotHChanged(double h)
 {
     int hue = (int)(h);
 
-    if (h >= -180 && h < 0)
+    if ((h >= -180) && (h < 0))
     {
         hue = (int)(h) + 359;
     }

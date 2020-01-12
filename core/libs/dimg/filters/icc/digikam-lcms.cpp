@@ -49,6 +49,7 @@
 void _l2tol1MAT3(MAT3* const l2, MAT3* const l1)
 {
     // TODO: this seem plain wrong and don't provide perfect result
+
     l1->Red.X   = static_cast<cmsFloat64Number>( l2->Red.X   );
     l1->Red.Y   = static_cast<cmsFloat64Number>( l2->Green.X );
     l1->Red.Z   = static_cast<cmsFloat64Number>( l2->Blue.X  );
@@ -90,7 +91,9 @@ void _l2cmsMAT3tol1LPMAT3(cmsMAT3* const l2, LPMAT3 l1)
 
 #define MATRIX_DET_TOLERANCE    0.0001
 
-/// Compute chromatic adaptation matrix using Chad as cone matrix
+/**
+ * Compute chromatic adaptation matrix using Chad as cone matrix
+ */
 static cmsBool ComputeChromaticAdaptation(cmsMAT3* const Conversion,
                                           const cmsCIEXYZ* const SourceWhitePoint,
                                           const cmsCIEXYZ* const DestWhitePoint,
@@ -104,7 +107,9 @@ static cmsBool ComputeChromaticAdaptation(cmsMAT3* const Conversion,
     Tmp = *Chad;
 
     if (!_cmsMAT3inverse(&Tmp, &Chad_Inv))
+    {
         return FALSE;
+    }
 
     _cmsVEC3init(&ConeSourceXYZ, SourceWhitePoint -> X,
                                  SourceWhitePoint -> Y,
@@ -129,12 +134,14 @@ static cmsBool ComputeChromaticAdaptation(cmsMAT3* const Conversion,
     return TRUE;
 }
 
-/** Returns the final chromatic adaptation from illuminant FromIll to Illuminant ToIll
- *  The cone matrix can be specified in ConeMatrix. If NULL, Bradford is assumed
+/**
+ * Returns the final chromatic adaptation from illuminant FromIll to Illuminant ToIll
+ * The cone matrix can be specified in ConeMatrix. If NULL, Bradford is assumed
  */
 cmsBool _cmsAdaptationMatrix(cmsMAT3* const r, const cmsMAT3* ConeMatrix, const cmsCIEXYZ* const FromIll, const cmsCIEXYZ* const ToIll)
 {
     // Bradford matrix
+
     cmsMAT3 LamRigg =
     {{
         {{  0.8951,  0.2664, -0.1614 }},
@@ -143,12 +150,16 @@ cmsBool _cmsAdaptationMatrix(cmsMAT3* const r, const cmsMAT3* ConeMatrix, const 
     }};
 
     if (ConeMatrix == nullptr)
+    {
         ConeMatrix = &LamRigg;
+    }
 
     return ComputeChromaticAdaptation(r, FromIll, ToIll, ConeMatrix);
 }
 
-/// Same as anterior, but assuming D50 destination. White point is given in xyY
+/**
+ * Same as anterior, but assuming D50 destination. White point is given in xyY
+ */
 static cmsBool _cmsAdaptMatrixToD50(cmsMAT3* const r, const cmsCIExyY* const SourceWhitePt)
 {
     cmsCIEXYZ Dn;
@@ -158,7 +169,9 @@ static cmsBool _cmsAdaptMatrixToD50(cmsMAT3* const r, const cmsCIExyY* const Sou
     cmsxyY2XYZ(&Dn, SourceWhitePt);
 
     if (!_cmsAdaptationMatrix(&Bradford, nullptr, &Dn, cmsD50_XYZ()))
+    {
         return FALSE;
+    }
 
     Tmp = *r;
     _cmsMAT3per(r, &Bradford, &Tmp);
@@ -166,19 +179,20 @@ static cmsBool _cmsAdaptMatrixToD50(cmsMAT3* const r, const cmsCIExyY* const Sou
     return TRUE;
 }
 
-/** Build a White point, primary chromas transfer matrix from RGB to CIE XYZ
-    This is just an approximation, I am not handling all the non-linear
-    aspects of the RGB to XYZ process, and assuming that the gamma correction
-    has transitive property in the transformation chain.
-
-    the algorithm:
-
-               - First I build the absolute conversion matrix using
-                 primaries in XYZ. This matrix is next inverted
-               - Then I evaluate the source white point across this matrix
-                 obtaining the coefficients of the transformation
-               - Then, I apply these coefficients to the original matrix
-*/
+/**
+ * Build a White point, primary chromas transfer matrix from RGB to CIE XYZ
+ * This is just an approximation, I am not handling all the non-linear
+ * aspects of the RGB to XYZ process, and assuming that the gamma correction
+ * has transitive property in the transformation chain.
+ *
+ * the algorithm:
+ *
+ *            - First I build the absolute conversion matrix using
+ *              primaries in XYZ. This matrix is next inverted
+ *            - Then I evaluate the source white point across this matrix
+ *              obtaining the coefficients of the transformation
+ *            - Then, I apply these coefficients to the original matrix
+ */
 cmsBool _cmsBuildRGB2XYZtransferMatrix(cmsMAT3* const r, const cmsCIExyY* const WhitePt, const cmsCIExyYTRIPLE* const Primrs)
 {
     cmsVEC3 WhitePoint, Coef;
@@ -198,20 +212,26 @@ cmsBool _cmsBuildRGB2XYZtransferMatrix(cmsMAT3* const r, const cmsCIExyY* const 
     yb = Primrs -> Blue.y;
 
     // Build Primaries matrix
+
     _cmsVEC3init(&Primaries.v[0], xr,        xg,         xb       );
     _cmsVEC3init(&Primaries.v[1], yr,        yg,         yb       );
     _cmsVEC3init(&Primaries.v[2], (1-xr-yr), (1-xg-yg),  (1-xb-yb));
 
     // Result = Primaries ^ (-1) inverse matrix
+
     if (!_cmsMAT3inverse(&Primaries, &Result))
+    {
         return FALSE;
+    }
 
     _cmsVEC3init(&WhitePoint, xn/yn, 1.0, (1.0-xn-yn)/yn);
 
-    // Across inverse primaries ...
+    // Across inverse primaries
+
     _cmsMAT3eval(&Coef, &Result, &WhitePoint);
 
     // Give us the Coefs, then I build transformation matrix
+
     _cmsVEC3init(&r -> v[0], Coef.n[VX]*xr,          Coef.n[VY]*xg,          Coef.n[VZ]*xb         );
     _cmsVEC3init(&r -> v[1], Coef.n[VX]*yr,          Coef.n[VY]*yg,          Coef.n[VZ]*yb         );
     _cmsVEC3init(&r -> v[2], Coef.n[VX]*(1.0-xr-yr), Coef.n[VY]*(1.0-xg-yg), Coef.n[VZ]*(1.0-xb-yb));
@@ -221,7 +241,9 @@ cmsBool _cmsBuildRGB2XYZtransferMatrix(cmsMAT3* const r, const cmsCIExyY* const 
 
 ///////////////////////////////////////////////////////////////////////
 
-/// WAS: Same as anterior, but assuming D50 source. White point is given in xyY
+/**
+ * Same as anterior, but assuming D50 source. White point is given in xyY
+ */
 static cmsBool cmsAdaptMatrixFromD50(cmsMAT3* const r, const cmsCIExyY* const DestWhitePt)
 {
     cmsCIEXYZ Dn;
@@ -231,7 +253,9 @@ static cmsBool cmsAdaptMatrixFromD50(cmsMAT3* const r, const cmsCIExyY* const De
     cmsxyY2XYZ(&Dn, DestWhitePt);
 
     if (!_cmsAdaptationMatrix(&Bradford, nullptr, &Dn, cmsD50_XYZ()))
+    {
         return FALSE;
+    }
 
     Tmp = *r;
     _cmsMAT3per(r, &Bradford, &Tmp);
@@ -243,9 +267,8 @@ static cmsBool cmsAdaptMatrixFromD50(cmsMAT3* const r, const cmsCIExyY* const De
 
 int dkCmsErrorAction(int nAction)
 {
-    Q_UNUSED(nAction);
+    qCWarning(DIGIKAM_DIMG_LOG) << "Error while running Lcms action (" << nAction << ")";
 
-    // TODO: Where is error logging?
     return 0;
 }
 
@@ -299,7 +322,7 @@ QString dkCmsTakeProductName(cmsHPROFILE hProfile)
         }
     }
 
-    if (!Manufacturer[0] || strncmp(Model, Manufacturer, 8) == 0 || strlen(Model) > 30)
+    if (!Manufacturer[0] || (strncmp(Model, Manufacturer, 8) == 0) || (strlen(Model) > 30))
     {
         strcpy(Name, Model);
     }
@@ -371,11 +394,11 @@ QString dkCmsTakeProductInfo(cmsHPROFILE hProfile)
     }
     else
     {
-        /*
-         *  _cmsIdentifyWhitePoint is complex and partly redundant
-         *  with cietonguewidget, leave this part off
-         *  until the full lcms2 implementation
-         *
+/*
+         // _cmsIdentifyWhitePoint is complex and partly redundant
+         // with cietonguewidget, leave this part off
+         // until the full lcms2 implementation
+
         cmsCIEXYZ WhitePt;
         char WhiteStr[1024];
 
@@ -383,7 +406,7 @@ QString dkCmsTakeProductInfo(cmsHPROFILE hProfile)
         _cmsIdentifyWhitePoint(WhiteStr, &WhitePt);
         strcat(Info, " - ");
         strcat(Info, WhiteStr);
-        */
+*/
     }
 
 #undef K007
@@ -396,6 +419,7 @@ QString dkCmsTakeManufacturer(cmsHPROFILE hProfile)
     char buffer[1024];
     buffer[0] = '\0';
     cmsGetProfileInfoASCII(hProfile, cmsInfoManufacturer, "en", "US", buffer, 1024);
+
     return QLatin1String(buffer);
 }
 
@@ -404,9 +428,12 @@ LCMSBOOL dkCmsTakeMediaWhitePoint(LPcmsCIEXYZ Dest, cmsHPROFILE hProfile)
     LPcmsCIEXYZ tag = static_cast<LPcmsCIEXYZ>(cmsReadTag(hProfile, cmsSigMediaWhitePointTag));
 
     if (tag == nullptr)
+    {
         return FALSE;
+    }
 
     *Dest = *tag;
+
     return TRUE;
 }
 
@@ -417,9 +444,12 @@ QString dkCmsTakeModel(cmsHPROFILE hProfile)
     buffer[0]               = '\0';
 
     if (mlu == nullptr)
+    {
         return QString();
+    }
 
     cmsMLUgetASCII(mlu, "en", "US", buffer, 1024);
+
     return QLatin1String(buffer);
 }
 
@@ -430,9 +460,12 @@ QString dkCmsTakeCopyright(cmsHPROFILE hProfile)
     buffer[0]               = '\0';
 
     if (mlu == nullptr)
+    {
         return QString();
+    }
 
     cmsMLUgetASCII(mlu, "en", "US", buffer, 1024);
+
     return QLatin1String(buffer);
 }
 
@@ -445,6 +478,7 @@ const BYTE* dkCmsTakeProfileID(cmsHPROFILE hProfile)
 {
     cmsUInt8Number* const ProfileID = new cmsUInt8Number[16];
     cmsGetHeaderProfileID(hProfile, ProfileID);
+
     return static_cast<BYTE*>(ProfileID);
 }
 
@@ -453,14 +487,16 @@ int dkCmsTakeRenderingIntent(cmsHPROFILE hProfile)
     return static_cast<int>(cmsGetHeaderRenderingIntent(hProfile));
 }
 
-// White Point & Primary chromas handling
-// Returns the final chromatic adaptation from illuminant FromIll to Illuminant ToIll
-// The cone matrix can be specified in ConeMatrix.
-// If NULL, assuming D50 source. White point is given in xyY
-
+/**
+ * White Point & Primary chromas handling
+ * Returns the final chromatic adaptation from illuminant FromIll to Illuminant ToIll
+ * The cone matrix can be specified in ConeMatrix.
+ * If NULL, assuming D50 source. White point is given in xyY
+ */
 LCMSBOOL dkCmsAdaptMatrixFromD50(LPMAT3 r, LPcmsCIExyY DestWhitePt)
 {
     // TODO: all based on private stuff, need to understand what digikam do in cietonguewidget with dkCmsAdaptMatrixFromD50
+
     cmsMAT3 result;
 
     _l1LPMAT3tol2cmsMAT3(r, &result);
@@ -472,58 +508,68 @@ LCMSBOOL dkCmsAdaptMatrixFromD50(LPMAT3 r, LPcmsCIExyY DestWhitePt)
     return ret;
 }
 
-// LCMSBOOL dkCmsAdaptMatrixFromD50(LPMAT3 r, LPcmsCIExyY DestWhitePt)
-// {
-//     // TODO: all based on private stuff, need to understand what digikam do in cietonguewidget with dkCmsAdaptMatrixFromD50
-//     cmsMAT3 result;
-//
-//     result.v[0].n[0] = r->Red.X  ;
-//     result.v[0].n[1] = r->Red.Y  ;
-//     result.v[0].n[2] = r->Red.Z  ;
-//     result.v[1].n[0] = r->Green.X;
-//     result.v[1].n[1] = r->Green.Y;
-//     result.v[1].n[2] = r->Green.Z;
-//     result.v[2].n[0] = r->Blue.X ;
-//     result.v[2].n[1] = r->Blue.Y ;
-//     result.v[2].n[2] = r->Blue.Z ;
-//
-//     bool ret   = cmsAdaptMatrixFromD50(&result, static_cast<const cmsCIExyY*>( DestWhitePt ));
-//
-//     r->Red.X   = result.v[0].n[0];
-//     r->Red.Y   = result.v[0].n[1];
-//     r->Red.Z   = result.v[0].n[2];
-//     r->Green.X = result.v[1].n[0];
-//     r->Green.Y = result.v[1].n[1];
-//     r->Green.Z = result.v[1].n[2];
-//     r->Blue.X  = result.v[2].n[0];
-//     r->Blue.Y  = result.v[2].n[1];
-//     r->Blue.Z  = result.v[2].n[2];
-//
-//     return ret;
-// }
+/*
+LCMSBOOL dkCmsAdaptMatrixFromD50(LPMAT3 r, LPcmsCIExyY DestWhitePt)
+{
+    // TODO: all based on private stuff, need to understand what digikam do in cietonguewidget with dkCmsAdaptMatrixFromD50
+
+    cmsMAT3 result;
+
+    result.v[0].n[0] = r->Red.X  ;
+    result.v[0].n[1] = r->Red.Y  ;
+    result.v[0].n[2] = r->Red.Z  ;
+    result.v[1].n[0] = r->Green.X;
+    result.v[1].n[1] = r->Green.Y;
+    result.v[1].n[2] = r->Green.Z;
+    result.v[2].n[0] = r->Blue.X ;
+    result.v[2].n[1] = r->Blue.Y ;
+    result.v[2].n[2] = r->Blue.Z ;
+
+    bool ret   = cmsAdaptMatrixFromD50(&result, static_cast<const cmsCIExyY*>( DestWhitePt ));
+
+    r->Red.X   = result.v[0].n[0];
+    r->Red.Y   = result.v[0].n[1];
+    r->Red.Z   = result.v[0].n[2];
+    r->Green.X = result.v[1].n[0];
+    r->Green.Y = result.v[1].n[1];
+    r->Green.Z = result.v[1].n[2];
+    r->Blue.X  = result.v[2].n[0];
+    r->Blue.Y  = result.v[2].n[1];
+    r->Blue.Z  = result.v[2].n[2];
+
+    return ret;
+}
+*/
 
 cmsBool GetProfileRGBPrimaries(cmsHPROFILE hProfile, cmsCIEXYZTRIPLE* const result, cmsUInt32Number intent)
 {
     cmsHPROFILE hXYZ;
     cmsHTRANSFORM hTransform;
-    cmsFloat64Number rgb[3][3] = {{1., 0., 0.},
+    cmsFloat64Number rgb[3][3] = {
+                                  {1., 0., 0.},
                                   {0., 1., 0.},
-                                  {0., 0., 1.}};
+                                  {0., 0., 1.}
+                                 };
 
     hXYZ = cmsCreateXYZProfile();
 
     if (hXYZ == nullptr)
+    {
         return FALSE;
+    }
 
     hTransform = cmsCreateTransform(hProfile, TYPE_RGB_DBL, hXYZ, TYPE_XYZ_DBL,
                                     intent, cmsFLAGS_NOCACHE | cmsFLAGS_NOOPTIMIZE);
     cmsCloseProfile(hXYZ);
 
     if (hTransform == nullptr)
+    {
         return FALSE;
+    }
 
     cmsDoTransform(hTransform, rgb, result, 3);
     cmsDeleteTransform(hTransform);
+
     return TRUE;
 }
 

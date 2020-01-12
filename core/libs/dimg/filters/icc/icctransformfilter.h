@@ -60,12 +60,12 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier() const                                        override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
+    virtual FilterAction    filterAction()                                                  override;
 
     void                    readParameters(const FilterAction& action)                      override;
     bool                    parametersSuccessfullyRead() const                              override;
@@ -73,8 +73,8 @@ public:
 
 protected:
 
-    virtual void progressInfo(float progress) override;
-    virtual void filterImage()                override;
+    virtual void progressInfo(float progress)                                               override;
+    virtual void filterImage()                                                              override;
 
 private:
 

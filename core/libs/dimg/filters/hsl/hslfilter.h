@@ -41,11 +41,11 @@ class DIGIKAM_EXPORT HSLContainer
 public:
 
     explicit HSLContainer()
+      : hue(0.0),
+        saturation(0.0),
+        vibrance(0.0),
+        lightness(0.0)
     {
-        hue        = 0.0;
-        saturation = 0.0;
-        vibrance   = 0.0;
-        lightness  = 0.0;
     };
 
     ~HSLContainer()
@@ -88,18 +88,18 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
+    virtual FilterAction    filterAction()                                    override;
 
-    void                    readParameters(const FilterAction& action) override;
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
 
     void reset();
     void setHue(double val);

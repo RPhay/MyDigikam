@@ -107,14 +107,14 @@ void HSLFilter::reset()
 {
     // initialize to linear mapping
 
-    for (int i = 0; i < 65536; ++i)
+    for (int i = 0 ; i < 65536 ; ++i)
     {
         d->htransfer16[i] = i;
         d->ltransfer16[i] = i;
         d->stransfer16[i] = i;
     }
 
-    for (int i = 0; i < 256; ++i)
+    for (int i = 0 ; i < 256 ; ++i)
     {
         d->htransfer[i] = i;
         d->ltransfer[i] = i;
@@ -126,11 +126,11 @@ void HSLFilter::setHue(double val)
 {
     int value;
 
-    for (int i = 0; i < 65536; ++i)
+    for (int i = 0 ; i < 65536 ; ++i)
     {
         value = lround(val * 65535.0 / 360.0);
 
-        if ((i + value) < 0)
+        if      ((i + value) < 0)
         {
             d->htransfer16[i] = 65535 + (i + value);
         }
@@ -144,11 +144,11 @@ void HSLFilter::setHue(double val)
         }
     }
 
-    for (int i = 0; i < 256; ++i)
+    for (int i = 0 ; i < 256 ; ++i)
     {
         value = lround(val * 255.0 / 360.0);
 
-        if ((i + value) < 0)
+        if      ((i + value) < 0)
         {
             d->htransfer[i] = 255 + (i + value);
         }
@@ -168,15 +168,15 @@ void HSLFilter::setSaturation(double val)
     val = CLAMP(val, -100.0, 100.0);
     int value;
 
-    for (int i = 0; i < 65536; ++i)
+    for (int i = 0 ; i < 65536 ; ++i)
     {
-        value = lround((i * (100.0 + val)) / 100.0);
+        value             = lround((i * (100.0 + val)) / 100.0);
         d->stransfer16[i] = CLAMP065535(value);
     }
 
-    for (int i = 0; i < 256; ++i)
+    for (int i = 0 ; i < 256 ; ++i)
     {
-        value = lround((i * (100.0 + val)) / 100.0);
+        value            = lround((i * (100.0 + val)) / 100.0);
         d->stransfer[i]  = CLAMP0255(value);
     }
 }
@@ -188,24 +188,24 @@ void HSLFilter::setLightness(double val)
 
     if (val < 0)
     {
-        for (int i = 0; i < 65536; ++i)
+        for (int i = 0 ; i < 65536 ; ++i)
         {
             d->ltransfer16[i] = lround((i * (val + 100.0)) / 100.0);
         }
 
-        for (int i = 0; i < 256; ++i)
+        for (int i = 0 ; i < 256 ; ++i)
         {
             d->ltransfer[i] = lround((i * (val + 100.0)) / 100.0);
         }
     }
     else
     {
-        for (int i = 0; i < 65536; ++i)
+        for (int i = 0 ; i < 65536 ; ++i)
         {
             d->ltransfer16[i] = lround(i * (1.0 - val / 100.0)  + 65535.0 / 100.0 * val);
         }
 
-        for (int i = 0; i < 256; ++i)
+        for (int i = 0 ; i < 256 ; ++i)
         {
             d->ltransfer[i] = lround(i * (1.0 - val / 100.0)  + 255.0 / 100.0 * val);
         }
@@ -218,7 +218,7 @@ int HSLFilter::vibranceBias(double sat, double hue, double vib, bool sixteenbit)
     int    localsat;
     double normalized_hue = hue / (sixteenbit ? 65535.0 : 255.0);
 
-    if (normalized_hue > 0.85 || normalized_hue < 0.2)
+    if ((normalized_hue > 0.85) || (normalized_hue < 0.2))
     {
         ratio = 0.3;
     }
@@ -231,11 +231,11 @@ int HSLFilter::vibranceBias(double sat, double hue, double vib, bool sixteenbit)
 
     if (sixteenbit)
     {
-        return(CLAMP065535(localsat));
+        return (CLAMP065535(localsat));
     }
     else
     {
-        return(CLAMP0255(localsat));
+        return (CLAMP0255(localsat));
     }
 }
 
@@ -257,25 +257,27 @@ void HSLFilter::applyHSL(DImg& image)
     {
         unsigned short* data = reinterpret_cast<unsigned short*>(image.bits());
 
-        for (uint i = 0; runningFlag() && (i < numberOfPixels); ++i)
+        for (uint i = 0 ; runningFlag() && (i < numberOfPixels) ; ++i)
         {
             color = DColor(data[2], data[1], data[0], 0, sixteenBit);
 
             // convert RGB to HSL
+
             color.getHSL(&hue, &sat, &lig);
 
             // convert HSL to RGB
+
             color.setHSL(d->htransfer16[hue], vibranceBias(d->stransfer16[sat], hue, vib, sixteenBit), d->ltransfer16[lig], sixteenBit);
 
             data[2] = color.red();
             data[1] = color.green();
             data[0] = color.blue();
 
-            data += 4;
+            data   += 4;
 
             progress = (int)(((double)i * 100.0) / numberOfPixels);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }
@@ -285,25 +287,27 @@ void HSLFilter::applyHSL(DImg& image)
     {
         uchar* data = image.bits();
 
-        for (uint i = 0; runningFlag() && (i < numberOfPixels); ++i)
+        for (uint i = 0 ; runningFlag() && (i < numberOfPixels) ; ++i)
         {
             color = DColor(data[2], data[1], data[0], 0, sixteenBit);
 
             // convert RGB to HSL
+
             color.getHSL(&hue, &sat, &lig);
 
             // convert HSL to RGB
+
             color.setHSL(d->htransfer[hue], vibranceBias(d->stransfer[sat], hue, vib, sixteenBit), d->ltransfer[lig], sixteenBit);
 
             data[2] = color.red();
             data[1] = color.green();
             data[0] = color.blue();
 
-            data += 4;
+            data   += 4;
 
             progress = (int)(((double)i * 100.0) / numberOfPixels);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }

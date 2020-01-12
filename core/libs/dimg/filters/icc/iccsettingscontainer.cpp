@@ -37,24 +37,21 @@ namespace Digikam
 {
 
 ICCSettingsContainer::ICCSettingsContainer()
+    : enableCM(true),
+      defaultMismatchBehavior(EmbeddedToWorkspace),
+      defaultMissingProfileBehavior(SRGBToWorkspace),
+      defaultUncalibratedBehavior(AutoToWorkspace),
+      lastMismatchBehavior(EmbeddedToWorkspace),
+      lastMissingProfileBehavior(SRGBToWorkspace),
+      lastUncalibratedBehavior(AutoToWorkspace),
+      useManagedView(true),
+      useManagedPreviews(true),
+      useBPC(true),
+      renderingIntent(IccTransform::Perceptual),
+      proofingRenderingIntent(IccTransform::AbsoluteColorimetric),
+      doGamutCheck(false),
+      gamutCheckMaskColor(QColor(126, 255, 255))
 {
-    enableCM                      = true;
-
-    defaultMismatchBehavior       = EmbeddedToWorkspace;
-    defaultMissingProfileBehavior = SRGBToWorkspace;
-    defaultUncalibratedBehavior   = AutoToWorkspace;
-
-    lastMismatchBehavior          = EmbeddedToWorkspace;
-    lastMissingProfileBehavior    = SRGBToWorkspace;
-    lastUncalibratedBehavior      = AutoToWorkspace;
-
-    useManagedView                = true;
-    useManagedPreviews            = true;
-    useBPC                        = true;
-    renderingIntent               = IccTransform::Perceptual;
-    proofingRenderingIntent       = IccTransform::AbsoluteColorimetric;
-    doGamutCheck                  = false;
-    gamutCheckMaskColor           = QColor(126, 255, 255);
 }
 
 void ICCSettingsContainer::readFromConfig(KConfigGroup& group)

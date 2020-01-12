@@ -118,16 +118,21 @@ public:
      */
     static bool needsPostLoadingManagement(const DImg& img);
 
-    /** Returns the profile that will be used to interpret the image,
-     *  using the given behavior
+    /**
+     * Returns the profile that will be used to interpret the image,
+     * using the given behavior
      */
     IccProfile imageProfile(ICCSettingsContainer::Behavior behavior,
                             const IccProfile& specifiedProfile = IccProfile());
 
-    /** Transforms the given QImage from the given inputProfile to sRGB. */
+    /**
+     * Transforms the given QImage from the given inputProfile to sRGB.
+     */
     static void transformToSRGB(QImage& qimage, const IccProfile& inputProfile);
 
-    /** Transforms the given QImage from sRGB to given display profile. */
+    /**
+     * Transforms the given QImage from sRGB to given display profile.
+     */
     static void transformForDisplay(QImage& qimage, const IccProfile& displayProfile1 = displayProfile());
 
 protected:

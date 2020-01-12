@@ -95,7 +95,7 @@ void IccTransformFilter::readParameters(const Digikam::FilterAction& action)
     m_transform.setUseBlackPointCompensation(action.parameter(QLatin1String("blackPointCompensation")).toBool());
 
     QList<IccProfile> profiles;
-    profiles = IccSettings::instance()->profilesForDescription(action.parameter(QLatin1String("inputProfileDescription")).toString());
+    profiles    = IccSettings::instance()->profilesForDescription(action.parameter(QLatin1String("inputProfileDescription")).toString());
 
     if (!profiles.isEmpty())
     {
@@ -112,18 +112,22 @@ void IccTransformFilter::readParameters(const Digikam::FilterAction& action)
 
 bool IccTransformFilter::parametersSuccessfullyRead() const
 {
-    return !m_transform.inputProfile().isNull() && !m_transform.outputProfile().isNull();
+    return (!m_transform.inputProfile().isNull() && !m_transform.outputProfile().isNull());
 }
 
 QString IccTransformFilter::readParametersError(const FilterAction& actionThatFailed) const
 {
     if (m_transform.inputProfile().isNull())
+    {
         return i18n("Input color profile \"%1\" not available",
                     actionThatFailed.parameter(QLatin1String("inputProfileDescription")).toString());
+    }
 
     if (m_transform.outputProfile().isNull())
+    {
         return i18n("Output color profile \"%1\" not available",
                     actionThatFailed.parameter(QLatin1String("outputProfileDescription")).toString());
+    }
 
     return QString();
 }

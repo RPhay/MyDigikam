@@ -50,24 +50,26 @@ class Q_DECL_HIDDEN TransformDescription
 public:
 
     TransformDescription()
+      : inputFormat(0),
+        outputFormat(0),
+        intent(INTENT_PERCEPTUAL),
+        transformFlags(0),
+        proofIntent(INTENT_ABSOLUTE_COLORIMETRIC)
     {
-        inputFormat    = 0;
-        outputFormat   = 0;
-        intent         = INTENT_PERCEPTUAL;
-        transformFlags = 0;
-        proofIntent    = INTENT_ABSOLUTE_COLORIMETRIC;
     }
 
     bool operator==(const TransformDescription& other) const
     {
-        return inputProfile   == other.inputProfile   &&
-               inputFormat    == other.inputFormat    &&
-               outputProfile  == other.outputProfile  &&
-               outputFormat   == other.outputFormat   &&
-               intent         == other.intent         &&
-               transformFlags == other.transformFlags &&
-               proofProfile   == other.proofProfile   &&
-               proofIntent    == other.proofIntent;
+        return (
+                (inputProfile   == other.inputProfile)   &&
+                (inputFormat    == other.inputFormat)    &&
+                (outputProfile  == other.outputProfile)  &&
+                (outputFormat   == other.outputFormat)   &&
+                (intent         == other.intent)         &&
+                (transformFlags == other.transformFlags) &&
+                (proofProfile   == other.proofProfile)   &&
+                (proofIntent    == other.proofIntent)
+               );
     }
 
 public:
@@ -87,20 +89,20 @@ class Q_DECL_HIDDEN IccTransform::Private : public QSharedData
 public:
 
     explicit Private()
+      : intent(IccTransform::Perceptual),
+        proofIntent(IccTransform::AbsoluteColorimetric),
+        useBPC(false),
+        checkGamut(false),
+        doNotEmbed(false),
+        checkGamutColor(QColor(126, 255, 255)),
+        handle(nullptr)
     {
-        intent          = IccTransform::Perceptual;
-        proofIntent     = IccTransform::AbsoluteColorimetric;
-        useBPC          = false;
-        checkGamut      = false;
-        doNotEmbed      = false;
-        checkGamutColor = QColor(126, 255, 255);
-        handle          = nullptr;
     }
 
     explicit Private(const Private& other)
-        : QSharedData(other)
+        : QSharedData(other),
+          handle(nullptr)
     {
-        handle = nullptr;
         operator=(other);
     }
 
@@ -108,6 +110,7 @@ public:
     {
         // Attention: This is sensitive. Add any new members here.
         // We can't use the default operator= because of handle.
+
         intent             = other.intent;
         proofIntent        = other.proofIntent;
         useBPC             = other.useBPC;
@@ -140,7 +143,7 @@ public:
             currentDescription = TransformDescription();
             LcmsLock lock;
             dkCmsDeleteTransform(handle);
-            handle = nullptr;
+            handle             = nullptr;
         }
     }
 
@@ -218,6 +221,7 @@ IccTransform::IccTransform(const IccTransform& other)
 IccTransform& IccTransform::operator=(const IccTransform& other)
 {
     d = other.d;
+
     return *this;
 }
 
@@ -444,6 +448,7 @@ TransformDescription IccTransform::getDescription(const DImg& image)
 
     // Do not use TYPE_BGR_ - this implies 3 bytes per pixel, but even if !image.hasAlpha(),
     // our image data has 4 bytes per pixel with the fourth byte filled with 0xFF.
+
     if (image.sixteenBit())
     {
 /*
@@ -461,6 +466,7 @@ TransformDescription IccTransform::getDescription(const DImg& image)
 */
 
         // A Dimg is always BGRA, converted by the loader
+
         description.inputFormat  = TYPE_BGRA_16;
         description.outputFormat = TYPE_BGRA_16;
     }
@@ -496,10 +502,10 @@ TransformDescription IccTransform::getProofingDescription(const DImg& image)
 {
     TransformDescription description = getDescription(image);
 
-    description.proofProfile = d->proofProfile;
-    description.proofIntent  = renderingIntentToLcmsIntent(d->proofIntent);
+    description.proofProfile         = d->proofProfile;
+    description.proofIntent          = renderingIntentToLcmsIntent(d->proofIntent);
 
-    description.transformFlags |= cmsFLAGS_SOFTPROOFING;
+    description.transformFlags      |= cmsFLAGS_SOFTPROOFING;
 
     if (d->checkGamut)
     {
@@ -662,9 +668,9 @@ bool IccTransform::apply(DImg& image, DImgLoaderObserver* const observer)
 
 bool IccTransform::apply(QImage& qimage)
 {
-    if (qimage.format() != QImage::Format_RGB32  &&
-        qimage.format() != QImage::Format_ARGB32 &&
-        qimage.format() != QImage::Format_ARGB32_Premultiplied)
+    if ((qimage.format() != QImage::Format_RGB32)  &&
+        (qimage.format() != QImage::Format_ARGB32) &&
+        (qimage.format() != QImage::Format_ARGB32_Premultiplied))
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Unsupported QImage format" << qimage.format();
         return false;
@@ -714,7 +720,7 @@ void IccTransform::transform(DImg& image, const TransformDescription& descriptio
     // it is safe to use the same input and output buffer if the format is the same
     if (description.inputFormat == description.outputFormat)
     {
-        for (int p = pixels; p > 0; p -= pixelsPerStep)
+        for (int p = pixels ; p > 0 ; p -= pixelsPerStep)
         {
             int pixelsThisStep =  qMin(p, pixelsPerStep);
             int size           =  pixelsThisStep * bytesDepth;
@@ -722,7 +728,7 @@ void IccTransform::transform(DImg& image, const TransformDescription& descriptio
             dkCmsDoTransform(d->handle, data, data, pixelsThisStep);
             data               += size;
 
-            if (observer && p <= checkPoint)
+            if (observer && (p <= checkPoint))
             {
                 checkPoint -= granularity;
                 observer->progressInfo(0.1 + 0.9 * (1.0 - float(p) / float(pixels)));
@@ -733,7 +739,7 @@ void IccTransform::transform(DImg& image, const TransformDescription& descriptio
     {
         QVarLengthArray<uchar> buffer(pixelsPerStep * bytesDepth);
 
-        for (int p = pixels; p > 0; p -= pixelsPerStep)
+        for (int p = pixels ; p > 0 ; p -= pixelsPerStep)
         {
             int pixelsThisStep  = qMin(p, pixelsPerStep);
             int size            = pixelsThisStep * bytesDepth;
@@ -742,7 +748,7 @@ void IccTransform::transform(DImg& image, const TransformDescription& descriptio
             dkCmsDoTransform(d->handle, buffer.data(), data, pixelsThisStep);
             data               += size;
 
-            if (observer && p <= checkPoint)
+            if (observer && (p <= checkPoint))
             {
                 checkPoint -= granularity;
                 observer->progressInfo(0.1 + 0.9 * (1.0 - float(p) / float(pixels)));
@@ -759,7 +765,7 @@ void IccTransform::transform(QImage& image, const TransformDescription&)
     const int pixelsPerStep = image.width() * 10;
     uchar* data             = image.bits();
 
-    for (int p = pixels; p > 0; p -= pixelsPerStep)
+    for (int p = pixels ; p > 0 ; p -= pixelsPerStep)
     {
         int pixelsThisStep =  qMin(p, pixelsPerStep);
         int size           =  pixelsThisStep * bytesDepth;

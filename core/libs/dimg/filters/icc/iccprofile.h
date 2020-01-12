@@ -84,7 +84,9 @@ public:
     static IccProfile wideGamutRGB();
     static IccProfile proPhotoRGB();
 
-    /// Returns a list with the profiles above
+    /**
+     * Returns a list with the profiles above
+     */
     static QList<IccProfile> defaultProfiles();
 
     IccProfile(const IccProfile& other);

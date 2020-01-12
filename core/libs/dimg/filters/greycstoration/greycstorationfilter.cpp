@@ -220,6 +220,7 @@ void GreycstorationFilter::setup()
     }
 
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+
     this->initFilter();
 }
 
@@ -245,10 +246,12 @@ void GreycstorationFilter::cancelFilter()
 {
     // Because Greycstoration algorithm run in a child thread, we need
     // to stop it before to stop this thread.
+
     qCDebug(DIGIKAM_DIMG_LOG) << "Stop Greycstoration computation...";
     d->threadManager->stop();
 
     // And now when stop main loop and clean up all
+
     DImgThreadedFilter::cancelFilter();
 }
 
@@ -263,6 +266,7 @@ void GreycstorationFilter::filterImage()
     int height        = m_orgImage.height();
 
     // convert DImg (interleaved RGBA) to CImg (planar RGBA)
+
     if (!m_orgImage.sixteenBit())           // 8 bits image.
     {
         d->img = CImg<unsigned char>(data, 4, width, height, 1, false).
@@ -329,6 +333,7 @@ void GreycstorationFilter::filterImage()
             for (x = 0 ; x < newWidth ; ++x)
             {
                 // Overwrite RGB values to destination.
+
                 ptr[0] = static_cast<uchar>(d->img(x, y, 0));        // Blue
                 ptr[1] = static_cast<uchar>(d->img(x, y, 1));        // Green
                 ptr[2] = static_cast<uchar>(d->img(x, y, 2));        // Red
@@ -346,6 +351,7 @@ void GreycstorationFilter::filterImage()
             for (x = 0 ; x < newWidth ; ++x)
             {
                 // Overwrite RGB values to destination.
+
                 ptr[0] = static_cast<unsigned short>(d->img(x, y, 0));        // Blue
                 ptr[1] = static_cast<unsigned short>(d->img(x, y, 1));        // Green
                 ptr[2] = static_cast<unsigned short>(d->img(x, y, 2));        // Red

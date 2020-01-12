@@ -46,17 +46,24 @@ class DIGIKAM_EXPORT IccSettings : public QObject
 
 public:
 
-    /** Global container for ICC settings. All accessor methods are thread-safe.
+    /**
+     * Global container for ICC settings. All accessor methods are thread-safe.
      */
     static IccSettings* instance();
 
-    /// Returns the current ICC settings.
+    /**
+     * Returns the current ICC settings.
+     */
     ICCSettingsContainer settings();
 
-    /// Returns if color management is enabled.
+    /**
+     * Returns if color management is enabled.
+     */
     bool isEnabled() const;
 
-    /// Returns if color management for previews is enabled.
+    /**
+     * Returns if color management for previews is enabled.
+     */
     bool useManagedPreviews() const;
 
     /**
@@ -79,26 +86,38 @@ public:
      */
     void setSettings(const ICCSettingsContainer& settings);
 
-    /// Set single parts of the settings
+    /**
+     * Set single parts of the settings
+     */
     void setUseManagedView(bool useManagedView);
     void setUseManagedPreviews(bool useManagedPreviews);
     void setIccPath(const QString& path);
 
     QList<IccProfile> allProfiles();
 
-    /// Get available profiles suitable as workspace profile
+    /**
+     * Get available profiles suitable as workspace profile
+     */
     QList<IccProfile> workspaceProfiles();
 
-    /// Get available profiles suitable as monitor/display profile
+    /**
+     * Get available profiles suitable as monitor/display profile
+     */
     QList<IccProfile> displayProfiles();
 
-    /// Get available profiles suitable as input profile
+    /**
+     * Get available profiles suitable as input profile
+     */
     QList<IccProfile> inputProfiles();
 
-    /// Get available profiles suitable as proof/output profiles
+    /**
+     * Get available profiles suitable as proof/output profiles
+     */
     QList<IccProfile> outputProfiles();
 
-    /// Returns a list of profiles with the given description()
+    /**
+     * Returns a list of profiles with the given description()
+     */
     QList<IccProfile> profilesForDescription(const QString& description);
 
     /**
