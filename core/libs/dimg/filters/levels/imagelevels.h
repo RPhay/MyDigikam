@@ -50,8 +50,9 @@ public:
     bool   isSixteenBits();
     void   reset();
 
-    // Methods for to manipulate the levels data.
-
+    /**
+     * Methods to manipulate the levels data.
+     */
     void   levelsChannelReset(int channel);
     void   levelsAuto(ImageHistogram* const hist);
     void   levelsChannelAuto(ImageHistogram* const hist, int channel);
@@ -64,8 +65,9 @@ public:
     void   levelsLutSetup(int nchannels);
     void   levelsLutProcess(uchar* const srcPR, uchar* const destPR, int w, int h);
 
-    // Methods for to set manually the levels values.
-
+    /**
+     * Methods to set manually the levels values.
+     */
     void   setLevelGammaValue(int channel, double val);
     void   setLevelLowInputValue(int channel, int val);
     void   setLevelHighInputValue(int channel, int val);
@@ -78,8 +80,9 @@ public:
     int    getLevelLowOutputValue(int channel);
     int    getLevelHighOutputValue(int channel);
 
-    // Methods for to save/load the levels values to/from a Gimp levels text file.
-
+    /**
+     * Methods to save/load the levels values to/from a Gimp levels text file.
+     */
     bool   saveLevelsToGimpLevelsFile(const QUrl& fileUrl);
     bool   loadLevelsFromGimpLevelsFile(const QUrl& fileUrl);
 

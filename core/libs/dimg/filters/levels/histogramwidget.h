@@ -51,9 +51,10 @@ class DIGIKAM_EXPORT HistogramWidget : public QWidget
 
 public:
 
-    /** Standard constructor. Needed to use updateData() methods after to create valid instance.
+    /**
+     * Standard constructor. Needed to use updateData() methods after to create valid instance.
      */
-    HistogramWidget(int w, int h,                              // Widget size.
+    HistogramWidget(int w, int h,                           // Widget size.
                     QWidget* const parent=nullptr,
                     bool selectMode=true,
                     bool showProgress=true,
@@ -61,17 +62,20 @@ public:
 
     ~HistogramWidget();
 
-    /** Stop current histogram computations.
+    /**
+     * Stop current histogram computations.
      */
     void stopHistogramComputation();
 
-    /** Update full image histogram data methods.
+    /**
+     * Update full image histogram data methods.
      */
     void updateData(const DImg& img,                        // full image data.
                     const DImg& sel=DImg(),                 // selection image data
                     bool showProgress=true);
 
-    /** Update image selection histogram data methods.
+    /**
+     * Update image selection histogram data methods.
      */
     void updateSelectionData(const DImg& sel, bool showProgress=true);
 
@@ -83,18 +87,18 @@ public:
 
     void reset();
 
-    HistogramScale scaleType()   const;
-    ChannelType    channelType() const;
+    HistogramScale scaleType()              const;
+    ChannelType    channelType()            const;
 
-    int  animationState() const;
+    int  animationState()                   const;
     void setAnimationState(int animationState);
 
     void setRenderingType(HistogramRenderingType type);
-    HistogramRenderingType renderingType() const;
+    HistogramRenderingType renderingType()  const;
 
     /** Currently rendered histogram, depending on current rendering type.
      */
-    ImageHistogram* currentHistogram() const;
+    ImageHistogram* currentHistogram()      const;
 
 Q_SIGNALS:
 
@@ -117,10 +121,10 @@ protected Q_SLOTS:
 
 protected:
 
-    void paintEvent(QPaintEvent*) override;
-    void mousePressEvent(QMouseEvent*) override;
-    void mouseReleaseEvent(QMouseEvent*) override;
-    void mouseMoveEvent(QMouseEvent*) override;
+    void paintEvent(QPaintEvent*)               override;
+    void mousePressEvent(QMouseEvent*)          override;
+    void mouseReleaseEvent(QMouseEvent*)        override;
+    void mouseMoveEvent(QMouseEvent*)           override;
 
 private:
 

@@ -220,7 +220,7 @@ public:
 
         int yPrev = 0;
 
-        for (int x = 1; x < (wWidth - 1); ++x)
+        for (int x = 1 ; x < (wWidth - 1) ; ++x)
         {
             // calculate histogram segments included in this single pixel line
             int startSegment = 0;
@@ -310,11 +310,11 @@ public:
         curveGreen.moveTo(1, wHeight - 1);
         curveBlue.moveTo(1, wHeight - 1);
 
-        int yrPrev = 0;
-        int ygPrev = 0;
-        int ybPrev = 0;
+        int yrPrev  = 0;
+        int ygPrev  = 0;
+        int ybPrev  = 0;
 
-        for (int x = 1; x < (wWidth - 1); ++x)
+        for (int x = 1 ; x < (wWidth - 1) ; ++x)
         {
             // calculate histogram segments included in this single pixel line
             int startSegment = 0;
@@ -372,6 +372,7 @@ public:
         p2.drawPath(curveGreen);
 
         // Highlight
+
         if (highlightSelection)
         {
             p2.setClipRect((int)(selectionMin * wWidth), 0,
@@ -400,7 +401,8 @@ public:
     {
         for (int x = 0; x < bufferPixmap.width(); ++x)
         {
-            if ((x == bufferPixmap.width() / 4) || (x == bufferPixmap.width() / 2) ||
+            if ((x == bufferPixmap.width() / 4) ||
+                (x == bufferPixmap.width() / 2) ||
                 (x == 3 * bufferPixmap.width() / 4))
             {
                 p1.setPen(QPen(palette.color(QPalette::Active, QPalette::Base), 1, Qt::SolidLine));
@@ -412,7 +414,7 @@ public:
     void renderColorGuide(QPixmap& bufferPixmap, QPainter& p1)
     {
 
-        if (histogram->isSixteenBit() && !colorGuide.sixteenBit())
+        if      (histogram->isSixteenBit() && !colorGuide.sixteenBit())
         {
             colorGuide.convertToSixteenBit();
         }
@@ -516,6 +518,7 @@ public:
     QPalette          palette;
 
     // rendering settings
+
     HistogramScale    scale;
     ChannelType       channelType;
     bool              highlightSelection;
@@ -559,13 +562,13 @@ void HistogramPainter::setHighlightSelection(bool highlightSelection)
 
 void HistogramPainter::setSelection(double selectionMin, double selectionMax)
 {
-    if (selectionMin < 0.0 || selectionMin > 1.0)
+    if ((selectionMin < 0.0) || (selectionMin > 1.0))
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "selectionMin out of range: " << selectionMin << ". Clamping value";
         selectionMin = qMax(0.0, qMin(1.0, selectionMin));
     }
 
-    if (selectionMax < 0.0 || selectionMax > 1.0)
+    if ((selectionMax < 0.0) || (selectionMax > 1.0))
     {
         qCWarning(DIGIKAM_DIMG_LOG) << "selectionMax out of range: " << selectionMax << ". Clamping value";
         selectionMax = qMax(0.0, qMin(1.0, selectionMax));
@@ -616,9 +619,11 @@ void HistogramPainter::render(QPixmap& bufferPixmap)
     }
 
     // clear background
+
     d->painter.fillRect(0, 0, wWidth, wHeight, d->palette.color(QPalette::Active, QPalette::Window));
 
     // decide how to render the line
+
     if (d->channelType == ColorChannels)
     {
         d->renderMultiColorLine(bufferPixmap, d->painter);
@@ -639,6 +644,7 @@ void HistogramPainter::render(QPixmap& bufferPixmap)
     }
 
     // draw a final border around everything
+
     d->painter.setPen(QPen(d->palette.color(QPalette::Active, QPalette::WindowText), 1, Qt::SolidLine));
     d->painter.drawRect(0, 0, wWidth - 1, wHeight - 1);
     d->painter.end();

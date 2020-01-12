@@ -47,7 +47,7 @@ class Q_DECL_HIDDEN ImageHistogram::Private
 
 public:
 
-    // NOTE : Using a structure instead a class is more fast
+    // NOTE : Using a structure instead a class is more faster
     // (access with memset() and bytes manipulation).
 
     struct double_packet
@@ -62,21 +62,27 @@ public:
 public:
 
     explicit Private()
+      : histogram(nullptr),
+        valid(false),
+        histoSegments(0)
     {
-        histogram     = nullptr;
-        histoSegments = 0;
-        valid         = false;
     }
 
 public:
-    /** The histogram data.*/
+    /**
+     * The histogram data.
+     */
     struct double_packet* histogram;
     bool                  valid;
 
-    /** Image information.*/
+    /**
+     * Image information.
+     */
     DImg                  img;
 
-    /** Numbers of histogram segments depending of image bytes depth*/
+    /**
+     * Numbers of histogram segments depending of image bytes depth
+     */
     int                   histoSegments;
 };
 
@@ -86,7 +92,9 @@ ImageHistogram::ImageHistogram(const DImg& img, QObject* const parent)
 {
     // A simple copy of reference must be enough instead a deep copy. See this BKO comment for details:
     // https://bugs.kde.org/show_bug.cgi?id=274555#c40
-    //d->img           = img.copy();
+/*
+    d->img           = img.copy();
+*/
     d->img           = img;
     d->histoSegments = d->img.sixteenBit() ? NUM_SEGMENTS_16BIT : NUM_SEGMENTS_8BIT;
 }
@@ -122,6 +130,7 @@ void ImageHistogram::calculateInThread()
 {
     // this is done in an extra method and not in the constructor
     // to allow to connect to the signals, which is only possible after construction
+
     if (!d->img.isNull())
     {
         emit calculationAboutToStart();
@@ -159,6 +168,7 @@ void ImageHistogram::run()
 void ImageHistogram::calculate()
 {
     // TODO this gets even called with null img
+
     if (d->img.isNull())
     {
         emit calculationFinished(false);
@@ -166,6 +176,7 @@ void ImageHistogram::calculate()
     }
 
     // check if the calculation has been done before
+
     if (d->histogram && d->valid)
     {
         emit calculationFinished(true);
@@ -197,6 +208,7 @@ void ImageHistogram::calculate()
         unsigned short* const data = reinterpret_cast<unsigned short*>(d->img.bits());
 
         // count here instead of inside the loop, because d is not optimized because it's not defined in the header
+
         const uint count = d->img.width() * d->img.height() * 4;
 
         for (i = 0 ; runningFlag() && (i < count) ; i += 4)
@@ -229,6 +241,7 @@ void ImageHistogram::calculate()
         const uchar* const data = d->img.bits();
 
         // count here instead of inside the loop, because d is not optimized because it's not defined in the header
+
         const uint count = d->img.width() * d->img.height() * 4;
 
         for (i = 0 ; runningFlag() && (i < count) ; i += 4)
@@ -268,8 +281,8 @@ double ImageHistogram::getCount(int channel, int start, int end) const
     int    i;
     double count = 0.0;
 
-    if (!d->histogram || start < 0 ||
-        end > d->histoSegments - 1 || start > end)
+    if (!d->histogram || (start < 0) ||
+        (end > d->histoSegments - 1) || (start > end))
     {
         return 0.0;
     }
@@ -341,8 +354,8 @@ double ImageHistogram::getMean(int channel, int start, int end) const
     double mean = 0.0;
     double count;
 
-    if (!d->histogram || start < 0 ||
-        end > d->histoSegments - 1 || start > end)
+    if (!d->histogram || (start < 0) ||
+        (end > d->histoSegments - 1) || (start > end))
     {
         return 0.0;
     }
@@ -414,8 +427,8 @@ int ImageHistogram::getMedian(int channel, int start, int end) const
     double sum = 0.0;
     double count;
 
-    if (!d->histogram || start < 0 ||
-        end > d->histoSegments - 1 || start > end)
+    if (!d->histogram || (start < 0) ||
+        (end > d->histoSegments - 1) || (start > end))
     {
         return 0;
     }
@@ -508,8 +521,8 @@ double ImageHistogram::getStdDev(int channel, int start, int end) const
     double count;
     double mean;
 
-    if (!d->histogram || start < 0 ||
-        end > d->histoSegments - 1 || start > end)
+    if (!d->histogram || (start < 0) ||
+        (end > d->histoSegments - 1) || (start > end))
     {
         return 0.0;
     }
@@ -580,7 +593,7 @@ double ImageHistogram::getValue(int channel, int bin) const
 {
     double value;
 
-    if (!d->histogram || bin < 0 || bin > d->histoSegments - 1)
+    if (!d->histogram || (bin < 0) || (bin > d->histoSegments - 1))
     {
         return 0.0;
     }
@@ -619,8 +632,8 @@ double ImageHistogram::getMaximum(int channel, int start, int end) const
     double max = 0.0;
     int    x;
 
-    if (!d->histogram || start < 0 ||
-        end > d->histoSegments - 1 || start > end)
+    if (!d->histogram || (start < 0) ||
+        (end > d->histoSegments - 1) || (start > end))
     {
         return 0.0;
     }

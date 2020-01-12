@@ -59,14 +59,14 @@ class Q_DECL_HIDDEN HistogramBox::Private
 public:
 
     explicit Private()
+      : scaleBG(nullptr),
+        linHistoButton(nullptr),
+        logHistoButton(nullptr),
+        histoBox(nullptr),
+        channelCB(nullptr),
+        hGradient(nullptr),
+        histogramWidget(nullptr)
     {
-        scaleBG         = nullptr;
-        linHistoButton  = nullptr;
-        logHistoButton  = nullptr;
-        channelCB       = nullptr;
-        hGradient       = nullptr;
-        histogramWidget = nullptr;
-        histoBox        = nullptr;
     }
 
     QButtonGroup*        scaleBG;
@@ -187,6 +187,7 @@ void HistogramBox::setStatisticsVisible(bool b)
 ChannelType HistogramBox::channel() const
 {
     int index = d->channelCB->currentIndex();
+
     return (ChannelType)(d->channelCB->itemData(index).toInt());
 }
 

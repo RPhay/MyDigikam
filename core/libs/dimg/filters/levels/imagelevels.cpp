@@ -21,8 +21,9 @@
  *
  * ============================================================ */
 
-/*  Map RGB to intensity  */
-
+/**
+ * Map RGB to intensity
+ */
 #define LEVELS_RGB_INTENSITY_RED    0.30
 #define LEVELS_RGB_INTENSITY_GREEN  0.59
 #define LEVELS_RGB_INTENSITY_BLUE   0.11
@@ -86,17 +87,17 @@ public:
 public:
 
     explicit Private()
+      : levels(nullptr),
+        lut(nullptr),
+        sixteenBit(false),
+        dirty(false)
     {
-        levels     = nullptr;
-        lut        = nullptr;
-        dirty      = false;
-        sixteenBit = false;
     }
 
-    // Levels data.
+    /// Levels data.
     struct _Levels* levels;
 
-    // Lut data.
+    /// Lut data.
     struct _Lut*    lut;
 
     bool            sixteenBit;
@@ -407,11 +408,11 @@ float ImageLevels::levelsLutFunc(int n_channels, int channel, float value)
     // For bw images this runs through the loop with j = 0 the first and
     // only time.
 
-    for (; j >= 0 ; j -= (channel + 1))
+    for ( ; j >= 0 ; j -= (channel + 1))
     {
         // Don't apply the overall curve to the alpha channel.
 
-        if (j == 0 && (n_channels == 2 || n_channels == 4) && channel == n_channels - 1)
+        if ((j == 0) && ((n_channels == 2) || (n_channels == 4)) && (channel == n_channels - 1))
         {
             return inten;
         }
@@ -558,8 +559,8 @@ void ImageLevels::levelsLutProcess(uchar* const srcPR, uchar* const destPR, int 
             dst[2] = red;
             dst[3] = alpha;
 
-            ptr += 4;
-            dst += 4;
+            ptr   += 4;
+            dst   += 4;
         }
     }
     else               // 16 bits image.
@@ -600,15 +601,15 @@ void ImageLevels::levelsLutProcess(uchar* const srcPR, uchar* const destPR, int 
             dst[2] = red;
             dst[3] = alpha;
 
-            ptr += 4;
-            dst += 4;
+            ptr   += 4;
+            dst   += 4;
         }
     }
 }
 
 void ImageLevels::setLevelGammaValue(int channel, double val)
 {
-    if (d->levels && channel >= 0 && channel < 5)
+    if (d->levels && (channel >= 0) && (channel < 5))
     {
         d->levels->gamma[channel] = val;
         d->dirty = true;
@@ -617,7 +618,7 @@ void ImageLevels::setLevelGammaValue(int channel, double val)
 
 void ImageLevels::setLevelLowInputValue(int channel, int val)
 {
-    if (d->levels && channel >= 0 && channel < 5)
+    if (d->levels && (channel >= 0) && (channel < 5))
     {
         d->levels->low_input[channel] = val;
         d->dirty = true;
@@ -626,7 +627,7 @@ void ImageLevels::setLevelLowInputValue(int channel, int val)
 
 void ImageLevels::setLevelHighInputValue(int channel, int val)
 {
-    if (d->levels && channel >= 0 && channel < 5)
+    if (d->levels && (channel >= 0) && (channel < 5))
     {
         d->levels->high_input[channel] = val;
         d->dirty = true;
@@ -635,7 +636,7 @@ void ImageLevels::setLevelHighInputValue(int channel, int val)
 
 void ImageLevels::setLevelLowOutputValue(int channel, int val)
 {
-    if (d->levels && channel >= 0 && channel < 5)
+    if (d->levels && (channel >= 0) && (channel < 5))
     {
         d->levels->low_output[channel] = val;
         d->dirty = true;
@@ -644,7 +645,7 @@ void ImageLevels::setLevelLowOutputValue(int channel, int val)
 
 void ImageLevels::setLevelHighOutputValue(int channel, int val)
 {
-    if (d->levels && channel >= 0 && channel < 5)
+    if (d->levels && (channel >= 0) && (channel < 5))
     {
         d->levels->high_output[channel] = val;
         d->dirty = true;
@@ -653,7 +654,7 @@ void ImageLevels::setLevelHighOutputValue(int channel, int val)
 
 double ImageLevels::getLevelGammaValue(int channel)
 {
-    if (d->levels && channel >= 0 && channel < 5)
+    if (d->levels && (channel >= 0) && (channel < 5))
     {
         return (d->levels->gamma[channel]);
     }
@@ -663,7 +664,7 @@ double ImageLevels::getLevelGammaValue(int channel)
 
 int ImageLevels::getLevelLowInputValue(int channel)
 {
-    if (d->levels && channel >= 0 && channel < 5)
+    if (d->levels && (channel >= 0) && (channel < 5))
     {
         return (d->levels->low_input[channel]);
     }
@@ -673,7 +674,7 @@ int ImageLevels::getLevelLowInputValue(int channel)
 
 int ImageLevels::getLevelHighInputValue(int channel)
 {
-    if (d->levels && channel >= 0 && channel < 5)
+    if (d->levels && (channel >= 0) && (channel < 5))
     {
         return (d->levels->high_input[channel]);
     }
@@ -683,7 +684,7 @@ int ImageLevels::getLevelHighInputValue(int channel)
 
 int ImageLevels::getLevelLowOutputValue(int channel)
 {
-    if (d->levels && channel >= 0 && channel < 5)
+    if (d->levels && (channel >= 0) && (channel < 5))
     {
         return (d->levels->low_output[channel]);
     }
@@ -693,7 +694,7 @@ int ImageLevels::getLevelLowOutputValue(int channel)
 
 int ImageLevels::getLevelHighOutputValue(int channel)
 {
-    if (d->levels && channel >= 0 && channel < 5)
+    if (d->levels && (channel >= 0) && (channel < 5))
     {
         return (d->levels->high_output[channel]);
     }
@@ -737,6 +738,7 @@ bool ImageLevels::loadLevelsFromGimpLevelsFile(const QUrl& fileUrl)
     for (i = 0 ; i < 5 ; ++i)
     {
         // FIXME: scanf without field width limits can crash with huge input data
+
         fields = fscanf(file, "%d %d %d %d ",
                         &low_input[i],
                         &high_input[i],

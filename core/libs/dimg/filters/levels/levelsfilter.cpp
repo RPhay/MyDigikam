@@ -101,6 +101,7 @@ void LevelsFilter::filterImage()
     postProgress(70);
 
     // Process all channels Levels
+
     levels.levelsLutSetup(AlphaChannel);
     postProgress(80);
 

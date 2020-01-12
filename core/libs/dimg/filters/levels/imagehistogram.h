@@ -59,13 +59,13 @@ public:
      * Stop threaded computation.
      */
     void stopCalculation();
-    bool isCalculating()  const;
+    bool isCalculating()                               const;
 
     /**
      * Methods to access the histogram data.
      */
-    bool   isSixteenBit() const;
-    bool   isValid()      const;
+    bool   isSixteenBit()                              const;
+    bool   isValid()                                   const;
 
     double getCount(int channel, int start, int end)   const;
     double getMean(int channel, int start, int end)    const;
@@ -81,9 +81,15 @@ public:
 Q_SIGNALS:
 
     void calculationFinished(bool success);
-    /// when calculation in thread is initiated, from other thread
+
+    /**
+     * when calculation in thread is initiated, from other thread
+     */
     void calculationAboutToStart();
-    /// emitted from calculation thread
+
+    /**
+     * emitted from calculation thread
+     */
     void calculationStarted();
 
 protected:

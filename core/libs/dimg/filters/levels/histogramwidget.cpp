@@ -100,21 +100,21 @@ public:
 public:
 
     bool                             sixteenBits;
-    bool                             guideVisible;           // Display color guide.
-    bool                             statisticsVisible;      // Display tooltip histogram statistics.
+    bool                             guideVisible;           ///< Display color guide.
+    bool                             statisticsVisible;      ///< Display tooltip histogram statistics.
     bool                             inSelected;
-    bool                             selectMode;             // If true, a part of the histogram can be selected !
-    bool                             showProgress;           // If true, a message will be displayed during histogram computation,
-                                                             // else nothing (limit flicker effect in widget especially for small
-                                                             // image/computation time).
-    int                              renderingType;          // Using full image or image selection for histogram rendering.
+    bool                             selectMode;             ///< If true, a part of the histogram can be selected !
+    bool                             showProgress;           ///< If true, a message will be displayed during histogram computation,
+                                                             ///< else nothing (limit flicker effect in widget especially for small
+                                                             ///< image/computation time).
+    int                              renderingType;          ///< Using full image or image selection for histogram rendering.
     int                              range;
-    HistogramState                   state;                  // Clear drawing zone with message.
+    HistogramState                   state;                  ///< Clear drawing zone with message.
 
-    ChannelType                      channelType;            // Channel type to draw
-    HistogramScale                   scaleType;              // Scale to use for drawing
-    ImageHistogram*                  imageHistogram;         // Full image
-    ImageHistogram*                  selectionHistogram;     // Image selection
+    ChannelType                      channelType;            ///< Channel type to draw
+    HistogramScale                   scaleType;              ///< Scale to use for drawing
+    ImageHistogram*                  imageHistogram;         ///< Full image
+    ImageHistogram*                  selectionHistogram;     ///< Image selection
 
     // Current selection information.
     double                           xmin;
@@ -180,10 +180,12 @@ void HistogramWidget::updateData(const DImg& img, const DImg& sel, bool showProg
     d->sixteenBits  = !img.isNull() ? img.sixteenBit() : sel.sixteenBit();
 
     // We are deleting the histogram data, so we must not use it to draw any more.
+
     d->state = HistogramWidget::Private::HistogramNone;
 
     // Do not using ImageHistogram::getHistogramSegments()
     // method here because histogram hasn't yet been computed.
+
     d->range = d->sixteenBits ? MAX_SEGMENT_16BIT : MAX_SEGMENT_8BIT;
 
     emit signalMaximumValueChanged(d->range);
@@ -191,11 +193,13 @@ void HistogramWidget::updateData(const DImg& img, const DImg& sel, bool showProg
     if (!img.isNull() || sel.isNull())
     {
         // do not delete main histogram if only the selection is reset
+
         delete d->imageHistogram;
         d->imageHistogram = nullptr;
     }
 
     // Calc new histogram data
+
     if (!img.isNull())
     {
         d->imageHistogram = new ImageHistogram(img);
@@ -263,9 +267,11 @@ void HistogramWidget::setRenderingType(HistogramRenderingType type)
         }
 
         // already calculated?
+
         if (!nowUsedHistogram->isValid())
         {
             // still computing, or need to start it?
+
             if (nowUsedHistogram->isCalculating())
             {
                 setState(HistogramWidget::Private::HistogramStarted);
@@ -289,7 +295,7 @@ HistogramRenderingType HistogramWidget::renderingType() const
 
 ImageHistogram* HistogramWidget::currentHistogram() const
 {
-    if (d->renderingType == ImageSelectionHistogram && d->selectionHistogram)
+    if ((d->renderingType == ImageSelectionHistogram) && d->selectionHistogram)
     {
         return d->selectionHistogram;
     }
@@ -364,6 +370,7 @@ void HistogramWidget::setState(int state)
             emit signalHistogramComputationFailed();
 
             // Remove old histogram data from memory.
+
             delete d->imageHistogram;
             d->imageHistogram     = nullptr;
             delete d->selectionHistogram;
@@ -379,6 +386,7 @@ void HistogramWidget::setState(int state)
 void HistogramWidget::slotCalculationAboutToStart()
 {
     // only react to the histogram that the user is currently waiting for
+
     if (QObject::sender() != currentHistogram())
     {
         return;
@@ -451,10 +459,11 @@ void HistogramWidget::paintEvent(QPaintEvent*)
     // Widget is disabled, not initialized,
     // or loading, but no message shall be drawn:
     // Drawing grayed frame.
-    if (!isEnabled()                                                                 ||
-        d->state == HistogramWidget::Private::HistogramNone                          ||
-        (!d->showProgress && (d->state == HistogramWidget::Private::HistogramStarted ||
-                              d->state == HistogramWidget::Private::HistogramDataLoading))
+
+    if (!isEnabled()                                                                            ||
+        (d->state == HistogramWidget::Private::HistogramNone)                                   ||
+        (!d->showProgress && ((d->state == HistogramWidget::Private::HistogramStarted)          ||
+                              (d->state == HistogramWidget::Private::HistogramDataLoading)))
        )
     {
         QPainter p1(this);
@@ -472,8 +481,8 @@ void HistogramWidget::paintEvent(QPaintEvent*)
         return;
     }
     else if (d->showProgress &&
-             (d->state == HistogramWidget::Private::HistogramStarted ||
-              d->state == HistogramWidget::Private::HistogramDataLoading)
+             ((d->state == HistogramWidget::Private::HistogramStarted)      ||
+              (d->state == HistogramWidget::Private::HistogramDataLoading))
             )
     {
         // Image data is loading or histogram is being computed, we draw a message.
@@ -503,11 +512,13 @@ void HistogramWidget::paintEvent(QPaintEvent*)
         }
 
         p1.end();
+
         return;
     }
     else if (d->state == HistogramWidget::Private::HistogramFailed)
     {
         // Histogram computation failed, we draw a message.
+
         QPainter p1(this);
         p1.fillRect(0, 0, width(), height(), palette().color(QPalette::Active, QPalette::Window));
         p1.setPen(QPen(palette().color(QPalette::Active, QPalette::WindowText), 1, Qt::SolidLine));
@@ -521,9 +532,10 @@ void HistogramWidget::paintEvent(QPaintEvent*)
     }
 
     // render histogram in normal case
+
     ImageHistogram* histogram = nullptr;
 
-    if (d->renderingType == ImageSelectionHistogram && d->selectionHistogram)
+    if ((d->renderingType == ImageSelectionHistogram) && d->selectionHistogram)
     {
         histogram = d->selectionHistogram;
     }
@@ -553,17 +565,20 @@ void HistogramWidget::paintEvent(QPaintEvent*)
     }
 
     // A QPixmap is used to enable the double buffering.
+
     QPixmap bufferPixmap(size());
 
     d->histogramPainter->initFrom(this);
     d->histogramPainter->render(bufferPixmap);
 
     // render the pixmap on the widget
+
     QPainter p2(this);
     p2.drawPixmap(0, 0, bufferPixmap);
     p2.end();
 
     // render statistics if needed
+
     if (d->statisticsVisible)
     {
         DToolTipStyleSheet cnt;
@@ -602,7 +617,7 @@ void HistogramWidget::paintEvent(QPaintEvent*)
 
 void HistogramWidget::mousePressEvent(QMouseEvent* e)
 {
-    if (d->selectMode == true && d->state == HistogramWidget::Private::HistogramCompleted)
+    if ((d->selectMode == true) && (d->state == HistogramWidget::Private::HistogramCompleted))
     {
         if (!d->inSelected)
         {
@@ -619,7 +634,7 @@ void HistogramWidget::mousePressEvent(QMouseEvent* e)
 
 void HistogramWidget::mouseReleaseEvent(QMouseEvent*)
 {
-    if (d->selectMode == true  && d->state == HistogramWidget::Private::HistogramCompleted)
+    if ((d->selectMode == true) && (d->state == HistogramWidget::Private::HistogramCompleted))
     {
         d->inSelected = false;
 
@@ -636,7 +651,7 @@ void HistogramWidget::mouseReleaseEvent(QMouseEvent*)
 
 void HistogramWidget::mouseMoveEvent(QMouseEvent* e)
 {
-    if (d->selectMode == true && d->state == HistogramWidget::Private::HistogramCompleted)
+    if ((d->selectMode == true) && (d->state == HistogramWidget::Private::HistogramCompleted))
     {
         setCursor(Qt::CrossCursor);
 
@@ -668,16 +683,16 @@ void HistogramWidget::notifyValuesChanged()
 
 void HistogramWidget::slotMinValueChanged(int min)
 {
-    if (d->selectMode == true && d->state == HistogramWidget::Private::HistogramCompleted)
+    if ((d->selectMode == true) && (d->state == HistogramWidget::Private::HistogramCompleted))
     {
-        if (min == 0 && d->xmax == 1.0)
+        if ((min == 0) && (d->xmax == 1.0))
         {
             // everything is selected means no selection
             d->xmin = 0.0;
             d->xmax = 0.0;
         }
 
-        if (min >= 0 && min < d->range)
+        if ((min >= 0) && (min < d->range))
         {
             d->xmin = ((double)min) / d->range;
         }
@@ -688,15 +703,15 @@ void HistogramWidget::slotMinValueChanged(int min)
 
 void HistogramWidget::slotMaxValueChanged(int max)
 {
-    if (d->selectMode == true && d->state == HistogramWidget::Private::HistogramCompleted)
+    if ((d->selectMode == true) && (d->state == HistogramWidget::Private::HistogramCompleted))
     {
-        if (d->xmin == 0.0 && max == d->range)
+        if      ((d->xmin == 0.0) && (max == d->range))
         {
             // everything is selected means no selection
             d->xmin = 0.0;
             d->xmax = 0.0;
         }
-        else if (max > 0 && max <= d->range)
+        else if ((max > 0) && (max <= d->range))
         {
             d->xmax = ((double)max) / d->range;
         }
