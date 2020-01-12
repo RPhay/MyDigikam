@@ -378,7 +378,7 @@ void ColorFXSettings::findLuts()
 
 QString ColorFXSettings::translateLuts(const QString& name) const
 {
-    if (name.toLower() == QLatin1String("bleach"))
+    if      (name.toLower() == QLatin1String("bleach"))
     {
         return i18n("Bleach");
     }

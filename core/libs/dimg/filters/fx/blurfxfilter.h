@@ -45,39 +45,6 @@ class DIGIKAM_EXPORT BlurFXFilter : public DImgThreadedFilter
 
 public:
 
-    explicit BlurFXFilter(QObject* const parent = nullptr);
-    explicit BlurFXFilter(DImg* const orgImage, QObject* const parent=nullptr, int blurFXType=ZoomBlur,
-                          int distance=100, int level=45);
-    ~BlurFXFilter();
-
-    static QString          FilterIdentifier()
-    {
-        return QLatin1String("digikam:BlurFXFilter");
-    }
-
-    static QString          DisplayableName();
-
-    static QList<int>       SupportedVersions()
-    {
-        return QList<int>() << 1;
-    }
-
-    static int              CurrentVersion()
-    {
-        return 1;
-    }
-
-    virtual QString         filterIdentifier() const override
-    {
-        return FilterIdentifier();
-    }
-
-    virtual FilterAction    filterAction() override;
-
-    void                    readParameters(const FilterAction& action) override;
-
-public:
-
     enum BlurFXFilterTypes
     {
         ZoomBlur = 0,
@@ -97,32 +64,32 @@ private:
     struct Args
     {
         explicit Args()
+          : start(0),
+            stop(0),
+            h(0),
+            w(0),
+            orgImage(nullptr),
+            destImage(nullptr),
+            X(0),
+            Y(0),
+            Distance(0),
+            nCount(0),
+            lpXArray(nullptr),
+            lpYArray(nullptr),
+            BlendRadius(0),
+            bInversed(0),
+            layer1(nullptr),
+            layer2(nullptr),
+            layer3(nullptr),
+            layer4(nullptr),
+            SizeW(0),
+            SizeH(0),
+            StrengthRange(0),
+            Radius(0),
+            Kernel(nullptr),
+            arrMult(nullptr),
+            pBlur(nullptr)
         {
-            start           = 0;
-            stop            = 0;
-            h               = 0;
-            w               = 0;
-            orgImage        = nullptr;
-            destImage       = nullptr;
-            X               = 0;
-            Y               = 0;
-            Distance        = 0;
-            nCount          = 0;
-            lpXArray        = nullptr;
-            lpYArray        = nullptr;
-            BlendRadius     = 0;
-            bInversed       = 0;
-            layer1          = nullptr;
-            layer2          = nullptr;
-            layer3          = nullptr;
-            layer4          = nullptr;
-            SizeW           = 0;
-            SizeH           = 0;
-            StrengthRange   = 0;
-            Radius          = 0;
-            Kernel          = nullptr;
-            arrMult         = nullptr;
-            pBlur           = nullptr;
         }
 
         uint   start;
@@ -157,9 +124,42 @@ private:
         uchar* pBlur;
     };
 
+public:
+
+    explicit BlurFXFilter(QObject* const parent = nullptr);
+    explicit BlurFXFilter(DImg* const orgImage, QObject* const parent=nullptr, int blurFXType=ZoomBlur,
+                          int distance=100, int level=45);
+    ~BlurFXFilter();
+
+    static QString          FilterIdentifier()
+    {
+        return QLatin1String("digikam:BlurFXFilter");
+    }
+
+    static QString          DisplayableName();
+
+    static QList<int>       SupportedVersions()
+    {
+        return QList<int>() << 1;
+    }
+
+    static int              CurrentVersion()
+    {
+        return 1;
+    }
+
+    virtual QString         filterIdentifier()                          const override
+    {
+        return FilterIdentifier();
+    }
+
+    virtual FilterAction    filterAction()                                    override;
+
+    void                    readParameters(const FilterAction& action)        override;
+
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
 
     // Backported from ImageProcessing version 1
     void softenerBlur(DImg* const orgImage, DImg* const destImage);
@@ -256,6 +256,7 @@ private:
     {
         bool bIsWOk = ((X < 0) ? false : (X >= Width ) ? false : true);
         bool bIsHOk = ((Y < 0) ? false : (Y >= Height) ? false : true);
+
         return (bIsWOk && bIsHOk);
     };
 
@@ -268,6 +269,7 @@ private:
     {
         X = (X < 0) ?  0  :  ((X >= Width ) ? (Width  - 1) : X);
         Y = (Y < 0) ?  0  :  ((Y >= Height) ? (Height - 1) : Y);
+
         return GetOffset(Width, X, Y, bytesDepth);
     };
 
@@ -275,11 +277,11 @@ private:
                                        int nR, int nG, int nB,
                                        int Range)
     {
-        if ((nR >= cR - Range) && (nR <= cR + Range))
+        if ((nR >= (cR - Range)) && (nR <= (cR + Range)))
         {
-            if ((nG >= cG - Range) && (nG <= cG + Range))
+            if ((nG >= (cG - Range)) && (nG <= (cG + Range)))
             {
-                if ((nB >= cB - Range) && (nB <= cB + Range))
+                if ((nB >= (cB - Range)) && (nB <= (cB + Range)))
                 {
                     return true;
                 }

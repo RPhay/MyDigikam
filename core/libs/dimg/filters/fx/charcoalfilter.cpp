@@ -57,10 +57,10 @@ class Q_DECL_HIDDEN CharcoalFilter::Private
 public:
 
     explicit Private()
+      : pencil(5.0),
+        smooth(10.0),
+        globalProgress(0)
     {
-        globalProgress = 0;
-        pencil         = 5.0;
-        smooth         = 10.0;
     }
 
     double pencil;

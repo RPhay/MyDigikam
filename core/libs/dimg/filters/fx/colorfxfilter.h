@@ -45,12 +45,12 @@ class DIGIKAM_EXPORT ColorFXContainer
 public:
 
     explicit ColorFXContainer()
+      : colorFXType(0),            // ColorFXFilter::Solarize
+        level(0),
+        iterations(2),
+        intensity(100),
+        path(QString())
     {
-        colorFXType = 0; // ColorFXFilter::Solarize
-        level       = 0;
-        iterations  = 2;
-        intensity   = 100;
-        path        = QString();
     };
 
     ~ColorFXContainer()
@@ -107,18 +107,18 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
+    virtual FilterAction    filterAction()                                    override;
 
-    void                    readParameters(const FilterAction& action) override;
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
 
     void solarize(DImg* const orgImage, DImg* const destImage, int factor);
     void vivid(DImg* const orgImage, DImg* const destImage, int factor);

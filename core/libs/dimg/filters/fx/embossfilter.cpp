@@ -58,9 +58,9 @@ EmbossFilter::EmbossFilter(QObject* const parent)
 }
 
 EmbossFilter::EmbossFilter(DImg* const orgImage, QObject* const parent, int depth)
-    : DImgThreadedFilter(orgImage, parent, QLatin1String("Emboss"))
+    : DImgThreadedFilter(orgImage, parent, QLatin1String("Emboss")),
+      m_depth(depth)
 {
-    m_depth = depth;
     initFilter();
 }
 
@@ -74,8 +74,9 @@ QString EmbossFilter::DisplayableName()
     return QString::fromUtf8(I18N_NOOP("Emboss Effect"));
 }
 
-/** Function to apply the EmbossFilter effect
- *  This method have been ported from Pieter Z. Voloshyn algorithm code.
+/**
+ * Function to apply the EmbossFilter effect
+ * This method have been ported from Pieter Z. Voloshyn algorithm code.
  *
  * Theory           => This is an amazing effect. And the theory is very simple to
  *                     understand. You get the difference between the colors and
@@ -153,18 +154,21 @@ void EmbossFilter::filterImage()
         }
 
         foreach (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         progress = (int)(((double)h * 100.0) / m_orgImage.height());
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
     }
 }
 
-/** Function to limit the max and min values defined by the developer.
+/**
+ * Function to limit the max and min values defined by the developer.
  */
 int EmbossFilter::Lim_Max(int Now, int Up, int Max)
 {

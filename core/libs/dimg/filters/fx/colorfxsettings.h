@@ -47,10 +47,10 @@ public:
     explicit ColorFXSettings(QWidget* const parent, bool useGenericImg = true);
     ~ColorFXSettings();
 
-    ColorFXContainer defaultSettings() const;
+    ColorFXContainer defaultSettings()          const;
     void resetToDefault();
 
-    ColorFXContainer settings() const;
+    ColorFXContainer settings()                 const;
     void setSettings(const ColorFXContainer& settings);
 
     void readSettings(KConfigGroup& group);
@@ -65,7 +65,7 @@ Q_SIGNALS:
 private:
 
     void findLuts();
-    QString translateLuts(const QString& name) const;
+    QString translateLuts(const QString& name)  const;
 
 private Q_SLOTS:
 

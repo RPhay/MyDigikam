@@ -96,11 +96,12 @@ QString OilPaintFilter::DisplayableName()
     return QString::fromUtf8(I18N_NOOP("Oil Painter Effect"));
 }
 
-/** Function to apply the OilPaintFilter effect.
- *  This method have been ported from Pieter Z. Voloshyn algorithm code.
+/**
+ * Function to apply the OilPaintFilter effect.
+ * This method have been ported from Pieter Z. Voloshyn algorithm code.
  *
- *  Theory: Using MostFrequentColor function we take the main color in
- *          a matrix and simply write at the original position.
+ * Theory: Using MostFrequentColor function we take the main color in
+ *         a matrix and simply write at the original position.
  */
 void OilPaintFilter::oilPaintImageMultithreaded(uint start, uint stop)
 {
@@ -121,9 +122,9 @@ void OilPaintFilter::oilPaintImageMultithreaded(uint start, uint stop)
     uchar* dest    = m_destImage.bits();
     uchar* dptr    = nullptr;
 
-    for (uint h2 = start; runningFlag() && (h2 < stop); ++h2)
+    for (uint h2 = start ; runningFlag() && (h2 < stop) ; ++h2)
     {
-        for (uint w2 = 0; runningFlag() && (w2 < m_orgImage.width()); ++w2)
+        for (uint w2 = 0 ; runningFlag() && (w2 < m_orgImage.width()) ; ++w2)
         {
             mostFrequentColor = MostFrequentColor(m_orgImage, w2, h2, d->brushSize, d->smoothness,
                                                   intensityCount.data(), averageColorR.data(), averageColorG.data(), averageColorB.data());
@@ -133,7 +134,7 @@ void OilPaintFilter::oilPaintImageMultithreaded(uint start, uint stop)
 
         progress = (int)( ( (double)h2 * (100.0 / QThreadPool::globalInstance()->maxThreadCount()) ) / (stop-start));
 
-        if ((progress % 5 == 0) && (progress > oldProgress))
+        if (((progress % 5) == 0) && (progress > oldProgress))
         {
             d->lock.lock();
             oldProgress       = progress;
@@ -159,10 +160,13 @@ void OilPaintFilter::filterImage()
     }
 
     foreach (QFuture<void> t, tasks)
+    {
         t.waitForFinished();
+    }
 }
 
-/** Function to determine the most frequent color in a matrix
+/**
+ * Function to determine the most frequent color in a matrix
  *
  * Bits             => Bits array
  * Width            => Image width
@@ -195,9 +199,9 @@ DColor OilPaintFilter::MostFrequentColor(DImg& src, int X, int Y, int Radius, in
     // Erase the array
     memset(intensityCount, 0, (Intensity + 1) * sizeof(uchar));
 
-    for (w = X - Radius; w <= X + Radius; ++w)
+    for (w = X - Radius ; w <= X + Radius ; ++w)
     {
-        for (h = Y - Radius; h <= Y + Radius; ++h)
+        for (h = Y - Radius ; h <= Y + Radius ; ++h)
         {
             // This condition helps to identify when a point doesn't exist
 
@@ -256,7 +260,7 @@ DColor OilPaintFilter::MostFrequentColor(DImg& src, int X, int Y, int Radius, in
   */
 double OilPaintFilter::GetIntensity(uint Red, uint Green, uint Blue)
 {
-    return Red * 0.3 + Green * 0.59 + Blue * 0.11;
+    return (Red * 0.3 + Green * 0.59 + Blue * 0.11);
 }
 
 FilterAction OilPaintFilter::filterAction()

@@ -47,9 +47,9 @@ class Q_DECL_HIDDEN BlurFilter::Private
 public:
 
     explicit Private()
+      : radius(3),
+        globalProgress(0)
     {
-        globalProgress = 0;
-        radius         = 3;
     }
 
     int    radius;
@@ -229,7 +229,7 @@ void BlurFilter::blurMultithreaded(uint start, uint stop)
 
         progress = (int)(((double)y * (100.0 / QThreadPool::globalInstance()->maxThreadCount())) / (stop-start));
 
-        if ((progress % 5 == 0) && (progress > oldProgress))
+        if (((progress % 5) == 0) && (progress > oldProgress))
         {
             d->lock.lock();
             oldProgress        = progress;

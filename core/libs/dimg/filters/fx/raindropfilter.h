@@ -41,6 +41,34 @@ namespace Digikam
 class DIGIKAM_EXPORT RainDropFilter : public DImgThreadedFilter
 {
 
+private:
+
+    struct Args
+    {
+        explicit Args()
+            : start(0),
+              stop(0),
+              orgImage(nullptr),
+              destImage(nullptr),
+              MinDropSize(0),
+              MaxDropSize(0),
+              Coeff(0),
+              bLimitRange(false),
+              pStatusBits(nullptr)
+        {
+        }
+
+        uint   start;
+        uint   stop;
+        DImg*  orgImage;
+        DImg*  destImage;
+        int    MinDropSize;
+        int    MaxDropSize;
+        int    Coeff;
+        bool   bLimitRange;
+        uchar* pStatusBits;
+    };
+
 public:
 
     explicit RainDropFilter(QObject* const parent = nullptr);
@@ -69,33 +97,18 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
+    virtual FilterAction    filterAction()                                    override;
 
-    void                    readParameters(const FilterAction& action) override;
-
-private:
-
-    struct Args
-    {
-        uint   start;
-        uint   stop;
-        DImg*  orgImage;
-        DImg*  destImage;
-        int    MinDropSize;
-        int    MaxDropSize;
-        int    Coeff;
-        bool   bLimitRange;
-        uchar* pStatusBits;
-    };
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
 
     void rainDropsImage(DImg* const orgImage, DImg* const destImage, int MinDropSize, int MaxDropSize,
                         int Amount, int Coeff, bool bLimitRange, int progressMin, int progressMax);

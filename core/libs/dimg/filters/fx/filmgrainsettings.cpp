@@ -84,7 +84,8 @@ public:
         midtonesChromaRedInput(nullptr),
         highlightsChromaRedInput(nullptr),
         expanderBox(nullptr)
-    {}
+    {
+    }
 
     static const QString configGrainSizeEntry;
     static const QString configPhotoDistributionEntry;

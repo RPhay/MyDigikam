@@ -42,27 +42,24 @@ class DIGIKAM_EXPORT FilmGrainContainer
 public:
 
     FilmGrainContainer()
+      : grainSize(1),
+        photoDistribution(false),
+        addLuminanceNoise(true),
+        lumaIntensity(25),
+        lumaShadows(-100),
+        lumaMidtones(0),
+        lumaHighlights(-100),
+        addChrominanceBlueNoise(false),
+        chromaBlueIntensity(25),
+        chromaBlueShadows(-100),
+        chromaBlueMidtones(0),
+        chromaBlueHighlights(-100),
+        addChrominanceRedNoise(false),
+        chromaRedIntensity(25),
+        chromaRedShadows(-100),
+        chromaRedMidtones(0),
+        chromaRedHighlights(-100)
     {
-        grainSize               = 1;
-        photoDistribution       = false;
-
-        addLuminanceNoise       = true;
-        lumaIntensity           = 25;
-        lumaShadows             = -100;
-        lumaMidtones            = 0;
-        lumaHighlights          = -100;
-
-        addChrominanceBlueNoise = false;
-        chromaBlueIntensity     = 25;
-        chromaBlueShadows       = -100;
-        chromaBlueMidtones      = 0;
-        chromaBlueHighlights    = -100;
-
-        addChrominanceRedNoise  = false;
-        chromaRedIntensity      = 25;
-        chromaRedShadows        = -100;
-        chromaRedMidtones       = 0;
-        chromaRedHighlights     = -100;
     };
 
     ~FilmGrainContainer()
@@ -113,7 +110,6 @@ public:
                              const FilmGrainContainer& settings=FilmGrainContainer());
     ~FilmGrainFilter();
 
-    void                    readParameters(const FilterAction& action) override;
 
     static QString          FilterIdentifier()
     {
@@ -132,16 +128,18 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    void                    readParameters(const FilterAction& action)        override;
+
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
+    virtual FilterAction    filterAction()                                    override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
 
     void filmgrainMultithreaded(uint start, uint stop);
 

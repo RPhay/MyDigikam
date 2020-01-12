@@ -43,40 +43,6 @@ class DIGIKAM_EXPORT DistortionFXFilter : public DImgThreadedFilter
 
 public:
 
-    explicit DistortionFXFilter(QObject* const parent = nullptr);
-    explicit DistortionFXFilter(DImg* const orgImage, QObject* const parent=nullptr, int effectType=0,
-                                int level=0, int iteration=0, bool antialiasing=true);
-
-    ~DistortionFXFilter();
-
-    static QString          FilterIdentifier()
-    {
-        return QLatin1String("digikam:DistortionFXFilter");
-    }
-
-    static QString          DisplayableName();
-
-    static QList<int>       SupportedVersions()
-    {
-        return QList<int>() << 1;
-    }
-
-    static int              CurrentVersion()
-    {
-        return 1;
-    }
-
-    virtual QString         filterIdentifier() const override
-    {
-        return FilterIdentifier();
-    }
-
-    virtual FilterAction    filterAction() override;
-
-    void                    readParameters(const FilterAction& action) override;
-
-public:
-
     enum DistortionFXTypes
     {
         FishEye=0,
@@ -101,6 +67,34 @@ private:
 
     struct Args
     {
+        explicit Args()
+          : start(0),
+            stop(0),
+            h(0),
+            w(0),
+            orgImage(nullptr),
+            destImage(nullptr),
+            Coeff(0.0),
+            AntiAlias(false),
+            dist(0),
+            Horizontal(false),
+            Vertical(false),
+            Factor(0),
+            Amplitude(0),
+            Frequency(0),
+            Mode(false),
+            X(0),
+            Y(0),
+            Phase(0.0),
+            WavesType(false),
+            FillSides(false),
+            Type(false),
+            WSize(0),
+            HSize(0),
+            Random(0)
+        {
+        }
+
         int    start;
         int    stop;
         int    h;
@@ -127,9 +121,44 @@ private:
         int    Random;
     };
 
+public:
+
+    explicit DistortionFXFilter(QObject* const parent = nullptr);
+    explicit DistortionFXFilter(DImg* const orgImage, QObject* const parent=nullptr, int effectType=0,
+                                int level=0, int iteration=0, bool antialiasing=true);
+
+    ~DistortionFXFilter();
+
+    static QString          FilterIdentifier()
+    {
+        return QLatin1String("digikam:DistortionFXFilter");
+    }
+
+    static QString          DisplayableName();
+
+    static QList<int>       SupportedVersions()
+    {
+        return QList<int>() << 1;
+    }
+
+    static int              CurrentVersion()
+    {
+        return 1;
+    }
+
+    virtual QString         filterIdentifier()                          const override
+    {
+        return FilterIdentifier();
+    }
+
+    virtual FilterAction    filterAction()                                    override;
+
+    void                    readParameters(const FilterAction& action)        override;
+
+
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
 
     // Backported from ImageProcessing version 2
     void fisheye(DImg* orgImage, DImg* destImage, double Coeff, bool AntiAlias=true);
@@ -185,6 +214,7 @@ private:
     {
         bool bIsWOk = ((X < 0) ? false : (X >= Width ) ? false : true);
         bool bIsHOk = ((Y < 0) ? false : (Y >= Height) ? false : true);
+
         return (bIsWOk && bIsHOk);
     };
 
@@ -197,6 +227,7 @@ private:
     {
         X = (X < 0) ?  0  :  ((X >= Width ) ? (Width  - 1) : X);
         Y = (Y < 0) ?  0  :  ((Y >= Height) ? (Height - 1) : Y);
+
         return getOffset(Width, X, Y, bytesDepth);
     };
 

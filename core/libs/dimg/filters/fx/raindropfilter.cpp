@@ -179,7 +179,8 @@ void RainDropFilter::rainDropsImageMultithreaded(const Args& prm)
     }
 }
 
-/* Function to apply the RainDrops effect backported from ImageProcessing version 2
+/*
+ * Function to apply the RainDrops effect backported from ImageProcessing version 2
  *
  * orgImage         => The image
  * MinDropSize      => It's the minimum random size for rain drop.
@@ -251,7 +252,9 @@ void RainDropFilter::rainDropsImage(DImg* const orgImage, DImg* const destImage,
         }
 
         foreach (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         postProgress((int)(progressMin + ((double)(i) *
                                           (double)(progressMax - progressMin)) / (double)Amount));
@@ -399,6 +402,7 @@ bool RainDropFilter::CreateRainDrop(uchar* const pBits, int Width, int Height, b
                             if (sixteenBit)
                             {
                                 // convert difference to 16-bit range
+
                                 if (nBright > 0)
                                 {
                                     nBright = (nBright + 1) * 256 - 1;
@@ -420,7 +424,6 @@ bool RainDropFilter::CreateRainDrop(uchar* const pBits, int Width, int Height, b
                             }
 
                             imageData.setPixel(pResBits + pixelOffset(Width, nw2, nh2, bytesDepth));
-
                         }
                     }
                 }
@@ -467,6 +470,7 @@ bool RainDropFilter::CreateRainDrop(uchar* const pBits, int Width, int Height, b
                         offset = pixelOffset(Width, nw1, nh1, bytesDepth);
 
                         // to preserve alpha channel
+
                         imageData.setColor(pResBits + offset, sixteenBit);
 
                         imageData.setRed(nTotalR   / nBlurPixels);

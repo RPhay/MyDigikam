@@ -50,6 +50,16 @@ namespace Digikam
 
 class Q_DECL_HIDDEN FilmGrainFilter::Private
 {
+
+public:
+
+    enum YUVChannel
+    {
+        Luma = 0,
+        ChromaBlue,
+        ChromaRed
+    };
+
 public:
 
     explicit Private()
@@ -60,13 +70,6 @@ public:
         globalProgress(0)
     {
     }
-
-    enum YUVChannel
-    {
-        Luma = 0,
-        ChromaBlue,
-        ChromaRed
-    };
 
     double                div;
     double                leadLumaNoise;
@@ -149,7 +152,7 @@ void FilmGrainFilter::filmgrainMultithreaded(uint start, uint stop)
 
     for (uint x = start ; runningFlag() && (x < stop) ; x += d->settings.grainSize)
     {
-        for (uint y = 0; runningFlag() && y < height; y += d->settings.grainSize)
+        for (uint y = 0 ; runningFlag() && y < height ; y += d->settings.grainSize)
         {
             refCol = m_orgImage.getPixelColor(x, y);
             computeNoiseSettings(refCol,
@@ -159,14 +162,14 @@ void FilmGrainFilter::filmgrainMultithreaded(uint start, uint stop)
 
             // Grain size matrix processing.
 
-            for (int zx = 0; runningFlag() && zx < d->settings.grainSize; ++zx)
+            for (int zx = 0 ; runningFlag() && zx < d->settings.grainSize ; ++zx)
             {
-                for (int zy = 0; runningFlag() && zy < d->settings.grainSize; ++zy)
+                for (int zy = 0 ; runningFlag() && zy < d->settings.grainSize ; ++zy)
                 {
                     posX = x + zx;
                     posY = y + zy;
 
-                    if (posX < width && posY < height)
+                    if ((posX < width) && (posY < height))
                     {
                         matCol = m_orgImage.getPixelColor(posX, posY);
 
@@ -219,10 +222,10 @@ void FilmGrainFilter::filmgrainMultithreaded(uint start, uint stop)
 
         progress = (int)( ( (double)x * (100.0 / QThreadPool::globalInstance()->maxThreadCount()) ) / (stop-start));
 
-        if ((progress % 5 == 0) && (progress > oldProgress))
+        if (((progress % 5) == 0) && (progress > oldProgress))
         {
             d->lock.lock();
-            oldProgress       = progress;
+            oldProgress        = progress;
             d->globalProgress += 5;
             postProgress(d->globalProgress);
             d->lock.unlock();
@@ -230,17 +233,18 @@ void FilmGrainFilter::filmgrainMultithreaded(uint start, uint stop)
     }
 }
 
-/** This method have been implemented following this report in bugzilla :
-    https://bugs.kde.org/show_bug.cgi?id=148540
-    We use YCbCr color space to perform noise addition. Please follow this url for
-    details about this color space :
-    http://en.allexperts.com/e/y/yc/ycbcr.htm
+/**
+ * This method have been implemented following this report in bugzilla :
+ * https://bugs.kde.org/show_bug.cgi?id=148540
+ * We use YCbCr color space to perform noise addition. Please follow this url for
+ * details about this color space :
+ * http://en.allexperts.com/e/y/yc/ycbcr.htm
  */
 void FilmGrainFilter::filterImage()
 {
-    if (d->settings.lumaIntensity <= 0       ||
-        d->settings.chromaBlueIntensity <= 0 ||
-        d->settings.chromaRedIntensity <= 0  ||
+    if ((d->settings.lumaIntensity <= 0)       ||
+        (d->settings.chromaBlueIntensity <= 0) ||
+        (d->settings.chromaRedIntensity <= 0)  ||
         !d->settings.isDirty())
     {
         m_destImage = m_orgImage;
@@ -267,10 +271,13 @@ void FilmGrainFilter::filterImage()
     }
 
     foreach (QFuture<void> t, tasks)
+    {
         t.waitForFinished();
+    }
 }
 
-/** This method compute lead noise of reference matrix point used to simulate graininess size
+/**
+ * This method compute lead noise of reference matrix point used to simulate graininess size
  */
 void FilmGrainFilter::computeNoiseSettings(const DColor& col,
                                            double& luRange, double& luNoise,
@@ -299,9 +306,10 @@ void FilmGrainFilter::computeNoiseSettings(const DColor& col,
     }
 }
 
-/** This method apply grain adjustment on a pixel color channel from YCrCb color space.
-    NRand is the lead uniform noise set from matrix used to scan whole image step by step.
-    Additionally noise is applied on pixel using Poisson or Gaussian distribution.
+/**
+ * This method apply grain adjustment on a pixel color channel from YCrCb color space.
+ * NRand is the lead uniform noise set from matrix used to scan whole image step by step.
+ * Additionally noise is applied on pixel using Poisson or Gaussian distribution.
  */
 void FilmGrainFilter::adjustYCbCr(DColor& col, double range, double nRand, int channel)
 {
@@ -335,19 +343,22 @@ void FilmGrainFilter::adjustYCbCr(DColor& col, double range, double nRand, int c
     col.setYCbCr(y, cb, cr, col.sixteenBit());
 }
 
-/** This method compute uniform noise value used to randomize matrix reference point.
-    This value is lead noise apply to image.
+/**
+ * This method compute uniform noise value used to randomize matrix reference point.
+ * This value is lead noise apply to image.
  */
 double FilmGrainFilter::randomizeUniform(double range)
 {
     d->lock2.lock();
     double val = d->generator.number(- range / 2, range / 2);
     d->lock2.unlock();
+
     return val;
 }
 
-/** This method compute Gaussian noise value used to randomize all matrix points.
-    This value is added to lead noise value.
+/**
+ * This method compute Gaussian noise value used to randomize all matrix points.
+ * This value is added to lead noise value.
  */
 double FilmGrainFilter::randomizeGauss(double sigma)
 {
@@ -358,20 +369,22 @@ double FilmGrainFilter::randomizeGauss(double sigma)
     return (sigma * sqrt(-2 * log(u)) * cos(2 * M_PI * v));
 }
 
-/** This method compute Poisson noise value used to randomize all matrix points.
-    This value is added to lead noise value.
-    Poisson noise is more realist to simulate photon noise apply on analog film.
-    NOTE: see approximation of Poisson noise using Gauss algorithm from noise.c code take from :
-          http://registry.gimp.org/node/13016
-          This method is very fast compared to real Poisson noise generator.
+/**
+ * This method compute Poisson noise value used to randomize all matrix points.
+ * This value is added to lead noise value.
+ * Poisson noise is more realist to simulate photon noise apply on analog film.
+ * NOTE: see approximation of Poisson noise using Gauss algorithm from noise.c code take from :
+ *       http://registry.gimp.org/node/13016
+ *       This method is very fast compared to real Poisson noise generator.
  */
 double FilmGrainFilter::randomizePoisson(double lambda)
 {
     return (randomizeGauss(sqrt(lambda * d->settings.grainSize * d->settings.grainSize)));
 }
 
-/** This method interpolate gain adjustments to apply grain on shadows, midtones and highlights colors.
-    The output value is a coefficient computed between 0.0 and 1.0.
+/**
+ * This method interpolate gain adjustments to apply grain on shadows, midtones and highlights colors.
+ * The output value is a coefficient computed between 0.0 and 1.0.
  */
 double FilmGrainFilter::interpolate(int shadows, int midtones, int highlights, const DColor& col)
 {

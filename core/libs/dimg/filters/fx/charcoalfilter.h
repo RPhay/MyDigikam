@@ -63,17 +63,17 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
-    void                    readParameters(const FilterAction& action) override;
+    virtual FilterAction    filterAction()                                    override;
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
     bool convolveImage(const unsigned int order, const double* kernel);
     int  getOptimalKernelWidth(double radius, double sigma);
     void convolveImageMultithreaded(uint start, uint stop, double* normal_kernel, double kernelWidth);

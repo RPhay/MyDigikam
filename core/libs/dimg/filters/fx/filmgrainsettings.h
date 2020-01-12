@@ -50,7 +50,7 @@ public:
     FilmGrainContainer defaultSettings() const;
     void resetToDefault();
 
-    FilmGrainContainer settings() const;
+    FilmGrainContainer settings()        const;
     void setSettings(const FilmGrainContainer& settings);
 
     void readSettings(KConfigGroup& group);

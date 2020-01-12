@@ -58,11 +58,11 @@ class Q_DECL_HIDDEN BlurFXFilter::Private
 public:
 
     explicit Private()
+      : blurFXType(ZoomBlur),
+        distance(100),
+        level(45),
+        randomSeed(RandomNumberGenerator::timeSeed())
     {
-        blurFXType = ZoomBlur;
-        distance   = 100;
-        level      = 45;
-        randomSeed = RandomNumberGenerator::timeSeed();
     }
 
     int     blurFXType;
