@@ -52,10 +52,17 @@ public:
     {
         switch (channel)
         {
-            case RedChannel:    return redDmax;
-            case GreenChannel:  return greenDmax;
-            case BlueChannel:   return blueDmax;
-            default:            return 0.0;
+            case RedChannel:
+                return redDmax;
+
+            case GreenChannel:
+                return greenDmax;
+
+            case BlueChannel:
+                return blueDmax;
+
+            default:
+                return 0.0;
         }
     }
 
@@ -64,6 +71,7 @@ public:
         rBalance = rB;
         gBalance = gB;
         bBalance = bB;
+
         return *this;
     }
 
@@ -71,10 +79,17 @@ public:
     {
         switch (channel)
         {
-            case RedChannel:    return rBalance;
-            case GreenChannel:  return gBalance;
-            case BlueChannel:   return bBalance;
-            default:            return 1.0;
+            case RedChannel:
+                return rBalance;
+
+            case GreenChannel:
+                return gBalance;
+
+            case BlueChannel:
+                return bBalance;
+
+            default:
+                return 1.0;
         }
     }
 
@@ -83,6 +98,7 @@ public:
         wpRed   = rWp;
         wpGreen = gWp;
         wpBlue  = bWp;
+
         return *this;
     }
 
@@ -90,10 +106,17 @@ public:
     {
         switch (channel)
         {
-            case RedChannel:    return wpRed;
-            case GreenChannel:  return wpGreen;
-            case BlueChannel:   return wpBlue;
-            default:            return 1.0;
+            case RedChannel:
+                return wpRed;
+
+            case GreenChannel:
+                return wpGreen;
+
+            case BlueChannel:
+                return wpBlue;
+
+            default:
+                return 1.0;
         }
     }
 

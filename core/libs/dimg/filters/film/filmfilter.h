@@ -93,32 +93,32 @@ public:
     explicit FilmContainer(CNFilmProfile profile, double gamma, bool sixteenBit);
 
     void   setWhitePoint(const DColor& wp);
-    DColor whitePoint() const;
+    DColor whitePoint()                         const;
 
     void   setExposure(double strength);
-    double exposure() const;
+    double exposure()                           const;
 
     void   setSixteenBit(bool val);
     void   setGamma(double val);
-    double gamma() const;
+    double gamma()                              const;
 
     void          setCNType(CNFilmProfile profile);
-    CNFilmProfile cnType() const;
+    CNFilmProfile cnType()                      const;
 
     void setApplyBalance(bool val);
-    bool applyBalance() const;
+    bool applyBalance()                         const;
 
-    LevelsContainer toLevels() const;
-    CBContainer     toCB() const;
+    LevelsContainer toLevels()                  const;
+    CBContainer     toCB()                      const;
 
     static const QMap<int, QString> profileMap;
     static QList<ListItem*> profileItemList(QListWidget* const view);
 
 private:
 
-    int    whitePointForChannel(int channel) const;
-    double blackPointForChannel(int ch) const;
-    double gammaForChannel(int ch) const;
+    int    whitePointForChannel(int channel)    const;
+    double blackPointForChannel(int ch)         const;
+    double gammaForChannel(int ch)              const;
 
     static QMap<int, QString> profileMapInitializer();
 
@@ -155,17 +155,17 @@ public:
         return 1;
     }
 
-    virtual QString filterIdentifier() const override
+    virtual QString filterIdentifier()                      const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction filterAction() override;
-    virtual void readParameters(const FilterAction& action) override;
+    virtual FilterAction filterAction()                           override;
+    virtual void readParameters(const FilterAction& action)       override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                            override;
 
 private:
 
