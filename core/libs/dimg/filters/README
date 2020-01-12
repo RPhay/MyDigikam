@@ -14,6 +14,7 @@ lens          : Misc lens correction filters.
 lut3d         : 3D LUT color filters.
 lc            : Local Contrast (LDR Tonemapping).
 nr            : Wavelets Noise Reduction.
+raw           : RAW image processing
 sharp         : Sharp / Unsharp Mask / Refocus
 transform     : Change Image Geometry.
 wb            : White Balance.
