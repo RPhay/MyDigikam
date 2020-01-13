@@ -56,7 +56,7 @@ public:
     void setMode(FontMode mode);
     FontMode mode() const;
 
-    QFont font() const;
+    QFont font()    const;
     void setFont(const QFont& font);
 
 Q_SIGNALS:
