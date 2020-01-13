@@ -4477,7 +4477,7 @@ void CoreDB::clearMetadataFromImage(qlonglong imageID)
 
         foreach (const ImageTagProperty& property, properties)
         {
-            tids << property.imageId;
+            tids << property.tagId;
         }
 
         d->db->execSql(QString::fromUtf8("DELETE FROM ImageTagProperties WHERE imageid=?;"),
