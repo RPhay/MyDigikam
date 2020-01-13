@@ -50,7 +50,7 @@ public:
     WBContainer defaultSettings() const;
     void resetToDefault();
 
-    WBContainer settings() const;
+    WBContainer settings()        const;
     void setSettings(const WBContainer& settings);
 
     void readSettings(KConfigGroup& group);

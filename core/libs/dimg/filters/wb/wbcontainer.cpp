@@ -31,17 +31,19 @@
 namespace Digikam
 {
 
+/**
+ * Neutral color temperature settings.
+ */
 WBContainer::WBContainer()
+    : black(0.0),
+      expositionMain(0.0),
+      expositionFine(0.0),
+      temperature(6500.0),
+      green(1.0),
+      dark(0.5),
+      gamma(1.0),
+      saturation(1.0)
 {
-    // Neutral color temperature settings.
-    black          = 0.0;
-    expositionMain = 0.0;
-    expositionFine = 0.0;
-    temperature    = 6500.0;
-    green          = 1.0;
-    dark           = 0.5;
-    gamma          = 1.0;
-    saturation     = 1.0;
 }
 
 bool WBContainer::isDefault() const
@@ -51,14 +53,16 @@ bool WBContainer::isDefault() const
 
 bool WBContainer::operator==(const WBContainer& other) const
 {
-    return black          == other.black          &&
-           expositionMain == other.expositionMain &&
-           expositionFine == other.expositionFine &&
-           temperature    == other.temperature    &&
-           green          == other.green          &&
-           dark           == other.dark           &&
-           gamma          == other.gamma          &&
-           saturation     == other.saturation;
+    return (
+            (black          == other.black)          &&
+            (expositionMain == other.expositionMain) &&
+            (expositionFine == other.expositionFine) &&
+            (temperature    == other.temperature)    &&
+            (green          == other.green)          &&
+            (dark           == other.dark)           &&
+            (gamma          == other.gamma)          &&
+            (saturation     == other.saturation)
+           );
 }
 
 void WBContainer::writeToFilterAction(FilterAction& action, const QString& prefix) const

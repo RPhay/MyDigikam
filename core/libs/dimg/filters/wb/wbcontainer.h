@@ -46,11 +46,14 @@ public:
 
     WBContainer();
 
-    bool   isDefault() const;
-    bool   operator==(const WBContainer& other) const;
+    bool   isDefault()                                            const;
+    bool   operator==(const WBContainer& other)                   const;
 
-    void   writeToFilterAction(FilterAction& action, const QString& prefix = QString()) const;
-    static WBContainer fromFilterAction(const FilterAction& action, const QString& prefix = QString());
+    void   writeToFilterAction(FilterAction& action,
+                               const QString& prefix = QString()) const;
+
+    static WBContainer fromFilterAction(const FilterAction& action,
+                                        const QString& prefix = QString());
 
 public:
 
