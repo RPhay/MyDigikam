@@ -59,7 +59,8 @@ public:
         angleInput(nullptr),
         fineAngleInput(nullptr),
         autoCropCB(nullptr)
-    {}
+    {
+    }
 
     static const QString configAutoCropTypeEntry;
     static const QString configAntiAliasingEntry;
@@ -82,7 +83,7 @@ FreeRotationSettings::FreeRotationSettings(QWidget* const parent)
     : QWidget(parent),
       d(new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QGridLayout* const grid = new QGridLayout(this);
 
@@ -155,6 +156,7 @@ FreeRotationContainer FreeRotationSettings::settings() const
     prm.angle     = (double)d->angleInput->value() + d->fineAngleInput->value();
     prm.antiAlias = d->antialiasInput->isChecked();
     prm.autoCrop  = d->autoCropCB->currentIndex();
+
     return prm;
 }
 
@@ -186,6 +188,7 @@ FreeRotationContainer FreeRotationSettings::defaultSettings() const
     prm.angle     = d->angleInput->defaultValue();
     prm.antiAlias = true;
     prm.autoCrop  = d->autoCropCB->defaultIndex();
+
     return prm;
 }
 

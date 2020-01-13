@@ -50,13 +50,13 @@ class Q_DECL_HIDDEN ShearFilter::Private
 public:
 
     explicit Private()
+      : antiAlias(true),
+        orgW(0),
+        orgH(0),
+        hAngle(0),
+        vAngle(0),
+        backgroundColor(Qt::black)
     {
-        antiAlias       = true;
-        orgW            = 0;
-        orgH            = 0;
-        hAngle          = 0;
-        vAngle          = 0;
-        backgroundColor = Qt::black;
     }
 
     bool   antiAlias;
@@ -112,7 +112,7 @@ QSize ShearFilter::getNewSize() const
 void ShearFilter::filterImage()
 {
     int          progress;
-   int x, y, p = 0, pt;
+    int x, y, p = 0, pt;
     int          new_width, new_height;
     double       nx, ny, dx, dy;
     double       horz_factor, vert_factor;
@@ -125,31 +125,38 @@ void ShearFilter::filterImage()
     unsigned short* pBits16 = reinterpret_cast<unsigned short*>(m_orgImage.bits());
 
     // get beta ( complementary ) angle for horizontal and vertical angles
+
     horz_beta_angle = (((d->hAngle < 0.0) ? 180.0 : 90.0) - d->hAngle) * DEG2RAD;
     vert_beta_angle = (((d->vAngle < 0.0) ? 180.0 : 90.0) - d->vAngle) * DEG2RAD;
 
     // get new distance for width and height values
+
     horz_add = nHeight * ((d->hAngle < 0.0) ? sin(horz_beta_angle) : cos(horz_beta_angle));
     vert_add = nWidth  * ((d->vAngle < 0.0) ? sin(vert_beta_angle) : cos(vert_beta_angle));
 
     // get absolute values for the distances
+
     horz_add = fabs(horz_add);
     vert_add = fabs(vert_add);
 
     // get new image size ( original size + distance )
+
     new_width  = (int)horz_add + nWidth;
     new_height = (int)vert_add + nHeight;
 
     // get scale factor for width and height
+
     horz_factor = horz_add / new_height;
     vert_factor = vert_add / new_width;
 
     // if horizontal angle is greater than zero...
     // else, initial distance is equal to maximum distance ( in negative form )
+
     if (d->hAngle > 0.0)
     {
         // initial distance is zero and scale is negative ( to decrease )
-        dx = 0;
+
+        dx           = 0;
         horz_factor *= -1.0;
     }
     else
@@ -159,6 +166,7 @@ void ShearFilter::filterImage()
 
     // if vertical angle is greater than zero...
     // else, initial distance is equal to maximum distance ( in negative form )
+
     if (d->vAngle > 0.0)
     {
         // initial distance is zero and scale is negative ( to decrease )
@@ -181,27 +189,33 @@ void ShearFilter::filterImage()
 
     DPixelsAliasFilter alias;
 
-    for (y = 0; y < new_height; ++y)
+    for (y = 0 ; y < new_height ; ++y)
     {
-        for (x = 0; x < new_width; ++x, p += 4)
+        for (x = 0 ; x < new_width ; ++x, p += 4)
         {
             // get new positions
+
             nx = x + dx + y * horz_factor;
             ny = y + dy + x * vert_factor;
 
             // if is inside the source image
+
             if (isInside(nWidth, nHeight, lround(nx), lround(ny)))
             {
                 if (d->antiAlias)
                 {
                     if (!sixteenBit)
+                    {
                         alias.pixelAntiAliasing(pBits, nWidth, nHeight, nx, ny,
                                                 &pResBits[p + 3], &pResBits[p + 2],
                                                 &pResBits[p + 1], &pResBits[p]);
+                    }
                     else
+                    {
                         alias.pixelAntiAliasing16(pBits16, nWidth, nHeight, nx, ny,
                                                   &pResBits16[p + 3], &pResBits16[p + 2],
                                                   &pResBits16[p + 1], &pResBits16[p]);
+                    }
                 }
                 else
                 {
@@ -223,15 +237,17 @@ void ShearFilter::filterImage()
         }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)y * 100.0) / new_height);
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
     }
 
     // To compute the rotated destination image size using original image dimensions.
+
     int W = (int)(fabs(d->orgH * ((d->hAngle < 0.0) ? sin(horz_beta_angle) : cos(horz_beta_angle)))) + d->orgW;
     int H = (int)(fabs(d->orgW * ((d->vAngle < 0.0) ? sin(vert_beta_angle) : cos(vert_beta_angle)))) + d->orgH;
 

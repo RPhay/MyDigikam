@@ -50,7 +50,7 @@ public:
     FreeRotationContainer defaultSettings() const;
     void resetToDefault();
 
-    FreeRotationContainer settings() const;
+    FreeRotationContainer settings()        const;
     void setSettings(const FreeRotationContainer& settings);
 
     void readSettings(KConfigGroup& group);
