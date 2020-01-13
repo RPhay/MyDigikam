@@ -42,8 +42,8 @@ class Q_DECL_HIDDEN SqueezedComboBox::Private
 public:
 
     explicit Private()
+      : timer(nullptr)
     {
-        timer = nullptr;
     }
 
     QMap<int, QString> originalItems;
@@ -78,13 +78,17 @@ SqueezedComboBox::~SqueezedComboBox()
 bool SqueezedComboBox::contains(const QString& text) const
 {
     if (text.isEmpty())
+    {
         return false;
+    }
 
     for (QMap<int, QString>::const_iterator it = d->originalItems.constBegin() ;
          it != d->originalItems.constEnd() ; ++it)
     {
         if (it.value() == text)
+        {
             return true;
+        }
     }
 
     return false;
@@ -117,8 +121,11 @@ void SqueezedComboBox::insertSqueezedItem(const QString& newItem, int index,
     QComboBox::insertItem(index, squeezeText(newItem), userData);
 
     // if this is the first item, set the tooltip.
+
     if (index == 0)
+    {
         slotUpdateToolTip(0);
+    }
 }
 
 void SqueezedComboBox::insertSqueezedList(const QStringList& newItems, int index)
@@ -143,7 +150,9 @@ void SqueezedComboBox::setCurrent(const QString& itemText)
     qint32 itemIndex     = findText(squeezedText);
 
     if (itemIndex >= 0)
+    {
         setCurrentIndex(itemIndex);
+    }
 }
 
 void SqueezedComboBox::resizeEvent(QResizeEvent *)
@@ -172,7 +181,9 @@ QString SqueezedComboBox::squeezeText(const QString& original) const
 #else
     if (fm.width(original) < widgetSize)
 #endif
+    {
         return(original);
+    }
 
     // We need to squeeze.
     QString sqItem = original; // prevent empty return value;

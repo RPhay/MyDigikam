@@ -38,7 +38,8 @@
 namespace Digikam
 {
 
-/** @class SqueezedComboBox
+/**
+ * @class SqueezedComboBox
  *
  * This widget is a QComboBox, but then a little bit
  * different. It only shows the right part of the items
@@ -57,7 +58,8 @@ public:
      * @param parent parent widget
      * @param name name to give to the widget
      */
-    explicit SqueezedComboBox(QWidget* const parent = nullptr, const char* name = nullptr );
+    explicit SqueezedComboBox(QWidget* const parent = nullptr, const char* name = nullptr);
+
     /**
      * destructor
      */
