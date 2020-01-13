@@ -435,16 +435,10 @@ APP=digikam
 #    DEBUG_SUF="-debug"
 #fi
 
-if [[ $DK_QTWEBENGINE = 1 ]] ; then
-    WEB_BROWSER="-qtwebengine"
-else
-    WEB_BROWSER=""
-fi
-
 if [[ "$ARCH" = "x86_64" ]] ; then
-    APPIMAGE=$APP"-"$DK_RELEASEID$DK_EPOCH$WEB_BROWSER"-x86-64$DEBUG_SUF.appimage"
+    APPIMAGE=$APP"-"$DK_RELEASEID$DK_EPOCH"-x86-64$DEBUG_SUF.appimage"
 elif [[ "$ARCH" = "i686" ]] ; then
-    APPIMAGE=$APP"-"$DK_RELEASEID$DK_EPOCH$WEB_BROWSER"-i386$DEBUG_SUF.appimage"
+    APPIMAGE=$APP"-"$DK_RELEASEID$DK_EPOCH"-i386$DEBUG_SUF.appimage"
 fi
 
 echo -e "---------- Create Bundle with AppImage SDK stage1\n"
