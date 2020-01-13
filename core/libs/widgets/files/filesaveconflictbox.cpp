@@ -46,11 +46,11 @@ class Q_DECL_HIDDEN FileSaveConflictBox::Private
 public:
 
     explicit Private()
+      : conflictLabel(nullptr),
+        conflictButtonGroup(nullptr),
+        storeDiffButton(nullptr),
+        overwriteButton(nullptr)
     {
-        conflictLabel       = nullptr;
-        conflictButtonGroup = nullptr;
-        storeDiffButton     = nullptr;
-        overwriteButton     = nullptr;
     }
 
     QLabel*       conflictLabel;
