@@ -40,8 +40,9 @@
 namespace Digikam
 {
 
-/** A widget to chosse a single local file or path.
- *  Use line edit and file dialog properties to customize operation modes.
+/**
+ * A widget to chosse a single local file or path.
+ * Use line edit and file dialog properties to customize operation modes.
  */
 class DIGIKAM_EXPORT DFileSelector : public DHBox
 {

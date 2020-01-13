@@ -109,7 +109,8 @@ public:
         gammaInput(nullptr),
         saturationInput(nullptr),
         greenInput(nullptr)
-    {}
+    {
+    }
 
     QString addTemperatureDescription(const QString& desc, TemperaturePreset preset) const
     {
@@ -183,15 +184,15 @@ WBSettings::WBSettings(QWidget* const parent)
     : QWidget(parent),
       d(new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QGridLayout* const grid = new QGridLayout(parent);
     d->temperatureLabel     = new QLabel(i18n("<a href='https://en.wikipedia.org/wiki/Color_temperature'>"
                                               "Color Temperature</a> (K): "));
     d->temperatureLabel->setOpenExternalLinks(true);
 
-    d->adjTemperatureLabel = new QLabel(i18n("Adjustment:"));
-    d->temperatureInput    = new DDoubleNumInput;
+    d->adjTemperatureLabel  = new QLabel(i18n("Adjustment:"));
+    d->temperatureInput     = new DDoubleNumInput;
     d->temperatureInput->setDecimals(1);
     d->temperatureInput->setRange(1750.0, 12000.0, 10.0);
     d->temperatureInput->setDefaultValue((double)d->DefaultTemperature);

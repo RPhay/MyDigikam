@@ -55,16 +55,18 @@ public:
         LumaXAbsoluteValue
     };
 
+public:
+
     ContentAwareContainer()
+      : preserve_skin_tones(false),
+        width(0),
+        height(0),
+        step(1),
+        side_switch_freq(4),
+        rigidity(0.0),
+        func(GradientNorm),
+        resize_order(Qt::Horizontal)
     {
-        preserve_skin_tones = false;
-        width               = 0;
-        height              = 0;
-        step                = 1;
-        side_switch_freq    = 4;
-        rigidity            = 0.0;
-        func                = GradientNorm;
-        resize_order        = Qt::Horizontal;
     };
 
     ~ContentAwareContainer()
@@ -97,7 +99,9 @@ class DIGIKAM_EXPORT ContentAwareFilter : public DImgThreadedFilter
 public:
 
     explicit ContentAwareFilter(QObject* const parent = nullptr);
-    explicit ContentAwareFilter(DImg* const orgImage, QObject* const parent = nullptr, const ContentAwareContainer& settings = ContentAwareContainer());
+    explicit ContentAwareFilter(DImg* const orgImage,
+                                QObject* const parent = nullptr,
+                                const ContentAwareContainer& settings = ContentAwareContainer());
     ~ContentAwareFilter();
 
     void progressCallback(int progress);
@@ -119,18 +123,18 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
-    void                    readParameters(const FilterAction& action) override;
+    virtual FilterAction    filterAction()                                    override;
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
-    void cancelFilter() override;
-    void filterImage() override;
+    void cancelFilter()                                                       override;
+    void filterImage()                                                        override;
 
     void        buildBias(const QImage& mask);
     void        buildSkinToneBias();

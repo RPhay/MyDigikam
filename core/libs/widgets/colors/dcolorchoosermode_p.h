@@ -36,12 +36,14 @@ class QColor;
 namespace Digikam
 {
 
-/** get/set color component
+/**
+ * get/set color component
  */
 extern qreal getComponentValue(const QColor& color, DColorChooserMode chooserMode);
 extern void  setComponentValue(QColor& color, DColorChooserMode chooserMode, qreal value);
 
-/** number of linear gradient ranges needed for color component
+/**
+ * number of linear gradient ranges needed for color component
  */
 static inline int componentValueSteps(DColorChooserMode chooserMode)
 {
@@ -55,7 +57,8 @@ static inline int componentValueSteps(DColorChooserMode chooserMode)
     }
 }
 
-/** color component that is used for X in the XY selector
+/**
+ * color component that is used for X in the XY selector
  */
 static inline DColorChooserMode chooserXMode(DColorChooserMode chooserMode)
 {
@@ -69,7 +72,8 @@ static inline DColorChooserMode chooserXMode(DColorChooserMode chooserMode)
     }
 }
 
-/** color component that is used for Y in the XY selector
+/**
+ * color component that is used for Y in the XY selector
  */
 static inline DColorChooserMode chooserYMode(DColorChooserMode chooserMode)
 {

@@ -62,7 +62,8 @@ LqrRetVal s_carverProgressEnd(const gchar* end_message);
 
 // Static members.
 
-/** Resizement is decomposed in 2 stages: horizontal and vertical.
+/**
+ * Resizement is decomposed in 2 stages: horizontal and vertical.
  */
 bool s_stage                  = false;
 bool s_wResize                = false;
@@ -114,9 +115,9 @@ class Q_DECL_HIDDEN ContentAwareFilter::Private
 public:
 
     explicit Private()
+      : carver(nullptr),
+        progress(nullptr)
     {
-        carver   = nullptr;
-        progress = nullptr;
     }
 
     ContentAwareContainer settings;
@@ -150,12 +151,15 @@ ContentAwareFilter::ContentAwareFilter(DImg* const orgImage, QObject* const pare
         // Non null carver object operations
 
         // Ask Lqr library to preserve our picture
+
         lqr_carver_set_preserve_input_image(d->carver);
 
         // Initialize the carver object
+
         lqr_carver_init(d->carver, d->settings.step, d->settings.rigidity);
 
         // Create a progress object
+
         d->progress = lqr_progress_new();
         lqr_progress_set_init(d->progress, s_carverProgressInit);
         lqr_progress_set_update(d->progress, s_carverProgressUpdate);
@@ -165,21 +169,26 @@ ContentAwareFilter::ContentAwareFilter(DImg* const orgImage, QObject* const pare
         lqr_carver_set_side_switch_frequency(d->carver, d->settings.side_switch_freq);
 
         // Set enlargement steps as suggested by Carlo Baldassi
+
         lqr_carver_set_enl_step(d->carver, 1.5);
 
         // Choose a gradient function
+
         lqr_carver_set_energy_function_builtin(d->carver, toLqrEnergy(d->settings.func));
 
         // Choose the resize order
+
         lqr_carver_set_resize_order(d->carver, toLqrOrder(d->settings.resize_order));
 
         // Set a bias if any mask
+
         if (!d->settings.mask.isNull())
         {
             buildBias(d->settings.mask);
         }
 
         // Set skin tone mask if option is activated
+
         if (d->settings.preserve_skin_tones)
         {
             buildSkinToneBias();
@@ -234,6 +243,7 @@ void ContentAwareFilter::filterImage()
     s_hResize = (m_orgImage.height() == d->settings.height) ? false : true;
 
     // Liquid rescale
+
     lqr_carver_resize(d->carver, d->settings.width, d->settings.height);
 
     if (!runningFlag())
@@ -242,11 +252,13 @@ void ContentAwareFilter::filterImage()
     }
 
     // Create a new image
+
     w           = lqr_carver_get_width(d->carver);
     h           = lqr_carver_get_height(d->carver);
     m_destImage = DImg(w, h, m_orgImage.sixteenBit());
 
     // Write pixels in the DImg structure image
+
     lqr_carver_scan_reset(d->carver);
 
     void*           rgb      = nullptr;
@@ -284,6 +296,7 @@ void ContentAwareFilter::progressCallback(int progress)
 void ContentAwareFilter::cancelFilter()
 {
     // Handle cancel operations with lqr library.
+
     qCDebug(DIGIKAM_DIMG_LOG) << "Stop LibLqr computation...";
     lqr_carver_cancel(d->carver);
     DImgThreadedFilter::cancelFilter();
@@ -292,12 +305,14 @@ void ContentAwareFilter::cancelFilter()
 bool ContentAwareFilter::isSkinTone(const DColor& color)
 {
     // NOTE: color is previously converted to eight bits.
+
     double R = color.red()   / 255.0;
     double G = color.green() / 255.0;
     double B = color.blue()  / 255.0;
     double S = R + G + B;
 
-    return(((B / G)             < 1.249) &&
+    return(
+           ((B / G)             < 1.249) &&
            ((S / 3.0 * R)       > 0.696) &&
            ((1.0 / 3.0 - B / S) > 0.014) &&
            ((G / (3.0 * S))     < 0.108)
@@ -308,9 +323,9 @@ void ContentAwareFilter::buildSkinToneBias()
 {
     DColor c;
 
-    for (uint x = 0; x < m_orgImage.width(); ++x)
+    for (uint x = 0 ; x < m_orgImage.width() ; ++x)
     {
-        for (uint y = 0; y < m_orgImage.height(); ++y)
+        for (uint y = 0 ; y < m_orgImage.height() ; ++y)
         {
             c            = m_orgImage.getPixelColor(x, y);
             c.convertToEightBit();
@@ -325,9 +340,9 @@ void ContentAwareFilter::buildBias(const QImage& mask)
     QColor pixColor;
     int    r, g, b, a;
 
-    for (int x = 0; x < mask.width(); ++x)
+    for (int x = 0 ; x < mask.width() ; ++x)
     {
-        for (int y = 0; y < mask.height(); ++y)
+        for (int y = 0 ; y < mask.height() ; ++y)
         {
             pixColor     = QColor::fromRgba(mask.pixel(x, y));
             pixColor.getRgb(&r, &g, &b, &a);
@@ -415,6 +430,7 @@ LqrRetVal s_carverProgressUpdate(gdouble percentage)
     }
 
     s_resiser->progressCallback(progress);
+
     return LQR_OK;
 }
 

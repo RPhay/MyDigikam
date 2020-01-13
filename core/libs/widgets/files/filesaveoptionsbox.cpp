@@ -72,12 +72,15 @@ public:
         JPEGOptions(nullptr),
         PNGOptions(nullptr),
         TIFFOptions(nullptr),
+
 #ifdef HAVE_JASPER
         JPEG2000Options(nullptr),
 #endif // HAVE_JASPER
+
 #ifdef HAVE_X265
         HEIFOptions(nullptr),
 #endif // HAVE_X265
+
         PGFOptions(nullptr)
     {
     }
@@ -131,6 +134,7 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
     d->TIFFOptions     = new TIFFSettings(this);
 
     //-- JPEG 2000 Settings -------------------------------------------------
+
 #ifdef HAVE_JASPER
     d->JPEG2000Options = new JP2KSettings(this);
 #endif // HAVE_JASPER
@@ -140,6 +144,7 @@ FileSaveOptionsBox::FileSaveOptionsBox(QWidget* const parent)
     d->PGFOptions      = new PGFSettings(this);
 
     //-- HEIF Settings -------------------------------------------------
+
 #ifdef HAVE_X265
     d->HEIFOptions     = new HEIFSettings(this);
 #endif // HAVE_X265
@@ -209,6 +214,7 @@ DImg::FORMAT FileSaveOptionsBox::discoverFormat(const QString& filename, DImg::F
     {
         format = DImg::TIFF;
     }
+
 #ifdef HAVE_JASPER
     else if (ext.contains(QLatin1String("JP2")) || ext.contains(QLatin1String("JPX")) || ext.contains(QLatin1String("JPC")) ||
              ext.contains(QLatin1String("PGX")) || ext.contains(QLatin1String("J2K")))
@@ -216,12 +222,14 @@ DImg::FORMAT FileSaveOptionsBox::discoverFormat(const QString& filename, DImg::F
         format = DImg::JP2K;
     }
 #endif // HAVE_JASPER
+
 #ifdef HAVE_X265
     else if (ext.contains(QLatin1String("HEIC")) || ext.contains(QLatin1String("HEIF")))
     {
         format = DImg::HEIF;
     }
 #endif // HAVE_X265
+
     else if (ext.contains(QLatin1String("PGF")))
     {
         format = DImg::PGF;
@@ -244,12 +252,15 @@ void FileSaveOptionsBox::applySettings()
     group.writeEntry(QLatin1String("JPEGSubSampling"),     d->JPEGOptions->getSubSamplingValue());
     group.writeEntry(QLatin1String("PNGCompression"),      d->PNGOptions->getCompressionValue());
     group.writeEntry(QLatin1String("TIFFCompression"),     d->TIFFOptions->getCompression());
+
 #ifdef HAVE_JASPER
     group.writeEntry(QLatin1String("JPEG2000Compression"), d->JPEG2000Options->getCompressionValue());
     group.writeEntry(QLatin1String("JPEG2000LossLess"),    d->JPEG2000Options->getLossLessCompression());
 #endif // HAVE_JASPER
+
     group.writeEntry(QLatin1String("PGFCompression"),      d->PGFOptions->getCompressionValue());
     group.writeEntry(QLatin1String("PGFLossLess"),         d->PGFOptions->getLossLessCompression());
+
 #ifdef HAVE_X265
     group.writeEntry(QLatin1String("HEIFCompression"),     d->HEIFOptions->getCompressionValue());
     group.writeEntry(QLatin1String("HEIFLossLess"),        d->HEIFOptions->getLossLessCompression());
@@ -263,19 +274,23 @@ void FileSaveOptionsBox::readSettings()
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group("ImageViewer Settings");
     d->JPEGOptions->setCompressionValue( group.readEntry(QLatin1String("JPEGCompression"),         75) );
-    d->JPEGOptions->setSubSamplingValue( group.readEntry(QLatin1String("JPEGSubSampling"),         1) );  // Medium subsampling
+    d->JPEGOptions->setSubSamplingValue( group.readEntry(QLatin1String("JPEGSubSampling"),         1) );  ///< Medium subsampling
     d->PNGOptions->setCompressionValue( group.readEntry(QLatin1String("PNGCompression"),           9) );
     d->TIFFOptions->setCompression( group.readEntry(QLatin1String("TIFFCompression"),              false) );
+
 #ifdef HAVE_JASPER
     d->JPEG2000Options->setCompressionValue( group.readEntry(QLatin1String("JPEG2000Compression"), 75) );
     d->JPEG2000Options->setLossLessCompression( group.readEntry(QLatin1String("JPEG2000LossLess"), true) );
 #endif // HAVE_JASPER
+
     d->PGFOptions->setCompressionValue( group.readEntry(QLatin1String("PGFCompression"),           3) );
     d->PGFOptions->setLossLessCompression( group.readEntry(QLatin1String("PGFLossLess"),           true) );
+
 #ifdef HAVE_X265
     d->HEIFOptions->setCompressionValue( group.readEntry(QLatin1String("HEIFCompression"),         75) );
     d->HEIFOptions->setLossLessCompression( group.readEntry(QLatin1String("HEIFLossLess"),         true) );
 #endif // HAVE_X265
+
 }
 
 } // namespace Digikam

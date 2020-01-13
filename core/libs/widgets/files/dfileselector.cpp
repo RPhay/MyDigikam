@@ -39,11 +39,11 @@ class Q_DECL_HIDDEN DFileSelector::Private
 public:
 
     explicit Private()
+      : edit(nullptr),
+        btn(nullptr),
+        fdMode(QFileDialog::ExistingFile),
+        fdOptions(QFileDialog::Options())
     {
-        edit      = nullptr;
-        btn       = nullptr;
-        fdMode    = QFileDialog::ExistingFile;
-        fdOptions = QFileDialog::Options();
     }
 
     QLineEdit*            edit;
@@ -116,10 +116,13 @@ void DFileSelector::slotBtnClicked()
     }
 
     // Never pass a parent to File Dialog, else dupplicate dialogs will be shown
+
     DFileDialog* const fileDlg = new DFileDialog;
 
     fileDlg->setDirectory(QFileInfo(fileDlgPath()).filePath());
+
     // It is important to set up the mode first and then the options
+
     fileDlg->setFileMode(d->fdMode);
     fileDlg->setOptions(d->fdOptions);
 

@@ -80,7 +80,7 @@ void TimeZoneComboBox::setTimeZone(const QString& timeStr)
     }
     else if ((timeZone.startsWith(QLatin1Char('+'))  ||
               timeZone.startsWith(QLatin1Char('-'))) &&
-              timeZone.mid(3, 1) == QLatin1String(":"))
+              (timeZone.mid(3, 1) == QLatin1String(":")))
     {
         setCurrentIndex(findText(timeZone));
     }
@@ -100,7 +100,9 @@ int TimeZoneComboBox::timeZoneOffset() const
     QString tz = currentText();
 
     if (tz.isEmpty())
+    {
         return 0;
+    }
 
     int hh     = QString(QString(tz[1]) + QString(tz[2])).toInt();
     int mm     = QString(QString(tz[4]) + QString(tz[5])).toInt();

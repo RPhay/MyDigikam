@@ -53,7 +53,6 @@ public:
                       int progressBegin = 0, int progressEnd = 100);
     virtual ~WBFilter();
 
-    void                    readParameters(const FilterAction& action) override;
 
     static void             autoExposureAdjustement(const DImg* const img, double& black, double& expo);
     static void             autoWBAdjustementFromColor(const QColor& tc, double& temperature, double& green);
@@ -75,16 +74,18 @@ public:
         return 2;
     }
 
-    virtual QString         filterIdentifier() const override
+    void                    readParameters(const FilterAction& action)       override;
+
+    virtual QString         filterIdentifier()                         const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
+    virtual FilterAction    filterAction()                                    override;
 
 protected:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
 
 protected:
 

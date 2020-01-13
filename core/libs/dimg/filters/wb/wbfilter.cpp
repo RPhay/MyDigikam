@@ -48,13 +48,13 @@ class Q_DECL_HIDDEN WBFilter::Private
 public:
 
     explicit Private()
+      : BP(0),
+        WP(0),
+        rgbMax(0),
+        mr(1.0),
+        mg(1.0),
+        mb(1.0)
     {
-        mr      = 1.0;
-        mg      = 1.0;
-        mb      = 1.0;
-        BP      = 0;
-        WP      = 0;
-        rgbMax  = 0;
 
         for (int i = 0 ; i < 65536 ; ++i)
         {
@@ -114,6 +114,7 @@ void WBFilter::filterImage()
     d->rgbMax = m_orgImage.sixteenBit() ? 65536 : 256;
 
     // Set final lut.
+
     setLUTv();
     setRGBmult(m_settings.temperature, m_settings.green, d->mr, d->mg, d->mb);
 
@@ -125,6 +126,7 @@ void WBFilter::filterImage()
                               << "  WP:" << d->WP;
 
     // Apply White balance adjustments.
+
     adjustWhiteBalance(m_orgImage.bits(), m_orgImage.width(), m_orgImage.height(), m_orgImage.sixteenBit());
     m_destImage = m_orgImage;
 }
@@ -139,10 +141,11 @@ void WBFilter::autoWBAdjustementFromColor(const QColor& tc, double& temperature,
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Sums:  R:" << tc.red() << " G:" << tc.green() << " B:" << tc.blue();
 
-    /* This is a dichotomic search based on Blue and Red layers ratio
-       to find the matching temperature
-       adapted from ufraw (0.12.1) RGB_to_Temperature
-    */
+    /**
+     * This is a dichotomic search based on Blue and Red layers ratio
+     * to find the matching temperature
+     *  adapted from ufraw (0.12.1) RGB_to_Temperature
+     */
     double tmin  = 2000.0;
     double tmax  = 12000.0;
     double mBR   = (double)tc.blue() / (double)tc.red();
@@ -164,6 +167,7 @@ void WBFilter::autoWBAdjustementFromColor(const QColor& tc, double& temperature,
     }
 
     // Calculate the green level to neutralize picture
+
     green = (mr / mg) / ((double)tc.green() / (double)tc.red());
 
     qCDebug(DIGIKAM_DIMG_LOG) << "Temperature (K):" << temperature;
@@ -241,6 +245,7 @@ void WBFilter::setRGBmult(double& temperature, double& green, double& mr, double
     mg = 1.0 / 255.0 * CLAMP(mg, 0.0, 255.0);
 
     // Apply green multiplier
+
     mg = mg  / green;
     mg = 1.0 / mg;
 
@@ -263,6 +268,7 @@ void WBFilter::setRGBmult(double& temperature, double& green, double& mr, double
     }
 
     // Calculate to an average of 1.0
+
     mx  = ((mr + mg + mb) / 3.0) - 0.01;
     mr /= mx;
     mg /= mx;
@@ -283,6 +289,7 @@ void WBFilter::setLUTv()
     d->curve[0] = 0.0;
 
     // We will try to reproduce the same Gamma effect here than BCG tool.
+
     double gamma;
 
     if (m_settings.gamma >= 1.0)
@@ -318,16 +325,16 @@ void WBFilter::adjustWhiteBalance(uchar* const data, int width, int height, bool
         {
             int idx, rv[3];
 
-            blue  = ptr[0];
-            green = ptr[1];
-            red   = ptr[2];
+            blue   = ptr[0];
+            green  = ptr[1];
+            red    = ptr[2];
 
-            rv[0] = (int)(blue  * d->mb);
-            rv[1] = (int)(green * d->mg);
-            rv[2] = (int)(red   * d->mr);
-            idx   = qMax(rv[0], rv[1]);
-            idx   = qMax(idx, rv[2]);
-            idx   = qMin(idx, (int)d->rgbMax - 1);
+            rv[0]  = (int)(blue  * d->mb);
+            rv[1]  = (int)(green * d->mg);
+            rv[2]  = (int)(red   * d->mr);
+            idx    = qMax(rv[0], rv[1]);
+            idx    = qMax(idx, rv[2]);
+            idx    = qMin(idx, (int)d->rgbMax - 1);
 
             ptr[0] = (uchar)pixelColor(rv[0], idx);
             ptr[1] = (uchar)pixelColor(rv[1], idx);
@@ -336,7 +343,7 @@ void WBFilter::adjustWhiteBalance(uchar* const data, int width, int height, bool
 
             progress = (int)(((double)j * 100.0) / size);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }
@@ -351,16 +358,16 @@ void WBFilter::adjustWhiteBalance(uchar* const data, int width, int height, bool
         {
             int idx, rv[3];
 
-            blue  = ptr[0];
-            green = ptr[1];
-            red   = ptr[2];
+            blue   = ptr[0];
+            green  = ptr[1];
+            red    = ptr[2];
 
-            rv[0] = (int)(blue  * d->mb);
-            rv[1] = (int)(green * d->mg);
-            rv[2] = (int)(red   * d->mr);
-            idx   = qMax(rv[0], rv[1]);
-            idx   = qMax(idx, rv[2]);
-            idx   = qMin(idx, (int)d->rgbMax - 1);
+            rv[0]  = (int)(blue  * d->mb);
+            rv[1]  = (int)(green * d->mg);
+            rv[2]  = (int)(red   * d->mr);
+            idx    = qMax(rv[0], rv[1]);
+            idx    = qMax(idx, rv[2]);
+            idx    = qMin(idx, (int)d->rgbMax - 1);
 
             ptr[0] = pixelColor(rv[0], idx);
             ptr[1] = pixelColor(rv[1], idx);
@@ -369,7 +376,7 @@ void WBFilter::adjustWhiteBalance(uchar* const data, int width, int height, bool
 
             progress = (int)(((double)j * 100.0) / size);
 
-            if (progress % 5 == 0)
+            if ((progress % 5) == 0)
             {
                 postProgress(progress);
             }

@@ -44,8 +44,8 @@ class Q_DECL_HIDDEN DBinarySearch::Private
 public:
 
     explicit Private()
+      : downloadLabel(nullptr)
     {
-        downloadLabel = nullptr;
     }
 
     QVector<DBinaryIface*>    binaryIfaces;
@@ -79,7 +79,12 @@ DBinarySearch::DBinarySearch(QWidget* const parent)
 
     d->downloadLabel = new QLabel(parentWidget());
 
-    qobject_cast<QGridLayout*>(parentWidget()->layout())->addWidget(this, 0, 0);
+    QGridLayout* const layout = qobject_cast<QGridLayout*>(parentWidget()->layout());
+
+    if (layout)
+    {
+        layout->addWidget(this, 0, 0);
+    }
 }
 
 DBinarySearch::~DBinarySearch()
@@ -95,7 +100,7 @@ void DBinarySearch::addBinary(DBinaryIface& binary)
 
     d->binaryIfaces.append(&binary);
     d->items.append(new QTreeWidgetItem());
-    QTreeWidgetItem* const item = d->items[d->items.size() - 1];
+    QTreeWidgetItem* const item   = d->items[d->items.size() - 1];
     item->setIcon(Status, QIcon::fromTheme(QLatin1String("dialog-cancel")).pixmap(16, 16));
     item->setText(Binary, binary.baseName());
     item->setText(Version, binary.version());
@@ -111,14 +116,17 @@ void DBinarySearch::addBinary(DBinaryIface& binary)
     setItemWidget(item, Link, downloadLabel);
 
     // Starts a dialog to find the binary
+
     connect(findButton, SIGNAL(clicked(bool)),
             &binary, SLOT(slotNavigateAndCheck()));
 
     // Rechecks full validity when a binary is found and valid
+
     connect(&binary, SIGNAL(signalBinaryValid()),
             this, SLOT(slotAreBinariesFound()));
 
     // Scans (if no binary were found) a new directory where a binary was found
+
     connect(&binary, SIGNAL(signalSearchDirectoryAdded(QString)),
             this, SIGNAL(signalAddPossibleDirectory(QString)));
 
@@ -126,6 +134,7 @@ void DBinarySearch::addBinary(DBinaryIface& binary)
             &binary, SLOT(slotAddPossibleSearchDirectory(QString)));
 
     // Force scan of a new directory
+
     connect(this, SIGNAL(signalAddDirectory(QString)),
             &binary, SLOT(slotAddSearchDirectory(QString)));
 
@@ -135,7 +144,12 @@ void DBinarySearch::addBinary(DBinaryIface& binary)
         "system, otherwise please download and install them to proceed.</font></p></qt>"), parentWidget());
 
     QGridLayout* const layout = qobject_cast<QGridLayout*>(parentWidget()->layout());
-    layout->addWidget(d->downloadLabel, layout->rowCount(), 0);
+
+    if (layout)
+    {
+        layout->addWidget(d->downloadLabel, layout->rowCount(), 0);
+    }
+
     d->downloadLabel->setContentsMargins(20, 20, 20, 20);
     d->downloadLabel->setWordWrap(true);
     d->downloadLabel->hide();
@@ -170,7 +184,12 @@ bool DBinarySearch::allBinariesFound()
             }
 
             d->items[index]->setText(Version, binary->version());
-            qobject_cast<QPushButton*>(itemWidget(d->items[index], Button))->setText(i18n("Change"));
+            QPushButton* const btn = qobject_cast<QPushButton*>(itemWidget(d->items[index], Button));
+
+            if (btn)
+            {
+                btn->setText(i18n("Change"));
+            }
         }
         else
         {

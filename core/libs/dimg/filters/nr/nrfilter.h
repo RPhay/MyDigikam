@@ -76,6 +76,7 @@ private:
             hpass(nullptr),
             stdev(nullptr),
             samples(nullptr),
+            fimg(nullptr),
             threshold(0.0),
             softness(0.0)
         {

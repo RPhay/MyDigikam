@@ -119,7 +119,9 @@ const QString& DBinaryIface::version() const
 bool DBinaryIface::versionIsRight() const
 {
     if (!m_checkVersion)
+    {
         return true;
+    }
 
     QRegExp reg(QLatin1String("^(\\d*[.]\\d*)"));
     version().indexOf(reg);
@@ -133,7 +135,9 @@ bool DBinaryIface::versionIsRight() const
 bool DBinaryIface::versionIsRight(const float customVersion) const
 {
     if (!m_checkVersion)
+    {
         return true;
+    }
 
     QRegExp reg(QLatin1String("^(\\d*[.]\\d*)"));
     version().indexOf(reg);
@@ -207,9 +211,9 @@ void DBinaryIface::slotNavigateAndCheck()
 #endif
     }
 
-    QString f = DFileDialog::getOpenFileName(nullptr, i18n("Navigate to %1", m_binaryBaseName),
-                                             start.toLocalFile(),
-                                             m_binaryBaseName);
+    QString f   = DFileDialog::getOpenFileName(nullptr, i18n("Navigate to %1", m_binaryBaseName),
+                                               start.toLocalFile(),
+                                               m_binaryBaseName);
 
     QString dir = QUrl::fromLocalFile(f).adjusted(QUrl::RemoveFilename).toLocalFile();
     m_searchPaths << dir;
@@ -242,7 +246,9 @@ void DBinaryIface::slotAddSearchDirectory(const QString& dir)
 QString DBinaryIface::readConfig()
 {
     if (m_configGroup.isEmpty())
+    {
         return QLatin1String("");
+    }
 
     KConfig config;
     KConfigGroup group = config.group(m_configGroup);
@@ -285,7 +291,7 @@ void DBinaryIface::setup(const QString& prev)
         return;
     }
 
-    previousDir = readConfig();
+    previousDir         = readConfig();
     m_searchPaths << previousDir;
     checkDirForPath(previousDir);
 
@@ -312,7 +318,7 @@ bool DBinaryIface::checkDirForPath(const QString& possibleDir)
             writeConfig();
 
             qCDebug(DIGIKAM_GENERAL_LOG) << "Found " << path();
-            ret = true;
+            ret       = true;
         }
     }
     else
@@ -338,7 +344,7 @@ bool DBinaryIface::checkDirForPath(const QString& possibleDir)
                     writeConfig();
 
                     qCDebug(DIGIKAM_GENERAL_LOG) << "Found " << path() << " version: " << version();
-                    ret = true;
+                    ret       = true;
                 }
                 else
                 {
@@ -351,12 +357,13 @@ bool DBinaryIface::checkDirForPath(const QString& possibleDir)
                 writeConfig();
 
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Found " << path();
-                ret = true;
+                ret       = true;
             }
         }
     }
 
     emit signalBinaryValid();
+
     return ret;
 }
 

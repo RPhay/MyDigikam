@@ -45,10 +45,10 @@ class Q_DECL_HIDDEN DComboBox::Private
 public:
 
     explicit Private()
+      : defaultIndex(0),
+        resetButton(nullptr),
+        combo(nullptr)
     {
-        defaultIndex = 0;
-        resetButton  = nullptr;
-        combo        = nullptr;
     }
 
     int          defaultIndex;

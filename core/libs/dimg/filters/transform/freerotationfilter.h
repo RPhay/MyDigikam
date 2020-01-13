@@ -53,16 +53,18 @@ public:
 public:
 
     FreeRotationContainer()
+      : antiAlias(true),
+        autoCrop(NoAutoCrop),
+        orgW(0),
+        orgH(0),
+        angle(0.0),
+        backgroundColor(Qt::black)
     {
-        angle           = 0.0;
-        antiAlias       = true;
-        autoCrop        = NoAutoCrop;
-        backgroundColor = Qt::black;
-        orgW            = 0;
-        orgH            = 0;
     };
 
-    ~FreeRotationContainer() {};
+    ~FreeRotationContainer()
+    {
+    };
 
 public:
 
@@ -114,17 +116,17 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
-    void                    readParameters(const FilterAction& action) override;
+    virtual FilterAction    filterAction()                                    override;
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
-    void        filterImage() override;
+    void        filterImage()                                                 override;
     inline int  setPosition (int Width, int X, int Y);
     inline bool isInside (int Width, int Height, int X, int Y);
 

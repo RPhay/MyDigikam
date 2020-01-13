@@ -63,52 +63,52 @@ public:
     ~DSelector();
 
     /**
-    * @return the rectangle on which subclasses should draw.
-    */
-    QRect contentsRect() const;
+     * @return the rectangle on which subclasses should draw.
+     */
+    QRect contentsRect()            const;
 
     /**
-    * Sets the indent option of the widget to i.
-    * This determines whether a shaded frame is drawn.
-    */
+     * Sets the indent option of the widget to i.
+     * This determines whether a shaded frame is drawn.
+     */
     void setIndent(bool i);
 
     /**
-    * @return whether the indent option is set.
-    */
-    bool indent() const;
+     * @return whether the indent option is set.
+     */
+    bool indent()                   const;
 
     /**
-    * Sets the arrow direction.
-    */
+     * Sets the arrow direction.
+     */
     void setArrowDirection(Qt::ArrowType direction);
 
     /**
-    * @return the current arrow direction
-    */
-    Qt::ArrowType arrowDirection() const;
+     * @return the current arrow direction
+     */
+    Qt::ArrowType arrowDirection()  const;
 
 protected:
 
     /**
-    * Override this function to draw the contents of the control.
-    * The default implementation does nothing.
-    *
-    * Draw only within contentsRect().
-    */
+     * Override this function to draw the contents of the control.
+     * The default implementation does nothing.
+     *
+     * Draw only within contentsRect().
+     */
     virtual void drawContents(QPainter*) {};
 
     /**
-    * Override this function to draw the cursor which
-    * indicates the current value.
-    */
+     * Override this function to draw the cursor which
+     * indicates the current value.
+     */
     virtual void drawArrow(QPainter* painter, const QPoint& pos);
 
-    virtual void paintEvent(QPaintEvent*) override;
-    virtual void mousePressEvent(QMouseEvent* e) override;
-    virtual void mouseMoveEvent(QMouseEvent* e) override;
-    virtual void mouseReleaseEvent(QMouseEvent* e) override;
-    virtual void wheelEvent(QWheelEvent*) override;
+    virtual void paintEvent(QPaintEvent*)           override;
+    virtual void mousePressEvent(QMouseEvent* e)    override;
+    virtual void mouseMoveEvent(QMouseEvent* e)     override;
+    virtual void mouseReleaseEvent(QMouseEvent* e)  override;
+    virtual void wheelEvent(QWheelEvent*)           override;
 
 private:
 
@@ -149,7 +149,7 @@ public:
      *
      * @return The hue value (0-359)
      */
-    int hue() const;
+    int hue()                       const;
 
     /**
      * Sets the hue value. Doesn't automatically update the widget;
@@ -164,7 +164,7 @@ public:
      *
      * @return The saturation value (0-255)
      */
-    int saturation() const;
+    int saturation()                const;
 
     /**
      * Sets the saturation value. Doesn't automatically update the widget;
@@ -179,7 +179,7 @@ public:
      *
      * @return The color value (0-255)
      */
-    int colorValue() const;
+    int colorValue()                const;
 
     /**
      * Sets the color value. Doesn't automatically update the widget;
@@ -218,7 +218,7 @@ protected:
      * buffered in a pixmap here. As real drawing
      * routine, drawPalette() is used.
      */
-    virtual void drawContents(QPainter*) override;
+    virtual void drawContents(QPainter*)    override;
 
 private:
 

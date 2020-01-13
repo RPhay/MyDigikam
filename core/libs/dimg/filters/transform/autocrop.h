@@ -45,26 +45,30 @@ class DIGIKAM_EXPORT AutoCrop : public DImgThreadedAnalyser
 {
 public:
 
-    /** Standard constructor with image container to parse
+    /**
+     * Standard constructor with image container to parse
      */
     explicit AutoCrop(DImg* const orgImage, QObject* const parent = nullptr);
     ~AutoCrop();
 
-    /** Perform auto-crop analyze to find best inner crop. Use autoInnerCrop()
-     *  to get computed area.
+    /**
+     * Perform auto-crop analyze to find best inner crop. Use autoInnerCrop()
+     * to get computed area.
      */
-    void startAnalyse() override;
+    void startAnalyse()         override;
 
-    /** Return inner crop area detected by startAnalyse().
+    /**
+     * Return inner crop area detected by startAnalyse().
      */
     QRect autoInnerCrop() const;
 
 private:
 
-    /** Takes in a binary image and crops it on the basis of black point
-     *  detection, spirally moving outwards.
-     *  topCrop can be set to explicitly crop a upper portion of the image
-     *  bottomCrop can be set to explicitly crop a bottom portion of the image
+    /**
+     * Takes in a binary image and crops it on the basis of black point
+     * detection, spirally moving outwards.
+     * topCrop can be set to explicitly crop a upper portion of the image
+     * bottomCrop can be set to explicitly crop a bottom portion of the image
      */
     QRect spiralClockwiseTraversal(const QImage& source, int topCrop = -1, int bottomCrop = -1);
 

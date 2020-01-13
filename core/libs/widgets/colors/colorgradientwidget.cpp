@@ -37,8 +37,8 @@ class Q_DECL_HIDDEN ColorGradientWidget::Private
 public:
 
     explicit Private()
+      : orientation(Qt::Horizontal)
     {
-        orientation = Qt::Horizontal;
     }
 
     Qt::Orientation orientation;
@@ -95,6 +95,7 @@ void ColorGradientWidget::paintEvent(QPaintEvent*)
     if (!isEnabled())
     {
         // Widget is disable : drawing grayed frame.
+
         color1 = palette().color(QPalette::Disabled, QPalette::WindowText);
         color2 = palette().color(QPalette::Disabled, QPalette::Window);
         colorf = palette().color(QPalette::Disabled, QPalette::WindowText);

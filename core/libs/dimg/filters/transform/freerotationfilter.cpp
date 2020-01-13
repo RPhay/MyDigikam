@@ -98,37 +98,42 @@ double FreeRotationFilter::calculateAngle(const QPoint& p1, const QPoint& p2)
     // check for invalid points. This should have been handled by the calling method,
     // but we want to be really sure here
 
-    if (p1.x() < 0 ||
-        p1.y() < 0 ||
-        p2.x() < 0 ||
-        p2.y() < 0)
+    if ((p1.x() < 0) ||
+        (p1.y() < 0) ||
+        (p2.x() < 0) ||
+        (p2.y() < 0))
     {
         return 0.0;
     }
 
     // check if points are equal
+
     if (p1 == p2)
     {
         return 0.0;
     }
 
     // if y() is equal, no angle needs to be calculated
+
     if (p1.y() == p2.y())
     {
         return 0.0;
     }
 
     // if x() is equal, angle equals 90°
+
     if (p1.x() == p2.x())
     {
         return 90.0;
     }
 
     // do we rotate to the left (counter clock wise)?
+
     bool ccw     = ((p1.x() < p2.x()) && (p2.y() > p1.y())) ||
                    ((p1.x() > p2.x()) && (p2.y() < p1.y()));
 
     // calculate the angle
+
     double ly    = fabs((double)p2.y() - p1.y());
     double lx    = fabs((double)p2.x() - p1.x());
     double angle = atan2(ly, lx) * 180.0 / M_PI;
@@ -140,21 +145,21 @@ double FreeRotationFilter::calculateAngle(const QPoint& p1, const QPoint& p2)
 void FreeRotationFilter::filterImage()
 {
     int          progress;
-   int w, h, nw, nh, j, i = 0;
+    int w, h, nw, nh, j, i  = 0;
     int          nNewHeight, nNewWidth;
     int          nhdx, nhdy, nhsx, nhsy;
     double       lfSin, lfCos, lfx, lfy;
 
-    int nWidth  = m_orgImage.width();
-    int nHeight = m_orgImage.height();
+    int nWidth              = m_orgImage.width();
+    int nHeight             = m_orgImage.height();
 
     uchar* pBits            = m_orgImage.bits();
     unsigned short* pBits16 = reinterpret_cast<unsigned short*>(m_orgImage.bits());
 
     // first of all, we need to calculate the sin and cos of the given angle
 
-    lfSin = sin(d->settings.angle * -DEG2RAD);
-    lfCos = cos(d->settings.angle * -DEG2RAD);
+    lfSin                   = sin(d->settings.angle * -DEG2RAD);
+    lfCos                   = cos(d->settings.angle * -DEG2RAD);
 
     // now, we have to calc the new size for the destination image
 
@@ -198,11 +203,11 @@ void FreeRotationFilter::filterImage()
 
     // main loop
 
-    for (h = 0; runningFlag() && (h < nNewHeight); ++h)
+    for (h = 0 ; runningFlag() && (h < nNewHeight) ; ++h)
     {
         nh = h - nhdy;
 
-        for (w = 0; runningFlag() && (w < nNewWidth); ++w)
+        for (w = 0 ; runningFlag() && (w < nNewWidth) ; ++w)
         {
             nw = w - nhdx;
 
@@ -216,13 +221,17 @@ void FreeRotationFilter::filterImage()
                 if (d->settings.antiAlias)
                 {
                     if (!sixteenBit)
+                    {
                         alias.pixelAntiAliasing(pBits, nWidth, nHeight, lfx, lfy,
                                                 &pResBits[i + 3], &pResBits[i + 2],
                                                 &pResBits[i + 1], &pResBits[i]);
+                    }
                     else
+                    {
                         alias.pixelAntiAliasing16(pBits16, nWidth, nHeight, lfx, lfy,
                                                   &pResBits16[i + 3], &pResBits16[i + 2],
                                                   &pResBits16[i + 1], &pResBits16[i]);
+                    }
                 }
                 else
                 {
@@ -247,19 +256,22 @@ void FreeRotationFilter::filterImage()
         }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double) h * 100.0) / nNewHeight);
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
     }
 
     // Compute the rotated destination image size using original image dimensions.
+
     int    W, H;
     double absAngle = fabs(d->settings.angle);
 
     // stop here when no angle was set
+
     if (absAngle == 0.0)
     {
         return;
@@ -277,6 +289,7 @@ void FreeRotationFilter::filterImage()
     }
 
     // Auto-cropping destination image without black holes around.
+
     QRect autoCrop;
 
     switch (d->settings.autoCrop)

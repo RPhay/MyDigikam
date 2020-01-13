@@ -54,10 +54,11 @@ public:
     void setDefaultIndex(int d);
     int  defaultIndex() const;
 
-    QComboBox* combo() const;
+    QComboBox* combo()  const;
 
     void addItem(const QString& t, int index = -1);
-    void insertItem(int index, const QString& t, const QVariant& data = QVariant());
+    void insertItem(int index, const QString& t,
+                    const QVariant& data = QVariant());
 
 Q_SIGNALS:
 

@@ -63,8 +63,8 @@ public:
      * completion object. This is needed because if data changes in one index,
      * the old text value is not known anymore, so that it cannot be removed
      * from the completion object.
+     * TODO: if we want to use models that return unique strings but not integer, add support
      */
-    //TODO: if we want to use models that return unique strings but not integer, add support
     QHash<int, QString>          idToTextHash;
 };
 
@@ -105,6 +105,7 @@ ModelCompleter::~ModelCompleter()
 void ModelCompleter::setItemModel(QAbstractItemModel* const model, int uniqueIdRole, int displayRole)
 {
     // first release old model
+
     if (d->model)
     {
         disconnect(d->model);
@@ -117,6 +118,7 @@ void ModelCompleter::setItemModel(QAbstractItemModel* const model, int uniqueIdR
     d->uniqueIdRole = uniqueIdRole;
 
     // connect to the new model
+
     if (d->model)
     {
         connect(d->model, SIGNAL(rowsInserted(QModelIndex,int,int)),
@@ -132,6 +134,7 @@ void ModelCompleter::setItemModel(QAbstractItemModel* const model, int uniqueIdR
                 this, SLOT(slotModelReset()));
 
         // do an initial sync wit the new model
+
         sync(d->model);
     }
 }
@@ -169,6 +172,7 @@ void ModelCompleter::slotRowsInserted(const QModelIndex& parent, int start, int 
         // this cannot work if this is called from rowsAboutToBeInserted
         // because then the model doesn't know the index yet. So never do this
         // ;)
+
         const QModelIndex child = d->model->index(i, 0, parent);
 
         if (child.isValid())
@@ -204,8 +208,10 @@ void ModelCompleter::slotRowsAboutToBeRemoved(const QModelIndex& parent, int sta
         {
             QString itemName = d->idToTextHash.value(id);
             d->idToTextHash.remove(id);
+
             // only delete an item in the completion object if there is no other
             // item with the same display name
+
             if (d->idToTextHash.keys(itemName).isEmpty())
             {
                 d->delayedModelTimer->start();

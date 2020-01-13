@@ -30,9 +30,6 @@
 #include <QListView>
 #include <QComboBox>
 #include <QPersistentModelIndex>
-
-// KDE includes
-
 #include <QLineEdit>
 
 // Local includes
@@ -60,7 +57,9 @@ public:
      */
     explicit ProxyLineEdit(QWidget* const parent = nullptr);
 
-    /// After constructing, set the actual widget here
+    /**
+     * After constructing, set the actual widget here
+     */
     virtual void setWidget(QWidget* widget);
 
     void setClearButtonShown(bool show);
@@ -75,22 +74,22 @@ private Q_SLOTS:
 
 protected:
 
-    QSize minimumSizeHint() const override;
-    QSize sizeHint()        const override;
+    QSize minimumSizeHint() const                           override;
+    QSize sizeHint()        const                           override;
 
-    virtual void mousePressEvent(QMouseEvent* event) override;
-    virtual void mouseMoveEvent(QMouseEvent* event) override;
-    virtual void mouseReleaseEvent(QMouseEvent* event) override;
-    virtual void mouseDoubleClickEvent(QMouseEvent* event) override;
-    virtual void keyPressEvent(QKeyEvent* event) override;
-    virtual void focusInEvent(QFocusEvent* event) override;
-    virtual void focusOutEvent(QFocusEvent* event) override;
-    virtual void paintEvent(QPaintEvent* event) override;
-    virtual void dragEnterEvent(QDragEnterEvent* event) override;
-    virtual void dragMoveEvent(QDragMoveEvent* e) override;
-    virtual void dragLeaveEvent(QDragLeaveEvent* e) override;
-    virtual void dropEvent(QDropEvent* event) override;
-    virtual void changeEvent(QEvent* event) override;
+    virtual void mousePressEvent(QMouseEvent* event)        override;
+    virtual void mouseMoveEvent(QMouseEvent* event)         override;
+    virtual void mouseReleaseEvent(QMouseEvent* event)      override;
+    virtual void mouseDoubleClickEvent(QMouseEvent* event)  override;
+    virtual void keyPressEvent(QKeyEvent* event)            override;
+    virtual void focusInEvent(QFocusEvent* event)           override;
+    virtual void focusOutEvent(QFocusEvent* event)          override;
+    virtual void paintEvent(QPaintEvent* event)             override;
+    virtual void dragEnterEvent(QDragEnterEvent* event)     override;
+    virtual void dragMoveEvent(QDragMoveEvent* e)           override;
+    virtual void dragLeaveEvent(QDragLeaveEvent* e)         override;
+    virtual void dropEvent(QDropEvent* event)               override;
+    virtual void changeEvent(QEvent* event)                 override;
     virtual void contextMenuEvent(QContextMenuEvent* event) override;
     virtual void inputMethodEvent(QInputMethodEvent* event) override;
 
@@ -158,32 +157,35 @@ class DIGIKAM_EXPORT StayPoppedUpComboBox : public ModelIndexBasedComboBox
 
 public:
 
-    /** This class provides an abstract QComboBox with a custom view
-     *  (which is created by implementing subclasses)
-     *  instead of the usual QListView.
-     *  The Pop-up of the combo box will stay open after selecting an item;
-     *  it will be closed by clicking outside, but not inside the widget.
-     *  You need three steps:
-     *  Construct the object, call setModel() with an appropriate
-     *  QAbstractItemModel, then call installView() to replace
-     *  the standard combo box view with a view.
+    /**
+     * This class provides an abstract QComboBox with a custom view
+     * (which is created by implementing subclasses)
+     * instead of the usual QListView.
+     * The Pop-up of the combo box will stay open after selecting an item;
+     * it will be closed by clicking outside, but not inside the widget.
+     * You need three steps:
+     * Construct the object, call setModel() with an appropriate
+     * QAbstractItemModel, then call installView() to replace
+     * the standard combo box view with a view.
      */
     explicit StayPoppedUpComboBox(QWidget* const parent = nullptr);
 
 protected:
 
-    /** Replace the standard combo box list view with the given view.
-     *  The view will be set as the view of the combo box
-     *  (including re-parenting) and be stored in the m_view variable.
+    /**
+     * Replace the standard combo box list view with the given view.
+     * The view will be set as the view of the combo box
+     * (including re-parenting) and be stored in the m_view variable.
      */
     void installView(QAbstractItemView* view);
 
-    /** Implement in subclass:
-     *  Send the given event to the viewportEvent() method of m_view.
-     *  This method is protected for a usual QAbstractItemView.
-     *  You can override, pass a view, and call parent implementation.
-     *  The existing view will be used. You must then also
-     *  reimplement sendViewportEventToView.
+    /**
+     * Implement in subclass:
+     * Send the given event to the viewportEvent() method of m_view.
+     * This method is protected for a usual QAbstractItemView.
+     * You can override, pass a view, and call parent implementation.
+     * The existing view will be used. You must then also
+     * reimplement sendViewportEventToView.
      */
     virtual void sendViewportEventToView(QEvent* e) = 0;
 
@@ -202,20 +204,25 @@ class DIGIKAM_EXPORT TreeViewComboBox : public StayPoppedUpComboBox
 
 public:
 
-    /** This class provides a QComboBox with a QTreeView
-     *  instead of the usual QListView.
-     *  You need three steps:
-     *  Construct the object, call setModel() with an appropriate
-     *  QAbstractItemModel, then call installView() to replace
-     *  the standard combo box view with a QTreeView.
+    /**
+     * This class provides a QComboBox with a QTreeView
+     * instead of the usual QListView.
+     * You need three steps:
+     * Construct the object, call setModel() with an appropriate
+     * QAbstractItemModel, then call installView() to replace
+     * the standard combo box view with a QTreeView.
      */
     explicit TreeViewComboBox(QWidget* parent = nullptr);
 
-    /** Replace the standard combo box list view with a QTreeView.
-     *  Call this after installing an appropriate model. */
+    /**
+     * Replace the standard combo box list view with a QTreeView.
+     * Call this after installing an appropriate model.
+     */
     virtual void installView(QAbstractItemView* view = nullptr);
 
-    /** Returns the QTreeView of this class. Valid after installView() has been called */
+    /**
+     * Returns the QTreeView of this class. Valid after installView() has been called
+     */
     QTreeView* view() const;
 
 protected:
@@ -231,21 +238,24 @@ class DIGIKAM_EXPORT ListViewComboBox : public StayPoppedUpComboBox
 
 public:
 
-    /** This class provides an implementation of a StayPoppedUpComboBox
-     *  with a QListView. This is the standard view of a QComboBox,
-     *  but in conjunction with StayPoppedUpComboBox some extra steps are needed.
-     *  You need three steps:
-     *  Construct the object, call setModel() with an appropriate
-     *  QAbstractItemModel, then call installView().
+    /**
+     * This class provides an implementation of a StayPoppedUpComboBox
+     * with a QListView. This is the standard view of a QComboBox,
+     * but in conjunction with StayPoppedUpComboBox some extra steps are needed.
+     * You need three steps:
+     * Construct the object, call setModel() with an appropriate
+     * QAbstractItemModel, then call installView().
      */
     explicit ListViewComboBox(QWidget* parent = nullptr);
 
-    /** Returns the QTreeView of this class. Valid after installView() has been called.
+    /**
+     * Returns the QTreeView of this class. Valid after installView() has been called.
      */
     QListView* view() const;
 
-    /** Replace the standard combo box list view with a QTreeView.
-     *  Call this after installing an appropriate model.
+    /**
+     * Replace the standard combo box list view with a QTreeView.
+     * Call this after installing an appropriate model.
      */
     virtual void installView(QAbstractItemView* view = nullptr);
 
@@ -260,36 +270,39 @@ class DIGIKAM_EXPORT TreeViewLineEditComboBox : public TreeViewComboBox
 {
 public:
 
-    /** This class provides a TreeViewComboBox
-     *  with a read-only line edit.
-     *  The text in the line edit can be adjusted. The combo box will
-     *  open on a click on the line edit.
-     *  You need three steps:
-     *  Construct the object, call setModel() with an appropriate
-     *  QAbstractItemModel, then call installView() to replace
-     *  the standard combo box view with a QTreeView.
+    /**
+     * This class provides a TreeViewComboBox
+     * with a read-only line edit.
+     * The text in the line edit can be adjusted. The combo box will
+     * open on a click on the line edit.
+     * You need three steps:
+     * Construct the object, call setModel() with an appropriate
+     * QAbstractItemModel, then call installView() to replace
+     * the standard combo box view with a QTreeView.
      */
     explicit TreeViewLineEditComboBox(QWidget* const parent = nullptr);
 
-
-    /** Set the text of the line edit (the text that is visible
-     *  if the popup is not opened).
-     *  Applicable only for default installLineEdit() implementation.
+    /**
+     * Set the text of the line edit (the text that is visible
+     * if the popup is not opened).
+     * Applicable only for default installLineEdit() implementation.
      */
     void setLineEditText(const QString& text);
 
     void setLineEdit(QLineEdit* edit);
 
-    /** Replace the standard combo box list view with a QTreeView.
-     *  Call this after installing an appropriate model.
+    /**
+     * Replace the standard combo box list view with a QTreeView.
+     * Call this after installing an appropriate model.
      */
     virtual void installView(QAbstractItemView* view = nullptr) override;
 
 protected:
 
-    /** Sets a line edit. Called by installView().
-     *  The default implementation is described above.
-     *  An empty implementation will keep the default QComboBox line edit.
+    /**
+     * Sets a line edit. Called by installView().
+     * The default implementation is described above.
+     * An empty implementation will keep the default QComboBox line edit.
      */
     virtual void installLineEdit();
 
