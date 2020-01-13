@@ -37,12 +37,36 @@ namespace Digikam
 class DIGIKAM_EXPORT SharpenFilter : public DImgThreadedFilter
 {
 
+private:
+
+    struct Args
+    {
+        explicit Args()
+          : start(0),
+            stop(0),
+            y(0),
+            kernelWidth(0),
+            normal_kernel(nullptr),
+            halfKernelWidth(0)
+        {
+        }
+
+        uint    start;
+        uint    stop;
+        uint    y;
+        long    kernelWidth;
+        double* normal_kernel;
+        long    halfKernelWidth;
+    };
+
 public:
 
     explicit SharpenFilter(QObject* const parent = nullptr);
     explicit SharpenFilter(DImg* const orgImage, QObject* const parent=nullptr, double radius=0.0, double sigma=1.0);
 
-    // Constructor for slave mode: execute immediately in current thread with specified master filter
+    /**
+     * Constructor for slave mode: execute immediately in current thread with specified master filter
+     */
     SharpenFilter(DImgThreadedFilter* const parentFilter, const DImg& orgImage, const DImg& destImage,
                   int progressBegin=0, int progressEnd=100, double radius=0.0, double sigma=1.0);
 
@@ -65,29 +89,18 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
-    void                    readParameters(const FilterAction& action) override;
+    virtual FilterAction    filterAction()                                    override;
+    void                    readParameters(const FilterAction& action)        override;
+
 
 private:
 
-    struct Args
-    {
-        uint    start;
-        uint    stop;
-        uint    y;
-        long    kernelWidth;
-        double* normal_kernel;
-        long    halfKernelWidth;
-    };
-
-private:
-
-    void filterImage() override;
+    void filterImage()                                                        override;
 
     void sharpenImage(double radius, double sigma);
 

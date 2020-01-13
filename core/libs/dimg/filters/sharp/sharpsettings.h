@@ -52,18 +52,18 @@ public:
 public:
 
     explicit SharpContainer()
+      : method(SimpleSharp),
+        ssRadius(0),
+        umRadius(1.0),
+        umAmount(1.0),
+        umThreshold(0.05),
+        umLumaOnly(false),
+        rfRadius(1.0),
+        rfCorrelation(0.5),
+        rfNoise(0.03),
+        rfGauss(0.0),
+        rfMatrix(5)
     {
-        method        = SimpleSharp;
-        ssRadius      = 0;
-        umRadius      = 1.0;
-        umAmount      = 1.0;
-        umThreshold   = 0.05;
-        umLumaOnly    = false;
-        rfRadius      = 1.0;
-        rfCorrelation = 0.5;
-        rfNoise       = 0.03;
-        rfGauss       = 0.0;
-        rfMatrix      = 5;
     };
 
     virtual ~SharpContainer()
@@ -72,18 +72,18 @@ public:
 
 public:
 
-    int    method;      // Store SharpingMethods value
+    int    method;      ///< Store SharpingMethods value
 
-    // Simple sharp
+    /// Simple sharp
     int    ssRadius;
 
-    // Unsharp mask
+    /// Unsharp mask
     double umRadius;
     double umAmount;
     double umThreshold;
     bool   umLumaOnly;
 
-    // Refocus
+    /// Refocus
     double rfRadius;
     double rfCorrelation;
     double rfNoise;
@@ -105,7 +105,7 @@ public:
     SharpContainer defaultSettings() const;
     void resetToDefault();
 
-    SharpContainer settings() const;
+    SharpContainer settings()        const;
     void setSettings(const SharpContainer& settings);
 
     void readSettings(KConfigGroup& group);

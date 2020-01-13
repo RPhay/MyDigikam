@@ -45,10 +45,11 @@ public:
 
     explicit RedEyeCorrectionContainer();
 
-    bool isDefault() const;
-    bool operator==(const RedEyeCorrectionContainer& other) const;
+    bool isDefault()                                            const;
+    bool operator==(const RedEyeCorrectionContainer& other)     const;
 
-    void writeToFilterAction(FilterAction& action, const QString& prefix = QString()) const;
+    void writeToFilterAction(FilterAction& action,
+                             const QString& prefix = QString()) const;
     static RedEyeCorrectionContainer fromFilterAction(const FilterAction& action, const QString& prefix = QString());
 
 public:

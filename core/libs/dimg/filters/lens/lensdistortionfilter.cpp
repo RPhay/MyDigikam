@@ -44,12 +44,12 @@ namespace Digikam
 
 LensDistortionFilter::LensDistortionFilter(QObject* const parent)
     : DImgThreadedFilter(parent),
+      m_centre_x(0),
+      m_centre_y(0),
       m_main(0.0),
       m_edge(0.0),
       m_rescale(0.0),
-      m_brighten(0.0),
-      m_centre_x(0),
-      m_centre_y(0)
+      m_brighten(0.0)
 {
     initFilter();
 }
@@ -58,12 +58,12 @@ LensDistortionFilter::LensDistortionFilter(DImg* const orgImage, QObject* const 
                                            double edge, double rescale, double brighten,
                                            int center_x, int center_y)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("LensDistortionFilter")),
+      m_centre_x(center_x),
+      m_centre_y(center_y),
       m_main(main),
       m_edge(edge),
       m_rescale(rescale),
-      m_brighten(brighten),
-      m_centre_x(center_x),
-      m_centre_y(center_y)
+      m_brighten(brighten)
 {
 
     initFilter();

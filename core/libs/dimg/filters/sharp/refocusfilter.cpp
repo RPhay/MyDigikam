@@ -91,9 +91,11 @@ RefocusFilter::RefocusFilter(DImg* const orgImage, QObject* const parent, int ma
     d->noise       = noise;
 
     // initialize filter
+
     initFilter();
 
     // initialize intermediate image
+
     d->preImage = DImg(orgImage->width()  + 4 * MAX_MATRIX_SIZE,
                        orgImage->height() + 4 * MAX_MATRIX_SIZE,
                        orgImage->sixteenBit(), orgImage->hasAlpha());
@@ -121,58 +123,69 @@ void RefocusFilter::filterImage()
     DImg tmp;
 
     // copy the original
+
     img.bitBltImage(&m_orgImage, 2 * MAX_MATRIX_SIZE, 2 * MAX_MATRIX_SIZE);
 
     // Create dummy top border
+
     tmp = m_orgImage.copy(0, 0, w, 2 * MAX_MATRIX_SIZE);
     tmp.flip(DImg::VERTICAL);
     img.bitBltImage(&tmp, 2 * MAX_MATRIX_SIZE, 0);
 
     // Create dummy bottom border
+
     tmp = m_orgImage.copy(0, h - 2 * MAX_MATRIX_SIZE, w, 2 * MAX_MATRIX_SIZE);
     tmp.flip(DImg::VERTICAL);
     img.bitBltImage(&tmp, 2 * MAX_MATRIX_SIZE, 2 * MAX_MATRIX_SIZE + h);
 
     // Create dummy left border
+
     tmp = m_orgImage.copy(0, 0, 2 * MAX_MATRIX_SIZE, h);
     tmp.flip(DImg::HORIZONTAL);
     img.bitBltImage(&tmp, 0, 2 * MAX_MATRIX_SIZE);
 
     // Create dummy right border
+
     tmp = m_orgImage.copy(w - 2 * MAX_MATRIX_SIZE, 0, 2 * MAX_MATRIX_SIZE, h);
     tmp.flip(DImg::HORIZONTAL);
     img.bitBltImage(&tmp, w + 2 * MAX_MATRIX_SIZE, 2 * MAX_MATRIX_SIZE);
 
     // Create dummy top/left corner
+
     tmp = m_orgImage.copy(0, 0, 2 * MAX_MATRIX_SIZE, 2 * MAX_MATRIX_SIZE);
     tmp.flip(DImg::HORIZONTAL);
     tmp.flip(DImg::VERTICAL);
     img.bitBltImage(&tmp, 0, 0);
 
     // Create dummy top/right corner
+
     tmp = m_orgImage.copy(w - 2 * MAX_MATRIX_SIZE, 0, 2 * MAX_MATRIX_SIZE, 2 * MAX_MATRIX_SIZE);
     tmp.flip(DImg::HORIZONTAL);
     tmp.flip(DImg::VERTICAL);
     img.bitBltImage(&tmp, w + 2 * MAX_MATRIX_SIZE, 0);
 
     // Create dummy bottom/left corner
+
     tmp = m_orgImage.copy(0, h - 2 * MAX_MATRIX_SIZE, 2 * MAX_MATRIX_SIZE, 2 * MAX_MATRIX_SIZE);
     tmp.flip(DImg::HORIZONTAL);
     tmp.flip(DImg::VERTICAL);
     img.bitBltImage(&tmp, 0, h + 2 * MAX_MATRIX_SIZE);
 
     // Create dummy bottom/right corner
+
     tmp = m_orgImage.copy(w - 2 * MAX_MATRIX_SIZE, h - 2 * MAX_MATRIX_SIZE, 2 * MAX_MATRIX_SIZE, 2 * MAX_MATRIX_SIZE);
     tmp.flip(DImg::HORIZONTAL);
     tmp.flip(DImg::VERTICAL);
     img.bitBltImage(&tmp, w + 2 * MAX_MATRIX_SIZE, h + 2 * MAX_MATRIX_SIZE);
 
     // run filter algorithm on the prepared copy
+
     refocusImage(img.bits(), img.width(), img.height(),
                  img.sixteenBit(), d->matrixSize, d->radius, d->gauss,
                  d->correlation, d->noise);
 
     // copy the result from intermediate image to final image
+
     m_destImage.bitBltImage(&d->preImage, 2 * MAX_MATRIX_SIZE, 2 * MAX_MATRIX_SIZE, w, h, 0, 0);
 }
 
@@ -184,6 +197,7 @@ void RefocusFilter::refocusImage(uchar* const data, int width, int height, bool 
     (void)matrix; // To prevent cppcheck warnings.
 
     // Compute matrix
+
     qCDebug(DIGIKAM_DIMG_LOG) << "RefocusFilter::Compute matrix...";
 
     CMat circle, gaussian, convolution;
@@ -200,6 +214,7 @@ void RefocusFilter::refocusImage(uchar* const data, int width, int height, bool 
     RefocusMatrix::finish_c_mat(&circle);
 
     // Apply deconvolution kernel to image.
+
     qCDebug(DIGIKAM_DIMG_LOG) << "RefocusFilter::Apply Matrix to image...";
 
     Args prm;
@@ -214,6 +229,7 @@ void RefocusFilter::refocusImage(uchar* const data, int width, int height, bool 
     convolveImage(prm);
 
     // Clean up memory
+
     delete matrix;
 }
 
@@ -229,7 +245,7 @@ void RefocusFilter::convolveImageMultithreaded(uint start, uint stop, uint y1, c
     const int imageSize  = prm.width * prm.height;
     const int mat_offset = prm.mat_size / 2;
 
-    for (x1 = start; runningFlag() && (x1 < stop); ++x1)
+    for (x1 = start ; runningFlag() && (x1 < stop) ; ++x1)
     {
         valRed = valGreen = valBlue = 0.0;
 
@@ -238,15 +254,15 @@ void RefocusFilter::convolveImageMultithreaded(uint start, uint stop, uint y1, c
             uchar red, green, blue;
             uchar* ptr = nullptr;
 
-            for (y2 = 0; runningFlag() && (y2 < prm.mat_size); ++y2)
+            for (y2 = 0 ; runningFlag() && (y2 < prm.mat_size) ; ++y2)
             {
                 int y2_matsize = y2 * prm.mat_size;
 
-                for (x2 = 0; runningFlag() && (x2 < prm.mat_size); ++x2)
+                for (x2 = 0 ; runningFlag() && (x2 < prm.mat_size) ; ++x2)
                 {
                     index1 = prm.width * (y1 + y2 - mat_offset) + x1 + x2 - mat_offset;
 
-                    if (index1 >= 0 && index1 < imageSize)
+                    if ((index1 >= 0) && (index1 < imageSize))
                     {
                         ptr                      =  &prm.orgData[index1 * 4];
                         blue                     =  ptr[0];
@@ -262,13 +278,15 @@ void RefocusFilter::convolveImageMultithreaded(uint start, uint stop, uint y1, c
 
             index2 = y1 * prm.width + x1;
 
-            if (index2 >= 0 && index2 < imageSize)
+            if ((index2 >= 0) && (index2 < imageSize))
             {
                 // To get Alpha channel value from original (unchanged)
+
                 memcpy(&prm.destData[index2 * 4], &prm.orgData[index2 * 4], 4);
                 ptr = &prm.destData[index2 * 4];
 
                 // Overwrite RGB values to destination.
+
                 ptr[0] = (uchar) CLAMP(valBlue,  0.0, 255.0);
                 ptr[1] = (uchar) CLAMP(valGreen, 0.0, 255.0);
                 ptr[2] = (uchar) CLAMP(valRed,   0.0, 255.0);
@@ -279,15 +297,15 @@ void RefocusFilter::convolveImageMultithreaded(uint start, uint stop, uint y1, c
             ushort red, green, blue;
             ushort* ptr = nullptr;
 
-            for (y2 = 0; runningFlag() && (y2 < prm.mat_size); ++y2)
+            for (y2 = 0 ; runningFlag() && (y2 < prm.mat_size) ; ++y2)
             {
                 int y2_matsize = y2 * prm.mat_size;
 
-                for (x2 = 0; runningFlag() && (x2 < prm.mat_size); ++x2)
+                for (x2 = 0 ; runningFlag() && (x2 < prm.mat_size) ; ++x2)
                 {
                     index1 = prm.width * (y1 + y2 - mat_offset) + x1 + x2 - mat_offset;
 
-                    if (index1 >= 0 && index1 < imageSize)
+                    if ((index1 >= 0) && (index1 < imageSize))
                     {
                         ptr                      =  &orgData16[index1 * 4];
                         blue                     =  ptr[0];
@@ -303,13 +321,15 @@ void RefocusFilter::convolveImageMultithreaded(uint start, uint stop, uint y1, c
 
             index2 = y1 * prm.width + x1;
 
-            if (index2 >= 0 && index2 < imageSize)
+            if ((index2 >= 0) && (index2 < imageSize))
             {
                 // To get Alpha channel value from original (unchanged)
+
                 memcpy(&destData16[index2 * 4], &orgData16[index2 * 4], 8);
                 ptr = &destData16[index2 * 4];
 
                 // Overwrite RGB values to destination.
+
                 ptr[0] = (ushort) CLAMP(valBlue,  0.0, 65535.0);
                 ptr[1] = (ushort) CLAMP(valGreen, 0.0, 65535.0);
                 ptr[2] = (ushort) CLAMP(valRed,   0.0, 65535.0);
@@ -324,7 +344,7 @@ void RefocusFilter::convolveImage(const Args& prm)
 
     QList<int> vals = multithreadedSteps(prm.width);
 
-    for (int y1 = 0; runningFlag() && (y1 < prm.height); ++y1)
+    for (int y1 = 0 ; runningFlag() && (y1 < prm.height) ; ++y1)
     {
         QList <QFuture<void> > tasks;
 
@@ -340,12 +360,15 @@ void RefocusFilter::convolveImage(const Args& prm)
         }
 
         foreach (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         // Update the progress bar in dialog.
+
         progress = (int)(((double)y1 * 100.0) / prm.height);
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }

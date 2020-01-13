@@ -72,12 +72,12 @@ RedEyeCorrectionSettings::RedEyeCorrectionSettings(QWidget* const parent)
     : QWidget(parent),
       d(new Private)
 {
-    const int spacing     = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    QGridLayout* grid     = new QGridLayout(parent);
+    QGridLayout* const grid = new QGridLayout(parent);
 
-    QLabel* const label2  = new QLabel(i18n("Red Level:"));
-    d->redtoavgratioInput = new DDoubleNumInput();
+    QLabel* const label2    = new QLabel(i18n("Red Level:"));
+    d->redtoavgratioInput   = new DDoubleNumInput();
     d->redtoavgratioInput->setRange(1.5, 3.0, 0.1);
     d->redtoavgratioInput->setDefaultValue(2.1);
     d->redtoavgratioInput->setWhatsThis(i18n("Set here the reducing level of red to the average of blue and green."));
@@ -104,7 +104,6 @@ RedEyeCorrectionSettings::~RedEyeCorrectionSettings()
 RedEyeCorrectionContainer RedEyeCorrectionSettings::settings() const
 {
     RedEyeCorrectionContainer prm;
-
     prm.m_redToAvgRatio = (double)d->redtoavgratioInput->value();
 
     return prm;
@@ -127,7 +126,6 @@ void RedEyeCorrectionSettings::resetToDefault()
 RedEyeCorrectionContainer RedEyeCorrectionSettings::defaultSettings() const
 {
     RedEyeCorrectionContainer prm;
-
     prm.m_redToAvgRatio = (double)(d->redtoavgratioInput->defaultValue());
 
     return prm;
@@ -146,7 +144,6 @@ void RedEyeCorrectionSettings::readSettings(KConfigGroup& group)
 void RedEyeCorrectionSettings::writeSettings(KConfigGroup& group)
 {
     RedEyeCorrectionContainer prm = settings();
-
     group.writeEntry(d->configRedToAvgRatioAdjustmentEntry, prm.m_redToAvgRatio);
 }
 

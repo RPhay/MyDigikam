@@ -9,9 +9,7 @@
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009      by Matthias Welwarsky <matze at welwarsky dot de>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
- *
- * Original Sharpen algorithm copyright 2002
- * by Daniel M. Duley <mosfet at kde dot org> from KImageEffect API.
+ * Copyright (C) 2002      by Daniel M. Duley <mosfet at kde dot org>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -52,24 +50,23 @@ namespace Digikam
 {
 
 UnsharpMaskFilter::UnsharpMaskFilter(QObject* const parent)
-    : DImgThreadedFilter(parent)
+    : DImgThreadedFilter(parent),
+      m_radius(1),
+      m_amount(1.0),
+      m_threshold(0.05),
+      m_luma(false)
 {
-    m_radius    = 1;
-    m_amount    = 1.0;
-    m_threshold = 0.05;
-    m_luma      = false;
-
     initFilter();
 }
 
 UnsharpMaskFilter::UnsharpMaskFilter(DImg* const orgImage, QObject* const parent, double radius,
                                      double amount, double threshold, bool luma)
-    : DImgThreadedFilter(orgImage, parent, QLatin1String("UnsharpMask"))
+    : DImgThreadedFilter(orgImage, parent, QLatin1String("UnsharpMask")),
+      m_radius(radius),
+      m_amount(amount),
+      m_threshold(threshold),
+      m_luma(luma)
 {
-    m_radius    = radius;
-    m_amount    = amount;
-    m_threshold = threshold;
-    m_luma      = luma;
     initFilter();
 }
 
@@ -104,7 +101,8 @@ void UnsharpMaskFilter::unsharpMaskMultithreaded(uint start, uint stop, uint y)
             p.getHSL(&hp, &sp, &lp);
             q.getHSL(&hq, &sq, &lq);
 
-            //luma channel
+            // luma channel
+
             value = (double)(lp) - (double)(lq);
 
             if (fabs(2.0 * value) < quantumThreshold)
@@ -123,6 +121,7 @@ void UnsharpMaskFilter::unsharpMaskMultithreaded(uint start, uint stop, uint y)
         else
         {
             // Red channel.
+
             value = (double)(p.red()) - (double)(q.red());
 
             if (fabs(2.0 * value) < quantumThreshold)
@@ -137,6 +136,7 @@ void UnsharpMaskFilter::unsharpMaskMultithreaded(uint start, uint stop, uint y)
             q.setRed(CLAMP(lround(value), zero, quantum));
 
             // Green Channel.
+
             value = (double)(p.green()) - (double)(q.green());
 
             if (fabs(2.0 * value) < quantumThreshold)
@@ -151,6 +151,7 @@ void UnsharpMaskFilter::unsharpMaskMultithreaded(uint start, uint stop, uint y)
             q.setGreen(CLAMP(lround(value), zero, quantum));
 
             // Blue Channel.
+
             value = (double)(p.blue()) - (double)(q.blue());
 
             if (fabs(2.0 * value) < quantumThreshold)
@@ -165,6 +166,7 @@ void UnsharpMaskFilter::unsharpMaskMultithreaded(uint start, uint stop, uint y)
             q.setBlue(CLAMP(lround(value), zero, quantum));
 
             // Alpha Channel.
+
             value = (double)(p.alpha()) - (double)(q.alpha());
 
             if (fabs(2.0 * value) < quantumThreshold)
@@ -211,11 +213,13 @@ void UnsharpMaskFilter::filterImage()
         }
 
         foreach (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         progress = (int)(10.0 + ((double)y * 90.0) / m_destImage.height());
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }

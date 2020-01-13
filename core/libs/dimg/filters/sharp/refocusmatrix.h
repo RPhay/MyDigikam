@@ -34,13 +34,13 @@ namespace Digikam
 {
 
 /**
-* CMat:
-*
-* Centered matrix. This is a square matrix where
-* the indices range from [-radius, radius].
-* The matrix contains (2 * radius + 1) ** 2 elements.
-*
-**/
+ * CMat:
+ *
+ * Centered matrix. This is a square matrix where
+ * the indices range from [-radius, radius].
+ * The matrix contains (2 * radius + 1) ** 2 elements.
+ *
+ */
 typedef struct
 {
     /**
@@ -65,12 +65,12 @@ CMat;
 // ---------------------------------------------------------------------------------------------
 
 /**
-* Mat:
-*
-* Normal matrix type. Indices range from
-* [0, rows -1 ] and [0, cols - 1].
-*
-**/
+ * Mat:
+ *
+ * Normal matrix type. Indices range from
+ * [0, rows -1 ] and [0, cols - 1].
+ *
+ */
 typedef struct
 {
     /**

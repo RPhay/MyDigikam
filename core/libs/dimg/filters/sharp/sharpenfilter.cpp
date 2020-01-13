@@ -8,9 +8,7 @@
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2010      by Martin Klapetek <martin dot klapetek at gmail dot com>
- *
- * Original Sharpen algorithm copyright 2002
- * by Daniel M. Duley <mosfet at kde dot org> from KImageEffect API.
+ * Copyright (C) 2002      by Daniel M. Duley <mosfet at kde dot org>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -78,6 +76,7 @@ SharpenFilter::SharpenFilter(DImgThreadedFilter* const parentFilter,
 
     // We need to provide support for orgImage == destImage.
     // The algorithm does not support this out of the box, so use a temporary.
+
     if (orgImage.bits() == destImage.bits())
     {
         m_destImage = DImg(destImage.width(), destImage.height(), destImage.sixteenBit());
@@ -106,8 +105,9 @@ void SharpenFilter::filterImage()
     sharpenImage(m_radius, m_sigma);
 }
 
-/** Function to apply the sharpen filter on an image*/
-
+/**
+ * Function to apply the sharpen filter on an image
+ */
 void SharpenFilter::sharpenImage(double radius, double sigma)
 {
     if (m_orgImage.isNull())
@@ -125,8 +125,8 @@ void SharpenFilter::sharpenImage(double radius, double sigma)
     double alpha, normalize = 0.0;
     long i = 0, u, v;
 
-    int kernelWidth     = getOptimalKernelWidth(radius, sigma);
-    int halfKernelWidth = kernelWidth / 2;
+    int kernelWidth         = getOptimalKernelWidth(radius, sigma);
+    int halfKernelWidth     = kernelWidth / 2;
 
     if ((int)m_orgImage.width() < kernelWidth)
     {
@@ -142,9 +142,9 @@ void SharpenFilter::sharpenImage(double radius, double sigma)
         return;
     }
 
-    for (v = -halfKernelWidth; v <= halfKernelWidth; ++v)
+    for (v = -halfKernelWidth ; v <= halfKernelWidth ; ++v)
     {
-        for (u = -halfKernelWidth; u <= halfKernelWidth; ++u)
+        for (u = -halfKernelWidth ; u <= halfKernelWidth ; ++u)
         {
             alpha      = exp(-((double) u * u + v * v) / (2.0 * sigma * sigma));
             kernel[i]  = alpha / (2.0 * M_PI * sigma * sigma);
@@ -173,12 +173,12 @@ void SharpenFilter::convolveImageMultithreaded(const Args& prm)
 
         for (mcy = 0 ; runningFlag() && (mcy < prm.kernelWidth) ; ++mcy, ++sy)
         {
-            my = sy < 0 ? 0 : sy > (int)m_destImage.height() - 1 ? m_destImage.height() - 1 : sy;
+            my = (sy < 0) ? 0 : (sy > (int)m_destImage.height() - 1) ? m_destImage.height() - 1 : sy;
             sx = x + (-prm.halfKernelWidth);
 
             for (mcx = 0 ; runningFlag() && (mcx < prm.kernelWidth) ; ++mcx, ++sx)
             {
-                mx     = sx < 0 ? 0 : sx > (int)m_destImage.width() - 1 ? m_destImage.width() - 1 : sx;
+                mx     = (sx < 0) ? 0 : (sx > (int)m_destImage.width() - 1) ? m_destImage.width() - 1 : sx;
                 color  = m_orgImage.getPixelColor(mx, my);
                 red   += (*k) * (color.red()   * 257.0);
                 green += (*k) * (color.green() * 257.0);
@@ -261,11 +261,13 @@ bool SharpenFilter::convolveImage(const unsigned int order, const double* const 
         }
 
         foreach (QFuture<void> t, tasks)
+        {
             t.waitForFinished();
+        }
 
         progress = (int)(((double)y * 100.0) / m_destImage.height());
 
-        if (progress % 5 == 0)
+        if ((progress % 5) == 0)
         {
             postProgress(progress);
         }
@@ -278,7 +280,7 @@ int SharpenFilter::getOptimalKernelWidth(double radius, double sigma)
 {
     double        normalize, value;
     long          kernelWidth;
-   long u;
+    long u;
 
     if (radius > 0.0)
     {

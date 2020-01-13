@@ -51,7 +51,7 @@ public:
     RedEyeCorrectionContainer defaultSettings() const;
     void resetToDefault();
 
-    RedEyeCorrectionContainer settings() const;
+    RedEyeCorrectionContainer settings()        const;
     void setSettings(const RedEyeCorrectionContainer& settings);
 
     void readSettings(KConfigGroup& group);

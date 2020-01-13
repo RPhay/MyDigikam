@@ -38,6 +38,30 @@ namespace Digikam
 class DIGIKAM_EXPORT RefocusFilter : public DImgThreadedFilter
 {
 
+private:
+
+    struct Args
+    {
+        explicit Args()
+          : orgData(nullptr),
+            destData(nullptr),
+            width(0),
+            height(0),
+            sixteenBit(false),
+            matrix(nullptr),
+            mat_size(0)
+        {
+        }
+
+        uchar*  orgData;
+        uchar*  destData;
+        int     width;
+        int     height;
+        bool    sixteenBit;
+        double* matrix;
+        uint    mat_size;
+    };
+
 public:
 
     explicit RefocusFilter(QObject* const parent = nullptr);
@@ -65,30 +89,18 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
-    void                    readParameters(const FilterAction& action) override;
+    virtual FilterAction    filterAction()                                    override;
+    void                    readParameters(const FilterAction& action)        override;
+
 
 private:
 
-    struct Args
-    {
-        uchar*  orgData;
-        uchar*  destData;
-        int     width;
-        int     height;
-        bool    sixteenBit;
-        double* matrix;
-        uint    mat_size;
-    };
-
-private:
-
-    void filterImage() override;
+    void filterImage()                                                        override;
 
     void refocusImage(uchar* const data, int width, int height, bool sixteenBit,
                       int matrixSize, double radius, double gauss,

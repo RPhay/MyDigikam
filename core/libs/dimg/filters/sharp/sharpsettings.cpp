@@ -69,6 +69,7 @@ public:
       : stack(nullptr),
         sharpMethod(nullptr),
         radiusInput(nullptr),
+
 #ifdef HAVE_EIGEN3
         radius(nullptr),
         correlation(nullptr),
@@ -76,6 +77,7 @@ public:
         gauss(nullptr),
         matrixSize(nullptr),
 #endif // HAVE_EIGEN3
+
         radiusInput2(nullptr),
         amountInput(nullptr),
         thresholdInput(nullptr),
@@ -139,13 +141,15 @@ SharpSettings::SharpSettings(QWidget* const parent)
     const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     QGridLayout* const grid = new QGridLayout(parent);
 
-    QLabel* const label1 = new QLabel(i18n("Method:"));
-    d->sharpMethod       = new DComboBox;
+    QLabel* const label1    = new QLabel(i18n("Method:"));
+    d->sharpMethod          = new DComboBox;
     d->sharpMethod->addItem(i18n("Simple sharp"));
     d->sharpMethod->addItem(i18n("Unsharp mask"));
+
 #ifdef HAVE_EIGEN3
     d->sharpMethod->addItem(i18n("Refocus"));
 #endif // HAVE_EIGEN3
+
     d->sharpMethod->setDefaultIndex(SharpContainer::SimpleSharp);
     d->sharpMethod->setWhatsThis(i18n("Select the sharpening method to apply to the image."));
 
@@ -298,6 +302,7 @@ SharpSettings::SharpSettings(QWidget* const parent)
     grid3->setSpacing(0);
 
     d->stack->insertWidget(SharpContainer::Refocus, refocusSettings);
+
 #endif // HAVE_EIGEN3
 
     // -------------------------------------------------------------
@@ -338,6 +343,7 @@ SharpSettings::SharpSettings(QWidget* const parent)
             this, SIGNAL(signalSettingsChanged()));
 
 #endif // HAVE_EIGEN3
+
 }
 
 SharpSettings::~SharpSettings()

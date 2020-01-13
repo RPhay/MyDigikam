@@ -44,10 +44,6 @@ public:
     explicit UnsharpMaskFilter(DImg* const orgImage, QObject* const parent=nullptr, double radius=1.0,
                                double amount=1.0, double threshold=0.05, bool luma=false);
 
-    // Constructor for slave mode: execute immediately in current thread with specified master filter
-    // UnsharpMaskFilter(DImgThreadedFilter *parentFilter, const DImg& orgImage, const DImg& destImage,
-    //            int progressBegin=0, int progressEnd=100, double radius=0.0, double sigma=1.0);
-
     virtual ~UnsharpMaskFilter();
 
     static QString          FilterIdentifier()
@@ -67,17 +63,17 @@ public:
         return 1;
     }
 
-    virtual QString         filterIdentifier() const override
+    virtual QString         filterIdentifier()                          const override
     {
         return FilterIdentifier();
     }
 
-    virtual FilterAction    filterAction() override;
-    void                    readParameters(const FilterAction& action) override;
+    virtual FilterAction    filterAction()                                    override;
+    void                    readParameters(const FilterAction& action)        override;
 
 private:
 
-    void filterImage() override;
+    void filterImage()                                                        override;
     void unsharpMaskMultithreaded(uint start, uint stop, uint y);
 
 private:
