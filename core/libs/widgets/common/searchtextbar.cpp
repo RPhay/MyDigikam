@@ -48,7 +48,7 @@ namespace Digikam
 
 bool operator==(const SearchTextSettings& a, const SearchTextSettings& b)
 {
-    return a.caseSensitive == b.caseSensitive && a.text == b.text;
+    return ((a.caseSensitive == b.caseSensitive) && (a.text == b.text));
 }
 
 class Q_DECL_HIDDEN SearchTextBar::Private
@@ -176,6 +176,7 @@ void SearchTextBar::setModel(AbstractAlbumModel* model)
 void SearchTextBar::setFilterModel(AlbumFilterModel* filterModel)
 {
     // if there already was a model, disconnect from this model
+
     if (d->filterModel)
     {
         disconnect(d->filterModel);
@@ -184,6 +185,7 @@ void SearchTextBar::setFilterModel(AlbumFilterModel* filterModel)
     d->filterModel = filterModel;
 
     // connect to new model if desired
+
     if (d->filterModel)
     {
         connect(this, SIGNAL(signalSearchTextSettings(SearchTextSettings)),
@@ -219,12 +221,14 @@ void SearchTextBar::setCaseSensitive(bool b)
     d->hasCaseSensitive = b;
 
     // reset settings if selecting case sensitivity is not allowed
+
     if (!b)
     {
         d->settings.caseSensitive = Qt::CaseInsensitive;
     }
 
     // re-emit signal with changed settings
+
     if (!text().isEmpty())
     {
         emit signalSearchTextSettings(d->settings);
@@ -266,6 +270,7 @@ void SearchTextBar::slotTextChanged(const QString& text)
 void SearchTextBar::slotSearchResult(bool match)
 {
     // only highlight if text is not empty or highlighting is disabled.
+
     if (text().isEmpty() || !d->highlightOnResult)
     {
         setPalette(QPalette());

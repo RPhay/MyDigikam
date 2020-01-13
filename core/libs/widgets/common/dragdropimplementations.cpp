@@ -51,7 +51,7 @@ Qt::ItemFlags DragDropModelImplementation::dragDropFlags(const QModelIndex& inde
         return nullptr;
     }
 
-    return Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled;
+    return (Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled);
 }
 
 Qt::ItemFlags DragDropModelImplementation::dragDropFlagsV2(const QModelIndex& index) const
@@ -74,12 +74,14 @@ Qt::ItemFlags DragDropModelImplementation::dragDropFlagsV2(const QModelIndex& in
 bool DragDropModelImplementation::isDragEnabled(const QModelIndex& index) const
 {
     Q_UNUSED(index);
+
     return true;
 }
 
 bool DragDropModelImplementation::isDropEnabled(const QModelIndex& index) const
 {
     Q_UNUSED(index);
+
     return true;
 }
 
@@ -101,6 +103,7 @@ QStringList DragDropModelImplementation::mimeTypes() const
 bool DragDropModelImplementation::dropMimeData(const QMimeData*, Qt::DropAction, int, int, const QModelIndex&)
 {
     // we require custom solutions
+
     return false;
 }
 

@@ -45,7 +45,6 @@ public:
      * redirecting drag-and-drop support to a handler.
      * Include the macro DECLARE_Model_DRAG_DROP_METHODS in your derived QAbstractItemModel class.
      */
-
     DragDropModelImplementation();
     virtual ~DragDropModelImplementation() {}
 
@@ -54,8 +53,8 @@ public:
      * All functionality is redirected to the handler.
      * dropMimeData() always returns false, leaving implementation to the view.
      */
-    Qt::DropActions supportedDropActions() const;
-    QStringList     mimeTypes() const;
+    Qt::DropActions supportedDropActions()                          const;
+    QStringList     mimeTypes()                                     const;
     bool            dropMimeData(const QMimeData*, Qt::DropAction, int, int, const QModelIndex&);
     QMimeData*      mimeData(const QModelIndexList& indexes) const;
 
@@ -65,7 +64,7 @@ public:
      * if a drag drop handler is set.
      * Reimplement to fine-tune. Note: There is an alternative below.
      */
-    virtual Qt::ItemFlags dragDropFlags(const QModelIndex& index) const;
+    virtual Qt::ItemFlags dragDropFlags(const QModelIndex& index)   const;
 
     /**
      * This is an alternative approach to dragDropFlags().
@@ -74,22 +73,25 @@ public:
      * Use simple dragDropFlags() if you need not customization,
      * or reimplement dragDropFlags() if you fine-tune it yourself.
      */
-    Qt::ItemFlags dragDropFlagsV2(const QModelIndex& index) const;
-    virtual bool  isDragEnabled(const QModelIndex& index) const;
-    virtual bool  isDropEnabled(const QModelIndex& index) const;
+    Qt::ItemFlags dragDropFlagsV2(const QModelIndex& index)         const;
+    virtual bool  isDragEnabled(const QModelIndex& index)           const;
+    virtual bool  isDropEnabled(const QModelIndex& index)           const;
 
-    /// Set a drag drop handler.
+    /**
+     * Set a drag drop handler.
+     */
     void setDragDropHandler(AbstractItemDragDropHandler* handler);
-    AbstractItemDragDropHandler* dragDropHandler() const;
+    AbstractItemDragDropHandler* dragDropHandler()                  const;
 
-    #define DECLARE_MODEL_DRAG_DROP_METHODS \
-    virtual Qt::DropActions supportedDropActions() const  override \
-        { return DragDropModelImplementation::supportedDropActions(); } \
-    virtual QStringList mimeTypes() const  override \
-        { return DragDropModelImplementation::mimeTypes(); } \
-    virtual bool dropMimeData(const QMimeData* d, Qt::DropAction a, int r, int c, const QModelIndex& p)  override \
-        { return DragDropModelImplementation::dropMimeData(d, a, r, c, p); } \
-    virtual QMimeData* mimeData(const QModelIndexList& indexes) const  override \
+    #define DECLARE_MODEL_DRAG_DROP_METHODS                                        \
+    virtual Qt::DropActions supportedDropActions()                  const override \
+        { return DragDropModelImplementation::supportedDropActions(); }            \
+    virtual QStringList mimeTypes()                                 const override \
+        { return DragDropModelImplementation::mimeTypes(); }                       \
+    virtual bool dropMimeData(const QMimeData* d, Qt::DropAction a,                \
+                              int r, int c, const QModelIndex& p)         override \
+        { return DragDropModelImplementation::dropMimeData(d, a, r, c, p); }       \
+    virtual QMimeData* mimeData(const QModelIndexList& indexes)     const override \
         { return DragDropModelImplementation::mimeData(indexes); }
 
 protected:
@@ -112,17 +114,17 @@ public:
 protected:
 
     /// This one is implemented by DECLARE_VIEW_DRAG_DROP_METHODS
-    virtual QAbstractItemView* asView() = 0;
+    virtual QAbstractItemView* asView()                                        = 0;
 
     /// You need to implement these three methods
     /// Returns the drag drop handler
-    virtual AbstractItemDragDropHandler* dragDropHandler() const = 0;
+    virtual AbstractItemDragDropHandler* dragDropHandler()               const = 0;
 
     /**
      * Maps the given index of the view's model to an index of the handler's model,
      * which can be a source model of the view's model.
      */
-    virtual QModelIndex mapIndexForDragDrop(const QModelIndex& index) const = 0;
+    virtual QModelIndex mapIndexForDragDrop(const QModelIndex& index)    const = 0;
 
     /**
      * Creates a pixmap for dragging the given indexes.
@@ -137,18 +139,18 @@ protected:
     void dropEvent(QDropEvent* e);
     void startDrag(Qt::DropActions supportedActions);
 
-    #define DECLARE_VIEW_DRAG_DROP_METHODS(ParentViewClass) \
-    virtual QAbstractItemView* asView() override { return this; } \
-    void dragEnterEvent(QDragEnterEvent* e) override \
-        { DragDropViewImplementation::dragEnterEvent(e); } \
-    void dragMoveEvent(QDragMoveEvent* e) override \
-        { ParentViewClass::dragMoveEvent(e); \
-          DragDropViewImplementation::dragMoveEvent(e); } \
-    void dropEvent(QDropEvent* e) override \
-        { ParentViewClass::dropEvent(e); \
-          DragDropViewImplementation::dropEvent(e); } \
-    void startDrag(Qt::DropActions supportedActions) override \
-        { DragDropViewImplementation::startDrag(supportedActions); } \
+    #define DECLARE_VIEW_DRAG_DROP_METHODS(ParentViewClass)                       \
+    virtual QAbstractItemView* asView()                 override { return this; } \
+    void dragEnterEvent(QDragEnterEvent* e)             override                  \
+        { DragDropViewImplementation::dragEnterEvent(e); }                        \
+    void dragMoveEvent(QDragMoveEvent* e)               override                  \
+        { ParentViewClass::dragMoveEvent(e);                                      \
+          DragDropViewImplementation::dragMoveEvent(e); }                         \
+    void dropEvent(QDropEvent* e)                       override                  \
+        { ParentViewClass::dropEvent(e);                                          \
+          DragDropViewImplementation::dropEvent(e); }                             \
+    void startDrag(Qt::DropActions supportedActions)    override                  \
+        { DragDropViewImplementation::startDrag(supportedActions); }              \
 
     void encodeIsCutSelection(QMimeData* mime, bool isCutSelection);
     bool decodeIsCutSelection(const QMimeData* mimeData);

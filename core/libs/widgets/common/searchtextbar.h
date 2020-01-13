@@ -48,8 +48,8 @@ class DIGIKAM_EXPORT SearchTextSettings
 public:
 
     SearchTextSettings()
+      : caseSensitive(Qt::CaseInsensitive)
     {
-        caseSensitive = Qt::CaseInsensitive;
     }
 
     Qt::CaseSensitivity caseSensitive;
@@ -102,7 +102,7 @@ public:
     ~SearchTextBar();
 
     void setTextQueryCompletion(bool b);
-    bool hasTextQueryCompletion() const;
+    bool hasTextQueryCompletion()               const;
 
     /**
      * Tells whether highlighting for found search results shall be used or not
@@ -145,7 +145,7 @@ public:
      *
      * @return current highlight state
      */
-    HighlightState getCurrentHighlightState() const;
+    HighlightState getCurrentHighlightState()   const;
 
     /**
      * Indicate whether this search text bar can be toggled to between case-
@@ -157,11 +157,11 @@ public:
      *          insensitive
      */
     void setCaseSensitive(bool b);
-    bool hasCaseSensitive() const;
+    bool hasCaseSensitive()                     const;
 
     void setSearchTextSettings(const SearchTextSettings& settings);
-    SearchTextSettings searchTextSettings() const;
-    ModelCompleter*  completerModel() const;
+    SearchTextSettings searchTextSettings()     const;
+    ModelCompleter*  completerModel()           const;
 
 Q_SIGNALS:
 
@@ -179,8 +179,8 @@ private Q_SLOTS:
 
 protected:
 
-    virtual void doLoadState() override;
-    virtual void doSaveState() override;
+    virtual void doLoadState()                  override;
+    virtual void doSaveState()                  override;
 
 private:
 
