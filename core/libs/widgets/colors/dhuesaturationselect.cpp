@@ -79,15 +79,23 @@ void DPointSelect::Private::setValues(int _xPos, int _yPos)
     xPos  = _xPos;
     yPos  = _yPos;
 
-    if (xPos > maxX)
+    if      (xPos > maxX)
+    {
         xPos = maxX;
+    }
     else if (xPos < minX)
+    {
         xPos = minX;
+    }
 
-    if (yPos > maxY)
+    if      (yPos > maxY)
+    {
         yPos = maxY;
+    }
     else if (yPos < minY)
+    {
         yPos = minY;
+    }
 
     Q_ASSERT(maxX != minX);
     int xp = w + (q->width() - 2 * w) * xPos / (maxX - minX);
@@ -165,12 +173,14 @@ void DPointSelect::setMarkerColor(const QColor &col)
 QRect DPointSelect::contentsRect() const
 {
     int w = style()->pixelMetric(QStyle::PM_DefaultFrameWidth);
+
     return rect().adjusted(w, w, -w, -w);
 }
 
 QSize DPointSelect::minimumSizeHint() const
 {
     int w = style()->pixelMetric(QStyle::PM_DefaultFrameWidth);
+
     return QSize(2 * w, 2 * w);
 }
 
@@ -208,9 +218,13 @@ void DPointSelect::mouseMoveEvent(QMouseEvent* e)
 void DPointSelect::wheelEvent(QWheelEvent* e)
 {
     if (e->orientation() == Qt::Horizontal)
+    {
         setValues(xValue() + e->delta()/120, yValue());
+    }
     else
+    {
         setValues(xValue(), yValue() + e->delta()/120);
+    }
 
     emit valueChanged(d->xPos, d->yPos);
 }
@@ -221,30 +235,46 @@ void DPointSelect::valuesFromPosition(int x, int y, int& xVal, int& yVal) const
     xVal  = ((d->maxX - d->minX) * (x - w)) / (width() - 2 * w);
     yVal  = d->maxY - (((d->maxY - d->minY) * (y - w)) / (height() - 2 * w));
 
-    if (xVal > d->maxX)
+    if      (xVal > d->maxX)
+    {
         xVal = d->maxX;
+    }
     else if (xVal < d->minX)
+    {
         xVal = d->minX;
+    }
 
-    if (yVal > d->maxY)
+    if      (yVal > d->maxY)
+    {
         yVal = d->maxY;
+    }
     else if (yVal < d->minY)
+    {
         yVal = d->minY;
+    }
 }
 
 void DPointSelect::setPosition(int xp, int yp)
 {
     int w = style()->pixelMetric(QStyle::PM_DefaultFrameWidth);
 
-    if (xp < w)
+    if      (xp < w)
+    {
         xp = w;
+    }
     else if (xp > width() - w)
+    {
         xp = width() - w;
+    }
 
-    if (yp < w)
+    if      (yp < w)
+    {
         yp = w;
+    }
     else if (yp > height() - w)
+    {
         yp = height() - w;
+    }
 
     d->px = xp;
     d->py = yp;
@@ -318,6 +348,7 @@ void DHueSaturationSelector::setChooserMode(DColorChooserMode chooserMode)
         case ChooserValue:
             x = 359;
             break;
+
         default:
             x = 255;
             break;
@@ -378,15 +409,15 @@ void DHueSaturationSelector::drawPalette(QPixmap* pixmap)
     int ySteps = componentYSteps(chooserMode());
 
     QColor color;
-    color.setHsv(hue(), saturation(), chooserMode() == ChooserClassic ? 192 : colorValue());
+    color.setHsv(hue(), saturation(), (chooserMode() == ChooserClassic) ? 192 : colorValue());
 
     QImage image(QSize(xSteps + 1, ySteps + 1), QImage::Format_RGB32);
 
-    for (int y = 0; y <= ySteps; ++y)
+    for (int y = 0 ; y <= ySteps ; ++y)
     {
         setComponentY(color, chooserMode(), y * (1.0 / ySteps));
 
-        for (int x = 0; x <= xSteps; ++x)
+        for (int x = 0 ; x <= xSteps ; ++x)
         {
             setComponentX(color, chooserMode(), x * (1.0 / xSteps));
             image.setPixel(x, ySteps - y, color.rgb());
@@ -395,7 +426,9 @@ void DHueSaturationSelector::drawPalette(QPixmap* pixmap)
 
     QPixmap pix(contentsRect().size());
     QPainter painter(&pix);
+
     // Bilinear filtering
+
     painter.setRenderHint(QPainter::SmoothPixmapTransform, true);
     QRectF srcRect(0.5, 0.5, xSteps, ySteps);
     QRectF destRect(QPointF(0, 0), contentsRect().size());

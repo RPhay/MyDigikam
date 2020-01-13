@@ -37,14 +37,19 @@ qreal getComponentValue(const QColor& color, DColorChooserMode chooserMode)
     {
         case ChooserRed:
             return color.redF();
+
         case ChooserGreen:
             return color.greenF();
+
         case ChooserBlue:
             return color.blueF();
+
         case ChooserHue:
             return color.hueF();
+
         case ChooserSaturation:
             return color.saturationF();
+
         default:
             return color.valueF();
     }
@@ -54,7 +59,7 @@ void setComponentValue(QColor& color, DColorChooserMode chooserMode, qreal value
 {
     if (chooserMode >= ChooserRed)
     {
-        if (chooserMode == ChooserRed)
+        if      (chooserMode == ChooserRed)
         {
             color.setRedF(value);
         }
@@ -73,7 +78,7 @@ void setComponentValue(QColor& color, DColorChooserMode chooserMode, qreal value
         qreal h=0, s=0, v=0, a=0;
         color.getHsvF(&h, &s, &v, &a);
 
-        if (chooserMode == ChooserHue)
+        if      (chooserMode == ChooserHue)
         {
             h = value;
         }

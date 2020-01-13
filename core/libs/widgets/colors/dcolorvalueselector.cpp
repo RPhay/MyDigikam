@@ -45,10 +45,10 @@ class Q_DECL_HIDDEN DSelector::Private
 public:
 
     explicit Private()
-      : arrowsize(5)
+      : arrowsize(5),
+        m_indent(true),
+        arrowPE(QStyle::PE_IndicatorArrowLeft)
     {
-        arrowPE  = QStyle::PE_IndicatorArrowLeft;
-        m_indent = true;
     }
 
     const int                arrowsize;
@@ -70,7 +70,9 @@ DSelector::DSelector(Qt::Orientation o, QWidget* const parent)
     setOrientation(o);
 
     if (o == Qt::Horizontal)
+    {
         setArrowDirection(Qt::UpArrow);
+    }
 }
 
 DSelector::~DSelector()
@@ -149,16 +151,19 @@ void DSelector::paintEvent(QPaintEvent*)
         opt.state = QStyle::State_Sunken;
 
         if (orientation() == Qt::Vertical)
+        {
             opt.rect.adjust(0, iw - w, -5, w - iw);
+        }
         else
+        {
             opt.rect.adjust(iw - w, 0, w - iw, -5);
+        }
 
         QBrush oldBrush = painter.brush();
         painter.setBrush(Qt::NoBrush);
         style()->drawPrimitive(QStyle::PE_Frame, &opt, &painter, this);
         painter.setBrush(oldBrush);
     }
-
 
     painter.end();
 }
@@ -196,13 +201,13 @@ void DSelector::moveArrow(const QPoint& pos)
 
     if (orientation() == Qt::Vertical)
     {
-        val = (maximum() - minimum()) * (height() - pos.y() - iw)
-            / (height() - iw * 2) + minimum();
+        val = (maximum() - minimum()) * (height() - pos.y() - iw) /
+              (height() - iw * 2) + minimum();
     }
     else
     {
-        val = (maximum() - minimum()) * ( pos.x() - iw)
-            / (width() - iw * 2) + minimum();
+        val = (maximum() - minimum()) * ( pos.x() - iw) /
+              (width() - iw * 2) + minimum();
     }
 
     setValue(val);
@@ -305,12 +310,15 @@ Qt::ArrowType DSelector::arrowDirection() const
         case QStyle::PE_IndicatorArrowUp:
             return Qt::UpArrow;
             break;
+
         case QStyle::PE_IndicatorArrowDown:
             return Qt::DownArrow;
             break;
+
         case QStyle::PE_IndicatorArrowRight:
             return Qt::RightArrow;
             break;
+
         case QStyle::PE_IndicatorArrowLeft:
         default:
             return Qt::LeftArrow;
@@ -474,7 +482,7 @@ void DColorValueSelector::drawPalette(QPixmap* pixmap)
 
     const int steps = componentValueSteps(chooserMode());
 
-    for (int v = 0; v <= steps; ++v)
+    for (int v = 0 ; v <= steps ; ++v)
     {
         setComponentValue(color, chooserMode(), v * (1.0 / steps));
         gradient.setColorAt(v * (1.0 / steps), color);

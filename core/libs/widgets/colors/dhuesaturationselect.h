@@ -87,17 +87,17 @@ public:
     /**
      * @return the current value in horizontal direction.
      */
-    int xValue() const;
+    int xValue()                    const;
 
     /**
      * @return the current value in vertical direction.
      */
-    int yValue() const;
+    int yValue()                    const;
 
     /**
      * @return the rectangle on which subclasses should draw.
      */
-    QRect contentsRect() const;
+    QRect contentsRect()            const;
 
     /**
      * Reimplemented to give the widget a minimum size
@@ -191,7 +191,7 @@ public:
      *
      * @return   The hue value (0-360)
      */
-    int hue() const;
+    int hue()                       const;
 
     /**
      * Sets the hue value (0-360)
@@ -205,7 +205,7 @@ public:
      *
      * @return The saturation (0-255)
      */
-    int saturation() const;
+    int saturation()                const;
 
     /**
      * Sets the saturation (0-255)
@@ -219,7 +219,7 @@ public:
      *
      * @return  The color value (0-255)
      */
-    int colorValue() const;
+    int colorValue()                const;
 
     /**
      * Sets the color value (0-255)
