@@ -57,41 +57,41 @@ DToolTipStyleSheet::DToolTipStyleSheet(const QFont& font)
     QString fontSize = (font.pointSize() == -1) ? QString::fromUtf8("font-size: %1px;").arg(font.pixelSize())
                                                 : QString::fromUtf8("font-size: %1pt;").arg(font.pointSize());
 
-    tipHeader   = QLatin1String("<qt><table cellspacing=\"0\" cellpadding=\"0\" width=\"250\" border=\"0\">");
-    tipFooter   = QLatin1String("</table></qt>");
+    tipHeader        = QLatin1String("<qt><table cellspacing=\"0\" cellpadding=\"0\" width=\"250\" border=\"0\">");
+    tipFooter        = QLatin1String("</table></qt>");
 
-    headBeg     = QString::fromLatin1("<tr bgcolor=\"%1\"><td colspan=\"2\">"
+    headBeg          = QString::fromLatin1("<tr bgcolor=\"%1\"><td colspan=\"2\">"
                                       "<nobr><p style=\"color:%2; font-family:%3; %4\"><center><b>")
-                  .arg(qApp->palette().color(QPalette::Base).name())
-                  .arg(qApp->palette().color(QPalette::Text).name())
-                  .arg(font.family())
-                  .arg(fontSize);
+                       .arg(qApp->palette().color(QPalette::Base).name())
+                       .arg(qApp->palette().color(QPalette::Text).name())
+                       .arg(font.family())
+                       .arg(fontSize);
 
-    headEnd     = QLatin1String("</b></center></p></nobr></td></tr>");
+    headEnd          = QLatin1String("</b></center></p></nobr></td></tr>");
 
-    cellBeg     = QString::fromLatin1("<tr><td><nobr><p style=\"color:%1; font-family:%2; %3\">")
-                  .arg(qApp->palette().color(QPalette::ToolTipText).name())
-                  .arg(font.family())
-                  .arg(fontSize);
+    cellBeg          = QString::fromLatin1("<tr><td><nobr><p style=\"color:%1; font-family:%2; %3\">")
+                       .arg(qApp->palette().color(QPalette::ToolTipText).name())
+                       .arg(font.family())
+                       .arg(fontSize);
 
-    cellMid     = QString::fromLatin1("</p></nobr></td><td><nobr><p style=\"color:%1; font-family:%2; %3\">")
-                  .arg(qApp->palette().color(QPalette::ToolTipText).name())
-                  .arg(font.family())
-                  .arg(fontSize);
+    cellMid          = QString::fromLatin1("</p></nobr></td><td><nobr><p style=\"color:%1; font-family:%2; %3\">")
+                       .arg(qApp->palette().color(QPalette::ToolTipText).name())
+                       .arg(font.family())
+                       .arg(fontSize);
 
-    cellEnd     = QLatin1String("</p></nobr></td></tr>");
+    cellEnd          = QLatin1String("</p></nobr></td></tr>");
 
-    cellSpecBeg = QString::fromLatin1("<tr><td><nobr><p style=\"color:%1; font-family:%2; %3\">")
-                  .arg(qApp->palette().color(QPalette::ToolTipText).name())
-                  .arg(font.family())
-                  .arg(fontSize);
+    cellSpecBeg      = QString::fromLatin1("<tr><td><nobr><p style=\"color:%1; font-family:%2; %3\">")
+                       .arg(qApp->palette().color(QPalette::ToolTipText).name())
+                       .arg(font.family())
+                       .arg(fontSize);
 
-    cellSpecMid = QString::fromLatin1("</p></nobr></td><td><nobr><p style=\"color:%1; font-family:%2; %3\"><i>")
-                  .arg(qApp->palette().color(QPalette::ToolTipText).name())
-                  .arg(font.family())
-                  .arg(fontSize);
+    cellSpecMid      = QString::fromLatin1("</p></nobr></td><td><nobr><p style=\"color:%1; font-family:%2; %3\"><i>")
+                       .arg(qApp->palette().color(QPalette::ToolTipText).name())
+                       .arg(font.family())
+                       .arg(fontSize);
 
-    cellSpecEnd = QLatin1String("</i></p></nobr></td></tr>");
+    cellSpecEnd      = QLatin1String("</i></p></nobr></td></tr>");
 }
 
 QString DToolTipStyleSheet::breakString(const QString& input) const
@@ -139,12 +139,16 @@ QString DToolTipStyleSheet::elidedText(const QString& str, Qt::TextElideMode eli
     {
         case Qt::ElideLeft:
             return QLatin1String("...") + str.right(maxStringLength-3);
+
         case Qt::ElideRight:
             return str.left(maxStringLength-3) + QLatin1String("...");
+
         case Qt::ElideMiddle:
             return str.left(maxStringLength / 2 - 2) + QLatin1String("...") + str.right(maxStringLength / 2 - 1);
+
         case Qt::ElideNone:
             return str.left(maxStringLength);
+
         default:
             return str;
     }
@@ -156,6 +160,7 @@ QString DToolTipStyleSheet::imageAsBase64(const QImage& img) const
     QBuffer    buffer(&byteArray);
     img.save(&buffer, "PNG");
     QString    iconBase64 = QString::fromLatin1(byteArray.toBase64().data());
+
     return QString::fromLatin1("<img src=\"data:image/png;base64,%1\">").arg(iconBase64);
 }
 
@@ -165,8 +170,8 @@ class Q_DECL_HIDDEN DItemToolTip::Private
 {
 public:
 
-    explicit Private() :
-        tipBorder(5)
+    explicit Private()
+      : tipBorder(5)
     {
         corner = 0;
     }
@@ -209,7 +214,9 @@ void DItemToolTip::updateToolTip()
     renderArrows();
 
     QString contents = tipContents();
-    //setWordWrap(Qt::mightBeRichText(contents));
+/*
+    setWordWrap(Qt::mightBeRichText(contents));
+*/
     setText(contents);
     resize(sizeHint());
 }
@@ -229,6 +236,7 @@ void DItemToolTip::reposition()
     }
 
     QPoint pos = rect.center();
+
     // d->corner:
     // 0: upperleft
     // 1: upperright
@@ -236,6 +244,7 @@ void DItemToolTip::reposition()
     // 3: lowerright
 
     d->corner = 0;
+
     // should the tooltip be shown to the left or to the right of the ivi ?
 
     QScreen* screen = qApp->primaryScreen();
@@ -243,14 +252,17 @@ void DItemToolTip::reposition()
     if (QWidget* const widget = nativeParentWidget())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     QRect desk = screen->geometry();
 
-    if (rect.center().x() + width() > desk.right())
+    if ((rect.center().x() + width()) > desk.right())
     {
         // to the left
+
         if (pos.x() - width() < desk.left())
         {
             pos.setX(0);
@@ -264,9 +276,11 @@ void DItemToolTip::reposition()
     }
 
     // should the tooltip be shown above or below the ivi ?
+
     if (rect.bottom() + height() > desk.bottom())
     {
         // above
+
         int top = rect.top() - height() - 5;
 
         if (top < desk.top())
@@ -274,6 +288,7 @@ void DItemToolTip::reposition()
             top = desk.top();
 
             // recalculate x
+
             if (d->corner == 0)
             {
                 pos.setX(rect.right() + 5);
@@ -376,6 +391,7 @@ bool DItemToolTip::event(QEvent* e)
         case QEvent::Wheel:
             hide();
             break;
+
         default:
             break;
     }
@@ -423,12 +439,15 @@ void DItemToolTip::paintEvent(QPaintEvent* e)
         case 0:
             p.drawPixmap(3, 3, pix);
             break;
+
         case 1:
             p.drawPixmap(width() - pix.width() - 3, 3, pix);
             break;
+
         case 2:
             p.drawPixmap(3, height() - pix.height() - 3, pix);
             break;
+
         case 3:
             p.drawPixmap(width() - pix.width() - 3, height() - pix.height() - 3, pix);
             break;

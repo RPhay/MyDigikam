@@ -27,6 +27,8 @@
 #ifndef DIGIKAM_DCATEGORIZED_SORT_FILTER_PROXY_MODEL_PRIVATE_H
 #define DIGIKAM_DCATEGORIZED_SORT_FILTER_PROXY_MODEL_PRIVATE_H
 
+#include "dcategorizedsortfilterproxymodel.h"
+
 // Qt includes
 
 #include <QCollator>

@@ -60,15 +60,15 @@ public:
      * Default implementation is based on setTipContents().
      * Reimplement if you dynamically provide the contents.
      */
-    virtual QString tipContents() override;
+    virtual QString tipContents()           override;
 
 protected:
 
-    virtual QRect repositionRect() override;
+    virtual QRect repositionRect()          override;
 
     bool eventFilter(QObject* o, QEvent* e) override;
-    void hideEvent(QHideEvent*) override;
-    void mouseMoveEvent(QMouseEvent* e) override;
+    void hideEvent(QHideEvent*)             override;
+    void mouseMoveEvent(QMouseEvent* e)     override;
 
 private:
 

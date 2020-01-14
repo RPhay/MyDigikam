@@ -55,17 +55,23 @@ public:
      * Note: DImg is explicitly shared, and no copy is automatically taken here.
      */
     void setImage(const DImg& img);
-    DImg image() const;
+    DImg image()                                                const;
 
-    const ImageZoomSettings* zoomSettings() const;
+    const ImageZoomSettings* zoomSettings()                     const;
     ImageZoomSettings*       zoomSettings();
 
-    void            sizeHasChanged();
-    void            clearCache();
+    void sizeHasChanged();
+    void clearCache();
 
-    virtual QRectF  boundingRect() const override;
-    virtual void    paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget = nullptr) override;
-    virtual QString userLoadingHint() const { return QString(); }
+    virtual QRectF boundingRect()                               const override;
+    virtual void paint(QPainter* painter,
+                       const QStyleOptionGraphicsItem* option,
+                       QWidget* widget = nullptr)                     override;
+
+    virtual QString userLoadingHint()                           const
+    {
+        return QString();
+    }
 
 Q_SIGNALS:
 
@@ -75,7 +81,7 @@ Q_SIGNALS:
 
 protected:
 
-    void contextMenuEvent(QGraphicsSceneContextMenuEvent* e) override;
+    void contextMenuEvent(QGraphicsSceneContextMenuEvent* e)          override;
 
 public:
 

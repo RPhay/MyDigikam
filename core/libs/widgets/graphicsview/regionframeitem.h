@@ -62,7 +62,7 @@ public:
 
     void  setFlags(Flags flags);
     void  changeFlags(Flags flags, bool addOrRemove);
-    Flags flags() const;
+    Flags flags()                                             const;
 
     /**
      * Sets a widget item as HUD item. A HUD item will be positioned relative to this item,
@@ -79,7 +79,7 @@ public:
 
     void setRectInSceneCoordinatesAdjusted(const QRectF& rect);
 
-    virtual QRectF boundingRect() const override;
+    virtual QRectF boundingRect()                             const override;
 
 public Q_SLOTS:
 
@@ -98,15 +98,17 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget = nullptr) override;
-    virtual void mousePressEvent(QGraphicsSceneMouseEvent*) override;
-    virtual void mouseMoveEvent(QGraphicsSceneMouseEvent*) override;
-    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent*) override;
-    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent* event) override;
-    virtual void hoverMoveEvent(QGraphicsSceneHoverEvent* event) override;
-    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent* event) override;
+    virtual void paint(QPainter* painter,
+                       const QStyleOptionGraphicsItem* option,
+                       QWidget* widget = nullptr)                   override;
+    virtual void mousePressEvent(QGraphicsSceneMouseEvent*)         override;
+    virtual void mouseMoveEvent(QGraphicsSceneMouseEvent*)          override;
+    virtual void mouseReleaseEvent(QGraphicsSceneMouseEvent*)       override;
+    virtual void hoverEnterEvent(QGraphicsSceneHoverEvent* event)   override;
+    virtual void hoverMoveEvent(QGraphicsSceneHoverEvent* event)    override;
+    virtual void hoverLeaveEvent(QGraphicsSceneHoverEvent* event)   override;
 
-    virtual bool eventFilter(QObject* watched, QEvent* event) override;
+    virtual bool eventFilter(QObject* watched, QEvent* event)       override;
 
 private Q_SLOTS:
 

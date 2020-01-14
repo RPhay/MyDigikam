@@ -46,53 +46,57 @@ public:
     explicit ItemViewDelegate(QObject* const parent = nullptr);
     ~ItemViewDelegate();
 
-    ThumbnailSize thumbnailSize() const;
-    int spacing()                 const;
-    QRect rect()                  const;
+    ThumbnailSize thumbnailSize()                                                             const;
+    int spacing()                                                                             const;
+    QRect rect()                                                                              const;
 
-    /** Can be used to temporarily disable drawing of the rating.
-     *  Call with QModelIndex() afterwards.
+    /**
+     * Can be used to temporarily disable drawing of the rating.
+     * Call with QModelIndex() afterwards.
      */
     void setRatingEdited(const QModelIndex& index);
 
-    virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const override;
-    virtual QSize gridSize()                                                             const override;
+    virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index)      const override;
+    virtual QSize gridSize()                                                                  const override;
 
     // reimplemented from DItemDelegate
-    virtual void setThumbnailSize(const ThumbnailSize& thumbSize) override;
-    virtual void setSpacing(int spacing) override;
-    virtual void setDefaultViewOptions(const QStyleOptionViewItem& option) override;
+    virtual void setThumbnailSize(const ThumbnailSize& thumbSize)                                   override;
+    virtual void setSpacing(int spacing)                                                            override;
+    virtual void setDefaultViewOptions(const QStyleOptionViewItem& option)                          override;
     virtual bool acceptsToolTip(const QPoint& pos, const QRect& visualRect,
                                 const QModelIndex& index, QRect* tooltipRect = nullptr)       const override;
     virtual bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
                                    const QModelIndex& index, QRect* activationRect = nullptr) const override;
 
-    /** Returns the area where the pixmap is drawn,
-     *  or null if not supported.
+    /**
+     * Returns the area where the pixmap is drawn,
+     * or null if not supported.
      */
-    virtual QRect pixmapRect() const;
+    virtual QRect pixmapRect()                                                                const;
 
-    /** Returns the area where the image information is drawn,
-     *  or null if empty / not supported.
-     *  The image information is textual or graphical information,
-     *  but not the pixmap. The ratingRect() will e.g. typically
-     *  be contained in this area.
+    /**
+     * Returns the area where the image information is drawn,
+     * or null if empty / not supported.
+     * The image information is textual or graphical information,
+     * but not the pixmap. The ratingRect() will e.g. typically
+     * be contained in this area.
      */
-    virtual QRect imageInformationRect() const;
+    virtual QRect imageInformationRect()                                                      const;
 
-    /** Returns the rectangle where the rating is drawn,
-     *  or a null rectangle if not supported.
+    /**
+     * Returns the rectangle where the rating is drawn,
+     * or a null rectangle if not supported.
      */
-    virtual QRect ratingRect() const;
+    virtual QRect ratingRect()                                                                const;
 
-    virtual void mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index) override;
+    virtual void mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index)      override;
 
 protected Q_SLOTS:
 
     void slotThemeChanged();
     void slotSetupChanged();
 
-    virtual void overlayDestroyed(QObject* o) override;
+    virtual void overlayDestroyed(QObject* o)                                                       override;
 
 Q_SIGNALS:
 
@@ -101,7 +105,9 @@ Q_SIGNALS:
 
 protected:
 
-    /// Use the tool methods for painting in subclasses
+    /**
+     * Use the tool methods for painting in subclasses
+     */
     QRect drawThumbnail(QPainter* p, const QRect& thumbRect, const QPixmap& background, const QPixmap& thumbnail, bool isGrouped) const;
     void drawRating(QPainter* p, const QModelIndex& index, const QRect& ratingRect, int rating, bool isSelected)                  const;
     void drawSpecialInfo(QPainter* p,const QRect& r, const QString& text)                                                         const;
@@ -127,7 +133,8 @@ protected:
     void prepareBackground();
     void prepareRatingPixmaps(bool composeOverBackground = true);
 
-    /** Returns the relevant pixmap from the cached rating pixmaps.
+    /**
+     * Returns the relevant pixmap from the cached rating pixmaps.
      */
     QPixmap ratingPixmap(int rating, bool selected) const;
 

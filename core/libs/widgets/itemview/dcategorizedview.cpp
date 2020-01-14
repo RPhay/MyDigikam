@@ -23,7 +23,6 @@
  *
  * ============================================================ */
 
-#include "dcategorizedview.h"
 #include "dcategorizedview_p.h"
 
 // C++ includes
@@ -41,10 +40,12 @@
 #include "dcategorizedsortfilterproxymodel.h"
 #include "dcategorydrawer.h"
 
-// By defining DOLPHIN_DRAGANDDROP the custom drag and drop implementation of
-// DCategorizedView is bypassed to have a consistent drag and drop look for all
-// views. Hopefully transparent pixmaps for drag objects will be supported in
-// Qt 4.4, so that this workaround can be skipped.
+/**
+ * NOTE: By defining DOLPHIN_DRAGANDDROP the custom drag and drop implementation of
+ * DCategorizedView is bypassed to have a consistent drag and drop look for all
+ * views. Hopefully transparent pixmaps for drag objects will be supported in
+ * Qt 4.4, so that this workaround can be skipped.
+ */
 #define DOLPHIN_DRAGANDDROP
 
 namespace Digikam
@@ -85,6 +86,7 @@ const QModelIndexList& DCategorizedView::Private::intersectionSet(const QRect& r
     }
 
     // Lets find out where we should start
+
     int top    = proxyModel->rowCount() - 1;
     int bottom = 0;
     int middle = (top + bottom) / 2;
@@ -97,6 +99,7 @@ const QModelIndexList& DCategorizedView::Private::intersectionSet(const QRect& r
 
         // We need the whole height (not only the visualRect). This will help us to update
         // all needed indexes correctly (ereslibre)
+
         indexVisualRect.setHeight(indexVisualRect.height() + (itemHeight - indexVisualRect.height()));
 
         if (qMax(indexVisualRect.topLeft().y(), indexVisualRect.bottomRight().y()) <
@@ -121,8 +124,9 @@ const QModelIndexList& DCategorizedView::Private::intersectionSet(const QRect& r
         }
 
         // If we passed next item, stop searching for hits
-        if (qMax(rect.bottomRight().y(), rect.topLeft().y()) <
-            qMin(indexVisualRect.topLeft().y(), indexVisualRect.bottomRight().y()))
+
+        if (qMax(rect.bottomRight().y(),
+                 rect.topLeft().y()) < qMin(indexVisualRect.topLeft().y(), indexVisualRect.bottomRight().y()))
         {
             break;
         }
@@ -165,7 +169,7 @@ QRect DCategorizedView::Private::visualRectInViewport(const QModelIndex& index) 
     int itemHeight;
     int itemWidth;
 
-    if (listView->gridSize().isEmpty() && leftToRightFlow)
+    if      (listView->gridSize().isEmpty() && leftToRightFlow)
     {
         itemHeight = biggestItemSize.height();
         itemWidth  = biggestItemSize.width();
@@ -371,7 +375,9 @@ QRect DCategorizedView::Private::visualCategoryRectInViewport(const QString& cat
     return retRect;
 }
 
-// We're sure elementsPosition doesn't contain index
+/**
+ * We're sure elementsPosition doesn't contain index
+ */
 const QRect& DCategorizedView::Private::cacheIndex(const QModelIndex& index)
 {
     QRect rect                     = visualRectInViewport(index);
@@ -380,7 +386,9 @@ const QRect& DCategorizedView::Private::cacheIndex(const QModelIndex& index)
     return *it;
 }
 
-// We're sure categoriesPosition doesn't contain category
+/**
+ * We're sure categoriesPosition doesn't contain category
+ */
 const QRect& DCategorizedView::Private::cacheCategory(const QString& category)
 {
     QRect rect                         = visualCategoryRectInViewport(category);
@@ -393,7 +401,7 @@ const QRect& DCategorizedView::Private::cachedRectIndex(const QModelIndex& index
 {
     QHash<int, QRect>::const_iterator it = elementsPosition.constFind(index.row());
 
-    if (it != elementsPosition.constEnd()) // If we have it cached
+    if (it != elementsPosition.constEnd())   // If we have it cached
     {
         // return it
         return *it;
@@ -414,7 +422,7 @@ const QRect& DCategorizedView::Private::cachedRectCategory(const QString& catego
         // return it
         return *it;
     }
-    else                                            // Otherwise, cache it and
+    else                                     // Otherwise, cache it and
     {
         // return it
         return cacheCategory(category);
@@ -444,6 +452,7 @@ QRect DCategorizedView::Private::categoryVisualRect(const QString& category)
 QSize DCategorizedView::Private::contentsSize()
 {
     // find the last index in the last category
+
     QModelIndex lastIndex = categoriesIndexes.isEmpty() ? QModelIndex()
                                                         : proxyModel->index(categoriesIndexes[categories.last()].last(), 0);
 
@@ -640,6 +649,7 @@ QRect DCategorizedView::categoryVisualRect(const QModelIndex& index) const
     }
 
     QString category = d->elementsInfo[index.row()].category;
+
     return d->categoryVisualRect(category);
 }
 
@@ -651,6 +661,7 @@ QModelIndex DCategorizedView::categoryAt(const QPoint& point) const
     }
 
     // We traverse the categories and find the first where point.y() is below the visualRect
+
     int     y = 0, lastY = 0;
     QString lastCategory;
 
@@ -658,7 +669,7 @@ QModelIndex DCategorizedView::categoryAt(const QPoint& point) const
     {
         y = d->categoryVisualRect(category).top();
 
-        if (point.y() >= lastY && point.y() < y)
+        if ((point.y() >= lastY) && point.y() < y)
         {
             break;
         }
@@ -669,7 +680,8 @@ QModelIndex DCategorizedView::categoryAt(const QPoint& point) const
     }
 
     // if lastCategory is the last one in the list y will be 0
-    if (!lastCategory.isNull() && point.y() >= lastY && (point.y() < y || !y))
+
+    if (!lastCategory.isNull() && (point.y() >= lastY) && ((point.y() < y) || !y))
     {
         return d->proxyModel->index(d->categoriesIndexes[lastCategory][0], d->proxyModel->sortColumn());
     }
@@ -854,7 +866,7 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
             option.palette.setCurrentColorGroup(cg);
         }
 
-        if (focus && currentIndex() == index)
+        if (focus && (currentIndex() == index))
         {
             option.state |= QStyle::State_HasFocus;
 
@@ -877,6 +889,7 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
     }
 
     // Redraw categories
+
     QStyleOptionViewItem otherOption;
     bool                 intersectedInThePast = false;
 
@@ -896,8 +909,9 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
         }
         else if (intersectedInThePast)
         {
-            break; // the visible area has been finished, we don't need to keep asking, the rest won't intersect
-            // this is doable because we know that categories are correctly ordered on the list
+            // the visible area has been finished, we don't need to keep asking, the rest won't intersect
+            // this is doable because we know that categories are correctly ordered on the list.
+            break;
         }
     }
 
@@ -912,8 +926,8 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
             initialPressPosition.setY(initialPressPosition.y() - verticalOffset());
             initialPressPosition.setX(initialPressPosition.x() - horizontalOffset());
 
-            if (d->initialPressPosition.x() > d->mousePosition.x() ||
-                d->initialPressPosition.y() > d->mousePosition.y())
+            if ((d->initialPressPosition.x() > d->mousePosition.x()) ||
+                (d->initialPressPosition.y() > d->mousePosition.y()))
             {
                 start = d->mousePosition;
                 end   = initialPressPosition;
@@ -949,6 +963,7 @@ void DCategorizedView::resizeEvent(QResizeEvent* event)
     QListView::resizeEvent(event);
 
     // Clear the items positions cache
+
     d->elementsPosition.clear();
     d->categoriesPosition.clear();
     d->forcedSelectionPosition = 0;
@@ -970,13 +985,13 @@ QItemSelection DCategorizedView::Private::selectionForRect(const QRect& rect)
 
     for ( ; it != intersectedIndexes.constEnd() ; ++it)
     {
-        if (!tl.isValid() && !br.isValid())
+        if      (!tl.isValid() && !br.isValid())
         {
             tl = br = *it;
         }
         else if ((*it).row() == (tl.row() - 1))
         {
-            tl = *it; // expand current range
+            tl = *it;   // expand current range
         }
         else if ((*it).row() == (br.row() + 1))
         {
@@ -985,11 +1000,11 @@ QItemSelection DCategorizedView::Private::selectionForRect(const QRect& rect)
         else
         {
             selection.select(tl, br); // select current range
-            tl = br = *it; // start new range
+            tl = br = *it;            // start new range
         }
     }
 
-    if (tl.isValid() && br.isValid())
+    if      (tl.isValid() && br.isValid())
     {
         selection.select(tl, br);
     }
@@ -1014,10 +1029,12 @@ void DCategorizedView::setSelection(const QRect& rect, QItemSelectionModel::Sele
     }
 
     QItemSelection selection;
-//    QRect contentsRect = rect.translated(horizontalOffset(), verticalOffset());
+/*
+    QRect contentsRect = rect.translated(horizontalOffset(), verticalOffset());
+*/
     QModelIndexList intersectedIndexes = d->intersectionSet(rect);
 
-    if (rect.width() == 1 && rect.height() == 1)
+    if ((rect.width() == 1) && (rect.height() == 1))
     {
         QModelIndex tl;
 
@@ -1036,13 +1053,17 @@ void DCategorizedView::setSelection(const QRect& rect, QItemSelectionModel::Sele
         if (state() == DragSelectingState)
         {
             // visual selection mode (rubberband selection)
+
             selection = d->selectionForRect(rect);
         }
         else
         {
             // logical selection mode (key and mouse click selection)
+
             QModelIndex tl, br;
+
             // get the first item
+
             const QRect topLeft(rect.left(), rect.top(), 1, 1);
             intersectedIndexes = d->intersectionSet(topLeft);
 
@@ -1052,6 +1073,7 @@ void DCategorizedView::setSelection(const QRect& rect, QItemSelectionModel::Sele
             }
 
             // get the last item
+
             const QRect bottomRight(rect.right(), rect.bottom(), 1, 1);
             intersectedIndexes = d->intersectionSet(bottomRight);
 
@@ -1061,11 +1083,14 @@ void DCategorizedView::setSelection(const QRect& rect, QItemSelectionModel::Sele
             }
 
             // get the ranges
-            if (tl.isValid() && br.isValid()     &&
+
+            if (tl.isValid()                     &&
+                br.isValid()                     &&
                 (tl.flags() & Qt::ItemIsEnabled) &&
                 (br.flags() & Qt::ItemIsEnabled))
             {
                 // first, middle, last in content coordinates
+
                 QRect middle;
                 QRect first    = d->cachedRectIndex(tl);
                 QRect last     = d->cachedRectIndex(br);
@@ -1077,6 +1102,7 @@ void DCategorizedView::setSelection(const QRect& rect, QItemSelectionModel::Sele
                     QRect& bottom = last;
 
                     // if bottom is above top, swap them
+
                     if (top.center().y() > bottom.center().y())
                     {
                         QRect tmp = top;
@@ -1085,9 +1111,11 @@ void DCategorizedView::setSelection(const QRect& rect, QItemSelectionModel::Sele
                     }
 
                     // if the rect are on differnet lines, expand
-                    if (top.top() != bottom.top())
+
+                    if      (top.top() != bottom.top())
                     {
                         // top rectangle
+
                         if (isRightToLeft())
                         {
                             top.setLeft(0);
@@ -1098,6 +1126,7 @@ void DCategorizedView::setSelection(const QRect& rect, QItemSelectionModel::Sele
                         }
 
                         // bottom rectangle
+
                         if (isRightToLeft())
                         {
                             bottom.setRight(fullSize.width());
@@ -1131,6 +1160,7 @@ void DCategorizedView::setSelection(const QRect& rect, QItemSelectionModel::Sele
                     }
 
                     // middle rectangle
+
                     if (top.bottom() < bottom.top())
                     {
                         middle.setTop(top.bottom() + 1);
@@ -1142,6 +1172,7 @@ void DCategorizedView::setSelection(const QRect& rect, QItemSelectionModel::Sele
                 else
                 {
                     // TopToBottom
+
                     QRect& left  = first;
                     QRect& right = last;
 
@@ -1152,9 +1183,10 @@ void DCategorizedView::setSelection(const QRect& rect, QItemSelectionModel::Sele
 
                     int ch = fullSize.height();
 
-                    if (left.left() != right.left())
+                    if      (left.left() != right.left())
                     {
                         // left rectangle
+
                         if (isRightToLeft())
                         {
                             left.setTop(0);
@@ -1165,6 +1197,7 @@ void DCategorizedView::setSelection(const QRect& rect, QItemSelectionModel::Sele
                         }
 
                         // top rectangle
+
                         if (isRightToLeft())
                         {
                             right.setBottom(ch);
@@ -1175,6 +1208,7 @@ void DCategorizedView::setSelection(const QRect& rect, QItemSelectionModel::Sele
                         }
 
                         // only set middle if the
+
                         middle.setTop(0);
                         middle.setBottom(ch);
                         middle.setLeft(left.right() + 1);
@@ -1191,15 +1225,19 @@ void DCategorizedView::setSelection(const QRect& rect, QItemSelectionModel::Sele
                 }
 
                 // get viewport coordinates
-                first  = first.translated( - horizontalOffset(), - verticalOffset());
-                middle = middle.translated( - horizontalOffset(), - verticalOffset());
-                last   = last.translated( - horizontalOffset(), - verticalOffset());
+
+                first                          = first.translated( - horizontalOffset(), - verticalOffset());
+                middle                         = middle.translated( - horizontalOffset(), - verticalOffset());
+                last                           = last.translated( - horizontalOffset(), - verticalOffset());
 
                 // do the selections
+
                 QItemSelection topSelection    = d->selectionForRect(first);
                 QItemSelection middleSelection = d->selectionForRect(middle);
                 QItemSelection bottomSelection = d->selectionForRect(last);
+
                 // merge
+
                 selection.merge(topSelection, QItemSelectionModel::Select);
                 selection.merge(middleSelection, QItemSelectionModel::Select);
                 selection.merge(bottomSelection, QItemSelectionModel::Select);
@@ -1215,6 +1253,7 @@ void DCategorizedView::mouseMoveEvent(QMouseEvent* event)
     QListView::mouseMoveEvent(event);
 
     // was a dragging started?
+
     if (state() == DraggingState)
     {
         d->mouseButtonPressed      = false;
@@ -1249,6 +1288,7 @@ void DCategorizedView::mouseMoveEvent(QMouseEvent* event)
     d->hoveredCategory.clear();
 
     // Redraw categories
+
     foreach (const QString& category, d->categories)
     {
         if (d->categoryVisualRect(category).intersects(QRect(event->pos(), event->pos())))
@@ -1299,7 +1339,7 @@ void DCategorizedView::mousePressEvent(QMouseEvent* event)
 
     QListView::mousePressEvent(event);
 
-    if (event->button() == Qt::LeftButton)
+    if      (event->button() == Qt::LeftButton)
     {
         d->mouseButtonPressed   = true;
         d->initialPressPosition = event->pos();
@@ -1372,8 +1412,8 @@ void DCategorizedView::mouseReleaseEvent(QMouseEvent* event)
         initialPressPosition.setY(initialPressPosition.y() - verticalOffset());
         initialPressPosition.setX(initialPressPosition.x() - horizontalOffset());
 
-        if (d->initialPressPosition.x() > d->mousePosition.x() ||
-            d->initialPressPosition.y() > d->mousePosition.y())
+        if ((d->initialPressPosition.x() > d->mousePosition.x()) ||
+            (d->initialPressPosition.y() > d->mousePosition.y()))
         {
             start = d->mousePosition;
             end   = initialPressPosition;
@@ -1390,7 +1430,7 @@ void DCategorizedView::mouseReleaseEvent(QMouseEvent* event)
         viewport()->update(rect);
     }
 
-    if (d->hovered.isValid())
+    if      (d->hovered.isValid())
     {
         viewport()->update(visualRect(d->hovered));
     }
@@ -1415,6 +1455,7 @@ void DCategorizedView::startDrag(Qt::DropActions supportedActions)
     //        ARGB window so it is no transparent. Use QAbstractItemView when
     //        this is fixed on Qt.
     // QAbstractItemView::startDrag(supportedActions);
+
 #if defined(DOLPHIN_DRAGANDDROP)
     Q_UNUSED(supportedActions);
 #else
@@ -1511,7 +1552,9 @@ QModelIndex DCategorizedView::moveCursor(CursorAction cursorAction,
         if (cursorAction == MoveEnd)
         {
             current = model()->index(model()->rowCount() - 1, 0, QModelIndex());
-            //d->forcedSelectionPosition = d->elementsInfo[current.row()].relativeOffsetToCategory % elementsPerRow;
+/*
+            d->forcedSelectionPosition = d->elementsInfo[current.row()].relativeOffsetToCategory % elementsPerRow;
+*/
         }
         else
         {
@@ -1554,6 +1597,7 @@ QModelIndex DCategorizedView::moveCursor(CursorAction cursorAction,
         {
             // We need to reimplement PageUp/Down as well because
             // default QListView implementation will not work properly with our custom layout
+
             QModelIndexList visibleIndexes = d->intersectionSet(viewport()->rect());
 
             if (!visibleIndexes.isEmpty())
@@ -1576,7 +1620,7 @@ QModelIndex DCategorizedView::moveCursor(CursorAction cursorAction,
                                   d->forcedSelectionPosition), elementsPerRow - d->forcedSelectionPosition +
                                   (d->elementsInfo[current.row()].relativeOffsetToCategory % elementsPerRow));
 
-                return d->proxyModel->index(indexToMove, 0);
+                return (d->proxyModel->index(indexToMove, 0));
             }
             else
             {
@@ -1643,7 +1687,7 @@ QModelIndex DCategorizedView::moveCursor(CursorAction cursorAction,
 
             if (layoutDirection() == Qt::RightToLeft)
             {
-                if (current.row() + 1 == d->elementsInfo.size() ||
+                if (((current.row() + 1) == d->elementsInfo.size()) ||
                     !(d->elementsInfo[current.row() + 1].relativeOffsetToCategory % elementsPerRow))
                 {
                     return current;
@@ -1652,7 +1696,7 @@ QModelIndex DCategorizedView::moveCursor(CursorAction cursorAction,
                 return d->proxyModel->index(current.row() + 1, 0);
             }
 
-            if (current.row() == 0 ||
+            if ((current.row() == 0) ||
                 !(d->elementsInfo[current.row()].relativeOffsetToCategory % elementsPerRow))
             {
                 return current;
@@ -1664,7 +1708,7 @@ QModelIndex DCategorizedView::moveCursor(CursorAction cursorAction,
 
             if (layoutDirection() == Qt::RightToLeft)
             {
-                if (current.row() == 0 ||
+                if ((current.row() == 0) ||
                     !(d->elementsInfo[current.row()].relativeOffsetToCategory % elementsPerRow))
                 {
                     return current;
@@ -1673,7 +1717,7 @@ QModelIndex DCategorizedView::moveCursor(CursorAction cursorAction,
                 return d->proxyModel->index(current.row() - 1, 0);
             }
 
-            if (current.row() + 1 == d->elementsInfo.size() ||
+            if (((current.row() + 1) == d->elementsInfo.size()) ||
                 !(d->elementsInfo[current.row() + 1].relativeOffsetToCategory % elementsPerRow))
             {
                 return current;
@@ -1719,6 +1763,7 @@ int DCategorizedView::Private::categoryUpperBound(SparseModelIndexVector& modelI
                                           DCategorizedSortFilterProxyModel::CategoryDisplayRole).toString();
 
     // First case: Small category with <10 entries
+
     const int smallEnd = qMin(end, begin + 10);
 
     for (int k = begin ; k < smallEnd ; ++k)
@@ -1733,6 +1778,7 @@ int DCategorizedView::Private::categoryUpperBound(SparseModelIndexVector& modelI
     begin += 10;
 
     // Second case: only one category, test last value
+
     QString value = proxyModel->data(modelIndexList[end - 1],
                                      DCategorizedSortFilterProxyModel::CategoryDisplayRole).toString();
 
@@ -1742,10 +1788,11 @@ int DCategorizedView::Private::categoryUpperBound(SparseModelIndexVector& modelI
     }
 
     // Third case: use average of last category sizes
-    if (averageSize && begin + averageSize < end)
+
+    if (averageSize && ((begin + averageSize) < end))
     {
-        if (category != proxyModel->data(modelIndexList[begin + averageSize],
-                                         DCategorizedSortFilterProxyModel::CategoryDisplayRole).toString())
+        if      (category != proxyModel->data(modelIndexList[begin + averageSize],
+                                              DCategorizedSortFilterProxyModel::CategoryDisplayRole).toString())
         {
             end = begin + averageSize;
         }
@@ -1761,6 +1808,7 @@ int DCategorizedView::Private::categoryUpperBound(SparseModelIndexVector& modelI
 
     // now apply a binary search - the model is sorted by category
     // from qUpperBound, Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies)
+
     int middle;
     int n = end - begin;
     int half;
@@ -1801,12 +1849,13 @@ void DCategorizedView::rowsInsertedArtifficial(const QModelIndex& parent, int st
     d->categories.clear();
     d->intersectedIndexes.clear();
 
-    if (start > end || end < 0 || start < 0 || !d->proxyModel->rowCount())
+    if ((start > end) || (end < 0) || (start < 0) || !d->proxyModel->rowCount())
     {
         return;
     }
 
     // Add all elements mapped to the source model and explore categories
+
     const int rowCount   = d->proxyModel->rowCount();
     const int sortColumn = d->proxyModel->sortColumn();
     QString lastCategory = d->proxyModel->data(d->proxyModel->index(0, sortColumn),
@@ -1822,6 +1871,7 @@ void DCategorizedView::rowsInsertedArtifficial(const QModelIndex& parent, int st
     if (uniformItemSizes())
     {
         // use last index as sample for size hint
+
         QModelIndex sample = d->proxyModel->index(rowCount - 1, modelColumn(), rootIndex());
         d->biggestItemSize = sizeHintForIndex(sample);
     }
@@ -1879,6 +1929,7 @@ void DCategorizedView::rowsRemoved(const QModelIndex& parent, int start, int end
     if (d->proxyModel && d->categoryDrawer && d->proxyModel->isCategorizedModel())
     {
         // Force the view to update all elements
+
         rowsInsertedArtifficial(QModelIndex(), 0, d->proxyModel->rowCount() - 1);
     }
 }
@@ -1901,6 +1952,7 @@ void DCategorizedView::slotLayoutChanged()
     if (d->proxyModel && d->categoryDrawer && d->proxyModel->isCategorizedModel())
     {
         // all cached values are invalidated, recompute immediately
+
         rowsInsertedArtifficial(QModelIndex(), 0, d->proxyModel->rowCount() - 1);
     }
 }

@@ -21,6 +21,8 @@
  *
  * ============================================================ */
 
+// Local includes
+
 #include "dimgchilditem.h"
 #include "graphicsdimgitem.h"
 #include "imagezoomsettings.h"
@@ -29,31 +31,30 @@ namespace Digikam
 {
 
 /**
-class Q_DECL_HIDDEN SimpleRectChildItem : public DImgChildItem
-{
-public:
-
-    / ** This is a simple example. Just create
-     *  new SimpleRectChildItem(item);
-     *  where item is a GrahpicsDImgItem,
-     *  and at the center of the image,
-     *  a rectangle of 1% the size of the image will be drawn.
-     * /
-
-    SimpleRectChildItem(QGraphicsItem* const parent)
-        : DImgChildItem(parent)
-    {
-        setRelativePos(0.5, 0.5);
-        setRelativeSize(0.01, 0.01);
-    }
-
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
-    {
-        painter->setPen(Qt::red);
-        painter->drawRect(boundingRect());
-    }
-};
-*/
+ * This is a simple example. Just create
+ * new SimpleRectChildItem(item);
+ * where item is a GrahpicsDImgItem,
+ * and at the center of the image,
+ * a rectangle of 1% the size of the image will be drawn.
+ *
+ * class SimpleRectChildItem : public DImgChildItem
+ * {
+ * public:
+ * 
+ *     SimpleRectChildItem(QGraphicsItem* const parent)
+ *         : DImgChildItem(parent)
+ *     {
+ *         setRelativePos(0.5, 0.5);
+ *         setRelativeSize(0.01, 0.01);
+ *     }
+ * 
+ *     void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
+ *     {
+ *         painter->setPen(Qt::red);
+ *         painter->drawRect(boundingRect());
+ *     }
+ * };
+ */
 
 class Q_DECL_HIDDEN DImgChildItem::Private
 {
@@ -190,6 +191,7 @@ QRect DImgChildItem::originalRect() const
 QSize DImgChildItem::originalSize() const
 {
     QSizeF originalSize = parentDImgItem()->zoomSettings()->originalImageSize();
+
     return QSizeF(d->relativeSize.width()  * originalSize.width(),
                   d->relativeSize.height() * originalSize.height()).toSize();
 }
@@ -197,6 +199,7 @@ QSize DImgChildItem::originalSize() const
 QPoint DImgChildItem::originalPos() const
 {
     QSizeF originalSize = parentDImgItem()->zoomSettings()->originalImageSize();
+
     return QPointF(d->relativePos.x() * originalSize.width(),
                    d->relativePos.y() * originalSize.height()).toPoint();
 }
@@ -210,8 +213,8 @@ void DImgChildItem::setPos(const QPointF& pos)
 
     const QSizeF imageSize = parentItem()->boundingRect().size();
 
-    setRelativePos( QPointF(pos.x() / imageSize.width(),
-                            pos.y() / imageSize.height()) );
+    setRelativePos(QPointF(pos.x() / imageSize.width(),
+                           pos.y() / imageSize.height()));
 }
 
 void DImgChildItem::setSize(const QSizeF& size)
@@ -223,8 +226,8 @@ void DImgChildItem::setSize(const QSizeF& size)
 
     const QSizeF imageSize = parentItem()->boundingRect().size();
 
-    setRelativeSize( QSizeF(size.width()  / imageSize.width(),
-                            size.height() / imageSize.height()) );
+    setRelativeSize(QSizeF(size.width()  / imageSize.width(),
+                           size.height() / imageSize.height()));
 }
 
 void DImgChildItem::setRect(const QRectF& rect)
@@ -296,13 +299,13 @@ void DImgChildItem::imageSizeChanged(const QSizeF&)
 
 QVariant DImgChildItem::itemChange(QGraphicsItem::GraphicsItemChange change, const QVariant& value)
 {
-    if (change == QGraphicsItem::ItemParentChange)
+    if      (change == QGraphicsItem::ItemParentChange)
     {
         d->connectParent(false);    // disconnect old parent
     }
     else if (change == QGraphicsItem::ItemParentHasChanged)
     {
-        d->connectParent(true);    // connect new parent
+        d->connectParent(true);     // connect new parent
     }
 
     return QGraphicsObject::itemChange(change, value);

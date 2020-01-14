@@ -90,17 +90,18 @@ public:
      * The resize event. Simply resizes the main widget to the whole
      * widgets client size.
      */
-    virtual void resizeEvent(QResizeEvent* resize) override;
+    virtual void resizeEvent(QResizeEvent* resize)  override;
 
 Q_SIGNALS:
 
     void leaveModality();
 
 protected:
+
     /**
      * Catch key press events.
      */
-    virtual void keyPressEvent(QKeyEvent* e) override;
+    virtual void keyPressEvent(QKeyEvent* e)        override;
 
 public Q_SLOTS:
 
@@ -161,12 +162,12 @@ public Q_SLOTS:
 
 protected:
 
-    void showEvent(QShowEvent*) override;
-    void hideEvent(QHideEvent*) override;
-    void paintEvent(QPaintEvent*) override;
-    void mousePressEvent(QMouseEvent*) override;
-    void mouseReleaseEvent(QMouseEvent*) override;
-    void mouseMoveEvent(QMouseEvent*) override;
+    void showEvent(QShowEvent*)             override;
+    void hideEvent(QHideEvent*)             override;
+    void paintEvent(QPaintEvent*)           override;
+    void mousePressEvent(QMouseEvent*)      override;
+    void mouseReleaseEvent(QMouseEvent*)    override;
+    void mouseMoveEvent(QMouseEvent*)       override;
 
     /**
      * Recalculate the target selection position and emit 'signalSelectionMoved'.

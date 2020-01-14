@@ -74,7 +74,7 @@ public:
     }
 
     VersionsTreeView*        view;
-    ItemHistoryGraphModel*  model;
+    ItemHistoryGraphModel*   model;
     VersionsDelegate*        delegate;
 
     ShowHideVersionsOverlay* showHideOverlay;
@@ -166,9 +166,11 @@ void VersionsWidget::readSettings(const KConfigGroup& group)
         case ItemHistoryGraphModel::ImagesListMode:
             d->listModeButton->setChecked(true);
             break;
+
         case ItemHistoryGraphModel::ImagesTreeMode:
             d->treeModeButton->setChecked(true);
             break;
+
         case ItemHistoryGraphModel::CombinedTreeMode:
         default:
             d->combinedModeButton->setChecked(true);
@@ -192,6 +194,7 @@ ActionVersionsOverlay* VersionsWidget::addActionOverlay(const QIcon& icon, const
 {
     ActionVersionsOverlay* const overlay = new ActionVersionsOverlay(this, icon, text, tip);
     d->view->addOverlay(overlay);
+
     return overlay;
 }
 
@@ -200,6 +203,7 @@ ShowHideVersionsOverlay* VersionsWidget::addShowHideOverlay()
     d->showHideOverlay = new ShowHideVersionsOverlay(this);
     d->showHideOverlay->setSettings(ApplicationSettings::instance()->getVersionManagerSettings());
     d->view->addOverlay(d->showHideOverlay);
+
     return d->showHideOverlay;
 }
 
@@ -228,8 +232,11 @@ void VersionsWidget::slotViewCurrentChanged(const QModelIndex& current, const QM
         case ItemHistoryGraphModel::ImagesListMode:
         case ItemHistoryGraphModel::ImagesTreeMode:
             break;
+
         case ItemHistoryGraphModel::CombinedTreeMode:
+
             // toplevel image index
+
             if (!info.isNull() && !current.parent().isValid())
             {
                 d->view->expand(current);
@@ -255,9 +262,11 @@ void VersionsWidget::applyViewMode()
     {
         case ItemHistoryGraphModel::ImagesListMode:
             break;
+
         case ItemHistoryGraphModel::ImagesTreeMode:
             d->view->expandAll();
             break;
+
         case ItemHistoryGraphModel::CombinedTreeMode:
             d->view->collapseAll();
             break;

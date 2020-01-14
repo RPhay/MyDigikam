@@ -75,7 +75,7 @@ double ImageZoomSettings::zoomFactor() const
 
 double ImageZoomSettings::realZoomFactor() const
 {
-    return m_zoom / m_zoomRatio;
+    return (m_zoom / m_zoomRatio);
 }
 
 QSizeF ImageZoomSettings::imageSize() const
@@ -85,12 +85,12 @@ QSizeF ImageZoomSettings::imageSize() const
 
 QSizeF ImageZoomSettings::originalImageSize() const
 {
-    return m_size / m_zoomConst;
+    return (m_size / m_zoomConst);
 }
 
 QSizeF ImageZoomSettings::zoomedSize() const
 {
-    return m_size / (m_zoomConst * m_zoomRatio) * m_zoom;
+    return (m_size / (m_zoomConst * m_zoomRatio) * m_zoom);
 }
 
 QRectF ImageZoomSettings::sourceRect(const QRectF& imageRect) const
@@ -100,7 +100,7 @@ QRectF ImageZoomSettings::sourceRect(const QRectF& imageRect) const
 
 bool ImageZoomSettings::isFitToSize(const QSizeF& frameSize) const
 {
-    return zoomFactor() == fitToSizeZoomFactor(frameSize);
+    return (zoomFactor() == fitToSizeZoomFactor(frameSize));
 }
 
 void ImageZoomSettings::setZoomFactor(double zoom)
@@ -122,7 +122,7 @@ double ImageZoomSettings::fitToSizeZoomFactor(const QSizeF& frameSize, FitToSize
 
     double zoom;
 
-    if (frameSize.width() / frameSize.height() < m_size.width() / m_size.height())
+    if ((frameSize.width() / frameSize.height()) < (m_size.width() / m_size.height()))
     {
         zoom = m_zoomConst * m_zoomRatio * frameSize.width() / m_size.width();
     }
@@ -132,12 +132,14 @@ double ImageZoomSettings::fitToSizeZoomFactor(const QSizeF& frameSize, FitToSize
     }
 
     // Zoom rounding down and scroll bars are never activated.
+
     zoom = floor(zoom * 100000 - 0.1) / 100000.0;
 
     if (mode == OnlyScaleDown)
     {
         // OnlyScaleDown: accept that an image is smaller than available space, don't scale up
-        if (frameSize.width() > originalImageSize().width() && frameSize.height() > originalImageSize().height())
+
+        if ((frameSize.width() > originalImageSize().width()) && (frameSize.height() > originalImageSize().height()))
         {
             zoom = 1;
         }
@@ -160,12 +162,12 @@ QRectF ImageZoomSettings::mapImageToZoom(const QRectF& imageRect) const
 
 QPointF ImageZoomSettings::mapZoomToImage(const QPointF& zoomedPoint) const
 {
-    return zoomedPoint / (m_zoom / (m_zoomConst * m_zoomRatio));
+    return (zoomedPoint / (m_zoom / (m_zoomConst * m_zoomRatio)));
 }
 
 QPointF ImageZoomSettings::mapImageToZoom(const QPointF& imagePoint) const
 {
-    return imagePoint * (m_zoom / (m_zoomConst * m_zoomRatio));
+    return (imagePoint * (m_zoom / (m_zoomConst * m_zoomRatio)));
 }
 
 inline static bool lessThanLimitedPrecision(double a, double b)
@@ -178,6 +180,7 @@ double ImageZoomSettings::snappedZoomStep(double nextZoom, const QSizeF& frameSi
     // If the zoom value gets changed from d->zoom to zoom
     // across 50%, 100% or fit-to-window, then return the
     // the corresponding special value. Otherwise zoom is returned unchanged.
+
     QList<double> snapValues;
     snapValues << 0.5;
     snapValues << 1.0;

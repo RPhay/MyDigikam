@@ -58,19 +58,19 @@ class Q_DECL_HIDDEN FiltersHistoryWidget::Private
 public:
 
     explicit Private()
+      : view(nullptr),
+        model(nullptr),
+        layout(nullptr),
+        delegate(nullptr),
+        headerLabel(nullptr)
     {
-        view        = nullptr;
-        model       = nullptr;
-        layout      = nullptr;
-        delegate    = nullptr;
-        headerLabel = nullptr;
     }
 
-    QTreeView*                       view;
+    QTreeView*                      view;
     ItemFiltersHistoryModel*        model;
-    QGridLayout*                     layout;
+    QGridLayout*                    layout;
     ItemFiltersHistoryItemDelegate* delegate;
-    QLabel*                          headerLabel;
+    QLabel*                         headerLabel;
 };
 
 FiltersHistoryWidget::FiltersHistoryWidget(QWidget* const parent)

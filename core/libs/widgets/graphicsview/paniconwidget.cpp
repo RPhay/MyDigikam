@@ -110,10 +110,12 @@ public:
 
         // To catch outside clicks, it is sufficient to check for
         // hide events on Qt::Popup type widgets
+
         if (event->type() == QEvent::Hide && m_popup)
         {
             // do not set d->result here, because the popup
             // hides itself after leaving the event loop.
+
             emit m_popup->leaveModality();
         }
 
@@ -195,12 +197,15 @@ void PanIconFrame::resizeEvent(QResizeEvent* e)
 void PanIconFrame::popup(const QPoint& pos)
 {
     // Make sure the whole popup is visible.
+
     QScreen* screen = qApp->primaryScreen();
 
     if (QWidget* const widget = nativeParentWidget())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     QRect desktopGeometry = screen->geometry();
@@ -210,12 +215,12 @@ void PanIconFrame::popup(const QPoint& pos)
     int w = width();
     int h = height();
 
-    if (x + w > desktopGeometry.x() + desktopGeometry.width())
+    if ((x + w) > (desktopGeometry.x() + desktopGeometry.width()))
     {
         x = desktopGeometry.width() - w;
     }
 
-    if (y + h > desktopGeometry.y() + desktopGeometry.height())
+    if ((y + h) > (desktopGeometry.y() + desktopGeometry.height()))
     {
         y = desktopGeometry.height() - h;
     }
@@ -231,6 +236,7 @@ void PanIconFrame::popup(const QPoint& pos)
     }
 
     // Pop the thingy up.
+
     move(x, y);
     show();
     d->main->setFocus();
@@ -294,11 +300,11 @@ public:
 
     double  zoomFactor;
 
-    QRect   regionSelection;         // Original size image selection.
+    QRect   regionSelection;         ///< Original size image selection.
     QTimer* timer;
 
     QRect   rect;
-    QRect   localRegionSelection;    // Thumbnail size selection.
+    QRect   localRegionSelection;    ///< Thumbnail size selection.
 
     QPixmap pixmap;
 };
@@ -464,6 +470,7 @@ void PanIconWidget::paintEvent(QPaintEvent*)
     QRect r(d->localRegionSelection);
 
     // Clamp to widget size. Selection area must always be visible
+
     if (r.left() < 0)
     {
         r.setLeft(0);
@@ -531,8 +538,10 @@ void PanIconWidget::hideEvent(QHideEvent* e)
 
 void PanIconWidget::mousePressEvent(QMouseEvent* e)
 {
-    if ((e->button() == Qt::LeftButton || e->button() == Qt::MidButton) &&
-         d->localRegionSelection.contains(e->x(), e->y()))
+    if (
+        ((e->button() == Qt::LeftButton) || (e->button() == Qt::MidButton)) &&
+         d->localRegionSelection.contains(e->x(), e->y())
+       )
     {
         d->xpos          = e->x();
         d->ypos          = e->y();
@@ -545,7 +554,7 @@ void PanIconWidget::mousePressEvent(QMouseEvent* e)
 void PanIconWidget::mouseMoveEvent(QMouseEvent* e)
 {
     if (d->moveSelection &&
-        (e->buttons() == Qt::LeftButton || e->buttons() == Qt::MidButton))
+        ((e->buttons() == Qt::LeftButton) || (e->buttons() == Qt::MidButton)))
     {
         int newxpos = e->x();
         int newypos = e->y();

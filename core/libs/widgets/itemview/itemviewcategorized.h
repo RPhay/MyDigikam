@@ -52,7 +52,9 @@ public:
     DItemDelegate* delegate()                const;
     int            numberOfSelectedIndexes() const;
 
-    /** Selects the index as current and scrolls to it */
+    /**
+     * Selects the index as current and scrolls to it
+     */
     void toFirstIndex();
     void toLastIndex();
     void toNextIndex();
@@ -60,10 +62,14 @@ public:
     void toIndex(const QModelIndex& index);
     void awayFromSelection();
 
-    /** Scroll automatically the current index to center of the view. */
+    /**
+     * Scroll automatically the current index to center of the view.
+     */
     void setScrollCurrentToCenter(bool enabled);
 
-    /** Like scrollTo, but only scrolls if the index is not visible, regardless of hint. */
+    /**
+     * Like scrollTo, but only scrolls if the index is not visible, regardless of hint.
+     */
     void scrollToRelaxed(const QModelIndex& index, ScrollHint hint = EnsureVisible);
 
     void invertSelection();
@@ -72,14 +78,20 @@ public:
     void setToolTipEnabled(bool enabled);
     bool isToolTipEnabled() const;
 
-    /** Sets the spacing. Does not use setSpacing()/spacing() from QListView */
+    /**
+     * Sets the spacing. Does not use setSpacing()/spacing() from QListView
+     */
     void setSpacing(int spacing);
 
-    /** Set if the PointingHand Cursor should be shown over the activation area */
+    /**
+     * Set if the PointingHand Cursor should be shown over the activation area
+     */
     void setUsePointingHandCursor(bool useCursor);
 
-    /** Determine a step size for scrolling: The larger this number,
-     *  the smaller and more precise is the scrolling. Default is 10. */
+    /**
+     * Determine a step size for scrolling: The larger this number,
+     * the smaller and more precise is the scrolling. Default is 10.
+     */
     void setScrollStepGranularity(int factor);
 
     virtual QSortFilterProxyModel* filterModel() const = 0;
@@ -96,27 +108,36 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
-    /// Emitted when any selection change occurs. Any of the signals below will be emitted before.
+    /**
+     * Emitted when any selection change occurs. Any of the signals below will be emitted before.
+     */
     void selectionChanged();
 
-    /// Emitted when the selection is completely cleared.
+    /**
+     * Emitted when the selection is completely cleared.
+     */
     void selectionCleared();
 
     void zoomOutStep();
     void zoomInStep();
 
-    /** For overlays: Like the respective parent class signals, but with additional info.
-     *  Do not change the mouse events.
+    /**
+     * For overlays: Like the respective parent class signals, but with additional info.
+     * Do not change the mouse events.
      */
     void clicked(const QMouseEvent* e, const QModelIndex& index);
     void entered(const QMouseEvent* e, const QModelIndex& index);
 
-    /// While clicked() is emitted with a valid index, this corresponds to clicking on empty space
+    /**
+     * While clicked() is emitted with a valid index, this corresponds to clicking on empty space
+     */
     void viewportClicked(const QMouseEvent* e);
 
-    /**  Remember you may want to check if the event is accepted or ignored.
-     *   This signal is emitted after being handled by this widget.
-     *   You can accept it if ignored. */
+    /**
+     * Remember you may want to check if the event is accepted or ignored.
+     * This signal is emitted after being handled by this widget.
+     * You can accept it if ignored.
+     */
     void keyPressed(QKeyEvent* e);
 
 
@@ -141,7 +162,9 @@ protected:
     void updateDelegateSizes();
     void userInteraction();
 
-    /** Returns an index that is representative for the category at position pos */
+    /**
+     * Returns an index that is representative for the category at position pos
+     */
     QModelIndex indexForCategoryAt(const QPoint& pos) const;
 
     // reimplemented from parent class
@@ -166,15 +189,18 @@ protected:
     virtual void showContextMenu(QContextMenuEvent* event);
     virtual void indexActivated(const QModelIndex& index, Qt::KeyboardModifiers modifiers);
 
-    /** Provides default behavior, can reimplement in a subclass.
-     *  Returns true if a tooltip was shown.
-     *  The help event is optional.
+    /**
+     * Provides default behavior, can reimplement in a subclass.
+     * Returns true if a tooltip was shown.
+     * The help event is optional.
      */
     virtual bool showToolTip(const QModelIndex& index, QStyleOptionViewItem& option, QHelpEvent* e = nullptr);
 
     DECLARE_VIEW_DRAG_DROP_METHODS(DCategorizedView)
 
-    /// Note: pure virtual dragDropHandler() still open from DragDropViewImplementation
+    /**
+     * Note: pure virtual dragDropHandler() still open from DragDropViewImplementation
+     */
     virtual QModelIndex mapIndexForDragDrop(const QModelIndex& index) const override;
     virtual QPixmap     pixmapForDrag(const QList<QModelIndex>& indexes) const override;
 

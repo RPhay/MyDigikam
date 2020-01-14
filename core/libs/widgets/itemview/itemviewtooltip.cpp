@@ -40,9 +40,9 @@ class Q_DECL_HIDDEN ItemViewToolTip::Private
 public:
 
     explicit Private()
+      : view(nullptr),
+        filterInstalled(false)
     {
-        view            = nullptr;
-        filterInstalled = false;
     }
 
     QAbstractItemView* view;
@@ -75,7 +75,7 @@ QAbstractItemView* ItemViewToolTip::view() const
 
 QAbstractItemModel* ItemViewToolTip::model() const
 {
-    return d->view ? d->view->model() : nullptr;
+    return (d->view ? d->view->model() : nullptr);
 }
 
 QModelIndex ItemViewToolTip::currentIndex() const
@@ -147,10 +147,10 @@ bool ItemViewToolTip::eventFilter(QObject* o, QEvent* e)
             Qt::KeyboardModifiers mody = static_cast<QKeyEvent*>(e)->modifiers();
 
             if (!(mody & Qt::KeyboardModifierMask) &&
-                key != Qt::Key_Shift               &&
-                key != Qt::Key_Control             &&
-                key != Qt::Key_Alt                 &&
-                key != Qt::Key_Meta)
+                (key != Qt::Key_Shift)             &&
+                (key != Qt::Key_Control)           &&
+                (key != Qt::Key_Alt)               &&
+                (key != Qt::Key_Meta))
             {
                 hide();
             }
@@ -162,6 +162,7 @@ bool ItemViewToolTip::eventFilter(QObject* o, QEvent* e)
         case QEvent::Leave:
             hide(); // could add a 300ms timer here, like Qt
             break;
+
         case QEvent::WindowActivate:
         case QEvent::WindowDeactivate:
         case QEvent::MouseButtonPress:
@@ -171,17 +172,19 @@ bool ItemViewToolTip::eventFilter(QObject* o, QEvent* e)
         case QEvent::Wheel:
             hide();
             break;
+
         case QEvent::MouseMove:
         {
             // needs mouse tracking, obviously
-            if (o == d->view->viewport() &&
-                !d->rect.isNull()        &&
+            if ((o == d->view->viewport()) &&
+                !d->rect.isNull()          &&
                 !d->rect.contains(static_cast<QMouseEvent*>(e)->globalPos()))
             {
                 hide();
             }
             break;
         }
+
         default:
             break;
     }

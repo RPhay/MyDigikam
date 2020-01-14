@@ -64,23 +64,22 @@ public:
     void setDisplayingWidget(QWidget* const widget);
     void setPreviewSettings(const PreviewSettings& settings);
 
-    QString path() const;
+    QString path()              const;
     void    setPath(const QString& path, bool rePreview = false);
 
-    State state() const;
-    bool  isLoaded() const;
+    State state()               const;
+    bool  isLoaded()            const;
     void  reload();
 
     void setPreloadPaths(const QStringList& pathsToPreload);
 
-    QString userLoadingHint() const override;
+    QString userLoadingHint()   const override;
 
 Q_SIGNALS:
 
     void stateChanged(int state);
     void loaded();
     void loadingFailed();
-
 
 private Q_SLOTS:
 

@@ -55,19 +55,19 @@ namespace Digikam
 {
 
 /**
-The following table gives the CIE  color matching functions
-\f$\bar{x}(\lambda)\f$, \f$\bar{y}(\lambda)\f$, and
-\f$\bar{z}(\lambda)\f$, for wavelengths \f$\lambda\f$ at 5 nanometer
-increments from 380 nm through 780 nm. This table is used in conjunction
-with Planck's law for the energy spectrum of a black body at a given
-temperature to plot the black body curve on the CIE chart.
-
-The following table gives the spectral chromaticity co-ordinates
-\f$x(\lambda)\f$ and \f$y(\lambda)\f$ for wavelengths in 5 nanometer
-increments from 380 nm through 780 nm. These coordinates represent the
-position in the CIE x-y space of pure spectral colors of the given
-wavelength, and thus define the outline of the CIE "tongue" diagram.
-*/
+ * The following table gives the CIE color matching functions
+ * \f$\bar{x}(\lambda)\f$, \f$\bar{y}(\lambda)\f$, and
+ * \f$\bar{z}(\lambda)\f$, for wavelengths \f$\lambda\f$ at 5 nanometer
+ * increments from 380 nm through 780 nm. This table is used in conjunction
+ * with Planck's law for the energy spectrum of a black body at a given
+ * temperature to plot the black body curve on the CIE chart.
+ *
+ * The following table gives the spectral chromaticity co-ordinates
+ * \f$x(\lambda)\f$ and \f$y(\lambda)\f$ for wavelengths in 5 nanometer
+ * increments from 380 nm through 780 nm. These coordinates represent the
+ * position in the CIE x-y space of pure spectral colors of the given
+ * wavelength, and thus define the outline of the CIE "tongue" diagram.
+ */
 static const double spectral_chromaticity[81][3] =
 {
     { 0.1741, 0.0050 },               // 380 nm
@@ -170,10 +170,10 @@ public:
         progressCount(0),
         gridside(0),
         progressTimer(nullptr),
+        progressPix(DWorkingPixmap()),
         hMonitorProfile(nullptr),
         hXFORM(nullptr)
     {
-        progressPix = DWorkingPixmap();
     }
 
     bool                         profileDataAvailable;
@@ -186,7 +186,7 @@ public:
     int                          yBias;
     int                          pxcols;
     int                          pxrows;
-    int                          progressCount;           // Position of animation during loading/calculation.
+    int                          progressCount;           ///< Position of animation during loading/calculation.
 
     double                       gridside;
 
@@ -195,7 +195,7 @@ public:
     QTimer*                      progressTimer;
 
     QPixmap                      pixmap;
-    DWorkingPixmap   progressPix;
+    DWorkingPixmap               progressPix;
 
     cmsHPROFILE                  hMonitorProfile;
     cmsHTRANSFORM                hXFORM;
@@ -224,7 +224,9 @@ CIETongueWidget::CIETongueWidget(int w, int h, QWidget* const parent, cmsHPROFIL
     hXYZProfile = dkCmsCreateXYZProfile();
 
     if (hXYZProfile == nullptr)
+    {
         return;
+    }
 
 
     d->hXFORM = dkCmsCreateTransform(hXYZProfile, TYPE_XYZ_16,
@@ -234,7 +236,9 @@ CIETongueWidget::CIETongueWidget(int w, int h, QWidget* const parent, cmsHPROFIL
     dkCmsCloseProfile(hXYZProfile);
 
     if (d->hXFORM == nullptr)
+    {
         qCDebug(DIGIKAM_WIDGETS_LOG) << "Wrong d->hXFORM" ;
+    }
 
     connect(d->progressTimer, SIGNAL(timeout()),
             this, SLOT(slotProgressTimerDone()));
@@ -249,7 +253,7 @@ CIETongueWidget::~CIETongueWidget()
 
 int CIETongueWidget::grids(double val) const
 {
-    return (int) floor(val * d->gridside + 0.5);
+    return ((int)floor(val * d->gridside + 0.5));
 }
 
 bool CIETongueWidget::setProfileData(const QByteArray& profileData)
@@ -278,12 +282,13 @@ bool CIETongueWidget::setProfileData(const QByteArray& profileData)
         d->loadingImageSucess   = false;
     }
 
-    d->loadingImageMode = false;
+    d->loadingImageMode  = false;
     d->uncalibratedColor = false;
 
     d->progressTimer->stop();
-    d->needUpdatePixmap = true;
+    d->needUpdatePixmap  = true;
     update();
+
     return (d->profileDataAvailable);
 }
 
@@ -317,8 +322,9 @@ bool CIETongueWidget::setProfileFromFile(const QUrl& file)
     d->uncalibratedColor = false;
 
     d->progressTimer->stop();
-    d->needUpdatePixmap = true;
+    d->needUpdatePixmap  = true;
     update();
+
     return (d->profileDataAvailable);
 }
 
@@ -355,6 +361,7 @@ void CIETongueWidget::setProfile(cmsHPROFILE hProfile)
             << "[" << Mat.Blue.X << ", " << Mat.Blue.Y << ", " << Mat.Blue.Z << "]" ;
 #endif
             // Undo chromatic adaptation
+
             if (dkCmsAdaptMatrixFromD50(&Mat, &White))
             {
 #if defined(USE_LCMS_VERSION_1000)
@@ -364,7 +371,9 @@ void CIETongueWidget::setProfile(cmsHPROFILE hProfile)
                 tmp.Y = Mat.v[1].n[0];
                 tmp.Z = Mat.v[2].n[0];
                 qCDebug(DIGIKAM_WIDGETS_LOG) << "d->Primaries.Red   : X=" << tmp.X << " Y=" << tmp.Y << " Z=" << tmp.Z;
-                // ScaleToWhite(&MediaWhite, &tmp);
+/*
+                ScaleToWhite(&MediaWhite, &tmp);
+*/
                 dkCmsXYZ2xyY(&(d->Primaries.Red), &tmp);
 
                 tmp.X = Mat.v[0].n[1];
@@ -378,7 +387,9 @@ void CIETongueWidget::setProfile(cmsHPROFILE hProfile)
                 tmp.Y = Mat.v[1].n[2];
                 tmp.Z = Mat.v[2].n[2];
                 qCDebug(DIGIKAM_WIDGETS_LOG) << "d->Primaries.Blue  : X=" << tmp.X << " Y=" << tmp.Y << " Z=" << tmp.Z;
-                // ScaleToWhite(&MediaWhite, &tmp);
+/*
+                ScaleToWhite(&MediaWhite, &tmp);
+*/
                 dkCmsXYZ2xyY(&(d->Primaries.Blue), &tmp);
 #else
                 cmsCIEXYZ tmp;
@@ -387,21 +398,27 @@ void CIETongueWidget::setProfile(cmsHPROFILE hProfile)
                 tmp.Y = Mat.Green.X;
                 tmp.Z = Mat.Blue.X;
                 qCDebug(DIGIKAM_WIDGETS_LOG) << "d->Primaries.Red   : X=" << tmp.X << " Y=" << tmp.Y << " Z=" << tmp.Z;
-                // ScaleToWhite(&MediaWhite, &tmp);
+/*
+                ScaleToWhite(&MediaWhite, &tmp);
+*/
                 dkCmsXYZ2xyY(&(d->Primaries.Red), &tmp);
 
                 tmp.X = Mat.Red.Y;
                 tmp.Y = Mat.Green.Y;
                 tmp.Z = Mat.Blue.Y;
                 qCDebug(DIGIKAM_WIDGETS_LOG) << "d->Primaries.Green : X=" << tmp.X << " Y=" << tmp.Y << " Z=" << tmp.Z;
-                // ScaleToWhite(&MediaWhite, &tmp);
+/*
+                ScaleToWhite(&MediaWhite, &tmp);
+*/
                 dkCmsXYZ2xyY(&(d->Primaries.Green), &tmp);
 
                 tmp.X = Mat.Red.Z;
                 tmp.Y = Mat.Green.Z;
                 tmp.Z = Mat.Blue.Z;
                 qCDebug(DIGIKAM_WIDGETS_LOG) << "d->Primaries.Blue  : X=" << tmp.X << " Y=" << tmp.Y << " Z=" << tmp.Z;
-                // ScaleToWhite(&MediaWhite, &tmp);
+/*
+                ScaleToWhite(&MediaWhite, &tmp);
+*/
                 dkCmsXYZ2xyY(&(d->Primaries.Blue), &tmp);
 #endif
             }
@@ -452,11 +469,12 @@ void CIETongueWidget::outlineTongue()
     int lx=0, ly=0;
     int fx=0, fy=0;
 
-    for (int x = 380; x <= 700; x += 5)
+    for (int x = 380 ; x <= 700 ; x += 5)
     {
         int ix = (x - 380) / 5;
 
-        cmsCIExyY p = {spectral_chromaticity[ix][0],
+        cmsCIExyY p = {
+                       spectral_chromaticity[ix][0],
                        spectral_chromaticity[ix][1], 1
                       };
 
@@ -486,7 +504,7 @@ void CIETongueWidget::fillTongue()
 
     int x;
 
-    for (int y = 0; y < d->pxrows; ++y)
+    for (int y = 0 ; y < d->pxrows ; ++y)
     {
         int xe = 0;
 
@@ -496,7 +514,7 @@ void CIETongueWidget::fillTongue()
         {
             if (QColor(Img.pixel(x + d->xBias, y)) != QColor(Qt::black))
             {
-                for (xe = d->pxcols - 1; xe >= x; --xe)
+                for (xe = d->pxcols - 1 ; xe >= x ; --xe)
                 {
                     if (QColor(Img.pixel(xe + d->xBias, y)) != QColor(Qt::black))
                     {
@@ -510,7 +528,7 @@ void CIETongueWidget::fillTongue()
 
         if (x < d->pxcols)
         {
-            for ( ; x <= xe; ++x)
+            for ( ; x <= xe ; ++x)
             {
                 QRgb Color = colorByCoord(x, y);
                 Img.setPixel(x + d->xBias, y, Color);
@@ -532,7 +550,7 @@ void CIETongueWidget::drawTongueAxis()
     biasedLine(0, 0,           0,           d->pxrows - 1);
     biasedLine(0, d->pxrows-1, d->pxcols-1, d->pxrows - 1);
 
-    for (int y = 1; y <= 9; y += 1)
+    for (int y = 1 ; y <= 9 ; y += 1)
     {
         QString s;
         int xstart = (y * (d->pxcols - 1)) / 10;
@@ -552,7 +570,7 @@ void CIETongueWidget::drawTongueGrid()
 {
     d->painter.setPen(qRgb(80, 80, 80));
 
-    for (int y = 1; y <= 9; y += 1)
+    for (int y = 1 ; y <= 9 ; y += 1)
     {
         int xstart =  (y * (d->pxcols - 1)) / 10;
         int ystart =  (y * (d->pxrows - 1)) / 10;
@@ -568,12 +586,12 @@ void CIETongueWidget::drawLabels()
     font.setPointSize(5);
     d->painter.setFont(font);
 
-    for (int x = 450; x <= 650; x += (x > 470 && x < 600) ? 5 : 10)
+    for (int x = 450 ; x <= 650 ; x += (x > 470 && x < 600) ? 5 : 10)
     {
         QString wl;
         int bx = 0, by = 0, tx, ty;
 
-        if (x < 520)
+        if      (x < 520)
         {
             bx = grids(-22);
             by = grids(2);
@@ -590,7 +608,8 @@ void CIETongueWidget::drawLabels()
 
         int ix = (x - 380) / 5;
 
-        cmsCIExyY p = {spectral_chromaticity[ix][0],
+        cmsCIExyY p = {
+                       spectral_chromaticity[ix][0],
                        spectral_chromaticity[ix][1], 1
                       };
 
@@ -677,7 +696,7 @@ void CIETongueWidget::uncalibratedColor()
 void CIETongueWidget::updatePixmap()
 {
     d->needUpdatePixmap = false;
-    d->pixmap = QPixmap(size());
+    d->pixmap           = QPixmap(size());
 
     // Draw the CIE tongue curve.
 
@@ -798,12 +817,14 @@ void CIETongueWidget::paintEvent(QPaintEvent*)
     }
 
     // Create CIE tongue if needed
+
     if (d->needUpdatePixmap)
     {
         updatePixmap();
     }
 
     // draw prerendered tongue
+
     p.drawPixmap(0, 0, d->pixmap);
 }
 

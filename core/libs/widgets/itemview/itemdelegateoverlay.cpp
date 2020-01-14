@@ -116,6 +116,7 @@ QAbstractItemDelegate* ItemDelegateOverlay::delegate() const
 bool ItemDelegateOverlay::affectsMultiple(const QModelIndex& index) const
 {
     // note how selectionModel->selectedIndexes().contains() can scale badly
+
     QItemSelectionModel* const selectionModel = view()->selectionModel();
 
     if (!selectionModel->hasSelection())
@@ -140,7 +141,7 @@ bool ItemDelegateOverlay::viewHasMultiSelection() const
         return true;
     }
 
-    return selection.indexes().size() > 1;
+    return (selection.indexes().size() > 1);
 }
 
 QList<QModelIndex> ItemDelegateOverlay::affectedIndexes(const QModelIndex& index) const
@@ -163,6 +164,7 @@ int ItemDelegateOverlay::numberOfAffectedIndexes(const QModelIndex& index) const
     }
 
     // scales better than selectedIndexes().count()
+
     int count = 0;
 
     foreach (const QItemSelectionRange& range, view()->selectionModel()->selection())
@@ -294,6 +296,7 @@ bool AbstractWidgetDelegateOverlay::checkIndexOnEnter(const QModelIndex& index) 
 bool AbstractWidgetDelegateOverlay::checkIndex(const QModelIndex& index) const
 {
     Q_UNUSED(index);
+
     return true;
 }
 

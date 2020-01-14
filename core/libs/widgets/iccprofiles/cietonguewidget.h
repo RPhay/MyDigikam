@@ -69,7 +69,7 @@ protected:
     void drawSmallElipse(LPcmsCIExyY xyY, BYTE r, BYTE g, BYTE b, int sz);
 
     void resizeEvent(QResizeEvent* event) override;
-    void paintEvent(QPaintEvent*) override;
+    void paintEvent(QPaintEvent*)         override;
 
 private:
 

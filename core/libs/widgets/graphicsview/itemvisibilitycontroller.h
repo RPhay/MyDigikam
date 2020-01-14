@@ -80,6 +80,7 @@ public:
     {
         /// In addition to items visible or fading in, return those fading out
         IncludeFadingOut,
+
         /// Do not return those items currently fading out (soon to be hidden)
         ExcludeFadingOut
     };
@@ -89,18 +90,20 @@ public:
     explicit ItemVisibilityController(QObject* const parent = nullptr);
     ~ItemVisibilityController();
 
-    bool  shallBeShown() const;
-    bool  isVisible() const;
-    State state() const;
+    bool  shallBeShown()                                                        const;
+    bool  isVisible()                                                           const;
+    State state()                                                               const;
 
     /**
      *  This returns the "result" of isVisible and shallBeShown:
      *  Something is indeed visible on the scene.
      *  Also returns false if no items are available.
      */
-    bool  hasVisibleItems(IncludeFadingOutMode mode = IncludeFadingOut) const;
+    bool  hasVisibleItems(IncludeFadingOutMode mode = IncludeFadingOut)         const;
 
-    /// Remove all animations
+    /**
+     * Remove all animations
+     */
     void clear();
 
     /**
@@ -117,12 +120,12 @@ public:
     /**
      * Returns all items under control
      */
-    QList<QObject*> items() const;
+    QList<QObject*> items()                                                     const;
 
     /**
      * Returns all currently visible items.
      */
-    QList<QObject*> visibleItems(IncludeFadingOutMode mode = IncludeFadingOut) const;
+    QList<QObject*> visibleItems(IncludeFadingOutMode mode = IncludeFadingOut)  const;
 
     /**
      * Allows to change the default parameters of all animations.
@@ -132,21 +135,30 @@ public:
 
 Q_SIGNALS:
 
-    /// Emitted when the (main) transition has finished
+    /**
+     * Emitted when the (main) transition has finished
+     */
     void propertiesAssigned(bool visible);
+
     /**
      * Emitted when a transition for a single item finished
      * (see setItemVisible())
      */
     void propertiesAssigned(QObject* item, bool visible);
-    /// Emitted when hideAndRemoveItem has finished
+
+    /**
+     * Emitted when hideAndRemoveItem has finished
+     */
     void hiddenAndRemoved(QObject* item);
 
 public Q_SLOTS:
 
-    /// Adjusts the first condition - the items are shown if shallBeShown is true and isVisible is true
+    /**
+     * Adjusts the first condition - the items are shown if shallBeShown is true and isVisible is true
+     */
     void setShallBeShown(bool shallBeShown);
     void setShallBeShownDirectly(bool shallBeShown);
+
     /**
      * Sets a single item to be shown. Calling setVisible() will effectively
      * effect only this single item, as if calling setItemVisible().
@@ -222,10 +234,10 @@ public:
 
     explicit ItemVisibilityControllerPropertyObject(QObject* const parent = nullptr);
 
-    qreal opacity() const;
+    qreal opacity()                 const;
     void setOpacity(qreal opacity);
 
-    bool isVisible() const;
+    bool isVisible()                const;
     void setVisible(bool visible);
 
 Q_SIGNALS:
@@ -281,7 +293,9 @@ public:
 
     explicit HidingStateChanger(QObject* const parent = nullptr);
 
-    /// Convenience constructor: Sets target and property name
+    /**
+     * Convenience constructor: Sets target and property name
+     */
     HidingStateChanger(QObject* const target, const QByteArray& property, QObject* const parent = nullptr);
 
     void setTargetObject(QObject* const object);
@@ -293,9 +307,14 @@ public Q_SLOTS:
 
 Q_SIGNALS:
 
-    /// Emitted when the items were hidden and the target object's property changed
+    /**
+     * Emitted when the items were hidden and the target object's property changed
+     */
     void stateChanged();
-    /// Emitted when the items were hidden, the target object's property changed, and the items shown again
+
+    /**
+     * Emitted when the items were hidden, the target object's property changed, and the items shown again
+     */
     void finished();
 
 protected Q_SLOTS:

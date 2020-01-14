@@ -62,25 +62,33 @@ public:
      */
     void setImageSize(const QSize& size, const QSize& originalSize = QSize());
 
-    /// Return the currently set zoom factor
-    double zoomFactor() const;
+    /**
+     * Return the currently set zoom factor
+     */
+    double zoomFactor()                                                             const;
 
-    /// Return the real zoom factor dependent on device pixel ratio
-    double realZoomFactor() const;
+    /**
+     * Return the real zoom factor dependent on device pixel ratio
+     */
+    double realZoomFactor()                                                         const;
 
-    /// Returns the (available) image size
-    QSizeF imageSize() const;
+    /**
+     * Returns the (available) image size
+     */
+    QSizeF imageSize()                                                              const;
 
-    /// Return the original image size. Can be identical to size().
-    QSizeF originalImageSize() const;
+    /**
+     * Return the original image size. Can be identical to size().
+     */
+    QSizeF originalImageSize()                                                      const;
 
     /**
      * Return the size of the image when the current zoom factor is applied.
      * This is the size the image should be displayed at.
      */
-    QSizeF zoomedSize() const;
+    QSizeF zoomedSize()                                                             const;
 
-    bool isFitToSize(const QSizeF& frameSize) const;
+    bool isFitToSize(const QSizeF& frameSize)                                       const;
 
     /**
      * Sets the current zoom factor, relative to (original) size.
@@ -100,47 +108,47 @@ public:
      * For a given rectangle contained in ((0,0), zoomedSize())
      * returns the corresponding rectangle in (0,0),imageSize().
      */
-    QRectF sourceRect(const QRectF& imageRect) const;
+    QRectF sourceRect(const QRectF& imageRect)                                      const;
 
-    QRectF mapZoomToImage(const QRectF& imageRect) const;
+    QRectF mapZoomToImage(const QRectF& imageRect)                                  const;
 
     /**
      * For a given rect contained in ((0,0), imageSize())
      * returns the corresponding rectangle in (0,0),zoomedSize().
      */
-    QRectF mapImageToZoom(const QRectF& imagePoint) const;
+    QRectF mapImageToZoom(const QRectF& imagePoint)                                 const;
 
     /**
      * For a given point (in (0,0), zoomedSize())
      * returns the corresponding point in (0,0),imageSize().
      */
-    QPointF mapZoomToImage(const QPointF& zoomedPoint) const;
+    QPointF mapZoomToImage(const QPointF& zoomedPoint)                              const;
 
     /**
      * For a given point (in (0,0), imageSize())
      * returns the corresponding point in (0,0),zoomedSize().
      */
-    QPointF mapImageToZoom(const QPointF& imagePoint) const;
+    QPointF mapImageToZoom(const QPointF& imagePoint)                               const;
 
     /**
      * Returns the zoom factor that would be used by fitToSize()
      * called with the given frameSize.
      */
-    double fitToSizeZoomFactor(const QSizeF& frameSize, FitToSizeMode = AlwaysFit) const;
+    double fitToSizeZoomFactor(const QSizeF& frameSize, FitToSizeMode = AlwaysFit)  const;
 
     /**
      * When changing the zoom from current zoom to given nextZoom,
      * sometimes a special value may be crossed, and this could then be used
      * instead of nextZoom. Returns this special zoom, or nextZoom if not applicable.
      */
-    double snappedZoomStep(double nextZoom, const QSizeF& frameSize) const;
+    double snappedZoomStep(double nextZoom, const QSizeF& frameSize)                const;
 
     /**
      * When setting a new zoom factor (absolute value), the new value may be
      * very close to a special value. Returns this special value if this is the case,
      * returns newZoom if not applicable.
      */
-    double snappedZoomFactor(double newZoom, const QSizeF& frameSize) const;
+    double snappedZoomFactor(double newZoom, const QSizeF& frameSize)               const;
 
 protected:
 

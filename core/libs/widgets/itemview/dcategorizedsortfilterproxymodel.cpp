@@ -24,7 +24,6 @@
  *
  * ============================================================ */
 
-#include "dcategorizedsortfilterproxymodel.h"
 #include "dcategorizedsortfilterproxymodel_p.h"
 
 // Qt includes
@@ -112,7 +111,7 @@ bool DCategorizedSortFilterProxyModel::lessThan(const QModelIndex &left, const Q
     {
         int compare = compareCategories(left, right);
 
-        if (compare > 0) // left is greater than right
+        if      (compare > 0) // left is greater than right
         {
             return false;
         }

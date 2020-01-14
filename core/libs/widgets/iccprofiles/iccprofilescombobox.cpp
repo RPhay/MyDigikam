@@ -53,7 +53,7 @@ IccProfilesComboBox::~IccProfilesComboBox()
 
 bool iccProfileLessThan(IccProfile a, IccProfile b)
 {
-    return a.description() < b.description();
+    return (a.description() < b.description());
 }
 
 // if needed outside this class, make it a public static method in a namespace
@@ -61,7 +61,7 @@ static QString profileUserString(const IccProfile& p)
 {
     IccProfile profile(p);
     QFileInfo info(profile.filePath());
-    QString fileName = info.fileName();
+    QString fileName    = info.fileName();
 
     QString description = profile.description();
 
@@ -79,7 +79,9 @@ static QString profileUserString(const IccProfile& p)
     }
 }
 
-// if needed outside this class, make it a public static method in a namespace
+/**
+ * NOTE: if needed outside this class, make it a public static method in a namespace
+ */
 static void formatProfiles(const QList<IccProfile>& givenProfiles, QList<IccProfile>* const returnedProfiles, QStringList* const userText)
 {
     QList<IccProfile> profiles;
@@ -91,7 +93,7 @@ static void formatProfiles(const QList<IccProfile>& givenProfiles, QList<IccProf
 
         if (!profile.description().isNull() && (filePath.isNull() || !filePaths.contains(filePath)) )
         {
-            profiles << profile;
+            profiles  << profile;
             filePaths << filePath;
         }
     }
@@ -108,7 +110,7 @@ static void formatProfiles(const QList<IccProfile>& givenProfiles, QList<IccProf
         }
 
         *returnedProfiles << profile;
-        *userText << description;
+        *userText         << description;
     }
 }
 
