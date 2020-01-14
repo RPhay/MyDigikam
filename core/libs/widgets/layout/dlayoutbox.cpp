@@ -106,7 +106,7 @@ QSize DHBox::sizeHint() const
 QSize DHBox::minimumSizeHint() const
 {
     DHBox* const b = const_cast<DHBox*>(this);
-    QApplication::sendPostedEvents(b, QEvent::ChildAdded );
+    QApplication::sendPostedEvents(b, QEvent::ChildAdded);
 
     return QFrame::minimumSizeHint();
 }

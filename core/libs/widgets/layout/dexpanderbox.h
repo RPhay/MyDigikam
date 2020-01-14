@@ -76,7 +76,7 @@ public:
     void setAlignment(Qt::Alignment align);
     void setElideMode(Qt::TextElideMode mode);
 
-    QString adjustedText() const;
+    QString adjustedText()  const;
 
 public Q_SLOTS:
 
@@ -88,9 +88,9 @@ private:
     void adjustTextToLabel();
 
     // Disabled methods from QLabel
-    QString text() const { return QString(); }; // Use adjustedText() instead.
-    void setText(const QString&) {};            // Use setAdjustedText(text) instead.
-    void clear() {};                            // Use setdjustedText(QString()) instead.
+    QString text() const { return QString(); }; ///< Use adjustedText() instead.
+    void setText(const QString&) {};            ///< Use setAdjustedText(text) instead.
+    void clear() {};                            ///< Use setdjustedText(QString()) instead.
 
 private:
 
@@ -119,9 +119,9 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void mousePressEvent(QMouseEvent* event) override;
+    virtual void mousePressEvent(QMouseEvent* event)   override;
     virtual void mouseReleaseEvent(QMouseEvent* event) override;
-    virtual void keyPressEvent(QKeyEvent* event) override;
+    virtual void keyPressEvent(QKeyEvent* event)       override;
 };
 
 // -------------------------------------------------------------------------
@@ -143,9 +143,9 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void mousePressEvent(QMouseEvent* event) override;
+    virtual void mousePressEvent(QMouseEvent* event)   override;
     virtual void mouseReleaseEvent(QMouseEvent* event) override;
-    virtual void keyPressEvent(QKeyEvent* event) override;
+    virtual void keyPressEvent(QKeyEvent* event)       override;
 };
 
 // -------------------------------------------------------------------------
@@ -170,9 +170,9 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void mousePressEvent(QMouseEvent* event) override;
+    virtual void mousePressEvent(QMouseEvent* event)   override;
     virtual void mouseReleaseEvent(QMouseEvent* event) override;
-    virtual void paintEvent(QPaintEvent* event) override;
+    virtual void paintEvent(QPaintEvent* event)        override;
 
 protected:
 
@@ -246,24 +246,26 @@ public:
     explicit DExpanderBox(QWidget* const parent = nullptr);
     ~DExpanderBox();
 
-    /** Add DLabelExpander item at end of box layout with these settings :
-        'w'               : the widget hosted by DLabelExpander.
-        'pix'             : pixmap used as icon to item title.
-        'txt'             : text used as item title.
-        'objName'         : item object name used to read/save expanded settings to rc file.
-        'expandBydefault' : item state by default (expanded or not).
+    /**
+     * Add DLabelExpander item at end of box layout with these settings :
+     *  'w'               : the widget hosted by DLabelExpander.
+     *  'pix'             : pixmap used as icon to item title.
+     *  'txt'             : text used as item title.
+     *  'objName'         : item object name used to read/save expanded settings to rc file.
+     *  'expandBydefault' : item state by default (expanded or not).
      */
     void addItem(QWidget* const w, const QIcon &icon, const QString& txt,
                  const QString& objName, bool expandBydefault);
     void addItem(QWidget* const w, const QString& txt,
                  const QString& objName, bool expandBydefault);
 
-    /** Insert DLabelExpander item at box layout index with these settings :
-        'w'               : the widget hosted by DLabelExpander.
-        'pix'             : pixmap used as icon to item title.
-        'txt'             : text used as item title.
-        'objName'         : item object name used to read/save expanded settings to rc file.
-        'expandBydefault' : item state by default (expanded or not).
+    /**
+     * Insert DLabelExpander item at box layout index with these settings :
+     *  'w'               : the widget hosted by DLabelExpander.
+     *  'pix'             : pixmap used as icon to item title.
+     *  'txt'             : text used as item title.
+     *  'objName'         : item object name used to read/save expanded settings to rc file.
+     *  'expandBydefault' : item state by default (expanded or not).
      */
     void insertItem(int index, QWidget* const w, const QIcon &icon, const QString& txt,
                     const QString& objName, bool expandBydefault);
@@ -331,7 +333,9 @@ public:
     explicit DExpanderBoxExclusive(QWidget* const parent = nullptr);
     ~DExpanderBoxExclusive();
 
-    /** Show one expander open at most */
+    /**
+     * Show one expander open at most
+     */
     void setIsToolBox(bool b);
     bool isToolBox() const;
 

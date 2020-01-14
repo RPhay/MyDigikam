@@ -38,7 +38,8 @@
 namespace Digikam
 {
 
-/** An Horizontal widget to host children widgets
+/**
+ * An Horizontal widget to host children widgets
  */
 class DIGIKAM_EXPORT DHBox : public QFrame
 {
@@ -67,7 +68,8 @@ protected:
 
 // ------------------------------------------------------------------------------------
 
-/** A Vertical widget to host children widgets
+/**
+ * A Vertical widget to host children widgets
  */
 class DIGIKAM_EXPORT DVBox : public DHBox
 {

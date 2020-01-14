@@ -9,6 +9,7 @@
  * Copyright (C) 2008-2013 by Marcel Wiesweg <marcel dot wiesweg at gmx dot de>
  * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2010 by Manuel Viet <contact at 13zenrv dot fr>
+ * Copyright (C) 2001      by Frerich Raabe <raabe at kde dot org>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -120,7 +121,9 @@ QSize DAdjustableLabel::sizeHint() const
     if (QWidget* const widget = nativeParentWidget())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     QFontMetrics fm(fontMetrics());
@@ -140,7 +143,9 @@ void DAdjustableLabel::setAdjustedText(const QString& text)
     d->ajdText = text;
 
     if (d->ajdText.isNull())
+    {
         QLabel::clear();
+    }
 
     adjustTextToLabel();
 }
@@ -254,6 +259,7 @@ void DClickLabel::keyPressEvent(QKeyEvent* e)
         case Qt::Key_Space:
             emit activated();
             return;
+
         default:
             break;
     }
@@ -315,6 +321,7 @@ void DSqueezedClickLabel::keyPressEvent(QKeyEvent* e)
         case Qt::Key_Space:
             emit activated();
             return;
+
         default:
             break;
     }
@@ -371,9 +378,6 @@ void DArrowClickLabel::mouseReleaseEvent(QMouseEvent* event)
 
 void DArrowClickLabel::paintEvent(QPaintEvent*)
 {
-    // Inspired by karrowbutton.cpp,
-    //  Copyright (C) 2001 Frerich Raabe <raabe at kde dot org>
-
     QPainter p(this);
 
     QStyleOptionFrame opt;
@@ -381,19 +385,24 @@ void DArrowClickLabel::paintEvent(QPaintEvent*)
     opt.lineWidth    = 2;
     opt.midLineWidth = 0;
 
-    /*
+/*
     p.fillRect( rect(), palette().brush( QPalette::Window ) );
     style()->drawPrimitive( QStyle::PE_Frame, &opt, &p, this);
-    */
+*/
 
     if (m_arrowType == Qt::NoArrow)
+    {
         return;
+    }
 
-    if (width() < m_size + m_margin || height() < m_size + m_margin)
+    if ((width() < (m_size + m_margin)) || (height() < (m_size + m_margin)))
+    {
         return; // don't draw arrows if we are too small
+    }
 
     unsigned int x = 0, y = 0;
-    if (m_arrowType == Qt::DownArrow)
+
+    if      (m_arrowType == Qt::DownArrow)
     {
         x = (width() - m_size) / 2;
         y = height() - (m_size + m_margin);
@@ -429,15 +438,19 @@ void DArrowClickLabel::paintEvent(QPaintEvent*)
         case Qt::LeftArrow:
             e = QStyle::PE_IndicatorArrowLeft;
             break;
+
         case Qt::RightArrow:
             e = QStyle::PE_IndicatorArrowRight;
             break;
+
         case Qt::UpArrow:
             e = QStyle::PE_IndicatorArrowUp;
             break;
+
         case Qt::DownArrow:
             e = QStyle::PE_IndicatorArrowDown;
             break;
+
         case Qt::NoArrow:
             break;
     }
@@ -461,16 +474,16 @@ class Q_DECL_HIDDEN DLabelExpander::Private
 public:
 
     explicit Private()
+      : expandByDefault(true),
+        checkBox(nullptr),
+        pixmapLabel(nullptr),
+        containerWidget(nullptr),
+        grid(nullptr),
+        line(nullptr),
+        hbox(nullptr),
+        arrow(nullptr),
+        clickLabel(nullptr)
     {
-        clickLabel      = nullptr;
-        containerWidget = nullptr;
-        pixmapLabel     = nullptr;
-        grid            = nullptr;
-        arrow           = nullptr;
-        line            = nullptr;
-        hbox            = nullptr;
-        checkBox        = nullptr;
-        expandByDefault = true;
     }
 
     bool              expandByDefault;
@@ -618,9 +631,13 @@ void DLabelExpander::setExpanded(bool b)
         d->containerWidget->setVisible(b);
 
         if (b)
+        {
            d->arrow->setArrowType(Qt::DownArrow);
+        }
         else
+        {
            d->arrow->setArrowType(Qt::RightArrow);
+        }
     }
 
     emit signalExpanded(b);
@@ -634,7 +651,9 @@ bool DLabelExpander::isExpanded() const
 void DLabelExpander::slotToggleContainer()
 {
     if (d->containerWidget)
+    {
         setExpanded(!d->containerWidget->isVisible());
+    }
 }
 
 bool DLabelExpander::eventFilter(QObject* obj, QEvent* ev)
@@ -665,9 +684,9 @@ class Q_DECL_HIDDEN DExpanderBox::Private
 public:
 
     explicit Private(DExpanderBox* const box)
+      : vbox(nullptr),
+        parent(box)
     {
-        parent = box;
-        vbox   = nullptr;
     }
 
     void createItem(int index, QWidget* const w, const QIcon& icon, const QString& txt,
@@ -733,25 +752,41 @@ DExpanderBox::~DExpanderBox()
 
 void DExpanderBox::setCheckBoxVisible(int index, bool b)
 {
-    if (index > d->wList.count() || index < 0) return;
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return;
+    }
+
     d->wList[index]->setCheckBoxVisible(b);
 }
 
 bool DExpanderBox::checkBoxIsVisible(int index) const
 {
-    if (index > d->wList.count() || index < 0) return false;
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return false;
+    }
+
     return d->wList[index]->checkBoxIsVisible();
 }
 
 void DExpanderBox::setChecked(int index, bool b)
 {
-    if (index > d->wList.count() || index < 0) return;
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return;
+    }
+
     d->wList[index]->setChecked(b);
 }
 
 bool DExpanderBox::isChecked(int index) const
 {
-    if (index > d->wList.count() || index < 0) return false;
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return false;
+    }
+
     return d->wList[index]->isChecked();
 }
 
@@ -813,32 +848,52 @@ void DExpanderBox::insertStretch(int index)
 
 void DExpanderBox::removeItem(int index)
 {
-    if (index > d->wList.count() || index < 0) return;
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return;
+    }
+
     d->wList[index]->hide();
     d->wList.removeAt(index);
 }
 
 void DExpanderBox::setItemText(int index, const QString& txt)
 {
-    if (index > d->wList.count() || index < 0) return;
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return;
+    }
+
     d->wList[index]->setText(txt);
 }
 
 QString DExpanderBox::itemText(int index) const
 {
-    if (index > d->wList.count() || index < 0) return QString();
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return QString();
+    }
+
     return d->wList[index]->text();
 }
 
 void DExpanderBox::setItemIcon(int index, const QIcon& icon)
 {
-    if (index > d->wList.count() || index < 0) return;
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return;
+    }
+
     d->wList[index]->setIcon(icon.pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize)));
 }
 
 QIcon DExpanderBox::itemIcon(int index) const
 {
-    if (index > d->wList.count() || index < 0) return QIcon();
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return QIcon();
+    }
+
     return d->wList[index]->icon();
 }
 
@@ -849,49 +904,76 @@ int DExpanderBox::count() const
 
 void DExpanderBox::setItemToolTip(int index, const QString& tip)
 {
-    if (index > d->wList.count() || index < 0) return;
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return;
+    }
+
     d->wList[index]->setToolTip(tip);
 }
 
 QString DExpanderBox::itemToolTip(int index) const
 {
-    if (index > d->wList.count() || index < 0) return QString();
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return QString();
+    }
+
     return d->wList[index]->toolTip();
 }
 
 void DExpanderBox::setItemEnabled(int index, bool enabled)
 {
-    if (index > d->wList.count() || index < 0) return;
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return;
+    }
+
     d->wList[index]->setEnabled(enabled);
 }
 
 bool DExpanderBox::isItemEnabled(int index) const
 {
-    if (index > d->wList.count() || index < 0) return false;
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return false;
+    }
+
+
     return d->wList[index]->isEnabled();
 }
 
 DLabelExpander* DExpanderBox::widget(int index) const
 {
-    if (index > d->wList.count() || index < 0) return nullptr;
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return nullptr;
+    }
+
     return d->wList[index];
 }
 
 int DExpanderBox::indexOf(DLabelExpander* const widget) const
 {
-    for (int i = 0 ; i < count(); ++i)
+    for (int i = 0 ; i < count() ; ++i)
     {
         DLabelExpander* const exp = d->wList[i];
 
         if (widget == exp)
+        {
             return i;
+        }
     }
+
     return -1;
 }
 
 void DExpanderBox::setItemExpanded(int index, bool b)
 {
-    if (index > d->wList.count() || index < 0) return;
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return;
+    }
 
     DLabelExpander* const exp = d->wList[index];
 
@@ -902,19 +984,24 @@ void DExpanderBox::setItemExpanded(int index, bool b)
 
 bool DExpanderBox::isItemExpanded(int index) const
 {
-    if (index > d->wList.count() || index < 0) return false;
+    if ((index > d->wList.count()) || (index < 0))
+    {
+        return false;
+    }
 
     DLabelExpander* const exp = d->wList[index];
 
     if (!exp)
+    {
         return false;
+    }
 
     return (exp->isExpanded());
 }
 
 void DExpanderBox::readSettings(KConfigGroup& group)
 {
-    for (int i = 0 ; i < count(); ++i)
+    for (int i = 0 ; i < count() ; ++i)
     {
         DLabelExpander* const exp = d->wList[i];
 
@@ -928,7 +1015,7 @@ void DExpanderBox::readSettings(KConfigGroup& group)
 
 void DExpanderBox::writeSettings(KConfigGroup& group)
 {
-    for (int i = 0 ; i < count(); ++i)
+    for (int i = 0 ; i < count() ; ++i)
     {
         DLabelExpander* const exp = d->wList[i];
 
@@ -957,7 +1044,9 @@ void DExpanderBoxExclusive::slotItemExpanded(bool b)
     DLabelExpander* const exp = dynamic_cast<DLabelExpander*>(sender());
 
     if (!exp)
+    {
         return;
+    }
 
     if (isToolBox() && b)
     {
@@ -965,7 +1054,7 @@ void DExpanderBoxExclusive::slotItemExpanded(bool b)
 
         while (item < count())
         {
-            if (isItemExpanded(item) && item != indexOf(exp))
+            if (isItemExpanded(item) && (item != indexOf(exp)))
             {
                 setItemExpanded(item, false);
             }

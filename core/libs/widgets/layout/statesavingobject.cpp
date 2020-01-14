@@ -63,8 +63,8 @@ public:
 
     void recurse(const QObjectList& children, const bool save)
     {
-        for (QObjectList::const_iterator childIt = children.constBegin();
-             childIt != children.constEnd(); ++childIt)
+        for (QObjectList::const_iterator childIt = children.constBegin() ;
+             childIt != children.constEnd() ; ++childIt)
         {
             StateSavingObject* const statefulChild = dynamic_cast<StateSavingObject*>(*childIt);
 
@@ -75,10 +75,12 @@ public:
 
                 // but before invoking these actions, avoid duplicate calls to
                 // the methods of deeper children
+
                 const StateSavingObject::StateSavingDepth oldState = statefulChild->getStateSavingDepth();
                 statefulChild->setStateSavingDepth(StateSavingObject::INSTANCE);
 
                 // decide which action to invoke
+
                 if (save)
                 {
                     statefulChild->saveState();
@@ -92,6 +94,7 @@ public:
             }
 
             // recurse children every time
+
             recurse((*childIt)->children(), save);
         }
     }
@@ -105,11 +108,12 @@ public:
             action = QLatin1String("saving");
         }
 
-        if (depth == StateSavingObject::DIRECT_CHILDREN)
+        if      (depth == StateSavingObject::DIRECT_CHILDREN)
         {
             //qCDebug(DIGIKAM_WIDGETS_LOG) << "Also restoring " << action << " of direct children";
-            for (QObjectList::const_iterator childIt = host->children().begin();
-                 childIt != host->children().end(); ++childIt)
+
+            for (QObjectList::const_iterator childIt = host->children().begin() ;
+                 childIt != host->children().end() ; ++childIt)
             {
                 StateSavingObject* const statefulChild = dynamic_cast<StateSavingObject*>(*childIt);
 
@@ -146,6 +150,7 @@ StateSavingObject::StateSavingObject(QObject* const host)
     : d(new Private)
 {
     d->host = host;
+
     // we cannot safely create the default config group here, because the host
     // may not have been properly initialized or its object name is set after
     // the constructor call
@@ -169,6 +174,7 @@ void StateSavingObject::setStateSavingDepth(const StateSavingObject::StateSaving
 void StateSavingObject::setConfigGroup(const KConfigGroup& group)
 {
     //qCDebug(DIGIKAM_WIDGETS_LOG) << "received new config group: " << group.name();
+
     d->group    = group;
     d->groupSet = true;
 }
@@ -216,7 +222,7 @@ KConfigGroup StateSavingObject::getConfigGroup() const
 
 QString StateSavingObject::entryName(const QString& base) const
 {
-    return d->prefix + base;
+    return (d->prefix + base);
 }
 
 } // namespace Digikam
