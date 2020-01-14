@@ -44,6 +44,9 @@ class DIGIKAM_EXPORT IccProfilesComboBox : public SqueezedComboBox
     Q_OBJECT
 
 public:
+    /**
+     * NOTE: Use the signal currentIndexChanged(int) for change notification
+     */
 
     explicit IccProfilesComboBox(QWidget* const parent = nullptr);
     ~IccProfilesComboBox();
@@ -53,30 +56,33 @@ public:
      * removes duplicates by file path, sorts them and adds them in sorted order.
      */
     void addProfilesSqueezed(const QList<IccProfile>& profiles);
+
     /**
      * Add the given profile with the given description, or, if null, a standard description.
      * Does not test for duplicity, does not sort into existing profiles.
      */
     void addProfileSqueezed(const IccProfile& profile, const QString& description = QString());
+
     /**
      * Clears, does the same as addProfilesSqueezed, and restores the current entry if possible.
      */
     void replaceProfilesSqueezed(const QList<IccProfile>& profiles);
+
     /**
      * Sets a message the is displayed in the combo box and disables the combo box,
      * if the combo box is currently empty
      */
     void setNoProfileIfEmpty(const QString& message);
 
-    /** Retrieves the current profile, or a null profile if none is selected.
+    /**
+     * Retrieves the current profile, or a null profile if none is selected.
      */
     IccProfile currentProfile() const;
 
-    /** Sets the current profile. If profile is not in the list, sets no current item (-1)
+    /**
+     * Sets the current profile. If profile is not in the list, sets no current item (-1)
      */
     void setCurrentProfile(const IccProfile& profile);
-
-    /// Use the signal currentIndexChanged(int) for change notification
 };
 
 // ----------------------------------------------------------------------------

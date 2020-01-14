@@ -56,7 +56,9 @@ static const char* ICCHumanList[] =
     "-1"
 };
 
-// This entry list is only require for compatibility with MetadataWidget implementation.
+/**
+ * NOTE: This entry list is only require for compatibility with MetadataWidget implementation.
+ */
 static const char* ICCEntryList[] =
 {
     "Header",
@@ -77,7 +79,8 @@ public:
     }
 
     ICCTagInfo(const QString& title, const QString& description)
-        : m_title(title), m_description(description)
+        : m_title(title),
+          m_description(description)
     {
     }
 
@@ -107,8 +110,8 @@ class Q_DECL_HIDDEN ICCProfileWidget::Private
 public:
 
     explicit Private()
+      : cieTongue(nullptr)
     {
-        cieTongue = nullptr;
     }
 
     IccProfile       profile;
@@ -143,6 +146,7 @@ ICCProfileWidget::ICCProfileWidget(QWidget* const parent, int w, int h)
     d->iccTagsDescription[QLatin1String("Icc.Header.CMMFlags")]        = ICCTagInfo(i18n("CMM Flags"),        i18n("The ICC profile color management flags"));
 
     // Set the list of keys and tags filters.
+
     for (int i = 0 ; QLatin1String(ICCEntryList[i]) != QLatin1String("-1") ; ++i)
     {
         d->keysFilter << QLatin1String(ICCEntryList[i]);
@@ -186,6 +190,7 @@ ICCProfileWidget::~ICCProfileWidget()
 bool ICCProfileWidget::setProfile(const IccProfile& profile)
 {
     // Cleanup all metadata contents.
+
     setMetadataMap();
 
     d->profile = profile;
@@ -199,10 +204,13 @@ bool ICCProfileWidget::setProfile(const IccProfile& profile)
     }
 
     // Try to decode current metadata.
+
     enabledToolButtons(decodeMetadata());
 
     // Refresh view using decoded metadata.
+
     buildView();
+
     return true;
 }
 
@@ -259,12 +267,14 @@ bool ICCProfileWidget::loadFromURL(const QUrl& url)
 bool ICCProfileWidget::loadFromProfileData(const QString& fileName, const QByteArray& data)
 {
     setFileName(fileName);
+
     return(setProfile(IccProfile(data)));
 }
 
 bool ICCProfileWidget::loadProfile(const QString& fileName, const IccProfile& profile)
 {
     setFileName(fileName);
+
     return(setProfile(profile));
 }
 
@@ -329,27 +339,35 @@ bool ICCProfileWidget::decodeMetadata()
         case icSigLabData:
             colorSpace = i18n("Lab");
             break;
+
         case icSigLuvData:
             colorSpace = i18n("Luv");
             break;
+
         case icSigRgbData:
             colorSpace = i18n("RGB");
             break;
+
         case icSigGrayData:
             colorSpace = i18n("GRAY");
             break;
+
         case icSigHsvData:
             colorSpace = i18n("HSV");
             break;
+
         case icSigHlsData:
             colorSpace = i18n("HLS");
             break;
+
         case icSigCmykData:
             colorSpace = i18n("CMYK");
             break;
+
         case icSigCmyData:
             colorSpace= i18n("CMY");
             break;
+
         default:
             colorSpace = i18n("Unknown");
             break;
@@ -364,27 +382,34 @@ bool ICCProfileWidget::decodeMetadata()
         case icSigLabData:
             connectionSpace = i18n("Lab");
             break;
+
         case icSigLuvData:
             connectionSpace = i18n("Luv");
             break;
+
         case icSigRgbData:
             connectionSpace = i18n("RGB");
             break;
+
         case icSigGrayData:
             connectionSpace = i18n("GRAY");
             break;
+
         case icSigHsvData:
             connectionSpace = i18n("HSV");
             break;
+
         case icSigHlsData:
             connectionSpace = i18n("HLS");
             break;
         case icSigCmykData:
             connectionSpace = i18n("CMYK");
             break;
+
         case icSigCmyData:
             connectionSpace= i18n("CMY");
             break;
+
         default:
             connectionSpace = i18n("Unknown");
             break;
@@ -399,24 +424,31 @@ bool ICCProfileWidget::decodeMetadata()
         case icSigInputClass:
             device = i18n("Input device");
             break;
+
         case icSigDisplayClass:
             device = i18n("Display device");
             break;
+
         case icSigOutputClass:
             device = i18n("Output device");
             break;
+
         case icSigColorSpaceClass:
             device = i18n("Color space");
             break;
+
         case icSigLinkClass:
             device = i18n("Link device");
             break;
+
         case icSigAbstractClass:
             device = i18n("Abstract");
             break;
+
         case icSigNamedColorClass:
             device = i18n("Named color");
             break;
+
         default:
             device = i18n("Unknown");
             break;
@@ -431,15 +463,19 @@ bool ICCProfileWidget::decodeMetadata()
         case 0:
             intent = i18n("Perceptual");
             break;
+
         case 1:
             intent = i18n("Relative Colorimetric");
             break;
+
         case 2:
             intent = i18n("Saturation");
             break;
+
         case 3:
             intent = i18n("Absolute Colorimetric");
             break;
+
         default:
             intent = i18n("Unknown");
             break;
@@ -448,7 +484,9 @@ bool ICCProfileWidget::decodeMetadata()
     metaDataMap.insert(QLatin1String("Icc.Header.RenderingIntent"), intent);
 
     // Update all metadata contents.
+
     setMetadataMap(metaDataMap);
+
     return true;
 }
 
