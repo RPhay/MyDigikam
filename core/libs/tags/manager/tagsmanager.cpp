@@ -57,6 +57,7 @@
 #include "searchtextbar.h"
 #include "tageditdlg.h"
 #include "coredb.h"
+#include "facetags.h"
 #include "dlogoaction.h"
 #include "metadatasynchronizer.h"
 #include "fileactionmngr.h"
@@ -930,7 +931,9 @@ void TagsManager::slotRemoveNotAssignedTags()
         {
             TAlbum* const t = static_cast<TAlbum*>(d->tagMngrView->albumForIndex(current));
 
-            if (t && !t->isRoot() && !t->isInternalTag())
+            if (t && !t->isRoot() && !t->isInternalTag()    &&
+                (t->id() != FaceTags::unknownPersonTagId()) &&
+                (t->id() != FaceTags::unconfirmedPersonTagId()))
             {
                 QList<qlonglong> assignedItems = CoreDbAccess().db()->getItemIDsInTag(t->id());
 
