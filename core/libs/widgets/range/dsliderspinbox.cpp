@@ -48,25 +48,25 @@ class Q_DECL_HIDDEN DAbstractSliderSpinBoxPrivate
 public:
 
     DAbstractSliderSpinBoxPrivate()
+      : edit(nullptr),
+        validator(nullptr),
+        dummySpinBox(nullptr),
+        upButtonDown(false),
+        downButtonDown(false),
+        factor(1.0),
+        fastSliderStep(5),
+        slowFactor(0.1),
+        shiftPercent(0.0),
+        shiftMode(false),
+        exponentRatio(0.0),
+        value(0),
+        maximum(100),
+        minimum(0),
+        singleStep(1),
+        style(STYLE_NOQUIRK),
+        blockUpdateSignalOnDrag(false),
+        isDragging             (false)
     {
-        edit                    = nullptr;
-        validator               = nullptr;
-        dummySpinBox            = nullptr;
-        upButtonDown            = false;
-        downButtonDown          = false;
-        factor                  = 1.0;
-        fastSliderStep          = 5;
-        slowFactor              = 0.1;
-        shiftPercent            = 0.0;
-        shiftMode               = false;
-        exponentRatio           = 0.0;
-        value                   = 0;
-        maximum                 = 100;
-        minimum                 = 0;
-        singleStep              = 1;
-        style                   = STYLE_NOQUIRK;
-        blockUpdateSignalOnDrag = false;
-        isDragging              = false;
     }
 
     enum Style
@@ -116,6 +116,7 @@ DAbstractSliderSpinBox::DAbstractSliderSpinBox(QWidget* const parent, DAbstractS
     d->edit->hide();
 
     // Make edit transparent
+
     d->edit->setAutoFillBackground(false);
     QPalette pal = d->edit->palette();
     pal.setColor(QPalette::Base, Qt::transparent);
@@ -130,10 +131,12 @@ DAbstractSliderSpinBox::DAbstractSliderSpinBox(QWidget* const parent, DAbstractS
     setExponentRatio(1.0);
 
     // Set sane defaults
+
     setFocusPolicy(Qt::StrongFocus);
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
 
     // dummy needed to fix a bug in the polyester theme
+
     d->dummySpinBox = new QSpinBox(this);
     d->dummySpinBox->hide();
 }
@@ -149,7 +152,9 @@ void DAbstractSliderSpinBox::showEdit()
     Q_D(DAbstractSliderSpinBox);
 
     if (d->edit->isVisible())
+    {
         return;
+    }
 
     if (d->style == DAbstractSliderSpinBoxPrivate::STYLE_PLASTIQUE)
     {
@@ -187,12 +192,15 @@ void DAbstractSliderSpinBox::paintEvent(QPaintEvent* e)
         case DAbstractSliderSpinBoxPrivate::STYLE_FUSION:
             paintFusion(painter);
             break;
+
         case DAbstractSliderSpinBoxPrivate::STYLE_PLASTIQUE:
             paintPlastique(painter);
             break;
+
         case DAbstractSliderSpinBoxPrivate::STYLE_BREEZE:
             paintBreeze(painter);
             break;
+
         default:
             paint(painter);
             break;
@@ -206,11 +214,13 @@ void DAbstractSliderSpinBox::paint(QPainter& painter)
     Q_D(DAbstractSliderSpinBox);
 
     // Create options to draw spin box parts
+
     QStyleOptionSpinBox spinOpts = spinBoxOptions();
     spinOpts.rect.adjust(0, 2, 0, -2);
 
     // Draw "SpinBox".Clip off the area of the lineEdit to avoid double
     // borders being drawn
+
     painter.save();
     painter.setClipping(true);
 
@@ -228,6 +238,7 @@ void DAbstractSliderSpinBox::paint(QPainter& painter)
     style()->drawControl(QStyle::CE_ProgressBar, &progressOpts, &painter, nullptr);
 
     // Draw focus if necessary
+
     if (hasFocus() && d->edit->hasFocus())
     {
         QStyleOptionFocusRect focusOpts;
@@ -246,8 +257,9 @@ void DAbstractSliderSpinBox::paintFusion(QPainter& painter)
     QStyleOptionProgressBar progressOpts = progressBarOptions();
     spinOpts.frame                       = true;
     spinOpts.rect.adjust(0, -1, 0, 1);
-    // spinOpts.palette().setBrush(QPalette::Base, palette().highlight());
-
+/*
+    spinOpts.palette().setBrush(QPalette::Base, palette().highlight());
+*/
     style()->drawComplexControl(QStyle::CC_SpinBox, &spinOpts, &painter, d->dummySpinBox);
 
     painter.save();
@@ -258,7 +270,7 @@ void DAbstractSliderSpinBox::paintFusion(QPainter& painter)
     int progressIndicatorPos = (progressOpts.progress - double(progressOpts.minimum)) / qMax(double(1.0),
                                 double(progressOpts.maximum) - progressOpts.minimum) * rect.width();
 
-    if (progressIndicatorPos >= 0 && progressIndicatorPos <= rect.width())
+    if      ((progressIndicatorPos >= 0) && (progressIndicatorPos <= rect.width()))
     {
         leftRect = QRect(rect.left(), rect.top(), progressIndicatorPos, rect.height());
     }
@@ -324,7 +336,7 @@ void DAbstractSliderSpinBox::paintPlastique(QPainter& painter)
     int progressIndicatorPos = (progressOpts.progress - double(progressOpts.minimum)) / qMax(double(1.0),
                                 double(progressOpts.maximum) - progressOpts.minimum) * rect.width();
 
-    if (progressIndicatorPos >= 0 && progressIndicatorPos <= rect.width())
+    if      ((progressIndicatorPos >= 0) && (progressIndicatorPos <= rect.width()))
     {
         leftRect = QRect(rect.left(), rect.top(), progressIndicatorPos, rect.height());
     }
@@ -390,7 +402,7 @@ void DAbstractSliderSpinBox::paintBreeze(QPainter& painter)
     int progressIndicatorPos = (progressOpts.progress - double(progressOpts.minimum)) / qMax(double(1.0),
                                 double(progressOpts.maximum) - progressOpts.minimum) * progressOpts.rect.width();
 
-    if (progressIndicatorPos >= 0 && progressIndicatorPos <= progressOpts.rect.width())
+    if      ((progressIndicatorPos >= 0) && (progressIndicatorPos <= progressOpts.rect.width()))
     {
         leftRect = QRect(progressOpts.rect.left(), progressOpts.rect.top(), progressIndicatorPos, progressOpts.rect.height());
     }
@@ -438,9 +450,10 @@ void DAbstractSliderSpinBox::mousePressEvent(QMouseEvent* e)
 
     // Depress buttons or highlight slider
     // Also used to emulate mouse grab...
-    if (e->buttons() & Qt::LeftButton)
+
+    if      (e->buttons() & Qt::LeftButton)
     {
-        if (upButtonRect(spinOpts).contains(e->pos()))
+        if      (upButtonRect(spinOpts).contains(e->pos()))
         {
             d->upButtonDown = true;
         }
@@ -467,7 +480,8 @@ void DAbstractSliderSpinBox::mouseReleaseEvent(QMouseEvent* e)
 
     // Step up/down for buttons
     // Emulating mouse grab too
-    if (upButtonRect(spinOpts).contains(e->pos()) && d->upButtonDown)
+
+    if      (upButtonRect(spinOpts).contains(e->pos()) && d->upButtonDown)
     {
         setInternalValue(d->value + d->singleStep);
     }
@@ -511,6 +525,7 @@ void DAbstractSliderSpinBox::mouseMoveEvent(QMouseEvent* e)
     }
 
     // Respect emulated mouse grab.
+
     if (e->buttons() & Qt::LeftButton && !(d->downButtonDown || d->upButtonDown))
     {
         d->isDragging = true;
@@ -536,6 +551,7 @@ void DAbstractSliderSpinBox::keyPressEvent(QKeyEvent* e)
 
             update();
             break;
+
         case Qt::Key_Down:
         case Qt::Key_Left:
             setInternalValue(d->value - d->singleStep);
@@ -547,10 +563,12 @@ void DAbstractSliderSpinBox::keyPressEvent(QKeyEvent* e)
 
             update();
             break;
+
         case Qt::Key_Shift:
             d->shiftPercent = pow(double(d->value - d->minimum) / double(d->maximum - d->minimum), 1 / double(d->exponentRatio));
             d->shiftMode = true;
             break;
+
         case Qt::Key_Enter: // Line edit isn't "accepting" key strokes...
         case Qt::Key_Return:
         case Qt::Key_Escape:
@@ -560,6 +578,7 @@ void DAbstractSliderSpinBox::keyPressEvent(QKeyEvent* e)
         case Qt::Key_Super_L:
         case Qt::Key_Super_R:
             break;
+
         default:
             showEdit();
             d->edit->event(e);
@@ -609,10 +628,12 @@ bool DAbstractSliderSpinBox::eventFilter(QObject* recv, QEvent* e)
                 setInternalValue(QLocale::system().toDouble(d->edit->text()) * d->factor);
                 hideEdit();
                 return true;
+
             case Qt::Key_Escape:
                 d->edit->setText(valueString());
                 hideEdit();
                 return true;
+
             default:
                 break;
         }
@@ -629,6 +650,7 @@ bool DAbstractSliderSpinBox::eventFilter(QObject* recv, QEvent* e)
             case Qt::Key_Escape:
                 e->accept();
                 return true;
+
             default:
                 break;
         }
@@ -660,16 +682,20 @@ QSize DAbstractSliderSpinBox::sizeHint() const
         case DAbstractSliderSpinBoxPrivate::STYLE_FUSION:
             hint += QSize(8, 8);
             break;
+
         case DAbstractSliderSpinBoxPrivate::STYLE_PLASTIQUE:
             hint += QSize(8, 0);
             break;
+
         case DAbstractSliderSpinBoxPrivate::STYLE_BREEZE:
             hint += QSize(2, 0);
             break;
+
         case DAbstractSliderSpinBoxPrivate::STYLE_NOQUIRK:
             // almost all "modern" styles have a margin around controls
             hint += QSize(6, 6);
             break;
+
         default:
             break;
     }
@@ -687,6 +713,7 @@ QSize DAbstractSliderSpinBox::sizeHint() const
     hint += extra;
 
     spinOpts.rect.setSize(hint);
+
     return style()->sizeFromContents(QStyle::CT_SpinBox, &spinOpts, hint)
                                      .expandedTo(QApplication::globalStrut());
 }
@@ -712,7 +739,8 @@ QStyleOptionSpinBox DAbstractSliderSpinBox::spinBoxOptions() const
     opts.subControls   = QStyle::SC_SpinBoxUp | QStyle::SC_SpinBoxDown;
 
     // Disable non-logical buttons
-    if (d->value == d->minimum)
+
+    if      (d->value == d->minimum)
     {
         opts.stepEnabled = QAbstractSpinBox::StepUpEnabled;
     }
@@ -726,7 +754,8 @@ QStyleOptionSpinBox DAbstractSliderSpinBox::spinBoxOptions() const
     }
 
     // Deal with depressed buttons
-    if (d->upButtonDown)
+
+    if      (d->upButtonDown)
     {
         opts.activeSubControls = QStyle::SC_SpinBoxUp;
     }
@@ -749,21 +778,23 @@ QStyleOptionProgressBar DAbstractSliderSpinBox::progressBarOptions() const
     QStyleOptionSpinBox spinOpts = spinBoxOptions();
 
     // Create opts for drawing the progress portion
+
     QStyleOptionProgressBar progressOpts;
     progressOpts.initFrom(this);
-    progressOpts.maximum = d->maximum;
-    progressOpts.minimum = d->minimum;
+    progressOpts.maximum         = d->maximum;
+    progressOpts.minimum         = d->minimum;
 
-    double minDbl  = d->minimum;
-    double dValues = (d->maximum - minDbl);
+    double minDbl                = d->minimum;
+    double dValues               = (d->maximum - minDbl);
 
-    progressOpts.progress = dValues * pow((d->value - minDbl) / dValues, 1.0 / d->exponentRatio) + minDbl;
-    progressOpts.text = d->prefix + valueString() + d->suffix;
-    progressOpts.textAlignment = Qt::AlignCenter;
-    progressOpts.textVisible = !(d->edit->isVisible());
+    progressOpts.progress        = dValues * pow((d->value - minDbl) / dValues, 1.0 / d->exponentRatio) + minDbl;
+    progressOpts.text            = d->prefix + valueString() + d->suffix;
+    progressOpts.textAlignment   = Qt::AlignCenter;
+    progressOpts.textVisible     = !(d->edit->isVisible());
 
     // Change opts rect to be only the ComboBox's text area
-    progressOpts.rect = progressRect(spinOpts);
+
+    progressOpts.rect            = progressRect(spinOpts);
 
     return progressOpts;
 }
@@ -780,9 +811,11 @@ QRect DAbstractSliderSpinBox::progressRect(const QStyleOptionSpinBox& spinBoxOpt
         case DAbstractSliderSpinBoxPrivate::STYLE_PLASTIQUE:
             ret.adjust(-2, 0, 1, 0);
             break;
+
         case DAbstractSliderSpinBoxPrivate::STYLE_BREEZE:
             ret.adjust(1, 0, 0, 0);
             break;
+
         default:
             break;
     }
@@ -810,7 +843,7 @@ int DAbstractSliderSpinBox::valueForX(int x, Qt::KeyboardModifiers modifiers) co
 
     QRect correctedProgRect;
 
-    if (d->style == DAbstractSliderSpinBoxPrivate::STYLE_FUSION)
+    if      (d->style == DAbstractSliderSpinBoxPrivate::STYLE_FUSION)
     {
         correctedProgRect = progressRect(spinOpts).adjusted(2, 0, -2, 0);
     }
@@ -924,7 +957,7 @@ void DAbstractSliderSpinBox::changeEvent(QEvent* e)
 
     if (e->type() == QEvent::StyleChange)
     {
-        if (style()->objectName() == QLatin1String("fusion"))
+        if      (style()->objectName() == QLatin1String("fusion"))
         {
             d->style = DAbstractSliderSpinBoxPrivate::STYLE_FUSION;
         }
@@ -963,8 +996,8 @@ void DSliderSpinBox::setRange(int minimum, int maximum)
 {
     Q_D(DSliderSpinBox);
 
-    d->minimum = minimum;
-    d->maximum = maximum;
+    d->minimum        = minimum;
+    d->maximum        = maximum;
     d->fastSliderStep = (maximum-minimum + 1) / 20;
     d->validator->setRange(minimum, maximum, 0);
     update();
@@ -973,6 +1006,7 @@ void DSliderSpinBox::setRange(int minimum, int maximum)
 int DSliderSpinBox::minimum() const
 {
     const Q_D(DSliderSpinBox);
+
     return d->minimum;
 }
 
@@ -985,6 +1019,7 @@ void DSliderSpinBox::setMinimum(int minimum)
 int DSliderSpinBox::maximum() const
 {
     const Q_D(DSliderSpinBox);
+
     return d->maximum;
 }
 
@@ -997,6 +1032,7 @@ void DSliderSpinBox::setMaximum(int maximum)
 int DSliderSpinBox::fastSliderStep() const
 {
     const Q_D(DSliderSpinBox);
+
     return d->fastSliderStep;
 }
 
@@ -1009,6 +1045,7 @@ void DSliderSpinBox::setFastSliderStep(int step)
 int DSliderSpinBox::value()
 {
     Q_D(DSliderSpinBox);
+
     return d->value;
 }
 
@@ -1023,6 +1060,7 @@ QString DSliderSpinBox::valueString() const
     const Q_D(DSliderSpinBox);
 
     QLocale locale;
+
     return locale.toString((double)d->value, 'f', d->validator->decimals());
 }
 
@@ -1068,13 +1106,15 @@ void DDoubleSliderSpinBox::setRange(double minimum, double maximum, int decimals
 {
     Q_D(DDoubleSliderSpinBox);
 
-    d->factor = pow(10.0, decimals);
+    d->factor  = pow(10.0, decimals);
 
     d->minimum = minimum * d->factor;
     d->maximum = maximum * d->factor;
+
     // This code auto-compute a new step when pressing control.
     // A flag defaulting to "do not change the fast step" should be added, but it implies changing every call
-    if (maximum - minimum >= 2.0 || decimals <= 0)
+
+    if      (((maximum - minimum) >= 2.0) || (decimals <= 0))
     {
         // Quick step on integers
         d->fastSliderStep = int(pow(10.0, decimals));
@@ -1096,6 +1136,7 @@ void DDoubleSliderSpinBox::setRange(double minimum, double maximum, int decimals
 double DDoubleSliderSpinBox::minimum() const
 {
     const Q_D(DAbstractSliderSpinBox);
+
     return d->minimum / d->factor;
 }
 
@@ -1108,6 +1149,7 @@ void DDoubleSliderSpinBox::setMinimum(double minimum)
 double DDoubleSliderSpinBox::maximum() const
 {
     const Q_D(DAbstractSliderSpinBox);
+
     return d->maximum / d->factor;
 }
 
@@ -1120,8 +1162,10 @@ void DDoubleSliderSpinBox::setMaximum(double maximum)
 double DDoubleSliderSpinBox::fastSliderStep() const
 {
     const Q_D(DAbstractSliderSpinBox);
+
     return d->fastSliderStep;
 }
+
 void DDoubleSliderSpinBox::setFastSliderStep(double step)
 {
     Q_D(DAbstractSliderSpinBox);
@@ -1131,6 +1175,7 @@ void DDoubleSliderSpinBox::setFastSliderStep(double step)
 double DDoubleSliderSpinBox::value()
 {
     Q_D(DAbstractSliderSpinBox);
+
     return (double)d->value / d->factor;
 }
 
@@ -1153,6 +1198,7 @@ QString DDoubleSliderSpinBox::valueString() const
     const Q_D(DAbstractSliderSpinBox);
 
     QLocale locale;
+
     return locale.toString((double)d->value / d->factor, 'f', d->validator->decimals());
 }
 

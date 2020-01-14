@@ -54,10 +54,10 @@ class Q_DECL_HIDDEN DIntNumInput::Private
 public:
 
     explicit Private()
+      : defaultValue(0),
+        resetButton(nullptr),
+        input(nullptr)
     {
-        defaultValue = 0;
-        resetButton  = nullptr;
-        input        = nullptr;
     }
 
     int             defaultValue;
@@ -153,10 +153,10 @@ class Q_DECL_HIDDEN DDoubleNumInput::Private
 public:
 
     explicit Private()
+      : defaultValue(0.0),
+        resetButton(nullptr),
+        input(nullptr)
     {
-        defaultValue = 0.0;
-        resetButton  = nullptr;
-        input        = nullptr;
     }
 
     double                defaultValue;

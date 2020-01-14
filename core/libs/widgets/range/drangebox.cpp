@@ -38,10 +38,10 @@ class Q_DECL_HIDDEN DIntRangeBox::Private
 public:
 
     explicit Private()
+      : intervalLabel(nullptr),
+        minValueBox(nullptr),
+        maxValueBox(nullptr)
     {
-        intervalLabel = nullptr;
-        minValueBox   = nullptr;
-        maxValueBox   = nullptr;
     }
 
     QLabel*   intervalLabel;
@@ -65,14 +65,16 @@ DIntRangeBox::DIntRangeBox(QWidget* const parent)
     d->maxValueBox->setRange(d->minValueBox->value(), 100);
     d->maxValueBox->setValue(100);
     d->maxValueBox->setSingleStep(1);
-
-    //const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-
+/*
+    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+*/
     QHBoxLayout* const mainLayout = new QHBoxLayout(this);
     mainLayout->addWidget(d->minValueBox);
     mainLayout->addWidget(d->intervalLabel);
     mainLayout->addWidget(d->maxValueBox);
-    //mainLayout->setContentsMargins(spacing, spacing, spacing, spacing);
+/*
+    mainLayout->setContentsMargins(spacing, spacing, spacing, spacing);
+*/
     mainLayout->setContentsMargins(0, 0, 0, 0);
     setLayout(mainLayout);
 
@@ -90,7 +92,6 @@ DIntRangeBox::~DIntRangeBox()
 {
     delete d;
 }
-
 
 void DIntRangeBox::setRange(int min, int max)
 {
@@ -136,10 +137,12 @@ int DIntRangeBox::maxValue()
 void DIntRangeBox::slotMinimumChanged(int newValue)
 {
     // Set the new minimum value of the maximum similarity
+
     d->maxValueBox->setMinimum(newValue);
 
     // If the new value of the minimum is now higher than the maximum similarity,
     // set the maximum similarity to the new value.
+
     if (newValue > d->maxValueBox->value())
     {
         d->maxValueBox->setValue(d->minValueBox->value());

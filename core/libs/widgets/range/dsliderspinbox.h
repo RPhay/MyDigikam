@@ -94,6 +94,7 @@ protected:
     int valueForX(int x, Qt::KeyboardModifiers modifiers = Qt::NoModifier) const;
 
     virtual QString valueString() const = 0;
+
     /**
      * Sets the slider internal value. Inheriting classes should respect blockUpdateSignal
      * so that, in specific cases, we have a performance improvement. See setIgnoreMouseMoveEvents.
@@ -109,9 +110,8 @@ protected:
 
     DAbstractSliderSpinBoxPrivate* const d_ptr;
 
-// ---------------------------------------------------------------------------------
+    // -- QWidget interface --------------------------------------
 
-    // QWidget interface
 protected:
 
     virtual void changeEvent(QEvent* e) override;
@@ -124,6 +124,8 @@ private:
 
     void setInternalValue(int value);
 };
+
+// ---------------------------------------------------------------------------------
 
 class DSliderSpinBox : public DAbstractSliderSpinBox
 {
@@ -146,7 +148,7 @@ public:
     int  fastSliderStep() const;
     void setFastSliderStep(int step);
 
-    ///Get the value, don't use value()
+    /// Get the value, don't use value()
     int  value();
 
     void setSingleStep(int value);
@@ -154,7 +156,7 @@ public:
 
 public Q_SLOTS:
 
-    ///Set the value, don't use setValue()
+    /// Set the value, don't use setValue()
     void setValue(int value);
 
 protected:
