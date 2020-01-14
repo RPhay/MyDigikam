@@ -81,18 +81,18 @@ public:
 
 protected:
 
-    bool    event(QEvent*) override;
-    void    resizeEvent(QResizeEvent*) override;
-    void    paintEvent(QPaintEvent*) override;
+    bool    event(QEvent*)                    override;
+    void    resizeEvent(QResizeEvent*)        override;
+    void    paintEvent(QPaintEvent*)          override;
     void    updateToolTip();
-    bool    toolTipIsEmpty() const;
+    bool    toolTipIsEmpty()            const;
     void    reposition();
     void    renderArrows();
 
 protected:
 
-    virtual QRect   repositionRect()=0;
-    virtual QString tipContents()=0;
+    virtual QRect   repositionRect() = 0;
+    virtual QString tipContents()    = 0;
 
 private:
 

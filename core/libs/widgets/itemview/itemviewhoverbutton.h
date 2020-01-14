@@ -52,7 +52,9 @@ public:
     QModelIndex index() const;
     void setVisible(bool visible) override;
 
-    /// Reimplement to match the size of your icon
+    /**
+     * Reimplement to match the size of your icon
+     */
     virtual QSize sizeHint() const override = 0;
 
 protected:
@@ -66,9 +68,14 @@ protected:
     void leaveEvent(QEvent* event) override;
     void paintEvent(QPaintEvent* event) override;
 
-    /// Return your icon here. Will be queried again on toggle.
+    /**
+     * Return your icon here. Will be queried again on toggle.
+     */
     virtual QIcon icon() = 0;
-    /// Optionally update tooltip here. Will be called again on state change.
+
+    /**
+     * Optionally update tooltip here. Will be called again on state change.
+     */
     virtual void updateToolTip();
 
 protected Q_SLOTS:

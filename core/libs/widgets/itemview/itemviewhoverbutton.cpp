@@ -62,6 +62,7 @@ void ItemViewHoverButton::setup()
 void ItemViewHoverButton::initIcon()
 {
     // virtual, cannot call from constructor
+
     refreshIcon();
     resize(sizeHint());
 }
@@ -109,6 +110,7 @@ void ItemViewHoverButton::enterEvent(QEvent* event)
 
     // if the mouse cursor is above the button, display
     // it immediately without fading timer
+
     m_isHovered   = true;
     m_fadingTimeLine->stop();
     m_fadingValue = 255;
@@ -130,6 +132,7 @@ void ItemViewHoverButton::paintEvent(QPaintEvent* event)
     painter.setRenderHint(QPainter::Antialiasing);
 
     // draw an alpha blended circle as background
+
     const QPalette& palette       = parentWidget()->palette();
 
     const QBrush& backgroundBrush = palette.brush(QPalette::Normal, QPalette::Window);
@@ -145,6 +148,7 @@ void ItemViewHoverButton::paintEvent(QPaintEvent* event)
     painter.drawEllipse(0, 0, width(), height());
 
     // draw the icon overlay
+
     QPixmap icon = m_icon.pixmap(width() - 2, height() - 2);
 
     if (m_isHovered)
@@ -171,6 +175,7 @@ void ItemViewHoverButton::paintEvent(QPaintEvent* event)
         else
         {
             // no fading is required
+
             painter.drawPixmap(1, 1, icon);
         }
     }

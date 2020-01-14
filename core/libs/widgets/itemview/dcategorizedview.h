@@ -57,7 +57,7 @@ public:
     void setGridSize(const QSize& size);
 
     void setCategoryDrawer(DCategoryDrawer* categoryDrawer);
-    DCategoryDrawer* categoryDrawer() const;
+    DCategoryDrawer* categoryDrawer()                                                   const;
 
     /**
      * Switch on drawing of dragged items. Default: on.
@@ -69,81 +69,81 @@ public:
      */
     void setDrawDraggedItems(bool drawDraggedItems);
 
-    virtual void        setModel(QAbstractItemModel* model) override;
-    virtual QRect       visualRect(const QModelIndex& index) const override;
-    virtual QModelIndex indexAt(const QPoint& point) const override;
+    virtual void        setModel(QAbstractItemModel* model)                                    override;
+    virtual QRect       visualRect(const QModelIndex& index)                            const  override;
+    virtual QModelIndex indexAt(const QPoint& point)                                    const  override;
 
     /**
      * This method will return all indexes whose visual rect intersects @p rect.
      * @param rect rectangle to test intersection with
      * @note Returns an empty list if the view is not categorized.
      */
-    virtual QModelIndexList categorizedIndexesIn(const QRect& rect) const;
+    virtual QModelIndexList categorizedIndexesIn(const QRect& rect)                     const;
 
     /**
      * This method will return the visual rect of the header of the category
      * in which @p index is sorted.
      * @note Returns QRect() if the view is not categorized.
      */
-    virtual QRect categoryVisualRect(const QModelIndex& index) const;
+    virtual QRect categoryVisualRect(const QModelIndex& index)                          const;
 
     /**
      * This method will return the first index of the category
      * in the region of which @p point is found.
      * @note Returns QModelIndex() if the view is not categorized.
      */
-    virtual QModelIndex categoryAt(const QPoint& point) const;
+    virtual QModelIndex categoryAt(const QPoint& point)                                 const;
 
     /**
      * This method returns the range of indexes contained
      * in the category in which @p index is sorted.
      * @note Returns an empty range if the view is no categorized.
      */
-    virtual QItemSelectionRange categoryRange(const QModelIndex& index) const;
+    virtual QItemSelectionRange categoryRange(const QModelIndex& index)                 const;
 
 public Q_SLOTS:
 
-    virtual void reset() override;
+    virtual void reset()                                                                       override;
 
 protected:
 
-    virtual void paintEvent(QPaintEvent* event) override;
+    virtual void paintEvent(QPaintEvent* event)                                                override;
 
-    virtual void resizeEvent(QResizeEvent* event) override;
+    virtual void resizeEvent(QResizeEvent* event)                                              override;
 
-    virtual void setSelection(const QRect& rect, QItemSelectionModel::SelectionFlags flags) override;
+    virtual void setSelection(const QRect& rect, QItemSelectionModel::SelectionFlags flags)    override;
 
-    virtual void mouseMoveEvent(QMouseEvent* event) override;
+    virtual void mouseMoveEvent(QMouseEvent* event)                                            override;
 
-    virtual void mousePressEvent(QMouseEvent* event) override;
+    virtual void mousePressEvent(QMouseEvent* event)                                           override;
 
-    virtual void mouseReleaseEvent(QMouseEvent* event) override;
+    virtual void mouseReleaseEvent(QMouseEvent* event)                                         override;
 
-    virtual void leaveEvent(QEvent* event) override;
+    virtual void leaveEvent(QEvent* event)                                                     override;
 
-    virtual void startDrag(Qt::DropActions supportedActions) override;
+    virtual void startDrag(Qt::DropActions supportedActions)                                   override;
 
-    virtual void dragMoveEvent(QDragMoveEvent* event) override;
+    virtual void dragMoveEvent(QDragMoveEvent* event)                                          override;
 
-    virtual void dragLeaveEvent(QDragLeaveEvent* event) override;
+    virtual void dragLeaveEvent(QDragLeaveEvent* event)                                        override;
 
-    virtual void dropEvent(QDropEvent* event) override;
+    virtual void dropEvent(QDropEvent* event)                                                  override;
 
     virtual QModelIndex moveCursor(CursorAction cursorAction, Qt::KeyboardModifiers modifiers) override;
 
 protected Q_SLOTS:
 
-    virtual void rowsInserted(const QModelIndex& parent, int start, int end) override;
+    virtual void rowsInserted(const QModelIndex& parent, int start, int end)                   override;
 
     virtual void rowsInsertedArtifficial(const QModelIndex& parent, int start, int end);
 
     virtual void rowsRemoved(const QModelIndex& parent, int start, int end);
 
-    virtual void updateGeometries() override;
+    virtual void updateGeometries()                                                            override;
 
     virtual void slotLayoutChanged();
 
-    virtual void currentChanged(const QModelIndex& current, const QModelIndex& previous) override;
+    virtual void currentChanged(const QModelIndex& current, const QModelIndex& previous)       override;
 
 private:
 

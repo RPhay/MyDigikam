@@ -55,18 +55,14 @@ namespace Digikam
 {
 
 ItemViewDelegatePrivate::ItemViewDelegatePrivate()
+    : spacing(0),
+      ratingPixmaps(QVector<QPixmap>(10)),
+      thumbSize(ThumbnailSize(0)),
+      q(nullptr),
+      radius(3), // painting constants
+      margin(5)
 {
-    q         = nullptr;
-    spacing   = 0;
-    thumbSize = ThumbnailSize(0);
-
-    // painting constants
-    radius    = 3;
-    margin    = 5;
-
     makeStarPolygon();
-
-    ratingPixmaps = QVector<QPixmap>(10);
 }
 
 void ItemViewDelegatePrivate::init(ItemViewDelegate* const _q)
@@ -87,6 +83,7 @@ void ItemViewDelegatePrivate::clearRects()
 void ItemViewDelegatePrivate::makeStarPolygon()
 {
     // Pre-computed star polygon for a 15x15 pixmap.
+
     starPolygon     = RatingWidget::starPolygon();
     starPolygonSize = QSize(15, 15);
 }
@@ -229,6 +226,7 @@ void ItemViewDelegate::overlayDestroyed(QObject* o)
 void ItemViewDelegate::mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index)
 {
     // 3-way indirection DItemDelegate -> ItemViewDelegate -> ItemDelegateOverlayContainer
+
     ItemDelegateOverlayContainer::mouseMoved(e, visualRect, index);
 }
 
@@ -260,7 +258,9 @@ void ItemViewDelegate::invalidatePaintingCache()
     if (oldGridSize != d->gridSize)
     {
         emit gridSizeChanged(d->gridSize);
-        //emit sizeHintChanged(QModelIndex());
+/*
+        emit sizeHintChanged(QModelIndex());
+*/
     }
 
     emit visualChange();
@@ -368,8 +368,10 @@ void ItemViewDelegate::drawName(QPainter* p,const QRect& nameRect, const QString
     Q_D(const ItemViewDelegate);
 
     p->setFont(d->fontReg);
+
     // NOTE: in case of file name are long, use squeezedTextCached to adjust string elide mode.
     // See bug #278664 for details
+
     p->drawText(nameRect, Qt::AlignCenter, squeezedTextCached(p, nameRect.width(), name));
 }
 
@@ -395,7 +397,9 @@ void ItemViewDelegate::drawCreationDate(QPainter* p, const QRect& dateRect, cons
 
     p->setFont(d->fontXtra);
     QString str = dateToString(date);
-    //str         = i18nc("date of image creation", "created: %1", str);
+/*
+    str         = i18nc("date of image creation", "created: %1", str);
+*/
     p->drawText(dateRect, Qt::AlignCenter, str); //squeezedTextCached(p, dateRect.width(), str));
 }
 
@@ -420,8 +424,10 @@ void ItemViewDelegate::drawImageSize(QPainter* p, const QRect& dimsRect, const Q
         mpixels.setNum(dims.width()*dims.height()/1000000.0, 'f', 2);
 
         if (dims.isValid())
+        {
             resolution = i18nc("%1 width, %2 height, %3 mpixels", "%1x%2 (%3Mpx)",
                                dims.width(), dims.height(), mpixels);
+        }
         else
         {
             resolution = i18nc("unknown image resolution", "Unknown");
@@ -493,7 +499,9 @@ void ItemViewDelegate::drawImageFormat(QPainter* p, const QRect& r, const QStrin
         Qt::Alignment alignment = Qt::AlignBottom;
 
         if (drawTop)
+        {
             alignment = Qt::AlignTop;
+        }
 
         p->save();
 
@@ -508,7 +516,9 @@ void ItemViewDelegate::drawImageFormat(QPainter* p, const QRect& r, const QStrin
         bRect.adjust(0, 0, 0, -2);
 
         if (!drawTop)
+        {
             bRect.translate(0, 1);
+        }
 
         p->fillRect(bRect, Qt::SolidPattern);
         p->setPen(QPen(Qt::white));
@@ -522,11 +532,12 @@ void ItemViewDelegate::drawImageFormat(QPainter* p, const QRect& r, const QStrin
 void ItemViewDelegate::drawPickLabelIcon(QPainter* p, const QRect& r, int pickId) const
 {
     // Draw Pick Label icon
+
     if (pickId != NoPickLabel)
     {
         QIcon icon;
 
-        if (pickId == RejectedLabel)
+        if      (pickId == RejectedLabel)
         {
             icon = QIcon::fromTheme(QLatin1String("flag-red"));
         }
@@ -612,6 +623,7 @@ void ItemViewDelegate::drawColorLabelRect(QPainter* p, const QStyleOptionViewIte
     if (colorId > NoColorLabel)
     {
         // This draw a simple rectangle around item.
+
         p->setPen(QPen(ColorLabelWidget::labelColor((ColorLabel)colorId), 5, Qt::SolidLine));
         p->drawRect(3, 3, d->rect.width()-7, d->rect.height()-7);
     }
@@ -637,7 +649,7 @@ void ItemViewDelegate::prepareFonts()
     d->fontXtra = d->font;
     d->fontCom.setItalic(true);
 
-    int fnSz = d->fontReg.pointSize();
+    int fnSz    = d->fontReg.pointSize();
 
     if (fnSz > 0)
     {
@@ -711,13 +723,14 @@ void ItemViewDelegate::prepareRatingPixmaps(bool composeOverBackground)
     // and the background may be a gradient, and will be different for selected items.
     // This makes 5*2 (small) pixmaps.
 
-    for (int sel=0; sel<2; ++sel)
+    for (int sel=0 ; sel<2 ; ++sel)
     {
         QPixmap basePix;
 
         if (composeOverBackground)
         {
             // do this once for regular, once for selected backgrounds
+
             if (sel)
             {
                 basePix = d->selPixmap.copy(d->ratingRect);
@@ -736,22 +749,30 @@ void ItemViewDelegate::prepareRatingPixmaps(bool composeOverBackground)
         for (int rating = 1 ; rating <= 5 ; ++rating)
         {
             // we store first the 5 regular, then the 5 selected pixmaps, for simplicity
+
             int index = (sel * 5 + rating) - 1;
 
             // copy background
+
             d->ratingPixmaps[index] = basePix;
+
             // open a painter
+
             QPainter painter(&d->ratingPixmaps[index]);
 
             // use antialiasing
+
             painter.setRenderHint(QPainter::Antialiasing, true);
             painter.setBrush(qApp->palette().color(QPalette::Link));
             QPen pen(qApp->palette().color(QPalette::Text));
+
             // set a pen which joins the lines at a filled angle
+
             pen.setJoinStyle(Qt::MiterJoin);
             painter.setPen(pen);
 
             // move painter while drawing polygons
+
             painter.translate(lround((d->ratingRect.width() - d->margin - rating*(d->starPolygonSize.width()+1))/2.0) + 2, 0);
 
             for (int s = 0 ; s < rating ; ++s)
@@ -767,7 +788,7 @@ QPixmap ItemViewDelegate::ratingPixmap(int rating, bool selected) const
 {
     Q_D(const ItemViewDelegate);
 
-    if (rating < 1 || rating > 5)
+    if ((rating < 1) || (rating > 5))
     {
         return QPixmap();
     }

@@ -168,7 +168,7 @@ QPixmap DItemDelegate::makeDragPixmap(const QStyleOptionViewItem& option,
         QRect r1      = p.boundingRect(pixmapRect, Qt::AlignLeft | Qt::AlignTop, text1).adjusted(0, 0, 1, 1);
         QRect r2      = p.boundingRect(pixmapRect, Qt::AlignLeft | Qt::AlignTop, text2).adjusted(0, 0, 1, 1);
 
-        if (r2.width() > pixmapRect.width() || r2.height() > pixmapRect.height())
+        if ((r2.width() > pixmapRect.width()) || (r2.height() > pixmapRect.height()))
         {
 //            textRect     = r1;
             text         = text1;
@@ -199,7 +199,9 @@ QString DItemDelegate::dateToString(const QDateTime& datetime)
 QString DItemDelegate::squeezedTextCached(QPainter* const p, int width, const QString& text) const
 {
     QCache<QString, QString>* const cache = &const_cast<DItemDelegate*>(this)->d->squeezedTextCache;
+
     // We do not need to include the font into cache key, the cache is cleared on font change
+
     QString cacheKey                      = QString::number(width) + QString::number(qHash(text));
     QString* const cachedString           = cache->object(cacheKey);
 
@@ -209,8 +211,8 @@ QString DItemDelegate::squeezedTextCached(QPainter* const p, int width, const QS
     }
 
     QString result = squeezedText(p->fontMetrics(), width, text);
-
     cache->insert(cacheKey, new QString(result));
+
     return result;
 }
 
@@ -218,6 +220,7 @@ QString DItemDelegate::squeezedText(const QFontMetrics& fm, int width, const QSt
 {
     QString fullText(text);
     fullText.replace(QLatin1Char('\n'), QLatin1Char(' '));
+
     return fm.elidedText(text, Qt::ElideRight, width);
 }
 

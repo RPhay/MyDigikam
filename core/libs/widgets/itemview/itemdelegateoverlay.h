@@ -64,10 +64,10 @@ public:
     virtual void paint(QPainter* p, const QStyleOptionViewItem& option, const QModelIndex& index);
 
     void setView(QAbstractItemView* view);
-    QAbstractItemView* view() const;
+    QAbstractItemView* view()                            const;
 
     void setDelegate(QAbstractItemDelegate* delegate);
-    QAbstractItemDelegate* delegate() const;
+    QAbstractItemDelegate* delegate()                    const;
 
     virtual bool acceptsDelegate(QAbstractItemDelegate*) const { return true; }
 
@@ -101,7 +101,7 @@ protected:
     /**
      * Utility method
      */
-    bool viewHasMultiSelection() const;
+    bool viewHasMultiSelection()                                         const;
 
 protected:
 
@@ -139,7 +139,7 @@ public:
      * If active is false, this will delete the widget and
      * disconnect all signal from model and view to this object (!)
      */
-    virtual void setActive(bool active) override;
+    virtual void setActive(bool active)                     override;
 
 protected:
 
@@ -158,7 +158,7 @@ protected:
     /**
      * Returns the widget to be used as parent for your widget created in createWidget()
      */
-    QWidget* parentWidget() const;
+    QWidget* parentWidget()                           const;
 
     /**
      * Return true here if you want to show the overlay for the given index.
@@ -189,7 +189,7 @@ protected:
     /**
      * Utility method called from slotEntered
      */
-    bool checkIndexOnEnter(const QModelIndex& index) const;
+    bool checkIndexOnEnter(const QModelIndex& index)  const;
 
 protected Q_SLOTS:
 
@@ -208,7 +208,7 @@ protected Q_SLOTS:
 
 protected:
 
-    bool eventFilter(QObject* obj, QEvent* event) override;
+    bool eventFilter(QObject* obj, QEvent* event)           override;
 
 protected:
 
@@ -230,9 +230,9 @@ public:
     /**
      * Will call createButton().
      */
-    virtual void setActive(bool active) override;
+    virtual void setActive(bool active)                 override;
 
-    ItemViewHoverButton* button() const;
+    ItemViewHoverButton* button()                 const;
 
 protected:
 
@@ -247,13 +247,13 @@ protected:
      */
     virtual void updateButton(const QModelIndex& index) = 0;
 
-    virtual QWidget* createWidget() override;
-    virtual void visualChange() override;
+    virtual QWidget* createWidget()                     override;
+    virtual void visualChange()                         override;
 
 protected Q_SLOTS:
 
-    virtual void slotEntered(const QModelIndex& index) override;
-    virtual void slotReset() override;
+    virtual void slotEntered(const QModelIndex& index)  override;
+    virtual void slotReset()                            override;
 };
 
 // -------------------------------------------------------------------------------------------
@@ -274,7 +274,7 @@ public:
     explicit PersistentWidgetDelegateOverlay(QObject* const parent);
     ~PersistentWidgetDelegateOverlay();
 
-    virtual void setActive(bool active) override;
+    virtual void setActive(bool active)                                         override;
 
 public Q_SLOTS:
 
@@ -299,13 +299,13 @@ protected:
      * This class instead provides showOnIndex() which you shall
      * use for this purpose.
      */
-    virtual void slotEntered(const QModelIndex& index) override;
-    virtual void slotReset() override;
-    virtual void slotViewportEntered() override;
+    virtual void slotEntered(const QModelIndex& index)                          override;
+    virtual void slotReset()                                                    override;
+    virtual void slotViewportEntered()                                          override;
     virtual void slotRowsRemoved(const QModelIndex& parent, int start, int end) override;
-    virtual void slotLayoutChanged() override;
-    virtual void viewportLeaveEvent(QObject* obj, QEvent* event) override;
-    virtual void hide() override;
+    virtual void slotLayoutChanged()                                            override;
+    virtual void viewportLeaveEvent(QObject* obj, QEvent* event)                override;
+    virtual void hide()                                                         override;
 
     /**
      * Reimplement to set the focus on the correct subwidget.

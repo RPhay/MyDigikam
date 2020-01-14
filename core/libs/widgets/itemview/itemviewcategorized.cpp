@@ -98,6 +98,7 @@ QModelIndex ItemViewCategorized::Private::scrollPositionHint() const
     QModelIndex hint = q->currentIndex();
 
     // If the user scrolled, do not take current item, but first visible
+
     if (!hint.isValid() || !q->viewport()->rect().intersects(q->visualRect(hint)))
     {
         QList<QModelIndex> visibleIndexes = q->categorizedIndexesIn(q->viewport()->rect());
@@ -123,9 +124,13 @@ ItemViewCategorized::ItemViewCategorized(QWidget* const parent)
     setResizeMode(QListView::Adjust);
     setMovement(QListView::Static);
     setWrapping(true);
+
     // important optimization for layouting
+
     setUniformItemSizes(true);
+
     // disable "feature" from DCategorizedView
+
     setDrawDraggedItems(false);
 
     setSelectionMode(QAbstractItemView::ExtendedSelection);
@@ -394,6 +399,7 @@ void ItemViewCategorized::slotActivated(const QModelIndex& index)
     }
 
     // Ignore activation if Ctrl or Shift is pressed (for selection)
+
     const bool shiftKeyPressed   = modifiers & Qt::ShiftModifier;
     const bool controlKeyPressed = modifiers & Qt::ControlModifier;
     const bool rightClickPressed = buttons & Qt::RightButton;
@@ -407,6 +413,7 @@ void ItemViewCategorized::slotActivated(const QModelIndex& index)
     {
         // if the activation is caused by mouse click (not keyboard)
         // we need to check the hot area
+
         if (d->currentMouseEvent->isAccepted() &&
             !d->delegate->acceptsActivation(d->currentMouseEvent->pos(), visualRect(index), index))
         {
@@ -440,6 +447,7 @@ void ItemViewCategorized::reset()
 
     // FIXME : Emitting this causes a crash importstackedview, because the model is not yet set.
     //         atm there's a check against null models though.
+
     emit selectionChanged();
     emit selectionCleared();
 
@@ -490,6 +498,7 @@ void ItemViewCategorized::rowsAboutToBeRemoved(const QModelIndex& parent, int st
     DCategorizedView::rowsAboutToBeRemoved(parent, start, end);
 
     // Ensure one selected item
+
     int totalToRemove  = end - start + 1;
     bool remainingRows = model()->rowCount(parent) > totalToRemove;
 
@@ -503,11 +512,12 @@ void ItemViewCategorized::rowsAboutToBeRemoved(const QModelIndex& parent, int st
     if (selectionModel()->hasSelection())
     {
         // find out which selected indexes are left after rows are removed
+
         QItemSelection selected = selectionModel()->selection();
         QModelIndex current     = currentIndex();
         QModelIndex indexToAnchor;
 
-        if (selected.contains(current))
+        if      (selected.contains(current))
         {
             indexToAnchor = current;
         }
@@ -547,12 +557,13 @@ void ItemViewCategorized::layoutAboutToBeChanged()
     QModelIndex current = currentIndex();
 
     // store some hints so that if all selected items were removed do not need to default to 0,0.
+
     if (d->ensureOneSelectedItem)
     {
         QItemSelection currentSelection = selectionModel()->selection();
         QModelIndex indexToAnchor;
 
-        if (currentSelection.contains(current))
+        if      (currentSelection.contains(current))
         {
             indexToAnchor = current;
         }
@@ -569,6 +580,7 @@ void ItemViewCategorized::layoutAboutToBeChanged()
     }
 
     // some precautions to keep current scroll position
+
     d->hintAtScrollPosition = d->scrollPositionHint();
 }
 
@@ -576,7 +588,7 @@ QModelIndex ItemViewCategorized::nextIndexHint(const QModelIndex& indexToAnchor,
 {
     Q_UNUSED(indexToAnchor);
 
-    if (removed.bottomRight().row() == model()->rowCount() - 1)
+    if (removed.bottomRight().row() == (model()->rowCount() - 1))
     {
         if (removed.topLeft().row() == 0)
         {
@@ -594,7 +606,9 @@ QModelIndex ItemViewCategorized::nextIndexHint(const QModelIndex& indexToAnchor,
 void ItemViewCategorized::layoutWasChanged()
 {
     // connected queued to layoutChanged()
+
     ensureSelectionAfterChanges();
+
     if (d->hintAtScrollPosition.isValid())
     {
         scrollToRelaxed(d->hintAtScrollPosition);
@@ -609,17 +623,19 @@ void ItemViewCategorized::layoutWasChanged()
 void ItemViewCategorized::userInteraction()
 {
     // as soon as the user did anything affecting selection, we don't interfere anymore
+
     d->ensureInitialSelectedItem = false;
     d->hintAtSelectionIndex      = QModelIndex();
 }
 
 void ItemViewCategorized::ensureSelectionAfterChanges()
 {
-    if (d->ensureInitialSelectedItem && model()->rowCount())
+    if      (d->ensureInitialSelectedItem && model()->rowCount())
     {
         // Ensure the item (0,0) is selected, if the model was reset previously
         // and the user did not change the selection since reset.
         // Caveat: Item at (0,0) may have changed.
+
         bool hadInitial              = d->ensureInitialSelectedItem;
         d->ensureInitialSelectedItem = false;
         d->ensureOneSelectedItem     = false;
@@ -633,6 +649,7 @@ void ItemViewCategorized::ensureSelectionAfterChanges()
             // we want ensureInitial set to false if and only if the selection
             // is done from any other place than the previous line (i.e., by user action)
             // Effect: we select whatever is the current index(0,0)
+
             if (hadInitial)
             {
                 d->ensureInitialSelectedItem = true;
@@ -642,13 +659,14 @@ void ItemViewCategorized::ensureSelectionAfterChanges()
     else if (d->ensureOneSelectedItem)
     {
         // ensure we have a selection if there was one before
+
         d->ensureOneSelectedItem = false;
 
         if (model()->rowCount() && selectionModel()->selection().isEmpty())
         {
             QModelIndex index;
 
-            if (d->hintAtSelectionIndex.isValid())
+            if      (d->hintAtSelectionIndex.isValid())
             {
                 index = d->hintAtSelectionIndex;
             }
@@ -694,6 +712,7 @@ QModelIndex ItemViewCategorized::moveCursor(CursorAction cursorAction, Qt::Keybo
 
     // We want a simple wrapping navigation.
     // Default behavior we do not want: right/left does never change row; Next/Previous is equivalent to Down/Up
+
     switch (cursorAction)
     {
         case MoveNext:
@@ -712,6 +731,7 @@ QModelIndex ItemViewCategorized::moveCursor(CursorAction cursorAction, Qt::Keybo
 
             break;
         }
+
         case MovePrevious:
         case MoveLeft:
         {
@@ -728,6 +748,7 @@ QModelIndex ItemViewCategorized::moveCursor(CursorAction cursorAction, Qt::Keybo
 
             break;
         }
+
         default:
             break;
     }
@@ -772,6 +793,7 @@ bool ItemViewCategorized::showToolTip(const QModelIndex& index, QStyleOptionView
         }
 
         d->toolTip->show(option, index);
+
         return true;
     }
 
@@ -810,6 +832,7 @@ void ItemViewCategorized::mousePressEvent(QMouseEvent* event)
     const QModelIndex index         = indexAt(event->pos());
 
     // Clear selection on click on empty area. Standard behavior, but not done by QAbstractItemView for some reason.
+
     Qt::KeyboardModifiers modifiers = event->modifiers();
     const Qt::MouseButton button    = event->button();
     const bool rightButtonPressed   = button & Qt::RightButton;
@@ -823,6 +846,7 @@ void ItemViewCategorized::mousePressEvent(QMouseEvent* event)
     }
 
     // store event for entered(), clicked(), activated() signal handlers
+
     if (!rightButtonPressed)
     {
         d->currentMouseEvent = event;
@@ -892,6 +916,7 @@ void ItemViewCategorized::mouseMoveEvent(QMouseEvent* event)
 void ItemViewCategorized::wheelEvent(QWheelEvent* event)
 {
     // DCategorizedView updates the single step at some occasions in a private methody
+
     horizontalScrollBar()->setSingleStep(d->delegate->gridSize().height() / d->scrollStepFactor);
     verticalScrollBar()->setSingleStep(d->delegate->gridSize().width()    / d->scrollStepFactor);
 
@@ -899,7 +924,7 @@ void ItemViewCategorized::wheelEvent(QWheelEvent* event)
     {
         const int delta = event->delta();
 
-        if (delta > 0)
+        if      (delta > 0)
         {
             emit zoomInStep();
         }
@@ -929,7 +954,7 @@ void ItemViewCategorized::keyPressEvent(QKeyEvent* event)
 {
     userInteraction();
 
-    if (event == QKeySequence::Copy)
+    if      (event == QKeySequence::Copy)
     {
         copy();
         event->accept();
@@ -980,6 +1005,7 @@ bool ItemViewCategorized::viewportEvent(QEvent* event)
             updateDelegateSizes();
             break;
         }
+
         case QEvent::ToolTip:
         {
             if (!d->showToolTip)
@@ -1001,6 +1027,7 @@ bool ItemViewCategorized::viewportEvent(QEvent* event)
             showToolTip(index, option, he);
             return true;
         }
+
         default:
             break;
     }
@@ -1024,8 +1051,8 @@ void ItemViewCategorized::showIndexNotification(const QModelIndex& index, const 
 
     d->notificationToolTip->setTipContents(message);
 
-    QStyleOptionViewItem option =  viewOptions();
-    option.rect                 =  visualRect(index);
+    QStyleOptionViewItem option = viewOptions();
+    option.rect                 = visualRect(index);
     option.state               |= (index == currentIndex() ? QStyle::State_HasFocus : QStyle::State_None);
     d->notificationToolTip->show(option, index);
 }
@@ -1051,6 +1078,7 @@ QPixmap ItemViewCategorized::pixmapForDrag(const QList<QModelIndex>& indexes) co
 {
     QStyleOptionViewItem option = viewOptions();
     option.rect                 = viewport()->rect();
+
     return d->delegate->pixmapForDrag(option, indexes);
 }
 
@@ -1061,7 +1089,7 @@ void ItemViewCategorized::setScrollCurrentToCenter(bool enabled)
 
 void ItemViewCategorized::scrollTo(const QModelIndex& index, ScrollHint hint)
 {
-    if (d->scrollCurrentToCenter && d->mouseButtonPressed == Qt::NoButton)
+    if (d->scrollCurrentToCenter && (d->mouseButtonPressed == Qt::NoButton))
     {
         hint = QAbstractItemView::PositionAtCenter;
     }

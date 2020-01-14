@@ -57,7 +57,9 @@ public:
 
     void makeStarPolygon();
 
-    /// Resets cached rects. Remember to reimplement in subclass for added rects.
+    /**
+     * Resets cached rects. Remember to reimplement in subclass for added rects.
+     */
     virtual void clearRects();
 
 public:
@@ -84,13 +86,13 @@ public:
 
     QPersistentModelIndex     editingRating;
 
-    ItemViewDelegate*    q;
+    ItemViewDelegate*         q;
 
     QRect                     oneRowRegRect;
     QRect                     oneRowComRect;
     QRect                     oneRowXtraRect;
 
-    // constant values for drawing
+    /// constant values for drawing
     int                       radius;
     int                       margin;
 };

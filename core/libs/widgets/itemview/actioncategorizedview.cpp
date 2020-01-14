@@ -42,7 +42,7 @@ namespace Digikam
 ActionCategorizedView::ActionCategorizedView(QWidget* const parent, bool autoScroll)
     : DCategorizedView(parent)
 {
-    m_autoScroll = autoScroll;
+    m_autoScroll                = autoScroll;
     m_horizontalScrollAnimation = new QPropertyAnimation(horizontalScrollBar(), "value", this);
     m_verticalScrollAnimation   = new QPropertyAnimation(verticalScrollBar(),   "value", this);
 }
@@ -68,12 +68,13 @@ void ActionCategorizedView::adjustGridSize()
 {
     // Find a suitable grid size. The delegate's size hint does never word-wrap.
     // To keep a suitable width, we want to word wrap.
+
     setWordWrap(true);
     int maxSize = viewOptions().decorationSize.width() * 4;
     QFontMetrics fm(viewOptions().font);
     QSize grid;
 
-    for (int i = 0; i < model()->rowCount(); ++i)
+    for (int i = 0 ; i < model()->rowCount() ; ++i)
     {
         const QModelIndex index = model()->index(i, 0);
         const QSize size        = sizeHintForIndex(index);
@@ -90,8 +91,9 @@ void ActionCategorizedView::adjustGridSize()
             grid = grid.expandedTo(size);
         }
     }
-
-    //grid += QSize(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing), QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+/*
+    grid += QSize(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing), QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
+*/
     setGridSize(grid);
 }
 
@@ -104,7 +106,7 @@ int ActionCategorizedView::autoScrollDuration(float relativeDifference, QPropert
     int factor                  = qMax(1.0f, relativeDifference * 100); // in [1;15]
 
     int duration                = 1000 * pixelToScroll / maxPixelPerSecond;
-    duration                    *= factor;
+    duration                   *= factor;
 
     return qMax(minimumTime, duration);
 }
@@ -117,7 +119,7 @@ void ActionCategorizedView::autoScroll(float relativePos, QScrollBar* scrollBar,
         const float lowerPart = 0.15F;
         const float upperPart = 0.85F;
 
-        if (relativePos > upperPart && scrollBar->value() !=  scrollBar->maximum())
+        if      ((relativePos > upperPart) && (scrollBar->value() !=  scrollBar->maximum()))
         {
             animation->stop();
             animation->setStartValue(scrollBar->value());
@@ -125,7 +127,7 @@ void ActionCategorizedView::autoScroll(float relativePos, QScrollBar* scrollBar,
             animation->setDuration(autoScrollDuration(1 - relativePos, animation));
             animation->start();
         }
-        else if (relativePos < lowerPart && scrollBar->value() !=  scrollBar->minimum())
+        else if ((relativePos < lowerPart) && (scrollBar->value() !=  scrollBar->minimum()))
         {
             animation->stop();
             animation->setStartValue(scrollBar->value());
