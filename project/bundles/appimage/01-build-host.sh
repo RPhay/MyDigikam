@@ -88,8 +88,8 @@ urpmi --auto \
       openssl-devel \
       cppunit-devel \
       libstdc++-devel \
+      libstdc++-static-devel \
       libxml2-devel \
-      libstdc++-devel \
       lcms2-devel \
       glibc-devel \
       libudev-devel \
@@ -117,6 +117,7 @@ urpmi --auto \
       gphoto2-devel \
       sane-backends \
       jasper-devel \
+      ${LIBSUFFIX}nss-devel \
       ${LIBSUFFIX}xkbcommon-devel \
       ${LIBSUFFIX}sane1-devel \
       ${LIBSUFFIX}xcb-util1 \
