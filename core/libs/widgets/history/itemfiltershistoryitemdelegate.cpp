@@ -56,6 +56,7 @@ ItemFiltersHistoryItemDelegate::~ItemFiltersHistoryItemDelegate()
 QSize ItemFiltersHistoryItemDelegate::sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const
 {
     // Add padding of 6px
+
     QSize size = QStyledItemDelegate::sizeHint(option, index);
 
     if (!size.isNull())
@@ -71,6 +72,7 @@ void ItemFiltersHistoryItemDelegate::paint(QPainter* painter, const QStyleOption
     if (!(option.state & QStyle::State_Enabled))
     {
         // If disabled, use italic font
+
         QStyleOptionViewItem o(option);
         QFont font(o.font);
         font.setItalic(true);
@@ -83,6 +85,7 @@ void ItemFiltersHistoryItemDelegate::paint(QPainter* painter, const QStyleOption
     }
 
     // draw 1px border
+
     QPen oldPen = painter->pen();
     QPen pen(option.palette.windowText(), 0);
     painter->setPen(pen);
@@ -143,12 +146,10 @@ void ItemFiltersHistoryItemDelegate::paint(QPainter* painter, const QStyleOption
         painter->drawText(textRect, Qt::AlignVCenter, index.data(Qt::DecorationRole).toString());
     }
 
-    / *
     if (entryDisabled)
     {
         //painter->fillRect(option.rect, QColor(200,200,200,160));
     }
-    * /
 
     painter->restore();
 */

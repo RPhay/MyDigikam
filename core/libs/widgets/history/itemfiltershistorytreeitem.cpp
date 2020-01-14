@@ -31,15 +31,15 @@ class Q_DECL_HIDDEN ItemFiltersHistoryTreeItem::Private
 public:
 
     explicit Private()
+      : parentItem(nullptr),
+        disabled(false)
     {
-        parentItem = nullptr;
-        disabled   = false;
     }
 
     QList<ItemFiltersHistoryTreeItem*> childItems;
-    QList<QVariant>                     itemData;
+    QList<QVariant>                    itemData;
     ItemFiltersHistoryTreeItem*        parentItem;
-    bool                                disabled;
+    bool                               disabled;
 };
 
 ItemFiltersHistoryTreeItem::ItemFiltersHistoryTreeItem(const QList<QVariant>& data, ItemFiltersHistoryTreeItem* const parent)

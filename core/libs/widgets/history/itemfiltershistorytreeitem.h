@@ -47,14 +47,14 @@ public:
     void appendChild(ItemFiltersHistoryTreeItem* const child);
     void removeChild(int row);
 
-    ItemFiltersHistoryTreeItem* child(int row) const;
-    int childCount()                      const;
-    int columnCount()                     const;
-    QVariant data(int column)             const;
-    int row()                             const;
-    ItemFiltersHistoryTreeItem* parent() const;
-    void setDisabled(bool disabled)       const;
-    bool isDisabled()                     const;
+    ItemFiltersHistoryTreeItem* child(int row)  const;
+    int childCount()                            const;
+    int columnCount()                           const;
+    QVariant data(int column)                   const;
+    int row()                                   const;
+    ItemFiltersHistoryTreeItem* parent()        const;
+    void setDisabled(bool disabled)             const;
+    bool isDisabled()                           const;
 
 private:
 

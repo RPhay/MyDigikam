@@ -64,6 +64,7 @@ ItemFiltersHistoryModel::ItemFiltersHistoryModel(QObject* const parent, const QU
     if (!url.isEmpty())
     {
         //qCDebug(DIGIKAM_WIDGETS_LOG) << "Creating model with url" << url.toLocalFile();
+
         d->rootItem = new ItemFiltersHistoryTreeItem(url.fileName());
         d->lastUrl  = url;
 
@@ -75,6 +76,7 @@ ItemFiltersHistoryModel::ItemFiltersHistoryModel(QObject* const parent, const QU
     else
     {
         //qCDebug(DIGIKAM_WIDGETS_LOG) << "Creating empty model";
+
         d->rootItem = new ItemFiltersHistoryTreeItem(QLatin1String("Generic"));
     }
 }
@@ -89,12 +91,15 @@ void ItemFiltersHistoryModel::setUrl(const QUrl& url)
 {
     if (!url.isEmpty())
     {
-        //delete the current model data
+        // delete the current model data
+
         delete d->rootItem;
 
         d->rootItem = new ItemFiltersHistoryTreeItem(url.fileName());
         d->lastUrl  = url;
+
         //qCDebug(DIGIKAM_WIDGETS_LOG) << "Updating model data with url" << rootData.first();
+
         DMetadata metadata(url.toLocalFile());
         setupModelData(DImageHistory::fromXml(metadata.getItemHistory()).entries(), d->rootItem);
     }
@@ -111,9 +116,13 @@ int ItemFiltersHistoryModel::columnCount(const QModelIndex& /*parent*/) const
     return 1;
 /*
     if (parent.isValid())
+    {
         return static_cast<ItemFiltersHistoryTreeItem*>(parent.internalPointer())->columnCount();
+    }
     else
+    {
         return d->rootItem->columnCount();
+    }
 */
 }
 
@@ -126,14 +135,16 @@ QVariant ItemFiltersHistoryModel::data(const QModelIndex& index, int role) const
 
     ItemFiltersHistoryTreeItem* item = nullptr;
 
-    if (role == Qt::DecorationRole)
+    if      (role == Qt::DecorationRole)
     {
         item = static_cast<ItemFiltersHistoryTreeItem*>(index.internalPointer());
+
         return item->data(1);
     }
     else if (role == Qt::DisplayRole)
     {
         item = static_cast<ItemFiltersHistoryTreeItem*>(index.internalPointer());
+
         return item->data(0);
     }
 
@@ -159,7 +170,7 @@ Qt::ItemFlags ItemFiltersHistoryModel::flags(const QModelIndex& index) const
 
 QVariant ItemFiltersHistoryModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
-    if (orientation == Qt::Horizontal && role == Qt::DisplayRole)
+    if ((orientation == Qt::Horizontal) && (role == Qt::DisplayRole))
     {
         return d->rootItem->data(section);
     }
@@ -254,6 +265,7 @@ void ItemFiltersHistoryModel::setupModelData(const QList<DImageHistory::Entry>& 
     }
 
     //qCDebug(DIGIKAM_WIDGETS_LOG) << "Initializing model data, got" << entries.count() << "entries";
+
     QList<ItemFiltersHistoryTreeItem*> parents;
     QList<ItemFiltersHistoryTreeItem*> filters;
     parents << parent;
@@ -261,9 +273,10 @@ void ItemFiltersHistoryModel::setupModelData(const QList<DImageHistory::Entry>& 
     QList<QVariant> itemData;
     d->filterStack.clear();
 
-    for (int i = 0; i < entries.count(); ++i)
+    for (int i = 0 ; i < entries.count() ; ++i)
     {
         // the first entry, for the original, may not have an Action
+
         if (entries.at(i).action.isNull())
         {
             continue;
@@ -278,11 +291,13 @@ void ItemFiltersHistoryModel::setupModelData(const QList<DImageHistory::Entry>& 
         itemData.append(icon);
 
         //qCDebug(DIGIKAM_WIDGETS_LOG) << "Adding an entry: " << itemData;
+
         parents.first()->appendChild(new ItemFiltersHistoryTreeItem(itemData, parents.first()));
         filters << parents.last()->child(parents.last()->childCount()-1);
 
 /*
         QHashIterator<QString, QVariant> iter(entries.at(i).action.parameters());
+
         while (iter.hasNext())
         {
             QList<QVariant> columnData;
@@ -313,7 +328,9 @@ bool ItemFiltersHistoryModel::removeRows(int row, int /*count*/, const QModelInd
         d->rootItem->removeChild(row);
         d->filterStack.removeAt(row);
         endResetModel();
+
         //TODO: emit signal starting FilterManager
+
         return true;
     }
 
@@ -322,7 +339,7 @@ bool ItemFiltersHistoryModel::removeRows(int row, int /*count*/, const QModelInd
 
 void ItemFiltersHistoryModel::setEnabledEntries(int count)
 {
-    for (int i=0; i<d->rootItem->childCount(); ++i)
+    for (int i = 0 ; i < d->rootItem->childCount() ; ++i)
     {
         d->rootItem->child(i)->setDisabled(i >= count);
     }
