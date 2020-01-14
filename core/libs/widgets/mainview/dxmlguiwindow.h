@@ -52,20 +52,21 @@ class KConfigGroup;
 namespace Digikam
 {
 
-/** Optional parts which can be hidden or not from managed window configuration panel
+/**
+ * Optional parts which can be hidden or not from managed window configuration panel
  */
 enum FullScreenOptions
 {
-    FS_TOOLBARS   = 0x00000001,                                                /// Manage Tools bar in full-screen mode.
-    FS_THUMBBAR   = 0x00000002,                                                /// Manage Thumb bar in full-screen mode.
-    FS_SIDEBARS   = 0x00000004,                                                /// Manage Side bars in full-screen mode.
-    FS_STATUSBAR  = 0x00000008,                                                /// Manage Status bar in full-screen mode.
-    FS_NONE       = 0x00000010,                                                /// No full-screen options.
+    FS_TOOLBARS   = 0x00000001,                                                ///< Manage Tools bar in full-screen mode.
+    FS_THUMBBAR   = 0x00000002,                                                ///< Manage Thumb bar in full-screen mode.
+    FS_SIDEBARS   = 0x00000004,                                                ///< Manage Side bars in full-screen mode.
+    FS_STATUSBAR  = 0x00000008,                                                ///< Manage Status bar in full-screen mode.
+    FS_NONE       = 0x00000010,                                                ///< No full-screen options.
 
-    FS_ALBUMGUI   = FS_TOOLBARS | FS_THUMBBAR | FS_SIDEBARS | FS_STATUSBAR,    /// Album GUI Config.
-    FS_EDITOR     = FS_TOOLBARS | FS_THUMBBAR | FS_SIDEBARS | FS_STATUSBAR,    /// Image Editor Config.
-    FS_LIGHTTABLE = FS_TOOLBARS | FS_SIDEBARS | FS_STATUSBAR,                  /// Light Table Config.
-    FS_IMPORTUI   = FS_TOOLBARS | FS_THUMBBAR | FS_SIDEBARS | FS_STATUSBAR     /// Import UI Config.
+    FS_ALBUMGUI   = FS_TOOLBARS | FS_THUMBBAR | FS_SIDEBARS | FS_STATUSBAR,    ///< Album GUI Config.
+    FS_EDITOR     = FS_TOOLBARS | FS_THUMBBAR | FS_SIDEBARS | FS_STATUSBAR,    ///< Image Editor Config.
+    FS_LIGHTTABLE = FS_TOOLBARS | FS_SIDEBARS | FS_STATUSBAR,                  ///< Light Table Config.
+    FS_IMPORTUI   = FS_TOOLBARS | FS_THUMBBAR | FS_SIDEBARS | FS_STATUSBAR     ///< Import UI Config.
 };
 
 enum StdActionType
@@ -90,7 +91,8 @@ static const QString s_configFullScreenHideThumbBarEntry(QLatin1String("FullScre
 static const QString s_configFullScreenHideSideBarsEntry(QLatin1String("FullScreen Hide SideBars"));
 static const QString s_configFullScreenHideStatusBarEntry(QLatin1String("FullScreen Hide StatusBar"));
 
-/** Data container to use in managed window.
+/**
+ * Data container to use in managed window.
  */
 class DIGIKAM_EXPORT DXmlGuiWindow : public KXmlGuiWindow
 {
@@ -101,54 +103,65 @@ public:
     explicit DXmlGuiWindow(QWidget* const parent=nullptr, Qt::WindowFlags f=KDE_DEFAULT_WINDOWFLAGS);
     ~DXmlGuiWindow();
 
-    /** Manage config group name used by window instance to get/set settings from config file
+    /**
+     * Manage config group name used by window instance to get/set settings from config file
      */
     void setConfigGroupName(const QString& name);
     QString configGroupName() const;
 
-    /** Create common actions to setup all digiKam main windows.
+    /**
+     * Create common actions to setup all digiKam main windows.
      */
     void createSettingsActions();
 
-    /** Create common actions from Help menu for all digiKam main windows.
+    /**
+     * Create common actions from Help menu for all digiKam main windows.
      */
     void createHelpActions(bool coreOptions=true);
 
-    /** Cleanup unwanted actions from action collection.
+    /**
+     * Cleanup unwanted actions from action collection.
      */
     void cleanupActions();
 
-    /** Create common actions to handle side-bar through keyboard shortcuts.
+    /**
+     * Create common actions to handle side-bar through keyboard shortcuts.
      */
     void createSidebarActions();
 
-    /** Set full-screen options to managed window
+    /**
+     * Set full-screen options to managed window
      */
     void setFullScreenOptions(int options);
 
-    /** Create Full-screen action to action collection instance from managed window
-     *  set through setManagedWindow(). This action is connected to slotToggleFullScreen() slot.
-     *  'name' is action name used in KDE UI rc file.
+    /**
+     * Create Full-screen action to action collection instance from managed window
+     * set through setManagedWindow(). This action is connected to slotToggleFullScreen() slot.
+     * 'name' is action name used in KDE UI rc file.
      */
     void createFullScreenAction(const QString& name);
 
-    /** Read full-screen settings fr    void slotConfNotifications();om KDE config file.
+    /**
+     * Read full-screen settings from KDE config file.
      */
     void readFullScreenSettings(const KConfigGroup& group);
 
-    /** Return true if managed window is currently in Full Screen Mode.
+    /**
+     * Return true if managed window is currently in Full Screen Mode.
      */
     bool fullScreenIsActive() const;
 
 public:
 
-    /** Register all generic plugins action to this instance.
-     *  Call registerExtraPluginsActions() to plug oter kind of plugins in GUI.
+    /**
+     * Register all generic plugins action to this instance.
+     * Call registerExtraPluginsActions() to plug oter kind of plugins in GUI.
      */
     void registerPluginsActions();
     virtual void registerExtraPluginsActions(QString& /*dom*/) {};
 
-    /** Return the interface instance to access to items information.
+    /**
+     * Return the interface instance to access to items information.
      */
     virtual DInfoInterface* infoIface(DPluginAction* const ac) = 0;
 
@@ -177,9 +190,10 @@ protected:
     QAction* showMenuBarAction()   const;
     QAction* showStatusBarAction() const;
 
-    /** Call this method from your main window to show keyboard shortcut config dialog
-     *  with an extra action collection to configure. This method is called by slotEditKeys()
-     *  which can be re-implement in child class for cutomization.
+    /**
+     * Call this method from your main window to show keyboard shortcut config dialog
+     * with an extra action collection to configure. This method is called by slotEditKeys()
+     * which can be re-implement in child class for cutomization.
      */
     void editKeyboardShortcuts(KActionCollection* const extraac=nullptr, const QString& actitle=QString());
 
@@ -187,22 +201,26 @@ protected:
     void keyPressEvent(QKeyEvent* e) override;
     bool eventFilter(QObject* obj, QEvent* ev) override;
 
-    /** Re-implement this method if you want to manage sidebars visibility in full-screen mode.
-     *  By default this method do nothing.
+    /**
+     * Re-implement this method if you want to manage sidebars visibility in full-screen mode.
+     * By default this method do nothing.
      */
     virtual void showSideBars(bool visible);
 
-    /** Re-implement this method if you want to manage thumbbar visibility in full-screen mode.
-     *  By default this method do nothing.
+    /**
+     * Re-implement this method if you want to manage thumbbar visibility in full-screen mode.
+     * By default this method do nothing.
      */
     virtual void showThumbBar(bool visible);
 
-    /** Re-implement this method if you want to manage customized view visibility in full-screen mode.
-     *  This method is called by switchWindowToFullScreen(). By default this method do nothing.
+    /**
+     * Re-implement this method if you want to manage customized view visibility in full-screen mode.
+     * This method is called by switchWindowToFullScreen(). By default this method do nothing.
      */
     virtual void customizedFullScreenMode(bool set);
 
-    /** Re-implement this method if managed window has a thumbbar. This must return visibility state of it.
+    /**
+     * Re-implement this method if managed window has a thumbbar. This must return visibility state of it.
      */
     virtual bool thumbbarVisibility() const;
 
@@ -221,11 +239,11 @@ private Q_SLOTS:
     void slotContribute();
     void slotHelpContents();
 
-    // Slots for common Help Actions
+    /// Slots for common Help Actions
     virtual void slotComponentsInfo()          {};
     virtual void slotDBStat()                  {};
 
-    // Slots for common Sidebar Actions
+    /// Slots for common Sidebar Actions
     virtual void slotToggleLeftSideBar()       {};
     virtual void slotToggleRightSideBar()      {};
     virtual void slotPreviousLeftSideBarTab()  {};
@@ -233,17 +251,19 @@ private Q_SLOTS:
     virtual void slotPreviousRightSideBarTab() {};
     virtual void slotNextRightSideBarTab()     {};
 
-    // Slots for common Settings actions
+    /// Slots for common Settings actions
     virtual void slotEditKeys()                { editKeyboardShortcuts(); };
     virtual void slotSetup() = 0;
 
 private:
 
-    /** Used by slotToggleFullScreen() to switch tool-bar visibility in managed window
+    /**
+     * Used by slotToggleFullScreen() to switch tool-bar visibility in managed window
      */
     void showToolBars(bool visible);
 
-    /** Return main tool bar instance created in managed window.
+    /**
+     * Return main tool bar instance created in managed window.
      */
     KToolBar* mainToolBar() const;
 

@@ -141,10 +141,10 @@ static qreal contrastRatioForLuma(qreal y1, qreal y2)
 {
     if (y1 > y2)
     {
-        return (y1 + 0.05) / (y2 + 0.05);
+        return ((y1 + 0.05) / (y2 + 0.05));
     }
 
-    return (y2 + 0.05) / (y1 + 0.05);
+    return ((y2 + 0.05) / (y1 + 0.05));
 }
 
 qreal contrastRatio(const QColor& c1, const QColor& c2)
@@ -260,7 +260,7 @@ QColor tint(const QColor& base, const QColor& color, qreal amount = 0.3)
     double u       = 1.0, l = 0.0;
     QColor result;
 
-    for (int i = 12; i; --i)
+    for (int i = 12 ; i ; --i)
     {
         double a  = 0.5 * (l + u);
         result    = tintHelper(base, baseLuma, color, a);
@@ -309,12 +309,19 @@ QColor overlayColors(const QColor& base, const QColor& paint,
 // ------------------------------------------------------------------------------
 
 #define HCY_REC 709 // use 709 for now
+
 #if   HCY_REC == 601
+
 static const qreal yc[3] = {0.299,   0.587,  0.114  };
+
 #elif HCY_REC == 709
+
 static const qreal yc[3] = {0.2126,  0.7152, 0.0722 };
+
 #else // use Qt values
+
 static const qreal yc[3] = {0.34375, 0.5,    0.15625};
+
 #endif
 
 qreal HCYColorSpace::gamma(qreal n)
@@ -329,7 +336,7 @@ qreal HCYColorSpace::igamma(qreal n)
 
 qreal HCYColorSpace::lumag(qreal r, qreal g, qreal b)
 {
-    return r * yc[0] + g * yc[1] + b * yc[2];
+    return (r * yc[0] + g * yc[1] + b * yc[2]);
 }
 
 HCYColorSpace::HCYColorSpace(qreal h_, qreal c_, qreal y_, qreal a_)
@@ -348,14 +355,16 @@ HCYColorSpace::HCYColorSpace(const QColor& color)
     a       = color.alphaF();
 
     // luma component
+
     y       = lumag(r, g, b);
 
     // hue component
+
     qreal p = qMax(qMax(r, g), b);
     qreal n = qMin(qMin(r, g), b);
     qreal d = 6.0 * (p - n);
 
-    if (n == p)
+    if      (n == p)
     {
         h = 0.0;
     }
@@ -373,7 +382,8 @@ HCYColorSpace::HCYColorSpace(const QColor& color)
     }
 
     // chroma component
-    if (r == g && g == b)
+
+    if ((r == g) && (g == b))
     {
         c = 0.0;
     }
@@ -386,14 +396,16 @@ HCYColorSpace::HCYColorSpace(const QColor& color)
 QColor HCYColorSpace::qColor() const
 {
     // start with sane component values
+
     qreal _h  = ColorTools::wrap(h);
     qreal _c  = ColorTools::normalize(c);
     qreal _y  = ColorTools::normalize(y);
 
     // calculate some needed variables
+
     qreal _hs = _h * 6.0, th, tm;
 
-    if (_hs < 1.0)
+    if      (_hs < 1.0)
     {
         th = _hs;
         tm = yc[0] + yc[1] * th;
@@ -425,6 +437,7 @@ QColor HCYColorSpace::qColor() const
     }
 
     // calculate RGB channels in sorted order
+
     qreal tn, to, tp;
 
     if (tm >= _y)
@@ -441,7 +454,8 @@ QColor HCYColorSpace::qColor() const
     }
 
     // return RGB channels in appropriate order
-    if (_hs < 1.0)
+
+    if      (_hs < 1.0)
     {
         return QColor::fromRgbF(igamma(tp), igamma(to), igamma(tn), a);
     }
@@ -492,21 +506,21 @@ private:
 
     enum Effects
     {
-        // Effects
+        /// Effects
         Intensity         = 0,
         Color             = 1,
         Contrast          = 2,
-        // Intensity
+        /// Intensity
         IntensityNoEffect = 0,
         IntensityShade    = 1,
         IntensityDarken   = 2,
         IntensityLighten  = 3,
-        // Color
+        /// Color
         ColorNoEffect     = 0,
         ColorDesaturate   = 1,
         ColorFade         = 2,
         ColorTint         = 3,
-        // Contrast
+        /// Contrast
         ContrastNoEffect  = 0,
         ContrastFade      = 1,
         ContrastTint      = 2
@@ -524,7 +538,7 @@ StateEffects::StateEffects(QPalette::ColorGroup state, const KSharedConfigPtr& c
 {
     QString group;
 
-    if (state == QPalette::Disabled)
+    if      (state == QPalette::Disabled)
     {
         group = QLatin1String("ColorEffects:Disabled");
     }
@@ -569,9 +583,11 @@ QBrush StateEffects::brush(const QBrush& background) const
         case IntensityShade:
             color = ColorTools::shade(color, _amount[Intensity]);
             break;
+
         case IntensityDarken:
             color = ColorTools::darken(color, _amount[Intensity]);
             break;
+
         case IntensityLighten:
             color = ColorTools::lighten(color, _amount[Intensity]);
             break;
@@ -582,9 +598,11 @@ QBrush StateEffects::brush(const QBrush& background) const
         case ColorDesaturate:
             color = ColorTools::darken(color, 0.0, 1.0 - _amount[Color]);
             break;
+
         case ColorFade:
             color = ColorTools::mix(color, _color, _amount[Color]);
             break;
+
         case ColorTint:
             color = ColorTools::tint(color, _color, _amount[Color]);
             break;
@@ -605,6 +623,7 @@ QBrush StateEffects::brush(const QBrush& foreground, const QBrush& background) c
         case ContrastFade:
             color = ColorTools::mix(color, bg, _amount[Contrast]);
             break;
+
         case ContrastTint:
             color = ColorTools::tint(color, bg, _amount[Contrast]);
             break;
@@ -638,94 +657,95 @@ struct DecoDefaultColors
 };
 
 // these numbers come from the Breeze color scheme
+
 static const SetDefaultColors defaultViewColors =
 {
-    { 252, 252, 252 }, // Background
-    { 239, 240, 241 }, // Alternate
-    {  49,  54,  59 }, // Normal
-    { 127, 140, 141 }, // Inactive
-    {  61, 174, 233 }, // Active
-    {  41, 128, 185 }, // Link
-    { 127, 140, 141 }, // Visited
-    { 218,  68,  83 }, // Negative
-    { 246, 116,   0 }, // Neutral
-    {  39, 174,  96 }  // Positive
+    { 252, 252, 252 }, ///< Background
+    { 239, 240, 241 }, ///< Alternate
+    {  49,  54,  59 }, ///< Normal
+    { 127, 140, 141 }, ///< Inactive
+    {  61, 174, 233 }, ///< Active
+    {  41, 128, 185 }, ///< Link
+    { 127, 140, 141 }, ///< Visited
+    { 218,  68,  83 }, ///< Negative
+    { 246, 116,   0 }, ///< Neutral
+    {  39, 174,  96 }  ///< Positive
 };
 
 static const SetDefaultColors defaultWindowColors =
 {
-    { 239, 240, 241 }, // Background
-    { 189, 195, 199 }, // Alternate
-    {  49,  54,  59 }, // Normal
-    { 127, 140, 141 }, // Inactive
-    {  61, 174, 233 }, // Active
-    {  41, 128, 185 }, // Link
-    { 127, 140, 141 }, // Visited
-    { 218,  68,  83 }, // Negative
-    { 246, 116,   0 }, // Neutral
-    {  39, 174,  96 }  // Positive
+    { 239, 240, 241 }, ///< Background
+    { 189, 195, 199 }, ///< Alternate
+    {  49,  54,  59 }, ///< Normal
+    { 127, 140, 141 }, ///< Inactive
+    {  61, 174, 233 }, ///< Active
+    {  41, 128, 185 }, ///< Link
+    { 127, 140, 141 }, ///< Visited
+    { 218,  68,  83 }, ///< Negative
+    { 246, 116,   0 }, ///< Neutral
+    {  39, 174,  96 }  ///< Positive
 };
 
 static const SetDefaultColors defaultButtonColors =
 {
-    { 239, 240, 241 }, // Background
-    { 189, 195, 199 }, // Alternate
-    {  49,  54,  59 }, // Normal
-    { 127, 140, 141 }, // Inactive
-    {  61, 174, 233 }, // Active
-    {  41, 128, 185 }, // Link
-    { 127, 140, 141 }, // Visited
-    { 218,  68,  83 }, // Negative
-    { 246, 116,   0 }, // Neutral
-    {  39, 174,  96 }  // Positive
+    { 239, 240, 241 }, ///< Background
+    { 189, 195, 199 }, ///< Alternate
+    {  49,  54,  59 }, ///< Normal
+    { 127, 140, 141 }, ///< Inactive
+    {  61, 174, 233 }, ///< Active
+    {  41, 128, 185 }, ///< Link
+    { 127, 140, 141 }, ///< Visited
+    { 218,  68,  83 }, ///< Negative
+    { 246, 116,   0 }, ///< Neutral
+    {  39, 174,  96 }  ///< Positive
 };
 
 static const SetDefaultColors defaultSelectionColors =
 {
-    {  61, 174, 233 }, // Background
-    {  29, 153, 243 }, // Alternate
-    { 239, 240, 241 }, // Normal
-    { 239, 240, 241 }, // Inactive
-    { 252, 252, 252 }, // Active
-    { 253, 188,  75 }, // Link
-    { 189, 195, 199 }, // Visited
-    { 218,  68,  83 }, // Negative
-    { 246, 116,   0 }, // Neutral
-    {  39, 174,  96 }  // Positive
+    {  61, 174, 233 }, ///< Background
+    {  29, 153, 243 }, ///< Alternate
+    { 239, 240, 241 }, ///< Normal
+    { 239, 240, 241 }, ///< Inactive
+    { 252, 252, 252 }, ///< Active
+    { 253, 188,  75 }, ///< Link
+    { 189, 195, 199 }, ///< Visited
+    { 218,  68,  83 }, ///< Negative
+    { 246, 116,   0 }, ///< Neutral
+    {  39, 174,  96 }  ///< Positive
 };
 
 static const SetDefaultColors defaultTooltipColors =
 {
-    {  49,  54,  59 }, // Background
-    {  77,  77,  77 }, // Alternate
-    { 239, 240, 241 }, // Normal
-    { 189, 195, 199 }, // Inactive
-    {  61, 174, 233 }, // Active
-    {  41, 128, 185 }, // Link
-    { 127, 140, 141 }, // Visited
-    { 218,  68,  83 }, // Negative
-    { 246, 116,   0 }, // Neutral
-    {  39, 174,  96 }  // Positive
+    {  49,  54,  59 }, ///< Background
+    {  77,  77,  77 }, ///< Alternate
+    { 239, 240, 241 }, ///< Normal
+    { 189, 195, 199 }, ///< Inactive
+    {  61, 174, 233 }, ///< Active
+    {  41, 128, 185 }, ///< Link
+    { 127, 140, 141 }, ///< Visited
+    { 218,  68,  83 }, ///< Negative
+    { 246, 116,   0 }, ///< Neutral
+    {  39, 174,  96 }  ///< Positive
 };
 
 static const SetDefaultColors defaultComplementaryColors =
 {
-    {  49,  54,  59 }, // Background
-    {  77,  77,  77 }, // Alternate
-    { 239, 240, 241 }, // Normal
-    { 189, 195, 199 }, // Inactive
-    {  61, 174, 233 }, // Active
-    {  41, 128, 185 }, // Link
-    { 127, 140, 141 }, // Visited
-    { 218,  68,  83 }, // Negative
-    { 246, 116,   0 }, // Neutral
-    {  39, 174,  96 }  // Positive
+    {  49,  54,  59 }, ///< Background
+    {  77,  77,  77 }, ///< Alternate
+    { 239, 240, 241 }, ///< Normal
+    { 189, 195, 199 }, ///< Inactive
+    {  61, 174, 233 }, ///< Active
+    {  41, 128, 185 }, ///< Link
+    { 127, 140, 141 }, ///< Visited
+    { 218,  68,  83 }, ///< Negative
+    { 246, 116,   0 }, ///< Neutral
+    {  39, 174,  96 }  ///< Positive
 };
 
 static const DecoDefaultColors defaultDecorationColors =
 {
-    { 147, 206, 233 }, // Hover
-    {  61, 174, 233 }, // Focus
+    { 147, 206, 233 }, ///< Hover
+    {  61, 174, 233 }, ///< Focus
 };
 
 // ------------------------------------------------------------------------------------
@@ -774,10 +794,12 @@ SchemeManagerPrivate::SchemeManagerPrivate(const KSharedConfigPtr& config,
     _contrast      = SchemeManager::contrastF(config);
 
     // loaded-from-config colors (no adjustment)
+
     _brushes.bg[0] = cfg.readEntry("BackgroundNormal",    SET_DEFAULT(NormalBackground));
     _brushes.bg[1] = cfg.readEntry("BackgroundAlternate", SET_DEFAULT(AlternateBackground));
 
     // the rest
+
     init(config, state, group, defaults);
 }
 
@@ -791,14 +813,17 @@ SchemeManagerPrivate::SchemeManagerPrivate(const KSharedConfigPtr& config,
     _contrast      = SchemeManager::contrastF(config);
 
     // loaded-from-config colors
+
     _brushes.bg[0] = cfg.readEntry("BackgroundNormal", SET_DEFAULT(NormalBackground));
     _brushes.bg[1] = cfg.readEntry("BackgroundAlternate", SET_DEFAULT(AlternateBackground));
 
     // adjustment
+
     _brushes.bg[0] = ColorTools::tint(_brushes.bg[0].color(), tint.color(), 0.4);
     _brushes.bg[1] = ColorTools::tint(_brushes.bg[1].color(), tint.color(), 0.4);
 
     // the rest
+
     init(config, state, group, defaults);
 }
 
@@ -810,6 +835,7 @@ void SchemeManagerPrivate::init(const KSharedConfigPtr& config,
     KConfigGroup cfg(config, group);
 
     // loaded-from-config colors
+
     _brushes.fg[0]   = cfg.readEntry("ForegroundNormal",   SET_DEFAULT(NormalText));
     _brushes.fg[1]   = cfg.readEntry("ForegroundInactive", SET_DEFAULT(InactiveText));
     _brushes.fg[2]   = cfg.readEntry("ForegroundActive",   SET_DEFAULT(ActiveText));
@@ -839,6 +865,7 @@ void SchemeManagerPrivate::init(const KSharedConfigPtr& config,
     }
 
     // calculated backgrounds
+
     _brushes.bg[2] = ColorTools::tint(_brushes.bg[0].color(), _brushes.fg[2].color());
     _brushes.bg[3] = ColorTools::tint(_brushes.bg[0].color(), _brushes.fg[3].color());
     _brushes.bg[4] = ColorTools::tint(_brushes.bg[0].color(), _brushes.fg[4].color());
@@ -853,18 +880,25 @@ QBrush SchemeManagerPrivate::background(SchemeManager::BackgroundRole role) cons
     {
         case SchemeManager::AlternateBackground:
             return _brushes.bg[1];
+
         case SchemeManager::ActiveBackground:
             return _brushes.bg[2];
+
         case SchemeManager::LinkBackground:
             return _brushes.bg[3];
+
         case SchemeManager::VisitedBackground:
             return _brushes.bg[4];
+
         case SchemeManager::NegativeBackground:
             return _brushes.bg[5];
+
         case SchemeManager::NeutralBackground:
             return _brushes.bg[6];
+
         case SchemeManager::PositiveBackground:
             return _brushes.bg[7];
+
         default:
             return _brushes.bg[0];
     }
@@ -876,18 +910,25 @@ QBrush SchemeManagerPrivate::foreground(SchemeManager::ForegroundRole role) cons
     {
         case SchemeManager::InactiveText:
             return _brushes.fg[1];
+
         case SchemeManager::ActiveText:
             return _brushes.fg[2];
+
         case SchemeManager::LinkText:
             return _brushes.fg[3];
+
         case SchemeManager::VisitedText:
             return _brushes.fg[4];
+
         case SchemeManager::NegativeText:
             return _brushes.fg[5];
+
         case SchemeManager::NeutralText:
             return _brushes.fg[6];
+
         case SchemeManager::PositiveText:
             return _brushes.fg[7];
+
         default:
             return _brushes.fg[0];
     }
@@ -899,6 +940,7 @@ QBrush SchemeManagerPrivate::decoration(SchemeManager::DecorationRole role) cons
     {
         case SchemeManager::FocusColor:
             return _brushes.deco[1];
+
         default:
             return _brushes.deco[0];
     }
@@ -919,6 +961,7 @@ SchemeManager::SchemeManager(const SchemeManager& other)
 SchemeManager& SchemeManager::operator=(const SchemeManager& other)
 {
     d = other.d;
+
     return *this;
 }
 
@@ -940,17 +983,23 @@ SchemeManager::SchemeManager(QPalette::ColorGroup state,
         case Window:
             d = new SchemeManagerPrivate(config, state, "Colors:Window", defaultWindowColors);
             break;
+
         case Button:
             d = new SchemeManagerPrivate(config, state, "Colors:Button", defaultButtonColors);
             break;
+
         case Selection:
             {
                 KConfigGroup group(config, "ColorEffects:Inactive");
+
                 // NOTE: keep this in sync with kdebase/workspace/kcontrol/colors/colorscm.cpp
+
                 bool inactiveSelectionEffect = group.readEntry("ChangeSelectionColor", group.readEntry("Enable", true));
+
                 // if enabled, inactiver/disabled uses Window colors instead, ala gtk
                 // ...except tinted with the Selection:NormalBackground color so it looks more like selection
-                if (state == QPalette::Active || (state == QPalette::Inactive && !inactiveSelectionEffect))
+
+                if      ((state == QPalette::Active) || ((state == QPalette::Inactive) && !inactiveSelectionEffect))
                 {
                     d = new SchemeManagerPrivate(config, state, "Colors:Selection", defaultSelectionColors);
                 }
@@ -962,16 +1011,20 @@ SchemeManager::SchemeManager(QPalette::ColorGroup state,
                 else
                 {
                     // disabled (...and still want this branch when inactive+disabled exists)
+
                     d = new SchemeManagerPrivate(config, state, "Colors:Window", defaultWindowColors);
                 }
             }
             break;
+
         case Tooltip:
             d = new SchemeManagerPrivate(config, state, "Colors:Tooltip", defaultTooltipColors);
             break;
+
         case Complementary:
             d = new SchemeManagerPrivate(config, state, "Colors:Complementary", defaultComplementaryColors);
             break;
+
         default:
             d = new SchemeManagerPrivate(config, state, "Colors:View", defaultViewColors);
     }
@@ -990,10 +1043,10 @@ qreal SchemeManager::contrastF(const KSharedConfigPtr& config)
     {
         KConfigGroup g(config, "KDE");
 
-        return 0.1 * g.readEntry("contrast", 7);
+        return (0.1 * g.readEntry("contrast", 7));
     }
 
-    return 0.1 * (qreal)contrast();
+    return (0.1 * (qreal)contrast());
 }
 
 QBrush SchemeManager::background(BackgroundRole role) const
@@ -1028,6 +1081,7 @@ QColor SchemeManager::shade(const QColor& color,
                             qreal chromaAdjust)
 {
     // nan -> 1.0
+
     contrast = ((1.0 > contrast) ? ((-1.0 < contrast) ? contrast
                                                       : -1.0)
                                  : 1.0);
@@ -1035,38 +1089,47 @@ QColor SchemeManager::shade(const QColor& color,
     qreal yi = 1.0 - y;
 
     // handle very dark colors (base, mid, dark, shadow == midlight, light)
+
     if (y < 0.006)
     {
         switch (role)
         {
             case SchemeManager::LightShade:
                 return ColorTools::shade(color, 0.05 + 0.95 * contrast, chromaAdjust);
+
             case SchemeManager::MidShade:
                 return ColorTools::shade(color, 0.01 + 0.20 * contrast, chromaAdjust);
+
             case SchemeManager::DarkShade:
                 return ColorTools::shade(color, 0.02 + 0.40 * contrast, chromaAdjust);
+
             default:
                 return ColorTools::shade(color, 0.03 + 0.60 * contrast, chromaAdjust);
         }
     }
 
     // handle very light colors (base, midlight, light == mid, dark, shadow)
+
     if (y > 0.93)
     {
         switch (role)
         {
             case SchemeManager::MidlightShade:
                 return ColorTools::shade(color, -0.02 - 0.20 * contrast, chromaAdjust);
+
             case SchemeManager::DarkShade:
                 return ColorTools::shade(color, -0.06 - 0.60 * contrast, chromaAdjust);
+
             case SchemeManager::ShadowShade:
                 return ColorTools::shade(color, -0.10 - 0.90 * contrast, chromaAdjust);
+
             default:
                 return ColorTools::shade(color, -0.04 - 0.40 * contrast, chromaAdjust);
         }
     }
 
     // handle everything else
+
     qreal lightAmount = (0.05 + y * 0.55) * (0.25 + contrast * 0.75);
     qreal darkAmount  = (- y)             * (0.55 + contrast * 0.35);
 
@@ -1074,12 +1137,16 @@ QColor SchemeManager::shade(const QColor& color,
     {
         case SchemeManager::LightShade:
             return ColorTools::shade(color, lightAmount, chromaAdjust);
+
         case SchemeManager::MidlightShade:
             return ColorTools::shade(color, (0.15 + 0.35 * yi) * lightAmount, chromaAdjust);
+
         case SchemeManager::MidShade:
             return ColorTools::shade(color, (0.35 + 0.15 * y) * darkAmount, chromaAdjust);
+
         case SchemeManager::DarkShade:
             return ColorTools::shade(color, darkAmount, chromaAdjust);
+
         default:
             return ColorTools::darken(ColorTools::shade(color, darkAmount, chromaAdjust), 0.5 + 0.3 * y);
     }
@@ -1119,6 +1186,7 @@ QPalette SchemeManager::createApplicationPalette(const KSharedConfigPtr& config)
     };
 
     // TT thinks tooltips shouldn't use active, so we use our active colors for all states
+
     SchemeManager schemeTooltip(QPalette::Active, SchemeManager::Tooltip, config);
 
     for (int i = 0 ; i < 3 ; ++i)
@@ -1199,6 +1267,7 @@ QPixmap ThemeManager::Private::createSchemePreviewIcon(const KSharedConfigPtr& c
     p.fillRect(16, 12, 5, 2, QBrush(group.readEntry(QLatin1String("inactiveForeground"), QColor(20,  19,  18)), b2));
 
     p.end();
+
     return pixmap;
 }
 

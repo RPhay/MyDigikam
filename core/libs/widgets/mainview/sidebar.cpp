@@ -64,6 +64,13 @@ class Q_DECL_HIDDEN DMultiTabBarFrame::Private
 {
 public:
 
+    explicit Private()
+      : mainLayout(nullptr),
+        position(Qt::LeftEdge),
+        style(DMultiTabBar::AllIconsText)
+    {
+    }
+
     QBoxLayout*             mainLayout;
     QList<DMultiTabBarTab*> tabs;
     Qt::Edge                position;
@@ -76,7 +83,7 @@ DMultiTabBarFrame::DMultiTabBarFrame(QWidget* const parent, Qt::Edge pos)
 {
     d->position = pos;
 
-    if (pos == Qt::LeftEdge || pos == Qt::RightEdge)
+    if ((pos == Qt::LeftEdge) || (pos == Qt::RightEdge))
     {
         d->mainLayout = new QVBoxLayout(this);
     }
@@ -195,9 +202,11 @@ DMultiTabBarButton::DMultiTabBarButton(const QPixmap& pic, const QString& text,
     // we can't see the focus, so don't take focus. #45557
     // If keyboard navigation is wanted, then only the bar should take focus,
     // and arrows could change the focused button; but generally, tabbars don't take focus anyway.
+
     setFocusPolicy(Qt::NoFocus);
 
     // See RB #128005
+
     setAttribute(Qt::WA_LayoutUsesWidgetRect);
 }
 
@@ -249,7 +258,9 @@ void DMultiTabBarButton::paintEvent(QPaintEvent*)
     opt.initFrom(this);
     opt.icon = icon();
     opt.iconSize = iconSize();
+
     // removes the QStyleOptionButton::HasMenu ButtonFeature
+
     opt.features = QStyleOptionButton::Flat;
     QPainter painter(this);
     style()->drawControl(QStyle::CE_PushButton, &opt, &painter, this);
@@ -260,6 +271,12 @@ void DMultiTabBarButton::paintEvent(QPaintEvent*)
 class Q_DECL_HIDDEN DMultiTabBarTab::Private
 {
 public:
+
+    explicit Private()
+      : position(Qt::LeftEdge),
+        style(DMultiTabBar::AllIconsText)
+    {
+    }
 
     Qt::Edge                position;
     DMultiTabBar::TextStyle style;
@@ -277,6 +294,7 @@ DMultiTabBarTab::DMultiTabBarTab(const QPixmap& pic, const QString& text,
     setToolTip(text);
     setCheckable(true);
     setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+
      // shrink down to icon only, but prefer to show text if it's there
 }
 
@@ -308,7 +326,8 @@ void DMultiTabBarTab::initStyleOption(QStyleOptionToolButton* opt) const
 {
     opt->initFrom(this);
 
-    // Setup icon..
+    // Setup icon
+
     if (!icon().isNull())
     {
         opt->iconSize = iconPixmap().size();
@@ -316,6 +335,7 @@ void DMultiTabBarTab::initStyleOption(QStyleOptionToolButton* opt) const
     }
 
     // Should we draw text?
+
     if (shouldDrawText())
     {
         opt->text = text();
@@ -350,6 +370,7 @@ void DMultiTabBarTab::computeMargins(int* hMargin, int* vMargin) const
 {
     // Unfortunately, QStyle does not give us enough information to figure out
     // where to place things, so we try to reverse-engineer it
+
     QStyleOptionToolButton opt;
     initStyleOption(&opt);
 
@@ -364,6 +385,7 @@ void DMultiTabBarTab::computeMargins(int* hMargin, int* vMargin) const
 QSize DMultiTabBarTab::computeSizeHint(bool withText) const
 {
     // Compute as horizontal first, then flip around if need be.
+
     QStyleOptionToolButton opt;
     initStyleOption(&opt);
 
@@ -371,15 +393,18 @@ QSize DMultiTabBarTab::computeSizeHint(bool withText) const
     computeMargins(&hMargin, &vMargin);
 
     // Compute interior size, starting from pixmap..
+
     QPixmap iconPix = iconPixmap();
     QSize size      = iconPix.size();
 
     // Always include text height in computation, to avoid resizing the minor direction
     // when expanding text..
+
     QSize textSize  = fontMetrics().size(0, text());
     size.setHeight(qMax(size.height(), textSize.height()));
 
     // Pick margins for major/minor direction, depending on orientation
+
     int majorMargin = isVertical() ? vMargin : hMargin;
     int minorMargin = isVertical() ? hMargin : vMargin;
 
@@ -389,6 +414,7 @@ QSize DMultiTabBarTab::computeSizeHint(bool withText) const
     if (withText)
     {
         // Add enough room for the text, and an extra major margin.
+
         size.setWidth(size.width() + textSize.width() + majorMargin);
     }
 
@@ -420,12 +446,12 @@ void DMultiTabBarTab::setIcon(const QPixmap& icon)
 
 bool DMultiTabBarTab::shouldDrawText() const
 {
-    return (d->style == DMultiTabBar::AllIconsText) || isChecked();
+    return ((d->style == DMultiTabBar::AllIconsText) || isChecked());
 }
 
 bool DMultiTabBarTab::isVertical() const
 {
-    return (d->position == Qt::RightEdge || d->position == Qt::LeftEdge);
+    return ((d->position == Qt::RightEdge) || (d->position == Qt::LeftEdge));
 }
 
 void DMultiTabBarTab::paintEvent(QPaintEvent*)
@@ -436,6 +462,7 @@ void DMultiTabBarTab::paintEvent(QPaintEvent*)
     initStyleOption(&opt);
 
     // Paint bevel..
+
     if (underMouse() || isChecked())
     {
         opt.text.clear();
@@ -449,6 +476,7 @@ void DMultiTabBarTab::paintEvent(QPaintEvent*)
     // We first figure out how much room we have for the text, based on
     // icon size and margin, try to fit in by eliding, and perhaps
     // give up on drawing the text entirely if we're too short on room
+
     QPixmap icon = iconPixmap();
     int textRoom = 0;
     int iconRoom = 0;
@@ -472,7 +500,8 @@ void DMultiTabBarTab::paintEvent(QPaintEvent*)
 
         // See whether anything is left. Qt will return either
         // ... or the ellipsis unicode character, 0x2026
-        if (t == QLatin1String("...") || t == QChar(0x2026))
+
+        if ((t == QLatin1String("...")) || (t == QChar(0x2026)))
         {
             t.clear();
         }
@@ -481,6 +510,7 @@ void DMultiTabBarTab::paintEvent(QPaintEvent*)
     // Label time.... Simple case: no text, so just plop down the icon right in the center
     // We only do this when the button never draws the text, to avoid jumps in icon position
     // when resizing
+
     if (!shouldDrawText())
     {
         style()->drawItemPixmap(&painter, rect(), Qt::AlignCenter | Qt::AlignVCenter, icon);
@@ -488,6 +518,7 @@ void DMultiTabBarTab::paintEvent(QPaintEvent*)
     }
 
     // Now where the icon/text goes depends on text direction and tab position
+
     QRect iconArea;
     QRect labelArea;
 
@@ -496,12 +527,12 @@ void DMultiTabBarTab::paintEvent(QPaintEvent*)
 
     if (isVertical())
     {
-        if (d->position == Qt::LeftEdge && !rtl)
+        if ((d->position == Qt::LeftEdge) && !rtl)
         {
             bottomIcon = true;
         }
  
-        if (d->position == Qt::RightEdge && rtl)
+        if ((d->position == Qt::RightEdge) && rtl)
         { 
            bottomIcon = true;
         }
@@ -523,6 +554,7 @@ void DMultiTabBarTab::paintEvent(QPaintEvent*)
     else
     {
         // Pretty simple --- depends only on RTL/LTR
+
         if (rtl)
         {
             labelArea = QRect(hMargin, 0, textRoom, height());
@@ -548,6 +580,7 @@ void DMultiTabBarTab::paintEvent(QPaintEvent*)
     {
         // If we're vertical, we paint to a simple 0,0 origin rect,
         // and get the transformations to get us in the right place
+
         labelPaintArea = QRect(0, 0, labelArea.height(), labelArea.width());
 
         QTransform tr;
@@ -575,6 +608,14 @@ void DMultiTabBarTab::paintEvent(QPaintEvent*)
 class Q_DECL_HIDDEN DMultiTabBar::Private
 {
 public:
+
+    explicit Private()
+      : internal(nullptr),
+        layout(nullptr),
+        btnTabSep(nullptr),
+        position(Qt::LeftEdge)
+    {
+    }
 
     DMultiTabBarFrame*         internal;
     QBoxLayout*                layout;
@@ -624,7 +665,9 @@ DMultiTabBar::~DMultiTabBar()
 int DMultiTabBar::appendButton(const QPixmap &pic, int id, QMenu *popup, const QString&)
 {
     DMultiTabBarButton* const btn = new DMultiTabBarButton(pic, QString(), id, this);
+
     // a button with a QMenu can have another size. Make sure the button has always the same size.
+
     btn->setFixedWidth(btn->height());
     btn->setMenu(popup);
     d->buttons.append(btn);
@@ -675,7 +718,9 @@ DMultiTabBarButton* DMultiTabBar::button(int id) const
         DMultiTabBarButton* const button = it.next();
 
         if (button->id() == id)
+        {
             return button;
+        }
     }
 
     return nullptr;
@@ -806,9 +851,13 @@ public:
 
     bool                          minimizedDefault;
     bool                          minimized;
-    bool                          isMinimized;      // Backup of shrinked status before backup(), restored by restore()
-                                                    // NOTE: when sidebar is hidden, only icon bar is affected. If sidebar view is
-                                                    // visible, this one must be shrink and restored accordingly.
+
+    /**
+     * Backup of shrinked status before backup(), restored by restore()
+     * NOTE: when sidebar is hidden, only icon bar is affected. If sidebar view is
+     * visible, this one must be shrink and restored accordingly.
+     */
+    bool                          isMinimized;
 
     int                           tabs;
     int                           activeTab;
@@ -878,7 +927,8 @@ void Sidebar::doLoadState()
     d->restoreSize     = group.readEntry(entryName(d->optionRestoreSizeEntry), -1);
 
     // validate
-    if (tab >= d->tabs || tab < 0)
+
+    if ((tab >= d->tabs) || (tab < 0))
     {
         tab = 0;
     }
@@ -890,6 +940,7 @@ void Sidebar::doLoadState()
         d->stack->setCurrentIndex(d->activeTab);
         shrink();
         emit signalChangedTab(d->stack->currentWidget());
+
         return;
     }
 
@@ -908,9 +959,11 @@ void Sidebar::doSaveState()
 void Sidebar::backup()
 {
     // backup preview state of sidebar view (shrink or not)
+
     d->isMinimized = d->minimized;
 
     // In all case, shrink sidebar view
+
     shrink();
 
     DMultiTabBar::hide();
@@ -933,6 +986,7 @@ void Sidebar::restore()
     DMultiTabBar::show();
 
     // restore preview state of sidebar view, stored in backup()
+
     if (!d->isMinimized)
     {
         expand();
@@ -955,12 +1009,14 @@ void Sidebar::restore(const QList<QWidget*> thirdWidgetsToRestore, const QList<i
 void Sidebar::appendTab(QWidget* const w, const QIcon& pic, const QString& title)
 {
     // Store state (but not on initialization)
+
     if (isVisible())
     {
         d->appendedTabsStateCache[w] = SidebarState(d->stack->currentWidget(), d->splitter->size(this));
     }
 
     // Add tab
+
     w->setParent(d->stack);
     DMultiTabBar::appendTab(pic.pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize)), d->tabs, title);
     d->stack->insertWidget(d->tabs, w);
@@ -991,15 +1047,19 @@ void Sidebar::deleteTab(QWidget* const w)
     }
 
     d->stack->removeWidget(d->stack->widget(tab));
+
     // delete widget
+
     removeTab(tab);
     d->tabs--;
 
     // restore or reset active tab and width
+
     if (!d->minimized)
     {
         // restore to state before adding tab
         // using a hash is simple, but does not handle well multiple add/removal operations at a time
+
         SidebarState state = d->appendedTabsStateCache.take(w);
 
         if (state.activeWidget)
@@ -1038,14 +1098,15 @@ void Sidebar::deleteTab(QWidget* const w)
 
 void Sidebar::clicked(int tab)
 {
-    if (tab >= d->tabs || tab < 0)
+    if ((tab >= d->tabs) || (tab < 0))
     {
         return;
     }
 
     if (tab == d->activeTab)
     {
-        d->stack->isHidden() ? expand() : shrink();
+        d->stack->isHidden() ? expand()
+                             : shrink();
     }
     else
     {
@@ -1140,6 +1201,7 @@ void Sidebar::shrink()
     d->minimized = true;
 
     // store the size that we had. We may later need it when we restore to visible.
+
     int currentSize = d->splitter->size(this);
 
     if (currentSize)
@@ -1163,6 +1225,7 @@ void Sidebar::slotExpandTimer()
 {
     // Do not expand to size 0 (only splitter handle visible)
     // but either to previous size, or the minimum size hint
+
     if (d->splitter->size(this) == 0)
     {
         setTab(d->activeTab, true);
@@ -1183,7 +1246,7 @@ bool Sidebar::eventFilter(QObject* obj, QEvent* ev)
     {
         if (obj == tab(i))
         {
-            if (ev->type() == QEvent::DragEnter)
+            if      (ev->type() == QEvent::DragEnter)
             {
                 QDragEnterEvent* const e = static_cast<QDragEnterEvent*>(ev);
                 enterEvent(e);
@@ -1226,6 +1289,7 @@ bool Sidebar::eventFilter(QObject* obj, QEvent* ev)
     }
 
     // Else, pass the event on to the parent class
+
     return DMultiTabBar::eventFilter(obj, ev);
 }
 
@@ -1262,6 +1326,7 @@ SidebarSplitter::SidebarSplitter(Qt::Orientation orientation, QWidget* const par
 SidebarSplitter::~SidebarSplitter()
 {
     // retreat cautiously from sidebars that live longer
+
     foreach (Sidebar* const sidebar, d->sidebars)
     {
         sidebar->d->splitter = nullptr;
@@ -1327,6 +1392,7 @@ void SidebarSplitter::setSize(QWidget* const widget, int size)
     }
 
     // special case: Use minimum size hint
+
     if (size == -1)
     {
         if (orientation() == Qt::Horizontal)

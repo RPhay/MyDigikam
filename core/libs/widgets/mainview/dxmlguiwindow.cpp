@@ -83,24 +83,24 @@ class Q_DECL_HIDDEN DXmlGuiWindow::Private
 public:
 
     explicit Private()
+      : fullScreenHideToolBars(false),
+        fullScreenHideThumbBar(true),
+        fullScreenHideSideBars(false),
+        fullScreenHideStatusBar(false),
+        fsOptions(FS_NONE),
+        fullScreenAction(nullptr),
+        fullScreenBtn(nullptr),
+        dirtyMainToolBar(false),
+        thumbbarVisibility(true),
+        menubarVisibility(true),
+        statusbarVisibility(true),
+        libsInfoAction(nullptr),
+        showMenuBarAction(nullptr),
+        showStatusBarAction(nullptr),
+        about(nullptr),
+        dbStatAction(nullptr),
+        anim(nullptr)
     {
-        fsOptions               = FS_NONE;
-        fullScreenAction        = nullptr;
-        fullScreenBtn           = nullptr;
-        dirtyMainToolBar        = false;
-        fullScreenHideToolBars  = false;
-        fullScreenHideThumbBar  = true;
-        fullScreenHideSideBars  = false;
-        fullScreenHideStatusBar = false;
-        thumbbarVisibility      = true;
-        menubarVisibility       = true;
-        statusbarVisibility     = true;
-        libsInfoAction          = nullptr;
-        showMenuBarAction       = nullptr;
-        showStatusBarAction     = nullptr;
-        about                   = nullptr;
-        dbStatAction            = nullptr;
-        anim                    = nullptr;
     }
 
 public:
@@ -205,7 +205,9 @@ QString DXmlGuiWindow::configGroupName() const
 void DXmlGuiWindow::closeEvent(QCloseEvent* e)
 {
     if (fullScreenIsActive())
+    {
         slotToggleFullScreen(false);
+    }
 
     if (!testAttribute(Qt::WA_DeleteOnClose))
     {
@@ -287,6 +289,7 @@ void DXmlGuiWindow::createHelpActions(bool coreOptions)
     actionCollection()->addAction(QLatin1String("logo_action"), m_animLogo);
 
     // Add options only for core components (typically all excepted Showfoto)
+
     if (coreOptions)
     {
         d->dbStatAction = new QAction(QIcon::fromTheme(QLatin1String("network-server-database")), i18n("Database Statistics"), this);
@@ -308,7 +311,9 @@ void DXmlGuiWindow::cleanupActions()
 
 /*
     foreach (QAction* const act, actionCollection()->actions())
+    {
         qCDebug(DIGIKAM_WIDGETS_LOG) << "action: " << act->objectName();
+    }
 */
 }
 
@@ -351,6 +356,7 @@ void DXmlGuiWindow::createSettingsActions()
     d->showMenuBarAction   = KStandardAction::showMenubar(this, SLOT(slotShowMenuBar()), actionCollection());
 #ifdef Q_OS_OSX
     // Under MacOS the menu bar visibility is managed by desktop.
+
     d->showMenuBarAction->setVisible(false);
 #endif
 
@@ -410,7 +416,9 @@ void DXmlGuiWindow::editKeyboardShortcuts(KActionCollection* const extraac, cons
     dialog.addCollection(actionCollection(), i18nc("general keyboard shortcuts", "General"));
 
     if (extraac)
+    {
         dialog.addCollection(extraac, actitle);
+    }
 
     dialog.configure();
 }
@@ -449,16 +457,24 @@ void DXmlGuiWindow::createFullScreenAction(const QString& name)
 void DXmlGuiWindow::readFullScreenSettings(const KConfigGroup& group)
 {
     if (d->fsOptions & FS_TOOLBARS)
+    {
         d->fullScreenHideToolBars  = group.readEntry(s_configFullScreenHideToolBarsEntry,  false);
+    }
 
     if (d->fsOptions & FS_THUMBBAR)
+    {
         d->fullScreenHideThumbBar  = group.readEntry(s_configFullScreenHideThumbBarEntry,  true);
+    }
 
     if (d->fsOptions & FS_SIDEBARS)
+    {
         d->fullScreenHideSideBars  = group.readEntry(s_configFullScreenHideSideBarsEntry,  false);
+    }
 
     if (d->fsOptions & FS_STATUSBAR)
+    {
         d->fullScreenHideStatusBar = group.readEntry(s_configFullScreenHideStatusBarEntry, false);
+    }
 }
 
 void DXmlGuiWindow::slotToggleFullScreen(bool set)
@@ -474,22 +490,30 @@ void DXmlGuiWindow::slotToggleFullScreen(bool set)
         // restore menubar
 
         if (d->menubarVisibility)
+        {
             menuBar()->setVisible(true);
+        }
 
         // restore statusbar
 
         if ((d->fsOptions & FS_STATUSBAR) && d->fullScreenHideStatusBar)
+        {
             statusBar()->setVisible(d->statusbarVisibility);
+        }
 
         // restore sidebars
 
         if ((d->fsOptions & FS_SIDEBARS) && d->fullScreenHideSideBars)
+        {
             showSideBars(true);
+        }
 
         // restore thumbbar
 
         if ((d->fsOptions & FS_THUMBBAR) && d->fullScreenHideThumbBar)
+        {
             showThumbBar(d->thumbbarVisibility);
+        }
 
         // restore toolbars and manage full-screen button
 
@@ -528,19 +552,25 @@ void DXmlGuiWindow::slotToggleFullScreen(bool set)
 #endif
 
         if ((d->fsOptions & FS_STATUSBAR) && d->fullScreenHideStatusBar)
+        {
             statusBar()->setVisible(false);
+        }
 
         // hide sidebars
 
         if ((d->fsOptions & FS_SIDEBARS) && d->fullScreenHideSideBars)
+        {
             showSideBars(false);
+        }
 
         // hide thumbbar
 
         d->thumbbarVisibility = thumbbarVisibility();
 
         if ((d->fsOptions & FS_THUMBBAR) && d->fullScreenHideThumbBar)
+        {
             showThumbBar(false);
+        }
 
         // hide toolbars and manage full-screen button
 
@@ -573,6 +603,7 @@ void DXmlGuiWindow::slotToggleFullScreen(bool set)
             {
                 // If FullScreen button is enabled in toolbar settings,
                 // we shall not remove it when leaving of fullscreen mode.
+
                 d->dirtyMainToolBar = false;
             }
         }
@@ -582,9 +613,12 @@ void DXmlGuiWindow::slotToggleFullScreen(bool set)
 bool DXmlGuiWindow::fullScreenIsActive() const
 {
     if (d->fullScreenAction)
+    {
         return d->fullScreenAction->isChecked();
+    }
 
     qCDebug(DIGIKAM_WIDGETS_LOG) << "FullScreenAction is not initialized";
+
     return false;
 }
 
@@ -641,6 +675,7 @@ bool DXmlGuiWindow::eventFilter(QObject* obj, QEvent* ev)
     }
 
     // pass the event on to the parent class
+
     return QObject::eventFilter(obj, ev);
 }
 
@@ -675,6 +710,7 @@ KToolBar* DXmlGuiWindow::mainToolBar() const
 void DXmlGuiWindow::showToolBars(bool visible)
 {
     // We will hide toolbars: store previous state for future restoring.
+
     if (!visible)
     {
         d->toolbarsVisibility.clear();
@@ -690,7 +726,9 @@ void DXmlGuiWindow::showToolBars(bool visible)
     }
 
     // Switch toolbars visibility
-    for (QMap<KToolBar*, bool>::const_iterator it = d->toolbarsVisibility.constBegin(); it != d->toolbarsVisibility.constEnd(); ++it)
+
+    for (QMap<KToolBar*, bool>::const_iterator it = d->toolbarsVisibility.constBegin() ;
+         it != d->toolbarsVisibility.constEnd() ; ++it)
     {
         KToolBar* const toolbar = it.key();
         bool visibility         = it.value();
@@ -698,23 +736,30 @@ void DXmlGuiWindow::showToolBars(bool visible)
         if (toolbar)
         {
             if (visible && visibility)
+            {
                 toolbar->show();
+            }
             else
+            {
                 toolbar->hide();
+            }
         }
     }
 
     // We will show toolbars: restore previous state.
+
     if (visible)
     {
-        for (QMap<KToolBar*, bool>::const_iterator it = d->toolbarsVisibility.constBegin(); it != d->toolbarsVisibility.constEnd(); ++it)
+        for (QMap<KToolBar*, bool>::const_iterator it = d->toolbarsVisibility.constBegin() ;
+             it != d->toolbarsVisibility.constEnd() ; ++it)
         {
             KToolBar* const toolbar = it.key();
             bool visibility         = it.value();
 
             if (toolbar)
             {
-                visibility ? toolbar->show() : toolbar->hide();
+                visibility ? toolbar->show()
+                           : toolbar->hide();
             }
         }
     }
@@ -772,45 +817,58 @@ QAction* DXmlGuiWindow::buildStdAction(StdActionType type, const QObject* const 
         case StdCopyAction:
             return KStandardAction::copy(recvr, slot, parent);
             break;
+
         case StdPasteAction:
             return KStandardAction::paste(recvr, slot, parent);
             break;
+
         case StdCutAction:
             return KStandardAction::cut(recvr, slot, parent);
             break;
+
         case StdQuitAction:
             return KStandardAction::quit(recvr, slot, parent);
             break;
+
         case StdCloseAction:
             return KStandardAction::close(recvr, slot, parent);
             break;
+
         case StdZoomInAction:
             return KStandardAction::zoomIn(recvr, slot, parent);
             break;
+
         case StdZoomOutAction:
             return KStandardAction::zoomOut(recvr, slot, parent);
             break;
+
         case StdOpenAction:
 #ifndef __clang_analyzer__
             // NOTE: disable false positive report from scan build about open()
             return KStandardAction::open(recvr, slot, parent);
 #endif
             break;
+
         case StdSaveAction:
             return KStandardAction::save(recvr, slot, parent);
             break;
+
         case StdSaveAsAction:
             return KStandardAction::saveAs(recvr, slot, parent);
             break;
+
         case StdRevertAction:
             return KStandardAction::revert(recvr, slot, parent);
             break;
+
         case StdBackAction:
             return KStandardAction::back(recvr, slot, parent);
             break;
+
         case StdForwardAction:
             return KStandardAction::forward(recvr, slot, parent);
             break;
+
         default:
             return nullptr;
             break;
@@ -887,7 +945,7 @@ void DXmlGuiWindow::setupIconTheme()
             QIcon::setThemeSearchPaths(QStringList() << QIcon::themeSearchPaths() << iconsDirs);
         }
 
-        if (hasBreeze)
+        if      (hasBreeze)
         {
             QIcon::setThemeName(QLatin1String("breeze"));
         }

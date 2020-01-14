@@ -48,12 +48,12 @@ class Q_DECL_HIDDEN FullScreenSettings::Private
 public:
 
     explicit Private()
+      : options(FS_NONE),
+        hideToolBars(nullptr),
+        hideThumbBar(nullptr),
+        hideSideBars(nullptr),
+        hideStatusBar(nullptr)
     {
-        options       = FS_NONE;
-        hideToolBars  = nullptr;
-        hideThumbBar  = nullptr;
-        hideSideBars  = nullptr;
-        hideStatusBar = nullptr;
     }
 
     int        options;
@@ -91,10 +91,25 @@ FullScreenSettings::FullScreenSettings(int options, QWidget* const parent)
     vlay->setContentsMargins(spacing, spacing, spacing, spacing);
     vlay->setSpacing(0);
 
-    if (!(options & FS_TOOLBARS))  d->hideToolBars->hide();
-    if (!(options & FS_THUMBBAR))  d->hideThumbBar->hide();
-    if (!(options & FS_SIDEBARS))  d->hideSideBars->hide();
-    if (!(options & FS_STATUSBAR)) d->hideStatusBar->hide();
+    if (!(options & FS_TOOLBARS))
+    {
+        d->hideToolBars->hide();
+    }
+
+    if (!(options & FS_THUMBBAR))
+    {
+        d->hideThumbBar->hide();
+    }
+
+    if (!(options & FS_SIDEBARS))
+    {
+        d->hideSideBars->hide();
+    }
+
+    if (!(options & FS_STATUSBAR))
+    {
+        d->hideStatusBar->hide();
+    }
 }
 
 FullScreenSettings::~FullScreenSettings()
@@ -105,31 +120,47 @@ FullScreenSettings::~FullScreenSettings()
 void FullScreenSettings::readSettings(const KConfigGroup& group)
 {
     if (d->options & FS_TOOLBARS)
+    {
         d->hideToolBars->setChecked(group.readEntry(s_configFullScreenHideToolBarsEntry,   false));
+    }
 
     if (d->options & FS_THUMBBAR)
+    {
         d->hideThumbBar->setChecked(group.readEntry(s_configFullScreenHideThumbBarEntry,   true));
+    }
 
     if (d->options & FS_SIDEBARS)
+    {
         d->hideSideBars->setChecked(group.readEntry(s_configFullScreenHideSideBarsEntry,   false));
+    }
 
     if (d->options & FS_STATUSBAR)
+    {
         d->hideStatusBar->setChecked(group.readEntry(s_configFullScreenHideStatusBarEntry, false));
+    }
 }
 
 void FullScreenSettings::saveSettings(KConfigGroup& group)
 {
     if (d->options & FS_TOOLBARS)
+    {
         group.writeEntry(s_configFullScreenHideToolBarsEntry,  d->hideToolBars->isChecked());
+    }
 
     if (d->options & FS_THUMBBAR)
+    {
         group.writeEntry(s_configFullScreenHideThumbBarEntry,  d->hideThumbBar->isChecked());
+    }
 
     if (d->options & FS_SIDEBARS)
+    {
         group.writeEntry(s_configFullScreenHideSideBarsEntry,  d->hideSideBars->isChecked());
+    }
 
     if (d->options & FS_STATUSBAR)
+    {
         group.writeEntry(s_configFullScreenHideStatusBarEntry, d->hideStatusBar->isChecked());
+    }
 
     group.sync();
 }

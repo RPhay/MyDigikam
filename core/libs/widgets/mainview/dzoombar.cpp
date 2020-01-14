@@ -57,15 +57,15 @@ class Q_DECL_HIDDEN DZoomBar::Private
 public:
 
     explicit Private()
+      : zoomToFitButton(nullptr),
+        zoomTo100Button(nullptr),
+        zoomPlusButton(nullptr),
+        zoomMinusButton(nullptr),
+        zoomTimer(nullptr),
+        zoomSlider(nullptr),
+        zoomCombo(nullptr),
+        zoomTracker(nullptr)
     {
-        zoomToFitButton = nullptr;
-        zoomTo100Button = nullptr;
-        zoomTracker     = nullptr;
-        zoomMinusButton = nullptr;
-        zoomPlusButton  = nullptr;
-        zoomSlider      = nullptr;
-        zoomTimer       = nullptr;
-        zoomCombo       = nullptr;
     }
 
     QToolButton*    zoomToFitButton;
@@ -83,7 +83,8 @@ public:
 };
 
 DZoomBar::DZoomBar(QWidget* const parent)
-    : DHBox(parent), d(new Private)
+    : DHBox(parent),
+      d(new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setFocusPolicy(Qt::NoFocus);
@@ -243,22 +244,24 @@ void DZoomBar::setThumbsSize(int size)
 
 int DZoomBar::sizeFromZoom(double zoom, double zmin, double zmax)
 {
-    double h = (double)ThumbnailSize::maxThumbsSize();
-    double s = (double)ThumbnailSize::Small;
+    double h     = (double)ThumbnailSize::maxThumbsSize();
+    double s     = (double)ThumbnailSize::Small;
     double zoomN = log(zoom)/log(2);
     double zminN = log(zmin)/log(2);
     double zmaxN = log(zmax)/log(2);
-    double zval = (zoomN-zminN)/(zmaxN-zminN);
+    double zval  = (zoomN-zminN)/(zmaxN-zminN);
+
     return (int)(zval*(h - s) + s);
 }
 
 double DZoomBar::zoomFromSize(int size, double zmin, double zmax)
 {
-    double h = (double)ThumbnailSize::maxThumbsSize();
-    double s = (double)ThumbnailSize::Small;
+    double h     = (double)ThumbnailSize::maxThumbsSize();
+    double s     = (double)ThumbnailSize::Small;
     double zminN = log(zmin)/log(2);
     double zmaxN = log(zmax)/log(2);
-    double zval = (size - s)/(h - s);
+    double zval  = (size - s)/(h - s);
+
     return pow(2, zval*(zmaxN-zminN) + zminN);
 }
 
@@ -323,6 +326,7 @@ void DZoomBar::setBarMode(BarMode mode)
             d->zoomTracker->setEnable(false);
             break;
         }
+
         case ThumbsSizeCtrl:
         {
             d->zoomToFitButton->show();
@@ -344,6 +348,7 @@ void DZoomBar::setBarMode(BarMode mode)
             d->zoomTracker->setEnable(true);
             break;
         }
+
         default:   // NoPreviewZoomCtrl
         {
             d->zoomToFitButton->hide();

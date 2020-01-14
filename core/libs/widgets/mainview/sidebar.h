@@ -53,7 +53,7 @@ class DMultiTabBarTab;
 /**
  * A Widget for horizontal and vertical tabs.
  */
-class DIGIKAM_EXPORT DMultiTabBar: public QWidget
+class DIGIKAM_EXPORT DMultiTabBar : public QWidget
 {
     Q_OBJECT
 
@@ -64,8 +64,8 @@ public:
      */
     enum TextStyle
     {
-        ActiveIconText = 0, /// Always shows icon, only show the text of active tabs.
-        AllIconsText   = 2  /// Always shows the text and icons.
+        ActiveIconText = 0, ///< Always shows icon, only show the text of active tabs.
+        AllIconsText   = 2  ///< Always shows the text and icons.
     };
 
 public:
@@ -483,16 +483,19 @@ public:
      * DEFAULT_CONFIG_KEY is used for storing the state.
      */
     void saveState(KConfigGroup& group);
+
     /**
      * Saves the splitter state to group, handling minimized sidebars correctly.
      * This version uses a specified key in the config group.
      */
     void saveState(KConfigGroup& group, const QString& key);
+
     /**
      * Restores the splitter state from group, handling minimized sidebars correctly.
      * DEFAULT_CONFIG_KEY is used for restoring the state.
      */
     void restoreState(KConfigGroup& group);
+
     /**
      * Restores the splitter state from group, handling minimized sidebars correctly.
      * This version uses a specified key in the config group.
@@ -504,6 +507,7 @@ public:
      */
     int size(Sidebar* const bar)    const;
     int size(QWidget* const widget) const;
+
     /**
      * Sets the splitter size for the given sidebar or splitter child widget to size.
      * Special value -1: Sets the minimum size hint of the widget.

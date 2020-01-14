@@ -47,11 +47,12 @@ class Q_DECL_HIDDEN DCursorTracker::Private
 public:
 
     explicit Private()
+      : alignment(Qt::AlignCenter),
+        enable(true),
+        keepOpen(false),
+        autoHideTimer(nullptr),
+        parent(nullptr)
     {
-        keepOpen      = false;
-        enable        = true;
-        autoHideTimer = nullptr;
-        parent        = nullptr;
     }
 
     Qt::Alignment     alignment;
@@ -226,7 +227,7 @@ void DCursorTracker::paintEvent(QPaintEvent* e)
 
 bool DCursorTracker::canBeDisplayed()
 {
-    return d->enable && d->parent->isVisible();
+    return (d->enable && d->parent->isVisible());
 }
 
 } // namespace Digikam

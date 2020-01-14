@@ -63,7 +63,7 @@ public:
 protected:
 
     bool eventFilter(QObject*, QEvent*) override;
-    void paintEvent(QPaintEvent*) override;
+    void paintEvent(QPaintEvent*)       override;
 
 private Q_SLOTS:
 

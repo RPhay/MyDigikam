@@ -127,7 +127,9 @@ void ThemeManager::slotChangePalette()
 
     QString filename        = d->themeMap.value(theme);
     KSharedConfigPtr config = KSharedConfig::openConfig(filename);
+
     // hint for the style to synchronize the color scheme with the window manager/compositor
+
     qApp->setProperty("KDE_COLOR_SCHEME_PATH", filename);
     qApp->setPalette(SchemeManager::createApplicationPalette(config));
     qApp->style()->polish(qApp);
@@ -184,6 +186,7 @@ void ThemeManager::populateThemeMenu()
     QStringList dirs;
 
     // digiKam colors scheme
+
     dirs << QStandardPaths::locateAll(QStandardPaths::GenericDataLocation,
                                       QLatin1String("digikam/colorschemes"),
                                       QStandardPaths::LocateDirectory);
@@ -202,7 +205,7 @@ void ThemeManager::populateThemeMenu()
 
     QMap<QString, QAction*> actionMap;
 
-    for (int i = 0; i < schemeFiles.size(); ++i)
+    for (int i = 0 ; i < schemeFiles.size() ; ++i)
     {
         const QString filename  = schemeFiles.at(i);
         const QFileInfo info(filename);
@@ -218,6 +221,7 @@ void ThemeManager::populateThemeMenu()
     }
 
     // sort the list
+
     QStringList actionMapKeys = actionMap.keys();
     actionMapKeys.sort();
 
