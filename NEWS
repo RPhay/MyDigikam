@@ -559,7 +559,7 @@ BUGFIXES:
 544 ==> 401912 - Crash on adding GPS coordinates to multiple images.
 545 ==> 412679 - Scrolling to a illogical place in the main view.
 546 ==> 397761 - Tags are not written.
-547 ==> 
+547 ==> 416231 - Exif date not written to sidecar file when modified, nor is it updated in the metadata sidebar.
 548 ==> 
 549 ==> 
 550 ==> 
