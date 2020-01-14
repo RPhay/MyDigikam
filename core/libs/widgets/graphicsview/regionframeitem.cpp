@@ -71,7 +71,7 @@ enum CropHandleFlag
 
 enum HudSide
 {
-    HS_None         = 0, // Special value used to avoid initial animation
+    HS_None         = 0, ///< Special value used to avoid initial animation
     HS_Top          = 1,
     HS_Bottom       = 2,
     HS_Inside       = 4,
@@ -130,17 +130,17 @@ public:
 
 RegionFrameItem::Private::Private(RegionFrameItem* const qq)
     : q(qq),
+      hudSide(HS_None),
+      movingHandle(CH_None),
+      fixedRatio(0),
+      hudWidget(nullptr),
+      flags(NoFlags),
+      resizeHandleVisibility(nullptr),
+      hoverAnimationOpacity(1.0),
+      hudTimer(nullptr),
       HUD_TIMER_MAX_PIXELS_PER_UPDATE(20),
       HUD_TIMER_ANIMATION_INTERVAL(20)
 {
-    hudSide               = HS_None;
-    movingHandle          = CH_None;
-    fixedRatio            = 0;
-    resizeHandleVisibility= nullptr;
-    hudWidget             = nullptr;
-    hoverAnimationOpacity = 1.0;
-    hudTimer              = nullptr;
-    flags                 = NoFlags;
 
     cropHandleList << CH_Left << CH_Right << CH_Top << CH_Bottom
                    << CH_TopLeft << CH_TopRight
@@ -152,7 +152,7 @@ QRectF RegionFrameItem::Private::handleRect(CropHandle handle) const
     QSizeF size = q->boundingRect().size();
     double left, top;
 
-    if (handle & CH_Top)
+    if      (handle & CH_Top)
     {
         top = 0;
     }
@@ -165,7 +165,7 @@ QRectF RegionFrameItem::Private::handleRect(CropHandle handle) const
         top = (size.height() - HANDLE_SIZE) / 2;
     }
 
-    if (handle & CH_Left)
+    if      (handle & CH_Left)
     {
         left = 0;
     }
@@ -251,15 +251,16 @@ QRectF RegionFrameItem::Private::keepRectInsideImage(const QRectF& rect, bool mo
     QRectF r(rect);
     const QSizeF imageSize = q->parentDImgItem()->boundingRect().size();
 
-    if (r.width() > imageSize.width() || r.height() > imageSize.height())
+    if ((r.width() > imageSize.width()) || (r.height() > imageSize.height()))
     {
         // This can happen when the crop ratio changes
+
         QSizeF rectSize = r.size();
         rectSize.scale(imageSize, Qt::KeepAspectRatio);
         r.setSize(rectSize);
     }
 
-    if (r.right() > imageSize.width())
+    if      (r.right() > imageSize.width())
     {
         moving ? r.moveRight(imageSize.width()) : r.setRight(imageSize.width());
     }
@@ -268,7 +269,7 @@ QRectF RegionFrameItem::Private::keepRectInsideImage(const QRectF& rect, bool mo
         moving ? r.moveLeft(0) : r.setLeft(0);
     }
 
-    if (r.bottom() > imageSize.height())
+    if      (r.bottom() > imageSize.height())
     {
         moving ? r.moveBottom(imageSize.height()) : r.setBottom(imageSize.height());
     }
@@ -293,6 +294,7 @@ OptimalPosition RegionFrameItem::Private::computeOptimalHudWidgetPosition() cons
 
     // Compute preferred and fallback positions. Preferred is outside rect
     // on the same side, fallback is outside on the other side.
+
     OptimalPosition preferred     = OptimalPosition(QPointF(rect.left(), rect.bottom() + margin),          HS_Bottom);
     OptimalPosition fallback      = OptimalPosition(QPointF(rect.left(), rect.top() - margin - hudHeight), HS_Top);
 
@@ -302,6 +304,7 @@ OptimalPosition RegionFrameItem::Private::computeOptimalHudWidgetPosition() cons
     }
 
     // Check if a position outside rect fits
+
     if (hudMaxRect.contains(preferred.first))
     {
         ret = preferred;
@@ -313,6 +316,7 @@ OptimalPosition RegionFrameItem::Private::computeOptimalHudWidgetPosition() cons
     else
     {
         // Does not fit outside, use a position inside rect
+
         QPoint pos;
 
         if (hudSide & HS_Top)
@@ -328,9 +332,11 @@ OptimalPosition RegionFrameItem::Private::computeOptimalHudWidgetPosition() cons
     }
 
     // Ensure it's always fully visible
+
     ret.first.rx() = qMin(ret.first.rx(), hudMaxRect.width() - hudWidget->boundingRect().width());
 
     // map from scene to item coordinates
+
     ret.first      = q->mapFromScene(ret.first);
 
     return ret;
@@ -345,7 +351,7 @@ void RegionFrameItem::Private::updateHudWidgetPosition()
 
     OptimalPosition result = computeOptimalHudWidgetPosition();
 
-    if (result.first == hudWidget->pos() && result.second == hudSide)
+    if ((result.first == hudWidget->pos()) && (result.second == hudSide))
     {
         return;
     }
@@ -355,10 +361,11 @@ void RegionFrameItem::Private::updateHudWidgetPosition()
         hudSide = result.second;
     }
 
-    if (hudSide == result.second && !hudTimer->isActive())
+    if ((hudSide == result.second) && !hudTimer->isActive())
     {
         // Not changing side and not in an animation, move directly the hud
         // to the final position to avoid lagging effect
+
         hudWidget->setPos(result.first);
     }
     else
@@ -410,6 +417,7 @@ RegionFrameItem::~RegionFrameItem()
     if (d->hudWidget)
     {
         // See bug #359196: hide or close the QGraphicsWidget before delete it. Possible Qt bug?
+
         d->hudWidget->hide();
         delete d->hudWidget;
     }
@@ -420,12 +428,14 @@ RegionFrameItem::~RegionFrameItem()
 void RegionFrameItem::setHudWidget(QWidget* const widget, Qt::WindowFlags wFlags)
 {
     QGraphicsProxyWidget* const proxy = new QGraphicsProxyWidget(nullptr, wFlags);
+
     /*
      * This is utterly undocumented magic. If you add a normal widget directly,
      * with transparent parts (round corners), you will have ugly color in the corners.
      * If you set WA_TranslucentBackground on the widget directly, a lot of the
      * painting and stylesheets is broken. Like this, with an extra container, it seems to work.
      */
+
     QWidget* const container  = new QWidget;
     container->setAttribute(Qt::WA_TranslucentBackground);
     QHBoxLayout* const layout = new QHBoxLayout;
@@ -435,7 +445,9 @@ void RegionFrameItem::setHudWidget(QWidget* const widget, Qt::WindowFlags wFlags
     layout->addWidget(widget);
     container->setLayout(layout);
     proxy->setWidget(container);
+
     // Reset fixed sizes wrongly copied by setWidget onto the QGraphicsWidget
+
     proxy->setMinimumSize(QSizeF());
     proxy->setMaximumSize(QSizeF());
 
@@ -483,6 +495,7 @@ void RegionFrameItem::setFlags(Flags flags)
     d->resizeHandleVisibility->controller()->setShallBeShown(d->flags & ShowResizeHandles);
 
     // ensure cursor is reset
+
     CropHandle handle = d->handleAt(QCursor::pos());
     d->updateCursor(handle, false/* buttonDown*/);
 }
@@ -540,7 +553,7 @@ void RegionFrameItem::setViewportRect(const QRectF& rect)
 
 QRectF RegionFrameItem::boundingRect() const
 {
-    return DImgChildItem::boundingRect();//.adjusted(-1, -1, 1, 1);
+    return DImgChildItem::boundingRect();   //.adjusted(-1, -1, 1, 1);
 }
 
 void RegionFrameItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
@@ -561,6 +574,7 @@ void RegionFrameItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, 
     const QColor fillColor   = QColor::fromHsvF(0, 0, 0.75, 0.66);
 
     // will paint to the left and bottom of logical coordinates
+
     QRectF drawRect          = boundingRect();
 
     painter->setPen(borderColor);
@@ -569,6 +583,7 @@ void RegionFrameItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, 
     if (d->resizeHandleVisibility->isVisible())
     {
         // Only draw handles when user is not resizing
+
         if (d->movingHandle == CH_None)
         {
             painter->setOpacity(d->resizeHandleVisibility->opacity());
@@ -622,6 +637,7 @@ void RegionFrameItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
     // FIXME: Fade out?
     //d->hudWidget->hide();
+
     if (!(d->flags & GeometryEditable))
     {
         return DImgChildItem::mousePressEvent(event);
@@ -636,6 +652,7 @@ void RegionFrameItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
     }
 
     // Update to hide handles
+
     update();
 }
 
@@ -648,7 +665,8 @@ void RegionFrameItem::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     QRectF r             = rect();
 
     // Adjust edge
-    if (d->movingHandle & CH_Top)
+
+    if      (d->movingHandle & CH_Top)
     {
         r.setTop(posY);
     }
@@ -657,7 +675,7 @@ void RegionFrameItem::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
         r.setBottom(posY);
     }
 
-    if (d->movingHandle & CH_Left)
+    if      (d->movingHandle & CH_Left)
     {
         r.setLeft(posX);
     }
@@ -668,6 +686,7 @@ void RegionFrameItem::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
 
     // Normalize rect and handles (this is useful when user drag the right side
     // of the crop rect to the left of the left side)
+
     if (r.height() < 0)
     {
         d->movingHandle = d->movingHandle ^ (CH_Top | CH_Bottom);
@@ -681,29 +700,34 @@ void RegionFrameItem::mouseMoveEvent(QGraphicsSceneMouseEvent* event)
     r = r.normalized();
 
     // Enforce ratio
+
     if (d->fixedRatio > 0.)
     {
-        if (d->movingHandle == CH_Top || d->movingHandle == CH_Bottom)
+        if      ((d->movingHandle == CH_Top) || (d->movingHandle == CH_Bottom))
         {
             // Top or bottom
+
             int width = int(r.height() / d->fixedRatio);
             r.setWidth(width);
         }
-        else if (d->movingHandle == CH_Left || d->movingHandle == CH_Right)
+        else if ((d->movingHandle == CH_Left) || (d->movingHandle == CH_Right))
         {
             // Left or right
+
             int height = int(r.width() * d->fixedRatio);
             r.setHeight(height);
         }
         else if (d->movingHandle & CH_Top)
         {
             // Top left or top right
+
             int height = int(r.width() * d->fixedRatio);
             r.setTop(r.bottom() - height);
         }
         else if (d->movingHandle & CH_Bottom)
         {
             // Bottom left or bottom right
+
             int height = int(r.width() * d->fixedRatio);
             r.setHeight(height);
         }
@@ -725,16 +749,18 @@ void RegionFrameItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
     // FIXME: Fade in?
     //d->hudWidget->show();
+
     d->movingHandle = CH_None;
     d->updateCursor(d->handleAt(event->pos()), false);
 
     // Update to show handles
+
     update();
 }
 
 bool RegionFrameItem::eventFilter(QObject* watched, QEvent* event)
 {
-    if (watched == d->hudWidget && event->type() == QEvent::GraphicsSceneResize)
+    if ((watched == d->hudWidget) && (event->type() == QEvent::GraphicsSceneResize))
     {
         d->updateHudWidgetPosition();
     }

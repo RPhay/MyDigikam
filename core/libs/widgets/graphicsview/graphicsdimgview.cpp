@@ -49,14 +49,14 @@ class Q_DECL_HIDDEN GraphicsDImgView::Private
 public:
 
     explicit Private()
+      : scene(nullptr),
+        item(nullptr),
+        layout(nullptr),
+        cornerButton(nullptr),
+        panIconPopup(nullptr),
+        movingInProgress(false),
+        showText(true)
     {
-        scene            = nullptr;
-        item             = nullptr;
-        layout           = nullptr;
-        cornerButton     = nullptr;
-        panIconPopup     = nullptr;
-        movingInProgress = false;
-        showText         = true;
     }
 
     QGraphicsScene*           scene;
@@ -168,17 +168,22 @@ void GraphicsDImgView::drawText(QPainter* p, const QRectF& rect, const QString& 
     p->setBackgroundMode(Qt::TransparentMode);
 
     // increase width by 5 and height by 2
+
     QRectF textRect    = rect.adjusted(0, 0, 5, 2);
 
     // Draw background
+
     p->setPen(Qt::black);
     QColor semiTransBg = palette().color(QPalette::Window);
     semiTransBg.setAlpha(190);
     p->setBrush(semiTransBg);
-    //p->translate(0.5, 0.5);
+/*
+    p->translate(0.5, 0.5);
+*/
     p->drawRoundedRect(textRect, 10.0, 10.0);
 
     // Draw shadow and text
+
     p->setPen(palette().color(QPalette::Window).darker(115));
     p->drawText(textRect.translated(3, 1), text);
     p->setPen(palette().color(QPalette::WindowText));
@@ -224,11 +229,11 @@ void GraphicsDImgView::mousePressEvent(QMouseEvent* e)
         emit leftButtonClicked();
     }
 
-    if (e->button() == Qt::LeftButton || e->button() == Qt::MidButton)
+    if ((e->button() == Qt::LeftButton) || (e->button() == Qt::MidButton))
     {
         d->mousePressPos = e->pos();
 
-        if (!qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick) || e->button() == Qt::MidButton)
+        if (!qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick) || (e->button() == Qt::MidButton))
         {
             startPanning(e->pos());
         }
@@ -246,9 +251,9 @@ void GraphicsDImgView::mouseMoveEvent(QMouseEvent* e)
 {
     QGraphicsView::mouseMoveEvent(e);
 
-    if ((e->buttons() & Qt::LeftButton || e->buttons() & Qt::MidButton) && !d->mousePressPos.isNull())
+    if (((e->buttons() & Qt::LeftButton) || (e->buttons() & Qt::MidButton)) && !d->mousePressPos.isNull())
     {
-        if (!d->movingInProgress && e->buttons() & Qt::LeftButton)
+        if (!d->movingInProgress && (e->buttons() & Qt::LeftButton))
         {
             if ((d->mousePressPos - e->pos()).manhattanLength() > QApplication::startDragDistance())
             {
@@ -269,9 +274,9 @@ void GraphicsDImgView::mouseReleaseEvent(QMouseEvent* e)
 
     // Do not call acceptsMouseClick() here, only on press. Seems that release event are accepted per default.
 
-    if ((e->button() == Qt::LeftButton || e->button() == Qt::MidButton) && !d->mousePressPos.isNull())
+    if (((e->button() == Qt::LeftButton) || (e->button() == Qt::MidButton)) && !d->mousePressPos.isNull())
     {
-        if (!d->movingInProgress && e->button() == Qt::LeftButton)
+        if (!d->movingInProgress && (e->button() == Qt::LeftButton))
         {
             if (qApp->style()->styleHint(QStyle::SH_ItemView_ActivateItemOnSingleClick))
             {
@@ -291,6 +296,7 @@ void GraphicsDImgView::mouseReleaseEvent(QMouseEvent* e)
 bool GraphicsDImgView::acceptsMouseClick(QMouseEvent* e)
 {
     // the basic condition is that now item ate the event
+
     if (e->isAccepted())
     {
         return false;
@@ -350,9 +356,9 @@ void GraphicsDImgView::scrollPointOnPoint(const QPointF& scenePos, const QPoint&
         if (isRightToLeft())
         {
             qint64 horizontal = 0;
-            horizontal += horizontalScrollBar()->minimum();
-            horizontal += horizontalScrollBar()->maximum();
-            horizontal -= int(viewPoint.x() - viewportPos.x());
+            horizontal       += horizontalScrollBar()->minimum();
+            horizontal       += horizontalScrollBar()->maximum();
+            horizontal       -= int(viewPoint.x() - viewportPos.x());
             horizontalScrollBar()->setValue(horizontal);
         }
         else
@@ -377,7 +383,7 @@ void GraphicsDImgView::wheelEvent(QWheelEvent* e)
     {
         e->accept();
 
-        if (e->delta() < 0)
+        if      (e->delta() < 0)
         {
             emit toNextImage();
         }
@@ -391,7 +397,8 @@ void GraphicsDImgView::wheelEvent(QWheelEvent* e)
     else if (e->modifiers() & Qt::ControlModifier)
     {
         // When zooming with the mouse-wheel, the image center is kept fixed.
-        if (e->delta() < 0)
+ 
+        if      (e->delta() < 0)
         {
             d->layout->decreaseZoom(e->pos());
         }
@@ -403,20 +410,22 @@ void GraphicsDImgView::wheelEvent(QWheelEvent* e)
         return;
     }
 
-    else if((p == this->verticalScrollBar()->maximum() && e->angleDelta().y() < 0)
-            ||(p == this->verticalScrollBar()->minimum() && e->angleDelta().y() > 0))
+    else if(
+            ((p == this->verticalScrollBar()->maximum()) && (e->angleDelta().y() < 0)) ||
+            ((p == this->verticalScrollBar()->minimum()) && (e->angleDelta().y() > 0))
+           )
     {
         // I had to add this condition for "ImageBrushGuideWidget" that subclasses ImageRegionWidget, used
         // in the healingclone tool.
         // If I remove that condition, this event handler gets called recursively and the program
         // crashes.T I couldn't figure out the reason. [Ahmed Fathy]
+
         return;
     }
     else
     {
         QGraphicsView::wheelEvent(e);
     }
-
 }
 
 void GraphicsDImgView::slotCornerButtonPressed()
@@ -430,10 +439,10 @@ void GraphicsDImgView::slotCornerButtonPressed()
 
     d->panIconPopup          = new PanIconFrame(this);
     PanIconWidget* const pan = new PanIconWidget(d->panIconPopup);
-
-    //connect(pan, SIGNAL(signalSelectionTakeFocus()),
-    //      this, SIGNAL(signalContentTakeFocus()));
-
+/*
+    connect(pan, SIGNAL(signalSelectionTakeFocus()),
+            this, SIGNAL(signalContentTakeFocus()));
+*/
     connect(pan, SIGNAL(signalSelectionMoved(QRect,bool)),
             this, SLOT(slotPanIconSelectionMoved(QRect,bool)));
 
@@ -445,8 +454,9 @@ void GraphicsDImgView::slotCornerButtonPressed()
     pan->setRegionSelection(item()->zoomSettings()->sourceRect(sceneRect).toRect());
     pan->setMouseFocus();
     d->panIconPopup->setMainWidget(pan);
-    //slotContentTakeFocus();
-
+/*
+    slotContentTakeFocus();
+*/
     QPoint g = mapToGlobal(viewport()->pos());
     g.setX(g.x()+ viewport()->size().width());
     g.setY(g.y()+ viewport()->size().height());

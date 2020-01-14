@@ -59,12 +59,12 @@ DImgPreviewItem::DImgPreviewItem(DImgPreviewItemPrivate& dd, QGraphicsItem* cons
 }
 
 DImgPreviewItem::DImgPreviewItemPrivate::DImgPreviewItemPrivate()
+    : state(DImgPreviewItem::NoImage),
+      exifRotate(false),
+      previewSize(1024),
+      previewThread(nullptr),
+      preloadThread(nullptr)
 {
-    state             = DImgPreviewItem::NoImage;
-    previewSize       = 1024;
-    exifRotate        = false;
-    previewThread     = nullptr;
-    preloadThread     = nullptr;
 }
 
 void DImgPreviewItem::DImgPreviewItemPrivate::init(DImgPreviewItem* const q)
@@ -80,6 +80,7 @@ void DImgPreviewItem::DImgPreviewItemPrivate::init(DImgPreviewItem* const q)
                      q, SLOT(preloadNext()));
 
     // get preview size from screen size, but limit from VGA to WQXGA
+
     previewSize = qBound(640,
                          qMax(qApp->primaryScreen()->availableGeometry().height(),
                               qApp->primaryScreen()->availableGeometry().width()),
@@ -107,10 +108,12 @@ void DImgPreviewItem::setDisplayingWidget(QWidget* const widget)
 void DImgPreviewItem::setPreviewSettings(const PreviewSettings& settings)
 {
     Q_D(DImgPreviewItem);
+
     if (settings == d->previewSettings)
     {
         return;
     }
+
     d->previewSettings = settings;
     reload();
 }
@@ -118,6 +121,7 @@ void DImgPreviewItem::setPreviewSettings(const PreviewSettings& settings)
 QString DImgPreviewItem::path() const
 {
     Q_D(const DImgPreviewItem);
+
     return d->path;
 }
 
@@ -164,14 +168,14 @@ static bool approximates(const QSizeF& s1, const QSizeF& s2)
 
     double widthRatio = s1.width() / s2.width();
 
-    if (widthRatio < 0.98 || widthRatio > 1.02)
+    if ((widthRatio < 0.98) || (widthRatio > 1.02))
     {
         return false;
     }
 
     double heightRatio = s1.height() / s2.height();
 
-    if (heightRatio < 0.98 || heightRatio > 1.02)
+    if ((heightRatio < 0.98) || (heightRatio > 1.02))
     {
         return false;
     }
@@ -189,10 +193,12 @@ QString DImgPreviewItem::userLoadingHint() const
         {
             return QString();
         }
+
         case Loading:
         {
             return i18n("Loading...");
         }
+
         case ImageLoaded:
         {
             if (d->image.detectedFormat() == DImg::RAW)
@@ -221,6 +227,7 @@ QString DImgPreviewItem::userLoadingHint() const
 
             return QString();   // To please compiler without warnings.
         }
+
         default: // ImageLoadingFailed:
         {
             break;
@@ -241,12 +248,14 @@ void DImgPreviewItem::reload()
 DImgPreviewItem::State DImgPreviewItem::state() const
 {
     Q_D(const DImgPreviewItem);
+
     return d->state;
 }
 
 bool DImgPreviewItem::isLoaded() const
 {
     Q_D(const DImgPreviewItem);
+
     return (d->state == ImageLoaded);
 }
 
@@ -304,9 +313,9 @@ void DImgPreviewItem::slotFileChanged(const QString& path)
 
 void DImgPreviewItem::iccSettingsChanged(const ICCSettingsContainer& current, const ICCSettingsContainer& previous)
 {
-    if (current.enableCM != previous.enableCM                     ||
-        current.useManagedPreviews != previous.useManagedPreviews ||
-        current.monitorProfile != previous.monitorProfile)
+    if ((current.enableCM != previous.enableCM)                     ||
+        (current.useManagedPreviews != previous.useManagedPreviews) ||
+        (current.monitorProfile != previous.monitorProfile))
     {
         reload();
     }

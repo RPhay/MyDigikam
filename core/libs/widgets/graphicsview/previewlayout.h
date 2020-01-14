@@ -59,24 +59,30 @@ public:
     explicit SinglePhotoPreviewLayout(QObject* const parent);
     ~SinglePhotoPreviewLayout();
 
-    /** Set the graphics view, and associated scene, to operate on. */
+    /**
+     * Set the graphics view, and associated scene, to operate on.
+     */
     void setGraphicsView(GraphicsDImgView* view);
 
-    /** Set the item to layout. For a SinglePhoto layout, typically,
-     *  you can add only one item. */
+    /**
+     * Set the item to layout. For a SinglePhoto layout, typically,
+     * you can add only one item.
+     */
     void addItem(GraphicsDImgItem* item);
 
-    bool   isFitToWindow() const;
+    bool   isFitToWindow()  const;
     double zoomFactor() const;
     double realZoomFactor() const;
 
-    /** The zoom range for incrementing and decrementing. */
-    double maxZoomFactor() const;
-    double minZoomFactor() const;
+    /**
+     * The zoom range for incrementing and decrementing.
+     */
+    double maxZoomFactor()  const;
+    double minZoomFactor()  const;
     void   setMaxZoomFactor(double z);
     void   setMinZoomFactor(double z);
-    bool   atMaxZoom() const;
-    bool   atMinZoom() const;
+    bool   atMaxZoom()      const;
+    bool   atMinZoom()      const;
 
 Q_SIGNALS:
 
@@ -91,8 +97,10 @@ public Q_SLOTS:
     void setZoomFactor(double z, SetZoomFlags flags);
     void setZoomFactorSnapped(double z);
     void fitToWindow();
+
     /// Toggle between fitToWindow and previous zoom factor
     void toggleFitToWindow();
+
     /// Toggle between fitToWindow and zoom factor 1
     void toggleFitToWindowOr100();
 

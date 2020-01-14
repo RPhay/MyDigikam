@@ -58,7 +58,7 @@ public:
 
     template <class Event> bool isDrag(Event* e)
     {
-        return (pressPos - e->scenePos()).manhattanLength() > QApplication::startDragDistance();
+        return ((pressPos - e->scenePos()).manhattanLength() > QApplication::startDragDistance());
     }
 
     template <class Event> QRectF rect(Event* e)
@@ -118,7 +118,7 @@ void ClickDragReleaseItem::mousePressEvent(QGraphicsSceneMouseEvent* e)
     if (d->state == HoverState)
     {
         d->pressPos = e->scenePos();
-        d->state = PressedState;
+        d->state    = PressedState;
         emit started(e->scenePos());
     }
 }
@@ -147,10 +147,11 @@ void ClickDragReleaseItem::hoverMoveEvent(QGraphicsSceneHoverEvent* e)
 
 void ClickDragReleaseItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* e)
 {
-    if (d->state == PressedState)
+    if      (d->state == PressedState)
     {
         // click-move-click mode first click.
         // It cannot be over the drag threshold in this state, would be caught in moveEvent.
+
         d->state = ClickedMoveState;
         setCursor(Qt::SizeFDiagCursor);
         setAcceptHoverEvents(true);
@@ -158,6 +159,7 @@ void ClickDragReleaseItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* e)
     else if (d->state == ClickedMoveState)
     {
         // click-move-click mode second click
+
         d->state = HoverState;
         setCursor(Qt::CrossCursor);
         setAcceptHoverEvents(false);
@@ -195,6 +197,7 @@ void ClickDragReleaseItem::keyPressEvent(QKeyEvent* e)
         case Qt::Key_Escape:
             emit cancelled();
             break;
+
         default:
             e->ignore();
             break;

@@ -70,7 +70,7 @@ bool CachedPixmaps::find(const QRect& region, QPixmap* const pix, QRect* const s
 {
     QQueue<CachedPixmapKey>::iterator key;
 
-    for (key = keys.begin(); key != keys.end(); )
+    for (key = keys.begin() ; key != keys.end() ; )
     {
         if (!key->region.contains(region))
         {
@@ -133,8 +133,11 @@ GraphicsDImgItem::GraphicsDImgItem(GraphicsDImgItemPrivate& dd, QGraphicsItem* c
 void GraphicsDImgItem::GraphicsDImgItemPrivate::init(GraphicsDImgItem* const q)
 {
     // ItemCoordinateCache is very slow, DeviceCoordinateCache makes severe render artifacts
+
     q->setCacheMode(QGraphicsItem::NoCache);
+
     // This flag is crucial for our performance! Limits redrawing area.
+
     q->setFlag(QGraphicsItem::ItemUsesExtendedStyleOption);
     q->setAcceptedMouseButtons(Qt::NoButton);
 }
@@ -158,6 +161,7 @@ void GraphicsDImgItem::setImage(const DImg& img)
 DImg GraphicsDImgItem::image() const
 {
     Q_D(const GraphicsDImgItem);
+
     return d->image;
 }
 
@@ -178,19 +182,23 @@ void GraphicsDImgItem::clearCache()
 const ImageZoomSettings* GraphicsDImgItem::zoomSettings() const
 {
     Q_D(const GraphicsDImgItem);
+
     return &d->zoomSettings;
 }
 
 ImageZoomSettings* GraphicsDImgItem::zoomSettings()
 {
     Q_D(GraphicsDImgItem);
+
     return &d->zoomSettings;
 }
 
 QRectF GraphicsDImgItem::boundingRect() const
 {
     Q_D(const GraphicsDImgItem);
+
     // always return full integer sizes, we can only scale to integer
+
     return QRectF(QPointF(0, 0), d->zoomSettings.zoomedSize()).toAlignedRect();
 }
 
@@ -204,23 +212,23 @@ void GraphicsDImgItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
     QSize   completeSize = boundingRect().size().toSize();
 
     /* For high resolution ("retina") displays, Mac OS X / Qt
-       report only half of the physical resolution in terms of
-       pixels, i.e. every logical pixels corresponds to 2x2
-       physical pixels. However, UI elements and fonts are
-       nevertheless rendered at full resolution, and pixmaps
-       as well, provided their resolution is high enough (that
-       is, higher than the reported, logical resolution).
-
-       To work around this, we render the photos not a logical
-       resolution, but with the photo's full resolution, but
-       at the screen's aspect ratio. When we later draw this
-       high resolution bitmap, it is up to Qt to scale the
-       photo to the true physical resolution.  The ratio
-       computed below is the ratio between the photo and
-       screen resolutions, or equivalently the factor by which
-       we need to increase the pixel size of the rendered
-       pixmap.
-    */
+     * report only half of the physical resolution in terms of
+     * pixels, i.e. every logical pixels corresponds to 2x2
+     * physical pixels. However, UI elements and fonts are
+     * nevertheless rendered at full resolution, and pixmaps
+     * as well, provided their resolution is high enough (that
+     * is, higher than the reported, logical resolution).
+     *
+     * To work around this, we render the photos not a logical
+     * resolution, but with the photo's full resolution, but
+     * at the screen's aspect ratio. When we later draw this
+     * high resolution bitmap, it is up to Qt to scale the
+     * photo to the true physical resolution.  The ratio
+     * computed below is the ratio between the photo and
+     * screen resolutions, or equivalently the factor by which
+     * we need to increase the pixel size of the rendered
+     * pixmap.
+     */
 
     double ratio          = qApp->devicePixelRatio();
 
@@ -243,6 +251,7 @@ void GraphicsDImgItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* 
     else
     {
         // scale "as if" scaling to whole image, but clip output to our exposed region
+
         QSize scaledCompleteSize = QSizeF(ratio * completeSize.width(),
                                           ratio * completeSize.height()).toSize();
         DImg scaledImage         = d->image.smoothScaleClipped(scaledCompleteSize.width(),
