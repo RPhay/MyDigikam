@@ -53,33 +53,30 @@ class Q_DECL_HIDDEN TemplatePanel::Private
 public:
 
     explicit Private()
+      : authorsEdit(nullptr),
+        authorsPositionEdit(nullptr),
+        creditEdit(nullptr),
+        sourceEdit(nullptr),
+        instructionsEdit(nullptr),
+        copyrightEdit(nullptr),
+        rightUsageEdit(nullptr),
+        locationCountryCodeEdit(nullptr),
+        locationProvinceStateEdit(nullptr),
+        locationCityEdit(nullptr),
+        locationSublocationEdit(nullptr),
+        contactCityEdit(nullptr),
+        contactCountryEdit(nullptr),
+        contactAddressEdit(nullptr),
+        contactPostalCodeEdit(nullptr),
+        contactProvinceStateEdit(nullptr),
+        contactEmailEdit(nullptr),
+        contactPhoneEdit(nullptr),
+        contactWebUrlEdit(nullptr),
+        subjects(nullptr)
     {
-        authorsEdit               = nullptr;
-        authorsPositionEdit       = nullptr;
-        creditEdit                = nullptr;
-        sourceEdit                = nullptr;
-        copyrightEdit             = nullptr;
-        rightUsageEdit            = nullptr;
-        instructionsEdit          = nullptr;
-
-        locationCountryCodeEdit   = nullptr;
-        locationProvinceStateEdit = nullptr;
-        locationCityEdit          = nullptr;
-        locationSublocationEdit   = nullptr;
-
-        contactCityEdit           = nullptr;
-        contactCountryEdit        = nullptr;
-        contactAddressEdit        = nullptr;
-        contactPostalCodeEdit     = nullptr;
-        contactProvinceStateEdit  = nullptr;
-        contactEmailEdit          = nullptr;
-        contactPhoneEdit          = nullptr;
-        contactWebUrlEdit         = nullptr;
-
-        subjects                  = nullptr;
     }
 
-    // Rights template information panel.
+    /// Rights template information panel.
     QLineEdit*       authorsEdit;
     QLineEdit*       authorsPositionEdit;
     QLineEdit*       creditEdit;
@@ -89,13 +86,13 @@ public:
     AltLangStrEdit*  copyrightEdit;
     AltLangStrEdit*  rightUsageEdit;
 
-    // Location template information panel.
+    /// Location template information panel.
     CountrySelector* locationCountryCodeEdit;
     QLineEdit*       locationProvinceStateEdit;
     QLineEdit*       locationCityEdit;
     QLineEdit*       locationSublocationEdit;
 
-    // Contact template information panel.
+    /// Contact template information panel.
     QLineEdit*       contactCityEdit;
     QLineEdit*       contactCountryEdit;
     QLineEdit*       contactAddressEdit;
@@ -105,7 +102,7 @@ public:
     QLineEdit*       contactPhoneEdit;
     QLineEdit*       contactWebUrlEdit;
 
-    // Subjects template information panel.
+    //// Subjects template information panel.
     SubjectEdit*     subjects;
 };
 

@@ -51,10 +51,10 @@ class Q_DECL_HIDDEN TemplateSelector::Private
 public:
 
     explicit Private()
+      : label(nullptr),
+        setupButton(nullptr),
+        templateCombo(nullptr)
     {
-        label         = nullptr;
-        setupButton   = nullptr;
-        templateCombo = nullptr;
     }
 
     QLabel*           label;
@@ -116,7 +116,7 @@ void TemplateSelector::populateTemplates()
     d->templateCombo->insertSqueezedItem(i18n("Do not change"), DONTCHANGE);
     d->templateCombo->insertSeparator(DONTCHANGE + 1);
 
-    TemplateManager* tm = TemplateManager::defaultManager();
+    TemplateManager* const tm = TemplateManager::defaultManager();
 
     if (tm)
     {
@@ -149,7 +149,7 @@ Template TemplateSelector::getTemplate() const
 
         default:
         {
-            TemplateManager* tm = TemplateManager::defaultManager();
+            TemplateManager* const tm = TemplateManager::defaultManager();
 
             if (tm)
             {
@@ -168,7 +168,7 @@ void TemplateSelector::setTemplate(const Template& t)
     d->metadataTemplate = t;
     QString title       = d->metadataTemplate.templateTitle();
 
-    if (title == Template::removeTemplateTitle())
+    if      (title == Template::removeTemplateTitle())
     {
         d->templateCombo->setCurrentIndex(REMOVETEMPLATE);
     }

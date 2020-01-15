@@ -46,9 +46,9 @@ class Q_DECL_HIDDEN TemplateManager::Private
 public:
 
     explicit Private()
-        :mutex()
+        : modified(false),
+          mutex()
     {
-        modified = false;
     }
 
     bool            modified;
@@ -131,7 +131,7 @@ bool TemplateManager::load()
         IptcCoreLocationInfo locationInf;
         IptcCoreContactInfo  contactInf;
 
-        for (QDomNode n2 = e.firstChild(); !n2.isNull(); n2 = n2.nextSibling())
+        for (QDomNode n2 = e.firstChild() ; !n2.isNull() ; n2 = n2.nextSibling())
         {
             QDomElement e2 = n2.toElement();
 
@@ -143,7 +143,7 @@ bool TemplateManager::load()
             QString name2  = e2.tagName();
             QString val2   = e2.attribute(QLatin1String("value"));
 
-            if (name2 == QLatin1String("templatetitle"))
+            if      (name2 == QLatin1String("templatetitle"))
             {
                 t.setTemplateTitle(val2);
             }
@@ -167,7 +167,7 @@ bool TemplateManager::load()
             {
                 QStringList list;
 
-                for (QDomNode n3 = e2.firstChild(); !n3.isNull(); n3 = n3.nextSibling())
+                for (QDomNode n3 = e2.firstChild() ; !n3.isNull() ; n3 = n3.nextSibling())
                 {
                     QDomElement e3 = n3.toElement();
                     QString key    = e3.tagName();
@@ -190,7 +190,7 @@ bool TemplateManager::load()
             {
                 MetaEngine::AltLangMap copyrights;
 
-                for (QDomNode n3 = e2.firstChild(); !n3.isNull(); n3 = n3.nextSibling())
+                for (QDomNode n3 = e2.firstChild() ; !n3.isNull() ; n3 = n3.nextSibling())
                 {
                     QDomElement e3 = n3.toElement();
                     QString key    = e3.tagName();
@@ -204,7 +204,7 @@ bool TemplateManager::load()
             {
                 MetaEngine::AltLangMap usages;
 
-                for (QDomNode n3 = e2.firstChild(); !n3.isNull(); n3 = n3.nextSibling())
+                for (QDomNode n3 = e2.firstChild() ; !n3.isNull() ; n3 = n3.nextSibling())
                 {
                     QDomElement e3 = n3.toElement();
                     QString key    = e3.tagName();
@@ -302,6 +302,7 @@ bool TemplateManager::load()
 bool TemplateManager::save()
 {
     // If not modified don't save the file
+
     if (!d->modified)
     {
         return true;
@@ -501,7 +502,7 @@ void TemplateManager::removePrivate(const Template& t)
     {
         QMutexLocker lock(&d->mutex);
 
-        for (QList<Template>::iterator it = d->pList.begin(); it != d->pList.end(); ++it)
+        for (QList<Template>::iterator it = d->pList.begin() ; it != d->pList.end() ; ++it)
         {
             if (it->templateTitle() == t.templateTitle())
             {
@@ -568,7 +569,7 @@ Template TemplateManager::fromIndex(int index) const
 {
     QMutexLocker lock(&d->mutex);
 
-    if (index >= 0 && index < d->pList.size())
+    if ((index >= 0) && (index < d->pList.size()))
     {
         return d->pList.at(index);
     }

@@ -44,6 +44,7 @@ SubjectEdit::SubjectEdit(QWidget* const parent)
     // - '*' (\x2A)
     // - ':' (\x3A)
     // - '?' (\x3F)
+
     QRegExp subjectRx(QLatin1String("[^*:?]+$"));
     QValidator* const subjectValidator = new QRegExpValidator(subjectRx, this);
 
@@ -82,6 +83,7 @@ SubjectEdit::SubjectEdit(QWidget* const parent)
                                     "if you selected a standard XMP/NAA reference code."));
 
     // reset the note label, not used in XMP view
+
     if (m_note)
     {
         delete m_note;
