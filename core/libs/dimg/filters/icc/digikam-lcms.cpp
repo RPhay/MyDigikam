@@ -267,8 +267,10 @@ static cmsBool cmsAdaptMatrixFromD50(cmsMAT3* const r, const cmsCIExyY* const De
 
 int dkCmsErrorAction(int nAction)
 {
+/*
+    // TODO handle LCMS error string
     qCWarning(DIGIKAM_DIMG_LOG) << "Error while running Lcms action (" << nAction << ")";
-
+*/
     return 0;
 }
 
