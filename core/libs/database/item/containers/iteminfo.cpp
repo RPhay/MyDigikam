@@ -35,8 +35,9 @@ ItemInfo::ItemInfo()
 }
 
 ItemInfo::ItemInfo(const ItemListerRecord& record)
-    : m_data(ItemInfoStatic::cache()->infoForId(record.imageID))
 {
+    m_data                         = ItemInfoStatic::cache()->infoForId(record.imageID);
+
     ItemInfoWriteLocker lock;
     bool newlyCreated              = (m_data->albumId == -1);
 
@@ -77,8 +78,9 @@ ItemInfo::ItemInfo(const ItemListerRecord& record)
 }
 
 ItemInfo::ItemInfo(qlonglong ID)
-    : m_data(ItemInfoStatic::cache()->infoForId(ID))
 {
+    m_data = ItemInfoStatic::cache()->infoForId(ID);
+
     // is this a newly created structure, need to populate?
 
     if (m_data->albumId == -1)
