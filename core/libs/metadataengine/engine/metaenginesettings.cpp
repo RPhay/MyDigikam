@@ -59,7 +59,7 @@ public:
 public:
 
     MetaEngineSettingsContainer readFromConfig() const;
-    void                        writeToConfig() const;
+    void                        writeToConfig()  const;
     MetaEngineSettingsContainer setSettings(const MetaEngineSettingsContainer& s);
 };
 
@@ -85,6 +85,7 @@ MetaEngineSettingsContainer MetaEngineSettings::Private::setSettings(const MetaE
     MetaEngineSettingsContainer old;
     old      = settings;
     settings = s;
+
     return old;
 }
 
@@ -122,6 +123,7 @@ MetaEngineSettingsContainer MetaEngineSettings::settings() const
 {
     QMutexLocker lock(&d->mutex);
     MetaEngineSettingsContainer s(d->settings);
+
     return s;
 }
 

@@ -98,6 +98,7 @@ KMemoryInfo::~KMemoryInfo()
 KMemoryInfo& KMemoryInfo::operator=(const KMemoryInfo& other)
 {
     d = other.d;
+
     return *this;
 }
 
@@ -110,6 +111,7 @@ KMemoryInfo KMemoryInfo::currentInfo()
 {
     KMemoryInfo info;
     info.update();
+
     return info;
 }
 
@@ -117,12 +119,14 @@ qint64 KMemoryInfo::bytes(KMemoryInfo::MemoryDetails details) const
 {
     qint64 value = 0;
 
-    if (details & TotalRam)
+    if      (details & TotalRam)
     {
         qDebug() << "KMemoryInfo: TotalRam: " << d->totalRam;
 
         if (d->totalRam == -1)
+        {
             return -1;
+        }
 
         value += d->totalRam;
     }
@@ -130,8 +134,10 @@ qint64 KMemoryInfo::bytes(KMemoryInfo::MemoryDetails details) const
     {
         qDebug() << "KMemoryInfo: AvailableRam: " << d->freeRam << " (cache: " << d->cacheRam << ")";
 
-        if (d->freeRam == -1 || d->cacheRam == -1)
+        if ((d->freeRam == -1) || (d->cacheRam == -1))
+        {
             return -1;
+        }
 
         value += d->freeRam + d->cacheRam;
     }
@@ -141,7 +147,9 @@ qint64 KMemoryInfo::bytes(KMemoryInfo::MemoryDetails details) const
         qDebug() << "KMemoryInfo: TotalSwap: " << d->totalSwap;
 
         if (d->totalSwap == -1)
+        {
             return -1;
+        }
 
         value += d->totalSwap;
     }
@@ -150,7 +158,9 @@ qint64 KMemoryInfo::bytes(KMemoryInfo::MemoryDetails details) const
         qDebug() << "KMemoryInfo: AvailableSwap: " << d->freeSwap;
 
         if (d->freeSwap == -1)
+        {
             return -1;
+        }
 
         value += d->freeSwap;
     }
@@ -163,9 +173,11 @@ double KMemoryInfo::kilobytes(MemoryDetails detail) const
     qint64 b = bytes(detail);
 
     if (b == -1)
+    {
         return -1;
+    }
 
-    return double(b) / 1024.0;
+    return (double(b) / 1024.0);
 }
 
 double KMemoryInfo::megabytes(MemoryDetails detail) const
@@ -173,9 +185,11 @@ double KMemoryInfo::megabytes(MemoryDetails detail) const
     qint64 b = bytes(detail);
 
     if (b == -1)
+    {
         return -1;
+    }
 
-    return double(b) / 1024.0 / 1024.0;
+    return (double(b) / 1024.0 / 1024.0);
 }
 
 QDateTime KMemoryInfo::lastUpdate() const
@@ -189,6 +203,7 @@ int KMemoryInfo::update()
     const int res = fillMemoryInfo(d);
     qDebug() << "KMemoryInfo: Platform identified : " << d->platform;
     d->lastUpdate = QDateTime::currentDateTime();
+
     return res;
 }
 

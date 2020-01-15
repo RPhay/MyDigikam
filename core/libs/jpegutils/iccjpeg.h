@@ -24,7 +24,7 @@
 
 /**
  * Notes from Little CMS project (http://www.littlecms.com)
- * 
+ *
  * This file provides code to read and write International Color Consortium
  * (ICC) device profiles embedded in JFIF JPEG image files.  The ICC has
  * defined a standard format for including such data in JPEG "APP2" markers.

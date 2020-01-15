@@ -85,14 +85,19 @@ MetaEngineRotation matrix(MetaEngineRotation::TransformationAction action)
     {
         case MetaEngineRotation::NoTransformation:
             return identity;
+
         case MetaEngineRotation::FlipHorizontal:
             return flipHorizontal;
+
         case MetaEngineRotation::FlipVertical:
             return flipVertical;
+
         case MetaEngineRotation::Rotate90:
             return rotate90;
+
         case MetaEngineRotation::Rotate180:
             return rotate180;
+
         case MetaEngineRotation::Rotate270:
             return rotate270;
     }
@@ -106,20 +111,28 @@ MetaEngineRotation matrix(MetaEngine::ImageOrientation exifOrientation)
     {
         case MetaEngine::ORIENTATION_NORMAL:
             return identity;
+
         case MetaEngine::ORIENTATION_HFLIP:
             return flipHorizontal;
+
         case MetaEngine::ORIENTATION_ROT_180:
             return rotate180;
+
         case MetaEngine::ORIENTATION_VFLIP:
             return flipVertical;
+
         case MetaEngine::ORIENTATION_ROT_90_HFLIP:
             return rotate90flipHorizontal;
+
         case MetaEngine::ORIENTATION_ROT_90:
             return rotate90;
+
         case MetaEngine::ORIENTATION_ROT_90_VFLIP:
             return rotate90flipVertical;
+
         case MetaEngine::ORIENTATION_ROT_270:
             return rotate270;
+
         case MetaEngine::ORIENTATION_UNSPECIFIED:
             return identity;
     }
@@ -164,18 +177,20 @@ bool MetaEngineRotation::isNoTransform() const
 
 MetaEngineRotation& MetaEngineRotation::operator*=(const MetaEngineRotation& ma)
 {
-    set( ma.m[0][0]*m[0][0] + ma.m[0][1]*m[1][0],  ma.m[0][0]*m[0][1] + ma.m[0][1]*m[1][1],
-         ma.m[1][0]*m[0][0] + ma.m[1][1]*m[1][0],  ma.m[1][0]*m[0][1] + ma.m[1][1]*m[1][1] );
+    set(ma.m[0][0]*m[0][0] + ma.m[0][1]*m[1][0],  ma.m[0][0]*m[0][1] + ma.m[0][1]*m[1][1],
+        ma.m[1][0]*m[0][0] + ma.m[1][1]*m[1][0],  ma.m[1][0]*m[0][1] + ma.m[1][1]*m[1][1]);
 
     return *this;
 }
 
 bool MetaEngineRotation::operator==(const MetaEngineRotation& ma) const
 {
-    return m[0][0]==ma.m[0][0] &&
-           m[0][1]==ma.m[0][1] &&
-           m[1][0]==ma.m[1][0] &&
-           m[1][1]==ma.m[1][1];
+    return (
+            (m[0][0] == ma.m[0][0]) &&
+            (m[0][1] == ma.m[0][1]) &&
+            (m[1][0] == ma.m[1][0]) &&
+            (m[1][1] == ma.m[1][1])
+           );
 }
 
 bool MetaEngineRotation::operator!=(const MetaEngineRotation& ma) const
@@ -203,14 +218,15 @@ MetaEngineRotation& MetaEngineRotation::operator*=(MetaEngine::ImageOrientation 
     return (*this *= Matrix::matrix(exifOrientation));
 }
 
-/** Converts the mathematically correct description
-    into the primitive operations that can be carried out losslessly.
-*/
+/**
+ * Converts the mathematically correct description
+ * into the primitive operations that can be carried out losslessly.
+ */
 QList<MetaEngineRotation::TransformationAction> MetaEngineRotation::transformations() const
 {
     QList<TransformationAction> transforms;
 
-    if (*this == Matrix::rotate90)
+    if      (*this == Matrix::rotate90)
     {
         transforms << Rotate90;
     }
@@ -232,13 +248,15 @@ QList<MetaEngineRotation::TransformationAction> MetaEngineRotation::transformati
     }
     else if (*this == Matrix::rotate90flipHorizontal)
     {
-        //first rotate, then flip!
+        // first rotate, then flip!
+
         transforms << Rotate90;
         transforms << FlipHorizontal;
     }
     else if (*this == Matrix::rotate90flipVertical)
     {
-        //first rotate, then flip!
+        // first rotate, then flip!
+
         transforms << Rotate90;
         transforms << FlipVertical;
     }
@@ -253,7 +271,7 @@ MetaEngine::ImageOrientation MetaEngineRotation::exifOrientation() const
         return MetaEngine::ORIENTATION_NORMAL;
     }
 
-    if (*this == Matrix::rotate90)
+    if      (*this == Matrix::rotate90)
     {
         return MetaEngine::ORIENTATION_ROT_90;
     }

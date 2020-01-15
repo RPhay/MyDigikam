@@ -61,9 +61,10 @@ void write_icc_profile(j_compress_ptr cinfo,
     unsigned int length      = 0;   /* number of bytes to write in this marker */
 
     /* Calculate the number of markers we'll need, rounding up of course */
+
     num_markers = icc_data_len / MAX_DATA_BYTES_IN_MARKER;
 
-    if (num_markers * MAX_DATA_BYTES_IN_MARKER != icc_data_len)
+    if ((num_markers * MAX_DATA_BYTES_IN_MARKER) != icc_data_len)
     {
         num_markers++;
     }
@@ -71,6 +72,7 @@ void write_icc_profile(j_compress_ptr cinfo,
     while (icc_data_len > 0)
     {
         /* length of profile to put in this marker */
+
         length = icc_data_len;
 
         if (length > MAX_DATA_BYTES_IN_MARKER)
@@ -81,12 +83,14 @@ void write_icc_profile(j_compress_ptr cinfo,
         icc_data_len -= length;
 
         /* Write the JPEG marker header (APP2 code and marker length) */
+
         jpeg_write_m_header(cinfo, ICC_MARKER, (unsigned int) (length + ICC_OVERHEAD_LEN));
 
         /* Write the marker identifying string "ICC_PROFILE" (null-terminated).
          * We code it in this less-than-transparent way so that the code works
          * even if the local character set is not ASCII.
          */
+
         jpeg_write_m_byte(cinfo, 0x49);
         jpeg_write_m_byte(cinfo, 0x43);
         jpeg_write_m_byte(cinfo, 0x43);
@@ -101,10 +105,12 @@ void write_icc_profile(j_compress_ptr cinfo,
         jpeg_write_m_byte(cinfo, 0x0);
 
         /* Add the sequencing info */
+
         jpeg_write_m_byte(cinfo, cur_marker);
         jpeg_write_m_byte(cinfo, (int) num_markers);
 
         /* Add the profile data */
+
         while (length--)
         {
             jpeg_write_m_byte(cinfo, *icc_data_ptr);
@@ -121,6 +127,7 @@ void write_icc_profile(j_compress_ptr cinfo,
 void setup_read_icc_profile (j_decompress_ptr cinfo)
 {
     /* Tell the library to keep any APP2 data it may find */
+
     jpeg_save_markers(cinfo, ICC_MARKER, 0xFFFF);
 }
 
@@ -129,21 +136,24 @@ void setup_read_icc_profile (j_decompress_ptr cinfo)
  */
 static boolean marker_is_icc (jpeg_saved_marker_ptr marker)
 {
-  return (marker->marker              == ICC_MARKER       &&
-          marker->data_length         >= ICC_OVERHEAD_LEN &&
+  return (
+          (marker->marker              == ICC_MARKER)       &&
+          (marker->data_length         >= ICC_OVERHEAD_LEN) &&
+
           /* verify the identifying string */
-          GETJOCTET(marker->data[0])  == 0x49             &&
-          GETJOCTET(marker->data[1])  == 0x43             &&
-          GETJOCTET(marker->data[2])  == 0x43             &&
-          GETJOCTET(marker->data[3])  == 0x5F             &&
-          GETJOCTET(marker->data[4])  == 0x50             &&
-          GETJOCTET(marker->data[5])  == 0x52             &&
-          GETJOCTET(marker->data[6])  == 0x4F             &&
-          GETJOCTET(marker->data[7])  == 0x46             &&
-          GETJOCTET(marker->data[8])  == 0x49             &&
-          GETJOCTET(marker->data[9])  == 0x4C             &&
-          GETJOCTET(marker->data[10]) == 0x45             &&
-          GETJOCTET(marker->data[11]) == 0x0);
+
+          (GETJOCTET(marker->data[0])  == 0x49)             &&
+          (GETJOCTET(marker->data[1])  == 0x43)             &&
+          (GETJOCTET(marker->data[2])  == 0x43)             &&
+          (GETJOCTET(marker->data[3])  == 0x5F)             &&
+          (GETJOCTET(marker->data[4])  == 0x50)             &&
+          (GETJOCTET(marker->data[5])  == 0x52)             &&
+          (GETJOCTET(marker->data[6])  == 0x4F)             &&
+          (GETJOCTET(marker->data[7])  == 0x46)             &&
+          (GETJOCTET(marker->data[8])  == 0x49)             &&
+          (GETJOCTET(marker->data[9])  == 0x4C)             &&
+          (GETJOCTET(marker->data[10]) == 0x45)             &&
+          (GETJOCTET(marker->data[11]) == 0x0));
 }
 
 /**
@@ -197,7 +207,7 @@ boolean read_icc_profile(j_decompress_ptr cinfo,
     {
         if (marker_is_icc(marker))
         {
-            if (num_markers == 0)
+            if      (num_markers == 0)
             {
                 num_markers = GETJOCTET(marker->data[13]);
             }
@@ -208,7 +218,7 @@ boolean read_icc_profile(j_decompress_ptr cinfo,
 
             seq_no = GETJOCTET(marker->data[12]);
 
-            if (seq_no <= 0 || seq_no > num_markers)
+            if ((seq_no <= 0) || (seq_no > num_markers))
             {
                 return FALSE;       /* bogus sequence number */
             }
@@ -252,6 +262,7 @@ boolean read_icc_profile(j_decompress_ptr cinfo,
     }
 
     /* Allocate space for assembled data */
+
     icc_data = (JOCTET*) malloc(total_length * sizeof(JOCTET));
 
     if (icc_data == NULL)
@@ -260,6 +271,7 @@ boolean read_icc_profile(j_decompress_ptr cinfo,
     }
 
     /* and fill it in */
+
     for (marker = cinfo->marker_list ; marker != NULL ; marker = marker->next)
     {
         if (marker_is_icc(marker))

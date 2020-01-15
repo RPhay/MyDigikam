@@ -130,6 +130,7 @@ static void jpegutils_jpeg_emit_message(j_common_ptr cinfo, int msg_level)
     (*cinfo->err->format_message)(cinfo, buffer);
 
     // TODO this was behind the ifdef guard for dimg imageloaders, should this class be moved to dimg?
+
     //qCDebug(DIGIKAM_GENERAL_LOG) << buffer << " (" << msg_level << ")";
 }
 
@@ -139,6 +140,7 @@ static void jpegutils_jpeg_output_message(j_common_ptr cinfo)
     (*cinfo->err->format_message)(cinfo, buffer);
 
     // TODO this was behind the ifdef guard for dimg imageloaders, should this class be moved to dimg?
+
     //qCDebug(DIGIKAM_GENERAL_LOG) << buffer;
 }
 
@@ -163,6 +165,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     struct jpegutils_jpeg_error_mgr jerr;
 
     // JPEG error handling - thanks to Marcus Meissner
+
     cinfo.err                 = jpeg_std_error(&jerr);
     cinfo.err->error_exit     = jpegutils_jpeg_error_exit;
     cinfo.err->emit_message   = jpegutils_jpeg_emit_message;
@@ -201,6 +204,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     int imgSize = qMax(cinfo.image_width, cinfo.image_height);
 
     // libjpeg supports 1/1, 1/2, 1/4, 1/8
+
     int scale=1;
 
     while (maximumSize*scale*2 <= imgSize)
@@ -212,9 +216,10 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     {
         scale = 8;
     }
-
-    //cinfo.scale_num = 1;
-    //cinfo.scale_denom = scale;
+/*
+    cinfo.scale_num = 1;
+    cinfo.scale_denom = scale;
+*/
     cinfo.scale_denom *= scale;
 
     switch (cinfo.jpeg_color_space)
@@ -242,6 +247,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     QImage img;
 
     // We only take RGB with 1 or 3 components, or CMYK with 4 components
+
     if (!(
            (
             (cinfo.out_color_space    == JCS_RGB)  &&
@@ -330,11 +336,11 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
         img.setDotsPerMeterX(int(100. * cinfo.X_density));
         img.setDotsPerMeterY(int(100. * cinfo.Y_density));
     }
-
-    //int newMax = qMax(cinfo.output_width, cinfo.output_height);
-    //int newx   = maximumSize*cinfo.output_width  / newMax;
-    //int newy   = maximumSize*cinfo.output_height / newMax;
-
+/*
+    int newMax = qMax(cinfo.output_width, cinfo.output_height);
+    int newx   = maximumSize*cinfo.output_width  / newMax;
+    int newy   = maximumSize*cinfo.output_height / newMax;
+*/
     jpeg_destroy_decompress(&cinfo);
     fclose(inputFile);
 
@@ -393,6 +399,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
     if (!fi.exists())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "ExifRotate: file does not exist: " << m_file;
+
         return false;
     }
 
@@ -400,6 +407,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
     {
         // Not a jpeg image.
         qCDebug(DIGIKAM_GENERAL_LOG) << "ExifRotate: not a JPEG file: " << m_file;
+
         return false;
     }
 
@@ -428,6 +436,7 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
         QString tempFile = temp->fileName();
 
         // Crash fix: a QTemporaryFile is not properly closed until its destructor is called.
+
         delete temp;
 
         if (!performJpegTransform(actions[i], src, tempFile))
@@ -467,12 +476,14 @@ bool JpegRotator::exifTransform(const MetaEngineRotation& matrix)
         if (i + 1 != actions.size())
         {
             // another round
+
             src = tempFile;
             removeLater << tempFile;
             continue;
         }
 
         // finalize
+
         updateMetadata(tempFile, matrix);
 
         // atomic rename
@@ -529,9 +540,11 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
     // Get the new image dimension of the temp image. Using a dummy QImage object here
     // has a sense because the Exif dimension information can be missing from original image.
     // Get new dimensions with QImage will always work...
+
     m_metadata.setItemDimensions(newSize);
 
     // Update the image thumbnail.
+
     QImage exifThumb = m_metadata.getExifThumbnail(true);
 
     if (!exifThumb.isNull())
@@ -547,9 +560,11 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
     }
 
     // Reset the Exif orientation tag of the temp image to normal
+
     m_metadata.setItemOrientation(DMetadata::ORIENTATION_NORMAL);
 
     // We update all new metadata now...
+
     m_metadata.save(fileName, true);
 
     // File properties restoration.
@@ -606,12 +621,14 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
 #if (JPEG_LIB_VERSION >= 80)
 
     // we need to initialize a few more parameters, see bug 274947
+
     transformoption.perfect         = true;   // See bug 320107 : we need perfect transform here.
     transformoption.crop            = false;
 
 #endif // (JPEG_LIB_VERSION >= 80)
 
     // NOTE : Cast is fine here. See metaengine_rotation.h for details.
+
     transformoption.transform       = (JXFORM_CODE)action;
 
     if (transformoption.transform == JXFORM_NONE)
@@ -628,12 +645,14 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
     jvirt_barray_ptr* dst_coef_arrays = nullptr;
 
     // Initialize the JPEG decompression object with default error handling
+
     srcinfo.err                       = jpeg_std_error(&jsrcerr);
     srcinfo.err->error_exit           = jpegutils_jpeg_error_exit;
     srcinfo.err->emit_message         = jpegutils_jpeg_emit_message;
     srcinfo.err->output_message       = jpegutils_jpeg_output_message;
 
     // Initialize the JPEG compression object with default error handling
+
     dstinfo.err                       = jpeg_std_error(&jdsterr);
     dstinfo.err->error_exit           = jpegutils_jpeg_error_exit;
     dstinfo.err->emit_message         = jpegutils_jpeg_emit_message;
@@ -641,6 +660,7 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
 
     FILE* input_file                  = nullptr;
     FILE* output_file                 = nullptr;
+
     // To prevent cppcheck warnings.
     (void)input_file;
     (void)output_file;
@@ -680,6 +700,7 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
     (void) jpeg_read_header(&srcinfo, true);
 
     // Read original size initially
+
     if (!m_originalSize.isValid())
     {
         m_originalSize = QSize(srcinfo.image_width, srcinfo.image_height);
@@ -688,26 +709,30 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
     jtransform_request_workspace(&srcinfo, &transformoption);
 
     // Read source file as DCT coefficients
+
     src_coef_arrays         = jpeg_read_coefficients(&srcinfo);
 
     // Initialize destination compression parameters from source values
-    jpeg_copy_critical_parameters(&srcinfo, &dstinfo);
 
+    jpeg_copy_critical_parameters(&srcinfo, &dstinfo);
     dst_coef_arrays         = jtransform_adjust_parameters(&srcinfo, &dstinfo, src_coef_arrays, &transformoption);
 
     // Specify data destination for compression
+
     jpeg_stdio_dest(&dstinfo, output_file);
 
     // Start compressor (note no image data is actually written here)
+
     dstinfo.optimize_coding = true;
     jpeg_write_coefficients(&dstinfo, dst_coef_arrays);
 
     // Copy to the output file any extra markers that we want to preserve
-    jcopy_markers_execute(&srcinfo, &dstinfo, copyoption);
 
+    jcopy_markers_execute(&srcinfo, &dstinfo, copyoption);
     jtransform_execute_transformation(&srcinfo, &dstinfo, src_coef_arrays, &transformoption);
 
     // Finish compression and release memory
+
     jpeg_finish_compress(&dstinfo);
     jpeg_destroy_compress(&dstinfo);
     (void) jpeg_finish_decompress(&srcinfo);
@@ -738,9 +763,11 @@ bool jpegConvert(const QString& src, const QString& dest, const QString& documen
         DImg image(src);
 
         // Get image Exif/IPTC data.
+
         DMetadata meta(image.getMetadata());
 
         // Update IPTC preview.
+
         QImage preview = image.smoothScale(1280, 1024, Qt::KeepAspectRatio).copyQImage();
 
         // TODO: see bug #130525. a JPEG segment is limited to 64K. If the IPTC byte array is
@@ -758,13 +785,16 @@ bool jpegConvert(const QString& src, const QString& dest, const QString& documen
         }
 
         // Update Exif thumbnail.
+
         QImage thumb = preview.scaled(160, 120, Qt::KeepAspectRatio, Qt::SmoothTransformation);
         meta.setExifThumbnail(thumb);
 
         // Update Exif Document Name tag (the original file name from camera for example).
+
         meta.setExifTagString("Exif.Image.DocumentName", documentName);
 
         // Store new Exif/IPTC data into image.
+
         image.setMetadata(meta.data());
 
         // And now save the image to a new file format.
@@ -807,8 +837,11 @@ bool isJpegImage(const QString& file)
     QFileInfo fileInfo(file);
 
     // Check if the file is an JPEG image
+
     QString format = QString::fromUtf8(QImageReader::imageFormat(file)).toUpper();
+
     // Check if its not MPO format (See bug #307277).
+
     QString ext    = fileInfo.suffix().toUpper();
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "mimetype = " << format << " ext = " << ext;
@@ -824,6 +857,7 @@ bool isJpegImage(const QString& file)
 int getJpegQuality(const QString& file)
 {
     // Set a good default quality
+
     volatile int quality = 90;
 
     if (!isJpegImage(file))
@@ -842,6 +876,7 @@ int getJpegQuality(const QString& file)
     struct jpegutils_jpeg_error_mgr jerr;
 
     // Initialize the JPEG decompression object with default error handling
+
     jpeg_info.err                 = jpeg_std_error(&jerr);
     jpeg_info.err->error_exit     = jpegutils_jpeg_error_exit;
     jpeg_info.err->emit_message   = jpegutils_jpeg_emit_message;

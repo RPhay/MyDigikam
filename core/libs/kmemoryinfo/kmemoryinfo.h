@@ -76,7 +76,7 @@ public:
      *  0 : not valid : parse failure from supported platform
      *  1 : valid     : parse done with success from supported platform
      */
-    int isValid() const;
+    int isValid()                          const;
 
     /**
      * Returns a KMemoryInfo object already updated to the current memory situation.

@@ -50,9 +50,10 @@ class DIGIKAM_EXPORT JpegRotator
 {
 public:
 
-    /** Create a JpegRotator reading from the given file.
-     *  Per default, it will replace the file, read the current orientation from the metadata,
-     *  and use the src file name as documentName.
+    /**
+     * Create a JpegRotator reading from the given file.
+     * Per default, it will replace the file, read the current orientation from the metadata,
+     * and use the src file name as documentName.
      */
     explicit JpegRotator(const QString& file);
 
@@ -96,11 +97,11 @@ public:
 
 protected:
 
-    QString                  m_file;
-    QString                  m_destFile;
-    QString                  m_documentName;
-    QSize                    m_originalSize;
-    DMetadata                m_metadata;
+    QString                      m_file;
+    QString                      m_destFile;
+    QString                      m_documentName;
+    QSize                        m_originalSize;
+    DMetadata                    m_metadata;
     MetaEngine::ImageOrientation m_orientation;
 
 protected:
@@ -110,7 +111,10 @@ protected:
 };
 
 DIGIKAM_EXPORT bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize);
-DIGIKAM_EXPORT bool jpegConvert(const QString& src, const QString& dest, const QString& documentName, const QString& format=QLatin1String("PNG"));
+DIGIKAM_EXPORT bool jpegConvert(const QString& src,
+                                const QString& dest,
+                                const QString& documentName,
+                                const QString& format=QLatin1String("PNG"));
 DIGIKAM_EXPORT bool isJpegImage(const QString& file);
 DIGIKAM_EXPORT int  getJpegQuality(const QString& file);
 

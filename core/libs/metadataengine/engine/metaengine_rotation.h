@@ -43,11 +43,12 @@ class DIGIKAM_EXPORT MetaEngineRotation
 
 public:
 
-    /** This describes single transform primitives.
-     *  Note some of the defined Exif rotation flags combine
-     *  two of these actions.
-     *  The enum values correspond to those defined
-     *  as JXFORM_CODE in the often used the JPEG tool transupp.h.
+    /**
+     * This describes single transform primitives.
+     * Note some of the defined Exif rotation flags combine
+     * two of these actions.
+     * The enum values correspond to those defined
+     * as JXFORM_CODE in the often used the JPEG tool transupp.h.
      */
     enum TransformationAction
     {
@@ -87,15 +88,17 @@ public:
     /// Applies the given Exif orientation flag to this matrix
     MetaEngineRotation& operator*=(MetaEngine::ImageOrientation exifOrientation);
 
-    /** Returns the actions described by this matrix. The order matters.
-     *  Not all possible matrices are supported, but all those that can be combined
-     *  by Exif rotation flags and the transform actions above.
-     *  If isNoTransform() or the matrix is not supported returns an empty list.
+    /**
+     * Returns the actions described by this matrix. The order matters.
+     * Not all possible matrices are supported, but all those that can be combined
+     * by Exif rotation flags and the transform actions above.
+     * If isNoTransform() or the matrix is not supported returns an empty list.
      */
     QList<TransformationAction> transformations() const;
 
-    /** Returns the Exif orientation flag describing this matrix.
-     *  Returns ORIENTATION_UNSPECIFIED if no flag matches this matrix.
+    /**
+     * Returns the Exif orientation flag describing this matrix.
+     * Returns ORIENTATION_UNSPECIFIED if no flag matches this matrix.
      */
     MetaEngine::ImageOrientation exifOrientation() const;
 

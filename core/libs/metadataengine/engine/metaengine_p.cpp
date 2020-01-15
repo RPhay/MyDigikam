@@ -454,16 +454,21 @@ QString MetaEngine::Private::convertCommentValue(const Exiv2::Exifdatum& exifDat
 
         // libexiv2 will prepend "charset=\"SomeCharset\" " if charset is specified
         // Before conversion to QString, we must know the charset, so we stay with std::string for a while
+
         if ((comment.length() > 8) && (comment.substr(0, 8) == "charset="))
         {
             // the prepended charset specification is followed by a blank
+
             std::string::size_type pos = comment.find_first_of(' ');
 
             if (pos != std::string::npos)
             {
                 // extract string between the = and the blank
+
                 charset = comment.substr(8, pos-8);
+
                 // get the rest of the string after the charset specification
+
                 comment = comment.substr(pos+1);
             }
         }
@@ -731,6 +736,7 @@ void MetaEngine::Private::loadSidecarData(Exiv2::Image::AutoPtr xmpsidecar)
     // If a field is removed from the sidecar, we must ignore (older) data for this field in the file.
 
     // First: Ignore file XMP, only use sidecar XMP
+
     xmpMetadata()     = xmpsidecar->xmpData();
     loadedFromSidecar = true;
 
@@ -742,14 +748,17 @@ void MetaEngine::Private::loadSidecarData(Exiv2::Image::AutoPtr xmpsidecar)
     // (to understand, remember that the xmpsidecar's Exif data is actually XMP data mapped back to Exif)
 
     // Description, Copyright and Creator is dominated by the sidecar: Remove file Exif fields, if field not in XMP.
+
     ExifMetaEngineMergeHelper exifDominatedHelper;
     exifDominatedHelper << QLatin1String("Exif.Image.ImageDescription")
                         << QLatin1String("Exif.Photo.UserComment")
                         << QLatin1String("Exif.Image.Copyright")
                         << QLatin1String("Exif.Image.Artist");
     exifDominatedHelper.exclusiveMerge(xmpsidecar->exifData(), exifMetadata());
+
     // Date/Time and "the few more" from the XMP spec are handled as writeback
     // Note that Date/Time mapping is slightly contradictory in latest specs.
+
     ExifMetaEngineMergeHelper exifWritebackHelper;
     exifWritebackHelper << QLatin1String("Exif.Image.DateTime")
                         << QLatin1String("Exif.Image.DateTime")
@@ -765,6 +774,7 @@ void MetaEngine::Private::loadSidecarData(Exiv2::Image::AutoPtr xmpsidecar)
 
     // IPTC
     // These fields cover almost all relevant IPTC data and are defined in the XMP specification for reconciliation.
+
     IptcMetaEngineMergeHelper iptcDominatedHelper;
     iptcDominatedHelper << QLatin1String("Iptc.Application2.ObjectName")
                         << QLatin1String("Iptc.Application2.Urgency")
