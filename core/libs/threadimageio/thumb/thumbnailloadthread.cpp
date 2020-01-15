@@ -132,6 +132,7 @@ void ThumbnailLoadThread::cleanUp()
 {
     // NOTE : Nothing to do with Qt5 and Q_GLOBAL_STATIC. Qt clean up all automatically at end of application instance.
     // But stopping all running tasks to prevent a crash at end.
+
     defaultIconViewThread()->stopAllTasks();
     defaultThread()->stopAllTasks();
 }
@@ -232,7 +233,6 @@ int ThumbnailLoadThread::pixmapToThumbnailSize(int size) const
     return d->thumbnailSizeForPixmapSize(size);
 }
 
-
 bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier, int size, QPixmap* retPixmap, bool emitSignal, const QRect& detailRect)
 {
     const QPixmap* pix = nullptr;
@@ -273,6 +273,7 @@ bool ThumbnailLoadThread::find(const ThumbnailIdentifier& identifier, int size, 
 
     {
         // If there is a result waiting for conversion to pixmap, return false - pixmap will come shortly
+
         QMutexLocker lock(&d->resultsMutex);
 
         if (d->collectedResults.contains(cacheKey))
@@ -453,7 +454,7 @@ bool ThumbnailLoadThread::checkSize(int size)
     int maxThumbSize = (ratio > 1.0) ? ThumbnailSize::MAX
                                      : ThumbnailSize::maxThumbsSize();
 
-    if (size <= 0)
+    if      (size <= 0)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "ThumbnailLoadThread::load: No thumbnail size specified. Refusing to load thumbnail.";
         return false;
@@ -470,11 +471,14 @@ bool ThumbnailLoadThread::checkSize(int size)
 
 // --- Receiving ---
 
-// virtual method overridden from LoadSaveNotifier, implemented first by LoadSaveThread
-// called by ThumbnailTask from working thread
+/**
+ * virtual method overridden from LoadSaveNotifier, implemented first by LoadSaveThread
+ * called by ThumbnailTask from working thread
+ */
 void ThumbnailLoadThread::thumbnailLoaded(const LoadingDescription& loadingDescription, const QImage& img)
 {
     // call parent to send signalThumbnailLoaded(LoadingDescription, QImage) - signal is part of public API
+
     ManagedLoadSaveThread::thumbnailLoaded(loadingDescription, img);
 
     if (!d->wantPixmap)
@@ -485,10 +489,12 @@ void ThumbnailLoadThread::thumbnailLoaded(const LoadingDescription& loadingDescr
     // Store result in our list and fire one signal
     // This means there can be several results per pixmap,
     // to speed up cases where inter-thread communication is the limiting factor
+
     QMutexLocker lock(&d->resultsMutex);
     d->collectedResults.insert(loadingDescription.cacheKey(), ThumbnailResult(loadingDescription, img));
 
     // only sent signal when flag indicates there is no signal on the way currently
+
     if (!d->notifiedForResults)
     {
         d->notifiedForResults = true;
@@ -499,12 +505,15 @@ void ThumbnailLoadThread::thumbnailLoaded(const LoadingDescription& loadingDescr
 void ThumbnailLoadThread::slotThumbnailsAvailable()
 {
     // harvest collected results safely into our thread
+
     QList<ThumbnailResult> results;
     {
         QMutexLocker lock(&d->resultsMutex);
         results               = d->collectedResults.values();
         d->collectedResults.clear();
+
         // reset flag so that for next result, the signal is sent again
+
         d->notifiedForResults = false;
     }
 
@@ -529,7 +538,8 @@ void ThumbnailLoadThread::slotThumbnailLoaded(const LoadingDescription& descript
 
         // highlight only when requested and when thumbnail
         // width and height are greater than 10
-        if (d->highlight && (w >= 10 && h >= 10))
+
+        if (d->highlight && ((w >= 10) && (h >= 10)))
         {
             pix = QPixmap(w + 2, h + 2);
             QPainter p(&pix);
@@ -544,6 +554,7 @@ void ThumbnailLoadThread::slotThumbnailLoaded(const LoadingDescription& descript
     }
 
     // put into cache
+
     if (!pix.isNull())
     {
         LoadingCache* const cache = LoadingCache::cache();
@@ -590,6 +601,7 @@ QPixmap ThumbnailLoadThread::surrogatePixmap(const LoadingDescription& descripti
     {
         // only scale down
         // do not scale up, looks bad
+
         pix = pix.scaled(size, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     }
 
@@ -723,12 +735,15 @@ void ThumbnailImageCatcher::slotThumbnailLoaded(const LoadingDescription& descri
     {
         case Private::Inactive:
             break;
+
         case Private::Accepting:
             d->intermediate << Private::CatcherResult(description, image);
             break;
+
         case Private::Waiting:
             d->harvest(description, image);
             break;
+
         case Private::Quitting:
             break;
     }
@@ -759,6 +774,7 @@ QList<QImage> ThumbnailImageCatcher::waitForThumbnails()
     d->state = Private::Waiting;
 
     // first, handle results received between request and calling this method
+
     foreach (const Private::CatcherResult& result, d->intermediate)
     {
         d->harvest(result.description, result.image);
@@ -767,6 +783,7 @@ QList<QImage> ThumbnailImageCatcher::waitForThumbnails()
     d->intermediate.clear();
 
     // Now wait for the rest to arrive. If already finished, state will be Quitting
+
     while (d->state == Private::Waiting)
     {
         d->condVar.wait(&d->mutex);

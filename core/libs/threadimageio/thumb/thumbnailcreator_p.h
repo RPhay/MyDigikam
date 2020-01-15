@@ -103,25 +103,19 @@ class Q_DECL_HIDDEN ThumbnailCreator::Private
 public:
 
     explicit Private()
+      : exifRotate(true),
+        removeAlphaChannel(true),
+        onlyLargeThumbnails(false),
+        thumbnailStorage(ThumbnailCreator::FreeDesktopStandard),
+        infoProvider(nullptr),
+        dbIdForReplacement(-1),
+        thumbnailSize(0),
+        digiKamFingerPrint(QLatin1String("Digikam Thumbnail Generator")), // Used internaly as PNG metadata. Do not use i18n.
+        observer(nullptr)
     {
-        thumbnailSize                             = 0;
-        observer                                  = nullptr;
-
-        thumbnailStorage                          = ThumbnailCreator::FreeDesktopStandard;
-        infoProvider                              = nullptr;
-        dbIdForReplacement                        = -1;
-
-        exifRotate                                = true;
-        removeAlphaChannel                        = true;
-        onlyLargeThumbnails                       = false;
-
-        // Used internaly as PNG metadata. Do not use i18n.
-        digiKamFingerPrint                        = QLatin1String("Digikam Thumbnail Generator");
-
         fastRawSettings.optimizeTimeLoading();
         fastRawSettings.rawPrm.halfSizeColorImage = true;
         fastRawSettings.rawPrm.sixteenBitsImage   = false;
-
     }
 
     bool                            exifRotate;
@@ -137,6 +131,7 @@ public:
     QString                         error;
     QString                         bigThumbPath;
     QString                         smallThumbPath;
+
     QString                         digiKamFingerPrint;
 
     DImgLoaderObserver*             observer;

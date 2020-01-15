@@ -49,9 +49,12 @@ public:
         Tiny        = 32,
         VerySmall   = 64,
         MediumSmall = 80,
-        Small       = 128,  // Most usable small size of thumbnails to prevent overloaded
-                            // overlays show under thumbs (as Pick label and Group indicator)
-                            // See bugs #321337 and #275381 for details.
+        /**
+         * Most usable small size of thumbnails to prevent overloaded
+         * overlays show under thumbs (as Pick label and Group indicator)
+         * See bugs #321337 and #275381 for details.
+         */
+        Small       = 128,
         Medium      = 142,
         Large       = 160,
         Huge        = 256,

@@ -110,13 +110,13 @@ class Q_DECL_HIDDEN ThumbnailLoadThread::Private
 public:
 
     explicit Private()
+      : wantPixmap(true),
+        highlight(true),
+        sendSurrogate(true),
+        notifiedForResults(false),
+        size(ThumbnailSize::maxThumbsSize()),
+        creator(nullptr)
     {
-        size               = ThumbnailSize::maxThumbsSize();
-        wantPixmap         = true;
-        highlight          = true;
-        sendSurrogate      = true;
-        notifiedForResults = false;
-        creator            = nullptr;
     }
 
     bool                               wantPixmap;

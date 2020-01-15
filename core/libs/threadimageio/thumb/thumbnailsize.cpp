@@ -55,17 +55,18 @@ ThumbnailSize::~ThumbnailSize()
 ThumbnailSize& ThumbnailSize::operator=(const ThumbnailSize& thumbsize)
 {
     m_Size = thumbsize.m_Size;
+
     return *this;
 }
 
 bool ThumbnailSize::operator==(const ThumbnailSize& thumbsize) const
 {
-    return m_Size == thumbsize.m_Size;
+    return (m_Size == thumbsize.m_Size);
 }
 
 bool ThumbnailSize::operator!=(const ThumbnailSize& thumbsize) const
 {
-    return m_Size != thumbsize.m_Size;
+    return (m_Size != thumbsize.m_Size);
 }
 
 int ThumbnailSize::size() const
@@ -98,7 +99,9 @@ void ThumbnailSize::saveSettings(KConfigGroup& group, bool val)
 int ThumbnailSize::maxThumbsSize()
 {
     if (s_useLargeThumbs)
+    {
         return ThumbnailSize::HD;
+    }
 
     return ThumbnailSize::Huge;
 }

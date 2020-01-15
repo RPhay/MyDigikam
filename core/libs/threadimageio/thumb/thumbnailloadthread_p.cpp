@@ -30,7 +30,7 @@ namespace Digikam
 
 bool ThumbnailLoadThread::Private::hasHighlightingBorder() const
 {
-    return highlight && size >= 10;
+    return (highlight && (size >= 10));
 }
 
 int ThumbnailLoadThread::Private::pixmapSizeForThumbnailSize(int thumbnailSize) const
@@ -46,6 +46,7 @@ int ThumbnailLoadThread::Private::pixmapSizeForThumbnailSize(int thumbnailSize) 
 int ThumbnailLoadThread::Private::thumbnailSizeForPixmapSize(int pixmapSize) const
 {
     // bug #206666: Do not cut off one-pixel line for highlighting border
+
     if (hasHighlightingBorder())
     {
         return pixmapSize - 2;

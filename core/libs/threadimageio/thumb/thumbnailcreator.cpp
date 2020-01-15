@@ -78,6 +78,7 @@ int ThumbnailCreator::Private::storageSize() const
 {
     // on-disk thumbnail sizes according to freedesktop spec
     // for thumbnail db it's always max size
+
     double ratio = qApp->devicePixelRatio();
 
     if (onlyLargeThumbnails)
@@ -163,6 +164,7 @@ QImage ThumbnailCreator::loadDetail(const ThumbnailIdentifier& identifier, const
     if (!rect.isValid())
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid rectangle" << rect;
+
         return QImage();
     }
 
@@ -179,6 +181,7 @@ void ThumbnailCreator::pregenerateDetail(const ThumbnailIdentifier& identifier, 
     if (!rect.isValid())
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Invalid rectangle" << rect;
+
         return;
     }
 
@@ -191,6 +194,7 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
     {
         d->error = i18n("No or invalid size specified");
         qCWarning(DIGIKAM_GENERAL_LOG) << "No or invalid size specified";
+
         return QImage();
     }
 
@@ -200,6 +204,7 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
     }
 
     // get info about path
+
     ThumbnailInfo info = makeThumbnailInfo(identifier, rect);
 
     // load pregenerated thumbnail
@@ -224,12 +229,14 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
             }
 
             break;
+
         case FreeDesktopStandard:
             image = loadFreedesktop(info);
             break;
     }
 
     // For images in offline collections we can stop here, they are not available on disk
+
     if (image.isNull() && info.filePath.isEmpty())
     {
         return QImage();
@@ -247,9 +254,11 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
                 case ThumbnailDatabase:
                     storeInDatabase(info, image);
                     break;
+
                 case FreeDesktopStandard:
 
                     // image is stored rotated
+
                     if (d->exifRotate)
                     {
                         image.qimage = exifRotate(image.qimage, image.exifOrientation);
@@ -269,12 +278,14 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
     }
 
     // If we only pregenerate, we have now created and stored in the database
+
     if (pregenerate)
     {
         return QImage();
     }
 
     // Prepare for usage in digikam
+
     image.qimage = image.qimage.scaled(d->thumbnailSize,
                                        d->thumbnailSize,
                                        Qt::KeepAspectRatio,
@@ -286,7 +297,8 @@ QImage ThumbnailCreator::load(const ThumbnailIdentifier& identifier, const QRect
     {
         // image is stored, or created, unrotated, and is now rotated for display
         // detail thumbnails are stored readily rotated
-        if ((d->exifRotate && rect.isNull()) || info.mimeType == QLatin1String("video"))
+
+        if ((d->exifRotate && rect.isNull()) || (info.mimeType == QLatin1String("video")))
         {
             image.qimage = exifRotate(image.qimage, image.exifOrientation);
         }
@@ -304,9 +316,11 @@ QImage ThumbnailCreator::scaleForStorage(const QImage& qimage) const
 {
     if (qimage.width() > d->storageSize() || qimage.height() > d->storageSize())
     {
-/*      Cheat scaling is disabled because of quality problems - see bug #224999
+/*
+        Cheat scaling is disabled because of quality problems - see bug #224999
 
         // Perform cheat scaling (https://www.qtcentre.org/threads/28415-Creating-thumbnails-efficiently)
+
         int cheatSize = maxSize - (3*(maxSize - d->storageSize()) / 4);
         qimage        = qimage.scaled(cheatSize, cheatSize, Qt::KeepAspectRatio, Qt::FastTransformation);
 */
@@ -327,7 +341,8 @@ QString ThumbnailCreator::identifierForDetail(const ThumbnailInfo& info, const Q
     url.setScheme(QLatin1String("detail"));
     url.setPath(info.filePath);
 
-/*  A scheme to support loading by database id, but this is a hack. Solve cleanly later (schema update)
+/*
+    A scheme to support loading by database id, but this is a hack. Solve cleanly later (schema update)
 
     url.setPath(identifier.fileName);
 
@@ -370,6 +385,7 @@ ThumbnailInfo ThumbnailCreator::makeThumbnailInfo(const ThumbnailIdentifier& ide
     if (!rect.isNull())
     {
         // Important: Pass the filled info, not the possibly half-filled identifier here because the hash is preferred for the customIdentifier!
+
         info.customIdentifier = identifierForDetail(info, rect);
     }
 
@@ -403,12 +419,14 @@ void ThumbnailCreator::store(const QString& path, const QImage& i, const QRect& 
         case ThumbnailDatabase:
 
             // we must call isInDatabase or loadFromDatabase before storeInDatabase for d->dbIdForReplacement!
+
             if (!isInDatabase(info))
             {
                 storeInDatabase(info, image);
             }
 
             break;
+
         case FreeDesktopStandard:
             storeFreedesktop(info, image);
             break;

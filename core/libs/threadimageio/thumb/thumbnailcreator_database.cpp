@@ -34,16 +34,18 @@ void ThumbnailCreator::storeInDatabase(const ThumbnailInfo& info, const Thumbnai
 
     // We rely on loadThumbsDbInfo() being called before, so we do not need to look up
     // by filepath of uniqueHash to find out if a thumb need to be replaced.
+
     dbInfo.id               = d->dbIdForReplacement;
     d->dbIdForReplacement   = -1;
     dbInfo.type             = DatabaseThumbnail::PGF;
     dbInfo.modificationDate = info.modificationDate;
     dbInfo.orientationHint  = image.exifOrientation;
 
-    if (dbInfo.type == DatabaseThumbnail::PGF)
+    if      (dbInfo.type == DatabaseThumbnail::PGF)
     {
         // NOTE: see bug #233094: using PGF compression level 4 there. Do not use a value > 4,
         // else image is blurred due to down-sampling.
+
         if (!PGFUtils::writePGFImageData(image.qimage, dbInfo.data, 4))
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot save PGF thumb in DB";
@@ -103,6 +105,7 @@ void ThumbnailCreator::storeInDatabase(const ThumbnailInfo& info, const Thumbnai
         }
 
         // Insert thumbnail data
+
         if (dbInfo.id == -1)
         {
             QVariant id;
@@ -128,6 +131,7 @@ void ThumbnailCreator::storeInDatabase(const ThumbnailInfo& info, const Thumbnai
         }
 
         // Insert lookup data used to locate thumbnail data
+
         if (!info.customIdentifier.isNull())
         {
             lastQueryState = access.db()->insertCustomIdentifier(info.customIdentifier, dbInfo.id);
@@ -175,6 +179,7 @@ ThumbsDbInfo ThumbnailCreator::loadThumbsDbInfo(const ThumbnailInfo& info) const
     ThumbsDbInfo   dbInfo;
 
     // Custom identifier takes precedence
+
     if (!info.customIdentifier.isEmpty())
     {
         dbInfo = access.db()->findByCustomIdentifier(info.customIdentifier);
@@ -193,6 +198,7 @@ ThumbsDbInfo ThumbnailCreator::loadThumbsDbInfo(const ThumbnailInfo& info) const
     }
 
     // store for use in storeInDatabase()
+
     d->dbIdForReplacement = dbInfo.id;
 
     return dbInfo;
@@ -208,6 +214,7 @@ bool ThumbnailCreator::isInDatabase(const ThumbnailInfo& info) const
     }
 
     // check modification date
+
     if (dbInfo.modificationDate < info.modificationDate)
     {
         return false;
@@ -227,13 +234,15 @@ ThumbnailImage ThumbnailCreator::loadFromDatabase(const ThumbnailInfo& info) con
     }
 
     // check modification date
+
     if (dbInfo.modificationDate < info.modificationDate)
     {
         return ThumbnailImage();
     }
 
     // Read QImage from data blob
-    if (dbInfo.type == DatabaseThumbnail::PGF)
+
+    if      (dbInfo.type == DatabaseThumbnail::PGF)
     {
         if (!PGFUtils::readPGFImageData(dbInfo.data, image.qimage))
         {
@@ -283,10 +292,12 @@ ThumbnailImage ThumbnailCreator::loadFromDatabase(const ThumbnailInfo& info) con
 
     // Give priority to main database's rotation flag
     // NOTE: Breaks rotation of RAWs which do not contain JPEG previews
+
     image.exifOrientation = info.orientationHint;
 
-    if (image.exifOrientation == DMetadata::ORIENTATION_UNSPECIFIED &&
-        !info.filePath.isEmpty() && LoadSaveThread::infoProvider())
+    if ((image.exifOrientation == DMetadata::ORIENTATION_UNSPECIFIED) &&
+        !info.filePath.isEmpty()                                      &&
+        LoadSaveThread::infoProvider())
     {
         image.exifOrientation = LoadSaveThread::infoProvider()->orientationHint(info.filePath);
     }

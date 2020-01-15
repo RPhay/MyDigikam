@@ -126,6 +126,7 @@ void ThumbnailCreator::initThumbnailDirs()
 QString ThumbnailCreator::thumbnailPath(const QString& filePath) const
 {
     QString basePath = (d->storageSize() == 128) ? d->smallThumbPath : d->bigThumbPath;
+
     return thumbnailPath(filePath, basePath);
 }
 
@@ -151,14 +152,15 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
     unsigned char buf[PNG_BYTES_TO_CHECK];
 
     size_t itemsRead = fread(buf, 1, PNG_BYTES_TO_CHECK, f);
-#if PNG_LIBPNG_VER >= 10400
 
+#if PNG_LIBPNG_VER >= 10400
     if (itemsRead != PNG_BYTES_TO_CHECK || png_sig_cmp(buf, 0, PNG_BYTES_TO_CHECK))
 #else
     if (itemsRead != PNG_BYTES_TO_CHECK || !png_check_sig(buf, PNG_BYTES_TO_CHECK))
 #endif
     {
         fclose(f);
+
         return qimage;
     }
 
@@ -169,6 +171,7 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
     if (!png_ptr)
     {
         fclose(f);
+
         return qimage;
     }
 
@@ -178,11 +181,11 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
     {
         png_destroy_read_struct(&png_ptr, nullptr, nullptr);
         fclose(f);
+
         return qimage;
     }
 
 #if PNG_LIBPNG_VER >= 10400
-
     if (setjmp(png_jmpbuf(png_ptr)))
 #else
     if (setjmp(png_ptr->jmpbuf))
@@ -190,6 +193,7 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
     {
         png_destroy_read_struct(&png_ptr, &info_ptr, nullptr);
         fclose(f);
+
         return qimage;
     }
 
@@ -250,13 +254,14 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
         png_set_filler(png_ptr, 0xff, PNG_FILLER_BEFORE);
     }
 
-    /* 16bit color -> 8bit color */
+    // 16bit color -> 8bit color
+
     if (bit_depth == 16)
     {
         png_set_strip_16(png_ptr);
     }
 
-    /* pack all pixels to byte boundaries */
+    // pack all pixels to byte boundaries
 
     png_set_packing(png_ptr);
 
@@ -272,6 +277,7 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
         png_read_end(png_ptr, info_ptr);
         png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp) nullptr);
         fclose(f);
+
         return qimage;
     }
 
@@ -282,7 +288,6 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
         if (png_get_bit_depth(png_ptr, info_ptr) < 8)
 #if PNG_LIBPNG_VER >= 10400
             png_set_expand_gray_1_2_4_to_8(png_ptr);
-
 #else
             png_set_gray_1_2_4_to_8(png_ptr);
 #endif

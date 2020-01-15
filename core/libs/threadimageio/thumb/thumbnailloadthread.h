@@ -153,8 +153,10 @@ public:
      */
     QList<LoadingDescription> lastDescriptions() const;
 
-    /// If the thread is currently loading thumbnails, there is no guarantee as to when
-    /// the property change by one of the following methods takes effect.
+    /**
+     * NOTE: If the thread is currently loading thumbnails, there is no guarantee as to when
+     * the property change by one of the following methods takes effect.
+     */
 
     /**
      * Set the requested thumbnail size.
@@ -230,12 +232,12 @@ public:
 
 Q_SIGNALS:
 
-    // See LoadSaveThread for a QImage-based thumbnailLoaded() signal.
+    /// NOTE: See LoadSaveThread for a QImage-based thumbnailLoaded() signal.
     void signalThumbnailLoaded(const LoadingDescription& loadingDescription, const QPixmap& pix);
 
 public:
 
-    // For internal use - may only be used from the thread
+    /// NOTE: For internal use - may only be used from the thread
     ThumbnailCreator* thumbnailCreator() const;
 
 protected:
@@ -251,7 +253,7 @@ private:
 
 Q_SIGNALS:
 
-    // For internal use
+    /// NOTE: For internal use only.
     void thumbnailsAvailable();
     void ThumbnailLoaded(const LoadingDescription&, const QImage&);
 

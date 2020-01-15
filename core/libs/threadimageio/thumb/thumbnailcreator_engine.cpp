@@ -57,6 +57,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
         qCDebug(DIGIKAM_GENERAL_LOG) << "Trying to get thumbnail with details for" << path;
 
         // when taking a detail, we have to load the image full size
+
         qimage     = loadImageDetail(info, metadata, detailRect, &profile);
         fromDetail = !qimage.isNull();
     }
@@ -67,45 +68,52 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
             if (qimage.isNull())
             {
                 // Try to extract Exif/IPTC preview first.
+
                 qimage = loadImagePreview(metadata);
             }
 
             // To speed-up thumb extraction, we now try to load the images by the file extension.
+
             QString ext = fileInfo.suffix().toUpper();
 
             if (qimage.isNull() && !ext.isEmpty())
             {
-                if (ext == QLatin1String("JPEG") || ext == QLatin1String("JPG") || ext == QLatin1String("JPE"))
+                if      ((ext == QLatin1String("JPEG")) ||
+                         (ext == QLatin1String("JPG"))  ||
+                         (ext == QLatin1String("JPE")))
                 {
                     if (colorManage)
                     {
                         qimage = loadWithDImgScaled(path, &profile);
                     }
                     else
-                        // use jpegutils
                     {
+                        // use jpegutils
                         JPEGUtils::loadJPEGScaled(qimage, path, d->storageSize());
                     }
 
                     failedAtJPEGScaled = qimage.isNull();
                 }
-                else if (ext == QLatin1String("PNG")  ||
-                         ext == QLatin1String("TIFF") ||
-                         ext == QLatin1String("TIF"))
+                else if ((ext == QLatin1String("PNG"))  ||
+                         (ext == QLatin1String("TIFF")) ||
+                         (ext == QLatin1String("TIF")))
                 {
                     // use DImg load scaled mode
+
                     qimage       = loadWithDImgScaled(path, &profile);
                     failedAtDImg = qimage.isNull();
                 }
                 else if (ext == QLatin1String("PGF"))
                 {
                     // use pgf library to extract reduced version
+
                     PGFUtils::loadPGFScaled(qimage, path, d->storageSize());
                     failedAtPGFScaled = qimage.isNull();
                 }
             }
 
             // Trying to load with libraw: RAW files.
+
             if (qimage.isNull())
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Trying to get thumbnail from Embedded preview with libraw for" << path;
@@ -121,11 +129,13 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Trying to get thumbnail from half preview with libraw for" << path;
 
-                //TODO: Use DImg based loader instead?
+                // TODO: Use DImg based loader instead?
+
                 DRawDecoder::loadHalfPreview(qimage, path);
             }
 
             // Special case with DNG file. See bug #338081
+
             if (qimage.isNull())
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Trying to get thumbnail from Embedded preview with Exiv2 for" << path;
@@ -135,12 +145,14 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
             }
 
             // DImg-dependent loading methods: TIFF, PNG, everything supported by QImage
+
             if (qimage.isNull() && !failedAtDImg)
             {
                 qimage = loadWithDImgScaled(path, &profile);
             }
 
             // Try JPEG anyway
+
             if (qimage.isNull() && !failedAtJPEGScaled)
             {
                 // use jpegutils
@@ -148,6 +160,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
             }
 
             // Try PGF anyway
+
             if (qimage.isNull() && !failedAtPGFScaled)
             {
                 // use pgfutils
@@ -179,6 +192,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
     {
         d->error = i18n("Cannot create thumbnail for %1", path);
         qCWarning(DIGIKAM_GENERAL_LOG) << "Cannot create thumbnail for" << path;
+
         return ThumbnailImage();
     }
 
@@ -192,6 +206,7 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
     ThumbnailImage image;
     image.qimage          = qimage;
     image.exifOrientation = exifOrientation(info, metadata, fromEmbeddedPreview, fromDetail);
+
     return image;
 }
 
@@ -223,11 +238,13 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
     qDebug(DIGIKAM_GENERAL_LOG) << "Try get thumbnail from Metadata preview for" << path;
 
     // Check the first and largest preview (Raw files)
+
     MetaEnginePreviews previews(path);
 
     if (!previews.isEmpty())
     {
         // discard if smaller than half preview
+
         int acceptableWidth  = lround(previews.originalSize().width()  * 0.5);
         int acceptableHeight = lround(previews.originalSize().height() * 0.5);
 
@@ -240,6 +257,7 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
     }
 
     // load DImg
+
     DImg img;
 
     DImgLoader::LoadFlags loadFlags = DImgLoader::LoadItemInfo |
@@ -252,8 +270,10 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
     if (!img.load(path, loadFlags, d->observer, d->fastRawSettings))
     {
         qDebug(DIGIKAM_GENERAL_LOG) << "Try to get thumbnail from DImg scaled for" << path;
+
         //TODO: scaledLoading if detailRect is large
         //TODO: use code from PreviewTask, including cache storage
+
         if (!img.load(path, false, profile ? true : false, false, false, d->observer, d->fastRawSettings))
         {
             return QImage();
@@ -268,6 +288,7 @@ QImage ThumbnailCreator::loadImageDetail(const ThumbnailInfo& info,
     // We must rotate before clipping because the rect refers to the oriented image.
     // I do not know currently how to back-rotate the rect for clipping before rotation.
     // If someone has the mathematics, have a go.
+
     img.rotateAndFlip(exifOrientation(info, metadata, false, false));
 
     QRect mappedDetail = TagRegion::mapFromOriginalSize(img, detailRect);
@@ -290,6 +311,7 @@ QImage ThumbnailCreator::loadImagePreview(const DMetadata& metadata) const
     else
     {
         // load DImg preview
+
         qCDebug(DIGIKAM_GENERAL_LOG) << "Trying to get thumbnail with DImg preview for" << metadata.getFilePath();
 
         DImg img;
@@ -313,6 +335,7 @@ QImage ThumbnailCreator::handleAlphaChannel(const QImage& qimage) const
     {
         case QImage::Format_RGB32:
             break;
+
         case QImage::Format_ARGB32:
         case QImage::Format_ARGB32_Premultiplied:
         {
@@ -322,6 +345,7 @@ QImage ThumbnailCreator::handleAlphaChannel(const QImage& qimage) const
                 QImage chbImage(20, 20, QImage::Format_RGB32);
 
                 // create checkerboard brush
+
                 QPainter chb(&chbImage);
                 chb.fillRect( 0,  0, 20, 20, Qt::white);
                 chb.fillRect( 0, 10 ,10, 10, Qt::lightGray);
@@ -329,15 +353,20 @@ QImage ThumbnailCreator::handleAlphaChannel(const QImage& qimage) const
                 QBrush chbBrush(chbImage);
 
                 // use raster paint engine
+
                 QPainter p(&newImage);
+
                 // blend over white, or a checkerboard?
+
                 p.fillRect(newImage.rect(), chbBrush);
                 p.drawImage(0, 0, qimage);
+
                 return newImage;
             }
 
             break;
         }
+
         default: // indexed and monochrome formats
         {
             return qimage.convertToFormat(QImage::Format_RGB32);
@@ -364,14 +393,16 @@ int ThumbnailCreator::exifOrientation(const ThumbnailInfo& info,
 
 QImage ThumbnailCreator::exifRotate(const QImage& thumb, int orientation) const
 {
-    if (orientation == DMetadata::ORIENTATION_NORMAL ||
-        orientation == DMetadata::ORIENTATION_UNSPECIFIED)
+    if ((orientation == DMetadata::ORIENTATION_NORMAL) ||
+        (orientation == DMetadata::ORIENTATION_UNSPECIFIED))
     {
         return thumb;
     }
 
     QMatrix matrix = MetaEngineRotation::toMatrix((MetaEngine::ImageOrientation)orientation);
+
     // transform accordingly
+
     return thumb.transformed(matrix);
 }
 

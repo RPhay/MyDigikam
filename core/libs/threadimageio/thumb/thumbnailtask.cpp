@@ -57,6 +57,7 @@ ThumbnailLoadingTask::ThumbnailLoadingTask(LoadSaveThread* const thread, const L
 {
     // Thread must be a ThumbnailLoadThread, crashes otherwise.
     // Not a clean but pragmatic solution.
+
     ThumbnailLoadThread* const thumbThread = static_cast<ThumbnailLoadThread*>(thread);
     m_creator                              = thumbThread->thumbnailCreator();
 }
@@ -77,16 +78,20 @@ void ThumbnailLoadingTask::execute()
             case LoadingDescription::PreviewParameters::Thumbnail:
                 m_creator->pregenerate(m_loadingDescription.thumbnailIdentifier());
                 break;
+
             case LoadingDescription::PreviewParameters::DetailThumbnail:
                 m_creator->pregenerateDetail(m_loadingDescription.thumbnailIdentifier(),
                                              m_loadingDescription.previewParameters.extraParameter.toRect());
                 break;
+
             default:
                 break;
         }
 
         m_thread->taskHasFinished();
+
         // do not emit any signal
+
         return;
     }
 
@@ -95,6 +100,7 @@ void ThumbnailLoadingTask::execute()
         LoadingCache::CacheLock lock(cache);
 
         // find possible cached images
+
         const QImage* const cachedImage = cache->retrieveThumbnail(m_loadingDescription.cacheKey());
 
         if (cachedImage)
@@ -106,6 +112,7 @@ void ThumbnailLoadingTask::execute()
         {
             // find possible running loading process
             // do not wait on other loading processes?
+
             m_usedProcess = cache->retrieveLoadingProcess(m_loadingDescription.cacheKey());
 
             if (m_usedProcess)
@@ -114,42 +121,51 @@ void ThumbnailLoadingTask::execute()
                 // Add this task to the list of listeners and
                 // attach this thread to the other thread, wait until loading
                 // has finished.
+
                 m_usedProcess->addListener(this);
 
                 // break loop when either the loading has completed, or this task is being stopped
-                while (m_loadingTaskStatus != LoadingTaskStatusStopping &&
-                       m_usedProcess                                    &&
+
+                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) &&
+                       m_usedProcess                                      &&
                        !m_usedProcess->completed())
                 {
                     lock.timedWait();
                 }
 
                 // remove listener from process
+
                 if (m_usedProcess)
                 {
                     m_usedProcess->removeListener(this);
                 }
 
                 // set to 0, as checked in setStatus
+
                 m_usedProcess = nullptr;
 
                 // wake up the process which is waiting until all listeners have removed themselves
+
                 lock.wakeAll();
             }
             else
             {
                 // Neither in cache, nor currently loading in different thread.
                 // Load it here and now, add this LoadingProcess to cache list.
+
                 cache->addLoadingProcess(this);
 
                 // Add this to the list of listeners
+
                 addListener(this);
 
                 // for use in setStatus
+
                 m_usedProcess = this;
 
                 // Notify other processes that we are now loading this image.
                 // They might be interested - see notifyNewLoadingProcess below
+
                 cache->notifyNewLoadingProcess(this, m_loadingDescription);
             }
         }
@@ -166,10 +182,12 @@ void ThumbnailLoadingTask::execute()
             case LoadingDescription::PreviewParameters::Thumbnail:
                 m_qimage = m_creator->load(m_loadingDescription.thumbnailIdentifier());
                 break;
+
             case LoadingDescription::PreviewParameters::DetailThumbnail:
                 m_qimage = m_creator->loadDetail(m_loadingDescription.thumbnailIdentifier(),
                                                  m_loadingDescription.previewParameters.extraParameter.toRect());
                 break;
+
             default:
                 break;
         }
@@ -179,6 +197,7 @@ void ThumbnailLoadingTask::execute()
             LoadingCache::CacheLock lock(cache);
 
             // put valid image into cache of loaded images
+
             if (!m_qimage.isNull())
             {
                 cache->putThumbnail(m_loadingDescription.cacheKey(), m_qimage,
@@ -186,9 +205,11 @@ void ThumbnailLoadingTask::execute()
             }
 
             // remove this from the list of loading processes in cache
+
             cache->removeLoadingProcess(this);
 
             // dispatch image to all listeners
+
             for (int i = 0 ; i < m_listeners.count() ; ++i)
             {
                 ThumbnailLoadingTask* const task = dynamic_cast<ThumbnailLoadingTask*>(m_listeners.at(i));
@@ -200,21 +221,26 @@ void ThumbnailLoadingTask::execute()
             }
 
             // remove myself from list of listeners
+
             removeListener(this);
 
             // indicate that loading has finished so that listeners can stop waiting
+
             m_completed = true;
 
             // wake all listeners waiting on cache condVar, so that they remove themselves
+
             lock.wakeAll();
 
             // wait until all listeners have removed themselves
+
             while (m_listeners.count() != 0)
             {
                 lock.timedWait();
             }
 
             // set to 0, as checked in setStatus
+
             m_usedProcess = nullptr;
         }
     }
@@ -245,9 +271,11 @@ void ThumbnailLoadingTask::setThumbResult(const LoadingDescription& loadingDescr
 {
     // this is called from another process's execute while this task is waiting on m_usedProcess.
     // Note that loadingDescription need not equal m_loadingDescription (may be superior)
+
     LoadingDescription tempDescription       = loadingDescription;
 
     // these are taken from our own description
+
     tempDescription.postProcessingParameters = m_loadingDescription.postProcessingParameters;
     m_loadingDescription                     = tempDescription;
     m_qimage                                 = qimage;
@@ -263,16 +291,19 @@ void ThumbnailLoadingTask::postProcess()
         {
             break;
         }
+
         case LoadingDescription::ConvertToSRGB:
         {
             // Thumbnails are stored in sRGB
             break;
         }
+
         case LoadingDescription::ConvertForDisplay:
         {
             IccManager::transformForDisplay(m_qimage, m_loadingDescription.postProcessingParameters.profile());
             break;
         }
+
         default:
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Unsupported postprocessing parameter for thumbnail loading:"
