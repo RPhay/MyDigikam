@@ -508,7 +508,6 @@ GeolocationEdit::GeolocationEdit(QWidget* const parent, DInfoInterface* const if
 
 GeolocationEdit::~GeolocationEdit()
 {
-    delete d->bookmarkOwner;
     delete d;
 }
 

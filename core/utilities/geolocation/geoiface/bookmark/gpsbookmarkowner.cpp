@@ -68,7 +68,8 @@ public:
 };
 
 GPSBookmarkOwner::GPSBookmarkOwner(GPSItemModel* const gpsItemModel, QWidget* const parent)
-    : d(new Private())
+    : QObject(parent),
+      d(new Private())
 {
     d->parent = parent;
 
