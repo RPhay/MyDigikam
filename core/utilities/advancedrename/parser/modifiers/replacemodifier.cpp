@@ -117,9 +117,8 @@ QString ReplaceModifier::parseOperation(ParseSettings& settings)
     QString replacement = reg.cap(3);
     QString result      = settings.str2Modify;
     QString options     = reg.cap(5);
-    Qt::CaseSensitivity caseType = (!options.isEmpty() && options.contains(QLatin1Char('i')))
-                                   ? Qt::CaseInsensitive
-                                   : Qt::CaseSensitive;
+    Qt::CaseSensitivity caseType = (!options.isEmpty() && options.contains(QLatin1Char('i'))) ? Qt::CaseInsensitive
+                                                                                              : Qt::CaseSensitive;
 
     QRegExp ro(original);
     ro.setCaseSensitivity(caseType);

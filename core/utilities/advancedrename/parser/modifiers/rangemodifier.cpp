@@ -115,6 +115,7 @@ QString RangeModifier::parseOperation(ParseSettings& settings)
     bool ok            = false;
 
     // if the start parameter can not be extracted or is a negative value, set it to 1
+
     int start = reg.cap(2).simplified().toInt(&ok);
 
     if (!ok || start < 0)
@@ -124,6 +125,7 @@ QString RangeModifier::parseOperation(ParseSettings& settings)
 
     // If no range is defined at all ({start}), set stop = start.
     // If the stop parameter is omitted ({start-}), set stop = -1 (end of string)
+
     ok = false;
     int stop;
 
@@ -145,6 +147,7 @@ QString RangeModifier::parseOperation(ParseSettings& settings)
     // --------------------------------------------------------
 
     // replace the string according to the given range
+
     if (start > settings.str2Modify.count())
     {
         return QString();
@@ -174,7 +177,7 @@ QString RangeModifier::parseOperation(ParseSettings& settings)
 
     QString result;
 
-    for (int i = start; i <= stop; ++i)
+    for (int i = start ; i <= stop ; ++i)
     {
         result.append(settings.str2Modify.at(i));
     }

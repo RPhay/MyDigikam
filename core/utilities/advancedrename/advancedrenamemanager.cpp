@@ -51,7 +51,7 @@ struct SortByNameCaseInsensitive
 {
     bool operator() (const QString& s1, const QString& s2) const
     {
-        return s1.toLower() < s2.toLower();
+        return (s1.toLower() < s2.toLower());
     }
 };
 
@@ -63,9 +63,9 @@ struct SortByDate
         QFileInfo fi2(s2);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
-        return fi1.birthTime() < fi2.birthTime();
+        return (fi1.birthTime() < fi2.birthTime());
 #else
-        return fi1.created() < fi2.created();
+        return (fi1.created() < fi2.created());
 #endif
     }
 };
@@ -76,7 +76,8 @@ struct SortBySize
     {
         QFileInfo fi1(s1);
         QFileInfo fi2(s2);
-        return fi1.size() < fi2.size();
+
+        return (fi1.size() < fi2.size());
     }
 };
 
@@ -384,12 +385,15 @@ bool AdvancedRenameManager::initialize()
     }
 
     // clear mappings
+
     clearMappings();
 
     // initialize the file list according to the sort action and direction
+
     initializeFileList();
 
     // fill normal index map
+
     {
         int counter = 1;
 
@@ -400,6 +404,7 @@ bool AdvancedRenameManager::initialize()
     }
 
     // fill file group index map
+
     {
         int counter = 1;
 
@@ -413,6 +418,7 @@ bool AdvancedRenameManager::initialize()
     }
 
     // fill folder group index map
+
     {
         QMap<QString, QList<QString> > dirMap;
 
@@ -475,6 +481,7 @@ QString AdvancedRenameManager::newName(const QString& filename) const
 {
     // For the Linux or Windows file system,
     // we need to replace unsupported characters.
+
     QStorageInfo info(QFileInfo(filename).path());
 
     QString regExpStr = QLatin1String("[?*");

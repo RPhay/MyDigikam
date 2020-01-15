@@ -78,7 +78,7 @@ QString CommonKeys::getDbValue(const QString& key, ParseSettings& settings)
     ItemCopyright copyright       = info.imageCopyright();
     QString result;
 
-    if (key == KEY_DEFAULTCOMMENT)
+    if      (key == KEY_DEFAULTCOMMENT)
     {
         result = info.comment().simplified();
     }

@@ -82,7 +82,7 @@ QString FilePropertiesOption::parseOperation(ParseSettings& settings)
     const QRegExp& reg   = regExp();
     const QString& token = reg.cap(1);
 
-    if (token == KEY_FILE)
+    if      (token == KEY_FILE)
     {
         result = fi.completeBaseName();
     }

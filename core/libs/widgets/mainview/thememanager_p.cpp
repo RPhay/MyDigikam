@@ -340,11 +340,11 @@ qreal HCYColorSpace::lumag(qreal r, qreal g, qreal b)
 }
 
 HCYColorSpace::HCYColorSpace(qreal h_, qreal c_, qreal y_, qreal a_)
+    : h(h_),
+      c(c_),
+      y(y_),
+      a(a_)
 {
-    h = h_;
-    c = c_;
-    y = y_;
-    a = a_;
 }
 
 HCYColorSpace::HCYColorSpace(const QColor& color)

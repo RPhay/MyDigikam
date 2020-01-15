@@ -125,6 +125,7 @@ RuleDialog::~RuleDialog()
 void RuleDialog::setDialogTitle(const QString& title)
 {
     // remove ellipsis and "&&" from the string
+
     QString _title = title;
     _title.remove(QRegExp(QLatin1String("\\.{3,}"))).replace(QLatin1String("&&"), QLatin1String("&"));
 

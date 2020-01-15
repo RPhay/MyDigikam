@@ -50,9 +50,9 @@ public:
     /**
      * Default constructor.
      *
-     * @param name  collection name
+     * @param n collection name
      */
-    explicit DbKeysCollection(const QString& name);
+    explicit DbKeysCollection(const QString& n);
     virtual ~DbKeysCollection();
 
     /**

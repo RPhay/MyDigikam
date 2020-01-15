@@ -57,11 +57,12 @@ private:
     explicit TooltipCreator()
     {
     };
-    
+
     TooltipCreator(const TooltipCreator&);
     TooltipCreator& operator=(const TooltipCreator&);
 
-    // common methods
+    /// common methods
+
     QString markOption(const QString& str);
     QString tableStart();
     QString tableStart(int widthPercentage);
@@ -70,7 +71,8 @@ private:
     QString additionalInformation();
 
 
-    // parse object related methods
+    /// parse object related methods
+
     QString createEntries(const RulesList& data);
     QString createSection(const QString& sectionName, const RulesList& data, bool lastSection = false);
     QString createHeader(const QString& str);

@@ -73,13 +73,13 @@ public:
      * returns the current parse string
      */
     QString parseString() const;
+
     /**
      *
      * sets the current parse string
      * @param text the new parse string
      */
     void    setParseString(const QString& text);
-
 
     void setParseTimerDuration(int milliseconds);
 
@@ -99,6 +99,7 @@ public:
      * @param parser a pointer to the new parser instance
      */
     void    setParser(Parser* parser);
+
     /**
      * returns a pointer to the currently assigned parser
      */

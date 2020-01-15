@@ -94,7 +94,7 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
 
         result = QString::fromUtf8("%1").arg(QLatin1String("#"), digits, QLatin1Char('#'));
 
-        if (start > 1 || step > 1 || extensionAware || folderAware)
+        if ((start > 1) || (step > 1) || extensionAware || folderAware)
         {
             result.append(QLatin1Char('['));
 
@@ -108,7 +108,7 @@ void SequenceNumberOption::slotTokenTriggered(const QString& token)
                 result.append(QLatin1Char('f'));
             }
 
-            if (start > 1 || step > 1)
+            if ((start > 1) || (step > 1))
             {
                 if (extensionAware)
                 {
@@ -136,12 +136,11 @@ QString SequenceNumberOption::parseOperation(ParseSettings& settings)
 {
     QString result;
     const QRegExp& reg = regExp();
-
-    int slength      = 0;
-    int start        = 0;
-    int step         = 0;
-    int number       = 0;
-    int index        = 0;
+    int slength        = 0;
+    int start          = 0;
+    int step           = 0;
+    int number         = 0;
+    int index          = 0;
 
     if (settings.manager)
     {

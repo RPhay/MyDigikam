@@ -180,7 +180,8 @@ void DatabaseOption::addDbKeysCollection(DbKeysCollection* key)
 
     DbKeyIdsMap map = key->ids();
 
-    for (DbKeyIdsMap::const_iterator it = map.constBegin(); it != map.constEnd(); ++it)
+    for (DbKeyIdsMap::const_iterator it = map.constBegin() ;
+         it != map.constEnd() ; ++it)
     {
         m_map.insert(it.key(), key);
     }

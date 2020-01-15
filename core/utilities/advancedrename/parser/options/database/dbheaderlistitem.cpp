@@ -42,6 +42,7 @@ DbHeaderListItem::DbHeaderListItem(QTreeWidget* parent, const QString& key)
       QTreeWidgetItem(parent)
 {
     // Reset all item flags: item is not selectable.
+
     setFlags(Qt::ItemIsEnabled);
 
     setDisabled(false);

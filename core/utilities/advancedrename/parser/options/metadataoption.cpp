@@ -61,6 +61,7 @@ MetadataOptionDialog::MetadataOptionDialog(Rule* const parent)
 
     // We only need the "SearchBar" control element.
     // We also need to reset the default selections.
+
     foreach (MetadataSelectorView* const viewer, metadataPanel->viewers())
     {
         viewer->setControlElements(MetadataSelectorView::SearchBar);
@@ -173,7 +174,7 @@ QString MetadataOption::parseMetadata(const QString& token, ParseSettings& setti
     {
         MetaEngine::MetaDataMap dataMap;
 
-        if (keyword.startsWith(QLatin1String("exif.")))
+        if      (keyword.startsWith(QLatin1String("exif.")))
         {
             dataMap = meta.getExifTagsDataList(QStringList(), true);
         }

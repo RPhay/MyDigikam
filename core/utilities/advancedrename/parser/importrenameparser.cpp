@@ -37,6 +37,7 @@ ImportRenameParser::ImportRenameParser()
     : Parser()
 {
     // unregister options that are not suitable while import
+
     RulesList oplist = options();
 
     foreach (Rule* const option, oplist)

@@ -209,6 +209,7 @@ ParseResults Parser::results(ParseSettings& settings)
 ParseResults Parser::invalidModifiers(ParseSettings& settings)
 {
     parse(settings);
+
     return settings.invalidModifiers;
 }
 
@@ -234,6 +235,7 @@ QString Parser::parse(ParseSettings& settings)
     settings.results          = results;
 
     // remove invalid modifiers from the new name
+
     foreach (Rule* const mod, d->modifiers)
     {
         newName.remove(mod->regExp());
@@ -286,12 +288,15 @@ ParseResults Parser::applyModifiers(const QString& parseString, ParseResults& re
     settings.results = results;
 
     // appliedModifiers holds all the modified parse results
+
     ParseResults appliedModifiers = results;
 
     // modifierResults holds all the modifiers found in the parse string
+
     ParseResults modifierResults;
 
     // modifierMap maps the actual modifier objects to the entries in the modifierResults structure
+
     QMap<ParseResults::ResultsKey, Rule*> modifierMap;
 
     foreach (Rule* const modifier, d->modifiers)
@@ -353,11 +358,13 @@ ParseResults Parser::applyModifiers(const QString& parseString, ParseResults& re
                 }
 
                 // update result
+
                 ParseResults::ResultsKey   resultKey = key;
                 ParseResults::ResultsValue resultValue(token, modResult);
                 results.addEntry(resultKey, resultValue);
 
                 // update modifier map
+
                 ParseResults::ResultsKey modifierKey = key;
                 modifierKey.second                  += diff;
                 ParseResults::ResultsValue modifierValue(modToken, modResult);
@@ -367,10 +374,12 @@ ParseResults Parser::applyModifiers(const QString& parseString, ParseResults& re
                 appliedModifiers.addEntry(modifierKey, modifierValue);
 
                 // set position to the next possible token
+
                 pos  += mkey.second;
                 diff += mkey.second;
 
                 // remove assigned modifier from modifierResults
+
                 modifierResults.deleteEntry(mkey);
             }
             else

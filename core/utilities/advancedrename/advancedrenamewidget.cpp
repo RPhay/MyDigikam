@@ -151,7 +151,7 @@ QString AdvancedRenameWidget::parse(ParseSettings& settings) const
     settings.parseString = d->renameInput->text();
 
     QString parsed;
-    parsed = d->parser->parse(settings);
+    parsed               = d->parser->parse(settings);
 
     return parsed;
 }
@@ -190,15 +190,18 @@ void AdvancedRenameWidget::setControlWidgets(ControlWidgets mask)
 
     // we need a parser and at least one renaming option to successfully use
     // this widget.
+
     bool enable       = d->parser && !(d->parser->options().isEmpty());
 
     // enable the modifier toolbutton if environment has been set up correctly
+
     bool enableModBtn = enable && !(d->parser->modifiers().isEmpty());
 
     d->renameInput->setEnabled(enable);
     d->tooltipToggleButton->setVisible(enable && (mask & ToolTipButton));
 
     // layout specific
+
     if (d->layoutStyle == LayoutNormal)
     {
         d->optionsLabel->setVisible(enable && (mask & TokenButtons));
@@ -244,7 +247,8 @@ void AdvancedRenameWidget::registerParserControls()
         if (d->layoutStyle == LayoutNormal)
         {
             // register options
-            QPushButton* btn      = nullptr;
+
+            QPushButton* btn            = nullptr;
             DynamicLayout* const layout = new DynamicLayout(QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin),
                                                             QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin));
 
@@ -258,6 +262,7 @@ void AdvancedRenameWidget::registerParserControls()
                 }
 
                 // set button tooltip
+
                 btn->setToolTip(p->description());
 
                 layout->addWidget(btn);
@@ -270,16 +275,19 @@ void AdvancedRenameWidget::registerParserControls()
             setMinimumWidth(d->btnContainer->layout()->sizeHint().width());
 
             // register modifiers
+
             QMenu* const modifiersMenu = createControlsMenu(d->modifiersToolButton, modifiersList);
             d->modifiersToolButton->setMenu(modifiersMenu);
         }
         else    // LayoutCompact
         {
             // register options
+
             QMenu* const optionsMenu = createControlsMenu(d->optionsButton, optionsList);
             d->optionsButton->setMenu(optionsMenu);
 
             // register modifiers
+
             QMenu* const modifiersMenu = createControlsMenu(d->modifiersButton, modifiersList);
             d->modifiersButton->setMenu(modifiersMenu);
         }
@@ -471,9 +479,8 @@ void AdvancedRenameWidget::writeSettings()
 
     if (d->layoutStyle == LayoutNormal)
     {
-        group.writeEntry(d->configExpandedStateEntry, d->optionsLabel
-                         ? d->optionsLabel->isExpanded()
-                         : d->configExpandedStateDefault);
+        group.writeEntry(d->configExpandedStateEntry, d->optionsLabel ? d->optionsLabel->isExpanded()
+                                                                      : d->configExpandedStateDefault);
     }
 }
 

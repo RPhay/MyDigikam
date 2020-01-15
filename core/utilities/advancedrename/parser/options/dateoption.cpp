@@ -68,7 +68,7 @@ DateFormat::Type DateFormat::type(const QString& identifier)
         return Standard;
     }
 
-    for (int i = 0; i < m_map.size(); ++i)
+    for (int i = 0 ; i < m_map.size() ; ++i)
     {
         if (m_map.at(i).first == identifier)
         {
@@ -118,14 +118,18 @@ DateOptionDialog::DateOptionDialog(Rule* parent)
     // --------------------------------------------------------
 
     // fill the date source combobox
+
     ui->dateSourcePicker->addItem(i18nc("Get date information from the image", "Image"),
                                   QVariant(FromImage));
-    //    ui->dateSourcePicker->addItem(i18nc("Get date information from the current date", "Current Date"),
-    //                                  QVariant(CurrentDateTime));
+/*
+    ui->dateSourcePicker->addItem(i18nc("Get date information from the current date", "Current Date"),
+                                  QVariant(CurrentDateTime));
+*/
     ui->dateSourcePicker->addItem(i18nc("Set a fixed date", "Fixed Date"),
                                   QVariant(FixedDateTime));
 
     // fill the date format combobox
+
     DateFormat df;
 
     foreach (const DateFormat::DateFormatDescriptor& desc, df.map())
@@ -134,6 +138,7 @@ DateOptionDialog::DateOptionDialog(Rule* parent)
     }
 
     // set the datePicker and timePicker to the current local datetime
+
     QDateTime currentDateTime = QDateTime::currentDateTime();
     ui->datePicker->setDate(currentDateTime.date());
     ui->timePicker->setTime(currentDateTime.time());
@@ -189,9 +194,11 @@ QString DateOptionDialog::formattedDateTime(const QDateTime& date)
         case DateFormat::Custom:
             return date.toString(ui->customFormatInput->text());
             break;
+
         case DateFormat::UnixTimeStamp:
             return QString::fromUtf8("%1").arg(date.toMSecsSinceEpoch());
             break;
+
         default:
             break;
     }
@@ -264,6 +271,7 @@ QString DateOption::parseOperation(ParseSettings& settings)
     QString token = reg.cap(2);
 
     // search for quoted token parameters (indicates custom formatting)
+
     const int MIN_TOKEN_SIZE = 2;
 
     if ((token.size() > MIN_TOKEN_SIZE) &&
@@ -274,6 +282,7 @@ QString DateOption::parseOperation(ParseSettings& settings)
     }
 
     // check if the datetime was already set in the parseSettings objects (most likely during the camera import)
+
     QDateTime dateTime;
 
     if (!(settings.creationTime.isNull()) && (settings.creationTime.isValid()))
@@ -283,6 +292,7 @@ QString DateOption::parseOperation(ParseSettings& settings)
     else
     {
         // lets try to re-read the file information
+
         ItemInfo info = ItemInfo::fromUrl(settings.fileUrl);
 
         if (!info.isNull())
@@ -293,6 +303,7 @@ QString DateOption::parseOperation(ParseSettings& settings)
         if (dateTime.isNull() || !dateTime.isValid())
         {
             // still no date info, use Qt file information
+
             QFileInfo fileInfo(settings.fileUrl.toLocalFile());
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
@@ -304,6 +315,7 @@ QString DateOption::parseOperation(ParseSettings& settings)
     }
 
     // do we have a valid date?
+
     if (dateTime.isNull())
     {
         return QString();
@@ -316,11 +328,13 @@ QString DateOption::parseOperation(ParseSettings& settings)
     if (v.isNull())
     {
         // we seem to use custom format settings or UnixTimeStamp here
+
         switch (df.type(token))
         {
             case DateFormat::UnixTimeStamp:
                 result = QString::fromUtf8("%1").arg(dateTime.toMSecsSinceEpoch());
                 break;
+
             default:
                 result = dateTime.toString(token);
                 break;
@@ -355,24 +369,26 @@ void DateOption::slotTokenTriggered(const QString& token)
         int index = dlg->ui->dateFormatPicker->currentIndex();
 
         // use custom date format?
+
         if (dlg->dateSource() == DateOptionDialog::FixedDateTime)
         {
             QDateTime date;
             date.setDate(dlg->ui->datePicker->date());
             date.setTime(dlg->ui->timePicker->time());
 
-            QVariant v = (index == DateFormat::Custom)
-                         ? dlg->ui->customFormatInput->text()
-                         : df.format((DateFormat::Type)index);
+            QVariant v = (index == DateFormat::Custom) ? dlg->ui->customFormatInput->text()
+                                                       : df.format((DateFormat::Type)index);
 
             if (v.isNull())
             {
                 // we seem to use UnixTimeStamp here
+
                 switch (index)
                 {
                     case DateFormat::UnixTimeStamp:
                         dateString = QString::fromUtf8("%1").arg(date.toMSecsSinceEpoch());
                         break;
+
                     default:
                         break;
                 }
@@ -389,7 +405,9 @@ void DateOption::slotTokenTriggered(const QString& token)
                 }
             }
         }
+
         // use predefined keywords for date formatting
+
         else
         {
             QString tokenStr = QLatin1String("[date:%1]");

@@ -88,7 +88,7 @@ public:
     /**
      * Register a button in the parent object. By calling this method, a new button for the parser
      * object will be created and all necessary connections will be setup.
-
+     *
      * @param  parent the parent object the button will be registered for
      * @return a pointer to the newly created button
      */

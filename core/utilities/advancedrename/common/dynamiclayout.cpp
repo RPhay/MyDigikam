@@ -128,7 +128,7 @@ QLayoutItem* DynamicLayout::takeAt(int index)
 {
     QLayoutItem* item = nullptr;
 
-    if (index >= 0 && index < d->itemList.size())
+    if ((index >= 0) && (index < d->itemList.size()))
     {
         item = d->itemList.takeAt(index);
     }
@@ -181,10 +181,10 @@ QSize DynamicLayout::minimumSize() const
 
 int DynamicLayout::reLayout(const QRect& rect, bool testOnly) const
 {
-    int left   = 0;
-    int top    = 0;
-    int right  = 0;
-    int bottom = 0;
+    int left            = 0;
+    int top             = 0;
+    int right           = 0;
+    int bottom          = 0;
     getContentsMargins(&left, &top, &right, &bottom);
 
     QRect effectiveRect = rect.adjusted(+left, +top, -right, -bottom);
@@ -218,7 +218,7 @@ int DynamicLayout::reLayout(const QRect& rect, bool testOnly) const
     {
         int nextX = x + currentBtnWidth + d->spaceX;
 
-        if ((nextX - d->spaceX) > effectiveRect.right() && (lineHeight > 0))
+        if (((nextX - d->spaceX) > effectiveRect.right()) && (lineHeight > 0))
         {
             x          = effectiveRect.x();
             y          = y + lineHeight + d->spaceY;
@@ -237,7 +237,7 @@ int DynamicLayout::reLayout(const QRect& rect, bool testOnly) const
         lineHeight = qMax(lineHeight, item->sizeHint().height());
     }
 
-    return y + lineHeight - rect.y() + bottom;
+    return (y + lineHeight - rect.y() + bottom);
 }
 
 } // namespace Digikam

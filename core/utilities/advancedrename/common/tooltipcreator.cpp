@@ -88,7 +88,7 @@ QString TooltipCreator::getInfoIconResourceName()
 
 QIcon TooltipCreator::getInfoIcon()
 {
-    return QIcon::fromTheme(QLatin1String("folder-open")); //image-stack-open
+    return QIcon::fromTheme(QLatin1String("folder-open")); // image-stack-open
 }
 
 QString TooltipCreator::tooltip(Parser* parser)
@@ -121,6 +121,7 @@ QString TooltipCreator::tooltip(Parser* parser)
 QString TooltipCreator::tableStart(int widthPercentage)
 {
     QString w = QString::number(widthPercentage) + QLatin1Char('%');
+
     return QString::fromUtf8("<table width=\"%1\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\">").arg(w);
 }
 

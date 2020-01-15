@@ -63,6 +63,7 @@ void Highlighter::highlightBlock(const QString& text)
                 case ModifierPattern:
                 {
                     // highlight parameters in options and modifiers
+
                     if ((expression.captureCount() > 0) && !expression.cap(1).isEmpty())
                     {
                         QString fullmatched  = expression.cap(0);
@@ -98,6 +99,7 @@ void Highlighter::highlightBlock(const QString& text)
     }
 
     // mark invalid modifiers in the parse string
+
     ParseSettings settings;
     settings.parseString = text;
     ParseResults invalid = parser->invalidModifiers(settings);
@@ -108,6 +110,7 @@ void Highlighter::highlightBlock(const QString& text)
     }
 
     // highlight quoted text in options and modifiers
+
     {
         QRegExp expression(quotationRule.pattern);
         int index = expression.indexIn(text);

@@ -50,10 +50,9 @@ namespace Digikam
 {
 
 DToolTipStyleSheet::DToolTipStyleSheet(const QFont& font)
-    : maxStringLength(30)
+    : maxStringLength(30),
+      unavailable(i18n("unavailable"))
 {
-    unavailable      = i18n("unavailable");
-
     QString fontSize = (font.pointSize() == -1) ? QString::fromUtf8("font-size: %1px;").arg(font.pixelSize())
                                                 : QString::fromUtf8("font-size: %1pt;").arg(font.pointSize());
 

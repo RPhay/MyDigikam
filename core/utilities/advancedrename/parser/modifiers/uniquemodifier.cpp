@@ -62,10 +62,11 @@ QString UniqueModifier::parseOperation(ParseSettings& settings)
         QString result = settings.str2Modify;
         int index      = cache[key].count(settings.str2Modify) - 1;
 
-        bool ok     = true;
-        int slength = reg.cap(2).toInt(&ok);
-        slength     = (slength == 0 || !ok) ? 1 : slength;
-        result     += QString::fromUtf8("_%1").arg(index, slength, 10, QLatin1Char('0'));
+        bool ok        = true;
+        int slength    = reg.cap(2).toInt(&ok);
+        slength        = (slength == 0 || !ok) ? 1 : slength;
+        result        += QString::fromUtf8("_%1").arg(index, slength, 10, QLatin1Char('0'));
+
         return result;
     }
 

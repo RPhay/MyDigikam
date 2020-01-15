@@ -61,6 +61,7 @@ QString CameraNameOption::parseOperation(ParseSettings& settings)
     else
     {
         // If ItemInfo is not available, read the information from the EXIF data
+
         QString make;
         QString model;
 

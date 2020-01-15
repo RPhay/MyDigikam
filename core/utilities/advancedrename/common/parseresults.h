@@ -46,7 +46,7 @@ public:
     explicit ParseResults()
     {
     };
-    
+
     ~ParseResults()
     {
     };

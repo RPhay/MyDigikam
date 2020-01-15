@@ -184,7 +184,7 @@ void AdvancedRenameProcessDialog::slotRenameFinished()
             int result = msgBox->exec();
             delete msgBox;
 
-            if (result == QMessageBox::Cancel)
+            if      (result == QMessageBox::Cancel)
             {
                 d->failedList.clear();
                 complete();
@@ -219,7 +219,7 @@ void AdvancedRenameProcessDialog::slotRenameFinished()
 
 void AdvancedRenameProcessDialog::slotRenameFailed(const QUrl& url)
 {
-    if (d->cancel || d->currentInfo.first != url)
+    if (d->cancel || (d->currentInfo.first != url))
     {
         return;
     }

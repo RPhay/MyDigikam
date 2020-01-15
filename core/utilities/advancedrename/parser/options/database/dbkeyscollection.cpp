@@ -26,9 +26,9 @@
 namespace Digikam
 {
 
-DbKeysCollection::DbKeysCollection(const QString& name)
+DbKeysCollection::DbKeysCollection(const QString& n)
+    : name(n)
 {
-    this->name = name;
 }
 
 DbKeysCollection::~DbKeysCollection()

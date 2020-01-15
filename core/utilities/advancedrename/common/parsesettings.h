@@ -43,7 +43,7 @@ class ParseSettings
 {
 public:
 
-    // default ctors
+    /// default contructor
     ParseSettings()
     {
         init();
@@ -55,7 +55,7 @@ public:
         init();
     };
 
-    // ItemInfo ctors
+    /// ItemInfo constructor
     explicit ParseSettings(const ItemInfo& info)
     {
         init(info);

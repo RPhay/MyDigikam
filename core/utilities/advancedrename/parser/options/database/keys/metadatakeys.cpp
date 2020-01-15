@@ -86,7 +86,7 @@ MetadataKeys::MetadataKeys()
     addId(KEY_ASPECTRATIO,                  i18n("Display Aspect Ratio"));
     addId(KEY_AUDIOBITRATE,                 i18n("Audio Bit Rate"));
     addId(KEY_AUDIOCHANNELTYPE,             i18n("Audio Channel Type"));
-    addId(KEY_AUDIOCodec,              i18n("Audio Codec (Audio Codec)"));
+    addId(KEY_AUDIOCodec,                   i18n("Audio Codec (Audio Codec)"));
     addId(KEY_DURATION,                     i18n("Duration of File"));
     addId(KEY_FRAMERATE,                    i18n("Frame Rate of Video"));
     addId(KEY_VIDEOCODEC,                   i18n("Video Codec"));
@@ -94,12 +94,12 @@ MetadataKeys::MetadataKeys()
 
 QString MetadataKeys::getDbValue(const QString& key, ParseSettings& settings)
 {
-    ItemInfo info                        = ItemInfo::fromUrl(settings.fileUrl);
+    ItemInfo info                         = ItemInfo::fromUrl(settings.fileUrl);
     ImageMetadataContainer container      = info.imageMetadataContainer();
     VideoMetadataContainer videoContainer = info.videoMetadataContainer();
     QString result;
 
-    if (key == KEY_MAKE)
+    if      (key == KEY_MAKE)
     {
         result = container.make;
     }

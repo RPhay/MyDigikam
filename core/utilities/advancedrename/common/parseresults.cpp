@@ -68,6 +68,7 @@ QString ParseResults::result(const ResultsKey& key) const
     }
 
     QString result = m_results.value(key).second;
+
     return result;
 }
 

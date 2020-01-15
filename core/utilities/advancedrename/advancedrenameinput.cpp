@@ -109,6 +109,7 @@ void AdvancedRenameLineEdit::setupWidgets()
 
     // layout widget correctly by setting a dummy text and calling ensureCursorVisible().
     // Save the scrollbar position now, to avoid scrolling of the text when selecting with the mouse
+
     setPlainText(DUMMY_TEXT);
     ensureCursorVisible();
     d->verticalSliderPosition = verticalScrollBar()->value();
@@ -150,6 +151,7 @@ void AdvancedRenameLineEdit::keyPressEvent(QKeyEvent* e)
     switch (e->key())
     {
         // avoid newlines in the new name
+
         case Qt::Key_Enter:
         case Qt::Key_Return:
         {
@@ -159,6 +161,7 @@ void AdvancedRenameLineEdit::keyPressEvent(QKeyEvent* e)
         }
 
         // the keys "Up, Down, PageUp, PageDown" should be send to the QComboBox
+
         case Qt::Key_Up:
         case Qt::Key_PageUp:
         case Qt::Key_Down:
@@ -169,6 +172,7 @@ void AdvancedRenameLineEdit::keyPressEvent(QKeyEvent* e)
         }
 
         // the key "/" should not be allowed (QTextEdit is not able to use a QValidator, so we must do it in here)
+
         case Qt::Key_Slash:
         case Qt::Key_Backslash:
         {
@@ -340,9 +344,8 @@ void AdvancedRenameInput::slotHighlightLineEdit(const QString& word)
 void AdvancedRenameInput::enableHighlighter(bool enable)
 {
     delete d->highlighter;
-    d->highlighter = enable
-                     ? new Highlighter(d->lineEdit->document(), d->lineEdit->parser())
-                     : nullptr;
+    d->highlighter = enable ? new Highlighter(d->lineEdit->document(), d->lineEdit->parser())
+                            : nullptr;
 }
 
 void AdvancedRenameInput::setupWidgets()
@@ -431,6 +434,7 @@ void AdvancedRenameInput::writeSettings()
     QStringList patternHistory = group.readEntry(d->configPatternHistoryListEntry, QStringList());
 
     // remove duplicate entries and save pattern history, omit empty strings
+
     QString pattern = d->lineEdit->toPlainText();
     patternHistory.removeAll(pattern);
     patternHistory.removeAll(QLatin1String(""));

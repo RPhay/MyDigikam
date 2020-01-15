@@ -116,7 +116,7 @@ void DbKeySelector::setKeysMap(const DbOptionKeysMap& map)
 
     QMap<QString, DbHeaderListItem*> headers;
 
-    for (DbOptionKeysMap::const_iterator it = map.constBegin(); it != map.constEnd(); ++it)
+    for (DbOptionKeysMap::const_iterator it = map.constBegin() ; it != map.constEnd() ; ++it)
     {
         if (!headers.contains(it.value()->collectionName()))
         {
@@ -211,6 +211,7 @@ void DbKeySelectorView::slotSearchTextChanged(const SearchTextSettings& settings
     bool atleastOneMatch = false;
 
     // Restore all DbKey items.
+
     QTreeWidgetItemIterator it2(d->selector);
 
     while (*it2)
@@ -254,7 +255,6 @@ void DbKeySelectorView::slotSearchTextChanged(const SearchTextSettings& settings
     d->searchBar->slotSearchResult(atleastOneMatch);
 }
 
-
 void DbKeySelectorView::removeChildlessHeaders()
 {
     QTreeWidgetItemIterator it(d->selector);
@@ -268,7 +268,7 @@ void DbKeySelectorView::removeChildlessHeaders()
             int children   = item->childCount();
             int visibles = 0;
 
-            for (int i = 0 ; i < children; ++i)
+            for (int i = 0 ; i < children ; ++i)
             {
                 QTreeWidgetItem* const citem = (*it)->child(i);
 

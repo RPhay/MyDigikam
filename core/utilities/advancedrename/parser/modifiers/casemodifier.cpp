@@ -54,7 +54,7 @@ QString CaseModifier::parseOperation(ParseSettings& settings)
     const QRegExp& reg   = regExp();
     const QString& token = reg.cap(1);
 
-    if (token == QLatin1String("firstupper"))
+    if      (token == QLatin1String("firstupper"))
     {
         return firstupper(settings.str2Modify);
     }
@@ -84,7 +84,7 @@ QString CaseModifier::firstupper(const QString& str2Modify)
         result[0] = result.at(0).toUpper();
     }
 
-    for (int i = 0; i < result.length() - 1; ++i)
+    for (int i = 0 ; i < result.length() - 1 ; ++i)
     {
         if (result.at(i + 1).isLetter() && !result.at(i).isLetter())
         {

@@ -96,7 +96,7 @@ AdvancedRenameListItem:: ~AdvancedRenameListItem()
 
 void AdvancedRenameListItem::setImageUrl(const QUrl& url)
 {
-    d->imageUrl = url;
+    d->imageUrl          = url;
 
     QFileInfo fi(d->imageUrl.toLocalFile());
     d->completeFileName  = fi.fileName();
@@ -340,7 +340,7 @@ void AdvancedRenameDialog::initDialog()
         return;
     }
 
-    d->singleFileMode = count == 1;
+    d->singleFileMode = (count == 1);
 
     foreach (const QString& file, fileList)
     {
@@ -349,6 +349,7 @@ void AdvancedRenameDialog::initDialog()
     }
 
     // set current filename if only one image has been added
+
     if (d->singleFileMode)
     {
         QFileInfo info(fileList.first());
@@ -399,7 +400,7 @@ void AdvancedRenameDialog::slotReturnPressed()
 
 void AdvancedRenameDialog::slotSortActionTriggered(QAction* action)
 {
-    if (!action)
+    if      (!action)
     {
         d->advancedRenameManager->setSortAction(AdvancedRenameManager::SortCustom);
     }
@@ -419,7 +420,7 @@ void AdvancedRenameDialog::slotSortActionTriggered(QAction* action)
 
 void AdvancedRenameDialog::slotSortDirectionTriggered(QAction* direction)
 {
-    if (direction == d->sortActionAscending)
+    if      (direction == d->sortActionAscending)
     {
         d->advancedRenameManager->setSortDirection(AdvancedRenameManager::SortAscending);
     }
@@ -460,12 +461,16 @@ void AdvancedRenameDialog::slotParseStringChanged(const QString& parseString)
     d->newNamesList.clear();
 
     // generate new file names
+
     ParseSettings settings;
     settings.useOriginalFileExtension = true;
+
     // settings.useOriginalFileExtension = d->singleFileMode ? false : true;
+
     d->advancedRenameManager->parseFiles(parseString, settings);
 
     // fill the tree widget with the updated files
+
     QTreeWidgetItemIterator it(d->listView);
 
     while (*it)
@@ -546,11 +551,11 @@ bool AdvancedRenameDialog::checkNewNames() const
             completeNewName.append(QLatin1Char('/'));
             completeNewName.append(item->newName());
 
-            bool invalid = tmpNewNames.contains(completeNewName);
+            bool invalid            = tmpNewNames.contains(completeNewName);
             tmpNewNames << completeNewName;
 
             item->markInvalid(invalid);
-            ok &= !invalid;
+            ok                     &= !invalid;
 
             if (item->isNameEqual())
             {

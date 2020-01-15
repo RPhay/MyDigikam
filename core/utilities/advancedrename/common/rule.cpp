@@ -214,6 +214,7 @@ bool Rule::addToken(const QString& id, const QString& description, const QString
             this, SLOT(slotTokenTriggered(QString)));
 
     d->tokens << token;
+
     return true;
 }
 
@@ -251,10 +252,12 @@ QString Rule::escapeToken(const QString& token)
     QString escaped = token;
 
     // replace special characters for renaming options
+
     escaped.replace(QLatin1Char('['), QLatin1String("\\["));
     escaped.replace(QLatin1Char(']'), QLatin1String("\\]"));
 
     // replace special characters for modifiers
+
     escaped.replace(QLatin1Char('{'), QLatin1String("\\{"));
     escaped.replace(QLatin1Char('}'), QLatin1String("\\}"));
 
