@@ -32,25 +32,25 @@ namespace Digikam
 {
 
 VideoDecoder::Private::Private()
+    : videoStream(-1),
+      pFormatContext(nullptr),
+      pVideoCodecContext(nullptr),
+      pVideoCodecParameters(nullptr),
+      pVideoCodec(nullptr),
+      pVideoStream(nullptr),
+      pFrame(nullptr),
+      pFrameBuffer(nullptr),
+      pPacket(nullptr),
+      allowSeek(true),
+      initialized(false),
+      bufferSinkContext(nullptr),
+      bufferSourceContext(nullptr),
+      filterGraph(nullptr),
+      filterFrame(nullptr),
+      lastWidth(0),
+      lastHeight(0),
+      lastPixfmt(AV_PIX_FMT_NONE)
 {
-    videoStream           = -1;
-    pFormatContext        = nullptr;
-    pVideoCodecContext    = nullptr;
-    pVideoCodecParameters = nullptr;
-    pVideoCodec           = nullptr;
-    pVideoStream          = nullptr;
-    pFrame                = nullptr;
-    pFrameBuffer          = nullptr;
-    pPacket               = nullptr;
-    allowSeek             = true;
-    initialized           = false;
-    bufferSinkContext     = nullptr;
-    bufferSourceContext   = nullptr;
-    filterGraph           = nullptr;
-    filterFrame           = nullptr;
-    lastWidth             = 0;
-    lastHeight            = 0;
-    lastPixfmt            = AV_PIX_FMT_NONE;
 }
 
 VideoDecoder::Private::~Private()
@@ -94,6 +94,7 @@ bool VideoDecoder::Private::initializeVideo()
     if (pVideoCodec == nullptr)
     {
         // set to 0, otherwise avcodec_close(d->pVideoCodecContext) crashes
+
         pVideoCodecContext = nullptr;
         qDebug(DIGIKAM_GENERAL_LOG) << "Video Codec not found";
         return false;
@@ -166,7 +167,7 @@ int VideoDecoder::Private::decodeVideoNew(AVCodecContext* const avContext,
 
     ret = avcodec_receive_frame(avContext, avFrame);
 
-    if (ret < 0 && ret != AVERROR(EAGAIN) && ret != AVERROR_EOF)
+    if ((ret < 0) && (ret != AVERROR(EAGAIN)) && (ret != AVERROR_EOF))
     {
         return ret;
     }
@@ -194,7 +195,7 @@ bool VideoDecoder::Private::getVideoPacket()
     pPacket = new AVPacket();
 
     while (framesAvailable &&
-           !frameDecoded &&
+           !frameDecoded   &&
            (attempts++ < 1000))
     {
         framesAvailable = (av_read_frame(pFormatContext, pPacket) >= 0);
@@ -233,11 +234,11 @@ bool VideoDecoder::Private::initFilterGraph(enum AVPixelFormat pixfmt,
     filterGraph            = avfilter_graph_alloc();
 
     QByteArray arguments("buffer=");
-    arguments += "video_size=" + QByteArray::number(width)  + 'x' + QByteArray::number(height) + ':';
-    arguments += "pix_fmt="    + QByteArray::number(pixfmt) + ':';
-    arguments += "time_base=1/1:pixel_aspect=0/1[in];";
-    arguments += "[in]yadif[out];";
-    arguments += "[out]buffersink";
+    arguments             += "video_size=" + QByteArray::number(width)  + 'x' + QByteArray::number(height) + ':';
+    arguments             += "pix_fmt="    + QByteArray::number(pixfmt) + ':';
+    arguments             += "time_base=1/1:pixel_aspect=0/1[in];";
+    arguments             += "[in]yadif[out];";
+    arguments             += "[out]buffersink";
 
     int ret = avfilter_graph_parse2(filterGraph, arguments.constData(), &inputs, &outputs);
 
@@ -282,10 +283,10 @@ bool VideoDecoder::Private::processFilterGraph(AVFrame* const dst,
                                                enum AVPixelFormat pixfmt,
                                                int width, int height)
 {
-    if (!filterGraph         ||
-        width  != lastWidth  ||
-        height != lastHeight ||
-        pixfmt != lastPixfmt)
+    if (!filterGraph           ||
+        (width  != lastWidth)  ||
+        (height != lastHeight) ||
+        (pixfmt != lastPixfmt))
     {
 
         if (!initFilterGraph(pixfmt, width, height))
@@ -335,15 +336,19 @@ void VideoDecoder::Private::convertAndScaleFrame(AVPixelFormat format,
         case AV_PIX_FMT_YUVJ420P:
             pVideoCodecContextPixFormat = AV_PIX_FMT_YUV420P;
             break;
+
         case AV_PIX_FMT_YUVJ422P:
             pVideoCodecContextPixFormat = AV_PIX_FMT_YUV422P;
             break;
+
         case AV_PIX_FMT_YUVJ444P:
             pVideoCodecContextPixFormat = AV_PIX_FMT_YUV444P;
             break;
+
         case AV_PIX_FMT_YUVJ440P:
             pVideoCodecContextPixFormat = AV_PIX_FMT_YUV440P;
             break;
+
         default:
             break;
     }
@@ -411,7 +416,7 @@ void VideoDecoder::Private::calculateDimensions(int squareSize,
         int ascpectNominator    = pVideoCodecContext->sample_aspect_ratio.num;
         int ascpectDenominator  = pVideoCodecContext->sample_aspect_ratio.den;
 
-        if (ascpectNominator != 0 && ascpectDenominator != 0)
+        if ((ascpectNominator != 0) && (ascpectDenominator != 0))
         {
             srcWidth = srcWidth * ascpectNominator / ascpectDenominator;
         }

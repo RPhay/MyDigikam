@@ -62,6 +62,7 @@ void VideoThumbWriter::writeFrame(VideoFrame& frame, QImage& image)
     for (quint32 y = 0 ; y < frame.height ; ++y)
     {
         // Copy each line...
+
         memcpy(previewImage.scanLine(y),
                &frame.frameData[y * frame.lineSize],
                frame.width * 3);

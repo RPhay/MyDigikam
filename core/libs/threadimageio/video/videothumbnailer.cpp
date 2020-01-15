@@ -77,14 +77,14 @@ public:
 public:
 
     explicit Private()
-      : SMART_FRAME_ATTEMPTS(25)
+      : thumbnailSize(256),
+        seekPercentage(10),
+        overlayFilmStrip(false),
+        workAroundIssues(false),
+        maintainAspectRatio(true),
+        smartFrameSelection(false),
+        SMART_FRAME_ATTEMPTS(25)
     {
-        thumbnailSize       = 256;
-        seekPercentage      = 10;
-        overlayFilmStrip    = false;
-        workAroundIssues    = false;
-        maintainAspectRatio = true;
-        smartFrameSelection = false;
     }
 
     void generateHistogram(const VideoFrame& videoFrame, Histogram<int>& histogram);
@@ -130,7 +130,7 @@ VideoThumbnailer::~VideoThumbnailer()
 void VideoThumbnailer::setSeekPercentage(int percentage)
 {
     d->seekTime.clear();
-    d->seekPercentage = percentage > 95 ? 95 : percentage;
+    d->seekPercentage = (percentage > 95) ? 95 : percentage;
 }
 
 void VideoThumbnailer::setSeekTime(const QString& seekTime)
@@ -172,6 +172,7 @@ void VideoThumbnailer::generateThumbnail(const QString& videoFile,
     if (movieDecoder.getInitialized())
     {
         // before seeking, a frame has to be decoded
+
         if (!movieDecoder.decodeVideoFrame())
         {
             return;
@@ -180,6 +181,7 @@ void VideoThumbnailer::generateThumbnail(const QString& videoFile,
         if ((!d->workAroundIssues) || (movieDecoder.getCodec() != QLatin1String("h264")))
         {
             // workaround for bug in older ffmpeg (100% cpu usage when seeking in h264 files)
+
             int secondToSeekTo = d->seekTime.isEmpty() ? movieDecoder.getDuration() * d->seekPercentage / 100
                                                        : timeToSeconds(d->seekTime);
             movieDecoder.seek(secondToSeekTo);
@@ -299,6 +301,7 @@ int VideoThumbnailer::Private::getBestThumbnailIndex(vector<VideoFrame>& videoFr
     for (size_t i = 0 ; i < histograms.size() ; ++i)
     {
         // calculate root mean squared error
+
         float rmse = 0.0;
 
         for (int j = 0 ; j < 255 ; ++j)

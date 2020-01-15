@@ -203,7 +203,7 @@ void VideoDecoder::seek(int timeInSeconds)
         int count = 0;
         gotFrame  = false;
 
-        while (!gotFrame && count < 20)
+        while (!gotFrame && (count < 20))
         {
             d->getVideoPacket();
             gotFrame = d->decodeVideoPacket();
@@ -213,7 +213,7 @@ void VideoDecoder::seek(int timeInSeconds)
         keyFrameAttempts++;
     }
     while ((!gotFrame || !d->pFrame->key_frame) &&
-            keyFrameAttempts < 200);
+           (keyFrameAttempts < 200));
 
     if (!gotFrame)
     {

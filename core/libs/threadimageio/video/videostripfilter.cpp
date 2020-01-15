@@ -595,7 +595,7 @@ static const quint32 SMALLEST_FILM_STRIP_WIDTH = 4;
 
 static const quint8* determineFilmStrip(quint32 videoWidth, quint32& videoStripWidth, quint32& videoStripHeight)
 {
-    if (videoWidth <= SMALLEST_FILM_STRIP_WIDTH * 2)
+    if (videoWidth <= (SMALLEST_FILM_STRIP_WIDTH * 2))
     {
         return nullptr;
     }
