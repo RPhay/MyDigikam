@@ -169,13 +169,12 @@ class Q_DECL_HIDDEN MetadataPanel::Private
 public:
 
     explicit Private()
+      : tab(nullptr),
+        exifViewerConfig(nullptr),
+        mknoteViewerConfig(nullptr),
+        iptcViewerConfig(nullptr),
+        xmpViewerConfig(nullptr)
     {
-        tab                = nullptr;
-        exifViewerConfig   = nullptr;
-        mknoteViewerConfig = nullptr;
-        iptcViewerConfig   = nullptr;
-        xmpViewerConfig    = nullptr;
-
         setDefaultFilter(ExifHumanList,      defaultExifFilter);
         setDefaultFilter(MakerNoteHumanList, defaultMknoteFilter);
         setDefaultFilter(IptcHumanList,      defaultIptcFilter);
@@ -301,8 +300,7 @@ void MetadataPanel::slotTabChanged(int)
     qApp->processEvents();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group("Image Properties SideBar");
-
-    QWidget* const tab = d->tab->currentWidget();
+    QWidget* const tab        = d->tab->currentWidget();
 
     if (tab == d->exifViewerConfig)
     {

@@ -72,20 +72,20 @@ class Q_DECL_HIDDEN MetadataWidget::Private
 public:
 
     explicit Private()
+      : noneAction(nullptr),
+        photoAction(nullptr),
+        customAction(nullptr),
+        settingsAction(nullptr),
+        mainLayout(nullptr),
+        filterBtn(nullptr),
+        toolBtn(nullptr),
+        saveMetadata(nullptr),
+        printMetadata(nullptr),
+        copy2ClipBoard(nullptr),
+        optionsMenu(nullptr),
+        view(nullptr),
+        searchBar(nullptr)
     {
-        noneAction     = nullptr;
-        photoAction    = nullptr;
-        customAction   = nullptr;
-        settingsAction = nullptr;
-        mainLayout     = nullptr;
-        filterBtn      = nullptr;
-        toolBtn        = nullptr;
-        saveMetadata   = nullptr;
-        printMetadata  = nullptr;
-        copy2ClipBoard = nullptr;
-        optionsMenu    = nullptr;
-        view           = nullptr;
-        searchBar      = nullptr;
     }
 
     QAction*               noneAction;
@@ -127,7 +127,7 @@ MetadataWidget::MetadataWidget(QWidget* const parent, const QString& name)
 
     // -----------------------------------------------------------------
 
-    d->filterBtn  = new QToolButton(this);
+    d->filterBtn      = new QToolButton(this);
     d->filterBtn->setToolTip(i18n("Tags filter options"));
     d->filterBtn->setIcon(QIcon::fromTheme(QLatin1String("view-filter")));
     d->filterBtn->setPopupMode(QToolButton::InstantPopup);
@@ -214,9 +214,9 @@ void MetadataWidget::slotFilterChanged(QAction* action)
     {
         emit signalSetupMetadataFilters();
     }
-    else if (action == d->noneAction  ||
-             action == d->photoAction ||
-             action == d->customAction)
+    else if ((action == d->noneAction)  ||
+             (action == d->photoAction) ||
+             (action == d->customAction))
     {
         buildView();
     }
@@ -248,6 +248,7 @@ bool MetadataWidget::setMetadata(const DMetadata& data)
     d->metadata = DMetadata(data);
 
     // Cleanup all metadata contents.
+
     setMetadataMap();
 
     if (d->metadata.isEmpty())
@@ -257,6 +258,7 @@ bool MetadataWidget::setMetadata(const DMetadata& data)
     }
 
     // Try to decode current metadata.
+
     if (decodeMetadata())
     {
         enabledToolButtons(true);
@@ -267,6 +269,7 @@ bool MetadataWidget::setMetadata(const DMetadata& data)
     }
 
     // Refresh view using decoded metadata.
+
     buildView();
 
     return true;
@@ -455,6 +458,7 @@ QUrl MetadataWidget::saveMetadataToFile(const QString& caption, const QString& f
     QList<QUrl> urls;
 
     // Check for cancel.
+
     if (fileSaveDialog->exec() == QDialog::Accepted)
     {
         urls = fileSaveDialog->selectedUrls();
@@ -472,7 +476,7 @@ void MetadataWidget::setMode(int mode)
         return;
     }
 
-    if (mode == NONE)
+    if      (mode == NONE)
     {
         d->noneAction->setChecked(true);
     }
@@ -490,7 +494,7 @@ void MetadataWidget::setMode(int mode)
 
 int MetadataWidget::getMode() const
 {
-    if (d->noneAction->isChecked())
+    if      (d->noneAction->isChecked())
     {
         return NONE;
     }
@@ -515,6 +519,7 @@ void MetadataWidget::setCurrentItemByKey(const QString& itemKey)
 bool MetadataWidget::loadFromData(const QString& fileName, const DMetadata& data)
 {
     setFileName(fileName);
+
     return(setMetadata(data));
 }
 

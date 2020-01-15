@@ -48,8 +48,8 @@ public:
     MdKeyListViewItem(QTreeWidget* const parent, const QString& key);
     ~MdKeyListViewItem();
 
-    QString getKey() const;
-    QString getDecryptedKey() const;
+    QString getKey()            const;
+    QString getDecryptedKey()   const;
 
 private Q_SLOTS:
 

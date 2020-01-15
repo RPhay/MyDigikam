@@ -56,15 +56,15 @@ class Q_DECL_HIDDEN PickLabelWidget::Private
 public:
 
     explicit Private()
+      : pickBtns(nullptr),
+        desc(nullptr),
+        btnNone(nullptr),
+        btnRej(nullptr),
+        btnPndg(nullptr),
+        btnAccpt(nullptr),
+        descBox(nullptr),
+        shortcut(nullptr)
     {
-        pickBtns = nullptr;
-        btnNone  = nullptr;
-        btnRej   = nullptr;
-        btnPndg  = nullptr;
-        btnAccpt = nullptr;
-        desc     = nullptr;
-        descBox  = nullptr;
-        shortcut = nullptr;
     }
 
     QButtonGroup*     pickBtns;
@@ -225,6 +225,7 @@ bool PickLabelWidget::eventFilter(QObject* obj, QEvent* ev)
     }
 
     // pass the event on to the parent class
+
     return QWidget::eventFilter(obj, ev);
 }
 
@@ -258,17 +259,21 @@ QIcon PickLabelWidget::buildIcon(PickLabel label)
         case RejectedLabel:
             return QIcon::fromTheme(QLatin1String("flag-red"));
             break;
+
         case PendingLabel:
             return QIcon::fromTheme(QLatin1String("flag-yellow"));
             break;
+
         case AcceptedLabel:
             return QIcon::fromTheme(QLatin1String("flag-green"));
             break;
+
         default:
             break;
     }
 
     // default : NoPickLabel
+
     return QIcon::fromTheme(QLatin1String("flag-black"));
 }
 
@@ -281,12 +286,15 @@ QString PickLabelWidget::labelPickName(PickLabel label)
         case RejectedLabel:
             name = i18n("Rejected");
             break;
+
         case PendingLabel:
             name = i18n("Pending");
             break;
+
         case AcceptedLabel:
             name = i18n("Accepted");
             break;
+
         default:   // NoPickLabel
             name = i18n("None");
             break;
@@ -303,8 +311,8 @@ class Q_DECL_HIDDEN PickLabelSelector::Private
 public:
 
     explicit Private()
+      : plw(nullptr)
     {
-        plw = nullptr;
     }
 
     PickLabelWidget* plw;
@@ -314,7 +322,7 @@ PickLabelSelector::PickLabelSelector(QWidget* const parent)
     : QPushButton(parent),
       d(new Private)
 {
-    QMenu* const popup = new QMenu(this);
+    QMenu* const popup          = new QMenu(this);
     setMenu(popup);
 
     QWidgetAction* const action = new QWidgetAction(this);
@@ -348,7 +356,9 @@ PickLabel PickLabelSelector::colorLabel()
     QList<PickLabel> list = d->plw->colorLabels();
 
     if (!list.isEmpty())
+    {
         return list.first();
+    }
 
     return NoPickLabel;
 }

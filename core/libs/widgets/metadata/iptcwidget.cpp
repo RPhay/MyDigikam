@@ -38,12 +38,14 @@
 
 namespace
 {
+
 static const char* StandardIptcEntryList[] =
 {
     "Envelope",
     "Application2",
     "-1"
 };
+
 }
 
 namespace Digikam
@@ -106,7 +108,9 @@ bool IptcWidget::decodeMetadata()
     }
 
     // Update all metadata contents.
+
     setMetadataMap(data.getIptcTagsDataList(m_keysFilter));
+
     return true;
 }
 

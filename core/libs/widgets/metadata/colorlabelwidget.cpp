@@ -57,21 +57,21 @@ class Q_DECL_HIDDEN ColorLabelWidget::Private
 public:
 
     explicit Private()
+      : colorBtns(nullptr),
+        desc(nullptr),
+        btnNone(nullptr),
+        btnRed(nullptr),
+        btnOrange(nullptr),
+        btnYellow(nullptr),
+        btnGreen(nullptr),
+        btnBlue(nullptr),
+        btnMagenta(nullptr),
+        btnGray(nullptr),
+        btnBlack(nullptr),
+        btnWhite(nullptr),
+        descBox(nullptr),
+        shortcut(nullptr)
     {
-        colorBtns  = nullptr;
-        btnNone    = nullptr;
-        btnRed     = nullptr;
-        btnOrange  = nullptr;
-        btnYellow  = nullptr;
-        btnGreen   = nullptr;
-        btnBlue    = nullptr;
-        btnMagenta = nullptr;
-        btnGray    = nullptr;
-        btnBlack   = nullptr;
-        btnWhite   = nullptr;
-        desc       = nullptr;
-        descBox    = nullptr;
-        shortcut   = nullptr;
     }
 
     QButtonGroup*       colorBtns;
@@ -334,6 +334,7 @@ bool ColorLabelWidget::eventFilter(QObject* obj, QEvent* ev)
     }
 
     // pass the event on to the parent class
+
     return QWidget::eventFilter(obj, ev);
 }
 
@@ -354,7 +355,9 @@ QList<ColorLabel> ColorLabelWidget::colorLabels() const
     foreach (QAbstractButton* const btn, d->colorBtns->buttons())
     {
         if (btn && btn->isChecked())
+        {
             list.append((ColorLabel)(d->colorBtns->id(btn)));
+        }
     }
 
     return list;
@@ -369,6 +372,7 @@ QIcon ColorLabelWidget::buildIcon(ColorLabel label, int size)
         p.setPen(qApp->palette().color(QPalette::Active, QPalette::ButtonText));
         p.fillRect(0, 0, pix.width()-1, pix.height()-1, labelColor(label));
         p.drawRect(0, 0, pix.width()-1, pix.height()-1);
+
         return QIcon(pix);
     }
 
@@ -379,35 +383,44 @@ QColor ColorLabelWidget::labelColor(ColorLabel label)
 {
     QColor color;
 
-    switch(label)
+    switch (label)
     {
         case RedLabel:
             color = qRgb(0xDF, 0x6E, 0x5F);
             break;
+
         case OrangeLabel:
             color = qRgb(0xEE, 0xAF, 0x6B);
             break;
+
         case YellowLabel:
             color = qRgb(0xE4, 0xD3, 0x78);
             break;
+
         case GreenLabel:
             color = qRgb(0xAF, 0xD8, 0x78);
             break;
+
         case BlueLabel:
             color = qRgb(0x77, 0xBA, 0xE8);
             break;
+
         case MagentaLabel:
             color = qRgb(0xCB, 0x98, 0xE1);
             break;
+
         case GrayLabel:
             color = qRgb(0xB7, 0xB7, 0xB7);
             break;
+
         case BlackLabel:
             color = qRgb(0x28, 0x28, 0x28);
             break;
+
         case WhiteLabel:
             color = qRgb(0xF7, 0xFE, 0xFA);
             break;
+
         default:   // NoColorLabel
             break;
     }
@@ -419,35 +432,44 @@ QString ColorLabelWidget::labelColorName(ColorLabel label)
 {
     QString name;
 
-    switch(label)
+    switch (label)
     {
         case RedLabel:
             name = i18n("Red");
             break;
+
         case OrangeLabel:
             name = i18n("Orange");
             break;
+
         case YellowLabel:
             name = i18n("Yellow");
             break;
+
         case GreenLabel:
             name = i18n("Green");
             break;
+
         case BlueLabel:
             name = i18n("Blue");
             break;
+
         case MagentaLabel:
             name = i18n("Magenta");
             break;
+
         case GrayLabel:
             name = i18n("Gray");
             break;
+
         case BlackLabel:
             name = i18n("Black");
             break;
+
         case WhiteLabel:
             name = i18n("White");
             break;
+
         default:   // NoColorLabel
             name = i18n("None");
             break;
@@ -464,8 +486,8 @@ class Q_DECL_HIDDEN ColorLabelSelector::Private
 public:
 
     explicit Private()
+      : clw(nullptr)
     {
-        clw = nullptr;
     }
 
     ColorLabelWidget* clw;
@@ -509,7 +531,9 @@ ColorLabel ColorLabelSelector::colorLabel()
     QList<ColorLabel> list = d->clw->colorLabels();
 
     if (!list.isEmpty())
+    {
         return list.first();
+    }
 
     return NoColorLabel;
 }

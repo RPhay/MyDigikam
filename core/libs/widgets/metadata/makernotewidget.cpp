@@ -40,6 +40,9 @@
 namespace Digikam
 {
 
+namespace
+{
+
 static const char* ExifEntryListToIgnore[] =
 {
     "GPSInfo",
@@ -51,6 +54,8 @@ static const char* ExifEntryListToIgnore[] =
     "Photo",
     "-1"
 };
+
+}
 
 MakerNoteWidget::MakerNoteWidget(QWidget* const parent, const QString& name)
     : MetadataWidget(parent, name)
@@ -109,7 +114,9 @@ bool MakerNoteWidget::decodeMetadata()
     }
 
     // Update all metadata contents.
+
     setMetadataMap(data.getExifTagsDataList(m_keysFilter, true));
+
     return true;
 }
 

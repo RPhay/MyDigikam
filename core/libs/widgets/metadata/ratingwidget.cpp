@@ -60,15 +60,15 @@ class Q_DECL_HIDDEN RatingWidget::Private
 public:
 
     explicit Private()
+      : tracking(true),
+        isHovered(false),
+        fading(false),
+        rating(0),
+        fadingValue(0),
+        duration(600),
+        offset(0),
+        fadingTimeLine(nullptr)
     {
-        tracking       = true;
-        isHovered      = false;
-        fading         = false;
-        rating         = 0;
-        fadingTimeLine = nullptr;
-        fadingValue    = 0;
-        offset         = 0;
-        duration       = 600;   // ms
     }
 
     bool       tracking;
@@ -77,14 +77,14 @@ public:
 
     int        rating;
     int        fadingValue;
-    int        duration;
+    int        duration;       ///< in milliseconds
     int        offset;
 
     QTimeLine* fadingTimeLine;
 
-    QPixmap    selPixmap;      // Selected star.
-    QPixmap    regPixmap;      // Regular star.
-    QPixmap    disPixmap;      // Disable star.
+    QPixmap    selPixmap;      ///< Selected star.
+    QPixmap    regPixmap;      ///< Regular star.
+    QPixmap    disPixmap;      ///< Disable star.
 };
 
 RatingWidget::RatingWidget(QWidget* const parent)
@@ -166,7 +166,7 @@ void RatingWidget::setFadingValue(int value)
 {
     d->fadingValue = value;
 
-    if (d->fadingValue >= 255 && d->fadingTimeLine)
+    if ((d->fadingValue >= 255) && d->fadingTimeLine)
     {
         d->fadingTimeLine->stop();
     }
@@ -257,7 +257,7 @@ void RatingWidget::mousePressEvent(QMouseEvent* e)
         return;
     }
 
-    if (hasFading() && d->fadingValue < 255)
+    if (hasFading() && (d->fadingValue < 255))
     {
         return;
     }
@@ -299,7 +299,7 @@ void RatingWidget::mouseMoveEvent(QMouseEvent* e)
         return;
     }
 
-    if (hasFading() && d->fadingValue < 255)
+    if (hasFading() && (d->fadingValue < 255))
     {
         return;
     }
@@ -337,7 +337,7 @@ void RatingWidget::mouseReleaseEvent(QMouseEvent* e)
         return;
     }
 
-    if (hasFading() && d->fadingValue < 255)
+    if (hasFading() && (d->fadingValue < 255))
     {
         return;
     }
@@ -392,6 +392,7 @@ QPolygon RatingWidget::starPolygon()
     star << QPoint(7,  11);
     star << QPoint(3,  14);
     star << QPoint(4,  9);
+
     return star;
 }
 
@@ -406,7 +407,10 @@ QIcon RatingWidget::buildIcon(int rate, int size)
     p.setRenderHint(QPainter::Antialiasing, true);
     p.setPen(qApp->palette().color(QPalette::Active, QPalette::ButtonText));
 
-    if (rate > 0) p.setBrush(qApp->palette().color(QPalette::Link));
+    if (rate > 0)
+    {
+        p.setBrush(qApp->palette().color(QPalette::Link));
+    }
 
     p.drawPolygon(starPolygon(), Qt::WindingFill);
     p.end();
@@ -421,11 +425,12 @@ void RatingWidget::paintEvent(QPaintEvent*)
     d->offset = (width() - RatingMax * (d->disPixmap.width()+1)) / 2;
 
     // Widget is disable : drawing grayed frame.
+
     if (!isEnabled())
     {
         int x = d->offset;
 
-        for (int i = 0; i < RatingMax; ++i)
+        for (int i = 0 ; i < RatingMax ; ++i)
         {
             p.drawPixmap(x, 0, d->disPixmap);
             x += d->disPixmap.width()+1;
@@ -438,7 +443,7 @@ void RatingWidget::paintEvent(QPaintEvent*)
         QPixmap sel = d->selPixmap;
         applyFading(sel);
 
-        for (int i = 0; i < rate; ++i)
+        for (int i = 0 ; i < rate ; ++i)
         {
             p.drawPixmap(x, 0, sel);
             x += sel.width()+1;
@@ -447,7 +452,7 @@ void RatingWidget::paintEvent(QPaintEvent*)
         QPixmap reg = d->regPixmap;
         applyFading(reg);
 
-        for (int i = rate; i < RatingMax; ++i)
+        for (int i = rate ; i < RatingMax ; ++i)
         {
             p.drawPixmap(x, 0, reg);
             x += reg.width()+1;
@@ -476,9 +481,9 @@ class Q_DECL_HIDDEN RatingBox::Private
 public:
 
     explicit Private()
+      : shortcut(nullptr),
+        ratingWidget(nullptr)
     {
-        shortcut     = nullptr;
-        ratingWidget = nullptr;
     }
 
     DAdjustableLabel* shortcut;

@@ -64,17 +64,18 @@ public:
     void stopFading();
     void setVisibleImmediately();
 
-    void setVisible(bool visible) override;
+    void setVisible(bool visible)                   override;
     int  maximumVisibleWidth() const;
 
-    /** Pre-computed star polygon for a 15x15 pixmap.
+    /**
+     * Pre-computed star polygon for a 15x15 pixmap.
      */
     static QPolygon starPolygon();
     static QIcon buildIcon(int rate, int size);
 
 Q_SIGNALS:
 
-    void signalRatingModified(int);    // Not managed by tracking properties
+    void signalRatingModified(int);    ///< Not managed by tracking properties
     void signalRatingChanged(int);
 
 protected:
@@ -89,10 +90,10 @@ protected:
     void setupTimeLine();
     void applyFading(QPixmap& pix);
 
-    virtual void mousePressEvent(QMouseEvent*) override;
-    virtual void mouseMoveEvent(QMouseEvent*) override;
-    virtual void mouseReleaseEvent(QMouseEvent*) override;
-    virtual void paintEvent(QPaintEvent*) override;
+    virtual void mousePressEvent(QMouseEvent*)      override;
+    virtual void mouseMoveEvent(QMouseEvent*)       override;
+    virtual void mouseReleaseEvent(QMouseEvent*)    override;
+    virtual void paintEvent(QPaintEvent*)           override;
 
 protected Q_SLOTS:
 

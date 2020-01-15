@@ -39,7 +39,10 @@
 
 namespace
 {
-// Standard Exif Entry list from to less important to the most important for photograph.
+
+/**
+ * Standard Exif Entry list from to less important to the most important for photograph.
+ */
 static const char* StandardExifEntryList[] =
 {
     "Iop",
@@ -51,6 +54,7 @@ static const char* StandardExifEntryList[] =
     "GPSInfo",
     "-1"
 };
+
 }
 
 namespace Digikam
@@ -113,7 +117,9 @@ bool ExifWidget::decodeMetadata()
     }
 
     // Update all metadata contents.
+
     setMetadataMap(data.getExifTagsDataList(QStringList()));
+
     return true;
 }
 

@@ -44,9 +44,11 @@ public:
 
     explicit Private()
     {
-        // We cannot use KLocale::allCountriesList() here because KDE only
-        // support 2 characters country codes. XMP require 3 characters country
-        // following ISO 3166 (http://userpage.chemie.fu-berlin.de/diverse/doc/ISO_3166.html)
+        /**
+         * NOTE: We cannot use KLocale::allCountriesList() here because KDE only
+         * support 2 characters country codes. XMP require 3 characters country
+         * following ISO 3166 (http://userpage.chemie.fu-berlin.de/diverse/doc/ISO_3166.html)
+         */
 
         // Standard ISO 3166 country codes.
 
@@ -316,8 +318,8 @@ CountrySelector::CountrySelector(QWidget* const parent)
     : QComboBox(parent),
       d(new Private)
 {
-    for (Private::CountryCodeMap::Iterator it = d->countryCodeMap.begin();
-         it != d->countryCodeMap.end(); ++it)
+    for (Private::CountryCodeMap::Iterator it = d->countryCodeMap.begin() ;
+         it != d->countryCodeMap.end() ; ++it)
     {
         addItem(QString::fromLatin1("%1 - %2").arg(it.key()).arg(it.value()));
     }
@@ -356,17 +358,22 @@ void CountrySelector::setCountry(const QString& countryCode)
 bool CountrySelector::country(QString& countryCode, QString& countryName) const
 {
     // Unknow is selected ?
+
     if (currentIndex() == count()-1)
+    {
         return false;
+    }
 
     countryName = currentText().mid(6);
     countryCode = currentText().left(3);
+
     return true;
 }
 
 QString CountrySelector::countryForCode(const QString& countryCode)
 {
     Private priv;
+
     return (priv.countryCodeMap[countryCode]);
 }
 

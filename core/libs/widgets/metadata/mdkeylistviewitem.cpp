@@ -44,12 +44,13 @@ namespace Digikam
 
 MdKeyListViewItem::MdKeyListViewItem(QTreeWidget* const parent, const QString& key)
     : QObject(parent),
-      QTreeWidgetItem(parent)
+      QTreeWidgetItem(parent),
+      m_key(key),
+      m_decryptedKey(key)
 {
-    m_key          = key;
-    m_decryptedKey = key;
 
     // Standard Exif key descriptions.
+
     if      (key == QLatin1String("Iop"))
     {
         m_decryptedKey = i18n("Interoperability");
@@ -72,6 +73,7 @@ MdKeyListViewItem::MdKeyListViewItem(QTreeWidget* const parent, const QString& k
     }
 
     // Standard IPTC key descriptions.
+
     else if (key == QLatin1String("Envelope"))
     {
         m_decryptedKey = i18n("IIM Envelope");
@@ -82,6 +84,7 @@ MdKeyListViewItem::MdKeyListViewItem(QTreeWidget* const parent, const QString& k
     }
 
     // Standard XMP key descriptions.
+
     else if (key == QLatin1String("aux"))
     {
         m_decryptedKey = i18n("Additional Exif Properties");
@@ -156,6 +159,7 @@ MdKeyListViewItem::MdKeyListViewItem(QTreeWidget* const parent, const QString& k
     }
 
     // Additional XMP key descriptions.
+
     else if (key == QLatin1String("mwg-rs"))
     {
         m_decryptedKey = i18n("Metadata Working Group Regions");
@@ -166,6 +170,7 @@ MdKeyListViewItem::MdKeyListViewItem(QTreeWidget* const parent, const QString& k
     }
 
     // Reset all item flags: item is not selectable.
+
     setFlags(Qt::ItemIsEnabled);
 
     setDisabled(false);

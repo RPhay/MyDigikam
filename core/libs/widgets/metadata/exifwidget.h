@@ -45,21 +45,21 @@ public:
     explicit ExifWidget(QWidget* const parent, const QString& name=QString());
     ~ExifWidget();
 
-    bool loadFromURL(const QUrl& url) override;
+    bool loadFromURL(const QUrl& url)               override;
 
-    QString getTagDescription(const QString& key) override;
-    QString getTagTitle(const QString& key) override;
+    QString getTagDescription(const QString& key)   override;
+    QString getTagTitle(const QString& key)         override;
 
-    QString getMetadataTitle() override;
+    QString getMetadataTitle()                      override;
 
 protected Q_SLOTS:
 
-    virtual void slotSaveMetadataToFile() override;
+    virtual void slotSaveMetadataToFile()           override;
 
 private:
 
-    bool decodeMetadata() override;
-    void buildView() override;
+    bool decodeMetadata()                           override;
+    void buildView()                                override;
 
 private:
 

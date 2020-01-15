@@ -46,19 +46,22 @@ class Q_DECL_HIDDEN AltLangStrEdit::Private
 public:
 
     explicit Private()
+      : currentLanguage(QLatin1String("x-default")),
+        linesVisible(0),
+        titleLabel(nullptr),
+        delValueButton(nullptr),
+        valueEdit(nullptr),
+        languageCB(nullptr)
     {
-        valueEdit       = nullptr;
-        titleLabel      = nullptr;
-        delValueButton  = nullptr;
-        languageCB      = nullptr;
-        linesVisible    = 0;
-        currentLanguage = QLatin1String("x-default");
 
-        // We cannot use KLocale::allLanguagesList() here because KDE only
-        // support 2 characters country codes. XMP require 2+2 characters language+country
-        // following ISO 3066 (http://babelwiki.babelzilla.org/index.php?title=Language_codes)
+        /**
+         * NOTE: We cannot use KLocale::allLanguagesList() here because KDE only
+         * support 2 characters country codes. XMP require 2+2 characters language+country
+         * following ISO 3066 (http://babelwiki.babelzilla.org/index.php?title=Language_codes)
+         */
 
         // The first one from the list is the Default Language code specified by XMP paper
+
         languageCodeMap.insert( QLatin1String("x-default"), i18n("Default Language") );
 
         // Standard ISO 3066 country codes.
@@ -416,8 +419,8 @@ void AltLangStrEdit::loadLangAltListEntries()
 
     // ...and now, all the rest...
 
-    for (Private::LanguageCodeMap::Iterator it = d->languageCodeMap.begin();
-         it != d->languageCodeMap.end(); ++it)
+    for (Private::LanguageCodeMap::Iterator it = d->languageCodeMap.begin() ;
+         it != d->languageCodeMap.end() ; ++it)
     {
         if (!list.contains(it.key()))
         {
@@ -445,7 +448,7 @@ void AltLangStrEdit::slotTextChanged()
     QString editedText   = d->valueEdit->toPlainText();
     QString previousText = d->values.value(d->currentLanguage);
 
-    if (editedText.isEmpty())
+    if      (editedText.isEmpty())
     {
         slotDeleteValue();
     }
@@ -458,6 +461,7 @@ void AltLangStrEdit::slotTextChanged()
         // we cannot trust that the text actually changed
         // (there are bogus signals caused by spell checking, see bug #141663)
         // so we have to check before marking the metadata as modified.
+
         d->values.insert(d->currentLanguage, editedText);
         emit signalModified(d->currentLanguage, editedText);
     }
@@ -493,6 +497,7 @@ void AltLangStrEdit::setLinesVisible(uint lines)
     }
 
     // It's not possible to display scrollbar properly if size is too small
+
     if (d->linesVisible < 3)
     {
         d->valueEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);

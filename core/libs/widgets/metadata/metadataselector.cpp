@@ -111,7 +111,7 @@ void MetadataSelector::setTagsMap(const DMetadata::TagsMap& map)
 {
     clear();
 
-    uint                    subItems = 0;
+    uint                    subItems      = 0;
     QString                 ifDItemName, currentIfDName;
     MdKeyListViewItem*      parentifDItem = nullptr;
     QList<QTreeWidgetItem*> toplevelItems;
@@ -119,6 +119,7 @@ void MetadataSelector::setTagsMap(const DMetadata::TagsMap& map)
     for (DMetadata::TagsMap::const_iterator it = map.constBegin(); it != map.constEnd(); ++it)
     {
         // We checking if we have changed of ifDName
+
         currentIfDName = it.key().section(QLatin1Char('.'), 1, 1);
 
         if (currentIfDName != ifDItemName)
@@ -126,7 +127,8 @@ void MetadataSelector::setTagsMap(const DMetadata::TagsMap& map)
             ifDItemName = currentIfDName;
 
             // Check if the current IfD have any items. If not, remove it before to toggle to the next IfD.
-            if (subItems == 0 && parentifDItem)
+
+            if ((subItems == 0) && parentifDItem)
             {
                 delete parentifDItem;
             }
@@ -137,6 +139,7 @@ void MetadataSelector::setTagsMap(const DMetadata::TagsMap& map)
         }
 
         // We ignore all unknown tags if necessary.
+
         if (!it.key().section(QLatin1Char('.'), 2, 2).startsWith(QLatin1String("0x")))
         {
             new MetadataSelectorItem(parentifDItem, it.key(), it.value().at(0), it.value().at(2));
@@ -149,6 +152,7 @@ void MetadataSelector::setTagsMap(const DMetadata::TagsMap& map)
     // We need to call setFirstColumnSpanned() in here again because the widgets were added parentless and therefore
     // no layout information was present at construction time. Now that all items have a parent, we need to trigger the
     // method again.
+
     for (QList<QTreeWidgetItem*>::const_iterator it = toplevelItems.constBegin(); it != toplevelItems.constEnd(); ++it)
     {
         if (*it)
@@ -156,6 +160,7 @@ void MetadataSelector::setTagsMap(const DMetadata::TagsMap& map)
             (*it)->setFirstColumnSpanned(true);
         }
     }
+
     expandAll();
 }
 
@@ -245,12 +250,12 @@ class Q_DECL_HIDDEN MetadataSelectorView::Private
 public:
 
     explicit Private()
+      : selectAllBtn(nullptr),
+        clearSelectionBtn(nullptr),
+        defaultSelectionBtn(nullptr),
+        selector(nullptr),
+        searchBar(nullptr)
     {
-        selectAllBtn        = nullptr;
-        clearSelectionBtn   = nullptr;
-        defaultSelectionBtn = nullptr;
-        selector            = nullptr;
-        searchBar           = nullptr;
     }
 
     QStringList       defaultFilter;
@@ -344,6 +349,7 @@ void MetadataSelectorView::slotSearchTextChanged(const SearchTextSettings& setti
     bool atleastOneMatch = false;
 
     // Restore all MdKey items.
+
     QTreeWidgetItemIterator it2(d->selector);
 
     while (*it2)
@@ -384,6 +390,7 @@ void MetadataSelectorView::slotSearchTextChanged(const SearchTextSettings& setti
     }
 
     // If we found MdKey items alone, we hide it...
+
     cleanUpMdKeyItem();
 
     d->searchBar->slotSearchResult(atleastOneMatch);
@@ -399,10 +406,10 @@ void MetadataSelectorView::cleanUpMdKeyItem()
 
         if (item)
         {
-            int children   = item->childCount();
+            int children = item->childCount();
             int visibles = 0;
 
-            for (int i = 0 ; i < children; ++i)
+            for (int i = 0 ; i < children ; ++i)
             {
                 QTreeWidgetItem* const citem = (*it)->child(i);
 

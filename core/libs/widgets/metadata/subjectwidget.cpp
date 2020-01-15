@@ -65,21 +65,21 @@ public:
 public:
 
     explicit Private()
+      : optionsBox(nullptr),
+        addSubjectButton(nullptr),
+        delSubjectButton(nullptr),
+        repSubjectButton(nullptr),
+        iprLabel(nullptr),
+        refLabel(nullptr),
+        nameLabel(nullptr),
+        matterLabel(nullptr),
+        detailLabel(nullptr),
+        btnGroup(nullptr),
+        stdBtn(nullptr),
+        customBtn(nullptr),
+        refCB(nullptr),
+        subjectsBox(nullptr)
     {
-        addSubjectButton = nullptr;
-        delSubjectButton = nullptr;
-        repSubjectButton = nullptr;
-        subjectsBox      = nullptr;
-        iprLabel         = nullptr;
-        refLabel         = nullptr;
-        nameLabel        = nullptr;
-        matterLabel      = nullptr;
-        detailLabel      = nullptr;
-        btnGroup         = nullptr;
-        stdBtn           = nullptr;
-        customBtn        = nullptr;
-        refCB            = nullptr;
-        optionsBox       = nullptr;
     }
 
     typedef QMap<QString, SubjectData> SubjectCodesMap;
@@ -123,6 +123,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent)
                                           QLatin1String("digikam/metadata/topicset.iptc-subjectcode.xml"));
 
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+
     if (!this->loadSubjectCodesFromXML(QUrl::fromLocalFile(path)))
     {
         qCDebug(DIGIKAM_WIDGETS_LOG) << "Cannot load IPTC/NAA subject codes XML database";
@@ -131,6 +132,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent)
     // --------------------------------------------------------
 
     // Subject Reference Number only accept digit.
+
     QRegExp refDigitRx(QLatin1String("^[0-9]{8}$"));
     QValidator* const refValidator = new QRegExpValidator(refDigitRx, this);
 
@@ -149,6 +151,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent)
     codeLink->setWordWrap(false);
 
     // By default, check box is not visible.
+
     m_subjectsCheck->setVisible(false);
     m_subjectsCheck->setEnabled(false);
 
@@ -159,8 +162,10 @@ SubjectWidget::SubjectWidget(QWidget* const parent)
     d->btnGroup->setExclusive(true);
     d->stdBtn->setChecked(true);
 
-    for (Private::SubjectCodesMap::Iterator it = d->subMap.begin(); it != d->subMap.end(); ++it)
+    for (Private::SubjectCodesMap::Iterator it = d->subMap.begin() ; it != d->subMap.end() ; ++it)
+    {
         d->refCB->addItem(it.key());
+    }
 
     // --------------------------------------------------------
 
@@ -308,6 +313,7 @@ SubjectWidget::SubjectWidget(QWidget* const parent)
     // --------------------------------------------------------
 
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+
     this->slotEditOptionChanged(d->btnGroup->id(d->btnGroup->checkedButton()));
 }
 
@@ -509,24 +515,45 @@ bool SubjectWidget::loadSubjectCodesFromXML(const QUrl& url)
     {
         QDomElement newsItemElement = nbE1.toElement();
 
-        if (newsItemElement.isNull()) continue;
-        if (newsItemElement.tagName() != QLatin1String("NewsItem")) continue;
+        if (newsItemElement.isNull())
+        {
+            continue;
+        }
 
-        for (QDomNode nbE2 = newsItemElement.firstChild();
-            !nbE2.isNull(); nbE2 = nbE2.nextSibling())
+        if (newsItemElement.tagName() != QLatin1String("NewsItem"))
+        {
+            continue;
+        }
+
+        for (QDomNode nbE2 = newsItemElement.firstChild() ;
+            !nbE2.isNull() ; nbE2 = nbE2.nextSibling())
         {
             QDomElement topicSetElement = nbE2.toElement();
 
-            if (topicSetElement.isNull()) continue;
-            if (topicSetElement.tagName() != QLatin1String("TopicSet")) continue;
+            if (topicSetElement.isNull())
+            {
+                continue;
+            }
+
+            if (topicSetElement.tagName() != QLatin1String("TopicSet"))
+            {
+                continue;
+            }
 
             for (QDomNode nbE3 = topicSetElement.firstChild();
                 !nbE3.isNull(); nbE3 = nbE3.nextSibling())
             {
                 QDomElement topicElement = nbE3.toElement();
 
-                if (topicElement.isNull()) continue;
-                if (topicElement.tagName() != QLatin1String("Topic")) continue;
+                if (topicElement.isNull())
+                {
+                    continue;
+                }
+
+                if (topicElement.tagName() != QLatin1String("Topic"))
+                {
+                    continue;
+                }
 
                 QString type, name, matter, detail, ref;
 
@@ -535,23 +562,36 @@ bool SubjectWidget::loadSubjectCodesFromXML(const QUrl& url)
                 {
                     QDomElement topicSubElement = nbE4.toElement();
 
-                    if (topicSubElement.isNull()) continue;
+                    if (topicSubElement.isNull())
+                    {
+                        continue;
+                    }
 
                     if (topicSubElement.tagName() == QLatin1String("TopicType"))
+                    {
                         type = topicSubElement.attribute(QLatin1String("FormalName"));
+                    }
 
                     if (topicSubElement.tagName() == QLatin1String("FormalName"))
+                    {
                         ref = topicSubElement.text();
+                    }
 
                     if (topicSubElement.tagName() == QLatin1String("Description") &&
                         topicSubElement.attribute(QLatin1String("Variant")) == QLatin1String("Name"))
                     {
-                        if (type == QLatin1String("Subject"))
+                        if      (type == QLatin1String("Subject"))
+                        {
                             name = topicSubElement.text();
+                        }
                         else if (type == QLatin1String("SubjectMatter"))
+                        {
                             matter = topicSubElement.text();
+                        }
                         else if (type == QLatin1String("SubjectDetail"))
+                        {
                             detail = topicSubElement.text();
+                        }
                     }
                 }
 

@@ -51,21 +51,21 @@ public:
     void setPlaceholderText(const QString& msg);
 
     void    setCurrentLanguageCode(const QString& lang);
-    QString currentLanguageCode() const;
+    QString currentLanguageCode()           const;
 
-    QString languageCode(int index) const;
+    QString languageCode(int index)         const;
 
     void setValues(const MetaEngine::AltLangMap& values);
-    MetaEngine::AltLangMap& values() const;
+    MetaEngine::AltLangMap& values()        const;
 
     /**
      * Fix lines visibile in text editor to lines. If zero, do not fix layout to number of lines visible.
      */
     void setLinesVisible(uint lines);
-    uint linesVisible() const;
+    uint linesVisible()                     const;
 
-    QString defaultAltLang()   const;
-    bool    asDefaultAltLang() const;
+    QString defaultAltLang()                const;
+    bool    asDefaultAltLang()              const;
 
     /**
      * Reset widget, clear all entries
