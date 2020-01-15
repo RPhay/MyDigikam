@@ -118,6 +118,7 @@ void LoadSaveThread::run()
                 {
                     // set timing values so that first event is sent only
                     // after an initial time span.
+
                     d->notificationTime  = QTime::currentTime();
                     d->blockNotification = true;
                 }
@@ -147,6 +148,7 @@ void LoadSaveThread::taskHasFinished()
     // that has actually already finished (execute() in the loop above is of course not under mutex).
     // So we set m_currentTask to 0 immediately before the final message is emitted,
     // so that anyone who finds this task running as m_current task will get a message.
+
     QMutexLocker lock(threadMutex());
     d->lastTask   = m_currentTask;
     m_currentTask = nullptr;
@@ -171,7 +173,7 @@ void LoadSaveThread::imageLoaded(const LoadingDescription& loadingDescription, c
 }
 
 void LoadSaveThread::moreCompleteLoadingAvailable(const LoadingDescription& oldLoadingDescription,
-        const LoadingDescription& newLoadingDescription)
+                                                  const LoadingDescription& newLoadingDescription)
 {
     notificationReceived();
     emit signalMoreCompleteLoadingAvailable(oldLoadingDescription, newLoadingDescription);
@@ -208,6 +210,7 @@ void LoadSaveThread::notificationReceived()
         case NotificationPolicyDirect:
             d->blockNotification = false;
             break;
+
         case NotificationPolicyTimeLimited:
             break;
     }
@@ -222,12 +225,14 @@ void LoadSaveThread::setNotificationPolicy(NotificationPolicy notificationPolicy
 bool LoadSaveThread::querySendNotifyEvent() const
 {
     // This function is called from the thread to ask for permission to send a notify event.
+
     switch (m_notificationPolicy)
     {
         case NotificationPolicyDirect:
 
             // Note that m_blockNotification is not protected by a mutex. However, if there is a
             // race condition, the worst case is that one event is not sent, which is no problem.
+
             if (d->blockNotification)
             {
                 return false;
@@ -239,9 +244,11 @@ bool LoadSaveThread::querySendNotifyEvent() const
             }
 
             break;
+
         case NotificationPolicyTimeLimited:
 
             // Current default time value: 100 millisecs.
+
             if (d->blockNotification)
             {
                 d->blockNotification = d->notificationTime.msecsTo(QTime::currentTime()) < 100;
@@ -282,13 +289,16 @@ int LoadSaveThread::exifOrientation(const QString& filePath, const DMetadata& me
     if (isRaw && !fromRawEmbeddedPreview)
     {
         // Did the user apply any additional rotation over the metadata flag?
+
         if (dbOrientation == MetaEngine::ORIENTATION_UNSPECIFIED || dbOrientation == exifOrientation)
         {
             return MetaEngine::ORIENTATION_NORMAL;
         }
+
         // Assume A is the orientation as from metadata, B is an additional operation applied by the user,
         // C is the current orientation in the database.
         // A*B = C and B = A_inv * C
+
         QMatrix A     = MetaEngineRotation::toMatrix((MetaEngine::ImageOrientation)exifOrientation);
         QMatrix C     = MetaEngineRotation::toMatrix((MetaEngine::ImageOrientation)dbOrientation);
         QMatrix A_inv = A.inverted();

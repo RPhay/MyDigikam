@@ -55,6 +55,7 @@ void LoadingCacheInterface::connectToSignalFileChanged(QObject* const object, co
     QObject::connect(cache, SIGNAL(fileChanged(QString)),
                      object, slot,
                      Qt::QueuedConnection);
+
     // make it a queued connection because the signal is emitted when the CacheLock is held!
 }
 

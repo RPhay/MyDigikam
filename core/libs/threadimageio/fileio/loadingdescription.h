@@ -48,23 +48,31 @@ public:
     enum ColorManagementSettings
     {
         NoColorConversion,
-        ApplyTransform,    /// IccData is an IccTransform
+        ApplyTransform,    ///< IccData is an IccTransform
         ConvertForEditor,
         ConvertToSRGB,
-        ConvertForDisplay, /// IccData can be the output profile
-        ConvertForOutput   /// IccData is the output profile
+        ConvertForDisplay, ///< IccData can be the output profile
+        ConvertForOutput   ///< IccData is the output profile
     };
 
     enum RawDecodingHint
     {
-        /// The raw decoding options passed are taken from default, hardcoded settings
+        /**
+         * The raw decoding options passed are taken from default, hardcoded settings
+         */
         RawDecodingDefaultSettings,
-        /// The raw decoding options passed are taken from global settings
+        /**
+         * The raw decoding options passed are taken from global settings
+         */
         RawDecodingGlobalSettings,
-        /// The raw decoding options may be customly edited by the user
+        /**
+         * The raw decoding options may be customly edited by the user
+         */
         RawDecodingCustomSettings,
-        /// The raw decoding options are hardcoded settings optimized for loading time
-        /// The halfSizeColorImage and 16bit settings can be adjusted separately
+        /**
+         * The raw decoding options are hardcoded settings optimized for loading time
+         * The halfSizeColorImage and 16bit settings can be adjusted separately
+         */
         RawDecodingTimeOptimized
     };
 
@@ -178,17 +186,20 @@ public:
      * Return the cache key for this description
      */
     QString             cacheKey() const;
+
     /**
      * For some RAW images, the same cache key is not enough to say it is the correct result.
      * You must check the raw decoding settings in this case.
      */
     bool                needCheckRawDecoding() const;
+
     /**
      * Return all possible cache keys, starting with the best choice,
      * for which a result may be found in the cache for this description.
      * Included in the list are better quality versions, if this description is reduced.
      */
     QStringList         lookupCacheKeys() const;
+
     /**
      * Returns whether this description describes a loading operation which
      * loads the image in a reduced version (quality, size etc.)
@@ -211,8 +222,8 @@ public:
     ThumbnailIdentifier thumbnailIdentifier() const;
 
     /**
-      * Returns whether the other loading task equals this one
-      */
+     * Returns whether the other loading task equals this one
+     */
     bool operator==(const LoadingDescription& other) const;
     bool operator!=(const LoadingDescription& other) const
     {

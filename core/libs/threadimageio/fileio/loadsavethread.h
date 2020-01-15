@@ -71,6 +71,7 @@ class DIGIKAM_EXPORT LoadSaveFileInfoProvider
 public:
 
     virtual ~LoadSaveFileInfoProvider() {}
+
     /**
      * Gives a hint at the orientation of the image.
      * This can be used to supersede the Exif information in the file.
@@ -96,7 +97,9 @@ public:
 
     enum NotificationPolicy
     {
-        /** Always send notification, unless the last event is still in the event queue */
+        /**
+         * Always send notification, unless the last event is still in the event queue
+         */
         NotificationPolicyDirect,
         /**
          * Always wait for a certain amount of time after the last event sent.
@@ -107,27 +110,39 @@ public:
         NotificationPolicyTimeLimited
     };
 
-    // used by SharedLoadSaveThread only
+    /**
+     * used by SharedLoadSaveThread only
+     */
     enum AccessMode
     {
-        // image will only be used for reading
+        /**
+         * image will only be used for reading
+         */
         AccessModeRead,
-        // image data will possibly be changed
+        /**
+         * image data will possibly be changed
+         */
         AccessModeReadWrite
     };
 
 public:
 
     explicit LoadSaveThread(QObject* const parent = nullptr);
+
     /**
      * Destructor:
      * The thread will execute all pending tasks and wait for this upon destruction
      */
     ~LoadSaveThread();
 
-    /** Append a task to load the given file to the task list */
+    /**
+     * Append a task to load the given file to the task list
+     */
     void load(const LoadingDescription& description);
-    /** Append a task to save the image to the task list */
+
+    /**
+     * Append a task to save the image to the task list
+     */
     void save(const DImg& image, const QString& filePath, const QString& format);
 
     void setNotificationPolicy(NotificationPolicy notificationPolicy);
@@ -144,12 +159,15 @@ public:
 
 Q_SIGNALS:
 
-    /** All signals are delivered to the thread from where the LoadSaveThread object
-     *  has been created. This thread must use its event loop to get the signals.
-     *  You must connect to these signals with Qt::AutoConnection (default) or Qt::QueuedConnection.
+    /**
+     * All signals are delivered to the thread from where the LoadSaveThread object
+     * has been created. This thread must use its event loop to get the signals.
+     * You must connect to these signals with Qt::AutoConnection (default) or Qt::QueuedConnection.
      */
 
-    /** This signal is emitted when the loading process begins. */
+    /**
+     * This signal is emitted when the loading process begins.
+     */
     void signalImageStartedLoading(const LoadingDescription& loadingDescription);
 
     /**

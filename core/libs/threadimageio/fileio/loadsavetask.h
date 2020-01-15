@@ -63,11 +63,11 @@ public:
     {
     }
 
-    virtual void execute() = 0;
-    virtual TaskType type() = 0;
+    virtual void execute()                    = 0;
+    virtual TaskType type()                   = 0;
 
     virtual void progressInfo(float progress) = 0;
-    virtual bool continueQuery() = 0;
+    virtual bool continueQuery()              = 0;
 
 protected:
 
@@ -216,8 +216,8 @@ public:
 
 public:
 
-    void execute()  override;
-    TaskType type() override;
+    void execute()                    override;
+    TaskType type()                   override;
 
     void progressInfo(float progress) override;
     bool continueQuery()              override;

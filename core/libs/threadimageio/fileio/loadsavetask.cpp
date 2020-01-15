@@ -100,6 +100,7 @@ void SharedLoadingTask::execute()
     }
 
     // send StartedLoadingEvent from each single Task, not via LoadingProcess list
+
     m_thread->imageStartedLoading(m_loadingDescription);
 
     LoadingCache* const cache = LoadingCache::cache();
@@ -107,6 +108,7 @@ void SharedLoadingTask::execute()
         LoadingCache::CacheLock lock(cache);
 
         // find possible cached images
+
         DImg* cachedImg        = nullptr;
         QStringList lookupKeys = m_loadingDescription.lookupCacheKeys();
 
@@ -135,11 +137,13 @@ void SharedLoadingTask::execute()
         if (cachedImg)
         {
             // image is found in image cache, loading is successful
+
             m_img = DImg(*cachedImg);
         }
         else
         {
             // find possible running loading process
+
             m_usedProcess = nullptr;
 
             for (QStringList::const_iterator it = lookupKeys.constBegin() ; it != lookupKeys.constEnd() ; ++it)
@@ -156,43 +160,53 @@ void SharedLoadingTask::execute()
                 // Add this task to the list of listeners and
                 // attach this thread to the other thread, wait until loading
                 // has finished.
+
                 m_usedProcess->addListener(this);
 
                 // break loop when either the loading has completed, or this task is being stopped
-                while (m_loadingTaskStatus != LoadingTaskStatusStopping &&
-                       m_usedProcess                                    &&
+
+                while ((m_loadingTaskStatus != LoadingTaskStatusStopping) &&
+                       m_usedProcess                                      &&
                        !m_usedProcess->completed())
                 {
                     lock.timedWait();
                 }
 
                 // remove listener from process
+
                 if (m_usedProcess)
                 {
                     m_usedProcess->removeListener(this);
                 }
 
                 // set to 0, as checked in setStatus
+
                 m_usedProcess = nullptr;
 
                 // wake up the process which is waiting until all listeners have removed themselves
+
                 lock.wakeAll();
+
                 // m_img is now set to the result
             }
             else
             {
                 // Neither in cache, nor currently loading in different thread.
                 // Load it here and now, add this LoadingProcess to cache list.
+
                 cache->addLoadingProcess(this);
 
                 // Add this to the list of listeners
+
                 addListener(this);
 
                 // for use in setStatus
+
                 m_usedProcess = this;
 
                 // Notify other processes that we are now loading this image.
                 // They might be interested - see notifyNewLoadingProcess below
+
                 cache->notifyNewLoadingProcess(this, m_loadingDescription);
             }
         }
@@ -209,6 +223,7 @@ void SharedLoadingTask::execute()
             LoadingCache::CacheLock lock(cache);
 
             // put valid image into cache of loaded images
+
             if (!m_img.isNull())
             {
                 cache->putImage(m_loadingDescription.cacheKey(), m_img,
@@ -216,9 +231,11 @@ void SharedLoadingTask::execute()
             }
 
             // remove this from the list of loading processes in cache
+
             cache->removeLoadingProcess(this);
 
             // dispatch image to all listeners, including this
+
             for (int i = 0 ; i < m_listeners.count() ; ++i)
             {
                 LoadingProcessListener* const l = m_listeners.at(i);
@@ -227,6 +244,7 @@ void SharedLoadingTask::execute()
                 {
                     // If a listener requested ReadWrite access, it gets a deep copy.
                     // DImg is explicitly shared.
+
                     l->setResult(m_loadingDescription, m_img.copy());
                 }
                 else
@@ -236,28 +254,33 @@ void SharedLoadingTask::execute()
             }
 
             // remove myself from list of listeners
+
             removeListener(this);
 
             // indicate that loading has finished so that listeners can stop waiting
+
             m_completed = true;
 
             // wake all listeners waiting on cache condVar, so that they remove themselves
+
             lock.wakeAll();
 
             // wait until all listeners have removed themselves
+
             while (m_listeners.count() != 0)
             {
                 lock.timedWait();
             }
 
             // set to 0, as checked in setStatus
+
             m_usedProcess = nullptr;
         }
     }
 
     // following the golden rule to avoid deadlocks, do this when CacheLock is not held
 
-    if (continueQuery() && !m_img.isNull())
+    if      (continueQuery() && !m_img.isNull())
     {
         if (accessMode() == LoadSaveThread::AccessModeReadWrite)
         {
@@ -283,9 +306,11 @@ void SharedLoadingTask::setResult(const LoadingDescription& loadingDescription, 
 {
     // this is called from another process's execute while this task is waiting on m_usedProcess.
     // Note that loadingDescription need not equal m_loadingDescription (may be superior)
+
     LoadingDescription tempDescription       = loadingDescription;
 
     // these are taken from our own description
+
     tempDescription.postProcessingParameters = m_loadingDescription.postProcessingParameters;
     m_loadingDescription                     = tempDescription;
     m_img                                    = img;
@@ -304,6 +329,7 @@ void SharedLoadingTask::postProcess()
     {
         case LoadingDescription::NoColorConversion:
             break;
+
         case LoadingDescription::ApplyTransform:
         {
             IccTransform trans = m_loadingDescription.postProcessingParameters.transform();
@@ -311,24 +337,28 @@ void SharedLoadingTask::postProcess()
             m_img.setIccProfile(trans.outputProfile());
             break;
         }
+
         case LoadingDescription::ConvertForEditor:
         {
             IccManager manager(m_img);
             manager.transformDefault();
             break;
         }
+
         case LoadingDescription::ConvertToSRGB:
         {
             IccManager manager(m_img);
             manager.transformToSRGB();
             break;
         }
+
         case LoadingDescription::ConvertForDisplay:
         {
             IccManager manager(m_img);
             manager.transformForDisplay(m_loadingDescription.postProcessingParameters.profile());
             break;
         }
+
         case LoadingDescription::ConvertForOutput:
         {
             IccManager manager(m_img);
@@ -362,6 +392,7 @@ bool SharedLoadingTask::continueQuery()
 {
     // If this is called, the thread is currently loading an image.
     // In shared loading, we cannot stop until all listeners have been removed as well
+
     return ((m_loadingTaskStatus != LoadingTaskStatusStopping) || (m_listeners.count() != 0));
 }
 
@@ -375,15 +406,23 @@ void SharedLoadingTask::setStatus(LoadingTaskStatus status)
         LoadingCache::CacheLock lock(cache);
 
         // check for m_usedProcess, to avoid race condition that it has finished before
+
         if (m_usedProcess)
         {
             // remove this from the list of loading processes in cache
+
             cache->removeLoadingProcess(this);
+
             // remove this from list of listeners - check in continueQuery() of active thread
+
             m_usedProcess->removeListener(this);
+
             // set m_usedProcess to 0, signalling that we have detached already
+
             m_usedProcess = nullptr;
+
             // wake all listeners - particularly this - from waiting on cache condvar
+
             lock.wakeAll();
         }
     }
@@ -422,7 +461,8 @@ void SharedLoadingTask::notifyNewLoadingProcess(LoadingProcess* const process, c
     // In this case, we notify our own thread (a signal to the API user is emitted) of this.
     // The fact that we are receiving the method call shows that this task is registered with the LoadingCache,
     // somewhere in between the calls to addLoadingProcess(this) and removeLoadingProcess(this) above.
-    if (process != static_cast<LoadingProcess*>(this)                &&
+
+    if ((process != static_cast<LoadingProcess*>(this))              &&
         m_loadingDescription.isReducedVersion()                      &&
         m_loadingDescription.equalsIgnoreReducedVersion(description) &&
         !description.isReducedVersion())

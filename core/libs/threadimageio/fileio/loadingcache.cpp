@@ -65,8 +65,10 @@ public:
     QMultiMap<QString, QString>     imageFilePathHash;
     QMultiMap<QString, QString>     thumbnailFilePathHash;
     QMap<QString, LoadingProcess*>  loadingDict;
-    // Note: Don't make the mutex recursive, we need to use a wait condition on it
+
+    /// Note: Don't make the mutex recursive, we need to use a wait condition on it
     QMutex                          mutex;
+
     QWaitCondition                  condVar;
     LoadingCacheFileWatch*          watch;
     LoadingCache*                   q;
@@ -75,6 +77,7 @@ public:
 LoadingCacheFileWatch* LoadingCache::Private::fileWatch() const
 {
     // install default watch if no watch is set yet
+
     if (!watch)
     {
         q->setFileWatch(new ClassicLoadingCacheFileWatch);
@@ -85,7 +88,7 @@ LoadingCacheFileWatch* LoadingCache::Private::fileWatch() const
 
 void LoadingCache::Private::mapImageFilePath(const QString& filePath, const QString& cacheKey)
 {
-    if (imageFilePathHash.size() > 5*imageCache.size())
+    if (imageFilePathHash.size() > (5*imageCache.size()))
     {
         cleanUpImageFilePathHash();
     }
@@ -95,7 +98,7 @@ void LoadingCache::Private::mapImageFilePath(const QString& filePath, const QStr
 
 void LoadingCache::Private::mapThumbnailFilePath(const QString& filePath, const QString& cacheKey)
 {
-    if (thumbnailFilePathHash.size() > 5*(thumbnailImageCache.size() + thumbnailPixmapCache.size()))
+    if (thumbnailFilePathHash.size() > (5*(thumbnailImageCache.size() + thumbnailPixmapCache.size())))
     {
         cleanUpThumbnailFilePathHash();
     }
@@ -106,6 +109,7 @@ void LoadingCache::Private::mapThumbnailFilePath(const QString& filePath, const 
 void LoadingCache::Private::cleanUpImageFilePathHash()
 {
     // Remove all entries from hash whose value is no longer a key in the cache
+
     QSet<QString> keys = imageCache.keys().toSet();
     QMultiMap<QString, QString>::iterator it;
 
@@ -167,6 +171,7 @@ LoadingCache::LoadingCache()
     setThumbnailCacheSize(5, 100); // the pixmap number should not be based on system memory, it's graphics memory
 
     // good place to call it here as LoadingCache is a singleton
+
     qRegisterMetaType<LoadingDescription>("LoadingDescription");
     qRegisterMetaType<DImg>("DImg");
     qRegisterMetaType<DMetadata>("DMetadata");
@@ -214,6 +219,7 @@ void LoadingCache::removeImages()
 bool LoadingCache::isCacheable(const DImg& img) const
 {
     // return whether image fits in cache
+
     return (uint)d->imageCache.maxCost() >= img.numBytes();
 }
 
@@ -328,12 +334,14 @@ void LoadingCache::removeFromFileWatch(const QString& filePath)
 QStringList LoadingCache::imageFilePathsInCache() const
 {
     d->cleanUpImageFilePathHash();
+
     return d->imageFilePathHash.uniqueKeys();
 }
 
 QStringList LoadingCache::thumbnailFilePathsInCache() const
 {
     d->cleanUpThumbnailFilePathHash();
+
     return d->thumbnailFilePathHash.uniqueKeys();
 }
 
@@ -362,9 +370,9 @@ void LoadingCache::notifyFileChanged(const QString& filePath, bool notify)
 
 void LoadingCache::iccSettingsChanged(const ICCSettingsContainer& current, const ICCSettingsContainer& previous)
 {
-    if (current.enableCM           != previous.enableCM           ||
-        current.useManagedPreviews != previous.useManagedPreviews ||
-        current.monitorProfile     != previous.monitorProfile)
+    if ((current.enableCM           != previous.enableCM)           ||
+        (current.useManagedPreviews != previous.useManagedPreviews) ||
+        (current.monitorProfile     != previous.monitorProfile))
     {
         LoadingCache::CacheLock lock(this);
         removeImages();
@@ -428,6 +436,7 @@ ClassicLoadingCacheFileWatch::ClassicLoadingCacheFileWatch()
     // Make sure the signal gets here directly from the event loop.
     // If putImage is called from the main thread, with CacheLock,
     // a deadlock would result (mutex is not recursive)
+
     connect(this, SIGNAL(signalUpdateDirWatch()),
             this, SLOT(slotUpdateDirWatch()),
             Qt::QueuedConnection);
@@ -446,33 +455,43 @@ void ClassicLoadingCacheFileWatch::removeFile(const QString& filePath)
 void ClassicLoadingCacheFileWatch::addedImage(const QString& filePath)
 {
     Q_UNUSED(filePath)
+
     // schedule update of file watch
     // QFileSystemWatch can only be accessed from main thread!
+
     emit signalUpdateDirWatch();
 }
 
 void ClassicLoadingCacheFileWatch::addedThumbnail(const QString& filePath)
 {
     Q_UNUSED(filePath);
+
     // ignore, we do not watch thumbnails
 }
 
 void ClassicLoadingCacheFileWatch::slotFileDirty(const QString& path)
 {
     // Signal comes from main thread
+
     qCDebug(DIGIKAM_GENERAL_LOG) << "LoadingCache slotFileDirty:" << path;
+
     // This method acquires a lock itself
+
     notifyFileChanged(path);
+
     // No need for locking here, we are in main thread
+
     m_watch->removePath(path);
 }
 
 void ClassicLoadingCacheFileWatch::slotUpdateDirWatch()
 {
     // Event comes from main thread, we need to lock ourselves.
+
     LoadingCache::CacheLock lock(m_cache);
 
     // get a list of files in cache that need watch
+
     QStringList watchedFiles = m_watch->files();
     QList<QString> filePaths = m_cache->imageFilePathsInCache();
 
@@ -515,12 +534,14 @@ LoadingCache::CacheLock::~CacheLock()
 void LoadingCache::CacheLock::wakeAll()
 {
     // obviously the mutex is locked when this function is called
+
     m_cache->d->condVar.wakeAll();
 }
 
 void LoadingCache::CacheLock::timedWait()
 {
     // same as above, the mutex is certainly locked
+
     m_cache->d->condVar.wait(&m_cache->d->mutex, 1000);
 }
 

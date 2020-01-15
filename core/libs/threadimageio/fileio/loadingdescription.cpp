@@ -144,7 +144,8 @@ QString LoadingDescription::cacheKey() const
     // must be cached separately.
 
     // Thumbnail loading. This one is easy.
-    if (previewParameters.type == PreviewParameters::Thumbnail)
+
+    if      (previewParameters.type == PreviewParameters::Thumbnail)
     {
         QString fileRef = filePath.isEmpty() ? (QLatin1String("id:/") + previewParameters.storageReference.toString()) : filePath;
 
@@ -166,7 +167,8 @@ QString LoadingDescription::cacheKey() const
         // Assumption: Full loading. For Raw images, we need to check all parameters here.
         // Non-raw images will always be loaded full-size.
         // NOTE: do not identify these by cache key only, check the settings!
-        if (rawDecodingHint == RawDecodingGlobalSettings)
+
+        if      (rawDecodingHint == RawDecodingGlobalSettings)
         {
             return (filePath + QLatin1String("-globalraw"));
         }
@@ -178,6 +180,7 @@ QString LoadingDescription::cacheKey() const
     else
     {
         // Assumption: Size-limited previews are always eight bit and do not care for raw settings.
+
         if (previewParameters.size)
         {
             return (filePath + QLatin1String("-previewImage-") + QString::number(previewParameters.size));
@@ -191,9 +194,11 @@ QString LoadingDescription::cacheKey() const
     QString suffix;
 
     // Assumption: Time-optimized loading is used for previews and non-previews
+
     if (rawDecodingHint == RawDecodingTimeOptimized)
     {
         // Assumption: With time-optimized, we can have 8 or 16bit and halfSize or demosaiced.
+
         suffix += QLatin1String("-timeoptimized");
 
         if (!rawDecodingSettings.rawPrm.sixteenBitsImage)
@@ -215,8 +220,9 @@ QStringList LoadingDescription::lookupCacheKeys() const
     // Build a hierarchy which cache entries may be used for this LoadingDescription.
 
     // Thumbnail loading. No other cache key included!
-    if (previewParameters.type == PreviewParameters::Thumbnail ||
-        previewParameters.type == PreviewParameters::DetailThumbnail)
+
+    if ((previewParameters.type == PreviewParameters::Thumbnail) ||
+        (previewParameters.type == PreviewParameters::DetailThumbnail))
     {
         return QStringList() << cacheKey();
     }
@@ -245,6 +251,7 @@ QStringList LoadingDescription::lookupCacheKeys() const
         }
 
         // full size preview
+
         cacheKeys << filePath + QLatin1String("-previewImage");
     }
 
@@ -275,7 +282,7 @@ QStringList LoadingDescription::lookupCacheKeys() const
         }
     }
 
-    if (rawDecodingHint == RawDecodingGlobalSettings)
+    if      (rawDecodingHint == RawDecodingGlobalSettings)
     {
         cacheKeys << filePath + QLatin1String("-globalraw");
     }
@@ -296,8 +303,9 @@ bool LoadingDescription::needCheckRawDecoding() const
 bool LoadingDescription::isReducedVersion() const
 {
     // return true if this loads anything but the full version
-    return rawDecodingSettings.rawPrm.halfSizeColorImage ||
-           (previewParameters.type != PreviewParameters::NoPreview);
+
+    return (rawDecodingSettings.rawPrm.halfSizeColorImage ||
+            (previewParameters.type != PreviewParameters::NoPreview));
 }
 
 bool LoadingDescription::operator==(const LoadingDescription& other) const
@@ -323,14 +331,16 @@ bool LoadingDescription::equalsOrBetterThan(const LoadingDescription& other) con
     DRawDecoding fast = rawDecodingSettings;
     fast.optimizeTimeLoading();
 
-    return (filePath == other.filePath) &&
-           (
-               (rawDecodingSettings == other.rawDecodingSettings) ||
-               (fast                == other.rawDecodingSettings)
-           ) &&
-           (
-               (previewParameters.size == other.previewParameters.size) ||
-               other.previewParameters.size
+    return (
+            (filePath == other.filePath) &&
+            (
+                (rawDecodingSettings == other.rawDecodingSettings) ||
+                (fast                == other.rawDecodingSettings)
+            ) &&
+            (
+                (previewParameters.size == other.previewParameters.size) ||
+                other.previewParameters.size
+            )
            );
 }
 
@@ -382,8 +392,11 @@ QStringList LoadingDescription::possibleCacheKeys(const QString& filePath)
 QStringList LoadingDescription::possibleThumbnailCacheKeys(const QString& filePath)
 {
     //FIXME: With details, there is an endless number of possible cache keys. Need different approach.
+
     QStringList keys;
+
     // there are (ThumbnailSize::HD) possible keys...
+
     QString path = filePath + QLatin1String("-thumbnail-");
 
     for (int i = 1 ; i <= ThumbnailSize::HD ; ++i)
