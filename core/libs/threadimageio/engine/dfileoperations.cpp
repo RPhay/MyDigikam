@@ -67,7 +67,9 @@ bool DFileOperations::localFileRename(const QString& source,
                                       bool ignoreSettings)
 {
     QString dest = destPath;
+
     // check that we're not replacing a symlink
+
     QFileInfo info(dest);
 
     if (info.isSymLink())
@@ -85,14 +87,19 @@ bool DFileOperations::localFileRename(const QString& source,
 
     // Store old permissions:
     // Just get the current umask.
+
     mode_t curr_umask = umask(S_IREAD | S_IWRITE);
+
     // Restore the umask.
+
     umask(curr_umask);
 
     // For new files respect the umask setting.
+
     mode_t filePermissions = (S_IREAD | S_IWRITE | S_IROTH | S_IWOTH | S_IRGRP | S_IWGRP) & ~curr_umask;
 
     // For existing files, use the mode of the original file.
+
     QT_STATBUF stbuf;
 
     if (QT_STAT(dstFileName.constData(), &stbuf) == 0)
@@ -124,11 +131,14 @@ bool DFileOperations::localFileRename(const QString& source,
     }
 
     // remove dest file if it exist
+
     if (orgPath != dest && QFile::exists(orgPath) && QFile::exists(dest))
     {
         QFile::remove(dest);
     }
+
     // rename tmp file to dest
+
     if (!renameFile(orgPath, dest))
     {
         return false;
@@ -137,6 +147,7 @@ bool DFileOperations::localFileRename(const QString& source,
 #ifndef Q_OS_WIN
 
     // restore permissions
+
     if (::chmod(dstFileName.constData(), filePermissions) != 0)
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore file permissions for file"
@@ -165,7 +176,9 @@ QUrl DFileOperations::getUniqueFileUrl(const QUrl& orgUrl,
                                        bool* const newurl)
 {
     if (newurl)
+    {
         *newurl = false;
+    }
 
     int counter = 0;
     QUrl destUrl(orgUrl);
@@ -192,7 +205,9 @@ QUrl DFileOperations::getUniqueFileUrl(const QUrl& orgUrl,
                 fileFound = false;
 
                 if (newurl)
+                {
                     *newurl = true;
+                }
             }
             else
             {
@@ -253,6 +268,7 @@ bool DFileOperations::runFiles(const QString& appCmd,
         icon = service->icon();
 
 #ifdef Q_OS_LINUX
+
         if (service->terminal())
         {
             termOpts = service->terminalOptions().split(split, QString::SkipEmptyParts);
@@ -267,7 +283,9 @@ bool DFileOperations::runFiles(const QString& appCmd,
 
             useTerminal = !term.isEmpty();
         }
-#endif
+
+#endif // Q_OS_LINUX
+
     }
 
     QProcess* const process = new QProcess();
@@ -305,33 +323,45 @@ bool DFileOperations::runFiles(const QString& appCmd,
             continue;
         }
 
-        if (cmd == QLatin1String("%c"))
+        if      (cmd == QLatin1String("%c"))
+        {
             cmdArgs << name;
+        }
         else if (cmd == QLatin1String("%i"))
+        {
             cmdArgs << icon;
+        }
         else if (cmd == QLatin1String("%f"))
         {
             cmdArgs << files.first();
             openNewRun = true;
         }
         else if (cmd == QLatin1String("%F"))
+        {
             cmdArgs << files;
+        }
         else if (cmd == QLatin1String("%u"))
         {
             cmdArgs << files.first();
             openNewRun = true;
         }
         else if (cmd == QLatin1String("%U"))
+        {
             cmdArgs << files;
+        }
         else if (cmd == QLatin1String("%d"))
         {
             cmdArgs << dirs.first();
             openNewRun = true;
         }
         else if (cmd == QLatin1String("%D"))
+        {
             cmdArgs << dirs;
+        }
         else
+        {
             cmdArgs << cmd;
+        }
     }
 
     process->setProcessEnvironment(env);
@@ -384,6 +414,7 @@ KService::List DFileOperations::servicesForOpenWith(const QList<QUrl>& urls)
     if (!mimeTypes.isEmpty())
     {
         // Query trader
+
         const QString firstMimeType      = mimeTypes.takeFirst();
         const QString constraintTemplate = QLatin1String("'%1' in ServiceTypes");
         QStringList constraints;
@@ -398,6 +429,7 @@ KService::List DFileOperations::servicesForOpenWith(const QList<QUrl>& urls)
                                                 constraints.join(QLatin1String(" and ")));
 
         // remove duplicate service entries
+
         QSet<QString> seenApps;
 
         for (KService::List::iterator it = offers.begin(); it != offers.end();)
@@ -535,16 +567,22 @@ bool DFileOperations::copyFolderRecursively(const QString& srcPath,
         QString copyPath = newCopyPath + QLatin1Char('/') + fileInfo.fileName();
 
         if (cancel && *cancel)
+        {
             return false;
+        }
 
         if (!copyFile(fileInfo.filePath(), copyPath))
+        {
             return false;
+        }
     }
 
     foreach (const QFileInfo& fileInfo, srcDir.entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot))
     {
         if (!copyFolderRecursively(fileInfo.filePath(), newCopyPath, cancel))
+        {
             return false;
+        }
     }
 
     return true;
@@ -559,7 +597,9 @@ bool DFileOperations::copyFiles(const QStringList& srcPaths,
         QString copyPath = dstPath + QLatin1Char('/') + fileInfo.fileName();
 
         if (!copyFile(fileInfo.filePath(), copyPath))
+        {
             return false;
+        }
     }
 
     return true;
@@ -573,7 +613,7 @@ bool DFileOperations::renameFile(const QString& srcFile,
 
     bool ret = QFile::rename(srcFile, dstFile);
 
-    if (ret && stat == 0)
+    if (ret && (stat == 0))
     {
         struct utimbuf ut;
         ut.modtime = st.st_mtime;
@@ -612,7 +652,7 @@ bool DFileOperations::copyFile(const QString& srcFile,
         QFile::remove(tmpFile);
     }
 
-    if (ret && stat == 0)
+    if (ret && (stat == 0))
     {
         struct utimbuf ut;
         ut.modtime = st.st_mtime;

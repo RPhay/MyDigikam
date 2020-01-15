@@ -45,58 +45,69 @@ class DIGIKAM_EXPORT DFileOperations
 {
 public:
 
-    /** This method rename a local file 'orgPath' to 'destPath' with all ACL properties
-     *  restoration taken from 'source' file.
-     *  Return true if operation is completed.
+    /**
+     * This method rename a local file 'orgPath' to 'destPath' with all ACL properties
+     * restoration taken from 'source' file.
+     * Return true if operation is completed.
      */
     static bool localFileRename(const QString& source,
                                 const QString& orgPath,
                                 const QString& destPath,
                                 bool ignoreSettings = false);
 
-    /** Open file urls to default application relevant of file type-mimes desktop configuration.
+    /**
+     * Open file urls to default application relevant of file type-mimes desktop configuration.
      */
     static void openFilesWithDefaultApplication(const QList<QUrl>& urls);
 
-    /** Get unique file url if file exist by appending a counter suffix or return original url.
+    /**
+     * Get unique file url if file exist by appending a counter suffix or return original url.
      */
     static QUrl getUniqueFileUrl(const QUrl& orgUrl, bool* const newurl = nullptr);
 
-    /** Open file urls with the service.
+    /**
+     * Open file urls with the service.
      */
     static bool runFiles(KService* const service, const QList<QUrl>& urls);
 
-    /** Open file urls with the application command.
+    /**
+     * Open file urls with the application command.
      */
     static bool runFiles(const QString& appCmd,
                          const QList<QUrl>& urls,
                          KService* const service = nullptr);
 
-    /** Return list of service available on desktop to open files.
+    /**
+     * Return list of service available on desktop to open files.
      */
     static KService::List servicesForOpenWith(const QList<QUrl>& urls);
 
-    /** Open system file manager and select the item.
+    /**
+     * Open system file manager and select the item.
      */
     static void openInFileManager(const QList<QUrl>& urls);
 
-    /** Copy recursively a directory contents to another one.
+    /**
+     * Copy recursively a directory contents to another one.
      */
     static bool copyFolderRecursively(const QString& srcPath,
                                       const QString& dstPath,
                                       const bool* cancel = nullptr);
 
-    /** Copy a list of files to another place.
+    /**
+     * Copy a list of files to another place.
      */
     static bool copyFiles(const QStringList& srcPaths,
                           const QString& dstPath);
 
-    /** Rename or move file and keep the source file modification time.
+    /**
+     * Rename or move file and keep the source file modification time.
      */
     static bool renameFile(const QString& srcFile,
                            const QString& dstFile);
 
-    /** Copy file and keep the source file modification time.
+    /**
+     * Copy file and keep the source file modification time.
      */
     static bool copyFile(const QString& srcFile,
                          const QString& dstFile);

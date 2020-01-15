@@ -42,88 +42,130 @@ public:
 
     enum LoadingPolicy
     {
-        /// Load image immediately, remove and stop all previous loading tasks.
+        /**
+         * Load image immediately, remove and stop all previous loading tasks.
+         */
         LoadingPolicyFirstRemovePrevious,
-        /// Prepend loading in front of all other tasks, but wait for the current task to finish.
-        /// No other tasks will be removed, preloading tasks will be stopped and postponed.
+        /**
+         * Prepend loading in front of all other tasks, but wait for the current task to finish.
+         * No other tasks will be removed, preloading tasks will be stopped and postponed.
+         */
         LoadingPolicyPrepend,
-        /// Prepend in front of all other tasks (not touching the current task).
-        /// Do not check for duplicate tasks, do not check for preloading tasks.
+        /**
+         * Prepend in front of all other tasks (not touching the current task).
+         * Do not check for duplicate tasks, do not check for preloading tasks.
+         */
         LoadingPolicySimplePrepend,
-        /// Append loading task to the end of the list, but in front of all preloading tasks.
-        /// No other tasks will be removed, preloading tasks will be stopped and postponed.
-        /// This is similar to the simple load() operation from LoadSaveThread, except for the
-        /// special care taken for preloading.
+        /**
+         * Append loading task to the end of the list, but in front of all preloading tasks.
+         * No other tasks will be removed, preloading tasks will be stopped and postponed.
+         * This is similar to the simple load() operation from LoadSaveThread, except for the
+         * special care taken for preloading.
+         */
         LoadingPolicyAppend,
-        /// Append to the lists of tasks.
-        /// Do not check for duplicate tasks, do not check for preloading tasks.
+        /**
+         * Append to the lists of tasks.
+         * Do not check for duplicate tasks, do not check for preloading tasks.
+         */
         LoadingPolicySimpleAppend,
-        /// Preload image, i.e. load it with low priority when no other tasks are scheduled.
-        /// All other tasks will take precedence, and preloading tasks will be stopped and
-        /// postponed when another task is added.
-        /// No progress info will be sent for preloaded images
+        /**
+         * Preload image, i.e. load it with low priority when no other tasks are scheduled.
+         * All other tasks will take precedence, and preloading tasks will be stopped and
+         * postponed when another task is added.
+         * No progress info will be sent for preloaded images
+         */
         LoadingPolicyPreload
     };
 
     enum TerminationPolicy
     {
-        /// Wait for saving tasks, stop and remove loading tasks
-        /// This is the default.
+        /**
+         * Wait for saving tasks, stop and remove loading tasks
+         * This is the default.
+         */
         TerminationPolicyTerminateLoading,
-        /// Wait for loading and saving tasks, stop and remove preloading tasks
+        /**
+         * Wait for loading and saving tasks, stop and remove preloading tasks
+         */
         TerminationPolicyTerminatePreloading,
-        /// Wait for all pending tasks
+        /**
+         * Wait for all pending tasks
+         */
         TerminationPolicyWait,
-        /// Stop all pending tasks
+        /**
+         * Stop all pending tasks
+         */
         TerminationPolicyTerminateAll
     };
 
     enum LoadingTaskFilter
     {
-        /// filter all loading tasks
+        /**
+         * filter all loading tasks
+         */
         LoadingTaskFilterAll,
-        /// filter only tasks with preloading policy
+        /**
+         * filter only tasks with preloading policy
+         */
         LoadingTaskFilterPreloading
     };
 
-    /// used by SharedLoadSaveThread only
+    /**
+     * used by SharedLoadSaveThread only
+     */
     enum LoadingMode
     {
-        /// no sharing of loading process, no caching of image
+        /**
+         * no sharing of loading process, no caching of image
+         */
         LoadingModeNormal,
-        /// loading process is shared, image is cached
+        /**
+         * loading process is shared, image is cached
+         */
         LoadingModeShared
     };
 
 public:
 
-    /// Termination is controlled by setting the TerminationPolicy
-    /// Default is TerminationPolicyTerminateLoading
+    /**
+     * Termination is controlled by setting the TerminationPolicy
+     * Default is TerminationPolicyTerminateLoading
+     */
     explicit ManagedLoadSaveThread(QObject* const parent = nullptr);
     ~ManagedLoadSaveThread();
 
-    /// Append a task to load the given file to the task list.
-    /// If there is already a task for the given file, it will possibly be rescheduled,
-    /// but no second task will be added.
-    /// Only loading tasks will - if required by the policy - be stopped or removed,
-    /// saving tasks will not be touched.
+    /**
+     * Append a task to load the given file to the task list.
+     * If there is already a task for the given file, it will possibly be rescheduled,
+     * but no second task will be added.
+     * Only loading tasks will - if required by the policy - be stopped or removed,
+     * saving tasks will not be touched.
+     */
     void load(const LoadingDescription& description);
     void load(const LoadingDescription& description, LoadingPolicy policy);
 
-    /// Stop and remove tasks filtered by filePath and policy.
-    /// If filePath isNull, applies to all file paths.
+    /**
+     * Stop and remove tasks filtered by filePath and policy.
+     * If filePath isNull, applies to all file paths.
+     */
     void stopLoading(const QString& filePath = QString(), LoadingTaskFilter filter = LoadingTaskFilterAll);
 
-    /// Same than previous method, but Stop and remove tasks filtered by LoadingDescription.
+    /**
+     * Same than previous method, but Stop and remove tasks filtered by LoadingDescription.
+     */
     void stopLoading(const LoadingDescription& desc, LoadingTaskFilter filter = LoadingTaskFilterAll);
 
-    /// Stop and remove saving tasks filtered by filePath.
-    /// If filePath isNull, applies to all file paths.
+    /**
+     * Stop and remove saving tasks filtered by filePath.
+     * If filePath isNull, applies to all file paths.
+     */
     void stopSaving(const QString& filePath = QString());
 
     void stopAllTasks();
 
-    /// Append a task to save the image to the task list
+    /**
+     * Append a task to save the image to the task list
+     */
     void save(DImg& image, const QString& filePath, const QString& format);
 
     void              setTerminationPolicy(TerminationPolicy terminationPolicy);
