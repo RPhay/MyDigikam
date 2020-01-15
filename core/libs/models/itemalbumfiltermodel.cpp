@@ -46,9 +46,9 @@ class Q_DECL_HIDDEN ItemAlbumFilterModelPrivate : public ItemFilterModel::ItemFi
 public:
 
     ItemAlbumFilterModelPrivate()
+      : delayedAlbumNamesTimer(nullptr),
+        delayedTagNamesTimer(nullptr)
     {
-        delayedAlbumNamesTimer = nullptr;
-        delayedTagNamesTimer   = nullptr;
     }
 
     QHash<int, QString> tagNamesHash;
@@ -153,11 +153,12 @@ int ItemAlbumFilterModel::compareInfosCategories(const ItemInfo& left, const Ite
                 return 0;
             }
 
-            if (d->sorter.sortRole == ItemSortSettings::SortByCreationDate ||
-                d->sorter.sortRole == ItemSortSettings::SortByModificationDate)
+            if ((d->sorter.sortRole == ItemSortSettings::SortByCreationDate) ||
+                (d->sorter.sortRole == ItemSortSettings::SortByModificationDate))
             {
                 // Here we want to sort the _categories_ by _album_ date if images are sorted by date
                 // We must still make sure that categorization is unique!
+
                 QDate leftDate  = leftAlbum->date();
                 QDate rightDate = rightAlbum->date();
 
@@ -185,7 +186,7 @@ void ItemAlbumFilterModel::albumChange(Album* album)
 {
     Q_D(const ItemAlbumFilterModel);
 
-    if (album->type() == Album::PHYSICAL)
+    if      (album->type() == Album::PHYSICAL)
     {
         d->delayedAlbumNamesTimer->start();
     }

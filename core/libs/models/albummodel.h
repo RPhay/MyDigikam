@@ -103,12 +103,16 @@ public:
 
     SAlbum* albumForIndex(const QModelIndex& index) const;
 
-    /** Set a hash of internal names (key) that shall be replaced by a user-visible string (value).
-     *  This affects Qt::DisplayRole and AlbumTitleRole. */
+    /**
+     * Set a hash of internal names (key) that shall be replaced by a user-visible string (value).
+     * This affects Qt::DisplayRole and AlbumTitleRole.
+     */
     void setReplaceNames(const QHash<QString, QString>& replaceNames);
     void addReplaceName(const QString& technicalName, const QString& userVisibleName);
 
-    /** Set pixmaps for the DecorationRole */
+    /**
+     * Set pixmaps for the DecorationRole
+     */
     void setPixmapForNormalSearches(const QPixmap& pix);
     void setDefaultPixmap(const QPixmap& pix);
     void setPixmapForTimelineSearches(const QPixmap& pix);

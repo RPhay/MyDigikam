@@ -68,9 +68,12 @@ bool AlbumModelDragDropHandler::acceptsMimeData(const QMimeData* mime)
 {
     QStringList modelTypes = mimeTypes();
 
-    for (int i = 0; i < modelTypes.count(); ++i)
+    for (int i = 0 ; i < modelTypes.count() ; ++i)
     {
-        if (mime->hasFormat(modelTypes.at(i))) //&& (e->dropAction() & model->supportedDropActions()))
+        if (mime->hasFormat(modelTypes.at(i)))
+/*
+         && (e->dropAction() & model->supportedDropActions()))
+*/
         {
             return true;
         }

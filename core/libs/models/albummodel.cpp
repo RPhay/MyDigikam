@@ -70,6 +70,7 @@ PAlbum* AlbumModel::albumForIndex(const QModelIndex& index) const
 QVariant AlbumModel::decorationRoleData(Album* album) const
 {
     // asynchronous signals are handled by parent class
+
     QPixmap pix = AlbumThumbnailLoader::instance()->getAlbumThumbnailDirectly(static_cast<PAlbum*>(album));
     prepareAddExcludeDecoration(album, pix);
 
@@ -134,6 +135,7 @@ QVariant TagModel::albumData(Album* a, int role) const
     {
         QString res = AbstractCheckableAlbumModel::albumData(a, role).toString() +
                 QString::fromUtf8(" (%1 new)").arg(m_unconfirmedFaceCount.find(a->id()).value());
+
         return res;
     }
 
@@ -190,6 +192,7 @@ SearchModel::SearchModel(QObject* const parent)
     setShowCount(false);
 
     // handle search icons
+
     albumSettingsChanged();
 
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
@@ -248,6 +251,7 @@ QVariant SearchModel::albumData(Album* a, int role) const
         SAlbum* const salbum = static_cast<SAlbum*>(a);
         QString title        = a->title();
         QString displayTitle = salbum->displayTitle();
+
         return m_replaceNames.value(title, displayTitle);
     }
     else if (role == Qt::DecorationRole)
@@ -309,6 +313,7 @@ DAlbum* DateAlbumModel::albumForIndex(const QModelIndex& index) const
 QModelIndex DateAlbumModel::monthIndexForDate(const QDate& date) const
 {
     // iterate over all years
+
     for (int yearIndex = 0 ; yearIndex < rowCount() ; ++yearIndex)
     {
         QModelIndex year        = index(yearIndex, 0);
@@ -316,6 +321,7 @@ QModelIndex DateAlbumModel::monthIndexForDate(const QDate& date) const
 
         // do not search through months if we are sure, that the year already
         // does not match
+
         if (yearAlbum                            &&
             (yearAlbum->range() == DAlbum::Year) &&
             (yearAlbum->date().year() != date.year()))
@@ -324,6 +330,7 @@ QModelIndex DateAlbumModel::monthIndexForDate(const QDate& date) const
         }
 
         // search the album with the correct month
+
         for (int monthIndex = 0 ; monthIndex < rowCount(year) ; ++monthIndex)
         {
             QModelIndex month        = index(monthIndex, 0, year);
@@ -422,7 +429,9 @@ void DateAlbumModel::setYearMonthMap(const QMap<YearMonth, int>& yearMonthMap)
             }
 
             case DAlbum::Year:
+
                 // a year itself cannot contain images and therefore always has count 0
+
                 albumToCountMap.insert((*it)->id(), 0);
                 break;
 

@@ -47,11 +47,11 @@ public:
     explicit ItemAlbumModel(QObject* const parent = nullptr);
     ~ItemAlbumModel();
 
-    QList<Album*> currentAlbums() const;
+    QList<Album*> currentAlbums()       const;
 
-    bool hasScheduledRefresh() const;
-    bool isRecursingAlbums() const;
-    bool isRecursingTags() const;
+    bool hasScheduledRefresh()          const;
+    bool isRecursingAlbums()            const;
+    bool isRecursingTags()              const;
     bool isListingOnlyAvailableImages() const;
 
 public Q_SLOTS:
@@ -62,7 +62,10 @@ public Q_SLOTS:
      * Opening the same album again is a no-op.
      */
     void openAlbum(const QList<Album*>& albums);
-    /** Reloads the current album */
+
+    /**
+     * Reloads the current album
+     */
     void refresh();
 
     void setRecurseAlbums(bool recursiveListing);
@@ -70,11 +73,11 @@ public Q_SLOTS:
     void setListOnlyAvailableImages(bool onlyAvailable);
 
     void setSpecialTagListing(const QString& specialListing);
+/*
+Q_SIGNALS:
 
-//Q_SIGNALS:
-
-    //void listedAlbumChanged(QList<Album*> album);
-
+    void listedAlbumChanged(QList<Album*> album);
+*/
 protected Q_SLOTS:
 
     void scheduleRefresh();

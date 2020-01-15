@@ -175,7 +175,10 @@ protected:
     void setEnableDrag(bool enable);
     void setEnableDrop(bool enable);
 
-    // these can be reimplemented in a subclass
+    /**
+     * NOTE: these can be reimplemented in a subclass
+     */
+
     /// For subclassing convenience: A part of the implementation of data()
     virtual QVariant albumData(Album* a, int role)  const;
 
@@ -320,7 +323,7 @@ protected:
     /// Can reimplement in subclass
     virtual QString albumName(Album* a)  const;
 
-    // Reimplemented from parent classes
+    /// Reimplemented from parent classes
     virtual QVariant albumData(Album* a, int role) const override;
     virtual void albumCleared(Album* album) override;
     virtual void allAlbumsCleared() override;
@@ -347,8 +350,10 @@ class DIGIKAM_EXPORT AbstractCheckableAlbumModel : public AbstractCountingAlbumM
 
 public:
 
-    /// Abstract base class that manages the check state of Albums.
-    /// Call setCheckable(true) to enable checkable albums.
+    /**
+     * Abstract base class that manages the check state of Albums.
+     * Call setCheckable(true) to enable checkable albums.
+     */
 
     explicit AbstractCheckableAlbumModel(Album::Type albumType,
                                          Album* const rootAlbum,

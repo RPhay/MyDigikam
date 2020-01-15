@@ -53,14 +53,14 @@ class Q_DECL_HIDDEN ItemAlbumModel::Private
 public:
 
     explicit Private()
+      : jobThread(nullptr),
+        refreshTimer(nullptr),
+        incrementalTimer(nullptr),
+        recurseAlbums(false),
+        recurseTags(false),
+        listOnlyAvailableImages(false),
+        extraValueJob(false)
     {
-        jobThread               = nullptr;
-        refreshTimer            = nullptr;
-        incrementalTimer        = nullptr;
-        recurseAlbums           = false;
-        recurseTags             = false;
-        listOnlyAvailableImages = false;
-        extraValueJob           = false;
     }
 
     QList<Album*>     currentAlbums;
@@ -205,8 +205,9 @@ void ItemAlbumModel::openAlbum(const QList<Album*>& albums)
             d->currentAlbums << a;
         }
     }
-
-    //emit listedAlbumChanged(d->currentAlbums);
+/*
+    emit listedAlbumChanged(d->currentAlbums);
+*/
     refresh();
 }
 
@@ -225,7 +226,9 @@ void ItemAlbumModel::refresh()
         return;
     }
 
-/** TODO: Figure out how to deal with root album
+/*
+    // TODO: Figure out how to deal with root album
+
     if (d->currentAlbum->isRoot())
     {
         return;
@@ -262,7 +265,7 @@ void ItemAlbumModel::incrementalRefresh()
 
 bool ItemAlbumModel::hasScheduledRefresh() const
 {
-    return d->refreshTimer->isActive() || d->incrementalTimer->isActive() || hasIncrementalRefreshPending();
+    return (d->refreshTimer->isActive() || d->incrementalTimer->isActive() || hasIncrementalRefreshPending());
 }
 
 void ItemAlbumModel::scheduleRefresh()
@@ -286,6 +289,7 @@ void ItemAlbumModel::slotNextRefresh()
 {
     // Refresh, unless job is running, then postpone restart until job is finished
     // Rationale: Let the job run, don't stop it possibly several times
+
     if (d->jobThread)
     {
         d->refreshTimer->start(50);
@@ -325,6 +329,7 @@ void ItemAlbumModel::startListJob(const QList<Album*>& albums)
     QList<int> ids;
 
     // stop preloading Thumbnails
+
     imageInfosCleared();
 
     if (albums.first()->isTrashAlbum())
@@ -332,7 +337,7 @@ void ItemAlbumModel::startListJob(const QList<Album*>& albums)
         return;
     }
 
-    if (albums.first()->type() == Album::TAG || albums.first()->type() == Album::SEARCH)
+    if ((albums.first()->type() == Album::TAG) || (albums.first()->type() == Album::SEARCH))
     {
         for (QList<Album*>::const_iterator it = albums.constBegin() ; it != albums.constEnd() ; ++it)
         {
@@ -359,10 +364,14 @@ void ItemAlbumModel::startListJob(const QList<Album*>& albums)
         jobInfo.setEndDate(url.endDate());
 
         if (d->recurseAlbums)
+        {
             jobInfo.setRecursive();
+        }
 
         if (d->listOnlyAvailableImages)
+        {
             jobInfo.setListAvailableImagesOnly();
+        }
 
         d->jobThread = DBJobsManager::instance()->startDatesJobThread(jobInfo);
     }
@@ -373,10 +382,14 @@ void ItemAlbumModel::startListJob(const QList<Album*>& albums)
         TagsDBJobInfo jobInfo;
 
         if (d->listOnlyAvailableImages)
+        {
             jobInfo.setListAvailableImagesOnly();
+        }
 
         if (d->recurseTags)
+        {
             jobInfo.setRecursive();
+        }
 
         jobInfo.setTagsIds(ids);
 
@@ -394,10 +407,14 @@ void ItemAlbumModel::startListJob(const QList<Album*>& albums)
         AlbumsDBJobInfo jobInfo;
 
         if (d->recurseAlbums)
+        {
             jobInfo.setRecursive();
+        }
 
         if (d->listOnlyAvailableImages)
+        {
             jobInfo.setListAvailableImagesOnly();
+        }
 
         jobInfo.setAlbumRootId(url.albumRootId());
         jobInfo.setAlbum( url.album() );
@@ -411,7 +428,9 @@ void ItemAlbumModel::startListJob(const QList<Album*>& albums)
         SearchesDBJobInfo jobInfo;
 
         if (d->listOnlyAvailableImages)
+        {
             jobInfo.setListAvailableImagesOnly();
+        }
 
         jobInfo.setSearchIds(ids);
 
@@ -438,6 +457,7 @@ void ItemAlbumModel::slotResult()
                                        << d->jobThread->errorsList().first();
 
         // Pop-up a message about the error.
+
         DNotificationWrapper(QString(), d->jobThread->errorsList().first(),
                              DigikamApp::instance(), DigikamApp::instance()->windowTitle());
     }
@@ -446,6 +466,7 @@ void ItemAlbumModel::slotResult()
     d->jobThread = nullptr;
 
     // either of the two
+
     finishRefresh();
     finishIncrementalRefresh();
 }
@@ -482,6 +503,7 @@ void ItemAlbumModel::slotData(const QList<ItemListerRecord>& records)
             else
             {
                 // default handling: just pass extraValue
+
                 if (record.extraValues.isEmpty())
                 {
                     extraValues  << QVariant();
@@ -519,12 +541,14 @@ void ItemAlbumModel::slotImageChange(const ImageChangeset& changeset)
     }
 
     // already scheduled to refresh?
+
     if (hasScheduledRefresh())
     {
         return;
     }
 
     // this is for the case that _only_ the status changes, i.e., explicit setVisible()
+
     if ((DatabaseFields::Images)changeset.changes() == DatabaseFields::Status)
     {
         scheduleIncrementalRefresh();
@@ -533,10 +557,12 @@ void ItemAlbumModel::slotImageChange(const ImageChangeset& changeset)
     // If we list a search, a change to a property may alter the search result
 
     QList<Album*>::iterator it;
+
     /**
      * QList is designed for multiple selection, for now, only tags are supported
      * for SAlbum it will be a list with one element
      */
+
     for (it = d->currentAlbums.begin() ; it != d->currentAlbums.end() ; ++it)
     {
         if ((*it)->type() == Album::SEARCH)
@@ -544,10 +570,11 @@ void ItemAlbumModel::slotImageChange(const ImageChangeset& changeset)
             SAlbum* const salbum  = static_cast<SAlbum*>(*it);
             bool needCheckRefresh = false;
 
-            if (salbum->isNormalSearch())
+            if      (salbum->isNormalSearch())
             {
                 // For searches any touched field can require a refresh.
                 // We cannot easily find out which fields are searched for, so we refresh for any change.
+
                 needCheckRefresh = true;
             }
             else if (salbum->isTimelineSearch())
@@ -570,6 +597,7 @@ void ItemAlbumModel::slotImageChange(const ImageChangeset& changeset)
                 foreach (const qlonglong& id, changeset.ids())
                 {
                     // if one matching image id is found, trigger a refresh
+
                     if (hasImage(id))
                     {
                         scheduleIncrementalRefresh();
@@ -636,6 +664,7 @@ void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& c
     }
 
     // already scheduled to refresh?
+
     if (d->refreshTimer->isActive())
     {
         return;
@@ -654,7 +683,9 @@ void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& c
                 switch ((*it)->type())
                 {
                     case Album::PHYSICAL:
+
                         // that's easy: try if our album is affected
+
                         doRefresh = changeset.containsAlbum((*it)->id());
 
                         if (!doRefresh && d->recurseAlbums)
@@ -672,26 +703,35 @@ void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& c
                         }
 
                         break;
+
                     default:
+
                         // we cannot easily know if we are affected
+
                         doRefresh = true;
                         break;
                 }
+
                 break;
             }
+
             case CollectionImageChangeset::Deleted:
             case CollectionImageChangeset::Removed:
             case CollectionImageChangeset::RemovedAll:
+
                 // is one of our images affected?
+
                 foreach (const qlonglong& id, changeset.ids())
                 {
                     // if one matching image id is found, trigger a refresh
+
                     if (hasImage(id))
                     {
                         doRefresh = true;
                         break;
                     }
                 }
+
                 break;
 
             default:
@@ -699,7 +739,9 @@ void ItemAlbumModel::slotCollectionImageChange(const CollectionImageChangeset& c
         }
 
         if (doRefresh)
+        {
             break;
+        }
     }
 
     if (doRefresh)
@@ -747,6 +789,7 @@ void ItemAlbumModel::slotAlbumDeleted(Album* album)
     }
 
     // display changed tags
+
     if (album->type() == Album::TAG)
     {
         emitDataChangedForAll();
@@ -756,6 +799,7 @@ void ItemAlbumModel::slotAlbumDeleted(Album* album)
 void ItemAlbumModel::slotAlbumRenamed(Album* album)
 {
     // display changed names
+
     if (d->currentAlbums.contains(album))
     {
         emitDataChangedForAll();

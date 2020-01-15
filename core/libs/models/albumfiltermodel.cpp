@@ -103,13 +103,17 @@ void AlbumFilterModel::setSearchTextSettings(const SearchTextSettings& settings)
     if (sourceAlbumModel()->albumType() == Album::PHYSICAL)
     {
         // find out if this setting has some results or not
+
         int validRows = 0;
 
         // for every collection we got
+
         for (int i = 0 ; i < rowCount(rootAlbumIndex()) ; ++i)
         {
             QModelIndex collectionIndex = index(i, 0, rootAlbumIndex());
+
             // count the number of rows
+
             validRows                  += rowCount(collectionIndex);
         }
 
@@ -178,6 +182,7 @@ void AlbumFilterModel::setSourceFilterModel(AlbumFilterModel* const source)
 void AlbumFilterModel::setSourceModel(QAbstractItemModel* const model)
 {
     // made it protected, only setSourceAlbumModel is public
+
     QSortFilterProxyModel::setSourceModel(model);
 }
 
@@ -300,6 +305,7 @@ bool AlbumFilterModel::matches(Album* album) const
     // not a direct Album method.
     // We use direct source's index, not our index,
     // because if the item is currently filtered out, we won't have an index for this album.
+
     QModelIndex source_index = sourceAlbumModel()->indexForAlbum(album);
 
     if (m_chainedModel)
@@ -351,6 +357,7 @@ AlbumFilterModel::MatchResult AlbumFilterModel::matchResult(Album* album) const
     if (m_filterBehavior == FullFiltering)
     {
         // check if any of the parents match the search
+
         Album* parent         = album->parent();
         PAlbum* const pparent = palbum ? static_cast<PAlbum*>(parent) : nullptr;
 
@@ -366,6 +373,7 @@ AlbumFilterModel::MatchResult AlbumFilterModel::matchResult(Album* album) const
     }
 
     // check if any of the children match the search
+
     AlbumIterator it(album);
 
     while (it.current())
@@ -403,6 +411,7 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
     if ((leftAlbum->id() == FaceTags::unconfirmedPersonTagId()) != (rightAlbum->id() == FaceTags::unconfirmedPersonTagId()))
     {
         // unconfirmed tag album go to the top, regardless of sort role
+
         return (sortOrder() == Qt::AscendingOrder) ? (leftAlbum->id() == FaceTags::unconfirmedPersonTagId())
                                                    : (leftAlbum->id() != FaceTags::unconfirmedPersonTagId());
     }
@@ -410,6 +419,7 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
     if ((leftAlbum->id() == FaceTags::unknownPersonTagId()) != (rightAlbum->id() == FaceTags::unknownPersonTagId()))
     {
         // unknown tag albums go to the top, regardless of sort role
+
         return (sortOrder() == Qt::AscendingOrder) ? (leftAlbum->id() == FaceTags::unknownPersonTagId())
                                                    : (leftAlbum->id() != FaceTags::unknownPersonTagId());
     }
@@ -417,6 +427,7 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
     if (leftAlbum->isTrashAlbum() != rightAlbum->isTrashAlbum())
     {
         // trash albums go to the bottom, regardless of sort role
+
         return (sortOrder() == Qt::AscendingOrder) ? !leftAlbum->isTrashAlbum()
                                                    : leftAlbum->isTrashAlbum();
     }
@@ -797,7 +808,8 @@ bool TagsManagerFilterModel::matches(Album* album) const
 
     bool dirty = false;
 
-    for (QSet<int>::const_iterator it = m_keywords.begin() ; it != m_keywords.end() ; ++it)
+    for (QSet<int>::const_iterator it = m_keywords.begin() ;
+         it != m_keywords.end() ; ++it)
     {
         TAlbum* const talbum = AlbumManager::instance()->findTAlbum(*it);
 

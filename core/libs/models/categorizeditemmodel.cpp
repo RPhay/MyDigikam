@@ -57,6 +57,7 @@ QStandardItem* CategorizedItemModel::addItem(const QString& text, const QIcon& d
 {
     QStandardItem* const item = addItem(text, category, categorySorting);
     item->setIcon(decoration);
+
     return item;
 }
 
@@ -66,6 +67,7 @@ DCategorizedSortFilterProxyModel* CategorizedItemModel::createFilterModel()
     filterModel->setCategorizedModel(true);
     filterModel->setSortRole(ItemOrderRole);
     filterModel->setSourceModel(this);
+
     return filterModel;
 }
 
@@ -79,13 +81,17 @@ static QString adjustedActionText(const QAction* const action)
     text.remove(QLatin1String("..."));
     int slashPos = -1;
 
-    while ( (slashPos = text.indexOf(QLatin1Char('/'), slashPos + 1)) != -1 )
+    while ((slashPos = text.indexOf(QLatin1Char('/'), slashPos + 1)) != -1)
     {
-        if (slashPos == 0 || slashPos == text.length()-1)
+        if ((slashPos == 0) || (slashPos == (text.length()-1)))
+        {
             continue;
+        }
 
         if (text.at(slashPos - 1).isSpace() || text.at(slashPos + 1).isSpace())
+        {
             continue;
+        }
 
         text.replace(slashPos, 1, QLatin1Char(','));
         text.insert(slashPos+1, QLatin1Char(' '));
@@ -106,6 +112,7 @@ public:
     void enumerate(QWidget* const w)
     {
         // recurse
+
         enumerateActions(w, nullptr);
     }
 
@@ -119,8 +126,10 @@ public:
 
             if (mode & ActionItemModel::ToplevelMenuCategory)
             {
-                for (QAction* p = a; p; p = parents.value(p))
+                for (QAction* p = a ; p ; p = parents.value(p))
+                {
                     categoryAction = p;
+                }
             }
             else
             {
@@ -128,7 +137,9 @@ public:
             }
 
             if (!categoryAction)
+            {
                 continue;
+            }
 
             QVariant categorySortValue;
 
@@ -209,6 +220,7 @@ DCategorizedSortFilterProxyModel* ActionItemModel::createFilterModel()
     filterModel->setSortRole(ItemOrderRole);
     filterModel->setSourceModel(this);
     m_filterModel = filterModel;
+
     return filterModel;
 }
 
@@ -220,7 +232,9 @@ void ActionItemModel::setPropertiesFromAction(QStandardItem* item, QAction* acti
     item->setCheckable(action->isCheckable());
 
     if (action->toolTip() != action->text())
+    {
         item->setToolTip(action->toolTip());
+    }
 
     item->setWhatsThis(action->whatsThis());
     item->setData(QVariant::fromValue(static_cast<QObject*>(action)), ItemActionRole);
@@ -246,14 +260,18 @@ QAction* ActionItemModel::actionForIndex(const QModelIndex& index)
 QStandardItem* ActionItemModel::itemForAction(QAction* action) const
 {
     if (!action)
+    {
         return nullptr;
+    }
 
     for (int i = 0 ; i < rowCount() ; ++i)
     {
         QStandardItem* const it = item(i);
 
         if (it && (static_cast<QAction*>(it->data(ItemActionRole).value<QObject*>()) == action))
+        {
             return it;
+        }
     }
 
     return nullptr;
@@ -269,7 +287,9 @@ void ActionItemModel::hover(const QModelIndex& index)
     QAction* const action = actionForIndex(index);
 
     if (action)
+    {
         action->hover();
+    }
 }
 
 void ActionItemModel::toggle(const QModelIndex& index)
@@ -277,7 +297,9 @@ void ActionItemModel::toggle(const QModelIndex& index)
     QAction* const action = actionForIndex(index);
 
     if (action)
+    {
         action->toggle();
+    }
 }
 
 void ActionItemModel::trigger(const QModelIndex& index)
@@ -285,7 +307,9 @@ void ActionItemModel::trigger(const QModelIndex& index)
     QAction* const action = actionForIndex(index);
 
     if (action && action->isEnabled())
+    {
         action->trigger();
+    }
 }
 
 void ActionItemModel::slotActionChanged()

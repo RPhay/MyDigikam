@@ -126,7 +126,7 @@ public:
      * Returns the MatchResult of an index of this model.
      * Never returns NoMatch for a valid index, because in this case,
      * the index would rather be filtered out.
-     **/
+     */
     MatchResult matchResult(const QModelIndex& index)                           const;
 
     /**
@@ -233,7 +233,7 @@ protected:
      * An album matches if the search text settings are found in a parent album's title,
      * in the album's title or in a child album's title, or if it is a special album (root)
      * that is never filtered out.
-     **/
+     */
     MatchResult matchResult(Album* album)                                           const;
 
     /**
