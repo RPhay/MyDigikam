@@ -35,9 +35,9 @@ PreviewSettings::PreviewSettings(Quality quality, RawLoading rawLoading)
 
 bool PreviewSettings::operator==(const PreviewSettings& other) const
 {
-    return (quality           == other.quality     &&
-            rawLoading        == other.rawLoading  &&
-            convertToEightBit == other.convertToEightBit);
+    return ((quality           == other.quality)     &&
+            (rawLoading        == other.rawLoading)  &&
+            (convertToEightBit == other.convertToEightBit));
 }
 
 } // namespace Digikam

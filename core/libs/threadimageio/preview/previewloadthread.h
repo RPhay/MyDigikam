@@ -80,7 +80,9 @@ public:
      */
     void load(const LoadingDescription& description);
 
-    /// Optionally, set the displaying widget for color management
+    /**
+     * Optionally, set the displaying widget for color management
+     */
     void setDisplayingWidget(QWidget* const widget);
 
     /**

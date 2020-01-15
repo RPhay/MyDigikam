@@ -44,7 +44,10 @@ LoadingDescription PreviewLoadThread::createLoadingDescription(const QString& fi
     return createLoadingDescription(filePath, settings, size, IccManager::displayProfile(m_displayingWidget));
 }
 
-LoadingDescription PreviewLoadThread::createLoadingDescription(const QString& filePath, const PreviewSettings& previewSettings, int size, const IccProfile& displayProfile)
+LoadingDescription PreviewLoadThread::createLoadingDescription(const QString& filePath,
+                                                               const PreviewSettings& previewSettings,
+                                                               int size,
+                                                               const IccProfile& displayProfile)
 {
     LoadingDescription description(filePath, previewSettings, size);
 
@@ -101,6 +104,7 @@ void PreviewLoadThread::load(const QString& filePath, const PreviewSettings& set
 void PreviewLoadThread::load(const LoadingDescription& description)
 {
     // creates a PreviewLoadingTask, which uses different mechanisms than a normal loading task
+
     ManagedLoadSaveThread::loadPreview(description, m_loadingPolicy);
 }
 
@@ -112,18 +116,23 @@ void PreviewLoadThread::setDisplayingWidget(QWidget* const widget)
 DImg PreviewLoadThread::loadFastSynchronously(const QString& filePath, int size, const IccProfile& profile)
 {
     PreviewSettings settings(PreviewSettings::FastPreview);
+
     return loadSynchronously(createLoadingDescription(filePath, settings, size, profile));
 }
 
 DImg PreviewLoadThread::loadFastButLargeSynchronously(const QString& filePath, int minimumSize, const IccProfile& profile)
 {
     PreviewSettings settings(PreviewSettings::FastButLargePreview);
+
     return loadSynchronously(createLoadingDescription(filePath, settings, minimumSize, profile));
 }
 
-DImg PreviewLoadThread::loadHighQualitySynchronously(const QString& filePath, PreviewSettings::RawLoading rawLoadingMode, const IccProfile& profile)
+DImg PreviewLoadThread::loadHighQualitySynchronously(const QString& filePath,
+                                                     PreviewSettings::RawLoading rawLoadingMode,
+                                                     const IccProfile& profile)
 {
     PreviewSettings settings(PreviewSettings::HighQualityPreview, rawLoadingMode);
+
     return loadSynchronously(createLoadingDescription(filePath, settings, 0, profile));
 }
 
@@ -136,6 +145,7 @@ DImg PreviewLoadThread::loadSynchronously(const LoadingDescription& description)
 {
     PreviewLoadingTask task(nullptr, description);
     task.execute();
+
     return task.img();
 }
 
