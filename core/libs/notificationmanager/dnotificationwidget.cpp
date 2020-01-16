@@ -92,14 +92,14 @@ static QColor darkShade(QColor c)
     qreal contrast = 0.7; // taken from color scheme for the dark shade
     qreal darkAmount;
 
-    if (c.lightnessF() < 0.006)
+    if      (c.lightnessF() < 0.006)
     {
-        /* too dark */
+        // too dark
         darkAmount = 0.02 + 0.40 * contrast;
     }
     else if (c.lightnessF() > 0.93)
     {
-        /* too bright */
+        // too bright
         darkAmount = -0.06 - 0.60 * contrast;
     }
     else
@@ -124,18 +124,22 @@ void DNotificationWidget::setMessageType(DNotificationWidget::MessageType type)
         case Positive:
             bg1.setRgb(0, 110,  40); // values taken from kcolorscheme.cpp (Positive)
             break;
+
         case Information:
             bg1 = palette().highlight().color();
             break;
+
         case Warning:
             bg1.setRgb(176, 128, 0); // values taken from kcolorscheme.cpp (Neutral)
             break;
+
         case Error:
-            bg1.setRgb(191, 3, 3); // values taken from kcolorscheme.cpp (Negative)
+            bg1.setRgb(191, 3, 3);   // values taken from kcolorscheme.cpp (Negative)
             break;
     }
 
     // Colors
+
     fg     = palette().highlightedText().color();
     bg0    = bg1.lighter(110);
     bg2    = bg1.darker(110);
@@ -158,7 +162,7 @@ void DNotificationWidget::setMessageType(DNotificationWidget::MessageType type)
         .arg(bg2.name())
         .arg(border.name())
         // DefaultFrameWidth returns the size of the external margin + border width.
-        //  We know our border is 1px, so we subtract this from the frame normal QStyle FrameWidth to get our margin.
+        // We know our border is 1px, so we subtract this from the frame normal QStyle FrameWidth to get our margin.
         .arg(style()->pixelMetric(QStyle::PM_DefaultFrameWidth, nullptr, this) - 1)
         .arg(fg.name())
     );
@@ -180,7 +184,7 @@ QSize DNotificationWidget::minimumSizeHint() const
 
 bool DNotificationWidget::event(QEvent* event)
 {
-    if (event->type() == QEvent::Polish && !d->content->layout())
+    if ((event->type() == QEvent::Polish) && !d->content->layout())
     {
         d->createLayout();
     }
@@ -234,6 +238,7 @@ void DNotificationWidget::setWordWrap(bool wordWrap)
     // Without this, when user does wordWrap -> !wordWrap -> wordWrap, a minimum
     // height is set, causing the widget to be too high.
     // Mostly visible in test programs.
+
     if (wordWrap)
     {
         setMinimumHeight(0);
@@ -269,6 +274,7 @@ void DNotificationWidget::animatedShow()
     {
         show();
         emit showAnimationFinished();
+
         return;
     }
 
@@ -296,6 +302,7 @@ void DNotificationWidget::animatedHide()
     {
         hide();
         emit hideAnimationFinished();
+
         return;
     }
 

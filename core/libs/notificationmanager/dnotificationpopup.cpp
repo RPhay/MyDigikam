@@ -43,6 +43,10 @@
 #include <QToolTip>
 #include <QSystemTrayIcon>
 
+// Local includes
+
+#include "digikam_debug.h"
+
 namespace Digikam
 {
 
@@ -71,7 +75,7 @@ public:
         q->setFrameStyle(QFrame::Box | QFrame::Plain);
         q->setLineWidth(2);
 
-        if (popupStyle == Boxed)
+        if      (popupStyle == Boxed)
         {
             q->setFrameStyle(QFrame::Box | QFrame::Plain);
             q->setLineWidth(2);
@@ -116,14 +120,14 @@ public:
     {
         // get screen-geometry for screen our anchor is on
         // (geometry can differ from screen to screen!
-        QRect deskRect   = desktopRectForPoint(anchor);
 
+        QRect deskRect   = desktopRectForPoint(anchor);
         const int width  = q->width();
         const int height = q->height();
 
         int xh = 70, xl = 40;
 
-        if (width < 80)
+        if      (width < 80)
         {
             xh = xl = 40;
         }
@@ -165,7 +169,7 @@ public:
                 surround.setPoint(z, corner[s]);
             }
 
-            if (bottom && i == 2)
+            if      (bottom && (i == 2))
             {
                 if (right)
                 {
@@ -227,12 +231,13 @@ public:
         if (popupStyle == Balloon)
         {
             // find a point to anchor to
-            if (x + w > r.width())
+
+            if ((x + w) > r.width())
             {
                 x = x + target.width();
             }
 
-            if (y + h > r.height())
+            if ((y + h) > r.height())
             {
                 y = y + target.height();
             }
@@ -249,6 +254,7 @@ public:
             }
 
             // It's apparently trying to go off screen, so display it ALL at the bottom.
+
             if ((y + h) > r.bottom())
             {
                 y = r.bottom() - h;
@@ -286,6 +292,7 @@ public:
         }
 
         // If no screen was found, return the primary screen's geometry
+
         return QGuiApplication::primaryScreen()->geometry();
     }
 };
@@ -316,7 +323,7 @@ void DNotificationPopup::setPopupStyle(int popupstyle)
 
     d->popupStyle = popupstyle;
 
-    if (d->popupStyle == Boxed)
+    if      (d->popupStyle == Boxed)
     {
         setFrameStyle(QFrame::Box | QFrame::Plain);
         setLineWidth(2);
@@ -349,7 +356,8 @@ void DNotificationPopup::setView(const QString& caption,
                                  const QString& text,
                                  const QPixmap& icon)
 {
-    // qCDebug(LOG_KNOTIFICATIONS) << "DNotificationPopup::setView " << caption << ", " << text;
+    // qCDebug(DIGIKAM_GENERAL_LOG) << "DNotificationPopup::setView " << caption << ", " << text;
+
     setView(standardView(caption, text, icon, this));
 }
 
@@ -378,7 +386,7 @@ QWidget* DNotificationPopup::standardView(const QString& caption,
 
     if (!caption.isEmpty())
     {
-        d->ttl = new QLabel(caption, top);
+        d->ttl    = new QLabel(caption, top);
         QFont fnt = d->ttl->font();
         fnt.setBold(true);
         d->ttl->setFont(fnt);
@@ -518,6 +526,7 @@ void DNotificationPopup::hideEvent(QHideEvent*)
 QPoint DNotificationPopup::defaultLocation() const
 {
     const QRect r = QGuiApplication::primaryScreen()->availableGeometry();
+
     return QPoint(r.left(), r.top());
 }
 
@@ -532,6 +541,7 @@ void DNotificationPopup::positionSelf()
         if (target.isNull())
         {
             // Avoid making calls to the window system if we can
+
             QWidget* const widget = QWidget::find(d->window);
 
             if (widget)

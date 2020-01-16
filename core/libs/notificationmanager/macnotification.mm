@@ -6,7 +6,7 @@
  * Date        : 2008-07-03
  * Description : Objective-C wrapper to post events on OSX notifier
  *
- * Copyright (C) 2014 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -50,7 +50,9 @@ bool MacNotificationCenterSupported()
 bool MacNativeDispatchNotify(const QString& summary, const QString& message)
 {
     if (!MacNotificationCenterSupported())
+    {
         return false;
+    }
 
     NSString* const sum = [[NSString alloc] initWithUTF8String:summary.toUtf8().constData()];
     NSString* const mes = [[NSString alloc] initWithUTF8String:message.toUtf8().constData()];

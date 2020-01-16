@@ -67,7 +67,7 @@ void DNotificationWidget::Private::init()
 {
     q->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
 
-    timeLine = new QTimeLine(500, q);
+    timeLine  = new QTimeLine(500, q);
 
     connect(timeLine, SIGNAL(valueChanged(qreal)),
             this, SLOT(slotTimeLineChanged(qreal)));
@@ -75,10 +75,10 @@ void DNotificationWidget::Private::init()
     connect(timeLine, SIGNAL(finished()),
             this, SLOT(slotTimeLineFinished()));
 
-    content = new QFrame(q);
+    content   = new QFrame(q);
     content->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
 
-    wordWrap = false;
+    wordWrap  = false;
 
     iconLabel = new QLabel(content);
     iconLabel->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
@@ -129,12 +129,15 @@ void DNotificationWidget::Private::createLayout()
     // AutoRaise reduces visual clutter, but we don't want to turn it on if
     // there are other buttons, otherwise the close button will look different
     // from the others.
+
     closeButton->setAutoRaise(buttons.isEmpty());
 
     if (wordWrap)
     {
         QGridLayout* const layout = new QGridLayout(content);
+
         // Set alignment to make sure icon does not move down if text wraps
+
         layout->addWidget(iconLabel,  0, 0, 1, 1, Qt::AlignHCenter | Qt::AlignTop);
         layout->addWidget(textLabel,  0, 1);
 
@@ -146,6 +149,7 @@ void DNotificationWidget::Private::createLayout()
             // For some reason, calling show() is necessary if wordwrap is true,
             // otherwise the buttons do not show up. It is not needed if
             // wordwrap is false.
+
             button->show();
             buttonLayout->addWidget(button);
         }
@@ -189,6 +193,7 @@ void DNotificationWidget::Private::updateSnapShot()
     // window layouts to be activated. Calling this method from resizeEvent()
     // can lead to infinite recursion, see:
     // https://bugs.kde.org/show_bug.cgi?id=311336
+
     contentSnapShot = QPixmap(content->size() * q->devicePixelRatio());
     contentSnapShot.setDevicePixelRatio(q->devicePixelRatio());
     contentSnapShot.fill(Qt::transparent);
@@ -208,9 +213,11 @@ void DNotificationWidget::Private::slotTimeLineFinished()
         // Show
         // We set the whole geometry here, because it may be wrong if a
         // DNotificationWidget is shown right when the toplevel window is created.
+
         content->setGeometry(0, 0, q->width(), bestContentHeight());
 
         // notify about finished animation
+
         emit q->showAnimationFinished();
     }
     else

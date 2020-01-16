@@ -52,10 +52,11 @@
 namespace Digikam
 {
 
-/** Re-implementation of DNotificationPopup to move pop-up notification
-    window on the bottom right corner of parent window. The goal is to simulate
-    the position of KDE notifier pop-up from task bar if this one is not available,
-    as for ex under Windows, Gnome, or using a remote connection through ssh.
+/**
+ * Re-implementation of DNotificationPopup to move pop-up notification
+ * window on the bottom right corner of parent window. The goal is to simulate
+ * the position of KDE notifier pop-up from task bar if this one is not available,
+ * as for ex under Windows, Gnome, or using a remote connection through ssh.
  */
 class Q_DECL_HIDDEN NotificationPassivePopup : public DNotificationPopup
 {
