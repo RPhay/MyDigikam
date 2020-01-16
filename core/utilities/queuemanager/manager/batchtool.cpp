@@ -84,8 +84,8 @@ public:
     bool                          last;
 
     QString                       errorMessage;
-    QString                       toolTitle;          // User friendly tool title.
-    QString                       toolDescription;    // User friendly tool description.
+    QString                       toolTitle;          ///< User friendly tool title.
+    QString                       toolDescription;    ///< User friendly tool description.
     QIcon                         toolIcon;
 
     QUrl                          inputUrl;

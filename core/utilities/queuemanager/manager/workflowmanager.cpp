@@ -47,9 +47,9 @@ class Q_DECL_HIDDEN WorkflowManager::Private
 public:
 
     explicit Private()
-        :mutex()
+        : modified(false),
+          mutex()
     {
-        modified = false;
     }
 
     bool            modified;
@@ -139,7 +139,7 @@ void WorkflowManager::removePrivate(const Workflow& q)
     {
         QMutexLocker lock(&d->mutex);
 
-        for (QList<Workflow>::iterator it = d->qList.begin(); it != d->qList.end(); ++it)
+        for (QList<Workflow>::iterator it = d->qList.begin() ; it != d->qList.end() ; ++it)
         {
             if (it->title == q.title)
             {
@@ -191,6 +191,7 @@ QList<Workflow> WorkflowManager::queueSettingsList() const
 bool WorkflowManager::save()
 {
     // If not modified don't save the file
+
     if (!d->modified)
     {
         return true;
@@ -205,7 +206,6 @@ bool WorkflowManager::save()
 
         foreach (const Workflow& q, d->qList)
         {
-
             QDomElement elm = doc.createElement(QLatin1String("queue"));
             QDomElement data;
 
@@ -373,7 +373,7 @@ bool WorkflowManager::load(QStringList& failed)
             return false;
         }
 
-        for (QDomNode n = docElem.firstChild(); !n.isNull(); n = n.nextSibling())
+        for (QDomNode n = docElem.firstChild() ; !n.isNull() ; n = n.nextSibling())
         {
             QDomElement e = n.toElement();
 
@@ -403,7 +403,7 @@ bool WorkflowManager::load(QStringList& failed)
                 QString val2  = e2.attribute(QLatin1String("value"));
                 bool ok       = true;
 
-                if (name2 == QLatin1String("queuetitle"))
+                if      (name2 == QLatin1String("queuetitle"))
                 {
                     q.title = val2;
                 }
@@ -483,7 +483,7 @@ bool WorkflowManager::load(QStringList& failed)
                 {
                     BatchToolSet set;
 
-                    for (QDomNode n3 = e2.firstChild(); !n3.isNull(); n3 = n3.nextSibling())
+                    for (QDomNode n3 = e2.firstChild() ; !n3.isNull() ; n3 = n3.nextSibling())
                     {
                         QDomElement e3 = n3.toElement();
 
@@ -495,7 +495,7 @@ bool WorkflowManager::load(QStringList& failed)
                         QString name3  = e3.tagName();
                         QString val3   = e3.attribute(QLatin1String("value"));
 
-                        if (name3 == QLatin1String("toolname"))
+                        if      (name3 == QLatin1String("toolname"))
                         {
                             set.name = val3;
                         }
@@ -547,6 +547,7 @@ bool WorkflowManager::load(QStringList& failed)
             if (versionOk)
             {
                 // We only insert workflow if all tools version are compatible
+
                 insertPrivate(q);
             }
             else

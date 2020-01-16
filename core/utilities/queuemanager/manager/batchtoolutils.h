@@ -39,13 +39,15 @@
 namespace Digikam
 {
 
-/** A list of batch tool instances.
+/**
+ * A list of batch tool instances.
  */
 typedef QList<BatchTool*> BatchToolsList;
 
 // -------------------------------------------------------------------------------------------------------------
 
-/** A container of associated batch tool and settings.
+/**
+ * A container of associated batch tool and settings.
  */
 class BatchToolSet
 {
@@ -54,7 +56,8 @@ public:
     explicit BatchToolSet();
     virtual ~BatchToolSet();
 
-    /** Equality operator which check index, version, name, and group data. Settings member is ignored.
+    /**
+     * Equality operator which check index, version, name, and group data. Settings member is ignored.
      */
     bool operator==(const BatchToolSet& set) const;
 
@@ -73,14 +76,16 @@ QDebug operator<<(QDebug dbg, const BatchToolSet& s);
 
 // -------------------------------------------------------------------------------------------------------------
 
-/** An indexed map of batch tools with settings.
+/**
+ * An indexed map of batch tools with settings.
  */
 typedef QList<BatchToolSet> BatchSetList;
 
 // -------------------------------------------------------------------------------------------------------------
 
-/** Container to assign Batch tools and settings to an item by Url.
-    Url is used only with ActionThread class.
+/**
+ * Container to assign Batch tools and settings to an item by Url.
+ * Url is used only with ActionThread class.
  */
 class AssignedBatchTools
 {

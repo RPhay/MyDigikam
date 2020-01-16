@@ -47,7 +47,8 @@ class DImgBuiltinFilter;
 class DImgThreadedFilter;
 class DPluginBqm;
 
-/** A map of batch tool settings (setting key, setting value).
+/**
+ * A map of batch tool settings (setting key, setting value).
  */
 typedef QMap<QString, QVariant> BatchToolSettings;
 
@@ -81,108 +82,130 @@ public:
     void setPlugin(DPluginBqm* const plugin);
     DPluginBqm* plugin()                                    const;
 
-    /** Get description of an error which appear during apply() method.
+    /**
+     * Get description of an error which appear during apply() method.
      */
     QString errorDescription()                              const;
 
-    /** Return group of tool. See BatchToolGroup enum for details.
+    /**
+     * Return group of tool. See BatchToolGroup enum for details.
      */
     BatchToolGroup toolGroup()                              const;
 
-    /** Return group of tool name as string.
+    /**
+     * Return group of tool name as string.
      */
     QString toolGroupToString()                             const;
 
-    /** Manage Tool title.
+    /**
+     * Manage Tool title.
      */
     void setToolTitle(const QString& toolTitle);
     QString toolTitle()                                     const;
 
-    /** Manage Tool description.
+    /**
+     * Manage Tool description.
      */
     void setToolDescription(const QString& toolDescription);
     QString toolDescription()                               const;
 
-    /** Manage Tool icon name.
+    /**
+     * Manage Tool icon name.
      */
     void setToolIconName(const QString& iconName);
     void setToolIcon(const QIcon& icon);
     QIcon toolIcon()                                        const;
 
-    /** Manage settings values to tool. See BatchToolSettings container for details.
+    /**
+     * Manage settings values to tool. See BatchToolSettings container for details.
      */
     void setSettings(const BatchToolSettings& settings);
     BatchToolSettings settings()                            const;
 
-    /** Manage current input url processed by this tool.
+    /**
+     * Manage current input url processed by this tool.
      */
     void setInputUrl(const QUrl& inputUrl);
     QUrl inputUrl()                                         const;
 
-    /** Manage current output url processed by this tool.
+    /**
+     * Manage current output url processed by this tool.
      */
     void setOutputUrl(const QUrl& outputUrl);
     QUrl outputUrl()                                        const;
 
-    /** Manage current working url used by this tool to process items.
+    /**
+     * Manage current working url used by this tool to process items.
      */
     void setWorkingUrl(const QUrl& workingUrl);
     QUrl workingUrl()                                       const;
 
-    /** Manage instance of current image data container loaded by this tool.
+    /**
+     * Manage instance of current image data container loaded by this tool.
      */
     void setImageData(const DImg& img);
     DImg imageData()                                        const;
 
-    /** Manage instance of current image info loaded by this tool.
+    /**
+     * Manage instance of current image info loaded by this tool.
      */
     void setItemInfo(const ItemInfo& info);
     ItemInfo imageInfo()                                    const;
 
-    /** Manage flag properties to indicate if this tool is last one to process on current item.
+    /**
+     * Manage flag properties to indicate if this tool is last one to process on current item.
      */
     void setLastChainedTool(bool last);
     bool isLastChainedTool()                                const;
 
-    /** Set output url using input url content + annotation based on time stamp + file
-        extension defined by outputSuffix().
-        if outputSuffix() return null, file extension is the same than original.
+    /**
+     * Set output url using input url content + annotation based on time stamp + file
+     * extension defined by outputSuffix().
+     * if outputSuffix() return null, file extension is the same than original.
      */
     void setOutputUrlFromInputUrl();
 
-    /** Load image data using input Url set by setInputUrl() to instance of internal
-        DImg container.
+    /**
+     * Load image data using input Url set by setInputUrl() to instance of internal
+     * DImg container.
      */
     bool loadToDImg()                                       const;
 
-    /** Save image data from instance of internal DImg container using :
-        - output Url set by setOutputUrl() or setOutputUrlFromInputUrl()
-        - output file format set by outputSuffix(). If this one is empty,
-          format of original image is used instead.
+    /**
+     * Save image data from instance of internal DImg container using :
+     * - output Url set by setOutputUrl() or setOutputUrlFromInputUrl()
+     * - output file format set by outputSuffix(). If this one is empty,
+     *   format of original image is used instead.
      */
     bool savefromDImg()                                     const;
 
-    /** Set that the Exif orientation flag is allowed be reset to NORMAL after tool operation
+    /**
+     * Set that the Exif orientation flag is allowed be reset to NORMAL after tool operation
      */
     void setResetExifOrientationAllowed(bool reset);
 
-    /** Returns true if the Exif orientation tag is allowed to be reset after tool operation
+    /**
+     * Returns true if the Exif orientation tag is allowed to be reset after tool operation
      */
     bool getResetExifOrientationAllowed()                   const;
 
-    /** Set that the Exif orientation flag should be reset to NORMAL after tool operation
+    /**
+     * Set that the Exif orientation flag should be reset to NORMAL after tool operation
      */
     void setNeedResetExifOrientation(bool reset);
 
-    /** Returns true if the Exif orientation tag should be reset after tool operation
+    /**
+     * Returns true if the Exif orientation tag should be reset after tool operation
      */
     bool getNeedResetExifOrientation()                      const;
 
-    /** Set that RAW files loading rule to use (demosaicing or JPEG embedded).
+    /**
+     * Set that RAW files loading rule to use (demosaicing or JPEG embedded).
      */
     void setRawLoadingRules(QueueSettings::RawLoadingRule rule);
 
-    /** Sets if the history added by tools shall be made a branch (new version).
+    /**
+     * Sets if the history added by tools shall be made a branch (new version).
      */
     void setSaveAsNewVersion(bool fork = true);
 
@@ -193,51 +216,61 @@ public:
     void setBranchHistory(bool branch = true);
     bool getBranchHistory()                                 const;
 
-    /** Set-up RAW decoding settings no use during tool operations.
+    /**
+     * Set-up RAW decoding settings no use during tool operations.
      */
     void setDRawDecoderSettings(const DRawDecoderSettings& settings);
 
-    /** Return RAW decoding settings used during tool operations.
+    /**
+     * Return RAW decoding settings used during tool operations.
      */
     DRawDecoderSettings rawDecodingSettings()               const;
 
-    /** Set-up IOFile settings no use during tool operations.
+    /**
+     * Set-up IOFile settings no use during tool operations.
      */
     void setIOFileSettings(const IOFileSettings& settings);
 
-    /** Return IOFile settings used during tool operations.
+    /**
+     * Return IOFile settings used during tool operations.
      */
     IOFileSettings ioFileSettings()                         const;
 
-    /** Apply all change to perform by this tool. This method call customized toolOperations().
+    /**
+     * Apply all change to perform by this tool. This method call customized toolOperations().
      */
     bool apply();
 
-    /** Return version of tool. By default, ID is 1. Re-implement this method and increase this ID when tool settings change.
+    /**
+     * Return version of tool. By default, ID is 1. Re-implement this method and increase this ID when tool settings change.
      */
     virtual int toolVersion()                               const
     {
         return 1;
      };
 
-    /** Re-implement this method is you want customize cancellation of tool, for ex. to call
-        a dedicated method to kill sub-threads parented to this tool instance.
-        Unforget to call parent BatchTool::cancel() method in your customized implementation.
+    /**
+     * Re-implement this method is you want customize cancellation of tool, for ex. to call
+     * a dedicated method to kill sub-threads parented to this tool instance.
+     * Unforget to call parent BatchTool::cancel() method in your customized implementation.
      */
     virtual void cancel();
 
-    /** Re-implement this method if tool change file extension during batch process (ex: "png").
-        Typically, this is used with tool which convert to new file format.
-        This method return and empty string by default.
+    /**
+     * Re-implement this method if tool change file extension during batch process (ex: "png").
+     * Typically, this is used with tool which convert to new file format.
+     * This method return and empty string by default.
      */
     virtual QString outputSuffix()                          const;
 
-    /** Re-implement this method to initialize Settings Widget value with default settings.
+    /**
+     * Re-implement this method to initialize Settings Widget value with default settings.
      */
     virtual BatchToolSettings defaultSettings()                   = 0;
 
-    /** Clone this tool without to create settings widget.
-     *  It's a safe construction of tools instance used in multithreading (ActionThread) to process items in parallel.
+    /**
+     * Clone this tool without to create settings widget.
+     * It's a safe construction of tools instance used in multithreading (ActionThread) to process items in parallel.
      */
     virtual BatchTool* clone(QObject* const parent=nullptr) const = 0;
 
@@ -253,19 +286,23 @@ public Q_SLOTS:
 
 protected:
 
-    /** Method to check if file pointed by url is a RAW image
+    /**
+     * Method to check if file pointed by url is a RAW image
      */
     bool isRawFile(const QUrl& url)                         const;
 
-    /** Set string to describe an error which appear during apply() method.
+    /**
+     * Set string to describe an error which appear during apply() method.
      */
     void setErrorDescription(const QString& errmsg);
 
-    /** Return a reference of internal DImg container used to modify image data.
+    /**
+     * Return a reference of internal DImg container used to modify image data.
      */
     DImg& image()                                           const;
 
-    /** Return true if cancel() have been called. Use this method to stop loop in your toolOperations() implementation.
+    /**
+     * Return true if cancel() have been called. Use this method to stop loop in your toolOperations() implementation.
      */
     bool isCancelled()                                      const;
 
@@ -277,8 +314,9 @@ protected:
     void applyFilterChangedProperties(DImgThreadedFilter* const filter);
     void applyFilter(DImgBuiltinFilter* const filter);
 
-    /** Re-implement this method to customize all batch operations done by this tool.
-        This method is called by apply().
+    /**
+     * Re-implement this method to customize all batch operations done by this tool.
+     * This method is called by apply().
      */
     virtual bool toolOperations() = 0;
 
@@ -290,36 +328,42 @@ protected Q_SLOTS:
 
 public:
 
-    /** Return dedicated settings widget registered with registerSettingsWidget().
+    /**
+     * Return dedicated settings widget registered with registerSettingsWidget().
      */
     QWidget* settingsWidget()                               const;
 
-    /** Delete dedicated settings widget registered with registerSettingsWidget().
+    /**
+     * Delete dedicated settings widget registered with registerSettingsWidget().
      */
     void deleteSettingsWidget();
 
-    /** Setup dedicated settings widget. Default implementation assign no settings view (a message label is just displayed).
-     *  You need to call default implementation in your child class to init default signals and slots connections,
-     *  after to have instanced your dedicated settings widget.
+    /**
+     * Setup dedicated settings widget. Default implementation assign no settings view (a message label is just displayed).
+     * You need to call default implementation in your child class to init default signals and slots connections,
+     * after to have instanced your dedicated settings widget.
      */
     virtual void registerSettingsWidget();
 
 Q_SIGNALS:
 
-    /** Only used internally. See registerSettingsWidget() implementation.
+    /**
+     * Only used internally. See registerSettingsWidget() implementation.
      */
     void signalAssignSettings2Widget();
 
 protected:
 
-    /** Host settings widget instance.
+    /**
+     * Host settings widget instance.
      */
     QWidget* m_settingsWidget;
 
 protected Q_SLOTS:
 
-    /** Re-implement this method to customize how all settings values must be assigned to settings widget.
-        This method is called by setSettings() through signalAssignSettings2Widget().
+    /**
+     * Re-implement this method to customize how all settings values must be assigned to settings widget.
+     * This method is called by setSettings() through signalAssignSettings2Widget().
      */
     virtual void slotAssignSettings2Widget() = 0;
 

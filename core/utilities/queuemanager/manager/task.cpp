@@ -51,9 +51,9 @@ class Q_DECL_HIDDEN Task::Private
 public:
 
     explicit Private()
+      : cancel(false),
+        tool(nullptr)
     {
-        cancel = false;
-        tool   = nullptr;
     }
 
     bool               cancel;
@@ -91,7 +91,9 @@ void Task::setItem(const AssignedBatchTools& tools)
 void Task::slotCancel()
 {
     if (d->tool)
+    {
         d->tool->cancel();
+    }
 
     d->cancel = true;
 }
@@ -106,7 +108,9 @@ void Task::removeTempFiles(const QList<QUrl>& tmpList)
         tmpPath = DMetadata::sidecarPath(tmpPath);
 
         if (QFile::exists(tmpPath))
+        {
             QFile::remove(tmpPath);
+        }
     }
 }
 
@@ -142,6 +146,7 @@ void Task::run()
     QString     errMsg;
 
     // ItemInfo must be tread-safe.
+
     ItemInfo source = ItemInfo::fromUrl(d->tools.m_itemUrl);
     bool timeAdjust  = false;
 
@@ -167,14 +172,14 @@ void Task::run()
         d->tool->setDRawDecoderSettings(d->settings.rawDecodingSettings);
         d->tool->setResetExifOrientationAllowed(d->settings.exifSetOrientation);
 
-        if (index == d->tools.m_toolsList.count())
+        if      (index == d->tools.m_toolsList.count())
         {
             d->tool->setLastChainedTool(true);
         }
-        // If the next tool is under the custom group (user script)
-        // treat as the last chained tool, i.e. save image to file
         else if (d->tools.m_toolsList[index].group == BatchTool::CustomTool)
         {
+            // If the next tool is under the custom group (user script)
+            // treat as the last chained tool, i.e. save image to file
             d->tool->setLastChainedTool(true);
         }
         else
@@ -195,7 +200,7 @@ void Task::run()
         delete d->tool;
         d->tool = nullptr;
 
-        if (d->cancel)
+        if      (d->cancel)
         {
             emitActionData(ActionData::BatchCanceled);
             removeTempFiles(tmp2del);
@@ -212,8 +217,8 @@ void Task::run()
     // Clean up all tmp url.
 
     // We don't remove last output tmp url.
-    tmp2del.removeAll(outUrl);
 
+    tmp2del.removeAll(outUrl);
     removeTempFiles(tmp2del);
 
     // Move processed temp file to target

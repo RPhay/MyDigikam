@@ -54,19 +54,23 @@ public:
 
 Q_SIGNALS:
 
-    /** Emit when an item from a queue start to be processed.
+    /**
+     * Emit when an item from a queue start to be processed.
      */
     void signalStarting(const Digikam::ActionData& ad);
 
-    /** Emit when an item from a queue have been processed.
+    /**
+     * Emit when an item from a queue have been processed.
      */
     void signalFinished(const Digikam::ActionData& ad);
 
-    /** Emit when a queue have been fully processed (all items from queue are finished).
+    /**
+     * Emit when a queue have been fully processed (all items from queue are finished).
      */
     void signalQueueProcessed();
 
-    /** Signal to emit to sub-tasks to cancel processing.
+    /**
+     * Signal to emit to sub-tasks to cancel processing.
      */
     void signalCancelTask();
 

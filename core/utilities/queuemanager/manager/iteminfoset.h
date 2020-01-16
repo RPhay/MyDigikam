@@ -35,7 +35,8 @@
 namespace Digikam
 {
 
-/** A container of associated ItemInfo and queue id.
+/**
+ * A container of associated ItemInfo and queue id.
  */
 class ItemInfoSet
 {
@@ -47,20 +48,21 @@ public:
     };
 
     ItemInfoSet(int id, const ItemInfo& inf)
+        : queueId(id),
+          info(inf)
     {
-        queueId = id;
-        info    = inf;
     };
 
     ~ItemInfoSet()
     {
     };
 
-    int       queueId;
+    int      queueId;
     ItemInfo info;
 };
 
-/** A list of all queued items from the pool.
+/**
+ * A list of all queued items from the pool.
  */
 typedef QList<ItemInfoSet> QueuePoolItemsList;
 

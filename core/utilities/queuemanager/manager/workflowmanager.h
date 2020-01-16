@@ -39,7 +39,8 @@
 namespace Digikam
 {
 
-/** This container group all queue common settings plus all assigned batch tools.
+/**
+ * This container group all queue common settings plus all assigned batch tools.
  */
 class Workflow
 {
@@ -69,12 +70,14 @@ public:
 
 public:
 
-    /** Load all Workflow from XML settings file. Fill 'failed' list with incompatible Workflow
-     *  title/description not loaded.
+    /**
+     * Load all Workflow from XML settings file. Fill 'failed' list with incompatible Workflow
+     * title/description not loaded.
      */
     bool load(QStringList& failed);
 
-    /** Save all Workflow to  XML settings file.
+    /**
+     * Save all Workflow to  XML settings file.
      */
     bool save();
     void clear();

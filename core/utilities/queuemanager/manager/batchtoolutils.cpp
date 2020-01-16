@@ -36,10 +36,10 @@ namespace Digikam
 {
 
 BatchToolSet::BatchToolSet()
+    : index(-1),
+      version(0),
+      group(BatchTool::BaseTool)
 {
-    index   = -1;
-    version = 0;
-    group   = BatchTool::BaseTool;
 }
 
 BatchToolSet::~BatchToolSet()
@@ -48,7 +48,8 @@ BatchToolSet::~BatchToolSet()
 
 bool BatchToolSet::operator==(const BatchToolSet& set) const
 {
-    return ( (index   == set.index)   &&
+    return (
+             (index   == set.index)   &&
              (version == set.version) &&
              (name    == set.name )   &&
              (group   == set.group)
@@ -63,6 +64,7 @@ QDebug operator<<(QDebug dbg, const BatchToolSet& s)
     dbg.nospace() << "name: "     << s.name    << ", ";
     dbg.nospace() << "group: "    << s.group   << ", ";
     dbg.nospace() << "settings: " << s.settings;
+
     return dbg.space();
 }
 

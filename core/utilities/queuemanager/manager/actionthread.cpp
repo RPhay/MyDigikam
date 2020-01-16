@@ -126,9 +126,13 @@ void ActionThread::slotUpdateItemInfo(const Digikam::ActionData& ad)
         ItemInfo source = ItemInfo::fromUrl(ad.fileUrl);
         qlonglong id    = scanner.scanFile(ad.destUrl.toLocalFile(), CollectionScanner::NormalScan);
         ItemInfo info(id);
+
         // Copy the digiKam attributes from original file to the new file
+
         CollectionScanner::copyFileProperties(source, info);
+
         // Read again new file that the database is up to date
+
         scanner.scanFile(info, CollectionScanner::Rescan);
     }
 

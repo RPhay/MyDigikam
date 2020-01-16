@@ -111,7 +111,7 @@ BatchTool* BatchToolsFactory::findTool(const QString& name, BatchTool::BatchTool
 {
     foreach (BatchTool* const tool, d->toolsList)
     {
-        if (tool->objectName() == name && tool->toolGroup() == group)
+        if ((tool->objectName() == name) && (tool->toolGroup() == group))
         {
             return tool;
         }

@@ -37,7 +37,8 @@
 namespace Digikam
 {
 
-/** This container host all common settings used by a queue, not including assigned batch tools
+/**
+ * This container host all common settings used by a queue, not including assigned batch tools
  */
 class QueueSettings
 {
@@ -58,14 +59,14 @@ public:
 public:
 
     QueueSettings()
+      : useMultiCoreCPU(false),
+        saveAsNewVersion(true),
+        exifSetOrientation(true),
+        useOrgAlbum(true),
+        conflictRule(FileSaveConflictBox::DIFFNAME),
+        renamingRule(USEORIGINAL),
+        rawLoadingRule(DEMOSAICING)
     {
-        useMultiCoreCPU    = false;
-        saveAsNewVersion   = true;
-        exifSetOrientation = true;
-        useOrgAlbum        = true;
-        conflictRule       = FileSaveConflictBox::DIFFNAME;
-        renamingRule       = USEORIGINAL;
-        rawLoadingRule     = DEMOSAICING;
     };
 
 public:
