@@ -520,10 +520,6 @@ echo -e "\n---------- Compute package checksums for digiKam $DKRELEASEID\n" >  $
 echo    "File       : $TARGET_PKG_FILE"                                     >> $TARGET_PKG_FILE.sum
 echo -n "Size       : "                                                     >> $TARGET_PKG_FILE.sum
 du -h "$TARGET_PKG_FILE"        | { read first rest ; echo $first ; }       >> $TARGET_PKG_FILE.sum
-echo -n "MD5 sum    : "                                                     >> $TARGET_PKG_FILE.sum
-md5 -q "$TARGET_PKG_FILE"                                                   >> $TARGET_PKG_FILE.sum
-echo -n "SHA1 sum   : "                                                     >> $TARGET_PKG_FILE.sum
-shasum -a1 "$TARGET_PKG_FILE"   | { read first rest ; echo $first ; }       >> $TARGET_PKG_FILE.sum
 echo -n "SHA256 sum : "                                                     >> $TARGET_PKG_FILE.sum
 shasum -a256 "$TARGET_PKG_FILE" | { read first rest ; echo $first ; }       >> $TARGET_PKG_FILE.sum
 
@@ -538,10 +534,6 @@ if [[ $DK_SIGN = 1 ]] ; then
     echo    "File       : $TARGET_PKG_FILE.sig"                                     >> $TARGET_PKG_FILE.sum
     echo -n "Size       : "                                                         >> $TARGET_PKG_FILE.sum
     du -h "$TARGET_PKG_FILE.sig"        | { read first rest ; echo $first ; }       >> $TARGET_PKG_FILE.sum
-    echo -n "MD5 sum    : "                                                         >> $TARGET_PKG_FILE.sum
-    md5 -q "$TARGET_PKG_FILE.sig"                                                   >> $TARGET_PKG_FILE.sum
-    echo -n "SHA1 sum   : "                                                         >> $TARGET_PKG_FILE.sum
-    shasum -a1 "$TARGET_PKG_FILE.sig"   | { read first rest ; echo $first ; }       >> $TARGET_PKG_FILE.sum
     echo -n "SHA256 sum : "                                                         >> $TARGET_PKG_FILE.sum
     shasum -a256 "$TARGET_PKG_FILE.sig" | { read first rest ; echo $first ; }       >> $TARGET_PKG_FILE.sum
 
