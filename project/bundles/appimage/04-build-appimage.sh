@@ -393,7 +393,7 @@ rm -rf usr/share/pkgconfig || true
 #################################################################################################
 # See LFS instruction: http://www.linuxfromscratch.org/lfs/view/systemd/chapter05/stripping.html
 
-echo -e "---------- Strip Binaries Files \n"
+echo -e "---------- Strip Symbols in Binaries Files\n"
 
 if [[ $DK_DEBUG = 1 ]] ; then
     FILES=$(find . -type f -executable | grep -Ev '(digikam|showfoto|exiv2)')
@@ -402,7 +402,7 @@ else
 fi
 
 for FILE in $FILES ; do
-    echo -en "Strip symbols in: $FILE"
+    echo -en "Strip symbols in: $FILE\n"
     /usr/bin/strip --strip-debug ${FILE} || true
 done
 
