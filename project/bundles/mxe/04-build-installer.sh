@@ -196,9 +196,9 @@ else
     find $BUNDLEDIR -name \*dll | xargs ${MXE_BUILDROOT}/usr/bin/${MXE_BUILD_TARGETS}-strip
 fi
 
-#if [[ $DK_DEBUG = 1 ]] ; then
-#    DEBUG_SUF="-debug"
-#fi
+if [[ $DK_DEBUG = 1 ]] ; then
+    DEBUG_SUF="-debug"
+fi
 
 #################################################################################################
 # Build NSIS installer and Portable archive.
