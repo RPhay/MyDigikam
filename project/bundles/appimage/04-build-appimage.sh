@@ -498,10 +498,6 @@ echo -e "\n---------- Compute package checksums for digiKam $DK_RELEASEID\n"  > 
 echo    "File       : $APPIMAGE"                                             >> $ORIG_WD/bundle/$APPIMAGE.sum
 echo -n "Size       : "                                                      >> $ORIG_WD/bundle/$APPIMAGE.sum
 du -h "$ORIG_WD/bundle/$APPIMAGE"     | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$APPIMAGE.sum
-echo -n "MD5 sum    : "                                                      >> $ORIG_WD/bundle/$APPIMAGE.sum
-md5sum "$ORIG_WD/bundle/$APPIMAGE"    | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$APPIMAGE.sum
-echo -n "SHA1 sum   : "                                                      >> $ORIG_WD/bundle/$APPIMAGE.sum
-sha1sum "$ORIG_WD/bundle/$APPIMAGE"   | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$APPIMAGE.sum
 echo -n "SHA256 sum : "                                                      >> $ORIG_WD/bundle/$APPIMAGE.sum
 sha256sum "$ORIG_WD/bundle/$APPIMAGE" | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$APPIMAGE.sum
 
@@ -516,10 +512,6 @@ if [[ $DK_SIGN = 1 ]] ; then
     echo    "File       : $APPIMAGE.sig"                                             >> $ORIG_WD/bundle/$APPIMAGE.sum
     echo -n "Size       : "                                                          >> $ORIG_WD/bundle/$APPIMAGE.sum
     du -h "$ORIG_WD/bundle/$APPIMAGE.sig"     | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$APPIMAGE.sum
-    echo -n "MD5 sum    : "                                                          >> $ORIG_WD/bundle/$APPIMAGE.sum
-    md5sum "$ORIG_WD/bundle/$APPIMAGE.sig"    | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$APPIMAGE.sum
-    echo -n "SHA1 sum   : "                                                          >> $ORIG_WD/bundle/$APPIMAGE.sum
-    sha1sum "$ORIG_WD/bundle/$APPIMAGE.sig"   | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$APPIMAGE.sum
     echo -n "SHA256 sum : "                                                          >> $ORIG_WD/bundle/$APPIMAGE.sum
     sha256sum "$ORIG_WD/bundle/$APPIMAGE.sig" | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$APPIMAGE.sum
 
