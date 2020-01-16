@@ -53,20 +53,23 @@ public:
     explicit CameraThumbsCtrl(CameraController* const ctrl, QWidget* const parent);
     ~CameraThumbsCtrl();
 
-    /** fill item with relevant information.
-     *  if item is not in cache, return false and information will be dispatched later through signalThumbInfoReady(),
-     *  else return true and information is available immediately.
+    /**
+     * Fill item with relevant information.
+     * if item is not in cache, return false and information will be dispatched later through signalThumbInfoReady(),
+     * else return true and information is available immediately.
      */
     bool getThumbInfo(const CamItemInfo& info, CachedItem& item) const;
 
     void setCacheSize(int numberOfItems);
     void clearCache();
 
-    /** Force controller to update info from device in cache.
+    /**
+     * Force controller to update info from device in cache.
      */
     void updateThumbInfoFromCache(const CamItemInfo& info);
 
-    /** Return camera controller instance.
+    /**
+     * Return camera controller instance.
      */
     CameraController* cameraController() const;
 

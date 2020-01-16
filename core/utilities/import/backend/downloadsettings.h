@@ -43,18 +43,18 @@ class DownloadSettings
 public:
 
     DownloadSettings()
+      : autoRotate(true),
+        fixDateTime(false),
+        convertJpeg(false),
+        documentName(false),
+        backupRaw(false),
+        convertDng(false),
+        compressDng(true),
+        previewMode(DNGWriter::MEDIUM),
+        rating(NoRating),
+        pickLabel(NoPickLabel),
+        colorLabel(NoColorLabel)
     {
-        autoRotate   = true;
-        fixDateTime  = false;
-        convertJpeg  = false;
-        documentName = false;
-        backupRaw    = false;
-        convertDng   = false;
-        compressDng  = true;
-        previewMode  = DNGWriter::MEDIUM;
-        rating       = NoRating;
-        pickLabel    = NoPickLabel;
-        colorLabel   = NoColorLabel;
     };
 
     ~DownloadSettings()
@@ -63,7 +63,7 @@ public:
 
 public:
 
-    // -- Settings from AdvancedSettings widget -----------
+    /// Settings from AdvancedSettings widget
     bool       autoRotate;
     bool       fixDateTime;
     bool       convertJpeg;
@@ -71,39 +71,39 @@ public:
 
     QDateTime  newDateTime;
 
-    // New format to convert Jpeg files.
+    /// New format to convert Jpeg files.
     QString    losslessFormat;
 
-    // Metadata template title.
+    /// Metadata template title.
     QString    templateTitle;
 
-    // -- File path to download ---------------------------
+    /// File path to download
     QString    folder;
     QString    file;
     QString    dest;
 
-    // -- Mime type from file to download -----------------
+    /// Mime type from file to download
     QString    mime;
 
-    // -- Settings from DNG convert widget ----------------
+    /// Settings from DNG convert widget
     bool       backupRaw;
     bool       convertDng;
     bool       compressDng;
     int        previewMode;
 
-    // -- Settings from ScriptingSettings widget ----------
+    /// Settings from ScriptingSettings widget
     QString    script;
 
-    // -- Pre-rating of each camera file.
+    /// Pre-rating of each camera file
     int        rating;
 
-    // -- Pre-pickLabel of each camera file.
+    /// Pre-pickLabel of each camera file
     int        pickLabel;
 
-    // -- Pre-colorLabel of each camera file.
+    /// Pre-colorLabel of each camera file
     int        colorLabel;
 
-    // -- Pre-tags of each camera file.
+    /// Pre-tags of each camera file
     QList<int> tagIds;
 };
 

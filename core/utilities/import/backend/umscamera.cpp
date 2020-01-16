@@ -83,9 +83,9 @@ namespace Digikam
 
 UMSCamera::UMSCamera(const QString& title, const QString& model,
                      const QString& port, const QString& path)
-    : DKCamera(title, model, port, path)
+    : DKCamera(title, model, port, path),
+      m_cancel(false)
 {
-    m_cancel = false;
     getUUIDFromSolid();
 }
 
@@ -93,13 +93,13 @@ UMSCamera::~UMSCamera()
 {
 }
 
-// Method not supported by UMS camera.
+/// Method not supported by UMS camera.
 bool UMSCamera::getPreview(QImage& /*preview*/)
 {
     return false;
 }
 
-// Method not supported by UMS camera.
+/// Method not supported by UMS camera.
 bool UMSCamera::capture(CamItemInfo& /*itemInfo*/)
 {
     return false;
@@ -113,20 +113,24 @@ DKCamera::CameraDriverType UMSCamera::cameraDriverType()
 QByteArray UMSCamera::cameraMD5ID()
 {
     QString camData;
+
     // Camera media UUID is used (if available) to improve fingerprint value
     // registration to database. We want to be sure that MD5 sum is really unique.
     // We don't use camera information here. media UUID is enough because it came be
     // mounted by a card reader or a camera. In this case, "already downloaded" flag will
     // be independent of the device used to mount memory card.
+
     camData.append(uuid());
     QCryptographicHash md5(QCryptographicHash::Md5);
     md5.addData(camData.toUtf8());
+
     return md5.result().toHex();
 }
 
+/// NOTE: implemented in gui, outside the camera thread.
 bool UMSCamera::getFreeSpace(unsigned long& /*kBSize*/, unsigned long& /*kBAvail*/)
 {
-    return false; // NOTE: implemented in gui, outside the camera thread.
+    return false;
 }
 
 bool UMSCamera::doConnect()
@@ -162,6 +166,7 @@ bool UMSCamera::doConnect()
 void UMSCamera::cancel()
 {
     // set the cancel flag
+
     m_cancel = true;
 }
 
@@ -232,11 +237,13 @@ void UMSCamera::getItemInfo(const QString& folder, const QString& itemName, CamI
         if (useMetadata)
         {
             // Try to use file metadata
+
             DMetadata meta;
             getMetadata(folder, itemName, meta);
             fillItemInfoFromMetadata(info, meta);
 
             // Fall back to file system info
+
             if (info.ctime.isNull())
             {
                 info.ctime = ItemScanner::creationDateFromFilesystem(fi);
@@ -245,6 +252,7 @@ void UMSCamera::getItemInfo(const QString& folder, const QString& itemName, CamI
         else
         {
             // Only use file system date
+
             info.ctime = ItemScanner::creationDateFromFilesystem(fi);
         }
     }
@@ -253,7 +261,9 @@ void UMSCamera::getItemInfo(const QString& folder, const QString& itemName, CamI
     // TODO allow video previews at some point?
 /*
     if (info.mime.startsWith(QLatin1String("image/")) ||
+    {
         info.mime.startsWith(QLatin1String("video/")))
+    }
 */
     if (info.mime.startsWith(QLatin1String("image/")))
     {
@@ -291,6 +301,7 @@ bool UMSCamera::getThumbnail(const QString& folder, const QString& itemName, QIm
     bool turnHighQualityThumbs = group.readEntry(QLatin1String("TurnHighQualityThumbs"), false);
 
     // Try to get thumbnail from Exif data (poor quality).
+
     if (!turnHighQualityThumbs)
     {
         thumbnail = metadata.getExifThumbnail(true);
@@ -309,7 +320,7 @@ bool UMSCamera::getThumbnail(const QString& folder, const QString& itemName, QIm
 
     QFileInfo fi(path);
 
-    if (thumbnail.load(fi.path() + fi.baseName() + QLatin1String(".thm")))        // Lowercase
+    if      (thumbnail.load(fi.path() + fi.baseName() + QLatin1String(".thm")))        // Lowercase
     {
         if (!thumbnail.isNull())
         {
@@ -329,7 +340,9 @@ bool UMSCamera::getThumbnail(const QString& folder, const QString& itemName, QIm
     qCDebug(DIGIKAM_IMPORTUI_LOG) << "Use DImg loader to get thumbnail from : " << path;
 
     DImg dimgThumb;
+
     // skip loading the data we don't need to speed it up.
+
     dimgThumb.load(path, false /*loadMetadata*/, false /*loadICCData*/, false /*loadUniqueHash*/, false /*loadHistory*/);
 
     if (!dimgThumb.isNull())
@@ -351,19 +364,22 @@ bool UMSCamera::getMetadata(const QString& folder, const QString& itemName, DMet
     thmlo.setFile(path + fi.baseName() + QLatin1String(".thm"));
     thmup.setFile(path + fi.baseName() + QLatin1String(".THM"));
 
-    if (thmlo.exists())
+    if      (thmlo.exists())
     {
         // Try thumbnail sidecar files with lowercase extension.
+
         ret = meta.load(thmlo.filePath());
     }
     else if (thmup.exists())
     {
         // Try thumbnail sidecar files with uppercase extension.
+
         ret = meta.load(thmup.filePath());
     }
     else
     {
         // If no thumbnail sidecar file available, try to load image metadata for files.
+
         ret = meta.load(fi.filePath());
     }
 
@@ -412,6 +428,7 @@ bool UMSCamera::downloadItem(const QString& folder, const QString& itemName, con
 
     // Set the file modification time of the downloaded file to the original file.
     // NOTE: this behavior don't need to be managed through Setup/Metadata settings.
+
     QT_STATBUF st;
 
     if (QT_STAT(QFile::encodeName(src).constData(), &st) == 0)
@@ -434,6 +451,7 @@ bool UMSCamera::setLockItem(const QString& folder, const QString& itemName, bool
     if (lock)
     {
         // Lock the file to set read only flag
+
         if (::chmod(QFile::encodeName(src).constData(), S_IREAD) == -1)
         {
             return false;
@@ -442,6 +460,7 @@ bool UMSCamera::setLockItem(const QString& folder, const QString& itemName, bool
     else
     {
         // Unlock the file to set read/write flag
+
         if (::chmod(QFile::encodeName(src).constData(), S_IREAD | S_IWRITE) == -1)
         {
             return false;
@@ -475,6 +494,7 @@ bool UMSCamera::deleteItem(const QString& folder, const QString& itemName)
     }
 
     // Remove the real image.
+
     return QFile::remove(path + itemName);
 }
 
@@ -522,6 +542,7 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
 
     // Set the file modification time of the uploaded file to original file.
     // NOTE: this behavior don't need to be managed through Setup/Metadata settings.
+
     QT_STATBUF st;
 
     if (QT_STAT(QFile::encodeName(src).constData(), &st) == 0)
@@ -546,6 +567,7 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
         QDateTime dt;
 
         // Try to load image metadata.
+
         meta.load(fi.filePath());
         dt    = meta.getItemDateTime();
         dims  = meta.getItemDimensions();
@@ -579,6 +601,7 @@ bool UMSCamera::cameraSummary(QString& summary)
 
     // we do not expect title/model/etc. to contain newlines,
     // so we just escape HTML characters
+
     summary += i18nc("@info List of device properties",
                      "Title: <b>%1</b><br/>"
                      "Model: <b>%2</b><br/>"
@@ -632,6 +655,7 @@ void UMSCamera::getUUIDFromSolid()
     foreach (const Solid::Device& accessDevice, devices)
     {
         // check for StorageAccess
+
         if (!accessDevice.is<Solid::StorageAccess>())
         {
             continue;
@@ -645,6 +669,7 @@ void UMSCamera::getUUIDFromSolid()
         }
 
         // check for StorageDrive
+
         Solid::Device driveDevice;
 
         for (Solid::Device currentDevice = accessDevice; currentDevice.isValid();
@@ -663,6 +688,7 @@ void UMSCamera::getUUIDFromSolid()
         }
 
         // check for StorageVolume
+
         Solid::Device volumeDevice;
 
         for (Solid::Device currentDevice = accessDevice; currentDevice.isValid(); currentDevice = currentDevice.parent())

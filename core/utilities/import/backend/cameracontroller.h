@@ -81,7 +81,8 @@ public:
     void getCameraInformation();
     void getPreview();
 
-    /** Get thumbnails for a list of camera items plus advanced information from metadata.
+    /**
+     * Get thumbnails for a list of camera items plus advanced information from metadata.
      */
     void getThumbsInfo(const CamItemInfoList& infoList, int thumbSize);
 

@@ -51,12 +51,12 @@ public:
 
     enum DownloadStatus
     {
-        DownloadUnknown  = -1,               // Donwload state is unknown
-        DownloadedNo     = 0,                // Is not yet downloaded on computer
-        DownloadedYes    = 1,                // Is already downloaded on computer
-        DownloadFailed   = 2,                // Download is failed or have been aborted by user
-        DownloadStarted  = 3,                // Download is under progress
-        NewPicture       = 4                 // This is a new item from camera
+        DownloadUnknown  = -1,               ///< Donwload state is unknown
+        DownloadedNo     = 0,                ///< Is not yet downloaded on computer
+        DownloadedYes    = 1,                ///< Is already downloaded on computer
+        DownloadFailed   = 2,                ///< Download is failed or have been aborted by user
+        DownloadStarted  = 3,                ///< Download is under progress
+        NewPicture       = 4                 ///< This is a new item from camera
     };
 
 public:
@@ -64,54 +64,58 @@ public:
     explicit CamItemInfo();
     ~CamItemInfo();
 
-    /** Return true if all member in this container are null.
+    /**
+     * Return true if all member in this container are null.
      */
     bool isNull() const;
 
-    /** Return the local file system (mounted on computer) url to the camera file.
+    /**
+     * Return the local file system (mounted on computer) url to the camera file.
      */
     QUrl url()    const;
 
-    /** Compare for camera information equality, not including variable values.
+    /**
+     * Compare for camera information equality, not including variable values.
      */
     bool operator==(const CamItemInfo& info) const;
 
-    /** Compare for camera information un-equality, not including variable values.
+    /**
+     * Compare for camera information un-equality, not including variable values.
      */
     bool operator!=(const CamItemInfo& info) const;
 
 public:
 
     /// Static values taken from camera.
-    qint64             size;                 // Camera file size in bytes.
+    qint64             size;                 ///< Camera file size in bytes.
 
-    int                width;                // Image width in pixels
-    int                height;               // Image height in pixels
-    int                readPermissions;      // Read permission of camera file
-    int                writePermissions;     // Write permission of camera file
+    int                width;                ///< Image width in pixels
+    int                height;               ///< Image height in pixels
+    int                readPermissions;      ///< Read permission of camera file
+    int                writePermissions;     ///< Write permission of camera file
 
-    QString            name;                 // File name in camera file-system
-    QString            folder;               // Folder path to access to file in camera
-    QString            mime;                 // Type mime of camera file
+    QString            name;                 ///< File name in camera file-system
+    QString            folder;               ///< Folder path to access to file in camera
+    QString            mime;                 ///< Type mime of camera file
 
-    QDateTime          ctime;                // Created time stamp of camera file
+    QDateTime          ctime;                ///< Created time stamp of camera file
 
-    PhotoInfoContainer photoInfo;            // Photo Info from camera file (get from file metadata)
+    PhotoInfoContainer photoInfo;            ///< Photo Info from camera file (get from file metadata)
 
     /// Variable values depending of user actions.
-    int                downloaded;           // Download status of camera file. See DownloadStatus enum for details
-    QString            downloadName;         // New file-name to use during download from camera
+    int                downloaded;           ///< Download status of camera file. See DownloadStatus enum for details
+    QString            downloadName;         ///< New file-name to use during download from camera
 
     /// Unique image id
     qlonglong          id;
 
-    int                rating;               // Pre-rating value of camera file.
+    int                rating;               ///< Pre-rating value of camera file.
 
-    int                pickLabel;            // Pre-picklabel value of camera file.
+    int                pickLabel;            ///< Pre-picklabel value of camera file.
 
-    int                colorLabel;           // Pre-picklabel value of camera file.
+    int                colorLabel;           ///< Pre-picklabel value of camera file.
 
-    QList<int>         tagIds;               // Pre-tags ids of camera file.
+    QList<int>         tagIds;               ///< Pre-tags ids of camera file.
     bool               previewPossible;
 };
 

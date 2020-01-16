@@ -34,20 +34,19 @@ namespace Digikam
 {
 
 DKCamera::DKCamera(const QString& title, const QString& model, const QString& port, const QString& path)
-    : QObject()
+    : QObject(),
+      m_title(title),
+      m_model(model),
+      m_port(port),
+      m_path(path),
+      m_thumbnailSupport(false),
+      m_deleteSupport(false),
+      m_uploadSupport(false),
+      m_mkDirSupport(false),
+      m_delDirSupport(false),
+      m_captureImageSupport(false),
+      m_captureImagePreviewSupport(false)
 {
-    m_title                       = title;
-    m_model                       = model;
-    m_port                        = port;
-    m_path                        = path;
-    m_thumbnailSupport            = false;
-    m_deleteSupport               = false;
-    m_uploadSupport               = false;
-    m_mkDirSupport                = false;
-    m_delDirSupport               = false;
-    m_captureImageSupport         = false;
-    m_captureImagePreviewSupport  = false;
-
     ApplicationSettings* const settings = ApplicationSettings::instance();
     m_imageFilter                       = settings->getImageFileFilter();
     m_movieFilter                       = settings->getMovieFileFilter();
@@ -134,7 +133,8 @@ QString DKCamera::mimeType(const QString& fileext) const
     QString mime;
 
     // Massage known variations of known mimetypes
-    if (ext == QLatin1String("jpg") || ext == QLatin1String("jpe"))
+
+    if      ((ext == QLatin1String("jpg")) || (ext == QLatin1String("jpe")))
     {
         ext = QLatin1String("jpeg");
     }
@@ -143,7 +143,7 @@ QString DKCamera::mimeType(const QString& fileext) const
         ext = QLatin1String("tiff");
     }
 
-    if (m_rawFilter.contains(ext))
+    if      (m_rawFilter.contains(ext))
     {
         mime = QLatin1String("image/x-raw");
     }
@@ -169,6 +169,7 @@ void DKCamera::fillItemInfoFromMetadata(CamItemInfo& info, const DMetadata& meta
     info.ctime     = meta.getItemDateTime();
 
     // NOTE: see bug #246401 to sort based on milliseconds for items taken quickly.
+
     if (!info.ctime.isNull())
     {
         info.ctime.setTime(info.ctime.time().addMSecs(meta.getMSecsInfo()));

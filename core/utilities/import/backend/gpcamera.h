@@ -38,7 +38,8 @@ namespace Digikam
 class GPStatus;
 class DMetadata;
 
-/** Gphoto2 camera Implementation of abstract type DKCamera
+/**
+ * Gphoto2 camera Implementation of abstract type DKCamera
  */
 class GPCamera : public DKCamera
 {
@@ -69,7 +70,7 @@ public:
     bool downloadItem(const QString& folder, const QString& itemName, const QString& saveFile) override;
     bool deleteItem(const QString& folder, const QString& itemName) override;
 
-    // recursively delete all items
+    /// recursively delete all items
     bool deleteAllItems(const QString& folder);
 
     bool uploadItem(const QString& folder, const QString& itemName, const QString& localFile, CamItemInfo& itemInfo) override;
@@ -92,7 +93,8 @@ public:
 
 private:
 
-    /** Run getItemInfo implementation whithout to be wrapped into GPhoto context
+    /**
+     * Run getItemInfo implementation whithout to be wrapped into GPhoto context
      */
     void getItemInfoInternal(const QString& folder, const QString& itemName, CamItemInfo& info, bool useMetadata);
 

@@ -46,8 +46,8 @@ class Q_DECL_HIDDEN CameraThumbsCtrlStaticPriv
 public:
 
     CameraThumbsCtrlStaticPriv()
+      : profile(IccProfile::sRGB())
     {
-        profile = IccProfile::sRGB();
     }
 
 public:
