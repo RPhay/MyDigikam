@@ -207,7 +207,7 @@ for app in $KDE_MENU_APPS ; do
 
         # Create destination directory if necessary and copy app
 
-        if [ ! -d "$TEMPROOT/$searchpath" ] ; then 
+        if [ ! -d "$TEMPROOT/$searchpath" ] ; then
             echo "    Creating $TEMPROOT/$searchpath"
             mkdir -p "$TEMPROOT/$searchpath"
         fi
@@ -442,15 +442,19 @@ cp $ORIG_WD/icon-rcc/breeze-dark.rcc $TEMPROOT/Applications/KF5/digikam.app/Cont
 #################################################################################################
 # Cleanup symbols in binary files to free space.
 
-#echo -e "\n---------- Strip symbols in binary files\n"
-#
-#if [[ $DK_DEBUG = 1 ]] ; then
-#    find $TEMPROOT -name "*.so"    | grep -Ev '(digikam|showfoto|exiv2)' | xargs strip -SXx
-#    find $TEMPROOT -name "*.dylib" | grep -Ev '(digikam|showfoto|exiv2)' | xargs strip -SXx
-#else
-#    find $TEMPROOT -name "*.so"    | xargs strip -SXx
-#    find $TEMPROOT -name "*.dylib" | xargs strip -SXx
-#fi
+echo -e "\n---------- Strip symbols in binary files\n"
+
+if [[ $DK_DEBUG = 1 ]] ; then
+    find $TEMPROOT -name "*.so"    | grep -Ev '(digikam|showfoto|exiv2)' | xargs strip -SXx
+    find $TEMPROOT -name "*.dylib" | grep -Ev '(digikam|showfoto|exiv2)' | xargs strip -SXx
+else
+    find $TEMPROOT -name "*.so"    | xargs strip -SXx
+    find $TEMPROOT -name "*.dylib" | xargs strip -SXx
+fi
+
+if [[ $DK_DEBUG = 1 ]] ; then
+    DEBUG_SUF="-debug"
+fi
 
 #################################################################################################
 # Relocate binary files
