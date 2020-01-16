@@ -266,10 +266,6 @@ if [[ $DK_SIGN = 1 ]] ; then
     echo    "File       : $TARGET_INSTALLER.sig"                                                >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
     echo -n "Size       : "                                                                     >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
     du -h "$ORIG_WD/bundle/$TARGET_INSTALLER.sig"        | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
-    echo -n "MD5 sum    : "                                                                     >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
-    md5sum "$ORIG_WD/bundle/$TARGET_INSTALLER.sig"       | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
-    echo -n "SHA1 sum   : "                                                                     >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
-    shasum -a1 "$ORIG_WD/bundle/$TARGET_INSTALLER.sig"   | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
     echo -n "SHA256 sum : "                                                                     >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
     shasum -a256 "$ORIG_WD/bundle/$TARGET_INSTALLER.sig" | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$TARGET_INSTALLER.sum
 
@@ -284,10 +280,6 @@ if [[ $DK_SIGN = 1 ]] ; then
     echo    "File       : $PORTABLE_FILE.sig"                                                >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
     echo -n "Size       : "                                                                     >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
     du -h "$ORIG_WD/bundle/$PORTABLE_FILE.sig"        | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
-    echo -n "MD5 sum    : "                                                                     >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
-    md5sum "$ORIG_WD/bundle/$PORTABLE_FILE.sig"       | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
-    echo -n "SHA1 sum   : "                                                                     >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
-    shasum -a1 "$ORIG_WD/bundle/$PORTABLE_FILE.sig"   | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
     echo -n "SHA256 sum : "                                                                     >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
     shasum -a256 "$ORIG_WD/bundle/$PORTABLE_FILE.sig" | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
 
