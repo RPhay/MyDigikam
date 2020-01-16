@@ -403,7 +403,7 @@ fi
 
 for FILE in $FILES ; do
     echo -en "Strip symbols in: $FILE\n"
-    /usr/bin/strip --strip-debug ${FILE} || true
+    /usr/bin/strip --strip-all ${FILE} || true
 done
 
 #################################################################################################
