@@ -561,6 +561,6 @@ BUGFIXES:
 546 ==> 397761 - Tags are not written.
 547 ==> 416231 - Exif date not written to sidecar file when modified, nor is it updated in the metadata sidebar.
 548 ==> 402620 - AppImage digiKam does not respect desktop default application setting.
-549 ==> 
+549 ==> 385953 - Reduce installed footprint under Windows.
 550 ==> 
 
