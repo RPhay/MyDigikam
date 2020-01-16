@@ -403,8 +403,7 @@ fi
 
 for FILE in $FILES ; do
     echo -en "Strip symbols in: $FILE"
-    /usr/bin/strip --strip-debug ${FILE}
-    echo -e " ==> OK"
+    /usr/bin/strip --strip-debug ${FILE} || true
 done
 
 #################################################################################################
@@ -527,9 +526,9 @@ if [[ $DK_UPLOAD = 1 ]] ; then
     echo -e "---------- Cleanup older bundle AppImage files from files.kde.org repository \n"
 
     if [[ "$ARCH" = "x86_64" ]] ; then
-        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*$WEB_BROWSER-x86-64*.appimage*
+        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-x86-64$DEBUG_SUF.appimage*
     elif [[ "$ARCH" = "i686" ]] ; then
-        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*$WEB_BROWSER-i386*.appimage*
+        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-i386$DEBUG_SUF.appimage*
     fi
 
     echo -e "---------- Upload new bundle AppImage files to files.kde.org repository \n"

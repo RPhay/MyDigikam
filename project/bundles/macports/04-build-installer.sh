@@ -552,7 +552,7 @@ if [[ $DK_UPLOAD = 1 ]] ; then
 
     echo -e "---------- Cleanup older bundle Package files from files.kde.org repository \n"
 
-    ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-MacOS-x86-64*.pkg*
+    ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-MacOS-x86-64$DEBUG_SUF.pkg*
 
     echo -e "---------- Upload new bundle Package files to files.kde.org repository \n"
 

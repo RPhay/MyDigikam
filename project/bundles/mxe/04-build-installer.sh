@@ -278,9 +278,9 @@ if [[ $DK_SIGN = 1 ]] ; then
     mv -f $ORIG_WD/bundle/$PORTABLE_FILE.asc $ORIG_WD/bundle/$PORTABLE_FILE.sig
 
     echo    "File       : $PORTABLE_FILE.sig"                                                >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
-    echo -n "Size       : "                                                                     >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
+    echo -n "Size       : "                                                                  >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
     du -h "$ORIG_WD/bundle/$PORTABLE_FILE.sig"        | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
-    echo -n "SHA256 sum : "                                                                     >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
+    echo -n "SHA256 sum : "                                                                  >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
     shasum -a256 "$ORIG_WD/bundle/$PORTABLE_FILE.sig" | { read first rest ; echo $first ; }  >> $ORIG_WD/bundle/$PORTABLE_FILE.sum
 
     # Checksums to post on Phabricator at release time.
@@ -296,11 +296,11 @@ if [[ $DK_UPLOAD = 1 ]] ; then
     echo -e "---------- Cleanup older Windows bundle files from files.kde.org repository \n"
 
     if [ $MXE_BUILD_TARGETS == "i686-w64-mingw32.shared" ]; then
-        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-Win32*.exe*
-        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-Win32*.tar.xz*
+        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-Win32$DEBUG_SUF.exe*
+        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-Win32$DEBUG_SUF.tar.xz*
     else
-        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-Win64*.exe*
-        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-Win64*.tar.xz*
+        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-Win64$DEBUG_SUF.exe*
+        ssh $DK_UPLOADURL rm -f $DK_UPLOADDIR*-Win64$DEBUG_SUF.tar.xz*
     fi
 
     echo -e "---------- Upload new Windows bundle files to files.kde.org repository \n"
