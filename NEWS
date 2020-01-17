@@ -563,4 +563,6 @@ BUGFIXES:
 548 ==> 402620 - AppImage digiKam does not respect desktop default application setting.
 549 ==> 385953 - Reduce installed footprint under Windows.
 550 ==> 416289 - 7.0.0-beta2 crash when closing Geolocation Editor.
-551 ==> 
+551 ==> 413855 - digiKam crashes when deleting a letter in the login window (QtWebkit + libicu).
+552 ==> 411619 - Crash when tagging, switching to map view (QtWebKit + libicu).
+553 ==> 
