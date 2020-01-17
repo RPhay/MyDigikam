@@ -84,11 +84,11 @@ private:
 
     WorkflowItem* findByTitle(const QString& title);
 
-    void        startDrag(Qt::DropActions supportedActions) override;
-    QStringList mimeTypes() const override;
+    void        startDrag(Qt::DropActions supportedActions)         override;
+    QStringList mimeTypes()                                   const override;
     QMimeData*  mimeData(const QList<QTreeWidgetItem*> items) const override;
 
-    void mouseDoubleClickEvent(QMouseEvent*) override;
+    void mouseDoubleClickEvent(QMouseEvent*)                        override;
 };
 
 } // namespace Digikam

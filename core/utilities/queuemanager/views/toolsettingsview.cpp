@@ -275,6 +275,7 @@ void ToolSettingsView::slotToolSelected(const BatchToolSet& set)
         d->tool->setSettings(d->set.settings);
 
         // Only set on Reset button if Manager is not busy (settings widget is disabled in this case).
+
         d->settingsViewReset->setEnabled(d->settingsView->viewport()->isEnabled());
 
         d->settingsViewAbout->setEnabled(d->tool->plugin());

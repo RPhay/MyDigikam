@@ -104,10 +104,10 @@ WorkflowDlg::WorkflowDlg(const Workflow& wf, bool create)
     QRegExp           reg(QLatin1String("[^/]+"));
     QValidator* const validator = new QRegExpValidator(reg, this);
 
-    QLabel* const titleLabel = new QLabel(page);
+    QLabel* const titleLabel    = new QLabel(page);
     titleLabel->setText(i18n("&Title:"));
 
-    d->titleEdit = new QLineEdit(page);
+    d->titleEdit                = new QLineEdit(page);
     d->titleEdit->setClearButtonEnabled(true);
     d->titleEdit->setValidator(validator);
     d->titleEdit->selectAll();
@@ -119,7 +119,7 @@ WorkflowDlg::WorkflowDlg(const Workflow& wf, bool create)
     QLabel* const descLabel = new QLabel(page);
     descLabel->setText(i18n("Description:"));
 
-    d->descEdit = new QLineEdit(page);
+    d->descEdit             = new QLineEdit(page);
     d->titleEdit->setClearButtonEnabled(true);
     d->descEdit->setValidator(validator);
     descLabel->setBuddy(d->descEdit);
@@ -195,6 +195,7 @@ bool WorkflowDlg::editProps(Workflow& wf)
     }
 
     delete dlg;
+
     return ok;
 }
 
@@ -210,6 +211,7 @@ bool WorkflowDlg::createNew(Workflow& wf)
     }
 
     delete dlg;
+
     return ok;
 }
 

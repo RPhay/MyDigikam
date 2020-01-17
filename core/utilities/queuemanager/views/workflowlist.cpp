@@ -159,7 +159,7 @@ WorkflowItem* WorkflowList::findByTitle(const QString& title)
     {
         WorkflowItem* const item = dynamic_cast<WorkflowItem*>(*it);
 
-        if (item && item->title() == title)
+        if (item && (item->title() == title))
         {
             return item;
         }
@@ -173,9 +173,11 @@ WorkflowItem* WorkflowList::findByTitle(const QString& title)
 void WorkflowList::startDrag(Qt::DropActions /*supportedActions*/)
 {
     QList<QTreeWidgetItem*> list = selectedItems();
+
     if (!list.isEmpty())
     {
         WorkflowItem* const item = dynamic_cast<WorkflowItem*>(list.first());
+
         if (!item)
         {
             return;
@@ -233,6 +235,7 @@ QMimeData* WorkflowList::mimeData(const QList<QTreeWidgetItem*> items) const
     if (!items.isEmpty())
     {
         WorkflowItem* const item  = dynamic_cast<WorkflowItem*>(items.first());
+
         if (item)
         {
             stream << item->title();
@@ -257,7 +260,7 @@ void WorkflowList::slotContextMenu()
 
     QAction* const choice = popmenu.exec(QCursor::pos());
 
-    if (choice == assignAction)
+    if      (choice == assignAction)
     {
         slotAssignQueueSettings();
     }

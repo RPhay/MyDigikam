@@ -224,9 +224,10 @@ bool ToolsListView::removeTool(BatchTool* const tool)
     {
         ToolListViewItem* const item = dynamic_cast<ToolListViewItem*>(*it);
 
-        if (item && item->tool() == tool)
+        if (item && (item->tool() == tool))
         {
             delete item;
+
             return true;
         }
 
@@ -244,7 +245,7 @@ ToolListViewGroup* ToolsListView::findToolGroup(BatchTool::BatchToolGroup group)
     {
         ToolListViewGroup* const item = dynamic_cast<ToolListViewGroup*>(*it);
 
-        if (item && item->toolGroup() == group)
+        if (item && (item->toolGroup() == group))
         {
             return item;
         }
@@ -268,7 +269,7 @@ ToolListViewItem* ToolsListView::findTool(BatchTool* const tool)
     {
         ToolListViewItem* const item = dynamic_cast<ToolListViewItem*>(*it);
 
-        if (item && item->tool() == tool)
+        if (item && (item->tool() == tool))
         {
             return item;
         }
@@ -355,6 +356,7 @@ QMimeData* ToolsListView::mimeData(const QList<QTreeWidgetItem*> items) const
     stream << map;
 
     mimeData->setData(QLatin1String("digikam/batchtoolslist"), encodedData);
+
     return mimeData;
 }
 
@@ -371,6 +373,7 @@ QMap<int, QString> ToolsListView::itemsToMap(const QList<QTreeWidgetItem*> items
             map.insertMulti((int)(tlwi->tool()->toolGroup()), tlwi->tool()->objectName());
         }
     }
+
     return map;
 }
 
@@ -378,6 +381,7 @@ void ToolsListView::slotContextMenu()
 {
     QMenu popmenu(this);
     QAction* const action = new QAction(QIcon::fromTheme(QLatin1String("list-add")), i18n("Assign tools"), this);
+
     connect(action, SIGNAL(triggered(bool)),
             this, SLOT(slotAssignTools()));
 

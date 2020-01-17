@@ -163,6 +163,7 @@ AssignedBatchTools AssignedListView::assignedList()
 
     AssignedBatchTools tools;
     tools.m_toolsList = list;
+
     return tools;
 }
 
@@ -261,6 +262,7 @@ AssignedListViewItem* AssignedListView::insertTool(AssignedListViewItem* const p
     BatchTool* const tool = BatchToolsFactory::instance()->findTool(set.name, set.group);
 
     // NOTE: Only now create the settings widget when needed.
+
     if (tool && !tool->settingsWidget())
     {
         tool->registerSettingsWidget();
@@ -321,13 +323,14 @@ AssignedListViewItem* AssignedListView::findTool(const BatchToolSet& set)
 
 Qt::DropActions AssignedListView::supportedDropActions() const
 {
-    return Qt::CopyAction | Qt::MoveAction;
+    return (Qt::CopyAction | Qt::MoveAction);
 }
 
 QStringList AssignedListView::mimeTypes() const
 {
     QStringList types;
     types << QLatin1String("digikam/assignedbatchtool");
+
     return types;
 }
 
@@ -354,6 +357,7 @@ QMimeData* AssignedListView::mimeData(const QList<QTreeWidgetItem*> items) const
     }
 
     mimeData->setData(QLatin1String("digikam/assignedbatchtool"), encodedData);
+
     return mimeData;
 }
 
@@ -370,6 +374,7 @@ void AssignedListView::dragMoveEvent(QDragMoveEvent* e)
     {
         QTreeWidget::dragMoveEvent(e);
         e->accept();
+
         return;
     }
 
@@ -462,6 +467,7 @@ void AssignedListView::slotSelectionChanged()
 void AssignedListView::slotQueueSelected(int, const QueueSettings&, const AssignedBatchTools& tools)
 {
     // Clear assigned tools list and tool settings view.
+
     clear();
     emit signalToolSelected(BatchToolSet());
 
@@ -502,6 +508,7 @@ void AssignedListView::slotAssignTools(const QMap<int, QString>& map)
 void AssignedListView::assignTools(const QMap<int, QString>& map, AssignedListViewItem* const preceding)
 {
     // We pop all items in reverse order to have same order than selection from Batch Tools list.
+
     QMapIterator<int, QString> it(map);
     it.toBack();
 
@@ -515,6 +522,7 @@ void AssignedListView::assignTools(const QMap<int, QString>& map, AssignedListVi
         if (tool)
         {
             // NOTE: Only now create the settings widget when needed.
+
             if (!tool->settingsWidget())
             {
                 tool->registerSettingsWidget();

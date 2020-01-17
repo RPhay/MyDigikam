@@ -88,7 +88,7 @@ public:
 
     QueueListView* view;
 
-    ItemInfo      info;
+    ItemInfo       info;
 };
 
 QueueListViewItem::QueueListViewItem(QueueListView* const view, const ItemInfo& info)
@@ -124,7 +124,9 @@ ItemInfo QueueListViewItem::info() const
 void QueueListViewItem::setPixmap(const QPixmap& pix)
 {
     QIcon icon = QIcon(pix);
+
     //  We make sure the preview icon stays the same regardless of the role
+
     icon.addPixmap(pix, QIcon::Selected, QIcon::On);
     icon.addPixmap(pix, QIcon::Selected, QIcon::Off);
     icon.addPixmap(pix, QIcon::Active,   QIcon::On);
@@ -230,12 +232,14 @@ QString QueueListViewItem::destFileName() const
 QString QueueListViewItem::destBaseName() const
 {
     QFileInfo fi(d->destFileName);
+
     return fi.completeBaseName();
 }
 
 QString QueueListViewItem::destSuffix() const
 {
     QFileInfo fi(d->destFileName);
+
     return fi.suffix();
 }
 
@@ -256,15 +260,15 @@ public:
 public:
 
     explicit Private()
-        : iconSize(64)
+      : showTips(false),
+        iconSize(64),
+        toolTipTimer(nullptr),
+        progressTimer(nullptr),
+        thumbLoadThread(ThumbnailLoadThread::defaultThread()),
+        toolTip(nullptr),
+        toolTipItem(nullptr),
+        progressPix(DWorkingPixmap())
     {
-        showTips        = false;
-        toolTipTimer    = nullptr;
-        progressTimer   = nullptr;
-        toolTip         = nullptr;
-        toolTipItem     = nullptr;
-        thumbLoadThread = ThumbnailLoadThread::defaultThread();
-        progressPix     = DWorkingPixmap();
     }
 
     bool                        showTips;
@@ -349,15 +353,17 @@ QueueListView::~QueueListView()
 
 QPixmap QueueListView::progressPixmapForIndex(int index) const
 {
-    if (index >= 0 && index < d->progressPix.frameCount())
+    if ((index >= 0) && (index < d->progressPix.frameCount()))
+    {
         return (d->progressPix.frameAt(index));
+    }
 
     return QPixmap();
 }
 
 Qt::DropActions QueueListView::supportedDropActions() const
 {
-    return Qt::CopyAction | Qt::MoveAction;
+    return (Qt::CopyAction | Qt::MoveAction);
 }
 
 QMimeData* QueueListView::mimeData(const QList<QTreeWidgetItem*> items) const
@@ -379,6 +385,7 @@ QMimeData* QueueListView::mimeData(const QList<QTreeWidgetItem*> items) const
     }
 
     DItemDrag* const mimeData = new DItemDrag(urls, albumIDs, imageIDs);
+
     return mimeData;
 }
 
@@ -434,15 +441,15 @@ void QueueListView::dragMoveEvent(QDragMoveEvent* e)
     QList<QUrl>      urls;
 
     if (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs) ||
-        DAlbumDrag::decode(e->mimeData(), urls, albumID)                    ||
+        DAlbumDrag::decode(e->mimeData(), urls, albumID)           ||
         DTagListDrag::canDecode(e->mimeData()))
     {
         if (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs))
         {
             ItemInfoList imageInfoList;
 
-            for (QList<qlonglong>::const_iterator it = imageIDs.constBegin();
-                 it != imageIDs.constEnd(); ++it)
+            for (QList<qlonglong>::const_iterator it = imageIDs.constBegin() ;
+                 it != imageIDs.constEnd() ; ++it)
             {
                 ItemInfo info(*it);
 
@@ -481,8 +488,8 @@ void QueueListView::dropEvent(QDropEvent* e)
     {
         ItemInfoList imageInfoList;
 
-        for (QList<qlonglong>::const_iterator it = imageIDs.constBegin();
-             it != imageIDs.constEnd(); ++it)
+        for (QList<qlonglong>::const_iterator it = imageIDs.constBegin() ;
+             it != imageIDs.constEnd() ; ++it)
         {
             ItemInfo info(*it);
 
@@ -513,8 +520,8 @@ void QueueListView::dropEvent(QDropEvent* e)
         QList<qlonglong> itemIDs = CoreDbAccess().db()->getItemIDsInAlbum(albumID);
         ItemInfoList imageInfoList;
 
-        for (QList<qlonglong>::const_iterator it = itemIDs.constBegin();
-             it != itemIDs.constEnd(); ++it)
+        for (QList<qlonglong>::const_iterator it = itemIDs.constBegin() ;
+             it != itemIDs.constEnd() ; ++it)
         {
             ItemInfo info(*it);
 
@@ -542,8 +549,8 @@ void QueueListView::dropEvent(QDropEvent* e)
         QList<qlonglong> itemIDs = CoreDbAccess().db()->getItemIDsInTag(tagIDs.first(), true);
         ItemInfoList imageInfoList;
 
-        for (QList<qlonglong>::const_iterator it = itemIDs.constBegin();
-             it != itemIDs.constEnd(); ++it)
+        for (QList<qlonglong>::const_iterator it = itemIDs.constBegin() ;
+             it != itemIDs.constEnd() ; ++it)
         {
             ItemInfo info(*it);
 
@@ -683,9 +690,9 @@ void QueueListView::slotAddItems(const ItemInfoList& list)
         return;
     }
 
-    for (ItemInfoList::ConstIterator it = list.begin(); it != list.end(); ++it)
+    for (ItemInfoList::ConstIterator it = list.begin() ; it != list.end() ; ++it)
     {
-        ItemInfo info = *it;
+        ItemInfo info           = *it;
 
         // Check if the new item already exist in the list.
 
@@ -698,7 +705,7 @@ void QueueListView::slotAddItems(const ItemInfoList& list)
         {
             item = dynamic_cast<QueueListViewItem*>(*iter);
 
-            if (item && item->info() == info)
+            if (item && (item->info() == info))
             {
                 find = true;
             }
@@ -738,7 +745,7 @@ void QueueListView::slotThumbnailLoaded(const LoadingDescription& desc, const QP
     {
         QueueListViewItem* const item = dynamic_cast<QueueListViewItem*>(*it);
 
-        if (item && item->info().fileUrl() == QUrl::fromLocalFile(desc.filePath))
+        if (item && (item->info().fileUrl() == QUrl::fromLocalFile(desc.filePath)))
         {
             if (pix.isNull())
             {
@@ -800,6 +807,7 @@ void QueueListView::removeItems(int removeType)
                             delete item;
                             find = true;
                         }
+
                         break;
                     }
 
@@ -810,6 +818,7 @@ void QueueListView::removeItems(int removeType)
                             delete item;
                             find = true;
                         }
+
                         break;
                     }
 
@@ -850,7 +859,7 @@ void QueueListView::removeItemById(qlonglong id)
         {
             QueueListViewItem* const item = dynamic_cast<QueueListViewItem*>(*it);
 
-            if (item && item->info().id() == id)
+            if (item && (item->info().id() == id))
             {
                 delete item;
                 find = true;
@@ -878,7 +887,7 @@ QueueListViewItem* QueueListView::findItemById(qlonglong id)
     {
         QueueListViewItem* const item = dynamic_cast<QueueListViewItem*>(*it);
 
-        if (item && item->info().id() == id)
+        if (item && (item->info().id() == id))
         {
             return item;
         }
@@ -897,7 +906,7 @@ QueueListViewItem* QueueListView::findItemByUrl(const QUrl& url)
     {
         QueueListViewItem* const item = dynamic_cast<QueueListViewItem*>(*it);
 
-        if (item && item->info().fileUrl() == url)
+        if (item && (item->info().fileUrl() == url))
         {
             return item;
         }
@@ -1022,6 +1031,7 @@ void QueueListView::slotAssignedToolsChanged(const AssignedBatchTools& tools)
 void QueueListView::resetQueue()
 {
     //reset all items
+
     QTreeWidgetItemIterator it(this);
 
     while (*it)
@@ -1033,7 +1043,7 @@ void QueueListView::resetQueue()
             item->reset();
         }
 
-        it++;
+        ++it;
     }
 }
 
@@ -1058,6 +1068,7 @@ void QueueListView::updateDestFileNames()
             if (item)
             {
                 // Update base name using queue renaming rules.
+
                 ItemInfo info = item->info();
                 QFileInfo fi(info.filePath());
 
@@ -1085,16 +1096,18 @@ void QueueListView::updateDestFileNames()
         if (item)
         {
             // Update base name using queue renaming rules.
-            ItemInfo info    = item->info();
+
+            ItemInfo info     = item->info();
             QFileInfo fi(info.filePath());
 
             // Update suffix using assigned batch tool rules.
+
             bool extensionSet = false;
             tools.m_itemUrl   = item->info().fileUrl();
             QString newSuffix = tools.targetSuffix(&extensionSet);
             QString newName   = QString::fromUtf8("%1.%2").arg(fi.completeBaseName()).arg(newSuffix);
 
-            if (settings().renamingRule == QueueSettings::CUSTOMIZE && !renamingResults.isEmpty())
+            if ((settings().renamingRule == QueueSettings::CUSTOMIZE) && !renamingResults.isEmpty())
             {
                 QFileInfo fi2(renamingResults[fi.absoluteFilePath()]);
 
@@ -1148,8 +1161,10 @@ void QueueListView::slotCollectionImageChange(const CollectionImageChangeset& ch
             {
                 removeItemById(id);
             }
+
             break;
         }
+
         default:
         {
             break;
@@ -1188,11 +1203,13 @@ void QueueListView::slotProgressTimerDone()
             active++;
         }
 
-        it++;
+        ++it;
     }
 
     if (!active)
+    {
         d->progressTimer->stop();
+    }
 }
 
 } // namespace Digikam

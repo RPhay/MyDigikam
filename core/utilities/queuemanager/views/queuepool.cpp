@@ -68,10 +68,13 @@ void QueuePoolBar::dragEnterEvent(QDragEnterEvent* e)
     if (tab != -1)
     {
         bool accept = false;
+
         // The receivers of the testCanDecode() signal has to adjust 'accept' accordingly.
+
         emit signalTestCanDecode(e, accept);
 
         e->setAccepted(accept);
+
         return;
     }
 
@@ -85,10 +88,13 @@ void QueuePoolBar::dragMoveEvent(QDragMoveEvent* e)
     if (tab != -1)
     {
         bool accept = false;
+
         // The receivers of the testCanDecode() signal has to adjust 'accept' accordingly.
+
         emit signalTestCanDecode(e, accept);
 
         e->setAccepted(accept);
+
         return;
     }
 
@@ -139,12 +145,14 @@ void QueuePool::setBusy(bool b)
 {
     tabBar()->setEnabled(!b);
 
-    for (int i = 0; i < count(); ++i)
+    for (int i = 0 ; i < count() ; ++i)
     {
         QueueListView* const queue = dynamic_cast<QueueListView*>(widget(i));
 
         if (queue)
+        {
             queue->viewport()->setEnabled(!b);
+        }
     }
 }
 
@@ -160,7 +168,7 @@ QString QueuePool::currentTitle() const
 
 QueueListView* QueuePool::findQueueByItemId(qlonglong id) const
 {
-    for (int i = 0; i < count(); ++i)
+    for (int i = 0 ; i < count() ; ++i)
     {
         QueueListView* const queue = dynamic_cast<QueueListView*>(widget(i));
 
@@ -178,7 +186,9 @@ void QueuePool::setItemBusy(qlonglong id)
     QueueListView* const queue = findQueueByItemId(id);
 
     if (queue)
+    {
         queue->setItemBusy(id);
+    }
 }
 
 QueueListView* QueuePool::findQueueByIndex(int index) const
@@ -190,7 +200,7 @@ QMap<int, QString> QueuePool::queuesMap() const
 {
     QMap<int, QString> map;
 
-    for (int i = 0; i < count(); ++i)
+    for (int i = 0 ; i < count() ; ++i)
     {
         map.insert(i, queueTitle(i));
     }
@@ -202,6 +212,7 @@ QString QueuePool::queueTitle(int index) const
 {
     // NOTE: clean up tab title. With QTabWidget, it sound like mistake is added, as '&' and space.
     // NOTE update, & is an usability helper to allow keyboard access -teemu
+
     return (tabText(index).remove(QLatin1Char('&')).remove(QLatin1Char(' ')));
 }
 
@@ -210,7 +221,9 @@ void QueuePool::slotAddQueue()
     QueueListView* const queue = new QueueListView(this);
 
     if (!queue)
+    {
         return;
+    }
 
     int index = addTab(queue, QIcon::fromTheme(QLatin1String("run-build")), QString::fromUtf8("#%1").arg(count() + 1));
 
@@ -250,12 +263,14 @@ int QueuePool::totalPendingItems() const
 {
     int items = 0;
 
-    for (int i = 0; i < count(); ++i)
+    for (int i = 0 ; i < count() ; ++i)
     {
         QueueListView* const queue = dynamic_cast<QueueListView*>(widget(i));
 
         if (queue)
+        {
             items += queue->pendingItemsCount();
+        }
     }
 
     return items;
@@ -265,12 +280,14 @@ int QueuePool::totalPendingTasks() const
 {
     int tasks = 0;
 
-    for (int i = 0; i < count(); ++i)
+    for (int i = 0 ; i < count() ; ++i)
     {
         QueueListView* const queue = dynamic_cast<QueueListView*>(widget(i));
 
         if (queue)
+        {
             tasks += queue->pendingTasksCount();
+        }
     }
 
     return tasks;
@@ -317,6 +334,7 @@ bool QueuePool::saveWorkflow() const
         {
             mngr->insert(wf);
             mngr->save();
+
             return true;
         }
     }
@@ -402,7 +420,9 @@ void QueuePool::removeTab(int index)
     QueueListView* const queue = dynamic_cast<QueueListView*>(widget(index));
 
     if (!queue)
+    {
         return;
+    }
 
     int count = queue->pendingItemsCount();
 
@@ -431,10 +451,11 @@ void QueuePool::slotTestCanDecode(const QDragMoveEvent* e, bool& accept)
     QList<QUrl>      urls;
 
     if (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs) ||
-        DAlbumDrag::decode(e->mimeData(), urls, albumID)                    ||
+        DAlbumDrag::decode(e->mimeData(), urls, albumID)           ||
         DTagListDrag::canDecode(e->mimeData()))
     {
         accept = true;
+
         return;
     }
 
@@ -455,7 +476,7 @@ bool QueuePool::customRenamingRulesAreValid() const
 {
     QStringList list;
 
-    for (int i = 0; i < count(); ++i)
+    for (int i = 0 ; i < count() ; ++i)
     {
         QueueListView* const queue = findQueueByIndex(i);
 
@@ -487,7 +508,7 @@ bool QueuePool::assignedBatchToolsListsAreValid() const
 {
     QStringList list;
 
-    for (int i = 0; i < count(); ++i)
+    for (int i = 0 ; i < count() ; ++i)
     {
         QueueListView* const queue = findQueueByIndex(i);
 
@@ -516,7 +537,7 @@ bool QueuePool::assignedBatchToolsListsAreValid() const
 
 void QueuePool::slotFileChanged(const QString& filePath)
 {
-    for (int i = 0; i < count(); ++i)
+    for (int i = 0 ; i < count() ; ++i)
     {
         QueueListView* const queue = dynamic_cast<QueueListView*>(widget(i));
 
@@ -529,16 +550,18 @@ void QueuePool::slotFileChanged(const QString& filePath)
 
 void QueuePool::applySettings()
 {
-    for (int i = 0; i < count(); ++i)
+    for (int i = 0 ; i < count() ; ++i)
     {
         QueueListView* const queue = dynamic_cast<QueueListView*>(widget(i));
 
         if (queue)
         {
             // Show/hide tool-tips settings.
+
             queue->setEnableToolTips(ApplicationSettings::instance()->getShowToolTips());
 
             // Reset Exif Orientation settings.
+
             QueueSettings prm = queue->settings();
             prm.exifSetOrientation = MetaEngineSettings::instance()->settings().exifRotate;
 

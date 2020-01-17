@@ -115,9 +115,9 @@ private:
     QStringList     mimeTypes()                                   const override;
     QMimeData*      mimeData(const QList<QTreeWidgetItem*> items) const override;
 
-    void dragEnterEvent(QDragEnterEvent*) override;
-    void dragMoveEvent(QDragMoveEvent*) override;
-    void dropEvent(QDropEvent*) override;
+    void dragEnterEvent(QDragEnterEvent*)                               override;
+    void dragMoveEvent(QDragMoveEvent*)                                 override;
+    void dropEvent(QDropEvent*)                                         override;
 };
 
 } // namespace Digikam

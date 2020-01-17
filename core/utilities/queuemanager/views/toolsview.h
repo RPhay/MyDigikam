@@ -57,7 +57,10 @@ public:
     void setBusy(bool b);
 
     void showTab(ViewTabs t);
-    void addHistoryEntry(const QString& msg, DHistoryView::EntryType type, int queueId = -1, qlonglong itemId = -1);
+    void addHistoryEntry(const QString& msg,
+                         DHistoryView::EntryType type,
+                         int queueId = -1,
+                         qlonglong itemId = -1);
 
 Q_SIGNALS:
 

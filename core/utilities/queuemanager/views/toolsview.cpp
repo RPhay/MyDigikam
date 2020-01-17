@@ -114,7 +114,7 @@ ToolsView::~ToolsView()
 
 void ToolsView::setBusy(bool b)
 {
-    for (int i = 0; i < count(); ++i)
+    for (int i = 0 ; i < count() ; ++i)
     {
         ToolsListView* const view = dynamic_cast<ToolsListView*>(widget(i));
 
@@ -179,7 +179,7 @@ bool ToolsView::removeTool(BatchTool* const tool)
 
 void ToolsView::addHistoryEntry(const QString& msg, DHistoryView::EntryType type, int queueId, qlonglong itemId)
 {
-    if (queueId != -1 && itemId != -1)
+    if ((queueId != -1) && (itemId != -1))
     {
         QList<QVariant> list;
         list << queueId << itemId;

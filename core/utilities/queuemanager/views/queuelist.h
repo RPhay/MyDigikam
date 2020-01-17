@@ -117,17 +117,17 @@ public:
     QueueListViewItem* findItemById(qlonglong id);
 
     void setSettings(const QueueSettings& settings);
-    QueueSettings settings() const;
+    QueueSettings settings()                    const;
 
     void setAssignedTools(const AssignedBatchTools& tools);
-    AssignedBatchTools assignedTools() const;
+    AssignedBatchTools assignedTools()          const;
 
     void setEnableToolTips(bool val);
 
     void reloadThumbs(const QUrl& url);
 
     void setItemBusy(qlonglong id);
-    QPixmap progressPixmapForIndex(int index) const;
+    QPixmap progressPixmapForIndex(int index)   const;
 
 Q_SIGNALS:
 
@@ -156,23 +156,25 @@ private:
     void removeItems(int removeType);
     void updateDestFileNames();
     void hideToolTip();
-    bool acceptToolTip(const QPoint& pos) const;
+    bool acceptToolTip(const QPoint& pos)                         const;
 
     QMimeData*      mimeData(const QList<QTreeWidgetItem*> items) const override;
     Qt::DropActions supportedDropActions()                        const override;
-    void            startDrag(Qt::DropActions supportedActions) override;
+    void            startDrag(Qt::DropActions supportedActions)         override;
 
-    void dragMoveEvent(QDragMoveEvent*) override;
-    void dragEnterEvent(QDragEnterEvent*) override;
-    void dropEvent(QDropEvent*) override;
-    void mouseMoveEvent(QMouseEvent*) override;
-    void wheelEvent(QWheelEvent*) override;
-    void keyPressEvent(QKeyEvent*) override;
-    void focusOutEvent(QFocusEvent*) override;
-    void leaveEvent(QEvent*) override;
+    void dragMoveEvent(QDragMoveEvent*)                                 override;
+    void dragEnterEvent(QDragEnterEvent*)                               override;
+    void dropEvent(QDropEvent*)                                         override;
+    void mouseMoveEvent(QMouseEvent*)                                   override;
+    void wheelEvent(QWheelEvent*)                                       override;
+    void keyPressEvent(QKeyEvent*)                                      override;
+    void focusOutEvent(QFocusEvent*)                                    override;
+    void leaveEvent(QEvent*)                                            override;
     void resetQueue();
 
-    void drawRow(QPainter* p, const QStyleOptionViewItem& opt, const QModelIndex& index) const override;
+    void drawRow(QPainter* p,
+                 const QStyleOptionViewItem& opt,
+                 const QModelIndex& index)                        const override;
 
 private:
 
