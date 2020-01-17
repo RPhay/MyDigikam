@@ -408,20 +408,23 @@ bool AlbumFilterModel::lessThan(const QModelIndex& left, const QModelIndex& righ
         return QSortFilterProxyModel::lessThan(left, right);
     }
 
-    if ((leftAlbum->id() == FaceTags::unconfirmedPersonTagId()) != (rightAlbum->id() == FaceTags::unconfirmedPersonTagId()))
+    if ((leftAlbum->type() == Album::TAG) && (rightAlbum->type() == Album::TAG))
     {
-        // unconfirmed tag album go to the top, regardless of sort role
+        if ((leftAlbum->id() == FaceTags::unconfirmedPersonTagId()) != (rightAlbum->id() == FaceTags::unconfirmedPersonTagId()))
+        {
+            // unconfirmed tag album go to the top, regardless of sort role
 
-        return (sortOrder() == Qt::AscendingOrder) ? (leftAlbum->id() == FaceTags::unconfirmedPersonTagId())
-                                                   : (leftAlbum->id() != FaceTags::unconfirmedPersonTagId());
-    }
+            return (sortOrder() == Qt::AscendingOrder) ? (leftAlbum->id() == FaceTags::unconfirmedPersonTagId())
+                                                       : (leftAlbum->id() != FaceTags::unconfirmedPersonTagId());
+        }
 
-    if ((leftAlbum->id() == FaceTags::unknownPersonTagId()) != (rightAlbum->id() == FaceTags::unknownPersonTagId()))
-    {
-        // unknown tag albums go to the top, regardless of sort role
+        if ((leftAlbum->id() == FaceTags::unknownPersonTagId()) != (rightAlbum->id() == FaceTags::unknownPersonTagId()))
+        {
+            // unknown tag albums go to the top, regardless of sort role
 
-        return (sortOrder() == Qt::AscendingOrder) ? (leftAlbum->id() == FaceTags::unknownPersonTagId())
-                                                   : (leftAlbum->id() != FaceTags::unknownPersonTagId());
+            return (sortOrder() == Qt::AscendingOrder) ? (leftAlbum->id() == FaceTags::unknownPersonTagId())
+                                                       : (leftAlbum->id() != FaceTags::unknownPersonTagId());
+        }
     }
 
     if (leftAlbum->isTrashAlbum() != rightAlbum->isTrashAlbum())

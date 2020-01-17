@@ -571,4 +571,5 @@ BUGFIXES:
 555 ==> 406809 - digikam-6.2.0-git-20190421T121202-qtwebengine-x86-64.appimage crashes on startup.
 556 ==> 411891 - digiKam crashes if compiled with QWebEngine.
 557 ==> 409906 - Crash at Startup in geolocation about QtWebEngine.
-558 ==> 
+558 ==> 416371 - 7.0.0-beta bug in Album tree view sorting order.
+559 ==> 
