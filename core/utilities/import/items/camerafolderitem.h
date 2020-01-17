@@ -51,12 +51,13 @@ public:
 
     ~CameraFolderItem();
 
-    QString folderName() const;
-    QString folderPath() const;
-    bool    isVirtualFolder() const;
+    QString folderName()        const;
+    QString folderPath()        const;
+    bool    isVirtualFolder()   const;
+
     void    changeCount(int val);
     void    setCount(int val);
-    int     count() const;
+    int     count()             const;
 
 private:
 

@@ -22,7 +22,6 @@
  *
  * ============================================================ */
 
-#include "importdelegate.h"
 #include "importdelegate_p.h"
 
 // C++ includes
@@ -53,8 +52,10 @@ void ImportDelegate::ImportDelegatePrivate::clearRects()
     dateRect             = QRect(0, 0, 0, 0);
     pixmapRect           = QRect(0, 0, 0, 0);
     nameRect             = QRect(0, 0, 0, 0);
-//  titleRect            = QRect(0, 0, 0, 0);
-//  commentsRect         = QRect(0, 0, 0, 0);
+/*
+    titleRect            = QRect(0, 0, 0, 0);
+    commentsRect         = QRect(0, 0, 0, 0);
+*/
     resolutionRect       = QRect(0, 0, 0, 0);
     sizeRect             = QRect(0, 0, 0, 0);
     downloadRect         = QRect(0, 0, 0, 0);
@@ -214,11 +215,17 @@ QRect ImportDelegate::coordinatesIndicatorRect() const
 QPixmap ImportDelegate::retrieveThumbnailPixmap(const QModelIndex& index, int thumbnailSize)
 {
     // work around constness
+
     QAbstractItemModel* const model = const_cast<QAbstractItemModel*>(index.model());
+
     // set requested thumbnail size
+
     model->setData(index, thumbnailSize, ImportItemModel::ThumbnailRole);
+
     // get data from model
+
     QVariant thumbData              = index.data(ImportItemModel::ThumbnailRole);
+
     return (thumbData.value<QPixmap>());
 }
 
@@ -239,12 +246,14 @@ void ImportDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, cons
     }
 
     // state of painter must not be changed
+
     p->save();
     p->translate(option.rect.topLeft());
 
     bool isSelected = (option.state & QStyle::State_Selected);
 
     // Thumbnail
+
     QPixmap pix;
 
     if (isSelected)
@@ -269,6 +278,7 @@ void ImportDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, cons
     }
 
     // Draw Color Label rectangle
+
     drawColorLabelRect(p, option, isSelected, info.colorLabel);
 
     p->setPen(isSelected ? qApp->palette().color(QPalette::HighlightedText)
@@ -277,7 +287,7 @@ void ImportDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, cons
 /*
     // If there is ImageHistory present, paint a small icon over the thumbnail to indicate that this is derived image
 
- if (info.hasImageHistory())
+    if (info.hasImageHistory())
     {
         p->drawPixmap(d->pixmapRect.right()-24, d->pixmapRect.bottom()-24, QIcon::fromTheme(QLatin1String("svn_switch")).pixmap(22));
     }
@@ -315,6 +325,7 @@ void ImportDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, cons
     }
 
     //TODO: Implement grouping in import tool.
+
 /*
     if (!d->groupRect.isNull())
     {
@@ -460,8 +471,9 @@ void ImportDelegate::updateSizeRectsAndPixmaps()
 
     if (!d->ratingRect.isNull())
     {
-        //Normally we prepare the pixmaps over the background of the rating rect.
-        //If the rating is drawn over the thumbnail, we can only draw over a transparent pixmap.
+        // Normally we prepare the pixmaps over the background of the rating rect.
+        // If the rating is drawn over the thumbnail, we can only draw over a transparent pixmap.
+
         prepareRatingPixmaps(!d->ratingOverThumbnail);
     }
 
@@ -498,7 +510,9 @@ void ImportDelegate::modelContentsChanged()
 QRect ImportDelegate::actualPixmapRect(const QModelIndex& index) const
 {
     Q_D(const ImportDelegate);
+
     // We do not recompute if not found. Assumption is cache is always properly updated.
+
     QRect* const rect = d->actualPixmapRectCache.object(index.row());
 
     if (rect)
@@ -516,7 +530,7 @@ void ImportDelegate::updateActualPixmapRect(const QModelIndex& index, const QRec
     Q_D(ImportDelegate);
     QRect* const old = d->actualPixmapRectCache.object(index.row());
 
-    if (!old || *old != rect)
+    if (!old || (*old != rect))
     {
         d->actualPixmapRectCache.insert(index.row(), new QRect(rect));
     }
@@ -532,8 +546,11 @@ int ImportDelegate::calculatethumbSizeToFit(int ws)
     ws         = ws - 2*sp;
 
     // Thumbnails size loop to check (upper/lower)
+
     int ts1, ts2;
+
     // New grid size used in loop
+
     int ngs;
 
     double rs1 = fmod((double)ws, (double)gs);
@@ -572,7 +589,9 @@ int ImportDelegate::calculatethumbSizeToFit(int ws)
     }
 
     if (rs1 > rs2)
+    {
         return (ts2);
+    }
 
     return (ts1);
 }
@@ -607,7 +626,9 @@ void ImportThumbnailDelegate::setFlow(QListView::Flow flow)
 void ImportThumbnailDelegate::setDefaultViewOptions(const QStyleOptionViewItem& option)
 {
     Q_D(ImportThumbnailDelegate);
+
     // store before calling parent class
+
     d->viewSize = option.rect;
     ImportDelegate::setDefaultViewOptions(option);
 }
@@ -622,13 +643,15 @@ int ImportThumbnailDelegate::maximumSize() const
 int ImportThumbnailDelegate::minimumSize() const
 {
     Q_D(const ImportThumbnailDelegate);
+
     return ThumbnailSize::Small + 2*d->radius + 2*d->margin;
 }
 
 bool ImportThumbnailDelegate::acceptsActivation(const QPoint& pos, const QRect& visualRect,
                                                 const QModelIndex& index, QRect* activationRect) const
 {
-    // reuse implementation from grandparent
+    // reuse implementation from grand-parent
+
     return ItemViewImportDelegate::acceptsActivation(pos, visualRect, index, activationRect);
 }
 
@@ -653,7 +676,7 @@ void ImportThumbnailDelegate::updateContentWidth()
 
 int ImportThumbnailDelegate::thumbnailPixmapSize(bool withHighlight, int size)
 {
-    if (withHighlight && size >= 10)
+    if (withHighlight && (size >= 10))
     {
         return size + 2;
     }
@@ -744,8 +767,9 @@ void ImportNormalDelegate::updateRects()
     const int iconSize                         = qBound(16, (d->contentWidth + 2*d->margin) / 8 - 2, 48);
 
     d->pickLabelRect   = QRect(d->margin, y, iconSize, iconSize);
-//  d->groupRect       = QRect(d->contentWidth - iconSize, y, iconSize, iconSize); // TODO
-
+/*
+    d->groupRect       = QRect(d->contentWidth - iconSize, y, iconSize, iconSize); // TODO
+*/
     int pos            = iconSize + 2;
     d->downloadRect    = QRect(d->contentWidth - pos, d->pixmapRect.top(), iconSize, iconSize);
     pos += iconSize;
@@ -772,6 +796,7 @@ void ImportNormalDelegate::updateRects()
     }
 
     //TODO: Add resolution entry in importSettings.
+
 /*
     if (importSettings->getIconShowResolution())
     {

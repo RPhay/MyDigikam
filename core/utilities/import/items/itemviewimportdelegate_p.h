@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_ITEM_VIEW_IMPORT_DELEGATE_P_H
 #define DIGIKAM_ITEM_VIEW_IMPORT_DELEGATE_P_H
 
+#include "itemviewimportdelegate.h"
+
 // Qt includes
 
 #include <QCache>
@@ -89,7 +91,7 @@ public:
     QRect                     oneRowComRect;
     QRect                     oneRowXtraRect;
 
-    // constant values for drawing
+    /// constant values for drawing
     int                       radius;
     int                       margin;
 };

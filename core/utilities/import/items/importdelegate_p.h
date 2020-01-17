@@ -25,6 +25,8 @@
 #ifndef DIGIKAM_IMPORT_DELEGATE_P_H
 #define DIGIKAM_IMPORT_DELEGATE_P_H
 
+#include "importdelegate.h"
+
 // Qt includes
 
 #include <QRect>
@@ -45,17 +47,16 @@ class Q_DECL_HIDDEN ImportDelegate::ImportDelegatePrivate : public ItemViewImpor
 public:
 
     explicit ImportDelegatePrivate()
+      : contentWidth(0),
+        drawImageFormat(false),
+        drawCoordinates(false),
+        drawFocusFrame(true),
+        drawMouseOverFrame(true),
+        ratingOverThumbnail(false),
+        categoryDrawer(nullptr),
+        currentView(nullptr),
+        currentModel(nullptr)
     {
-        categoryDrawer      = nullptr;
-        contentWidth        = 0;
-        drawImageFormat     = false;
-        drawCoordinates     = false;
-        drawMouseOverFrame  = true;
-        drawFocusFrame      = true;
-        ratingOverThumbnail = false;
-        currentModel        = nullptr;
-        currentView         = nullptr;
-
         actualPixmapRectCache.setMaxCost(250);
     }
 
@@ -64,8 +65,10 @@ public:
     QRect                  dateRect;
     QRect                  pixmapRect;
     QRect                  nameRect;
-//  QRect                  titleRect;
-//  QRect                  commentsRect;
+/*
+    QRect                  titleRect;
+    QRect                  commentsRect;
+*/
     QRect                  resolutionRect;
     QRect                  sizeRect;
     QRect                  downloadRect;
@@ -100,15 +103,11 @@ class Q_DECL_HIDDEN ImportThumbnailDelegatePrivate : public ImportDelegate::Impo
 public:
 
     explicit ImportThumbnailDelegatePrivate()
+       : flow(QListView::LeftToRight)
     {
-        flow                = QListView::LeftToRight;
-
-        // switch off drawing of frames
+        drawFocusFrame      = false;       // switch off drawing of frames
         drawMouseOverFrame  = false;
-        drawFocusFrame      = false;
-
-        // switch off composing rating over background
-        ratingOverThumbnail = true;
+        ratingOverThumbnail = true;        // switch off composing rating over background
     }
 
     void init(ImportThumbnailDelegate* const q);

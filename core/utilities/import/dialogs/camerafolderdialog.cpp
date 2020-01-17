@@ -73,14 +73,14 @@ CameraFolderDialog::CameraFolderDialog(QWidget* const parent, const QMap<QString
     setModal(true);
     setWindowTitle(i18nc("@title:window %1: name of the camera", "%1 - Select Camera Folder", cameraName));
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    d->buttons = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->buttons              = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(false);
 
-    d->rootPath        = rootPath;
-    QFrame* const page = new QFrame(this);
+    d->rootPath             = rootPath;
+    QFrame* const page      = new QFrame(this);
 
     QGridLayout* const grid = new QGridLayout(page);
     d->folderView           = new CameraFolderView(page);
@@ -108,7 +108,7 @@ CameraFolderDialog::CameraFolderDialog(QWidget* const parent, const QMap<QString
     d->folderView->addVirtualFolder(cameraName);
     d->folderView->addRootFolder(QLatin1String("/"));
 
-    for (QMap<QString, int>::const_iterator it = map.constBegin(); it != map.constEnd(); ++it)
+    for (QMap<QString, int>::const_iterator it = map.constBegin() ; it != map.constEnd() ; ++it)
     {
         QString folder(it.key());
 
@@ -145,6 +145,7 @@ CameraFolderDialog::CameraFolderDialog(QWidget* const parent, const QMap<QString
     adjustSize();
 
     // make sure the ok button is properly set up
+
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(d->folderView->currentItem() != nullptr);
 }
 
@@ -175,6 +176,7 @@ QString CameraFolderDialog::selectedFolderPath() const
     }
 
     // Case of Gphoto2 cameras. No need to duplicate root '/'.
+
     if (d->rootPath == QLatin1String("/"))
     {
         return(folderItem->folderPath());

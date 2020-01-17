@@ -62,7 +62,9 @@ ImportOverlayWidget* ImportCoordinatesOverlay::buttonWidget() const
 QWidget* ImportCoordinatesOverlay::createWidget()
 {
     QAbstractButton* const button = new ImportOverlayWidget(parentWidget());
-    //button->setCursor(Qt::PointingHandCursor);
+/*
+    button->setCursor(Qt::PointingHandCursor);
+*/
     return button;
 }
 
@@ -132,7 +134,9 @@ ImportOverlayWidget* ImportLockOverlay::buttonWidget() const
 QWidget* ImportLockOverlay::createWidget()
 {
     QAbstractButton* const button = new ImportOverlayWidget(parentWidget());
-    //button->setCursor(Qt::PointingHandCursor);
+/*
+    button->setCursor(Qt::PointingHandCursor);
+*/
     return button;
 }
 
@@ -201,7 +205,9 @@ ImportOverlayWidget* ImportDownloadOverlay::buttonWidget() const
 QWidget* ImportDownloadOverlay::createWidget()
 {
     QAbstractButton* const button = new ImportOverlayWidget(parentWidget());
-    //button->setCursor(Qt::PointingHandCursor);
+/*
+    button->setCursor(Qt::PointingHandCursor);
+*/
     return button;
 }
 
@@ -282,6 +288,7 @@ QWidget* ImportRatingOverlay::createWidget()
     RatingWidget* const w = new RatingWidget(parentWidget());
     w->setFading(true);
     w->setTracking(false);
+
     return w;
 }
 
@@ -381,7 +388,8 @@ void ImportRatingOverlay::slotEntered(const QModelIndex& index)
     AbstractWidgetDelegateOverlay::slotEntered(index);
 
     // see bug 228810, this is a small workaround
-    if (m_widget && m_widget->isVisible() && m_index.isValid() && index == m_index)
+
+    if (m_widget && m_widget->isVisible() && m_index.isValid() && (index == m_index))
     {
         ratingWidget()->setVisibleImmediately();
     }

@@ -48,16 +48,17 @@ public:
     void setDefaultViewOptions(const QStyleOptionViewItem& option);
     void invalidatePaintingCache();
 
-    virtual int  categoryHeight(const QModelIndex& index, const QStyleOption& option) const;
-    virtual void drawCategory(const QModelIndex& index, int sortRole, const QStyleOption& option, QPainter* painter) const;
-    virtual int  maximumHeight() const;
+    virtual int  categoryHeight(const QModelIndex& index, const QStyleOption& option)   const;
+    virtual void drawCategory(const QModelIndex& index, int sortRole,
+                              const QStyleOption& option, QPainter* painter)            const;
+    virtual int  maximumHeight()                                                        const;
 
 private:
 
     void updateRectsAndPixmaps(int width);
-    void viewHeaderText(const QModelIndex& index, QString* header, QString* subLine) const;
-    void textForFormat(const QModelIndex& index, QString* header, QString* subLine) const;
-    void textForDate(const QModelIndex& index, QString* header, QString* subLine) const;
+    void viewHeaderText(const QModelIndex& index, QString* header, QString* subLine)    const;
+    void textForFormat(const QModelIndex& index, QString* header, QString* subLine)     const;
+    void textForDate(const QModelIndex& index, QString* header, QString* subLine)       const;
 
 private:
 

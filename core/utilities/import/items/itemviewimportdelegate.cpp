@@ -22,7 +22,6 @@
  *
  * ============================================================ */
 
-#include "itemviewimportdelegate.h"
 #include "itemviewimportdelegate_p.h"
 
 // Qt includes
@@ -51,15 +50,12 @@ namespace Digikam
 {
 
 ItemViewImportDelegatePrivate::ItemViewImportDelegatePrivate()
+    : spacing(0),
+      thumbSize(ThumbnailSize(0)),
+      q(nullptr),
+      radius(3),       // painting constants
+      margin(5)
 {
-    q             = nullptr;
-    spacing       = 0;
-    thumbSize     = ThumbnailSize(0);
-
-    // painting constants
-    radius        = 3;
-    margin        = 5;
-
     makeStarPolygon();
 
     ratingPixmaps = QVector<QPixmap>(10);
@@ -83,6 +79,7 @@ void ItemViewImportDelegatePrivate::clearRects()
 void ItemViewImportDelegatePrivate::makeStarPolygon()
 {
     // Pre-computed star polygon for a 15x15 pixmap.
+
     starPolygon     = RatingWidget::starPolygon();
     starPolygonSize = QSize(15, 15);
 }
@@ -225,6 +222,7 @@ void ItemViewImportDelegate::overlayDestroyed(QObject* o)
 void ItemViewImportDelegate::mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index)
 {
     // 3-way indirection AbstractImportItemDelegate -> ItemViewImportDelegate -> ItemDelegateOverlayContainer
+
     ItemDelegateOverlayContainer::mouseMoved(e, visualRect, index);
 }
 
@@ -256,7 +254,9 @@ void ItemViewImportDelegate::invalidatePaintingCache()
     if (oldGridSize != d->gridSize)
     {
         emit gridSizeChanged(d->gridSize);
-        // emit sizeHintChanged(QModelIndex());
+/*
+        emit sizeHintChanged(QModelIndex());
+*/
     }
 
     emit visualChange();
@@ -395,11 +395,12 @@ void ItemViewImportDelegate::drawTags(QPainter* p, const QRect& r, const QString
 void ItemViewImportDelegate::drawPickLabelIcon(QPainter* p, const QRect& r, int pickId) const
 {
     // Draw Pick Label icon
+
     if (pickId != NoPickLabel)
     {
         QIcon icon;
 
-        if (pickId == RejectedLabel)
+        if      (pickId == RejectedLabel)
         {
             icon = QIcon::fromTheme(QLatin1String("flag-red"));
         }
@@ -426,6 +427,7 @@ void ItemViewImportDelegate::drawColorLabelRect(QPainter* p, const QStyleOptionV
     if (colorId > NoColorLabel)
     {
         // This draw a simple rectangle around item.
+
         p->setPen(QPen(ColorLabelWidget::labelColor((ColorLabel)colorId), 5, Qt::SolidLine));
         p->drawRect(3, 3, d->rect.width()-7, d->rect.height()-7);
     }
@@ -475,7 +477,9 @@ void ItemViewImportDelegate::drawLockIndicator(QPainter* p, const QRect& r, int 
     if (lockStatus == 1)
     {
         return; // draw lock only when image is locked
-        //icon = QIcon::fromTheme(QLatin1String("object-unlocked"));
+/*
+        icon = QIcon::fromTheme(QLatin1String("object-unlocked"));
+*/
     }
 
     if (lockStatus == 0)
@@ -622,13 +626,15 @@ void ItemViewImportDelegate::prepareRatingPixmaps(bool composeOverBackground)
     // So we need the background at the time of painting,
     // and the background may be a gradient, and will be different for selected items.
     // This makes 5*2 (small) pixmaps.
-    for (int sel=0; sel<2; ++sel)
+
+    for (int sel = 0 ; sel < 2 ; ++sel)
     {
         QPixmap basePix;
 
         if (composeOverBackground)
         {
             // do this once for regular, once for selected backgrounds
+
             if (sel)
             {
                 basePix = d->selPixmap.copy(d->ratingRect);
@@ -647,25 +653,33 @@ void ItemViewImportDelegate::prepareRatingPixmaps(bool composeOverBackground)
         for (int rating=1; rating<=5; ++rating)
         {
             // we store first the 5 regular, then the 5 selected pixmaps, for simplicity
+
             int index = (sel * 5 + rating) - 1;
 
             // copy background
+
             d->ratingPixmaps[index] = basePix;
+
             // open a painter
+
             QPainter painter(&d->ratingPixmaps[index]);
 
             // use antialiasing
+
             painter.setRenderHint(QPainter::Antialiasing, true);
             painter.setBrush(qApp->palette().color(QPalette::Link));
             QPen pen(qApp->palette().color(QPalette::Text));
+
             // set a pen which joins the lines at a filled angle
+
             pen.setJoinStyle(Qt::MiterJoin);
             painter.setPen(pen);
 
             // move painter while drawing polygons
+
             painter.translate( lround((d->ratingRect.width() - d->margin - rating*(d->starPolygonSize.width()+1))/2.0) + 2, 1 );
 
-            for (int s=0; s<rating; ++s)
+            for (int s = 0 ; s < rating ; ++s)
             {
                 painter.drawPolygon(d->starPolygon, Qt::WindingFill);
                 painter.translate(d->starPolygonSize.width() + 1, 0);
@@ -678,17 +692,22 @@ QPixmap ItemViewImportDelegate::ratingPixmap(int rating, bool selected) const
 {
     Q_D(const ItemViewImportDelegate);
 
-    if (rating < 1 || rating > 5)
+    if ((rating < 1) || (rating > 5))
     {
-        /*
+/*
         QPixmap pix;
+
         if (selected)
+        {
             pix = d->selPixmap.copy(d->ratingRect);
+        }
         else
+        {
             pix = d->regPixmap.copy(d->ratingRect);
+        }
 
         return pix;
-        */
+*/
         return QPixmap();
     }
 

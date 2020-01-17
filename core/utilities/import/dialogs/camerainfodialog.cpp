@@ -56,7 +56,7 @@ CameraInfoDialog::CameraInfoDialog(QWidget* const parent,
     buttons->button(QDialogButtonBox::Ok)->setDefault(true);
     resize(500, 400);
 
-    QTabWidget* const tab = new QTabWidget(this);
+    QTabWidget* const tab           = new QTabWidget(this);
 
     // ----------------------------------------------------------
 
@@ -81,7 +81,7 @@ CameraInfoDialog::CameraInfoDialog(QWidget* const parent,
 
     // ----------------------------------------------------------
 
-    QVBoxLayout* const vbx = new QVBoxLayout(this);
+    QVBoxLayout* const vbx       = new QVBoxLayout(this);
     vbx->addWidget(tab);
     vbx->addWidget(buttons);
     setLayout(vbx);

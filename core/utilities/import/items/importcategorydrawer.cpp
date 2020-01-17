@@ -73,12 +73,12 @@ ImportCategoryDrawer::~ImportCategoryDrawer()
 
 int ImportCategoryDrawer::categoryHeight(const QModelIndex& /*index*/, const QStyleOption& /*option*/) const
 {
-    return d->rect.height() + d->lowerSpacing;
+    return (d->rect.height() + d->lowerSpacing);
 }
 
 int ImportCategoryDrawer::maximumHeight() const
 {
-    return d->rect.height() + d->lowerSpacing;
+    return (d->rect.height() + d->lowerSpacing);
 }
 
 void ImportCategoryDrawer::setLowerSpacing(int spacing)
@@ -128,17 +128,24 @@ void ImportCategoryDrawer::drawCategory(const QModelIndex& index, int /*sortRole
     fontBold.setBold(true);
     int fnSize = fontBold.pointSize();
 
-    //    bool usePointSize;
+/*
+    bool usePointSize;
+*/
+
     if (fnSize > 0)
     {
         fontBold.setPointSize(fnSize+2);
-        //        usePointSize = true;
+/*
+        usePointSize = true;
+*/
     }
     else
     {
         fnSize = fontBold.pixelSize();
         fontBold.setPixelSize(fnSize+2);
-        //        usePointSize = false;
+/*
+        usePointSize = false;
+*/
     }
 
     QString header;
@@ -148,12 +155,15 @@ void ImportCategoryDrawer::drawCategory(const QModelIndex& index, int /*sortRole
     {
         case CamItemSortSettings::NoCategories:
             break;
+
         case CamItemSortSettings::CategoryByFolder:
             viewHeaderText(index, &header, &subLine);
             break;
+
         case CamItemSortSettings::CategoryByFormat:
             textForFormat(index, &header, &subLine);
             break;
+
         case CamItemSortSettings::CategoryByDate:
             textForDate(index, &header, &subLine);
             break;

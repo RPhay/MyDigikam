@@ -117,17 +117,17 @@ class ImportDownloadOverlay : public AbstractWidgetDelegateOverlay
 public:
 
     explicit ImportDownloadOverlay(QObject* const parent);
-    ImportOverlayWidget* buttonWidget() const;
+    ImportOverlayWidget* buttonWidget()               const;
 
 protected:
 
     void updatePosition();
 
-    virtual QWidget* createWidget() override;
-    virtual void setActive(bool active) override;
-    virtual void visualChange() override;
+    virtual QWidget* createWidget()                         override;
+    virtual void setActive(bool active)                     override;
+    virtual void visualChange()                             override;
     virtual bool checkIndex(const QModelIndex& index) const override;
-    virtual void slotEntered(const QModelIndex& index) override;
+    virtual void slotEntered(const QModelIndex& index)      override;
 
 protected:
 
@@ -207,9 +207,9 @@ public:
     explicit ImportRotateOverlay(ImportRotateOverlayDirection dir, QObject* const parent);
     virtual void setActive(bool active);
 
-    ImportRotateOverlayDirection direction() const { return m_direction;                             }
-    bool isLeft() const                            { return m_direction == ImportRotateOverlayLeft;  }
-    bool isRight() const                           { return m_direction == ImportRotateOverlayRight; }
+    ImportRotateOverlayDirection direction()    const { return m_direction;                             }
+    bool isLeft()                               const { return m_direction == ImportRotateOverlayLeft;  }
+    bool isRight()                              const { return m_direction == ImportRotateOverlayRight; }
 
     static ImportRotateOverlay* left (QObject* const parent) { return new ImportRotateOverlay(ImportRotateOverlayLeft,  parent); }
     static ImportRotateOverlay* right(QObject* const parent) { return new ImportRotateOverlay(ImportRotateOverlayRight, parent); }

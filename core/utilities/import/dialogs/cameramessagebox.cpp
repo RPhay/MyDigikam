@@ -59,8 +59,8 @@ class Q_DECL_HIDDEN CameraItem::Private
 public:
 
     explicit Private()
+      : hasThumb(false)
     {
-        hasThumb = false;
     }
 
     bool        hasThumb;
@@ -102,7 +102,9 @@ void CameraItem::setThumb(const QPixmap& pix, bool hasThumb)
                  (pixmap.height() / 2) - (pix.height() / 2), pix);
 
     QIcon icon = QIcon(pixmap);
+
     //  We make sure the preview icon stays the same regardless of the role
+
     icon.addPixmap(pixmap, QIcon::Selected, QIcon::On);
     icon.addPixmap(pixmap, QIcon::Selected, QIcon::Off);
     icon.addPixmap(pixmap, QIcon::Active,   QIcon::On);
@@ -122,9 +124,9 @@ class Q_DECL_HIDDEN CameraItemList::Private
 public:
 
     explicit Private()
-        : iconSize(64)
+        : iconSize(64),
+          ctrl(nullptr)
     {
-        ctrl = nullptr;
     }
 
     const int         iconSize;

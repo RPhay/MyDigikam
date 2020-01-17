@@ -92,7 +92,7 @@ QString ImportToolTipFiller::CamItemInfoTipContents(const CamItemInfo& info)
 
         if (settings->getToolTipsShowImageDim())
         {
-            if (info.width == 0 || info.height == 0 || info.width == -1 || info.height == -1)
+            if ((info.width == 0) || (info.height == 0) || (info.width == -1) || (info.height == -1))
             {
                 str = i18nc("unknown / invalid image dimension",
                             "Unknown");
@@ -110,6 +110,7 @@ QString ImportToolTipFiller::CamItemInfoTipContents(const CamItemInfo& info)
     }
 
     // -- Photograph Info -----------------------------------------------------------------------
+
     // NOTE: these info require \"Use File Metadata\" option from Camera Setup Behavior page.
 
     if (settings->getToolTipsShowPhotoMake()  ||

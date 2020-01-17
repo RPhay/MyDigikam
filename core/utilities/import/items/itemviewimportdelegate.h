@@ -40,7 +40,8 @@ class ImportFilterModel;
 class ImportItemModel;
 class ItemViewImportDelegatePrivate;
 
-// Some reuse of the existing model-view classes.
+/// NOTE: Some reuse of the existing model-view classes.
+
 class ItemViewImportDelegate : public DItemDelegate, public ItemDelegateOverlayContainer
 {
     Q_OBJECT
@@ -57,7 +58,8 @@ public:
     virtual QSize sizeHint(const QStyleOptionViewItem& option, const QModelIndex& index) const;
     virtual QSize gridSize() const;
 
-    // reimplemented from DItemDelegate
+    /// reimplemented from DItemDelegate
+
     virtual void setThumbnailSize(const ThumbnailSize& thumbSize);
     virtual void setSpacing(int spacing);
     virtual void setDefaultViewOptions(const QStyleOptionViewItem& option);
@@ -66,26 +68,30 @@ public:
     virtual bool acceptsActivation(const QPoint& pos, const QRect& visualRect,
                                    const QModelIndex& index, QRect* activationRect = nullptr) const;
 
-    /** Returns the area where the pixmap is drawn,
-     *  or null if not supported
+    /**
+     * Returns the area where the pixmap is drawn,
+     * or null if not supported
      */
     virtual QRect pixmapRect() const;
 
-    /** Returns the area where the image information is drawn,
-     *  or null if empty / not supported.
-     *  The image information is textual or graphical information,
-     *  but not the pixmap. The ratingRect() will e.g. typically
-     *  be contained in this area.
+    /**
+     * Returns the area where the image information is drawn,
+     * or null if empty / not supported.
+     * The image information is textual or graphical information,
+     * but not the pixmap. The ratingRect() will e.g. typically
+     * be contained in this area.
      */
     virtual QRect imageInformationRect() const;
 
-    /** Can be used to temporarily disable drawing of the rating.
-     *  Call with QModelIndex() afterwards.
+    /**
+     * Can be used to temporarily disable drawing of the rating.
+     * Call with QModelIndex() afterwards.
      */
     void setRatingEdited(const QModelIndex& index);
 
-    /** Returns the rectangle where the rating is drawn,
-     *  or a null rectangle if not supported.
+    /**
+     * Returns the rectangle where the rating is drawn,
+     * or a null rectangle if not supported.
      */
     virtual QRect ratingRect() const;
 
@@ -132,7 +138,7 @@ protected:
 
     virtual QAbstractItemDelegate* asDelegate();
 
-    // reimplement these in subclasses
+    /// reimplement these in subclasses
     virtual void invalidatePaintingCache();
     virtual void updateSizeRectsAndPixmaps() = 0;
 

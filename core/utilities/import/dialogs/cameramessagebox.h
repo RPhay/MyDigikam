@@ -94,7 +94,8 @@ class DIGIKAM_EXPORT CameraMessageBox
 
 public:
 
-    /** Show List of camera items into an informative message box.
+    /**
+     * Show List of camera items into an informative message box.
      */
     static void informationList(CameraThumbsCtrl* const ctrl,
                                 QWidget* const parent,
@@ -103,8 +104,9 @@ public:
                                 const CamItemInfoList& items,
                                 const QString& dontShowAgainName = QString());
 
-    /** Show List of camera items to process into a message box and wait user feedback.
-     *  Return QMessageBox::Yes or QMessageBox::Cancel
+    /**
+     * Show List of camera items to process into a message box and wait user feedback.
+     * Return QMessageBox::Yes or QMessageBox::Cancel
      */
     static int warningContinueCancelList(CameraThumbsCtrl* const ctrl,
                                          QWidget* const parent,

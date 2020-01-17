@@ -73,23 +73,23 @@ CaptureDlg::CaptureDlg(QWidget* const parent, CameraController* const controller
     : QDialog(parent),
       d(new Private)
 {
-    d->controller = controller;
+    d->controller          = controller;
 
     setWindowTitle(i18nc("@title:window %1: name of the camera", "Capture from %1", cameraTitle));
     setModal(true);
 
-    d->buttons = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->buttons             = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Cancel)->setDefault(true);
     d->buttons->button(QDialogButtonBox::Ok)->setText(i18nc("@action:button", "Capture"));
 
-    d->captureWidget = new CaptureWidget(this);
+    d->captureWidget       = new CaptureWidget(this);
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
     vbx->addWidget(d->captureWidget);
     vbx->addWidget(d->buttons);
     setLayout(vbx);
 
-    KConfigGroup group = KSharedConfig::openConfig()->group("Capture Tool Dialog");
+    KConfigGroup group     = KSharedConfig::openConfig()->group("Capture Tool Dialog");
 
     winId();
     DXmlGuiWindow::restoreWindowSize(windowHandle(), group);
@@ -115,8 +115,8 @@ CaptureDlg::CaptureDlg(QWidget* const parent, CameraController* const controller
     {
         d->timer = new QTimer(this);
 
-        connect( d->timer, SIGNAL(timeout()),
-                this, SLOT(slotPreview()) );
+        connect(d->timer, SIGNAL(timeout()),
+                this, SLOT(slotPreview()));
 
         d->timer->setSingleShot(true);
 
@@ -126,7 +126,8 @@ CaptureDlg::CaptureDlg(QWidget* const parent, CameraController* const controller
 
 CaptureDlg::~CaptureDlg()
 {
-    delete d->timer; // TODO is there a need to call this even separately? As parent is set to this widget in any case, so it should be destroyed?
+    // TODO is there a need to call this even separately? As parent is set to this widget in any case, so it should be destroyed?
+    delete d->timer;
     delete d;
 }
 
