@@ -111,7 +111,9 @@ QueueMgrWindow::QueueMgrWindow()
 
     setWindowFlags(Qt::Window);
     setCaption(i18n("Batch Queue Manager"));
+
     // We don't want to be deleted on close
+
     setAttribute(Qt::WA_DeleteOnClose, false);
     setFullScreenOptions(FS_NONE);
 
@@ -353,6 +355,7 @@ void QueueMgrWindow::setupActions()
     ac->addAction(QLatin1String("queuemgr_removequeue"), d->removeQueueAction);
 
     // TODO rename action to saveWorkflowAction to avoid confusion?
+
     d->saveQueueAction = new QAction(QIcon::fromTheme(QLatin1String("document-save")), i18n("Save Workflow"), this);
     connect(d->saveQueueAction, SIGNAL(triggered()), this, SLOT(slotSaveWorkflow()));
     ac->addAction(QLatin1String("queuemgr_savequeue"), d->saveQueueAction);
@@ -404,15 +407,19 @@ void QueueMgrWindow::setupActions()
     ThemeManager::instance()->registerThemeActions(this);
 
     // Standard 'Help' menu actions
+
     createHelpActions();
 
     // Provides a menu entry that allows showing/hiding the toolbar(s)
+
     setStandardToolBarMenuEnabled(true);
 
     // Provides a menu entry that allows showing/hiding the statusbar
+
     createStandardStatusBarAction();
 
     // Standard 'Configure' menu actions
+
     createSettingsActions();
 
     // ---------------------------------------------------------------------------------
@@ -456,6 +463,7 @@ void QueueMgrWindow::writeSettings()
 void QueueMgrWindow::applySettings()
 {
     // Do not apply general settings from config panel if BQM is busy.
+
     if (d->busy)
     {
         return;
@@ -568,7 +576,7 @@ bool QueueMgrWindow::queryClose()
                                           i18n("Batch Queue Manager is running. Do you want to cancel current job?"),
                                           QMessageBox::Yes | QMessageBox::No);
 
-        if (result == QMessageBox::Yes)
+        if      (result == QMessageBox::Yes)
         {
             slotStop();
         }
@@ -632,6 +640,7 @@ void QueueMgrWindow::slotQueueContentsChanged()
     else
     {
         // refreshStatusBar() and actions in tools view
+
         slotAssignedToolsChanged(d->assignedList->assignedList());
     }
 }
@@ -662,7 +671,7 @@ void QueueMgrWindow::slotRun()
     QueueListView* const queue = d->queuePool->currentQueue();
     QString msg;
 
-    if (!queue)
+    if      (!queue)
     {
         msg = i18n("There is no queue to be run.");
     }
@@ -671,7 +680,7 @@ void QueueMgrWindow::slotRun()
         msg = i18n("There is no item to process in the current queue (%1).",
                    d->queuePool->currentTitle());
     }
-    else if (queue->settings().renamingRule == QueueSettings::CUSTOMIZE &&
+    else if ((queue->settings().renamingRule == QueueSettings::CUSTOMIZE) &&
              queue->settings().renamingParser.isEmpty())
     {
         msg = i18n("Custom renaming rule is invalid for current queue (%1). "
@@ -687,10 +696,12 @@ void QueueMgrWindow::slotRun()
     {
         QMessageBox::critical(this, qApp->applicationName(), msg);
         processingAborted();
+
         return;
     }
 
     // Take a look if general settings are changed, as we cannot do it when BQM is busy.
+
     applySettings();
 
     d->statusProgressBar->setProgressTotalSteps(queue ? queue->pendingTasksCount() : 0);
@@ -711,22 +722,26 @@ void QueueMgrWindow::slotRunAll()
     {
         QMessageBox::critical(this, qApp->applicationName(), i18n("There are no items to process in the queues."));
         processingAborted();
+
         return;
     }
 
     if (!d->queuePool->customRenamingRulesAreValid())
     {
         processingAborted();
+
         return;
     }
 
     if (!d->queuePool->assignedBatchToolsListsAreValid())
     {
         processingAborted();
+
         return;
     }
 
     // Take a look if general settings are changed, as we cannot do it when BQM is busy.
+
     applySettings();
 
     d->statusProgressBar->setProgressTotalSteps(d->queuePool->totalPendingTasks());
@@ -776,7 +791,9 @@ void QueueMgrWindow::processOneQueue()
     d->thread->processQueueItems(tools4Items);
 
     if (!d->thread->isRunning())
+    {
         d->thread->start();
+    }
 }
 
 void QueueMgrWindow::busy(bool busy)
@@ -799,9 +816,11 @@ void QueueMgrWindow::busy(bool busy)
     d->toolSettings->setBusy(d->busy);
 
     // To update status of Tools actions.
+
     slotAssignedToolsChanged(d->assignedList->assignedList());
 
     // To update status of Queue items actions.
+
     slotItemSelectionChanged();
 
     d->busy ? d->queuePool->setCursor(Qt::WaitCursor) : d->queuePool->unsetCursor();
@@ -818,6 +837,7 @@ void QueueMgrWindow::slotAssignedToolsChanged(const AssignedBatchTools& tools)
         d->moveDownToolAction->setEnabled(false);
         d->removeToolAction->setEnabled(false);
         d->clearToolsAction->setEnabled(false);
+
         return;
     }
 
@@ -937,6 +957,7 @@ void QueueMgrWindow::slotAction(const ActionData& ad)
                 d->queuePool->setItemBusy(cItem->info().id());
                 addHistoryMessage(cItem, i18n("Processing..."), DHistoryView::StartingEntry);
             }
+
             break;
         }
 
@@ -949,6 +970,7 @@ void QueueMgrWindow::slotAction(const ActionData& ad)
                 addHistoryMessage(cItem, ad.message, DHistoryView::SuccessEntry);
                 d->statusProgressBar->setProgressValue(d->statusProgressBar->progressValue() + 1);
             }
+
             break;
         }
 
@@ -961,6 +983,7 @@ void QueueMgrWindow::slotAction(const ActionData& ad)
                 addHistoryMessage(cItem, ad.message, DHistoryView::ErrorEntry);
                 d->statusProgressBar->setProgressValue(d->statusProgressBar->progressValue() + 1);
             }
+
             break;
         }
 
@@ -972,6 +995,7 @@ void QueueMgrWindow::slotAction(const ActionData& ad)
                 addHistoryMessage(cItem, i18n("Process Cancelled..."), DHistoryView::CancelEntry);
                 d->statusProgressBar->setProgressValue(d->statusProgressBar->progressValue() + 1);
             }
+
             break;
         }
 
@@ -1015,7 +1039,8 @@ void QueueMgrWindow::slotQueueProcessed()
     d->currentQueueToProcess++;
     QString msg;
 
-    if (!d->processingAllQueues) {
+    if      (!d->processingAllQueues)
+    {
         msg = i18n("Batch queue finished");
     }
     else if (d->currentQueueToProcess == d->queuePool->count())
@@ -1025,7 +1050,9 @@ void QueueMgrWindow::slotQueueProcessed()
     else
     {
         // We will process next queue from the pool.
+
         processOneQueue();
+
         return;
     }
 

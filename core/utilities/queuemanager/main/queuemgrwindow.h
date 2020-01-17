@@ -66,7 +66,8 @@ public:
     void refreshView();
     void applySettings();
 
-    /** Return a map of all queues available from pool (index and title).
+    /**
+     * Return a map of all queues available from pool (index and title).
      */
     QMap<int, QString> queuesMap()         const;
 

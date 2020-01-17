@@ -265,7 +265,7 @@ static cmsBool cmsAdaptMatrixFromD50(cmsMAT3* const r, const cmsCIExyY* const De
 
 ////////////////////////////////////////////////////
 
-int dkCmsErrorAction(int nAction)
+int dkCmsErrorAction(int /*nAction*/)
 {
 /*
     // TODO handle LCMS error string
