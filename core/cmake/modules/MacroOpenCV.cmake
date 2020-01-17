@@ -2,8 +2,8 @@
 #
 # Syntax:  DETECT_OPENCV(OPENCV_MIN_VERSION OPENCV_REQUIRED_COMPONENTS) 
 #
-# Example: DETECT_OPENCV(3.1.0 core highgui objdetect contrib)
-# which try to find OpenCV version 3.1.0
+# Example: DETECT_OPENCV(3.3.0 core highgui objdetect contrib)
+# which try to find OpenCV version 3.3.0
 # with internal components "core", "highgui", "objdetect", and "contrib".
 #
 # Copyright (c) 2010-2020 by Gilles Caulier, <caulier dot gilles at gmail dot com>
