@@ -568,4 +568,7 @@ BUGFIXES:
 552 ==> 411619 - Crash when tagging, switching to map view (QtWebKit + libicu).
 553 ==> 416345 - Proper OpenCV minimum version must be specified.
 554 ==> 416289 - 7.0.0-beta2 crash when closing Geolocation Editor.
-555 ==> 
+555 ==> 406809 - digikam-6.2.0-git-20190421T121202-qtwebengine-x86-64.appimage crashes on startup.
+556 ==> 411891 - digiKam crashes if compiled with QWebEngine.
+557 ==> 409906 - Crash at Startup in geolocation about QtWebEngine.
+558 ==> 
