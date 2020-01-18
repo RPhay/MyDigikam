@@ -75,8 +75,8 @@ public:
     {
         const int fontSize = qRound(QApplication::font().pointSize() * 1.4);
 
-        return QString::fromLatin1("QLabel { font-size: %1pt; color: %2 }")
-               .arg(QString::number(fontSize), q->palette().color(QPalette::WindowText).name());
+        return (QString::fromLatin1("QLabel { font-size: %1pt; color: %2 }")
+                .arg(QString::number(fontSize), q->palette().color(QPalette::WindowText).name()));
     }
 
     QString commentStyleSheet() const
@@ -89,6 +89,7 @@ public:
             //       yet palette appropriate colours for the different use cases!
             //       also .. should we include an icon here,
             //       perhaps using the imageLabel?
+
             case InfoMessage:
             case WarningMessage:
             case ErrorMessage:
@@ -96,6 +97,7 @@ public:
                              .arg(q->palette().color(QPalette::HighlightedText).name())
                              .arg(q->palette().color(QPalette::Highlight).name());
                 break;
+
             case PlainMessage:
             default:
                 break;
@@ -116,12 +118,15 @@ public:
             case DConfigDlgTitle::InfoMessage:
                 return QLatin1String("dialog-information");
                 break;
+
             case DConfigDlgTitle::ErrorMessage:
                 return QLatin1String("dialog-error");
                 break;
+
             case DConfigDlgTitle::WarningMessage:
                 return QLatin1String("dialog-warning");
                 break;
+
             case DConfigDlgTitle::PlainMessage:
                 break;
         }

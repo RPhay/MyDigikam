@@ -121,13 +121,17 @@ void DConfigDlgListView::setModel(QAbstractItemModel* model)
       connect(model, SIGNAL(layoutChanged()),
               proxy, SLOT(rebuildMap()) );
 */
+
     connect(model, &QAbstractItemModel::layoutChanged,
             this, &DConfigDlgListView::updateWidth);
 
-//  QListView::setModel( proxy );
+/*
+    QListView::setModel(proxy);
+*/
     QListView::setModel(model);
 
     // Set our own selection model, which won't allow our current selection to be cleared
+
     setSelectionModel(new DConfigDlgInternal::SelectionModel(model, this));
 
     updateWidth();
@@ -144,7 +148,7 @@ void DConfigDlgListView::updateWidth()
 
     int width = 0;
 
-    for (int i = 0; i < rows; ++i)
+    for (int i = 0 ; i < rows ; ++i)
     {
         width = qMax(width, sizeHintForIndex(model()->index(i, 0)).width());
     }
@@ -168,6 +172,7 @@ void DConfigDlgTreeView::setModel(QAbstractItemModel* model)
     QTreeView::setModel(model);
 
     // Set our own selection model, which won't allow our current selection to be cleared
+
     setSelectionModel(new DConfigDlgInternal::SelectionModel(model, this));
 
     updateWidth();
@@ -186,7 +191,7 @@ void DConfigDlgTreeView::updateWidth()
 
     int width = 0;
 
-    for (int i = 0; i < columns; ++i)
+    for (int i = 0 ; i < columns ; ++i)
     {
         resizeColumnToContents(i);
         width = qMax(width, sizeHintForColumn(i));
@@ -201,7 +206,7 @@ void DConfigDlgTreeView::expandItems(const QModelIndex& index)
 
     const int count = model()->rowCount(index);
 
-    for (int i = 0; i < count; ++i)
+    for (int i = 0 ; i < count ; ++i)
     {
         expandItems(model()->index(i, 0, index));
     }
@@ -213,11 +218,12 @@ DConfigDlgTabbedView::DConfigDlgTabbedView(QWidget* const parent)
     : QAbstractItemView(parent)
 {
     // hide the viewport of the QAbstractScrollArea
+
     const QList<QWidget *> list = findChildren<QWidget *>();
 
-    for (int i = 0; i < list.count(); ++i)
+    for (int i = 0 ; i < list.count() ; ++i)
     {
-        list[ i ]->hide();
+        list[i]->hide();
     }
 
     setFrameShape(NoFrame);
@@ -237,7 +243,7 @@ DConfigDlgTabbedView::~DConfigDlgTabbedView()
 {
     if (model())
     {
-        for (int i = 0; i < mTabWidget->count(); ++i)
+        for (int i = 0 ; i < mTabWidget->count() ; ++i)
         {
             QWidget* const page = qvariant_cast<QWidget *>(model()->data(model()->index(i, 0), DConfigDlgModel::WidgetRole));
 
@@ -336,12 +342,14 @@ void DConfigDlgTabbedView::currentPageChanged(int index)
 void DConfigDlgTabbedView::layoutChanged()
 {
     // save old position
+
     int pos = mTabWidget->currentIndex();
 
     // clear tab bar
+
     int count = mTabWidget->count();
 
-    for (int i = 0; i < count; ++i)
+    for (int i = 0 ; i < count ; ++i)
     {
         mTabWidget->removeTab(0);
     }
@@ -352,7 +360,8 @@ void DConfigDlgTabbedView::layoutChanged()
     }
 
     // add new tabs
-    for (int i = 0; i < model()->rowCount(); ++i)
+
+    for (int i = 0 ; i < model()->rowCount() ; ++i)
     {
         const QString title = model()->data(model()->index(i, 0)).toString();
         const QIcon icon    = model()->data(model()->index(i, 0), Qt::DecorationRole).value<QIcon>();
@@ -379,7 +388,7 @@ void DConfigDlgTabbedView::dataChanged(const QModelIndex& index, const QModelInd
         return;
     }
 
-    if (index.row() < 0 || index.row() >= mTabWidget->count())
+    if ((index.row() < 0) || (index.row() >= mTabWidget->count()))
     {
         return;
     }
@@ -456,7 +465,7 @@ void DConfigDlgListViewDelegate::paint(QPainter* painter, const QStyleOptionView
     QPalette::ColorGroup cg = (option.state & QStyle::State_Enabled) ? QPalette::Normal
                                                                      : QPalette::Disabled;
 
-    if (cg == QPalette::Normal && !(option.state & QStyle::State_Active))
+    if ((cg == QPalette::Normal) && !(option.state & QStyle::State_Active))
     {
         cg = QPalette::Inactive;
     }
@@ -575,7 +584,7 @@ int DConfigDlgListViewProxy::columnCount(const QModelIndex&) const
 
 QModelIndex DConfigDlgListViewProxy::index(int row, int column, const QModelIndex&) const
 {
-    if (column > 1 || row >= mList.count())
+    if ((column > 1) || (row >= mList.count()))
     {
         return QModelIndex();
     }
@@ -612,9 +621,9 @@ QModelIndex DConfigDlgListViewProxy::mapFromSource(const QModelIndex& index) con
         return QModelIndex();
     }
 
-    for (int i = 0; i < mList.count(); ++i)
+    for (int i = 0 ; i < mList.count() ; ++i)
     {
-        if (mList[ i ] == index)
+        if (mList[i] == index)
         {
             return createIndex(i, 0, index.internalPointer());
         }
@@ -630,7 +639,7 @@ QModelIndex DConfigDlgListViewProxy::mapToSource(const QModelIndex& index) const
         return QModelIndex();
     }
 
-    return mList[ index.row() ];
+    return mList[index.row()];
 }
 
 void DConfigDlgListViewProxy::rebuildMap()
@@ -644,12 +653,12 @@ void DConfigDlgListViewProxy::rebuildMap()
         return;
     }
 
-    for (int i = 0; i < model->rowCount(); ++i)
+    for (int i = 0 ; i < model->rowCount() ; ++i)
     {
         addMapEntry(model->index(i, 0));
     }
 
-    for (int i = 0; i < mList.count(); ++i)
+    for (int i = 0 ; i < mList.count() ; ++i)
     {
         qDebug("%d:0 -> %d:%d", i, mList[ i ].row(), mList[ i ].column());
     }
@@ -666,7 +675,8 @@ void DConfigDlgListViewProxy::addMapEntry(const QModelIndex& index)
     else
     {
         const int count = sourceModel()->rowCount(index);
-        for (int i = 0; i < count; ++i)
+
+        for (int i = 0 ; i < count ; ++i)
         {
             addMapEntry(sourceModel()->index(i, 0, index));
         }
@@ -688,6 +698,7 @@ void SelectionModel::clear()
 void SelectionModel::select(const QModelIndex& index, QItemSelectionModel::SelectionFlags command)
 {
     // Don't allow the current selection to be cleared
+
     if (!index.isValid() && (command & QItemSelectionModel::Clear))
     {
         return;
@@ -699,6 +710,7 @@ void SelectionModel::select(const QModelIndex& index, QItemSelectionModel::Selec
 void SelectionModel::select(const QItemSelection& selection, QItemSelectionModel::SelectionFlags command)
 {
     // Don't allow the current selection to be cleared
+
     if (!selection.count() && (command & QItemSelectionModel::Clear))
     {
         return;

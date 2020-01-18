@@ -57,9 +57,9 @@ public:
     void removeChild(int row);
 
     PageItem* child(int row);
-    int childCount()  const;
-    int columnCount() const;
-    int row()         const;
+    int childCount()                    const;
+    int columnCount()                   const;
+    int row()                           const;
     PageItem* parent();
 
     DConfigDlgWdgItem* pageWidgetItem() const;

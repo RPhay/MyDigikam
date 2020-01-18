@@ -40,17 +40,17 @@ namespace Digikam
 class DConfigDlgModelPrivate;
 
 /**
- *  @short A base class for a model used by DConfigDlgView.
+ * @short A base class for a model used by DConfigDlgView.
  *
- *  This class is an abstract base class which must be used to
- *  implement custom models for DConfigDlgView. Additional to the standard
- *  Qt::ItemDataRoles it provides the two roles
+ * This class is an abstract base class which must be used to
+ * implement custom models for DConfigDlgView. Additional to the standard
+ * Qt::ItemDataRoles it provides the two roles
  *
- *    @li HeaderRole
- *    @li WidgetRole
+ *   @li HeaderRole
+ *   @li WidgetRole
  *
- *  which are used to return a header string for a page and a QWidget
- *  pointer to the page itself.
+ * which are used to return a header string for a page and a QWidget
+ * pointer to the page itself.
  */
 class DConfigDlgModel : public QAbstractItemModel
 {

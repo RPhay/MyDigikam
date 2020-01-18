@@ -105,7 +105,7 @@ DConfigDlg::DConfigDlg(QWidget* const parent, Qt::WindowFlags flags)
     d->mPageWidget = new DConfigDlgWdg(this);
     d->mPageWidget->layout()->setContentsMargins(0, 0, 0, 0);
 
-    d->mButtonBox = new QDialogButtonBox(this);
+    d->mButtonBox  = new QDialogButtonBox(this);
     d->mButtonBox->setObjectName(QLatin1String("buttonbox"));
     d->mButtonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 
@@ -120,7 +120,7 @@ DConfigDlg::DConfigDlg(DConfigDlgWdg* const widget, QWidget* const parent, Qt::W
     Q_ASSERT(widget);
     widget->setParent(this);
     d->mPageWidget = widget;
-    d->mButtonBox = new QDialogButtonBox(this);
+    d->mButtonBox  = new QDialogButtonBox(this);
     d->mButtonBox->setObjectName(QLatin1String("buttonbox"));
     d->mButtonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 

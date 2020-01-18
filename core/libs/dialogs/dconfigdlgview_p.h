@@ -87,6 +87,7 @@ protected:
     DConfigDlgView::FaceType detectAutoFace() const;
 
     // private slots
+
     void _k_rebuildGui();
     void _k_modelChanged();
     void _k_dataChanged(const QModelIndex&, const QModelIndex&);
@@ -97,10 +98,12 @@ protected:
     DConfigDlgView*          q_ptr;
 
     // data
+
     QAbstractItemModel*      model;
     DConfigDlgView::FaceType faceType;
 
     // gui
+
     QGridLayout*             layout;
     DConfigDlgStackedWidget* stack;
     DConfigDlgTitle*         titleWidget;
@@ -128,9 +131,9 @@ public:
 
     explicit DConfigDlgPlainView(QWidget* const parent = nullptr);
 
-    QModelIndex indexAt(const QPoint& point) const                           override;
-    void scrollTo(const QModelIndex& index, ScrollHint hint = EnsureVisible) override;
-    QRect visualRect(const QModelIndex& index) const                         override;
+    QModelIndex indexAt(const QPoint& point) const                                 override;
+    void scrollTo(const QModelIndex& index, ScrollHint hint = EnsureVisible)       override;
+    QRect visualRect(const QModelIndex& index) const                               override;
 
 protected:
 
@@ -284,7 +287,7 @@ public:
 
 public Q_SLOTS:
 
-    void clear() override;
+    void clear()                                                                              override;
     void select(const QModelIndex& index, QItemSelectionModel::SelectionFlags command)        override;
     void select(const QItemSelection& selection, QItemSelectionModel::SelectionFlags command) override;
 };

@@ -224,8 +224,10 @@ QString LibsInfoDlg::checkTriState(int value) const
     {
         case true:
             return i18n("Yes");
+
         case false:
             return i18n("No");
+
         default:
             return i18n("Unknown");
     }

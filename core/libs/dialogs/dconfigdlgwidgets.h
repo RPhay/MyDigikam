@@ -200,8 +200,8 @@ public:
      */
     enum ImageAlignment
     {
-        ImageLeft, /**< Display the pixmap on the left */
-        ImageRight /**< Display the pixmap on the right */
+        ImageLeft, ///< Display the pixmap on the left
+        ImageRight ///< Display the pixmap on the right
     };
 
     /**
@@ -209,10 +209,10 @@ public:
      */
     enum MessageType
     {
-        PlainMessage, /**< Normal comment */
-        InfoMessage, /**< Information the user should be alerted to */
-        WarningMessage, /**< A warning the user should be alerted to */
-        ErrorMessage /**< An error message */
+        PlainMessage,   ///< Normal comment
+        InfoMessage,    ///< Information the user should be alerted to
+        WarningMessage, ///< A warning the user should be alerted to
+        ErrorMessage    ///< An error message
     };
 
 public:

@@ -121,7 +121,9 @@ InfoDlg::InfoDlg(QWidget* const parent)
 
     grid->addWidget(logo,        0, 0, 1, 1);
     grid->addWidget(header,      0, 1, 1, 1);
+
     // row 1 can be expanded by custom widgets in the subclassed dialog
+
     grid->addWidget(d->listView, 2, 0, 1, -1);
     grid->setColumnStretch(1, 10);
     grid->setRowStretch(2, 10);
@@ -142,6 +144,7 @@ InfoDlg::InfoDlg(QWidget* const parent)
             this, SLOT(slotHelp()));
 
     // --- NOTE: use dynamic binding as slotCopy2ClipBoard() is a virtual slot which can be re-implemented in derived classes.
+
     connect(buttons->button(QDialogButtonBox::Apply), &QPushButton::clicked,
             this, &InfoDlg::slotCopy2ClipBoard);
 

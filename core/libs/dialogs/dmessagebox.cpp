@@ -51,7 +51,9 @@ namespace Digikam
 bool DMessageBox::readMsgBoxShouldBeShown(const QString& dontShowAgainName)
 {
     if (dontShowAgainName.isEmpty())
+    {
         return false;
+    }
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group("Notification Messages");
@@ -63,7 +65,9 @@ bool DMessageBox::readMsgBoxShouldBeShown(const QString& dontShowAgainName)
 void DMessageBox::saveMsgBoxShouldBeShown(const QString& dontShowAgainName, bool value)
 {
     if (dontShowAgainName.isEmpty())
+    {
         return;
+    }
 
     KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup group      = config->group("Notification Messages");
@@ -234,14 +238,16 @@ int DMessageBox::showYesNoWidget(QMessageBox::Icon icon,
                                            dontAskAgainName.isEmpty() ? QString() : i18n("Do not ask again"),
                                            &checkboxResult);
 
-    if (result == QDialogButtonBox::Yes)
+    if      (result == QDialogButtonBox::Yes)
     {
         saveMsgBoxShouldBeShown(dontAskAgainName, checkboxResult);
+
         return QMessageBox::Yes;
     }
     else if (result == QDialogButtonBox::No)
     {
         saveMsgBoxShouldBeShown(dontAskAgainName, checkboxResult);
+
         return QMessageBox::No;
     }
 
@@ -328,6 +334,7 @@ int DMessageBox::createMessageBox(QDialog* const dialog,
     // We use a QPointer because the dialog may get deleted
     // during exec() if the parent of the dialog gets deleted.
     // In that case the QPointer will reset to 0.
+
     QPointer<QDialog> guardedDialog = dialog;
 
     const int result = guardedDialog->exec();

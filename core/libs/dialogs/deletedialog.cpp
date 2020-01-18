@@ -64,8 +64,8 @@ class Q_DECL_HIDDEN DeleteItem::Private
 public:
 
     explicit Private()
+      : hasThumb(false)
     {
-        hasThumb = false;
     }
 
     bool hasThumb;
@@ -115,7 +115,7 @@ QUrl DeleteItem::url() const
 
 QString DeleteItem::fileUrl() const
 {
-    if (d->url.isLocalFile())
+    if      (d->url.isLocalFile())
     {
         return (d->url.toLocalFile());
     }
@@ -137,7 +137,9 @@ void DeleteItem::setThumb(const QPixmap& pix, bool hasThumb)
                  (pixmap.height()/2) - (pix.height()/2), pix);
 
     QIcon icon = QIcon(pixmap);
+
     //  We make sure the preview icon stays the same regardless of the role
+
     icon.addPixmap(pixmap, QIcon::Selected, QIcon::On);
     icon.addPixmap(pixmap, QIcon::Selected, QIcon::Off);
     icon.addPixmap(pixmap, QIcon::Active,   QIcon::On);
@@ -157,9 +159,9 @@ class Q_DECL_HIDDEN DeleteItemList::Private
 public:
 
     explicit Private()
-        : iconSize(64)
+        : iconSize(64),
+          thumbLoadThread(nullptr)
     {
-        thumbLoadThread = nullptr;
     }
 
     const int            iconSize;
@@ -202,12 +204,13 @@ void DeleteItemList::slotThumbnailLoaded(const LoadingDescription& desc, const Q
     {
         DeleteItem* const item = dynamic_cast<DeleteItem*>(*it);
 
-        if (item && item->fileUrl() == desc.filePath)
+        if (item && (item->fileUrl() == desc.filePath))
         {
             if (!pix.isNull())
             {
                 item->setThumb(pix.scaled(d->iconSize, d->iconSize, Qt::KeepAspectRatio));
             }
+
             return;
         }
 
@@ -234,16 +237,16 @@ class Q_DECL_HIDDEN DeleteWidget::Private
 public:
 
     explicit Private()
+      : checkBoxStack(nullptr),
+        warningIcon(nullptr),
+        deleteText(nullptr),
+        numFiles(nullptr),
+        shouldDelete(nullptr),
+        doNotShowAgain(nullptr),
+        fileList(nullptr),
+        listMode(DeleteDialogMode::Files),
+        deleteMode(DeleteDialogMode::UseTrash)
     {
-        checkBoxStack   = nullptr;
-        warningIcon     = nullptr;
-        deleteText      = nullptr;
-        numFiles        = nullptr;
-        shouldDelete    = nullptr;
-        doNotShowAgain  = nullptr;
-        fileList        = nullptr;
-        listMode        = DeleteDialogMode::Files;
-        deleteMode      = DeleteDialogMode::UseTrash;
     }
 
     QStackedWidget*              checkBoxStack;
@@ -374,6 +377,7 @@ void DeleteWidget::setListMode(DeleteDialogMode::ListMode listMode)
 void DeleteWidget::updateText()
 {
     // set "do not ask again checkbox text
+
     if (d->deleteMode == DeleteDialogMode::DeletePermanently)
     {
         d->doNotShowAgain->setToolTip(i18n("If checked, this dialog will no longer be shown, and items will "
@@ -411,6 +415,7 @@ void DeleteWidget::updateText()
 
             break;
         }
+
         case DeleteDialogMode::Albums:
         {
             // Delete albums = folders
@@ -431,6 +436,7 @@ void DeleteWidget::updateText()
                                        d->fileList->topLevelItemCount()));
             break;
         }
+
         case DeleteDialogMode::Subalbums:
         {
             // As above, but display additional warning
@@ -467,12 +473,12 @@ class Q_DECL_HIDDEN DeleteDialog::Private
 public:
 
     explicit Private()
+      : saveShouldDeleteUserPreference(true),
+        saveDoNotShowAgainTrash(false),
+        saveDoNotShowAgainPermanent(false),
+        page(nullptr),
+        buttons(nullptr)
     {
-        saveShouldDeleteUserPreference = true;
-        saveDoNotShowAgainTrash        = false;
-        saveDoNotShowAgainPermanent    = false;
-        page                           = nullptr;
-        buttons                        = nullptr;
     }
 
     bool              saveShouldDeleteUserPreference;
@@ -490,10 +496,10 @@ DeleteDialog::DeleteDialog(QWidget* const parent)
 {
     setModal(true);
 
-    d->buttons = new QDialogButtonBox(QDialogButtonBox::Apply | QDialogButtonBox::Cancel, this);
+    d->buttons             = new QDialogButtonBox(QDialogButtonBox::Apply | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Apply)->setDefault(true);
 
-    d->page = new DeleteWidget(this);
+    d->page                = new DeleteWidget(this);
     d->page->setMinimumSize(400, 300);
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
@@ -529,7 +535,7 @@ bool DeleteDialog::confirmDeleteList(const QList<QUrl>& condemnedFiles,
     presetDeleteMode(deleteMode);
     setListMode(listMode);
 
-    if (deleteMode == DeleteDialogMode::NoChoiceTrash)
+    if      (deleteMode == DeleteDialogMode::NoChoiceTrash)
     {
         if (!ApplicationSettings::instance()->getShowTrashDeleteDialog())
         {
@@ -555,6 +561,7 @@ void DeleteDialog::setUrls(const QList<QUrl>& urls)
 void DeleteDialog::slotUser1Clicked()
 {
     // Save user's preference
+
     ApplicationSettings* const settings = ApplicationSettings::instance();
 
     if (d->saveShouldDeleteUserPreference)
@@ -588,6 +595,7 @@ void DeleteDialog::slotShouldDelete(bool shouldDelete)
 {
     // This is called once from constructor, and then when the user changed the checkbox state.
     // In that case, save the user's preference.
+
     d->saveShouldDeleteUserPreference = true;
 
     d->buttons->button(QDialogButtonBox::Apply)->setText(shouldDelete ? i18n("&Delete")
@@ -603,32 +611,40 @@ void DeleteDialog::presetDeleteMode(DeleteDialogMode::DeleteMode mode)
         case DeleteDialogMode::NoChoiceTrash:
         {
             // access the widget directly, signals will be fired to DeleteDialog and DeleteWidget
+
             d->page->d->shouldDelete->setChecked(false);
             d->page->d->checkBoxStack->setCurrentWidget(d->page->d->doNotShowAgain);
             d->saveDoNotShowAgainTrash = true;
             break;
         }
+
         case DeleteDialogMode::NoChoiceDeletePermanently:
         {
             d->page->d->shouldDelete->setChecked(true);
             d->page->d->checkBoxStack->setCurrentWidget(d->page->d->doNotShowAgain);
             d->saveDoNotShowAgainPermanent = true;
-            //d->page->d->checkBoxStack->hide();
+/*
+            d->page->d->checkBoxStack->hide();
+*/
             break;
         }
+
         case DeleteDialogMode::UserPreference:
         {
             break;
         }
+
         case DeleteDialogMode::UseTrash:
         case DeleteDialogMode::DeletePermanently:
         {
             // toggles signals which do the rest
+
             d->page->d->shouldDelete->setChecked(mode == DeleteDialogMode::DeletePermanently);
 
             // the preference set by this preset method will be ignored
             // for the next DeleteDialog instance and not stored as user preference.
             // Only if the user once changes this value, it will be taken as user preference.
+
             d->saveShouldDeleteUserPreference = false;
             break;
         }
@@ -656,9 +672,9 @@ void DeleteDialog::keyPressEvent(QKeyEvent* e)
 {
     if (e->modifiers() == 0)
     {
-        if (e->key() == Qt::Key_Enter || e->key() == Qt::Key_Return)
+        if ((e->key() == Qt::Key_Enter) || (e->key() == Qt::Key_Return))
         {
-            if (d->buttons->button(QDialogButtonBox::Apply)->hasFocus())
+            if      (d->buttons->button(QDialogButtonBox::Apply)->hasFocus())
             {
                 e->accept();
                 d->buttons->button(QDialogButtonBox::Apply)->animateClick();

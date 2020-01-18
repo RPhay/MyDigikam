@@ -51,15 +51,14 @@ class Q_DECL_HIDDEN DSplashScreen::Private
 public:
 
     explicit Private()
+      : state(0),
+        progressBarSize(3),
+        messageAlign(Qt::AlignLeft),
+        version(QLatin1String(digikam_version_short)),
+        messageColor(Qt::white),
+        versionColor(Qt::white),
+        lastStateUpdateTime(QTime::currentTime())
     {
-        state               = 0;
-        progressBarSize     = 3;
-        state               = 0;
-        messageAlign        = Qt::AlignLeft;
-        version             = QLatin1String(digikam_version_short);
-        versionColor        = Qt::white;
-        messageColor        = Qt::white;
-        lastStateUpdateTime = QTime::currentTime();
     }
 
     int     state;
@@ -179,6 +178,7 @@ void DSplashScreen::drawContents(QPainter* p)
     }
 
     // We use a device dependent font with a fixed size.
+
     QFont fnt(QFontDatabase::systemFont(QFontDatabase::GeneralFont));
     fnt.setPixelSize(10);
     fnt.setBold(false);
@@ -211,6 +211,7 @@ void DSplashScreen::drawContents(QPainter* p)
     // -- Draw slogan and family ----------------------------------------------
 
     // NOTE: splashscreen size is 469*288 pixels
+
     r = rect();
     r.setCoords(r.x() + 210, r.y() + 215, r.x() + 462, r.y() + 315);
     p->translate(r.x(), r.y());

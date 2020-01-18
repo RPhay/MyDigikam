@@ -63,19 +63,19 @@ class DIGIKAM_EXPORT DConfigDlg : public QDialog
 public:
 
     /**
-     *  @li @p Auto   - A dialog with a face based on the structure of the
-     *                  available pages.
-     *                  If only a single page is added, the dialog behaves like
-     *                  in @p Plain mode, with multiple pages without sub pages
-     *                  it behaves like in @p List mode and like in @p Tree mode
-     *                  otherwise.
-     *  @li @p Plain  - A normal dialog.
-     *  @li @p List   - A dialog with an icon list on the left side and a
-     *                  representation of the contents on the right side.
-     *  @li @p Tree   - A dialog with a tree on the left side and a
-     *                  representation of the contents on the right side.
-     *  @li @p Tabbed - A dialog with a tab bar above the representation
-     *                  of the contents.
+     * @li @p Auto   - A dialog with a face based on the structure of the
+     *                 available pages.
+     *                 If only a single page is added, the dialog behaves like
+     *                 in @p Plain mode, with multiple pages without sub pages
+     *                 it behaves like in @p List mode and like in @p Tree mode
+     *                 otherwise.
+     * @li @p Plain  - A normal dialog.
+     * @li @p List   - A dialog with an icon list on the left side and a
+     *                 representation of the contents on the right side.
+     * @li @p Tree   - A dialog with a tree on the left side and a
+     *                 representation of the contents on the right side.
+     * @li @p Tabbed - A dialog with a tab bar above the representation
+     *                 of the contents.
      */
     enum FaceType
     {
@@ -208,7 +208,7 @@ Q_SIGNALS:
      * This signal is emitted whenever a page has been removed.
      *
      * @param page The page which has been removed
-     **/
+     */
     void pageRemoved(DConfigDlgWdgItem* page);
 
 protected:

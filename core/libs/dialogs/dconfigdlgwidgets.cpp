@@ -107,6 +107,7 @@ DConfigDlgWdg::~DConfigDlgWdg()
 DConfigDlgWdgItem* DConfigDlgWdg::addPage(QWidget* widget, const QString& name)
 {
     // force layout margin to zero so that it aligns well with title widget
+
     if (widget->layout())
     {
         widget->layout()->setContentsMargins(0, 0, 0, 0);
@@ -183,6 +184,7 @@ DConfigDlgTitle::DConfigDlgTitle(QWidget* const parent)
     titleFrame->setBackgroundRole(QPalette::Base);
 
     // default image / text part start
+
     d->headerLayout = new QGridLayout(titleFrame);
     d->headerLayout->setColumnStretch(0, 1);
     d->headerLayout->setMargin(6);
@@ -220,12 +222,13 @@ DConfigDlgTitle::~DConfigDlgTitle()
 bool DConfigDlgTitle::eventFilter(QObject* object, QEvent* event)
 {
     // Hide message label on click
-    if (d->autoHideTimeout > 0 &&
-        event->type() == QEvent::MouseButtonPress)
+
+    if ((d->autoHideTimeout > 0) &&
+        (event->type() == QEvent::MouseButtonPress))
     {
         QMouseEvent* const mouseEvent = static_cast<QMouseEvent*>(event);
 
-        if (mouseEvent && mouseEvent->button() == Qt::LeftButton)
+        if (mouseEvent && (mouseEvent->button() == Qt::LeftButton))
         {
             setVisible(false);
             return true;
@@ -264,8 +267,9 @@ void DConfigDlgTitle::changeEvent(QEvent* e)
 {
     QWidget::changeEvent(e);
 
-    if (e->type() == QEvent::PaletteChange || e->type() == QEvent::FontChange
-                                           || e->type() == QEvent::ApplicationFontChange)
+    if ((e->type() == QEvent::PaletteChange) ||
+        (e->type() == QEvent::FontChange)    ||
+        (e->type() == QEvent::ApplicationFontChange))
     {
         d->textLabel->setStyleSheet(d->textStyleSheet());
         d->commentLabel->setStyleSheet(d->commentStyleSheet());
@@ -296,7 +300,8 @@ void DConfigDlgTitle::setComment(const QString& comment, MessageType type)
 {
     d->commentLabel->setVisible(!comment.isNull());
 
-    //TODO: should we override the current icon with the corresponding MessageType icon?
+    // TODO: should we override the current icon with the corresponding MessageType icon?
+
     d->messageType = type;
     d->commentLabel->setStyleSheet(d->commentStyleSheet());
     d->commentLabel->setText(comment);
@@ -314,6 +319,7 @@ void DConfigDlgTitle::setPixmap(const QPixmap& pixmap, ImageAlignment alignment)
     if (alignment == ImageLeft)
     {
         // swap the text and image labels around
+
         d->headerLayout->addWidget(d->imageLabel,   0, 0, 2, 1);
         d->headerLayout->addWidget(d->textLabel,    0, 1);
         d->headerLayout->addWidget(d->commentLabel, 1, 1);

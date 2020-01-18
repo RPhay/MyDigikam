@@ -64,11 +64,11 @@ class Q_DECL_HIDDEN WebBrowserDlg::Private
 public:
 
     explicit Private()
+      : browser(nullptr),
+        toolbar(nullptr),
+        progressbar(nullptr),
+        searchbar(nullptr)
     {
-        browser     = nullptr;
-        toolbar     = nullptr;
-        progressbar = nullptr;
-        searchbar   = nullptr;
     }
 
 public:
@@ -135,7 +135,7 @@ WebBrowserDlg::WebBrowserDlg(const QUrl& url, QWidget* const parent, bool hideDe
 
     // --------------------------
 
-    d->searchbar = new SearchTextBar(this, QLatin1String("WebBrowserDlgSearchBar"));
+    d->searchbar   = new SearchTextBar(this, QLatin1String("WebBrowserDlgSearchBar"));
     d->searchbar->setHighlightOnResult(true);
 
     d->progressbar = new StatusProgressBar(this);

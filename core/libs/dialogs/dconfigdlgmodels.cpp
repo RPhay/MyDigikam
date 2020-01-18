@@ -109,7 +109,7 @@ DConfigDlgWdgItem::DConfigDlgWdgItem(QWidget* widget, const QString& name)
       d(new Private)
 {
     d->widget = widget;
-    d->name = name;
+    d->name   = name;
 
     /**
      * Hide the widget, otherwise when the widget has this DConfigDlgView as
@@ -283,7 +283,7 @@ PageItem* PageItem::findChild(const DConfigDlgWdgItem* item)
         return this;
     }
 
-    for (int i = 0; i < mChildItems.count(); ++i)
+    for (int i = 0 ; i < mChildItems.count() ; ++i)
     {
         PageItem* const pageItem = mChildItems[ i ]->findChild(item);
 
@@ -300,7 +300,7 @@ void PageItem::dump(int indent)
 {
     QString prefix;
 
-    for (int i = 0; i < indent; ++i)
+    for (int i = 0 ; i < indent ; ++i)
     {
         prefix.append(QLatin1Char(' '));
     }
@@ -339,7 +339,7 @@ QVariant DConfigDlgWdgModel::data(const QModelIndex& index, int role) const
 
     PageItem* const item = static_cast<PageItem *>(index.internalPointer());
 
-    if (role == Qt::DisplayRole)
+    if      (role == Qt::DisplayRole)
     {
         return QVariant(item->pageWidgetItem()->name());
     }
@@ -514,6 +514,7 @@ void DConfigDlgWdgModel::addPage(DConfigDlgWdgItem* item)
             this, SLOT(_k_itemToggled(bool)));
 
     // The row to be inserted
+
     int row = d->rootItem->childCount();
 
     beginInsertRows(QModelIndex(), row, row);
@@ -554,7 +555,9 @@ void DConfigDlgWdgModel::insertPage(DConfigDlgWdgItem* before, DConfigDlgWdgItem
             this, SLOT(_k_itemToggled(bool)));
 
     PageItem* const parent = beforePageItem->parent();
+
     // The row to be inserted
+
     int row                = beforePageItem->row();
 
     QModelIndex index;
@@ -602,6 +605,7 @@ void DConfigDlgWdgModel::addSubPage(DConfigDlgWdgItem* parent, DConfigDlgWdgItem
             this, SLOT(_k_itemToggled(bool)));
 
     // The row to be inserted
+
     int row = parentPageItem->childCount();
 
     QModelIndex index;

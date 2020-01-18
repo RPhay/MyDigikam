@@ -23,7 +23,6 @@
  *
  * ============================================================ */
 
-#include "dconfigdlgview.h"
 #include "dconfigdlgview_p.h"
 
 // Qt includes
@@ -46,6 +45,7 @@ namespace Digikam
 void DConfigDlgViewPrivate::_k_rebuildGui()
 {
     // clean up old view
+
     Q_Q(DConfigDlgView);
 
     QModelIndex currentLastIndex;
@@ -72,6 +72,7 @@ void DConfigDlgViewPrivate::_k_rebuildGui()
     }
 
     // setup new view
+
     if (view->selectionModel())
     {
         QObject::connect(view->selectionModel(), SIGNAL(selectionChanged(QItemSelection,QItemSelection)),
@@ -102,7 +103,7 @@ void DConfigDlgViewPrivate::_k_rebuildGui()
 
     Qt::Alignment alignment = q->viewPosition();
 
-    if (alignment & Qt::AlignTop)
+    if      (alignment & Qt::AlignTop)
     {
         layout->addWidget(view, 2, 1);
     }
@@ -122,9 +123,7 @@ void DConfigDlgViewPrivate::_k_rebuildGui()
 
 void DConfigDlgViewPrivate::updateSelection()
 {
-    /**
-     * Select the first item in the view if not done yet.
-     */
+    // Select the first item in the view if not done yet.
 
     if (!model)
     {
@@ -146,21 +145,19 @@ void DConfigDlgViewPrivate::updateSelection()
 
 void DConfigDlgViewPrivate::cleanupPages()
 {
-    /**
-     * Remove all orphan pages from the stacked widget.
-     */
+    // Remove all orphan pages from the stacked widget.
 
     const QList<QWidget*> widgets = collectPages();
 
-    for (int i = 0; i < stack->count(); ++i)
+    for (int i = 0 ; i < stack->count() ; ++i)
     {
         QWidget *page = stack->widget(i);
 
         bool found = false;
 
-        for (int j = 0; j < widgets.count(); ++j)
+        for (int j = 0 ; j < widgets.count() ; ++j)
         {
-            if (widgets[ j ] == page)
+            if (widgets[j] == page)
             {
                 found = true;
             }
@@ -175,15 +172,13 @@ void DConfigDlgViewPrivate::cleanupPages()
 
 QList<QWidget*> DConfigDlgViewPrivate::collectPages(const QModelIndex& parentIndex)
 {
-    /**
-     * Traverse through the model recursive and collect all widgets in
-     * a list.
-     */
+    // Traverse through the model recursive and collect all widgets in a list.
+
     QList<QWidget*> retval;
 
     int rows = model->rowCount(parentIndex);
 
-    for (int j = 0; j < rows; ++j)
+    for (int j = 0 ; j < rows ; ++j)
     {
         const QModelIndex index = model->index(j, 0, parentIndex);
         retval.append(qvariant_cast<QWidget*>(model->data(index, DConfigDlgModel::WidgetRole)));
@@ -204,13 +199,12 @@ DConfigDlgView::FaceType DConfigDlgViewPrivate::detectAutoFace() const
         return DConfigDlgView::Plain;
     }
 
-    /**
-     * Check whether the model has sub pages.
-     */
+    // Check whether the model has sub pages.
+
     bool hasSubPages = false;
     const int count  = model->rowCount();
 
-    for (int i = 0; i < count; ++i)
+    for (int i = 0 ; i < count ; ++i)
     {
         if (model->rowCount(model->index(i, 0)) > 0)
         {
@@ -246,6 +240,7 @@ void DConfigDlgViewPrivate::_k_modelChanged()
     if (faceType == DConfigDlgView::Auto)
     {
         _k_rebuildGui();
+
         // If you discover some crashes use the line below instead...
         //QTimer::singleShot(0, q, SLOT(_k_rebuildGui()));
     }
@@ -256,9 +251,9 @@ void DConfigDlgViewPrivate::_k_modelChanged()
     QSize size                    = stack->size();
     const QList<QWidget*> widgets = collectPages();
 
-    for (int i = 0; i < widgets.count(); ++i)
+    for (int i = 0 ; i < widgets.count() ; ++i)
     {
-        const QWidget* widget = widgets[ i ];
+        const QWidget* widget = widgets[i];
 
         if (widget)
         {
@@ -279,6 +274,7 @@ void DConfigDlgViewPrivate::_k_pageSelected(const QItemSelection& index, const Q
     }
 
     // Return if the current Index is not valid
+
     if (index.indexes().size() != 1)
     {
         return;
@@ -303,6 +299,7 @@ void DConfigDlgViewPrivate::_k_pageSelected(const QItemSelection& index, const Q
             if (stack->indexOf(widget) == -1)
             {
                 // not included yet
+
                 stack->addWidget(widget);
             }
 
@@ -338,8 +335,7 @@ void DConfigDlgViewPrivate::updateTitleWidget(const QModelIndex& index)
 void DConfigDlgViewPrivate::_k_dataChanged(const QModelIndex&, const QModelIndex&)
 {
     /**
-     * When data has changed we update the header and icon for the currently selected
-     * page.
+     * When data has changed we update the header and icon for the currently selected page.
      */
     if (!view)
     {
@@ -384,6 +380,7 @@ void DConfigDlgViewPrivate::init()
     stack->addWidget(defaultWidget);
 
     // stack should use most space
+
     layout->setColumnStretch(1, 1);
     layout->setRowStretch(2, 1);
 }
@@ -414,6 +411,7 @@ void DConfigDlgView::setModel(QAbstractItemModel* model)
     Q_D(DConfigDlgView);
 
     // clean up old model
+
     if (d->model)
     {
         disconnect(d->model, SIGNAL(layoutChanged()),
@@ -434,6 +432,7 @@ void DConfigDlgView::setModel(QAbstractItemModel* model)
                 this, SLOT(_k_dataChanged(QModelIndex,QModelIndex)));
 
         // set new model in navigation view
+
         if (d->view)
         {
             d->view->setModel(model);
@@ -517,10 +516,12 @@ void DConfigDlgView::setDefaultWidget(QWidget* widget)
     bool isCurrent = (d->stack->currentIndex() == d->stack->indexOf(d->defaultWidget));
 
     // remove old default widget
+
     d->stack->removeWidget(d->defaultWidget);
     delete d->defaultWidget;
 
     // add new default widget
+
     d->defaultWidget = widget;
     d->stack->addWidget(d->defaultWidget);
 
@@ -538,7 +539,7 @@ QAbstractItemView* DConfigDlgView::createView()
     {
         const FaceType faceType = d->detectAutoFace();
 
-        if (faceType == Plain)
+        if      (faceType == Plain)
         {
             return new DConfigDlgInternal::DConfigDlgPlainView(this);
         }
@@ -608,7 +609,7 @@ Qt::Alignment DConfigDlgView::viewPosition() const
         faceType = d->detectAutoFace();
     }
 
-    if (faceType == Plain || faceType == Tabbed)
+    if ((faceType == Plain) || (faceType == Tabbed))
     {
         return Qt::AlignTop;
     }

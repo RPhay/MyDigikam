@@ -132,7 +132,7 @@ void ImageDialogPreview::slotShowPreview(const QUrl& url)
     if (url != d->currentURL)
     {
         slotClearPreview();
-        d->currentURL = url;
+        d->currentURL                = url;
         d->thumbLoadThread->find(ThumbnailIdentifier(d->currentURL.toLocalFile()));
 
         d->metaIface.load(d->currentURL.toLocalFile());
@@ -310,7 +310,7 @@ void ImageDialogPreview::slotThumbnail(const LoadingDescription& desc, const QPi
         QPixmap pixmap;
         QSize   s = d->imageLabel->contentsRect().size();
 
-        if (s.width() < pix.width() || s.height() < pix.height())
+        if ((s.width() < pix.width()) || (s.height() < pix.height()))
         {
             pixmap = pix.scaled(s, Qt::KeepAspectRatio);
         }
@@ -335,17 +335,21 @@ void ImageDialogPreview::slotClearPreview()
 DFileIconProvider::DFileIconProvider()
     : QFileIconProvider()
 {
-    //ThumbnailLoadThread* const thread = new ThumbnailLoadThread;
-    //m_catcher                         = new ThumbnailImageCatcher(thread);
+/*
+    ThumbnailLoadThread* const thread = new ThumbnailLoadThread;
+    m_catcher                         = new ThumbnailImageCatcher(thread);
+*/
 }
 
 DFileIconProvider::~DFileIconProvider()
 {
-    //m_catcher->thread()->stopAllTasks();
-    //m_catcher->cancel();
+/*
+    m_catcher->thread()->stopAllTasks();
+    m_catcher->cancel();
 
-    //delete m_catcher->thread();
-    //delete m_catcher;
+    delete m_catcher->thread();
+    delete m_catcher;
+*/
 }
 
 QIcon DFileIconProvider::icon(IconType type) const

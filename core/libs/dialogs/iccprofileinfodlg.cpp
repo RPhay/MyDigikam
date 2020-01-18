@@ -47,7 +47,7 @@ ICCProfileInfoDlg::ICCProfileInfoDlg(QWidget* const parent, const QString& profi
     setModal(true);
     setWindowTitle(i18n("Color Profile Info - %1", profilePath));
 
-    QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok, this);
+    QDialogButtonBox* const buttons       = new QDialogButtonBox(QDialogButtonBox::Help | QDialogButtonBox::Ok, this);
     buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
     ICCProfileWidget* const profileWidget = new ICCProfileWidget(this, 340, 256);
@@ -61,7 +61,7 @@ ICCProfileInfoDlg::ICCProfileInfoDlg(QWidget* const parent, const QString& profi
         profileWidget->loadProfile(profilePath, profile);
     }
 
-    QVBoxLayout* const vbx = new QVBoxLayout(this);
+    QVBoxLayout* const vbx                = new QVBoxLayout(this);
     vbx->addWidget(profileWidget);
     vbx->addWidget(buttons);
     setLayout(vbx);

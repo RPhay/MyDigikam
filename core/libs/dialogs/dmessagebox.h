@@ -63,7 +63,8 @@ public:
 
 public:
 
-    /** Show List of items into an informative message box.
+    /**
+     * Show List of items into an informative message box.
      */
     static void showInformationList(QMessageBox::Icon icon,
                                     QWidget* const parent,
@@ -72,7 +73,8 @@ public:
                                     const QStringList& items,
                                     const QString& dontShowAgainName = QString());
 
-    /** Show widget into an informative message box.
+    /**
+     * Show widget into an informative message box.
      */
     static void showInformationWidget(QMessageBox::Icon icon,
                                       QWidget* const parent,
@@ -83,8 +85,9 @@ public:
 
 public:
 
-    /** Show a message box with Continue and Cancel buttons, and wait user feedback.
-     *  Return QMessageBox::Yes or QMessageBox::Cancel.
+    /**
+     * Show a message box with Continue and Cancel buttons, and wait user feedback.
+     * Return QMessageBox::Yes or QMessageBox::Cancel.
      */
     static int showContinueCancel(QMessageBox::Icon icon,
                                   QWidget* const parent,
@@ -92,9 +95,10 @@ public:
                                   const QString& text,
                                   const QString& dontAskAgainName = QString());
 
-    /** Show List of items to process into a message box with Continue and Cancel buttons,
-     *  and wait user feedback.
-     *  Return QMessageBox::Yes or QMessageBox::Cancel.
+    /**
+     * Show List of items to process into a message box with Continue and Cancel buttons,
+     * and wait user feedback.
+     * Return QMessageBox::Yes or QMessageBox::Cancel.
      */
     static int showContinueCancelList(QMessageBox::Icon icon,
                                       QWidget* const parent,
@@ -103,9 +107,10 @@ public:
                                       const QStringList& items,
                                       const QString& dontAskAgainName = QString());
 
-    /** Show widget into a message box with Continue and Cancel buttons,
-     *  and wait user feedback.
-     *  Return QMessageBox::Yes or QMessageBox::Cancel.
+    /**
+     * Show widget into a message box with Continue and Cancel buttons,
+     * and wait user feedback.
+     * Return QMessageBox::Yes or QMessageBox::Cancel.
      */
     static int showContinueCancelWidget(QMessageBox::Icon icon,
                                         QWidget* const parent,
@@ -116,8 +121,9 @@ public:
 
 public:
 
-    /** Show a message box with Yes and No buttons, and wait user feedback.
-     *  Return QMessageBox::Yes or QMessageBox::No.
+    /**
+     * Show a message box with Yes and No buttons, and wait user feedback.
+     * Return QMessageBox::Yes or QMessageBox::No.
      */
     static int showYesNo(QMessageBox::Icon icon,
                          QWidget* const parent,
@@ -125,9 +131,10 @@ public:
                          const QString& text,
                          const QString& dontAskAgainName = QString());
 
-    /** Show List of items to process into a message box with Yes and No buttons,
-     *  and wait user feedback.
-     *  Return QMessageBox::Yes or QMessageBox::No.
+    /**
+     * Show List of items to process into a message box with Yes and No buttons,
+     * and wait user feedback.
+     * Return QMessageBox::Yes or QMessageBox::No.
      */
     static int showYesNoList(QMessageBox::Icon icon,
                              QWidget* const parent,
@@ -136,9 +143,10 @@ public:
                              const QStringList& items,
                              const QString& dontAskAgainName = QString());
 
-    /** Show widget into a message box with Yes and No buttons,
-     *  and wait user feedback.
-     *  Return QMessageBox::Yes or QMessageBox::No.
+    /**
+     * Show widget into a message box with Yes and No buttons,
+     * and wait user feedback.
+     * Return QMessageBox::Yes or QMessageBox::No.
      */
     static int showYesNoWidget(QMessageBox::Icon icon,
                                QWidget* const parent,
