@@ -80,7 +80,9 @@ bool MetaEngine::setItemProgramId(const QString& program, const QString& version
             Exiv2::XmpData::const_iterator it = xmpData.findKey(key);
 
             if (it == xmpData.end())
+            {
                 setXmpTagString("Xmp.xmp.CreatorTool", software);
+            }
         }
 
         setXmpTagString("Xmp.tiff.Software", software);
@@ -91,6 +93,7 @@ bool MetaEngine::setItemProgramId(const QString& program, const QString& version
 
         d->iptcMetadata()["Iptc.Application2.Program"]        = std::string(program.toLatin1().constData());
         d->iptcMetadata()["Iptc.Application2.ProgramVersion"] = std::string(version.toLatin1().constData());
+
         return true;
     }
     catch(Exiv2::AnyError& e)
@@ -120,17 +123,23 @@ QSize MetaEngine::getItemDimensions() const
         Exiv2::ExifKey key("Exif.Photo.PixelXDimension");
         Exiv2::ExifData::const_iterator it = exifData.findKey(key);
 
-        if (it != exifData.end() && it->count())
+        if ((it != exifData.end()) && it->count())
+        {
             width = it->toLong();
+        }
 
         Exiv2::ExifKey key2("Exif.Photo.PixelYDimension");
         Exiv2::ExifData::const_iterator it2 = exifData.findKey(key2);
 
-        if (it2 != exifData.end() && it2->count())
+        if ((it2 != exifData.end()) && it2->count())
+        {
             height = it2->toLong();
+        }
 
-        if (width != -1 && height != -1)
+        if ((width != -1) && (height != -1))
+        {
             return QSize(width, height);
+        }
 
         // Try to get Exif.Image tags
 
@@ -140,17 +149,23 @@ QSize MetaEngine::getItemDimensions() const
         Exiv2::ExifKey key3("Exif.Image.ImageWidth");
         Exiv2::ExifData::const_iterator it3 = exifData.findKey(key3);
 
-        if (it3 != exifData.end() && it3->count())
+        if ((it3 != exifData.end()) && it3->count())
+        {
             width = it3->toLong();
+        }
 
         Exiv2::ExifKey key4("Exif.Image.ImageLength");
         Exiv2::ExifData::const_iterator it4 = exifData.findKey(key4);
 
-        if (it4 != exifData.end() && it4->count())
+        if ((it4 != exifData.end()) && it4->count())
+        {
             height = it4->toLong();
+        }
 
-        if (width != -1 && height != -1)
+        if ((width != -1) && (height != -1))
+        {
             return QSize(width, height);
+        }
 
 #ifdef _XMP_SUPPORT_
 
@@ -164,15 +179,21 @@ QSize MetaEngine::getItemDimensions() const
         QString str = getXmpTagString("Xmp.tiff.ImageWidth");
 
         if (!str.isEmpty())
+        {
             width = str.toInt(&wOk);
+        }
 
         str = getXmpTagString("Xmp.tiff.ImageLength");
 
         if (!str.isEmpty())
+        {
             height = str.toInt(&hOk);
+        }
 
         if (wOk && hOk)
+        {
             return QSize(width, height);
+        }
 
         // Try to get Xmp.exif tags
 
@@ -184,15 +205,21 @@ QSize MetaEngine::getItemDimensions() const
         str = getXmpTagString("Xmp.exif.PixelXDimension");
 
         if (!str.isEmpty())
+        {
             width = str.toInt(&wOk);
+        }
 
         str = getXmpTagString("Xmp.exif.PixelYDimension");
 
         if (!str.isEmpty())
+        {
             height = str.toInt(&hOk);
+        }
 
         if (wOk && hOk)
+        {
             return QSize(width, height);
+        }
 
 #endif // _XMP_SUPPORT_
 
@@ -218,6 +245,7 @@ bool MetaEngine::setItemDimensions(const QSize& size) const
         // Set Exif values.
 
         // NOTE: see B.K.O #144604: need to cast to record an unsigned integer value.
+
         d->exifMetadata()["Exif.Image.ImageWidth"]      = static_cast<uint32_t>(size.width());
         d->exifMetadata()["Exif.Image.ImageLength"]     = static_cast<uint32_t>(size.height());
         d->exifMetadata()["Exif.Photo.PixelXDimension"] = static_cast<uint32_t>(size.width());
@@ -273,6 +301,7 @@ MetaEngine::ImageOrientation MetaEngine::getItemOrientation() const
             if (ok)
             {
                 //qCDebug(DIGIKAM_METAENGINE_LOG) << "Orientation => Xmp.tiff.Orientation =>" << (int)orientation;
+
                 return (ImageOrientation)orientation;
             }
         }
@@ -287,9 +316,10 @@ MetaEngine::ImageOrientation MetaEngine::getItemOrientation() const
         Exiv2::ExifKey minoltaKey1("Exif.MinoltaCs7D.Rotation");
         it = exifData.findKey(minoltaKey1);
 
-        if (it != exifData.end() && it->count())
+        if ((it != exifData.end()) && it->count())
         {
             orientation = it->toLong();
+
             //qCDebug(DIGIKAM_METAENGINE_LOG) << "Orientation => Exif.MinoltaCs7D.Rotation =>" << (int)orientation;
 
             switch(orientation)
@@ -297,6 +327,7 @@ MetaEngine::ImageOrientation MetaEngine::getItemOrientation() const
                 case 76:
                     imageOrient = ORIENTATION_ROT_90;
                     break;
+
                 case 82:
                     imageOrient = ORIENTATION_ROT_270;
                     break;
@@ -308,9 +339,10 @@ MetaEngine::ImageOrientation MetaEngine::getItemOrientation() const
         Exiv2::ExifKey minoltaKey2("Exif.MinoltaCs5D.Rotation");
         it = exifData.findKey(minoltaKey2);
 
-        if (it != exifData.end() && it->count())
+        if ((it != exifData.end()) && it->count())
         {
             orientation = it->toLong();
+
             //qCDebug(DIGIKAM_METAENGINE_LOG) << "Orientation => Exif.MinoltaCs5D.Rotation =>" << (int)orientation;
 
             switch(orientation)
@@ -318,6 +350,7 @@ MetaEngine::ImageOrientation MetaEngine::getItemOrientation() const
                 case 76:
                     imageOrient = ORIENTATION_ROT_90;
                     break;
+
                 case 82:
                     imageOrient = ORIENTATION_ROT_270;
                     break;
@@ -331,10 +364,12 @@ MetaEngine::ImageOrientation MetaEngine::getItemOrientation() const
         Exiv2::ExifKey keyStd("Exif.Image.Orientation");
         it = exifData.findKey(keyStd);
 
-        if (it != exifData.end() && it->count())
+        if ((it != exifData.end()) && it->count())
         {
             orientation = it->toLong();
+
             //qCDebug(DIGIKAM_METAENGINE_LOG) << "Orientation => Exif.Image.Orientation =>" << (int)orientation;
+
             return (ImageOrientation)orientation;
         }
 
@@ -406,7 +441,7 @@ bool MetaEngine::setItemOrientation(ImageOrientation orientation) const
         Exiv2::ExifKey thumbKey("Exif.Thumbnail.Orientation");
         it = d->exifMetadata().findKey(thumbKey);
 
-        if (it != d->exifMetadata().end() && it->count())
+        if ((it != d->exifMetadata().end()) && it->count())
         {
             (*it) = static_cast<uint16_t>(orientation);
         }
@@ -434,19 +469,24 @@ MetaEngine::ImageColorWorkSpace MetaEngine::getItemColorWorkSpace() const
     if (!getExifTagLong("Exif.Photo.ColorSpace", exifColorSpace))
     {
 #ifdef _XMP_SUPPORT_
+
         QVariant var = getXmpTagVariant("Xmp.exif.ColorSpace");
+
         if (!var.isNull())
+        {
             exifColorSpace = var.toInt();
+        }
+
 #endif // _XMP_SUPPORT_
     }
 
-    if (exifColorSpace == 1)
+    if      (exifColorSpace == 1)
     {
-        return WORKSPACE_SRGB; // as specified by standard
+        return WORKSPACE_SRGB;      // as specified by standard
     }
     else if (exifColorSpace == 2)
     {
-        return WORKSPACE_ADOBERGB; // not in the standard!
+        return WORKSPACE_ADOBERGB;  // not in the standard!
     }
     else
     {
@@ -454,14 +494,19 @@ MetaEngine::ImageColorWorkSpace MetaEngine::getItemColorWorkSpace() const
         {
             // A lot of cameras set the Exif.Iop.InteroperabilityIndex,
             // as documented for ExifTool
+
             QString interopIndex = getExifTagString("Exif.Iop.InteroperabilityIndex");
 
             if (!interopIndex.isNull())
             {
                 if (interopIndex == QLatin1String("R03"))
+                {
                     return WORKSPACE_ADOBERGB;
+                }
                 else if (interopIndex == QLatin1String("R98"))
+                {
                     return WORKSPACE_SRGB;
+                }
             }
         }
 
@@ -470,36 +515,52 @@ MetaEngine::ImageColorWorkSpace MetaEngine::getItemColorWorkSpace() const
         // Nikon camera set Exif.Photo.ColorSpace to uncalibrated or just skip this field,
         // then add additional information into the makernotes.
         // Exif.Nikon3.ColorSpace: 1 => sRGB, 2 => AdobeRGB
+
         long nikonColorSpace;
 
         if (getExifTagLong("Exif.Nikon3.ColorSpace", nikonColorSpace))
         {
             if (nikonColorSpace == 1)
+            {
                 return WORKSPACE_SRGB;
+            }
             else if (nikonColorSpace == 2)
+            {
                 return WORKSPACE_ADOBERGB;
+            }
         }
         // Exif.Nikon3.ColorMode is set to "MODE2" for AdobeRGB, but there are sometimes two ColorMode fields
         // in a NEF, with the first one "COLOR" and the second one "MODE2"; but in this case, ColorSpace (above) was set.
-        if (getExifTagString("Exif.Nikon3.ColorMode").contains(QLatin1String("MODE2")))
-            return WORKSPACE_ADOBERGB;
 
-        //TODO: This makernote tag (0x00b4) must be added to libexiv2
-        /*
+        if (getExifTagString("Exif.Nikon3.ColorMode").contains(QLatin1String("MODE2")))
+        {
+            return WORKSPACE_ADOBERGB;
+        }
+
+        // TODO: This makernote tag (0x00b4) must be added to libexiv2
+
+/*
         long canonColorSpace;
+
         if (getExifTagLong("Exif.Canon.ColorSpace", canonColorSpace))
         {
             if (canonColorSpace == 1)
+            {
                 return WORKSPACE_SRGB;
+            }
             else if (canonColorSpace == 2)
+            {
                 return WORKSPACE_ADOBERGB;
+            }
         }
-        */
+*/
 
         // TODO : add more Makernote parsing here ...
 
         if (exifColorSpace == 65535)
+        {
             return WORKSPACE_UNCALIBRATED;
+        }
     }
 
     return WORKSPACE_UNSPECIFIED;
@@ -577,6 +638,7 @@ QDateTime MetaEngine::getItemDateTime() const
                     if (dateTime.isValid() && dateMap.value(dateTime) > 2)
                     {
                         //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => Exif.Photo.DateTimeDigitized =>" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -593,6 +655,7 @@ QDateTime MetaEngine::getItemDateTime() const
                     if (dateTime.isValid() && dateMap.value(dateTime) > 2)
                     {
                         //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => Exif.Image.DateTime =>" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -615,9 +678,10 @@ QDateTime MetaEngine::getItemDateTime() const
                     QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 2);
 
-                    if (dateTime.isValid() && dateMap.value(dateTime) > 2)
+                    if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
                     {
                         //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => Xmp.exif.DateTimeOriginal =>" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -631,9 +695,10 @@ QDateTime MetaEngine::getItemDateTime() const
                     QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
-                    if (dateTime.isValid() && dateMap.value(dateTime) > 2)
+                    if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
                     {
                         //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => Xmp.exif.DateTimeDigitized =>" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -647,9 +712,10 @@ QDateTime MetaEngine::getItemDateTime() const
                     QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
-                    if (dateTime.isValid() && dateMap.value(dateTime) > 2)
+                    if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
                     {
                         //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => Xmp.photoshop.DateCreated =>" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -663,9 +729,10 @@ QDateTime MetaEngine::getItemDateTime() const
                     QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
-                    if (dateTime.isValid() && dateMap.value(dateTime) > 2)
+                    if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
                     {
                         //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => Xmp.xmp.CreateDate =>" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -679,9 +746,10 @@ QDateTime MetaEngine::getItemDateTime() const
                     QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
-                    if (dateTime.isValid() && dateMap.value(dateTime) > 2)
+                    if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
                     {
                         //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => Xmp.tiff.DateTime =>" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -695,9 +763,10 @@ QDateTime MetaEngine::getItemDateTime() const
                     QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
-                    if (dateTime.isValid() && dateMap.value(dateTime) > 2)
+                    if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
                     {
                         //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => Xmp.xmp.ModifyDate =>" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -711,9 +780,10 @@ QDateTime MetaEngine::getItemDateTime() const
                     QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
-                    if (dateTime.isValid() && dateMap.value(dateTime) > 2)
+                    if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
                     {
                         //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => Xmp.xmp.MetadataDate =>" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -730,9 +800,10 @@ QDateTime MetaEngine::getItemDateTime() const
                     QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 2);
 
-                    if (dateTime.isValid() && dateMap.value(dateTime) > 2)
+                    if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
                     {
                         //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => Xmp.video.DateTimeOriginal =>" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -746,9 +817,10 @@ QDateTime MetaEngine::getItemDateTime() const
                     QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
-                    if (dateTime.isValid() && dateMap.value(dateTime) > 2)
+                    if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
                     {
                         //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => Xmp.video.DateUTC =>" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -762,9 +834,10 @@ QDateTime MetaEngine::getItemDateTime() const
                     QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
-                    if (dateTime.isValid() && dateMap.value(dateTime) > 2)
+                    if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
                     {
                         //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => Xmp.video.ModificationDate =>" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -778,9 +851,10 @@ QDateTime MetaEngine::getItemDateTime() const
                     QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
-                    if (dateTime.isValid() && dateMap.value(dateTime) > 2)
+                    if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
                     {
                         //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => Xmp.video.DateTimeDigitized =>" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -814,9 +888,10 @@ QDateTime MetaEngine::getItemDateTime() const
                     QDateTime dateTime = QDateTime(date, time);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
-                    if (dateTime.isValid() && dateMap.value(dateTime) > 2)
+                    if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
                     {
                         //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => Iptc.Application2.DateCreated =>" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -841,9 +916,10 @@ QDateTime MetaEngine::getItemDateTime() const
                     QDateTime dateTime = QDateTime(date, time);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
-                    if (dateTime.isValid() && dateMap.value(dateTime) > 2)
+                    if (dateTime.isValid() && (dateMap.value(dateTime) > 2))
                     {
                         //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => Iptc.Application2.DigitizationDate =>" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -875,6 +951,7 @@ QDateTime MetaEngine::getItemDateTime() const
             if (dateTime.isValid())
             {
                 //qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime => create date =>" << dateTime;
+
                 return dateTime;
             }
         }
@@ -1017,9 +1094,10 @@ QDateTime MetaEngine::getDigitizationDateTime(bool fallbackToCreationTime) const
                     QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
-                    if (dateTime.isValid() && dateMap.value(dateTime) > 1)
+                    if (dateTime.isValid() && (dateMap.value(dateTime) > 1))
                     {
                         qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime (XMP-Exif digitalized):" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -1033,9 +1111,10 @@ QDateTime MetaEngine::getDigitizationDateTime(bool fallbackToCreationTime) const
                     QDateTime dateTime = QDateTime::fromString(QLatin1String(it->toString().c_str()), Qt::ISODate);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
-                    if (dateTime.isValid() && dateMap.value(dateTime) > 1)
+                    if (dateTime.isValid() && (dateMap.value(dateTime) > 1))
                     {
                         qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime (XMP-Video digitalized):" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -1070,9 +1149,10 @@ QDateTime MetaEngine::getDigitizationDateTime(bool fallbackToCreationTime) const
                     QDateTime dateTime = QDateTime(date, time);
                     dateMap.insert(dateTime, dateMap.value(dateTime, 0) + 1);
 
-                    if (dateTime.isValid() && dateMap.value(dateTime) > 1)
+                    if (dateTime.isValid() && (dateMap.value(dateTime) > 1))
                     {
                         qCDebug(DIGIKAM_METAENGINE_LOG) << "DateTime (IPTC digitalized):" << dateTime;
+
                         return dateTime;
                     }
                 }
@@ -1131,11 +1211,16 @@ bool MetaEngine::getItemPreview(QImage& preview) const
     try
     {
         // In first we trying to get from Iptc preview tag.
+
         if (preview.loadFromData(getIptcTagData("Iptc.Application2.Preview")) )
+        {
             return true;
+        }
 
         if (preview.loadFromData(QByteArray::fromBase64(getXmpTagString("Xmp.digiKam.Preview", false).toUtf8())))
+        {
             return true;
+        }
 
         // TODO : Added here Makernotes preview extraction when Exiv2 will be fixed for that.
     }
@@ -1171,6 +1256,7 @@ bool MetaEngine::setItemPreview(const QImage& preview) const
         buffer.open(QIODevice::WriteOnly);
 
         // A little bit compressed preview jpeg image to limit IPTC size.
+
         preview.save(&buffer, "JPEG");
         buffer.close();
         qCDebug(DIGIKAM_METAENGINE_LOG) << "JPEG image preview size: (" << preview.width() << "x"
@@ -1181,6 +1267,7 @@ bool MetaEngine::setItemPreview(const QImage& preview) const
         d->iptcMetadata()["Iptc.Application2.Preview"] = val;
 
         // See https://www.iptc.org/std/IIM/4.1/specification/IIMV4.1.pdf Appendix A for details.
+
         d->iptcMetadata()["Iptc.Application2.PreviewFormat"]  = 11;  // JPEG
         d->iptcMetadata()["Iptc.Application2.PreviewVersion"] = 1;
 

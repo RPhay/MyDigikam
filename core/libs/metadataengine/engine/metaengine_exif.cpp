@@ -86,6 +86,7 @@ bool MetaEngine::clearExif() const
     try
     {
         d->exifMetadata().clear();
+
         return true;
     }
     catch(Exiv2::AnyError& e)
@@ -132,7 +133,9 @@ QByteArray MetaEngine::getExifEncoded(bool addExifHeader) const
     catch(Exiv2::AnyError& e)
     {
         if (!d->filePath.isEmpty())
+        {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "From file " << d->filePath.toLatin1().constData();
+        }
 
         d->printExiv2ExceptionError(QLatin1String("Cannot get Exif data using Exiv2 "), e);
     }
@@ -153,13 +156,16 @@ bool MetaEngine::setExif(const QByteArray& data) const
         if (!data.isEmpty())
         {
             Exiv2::ExifParser::decode(d->exifMetadata(), (const Exiv2::byte*)data.data(), data.size());
+
             return (!d->exifMetadata().empty());
         }
     }
     catch(Exiv2::AnyError& e)
     {
         if (!d->filePath.isEmpty())
+        {
             qCCritical(DIGIKAM_METAENGINE_LOG) << "From file " << d->filePath.toLatin1().constData();
+        }
 
         d->printExiv2ExceptionError(QLatin1String("Cannot set Exif data using Exiv2 "), e);
     }
@@ -188,6 +194,7 @@ QString MetaEngine::getExifComment(bool readDescription) const
                 QString exifComment = d->convertCommentValue(*it);
 
                 // some cameras fill the UserComment with whitespace
+
                 if (!exifComment.isEmpty() && !exifComment.trimmed().isEmpty())
                 {
                     return exifComment;
@@ -204,6 +211,7 @@ QString MetaEngine::getExifComment(bool readDescription) const
                     QString exifComment = d->convertCommentValue(*it2);
 
                     // Some cameras fill in nonsense default values
+
                     QStringList blackList;
                     blackList << QLatin1String("SONY DSC"); // + whitespace
                     blackList << QLatin1String("OLYMPUS DIGITAL CAMERA");
@@ -212,6 +220,7 @@ QString MetaEngine::getExifComment(bool readDescription) const
                     QString trimmedComment = exifComment.trimmed();
 
                     // some cameras fill the UserComment with whitespace
+
                     if (!exifComment.isEmpty() && !trimmedComment.isEmpty() && !blackList.contains(trimmedComment))
                     {
                         return exifComment;
@@ -367,6 +376,7 @@ bool MetaEngine::removeExifTag(const char* exifTagName) const
         if (it != d->exifMetadata().end())
         {
             d->exifMetadata().erase(it);
+
             return true;
         }
     }
@@ -420,6 +430,7 @@ bool MetaEngine::setExifTagLong(const char* exifTagName, long val) const
     try
     {
         d->exifMetadata()[exifTagName] = static_cast<int32_t>(val);     // krazy:exclude=typedefs
+
         return true;
     }
     catch(Exiv2::AnyError& e)
@@ -441,6 +452,7 @@ bool MetaEngine::setExifTagRational(const char* exifTagName, long int num, long 
     try
     {
         d->exifMetadata()[exifTagName] = Exiv2::Rational(num, den);
+
         return true;
     }
     catch(Exiv2::AnyError& e)
@@ -646,6 +658,7 @@ QString MetaEngine::createExifUserStringFromValue(const char* exifTagName, const
             case QVariant::Char:
                 datum = (std::string)val.toString().toLatin1().constData();
                 break;
+
             default:
                 break;
         }
@@ -688,7 +701,7 @@ bool MetaEngine::getExifTagLong(const char* exifTagName, long& val, int componen
         Exiv2::ExifData exifData(d->exifMetadata());
         Exiv2::ExifData::const_iterator it = exifData.findKey(exifKey);
 
-        if (it != exifData.end() && it->count() > 0)
+        if ((it != exifData.end()) && (it->count() > 0))
         {
             val = it->toLong(component);
 
@@ -984,6 +997,7 @@ bool MetaEngine::rotateExifQImage(QImage& image, ImageOrientation orientation) c
     if ((orientation != ORIENTATION_NORMAL) && (orientation != ORIENTATION_UNSPECIFIED))
     {
         image = image.transformed(matrix);
+
         return true;
     }
 
@@ -1035,20 +1049,26 @@ bool MetaEngine::setTiffThumbnail(const QImage& thumbImage) const
 
         Exiv2::ExifData::const_iterator pos = d->exifMetadata().findKey(Exiv2::ExifKey("Exif.Image.NewSubfileType"));
 
-        if (pos == d->exifMetadata().end() || pos->count() != 1 || pos->toLong() != 0)
+        if ((pos == d->exifMetadata().end()) || (pos->count() != 1) || (pos->toLong() != 0))
         {
+
 #if EXIV2_TEST_VERSION(0,27,0)
+
             throw Exiv2::Error(Exiv2::kerErrorMessage, "Exif.Image.NewSubfileType missing or not set as main image");
+
 #else
+
             throw Exiv2::Error(1, "Exif.Image.NewSubfileType missing or not set as main image");
+
 #endif
+
         }
 
         // Remove sub-IFD tags
 
         std::string subImage1("SubImage1");
 
-        for (Exiv2::ExifData::iterator md = d->exifMetadata().begin() ; md != d->exifMetadata().end() ;)
+        for (Exiv2::ExifData::iterator md = d->exifMetadata().begin() ; md != d->exifMetadata().end() ; )
         {
             if (md->groupName() == subImage1)
             {
@@ -1101,6 +1121,7 @@ bool MetaEngine::removeExifThumbnail() const
     try
     {
         // Remove all IFD0 subimages.
+
         Exiv2::ExifThumb thumb(d->exifMetadata());
         thumb.erase();
 
@@ -1121,7 +1142,9 @@ bool MetaEngine::removeExifThumbnail() const
 MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifKeysFilter, bool invertSelection) const
 {
     if (d->exifMetadata().empty())
+    {
        return MetaDataMap();
+    }
 
     QMutexLocker lock(&s_metaEngineMutex);
 
@@ -1152,6 +1175,7 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
             else if (key == QLatin1String("Exif.CanonCs.LensType") && md->toLong() == 65535)
             {
                 // FIXME: workaround for a possible crash in Exiv2 pretty-print function for the Exif.CanonCs.LensType.
+
                 tagValue = QString::fromLocal8Bit(md->toString().c_str());
             }
             else
@@ -1160,6 +1184,7 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
                 md->write(os, &exifData);
 
                 // Exif tag contents can be an translated strings, no only simple ascii.
+
                 tagValue = QString::fromLocal8Bit(os.str().c_str());
             }
 
@@ -1250,7 +1275,7 @@ MetaEngine::TagsMap MetaEngine::getStdExifTagsList() const
 
                 ++(*it);
             }
-            while((*it)->tag_ != 0xffff);
+            while ((*it)->tag_ != 0xffff);
         }
 
         return tagsMap;

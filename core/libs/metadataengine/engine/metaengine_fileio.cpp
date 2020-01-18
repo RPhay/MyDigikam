@@ -174,15 +174,22 @@ bool MetaEngine::loadFromSidecarAndMerge(const QString& filePath)
             if (xmpSidecarFileInfo.exists() && xmpSidecarFileInfo.isReadable())
             {
                 // Read sidecar data
+
                 xmpsidecar = Exiv2::ImageFactory::open(QFile::encodeName(xmpSidecarPath).constData());
                 xmpsidecar->readMetadata();
 
                 // Merge
+
 #if EXIV2_TEST_VERSION(0,27,99)
+
                 d->loadSidecarData(std::move(xmpsidecar));
+
 #else
+
                 d->loadSidecarData(xmpsidecar);
+
 #endif
+
                 hasLoaded = true;
             }
         }
@@ -211,14 +218,15 @@ bool MetaEngine::save(const QString& imageFilePath, bool setVersion) const
     // If our image is really a symlink, we should follow the symlink so that
     // when we delete the file and rewrite it, we are honoring the symlink
     // (rather than just deleting it and putting a file there).
-
+    //
     // However, this may be surprising to the user when they are writing sidecar
     // files.  They might expect them to show up where the symlink is.  So, we
     // shouldn't follow the link when figuring out what the filename for the
     // sidecar should be.
-
+    //
     // Note, we are not yet handling the case where the sidecar itself is a
     // symlink.
+
     QString regularFilePath = imageFilePath; // imageFilePath might be a
                                              // symlink.  Below we will change
                                              // regularFile to the pointed to
@@ -230,10 +238,11 @@ bool MetaEngine::save(const QString& imageFilePath, bool setVersion) const
         qCDebug(DIGIKAM_METAENGINE_LOG) << "filePath" << imageFilePath << "is a symlink."
                                         << "Using target" << givenFileInfo.canonicalFilePath();
 
-        regularFilePath = givenFileInfo.canonicalFilePath();// Walk all the symlinks
+        regularFilePath = givenFileInfo.canonicalFilePath(); // Walk all the symlinks
     }
 
     // NOTE: see B.K.O #137770 & #138540 : never touch the file if is read only.
+
     QFileInfo finfo(regularFilePath);
     QFileInfo dinfo(finfo.path());
 
@@ -256,15 +265,18 @@ bool MetaEngine::save(const QString& imageFilePath, bool setVersion) const
         case WRITE_TO_SIDECAR_ONLY:
             writeToSidecar = true;
             break;
+
         case WRITE_TO_FILE_ONLY:
             writeToFile    = true;
             break;
+
         case WRITE_TO_SIDECAR_AND_FILE:
             writeToFile    = true;
             writeToSidecar = true;
             break;
+
         case WRITE_TO_SIDECAR_ONLY_FOR_READ_ONLY_FILES:
-            writeToFile = true;
+            writeToFile                     = true;
             writeToSidecarIfFileNotPossible = true;
             break;
     }
@@ -291,7 +303,7 @@ bool MetaEngine::save(const QString& imageFilePath, bool setVersion) const
         }
     }
 
-    return writtenToFile || writtenToSidecar;
+    return (writtenToFile || writtenToSidecar);
 }
 
 bool MetaEngine::applyChanges(bool setVersion) const
