@@ -656,7 +656,7 @@ public:
     bool       reverseExifRotate(const QString& filePath);
 
     /**
-     * Returns DMetadata::Orientation from rotates and/or flip the DImg
+     * Returns current DMetadata::Orientation from DImg
      */
     int        orientation() const;
 

@@ -132,8 +132,7 @@ public:
         height(0),
         data(nullptr),
         lanczos_func(nullptr),
-        mutex(QMutex::Recursive),
-        orientation(DMetadata::ORIENTATION_UNSPECIFIED)
+        mutex(QMutex::Recursive)
     {
     }
 
@@ -260,8 +259,6 @@ public:
     LANCZOS_DATA_TYPE*      lanczos_func;
 
     QMutex                  mutex;
-
-    int                     orientation;
 
     MetaEngineData          metaData;
     QMap<QString, QVariant> attributes;
