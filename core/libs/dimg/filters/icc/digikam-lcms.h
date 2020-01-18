@@ -71,7 +71,7 @@ typedef unsigned short WORD,     *LPWORD;
 typedef unsigned long  DWORD,    *LPDWORD;
 typedef void*          LPVOID;
 
-// Colorspaces
+/// Colorspaces
 typedef cmsCIEXYZ FAR* LPcmsCIEXYZ;
 typedef cmsCIExyY FAR* LPcmsCIExyY;
 typedef cmsCIELab FAR* LPcmsCIELab;
@@ -83,7 +83,9 @@ typedef void* cmsHPROFILE;             ///< Opaque typedefs to hide internals
 typedef cmsCIEXYZTRIPLE MAT3;
 typedef cmsCIEXYZTRIPLE FAR* LPMAT3;
 
-/* profileClass enumerations */
+/**
+ * Profile Class Enumerations
+ */
 typedef enum
 {
     icSigInputClass                     = 0x73636E72L,  ///< 'scnr'
@@ -132,8 +134,11 @@ typedef enum
 } icColorSpaceSignature;
 
 
-/*------------------------------------------------------------------------*/
-/* public tags and sizes */
+//------------------------------------------------------------------------
+
+/**
+ * public tags and sizes
+ */
 typedef enum
 {
     icSigAToB0Tag                       = 0x41324230L,  ///< 'A2B0'
