@@ -171,7 +171,7 @@ void DigikamApp::setupActions()
     d->refreshAction->setWhatsThis(i18n("Refresh the current contents."));
     connect(d->refreshAction, SIGNAL(triggered()), d->view, SLOT(slotRefresh()));
     ac->addAction(QLatin1String("view_refresh"), d->refreshAction);
-    ac->setDefaultShortcut(d->refreshAction, Qt::Key_F5);
+    ac->setDefaultShortcuts(d->refreshAction,  QList<QKeySequence>() << Qt::Key_F5 << (Qt::CTRL + Qt::Key_F5));
 
     // -----------------------------------------------------------------
 

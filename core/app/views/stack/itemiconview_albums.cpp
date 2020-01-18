@@ -427,15 +427,24 @@ void ItemIconView::slotRefresh()
 #endif //HAVE_MEDIAPLAYER
         default:
             Album* const album = currentAlbum();
-            if (!album) return;
 
-            // force reloading of thumbnails
-            LoadingCacheInterface::cleanThumbnailCache();
+            if (!album)
+            {
+                return;
+            }
 
-            ThumbsGenerator* const tool = new ThumbsGenerator(true, album->id());
-            tool->start();
+            if (qApp->keyboardModifiers() != Qt::ControlModifier)
+            {
+                // force reloading of thumbnails
+
+                LoadingCacheInterface::cleanThumbnailCache();
+
+                ThumbsGenerator* const tool = new ThumbsGenerator(true, album->id());
+                tool->start();
+            }
 
             // if physical album, schedule a collection scan of current album's path
+
             if (album->type() == Album::PHYSICAL)
             {
                 NewItemsFinder* const tool2 = new NewItemsFinder(NewItemsFinder::ScheduleCollectionScan,
@@ -446,6 +455,7 @@ void ItemIconView::slotRefresh()
 
                 tool2->start();
             }
+
             break;
     }
 }
