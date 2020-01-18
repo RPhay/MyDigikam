@@ -62,7 +62,9 @@ void DNGWriter::Private::reset()
 void DNGWriter::Private::cleanup()
 {
     if (::remove(QFile::encodeName(outputFile).constData()) != 0)
+    {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot remove " << outputFile;
+    }
 }
 
 dng_date_time DNGWriter::Private::dngDateTime(const QDateTime& qDT) const
@@ -74,6 +76,7 @@ dng_date_time DNGWriter::Private::dngDateTime(const QDateTime& qDT) const
     dngDT.fHour   = qDT.time().hour();
     dngDT.fMinute = qDT.time().minute();
     dngDT.fSecond = qDT.time().second();
+
     return dngDT;
 }
 
@@ -85,9 +88,9 @@ bool DNGWriter::Private::fujiRotate(QByteArray& rawData, DRawInfo& identify) con
     unsigned short* tmp    = reinterpret_cast<unsigned short*>(tmpData.data());
     unsigned short* output = reinterpret_cast<unsigned short*>(rawData.data());
 
-    for (int row=0; row < height; ++row)
+    for (int row=0 ; row < height ; ++row)
     {
-        for (int col=0; col < width; ++col)
+        for (int col=0 ; col < width ; ++col)
         {
             output[col * height + row] = tmp[row * width + col];
         }

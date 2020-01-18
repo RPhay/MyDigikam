@@ -22,25 +22,25 @@
  * ============================================================ */
 
 /**
-    References about DNG:
-    DNG SDK tutorial:    http://www.adobeforums.com/webx/.3bc2944e
-                         http://www.adobeforums.com/webx/.3c054bde
-    DNG review:          http://www.barrypearson.co.uk/articles/dng/index.htm
-    DNG intro:           https://www.adobe.com/digitalimag/pdfs/dng_primer.pdf
-                         https://www.adobe.com/products/dng/pdfs/DNG_primer_manufacturers.pdf
-    DNG Specification:   https://www.adobe.com/products/dng/pdfs/dng_spec_1_2_0_0.pdf
-    TIFF/EP Spec.:       http://www.map.tu.chiba-u.ac.jp/IEC/100/TA2/recdoc/N4378.pdf
-    DNG SDK reference:   http://www.thomasdideriksen.dk/misc/File%20Formats/dng_sdk_refman.pdf
-    DNG SDK tarball:     ftp://ftp.adobe.com/pub/adobe/dng/dng_sdk_1_2.zip
-    DNG users forum:     http://www.adobeforums.com/webx/.3bb5f0ec
-
-    Applications using DNG SDK:
-    DNG4PS2:             http://dng4ps2.chat.ru/index_en.html
-    CORNERFIX:           http://sourceforge.net/projects/cornerfix
-    ADOBE DNG CONVERTER: ftp://ftp.adobe.com/pub/adobe/photoshop/cameraraw/win/4.x
-    DNGCONVERT:          https://github.com/jmue/dngconvert
-    MOVIE2DNG:           https://elphel.svn.sourceforge.net/svnroot/elphel/tools/Movie2DNG
-*/
+ * References about DNG:
+ * DNG SDK tutorial:    http://www.adobeforums.com/webx/.3bc2944e
+ *                      http://www.adobeforums.com/webx/.3c054bde
+ * DNG review:          http://www.barrypearson.co.uk/articles/dng/index.htm
+ * DNG intro:           https://www.adobe.com/digitalimag/pdfs/dng_primer.pdf
+ *                       https://www.adobe.com/products/dng/pdfs/DNG_primer_manufacturers.pdf
+ * DNG Specification:   https://www.adobe.com/products/dng/pdfs/dng_spec_1_2_0_0.pdf
+ * TIFF/EP Spec.:       http://www.map.tu.chiba-u.ac.jp/IEC/100/TA2/recdoc/N4378.pdf
+ * DNG SDK reference:   http://www.thomasdideriksen.dk/misc/File%20Formats/dng_sdk_refman.pdf
+ * DNG SDK tarball:     ftp://ftp.adobe.com/pub/adobe/dng/dng_sdk_1_2.zip
+ * DNG users forum:     http://www.adobeforums.com/webx/.3bb5f0ec
+ *
+ * Applications using DNG SDK:
+ * DNG4PS2:             http://dng4ps2.chat.ru/index_en.html
+ * CORNERFIX:           http://sourceforge.net/projects/cornerfix
+ * ADOBE DNG CONVERTER: ftp://ftp.adobe.com/pub/adobe/photoshop/cameraraw/win/4.x
+ * DNGCONVERT:          https://github.com/jmue/dngconvert
+ * MOVIE2DNG:           https://elphel.svn.sourceforge.net/svnroot/elphel/tools/Movie2DNG
+ */
 
 #include "dngwriter_p.h"
 
@@ -154,7 +154,6 @@ QString DNGWriter::outputFile() const
     return d->outputFile;
 }
 
-// FIXME: Wow, this is a LOOOOOOOONG method... We should try to refactor it.
 int DNGWriter::convert()
 {
     d->cancel = false;
@@ -175,10 +174,10 @@ int DNGWriter::convert()
             dngFilePath = QString(inputInfo.completeBaseName() + QLatin1String(".dng"));
         }
 
-        QFileInfo          outputInfo(dngFilePath);
-        QByteArray         rawData;
-        DRawInfo identify;
-        DRawInfo identifyMake;
+        QFileInfo  outputInfo(dngFilePath);
+        QByteArray rawData;
+        DRawInfo   identify;
+        DRawInfo   identifyMake;
 
         // -----------------------------------------------------------------------------------------
 
@@ -193,7 +192,9 @@ int DNGWriter::convert()
         }
 
         dng_rect activeArea;
+
         // TODO: need to get correct default crop size to avoid artifacts at the borders
+
         int activeWidth  = 0;
         int activeHeight = 0;
         int outputHeight = 0;
@@ -217,7 +218,9 @@ int DNGWriter::convert()
         }
 
         if (d->cancel)
+        {
             return PROCESSCANCELED;
+        }
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Raw data loaded:" ;
         qCDebug(DIGIKAM_GENERAL_LOG) << "--- Data Size:     " << rawData.size() << " bytes";
@@ -247,12 +250,14 @@ int DNGWriter::convert()
         }
 
         // Check if CFA layout is supported by DNG SDK.
+
         Private::DNGBayerPattern bayerPattern = Private::Unknown;
         uint32 filter                         = 0;
         bool fujiRotate90                     = false;
 
         // Standard bayer layouts
-        if (identify.filterPattern == QLatin1String("GRBGGRBGGRBGGRBG"))
+
+        if      (identify.filterPattern == QLatin1String("GRBGGRBGGRBGGRBG"))
         {
             bayerPattern = Private::Standard;
             filter       = 0;
@@ -275,6 +280,7 @@ int DNGWriter::convert()
         else if ((identify.filterPattern == QLatin1String("RGBGRGBGRGBGRGBG")) && (identifyMake.make == QLatin1String("FUJIFILM")))
         {
             // Fuji layouts
+
             bayerPattern = Private::Fuji;
             fujiRotate90 = false;
             filter       = 0;
@@ -282,13 +288,16 @@ int DNGWriter::convert()
         else if ((identify.filterPattern == QLatin1String("RBGGBRGGRBGGBRGG")) && (identifyMake.make == QLatin1String("FUJIFILM")))
         {
             // Fuji layouts
+
             bayerPattern = Private::Fuji;
             fujiRotate90 = true;
             filter       = 0;
         }
         else if ((identify.rawColors == 3)                 &&
                  (identify.filterPattern.isEmpty())        &&
-                 //(identify.filterPattern == QString("")) &&
+/*
+                 (identify.filterPattern == QString(""))   &&
+*/
                  ((uint32)rawData.size() == identify.outputSize.width() * identify.outputSize.height() * 3 * sizeof(uint16)))
         {
             bayerPattern = Private::LinearRaw;
@@ -303,11 +312,11 @@ int DNGWriter::convert()
                 return FILENOTSUPPORTED;
             }
 
-            for (int i = 0; i < 16; ++i)
+            for (int i = 0 ; i < 16 ; ++i)
             {
                 filter = filter >> 2;
 
-                if (identify.filterPattern[i] == QLatin1Char('G'))
+                if      (identify.filterPattern[i] == QLatin1Char('G'))
                 {
                     filter |= 0x00000000;
                 }
@@ -354,6 +363,7 @@ int DNGWriter::convert()
         activeHeight = identify.outputSize.height();
 
         // Check if number of Raw Color components is supported.
+
         if ((identify.rawColors != 3) && (identify.rawColors != 4))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Number of Raw color components not supported. Aborted..." ;
@@ -363,7 +373,8 @@ int DNGWriter::convert()
         int width  = identify.outputSize.width();
         int height = identify.outputSize.height();
 
-/*      // NOTE: code to hack RAW data extraction
+/*
+        // NOTE: code to hack RAW data extraction
 
         QString   rawdataFilePath(inputInfo.completeBaseName() + QString(".dat"));
         QFileInfo rawdataInfo(rawdataFilePath);
@@ -381,7 +392,9 @@ int DNGWriter::convert()
         // -----------------------------------------------------------------------------------------
 
         if (d->cancel)
+        {
             return PROCESSCANCELED;
+        }
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG memory allocation and initialization" ;
 
@@ -397,7 +410,9 @@ int DNGWriter::convert()
         AutoPtr<dng_image> image(new dng_simple_image(rect, (bayerPattern == Private::LinearRaw) ? 3 : 1, ttShort, memalloc));
 
         if (d->cancel)
+        {
             return PROCESSCANCELED;
+        }
 
         // -----------------------------------------------------------------------------------------
 
@@ -415,7 +430,9 @@ int DNGWriter::convert()
         image->Put(buffer);
 
         if (d->cancel)
+        {
             return PROCESSCANCELED;
+        }
 
         // -----------------------------------------------------------------------------------------
 
@@ -446,7 +463,7 @@ int DNGWriter::convert()
 
         for (int i = 0 ; i < qMax(4, identify.colorKeys.length()) ; ++i)
         {
-            if (identify.colorKeys[i] == QLatin1Char('R'))
+            if      (identify.colorKeys[i] == QLatin1Char('R'))
             {
                 colorCodes[i] = colorKeyRed;
             }
@@ -479,17 +496,22 @@ int DNGWriter::convert()
             case Private::Standard:
                 // Standard bayer mosaicing. All work fine there.
                 // Bayer CCD mask: https://en.wikipedia.org/wiki/Bayer_filter
+
                 negative->SetBayerMosaic(filter);
                 break;
+
             case Private::Fuji:
                 // TODO: Fuji is special case. Need to setup different bayer rules here.
                 // It do not work in all settings. Need indeep investiguations.
                 // Fuji superCCD: https://en.wikipedia.org/wiki/Super_CCD
+
                 negative->SetFujiMosaic(filter);
                 break;
+
             case Private::FourColor:
                 negative->SetQuadMosaic(filter);
                 break;
+
             default:
                 break;
         }
@@ -554,6 +576,7 @@ int DNGWriter::convert()
         prof->SetName(QString::fromUtf8("%1 %2").arg(identify.make, identify.model).toLatin1().constData());
 
         // Set Camera->XYZ Color matrix as profile.
+
         dng_matrix matrix;
 
         switch (identify.rawColors)
@@ -581,6 +604,7 @@ int DNGWriter::convert()
 
                     break;
                 }
+
             case 4:
                 {
                     dng_matrix_4by3 camXYZ;
@@ -615,7 +639,7 @@ int DNGWriter::convert()
 
         dng_vector camNeutral(identify.rawColors);
 
-        for (int i = 0; i < identify.rawColors; ++i)
+        for (int i = 0 ; i < identify.rawColors ; ++i)
         {
             camNeutral[i] = 1.0/identify.cameraMult[i];
         }
@@ -623,7 +647,9 @@ int DNGWriter::convert()
         negative->SetCameraNeutral(camNeutral);
 
         if (d->cancel)
+        {
             return PROCESSCANCELED;
+        }
 
         // -----------------------------------------------------------------------------------------
 
@@ -642,6 +668,7 @@ int DNGWriter::convert()
             long       val;
 
             // Time from original shot
+
             dng_date_time_info dti;
             dti.SetDateTime(d->dngDateTime(meta.getItemDateTime()));
             exif->fDateTimeOriginal = dti;
@@ -838,10 +865,12 @@ int DNGWriter::convert()
             // Canon Markernotes
 
             if (meta.getExifTagLong("Exif.Canon.SerialNumber", val))                   exif->fCameraSerialNumber.Set_ASCII((QString::fromUtf8("%1").arg(val)).toLatin1().constData());
-            //if (meta.getExifTagLong("Exif.CanonCs.LensType", val))                     exif->fLensID.Set_ASCII((QString::fromUtf8("%1").arg(val)).toLatin1().constData());
-            //if (meta.getExifTagLong("Exif.CanonCs.FlashActivity", val))                exif->fFlash                    = (uint32)val;
-            //if (meta.getExifTagLong("Exif.CanonFi.FileNumber", val))                   exif->fImageNumber              = (uint32)val;
-            //if (meta.getExifTagLong("Exif.CanonCs.MaxAperture", val))                  exif->fMaxApertureValue         = dng_urational(val, 100000);
+/*
+            if (meta.getExifTagLong("Exif.CanonCs.LensType", val))                     exif->fLensID.Set_ASCII((QString::fromUtf8("%1").arg(val)).toLatin1().constData());
+            if (meta.getExifTagLong("Exif.CanonCs.FlashActivity", val))                exif->fFlash                    = (uint32)val;
+            if (meta.getExifTagLong("Exif.CanonFi.FileNumber", val))                   exif->fImageNumber              = (uint32)val;
+            if (meta.getExifTagLong("Exif.CanonCs.MaxAperture", val))                  exif->fMaxApertureValue         = dng_urational(val, 100000);
+*/
             if (meta.getExifTagLong("Exif.CanonCs.ExposureProgram", val))
             {
                 switch (val)
@@ -849,15 +878,19 @@ int DNGWriter::convert()
                     case 1:
                         exif->fExposureProgram = 2;
                         break;
+
                     case 2:
                         exif->fExposureProgram = 4;
                         break;
+
                     case 3:
                         exif->fExposureProgram = 3;
                         break;
+
                     case 4:
                         exif->fExposureProgram = 1;
                         break;
+
                     default:
                         break;
                 }
@@ -870,18 +903,23 @@ int DNGWriter::convert()
                     case 1:
                         exif->fMeteringMode = 3;
                         break;
+
                     case 2:
                         exif->fMeteringMode = 1;
                         break;
+
                     case 3:
                         exif->fMeteringMode = 5;
                         break;
+
                     case 4:
                         exif->fMeteringMode = 6;
                         break;
+
                     case 5:
                         exif->fMeteringMode = 2;
                         break;
+
                     default:
                         break;
                 }
@@ -896,7 +934,7 @@ int DNGWriter::convert()
             if (meta.getExifTagLong("Exif.CanonCs.LensType", canonLensType))           exif->fLensID.Set_ASCII((QString::fromUtf8("%1").arg(canonLensType)).toLatin1().constData());
             str = meta.getExifTagString("Exif.Canon.LensModel");
 
-            if (!str.isEmpty())
+            if      (!str.isEmpty())
             {
                 exif->fLensName.Set_ASCII(str.trimmed().toLatin1().constData());
             }
@@ -937,7 +975,7 @@ int DNGWriter::convert()
                 exif->fLensID.Set_ASCII(QString::fromUtf8("%1").arg(pentaxLensId1, pentaxLensId2).toLatin1().constData());
             }
 
-           // Olympus Makernotes
+            // Olympus Makernotes
 
             str = meta.getExifTagString("Exif.OlympusEq.SerialNumber");
             if (!str.isEmpty()) exif->fCameraSerialNumber.Set_ASCII(str.trimmed().toLatin1().constData());
@@ -1083,7 +1121,7 @@ int DNGWriter::convert()
 
             QDataStream compressedDataStream(&compressedFile);
 
-            for (quint32 block = 0; block < forkBlocks; ++block)
+            for (quint32 block = 0 ; block < forkBlocks ; ++block)
             {
                 int originalBlockLength = originalDataStream.readRawData(originalDataBlock.data(), CHUNK);
 
@@ -1136,26 +1174,33 @@ int DNGWriter::convert()
         }
 
         if (d->cancel)
+        {
             return PROCESSCANCELED;
+        }
 
         // -----------------------------------------------------------------------------------------
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Build DNG Negative" ;
 
         // Assign Raw image data.
+
         negative->SetStage1Image(image);
 
         // Compute linearized and range mapped image
+
         negative->BuildStage2Image(host);
 
         // Compute demosaiced image (used by preview and thumbnail)
+
         negative->BuildStage3Image(host);
 
         negative->SynchronizeMetadata();
         negative->RebuildIPTC(true, false);
 
         if (d->cancel)
+        {
             return PROCESSCANCELED;
+        }
 
         // -----------------------------------------------------------------------------------------
 
@@ -1166,6 +1211,7 @@ int DNGWriter::convert()
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG preview image creation" ;
 
             // Construct a preview image as TIFF format.
+
             AutoPtr<dng_image> tiffImage;
             dng_render tiff_render(host, *negative);
             tiff_render.SetFinalSpace(dng_space_sRGB::Get());
@@ -1180,6 +1226,7 @@ int DNGWriter::convert()
                                   ccUncompressed, negative.Get(), &tiff_render.FinalSpace());
 
             // Write TIFF preview image data to a temp JPEG file
+
             std::vector<char> tiff_mem_buffer(dms->Length());
             dms->SetReadPosition(0);
             dms->Get(&tiff_mem_buffer.front(), tiff_mem_buffer.size());
@@ -1208,6 +1255,7 @@ int DNGWriter::convert()
             }
 
             // Load JPEG preview file data in DNG preview container.
+
             AutoPtr<dng_jpeg_preview> jpeg_preview;
             jpeg_preview.Reset(new dng_jpeg_preview);
             jpeg_preview->fPhotometricInterpretation = piYCbCr;
@@ -1225,7 +1273,9 @@ int DNGWriter::convert()
         }
 
         if (d->cancel)
+        {
             return PROCESSCANCELED;
+        }
 
         // -----------------------------------------------------------------------------------------
 
@@ -1239,7 +1289,9 @@ int DNGWriter::convert()
         thumbnail.fImage.Reset(thumbnail_render.Render());
 
         if (d->cancel)
+        {
             return PROCESSCANCELED;
+        }
 
         // -----------------------------------------------------------------------------------------
 
@@ -1285,6 +1337,7 @@ int DNGWriter::convert()
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Setting modification date from meta data: " << date.toString();
 
             // don't touch access time
+
             QT_STATBUF st;
 
             if (QT_STAT(QFile::encodeName(dngFilePath).constData(), &st) == 0)

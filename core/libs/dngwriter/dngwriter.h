@@ -65,20 +65,20 @@ public:
     void setInputFile(const QString& filePath);
     void setOutputFile(const QString& filePath);
 
-    QString inputFile()  const;
-    QString outputFile() const;
+    QString inputFile()             const;
+    QString outputFile()            const;
 
     void setCompressLossLess(bool b);
-    bool compressLossLess() const;
+    bool compressLossLess()         const;
 
     void setUpdateFileDate(bool b);
-    bool updateFileDate() const;
+    bool updateFileDate()           const;
 
     void setBackupOriginalRawFile(bool b);
-    bool backupOriginalRawFile() const;
+    bool backupOriginalRawFile()    const;
 
     void setPreviewMode(int mode);
-    int  previewMode() const;
+    int  previewMode()              const;
 
     int  convert();
     void cancel();

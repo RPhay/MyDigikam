@@ -87,7 +87,7 @@ public:
 
     void          reset();
     void          cleanup();
-    dng_date_time dngDateTime(const QDateTime& qDT) const;
+    dng_date_time dngDateTime(const QDateTime& qDT)          const;
 
     bool fujiRotate(QByteArray& rawData, DRawInfo& identify) const;
 

@@ -52,11 +52,11 @@ class Q_DECL_HIDDEN DNGSettings::Private
 public:
 
     explicit Private()
+      : previewModeLabel(nullptr),
+        compressLossLess(nullptr),
+        backupOriginalRawFile(nullptr),
+        previewModeCB(nullptr)
     {
-        compressLossLess      = nullptr;
-        previewModeCB         = nullptr;
-        previewModeLabel      = nullptr;
-        backupOriginalRawFile = nullptr;
     }
 
     QLabel*    previewModeLabel;

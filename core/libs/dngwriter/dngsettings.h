@@ -44,13 +44,13 @@ public:
     ~DNGSettings();
 
     void setCompressLossLess(bool b);
-    bool compressLossLess() const;
+    bool compressLossLess()         const;
 
     void setPreviewMode(int mode);
-    int  previewMode() const;
+    int  previewMode()              const;
 
     void setBackupOriginalRawFile(bool b);
-    bool backupOriginalRawFile() const;
+    bool backupOriginalRawFile()    const;
 
     void setDefaultSettings();
 
