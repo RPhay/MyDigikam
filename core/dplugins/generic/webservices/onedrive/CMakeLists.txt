@@ -25,7 +25,6 @@ set(onedriveplugin_SRCS
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    OneDrive
                            SOURCES ${onedriveplugin_SRCS}
-                           DEPENDS ${QWEB_BACKEND}
 )
 
 add_subdirectory(icons)

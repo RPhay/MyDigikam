@@ -42,7 +42,6 @@
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QMessageBox>
-#include <QDesktopServices>
 #include <QUrlQuery>
 #include <QSettings>
 #include <QJsonDocument>
@@ -57,6 +56,7 @@
 // Local includes
 
 #include "gdmpform.h"
+#include "webbrowserdlg.h"
 #include "digikam_debug.h"
 #include "wstoolutils.h"
 #include "o0globals.h"
@@ -72,58 +72,53 @@ class Q_DECL_HIDDEN GSTalkerBase::Private
 public:
 
     explicit Private()
+      : parent(nullptr),
+        o2(nullptr),
+        settings(nullptr),
+        browser(nullptr)
     {
-        parent       = nullptr;
-
         apikey       = QLatin1String("258540448336-hgdegpohibcjasvk1p595fpvjor15pbc.apps.googleusercontent.com");
         clientSecret = QLatin1String("iiIKTNM4ggBXiTdquAzbs2xw");
-        /* Old api key and secret below only work for gdrive, not gphoto
-         * Switch to new api key and secret above
-         * apikey       = QLatin1String("735222197981-mrcgtaqf05914buqjkts7mk79blsquas.apps.googleusercontent.com");
-         * clientSecret = QLatin1String("4MJOS0u1-_AUEKJ0ObA-j22U");
-         */
-
         authUrl      = QLatin1String("https://accounts.google.com/o/oauth2/auth");
         tokenUrl     = QLatin1String("https://accounts.google.com/o/oauth2/token");
         refreshUrl   = QLatin1String("https://accounts.google.com/o/oauth2/token");
-
-        o2           = nullptr;
-        settings     = nullptr;
     }
 
-    QWidget*   parent;
+    QWidget*       parent;
 
-    QString    authUrl;
-    QString    tokenUrl;
-    QString    refreshUrl;
+    QString        authUrl;
+    QString        tokenUrl;
+    QString        refreshUrl;
 
-    QString    apikey;
-    QString    clientSecret;
+    QString        apikey;
+    QString        clientSecret;
 
-    O2*        o2;
-    QSettings* settings;
+    O2*            o2;
+    QSettings*     settings;
+    WebBrowserDlg* browser;
 };
 
 GSTalkerBase::GSTalkerBase(QWidget* const parent, const QStringList& scope, const QString& serviceName)
-    : d(new Private)
+    : m_scope(scope),
+      m_reply(nullptr),
+      m_serviceName(serviceName),
+      d(new Private)
 {
-    m_reply         = nullptr;
-    m_scope         = scope;
-    m_serviceName   = serviceName;
-    d->parent       = parent;
+    d->parent = parent;
 
     // Ported to O2
-    d->o2 = new O2(this);
+    d->o2     = new O2(this);
     d->o2->setClientId(d->apikey);
     d->o2->setClientSecret(d->clientSecret);
 
     // OAuth2 flow control
-    d->o2->setRequestUrl(d->authUrl);
-    d->o2->setTokenUrl(d->tokenUrl);
-    d->o2->setRefreshTokenUrl(d->refreshUrl);
     d->o2->setLocalPort(8000);
-    d->o2->setGrantFlow(O2::GrantFlow::GrantFlowAuthorizationCode);
+    d->o2->setTokenUrl(d->tokenUrl);
+    d->o2->setRequestUrl(d->authUrl);
+    d->o2->setRefreshTokenUrl(d->refreshUrl);
+    //d->o2->setUseExternalWebInterceptor(true);
     d->o2->setScope(m_scope.join(QLatin1String(" ")));
+    d->o2->setGrantFlow(O2::GrantFlow::GrantFlowAuthorizationCode);
 
     // OAuth configuration saved to between dk sessions
     d->settings                  = WSToolUtils::getOauthSettings(this);
@@ -179,6 +174,14 @@ void GSTalkerBase::unlink()
     m_accessToken.clear();
 }
 
+void GSTalkerBase::slotLinkingFailed()
+{
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to " << m_serviceName << " fail";
+
+    emit signalBusy(false);
+    emit signalAuthenticationRefused();
+}
+
 void GSTalkerBase::slotLinkingSucceeded()
 {
     if (!d->o2->linked())
@@ -186,6 +189,11 @@ void GSTalkerBase::slotLinkingSucceeded()
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UNLINK to " << m_serviceName << " ok";
         emit signalBusy(false);
         return;
+    }
+
+    if (d->browser)
+    {
+        d->browser->close();
     }
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to " << m_serviceName << " ok";
@@ -196,18 +204,41 @@ void GSTalkerBase::slotLinkingSucceeded()
     emit signalAccessTokenObtained();
 }
 
-void GSTalkerBase::slotLinkingFailed()
+void GSTalkerBase::slotCatchUrl(const QUrl& url)
 {
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "LINK to " << m_serviceName << " fail";
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Received URL from webview:" << url;
+/*
+    QString   str = url.toString();
+    QUrlQuery query(str.section(QLatin1Char('?'), -1, -1));
 
-    emit signalBusy(false);
-    emit signalAuthenticationRefused();
+    if (query.hasQueryItem(QLatin1String("oauth_token")))
+    {
+        QMultiMap<QString, QString> queryParams;
+        queryParams.insert(QLatin1String("oauth_token"),
+                                         query.queryItemValue(QLatin1String("oauth_token")));
+        queryParams.insert(QLatin1String("oauth_verifier"),
+                                         query.queryItemValue(QLatin1String("oauth_verifier")));
+
+        d->o2->onVerificationReceived(queryParams);
+    }
+*/
 }
 
 void GSTalkerBase::slotOpenBrowser(const QUrl& url)
 {
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Open browser...";
-    QDesktopServices::openUrl(url);;
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Open Browser... (" << url << ")";
+
+    delete d->browser;
+    d->browser = new WebBrowserDlg(url, d->parent, true);
+    d->browser->setModal(true);
+
+    connect(d->browser, SIGNAL(urlChanged(QUrl)),
+            this, SLOT(slotCatchUrl(QUrl)));
+
+    connect(d->browser, SIGNAL(closeView(bool)),
+            this, SIGNAL(signalBusy(bool)));
+
+    d->browser->show();
 }
 
 bool GSTalkerBase::authenticated() const

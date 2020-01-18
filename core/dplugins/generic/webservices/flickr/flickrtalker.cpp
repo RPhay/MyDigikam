@@ -38,7 +38,6 @@
 #include <QMessageBox>
 #include <QApplication>
 #include <QProgressDialog>
-#include <QDesktopServices>
 #include <QNetworkAccessManager>
 
 // KDE includes

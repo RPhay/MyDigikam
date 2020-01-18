@@ -67,9 +67,10 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    void slotLinkingSucceeded();
     void slotLinkingFailed();
-    void slotOpenBrowser(const QUrl&);
+    void slotLinkingSucceeded();
+    void slotCatchUrl(const QUrl& url);
+    void slotOpenBrowser(const QUrl& url);
 
 private:
 

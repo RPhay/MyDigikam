@@ -24,7 +24,6 @@ set(pinterestplugin_SRCS
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    Pinterest
                            SOURCES ${pinterestplugin_SRCS}
-                           DEPENDS ${QWEB_BACKEND}
 )
 
 add_subdirectory(icons)
