@@ -23,10 +23,27 @@
 #ifndef DIGIKAM_DNG_WRITER_PRIVATE_H
 #define DIGIKAM_DNG_WRITER_PRIVATE_H
 
+#include "dngwriter.h"
+
+// C ansi includes
+
+extern "C"
+{
+#include <sys/stat.h>
+#include <utime.h>
+}
+
 // Qt includes
 
+#include <QImage>
 #include <QString>
+#include <QByteArray>
+#include <QFile>
+#include <QFileInfo>
+#include <QIODevice>
+#include <QTemporaryFile>
 #include <QDateTime>
+#include <qplatformdefs.h>
 
 // Local includes
 
@@ -59,7 +76,11 @@
 
 // Local includes
 
-#include "dngwriter.h"
+#include "digikam_debug.h"
+#include "dngwriterhost.h"
+#include "dmetadata.h"
+
+#define CHUNK 65536
 
 namespace Digikam
 {

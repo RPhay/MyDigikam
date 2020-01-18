@@ -152,6 +152,7 @@ add_library(libdng_src OBJECT ${libdng_SRCS})
 set(libdngwriter_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/dngwriter.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dngwriter_p.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/dngwriter_convert.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dngwriterhost.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dngsettings.cpp
 )
