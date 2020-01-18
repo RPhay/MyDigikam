@@ -70,12 +70,16 @@ bool DTrash::deleteImage(const QString& imagePath, const QDateTime& deleteTime)
 
     QFileInfo imageFileInfo(imagePath);
     QString fileName     = imageFileInfo.fileName();
+
     // Get the album path, i.e. collection + album. For this,
     // get the n leftmost characters where n is the complete path without the size of the filename
+
     QString completePath = imageFileInfo.path();
 
     qlonglong imageId    = -1;
+
     // Get the album and with this the image id of the image to trash.
+
     PAlbum* const pAlbum = AlbumManager::instance()->findPAlbum(QUrl::fromLocalFile(completePath));
 
     if (pAlbum)
@@ -88,9 +92,9 @@ bool DTrash::deleteImage(const QString& imagePath, const QDateTime& deleteTime)
                                                                  deleteTime,
                                                                  collection);
 
-    QString destinationInTrash = collection + QLatin1Char('/') + TRASH_FOLDER +
+    QString destinationInTrash = collection + QLatin1Char('/') + TRASH_FOLDER       +
                                  QLatin1Char('/') + FILES_FOLDER + QLatin1Char('/') +
-                                 baseNameForMovingIntoTrash + QLatin1Char('.') +
+                                 baseNameForMovingIntoTrash + QLatin1Char('.')      +
                                  imageFileInfo.completeSuffix();
 
     if (!QFile::rename(imagePath, destinationInTrash))
@@ -126,7 +130,7 @@ bool DTrash::deleteDirRecursivley(const QString& dirToDelete, const QDateTime& d
 
 void DTrash::extractJsonForItem(const QString& collPath, const QString& baseName, DTrashItemInfo& itemInfo)
 {
-    QString jsonFilePath = collPath + QLatin1Char('/') + TRASH_FOLDER +
+    QString jsonFilePath = collPath + QLatin1Char('/') + TRASH_FOLDER        +
                            QLatin1Char('/') + INFO_FOLDER + QLatin1Char('/') +
                            baseName + INFO_FILE_EXTENSION;
 
@@ -229,11 +233,11 @@ QString DTrash::createJsonRecordForFile(qlonglong imageId,
 QString DTrash::getAvialableJsonFilePathInTrash(const QString& collectionPath,
                                                 const QString& baseName, int version)
 {
-    QString pathToCreateJsonFile = collectionPath + QLatin1Char('/') +
-                                   TRASH_FOLDER + QLatin1Char('/') +
-                                   INFO_FOLDER + QLatin1Char('/') +
-                                   baseName + QLatin1Char('-') +
-                                   QUuid::createUuid().toString().mid(1, 8) +
+    QString pathToCreateJsonFile = collectionPath + QLatin1Char('/')                        +
+                                   TRASH_FOLDER + QLatin1Char('/')                          +
+                                   INFO_FOLDER + QLatin1Char('/')                           +
+                                   baseName + QLatin1Char('-')                              +
+                                   QUuid::createUuid().toString().mid(1, 8)                 +
                                    (version ? QString::number(version) : QLatin1String("")) +
                                    INFO_FILE_EXTENSION;
 

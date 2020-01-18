@@ -121,7 +121,7 @@ QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
         return Qt::AlignCenter;
     }
 
-    if (role == Qt::DecorationRole && index.column() == 0)
+    if ((role == Qt::DecorationRole) && (index.column() == 0))
     {
         QPixmap pix;
         QString thumbPath;

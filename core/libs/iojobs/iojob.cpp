@@ -86,6 +86,7 @@ void CopyOrMoveJob::run()
         }
 
         // Checking if there is a file with the same name in destination folder
+
         QString destenationName = srcInfo.isFile() ? srcInfo.fileName() : srcInfo.dir().dirName();
         QString destenation     = dstDir.path() + QLatin1Char('/') + destenationName;
 

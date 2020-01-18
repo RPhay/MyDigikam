@@ -58,7 +58,7 @@ bool MetaEngine::canWriteExif(const QString& filePath)
 
         Exiv2::AccessMode mode      = image->checkMode(Exiv2::mdExif);
 
-        return (mode == Exiv2::amWrite || mode == Exiv2::amReadWrite);
+        return ((mode == Exiv2::amWrite) || (mode == Exiv2::amReadWrite));
     }
     catch(Exiv2::AnyError& e)
     {
@@ -189,7 +189,9 @@ QString MetaEngine::getExifComment(bool readDescription) const
 
                 // some cameras fill the UserComment with whitespace
                 if (!exifComment.isEmpty() && !exifComment.trimmed().isEmpty())
+                {
                     return exifComment;
+                }
             }
 
             if (readDescription)
@@ -211,7 +213,9 @@ QString MetaEngine::getExifComment(bool readDescription) const
 
                     // some cameras fill the UserComment with whitespace
                     if (!exifComment.isEmpty() && !trimmedComment.isEmpty() && !blackList.contains(trimmedComment))
+                    {
                         return exifComment;
+                    }
                 }
             }
         }
@@ -250,25 +254,32 @@ bool MetaEngine::setExifComment(const QString& comment, bool writeDescription) c
     try
     {
         if (writeDescription)
+        {
             removeExifTag("Exif.Image.ImageDescription");
+        }
 
         removeExifTag("Exif.Photo.UserComment");
 
         if (!comment.isNull())
         {
             if (writeDescription)
+            {
                 setExifTagString("Exif.Image.ImageDescription", comment);
+            }
 
             // Write as Unicode only when necessary.
+
             QTextCodec* const latin1Codec = QTextCodec::codecForName("iso8859-1");
 
             if (latin1Codec && latin1Codec->canEncode(comment))
             {
                 // We know it's in the ISO-8859-1 8bit range.
                 // Check if it's in the ASCII 7bit range
+
                 if (is7BitAscii(comment.toLatin1()))
                 {
                     // write as ASCII
+
                     std::string exifComment("charset=\"Ascii\" ");
                     exifComment                                += comment.toLatin1().constData();
                     d->exifMetadata()["Exif.Photo.UserComment"] = exifComment;
@@ -278,6 +289,7 @@ bool MetaEngine::setExifComment(const QString& comment, bool writeDescription) c
             }
 
             // write as Unicode (UCS-2)
+
             std::string exifComment("charset=\"Unicode\" ");
             exifComment                                += comment.toUtf8().constData();
             d->exifMetadata()["Exif.Photo.UserComment"] = exifComment;
@@ -446,7 +458,9 @@ bool MetaEngine::setExifTagRational(const char* exifTagName, long int num, long 
 bool MetaEngine::setExifTagData(const char* exifTagName, const QByteArray& data) const
 {
     if (data.isEmpty())
+    {
         return false;
+    }
 
     QMutexLocker lock(&s_metaEngineMutex);
 
@@ -486,9 +500,13 @@ bool MetaEngine::setExifTagVariant(const char* exifTagName, const QVariant& val,
             long num, den;
 
             if (rationalWantSmallDenominator)
+            {
                 convertToRationalSmallDenominator(val.toDouble(), &num, &den);
+            }
             else
+            {
                 convertToRational(val.toDouble(), &num, &den, 4);
+            }
 
             return setExifTagRational(exifTagName, num, den);
         }
@@ -499,10 +517,14 @@ bool MetaEngine::setExifTagVariant(const char* exifTagName, const QVariant& val,
             QList<QVariant> list = val.toList();
 
             if (list.size() >= 1)
+            {
                 num = list[0].toInt();
+            }
 
             if (list.size() >= 2)
+            {
                 den = list[1].toInt();
+            }
 
             return setExifTagRational(exifTagName, num, den);
         }
@@ -513,7 +535,9 @@ bool MetaEngine::setExifTagVariant(const char* exifTagName, const QVariant& val,
             QDateTime dateTime = val.toDateTime();
 
             if (!dateTime.isValid())
+            {
                 return false;
+            }
 
             try
             {
@@ -575,7 +599,7 @@ QString MetaEngine::createExifUserStringFromValue(const char* exifTagName, const
                 Exiv2::Rational rational;
                 rational.first  = num;
                 rational.second = den;
-                datum = rational;
+                datum           = rational;
                 break;
             }
 
@@ -586,10 +610,14 @@ QString MetaEngine::createExifUserStringFromValue(const char* exifTagName, const
                 QList<QVariant> list = val.toList();
 
                 if (list.size() >= 1)
+                {
                     num = list[0].toInt();
+                }
 
                 if (list.size() >= 2)
+                {
                     den = list[1].toInt();
+                }
 
                 Exiv2::Rational rational;
                 rational.first  = num;
@@ -604,7 +632,9 @@ QString MetaEngine::createExifUserStringFromValue(const char* exifTagName, const
                 QDateTime dateTime = val.toDateTime();
 
                 if (!dateTime.isValid())
+                {
                     break;
+                }
 
                 const std::string &exifdatetime(dateTime.toString(QString::fromLatin1("yyyy:MM:dd hh:mm:ss")).toLatin1().constData());
                 datum = exifdatetime;
@@ -625,7 +655,9 @@ QString MetaEngine::createExifUserStringFromValue(const char* exifTagName, const
         QString tagValue = QString::fromLocal8Bit(os.str().c_str());
 
         if (escapeCR)
+        {
             tagValue.replace(QLatin1Char('\n'), QLatin1String(" "));
+        }
 
         return tagValue;
     }
@@ -730,9 +762,13 @@ QVariant MetaEngine::getExifTagVariant(const char* exifTagName, bool rationalAsL
                 case Exiv2::signedLong:
                 {
                     if ((int)it->count() > component)
+                    {
                         return QVariant((int)it->toLong(component));
+                    }
                     else
+                    {
                         return QVariant(QVariant::Int);
+                    }
                 }
 
                 case Exiv2::unsignedRational:
@@ -741,7 +777,9 @@ QVariant MetaEngine::getExifTagVariant(const char* exifTagName, bool rationalAsL
                     if (rationalAsListOfInts)
                     {
                         if ((int)it->count() <= component)
+                        {
                             return QVariant(QVariant::List);
+                        }
 
                         QList<QVariant> list;
                         list << (*it).toRational(component).first;
@@ -752,14 +790,19 @@ QVariant MetaEngine::getExifTagVariant(const char* exifTagName, bool rationalAsL
                     else
                     {
                         if ((int)it->count() <= component)
+                        {
                             return QVariant(QVariant::Double);
+                        }
 
                         // prefer double precision
+
                         double num = (*it).toRational(component).first;
                         double den = (*it).toRational(component).second;
 
                         if (den == 0.0)
+                        {
                             return QVariant(QVariant::Double);
+                        }
 
                         return QVariant(num / den);
                     }
@@ -781,7 +824,9 @@ QVariant MetaEngine::getExifTagVariant(const char* exifTagName, bool rationalAsL
                     QString tagValue = QString::fromLocal8Bit(os.str().c_str());
 
                     if (stringEscapeCR)
+                    {
                         tagValue.replace(QLatin1Char('\n'), QLatin1String(" "));
+                    }
 
                     return QVariant(tagValue);
                 }
@@ -819,20 +864,24 @@ QString MetaEngine::getExifTagString(const char* exifTagName, bool escapeCR) con
             QString tagValue;
             QString key = QLatin1String(it->key().c_str());
 
-            if (key == QLatin1String("Exif.CanonCs.LensType") && it->toLong() == 65535)
+            if ((key == QLatin1String("Exif.CanonCs.LensType")) && (it->toLong() == 65535))
             {
                 // FIXME: workaround for a possible crash in Exiv2 pretty-print function for the Exif.CanonCs.LensType.
+
                 tagValue = QString::fromLocal8Bit(it->toString().c_str());
             }
             else
             {
                 // See BUG #184156 comment #13
+
                 std::string val  = it->print(&exifData);
                 tagValue         = QString::fromLocal8Bit(val.c_str());
             }
 
             if (escapeCR)
+            {
                 tagValue.replace(QLatin1Char('\n'), QLatin1String(" "));
+            }
 
             return tagValue;
         }
@@ -877,7 +926,9 @@ QImage MetaEngine::getExifThumbnail(bool fixOrientation) const
     QImage thumbnail;
 
     if (d->exifMetadata().empty())
+    {
        return thumbnail;
+    }
 
     QMutexLocker lock(&s_metaEngineMutex);
 
@@ -904,7 +955,9 @@ QImage MetaEngine::getExifThumbnail(bool fixOrientation) const
                 if (it != exifData.end() && it->count())
                 {
                     long orientation = it->toLong();
+
                     //qCDebug(DIGIKAM_METAENGINE_LOG) << "Exif Thumbnail Orientation: " << (int)orientation;
+
                     rotateExifQImage(thumbnail, (ImageOrientation)orientation);
                 }
 
@@ -979,6 +1032,7 @@ bool MetaEngine::setTiffThumbnail(const QImage& thumbImage) const
     try
     {
         // Make sure IFD0 is explicitly marked as a main image
+
         Exiv2::ExifData::const_iterator pos = d->exifMetadata().findKey(Exiv2::ExifKey("Exif.Image.NewSubfileType"));
 
         if (pos == d->exifMetadata().end() || pos->count() != 1 || pos->toLong() != 0)
@@ -991,6 +1045,7 @@ bool MetaEngine::setTiffThumbnail(const QImage& thumbImage) const
         }
 
         // Remove sub-IFD tags
+
         std::string subImage1("SubImage1");
 
         for (Exiv2::ExifData::iterator md = d->exifMetadata().begin() ; md != d->exifMetadata().end() ;)
@@ -1008,6 +1063,7 @@ bool MetaEngine::setTiffThumbnail(const QImage& thumbImage) const
         if (!thumbImage.isNull())
         {
             // Set thumbnail tags
+
             QByteArray data;
             QBuffer buffer(&data);
             buffer.open(QIODevice::WriteOnly);
@@ -1082,9 +1138,10 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
             QString key = QLatin1String(md->key().c_str());
 
             // Decode the tag value with a user friendly output.
+
             QString tagValue;
 
-            if (key == QLatin1String("Exif.Photo.UserComment"))
+            if      (key == QLatin1String("Exif.Photo.UserComment"))
             {
                 tagValue = d->convertCommentValue(*md);
             }
@@ -1115,12 +1172,16 @@ MetaEngine::MetaDataMap MetaEngine::getExifTagsDataList(const QStringList& exifK
                 if (!invertSelection)
                 {
                     if (exifKeysFilter.contains(key.section(QLatin1Char('.'), 1, 1)))
+                    {
                         metaDataMap.insert(key, tagValue);
+                    }
                 }
                 else
                 {
                     if (!exifKeysFilter.contains(key.section(QLatin1Char('.'), 1, 1)))
+                    {
                         metaDataMap.insert(key, tagValue);
+                    }
                 }
             }
             else // else no filter at all.
@@ -1250,7 +1311,7 @@ MetaEngine::TagsMap MetaEngine::getMakernoteTagsList() const
 
                 ++(*it);
             }
-            while((*it)->tag_ != 0xffff);
+            while ((*it)->tag_ != 0xffff);
         }
 
         return tagsMap;

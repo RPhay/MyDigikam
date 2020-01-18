@@ -41,9 +41,11 @@ void MetaEngineData::Private::clear()
         imageComments.clear();
         exifMetadata.clear();
         iptcMetadata.clear();
+
 #ifdef _XMP_SUPPORT_
         xmpMetadata.clear();
 #endif
+
     }
     catch(Exiv2::AnyError& e)
     {

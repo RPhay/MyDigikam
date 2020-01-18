@@ -48,6 +48,7 @@ public:
 #ifdef _XMP_SUPPORT_
     Exiv2::XmpData  xmpMetadata;
 #endif
+
 };
 
 } // namespace Digikam
