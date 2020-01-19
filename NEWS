@@ -602,4 +602,5 @@ BUGFIXES:
 586 ==> 376640 - Changing tag name does not update sidecar metadata.
 587 ==> 240224 - Foreground and background of the Settings menu item have the same color when the Dark Theme is selected.
 588 ==> 290072 - XMP sidecars available for all file types user wants to.
-589 ==> 
+589 ==> 403349 - digiKam window offset on high resolution display.
+590 ==> 
