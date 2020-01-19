@@ -135,12 +135,14 @@ SoftProofDialog::SoftProofDialog(QWidget* const parent)
 
     QLabel* const intentLabel      = new QLabel(i18n("Rendering intent:"));
     d->proofingIntentBox           = new IccRenderingIntentComboBox;
+
     //TODO d->proofingIntentBox->setWhatsThis(i18n(""));
+
     intentLabel->setBuddy(d->proofingIntentBox);
 
     d->gamutCheckBox   = new QCheckBox(i18n("Highlight out-of-gamut colors"));
     d->maskColorLabel  = new QLabel(i18n("Highlighting color:"));
-    d->maskColorBtn = new DColorSelector;
+    d->maskColorBtn    = new DColorSelector;
     d->maskColorLabel->setBuddy(d->maskColorBtn);
 
     optionsGrid->addWidget(intentLabel,          0, 0, 1, 2);

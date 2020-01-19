@@ -132,6 +132,7 @@ void VersioningPromptUserSaveDialog::slotButtonClicked(QAbstractButton* button)
     if (d->clicked == QDialogButtonBox::Cancel)
     {
         reject();
+
         return;
     }
 

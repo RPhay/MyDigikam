@@ -64,8 +64,8 @@ public:
                                 QWidget* const parent = nullptr);
     ~ColorCorrectionDlg();
 
-    ICCSettingsContainer::Behavior behavior() const;
-    IccProfile specifiedProfile() const;
+    ICCSettingsContainer::Behavior behavior()        const;
+    IccProfile specifiedProfile()                    const;
 
 private Q_SLOTS:
 
@@ -86,11 +86,11 @@ private:
 
     ICCSettingsContainer::Behavior currentBehavior() const;
 
-    QLayout* createHeading()       const;
-    QLayout* createProfilesInfo()  const;
-    QLayout* createPreviews()      const;
-    QWidget* createAssumeOptions() const;
-    QWidget* createOptions()       const;
+    QLayout* createHeading()                         const;
+    QLayout* createProfilesInfo()                    const;
+    QLayout* createPreviews()                        const;
+    QWidget* createAssumeOptions()                   const;
+    QWidget* createOptions()                         const;
 
     void updateInfo();
     void updateUsedProfileUI();
