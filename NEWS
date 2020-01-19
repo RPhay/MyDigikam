@@ -574,4 +574,11 @@ BUGFIXES:
 558 ==> 416371 - 7.0.0-beta bug in Album tree view sorting order.
 559 ==> 404901 - Google auth dialog => firefox google auth window not closed.
 560 ==> 372340 - Tagged face areas on portait (vertical) oriented images are mispositioned.
-561 ==> 
+561 ==> 415941 - Face identification in wrong place.
+562 ==> 415550 - Faces setup by Picasa are not displayed correctly on rotated/portrait pictures.
+563 ==> 413926 - Incompatibility between software, for face regions on auto-rotated portrait position photos.
+564 ==> 406971 - Face frames are misaligned on Digikam when face framing was done on Picasa.
+565 ==> 395243 - Incorrect face regions on vertical images.
+566 ==> 378456 - When previewing faces the thumbnail preview is sometime sideways or not aligned to the face in question.
+567 ==> 377628 - CR2 file face detection misplaced in portrait.
+568 ==> 
