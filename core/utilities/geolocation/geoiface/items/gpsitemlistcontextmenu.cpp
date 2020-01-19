@@ -92,9 +92,9 @@ public:
     QAction*                 actionRemoveSpeed;
     QAction*                 actionLookupMissingAltitudes;
 
-    GPSItemList*            imagesList;
+    GPSItemList*             imagesList;
 
-    // Altitude lookup
+    /// Altitude lookup
     QPointer<LookupAltitude> altitudeLookup;
     GPSUndoCommand*          altitudeUndoCommand;
     int                      altitudeRequestedCount;
@@ -102,7 +102,7 @@ public:
 };
 
 GPSItemListContextMenu::GPSItemListContextMenu(GPSItemList* const imagesList,
-                                                 GPSBookmarkOwner* const bookmarkOwner)
+                                               GPSBookmarkOwner* const bookmarkOwner)
     : QObject(imagesList),
       d(new Private)
 {
@@ -169,13 +169,15 @@ bool GPSItemListContextMenu::eventFilter(QObject* watched, QEvent* event)
 
     if ((event->type() == QEvent::ContextMenu) && d->enabled)
     {
-        // enable or disable the actions:
+        // enable or disable the actions
+
         GPSItemModel* const imageModel           = d->imagesList->getModel();
         QItemSelectionModel* const selectionModel = d->imagesList->getSelectionModel();
         const QList<QModelIndex> selectedIndices  = selectionModel->selectedRows();
         const int nSelected                       = selectedIndices.size();
 
         // "copy" are only available for one selected image with geo data:
+
         bool copyAvailable                   = (nSelected == 1);
         bool removeAltitudeAvailable         = false;
         bool removeCoordinatesAvailable      = false;
@@ -219,6 +221,7 @@ bool GPSItemListContextMenu::eventFilter(QObject* watched, QEvent* event)
 
         // "paste" is only available if there is geo data in the clipboard
         // and at least one photo is selected:
+
         bool pasteAvailable     = (nSelected >= 1);
         bool pasteSwapAvailable = true;
 
@@ -235,6 +238,7 @@ bool GPSItemListContextMenu::eventFilter(QObject* watched, QEvent* event)
         d->actionPasteSwap->setEnabled(pasteSwapAvailable);
 
         // construct the context-menu:
+
         QMenu* const menu = new QMenu(d->imagesList);
         menu->addAction(d->actionCopy);
         menu->addAction(d->actionPaste);
@@ -270,6 +274,7 @@ bool GPSItemListContextMenu::getCurrentItemPositionAndUrl(GPSDataContainer* cons
                                                            QUrl* const itemUrl)
 {
     // NOTE: currentIndex does not seem to work any more since we use KLinkItemSelectionModel
+
     GPSItemModel* const imageModel           = d->imagesList->getModel();
     QItemSelectionModel* const selectionModel = d->imagesList->getSelectionModel();
     const QList<QModelIndex> selectedIndices  = selectionModel->selectedRows();
@@ -327,6 +332,7 @@ void GPSItemListContextMenu::pasteSwapActionTriggered()
 void GPSItemListContextMenu::pasteActionTriggered(bool swap)
 {
     // extract the coordinates from the clipboard:
+
     QClipboard* const clipboard = QApplication::clipboard();
     const QMimeData* mimedata   = clipboard->mimeData();
 
@@ -340,6 +346,7 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
         bool foundDoubleData  = false;
 
         // code adapted from gpsdataparser.cpp
+
         QDomDocument gpxDoc(QLatin1String("gpx"));
 
         if (!gpxDoc.setContent(data))
@@ -358,7 +365,7 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
 
             if (xmlOkay)
             {
-                for (QDomNode nWpt = gpxDocElem.firstChild(); !nWpt.isNull(); nWpt = nWpt.nextSibling())
+                for (QDomNode nWpt = gpxDocElem.firstChild() ; !nWpt.isNull() ; nWpt = nWpt.nextSibling())
                 {
                     const QDomElement wptElem = nWpt.toElement();
 
@@ -378,16 +385,17 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
                     bool haveAltitude  = false;
 
                     // Get GPS position. If not available continue to next point.
-                    const QString lat     = wptElem.attribute(QLatin1String("lat"));
-                    const QString lon     = wptElem.attribute(QLatin1String("lon"));
+
+                    const QString lat  = wptElem.attribute(QLatin1String("lat"));
+                    const QString lon  = wptElem.attribute(QLatin1String("lon"));
 
                     if (lat.isEmpty() || lon.isEmpty())
                     {
                         continue;
                     }
 
-                    ptLatitude  = lat.toDouble();
-                    ptLongitude = lon.toDouble();
+                    ptLatitude         = lat.toDouble();
+                    ptLongitude        = lon.toDouble();
 
                     if (foundData)
                     {
@@ -396,7 +404,8 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
                     }
 
                     // Get metadata of way point (altitude and time stamp)
-                    for (QDomNode nWptMeta = wptElem.firstChild(); !nWptMeta.isNull(); nWptMeta = nWptMeta.nextSibling())
+
+                    for (QDomNode nWptMeta = wptElem.firstChild() ; !nWptMeta.isNull() ; nWptMeta = nWptMeta.nextSibling())
                     {
                         const QDomElement wptMetaElem = nWptMeta.toElement();
 
@@ -408,11 +417,12 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
                         if (wptMetaElem.tagName() == QLatin1String("ele"))
                         {
                             // Get GPS point altitude. If not available continue to next point.
+
                             QString ele = wptMetaElem.text();
 
                             if (!ele.isEmpty())
                             {
-                                ptAltitude  = ele.toDouble(&haveAltitude);
+                                ptAltitude = ele.toDouble(&haveAltitude);
                                 break;
                             }
                         }
@@ -453,6 +463,7 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
         else
         {
             /// @todo this is legacy code from before we used geo-url
+
             const QStringList parts = textdata.split(QLatin1Char(','));
 
             if ((parts.size() == 3) || (parts.size() == 2))
@@ -511,7 +522,7 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
 void GPSItemListContextMenu::setGPSDataForSelectedItems(const GPSDataContainer& gpsData,
                                                          const QString& undoDescription)
 {
-    GPSItemModel* const imageModel           = d->imagesList->getModel();
+    GPSItemModel* const imageModel            = d->imagesList->getModel();
     QItemSelectionModel* const selectionModel = d->imagesList->getSelectionModel();
     const QList<QModelIndex> selectedIndices  = selectionModel->selectedRows();
     const int nSelected                       = selectedIndices.size();
@@ -554,7 +565,8 @@ bool GPSItemListContextMenu::getCurrentPosition(GPSDataContainer* position, void
 
 void GPSItemListContextMenu::removeInformationFromSelectedImages(const GPSDataContainer::HasFlags flagsToClear, const QString& undoDescription)
 {
-    // enable or disable the actions:
+    // enable or disable the actions
+
     GPSItemModel* const imageModel           = d->imagesList->getModel();
     QItemSelectionModel* const selectionModel = d->imagesList->getSelectionModel();
     const QList<QModelIndex> selectedIndices  = selectionModel->selectedRows();
@@ -563,14 +575,14 @@ void GPSItemListContextMenu::removeInformationFromSelectedImages(const GPSDataCo
 
     for (int i = 0 ; i < nSelected ; ++i)
     {
-        const QModelIndex itemIndex = selectedIndices.at(i);
+        const QModelIndex itemIndex     = selectedIndices.at(i);
         GPSItemContainer* const gpsItem = imageModel->itemFromIndex(itemIndex);
 
         GPSUndoCommand::UndoInfo undoInfo(itemIndex);
         undoInfo.readOldDataFromItem(gpsItem);
 
-        GPSDataContainer newGPSData = gpsItem->gpsData();
-        bool didSomething           = false;
+        GPSDataContainer newGPSData     = gpsItem->gpsData();
+        bool didSomething               = false;
 
         if (flagsToClear.testFlag(GPSDataContainer::HasCoordinates))
         {
@@ -676,9 +688,11 @@ void GPSItemListContextMenu::slotLookupMissingAltitudes()
     GPSItemModel* const imageModel           = d->imagesList->getModel();
     QItemSelectionModel* const selectionModel = d->imagesList->getSelectionModel();
     const QList<QModelIndex> selectedIndices  = selectionModel->selectedRows();
-//  const int nSelected                       = selectedIndices.size();
-
+/*
+    const int nSelected                       = selectedIndices.size();
+*/
     // find the indices which have coordinates but no altitude
+
     LookupAltitude::Request::List altitudeQueries;
 
     foreach (const QModelIndex& currentIndex, selectedIndices)
@@ -690,7 +704,7 @@ void GPSItemListContextMenu::slotLookupMissingAltitudes()
             continue;
         }
 
-        const GPSDataContainer gpsData            = gpsItem->gpsData();
+        const GPSDataContainer gpsData   = gpsItem->gpsData();
         const GeoCoordinates coordinates = gpsData.getCoordinates();
 
         if ((!coordinates.hasCoordinates()) || coordinates.hasAltitude())
@@ -699,6 +713,7 @@ void GPSItemListContextMenu::slotLookupMissingAltitudes()
         }
 
         // the item has coordinates but no altitude, create a query
+
         LookupAltitude::Request myLookup;
         myLookup.coordinates = coordinates;
         myLookup.data        = QVariant::fromValue(QPersistentModelIndex(currentIndex));
@@ -735,15 +750,15 @@ void GPSItemListContextMenu::slotAltitudeLookupReady(const QList<int>& readyRequ
 
     foreach (const int requestIndex, readyRequests)
     {
-        const LookupAltitude::Request myLookup = d->altitudeLookup->getRequest(requestIndex);
-        const QPersistentModelIndex markerIndex          = myLookup.data.value<QPersistentModelIndex>();
+        const LookupAltitude::Request myLookup  = d->altitudeLookup->getRequest(requestIndex);
+        const QPersistentModelIndex markerIndex = myLookup.data.value<QPersistentModelIndex>();
 
         if (!markerIndex.isValid())
         {
             continue;
         }
 
-        GPSItemContainer* const gpsItem = imageModel->itemFromIndex(markerIndex);
+        GPSItemContainer* const gpsItem         = imageModel->itemFromIndex(markerIndex);
 
         if (!gpsItem)
         {
@@ -753,7 +768,7 @@ void GPSItemListContextMenu::slotAltitudeLookupReady(const QList<int>& readyRequ
         GPSUndoCommand::UndoInfo undoInfo(markerIndex);
         undoInfo.readOldDataFromItem(gpsItem);
 
-        GPSDataContainer gpsData = gpsItem->gpsData();
+        GPSDataContainer gpsData                = gpsItem->gpsData();
         gpsData.setCoordinates(myLookup.coordinates);
         gpsItem->setGPSData(gpsData);
         undoInfo.readNewDataFromItem(gpsItem);
@@ -778,6 +793,7 @@ void GPSItemListContextMenu::slotAltitudeLookupDone()
     if (d->altitudeReceivedCount > 0)
     {
         // at least some queries returned a result, save the undo command
+
         d->altitudeUndoCommand->setText(i18n("Altitude looked up"));
         emit signalUndoCommand(d->altitudeUndoCommand);
     }

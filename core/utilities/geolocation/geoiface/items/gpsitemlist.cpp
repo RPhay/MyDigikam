@@ -60,11 +60,11 @@ public:
     {
     }
 
-    bool                      editEnabled;
-    bool                      dragEnabled;
+    bool                     editEnabled;
+    bool                     dragEnabled;
     GPSItemModel*            model;
-    QItemSelectionModel*      selectionModel;
-    GPSItemDelegate*     itemDelegate;
+    QItemSelectionModel*     selectionModel;
+    GPSItemDelegate*         itemDelegate;
     GPSItemSortProxyModel*   imageSortProxyModel;
     ItemListDragDropHandler* dragDropHandler;
 };
@@ -101,6 +101,7 @@ void GPSItemList::startDrag(Qt::DropActions supportedActions)
 
     // NOTE: read the selected indices from the source selection model, not our selection model,
     // which is for the sorted model!
+
     const QList<QModelIndex> selectedIndicesFromModel = d->selectionModel->selectedIndexes();
     QList<QPersistentModelIndex> selectedIndices;
 
@@ -112,7 +113,9 @@ void GPSItemList::startDrag(Qt::DropActions supportedActions)
     QMimeData* const dragMimeData = d->dragDropHandler->createMimeData(selectedIndices);
 
     if (!dragMimeData)
+    {
         return;
+    }
 
     QDrag* const drag = new QDrag(this);
     drag->setMimeData(dragMimeData);
@@ -133,7 +136,9 @@ void GPSItemList::setModelAndSelectionModel(GPSItemModel* const model, QItemSele
             this, SLOT(slotInternalTreeViewImageActivated(QModelIndex)));
 
     if (d->imageSortProxyModel->mappedSelectionModel())
+    {
         setSelectionModel(d->imageSortProxyModel->mappedSelectionModel());
+    }
 }
 
 void GPSItemList::setDragDropHandler(ItemListDragDropHandler* const dragDropHandler)
@@ -155,10 +160,13 @@ void GPSItemList::setThumbnailSize(const int size)
 void GPSItemList::slotIncreaseThumbnailSize()
 {
     // TODO: pick reasonable limits and make sure we stay on multiples of 5
+
     const int currentThumbnailSize = d->itemDelegate->getThumbnailSize();
 
     if (currentThumbnailSize < 200)
+    {
         setThumbnailSize(currentThumbnailSize + 5);
+    }
 }
 
 void GPSItemList::slotDecreaseThumbnailSize()
@@ -166,7 +174,9 @@ void GPSItemList::slotDecreaseThumbnailSize()
     const int currentThumbnailSize = d->itemDelegate->getThumbnailSize();
 
     if (currentThumbnailSize > 30)
+    {
         setThumbnailSize(currentThumbnailSize - 5);
+    }
 }
 
 void GPSItemList::wheelEvent(QWheelEvent* we)
@@ -192,6 +202,7 @@ void GPSItemList::wheelEvent(QWheelEvent* we)
 void GPSItemList::slotThumbnailFromModel(const QPersistentModelIndex& index, const QPixmap& /*pixmap*/)
 {
     // TODO: verify that the size corresponds to the size of our thumbnails!
+
     update(d->imageSortProxyModel->mapFromSource(index));
 }
 
@@ -214,6 +225,7 @@ void GPSItemList::readSettingsFromGroup(const KConfigGroup* const group)
     else
     {
         // by default, hide the advanced columns:
+
         header()->setSectionHidden(GPSItemContainer::ColumnDOP,         true);
         header()->setSectionHidden(GPSItemContainer::ColumnFixType,     true);
         header()->setSectionHidden(GPSItemContainer::ColumnNSatellites, true);
@@ -263,11 +275,14 @@ bool GPSItemList::eventFilter(QObject* watched, QEvent* event)
     QHeaderView* const headerView = header();
 
     if (!d->model || (watched != headerView) || (event->type() != QEvent::ContextMenu))
+    {
         return QWidget::eventFilter(watched, event);
+    }
 
     QMenu* const menu               = new QMenu(this);
 
     // add action for all the columns
+
     for (int i = 0 ; i < d->model->columnCount() ; ++i)
     {
         const QString columnName    = d->model->headerData(i, Qt::Horizontal, Qt::DisplayRole).toString();

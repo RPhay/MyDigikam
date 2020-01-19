@@ -61,14 +61,14 @@ class SaveProperties
 public:
 
     explicit SaveProperties()
+      : shouldRemoveCoordinates(false),
+        shouldRemoveAltitude(false),
+        shouldWriteCoordinates(false),
+        shouldWriteAltitude(false),
+        altitude(0.0),
+        latitude(0.0),
+        longitude(0.0)
     {
-        shouldRemoveCoordinates = false;
-        shouldRemoveAltitude    = false;
-        shouldWriteCoordinates  = false;
-        shouldWriteAltitude     = false;
-        altitude                = 0.0;
-        latitude                = 0.0;
-        longitude               = 0.0;
     }
 
     bool  shouldRemoveCoordinates;
@@ -116,21 +116,21 @@ public:
     virtual bool loadImageData();
     //@}
 
-    bool isDirty()       const;
-    QUrl url()           const;
-    QDateTime dateTime() const;
+    bool isDirty()                                                              const;
+    QUrl url()                                                                  const;
+    QDateTime dateTime()                                                        const;
 
     /// @name Functions used by the model
     //@{
     static void setHeaderData(GPSItemModel* const model);
-    bool lessThan(const GPSItemContainer* const otherItem, const int column) const;
+    bool lessThan(const GPSItemContainer* const otherItem, const int column)    const;
     //@}
 
     /// @name GPS related functions
     //@{
     void setCoordinates(const GeoCoordinates& newCoordinates);
-    GeoCoordinates coordinates() const;
-    GPSDataContainer gpsData() const;
+    GeoCoordinates coordinates()                                                const;
+    GPSDataContainer gpsData()                                                  const;
     void setGPSData(const GPSDataContainer& container);
     void restoreGPSData(const GPSDataContainer& container);
     //@}
@@ -146,12 +146,12 @@ public:
     /**
      * @return Returns true is the current image has been modified and not saved.
      */
-    bool isTagListDirty() const;
+    bool isTagListDirty()                                                       const;
 
     /**
      * Returns the tag list of the current image.
      */
-    QList<QList<TagData> > getTagList() const;
+    QList<QList<TagData> > getTagList()                                         const;
 
     /**
      * Replaces the current tag list with the one contained in tagList.
@@ -166,12 +166,12 @@ public:
 
 protected:
 
-    // these are only to be called by the GPSItemModel
-    QVariant data(const int column, const int role) const;
+    /// these are only to be called by the GPSItemModel
+    QVariant data(const int column, const int role)                             const;
     void setModel(GPSItemModel* const model);
     void emitDataChanged();
-    DMetadata* getMetadataForFile() const;
-    SaveProperties saveProperties() const;
+    DMetadata* getMetadataForFile()                                             const;
+    SaveProperties saveProperties()                                             const;
 
 protected:
 

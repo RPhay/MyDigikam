@@ -42,7 +42,7 @@ public:
     {
     }
 
-    QList<GPSItemContainer*>            items;
+    QList<GPSItemContainer*>        items;
     int                             columnCount;
     QMap<QPair<int, int>, QVariant> headerData;
     ThumbnailLoadThread*            thumbnailLoadThread;
@@ -61,6 +61,7 @@ GPSItemModel::GPSItemModel(QObject* const parent)
 GPSItemModel::~GPSItemModel()
 {
     // TODO: send a signal before deleting the items?
+
     qDeleteAll(d->items);
     delete d;
 }
@@ -99,6 +100,7 @@ QModelIndex GPSItemModel::index(int row, int column, const QModelIndex& parent) 
     if (parent.isValid())
     {
         // there are no child items, only top level items
+
         return QModelIndex();
     }
 
@@ -115,6 +117,7 @@ QModelIndex GPSItemModel::index(int row, int column, const QModelIndex& parent) 
 QModelIndex GPSItemModel::parent(const QModelIndex& /*index*/) const
 {
     // we have only top level items
+
     return QModelIndex();
 }
 
@@ -140,7 +143,9 @@ void GPSItemModel::itemChanged(GPSItemContainer* const changedItem)
     const int itemIndex = d->items.indexOf(changedItem);
 
     if (itemIndex < 0)
+    {
         return;
+    }
 
     const QModelIndex itemModelIndexStart = createIndex(itemIndex, 0, (void*)nullptr);
     const QModelIndex itemModelIndexEnd   = createIndex(itemIndex, d->columnCount - 1, (void*)nullptr);
@@ -156,12 +161,16 @@ GPSItemContainer* GPSItemModel::itemFromIndex(const QModelIndex& index) const
     }
 
     if (!index.isValid())
+    {
         return nullptr;
+    }
 
     const int row = index.row();
 
     if ((row < 0) || (row >= d->items.count()))
+    {
         return nullptr;
+    }
 
     return d->items.at(row);
 }
@@ -174,7 +183,9 @@ int GPSItemModel::rowCount(const QModelIndex& parent) const
     }
 
     if (parent.isValid())
+    {
         return 0;
+    }
 
     return d->items.count();
 }
@@ -182,7 +193,9 @@ int GPSItemModel::rowCount(const QModelIndex& parent) const
 bool GPSItemModel::setHeaderData(int section, Qt::Orientation orientation, const QVariant& value, int role)
 {
     if ((section >= d->columnCount) || (orientation != Qt::Horizontal))
+    {
         return false;
+    }
 
     const QPair<int, int> headerIndex = QPair<int, int>(section, role);
     d->headerData[headerIndex]        = value;
@@ -193,7 +206,9 @@ bool GPSItemModel::setHeaderData(int section, Qt::Orientation orientation, const
 QVariant GPSItemModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
     if ((section >= d->columnCount) || (orientation != Qt::Horizontal))
+    {
         return false;
+    }
 
     const QPair<int, int> headerIndex = QPair<int, int>(section, role);
 
@@ -217,9 +232,11 @@ Qt::ItemFlags GPSItemModel::flags(const QModelIndex& index) const
     }
 
     if (!index.isValid())
+    {
         return nullptr;
+    }
 
-    return QAbstractItemModel::flags(index) | Qt::ItemIsDragEnabled;
+    return (QAbstractItemModel::flags(index) | Qt::ItemIsDragEnabled);
 }
 
 GPSItemContainer* GPSItemModel::itemFromUrl(const QUrl& url) const
@@ -227,7 +244,9 @@ GPSItemContainer* GPSItemModel::itemFromUrl(const QUrl& url) const
     for (int i = 0 ; i < d->items.count() ; ++i)
     {
         if (d->items.at(i)->url() == url)
+        {
             return d->items.at(i);
+        }
     }
 
     return nullptr;
@@ -238,7 +257,9 @@ QModelIndex GPSItemModel::indexFromUrl(const QUrl& url) const
     for (int i = 0 ; i < d->items.count() ; ++i)
     {
         if (d->items.at(i)->url() == url)
+        {
             return index(i, 0, QModelIndex());
+        }
     }
 
     return QModelIndex();
@@ -253,11 +274,14 @@ QPixmap GPSItemModel::getPixmapForIndex(const QPersistentModelIndex& itemIndex, 
 
     // TODO: should we cache the pixmap on our own here or does the interface usually cache it for us?
     // TODO: do we need to make sure we do not request the same pixmap twice in a row?
-    // construct the key under which we stored the pixmap in the cache:
+    // construct the key under which we stored the pixmap in the cache
+
     GPSItemContainer* const imageItem = itemFromIndex(itemIndex);
 
     if (!imageItem)
+    {
         return QPixmap();
+    }
 
     QPixmap thumbnail;
 

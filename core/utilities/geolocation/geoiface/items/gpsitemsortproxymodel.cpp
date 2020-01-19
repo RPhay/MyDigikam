@@ -40,19 +40,19 @@ class Q_DECL_HIDDEN GPSItemSortProxyModel::Private
 public:
 
     explicit Private()
+      : imageModel(nullptr),
+        sourceSelectionModel(nullptr),
+        linkItemSelectionModel(nullptr)
     {
-        imageModel             = nullptr;
-        sourceSelectionModel   = nullptr;
-        linkItemSelectionModel = nullptr;
     }
 
-    GPSItemModel*             imageModel;
+    GPSItemModel*              imageModel;
     QItemSelectionModel*       sourceSelectionModel;
     GPSLinkItemSelectionModel* linkItemSelectionModel;
 };
 
 GPSItemSortProxyModel::GPSItemSortProxyModel(GPSItemModel* const imageModel,
-                                               QItemSelectionModel* const sourceSelectionModel)
+                                             QItemSelectionModel* const sourceSelectionModel)
     : QSortFilterProxyModel(imageModel),
       d(new Private())
 {
@@ -75,7 +75,7 @@ bool GPSItemSortProxyModel::lessThan(const QModelIndex& left, const QModelIndex&
         return false;
     }
 
-    const int column                    = left.column();
+    const int column                        = left.column();
     const GPSItemContainer* const itemLeft  = d->imageModel->itemFromIndex(left);
     const GPSItemContainer* const itemRight = d->imageModel->itemFromIndex(right);
 
@@ -218,6 +218,7 @@ void GPSLinkItemSelectionModel::select(const QModelIndex& index, QItemSelectionM
 
     // When an item is removed, the current index is set to the top index in the model.
     // That causes a selectionChanged signal with a selection which we do not want.
+
     if (d->m_ignoreCurrentChanged)
     {
         return;
@@ -354,12 +355,12 @@ public:
 };
 
 /**
-  The idea here is that <tt>this</tt> selection model and proxySelectionModel might be in different parts of the
-  proxy chain. We need to build up to two chains of proxy models to create mappings between them.
-
-  We first build the chain from 1 to 5, then start building the chain from 7 to 1. We stop when we find that proxy 2 is
-  already in the first chain.
-*/
+ * The idea here is that <tt>this</tt> selection model and proxySelectionModel might be in different parts of the
+ * proxy chain. We need to build up to two chains of proxy models to create mappings between them.
+ *
+ * We first build the chain from 1 to 5, then start building the chain from 7 to 1. We stop when we find that proxy 2 is
+ * already in the first chain.
+ */
 void GPSModelIndexProxyMapperPrivate::createProxyChain()
 {
     foreach (auto p, m_proxyChainUp)
@@ -396,6 +397,7 @@ void GPSModelIndexProxyMapperPrivate::createProxyChain()
         {
             m_proxyChainDown = proxyChainDown;
             checkConnected();
+
             return;
         }
     }
@@ -421,9 +423,11 @@ void GPSModelIndexProxyMapperPrivate::createProxyChain()
         {
             m_proxyChainDown = proxyChainDown.mid(targetIndex + 1, proxyChainDown.size());
             checkConnected();
+
             return;
         }
     }
+
     m_proxyChainDown = proxyChainDown;
     checkConnected();
 }
@@ -537,6 +541,7 @@ QItemSelection GPSModelIndexProxyMapper::mapSelectionLeftToRight(const QItemSele
     }
 
     Q_ASSERT((!seekSelection.isEmpty() && seekSelection.first().model() == d->m_rightModel) || true);
+
     return seekSelection;
 }
 
@@ -595,12 +600,14 @@ QItemSelection GPSModelIndexProxyMapper::mapSelectionRightToLeft(const QItemSele
     }
 
     Q_ASSERT((!seekSelection.isEmpty() && seekSelection.first().model() == d->m_leftModel) || true);
+
     return seekSelection;
 }
 
 bool GPSModelIndexProxyMapper::isConnected() const
 {
     Q_D(const GPSModelIndexProxyMapper);
+
     return d->mConnected;
 }
 

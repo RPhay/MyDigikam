@@ -53,11 +53,11 @@ public:
     ~GPSItemList();
 
     void setModelAndSelectionModel(GPSItemModel* const model, QItemSelectionModel* const selectionModel);
-    GPSItemModel* getModel() const;
-    QItemSelectionModel* getSelectionModel() const;
+    GPSItemModel* getModel()                    const;
+    QItemSelectionModel* getSelectionModel()    const;
     void setDragDropHandler(ItemListDragDropHandler* const dragDropHandler);
     void setThumbnailSize(const int size);
-    GPSItemSortProxyModel* getSortProxyModel() const;
+    GPSItemSortProxyModel* getSortProxyModel()  const;
 
     void saveSettingsToGroup(KConfigGroup* const group);
     void readSettingsFromGroup(const KConfigGroup* const group);
@@ -83,8 +83,8 @@ private Q_SLOTS:
 protected:
 
     virtual bool eventFilter(QObject* watched, QEvent* event) override;
-    virtual void startDrag(Qt::DropActions supportedActions) override;
-    virtual void wheelEvent(QWheelEvent* we) override;
+    virtual void startDrag(Qt::DropActions supportedActions)  override;
+    virtual void wheelEvent(QWheelEvent* we)                  override;
 
 private:
 

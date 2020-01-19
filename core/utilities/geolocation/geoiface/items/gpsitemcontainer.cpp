@@ -52,7 +52,8 @@ bool setExifXmpTagDataVariant(DMetadata* const meta, const char* const exifTagNa
 
     if (success)
     {
-        /** @todo Here we save all data types as XMP Strings. Is that okay or do we have to store them as some other type?
+        /**
+         * @todo Here we save all data types as XMP Strings. Is that okay or do we have to store them as some other type?
          */
         switch (value.type())
         {
@@ -71,16 +72,21 @@ bool setExifXmpTagDataVariant(DMetadata* const meta, const char* const exifTagNa
                 success = meta->setXmpTagString(xmpTagName, QString::fromLatin1("%1/%2").arg(num).arg(den));
                 break;
             }
+
             case QVariant::List:
             {
                 long num = 0, den = 1;
                 QList<QVariant> list = value.toList();
 
                 if (list.size() >= 1)
+                {
                     num = list[0].toInt();
+                }
 
                 if (list.size() >= 2)
+                {
                     den = list[1].toInt();
+                }
 
                 success = meta->setXmpTagString(xmpTagName, QString::fromLatin1("%1/%2").arg(num).arg(den));
                 break;
@@ -146,6 +152,7 @@ DMetadata* GPSItemContainer::getMetadataForFile() const
     {
         // It is possible that no sidecar file has yet been created.
         // If writing to sidecar file is activated, we ignore the loading error of the metadata.
+
         if (MetaEngineSettings::instance()->settings().metadataWritingMode == DMetadata::WRITE_TO_FILE_ONLY)
         {
             return nullptr;
@@ -157,33 +164,44 @@ DMetadata* GPSItemContainer::getMetadataForFile() const
 
 int getWarningLevelFromGPSDataContainer(const GPSDataContainer& data)
 {
-    if (data.hasDop())
+    if      (data.hasDop())
     {
         const int dopValue = data.getDop();
 
         if (dopValue < 2)
+        {
             return 1;
+        }
 
         if (dopValue < 4)
+        {
             return 2;
+        }
 
         if (dopValue < 10)
+        {
             return 3;
+        }
 
         return 4;
     }
     else if (data.hasFixType())
     {
         if (data.getFixType() < 3)
+        {
             return 4;
+        }
     }
     else if (data.hasNSatellites())
     {
         if (data.getNSatellites() < 4)
+        {
             return 4;
+        }
     }
 
     // no warning level
+
     return -1;
 }
 
@@ -199,12 +217,17 @@ bool GPSItemContainer::loadImageData()
     if (!m_dateTime.isValid())
     {
         // Get date from filesystem.
+
         QFileInfo info(m_url.toLocalFile());
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
+
         QDateTime ctime = info.birthTime();
+
 #else
+
         QDateTime ctime = info.created();
+
 #endif
 
         QDateTime mtime = info.lastModified();
@@ -228,7 +251,9 @@ bool GPSItemContainer::loadImageData()
     // them from the file. On the other hand, we can not clear
     // the coordinates, because then we would loose them if
     // they are only stored in the database.
-//      m_gpsData.clear();
+/*
+    m_gpsData.clear();
+*/
 
     if (!m_gpsData.hasCoordinates())
     {
@@ -252,9 +277,11 @@ bool GPSItemContainer::loadImageData()
         }
     }
 
-    /** @todo It seems that exiv2 provides EXIF entries if XMP sidecar entries exist,
-        *  therefore no need to read XMP as well?
-        */
+    /**
+     * @todo It seems that exiv2 provides EXIF entries if XMP sidecar entries exist,
+     * therefore no need to read XMP as well?
+     */
+
     // read the remaining GPS information from the file:
     const QByteArray speedRef  = meta->getExifTagData("Exif.GPSInfo.GPSSpeedRef");
     bool success               = !speedRef.isEmpty();
@@ -264,27 +291,33 @@ bool GPSItemContainer::loadImageData()
     if (success)
     {
         // be relaxed about 0/0
+
         if ((num == 0.0) && (den == 0.0))
+        {
             den = 1.0;
+        }
 
         const qreal speedInRef = qreal(num)/qreal(den);
         qreal FactorToMetersPerSecond;
 
-        if (speedRef.startsWith('K'))
+        if      (speedRef.startsWith('K'))
         {
             // km/h = 1000 * 3600
+
             FactorToMetersPerSecond = 1.0/3.6;
         }
         else if (speedRef.startsWith('M'))
         {
             // TODO: someone please check that this is the 'right' mile
             // miles/hour = 1609.344 meters / hour = 1609.344 meters / 3600 seconds
+
             FactorToMetersPerSecond = 1.0 / (1609.344 / 3600.0);
         }
         else if (speedRef.startsWith('N'))
         {
             // speed is in knots.
             // knot = one nautical mile / hour = 1852 meters / hour = 1852 meters / 3600 seconds
+
             FactorToMetersPerSecond = 1.0 / (1852.0 / 3600.0);
         }
         else
@@ -300,6 +333,7 @@ bool GPSItemContainer::loadImageData()
     }
 
     // number of satellites
+
     const QString gpsSatellitesString = meta->getExifTagString("Exif.GPSInfo.GPSSatellites");
     bool satellitesOkay               = !gpsSatellitesString.isEmpty();
 
@@ -309,6 +343,7 @@ bool GPSItemContainer::loadImageData()
          * @todo Here we only accept a single integer denoting the number of satellites used
          *       but not detailed information about all satellites.
          */
+
         const int nSatellites = gpsSatellitesString.toInt(&satellitesOkay);
 
         if (satellitesOkay)
@@ -318,6 +353,7 @@ bool GPSItemContainer::loadImageData()
     }
 
     // fix type / measure mode
+
     const QByteArray gpsMeasureModeByteArray = meta->getExifTagData("Exif.GPSInfo.GPSMeasureMode");
     bool measureModeOkay                     = !gpsMeasureModeByteArray.isEmpty();
 
@@ -335,13 +371,17 @@ bool GPSItemContainer::loadImageData()
     }
 
     // read the DOP value:
+
     success = meta->getExifTagRational("Exif.GPSInfo.GPSDOP", num, den);
 
     if (success)
     {
         // be relaxed about 0/0
+
         if ((num == 0.0) && (den == 0.0))
+        {
             den = 1.0;
+        }
 
         const qreal dop = qreal(num)/qreal(den);
 
@@ -349,6 +389,7 @@ bool GPSItemContainer::loadImageData()
     }
 
     // mark us as not-dirty, because the data was just loaded:
+
     m_dirty      = false;
     m_savedState = m_gpsData;
 
@@ -359,7 +400,7 @@ bool GPSItemContainer::loadImageData()
 
 QVariant GPSItemContainer::data(const int column, const int role) const
 {
-    if ((column == ColumnFilename) && (role == Qt::DisplayRole))
+    if      ((column == ColumnFilename) && (role == Qt::DisplayRole))
     {
         return m_url.fileName();
     }
@@ -379,21 +420,27 @@ QVariant GPSItemContainer::data(const int column, const int role) const
     else if ((column == ColumnLatitude) && (role == Qt::DisplayRole))
     {
         if (!m_gpsData.getCoordinates().hasLatitude())
+        {
             return QString();
+        }
 
         return QString::fromLatin1("%1").arg(m_gpsData.getCoordinates().lat(), 7);
     }
     else if ((column == ColumnLongitude) && (role == Qt::DisplayRole))
     {
         if (!m_gpsData.getCoordinates().hasLongitude())
+        {
             return QString();
+        }
 
         return QString::fromLatin1("%1").arg(m_gpsData.getCoordinates().lon(), 7);
     }
     else if ((column == ColumnAltitude) && (role == Qt::DisplayRole))
     {
         if (!m_gpsData.getCoordinates().hasAltitude())
+        {
             return QString();
+        }
 
         return QString::fromLatin1("%1").arg(m_gpsData.getCoordinates().alt(), 7);
     }
@@ -424,13 +471,17 @@ QVariant GPSItemContainer::data(const int column, const int role) const
             {
                 case 1:
                     return QBrush(Qt::green);
+
                 case 2:
                     return QBrush(Qt::yellow);
+
                 case 3:
                     // orange
                     return QBrush(QColor(0xff, 0x80, 0x00));
+
                 case 4:
                     return QBrush(Qt::red);
+
                 default:
                     break;
             }
@@ -439,28 +490,36 @@ QVariant GPSItemContainer::data(const int column, const int role) const
     else if ((column == ColumnDOP) && (role == Qt::DisplayRole))
     {
         if (!m_gpsData.hasDop())
+        {
             return QString();
+        }
 
         return QString::number(m_gpsData.getDop());
     }
     else if ((column == ColumnFixType) && (role == Qt::DisplayRole))
     {
         if (!m_gpsData.hasFixType())
+        {
             return QString();
+        }
 
         return i18n("%1d", m_gpsData.getFixType());
     }
     else if ((column == ColumnNSatellites) && (role == Qt::DisplayRole))
     {
         if (!m_gpsData.hasNSatellites())
+        {
             return QString();
+        }
 
         return QString::number(m_gpsData.getNSatellites());
     }
     else if ((column == ColumnSpeed) && (role == Qt::DisplayRole))
     {
         if (!m_gpsData.hasSpeed())
+        {
             return QString();
+        }
 
         return QString::number(m_gpsData.getSpeed());
     }
@@ -489,11 +548,15 @@ QVariant GPSItemContainer::data(const int column, const int role) const
                     myTag.append(QLatin1Char('/') + m_tagList[i].at(j).tagName);
 
                     if (j == 0)
+                    {
                         myTag.remove(0, 1);
+                    }
                 }
 
                 if (!myTagsList.isEmpty())
+                {
                     myTagsList.append(QLatin1String(", "));
+                }
 
                 myTagsList.append(myTag);
             }
@@ -553,31 +616,39 @@ bool GPSItemContainer::lessThan(const GPSItemContainer* const otherItem, const i
             return false;
 
         case ColumnFilename:
-            return m_url < otherItem->m_url;
+            return (m_url < otherItem->m_url);
 
         case ColumnDateTime:
-            return m_dateTime < otherItem->m_dateTime;
+            return (m_dateTime < otherItem->m_dateTime);
 
         case ColumnAltitude:
         {
             if (!m_gpsData.hasAltitude())
+            {
                 return false;
+            }
 
             if (!otherItem->m_gpsData.hasAltitude())
+            {
                 return true;
+            }
 
-            return m_gpsData.getCoordinates().alt() < otherItem->m_gpsData.getCoordinates().alt();
+            return (m_gpsData.getCoordinates().alt() < otherItem->m_gpsData.getCoordinates().alt());
         }
 
         case ColumnNSatellites:
         {
             if (!m_gpsData.hasNSatellites())
+            {
                 return false;
+            }
 
             if (!otherItem->m_gpsData.hasNSatellites())
+            {
                 return true;
+            }
 
-            return m_gpsData.getNSatellites() < otherItem->m_gpsData.getNSatellites();
+            return (m_gpsData.getNSatellites() < otherItem->m_gpsData.getNSatellites());
         }
 
         case ColumnAccuracy:
@@ -586,39 +657,51 @@ bool GPSItemContainer::lessThan(const GPSItemContainer* const otherItem, const i
             const int otherWarning = getWarningLevelFromGPSDataContainer(otherItem->m_gpsData);
 
             if (myWarning < 0)
+            {
                 return false;
+            }
 
             if (otherWarning < 0)
+            {
                 return true;
+            }
 
             if (myWarning != otherWarning)
-                return myWarning < otherWarning;
+            {
+                return (myWarning < otherWarning);
+            }
 
             // TODO: this may not be the best way to sort images with equal warning levels
             //       but it works for now
 
             if (m_gpsData.hasDop() != otherItem->m_gpsData.hasDop())
+            {
                 return !m_gpsData.hasDop();
+            }
 
             if (m_gpsData.hasDop() && otherItem->m_gpsData.hasDop())
             {
-                return m_gpsData.getDop() < otherItem->m_gpsData.getDop();
+                return (m_gpsData.getDop() < otherItem->m_gpsData.getDop());
             }
 
             if (m_gpsData.hasFixType() != otherItem->m_gpsData.hasFixType())
+            {
                 return m_gpsData.hasFixType();
+            }
 
             if (m_gpsData.hasFixType() && otherItem->m_gpsData.hasFixType())
             {
-                return m_gpsData.getFixType() > otherItem->m_gpsData.getFixType();
+                return (m_gpsData.getFixType() > otherItem->m_gpsData.getFixType());
             }
 
             if (m_gpsData.hasNSatellites() != otherItem->m_gpsData.hasNSatellites())
+            {
                 return m_gpsData.hasNSatellites();
+            }
 
             if (m_gpsData.hasNSatellites() && otherItem->m_gpsData.hasNSatellites())
             {
-                return m_gpsData.getNSatellites() > otherItem->m_gpsData.getNSatellites();
+                return (m_gpsData.getNSatellites() > otherItem->m_gpsData.getNSatellites());
             }
 
             return false;
@@ -627,65 +710,87 @@ bool GPSItemContainer::lessThan(const GPSItemContainer* const otherItem, const i
         case ColumnDOP:
         {
             if (!m_gpsData.hasDop())
+            {
                 return false;
+            }
 
             if (!otherItem->m_gpsData.hasDop())
+            {
                 return true;
+            }
 
-            return m_gpsData.getDop() < otherItem->m_gpsData.getDop();
+            return (m_gpsData.getDop() < otherItem->m_gpsData.getDop());
         }
 
         case ColumnFixType:
         {
             if (!m_gpsData.hasFixType())
+            {
                 return false;
+            }
 
             if (!otherItem->m_gpsData.hasFixType())
+            {
                 return true;
+            }
 
-            return m_gpsData.getFixType() < otherItem->m_gpsData.getFixType();
+            return (m_gpsData.getFixType() < otherItem->m_gpsData.getFixType());
         }
 
         case ColumnSpeed:
         {
             if (!m_gpsData.hasSpeed())
+            {
                 return false;
+            }
 
             if (!otherItem->m_gpsData.hasSpeed())
+            {
                 return true;
+            }
 
-            return m_gpsData.getSpeed() < otherItem->m_gpsData.getSpeed();
+            return (m_gpsData.getSpeed() < otherItem->m_gpsData.getSpeed());
         }
 
         case ColumnLatitude:
         {
             if (!m_gpsData.hasCoordinates())
+            {
                 return false;
+            }
 
             if (!otherItem->m_gpsData.hasCoordinates())
+            {
                 return true;
+            }
 
-            return m_gpsData.getCoordinates().lat() < otherItem->m_gpsData.getCoordinates().lat();
+            return (m_gpsData.getCoordinates().lat() < otherItem->m_gpsData.getCoordinates().lat());
         }
 
         case ColumnLongitude:
         {
             if (!m_gpsData.hasCoordinates())
+            {
                 return false;
+            }
 
             if (!otherItem->m_gpsData.hasCoordinates())
+            {
                 return true;
+            }
 
-            return m_gpsData.getCoordinates().lon() < otherItem->m_gpsData.getCoordinates().lon();
+            return (m_gpsData.getCoordinates().lon() < otherItem->m_gpsData.getCoordinates().lon());
         }
 
         case ColumnStatus:
         {
-            return m_dirty && !otherItem->m_dirty;
+            return (m_dirty && !otherItem->m_dirty);
         }
 
         default:
+        {
             return false;
+        }
     }
 }
 
@@ -726,12 +831,14 @@ QString GPSItemContainer::saveChanges()
     QString returnString;
 
     // first try to write the information to the image file
+
     bool success = false;
     QScopedPointer<DMetadata> meta(getMetadataForFile());
 
     if (!meta)
     {
         // TODO: more verbosity!
+
         returnString = i18n("Failed to open file.");
     }
     else
@@ -749,6 +856,7 @@ QString GPSItemContainer::saveChanges()
             }
 
             // write all other GPS information here too
+
             if (success && m_gpsData.hasSpeed())
             {
                 success = setExifXmpTagDataVariant(meta.data(),
@@ -761,6 +869,7 @@ QString GPSItemContainer::saveChanges()
                     const qreal speedInMetersPerSecond   = m_gpsData.getSpeed();
 
                     // km/h = 0.001 * m / ( s * 1/(60*60) ) = 3.6 * m/s
+
                     const qreal speedInKilometersPerHour = 3.6 * speedInMetersPerSecond;
                     success                              = setExifXmpTagDataVariant(meta.data(), "Exif.GPSInfo.GPSSpeed", "Xmp.exif.GPSSpeed", QVariant(speedInKilometersPerHour));
                 }
@@ -786,6 +895,7 @@ QString GPSItemContainer::saveChanges()
             }
 
             // write DOP
+
             if (success && m_gpsData.hasDop())
             {
                 success = setExifXmpTagDataVariant(meta.data(),
@@ -804,6 +914,7 @@ QString GPSItemContainer::saveChanges()
         if (p.shouldRemoveCoordinates)
         {
             // TODO: remove only the altitude if requested
+
             success = meta->removeGPSInfo();
 
             if (!success)
@@ -870,6 +981,7 @@ QString GPSItemContainer::saveChanges()
     if (returnString.isEmpty())
     {
         // mark all changes as not dirty and tell the model:
+
         emitDataChanged();
     }
 
@@ -888,7 +1000,7 @@ void GPSItemContainer::restoreGPSData(const GPSDataContainer& container)
 
 void GPSItemContainer::restoreRGTagList(const QList<QList<TagData> >& tagList)
 {
-    //TODO: override == operator
+    // TODO: override == operator
 
     if (tagList.count() != m_savedTagList.count())
     {

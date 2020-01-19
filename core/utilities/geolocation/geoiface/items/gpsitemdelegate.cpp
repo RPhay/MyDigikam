@@ -48,7 +48,7 @@ public:
     }
 
     GPSItemList* imageList;
-    int           thumbnailSize;
+    int          thumbnailSize;
 };
 
 GPSItemDelegate::GPSItemDelegate(GPSItemList* const imageList, QObject* const parent)
@@ -68,6 +68,7 @@ void GPSItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem& optio
     if (sortMappedindex.column() != GPSItemContainer::ColumnThumbnail)
     {
         QItemDelegate::paint(painter, option, sortMappedindex);
+
         return;
     }
 
@@ -79,12 +80,14 @@ void GPSItemDelegate::paint(QPainter* painter, const QStyleOptionViewItem& optio
     }
 
     // TODO: clipping, selected state, disabled state, etc.
+
     QPixmap itemPixmap = d->imageList->getModel()->getPixmapForIndex(sourceModelIndex, d->thumbnailSize);
 
     if (itemPixmap.isNull())
     {
         // TODO: paint some default logo
         // TODO: cache this logo
+
         itemPixmap = QIcon::fromTheme(QLatin1String("view-preview"))
                                       .pixmap(d->thumbnailSize, QIcon::Disabled);
     }
@@ -121,6 +124,7 @@ void GPSItemDelegate::setThumbnailSize(const int size)
     {
         // TODO: is it enough to emit this signal for only 1 item?
         // seems to work in Qt4.5 with QTreeView::setUniformRowHeights(true)
+
         emit sizeHintChanged(imageModel->index(0, 0));
     }
 }
