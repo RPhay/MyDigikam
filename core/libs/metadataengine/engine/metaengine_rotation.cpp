@@ -31,41 +31,41 @@ namespace Digikam
 {
 
 /**
-   If the picture is displayed according to the exif orientation tag,
-   the user will request rotating operations relative to what he sees,
-   and that is the picture rotated according to the EXIF tag.
-   So the operation requested and the given EXIF angle must be combined.
-   E.g. if orientation is "6" (rotate 90 clockwiseto show correctly)
-   and the user selects 180 clockwise, the operation is 270.
-   If the user selected 270, the operation would be None (and clearing the exif tag).
-
-   This requires to describe the transformations in a model which
-   cares for both composing (180+90=270) and eliminating (180+180=no action),
-   as well as the non-commutative nature of the operations (vflip+90 is not 90+vflip)
-
-   All 2D transformations can be described by a 2x3 matrix, see QWMetaEngineRotation.
-   All transformations needed here - rotate 90, 180, 270, flipV, flipH -
-   can be described in a 2x2 matrix with the values 0,1,-1
-   (because flipping is expressed by changing the sign only,
-    and sine and cosine of 90, 180 and 270 are either 0,1 or -1).
-
-    x' = m11 x + m12 y
-    y' = m21 x + m22 y
-
-   Moreover, all combinations of these rotate/flip operations result in one of the eight
-   matrices defined below.
-   (I did not proof that mathematically, but empirically)
-
-   static const MetaEngineRotation identity;               //( 1,  0,  0,  1)
-   static const MetaEngineRotation rotate90;               //( 0,  1, -1,  0)
-   static const MetaEngineRotation rotate180;              //(-1,  0,  0, -1)
-   static const MetaEngineRotation rotate270;              //( 0, -1,  1,  0)
-   static const MetaEngineRotation flipHorizontal;         //(-1,  0,  0,  1)
-   static const MetaEngineRotation flipVertical;           //( 1,  0,  0, -1)
-   static const MetaEngineRotation rotate90flipHorizontal; //( 0,  1,  1,  0), first rotate, then flip
-   static const MetaEngineRotation rotate90flipVertical;   //( 0, -1, -1,  0), first rotate, then flip
-
-*/
+ * If the picture is displayed according to the exif orientation tag,
+ * the user will request rotating operations relative to what he sees,
+ * and that is the picture rotated according to the EXIF tag.
+ * So the operation requested and the given EXIF angle must be combined.
+ * E.g. if orientation is "6" (rotate 90 clockwiseto show correctly)
+ * and the user selects 180 clockwise, the operation is 270.
+ * If the user selected 270, the operation would be None (and clearing the exif tag).
+ *
+ * This requires to describe the transformations in a model which
+ * cares for both composing (180+90=270) and eliminating (180+180=no action),
+ * as well as the non-commutative nature of the operations (vflip+90 is not 90+vflip)
+ *
+ * All 2D transformations can be described by a 2x3 matrix, see QWMetaEngineRotation.
+ * All transformations needed here - rotate 90, 180, 270, flipV, flipH -
+ * can be described in a 2x2 matrix with the values 0,1,-1
+ * (because flipping is expressed by changing the sign only,
+ *  and sine and cosine of 90, 180 and 270 are either 0,1 or -1).
+ *
+ *  x' = m11 x + m12 y
+ *  y' = m21 x + m22 y
+ *
+ * Moreover, all combinations of these rotate/flip operations result in one of the eight
+ * matrices defined below.
+ * (I did not proof that mathematically, but empirically)
+ *
+ * static const MetaEngineRotation identity;               //( 1,  0,  0,  1)
+ * static const MetaEngineRotation rotate90;               //( 0,  1, -1,  0)
+ * static const MetaEngineRotation rotate180;              //(-1,  0,  0, -1)
+ * static const MetaEngineRotation rotate270;              //( 0, -1,  1,  0)
+ * static const MetaEngineRotation flipHorizontal;         //(-1,  0,  0,  1)
+ * static const MetaEngineRotation flipVertical;           //( 1,  0,  0, -1)
+ * static const MetaEngineRotation rotate90flipHorizontal; //( 0,  1,  1,  0), first rotate, then flip
+ * static const MetaEngineRotation rotate90flipVertical;   //( 0, -1, -1,  0), first rotate, then flip
+ *
+ */
 
 namespace Matrix
 {
@@ -144,7 +144,7 @@ MetaEngineRotation matrix(MetaEngine::ImageOrientation exifOrientation)
 
 MetaEngineRotation::MetaEngineRotation()
 {
-    set( 1, 0, 0, 1 );
+    set(1, 0, 0, 1);
 }
 
 MetaEngineRotation::MetaEngineRotation(TransformationAction action)

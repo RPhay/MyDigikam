@@ -44,6 +44,7 @@ public:
     MetaEngineMergeHelper& operator<<(const KeyString& key)
     {
         keys << key;
+
         return *this;
     }
 
@@ -146,10 +147,12 @@ class Q_DECL_HIDDEN IptcMetaEngineMergeHelper
 };
 
 #ifdef _XMP_SUPPORT_
+
 class Q_DECL_HIDDEN XmpMetaEngineMergeHelper
     : public MetaEngineMergeHelper<Exiv2::XmpData, Exiv2::XmpKey, QLatin1String>
 {
 };
+
 #endif
 
 } // namespace Digikam

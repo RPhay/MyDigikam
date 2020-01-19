@@ -97,6 +97,7 @@
 // With exiv2 > 0.20.0, all makernote header files have been removed to increase binary compatibility.
 // See Exiv2 bugzilla entry http://dev.exiv2.org/issues/719
 // and wiki topic           http://dev.exiv2.org/boards/3/topics/583
+
 #ifdef Q_CC_GNU
 #   pragma GCC visibility pop
 #endif
@@ -158,6 +159,7 @@ public:
     Exiv2::XmpData&        xmpMetadata();
 
     void loadSidecarData(Exiv2::Image::AutoPtr xmpsidecar);
+
 #endif
 
 public:

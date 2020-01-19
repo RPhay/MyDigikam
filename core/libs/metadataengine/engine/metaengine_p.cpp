@@ -62,7 +62,8 @@ extern "C"
 namespace Digikam
 {
 
-/** This mutex is used to protect all Exiv2 API calls when MetaEngine is used with multi-threads.
+/**
+ * This mutex is used to protect all Exiv2 API calls when MetaEngine is used with multi-threads.
  */
 QMutex s_metaEngineMutex(QMutex::Recursive);
 
@@ -114,6 +115,7 @@ std::string& MetaEngine::Private::itemComments()
 }
 
 #ifdef _XMP_SUPPORT_
+
 const Exiv2::XmpData& MetaEngine::Private::xmpMetadata() const
 {
     return data.constData()->xmpMetadata;
@@ -123,6 +125,7 @@ Exiv2::XmpData& MetaEngine::Private::xmpMetadata()
 {
     return data.data()->xmpMetadata;
 }
+
 #endif
 
 void MetaEngine::Private::copyPrivateData(const Private* const other)
@@ -157,19 +160,26 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
                                             (const char*)(QFile::encodeName(filePath).constData()));
 
 #if EXIV2_TEST_VERSION(0,27,99)
+
         return saveOperations(finfo, std::move(image));
+
 #else
+
         return saveOperations(finfo, image);
+
 #endif
+
     }
     catch(Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot save metadata to XMP sidecar using Exiv2 "), e);
+
         return false;
     }
     catch(...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+
         return false;
     }
 }
@@ -186,6 +196,7 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
     QStringList rawTiffBasedSupported, rawTiffBasedNotSupported;
 
     // Raw files supported by Exiv2 0.26
+
     rawTiffBasedSupported << QLatin1String("cr2")
                           << QLatin1String("crw")
                           << QLatin1String("dng")
@@ -195,6 +206,7 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
                           << QLatin1String("srw");
 
     // Raw files not supported by Exiv2 0.26
+
     rawTiffBasedNotSupported << QLatin1String("3fr")
                              << QLatin1String("arw")
                              << QLatin1String("dcr")
@@ -222,15 +234,15 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
     if (rawTiffBasedNotSupported.contains(ext))
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << finfo.fileName()
-                               << "is TIFF based RAW file not yet supported. Metadata not saved.";
+                                        << "is TIFF based RAW file not yet supported. Metadata not saved.";
         return false;
     }
 
     if (rawTiffBasedSupported.contains(ext) && !writeRawFiles)
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << finfo.fileName()
-                               << "is TIFF based RAW file supported but writing mode is disabled. "
-                               << "Metadata not saved.";
+                                        << "is TIFF based RAW file supported but writing mode is disabled. "
+                                        << "Metadata not saved.";
         return false;
     }
 
@@ -247,19 +259,26 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
         image = Exiv2::ImageFactory::open((const char*)(QFile::encodeName(finfo.filePath()).constData()));
 
 #if EXIV2_TEST_VERSION(0,27,99)
+
         return saveOperations(finfo, std::move(image));
+
 #else
+
         return saveOperations(finfo, image);
+
 #endif
+
     }
     catch(Exiv2::AnyError& e)
     {
         printExiv2ExceptionError(QLatin1String("Cannot save metadata to image using Exiv2 "), e);
+
         return false;
     }
     catch(...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+
         return false;
     }
 }
@@ -278,6 +297,7 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
         // We need to load target file metadata to merge with new one. It's mandatory with TIFF format:
         // like all tiff file structure is based on Exif.
+
         image->readMetadata();
 
         // Image Comments ---------------------------------
@@ -307,6 +327,7 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
                 // With tiff image we cannot overwrite whole Exif data as well, because
                 // image data are stored in Exif container. We need to take a care about
                 // to not lost image data.
+
                 untouchedTags << QLatin1String("Exif.Image.ImageWidth");
                 untouchedTags << QLatin1String("Exif.Image.ImageLength");
                 untouchedTags << QLatin1String("Exif.Image.BitsPerSample");
@@ -370,17 +391,22 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
         if ((mode == Exiv2::amWrite) || (mode == Exiv2::amReadWrite))
         {
+
 #ifdef _XMP_SUPPORT_
+
             image->setXmpData(xmpMetadata());
             wroteXMP = true;
+
 #endif
+
         }
 
         qCDebug(DIGIKAM_METAENGINE_LOG) << "wroteXMP: " << wroteXMP;
 
-        if (!wroteComment && !wroteEXIF && !wroteIPTC && !wroteXMP)
+        if      (!wroteComment && !wroteEXIF && !wroteIPTC && !wroteXMP)
         {
             qCDebug(DIGIKAM_METAENGINE_LOG) << "Writing metadata is not supported for file" << finfo.fileName();
+
             return false;
         }
         else if (!wroteEXIF || !wroteIPTC || !wroteXMP)
@@ -391,6 +417,7 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
         if (!updateFileTimeStamp)
         {
             // Don't touch access and modification timestamp of file.
+
             QT_STATBUF     st;
             struct utimbuf ut;
             int ret = QT_STAT(QFile::encodeName(filePath).constData(), &st);
@@ -567,12 +594,19 @@ bool MetaEngine::Private::isUtf8(const char* const buffer) const
     }
 
 // character never appears in text
+
 #define F 0
+
 // character appears in plain ASCII text
+
 #define T 1
+
 // character appears in ISO-8859 text
+
 #define I 2
+
 // character appears in non-ISO extended ASCII (Mac, IBM PC)
+
 #define X 3
 
     static const unsigned char text_chars[256] =
@@ -615,36 +649,43 @@ bool MetaEngine::Private::isUtf8(const char* const buffer) const
         else if ((c & 0x40) == 0)
         {
             // 10xxxxxx never 1st byte
+
             return false;
         }
         else
         {
             // 11xxxxxx begins UTF-8
+
             int following = 0;
 
             if      ((c & 0x20) == 0)
             {
                 // 110xxxxx
+
                 following = 1;
             }
             else if ((c & 0x10) == 0)
             {
                 // 1110xxxx
+
                 following = 2;
             }
             else if ((c & 0x08) == 0)
             {
                 // 11110xxx
+
                 following = 3;
             }
             else if ((c & 0x04) == 0)
             {
                 // 111110xx
+
                 following = 4;
             }
             else if ((c & 0x02) == 0)
             {
                 // 1111110x
+
                 following = 5;
             }
             else
@@ -822,6 +863,7 @@ void MetaEngine::Private::loadSidecarData(Exiv2::Image::AutoPtr xmpsidecar)
      *  XMP (xmp:ModifyDate)
      */
 }
+
 #endif // _XMP_SUPPORT_
 
 } // namespace Digikam

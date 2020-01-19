@@ -57,10 +57,15 @@ public:
 
         try
         {
+
 #if EXIV2_TEST_VERSION(0,27,99)
+
             image                              = std::move(image_);
+
 #else
+
             image                              = image_;
+
 #endif
             image->readMetadata();
 
@@ -68,6 +73,7 @@ public:
             Exiv2::PreviewPropertiesList props = manager->getPreviewProperties();
 
             // reverse order of list, which is smallest-first
+
             Exiv2::PreviewPropertiesList::reverse_iterator it;
 
             for (it = props.rbegin() ; it != props.rend() ; ++it)
@@ -100,11 +106,17 @@ MetaEnginePreviews::MetaEnginePreviews(const QString& filePath)
     try
     {
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const char*)(QFile::encodeName(filePath).constData()));
+
 #if EXIV2_TEST_VERSION(0,27,99)
+
         d->load(std::move(image));
+
 #else
+
         d->load(image);
+
 #endif
+
     }
     catch(Exiv2::AnyError& e)
     {
@@ -124,11 +136,17 @@ MetaEnginePreviews::MetaEnginePreviews(const QByteArray& imgData)
     try
     {
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((Exiv2::byte*)imgData.data(), imgData.size());
+
 #if EXIV2_TEST_VERSION(0,27,99)
+
         d->load(std::move(image));
+
 #else
+
         d->load(image);
+
 #endif
+
     }
     catch(Exiv2::AnyError& e)
     {
@@ -153,7 +171,9 @@ bool MetaEnginePreviews::isEmpty()
 QSize MetaEnginePreviews::originalSize() const
 {
     if (d->image.get())
+    {
         return QSize(d->image->pixelWidth(), d->image->pixelHeight());
+    }
 
     return QSize();
 }
@@ -161,7 +181,9 @@ QSize MetaEnginePreviews::originalSize() const
 QString MetaEnginePreviews::originalMimeType() const
 {
     if (d->image.get())
-        return QLatin1String(d->image->mimeType().c_str());
+    {
+       return QLatin1String(d->image->mimeType().c_str());
+    }
 
     return QString();
 }
@@ -173,42 +195,60 @@ int MetaEnginePreviews::count()
 
 int MetaEnginePreviews::dataSize(int index)
 {
-    if (index < 0 || index >= size()) return 0;
+    if ((index < 0) || (index >= size()))
+    {
+        return 0;
+    }
 
     return d->properties[index].size_;
 }
 
 int MetaEnginePreviews::width(int index)
 {
-    if (index < 0 || index >= size()) return 0;
+    if ((index < 0) || (index >= size()))
+    {
+        return 0;
+    }
 
     return d->properties[index].width_;
 }
 
 int MetaEnginePreviews::height(int index)
 {
-    if (index < 0 || index >= size()) return 0;
+    if ((index < 0) || (index >= size()))
+    {
+        return 0;
+    }
 
     return d->properties[index].height_;
 }
 
 QString MetaEnginePreviews::mimeType(int index)
 {
-    if (index < 0 || index >= size()) return QString();
+    if ((index < 0) || (index >= size()))
+    {
+        return QString();
+    }
 
     return QLatin1String(d->properties[index].mimeType_.c_str());
 }
 
 QString MetaEnginePreviews::fileExtension(int index)
 {
-    if (index < 0 || index >= size()) return QString();
+    if ((index < 0) || (index >= size()))
+    {
+        return QString();
+    }
 
     return QLatin1String(d->properties[index].extension_.c_str());
 }
 
 QByteArray MetaEnginePreviews::data(int index)
 {
-    if (index < 0 || index >= size()) return QByteArray();
+    if ((index < 0) || (index >= size()))
+    {
+        return QByteArray();
+    }
 
     qCDebug(DIGIKAM_METAENGINE_LOG) << "index     : " << index;
     qCDebug(DIGIKAM_METAENGINE_LOG) << "properties: " << count();
@@ -218,16 +258,19 @@ QByteArray MetaEnginePreviews::data(int index)
     try
     {
         Exiv2::PreviewImage image = d->manager->getPreviewImage(d->properties[index]);
+
         return QByteArray((const char*)image.pData(), image.size());
     }
     catch(Exiv2::AnyError& e)
     {
         MetaEngine::Private::printExiv2ExceptionError(QLatin1String("Cannot load metadata using Exiv2 "), e);
+
         return QByteArray();
     }
     catch(...)
     {
         qCCritical(DIGIKAM_METAENGINE_LOG) << "Default exception from Exiv2";
+
         return QByteArray();
     }
 }
@@ -238,7 +281,9 @@ QImage MetaEnginePreviews::image(int index)
     QImage     image;
 
     if (!image.loadFromData(previewData))
+    {
         return QImage();
+    }
 
     return image;
 }
