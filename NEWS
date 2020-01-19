@@ -588,5 +588,10 @@ BUGFIXES:
 572 ==> 406611 - There is no GPS icon over the thumbnail.
 573 ==> 406941 - Geo-filter on the right pane does not work.
 574 ==> 413081 - German user interface?
-575 ==> 398869 - Tabs text gone when DigiKam window active.
-576 ==> 
+575 ==> 398869 - Tabs text gone when digiKam window active.
+576 ==> 204479 - Unable to use digiKam on Windows.
+577 ==> 414176 - Recognition of people.
+578 ==> 415521 - digiKam is crashing very oftenly while loading preview of an image on Windows 10.
+579 ==> 412453 - Crash after adding a new album-network drive.
+580 ==> 412950 - While processing new collection, any (mouse) action will result in crash of digiKam.
+581 ==> 
