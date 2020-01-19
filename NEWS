@@ -584,6 +584,6 @@ BUGFIXES:
 568 ==> 412920 - Image Editor displays incorrect coordinates for selections on scaled HiDPI screens.
 569 ==> 407914 - Crash when tagging, finding duplicates, moving between albums.
 570 ==> 392607 - Crash sometimes when applying Tags to images.
-571 ==> 406612 - pictures are not placed on map when the've got GPS metadata.
-572 ==> 
-
+571 ==> 406612 - Pictures are not placed on map when the've got GPS metadata.
+572 ==> 406611 - There is no GPS icon over the thumbnail.
+573 ==> 
