@@ -42,11 +42,13 @@ class DIGIKAM_EXPORT UndoMetadataContainer
 {
 public:
 
-    /** Fill a container from the DImg
+    /**
+     * Fill a container from the DImg
      */
     static UndoMetadataContainer fromImage(const DImg& img);
 
-    /** Write this container's values to the DImg
+    /**
+     * Write this container's values to the DImg
      */
     void toImage(DImg& img) const;
 

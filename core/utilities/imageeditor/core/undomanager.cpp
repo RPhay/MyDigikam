@@ -86,17 +86,21 @@ void UndoManager::addAction(UndoAction* const action)
     }
 
     // All redo actions are invalid now
+
     clearRedoActions();
 
     // If the _last_ action was irreversible, we need to snapshot it
+
     UndoAction* const lastAction               = d->undoActions.isEmpty() ? 0 : d->undoActions.last();
 
     d->undoActions << action;
 
     // action has already read the "history before step" from EditorCore in its constructor
+
     UndoActionIrreversible* const irreversible = dynamic_cast<UndoActionIrreversible*>(action);
 
     // we always make an initial snapshot to be able to do a flying rollback in one step
+
     if (irreversible || !lastAction || isAtOrigin())
     {
         makeSnapshot(d->undoActions.size() - 1);
@@ -115,6 +119,7 @@ void UndoManager::addAction(UndoAction* const action)
 
     // if origin is at one of the redo action that are now invalid,
     // it is no longer reachable
+
     if (d->origin < 0)
     {
         d->origin = INT_MAX;
@@ -204,7 +209,7 @@ void UndoManager::undoStep(bool saveRedo, bool execute, bool flyingRollback)
     UndoActionIrreversible* const irreversible = dynamic_cast<UndoActionIrreversible*>(action);
     UndoActionReversible* const reversible     = dynamic_cast<UndoActionReversible*>(action);
     QVariant originDataAfterStep               = d->core->getImg()->fileOriginData();
-    QVariant originDataBeforeStep; // only needed if isAtOrigin()
+    QVariant originDataBeforeStep;             // only needed if isAtOrigin()
 
     DImageHistory originHistoryAfterStep       = d->core->getResolvedInitialHistory();
     DImageHistory originHistoryBeforeStep;
@@ -214,6 +219,7 @@ void UndoManager::undoStep(bool saveRedo, bool execute, bool flyingRollback)
     if (isAtOrigin())
     {
         // undoing from an origin: need to switch to previous origin?
+
         for (lastOrigin = d->undoActions.size() - 1 ; lastOrigin >= 0 ; --lastOrigin)
         {
             if (d->undoActions.at(lastOrigin)->hasFileOriginData())
@@ -233,18 +239,22 @@ void UndoManager::undoStep(bool saveRedo, bool execute, bool flyingRollback)
         {
             // Undoing from the tip of the list:
             // Save the "last", current state for the redo operation
+
             needSnapshot = irreversible;
         }
         else
         {
             // Undoing an irreversible with next redo reversible:
             // Here, no snapshot was made in addAction, but we need it now
+
             needSnapshot = dynamic_cast<UndoActionReversible*>(d->redoActions.last());
         }
 
         if (needSnapshot)
         {
-            //d->undoCache->erase(d->undoActions.size() + 1);
+/*
+            d->undoCache->erase(d->undoActions.size() + 1);
+*/
             makeSnapshot(d->undoActions.size());
         }
     }
@@ -252,9 +262,11 @@ void UndoManager::undoStep(bool saveRedo, bool execute, bool flyingRollback)
     if (execute)
     {
         // in case of flyingRollback, the data in core is not in sync
-        if (irreversible || flyingRollback)
+
+        if      (irreversible || flyingRollback)
         {
             // undo the action
+
             restoreSnapshot(d->undoActions.size() - 1, dataBeforeStep);
         }
         else if (reversible) // checking pointer just to check for null pointer in case of a bug
@@ -266,10 +278,12 @@ void UndoManager::undoStep(bool saveRedo, bool execute, bool flyingRollback)
     else
     {
         // if we do not copy the data (fast roll-back), we at least set the history for subsequent steps
+
         d->core->imageUndoChanged(dataBeforeStep);
     }
 
     // Record history and origin for redo
+
     action->setMetadata(dataAfterStep);
 
     if (isAtOrigin())
@@ -324,6 +338,7 @@ void UndoManager::redoStep(bool execute, bool flyingRollback)
     else
     {
         // if we do not copy the data (fast roll-back), we at least set the history for subsequent steps
+
         d->core->imageUndoChanged(dataAfterStep);
     }
 
@@ -373,6 +388,7 @@ void UndoManager::getSnapshot(int index, DImg* const img) const
     DImg data = d->undoCache->getData(index);
 
     // Pass ownership of buffer. If data is null, img will be null
+
     img->putImageData(data.width(), data.height(), data.sixteenBit(), data.hasAlpha(), data.bits(), true);
 }
 
@@ -392,7 +408,7 @@ void UndoManager::clearPreviousOriginData()
 
 bool UndoManager::putImageDataAndHistory(DImg* const img, int stepsBack) const
 {
-    if (stepsBack <= 0 || stepsBack > d->undoActions.size())
+    if ((stepsBack <= 0) || (stepsBack > d->undoActions.size()))
     {
         return false;
     }
@@ -425,6 +441,7 @@ bool UndoManager::putImageDataAndHistory(DImg* const img, int stepsBack) const
         DImg reverting;
 
         // Get closest available snapshot
+
         if (snapshot < d->undoActions.size())
         {
             getSnapshot(snapshot, &reverting);
@@ -435,13 +452,16 @@ bool UndoManager::putImageDataAndHistory(DImg* const img, int stepsBack) const
         }
 
         // revert reversible actions, until reaching desired step
+
         for ( ; snapshot > step ; --snapshot)
         {
             UndoActionReversible* const reversible = dynamic_cast<UndoActionReversible*>(d->undoActions.at(snapshot - 1));
+
             if (!reversible) // would be a bug
             {
                 continue;
             }
+
             reversible->getReverseFilter().apply(reverting);
         }
 
@@ -450,6 +470,7 @@ bool UndoManager::putImageDataAndHistory(DImg* const img, int stepsBack) const
     }
 
     // adjust history
+
     UndoAction* const action             = d->undoActions.at(step);
     UndoMetadataContainer dataBeforeStep = action->getMetadata();
     dataBeforeStep.toImage(*img);
@@ -491,6 +512,7 @@ void UndoManager::clearRedoActions()
     }
 
     // clear from the level of the first redo action
+
     d->undoCache->clearFrom(d->undoActions.size() + 1);
 
     qDeleteAll(d->redoActions);

@@ -59,15 +59,15 @@ public:
 
 public:
 
-    SavingContext()
+    explicit SavingContext()
+      : savingState(SavingStateNone),
+        synchronizingState(NormalSaving),
+        synchronousSavingResult(false),
+        destinationExisted(false),
+        abortingSaving(false),
+        executedOperation(SavingStateNone),
+        saveTempFile(nullptr)
     {
-        savingState             = SavingStateNone;
-        synchronizingState      = NormalSaving;
-        saveTempFile            = nullptr;
-        destinationExisted      = false;
-        synchronousSavingResult = false;
-        abortingSaving          = false;
-        executedOperation       = SavingStateNone;
     }
 
 public:

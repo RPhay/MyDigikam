@@ -38,19 +38,19 @@ class DIGIKAM_EXPORT IOFileSettings
 public:
 
     IOFileSettings()
+      : JPEGCompression(75),
+        JPEGSubSampling(1),    // Medium sub-sampling
+        PNGCompression(9),
+        TIFFCompression(false),
+        JPEG2000Compression(75),
+        JPEG2000LossLess(true),
+        PGFCompression(3),
+        PGFLossLess(true),
+        HEIFCompression(75),
+        HEIFLossLess(true),
+        useRAWImport(true),
+        rawImportToolIid(QLatin1String("org.kde.digikam.plugin.rawimport.Native"))
     {
-        JPEGCompression     = 75;
-        JPEGSubSampling     = 1;    // Medium sub-sampling
-        PNGCompression      = 9;
-        TIFFCompression     = false;
-        JPEG2000Compression = 75;
-        JPEG2000LossLess    = true;
-        PGFCompression      = 3;
-        PGFLossLess         = true;
-        HEIFCompression     = 75;
-        HEIFLossLess        = true;
-        useRAWImport        = true;
-        rawImportToolIid    = QLatin1String("org.kde.digikam.plugin.rawimport.Native");
     };
 
     ~IOFileSettings()
@@ -59,44 +59,42 @@ public:
 
 public:
 
-    // JPEG quality value.
+    /// JPEG quality value.
     int     JPEGCompression;
 
-    // JPEG chroma sub-sampling value.
+    /// JPEG chroma sub-sampling value.
     int     JPEGSubSampling;
 
-    // PNG compression value.
+    /// PNG compression value.
     int     PNGCompression;
 
-    // TIFF deflate compression.
+    /// TIFF deflate compression.
     bool    TIFFCompression;
 
-    // JPEG2000 quality value.
+    /// JPEG2000 quality value.
     int     JPEG2000Compression;
 
-    // JPEG2000 lossless compression.
+    /// JPEG2000 lossless compression.
     bool    JPEG2000LossLess;
 
-    // PGF quality value.
+    /// PGF quality value.
     int     PGFCompression;
 
-    // PGF lossless compression.
+    /// PGF lossless compression.
     bool    PGFLossLess;
 
-    // HEIF quality value.
+    /// HEIF quality value.
     int     HEIFCompression;
 
-    // HEIF lossless compression.
+    /// HEIF lossless compression.
     bool    HEIFLossLess;
 
-    // Use Raw Import tool to load a RAW picture.
+    /// Use Raw Import tool to load a RAW picture.
     bool    useRAWImport;
 
     QString rawImportToolIid;
 
-    // ------------------------------------------------------
-    // RAW File decoding options :
-
+    /// RAW File decoding options.
     DRawDecoding rawDecodingSettings;
 };
 

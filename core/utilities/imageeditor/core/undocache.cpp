@@ -53,8 +53,8 @@ class Q_DECL_HIDDEN UndoCache::Private
 public:
 
     explicit Private()
+      : cacheError(false)
     {
-        cacheError = false;
     }
 
     QString cacheFile(int level) const
@@ -79,6 +79,7 @@ UndoCache::UndoCache()
                      .arg(QCoreApplication::applicationPid());
 
     // remove any remnants
+
     QDir dir(d->cacheDir);
 
     foreach (const QFileInfo& info, dir.entryInfoList(QStringList() << QLatin1String("undocache-*")))
@@ -127,9 +128,9 @@ bool UndoCache::putData(int level, const DImg& img) const
     qint64 fspace = (info.bytesAvailable() / 1024 / 1024);
     qCDebug(DIGIKAM_GENERAL_LOG) << "Free space available in Editor cache [" << d->cacheDir << "] in Mbytes:" << fspace;
 
-    if (fspace < 2048) // Check if free space is over 2 GiB to put data in cache.
+    if (fspace < 2048)              // Check if free space is over 2 GiB to put data in cache.
     {
-        if (!qApp->activeWindow()) // Special case for the Jenkins build server.
+        if (!qApp->activeWindow())  // Special case for the Jenkins build server.
         {
             return false;
         }
@@ -209,7 +210,7 @@ DImg UndoCache::getData(int level) const
 
     DImg img(w, h, sixteenBit, hasAlpha);
 
-    if (img.isNull() || numBytes != img.numBytes())
+    if (img.isNull() || (numBytes != img.numBytes()))
     {
         file.close();
 
@@ -218,7 +219,7 @@ DImg UndoCache::getData(int level) const
 
     qint64 readBytes = file.read((char*)img.bits(), numBytes);
 
-    if (file.error() != QFileDevice::NoError || readBytes != numBytes)
+    if ((file.error() != QFileDevice::NoError) || (readBytes != numBytes))
     {
         file.close();
 

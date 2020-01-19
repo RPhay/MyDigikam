@@ -47,7 +47,7 @@ IccPostLoadingManager::IccPostLoadingManager(DImg& image, const QString& filePat
 
 IccTransform IccPostLoadingManager::postLoadingManage(QWidget* const parent)
 {
-    if (image().hasAttribute(QLatin1String("missingProfileAskUser")))
+    if      (image().hasAttribute(QLatin1String("missingProfileAskUser")))
     {
         image().removeAttribute(QLatin1String("missingProfileAskUser"));
         DImg preview                     = image().smoothScale(240, 180, Qt::KeepAspectRatio);
@@ -58,6 +58,7 @@ IccTransform IccPostLoadingManager::postLoadingManage(QWidget* const parent)
         IccTransform trans;
         getTransform(trans, dlg->behavior(), dlg->specifiedProfile());
         delete dlg;
+
         return trans;
     }
     else if (image().hasAttribute(QLatin1String("profileMismatchAskUser")))
@@ -71,6 +72,7 @@ IccTransform IccPostLoadingManager::postLoadingManage(QWidget* const parent)
         IccTransform trans;
         getTransform(trans, dlg->behavior(), dlg->specifiedProfile());
         delete dlg;
+
         return trans;
     }
     else if (image().hasAttribute(QLatin1String("uncalibratedColorAskUser")))
@@ -84,6 +86,7 @@ IccTransform IccPostLoadingManager::postLoadingManage(QWidget* const parent)
         IccTransform trans;
         getTransform(trans, dlg->behavior(), dlg->specifiedProfile());
         delete dlg;
+
         return trans;
     }
 

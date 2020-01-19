@@ -110,7 +110,8 @@ public:
 
     void    zoom(double val);
 
-    /** Image properties
+    /**
+     * Image properties
      */
     DImg    getImgSelection() const;
     DImg*   getImg()          const;
@@ -125,7 +126,8 @@ public:
     int     origHeight()      const;
     int     bytesDepth()      const;
 
-    /** Image transforms
+    /**
+     * Image transforms
      */
     void    rotate90();
     void    rotate180();
@@ -142,14 +144,17 @@ public:
     void    putImgSelection(const QString& caller, const FilterAction& action, const DImg& img);
     void    putImg(const QString& caller, const FilterAction& action, const DImg& img);
 
-    /// For internal usage by UndoManager
+    /**
+     * For internal usage by UndoManager
+     */
     void    setUndoImg(const UndoMetadataContainer& c, const DImg& img);
 
     void    imageUndoChanged(const UndoMetadataContainer& c);
     void    setFileOriginData(const QVariant& data);
 
-    /** Convert a DImg image to a pixmap for screen using color
-     *  managed view if necessary.
+    /**
+     * Convert a DImg image to a pixmap for screen using color
+     * managed view if necessary.
      */
     QPixmap               convertToPixmap(DImg& img)  const;
 

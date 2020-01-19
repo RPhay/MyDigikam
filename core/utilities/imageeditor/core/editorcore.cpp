@@ -66,17 +66,17 @@ EditorCore::EditorCore()
     d->undoMan = new UndoManager(this);
     d->thread  = new SharedLoadSaveThread;
 
-    connect( d->thread, SIGNAL(signalImageLoaded(LoadingDescription,DImg)),
-             this, SLOT(slotImageLoaded(LoadingDescription,DImg)) );
+    connect(d->thread, SIGNAL(signalImageLoaded(LoadingDescription,DImg)),
+            this, SLOT(slotImageLoaded(LoadingDescription,DImg)));
 
-    connect( d->thread, SIGNAL(signalImageSaved(QString,bool)),
-             this, SLOT(slotImageSaved(QString,bool)) );
+    connect(d->thread, SIGNAL(signalImageSaved(QString,bool)),
+            this, SLOT(slotImageSaved(QString,bool)));
 
-    connect( d->thread, SIGNAL(signalLoadingProgress(LoadingDescription,float)),
-             this, SLOT(slotLoadingProgress(LoadingDescription,float)) );
+    connect(d->thread, SIGNAL(signalLoadingProgress(LoadingDescription,float)),
+            this, SLOT(slotLoadingProgress(LoadingDescription,float)));
 
-    connect( d->thread, SIGNAL(signalSavingProgress(QString,float)),
-             this, SLOT(slotSavingProgress(QString,float)) );
+    connect(d->thread, SIGNAL(signalSavingProgress(QString,float)),
+            this, SLOT(slotSavingProgress(QString,float)));
 }
 
 EditorCore::~EditorCore()
@@ -160,12 +160,15 @@ void EditorCore::slotLoadRawFromTool(const LoadingDescription& props, const DImg
     emit signalLoadingStarted(d->currentDescription.filePath);
     slotImageLoaded(d->currentDescription, img);
     EditorToolIface::editorToolIface()->unLoadTool();
-    //emit signalImageLoaded(d->currentDescription.filePath, true);
+/*
+    emit signalImageLoaded(d->currentDescription.filePath, true);
+*/
 }
 
 void EditorCore::slotLoadRaw(const LoadingDescription& props)
 {
     //qCDebug(DIGIKAM_GENERAL_LOG) << d->nextRawDescription.rawDecodingSettings;
+
     d->load(props);
 }
 
@@ -233,17 +236,17 @@ void EditorCore::slotImageLoaded(const LoadingDescription& loadingDescription, c
 
     // RAW tool active? Discard previous loaded image
     // Special case for Jenkins, no Editor window also no EditorToolIface
+/*
+    if (EditorToolIface::editorToolIface())
+    {
+        EditorTool* const tool = EditorToolIface::editorToolIface()->currentTool();
 
-//    if (EditorToolIface::editorToolIface())
-//    {
-//        EditorTool* const tool = EditorToolIface::editorToolIface()->currentTool();
-
-//        if (tool && tool->property("DPluginIId").toString().contains(QLatin1String("rawimport")))
-//        {
-//            return;
-//        }
-//    }
-
+        if (tool && tool->property("DPluginIId").toString().contains(QLatin1String("rawimport")))
+        {
+            return;
+        }
+    }
+*/
     bool valRet = false;
     d->image    = img;
 
@@ -258,13 +261,14 @@ void EditorCore::slotImageLoaded(const LoadingDescription& loadingDescription, c
         // We don't have a feedback from Raw engine about auto-rotated RAW file during decoding.
         // Setting rotatedOrFlipped to true will reset the exif flag on save (the data is then already rotated)
 
-        if (d->image.detectedFormat() == DImg::RAW)
+        if      (d->image.detectedFormat() == DImg::RAW)
         {
             d->rotatedOrFlipped = true;
         }
         else if (d->exifOrient)
         {
             // Do not rotate twice if already rotated, e.g. for full size preview.
+
             if (!d->image.wasExifRotated())
             {
                 d->rotatedOrFlipped = d->image.rotateAndFlip(d->image.exifOrientation(loadingDescription.filePath));
@@ -272,6 +276,7 @@ void EditorCore::slotImageLoaded(const LoadingDescription& loadingDescription, c
         }
 
         // set after rotation
+
         d->origWidth  = d->image.width();
         d->origHeight = d->image.height();
         d->width      = d->origWidth;
@@ -375,6 +380,7 @@ void EditorCore::slotImageSaved(const QString& filePath, bool success)
         {
             // Note: We operate on a temp file here, so we cannot
             // add it as referred image yet. Done in addLastSavedToHistory
+
             LoadingDescription description(filePath, LoadingDescription::ConvertForEditor);
             d->currentDescription = description;
         }
@@ -383,7 +389,8 @@ void EditorCore::slotImageSaved(const QString& filePath, bool success)
             HistoryImageId id = savedFile.image.addAsReferredImage(filePath);
 
             // for all images following in history, we need to insert the now saved file at the right place
-            for (int i = d->currentFileToSave + 1; i < d->filesToSave.size(); ++i)
+
+            for (int i = d->currentFileToSave + 1 ; i < d->filesToSave.size() ; ++i)
             {
                 d->filesToSave[i].image.insertAsReferredImage(savedFile.historyStep, id);
             }
@@ -418,6 +425,7 @@ void EditorCore::slotSavingProgress(const QString& filePath, float progress)
 void EditorCore::abortSaving()
 {
     // failure will be reported by a signal
+
     if (!d->filesToSave.isEmpty())
     {
         d->thread->stopSaving(d->filesToSave.at(d->currentFileToSave).filePath);
@@ -441,6 +449,7 @@ QString EditorCore::ensureHasCurrentUuid() const
     if (!d->image.getItemHistory().currentReferredImage().hasUuid())
     {
         // if there is no uuid in the image, we create one.
+
         QString uuid = QString::fromUtf8(d->image.createImageUniqueId());
         d->image.addCurrentUniqueImageId(uuid);
     }
@@ -452,6 +461,7 @@ void EditorCore::provideCurrentUuid(const QString& uuid)
 {
     // If the (original) image did not yet have a UUID, one is provided by higher level
     // Higher level decides how this UUID is stored; we don't touch the original here.
+
     if (!d->image.getItemHistory().currentReferredImage().hasUuid())
     {
         d->image.addCurrentUniqueImageId(uuid);
@@ -464,10 +474,12 @@ void EditorCore::setLastSaved(const QString& filePath)
     {
         // if the file was overwritten, a complete undo, to the state of original loading,
         // does not return to a real image anymore - it's overwritten
+
         d->undoMan->clearPreviousOriginData();
     }
 
     // We cannot do it in slotImageSaved because we may operate on a temporary filePath.
+
     d->image.imageSavedAs(filePath);
 }
 
@@ -476,6 +488,7 @@ void EditorCore::switchToLastSaved(const DImageHistory& resolvedCurrentHistory)
     // Higher level wants to use the current DImg object to represent the file
     // it has previously been saved to.
     // setLastSaved shall have been called before.
+
     d->image.switchOriginToLastSaved();
 
     if (resolvedCurrentHistory.isNull())
@@ -494,6 +507,7 @@ void EditorCore::switchToLastSaved(const DImageHistory& resolvedCurrentHistory)
 void EditorCore::setHistoryIsBranch(bool isBranching)
 {
     // The first added step (on top of the initial history) will be marked as branch
+
     d->image.setHistoryBranchAfter(d->resolvedInitialHistory, isBranching);
 }
 
@@ -506,13 +520,17 @@ void EditorCore::setModified()
 void EditorCore::readMetadataFromFile(const QString& file)
 {
     DMetadata meta(file);
+
     // This can overwrite metadata changes introduced by tools.
     // Currently, this is ProfileConversion and lensfun.
     // ProfileConversion's changes is redone when saving by DImgLoader.
     // Lensfun is not critical.
     // For a clean solution, we'd need to record a sort of metadata changeset in UndoMetadataContainer.
+
     d->image.setMetadata(meta.data());
+
     // If we are editing, and someone else at the same time, there's nothing we can do.
+
     if (!d->undoMan->hasChanges())
     {
         d->image.setItemHistory(DImageHistory::fromXml(meta.getItemHistory()));
@@ -721,6 +739,7 @@ DImg EditorCore::getImgSelection() const
     {
         DImg im = d->image.copy(d->selX, d->selY, d->selW, d->selH);
         im.detach();
+
         return im;
     }
 
@@ -751,6 +770,7 @@ void EditorCore::putIccProfile(const IccProfile& profile)
     }
 
     //qCDebug(DIGIKAM_GENERAL_LOG) << "Embedding profile: " << profile;
+
     d->image.setIccProfile(profile);
     setModified();
 }
@@ -805,6 +825,7 @@ QString EditorCore::getImageFormat() const
     QString mimeType = d->image.format();
 
     // It is a bug in the loader if format attribute is not given
+
     if (mimeType.isEmpty())
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "DImg object does not contain attribute \"format\"";
@@ -821,6 +842,7 @@ QPixmap EditorCore::convertToPixmap(DImg& img) const
     if (d->cmSettings.enableCM && (d->cmSettings.useManagedView || d->doSoftProofing))
     {
         // do not use d->monitorICCtrans here, because img may have a different embedded profile
+
         IccManager manager(img);
         IccTransform transform;
 
@@ -859,7 +881,9 @@ UndoState EditorCore::undoState() const
     state.hasUndo            = d->undoMan->anyMoreUndo();
     state.hasRedo            = d->undoMan->anyMoreRedo();
     state.hasUndoableChanges = !d->undoMan->isAtOrigin();
+
     // Includes the edit step performed by RAW import, which is not undoable
+
     state.hasChanges         = d->undoMan->hasChanges();
 
     return state;
