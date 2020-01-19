@@ -586,4 +586,6 @@ BUGFIXES:
 570 ==> 392607 - Crash sometimes when applying Tags to images.
 571 ==> 406612 - Pictures are not placed on map when the've got GPS metadata.
 572 ==> 406611 - There is no GPS icon over the thumbnail.
-573 ==> 
+573 ==> 406941 - Geo-filter on the right pane does not work.
+574 ==> 
+
