@@ -235,12 +235,6 @@ public:
     QMultiMap<QString, QVariant> getFaceTags();
 
     /**
-     * load the integer face tags.
-     * This is used in face tag transformation
-     */
-    QMultiMap<QString, QVariant> loadIntegerFaceTags(const ItemInfo& info);
-
-    /**
      * Set new face tags
      */
     void setFaceTags(QMultiMap<QString, QVariant> newFaceTags, QSize size);

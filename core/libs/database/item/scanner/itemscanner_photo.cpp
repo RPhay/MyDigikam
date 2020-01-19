@@ -467,21 +467,24 @@ void ItemScanner::scanFaces()
 
 void ItemScanner::commitFaces()
 {
-    QSize size = d->img.size();
+    QSize size      = d->img.size();
+    int orientation = d->img.orientation();
     QMap<QString, QVariant>::const_iterator it;
 
     for (it = d->commit.metadataFacesMap.constBegin() ; it != d->commit.metadataFacesMap.constEnd() ; ++it)
     {
         QString name = it.key();
-        QRectF rect  = it.value().toRectF();
+        QRectF rectF = it.value().toRectF();
 
-        if (!rect.isValid())
+        if (!rectF.isValid())
         {
             continue;
         }
 
+        QRect rect = TagRegion::relativeToAbsolute(rectF, size);
+        TagRegion::adjustToOrientation(rect, orientation, size);
+        TagRegion region(rect);
         FaceTagsEditor editor;
-        TagRegion region(TagRegion::relativeToAbsolute(rect, size));
 
         if (name.isEmpty())
         {

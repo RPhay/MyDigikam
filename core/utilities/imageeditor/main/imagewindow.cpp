@@ -678,19 +678,20 @@ void ImageWindow::prepareImageToSave()
 
         // Get face tags
         d->newFaceTags.clear();
-        QMultiMap<QString, QVariant> faceTags;
-        faceTags = hub.loadIntegerFaceTags(d->currentItemInfo);
+        QMultiMap<QString, QVariant> faceTags = hub.getFaceTags();
 
         if (!faceTags.isEmpty())
         {
-            QSize size = d->currentItemInfo.dimensions();
             QMap<QString, QVariant>::const_iterator it;
+
+            QSize size      = d->currentItemInfo.dimensions();
+            int orientation = d->currentItemInfo.orientation();
 
             for (it = faceTags.constBegin() ; it != faceTags.constEnd() ; ++it)
             {
                 // Start transform each face rect
-                QRect faceRect = it.value().toRect();
-                QSize tempSize = size;
+                QRect faceRect = TagRegion::relativeToAbsolute(it.value().toRectF(), size);
+                QSize tempSize = TagRegion::adjustToOrientation(faceRect, orientation, size);
 
                 qCDebug(DIGIKAM_GENERAL_LOG) << ">>>>>>>>>face rect before:"
                                              << faceRect.x()     << faceRect.y()

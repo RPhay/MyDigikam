@@ -573,4 +573,5 @@ BUGFIXES:
 557 ==> 409906 - Crash at Startup in geolocation about QtWebEngine.
 558 ==> 416371 - 7.0.0-beta bug in Album tree view sorting order.
 559 ==> 404901 - Google auth dialog => firefox google auth window not closed.
-560 ==> 
+560 ==> 372340 - Tagged face areas on portait (vertical) oriented images are mispositioned.
+561 ==> 
