@@ -594,4 +594,12 @@ BUGFIXES:
 578 ==> 415521 - digiKam is crashing very oftenly while loading preview of an image on Windows 10.
 579 ==> 412453 - Crash after adding a new album-network drive.
 580 ==> 412950 - While processing new collection, any (mouse) action will result in crash of digiKam.
-581 ==> 
+581 ==> 398674 - digiKam duplicates an album when the folder name has been renamed to lowercase or uppercase.
+582 ==> 392109 - Renamed tags are not written to metadata.
+583 ==> 391839 - Grouped pictures no longer appear in albums, tags, searches or timeline.
+584 ==> 391544 - Metadata not written to image after renaming Tag.
+585 ==> 326870 - Pop up window for file attributes with bad colors.
+586 ==> 376640 - Changing tag name does not update sidecar metadata.
+587 ==> 240224 - Foreground and background of the Settings menu item have the same color when the Dark Theme is selected.
+588 ==> 290072 - XMP sidecars available for all file types user wants to.
+589 ==> 
