@@ -30,6 +30,7 @@ namespace Digikam
 
 FaceGroup::Private::Private(FaceGroup* const q)
     : view(nullptr),
+      exifRotate(true),
       autoSuggest(false),
       showOnHover(false),
       manuallyAddWrapItem(nullptr),
@@ -88,7 +89,17 @@ FaceItem* FaceGroup::Private::createItem(const FaceTagsIface& face)
 {
     FaceItem* const item = new FaceItem(view->previewItem());
     item->setFace(face);
-    item->setOriginalRect(face.region().toRect());
+
+    QRect faceRect = face.region().toRect();
+
+    if (!exifRotate)
+    {
+        TagRegion::reverseToOrientation(faceRect,
+                                        info.orientation(),
+                                        info.dimensions());
+    }
+
+    item->setOriginalRect(faceRect);
     item->setVisible(false);
 
     return item;

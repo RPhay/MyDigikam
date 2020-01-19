@@ -317,6 +317,7 @@ void FaceGroup::load()
         return;
     }
 
+    d->exifRotate              = MetaEngineSettings::instance()->settings().exifRotate;
     QList<FaceTagsIface> faces = FaceTagsEditor().databaseFaces(d->info.id());
     d->visibilityController->clear();
 
@@ -517,9 +518,20 @@ void FaceGroup::slotAddItemFinished(const QRectF& rect)
     if (d->manuallyAddedItem)
     {
         d->manuallyAddedItem->setRectInSceneCoordinatesAdjusted(rect);
-        FaceTagsIface face   = d->editPipeline.addManually(d->info,
-                                                           d->view->previewItem()->image(),
-                                                           TagRegion(d->manuallyAddedItem->originalRect()));
+        QRect faceRect       = d->manuallyAddedItem->originalRect();
+        DImg preview(d->view->previewItem()->image().copy());
+
+        if (!d->exifRotate)
+        {
+            TagRegion::adjustToOrientation(faceRect,
+                                           d->info.orientation(),
+                                           d->info.dimensions());
+            preview.rotateAndFlip(d->info.orientation());
+        }
+
+        FaceTagsIface face   = d->editPipeline.addManually(d->info, preview,
+                                                           TagRegion(faceRect));
+
         FaceItem* const item = d->addItem(face);
         d->visibilityController->setItemDirectlyVisible(item, true);
         item->switchMode(AssignNameWidget::UnconfirmedEditMode);
@@ -544,6 +556,18 @@ void FaceGroup::cancelAddItem()
 
 void FaceGroup::applyItemGeometryChanges()
 {
+    if (d->items.isEmpty())
+    {
+        return;
+    }
+
+    DImg preview(d->view->previewItem()->image().copy());
+
+    if (!d->exifRotate)
+    {
+        preview.rotateAndFlip(d->info.orientation());
+    }
+
     foreach (FaceItem* const item, d->items)
     {
         if (item->face().isNull())
@@ -551,11 +575,20 @@ void FaceGroup::applyItemGeometryChanges()
             continue;
         }
 
-        TagRegion currentRegion = TagRegion(item->originalRect());
+        QRect faceRect = item->originalRect();
+
+        if (!d->exifRotate)
+        {
+            TagRegion::adjustToOrientation(faceRect,
+                                           d->info.orientation(),
+                                           d->info.dimensions());
+        }
+
+        TagRegion currentRegion(faceRect);
 
         if (item->face().region() != currentRegion)
         {
-            d->editPipeline.editRegion(d->info, d->view->previewItem()->image(), item->face(), currentRegion);
+            d->editPipeline.editRegion(d->info, preview, item->face(), currentRegion);
         }
     }
 }
