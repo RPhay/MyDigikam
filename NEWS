@@ -581,4 +581,5 @@ BUGFIXES:
 565 ==> 395243 - Incorrect face regions on vertical images.
 566 ==> 378456 - When previewing faces the thumbnail preview is sometime sideways or not aligned to the face in question.
 567 ==> 377628 - CR2 file face detection misplaced in portrait.
-568 ==> 
+568 ==> 412920 - Image Editor displays incorrect coordinates for selections on scaled HiDPI screens.
+569 ==> 
