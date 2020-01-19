@@ -588,4 +588,5 @@ BUGFIXES:
 572 ==> 406611 - There is no GPS icon over the thumbnail.
 573 ==> 406941 - Geo-filter on the right pane does not work.
 574 ==> 413081 - German user interface?
-575 ==> 
+575 ==> 398869 - Tabs text gone when DigiKam window active.
+576 ==> 
