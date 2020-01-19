@@ -556,6 +556,11 @@ void FaceGroup::cancelAddItem()
 
 void FaceGroup::applyItemGeometryChanges()
 {
+    if (d->items.isEmpty())
+    {
+        return;
+    }
+
     DImg preview(d->view->previewItem()->image().copy());
 
     if (!d->exifRotate)
