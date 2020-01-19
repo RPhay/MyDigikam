@@ -36,6 +36,7 @@ ItemInfo::ItemInfo()
 
 ItemInfo::ItemInfo(const ItemListerRecord& record)
 {
+    // cppcheck-suppress useInitializationList
     m_data                         = ItemInfoStatic::cache()->infoForId(record.imageID);
 
     ItemInfoWriteLocker lock;
@@ -79,6 +80,7 @@ ItemInfo::ItemInfo(const ItemListerRecord& record)
 
 ItemInfo::ItemInfo(qlonglong ID)
 {
+    // cppcheck-suppress useInitializationList
     m_data = ItemInfoStatic::cache()->infoForId(ID);
 
     // is this a newly created structure, need to populate?
