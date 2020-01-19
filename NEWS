@@ -605,6 +605,6 @@ BUGFIXES:
 589 ==> 403349 - digiKam window offset on high resolution display.
 590 ==> 415353 - FEATURE REQUEST: hotkey-mode to assign photos to album categories, quickly.
 591 ==> 414212 - Slow response after tagging.
-592 ==> 
-
+592 ==> 386098 - Crash when adding pictures to a running digiKam.
+593 ==> 
 
