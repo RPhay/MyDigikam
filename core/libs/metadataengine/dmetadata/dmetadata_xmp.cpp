@@ -69,7 +69,8 @@ bool DMetadata::addToXmpTagStringBag(const char* const xmpTagName, const QString
     QStringList newEntries = entriesToAdd;
 
     // Create a list of keywords including old one which already exists.
-    for (QStringList::const_iterator it = oldEntries.constBegin(); it != oldEntries.constEnd(); ++it )
+
+    for (QStringList::const_iterator it = oldEntries.constBegin() ; it != oldEntries.constEnd() ; ++it )
     {
         if (!newEntries.contains(*it))
         {
@@ -91,7 +92,8 @@ bool DMetadata::removeFromXmpTagStringBag(const char* const xmpTagName, const QS
     QStringList newEntries;
 
     // Create a list of current keywords except those that shall be removed
-    for (QStringList::const_iterator it = currentEntries.constBegin(); it != currentEntries.constEnd(); ++it )
+
+    for (QStringList::const_iterator it = currentEntries.constBegin() ; it != currentEntries.constEnd() ; ++it )
     {
         if (!entriesToRemove.contains(*it))
         {
@@ -157,7 +159,9 @@ bool DMetadata::removeXmpTags(const QStringList& tagFilters)
     MetaDataMap m = getXmpTagsDataList(tagFilters);
 
     if (m.isEmpty())
+    {
         return false;
+    }
 
     for (MetaDataMap::iterator it = m.begin() ; it != m.end() ; ++it)
     {

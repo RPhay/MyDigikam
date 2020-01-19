@@ -23,7 +23,7 @@
  * MKV files  : Matroska container tags.
  * QT files   : Quicktime container tags (Apple).
  *
- * Copyright (C) 2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -78,9 +78,10 @@ extern "C"
 namespace Digikam
 {
 
-/** Search first occurrence of string in 'map' with keys given by 'lst'.
- *  Return the string match.
- *  If 'xmpTags' is not empty, register XMP tags value with string.
+/**
+ * Search first occurrence of string in 'map' with keys given by 'lst'.
+ * Return the string match.
+ * If 'xmpTags' is not empty, register XMP tags value with string.
  */
 QString s_setXmpTagStringFromEntry(DMetadata* const meta,
                                    const QStringList& lst,
@@ -134,6 +135,7 @@ QStringList s_keywordsSeparation(const QString& data)
 qint64 s_secondsSinceJanuary1904(const QDateTime dt)
 {
     QDateTime dt1904(QDate(1904, 1, 1), QTime(0, 0, 0));
+
     return dt1904.secsTo(dt);
 }
 
@@ -149,18 +151,22 @@ QString s_convertFFMpegFormatToXMP(int format)
         case AV_SAMPLE_FMT_U8P:
             data = QLatin1String("8Int");
             break;
+
         case AV_SAMPLE_FMT_S16:
         case AV_SAMPLE_FMT_S16P:
             data = QLatin1String("16Int");
             break;
+
         case AV_SAMPLE_FMT_S32:
         case AV_SAMPLE_FMT_S32P:
             data = QLatin1String("32Int");
             break;
+
         case AV_SAMPLE_FMT_FLT:
         case AV_SAMPLE_FMT_FLTP:
             data = QLatin1String("32Float");
             break;
+
         case AV_SAMPLE_FMT_DBL:     // Not supported by XMP spec.
         case AV_SAMPLE_FMT_DBLP:    // Not supported by XMP spec.
         case AV_SAMPLE_FMT_S64:     // Not supported by XMP spec.
@@ -224,6 +230,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
     if (ret < 0)
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "avformat_open_input error: " << ret;
+
         return false;
     }
 
@@ -232,6 +239,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
     if (ret < 0)
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "avform_find_stream_info error: " << ret;
+
         return false;
     }
 
@@ -243,7 +251,9 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
         QString::number((int)(1000.0 * (double)fmt_ctx->duration / (double)AV_TIME_BASE)));
 
     if (fmt_ctx->bit_rate > 0)
+    {
         setXmpTagString("Xmp.video.MaxBitRate", QString::number(fmt_ctx->bit_rate));
+    }
 
     setXmpTagString("Xmp.video.StreamCount",
         QString::number(fmt_ctx->nb_streams));
@@ -258,12 +268,16 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
         const AVStream* const stream   = fmt_ctx->streams[i];
 
         if (!stream)
+        {
             continue;
+        }
 
         AVCodecParameters* const codec = stream->codecpar;
 
         if (!codec)
+        {
             continue;
+        }
 
         const char* cname              = avcodec_get_name(codec->codec_id);
 
@@ -311,21 +325,27 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             {
                 case 0:
                     break;
+
                 case 1:
                     data = QLatin1String("Mono");
                     break;
+
                 case 2:
                     data = QLatin1String("Stereo");
                     break;
+
                 case 6:
                     data = QLatin1String("5.1");
                     break;
+
                 case 8:
                     data = QLatin1String("7.1");
                     break;
+
                 case 16:
                     data = QLatin1String("16 Channel");
                     break;
+
                 default:
                     data = QLatin1String("Other");
                     break;
@@ -405,6 +425,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                  QString::fromUtf8(av_get_pix_fmt_name((AVPixelFormat)codec->format)));
 
             // Store in this tag the full description off FFMPEG video color space.
+
             setXmpTagString("Xmp.video.ColorMode",
                  QString::fromUtf8(av_color_space_name((AVColorSpace)codec->color_space)));
 
@@ -415,19 +436,23 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                 case AVCOL_SPC_RGB:
                     cm = VIDEOCOLORMODEL_SRGB;
                     break;
+
                 case AVCOL_SPC_BT470BG:
                 case AVCOL_SPC_SMPTE170M:
                 case AVCOL_SPC_SMPTE240M:
                     cm = VIDEOCOLORMODEL_BT601;
                     break;
+
                 case AVCOL_SPC_BT709:
                     cm = VIDEOCOLORMODEL_BT709;
                     break;
+
                 case AVCOL_SPC_UNSPECIFIED:
                 case AVCOL_SPC_RESERVED:
                 case AVCOL_SPC_NB:
                     cm = VIDEOCOLORMODEL_UNKNOWN;
                     break;
+
                 default:
                     break;
             }
@@ -452,14 +477,17 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                 case AV_FIELD_PROGRESSIVE:
                     fo = QLatin1String("Progressive");
                     break;
+
                 case AV_FIELD_TT:                       // Top coded first, top displayed first
                 case AV_FIELD_BT:                       // Bottom coded first, top displayed first
                     fo = QLatin1String("Upper");
                     break;
+
                 case AV_FIELD_BB:                       // Bottom coded first, bottom displayed first
                 case AV_FIELD_TB:                       // Top coded first, bottom displayed first
                     fo = QLatin1String("Lower");
                     break;
+
                 default:
                     break;
             }
@@ -474,7 +502,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             QString aspectRatio;
             int frameRate = -1.0;
 
-            if (codec->sample_aspect_ratio.num != 0)    // Check if undefined by ffmpeg
+            if      (codec->sample_aspect_ratio.num != 0)    // Check if undefined by ffmpeg
             {
                 AVRational displayAspectRatio;
 
@@ -517,6 +545,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                 QString::fromLatin1("w:%1, h:%2, unit:pixels").arg(codec->width).arg(codec->height));
 
             // Backport size in Exif and Iptc
+
             setItemDimensions(QSize(codec->width, codec->height));
 
             if (!aspectRatio.isEmpty())
@@ -535,13 +564,19 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
                 data = QLatin1String("Other");
 
-                if (frameRate == 24.0)
+                if      (frameRate == 24.0)
+                {
                     data = QLatin1String("24");
-                else if (frameRate == 23.98 || frameRate == 29.97 ||
-                         frameRate == 30.0  || frameRate == 59.94)
+                }
+                else if ((frameRate == 23.98) || (frameRate == 29.97) ||
+                         (frameRate == 30.0)  || (frameRate == 59.94))
+                {
                     data = QLatin1String("NTSC");
+                }
                 else if (frameRate == 25 || frameRate == 50)
+                {
                     data = QLatin1String("PAL");
+                }
 
                 setXmpTagString("Xmp.xmpDM.videoFrameRate", data);
             }
@@ -554,7 +589,9 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             data = s_convertFFMpegFormatToXMP(codec->format);
 
             if (!data.isEmpty())
+            {
                 setXmpTagString("Xmp.xmpDM.videoPixelDepth", data);
+            }
 
             // -----------------------------------------
 
@@ -583,21 +620,27 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                         case 0:
                             ori = ORIENTATION_NORMAL;
                             break;
+
                         case 90:
                             ori = ORIENTATION_ROT_90;
                             break;
+
                         case 180:
                             ori = ORIENTATION_ROT_180;
                             break;
+
                         case 270:
                             ori = ORIENTATION_ROT_270;
                             break;
+
                         default:
                             break;
                     }
 
                     setXmpTagString("Xmp.video.Orientation", QString::number(ori));
+
                     // Backport orientation in Exif
+
                     setItemOrientation(ori);
                 }
             }
@@ -949,6 +992,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
     if (!data.isEmpty())
     {
         // Backport rating in Exif and Iptc
+
         bool b     = false;
         int rating = data.toInt(&b);
 
@@ -1056,9 +1100,9 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
     for (int i = 1 ; i <= 9 ; ++i)
     {
         s_setXmpTagStringFromEntry(this,
-                         QStringList() << QString::fromLatin1("IAS%1").arg(i),                                  // RIFF files.
-                         rmeta,
-                         QStringList() << QString::fromLatin1("Xmp.video.Edit%1").arg(i));
+                               QStringList() << QString::fromLatin1("IAS%1").arg(i),                            // RIFF files.
+                               rmeta,
+                               QStringList() << QString::fromLatin1("Xmp.video.Edit%1").arg(i));
     }
 
     // --------------
@@ -1463,7 +1507,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
     if (rmeta.contains(QLatin1String("creation_time")))
     {
-        if (rmeta.contains(QLatin1String("com.apple.quicktime.creationdate")))
+        if      (rmeta.contains(QLatin1String("com.apple.quicktime.creationdate")))
         {
             videoDateTimeOriginal.prepend(videoDateTimeOriginal.takeLast());
         }
@@ -1484,6 +1528,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
     if (!data.isEmpty())
     {
         // Backport date in Exif and Iptc.
+
         QDateTime dt = QDateTime::fromString(data, Qt::ISODate).toLocalTime();
         setImageDateTime(dt, true);
     }
@@ -1536,7 +1581,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
         {
             QChar c = data[i];
 
-            if (c == QLatin1Char('+') || c == QLatin1Char('-') || c == QLatin1Char('/'))
+            if ((c == QLatin1Char('+')) || (c == QLatin1Char('-')) || (c == QLatin1Char('/')))
             {
                 digits << i;
             }
@@ -1573,6 +1618,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             if (b3)
             {
                 // All GPS values are available.
+
                 setGPSInfo(altitude, lattitude, longitude);
 
                 setXmpTagString("Xmp.video.GPSAltitude",
@@ -1583,6 +1629,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
             else
             {
                 // No altitude available.
+
                 double* alt = nullptr;
                 setGPSInfo(alt, lattitude, longitude);
             }
@@ -1612,21 +1659,30 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
     QFileInfo fi(filePath);
 
     if (getXmpTagString("Xmp.video.FileName").isNull())
+    {
         setXmpTagString("Xmp.video.FileName", fi.fileName());
+    }
 
     if (getXmpTagString("Xmp.video.FileSize").isNull())
+    {
         setXmpTagString("Xmp.video.FileSize", QString::number(fi.size() / (1024*1024)));
+    }
 
     if (getXmpTagString("Xmp.video.FileType").isNull())
+    {
         setXmpTagString("Xmp.video.FileType", fi.suffix());
+    }
 
     if (getXmpTagString("Xmp.video.MimeType").isNull())
+    {
         setXmpTagString("Xmp.video.MimeType", QMimeDatabase().mimeTypeForFile(filePath).name());
+    }
 
     return true;
 
 #else
     Q_UNUSED(filePath);
+
     return false;
 #endif
 }
@@ -1640,15 +1696,19 @@ QString DMetadata::videoColorModelToString(VIDEOCOLORMODEL videoColorModel)
         case VIDEOCOLORMODEL_SRGB:
             cs = QLatin1String("sRGB");
             break;
+
         case VIDEOCOLORMODEL_BT601:
             cs = QLatin1String("CCIR-601");
             break;
+
         case VIDEOCOLORMODEL_BT709:
             cs = QLatin1String("CCIR-709");
             break;
+
         case VIDEOCOLORMODEL_OTHER:
             cs = QLatin1String("Other");
             break;
+
         default: // VIDEOCOLORMODEL_UNKNOWN
             break;
     }

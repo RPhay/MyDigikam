@@ -99,12 +99,12 @@ GeodeticCalculator::GeodeticCalculator(const Ellipsoid& e)
 
 double GeodeticCalculator::castToAngleRange(const double alpha)
 {
-    return alpha - (2*M_PI) * floor(alpha/(2*M_PI) + 0.5);
+    return (alpha - (2*M_PI) * floor(alpha/(2*M_PI) + 0.5));
 }
 
 bool GeodeticCalculator::checkLatitude(double* latitude)
 {
-    if (*latitude >= -90.0 && *latitude <= 90.0)
+    if ((*latitude >= -90.0) && (*latitude <= 90.0))
     {
         *latitude = toRadians(*latitude);
 
@@ -116,7 +116,7 @@ bool GeodeticCalculator::checkLatitude(double* latitude)
 
 bool GeodeticCalculator::checkLongitude(double* longitude)
 {
-    if (*longitude >= -180.0 && *longitude <= 180.0)
+    if ((*longitude >= -180.0) && (*longitude <= 180.0))
     {
         *longitude = toRadians(*longitude);
 
@@ -128,7 +128,7 @@ bool GeodeticCalculator::checkLongitude(double* longitude)
 
 bool GeodeticCalculator::checkAzimuth(double* azimuth)
 {
-    if (*azimuth >= -180.0 && *azimuth <= 180.0)
+    if ((*azimuth >= -180.0) && (*azimuth <= 180.0))
     {
         *azimuth = toRadians(*azimuth);
 
@@ -140,7 +140,7 @@ bool GeodeticCalculator::checkAzimuth(double* azimuth)
 
 bool GeodeticCalculator::checkOrthodromicDistance(const double distance)
 {
-    return distance >= 0.0 && distance <= m_maxOrthodromicDistance;
+    return (distance >= 0.0) && (distance <= m_maxOrthodromicDistance);
 }
 
 Ellipsoid GeodeticCalculator::ellipsoid() const
@@ -377,7 +377,7 @@ double GeodeticCalculator::meridianArcLengthRadians(double P1, double P2)
 
     // Compute the S1 part of the series expansion
 
-    S1 = DA*A;
+    S1        = DA*A;
 
     // Compute the arc length
 
@@ -483,15 +483,15 @@ bool GeodeticCalculator::computeDirection()
 
         // Equatorial - geodesic(S-s) SMS
 
-        const double U2 = ESQP*S*S;
-        const double U4 = U2*U2;
-        const double U6 = U4*U2;
-        const double U8 = U6*U2;
-        const double BO =  1.0                  +
-                           0.25             *U2 +
-                           0.046875         *U4 +
-                           0.01953125       *U6 +
-                           -0.01068115234375*U8;
+        const double U2  = ESQP*S*S;
+        const double U4  = U2*U2;
+        const double U6  = U4*U2;
+        const double U8  = U6*U2;
+        const double BO  =  1.0                  +
+                            0.25             *U2 +
+                            0.046875         *U4 +
+                            0.01953125       *U6 +
+                            -0.01068115234375*U8;
         S                = sin(AZ1);
         const double SMS = m_semiMajorAxis*M_PI*(1.0 - f*fabs(S)*AO - BO*fo);
         m_distance       = m_semiMajorAxis*ss - SMS;
@@ -573,7 +573,7 @@ bool GeodeticCalculator::computeDirection()
 
     // now compute the az1 & az2 for latitudes not on the equator
 
-    if ((fabs(su1)>=TOLERANCE_0) || (fabs(su2)>=TOLERANCE_0))
+    if ((fabs(su1) >= TOLERANCE_0) || (fabs(su2) >= TOLERANCE_0))
     {
         const double tana1 = slon*cu2 / (su2*cu1 - clon*su1*cu2);
         const double sina1 = sinalf/cu1;

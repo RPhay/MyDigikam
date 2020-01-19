@@ -234,6 +234,7 @@ QList<QString> DMetadataSettingsContainer::mappingKeys() const
 void DMetadataSettingsContainer::defaultTagValues()
 {
     // Default tag namespaces
+
     NamespaceEntry tagNs1;
     tagNs1.namespaceName    = QLatin1String("Xmp.digiKam.TagsList");
     tagNs1.tagPaths         = NamespaceEntry::TAGPATH;

@@ -165,6 +165,7 @@ bool DMetadata::setMetadataTemplate(const Template& t) const
     }
 
     // Synchronize Iptc subjects tags with Xmp subjects tags.
+
     QStringList list = t.IptcSubjects();
     QStringList newList;
 
@@ -264,7 +265,7 @@ bool DMetadata::getCopyrightInformation(Template& t) const
            << MetadataInfo::IptcCoreCreatorJobTitle
            << MetadataInfo::IptcCoreInstructions;
 
-    QVariantList metadataInfos = getMetadataFields(fields);
+    QVariantList metadataInfos      = getMetadataFields(fields);
     IptcCoreContactInfo contactInfo = getCreatorContactInfo();
 
     if (!hasValidField(metadataInfos) && contactInfo.isNull())
