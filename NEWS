@@ -603,4 +603,5 @@ BUGFIXES:
 587 ==> 240224 - Foreground and background of the Settings menu item have the same color when the Dark Theme is selected.
 588 ==> 290072 - XMP sidecars available for all file types user wants to.
 589 ==> 403349 - digiKam window offset on high resolution display.
-590 ==> 
+590 ==> 415353 - FEATURE REQUEST: hotkey-mode to assign photos to album categories, quickly.
+591 ==> 
