@@ -81,6 +81,7 @@ public:
 
     GraphicsDImgView*          view;
     ItemInfo                   info;
+    bool                       exifRotate;
     bool                       autoSuggest;
     bool                       showOnHover;
 
