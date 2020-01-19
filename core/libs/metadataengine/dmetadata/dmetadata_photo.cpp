@@ -267,8 +267,9 @@ QString DMetadata::getLensDescription() const
 
         // To prevent undecoded tag values from Exiv2 as "(65535)"
         // or the value "----" from Exif.Photo.LensModel
+
         if (!lens.isEmpty()                     &&
-            lens != QLatin1String("----")       &&
+            (lens != QLatin1String("----"))     &&
             !(lens.startsWith(QLatin1Char('(')) &&
               lens.endsWith(QLatin1Char(')'))
              )
@@ -281,11 +282,13 @@ QString DMetadata::getLensDescription() const
     // -------------------------------------------------------------------
     // Try to get Lens Data information from XMP.
     // XMP aux tags.
+ 
     lens = getXmpTagString("Xmp.aux.Lens");
 
     if (lens.isEmpty())
     {
         // XMP M$ tags (Lens Maker + Lens Model).
+ 
         lens = getXmpTagString("Xmp.MicrosoftPhoto.LensManufacturer");
 
         if (!lens.isEmpty())
@@ -302,7 +305,8 @@ QString DMetadata::getLensDescription() const
 double DMetadata::apexApertureToFNumber(double aperture)
 {
     // convert from APEX. See Exif spec, Annex C.
-    if (aperture == 0.0)
+ 
+    if      (aperture == 0.0)
     {
         return 1;
     }
@@ -353,7 +357,8 @@ double DMetadata::apexApertureToFNumber(double aperture)
 double DMetadata::apexShutterSpeedToExposureTime(double shutterSpeed)
 {
     // convert from APEX. See Exif spec, Annex C.
-    if (shutterSpeed == -5.0)
+
+    if      (shutterSpeed == -5.0)
     {
         return 30;
     }

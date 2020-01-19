@@ -60,6 +60,7 @@ bool DMetadata::load(const QString& filePath)
     {
         // Non video or audio file, process with Exiv2 backend or libraw if fail with RAW files
         // Never process video file Exiv2, the backend is very unstable.
+
         if (!(hasLoaded = MetaEngine::load(filePath)))
         {
             hasLoaded = loadUsingRawEngine(filePath);
@@ -68,6 +69,7 @@ bool DMetadata::load(const QString& filePath)
     else
     {
         // No image file, process with ffmpeg backend.
+
         hasLoaded  = loadUsingFFmpeg(filePath);
         hasLoaded |= loadFromSidecarAndMerge(filePath);
     }
@@ -78,12 +80,14 @@ bool DMetadata::load(const QString& filePath)
 bool DMetadata::save(const QString& filePath, bool setVersion) const
 {
     FileWriteLocker lock(filePath);
+
     return MetaEngine::save(filePath, setVersion);
 }
 
 bool DMetadata::applyChanges(bool setVersion) const
 {
     FileWriteLocker lock(getFilePath());
+
     return MetaEngine::applyChanges(setVersion);
 }
 
@@ -145,6 +149,7 @@ bool DMetadata::loadUsingRawEngine(const QString& filePath)
         }
 
         // A RAW image is always uncalibrated. */
+
         setItemColorWorkSpace(WORKSPACE_UNCALIBRATED);
 
         return true;

@@ -256,7 +256,9 @@ bool DMetadata::removeIptcTags(const QStringList& tagFilters)
     MetaDataMap m = getIptcTagsDataList(tagFilters);
 
     if (m.isEmpty())
+    {
         return false;
+    }
 
     for (MetaDataMap::iterator it = m.begin() ; it != m.end() ; ++it)
     {
@@ -269,6 +271,7 @@ bool DMetadata::removeIptcTags(const QStringList& tagFilters)
 DMetadata::CountryCodeMap DMetadata::countryCodeMap()
 {
     CountryCodeMap countryCodeMap;
+
     // All ISO 639 language code based on 2 characters
     // http://xml.coverpages.org/iso639a.html
 

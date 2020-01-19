@@ -82,6 +82,7 @@ bool DMetadata::mSecTimeStamp(const char* const exifTagName, int& ms) const
 IccProfile DMetadata::getIccProfile() const
 {
     // Check if Exif data contains an ICC color profile.
+
     QByteArray data = getExifTagData("Exif.Image.InterColorProfile");
 
     if (!data.isNull())
@@ -91,6 +92,7 @@ IccProfile DMetadata::getIccProfile() const
     }
 
     // Else check the Exif color-space tag and use default profiles that we ship
+
     switch (getItemColorWorkSpace())
     {
         case DMetadata::WORKSPACE_SRGB:
@@ -151,7 +153,9 @@ QString DMetadata::getExifTagStringFromTagsList(const QStringList& tagsList) con
         val = getExifTagString(tag.toLatin1().constData());
 
         if (!val.isEmpty())
+        {
             return val;
+        }
     }
 
     return QString();
@@ -162,7 +166,9 @@ bool DMetadata::removeExifTags(const QStringList& tagFilters)
     MetaDataMap m = getExifTagsDataList(tagFilters);
 
     if (m.isEmpty())
+    {
         return false;
+    }
 
     for (MetaDataMap::iterator it = m.begin() ; it != m.end() ; ++it)
     {

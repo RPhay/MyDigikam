@@ -70,6 +70,7 @@ CaptionsMap DMetadata::getItemComments(const DMetadataSettingsContainer& setting
     }
 
     // Get author name from IPTC DescriptionWriter. Private namespace above gets precedence.
+
     QVariant descriptionWriter = getMetadataField(MetadataInfo::DescriptionWriter);
 
     if (!descriptionWriter.isNull())
@@ -86,7 +87,9 @@ CaptionsMap DMetadata::getItemComments(const DMetadataSettingsContainer& setting
     for (NamespaceEntry entry : settings.getReadMapping(NamespaceEntry::DM_COMMENT_CONTAINER()))
     {
         if (entry.isDisabled)
+        {
             continue;
+        }
 
         QString commentString;
         const std::string myStr = entry.namespaceName.toStdString();
@@ -95,51 +98,91 @@ CaptionsMap DMetadata::getItemComments(const DMetadataSettingsContainer& setting
         switch(entry.subspace)
         {
             case NamespaceEntry::XMP:
+            {
                 switch(entry.specialOpts)
                 {
                     case NamespaceEntry::COMMENT_ALTLANG:
+                    {
                         if (xmpSupported)
+                        {
                             commentString = getXmpTagStringLangAlt(nameSpace, QString(), false);
+                        }
+
                         break;
+                    }
+
                     case NamespaceEntry::COMMENT_ATLLANGLIST:
+                    {
                         if (xmpSupported)
+                        {
                             commentsMap = getXmpTagStringListLangAlt(nameSpace, false);
+                        }
+
                         break;
+                    }
+
                     case NamespaceEntry::COMMENT_XMP:
+                    {
                         if (xmpSupported)
+                        {
                             commentString = getXmpTagString("Xmp.acdsee.notes", false);
+                        }
+
                         break;
+                    }
+
                     case NamespaceEntry::COMMENT_JPEG:
+                    {
                         // Now, we trying to get image comments, outside of XMP.
                         // For JPEG, string is extracted from JFIF Comments section.
                         // For PNG, string is extracted from iTXt chunk.
+
                         commentString = getCommentsDecoded();
+                    }
+
                     default:
                         break;
                 }
+
                 break;
+            }
+
             case NamespaceEntry::IPTC:
+            {
                 if (iptcSupported)
+                {
                     commentString = getIptcTagString(nameSpace, false);
+                }
+
                 break;
+            }
+
             case NamespaceEntry::EXIF:
+            {
                 if (exivSupported)
+                {
                     commentString = getExifComment();
+                }
+
                 break;
+            }
+
             default:
                 break;
         }
 
-        if (!commentString.isEmpty() &&!commentString.trimmed().isEmpty())
+        if (!commentString.isEmpty() && !commentString.trimmed().isEmpty())
         {
             commentsMap.insert(QLatin1String("x-default"), commentString);
             captionsMap.setData(commentsMap, authorsMap, commonAuthor, datesMap);
+
             return captionsMap;
         }
 
         if (!commentsMap.isEmpty())
         {
             captionsMap.setData(commentsMap, authorsMap, commonAuthor, datesMap);
+
             return captionsMap;
         }
     }
@@ -151,8 +194,11 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
 {
 /*
     // See bug #139313: An empty string is also a valid value
+
     if (comments.isEmpty())
+    {
           return false;
+    }
 */
 
     //qCDebug(DIGIKAM_METAENGINE_LOG) << getFilePath() << " ==> Comment: " << comments;
@@ -194,20 +240,26 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
     for (NamespaceEntry entry : toWrite)
     {
         if (entry.isDisabled)
+        {
             continue;
+        }
 
         const std::string myStr = entry.namespaceName.toStdString();
         const char* nameSpace   = myStr.data();
 
-        switch(entry.subspace)
+        switch (entry.subspace)
         {
             case NamespaceEntry::XMP:
+            {
                 if (entry.namespaceName.contains(QLatin1String("Xmp.")))
+                {
                     removeXmpTag(nameSpace);
+                }
 
                 switch(entry.specialOpts)
                 {
                     case NamespaceEntry::COMMENT_ALTLANG:
+                    {
                         if (!defaultComment.isNull())
                         {
                             if (!setXmpTagStringLangAlt(nameSpace, defaultComment, QString()))
@@ -216,16 +268,22 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
                                 return false;
                             }
                         }
+
                         break;
+                    }
 
                     case NamespaceEntry::COMMENT_ATLLANGLIST:
+                    {
                         if (!setXmpTagStringListLangAlt(nameSpace, comments.toAltLangMap()))
                         {
                             return false;
                         }
+
                         break;
+                    }
 
                     case NamespaceEntry::COMMENT_XMP:
+                    {
                         if (!defaultComment.isNull())
                         {
                             if (!setXmpTagString(nameSpace, defaultComment))
@@ -233,22 +291,31 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
                                 return false;
                             }
                         }
+
                         break;
+                    }
 
                     case NamespaceEntry::COMMENT_JPEG:
+                    {
                         // In first we set image comments, outside of Exif, XMP, and IPTC.
+
                         if (!setComments(defaultComment.toUtf8()))
                         {
                             return false;
                         }
+
                         break;
+                    }
 
                     default:
                         break;
                 }
+
                 break;
+            }
 
             case NamespaceEntry::IPTC:
+            {
                 removeIptcTag(nameSpace);
 
                 if (!defaultComment.isNull())
@@ -260,14 +327,19 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
                         return false;
                     }
                 }
+
                 break;
+            }
 
             case NamespaceEntry::EXIF:
+            {
                 if (!setExifComment(defaultComment))
                 {
                     return false;
                 }
+
                 break;
+            }
 
             default:
                 break;
@@ -280,7 +352,9 @@ bool DMetadata::setItemComments(const CaptionsMap& comments, const DMetadataSett
 CaptionsMap DMetadata::getItemTitles() const
 {
     if (getFilePath().isEmpty())
+    {
         return CaptionsMap();
+    }
 
     CaptionsMap            captionsMap;
     MetaEngine::AltLangMap authorsMap;
@@ -289,10 +363,13 @@ CaptionsMap DMetadata::getItemTitles() const
     QString                commonAuthor;
 
     // Get author name from IPTC DescriptionWriter. Private namespace above gets precedence.
+
     QVariant descriptionWriter = getMetadataField(MetadataInfo::DescriptionWriter);
 
     if (!descriptionWriter.isNull())
+    {
         commonAuthor = descriptionWriter.toString();
+    }
 
     // In first, we check XMP alternative language tags to create map of values.
 
@@ -303,15 +380,17 @@ CaptionsMap DMetadata::getItemTitles() const
         if (!titlesMap.isEmpty())
         {
             captionsMap.setData(titlesMap, authorsMap, commonAuthor, datesMap);
+
             return captionsMap;
         }
 
-        QString xmpTitle = getXmpTagString("Xmp.acdsee.caption" ,false);
+        QString xmpTitle = getXmpTagString("Xmp.acdsee.caption", false);
 
         if (!xmpTitle.isEmpty() && !xmpTitle.trimmed().isEmpty())
         {
             titlesMap.insert(QLatin1String("x-default"), xmpTitle);
             captionsMap.setData(titlesMap, authorsMap, commonAuthor, datesMap);
+
             return captionsMap;
         }
     }
@@ -344,6 +423,7 @@ bool DMetadata::setItemTitles(const CaptionsMap& titles) const
     if (supportXmp())
     {
         // NOTE : setXmpTagStringListLangAlt remove xmp tag before to add new values
+
         if (!setXmpTagStringListLangAlt("Xmp.dc.title", titles.toAltLangMap()))
         {
             return false;
@@ -371,9 +451,10 @@ bool DMetadata::setItemTitles(const CaptionsMap& titles) const
 
         // See if we have any non printable chars in there. If so, skip IPTC
         // to avoid confusing other apps and web services with invalid tags.
+
         bool hasInvalidChar = false;
 
-        for (QString::const_iterator c = defaultTitle.constBegin(); c != defaultTitle.constEnd(); ++c)
+        for (QString::const_iterator c = defaultTitle.constBegin() ; c != defaultTitle.constEnd() ; ++c)
         {
             if (!(*c).isPrint())
             {
@@ -385,7 +466,9 @@ bool DMetadata::setItemTitles(const CaptionsMap& titles) const
         if (!hasInvalidChar)
         {
             if (!setIptcTagString("Iptc.Application2.ObjectName", defaultTitle))
+            {
                 return false;
+            }
         }
     }
 
@@ -404,19 +487,23 @@ MetaEngine::AltLangMap DMetadata::toAltLangMap(const QVariant& var)
     switch (var.type())
     {
         case QVariant::String:
+        {
             map.insert(QLatin1String("x-default"), var.toString());
             break;
+        }
+
         case QVariant::Map:
         {
             QMap<QString, QVariant> varMap = var.toMap();
 
-            for (QMap<QString, QVariant>::const_iterator it = varMap.constBegin(); it != varMap.constEnd(); ++it)
+            for (QMap<QString, QVariant>::const_iterator it = varMap.constBegin() ; it != varMap.constEnd() ; ++it)
             {
                 map.insert(it.key(), it.value().toString());
             }
 
             break;
         }
+
         default:
             break;
     }

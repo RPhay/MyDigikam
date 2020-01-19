@@ -237,8 +237,6 @@ private:
 
 public: // XMP helpers
 
-    // These methods have been factored to libMetaEngine 2.3.0. Remove it after KDE 4.8.2
-
     /**
      * Set an Xmp tag content using a list of strings defined by the 'entriesToAdd' parameter.
      * The existing entries are preserved. The method will compare

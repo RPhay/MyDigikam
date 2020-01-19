@@ -60,7 +60,9 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString,QVariant>& faces) const
         QString rectString = getXmpTagString(rectPathTemplate.arg(i).toLatin1().constData(), false);
 
         if (rectString.isEmpty())
+        {
             break;
+        }
 
         QString person     = getXmpTagString(personPathTemplate.arg(i).toLatin1().constData(), false);
 
@@ -70,6 +72,7 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString,QVariant>& faces) const
         // percentage of the width/height of the entire image).
         // Similarly the width and height of the face's box are
         // indicated by W.WW and H.HH.
+
         QStringList list   = rectString.split(QLatin1Char(','));
 
         if (list.size() < 4)
@@ -86,12 +89,14 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString,QVariant>& faces) const
         faces.insertMulti(person, rect);
     }
 
-    /** Read face tags only if Exiv2 can write them, otherwise
-     *  garbage tags will be generated on image transformation
+    /**
+     * Read face tags only if Exiv2 can write them, otherwise
+     * garbage tags will be generated on image transformation
      */
 
     // Read face tags as saved by Picasa
     // https://www.exiv2.org/tags-xmp-mwg-rs.html
+
     const QString mwg_personPathTemplate  = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList[%1]/mwg-rs:Name");
     const QString mwg_rect_x_PathTemplate = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList[%1]/mwg-rs:Area/stArea:x");
     const QString mwg_rect_y_PathTemplate = QLatin1String("Xmp.mwg-rs.Regions/mwg-rs:RegionList[%1]/mwg-rs:Area/stArea:y");
@@ -103,9 +108,12 @@ bool DMetadata::getItemFacesMap(QMultiMap<QString,QVariant>& faces) const
         QString person = getXmpTagString(mwg_personPathTemplate.arg(i).toLatin1().constData(), false);
 
         if (person.isEmpty())
+        {
             break;
+        }
 
         // x and y is the center point
+
         float x = getXmpTagString(mwg_rect_x_PathTemplate.arg(i).toLatin1().constData(), false).toFloat();
         float y = getXmpTagString(mwg_rect_y_PathTemplate.arg(i).toLatin1().constData(), false).toFloat();
         float w = getXmpTagString(mwg_rect_w_PathTemplate.arg(i).toLatin1().constData(), false).toFloat();
@@ -143,7 +151,9 @@ bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool wr
         QString check = getXmpTagString(nameTagKey.arg(1).toLatin1().constData());
 
         if (check.isEmpty())
+        {
             return true;
+        }
     }
 
     setXmpTagString(qxmpTagName.toLatin1().constData(),
@@ -174,62 +184,73 @@ bool DMetadata::setItemFacesMap(QMultiMap<QString, QVariant>& facesPath, bool wr
         rectString.append(QString::number(h));
 
         // Set tag rect
+
         setXmpTagString(winRectTagKey.arg(i).toLatin1().constData(),
                         rectString,
                         MetaEngine::NormalTag);
 
         // Set tag name
+
         setXmpTagString(winNameTagKey.arg(i).toLatin1().constData(),
                         it.key(),
                         MetaEngine::NormalTag);
 
         // Writing rectangle in Metadata Group format
+
         x += w / 2;
         y += h / 2;
 
         // Set tag name
+
         ok &= setXmpTagString(nameTagKey.arg(i).toLatin1().constData(),
                               it.key(),
                               MetaEngine::NormalTag);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set tag name:" << ok;
 
         // Set tag type as Face
+
         ok &= setXmpTagString(typeTagKey.arg(i).toLatin1().constData(),
                               QLatin1String("Face"),
                               MetaEngine::NormalTag);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set tag type:" << ok;
 
         // Set tag Area, with xmp type struct
+
         ok &= setXmpTagString(areaTagKey.arg(i).toLatin1().constData(),
                               QString(),
                               MetaEngine::StructureTag);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set area struct:" << ok;
 
         // Set stArea:x inside Area structure
+
         ok &= setXmpTagString(areaxTagKey.arg(i).toLatin1().constData(),
                               QString::number(x),
                               MetaEngine::NormalTag);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set xpos:" << ok;
 
         // Set stArea:y inside Area structure
+
         ok &= setXmpTagString(areayTagKey.arg(i).toLatin1().constData(),
                               QString::number(y),
                               MetaEngine::NormalTag);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set ypos:" << ok;
 
         // Set stArea:w inside Area structure
+
         ok &= setXmpTagString(areawTagKey.arg(i).toLatin1().constData(),
                               QString::number(w),
                               MetaEngine::NormalTag);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set width:" << ok;
 
         // Set stArea:h inside Area structure
+
         ok &= setXmpTagString(areahTagKey.arg(i).toLatin1().constData(),
                               QString::number(h),
                               MetaEngine::NormalTag);
         qCDebug(DIGIKAM_METAENGINE_LOG) << "    => set heigh:" << ok;
 
         // Set stArea:unit inside Area structure  as normalized
+
         ok &= setXmpTagString(areanormTagKey.arg(i).toLatin1().constData(),
                               QLatin1String("normalized"),
                               MetaEngine::NormalTag);

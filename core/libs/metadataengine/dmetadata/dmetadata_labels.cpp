@@ -55,7 +55,7 @@ int DMetadata::getItemPickLabel() const
             bool ok     = false;
             long pickId = value.toLong(&ok);
 
-            if (ok && pickId >= NoPickLabel && pickId <= AcceptedLabel)
+            if (ok && (pickId >= NoPickLabel) && (pickId <= AcceptedLabel))
             {
                 return pickId;
             }
@@ -88,7 +88,7 @@ int DMetadata::getItemColorLabel() const
             bool ok      = false;
             long colorId = value.toLong(&ok);
 
-            if (ok && colorId >= NoColorLabel && colorId <= WhiteLabel)
+            if (ok && (colorId >= NoColorLabel) && (colorId <= WhiteLabel))
             {
                 return colorId;
             }
@@ -97,7 +97,7 @@ int DMetadata::getItemColorLabel() const
         // LightRoom use this tag to store color name as string.
         // Values are limited : see bug #358193.
 
-        if (label == QLatin1String("Blue"))
+        if      (label == QLatin1String("Blue"))
         {
             return BlueLabel;
         }
@@ -193,6 +193,7 @@ int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
 
         // Exact value was not found,but rating is in range,
         // so we try to approximate it
+
         if ((index == -1)                         &&
             (rating > entry.convertRatio.first()) &&
             (rating < entry.convertRatio.last()))
@@ -217,7 +218,7 @@ int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
 
 bool DMetadata::setItemPickLabel(int pickId) const
 {
-    if (pickId < NoPickLabel || pickId > AcceptedLabel)
+    if ((pickId < NoPickLabel) || (pickId > AcceptedLabel))
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "Pick Label value to write is out of range!";
         return false;
@@ -238,9 +239,10 @@ bool DMetadata::setItemPickLabel(int pickId) const
 
 bool DMetadata::setItemColorLabel(int colorId) const
 {
-    if (colorId < NoColorLabel || colorId > WhiteLabel)
+    if ((colorId < NoColorLabel) || (colorId > WhiteLabel))
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "Color Label value to write is out of range!";
+
         return false;
     }
 
@@ -254,6 +256,7 @@ bool DMetadata::setItemColorLabel(int colorId) const
         }
 
         // Nikon NX use this XMP tags to store Color Labels
+
         if (!setXmpTagString("Xmp.photoshop.Urgency", QString::number(colorId)))
         {
             return false;
@@ -269,15 +272,19 @@ bool DMetadata::setItemColorLabel(int colorId) const
             case BlueLabel:
                 LRLabel = QLatin1String("Blue");
                 break;
+
             case GreenLabel:
                 LRLabel = QLatin1String("Green");
                 break;
+
             case RedLabel:
                 LRLabel = QLatin1String("Red");
                 break;
+
             case YellowLabel:
                 LRLabel = QLatin1String("Yellow");
                 break;
+
             case MagentaLabel:
                 LRLabel = QLatin1String("Purple");
                 break;
@@ -304,7 +311,7 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
     // NOTE : with digiKam 0.9.x, we have used IPTC Urgency to store Rating.
     // Now this way is obsolete, and we use standard XMP rating tag instead.
 
-    if (rating < RatingMin || rating > RatingMax)
+    if ((rating < RatingMin) || (rating > RatingMax))
     {
         qCDebug(DIGIKAM_METAENGINE_LOG) << "Rating value to write is out of range!";
         return false;
@@ -322,7 +329,9 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
     for (NamespaceEntry entry : toWrite)
     {
         if (entry.isDisabled)
+        {
             continue;
+        }
 
         const std::string myStr = entry.namespaceName.toStdString();
         const char* nameSpace   = myStr.data();
@@ -330,16 +339,21 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
         switch(entry.subspace)
         {
             case NamespaceEntry::XMP:
+
                 if (!setXmpTagString(nameSpace, QString::number(entry.convertRatio.at(rating))))
                 {
                     qCDebug(DIGIKAM_METAENGINE_LOG) << "Setting rating failed" << nameSpace;
                     return false;
                 }
+
                 break;
+
             case NamespaceEntry::EXIF:
+
                 if (QLatin1String(nameSpace) == QLatin1String("Exif.Image.0x4749"))
                 {
                     // Wrapper around rating percents managed by Windows Vista.
+
                     int ratePercents = 0;
 
                     switch (rating)
@@ -347,18 +361,23 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
                         case 0:
                             ratePercents = 0;
                             break;
+
                         case 1:
                             ratePercents = 1;
                             break;
+
                         case 2:
                             ratePercents = 25;
                             break;
+
                         case 3:
                             ratePercents = 50;
                             break;
+
                         case 4:
                             ratePercents = 75;
                             break;
+
                         case 5:
                             ratePercents = 99;
                             break;
@@ -378,7 +397,9 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
                         return false;
                     }
                 }
+
                 break;
+
             case NamespaceEntry::IPTC: // IPTC rating deprecated
             default:
                 break;
