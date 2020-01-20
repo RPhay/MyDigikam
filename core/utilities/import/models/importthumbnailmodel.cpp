@@ -98,6 +98,7 @@ QVariant ImportThumbnailModel::data(const QModelIndex& index, int role) const
         // use mimetype thumbnail also if the mime is set to something else than to image
         // this is to avoid querying the device for previews with unsupported file formats
         // at least gphoto2 doesn't really like it and will error a lot and slow down
+
         if (info.isNull() || path.isEmpty() || !info.previewPossible)
         {
             return QVariant(d->thumbsCtrl->cameraController()->mimeTypeThumbnail(path).pixmap(d->thumbSize.size()));
@@ -151,6 +152,7 @@ void ImportThumbnailModel::slotThumbInfoReady(const CamItemInfo& info)
     d->thumbsCtrl->getThumbInfo(info, item);
 
     // In case of multiple occurrence, we currently do not know which thumbnail is this. Signal change on all.
+
     foreach (const QModelIndex& index, indexesForUrl(info.url()))
     {
         if (item.second.isNull())

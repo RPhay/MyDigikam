@@ -54,8 +54,10 @@ public:
     void setSourceFilterModel(ImportSortFilterModel* const sourceModel);
     ImportSortFilterModel* sourceFilterModel() const;
 
-    /// Convenience methods mapped to ImportItemModel.
-    /// Mentioned indexes returned come from the source import image model.
+    /**
+     * Convenience methods mapped to ImportItemModel.
+     * Mentioned indexes returned come from the source import image model.
+     */
     QModelIndex mapToSourceImportModel(const QModelIndex& proxyIndex)                       const;
     QModelIndex mapFromSourceImportModel(const QModelIndex& importModelIndex)               const;
     QModelIndex mapFromDirectSourceToSourceImportModel(const QModelIndex& sourceModelIndex) const;
@@ -72,8 +74,9 @@ public:
     QModelIndex indexForCamItemInfo(const CamItemInfo& info) const;
     QModelIndex indexForCamItemId(qlonglong id)              const;
 
-    /** Returns a list of all camera infos, sorted according to this model.
-     *  If you do not need a sorted list, use ImportItemModel's camItemInfo() method.
+    /**
+     * Returns a list of all camera infos, sorted according to this model.
+     * If you do not need a sorted list, use ImportItemModel's camItemInfo() method.
      */
     QList<CamItemInfo> camItemInfosSorted() const;
 
@@ -115,7 +118,7 @@ public:
         CategoryDateRole             = ImportItemModel::FilterModelRoles + 4,
 
         /// Returns true if the given camera item is a group leader, and the group is opened.
-        //TODO: GroupIsOpenRole            = ImportItemModel::FilterModelRoles + 5
+        // TODO: GroupIsOpenRole     = ImportItemModel::FilterModelRoles + 5
         ImportFilterModelPointerRole = ImportItemModel::FilterModelRoles + 50
     };
 
@@ -131,10 +134,11 @@ public:
     /// Enables sending camItemInfosAdded and camItemInfosAboutToBeRemoved.
     void setSendCamItemInfoSignals(bool sendSignals);
 
-    //TODO: Implement grouping in import tool.
-    //bool isGroupOpen(qlonglong group) const;
-    //bool isAllGroupsOpen() const;
-
+    // TODO: Implement grouping in import tool.
+/*
+    bool isGroupOpen(qlonglong group) const;
+    bool isAllGroupsOpen() const;
+*/
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
     virtual ImportFilterModel* importFilterModel()                              const override;
 
@@ -147,17 +151,28 @@ public Q_SLOTS:
     void setFilter(Filter*);
     void setCameraThumbsController(CameraThumbsCtrl* const thumbsCtrl);
 
-    //TODO: Implement grouping in import tool.
-    //void setGroupOpen(qlonglong group, bool open);
-    //void toggleGroupOpen(qlonglong group);
-    //void setAllGroupsOpen(bool open);
+    // TODO: Implement grouping in import tool.
+/*
+    void setGroupOpen(qlonglong group, bool open);
+    void toggleGroupOpen(qlonglong group);
+    void setAllGroupsOpen(bool open);
+*/
+    /**
+     * Changes the current image filter settings and refilters.
+     */
 
-    /** Changes the current image filter settings and refilters. */
-    //TODO: Implement filtering in import tool.
-    //virtual void setItemFilterSettings(const ItemFilterSettings& settings);
+    // TODO: Implement filtering in import tool.
+/*
+    virtual void setItemFilterSettings(const ItemFilterSettings& settings);
+*/
+    /**
+     * Changes the current image sort settings and resorts.
+     */
 
-    /** Changes the current image sort settings and resorts. */
-    //TODO: virtual void setItemSortSettings(const ItemSortSettings& settings);
+    // TODO: Implement filtering in import tool.
+/*
+    virtual void setItemSortSettings(const ItemSortSettings& settings);
+*/
 
 Q_SIGNALS:
 
@@ -190,17 +205,20 @@ protected:
     virtual int compareCategories(const QModelIndex& left, const QModelIndex& right) const override;
     virtual bool subSortLessThan(const QModelIndex& left, const QModelIndex& right) const  override;
 
-    /** Reimplement to customize category sorting,
-     *  Return negative if category of left < category right,
-     *  Return 0 if left and right are in the same category, else return positive.
+    /**
+     * Reimplement to customize category sorting,
+     * Return negative if category of left < category right,
+     * Return 0 if left and right are in the same category, else return positive.
      */
     virtual int compareInfosCategories(const CamItemInfo& left, const CamItemInfo& right) const;
 
-    /** Reimplement to customize sorting. Do not take categories into account here.
+    /**
+     * Reimplement to customize sorting. Do not take categories into account here.
      */
     virtual bool infosLessThan(const CamItemInfo& left, const CamItemInfo& right) const;
 
-    /** Returns a unique identifier for the category if info. The string need not be for user display.
+    /**
+     * Returns a unique identifier for the category if info. The string need not be for user display.
      */
     virtual QString categoryIdentifier(const CamItemInfo& info) const;
 

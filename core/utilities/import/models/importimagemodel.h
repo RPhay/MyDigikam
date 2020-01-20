@@ -51,8 +51,10 @@ public:
         ImportItemModelPointerRole = Qt::UserRole,
         ImportItemModelInternalId  = Qt::UserRole + 1,
 
-        /// Returns a thumbnail pixmap. May be implemented by subclasses.
-        /// Returns either a valid pixmap or a null QVariant.
+        /**
+         * Returns a thumbnail pixmap. May be implemented by subclasses.
+         * Returns either a valid pixmap or a null QVariant.
+         */
         ThumbnailRole               = Qt::UserRole + 2,
         /// Return (optional) extraData field
         ExtraDataRole               = Qt::UserRole + 3,
@@ -68,18 +70,20 @@ public:
     explicit ImportItemModel(QObject* const parent = nullptr);
     ~ImportItemModel();
 
-    // Used to set the camera controller, and connect with it.
+    /// Used to set the camera controller, and connect with it.
     virtual void setCameraThumbsController(CameraThumbsCtrl* const controller);
 
-    /** If a cache is kept, lookup by file path is fast,
-     *  without a cache it is O(n). Default is false. */
+    /**
+     * If a cache is kept, lookup by file path is fast,
+     *  without a cache it is O(n). Default is false.
+     */
     void setKeepsFileUrlCache(bool keepCache);
     bool keepsFileUrlCache() const;
 
     /**
-     *  Returns the CamItemInfo object, reference from the underlying data pointed to by the index.
-     *  For camItemInfo and camItemInfoId If the index is not valid they will return a null CamItemInfo, and 0
-     *  respectively, camItemInfoRef must not be called with an invalid index as it will crash.
+     * Returns the CamItemInfo object, reference from the underlying data pointed to by the index.
+     * For camItemInfo and camItemInfoId If the index is not valid they will return a null CamItemInfo, and 0
+     * respectively, camItemInfoRef must not be called with an invalid index as it will crash.
      */
     CamItemInfo      camItemInfo(const QModelIndex& index)           const;
     CamItemInfo&     camItemInfoRef(const QModelIndex& index)        const;
@@ -160,14 +164,14 @@ public:
     static CamItemInfo retrieveCamItemInfo(const QModelIndex& index);
     static qlonglong   retrieveCamItemId(const QModelIndex& index);
 
-    // QAbstractListModel implementation
+    /// QAbstractListModel implementation
     virtual int           rowCount(const QModelIndex& parent)                            const override;
     virtual QVariant      data(const QModelIndex& index, int role)                       const override;
     virtual QVariant      headerData(int section, Qt::Orientation orientation, int role) const override;
     virtual Qt::ItemFlags flags(const QModelIndex& index)                                const override;
     virtual QModelIndex   index(int row, int column, const QModelIndex& parent)          const override;
 
-    // DragDrop methods
+    /// DragDrop methods
     DECLARE_MODEL_DRAG_DROP_METHODS
 
     /**
@@ -271,10 +275,10 @@ protected:
     void emitDataChangedForAll();
     void emitDataChangedForSelections(const QItemSelection& selection);
 
-    // Called when the internal storage is cleared.
+    /// Called when the internal storage is cleared.
     virtual void camItemInfosCleared() {};
 
-    // Called before rowsAboutToBeRemoved
+    /// Called before rowsAboutToBeRemoved
     virtual void itemInfosAboutToBeRemoved(int /*begin*/, int /*end*/) {};
 
 private:

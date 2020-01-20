@@ -53,7 +53,8 @@ public:
 
     inline bool isValid(const QModelIndex& index)
     {
-        return (index.isValid()              &&
+        return (
+                index.isValid()              &&
                 (index.row() >= 0)           &&
                 (index.row() < infos.size())
                );
@@ -201,7 +202,7 @@ QList<qlonglong> ImportItemModel::camItemIds(const QList<QModelIndex>& indexes) 
 
 CamItemInfo ImportItemModel::camItemInfo(int row) const
 {
-    if (row < 0 || row >= d->infos.size())
+    if ((row < 0) || (row >= d->infos.size()))
     {
         return CamItemInfo();
     }
@@ -211,7 +212,7 @@ CamItemInfo ImportItemModel::camItemInfo(int row) const
 
 CamItemInfo& ImportItemModel::camItemInfoRef(int row) const
 {
-    if (row < 0 || row >= d->infos.size())
+    if ((row < 0) || (row >= d->infos.size()))
     {
         return d->camItemInfo;
     }
@@ -221,7 +222,7 @@ CamItemInfo& ImportItemModel::camItemInfoRef(int row) const
 
 qlonglong ImportItemModel::camItemId(int row) const
 {
-    if (row < 0 || row >= d->infos.size())
+    if ((row < 0) || (row >= d->infos.size()))
     {
         return -1;
     }
@@ -609,6 +610,7 @@ void ImportItemModel::cleanSituationChecks()
     // For starting an incremental refresh we want a clear situation:
     // Any remaining batches from non-incremental refreshing subclasses have been received in appendInfos(),
     // any batches sent to preprocessor for re-adding have been re-added.
+
     if (d->refreshing || d->reAdding)
     {
         return;
@@ -645,7 +647,9 @@ void ImportItemModel::publiciseInfos(const CamItemInfoList& infos)
 
         // TODO move this to a separate thread, see CameraHistoryUpdater
         // TODO can we/do we want to differentiate at all between whether the status is unknown and not downloaded?
+
         info.downloaded = CoreDbDownloadHistory::status(QString::fromUtf8(d->controller->cameraMD5ID()), info.name, info.size, info.ctime);
+
         // TODO is this safe? if so, is there a need to store this inside idHash separately?
 
         info.id      = i;
@@ -695,10 +699,12 @@ void ImportItemModel::finishIncrementalRefresh()
     }
 
     // remove old entries
+
     QList<QPair<int, int> > pairs = d->incrementalUpdater->oldIndexes();
     removeRowPairs(pairs);
 
     // add new indexes
+
     appendInfos(d->incrementalUpdater->newInfos);
 
     delete d->incrementalUpdater;
@@ -715,7 +721,7 @@ static bool pairsContain(const List& list, T value)
 
     while (n > 0)
     {
-        int half   = n >> 1;
+        int half   = (n >> 1);
         middle = begin + half;
 
         if ((middle->first <= value) && (middle->second >= value))
@@ -819,6 +825,7 @@ void ImportItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
         removedRows     = end - begin + 1;
 
         // when removing from the list, all subsequent indexes are affected
+
         offset += removedRows;
 
         QList<CamItemInfo> removedInfos;
@@ -833,6 +840,7 @@ void ImportItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
         beginRemoveRows(QModelIndex(), begin, end);
 
         // update idHash - which points to indexes of d->infos
+
         QHash<qlonglong, int>::iterator it;
 
         for (it = d->idHash.begin() ; it != d->idHash.end() ; )
@@ -842,11 +850,13 @@ void ImportItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
                 if (it.value() > end)
                 {
                     // after the removed interval, adjust index
+
                     it.value() -= removedRows;
                 }
                 else
                 {
                     // in the removed interval
+
                     it = d->idHash.erase(it);
                     continue;
                 }
@@ -856,6 +866,7 @@ void ImportItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
         }
 
         // remove from list
+
         d->infos.erase(d->infos.begin() + begin, d->infos.begin() + (end + 1));
 
         endRemoveRows();
@@ -867,6 +878,7 @@ void ImportItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
     }
 
     // tidy up: remove old indexes from file path hash now
+
     if (d->keepFileUrlCache)
     {
         QHash<QString, qlonglong>::iterator it;
@@ -965,6 +977,7 @@ QList<QPair<int, int> > ImportItemModelIncrementalUpdater::oldIndexes()
 {
     // first, apply all changes to indexes by direct removal in model
     // while the updater was active
+
     foreach (const IntPairList& list, modelRemovals)
     {
         int removedRows = 0;
@@ -977,9 +990,11 @@ QList<QPair<int, int> > ImportItemModelIncrementalUpdater::oldIndexes()
             removedRows     = end - begin + 1;
 
             // when removing from the list, all subsequent indexes are affected
+
             offset += removedRows;
 
             // update idHash - which points to indexes of d->infos, and these change now!
+
             QHash<qlonglong, int>::iterator it;
 
             for (it = oldIds.begin() ; it != oldIds.end() ; )
@@ -989,11 +1004,13 @@ QList<QPair<int, int> > ImportItemModelIncrementalUpdater::oldIndexes()
                     if (it.value() > end)
                     {
                         // after the removed interval: adjust index
+
                         it.value() -= removedRows;
                     }
                     else
                     {
                         // in the removed interval
+
                         it = oldIds.erase(it);
                         continue;
                     }
@@ -1072,7 +1089,7 @@ Qt::ItemFlags ImportItemModel::flags(const QModelIndex& index) const
 
 QModelIndex ImportItemModel::index(int row, int column, const QModelIndex& parent) const
 {
-    if (column != 0 || row < 0 || parent.isValid() || row >= d->infos.size())
+    if ((column != 0) || (row < 0) || parent.isValid() || (row >= d->infos.size()))
     {
         return QModelIndex();
     }

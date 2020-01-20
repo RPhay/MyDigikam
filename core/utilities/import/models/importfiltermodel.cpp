@@ -191,6 +191,7 @@ QList<qlonglong> ImportSortFilterModel::camItemIds(const QList<QModelIndex>& ind
 QModelIndex ImportSortFilterModel::indexForPath(const QString& filePath) const
 {
     QUrl fileUrl = QUrl::fromLocalFile(filePath);
+
     return mapFromSourceImportModel(sourceImportModel()->indexForUrl(fileUrl));
 }
 
@@ -423,29 +424,32 @@ void ImportFilterModel::setDirectSourceImportModel(ImportItemModel* const source
 
     if (d->importItemModel)
     {
-        //disconnect(d->importItemModel, SIGNAL(modelReset()),
-        //           this, SLOT(slotModelReset()));
+/*
+        disconnect(d->importItemModel, SIGNAL(modelReset()),
+                   this, SLOT(slotModelReset()));
 
-        //TODO: slotModelReset(); will be added when implementing filtering options
-
+        // TODO: slotModelReset(); will be added when implementing filtering options
+*/
         disconnect(d->importItemModel, SIGNAL(processAdded(QList<CamItemInfo>)),
                    this, SLOT(slotProcessAdded(QList<CamItemInfo>)));
     }
 
     // TODO do we need to delete the old one?
+
     d->importItemModel = sourceModel;
 
     if (d->importItemModel)
     {
-        //connect(d, SIGNAL(reAddCamItemInfos(QList<CamItemInfo>)),
-        //        d->importItemModel, SLOT(reAddCamItemInfos(QList<CamItemInfo>)));
+/*
+        connect(d, SIGNAL(reAddCamItemInfos(QList<CamItemInfo>)),
+                d->importItemModel, SLOT(reAddCamItemInfos(QList<CamItemInfo>)));
 
-        //connect(d, SIGNAL(reAddingFinished()),
-        //        d->importItemModel, SLOT(reAddingFinished()));
+        connect(d, SIGNAL(reAddingFinished()),
+                d->importItemModel, SLOT(reAddingFinished()));
 
-        //TODO: connect(d->importItemModel, SIGNAL(modelReset()),
-        //              this, SLOT(slotModelReset()));
-
+        connect(d->importItemModel, SIGNAL(modelReset()),
+                this, SLOT(slotModelReset()));
+*/
         connect(d->importItemModel, SIGNAL(processAdded(QList<CamItemInfo>)),
                 this, SLOT(slotProcessAdded(QList<CamItemInfo>)));
     }
@@ -503,12 +507,14 @@ bool ImportFilterModel::subSortLessThan(const QModelIndex& left, const QModelInd
 int ImportFilterModel::compareInfosCategories(const CamItemInfo& left, const CamItemInfo& right) const
 {
     Q_D(const ImportFilterModel);
+
     return d->sorter.compareCategories(left, right);
 }
 
 bool ImportFilterModel::infosLessThan(const CamItemInfo& left, const CamItemInfo& right) const
 {
     Q_D(const ImportFilterModel);
+
     return d->sorter.lessThan(left, right);
 }
 
@@ -520,12 +526,16 @@ QString ImportFilterModel::categoryIdentifier(const CamItemInfo& info) const
     {
         case CamItemSortSettings::NoCategories:
             return QString();
+
         case CamItemSortSettings::CategoryByFolder:
             return info.folder;
+
         case CamItemSortSettings::CategoryByFormat:
             return info.mime;
+
         case CamItemSortSettings::CategoryByDate:
             return info.ctime.date().toString(Qt::ISODate);
+
         default:
             return QString();
     }
