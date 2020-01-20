@@ -58,11 +58,13 @@ public:
     void setPlugin(DPluginEditor* const plugin);
     DPluginEditor* plugin() const;
 
-    /** Caller by editor tool interface to initialized tool when all is ready, through slotInit().
+    /**
+     * Called by editor tool interface to initialized tool when all is ready, through slotInit().
      */
     void init();
 
-    /** Set this option to on if you want to call slotPreview() in slotInit() at tool startup.
+    /**
+     * Set this option to on if you want to call slotPreview() in slotInit() at tool startup.
      */
     void setInitPreview(bool b);
 
@@ -106,7 +108,7 @@ protected:
     virtual void setBusy(bool);
     virtual void readSettings();
     virtual void writeSettings();
-    virtual void finalRendering() {};
+    virtual void finalRendering()     {};
 
 protected Q_SLOTS:
 
@@ -148,12 +150,14 @@ public:
     explicit EditorToolThreaded(QObject* const parent);
     virtual ~EditorToolThreaded();
 
-    /** Set the small text to show in editor status progress bar during
-     *  tool computation. If it's not set, tool name is used instead.
+    /**
+     * Set the small text to show in editor status progress bar during
+     * tool computation. If it's not set, tool name is used instead.
      */
     void setProgressMessage(const QString& mess);
 
-    /** return the current tool rendering mode.
+    /**
+     * return the current tool rendering mode.
      */
     RenderingMode renderingMode() const;
 
@@ -163,18 +167,21 @@ public Q_SLOTS:
 
 protected:
 
-    /** Manage filter instance plugged in tool interface
+    /**
+     * Manage filter instance plugged in tool interface
      */
     DImgThreadedFilter* filter() const;
     void setFilter(DImgThreadedFilter* const filter);
 
-    /** Manage analyser instance plugged in tool interface
+    /**
+     * Manage analyser instance plugged in tool interface
      */
     DImgThreadedAnalyser* analyser() const;
     void setAnalyser(DImgThreadedAnalyser* const analyser);
 
-    /** If true, delete filter instance when preview or final rendering is processed.
-     *  If false, filter instance will be managed outside for ex. with ContentAwareResizing tool.
+    /**
+     * If true, delete filter instance when preview or final rendering is processed.
+     * If false, filter instance will be managed outside for ex. with ContentAwareResizing tool.
      */
     void deleteFilterInstance(bool b = true);
 
@@ -187,23 +194,26 @@ protected:
 
 protected Q_SLOTS:
 
-    /** Manage start and end events from filter
+    /**
+     * Manage start and end events from filter
      */
     void slotFilterStarted();
     void slotFilterFinished(bool success);
 
-    /** Manage start and end events from analyser
+    /**
+     * Manage start and end events from analyser
      */
     void slotAnalyserStarted();
     void slotAnalyserFinished(bool success);
 
-    /** Dispatch progress event from filter and analyser
+    /**
+     * Dispatch progress event from filter and analyser
      */
     void slotProgress(int progress);
 
-    virtual void slotInit() override;
-    virtual void slotOk() override;
-    virtual void slotCancel() override;
+    virtual void slotInit()    override;
+    virtual void slotOk()      override;
+    virtual void slotCancel()  override;
     virtual void slotPreview() override;
 
 private Q_SLOTS:

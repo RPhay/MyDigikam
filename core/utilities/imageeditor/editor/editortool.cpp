@@ -186,8 +186,10 @@ QWidget* EditorTool::toolView() const
 void EditorTool::setToolView(QWidget* const view)
 {
     d->view = view;
+
     // Will be unblocked in slotInit()
     // This will prevent resize event signals emit during tool init.
+
     d->view->blockSignals(true);
 
     ImageGuideWidget* const wgt = dynamic_cast<ImageGuideWidget*>(d->view);
@@ -238,6 +240,7 @@ void EditorTool::setToolSettings(EditorToolSettings* const settings)
 
     // Will be unblocked in slotInit()
     // This will prevent signals emit during tool init.
+
     d->settings->blockSignals(true);
 }
 
@@ -247,6 +250,7 @@ void EditorTool::slotInit()
     KConfigGroup group        = config->group(d->configGroupName);
 
     // We always have to call readSettings(), some tools need it.
+
     if (group.readEntry(d->configRestoreSettingsEntry, true))
     {
         readSettings();
@@ -258,16 +262,20 @@ void EditorTool::slotInit()
     }
 
     // Unlock signals from preview and settings widgets when init is done.
+
     d->view->blockSignals(false);
     d->settings->blockSignals(false);
 
     if (d->initPreview)
+    {
         slotTimer();
+    }
 }
 
 void EditorTool::setToolHelp(const QString& anchor)
 {
     d->helpAnchor = anchor;
+
     // TODO: use this anchor with editor Help menu
 }
 
@@ -311,12 +319,14 @@ void EditorTool::slotOk()
 {
     writeSettings();
     finalRendering();
+
     emit okClicked();
 }
 
 void EditorTool::slotCancel()
 {
     writeSettings();
+
     emit cancelClicked();
 }
 
@@ -429,7 +439,8 @@ public:
 };
 
 EditorToolThreaded::EditorToolThreaded(QObject* const parent)
-    : EditorTool(parent), d(new Private)
+    : EditorTool(parent),
+      d(new Private)
 {
 }
 
@@ -526,7 +537,7 @@ void EditorToolThreaded::setAnalyser(DImgThreadedAnalyser* const analyser)
 
 void EditorToolThreaded::slotResized()
 {
-    if (d->currentRenderingMode == EditorToolThreaded::FinalRendering)
+    if      (d->currentRenderingMode == EditorToolThreaded::FinalRendering)
     {
         toolView()->update();
         return;
@@ -646,9 +657,11 @@ void EditorToolThreaded::slotAnalyserFinished(bool success)
 void EditorToolThreaded::slotOk()
 {
     // Computation already in process.
+
     if (d->currentRenderingMode != EditorToolThreaded::PreviewRendering)
     {
         // See bug #305916 : cancel preview before.
+
         slotAbort();
     }
 
@@ -679,6 +692,7 @@ void EditorToolThreaded::slotOk()
 void EditorToolThreaded::slotPreview()
 {
     // Computation already in process.
+
     if (d->currentRenderingMode != EditorToolThreaded::NoneRendering)
     {
         return;

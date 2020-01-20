@@ -120,7 +120,7 @@ int EditorStackView::viewMode() const
 
 void EditorStackView::setViewMode(int mode)
 {
-    if (mode != CanvasMode && mode != ToolViewMode)
+    if ((mode != CanvasMode) && (mode != ToolViewMode))
     {
         return;
     }
@@ -167,6 +167,7 @@ void EditorStackView::toggleFitToWindow()
     // Fit to window action is common place to switch view in this mode.
     // User want to see the same behaviors between canvas and tool preview.
     // Both are toggle at the same time.
+
     d->canvas->layout()->toggleFitToWindow();
 
     GraphicsDImgView* const preview = previewWidget();
@@ -235,7 +236,7 @@ double EditorStackView::zoomMax() const
         }
         else
         {
-            return -1.0;
+            return (-1.0);
         }
     }
 }
@@ -256,14 +257,14 @@ double EditorStackView::zoomMin() const
         }
         else
         {
-            return -1.0;
+            return (-1.0);
         }
     }
 }
 
 void EditorStackView::slotZoomSliderChanged(int size)
 {
-    if (viewMode() == ToolViewMode && !isZoomablePreview())
+    if ((viewMode() == ToolViewMode) && !isZoomablePreview())
     {
         return;
     }
@@ -293,6 +294,7 @@ void EditorStackView::slotZoomChanged(double zoom)
     {
         max = d->canvas->layout()->atMaxZoom();
         min = d->canvas->layout()->atMinZoom();
+
         emit signalZoomChanged(max, min, zoom);
     }
     else
@@ -303,6 +305,7 @@ void EditorStackView::slotZoomChanged(double zoom)
         {
             max = preview->layout()->atMaxZoom();
             min = preview->layout()->atMinZoom();
+
             emit signalZoomChanged(max, min, zoom);
         }
     }

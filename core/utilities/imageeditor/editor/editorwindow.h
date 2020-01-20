@@ -101,7 +101,7 @@ public:
 public Q_SLOTS:
 
     virtual void slotSetup()  override = 0;
-    virtual void slotSetupICC() = 0;
+    virtual void slotSetupICC()        = 0;
 
 Q_SIGNALS:
 
@@ -164,7 +164,7 @@ protected:
     QString                   m_formatForRAWVersioning;
     QString                   m_formatForSubversions;
 
-    //using QVector to store transforms
+    /// NOTE: using QVector to store transforms
     QVector<TransformType>    m_transformQue;
 
 protected:

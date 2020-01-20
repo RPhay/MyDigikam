@@ -24,44 +24,122 @@
 #ifndef DIGIKAM_IMAGE_EDITOR_WINDOW_PRIVATE_H
 #define DIGIKAM_IMAGE_EDITOR_WINDOW_PRIVATE_H
 
+#include "editorwindow.h"
+
+// C++ includes
+
+#include <cmath>
+
 // Qt includes
 
+#include <QApplication>
+#include <QByteArray>
+#include <QCursor>
+#include <QDir>
+#include <QEasingCurve>
+#include <QEventLoop>
+#include <QFile>
+#include <QFileInfo>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QHBoxLayout>
+#include <QImageReader>
+#include <QKeyEvent>
+#include <QLabel>
+#include <QLayout>
+#include <QPointer>
+#include <QProgressBar>
+#include <QSplitter>
+#include <QTimer>
+#include <QToolButton>
+#include <QVBoxLayout>
+#include <QWidgetAction>
+#include <QButtonGroup>
+#include <QLineEdit>
+#include <QKeySequence>
+#include <QPushButton>
+#include <QAction>
+#include <QMenuBar>
+#include <QStatusBar>
+#include <QMenu>
+#include <QIcon>
 #include <QList>
 #include <QString>
-#include <QMenu>
 
 // KDE includes
 
+#include <klocalizedstring.h>
+#include <kactioncategory.h>
+#include <kactioncollection.h>
+#include <kservicetype.h>
+#include <kservicetypetrader.h>
+#include <ktoolbarpopupaction.h>
+#include <kwindowsystem.h>
+#include <kxmlguifactory.h>
 #include <kconfiggroup.h>
 #include <kservice.h>
 #include <ksharedconfig.h>
 
+#ifdef HAVE_KIO
+#   include <kopenwithdialog.h>
+#endif
+
 // Local includes
 
+#include "digikam_config.h"
 #include "digikam_debug.h"
 #include "digikam_globals.h"
+#include "dmessagebox.h"
+#include "applicationsettings.h"
+#include "actioncategorizedview.h"
+#include "canvas.h"
+#include "categorizeditemmodel.h"
+#include "colorcorrectiondlg.h"
+#include "editorcore.h"
+#include "dlogoaction.h"
+#include "dmetadata.h"
+#include "dzoombar.h"
+#include "drawdecoderwidget.h"
+#include "editorstackview.h"
+#include "editortool.h"
+#include "editortoolsettings.h"
+#include "editortooliface.h"
+#include "exposurecontainer.h"
+#include "dfileoperations.h"
+#include "filereadwritelock.h"
+#include "filesaveoptionsbox.h"
+#include "filesaveoptionsdlg.h"
+#include "iccpostloadingmanager.h"
+#include "iccsettings.h"
+#include "iccsettingscontainer.h"
+#include "icctransform.h"
+#include "imagedialog.h"
+#include "iofilesettings.h"
+#include "metaenginesettings.h"
+#include "libsinfodlg.h"
+#include "loadingcacheinterface.h"
+#include "jpegsettings.h"
+#include "pngsettings.h"
+#include "savingcontext.h"
+#include "sidebar.h"
+#include "slideshowsettings.h"
+#include "softproofdialog.h"
+#include "statusprogressbar.h"
+#include "thememanager.h"
+#include "thumbnailsize.h"
+#include "thumbnailloadthread.h"
+#include "versioningpromptusersavedlg.h"
+#include "undostate.h"
+#include "versionmanager.h"
+#include "dfiledialog.h"
+#include "dexpanderbox.h"
+#include "imageiface.h"
 #include "editorwindow.h"
 #include "versionmanager.h"
 #include "dnotificationpopup.h"
 
-class QAction;
-class QDialog;
-class QEventLoop;
-class QLabel;
-class QToolButton;
-class QWidgetAction;
-
 namespace Digikam
 {
-
-class ActionCategorizedView;
-class DZoomBar;
-class EditorToolIface;
-class ExposureSettingsContainer;
-class ICCSettingsContainer;
-class PreviewToolBar;
-class DAdjustableLabel;
-class IccProfilesMenuAction;
 
 class Q_DECL_HIDDEN EditorWindow::Private
 {
@@ -213,21 +291,26 @@ void EditorWindow::Private::legacyUpdateSplitterState(KConfigGroup& group)
 {
     // Check if the thumbnail size in the config file is splitter based (the
     // old method), and convert to dock based if needed.
+
     if (group.hasKey(configSplitterStateEntry))
     {
         // Read splitter state from config file
+
         QByteArray state;
         state = QByteArray::fromBase64(group.readEntry(configSplitterStateEntry, state));
 
         // Do a cheap check: a splitter state with 3 windows is always 34 bytes.
+
         if (state.count() == 34)
         {
             // Read the state in streamwise fashion.
+
             QDataStream stream(state);
 
             // The first 8 bytes are resp. the magic number and the version
             // (which should be 0, otherwise it's not saved with an older
             // digiKam version). Then follows the list of window sizes.
+
             qint32     marker;
             qint32     version = -1;
             QList<int> sizesList;
@@ -242,8 +325,10 @@ void EditorWindow::Private::legacyUpdateSplitterState(KConfigGroup& group)
                 if (sizesList.count() == 3)
                 {
                     qCDebug(DIGIKAM_GENERAL_LOG) << "Found splitter based config, converting to dockbar";
+
                     // Remove the first entry (the thumbbar) and write the rest
                     // back. Then it should be fine.
+
                     sizesList.removeFirst();
                     QByteArray newData;
                     QDataStream newStream(&newData, QIODevice::WriteOnly);

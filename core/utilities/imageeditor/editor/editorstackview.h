@@ -56,13 +56,13 @@ public:
     ~EditorStackView();
 
     void     setCanvas(Canvas* const canvas);
-    Canvas*  canvas() const;
+    Canvas*  canvas()            const;
 
     void     setToolView(QWidget* const view);
-    QWidget* toolView() const;
+    QWidget* toolView()          const;
 
     void     setViewMode(int mode);
-    int      viewMode() const;
+    int      viewMode()          const;
 
     void     increaseZoom();
     void     decreaseZoom();

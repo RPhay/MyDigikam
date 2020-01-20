@@ -147,6 +147,7 @@ uchar* ImageIface::Private::previewImageData()
         previewHeight      = previewImage.height();
 
         // only create another copy if needed, in setPreviewImage
+
         targetPreviewImage = previewImage;
 
         if (previewType == ImageSelection)
@@ -156,6 +157,7 @@ uchar* ImageIface::Private::previewImageData()
     }
 
     DImg previewData = previewImage.copyImageData();
+
     return previewData.stripImageData();
 }
 
@@ -199,9 +201,10 @@ DColor ImageIface::colorInfoFromOriginal(const QPoint& point) const
         return DColor();
     }
 
-    if (point.x() > originalSize().width() || point.y() > originalSize().height())
+    if ((point.x() > originalSize().width()) || (point.y() > originalSize().height()))
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Coordinate out of range!";
+
         return DColor();
     }
 
@@ -210,9 +213,10 @@ DColor ImageIface::colorInfoFromOriginal(const QPoint& point) const
 
 DColor ImageIface::colorInfoFromPreview(const QPoint& point) const
 {
-    if (d->previewImage.isNull() || point.x() > d->previewWidth || point.y() > d->previewHeight)
+    if (d->previewImage.isNull() || (point.x() > d->previewWidth) || (point.y() > d->previewHeight))
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Coordinate out of range or no image data available!";
+
         return DColor();
     }
 
@@ -221,9 +225,10 @@ DColor ImageIface::colorInfoFromPreview(const QPoint& point) const
 
 DColor ImageIface::colorInfoFromTargetPreview(const QPoint& point) const
 {
-    if (d->targetPreviewImage.isNull() || point.x() > d->previewWidth || point.y() > d->previewHeight)
+    if (d->targetPreviewImage.isNull() || (point.x() > d->previewWidth) || (point.y() > d->previewHeight))
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Coordinate out of range or no image data available!";
+
         return DColor();
     }
 
@@ -245,7 +250,9 @@ DImg ImageIface::preview() const
 {
     // NOTE: corrects the values for width and height of the preview image from the image data interface
     // See Bug #320382 for details.
+
     uchar* const data = d->previewImageData();
+
     return DImg(d->previewWidth, d->previewHeight, previewSixteenBit(), previewHasAlpha(), data, false);
 }
 
@@ -330,7 +337,9 @@ MetaEngineData ImageIface::originalMetadata() const
     DImg* const img = original();
 
     if (img)
+    {
         return (img->getMetadata());
+    }
 
     return MetaEngineData();
 }
@@ -340,7 +349,9 @@ void ImageIface::setOriginalMetadata(const MetaEngineData& meta)
     DImg* const img = original();
 
     if (img)
+    {
         img->setMetadata(meta);
+    }
 }
 
 PhotoInfoContainer ImageIface::originalPhotoInfo() const
@@ -424,9 +435,9 @@ void ImageIface::paint(QPaintDevice* const device, const QRect& rect, QPainter* 
 
 void ImageIface::setSelection(const QString& caller, const FilterAction& action, const DImg& img)
 {
-    if (img.hasAlpha()   != originalHasAlpha()     ||
-        img.sixteenBit() != originalSixteenBit()   ||
-        img.size()       != selectionRect().size()
+    if ((img.hasAlpha()   != originalHasAlpha())     ||
+        (img.sixteenBit() != originalSixteenBit())   ||
+        (img.size()       != selectionRect().size())
        )
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Properties of image to overwrite selection differs than original image";
@@ -444,8 +455,8 @@ void ImageIface::setSelection(const QString& caller, const FilterAction& action,
 
 void ImageIface::setPreview(const DImg& img)
 {
-    if (img.hasAlpha()   != previewHasAlpha()   ||
-        img.sixteenBit() != previewSixteenBit()
+    if ((img.hasAlpha()   != previewHasAlpha())   ||
+        (img.sixteenBit() != previewSixteenBit())
        )
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Properties of image differs than preview";
