@@ -80,6 +80,7 @@ void SearchModificationHelper::slotSearchDelete(SAlbum* searchAlbum)
     }
 
     // Make sure that a complicated search is not deleted accidentally
+
     int result = QMessageBox::warning(d->dialogParent, i18n("Delete Search?"),
                                       i18n("Are you sure you want to "
                                            "delete the selected search "
@@ -156,7 +157,7 @@ void SearchModificationHelper::slotSearchRename(SAlbum* searchAlbum)
                                          oldName,
                                          &ok);
 
-    if (!ok || name == oldName || name.isEmpty())
+    if (!ok || (name == oldName) || (name.isEmpty()))
     {
         return;
     }
@@ -190,10 +191,12 @@ SAlbum* SearchModificationHelper::slotCreateTimeLineSearch(const QString& desire
     }
 
     // Create an XML search query for the list of date ranges
+
     SearchXmlWriter writer;
 
     // for each range, write a group with two fields
-    for (int i = 0; i < dateRanges.size(); ++i)
+
+    for (int i = 0 ; i < dateRanges.size() ; ++i)
     {
         writer.writeGroup();
         writer.writeField(QLatin1String("creationdate"), SearchXml::GreaterThanOrEqual);
@@ -211,6 +214,7 @@ SAlbum* SearchModificationHelper::slotCreateTimeLineSearch(const QString& desire
 
     SAlbum* const album = AlbumManager::instance()->createSAlbum(name, DatabaseSearch::TimeLineSearch, writer.xml());
     AlbumManager::instance()->setCurrentAlbums(QList<Album*>() << album);
+
     return album;
 }
 
@@ -251,6 +255,7 @@ SAlbum* SearchModificationHelper::createFuzzySearchFromSketch(const QString& pro
 
     // Add the target albums, i.e. define that the found similar images
     // must be located in one of the target albums.
+
     writer.writeField(QLatin1String("noeffect_targetAlbums"), SearchXml::OneOf);
     writer.writeValue(targetAlbums);
     writer.finishField();
@@ -306,6 +311,7 @@ SAlbum* SearchModificationHelper::createFuzzySearchFromDropped(const QString& pr
 
     // Add the target albums, i.e. define that the found similar images
     // must be located in one of the target albums.
+
     writer.writeField(QLatin1String("noeffect_targetAlbums"), SearchXml::OneOf);
     writer.writeValue(targetAlbums);
     writer.finishField();
@@ -352,6 +358,7 @@ SAlbum* SearchModificationHelper::createFuzzySearchFromImage(const QString& prop
     }
 
     // If the image has no fingerprint, generate it.
+
     if (SimilarityDbAccess().db()->hasDirtyOrMissingFingerprint(image))
     {
         QString path = image.filePath();
@@ -380,6 +387,7 @@ SAlbum* SearchModificationHelper::createFuzzySearchFromImage(const QString& prop
 
     // Add the target albums, i.e. define that the found similar images
     // must be located in one of the target albums.
+
     writer.writeField(QLatin1String("noeffect_targetAlbums"), SearchXml::OneOf);
     writer.writeValue(targetAlbums);
     writer.finishField();

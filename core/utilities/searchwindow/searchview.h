@@ -52,7 +52,7 @@ public:
     }
 
     virtual QPixmap groupLabelPixmap(int w, int h) = 0;
-    virtual QPixmap bottomBarPixmap(int w, int h) = 0;
+    virtual QPixmap bottomBarPixmap(int w, int h)  = 0;
 };
 
 class AbstractSearchGroupContainer : public QWidget
@@ -61,10 +61,11 @@ class AbstractSearchGroupContainer : public QWidget
 
 public:
 
-    /// Abstract base class for classes that contain SearchGroups
-    // To contain common code of SearchView and SearchGroup,
-    // as SearchGroups can have subgroups.
-
+    /**
+     * Abstract base class for classes that contain SearchGroups
+     * To contain common code of SearchView and SearchGroup,
+     * as SearchGroups can have subgroups.
+     */
     explicit AbstractSearchGroupContainer(QWidget* const parent = nullptr);
 
 public Q_SLOTS:

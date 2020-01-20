@@ -91,11 +91,11 @@ void NormalSearchTreeView::handleCustomContextMenuAction(QAction* action, AlbumP
     Album* a             = album;
     SAlbum* const salbum = dynamic_cast<SAlbum*>(a);
 
-    if (action == d->newAction && salbum)
+    if      ((action == d->newAction) && salbum)
     {
         emit newSearch();
     }
-    else if (action == d->editAction && salbum)
+    else if ((action == d->editAction) && salbum)
     {
         emit editSearch(salbum);
     }

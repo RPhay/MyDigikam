@@ -76,6 +76,7 @@ void SearchGroup::setup(Type type)
 
     SearchFieldGroup*      group = nullptr;
     SearchFieldGroupLabel* label = nullptr;
+
     // To prevent Cppcheck warnings.
     (void)group;
     (void)label;
@@ -88,6 +89,7 @@ void SearchGroup::setup(Type type)
     m_layout->addWidget(group);
 
     // this group has no label. Need to show, else it is hidden forever
+
     group->setFieldsVisible(true);
 
     // ----- //
@@ -213,8 +215,10 @@ void SearchGroup::setup(Type type)
     group = new SearchFieldGroup(this);
     group->setLabel(label);
 
-    //group->addField(SearchField::createField("latitude", group));
-    //group->addField(SearchField::createField("longitude", group));
+/*
+    group->addField(SearchField::createField("latitude", group));
+    group->addField(SearchField::createField("longitude", group));
+*/
     group->addField(SearchField::createField(QLatin1String("altitude"), group));
     group->addField(SearchField::createField(QLatin1String("nogps"), group));
 
@@ -227,6 +231,7 @@ void SearchGroup::setup(Type type)
     // ----- //
 
     // prepare subgroup layout
+
     QHBoxLayout* const indentLayout = new QHBoxLayout;
     indentLayout->setContentsMargins(QMargins());
     indentLayout->setSpacing(0);
@@ -253,6 +258,7 @@ void SearchGroup::setup(Type type)
     // ----- //
 
     // initialization as empty group
+
     reset();
 }
 
@@ -275,6 +281,7 @@ void SearchGroup::read(SearchXmlCachingReader& reader)
         }
 
         // subgroup
+
         if (reader.isGroupElement())
         {
             readGroup(reader);
@@ -284,8 +291,9 @@ void SearchGroup::read(SearchXmlCachingReader& reader)
         {
             QString name = reader.fieldName();
 
-            SearchField* field = nullptr;
+            SearchField* field           = nullptr;
             SearchFieldGroup* fieldGroup = nullptr;
+
             foreach (fieldGroup, m_fieldGroups)
             {
                 if ((field = fieldGroup->fieldForName(name)))
@@ -314,14 +322,17 @@ void SearchGroup::read(SearchXmlCachingReader& reader)
 SearchGroup* SearchGroup::createSearchGroup()
 {
     // create a sub group - view is the same
+
     SearchGroup* const group = new SearchGroup(m_view);
     group->setup(SearchGroup::ChainGroup);
+
     return group;
 }
 
 void SearchGroup::addGroupToLayout(SearchGroup* group)
 {
     // insert in front of the stretch
+
     m_subgroupLayout->addWidget(group);
 }
 
@@ -331,12 +342,13 @@ void SearchGroup::write(SearchXmlWriter& writer)
     writer.setGroupOperator(m_label->groupOperator());
     writer.setDefaultFieldOperator(m_label->defaultFieldOperator());
 
-    foreach (SearchFieldGroup* fieldGroup, m_fieldGroups)
+    foreach (SearchFieldGroup* const fieldGroup, m_fieldGroups)
     {
         fieldGroup->write(writer);
     }
 
     // take care for subgroups
+
     writeGroups(writer);
 
     writer.finishGroup();
@@ -344,7 +356,7 @@ void SearchGroup::write(SearchXmlWriter& writer)
 
 void SearchGroup::reset()
 {
-    foreach (SearchFieldGroup* fieldGroup, m_fieldGroups)
+    foreach (SearchFieldGroup* const fieldGroup, m_fieldGroups)
     {
         fieldGroup->reset();
     }
@@ -363,16 +375,19 @@ QList<QRect> SearchGroup::startupAnimationArea() const
     QList<QRect> rects;
 
     // from subgroups;
+
     rects += startupAnimationAreaOfGroups();
 
     // field groups
+
     foreach (SearchFieldGroup* fieldGroup, m_fieldGroups)
     {
         rects += fieldGroup->areaOfMarkedFields();
     }
 
     // adjust position relative to parent
-    for (QList<QRect>::iterator it = rects.begin(); it != rects.end(); ++it)
+
+    for (QList<QRect>::iterator it = rects.begin() ; it != rects.end() ; ++it)
     {
         (*it).translate(pos());
     }
@@ -429,7 +444,9 @@ public:
     SearchXml::Operator         groupOp;
     SearchXml::Operator         fieldOp;
     QGridLayout*                layout;
-    //QComboBox*                  groupOpBox;
+/*
+    QComboBox*                  groupOpBox;
+*/
     DClickLabel*                groupOpLabel;
     QRadioButton*               allBox;
     QRadioButton*               anyBox;
@@ -454,11 +471,12 @@ SearchGroupLabel::SearchGroupLabel(SearchViewThemedPartsCache* const cache, Sear
     mainLabel->setObjectName(QLatin1String("SearchGroupLabel_MainLabel"));
 
     // Use radio button with a separate label to fix styling problem, see bug 195809
+
     d->allBox                 = new QRadioButton;
     QLabel* const allBoxLabel = new QLabel(i18n("Meet All of the following conditions"));
     allBoxLabel->setObjectName(QLatin1String("SearchGroupLabel_CheckBox"));
 
-    d->anyBox = new QRadioButton;
+    d->anyBox                 = new QRadioButton;
     QLabel* const anyBoxLabel = new QLabel(i18n("Meet Any of the following conditions"));
     anyBoxLabel->setObjectName(QLatin1String("SearchGroupLabel_CheckBox"));
 
@@ -496,8 +514,10 @@ SearchGroupLabel::SearchGroupLabel(SearchViewThemedPartsCache* const cache, Sear
         QWidget* const simpleHeader     = new QWidget;
         QVBoxLayout* const headerLayout = new QVBoxLayout;
         QLabel* const simpleLabel1      = new QLabel;
-        //simpleLabel->setText(i18n("Find Pictures meeting all of these conditions"));
-        //simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
+/*
+        simpleLabel->setText(i18n("Find Pictures meeting all of these conditions"));
+        simpleLabel->setPixmap(QIcon::fromTheme(QLatin1String("edit-find")).pixmap(128));
+*/
         simpleLabel1->setText(i18n("<qt><p>Search your collection<br/>for Items meeting the following conditions</p></qt>"));
         simpleLabel1->setObjectName(QLatin1String("SearchGroupLabel_SimpleLabel"));
         headerLayout->addStretch(3);
@@ -554,6 +574,7 @@ SearchGroupLabel::SearchGroupLabel(SearchViewThemedPartsCache* const cache, Sear
     setLayout(d->layout);
 
     // Default values
+
     setGroupOperator(SearchXml::standardGroupOperator());
     setDefaultFieldOperator(SearchXml::standardFieldOperator());
 }
@@ -584,7 +605,9 @@ void SearchGroupLabel::setExtended(bool extended)
     else
     {
         d->stackedLayout->setCurrentIndex(0);
+
         // hide to reduce reserved space in stacked layout
+
         d->allBox->setVisible(false);
         d->anyBox->setVisible(false);
         d->noneBox->setVisible(false);
@@ -600,7 +623,7 @@ void SearchGroupLabel::toggleShowOptions()
 
 void SearchGroupLabel::toggleGroupOperator()
 {
-    if (d->groupOp == SearchXml::And)
+    if      (d->groupOp == SearchXml::And)
     {
         d->groupOp = SearchXml::Or;
     }
@@ -623,6 +646,7 @@ void SearchGroupLabel::toggleGroupOperator()
 void SearchGroupLabel::boxesToggled()
 {
     // set field op
+
     if (d->allBox->isChecked() || d->oneNotBox->isChecked())
     {
         d->fieldOp = SearchXml::And;
@@ -633,9 +657,10 @@ void SearchGroupLabel::boxesToggled()
     }
 
     // negate group op
+
     if (d->allBox->isChecked() || d->anyBox->isChecked())
     {
-        if (d->groupOp == SearchXml::AndNot)
+        if      (d->groupOp == SearchXml::AndNot)
         {
             d->groupOp = SearchXml::And;
         }
@@ -646,7 +671,7 @@ void SearchGroupLabel::boxesToggled()
     }
     else
     {
-        if (d->groupOp == SearchXml::And)
+        if      (d->groupOp == SearchXml::And)
         {
             d->groupOp = SearchXml::AndNot;
         }
@@ -668,7 +693,7 @@ void SearchGroupLabel::updateGroupLabel()
 {
     if (d->groupOpLabel)
     {
-        if (d->groupOp == SearchXml::And || d->groupOp == SearchXml::AndNot)
+        if ((d->groupOp == SearchXml::And) || (d->groupOp == SearchXml::AndNot))
         {
             d->groupOpLabel->setText(i18n("AND"));
         }
@@ -754,6 +779,7 @@ SearchXml::Operator SearchGroupLabel::defaultFieldOperator() const
 void SearchGroupLabel::paintEvent(QPaintEvent*)
 {
     // paint themed background
+
     QPainter p(this);
     p.drawPixmap(0, 0, d->themeCache->groupLabelPixmap(width(), height()));
 }

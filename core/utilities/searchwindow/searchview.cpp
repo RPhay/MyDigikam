@@ -79,7 +79,9 @@ void AbstractSearchGroupContainer::removeSearchGroup(SearchGroup* group)
     }
 
     m_groups.removeAll(group);
+
     // This method call may arise from an event handler of a widget within group. Defer deletion.
+
     group->deleteLater();
 }
 
@@ -109,12 +111,14 @@ void AbstractSearchGroupContainer::readGroup(SearchXmlCachingReader& reader)
 void AbstractSearchGroupContainer::finishReadingGroups()
 {
     // remove superfluous groups
+
     while (m_groups.size() > (m_groupIndex + 1))
     {
         delete m_groups.takeLast();
     }
 
     // for empty searches, and we have an initial search group, reset the remaining search group
+
     if (!m_groupIndex && !m_groups.isEmpty())
     {
         m_groups.first()->reset();
@@ -192,14 +196,17 @@ void SearchView::setup()
     d->layout->setSpacing(0);
 
     // add stretch at bottom
+
     d->layout->addStretch(1);
 
     // create initial group
+
     addSearchGroup();
 
     setLayout(d->layout);
 
     // prepare animation
+
     d->timeline = new QTimeLine(500, this);
     d->timeline->setFrameRange(0, 100);
 
@@ -262,6 +269,7 @@ void SearchView::read(const QString& xml)
 void SearchView::addGroupToLayout(SearchGroup* group)
 {
     // insert at last-but-one position; leave stretch at the bottom
+
     d->layout->insertWidget(d->layout->count() - 1, group);
 }
 
@@ -269,6 +277,7 @@ SearchGroup* SearchView::createSearchGroup()
 {
     SearchGroup* const group = new SearchGroup(this);
     group->setup(m_groups.isEmpty() ? SearchGroup::FirstGroup : SearchGroup::ChainGroup);
+
     return group;
 }
 
@@ -299,6 +308,7 @@ QString SearchView::write() const
     writeGroups(writer);
     writer.finish();
     qCDebug(DIGIKAM_GENERAL_LOG) << writer.xml();
+
     return writer.xml();
 }
 
@@ -376,6 +386,7 @@ void SearchView::paintEvent(QPaintEvent*)
 void SearchView::setTheme()
 {
     // settings with style sheet results in extremely slow painting
+
     setBackgroundRole(QPalette::Base);
 
     QFont f = font();
@@ -385,6 +396,7 @@ void SearchView::setTheme()
     if (f.pointSizeF() == -1)
     {
         // set pixel size
+
         fontSizeLarger  = QString::number(f.pixelSize() + 2) + QLatin1String("px");
         fontSizeSmaller = QString::number(f.pixelSize() - 2) + QLatin1String("px");
     }
@@ -467,6 +479,7 @@ QPixmap SearchView::cachedBannerPixmap(int w, int h) const
         QPixmap pixmap(w, h);
         pixmap.fill(qApp->palette().color(QPalette::Highlight));
         d->pixmapCache.insert(key, new QPixmap(pixmap));
+
         return pixmap;
     }
     else
@@ -535,6 +548,7 @@ SearchViewBottomBar::SearchViewBottomBar(SearchViewThemedPartsCache* const cache
 void SearchViewBottomBar::paintEvent(QPaintEvent*)
 {
     // paint themed background
+
     QPainter p(this);
     p.drawPixmap(0, 0, m_themeCache->bottomBarPixmap(width(), height()));
 }

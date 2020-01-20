@@ -70,7 +70,9 @@ public:
     explicit VisibilityController(QObject* const parent);
     ~VisibilityController();
 
-    /** Set the widget containing the widgets added to this controller */
+    /**
+     * Set the widget containing the widgets added to this controller
+     */
     void setContainerWidget(QWidget* const widget);
 
     /**

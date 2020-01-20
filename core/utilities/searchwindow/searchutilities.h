@@ -88,7 +88,7 @@ Q_SIGNALS:
 
 protected:
 
-    virtual void paintEvent(QPaintEvent* event) override;
+    virtual void paintEvent(QPaintEvent* event)        override;
     virtual void mouseReleaseEvent(QMouseEvent* event) override;
 
 protected Q_SLOTS:
@@ -110,34 +110,39 @@ class CustomStepsDoubleSpinBox : public QDoubleSpinBox
 
 public:
 
-    /** This is a normal QDoubleSpinBox which allows to
-     *  customize the stepping behavior, for cases where
-     *  linear steps are not applicable
+    /**
+     * This is a normal QDoubleSpinBox which allows to
+     * customize the stepping behavior, for cases where
+     * linear steps are not applicable
      */
     explicit CustomStepsDoubleSpinBox(QWidget* const parent = nullptr);
     ~CustomStepsDoubleSpinBox();
 
-    /** Set a list of values that are usually applicable for the
-     *  type of data of the combo box. The user can still type in
-     *  any other value. Boundaries are not touched.
-     *  Up or below the min and max values of the list given,
-     *  default stepping is used.
+    /**
+     * Set a list of values that are usually applicable for the
+     * type of data of the combo box. The user can still type in
+     * any other value. Boundaries are not touched.
+     * Up or below the min and max values of the list given,
+     * default stepping is used.
      */
     void setSuggestedValues(const QList<double>& values);
 
-    /** Sets the value that should be set as first value
-     *  when first moving away from the minimum value.
+    /**
+     * Sets the value that should be set as first value
+     * when first moving away from the minimum value.
      */
     void setSuggestedInitialValue(double initialValue);
 
-    /** Allows to set to different default single steps,
-     *  for the range below m_values, the other for above.
+    /**
+     * Allows to set to different default single steps,
+     * for the range below m_values, the other for above.
      */
     void setSingleSteps(double smaller, double larger);
 
     void setInvertStepping(bool invert);
 
-    /** Resets to minimum value.
+    /**
+     * Resets to minimum value.
      */
     void reset();
 
@@ -161,43 +166,50 @@ class CustomStepsIntSpinBox : public QSpinBox
 
 public:
 
-    /** This is a normal QIntSpinBox which allows to
-     *  customize the stepping behavior, for cases where
-     *  linear steps are not applicable
+    /**
+     * This is a normal QIntSpinBox which allows to
+     * customize the stepping behavior, for cases where
+     * linear steps are not applicable
      */
     explicit CustomStepsIntSpinBox(QWidget* const parent = nullptr);
     ~CustomStepsIntSpinBox();
 
-    /** Set a list of values that are usually applicable for the
-     *  type of data of the combo box. The user can still type in
-     *  any other value. Boundaries are not touched.
-     *  Up or below the min and max values of the list given,
-     *  default stepping is used.
+    /**
+     * Set a list of values that are usually applicable for the
+     * type of data of the combo box. The user can still type in
+     * any other value. Boundaries are not touched.
+     * Up or below the min and max values of the list given,
+     * default stepping is used.
      */
     void setSuggestedValues(const QList<int>& values);
 
-    /** Sets the value that should be set as first value
-     *  when first moving away from the minimum value.
+    /**
+     * Sets the value that should be set as first value
+     * when first moving away from the minimum value.
      */
     void setSuggestedInitialValue(int initialValue);
 
-    /** Allows to set to different default single steps,
-     *  for the range below m_values, the other for above.
+    /**
+     * Allows to set to different default single steps,
+     * for the range below m_values, the other for above.
      */
     void setSingleSteps(int smaller, int larger);
 
     void setInvertStepping(bool invert);
 
-    /** Call this with a fraction prefix (like "1/") to enable
-     *  magic handling of the value as fraction denominator.
+    /**
+     * Call this with a fraction prefix (like "1/") to enable
+     * magic handling of the value as fraction denominator.
      */
     void enableFractionMagic(const QString& prefix);
 
-    /** Resets to minimum value
+    /**
+     * Resets to minimum value
      */
     void reset();
 
-    /** value() and setValue() for fraction magic value.
+    /**
+     * value() and setValue() for fraction magic value.
      */
     double fractionMagicValue() const;
     void   setFractionMagicValue(double value);
@@ -228,13 +240,14 @@ class StyleSheetDebugger : public QWidget
 
 public:
 
-    /** This widget is for development purpose only:
-     *  It allows the developer to change the style sheet
-     *  on a widget dynamically.
-     *  If you want to develop or debug the stylesheet on your widget,
-     *  add temporary code:
-     *  new StyleSheetDebugger(myWidget);
-     *  That's all. Change the style sheet by editing it and pressing Ok.
+    /**
+     * This widget is for development purpose only:
+     * It allows the developer to change the style sheet
+     * on a widget dynamically.
+     * If you want to develop or debug the stylesheet on your widget,
+     * add temporary code:
+     * new StyleSheetDebugger(myWidget);
+     * That's all. Change the style sheet by editing it and pressing Ok.
      */
     explicit StyleSheetDebugger(QWidget* const object);
 

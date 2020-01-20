@@ -82,6 +82,7 @@ void VisibilityController::addObject(VisibilityObject* const object)
     d->objects << object;
 
     // create clean state
+
     if (d->status == Unknown)
     {
         if (object->isVisible())
@@ -95,7 +96,8 @@ void VisibilityController::addObject(VisibilityObject* const object)
     }
 
     // set state on object
-    if (d->status == Shown || d->status == Showing)
+
+    if ((d->status == Shown) || (d->status == Showing))
     {
         object->setVisible(true);
     }
@@ -119,7 +121,7 @@ void VisibilityController::setVisible(bool shallBeVisible)
 {
     if (shallBeVisible)
     {
-        if (d->status == Shown || d->status == Showing)
+        if ((d->status == Shown) || (d->status == Showing))
         {
             return;
         }
@@ -129,7 +131,7 @@ void VisibilityController::setVisible(bool shallBeVisible)
     }
     else
     {
-        if (d->status == Hidden || d->status == Hiding)
+        if ((d->status == Hidden) || (d->status == Hiding))
         {
             return;
         }
@@ -151,7 +153,7 @@ void VisibilityController::hide()
 
 void VisibilityController::triggerVisibility()
 {
-    if (d->status == Shown || d->status == Showing || d->status == Unknown)
+    if ((d->status == Shown) || (d->status == Showing) || (d->status == Unknown))
     {
         setVisible(false);
     }
@@ -163,7 +165,7 @@ void VisibilityController::triggerVisibility()
 
 bool VisibilityController::isVisible() const
 {
-    if (d->status == Shown || d->status == Showing)
+    if ((d->status == Shown) || (d->status == Showing))
     {
         return true;
     }
@@ -180,7 +182,7 @@ void VisibilityController::beginStatusChange()
 
 void VisibilityController::step()
 {
-    if (d->status == Showing)
+    if      (d->status == Showing)
     {
         foreach (VisibilityObject* const o, d->objects)
         {
@@ -206,7 +208,7 @@ void VisibilityController::step()
 
 void VisibilityController::allSteps()
 {
-    if (d->status == Showing)
+    if      (d->status == Showing)
     {
         if (d->containerWidget)
         {

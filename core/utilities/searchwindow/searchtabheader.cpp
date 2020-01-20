@@ -65,10 +65,9 @@ class Q_DECL_HIDDEN KeywordLineEdit : public QLineEdit
 public:
 
     explicit KeywordLineEdit(QWidget* const parent = nullptr)
-        : QLineEdit(parent)
+        : QLineEdit(parent),
+          m_hasAdvanced(false)
     {
-        m_hasAdvanced             = false;
-
         KSharedConfig::Ptr config = KSharedConfig::openConfig();
         KConfigGroup group        = config->group(QLatin1String("KeywordSearchEdit Settings"));
         m_autoSearch              = group.readEntry(QLatin1String("Autostart Search"), true);
@@ -232,10 +231,12 @@ SearchTabHeader::SearchTabHeader(QWidget* const parent)
     setLayout(mainLayout);
 
     // upper part
+
     d->newSearchWidget      = new QGroupBox(this);
     mainLayout->addWidget(d->newSearchWidget);
 
     // lower part
+
     d->lowerArea            = new QStackedLayout;
     mainLayout->addLayout(d->lowerArea);
 
@@ -295,6 +296,7 @@ SearchTabHeader::SearchTabHeader(QWidget* const parent)
     // ------------------- //
 
     // lower part, variant 2
+
     d->editSimpleWidget->setTitle(i18n("Edit Stored Search"));
 
     QVBoxLayout* const vbox1 = new QVBoxLayout;
@@ -312,6 +314,7 @@ SearchTabHeader::SearchTabHeader(QWidget* const parent)
     // ------------------- //
 
     // lower part, variant 3
+
     d->editAdvancedWidget->setTitle(i18n("Edit Stored Search"));
 
     QVBoxLayout* const vbox2   = new QVBoxLayout;
@@ -327,6 +330,7 @@ SearchTabHeader::SearchTabHeader(QWidget* const parent)
     // ------------------- //
 
     // timers
+
     d->keywordEditTimer       = new QTimer(this);
     d->keywordEditTimer->setSingleShot(true);
     d->keywordEditTimer->setInterval(800);
@@ -376,7 +380,9 @@ SearchWindow* SearchTabHeader::searchWindow() const
     if (!d->searchWindow)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Creating search window";
+
         // Create the advanced search edit window, deferred from constructor
+
         d->searchWindow = new SearchWindow;
 
         connect(d->searchWindow, SIGNAL(searchEdited(int,QString)),
@@ -392,7 +398,6 @@ void SearchTabHeader::selectedSearchChanged(Album* a)
     SAlbum* album = dynamic_cast<SAlbum*>(a);
 
     // Signal from SearchFolderView that a search has been selected.
-
     // Don't check on d->currentAlbum == album, rather update status (which may have changed on same album)
 
     d->currentAlbum = album;
@@ -408,7 +413,7 @@ void SearchTabHeader::selectedSearchChanged(Album* a)
     {
         d->lowerArea->setEnabled(true);
 
-        if (album->title() == SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch))
+        if      (album->title() == SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch))
         {
             d->lowerArea->setCurrentWidget(d->saveAsWidget);
 
@@ -445,7 +450,7 @@ void SearchTabHeader::editSearch(SAlbum* album)
         return;
     }
 
-    if (album->isAdvancedSearch())
+    if      (album->isAdvancedSearch())
     {
         SearchWindow* window = searchWindow();
         window->readSearch(album->id(), album->query());
@@ -468,7 +473,7 @@ void SearchTabHeader::newKeywordSearch()
 
 void SearchTabHeader::newAdvancedSearch()
 {
-    SearchWindow* window = searchWindow();
+    SearchWindow* const window = searchWindow();
     window->reset();
     window->show();
     window->raise();
@@ -479,7 +484,7 @@ void SearchTabHeader::keywordChanged()
     QString keywords = d->keywordEdit->text();
     qCDebug(DIGIKAM_GENERAL_LOG) << "keywords changed to '" << keywords << "'";
 
-    if (d->oldKeywordContent == keywords || keywords.trimmed().isEmpty())
+    if ((d->oldKeywordContent == keywords) || (keywords.trimmed().isEmpty()))
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "same keywords as before, ignoring...";
         return;
@@ -503,8 +508,8 @@ void SearchTabHeader::keywordChangedTimer()
 
 void SearchTabHeader::editCurrentAdvancedSearch()
 {
-    SAlbum* album        = AlbumManager::instance()->findSAlbum(SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch));
-    SearchWindow* window = searchWindow();
+    SAlbum* const album        = AlbumManager::instance()->findSAlbum(SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch));
+    SearchWindow* const window = searchWindow();
 
     if (album)
     {
@@ -532,7 +537,9 @@ void SearchTabHeader::saveSearch()
     if (name.isEmpty() || !d->currentAlbum)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "no current album, returning";
+
         // passive popup
+
         return;
     }
 
@@ -600,6 +607,7 @@ void SearchTabHeader::advancedSearchEdited(int id, const QString& query)
     // if the user just pressed the button, but did not change anything in the window,
     // the search is effectively still a keyword search.
     // We go the hard way and check this case.
+
     KeywordSearchReader check(query);
     DatabaseSearch::Type type = check.isSimpleKeywordSearch() ? DatabaseSearch::KeywordSearch
                                                               : DatabaseSearch::AdvancedSearch;
@@ -610,7 +618,7 @@ void SearchTabHeader::advancedSearchEdited(int id, const QString& query)
     }
     else
     {
-        SAlbum* album = AlbumManager::instance()->findSAlbum(id);
+        SAlbum* const album = AlbumManager::instance()->findSAlbum(id);
 
         if (album)
         {
@@ -645,8 +653,11 @@ void SearchTabHeader::setCurrentSearch(DatabaseSearch::Type type, const QString&
 QString SearchTabHeader::queryFromKeywords(const QString& keywords) const
 {
     QStringList keywordList = KeywordSearch::split(keywords);
+
     // create xml
+
     KeywordSearchWriter writer;
+
     return writer.xml(keywordList);
 }
 
@@ -654,6 +665,7 @@ QString SearchTabHeader::keywordsFromQuery(const QString& query) const
 {
     KeywordSearchReader reader(query);
     QStringList keywordList = reader.keywords();
+
     return KeywordSearch::merge(keywordList);
 }
 
