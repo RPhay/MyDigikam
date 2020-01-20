@@ -90,11 +90,11 @@ public:
 
     virtual bool supportsField(const QString& fieldName);
     virtual void read(SearchXmlCachingReader& reader) = 0;
-    virtual void write(SearchXmlWriter& writer) = 0;
-    virtual void reset() = 0;
+    virtual void write(SearchXmlWriter& writer)       = 0;
+    virtual void reset()                              = 0;
 
     virtual void setVisible(bool visible) override;
-    virtual bool isVisible() override;
+    virtual bool isVisible()              override;
 
 protected Q_SLOTS:
 
@@ -359,7 +359,6 @@ private:
 
 class Album;
 class AbstractCheckableAlbumModel;
-//class AlbumSelectComboBox;
 class AbstractAlbumTreeViewSelectComboBox;
 class AlbumTreeViewSelectComboBox;
 class TagTreeViewSelectComboBox;

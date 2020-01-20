@@ -41,9 +41,9 @@ namespace Digikam
 {
 
 SearchFieldGroup::SearchFieldGroup(SearchGroup* const parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_label(nullptr)
 {
-    m_label      = nullptr;
     m_layout     = new QGridLayout;
     setLayout(m_layout);
     m_controller = new VisibilityController(this);
@@ -53,23 +53,29 @@ SearchFieldGroup::SearchFieldGroup(SearchGroup* const parent)
 void SearchFieldGroup::addField(SearchField* const field)
 {
     //FIXME: When all fields added in searchgroup.cpp are implemented, remove
+
     if (!field)
     {
         return;
     }
 
     // initialize widgets in field
+
     field->setup(m_layout);
 
     // take care that category labels are not duplicated in two subsequent rows
+
     if (!m_fields.isEmpty())
     {
         field->setCategoryLabelVisibleFromPreviousField(m_fields.last());
     }
 
     // add to our list
+
     m_fields << field;
+
     // add to visibility controller
+
     m_controller->addObject(field);
 }
 
@@ -90,6 +96,7 @@ SearchField* SearchFieldGroup::fieldForName(const QString& fieldName) const
             return field;
         }
     }
+
     return nullptr;
 }
 
@@ -149,7 +156,8 @@ QList<QRect> SearchFieldGroup::areaOfMarkedFields() const
     }
 
     // adjust position relative to parent
-    for (QList<QRect>::iterator it = rects.begin(); it != rects.end(); ++it)
+
+    for (QList<QRect>::iterator it = rects.begin() ; it != rects.end() ; ++it)
     {
         (*it).translate(pos());
     }
