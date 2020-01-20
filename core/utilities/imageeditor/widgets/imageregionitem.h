@@ -56,8 +56,8 @@ public:
     QRect getImageRegion() const;
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
-    void hoverEnterEvent(QGraphicsSceneHoverEvent*) override;
-    void hoverLeaveEvent(QGraphicsSceneHoverEvent*) override;
+    void hoverEnterEvent(QGraphicsSceneHoverEvent*)                                        override;
+    void hoverLeaveEvent(QGraphicsSceneHoverEvent*)                                        override;
 
 private:
 

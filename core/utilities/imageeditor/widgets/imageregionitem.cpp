@@ -65,7 +65,7 @@ public:
     bool               onMouseMovePreviewToggled;
     int                renderingPreviewMode;
 
-    QPixmap            targetPix;    // Pixmap of target region to render for paint method.
+    QPixmap            targetPix;    ///< Pixmap of target region to render for paint method.
     QRect              drawRect;
     QPolygon           hightlightPoints;
 
@@ -121,6 +121,7 @@ void ImageRegionItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* o
     QSize   completeSize = boundingRect().size().toSize();
 
     // scale "as if" scaling to whole image, but clip output to our exposed region
+
     DImg scaledImage     = d->image.smoothScaleClipped(completeSize.width(),
                                                        completeSize.height(),
                                                        d_ptr->drawRect.x(),
@@ -203,23 +204,23 @@ void ImageRegionItem::paintExtraData(QPainter* const p)
     p->setRenderHint(QPainter::Antialiasing, true);
     p->setBackgroundMode(Qt::TransparentMode);
 
-    if (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewOriginalImage ||
-        (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver && !d_ptr->onMouseMovePreviewToggled))
+    if      ((d_ptr->renderingPreviewMode == PreviewToolBar::PreviewOriginalImage) ||
+             ((d_ptr->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver) && !d_ptr->onMouseMovePreviewToggled))
     {
         d_ptr->view->drawText(p, QRectF(QPointF(d_ptr->drawRect.topLeft().x() + 20,
                                                 d_ptr->drawRect.topLeft().y() + 20),
                                         fontRectBefore.size()), i18n("Before"));
     }
 
-    else if (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewTargetImage ||
-             d_ptr->renderingPreviewMode == PreviewToolBar::NoPreviewMode      ||
-             (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver && d_ptr->onMouseMovePreviewToggled))
+    else if ((d_ptr->renderingPreviewMode == PreviewToolBar::PreviewTargetImage) ||
+             (d_ptr->renderingPreviewMode == PreviewToolBar::NoPreviewMode)      ||
+             ((d_ptr->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver) && d_ptr->onMouseMovePreviewToggled))
     {
         p->drawPixmap(d_ptr->drawRect.x(), d_ptr->drawRect.y(), d_ptr->targetPix,
                       0, 0, d_ptr->drawRect.width(), d_ptr->drawRect.height());
 
-        if (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewTargetImage ||
-            d_ptr->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver)
+        if ((d_ptr->renderingPreviewMode == PreviewToolBar::PreviewTargetImage) ||
+            (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver))
         {
             d_ptr->view->drawText(p, QRectF(QPointF(d_ptr->drawRect.topLeft().x() + 20,
                                                     d_ptr->drawRect.topLeft().y() + 20),
@@ -227,8 +228,8 @@ void ImageRegionItem::paintExtraData(QPainter* const p)
         }
     }
 
-    else if (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVert ||
-             d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVertCont)
+    else if ((d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVert) ||
+             (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVertCont))
     {
         if (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVert)
         {
@@ -256,8 +257,8 @@ void ImageRegionItem::paintExtraData(QPainter* const p)
                                         fontRectAfter.size()),  i18n("After"));
     }
 
-    else if (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorz ||
-             d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorzCont)
+    else if ((d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorz) ||
+             (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorzCont))
     {
         if (d_ptr->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorz)
         {
@@ -302,10 +303,12 @@ void ImageRegionItem::paintExtraData(QPainter* const p)
             int y = (int)((double)pt.y() * zoomFactor);
 
             // Check if zoomed point is inside, not actual point
+
             if (d_ptr->drawRect.contains(QPoint(x,y)))
             {
-
-                //QPoint hp(contentsToViewport(QPointF(x, y)));
+/*
+                QPoint hp(contentsToViewport(QPointF(x, y)));
+*/
                 QPointF hp(mapToScene(QPointF(x, y)));
 
                 hpArea.setSize(QSize((int)(16 * zoomFactor), (int)(16 * zoomFactor)));

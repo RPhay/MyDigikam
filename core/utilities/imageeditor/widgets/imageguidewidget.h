@@ -114,14 +114,14 @@ Q_SIGNALS:
 
 protected:
 
-    void   paintEvent(QPaintEvent*) override;
-    void   resizeEvent(QResizeEvent*) override;
-    void   timerEvent(QTimerEvent*) override;
-    void   mousePressEvent(QMouseEvent*) override;
-    void   mouseReleaseEvent(QMouseEvent*) override;
-    void   mouseMoveEvent(QMouseEvent*) override;
-    void   enterEvent(QEvent*) override;
-    void   leaveEvent(QEvent*) override;
+    void   paintEvent(QPaintEvent*)         override;
+    void   resizeEvent(QResizeEvent*)       override;
+    void   timerEvent(QTimerEvent*)         override;
+    void   mousePressEvent(QMouseEvent*)    override;
+    void   mouseReleaseEvent(QMouseEvent*)  override;
+    void   mouseMoveEvent(QMouseEvent*)     override;
+    void   enterEvent(QEvent*)              override;
+    void   leaveEvent(QEvent*)              override;
     void   updatePixmap();
     void   drawLineTo(const QPoint& endPoint);
     void   drawLineTo(int width, bool erase, const QColor& color, const QPoint& start, const QPoint& end);

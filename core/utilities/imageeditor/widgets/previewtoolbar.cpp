@@ -234,7 +234,9 @@ void PreviewToolBar::setPreviewModeMask(int mask)
         setDisabled(true);
 
         if (d->actionsMenu)
+        {
             d->actionsMenu->setDisabled(true);
+        }
 
         return;
     }
@@ -242,7 +244,9 @@ void PreviewToolBar::setPreviewModeMask(int mask)
     setDisabled(false);
 
     if (d->actionsMenu)
+    {
         d->actionsMenu->setDisabled(false);
+    }
 
     d->previewOriginalButton->setEnabled(mask           & PreviewOriginalImage);
     d->previewBothButtonVert->setEnabled(mask           & PreviewBothImagesHorz);
@@ -261,6 +265,7 @@ void PreviewToolBar::setPreviewModeMask(int mask)
     }
 
     // When we switch to another mask, check if current mode is valid.
+
     PreviewToolBar::PreviewMode mode = previewMode();
 
     if (d->previewButtons->button(mode))
@@ -275,6 +280,7 @@ void PreviewToolBar::setPreviewModeMask(int mask)
                 {
                     btn->setChecked(true);
                     setCheckedAction(d->previewButtons->id(btn));
+
                     return;
                 }
             }

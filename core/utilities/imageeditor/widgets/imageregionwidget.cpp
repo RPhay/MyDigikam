@@ -171,6 +171,7 @@ void ImageRegionWidget::setPreviewImage(const DImg& img)
     // do not contain metadata from original image. About Color Managed View, we need to
     // restore the embedded ICC color profile.
     // However, some tools may set a profile on the preview image, which we accept of course.
+
     if (image.getIccProfile().isNull())
     {
         image.setIccProfile(d_ptr->item->image().getIccProfile());

@@ -76,7 +76,9 @@ PreviewThreadWrapper::~PreviewThreadWrapper()
 void PreviewThreadWrapper::registerFilter(int id, DImgThreadedFilter* const filter)
 {
     if (d->map.contains(id))
+    {
         return;
+    }
 
     filter->setParent(this);
     d->map.insert(id, filter);
@@ -179,7 +181,9 @@ PreviewListItem::~PreviewListItem()
 void PreviewListItem::setPixmap(const QPixmap& pix)
 {
     QIcon icon = QIcon(pix);
+
     //  We make sure the preview icon stays the same regardless of the role
+
     icon.addPixmap(pix, QIcon::Selected, QIcon::On);
     icon.addPixmap(pix, QIcon::Selected, QIcon::Off);
     icon.addPixmap(pix, QIcon::Active,   QIcon::On);
@@ -219,18 +223,18 @@ public:
     explicit Private()
       : progressCount(0),
         progressTimer(nullptr),
+        progressPix(DWorkingPixmap()),
         wrapper(nullptr)
     {
-        progressPix = DWorkingPixmap();
     }
 
-    int                        progressCount;
+    int                   progressCount;
 
-    QTimer*                    progressTimer;
+    QTimer*               progressTimer;
 
-    DWorkingPixmap progressPix;
+    DWorkingPixmap        progressPix;
 
-    PreviewThreadWrapper*      wrapper;
+    PreviewThreadWrapper* wrapper;
 };
 
 PreviewList::PreviewList(QObject* const /*parent*/)
@@ -296,9 +300,12 @@ PreviewListItem* PreviewList::addItem(DImgThreadedFilter* const filter, const QS
 
     PreviewListItem* const item = new PreviewListItem(this);
     item->setText(txt);
+
     //  in case text is mangled by textelide, it is displayed by hovering.
+
     item->setToolTip(txt);
     item->setId(id);
+
     return item;
 }
 
@@ -310,7 +317,7 @@ PreviewListItem* PreviewList::findItem(int id) const
     {
         PreviewListItem* const item = dynamic_cast<PreviewListItem*>(this->item(it));
 
-        if (item && item->id() == id)
+        if (item && (item->id() == id))
         {
             return item;
         }
@@ -330,10 +337,11 @@ void PreviewList::setCurrentId(int id)
 
         PreviewListItem* const item = dynamic_cast<PreviewListItem*>(this->item(it));
 
-        if (item && item->id() == id)
+        if (item && (item->id() == id))
         {
             setCurrentItem(item);
             item->setSelected(true);
+
             return;
         }
 
@@ -393,8 +401,10 @@ void PreviewList::slotProgressTimerDone()
     if (!busy)
     {
         d->progressTimer->stop();
+
         // Qt 4.5 doesn't display icons correctly centred over i18n(text),
         // Qt 4.6 doesn't even reset the previous selection correctly.
+
         this->reset();
 
         if (selectedItem)

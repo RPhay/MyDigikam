@@ -55,15 +55,17 @@ public:
     explicit ImageRegionWidget(QWidget* const parent = nullptr, bool paintExtras = true);
     ~ImageRegionWidget();
 
-    /** To get target image region area to render.
+    /**
+     * To get target image region area to render.
      */
     QRect  getOriginalImageRegionToRender() const;
 
-    /** To get target image region image to use for render operations
-        If the bool parameter is true a downscaled version of the image
-        region at screen resolution will be sent.
-        Should be use to increase preview speed for the effects whose
-        behaviour is a function of each pixel.
+    /**
+     * To get target image region image to use for render operations
+     * If the bool parameter is true a downscaled version of the image
+     * region at screen resolution will be sent.
+     * Should be use to increase preview speed for the effects whose
+     * behaviour is a function of each pixel.
      */
     DImg   getOriginalRegionImage(bool useDownscaledImage = false) const;
 

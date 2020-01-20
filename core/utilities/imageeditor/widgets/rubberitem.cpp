@@ -31,8 +31,8 @@ class Q_DECL_HIDDEN RubberItem::Private
 public:
 
     explicit Private()
+      : canvas(nullptr)
     {
-        canvas = nullptr;
     }
 
     Canvas* canvas;

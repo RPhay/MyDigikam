@@ -94,7 +94,7 @@ public:
     int         renderingPreviewMode;
     int         penWidth;
 
-    // Current spot position in preview coordinates.
+    /// Current spot position in preview coordinates.
     QPoint      spot;
     QPolygon    selectedPoints;
 
@@ -220,7 +220,7 @@ QPoint ImageGuideWidget::getSpotPosition() const
 
 DColor ImageGuideWidget::getSpotColor(int getColorFrom) const
 {
-    if (getColorFrom == OriginalImage)                          // Get point color from full original image
+    if      (getColorFrom == OriginalImage)                          // Get point color from full original image
     {
         return (d->iface->colorInfoFromOriginal(getSpotPosition()));
     }
@@ -230,6 +230,7 @@ DColor ImageGuideWidget::getSpotColor(int getColorFrom) const
     }
 
     // In other cases, get point color from preview target image
+
     return (d->iface->colorInfoFromTargetPreview(d->spot));
 }
 
@@ -287,45 +288,50 @@ void ImageGuideWidget::updatePixmap()
 
     d->pixmap->fill(d->bgColor);
 
-    if (d->renderingPreviewMode == PreviewToolBar::PreviewOriginalImage ||
-        (d->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver && !d->onMouseMovePreviewToggled))
+    if      ((d->renderingPreviewMode == PreviewToolBar::PreviewOriginalImage) ||
+             ((d->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver) && !d->onMouseMovePreviewToggled))
     {
         p.drawPixmap(d->rect, *d->previewPixmap);
         drawText(&p, QPoint(d->rect.x() + 20, d->rect.y() + 20), beforeLabel.toString());
     }
-    else if (d->renderingPreviewMode == PreviewToolBar::PreviewTargetImage ||
-             d->renderingPreviewMode == PreviewToolBar::NoPreviewMode      ||
-             (d->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver && d->onMouseMovePreviewToggled))
+    else if ((d->renderingPreviewMode == PreviewToolBar::PreviewTargetImage) ||
+             (d->renderingPreviewMode == PreviewToolBar::NoPreviewMode)      ||
+             ((d->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver) && d->onMouseMovePreviewToggled))
     {
         d->iface->paint(d->pixmap, d->rect, &p);
 
-        if (d->renderingPreviewMode == PreviewToolBar::PreviewTargetImage ||
-            d->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver)
+        if ((d->renderingPreviewMode == PreviewToolBar::PreviewTargetImage) ||
+            (d->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver))
         {
             drawText(&p, QPoint(d->rect.x() + 20, d->rect.y() + 20), afterLabel.toString());
         }
     }
-    else if (d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVert ||
-             d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVertCont)
+    else if ((d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVert) ||
+             (d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVertCont))
     {
         if (d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVert)
         {
             // Drawing original image.
+
             p.drawPixmap(d->rect, *d->previewPixmap);
 
             // Drawing target image under the original.
+
             d->iface->paint(d->pixmap, QRect(d->rect.x() + d->rect.width() / 2, d->rect.y(), d->rect.width() / 2, d->rect.height()), &p);
         }
         else
         {
             // Drawing target image.
+
             d->iface->paint(d->pixmap, d->rect, &p);
 
             // Drawing original image under the target.
+
             p.drawPixmap(d->rect.x(), d->rect.y(), *d->previewPixmap, 0, 0, d->rect.width() / 2, d->rect.height());
         }
 
         // Drawing information and others stuff.
+
         p.fillRect(d->rect.right(), 0, width(), height(), palette().color(QPalette::Window));
 
         p.setPen(QPen(Qt::white, 2, Qt::SolidLine));
@@ -338,23 +344,27 @@ void ImageGuideWidget::updatePixmap()
         drawText(&p, QPoint(d->rect.x() + 20, d->rect.y() + 20), beforeLabel.toString());
         drawText(&p, QPoint(d->rect.x() + d->rect.width() / 2 + 20, d->rect.y() + 20), afterLabel.toString());
     }
-    else if (d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorz ||
-             d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorzCont)
+    else if ((d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorz) ||
+             (d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorzCont))
     {
         if (d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorz)
         {
             // Drawing original image.
+
             p.drawPixmap(d->rect, *d->previewPixmap);
 
             // Drawing target image under the original.
+
             d->iface->paint(d->pixmap, QRect(d->rect.x(), d->rect.y() + d->rect.height() / 2, d->rect.width(), d->rect.height() / 2), &p);
         }
         else
         {
             // Drawing target image.
+
             d->iface->paint(d->pixmap, d->rect, &p);
 
             // Drawing original image under the target.
+
             p.drawPixmap(d->rect.x(), d->rect.y(), *d->previewPixmap,
                          0, 0, d->rect.width(), d->rect.height() / 2);
         }
@@ -379,6 +389,7 @@ void ImageGuideWidget::updatePixmap()
     if (d->spotVisible)
     {
         // Adapt spot from image coordinate to widget coordinate.
+
         int xspot = d->spot.x() + d->rect.x();
         int yspot = d->spot.y() + d->rect.y();
 
@@ -415,6 +426,7 @@ void ImageGuideWidget::updatePixmap()
     }
 
     // draw additional points added by the image tool
+
     if (d->selectedPoints.count() > 0)
     {
         QPainter::RenderHints hints = p.renderHints();
@@ -445,8 +457,9 @@ void ImageGuideWidget::updatePixmap()
             p.drawText(QPoint(x + 10, y - 5), QString::number(i + 1));
 
             // draw a line between the points
+
             if (d->drawLineBetweenPoints &&
-                (i + 1) < d->selectedPoints.count() && !d->selectedPoints.point(i + 1).isNull())
+                ((i + 1) < d->selectedPoints.count()) && !d->selectedPoints.point(i + 1).isNull())
             {
                 p.save();
                 p.setPen(QPen(d->guideColor, d->guideSize, Qt::SolidLine));
@@ -474,14 +487,18 @@ void ImageGuideWidget::drawText(QPainter* const p, const QPoint& corner, const Q
     textRect.setSize(QSize(fontRect.width() + 5, fontRect.height() + 2));
 
     // Draw background
+
     p->setPen(Qt::black);
     QColor semiTransBg = palette().color(QPalette::Window);
     semiTransBg.setAlpha(190);
     p->setBrush(semiTransBg);
-    //p->translate(0.5, 0.5);
+/*
+    p->translate(0.5, 0.5);
+*/
     p->drawRoundedRect(textRect, 10.0, 10.0);
 
     // Draw shadow and text
+
     p->setPen(palette().color(QPalette::Window).darker(115));
     p->drawText(textRect.translated(3, 1), text);
     p->setPen(palette().color(QPalette::WindowText));
@@ -500,14 +517,14 @@ void ImageGuideWidget::paintEvent(QPaintEvent*)
         p.setOpacity(0.7);
         p.drawPixmap(d->rect.x(), d->rect.y(), *d->maskPixmap);
 
-        if (d->renderingPreviewMode == PreviewToolBar::PreviewOriginalImage ||
-            (d->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver && !d->onMouseMovePreviewToggled))
+        if ((d->renderingPreviewMode == PreviewToolBar::PreviewOriginalImage) ||
+            ((d->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver) && !d->onMouseMovePreviewToggled))
         {
             drawText(&p, QPoint(d->rect.x() + 20, d->rect.y() + 20), beforeLabel.toString());
         }
-        else if (d->renderingPreviewMode == PreviewToolBar::PreviewTargetImage ||
-                 d->renderingPreviewMode == PreviewToolBar::NoPreviewMode      ||
-                 (d->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver && d->onMouseMovePreviewToggled))
+        else if ((d->renderingPreviewMode == PreviewToolBar::PreviewTargetImage) ||
+                 (d->renderingPreviewMode == PreviewToolBar::NoPreviewMode)      ||
+                 ((d->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver) && d->onMouseMovePreviewToggled))
         {
             drawText(&p, QPoint(d->rect.x() + 20, d->rect.y() + 20), afterLabel.toString());
         }
@@ -568,7 +585,7 @@ void ImageGuideWidget::mousePressEvent(QMouseEvent* e)
 {
     if (e->button() == Qt::LeftButton)
     {
-        if (!d->focus && d->rect.contains(e->x(), e->y()) && d->spotVisible)
+        if      (!d->focus && d->rect.contains(e->x(), e->y()) && d->spotVisible)
         {
             d->focus = true;
             d->spot.setX(e->x() - d->rect.x());
@@ -596,22 +613,23 @@ void ImageGuideWidget::mouseReleaseEvent(QMouseEvent* e)
             d->spot.setY(e->y() - d->rect.y());
 
             DColor color;
-            //            QPoint point = getSpotPosition();
-
-            if (d->renderingPreviewMode == PreviewToolBar::PreviewOriginalImage)
+/*
+            QPoint point = getSpotPosition();
+*/
+            if      (d->renderingPreviewMode == PreviewToolBar::PreviewOriginalImage)
             {
                 color = getSpotColor(OriginalImage);
                 emit spotPositionChangedFromOriginal(color, d->spot);
             }
-            else if (d->renderingPreviewMode == PreviewToolBar::PreviewTargetImage ||
-                     d->renderingPreviewMode == PreviewToolBar::NoPreviewMode)
+            else if ((d->renderingPreviewMode == PreviewToolBar::PreviewTargetImage) ||
+                     (d->renderingPreviewMode == PreviewToolBar::NoPreviewMode))
             {
                 color = getSpotColor(TargetPreviewImage);
                 emit spotPositionChangedFromTarget(color, d->spot);
             }
             else if (d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVert)
             {
-                if (d->spot.x() > d->rect.width() / 2)
+                if (d->spot.x() > (d->rect.width() / 2))
                 {
                     color = getSpotColor(TargetPreviewImage);
                     emit spotPositionChangedFromTarget(color, QPoint(d->spot.x() - d->rect.width() / 2,
@@ -625,7 +643,7 @@ void ImageGuideWidget::mouseReleaseEvent(QMouseEvent* e)
             }
             else if (d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesVertCont)
             {
-                if (d->spot.x() > d->rect.width() / 2)
+                if (d->spot.x() > (d->rect.width() / 2))
                 {
                     color = getSpotColor(TargetPreviewImage);
                     emit spotPositionChangedFromTarget(color, d->spot);
@@ -638,7 +656,7 @@ void ImageGuideWidget::mouseReleaseEvent(QMouseEvent* e)
             }
             else if (d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorz)
             {
-                if (d->spot.y() > d->rect.height() / 2)
+                if (d->spot.y() > (d->rect.height() / 2))
                 {
                     color = getSpotColor(TargetPreviewImage);
                     emit spotPositionChangedFromTarget(color, QPoint(d->spot.x(),
@@ -652,7 +670,7 @@ void ImageGuideWidget::mouseReleaseEvent(QMouseEvent* e)
             }
             else if (d->renderingPreviewMode == PreviewToolBar::PreviewBothImagesHorzCont)
             {
-                if (d->spot.y() > d->rect.height() / 2)
+                if (d->spot.y() > (d->rect.height() / 2))
                 {
                     color = getSpotColor(TargetPreviewImage);
                     emit spotPositionChangedFromTarget(color, d->spot);
@@ -676,7 +694,7 @@ void ImageGuideWidget::mouseMoveEvent(QMouseEvent* e)
 {
     if (d->rect.contains(e->x(), e->y()))
     {
-        if (d->focus && d->spotVisible)
+        if      (d->focus && d->spotVisible)
         {
             setCursor(Qt::CrossCursor);
             d->spot.setX(e->x() - d->rect.x());
@@ -702,7 +720,7 @@ void ImageGuideWidget::mouseMoveEvent(QMouseEvent* e)
 
 void ImageGuideWidget::enterEvent(QEvent*)
 {
-    if (!d->focus && d->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver)
+    if (!d->focus && (d->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver))
     {
         d->onMouseMovePreviewToggled = false;
         updatePixmap();
@@ -712,7 +730,7 @@ void ImageGuideWidget::enterEvent(QEvent*)
 
 void ImageGuideWidget::leaveEvent(QEvent*)
 {
-    if (!d->focus && d->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver)
+    if (!d->focus && (d->renderingPreviewMode == PreviewToolBar::PreviewToggleOnMouseOver))
     {
         d->onMouseMovePreviewToggled = true;
         updatePixmap();
@@ -745,6 +763,7 @@ void ImageGuideWidget::drawLineTo(int width, bool erase, const QColor& color, co
     if (erase)
     {
         // drawLine() seems to ignore composition modes, use a tmp pixmap and combine it later on
+
         QPixmap tmpMask(d->maskPixmap->width(), d->maskPixmap->height());
         tmpMask.fill(Qt::transparent);
         QPainter tmpPainter(&tmpMask);
@@ -772,7 +791,7 @@ void ImageGuideWidget::drawLineTo(int width, bool erase, const QColor& color, co
         painter.drawLine(start, end);
     }
 
-    int rad = (width / 2) + 2;
+    int rad      = (width / 2) + 2;
 
     update(QRect(start, end).normalized().adjusted(-rad, -rad, +rad, +rad));
     d->lastPoint = end;
@@ -854,8 +873,8 @@ void ImageGuideWidget::setSpotPosition(const QPoint& point)
 void ImageGuideWidget::updateSpotPosition(int x, int y)
 {
     QPoint origin = d->rect.topLeft();
-    x -= origin.x();
-    y -= origin.y();
+    x            -= origin.x();
+    y            -= origin.y();
     d->spot.setX(x);
     d->spot.setY(y);
     updatePreview();

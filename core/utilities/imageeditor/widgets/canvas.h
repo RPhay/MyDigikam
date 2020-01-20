@@ -71,64 +71,79 @@ public:
 
     QString     ensureHasCurrentUuid()   const;
 
-    /** Return the core interface instance of editor.
+    /**
+     * Return the core interface instance of editor.
      */
     EditorCore* interface()              const;
 
-    /** Return a copy of current image loaded in editor.
+    /**
+     * Return a copy of current image loaded in editor.
      */
     DImg        currentImage()           const;
 
-    /** Return the type mime of current image loaded in editor.
+    /**
+     * Return the type mime of current image loaded in editor.
      */
     QString     currentImageFileFormat() const;
 
-    /** Return the file path of current image loaded in editor.
+    /**
+     * Return the file path of current image loaded in editor.
      */
     QString     currentImageFilePath()   const;
 
-    /** Return the width of current image loaded in editor.
+    /**
+     * Return the width of current image loaded in editor.
      */
     int         imageWidth()             const;
 
-    /** Return the height of current image loaded in editor.
+    /**
+     * Return the height of current image loaded in editor.
      */
     int         imageHeight()            const;
 
-    /** Return the rectangle information of current canvas selection.
+    /**
+     * Return the rectangle information of current canvas selection.
      */
     QRect       getSelectedArea()        const;
 
-    /** If current image file format is only available in read only,
-     *  typically all RAW image file formats.
+    /**
+     * If current image file format is only available in read only,
+     * typically all RAW image file formats.
      */
     bool        isReadOnly()             const;
 
-    /** Apply Color management settings (typically screen profile).
+    /**
+     * Apply Color management settings (typically screen profile).
      */
     void setICCSettings(const ICCSettingsContainer& cmSettings);
 
-    /** Apply Color Management transformation to image (typically working color space).
+    /**
+     * Apply Color Management transformation to image (typically working color space).
      */
     void applyTransform(const IccTransform& transform);
 
-    /** Apply under.over exposure indicator settings.
+    /**
+     * Apply under.over exposure indicator settings.
      */
     void setExposureSettings(ExposureSettingsContainer* const expoSettings);
 
-    /** Turn on/off Color Management Soft proofing mode.
+    /**
+     * Turn on/off Color Management Soft proofing mode.
      */
     void setSoftProofingEnabled(bool enable);
 
-    /** Rotate image following Exif information.
+    /**
+     * Rotate image following Exif information.
      */
     void setExifOrient(bool exifOrient);
 
-    /** Return true if image have been rotated following Exif information.
+    /**
+     * Return true if image have been rotated following Exif information.
      */
     bool exifRotated() const;
 
-    /** Change zoom level to fit current selection on canvas size.
+    /**
+     * Change zoom level to fit current selection on canvas size.
      */
     void fitToSelect();
 
@@ -156,7 +171,7 @@ Q_SIGNALS:
 
 public Q_SLOTS:
 
-    // image modifiers
+    /// image modifiers
     void slotRotate90();
     void slotRotate180();
     void slotRotate270();

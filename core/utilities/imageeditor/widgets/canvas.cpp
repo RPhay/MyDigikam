@@ -61,11 +61,11 @@ class Q_DECL_HIDDEN Canvas::Private
 public:
 
     explicit Private()
+      : canvasItem(nullptr),
+        rubber(nullptr),
+        wrapItem(nullptr),
+        core(nullptr)
     {
-        rubber     = nullptr;
-        wrapItem   = nullptr;
-        canvasItem = nullptr;
-        core       = nullptr;
     }
 
     QString               errorMessage;
@@ -170,6 +170,7 @@ void Canvas::slotImageLoaded(const QString& filePath, bool success)
     }
 
     // Note: in showFoto, we using a null filename to clear canvas.
+
     if (!success && !filePath.isEmpty())
     {
         QFileInfo info(filePath);
@@ -193,6 +194,7 @@ void Canvas::fitToSelect()
     {
         // If selected area, use center of selection
         // and recompute zoom factor accordingly.
+
         double cpx       = sel.x() + sel.width()  / 2.0;
         double cpy       = sel.y() + sel.height() / 2.0;
         double srcWidth  = sel.width();
@@ -226,7 +228,9 @@ void Canvas::applyTransform(const IccTransform& t)
 
 void Canvas::preload(const QString& /*filename*/)
 {
-    //    d->core->preload(filename);
+/*
+    d->core->preload(filename);
+*/
 }
 
 void Canvas::slotImageSaved(const QString& filePath, bool success)
@@ -494,6 +498,7 @@ QRect Canvas::calcSelectedArea() const
 
             // Avoid empty selection by rubberband - at least mark one pixel
             // At high zoom factors, the rubberband may operate at subpixel level!
+
             if (w == 0)
             {
                 w = 1;
@@ -634,7 +639,9 @@ void Canvas::slotAddItemFinished(const QRectF& rect)
     if (d->rubber)
     {
         d->rubber->setRectInSceneCoordinatesAdjusted(rect);
-        //d->wrapItem->stackBefore(d->canvasItem);
+/*
+        d->wrapItem->stackBefore(d->canvasItem);
+*/
     }
 
     cancelAddItem();

@@ -49,14 +49,14 @@ public:
 
     enum PreviewMode
     {
-        PreviewOriginalImage      = 0x00000001,      // Original image only.
-        PreviewBothImagesHorz     = 0x00000002,      // Horizontal with original and target duplicated.
-        PreviewBothImagesVert     = 0x00000004,      // Vertical with original and target duplicated.
-        PreviewBothImagesHorzCont = 0x00000008,      // Horizontal with original and target in contiguous.
-        PreviewBothImagesVertCont = 0x00000010,      // Vertical with original and target in contiguous.
-        PreviewTargetImage        = 0x00000020,      // Target image only.
-        PreviewToggleOnMouseOver  = 0x00000040,      // Original image if mouse is over image area, else target image.
-        NoPreviewMode             = 0x00000080,      // Target image only without information displayed.
+        PreviewOriginalImage      = 0x00000001,      ///< Original image only.
+        PreviewBothImagesHorz     = 0x00000002,      ///< Horizontal with original and target duplicated.
+        PreviewBothImagesVert     = 0x00000004,      ///< Vertical with original and target duplicated.
+        PreviewBothImagesHorzCont = 0x00000008,      ///< Horizontal with original and target in contiguous.
+        PreviewBothImagesVertCont = 0x00000010,      ///< Vertical with original and target in contiguous.
+        PreviewTargetImage        = 0x00000020,      ///< Target image only.
+        PreviewToggleOnMouseOver  = 0x00000040,      ///< Original image if mouse is over image area, else target image.
+        NoPreviewMode             = 0x00000080,      ///< Target image only without information displayed.
 
         AllPreviewModes           = PreviewOriginalImage      | PreviewBothImagesHorz     |
                                     PreviewBothImagesVert     | PreviewBothImagesHorzCont |
