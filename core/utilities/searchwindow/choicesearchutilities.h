@@ -54,50 +54,60 @@ public:
 
     explicit ChoiceSearchModel(QObject* const parent = nullptr);
 
-    /** Sets the data from the given map, with integer keys and QString user displayable value.
+    /**
+     * Sets the data from the given map, with integer keys and QString user displayable value.
      */
     void setChoice(const QMap<int, QString>& data);
 
-    /** Sets the data from the given list,
-     *  taking every first entry as the key, every second as the user displayable value.
-     *  Ensure that the QVariants' type is correct (identical for all even entries, QString for all odd entries).
+    /**
+     * Sets the data from the given list,
+     * taking every first entry as the key, every second as the user displayable value.
+     * Ensure that the QVariants' type is correct (identical for all even entries, QString for all odd entries).
      */
     void setChoice(const QVariantList& data);
 
-    /** Sets the data from the given list,
-     *  taking every first entry as the key, every second as the user displayable value.
+    /**
+     * Sets the data from the given list,
+     * taking every first entry as the key, every second as the user displayable value.
      */
     void setChoice(const QStringList& data);
 
-    /** Returns the keys of all entries that are selected (checked).
+    /**
+     * Returns the keys of all entries that are selected (checked).
      */
     QVariantList checkedKeys() const;
 
-    /** Returns the keys of all entries that are selected (checked), converted to
-     *  a list of the template type. Supported for Int and QString types.
+    /**
+     * Returns the keys of all entries that are selected (checked), converted to
+     * a list of the template type. Supported for Int and QString types.
      */
     template <typename T> QList<T> checkedKeys() const;
 
-    /** Returns the display text of all entries that are selected.
+    /**
+     * Returns the display text of all entries that are selected.
      */
     QStringList checkedDisplayTexts() const;
 
-    /** Sets the check state of the entry with given key.
+    /**
+     * Sets the check state of the entry with given key.
      */
     template <typename T> void setChecked(const T& key, bool checked = true);
 
-    /** Sets the check state of all the entries whose key is found in the list to checked.
+    /**
+     * Sets the check state of all the entries whose key is found in the list to checked.
      */
     template <typename T> void setChecked(const QList<T>& keys, bool checked = true);
 
-    /** Sets the check state of all entries. The check state is determined by
-     *  the key of an entry, the relation, and a constant value.
-     *  Think of "Set to checked if key is less than 5".
-     *  Supported for Int and QString types.
+    /**
+     * Sets the check state of all entries. The check state is determined by
+     * the key of an entry, the relation, and a constant value.
+     * Think of "Set to checked if key is less than 5".
+     * Supported for Int and QString types.
      */
     template <typename T> void setChecked(const T& value, SearchXml::Relation relation);
 
-    /** Sets all entries to unchecked.
+    /**
+     * Sets all entries to unchecked.
      */
     void resetChecked();
 
@@ -145,7 +155,7 @@ template <typename T> void ChoiceSearchModel::setChecked(const T& key, bool chec
 {
     QVariant variantKey(key);
 
-    for (int i = 0; i < m_entries.size(); ++i)
+    for (int i = 0 ; i < m_entries.size() ; ++i)
     {
         if (m_entries[i].m_key == variantKey)
         {
@@ -156,7 +166,7 @@ template <typename T> void ChoiceSearchModel::setChecked(const T& key, bool chec
 
 template <typename T> void ChoiceSearchModel::setChecked(const T& value, SearchXml::Relation relation)
 {
-    for (int i = 0; i < m_entries.size(); ++i)
+    for (int i = 0 ; i < m_entries.size() ; ++i)
     {
         setChecked(i, SearchXml::testRelation(m_entries.at(i).m_key.value<T>(), value, relation));
     }
@@ -174,7 +184,7 @@ template <typename T> QList<T> ChoiceSearchModel::checkedKeys() const
 {
     QList<T> list;
 
-    for (QList<Entry>::const_iterator it = m_entries.begin(); it != m_entries.end(); ++it)
+    for (QList<Entry>::const_iterator it = m_entries.begin() ; it != m_entries.end() ; ++it)
     {
         if ((*it).m_checkState)
         {
@@ -193,19 +203,22 @@ class ChoiceSearchComboBox : public ListViewComboBox
 
 public:
 
-    /** A combo box for entering a choice of values.
-     *  Operates on a ChoiceSearchModel.
-     *  After constructing the object, call setModel
-     *  with your model.
+    /**
+     * A combo box for entering a choice of values.
+     * Operates on a ChoiceSearchModel.
+     * After constructing the object, call setModel
+     * with your model.
      */
     explicit ChoiceSearchComboBox(QWidget* const parent = nullptr);
 
-    /** Sets the model and initializes the widget.
-     *  Can only be called once for a widget.
+    /**
+     * Sets the model and initializes the widget.
+     * Can only be called once for a widget.
      */
     void setModel(ChoiceSearchModel* model);
 
-    /** Updates the text on the line edit area.
+    /**
+     * Updates the text on the line edit area.
      */
     void setLabelText(const QString& text);
 

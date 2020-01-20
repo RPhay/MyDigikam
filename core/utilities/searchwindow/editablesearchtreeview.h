@@ -64,7 +64,9 @@ public:
 
 protected:
 
-    // implemented hook methods for context menus.
+    /**
+     * implemented hook methods for context menus.
+     */
     virtual QString contextMenuTitle() const;
 
     /**

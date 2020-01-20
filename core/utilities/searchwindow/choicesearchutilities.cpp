@@ -49,7 +49,7 @@ ChoiceSearchModel::Entry::Entry(const QVariant& key, const QString& userDisplay)
 
 bool ChoiceSearchModel::Entry::operator==(const Entry& other) const
 {
-    return m_key == other.m_key;
+    return (m_key == other.m_key);
 }
 
 ChoiceSearchModel::ChoiceSearchModel(QObject* const parent)
@@ -66,7 +66,7 @@ void ChoiceSearchModel::setChoice(const QMap<int, QString>& data)
         endResetModel();
     }
 
-    for (QMap<int, QString>::const_iterator it = data.constBegin(); it != data.constEnd(); ++it)
+    for (QMap<int, QString>::const_iterator it = data.constBegin() ; it != data.constEnd() ; ++it)
     {
         m_entries << Entry(it.key(), it.value());
     }
@@ -83,7 +83,7 @@ void ChoiceSearchModel::setChoice(const QVariantList& data)
 
     Q_ASSERT(data.size() % 2 == 0);
 
-    for (QVariantList::const_iterator it = data.constBegin(); it != data.constEnd();)
+    for (QVariantList::const_iterator it = data.constBegin() ; it != data.constEnd() ; )
     {
         QVariant key  = *it;
         ++it;
@@ -104,7 +104,7 @@ void ChoiceSearchModel::setChoice(const QStringList& data)
 
     Q_ASSERT(data.size() % 2 == 0);
 
-    for (QStringList::const_iterator it = data.constBegin(); it != data.constEnd();)
+    for (QStringList::const_iterator it = data.constBegin() ; it != data.constEnd() ; )
     {
         QVariant key  = *it;
         ++it;
@@ -118,7 +118,7 @@ QVariantList ChoiceSearchModel::checkedKeys() const
 {
     QVariantList list;
 
-    for (QList<Entry>::const_iterator it = m_entries.constBegin(); it != m_entries.constEnd(); ++it)
+    for (QList<Entry>::const_iterator it = m_entries.constBegin() ; it != m_entries.constEnd() ; ++it)
     {
         if ((*it).m_checkState)
         {
@@ -133,7 +133,7 @@ QStringList ChoiceSearchModel::checkedDisplayTexts() const
 {
     QStringList list;
 
-    for (QList<Entry>::const_iterator it = m_entries.constBegin(); it != m_entries.constEnd(); ++it)
+    for (QList<Entry>::const_iterator it = m_entries.constBegin() ; it != m_entries.constEnd() ; ++it)
     {
         if ((*it).m_checkState)
         {
@@ -155,7 +155,7 @@ void ChoiceSearchModel::setChecked(int i, bool checked)
 
 void ChoiceSearchModel::resetChecked()
 {
-    for (int i = 0; i < m_entries.size(); ++i)
+    for (int i = 0 ; i < m_entries.size() ; ++i)
     {
         if (m_entries.at(i).m_checkState)
         {
@@ -178,7 +178,7 @@ QVariant ChoiceSearchModel::data(const QModelIndex& index, int role) const
 {
     if (index.isValid())
     {
-        if (role == Qt::DisplayRole)
+        if      (role == Qt::DisplayRole)
         {
             return m_entries.at(index.row()).m_display;
         }
@@ -197,7 +197,7 @@ QVariant ChoiceSearchModel::data(const QModelIndex& index, int role) const
 
 QModelIndex ChoiceSearchModel::index(int row, int column, const QModelIndex& parent) const
 {
-    if (parent.isValid() || column != 0 || row >= m_entries.size())
+    if (parent.isValid() || (column != 0) || (row >= m_entries.size()))
     {
         return QModelIndex();
     }
@@ -216,6 +216,7 @@ bool ChoiceSearchModel::setData(const QModelIndex& index, const QVariant& value,
     {
         Qt::CheckState state = (Qt::CheckState)value.toInt();
         setChecked(index.row(), state == Qt::Checked);
+
         return true;
     }
     else
@@ -262,22 +263,27 @@ void ChoiceSearchComboBox::labelClicked()
 void ChoiceSearchComboBox::installView(QAbstractItemView* v)
 {
     // make protected again
-    ListViewComboBox::installView(v);
 
-    //view()->setHeaderHidden(true);
+    ListViewComboBox::installView(v);
+/*
+    view()->setHeaderHidden(true);
+*/
     view()->setAlternatingRowColors(true);
 
     // create the label
+
     m_label = new DSqueezedClickLabel;
     m_label->setElideMode(Qt::ElideRight);
 
     // set a line edit that carries the label
+
     ProxyClickLineEdit* const lineEdit = new ProxyClickLineEdit;
     lineEdit->setCursor(m_label->cursor());
     lineEdit->setWidget(m_label);
     setLineEdit(lineEdit);
 
     // connect clicks on upper area (both line edit and widget within) to showPopup
+
     connect(lineEdit, SIGNAL(leftClicked()),
             this, SLOT(labelClicked()));
 

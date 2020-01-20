@@ -51,13 +51,15 @@ class RatingComboBox : public ModelIndexBasedComboBox
 
 public:
 
-    /** An advanced widget for entering a rating,
-     *  including support for Null and NoRating values
+    /**
+     * An advanced widget for entering a rating,
+     * including support for Null and NoRating values
      */
     enum RatingValue
     {
-        /** The rating value. All values except Null correspond to
-         *  the integers used by the database.
+        /**
+         * The rating value. All values except Null correspond to
+         * the integers used by the database.
          */
         Null     = -2,
         NoRating = -1,
@@ -119,10 +121,10 @@ class RatingComboBoxWidget : public RatingWidget, public RatingStarDrawer
 
 public:
 
-    /// Internal
-    // Sub-classing the classic RatingWidget,
-    // this provides support for the Null and NoRating states.
-
+    /**
+     * Internal sub-classing the classic RatingWidget,
+     * this provides support for the Null and NoRating states.
+     */
     explicit RatingComboBoxWidget(QWidget* const parent = nullptr);
 
     RatingComboBox::RatingValue ratingValue() const;

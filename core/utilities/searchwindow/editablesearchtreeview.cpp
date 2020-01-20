@@ -62,13 +62,14 @@ public:
 EditableSearchTreeView::EditableSearchTreeView(QWidget* const parent,
                                                SearchModel* const searchModel,
                                                SearchModificationHelper* const searchModificationHelper)
-    : SearchTreeView(parent), d(new Private)
+    : SearchTreeView(parent),
+      d(new Private)
 {
     setAlbumModel(searchModel);
     d->searchModificationHelper = searchModificationHelper;
 
-    d->renameSearchAction = new QAction(QIcon::fromTheme(QLatin1String("document-edit")), i18n("Rename..."), this);
-    d->deleteSearchAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")),   i18n("Delete"),    this);
+    d->renameSearchAction       = new QAction(QIcon::fromTheme(QLatin1String("document-edit")), i18n("Rename..."), this);
+    d->deleteSearchAction       = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")),   i18n("Delete"),    this);
 
     setSortingEnabled(true);
     setSelectAlbumOnClick(true);
@@ -90,6 +91,7 @@ void EditableSearchTreeView::addCustomContextMenuActions(ContextMenuHelper& cmh,
     SAlbum* const searchAlbum = dynamic_cast<SAlbum*>(album);
 
     // disable actions if there is no album or the album is a temporary search
+
     bool activate = false;
 
     if (searchAlbum)
@@ -114,7 +116,7 @@ void EditableSearchTreeView::handleCustomContextMenuAction(QAction* action, Albu
         return;
     }
 
-    if (action == d->renameSearchAction)
+    if      (action == d->renameSearchAction)
     {
         d->searchModificationHelper->slotSearchRename(searchAlbum);
     }
