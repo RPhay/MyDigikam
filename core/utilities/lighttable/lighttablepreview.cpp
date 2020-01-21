@@ -109,7 +109,7 @@ bool LightTablePreview::dragEventWrapper(const QMimeData* data) const
         QList<QUrl>      urls;
 
         if (DItemDrag::decode(data, urls, albumIDs, imageIDs) ||
-            DAlbumDrag::decode(data, urls, albumID)                    ||
+            DAlbumDrag::decode(data, urls, albumID)           ||
             DTagListDrag::canDecode(data))
         {
             return true;
@@ -128,7 +128,7 @@ void LightTablePreview::dropEvent(QDropEvent* e)
         QList<qlonglong> imageIDs;
         QList<QUrl>      urls;
 
-        if (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs))
+        if      (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs))
         {
             emit signalDroppedItems(ItemInfoList(imageIDs));
             e->accept();
@@ -156,6 +156,7 @@ void LightTablePreview::dropEvent(QDropEvent* e)
 
             emit signalDroppedItems(ItemInfoList(itemIDs));
             e->accept();
+
             return;
         }
     }

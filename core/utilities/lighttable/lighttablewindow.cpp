@@ -54,7 +54,9 @@ LightTableWindow::LightTableWindow()
 
     setWindowFlags(Qt::Window);
     setCaption(i18n("Light Table"));
+
     // We don't want to be deleted on close
+
     setAttribute(Qt::WA_DeleteOnClose, false);
     setFullScreenOptions(FS_LIGHTTABLE);
 
@@ -127,6 +129,7 @@ void LightTableWindow::closeEvent(QCloseEvent* e)
 void LightTableWindow::showEvent(QShowEvent*)
 {
     // Restore the visibility of the thumbbar and start autosaving again.
+
     d->barViewDock->restoreVisibility();
 }
 
@@ -332,7 +335,7 @@ void LightTableWindow::slotItemSelected(const ItemInfo& info)
                 d->lastAction->setEnabled(false);
             }
 
-            if (d->navigateByPairAction->isChecked())
+            if      (d->navigateByPairAction->isChecked())
             {
                 d->setItemLeftAction->setEnabled(false);
                 d->setItemRightAction->setEnabled(false);
@@ -413,16 +416,17 @@ void LightTableWindow::setLeftRightItems(const ItemInfoList& list, bool addTo)
         return;
     }
 
-    ItemInfo info    = l.first();
+    ItemInfo info     = l.first();
     QModelIndex index = d->thumbView->findItemByInfo(info);
 
-    if (l.count() == 1 && !addTo)
+    if ((l.count() == 1) && !addTo)
     {
         // Just one item; this is used for the left panel.
 
         d->thumbView->setOnLeftPanel(info);
         slotSetItemOnLeftPanel(info);
         d->thumbView->setCurrentInfo(info);
+
         return;
     }
 
@@ -752,7 +756,7 @@ void LightTableWindow::slotRemoveItem(const ItemInfo& info)
         if (d->thumbView->countItems() > 0)
         {
             QModelIndex first = d->thumbView->firstIndex();
-            new_linfo = d->thumbView->findItemByIndex(first);
+            new_linfo         = d->thumbView->findItemByIndex(first);
         }
     }
 

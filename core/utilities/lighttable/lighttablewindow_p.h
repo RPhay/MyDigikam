@@ -197,8 +197,8 @@ public:
 
     StatusProgressBar*        statusProgressBar;
 
-    ItemPropertiesSideBarDB* leftSideBar;
-    ItemPropertiesSideBarDB* rightSideBar;
+    ItemPropertiesSideBarDB*  leftSideBar;
+    ItemPropertiesSideBarDB*  rightSideBar;
 };
 
 } // namespace Digikam

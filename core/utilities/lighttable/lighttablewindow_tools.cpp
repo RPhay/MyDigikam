@@ -37,7 +37,7 @@ void LightTableWindow::slotEditItem()
 void LightTableWindow::slotEditItem(const ItemInfo& info)
 {
     ImageWindow* const im = ImageWindow::imageWindow();
-    ItemInfoList list    = d->thumbView->allItemInfos();
+    ItemInfoList list     = d->thumbView->allItemInfos();
 
     im->loadItemInfos(list, info, i18n("Light Table"));
 

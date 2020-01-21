@@ -103,9 +103,11 @@ void LightTableWindow::applySettings()
     slotApplicationSettingsChanged();
 
     // Restore full screen Mode
+
     readFullScreenSettings(group);
 
     // NOTE: Image orientation settings in thumbbar is managed by image model.
+
     refreshView();
 }
 

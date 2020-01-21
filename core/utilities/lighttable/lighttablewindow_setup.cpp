@@ -199,15 +199,19 @@ void LightTableWindow::setupActions()
     ThemeManager::instance()->registerThemeActions(this);
 
     // Standard 'Help' menu actions
+
     createHelpActions();
 
     // Provides a menu entry that allows showing/hiding the toolbar(s)
+
     setStandardToolBarMenuEnabled(true);
 
     // Provides a menu entry that allows showing/hiding the statusbar
+
     createStandardStatusBarAction();
 
     // Standard 'Configure' menu actions
+
     createSettingsActions();
 
     // -- Keyboard-only actions ----------------------------------------------------
@@ -220,6 +224,7 @@ void LightTableWindow::setupActions()
     connect(altBackwardAction, SIGNAL(triggered()), this, SLOT(slotBackward()));
 
     // Labels shortcuts must be registered here to be saved in XML GUI files if user customize it.
+
     TagsActionMngr::defaultManager()->registerLabelsActions(ac);
 
     QAction* const editTitlesRight = new QAction(i18n("Edit Titles on the Right"), this);
@@ -411,16 +416,19 @@ void LightTableWindow::setupUserArea()
     QHBoxLayout* const hlay = new QHBoxLayout(mainW);
 
     // The left sidebar
+
     d->leftSideBar          = new ItemPropertiesSideBarDB(mainW, d->hSplitter, Qt::LeftEdge, true);
 
     // The central preview is wrapped in a KMainWindow so that the thumbnail
     // bar can float around it.
+
     KMainWindow* const viewContainer = new KMainWindow(mainW, Qt::Widget);
     d->hSplitter->addWidget(viewContainer);
     d->previewView                   = new LightTableView(viewContainer);
     viewContainer->setCentralWidget(d->previewView);
 
     // The right sidebar.
+
     d->rightSideBar = new ItemPropertiesSideBarDB(mainW, d->hSplitter, Qt::RightEdge, true);
 
     hlay->addWidget(d->leftSideBar);
@@ -437,6 +445,7 @@ void LightTableWindow::setupUserArea()
     d->hSplitter->setStretchFactor(1, 10);      // set previewview+thumbbar container default size to max.
 
     // The thumb bar is placed in a detachable/dockable widget.
+
     d->barViewDock = new ThumbBarDock(viewContainer, Qt::Tool);
     d->barViewDock->setObjectName(QLatin1String("lighttable_thumbbar"));
     d->barViewDock->setWindowTitle(i18n("Light Table Thumbnail Dock"));
@@ -449,6 +458,7 @@ void LightTableWindow::setupUserArea()
 
     // Restore the previous state. This doesn't emit the proper signals to the
     // dock widget, so it has to be manually reinitialized.
+
     viewContainer->setAutoSaveSettings(QLatin1String("LightTable Thumbbar"), true);
 
     connect(d->barViewDock, SIGNAL(dockLocationChanged(Qt::DockWidgetArea)),

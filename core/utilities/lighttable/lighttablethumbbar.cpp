@@ -59,7 +59,7 @@ void removeAnyInInterval(Container& list, const T& begin, const T& end)
 
     for (it = list.begin() ; it != list.end() ; )
     {
-        if ((*it) >= begin && (*it) <= end)
+        if (((*it) >= begin) && ((*it) <= end))
         {
             it = list.erase(it);
         }
@@ -93,7 +93,7 @@ public:
 
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const
     {
-        if (role == LTLeftPanelRole)
+        if      (role == LTLeftPanelRole)
         {
             return m_leftIndexes.contains(index.row());
         }
@@ -112,7 +112,7 @@ public:
             return false;
         }
 
-        if (role == LTLeftPanelRole)
+        if      (role == LTLeftPanelRole)
         {
             if (m_exclusive)
             {

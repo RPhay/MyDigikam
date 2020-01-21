@@ -61,7 +61,7 @@ public:
 
     QGridLayout*       grid;
 
-    // These labels are used to draw a frame around preview views to identify easily which item has the focus.
+    /// These labels are used to draw a frame around preview views to identify easily which item has the focus.
     QLabel*            leftFrame;
     QLabel*            rightFrame;
 
@@ -169,6 +169,7 @@ void LightTableView::setSyncPreview(bool sync)
     d->syncPreview = sync;
 
     // Left panel like a reference to resync preview.
+
     if (d->syncPreview)
     {
         slotLeftZoomFactorChanged(d->leftPreview->layout()->zoomFactor());
@@ -403,7 +404,7 @@ void LightTableView::checkForSyncPreview()
 {
     if (!d->leftPreview->getItemInfo().isNull()  &&
         !d->rightPreview->getItemInfo().isNull() &&
-        d->leftPreview->previewItem()->image().size() == d->rightPreview->previewItem()->image().size())
+        (d->leftPreview->previewItem()->image().size() == d->rightPreview->previewItem()->image().size()))
     {
         d->syncPreview = true;
     }
@@ -427,6 +428,7 @@ void LightTableView::checkForSelection(const ItemInfo& info)
     {
         d->leftFrame->setStyleSheet(notSelected);
         d->rightFrame->setStyleSheet(notSelected);
+
         return;
     }
 
