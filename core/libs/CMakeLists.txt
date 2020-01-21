@@ -15,19 +15,22 @@
 if(MSVC)
     add_definitions(
                     # XMP SDK
-                    -DWIN_ENV
+                    -DWIN_ENV=1
 
                     # DNG SDK
-                    -DqWinOS
+                    -DqWinOS=1
+                    -DqMacOS=0
+                    -DqDNGUseStdInt=0
                     )
 else()
     add_definitions(
                      # XMP SDK
-                    -DUNIX_ENV
+                    -DUNIX_ENV=1
 
                     # DNG SDK
-                    -DqDNGUseStdInt
-                    -DqWinOS            # There is no Linux flag for DNG sdk
+                    -DqWinOS=0
+                    -DqMacOS=0
+                    -DqDNGUseStdInt=1
                    )
 endif()
 
