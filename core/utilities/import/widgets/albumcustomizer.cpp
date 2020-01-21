@@ -221,6 +221,7 @@ QString AlbumCustomizer::customDateFormat() const
 bool AlbumCustomizer::customDateFormatIsValid() const
 {
     QDate date(1968, 12, 26);
+
     return !date.toString(customDateFormat()).isEmpty();
 }
 

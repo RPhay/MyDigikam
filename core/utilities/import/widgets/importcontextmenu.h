@@ -52,17 +52,21 @@ public:
 
 Q_SIGNALS:
 
-    //void signalAssignTag(int);
-    //void signalRemoveTag(int);
-    //void signalPopupTagsView();
+/*
+    void signalAssignTag(int);
+    void signalRemoveTag(int);
+    void signalPopupTagsView();
+*/
     void signalAssignPickLabel(int);
     void signalAssignColorLabel(int);
     void signalAssignRating(int);
     void signalAddNewTagFromABCMenu(const QString&);
-    //void signalCreateGroup();
-    //TODO: void signalUngroup();
-    //TODO: void signalRemoveFromGroup();
-
+/*
+    TODO
+    void signalCreateGroup();
+    void signalUngroup();
+    void signalRemoveFromGroup();
+*/
 public:
 
     /**
@@ -126,10 +130,12 @@ public:
      * The tag modification helper is used to execute the action.
      * You must set the parent tag to use on modification helper.
      */
-    //TODO: void addActionNewTag(TagModificationHelper* helper, TAlbum* parentTag = 0);
-    //TODO: void addActionDeleteTag(TagModificationHelper* helper, TAlbum* tag);
-    //TODO: void addActionEditTag(TagModificationHelper* helper, TAlbum* tag);
-
+/*
+    TODO
+    void addActionNewTag(TagModificationHelper* helper, TAlbum* parentTag = 0);
+    void addActionDeleteTag(TagModificationHelper* helper, TAlbum* tag);
+    void addActionEditTag(TagModificationHelper* helper, TAlbum* tag);
+*/
     /**
      * Add "Assign Tags" menu.
      *
@@ -163,19 +169,19 @@ public:
     void addRemoveTagsMenu(itemIds& ids);
 
     /**
-    * Add "Pick/Color/Rating Labels" action.
-    *
-    * This action will provide methods to assign pick/color/rating labels to the currently selected items.
-    *
-    * To make this menu work, you need to run exec() from this class, otherwise the signals
-    * are not emitted and you will not be able to react on triggered actions from this menu.
-    * Make sure to connect the signals to the appropriate slots in the context menu handling method.
-    *
-    * @see exec()
-    * @see signalAssignPickLabel()
-    * @see signalAssignColorLabel()
-    * @see signalAssignRating()
-    */
+     * Add "Pick/Color/Rating Labels" action.
+     *
+     * This action will provide methods to assign pick/color/rating labels to the currently selected items.
+     *
+     * To make this menu work, you need to run exec() from this class, otherwise the signals
+     * are not emitted and you will not be able to react on triggered actions from this menu.
+     * Make sure to connect the signals to the appropriate slots in the context menu handling method.
+     *
+     * @see exec()
+     * @see signalAssignPickLabel()
+     * @see signalAssignColorLabel()
+     * @see signalAssignRating()
+     */
     void addLabelsAction();
 
     /**
@@ -228,19 +234,25 @@ private Q_SLOTS:
 
     void slotOpenWith();
     void slotOpenWith(QAction* action);
-    //    void slotABCImportContextMenu();
+/*
+    void slotABCImportContextMenu();
+*/
     void slotABCMenuTriggered(QAction*);
-    //void slotOpenGroups();
-    //void slotCloseGroups();
-    //void slotOpenAllGroups();
-    //void slotCloseAllGroups();
+/*
+    void slotOpenGroups();
+    void slotCloseGroups();
+    void slotOpenAllGroups();
+    void slotCloseAllGroups();
+*/
     void slotRotate();
 
 private:
 
     void setSelectedIds(itemIds& ids);
     void setSelectedItems(const QList<QUrl>& urls);
-    //QList<QAction*> groupMenuActions(itemIds& ids);
+/*
+    QList<QAction*> groupMenuActions(itemIds& ids);
+*/
     void setGroupsOpen(bool open);
 
 private:

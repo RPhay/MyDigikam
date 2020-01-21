@@ -80,7 +80,8 @@ public:
 };
 
 AdvancedSettings::AdvancedSettings(QWidget* const parent)
-    : QWidget(parent), d(new Private)
+    : QWidget(parent),
+      d(new Private)
 {
     const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
@@ -97,11 +98,17 @@ AdvancedSettings::AdvancedSettings(QWidget* const parent)
     d->losslessFormat->insertItem(0, QLatin1String("PNG"));
     d->losslessFormat->insertItem(1, QLatin1String("TIF"));
     d->losslessFormat->insertItem(2, QLatin1String("PGF"));
+
 #ifdef HAVE_JASPER
+
     d->losslessFormat->insertItem(3, QLatin1String("JP2"));
+
 #endif // HAVE_JASPER
+
 #ifdef HAVE_X265
+
     d->losslessFormat->insertItem(4, QLatin1String("HEIC"));
+
 #endif // HAVE_X265
 
     onFlyVlay->addWidget(d->templateSelector);

@@ -56,7 +56,7 @@ public:
     };
 
 public:
-    
+
     explicit RenameCustomizer(QWidget* const parent, const QString& cameraTitle);
     ~RenameCustomizer();
 

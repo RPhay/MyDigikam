@@ -71,8 +71,8 @@ public:
 
 protected:
 
-    void enterEvent(QEvent*) override;
-    void leaveEvent(QEvent*) override;
+    void enterEvent(QEvent*)      override;
+    void leaveEvent(QEvent*)      override;
     void paintEvent(QPaintEvent*) override;
     void updateToolTip();
 

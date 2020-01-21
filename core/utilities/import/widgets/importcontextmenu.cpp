@@ -96,6 +96,7 @@ public:
 
         QAction* const action = new QAction(mainAction->icon(), mainAction->text(), q);
         action->setToolTip(mainAction->toolTip());
+
         return action;
     }
 };
@@ -187,6 +188,7 @@ void ImportContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
     if (!mimeTypes.isEmpty())
     {
         // Query trader
+
         const QString firstMimeType      = mimeTypes.takeFirst();
         const QString constraintTemplate = QString::fromUtf8("'%1' in ServiceTypes");
         QStringList   constraints;
@@ -199,9 +201,10 @@ void ImportContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
         offers = KMimeTypeTrader::self()->query(firstMimeType, QLatin1String("Application"), constraints.join(QLatin1String(" and ")));
 
         // remove duplicate service entries
+
         QSet<QString> seenApps;
 
-        for (KService::List::iterator it = offers.begin(); it != offers.end();)
+        for (KService::List::iterator it = offers.begin() ; it != offers.end() ; )
         {
             const QString appName((*it)->name());
 
@@ -217,7 +220,7 @@ void ImportContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
         }
     }
 
-    if (!offers.isEmpty() && ImportUI::instance()->cameraUseUMSDriver())
+    if      (!offers.isEmpty() && ImportUI::instance()->cameraUseUMSDriver())
     {
         QMenu* const servicesMenu    = new QMenu(d->parent);
         qDeleteAll(servicesMenu->actions());
@@ -233,6 +236,7 @@ void ImportContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
             action->setData(service->name());
             d->servicesMap[name] = service;
         }
+
 #ifdef HAVE_KIO
 
         servicesMenu->addSeparator();
@@ -250,13 +254,16 @@ void ImportContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
 
         connect(serviceAction, SIGNAL(triggered()),
                 this, SLOT(slotOpenWith()));
+
 #endif // HAVE_KIO
+
     }
 }
 
 void ImportContextMenuHelper::slotOpenWith()
 {
     // call the slot with an "empty" action
+
     slotOpenWith(nullptr);
 }
 
@@ -268,6 +275,7 @@ void ImportContextMenuHelper::slotOpenWith(QAction* action)
     QString name = action ? action->data().toString() : QString();
 
 #ifdef HAVE_KIO
+
     if (name.isEmpty())
     {
         QPointer<KOpenWithDialog> dlg = new KOpenWithDialog(list);
@@ -283,6 +291,7 @@ void ImportContextMenuHelper::slotOpenWith(QAction* action)
         if (!service)
         {
             // User entered a custom command
+
             if (!dlg->text().isEmpty())
             {
                 DFileOperations::runFiles(dlg->text(), list);
@@ -295,7 +304,9 @@ void ImportContextMenuHelper::slotOpenWith(QAction* action)
         delete dlg;
     }
     else
+
 #endif // HAVE_KIO
+
     {
         service = d->servicesMap[name];
     }
@@ -305,68 +316,77 @@ void ImportContextMenuHelper::slotOpenWith(QAction* action)
 
 void ImportContextMenuHelper::addRotateMenu(itemIds& /*ids*/)
 {
-//    setSelectedIds(ids);
+/*
+    setSelectedIds(ids);
 
-//    QMenu* const imageRotateMenu = new QMenu(i18n("Rotate"), d->parent);
-//    imageRotateMenu->setIcon(QIcon::fromTheme(QLatin1String("object-rotate-right")));
+    QMenu* const imageRotateMenu = new QMenu(i18n("Rotate"), d->parent);
+    imageRotateMenu->setIcon(QIcon::fromTheme(QLatin1String("object-rotate-right")));
 
-//    QAction* const left = new QAction(this);
-//    left->setObjectName(QLatin1String("rotate_ccw"));
-//    left->setText(i18nc("rotate image left", "Left"));
-//    connect(left, SIGNAL(triggered(bool)),
-//            this, SLOT(slotRotate()));
-//    imageRotateMenu->addAction(left);
+    QAction* const left = new QAction(this);
+    left->setObjectName(QLatin1String("rotate_ccw"));
+    left->setText(i18nc("rotate image left", "Left"));
+    connect(left, SIGNAL(triggered(bool)),
+            this, SLOT(slotRotate()));
+    imageRotateMenu->addAction(left);
 
-//    QAction* const right = new QAction(this);
-//    right->setObjectName(QLatin1String("rotate_cw");
-//    right->setText(i18nc("rotate image right", "Right")));
-//    connect(right, SIGNAL(triggered(bool)),
-//            this, SLOT(slotRotate()));
-//    imageRotateMenu->addAction(right);
+    QAction* const right = new QAction(this);
+    right->setObjectName(QLatin1String("rotate_cw");
+    right->setText(i18nc("rotate image right", "Right")));
+    connect(right, SIGNAL(triggered(bool)),
+            this, SLOT(slotRotate()));
+    imageRotateMenu->addAction(right);
 
-//    d->parent->addMenu(imageRotateMenu);
+    d->parent->addMenu(imageRotateMenu);
+*/
 }
 
 void ImportContextMenuHelper::slotRotate()
 {
-//TODO: Implement rotate in import tool.
-//    if (sender()->objectName() == "rotate_ccw")
-//    {
-//        FileActionMngr::instance()->transform(CamItemInfoList(d->selectedIds), MetaEngineRotation::Rotate270);
-//    }
-//    else
-//    {
-//        FileActionMngr::instance()->transform(CamItemInfoList(d->selectedIds), MetaEngineRotation::Rotate90);
-//    }
+/*
+    TODO: Implement rotate in import tool.
+
+    if (sender()->objectName() == "rotate_ccw")
+    {
+        FileActionMngr::instance()->transform(CamItemInfoList(d->selectedIds), MetaEngineRotation::Rotate270);
+    }
+    else
+    {
+        FileActionMngr::instance()->transform(CamItemInfoList(d->selectedIds), MetaEngineRotation::Rotate90);
+    }
+*/
 }
 
 void ImportContextMenuHelper::addAssignTagsMenu(itemIds& /*ids*/)
 {
-    //setSelectedIds(ids);
+/*
+    setSelectedIds(ids);
 
-    //QMenu* const assignTagsPopup = new TagsPopupMenu(ids, TagsPopupMenu::RECENTLYASSIGNED, d->parent);
-    //assignTagsPopup->menuAction()->setText(i18n("Assign Tag"));
-    //assignTagsPopup->menuAction()->setIcon(QIcon::fromTheme(QLatin1String("tag")));
-    //d->parent->addMenu(assignTagsPopup);
+    QMenu* const assignTagsPopup = new TagsPopupMenu(ids, TagsPopupMenu::RECENTLYASSIGNED, d->parent);
+    assignTagsPopup->menuAction()->setText(i18n("Assign Tag"));
+    assignTagsPopup->menuAction()->setIcon(QIcon::fromTheme(QLatin1String("tag")));
+    d->parent->addMenu(assignTagsPopup);
 
-    //connect(assignTagsPopup, SIGNAL(signalTagActivated(int)),
-    //        this, SIGNAL(signalAssignTag(int)));
+    connect(assignTagsPopup, SIGNAL(signalTagActivated(int)),
+            this, SIGNAL(signalAssignTag(int)));
 
-    //connect(assignTagsPopup, SIGNAL(signalPopupTagsView()),
-    //        this, SIGNAL(signalPopupTagsView()));
+    connect(assignTagsPopup, SIGNAL(signalPopupTagsView()),
+            this, SIGNAL(signalPopupTagsView()));
+*/
 }
 
 void ImportContextMenuHelper::addRemoveTagsMenu(itemIds& /*ids*/)
 {
-    //setSelectedIds(ids);
+/*
+    setSelectedIds(ids);
 
-    //QMenu* const removeTagsPopup = new TagsPopupMenu(ids, TagsPopupMenu::REMOVE, d->parent);
-    //removeTagsPopup->menuAction()->setText(i18n("Remove Tag"));
-    //removeTagsPopup->menuAction()->setIcon(QIcon::fromTheme(QLatin1String("tag")));
-    //d->parent->addMenu(removeTagsPopup);
+    QMenu* const removeTagsPopup = new TagsPopupMenu(ids, TagsPopupMenu::REMOVE, d->parent);
+    removeTagsPopup->menuAction()->setText(i18n("Remove Tag"));
+    removeTagsPopup->menuAction()->setIcon(QIcon::fromTheme(QLatin1String("tag")));
+    d->parent->addMenu(removeTagsPopup);
 
-    //connect(removeTagsPopup, SIGNAL(signalTagActivated(int)),
-    //        this, SIGNAL(signalRemoveTag(int)));
+    connect(removeTagsPopup, SIGNAL(signalTagActivated(int)),
+            this, SIGNAL(signalRemoveTag(int)));
+*/
 }
 
 void ImportContextMenuHelper::addLabelsAction()
@@ -408,12 +428,15 @@ QAction* ImportContextMenuHelper::exec(const QPoint& pos, QAction* at)
     if (choice)
     {
         // check if a BQM action has been triggered
-        for (QMap<int, QAction*>::const_iterator it = d->queueActions.constBegin();
-             it != d->queueActions.constEnd(); ++it)
+
+        for (QMap<int, QAction*>::const_iterator it = d->queueActions.constBegin() ;
+             it != d->queueActions.constEnd() ; ++it)
         {
             if (choice == it.value())
             {
-                //emit signalAddToExistingQueue(it.key());
+/*
+                emit signalAddToExistingQueue(it.key());
+*/
                 return choice;
             }
         }

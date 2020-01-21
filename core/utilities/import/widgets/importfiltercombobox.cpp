@@ -43,6 +43,7 @@ namespace Digikam
 
 // JVC camera (see bug #133185).
 const QString ImportFilterComboBox::defaultIgnoreNames(QLatin1String("mgr_data pgr_mgr"));
+
 // HP Photosmart camera (see bug #156338).
 // Minolta camera in PTP mode
 const QString ImportFilterComboBox::defaultIgnoreExtensions(QLatin1String("dsp dps"));
@@ -107,6 +108,7 @@ ImportFilterComboBox::~ImportFilterComboBox()
 Filter* ImportFilterComboBox::currentFilter()
 {
     Filter* const filter = d->filters.value(d->currentFilter);
+
     return filter;
 }
 

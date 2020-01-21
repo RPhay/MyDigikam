@@ -43,12 +43,14 @@ Filter::~Filter()
 
 QString Filter::toString()
 {
-    return QString::fromUtf8("%1|%2|%3|%4|%5")
-           .arg(name)
-           .arg(onlyNew ? QLatin1String("true") : QLatin1String("false"))
-           .arg(fileFilter.join(QLatin1Char(';')))
-           .arg(pathFilter.join(QLatin1Char(';')))
-           .arg(mimeFilter);
+    return (
+            QString::fromUtf8("%1|%2|%3|%4|%5")
+               .arg(name)
+               .arg(onlyNew ? QLatin1String("true") : QLatin1String("false"))
+               .arg(fileFilter.join(QLatin1Char(';')))
+               .arg(pathFilter.join(QLatin1Char(';')))
+               .arg(mimeFilter)
+           );
 }
 
 void Filter::fromString(const QString& filter)
@@ -92,6 +94,7 @@ bool Filter::match(const QStringList& wildcards, const QString& name)
     foreach (const QString& wildcard, wildcards)
     {
         match = regexp(wildcard).exactMatch(name);
+
         //qCDebug(DIGIKAM_IMPORTUI_LOG) << "**" << wildcard << name << match;
 
         if (match)

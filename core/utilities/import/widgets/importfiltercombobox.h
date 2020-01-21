@@ -55,7 +55,7 @@ public:
 
 Q_SIGNALS:
 
-    void filterChanged(Filter *);
+    void filterChanged(Filter*);
 
 protected:
 

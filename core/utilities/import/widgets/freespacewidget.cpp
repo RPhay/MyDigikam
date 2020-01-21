@@ -61,11 +61,11 @@ class Q_DECL_HIDDEN MountPointInfo
 public:
 
     MountPointInfo()
+      : isValid(false),
+        kBSize(0),
+        kBUsed(0),
+        kBAvail(0)
     {
-        isValid = false;
-        kBSize  = 0;
-        kBUsed  = 0;
-        kBAvail = 0;
     }
 
     bool          isValid;
@@ -209,7 +209,9 @@ void FreeSpaceWidget::addInformation(unsigned long kBSize,
     }
 
     if (kBSize > 0)
+    {
         d->percentUsed = lround(100.0 - (100.0 * kBAvail / kBSize));
+    }
 
     updateToolTip();
     update();
@@ -275,6 +277,7 @@ unsigned long FreeSpaceWidget::kBAvail(const QString& path) const
     if (!mountPointMatch)
     {
         qCWarning(DIGIKAM_IMPORTUI_LOG) << "Did not identify a valid mount point for" << path;
+
         return (unsigned long)(-1);
     }
 
@@ -293,6 +296,7 @@ void FreeSpaceWidget::paintEvent(QPaintEvent*)
     if (isValid())
     {
         // We will compute the estimated % of space size used to download and process.
+
         unsigned long eUsedKb = d->dSizeKb + d->kBUsed;
         int peUsed            = (int)(100.0 * ((double)eUsedKb / (double)d->kBSize));
         int pClamp            = (peUsed > 100) ? 100 : peUsed;
@@ -300,12 +304,12 @@ void FreeSpaceWidget::paintEvent(QPaintEvent*)
 
         if (peUsed > 80)
         {
-            barcol = QColor(240, 255, 62);   // Smooth Yellow.
+            barcol = QColor(240, 255, 62);                    // Smooth Yellow.
         }
 
         if (peUsed > 95)
         {
-            barcol = QColor(255, 62, 62);    // Smooth Red.
+            barcol = QColor(255, 62, 62);                     // Smooth Red.
         }
 
         p.setBrush(barcol);
@@ -318,8 +322,10 @@ void FreeSpaceWidget::paintEvent(QPaintEvent*)
         QRect tRect(d->iconPix.height() + 3, 2, width() - 3 - d->iconPix.width() - 2, height() - 5);
         QString text        = QString::fromUtf8("%1%").arg(peUsed);
         QFontMetrics fontMt = p.fontMetrics();
-        //        QRect fontRect      = fontMt.boundingRect(tRect.x(), tRect.y(),
-        //                                                  tRect.width(), tRect.height(), 0, text);
+/*
+        QRect fontRect      = fontMt.boundingRect(tRect.x(), tRect.y(),
+                                                  tRect.width(), tRect.height(), 0, text);
+*/
         p.setPen(Qt::black);
         p.drawText(tRect, Qt::AlignCenter, text);
     }
