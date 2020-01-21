@@ -20,7 +20,7 @@ if(MSVC)
                     # DNG SDK
                     -DqWinOS=1
                     -DqMacOS=0
-                    -DqDNGUseStdInt=0
+#                    -DqDNGUseStdInt=0
                     )
 else()
     add_definitions(
