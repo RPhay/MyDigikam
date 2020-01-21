@@ -48,7 +48,7 @@ public:
     explicit ImportPreviewView(QWidget* const parent, Mode mode = IconViewPreview);
     ~ImportPreviewView();
 
-    void setCamItemInfo(const CamItemInfo& info   = CamItemInfo(),
+    void setCamItemInfo(const CamItemInfo& info     = CamItemInfo(),
                         const CamItemInfo& previous = CamItemInfo(),
                         const CamItemInfo& next     = CamItemInfo());
 
@@ -71,12 +71,13 @@ Q_SIGNALS:
     void signalDeleteItem();
     void signalPreviewLoaded(bool success);
     void signalEscapePreview();
+/*
     //void signalAddToExistingQueue(int);
-
     //void signalGotoFolderAndItem(const CamItemInfo&);
     //void signalGotoDateAndItem(const CamItemInfo&);
     //void signalGotoTagAndItem(int);
     //void signalPopupTagsView();
+*/
     void signalAssignPickLabel(int);
     void signalAssignColorLabel(int);
     void signalAssignRating(int);
@@ -93,13 +94,13 @@ private Q_SLOTS:
 
     void camItemLoaded();
     void camItemLoadingFailed();
-
+/*
     //TODO: Implement Tags and Labels in Import Tool
     //void slotAssignTag(int tagID);
     //void slotRemoveTag(int tagID);
     //void slotAssignPickLabel(int pickId);
     //void slotAssignColorLabel(int colorId);
-
+*/
     void slotThemeChanged();
     void slotSetupChanged();
 

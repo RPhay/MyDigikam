@@ -54,7 +54,10 @@ class Q_DECL_HIDDEN ImportPreviewViewItem : public DImgPreviewItem
 public:
 
     explicit ImportPreviewViewItem(ImportPreviewView* const view)
-        : m_view(view)/*, m_group(0)*/
+        : m_view(view)
+/*
+        , m_group(0)
+*/
     {
         setAcceptHoverEvents(true);
     }
@@ -83,20 +86,26 @@ public:
 
     void hoverEnterEvent(QGraphicsSceneHoverEvent* e)
     {
-        Q_UNUSED(e) //FIXME
-        //m_group->itemHoverEnterEvent(e);
+        Q_UNUSED(e)
+/*      FIXME
+        m_group->itemHoverEnterEvent(e);
+*/
     }
 
     void hoverLeaveEvent(QGraphicsSceneHoverEvent* e)
     {
-        Q_UNUSED(e) //FIXME:
-        //m_group->itemHoverLeaveEvent(e);
+        Q_UNUSED(e)
+/*      FIXME:
+        m_group->itemHoverLeaveEvent(e);
+*/
     }
 
     void hoverMoveEvent(QGraphicsSceneHoverEvent* e)
     {
-        Q_UNUSED(e) //FIXME:
-        //m_group->itemHoverMoveEvent(e);
+        Q_UNUSED(e)
+/*      FIXME
+        m_group->itemHoverMoveEvent(e);
+*/
     }
 
     CamItemInfo camItemInfo() const
@@ -107,7 +116,9 @@ public:
 protected:
 
     ImportPreviewView*  m_view;
-    //FaceGroup*        m_group;
+/*
+    FaceGroup*          m_group;
+*/
     CamItemInfo         m_info;
 };
 
@@ -118,25 +129,26 @@ class Q_DECL_HIDDEN ImportPreviewView::Private
 public:
 
     explicit Private()
+      : fullSize(false),
+        scale(1.0),
+        isValid(false),
+        mode(ImportPreviewView::IconViewPreview),
+        item(nullptr),
+        escapePreviewAction(nullptr),
+        prevAction(nullptr),
+        nextAction(nullptr),
+        rotLeftAction(nullptr),
+        rotRightAction(nullptr),
+        toolBar(nullptr)
     {
-        //peopleTagsShown    = false;
-        fullSize             = 0;
-        scale                = 1.0;
-        item                 = nullptr;
-        isValid              = false;
-        toolBar              = nullptr;
-        escapePreviewAction  = nullptr;
-        prevAction           = nullptr;
-        nextAction           = nullptr;
-        rotLeftAction        = nullptr;
-        rotRightAction       = nullptr;
-        //peopleToggleAction = 0;
-        //addPersonAction    = 0;
-        //faceGroup          = 0;
-        mode                 = ImportPreviewView::IconViewPreview;
+/*
+        peopleTagsShown      = false;
+        peopleToggleAction   = 0;
+        addPersonAction      = 0;
+        faceGroup            = 0;
+*/
     }
 
-    //bool                  peopleTagsShown;
     bool                    fullSize;
     double                  scale;
     bool                    isValid;
@@ -150,13 +162,15 @@ public:
     QAction*                nextAction;
     QAction*                rotLeftAction;
     QAction*                rotRightAction;
-    //QAction*              peopleToggleAction;
-    //QAction*              addPersonAction;
-    //QAction*              forgetFacesAction;
 
     QToolBar*               toolBar;
-
-    //FaceGroup*            faceGroup;
+/*
+    bool                    peopleTagsShown;
+    QAction*                peopleToggleAction;
+    QAction*                addPersonAction;
+    QAction*                forgetFacesAction;
+    FaceGroup*              faceGroup;
+*/
 };
 
 ImportPreviewView::ImportPreviewView(QWidget* const parent, Mode mode)
@@ -167,11 +181,11 @@ ImportPreviewView::ImportPreviewView(QWidget* const parent, Mode mode)
     d->item = new ImportPreviewViewItem(this);
     setItem(d->item);
 
-    //d->faceGroup = new FaceGroup(this);
-    //d->faceGroup->setShowOnHover(true);
-
-    //d->item->setFaceGroup(d->faceGroup);
-
+/*
+    d->faceGroup = new FaceGroup(this);
+    d->faceGroup->setShowOnHover(true);
+    d->item->setFaceGroup(d->faceGroup);
+*/
     connect(d->item, SIGNAL(loaded()),
             this, SLOT(camItemLoaded()));
 
@@ -179,6 +193,7 @@ ImportPreviewView::ImportPreviewView(QWidget* const parent, Mode mode)
             this, SLOT(camItemLoadingFailed()));
 
     // set default zoom
+
     layout()->fitToWindow();
 
     // ------------------------------------------------------------
@@ -194,11 +209,12 @@ ImportPreviewView::ImportPreviewView(QWidget* const parent, Mode mode)
     d->nextAction          = new QAction(QIcon::fromTheme(QLatin1String("go-next")),                  i18nc("go to next image", "Forward"),   this);
     d->rotLeftAction       = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-left")),       i18nc("@info:tooltip", "Rotate Left"),  this);
     d->rotRightAction      = new QAction(QIcon::fromTheme(QLatin1String("object-rotate-right")),      i18nc("@info:tooltip", "Rotate Right"), this);
-    //FIXME: d->addPersonAction    = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),    i18n("Add a Face Tag"),                 this);
-    //FIXME: d->forgetFacesAction  = new QAction(QIcon::fromTheme(QLatin1String("list-remove-user")), i18n("Clear all faces on this image"),  this);
-    //FIXME: d->peopleToggleAction = new Qaction(QIcon::fromTheme(QLatin1String("im-user")),          i18n("Show Face Tags"),                 this);
-    //FIXME: d->peopleToggleAction->setCheckable(true);
-
+/*
+    d->addPersonAction    = new QAction(QIcon::fromTheme(QLatin1String("list-add-user")),    i18n("Add a Face Tag"),                 this);
+    d->forgetFacesAction  = new QAction(QIcon::fromTheme(QLatin1String("list-remove-user")), i18n("Clear all faces on this image"),  this);
+    d->peopleToggleAction = new Qaction(QIcon::fromTheme(QLatin1String("im-user")),          i18n("Show Face Tags"),                 this);
+    d->peopleToggleAction->setCheckable(true);
+*/
     d->toolBar = new QToolBar(this);
 
     if (mode == IconViewPreview)
@@ -210,9 +226,10 @@ ImportPreviewView::ImportPreviewView(QWidget* const parent, Mode mode)
 
     d->toolBar->addAction(d->rotLeftAction);
     d->toolBar->addAction(d->rotRightAction);
-    //FIXME: d->toolBar->addAction(d->peopleToggleAction);
-    //FIXME: d->toolBar->addAction(d->addPersonAction);
-
+/*
+    d->toolBar->addAction(d->peopleToggleAction);
+    d->toolBar->addAction(d->addPersonAction);
+*/
     connect(d->prevAction, SIGNAL(triggered()),
             this, SIGNAL(toPreviousImage()));
 
@@ -227,16 +244,16 @@ ImportPreviewView::ImportPreviewView(QWidget* const parent, Mode mode)
 
     connect(d->rotRightAction, SIGNAL(triggered()),
             this, SLOT(slotRotateRight()));
+/*
+    connect(d->peopleToggleAction, SIGNAL(toggled(bool)),
+            d->faceGroup, SLOT(setVisible(bool)));
 
-    //FIXME: connect(d->peopleToggleAction, SIGNAL(toggled(bool)),
-            //d->faceGroup, SLOT(setVisible(bool)));
+    connect(d->addPersonAction, SIGNAL(triggered()),
+            d->faceGroup, SLOT(addFace()));
 
-    //FIXME: connect(d->addPersonAction, SIGNAL(triggered()),
-            //d->faceGroup, SLOT(addFace()));
-
-    //FIXME: connect(d->forgetFacesAction, SIGNAL(triggered()),
-            //d->faceGroup, SLOT(rejectAll()));
-
+    connect(d->forgetFacesAction, SIGNAL(triggered()),
+            d->faceGroup, SLOT(rejectAll()));
+*/
     // ------------------------------------------------------------
 
     connect(this, SIGNAL(toNextImage()),
@@ -274,7 +291,9 @@ void ImportPreviewView::camItemLoaded()
     d->rotLeftAction->setEnabled(true);
     d->rotRightAction->setEnabled(true);
 
-    //FIXME: d->faceGroup->setInfo(d->item->camItemInfo());
+/*  FIXME
+     d->faceGroup->setInfo(d->item->camItemInfo());
+*/
 }
 
 void ImportPreviewView::camItemLoadingFailed()
@@ -282,12 +301,16 @@ void ImportPreviewView::camItemLoadingFailed()
     emit signalPreviewLoaded(false);
     d->rotLeftAction->setEnabled(false);
     d->rotRightAction->setEnabled(false);
-    //FIXME: d->faceGroup->setInfo(CamItemInfo());
+/*  FIXME
+    d->faceGroup->setInfo(CamItemInfo());
+*/
 }
 
 void ImportPreviewView::setCamItemInfo(const CamItemInfo& info, const CamItemInfo& previous, const CamItemInfo& next)
 {
-    //FIXME: d->faceGroup->aboutToSetInfo(info);
+/*  FIXME
+    d->faceGroup->aboutToSetInfo(info);
+*/
     d->item->setCamItemInfo(info);
 
     d->prevAction->setEnabled(!previous.isNull());
@@ -326,7 +349,9 @@ bool ImportPreviewView::acceptsMouseClick(QMouseEvent* e)
     }
     return true;
 
-    //FIXME: return d->faceGroup->acceptsMouseClick(mapToScene(e->pos()));
+/*  FIXME
+     return d->faceGroup->acceptsMouseClick(mapToScene(e->pos()));
+*/
 }
 
 void ImportPreviewView::enterEvent(QEvent* e)
@@ -377,17 +402,19 @@ void ImportPreviewView::showContextMenu(const CamItemInfo& info, QGraphicsSceneC
         cmhelper.addAction(d->prevAction, true);
         cmhelper.addAction(d->nextAction, true);
         cmhelper.addAction(QLatin1String("importui_icon_view"));
+/*
         //cmhelper.addGotoMenu(idList);
+*/
         cmhelper.addSeparator();
     }
 
     // --------------------------------------------------------
-
+/*
     //FIXME: cmhelper.addAction(d->peopleToggleAction, true);
     //FIXME: cmhelper.addAction(d->addPersonAction, true);
     //FIXME: cmhelper.addAction(d->forgetFacesAction, true);
     //FIXME: cmhelper.addSeparator();
-
+*/
     // --------------------------------------------------------
 
     cmhelper.addServicesMenu(selectedItems);
@@ -400,17 +427,17 @@ void ImportPreviewView::showContextMenu(const CamItemInfo& info, QGraphicsSceneC
     cmhelper.addSeparator();
 
     // --------------------------------------------------------
-
+/*
     //FIXME: cmhelper.addAssignTagsMenu(idList);
     //FIXME: cmhelper.addRemoveTagsMenu(idList);
     //FIXME: cmhelper.addSeparator();
-
+*/
     // --------------------------------------------------------
 
     cmhelper.addLabelsAction();
 
     // special action handling --------------------------------
-
+/*
     //FIXME: connect(&cmhelper, SIGNAL(signalAssignTag(int)),
             //this, SLOT(slotAssignTag(int)));
 
@@ -425,7 +452,7 @@ void ImportPreviewView::showContextMenu(const CamItemInfo& info, QGraphicsSceneC
 
     //FIXME: connect(&cmhelper, SIGNAL(signalAssignColorLabel(int)),
             //this, SLOT(slotAssignColorLabel(int)));
-
+*/
     connect(&cmhelper, SIGNAL(signalAssignPickLabel(int)),
             this, SIGNAL(signalAssignPickLabel(int)));
 
@@ -434,13 +461,13 @@ void ImportPreviewView::showContextMenu(const CamItemInfo& info, QGraphicsSceneC
 
     connect(&cmhelper, SIGNAL(signalAssignRating(int)),
             this, SIGNAL(signalAssignRating(int)));
-
+/*
     //FIXME: connect(&cmhelper, SIGNAL(signalAddToExistingQueue(int)),
             //this, SIGNAL(signalAddToExistingQueue(int)));
 
     //FIXME: connect(&cmhelper, SIGNAL(signalGotoTag(int)),
             //this, SIGNAL(signalGotoTagAndItem(int)));
-
+*/
     cmhelper.exec(event->screenPos());
 }
 

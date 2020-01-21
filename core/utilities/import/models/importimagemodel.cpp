@@ -900,8 +900,8 @@ void ImportItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
 // ------------ ImportItemModelIncrementalUpdater ------------
 
 ImportItemModelIncrementalUpdater::ImportItemModelIncrementalUpdater(ImportItemModel::Private* const d)
+    : oldIds(d->idHash)
 {
-    oldIds = d->idHash;
 }
 
 void ImportItemModelIncrementalUpdater::aboutToBeRemovedInModel(const IntPairList& toRemove)

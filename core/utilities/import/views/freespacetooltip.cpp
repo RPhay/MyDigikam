@@ -47,7 +47,8 @@ public:
 };
 
 FreeSpaceToolTip::FreeSpaceToolTip(QWidget* const parent)
-    : DItemToolTip(), d(new Private)
+    : DItemToolTip(),
+      d(new Private)
 {
     d->parent = parent;
 }
@@ -82,6 +83,7 @@ QRect FreeSpaceToolTip::repositionRect()
 
     QRect rect = d->parent->rect();
     rect.moveTopLeft(d->parent->mapToGlobal(rect.topLeft()));
+
     return rect;
 }
 

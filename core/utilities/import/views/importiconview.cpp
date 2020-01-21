@@ -76,10 +76,14 @@ ImportIconView::ImportIconView(QWidget* const parent)
     setToolTipEnabled(settings->showToolTipsIsValid());
 
     // selection overlay
-    addSelectionOverlay(d->normalDelegate);
-    //TODO: addSelectionOverlay(d->faceDelegate);
 
+    addSelectionOverlay(d->normalDelegate);
+
+/*  TODO
+    addSelectionOverlay(d->faceDelegate);
+*/
     // rotation overlays
+
     d->rotateLeftOverlay  = ImportRotateOverlay::left(this);
     d->rotateRightOverlay = ImportRotateOverlay::right(this);
 
@@ -90,35 +94,37 @@ ImportIconView::ImportIconView(QWidget* const parent)
     d->updateOverlays();
 
     // rating overlay
+
     ImportRatingOverlay* const ratingOverlay = new ImportRatingOverlay(this);
     addOverlay(ratingOverlay);
 
-    //TODO: GroupIndicatorOverlay* groupOverlay = new GroupIndicatorOverlay(this);
-    //TODO: addOverlay(groupOverlay);
-
+/*  TODO
+    GroupIndicatorOverlay* groupOverlay = new GroupIndicatorOverlay(this);
+    addOverlay(groupOverlay);
+*/
     connect(ratingOverlay, SIGNAL(ratingEdited(QList<QModelIndex>,int)),
             this, SLOT(assignRating(QList<QModelIndex>,int)));
 
-    //TODO: connect(groupOverlay, SIGNAL(toggleGroupOpen(QModelIndex)),
-            //this, SLOT(groupIndicatorClicked(QModelIndex)));
+/*  TODO
 
-    //TODO: connect(groupOverlay, SIGNAL(showButtonContextMenu(QModelIndex,QContextMenuEvent*)),
-            //this, SLOT(showGroupContextMenu(QModelIndex,QContextMenuEvent*)));
+    connect(groupOverlay, SIGNAL(toggleGroupOpen(QModelIndex)),
+            this, SLOT(groupIndicatorClicked(QModelIndex)));
 
-    //TODO: connect(importItemModel()->dragDropHandler(), SIGNAL(assignTags(QList<CamItemInfo>,QList<int>)),
-            //FileActionMngr::instance(), SLOT(assignTags(QList<CamItemInfo>,QList<int>)));
+    connect(groupOverlay, SIGNAL(showButtonContextMenu(QModelIndex,QContextMenuEvent*)),
+            this, SLOT(showGroupContextMenu(QModelIndex,QContextMenuEvent*)));
 
-    //TODO: connect(importItemModel()->dragDropHandler(), SIGNAL(addToGroup(CamItemInfo,QList<CamItemInfo>)),
-            //FileActionMngr::instance(), SLOT(addToGroup(CamItemInfo,QList<CamItemInfo>)));
+    connect(importItemModel()->dragDropHandler(), SIGNAL(assignTags(QList<CamItemInfo>,QList<int>)),
+            FileActionMngr::instance(), SLOT(assignTags(QList<CamItemInfo>,QList<int>)));
 
+    connect(importItemModel()->dragDropHandler(), SIGNAL(addToGroup(CamItemInfo,QList<CamItemInfo>)),
+            FileActionMngr::instance(), SLOT(addToGroup(CamItemInfo,QList<CamItemInfo>)));
+*/
     // --- NOTE: use dynamic binding as slotSetupChanged() is a virtual method which can be re-implemented in derived classes.
 
     connect(settings, &ImportSettings::setupChanged,
             this, &ImportIconView::slotSetupChanged);
 
     this->slotSetupChanged();
-
-    // ---
 }
 
 ImportIconView::~ImportIconView()
@@ -179,7 +185,7 @@ void ImportIconView::slotSetupChanged()
 
 void ImportIconView::rename()
 {
-    QList<QUrl>  urls = selectedUrls();
+    QList<QUrl>  urls                  = selectedUrls();
     NewNamesList newNamesList;
 
     QPointer<AdvancedRenameDialog> dlg = new AdvancedRenameDialog(this);
@@ -204,7 +210,7 @@ void ImportIconView::deleteSelected(bool /*permanently*/)
 {
     CamItemInfoList camItemInfoList = selectedCamItemInfos();
 
-    //FIXME: This way of deletion may not working with camera items.
+    // FIXME: This way of deletion may not working with camera items.
 /*
     if (d->utilities->deleteImages(camItemInfoList, permanently))
     {
@@ -216,14 +222,17 @@ void ImportIconView::deleteSelected(bool /*permanently*/)
 void ImportIconView::deleteSelectedDirectly(bool /*permanently*/)
 {
     CamItemInfoList camItemInfoList = selectedCamItemInfos();
-    //FIXME: This way of deletion may not working with camera items.
-    //d->utilities->deleteImagesDirectly(camItemInfoList, permanently);
+
+    // FIXME: This way of deletion may not working with camera items.
+/*
+    d->utilities->deleteImagesDirectly(camItemInfoList, permanently);
+*/
     awayFromSelection();
 }
 
 void ImportIconView::createGroupFromSelection()
 {
-    //TODO: Implement grouping in import tool.
+    // TODO: Implement grouping in import tool.
 /*
     QList<CamItemInfo> selectedInfos = selectedCamItemInfosCurrentFirst();
     CamItemInfo groupLeader          = selectedInfos.takeFirst();
@@ -233,7 +242,7 @@ void ImportIconView::createGroupFromSelection()
 
 void ImportIconView::createGroupByTimeFromSelection()
 {
-    //TODO: Implement grouping in import tool.
+    // TODO: Implement grouping in import tool.
 /*
     QList<CamItemInfo> selectedInfos = selectedCamItemInfosCurrentFirst();
 
@@ -255,14 +264,18 @@ void ImportIconView::createGroupByTimeFromSelection()
 
 void ImportIconView::ungroupSelected()
 {
-    //TODO: Implement grouping in import tool.
-    //FileActionMngr::instance()->ungroup(selectedCamItemInfos());
+    // TODO: Implement grouping in import tool.
+/*
+    FileActionMngr::instance()->ungroup(selectedCamItemInfos());
+*/
 }
 
 void ImportIconView::removeSelectedFromGroup()
 {
-    //TODO: Implement grouping in import tool.
-    //FileActionMngr::instance()->removeFromGroup(selectedCamItemInfos());
+    // TODO: Implement grouping in import tool.
+/*
+    FileActionMngr::instance()->removeFromGroup(selectedCamItemInfos());
+*/
 }
 
 void ImportIconView::slotRotateLeft(const QList<QModelIndex>& /*indexes*/)
@@ -308,7 +321,9 @@ void ImportIconView::activated(const CamItemInfo& info, Qt::KeyboardModifiers)
     }
     else
     {
-        //TODO: openFile(info);
+/*      TODO
+        openFile(info);
+*/
     }
 }
 
@@ -331,7 +346,9 @@ void ImportIconView::showContextMenuOnInfo(QContextMenuEvent* event, const CamIt
     cmhelper.addAction(QLatin1String("options_show_menubar"));
     cmhelper.addAction(QLatin1String("import_zoomfit2window"));
     cmhelper.addSeparator();
+
     // --------------------------------------------------------
+
     cmhelper.addAction(QLatin1String("importui_imagedownload"));
     cmhelper.addAction(QLatin1String("importui_imagemarkasdownloaded"));
     cmhelper.addAction(QLatin1String("importui_imagelock"));
@@ -339,39 +356,51 @@ void ImportIconView::showContextMenuOnInfo(QContextMenuEvent* event, const CamIt
     cmhelper.addSeparator();
     cmhelper.addAction(QLatin1String("importui_item_view"));
     cmhelper.addServicesMenu(selectedUrls());
-    //TODO: cmhelper.addRotateMenu(selectedItemIDs);
+
+/*  TODO
+    cmhelper.addRotateMenu(selectedItemIDs);
+*/
+
     cmhelper.addSeparator();
+
     // --------------------------------------------------------
+
     cmhelper.addAction(QLatin1String("importui_selectall"));
     cmhelper.addAction(QLatin1String("importui_selectnone"));
     cmhelper.addAction(QLatin1String("importui_selectinvert"));
     cmhelper.addSeparator();
+
     // --------------------------------------------------------
-    //cmhelper.addAssignTagsMenu(selectedItemIDs);
-    //cmhelper.addRemoveTagsMenu(selectedItemIDs);
-    //cmhelper.addSeparator();
+/*
+    cmhelper.addAssignTagsMenu(selectedItemIDs);
+    cmhelper.addRemoveTagsMenu(selectedItemIDs);
+    cmhelper.addSeparator();
+*/
     // --------------------------------------------------------
+
     cmhelper.addLabelsAction();
-    //if (!d->faceMode)
-    //{
-    //    cmhelper.addGroupMenu(selectedItemIDs);
-    //}
+/*
+    if (!d->faceMode)
+    {
+        cmhelper.addGroupMenu(selectedItemIDs);
+    }
 
     // special action handling --------------------------------
 
-    //connect(&cmhelper, SIGNAL(signalAssignTag(int)),
-    //        this, SLOT(assignTagToSelected(int)));
+    connect(&cmhelper, SIGNAL(signalAssignTag(int)),
+            this, SLOT(assignTagToSelected(int)));
 
-    //TODO: Implement tag view for import tool.
-    //connect(&cmhelper, SIGNAL(signalPopupTagsView()),
-    //        this, SIGNAL(signalPopupTagsView()));
+    TODO: Implement tag view for import tool.
 
-    //connect(&cmhelper, SIGNAL(signalRemoveTag(int)),
-    //        this, SLOT(removeTagFromSelected(int)));
+    connect(&cmhelper, SIGNAL(signalPopupTagsView()),
+            this, SIGNAL(signalPopupTagsView()));
 
-    //connect(&cmhelper, SIGNAL(signalGotoTag(int)),
-            //this, SIGNAL(gotoTagAndImageRequested(int)));
+    connect(&cmhelper, SIGNAL(signalRemoveTag(int)),
+            this, SLOT(removeTagFromSelected(int)));
 
+    connect(&cmhelper, SIGNAL(signalGotoTag(int)),
+            this, SIGNAL(gotoTagAndImageRequested(int)));
+*/
     connect(&cmhelper, SIGNAL(signalAssignPickLabel(int)),
             this, SLOT(assignPickLabelToSelected(int)));
 
@@ -380,19 +409,19 @@ void ImportIconView::showContextMenuOnInfo(QContextMenuEvent* event, const CamIt
 
     connect(&cmhelper, SIGNAL(signalAssignRating(int)),
             this, SLOT(assignRatingToSelected(int)));
+/*
+    connect(&cmhelper, SIGNAL(signalAddToExistingQueue(int)),
+            this, SLOT(insertSelectedToExistingQueue(int)));
 
-    //connect(&cmhelper, SIGNAL(signalAddToExistingQueue(int)),
-            //this, SLOT(insertSelectedToExistingQueue(int)));
+    connect(&cmhelper, SIGNAL(signalCreateGroup()),
+            this, SLOT(createGroupFromSelection()));
 
-    //FIXME: connect(&cmhelper, SIGNAL(signalCreateGroup()),
-            //this, SLOT(createGroupFromSelection()));
+    connect(&cmhelper, SIGNAL(signalUngroup()),
+            this, SLOT(ungroupSelected()));
 
-    //connect(&cmhelper, SIGNAL(signalUngroup()),
-            //this, SLOT(ungroupSelected()));
-
-    //connect(&cmhelper, SIGNAL(signalRemoveFromGroup()),
-            //this, SLOT(removeSelectedFromGroup()));
-
+    connect(&cmhelper, SIGNAL(signalRemoveFromGroup()),
+            this, SLOT(removeSelectedFromGroup()));
+*/
     // --------------------------------------------------------
 
     cmhelper.exec(event->globalPos());

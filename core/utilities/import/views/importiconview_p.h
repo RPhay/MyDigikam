@@ -55,7 +55,7 @@ public:
 
 public:
 
-    ItemViewUtilities*    utilities;
+    ItemViewUtilities*     utilities;
     ImportNormalDelegate*  normalDelegate;
 
     bool                   overlaysActive;

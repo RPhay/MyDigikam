@@ -85,7 +85,9 @@ void CameraFolderView::addVirtualFolder(const QString& name, const QIcon& icon)
     d->virtualFolder = new CameraFolderItem(this, d->cameraName, icon);
     d->virtualFolder->setExpanded(true);
     d->virtualFolder->setSelected(false);
+
     // item is not selectable.
+
     d->virtualFolder->setFlags(d->virtualFolder->flags() & (int)!Qt::ItemIsSelectable);
     d->virtualFolder->setDisabled(false);
 }
@@ -126,6 +128,7 @@ CameraFolderItem* CameraFolderView::addFolder(const QString& folder, const QStri
 
             item->setCount(nbItems);
             item->setExpanded(true);
+
             return item;
         }
         else
@@ -149,7 +152,7 @@ CameraFolderItem* CameraFolderView::findFolder(const QString& folderPath)
     {
         CameraFolderItem* const lvItem = dynamic_cast<CameraFolderItem*>(*it);
 
-        if (lvItem && lvItem->folderPath() == folderPath)
+        if (lvItem && (lvItem->folderPath() == folderPath))
         {
             return lvItem;
         }
@@ -187,6 +190,7 @@ void CameraFolderView::clear()
     QTreeWidget::clear();
     d->virtualFolder = nullptr;
     d->rootFolder    = nullptr;
+
     emit signalCleared();
 }
 

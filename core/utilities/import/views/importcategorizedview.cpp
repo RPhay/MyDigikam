@@ -62,6 +62,7 @@ protected:
     virtual QString tipContents()
     {
         CamItemInfo info = ImportItemModel::retrieveCamItemInfo(currentIndex());
+
         return ImportToolTipFiller::CamItemInfoTipContents(info);
     }
 };
@@ -207,8 +208,10 @@ void ImportCategorizedView::setItemDelegate(ImportDelegate* delegate)
         d->delegate->setViewOnAllOverlays(nullptr);
 
         // Note: Be precise, no wildcard disconnect!
+
         disconnect(d->delegate, SIGNAL(requestNotification(QModelIndex,QString)),
                    this, SLOT(showIndexNotification(QModelIndex,QString)));
+
         disconnect(d->delegate, SIGNAL(hideNotification()),
                    this, SLOT(hideIndexNotification()));
     }
@@ -330,9 +333,11 @@ QModelIndex ImportCategorizedView::nextIndexHint(const QModelIndex& anchor, cons
 
     // Fixes a special case of multiple (face) entries for the same image.
     // If one is removed, any entry of the same image shall be preferred.
+
     if (d->model->numberOfIndexesForCamItemInfo(info) > 1)
     {
         // The hint is for a different info, but we may have a hint for the same info
+
         if (info != d->filterModel->camItemInfo(hint))
         {
             int minDiff                              = d->filterModel->rowCount();
@@ -340,7 +345,7 @@ QModelIndex ImportCategorizedView::nextIndexHint(const QModelIndex& anchor, cons
 
             foreach (const QModelIndex& index, indexesForCamItemInfo)
             {
-                if (index == anchor || !index.isValid() || removed.contains(index))
+                if ((index == anchor) || !index.isValid() || removed.contains(index))
                 {
                     continue;
                 }
@@ -351,6 +356,7 @@ QModelIndex ImportCategorizedView::nextIndexHint(const QModelIndex& anchor, cons
                 {
                     minDiff = distance;
                     hint = index;
+
                     //qCDebug(DIGIKAM_IMPORTUI_LOG) << "Chose index" << hint << "at distance" << minDiff << "to" << anchor;
                 }
             }
@@ -364,8 +370,11 @@ ThumbnailSize ImportCategorizedView::thumbnailSize() const
 {
 /*
     ImportThumbnailModel *thumbModel = importThumbnailModel();
+
     if (thumbModel)
+    {
         return thumbModel->thumbnailSize();
+    }
 */
     if (d->delegate)
     {
@@ -384,6 +393,7 @@ void ImportCategorizedView::setThumbnailSize(const ThumbnailSize& s)
 {
     // we abuse this pair of method calls to restore scroll position
     // TODO check if needed
+
     layoutAboutToBeChanged();
     d->delegate->setThumbnailSize(s);
     layoutWasChanged();
@@ -438,6 +448,7 @@ void ImportCategorizedView::setSelectedUrls(const QList<QUrl>& urlList)
         else
         {
             // TODO: is there a better way?
+
             mySelection.select(index, index);
         }
     }
@@ -514,6 +525,7 @@ void ImportCategorizedView::updateGeometries()
 void ImportCategorizedView::slotDelayedEnter()
 {
     // re-emit entered() for index under mouse (after layout).
+
     QModelIndex mouseIndex = indexAt(mapFromGlobal(QCursor::pos()));
 
     if (mouseIndex.isValid())

@@ -78,13 +78,16 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     void previewRequested(const CamItemInfo& info, bool downloadPreview);
-    //void signalPopupTagsView();
-
+/*
+    void signalPopupTagsView();
+*/
 private Q_SLOTS:
 
     void slotRotateLeft(const QList<QModelIndex>&);
     void slotRotateRight(const QList<QModelIndex>&);
-    //void slotInitProgressIndicator();
+/*
+    void slotInitProgressIndicator();
+*/
 
 protected:
 

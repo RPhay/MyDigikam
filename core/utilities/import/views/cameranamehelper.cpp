@@ -53,7 +53,7 @@ QString CameraNameHelper::createCameraName(const QString& vendor, const QString&
     QString _mode    = mode.simplified().remove(QLatin1Char('(')).remove(QLatin1Char(')'));
     tmp              = QString::fromUtf8("%1 %2").arg(_vendor).arg(_product);
 
-    if (!mode.isEmpty() && mode != STR_AUTO_DETECTED)
+    if      (!mode.isEmpty() && mode != STR_AUTO_DETECTED)
     {
         tmp.append(QLatin1String(" ("));
         tmp.append(_mode);
@@ -93,8 +93,8 @@ QString CameraNameHelper::parseAndFormatCameraName(const QString& cameraName,
 
     QString tmp = createCameraName(vendorAndProduct, QString(), mode, autoDetected);
 
-    return tmp.isEmpty() ? cameraName.simplified()
-                         : tmp;
+    return (tmp.isEmpty() ? cameraName.simplified()
+                          : tmp);
 }
 
 QString CameraNameHelper::extractCameraNameToken(const QString& cameraName, Token tokenID)
@@ -123,16 +123,16 @@ QString CameraNameHelper::extractCameraNameToken(const QString& cameraName, Toke
 
         if (tokenID == VendorAndProduct)
         {
-            return mode.isEmpty() ? cameraName.simplified()
-                                  : vendorProduct;
+            return (mode.isEmpty() ? cameraName.simplified()
+                                   : vendorProduct);
         }
         else
         {
             return mode;
         }
     }
-    return (tokenID == VendorAndProduct) ? cameraName.simplified()
-                                         : QLatin1String("");
+    return ((tokenID == VendorAndProduct) ? cameraName.simplified()
+                                          : QLatin1String(""));
 }
 
 bool CameraNameHelper::sameDevices(const QString& deviceA, const QString& deviceB)
@@ -148,18 +148,21 @@ bool CameraNameHelper::sameDevices(const QString& deviceA, const QString& device
     }
 
     // We need to parse the names a little bit. First check if the vendor and name match
+
     QString vendorAndProductA = extractCameraNameToken(deviceA, VendorAndProduct);
     QString vendorAndProductB = extractCameraNameToken(deviceB, VendorAndProduct);
     QString cameraNameA       = createCameraName(vendorAndProductA);
     QString cameraNameB       = createCameraName(vendorAndProductB);
 
     // try to clean up the string, if not possible, return false
+
     if (cameraNameA != cameraNameB)
     {
         return false;
     }
 
     // is the extracted mode known and equal?
+
     QString modeA       = extractCameraNameToken(deviceA, Mode);
     QString modeB       = extractCameraNameToken(deviceB, Mode);
     bool isModeAValid   = REGEXP_MODES.exactMatch(modeA);

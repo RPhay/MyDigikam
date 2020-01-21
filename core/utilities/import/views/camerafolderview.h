@@ -55,7 +55,7 @@ public:
     CameraFolderItem* findFolder(const QString& folderPath);
 
     CameraFolderItem* virtualFolder() const;
-    CameraFolderItem* rootFolder() const;
+    CameraFolderItem* rootFolder()    const;
 
     virtual void clear();
 
