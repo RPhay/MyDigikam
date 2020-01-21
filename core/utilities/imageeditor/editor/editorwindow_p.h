@@ -130,11 +130,9 @@
 #include "thumbnailloadthread.h"
 #include "versioningpromptusersavedlg.h"
 #include "undostate.h"
-#include "versionmanager.h"
 #include "dfiledialog.h"
 #include "dexpanderbox.h"
 #include "imageiface.h"
-#include "editorwindow.h"
 #include "versionmanager.h"
 #include "dnotificationpopup.h"
 
@@ -186,7 +184,10 @@ public:
     }
 
     void legacyUpdateSplitterState(KConfigGroup& group);
-    void plugNewVersionInFormatAction(EditorWindow* const q, QMenu* const menuAction, const QString& text, const QString& format);
+    void plugNewVersionInFormatAction(EditorWindow* const q,
+                                      QMenu* const menuAction,
+                                      const QString& text,
+                                      const QString& format);
 
 public:
 
@@ -345,8 +346,10 @@ void EditorWindow::Private::legacyUpdateSplitterState(KConfigGroup& group)
     }
 }
 
-void EditorWindow::Private::plugNewVersionInFormatAction(EditorWindow* const q, QMenu* const menuAction,
-                                                         const QString& text, const QString& format)
+void EditorWindow::Private::plugNewVersionInFormatAction(EditorWindow* const q,
+                                                         QMenu* const menuAction,
+                                                         const QString& text,
+                                                         const QString& format)
 {
     QAction* const action = new QAction(text, q);
 
