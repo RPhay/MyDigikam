@@ -15,22 +15,18 @@
 if(MSVC)
     add_definitions(
                     # XMP SDK
-                    -DWIN_ENV=1
+                    -DWIN_ENV
 
                     # DNG SDK
-                    -DqWinOS=1
-                    -DqMacOS=0
-#                    -DqDNGUseStdInt=0
+                    -DqWinOS
                     )
 else()
     add_definitions(
                      # XMP SDK
-                    -DUNIX_ENV=1
+                    -DUNIX_ENV
 
                     # DNG SDK
-                    -DqWinOS=0
-                    -DqMacOS=0
-                    -DqDNGUseStdInt=1
+                    -DqDNGUseStdInt
                    )
 endif()
 
@@ -39,19 +35,18 @@ include(TestBigEndian)
 TEST_BIG_ENDIAN(IS_BIG_ENDIAN)
 
 if(NOT IS_BIG_ENDIAN)
-    add_definitions(-DqDNGLittleEndian=1)
+    add_definitions(-DqDNGLittleEndian)
 endif()
 
 # Thread safe support under Mac and Linux using pthread library
 
 if(NOT MSVC)
-    add_definitions(-DqDNGThreadSafe=1)
+    add_definitions(-DqDNGThreadSafe)
 endif()
 
-# Level of debug info in the console.
+# Mode definition for console output.
 
-add_definitions(-DqDNGDebug=0)
-add_definitions(-DqDNGValidateTarget=1)
+add_definitions(-DqDNGValidateTarget)
 
 #---------------------------------
 
