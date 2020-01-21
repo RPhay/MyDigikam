@@ -41,11 +41,11 @@
 #include "digikam_export.h"
 
 #ifdef HAVE_MEDIAPLAYER
-#include "mediaplayerview.h"
+#   include "mediaplayerview.h"
 #endif //HAVE_MEDIAPLAYER
 
 #ifdef HAVE_MARBLE
-#include "mapwidgetview.h"
+#   include "mapwidgetview.h"
 #endif // HAVE_MARBLE
 
 namespace Digikam
@@ -59,15 +59,21 @@ public:
 
     enum StackedViewMode
     {
-        PreviewCameraMode = 0, // previewing the set of items on the camera
+        PreviewCameraMode = 0, ///< previewing the set of items on the camera
         PreviewImageMode,
+
 #ifdef HAVE_MARBLE
+
         MapWidgetMode,
         MediaPlayerMode
+
 #else
+
         MediaPlayerMode,
         MapWidgetMode
+
 #endif // HAVE_MARBLE
+
     };
 
 public:
@@ -83,22 +89,28 @@ public:
     ImportPreviewView*  importPreviewView() const;
 
 #ifdef HAVE_MARBLE
+
     MapWidgetView*      mapWidgetView()     const;
+
 #endif // HAVE_MARBLE
 
 #ifdef HAVE_MEDIAPLAYER
+
     MediaPlayerView*    mediaPlayerView()   const;
+
 #endif //HAVE_MEDIAPLAYER
 
-    bool isInSingleFileMode()   const;
-    bool isInMultipleFileMode() const;
-    //FIXME: bool isInAbstractMode() const;
-
+    bool isInSingleFileMode()               const;
+    bool isInMultipleFileMode()             const;
+/*
+    FIXME
+    bool isInAbstractMode() const;
+*/
     void setPreviewItem(const CamItemInfo& info = CamItemInfo(),
                         const CamItemInfo& previous = CamItemInfo(),
                         const CamItemInfo& next = CamItemInfo());
 
-    StackedViewMode  viewMode() const;
+    StackedViewMode  viewMode()             const;
     void setViewMode(const StackedViewMode mode);
     void previewLoaded();
 
@@ -123,11 +135,12 @@ Q_SIGNALS:
     void signalViewModeChanged();
     void signalEscapePreview();
     void signalZoomFactorChanged(double);
-
-    //FIXME: void signalGotoAlbumAndItem(const CamItemInfo&);
-    //FIXME: void signalGotoDateAndItem(const CamItemInfo&);
-    //FIXME: void signalGotoTagAndItem(int);
-
+/*
+    FIXME
+    void signalGotoAlbumAndItem(const CamItemInfo&);
+    void signalGotoDateAndItem(const CamItemInfo&);
+    void signalGotoTagAndItem(int);
+*/
 public Q_SLOTS:
 
     void slotEscapePreview();

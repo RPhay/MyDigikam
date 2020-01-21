@@ -72,11 +72,12 @@ Q_SIGNALS:
     void signalPreviewLoaded(bool success);
     void signalEscapePreview();
 /*
-    //void signalAddToExistingQueue(int);
-    //void signalGotoFolderAndItem(const CamItemInfo&);
-    //void signalGotoDateAndItem(const CamItemInfo&);
-    //void signalGotoTagAndItem(int);
-    //void signalPopupTagsView();
+    FIXME
+    void signalAddToExistingQueue(int);
+    void signalGotoFolderAndItem(const CamItemInfo&);
+    void signalGotoDateAndItem(const CamItemInfo&);
+    void signalGotoTagAndItem(int);
+    void signalPopupTagsView();
 */
     void signalAssignPickLabel(int);
     void signalAssignColorLabel(int);
@@ -95,11 +96,11 @@ private Q_SLOTS:
     void camItemLoaded();
     void camItemLoadingFailed();
 /*
-    //TODO: Implement Tags and Labels in Import Tool
-    //void slotAssignTag(int tagID);
-    //void slotRemoveTag(int tagID);
-    //void slotAssignPickLabel(int pickId);
-    //void slotAssignColorLabel(int colorId);
+    TODO: Implement Tags and Labels in Import Tool
+    void slotAssignTag(int tagID);
+    void slotRemoveTag(int tagID);
+    void slotAssignPickLabel(int pickId);
+    void slotAssignColorLabel(int colorId);
 */
     void slotThemeChanged();
     void slotSetupChanged();

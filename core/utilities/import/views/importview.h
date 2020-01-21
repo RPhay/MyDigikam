@@ -33,8 +33,6 @@
 #include "importui.h"
 #include "importstackedview.h"
 
-
-
 namespace Digikam
 {
 
@@ -67,8 +65,8 @@ public:
     CamItemInfo& camItemInfoRef(const QString& folder, const QString& file)  const;
     bool         hasImage(const CamItemInfo& info)                           const;
 
-    QList<QUrl>         allUrls()                                             const;
-    QList<QUrl>         selectedUrls()                                        const;
+    QList<QUrl>         allUrls()                                            const;
+    QList<QUrl>         selectedUrls()                                       const;
     QList<CamItemInfo> selectedCamItemInfos()                                const;
     QList<CamItemInfo> allItems()                                            const;
     void               setSelectedCamItemInfos(const CamItemInfoList& infos) const;
@@ -76,11 +74,11 @@ public:
     bool               hasCurrentItem()                                      const;
     bool               isSelected(const QUrl& url)                           const;
 
-    double                             zoomMin()           const;
-    double                             zoomMax()           const;
-    ThumbnailSize                      thumbnailSize()     const;
-    ImportStackedView::StackedViewMode viewMode()          const;
-    ImportFilterModel*                 importFilterModel() const;
+    double                             zoomMin()                             const;
+    double                             zoomMax()                             const;
+    ThumbnailSize                      thumbnailSize()                       const;
+    ImportStackedView::StackedViewMode viewMode()                            const;
+    ImportFilterModel*                 importFilterModel()                   const;
 
 Q_SIGNALS:
 
@@ -98,7 +96,7 @@ public Q_SLOTS:
 
     void setZoomFactor(double zoom);
 
-    // View Action slots
+    /// View Action slots
     void slotZoomIn();
     void slotZoomOut();
     void slotZoomTo100Percents();

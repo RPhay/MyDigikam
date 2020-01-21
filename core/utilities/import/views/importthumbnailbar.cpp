@@ -41,9 +41,9 @@ class Q_DECL_HIDDEN ImportThumbnailBar::Private
 public:
 
     explicit Private()
+      : scrollPolicy(Qt::ScrollBarAlwaysOn),
+        duplicatesFilter(nullptr)
     {
-        scrollPolicy     = Qt::ScrollBarAlwaysOn;
-        duplicatesFilter = nullptr;
     }
 
     Qt::ScrollBarPolicy            scrollPolicy;
@@ -110,7 +110,7 @@ void ImportThumbnailBar::installOverlays()
 
 void ImportThumbnailBar::slotDockLocationChanged(Qt::DockWidgetArea area)
 {
-    if (area == Qt::LeftDockWidgetArea || area == Qt::RightDockWidgetArea)
+    if ((area == Qt::LeftDockWidgetArea) || (area == Qt::RightDockWidgetArea))
     {
         setFlow(TopToBottom);
     }
@@ -127,6 +127,7 @@ void ImportThumbnailBar::setScrollBarPolicy(Qt::ScrollBarPolicy policy)
     if (policy == Qt::ScrollBarAsNeeded)
     {
         // Delegate resizing will cause endless relayouting, see bug #228807
+
         qCDebug(DIGIKAM_IMPORTUI_LOG) << "The Qt::ScrollBarAsNeeded policy is not supported by ImportThumbnailBar";
     }
 
@@ -154,10 +155,12 @@ void ImportThumbnailBar::setFlow(QListView::Flow flow)
     del->setFlow(flow);
 
     // Reset the minimum and maximum sizes.
+
     setMinimumSize(QSize(0, 0));
     setMaximumSize(QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX));
 
     // Adjust minimum and maximum width to thumbnail sizes.
+
     if (flow == TopToBottom)
     {
         int viewportFullWidgetOffset = size().width() - viewport()->size().width();
@@ -199,7 +202,8 @@ void ImportThumbnailBar::assignRating(const QList<QModelIndex>& indexes, int rat
 bool ImportThumbnailBar::event(QEvent* e)
 {
     // reset widget max/min sizes
-    if (e->type() == QEvent::StyleChange || e->type() == QEvent::Show)
+
+    if ((e->type() == QEvent::StyleChange) || (e->type() == QEvent::Show))
     {
         setFlow(flow());
     }

@@ -50,23 +50,27 @@ class Q_DECL_HIDDEN ImportStackedView::Private
 public:
 
     explicit Private()
-    {
-        dockArea            = nullptr;
-        splitter            = nullptr;
-        thumbBar            = nullptr;
-        thumbBarDock        = nullptr;
-        importIconView      = nullptr;
-        importPreviewView   = nullptr;
+      : dockArea(nullptr),
+        splitter(nullptr),
+        thumbBar(nullptr),
+        thumbBarDock(nullptr),
+        importIconView(nullptr),
+        importPreviewView(nullptr),
 
 #ifdef HAVE_MARBLE
-        mapWidgetView       = nullptr;
+
+        mapWidgetView(nullptr),
+
 #endif // HAVE_MARBLE
 
 #ifdef HAVE_MEDIAPLAYER
-        mediaPlayerView     = nullptr;
+
+        mediaPlayerView(nullptr),
+
 #endif // HAVE_MEDIAPLAYER
 
-        syncingSelection    = false;
+        syncingSelection(false)
+    {
     }
 
     QMainWindow*        dockArea;
@@ -78,11 +82,15 @@ public:
     ImportPreviewView*  importPreviewView;
 
 #ifdef HAVE_MARBLE
+
     MapWidgetView*      mapWidgetView;
+
 #endif // HAVE_MARBLE
 
 #ifdef HAVE_MEDIAPLAYER
-    MediaPlayerView*    mediaPlayerView; // Reuse of albumgui mediaplayer view.
+
+    MediaPlayerView*    mediaPlayerView; ///< Reuse of albumgui mediaplayer view.
+
 #endif // HAVE_MEDIAPLAYER
 
     bool                syncingSelection;
@@ -104,26 +112,35 @@ ImportStackedView::ImportStackedView(QWidget* const parent)
     d->thumbBarDock->setWindowTitle(i18n("Import Thumbnail Dock"));
 
 #ifdef HAVE_MARBLE
+
     // TODO refactor MapWidgetView not to require the models on startup?
+
     d->mapWidgetView     = new MapWidgetView(d->importIconView->getSelectionModel(),
                                              d->importIconView->importFilterModel(), this,
                                              MapWidgetView::ApplicationImportUI);
     d->mapWidgetView->setObjectName(QLatin1String("import_mapwidgetview"));
+
 #endif // HAVE_MARBLE
 
 #ifdef HAVE_MEDIAPLAYER
+
     d->mediaPlayerView   = new MediaPlayerView(this);
+
 #endif //HAVE_MEDIAPLAYER
 
     insertWidget(PreviewCameraMode, d->importIconView);
     insertWidget(PreviewImageMode,  d->importPreviewView);
 
 #ifdef HAVE_MARBLE
+
     insertWidget(MapWidgetMode,     d->mapWidgetView);
+
 #endif // HAVE_MARBLE
 
 #ifdef HAVE_MEDIAPLAYER
+
     insertWidget(MediaPlayerMode,   d->mediaPlayerView);
+
 #endif //HAVE_MEDIAPLAYER
 
     setAttribute(Qt::WA_DeleteOnClose);
@@ -131,32 +148,35 @@ ImportStackedView::ImportStackedView(QWidget* const parent)
     readSettings();
 
     // -----------------------------------------------------------------
+/*
+    FIXME
+    connect(d->importPreviewView, SIGNAL(signalPopupTagsView()),
+            d->importIconView, SIGNAL(signalPopupTagsView()));
 
-    //FIXME: connect(d->importPreviewView, SIGNAL(signalPopupTagsView()),
-            //d->importIconView, SIGNAL(signalPopupTagsView()));
+    connect(d->importPreviewView, SIGNAL(signalGotoFolderAndItem(CamItemInfo)),
+            this, SIGNAL(signalGotoFolderAndItem(CamItemInfo)));
 
-    //connect(d->importPreviewView, SIGNAL(signalGotoFolderAndItem(CamItemInfo)),
-            //this, SIGNAL(signalGotoFolderAndItem(CamItemInfo)));
+    connect(d->importPreviewView, SIGNAL(signalGotoDateAndItem(CamItemInfo)),
+            this, SIGNAL(signalGotoDateAndItem(CamItemInfo)));
 
-    //connect(d->importPreviewView, SIGNAL(signalGotoDateAndItem(CamItemInfo)),
-            //this, SIGNAL(signalGotoDateAndItem(CamItemInfo)));
-
-    //FIXME: connect(d->importPreviewView, SIGNAL(signalGotoTagAndItem(int)),
-            //this, SIGNAL(signalGotoTagAndItem(int)));
-
+    connect(d->importPreviewView, SIGNAL(signalGotoTagAndItem(int)),
+            this, SIGNAL(signalGotoTagAndItem(int)));
+*/
     connect(d->importPreviewView, SIGNAL(signalNextItem()),
             this, SIGNAL(signalNextItem()));
 
     connect(d->importPreviewView, SIGNAL(signalPrevItem()),
             this, SIGNAL(signalPrevItem()));
-
-    //FIXME: connect(d->importPreviewView, SIGNAL(signalDeleteItem()),
-            //this, SIGNAL(signalDeleteItem()));
-
+/*
+    FIXME
+    connect(d->importPreviewView, SIGNAL(signalDeleteItem()),
+            this, SIGNAL(signalDeleteItem()));
+*/
     connect(d->importPreviewView, SIGNAL(signalEscapePreview()),
             this, SIGNAL(signalEscapePreview()));
 
     // A workaround to assign pickLabel, colorLabel, and rating in the preview view.
+
     connect(d->importPreviewView, SIGNAL(signalAssignPickLabel(int)),
             d->importIconView, SLOT(assignPickLabelToSelected(int)));
 
@@ -168,10 +188,11 @@ ImportStackedView::ImportStackedView(QWidget* const parent)
 
     connect(d->importPreviewView->layout(), SIGNAL(zoomFactorChanged(double)),
             this, SLOT(slotZoomFactorChanged(double)));
-
-    //FIXME: connect(d->importPreviewView, SIGNAL(signalAddToExistingQueue(int)),
-            //this, SIGNAL(signalAddToExistingQueue(int)));
-
+/*
+    FIXME
+    connect(d->importPreviewView, SIGNAL(signalAddToExistingQueue(int)),
+            this, SIGNAL(signalAddToExistingQueue(int)));
+*/
     connect(d->thumbBar, SIGNAL(selectionChanged()),
             this, SLOT(slotThumbBarSelectionChanged()));
 
@@ -185,6 +206,7 @@ ImportStackedView::ImportStackedView(QWidget* const parent)
             this, SLOT(slotPreviewLoaded(bool)));
 
 #ifdef HAVE_MEDIAPLAYER
+
     connect(d->mediaPlayerView, SIGNAL(signalNextItem()),
             this, SIGNAL(signalNextItem()));
 
@@ -193,6 +215,7 @@ ImportStackedView::ImportStackedView(QWidget* const parent)
 
     connect(d->mediaPlayerView, SIGNAL(signalEscapePreview()),
             this, SIGNAL(signalEscapePreview()));
+
 #endif //HAVE_MEDIAPLAYER
 }
 
@@ -211,6 +234,7 @@ void ImportStackedView::readSettings()
 void ImportStackedView::setDockArea(QMainWindow* dockArea)
 {
     // Attach the thumbbar dock to the given dock area and place it initially on top.
+
     d->dockArea = dockArea;
     d->thumbBarDock->setParent(d->dockArea);
     d->dockArea->addDockWidget(Qt::TopDockWidgetArea, d->thumbBarDock);
@@ -230,11 +254,14 @@ ImportThumbnailBar* ImportStackedView::thumbBar() const
 void ImportStackedView::slotEscapePreview()
 {
 #ifdef HAVE_MEDIAPLAYER
+
     if (viewMode() == MediaPlayerMode)
     {
         d->mediaPlayerView->escapePreview();
     }
+
 #endif //HAVE_MEDIAPLAYER
+
 }
 
 ImportIconView* ImportStackedView::importIconView() const
@@ -248,27 +275,31 @@ ImportPreviewView* ImportStackedView::importPreviewView() const
 }
 
 #ifdef HAVE_MARBLE
+
 MapWidgetView* ImportStackedView::mapWidgetView() const
 {
     return d->mapWidgetView;
 }
+
 #endif // HAVE_MARBLE
 
 #ifdef HAVE_MEDIAPLAYER
+
 MediaPlayerView* ImportStackedView::mediaPlayerView() const
 {
     return d->mediaPlayerView;
 }
+
 #endif //HAVE_MEDIAPLAYER
 
 bool ImportStackedView::isInSingleFileMode() const
 {
-    return currentIndex() == PreviewImageMode || currentIndex() == MediaPlayerMode;
+    return ((currentIndex() == PreviewImageMode) || (currentIndex() == MediaPlayerMode));
 }
 
 bool ImportStackedView::isInMultipleFileMode() const
 {
-    return currentIndex() == PreviewCameraMode || currentIndex() == MapWidgetMode;
+    return ((currentIndex() == PreviewCameraMode) || (currentIndex() == MapWidgetMode));
 }
 
 void ImportStackedView::setPreviewItem(const CamItemInfo& info, const CamItemInfo& previous, const CamItemInfo& next)
@@ -277,9 +308,13 @@ void ImportStackedView::setPreviewItem(const CamItemInfo& info, const CamItemInf
     {
         if (viewMode() == MediaPlayerMode)
         {
+
 #ifdef HAVE_MEDIAPLAYER
+
             d->mediaPlayerView->setCurrentItem();
+
 #endif //HAVE_MEDIAPLAYER
+
         }
         else if (viewMode() == PreviewImageMode)
         {
@@ -292,23 +327,33 @@ void ImportStackedView::setPreviewItem(const CamItemInfo& info, const CamItemInf
             identifyCategoryforMime(info.mime) == QLatin1String("video"))
         {
             // Stop image viewer
+
             if (viewMode() == PreviewImageMode)
             {
                 d->importPreviewView->setCamItemInfo();
             }
+
 #ifdef HAVE_MEDIAPLAYER
+
             setViewMode(MediaPlayerMode);
             d->mediaPlayerView->setCurrentItem(info.url(), !previous.isNull(), !next.isNull());
+
 #endif //HAVE_MEDIAPLAYER
+
         }
         else
         {
             // Stop media player if running...
+
             if (viewMode() == MediaPlayerMode)
             {
+
 #ifdef HAVE_MEDIAPLAYER
+
                 d->mediaPlayerView->setCurrentItem();
+
 #endif //HAVE_MEDIAPLAYER
+
             }
 
             d->importPreviewView->setCamItemInfo(info, previous, next);
@@ -319,6 +364,7 @@ void ImportStackedView::setPreviewItem(const CamItemInfo& info, const CamItemInf
         }
 
         // do not touch the selection, only adjust current info
+
         QModelIndex currentIndex = d->thumbBar->importSortFilterModel()->indexForCamItemInfo(info);
         d->thumbBar->selectionModel()->setCurrentIndex(currentIndex, QItemSelectionModel::NoUpdate);
     }
@@ -336,13 +382,13 @@ ImportStackedView::StackedViewMode ImportStackedView::viewMode() const
 
 void ImportStackedView::setViewMode(const StackedViewMode mode)
 {
-    if (mode != PreviewCameraMode && mode != PreviewImageMode &&
-        mode != MediaPlayerMode   && mode != MapWidgetMode)
+    if ((mode != PreviewCameraMode) && (mode != PreviewImageMode) &&
+        (mode != MediaPlayerMode)   && (mode != MapWidgetMode))
     {
         return;
     }
 
-    if (mode == PreviewImageMode || mode == MediaPlayerMode)
+    if ((mode == PreviewImageMode) || (mode == MediaPlayerMode))
     {
         d->thumbBarDock->restoreVisibility();
         syncSelection(d->importIconView, d->thumbBar);
@@ -352,7 +398,7 @@ void ImportStackedView::setViewMode(const StackedViewMode mode)
         d->thumbBarDock->hide();
     }
 
-    if (mode == PreviewCameraMode || mode == MapWidgetMode)
+    if ((mode == PreviewCameraMode) || (mode == MapWidgetMode))
     {
         setPreviewItem();
         setCurrentIndex(mode);
@@ -363,18 +409,23 @@ void ImportStackedView::setViewMode(const StackedViewMode mode)
     }
 
 #ifdef HAVE_MARBLE
+
     d->mapWidgetView->setActive(mode == MapWidgetMode);
+
 #endif // HAVE_MARBLE
 
-    if (mode == PreviewCameraMode)
+    if      (mode == PreviewCameraMode)
     {
         d->importIconView->setFocus();
     }
+
 #ifdef HAVE_MARBLE
+
     else if (mode == MapWidgetMode)
     {
         d->mapWidgetView->setFocus();
     }
+
 #endif // HAVE_MARBLE
 
     emit signalViewModeChanged();
@@ -387,6 +438,7 @@ void ImportStackedView::syncSelection(ImportCategorizedView* const from, ImportC
     QModelIndex currentIndex               = toModel->indexForCamItemInfo(from->currentInfo());
 
     // sync selection
+
     QItemSelection selection               = from->selectionModel()->selection();
     QItemSelection newSelection;
 
@@ -402,6 +454,7 @@ void ImportStackedView::syncSelection(ImportCategorizedView* const from, ImportC
     if (currentIndex.isValid())
     {
         // set current info
+
         to->setCurrentIndex(currentIndex);
     }
 
@@ -411,7 +464,7 @@ void ImportStackedView::syncSelection(ImportCategorizedView* const from, ImportC
 
 void ImportStackedView::slotThumbBarSelectionChanged()
 {
-    if (currentIndex() != PreviewImageMode && currentIndex() != MediaPlayerMode)
+    if ((currentIndex() != PreviewImageMode) && (currentIndex() != MediaPlayerMode))
     {
         return;
     }
@@ -490,6 +543,7 @@ bool ImportStackedView::minZoom() const
 void ImportStackedView::setZoomFactor(double z)
 {
     // Giving a null anchor means to use the current view center
+
     d->importPreviewView->layout()->setZoomFactor(z, QPoint());
 }
 
