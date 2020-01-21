@@ -92,7 +92,7 @@ PreviewPage::PreviewPage(QWizard* const dlg)
     vlay->setContentsMargins(spacing, spacing, spacing, spacing);
     vlay->setSpacing(spacing);
 
-    QLabel* const label2 = new QLabel(vbox);
+    QLabel* const label2    = new QLabel(vbox);
     label2->setWordWrap(true);
     label2->setText(i18n("<qt>"
                          "<p><i>Note:</i> loading a reduced version of an image is faster but can differ "

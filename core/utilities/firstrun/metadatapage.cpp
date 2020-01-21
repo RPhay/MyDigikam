@@ -64,10 +64,10 @@ MetadataPage::MetadataPage(QWizard* const dlg)
     : DWizardPage(dlg, i18n("<b>Configure Metadata Storage to Files</b>")),
       d(new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing        = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    DVBox* const vbox    = new DVBox(this);
-    QLabel* const label1 = new QLabel(vbox);
+    DVBox* const vbox        = new DVBox(this);
+    QLabel* const label1     = new QLabel(vbox);
     label1->setWordWrap(true);
     label1->setText(i18n("<qt>"
                          "<p>Set here if you want to store the information assigned to items in digiKam in the files' "
@@ -77,13 +77,13 @@ MetadataPage::MetadataPage(QWizard* const dlg)
     QWidget* const btns      = new QWidget(vbox);
     QVBoxLayout* const vlay  = new QVBoxLayout(btns);
 
-    d->metadataStorage = new QButtonGroup(btns);
-    d->doNothing       = new QRadioButton(btns);
+    d->metadataStorage       = new QButtonGroup(btns);
+    d->doNothing             = new QRadioButton(btns);
     d->doNothing->setText(i18n("Do nothing"));
     d->doNothing->setChecked(true);
     d->metadataStorage->addButton(d->doNothing);
 
-    d->storeInFiles    = new QRadioButton(btns);
+    d->storeInFiles          = new QRadioButton(btns);
     d->storeInFiles->setText(i18n("Add information to files"));
     d->metadataStorage->addButton(d->storeInFiles);
 
@@ -92,7 +92,7 @@ MetadataPage::MetadataPage(QWizard* const dlg)
     vlay->setContentsMargins(spacing, spacing, spacing, spacing);
     vlay->setSpacing(spacing);
 
-    QLabel* const label2 = new QLabel(vbox);
+    QLabel* const label2     = new QLabel(vbox);
     label2->setWordWrap(true);
     label2->setText(i18n("<qt>"
                          "<p><i>Note:</i> recording information to the files' metadata can slow down photo "

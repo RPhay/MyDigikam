@@ -66,10 +66,10 @@ OpenFilePage::OpenFilePage(QWizard* const dlg)
     : DWizardPage(dlg, i18n("<b>Configure Open File Behavior</b>")),
       d(new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    DVBox* const vbox    = new DVBox(this);
-    QLabel* const label1 = new QLabel(vbox);
+    DVBox* const vbox       = new DVBox(this);
+    QLabel* const label1    = new QLabel(vbox);
     label1->setWordWrap(true);
     label1->setText(i18n("<qt>"
                          "<p>Specify how images should be opened when left-clicked on in the icon view:</p>"
@@ -78,13 +78,13 @@ OpenFilePage::OpenFilePage(QWizard* const dlg)
     QWidget* const btns     = new QWidget(vbox);
     QVBoxLayout* const vlay = new QVBoxLayout(btns);
 
-    d->openFileBehavior = new QButtonGroup(btns);
-    d->openAsPreview    = new QRadioButton(btns);
+    d->openFileBehavior     = new QButtonGroup(btns);
+    d->openAsPreview        = new QRadioButton(btns);
     d->openAsPreview->setText(i18n("Open a preview"));
     d->openAsPreview->setChecked(true);
     d->openFileBehavior->addButton(d->openAsPreview);
 
-    d->openInEditor = new QRadioButton(btns);
+    d->openInEditor         = new QRadioButton(btns);
     d->openInEditor->setText(i18n("Open in the editor"));
     d->openFileBehavior->addButton(d->openInEditor);
 
@@ -93,7 +93,7 @@ OpenFilePage::OpenFilePage(QWizard* const dlg)
     vlay->setContentsMargins(spacing, spacing, spacing, spacing);
     vlay->setSpacing(spacing);
 
-    QLabel* const label2 = new QLabel(vbox);
+    QLabel* const label2    = new QLabel(vbox);
     label2->setWordWrap(true);
     label2->setText(i18n("<qt>"
                          "<p><i>Note:</i> using a preview is always faster than using the editor, "

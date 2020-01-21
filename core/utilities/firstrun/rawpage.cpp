@@ -65,10 +65,10 @@ RawPage::RawPage(QWizard* const dlg)
     : DWizardPage(dlg, i18n("<b>Configure Raw File Handling</b>")),
       d(new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    DVBox* const vbox    = new DVBox(this);
-    QLabel* const label1 = new QLabel(vbox);
+    DVBox* const vbox       = new DVBox(this);
+    QLabel* const label1    = new QLabel(vbox);
     label1->setWordWrap(true);
     label1->setText(i18n("<qt>"
                          "<p>Set here how you want to open Raw images in the editor:</p>"
@@ -77,13 +77,13 @@ RawPage::RawPage(QWizard* const dlg)
     QWidget* const btns     = new QWidget(vbox);
     QVBoxLayout* const vlay = new QVBoxLayout(btns);
 
-    d->rawHandling    = new QButtonGroup(btns);
-    d->openDirectly   = new QRadioButton(btns);
+    d->rawHandling          = new QButtonGroup(btns);
+    d->openDirectly         = new QRadioButton(btns);
     d->openDirectly->setText(i18n("Open directly, with adjustments made automatically"));
     d->openDirectly->setChecked(true);
     d->rawHandling->addButton(d->openDirectly);
 
-    d->useRawImport   = new QRadioButton(btns);
+    d->useRawImport         = new QRadioButton(btns);
     d->useRawImport->setText(i18n("Use the Raw import tool to adjust corrections manually"));
     d->rawHandling->addButton(d->useRawImport);
 
@@ -92,7 +92,7 @@ RawPage::RawPage(QWizard* const dlg)
     vlay->setContentsMargins(spacing, spacing, spacing, spacing);
     vlay->setSpacing(spacing);
 
-    QLabel* const label2 = new QLabel(vbox);
+    QLabel* const label2    = new QLabel(vbox);
     label2->setWordWrap(true);
     label2->setText(i18n("<qt>"
                          "<p><i>Note:</i> the Raw import tool is designed for advanced users who "

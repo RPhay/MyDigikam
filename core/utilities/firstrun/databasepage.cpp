@@ -94,6 +94,7 @@ void DatabasePage::saveSettings()
 bool DatabasePage::checkSettings()
 {
     // TODO : add checks for Mysql Server.
+
     return d->dbsettingswidget->checkDatabaseSettings();
 }
 

@@ -65,10 +65,10 @@ TooltipsPage::TooltipsPage(QWizard* const dlg)
     : DWizardPage(dlg, i18n("<b>Enabled Contextual Tooltips</b>")),
       d(new Private)
 {
-    const int spacing    = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    DVBox* const vbox    = new DVBox(this);
-    QLabel* const label1 = new QLabel(vbox);
+    DVBox* const vbox       = new DVBox(this);
+    QLabel* const label1    = new QLabel(vbox);
     label1->setWordWrap(true);
     label1->setText(i18n("<qt>"
                          "<p>Set here if you want to show contextual tooltips in icon-view and folder-view:</p>"
@@ -77,13 +77,13 @@ TooltipsPage::TooltipsPage(QWizard* const dlg)
     QWidget* const btns     = new QWidget(vbox);
     QVBoxLayout* const vlay = new QVBoxLayout(btns);
 
-    d->tooltipsBehavior = new QButtonGroup(btns);
-    d->hideTooltips     = new QRadioButton(btns);
+    d->tooltipsBehavior     = new QButtonGroup(btns);
+    d->hideTooltips         = new QRadioButton(btns);
     d->hideTooltips->setText(i18n("Do not show tooltips"));
     d->hideTooltips->setChecked(true);
     d->tooltipsBehavior->addButton(d->hideTooltips);
 
-    d->showTooltips     = new QRadioButton(btns);
+    d->showTooltips         = new QRadioButton(btns);
     d->showTooltips->setText(i18n("Use Tooltips"));
     d->tooltipsBehavior->addButton(d->showTooltips);
 
@@ -92,7 +92,7 @@ TooltipsPage::TooltipsPage(QWizard* const dlg)
     vlay->setContentsMargins(spacing, spacing, spacing, spacing);
     vlay->setSpacing(spacing);
 
-    QLabel* const label2 = new QLabel(vbox);
+    QLabel* const label2    = new QLabel(vbox);
     label2->setWordWrap(true);
     label2->setText(i18n("<qt>"
                          "<p><i>Note:</i> tooltips show photograph and digiKam metadata on the fly, "

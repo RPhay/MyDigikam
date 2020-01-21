@@ -58,14 +58,17 @@ WelcomePage::WelcomePage(QWizard* const dlg)
 #if defined Q_OS_WIN || defined Q_OS_OSX
 
     // Windows settings place.
+
     QString newPlace = QLatin1String("~/Local Settings/");
     QString oldPlace = QLatin1String("~/AppData/Local/");
 
 #if defined Q_OS_OSX
 
     // MacOS settings place.
+
     newPlace         = QLatin1String("~/Library/Preferences/");
     oldPlace         = QLatin1String("~/Library/Preferences/KDE/share/config/");
+
 #endif
 
     text.append(i18n(
@@ -86,8 +89,8 @@ WelcomePage::WelcomePage(QWizard* const dlg)
                      "for the moment, and at your own risk.</p>"
                      "</qt>",
                      newPlace,
-                     oldPlace
-                ));
+                     oldPlace));
+
 #endif
 
     title->setText(text);

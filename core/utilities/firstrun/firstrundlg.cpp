@@ -85,7 +85,7 @@ FirstRunDlg::FirstRunDlg(QWidget* const parent)
                                                    << QWizard::NextButton
                                                    << QWizard::FinishButton);
 
-    d->welcomePage   = new WelcomePage(this);    // First assistant page
+    d->welcomePage    = new WelcomePage(this);    // First assistant page
 
     if (MigrateFromDigikam4Page::checkForMigration())
     {
@@ -163,11 +163,13 @@ void FirstRunDlg::slotFinishPressed()
     if (d->migrateFromDigikam4Page && d->migrateFromDigikam4Page->isMigrationChecked())
     {
        // The user choose to do a migration from digikam4
+
        d->migrateFromDigikam4Page->doMigration();
     }
     else
     {
        // Save settings to rc files.
+
        d->collectionPage->saveSettings();
        d->databasePage->saveSettings();
        d->rawPage->saveSettings();

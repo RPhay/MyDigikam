@@ -70,10 +70,10 @@ CollectionPage::CollectionPage(QWizard* const dlg)
     : DWizardPage(dlg, i18n("<b>Configure where you keep your images</b>")),
       d(new Private)
 {
-    QWidget* const widget      = new QWidget(this);
-    QVBoxLayout* const vlayout = new QVBoxLayout(widget);
+    QWidget* const widget       = new QWidget(this);
+    QVBoxLayout* const vlayout  = new QVBoxLayout(widget);
 
-    QString picturesPath = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+    QString picturesPath        = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << picturesPath;
 
@@ -83,23 +83,25 @@ CollectionPage::CollectionPage(QWizard* const dlg)
                                                 "include the slash in the translation", "/Pictures");
     }
 
-    QLabel* const textLabel1 = new QLabel(widget);
+    QLabel* const textLabel1    = new QLabel(widget);
     textLabel1->setWordWrap(true);
 
-    QString message = i18n("<p>Please enter a location where you keep your images.</p> "
-                           "<p>You can choose any local folder, even one that already contains images."
-                           "<br/> "
-                           "More folders can be added later under the <i>Settings</i> menu. "
-                           "</p> ");
+    QString message             = i18n("<p>Please enter a location where you keep your images.</p> "
+                                       "<p>You can choose any local folder, even one that already contains images."
+                                       "<br/> "
+                                       "More folders can be added later under the <i>Settings</i> menu. "
+                                       "</p> ");
 
 #ifndef Q_OS_WIN
+
     message.append(i18n("<p><i>Note:</i> removable media (such as USB drives or DVDs) and remote file systems "
                         "(such as NFS, or Samba mounted with cifs/smbfs) are supported.</p>"));
+
 #endif
 
     textLabel1->setText(message);
 
-    d->rootAlbumPathRequester = new DFileSelector(widget);
+    d->rootAlbumPathRequester   = new DFileSelector(widget);
     d->rootAlbumPathRequester->setFileDlgMode(QFileDialog::Directory);
     d->rootAlbumPathRequester->setFileDlgOptions(QFileDialog::ShowDirsOnly);
     d->rootAlbumPathRequester->setFileDlgPath(picturesPath);
@@ -206,13 +208,18 @@ bool CollectionPage::checkRootAlbum(QString& rootAlbumFolder)
     QFileInfo path(rootAlbumFolder);
 
 #ifdef Q_OS_WIN
+
     // Work around bug #189168
+
     QTemporaryFile temp;
     temp.setFileTemplate(rootAlbumFolder + QLatin1String("XXXXXX"));
 
     if (!temp.open())
+
 #else
+
     if (!path.isWritable())
+
 #endif
     {
         QMessageBox::information(this, qApp->applicationName(),

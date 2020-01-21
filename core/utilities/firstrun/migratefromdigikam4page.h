@@ -45,7 +45,7 @@ public:
      */
     bool isMigrationChecked() const;
     void doMigration();
-    int  nextId() const;
+    int  nextId()             const;
 
     /**
      * Return true if migration data are available on the system

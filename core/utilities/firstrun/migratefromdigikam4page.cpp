@@ -75,9 +75,9 @@ MigrateFromDigikam4Page::MigrateFromDigikam4Page(QWizard* const dlg)
     : DWizardPage(dlg, i18n("Migration from digiKam 4")),
       d(new Private)
 {
-    const int spacing   = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-    DVBox* const vbox   = new DVBox(this);
-    QLabel* const title = new QLabel(vbox);
+    const int spacing        = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    DVBox* const vbox        = new DVBox(this);
+    QLabel* const title      = new QLabel(vbox);
     title->setWordWrap(true);
     title->setText(i18n("<qt>"
                         "<p><h1><b>Migrate configuration and metadata from digiKam 4</b></h1></p>"
@@ -91,8 +91,8 @@ MigrateFromDigikam4Page::MigrateFromDigikam4Page(QWizard* const dlg)
                         "the configuration files and databases before proceeding.</p>"
                         "</qt>"));
 
-    QWidget* const btns     = new QWidget(vbox);
-    QVBoxLayout* const vlay = new QVBoxLayout(btns);
+    QWidget* const btns      = new QWidget(vbox);
+    QVBoxLayout* const vlay  = new QVBoxLayout(btns);
 
     d->migrateBehavior       = new QButtonGroup(btns);
     d->migrate               = new QRadioButton(btns);
@@ -127,6 +127,7 @@ MigrateFromDigikam4Page::~MigrateFromDigikam4Page()
 void MigrateFromDigikam4Page::doMigration()
 {
     // Migrate digiKam config files from $KDEHOME/share/config/
+
     Kdelibs4ConfigMigrator migrator(QLatin1String("digikam"));
     QStringList configFiles;
     configFiles << QLatin1String("digikamrc")
@@ -136,6 +137,7 @@ void MigrateFromDigikam4Page::doMigration()
     migrator.migrate();
 
     // Migrate digiKam config files from $KDEHOME/share/apps/digikam/
+
     Kdelibs4Migration migration;
     QString oldappdatadir   = migration.locateLocal("data", QLatin1String("digikam"));
     QStringList oldAppFiles = QDir(oldappdatadir).entryList(QDir::Files | QDir::Readable | QDir::NoDotAndDotDot);
@@ -166,9 +168,10 @@ void MigrateFromDigikam4Page::doMigration()
     }
 
     // Migrate $KDEHOME/share/apps/kipi/geobookmarks.xml to ./.local/share/digikam/geobookmarks.xml
+
     QString oldGeobookmarksFile       = migration.locateLocal("data", QLatin1String("kipi/geobookmarks.xml"));
-    const QString newGeobookmarksFile = QStandardPaths::writableLocation(QStandardPaths::DataLocation)
-                                        + QLatin1String("/geobookmarks.xml");
+    const QString newGeobookmarksFile = QStandardPaths::writableLocation(QStandardPaths::DataLocation) +
+                                        QLatin1String("/geobookmarks.xml");
 
     if (QFile(newGeobookmarksFile).exists())
     {
@@ -191,6 +194,7 @@ void MigrateFromDigikam4Page::doMigration()
     // Fix albumroot identifier since digiKam 5 doesn't interpret correctly
     // values like volumeid:?path=%2Fhome%2Fantonio%2FPictures and it needs
     // to be url-decoded.
+
     DbEngineParameters parameters = DbEngineParameters::parametersFromConfig();
     QSqlDatabase databaseHandler  = QSqlDatabase::addDatabase(parameters.databaseType, QLatin1String("digikam4migration"));
 
@@ -211,7 +215,7 @@ void MigrateFromDigikam4Page::doMigration()
 
     while (query.next())
     {
-        int id = query.value(0).toInt();
+        int id             = query.value(0).toInt();
         QString identifier = query.value(1).toString();
 
         if (identifier.startsWith(QLatin1String("volumeid:?path=%2F")))
@@ -244,19 +248,26 @@ void MigrateFromDigikam4Page::migrationToggled(bool b)
 int MigrateFromDigikam4Page::nextId() const
 {
     if (d->migrate->isChecked())
-        return -1;
+    {
+        return (-1);
+    }
     else
+    {
         return QWizardPage::nextId();
+    }
 }
 
 bool MigrateFromDigikam4Page::checkForMigration()
 {
 #ifdef Q_OS_LINUX
+
     ::Kdelibs4Migration migration;
 
     // If there's a digikamrc file in $KDEHOME/share/config,
     // then we create the migration page in the wizard
+
     return (!migration.locateLocal("config", QLatin1String("digikamrc")).isEmpty());
+
 #endif
 
     return false;
