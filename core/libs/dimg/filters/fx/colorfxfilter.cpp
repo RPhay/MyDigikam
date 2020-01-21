@@ -255,7 +255,7 @@ void ColorFXFilter::vivid(DImg* const orgImage, DImg* const destImage, int facto
         prm.values[LuminosityChannel].setPoint(10, QPoint(191, 194));
         prm.values[LuminosityChannel].setPoint(16, QPoint(255, 255));
     }
-    else            // 16 bits image.
+    else                                // 16 bits image.
     {
         prm.values[LuminosityChannel].setPoint(0,  QPoint(0,     0));
         prm.values[LuminosityChannel].setPoint(5,  QPoint(16128, 15360));
@@ -319,7 +319,9 @@ static inline int Lim_Max(int Now, int Up, int Max)
     return (Up);
 }
 
-// Implementation of neon and FindEdges. They share 99% of their code.
+/**
+ * Implementation of neon and FindEdges. They share 99% of their code.
+ */
 void ColorFXFilter::neonFindEdges(DImg* const orgImage, DImg* const destImage, bool neon, int Intensity, int BW)
 {
     int Width         = orgImage->width();
@@ -487,7 +489,9 @@ void ColorFXFilter::loadLut3D(const QString& path)
         else if (img.width() / img.height() == img.height())
         {
             int x, y, w;
+
             // LUT (like Android's Gallery2 uses)
+
             m_lutTableSize = img.height();
             m_lutTable     = new quint16[img.width() * img.height() * 4];
             w              = img.width();
@@ -509,9 +513,11 @@ void ColorFXFilter::loadLut3D(const QString& path)
     }
 }
 
-/* TODO: using liblcms would be fancier... */
-/* Tetrahedral interpolation, taken from AOSP Gallery2 app */
-static __inline__ int interp(const quint16* src, int p, int* off ,float dr, float dg, float db)
+/**
+ * TODO: using liblcms would be fancier...
+ * Tetrahedral interpolation, taken from AOSP Gallery2 app
+ */
+static inline int interp(const quint16* src, int p, int* off ,float dr, float dg, float db)
 {
     float fr00 = (src[p+off[0]])*(1-dr)+(src[p+off[1]])*dr;
     float fr01 = (src[p+off[2]])*(1-dr)+(src[p+off[3]])*dr;
@@ -525,17 +531,25 @@ static __inline__ int interp(const quint16* src, int p, int* off ,float dr, floa
 }
 
 #define unlikely(x)     __builtin_expect(!!(x), 0)
-static __inline__ int clamp(int from, int maxVal)
+static inline int clamp(int from, int maxVal)
 {
-    if (unlikely(from < 0))
+    if      (unlikely(from < 0))
+    {
         from = 0;
+    }
     else if (unlikely(from > 65535))
+    {
         from = 65535;
+    }
 
     if (maxVal == 65535)
+    {
         return from;
+    }
     else
+    {
         return from * maxVal / 65535;
+    }
 }
 
 template<typename T>

@@ -45,7 +45,7 @@ class DIGIKAM_EXPORT ColorFXContainer
 public:
 
     explicit ColorFXContainer()
-      : colorFXType(0),            // ColorFXFilter::Solarize
+      : colorFXType(0),            ///< ColorFXFilter::Solarize
         level(0),
         iterations(2),
         intensity(100),
@@ -131,8 +131,8 @@ private:
 private:
 
     ColorFXContainer m_settings;
-    quint16*         m_lutTable;     // RGBA, A is unused
-    int              m_lutTableSize; // all axis are of this size
+    quint16*         m_lutTable;     ///< RGBA, A is unused
+    int              m_lutTableSize; ///< all axis are of this size
 };
 
 } // namespace Digikam
