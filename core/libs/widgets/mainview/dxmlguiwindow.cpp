@@ -94,11 +94,11 @@ public:
         thumbbarVisibility(true),
         menubarVisibility(true),
         statusbarVisibility(true),
+        dbStatAction(nullptr),
         libsInfoAction(nullptr),
         showMenuBarAction(nullptr),
         showStatusBarAction(nullptr),
         about(nullptr),
-        dbStatAction(nullptr),
         anim(nullptr)
     {
     }
