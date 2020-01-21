@@ -25,9 +25,6 @@
  *
  * ============================================================ */
 
-// Local includes
-
-#include "applicationsettings.h"
 #include "applicationsettings_p.h"
 
 namespace Digikam
@@ -404,7 +401,8 @@ bool ApplicationSettings::showToolTipsIsValid() const
             d->tooltipShowAlbumName  ||
             d->tooltipShowComments   ||
             d->tooltipShowTags       ||
-            d->tooltipShowLabelRating)
+            d->tooltipShowLabelRating
+           )
         {
             return true;
         }
@@ -423,7 +421,7 @@ bool ApplicationSettings::showAlbumToolTipsIsValid() const
             d->tooltipShowAlbumCollection ||
             d->tooltipShowAlbumCaption    ||
             d->tooltipShowAlbumCategory
-        )
+           )
         {
             return true;
         }

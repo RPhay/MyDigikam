@@ -25,9 +25,6 @@
  *
  * ============================================================ */
 
-// Local includes
-
-#include "applicationsettings.h"
 #include "applicationsettings_p.h"
 
 namespace Digikam

@@ -25,9 +25,6 @@
  *
  * ============================================================ */
 
-// Local includes
-
-#include "applicationsettings.h"
 #include "applicationsettings_p.h"
 
 namespace Digikam
@@ -144,13 +141,15 @@ bool ApplicationSettings::addAlbumCategoryName(const QString& name) const
     }
 
     d->albumCategoryNames.append(name);
+
     return true;
 }
 
 bool ApplicationSettings::delAlbumCategoryName(const QString& name) const
 {
     uint count = d->albumCategoryNames.removeAll(name);
-    return (count > 0) ? true : false;
+
+    return ((count > 0) ? true : false);
 }
 
 } // namespace Digikam

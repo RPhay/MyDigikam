@@ -25,15 +25,7 @@
  *
  * ============================================================ */
 
-// Local includes
-
-#include "drawdecoder.h"
-#include "applicationsettings.h"
 #include "applicationsettings_p.h"
-#include "coredbaccess.h"
-#include "coredb.h"
-
-
 
 namespace Digikam
 {
@@ -87,7 +79,8 @@ QString ApplicationSettings::getRawFileFilter() const
     CoreDbAccess().db()->getFilterSettings(&imageSettings, nullptr, nullptr);
 
     // form intersection: those extensions that are supported as RAW as well in the list of allowed extensions
-    for (QStringList::iterator it = supportedRaws.begin(); it != supportedRaws.end(); )
+
+    for (QStringList::iterator it = supportedRaws.begin() ; it != supportedRaws.end() ; )
     {
         if (imageSettings.contains(*it))
         {

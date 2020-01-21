@@ -25,21 +25,6 @@
 
 #include "applicationsettings_p.h"
 
-// Qt includes
-
-#include <QApplication>
-#include <QFontDatabase>
-
-// KDE includes
-
-#include <klocalizedstring.h>
-
-// Local includes
-
-#include "itemfiltersettings.h"
-#include "itemsortsettings.h"
-#include "thumbnailsize.h"
-
 namespace Digikam
 {
 
@@ -162,6 +147,7 @@ ApplicationSettings::OperationStrings ApplicationSettings::Private::createConfig
     out.insert(ApplicationSettings::Slideshow,    QLatin1String("Do slideshow operations on all"));
     out.insert(ApplicationSettings::Rename,       QLatin1String("Rename all"));
     out.insert(ApplicationSettings::Tools,        QLatin1String("Operate tools on all"));
+
     return out;
 }
 
@@ -256,7 +242,7 @@ ApplicationSettings::Private::Private(ApplicationSettings* const qq)
       groupingOperateOnAll(ApplicationSettings::OperationModes()),
       q(qq)
 {
-    for (int i = 0; i != ApplicationSettings::Unspecified; ++i)
+    for (int i = 0 ; i != ApplicationSettings::Unspecified ; ++i)
     {
         groupingOperateOnAll.insert((ApplicationSettings::OperationType)i,
                 ApplicationSettings::Ask);

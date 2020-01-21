@@ -28,27 +28,6 @@
 
 #include "applicationsettings_p.h"
 
-// Qt includes
-
-#include <QApplication>
-#include <QFontDatabase>
-
-// KDE includes
-
-#include <kconfiggroup.h>
-
-#ifdef HAVE_KFILEMETADATA
-#   include "baloowrap.h"
-#endif
-
-// Local includes
-
-#include "itemfiltersettings.h"
-#include "itemsortsettings.h"
-#include "mimefilter.h"
-#include "thumbnailsize.h"
-#include "thememanager.h"
-
 namespace Digikam
 {
 
@@ -77,6 +56,7 @@ ApplicationSettings::ApplicationSettings()
     readSettings();
 
     // Init Max Thumbnail Size at startup.
+
     ThumbnailSize::readSettings(generalConfigGroup());
 }
 
@@ -102,10 +82,14 @@ void ApplicationSettings::emitSetupChanged()
 
 void ApplicationSettings::applyBalooSettings()
 {
+
 #ifdef HAVE_KFILEMETADATA
+
     BalooWrap::instance()->setSyncToBaloo(d->syncToBaloo);
     BalooWrap::instance()->setSyncToDigikam(d->syncToDigikam);
+
 #endif
+
 }
 
 void ApplicationSettings::readSettings()
@@ -448,9 +432,13 @@ void ApplicationSettings::saveSettings()
     group.writeEntry(d->configScrollItemToCenterEntry,                 d->scrollItemToCenter);
     group.writeEntry(d->configShowOnlyPersonTagsInPeopleSidebarEntry,  d->showOnlyPersonTagsInPeopleSidebar);
     group.writeEntry(d->configStringComparisonTypeEntry,               (int) d->stringComparisonType);
+
 #ifdef HAVE_APPSTYLE_SUPPORT
+
     group.writeEntry(d->configApplicationStyleEntry,                   d->applicationStyle);
+
 #endif
+
     group.writeEntry(d->configIconThemeEntry,                          d->applicationIcon);
     group.writeEntry(d->configApplicationFontEntry,                    d->applicationFont);
 
@@ -491,8 +479,8 @@ void ApplicationSettings::saveSettings()
 
     group = config->group(d->configGroupGrouping);
 
-    for (ApplicationSettings::OperationModes::key_iterator it = d->groupingOperateOnAll.keyBegin();
-         it != d->groupingOperateOnAll.keyEnd(); ++it)
+    for (ApplicationSettings::OperationModes::key_iterator it = d->groupingOperateOnAll.keyBegin() ;
+         it != d->groupingOperateOnAll.keyEnd() ; ++it)
     {
         group.writeEntry(d->configGroupingOperateOnAll.value(*it),
                          (int)d->groupingOperateOnAll.value(*it));

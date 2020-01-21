@@ -26,21 +26,47 @@
 #ifndef DIGIKAM_APPLICATION_SETTINGS_PRIVATE_H
 #define DIGIKAM_APPLICATION_SETTINGS_PRIVATE_H
 
+#include "applicationsettings.h"
+
+// C++ includes
+
+#include <stdexcept>
+
+// Qt includes
+
+#include <QApplication>
+#include <QFontDatabase>
 #include <QString>
 #include <QStringList>
 #include <QFont>
+#include <QCheckBox>
+#include <QPointer>
+#include <QMessageBox>
 
 // KDE includes
 
+#include <klocalizedstring.h>
 #include <ksharedconfig.h>
+#include <kconfiggroup.h>
+
+#ifdef HAVE_KFILEMETADATA
+#   include "baloowrap.h"
+#endif
 
 // Local includes
 
-#include "digikam_config.h"
-#include "applicationsettings.h"
 #include "previewsettings.h"
 #include "dbengineparameters.h"
 #include "versionmanager.h"
+#include "itemfiltersettings.h"
+#include "itemsortsettings.h"
+#include "mimefilter.h"
+#include "thumbnailsize.h"
+#include "thememanager.h"
+#include "digikam_debug.h"
+#include "drawdecoder.h"
+#include "coredbaccess.h"
+#include "coredb.h"
 
 namespace Digikam
 {
@@ -166,24 +192,24 @@ public:
     static const QString configDuplicatesSearchLastRestrictions;
     static const ApplicationSettings::OperationStrings configGroupingOperateOnAll;
 
-    // start up setting
+    /// start up setting
     bool                                         showSplash;
-    // file ops settings
+    /// file ops settings
     bool                                         useTrash;
     bool                                         showTrashDeleteDialog;
     bool                                         showPermanentDeleteDialog;
-    // metadata setting
+    /// metadata setting
     bool                                         sidebarApplyDirectly;
-    // file dialog setting
+    /// file dialog setting
     bool                                         useNativeFileDialog;
-    // grouped item draw setting
+    /// grouped item draw setting
     bool                                         drawFramesToGrouped;
-    // item center setting
+    /// item center setting
     bool                                         scrollItemToCenter;
-    // tag filter setting
+    /// tag filter setting
     bool                                         showOnlyPersonTagsInPeopleSidebar;
 
-    // icon view settings
+    /// icon view settings
     bool                                         iconShowName;
     bool                                         iconShowSize;
     bool                                         iconShowDate;
@@ -200,7 +226,7 @@ public:
     bool                                         iconShowAspectRatio;
     QFont                                        iconviewFont;
 
-    // Icon-view tooltip settings
+    /// Icon-view tooltip settings
     bool                                         showToolTips;
     bool                                         tooltipShowFileName;
     bool                                         tooltipShowFileDate;
@@ -231,7 +257,7 @@ public:
 
     QFont                                        toolTipsFont;
 
-    // Folder-view tooltip settings
+    /// Folder-view tooltip settings
     bool                                         showAlbumToolTips;
     bool                                         tooltipShowAlbumTitle;
     bool                                         tooltipShowAlbumDate;
@@ -240,34 +266,34 @@ public:
     bool                                         tooltipShowAlbumCaption;
     bool                                         tooltipShowAlbumPreview;
 
-    // preview settings
+    /// preview settings
     PreviewSettings                              previewSettings;
     bool                                         previewShowIcons;
     bool                                         showThumbbar;
 
     bool                                         showFolderTreeViewItemsCount;
 
-    // tree-view settings
+    /// tree-view settings
     int                                          treeThumbnailSize;
     QFont                                        treeviewFont;
 
-    // icon view settings
+    /// icon view settings
     int                                          thumbnailSize;
     int                                          ratingFilterCond;
     bool                                         recursiveAlbums;
     bool                                         recursiveTags;
     bool                                         allGroupsOpen;
 
-    // theme settings
+    /// theme settings
     QString                                      currentTheme;
 
-    // database settings
+    /// database settings
     DbEngineParameters                           databaseParams;
     bool                                         scanAtStart;
     bool                                         cleanAtStart;
     bool                                         databaseDirSetAtCmd;
 
-    // album settings
+    /// album settings
     bool                                         albumMonitoring;
 
     QStringList                                  albumCategoryNames;
@@ -276,29 +302,29 @@ public:
 
     DMultiTabBar::TextStyle                      sidebarTitleStyle;
 
-    // album view settings
+    /// album view settings
     ApplicationSettings::AlbumSortRole           albumSortRole;
     bool                                         albumSortChanged;
 
-    // icon view settings
+    /// icon view settings
     int                                          imageSortOrder;
     int                                          imageSorting;
     int                                          imageSeparationMode;
     int                                          imageSeparationSortOrder;
     ApplicationSettings::ItemLeftClickAction     itemLeftClickAction;
 
-    // Baloo settings
+    /// Baloo settings
     bool                                         syncToDigikam;
     bool                                         syncToBaloo;
 
-    // versioning settings
+    /// versioning settings
 
     VersionManagerSettings                       versionSettings;
 
-    // face detection settings
+    /// face detection settings
     double                                       faceDetectionAccuracy;
 
-    //misc
+    /// misc
     ApplicationSettings::StringComparisonType    stringComparisonType;
     QString                                      applicationStyle;
     QString                                      applicationIcon;
@@ -310,7 +336,7 @@ public:
     int                                          duplicatesSearchLastAlbumTagRelation;
     int                                          duplicatesSearchLastRestrictions;
 
-    // Grouping operation settings
+    /// Grouping operation settings
     ApplicationSettings::OperationModes          groupingOperateOnAll;
 
 private:

@@ -25,9 +25,6 @@
  *
  * ============================================================ */
 
-// Local includes
-
-#include "applicationsettings.h"
 #include "applicationsettings_p.h"
 
 namespace Digikam
@@ -36,6 +33,7 @@ namespace Digikam
 void ApplicationSettings::setSyncBalooToDigikam(bool val)
 {
     d->syncToDigikam = val;
+
     emit balooSettingsChanged();
 }
 
@@ -47,6 +45,7 @@ bool ApplicationSettings::getSyncBalooToDigikam() const
 void ApplicationSettings::setSyncDigikamToBaloo(bool val)
 {
     d->syncToBaloo = val;
+
     emit balooSettingsChanged();
 }
 

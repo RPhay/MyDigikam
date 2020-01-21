@@ -38,6 +38,7 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "sidebar.h"
 #include "dbengineparameters.h"
 #include "versionmanager.h"
@@ -101,12 +102,9 @@ public:
         Slideshow,
         Rename,
         Tools,
-        Unspecified // This element must always come last
+        Unspecified ///< This element must always come last
     };
 
-    /**
-     *
-     */
     enum ApplyToEntireGroup
     {
         No = 0,
@@ -205,7 +203,9 @@ public:
     void setImageSortOrder(int order);
     int  getImageSortOrder() const;
 
-    // means ascending or descending
+    /**
+     * means ascending or descending
+     */
     void setImageSorting(int sorting);
     int  getImageSorting() const;
 
@@ -491,6 +491,7 @@ public:
      * @param applyAll Whether to apply to all images or just one, or ask
      */
     void setGroupingOperateOnAll(OperationType type, ApplyToEntireGroup applyAll);
+
     /**
      * Tells whether an operation should be performed on all grouped items
      * or just the head item.
@@ -499,6 +500,7 @@ public:
      * @return Whether to apply to all images or just one, or ask
      */
     ApplyToEntireGroup getGroupingOperateOnAll(OperationType type) const;
+
     /**
      * Asks the user whether the operation should be performed on all grouped
      * images or just the first. Also supplies an option to remember the answer.
@@ -507,6 +509,7 @@ public:
      * @return Whether to apply to all images or just one
      */
     bool askGroupingOperateOnAll(OperationType type);
+
     /**
      * Gives the translated title/short explanation of the operation
      *
@@ -514,6 +517,7 @@ public:
      * @return Translated operation title/short explanation
      */
     static QString operationTypeTitle(OperationType type);
+
     /**
      * Gives a translated explanation of the operation and an empty string,
      * if there is none (e.g. for tooltips)
