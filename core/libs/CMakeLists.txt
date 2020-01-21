@@ -27,6 +27,7 @@ else()
 
                     # DNG SDK
                     -DqDNGUseStdInt
+                    -DqWinOS            # There is no Linux flag for DNG sdk
                    )
 endif()
 
