@@ -49,7 +49,8 @@ public:
     ~FCThread();
 
     void createCopyJobs(const QList<QUrl>& itemsList,
-                        const QUrl& dstUrl, bool overwrite);
+                        const QUrl& dstUrl,
+                        bool overwrite, bool symLinks);
     void cancel();
 
 Q_SIGNALS:

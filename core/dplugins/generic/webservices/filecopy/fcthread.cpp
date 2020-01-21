@@ -46,13 +46,14 @@ FCThread::~FCThread()
 }
 
 void FCThread::createCopyJobs(const QList<QUrl>& itemsList,
-                              const QUrl& dstUrl, bool overwrite)
+                              const QUrl& dstUrl,
+                              bool overwrite, bool symLinks)
 {
     ActionJobCollection collection;
 
     foreach (const QUrl& srcUrl, itemsList)
     {
-        FCTask* const t = new FCTask(srcUrl, dstUrl, overwrite);
+        FCTask* const t = new FCTask(srcUrl, dstUrl, overwrite, symLinks);
 
         connect(t, SIGNAL(signalUrlProcessed(QUrl,QUrl)),
                 this, SIGNAL(signalUrlProcessed(QUrl,QUrl)));

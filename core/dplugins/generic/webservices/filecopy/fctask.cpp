@@ -50,23 +50,27 @@ class Q_DECL_HIDDEN FCTask::Private
 public:
 
     explicit Private()
+      : overwrite(false),
+        symLinks(false)
     {
-        overwrite = false;
     }
 
-    QUrl    srcUrl;
-    QUrl    dstUrl;
-    bool    overwrite;
+    QUrl srcUrl;
+    QUrl dstUrl;
+    bool overwrite;
+    bool symLinks;
 };
 
 FCTask::FCTask(const QUrl& srcUrl,
-               const QUrl& dstUrl, bool overwrite)
+               const QUrl& dstUrl,
+               bool overwrite, bool symLinks)
     : ActionJob(),
       d(new Private)
 {
     d->srcUrl    = srcUrl;
     d->dstUrl    = dstUrl;
     d->overwrite = overwrite;
+    d->symLinks  = symLinks;
 }
 
 FCTask::~FCTask()
@@ -78,7 +82,9 @@ FCTask::~FCTask()
 void FCTask::run()
 {
     if (m_cancel)
+    {
         return;
+    }
 
     QUrl dest = d->dstUrl.adjusted(QUrl::StripTrailingSlash);
     dest.setPath(dest.path() +
@@ -90,13 +96,23 @@ void FCTask::run()
         QFile::remove(dest.toLocalFile());
     }
 
-    bool ok   = QFile::copy(d->srcUrl.toLocalFile(),
-                            dest.toLocalFile());
+    bool ok = false;
+
+    if (d->symLinks)
+    {
+        ok = QFile::link(d->srcUrl.toLocalFile(),
+                         dest.toLocalFile());
+    }
+    else
+    {
+        ok = QFile::copy(d->srcUrl.toLocalFile(),
+                         dest.toLocalFile());
+    }
 
     // Since QFileInfo does not support timestamp updates,
     // we have to use the utime() system call.
 
-    if (ok)
+    if (ok && !d->symLinks)
     {
         QT_STATBUF st;
 
@@ -112,7 +128,10 @@ void FCTask::run()
                                                  << dest;
             }
         }
+    }
 
+    if (ok)
+    {
         emit signalUrlProcessed(d->srcUrl, dest);
     }
 

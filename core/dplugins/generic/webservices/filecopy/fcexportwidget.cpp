@@ -50,17 +50,19 @@ class Q_DECL_HIDDEN FCExportWidget::Private
 public:
 
     explicit Private()
+      : selector(nullptr),
+        imageList(nullptr),
+        overwrite(nullptr),
+        symLinks(nullptr)
     {
-        selector      = nullptr;
-        imageList     = nullptr;
-        overwrite     = nullptr;
     }
 
-    DFileSelector*      selector;
-    DItemsList*         imageList;
-    QCheckBox*          overwrite;
+    DFileSelector* selector;
+    DItemsList*    imageList;
+    QCheckBox*     overwrite;
+    QCheckBox*     symLinks;
 
-    QUrl                targetUrl;
+    QUrl           targetUrl;
 
 };
 
@@ -74,6 +76,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     QLabel* const label = new QLabel(hbox);
     d->selector         = new DFileSelector(hbox);
     d->overwrite        = new QCheckBox(i18n("Overwrite existing items in the target"), this);
+    d->symLinks         = new QCheckBox(i18n("Create symlinks in the target"), this);
 
     label->setText(i18n("Target location: "));
     d->selector->setFileDlgMode(QFileDialog::Directory);
@@ -94,6 +97,7 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 
     layout->addWidget(hbox);
     layout->addWidget(d->overwrite);
+    layout->addWidget(d->symLinks);
     layout->addWidget(d->imageList);
     layout->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
     layout->setContentsMargins(QMargins());
@@ -131,6 +135,11 @@ DItemsList* FCExportWidget::imagesList() const
 QCheckBox* FCExportWidget::overwriteBox() const
 {
     return d->overwrite;
+}
+
+QCheckBox* FCExportWidget::symLinksBox() const
+{
+    return d->symLinks;
 }
 
 void FCExportWidget::slotLabelUrlChanged()

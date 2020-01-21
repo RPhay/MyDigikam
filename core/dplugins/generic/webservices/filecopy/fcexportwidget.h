@@ -71,6 +71,11 @@ public:
     QCheckBox* overwriteBox() const;
 
     /**
+     * Returns a pointer to the symLinks QCheckBox.
+     */
+    QCheckBox* symLinksBox() const;
+
+    /**
      * Returns the currently selected target url. Maybe invalid.
      */
     QUrl targetUrl() const;
