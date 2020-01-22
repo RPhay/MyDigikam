@@ -225,7 +225,8 @@ cd $ORIG_WD/installer
 
 makensis -DVERSION=$DK_RELEASEID -DBUNDLEPATH=$BUNDLEDIR -DTARGETARCH=$MXE_ARCHBITS -DOUTPUT=$ORIG_WD/bundle/$TARGET_INSTALLER ./digikam.nsi
 
-tar cf - $(basename $BUNDLEDIR) --transform s/temp/digiKam/ | xz -4e > $ORIG_WD/bundle/$PORTABLE_FILE
+cd $ORIG_WD
+tar cf - `basename $BUNDLEDIR` --transform s/temp/digiKam/ | xz -4e > $ORIG_WD/bundle/$PORTABLE_FILE
 
 #################################################################################################
 # Show resume information and future instructions to host target files on remote server
