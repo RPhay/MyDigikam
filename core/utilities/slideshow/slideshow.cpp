@@ -77,9 +77,13 @@ public:
           screenSaverCookie(-1),
           mouseMoveTimer(nullptr),
           imageView(nullptr),
+
 #ifdef HAVE_MEDIAPLAYER
+
           videoView(nullptr),
+
 #endif
+
           errorView(nullptr),
           endView(nullptr),
           osd(nullptr)
@@ -89,12 +93,16 @@ public:
     int               fileIndex;
     int               screenSaverCookie;
 
-    QTimer*           mouseMoveTimer;  // To hide cursor when not moved.
+    QTimer*           mouseMoveTimer;  ///< To hide cursor when not moved.
 
     SlideImage*       imageView;
+
 #ifdef HAVE_MEDIAPLAYER
+
     SlideVideo*       videoView;
+
 #endif
+
     SlideError*       errorView;
     SlideEnd*         endView;
     SlideOSD*         osd;
@@ -138,6 +146,7 @@ SlideShow::SlideShow(DInfoInterface* const iface, const SlideShowSettings& setti
     // ---------------------------------------------------------------
 
 #ifdef HAVE_MEDIAPLAYER
+
     d->videoView = new SlideVideo(this);
     d->videoView->setInfoInterface(d->settings.iface);
     d->videoView->installEventFilter(this);
@@ -149,6 +158,7 @@ SlideShow::SlideShow(DInfoInterface* const iface, const SlideShowSettings& setti
             this, SLOT(slotVideoFinished()));
 
     insertWidget(VideoView, d->videoView);
+
 #endif
 
     // ---------------------------------------------------------------
@@ -179,14 +189,16 @@ SlideShow::SlideShow(DInfoInterface* const iface, const SlideShowSettings& setti
     if (QWidget* const widget = qApp->activeWindow())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     const int activeScreenIndex = qMax(qApp->screens().indexOf(screen), 0);
     const int preferenceScreen  = d->settings.slideScreen;
     int screenIndex             = 0;
 
-    if (preferenceScreen == -2)
+    if      (preferenceScreen == -2)
     {
         screenIndex = activeScreenIndex;
     }
@@ -244,28 +256,40 @@ void SlideShow::setCurrentView(SlideShowViewMode view)
             break;
 
         case ImageView:
+
 #ifdef HAVE_MEDIAPLAYER
+
             d->videoView->stop();
             d->osd->video(false);
+
 #endif
+
             setCurrentIndex(view);
             d->osd->setCurrentUrl(currentItem());
             break;
 
         case VideoView:
+
 #ifdef HAVE_MEDIAPLAYER
+
             d->osd->video(true);
             d->osd->pause(false);
             setCurrentIndex(view);
             d->osd->setCurrentUrl(currentItem());
+
 #endif
+
             break;
 
         default : // EndView
+
 #ifdef HAVE_MEDIAPLAYER
+
             d->videoView->stop();
             d->osd->video(false);
+
 #endif
+
             d->osd->pause(true);
             setCurrentIndex(view);
             break;
@@ -313,6 +337,7 @@ void SlideShow::slotLoadNextItem()
     {
 
 #ifdef HAVE_MEDIAPLAYER
+
         QMimeDatabase mimeDB;
 
         if (mimeDB.mimeTypeForFile(currentItem().toLocalFile())
@@ -321,6 +346,7 @@ void SlideShow::slotLoadNextItem()
             d->videoView->setCurrentUrl(currentItem());
             return;
         }
+
 #endif
 
         d->imageView->setLoadUrl(currentItem());
@@ -353,7 +379,7 @@ void SlideShow::slotLoadPrevItem()
         d->osd->toolBar()->setEnabledNext(d->fileIndex < (num - 1));
     }
 
-    if (d->fileIndex >= 0 && d->fileIndex < num)
+    if ((d->fileIndex >= 0) && (d->fileIndex < num))
     {
 
 #ifdef HAVE_MEDIAPLAYER
@@ -393,8 +419,11 @@ void SlideShow::slotImageLoaded(bool loaded)
     }
     else
     {
+
 #ifdef HAVE_MEDIAPLAYER
+
         // Try to load only GIF Images
+
         QMimeDatabase mimeDB;
 
         if (mimeDB.mimeTypeForFile(currentItem().toLocalFile())
@@ -402,9 +431,13 @@ void SlideShow::slotImageLoaded(bool loaded)
         {
             d->videoView->setCurrentUrl(currentItem());
         }
+
 #else
+
         preloadNextItem();
+
 #endif
+
     }
 
     d->osd->setLoadingReady(true);
@@ -419,6 +452,7 @@ void SlideShow::slotVideoLoaded(bool loaded)
     else
     {
         // Failed to load item
+
         setCurrentView(ErrorView);
 
         if (d->fileIndex != -1)
@@ -469,6 +503,7 @@ void SlideShow::preloadNextItem()
         QUrl nextItem = d->settings.fileList.value(index);
 
 #ifdef HAVE_MEDIAPLAYER
+
         QMimeDatabase mimeDB;
 
         if (mimeDB.mimeTypeForFile(nextItem.toLocalFile())
@@ -476,6 +511,7 @@ void SlideShow::preloadNextItem()
         {
             return;
         }
+
 #endif
 
         d->imageView->setPreloadUrl(nextItem);
@@ -495,6 +531,7 @@ void SlideShow::wheelEvent(QWheelEvent* e)
         if (d->fileIndex == -1)
         {
             // EndView => backward.
+
             d->fileIndex = d->settings.count();
         }
 
@@ -508,10 +545,11 @@ void SlideShow::mousePressEvent(QMouseEvent* e)
     if (d->fileIndex == -1)
     {
         // EndView => close Slideshow view.
+
         close();
     }
 
-    if (e->button() == Qt::LeftButton)
+    if      (e->button() == Qt::LeftButton)
     {
         d->osd->pause(true);
         slotLoadNextItem();
@@ -521,6 +559,7 @@ void SlideShow::mousePressEvent(QMouseEvent* e)
         if (d->fileIndex == -1)
         {
             // EndView => backward.
+
             d->fileIndex = d->settings.count() - 1;
         }
 
@@ -552,7 +591,9 @@ bool SlideShow::eventFilter(QObject* obj, QEvent* ev)
         setCursor(QCursor(Qt::ArrowCursor));
 
 #ifdef HAVE_MEDIAPLAYER
+
         d->videoView->showIndicator(true);
+
 #endif
 
         d->mouseMoveTimer->start();
@@ -560,6 +601,7 @@ bool SlideShow::eventFilter(QObject* obj, QEvent* ev)
     }
 
     // pass the event on to the parent class
+
     return QWidget::eventFilter(obj, ev);
 }
 
@@ -571,15 +613,22 @@ void SlideShow::slotMouseMoveTimeOut()
     }
 
 #ifdef HAVE_MEDIAPLAYER
+
     d->videoView->showIndicator(false);
+
 #endif
+
 }
 
-// From Okular's presentation widget
-// TODO: Add OSX and Windows support
+/**
+ * Inspired from Okular's presentation widget
+ * TODO: Add OSX and Windows support
+ */
 void SlideShow::inhibitScreenSaver()
 {
+
 #ifdef HAVE_DBUS
+
     QDBusMessage message = QDBusMessage::createMethodCall(QLatin1String("org.freedesktop.ScreenSaver"),
                                                           QLatin1String("/ScreenSaver"),
                                                           QLatin1String("org.freedesktop.ScreenSaver"),
@@ -593,12 +642,16 @@ void SlideShow::inhibitScreenSaver()
     {
         d->screenSaverCookie = reply.value();
     }
+
 #endif
+
 }
 
 void SlideShow::allowScreenSaver()
 {
+
 #ifdef HAVE_DBUS
+
     if (d->screenSaverCookie != -1)
     {
         QDBusMessage message = QDBusMessage::createMethodCall(QLatin1String("org.freedesktop.ScreenSaver"),
@@ -608,7 +661,9 @@ void SlideShow::allowScreenSaver()
         message << (uint)d->screenSaverCookie;
         QDBusConnection::sessionBus().send(message);
     }
+
 #endif
+
 }
 
 void SlideShow::slotAssignRating(int rating)
@@ -619,6 +674,7 @@ void SlideShow::slotAssignRating(int rating)
     d->settings.iface->setItemInfo(currentItem(), info);
 
     dispatchCurrentInfoChange(currentItem());
+
     emit signalRatingChanged(currentItem(), rating);
 }
 
@@ -630,6 +686,7 @@ void SlideShow::slotAssignColorLabel(int color)
     d->settings.iface->setItemInfo(currentItem(), info);
 
     dispatchCurrentInfoChange(currentItem());
+
     emit signalColorLabelChanged(currentItem(), color);
 }
 
@@ -641,6 +698,7 @@ void SlideShow::slotAssignPickLabel(int pick)
     d->settings.iface->setItemInfo(currentItem(), info);
 
     dispatchCurrentInfoChange(currentItem());
+
     emit signalPickLabelChanged(currentItem(), pick);
 }
 
@@ -664,13 +722,17 @@ void SlideShow::dispatchCurrentInfoChange(const QUrl& url)
 
 void SlideShow::slotPause()
 {
+
 #ifdef HAVE_MEDIAPLAYER
+
     if (currentIndex() == VideoView)
     {
         d->videoView->pause(true);
     }
     else
+
 #endif
+
     {
         d->osd->pause(true);
     }
@@ -678,13 +740,17 @@ void SlideShow::slotPause()
 
 void SlideShow::slotPlay()
 {
+
 #ifdef HAVE_MEDIAPLAYER
+
     if (currentIndex() == VideoView)
     {
         d->videoView->pause(false);
     }
     else
+
 #endif
+
     {
         d->osd->pause(false);
     }
@@ -707,6 +773,7 @@ void SlideShow::slotScreenSelected(int screen)
     setWindowState(windowState() | Qt::WindowFullScreen);
 
     // update OSD position
+
     if (d->fileIndex != -1)
     {
         qApp->processEvents();

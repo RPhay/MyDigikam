@@ -62,101 +62,125 @@ public:
 
 public:
 
-    // Global Slide Show Settings
+    /// Global Slide Show Settings
 
-    /** Start Slide with current selected item
+    /**
+     * Start Slide with current selected item
      */
     bool                         startWithCurrent;
 
-    /** Auto-rotate image accordingly with Exif Rotation tag
+    /**
+     * Auto-rotate image accordingly with Exif Rotation tag
      */
     bool                         exifRotate;
 
-    /** Print picture file name while slide
+    /**
+     * Print picture file name while slide
      */
     bool                         printName;
 
-    /** Print picture creation date while slide
+    /**
+     * Print picture creation date while slide
      */
     bool                         printDate;
 
-    /** Print camera Aperture and Focal while slide
+    /**
+     * Print camera Aperture and Focal while slide
      */
     bool                         printApertureFocal;
 
-    /** Print camera Make and Model while slide
+    /**
+     * Print camera Make and Model while slide
      */
     bool                         printMakeModel;
 
-    /** Print camera Exposure and Sensitivity while slide
+    /**
+     * Print camera Exposure and Sensitivity while slide
      */
     bool                         printExpoSensitivity;
 
-    /** Print picture comment while slide
+    /**
+     * Print picture comment while slide
      */
     bool                         printComment;
 
-    /** Print image title while slide
+    /**
+     * Print image title while slide
      */
     bool                         printTitle;
 
-    /** Print image captions if no title available while slide
+    /**
+     * Print image captions if no title available while slide
      */
     bool                         printCapIfNoTitle;
 
-    /** Print tag names while slide
+    /**
+     * Print tag names while slide
      */
     bool                         printTags;
 
-    /** Print color label and pick label while slide
+    /**
+     * Print color label and pick label while slide
      */
     bool                         printLabels;
 
-    /** Print rating while slide
+    /**
+     * Print rating while slide
      */
     bool                         printRating;
 
-    /** Slide pictures in loop
+    /**
+     * Slide pictures in loop
      */
     bool                         loop;
 
-    /** Suffle pictures
-    */
+    /**
+     * Suffle pictures
+     */
     bool                         suffle;
 
-    /** Delay in seconds
+    /**
+     * Delay in seconds
      */
     int                          delay;
 
-    /** Whether to enable the auto-move feature.
+    /**
+     * Whether to enable the auto-move feature.
      */
     bool                         autoPlayEnabled;
 
-    /** Screen to use in case of multi-monitor computer.
+    /**
+     * Screen to use in case of multi-monitor computer.
      */
     int                          slideScreen;
 
-    /** Show progress indicator
+    /**
+     * Show progress indicator
      */
     bool                         showProgressIndicator;
 
-    /** Load images (previews) in full size, not reduced version
+    /**
+     * Load images (previews) in full size, not reduced version
      */
     PreviewSettings              previewSettings;
 
-    /** List of pictures URL to slide
+    /**
+     * List of pictures URL to slide
      */
     QList<QUrl>                  fileList;
 
-    /** URL of the first image to show if requested
+    /**
+     * URL of the first image to show if requested
      */
     QUrl                         imageUrl;
 
-    /** Font for the display of caption text
+    /**
+     * Font for the display of caption text
      */
     QFont                        captionFont;
 
-    /** Interface to access to host application data
+    /**
+     * Interface to access to host application data
      */
     DInfoInterface*              iface;
 

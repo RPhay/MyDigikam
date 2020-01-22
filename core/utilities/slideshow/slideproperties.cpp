@@ -112,7 +112,9 @@ void SlideProperties::paintEvent(QPaintEvent*)
     DItemInfo item(d->infoMap);
 
     QString str;
-    //PhotoInfoContainer photoInfo = d->info.photoInfo;
+/*
+    PhotoInfoContainer photoInfo = d->info.photoInfo;
+*/
     QString comment  = item.comment();
     QString title    = item.title();
     QStringList tags = item.keywords();
@@ -320,9 +322,9 @@ void SlideProperties::printComments(QPainter& p, int& offset, const QString& com
         uint commentsLinesLengthLocal = d->maxStringLen;
 
         for (currIndex = commentsIndex ;
-             currIndex < (uint)comments.length() && !breakLine ; ++currIndex)
+             (currIndex < (uint)comments.length()) && !breakLine ; ++currIndex)
         {
-            if (comments.at(currIndex) == QLatin1Char('\n') || comments.at(currIndex).isSpace())
+            if ((comments.at(currIndex) == QLatin1Char('\n')) || comments.at(currIndex).isSpace())
             {
                 breakLine = true;
             }
@@ -336,8 +338,8 @@ void SlideProperties::printComments(QPainter& p, int& offset, const QString& com
         breakLine = false;
 
         for (currIndex = commentsIndex ;
-             currIndex <= commentsIndex + commentsLinesLengthLocal &&
-             currIndex < (uint)comments.length() && !breakLine ;
+             (currIndex <= (commentsIndex + commentsLinesLengthLocal)) &&
+             (currIndex < (uint)comments.length()) && !breakLine ;
              ++currIndex)
         {
             breakLine = (comments.at(currIndex) == QLatin1Char('\n')) ? true : false;

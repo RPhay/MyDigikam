@@ -54,13 +54,13 @@ public:
 
     void pause(bool b);
     void video(bool b);
-    bool isPaused() const;
-    bool isUnderMouse() const;
+    bool isPaused()                 const;
+    bool isUnderMouse()             const;
     void toggleProperties();
     void setLoadingReady(bool b);
 
 
-    SlideToolBar* toolBar() const;
+    SlideToolBar* toolBar()         const;
 
 private Q_SLOTS:
 

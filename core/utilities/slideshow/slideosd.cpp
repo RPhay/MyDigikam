@@ -63,7 +63,7 @@ public:
         video(false),
         blink(false),
         ready(false),
-        refresh(1000),       // Progress bar refresh in ms
+        refresh(1000),       ///< Progress bar refresh in ms
         progressBar(nullptr),
         progressTimer(nullptr),
         labelsBox(nullptr),
@@ -267,6 +267,7 @@ void SlideOSD::setCurrentUrl(const QUrl& url)
     }
 
     // Make the OSD the proper size
+
     layout()->activate();
     resize(sizeHint());
 
@@ -275,7 +276,9 @@ void SlideOSD::setCurrentUrl(const QUrl& url)
     if (QWidget* const widget = nativeParentWidget())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     QRect geometry(screen->availableGeometry());
@@ -286,17 +289,20 @@ void SlideOSD::setCurrentUrl(const QUrl& url)
 
 bool SlideOSD::eventFilter(QObject* obj, QEvent* ev)
 {
-    if (obj == d->labelsBox                    ||
-        obj == d->ratingWidget                 ||
-        obj == d->clWidget                     ||
-        obj == d->plWidget                     ||
-        obj == d->clWidget->colorLabelWidget() ||
-        obj == d->plWidget->pickLabelWidget())
+    if (
+        (obj == d->labelsBox)                    ||
+        (obj == d->ratingWidget)                 ||
+        (obj == d->clWidget)                     ||
+        (obj == d->plWidget)                     ||
+        (obj == d->clWidget->colorLabelWidget()) ||
+        (obj == d->plWidget->pickLabelWidget())
+       )
     {
         if (ev->type() == QEvent::Enter)
         {
             d->paused = isPaused();
             d->parent->slotPause();
+
             return false;
         }
 
@@ -312,6 +318,7 @@ bool SlideOSD::eventFilter(QObject* obj, QEvent* ev)
     }
 
     // pass the event on to the parent class
+
     return QWidget::eventFilter(obj, ev);
 }
 
@@ -321,7 +328,7 @@ void SlideOSD::slotProgressTimer()
                     .arg(QString::number(d->settings.fileList.indexOf(d->parent->currentItem()) + 1))
                     .arg(QString::number(d->settings.fileList.count()));
 
-    if (isPaused())
+    if      (isPaused())
     {
         d->blink = !d->blink;
 
@@ -378,11 +385,13 @@ bool SlideOSD::isPaused() const
 
 bool SlideOSD::isUnderMouse() const
 {
-    return (d->ratingWidget->underMouse() ||
+    return (
+            d->ratingWidget->underMouse() ||
             d->progressBar->underMouse()  ||
             d->clWidget->underMouse()     ||
             d->plWidget->underMouse()     ||
-            d->toolBar->underMouse());
+            d->toolBar->underMouse()
+           );
 }
 
 void SlideOSD::toggleProperties()

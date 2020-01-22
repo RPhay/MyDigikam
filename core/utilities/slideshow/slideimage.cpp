@@ -98,7 +98,9 @@ void SlideImage::setLoadUrl(const QUrl& url)
     if (QWidget* const widget = nativeParentWidget())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     QSize desktopSize = screen->geometry().size();
@@ -109,12 +111,15 @@ void SlideImage::setLoadUrl(const QUrl& url)
 void SlideImage::setPreloadUrl(const QUrl& url)
 {
     // calculate preview size which is used for fast previews
+
     QScreen* screen = qApp->primaryScreen();
 
     if (QWidget* const widget = nativeParentWidget())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     QSize desktopSize = screen->geometry().size();
@@ -159,24 +164,25 @@ void SlideImage::slotGotImagePreview(const LoadingDescription& desc, const DImg&
 
 void SlideImage::updatePixmap()
 {
-    /* For high resolution ("retina") displays, Mac OS X / Qt
-       report only half of the physical resolution in terms of
-       pixels, i.e. every logical pixels corresponds to 2x2
-       physical pixels. However, UI elements and fonts are
-       nevertheless rendered at full resolution, and pixmaps
-       as well, provided their resolution is high enough (that
-       is, higher than the reported, logical resolution).
-
-       To work around this, we render the photos not a logical
-       resolution, but with the photo's full resolution, but
-       at the screen's aspect ratio. When we later draw this
-       high resolution bitmap, it is up to Qt to scale the
-       photo to the true physical resolution.  The ratio
-       computed below is the ratio between the photo and
-       screen resolutions, or equivalently the factor by which
-       we need to increase the pixel size of the rendered
-       pixmap.
-    */
+    /**
+     * For high resolution ("retina") displays, Mac OS X / Qt
+     * report only half of the physical resolution in terms of
+     * pixels, i.e. every logical pixels corresponds to 2x2
+     * physical pixels. However, UI elements and fonts are
+     * nevertheless rendered at full resolution, and pixmaps
+     * as well, provided their resolution is high enough (that
+     * is, higher than the reported, logical resolution).
+     *
+     * To work around this, we render the photos not a logical
+     * resolution, but with the photo's full resolution, but
+     * at the screen's aspect ratio. When we later draw this
+     * high resolution bitmap, it is up to Qt to scale the
+     * photo to the true physical resolution.  The ratio
+     * computed below is the ratio between the photo and
+     * screen resolutions, or equivalently the factor by which
+     * we need to increase the pixel size of the rendered
+     * pixmap.
+     */
 
     double ratio   = qApp->devicePixelRatio();
 

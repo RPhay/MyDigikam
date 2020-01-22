@@ -122,7 +122,9 @@ SlideToolBar::SlideToolBar(const SlideShowSettings& settings, QWidget* const par
             group->addAction(act);
 
             if (i == settings.slideScreen)
-                act->setChecked(true);
+            {
+               act->setChecked(true);
+            }
         }
 
         connect(screenMenu, SIGNAL(triggered(QAction*)),
@@ -189,11 +191,13 @@ void SlideToolBar::slotPlayBtnToggled()
     if (d->playBtn->isChecked())
     {
         d->playBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
+
         emit signalPause();
     }
     else
     {
         d->playBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-pause")));
+
         emit signalPlay();
     }
 }
@@ -204,6 +208,7 @@ void SlideToolBar::slotNexPrevClicked()
     {
         d->playBtn->setChecked(true);
         d->playBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
+
         emit signalPause();
     }
 }
@@ -274,8 +279,10 @@ void SlideToolBar::keyPressEvent(QKeyEvent* e)
 
 void SlideToolBar::slotScreenSelected(QAction* act)
 {
-    if (!act || act->data().type() != QVariant::Int)
+    if (!act || (act->data().type() != QVariant::Int))
+    {
         return;
+    }
 
     emit signalScreenSelected(act->data().toInt());
 }
