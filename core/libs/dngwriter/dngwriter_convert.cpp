@@ -544,6 +544,8 @@ int DNGWriter::convert()
 
             // Time from original shot
 
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Metadata time-stamp";
+
             dng_date_time_info dti;
             dti.SetDateTime(d->dngDateTime(meta.getItemDateTime()));
             exif->fDateTimeOriginal = dti;
@@ -554,6 +556,8 @@ int DNGWriter::convert()
             negative->UpdateDateTime(dti);
 
             // String Tags
+
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Metadata strings info";
 
             str = meta.getExifTagString("Exif.Image.Make");
             if (!str.isEmpty()) exif->fMake.Set_ASCII(str.trimmed().toLatin1().constData());
@@ -632,6 +636,8 @@ int DNGWriter::convert()
 
             // Rational Tags
 
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Metadata rationals info";
+
             if (meta.getExifTagRational("Exif.Photo.ExposureTime", num, den))          exif->fExposureTime             = dng_urational(num, den);
             if (meta.getExifTagRational("Exif.Photo.FNumber", num, den))               exif->fFNumber                  = dng_urational(num, den);
             if (meta.getExifTagRational("Exif.Photo.ShutterSpeedValue", num, den))     exif->fShutterSpeedValue        = dng_srational(num, den);
@@ -669,6 +675,8 @@ int DNGWriter::convert()
             if (meta.getExifTagRational("Exif.GPSInfo.GPSDestLongitude", num, den, 2)) exif->fGPSDestLongitude[2]      = dng_urational(num, den);
 
             // Integer Tags
+
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Metadata integers info";
 
             if (meta.getExifTagLong("Exif.Photo.ExposureProgram", val))                exif->fExposureProgram          = (uint32)val;
             if (meta.getExifTagLong("Exif.Photo.ISOSpeedRatings", val))                exif->fISOSpeedRatings[0]       = (uint32)val;
@@ -711,6 +719,8 @@ int DNGWriter::convert()
 
             // Nikon Markernotes
 
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Metadata Nikon info";
+
             if (meta.getExifTagRational("Exif.Nikon3.Lens", num, den, 0))              exif->fLensInfo[0]              = dng_urational(num, den);
             if (meta.getExifTagRational("Exif.Nikon3.Lens", num, den, 1))              exif->fLensInfo[1]              = dng_urational(num, den);
             if (meta.getExifTagRational("Exif.Nikon3.Lens", num, den, 2))              exif->fLensInfo[2]              = dng_urational(num, den);
@@ -738,6 +748,8 @@ int DNGWriter::convert()
             if (!str.isEmpty()) exif->fLensName.Set_ASCII(str.trimmed().toLatin1().constData());
 
             // Canon Markernotes
+
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Metadata Canon info";
 
             if (meta.getExifTagLong("Exif.Canon.SerialNumber", val))                   exif->fCameraSerialNumber.Set_ASCII((QString::fromUtf8("%1").arg(val)).toLatin1().constData());
 /*
@@ -832,6 +844,8 @@ int DNGWriter::convert()
 
             // Pentax Markernotes
 
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Metadata Pentax info";
+
             str = meta.getExifTagString("Exif.Pentax.LensType");
 
             if (!str.isEmpty())
@@ -852,6 +866,8 @@ int DNGWriter::convert()
 
             // Olympus Makernotes
 
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Metadata Olympus info";
+
             str = meta.getExifTagString("Exif.OlympusEq.SerialNumber");
             if (!str.isEmpty()) exif->fCameraSerialNumber.Set_ASCII(str.trimmed().toLatin1().constData());
 
@@ -866,6 +882,8 @@ int DNGWriter::convert()
 
             // Panasonic Makernotes
 
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Metadata Panasonic info";
+
             str = meta.getExifTagString("Exif.Panasonic.LensType");
             if (!str.isEmpty()) exif->fLensName.Set_ASCII(str.trimmed().toLatin1().constData());
 
@@ -873,6 +891,8 @@ int DNGWriter::convert()
             if (!str.isEmpty()) exif->fLensSerialNumber.Set_ASCII(str.trimmed().toLatin1().constData());
 
             // Sony Makernotes
+
+            qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Metadata Sony info";
 
             if (meta.getExifTagLong("Exif.Sony2.LensID", val))
             {
