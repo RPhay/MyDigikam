@@ -117,8 +117,15 @@ private:
 
     QList<qlonglong> getTileMarkerIds(const TileIndex& tileIndex);
     GeoGroupState getImageState(const qlonglong imageId);
-    void removeMarkerFromTileAndChildren(const qlonglong imageId, const TileIndex& markerTileIndex, MyTile* const startTile, const int startTileLevel, MyTile* const parentTile);
-    void addMarkerToTileAndChildren(const qlonglong imageId, const TileIndex& markerTileIndex, MyTile* const startTile, const int startTileLevel);
+    void removeMarkerFromTileAndChildren(const qlonglong imageId,
+                                         const TileIndex& markerTileIndex,
+                                         MyTile* const startTile,
+                                         const int startTileLevel,
+                                         MyTile* const parentTile);
+    void addMarkerToTileAndChildren(const qlonglong imageId,
+                                    const TileIndex& markerTileIndex,
+                                    MyTile* const startTile,
+                                    const int startTileLevel);
 
 private:
 

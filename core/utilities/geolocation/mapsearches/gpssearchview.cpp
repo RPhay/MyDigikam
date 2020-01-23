@@ -83,21 +83,21 @@ public:
     {
     }
 
-    static const QString        configSplitterStateEntry;
-    QToolButton*                saveBtn;
-    QLineEdit*                  nameEdit;
-    ItemInfoJob                imageInfoJob;
-    SearchTextBar*              searchGPSBar;
-    EditableSearchTreeView*     searchTreeView;
-    QSplitter*                  splitter;
-    MapWidget*                  mapSearchWidget;
-    GPSMarkerTiler*             gpsMarkerTiler;
-    ItemAlbumModel*            imageAlbumModel;
-    ItemFilterModel*           imageFilterModel;
-    QItemSelectionModel*        selectionModel;
-    SearchModel*                searchModel;
-    GPSItemInfoSorter*         sortOrderOptionsHelper;
-    QString                     nonGeonlocatedItemsXml;
+    static const QString    configSplitterStateEntry;
+    QToolButton*            saveBtn;
+    QLineEdit*              nameEdit;
+    ItemInfoJob             imageInfoJob;
+    SearchTextBar*          searchGPSBar;
+    EditableSearchTreeView* searchTreeView;
+    QSplitter*              splitter;
+    MapWidget*              mapSearchWidget;
+    GPSMarkerTiler*         gpsMarkerTiler;
+    ItemAlbumModel*         imageAlbumModel;
+    ItemFilterModel*        imageFilterModel;
+    QItemSelectionModel*    selectionModel;
+    SearchModel*            searchModel;
+    GPSItemInfoSorter*      sortOrderOptionsHelper;
+    QString                 nonGeonlocatedItemsXml;
 };
 
 const QString GPSSearchView::Private::configSplitterStateEntry(QLatin1String("SplitterState"));
@@ -121,6 +121,7 @@ GPSSearchView::GPSSearchView(QWidget* const parent,
     setAttribute(Qt::WA_DeleteOnClose);
 
     /// @todo Really?
+
     setAcceptDrops(true);
 
     d->imageAlbumModel        = qobject_cast<ItemAlbumModel*>(imageFilterModel->sourceModel());
@@ -206,6 +207,7 @@ GPSSearchView::GPSSearchView(QWidget* const parent,
 
     // construct a second row of control actions below the control widget
     /// @todo Should we still replace the icons of the actions with text as discussed during the sprint?
+
     QWidget* const secondActionRow            = new QWidget();
     QHBoxLayout* const secondActionRowHBox    = new QHBoxLayout();
     secondActionRowHBox->setContentsMargins(QMargins());
@@ -340,7 +342,7 @@ void GPSSearchView::doLoadState()
 
 void GPSSearchView::doSaveState()
 {
-    KConfigGroup group = getConfigGroup();
+    KConfigGroup group          = getConfigGroup();
 
     group.writeEntry(entryName(d->configSplitterStateEntry), d->splitter->saveState().toBase64());
     group.writeEntry(entryName(QLatin1String("Sort Order")), int(d->sortOrderOptionsHelper->getSortOptions()));
@@ -364,6 +366,7 @@ void GPSSearchView::setActive(bool state)
     if (!state)
     {
         // make sure we reset the custom filters set by the map:
+
         emit signalMapSoloItems(QList<qlonglong>(), QLatin1String("gpssearch"));
         d->mapSearchWidget->setActive(false);
     }
@@ -406,7 +409,7 @@ void GPSSearchView::slotSaveGPSSAlbum()
 void GPSSearchView::slotRegionSelectionChanged()
 {
     const GeoCoordinates::Pair newRegionSelection = d->mapSearchWidget->getRegionSelection();
-    const bool haveRegionSelection                          = newRegionSelection.first.hasCoordinates();
+    const bool haveRegionSelection                = newRegionSelection.first.hasCoordinates();
 
     if (haveRegionSelection)
     {
@@ -416,6 +419,7 @@ void GPSSearchView::slotRegionSelectionChanged()
     else
     {
         // reset the search rectangle of the temporary album:
+
         createNewGPSSearchAlbum(SAlbum::getTemporaryTitle(DatabaseSearch::MapSearch));
         d->gpsMarkerTiler->removeCurrentRegionSelection();
         d->searchTreeView->clearSelection();
@@ -423,6 +427,7 @@ void GPSSearchView::slotRegionSelectionChanged()
     }
 
     // also remove any filters which may have been there
+
     slotRemoveCurrentFilter();
 
     slotRefreshMap();
@@ -434,8 +439,9 @@ void GPSSearchView::slotRegionSelectionChanged()
  */
 void GPSSearchView::createNewGPSSearchAlbum(const QString& name)
 {
-    //AlbumManager::instance()->clearCurrentAlbums();
-
+/*
+    AlbumManager::instance()->clearCurrentAlbums();
+*/
     // We query the database here
 
     const GeoCoordinates::Pair coordinates = d->mapSearchWidget->getRegionSelection();
@@ -448,6 +454,7 @@ void GPSSearchView::createNewGPSSearchAlbum(const QString& name)
 
     // NOTE: coordinates as lon1, lat1, lon2, lat2 (or West, North, East, South)
     // as left/top, right/bottom rectangle.
+
     QList<qreal> coordinatesList = QList<qreal>() <<
                                    coordinates.first.lon() << coordinates.first.lat() <<
                                    coordinates.second.lon() << coordinates.second.lat();
@@ -455,6 +462,7 @@ void GPSSearchView::createNewGPSSearchAlbum(const QString& name)
     if (!haveCoordinates)
     {
         /// @todo We need to create a search album with invalid coordinates
+
         coordinatesList.clear();
         coordinatesList << -200 << -200 << -200 << -200;
     }
@@ -493,7 +501,7 @@ void GPSSearchView::slotAlbumSelected(Album* a)
 
     SearchXmlReader reader(salbum->query());
     reader.readToFirstField();
-    QStringRef type = reader.attributes().value(QLatin1String("type"));
+    QStringRef type      = reader.attributes().value(QLatin1String("type"));
 
     if (type == QLatin1String("rectangle"))
     {
@@ -505,6 +513,7 @@ void GPSSearchView::slotAlbumSelected(Album* a)
         );
 
         /// @todo Currently, invalid coordinates are stored as -200:
+
         if (list.at(1) != -200)
         {
             d->mapSearchWidget->setRegionSelection(coordinates);
@@ -641,12 +650,14 @@ void GPSSearchView::showNonGeolocatedItems()
     {
         id = album->id();
         CoreDbAccess().db()->updateSearch(id, DatabaseSearch::AdvancedSearch,
-                                          SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch), d->nonGeonlocatedItemsXml);
+                                          SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch),
+                                          d->nonGeonlocatedItemsXml);
     }
     else
     {
         id = CoreDbAccess().db()->addSearch(DatabaseSearch::AdvancedSearch,
-                                            SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch), d->nonGeonlocatedItemsXml);
+                                            SAlbum::getTemporaryTitle(DatabaseSearch::AdvancedSearch),
+                                            d->nonGeonlocatedItemsXml);
     }
 
     album = new SAlbum(i18n("Non Geo-located Items"), id);
