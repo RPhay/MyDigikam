@@ -47,6 +47,7 @@ add_subdirectory(widgets)
 add_subdirectory(rawengine)
 add_subdirectory(webservices)
 add_subdirectory(dplugins)
+add_subdirectory(dngwriter)
 
 if(ENABLE_MEDIAPLAYER)
     add_subdirectory(video)
