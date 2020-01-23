@@ -104,6 +104,7 @@ private:
 private:
 
     void connectButtons();
+
     /**
      * @brief setModelData for one model
      * @param model - model to be populated

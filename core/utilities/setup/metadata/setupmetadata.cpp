@@ -161,12 +161,12 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     : QScrollArea(parent),
       d(new Private)
 {
-    d->tab = new QTabWidget(viewport());
+    d->tab                          = new QTabWidget(viewport());
     setWidget(d->tab);
     setWidgetResizable(true);
 
-    QWidget* const panel          = new QWidget;
-    QVBoxLayout* const mainLayout = new QVBoxLayout;
+    QWidget* const panel            = new QWidget;
+    QVBoxLayout* const mainLayout   = new QVBoxLayout;
 
     // --------------------------------------------------------
 
@@ -534,7 +534,9 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     balooLayout->addWidget(balooGroup);
     balooLayout->addWidget(balooBox);
-    //balooLayout->addWidget(d->resyncButton, 0, Qt::AlignRight);
+/*
+    balooLayout->addWidget(d->resyncButton, 0, Qt::AlignRight);
+*/
     balooLayout->addStretch();
 
 #endif // HAVE_KFILEMETADATA
@@ -735,7 +737,7 @@ void SetupMetadata::applySettings()
     set.rescanImageIfModified = d->rescanImageIfModifiedBox->isChecked();
     set.clearMetadataIfRescan = d->clearMetadataIfRescanBox->isChecked();
 
-    set.sidecarExtensions = cleanUserFilterString(d->extensionsEdit->text());
+    set.sidecarExtensions     = cleanUserFilterString(d->extensionsEdit->text());
     set.sidecarExtensions.removeAll(QLatin1String("xmp"));
     set.sidecarExtensions.removeDuplicates();
 
@@ -837,12 +839,13 @@ void SetupMetadata::readSettings()
 
 bool SetupMetadata::exifAutoRotateHasChanged() const
 {
-    return d->exifAutoRotateOriginal != d->exifRotateBox->isChecked();
+    return (d->exifAutoRotateOriginal != d->exifRotateBox->isChecked());
 }
 
 void SetupMetadata::slotExifAutoRotateToggled(bool b)
 {
     // Show info if rotation was switched off, and only once.
+
     if (!b && !d->exifAutoRotateShowedInfo && exifAutoRotateHasChanged())
     {
         d->exifAutoRotateShowedInfo = true;
@@ -857,6 +860,7 @@ void SetupMetadata::slotExifAutoRotateToggled(bool b)
 void SetupMetadata::slotClearMetadataToggled(bool b)
 {
     // Show info if delete metadata from the database was switched on, and only once.
+
     if (b && !d->clearMetadataShowedInfo)
     {
         d->clearMetadataShowedInfo = true;
@@ -872,6 +876,7 @@ void SetupMetadata::slotClearMetadataToggled(bool b)
 void SetupMetadata::slotWriteRawFilesToggled(bool b)
 {
     // Show info if write metadata to raw files was switched on
+
     if (b)
     {
         QApplication::beep();

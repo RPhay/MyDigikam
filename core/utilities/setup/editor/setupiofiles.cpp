@@ -62,13 +62,21 @@ public:
       : JPEGOptions(nullptr),
         PNGOptions(nullptr),
         TIFFOptions(nullptr),
+
 #ifdef HAVE_JASPER
+
         JPEG2000Options(nullptr),
+
 #endif // HAVE_JASPER
+
         PGFOptions(nullptr),
+
 #ifdef HAVE_X265
+
         HEIFOptions(nullptr),
+
 #endif // HAVE_X265
+
         showImageSettingsDialog(nullptr)
     {
     }
@@ -79,6 +87,7 @@ public:
         QVBoxLayout* const layout = new QVBoxLayout;
         layout->addWidget(w);
         box->setLayout(layout);
+
         return box;
     }
 
@@ -100,12 +109,19 @@ public:
     JPEGSettings*        JPEGOptions;
     PNGSettings*         PNGOptions;
     TIFFSettings*        TIFFOptions;
+
 #ifdef HAVE_JASPER
+
     JP2KSettings*        JPEG2000Options;
+
 #endif // HAVE_JASPER
+
     PGFSettings*         PGFOptions;
+
 #ifdef HAVE_X265
+
     HEIFSettings*        HEIFOptions;
+
 #endif // HAVE_X265
 
     QCheckBox*           showImageSettingsDialog;
@@ -135,12 +151,19 @@ SetupIOFiles::SetupIOFiles(QWidget* const parent)
     d->JPEGOptions          = new JPEGSettings;
     d->PNGOptions           = new PNGSettings;
     d->TIFFOptions          = new TIFFSettings;
+
 #ifdef HAVE_JASPER
+
     d->JPEG2000Options      = new JP2KSettings;
+
 #endif // HAVE_JASPER
+
     d->PGFOptions           = new PGFSettings;
+
 #ifdef HAVE_X265
+
     d->HEIFOptions          = new HEIFSettings;
+
 #endif // HAVE_X265
 
     // Show Settings Dialog Option
@@ -153,13 +176,21 @@ SetupIOFiles::SetupIOFiles(QWidget* const parent)
     vbox->addWidget(d->createGroupBox(d->JPEGOptions));
     vbox->addWidget(d->createGroupBox(d->PNGOptions));
     vbox->addWidget(d->createGroupBox(d->TIFFOptions));
+
 #ifdef HAVE_JASPER
+
     vbox->addWidget(d->createGroupBox(d->JPEG2000Options));
+
 #endif // HAVE_JASPER
+
     vbox->addWidget(d->createGroupBox(d->PGFOptions));
+
 #ifdef HAVE_X265
+
     vbox->addWidget(d->createGroupBox(d->HEIFOptions));
+
 #endif // HAVE_265
+
     vbox->addWidget(d->createGroupBox(d->showImageSettingsDialog));
     vbox->addStretch();
 
@@ -185,16 +216,23 @@ void SetupIOFiles::applySettings()
     group.writeEntry(d->configJPEGSubSamplingEntry,     d->JPEGOptions->getSubSamplingValue());
     group.writeEntry(d->configPNGCompressionEntry,      d->PNGOptions->getCompressionValue());
     group.writeEntry(d->configTIFFCompressionEntry,     d->TIFFOptions->getCompression());
+
 #ifdef HAVE_JASPER
     group.writeEntry(d->configJPEG2000CompressionEntry, d->JPEG2000Options->getCompressionValue());
     group.writeEntry(d->configJPEG2000LossLessEntry,    d->JPEG2000Options->getLossLessCompression());
+
 #endif // HAVE_JASPER
+
     group.writeEntry(d->configPGFCompressionEntry,      d->PGFOptions->getCompressionValue());
     group.writeEntry(d->configPGFLossLessEntry,         d->PGFOptions->getLossLessCompression());
+
 #ifdef HAVE_X265
+
     group.writeEntry(d->configHEIFCompressionEntry,     d->HEIFOptions->getCompressionValue());
     group.writeEntry(d->configHEIFLossLessEntry,        d->HEIFOptions->getLossLessCompression());
+
 #endif // HAVE_X265
+
     group.writeEntry(d->configShowImageSettingsDialog,  d->showImageSettingsDialog->isChecked());
     config->sync();
 }
@@ -207,16 +245,24 @@ void SetupIOFiles::readSettings()
     d->JPEGOptions->setSubSamplingValue(group.readEntry(d->configJPEGSubSamplingEntry,         1));  // Medium sub-sampling
     d->PNGOptions->setCompressionValue(group.readEntry(d->configPNGCompressionEntry,           9));
     d->TIFFOptions->setCompression(group.readEntry(d->configTIFFCompressionEntry,              false));
+
 #ifdef HAVE_JASPER
+
     d->JPEG2000Options->setCompressionValue(group.readEntry(d->configJPEG2000CompressionEntry, 75));
     d->JPEG2000Options->setLossLessCompression(group.readEntry(d->configJPEG2000LossLessEntry, true));
+
 #endif // HAVE_JASPER
+
     d->PGFOptions->setCompressionValue(group.readEntry(d->configPGFCompressionEntry,           3));
     d->PGFOptions->setLossLessCompression(group.readEntry(d->configPGFLossLessEntry,           true));
+
 #ifdef HAVE_X265
+
     d->HEIFOptions->setCompressionValue(group.readEntry(d->configHEIFCompressionEntry,         75));
     d->HEIFOptions->setLossLessCompression(group.readEntry(d->configHEIFLossLessEntry,         true));
+
 #endif // HAVE_X265
+
     d->showImageSettingsDialog->setChecked(group.readEntry(d->configShowImageSettingsDialog,   true));
 }
 

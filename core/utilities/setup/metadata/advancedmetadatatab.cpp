@@ -57,20 +57,20 @@ class Q_DECL_HIDDEN AdvancedMetadataTab::Private
 public:
 
     explicit Private()
+      : metadataType(nullptr),
+        operationType(nullptr),
+        addButton(nullptr),
+        editButton(nullptr),
+        deleteButton(nullptr),
+        moveUpButton(nullptr),
+        moveDownButton(nullptr),
+        revertChanges(nullptr),
+        resetButton(nullptr),
+        unifyReadWrite(nullptr),
+        namespaceView(nullptr),
+        metadataTypeSize(0),
+        changed(false)
     {
-        metadataType     = nullptr;
-        operationType    = nullptr;
-        addButton        = nullptr;
-        editButton       = nullptr;
-        deleteButton     = nullptr;
-        moveUpButton     = nullptr;
-        moveDownButton   = nullptr;
-        revertChanges    = nullptr;
-        resetButton      = nullptr;
-        unifyReadWrite   = nullptr;
-        namespaceView    = nullptr;
-        metadataTypeSize = 0;
-        changed          = false;
     }
 
     QComboBox*                  metadataType;
@@ -169,7 +169,7 @@ void AdvancedMetadataTab::slotAddNewNamespace()
 
     // Setting some default parameters;
 
-    if (d->metadataType->currentData().toString() == NamespaceEntry::DM_TAG_CONTAINER())
+    if      (d->metadataType->currentData().toString() == NamespaceEntry::DM_TAG_CONTAINER())
     {
         entry.nsType = NamespaceEntry::TAGS;
     }
@@ -208,7 +208,6 @@ void AdvancedMetadataTab::slotEditNamespace()
     }
 
     NamespaceEntry entry = getCurrentContainer().at(d->namespaceView->currentIndex().row());
-
 
     if (!NamespaceEditDlg::edit(qApp->activeWindow(), entry))
     {
@@ -327,9 +326,11 @@ void AdvancedMetadataTab::setUi()
     //------------ Bottom Layout-------------
 
     // View
+
     d->namespaceView = new NamespaceListView(this);
 
     // Buttons
+
     QVBoxLayout* const buttonsLayout = new QVBoxLayout();
     buttonsLayout->setAlignment(Qt::AlignTop);
 
@@ -352,6 +353,7 @@ void AdvancedMetadataTab::setUi()
                                         i18n("Revert Changes"));
 
     // Revert changes is disabled, until a change is made
+
     d->revertChanges->setEnabled(false);
     d->resetButton = new QPushButton(QIcon::fromTheme(QLatin1String("view-refresh")),
                                      i18n("Reset to Default"));
@@ -418,8 +420,11 @@ int AdvancedMetadataTab::getModelIndex()
         // for 3 metadata types:
         // read operation  = 3*0 + (0, 1, 2)
         // write operation = 3*1 + (0, 1, 2) = (3, 4 ,5)
-        return (d->metadataTypeSize * d->operationType->currentIndex())
-                + d->metadataType->currentIndex();
+
+        return (
+                (d->metadataTypeSize * d->operationType->currentIndex()) +
+                d->metadataType->currentIndex()
+               );
     }
 }
 

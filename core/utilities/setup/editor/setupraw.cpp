@@ -223,6 +223,7 @@ void SetupRaw::slotSixteenBitsImageToggled(bool)
 {
     // Libraw provide a way to set brightness of image in 16 bits color depth.
     // We always set on this option. We drive brightness adjustment in digiKam Raw image loader.
+
     d->rawSettings->setEnabledBrightnessSettings(true);
 }
 
