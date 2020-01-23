@@ -16,7 +16,7 @@
 #include "source/UnicodeInlines.incl_cpp"
 #include "source/UnicodeConversions.hpp"
 #include "source/ExpatAdapter.hpp"
-#include "third-party/zuid/interfaces/MD5.h"
+#include "XMP_MD5.h"
 #include "XMPCore/Interfaces/IMetadata_I.h"
 #include "XMPCore/Interfaces/IArrayNode_I.h"
 #include "XMPCore/Interfaces/ISimpleNode_I.h"

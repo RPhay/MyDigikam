@@ -24,7 +24,7 @@
 
 #include "XMPCore/XMPCoreDefines.h"
 #if ENABLE_CPP_DOM_MODEL
-#include "third-party/zuid/interfaces/MD5.h"
+#include "XMP_MD5.h"
 #include "XMPCore/Interfaces/IMetadata_I.h"
 #include "XMPCore/Interfaces/IPathSegment_I.h"
 #include "XMPCore/Interfaces/IPath_I.h"

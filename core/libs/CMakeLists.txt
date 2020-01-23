@@ -12,6 +12,9 @@
 # NOTE: see bug #195735: do not enable Mac flags provided by Adobe.
 #       Sounds like all compile fine like under Linux.
 
+add_definitions(-DEnablePluginManager=0)
+add_definitions(-DXMP_StaticBuild=1)
+
 if(MSVC)
     add_definitions(
                     # XMP SDK
