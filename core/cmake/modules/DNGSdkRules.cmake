@@ -19,7 +19,6 @@ if(MSVC)
     add_definitions(
                     # XMP SDK
                     -DWIN_ENV=1
-                    -DUNIX_ENV=0
 
                     # DNG SDK
                     -DqWinOS=1
@@ -29,7 +28,6 @@ if(MSVC)
 else()
     add_definitions(
                      # XMP SDK
-                    -DWIN_ENV=0
                     -DUNIX_ENV=1
 
                     # DNG SDK
