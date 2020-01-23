@@ -1067,7 +1067,7 @@ int DNGWriter::convert()
         negative->BuildStage3Image(host);
 
         negative->SynchronizeMetadata();
-        negative->RebuildIPTC(true, false);
+        negative->RebuildIPTC(true);
 
         if (d->cancel)
         {
@@ -1172,9 +1172,31 @@ int DNGWriter::convert()
         dng_image_writer writer;
         dng_file_stream filestream(QFile::encodeName(dngFilePath).constData(), true);
 
-        writer.WriteDNG(host, filestream, *negative.Get(), thumbnail,
-                        d->jpegLossLessCompression ? ccJPEG : ccUncompressed,
-                        &previewList);
+		/// Write a dng_image to a dng_stream in DNG format.
+		/// \param host Host interface used for progress updates, abort testing, buffer allocation, etc.
+		/// \param stream The dng_stream on which to write the TIFF.
+		/// \param negative The image data and metadata (EXIF, IPTC, XMP) to be written.
+		/// \param previewList List of previews (not counting thumbnail) to write to the file. Defaults to empty.
+		/// \param maxBackwardVersion The DNG file should be readable by readers at least back to this version.
+		/// \param uncompressed True to force uncompressed images. Otherwise use normal compression.
+
+		void WriteDNG (dng_host &host,
+					   dng_stream &stream,
+					   dng_negative &negative,
+					   const dng_preview_list *previewList = NULL,
+					   uint32 maxBackwardVersion = dngVersion_SaveDefault,
+					   bool uncompressed = false);
+
+
+
+        writer.WriteDNG(host,
+                        filestream,
+                        *negative.Get(),
+                        &previewList,
+                        dngVersion_SaveDefault,
+//                        thumbnail,
+                        d->jpegLossLessCompression
+                        );
 
         // -----------------------------------------------------------------------------------------
         // Metadata makernote cleanup using Exiv2 for some RAW file types

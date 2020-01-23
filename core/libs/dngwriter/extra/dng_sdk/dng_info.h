@@ -1,15 +1,10 @@
 /*****************************************************************************/
-// Copyright 2006-2007 Adobe Systems Incorporated
+// Copyright 2006-2019 Adobe Systems Incorporated
 // All Rights Reserved.
 //
 // NOTICE:  Adobe permits you to use, modify, and distribute this file in
 // accordance with the terms of the Adobe license agreement accompanying it.
 /*****************************************************************************/
-
-/* $Id: //mondo/dng_sdk_1_3/dng_sdk/source/dng_info.h#1 $ */
-/* $DateTime: 2009/06/22 05:04:49 $ */
-/* $Change: 578634 $ */
-/* $Author: tknoll $ */
 
 /** \file
  * Class for holding top-level information about a DNG image.
@@ -22,13 +17,16 @@
 
 /*****************************************************************************/
 
-#include "dng_classes.h"
-#include "dng_ifd.h"
-#include "dng_exif.h"
-#include "dng_shared.h"
-#include "dng_errors.h"
-#include "dng_sdk_limits.h"
 #include "dng_auto_ptr.h"
+#include "dng_classes.h"
+#include "dng_errors.h"
+#include "dng_exif.h"
+#include "dng_ifd.h"
+#include "dng_sdk_limits.h"
+#include "dng_shared.h"
+#include "dng_uncopyable.h"
+
+#include <vector>
 
 /*****************************************************************************/
 
@@ -36,42 +34,70 @@
 ///
 /// See \ref spec_dng "DNG 1.1.0 specification" for information on member fields of this class.
 
-class dng_info
+class dng_info: private dng_uncopyable
 	{
-
+	
 	public:
-
+	
 		uint64 fTIFFBlockOffset;
-
+		
 		uint64 fTIFFBlockOriginalOffset;
-
+	
 		bool fBigEndian;
-
+		
 		uint32 fMagic;
-
+		
 		AutoPtr<dng_exif> fExif;
-
+	
 		AutoPtr<dng_shared> fShared;
-
+		
 		int32 fMainIndex;
+		
+		int32 fMaskIndex;
+  
+        int32 fDepthIndex;
+			
+        int32 fEnhancedIndex;
+        
+        std::vector <dng_ifd *> fIFD;
 
-		uint32 fIFDCount;
+        std::vector <dng_ifd *> fChainedIFD;
 
-		AutoPtr<dng_ifd> fIFD [kMaxSubIFDs + 1];
-
-		uint32 fChainedIFDCount;
-
-		AutoPtr<dng_ifd> fChainedIFD [kMaxChainedIFDs];
+        std::vector <std::vector <dng_ifd *> > fChainedSubIFD;
 
 	protected:
-
+	
 		uint32 fMakerNoteNextIFD;
-
+		
 	public:
-
+	
 		dng_info ();
-
+		
 		virtual ~dng_info ();
+
+        /// Returns the number of parsed SubIFDs (including the main IFD).
+
+        uint32 IFDCount () const
+            {
+            return (uint32) fIFD.size ();
+            }
+
+        /// Returns the number of chained IFDs.
+
+        uint32 ChainedIFDCount () const
+            {
+            return (uint32) fChainedIFD.size ();
+            }
+
+        /// Returns number SubIFDs for a chained IFD.
+
+        uint32 ChainedSubIFDCount (uint32 chainIndex) const
+            {
+            if (chainIndex >= fChainedSubIFD.size ())
+                return 0;
+            else
+                return (uint32) fChainedSubIFD [chainIndex].size ();
+            }
 
 		/// Read dng_info from a dng_stream
 		/// \param host DNG host used for progress updating, abort testing, buffer allocation, etc.
@@ -88,9 +114,9 @@ class dng_info
 		/// \retval true if stream provided a valid DNG.
 
 		virtual bool IsValidDNG ();
-
+		
 	protected:
-
+		
 		virtual void ValidateMagic ();
 
 		virtual void ParseTag (dng_host &host,
@@ -134,28 +160,20 @@ class dng_info
 							   		 int64 offsetDelta,
 							   		 uint64 minOffset,
 							   		 uint64 maxOffset);
-
+							   		 
 		virtual void ParseSonyPrivateData (dng_host &host,
 										   dng_stream &stream,
-										   uint32 count,
+										   uint64 count,
 										   uint64 oldOffset,
 										   uint64 newOffset);
-
+							   		 
 		virtual void ParseDNGPrivateData (dng_host &host,
 										  dng_stream &stream);
 
-	private:
-
-		// Hidden copy constructor and assignment operator.
-
-		dng_info (const dng_info &info);
-
-		dng_info & operator= (const dng_info &info);
-
 	};
-
+	
 /*****************************************************************************/
 
 #endif
-
+	
 /*****************************************************************************/
