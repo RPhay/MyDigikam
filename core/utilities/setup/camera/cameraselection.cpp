@@ -309,15 +309,20 @@ CameraSelection::CameraSelection(QWidget* const parent)
     // Initialize  --------------------------------------------------
 
 #ifndef HAVE_GPHOTO2
+
     // If digiKam is compiled without Gphoto2 support, we hide widgets relevant.
+
     d->listView->hide();
     d->searchBar->hide();
     box2->hide();
     slotUMSCameraLinkUsed();
+
 #else
+
     getCameraList();
     getSerialPortList();
-#endif /* HAVE_GPHOTO2 */
+
+#endif // HAVE_GPHOTO2
 
     qApp->restoreOverrideCursor();
 }
@@ -380,11 +385,11 @@ void CameraSelection::slotNetworkEditChanged(const QString& text)
     int cursorPosition   = d->networkEdit->cursorPosition();
     QStringList ipRanges = text.split(QLatin1Char('.'));
 
-    for (int i = 0; i < ipRanges.count(); ++i)
+    for (int i = 0 ; i < ipRanges.count() ; ++i)
     {
         bool ok;
 
-        for (int a = ipRanges.at(i).count(); a < 3; ++a)
+        for (int a = ipRanges.at(i).count() ; a < 3 ; ++a)
         {
             ipRanges[i].append(QLatin1Char('0'));
         }
@@ -430,7 +435,7 @@ void CameraSelection::setCamera(const QString& title, const QString& model,
 
         d->titleEdit->setText(title);
 
-        if (port.contains(QLatin1String("usb")))
+        if      (port.contains(QLatin1String("usb")))
         {
             d->usbButton->setChecked(true);
             slotPortChanged();
@@ -535,6 +540,7 @@ void CameraSelection::slotSelectionChanged(QTreeWidgetItem* item, int)
 
         d->umsMountURL->setEnabled(true);
         d->umsMountURL->setFileDlgPath(QLatin1String("/mnt/camera"));
+
         return;
     }
     else
@@ -597,6 +603,7 @@ void CameraSelection::slotPortChanged()
         d->portPathComboBox->insertItem(0, QLatin1String("usb:"));
         d->portPathComboBox->setEnabled(false);
         d->networkEdit->setEnabled(false);
+
         return;
     }
 
@@ -607,6 +614,7 @@ void CameraSelection::slotPortChanged()
         d->portPathComboBox->insertItem(0, QLatin1String("ptpip:"));
         d->portPathComboBox->setEnabled(false);
         d->networkEdit->setEnabled(true);
+
         return;
     }
 
@@ -677,7 +685,7 @@ void CameraSelection::slotSearchTextChanged(const SearchTextSettings& settings)
 
     while (*it)
     {
-        QTreeWidgetItem* const item  = *it;
+        QTreeWidgetItem* const item = *it;
 
         if (item->text(0).contains(search, settings.caseSensitive))
         {

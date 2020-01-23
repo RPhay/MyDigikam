@@ -61,7 +61,7 @@ public:
 
     CameraType*         autoDetect(bool& retry);
     CameraType*         find(const QString& title) const;
-    QList<CameraType*>* cameraList() const;
+    QList<CameraType*>* cameraList()               const;
 
     bool changeCameraStartIndex(const QString& cameraTitle, int startIndex);
 

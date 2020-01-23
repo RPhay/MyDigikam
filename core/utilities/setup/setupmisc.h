@@ -45,6 +45,8 @@ public:
         Grouping
     };
 
+public:
+
     explicit SetupMisc(QWidget* const parent = nullptr);
     ~SetupMisc();
 

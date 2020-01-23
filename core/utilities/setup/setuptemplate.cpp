@@ -54,8 +54,8 @@ class Q_DECL_HIDDEN SetupTemplate::Private
 {
 public:
 
-    explicit Private() :
-        addButton(nullptr),
+    explicit Private()
+      : addButton(nullptr),
         delButton(nullptr),
         repButton(nullptr),
         titleEdit(nullptr),
@@ -76,15 +76,16 @@ public:
 };
 
 SetupTemplate::SetupTemplate(QWidget* const parent)
-    : QScrollArea(parent), d(new Private)
+    : QScrollArea(parent),
+      d(new Private)
 {
     QWidget* const panel = new QWidget(viewport());
     setWidget(panel);
     setWidgetResizable(true);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing    = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    d->listView = new TemplateList(panel);
+    d->listView          = new TemplateList(panel);
     d->listView->setFixedHeight(100);
 
     // --------------------------------------------------------
@@ -99,7 +100,7 @@ SetupTemplate::SetupTemplate(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->tview = new TemplatePanel(panel);
+    d->tview             = new TemplatePanel(panel);
 
     // --------------------------------------------------------
 
@@ -206,6 +207,7 @@ void SetupTemplate::setTemplate(const Template& t)
     {
         TemplateListItem* const item = d->listView->find(t.templateTitle());
         d->listView->setCurrentItem(item);
+
         return;
     }
 
@@ -220,6 +222,7 @@ void SetupTemplate::slotSelectionChanged()
     {
         d->delButton->setEnabled(false);
         d->repButton->setEnabled(false);
+
         return;
     }
 
@@ -242,12 +245,14 @@ void SetupTemplate::slotAddTemplate()
     if (title.isEmpty())
     {
         QMessageBox::critical(this, qApp->applicationName(), i18n("Cannot register new metadata template without title."));
+
         return;
     }
 
     if (d->listView->find(title))
     {
         QMessageBox::critical(this, qApp->applicationName(), i18n("A metadata template named '%1' already exists.", title));
+
         return;
     }
 
@@ -271,6 +276,7 @@ void SetupTemplate::slotRepTemplate()
     if (title.isEmpty())
     {
         QMessageBox::critical(this, qApp->applicationName(), i18n("Cannot register new metadata template without title."));
+
         return;
     }
 

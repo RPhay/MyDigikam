@@ -112,6 +112,7 @@ bool CameraList::load()
     if (!doc.setContent(&cfile))
     {
         cfile.close();
+
         return false;
     }
 
@@ -120,10 +121,11 @@ bool CameraList::load()
     if (docElem.tagName() != QLatin1String("cameralist"))
     {
         cfile.close();
+
         return false;
     }
 
-    for (QDomNode n = docElem.firstChild(); !n.isNull(); n = n.nextSibling())
+    for (QDomNode n = docElem.firstChild() ; !n.isNull() ; n = n.nextSibling())
     {
         QDomElement e = n.toElement();
 
@@ -147,12 +149,14 @@ bool CameraList::load()
     }
 
     cfile.close();
+
     return true;
 }
 
 bool CameraList::save()
 {
     // If not modified don't save the file
+
     if (!d->modified)
     {
         return true;
@@ -189,6 +193,7 @@ bool CameraList::save()
     cfile.close();
 
     d->modified = false;
+
     return true;
 }
 
@@ -222,6 +227,7 @@ void CameraList::insertPrivate(CameraType* const ctype)
     }
 
     d->clist.append(ctype);
+
     emit signalCameraAdded(ctype);
 }
 
@@ -284,14 +290,17 @@ CameraType* CameraList::autoDetect(bool& retry)
                                            "Would you like to try again?"),
                                       QMessageBox::Yes | QMessageBox::No)
                  == QMessageBox::Yes);
+
         return nullptr;
     }
 
     // Check if the camera is already in the list
+
     foreach (CameraType* const ctype, d->clist)
     {
         // We can get away with checking only the model, as the auto-detection
         // works only for usb cameras. so the port is always usb:
+
         if (ctype->model() == model)
         {
             return ctype;
@@ -312,7 +321,7 @@ CameraType* CameraList::autoDetect(bool& retry)
         port = QLatin1String("usb:");
     }
 
-    CameraType* ctype = new CameraType(model, model, port, QLatin1String("/"), 1);
+    CameraType* const ctype = new CameraType(model, model, port, QLatin1String("/"), 1);
     insert(ctype);
 
     return ctype;
@@ -332,6 +341,7 @@ bool CameraList::changeCameraStartIndex(const QString& cameraTitle, int startInd
         cam->setStartingNumber(startIndex);
         d->modified = true;
         save();
+
         return true;
     }
 

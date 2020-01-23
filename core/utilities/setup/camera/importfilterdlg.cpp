@@ -56,17 +56,17 @@ class Q_DECL_HIDDEN ImportFilterDlg::Private
 public:
 
     explicit Private()
+      : buttons(nullptr),
+        filterName(nullptr),
+        mimeCheckBox(nullptr),
+        mimeLabel(nullptr),
+        mimeButton(nullptr),
+        fileNameCheckBox(nullptr),
+        fileNameEdit(nullptr),
+        pathCheckBox(nullptr),
+        pathEdit(nullptr),
+        newFilesCheckBox(nullptr)
     {
-        buttons          = nullptr;
-        filterName       = nullptr;
-        mimeCheckBox     = nullptr;
-        mimeLabel        = nullptr;
-        mimeButton       = nullptr;
-        fileNameCheckBox = nullptr;
-        fileNameEdit     = nullptr;
-        pathCheckBox     = nullptr;
-        pathEdit         = nullptr;
-        newFilesCheckBox = nullptr;
     }
 
     QDialogButtonBox*   buttons;
@@ -98,6 +98,7 @@ ImportFilterDlg::ImportFilterDlg(QWidget* const parent)
     QLabel* label                     = nullptr;
     QHBoxLayout* horizontalLayout     = nullptr;
     QSpacerItem* spacer               = nullptr;
+
     // To prevent cppcheck warnings.
     (void)label;
     (void)horizontalLayout;

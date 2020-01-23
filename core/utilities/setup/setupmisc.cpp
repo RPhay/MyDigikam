@@ -122,7 +122,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
     : QScrollArea(parent),
       d(new Private)
 {
-    d->tab = new QTabWidget(viewport());
+    d->tab            = new QTabWidget(viewport());
     setWidget(d->tab);
     setWidgetResizable(true);
 
@@ -237,8 +237,10 @@ SetupMisc::SetupMisc(QWidget* const parent)
     }
 
 #ifndef HAVE_APPSTYLE_SUPPORT
+
     // See Bug #365262
     appStyleHbox->setVisible(false);
+
 #endif
 
     DHBox* const iconThemeHbox = new DHBox(appearancePanel);
@@ -402,7 +404,9 @@ void SetupMisc::applySettings()
     }
 
 #ifdef HAVE_APPSTYLE_SUPPORT
+
     settings->setApplicationStyle(d->applicationStyle->currentText());
+
 #endif
 
     settings->setIconTheme(d->applicationIcon->currentData().toString());
@@ -435,7 +439,9 @@ void SetupMisc::readSettings()
     }
 
 #ifdef HAVE_APPSTYLE_SUPPORT
+
     d->applicationStyle->setCurrentIndex(d->applicationStyle->findData(settings->getApplicationStyle().toLower()));
+
 #endif
 
     d->applicationIcon->setCurrentIndex(d->applicationIcon->findData(settings->getIconTheme()));

@@ -236,6 +236,7 @@ SetupMime::~SetupMime()
 void SetupMime::applySettings()
 {
     // Display warning if user removes a core format
+
     QStringList coreImageFormats, removedImageFormats;
     coreImageFormats << QLatin1String("jpg") << QLatin1String("jpeg") << QLatin1String("jpe") // JPEG
                      << QLatin1String("tif") << QLatin1String("tiff")                         // TIFF
@@ -280,9 +281,9 @@ void SetupMime::applySettings()
     movieFilterString.replace(QLatin1Char(';'), QLatin1Char(' '));
     audioFilterString.replace(QLatin1Char(';'), QLatin1Char(' '));
 
-    if (d->imageFileFilterEdit->text() != imageFilterString ||
-        d->movieFileFilterEdit->text() != movieFilterString ||
-        d->audioFileFilterEdit->text() != audioFilterString)
+    if ((d->imageFileFilterEdit->text() != imageFilterString) ||
+        (d->movieFileFilterEdit->text() != movieFilterString) ||
+        (d->audioFileFilterEdit->text() != audioFilterString))
     {
         CoreDbAccess().db()->setUserFilterSettings(cleanUserFilterString(d->imageFileFilterEdit->text()),
                                                    cleanUserFilterString(d->movieFileFilterEdit->text()),

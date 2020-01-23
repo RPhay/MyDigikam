@@ -203,7 +203,7 @@ void SetupCategory::slotAddCategory()
 
     bool found = false;
 
-    for (int i = 0 ; i < d->albumCategoryBox->count(); ++i)
+    for (int i = 0 ; i < d->albumCategoryBox->count() ; ++i)
     {
         QListWidgetItem* const item = d->albumCategoryBox->item(i);
 
@@ -232,7 +232,7 @@ void SetupCategory::applySettings()
 
     QStringList categoryList;
 
-    for (int i = 0 ; i < d->albumCategoryBox->count(); ++i)
+    for (int i = 0 ; i < d->albumCategoryBox->count() ; ++i)
     {
         QListWidgetItem* const item = d->albumCategoryBox->item(i);
         categoryList.append(item->text());

@@ -289,7 +289,7 @@ void SetupSlideShow::readSettings()
 
     const int screen = settings.slideScreen;
 
-    if (screen >= -2 && screen < qApp->screens().count())
+    if ((screen >= -2) && (screen < qApp->screens().count()))
     {
         d->screenPlacement->setCurrentIndex(screen + 2);
     }
