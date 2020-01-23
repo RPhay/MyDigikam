@@ -81,13 +81,11 @@ ExternalProject_Add(ext_qt
                   -skip qtspeech                    # No need speech synthesis support
                   -skip qttranslations              # No need translation tools.
                   -skip qtvirtualkeyboard           # No need virtual keyboard support
-                  -skip qtwayland                   # Specific to Linux
                   -skip qtwebglplugin               # No need browser OpenGL extention support
                   -skip qtwebsockets                # No need websocket support
                   -skip qtwebview                   # QML extension for QWebEngine
                   -skip qtwinextras                 # For Windows devices only
                   ${DROP_QTWEBENGINE_DEPS}
-
 
     # Exemple of code to install only one Qt module for hacking purpose (aka qtbase here)
     #BUILD_COMMAND cd <SOURCE_DIR> && $(MAKE) module-qtbase
