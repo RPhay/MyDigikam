@@ -58,46 +58,39 @@ class Q_DECL_HIDDEN NamespaceEditDlg::Private
 public:
 
     explicit Private()
+      : buttons(nullptr),
+        create(0),
+        topLabel(nullptr),
+        logo(nullptr),
+        gridLayout(nullptr),
+        page(nullptr),
+        subspaceCombo(nullptr),           // NamespaceEntry variables
+        specialOptsCombo(nullptr),
+        altSpecialOptsCombo(nullptr),
+        namespaceName(nullptr),
+        alternativeName(nullptr),
+        nameSpaceSeparator(nullptr),
+        isPath(nullptr),
+        ratingMappings(nullptr),
+        zeroStars(nullptr),
+        oneStar(nullptr),
+        twoStars(nullptr),
+        threeStars(nullptr),
+        fourStars(nullptr),
+        fiveStars(nullptr),
+        tagTipLabel(nullptr),             // Labels
+        ratingTipLabel(nullptr),
+        commentTipLabel(nullptr),
+        subspaceLabel(nullptr),
+        titleLabel(nullptr),
+        specialOptsLabel(nullptr),
+        alternativeNameLabel(nullptr),
+        altspecialOptsLabel(nullptr),
+        isTagLabel(nullptr),
+        separatorLabel(nullptr),
+        tipLabel2(nullptr),
+        nsType(NamespaceEntry::TAGS)
     {
-        buttons              = nullptr;
-        create               = 0;
-        topLabel             = nullptr;
-        logo                 = nullptr;
-        gridLayout           = nullptr;
-        page                 = nullptr;
-
-        // NamespaceEntry variables
-        subspaceCombo        = nullptr;
-        specialOptsCombo     = nullptr;
-        altSpecialOptsCombo  = nullptr;
-        namespaceName        = nullptr;
-        alternativeName      = nullptr;
-        nameSpaceSeparator   = nullptr;
-        isPath               = nullptr;
-        ratingMappings       = nullptr;
-
-        zeroStars            = nullptr;
-        oneStar              = nullptr;
-        twoStars             = nullptr;
-        threeStars           = nullptr;
-        fourStars            = nullptr;
-        fiveStars            = nullptr;
-
-        // Labels
-        tagTipLabel          = nullptr;
-        ratingTipLabel       = nullptr;
-        commentTipLabel      = nullptr;
-        subspaceLabel        = nullptr;
-        titleLabel           = nullptr;
-        specialOptsLabel     = nullptr;
-        alternativeNameLabel = nullptr;
-        altspecialOptsLabel  = nullptr;
-        isTagLabel           = nullptr;
-        separatorLabel       = nullptr;
-
-        tipLabel2            = nullptr;
-
-        nsType               = NamespaceEntry::TAGS;
     }
 
     QDialogButtonBox*               buttons;
@@ -243,12 +236,12 @@ bool NamespaceEditDlg::edit(QWidget* const parent, NamespaceEntry& entry)
 
 void NamespaceEditDlg::setupTagGui(NamespaceEntry& entry)
 {
-    d->page       = new QWidget(this);
-    d->gridLayout = new QGridLayout(d->page);
-    d->logo       = new QLabel(d->page);
+    d->page          = new QWidget(this);
+    d->gridLayout    = new QGridLayout(d->page);
+    d->logo          = new QLabel(d->page);
     d->logo->setPixmap(QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(48,48)));
 
-    d->topLabel   = new QLabel(d->page);
+    d->topLabel      = new QLabel(d->page);
     d->topLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->topLabel->setWordWrap(false);
     d->topLabel->setText(i18n("Add metadata namespace"));
@@ -479,14 +472,16 @@ void NamespaceEditDlg::populateFields(NamespaceEntry& entry)
 
 void NamespaceEditDlg::setType(NamespaceEntry::NamespaceType type)
 {
-    switch(type)
+    switch (type)
     {
         case NamespaceEntry::TAGS:
             qCDebug(DIGIKAM_GENERAL_LOG) << "Setting up tags";
             d->ratingTipLabel->hide();
             d->commentTipLabel->hide();
             d->ratingMappings->hide();
+
             // disable IPTC and EXIV for tags
+
             d->subspaceCombo->setItemData(0, 0, Qt::UserRole -1);
             d->subspaceCombo->setItemData(1, 0, Qt::UserRole -1);
             break;

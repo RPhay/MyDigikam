@@ -224,7 +224,7 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->mismatchGB                   = new QGroupBox;//(i18n("Behavior on Profile Mismatch");
+    d->mismatchGB                   = new QGroupBox;  // NOTE: Behavior on Profile Mismatch
     QVBoxLayout* const vlayMismatch = new QVBoxLayout(d->mismatchGB);
 
     QLabel* const behaviorIcon  = new QLabel;
@@ -264,21 +264,23 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
     QLabel* const missingLabel  = new QLabel(i18n("When an image has no color profile information"));
     missingLabel->setWordWrap(true);
 
-    QHBoxLayout* const hboxMP  = new QHBoxLayout;
+    QHBoxLayout* const hboxMP   = new QHBoxLayout;
     hboxMP->addWidget(missingIcon);
     hboxMP->addWidget(missingLabel, 10);
 
-    d->defaultAskMissing = new QRadioButton(i18n("Ask when opening the image"));
+    d->defaultAskMissing  = new QRadioButton(i18n("Ask when opening the image"));
     d->defaultAskMissing->setWhatsThis(i18n("<p>If an image has no embedded color profile, "
                                             "digiKam will ask which color space shall be used to interpret the image "
                                             "and to which color space it shall be transformed for editing.</p>"));
 
     d->defaultSRGBMissing = new QRadioButton(i18n("Assume it is using the sRGB color space (Internet standard)"));
+
     /**
      * @todo d->defaultSRGBMissing->setWhatsThis( i18n("<p></p>"));
      */
 
     d->defaultSRGBConvert = new QCheckBox(i18n("and convert it to the working color space"));
+
     /**
      * @todo d->defaultSRGBConvert->setWhatsThis( i18n("<p></p>"));
      */
@@ -291,11 +293,13 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
     gridRgb->setColumnMinimumWidth(0, 10);
 
     d->defaultWSMissing  = new QRadioButton(i18n("Assume it is using the working color space"));
+
     /**
      * @todo d->defaultWSMissing->setWhatsThis( i18n("<p></p>"));
      */
 
     d->defaultInputMissing = new QRadioButton(i18n("Convert it from default input color space to working space"));
+
     /**
      * @todo d->defaultWSMissing->setWhatsThis( i18n("<p></p>"));
      */
@@ -321,19 +325,22 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
     hboxRF->addWidget(rawBehaviorLabel, 10);
 
     d->defaultAskRaw   = new QRadioButton(i18n("Ask for the input profile"));
+
     /**
-    * @todo d->defaultAskRaw->setWhatsThis( i18n("<p></p>"));
-    */
+     * @todo d->defaultAskRaw->setWhatsThis( i18n("<p></p>"));
+     */
 
     d->defaultGuessRaw = new QRadioButton(i18n("Automatic color correction"));
+
     /**
-    * @todo d->defaultGuessRaw->setWhatsThis( i18n("<p></p>"));
-    */
+     * @todo d->defaultGuessRaw->setWhatsThis( i18n("<p></p>"));
+     */
 
     d->defaultInputRaw = new QRadioButton(i18n("Convert it from the default input profile"));
+
     /**
-    * @todo d->defaultSRGBMissing->setWhatsThis( i18n("<p></p>"));
-    */
+     * @todo d->defaultSRGBMissing->setWhatsThis( i18n("<p></p>"));
+     */
 
     d->defaultGuessRaw->setChecked(true);
 
@@ -380,9 +387,10 @@ SetupICC::SetupICC(QDialogButtonBox* const dlgBtnBox, QWidget* const parent)
 
     d->managedPreviews       = new QCheckBox;
     d->managedPreviews->setText(i18n("Use color managed view for previews and thumbnails"));
+
     /**
-    * @todo d->managedPreview->setWhatsThis( i18n("") );
-    */
+     * @todo d->managedPreview->setWhatsThis( i18n("") );
+     */
 
     gridView->addWidget(monitorIcon,            0, 0);
     gridView->addWidget(monitorProfiles,        0, 1, 1, 2);
@@ -564,7 +572,7 @@ void SetupICC::applySettings()
     ICCSettingsContainer settings;
     settings.enableCM = d->enableColorManagement->isChecked();
 
-    if (d->defaultAskMismatch->isChecked())
+    if      (d->defaultAskMismatch->isChecked())
     {
         settings.defaultMismatchBehavior = ICCSettingsContainer::AskUser;
     }
@@ -573,7 +581,7 @@ void SetupICC::applySettings()
         settings.defaultMismatchBehavior = ICCSettingsContainer::EmbeddedToWorkspace;
     }
 
-    if (d->defaultAskMissing->isChecked())
+    if      (d->defaultAskMissing->isChecked())
     {
         settings.defaultMissingProfileBehavior = ICCSettingsContainer::AskUser;
     }
@@ -599,7 +607,7 @@ void SetupICC::applySettings()
         settings.defaultMissingProfileBehavior = ICCSettingsContainer::InputToWorkspace;
     }
 
-    if (d->defaultAskRaw->isChecked())
+    if      (d->defaultAskRaw->isChecked())
     {
         settings.defaultUncalibratedBehavior = ICCSettingsContainer::AskUser;
     }
@@ -644,7 +652,7 @@ void SetupICC::readSettings(bool restore)
     d->managedView->setChecked(settings.useManagedView);
     d->managedPreviews->setChecked(settings.useManagedPreviews);
 
-    if (settings.defaultMismatchBehavior & ICCSettingsContainer::AskUser)
+    if      (settings.defaultMismatchBehavior & ICCSettingsContainer::AskUser)
     {
         d->defaultAskMismatch->setChecked(true);
     }
@@ -659,7 +667,7 @@ void SetupICC::readSettings(bool restore)
     }
     else
     {
-        if (settings.defaultMissingProfileBehavior & ICCSettingsContainer::UseSRGB)
+        if      (settings.defaultMissingProfileBehavior & ICCSettingsContainer::UseSRGB)
         {
             d->defaultSRGBMissing->setChecked(true);
             d->defaultSRGBConvert->setChecked(settings.defaultMissingProfileBehavior & ICCSettingsContainer::ConvertToWorkspace);
@@ -674,7 +682,7 @@ void SetupICC::readSettings(bool restore)
         }
     }
 
-    if (settings.defaultUncalibratedBehavior & ICCSettingsContainer::AskUser)
+    if      (settings.defaultUncalibratedBehavior & ICCSettingsContainer::AskUser)
     {
         d->defaultAskRaw->setChecked(true);
     }
@@ -735,6 +743,7 @@ void SetupICC::fillCombos(bool report)
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "No ICC profile files found!!!";
         d->dlgBtnBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+
         return;
     }
 
@@ -763,7 +772,9 @@ void SetupICC::fillCombos(bool report)
     {
         // If there is no workspace ICC profiles available,
         // the CM is broken and cannot be used.
+
         d->dlgBtnBox->button(QDialogButtonBox::Ok)->setEnabled(false);
+
         return;
     }
 
@@ -778,8 +789,10 @@ void SetupICC::setWidgetsEnabled(bool enabled)
     d->rawGB->setEnabled(enabled);
     d->tab->setTabEnabled(1, enabled);
     d->tab->setTabEnabled(2, enabled);
-    //d->profilesPanel->setEnabled(enabled);
-    //d->advancedPanel->setEnabled(enabled);
+/*
+    d->profilesPanel->setEnabled(enabled);
+    d->advancedPanel->setEnabled(enabled);
+*/
 }
 
 void SetupICC::slotToggledEnabled()
@@ -899,6 +912,7 @@ void SetupICC::slotShowDefaultSearchPaths()
                         existingPaths);
 
 #elif defined (Q_OS_OSX)
+
     QString text = i18n("On Mac OS X, the default search paths include "
                         "<ul>"
                         "<li>/System/Library/ColorSync/Profiles</li>"
@@ -916,6 +930,7 @@ void SetupICC::slotShowDefaultSearchPaths()
                         "</ul>",
                         existingPaths);
 #else // Linux
+
     QString text = i18n("On Linux, the default search paths include "
                         "<ul>"
                         "<li>/usr/share/color/icc</li>"
@@ -929,6 +944,7 @@ void SetupICC::slotShowDefaultSearchPaths()
                         "<li>%1</li>"
                         "</ul>",
                         existingPaths);
+
 #endif
 
     QWhatsThis::showText(d->iccFolderLabel->mapToGlobal(QPoint(0, 0)), text, d->iccFolderLabel);
@@ -940,18 +956,21 @@ bool SetupICC::iccRepositoryIsValid()
     KConfigGroup group        = config->group(QLatin1String("Color Management"));
 
     // If color management is disable, no need to check anymore.
+
     if (!group.readEntry(QLatin1String("EnableCM"), false))
     {
         return true;
     }
 
     // Can at least RawEngine profiles be opened?
+
     if (IccProfile::sRGB().open())
     {
         return true;
     }
 
     // To be valid, the ICC profiles repository must exist and be readable.
+
     QString extraPath = group.readEntry(QLatin1String("DefaultPath"), QString());
     QFileInfo info(extraPath);
 
@@ -962,7 +981,7 @@ bool SetupICC::iccRepositoryIsValid()
 
     QStringList paths = IccProfile::defaultSearchPaths();
 
-    return !paths.isEmpty();
+    return (!paths.isEmpty());
 }
 
 } // namespace Digikam

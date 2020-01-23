@@ -101,7 +101,7 @@ SetupDatabase::SetupDatabase(QWidget* const parent)
     QWidget* const settingsPanel = new QWidget(tab);
     QVBoxLayout* settingsLayout  = new QVBoxLayout(settingsPanel);
 
-    d->databaseWidget = new DatabaseSettingsWidget;
+    d->databaseWidget            = new DatabaseSettingsWidget;
     settingsLayout->addWidget(d->databaseWidget);
 
     if (!CoreDbSchemaUpdater::isUniqueHashUpToDate())
@@ -115,7 +115,7 @@ SetupDatabase::SetupDatabase(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QWidget* const ignorePanel = new QWidget(tab);
+    QWidget* const ignorePanel   = new QWidget(tab);
     QGridLayout* ignoreLayout    = new QGridLayout(ignorePanel);
 
     QLabel* const ignoreInfoLabel = new QLabel(
@@ -219,6 +219,7 @@ void SetupDatabase::applySettings()
             AlbumManager::instance()->changeDatabase(params);
             break;
         }
+
         case DatabaseSettingsWidget::MysqlInternal:
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Switch to Mysql Internal DB config...";
@@ -228,6 +229,7 @@ void SetupDatabase::applySettings()
             AlbumManager::instance()->changeDatabase(params);
             break;
         }
+
         default: // DatabaseSettingsWidget::MysqlServer
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "Switch to Mysql server DB config...";

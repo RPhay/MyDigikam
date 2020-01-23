@@ -150,6 +150,7 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
     QLabel* const formatLabel   = new QLabel(i18nc("@label", "Save files as"));
 
     // keep in sync with VersionManager::workspaceFileFormats()
+
     d->formatBox           = new QComboBox;
     d->formatBox->addItem(i18nc("@label:listbox", "JPEG"),      QLatin1String("JPG"));
     d->formatBox->addItem(i18nc("@label:listbox", "TIFF"),      QLatin1String("TIFF"));
@@ -165,14 +166,18 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
                                      "Format-specific options, like compression settings, "
                                      "can be configured on the <interface>Format Options</interface> tab.</para>"
                                      "<para><list>"
+
                                      // Lossy: JPEG
+
                                      "<item>"
                                      "<emphasis strong='true'>JPEG</emphasis>: "
                                      "JPEG is the most commonly used file format, but it employs lossy compression, "
                                      "which means that with each saving operation some image information will be irreversibly lost. "
                                      "JPEG offers a good compression rate, resulting in smaller files. "
                                      "</item>"
+
                                      // Traditional lossless: PNG, TIFF
+
                                      "<item>"
                                      "<emphasis strong='true'>PNG</emphasis>: "
                                      "A widely used format employing lossless compression. "
@@ -183,7 +188,9 @@ SetupVersioning::SetupVersioning(QWidget* const parent)
                                      "A commonly used format, usually uncompressed or with modest lossless compression. "
                                      "Resulting files will be large, but without quality loss due to compression. "
                                      "</item>"
+
                                      // Modern lossless: PGF, JPEG 2000
+
                                      "<item>"
                                      "<emphasis strong='true'>PGF</emphasis>: "
                                      "This is a technically superior file format offering good compression rates "

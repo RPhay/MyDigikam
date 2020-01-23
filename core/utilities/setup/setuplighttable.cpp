@@ -83,9 +83,9 @@ SetupLightTable::SetupLightTable(QWidget* const parent)
     : QScrollArea(parent),
       d(new Private)
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    QWidget* const panel = new QWidget(viewport());
+    QWidget* const panel      = new QWidget(viewport());
     setWidget(panel);
     setWidgetResizable(true);
 
@@ -96,7 +96,7 @@ SetupLightTable::SetupLightTable(QWidget* const parent)
     QGroupBox* const interfaceOptionsGroup = new QGroupBox(i18n("Interface Options"), panel);
     QVBoxLayout* const gLayout             = new QVBoxLayout(interfaceOptionsGroup);
 
-    d->autoSyncPreview = new QCheckBox(i18n("Synchronize panels automatically"), interfaceOptionsGroup);
+    d->autoSyncPreview      = new QCheckBox(i18n("Synchronize panels automatically"), interfaceOptionsGroup);
     d->autoSyncPreview->setWhatsThis(i18n("Set this option to automatically synchronize "
                                           "zooming and panning between left and right panels if the "
                                           "images have the same size."));
@@ -133,8 +133,6 @@ SetupLightTable::SetupLightTable(QWidget* const parent)
     // --------------------------------------------------------
 
     readSettings();
-
-    // --------------------------------------------------------
 }
 
 SetupLightTable::~SetupLightTable()

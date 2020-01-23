@@ -40,6 +40,7 @@ extern "C"
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "dinfointerface.h"
 
 namespace DigikamGenericFileCopyPlugin
@@ -100,6 +101,10 @@ void FCTask::run()
 
     if (d->symLinks)
     {
+#ifdef Q_OS_WIN
+        dest.setPath(dest.path() + QLatin1String(".lnk")); 
+#endif
+
         ok = QFile::link(d->srcUrl.toLocalFile(),
                          dest.toLocalFile());
     }

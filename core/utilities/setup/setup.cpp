@@ -294,6 +294,7 @@ QSize Setup::sizeHint() const
     // that some important tabs get a scroll bar, although the dialog could be larger
     // on a normal display (QScrollArea size hint does not take widget into account)
     // Adjust size hint here so that certain selected tabs are display full per default.
+
     QSize hint          = DConfigDlg::sizeHint();
     int maxHintHeight   = 0;
     int maxWidgetHeight = 0;
@@ -301,13 +302,16 @@ QSize Setup::sizeHint() const
     for (int page = 0 ; page != SetupPageEnumLast ; ++page)
     {
         // only take tabs into account here that should better be displayed without scrolling
-        if (page == CollectionsPage ||
-            page == AlbumViewPage   ||
-            page == TemplatePage    ||
-            page == LightTablePage  ||
-            page == EditorPage      ||
-            page == PluginsPage     ||
-            page == MiscellaneousPage)
+
+        if (
+            (page == CollectionsPage) ||
+            (page == AlbumViewPage)   ||
+            (page == TemplatePage)    ||
+            (page == LightTablePage)  ||
+            (page == EditorPage)      ||
+            (page == PluginsPage)     ||
+            (page == MiscellaneousPage)
+           )
         {
             DConfigDlgWdgItem* const item = d->pageItem((Page)page);
 
@@ -329,6 +333,7 @@ QSize Setup::sizeHint() const
 
     // The additional 20 is a hack to make it work.
     // Don't know why, the largest page would have scroll bars without this
+
     if (maxWidgetHeight > maxHintHeight)
     {
         hint.setHeight(hint.height() + (maxWidgetHeight - maxHintHeight) + 20);
@@ -348,6 +353,7 @@ bool Setup::execDialog(QWidget* const parent, Page page)
     setup->showPage(page);
     bool success          = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
+
     return success;
 }
 
@@ -363,6 +369,7 @@ bool Setup::execSinglePage(QWidget* const parent, Page page)
     setup->setFaceType(Plain);
     bool success          = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
+
     return success;
 }
 
@@ -374,6 +381,7 @@ bool Setup::execTemplateEditor(QWidget* const parent, const Template& t)
     setup->setTemplate(t);
     bool success          = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
+
     return success;
 }
 
@@ -384,16 +392,25 @@ bool Setup::execMetadataFilters(QWidget* const parent, int tab)
     setup->setFaceType(Plain);
 
     DConfigDlgWdgItem* const cur  = setup->currentPage();
-    if (!cur) return false;
+
+    if (!cur)
+    {
+        return false;
+    }
 
     SetupMetadata* const widget = dynamic_cast<SetupMetadata*>(cur->widget());
-    if (!widget) return false;
+
+    if (!widget)
+    {
+        return false;
+    }
 
     widget->setActiveMainTab(SetupMetadata::Display);
     widget->setActiveSubTab(tab);
 
     bool success                = (setup->DConfigDlg::exec() == QDialog::Accepted);
     delete setup;
+
     return success;
 }
 

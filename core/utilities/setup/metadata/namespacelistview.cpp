@@ -70,6 +70,7 @@ QModelIndexList NamespaceListView::mySelectedIndexes()
 void NamespaceListView::dropEvent(QDropEvent* e)
 {
     QListView::dropEvent(e);
+
     emit signalItemsChanged();
 }
 

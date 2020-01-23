@@ -78,7 +78,8 @@ class Q_DECL_HIDDEN SetupCameraItem : public QTreeWidgetItem
 public:
 
     explicit SetupCameraItem(QTreeWidget* const parent, CameraType* const ctype)
-        : QTreeWidgetItem(parent), m_ctype(nullptr)
+        : QTreeWidgetItem(parent),
+          m_ctype(nullptr)
     {
         setCameraType(ctype);
     };
@@ -120,8 +121,8 @@ class Q_DECL_HIDDEN CameraAutoDetectThread::Private
 public:
 
     explicit Private()
+      : result(0)
     {
-        result = 0;
     }
 
     int     result;
@@ -145,6 +146,7 @@ CameraAutoDetectThread::~CameraAutoDetectThread()
 void CameraAutoDetectThread::run()
 {
     d->result = GPCamera::autoDetect(d->model, d->port);
+
     emit signalComplete();
 }
 
@@ -283,7 +285,7 @@ SetupCamera::SetupCamera(QWidget* const parent)
     setWidget(d->tab);
     setWidgetResizable(true);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing    = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QWidget* const panel = new QWidget(d->tab);
 
@@ -511,8 +513,10 @@ SetupCamera::SetupCamera(QWidget* const parent)
     grid2->addWidget(d->iconShowSizeBox,          1, 0, 1, 1);
     grid2->addWidget(d->iconShowDateBox,          2, 0, 1, 1);
     grid2->addWidget(d->iconShowFormatBox,        3, 0, 1, 1);
-//  grid2->addWidget(d->iconShowResolutionBox,    4, 0, 1, 1);              TODO
-
+/*
+    TODO
+    grid2->addWidget(d->iconShowResolutionBox,    4, 0, 1, 1);
+*/
     grid2->addWidget(d->iconShowTagsBox,          0, 1, 1, 1);
     grid2->addWidget(d->iconShowRatingBox,        1, 1, 1, 1);
     grid2->addWidget(d->iconShowOverlaysBox,      2, 1, 1, 1);
@@ -663,7 +667,7 @@ void SetupCamera::readSettings()
 
     KConfigGroup importGroup = config->group(d->importFiltersConfigGroupName);
 
-    for (int i = 0; true; ++i)
+    for (int i = 0 ; true ; ++i)
     {
         QString filter = importGroup.readEntry(QString::fromUtf8("Filter%1").arg(i), QString());
 
@@ -700,7 +704,10 @@ void SetupCamera::readSettings()
     d->iconShowTagsBox->setChecked(settings->getIconShowTags());
     d->iconShowSizeBox->setChecked(settings->getIconShowSize());
     d->iconShowDateBox->setChecked(settings->getIconShowDate());
-    //TODO: d->iconShowResolutionBox->setChecked(settings->getIconShowResolution());
+/*
+    TODO
+    d->iconShowResolutionBox->setChecked(settings->getIconShowResolution());
+*/
     d->iconShowOverlaysBox->setChecked(settings->getIconShowOverlays());
     d->iconShowRatingBox->setChecked(settings->getIconShowRating());
     d->iconShowFormatBox->setChecked(settings->getIconShowImageFormat());
@@ -768,7 +775,7 @@ void SetupCamera::applySettings()
 
     importGroup.deleteGroup();
 
-    for (int i = 0; i < d->filters.count(); ++i)
+    for (int i = 0 ; i < d->filters.count() ; ++i)
     {
         importGroup.writeEntry(QString::fromUtf8("Filter%1").arg(i), d->filters[i]->toString());
     }
@@ -788,7 +795,10 @@ void SetupCamera::applySettings()
     settings->setIconShowTags(d->iconShowTagsBox->isChecked());
     settings->setIconShowSize(d->iconShowSizeBox->isChecked());
     settings->setIconShowDate(d->iconShowDateBox->isChecked());
-    //TODO: settings->setIconShowResolution(d->iconShowResolutionBox->isChecked());
+/*
+    TODO
+    settings->setIconShowResolution(d->iconShowResolutionBox->isChecked());
+*/
     settings->setIconShowOverlays(d->iconShowOverlaysBox->isChecked());
     settings->setIconShowRating(d->iconShowRatingBox->isChecked());
     settings->setIconShowImageFormat(d->iconShowFormatBox->isChecked());
@@ -915,6 +925,7 @@ void SetupCamera::slotAutoDetectCamera()
     }
 
     // NOTE: See note in digikam/digikam/cameralist.cpp
+
     if (port.startsWith(QLatin1String("usb:")))
     {
         port = QLatin1String("usb:");
@@ -1005,7 +1016,8 @@ void SetupCamera::slotPreviewItemsClicked()
 {
     if (d->previewItemsWhileDownload->isChecked() && d->previewLoadFullImageSize->isChecked())
     {
-        QMessageBox::information(this, qApp->applicationName(), i18n("In order to enable this feature, the full-sized preview will be disabled."));
+        QMessageBox::information(this, qApp->applicationName(),
+                                 i18n("In order to enable this feature, the full-sized preview will be disabled."));
 
         d->previewLoadFullImageSize->setChecked(false);
     }
@@ -1015,7 +1027,9 @@ void SetupCamera::slotPreviewFullImageSizeClicked()
 {
     if (d->previewItemsWhileDownload->isChecked() && d->previewLoadFullImageSize)
     {
-        QMessageBox::information(this, qApp->applicationName(), i18n("If the full-sized preview is enabled it will affect the speed of previewing each item while download."));
+        QMessageBox::information(this, qApp->applicationName(),
+                                 i18n("If the full-sized preview is enabled it will affect the speed of previewing each item while download."));
+
         d->previewItemsWhileDownload->setChecked(false);
     }
 }

@@ -60,19 +60,20 @@ public:
         CameraPage,
         PluginsPage,
         MiscellaneousPage,
+
         SetupPageEnumLast
     };
 
 public:
 
-    /*
+    /**
      * Show a setup dialog. The specified page will be selected.
      * True is returned if the dialog was closed with Ok.
      */
     static bool execDialog(Page page = LastPageUsed);
     static bool execDialog(QWidget* const parent, Page page = LastPageUsed);
 
-    /*
+    /**
      * Show a setup dialog. Only the specified page will be available.
      */
     static bool execSinglePage(Page page);

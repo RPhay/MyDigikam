@@ -53,11 +53,13 @@ protected:
 
     QModelIndex indexVisuallyAt(const QPoint& p);
 
-//    /**
-//     * @brief contextMenuEvent - reimplemented method from QListView
-//     *                           to handle custom context menu
-//     */
-//    void contextMenuEvent(QContextMenuEvent* event);
+    /**
+     * @brief contextMenuEvent - reimplemented method from QListView
+     *                           to handle custom context menu
+     */
+/*
+    void contextMenuEvent(QContextMenuEvent* event);
+*/
 
 Q_SIGNALS:
 

@@ -184,18 +184,18 @@ SetupToolTip::SetupToolTip(QWidget* const parent)
     : QScrollArea(parent),
       d(new Private)
 {
-    QWidget* const panel    = new QWidget(viewport());
+    QWidget* const panel     = new QWidget(viewport());
     setWidget(panel);
     setWidgetResizable(true);
 
-    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing        = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
-    QVBoxLayout* const vlay = new QVBoxLayout(panel);
+    QVBoxLayout* const vlay  = new QVBoxLayout(panel);
 
-    d->fontSelect           = new DFontSelect(i18n("Tool-Tips Font:"), panel);
+    d->fontSelect            = new DFontSelect(i18n("Tool-Tips Font:"), panel);
     d->fontSelect->setToolTip(i18n("Select here the font used to display text in tool-tips."));
 
-    d->tab                  = new QTabWidget(panel);
+    d->tab                   = new QTabWidget(panel);
 
     // --------------------------------------------------------
 
@@ -339,7 +339,7 @@ SetupToolTip::SetupToolTip(QWidget* const parent)
     grid5->addWidget(d->showVideoAspectRatio,      0, 0, 1, 1);
     grid5->addWidget(d->showVideoAudioBitRate,     1, 0, 1, 1);
     grid5->addWidget(d->showVideoAudioChannelType, 2, 0, 1, 1);
-    grid5->addWidget(d->showVideoAudioCodec,  3, 0, 1, 1);
+    grid5->addWidget(d->showVideoAudioCodec,       3, 0, 1, 1);
     grid5->addWidget(d->showVideoDuration,         0, 1, 1, 1);
     grid5->addWidget(d->showVideoFrameRate,        1, 1, 1, 1);
     grid5->addWidget(d->showVideoVideoCodec,       2, 1, 1, 1);

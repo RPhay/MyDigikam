@@ -144,33 +144,33 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     : QScrollArea(parent),
       d(new Private)
 {
-    d->tab = new QTabWidget(viewport());
+    d->tab                     = new QTabWidget(viewport());
     setWidget(d->tab);
     setWidgetResizable(true);
 
-    QWidget* const iwpanel    = new QWidget(d->tab);
-    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    QWidget* const iwpanel     = new QWidget(d->tab);
+    const int spacing          = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     // --------------------------------------------------------
 
-    QGridLayout* const grid   = new QGridLayout(iwpanel);
+    QGridLayout* const grid    = new QGridLayout(iwpanel);
 
-    d->iconShowNameBox        = new QCheckBox(i18n("Show file&name"), iwpanel);
+    d->iconShowNameBox         = new QCheckBox(i18n("Show file&name"), iwpanel);
     d->iconShowNameBox->setWhatsThis(i18n("Set this option to show the filename below the image thumbnail."));
 
-    d->iconShowSizeBox        = new QCheckBox(i18n("Show file si&ze"), iwpanel);
+    d->iconShowSizeBox         = new QCheckBox(i18n("Show file si&ze"), iwpanel);
     d->iconShowSizeBox->setWhatsThis(i18n("Set this option to show the file size below the image thumbnail."));
 
-    d->iconShowDateBox        = new QCheckBox(i18n("Show camera creation &date"), iwpanel);
+    d->iconShowDateBox         = new QCheckBox(i18n("Show camera creation &date"), iwpanel);
     d->iconShowDateBox->setWhatsThis(i18n("Set this option to show the camera creation date "
                                           "below the image thumbnail."));
 
-    d->iconShowModDateBox     = new QCheckBox(i18n("Show file &modification date"), iwpanel);
+    d->iconShowModDateBox      = new QCheckBox(i18n("Show file &modification date"), iwpanel);
     d->iconShowModDateBox->setWhatsThis(i18n("Set this option to show the file modification date "
                                              "below the image thumbnail if it is different than camera creation date. "
                                              "This option is useful to identify quickly which items have been modified."));
 
-    d->iconShowResolutionBox  = new QCheckBox(i18n("Show ima&ge dimensions"), iwpanel);
+    d->iconShowResolutionBox   = new QCheckBox(i18n("Show ima&ge dimensions"), iwpanel);
     d->iconShowResolutionBox->setWhatsThis(i18n("Set this option to show the image size in pixels "
                                                 "below the image thumbnail."));
 
@@ -217,7 +217,7 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
     d->iconViewFontSelect      = new DFontSelect(i18n("Icon View font:"), iwpanel);
     d->iconViewFontSelect->setToolTip(i18n("Select here the font used to display text in icon views."));
 
-    d->largeThumbsBox = new QCheckBox(i18n("Use large thumbnail size for high screen resolution"), iwpanel);
+    d->largeThumbsBox          = new QCheckBox(i18n("Use large thumbnail size for high screen resolution"), iwpanel);
     d->largeThumbsBox->setWhatsThis(i18n("Set this option to render icon-view with large thumbnail size, for example in case of 4K monitor is used.\n"
                                          "By default this option is turned off and the maximum thumbnail size is limited to 256x256 pixels. "
                                          "When this option is enabled, thumbnail size can be extended to 512x512 pixels.\n"
@@ -340,10 +340,10 @@ SetupAlbumView::SetupAlbumView(QWidget* const parent)
 
     // --------------------------------------------------------
 
-    d->mimetype  = new SetupMime();
+    d->mimetype = new SetupMime();
     d->tab->insertTab(MimeType, d->mimetype, i18nc("@title:tab", "Mime Types"));
 
-    d->category  = new SetupCategory(d->tab);
+    d->category = new SetupCategory(d->tab);
     d->tab->insertTab(Category, d->category, i18nc("@title:tab", "Categories"));
 
     // --------------------------------------------------------
@@ -417,6 +417,7 @@ void SetupAlbumView::applySettings()
     // dysfunction between Thumbs DB and icon if
     // thumb size is over 256 and when large thumbs size support is disabled.
     // digiKam need to be restarted to take effect.
+
     ThumbnailSize::saveSettings(group, d->largeThumbsBox->isChecked());
 }
 
@@ -429,7 +430,7 @@ void SetupAlbumView::readSettings()
         return;
     }
 
-    if (settings->getTreeViewIconSize() == 16)
+    if      (settings->getTreeViewIconSize() == 16)
     {
         d->iconTreeThumbSize->setCurrentIndex(0);
     }
@@ -500,12 +501,13 @@ void SetupAlbumView::readSettings()
 
 bool SetupAlbumView::useLargeThumbsHasChanged() const
 {
-    return d->largeThumbsBox->isChecked() != d->useLargeThumbsOriginal;
+    return (d->largeThumbsBox->isChecked() != d->useLargeThumbsOriginal);
 }
 
 void SetupAlbumView::slotUseLargeThumbsToggled(bool b)
 {
     // Show info if large thumbs were enabled, and only once.
+
     if (b && d->useLargeThumbsShowedInfo && useLargeThumbsHasChanged())
     {
         d->useLargeThumbsShowedInfo = true;
