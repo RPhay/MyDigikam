@@ -50,26 +50,32 @@ class DIGIKAM_EXPORT SetupCollectionModel : public QAbstractItemModel
 
 public:
 
-    /** SetupCollectionModel is a model specialized for use in
-     *  SetupCollectionTreeView. It provides a reads the current collections
-     *  from CollectionManager, displays them in three categories,
-     *  and supports adding and removing collections
+    /**
+     * SetupCollectionModel is a model specialized for use in
+     * SetupCollectionTreeView. It provides a reads the current collections
+     * from CollectionManager, displays them in three categories,
+     * and supports adding and removing collections
      */
 
     enum SetupCollectionDataRole
     {
         /// Returns true if the model index is the index of a category
         IsCategoryRole             = Qt::UserRole,
+
         /// The text for the category button
         CategoryButtonDisplayRole  = Qt::UserRole + 1,
         CategoryButtonMapId        = Qt::UserRole + 2,
+
         /// Returns true if the model index is the index of a button
         IsUpdateRole               = Qt::UserRole + 3,
+
         /// The pixmap of the button
         UpdateDecorationRole       = Qt::UserRole + 4,
         UpdateMapId                = Qt::UserRole + 5,
+
         /// Returns true if the model index is the index of a button
         IsDeleteRole               = Qt::UserRole + 6,
+
         /// The pixmap of the button
         DeleteDecorationRole       = Qt::UserRole + 7,
         DeleteMapId                = Qt::UserRole + 8
@@ -110,7 +116,7 @@ public:
     QModelIndex indexForCategory(Category category) const;
     QList<QModelIndex> categoryIndexes()            const;
 
-    // QAbstractItemModel implementation
+    /// QAbstractItemModel implementation
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                       const;
     virtual QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const;
     virtual int rowCount(const QModelIndex& parent = QModelIndex())                                   const;
@@ -134,15 +140,17 @@ Q_SIGNALS:
 
 public Q_SLOTS:
 
-    /** Forward category button clicked signals to this slot.
-     *  mappedId is retrieved with the CategoryButtonMapId role
-     *  for the model index of the button
+    /**
+     * Forward category button clicked signals to this slot.
+     * mappedId is retrieved with the CategoryButtonMapId role
+     * for the model index of the button
      */
     void slotCategoryButtonPressed(int mappedId);
 
-    /** Forward button clicked signals to this slot.
-     *  mappedId is retrieved with the ButtonMapId role
-     *  for the model index of the button
+    /**
+     * Forward button clicked signals to this slot.
+     * mappedId is retrieved with the ButtonMapId role
+     * for the model index of the button
      */
     void slotUpdatePressed(int mappedId);
     void slotDeletePressed(int mappedId);
@@ -174,6 +182,8 @@ protected:
         Item();
         explicit Item(const CollectionLocation& location);
         Item(const QString& path, const QString& label, SetupCollectionModel::Category category);
+
+    public:
 
         CollectionLocation location;
         QString            label;

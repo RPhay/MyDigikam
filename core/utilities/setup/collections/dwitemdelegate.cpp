@@ -6,7 +6,7 @@
  * Date        : 2007-11-15
  * Description : widget item delegate for setup collection view
  *
- * Copyright (C) 2015      by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2008 by Rafael Fernández López <ereslibre at kde dot org>
  * Copyright (C) 2008      by Kevin Ottens <ervin at kde dot org>
  *
@@ -23,7 +23,6 @@
  *
  * ============================================================ */
 
-#include "dwitemdelegate.h"
 #include "dwitemdelegate_p.h"
 
 // Qt includes
@@ -92,6 +91,7 @@ QPersistentModelIndex DWItemDelegate::focusedIndex() const
     }
 
     // Use the mouse position, if the widget refused to take keyboard focus.
+
     const QPoint pos = d->itemView->viewport()->mapFromGlobal(QCursor::pos());
 
     return d->itemView->indexAt(pos);

@@ -6,7 +6,7 @@
  * Date        : 2007-11-15
  * Description : widget item delegate for setup collection view
  *
- * Copyright (C) 2015      by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2008 by Rafael Fernández López <ereslibre at kde dot org>
  * Copyright (C) 2008      by Kevin Ottens <ervin at kde dot org>
  *
@@ -79,8 +79,10 @@ DWItemDelegatePrivate::~DWItemDelegatePrivate()
 void DWItemDelegatePrivate::slotDWRowsInserted(const QModelIndex& parent, int start, int end)
 {
     Q_UNUSED(end);
+
     // We need to update the rows behind the inserted row as well because the widgets need to be
     // moved to their new position
+
     updateRowRange(parent, start, model->rowCount(parent), false);
 }
 
@@ -92,16 +94,18 @@ void DWItemDelegatePrivate::slotDWRowsAboutToBeRemoved(const QModelIndex& parent
 void DWItemDelegatePrivate::slotDWRowsRemoved(const QModelIndex& parent, int start, int end)
 {
     Q_UNUSED(end);
+
     // We need to update the rows that come behind the deleted rows because the widgets need to be
     // moved to the new position
+
     updateRowRange(parent, start, model->rowCount(parent), false);
 }
 
 void DWItemDelegatePrivate::slotDWDataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight)
 {
-    for (int i = topLeft.row(); i <= bottomRight.row(); ++i)
+    for (int i = topLeft.row() ; i <= bottomRight.row() ; ++i)
     {
-        for (int j = topLeft.column(); j <= bottomRight.column(); ++j)
+        for (int j = topLeft.column() ; j <= bottomRight.column() ; ++j)
         {
             const QModelIndex index = model->index(i, j, topLeft.parent());
             widgetPool->findWidgets(index, optionView(index));
@@ -144,7 +148,7 @@ void DWItemDelegatePrivate::updateRowRange(const QModelIndex& parent, int start,
 
     while (i <= end)
     {
-        for (int j = 0; j < model->columnCount(parent); ++j)
+        for (int j = 0 ; j < model->columnCount(parent) ; ++j)
         {
             const QModelIndex index    = model->index(i, j, parent);
             QList<QWidget*> widgetList = widgetPool->findWidgets(index, optionView(index), isRemoving ? DWItemDelegatePool::NotUpdateWidgets
@@ -173,6 +177,7 @@ inline QStyleOptionViewItem DWItemDelegatePrivate::optionView(const QModelIndex&
     optionView.initFrom(itemView->viewport());
     optionView.rect           = itemView->visualRect(index);
     optionView.decorationSize = itemView->iconSize();
+
     return optionView;
 }
 
@@ -183,9 +188,9 @@ void DWItemDelegatePrivate::initializeModel(const QModelIndex& parent)
         return;
     }
 
-    for (int i = 0; i < model->rowCount(parent); ++i)
+    for (int i = 0 ; i < model->rowCount(parent) ; ++i)
     {
-        for (int j = 0; j < model->columnCount(parent); ++j)
+        for (int j = 0 ; j < model->columnCount(parent) ; ++j)
         {
             const QModelIndex index = model->index(i, j, parent);
 
@@ -194,8 +199,10 @@ void DWItemDelegatePrivate::initializeModel(const QModelIndex& parent)
                 widgetPool->findWidgets(index, optionView(index));
             }
         }
+
         // Check if we need to go recursively through the children of parent (if any) to initialize
         // all possible indexes that are shown.
+
         const QModelIndex index = model->index(i, 0, parent);
 
         if (index.isValid() && model->hasChildren(index))
@@ -213,6 +220,7 @@ bool DWItemDelegatePrivate::eventFilter(QObject* watched, QEvent* event)
         // if the view hasn't been deleted, it might be that just the
         // delegate is removed from it, in which case we need to remove the widgets
         // manually, otherwise they still get drawn.
+
         if (watched == itemView)
         {
             viewDestroyed = true;
@@ -289,13 +297,17 @@ bool DWItemDelegatePrivate::eventFilter(QObject* watched, QEvent* event)
     {
         case QEvent::Polish:
         case QEvent::Resize:
+
             if (!qobject_cast<QAbstractItemView*>(watched))
             {
                 QTimer::singleShot(0, this, SLOT(initializeModel()));
             }
+
             break;
+
         case QEvent::FocusIn:
         case QEvent::FocusOut:
+
             if (qobject_cast<QAbstractItemView*>(watched))
             {
                 foreach (const QModelIndex& index, selectionModel->selectedIndexes())
@@ -306,6 +318,7 @@ bool DWItemDelegatePrivate::eventFilter(QObject* watched, QEvent* event)
                     }
                 }
             }
+
         default:
             break;
     }

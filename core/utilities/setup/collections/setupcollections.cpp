@@ -80,6 +80,7 @@ SetupCollections::SetupCollections(QWidget* const parent)
     QGroupBox* const albumPathBox = new QGroupBox(i18n("Root Album Folders"), panel);
 
 #ifndef Q_OS_WIN
+
     QLabel* const albumPathLabel  = new QLabel(i18n("<p>Below are the locations of your root albums used to store "
                                               "your images. Write access is necessary to be able "
                                               "to edit images in these albums.</p>"
@@ -88,13 +89,17 @@ SetupCollections::SetupCollections(QWidget* const parent)
                                               "<p>Important: You need to mount the share natively on your system before to setup a remote collection.</p>"
                                               "<p></p>"),
                                               albumPathBox);
+
 #else
+
     QLabel* const albumPathLabel  = new QLabel(i18n("<p>Below are the locations of your root albums used to store "
                                               "your images. Write access is necessary to be able "
                                               "to edit images in these albums.</p>"
                                               "<p></p>"),
                                               albumPathBox);
+
 #endif
+
     albumPathLabel->setWordWrap(true);
 
     d->collectionView  = new SetupCollectionTreeView(albumPathBox);

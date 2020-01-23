@@ -6,7 +6,7 @@
  * Date        : 2007-11-15
  * Description : widget item delegate for setup collection view
  *
- * Copyright (C) 2015      by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2007-2008 by Rafael Fernández López <ereslibre at kde dot org>
  * Copyright (C) 2008      by Kevin Ottens <ervin at kde dot org>
  *
@@ -58,20 +58,20 @@ public:
 public:
 
     /**
-      * Creates a new ItemDelegatePool.
-      *
-      * @param delegate the ItemDelegate for this pool.
-      */
+     * Creates a new ItemDelegatePool.
+     *
+     * @param delegate the ItemDelegate for this pool.
+     */
     explicit DWItemDelegatePool(DWItemDelegate* const delegate);
     ~DWItemDelegatePool();
 
     /**
-      * @brief Returns the widget associated to @p index and @p widget
-      * @param index The index to search into.
-      * @param option a QStyleOptionViewItem.
-      * @return A QList of the pointers to the widgets found.
-      * @internal
-      */
+     * @brief Returns the widget associated to @p index and @p widget
+     * @param index The index to search into.
+     * @param option a QStyleOptionViewItem.
+     * @return A QList of the pointers to the widgets found.
+     * @internal
+     */
     QList<QWidget*> findWidgets(const QPersistentModelIndex& index, const QStyleOptionViewItem& option,
                                 UpdateWidgetsEnum updateWidgets = UpdateWidgets) const;
 
