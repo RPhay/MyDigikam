@@ -22,9 +22,10 @@
  *
  * ============================================================ */
 
+#include "lookupfactory.h"
+
 // Local includes
 
-#include "lookupfactory.h"
 #include "lookupaltitudegeonames.h"
 
 namespace Digikam

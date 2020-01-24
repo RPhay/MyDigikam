@@ -78,6 +78,8 @@ public:
     {
     }
 
+public:
+
     Request::List          requests;
     MergedRequests::List   mergedRequests;
     StatusAltitude         status;
@@ -139,6 +141,7 @@ void LookupAltitudeGeonames::startLookup()
         const Request& currentRequest = d->requests.at(i);
 
         // is there another request with the same coordinates?
+
         bool requestAdded = currentMergedRequest.addRequestIfCoordinatesAreThere(currentRequest, i);
 
         for (int j = 0 ; (!requestAdded) && j < d->mergedRequests.size() ; ++j)
@@ -164,6 +167,7 @@ void LookupAltitudeGeonames::startLookup()
     }
 
     // all requests have been grouped into batches of 20, now start the first one
+
     d->currentMergedRequestIndex = -1;
     startNextRequest();
 }
@@ -175,7 +179,9 @@ void LookupAltitudeGeonames::startNextRequest()
     if (d->currentMergedRequestIndex >= d->mergedRequests.count())
     {
         d->status = StatusSuccess;
+
         emit signalDone();
+
         return;
     }
 
@@ -184,7 +190,7 @@ void LookupAltitudeGeonames::startNextRequest()
     QString latString;
     QString lonString;
 
-    for (int i = 0; i < currentMergedRequest.groupedRequestIndices.count(); ++i)
+    for (int i = 0 ; i < currentMergedRequest.groupedRequestIndices.count() ; ++i)
     {
         const QPair<GeoCoordinates, QIntList>& currentPair = currentMergedRequest.groupedRequestIndices.at(i);
         const GeoCoordinates requestCoordinates            = currentPair.first;
@@ -218,8 +224,11 @@ void LookupAltitudeGeonames::slotFinished(QNetworkReply* reply)
         d->status       = StatusError;
 
         // after an error, we abort:
+
         reply->deleteLater();
+
         emit signalDone();
+
         return;
     }
 
@@ -235,6 +244,7 @@ void LookupAltitudeGeonames::slotFinished(QNetworkReply* reply)
         const qreal altitude          = altitudeString.toFloat(&haveAltitude);
 
         // -32786 means that geonames.org has no data for these coordinates
+
         if (altitude == -32768)
         {
             haveAltitude = false;
@@ -255,6 +265,7 @@ void LookupAltitudeGeonames::slotFinished(QNetworkReply* reply)
 
             // The request has been carried out. Even if no altitude was
             // found, we return success.
+
             d->requests[requestIndex].success = true;
         }
 
