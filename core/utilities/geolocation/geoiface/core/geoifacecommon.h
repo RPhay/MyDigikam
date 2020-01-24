@@ -175,12 +175,12 @@ public:
     int                 markerSelectedCount;
     GeoCoordinates      coordinates;
     QPoint              pixelPos;
-    GeoGroupState          groupState;
+    GeoGroupState       groupState;
     QMap<int, QVariant> representativeMarkers;
 
     QSize               pixmapSize;
 
-    //! anchor point of the image, measured from bottom-left
+    /// anchor point of the image, measured from bottom-left
     QPoint              pixmapOffset;
 };
 
@@ -281,7 +281,7 @@ public:
 
 // ----------------------------------------------------------------------------------------------
 
-// helper functions:
+/// helper functions
 
 DIGIKAM_EXPORT bool GeoIfaceHelperParseLatLonString(const QString& latLonString,
                                                     GeoCoordinates* const coordinates);

@@ -58,12 +58,12 @@ class Q_DECL_HIDDEN GPSGeoIfaceModelHelper::Private
 public:
 
     explicit Private()
+      : model(nullptr),
+        selectionModel(nullptr)
     {
-        model          = nullptr;
-        selectionModel = nullptr;
     }
 
-    GPSItemModel*         model;
+    GPSItemModel*          model;
     QItemSelectionModel*   selectionModel;
     QList<GeoModelHelper*> ungroupedModelHelpers;
 };
@@ -100,13 +100,19 @@ bool GPSGeoIfaceModelHelper::itemCoordinates(const QModelIndex& index,
     GPSItemContainer* const item = d->model->itemFromIndex(index);
 
     if (!item)
+    {
         return false;
+    }
 
     if (!item->gpsData().hasCoordinates())
+    {
         return false;
+    }
 
     if (coordinates)
+    {
         *coordinates = item->gpsData().getCoordinates();
+    }
 
     return true;
 }
@@ -131,20 +137,20 @@ QPersistentModelIndex GPSGeoIfaceModelHelper::bestRepresentativeIndexFromList(co
 
     for (int i = 0 ; i < list.count() ; ++i)
     {
-        const QPersistentModelIndex currentIndex = list.at(i);
-        const GPSItemContainer* const currentItem   = static_cast<GPSItemContainer*>(d->model->itemFromIndex(currentIndex));
-        const QDateTime currentTime              = currentItem->dateTime();
-        bool takeThisIndex                       = bestTime.isNull();
+        const QPersistentModelIndex currentIndex  = list.at(i);
+        const GPSItemContainer* const currentItem = static_cast<GPSItemContainer*>(d->model->itemFromIndex(currentIndex));
+        const QDateTime currentTime               = currentItem->dateTime();
+        bool takeThisIndex                        = bestTime.isNull();
 
         if (!takeThisIndex)
         {
             if (oldestFirst)
             {
-                takeThisIndex = currentTime < bestTime;
+                takeThisIndex = (currentTime < bestTime);
             }
             else
             {
-                takeThisIndex = bestTime < currentTime;
+                takeThisIndex = (bestTime < currentTime);
             }
         }
 
@@ -172,7 +178,7 @@ void GPSGeoIfaceModelHelper::onIndicesMoved(const QList<QPersistentModelIndex>& 
     {
         const QAbstractItemModel* const targetModel = targetSnapIndex.model();
 
-        for (int i = 0; i < d->ungroupedModelHelpers.count(); ++i)
+        for (int i = 0 ; i < d->ungroupedModelHelpers.count() ; ++i)
         {
             GeoModelHelper* const ungroupedHelper = d->ungroupedModelHelpers.at(i);
 
@@ -180,12 +186,13 @@ void GPSGeoIfaceModelHelper::onIndicesMoved(const QList<QPersistentModelIndex>& 
             {
                 QList<QModelIndex> iMovedMarkers;
 
-                for (int i = 0; i < movedMarkers.count(); ++i)
+                for (int i = 0 ; i < movedMarkers.count() ; ++i)
                 {
                     iMovedMarkers << movedMarkers.at(i);
                 }
 
                 ungroupedHelper->snapItemsTo(targetSnapIndex, iMovedMarkers);
+
                 return;
             }
         }
@@ -193,10 +200,10 @@ void GPSGeoIfaceModelHelper::onIndicesMoved(const QList<QPersistentModelIndex>& 
 
     GPSUndoCommand* const undoCommand = new GPSUndoCommand();
 
-    for (int i = 0; i < movedMarkers.count(); ++i)
+    for (int i = 0 ; i < movedMarkers.count() ; ++i)
     {
         const QPersistentModelIndex itemIndex = movedMarkers.at(i);
-        GPSItemContainer* const item              = static_cast<GPSItemContainer*>(d->model->itemFromIndex(itemIndex));
+        GPSItemContainer* const item          = static_cast<GPSItemContainer*>(d->model->itemFromIndex(itemIndex));
 
         GPSUndoCommand::UndoInfo undoInfo(itemIndex);
         undoInfo.readOldDataFromItem(item);

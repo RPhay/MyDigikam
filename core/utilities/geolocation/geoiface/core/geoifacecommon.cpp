@@ -93,6 +93,7 @@ public:
     QList<GeoIfaceInternalWidgetInfo> internalMapWidgetsPool;
 
     // marker pixmaps:
+
     QMap<QString, QPixmap>            markerPixmaps;
 };
 
@@ -142,6 +143,7 @@ QUrl GeoIfaceGlobalObject::locateDataFile(const QString& filename)
 bool GeoIfaceHelperParseLatLonString(const QString& latLonString, GeoCoordinates* const coordinates)
 {
     // parse a 'lat,lon' string:
+
     const QStringList coordinateStrings = latLonString.trimmed().split(QLatin1Char(','));
     bool valid                          = ( coordinateStrings.size() == 2 );
 
@@ -193,6 +195,7 @@ bool GeoIfaceHelperParseXYStringToPoint(const QString& xyString, QPoint* const p
 
         // We do not actually care about the float part, only about the integer part
         // but we have to parse floats since this is what the data is.
+
         ptX = pointStrings.at(0).toFloat(&valid);
 
         if (valid)
@@ -205,6 +208,7 @@ bool GeoIfaceHelperParseXYStringToPoint(const QString& xyString, QPoint* const p
             if (point)
             {
                 // This will round to 0.
+
                 *point = QPoint(ptX, ptY);
             }
 
@@ -226,15 +230,18 @@ bool GeoIfaceHelperParseBoundsString(const QString& boundsString,
     const QString myBoundsString = boundsString.trimmed();
 
     // check for minimum length
+
     bool valid                   = (myBoundsString.size() >= 13);
     valid                       &= myBoundsString.startsWith(QLatin1Char('(')) && myBoundsString.endsWith(QLatin1Char(')'));
 
     if (valid)
     {
         // remove outer parentheses:
+
         const QString string1 = myBoundsString.mid(1, myBoundsString.length()-2).trimmed();
 
         // split the string at the middle comma:
+
         const int dumpComma   = string1.indexOf(QLatin1String(","), 0);
         const int splitComma  = string1.indexOf(QLatin1String(","), dumpComma+1);
         valid                 = (dumpComma >= 0) && (splitComma >= 0);
@@ -281,8 +288,9 @@ GeoCoordinates::PairList GeoIfaceHelperNormalizeBounds(const GeoCoordinates::Pai
     const qreal bEast  = boundsPair.second.lon();
     const qreal bNorth = boundsPair.second.lat();
     const qreal bSouth = boundsPair.first.lat();
-//     qCDebug(DIGIKAM_GEOIFACE_LOG) << bWest << bEast << bNorth << bSouth;
-
+/*
+    qCDebug(DIGIKAM_GEOIFACE_LOG) << bWest << bEast << bNorth << bSouth;
+*/
     if (bEast<bWest)
     {
         boundsList << GeoCoordinates::makePair(bSouth, -180, bNorth, bEast);
@@ -292,8 +300,9 @@ GeoCoordinates::PairList GeoIfaceHelperNormalizeBounds(const GeoCoordinates::Pai
     {
         boundsList << GeoCoordinates::makePair(bSouth, bWest, bNorth, bEast);
     }
-
-//     qCDebug(DIGIKAM_GEOIFACE_LOG) << boundsList;
+/*
+    qCDebug(DIGIKAM_GEOIFACE_LOG) << boundsList;
+*/
     return boundsList;
 }
 
@@ -315,6 +324,7 @@ bool GeoIfaceGlobalObject::getInternalWidgetFromPool(const MapBackend* const map
     const QString requestingBackendName = mapBackend->backendName();
 
     // try to find an available widget:
+
     int bestDockedWidget                = -1;
     int bestUndockedWidget              = -1;
     int bestReleasedWidget              = -1;

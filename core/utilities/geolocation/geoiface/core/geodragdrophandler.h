@@ -45,8 +45,8 @@ public:
     explicit GeoDragDropHandler(QObject* const parent = nullptr);
     virtual ~GeoDragDropHandler();
 
-    virtual Qt::DropAction accepts(const QDropEvent* e) = 0;
-    virtual bool dropEvent(const QDropEvent* e, const GeoCoordinates& dropCoordinates) = 0;
+    virtual Qt::DropAction accepts(const QDropEvent* e)                                 = 0;
+    virtual bool dropEvent(const QDropEvent* e, const GeoCoordinates& dropCoordinates)  = 0;
     virtual QMimeData* createMimeData(const QList<QPersistentModelIndex>& modelIndices) = 0;
 };
 

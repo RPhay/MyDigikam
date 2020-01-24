@@ -39,23 +39,29 @@ GPSUndoCommand::GPSUndoCommand(QUndoCommand* const parent)
 void GPSUndoCommand::changeItemData(const bool redoIt)
 {
     if (undoList.isEmpty())
+    {
         return;
+    }
 
     // get a pointer to the GPSItemModel:
     // TODO: why is the model returned as const?
+
     GPSItemModel* const imageModel = const_cast<GPSItemModel*>(dynamic_cast<const GPSItemModel*>(undoList.first().modelIndex.model()));
 
     if (!imageModel)
-        return;
-
-    for (int i=0; i<undoList.count(); ++i)
     {
-        const UndoInfo& info      = undoList.at(i);
+        return;
+    }
+
+    for (int i = 0 ; i < undoList.count() ; ++i)
+    {
+        const UndoInfo& info         = undoList.at(i);
         GPSItemContainer* const item = imageModel->itemFromIndex(info.modelIndex);
 
         // TODO: correctly handle the dirty flags
         // TODO: find a way to regenerate tag tree
-        GPSDataContainer newData  = redoIt ? info.dataAfter : info.dataBefore;
+
+        GPSDataContainer newData     = redoIt ? info.dataAfter : info.dataBefore;
         item->restoreGPSData(newData);
         QList<QList<TagData> > newRGTagList = redoIt ? info.newTagList : info.oldTagList;
         item->restoreRGTagList(newRGTagList);

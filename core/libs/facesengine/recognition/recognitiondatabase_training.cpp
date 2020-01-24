@@ -140,10 +140,11 @@ void RecognitionDatabase::clearAllTraining(const QString& trainingContext)
     QMutexLocker lock(&d->mutex);
 
     FaceDbAccess().db()->clearIdentities();
-
-    //d->clear(d->lbph(),   QList<int>(), trainingContext);
-    //d->clear(d->eigen(),  QList<int>(), trainingContext);
-    //d->clear(d->fisher(), QList<int>(), trainingContext);
+/*
+    d->clear(d->lbph(),   QList<int>(), trainingContext);
+    d->clear(d->eigen(),  QList<int>(), trainingContext);
+    d->clear(d->fisher(), QList<int>(), trainingContext);
+*/
     d->clear(d->dnn(),    QList<int>(), trainingContext);
 }
 

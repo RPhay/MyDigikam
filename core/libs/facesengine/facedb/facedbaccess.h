@@ -43,9 +43,10 @@ class DIGIKAM_DATABASE_EXPORT FaceDbAccess
 {
 public:
 
-    /** This class is written in analogy to CoreDbAccess
-     *  (some features stripped off).
-     *  For documentation, see coredbaccess.h
+    /**
+     * This class is written in analogy to CoreDbAccess
+     * (some features stripped off).
+     * For documentation, see coredbaccess.h
      */
     FaceDbAccess();
     ~FaceDbAccess();
@@ -83,12 +84,13 @@ class FaceDbAccessUnlock
 {
 public:
 
-    /** Acquire an object of this class if you want to assure
-     *  that the FaceDbAccess is _not_ held during the lifetime of the object.
-     *  At creation, the lock is obtained shortly, then all locks are released.
-     *  At destruction, all locks are acquired again.
-     *  If you need to access any locked structures during lifetime, acquire a new
-     *  FaceDbAccess.
+    /**
+     * Acquire an object of this class if you want to assure
+     * that the FaceDbAccess is _not_ held during the lifetime of the object.
+     * At creation, the lock is obtained shortly, then all locks are released.
+     * At destruction, all locks are acquired again.
+     * If you need to access any locked structures during lifetime, acquire a new
+     * FaceDbAccess.
      */
     FaceDbAccessUnlock();
     explicit FaceDbAccessUnlock(FaceDbAccess* const access);

@@ -48,8 +48,8 @@ enum MapLayout
 DIGIKAM_EXPORT QString getUserAgentName();
 
 void DIGIKAM_EXPORT coordinatesToClipboard(const GeoCoordinates& coordinates,
-                            const QUrl& url,
-                            const QString& title);
+                                           const QUrl& url,
+                                           const QString& title);
 
 bool DIGIKAM_EXPORT checkSidecarSettings();
 

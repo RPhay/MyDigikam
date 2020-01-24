@@ -28,7 +28,9 @@
 namespace Digikam
 {
 
-// NOTE: Takes care that there may be multiple values of attribute in identity's attributes
+/**
+ * NOTE: Takes care that there may be multiple values of attribute in identity's attributes
+ */
 bool RecognitionDatabase::Private::identityContains(const Identity& identity,
                                                     const QString& attribute,
                                                     const QString& value) const
@@ -61,7 +63,9 @@ Identity RecognitionDatabase::Private::findByAttribute(const QString& attribute,
     return Identity();
 }
 
-// NOTE: Takes care that there may be multiple values of attribute in valueMap
+/**
+ * NOTE: Takes care that there may be multiple values of attribute in valueMap
+ */
 Identity RecognitionDatabase::Private::findByAttributes(const QString& attribute,
                                                         const QMap<QString, QString>& valueMap) const
 {
@@ -132,6 +136,7 @@ Identity RecognitionDatabase::findIdentity(const QMap<QString, QString>& attribu
     Identity match;
 
     // First and foremost, UUID
+
     QString uuid = attributes.value(QLatin1String("uuid"));
     match        = d->findByAttribute(QLatin1String("uuid"), uuid);
 
@@ -141,12 +146,14 @@ Identity RecognitionDatabase::findIdentity(const QMap<QString, QString>& attribu
     }
 
     // A negative UUID match, with a given UUID, precludes any further search
+
     if (!uuid.isNull())
     {
         return Identity();
     }
 
     // full name
+
     match = d->findByAttributes(QLatin1String("fullName"), attributes);
 
     if (!match.isNull())
@@ -155,6 +162,7 @@ Identity RecognitionDatabase::findIdentity(const QMap<QString, QString>& attribu
     }
 
     // name
+
     match = d->findByAttributes(QLatin1String("name"), attributes);
 
     if (!match.isNull())

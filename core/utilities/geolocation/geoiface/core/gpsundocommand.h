@@ -53,12 +53,14 @@ public:
         void readOldDataFromItem(const GPSItemContainer* const imageItem);
         void readNewDataFromItem(const GPSItemContainer* const imageItem);
 
-        QPersistentModelIndex modelIndex;
-        GPSDataContainer dataBefore;
-        GPSDataContainer dataAfter;
+    public:
 
-        QList<QList<TagData> > oldTagList;
-        QList<QList<TagData> > newTagList;
+        QPersistentModelIndex   modelIndex;
+        GPSDataContainer        dataBefore;
+        GPSDataContainer        dataAfter;
+
+        QList<QList<TagData> >  oldTagList;
+        QList<QList<TagData> >  newTagList;
 
         typedef QList<UndoInfo> List;
     };

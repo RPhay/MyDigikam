@@ -60,11 +60,12 @@ void FaceDb::updateEIGENFaceModel(EigenFaceModel& model, const std::vector<cv::M
                 std::vector<float> vecdata;
 
                 /** FIXME !!! Why the Eigen face use DNN code here ???
-                  * Otherwise, how does it comput vecdata ???
-                  * Buggy codes from GSoC 2017
-                  */
-//                 this->getFaceVector(mat_rgb, vecdata);
-
+                 * Otherwise, how does it comput vecdata ???
+                 * Buggy codes from GSoC 2017
+                 */
+/*
+                this->getFaceVector(mat_rgb, vecdata);
+*/
                 QByteArray vec_byte(vecdata.size() * sizeof(float), 0);
                 float* const fp = reinterpret_cast<float*>(vec_byte.data());
 
@@ -133,6 +134,7 @@ EigenFaceModel FaceDb::eigenFaceModel() const
         metadata.storageStatus = EigenFaceMatMetadata::InDatabase;
 
         // cv::Mat
+
         data.type              = query.value(3).toInt();
         data.rows              = query.value(4).toInt();
         data.cols              = query.value(5).toInt();

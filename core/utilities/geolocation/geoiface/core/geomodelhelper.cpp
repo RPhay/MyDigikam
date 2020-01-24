@@ -77,8 +77,11 @@ QPersistentModelIndex GeoModelHelper::bestRepresentativeIndexFromList(const QLis
                                                                    const int /*sortKey*/)
 {
     // this is only a stub to provide some default implementation
+
     if (list.isEmpty())
+    {
         return QPersistentModelIndex();
+    }
 
     return list.first();
 }
@@ -139,8 +142,8 @@ void GeoModelHelper::onIndicesClicked(const QList<QPersistentModelIndex>& clicke
 }
 
 void GeoModelHelper::onIndicesMoved(const QList<QPersistentModelIndex>& movedIndices,
-                                 const GeoCoordinates& targetCoordinates,
-                                 const QPersistentModelIndex& targetSnapIndex)
+                                    const GeoCoordinates& targetCoordinates,
+                                    const QPersistentModelIndex& targetSnapIndex)
 {
     Q_UNUSED(movedIndices);
     Q_UNUSED(targetCoordinates);

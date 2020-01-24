@@ -43,6 +43,7 @@ ImageListProvider* RecognitionTrainingProvider::newImages(const Identity& id)
     if (m_identity == id)
     {
         m_toTrain.reset();
+
         return &m_toTrain;
     }
 

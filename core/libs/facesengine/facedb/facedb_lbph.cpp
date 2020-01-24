@@ -172,6 +172,7 @@ LBPHFaceModel FaceDb::lbphFaceModel() const
             metadata.storageStatus = LBPHistogramMetadata::InDatabase;
 
             // cv::Mat
+
             data.type              = query.value(3).toInt();
             data.rows              = query.value(4).toInt();
             data.cols              = query.value(5).toInt();
