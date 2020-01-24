@@ -56,13 +56,16 @@ bool MapDragDropHandler::dropEvent(const QDropEvent* e, const GeoCoordinates& dr
     const MapDragData* const mimeData = qobject_cast<const MapDragData*>(e->mimeData());
 
     if (!mimeData)
+    {
         return false;
+    }
 
     QList<QPersistentModelIndex> droppedIndices;
 
     for (int i = 0 ; i < mimeData->draggedIndices.count() ; ++i)
     {
         // TODO: correctly handle items with multiple columns
+
         QModelIndex itemIndex = mimeData->draggedIndices.at(i);
 
         if (itemIndex.column() == 0)
@@ -79,6 +82,7 @@ bool MapDragDropHandler::dropEvent(const QDropEvent* e, const GeoCoordinates& dr
 QMimeData* MapDragDropHandler::createMimeData(const QList<QPersistentModelIndex>& modelIndices)
 {
     Q_UNUSED(modelIndices);
+
     return nullptr;
 }
 

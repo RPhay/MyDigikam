@@ -118,7 +118,9 @@ void GPSItemDelegate::setThumbnailSize(const int size)
     GPSItemModel* const imageModel = d->imageList->getModel();
 
     if (!imageModel)
+    {
         return;
+    }
 
     if (imageModel->rowCount() > 0)
     {

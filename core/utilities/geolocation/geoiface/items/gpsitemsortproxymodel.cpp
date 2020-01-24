@@ -80,6 +80,7 @@ bool GPSItemSortProxyModel::lessThan(const QModelIndex& left, const QModelIndex&
     const GPSItemContainer* const itemRight = d->imageModel->itemFromIndex(right);
 
 //  qCDebug(DIGIKAM_GENERAL_LOG) << itemLeft << itemRight << column << rowCount() << d->imageModel->rowCount();
+
     return itemLeft->lessThan(itemRight, column);
 }
 
@@ -515,9 +516,9 @@ QItemSelection GPSModelIndexProxyMapper::mapSelectionLeftToRight(const QItemSele
             return QItemSelection();
         }
 
-        Q_ASSERT(seekSelection.isEmpty() || seekSelection.first().model() == proxy);
+        Q_ASSERT(seekSelection.isEmpty() || (seekSelection.first().model() == proxy));
         seekSelection = proxy->mapSelectionToSource(seekSelection);
-        Q_ASSERT(seekSelection.isEmpty() || seekSelection.first().model() == proxy->sourceModel());
+        Q_ASSERT(seekSelection.isEmpty() || (seekSelection.first().model() == proxy->sourceModel()));
 
         Q_ASSERT(d->assertSelectionValid(seekSelection));
     }
@@ -533,14 +534,14 @@ QItemSelection GPSModelIndexProxyMapper::mapSelectionLeftToRight(const QItemSele
             return QItemSelection();
         }
 
-        Q_ASSERT(seekSelection.isEmpty() || seekSelection.first().model() == proxy->sourceModel());
+        Q_ASSERT(seekSelection.isEmpty() || (seekSelection.first().model() == proxy->sourceModel()));
         seekSelection = proxy->mapSelectionFromSource(seekSelection);
-        Q_ASSERT(seekSelection.isEmpty() || seekSelection.first().model() == proxy);
+        Q_ASSERT(seekSelection.isEmpty() || (seekSelection.first().model() == proxy));
 
         Q_ASSERT(d->assertSelectionValid(seekSelection));
     }
 
-    Q_ASSERT((!seekSelection.isEmpty() && seekSelection.first().model() == d->m_rightModel) || true);
+    Q_ASSERT((!seekSelection.isEmpty() && (seekSelection.first().model() == d->m_rightModel)) || true);
 
     return seekSelection;
 }
@@ -599,7 +600,7 @@ QItemSelection GPSModelIndexProxyMapper::mapSelectionRightToLeft(const QItemSele
         Q_ASSERT(d->assertSelectionValid(seekSelection));
     }
 
-    Q_ASSERT((!seekSelection.isEmpty() && seekSelection.first().model() == d->m_leftModel) || true);
+    Q_ASSERT((!seekSelection.isEmpty() && (seekSelection.first().model() == d->m_leftModel)) || true);
 
     return seekSelection;
 }
