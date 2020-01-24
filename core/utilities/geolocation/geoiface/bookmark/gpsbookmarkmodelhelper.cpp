@@ -72,12 +72,16 @@ public:
 void GPSBookmarkModelHelper::Private::addBookmarkGroupToModel(BookmarkNode* const node)
 {
     if (node->type() != BookmarkNode::Folder)
+    {
         return;
+    }
 
     QList<BookmarkNode*> list = node->children();
 
     if (list.isEmpty())
+    {
         return;
+    }
 
     foreach (BookmarkNode* const currentBookmark, list)
     {
@@ -193,23 +197,25 @@ void GPSBookmarkModelHelper::slotUpdateBookmarksModel()
     d->model->clear();
 
     // iterate trough all bookmarks
+
     d->addBookmarkGroupToModel(d->bookmarkManager->bookmarks());
 }
 
 void GPSBookmarkModelHelper::setVisible(const bool state)
 {
     d->visible = state;
+
     emit signalVisibilityChanged();
 }
 
 GeoModelHelper::PropertyFlags GPSBookmarkModelHelper::modelFlags() const
 {
-    return FlagSnaps | (d->visible ? FlagVisible : FlagNull);
+    return (FlagSnaps | (d->visible ? FlagVisible : FlagNull));
 }
 
 GeoModelHelper::PropertyFlags GPSBookmarkModelHelper::itemFlags(const QModelIndex&) const
 {
-    return FlagVisible | FlagSnaps;
+    return (FlagVisible | FlagSnaps);
 }
 
 void GPSBookmarkModelHelper::snapItemsTo(const QModelIndex& targetIndex,
@@ -218,7 +224,9 @@ void GPSBookmarkModelHelper::snapItemsTo(const QModelIndex& targetIndex,
     GeoCoordinates targetCoordinates;
 
     if (!itemCoordinates(targetIndex, &targetCoordinates))
+    {
         return;
+    }
 
     GPSUndoCommand* const undoCommand = new GPSUndoCommand();
 
@@ -235,8 +243,9 @@ void GPSBookmarkModelHelper::snapItemsTo(const QModelIndex& targetIndex,
 
         item->setGPSData(newData);
         undoInfo.readNewDataFromItem(item);
-
-        //undoCommand->addUndoInfo(GPSUndoCommand::UndoInfo(itemIndex, oldData, newData, oldTagList, newTagList));
+/*
+        undoCommand->addUndoInfo(GPSUndoCommand::UndoInfo(itemIndex, oldData, newData, oldTagList, newTagList));
+*/
         undoCommand->addUndoInfo(undoInfo);
     }
 

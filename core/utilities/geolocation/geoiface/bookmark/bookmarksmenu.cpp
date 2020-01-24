@@ -166,6 +166,7 @@ void ModelMenu::slotAboutToShow()
     clear();
 
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+
     if (this->prePopulated())
     {
         addSeparator();
@@ -225,13 +226,19 @@ void ModelMenu::createMenu(const QModelIndex& parent, int max, QMenu* parentMenu
         else
         {
             if (d->separatorRole != 0 && idx.data(d->separatorRole).toBool())
+            {
                 addSeparator();
+            }
             else
+            {
                 menu->addAction(makeAction(idx));
+            }
         }
 
-        if (menu == this && i == d->firstSeparator - 1)
+        if ((menu == this) && (i == (d->firstSeparator - 1)))
+        {
             addSeparator();
+        }
     }
 }
 
@@ -251,11 +258,17 @@ QAction* ModelMenu::makeAction(const QIcon& icon, const QString& text, QObject* 
     QFontMetrics fm(font());
 
     if (d->maxWidth == -1)
+    {
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+
         d->maxWidth = fm.horizontalAdvance(QLatin1Char('m')) * 30;
+
 #else
+
         d->maxWidth = fm.width(QLatin1Char('m')) * 30;
+
 #endif
+    }
 
     QString smallText = fm.elidedText(text, Qt::ElideMiddle, d->maxWidth);
 
@@ -283,7 +296,9 @@ void ModelMenu::hovered(QAction* action)
         QString hoveredString = idx.data(d->hoverRole).toString();
 
         if (!hoveredString.isEmpty())
+        {
             emit hovered(hoveredString);
+        }
     }
 }
 
@@ -336,11 +351,15 @@ bool BookmarksMenu::prePopulated()
     foreach (QAction* const ac, d->initActions)
     {
         if (ac)
+        {
             addAction(ac);
+        }
     }
 
     if (!d->initActions.isEmpty())
+    {
         addSeparator();
+    }
 
     createMenu(rootIndex(), 0, this, this);
 
@@ -354,7 +373,9 @@ void BookmarksMenu::setInitialActions(const QList<QAction*>& actions)
     foreach (QAction* const ac, d->initActions)
     {
         if (ac)
+        {
             addAction(ac);
+        }
     }
 }
 

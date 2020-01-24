@@ -120,7 +120,7 @@ AddBookmarkDialog::AddBookmarkDialog(const QString& url,
     buttonBox->setStandardButtons(QDialogButtonBox::Cancel | QDialogButtonBox::Ok);
     buttonBox->setCenterButtons(false);
 
-    QVBoxLayout* const vbox = new QVBoxLayout(this);
+    QVBoxLayout* const vbox     = new QVBoxLayout(this);
     vbox->addWidget(label);
     vbox->addWidget(d->title);
     vbox->addWidget(d->desc);
@@ -166,7 +166,9 @@ void AddBookmarkDialog::accept()
     index             = d->proxyModel->mapToSource(index);
 
     if (!index.isValid())
+    {
         index = d->manager->bookmarksModel()->index(0, 0);
+    }
 
     BookmarkNode* const parent   = d->manager->bookmarksModel()->node(index);
     BookmarkNode* const bookmark = new BookmarkNode(BookmarkNode::Bookmark);
@@ -200,7 +202,7 @@ public:
     TreeProxyModel*        proxyModel;
     SearchTextBar*         search;
     QTreeView*             tree;
-    ItemPropertiesGPSTab* mapView;
+    ItemPropertiesGPSTab*  mapView;
 };
 
 BookmarksDialog::BookmarksDialog(QWidget* const parent, BookmarksManager* const mngr)
@@ -299,7 +301,10 @@ void BookmarksDialog::accept()
 
 void BookmarksDialog::closeEvent(QCloseEvent* e)
 {
-    if (!e) return;
+    if (!e)
+    {
+        return;
+    }
 
     saveSettings();
     e->accept();
@@ -408,10 +413,14 @@ void BookmarksDialog::slotNewFolder()
     QModelIndex idx          = currentIndex;
 
     if (idx.isValid() && !idx.model()->hasChildren(idx))
+    {
         idx = idx.parent();
+    }
 
     if (!idx.isValid())
+    {
         idx = d->tree->rootIndex();
+    }
 
     idx                        = d->proxyModel->mapToSource(idx);
     BookmarkNode* const parent = d->manager->bookmarksModel()->node(idx);
@@ -466,7 +475,9 @@ void BookmarksDialog::readSettings()
 void BookmarksDialog::saveSettings()
 {
     if (saveExpandedNodes(d->tree->rootIndex()))
+    {
         d->manager->changeExpanded();
+    }
 
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
     KConfigGroup group        = config->group(objectName());

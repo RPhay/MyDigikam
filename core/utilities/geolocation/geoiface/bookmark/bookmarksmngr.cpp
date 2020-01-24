@@ -143,10 +143,12 @@ ChangeBookmarkCommand::ChangeBookmarkCommand(BookmarksManager* const mngr,
             d->oldValue = d->node->title;
             setText(i18n("Title Change"));
             break;
+
         case Desc:
             d->oldValue = d->node->desc;
             setText(i18n("Comment Change"));
             break;
+
         default:    // Url
             d->oldValue = d->node->url;
             setText(i18n("Address Change"));
@@ -166,9 +168,11 @@ void ChangeBookmarkCommand::undo()
         case Title:
             d->node->title = d->oldValue;
             break;
+
         case Desc:
             d->node->desc  = d->oldValue;
             break;
+
         default:    // Url
             d->node->url   = d->oldValue;
             break;
@@ -184,9 +188,11 @@ void ChangeBookmarkCommand::redo()
         case Title:
             d->node->title = d->newValue;
             break;
+
         case Desc:
             d->node->desc  = d->newValue;
             break;
+
         default:    // Url
             d->node->url   = d->newValue;
             break;
@@ -242,7 +248,9 @@ QModelIndex BookmarksModel::index(BookmarkNode* node) const
     BookmarkNode* const parent = node->parent();
 
     if (!parent)
+    {
         return QModelIndex();
+    }
 
     return createIndex(parent->children().indexOf(node), 0, node);
 }
@@ -255,6 +263,7 @@ void BookmarksModel::entryAdded(BookmarkNode* item)
     BookmarkNode* const parent = item->parent();
 
     // item was already added so remove before beginInsertRows is called
+
     parent->remove(item);
     beginInsertRows(index(parent), row, row);
     parent->add(item, row);
@@ -264,6 +273,7 @@ void BookmarksModel::entryAdded(BookmarkNode* item)
 void BookmarksModel::entryRemoved(BookmarkNode* parent, int row, BookmarkNode* item)
 {
     // item was already removed, re-add so beginRemoveRows works
+
     parent->add(item, row);
     beginRemoveRows(index(parent), row, row);
     parent->remove(item);
@@ -278,8 +288,10 @@ void BookmarksModel::entryChanged(BookmarkNode* item)
 
 bool BookmarksModel::removeRows(int row, int count, const QModelIndex& parent)
 {
-    if (row < 0 || count <= 0 || (row + count) > rowCount(parent))
+    if ((row < 0) || (count <= 0) || ((row + count) > rowCount(parent)))
+    {
         return false;
+    }
 
     BookmarkNode* const bookmarkNode = node(parent);
 
@@ -306,6 +318,7 @@ QVariant BookmarksModel::headerData(int section, Qt::Orientation orientation, in
         {
             case 0:
                 return i18n("Title");
+
             case 1:
                 return i18n("Comment");
         }
@@ -316,8 +329,10 @@ QVariant BookmarksModel::headerData(int section, Qt::Orientation orientation, in
 
 QVariant BookmarksModel::data(const QModelIndex& index, int role) const
 {
-    if (!index.isValid() || index.model() != this)
+    if (!index.isValid() || (index.model() != this))
+    {
         return QVariant();
+    }
 
     const BookmarkNode* const bookmarkNode = node(index);
 
@@ -331,6 +346,7 @@ QVariant BookmarksModel::data(const QModelIndex& index, int role) const
                 {
                     case 0:
                         return QString(50, 0xB7);
+
                     case 1:
                         return QString();
                 }
@@ -340,25 +356,32 @@ QVariant BookmarksModel::data(const QModelIndex& index, int role) const
             {
                 case 0:
                     return bookmarkNode->title;
+
                 case 1:
                     return bookmarkNode->desc;
             }
             break;
+
         case BookmarksModel::UrlRole:
             return QUrl(bookmarkNode->url);
             break;
+
         case BookmarksModel::UrlStringRole:
             return bookmarkNode->url;
             break;
+
         case BookmarksModel::DateAddedRole:
             return bookmarkNode->dateAdded;
             break;
+
         case BookmarksModel::TypeRole:
             return bookmarkNode->type();
             break;
+
         case BookmarksModel::SeparatorRole:
             return (bookmarkNode->type() == BookmarkNode::Separator);
             break;
+
         case Qt::DecorationRole:
             if (index.column() == 0)
             {
@@ -378,16 +401,20 @@ QVariant BookmarksModel::data(const QModelIndex& index, int role) const
 
 int BookmarksModel::columnCount(const QModelIndex& parent) const
 {
-    return (parent.column() > 0) ? 0 : 2;
+    return ((parent.column() > 0) ? 0 : 2);
 }
 
 int BookmarksModel::rowCount(const QModelIndex& parent) const
 {
     if (parent.column() > 0)
+    {
         return 0;
+    }
 
     if (!parent.isValid())
+    {
         return d->manager->bookmarks()->children().count();
+    }
 
     const BookmarkNode* const item = static_cast<BookmarkNode*>(parent.internalPointer());
 
@@ -396,10 +423,13 @@ int BookmarksModel::rowCount(const QModelIndex& parent) const
 
 QModelIndex BookmarksModel::index(int row, int column, const QModelIndex& parent) const
 {
-    if (row < 0 || column < 0 || row >= rowCount(parent) || column >= columnCount(parent))
+    if ((row < 0) || (column < 0) || (row >= rowCount(parent)) || (column >= columnCount(parent)))
+    {
         return QModelIndex();
+    }
 
     // get the parent node
+
     BookmarkNode* const parentNode = node(parent);
 
     return createIndex(row, column, parentNode->children().at(row));
@@ -408,15 +438,20 @@ QModelIndex BookmarksModel::index(int row, int column, const QModelIndex& parent
 QModelIndex BookmarksModel::parent(const QModelIndex& index) const
 {
     if (!index.isValid())
+    {
         return QModelIndex();
+    }
 
     BookmarkNode* const itemNode   = node(index);
     BookmarkNode* const parentNode = (itemNode ? itemNode->parent() : nullptr);
 
-    if (!parentNode || parentNode == d->manager->bookmarks())
+    if (!parentNode || (parentNode == d->manager->bookmarks()))
+    {
         return QModelIndex();
+    }
 
     // get the parent's row
+
     BookmarkNode* const grandParentNode = parentNode->parent();
     int parentRow                       = grandParentNode->children().indexOf(parentNode);
 
@@ -428,46 +463,55 @@ QModelIndex BookmarksModel::parent(const QModelIndex& index) const
 bool BookmarksModel::hasChildren(const QModelIndex& parent) const
 {
     if (!parent.isValid())
+    {
         return true;
+    }
 
     const BookmarkNode* const parentNode = node(parent);
 
-    return (parentNode->type() == BookmarkNode::Folder ||
-            parentNode->type() == BookmarkNode::RootFolder);
+    return ((parentNode->type() == BookmarkNode::Folder) ||
+            (parentNode->type() == BookmarkNode::RootFolder));
 }
 
 Qt::ItemFlags BookmarksModel::flags(const QModelIndex& index) const
 {
     if (!index.isValid())
+    {
         return Qt::NoItemFlags;
+    }
 
     Qt::ItemFlags flags              = Qt::ItemIsSelectable | Qt::ItemIsEnabled;
     BookmarkNode* const bookmarkNode = node(index);
 
     if (bookmarkNode->type() != BookmarkNode::RootFolder)
+    {
         flags |= Qt::ItemIsDragEnabled;
+    }
 
-    if (bookmarkNode->type() != BookmarkNode::Separator &&
-        bookmarkNode->type() != BookmarkNode::RootFolder)
+    if ((bookmarkNode->type() != BookmarkNode::Separator) &&
+        (bookmarkNode->type() != BookmarkNode::RootFolder))
     {
         flags |= Qt::ItemIsEditable;
     }
 
     if (hasChildren(index))
+    {
         flags |= Qt::ItemIsDropEnabled;
+    }
 
     return flags;
 }
 
 Qt::DropActions BookmarksModel::supportedDropActions() const
 {
-    return Qt::CopyAction | Qt::MoveAction;
+    return (Qt::CopyAction | Qt::MoveAction);
 }
 
 QStringList BookmarksModel::mimeTypes() const
 {
     QStringList types;
     types << QLatin1String("application/bookmarks.xbel");
+
     return types;
 }
 
@@ -479,8 +523,10 @@ QMimeData* BookmarksModel::mimeData(const QModelIndexList& indexes) const
 
     foreach (QModelIndex index, indexes)
     {
-        if (index.column() != 0 || !index.isValid())
+        if ((index.column() != 0) || !index.isValid())
+        {
             continue;
+        }
 
         QByteArray encodedData;
         QBuffer buffer(&encodedData);
@@ -492,6 +538,7 @@ QMimeData* BookmarksModel::mimeData(const QModelIndexList& indexes) const
     }
 
     mimeData->setData(QLatin1String("application/bookmarks.xbel"), data);
+
     return mimeData;
 }
 
@@ -501,16 +548,22 @@ bool BookmarksModel::dropMimeData(const QMimeData* data,
                                   const QModelIndex& parent)
 {
     if (action == Qt::IgnoreAction)
+    {
         return true;
+    }
 
     if (!data->hasFormat(QLatin1String("application/bookmarks.xbel")) || column > 0)
+    {
         return false;
+    }
 
     QByteArray ba = data->data(QLatin1String("application/bookmarks.xbel"));
     QDataStream stream(&ba, QIODevice::ReadOnly);
 
     if (stream.atEnd())
+    {
         return false;
+    }
 
     QUndoStack* const undoStack = d->manager->undoRedoStack();
     undoStack->beginMacro(QLatin1String("Move Bookmarks"));
@@ -538,13 +591,16 @@ bool BookmarksModel::dropMimeData(const QMimeData* data,
 
         delete rootNode;
     }
+
     return true;
 }
 
 bool BookmarksModel::setData(const QModelIndex& index, const QVariant& value, int role)
 {
     if (!index.isValid() || (flags(index) & Qt::ItemIsEditable) == 0)
+    {
         return false;
+    }
 
     BookmarkNode* const item = node(index);
 
@@ -565,12 +621,15 @@ bool BookmarksModel::setData(const QModelIndex& index, const QVariant& value, in
             }
 
             return false;
+
         case BookmarksModel::UrlRole:
             d->manager->setUrl(item, value.toUrl().toString());
             break;
+
         case BookmarksModel::UrlStringRole:
             d->manager->setUrl(item, value.toString());
             break;
+
         default:
             return false;
     }
@@ -583,7 +642,9 @@ BookmarkNode* BookmarksModel::node(const QModelIndex& index) const
     BookmarkNode* const itemNode = static_cast<BookmarkNode*>(index.internalPointer());
 
     if (!itemNode)
+    {
         return d->manager->bookmarks();
+    }
 
     return itemNode;
 }
@@ -619,6 +680,7 @@ int TreeProxyModel::columnCount(const QModelIndex&) const
 {
     // 1th column : Title
     // 2th column : Comment
+
     return 2;
 }
 
@@ -693,7 +755,9 @@ void BookmarksManager::changeExpanded()
 void BookmarksManager::load()
 {
     if (d->loaded)
+    {
         return;
+    }
 
     qCDebug(DIGIKAM_GEOIFACE_LOG) << "Loading GPS bookmarks from" << d->bookmarksFile;
     d->loaded = true;
@@ -714,7 +778,9 @@ void BookmarksManager::load()
 void BookmarksManager::save()
 {
     if (!d->loaded)
+    {
         return;
+    }
 
     qCDebug(DIGIKAM_GEOIFACE_LOG) << "Saving GPS bookmarks to" << d->bookmarksFile;
 
@@ -729,7 +795,9 @@ void BookmarksManager::save()
 void BookmarksManager::addBookmark(BookmarkNode* const parent, BookmarkNode* const node, int row)
 {
     if (!d->loaded)
+    {
         return;
+    }
 
     Q_ASSERT(parent);
 
@@ -740,7 +808,9 @@ void BookmarksManager::addBookmark(BookmarkNode* const parent, BookmarkNode* con
 void BookmarksManager::removeBookmark(BookmarkNode* const node)
 {
     if (!d->loaded)
+    {
         return;
+    }
 
     Q_ASSERT(node);
 
@@ -753,7 +823,9 @@ void BookmarksManager::removeBookmark(BookmarkNode* const node)
 void BookmarksManager::setTitle(BookmarkNode* const node, const QString& newTitle)
 {
     if (!d->loaded)
+    {
         return;
+    }
 
     Q_ASSERT(node);
 
@@ -765,7 +837,9 @@ void BookmarksManager::setTitle(BookmarkNode* const node, const QString& newTitl
 void BookmarksManager::setUrl(BookmarkNode* const node, const QString& newUrl)
 {
     if (!d->loaded)
+    {
         return;
+    }
 
     Q_ASSERT(node);
 
@@ -777,7 +851,9 @@ void BookmarksManager::setUrl(BookmarkNode* const node, const QString& newUrl)
 void BookmarksManager::setComment(BookmarkNode* const node, const QString& newDesc)
 {
     if (!d->loaded)
+    {
         return;
+    }
 
     Q_ASSERT(node);
 
@@ -789,7 +865,9 @@ void BookmarksManager::setComment(BookmarkNode* const node, const QString& newDe
 BookmarkNode* BookmarksManager::bookmarks()
 {
     if (!d->loaded)
+    {
         load();
+    }
 
     return d->bookmarkRootNode;
 }
@@ -797,7 +875,9 @@ BookmarkNode* BookmarksManager::bookmarks()
 BookmarksModel* BookmarksManager::bookmarksModel()
 {
     if (!d->bookmarkModel)
+    {
         d->bookmarkModel = new BookmarksModel(this, this);
+    }
 
     return d->bookmarkModel;
 }
@@ -813,7 +893,9 @@ void BookmarksManager::importBookmarks()
                                                     QString(),
                                                     i18n("XBEL (*.xbel *.xml)"));
     if (fileName.isEmpty())
+    {
         return;
+    }
 
     XbelReader reader;
     BookmarkNode* const importRootNode = reader.read(fileName);
@@ -838,12 +920,16 @@ void BookmarksManager::exportBookmarks()
                                                     i18n("%1 Bookmarks.xbel", QCoreApplication::applicationName()),
                                                     i18n("XBEL (*.xbel *.xml)"));
     if (fileName.isEmpty())
+    {
         return;
+    }
 
     XbelWriter writer;
 
     if (!writer.write(fileName, d->bookmarkRootNode))
+    {
         QMessageBox::critical(nullptr, i18n("Export error"), i18n("error saving bookmarks"));
+    }
 }
 
 } // namespace Digikam

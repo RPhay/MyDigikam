@@ -85,13 +85,13 @@ BookmarkNode::~BookmarkNode()
 
 bool BookmarkNode::operator==(const BookmarkNode& other) const
 {
-    if (url                 != other.url           ||
-        title               != other.title         ||
-        desc                != other.desc          ||
-        expanded            != other.expanded      ||
-        dateAdded           != other.dateAdded     ||
-        d->type             != other.d->type       ||
-        d->children.count() != other.d->children.count())
+    if ((url                 != other.url)           ||
+        (title               != other.title)         ||
+        (desc                != other.desc)          ||
+        (expanded            != other.expanded)      ||
+        (dateAdded           != other.dateAdded)     ||
+        (d->type             != other.d->type)       ||
+        (d->children.count() != other.d->children.count()))
     {
         return false;
     }
@@ -167,6 +167,7 @@ BookmarkNode* XbelReader::read(const QString& fileName)
         BookmarkNode* const root   = new BookmarkNode(BookmarkNode::Root);
         BookmarkNode* const folder = new BookmarkNode(BookmarkNode::RootFolder, root);
         folder->title = i18n("Bookmark folder");
+
         return root;
     }
 
@@ -283,6 +284,7 @@ void XbelReader::readSeparator(BookmarkNode* const parent)
     new BookmarkNode(BookmarkNode::Separator, parent);
 
     // empty elements have a start and end element
+
     readNext();
 }
 
@@ -297,7 +299,7 @@ void XbelReader::readBookmarkNode(BookmarkNode* const parent)
 
     while (readNextStartElement())
     {
-        if (name() == QLatin1String("title"))
+        if      (name() == QLatin1String("title"))
         {
             readTitle(bookmark);
         }

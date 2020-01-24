@@ -73,9 +73,8 @@ GPSBookmarkOwner::GPSBookmarkOwner(GPSItemModel* const gpsItemModel, QWidget* co
 {
     d->parent = parent;
 
-    const QString bookmarksFileName =
-        QStandardPaths::writableLocation(QStandardPaths::DataLocation) +
-                                         QLatin1String("/geobookmarks.xml");
+    const QString bookmarksFileName = QStandardPaths::writableLocation(QStandardPaths::DataLocation) +
+                                                                       QLatin1String("/geobookmarks.xml");
     d->bookmarkManager              = new BookmarksManager(bookmarksFileName, this);
     d->bookmarkManager->load();
     d->bookmarkMenu                 = new BookmarksMenu(d->bookmarkManager, d->parent);
@@ -108,6 +107,7 @@ QString GPSBookmarkOwner::currentTitle() const
 QString GPSBookmarkOwner::currentUrl() const
 {
     // TODO : check if this QUrl from QString conversion is fine.
+
     return d->lastCoordinates.geoUrl();
 }
 
