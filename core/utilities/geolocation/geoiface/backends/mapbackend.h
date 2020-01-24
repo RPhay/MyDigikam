@@ -89,10 +89,10 @@ public:
 
     virtual int getMarkerModelLevel() = 0;
     virtual GeoCoordinates::PairList getNormalizedBounds() = 0;
-
-//     virtual void updateDragDropMarker(const QPoint& pos, const GeoIfaceDragData* const dragData) = 0;
-//     virtual void updateDragDropMarkerPosition(const QPoint& pos) = 0;
-
+/*
+    virtual void updateDragDropMarker(const QPoint& pos, const GeoIfaceDragData* const dragData) = 0;
+    virtual void updateDragDropMarkerPosition(const QPoint& pos) = 0;
+*/
     virtual void updateActionAvailability() = 0;
 
     virtual void regionSelectionChanged() = 0;

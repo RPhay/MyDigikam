@@ -54,6 +54,7 @@ void FaceDb::updateIdentity(const Identity& p)
 void FaceDb::deleteIdentity(int id)
 {
     // Triggers do the rest
+
     d->db->execSql(QLatin1String("DELETE FROM Identities WHERE id=?;"), id);
 }
 

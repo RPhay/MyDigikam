@@ -98,6 +98,7 @@ public:
 FaceDbAccess::FaceDbAccess()
 {
     // You will want to call setParameters before constructing FaceDbAccess.
+
     Q_ASSERT(d);
 
     d->lock.mutex.lock();
@@ -106,10 +107,9 @@ FaceDbAccess::FaceDbAccess()
     if (!d->backend->isOpen() && !d->initializing)
     {
         // avoid endless loops
+
         d->initializing = true;
-
         d->backend->open(d->parameters);
-
         d->initializing = false;
     }
 }
@@ -124,6 +124,7 @@ FaceDbAccess::FaceDbAccess(bool)
 {
     // private constructor, when mutex is locked and
     // backend should not be checked
+
     d->lock.mutex.lock();
     d->lock.lockCount++;
 }
@@ -159,8 +160,9 @@ void FaceDbAccess::initDbEngineErrorHandler(DbEngineErrorHandler* const errorhan
     {
         d = new FaceDbAccessStaticPriv();
     }
-
-    //DbEngineErrorHandler* const errorhandler = new DbEngineGuiErrorHandler(d->parameters);
+/*
+    DbEngineErrorHandler* const errorhandler = new DbEngineGuiErrorHandler(d->parameters);
+*/
     d->backend->setDbEngineErrorHandler(errorhandler);
 }
 
@@ -184,6 +186,7 @@ void FaceDbAccess::setParameters(const DbEngineParameters& parameters)
     }
 
     // Kill the old database error handler
+
     if (d->backend)
     {
         d->backend->setDbEngineErrorHandler(nullptr);
@@ -286,19 +289,26 @@ void FaceDbAccess::cleanUpDatabase()
 FaceDbAccessUnlock::FaceDbAccessUnlock()
 {
     // acquire lock
+
     FaceDbAccess::d->lock.mutex.lock();
+
     // store lock count
+
     count = FaceDbAccess::d->lock.lockCount;
+
     // set lock count to 0
+
     FaceDbAccess::d->lock.lockCount = 0;
 
     // unlock
+
     for (int i = 0 ; i < count ; ++i)
     {
         FaceDbAccess::d->lock.mutex.unlock();
     }
 
     // drop lock acquired in first line. Mutex is now free.
+
     FaceDbAccess::d->lock.mutex.unlock();
 }
 
@@ -306,11 +316,15 @@ FaceDbAccessUnlock::FaceDbAccessUnlock(FaceDbAccess* const)
 {
     // With the passed pointer, we have assured that the mutex is acquired
     // Store lock count
+
     count = FaceDbAccess::d->lock.lockCount;
+
     // set lock count to 0
+
     FaceDbAccess::d->lock.lockCount = 0;
 
     // unlock
+
     for (int i = 0 ; i < count ; ++i)
     {
         FaceDbAccess::d->lock.mutex.unlock();
@@ -322,12 +336,14 @@ FaceDbAccessUnlock::FaceDbAccessUnlock(FaceDbAccess* const)
 FaceDbAccessUnlock::~FaceDbAccessUnlock()
 {
     // lock as often as it was locked before
+
     for (int i = 0 ; i < count ; ++i)
     {
         FaceDbAccess::d->lock.mutex.lock();
     }
 
     // update lock count
+
     FaceDbAccess::d->lock.lockCount += count;
 }
 

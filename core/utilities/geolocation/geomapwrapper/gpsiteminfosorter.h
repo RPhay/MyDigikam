@@ -62,14 +62,18 @@ public:
     ~GPSItemInfoSorter();
 
     void addToMapWidget(MapWidget* const mapWidget);
+
     void setSortOptions(const SortOptions sortOptions);
     SortOptions getSortOptions() const;
 
 public:
 
-    static bool fitsBetter(const GPSItemInfo& oldInfo, const GeoGroupState oldState,
-                           const GPSItemInfo& newInfo, const GeoGroupState newState,
-                           const GeoGroupState globalGroupState, const SortOptions sortOptions);
+    static bool fitsBetter(const GPSItemInfo& oldInfo,
+                           const GeoGroupState oldState,
+                           const GPSItemInfo& newInfo,
+                           const GeoGroupState newState,
+                           const GeoGroupState globalGroupState,
+                           const SortOptions sortOptions);
 
 private Q_SLOTS:
 

@@ -54,6 +54,7 @@ QString FaceDb::setting(const QString& keyword) const
     QList<QVariant> values;
 
     // TODO Should really check return status here
+
     BdEngineBackend::QueryState queryStateResult = d->db->execDBAction(d->db->getDBAction(QLatin1String("SelectFaceSetting")), parameters, &values);
     qCDebug(DIGIKAM_FACEDB_LOG) << "FaceDB SelectFaceSetting val ret = " << (BdEngineBackend::QueryStateEnum)queryStateResult;
 
@@ -118,6 +119,7 @@ bool FaceDb::integrityCheck()
             }
 
             // No error conditions. Db passed the integrity check.
+
             return true;
 
         default:

@@ -261,6 +261,7 @@ bool GPSItemListContextMenu::eventFilter(QObject* watched, QEvent* event)
         menu->exec(e->globalPos());
 
         delete menu;
+
         return true;
     }
     else
@@ -451,8 +452,8 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
 
     if ((!foundData)&&(mimedata->hasText()))
     {
-        const QString textdata                   = mimedata->text();
-        bool foundGeoUrl                         = false;
+        const QString textdata         = mimedata->text();
+        bool foundGeoUrl               = false;
         GeoCoordinates testCoordinates = GeoCoordinates::fromGeoUrl(textdata, &foundGeoUrl);
 
         if (foundGeoUrl)
@@ -472,7 +473,6 @@ void GPSItemListContextMenu::pasteActionTriggered(bool swap)
                 double ptAltitude  = 0.0;
                 bool haveAltitude  = false;
                 bool okay          = true;
-
                 double ptLongitude = parts[0].toDouble(&okay);
 
                 if (okay)
@@ -530,7 +530,7 @@ void GPSItemListContextMenu::setGPSDataForSelectedItems(const GPSDataContainer& 
 
     for (int i = 0 ; i < nSelected ; ++i)
     {
-        const QModelIndex itemIndex = selectedIndices.at(i);
+        const QModelIndex itemIndex     = selectedIndices.at(i);
         GPSItemContainer* const gpsItem = imageModel->itemFromIndex(itemIndex);
 
         GPSUndoCommand::UndoInfo undoInfo(itemIndex);
@@ -567,7 +567,7 @@ void GPSItemListContextMenu::removeInformationFromSelectedImages(const GPSDataCo
 {
     // enable or disable the actions
 
-    GPSItemModel* const imageModel           = d->imagesList->getModel();
+    GPSItemModel* const imageModel            = d->imagesList->getModel();
     QItemSelectionModel* const selectionModel = d->imagesList->getSelectionModel();
     const QList<QModelIndex> selectedIndices  = selectionModel->selectedRows();
     const int nSelected                       = selectedIndices.size();
@@ -685,7 +685,7 @@ void GPSItemListContextMenu::slotRemoveSpeed()
 
 void GPSItemListContextMenu::slotLookupMissingAltitudes()
 {
-    GPSItemModel* const imageModel           = d->imagesList->getModel();
+    GPSItemModel* const imageModel            = d->imagesList->getModel();
     QItemSelectionModel* const selectionModel = d->imagesList->getSelectionModel();
     const QList<QModelIndex> selectedIndices  = selectionModel->selectedRows();
 /*

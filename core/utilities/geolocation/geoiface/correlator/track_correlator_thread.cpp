@@ -54,15 +54,19 @@ TrackCorrelatorThread::~TrackCorrelatorThread()
 void TrackCorrelatorThread::run()
 {
     // sort the items to correlate by time:
+
     std::sort(itemsToCorrelate.begin(), itemsToCorrelate.end(), TrackCorrelationLessThan);
 
     // now perform the correlation
     // we search all loaded gpx data files in parallel for the points with the best match
+
     const int nFiles = fileList.count();
     QList<int> currentIndices;
 
     for (int i = 0 ; i < nFiles ; ++i)
+    {
         currentIndices << 0;
+    }
 
     for (TrackCorrelator::Correlation::List::iterator it = itemsToCorrelate.begin() ; it != itemsToCorrelate.end() ; ++it)
     {
@@ -73,10 +77,12 @@ void TrackCorrelatorThread::run()
         }
 
         // GPS device are sync in time by satelite using GMT time.
+
         QDateTime itemDateTime = it->dateTime.addSecs(options.secondsOffset);
         itemDateTime.setTimeZone(QTimeZone(options.timeZoneOffset));
 
         // find the last point before our item:
+
         QDateTime       lastSmallerTime;
         QPair<int, int> lastIndexPair;
         QDateTime       firstBiggerTime;
@@ -125,6 +131,7 @@ void TrackCorrelatorThread::run()
                 else
                 {
                     // is it the first time after our item?
+
                     bool timeIsBetter = false;
 
                     if (firstBiggerTime.isValid())
@@ -156,6 +163,7 @@ void TrackCorrelatorThread::run()
             // the stored index by 1 we ensure that we start our search at an index
             // corresponding to a time before the next item. Remember that the
             // items are sorted by time!
+
             currentIndices[f] = (index > 1) ? (index - 1) : 0;
         }
 
@@ -164,6 +172,7 @@ void TrackCorrelatorThread::run()
         if (!options.interpolate)
         {
             // do we have a timestamp within maxGap?
+
             bool canUseTimeBefore = lastSmallerTime.isValid();
             int dtimeBefore       = 0;
 
@@ -186,7 +195,7 @@ void TrackCorrelatorThread::run()
             {
                 QPair<int, int> indexToUse(-1, -1);
 
-                if (canUseTimeAfter&&canUseTimeBefore)
+                if      (canUseTimeAfter&&canUseTimeBefore)
                 {
                     indexToUse = (dtimeBefore < dtimeAfter) ? lastIndexPair:firstIndexPair;
                 }
@@ -231,10 +240,9 @@ void TrackCorrelatorThread::run()
             {
                 const TrackManager::TrackPoint& dataPointBefore = fileList.at(lastIndexPair.first).points.at(lastIndexPair.second);
                 const TrackManager::TrackPoint& dataPointAfter  = fileList.at(firstIndexPair.first).points.at(firstIndexPair.second);
-
-                const uint tBefore = dataPointBefore.dateTime.toTime_t();
-                const uint tAfter  = dataPointAfter.dateTime.toTime_t();
-                const uint tCor    = itemDateTime.toTime_t();
+                const uint tBefore                              = dataPointBefore.dateTime.toTime_t();
+                const uint tAfter                               = dataPointAfter.dateTime.toTime_t();
+                const uint tCor                                 = itemDateTime.toTime_t();
 
                 if (tCor-tBefore != 0)
                 {
@@ -268,6 +276,7 @@ void TrackCorrelatorThread::run()
         {
             TrackCorrelator::Correlation::List readyItems;
             readyItems << correlatedData;
+
             emit signalItemsCorrelated(readyItems);
         }
     }

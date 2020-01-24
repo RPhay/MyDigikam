@@ -89,6 +89,7 @@ bool FaceDbSchemaUpdater::update()
     bool success = startUpdates();
 
     // even on failure, try to set current version - it may have incremented
+
     if (d->currentVersion)
     {
         d->dbAccess->db()->setSetting(QLatin1String("DBFaceVersion"), QString::number(d->currentVersion));
@@ -105,25 +106,30 @@ bool FaceDbSchemaUpdater::update()
 bool FaceDbSchemaUpdater::startUpdates()
 {
     // First step: do we have an empty database?
+
     QStringList tables = d->dbAccess->backend()->tables();
 
     if (tables.contains(QLatin1String("Identities"), Qt::CaseInsensitive))
     {
         // Find out schema version of db file
+
         QString version         = d->dbAccess->db()->setting(QLatin1String("DBFaceVersion"));
         QString versionRequired = d->dbAccess->db()->setting(QLatin1String("DBFaceVersionRequired"));
         qCDebug(DIGIKAM_FACEDB_LOG) << "Face database: have a structure version " << version;
 
         // mini schema update
+
         if (version.isEmpty() && d->dbAccess->parameters().isSQLite())
         {
             version = d->dbAccess->db()->setting(QLatin1String("DBVersion"));
         }
 
         // We absolutely require the DBFaceVersion setting
+
         if (version.isEmpty())
         {
             // Something is damaged. Give up.
+
             qCWarning(DIGIKAM_FACEDB_LOG) << "DBFaceVersion not available! Giving up schema upgrading.";
 
             QString errorMsg = i18n("The database is not valid: "
@@ -144,14 +150,17 @@ bool FaceDbSchemaUpdater::startUpdates()
 
         // current version describes the current state of the schema in the db,
         // schemaVersion is the version required by the program.
+
         d->currentVersion = version.toInt();
 
         if (d->currentVersion > schemaVersion())
         {
             // trying to open a database with a more advanced than this FaceDbSchemaUpdater supports
+
             if (!versionRequired.isEmpty() && versionRequired.toInt() <= schemaVersion())
             {
                 // version required may be less than current version
+
                 return true;
             }
             else
@@ -184,6 +193,7 @@ bool FaceDbSchemaUpdater::startUpdates()
         DbEngineParameters parameters = d->dbAccess->parameters();
 
         // No legacy handling: start with a fresh db
+
         if (!createDatabase())
         {
             QString errorMsg = i18n("Failed to create tables in database.\n%1",
@@ -207,7 +217,7 @@ bool FaceDbSchemaUpdater::makeUpdates()
 {
     if (d->currentVersion < schemaVersion())
     {
-        if (d->currentVersion == 1)
+        if      (d->currentVersion == 1)
         {
             updateV1ToV2();
         }
@@ -237,9 +247,14 @@ bool FaceDbSchemaUpdater::createDatabase()
 
 bool FaceDbSchemaUpdater::createTables()
 {
-    return d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDB"))) &&
-           // d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBOpenCVLBPH"))) &&
-           d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices")));
+    return (
+            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDB"))) &&
+/*
+            NOTE: LBPH is deprecated in favor of DNN
+            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBOpenCVLBPH"))) &&
+*/
+            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices")))
+           );
 }
 
 bool FaceDbSchemaUpdater::createIndices()

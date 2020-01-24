@@ -94,9 +94,9 @@ QModelIndex GPSItemModel::index(int row, int column, const QModelIndex& parent) 
     {
         Q_ASSERT(parent.model() == this);
     }
-
-//     qCDebug(DIGIKAM_GENERAL_LOG)<<row<<column<<parent;
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG)<<row<<column<<parent;
+*/
     if (parent.isValid())
     {
         // there are no child items, only top level items

@@ -64,14 +64,14 @@ GeoCoordinates::~GeoCoordinates()
 
 bool GeoCoordinates::operator==(const GeoCoordinates& other) const
 {
-    return
-        ( hasCoordinates() == other.hasCoordinates() ) &&
-        ( hasCoordinates() ? ( ( lat() == other.lat() ) && ( lon() == other.lon() ))
-                            : true
-        ) &&
-        ( hasAltitude() == other.hasAltitude() ) &&
-        ( hasAltitude() ? ( alt() == other.alt() )
-                        : true );
+    return (
+            (hasCoordinates() == other.hasCoordinates()) &&
+            (hasCoordinates() ? ( ( lat() == other.lat()) && ( lon() == other.lon() ))
+                              : true)                    &&
+            (hasAltitude() == other.hasAltitude())       &&
+            (hasAltitude() ? ( alt() == other.alt())
+                            : true)
+           );
 }
 
 double GeoCoordinates::lat() const
@@ -187,11 +187,15 @@ GeoCoordinates GeoCoordinates::fromGeoUrl(const QString& url,
     // parse geo:-uri according to (only partially implemented):
     // http://tools.ietf.org/html/draft-ietf-geopriv-geo-uri-04
     // TODO: verify that we follow the spec fully!
+
     if (!url.startsWith(QLatin1String("geo:")))
     {
         // TODO: error
+
         if (parsedOkay)
+        {
             *parsedOkay = false;
+        }
 
         return GeoCoordinates();
     }
@@ -234,13 +238,17 @@ GeoCoordinates GeoCoordinates::fromGeoUrl(const QString& url,
     else
     {
         if (parsedOkay)
+        {
             *parsedOkay = false;
+        }
 
         return GeoCoordinates();
     }
 
     if (parsedOkay)
-            *parsedOkay = true;
+    {
+        *parsedOkay = true;
+    }
 
     return position;
 }
@@ -262,11 +270,10 @@ Marble::GeoDataCoordinates GeoCoordinates::toMarbleCoordinates() const
 GeoCoordinates GeoCoordinates::fromMarbleCoordinates(const Marble::GeoDataCoordinates& marbleCoordinates)
 {
     /// @TODO looks like Marble does not differentiate between having and not having altitude..
-    return GeoCoordinates(
-            marbleCoordinates.latitude(Marble::GeoDataCoordinates::Degree),
-            marbleCoordinates.longitude(Marble::GeoDataCoordinates::Degree),
-            marbleCoordinates.altitude()
-        );
+
+    return GeoCoordinates(marbleCoordinates.latitude(Marble::GeoDataCoordinates::Degree),
+                          marbleCoordinates.longitude(Marble::GeoDataCoordinates::Degree),
+                          marbleCoordinates.altitude());
 }
 
 GeoCoordinates::Pair GeoCoordinates::makePair(const qreal lat1,

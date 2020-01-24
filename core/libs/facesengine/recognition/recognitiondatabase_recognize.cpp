@@ -51,6 +51,7 @@ void RecognitionDatabase::Private::clear(OpenCVEIGENFaceRecognizer* const,
                                          const QString& trainingContext)
 {
     // force later reload
+
     delete opencveigen;
     opencveigen = nullptr;
 
@@ -69,6 +70,7 @@ void RecognitionDatabase::Private::clear(OpenCVFISHERFaceRecognizer* const,
                                          const QString&)
 {
     // force later reload
+
     delete opencvfisher;
     opencvfisher = nullptr;
 }
@@ -78,6 +80,7 @@ void RecognitionDatabase::Private::clear(OpenCVDNNFaceRecognizer* const,
                                          const QString& trainingContext)
 {
     // force later reload
+
     delete opencvdnn;
     opencvdnn = nullptr;
 
@@ -96,6 +99,7 @@ void RecognitionDatabase::Private::clear(OpenCVDNNFaceRecognizer* const,
 int RecognitionDatabase::recommendedImageSize(const QSize& availableSize) const
 {
     // hardcoded for now, change when we know better.
+
     Q_UNUSED(availableSize)
 
     return 256;

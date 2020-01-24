@@ -78,13 +78,13 @@ Q_SIGNALS:
 
 protected:
 
-    // add any actions before the tree, return true if any actions are added.
+    /// add any actions before the tree, return true if any actions are added.
     virtual bool prePopulated();
 
-    // add any actions after the tree
+    /// add any actions after the tree
     virtual void postPopulated();
 
-    // put all of the children of parent into menu up to max
+    /// put all of the children of parent into menu up to max
     void createMenu(const QModelIndex& parent, int max, QMenu* parentMenu = nullptr, QMenu* menu = nullptr);
 
 private Q_SLOTS:
@@ -105,7 +105,8 @@ private:
 
 // ---------------------------------------------------------------------------
 
-/** Menu that is dynamically populated from the bookmarks
+/**
+ * Menu that is dynamically populated from the bookmarks
  */
 class BookmarksMenu : public ModelMenu
 {

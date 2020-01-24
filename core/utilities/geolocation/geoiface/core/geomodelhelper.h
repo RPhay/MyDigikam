@@ -67,14 +67,14 @@ public:
     void snapItemsTo(const QModelIndex& targetIndex,
                      const QList<QPersistentModelIndex>& snappedIndices);
 
-    // these are necessary for grouped and ungrouped models
+    /// these are necessary for grouped and ungrouped models
     virtual QAbstractItemModel* model() const = 0;
     virtual QItemSelectionModel* selectionModel() const = 0;
     virtual bool itemCoordinates(const QModelIndex& index,
                                  GeoCoordinates* const coordinates) const = 0;
     virtual PropertyFlags modelFlags() const;
 
-    // these are necessary for ungrouped models
+    /// these are necessary for ungrouped models
     virtual bool itemIcon(const QModelIndex& index,
                           QPoint* const offset,
                           QSize* const size,
@@ -84,7 +84,7 @@ public:
     virtual void snapItemsTo(const QModelIndex& targetIndex,
                              const QList<QModelIndex>& snappedIndices);
 
-    // these are used by MarkerModel for grouped models
+    /// these are used by MarkerModel for grouped models
     virtual QPixmap pixmapFromRepresentativeIndex(const QPersistentModelIndex& index,
                                                   const QSize& size);
     virtual QPersistentModelIndex bestRepresentativeIndexFromList(const QList<QPersistentModelIndex>& list,

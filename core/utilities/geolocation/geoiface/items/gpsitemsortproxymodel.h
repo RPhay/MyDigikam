@@ -156,12 +156,12 @@ public:
     /**
      * Maps the @p index from the left model to the right model.
      */
-    QModelIndex mapLeftToRight(const QModelIndex& index) const;
+    QModelIndex mapLeftToRight(const QModelIndex& index)                    const;
 
     /**
      * Maps the @p index from the right model to the left model.
      */
-    QModelIndex mapRightToLeft(const QModelIndex& index) const;
+    QModelIndex mapRightToLeft(const QModelIndex& index)                    const;
 
     /**
      * Maps the @p selection from the left model to the right model.
@@ -173,7 +173,7 @@ public:
      */
     QItemSelection mapSelectionRightToLeft(const QItemSelection& selection) const;
 
-    bool isConnected() const;
+    bool isConnected()                                                      const;
 
 Q_SIGNALS:
 

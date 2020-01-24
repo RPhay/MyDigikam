@@ -48,6 +48,7 @@ FisherFaceModel FaceDb::fisherFaceModel() const
         metadata.storageStatus = FisherFaceMatMetadata::InDatabase;
 
         // cv::Mat
+
         data.type              = query.value(3).toInt();
         data.rows              = query.value(4).toInt();
         data.cols              = query.value(5).toInt();

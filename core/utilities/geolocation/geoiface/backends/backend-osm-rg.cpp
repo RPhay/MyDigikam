@@ -51,7 +51,9 @@ public:
     ~OsmInternalJobs()
     {
         if (netReply)
+        {
             netReply->deleteLater();
+        }
     }
 
     QString            language;
@@ -110,7 +112,9 @@ BackendOsmRG::~BackendOsmRG()
 void BackendOsmRG::nextPhoto()
 {
     if (d->jobs.isEmpty())
+    {
         return;
+    }
 
     QUrl netUrl(QLatin1String("https://nominatim.openstreetmap.org/reverse"));
 
@@ -163,7 +167,9 @@ void BackendOsmRG::callRGBackend(const QList<RGInfo>& rgList, const QString& lan
     }
 
     if (!d->jobs.isEmpty())
+    {
         nextPhoto();
+    }
 }
 
 /**
@@ -236,6 +242,7 @@ void BackendOsmRG::slotFinished(QNetworkReply* reply)
         emit signalRGReady(d->jobs.first().request);
         reply->deleteLater();
         d->jobs.clear();
+
         return;
     }
 

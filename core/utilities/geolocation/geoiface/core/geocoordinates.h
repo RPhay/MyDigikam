@@ -36,7 +36,7 @@
 
 #include "digikam_export.h"
 
-// forward declaration only to declare interoperability operators
+/// NOTE: forward declaration only to declare interoperability operators
 namespace Marble
 {
     class GeoDataCoordinates;

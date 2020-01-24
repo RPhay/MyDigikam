@@ -60,8 +60,10 @@ void coordinatesToClipboard(const GeoCoordinates& coordinates,
     const QString altitude  = coordinates.altString();
     const QString nameToUse = title.isEmpty() ? url.toLocalFile() : title;
 
-    // importing this representation into Marble does not show anything,
-    // but Merkaartor shows the point
+    /**
+     * NOTE: importing this representation into Marble does not show anything,
+     * but Merkaartor shows the point
+     */
     const QString kmlCoordinatesString = haveAltitude ? QString::fromLatin1("%1,%2,%3").arg(lon).arg(lat).arg(altitude)
                                                       : QString::fromLatin1("%1,%2").arg(lon).arg(lat);
 
@@ -79,7 +81,7 @@ void coordinatesToClipboard(const GeoCoordinates& coordinates,
       "</kml>\n"
       ).arg(nameToUse).arg(kmlCoordinatesString);
 
-    // importing this data into Marble and Merkaartor works
+    /// importing this data into Marble and Merkaartor works
     const QString gpxElevationString = haveAltitude ? QString::fromLatin1("   <ele>%1</ele>\n").arg(altitude)
                                                     : QString();
 
@@ -90,7 +92,9 @@ void coordinatesToClipboard(const GeoCoordinates& coordinates,
       " xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd\">\n"
       "  <wpt lat=\"%1\" lon=\"%2\">\n"
       "%3"
-//      "   <time></time>\n"
+/*
+      "   <time></time>\n"
+*/
       "   <name>%4</name>\n"
       "  </wpt>\n"
       "</gpx>\n"

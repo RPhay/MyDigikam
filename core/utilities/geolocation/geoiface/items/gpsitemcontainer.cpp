@@ -75,7 +75,8 @@ bool setExifXmpTagDataVariant(DMetadata* const meta, const char* const exifTagNa
 
             case QVariant::List:
             {
-                long num = 0, den = 1;
+                long num             = 0;
+                long den             = 1;
                 QList<QVariant> list = value.toList();
 
                 if (list.size() >= 1)
@@ -113,7 +114,9 @@ bool setExifXmpTagDataVariant(DMetadata* const meta, const char* const exifTagNa
                 break;
 
             case QVariant::ByteArray:
+
                 /// @todo I don't know a straightforward way to convert a byte array to XMP
+
                 success = false;
                 break;
 
@@ -283,6 +286,7 @@ bool GPSItemContainer::loadImageData()
      */
 
     // read the remaining GPS information from the file:
+
     const QByteArray speedRef  = meta->getExifTagData("Exif.GPSInfo.GPSSpeedRef");
     bool success               = !speedRef.isEmpty();
     long num, den;
@@ -574,6 +578,7 @@ void GPSItemContainer::setCoordinates(const GeoCoordinates& newCoordinates)
 {
     m_gpsData.setCoordinates(newCoordinates);
     m_dirty = true;
+
     emitDataChanged();
 }
 
@@ -1036,6 +1041,7 @@ void GPSItemContainer::restoreRGTagList(const QList<QList<TagData> >& tagList)
     }
 
     m_tagList = tagList;
+
     emitDataChanged();
 }
 
@@ -1068,6 +1074,7 @@ void GPSItemContainer::setGPSData(const GPSDataContainer& container)
 {
     m_gpsData = container;
     m_dirty   = true;
+
     emitDataChanged();
 }
 
@@ -1075,6 +1082,7 @@ void GPSItemContainer::setTagList(const QList<QList<TagData> >& externalTagList)
 {
     m_tagList      = externalTagList;
     m_tagListDirty = true;
+
     emitDataChanged();
 }
 

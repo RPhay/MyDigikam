@@ -81,7 +81,7 @@ void GroupStateComputer::addSelectedState(const GeoGroupState state)
     }
     else
     {
-        if ((state&SelectedMask) == SelectedAll)
+        if      ((state&SelectedMask) == SelectedAll)
         {
             d->state |= SelectedAll;
         }
@@ -105,7 +105,7 @@ void GroupStateComputer::addFilteredPositiveState(const GeoGroupState state)
     }
     else
     {
-        if ((state&FilteredPositiveMask) == FilteredPositiveAll)
+        if      ((state&FilteredPositiveMask) == FilteredPositiveAll)
         {
             d->state |= FilteredPositiveAll;
         }
@@ -129,7 +129,7 @@ void GroupStateComputer::addRegionSelectedState(const GeoGroupState state)
     }
     else
     {
-        if ((state&RegionSelectedMask) == RegionSelectedAll)
+        if      ((state&RegionSelectedMask) == RegionSelectedAll)
         {
             d->state |= RegionSelectedAll;
         }
