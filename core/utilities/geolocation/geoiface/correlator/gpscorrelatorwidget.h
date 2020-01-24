@@ -56,8 +56,8 @@ public:
     void setUIEnabledExternal(const bool state);
     void saveSettingsToGroup(KConfigGroup* const group);
     void readSettingsFromGroup(const KConfigGroup* const group);
-    QList<GeoCoordinates::List> getTrackCoordinates() const;
-    bool getShowTracksOnMap() const;
+    QList<GeoCoordinates::List> getTrackCoordinates()           const;
+    bool getShowTracksOnMap()                                   const;
 
 protected:
 

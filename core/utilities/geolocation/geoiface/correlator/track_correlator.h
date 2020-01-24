@@ -65,6 +65,8 @@ public:
         {
         }
 
+    public:
+
         typedef QList<Correlation>    List;
 
         QDateTime                     dateTime;
@@ -93,12 +95,13 @@ public:
         {
         }
 
+    public:
+
         bool interpolate;
         int  interpolationDstTime;
         int  maxGapTime;
         int  secondsOffset;
         int  timeZoneOffset;
-
     };
 
 public:

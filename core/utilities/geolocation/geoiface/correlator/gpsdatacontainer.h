@@ -36,16 +36,6 @@ class GPSDataContainer
 {
 public:
 
-    GPSDataContainer()
-      : m_hasFlags(nullptr),
-        m_coordinates(),
-        m_nSatellites(-1),
-        m_dop(-1),
-        m_fixType(-1),
-        m_speed(0)
-    {
-    }
-
     enum HasFlagsEnum
     {
         HasCoordinates    = 1,
@@ -57,6 +47,18 @@ public:
         HasSpeed          = 64
     };
     Q_DECLARE_FLAGS(HasFlags, HasFlagsEnum)
+
+public:
+
+    GPSDataContainer()
+      : m_hasFlags(nullptr),
+        m_coordinates(),
+        m_nSatellites(-1),
+        m_dop(-1),
+        m_fixType(-1),
+        m_speed(0)
+    {
+    }
 
 private:
 
@@ -74,36 +76,48 @@ public:
     bool operator==(const GPSDataContainer& b) const
     {
         if (m_hasFlags != b.m_hasFlags)
+        {
             return false;
+        }
 
         if (m_hasFlags.testFlag(HasCoordinates))
         {
             if (!(m_coordinates == b.m_coordinates))
+            {
                 return false;
+            }
         }
 
         if (hasNSatellites())
         {
             if (m_nSatellites != b.m_nSatellites)
+            {
                 return false;
+            }
         }
 
         if (hasDop())
         {
             if (m_dop != b.m_dop)
+            {
                 return false;
+            }
         }
 
         if (hasFixType())
         {
             if (m_fixType != b.m_fixType)
+            {
                 return false;
+            }
         }
 
         if (hasSpeed())
         {
             if (m_speed != b.m_speed)
+            {
                 return false;
+            }
         }
 
         return true;
@@ -206,7 +220,7 @@ public:
     inline void setNSatellites(const int nSatellites)
     {
         m_nSatellites = nSatellites;
-        m_hasFlags |= HasNSatellites;
+        m_hasFlags   |= HasNSatellites;
     }
 
     // DOP

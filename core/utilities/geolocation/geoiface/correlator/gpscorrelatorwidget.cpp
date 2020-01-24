@@ -124,7 +124,7 @@ public:
     TrackListModel*         trackListModel;
     bool                    uiEnabledInternal;
     bool                    uiEnabledExternal;
-    GPSItemModel*          imageModel;
+    GPSItemModel*           imageModel;
 
     int                     correlationTotalCount;
     int                     correlationCorrelatedCount;
@@ -208,6 +208,7 @@ GPSCorrelatorWidget::GPSCorrelatorWidget(QWidget* const parent,
     offsetLayout->setContentsMargins(contentsMargins());
 
     // track to picture matching options
+
     QWidget* const matchWidget     = new QWidget(this);
     QGridLayout* const matchLayout = new QGridLayout(matchWidget);
 
@@ -299,6 +300,7 @@ void GPSCorrelatorWidget::slotLoadTrackFiles()
 void GPSCorrelatorWidget::slotAllTrackFilesReady()
 {
     // are there any invalid files?
+
     QStringList invalidFiles;
     const QList<QPair<QUrl, QString> > loadErrorFiles = d->trackManager->readLoadErrors();
 
@@ -362,13 +364,14 @@ void GPSCorrelatorWidget::updateUIState()
 void GPSCorrelatorWidget::slotCorrelate()
 {
     // disable the UI of the entire dialog:
+
     emit signalSetUIEnabled(false, this, QLatin1String(SLOT(slotCancelCorrelation())));
 
     // store the options:
+
     TrackCorrelator::CorrelationOptions options;
     options.maxGapTime = d->directMatchLimitInput->time().msecsSinceStartOfDay() / 1000;
-
-    int userOffset = d->offsetTime->time().msecsSinceStartOfDay() / 1000;
+    int userOffset     = d->offsetTime->time().msecsSinceStartOfDay() / 1000;
 
     if (d->offsetSign->currentText() == QLatin1String("-"))
     {
@@ -382,17 +385,20 @@ void GPSCorrelatorWidget::slotCorrelate()
     options.interpolationDstTime = d->interpolateLimitInput->time().msecsSinceStartOfDay() / 1000;
 
     // create a list of items to be correlated
+
     TrackCorrelator::Correlation::List itemList;
 
-    const int imageCount = d->imageModel->rowCount();
+    const int imageCount         = d->imageModel->rowCount();
 
     for (int i = 0 ; i < imageCount ; ++i)
     {
-        QPersistentModelIndex imageIndex = d->imageModel->index(i, 0);
-        GPSItemContainer* const imageItem    = d->imageModel->itemFromIndex(imageIndex);
+        QPersistentModelIndex imageIndex  = d->imageModel->index(i, 0);
+        GPSItemContainer* const imageItem = d->imageModel->itemFromIndex(imageIndex);
 
         if (!imageItem)
+        {
             continue;
+        }
 
         TrackCorrelator::Correlation correlationItem;
         correlationItem.userData = QVariant::fromValue(imageIndex);
@@ -424,12 +430,16 @@ void GPSCorrelatorWidget::slotItemsCorrelated(const Digikam::TrackCorrelator::Co
         const QPersistentModelIndex itemIndex               = itemCorrelation.userData.value<QPersistentModelIndex>();
 
         if (!itemIndex.isValid())
+        {
             continue;
+        }
 
-        GPSItemContainer* const imageItem                       = d->imageModel->itemFromIndex(itemIndex);
+        GPSItemContainer* const imageItem                   = d->imageModel->itemFromIndex(itemIndex);
 
         if (!imageItem)
+        {
             continue;
+        }
 
         if (itemCorrelation.flags&TrackCorrelator::CorrelationFlagCoordinates)
         {
@@ -439,20 +449,29 @@ void GPSCorrelatorWidget::slotItemsCorrelated(const Digikam::TrackCorrelator::Co
             newData.setCoordinates(itemCorrelation.coordinates);
 
             if (itemCorrelation.nSatellites >= 0)
+            {
                 newData.setNSatellites(itemCorrelation.nSatellites);
+            }
 
             // if hDop is available, use it
+
             if (itemCorrelation.hDop >= 0)
+            {
                 newData.setDop(itemCorrelation.hDop);
+            }
 
             // but if pDop is available, prefer pDop over hDop
+
             if (itemCorrelation.pDop >= 0)
+            {
                 newData.setDop(itemCorrelation.pDop);
+            }
 
             if (itemCorrelation.fixType >= 0)
             {
                 newData.setFixType(itemCorrelation.fixType);
             }
+
             if (itemCorrelation.speed >= 0)
             {
                 newData.setSpeed(itemCorrelation.speed);
@@ -487,7 +506,8 @@ void GPSCorrelatorWidget::slotAllItemsCorrelated()
     }
     else
     {
-        // note: no need for i18np here, because the case of correlationTotalCount==1 is covered in the other two cases.
+        // note: no need for i18np here, because the case of correlationTotalCount == 1 is covered in the other two cases.
+
         QMessageBox::warning(this, i18n("Correlation finished"),
                              i18n("%1 out of %2 images have been correlated. Please "
                                   "check the offset and gap settings if you think "
@@ -507,7 +527,8 @@ void GPSCorrelatorWidget::slotAllItemsCorrelated()
         emit signalUndoCommand(d->correlationUndoCommand);
     }
 
-    // enable the UI:
+    // enable the UI
+
     emit signalSetUIEnabled(true);
 }
 

@@ -125,6 +125,7 @@ QVariant TrackListModel::data(const QModelIndex& index, int role) const
     switch (role)
     {
         case Qt::DisplayRole:
+
             switch (columnNumber)
             {
                 case ColumnFilename:
@@ -136,14 +137,17 @@ QVariant TrackListModel::data(const QModelIndex& index, int role) const
                 case ColumnVisible:
                     return QString();
             }
+
             break;
 
         case Qt::BackgroundRole:
+
             switch (columnNumber)
             {
                 case ColumnVisible:
                     return track.color;
             }
+
             break;
     }
 
@@ -167,6 +171,7 @@ QModelIndex TrackListModel::index(int row, int column, const QModelIndex& parent
     const TrackManager::Track track = d->trackManager->getTrack(row);
 
     /// @TODO We have to use quint32 for track ids
+
     return createIndex(row, column, quint32(track.id));
 }
 
@@ -178,6 +183,7 @@ QModelIndex TrackListModel::parent(const QModelIndex& index) const
     }
 
     // we have only top level items
+
     return QModelIndex();
 }
 
@@ -217,12 +223,15 @@ QVariant TrackListModel::headerData(int section, Qt::Orientation orientation, in
 
     /// @TODO Make color and #points sections more narrow
     /// @TODO Display visible state and make it toggable
+
     switch (section)
     {
         case ColumnVisible:
             return i18n("Color");
+
         case ColumnFilename:
             return i18n("Filename");
+
         case ColumnNPoints:
             return i18n("#points");
     }
@@ -248,6 +257,7 @@ Qt::ItemFlags TrackListModel::flags(const QModelIndex& index) const
 void Digikam::TrackListModel::slotTrackManagerUpdated()
 {
     /// @TODO The TrackManager should send more detailed reports
+
     beginResetModel();
     endResetModel();
 }
