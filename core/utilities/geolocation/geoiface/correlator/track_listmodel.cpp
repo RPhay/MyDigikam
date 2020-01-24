@@ -32,19 +32,6 @@
 
 #include "trackmanager.h"
 
-// Boost includes
-
-#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
-#   pragma clang diagnostic push
-#   pragma clang diagnostic ignored "-Wundef"
-#endif
-
-#include <boost/graph/graph_concepts.hpp>
-
-#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
-#   pragma clang diagnostic pop
-#endif
-
 namespace Digikam
 {
 
