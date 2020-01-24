@@ -56,12 +56,12 @@ public:
     {
     }
 
-    QList<QPointer<MapWidget> > mapWidgets;
-    GPSItemInfoSorter::SortOptions      sortOrder;
-    QPointer<QMenu>                      sortMenu;
-    QAction*                             sortActionOldestFirst;
-    QAction*                             sortActionYoungestFirst;
-    QAction*                             sortActionRating;
+    QList<QPointer<MapWidget> >    mapWidgets;
+    GPSItemInfoSorter::SortOptions sortOrder;
+    QPointer<QMenu>                sortMenu;
+    QAction*                       sortActionOldestFirst;
+    QAction*                       sortActionYoungestFirst;
+    QAction*                       sortActionRating;
 
 };
 
@@ -81,9 +81,12 @@ GPSItemInfoSorter::~GPSItemInfoSorter()
     delete d;
 }
 
-bool GPSItemInfoSorter::fitsBetter(const GPSItemInfo& oldInfo, const GeoGroupState oldState,
-                                    const GPSItemInfo& newInfo, const GeoGroupState newState,
-                                    const GeoGroupState globalGroupState, const SortOptions sortOptions)
+bool GPSItemInfoSorter::fitsBetter(const GPSItemInfo& oldInfo,
+                                   const GeoGroupState oldState,
+                                   const GPSItemInfo& newInfo,
+                                   const GeoGroupState newState,
+                                   const GeoGroupState globalGroupState,
+                                   const SortOptions sortOptions)
 {
     // the best index for a tile is determined like this:
     // region selected? -> prefer region selected markers
@@ -93,11 +96,12 @@ bool GPSItemInfoSorter::fitsBetter(const GPSItemInfo& oldInfo, const GeoGroupSta
     // next -> if the image has a URL, prefer the one with the 'lower' URL
     // next -> prefer the image with the higher image id
 
-    // region selection part:
+    // region selection part
+
     if (globalGroupState & RegionSelectedMask)
     {
-        const bool oldIsRegionSelected = oldState & RegionSelectedMask;
-        const bool newIsRegionSelected = newState & RegionSelectedMask;
+        const bool oldIsRegionSelected = (oldState & RegionSelectedMask);
+        const bool newIsRegionSelected = (newState & RegionSelectedMask);
 
         if (oldIsRegionSelected != newIsRegionSelected)
         {
@@ -105,11 +109,12 @@ bool GPSItemInfoSorter::fitsBetter(const GPSItemInfo& oldInfo, const GeoGroupSta
         }
     }
 
-    // positive filtering part:
+    // positive filtering part
+
     if (globalGroupState & FilteredPositiveMask)
     {
-        const bool oldIsFilteredPositive = oldState & FilteredPositiveMask;
-        const bool newIsFilteredPositive = newState & FilteredPositiveMask;
+        const bool oldIsFilteredPositive = (oldState & FilteredPositiveMask);
+        const bool newIsFilteredPositive = (newState & FilteredPositiveMask);
 
         if (oldIsFilteredPositive != newIsFilteredPositive)
         {
@@ -118,17 +123,20 @@ bool GPSItemInfoSorter::fitsBetter(const GPSItemInfo& oldInfo, const GeoGroupSta
     }
 
     // care about rating, if requested
+
     if (sortOptions & SortRating)
     {
-        const bool oldHasRating = oldInfo.rating > 0;
-        const bool newHasRating = newInfo.rating > 0;
+        const bool oldHasRating = (oldInfo.rating > 0);
+        const bool newHasRating = (newInfo.rating > 0);
 
         if (oldHasRating != newHasRating)
         {
             return newHasRating;
         }
 
-        if ( (oldHasRating && newHasRating) && (oldInfo.rating != newInfo.rating) )
+        if (oldHasRating &&
+            newHasRating &&
+            (oldInfo.rating != newInfo.rating))
         {
             return oldInfo.rating < newInfo.rating;
         }
@@ -136,7 +144,8 @@ bool GPSItemInfoSorter::fitsBetter(const GPSItemInfo& oldInfo, const GeoGroupSta
         // ratings are equal or both have no rating, therefore fall through to the next level
     }
 
-    // finally, decide by date:
+    // finally, decide by date
+
     const bool oldHasDate = oldInfo.dateTime.isValid();
     const bool newHasDate = newInfo.dateTime.isValid();
 
@@ -151,23 +160,25 @@ bool GPSItemInfoSorter::fitsBetter(const GPSItemInfo& oldInfo, const GeoGroupSta
         {
             if (sortOptions & SortOldestFirst)
             {
-                return oldInfo.dateTime > newInfo.dateTime;
+                return (oldInfo.dateTime > newInfo.dateTime);
             }
             else
             {
-                return oldInfo.dateTime < newInfo.dateTime;
+                return (oldInfo.dateTime < newInfo.dateTime);
             }
         }
     }
 
     // compare the image URL
+
     if (oldInfo.url.isValid() && newInfo.url.isValid())
     {
         return oldInfo.url.url() > newInfo.url.url();
     }
 
     // last resort: use the image id for reproducibility
-    return oldInfo.id > newInfo.id;
+
+    return (oldInfo.id > newInfo.id);
 }
 
 void GPSItemInfoSorter::addToMapWidget(MapWidget* const mapWidget)
@@ -215,7 +226,7 @@ void GPSItemInfoSorter::setSortOptions(const SortOptions sortOptions)
 {
     d->sortOrder = sortOptions;
 
-    for (int i = 0; i < d->mapWidgets.count(); ++i)
+    for (int i = 0 ; i < d->mapWidgets.count() ; ++i)
     {
         if (d->mapWidgets.at(i))
         {
@@ -244,12 +255,12 @@ void GPSItemInfoSorter::slotSortOptionTriggered()
 
     if (d->sortActionRating->isChecked())
     {
-        newSortKey|= SortRating;
+        newSortKey |= SortRating;
     }
 
     d->sortOrder = newSortKey;
 
-    for (int i = 0; i < d->mapWidgets.count(); ++i)
+    for (int i = 0 ; i < d->mapWidgets.count() ; ++i)
     {
         if (d->mapWidgets.at(i))
         {

@@ -46,7 +46,7 @@ public:
     virtual void callRGBackend(const QList<RGInfo>&, const  QString&) = 0;
     virtual QString getErrorMessage();
     virtual QString backendName();
-    virtual void cancelRequests() = 0;
+    virtual void cancelRequests()                                     = 0;
 
 Q_SIGNALS:
 

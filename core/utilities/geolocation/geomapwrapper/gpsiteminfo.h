@@ -48,17 +48,17 @@ public:
 public:
 
     static GPSItemInfo fromIdCoordinatesRatingDateTime(const qlonglong p_id,
-                                                        const GeoCoordinates& p_coordinates,
-                                                        const int p_rating,
-                                                        const QDateTime& p_creationDate);
+                                                       const GeoCoordinates& p_coordinates,
+                                                       const int p_rating,
+                                                       const QDateTime& p_creationDate);
 
 public:
 
-    qlonglong                   id;
-    GeoCoordinates              coordinates;
-    int                         rating;
-    QDateTime                   dateTime;
-    QUrl                        url;
+    qlonglong                  id;
+    GeoCoordinates             coordinates;
+    int                        rating;
+    QDateTime                  dateTime;
+    QUrl                       url;
 
     typedef QList<GPSItemInfo> List;
 };

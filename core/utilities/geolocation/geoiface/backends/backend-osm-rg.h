@@ -52,9 +52,9 @@ public:
     QMap<QString, QString> makeQMapFromXML(const QString& xmlData);
 
     virtual void callRGBackend(const QList<RGInfo>& rgList,const QString& language) override;
-    virtual QString getErrorMessage() override;
-    virtual QString backendName() override;
-    virtual void cancelRequests() override;
+    virtual QString getErrorMessage()                                               override;
+    virtual QString backendName()                                                   override;
+    virtual void cancelRequests()                                                   override;
 
 private Q_SLOTS:
 

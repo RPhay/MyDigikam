@@ -57,7 +57,9 @@ public:
     ~GeonamesUSInternalJobs()
     {
         if (netReply)
+        {
             netReply->deleteLater();
+        }
     }
 
     QString            language;
@@ -115,7 +117,9 @@ BackendGeonamesUSRG::~BackendGeonamesUSRG()
 void BackendGeonamesUSRG::nextPhoto()
 {
     if (d->jobs.isEmpty())
+    {
         return;
+    }
 
     QUrl netUrl(QLatin1String("http://api.geonames.org/findNearestAddress"));
 
@@ -123,7 +127,9 @@ void BackendGeonamesUSRG::nextPhoto()
     q.addQueryItem(QLatin1String("lat"),      d->jobs.first().request.first().coordinates.latString());
     q.addQueryItem(QLatin1String("lng"),      d->jobs.first().request.first().coordinates.lonString());
     q.addQueryItem(QLatin1String("username"), QLatin1String("digikam"));
-    // q.addQueryItem(QLatin1String("lang"), d->jobs.first().language);
+/*
+    q.addQueryItem(QLatin1String("lang"), d->jobs.first().language);
+*/
     netUrl.setQuery(q);
 
     QNetworkRequest netRequest(netUrl);
@@ -229,6 +235,7 @@ void BackendGeonamesUSRG::slotFinished(QNetworkReply* reply)
         emit signalRGReady(d->jobs.first().request);
         reply->deleteLater();
         d->jobs.clear();
+
         return;
     }
 
@@ -255,7 +262,7 @@ void BackendGeonamesUSRG::slotFinished(QNetworkReply* reply)
 
             for (int j = 0 ; j < d->jobs[i].request.count() ; ++j)
             {
-                d->jobs[i].request[j].rgData =  resultMap;
+                d->jobs[i].request[j].rgData = resultMap;
             }
 
             emit signalRGReady(d->jobs[i].request);

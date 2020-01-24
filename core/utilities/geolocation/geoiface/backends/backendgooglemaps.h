@@ -76,10 +76,10 @@ public:
 
     virtual int getMarkerModelLevel() override;
     virtual GeoCoordinates::PairList getNormalizedBounds() override;
-
-//     virtual void updateDragDropMarker(const QPoint& pos, const GeoIfaceDragData* const dragData);
-//     virtual void updateDragDropMarkerPosition(const QPoint& pos);
-
+/*
+    virtual void updateDragDropMarker(const QPoint& pos, const GeoIfaceDragData* const dragData);
+    virtual void updateDragDropMarkerPosition(const QPoint& pos);
+*/
     virtual void updateActionAvailability() override;
 
     QString getMapType() const;

@@ -62,6 +62,7 @@ QStringList BackendMarbleLayer::renderPosition () const
 {
     QStringList layerNames;
     layerNames << QLatin1String("HOVERS_ABOVE_SURFACE" );
+
     return layerNames;
 }
 

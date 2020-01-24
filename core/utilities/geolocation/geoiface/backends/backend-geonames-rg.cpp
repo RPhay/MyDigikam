@@ -57,7 +57,9 @@ public:
     ~GeonamesInternalJobs()
     {
         if (netReply)
+        {
             netReply->deleteLater();
+        }
     }
 
     QString            language;
@@ -114,7 +116,9 @@ BackendGeonamesRG::~BackendGeonamesRG()
 void BackendGeonamesRG::nextPhoto()
 {
     if (d->jobs.isEmpty())
+    {
         return;
+    }
 
     QUrl netUrl(QLatin1String("http://api.geonames.org/findNearbyPlaceName"));
 
@@ -226,6 +230,7 @@ void BackendGeonamesRG::slotFinished(QNetworkReply* reply)
         emit signalRGReady(d->jobs.first().request);
         reply->deleteLater();
         d->jobs.clear();
+
         return;
     }
 
