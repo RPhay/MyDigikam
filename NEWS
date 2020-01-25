@@ -611,4 +611,5 @@ BUGFIXES:
 595 ==> 372230 - Searches tool : "Current Searches" virtual album appears more than one.
 596 ==> 416492 - Panorama tool fails to make panoramas.
 597 ==> 416756 - When searching for duplicates, only one photo is shown if the other one is in a group (and not the first of the group).
-598 ==> 
+598 ==> 416759 - In duplicate tab, it should be possible to have reference image always at first/last.
+599 ==> 
