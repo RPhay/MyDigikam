@@ -118,7 +118,7 @@ cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(const QImage& inputImage)
         image = inputImage.scaled(TargetInputSize, TargetInputSize, Qt::IgnoreAspectRatio);
     }
 
-    cv::Mat cvImage;// = cv::Mat(image.height(), image.width(), CV_8UC3);
+    cv::Mat cvImage;    // = cv::Mat(image.height(), image.width(), CV_8UC3);
     cv::Mat cvImageWrapper;
 
     switch (image.format())
@@ -126,7 +126,9 @@ cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(const QImage& inputImage)
         case QImage::Format_RGB32:
         case QImage::Format_ARGB32:
         case QImage::Format_ARGB32_Premultiplied:
+
             // I think we can ignore premultiplication when converting to grayscale
+
             cvImageWrapper = cv::Mat(image.height(), image.width(), CV_8UC4, image.scanLine(0), image.bytesPerLine());
             cvtColor(cvImageWrapper, cvImage, CV_RGBA2RGB);
             break;
@@ -134,7 +136,9 @@ cv::Mat OpenCVDNNFaceRecognizer::prepareForRecognition(const QImage& inputImage)
         default:
             image          = image.convertToFormat(QImage::Format_RGB888);
             cvImage        = cv::Mat(image.height(), image.width(), CV_8UC3, image.scanLine(0), image.bytesPerLine());
-            //cvtColor(cvImageWrapper, cvImage, CV_RGB2GRAY);
+/*
+            cvtColor(cvImageWrapper, cvImage, CV_RGB2GRAY);
+*/
             break;
     }
 /*
@@ -296,6 +300,7 @@ void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images,
     for (unsigned int i = 0 ; i < clusteredIndices.size() ; ++i)
     {
         // qCDebug(DIGIKAM_FACESENGINE_LOG) << "Image " << i << " in group " << clusteredIndices[i];
+
         groups[clusteredIndices[i]] << dataset[i];
     }
 

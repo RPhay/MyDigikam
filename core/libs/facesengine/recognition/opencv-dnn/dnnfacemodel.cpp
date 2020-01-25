@@ -52,8 +52,10 @@ DNNFaceVecMetadata::~DNNFaceVecMetadata()
 // ------------------------------------------------------------------------------------
 
 DNNFaceModel::DNNFaceModel()
-    : cv::Ptr<DNNFaceRecognizer>(DNNFaceRecognizer::create())/*,
-      databaseId(0)*/
+    : cv::Ptr<DNNFaceRecognizer>(DNNFaceRecognizer::create())
+/*
+    , databaseId(0)
+*/
 {
     ptr()->setThreshold(OpenCVDNNFaceRecognizer::m_threshold);
 }
@@ -152,11 +154,12 @@ void DNNFaceModel::setMats(const QList<std::vector<float> >& mats,
 
     currentSrcs.insert(currentSrcs.end(), newSrc.begin(), newSrc.end());
     currentLabels.push_back(newLabels);
+/*
+    ptr()->setSrc(currentSrcs);
+    ptr()->setLabels(currentLabels);
+*/
+    // make sure that there exits training data
 
-    //ptr()->setSrc(currentSrcs);
-    //ptr()->setLabels(currentLabels);
-
-    //make sure that there exits training data
     if (currentSrcs.size() > 0)
     {
         ptr()->train(currentSrcs, currentLabels);
@@ -183,6 +186,7 @@ void DNNFaceModel::update(const std::vector<cv::Mat>& images,
 
     // Update local information
     // We assume new labels are simply appended
+
     cv::Mat currentLabels = ptr()->getLabels();
 
     for (int i = m_vecMetadata.size() ; i < currentLabels.rows ; ++i)

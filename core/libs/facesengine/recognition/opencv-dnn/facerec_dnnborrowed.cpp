@@ -121,8 +121,6 @@ void DNNFaceRecognizer::train(std::vector<std::vector<float> > _in_src,
         m_labels.push_back(labels.at<int>((int)labelIdx));
         m_src.push_back(src[(int)labelIdx]);
     }
-
-    return ;
 }
 
 void DNNFaceRecognizer::predict(cv::InputArray _src,
@@ -132,7 +130,7 @@ void DNNFaceRecognizer::predict(cv::InputArray _src,
 {
     qCWarning(DIGIKAM_FACESENGINE_LOG) << "Predicting face image";
 
-    cv::Mat src = _src.getMat();//254*254
+    cv::Mat src = _src.getMat();    // 254*254
     std::vector<float> vecdata;
     extractor->getFaceEmbedding(src, vecdata);
     qCWarning(DIGIKAM_FACESENGINE_LOG) << "m_threshold " << m_threshold;
