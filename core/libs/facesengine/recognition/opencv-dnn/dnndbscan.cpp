@@ -237,8 +237,9 @@ void DNNDbscan::checkNearPoints()
     }
 }
 
-// Core object has at least minPtsPerCluster as neighbors
-
+/**
+ * NOTE: Core object has at least minPtsPerCluster as neighbors
+ */
 bool DNNDbscan::isCoreObject(int idx)
 {
     return (points[idx].ptsCount >= minPtsPerCluster);

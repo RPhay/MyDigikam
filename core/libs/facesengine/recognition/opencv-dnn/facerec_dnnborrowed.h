@@ -48,7 +48,9 @@ public:
     {
     }
 
-    /// Initializes and computes this DNNFace Model.
+    /**
+     * Initializes and computes this DNNFace Model.
+     */
     DNNFaceRecognizer(const std::vector<std::vector<float> >& src,
                       cv::InputArray labels,
                       double threshold = DBL_MAX)
@@ -113,7 +115,7 @@ private:
 
 private:
 
-    // NOTE: Do not use a d private internal container here, this will crash OpenCV in cv::Algorithm::set()
+    /// NOTE: Do not use a d private internal container here, this will crash OpenCV in cv::Algorithm::set()
     double                           m_threshold;
 
     std::vector<std::vector<float> > m_src;
