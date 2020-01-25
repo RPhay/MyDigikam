@@ -610,4 +610,5 @@ BUGFIXES:
 594 ==> 416551 - Create an utility to allow to create external soft links for tagged files from database.
 595 ==> 372230 - Searches tool : "Current Searches" virtual album appears more than one.
 596 ==> 416492 - Panorama tool fails to make panoramas.
-597 ==> 
+597 ==> 416756 - When searching for duplicates, only one photo is shown if the other one is in a group (and not the first of the group).
+598 ==> 
