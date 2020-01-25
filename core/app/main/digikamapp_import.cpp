@@ -65,7 +65,7 @@ void DigikamApp::updateQuickImportAction()
         {
             QDateTime appearanceTime = d->cameraAppearanceTimes.value(action->data().toString());
 
-            if (latest.isNull() || appearanceTime > latest)
+            if (latest.isNull() || (appearanceTime > latest))
             {
                 primaryAction = action;
                 latest        = appearanceTime;
@@ -96,6 +96,7 @@ void DigikamApp::slotImportAddImages()
     }
 
     // The folder contents will be parsed by Camera interface in "Directory Browse" mode.
+
     downloadFrom(url.toLocalFile());
 }
 

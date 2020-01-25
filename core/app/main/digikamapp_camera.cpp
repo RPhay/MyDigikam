@@ -123,6 +123,7 @@ void DigikamApp::updateCameraMenu()
     foreach (QAction* const action, d->manualCameraActionGroup->actions())
     {
         // remove duplicate entries, prefer manually added cameras
+
         foreach (QAction* const actionSolid, d->solidCameraActionGroup->actions())
         {
             if (CameraNameHelper::sameDevices(actionSolid->iconText(), action->iconText()))
@@ -151,9 +152,11 @@ void DigikamApp::slotOpenManualCamera(QAction* action)
     if (ctype)
     {
         // check not to open two dialogs for the same camera
+
         if (ctype->currentImportUI() && !ctype->currentImportUI()->isClosed())
         {
             // show and raise dialog
+
             if (ctype->currentImportUI()->isMinimized())
             {
                 KWindowSystem::unminimizeWindow(ctype->currentImportUI()->winId());
@@ -164,6 +167,7 @@ void DigikamApp::slotOpenManualCamera(QAction* action)
         else
         {
             // the ImportUI will delete itself when it has finished
+
             ImportUI* const cgui = new ImportUI(ctype->title(), ctype->model(),
                                                 ctype->port(), ctype->path(), ctype->startingNumber());
 
@@ -230,6 +234,7 @@ void DigikamApp::slotOpenCameraUiFromPath(const QString& path)
     }
 
     // the ImportUI will delete itself when it has finished
+
     ImportUI* const cgui = new ImportUI(i18n("Images found in %1", path),
                                         QLatin1String("directory browse"),
                                         QLatin1String("Fixed"), path, 1);
@@ -244,6 +249,7 @@ void DigikamApp::downloadImages(const QString& folder)
     if (!folder.isNull())
     {
         // activate window when called by media menu and DCOP
+
         if (isMinimized())
         {
             KWindowSystem::unminimizeWindow(winId());
@@ -258,6 +264,7 @@ void DigikamApp::downloadImages(const QString& folder)
 void DigikamApp::cameraAutoDetect()
 {
     // activate window when called by media menu and DCOP
+
     if (isMinimized())
     {
         KWindowSystem::unminimizeWindow(winId());

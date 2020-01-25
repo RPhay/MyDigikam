@@ -29,6 +29,7 @@ namespace Digikam
 void DigikamApp::setupSelectToolsAction()
 {
     // Create action model
+
     ActionItemModel* const actionModel = new ActionItemModel(this);
     actionModel->setMode(ActionItemModel::ToplevelMenuCategory | ActionItemModel::SortCategoriesByInsertionOrder);
 
@@ -69,6 +70,7 @@ void DigikamApp::setupSelectToolsAction()
     }
 
     // setup categorized view
+
     DCategorizedSortFilterProxyModel* const filterModel = actionModel->createFilterModel();
 
     ActionCategorizedView* const selectToolsActionView  = new ActionCategorizedView;
