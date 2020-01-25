@@ -33,8 +33,8 @@ void ShowFoto::slideShow(Digikam::SlideShowSettings& settings)
         return;
     }
 
-    settings.exifRotate = Digikam::MetaEngineSettings::instance()->settings().exifRotate;
-    settings.fileList   = d->thumbBar->urls();
+    settings.exifRotate                = Digikam::MetaEngineSettings::instance()->settings().exifRotate;
+    settings.fileList                  = d->thumbBar->urls();
 
     QPointer<Digikam::SlideShow> slide = new Digikam::SlideShow(new DMetaInfoIface(this, d->thumbBar->urls()), settings);
 

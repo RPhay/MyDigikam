@@ -152,7 +152,7 @@ public:
     ShowfotoThumbnailBar*            thumbBar;
     Digikam::ThumbBarDock*           thumbBarDock;
     ShowfotoNormalDelegate*          normalDelegate;
-    Digikam::ItemPropertiesSideBar* rightSideBar;
+    Digikam::ItemPropertiesSideBar*  rightSideBar;
     Digikam::DSplashScreen*          splash;
     ShowfotoSettings*                settings;
 };

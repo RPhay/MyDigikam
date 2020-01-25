@@ -57,6 +57,7 @@ bool ShowFoto::setup(bool iccSetupPage)
     }
 
     delete setup;
+
     return true;
 }
 
@@ -137,11 +138,13 @@ void ShowFoto::applySettings()
             d->filterModel->setSortRole(ShowfotoItemSortSettings::SortByFileName);
             break;
         }
+
         case SetupMisc::SortByFileSize:
         {
             d->filterModel->setSortRole(ShowfotoItemSortSettings::SortByFileSize);
             break;
         }
+
         default:
         {
             d->filterModel->setSortRole(ShowfotoItemSortSettings::SortByCreationDate);

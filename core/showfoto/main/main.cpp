@@ -95,6 +95,7 @@ int main(int argc, char* argv[])
 #endif
 
     // if we have some local breeze icon resource, prefer it
+
     DXmlGuiWindow::setupIconTheme();
 
     KLocalizedString::setApplicationDomain("digikam");
@@ -128,6 +129,7 @@ int main(int argc, char* argv[])
     MetaEngine::initializeExiv2();
 
     // Force to use application icon for non plasma desktop as Unity for ex.
+
     QApplication::setWindowIcon(QIcon::fromTheme(QLatin1String("showfoto"), app.windowIcon()));
 
     QList<QUrl> urlList;
@@ -154,12 +156,14 @@ int main(int argc, char* argv[])
 
     // If application storage place in home directory to save customized XML settings files do not exist, create it,
     // else QFile will not able to create new files as well.
+
     if (!QFile::exists(QStandardPaths::writableLocation(QStandardPaths::DataLocation)))
     {
         QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
     }
 
     // If application cache place in home directory to save cached files do not exist, create it.
+
     if (!QFile::exists(QStandardPaths::writableLocation(QStandardPaths::CacheLocation)))
     {
         QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::CacheLocation));
@@ -173,6 +177,7 @@ int main(int argc, char* argv[])
 
 #ifdef Q_OS_WIN
     // Necessary to open native open with dialog on windows
+
     CoUninitialize();
 #endif
 
