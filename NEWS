@@ -609,4 +609,5 @@ BUGFIXES:
 593 ==> 416526 - Exporting no longer works at all on the 20/01 version.
 594 ==> 416551 - Create an utility to allow to create external soft links for tagged files from database.
 595 ==> 372230 - Searches tool : "Current Searches" virtual album appears more than one.
-596 ==> 
+596 ==> 416492 - Panorama tool fails to make panoramas.
+597 ==> 

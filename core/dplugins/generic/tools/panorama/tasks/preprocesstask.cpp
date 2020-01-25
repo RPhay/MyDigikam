@@ -208,8 +208,11 @@ bool PreProcessTask::convertRaw()
         QString model   = d->meta.getExifTagString("Exif.Image.Model");
 
         QFileInfo fi(inUrl.toLocalFile());
-        outUrl.setPath(outUrl.path() + fi.completeBaseName().replace(QLatin1Char('.'), QLatin1String("_"))
-                                     + QLatin1String(".tif"));
+        QDir outDir(outUrl.toLocalFile());
+        outDir.cdUp();
+        QString path = outDir.path() + QLatin1Char('/');
+        outUrl.setPath(path + fi.completeBaseName().replace(QLatin1Char('.'), QLatin1String("_"))
+                            + QLatin1String(".tif"));
 
         if (!img.save(outUrl.toLocalFile(), QLatin1String("TIF")))
         {
