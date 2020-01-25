@@ -95,12 +95,14 @@ void TrackManager::setVisibility(const bool value)
     }
 
     d->visibility = value;
+
     emit signalVisibilityChanged(value);
 }
 
 void TrackManager::clear()
 {
     /// @TODO send a signal
+
     d->trackList.clear();
 }
 
@@ -127,10 +129,12 @@ void TrackManager::loadTrackFiles(const QList<QUrl>& urls)
 
 void TrackManager::slotTrackFilesReadyAt(int beginIndex, int endIndex)
 {
-    //const int nFilesBefore = d->trackList.count();
-
+/*
+    const int nFilesBefore = d->trackList.count();
+*/
     // note that endIndex is exclusive!
-    for (int i = beginIndex; i < endIndex; ++i)
+
+    for (int i = beginIndex ; i < endIndex ; ++i)
     {
         const TrackReader::TrackReadResult nextFile = d->trackLoadFuture.resultAt(i);
 

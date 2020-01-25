@@ -158,11 +158,11 @@ public:
     QString                 currentBackendName;
     QStackedLayout*         stackedLayout;
 
-    // these values are cached in case the backend is not ready:
+    /// NOTE: these values are cached in case the backend is not ready:
     GeoCoordinates          cacheCenterCoordinate;
     QString                 cacheZoom;
 
-    // actions for controlling the widget
+    /// actions for controlling the widget
     QMenu*                  configurationMenu;
     QActionGroup*           actionGroupBackendSelection;
     QAction*                actionZoomIn;
@@ -210,7 +210,7 @@ public:
     QAction*                actionStickyMode;
     QToolButton*            buttonStickyMode;
 
-    // to be sorted later
+    /// NOTE: to be sorted later
     PlaceholderWidget*      placeholderWidget;
 };
 
@@ -232,7 +232,9 @@ MapWidget::MapWidget(QWidget* const parent)
 
     d->loadedBackends.append(new BackendGoogleMaps(s, this));
     d->loadedBackends.append(new BackendMarble(s, this));
-//     d->loadedBackends.append(new BackendOSM(s, this));
+/*
+    d->loadedBackends.append(new BackendOSM(s, this));
+*/
     createActionsForBackendSelection();
 
     setAcceptDrops(true);
@@ -263,6 +265,7 @@ void MapWidget::createActions()
             this, &MapWidget::slotShowThumbnailsChanged);
 
     // create backend selection entries:
+
     d->actionGroupBackendSelection = new QActionGroup(this);
     d->actionGroupBackendSelection->setExclusive(true);
 
@@ -271,14 +274,14 @@ void MapWidget::createActions()
 
     createActionsForBackendSelection();
 
-    d->configurationMenu        = new QMenu(this);
-    d->actionPreviewSingleItems = new QAction(i18n("Preview single items"), this);
+    d->configurationMenu         = new QMenu(this);
+    d->actionPreviewSingleItems  = new QAction(i18n("Preview single items"), this);
     d->actionPreviewSingleItems->setCheckable(true);
     d->actionPreviewSingleItems->setChecked(true);
     d->actionPreviewGroupedItems = new QAction(i18n("Preview grouped items"), this);
     d->actionPreviewGroupedItems->setCheckable(true);
     d->actionPreviewGroupedItems->setChecked(true);
-    d->actionShowNumbersOnItems = new QAction(i18n("Show numbers"), this);
+    d->actionShowNumbersOnItems  = new QAction(i18n("Show numbers"), this);
     d->actionShowNumbersOnItems->setCheckable(true);
     d->actionShowNumbersOnItems->setChecked(true);
 
@@ -288,7 +291,9 @@ void MapWidget::createActions()
     d->actionDecreaseThumbnailSize->setToolTip(i18n("Decrease the thumbnail size on the map"));
 
     d->actionRemoveCurrentRegionSelection = new QAction(this);
-    //d->actionRemoveCurrentRegionSelection->setEnabled(false);
+/*
+    d->actionRemoveCurrentRegionSelection->setEnabled(false);
+*/
     d->actionRemoveCurrentRegionSelection->setIcon(QIcon::fromTheme( QLatin1String("edit-clear") ));
     d->actionRemoveCurrentRegionSelection->setToolTip(i18n("Remove the current region selection"));
 
@@ -371,9 +376,11 @@ void MapWidget::createActions()
 void MapWidget::createActionsForBackendSelection()
 {
     // delete the existing actions:
+
     qDeleteAll(d->actionGroupBackendSelection->actions());
 
     // create actions for all backends:
+
     for (int i = 0 ; i < d->loadedBackends.size() ; ++i)
     {
         const QString backendName    = d->loadedBackends.at(i)->backendName();
@@ -387,6 +394,7 @@ void MapWidget::createActionsForBackendSelection()
 MapWidget::~MapWidget()
 {
     // release all widgets:
+
     for (int i = 0 ; i < d->stackedLayout->count() ; ++i)
     {
         d->stackedLayout->removeWidget(d->stackedLayout->widget(i));
@@ -423,10 +431,12 @@ bool MapWidget::setBackend(const QString& backendName)
     saveBackendToCache();
 
     // switch to the placeholder widget:
+
     setShowPlaceholderWidget(true);
     removeMapWidgetFromFrame();
 
     // disconnect signals from old backend:
+
     if (d->currentBackend)
     {
         d->currentBackend->setActive(false);
@@ -500,6 +510,7 @@ bool MapWidget::setBackend(const QString& backendName)
                 setMapWidgetInFrame(d->currentBackend->mapWidget());
 
                 // call this slot manually in case the backend was ready right away:
+
                 if (d->currentBackend->isReady())
                 {
                     slotBackendReadyChanged(d->currentBackendName);
@@ -527,6 +538,7 @@ void MapWidget::applyCacheToBackend()
     }
 
     /// @todo Only do this if the zoom was changed!
+
     qCDebug(DIGIKAM_GEOIFACE_LOG) << d->cacheZoom;
 
     setZoom(d->cacheZoom);
@@ -619,7 +631,9 @@ void MapWidget::saveSettingsToGroup(KConfigGroup* const group)
     GEOIFACE_ASSERT(group != nullptr);
 
     if (!group)
+    {
         return;
+    }
 
     if (!d->currentBackendName.isEmpty())
     {
@@ -660,6 +674,7 @@ void MapWidget::readSettingsFromGroup(const KConfigGroup* const group)
     setBackend(group->readEntry("Backend", "marble"));
 
     // Options concerning the display of markers
+
     d->actionPreviewSingleItems->setChecked(group->readEntry("Preview Single Items",   true));
     d->actionPreviewGroupedItems->setChecked(group->readEntry("Preview Grouped Items", true));
     d->actionShowNumbersOnItems->setChecked(group->readEntry("Show numbers on items",  true));
@@ -672,12 +687,14 @@ void MapWidget::readSettingsFromGroup(const KConfigGroup* const group)
     d->actionStickyMode->setChecked(group->readEntry("Sticky Mode State",    d->actionStickyMode->isChecked()));
 
     // let the backends load their settings
+
     for (int i = 0 ; i < d->loadedBackends.size() ; ++i)
     {
         d->loadedBackends.at(i)->readSettingsFromGroup(group);
     }
 
     // current map state
+
     const GeoCoordinates centerDefault    = GeoCoordinates(52.0, 6.0);
     const QString centerGeoUrl            = group->readEntry("Center", centerDefault.geoUrl());
     bool centerGeoUrlValid                = false;
@@ -687,6 +704,7 @@ void MapWidget::readSettingsFromGroup(const KConfigGroup* const group)
     s->currentMouseMode                   = GeoMouseModes(group->readEntry("Mouse Mode", int(s->currentMouseMode)));
 
     // propagate the loaded values to the map, if appropriate
+
     applyCacheToBackend();
     slotUpdateActionsEnabled();
 }
@@ -732,7 +750,7 @@ void MapWidget::rebuildConfigurationMenu()
 
 QAction* MapWidget::getControlAction(const QString& actionName)
 {
-    if (actionName == QLatin1String("zoomin"))
+    if      (actionName == QLatin1String("zoomin"))
     {
         return d->actionZoomIn;
     }
@@ -868,6 +886,7 @@ QWidget* MapWidget::getControlWidget()
         setVisibleExtraActions(d->visibleExtraActions);
 
         // add stretch after the controls:
+
         QHBoxLayout* const hBoxLayout = reinterpret_cast<QHBoxLayout*>(d->controlWidget->layout());
 
         if (hBoxLayout)
@@ -877,6 +896,7 @@ QWidget* MapWidget::getControlWidget()
     }
 
     // make sure the menu exists, even if no backend has been set:
+
     rebuildConfigurationMenu();
 
     return d->controlWidget;
@@ -885,7 +905,9 @@ QWidget* MapWidget::getControlWidget()
 void MapWidget::slotZoomIn()
 {
     if (!currentBackendReady())
+    {
         return;
+    }
 
     d->currentBackend->zoomIn();
 }
@@ -893,7 +915,9 @@ void MapWidget::slotZoomIn()
 void MapWidget::slotZoomOut()
 {
     if (!currentBackendReady())
+    {
         return;
+    }
 
     d->currentBackend->zoomOut();
 }
@@ -907,7 +931,9 @@ void MapWidget::slotUpdateActionsEnabled()
     }
 
     d->actionDecreaseThumbnailSize->setEnabled((s->showThumbnails)&&(s->thumbnailSize>GeoIfaceMinThumbnailSize));
+
     /// @todo Define an upper limit for the thumbnail size!
+
     d->actionIncreaseThumbnailSize->setEnabled(s->showThumbnails);
 
     d->actionSetRegionSelectionMode->setEnabled(s->availableMouseModes.testFlag(MouseModeRegionSelection));
@@ -919,6 +945,7 @@ void MapWidget::slotUpdateActionsEnabled()
     d->actionSetSelectThumbnailMode->setEnabled(s->availableMouseModes.testFlag(MouseModeSelectThumbnail));
 
     // the 'Remove X' actions are only available if the corresponding X is actually there:
+
     bool clearRegionSelectionAvailable = s->availableMouseModes.testFlag(MouseModeRegionSelection);
 
     if (clearRegionSelectionAvailable && s->markerModel)
@@ -939,6 +966,7 @@ void MapWidget::slotUpdateActionsEnabled()
     d->actionStickyMode->setEnabled(d->availableExtraActions.testFlag(ExtraActionSticky));
 
     /// @todo Only set the icons if they have to be changed!
+
     d->actionStickyMode->setIcon(QIcon::fromTheme(QLatin1String(d->actionStickyMode->isChecked()
                                                                 ? "document-encrypted"
                                                                 : "document-decrypt")));
@@ -947,6 +975,7 @@ void MapWidget::slotUpdateActionsEnabled()
                                      : GeoIfaceGlobalObject::instance()->getMarkerPixmap(QLatin1String("marker-icon-16x16")));
 
     // make sure the action for the current mouse mode is checked
+
     const QList<QAction*> mouseModeActions = d->mouseModeActionGroup->actions();
 
     foreach (QAction* const action, mouseModeActions)
@@ -964,7 +993,9 @@ void MapWidget::slotChangeBackend(QAction* action)
     GEOIFACE_ASSERT(action != nullptr);
 
     if (!action)
+    {
         return;
+    }
 
     const QString newBackendName = action->data().toString();
     setBackend(newBackendName);
@@ -978,12 +1009,14 @@ void MapWidget::updateMarkers()
     }
 
     // tell the backend to update the markers
+
     d->currentBackend->updateMarkers();
 }
 
 void MapWidget::updateClusters()
 {
     /// @todo Find a better way to tell the TileGrouper about the backend
+
     s->tileGrouper->setCurrentBackend(d->currentBackend);
     s->tileGrouper->updateClusters();
 }
@@ -1017,10 +1050,12 @@ void MapWidget::getColorInfos(const int clusterIndex,
                               const int* const overrideCount) const
 {
     /// @todo Call the new getColorInfos function!
+
     const GeoIfaceCluster& cluster = s->clusterList.at(clusterIndex);
 
     /// @todo Check that this number is already valid!
-    const int nMarkers            = overrideCount ? *overrideCount : cluster.markerCount;
+
+    const int nMarkers             = overrideCount ? *overrideCount : cluster.markerCount;
 
     getColorInfos(overrideSelection ? *overrideSelection : cluster.groupState,
                   nMarkers,
@@ -1028,12 +1063,12 @@ void MapWidget::getColorInfos(const int clusterIndex,
 }
 
 void MapWidget::getColorInfos(const GeoGroupState groupState,
-                       const int nMarkers,
-                       QColor* fillColor, QColor* strokeColor,
-                       Qt::PenStyle* strokeStyle, QString* labelText,
-                       QColor* labelColor) const
+                              const int nMarkers,
+                              QColor* fillColor, QColor* strokeColor,
+                              Qt::PenStyle* strokeStyle, QString* labelText,
+                              QColor* labelColor) const
 {
-    if (nMarkers < 1000)
+    if      (nMarkers < 1000)
     {
         *labelText = QString::number(nMarkers);
     }
@@ -1048,6 +1083,7 @@ void MapWidget::getColorInfos(const GeoGroupState groupState,
     else
     {
         // convert to "1E5" notation for numbers >=20k:
+
         qreal exponent           = floor(log((qreal)nMarkers)/log((qreal)10));
         qreal nMarkersFirstDigit = round(qreal(nMarkers)/pow(10,exponent));
 
@@ -1064,26 +1100,32 @@ void MapWidget::getColorInfos(const GeoGroupState groupState,
     *strokeStyle = Qt::NoPen;
 
     /// @todo On my system, digikam uses QColor(67, 172, 232) as the selection color. Or should we just use blue?
+
     switch (groupState & SelectedMask)
     {
         case SelectedNone:
             *strokeStyle = Qt::SolidLine;
             *strokeColor = QColor(Qt::black);
             break;
+
         case SelectedSome:
             *strokeStyle = Qt::DotLine;
             *strokeColor = QColor(Qt::blue);//67, 172, 232);
             break;
+
         case SelectedAll:
             *strokeStyle = Qt::SolidLine;
             *strokeColor = QColor(Qt::blue);//67, 172, 232);
             break;
     }
 
-    /// @todo These are the fill colors for the circles, for cases in which only some or all of the images are positively filtered. Filtering is implemented in GeoIface, but the code here has not been adapted yet.
+    /**
+     * @todo These are the fill colors for the circles, for cases in which only some or all of the images
+     * are positively filtered. Filtering is implemented in GeoIface, but the code here has not been adapted yet.
+     */
     QColor fillAll, fillSome, fillNone;
 
-    if (nMarkers >= 100)
+    if      (nMarkers >= 100)
     {
         fillAll  = QColor(255, 0,   0);
         fillSome = QColor(255, 188, 125);
@@ -1115,25 +1157,31 @@ void MapWidget::getColorInfos(const GeoGroupState groupState,
     }
 
     *fillColor = fillAll;
-//     switch (groupState)
-//     {
-//         case PartialAll:
-//             *fillColor = fillAll;
-//             break;
-//         case PartialSome:
-//             *fillColor = fillSome;
-//             break;
-//         case PartialNone:
-//             if (haveAnySolo)
-//             {
-//                 *fillColor = fillNone;
-//             }
-//             else
-//             {
-//                 *fillColor = fillAll;
-//             }
-//             break;
-//     }
+/*
+    switch (groupState)
+    {
+        case PartialAll:
+            *fillColor = fillAll;
+            break;
+
+        case PartialSome:
+            *fillColor = fillSome;
+            break;
+
+        case PartialNone:
+
+            if (haveAnySolo)
+            {
+                *fillColor = fillNone;
+            }
+            else
+            {
+                *fillColor = fillAll;
+            }
+
+            break;
+    }
+*/
 }
 
 QString MapWidget::convertZoomToBackendZoom(const QString& someZoom,
@@ -1152,9 +1200,10 @@ QString MapWidget::convertZoomToBackendZoom(const QString& someZoom,
     int targetZoom       = -1;
 
     // all of these values were found experimentally!
+
     if (targetBackend == QLatin1String("marble" ))
     {
-             if (sourceZoom == 0) { targetZoom =  900; }
+        if      (sourceZoom == 0) { targetZoom =  900; }
         else if (sourceZoom == 1) { targetZoom =  970; }
         else if (sourceZoom == 2) { targetZoom = 1108; }
         else if (sourceZoom == 3) { targetZoom = 1250; }
@@ -1179,7 +1228,7 @@ QString MapWidget::convertZoomToBackendZoom(const QString& someZoom,
 
     if (targetBackend == QLatin1String("googlemaps" ))
     {
-             if (sourceZoom <= 900) { targetZoom =  0; }
+        if      (sourceZoom <= 900) { targetZoom =  0; }
         else if (sourceZoom <= 970) { targetZoom =  1; }
         else if (sourceZoom <=1108) { targetZoom =  2; }
         else if (sourceZoom <=1250) { targetZoom =  3; }
@@ -1243,6 +1292,7 @@ void MapWidget::slotClustersMoved(const QIntList& clusterIndices,
     qCDebug(DIGIKAM_GEOIFACE_LOG) << clusterIndices;
 
     /// @todo We actually expect only one clusterindex
+
     int             clusterIndex      = clusterIndices.first();
     GeoCoordinates  targetCoordinates = s->clusterList.at(clusterIndex).coordinates;
     TileIndex::List movedTileIndices;
@@ -1250,6 +1300,7 @@ void MapWidget::slotClustersMoved(const QIntList& clusterIndices,
     if (s->clusterList.at(clusterIndex).groupState == SelectedNone)
     {
         // a not-selected marker was moved. update all of its items:
+
         const GeoIfaceCluster& cluster = s->clusterList.at(clusterIndex);
 
         for (int i = 0 ; i < cluster.tileIndicesList.count() ; ++i)
@@ -1277,6 +1328,7 @@ void MapWidget::addUngroupedModel(GeoModelHelper* const modelHelper)
     s->ungroupedModels << modelHelper;
 
     /// @todo monitor all model signals!
+
     connect(modelHelper->model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)),
             this, SLOT(slotUngroupedModelChanged()));
 
@@ -1301,14 +1353,19 @@ void MapWidget::addUngroupedModel(GeoModelHelper* const modelHelper)
 void MapWidget::removeUngroupedModel(GeoModelHelper* const modelHelper)
 {
     if (!modelHelper)
+    {
         return;
+    }
 
     const int modelIndex = s->ungroupedModels.indexOf(modelHelper);
 
     if (modelIndex < 0)
+    {
         return;
+    }
 
     /// @todo monitor all model signals!
+
     disconnect(modelHelper->model(), SIGNAL(dataChanged(QModelIndex,QModelIndex)),
                this, SLOT(slotUngroupedModelChanged()));
 
@@ -1332,6 +1389,7 @@ void MapWidget::removeUngroupedModel(GeoModelHelper* const modelHelper)
     // the indices changed, therefore send out notifications
     // sending out a signal with i=s->ungroupedModel.count()
     // will cause the backends to see that the last model is missing
+
     for (int i = modelIndex ; i <= s->ungroupedModels.count() ; ++i)
     {
         emit signalUngroupedModelChanged(i);
@@ -1347,6 +1405,7 @@ void MapWidget::setGroupedModel(AbstractMarkerTiler* const markerModel)
         s->markerModel->setActive(s->activeState);
 
         /// @todo this needs some buffering for the google maps backend
+
         connect(s->markerModel, SIGNAL(signalTilesOrSelectionChanged()),
                 this, SLOT(slotRequestLazyReclustering()));
 
@@ -1380,7 +1439,9 @@ void MapWidget::slotShowThumbnailsChanged()
 void MapWidget::slotRequestLazyReclustering()
 {
     if (d->lazyReclusteringRequested)
+    {
         return;
+    }
 
     s->tileGrouper->setClustersDirty();
 
@@ -1397,7 +1458,9 @@ void MapWidget::slotRequestLazyReclustering()
 void MapWidget::slotLazyReclusteringRequestCallBack()
 {
     if (!d->lazyReclusteringRequested)
+    {
         return;
+    }
 
     d->lazyReclusteringRequested = false;
     slotClustersNeedUpdating();
@@ -1430,14 +1493,22 @@ void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
                 {
                     GeoCoordinates currentTileCoordinate;
 
-                    if (corner == 1)
+                    if      (corner == 1)
+                    {
                         currentTileCoordinate = currentTileIndex.toCoordinates(TileIndex::CornerNW);
+                    }
                     else if (corner == 2)
+                    {
                         currentTileCoordinate = currentTileIndex.toCoordinates(TileIndex::CornerSW);
+                    }
                     else if (corner == 3)
+                    {
                         currentTileCoordinate = currentTileIndex.toCoordinates(TileIndex::CornerNE);
+                    }
                     else if (corner == 4)
+                    {
                         currentTileCoordinate = currentTileIndex.toCoordinates(TileIndex::CornerSE);
+                    }
 
                     const Marble::GeoDataCoordinates tileCoordinate(currentTileCoordinate.lon(),
                                                                     currentTileCoordinate.lat(),
@@ -1473,10 +1544,13 @@ void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
             latLonBox.setNorth((latLonBox.north(Marble::GeoDataCoordinates::Degree)+0.0001), Marble::GeoDataCoordinates::Degree);
             latLonBox.setEast((latLonBox.east(Marble::GeoDataCoordinates::Degree)+0.0001), Marble::GeoDataCoordinates::Degree);
             latLonBox.setSouth((latLonBox.south(Marble::GeoDataCoordinates::Degree)-0.0001), Marble::GeoDataCoordinates::Degree);
-      //  }
+/*
+        }
+*/
         if (s->currentMouseMode == MouseModeZoomIntoGroup)
         {
             /// @todo Very small latLonBoxes can crash Marble
+
             d->currentBackend->centerOn(latLonBox);
         }
         else
@@ -1497,6 +1571,7 @@ void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
              (s->currentMouseMode == MouseModeSelectThumbnail) )
     {
         // update the selection and filtering state of the clusters
+
         for (int i = 0 ; i < clusterIndices.count() ; ++i)
         {
             const int clusterIndex               = clusterIndices.at(i);
@@ -1504,6 +1579,7 @@ void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
             const TileIndex::List tileIndices    = currentCluster.tileIndicesList;
 
             /// @todo Isn't this cached in the cluster?
+
             const QVariant representativeIndex   = getClusterRepresentativeMarker(clusterIndex, s->sortKey);
 
             AbstractMarkerTiler::ClickInfo clickInfo;
@@ -1519,6 +1595,7 @@ void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
 void MapWidget::dragEnterEvent(QDragEnterEvent* event)
 {
     /// @todo ignore drops if no marker tiler or model can accept them
+
     if (!d->dragDropHandler)
     {
         event->ignore();
@@ -1532,6 +1609,7 @@ void MapWidget::dragEnterEvent(QDragEnterEvent* event)
     }
 
     /// @todo need data about the dragged object: #markers, selected, icon, ...
+
     event->accept();
 }
 
@@ -1549,8 +1627,9 @@ void MapWidget::dragMoveEvent(QDragMoveEvent* event)
 void MapWidget::dropEvent(QDropEvent* event)
 {
     // remove the drag marker:
-//     d->currentBackend->updateDragDropMarker(QPoint(), 0);
-
+/*
+    d->currentBackend->updateDragDropMarker(QPoint(), 0);
+*/
     if (!d->dragDropHandler)
     {
         event->ignore();
@@ -1560,9 +1639,12 @@ void MapWidget::dropEvent(QDropEvent* event)
     GeoCoordinates dropCoordinates;
 
     if (!d->currentBackend->geoCoordinates(event->pos(), &dropCoordinates))
+    {
         return;
+    }
 
     // the drag and drop handler handled the drop if it returned true here
+
     if (d->dragDropHandler->dropEvent(event, dropCoordinates))
     {
         event->acceptProposedAction();
@@ -1574,7 +1656,9 @@ void MapWidget::dragLeaveEvent(QDragLeaveEvent* event)
     Q_UNUSED(event);
 
     // remove the marker:
-//     d->currentBackend->updateDragDropMarker(QPoint(), 0);
+/*
+    d->currentBackend->updateDragDropMarker(QPoint(), 0);
+*/
 }
 
 void MapWidget::markClustersAsDirty()
@@ -1590,13 +1674,17 @@ void MapWidget::setDragDropHandler(GeoDragDropHandler* const dragDropHandler)
 QVariant MapWidget::getClusterRepresentativeMarker(const int clusterIndex, const int sortKey)
 {
     if (!s->markerModel)
+    {
         return QVariant();
+    }
 
     const GeoIfaceCluster cluster          = s->clusterList.at(clusterIndex);
     QMap<int, QVariant>::const_iterator it = cluster.representativeMarkers.find(sortKey);
 
     if (it != cluster.representativeMarkers.end())
+    {
         return *it;
+    }
 
     QList<QVariant> repIndices;
 
@@ -1620,6 +1708,7 @@ void MapWidget::slotItemDisplaySettingsChanged()
     /// @todo Update action availability?
 
     /// @todo We just need to update the display, no need to recluster?
+
     slotRequestLazyReclustering();
 }
 
@@ -1636,6 +1725,7 @@ void MapWidget::setSortKey(const int sortKey)
 
     // this is probably faster than writing a function that changes all the clusters icons...
     /// @todo We just need to update the display, no need to recluster?
+
     slotRequestLazyReclustering();
 }
 
@@ -1646,7 +1736,7 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
 {
     GeoIfaceCluster& cluster = s->clusterList[clusterId];
     int markerCount          = cluster.markerCount;
-    GeoGroupState groupState    = cluster.groupState;
+    GeoGroupState groupState = cluster.groupState;
 
     if (selectedStateOverride)
     {
@@ -1657,6 +1747,7 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
     const GeoGroupState selectedState = groupState & SelectedMask;
 
     // first determine all the color and style values
+
     QColor       fillColor;
     QColor       strokeColor;
     Qt::PenStyle strokeStyle;
@@ -1668,15 +1759,18 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
                   &markerCount);
 
     // determine whether we should use a pixmap or a placeholder
+
     if (!s->showThumbnails)
     {
         /// @todo Handle positive filtering and region selection!
+
         QString pixmapName = fillColor.name().mid(1);
 
         if (selectedState == SelectedAll)
         {
             pixmapName += QLatin1String("-selected");
         }
+
         if (selectedState == SelectedSome)
         {
             pixmapName += QLatin1String("-someselected");
@@ -1685,6 +1779,7 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
         const QPixmap& markerPixmap = GeoIfaceGlobalObject::instance()->getMarkerPixmap(pixmapName);
 
         // update the display information stored in the cluster:
+
         cluster.pixmapType          = GeoIfaceCluster::PixmapMarker;
         cluster.pixmapOffset        = QPoint(markerPixmap.width()/2, markerPixmap.height()-1);
         cluster.pixmapSize          = markerPixmap.size();
@@ -1698,6 +1793,7 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
     }
 
     /// @todo This check is strange, there can be no clusters without a markerModel?
+
     bool displayThumbnail = (s->markerModel != nullptr);
 
     if (displayThumbnail)
@@ -1724,10 +1820,12 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
 
             // we may draw with partially transparent pixmaps later, so make sure we have a defined
             // background color
+
             resultPixmap.fill(QColor::fromRgb(0xff, 0xff, 0xff));
             QPainter painter(&resultPixmap);
-//             painter.setRenderHint(QPainter::Antialiasing);
-
+/*
+             painter.setRenderHint(QPainter::Antialiasing);
+*/
             const int borderWidth = (groupState&SelectedSome) ? 2 : 1;
             QPen borderPen;
             borderPen.setWidth(borderWidth);
@@ -1736,6 +1834,7 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
             GeoGroupState globalState = s->markerModel->getGlobalGroupState();
 
             /// @todo What about partially in the region or positively filtered?
+
             const bool clusterIsNotInRegionSelection  = (globalState & RegionSelectedMask) &&
                                                         ((groupState & RegionSelectedMask) == RegionSelectedNone);
             const bool clusterIsNotPositivelyFiltered = (globalState & FilteredPositiveMask) &&
@@ -1750,11 +1849,10 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
 
                 QPixmap alphaPixmap(clusterPixmap.size());
                 alphaPixmap.fill(QColor::fromRgb(0x80, 0x80, 0x80));
-
-                /* NOTE : old Qt4 code ported to Qt5 due to deprecated QPixmap::setAlphaChannel()
+/*
+                NOTE : old Qt4 code ported to Qt5 due to deprecated QPixmap::setAlphaChannel()
                 clusterPixmap.setAlphaChannel(alphaPixmap);
-                */
-
+*/
                 QPainter p(&clusterPixmap);
                 p.setOpacity(0.2);
                 p.drawPixmap(0, 0, alphaPixmap);
@@ -1766,11 +1864,13 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
             if (shouldGrayOut || shouldCrossOut)
             {
                 // draw a red cross above the pixmap
+
                 QPen crossPen(Qt::red);
 
                 if (!shouldCrossOut)
                 {
                     /// @todo Maybe we should also do a cross for not positively filtered images?
+
                     crossPen.setColor(Qt::blue);
                 }
 
@@ -1786,6 +1886,7 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
             if (strokeStyle != Qt::SolidLine)
             {
                 // paint a white border around the image
+
                 borderPen.setColor(Qt::white);
                 painter.setPen(borderPen);
                 painter.drawRect(borderWidth-1, borderWidth-1,
@@ -1794,6 +1895,7 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
             }
 
             // now draw the selection border
+
             borderPen.setColor(strokeColor);
             borderPen.setStyle(strokeStyle);
             painter.setPen(borderPen);
@@ -1806,6 +1908,7 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
                 QPen labelPen(labelColor);
 
                 // note: the pen has to be set, otherwise the bounding rect is 0 x 0!!!
+
                 painter.setPen(labelPen);
                 const QRect textRect(0, 0, resultPixmap.width(), resultPixmap.height());
                 QRect textBoundingRect = painter.boundingRect(textRect,
@@ -1814,17 +1917,20 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
                 textBoundingRect.adjust(-1, -1, 1, 1);
 
                 // fill the bounding rect:
+
                 painter.setPen(Qt::NoPen);
                 painter.setBrush(QColor::fromRgb(0xff, 0xff, 0xff, 0x80));
                 painter.drawRect(textBoundingRect);
 
                 // draw the text:
+
                 painter.setPen(labelPen);
                 painter.setBrush(Qt::NoBrush);
                 painter.drawText(textRect, Qt::AlignHCenter|Qt::AlignVCenter, labelText);
             }
 
             // update the display information stored in the cluster:
+
             cluster.pixmapType   = GeoIfaceCluster::PixmapImage;
             cluster.pixmapOffset = QPoint(resultPixmap.width()/2, resultPixmap.height()/2);
             cluster.pixmapSize   = resultPixmap.size();
@@ -1839,6 +1945,7 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
     }
 
     // we do not have a thumbnail, draw the circle instead:
+
     const int circleRadius = s->thumbnailSize/2;
     QPen circlePen;
     circlePen.setColor(strokeColor);
@@ -1851,7 +1958,9 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
 
     const int pixmapDiameter = 2*(circleRadius+1);
     QPixmap circlePixmap(pixmapDiameter, pixmapDiameter);
+
     /// @todo cache this somehow
+
     circlePixmap.fill(QColor(0, 0, 0, 0));
 
     QPainter circlePainter(&circlePixmap);
@@ -1864,6 +1973,7 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
     circlePainter.drawText(circleRect, Qt::AlignHCenter|Qt::AlignVCenter, labelText);
 
     // update the display information stored in the cluster:
+
     cluster.pixmapType   = GeoIfaceCluster::PixmapCircle;
     cluster.pixmapOffset = QPoint(circlePixmap.width()/2, circlePixmap.height()/2);
     cluster.pixmapSize   = circlePixmap.size();
@@ -1881,9 +1991,11 @@ void MapWidget::setThumnailSize(const int newThumbnailSize)
     s->thumbnailSize = qMax(GeoIfaceMinThumbnailSize, newThumbnailSize);
 
     // make sure the grouping radius is larger than the thumbnail size
+
     if (2*s->thumbnailGroupingRadius < newThumbnailSize)
     {
         /// @todo more straightforward way for this?
+
         s->thumbnailGroupingRadius = newThumbnailSize/2 + newThumbnailSize%2;
     }
 
@@ -1900,6 +2012,7 @@ void MapWidget::setThumbnailGroupingRadius(const int newGroupingRadius)
     s->thumbnailGroupingRadius = qMax(GeoIfaceMinThumbnailGroupingRadius, newGroupingRadius);
 
     // make sure the thumbnails are smaller than the grouping radius
+
     if (2*s->thumbnailGroupingRadius < s->thumbnailSize)
     {
         s->thumbnailSize = 2*newGroupingRadius;
@@ -1928,7 +2041,9 @@ void MapWidget::setMarkerGroupingRadius(const int newGroupingRadius)
 void MapWidget::slotDecreaseThumbnailSize()
 {
     if (!s->showThumbnails)
+    {
         return;
+    }
 
     if (s->thumbnailSize>GeoIfaceMinThumbnailSize)
     {
@@ -1936,6 +2051,7 @@ void MapWidget::slotDecreaseThumbnailSize()
 
         // make sure the grouping radius is also decreased
         // this will automatically decrease the thumbnail size as well
+
         setThumbnailGroupingRadius(newThumbnailSize/2);
     }
 }
@@ -1943,7 +2059,9 @@ void MapWidget::slotDecreaseThumbnailSize()
 void MapWidget::slotIncreaseThumbnailSize()
 {
     if (!s->showThumbnails)
+    {
         return;
+    }
 
     setThumnailSize(s->thumbnailSize+5);
 }
@@ -1979,9 +2097,11 @@ void MapWidget::clearRegionSelection()
 void MapWidget::slotNewSelectionFromMap(const Digikam::GeoCoordinates::Pair& sel)
 {
     /// @todo Should the backend update s on its own?
+
     s->selectionRectangle = sel;
 
     slotUpdateActionsEnabled();
+
     emit signalRegionSelectionChanged();
 }
 
@@ -1991,12 +2111,14 @@ void MapWidget::slotRemoveCurrentRegionSelection()
     d->currentBackend->regionSelectionChanged();
 
     slotUpdateActionsEnabled();
+
     emit signalRegionSelectionChanged();
 }
 
 void MapWidget::slotUngroupedModelChanged()
 {
     // determine the index under which we handle this model
+
     QObject* const senderObject           = sender();
     QAbstractItemModel* const senderModel = qobject_cast<QAbstractItemModel*>(senderObject);
 
@@ -2050,8 +2172,11 @@ void MapWidget::slotUngroupedModelChanged()
 void MapWidget::addWidgetToControlWidget(QWidget* const newWidget)
 {
     // make sure the control widget exists
+
     if (!d->controlWidget)
+    {
         getControlWidget();
+    }
 
     QHBoxLayout* const hBoxLayout = reinterpret_cast<QHBoxLayout*>(d->hBoxForAdditionalControlWidgetItems->layout());
 
@@ -2086,11 +2211,13 @@ void MapWidget::setActive(const bool state)
     if (state)
     {
         // do we have a map widget shown?
-        if ( (d->stackedLayout->count() == 1) && d->currentBackend )
+
+        if ((d->stackedLayout->count() == 1) && d->currentBackend)
         {
             setMapWidgetInFrame(d->currentBackend->mapWidget());
 
             // call this slot manually in case the backend was ready right away:
+
             if (d->currentBackend->isReady())
             {
                 slotBackendReadyChanged(d->currentBackendName);
@@ -2144,6 +2271,7 @@ bool MapWidget::getStickyModeState() const
 void MapWidget::setStickyModeState(const bool state)
 {
     d->actionStickyMode->setChecked(state);
+
     slotUpdateActionsEnabled();
 }
 
@@ -2169,6 +2297,7 @@ void MapWidget::setEnabledExtraActions(const GeoExtraActions actions)
 void MapWidget::slotStickyModeChanged()
 {
     slotUpdateActionsEnabled();
+
     emit signalStickyModeChanged();
 }
 
@@ -2190,7 +2319,7 @@ void MapWidget::setAllowModifications(const bool state)
  */
 void MapWidget::adjustBoundariesToGroupedMarkers(const bool useSaneZoomLevel)
 {
-    if ( (!s->activeState) || (!s->markerModel) || (!currentBackendReady()) )
+    if ((!s->activeState) || (!s->markerModel) || (!currentBackendReady()))
     {
         return;
     }
@@ -2198,6 +2327,7 @@ void MapWidget::adjustBoundariesToGroupedMarkers(const bool useSaneZoomLevel)
     Marble::GeoDataLineString tileString;
 
     /// @todo not sure that this is the best way to find the bounding box of all items
+
     for (AbstractMarkerTiler::NonEmptyIterator tileIterator(s->markerModel, TileIndex::MaxLevel);
          !tileIterator.atEnd();
          tileIterator.nextIndex())
@@ -2206,8 +2336,7 @@ void MapWidget::adjustBoundariesToGroupedMarkers(const bool useSaneZoomLevel)
 
         for (int corner = 1 ; corner <= 4 ; ++corner)
         {
-            const GeoCoordinates currentTileCoordinate =
-                tileIndex.toCoordinates(TileIndex::CornerPosition(corner));
+            const GeoCoordinates currentTileCoordinate = tileIndex.toCoordinates(TileIndex::CornerPosition(corner));
 
             const Marble::GeoDataCoordinates tileCoordinate(currentTileCoordinate.lon(),
                                                             currentTileCoordinate.lat(),
@@ -2221,6 +2350,7 @@ void MapWidget::adjustBoundariesToGroupedMarkers(const bool useSaneZoomLevel)
     const Marble::GeoDataLatLonBox latLonBox = Marble::GeoDataLatLonBox::fromLineString(tileString);
 
     /// @todo use a sane zoom level
+
     d->currentBackend->centerOn(latLonBox, useSaneZoomLevel);
 }
 
@@ -2252,6 +2382,7 @@ void MapWidget::setMapWidgetInFrame(QWidget* const widgetForFrame)
     if (d->stackedLayout->count() > 1)
     {
         // widget 0 is the status widget, widget 1 is the map widget
+
         if (d->stackedLayout->widget(1) == widgetForFrame)
         {
             return;
@@ -2259,6 +2390,7 @@ void MapWidget::setMapWidgetInFrame(QWidget* const widgetForFrame)
 
         // there is some other widget at the target position.
         // remove it and add our widget instead
+
         d->stackedLayout->removeWidget(d->stackedLayout->widget(1));
     }
 
@@ -2278,6 +2410,7 @@ void MapWidget::removeMapWidgetFromFrame()
 void MapWidget::slotMouseModeChanged(QAction* triggeredAction)
 {
     // determine the new mouse mode:
+
     const QVariant triggeredActionData = triggeredAction->data();
     const GeoMouseModes newMouseMode   = triggeredActionData.value<Digikam::GeoMouseModes>();
 
@@ -2287,6 +2420,7 @@ void MapWidget::slotMouseModeChanged(QAction* triggeredAction)
     }
 
     // store the new mouse mode:
+
     s->currentMouseMode = newMouseMode;
 
     if (d->currentBackend)
@@ -2327,6 +2461,7 @@ void MapWidget::setTrackManager(TrackManager* const trackManager)
 
     // Some backends track the track manager activity even when not active
     // therefore they have to be notified.
+
     foreach (MapBackend* const backend, d->loadedBackends)
     {
         backend->slotTrackManagerChanged();

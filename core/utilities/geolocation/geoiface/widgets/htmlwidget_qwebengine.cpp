@@ -58,17 +58,24 @@ HTMLWidgetPage::~HTMLWidgetPage()
 {
 }
 
-void HTMLWidgetPage::javaScriptConsoleMessage(JavaScriptConsoleMessageLevel /*level*/, const QString& message, int /*lineNumber*/, const QString& /*sourceID*/)
+void HTMLWidgetPage::javaScriptConsoleMessage(JavaScriptConsoleMessageLevel /*level*/,
+                                              const QString& message,
+                                              int /*lineNumber*/,
+                                              const QString& /*sourceID*/)
 {
     if (!message.startsWith(QLatin1String("(event)")))
+    {
         return;
+    }
 
     qCDebug(DIGIKAM_GEOIFACE_LOG) << message;
 
     const QString eventString = message.mid(7);
 
     if (eventString.isEmpty())
+    {
         return;
+    }
 
     m_events << eventString;
 
@@ -78,6 +85,7 @@ void HTMLWidgetPage::javaScriptConsoleMessage(JavaScriptConsoleMessageLevel /*le
 void HTMLWidgetPage::slotSendHTMLEvents()
 {
     emit signalHTMLEvents(m_events);
+
     m_events.clear();
 }
 
@@ -123,12 +131,14 @@ HTMLWidget::HTMLWidget(QWidget* const parent)
     setAcceptDrops(false);
     setFocusPolicy(Qt::WheelFocus);
 
-    d->hpage = new HTMLWidgetPage(this);
+    d->hpage  = new HTMLWidgetPage(this);
     setPage(d->hpage);
 
 #if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+
     settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
     settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, false);
+
 #endif
 
     d->parent->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -176,7 +186,9 @@ QVariant HTMLWidget::runScript(const QString& scriptCode, bool async)
     GEOIFACE_ASSERT(d->isReady);
 
     if (!d->isReady)
+    {
         return QVariant();
+    }
 
     //qCDebug(DIGIKAM_GEOIFACE_LOG) << scriptCode;
 
@@ -191,6 +203,7 @@ QVariant HTMLWidget::runScript(const QString& scriptCode, bool async)
 
         // Lambda c++11 function capturing value returned by java script code which is not synchro with QWebEngineView.
         // See https://wiki.qt.io/Porting_from_QtWebKit_to_QtWebEngine.
+
         page()->runJavaScript(scriptCode,
                               [&ret, &loop](const QVariant& result)
                                 {
@@ -219,7 +232,7 @@ bool HTMLWidget::runScript2Coordinates(const QString& scriptCode, GeoCoordinates
 
 bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
 {
-    if (object == this)
+    if      (object == this)
     {
         if (event->type() == QEvent::ChildAdded)
         {
@@ -233,7 +246,7 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
 
         return QWebEngineView::eventFilter(object, event);
     }
-    else if (d->parent && object == d->parent)
+    else if (d->parent && (object == d->parent))
     {
         if (event->type() == QEvent::Resize)
         {
@@ -245,7 +258,7 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
             }
         }
     }
-    else if (d->child && object == d->child)
+    else if (d->child && (object == d->child))
     {
         if (event->type() == QEvent::MouseButtonRelease)
         {
@@ -317,7 +330,7 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
         {
             QMouseEvent* const e = dynamic_cast<QMouseEvent*>(event);
 
-            if (s->currentMouseMode == MouseModeRegionSelection &&
+            if ((s->currentMouseMode == MouseModeRegionSelection) &&
                 d->firstSelectionPoint.hasCoordinates())
             {
                 runScript2Coordinates(QString::fromLatin1("kgeomapPixelToLatLng(%1, %2);")
