@@ -248,12 +248,19 @@ bool FaceDbSchemaUpdater::createDatabase()
 bool FaceDbSchemaUpdater::createTables()
 {
     return (
-            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDB"))) &&
-/*
-            NOTE: LBPH is deprecated in favor of DNN
-            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBOpenCVLBPH"))) &&
-*/
-            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices")))
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBFaceMatrices"))) &&
+
+#else
+
+            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDBOpenCVLBPH")))   &&
+
+#endif
+
+            d->dbAccess->backend()->execDBAction(d->dbAccess->backend()->getDBAction(QLatin1String("CreateFaceDB")))
+
            );
 }
 

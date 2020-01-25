@@ -45,10 +45,23 @@
 namespace Digikam
 {
 
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+class DNNFaceModel;
+
+#else
+
 class LBPHFaceModel;
+
+#endif
+
+/*
+NOTE: experimental and deprecated
+
 class EigenFaceModel;
 class FisherFaceModel;
-class DNNFaceModel;
+
+*/
 
 class FaceDb
 {
@@ -85,6 +98,19 @@ public:
     QList<Identity> identities()            const;
     QList<int>      identityIds()           const;
 
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+public:
+
+    // --- OpenCV DNN
+
+    void updateDNNFaceModel(DNNFaceModel& model);
+    DNNFaceModel dnnFaceModel(bool debug)   const;
+    void clearDNNTraining(const QString& context = QString());
+    void clearDNNTraining(const QList<int>& identities, const QString& context = QString());
+
+#else
+
 public:
 
     // --- OpenCV LBPH
@@ -93,6 +119,11 @@ public:
     LBPHFaceModel lbphFaceModel()           const;
     void clearLBPHTraining(const QString& context = QString());
     void clearLBPHTraining(const QList<int>& identities, const QString& context = QString());
+
+#endif
+
+/*
+NOTE: experimental and deprecated
 
 public:
 
@@ -109,15 +140,7 @@ public:
 
     FisherFaceModel fisherFaceModel()       const;
 
-public:
-
-    // --- OpenCV DNN
-
-    void updateDNNFaceModel(DNNFaceModel& model);
-    DNNFaceModel dnnFaceModel(bool debug)   const;
-    void clearDNNTraining(const QString& context = QString());
-    void clearDNNTraining(const QList<int>& identities, const QString& context = QString());
-
+*/
 
 private:
 

@@ -28,11 +28,35 @@
 namespace Digikam
 {
 
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+void RecognitionDatabase::Private::clear(OpenCVDNNFaceRecognizer* const,
+                                         const QList<int>& idsToClear,
+                                         const QString& trainingContext)
+{
+    // force later reload
+
+    delete opencvdnn;
+    opencvdnn = nullptr;
+
+    if (idsToClear.isEmpty())
+    {
+        FaceDbAccess().db()->clearDNNTraining(trainingContext);
+    }
+    else
+    {
+        FaceDbAccess().db()->clearDNNTraining(idsToClear, trainingContext);
+    }
+}
+
+#else
+
 void RecognitionDatabase::Private::clear(OpenCVLBPHFaceRecognizer* const,
                                          const QList<int>& idsToClear,
                                          const QString& trainingContext)
 {
     // force later reload
+
     delete opencvlbph;
     opencvlbph = nullptr;
 
@@ -45,6 +69,11 @@ void RecognitionDatabase::Private::clear(OpenCVLBPHFaceRecognizer* const,
         FaceDbAccess().db()->clearLBPHTraining(idsToClear, trainingContext);
     }
 }
+
+#endif
+
+/*
+    NOTE: experimental and deprecated
 
 void RecognitionDatabase::Private::clear(OpenCVEIGENFaceRecognizer* const,
                                          const QList<int>& idsToClear,
@@ -75,24 +104,7 @@ void RecognitionDatabase::Private::clear(OpenCVFISHERFaceRecognizer* const,
     opencvfisher = nullptr;
 }
 
-void RecognitionDatabase::Private::clear(OpenCVDNNFaceRecognizer* const,
-                                         const QList<int>& idsToClear,
-                                         const QString& trainingContext)
-{
-    // force later reload
-
-    delete opencvdnn;
-    opencvdnn = nullptr;
-
-    if (idsToClear.isEmpty())
-    {
-        FaceDbAccess().db()->clearDNNTraining(trainingContext);
-    }
-    else
-    {
-        FaceDbAccess().db()->clearDNNTraining(idsToClear, trainingContext);
-    }
-}
+*/
 
 // ------------------------------------------------------------------------------
 
@@ -126,12 +138,17 @@ QList<Identity> RecognitionDatabase::recognizeFaces(const QList<QImage>& images)
 
 void RecognitionDatabase::activeFaceRecognizer(RecognizeAlgorithm algorithmType)
 {
+
+/*
+    NOTE: experimental and deprecated
+
     if ((algorithmType == RecognizeAlgorithm::EigenFace)  ||
         (algorithmType == RecognizeAlgorithm::FisherFace))
     {
         d->recognizeAlgorithm = RecognizeAlgorithm::LBP;
     }
     else
+*/
     {
         d->recognizeAlgorithm = algorithmType;
     }
@@ -139,7 +156,13 @@ void RecognitionDatabase::activeFaceRecognizer(RecognizeAlgorithm algorithmType)
 
 void RecognitionDatabase::createDNNDebug()
 {
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
     d->createDNNDebug();
+
+#endif
+
 }
 
 QList<Identity> RecognitionDatabase::recognizeFaces(ImageListProvider* const images)
@@ -159,10 +182,26 @@ QList<Identity> RecognitionDatabase::recognizeFaces(ImageListProvider* const ima
 
         try
         {
-            if      (d->recognizeAlgorithm == RecognizeAlgorithm::LBP)
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+            if (d->recognizeAlgorithm == RecognizeAlgorithm::DNN)
+            {
+                id = d->dnn()->recognize(d->preprocessingChainRGB(images->image()));
+            }
+
+#else
+
+            if (d->recognizeAlgorithm == RecognizeAlgorithm::LBP)
             {
                 id = d->lbph()->recognize(d->preprocessingChain(images->image()));
             }
+
+#endif
+
+/*
+    NOTE: experimental and deprecated
+
             else if (d->recognizeAlgorithm == RecognizeAlgorithm::EigenFace)
             {
                 id = d->eigen()->recognize(d->preprocessingChain(images->image()));
@@ -171,10 +210,8 @@ QList<Identity> RecognitionDatabase::recognizeFaces(ImageListProvider* const ima
             {
                 id = d->fisher()->recognize(d->preprocessingChain(images->image()));
             }
-            else if (d->recognizeAlgorithm == RecognizeAlgorithm::DNN)
-            {
-                id = d->dnn()->recognize(d->preprocessingChainRGB(images->image()));
-            }
+*/
+
             else
             {
                 qCCritical(DIGIKAM_FACESENGINE_LOG) << "No obvious recognize algorithm";
@@ -214,7 +251,18 @@ void RecognitionDatabase::clusterFaces(const QList<QImage>& images,
         preprocessedImages.push_back(d->preprocessingChainRGB(image));
     }
 
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
     d->dnn()->cluster(preprocessedImages, clusteredIndices, dataset, nbOfClusters);
+
+#else
+
+    Q_UNUSED(clusteredIndices)
+    Q_UNUSED(dataset)
+    Q_UNUSED(nbOfClusters)
+
+#endif
+
 }
 
 } // namespace Digikam

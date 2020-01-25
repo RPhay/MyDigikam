@@ -147,7 +147,7 @@ void FaceDbOperationGroup::resetTime()
 
 void FaceDbOperationGroup::allowLift()
 {
-    if (d->maxTime && d->timeAcquired.elapsed() > d->maxTime)
+    if (d->maxTime && (d->timeAcquired.elapsed() > d->maxTime))
     {
         lift();
     }

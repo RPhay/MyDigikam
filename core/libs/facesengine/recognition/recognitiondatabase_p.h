@@ -40,10 +40,19 @@
 
 #include "digikam_config.h"
 #include "digikam_debug.h"
+
+/*
+NOTE: experimental and deprecated
 #include "opencvfisherfacerecognizer.h"
 #include "opencveigenfacerecognizer.h"
-#include "opencvlbphfacerecognizer.h"
-#include "opencvdnnfacerecognizer.h"
+*/
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+#   include "opencvdnnfacerecognizer.h"
+#else
+#   include "opencvlbphfacerecognizer.h"
+#endif
+
 #include "recognitiontrainingprovider.h"
 #include "coredbaccess.h"
 #include "dbengineparameters.h"
@@ -89,18 +98,28 @@ public:
 
 public:
 
-    OpenCVLBPHFaceRecognizer*   lbph()               { return getObjectOrCreate(opencvlbph);          }
-    OpenCVLBPHFaceRecognizer*   lbphConst() const    { return opencvlbph;                             }
+/*
+    NOTE: experimental and deprecated
 
     OpenCVEIGENFaceRecognizer*  eigen()              { return getObjectOrCreate(opencveigen);         }
     OpenCVEIGENFaceRecognizer*  eigenConst() const   { return opencveigen;                            }
 
     OpenCVFISHERFaceRecognizer* fisher()             { return getObjectOrCreate(opencvfisher);        }
     OpenCVFISHERFaceRecognizer* fisherConst() const  { return opencvfisher;                           }
+*/
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
 
     OpenCVDNNFaceRecognizer*    dnn()                { return getObjectOrCreate(opencvdnn);           }
     OpenCVDNNFaceRecognizer*    dnnConst() const     { return opencvdnn;                              }
     void                        createDNNDebug()     { opencvdnn = new OpenCVDNNFaceRecognizer(true); }
+
+#else
+
+    OpenCVLBPHFaceRecognizer*   lbph()               { return getObjectOrCreate(opencvlbph);          }
+    OpenCVLBPHFaceRecognizer*   lbphConst() const    { return opencvlbph;                             }
+
+#endif
 
     FunnelReal*                 aligner()            { return getObjectOrCreate(funnel);              }
     FunnelReal*                 alignerConst() const { return funnel;                                 }
@@ -120,10 +139,24 @@ public:
 
     // --- Faces Training management (recognitiondatabase_training.cpp) ----------------------------------
 
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+    void train(OpenCVDNNFaceRecognizer* const r,
+               const QList<Identity>& identitiesToBeTrained,
+               TrainingDataProvider* const data,
+               const QString& trainingContext);
+
+#else
+
     void train(OpenCVLBPHFaceRecognizer* const r,
                const QList<Identity>& identitiesToBeTrained,
                TrainingDataProvider* const data,
                const QString& trainingContext);
+
+#endif
+
+/*
+    NOTE: experimental and deprecated
 
     void train(OpenCVEIGENFaceRecognizer* const r,
                const QList<Identity>& identitiesToBeTrained,
@@ -134,19 +167,28 @@ public:
                const QList<Identity>& identitiesToBeTrained,
                TrainingDataProvider* const data,
                const QString& trainingContext);
-
-    void train(OpenCVDNNFaceRecognizer* const r,
-               const QList<Identity>& identitiesToBeTrained,
-               TrainingDataProvider* const data,
-               const QString& trainingContext);
+*/
 
 public:
 
     // --- Recognition management (recognitiondatabase_recognize.cpp) ------------------------------------
 
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+    void clear(OpenCVDNNFaceRecognizer* const,
+               const QList<int>& idsToClear,
+               const QString& trainingContext);
+
+#else
+
     void clear(OpenCVLBPHFaceRecognizer* const,
                const QList<int>& idsToClear,
                const QString& trainingContext);
+
+#endif
+
+/*
+    NOTE: experimental and deprecated
 
     void clear(OpenCVEIGENFaceRecognizer* const,
                const QList<int>& idsToClear,
@@ -155,10 +197,7 @@ public:
     void clear(OpenCVFISHERFaceRecognizer* const,
                const QList<int>& idsToClear,
                const QString& trainingContext);
-
-    void clear(OpenCVDNNFaceRecognizer* const,
-               const QList<int>& idsToClear,
-               const QString& trainingContext);
+*/
 
 public:
 
@@ -176,21 +215,48 @@ public:
 
 private:
 
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+    OpenCVDNNFaceRecognizer*    opencvdnn;
+
+#else
+
+    OpenCVLBPHFaceRecognizer*   opencvlbph;
+
+#endif
+
+/*
+    NOTE: experimental and deprecated
+
     OpenCVFISHERFaceRecognizer* opencvfisher;
     OpenCVEIGENFaceRecognizer*  opencveigen;
-    OpenCVLBPHFaceRecognizer*   opencvlbph;
-    OpenCVDNNFaceRecognizer*    opencvdnn;
+*/
 
     FunnelReal*                 funnel;
 };
 
 // --- Static Training methods (recognitiondatabase_training.cpp) ----------------------------------------
 
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+void trainIdentityBatchDNN(OpenCVDNNFaceRecognizer* const r,
+                           const QList<Identity>& identitiesToBeTrained,
+                           TrainingDataProvider* const data,
+                           const QString& trainingContext,
+                           RecognitionDatabase::Private* const d);
+
+#else
+
 void trainIdentityBatchLBPH(OpenCVLBPHFaceRecognizer* const r,
                             const QList<Identity>& identitiesToBeTrained,
                             TrainingDataProvider* const data,
                             const QString& trainingContext,
                             RecognitionDatabase::Private* const d);
+
+#endif
+
+/*
+    NOTE: experimental and deprecated
 
 void trainIdentityBatchEIGEN(OpenCVEIGENFaceRecognizer* const r,
                              const QList<Identity>& identitiesToBeTrained,
@@ -203,13 +269,7 @@ void trainIdentityBatchFISHER(OpenCVFISHERFaceRecognizer* const r,
                               TrainingDataProvider* const data,
                               const QString& trainingContext,
                               RecognitionDatabase::Private* const d);
-
-void trainIdentityBatchDNN(OpenCVDNNFaceRecognizer* const r,
-                           const QList<Identity>& identitiesToBeTrained,
-                           TrainingDataProvider* const data,
-                           const QString& trainingContext,
-                           RecognitionDatabase::Private* const d);
-
+*/
 
 } // namespace Digikam
 

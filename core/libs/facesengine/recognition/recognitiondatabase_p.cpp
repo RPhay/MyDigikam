@@ -30,10 +30,23 @@ namespace Digikam
 
 RecognitionDatabase::Private::Private()
     : mutex(QMutex::Recursive),
+/*
+      NOTE: experimental and deprecated
+
       opencvfisher(nullptr),
       opencveigen(nullptr),
-      opencvlbph(nullptr),
+*/
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
       opencvdnn(nullptr),
+
+#else
+
+      opencvlbph(nullptr),
+
+#endif
+
       funnel(nullptr)
 {
     DbEngineParameters params = CoreDbAccess::parameters().faceParameters();
@@ -60,10 +73,23 @@ RecognitionDatabase::Private::Private()
 
 RecognitionDatabase::Private::~Private()
 {
+/*
+    NOTE: experimental and deprecated
+
     delete opencvfisher;
     delete opencveigen;
-    delete opencvlbph;
+*/
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
     delete opencvdnn;
+
+#else
+
+    delete opencvlbph;
+
+#endif
+
     delete funnel;
 }
 
@@ -73,10 +99,25 @@ cv::Mat RecognitionDatabase::Private::preprocessingChain(const QImage& image)
     {
         cv::Mat cvImage;
 
-        if      (recognizeAlgorithm == RecognizeAlgorithm::LBP)
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+        if (recognizeAlgorithm == RecognizeAlgorithm::DNN)
+        {
+            cvImage = dnn()->prepareForRecognition(image);
+        }
+
+#else
+
+        if (recognizeAlgorithm == RecognizeAlgorithm::LBP)
         {
             cvImage = lbph()->prepareForRecognition(image);
         }
+
+#endif
+
+/*
+        NOTE: experimental and deprecated
+
         else if (recognizeAlgorithm == RecognizeAlgorithm::EigenFace)
         {
             cvImage = eigen()->prepareForRecognition(image);
@@ -85,10 +126,7 @@ cv::Mat RecognitionDatabase::Private::preprocessingChain(const QImage& image)
         {
             cvImage = fisher()->prepareForRecognition(image);
         }
-        else if (recognizeAlgorithm == RecognizeAlgorithm::DNN)
-        {
-            cvImage = dnn()->prepareForRecognition(image);
-        }
+*/
         else
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "No obvious recognize algorithm";
@@ -103,11 +141,13 @@ cv::Mat RecognitionDatabase::Private::preprocessingChain(const QImage& image)
     catch (cv::Exception& e)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+
         return cv::Mat();
     }
     catch (...)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+
         return cv::Mat();
     }
 }
@@ -118,10 +158,25 @@ cv::Mat RecognitionDatabase::Private::preprocessingChainRGB(const QImage& image)
     {
         cv::Mat cvImage;
 
-        if      (recognizeAlgorithm == RecognizeAlgorithm::LBP)
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+        if (recognizeAlgorithm == RecognizeAlgorithm::DNN)
+        {
+            cvImage = dnn()->prepareForRecognition(image);
+        }
+
+#else
+
+        if (recognizeAlgorithm == RecognizeAlgorithm::LBP)
         {
             cvImage = lbph()->prepareForRecognition(image);
         }
+
+#endif
+
+/*
+        NOTE: experimental and deprecated
+
         else if (recognizeAlgorithm == RecognizeAlgorithm::EigenFace)
         {
             cvImage = eigen()->prepareForRecognition(image);
@@ -130,10 +185,8 @@ cv::Mat RecognitionDatabase::Private::preprocessingChainRGB(const QImage& image)
         {
             cvImage = fisher()->prepareForRecognition(image);
         }
-        else if (recognizeAlgorithm == RecognizeAlgorithm::DNN)
-        {
-            cvImage = dnn()->prepareForRecognition(image);
-        }
+*/
+
         else
         {
             qCCritical(DIGIKAM_FACESENGINE_LOG) << "No obvious recognize algorithm";
@@ -148,11 +201,13 @@ cv::Mat RecognitionDatabase::Private::preprocessingChainRGB(const QImage& image)
     catch (cv::Exception& e)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception:" << e.what();
+
         return cv::Mat();
     }
     catch (...)
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+
         return cv::Mat();
     }
 }

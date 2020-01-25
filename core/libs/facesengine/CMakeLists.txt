@@ -4,11 +4,18 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-kde_enable_exceptions()
 
-# option to switch betweeen DNN or HAAR face detection.
+# Option to switch betweeen DNN or HAAR face detection.
 # DNN is the default one, Haar is the legacy deprecated method.
 set(DNN_DETECTION TRUE)
+
+# Option to switch betweeen DNN or LBPH face recognition.
+# DNN is the default one, LBPH is the legacy deprecated method.
+set(DNN_RECOGNITION TRUE)
+
+# ---------------------------------------------------------------------------
+
+kde_enable_exceptions()
 
 include_directories($<TARGET_PROPERTY:Qt5::Xml,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
@@ -28,12 +35,6 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR}/..
                     ${CMAKE_CURRENT_SOURCE_DIR}/alignment/congealing
 
                     ${CMAKE_CURRENT_SOURCE_DIR}/detection
-
-                    ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-face
-                    ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph
-                    ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces
-                    ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-fisherfaces
-                    ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn
 
                     ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing
                     ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/shape-predictor
@@ -85,7 +86,6 @@ else()
 
 endif()
 
-
 set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_p.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_identity.cpp
@@ -94,33 +94,6 @@ set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recogn
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiondatabase_recognize.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recognitiontrainingprovider.cpp
 
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-face/opencv_face.cpp
-
-                                  # Eigen Faces recognition module based on OpenCV
-
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces/eigenfacemodel.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces/opencveigenfacerecognizer.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces/facerec_eigenborrowed.cpp
-
-                                  # Fisher Faces recognition module based on OpenCV
-
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-fisherfaces/fisherfacemodel.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-fisherfaces/opencvfisherfacerecognizer.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-fisherfaces/facerec_fisherborrowed.cpp
-
-                                  # Lpbh Faces recognition module based on OpenCV
-
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/lbphfacemodel.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/opencvlbphfacerecognizer.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/facerec_borrowed.cpp
-
-                                  # Neural NetWork Faces recognition module based on OpenCV DNN
-
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfacemodel.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/facerec_dnnborrowed.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractor.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnndbscan.cpp
 
                                   ${CMAKE_CURRENT_SOURCE_DIR}/alignment/congealing/funnelreal.cpp
 
@@ -130,11 +103,61 @@ set(facesengine_database_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/recognition/recogn
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedbschemaupdater.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb.cpp
                                   ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_identity.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_lbph.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_eigen.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_fisher.cpp
-                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn.cpp
+
+                                  # Eigen Faces recognition module based on OpenCV (experimental and deprecated)
+
+#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces/eigenfacemodel.cpp
+#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces/opencveigenfacerecognizer.cpp
+#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-eigenfaces/facerec_eigenborrowed.cpp
+#                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_eigen.cpp
+
+                                  # Fisher Faces recognition module based on OpenCV (experimental and deprecated)
+
+#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-fisherfaces/fisherfacemodel.cpp
+#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-fisherfaces/opencvfisherfacerecognizer.cpp
+#                                  ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-fisherfaces/facerec_fisherborrowed.cpp
+#                                  ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_fisher.cpp
+
 )
+
+if(DNN_RECOGNITION)
+
+    add_definitions(-DUSE_DNN_RECOGNITION_BACKEND)
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn)
+
+    set(facesengine_database_LIB_SRCS ${facesengine_database_LIB_SRCS}
+
+                                      # Neural NetWork Faces recognition module based on OpenCV DNN
+
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_dnn.cpp
+
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfacemodel.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/opencvdnnfacerecognizer.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/facerec_dnnborrowed.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnnfaceextractor.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-dnn/dnndbscan.cpp
+    )
+
+else()
+
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-face
+                        ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph
+    )
+
+    set(facesengine_database_LIB_SRCS ${facesengine_database_LIB_SRCS}
+
+                                      # Lpbh Faces recognition module based on OpenCV
+
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-face/opencv_face.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/facedb/facedb_lbph.cpp
+
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/lbphfacemodel.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/opencvlbphfacerecognizer.cpp
+                                      ${CMAKE_CURRENT_SOURCE_DIR}/recognition/opencv-lbph/facerec_borrowed.cpp
+    )
+
+endif()
+
 
 add_library(digikamfacesengine_src
             OBJECT
