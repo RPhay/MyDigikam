@@ -166,7 +166,7 @@ Setup::Setup(QWidget* const parent, Setup::Page page)
                                  "<i>Customize behavior of the other parts of Showfoto</i></qt>"));
     d->page_misc->setIcon(QIcon::fromTheme(QLatin1String("preferences-other")));
 
-    for (int i = 0; i != SetupPageEnumLast; ++i)
+    for (int i = 0 ; i != SetupPageEnumLast ; ++i)
     {
         DConfigDlgWdgItem* const item = d->pageItem((Page)i);
 
@@ -242,27 +242,35 @@ void Setup::showPage(Setup::Page page)
         case ToolTipPage:
             setCurrentPage(d->page_tooltip);
             break;
+
         case RawPage:
             setCurrentPage(d->page_raw);
             break;
+
         case IOFilesPage:
             setCurrentPage(d->page_iofiles);
             break;
+
         case SlideshowPage:
             setCurrentPage(d->page_slideshow);
             break;
+
         case ICCPage:
             setCurrentPage(d->page_icc);
             break;
+
         case MetadataPage:
             setCurrentPage(d->page_metadata);
             break;
+
         case PluginsPage:
             setCurrentPage(d->page_plugins);
             break;
+
         case MiscellaneousPage:
             setCurrentPage(d->page_misc);
             break;
+
         default:
             setCurrentPage(d->page_editorIface);
             break;
@@ -322,22 +330,31 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
     {
         case Setup::EditorPage:
             return page_editorIface;
+
         case Setup::MetadataPage:
             return page_metadata;
+
         case Setup::ToolTipPage:
             return page_tooltip;
+
         case Setup::RawPage:
             return page_raw;
+
         case Setup::IOFilesPage:
             return page_iofiles;
+
         case Setup::SlideshowPage:
             return page_slideshow;
+
         case Setup::ICCPage:
             return page_icc;
+
         case Setup::PluginsPage:
             return page_plugins;
+
         case Setup::MiscellaneousPage:
             return page_misc;
+
         default:
             return nullptr;
     }
@@ -352,12 +369,16 @@ bool Setup::execMetadataFilters(QWidget* const parent, int tab)
     DConfigDlgWdgItem* const cur  = setup->currentPage();
 
     if (!cur)
+    {
         return false;
+    }
 
     SetupMetadata* const widget = dynamic_cast<SetupMetadata*>(cur->widget());
 
     if (!widget)
+    {
         return false;
+    }
 
     widget->setActiveTab((SetupMetadata::MetadataTab)tab);
 

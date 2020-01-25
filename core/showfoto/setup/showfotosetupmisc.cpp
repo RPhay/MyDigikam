@@ -117,7 +117,7 @@ SetupMisc::SetupMisc(QWidget* const parent)
 
     QWidget* const behaviourPanel = new QWidget(d->tab);
     QVBoxLayout* const layout     = new QVBoxLayout(behaviourPanel);
-    
+
     // -- Sort Order Options --------------------------------------------------------
 
     QGroupBox* const sortOptionsGroup = new QGroupBox(i18n("Images Sort Order"), behaviourPanel);
@@ -194,8 +194,10 @@ SetupMisc::SetupMisc(QWidget* const parent)
     }
 
 #ifndef HAVE_APPSTYLE_SUPPORT
+
     // See Bug #365262
     appStyleHbox->setVisible(false);
+
 #endif
 
     DHBox* const iconThemeHbox = new DHBox(appearancePanel);
@@ -264,9 +266,13 @@ void SetupMisc::readSettings()
     d->sidebarType->setCurrentIndex(d->settings->getRightSideBarStyle());
     d->sortOrderComboBox->setCurrentIndex(d->settings->getSortRole());
     d->sortReverse->setChecked(d->settings->getReverseSort());
+
 #ifdef HAVE_APPSTYLE_SUPPORT
+
     d->applicationStyle->setCurrentIndex(d->applicationStyle->findText(d->settings->getApplicationStyle(), Qt::MatchFixedString));
+
 #endif
+
     d->applicationIcon->setCurrentIndex(d->applicationIcon->findData(d->settings->getIconTheme()));
     d->applicationFont->setFont(d->settings->getApplicationFont());
 }
@@ -281,9 +287,13 @@ void SetupMisc::applySettings()
     d->settings->setRightSideBarStyle(d->sidebarType->currentIndex());
     d->settings->setSortRole(d->sortOrderComboBox->currentIndex());
     d->settings->setReverseSort(d->sortReverse->isChecked());
+
 #ifdef HAVE_APPSTYLE_SUPPORT
+
     d->settings->setApplicationStyle(d->applicationStyle->currentText());
+
 #endif
+
     d->settings->setIconTheme(d->applicationIcon->currentData().toString());
     d->settings->setApplicationFont(d->applicationFont->font());
     d->settings->syncConfig();
