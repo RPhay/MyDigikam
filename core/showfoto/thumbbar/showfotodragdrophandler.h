@@ -48,9 +48,9 @@ public:
     ShowfotoItemModel*    model() const;
 
     virtual bool           dropEvent(QAbstractItemView* view, const QDropEvent* e, const QModelIndex& droppedOn) override;
-    virtual Qt::DropAction accepts(const QDropEvent* e, const QModelIndex& dropIndex) override;
-    virtual QStringList    mimeTypes() const override;
-    virtual QMimeData*     createMimeData(const QList<QModelIndex> &) override;
+    virtual Qt::DropAction accepts(const QDropEvent* e, const QModelIndex& dropIndex)                            override;
+    virtual QStringList    mimeTypes() const                                                                     override;
+    virtual QMimeData*     createMimeData(const QList<QModelIndex> &)                                            override;
 
 Q_SIGNALS:
 

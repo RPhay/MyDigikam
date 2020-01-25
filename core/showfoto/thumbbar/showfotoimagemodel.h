@@ -53,9 +53,12 @@ public:
         ShowfotoItemModelPointerRole = Qt::UserRole,
         ShowfotoItemModelInternalId  = Qt::UserRole + 1,
 
-        /// Returns a thumbnail pixmap. May be implemented by subclasses.
-        /// Returns either a valid pixmap or a null QVariant.
+        /**
+         * Returns a thumbnail pixmap. May be implemented by subclasses.
+         * Returns either a valid pixmap or a null QVariant.
+         */
         ThumbnailRole                 = Qt::UserRole + 2,
+
         /// Return (optional) extraData field
         ExtraDataRole                 = Qt::UserRole + 3,
 
@@ -70,15 +73,16 @@ public:
      explicit ShowfotoItemModel(QObject* const parent);
     ~ShowfotoItemModel();
 
-    /** If a cache is kept, lookup by file path is fast,
-     *  without a cache it is O(n). Default is false.
+    /**
+     * If a cache is kept, lookup by file path is fast,
+     * without a cache it is O(n). Default is false.
      */
     void setKeepsFileUrlCache(bool keepCache);
 
     /**
-     *  Returns the ShowfotoItemInfo object, reference from the underlying data pointed to by the index.
-     *  For ShowfotoItemInfo and ShowfotoItemInfoId If the index is not valid they will return a null ShowfotoItemInfo, and 0
-     *  respectively, ShowfotoItemInfoRef must not be called with an invalid index as it will crash.
+     * Returns the ShowfotoItemInfo object, reference from the underlying data pointed to by the index.
+     * For ShowfotoItemInfo and ShowfotoItemInfoId If the index is not valid they will return a null ShowfotoItemInfo, and 0
+     * respectively, ShowfotoItemInfoRef must not be called with an invalid index as it will crash.
      */
     ShowfotoItemInfo      showfotoItemInfo(const QModelIndex& index)           const;
     ShowfotoItemInfo&     showfotoItemInfoRef(const QModelIndex& index)        const;
@@ -162,14 +166,14 @@ public:
     static ShowfotoItemInfo retrieveShowfotoItemInfo(const QModelIndex& index);
     static qlonglong        retrieveShowfotoItemId(const QModelIndex& index);
 
-    // QAbstractListModel implementation
+    /// QAbstractListModel implementation
     virtual int           rowCount(const QModelIndex& parent)                            const override;
     virtual QVariant      data(const QModelIndex& index, int role)                       const override;
     virtual QVariant      headerData(int section, Qt::Orientation orientation, int role) const override;
     virtual Qt::ItemFlags flags(const QModelIndex& index)                                const override;
     virtual QModelIndex   index(int row, int column, const QModelIndex& parent)          const override;
 
-    // DragDrop methods
+    /// DragDrop methods
     DECLARE_MODEL_DRAG_DROP_METHODS
 
     /**
@@ -255,24 +259,28 @@ protected:
     void emitDataChangedForAll();
     void emitDataChangedForSelections(const QItemSelection& selection);
 
-    // Called when the internal storage is cleared.
+    /// Called when the internal storage is cleared.
     virtual void showfotoItemInfosCleared() {};
 
-    // Called before rowsAboutToBeRemoved
+    /// Called before rowsAboutToBeRemoved
     virtual void showfotoItemInfosAboutToBeRemoved(int /*begin*/, int /*end*/) {};
 
 private:
 
     void appendInfos(const QList<ShowfotoItemInfo>& infos);
     void publiciseInfos(const QList<ShowfotoItemInfo>& infos);
-    // void cleanSituationChecks();
+/*
+    void cleanSituationChecks();
+*/
     void removeRowPairs(const QList<QPair<int, int> >& toRemove);
-    // void removeRowPairsWithCheck(const QList<QPair<int, int> >& toRemove);
+/*
+    void removeRowPairsWithCheck(const QList<QPair<int, int> >& toRemove);
+*/
     static QList<IntPair> toContiguousPairs(const QList<int>& unsorted);
 
 public:
 
-    // NOTE: Declared public because it's used in ItemModelIncrementalUpdater class
+    /// NOTE: Declared public because it's used in ItemModelIncrementalUpdater class
     class Private;
 
 private:

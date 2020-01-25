@@ -40,17 +40,18 @@ class Q_DECL_HIDDEN ShowfotoItemModel::Private
 public:
 
     explicit Private()
+      : keepFileUrlCache(false),
+        refreshing(false),
+        reAdding(false),
+        incrementalRefreshRequested(false),
+        sendRemovalSignals(false)
     {
-        keepFileUrlCache            = false;
-        refreshing                  = false;
-        reAdding                    = false;
-        incrementalRefreshRequested = false;
-        sendRemovalSignals          = false;
     }
 
     inline bool isValid(const QModelIndex& index)
     {
-        return (index.isValid()              &&
+        return (
+                index.isValid()              &&
                 (index.row() >= 0)           &&
                 (index.row() < infos.size())
                );
@@ -335,7 +336,9 @@ void ShowfotoItemModel::reAddShowfotoItemInfos(ShowfotoItemInfoList& infos)
 void ShowfotoItemModel::reAddingFinished()
 {
     d->reAdding = false;
-    //cleanSituationChecks();
+/*
+    cleanSituationChecks();
+*/
 }
 
 void ShowfotoItemModel::slotFileDeleted(const QString& folder, const QString& file, bool status)
@@ -343,7 +346,9 @@ void ShowfotoItemModel::slotFileDeleted(const QString& folder, const QString& fi
     Q_UNUSED(status)
 
     ShowfotoItemInfo info = showfotoItemInfo(QUrl::fromLocalFile(folder + file));
-    //removeShowfotoItemInfo(info);
+/*
+    removeShowfotoItemInfo(info);
+*/
 }
 
 void ShowfotoItemModel::slotFileUploaded(const ShowfotoItemInfo& info)
@@ -402,7 +407,7 @@ static bool pairsContain(const List& list, T value)
         else if (middle->second < value)
         {
             begin = middle + 1;
-            n     -= half + 1;
+            n    -= half + 1;
         }
         else
         {
@@ -465,6 +470,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
         removedRows     = end - begin + 1;
 
         // when removing from the list, all subsequent indexes are affected
+
         offset += removedRows;
 
         QList<ShowfotoItemInfo> removedInfos;
@@ -479,6 +485,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
         beginRemoveRows(QModelIndex(), begin, end);
 
         // update idHash - which points to indexes of d->infos
+
         QHash<qlonglong, int>::iterator it;
 
         for (it = d->idHash.begin() ; it != d->idHash.end() ;)
@@ -488,11 +495,13 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
                 if (it.value() > end)
                 {
                     // after the removed interval, adjust index
+
                     it.value() -= removedRows;
                 }
                 else
                 {
                     // in the removed interval
+
                     it = d->idHash.erase(it);
                     continue;
                 }
@@ -502,6 +511,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
         }
 
         // remove from list
+
         d->infos.erase(d->infos.begin() + begin, d->infos.begin() + (end + 1));
 
         endRemoveRows();
@@ -513,6 +523,7 @@ void ShowfotoItemModel::removeRowPairs(const QList<QPair<int, int> >& toRemove)
     }
 
     // tidy up: remove old indexes from file path hash now
+
     if (d->keepFileUrlCache)
     {
         QHash<QString, qlonglong>::iterator it;
@@ -595,7 +606,7 @@ Qt::ItemFlags ShowfotoItemModel::flags(const QModelIndex& index) const
 
 QModelIndex ShowfotoItemModel::index(int row, int column, const QModelIndex& parent) const
 {
-    if (column != 0 || row < 0 || parent.isValid() || row >= d->infos.size())
+    if ((column != 0) || (row < 0) || parent.isValid() || (row >= d->infos.size()))
     {
         return QModelIndex();
     }

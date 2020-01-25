@@ -24,14 +24,26 @@
 #ifndef ITEM_VIEW_SHOW_FOTO_DELEGATE_P_H
 #define ITEM_VIEW_SHOW_FOTO_DELEGATE_P_H
 
+#include "itemviewshowfotodelegate.h"
+
 // Qt includes
 
+#include <QPainter>
+#include <QApplication>
 #include <QFont>
 #include <QPainter>
 #include <QModelIndex>
 
+// KDE includes
+
+#include <klocalizedstring.h>
+
 // Local includes
 
+#include "thememanager.h"
+#include "itempropertiestab.h"
+#include "showfotoiteminfo.h"
+#include "colorlabelwidget.h"
 #include "digikam_debug.h"
 #include "thumbnailsize.h"
 #include "itemdelegateoverlay.h"
@@ -81,7 +93,7 @@ public:
     QRect                     oneRowComRect;
     QRect                     oneRowXtraRect;
 
-    // constant values for drawing
+    /// constant values for drawing
     int                       radius;
     int                       margin;
 };

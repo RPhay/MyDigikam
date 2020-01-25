@@ -35,8 +35,10 @@
 namespace ShowFoto
 {
 
-//! Vertical kinetic scroller implementation without overshoot and bouncing.
-//! A temporary solution to get kinetic-like scrolling on Symbian.
+/**
+ * Vertical kinetic scroller implementation without overshoot and bouncing.
+ * A temporary solution to get kinetic-like scrolling on Symbian.
+ */
 class ShowfotoKineticScroller: public QObject
 {
    Q_OBJECT

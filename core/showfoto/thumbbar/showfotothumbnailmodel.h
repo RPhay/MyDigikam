@@ -45,16 +45,17 @@ class ShowfotoThumbnailModel : public ShowfotoItemModel
 public:
 
     /**
-     *  An ItemModel that supports thumbnail loading.
-     *  You need to set a ThumbnailLoadThread to enable thumbnail loading.
-     *  Adjust the thumbnail size to your needs.
-     *  Note that setKeepsFilePatindexesForPathhCache is enabled per default.
+     * An ItemModel that supports thumbnail loading.
+     * You need to set a ThumbnailLoadThread to enable thumbnail loading.
+     * Adjust the thumbnail size to your needs.
+     * Note that setKeepsFilePatindexesForPathhCache is enabled per default.
      */
     explicit ShowfotoThumbnailModel(QObject* const parent);
     ~ShowfotoThumbnailModel();
 
-    /** Enable thumbnail loading and set the thread that shall be used.
-     *  The thumbnail size of this thread will be adjusted.
+    /**
+     * Enable thumbnail loading and set the thread that shall be used.
+     * The thumbnail size of this thread will be adjusted.
      */
     void setThumbnailLoadThread(ThumbnailLoadThread* thread);
     ThumbnailLoadThread* thumbnailLoadThread() const;
@@ -68,9 +69,9 @@ public:
     void setExifRotate(bool rotate);
 
     /**
-     *  Enable emitting dataChanged() when a thumbnail becomes available.
-     *  The thumbnailAvailable() signal will be emitted in any case.
-     *  Default is true.
+     * Enable emitting dataChanged() when a thumbnail becomes available.
+     * The thumbnailAvailable() signal will be emitted in any case.
+     * Default is true.
      */
     void setEmitDataChanged(bool emitSignal);
 
@@ -84,10 +85,10 @@ public:
     ThumbnailSize thumbnailSize() const;
 
     /**
-     *  Handles the ThumbnailRole.
-     *  If the pixmap is available, returns it in the QVariant.
-     *  If it still needs to be loaded, returns a null QVariant and emits
-     *  thumbnailAvailable() as soon as it is available.
+     * Handles the ThumbnailRole.
+     * If the pixmap is available, returns it in the QVariant.
+     * If it still needs to be loaded, returns a null QVariant and emits
+     * thumbnailAvailable() as soon as it is available.
      */
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
 

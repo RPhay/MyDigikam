@@ -31,11 +31,11 @@ namespace ShowFoto
 {
 
 ShowfotoItemInfo::ShowfotoItemInfo()
+    : size(-1),
+      id(-1),
+      width(0),
+      height(0)
 {
-    size             = -1;
-    id               = -1;
-    width            = 0;
-    height           = 0;
 }
 
 ShowfotoItemInfo::~ShowfotoItemInfo()
@@ -44,28 +44,30 @@ ShowfotoItemInfo::~ShowfotoItemInfo()
 
 bool ShowfotoItemInfo::isNull() const
 {
-    return (size             == -1) &&
-           (id               == -1) &&
-           name.isNull()            &&
-           folder.isNull()          &&
-           mime.isNull();
+    return (
+            (size == -1)     &&
+            (id   == -1)     &&
+            name.isNull()    &&
+            folder.isNull()  &&
+            mime.isNull()
+           );
 }
 
 bool ShowfotoItemInfo::operator==(const ShowfotoItemInfo& info) const
 {
-    bool b1  = size      == info.size;
-    bool b2  = name      == info.name;
-    bool b3  = folder    == info.folder;
-    bool b4  = mime      == info.mime;
-    bool b5  = id        == info.id;
-    bool b6  = photoInfo == info.photoInfo;
+    bool b1  = (size      == info.size);
+    bool b2  = (name      == info.name);
+    bool b3  = (folder    == info.folder);
+    bool b4  = (mime      == info.mime);
+    bool b5  = (id        == info.id);
+    bool b6  = (photoInfo == info.photoInfo);
 
     return (b1 && b2 && b3 && b4 && b5 && b6);
 }
 
 bool ShowfotoItemInfo::operator!=(const ShowfotoItemInfo& info) const
 {
-    return !operator==(info);
+    return (!operator==(info));
 }
 
 QDataStream& operator<<(QDataStream& ds, const ShowfotoItemInfo& info)

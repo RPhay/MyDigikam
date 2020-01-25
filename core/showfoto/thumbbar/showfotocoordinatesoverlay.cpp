@@ -61,7 +61,9 @@ ShowfotoCoordinatesOverlayWidget* ShowfotoCoordinatesOverlay::buttonWidget() con
 QWidget* ShowfotoCoordinatesOverlay::createWidget()
 {
     QAbstractButton* const button = new ShowfotoCoordinatesOverlayWidget(parentWidget());
-    //button->setCursor(Qt::PointingHandCursor);
+/*
+    button->setCursor(Qt::PointingHandCursor);
+*/
     return button;
 }
 
@@ -101,6 +103,7 @@ bool ShowfotoCoordinatesOverlay::checkIndex(const QModelIndex& index) const
     if (!rect.isNull() && info.photoInfo.hasCoordinates)
     {
         m_widget->setToolTip(i18nc("@info:tooltip", "This item has geolocation information."));
+
         return true;
     }
 

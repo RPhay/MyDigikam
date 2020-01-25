@@ -67,28 +67,32 @@ public:
 
     bool operator==(const ShowfotoItemSortSettings& other) const;
 
-    /** Compares the categories of left and right ShowfotoItemInfos.
-     *  It returns -1 if the left ShowfotoItemInfo is less than right, and 0 if both fall
-     *  in the same category, and 1 if the left ShowfotoItemInfo is greater than right.
-     *  Adheres to set categorization mode and current category sort order.
+    /**
+     * Compares the categories of left and right ShowfotoItemInfos.
+     * It returns -1 if the left ShowfotoItemInfo is less than right, and 0 if both fall
+     * in the same category, and 1 if the left ShowfotoItemInfo is greater than right.
+     * Adheres to set categorization mode and current category sort order.
      */
     int compareCategories(const ShowfotoItemInfo& left, const ShowfotoItemInfo& right) const;
 
 
-    /** Returns true if left is less than right.
-     *  Adheres to current sort role and sort order.
+    /**
+     * Returns true if left is less than right.
+     * Adheres to current sort role and sort order.
      */
     bool lessThan(const ShowfotoItemInfo& left, const ShowfotoItemInfo& right) const;
 
-    /** Returns true if left QVariant is less than right.
-     *  Adheres to current sort role and sort order.
+    /**
+     * Returns true if left QVariant is less than right.
+     * Adheres to current sort role and sort order.
      */
     bool lessThan(const QVariant& left, const QVariant& right) const;
 
-    /** Compares the showfotoItemInfos left and right.
-     *  Return -1 if left is less than right, 1 if left is greater than right,
-     *  and 0 if left equals right comparing the current sort role's value.
-     *  Adheres to set sort role and sort order.
+    /**
+     * Compares the showfotoItemInfos left and right.
+     * Return -1 if left is less than right, 1 if left is greater than right,
+     * and 0 if left equals right comparing the current sort role's value.
+     * Adheres to set sort role and sort order.
      */
     int compare(const ShowfotoItemInfo& left, const ShowfotoItemInfo& right) const;
 
@@ -112,40 +116,57 @@ public:
     static Qt::SortOrder defaultSortOrderForCategorizationMode(CategorizationMode mode);
     static Qt::SortOrder defaultSortOrderForSortRole(SortRole role);
 
-    /** Returns a < b if sortOrder is Ascending, or b < a if order is descending
+    /**
+     * Returns a < b if sortOrder is Ascending, or b < a if order is descending
      */
     template <typename T>
     static inline bool lessThanByOrder(const T& a, const T& b, Qt::SortOrder sortOrder)
     {
         if (sortOrder == Qt::AscendingOrder)
-            return a < b;
+        {
+            return (a < b);
+        }
         else
-            return b < a;
+        {
+            return (b < a);
+        }
     }
 
-    /** Returns the usual compare result of -1, 0, or 1 for lessThan, equals and greaterThan.
+    /**
+     * Returns the usual compare result of -1, 0, or 1 for lessThan, equals and greaterThan.
      */
     template <typename T>
     static inline int compareValue(const T& a, const T &b)
     {
         if (a == b)
+        {
             return 0;
+        }
 
         if (a < b)
-            return -1;
+        {
+            return (-1);
+        }
         else
+        {
             return 1;
+        }
     }
 
-    /** Takes a typical result from a compare method (0 is equal, -1 is less than, 1 is greater than)
-     *  and applies the given sort order to it.
+    /**
+     * Takes a typical result from a compare method (0 is equal, -1 is less than, 1 is greater than)
+     * and applies the given sort order to it.
      */
     static inline int compareByOrder(int compareResult,  Qt::SortOrder sortOrder)
     {
         if (sortOrder == Qt::AscendingOrder)
+        {
             return compareResult;
+        }
         else
-            return - compareResult;
+        {
+            return (- compareResult);
+        }
     }
 
     template <typename T>
@@ -154,7 +175,8 @@ public:
         return compareByOrder(compareValue(a, b), sortOrder);
     }
 
-    /** Compares the two string by natural comparison and adheres to given sort order
+    /**
+     * Compares the two string by natural comparison and adheres to given sort order
      */
     static inline int naturalCompare(const QString& a, const QString& b, Qt::SortOrder sortOrder,
                                      Qt::CaseSensitivity caseSensitive = Qt::CaseSensitive)
@@ -163,6 +185,7 @@ public:
         collator.setNumericMode(true);
         collator.setIgnorePunctuation(false);
         collator.setCaseSensitivity(caseSensitive);
+
         return (compareByOrder(collator.compare(a, b), sortOrder));
     }
 

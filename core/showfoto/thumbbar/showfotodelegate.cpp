@@ -22,28 +22,7 @@
  *
  * ============================================================ */
 
-#include "showfotodelegate.h"
 #include "showfotodelegate_p.h"
-
-// Qt includes
-
-#include <QPainter>
-#include <QRect>
-#include <QApplication>
-
-// KDE includes
-
-#include <ksharedconfig.h>
-#include <kconfiggroup.h>
-
-// Local includes
-
-#include "showfotoimagemodel.h"
-#include "showfotofiltermodel.h"
-#include "showfotothumbnailbar.h"
-#include "showfotoiteminfo.h"
-#include "showfotothumbnailmodel.h"
-#include "showfotosettings.h"
 
 namespace ShowFoto
 {
@@ -144,34 +123,43 @@ void ShowfotoDelegate::setSpacing(int spacing)
 QRect ShowfotoDelegate::pixmapRect() const
 {
     Q_D(const ShowfotoDelegate);
+
     return d->pixmapRect;
 }
 
 QRect ShowfotoDelegate::imageInformationRect() const
 {
     Q_D(const ShowfotoDelegate);
+
     return d->imageInformationRect;
 }
 
 QRect ShowfotoDelegate::groupIndicatorRect() const
 {
     Q_D(const ShowfotoDelegate);
+
     return d->groupRect;
 }
 
 QRect ShowfotoDelegate::coordinatesIndicatorRect() const
 {
     Q_D(const ShowfotoDelegate);
+
     return d->coordinatesRect;
 }
 
 QPixmap ShowfotoDelegate::retrieveThumbnailPixmap(const QModelIndex& index, int thumbnailSize)
 {
     // work around constness
+
     QAbstractItemModel* const model = const_cast<QAbstractItemModel*>(index.model());
+
     // set requested thumbnail size
+
     model->setData(index, thumbnailSize, ShowfotoItemModel::ThumbnailRole);
+
     // get data from model
+
     QVariant thumbData              = index.data(ShowfotoItemModel::ThumbnailRole);
 
     return thumbData.value<QPixmap>();
@@ -180,6 +168,7 @@ QPixmap ShowfotoDelegate::retrieveThumbnailPixmap(const QModelIndex& index, int 
 QPixmap ShowfotoDelegate::thumbnailPixmap(const QModelIndex& index) const
 {
     Q_D(const ShowfotoDelegate);
+
     return retrieveThumbnailPixmap(index, d->thumbSize.size());
 }
 
@@ -196,12 +185,14 @@ void ShowfotoDelegate::paint(QPainter* p, const QStyleOptionViewItem& option, co
     }
 
     // state of painter must not be changed
+
     p->save();
     p->translate(option.rect.topLeft());
 
     bool isSelected = (option.state & QStyle::State_Selected);
 
     // Thumbnail
+
     QPixmap pix;
 
     if (isSelected)
@@ -382,7 +373,9 @@ void ShowfotoDelegate::modelContentsChanged()
 QRect ShowfotoDelegate::actualPixmapRect(const QModelIndex& index) const
 {
     Q_D(const ShowfotoDelegate);
+
     // We do not recompute if not found. Assumption is cache is always properly updated.
+
     QRect* const rect = d->actualPixmapRectCache.object(index.row());
 
     if (rect)
@@ -400,7 +393,7 @@ void ShowfotoDelegate::updateActualPixmapRect(const QModelIndex& index, const QR
     Q_D(ShowfotoDelegate);
     QRect* const old = d->actualPixmapRectCache.object(index.row());
 
-    if (!old || *old != rect)
+    if (!old || (*old != rect))
     {
         d->actualPixmapRectCache.insert(index.row(), new QRect(rect));
     }
@@ -416,8 +409,11 @@ int ShowfotoDelegate::calculatethumbSizeToFit(int ws)
     ws         = ws - 2*sp;
 
     // Thumbnails size loop to check (upper/lower)
+
     int ts1, ts2;
+
     // New grid size used in loop
+
     int ngs;
 
     double rs1 = fmod((double)ws, (double)gs);
@@ -456,7 +452,9 @@ int ShowfotoDelegate::calculatethumbSizeToFit(int ws)
     }
 
     if (rs1 > rs2)
+    {
         return (ts2);
+    }
 
     return (ts1);
 }
@@ -490,7 +488,9 @@ void ShowfotoThumbnailDelegate::setFlow(QListView::Flow flow)
 void ShowfotoThumbnailDelegate::setDefaultViewOptions(const QStyleOptionViewItem& option)
 {
     Q_D(ShowfotoThumbnailDelegate);
+
     // store before calling parent class
+
     d->viewSize = option.rect;
     ShowfotoDelegate::setDefaultViewOptions(option);
 }
@@ -499,19 +499,21 @@ int ShowfotoThumbnailDelegate::maximumSize() const
 {
     Q_D(const ShowfotoThumbnailDelegate);
 
-    return ThumbnailSize::Huge + (2*d->radius + 2*d->margin);
+    return (ThumbnailSize::Huge + (2*d->radius + 2*d->margin));
 }
 
 int ShowfotoThumbnailDelegate::minimumSize() const
 {
     Q_D(const ShowfotoThumbnailDelegate);
-    return ThumbnailSize::Small + 2*d->radius + 2*d->margin;
+
+    return (ThumbnailSize::Small + 2*d->radius + 2*d->margin);
 }
 
 bool ShowfotoThumbnailDelegate::acceptsActivation(const QPoint& pos, const QRect& visualRect,
                                                   const QModelIndex& index, QRect* activationRect) const
 {
     // reuse implementation from grandparent
+
     return ItemViewShowfotoDelegate::acceptsActivation(pos, visualRect, index, activationRect);
 }
 
@@ -538,7 +540,7 @@ int ShowfotoThumbnailDelegate::thumbnailPixmapSize(bool withHighlight, int size)
 {
     if (withHighlight && size >= 10)
     {
-        return size + 2;
+        return (size + 2);
     }
 
     return size;
@@ -566,7 +568,9 @@ void ShowfotoThumbnailDelegate::updateRects()
 
 void ShowfotoNormalDelegatePrivate::init(ShowfotoNormalDelegate* const q, ShowfotoThumbnailBar* const parent)
 {
-    //categoryDrawer = new ShowfotoCategoryDrawer(parent);
+/*
+    categoryDrawer = new ShowfotoCategoryDrawer(parent);
+*/
     Q_UNUSED(parent);
     Q_UNUSED(q);
 }
@@ -596,15 +600,15 @@ void ShowfotoNormalDelegate::updateRects()
 {
     Q_D(ShowfotoNormalDelegate);
 
-    int y                                      = d->margin;
-    d->pixmapRect                              = QRect(d->margin, y, d->contentWidth, d->contentWidth);
-    y                                          = d->pixmapRect.bottom();
-    d->imageInformationRect                    = QRect(d->margin, y, d->contentWidth, 0);
+    int y                   = d->margin;
+    d->pixmapRect           = QRect(d->margin, y, d->contentWidth, d->contentWidth);
+    y                       = d->pixmapRect.bottom();
+    d->imageInformationRect = QRect(d->margin, y, d->contentWidth, 0);
 
     d->imageInformationRect.setBottom(y);
 
-    d->rect     = QRect(0, 0, d->contentWidth + 2*d->margin, y+d->margin+d->radius);
-    d->gridSize = QSize(d->rect.width() + d->spacing, d->rect.height() + d->spacing);
+    d->rect                 = QRect(0, 0, d->contentWidth + 2*d->margin, y+d->margin+d->radius);
+    d->gridSize             = QSize(d->rect.width() + d->spacing, d->rect.height() + d->spacing);
 }
 
 } // namespace ShowFoto

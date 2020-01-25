@@ -69,11 +69,11 @@ protected:
 
     void updatePosition();
 
-    virtual QWidget* createWidget() override;
-    virtual void setActive(bool active) override;
-    virtual void visualChange() override;
+    virtual QWidget* createWidget()                         override;
+    virtual void setActive(bool active)                     override;
+    virtual void visualChange()                             override;
     virtual bool checkIndex(const QModelIndex& index) const override;
-    virtual void slotEntered(const QModelIndex& index) override;
+    virtual void slotEntered(const QModelIndex& index)      override;
 
 protected:
 

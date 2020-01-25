@@ -59,6 +59,7 @@ protected:
     virtual QString tipContents()
     {
         ShowfotoItemInfo info = ShowfotoItemModel::retrieveShowfotoItemInfo(currentIndex());
+
         return ShowfotoToolTipFiller::ShowfotoItemInfoTipContents(info);
     }
 };
@@ -78,7 +79,7 @@ public:
     {
     }
 
-    ShowfotoItemModel*      model;
+    ShowfotoItemModel*       model;
     ShowfotoSortFilterModel* filterModel;
 
     ShowfotoDelegate*        delegate;
@@ -191,6 +192,7 @@ void ShowfotoCategorizedView::setItemDelegate(ShowfotoDelegate* delegate)
         d->delegate->setViewOnAllOverlays(nullptr);
 
         // Note: Be precise, no wildcard disconnect!
+
         disconnect(d->delegate, SIGNAL(requestNotification(QModelIndex,QString)),
                    this, SLOT(showIndexNotification(QModelIndex,QString)));
 
@@ -265,7 +267,7 @@ QList<ShowfotoItemInfo> ShowfotoCategorizedView::showfotoItemInfos() const
 QList<QUrl> ShowfotoCategorizedView::urls() const
 {
     QList<ShowfotoItemInfo> infos = showfotoItemInfos();
-    QList<QUrl>              urls;
+    QList<QUrl>             urls;
 
     foreach (const ShowfotoItemInfo& info, infos)
     {
@@ -278,7 +280,7 @@ QList<QUrl> ShowfotoCategorizedView::urls() const
 QList<QUrl> ShowfotoCategorizedView::selectedUrls() const
 {
     QList<ShowfotoItemInfo> infos = selectedShowfotoItemInfos();
-    QList<QUrl>              urls;
+    QList<QUrl>             urls;
 
     foreach (const ShowfotoItemInfo& info, infos)
     {
@@ -314,9 +316,11 @@ QModelIndex ShowfotoCategorizedView::nextIndexHint(const QModelIndex& anchor, co
 
     // Fixes a special case of multiple (face) entries for the same image.
     // If one is removed, any entry of the same image shall be preferred.
+
     if (d->model->indexesForShowfotoItemInfo(info).size() > 1)
     {
         // The hint is for a different info, but we may have a hint for the same info
+
         if (info != d->filterModel->showfotoItemInfo(hint))
         {
             int minDiff                                   = d->filterModel->rowCount();
@@ -324,7 +328,7 @@ QModelIndex ShowfotoCategorizedView::nextIndexHint(const QModelIndex& anchor, co
 
             foreach (const QModelIndex& index, indexesForShowfotoItemInfo)
             {
-                if (index == anchor || !index.isValid() || removed.contains(index))
+                if ((index == anchor) || !index.isValid() || removed.contains(index))
                 {
                     continue;
                 }
@@ -335,6 +339,7 @@ QModelIndex ShowfotoCategorizedView::nextIndexHint(const QModelIndex& anchor, co
                 {
                     minDiff = distance;
                     hint    = index;
+
                     //qCDebug(DIGIKAM_SHOWFOTO_LOG) << "Chose index" << hint << "at distance" << minDiff << "to" << anchor;
                 }
             }
@@ -348,8 +353,11 @@ ThumbnailSize ShowfotoCategorizedView::thumbnailSize() const
 {
 /*
     ShowfotoThumbnailModel *thumbModel = ShowfotoThumbnailModel();
+
     if (thumbModel)
+    {
         return thumbModel->thumbnailSize();
+    }
 */
     if (d->delegate)
     {
@@ -367,6 +375,7 @@ void ShowfotoCategorizedView::setThumbnailSize(int size)
 void ShowfotoCategorizedView::setThumbnailSize(const ThumbnailSize& s)
 {
     // we abuse this pair of method calls to restore scroll position
+
     layoutAboutToBeChanged();
     d->delegate->setThumbnailSize(s);
     layoutWasChanged();
@@ -383,6 +392,7 @@ void ShowfotoCategorizedView::setCurrentUrl(const QUrl& url)
     {
         clearSelection();
         setCurrentIndex(QModelIndex());
+
         return;
     }
 
@@ -419,6 +429,7 @@ void ShowfotoCategorizedView::setSelectedUrls(const QList<QUrl>& urlList)
         else
         {
             // TODO: is there a better way?
+
             mySelection.select(index, index);
         }
     }
@@ -495,6 +506,7 @@ void ShowfotoCategorizedView::updateGeometries()
 void ShowfotoCategorizedView::slotDelayedEnter()
 {
     // re-emit entered() for index under mouse (after layout).
+
     QModelIndex mouseIndex = indexAt(mapFromGlobal(QCursor::pos()));
 
     if (mouseIndex.isValid())
