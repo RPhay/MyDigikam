@@ -43,7 +43,7 @@ class Q_DECL_HIDDEN TaggingActionFactory::Private
 public:
 
     explicit Private()
-        : parentTagId(0),               // 0 means toplevel tag
+        : parentTagId(0),               ///< 0 means toplevel tag
           nameMatchMode(MatchStartingWithFragment),
           constraintInterface(nullptr),
           defaultIndex(-1),
@@ -59,8 +59,8 @@ public:
     NameMatchMode        nameMatchMode;
     ConstraintInterface* constraintInterface;
 
-    int                  defaultIndex;  // use if valid is true
-    int                  recentIndex;   // use if valid is true
+    int                  defaultIndex;  ///< use if valid is true
+    int                  recentIndex;   ///< use if valid is true
 
     QList<TaggingAction> actions;       // use if valid is true
     bool                 valid;
@@ -244,11 +244,15 @@ QList<TaggingAction> TaggingActionFactory::actions() const
             actions << newUnderParent;
             actions << newToplevel;
         }
-        else // if (createItemTopLevel && createItemTopLevel->action() == defaultAction)
+        else
+/*
+        if (createItemTopLevel && (createItemTopLevel->action() == defaultAction))
+*/
         {
             // Case B
             // no tag is currently selected in the listbox, only toplevel choice for a new tag
             // the entire text currently written by the user doesn't exist as a tag. However, it might be a part of a tag
+
             foreach (const TaggingAction& assignAction, assignActions)
             {
                 actions << assignAction;
@@ -313,8 +317,7 @@ AddTagsCompletionBoxItem* AddTagsCompletionBox::Private::createItemForExistingTa
     }
 
     AddTagsCompletionBoxItem* const item = new AddTagsCompletionBoxItem;
-
-    TAlbum* const parent = static_cast<TAlbum*>(talbum->parent());
+    TAlbum* const parent                 = static_cast<TAlbum*>(talbum->parent());
 
     if (parent->isRoot() || uniqueName)
     {
@@ -383,7 +386,7 @@ QString TaggingActionFactory::suggestedUIString(const TaggingAction& action) con
 
         // check if it is a toplevel tag or there is only one tag with this name - then simply the tag name is sufficient
 
-        if (tagsParentTagId == 0 || (TagsCache::instance()->tagsForName(tagName).size() == 1))
+        if ((tagsParentTagId == 0) || (TagsCache::instance()->tagsForName(tagName).size() == 1))
         {
             return tagName;
         }

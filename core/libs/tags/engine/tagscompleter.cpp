@@ -76,12 +76,14 @@ public:
         }
 
         TAlbum* const talbum = AlbumManager::instance()->findTAlbum(id);
+
         return supportingModel->indexForAlbum(talbum);
     }
 
     virtual bool matches(int id)
     {
         TAlbum* const talbum = AlbumManager::instance()->findTAlbum(id);
+
         return filterModel->indexForAlbum(talbum).isValid();
     }
 
@@ -153,15 +155,18 @@ void TagCompleter::update(const QString& fragment)
 
     foreach (const TaggingAction& action, actions)
     {
-        QStandardItem* item = new QStandardItem;
+        QStandardItem* const item = new QStandardItem;
 
         // Text, implemented by TaggingActionFactory
+
         item->setText(d->factory.suggestedUIString(action));
 
         // Action, via user data
+
         item->setData(QVariant::fromValue(action), TaggingActionRole);
 
         // Icon and completion role
+
         if (action.shallCreateNewTag())
         {
             item->setData(fragment, CompletionRole);

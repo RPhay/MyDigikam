@@ -282,7 +282,9 @@ bool TagsActionMngr::createTagActionShortcut(int tagId)
     }
 
     QKeySequence ks(value);
+
     // FIXME: tag icons can be files on disk, or system icon names. Only the latter will work here.
+
     QIcon     icon(SyncJob::getTagThumbnail(talbum));
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Create Shortcut " << ks.toString()
@@ -325,7 +327,9 @@ void TagsActionMngr::slotTagActionChanged()
     QStringList lst = action->shortcut().toString().split(QLatin1Char(','));
 
     if (!lst.isEmpty())
+    {
         ks = QKeySequence(lst.first());
+    }
 
     updateTagShortcut(tagId, ks);
 }
@@ -410,7 +414,7 @@ void TagsActionMngr::slotAssignFromShortcut()
         return;
     }
 
-    int val = action->data().toInt();
+    int val               = action->data().toInt();
     qCDebug(DIGIKAM_GENERAL_LOG) << "Shortcut value: " << val;
 
     QWidget* const w      = qApp->activeWindow();
@@ -420,7 +424,7 @@ void TagsActionMngr::slotAssignFromShortcut()
     {
         //qCDebug(DIGIKAM_GENERAL_LOG) << "Handling by DigikamApp";
 
-        if (action->objectName().startsWith(d->ratingShortcutPrefix))
+        if      (action->objectName().startsWith(d->ratingShortcutPrefix))
         {
             dkw->view()->slotAssignRating(val);
         }
@@ -446,7 +450,7 @@ void TagsActionMngr::slotAssignFromShortcut()
     {
         //qCDebug(DIGIKAM_GENERAL_LOG) << "Handling by ImageWindow";
 
-        if (action->objectName().startsWith(d->ratingShortcutPrefix))
+        if      (action->objectName().startsWith(d->ratingShortcutPrefix))
         {
             imw->slotAssignRating(val);
         }
@@ -472,7 +476,7 @@ void TagsActionMngr::slotAssignFromShortcut()
     {
         //qCDebug(DIGIKAM_GENERAL_LOG) << "Handling by LightTableWindow";
 
-        if (action->objectName().startsWith(d->ratingShortcutPrefix))
+        if      (action->objectName().startsWith(d->ratingShortcutPrefix))
         {
             ltw->slotAssignRating(val);
         }
@@ -498,7 +502,7 @@ void TagsActionMngr::slotAssignFromShortcut()
     {
         //qCDebug(DIGIKAM_GENERAL_LOG) << "Handling by SlideShow";
 
-        if (action->objectName().startsWith(d->ratingShortcutPrefix))
+        if      (action->objectName().startsWith(d->ratingShortcutPrefix))
         {
             sld->slotAssignRating(val);
         }
@@ -528,7 +532,7 @@ void TagsActionMngr::slotImageTagChanged(const ImageTagChangeset&)
 
     if (sld)
     {
-        QUrl url = sld->currentItem();
+        QUrl url      = sld->currentItem();
         ItemInfo info = ItemInfo::fromUrl(url);
         sld->updateTags(url, AlbumManager::instance()->tagNames(info.tagIds()));
     }

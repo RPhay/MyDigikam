@@ -61,9 +61,9 @@ class Q_DECL_HIDDEN TagModificationHelper::Private
 public:
 
     explicit Private()
+      : parentTag(nullptr),
+        dialogParent(nullptr)
     {
-        parentTag    = nullptr;
-        dialogParent = nullptr;
     }
 
     AlbumPointer<TAlbum>  parentTag;
@@ -98,6 +98,7 @@ TAlbum* TagModificationHelper::boundTag(QObject* sender) const
 
     return nullptr;
 }
+
 void TagModificationHelper::bindMultipleTags(QAction* action, QList<TAlbum*> tags)
 {
     action->setData(QVariant::fromValue(tags));
@@ -118,6 +119,7 @@ QList<TAlbum*> TagModificationHelper::boundMultipleTags(QObject* sender)
 TAlbum* TagModificationHelper::slotTagNew(TAlbum* parent, const QString& title, const QString& iconName)
 {
     // ensure that there is a parent
+
     AlbumPointer<TAlbum> p(parent);
 
     if (!p)
@@ -191,17 +193,18 @@ void TagModificationHelper::slotTagEdit(TAlbum* t)
         return;
     }
 
-    if (tag && tag->title() != title)
+    if (tag && (tag->title() != title))
     {
         QString errMsg;
 
         if (AlbumManager::instance()->renameTAlbum(tag, title, errMsg))
         {
             // TODO: make an option to edit the full name of a face tag
+
             if (FaceTags::isPerson(tag->id()))
             {
                 TagProperties props(tag->id());
-                props.setProperty(TagPropertyName::person(),    title);
+                props.setProperty(TagPropertyName::person(),         title);
                 props.setProperty(TagPropertyName::faceEngineName(), title);
             }
         }
@@ -211,7 +214,7 @@ void TagModificationHelper::slotTagEdit(TAlbum* t)
         }
     }
 
-    if (tag && tag->icon() != icon)
+    if (tag && (tag->icon() != icon))
     {
         QString errMsg;
 
@@ -221,7 +224,7 @@ void TagModificationHelper::slotTagEdit(TAlbum* t)
         }
     }
 
-    if (tag && tag->property(TagPropertyName::tagKeyboardShortcut()) != ks.toString())
+    if (tag && (tag->property(TagPropertyName::tagKeyboardShortcut()) != ks.toString()))
     {
         TagsActionMngr::defaultManager()->updateTagShortcut(tag->id(), ks);
     }
@@ -244,6 +247,7 @@ void TagModificationHelper::slotTagDelete(TAlbum* t)
     AlbumPointer<TAlbum> tag(t);
 
     // find number of subtags
+
     int children = 0;
     AlbumIterator iter(tag);
 
@@ -254,6 +258,7 @@ void TagModificationHelper::slotTagDelete(TAlbum* t)
     }
 
     // ask for deletion of children
+
     if (children)
     {
         int result = QMessageBox::warning(d->dialogParent, qApp->applicationName(),
@@ -269,7 +274,7 @@ void TagModificationHelper::slotTagDelete(TAlbum* t)
                                                 tag->title()),
                                           QMessageBox::Yes | QMessageBox::Cancel);
 
-        if (result != QMessageBox::Yes || !tag)
+        if ((result != QMessageBox::Yes) || !tag)
         {
             return;
         }
@@ -330,6 +335,7 @@ void TagModificationHelper::slotMultipleTagDel(QList<TAlbum*>& tags)
         AlbumPointer<TAlbum> tag(t);
 
         // find number of subtags
+
         int children = 0;
         AlbumIterator iter(tag);
 
@@ -340,7 +346,9 @@ void TagModificationHelper::slotMultipleTagDel(QList<TAlbum*>& tags)
         }
 
         if (children)
+        {
             tagWithChildrens.append(tag->title() + QLatin1Char(' '));
+        }
 
         QList<qlonglong> assignedItems = CoreDbAccess().db()->getItemIDsInTag(tag->id());
 
@@ -409,10 +417,12 @@ void TagModificationHelper::slotMultipleTagDel(QList<TAlbum*>& tags)
     if (result == QMessageBox::Yes)
     {
         QMultiMap<int, TAlbum*>::iterator it;
+
         /**
          * QMultimap doesn't provide reverse iterator, -1 is required
          * because end() points after the last element
          */
+
         for (it = sortedTags.end()-1 ; it != sortedTags.begin()-1 ; --it)
         {
             emit aboutToDeleteTag(it.value());
@@ -452,10 +462,11 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
 
     // We use a set here since else one tag could occur more than once
     // which could lead to undefined behaviour.
+
     QSet<TAlbum*> allPersonTagsToDelete;
     int tagsWithChildrenCount = 0;
     QSet<qlonglong> allAssignedItems;
-    int tagsWithImagesCount = 0;
+    int tagsWithImagesCount   = 0;
 
     foreach (TAlbum* const selectedTag, tags)
     {
@@ -465,6 +476,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
         }
 
         // find tags and subtags with person property
+
         QSet<TAlbum*> personTagsToDelete = getFaceTags(selectedTag).toSet();
 
         // If there is more than one person tag in the list,
@@ -474,6 +486,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
         // If there is only one face tag, it is either the original tag,
         // or it is the only sub tag of the original tag.
         // Behave, like the face tag itself was selected.
+
         if (personTagsToDelete.size() > 1)
         {
             if (tagsWithChildrenCount > 0)
@@ -486,9 +499,11 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
         }
 
         // Get the assigned faces for all person tags to delete
+
         foreach (TAlbum* const tAlbum, personTagsToDelete)
         {
             // If the global set does not yet contain the tag
+
             if (!allPersonTagsToDelete.contains(tAlbum))
             {
                 QSet<qlonglong> assignedItems = CoreDbAccess().db()->getImagesWithImageTagProperty(
@@ -500,6 +515,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
                 if (!assignedItems.isEmpty())
                 {
                     // Add the items to the global set for potential untagging
+
                     allAssignedItems.unite(assignedItems);
 
                     if (tagsWithImagesCount > 0)
@@ -514,10 +530,12 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
         }
 
         // Add the found tags to the global set.
+
         allPersonTagsToDelete.unite(personTagsToDelete);
     }
 
     // ask for deletion of children
+
     if (tagsWithChildrenCount)
     {
         QString message = i18np("Face tag '%2' has at least one face tag child. "
@@ -529,8 +547,8 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
                                 tagsWithChildrenCount, tagsWithChildren);
 
         bool removeChildren = QMessageBox::Yes == (QMessageBox::warning(qApp->activeWindow(),
-                                          qApp->applicationName(), message,
-                                          QMessageBox::Yes | QMessageBox::Cancel));
+                                                      qApp->applicationName(), message,
+                                                      QMessageBox::Yes | QMessageBox::Cancel));
 
         if (!removeChildren)
         {
@@ -560,17 +578,19 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
     if (removeFaceTag)
     {
         // Now we ask the user if we should also remove the tags from the images.
+
         QString msg = i18np("Remove the tag corresponding to this face tag from the images?",
                             "Remove the %1 tags corresponding to this face tags from the images?",
                             allPersonTagsToDelete.size());
 
         bool removeTagFromImages = QMessageBox::Yes == (QMessageBox::warning(qApp->activeWindow(),
-                                        qApp->applicationName(), msg,
-                                        QMessageBox::Yes | QMessageBox::No));
+                                                            qApp->applicationName(), msg,
+                                                            QMessageBox::Yes | QMessageBox::No));
 
         MetadataHub metadataHub;
 
         // remove the face region from images and unassign the tag if wished
+
         foreach (const qlonglong& imageId, allAssignedItems)
         {
             foreach (TAlbum* const tagToRemove, allPersonTagsToDelete)
@@ -585,7 +605,9 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
                     if (removeTagFromImages)
                     {
                         imageTagAssociation.unAssignTag();
+
                         // Load the current metadata and sync the tags
+
                         ItemInfo info(imageId);
 
                         if (!info.isNull())
@@ -605,18 +627,24 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
         foreach (TAlbum* const tAlbum, allPersonTagsToDelete)
         {
             TagProperties props(tAlbum->id());
+
             // Delete TagPropertyName::person() and TagPropertyName::faceEngineName()
             // fetch the UUID to delete the identity from facesdb
+
             props.removeProperties(TagPropertyName::person());
             props.removeProperties(TagPropertyName::faceEngineName());
             QString uuid = props.value(TagPropertyName::faceEngineUuid());
             qCDebug(DIGIKAM_GENERAL_LOG) << "Deleting person tag properties for tag "
                                          << tAlbum->title() << " with uuid " << uuid;
+
             if (!uuid.isEmpty())
             {
                 // Delete the UUID
+
                 props.removeProperties(TagPropertyName::faceEngineUuid());
+
                 // delete the faces db identity with this uuid.
+
                 FaceDbAccess access;
                 access.db()->deleteIdentity(uuid);
             }
@@ -673,6 +701,7 @@ QList<TAlbum*> TagModificationHelper::getFaceTags(TAlbum* rootTag)
 
     QList<TAlbum*> tags;
     tags.append(rootTag);
+
     return getFaceTags(tags).toList();
 }
 
@@ -691,12 +720,15 @@ QSet<TAlbum*> TagModificationHelper::getFaceTags(QList<TAlbum*> tags)
         AlbumIterator iter(tag);
 
         // Get all shild tags which have the person property.
+
         while (iter.current())
         {
             Album* const album = iter.current();
+
             // Make sure that no nullp pointer dereference is done.
             // though while(iter.current()) already tests for  the current
             // album being true, i.e. > 0 , i.e. non-null
+
             if (album)
             {
                 TAlbum* const tAlbum = dynamic_cast<TAlbum*>(album);

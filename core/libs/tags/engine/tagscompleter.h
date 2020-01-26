@@ -44,18 +44,19 @@ class TagCompleter : public QCompleter
 
 public:
 
-    /** A completion object operating on a TagModel
+    /**
+     * A completion object operating on a TagModel
      */
     explicit TagCompleter(QObject* const parent = nullptr);
     ~TagCompleter();
 
-    // Update the completer for the given fragment
+    /// Update the completer for the given fragment
     void update(const QString& fragment);
 
-    // Set a parent tag which may by the user be considered as a parent for a new tag during completion
+    /// Set a parent tag which may by the user be considered as a parent for a new tag during completion
     void setContextParentTag(int parentTagId);
 
-    // Set a supporting model from which the completer may get data for its display. Optional.
+    /// Set a supporting model from which the completer may get data for its display. Optional.
     void setSupportingTagModel(TagModel* const supportingModel);
     void setTagFilterModel(AlbumFilterModel* const supportingModel);
 

@@ -151,7 +151,7 @@ public Q_SLOTS:
      * must use bindMultipleTags and a QAction
      */
     void slotMultipleFaceTagDel();
-    
+
     /**
      * Marks the tag as face tag if it is not already.
      *
@@ -162,7 +162,7 @@ public Q_SLOTS:
     /**
      * must use bindTag and a QAction
      */
-    void slotTagToFaceTag(); /// must use bindTag and a QAction
+    void slotTagToFaceTag();
 
     /**
      * Marks the tags as face tags if they are not already.
@@ -225,7 +225,7 @@ private:
      * This includes the root tags, if they have the property, too.
      */
     QSet<TAlbum*> getFaceTags(QList<TAlbum*> tags);
-    
+
 private:
 
     class Private;

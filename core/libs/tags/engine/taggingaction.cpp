@@ -59,17 +59,17 @@ TaggingAction::Type TaggingAction::type() const
 
 bool TaggingAction::isValid() const
 {
-    return m_type != NoAction;
+    return (m_type != NoAction);
 }
 
 bool TaggingAction::shallAssignTag() const
 {
-    return m_type == AssignTag;
+    return (m_type == AssignTag);
 }
 
 bool TaggingAction::shallCreateNewTag() const
 {
-    return m_type == CreateNewTag;
+    return (m_type == CreateNewTag);
 }
 
 int TaggingAction::tagId() const
