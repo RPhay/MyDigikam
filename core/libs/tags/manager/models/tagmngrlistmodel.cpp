@@ -47,8 +47,8 @@ class Q_DECL_HIDDEN TagMngrListModel::Private
 public:
 
     explicit Private()
+      : rootItem(nullptr)
     {
-        rootItem = nullptr;
     }
 
     ListItem*  rootItem;
@@ -75,8 +75,9 @@ ListItem* TagMngrListModel::addItem(QList<QVariant> values)
     emit layoutAboutToBeChanged();
     ListItem* const item = new ListItem(values, d->rootItem);
 
-    /** containsItem will return a valid pointer if item with the same
-     *  values is already added to it's children list.
+    /**
+     * containsItem will return a valid pointer if item with the same
+     * values is already added to it's children list.
      */
     ListItem* const existingItem = d->rootItem->containsItem(item);
 
@@ -84,11 +85,13 @@ ListItem* TagMngrListModel::addItem(QList<QVariant> values)
     {
         d->rootItem->appendChild(item);
         emit layoutChanged();
+
         return item;
     }
     else
     {
         delete item;
+
         return existingItem;
     }
 }
@@ -106,7 +109,9 @@ QList<int> TagMngrListModel::getDragNewSelection() const
 void TagMngrListModel::deleteItem(ListItem* const item)
 {
     if (!item)
+    {
         return;
+    }
 
     emit layoutAboutToBeChanged();
     d->rootItem->deleteChild(item);
@@ -117,18 +122,20 @@ void TagMngrListModel::deleteItem(ListItem* const item)
 int TagMngrListModel::columnCount(const QModelIndex& parent) const
 {
     Q_UNUSED(parent);
+
     return 1;
 }
 
 Qt::DropActions TagMngrListModel::supportedDropActions() const
 {
-    return Qt::CopyAction | Qt::MoveAction;
+    return (Qt::CopyAction | Qt::MoveAction);
 }
 
 QStringList TagMngrListModel::mimeTypes() const
 {
     QStringList types;
     types << QLatin1String("application/vnd.text.list");
+
     return types;
 }
 
@@ -166,6 +173,7 @@ QMimeData* TagMngrListModel::mimeData(const QModelIndexList& indexes) const
     }
 
     mimeData->setData(QLatin1String("application/vnd.text.list"), encodedData);
+
     return mimeData;
 }
 
@@ -176,10 +184,14 @@ bool TagMngrListModel::dropMimeData(const QMimeData* data, Qt::DropAction action
     Q_UNUSED(parent);
 
     if (action == Qt::IgnoreAction)
+    {
         return true;
+    }
 
     if (!(data->hasFormat(QLatin1String("application/vnd.text.list"))))
+    {
         return false;
+    }
 
     QByteArray       encodedData = data->data(QLatin1String("application/vnd.text.list"));
     QDataStream      stream(&encodedData, QIODevice::ReadOnly);
@@ -220,8 +232,10 @@ bool TagMngrListModel::dropMimeData(const QMimeData* data, Qt::DropAction action
         if (it == row)
         {
             finalItems.append(newItems);
-            /** After drag-n-drop selection is messed up, store the interval were
-             *  new items are and TagsMngrListView will update selection
+
+            /**
+             * After drag-n-drop selection is messed up, store the interval were
+             * new items are and TagsMngrListView will update selection
              */
             d->dragNewSelection.clear();
             d->dragNewSelection << row;
@@ -240,66 +254,94 @@ bool TagMngrListModel::dropMimeData(const QMimeData* data, Qt::DropAction action
 QVariant TagMngrListModel::data(const QModelIndex& index, int role) const
 {
     if (!index.isValid())
+    {
         return QVariant();
+    }
 
     if (role == Qt::SizeHintRole)
+    {
         return QSize(30,30);
+    }
 
     if (role == Qt::TextAlignmentRole)
+    {
         return Qt::AlignCenter;
+    }
 
     ListItem* const item = static_cast<ListItem*>(index.internalPointer());
+
     return item->data(role);
 }
 
 Qt::ItemFlags TagMngrListModel::flags(const QModelIndex& index) const
 {
     if (!index.isValid())
+    {
         return nullptr;
+    }
 
-    return Qt::ItemIsEnabled | Qt::ItemIsSelectable
-                             | Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled;
+    return (
+            Qt::ItemIsEnabled     |
+            Qt::ItemIsSelectable  |
+            Qt::ItemIsDragEnabled |
+            Qt::ItemIsDropEnabled
+           );
 }
 
 QVariant TagMngrListModel::headerData(int /*section*/, Qt::Orientation orientation, int role) const
 {
-    if (orientation == Qt::Horizontal && role == Qt::DisplayRole)
+    if ((orientation == Qt::Horizontal) && (role == Qt::DisplayRole))
+    {
         return QVariant(i18n("Quick Access List"));
+    }
 
     return QVariant();
 }
 
-QModelIndex TagMngrListModel::index(int row, int column, const QModelIndex& parent)
-            const
+QModelIndex TagMngrListModel::index(int row, int column, const QModelIndex& parent) const
 {
     if (!hasIndex(row, column, parent))
+    {
         return QModelIndex();
+    }
 
     ListItem* parentItem = nullptr;
 
     if (!parent.isValid())
+    {
         parentItem = d->rootItem;
+    }
     else
+    {
         parentItem = static_cast<ListItem*>(parent.internalPointer());
+    }
 
     ListItem* const childItem = parentItem->child(row);
 
     if (childItem)
+    {
         return createIndex(row, column, childItem);
+    }
     else
+    {
         return QModelIndex();
+    }
 }
 
 QModelIndex TagMngrListModel::parent(const QModelIndex &index) const
 {
     if (!index.isValid())
+    {
         return QModelIndex();
+    }
 
     ListItem* const childItem  = static_cast<ListItem*>(index.internalPointer());
     ListItem* const parentItem = childItem->parent();
 
     if (parentItem == d->rootItem)
+    {
         return QModelIndex();
+    }
 
     return createIndex(parentItem->row(), 0, parentItem);
 }
@@ -309,12 +351,18 @@ int TagMngrListModel::rowCount(const QModelIndex &parent) const
     ListItem* parentItem = nullptr;
 
     if (parent.column() > 0)
+    {
         return 0;
+    }
 
     if (!parent.isValid())
+    {
         parentItem = d->rootItem;
+    }
     else
+    {
         parentItem = static_cast<ListItem*>(parent.internalPointer());
+    }
 
     return parentItem->childCount();
 }

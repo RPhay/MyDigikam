@@ -53,11 +53,11 @@ class Q_DECL_HIDDEN TagList::Private
 public:
 
     explicit Private()
+      : addButton( nullptr),
+        tagList(nullptr),
+        tagListModel(nullptr),
+        treeView(nullptr)
     {
-        addButton       = nullptr;
-        tagList         = nullptr;
-        tagListModel    = nullptr;
-        treeView        = nullptr;
     }
 
     QPushButton*                 addButton;
@@ -112,7 +112,7 @@ void TagList::saveSettings()
     KConfig conf(QLatin1String("digikam_tagsmanagerrc"));
     conf.deleteGroup(QLatin1String("List Content"));
 
-    KConfigGroup group = conf.group(QLatin1String("List Content"));
+    KConfigGroup group            = conf.group(QLatin1String("List Content"));
 
     QList<ListItem*> currentItems = d->tagListModel->allItems();
     group.writeEntry(QLatin1String("Size"), currentItems.count()-1);
@@ -144,7 +144,7 @@ void TagList::restoreSettings()
      */
     d->tagListModel->addItem(QList<QVariant>() << QBrush(Qt::cyan, Qt::Dense2Pattern));
 
-    if (size == 0 || size < 0)
+    if ((size == 0) || (size < 0))
     {
         return;
     }
@@ -154,7 +154,9 @@ void TagList::restoreSettings()
         QString data = group.readEntry(QString::fromUtf8("item%1").arg(it), "");
 
         if (data.isEmpty())
+        {
             continue;
+        }
 
         QStringList ids = data.split(QLatin1Char(' '), QString::SkipEmptyParts);
         QList<QVariant> itemData;
@@ -172,8 +174,9 @@ void TagList::restoreSettings()
 
         ListItem* const listItem = d->tagListModel->addItem(itemData);
 
-        /** Use this map to find all List Items that contain specific tag
-         *  usually to remove deleted tag
+        /**
+         * Use this map to find all List Items that contain specific tag
+         * usually to remove deleted tag
          */
         foreach (int tagId, listItem->getTagIds())
         {
@@ -181,7 +184,9 @@ void TagList::restoreSettings()
         }
     }
 
-    /** "All Tags" item should be selected **/
+    /**
+     * "All Tags" item should be selected
+     */
     QModelIndex rootIndex = d->tagList->model()->index(0, 0);
     d->tagList->setCurrentIndex(rootIndex);
 }
@@ -204,10 +209,11 @@ void TagList::slotAddPressed()
         itemData << album->id();
     }
 
-    ListItem* listItem = d->tagListModel->addItem(itemData);
+    ListItem* const listItem = d->tagListModel->addItem(itemData);
 
-    /** Use this map to find all List Items that contain specific tag
-     *  usually to remove deleted tag
+    /**
+     * Use this map to find all List Items that contain specific tag
+     * usually to remove deleted tag
      */
     foreach (int tagId, listItem->getTagIds())
     {
@@ -283,7 +289,6 @@ void TagList::slotDeleteSelected()
 
     d->tagList->selectionModel()->select(d->tagList->model()->index(0, 0),
                                          QItemSelectionModel::SelectCurrent);
-
 }
 
 void TagList::enableAddButton(bool value)

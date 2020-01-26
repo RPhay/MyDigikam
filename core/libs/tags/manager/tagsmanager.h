@@ -152,11 +152,11 @@ protected:
 private:
 
     void setupActions();
+
     /**
      * @brief enableRootTagActions - enable or disable options when only root
      *                               tag is selected
      */
-
     void setHelpText(QAction* const action, const QString& text);
     void enableRootTagActions(bool value);
 
