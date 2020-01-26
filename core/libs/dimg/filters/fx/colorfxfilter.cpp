@@ -530,14 +530,13 @@ static inline int interp(const quint16* src, int p, int* off ,float dr, float dg
     return (int)frbg;
 }
 
-#define unlikely(x)     __builtin_expect(!!(x), 0)
 static inline int clamp(int from, int maxVal)
 {
-    if      (unlikely(from < 0))
+    if      (Q_UNLIKELY(from < 0))
     {
         from = 0;
     }
-    else if (unlikely(from > 65535))
+    else if (Q_UNLIKELY(from > 65535))
     {
         from = 65535;
     }
@@ -628,13 +627,13 @@ void ColorFXFilter::applyLut3D()
         if (!m_orgImage.sixteenBit())
         {
             ItemFilterFx(m_lutTable, m_lutTableSize, m_orgImage.bits(),
-                          i, min(i + stepI, maxI),
+                          i, qMin(i + stepI, maxI),
                           255, m_settings.intensity);
         }
         else
         {
             ItemFilterFx(m_lutTable, m_lutTableSize, reinterpret_cast<unsigned short*>(m_orgImage.bits()),
-                          i, min(i + stepI, maxI),
+                          i, qMin(i + stepI, maxI),
                           65535, m_settings.intensity);
         }
 
