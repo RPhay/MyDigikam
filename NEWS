@@ -4,7 +4,7 @@ digiKam 7.0.0-beta3 - Release date: 2020-02-23
 NEW FEATURES:
 
 FaceManagement: New Neural Network engine based on OpenCV Deep Learning module to detect and recognize faces.
-FaceManagement: Face Scan dialog contents is now simlified and embeded into left side-bar tab.
+FaceManagement: Face Scan dialog contents is now simplified and embeded into left side-bar tab.
 SlideShow     : Add new shuffle mode.
 HTMLGallery   : Add new theme "Html5Responsive".
 General       : Update internal libraw engine to last 201910 snapshot aka next 0.20.0 release (https://www.libraw.org/news/libraw-snapshot-201910)
