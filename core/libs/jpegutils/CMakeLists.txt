@@ -16,7 +16,9 @@ set(libjpegutils_SRCS
 )
 
 # no warnings from JPEG extra implementations
-if (NOT MSVC)
+if(MSVC)
+    set_source_files_properties(${DIGIKAM_LIBJPEG_DIR}/transupp.c PROPERTIES COMPILE_FLAGS /w)
+else()
     set_source_files_properties(${DIGIKAM_LIBJPEG_DIR}/transupp.c PROPERTIES COMPILE_FLAGS "-w")
 endif()
 

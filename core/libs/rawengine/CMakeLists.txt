@@ -143,7 +143,7 @@ set(libraw_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/libraw_c_api.cpp
 # Use O4 GCC compilation option to prevent artifacts with OpenMP (Bug #305382)
 foreach(_curentfile ${libraw_LIB_SRCS})
     if(WIN32 AND MSVC)
-        set_source_files_properties(${_curentfile} PROPERTIES COMPILE_FLAGS "-w")
+        set_source_files_properties(${_curentfile} PROPERTIES COMPILE_FLAGS /w)
     else()
         set_source_files_properties(${_curentfile} PROPERTIES COMPILE_FLAGS "-w -fPIC -O4")
     endif()
