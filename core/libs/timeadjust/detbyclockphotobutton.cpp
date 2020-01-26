@@ -56,6 +56,7 @@ void DetByClockPhotoButton::dropEvent(QDropEvent* event)
     if (mimeData && mimeData->hasUrls())
     {
         // if user dropped more than one image, take the first one
+
         QUrl url = mimeData->urls().first();
         qCDebug(DIGIKAM_GENERAL_LOG) << "Dropped clock photo:" << url;
         emit signalClockPhotoDropped(url);
