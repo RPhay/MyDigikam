@@ -59,9 +59,10 @@ public:
     ToggleAutoTags getToggleAutoTags()       const;
     void setToggleAutoTags(ToggleAutoTags toggle);
 
-    /** If this is switched on, a tag that is created
-     *  from _within_ this view, typically via the context menu,
-     *  will automatically be set checked.
+    /**
+     * If this is switched on, a tag that is created
+     * from _within_ this view, typically via the context menu,
+     * will automatically be set checked.
      */
     void setCheckNewTags(bool checkNewTags);
     bool checkNewTags() const;

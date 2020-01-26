@@ -68,7 +68,7 @@ public:
     virtual QWidget* createWidget(QWidget* parent);
 
     void setSpecialChecked(bool checked);
-    bool isChecked() const;
+    bool isChecked()        const;
 
     void setCheckBoxHidden(bool hidden);
     bool isCheckBoxHidden() const;
@@ -89,15 +89,15 @@ public:
 
 protected:
 
-    virtual QSize sizeHint() const;
+    virtual QSize sizeHint()                                const;
     virtual void paintEvent(QPaintEvent*);
 
 private:
 
-    void initMenuStyleOption(QStyleOptionMenuItem* option) const;
-    void initViewStyleOption(QStyleOptionViewItem* option) const;
-    QSize menuItemSize(QStyleOptionMenuItem* opt) const;
-    QRect checkIndicatorSize(QStyleOption* option) const;
+    void initMenuStyleOption(QStyleOptionMenuItem* option)  const;
+    void initViewStyleOption(QStyleOptionViewItem* option)  const;
+    QSize menuItemSize(QStyleOptionMenuItem* opt)           const;
+    QRect checkIndicatorSize(QStyleOption* option)          const;
 
 private:
 
@@ -118,42 +118,53 @@ TagToggleMenuWidget::TagToggleMenuWidget(QMenu* const parent, TagToggleAction* c
 QSize TagToggleMenuWidget::sizeHint() const
 {
     // init style option for menu item
+
     QStyleOptionMenuItem opt;
     initMenuStyleOption(&opt);
 
     // get the individual sizes
+
     QSize menuSize   = menuItemSize(&opt);
     QRect checkRect  = checkIndicatorSize(&opt);
     const int margin = style()->pixelMetric(QStyle::PM_FocusFrameHMargin, nullptr, this) + 1;
 
     // return widget size
+
     int width        = margin + checkRect.width() + menuSize.width() + margin;
     QSize size(width, qMax(checkRect.height(), menuSize.height()));
+
     return size;
 }
 
 void TagToggleMenuWidget::paintEvent(QPaintEvent*)
 {
     // init style option for menu item
+
     QStyleOptionMenuItem menuOpt;
     initMenuStyleOption(&menuOpt);
 
     // init style option for check indicator
+
     QStyleOptionViewItem viewOpt;
     initViewStyleOption(&viewOpt);
 
     // get a suitable margin
+
     const int margin      = style()->pixelMetric(QStyle::PM_FocusFrameHMargin,     nullptr, this);
     const int frameMargin = style()->pixelMetric(QStyle::PM_MenuDesktopFrameWidth, nullptr, this);
 
     // create painter
+
     QPainter p(this);
 
-    // the menu rect should not go beyond the parent menu in width
-    // move by margin and free room for menu frame
+    /**
+     * the menu rect should not go beyond the parent menu in width
+     * move by margin and free room for menu frame
+     */
     if (menuOpt.direction == Qt::RightToLeft)
     {
         // right-to-left untested
+
         viewOpt.rect.translate(-margin, 0);
         menuOpt.rect.translate(-margin, 0);
         menuOpt.menuRect.adjust(margin, 0, 0, 0);
@@ -166,6 +177,7 @@ void TagToggleMenuWidget::paintEvent(QPaintEvent*)
     }
 
     // clear the background of the check indicator
+
     QStyleOptionMenuItem clearOpt(menuOpt);
     clearOpt.state        = QStyle::State_None;
     clearOpt.menuItemType = QStyleOptionMenuItem::EmptyArea;
@@ -174,6 +186,7 @@ void TagToggleMenuWidget::paintEvent(QPaintEvent*)
     style()->drawControl(QStyle::CE_MenuEmptyArea, &menuOpt, &p, this);
 
     // draw a check indicator like the one used in a treeview
+
     QRect checkRect = checkIndicatorSize(&menuOpt);
     viewOpt.rect    = checkRect;
 
@@ -183,6 +196,7 @@ void TagToggleMenuWidget::paintEvent(QPaintEvent*)
     }
 
     // move by size of check indicator
+
     if (menuOpt.direction == Qt::RightToLeft)
     {
         menuOpt.rect.translate( - checkRect.width() - margin, 0);
@@ -195,9 +209,11 @@ void TagToggleMenuWidget::paintEvent(QPaintEvent*)
     }
 
     // draw a full menu item - icon, text and menu indicator
+
     style()->drawControl(QStyle::CE_MenuItem, &menuOpt, &p, this);
 
     // draw the frame on the right
+
     if (frameMargin)
     {
         QRegion borderReg;
@@ -216,9 +232,11 @@ void TagToggleMenuWidget::paintEvent(QPaintEvent*)
 void TagToggleMenuWidget::initMenuStyleOption(QStyleOptionMenuItem* option) const
 {
     // set basic option from widget properties
+
     option->initFrom(this);
 
     // set menu item state
+
     option->state  = QStyle::State_None;
     option->state |= QStyle::State_Enabled;
 
@@ -226,12 +244,17 @@ void TagToggleMenuWidget::initMenuStyleOption(QStyleOptionMenuItem* option) cons
     {
         option->state |= QStyle::State_Selected;
     }
-
-    // if (mouseDown) option->state |= QStyle::State_Sunken;
+/*
+    if (mouseDown)
+    {
+        option->state |= QStyle::State_Sunken;
+    }
+*/
 
     // We have a special case here: menu items which are checked are not selectable,
     // it is an "Assign Tags" menu. To signal this, we change the pallette.
     // But only if there is no submenu...
+
     if (m_action->isChecked() && !m_action->menu())
     {
         option->palette.setCurrentColorGroup(QPalette::Disabled);
@@ -239,16 +262,19 @@ void TagToggleMenuWidget::initMenuStyleOption(QStyleOptionMenuItem* option) cons
     }
 
     // set options from m_action
+
     option->font                  = m_action->font();
     option->icon                  = m_action->icon();
     option->text                  = m_action->text();
 
     // we do the check mark ourselves
+
     option->checked               = false;
     option->menuHasCheckableItems = false;
     option->checkType             = QStyleOptionMenuItem::NotCheckable;
 
     // Don't forget the submenu indicator
+
     if (m_action->menu())
     {
         option->menuItemType = QStyleOptionMenuItem::SubMenu;
@@ -259,6 +285,7 @@ void TagToggleMenuWidget::initMenuStyleOption(QStyleOptionMenuItem* option) cons
     }
 
     // seems QMenu does it like this
+
     option->maxIconWidth = style()->pixelMetric(QStyle::PM_SmallIconSize, nullptr, this);
     option->rect         = rect();
     option->menuRect     = parentWidget()->rect();
@@ -267,9 +294,11 @@ void TagToggleMenuWidget::initMenuStyleOption(QStyleOptionMenuItem* option) cons
 void TagToggleMenuWidget::initViewStyleOption(QStyleOptionViewItem* option) const
 {
     // set basic option from widget properties
+
     option->initFrom(this);
 
     // set check state
+
     if (m_action->isChecked())
     {
         option->state |= QStyle::State_On;
@@ -287,9 +316,13 @@ QSize TagToggleMenuWidget::menuItemSize(QStyleOptionMenuItem* opt) const
     QFontMetrics fm(fontMetrics());
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+
     size.setWidth(fm.horizontalAdvance(m_action->text()));
+
 #else
+
     size.setWidth(fm.width(m_action->text()));
+
 #endif
 
     size.setHeight(fm.height());
@@ -314,8 +347,9 @@ QRect TagToggleMenuWidget::checkIndicatorSize(QStyleOption* option) const
 
     QStyleOptionButton opt;
     opt.QStyleOption::operator=(*option);
-    //opt.rect = bounding;
-
+/*
+    opt.rect = bounding;
+*/
     return style()->subElementRect(QStyle::SE_ViewItemCheckIndicator, &opt, this);
 }
 
@@ -359,13 +393,14 @@ void TagToggleAction::setSpecialChecked(bool checked)
     // something is resetting the checked property when there is a submenu.
     // Use this to store "checked" anyway.
     // Note: the method isChecked() is not virtual.
+
     m_checked = checked;
     setChecked(checked);
 }
 
 bool TagToggleAction::isChecked() const
 {
-    return m_checked || QWidgetAction::isChecked();
+    return (m_checked || QWidgetAction::isChecked());
 }
 
 void TagToggleAction::setCheckBoxHidden(bool hidden)
@@ -385,10 +420,10 @@ class Q_DECL_HIDDEN TagsPopupMenu::Private
 public:
 
     explicit Private()
+      : addTagActions(nullptr),
+        toggleTagActions(nullptr),
+        mode(ASSIGN)
     {
-        addTagActions    = nullptr;
-        toggleTagActions = nullptr;
-        mode             = ASSIGN;
     }
 
     QPixmap              addTagPix;
@@ -406,14 +441,16 @@ public:
 };
 
 TagsPopupMenu::TagsPopupMenu(qlonglong selectedImageId, Mode mode, QWidget* const parent)
-    : QMenu(parent), d(new Private)
+    : QMenu(parent),
+      d(new Private)
 {
     d->selectedImageIDs << selectedImageId;
     setup(mode);
 }
 
 TagsPopupMenu::TagsPopupMenu(const QList<qlonglong>& selectedImageIds, Mode mode, QWidget* const parent)
-    : QMenu(parent), d(new Private)
+    : QMenu(parent),
+      d(new Private)
 {
     d->selectedImageIDs = selectedImageIds;
     setup(mode);
@@ -465,7 +502,7 @@ void TagsPopupMenu::slotAboutToShow()
 
     AlbumManager* const man = AlbumManager::instance();
 
-    if (d->mode == REMOVE || d->mode == DISPLAY)
+    if ((d->mode == REMOVE) || (d->mode == DISPLAY))
     {
         if (d->selectedImageIDs.isEmpty())
         {
@@ -485,7 +522,8 @@ void TagsPopupMenu::slotAboutToShow()
 
         bool hasValidTag = false;
 
-        for (QSet<int>::const_iterator it = d->assignedTags.constBegin() ; it != d->assignedTags.constEnd() ; ++it)
+        for (QSet<int>::const_iterator it = d->assignedTags.constBegin() ;
+             it != d->assignedTags.constEnd() ; ++it)
         {
             TAlbum* const album = man->findTAlbum(*it);
 
@@ -507,6 +545,7 @@ void TagsPopupMenu::slotAboutToShow()
         if (!hasValidTag)
         {
             menuAction()->setEnabled(false);
+
             return;
         }
     }
@@ -544,7 +583,9 @@ void TagsPopupMenu::slotAboutToShow()
                         p.replace(QLatin1Char('/'), QLatin1String(" / "));
 
                         if (!p.isEmpty())
+                        {
                             p                   = QLatin1String(" (") + p + QLatin1Char(')');
+                        }
 
                         QString t               = album->title() + p;
                         t.replace(QLatin1Char('&'), QLatin1String("&&"));
@@ -564,7 +605,7 @@ void TagsPopupMenu::slotAboutToShow()
         }
     }
 
-    if ((d->mode == REMOVE || d->mode == DISPLAY) && d->assignedTags.count() < 10)
+    if (((d->mode == REMOVE) || (d->mode == DISPLAY)) && (d->assignedTags.count() < 10))
     {
         buildFlatMenu(this);
     }
@@ -580,7 +621,7 @@ void TagsPopupMenu::slotAboutToShow()
 
         iterateAndBuildMenu(this, album);
 
-        if (d->mode == ASSIGN || d->mode == RECENTLYASSIGNED)
+        if ((d->mode == ASSIGN) || (d->mode == RECENTLYASSIGNED))
         {
             addSeparator();
             TagToggleAction* const addTag = new TagToggleAction(d->addTagPix, i18n("Add New Tag..."), d->addTagActions);
@@ -597,7 +638,7 @@ void TagsPopupMenu::slotAboutToShow()
     }
 }
 
-// for qSort
+/// for qSort
 bool lessThanByTitle(const Album* first, const Album* second)
 {
     return first->title() < second->title();
@@ -614,7 +655,8 @@ void TagsPopupMenu::iterateAndBuildMenu(QMenu* menu, TAlbum* album)
 
     std::stable_sort(sortedTags.begin(), sortedTags.end(), lessThanByTitle);
 
-    for (QList<Album*>::const_iterator it = sortedTags.constBegin() ; it != sortedTags.constEnd() ; ++it)
+    for (QList<Album*>::const_iterator it = sortedTags.constBegin() ;
+         it != sortedTags.constEnd() ; ++it)
     {
         TAlbum* const a = (TAlbum*)(*it);
 
@@ -623,11 +665,11 @@ void TagsPopupMenu::iterateAndBuildMenu(QMenu* menu, TAlbum* album)
             continue;
         }
 
-        if (d->mode == RECENTLYASSIGNED)
+        if      (d->mode == RECENTLYASSIGNED)
         {
             continue;
         }
-        else if (d->mode == REMOVE || d->mode == DISPLAY)
+        else if ((d->mode == REMOVE) || (d->mode == DISPLAY))
         {
             if (!d->assignedTags.contains(a->id()) && !d->parentAssignedTags.contains(a->id()))
             {
@@ -659,11 +701,12 @@ void TagsPopupMenu::iterateAndBuildMenu(QMenu* menu, TAlbum* album)
         menu->addAction(action);
 
         // get icon
+
         setAlbumIcon(action, a);
 
         if (a->firstChild())
         {
-            if ((d->mode != REMOVE && d->mode != DISPLAY) ||
+            if (((d->mode != REMOVE) && (d->mode != DISPLAY)) ||
                 d->parentAssignedTags.contains(a->id()))
             {
                 action->setMenu(buildSubMenu(a->id()));
@@ -685,7 +728,7 @@ QMenu* TagsPopupMenu::buildSubMenu(int tagid)
     QMenu* const popup = new QMenu(this);
     popup->setSeparatorsCollapsible(true);
 
-    if (d->mode == ASSIGN && !d->assignedTags.contains(album->id()))
+    if      ((d->mode == ASSIGN) && !d->assignedTags.contains(album->id()))
     {
         TagToggleAction* const action = new TagToggleAction(i18n("Assign this Tag"), d->toggleTagActions);
         action->setData(album->id());
@@ -694,7 +737,7 @@ QMenu* TagsPopupMenu::buildSubMenu(int tagid)
         popup->addAction(action);
         popup->addSeparator();
     }
-    else if (d->mode == REMOVE && d->assignedTags.contains(tagid))
+    else if ((d->mode == REMOVE) && d->assignedTags.contains(tagid))
     {
         TagToggleAction* const action = new TagToggleAction(i18n("Remove this Tag"), d->toggleTagActions);
         action->setData(album->id());
@@ -765,6 +808,7 @@ void TagsPopupMenu::buildFlatMenu(QMenu* menu)
         menu->addAction(action);
 
         // get icon
+
         setAlbumIcon(action, a);
     }
 }
@@ -789,6 +833,7 @@ void TagsPopupMenu::setAlbumIcon(QAction* action, TAlbum* album)
     {
         // for the time while loading, set standard icon
         // usually this code path will not be used, as icons are cached
+
         action->setIcon(loader->getStandardTagIcon(album));
     }
 }
@@ -796,6 +841,7 @@ void TagsPopupMenu::setAlbumIcon(QAction* action, TAlbum* album)
 void TagsPopupMenu::slotToggleTag(QAction* action)
 {
     int tagID = action->data().toInt();
+
     emit signalTagActivated(tagID);
 }
 
@@ -830,7 +876,8 @@ void TagsPopupMenu::slotAddTag(QAction* action)
     AlbumList tList = TagEditDlg::createTAlbum(parent, title, icon, ks, errMap);
     TagEditDlg::showtagsListCreationError(qApp->activeWindow(), errMap);
 
-    for (AlbumList::const_iterator it = tList.constBegin() ; it != tList.constEnd() ; ++it)
+    for (AlbumList::const_iterator it = tList.constBegin() ;
+         it != tList.constEnd() ; ++it)
     {
         emit signalTagActivated((*it)->id());
     }
@@ -845,6 +892,7 @@ void TagsPopupMenu::slotTagThumbnail(Album* album, const QPixmap& pix)
         if (action->data().toInt() == album->id())
         {
             action->setIcon(pix);
+
             return;
         }
     }

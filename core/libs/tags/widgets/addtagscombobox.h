@@ -54,14 +54,16 @@ public:
     explicit AddTagsComboBox(QWidget* const parent = nullptr);
     ~AddTagsComboBox();
 
-    /** You must call this after construction.
-     *  If filtered/filterModel is 0, a default one is constructed
+    /**
+     * You must call this after construction.
+     * If filtered/filterModel is 0, a default one is constructed
      */
     void setModel(TagModel* const model, TagPropertiesFilterModel* const filteredModel = nullptr, CheckableAlbumFilterModel* const filterModel = nullptr);
 
-    /** Returns the currently set tagging action.
-     *  This is the last action emitted by either taggingActionActivated()
-     *  or taggingActionSelected()
+    /**
+     * Returns the currently set tagging action.
+     * This is the last action emitted by either taggingActionActivated()
+     * or taggingActionSelected()
      */
     TaggingAction currentTaggingAction();
 
@@ -79,17 +81,21 @@ public:
 
 public Q_SLOTS:
 
-    /** Set a parent tag for suggesting a parent tag for a new tag, and a default action. */
+    /**
+     * Set a parent tag for suggesting a parent tag for a new tag, and a default action.
+     */
     void setParentTag(TAlbum* const album);
 
 Q_SIGNALS:
 
-    /** Emitted when the user activates an action (typically, by pressing return)
+    /**
+     * Emitted when the user activates an action (typically, by pressing return)
      */
     void taggingActionActivated(const TaggingAction& action);
 
-    /** Emitted when an action is selected, but not explicitly activated.
-     *  (typically by selecting an item in the tree view
+    /**
+     * Emitted when an action is selected, but not explicitly activated.
+     * (typically by selecting an item in the tree view
      */
     void taggingActionSelected(const TaggingAction& action);
 

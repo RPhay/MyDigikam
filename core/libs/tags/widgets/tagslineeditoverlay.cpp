@@ -97,8 +97,11 @@ void TagsLineEditOverlay::visualChange()
 
 void TagsLineEditOverlay::hide()
 {
-    //delegate()->setRatingEdited(QModelIndex());
+/*
+    delegate()->setRatingEdited(QModelIndex());
+*/
     AbstractWidgetDelegateOverlay::hide();
+
     //qCDebug(DIGIKAM_GENERAL_LOG) << "Hide called, probably mouse left";
 
     if (!m_widget->hasFocus())
@@ -116,9 +119,11 @@ void TagsLineEditOverlay::updatePosition()
         return;
     }
 
-    QRect thumbrect = delegate()->ratingRect();
+    QRect thumbrect  = delegate()->ratingRect();
+
     //qCDebug(DIGIKAM_GENERAL_LOG) << "updatePosition called, probably a mouseover : " << thumbrect;
-    QRect rect      = thumbrect;
+
+    QRect rect       = thumbrect;
 
     if (rect.width() > addTagsLineEdit()->width() )
     {
@@ -143,8 +148,9 @@ void TagsLineEditOverlay::updateTag()
 
     ItemInfo info = ItemModel::retrieveItemInfo(m_index);
     qCDebug(DIGIKAM_GENERAL_LOG) << "called updateTag()";
-
-    //TODO: ADD ratingWidget()->setRating(info.rating());
+/*
+    TODO: ADD ratingWidget()->setRating(info.rating());
+*/
 }
 
 void TagsLineEditOverlay::slotTagChanged(int tagId)
@@ -171,7 +177,9 @@ void TagsLineEditOverlay::slotDataChanged(const QModelIndex& /*topLeft*/, const 
 {
 /*
     if (m_widget && m_widget->isVisible() && QItemSelectionRange(topLeft, bottomRight).contains(m_index))
+    {
         updateTag();
+    }
 */
 }
 
@@ -180,7 +188,8 @@ void TagsLineEditOverlay::slotEntered(const QModelIndex& index)
     AbstractWidgetDelegateOverlay::slotEntered(index);
 
     // see bug #228810, this is a small workaround
-    if (m_widget && m_widget->isVisible() && m_index.isValid() && index == m_index)
+
+    if (m_widget && m_widget->isVisible() && m_index.isValid() && (index == m_index))
     {
         addTagsLineEdit()->setVisible(true);
     }
@@ -188,9 +197,10 @@ void TagsLineEditOverlay::slotEntered(const QModelIndex& index)
     m_index = index;
 
     updatePosition();
-    //updateTag();
-
-    //delegate()->setRatingEdited(m_index);
+/*
+    updateTag();
+    delegate()->setRatingEdited(m_index);
+*/
     view()->update(m_index);
 }
 

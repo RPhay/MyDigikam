@@ -55,17 +55,20 @@ public:
      * Optional: set a model for additional information, like tag icons
      */
     void setSupportingTagModel(TagModel* const model);
+
     /**
      * Set a tag filter model. Completion suggestions will be limited to tags contained in the filter model.
      */
     void setFilterModel(AlbumFilterModel* const model);
+
     /**
      * Convenience: Will call setSupportingTagModel() and setFilterModel()
      */
     void setModel(TagModel* const model, TagPropertiesFilterModel* const filteredModel, AlbumFilterModel* const filterModel);
 
-    /** Reads a tag treeview and takes the currently selected tag into account
-     *  when suggesting a parent tag for a new tag, and a default action.
+    /**
+     * Reads a tag treeview and takes the currently selected tag into account
+     * when suggesting a parent tag for a new tag, and a default action.
      */
     void setTagTreeView(TagTreeView* const treeView);
 
@@ -82,8 +85,9 @@ public:
 
 public Q_SLOTS:
 
-    /** Set a parent tag for suggesting a parent tag for a new tag, and a default action.
-     *  If you set a tag tree view, this is taken care for automatically.
+    /**
+     * Set a parent tag for suggesting a parent tag for a new tag, and a default action.
+     * If you set a tag tree view, this is taken care for automatically.
      */
     void setParentTag(Album* const album);
 
@@ -91,6 +95,7 @@ Q_SIGNALS:
 
     /// Emitted when the user activates an action (typically, by pressing return)
     void taggingActionActivated(const TaggingAction& action);
+
     /// Emitted when an action is selected. This already happens if anything is typed.
     void taggingActionSelected(const TaggingAction& action);
     void taggingActionFinished();

@@ -48,7 +48,7 @@ public:
     {
         ASSIGN = 0,
         REMOVE,
-        DISPLAY,           // Used by "GoTo Tag" feature
+        DISPLAY,           ///< Used by "GoTo Tag" feature
         RECENTLYASSIGNED
     };
 
@@ -72,12 +72,12 @@ private Q_SLOTS:
 
 private:
 
-    void     setup(Mode mode);
-    void     clearPopup();
-    QMenu*   buildSubMenu(int tagid);
-    void     iterateAndBuildMenu(QMenu* menu, TAlbum* album);
-    void     buildFlatMenu(QMenu* menu);
-    void     setAlbumIcon(QAction* action, TAlbum* album);
+    void   setup(Mode mode);
+    void   clearPopup();
+    QMenu* buildSubMenu(int tagid);
+    void   iterateAndBuildMenu(QMenu* menu, TAlbum* album);
+    void   buildFlatMenu(QMenu* menu);
+    void   setAlbumIcon(QAction* action, TAlbum* album);
 
 private:
 
