@@ -52,7 +52,7 @@ extern "C"
 #   include <sys/shm.h>
 #endif
 
-#include <sys/time.h>
+#include <time.h>
 #include <png.h>
 }
 
