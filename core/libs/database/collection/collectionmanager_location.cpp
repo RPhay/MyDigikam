@@ -42,6 +42,7 @@ CollectionLocation CollectionManager::addLocation(const QUrl& fileUrl, const QSt
     if (!volume.isNull())
     {
         // volume.path has a trailing slash. We want to split in front of this.
+
         QString specificPath = path.mid(volume.path.length() - 1);
         AlbumRoot::Type type;
 
@@ -60,6 +61,7 @@ CollectionLocation CollectionManager::addLocation(const QUrl& fileUrl, const QSt
     else
     {
         // Empty volumes indicates that Solid is not working correctly.
+
         if (volumes.isEmpty())
         {
             qCDebug(DIGIKAM_DATABASE_LOG) << "Solid did not return any storage volumes on your system.";
@@ -72,6 +74,7 @@ CollectionLocation CollectionManager::addLocation(const QUrl& fileUrl, const QSt
         }
 
         // fall back
+
         qCWarning(DIGIKAM_DATABASE_LOG) << "Unable to identify a path with Solid. Adding the location with path only.";
 
         ChangingDB changing(d);
@@ -80,6 +83,7 @@ CollectionLocation CollectionManager::addLocation(const QUrl& fileUrl, const QSt
     }
 
     // Do not emit the locationAdded signal here, it is done in updateLocations()
+
     updateLocations();
 
     return locationForPath(path);
@@ -100,6 +104,7 @@ CollectionLocation CollectionManager::addNetworkLocation(const QUrl& fileUrl, co
                                       d->networkShareIdentifier(path), QLatin1String("/"), label);
 
     // Do not emit the locationAdded signal here, it is done in updateLocations()
+
     updateLocations();
 
     return locationForPath(path);
@@ -131,11 +136,12 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
     if (!volume.isNull())
     {
         // volume.path has a trailing slash. We want to split in front of this.
+
         QString specificPath = path.mid(volume.path.length() - 1);
         QString identifier   = d->volumeIdentifier(volume);
         AlbumRoot::Type type;
 
-        if (newType == CollectionLocation::TypeVolumeRemovable)
+        if      (newType == CollectionLocation::TypeVolumeRemovable)
         {
             type = AlbumRoot::VolumeRemovable;
         }
@@ -168,6 +174,7 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
     else
     {
         // Empty volumes indicates that Solid is not working correctly.
+
         if (volumes.isEmpty())
         {
             qCDebug(DIGIKAM_DATABASE_LOG) << "Solid did not return any storage volumes on your system.";
@@ -180,6 +187,7 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
         }
 
         // fall back
+
         qCWarning(DIGIKAM_DATABASE_LOG) << "Unable to identify a path with Solid. Update the location with path only.";
 
         CoreDbAccess access;
@@ -200,6 +208,7 @@ CollectionLocation CollectionManager::refreshLocation(const CollectionLocation& 
     }
 
     // Do not emit the locationAdded signal here, it is done in updateLocations()
+
     updateLocations();
 
     return locationForPath(path);
@@ -259,7 +268,7 @@ CollectionManager::LocationCheckResult CollectionManager::checkLocation(const QU
     }
 
     QList<SolidVolumeInfo> volumes = d->listVolumes();
-    SolidVolumeInfo volume = d->findVolumeForUrl(fileUrl, volumes);
+    SolidVolumeInfo volume         = d->findVolumeForUrl(fileUrl, volumes);
 
     if (!volume.isNull())
     {
@@ -302,8 +311,8 @@ CollectionManager::LocationCheckResult CollectionManager::checkLocation(const QU
                 {
                     QUrl otherUrl(otherLocation->identifier);
 
-                    if (otherUrl.scheme() == QLatin1String("volumeid") &&
-                        QUrlQuery(otherUrl).queryItemValue(QLatin1String("label")) == volume.label)
+                    if ((otherUrl.scheme() == QLatin1String("volumeid")) &&
+                        (QUrlQuery(otherUrl).queryItemValue(QLatin1String("label")) == volume.label))
                     {
                         hasOtherLocation = true;
                         break;
@@ -318,6 +327,7 @@ CollectionManager::LocationCheckResult CollectionManager::checkLocation(const QU
                 if (hasOtherLocation)
                 {
                     if (message)
+                    {
                         *message = i18n("This is a CD/DVD, which is identified by the label "
                                         "that you can set in your CD burning application. "
                                         "There is already another entry with the same label. "
@@ -325,17 +335,20 @@ CollectionManager::LocationCheckResult CollectionManager::checkLocation(const QU
                                         "so please do not append files to the CD, or it will not be recognized. "
                                         "In the future, please set a unique label on your CDs and DVDs "
                                         "if you intend to use them with digiKam.");
+                    }
 
                     return LocationHasProblems;
                 }
                 else
                 {
                     if (message)
+                    {
                         *message = i18n("This is a CD/DVD. It will be identified by the label (\"%1\")"
                                         "that you have set in your CD burning application. "
                                         "If you create further CDs for use with digikam in the future, "
                                         "please remember to give them a unique label as well.",
                                         volume.label);
+                    }
 
                     return LocationAllRight;
                 }
@@ -343,9 +356,12 @@ CollectionManager::LocationCheckResult CollectionManager::checkLocation(const QU
             else
             {
                 // Which situation? HasProblems or AllRight?
+
                 if (message)
+                {
                     *message = i18n("This is a removable storage medium that will be identified by its label (\"%1\")",
                                     volume.label);
+                }
 
                 if (iconName)
                 {
@@ -358,9 +374,11 @@ CollectionManager::LocationCheckResult CollectionManager::checkLocation(const QU
         else
         {
             if (message)
+            {
                 *message = i18n("This entry will only be identified by the path where it is found on your system (\"%1\"). "
                                 "No more specific means of identification (UUID, label) is available.",
                                 QDir::toNativeSeparators(volume.path));
+            }
 
             if (iconName)
             {
@@ -373,9 +391,11 @@ CollectionManager::LocationCheckResult CollectionManager::checkLocation(const QU
     else
     {
         if (message)
+        {
             *message = i18n("It is not possible on your system to identify the storage medium of this path. "
                             "It will be added using the file path as the only identifier. "
                             "This will work well for your local hard disk.");
+        }
 
         if (iconName)
         {
@@ -396,12 +416,16 @@ CollectionManager::LocationCheckResult CollectionManager::checkNetworkLocation(c
         if (message)
         {
             if (fileUrl.scheme() == QLatin1String("smb"))
+            {
                 *message = i18n("You need to locally mount your Samba share. "
                                 "Sorry, digiKam does currently not support smb:// URLs. ");
+            }
             else
+            {
                 *message = i18n("Your network storage must be set up to be accessible "
                                 "as files and folders through the operating system. "
-                                "DigiKam does not support remote URLs.");
+                                "digiKam does not support remote URLs.");
+            }
         }
 
         if (iconName)
@@ -447,8 +471,10 @@ CollectionManager::LocationCheckResult CollectionManager::checkNetworkLocation(c
     }
 
     if (message)
+    {
         *message = i18n("The network share will be identified by the path you selected. "
                         "If the path is empty, the share will be considered unavailable.");
+    }
 
     if (iconName)
     {
@@ -472,6 +498,7 @@ void CollectionManager::removeLocation(const CollectionLocation& location)
 
         // Ensure that all albums are set to orphan and no images will be permanently deleted,
         // as would do only calling deleteAlbumRoot by a Trigger
+
         CoreDbAccess access;
         QList<int> albumIds = access.db()->getAlbumsOnAlbumRoot(albumLoc->id());
         ChangingDB changing(d);
@@ -496,8 +523,9 @@ QList<CollectionLocation> CollectionManager::checkHardWiredLocations()
     foreach (AlbumRootLocation* const location, d->locations)
     {
         // Hardwired and unavailable?
-        if (location->type()   == CollectionLocation::TypeVolumeHardWired &&
-            location->status() == CollectionLocation::LocationUnavailable)
+
+        if ((location->type()   == CollectionLocation::TypeVolumeHardWired) &&
+            (location->status() == CollectionLocation::LocationUnavailable))
         {
             disappearedLocations << *location;
         }
@@ -529,6 +557,7 @@ void CollectionManager::migrationCandidates(const CollectionLocation& location,
     *description = d->technicalDescription(albumLoc);
 
     // Find possible new volumes where the specific path is found.
+
     foreach (const SolidVolumeInfo& info, volumes)
     {
         if (info.isMounted && !info.path.isEmpty())
@@ -537,7 +566,7 @@ void CollectionManager::migrationCandidates(const CollectionLocation& location,
 
             if (dir.exists())
             {
-                *candidateIdentifiers << d->volumeIdentifier(info);
+                *candidateIdentifiers  << d->volumeIdentifier(info);
                 *candidateDescriptions << dir.absolutePath();
             }
         }
@@ -556,10 +585,12 @@ void CollectionManager::migrateToVolume(const CollectionLocation& location, cons
     }
 
     // update db
+
     ChangingDB db(d);
     CoreDbAccess().db()->migrateAlbumRoot(albumLoc->id(), identifier);
 
-    // update local structur
+    // update local structure
+
     albumLoc->identifier = identifier;
 
     locker.unlock();
@@ -578,13 +609,16 @@ void CollectionManager::setLabel(const CollectionLocation& location, const QStri
     }
 
     // update db
+
     ChangingDB db(d);
     CoreDbAccess().db()->setAlbumRootLabel(albumLoc->id(), label);
 
     // update local structure
+
     albumLoc->setLabel(label);
 
     locker.unlock();
+
     emit locationPropertiesChanged(*albumLoc);
 }
 
@@ -600,13 +634,16 @@ void CollectionManager::changeType(const CollectionLocation& location, int type)
     }
 
     // update db
+
     ChangingDB db(d);
     CoreDbAccess().db()->changeAlbumRootType(albumLoc->id(), (AlbumRoot::Type)type);
 
     // update local structure
+
     albumLoc->setType((CollectionLocation::Type)type);
 
     locker.unlock();
+
     emit locationPropertiesChanged(*albumLoc);
 }
 
@@ -704,7 +741,8 @@ CollectionLocation CollectionManager::locationForPath(const QString& givenPath)
         if (!rootPath.isEmpty() && filePath.startsWith(rootPath))
         {
             // see also bug #221155 for extra checks
-            if (filePath == rootPath || filePath.startsWith(rootPath + QLatin1Char('/')))
+
+            if ((filePath == rootPath) || filePath.startsWith(rootPath + QLatin1Char('/')))
             {
                 return *location;
             }
@@ -717,15 +755,19 @@ CollectionLocation CollectionManager::locationForPath(const QString& givenPath)
 void CollectionManager::updateLocations()
 {
     QList<SolidVolumeInfo> volumes;
+
     // get information from Solid
+
     volumes = d->listVolumes();
 
     QWriteLocker locker(&d->lock);
 
     // read information from database
+
     QList<AlbumRootInfo> infos = CoreDbAccess().db()->getAlbumRoots();
 
     // synchronize map with database
+
     QMap<int, AlbumRootLocation*> locs = d->locations;
     d->locations.clear();
 
@@ -743,6 +785,7 @@ void CollectionManager::updateLocations()
     }
 
     // delete old locations
+
     foreach (AlbumRootLocation* const location, locs)
     {
         CollectionLocation::Status oldStatus = location->status();
@@ -754,6 +797,7 @@ void CollectionManager::updateLocations()
     }
 
     // update status with current access state, store old status in list
+
     QList<CollectionLocation::Status> oldStatus;
 
     foreach (AlbumRootLocation* const location, d->locations)
@@ -767,8 +811,8 @@ void CollectionManager::updateLocations()
             foreach (const QString& path, d->networkShareMountPathsFromIdentifier(location))
             {
                 QDir dir(path);
-                available    = dir.isReadable() &&
-                               dir.entryList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot).count() > 0;
+                available    = (dir.isReadable() &&
+                               (dir.entryList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot).count() > 0));
                 absolutePath = path;
 
                 if (available)
@@ -785,11 +829,15 @@ void CollectionManager::updateLocations()
             {
                 available          = info.isMounted;
                 QString volumePath = info.path;
+
                 // volume.path has a trailing slash (and this is good)
                 // but specific path has a leading slash, so remove it
+
                 volumePath.chop(1);
+
                 // volumePath is the mount point of the volume;
                 // specific path is the path on the file system of the volume.
+
                 absolutePath = volumePath + location->specificPath;
             }
             else
@@ -799,9 +847,11 @@ void CollectionManager::updateLocations()
                 if (!path.isNull())
                 {
                     available    = true;
+
                     // Here we have the absolute path as definition of the volume.
                     // specificPath is "/" as per convention, but ignored,
                     // absolute path shall not have a trailing slash.
+
                     absolutePath = path;
                 }
             }
@@ -809,14 +859,18 @@ void CollectionManager::updateLocations()
 
         // set values in location
         // Don't touch location->status, do not interfere with "hidden" setting
+
         location->available = available;
         location->setAbsolutePath(absolutePath);
         qCDebug(DIGIKAM_DATABASE_LOG) << "location for " << absolutePath << " is available " << available;
+
         // set the status depending on "hidden" and "available"
+
         location->setStatusFromFlags();
     }
 
     // emit status changes (and new locations)
+
     int i = 0;
 
     foreach (AlbumRootLocation* const location, d->locations)

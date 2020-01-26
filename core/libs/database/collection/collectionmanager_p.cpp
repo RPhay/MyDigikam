@@ -42,6 +42,7 @@ QList<SolidVolumeInfo> CollectionManager::Private::listVolumes()
     // Solid was meant to be thread-safe, but it is not (KDE4.0),
     // calling from a non-UI thread leads to a reversible
     // lock-up of variable length.
+
     if (QThread::currentThread() == QCoreApplication::instance()->thread())
     {
         return actuallyListVolumes();
@@ -49,7 +50,9 @@ QList<SolidVolumeInfo> CollectionManager::Private::listVolumes()
     else
     {
         // emit a blocking queued signal to move call to main thread
+
         emit s->triggerUpdateVolumesList();
+
         return volumesListCache;
     }
 }
@@ -64,7 +67,9 @@ QList<SolidVolumeInfo> CollectionManager::Private::actuallyListVolumes()
     QList<SolidVolumeInfo> volumes;
 
     //qCDebug(DIGIKAM_DATABASE_LOG) << "listFromType";
+
     QList<Solid::Device> devices = Solid::Device::listFromType(Solid::DeviceInterface::StorageAccess);
+
     //qCDebug(DIGIKAM_DATABASE_LOG) << "got listFromType";
 
     udisToWatch.clear();
@@ -72,17 +77,20 @@ QList<SolidVolumeInfo> CollectionManager::Private::actuallyListVolumes()
     foreach (const Solid::Device& accessDevice, devices)
     {
         // check for StorageAccess
+
         if (!accessDevice.is<Solid::StorageAccess>())
         {
             continue;
         }
 
         // mark as a device of principal interest
+
         udisToWatch << accessDevice.udi();
 
         const Solid::StorageAccess* access = accessDevice.as<Solid::StorageAccess>();
 
         // watch mount status (remove previous connections)
+
         QObject::disconnect(access, SIGNAL(accessibilityChanged(bool,QString)),
                             s, SLOT(accessibilityChanged(bool,QString)));
 
@@ -95,9 +103,11 @@ QList<SolidVolumeInfo> CollectionManager::Private::actuallyListVolumes()
         }
 
         // check for StorageDrive
+
         Solid::Device driveDevice;
 
-        for (Solid::Device currentDevice = accessDevice; currentDevice.isValid() ; currentDevice = currentDevice.parent())
+        for (Solid::Device currentDevice = accessDevice;
+             currentDevice.isValid() ; currentDevice = currentDevice.parent())
         {
             if (currentDevice.is<Solid::StorageDrive>())
             {
@@ -106,21 +116,24 @@ QList<SolidVolumeInfo> CollectionManager::Private::actuallyListVolumes()
             }
         }
 
-        /*
-         * We cannot require a drive, some logical volumes may not have "one" drive as parent
-         * See bug 273369
+/*
+        We cannot require a drive, some logical volumes may not have "one" drive as parent
+        See bug 273369
+
         if (!driveDevice.isValid())
         {
             continue;
         }
-        */
+*/
 
         Solid::StorageDrive* drive = driveDevice.as<Solid::StorageDrive>();
 
         // check for StorageVolume
+
         Solid::Device volumeDevice;
 
-        for (Solid::Device currentDevice = accessDevice; currentDevice.isValid() ; currentDevice = currentDevice.parent())
+        for (Solid::Device currentDevice = accessDevice;
+             currentDevice.isValid() ; currentDevice = currentDevice.parent())
         {
             if (currentDevice.is<Solid::StorageVolume>())
             {
@@ -151,11 +164,12 @@ QList<SolidVolumeInfo> CollectionManager::Private::actuallyListVolumes()
 
         if (drive)
         {
-            info.isRemovable = drive->isHotpluggable() || drive->isRemovable();
+            info.isRemovable = (drive->isHotpluggable() || drive->isRemovable());
         }
         else
         {
             // impossible to know, but probably not hotpluggable (see comment above)
+
             info.isRemovable = false;
         }
 
@@ -165,6 +179,7 @@ QList<SolidVolumeInfo> CollectionManager::Private::actuallyListVolumes()
     }
 
     // This is the central place where the watch is enabled
+
     watchEnabled = true;
 
     return volumes;
@@ -176,6 +191,7 @@ QString CollectionManager::Private::volumeIdentifier(const SolidVolumeInfo& volu
     url.setScheme(QLatin1String("volumeid"));
 
     // On changing these, please update the checkLocation() code
+
     bool identifyByUUID      = !volume.uuid.isEmpty();
     bool identifyByLabel     = !identifyByUUID && !volume.label.isEmpty() && (volume.isOpticalDisc || volume.isRemovable);
     bool addDirectoryHash    = identifyByLabel && volume.isOpticalDisc;
@@ -198,6 +214,7 @@ QString CollectionManager::Private::volumeIdentifier(const SolidVolumeInfo& volu
     if (addDirectoryHash)
     {
         // for CDs, we store a hash of the root directory. May be useful.
+
         QString dirHash = directoryHash(volume.path);
 
         if (!dirHash.isNull())
@@ -257,6 +274,7 @@ QString CollectionManager::Private::pathFromIdentifier(const AlbumRootLocation* 
 QStringList CollectionManager::Private::networkShareMountPathsFromIdentifier(const AlbumRootLocation* location)
 {
     // using a QUrl because QUrl cannot handle duplicate query items
+
     QUrl url(location->identifier);
 
     if (url.scheme() != QLatin1String("networkshareid"))
@@ -315,6 +333,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
         // that the label is not unique, and we take some care to make it work anyway.
 
         // find all available volumes with the given label (usually one)
+
         QList<SolidVolumeInfo> candidateVolumes;
 
         foreach (const SolidVolumeInfo& volume, volumes)
@@ -331,6 +350,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
         }
 
         // find out of there is another location with the same label (usually not)
+
         bool hasOtherLocation = false;
 
         foreach (AlbumRootLocation* const otherLocation, locations)
@@ -342,8 +362,8 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
 
             QUrl otherUrl(otherLocation->identifier);
 
-            if (otherUrl.scheme() == QLatin1String("volumeid")
-                && QUrlQuery(otherUrl).queryItemValue(QLatin1String("label")) == queryItem)
+            if (otherUrl.scheme() == QLatin1String("volumeid") &&
+                QUrlQuery(otherUrl).queryItemValue(QLatin1String("label")) == queryItem)
             {
                 hasOtherLocation = true;
                 break;
@@ -351,16 +371,19 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
         }
 
         // the usual, easy case
-        if (candidateVolumes.size() == 1 && !hasOtherLocation)
+
+        if ((candidateVolumes.size() == 1) && !hasOtherLocation)
         {
             return candidateVolumes.first();
         }
         else
         {
             // not unique: try to use the directoryhash
+
             QString dirHash = QUrlQuery(url).queryItemValue(QLatin1String("directoryhash"));
 
             // bail out if not provided
+
             if (dirHash.isNull())
             {
                 qCDebug(DIGIKAM_DATABASE_LOG) << "No directory hash specified for the non-unique Label"
@@ -369,6 +392,7 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForLocation(const AlbumRoo
             }
 
             // match against directory hash
+
             foreach (const SolidVolumeInfo& volume, candidateVolumes)
             {
                 QString volumeDirHash = directoryHash(volume.path);
@@ -405,7 +429,7 @@ QString CollectionManager::Private::technicalDescription(const AlbumRootLocation
 
     if (url.scheme() == QLatin1String("volumeid"))
     {
-        if (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("uuid"))).isNull())
+        if      (!(queryItem = QUrlQuery(url).queryItemValue(QLatin1String("uuid"))).isNull())
         {
             return i18nc("\"relative path\" on harddisk partition with \"UUID\"",
                          "Folder \"%1\" on the volume with the id \"%2\"",
@@ -437,12 +461,15 @@ SolidVolumeInfo CollectionManager::Private::findVolumeForUrl(const QUrl& fileUrl
                                                              const QList<SolidVolumeInfo> volumes)
 {
     SolidVolumeInfo volume;
+
     // v.path is specified to have a trailing slash. path needs one as well.
+
     QString path    = fileUrl.toLocalFile() + QLatin1Char('/');
     int volumeMatch = 0;
 
     //FIXME: Network shares! Here we get only the volume of the mount path...
     // This is probably not really clean. But Solid does not help us.
+
     foreach (const SolidVolumeInfo& v, volumes)
     {
         if (v.isMounted && !v.path.isEmpty() && path.startsWith(v.path))
@@ -478,6 +505,7 @@ bool CollectionManager::Private::checkIfExists(const QString& filePath, QList<Co
         //qCDebug(DIGIKAM_DATABASE_LOG) << filePathUrl << locationPathUrl;
         // make sure filePathUrl is neither a child nor a parent
         // of an existing collection
+
         if (!locationPathUrl.isEmpty() &&
             (filePathUrl.isParentOf(locationPathUrl) ||
              locationPathUrl.isParentOf(filePathUrl)))

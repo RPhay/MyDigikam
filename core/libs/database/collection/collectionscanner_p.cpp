@@ -34,6 +34,7 @@ bool s_modificationDateEquals(const QDateTime& a, const QDateTime& b)
     {
         // allow a "modify window" of one second.
         // FAT filesystems store the modify date in 2-second resolution.
+
         int diff = a.secsTo(b);
 
         if (abs(diff) > 1)
@@ -60,8 +61,10 @@ NewlyAppearedFile::NewlyAppearedFile(int albumId, const QString& fileName)
 
 bool NewlyAppearedFile::operator==(const NewlyAppearedFile& other) const
 {
-    return (albumId  == other.albumId) &&
-           (fileName == other.fileName);
+    return (
+            (albumId  == other.albumId) &&
+            (fileName == other.fileName)
+           );
 }
 
 // --------------------------------------------------------------------
@@ -70,39 +73,46 @@ bool CollectionScannerHintContainerImplementation::hasAnyNormalHint(qlonglong id
 {
     QReadLocker locker(&lock);
 
-    return modifiedItemHints.contains(id)          ||
-           rescanItemHints.contains(id)            ||
-           metadataAboutToAdjustHints.contains(id) ||
-           metadataAdjustedHints.contains(id);
+    return (
+            modifiedItemHints.contains(id)          ||
+            rescanItemHints.contains(id)            ||
+            metadataAboutToAdjustHints.contains(id) ||
+            metadataAdjustedHints.contains(id)
+           );
 }
 
 bool CollectionScannerHintContainerImplementation::hasAlbumHints()
 {
     QReadLocker locker(&lock);
+
     return !albumHints.isEmpty();
 }
 
 bool CollectionScannerHintContainerImplementation::hasModificationHint(qlonglong id)
 {
     QReadLocker locker(&lock);
+
     return modifiedItemHints.contains(id);
 }
 
 bool CollectionScannerHintContainerImplementation::hasRescanHint(qlonglong id)
 {
     QReadLocker locker(&lock);
+
     return rescanItemHints.contains(id);
 }
 
 bool CollectionScannerHintContainerImplementation::hasMetadataAboutToAdjustHint(qlonglong id)
 {
     QReadLocker locker(&lock);
+
     return metadataAboutToAdjustHints.contains(id);
 }
 
 bool CollectionScannerHintContainerImplementation::hasMetadataAdjustedHint(qlonglong id)
 {
     QReadLocker locker(&lock);
+
     return metadataAdjustedHints.contains(id);
 }
 
@@ -113,6 +123,7 @@ void CollectionScannerHintContainerImplementation::recordHints(const QList<Album
     foreach (const AlbumCopyMoveHint& hint, hints)
     {
         // automagic casting to src and dst
+
         albumHints[hint] = hint;
     }
 }
@@ -162,12 +173,13 @@ void CollectionScannerHintContainerImplementation::recordHint(const ItemMetadata
         ItemInfo info(hint.id());
 
         if (!
-            (s_modificationDateEquals(hint.modificationDate(), info.modDateTime())
-             && hint.fileSize() == info.fileSize())
+            (s_modificationDateEquals(hint.modificationDate(), info.modDateTime()) &&
+             (hint.fileSize() == info.fileSize()))
            )
         {
             // refuse to create a hint as a rescan is required already before any metadata edit
             // or, in case of multiple edits, there is already a hint with an older date, then all is fine.
+
             return;
         }
 
@@ -246,6 +258,7 @@ bool CollectionScanner::Private::checkDeferred(const QFileInfo& info)
     if (deferredFileScanning)
     {
         deferredAlbumPaths << info.path();
+
         return true;
     }
 
@@ -254,7 +267,9 @@ bool CollectionScanner::Private::checkDeferred(const QFileInfo& info)
 
 void CollectionScanner::Private::finishScanner(ItemScanner& scanner)
 {
-    // Perform the actual write operation to the database
+    /**
+     * Perform the actual write operation to the database
+     */
     {
         CoreDbOperationGroup group;
         scanner.commit();

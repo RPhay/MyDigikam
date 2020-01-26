@@ -57,6 +57,7 @@ CollectionScannerHintContainer* CollectionScanner::createHintContainer()
 void CollectionScanner::setHintContainer(CollectionScannerHintContainer* const container)
 {
     // the API specs require the object given here to be created by createContainer, so we can cast.
+
     d->hints = static_cast<CollectionScannerHintContainerImplementation*>(container);
 }
 

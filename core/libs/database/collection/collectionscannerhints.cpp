@@ -45,12 +45,12 @@ CollectionScannerHints::Album::Album(int albumRootId, int albumId)
 
 bool CollectionScannerHints::Album::isNull() const
 {
-    return (albumRootId == 0 || albumId == 0);
+    return ((albumRootId == 0) || (albumId == 0));
 }
 
 bool CollectionScannerHints::Album::operator==(const Album& other) const
 {
-    return (albumRootId == other.albumRootId || albumId == other.albumId);
+    return ((albumRootId == other.albumRootId) || (albumId == other.albumId));
 }
 
 uint CollectionScannerHints::Album::qHash() const
@@ -71,12 +71,12 @@ CollectionScannerHints::DstPath::DstPath(int albumRootId, const QString& relativ
 
 bool CollectionScannerHints::DstPath::isNull() const
 {
-    return (albumRootId == 0 || relativePath.isNull());
+    return ((albumRootId == 0) || relativePath.isNull());
 }
 
 bool CollectionScannerHints::DstPath::operator==(const DstPath& other) const
 {
-    return (albumRootId == other.albumRootId || relativePath == other.relativePath);
+    return ((albumRootId == other.albumRootId) || (relativePath == other.relativePath));
 }
 
 uint CollectionScannerHints::DstPath::qHash() const
@@ -134,7 +134,7 @@ int AlbumCopyMoveHint::albumIdSrc() const
 
 bool AlbumCopyMoveHint::isSrcAlbum(int albumRootId, int albumId) const
 {
-    return m_src.albumRootId == albumRootId && m_src.albumId == albumId;
+    return ((m_src.albumRootId == albumRootId) && (m_src.albumId == albumId));
 }
 
 int AlbumCopyMoveHint::albumRootIdDst() const
@@ -149,7 +149,7 @@ QString AlbumCopyMoveHint::relativePathDst() const
 
 bool AlbumCopyMoveHint::isDstAlbum(int albumRootId, const QString& relativePath) const
 {
-    return m_dst.albumRootId == albumRootId && m_dst.relativePath == relativePath;
+    return ((m_dst.albumRootId == albumRootId) && (m_dst.relativePath == relativePath));
 }
 
 uint AlbumCopyMoveHint::qHash() const
@@ -165,6 +165,7 @@ AlbumCopyMoveHint& AlbumCopyMoveHint::operator<<(const QDBusArgument& argument)
     argument >> m_src.albumRootId >> m_src.albumId
              >> m_dst.albumRootId >> m_dst.relativePath;
     argument.endStructure();
+
     return *this;
 }
 
@@ -174,6 +175,7 @@ const AlbumCopyMoveHint& AlbumCopyMoveHint::operator>>(QDBusArgument& argument) 
     argument << m_src.albumRootId << m_src.albumId
              << m_dst.albumRootId << m_dst.relativePath;
     argument.endStructure();
+
     return *this;
 }
 #endif
@@ -213,7 +215,7 @@ int ItemCopyMoveHint::albumIdDst() const
 
 bool ItemCopyMoveHint::isDstAlbum(int albumRootId, int albumId) const
 {
-    return (m_dst.albumRootId == albumRootId && m_dst.albumId == albumId);
+    return ((m_dst.albumRootId == albumRootId) && (m_dst.albumId == albumId));
 }
 
 QStringList ItemCopyMoveHint::dstNames() const
@@ -229,6 +231,7 @@ QString ItemCopyMoveHint::dstName(qlonglong id) const
     }
 
     int index = m_srcIds.indexOf(id);
+
     return m_dstNames.at(index);
 }
 
@@ -240,6 +243,7 @@ ItemCopyMoveHint& ItemCopyMoveHint::operator<<(const QDBusArgument& argument)
              >> m_dst.albumRootId >> m_dst.albumId
              >> m_dstNames;
     argument.endStructure();
+
     return *this;
 }
 
@@ -250,6 +254,7 @@ const ItemCopyMoveHint& ItemCopyMoveHint::operator>>(QDBusArgument& argument) co
              << m_dst.albumRootId << m_dst.albumId
              << m_dstNames;
     argument.endStructure();
+
     return *this;
 }
 #endif
@@ -291,6 +296,7 @@ ItemChangeHint& ItemChangeHint::operator<<(const QDBusArgument& argument)
              >> type;
     argument.endStructure();
     m_type = (ChangeType)type;
+
     return *this;
 }
 
@@ -300,6 +306,7 @@ const ItemChangeHint& ItemChangeHint::operator>>(QDBusArgument& argument) const
     argument << m_ids
              << (int)m_type;
     argument.endStructure();
+
     return *this;
 }
 #endif
@@ -352,6 +359,7 @@ ItemMetadataAdjustmentHint& ItemMetadataAdjustmentHint::operator<<(const QDBusAr
              >> m_modificationDate
              >> m_fileSize;
     argument.endStructure();
+
     return *this;
 }
 
@@ -363,6 +371,7 @@ const ItemMetadataAdjustmentHint& ItemMetadataAdjustmentHint::operator>>(QDBusAr
              << m_modificationDate
              << m_fileSize;
     argument.endStructure();
+
     return *this;
 }
 #endif

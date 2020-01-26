@@ -106,8 +106,8 @@ class Q_DECL_HIDDEN CollectionScannerHintContainerImplementation : public Collec
 public:
 
     virtual void recordHints(const QList<AlbumCopyMoveHint>& hints) override;
-    virtual void recordHints(const QList<ItemCopyMoveHint>& hints) override;
-    virtual void recordHints(const QList<ItemChangeHint>& hints) override;
+    virtual void recordHints(const QList<ItemCopyMoveHint>& hints)  override;
+    virtual void recordHints(const QList<ItemChangeHint>& hints)    override;
     virtual void recordHint(const ItemMetadataAdjustmentHint& hint) override;
 
     virtual void clear() override;

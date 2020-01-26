@@ -91,7 +91,7 @@ public:
         m_type       = (Type)info.type;
         QString path = info.specificPath;
 
-        if (path != QLatin1String("/") &&
+        if ((path != QLatin1String("/")) &&
             path.endsWith(QLatin1Char('/')))
         {
             path.chop(1);
@@ -132,7 +132,8 @@ public:
         // status is exclusive, and Hidden wins
         // but really both states are independent
         // - a hidden location might or might not be available
-        if (m_status == CollectionLocation::LocationAvailable)
+
+        if      (m_status == CollectionLocation::LocationAvailable)
         {
             available = true;
             hidden    = false;
@@ -216,7 +217,7 @@ public:
 
     explicit Private(CollectionManager* const s);
 
-    // hack for Solid's threading problems
+    /// hack for Solid's threading problems
     QList<SolidVolumeInfo> actuallyListVolumes();
     void                   slotTriggerUpdateVolumesList();
     QList<SolidVolumeInfo> volumesListCache;
