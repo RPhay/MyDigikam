@@ -20,6 +20,7 @@ if(MSVC)
                     # DNG SDK
                     -DqWinOS=1
                     -DqMacOS=0
+                    -DqDNGThreadSafe=0
                     )
 else()
     add_definitions(
@@ -29,6 +30,7 @@ else()
                     # DNG SDK
                     -DqWinOS=0
                     -DqMacOS=0
+                    -DqDNGThreadSafe=1   # Thread safe support under Mac and Linux using pthread library
                     -DqDNGUseStdInt=1
                    )
 endif()
@@ -41,13 +43,7 @@ if(NOT IS_BIG_ENDIAN)
     add_definitions(-DqDNGLittleEndian)
 endif()
 
-# Thread safe support under Mac and Linux using pthread library
-
-if(NOT MSVC)
-    add_definitions(-DqDNGThreadSafe)
-endif()
-
-# Mode definition for console output.
+# Mode definition for CLI tool.
 
 add_definitions(-DqDNGValidateTarget)
 
