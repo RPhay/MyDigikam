@@ -44,7 +44,7 @@
 #include <QReadLocker>
 #include <QStringList>
 #include <QSet>
-#include <QTime>
+#include <QElapsedTimer>
 
 // Local includes
 

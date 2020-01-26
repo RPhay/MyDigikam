@@ -30,7 +30,7 @@
 // Qt includes
 
 #include <QImageReader>
-#include <QTime>
+#include <QElapsedTimer>
 
 // KDE includes
 
@@ -154,7 +154,7 @@ public:
 
     ItemScannerCommit      commit;
 
-    QTime                  time;
+    QElapsedTimer          timer;
 };
 
 } // namespace Digikam

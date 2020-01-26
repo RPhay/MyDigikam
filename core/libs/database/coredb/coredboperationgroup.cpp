@@ -25,7 +25,7 @@
 
 // Qt includes
 
-#include <QTime>
+#include <QElapsedTimer>
 
 // Local includes
 
@@ -52,7 +52,7 @@ public:
 
     CoreDbAccess* access;
     bool          acquired;
-    QTime         timeAcquired;
+    QElapsedTimer timeAcquired;
     int           maxTime;
 
 public:

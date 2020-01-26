@@ -26,10 +26,10 @@
 // Qt includes
 
 #include <QFile>
-#include <QTime>
 #include <QVariant>
 #include <QByteArray>
 #include <QTextStream>
+#include <QElapsedTimer>
 #include <QDataStream>
 #include <qplatformdefs.h>
 
@@ -142,8 +142,8 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
 
     // --- use standard HEVC encoder
 
-    QTime time;
-    time.start();
+    QElapsedTimer timer;
+    timer.start();
     qDebug() << "HEVC encoder setup...";
 
     struct heif_context* const ctx = heif_context_alloc();
@@ -428,7 +428,7 @@ bool DImgHEIFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     // --- write HEIF file
 
     qDebug() << "HEIF flush to file...";
-    qDebug() << "HEIF encoding took:" << time.elapsed() << "ms";
+    qDebug() << "HEIF encoding took:" << timer.elapsed() << "ms";
 
     error = heif_context_write_to_file(ctx, QFile::encodeName(filePath).constData());
 

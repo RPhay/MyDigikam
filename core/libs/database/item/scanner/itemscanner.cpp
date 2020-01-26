@@ -57,7 +57,7 @@ ItemScanner::ItemScanner(qlonglong imageid)
 
 ItemScanner::~ItemScanner()
 {
-    qCDebug(DIGIKAM_DATABASE_LOG) << "Finishing took" << d->time.elapsed() << "ms";
+    qCDebug(DIGIKAM_DATABASE_LOG) << "Finishing took" << d->timer.elapsed() << "ms";
     delete d;
 }
 

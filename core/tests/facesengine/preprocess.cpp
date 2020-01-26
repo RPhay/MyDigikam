@@ -27,7 +27,7 @@
 #include <QDir>
 #include <QLabel>
 #include <QImage>
-#include <QTime>
+#include <QElapsedTimer>
 #include <QDebug>
 
 // Local includes
@@ -145,8 +145,8 @@ int main(int argc, char** argv)
     QStringList paths     = toPaths(argv, 1, argc);
     QList<cv::Mat> images = toImages(paths);
 
-    QTime time;
-    time.start();
+    QElapsedTimer timer;
+    timer.start();
 
     TanTriggsPreprocessor preprocessor;
     OpenCVSideBySideDisplay display(images.size());
@@ -158,7 +158,7 @@ int main(int argc, char** argv)
         display.add(image, processed);
     }
 
-    int elapsed = time.elapsed();
+    int elapsed = timer.elapsed();
     qDebug() << "Preprocessing took " << elapsed << " for " << images.size() << " , "
              << ((float)elapsed/images.size()) << " per image";
 

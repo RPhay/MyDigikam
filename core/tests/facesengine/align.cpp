@@ -26,7 +26,7 @@
 #include <QApplication>
 #include <QDir>
 #include <QImage>
-#include <QTime>
+#include <QElapsedTimer>
 #include <QDebug>
 #include <QLabel>
 #include <QGraphicsScene>
@@ -137,11 +137,11 @@ int main(int argc, char** argv)
     QStringList paths     = toPaths(argv, 1, argc);
     QList<cv::Mat> images = toImages(paths);
 
-    QTime time;
-    time.start();
+    QElapsedTimer timer;
+    timer.start();
 
     FunnelReal funnel;
-    qDebug() << "Setup of Aligner took " << time.restart();
+    qDebug() << "Setup of Aligner took " << timer.restart();
 
     OpenCVSideBySideDisplay display(images.size());
 
@@ -151,7 +151,7 @@ int main(int argc, char** argv)
         display.add(image, aligned);
     }
 
-    int elapsed = time.elapsed();
+    int elapsed = timer.elapsed();
     qDebug() << "Alignment took " << elapsed << " for " << images.size() << " , "
              << ((float)elapsed/images.size()) << " per image";
 

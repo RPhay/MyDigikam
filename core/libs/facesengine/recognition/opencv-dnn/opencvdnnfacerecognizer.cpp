@@ -26,7 +26,7 @@
 
 // Qt includes
 
-#include <QTime>
+#include <QElapsedTimer>
 
 // Local includes
 
@@ -199,7 +199,7 @@ void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images,
 
     cvflann::KMeansIndexParams indexParams;
 
-    QTime timer;
+    QElapsedTimer timer;
     timer.start();
     cv::flann::GenericIndex<cvflann::L2<float>> flannIndex(faceEmbeddings, indexParams);
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "time to build flann index " << timer.elapsed() << " ms";
@@ -286,7 +286,7 @@ void OpenCVDNNFaceRecognizer::cluster(const std::vector<cv::Mat>& images,
     }
 
     DNNDbscan dbscan(m_threshold, 3, faceEmbeddings);
-    QTime timer;
+    QElapsedTimer timer;
     timer.start();
     dbscan.run();
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "time to run dbscan " << timer.elapsed() << " ms";

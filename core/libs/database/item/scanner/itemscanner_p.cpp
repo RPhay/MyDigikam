@@ -123,7 +123,7 @@ ItemScanner::Private::Private()
       scanMode(ModifiedScan),
       hasHistoryToResolve(false)
 {
-    time.start();
+    timer.start();
 }
 
 } // namespace Digikam

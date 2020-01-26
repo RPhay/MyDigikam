@@ -30,8 +30,8 @@ namespace Digikam
 
 void CollectionScanner::completeScan()
 {
-    QTime time;
-    time.start();
+    QElapsedTimer timer;
+    timer.start();
 
     emit startCompleteScan();
 
@@ -98,7 +98,7 @@ void CollectionScanner::completeScan()
 
     if (d->deferredFileScanning)
     {
-        qCDebug(DIGIKAM_DATABASE_LOG) << "Complete scan (file scanning deferred) took:" << time.elapsed() << "msecs.";
+        qCDebug(DIGIKAM_DATABASE_LOG) << "Complete scan (file scanning deferred) took:" << timer.elapsed() << "msecs.";
         emit finishedCompleteScan();
         return;
     }
@@ -106,7 +106,7 @@ void CollectionScanner::completeScan()
     CoreDbTransaction transaction;
     completeScanCleanupPart();
 
-    qCDebug(DIGIKAM_DATABASE_LOG) << "Complete scan took:" << time.elapsed() << "msecs.";
+    qCDebug(DIGIKAM_DATABASE_LOG) << "Complete scan took:" << timer.elapsed() << "msecs.";
 }
 
 void CollectionScanner::finishCompleteScan(const QStringList& albumPaths)

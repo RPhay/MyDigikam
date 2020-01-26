@@ -28,6 +28,7 @@
 
 #include <QTime>
 #include <QTimer>
+#include <QElapsedTimer>
 #include <QApplication>
 
 // KDE includes
@@ -52,8 +53,8 @@ public:
     {
     }
 
-    bool  notification;
-    QTime duration;
+    bool          notification;
+    QElapsedTimer duration;
 };
 
 MaintenanceTool::MaintenanceTool(const QString& id, ProgressItem* const parent)

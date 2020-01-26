@@ -31,7 +31,7 @@
 #include <QPixmap>
 #include <QWidget>
 #include <QDebug>
-#include <QTime>
+#include <QElapsedTimer>
 #include <QRectF>
 #include <QList>
 #include <QScrollArea>
@@ -53,12 +53,12 @@ void detectFaces(const QString& imagePath)
     FaceDetector detector;
     qDebug() << "Detecting faces";
 
-    QTime time;
+    QElapsedTimer timer;
     unsigned int elapsedDetection = 0;
 
-    time.start();
+    timer.start();
     QList<QRectF> faces = detector.detectFaces(imagePath);
-    elapsedDetection = time.elapsed();
+    elapsedDetection = timer.elapsed();
 
     qDebug() << "(Input CV) Found " << faces.size() << " faces, in " << elapsedDetection << "ms";
 

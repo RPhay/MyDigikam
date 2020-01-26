@@ -34,7 +34,7 @@ qlonglong ItemScanner::id() const
 
 void ItemScanner::commit()
 {
-    qCDebug(DIGIKAM_DATABASE_LOG) << "Scanning took" << d->time.restart() << "ms";
+    qCDebug(DIGIKAM_DATABASE_LOG) << "Scanning took" << d->timer.restart() << "ms";
 
     switch (d->commit.operation)
     {

@@ -34,7 +34,7 @@
 #include <QApplication>
 #include <QDir>
 #include <QImage>
-#include <QTime>
+#include <QElapsedTimer>
 #include <QDebug>
 #include <QCommandLineParser>
 #include <QRectF>
@@ -326,7 +326,7 @@ int main(int argc, char* argv[])
         totalTrained        += images.size();
     }
 
-    elapsedTraining = time.restart();
+    elapsedTraining = timer.restart();
 
     for (QMap<unsigned, QStringList>::const_iterator it = testset.constBegin() ;
          it != testset.constEnd() ; ++it)
@@ -382,12 +382,12 @@ int main(int argc, char* argv[])
 
             // Start timing for benchmark face detection
 
-            QTime time;
-            time.start();
+            QElapsedTimer timer;
+            timer.start();
 
             QList<QRectF> detectedBoundingBox = processFaceDetection(imagePath, detector);
 
-            detectingTime += time.elapsed();
+            detectingTime += timer.elapsed();
 
             if (detectedBoundingBox.size())
             {
@@ -405,12 +405,12 @@ int main(int argc, char* argv[])
 
         // Start timing for benchmark training
 
-        QTime time;
-        time.start();
+        QElapsedTimer timer;
+        timer.start();
 
         db.train(identity, faces, trainingContext);
 
-        elapsedTraining += time.elapsed();
+        elapsedTraining += timer.elapsed();
     }
 
     for (QMap<unsigned, QStringList>::const_iterator it = testset.constBegin() ;
@@ -429,11 +429,11 @@ int main(int argc, char* argv[])
 
             // Start timing for benchmark face detection
 
-            QTime time;
-            time.start();
+            QElapsedTimer timer;
+            timer.start();
 
             QList<QRectF> detectedBoundingBox = processFaceDetection(imagePath, detector);
-            detectingTime                    += time.elapsed();
+            detectingTime                    += timer.elapsed();
 
             if (detectedBoundingBox.size())
             {
@@ -453,11 +453,11 @@ int main(int argc, char* argv[])
 
         // Start timing for benchmark testing
 
-        QTime time;
-        time.start();
+        QElapsedTimer timer;
+        timer.start();
 
         QList<Identity> results = db.recognizeFaces(faces);
-        elapsedTesting         += time.elapsed();
+        elapsedTesting         += timer.elapsed();
 
         // qDebug() << "Result for " << it.value().first() << " is identity " << results.first().id();
 

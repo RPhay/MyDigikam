@@ -25,7 +25,7 @@
 
 // Qt includes
 
-#include <QTime>
+#include <QElapsedTimer>
 
 // Local includes
 
@@ -50,7 +50,7 @@ public:
 
     FaceDbAccess* dbAccess;
     bool          acquired;
-    QTime         timeAcquired;
+    QElapsedTimer timeAcquired;
     int           maxTime;
 
 public:

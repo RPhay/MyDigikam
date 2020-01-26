@@ -27,7 +27,7 @@
 // Qt includes
 
 #include <QString>
-#include <QTime>
+#include <QElapsedTimer>
 #include <QApplication>
 
 // KDE includes
@@ -72,7 +72,7 @@ public:
 
     bool                   running;
 
-    QTime                  duration;
+    QElapsedTimer          duration;
 
     MaintenanceSettings    settings;
 

@@ -36,6 +36,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QTimer>
+#include <QElapsedTimer>
 
 // KDE includes
 
@@ -279,8 +280,8 @@ void FindDuplicatesView::populateTreeView()
         return;
     }
 
-    QTime waitCursorTime;
-    waitCursorTime.start();
+    QElapsedTimer waitCursorTimer;
+    waitCursorTimer.start();
 
     bool waitCursor = false;
 
@@ -296,7 +297,7 @@ void FindDuplicatesView::populateTreeView()
             salbum->setExtraData(this, item);
         }
 
-        if (!waitCursor && waitCursorTime.elapsed() > 2000)
+        if (!waitCursor && waitCursorTimer.elapsed() > 2000)
         {
             QApplication::setOverrideCursor(Qt::WaitCursor);
             waitCursor = true;

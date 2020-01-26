@@ -30,7 +30,7 @@
 #include <QFile>
 #include <QDataStream>
 #include <QStandardPaths>
-#include <QTime>
+#include <QElapsedTimer>
 
 // Local includes
 
@@ -73,7 +73,7 @@ void DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage, std::vector<fl
     qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage channels: " << faceImage.channels();
     qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage size: (" << faceImage.rows << ", " << faceImage.cols << ")\n";
 
-    QTime timer;
+    QElapsedTimer timer;
     timer.start();
 /*
     cv::Mat alignedFace = faceImage;
