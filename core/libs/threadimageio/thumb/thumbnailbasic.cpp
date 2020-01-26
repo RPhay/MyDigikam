@@ -41,7 +41,9 @@
 
 extern "C"
 {
-#include <unistd.h>
+#ifndef Q_CC_MSVC
+#   include <unistd.h>
+#endif
 #include <sys/stat.h>
 #include <sys/types.h>
 

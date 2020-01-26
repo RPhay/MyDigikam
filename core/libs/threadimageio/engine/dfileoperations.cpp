@@ -29,7 +29,12 @@
 
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <utime.h>
+
+#ifndef Q_CC_MSVC
+#   include <utime.h>
+#else
+#   include <sys/utime.h>
+#endif
 
 // Qt includes
 
