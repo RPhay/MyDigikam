@@ -142,7 +142,7 @@ void CurvesSettings::setScale(HistogramScale type)
 
 void CurvesSettings::slotSpotColorChanged(const DColor& color)
 {
-    DColor sc = color;
+    int maxColor = qMax(qMax(color.red(), color.green()), color.blue());
 
     switch (d->curvesBox->picker())
     {
@@ -150,11 +150,11 @@ void CurvesSettings::slotSpotColorChanged(const DColor& color)
         {
             // Black tonal curves point.
 
-            d->curvesBox->curves()->setCurvePoint(LuminosityChannel, 1,
-                                                  QPoint(qMax(qMax(sc.red(), sc.green()), sc.blue()), 42 * d->histoSegments / 256));
-            d->curvesBox->curves()->setCurvePoint(RedChannel, 1, QPoint(sc.red(), 42 * d->histoSegments / 256));
-            d->curvesBox->curves()->setCurvePoint(GreenChannel, 1, QPoint(sc.green(), 42 * d->histoSegments / 256));
-            d->curvesBox->curves()->setCurvePoint(BlueChannel, 1, QPoint(sc.blue(), 42 * d->histoSegments / 256));
+            int segment = 42 * d->histoSegments / 256;
+            d->curvesBox->curves()->setCurvePoint(LuminosityChannel,  1, QPoint(maxColor,      segment));
+            d->curvesBox->curves()->setCurvePoint(RedChannel,         1, QPoint(color.red(),   segment));
+            d->curvesBox->curves()->setCurvePoint(GreenChannel,       1, QPoint(color.green(), segment));
+            d->curvesBox->curves()->setCurvePoint(BlueChannel,        1, QPoint(color.blue(),  segment));
             d->curvesBox->resetPickers();
             break;
         }
@@ -163,11 +163,11 @@ void CurvesSettings::slotSpotColorChanged(const DColor& color)
         {
             // Gray tonal curves point.
 
-            d->curvesBox->curves()->setCurvePoint(LuminosityChannel, 8,
-                                                  QPoint(qMax(qMax(sc.red(), sc.green()), sc.blue()), 128 * d->histoSegments / 256));
-            d->curvesBox->curves()->setCurvePoint(RedChannel, 8, QPoint(sc.red(), 128 * d->histoSegments / 256));
-            d->curvesBox->curves()->setCurvePoint(GreenChannel, 8, QPoint(sc.green(), 128 * d->histoSegments / 256));
-            d->curvesBox->curves()->setCurvePoint(BlueChannel, 8, QPoint(sc.blue(), 128 * d->histoSegments / 256));
+            int segment = 128 * d->histoSegments / 256;
+            d->curvesBox->curves()->setCurvePoint(LuminosityChannel,  8, QPoint(maxColor,      segment));
+            d->curvesBox->curves()->setCurvePoint(RedChannel,         8, QPoint(color.red(),   segment));
+            d->curvesBox->curves()->setCurvePoint(GreenChannel,       8, QPoint(color.green(), segment));
+            d->curvesBox->curves()->setCurvePoint(BlueChannel,        8, QPoint(color.blue(),  segment));
             d->curvesBox->resetPickers();
             break;
         }
@@ -176,11 +176,11 @@ void CurvesSettings::slotSpotColorChanged(const DColor& color)
         {
             // White tonal curves point.
 
-            d->curvesBox->curves()->setCurvePoint(LuminosityChannel, 15,
-                                                  QPoint(qMax(qMax(sc.red(), sc.green()), sc.blue()), 213 * d->histoSegments / 256));
-            d->curvesBox->curves()->setCurvePoint(RedChannel, 15, QPoint(sc.red(), 213 * d->histoSegments / 256));
-            d->curvesBox->curves()->setCurvePoint(GreenChannel, 15, QPoint(sc.green(), 213 * d->histoSegments / 256));
-            d->curvesBox->curves()->setCurvePoint(BlueChannel, 15, QPoint(sc.blue(), 213 * d->histoSegments / 256));
+            int segment = 213 * d->histoSegments / 256;
+            d->curvesBox->curves()->setCurvePoint(LuminosityChannel, 15, QPoint(maxColor,      segment));
+            d->curvesBox->curves()->setCurvePoint(RedChannel,        15, QPoint(color.red(),   segment));
+            d->curvesBox->curves()->setCurvePoint(GreenChannel,      15, QPoint(color.green(), segment));
+            d->curvesBox->curves()->setCurvePoint(BlueChannel,       15, QPoint(color.blue(),  segment));
             d->curvesBox->resetPickers();
             break;
         }
