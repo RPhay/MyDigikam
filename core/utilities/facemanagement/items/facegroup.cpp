@@ -174,8 +174,9 @@ void FaceGroup::aboutToSetInfoAfterRotate(const ItemInfo& info)
     {
         return;
     }
-
-    //applyItemGeometryChanges();
+/*
+    applyItemGeometryChanges();
+*/
     clear();
 }
 
@@ -183,7 +184,7 @@ static QPointF closestPointOfRect(const QPointF& p, const QRectF& r)
 {
     QPointF cp = p;
 
-    if (p.x() < r.left())
+    if      (p.x() < r.left())
     {
         cp.setX(r.left());
     }
@@ -192,7 +193,7 @@ static QPointF closestPointOfRect(const QPointF& p, const QRectF& r)
         cp.setX(r.right());
     }
 
-    if (p.y() < r.top())
+    if      (p.y() < r.top())
     {
         cp.setY(r.top());
     }
@@ -217,7 +218,7 @@ RegionFrameItem* FaceGroup::closestItem(const QPointF& p, qreal* const manhattan
 
         if (!closestItem             ||
             (distance < minDistance) ||
-            (distance == 0 && (p - r.center()).manhattanLength() < minCenterDistance))
+            ((distance == 0) && (p - r.center()).manhattanLength() < minCenterDistance))
         {
             closestItem = item;
             minDistance = distance;
@@ -314,6 +315,7 @@ void FaceGroup::load()
     if (d->info.isNull())
     {
         d->state = FacesLoaded;
+
         return;
     }
 
@@ -385,7 +387,7 @@ void FaceGroup::slotAlbumsUpdated(int type)
 
 void FaceGroup::slotAlbumRenamed(Album* album)
 {
-    if (!album || album->type() != Album::TAG)
+    if (!album || (album->type() != Album::TAG))
     {
         return;
     }
@@ -393,7 +395,7 @@ void FaceGroup::slotAlbumRenamed(Album* album)
     foreach (FaceItem* const item, d->items)
     {
         if (!item->face().isNull() &&
-             item->face().tagId() == album->id())
+            (item->face().tagId() == album->id()))
         {
             item->updateCurrentTag();
         }
@@ -418,7 +420,7 @@ void FaceGroup::slotAssigned(const TaggingAction& action, const ItemInfo&, const
     {
         int tagId = 0;
 
-        if (action.shallAssignTag())
+        if      (action.shallAssignTag())
         {
             tagId = action.tagId();
         }
@@ -601,7 +603,9 @@ void ItemPreviewView::trainFaces()
     foreach (Face f, d->currentFaces)
     {
         if (f.name() != "" && !d->faceIface->isFaceTrained(getItemInfo().id(), f.toRect(), f.name()))
+        {
             trainList += f;
+        }
     }
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Number of training faces" << trainList.size();
@@ -627,10 +631,15 @@ void ItemPreviewView::suggestFaces()
             d->faceIface->markFaceAsRecognized(getItemInfo().id(), f.toRect(), f.name());
 
             // If the face wasn't recognized (too distant) don't suggest anything
+
             if (f.name().isEmpty())
+            {
                 continue;
+            }
             else
+            {
                 recogList += f;
+            }
         }
     }
 

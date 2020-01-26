@@ -79,7 +79,7 @@ void DetectionWorker::setAccuracy(double accuracy)
 {
     QVariantMap params;
     params[QLatin1String("accuracy")]    = accuracy;
-    params[QLatin1String("specificity")] = 0.8; // TODO: add UI for sensitivity - specificity
+    params[QLatin1String("specificity")] = 0.8;     // TODO: add UI for sensitivity - specificity
     detector.setParameters(params);
 }
 

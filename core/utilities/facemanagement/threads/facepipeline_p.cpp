@@ -74,7 +74,7 @@ void FacePipeline::Private::processBatch(const QList<ItemInfo>& infos)
     }
 }
 
-// called by filter
+/// called by filter
 void FacePipeline::Private::sendFromFilter(const QList<FacePipelineExtendedPackage::Ptr>& packages)
 {
     infosForFiltering -= packages.size();
@@ -85,7 +85,7 @@ void FacePipeline::Private::sendFromFilter(const QList<FacePipelineExtendedPacka
     }
 }
 
-// called by filter
+/// called by filter
 void FacePipeline::Private::skipFromFilter(const QList<ItemInfo>& infosForSkipping)
 {
     infosForFiltering -= infosForSkipping.size();
@@ -93,6 +93,7 @@ void FacePipeline::Private::skipFromFilter(const QList<ItemInfo>& infosForSkippi
     emit q->skipped(infosForSkipping);
 
     // everything skipped?
+
     checkFinished();
 }
 
@@ -175,6 +176,7 @@ bool FacePipeline::Private::senderFlowControl(FacePipelineExtendedPackage::Ptr p
     if (packagesOnTheRoad > maxPackagesOnTheRoad)
     {
         delayedPackages << package;
+
         return false;
     }
 
@@ -204,7 +206,9 @@ void FacePipeline::Private::checkFinished()
     {
         totalPackagesAdded = 0;
         emit q->finished();
+
         // stop threads
+
         stop();
     }
 }
@@ -223,7 +227,7 @@ void FacePipeline::Private::start()
 
     foreach (QObject* const element, pipeline)
     {
-        if ((workerObject = qobject_cast<WorkerObject*>(element)))
+        if      ((workerObject = qobject_cast<WorkerObject*>(element)))
         {
             workerObject->schedule();
         }
@@ -260,7 +264,7 @@ void FacePipeline::Private::stop()
 
     foreach (QObject* const element, pipeline)
     {
-        if ((workerObject = qobject_cast<WorkerObject*>(element)))
+        if      ((workerObject = qobject_cast<WorkerObject*>(element)))
         {
             workerObject->deactivate();
         }
@@ -300,7 +304,7 @@ void FacePipeline::Private::wait()
 
     foreach (QObject* const element, pipeline)
     {
-        if ((workerObject = qobject_cast<WorkerObject*>(element)))
+        if      ((workerObject = qobject_cast<WorkerObject*>(element)))
         {
             workerObject->wait();
         }
@@ -324,7 +328,7 @@ void FacePipeline::Private::applyPriority()
 
     foreach (QObject* const element, pipeline)
     {
-        if ((workerObject = qobject_cast<WorkerObject*>(element)))
+        if      ((workerObject = qobject_cast<WorkerObject*>(element)))
         {
             workerObject->setPriority(priority);
         }
@@ -345,7 +349,9 @@ ThumbnailLoadThread* FacePipeline::Private::createThumbnailLoadThread()
     ThumbnailLoadThread* const thumbnailLoadThread = new ThumbnailLoadThread;
     thumbnailLoadThread->setPixmapRequested(false);
     thumbnailLoadThread->setThumbnailSize(ThumbnailLoadThread::maximumThumbnailSize());
+
     // Image::recommendedSizeForRecognition()
+
     thumbnailLoadThread->setPriority(priority);
 
     thumbnailLoadThreads << thumbnailLoadThread;

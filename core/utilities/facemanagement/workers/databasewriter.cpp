@@ -48,11 +48,13 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
     if (package->databaseFaces.isEmpty())
     {
         // Detection / Recognition
+
         FaceUtils utils;
 
         // OverwriteUnconfirmed means that a new scan discarded unconfirmed results of previous scans
         // (assuming at least equal or new, better methodology is in use compared to the previous scan)
-        if (mode == FacePipeline::OverwriteUnconfirmed && (package->processFlags & FacePipelinePackage::ProcessedByDetector))
+
+        if ((mode == FacePipeline::OverwriteUnconfirmed) && (package->processFlags & FacePipelinePackage::ProcessedByDetector))
         {
             QList<FaceTagsIface> oldEntries = utils.unconfirmedFaceTagsIfaces(package->info.id());
             qCDebug(DIGIKAM_GENERAL_LOG) << "Removing old entries" << oldEntries;
@@ -60,6 +62,7 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
         }
 
         // mark the whole image as scanned-for-faces
+
         utils.markAsScanned(package->info);
 
         if (!package->info.isNull() && !package->detectedFaces.isEmpty())
@@ -86,10 +89,12 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
             if (package->databaseFaces[i].roles & FacePipelineFaceTagsIface::ForRecognition)
             {
                 // Allow to overwrite existing recognition with new, possibly valid, "not recognized" status
+
                 int tagId = FaceTags::unknownPersonTagId();
 
                 // NOTE: See bug #338485 : check if index is not outside of container size.
-                if (i < package->recognitionResults.size() &&
+
+                if ((i < package->recognitionResults.size()) &&
                     !package->recognitionResults[i].isNull())
                 {
                     // Only perform this call if recognition as results, to prevent crash in QMap. See bug #335624
@@ -120,9 +125,10 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
             }
             else if (it->roles & FacePipelineFaceTagsIface::ForEditing)
             {
-                if (it->isNull())
+                if      (it->isNull())
                 {
                     // add Manually
+
                     FaceTagsIface newFace = utils.unconfirmedEntry(package->info.id(), it->assignedTagId, it->assignedRegion);
                     utils.addManually(newFace);
                     add << FacePipelineFaceTagsIface(newFace);
@@ -130,6 +136,7 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
                 else if (it->assignedRegion.isValid())
                 {
                     add << FacePipelineFaceTagsIface(utils.changeRegion(*it, it->assignedRegion));
+
                     // not implemented: changing tag id
                 }
                 else

@@ -65,7 +65,7 @@ FacePipelineExtendedPackage::Ptr ScanStateFilter::filter(const ItemInfo& info)
         {
             QList<FaceTagsIface> databaseFaces;
 
-            if (mode == FacePipeline::ReadUnconfirmedFaces)
+            if      (mode == FacePipeline::ReadUnconfirmedFaces)
             {
                 databaseFaces = utils.unconfirmedFaceTagsIfaces(info.id());
 
@@ -83,7 +83,9 @@ FacePipelineExtendedPackage::Ptr ScanStateFilter::filter(const ItemInfo& info)
             {
                 FacePipelineExtendedPackage::Ptr package = d->buildPackage(info);
                 package->databaseFaces                   = databaseFaces;
+
                 //qCDebug(DIGIKAM_GENERAL_LOG) << "Prepared package with" << databaseFaces.size();
+
                 package->databaseFaces.setRole(FacePipelineFaceTagsIface::ReadFromDatabase);
 
                 if (tasks)
@@ -105,7 +107,9 @@ void ScanStateFilter::process(const QList<ItemInfo>& infos)
 {
     QMutexLocker lock(threadMutex());
     toFilter << infos;
+
     //qCDebug(DIGIKAM_GENERAL_LOG) << "Received" << infos.size() << "images for filtering";
+
     start(lock);
 }
 
@@ -121,6 +125,7 @@ void ScanStateFilter::run()
     while (runningFlag())
     {
         // get todo list
+
         QList<ItemInfo> todo;
         {
             QMutexLocker lock(threadMutex());
@@ -137,6 +142,7 @@ void ScanStateFilter::run()
         }
 
         // process list
+
         if (!todo.isEmpty())
         {
             QList<FacePipelineExtendedPackage::Ptr> itemsToSend;
