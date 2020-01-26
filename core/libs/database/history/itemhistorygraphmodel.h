@@ -78,8 +78,8 @@ public:
     Mode mode()                                                                                       const;
 
     /**
-     *  Set the history subject and the history graph.
-     *  Per default, the subject's history graph is read.
+     * Set the history subject and the history graph.
+     * Per default, the subject's history graph is read.
      */
     void setHistory(const ItemInfo& subject, const ItemHistoryGraph& graph = ItemHistoryGraph());
 
@@ -96,7 +96,7 @@ public:
     FilterAction filterAction(const QModelIndex& index)                                               const;
 
     ///@{
-    // QAbstractItemModel implementation
+    /// QAbstractItemModel implementation
     virtual QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
     virtual int rowCount(const QModelIndex& parent = QModelIndex())                                   const override;
     virtual int columnCount(const QModelIndex& parent = QModelIndex())                                const override;

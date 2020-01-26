@@ -128,6 +128,7 @@ bool HistoryVertexProperties::operator==(const HistoryImageId& other) const
         if (ItemScanner::sameReferredImage(id, other))
         {
             //qCDebug(DIGIKAM_DATABASE_LOG) << id << "is the same as" << other;
+
             return true;
         }
     }
@@ -197,6 +198,7 @@ QDebug operator<<(QDebug dbg, const HistoryImageId& id)
     dbg.space() << id.m_fileSize;
     dbg.space() << id.m_originalUUID;
     dbg.nospace() << " } ";
+
     return dbg;
 }
 
@@ -237,11 +239,13 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const HistoryImageId& image
 
     Vertex v;
     QList<ItemInfo> infos;
+
     //qCDebug(DIGIKAM_DATABASE_LOG) << "Adding vertex" << imageId.m_uuid.left(6) << imageId.fileName();
 
     // find by HistoryImageId (most notably, by UUID)
 
     v = findVertexByProperties(imageId);
+
     //qCDebug(DIGIKAM_DATABASE_LOG) << "Found by properties:" << (v.isNull() ? -1 : int(v));
 
     if (v.isNull())
@@ -251,7 +255,9 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const HistoryImageId& image
         foreach (const qlonglong& id, ItemScanner::resolveHistoryImageId(imageId))
         {
             ItemInfo info(id);
+
             //qCDebug(DIGIKAM_DATABASE_LOG) << "Found info id:" << info.id();
+
             infos << info;
 
             v = findVertexByProperties(info);
@@ -259,6 +265,7 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const HistoryImageId& image
     }
 
     applyProperties(v, infos, QList<HistoryImageId>() << imageId);
+
     //qCDebug(DIGIKAM_DATABASE_LOG) << "Returning vertex" << v;
 
     return v;
@@ -298,6 +305,7 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const ItemInfo& info)
         {
             id = info.historyImageId();
             v  = findVertexByProperties(id);
+
             //qCDebug(DIGIKAM_DATABASE_LOG) << "Find by h-i-m" << ": found" << v.isNull();
         }
 
@@ -310,6 +318,7 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const ItemInfo& info)
     }
 
     applyProperties(v, QList<ItemInfo>() << info, QList<HistoryImageId>() << id);
+
     //qCDebug(DIGIKAM_DATABASE_LOG) << "Returning vertex" << v << properties(v).infos.size();
 
     return v;
@@ -318,6 +327,7 @@ HistoryGraph::Vertex ItemHistoryGraphData::addVertex(const ItemInfo& info)
 HistoryGraph::Vertex ItemHistoryGraphData::addVertexScanned(qlonglong id)
 {
     // short version where we do not read information about id from an ItemInfo
+
     Vertex v = findVertexByProperties(id);
 
     applyProperties(v, QList<ItemInfo>() << ItemInfo(id), QList<HistoryImageId>());
@@ -330,6 +340,7 @@ void ItemHistoryGraphData::applyProperties(Vertex& v,
                                            const QList<HistoryImageId>& ids)
 {
     // if needed, add a new vertex; or retrieve properties to add possibly new entries
+
     if (v.isNull())
     {
         v = HistoryGraph::addVertex();
@@ -338,6 +349,7 @@ void ItemHistoryGraphData::applyProperties(Vertex& v,
     HistoryVertexProperties& props = properties(v);
 
     // adjust properties
+
     foreach (const ItemInfo& info, infos)
     {
         props += info;
@@ -391,18 +403,20 @@ QHash<HistoryGraph::Vertex, HistoryImageId::Types> ItemHistoryGraphData::categor
 
         HistoryImageId::Types type;
 
-        if (props.alwaysMarkedAs(HistoryImageId::Source))
+        if      (props.alwaysMarkedAs(HistoryImageId::Source))
         {
             type |= HistoryImageId::Source;
         }
         else if (isLeaf(v))
         {
             // Leaf: Assume current version
+
             type |= HistoryImageId::Current;
         }
         else if (isRoot(v))
         {
             // Root: Assume original if at least once marked as such
+
             if (props.markedAs(HistoryImageId::Original))
             {
                 type |= HistoryImageId::Original;
@@ -644,7 +658,9 @@ void ItemHistoryGraph::addRelations(const QList<QPair<qlonglong, qlonglong> >& p
 
         v1 = d->addVertex(pair.first);
         v2 = d->addVertex(pair.second);
+
         //qCDebug(DIGIKAM_DATABASE_LOG) << "Adding" << v1 << "->" << v2;
+
         d->addEdge(v1, v2);
     }
 }
@@ -669,6 +685,7 @@ void ItemHistoryGraph::reduceEdges()
         if (!d->properties(e).actions.isEmpty())
         {
             // TODO: conflict resolution
+
             qCDebug(DIGIKAM_DATABASE_LOG) << "Conflicting history information: Edge removed by transitiveReduction is not empty.";
         }
     }
@@ -705,6 +722,7 @@ void ItemHistoryGraph::dropUnresolvedEntries()
 void ItemHistoryGraph::sortForInfo(const ItemInfo& subject)
 {
     // Remove nodes which could not be resolved into image infos
+
     QList<HistoryGraph::Vertex> toRemove;
 
     foreach (const HistoryGraph::Vertex& v, d->vertices())
@@ -832,22 +850,22 @@ static QString toString(const HistoryVertexProperties& props)
     {
         if (ids.size() == 1)
         {
-            return QLatin1String("Id: ") + ids.first();
+            return (QLatin1String("Id: ") + ids.first());
         }
         else
         {
-            return QLatin1String("Ids: (") + ids.join(QLatin1String(",")) + QLatin1Char(')');
+            return (QLatin1String("Ids: (") + ids.join(QLatin1String(",")) + QLatin1Char(')'));
         }
     }
     else
     {
         if (ids.size() == 1)
         {
-            return QLatin1String("Id: ") + ids.first() + QLatin1String(" UUID: ") + props.uuid.left(6) + QLatin1String("...");
+            return (QLatin1String("Id: ") + ids.first() + QLatin1String(" UUID: ") + props.uuid.left(6) + QLatin1String("..."));
         }
         else
         {
-            return QLatin1String("Ids: (") + ids.join(QLatin1String(",")) + QLatin1String(") UUID: ") + props.uuid.left(6) + QLatin1String("...");
+            return (QLatin1String("Ids: (") + ids.join(QLatin1String(",")) + QLatin1String(") UUID: ") + props.uuid.left(6) + QLatin1String("..."));
         }
     }
 }
@@ -857,6 +875,7 @@ QDebug operator<<(QDebug dbg, const ItemHistoryGraph& g)
     if (g.data().isEmpty())
     {
         dbg << "(Empty graph)";
+
         return dbg;
     }
 
@@ -883,7 +902,7 @@ QDebug operator<<(QDebug dbg, const ItemHistoryGraph& g)
             sourceVertexTexts << toString(g.data().properties(source));
         }
 
-        if (!sourceVertexTexts.isEmpty())
+        if      (!sourceVertexTexts.isEmpty())
         {
             dbg.nospace() << QLatin1String("{ ")    + targetString + QLatin1String(" } ") +
                              QLatin1String("-> { ") + sourceVertexTexts.join(QLatin1String(" }, { ")) +

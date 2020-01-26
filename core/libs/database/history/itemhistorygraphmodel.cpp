@@ -223,8 +223,8 @@ void HistoryTreeItem::addItem(HistoryTreeItem* child)
 
 // ------------------------------------------------------------------------
 
-static bool oldestInfoFirst(const ItemInfo&a, const ItemInfo& b) { return a.modDateTime() < b.modDateTime(); }
-static bool newestInfoFirst(const ItemInfo&a, const ItemInfo& b) { return a.modDateTime() > b.modDateTime(); }
+static bool oldestInfoFirst(const ItemInfo&a, const ItemInfo& b) { return (a.modDateTime() < b.modDateTime()); }
+static bool newestInfoFirst(const ItemInfo&a, const ItemInfo& b) { return (a.modDateTime() > b.modDateTime()); }
 
 template <typename ItemInfoLessThan>
 
@@ -258,7 +258,7 @@ public:
 public:
 
     const HistoryGraph& graph;
-    ItemInfoLessThan   imageInfoLessThan;
+    ItemInfoLessThan    imageInfoLessThan;
 };
 
 // ------------------------------------------------------------------------
@@ -293,7 +293,7 @@ public:
 
     inline HistoryTreeItem* historyItem(const QModelIndex& index) const
     {
-        return index.isValid() ? static_cast<HistoryTreeItem*>(index.internalPointer()) : rootItem;
+        return (index.isValid() ? static_cast<HistoryTreeItem*>(index.internalPointer()) : rootItem);
     }
 
     void build();
@@ -326,11 +326,14 @@ VertexItem* ItemHistoryGraphModel::Private::createVertexItem(const HistoryGraph:
     const HistoryVertexProperties& props = graph().properties(v);
     ItemInfo info                        = givenInfo.isNull() ? props.firstItemInfo() : givenInfo;
     QModelIndex index                    = imageModel.indexForItemInfo(info);
+
     //qCDebug(DIGIKAM_DATABASE_LOG) << "Added" << info.id() << index;
+
     VertexItem* item                     = new VertexItem(v);
     item->index                          = index;
     item->category                       = categories.value(v);
     vertexItems << item;
+
     //qCDebug(DIGIKAM_DATABASE_LOG) << "Adding vertex item" << graph().properties(v).firstItemInfo().id() << index;
 
     return item;
@@ -339,6 +342,7 @@ VertexItem* ItemHistoryGraphModel::Private::createVertexItem(const HistoryGraph:
 FilterActionItem* ItemHistoryGraphModel::Private::createFilterActionItem(const FilterAction& action)
 {
     //qCDebug(DIGIKAM_DATABASE_LOG) << "Adding vertex item for" << action.displayableName();
+
     return new FilterActionItem(action);
 }
 
@@ -403,16 +407,20 @@ void ItemHistoryGraphModel::Private::buildImagesTree()
         if (currentLevel == -1)
         {
             // unreachable from first root
-            if (graph().isRoot(v) && parent == rootItem)
+
+            if (graph().isRoot(v) && (parent == rootItem))
             {
                 // other first-level root?
+
                 parent->addItem(createVertexItem(v));
             }
             else
             {
                 // add later as sources
+
                 sources << v;
             }
+
             continue;
         }
 
@@ -423,7 +431,7 @@ void ItemHistoryGraphModel::Private::buildImagesTree()
             addItemSubgroup(item, sources, i18nc("@title", "Source Images"));
         }
 
-        if (currentLevel == previousLevel)
+        if      (currentLevel == previousLevel)
         {
             parent->addItem(item);
         }
@@ -462,7 +470,9 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
     {
         const HistoryGraph::Vertex& v       = path.at(i);
         HistoryGraph::Vertex previous       = i ? path.at(i-1) : HistoryGraph::Vertex();
-//        HistoryGraph::Vertex next           = i < path.size() - 1 ? path[i+1] : HistoryGraph::Vertex();
+/*
+        HistoryGraph::Vertex next           = i < path.size() - 1 ? path[i+1] : HistoryGraph::Vertex();
+*/
 //        qCDebug(DIGIKAM_DATABASE_LOG) << "Vertex on path" << path[i];
 
         // create new item
@@ -471,6 +481,7 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
         QList<HistoryGraph::Vertex> vertices;
 
         // any extra sources?
+
         QList<HistoryGraph::Vertex> sources = graph().adjacentVertices(item->vertex, HistoryGraph::EdgesToRoot);
 
         foreach (const HistoryGraph::Vertex& source, sources)
@@ -498,6 +509,7 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
 */
 
         // Add filter actions above item
+
         HistoryEdgeProperties props = graph().properties(v, previous);
 
         foreach (const FilterAction& action, props.actions)
@@ -506,10 +518,12 @@ void ItemHistoryGraphModel::Private::buildCombinedTree(const HistoryGraph::Verte
         }
 
         // now, add item
+
         rootItem->addItem(item);
         added << v;
 
         // If there are multiple derived images, we display them in the next section
+
         if ((v == ref) && !onePath)
         {
             break;
@@ -571,6 +585,7 @@ void ItemHistoryGraphModel::Private::addCombinedItemCategory(HistoryTreeItem* pa
         QList<HistoryGraph::Vertex> shortestPath = graph().shortestPath(showActionsFrom, v);
 
         // add all filter actions showActionsFrom -> v above item
+
         for (int i = 1 ; i < shortestPath.size() ; ++i)
         {
             HistoryEdgeProperties props = graph().properties(shortestPath.at(i), shortestPath.at(i-1));
@@ -585,6 +600,7 @@ void ItemHistoryGraphModel::Private::addCombinedItemCategory(HistoryTreeItem* pa
         added << v;
 
         // Provide access to intermediates
+
         shortestPath.removeOne(showActionsFrom);
         shortestPath.removeOne(v);
 
@@ -625,6 +641,7 @@ void ItemHistoryGraphModel::Private::addIdenticalItems(HistoryTreeItem* parentIt
     parentItem->addItem(new CategoryItem(title));
 
     // the properties image info list is already sorted by proximity to subject
+
     VertexItem* item = nullptr;
     bool isFirst     = true;
 
@@ -692,6 +709,7 @@ void ItemHistoryGraphModel::setHistory(const ItemInfo& subject, const ItemHistor
     }
 
     // fill helper model
+
     d->imageModel.clearItemInfos();
     d->imageModel.addItemInfos(d->historyGraph.allImages());
 
@@ -751,6 +769,7 @@ QModelIndex ItemHistoryGraphModel::indexForInfo(const ItemInfo& info) const
     }
 
     // try with primary info
+
     foreach (VertexItem* const item, d->vertexItems)
     {
         if (ItemModel::retrieveItemInfo(item->index) == info)
@@ -760,6 +779,7 @@ QModelIndex ItemHistoryGraphModel::indexForInfo(const ItemInfo& info) const
     }
 
     // try all associated infos
+
     foreach (VertexItem* const item, d->vertexItems)
     {
         if (d->graph().properties(item->vertex).infos.contains(info))
@@ -858,7 +878,9 @@ QVariant ItemHistoryGraphModel::data(const QModelIndex& index, int role) const
                 return true;
 
             case Qt::DisplayRole:
-            //case Qt::ToolTipRole:
+/*
+            case Qt::ToolTipRole:
+*/
                 return headerItem->title;
                 break;
         }
@@ -872,7 +894,9 @@ QVariant ItemHistoryGraphModel::data(const QModelIndex& index, int role) const
 
             case Qt::DisplayRole:
             case DCategorizedSortFilterProxyModel::CategoryDisplayRole:
-            //case Qt::ToolTipRole:
+/*
+            case Qt::ToolTipRole:
+*/
                 return categoryItem->title;
         }
     }
@@ -969,7 +993,7 @@ Qt::ItemFlags ItemHistoryGraphModel::flags(const QModelIndex& index) const
         switch (item->type())
         {
             case HistoryTreeItem::FilterActionItemType:
-                return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
+                return (Qt::ItemIsEnabled | Qt::ItemIsSelectable);
 
             case HistoryTreeItem::HeaderItemType:
             case HistoryTreeItem::CategoryItemType:
