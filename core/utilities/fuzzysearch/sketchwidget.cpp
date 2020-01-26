@@ -92,7 +92,8 @@ public:
         // Remove all draw events from history map which are upper than current index.
         // If user redo actions and make new draw events, theses one will be queued at
         // end of history and will replace removed items.
-        for (int i = drawEventList.count() - 1 ; i > eventIndex ; --i)
+
+        for (int i = (drawEventList.count() - 1) ; i > eventIndex ; --i)
         {
             drawEventList.removeAt(i);
         }
@@ -109,7 +110,7 @@ public:
     {
         QTime currentTime = QTime::currentTime();
 
-        if (drawEventCreationTime.isNull() || drawEventCreationTime.msecsTo(currentTime) > 1000)
+        if (drawEventCreationTime.isNull() || (drawEventCreationTime.msecsTo(currentTime) > 1000))
         {
             drawEventCreationTime = currentTime;
             DrawEvent event(penWidth, penColor);
@@ -172,6 +173,7 @@ void SketchWidget::slotClear()
     d->pixmap.fill(qRgb(255, 255, 255));
     d->drawEventList.clear();
     update();
+
     emit signalUndoRedoStateChanged(false, false);
 }
 
@@ -212,9 +214,10 @@ void SketchWidget::slotUndo()
 
     d->eventIndex--;
 
+    // cppcheck-suppress knownConditionTrueFalse
     if (d->eventIndex == -1)
     {
-        d->isClear    = true;
+        d->isClear = true;
         d->pixmap.fill(qRgb(255, 255, 255));
         update();
         emit signalUndoRedoStateChanged(false, true);
@@ -222,15 +225,18 @@ void SketchWidget::slotUndo()
     else
     {
         replayEvents(d->eventIndex);
+
         emit signalSketchChanged(sketchImage());
-        emit signalUndoRedoStateChanged(d->eventIndex != -1,
-                                        d->eventIndex != d->drawEventList.count() - 1);
+
+        // cppcheck-suppress knownConditionTrueFalse
+        emit signalUndoRedoStateChanged((d->eventIndex != -1),
+                                        (d->eventIndex != (d->drawEventList.count() - 1)));
     }
 }
 
 void SketchWidget::slotRedo()
 {
-    if (d->eventIndex == d->drawEventList.count() - 1)
+    if (d->eventIndex == (d->drawEventList.count() - 1))
     {
         return;
     }
@@ -238,9 +244,12 @@ void SketchWidget::slotRedo()
     d->eventIndex++;
     d->isClear = false;
     replayEvents(d->eventIndex);
+
     emit signalSketchChanged(sketchImage());
-    emit signalUndoRedoStateChanged(d->eventIndex != -1,
-                                    d->eventIndex != d->drawEventList.count() - 1);
+
+    // cppcheck-suppress knownConditionTrueFalse
+    emit signalUndoRedoStateChanged((d->eventIndex != -1),
+                                    (d->eventIndex != (d->drawEventList.count() - 1)));
 }
 
 void SketchWidget::replayEvents(int index)
@@ -265,6 +274,7 @@ void SketchWidget::sketchImageToXML(QXmlStreamWriter& writer)
         const DrawEvent& event = d->drawEventList.at(i);
 
         // Write the pen size and color
+
         writer.writeStartElement(QLatin1String("Path"));
         writer.writeAttribute(QLatin1String("Size"), QString::number(event.penWidth));
         writer.writeAttribute(QLatin1String("Color"), event.penColor.name());
@@ -272,6 +282,7 @@ void SketchWidget::sketchImageToXML(QXmlStreamWriter& writer)
         // Write the lines contained in the QPainterPath
 
         // Initial position is 0,0
+
         QPointF pos(0, 0);
 
         for (int j = 0 ; j < event.path.elementCount() ; ++j)
@@ -279,10 +290,11 @@ void SketchWidget::sketchImageToXML(QXmlStreamWriter& writer)
             const QPainterPath::Element& element = event.path.elementAt(j);
 
             // Store begin and end point of a line, so no need to write moveTo elements to XML
+
             if (element.isLineTo())
             {
                 QPoint begin = pos.toPoint();
-                QPoint end = ((QPointF)element).toPoint();
+                QPoint end   = ((QPointF)element).toPoint();
                 writer.writeStartElement(QLatin1String("Line"));
                 writer.writeAttribute(QLatin1String("x1"), QString::number(begin.x()));
                 writer.writeAttribute(QLatin1String("y1"), QString::number(begin.y()));
@@ -294,6 +306,7 @@ void SketchWidget::sketchImageToXML(QXmlStreamWriter& writer)
             // Keep track of current position after this element
             // The starting point of the next element is the end point of this element
             // This handles both lineTo and moveTo elements
+
             pos = element;
         }
 
@@ -310,6 +323,7 @@ QString SketchWidget::sketchImageToXML()
     writer.writeStartDocument();
     sketchImageToXML(writer);
     writer.writeEndDocument();
+
     return xml;
 }
 
@@ -322,8 +336,8 @@ bool SketchWidget::setSketchImageFromXML(const QString& xml)
     {
         element = reader.readNext();
 
-        if (element == QXmlStreamReader::StartElement &&
-            reader.name() == QLatin1String("SketchImage"))
+        if ((element == QXmlStreamReader::StartElement) &&
+            (reader.name() == QLatin1String("SketchImage")))
         {
             return setSketchImageFromXML(reader);
         }
@@ -339,7 +353,7 @@ bool SketchWidget::setSketchImageFromXML(QXmlStreamReader& reader)
     // We assume that the reader is positioned at the start element for our XML
 
     if (!reader.isStartElement() ||
-        reader.name() != QLatin1String("SketchImage"))
+        (reader.name() != QLatin1String("SketchImage")))
     {
         return false;
     }
@@ -354,7 +368,7 @@ bool SketchWidget::setSketchImageFromXML(QXmlStreamReader& reader)
     {
         element = reader.readNext();
 
-        if (element == QXmlStreamReader::StartElement)
+        if      (element == QXmlStreamReader::StartElement)
         {
             // every chunk (DrawEvent) is stored as a vector path
 
@@ -413,7 +427,7 @@ void SketchWidget::addPath(QXmlStreamReader& reader)
     {
         element = reader.readNext();
 
-        if (element == QXmlStreamReader::StartElement)
+        if      (element == QXmlStreamReader::StartElement)
         {
             // The line element has four attributes, x1,y1,x2,y2
 
@@ -474,7 +488,9 @@ void SketchWidget::setSketchImage(const QImage& image)
     d->pixmap     = QPixmap::fromImage(image);
     d->eventIndex = -1;
     d->drawEventList.clear();
+
     emit signalUndoRedoStateChanged(false, false);
+
     update();
 }
 
@@ -490,10 +506,13 @@ void SketchWidget::mousePressEvent(QMouseEvent* e)
         }
 
         // sample color
+
         if (e->modifiers() & Qt::CTRL)
         {
             QImage img = d->pixmap.toImage();
+
             emit signalPenColorChanged((img.pixel(e->pos())));
+
             return;
         }
 
@@ -561,7 +580,7 @@ void SketchWidget::mouseReleaseEvent(QMouseEvent* e)
     {
         QPoint currentPos = e->pos();
         d->currentDrawEvent().lineTo(currentPos);
-        d->drawing = false;
+        d->drawing        = false;
         emit signalSketchChanged(sketchImage());
         emit signalUndoRedoStateChanged(true, false);
     }
@@ -613,7 +632,7 @@ void SketchWidget::drawLineTo(int width, const QColor& color, const QPoint& star
     painter.setPen(QPen(color, width, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
     painter.drawLine(start, end);
 
-    int rad = (width / 2) + 2;
+    int rad      = (width / 2) + 2;
 
     update(QRect(start, end).normalized().adjusted(-rad, -rad, +rad, +rad));
     d->lastPoint = end;

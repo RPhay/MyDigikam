@@ -197,6 +197,7 @@ FindDuplicatesView::FindDuplicatesView(QWidget* const parent)
                                          "<i>Only selected tab</i> means that only the selected tab is used."));
 
     // Load the last choice from application settings.
+
     HaarIface::AlbumTagRelation relation
         = d->settings ? (HaarIface::AlbumTagRelation) d->settings->getDuplicatesAlbumTagRelation()
                       : HaarIface::AlbumTagRelation::NoMix;
@@ -297,7 +298,7 @@ void FindDuplicatesView::populateTreeView()
             salbum->setExtraData(this, item);
         }
 
-        if (!waitCursor && waitCursorTimer.elapsed() > 2000)
+        if (!waitCursor && (waitCursorTimer.elapsed() > 2000))
         {
             QApplication::setOverrideCursor(Qt::WaitCursor);
             waitCursor = true;
@@ -353,7 +354,7 @@ QList<SAlbum*> FindDuplicatesView::currentFindDuplicatesAlbums() const
 
 void FindDuplicatesView::slotAlbumAdded(Album* a)
 {
-    if (!a || a->type() != Album::SEARCH)
+    if (!a || (a->type() != Album::SEARCH))
     {
         return;
     }
@@ -383,7 +384,7 @@ void FindDuplicatesView::slotAlbumAdded(Album* a)
 
 void FindDuplicatesView::slotAlbumDeleted(Album* a)
 {
-    if (!a || a->type() != Album::SEARCH)
+    if (!a || (a->type() != Album::SEARCH))
     {
         return;
     }
@@ -528,7 +529,7 @@ void FindDuplicatesView::slotDuplicatesAlbumActived()
 
 void FindDuplicatesView::slotCheckForValidSettings()
 {
-    bool valid = d->albumSelectors->selectedAlbums().count() || d->albumSelectors->selectedTags().count();
+    bool valid = (d->albumSelectors->selectedAlbums().count() || d->albumSelectors->selectedTags().count());
     d->scanDuplicatesBtn->setEnabled(valid);
 }
 
@@ -547,7 +548,8 @@ void FindDuplicatesView::slotSetSelectedAlbum(PAlbum* album)
 
     resetAlbumsAndTags();
 
-    // @ODD : Why is singleton set to true? resetAlbumsAndTags already clears the selection.
+    // @ODD: Why is singleton set to true? resetAlbumsAndTags already clears the selection.
+
     d->albumSelectors->setAlbumSelected(album, true);
     d->albumSelectors->setTypeSelection(AlbumSelectors::AlbumType::PhysAlbum);
     d->albumTagRelation->setCurrentIndex(d->albumTagRelation->findData(HaarIface::AlbumTagRelation::NoMix));
@@ -562,7 +564,8 @@ void FindDuplicatesView::slotSetSelectedAlbum(PAlbum* album)
 
 void FindDuplicatesView::slotSetSelectedAlbums(const QList<PAlbum*>& albums)
 {
-    // @ODD : Why is singleton set to true? resetAlbumsAndTags already clears the selection.
+    // @ODD: Why is singleton set to true? resetAlbumsAndTags already clears the selection.
+
     resetAlbumsAndTags();
 
     foreach (PAlbum* const album, albums)

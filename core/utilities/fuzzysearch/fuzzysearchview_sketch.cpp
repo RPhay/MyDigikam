@@ -180,10 +180,12 @@ void FuzzySearchView::setColor(QColor c)
         d->selColor = c;
 
         // set values
+
         d->hsSelector->setValues(c.hue(), c.saturation());
         d->vSelector->setValue(c.value());
 
         // set colors
+
         d->hsSelector->blockSignals(true);
         d->hsSelector->setHue(c.hue());
         d->hsSelector->setSaturation(c.saturation());
