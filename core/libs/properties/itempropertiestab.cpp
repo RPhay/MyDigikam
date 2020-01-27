@@ -50,7 +50,6 @@
 #include "itempropertiestxtlabel.h"
 #include "picklabelwidget.h"
 #include "colorlabelwidget.h"
-#include "tagscache.h"
 
 namespace Digikam
 {
