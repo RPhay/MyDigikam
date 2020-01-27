@@ -138,16 +138,17 @@ set(libraw_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/libraw_c_api.cpp
                     ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/x3f/x3f_utils_patched.cpp
 )
 
+add_library(libraw_src OBJECT ${libraw_LIB_SRCS})
+
 # Disable compilation warnings from LibRaw. Just to be clear on the console.
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (Bug: #269903)
 # Use O4 GCC compilation option to prevent artifacts with OpenMP (Bug #305382)
-foreach(_curentfile ${libraw_LIB_SRCS})
-    if(WIN32 AND MSVC)
-        set_source_files_properties(${_curentfile} PROPERTIES COMPILE_FLAGS /w)
-    else()
-        set_source_files_properties(${_curentfile} PROPERTIES COMPILE_FLAGS "-w -fPIC -O4")
-    endif()
-endforeach()
+if(MSVC)
+    target_compile_options(libraw_src PRIVATE /w)
+else()
+    target_compile_options(libraw_src PRIVATE -w -fPIC -O4)
+endif()
+
 
 #################################
 
@@ -158,7 +159,6 @@ set(librawengine_SRCS
     drawdecoderwidget.cpp
     drawinfo.cpp
     drawfiles.cpp
-    ${libraw_LIB_SRCS}
 )
 
 include_directories(
