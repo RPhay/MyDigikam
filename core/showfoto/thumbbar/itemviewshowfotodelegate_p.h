@@ -31,7 +31,6 @@
 #include <QPainter>
 #include <QApplication>
 #include <QFont>
-#include <QPainter>
 #include <QModelIndex>
 
 // KDE includes

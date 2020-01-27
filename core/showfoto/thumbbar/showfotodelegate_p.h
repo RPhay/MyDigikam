@@ -48,7 +48,6 @@
 #include "showfotothumbnailmodel.h"
 #include "showfotosettings.h"
 #include "itemviewshowfotodelegate_p.h"
-#include "showfotodelegate.h"
 
 namespace ShowFoto
 {
