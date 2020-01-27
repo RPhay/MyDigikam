@@ -47,7 +47,11 @@ macro(LIBRAW_BUILD_SAMPLES)
         endwhile()
     endif()
 
-    set_source_files_properties(${${_target}_SRCS} PROPERTIES COMPILE_FLAGS -w)
+    if(WIN32 AND MSVC)
+        set_source_files_properties(${${_target}_SRCS} PROPERTIES COMPILE_FLAGS /w)
+    else()
+        set_source_files_properties(${${_target}_SRCS} PROPERTIES COMPILE_FLAGS "-w")
+    endif()
 
     add_executable(${_target} ${${_target}_SRCS})
 
