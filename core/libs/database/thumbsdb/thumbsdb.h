@@ -58,7 +58,7 @@ enum Type
 
 } // namespace DatabaseThumbnail
 
-class DIGIKAM_EXPORT ThumbsDbInfo
+class DIGIKAM_DATABASE_EXPORT ThumbsDbInfo
 {
 
 public:
@@ -79,7 +79,7 @@ public:
 
 // ------------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ThumbsDb
+class DIGIKAM_DATABASE_EXPORT ThumbsDb
 {
 
 public:

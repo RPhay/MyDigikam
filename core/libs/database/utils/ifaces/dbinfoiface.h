@@ -36,7 +36,7 @@ namespace Digikam
 
 class Album;
 
-class DIGIKAM_EXPORT DBInfoIface : public DInfoInterface
+class DIGIKAM_DATABASE_EXPORT DBInfoIface : public DInfoInterface
 {
     Q_OBJECT
 
@@ -79,7 +79,9 @@ public:
     QAbstractItemModel* tagFilterModel()                        override;
 
 #ifdef HAVE_MARBLE
+
     QList<GPSItemContainer*> currentGPSItems()            const override;
+
 #endif
 
 private:

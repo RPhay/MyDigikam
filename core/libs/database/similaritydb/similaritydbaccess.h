@@ -41,7 +41,7 @@ class SimilarityDb;
 class SimilarityDbAccessStaticPriv;
 class SimilarityDbBackend;
 
-class DIGIKAM_EXPORT SimilarityDbAccess
+class DIGIKAM_DATABASE_EXPORT SimilarityDbAccess
 {
 public:
 

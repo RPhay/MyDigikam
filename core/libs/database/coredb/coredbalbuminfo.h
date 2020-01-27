@@ -89,7 +89,7 @@ public:
 
     bool isNull() const
     {
-        return id == 0;
+        return (id == 0);
     }
 
     /**
@@ -98,7 +98,8 @@ public:
     bool operator<(const AlbumInfo& info) const
     {
         // include album root id?
-        return relativePath < info.relativePath;
+
+        return (relativePath < info.relativePath);
     }
 
 public:
@@ -136,12 +137,12 @@ public:
 
     bool isNull() const
     {
-        return id == 0;
+        return (id == 0);
     }
 
     bool operator<(const TagInfo& info) const
     {
-        return name < info.name;
+        return (name < info.name);
     }
 
 public:
@@ -163,7 +164,7 @@ public:
 class SearchInfo
 {
 public:
-    
+
     typedef QList<SearchInfo> List;
 
 public:
@@ -176,7 +177,7 @@ public:
 
     bool isNull() const
     {
-        return id == 0;
+        return (id == 0);
     }
 
     /**
@@ -184,7 +185,7 @@ public:
      */
     bool operator<(const SearchInfo& info) const
     {
-        return id < info.id;
+        return (id < info.id);
     }
 
 public:
@@ -209,7 +210,7 @@ public:
 
     bool isNull() const
     {
-        return id == 0;
+        return (id == 0);
     }
 
 public:
@@ -233,7 +234,7 @@ public:
 
     bool isNull() const
     {
-        return id == 0;
+        return (id == 0);
     }
 
 public:
@@ -258,7 +259,7 @@ public:
 
     bool isNull() const
     {
-        return id == 0;
+        return (id == 0);
     }
 
 public:
@@ -287,7 +288,7 @@ public:
 
     bool isNull() const
     {
-        return id == 0;
+        return (id == 0);
     }
 
 public:
@@ -317,7 +318,7 @@ public:
 
     bool isNull() const
     {
-        return id == -1;
+        return (id == -1);
     }
 
 public:
@@ -344,7 +345,7 @@ public:
 
     bool isNull() const
     {
-        return id == -1;
+        return (id == -1);
     }
 
 public:
@@ -368,7 +369,7 @@ public:
 
     bool isNull() const
     {
-        return imageId == 0;
+        return (imageId == 0);
     }
 
 public:
@@ -411,7 +412,7 @@ public:
 
     bool isNull() const
     {
-        return tagId == -1;
+        return (tagId == -1);
     }
 
 public:
@@ -435,7 +436,7 @@ public:
 
     bool isNull() const
     {
-        return imageId == -1;
+        return (imageId == -1);
     }
 
 public:

@@ -40,18 +40,16 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DbEngineConfigSettingsLoader
+class DIGIKAM_DATABASE_EXPORT DbEngineConfigSettingsLoader
 {
 public:
 
     explicit DbEngineConfigSettingsLoader(const QString& filepath, int xmlVersion);
 
-    bool                   readConfig(const QString& filepath,
-                                      int xmlVersion);
+    bool readConfig(const QString& filepath, int xmlVersion);
     DbEngineConfigSettings readDatabase(QDomElement& databaseElement);
 
-    void                   readDBActions(QDomElement& sqlStatementElements,
-                                         DbEngineConfigSettings& configElement);
+    void readDBActions(QDomElement& sqlStatementElements, DbEngineConfigSettings& configElement);
 
 public:
 
