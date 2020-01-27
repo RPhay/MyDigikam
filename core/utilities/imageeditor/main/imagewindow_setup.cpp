@@ -69,6 +69,7 @@ void ImageWindow::setupActions()
     createHelpActions();
 
     // Labels shortcuts must be registered here to be saved in XML GUI files if user customize it.
+
     TagsActionMngr::defaultManager()->registerLabelsActions(ac);
 
     QAction* const editTitles = new QAction(i18n("Edit Titles"), this);
@@ -178,6 +179,7 @@ void ImageWindow::setupUserArea()
     // Code to check for the now depreciated HorizontalThumbar directive. It
     // is found, it is honored and deleted. The state will from than on be saved
     // by d->viewContainers built-in mechanism.
+
     Qt::DockWidgetArea dockArea = Qt::LeftDockWidgetArea;
 
     if (group.hasKey(d->configHorizontalThumbbarEntry))
@@ -185,6 +187,7 @@ void ImageWindow::setupUserArea()
         if (group.readEntry(d->configHorizontalThumbbarEntry, true))
         {
             // Horizontal thumbbar layout
+
             dockArea    = Qt::TopDockWidgetArea;
         }
 
@@ -203,14 +206,15 @@ void ImageWindow::setupUserArea()
     d->imageFilterModel->setStringTypeNatural(ApplicationSettings::instance()->isStringTypeNatural());
     d->imageFilterModel->setSortRole((ItemSortSettings::SortRole)ApplicationSettings::instance()->getImageSortOrder());
     d->imageFilterModel->setSortOrder((ItemSortSettings::SortOrder)ApplicationSettings::instance()->getImageSorting());
-    d->imageFilterModel->setAllGroupsOpen(true); // disable filtering out by group, see bug #283847
-    d->imageFilterModel->sort(0); // an initial sorting is necessary
+    d->imageFilterModel->setAllGroupsOpen(true);    // disable filtering out by group, see bug #283847
+    d->imageFilterModel->sort(0);                   // an initial sorting is necessary
 
     d->dragDropHandler  = new ItemDragDropHandler(d->imageInfoModel);
     d->dragDropHandler->setReadOnlyDrop(true);
     d->imageInfoModel->setDragDropHandler(d->dragDropHandler);
 
     // The thumb bar is placed in a detachable/dockable widget.
+
     d->thumbBarDock     = new ThumbBarDock(d->viewContainer, Qt::Tool);
     d->thumbBarDock->setObjectName(QLatin1String("editor_thumbbar"));
     d->thumbBarDock->setWindowTitle(i18n("Image Editor Thumbnail Dock"));
@@ -221,8 +225,9 @@ void ImageWindow::setupUserArea()
     d->thumbBarDock->setWidget(d->thumbBar);
     d->viewContainer->addDockWidget(dockArea, d->thumbBarDock);
     d->thumbBarDock->setFloating(false);
-    //d->thumbBar->slotDockLocationChanged(dockArea);
-
+/*
+    d->thumbBar->slotDockLocationChanged(dockArea);
+*/
     setCentralWidget(widget);
 }
 

@@ -151,8 +151,10 @@ void TagMngrListView::contextMenuEvent(QContextMenuEvent* event)
 
     QModelIndexList sel = selectionModel()->selectedIndexes();
 
-    if (sel.size() == 1 && sel.first().row() == 0)
+    if ((sel.size() == 1) && (sel.first().row() == 0))
+    {
         delAction->setDisabled(true);
+    }
 
     cmhelper.exec(QCursor::pos());
 }
@@ -162,7 +164,9 @@ void TagMngrListView::slotDeleteSelected()
     QModelIndexList sel = selectionModel()->selectedIndexes();
 
     if (sel.isEmpty())
+    {
         return;
+    }
 
     TagMngrListModel* const tagmodel = dynamic_cast<TagMngrListModel*>(model());
 

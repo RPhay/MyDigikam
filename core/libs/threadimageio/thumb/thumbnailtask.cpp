@@ -126,6 +126,7 @@ void ThumbnailLoadingTask::execute()
 
                 // break loop when either the loading has completed, or this task is being stopped
 
+                // cppcheck-suppress knownConditionTrueFalse
                 while ((m_loadingTaskStatus != LoadingTaskStatusStopping) &&
                        m_usedProcess                                      &&
                        !m_usedProcess->completed())

@@ -138,7 +138,7 @@ public:
 
     AlbumModificationHelper* albumModificationHelper;
 
-    SearchTextBar*           searchBar;
+    SearchTextBarDb*         searchBar;
 
     QPushButton*             newAlbumBtn;
 };
@@ -168,7 +168,7 @@ AlbumSelectWidget::AlbumSelectWidget(QWidget* const parent,
     d->albumTreeView->setConfigGroup(group);
     d->albumTreeView->setEntryPrefix(QLatin1String("AlbumTreeView"));
 
-    d->searchBar   = new SearchTextBar(this, QLatin1String("AlbumSelectWidgetSearchBar"));
+    d->searchBar   = new SearchTextBarDb(this, QLatin1String("AlbumSelectWidgetSearchBar"));
     d->searchBar->setModel(d->albumModel, AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
     d->searchBar->setFilterModel(d->albumTreeView->albumFilterModel());
     d->searchBar->setConfigGroup(group);

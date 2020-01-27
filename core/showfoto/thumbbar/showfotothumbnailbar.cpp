@@ -49,10 +49,10 @@ class Q_DECL_HIDDEN ShowfotoThumbnailBar::Private
 public:
 
     explicit Private()
+      : scrollPolicy(Qt::ScrollBarAlwaysOn),
+        duplicatesFilter(nullptr),
+        kScroller(nullptr)
     {
-        scrollPolicy     = Qt::ScrollBarAlwaysOn;
-        duplicatesFilter = nullptr;
-        kScroller        = nullptr;
     }
 
     Qt::ScrollBarPolicy              scrollPolicy;
@@ -76,6 +76,7 @@ ShowfotoThumbnailBar::ShowfotoThumbnailBar(QWidget* const parent)
     setDropIndicatorShown(true);
 
     // NOTE: use dynamic binding as this virtual method can be re-implemented in derived classes.
+
     this->slotSetupChanged();
 
     d->kScroller = new ShowfotoKineticScroller();
@@ -94,7 +95,7 @@ void ShowfotoThumbnailBar::installOverlays()
 
 void ShowfotoThumbnailBar::slotDockLocationChanged(Qt::DockWidgetArea area)
 {
-    if (area == Qt::LeftDockWidgetArea || area == Qt::RightDockWidgetArea)
+    if ((area == Qt::LeftDockWidgetArea) || (area == Qt::RightDockWidgetArea))
     {
         setFlow(TopToBottom);
         d->kScroller->setScrollFlow(TopToBottom);
@@ -113,6 +114,7 @@ void ShowfotoThumbnailBar::setScrollBarPolicy(Qt::ScrollBarPolicy policy)
     if (policy == Qt::ScrollBarAsNeeded)
     {
         // Delegate resizing will cause endless relayouting, see bug #228807
+
         qCDebug(DIGIKAM_GENERAL_LOG) << "The Qt::ScrollBarAsNeeded policy is not supported by ShowfotoThumbnailBar";
     }
 
@@ -140,10 +142,12 @@ void ShowfotoThumbnailBar::setFlow(QListView::Flow flow)
     del->setFlow(flow);
 
     // Reset the minimum and maximum sizes.
+
     setMinimumSize(QSize(0, 0));
     setMaximumSize(QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX));
 
     // Adjust minimum and maximum width to thumbnail sizes.
+
     if (flow == TopToBottom)
     {
         int viewportFullWidgetOffset = size().width() - viewport()->size().width();
@@ -168,7 +172,8 @@ void ShowfotoThumbnailBar::slotSetupChanged()
 bool ShowfotoThumbnailBar::event(QEvent* e)
 {
     // reset widget max/min sizes
-    if (e->type() == QEvent::StyleChange || e->type() == QEvent::Show)
+
+    if ((e->type() == QEvent::StyleChange) || (e->type() == QEvent::Show))
     {
         setFlow(flow());
     }

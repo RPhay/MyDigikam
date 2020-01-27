@@ -49,7 +49,7 @@
 #include "searchtreeview.h"
 #include "labelstreeview.h"
 #include "abstractalbummodel.h"
-#include "searchtextbar.h"
+#include "searchtextbardb.h"
 #include "albummanager.h"
 #include "albumlabelssearchhandler.h"
 
@@ -99,9 +99,9 @@ public:
     SearchModel*              searchModel;
     SearchTreeView*           searchTreeView;
 
-    SearchTextBar*            albumSearchBar;
-    SearchTextBar*            tagSearchBar;
-    SearchTextBar*            searchSearchBar;
+    SearchTextBarDb*          albumSearchBar;
+    SearchTextBarDb*          tagSearchBar;
+    SearchTextBarDb*          searchSearchBar;
 
     LabelsTreeView*           labelsTree;
     AlbumLabelsSearchHandler* labelsSearchHandler;
@@ -123,7 +123,7 @@ AlbumSelectTabs::AlbumSelectTabs(const QString& name, QWidget* const parent)
     d->albumTreeView->setConfigGroup(configGroup);
     d->prepareTreeView(d->albumTreeView);
 
-    d->albumSearchBar = new SearchTextBar(albumBox, QLatin1String("AlbumSelectTabsAlbumSearchBar"));
+    d->albumSearchBar = new SearchTextBarDb(albumBox, QLatin1String("AlbumSelectTabsAlbumSearchBar"));
     d->albumSearchBar->setEntryPrefix(QLatin1String("AlbumSearchBar"));
     d->albumSearchBar->setConfigGroup(configGroup);
     d->albumSearchBar->setModel(d->albumModel, AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
@@ -144,7 +144,7 @@ AlbumSelectTabs::AlbumSelectTabs(const QString& name, QWidget* const parent)
     d->tagTreeView->setConfigGroup(configGroup);
     d->prepareTreeView(d->tagTreeView);
 
-    d->tagSearchBar = new SearchTextBar(tagBox, QLatin1String("AlbumSelectTabsTagSearchBar"));
+    d->tagSearchBar = new SearchTextBarDb(tagBox, QLatin1String("AlbumSelectTabsTagSearchBar"));
     d->tagSearchBar->setEntryPrefix(QLatin1String("TagSearchBar"));
     d->tagSearchBar->setConfigGroup(configGroup);
     d->tagSearchBar->setModel(d->tagTreeView->filteredModel(),
@@ -168,7 +168,7 @@ AlbumSelectTabs::AlbumSelectTabs(const QString& name, QWidget* const parent)
     d->searchTreeView->filteredModel()->setListTemporarySearches(false);
     d->prepareTreeView(d->searchTreeView);
 
-    d->searchSearchBar = new SearchTextBar(searchBox, QLatin1String("AlbumSelectTabsSearchSearchBar"));
+    d->searchSearchBar = new SearchTextBarDb(searchBox, QLatin1String("AlbumSelectTabsSearchSearchBar"));
     d->searchSearchBar->setEntryPrefix(QLatin1String("SearchSearchBar"));
     d->searchSearchBar->setConfigGroup(configGroup);
     d->searchSearchBar->setModel(d->searchModel, AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);

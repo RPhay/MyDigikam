@@ -49,15 +49,15 @@ public:
     void appendList(const QList<ListItem*>& items);
     void deleteChild(ListItem* const item);
 
-    ListItem* child(int row)         const;
-    QVariant data(int column)        const;
-    ListItem* parent()               const;
-    int childCount()                 const;
-    int columnCount()                const;
-    int row()                        const;
-    QList<int> getTagIds()           const;
-    QList<ListItem*> allChildren()   const;
-    bool equal(ListItem* const item) const;
+    ListItem* child(int row)                     const;
+    QVariant data(int column)                    const;
+    ListItem* parent()                           const;
+    int childCount()                             const;
+    int columnCount()                            const;
+    int row()                                    const;
+    QList<int> getTagIds()                       const;
+    QList<ListItem*> allChildren()               const;
+    bool equal(ListItem* const item)             const;
 
     /**
      * @brief containsItem  - search child items if contains a ListItem with

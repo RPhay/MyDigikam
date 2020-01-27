@@ -49,7 +49,7 @@ public:
                         QObject* const parent = nullptr);
     ~RGTagModel();
 
-    // QAbstractItemModel:
+    /// QAbstractItemModel:
     virtual int columnCount(const QModelIndex& parent = QModelIndex()) const override;
     virtual bool setData(const QModelIndex& index, const QVariant& value, int role) override;
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
@@ -60,7 +60,7 @@ public:
     virtual QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
     virtual Qt::ItemFlags flags(const QModelIndex& index) const override;
 
-    //Local functions:
+    /// Local functions:
     QModelIndex fromSourceIndex(const QModelIndex& externalTagModelIndex) const;
     QModelIndex toSourceIndex(const QModelIndex& tagModelIndex) const;
     void addSpacerTag(const QModelIndex& parent, const QString& spacerName);

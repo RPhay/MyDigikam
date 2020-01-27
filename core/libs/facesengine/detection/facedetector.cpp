@@ -21,9 +21,6 @@
  *
  * ============================================================ */
 
-// Comment this line to switch face detector backend from DNN to HAAR_CASCADES
-#define USE_DNN_BACKEND 1
-
 #include "facedetector.h"
 
 // Qt includes
@@ -35,7 +32,7 @@
 
 #include "digikam_debug.h"
 
-#ifdef USE_DNN_BACKEND
+#ifdef USE_DNN_DETECTION_BACKEND
 #   include "opencvdnnfacedetector.h"
 #else
 #   include "opencvfacedetector.h"
@@ -50,24 +47,36 @@ public:
 
     explicit Private()
         :
-#ifdef USE_DNN_BACKEND
+
+#ifdef USE_DNN_DETECTION_BACKEND
+
           m_dnnDetectorBackend(nullptr)
+
 #else
+
           m_haarDetectorbackend(nullptr)
+
 #endif
+
     {
     }
 
     ~Private()
     {
-#ifdef USE_DNN_BACKEND
+
+#ifdef USE_DNN_DETECTION_BACKEND
+
         delete m_dnnDetectorBackend;
+
 #else
+
         delete m_haarDetectorbackend;
+
 #endif
+
     }
 
-#ifdef USE_DNN_BACKEND
+#ifdef USE_DNN_DETECTION_BACKEND
 
     OpenCVDNNFaceDetector* backend()
     {
@@ -116,7 +125,7 @@ public:
             return;
         }
 
-#ifdef USE_DNN_BACKEND
+#ifdef USE_DNN_DETECTION_BACKEND
 
         // TODO
 
@@ -153,11 +162,16 @@ public:
 
 private:
 
-#ifdef USE_DNN_BACKEND
+#ifdef USE_DNN_DETECTION_BACKEND
+
     OpenCVDNNFaceDetector* m_dnnDetectorBackend;
+
 #else
+
     OpenCVFaceDetector*    m_haarDetectorbackend;
+
 #endif
+
 };
 
 // ---------------------------------------------------------------------------------
@@ -184,11 +198,17 @@ FaceDetector::~FaceDetector()
 
 QString FaceDetector::backendIdentifier() const
 {
-#ifdef USE_DNN_BACKEND
+
+#ifdef USE_DNN_DETECTION_BACKEND
+
     return QLatin1String("Deep Neural Network");
+
 #else
+
     return QLatin1String("Haar Cascades");
+
 #endif
+
 }
 
 QList<QRectF> FaceDetector::detectFaces(const QImage& image, const QSize& originalSize)
@@ -202,7 +222,8 @@ QList<QRectF> FaceDetector::detectFaces(const QImage& image, const QSize& origin
 
     try
     {
-#ifdef USE_DNN_BACKEND
+
+#ifdef USE_DNN_DETECTION_BACKEND
 
         Q_UNUSED(originalSize);
 
@@ -257,7 +278,8 @@ QList<QRectF> FaceDetector::detectFaces(const DImg& image, const QSize& original
 
     try
     {
-#ifdef USE_DNN_BACKEND
+
+#ifdef USE_DNN_DETECTION_BACKEND
 
         Q_UNUSED(originalSize);
 
@@ -303,7 +325,8 @@ QList<QRectF> FaceDetector::detectFaces(const DImg& image, const QSize& original
 
 QList<QRectF> FaceDetector::detectFaces(const QString& imagePath)
 {
-#ifdef USE_DNN_BACKEND
+
+#ifdef USE_DNN_DETECTION_BACKEND
 
     QList<QRectF> result;
 
@@ -339,6 +362,7 @@ QList<QRectF> FaceDetector::detectFaces(const QString& imagePath)
     return detectFaces(img, img.size());
 
 #endif
+
 }
 
 void FaceDetector::setParameter(const QString& parameter, const QVariant& value)
@@ -366,12 +390,16 @@ int FaceDetector::recommendedImageSize(const QSize& availableSize) const
 {
     Q_UNUSED(availableSize);
 
+#ifdef USE_DNN_DETECTION_BACKEND
 
-#ifdef USE_DNN_BACKEND
     return OpenCVDNNFaceDetector::recommendedImageSizeForDetection();
+
 #else
+
     return OpenCVFaceDetector::recommendedImageSizeForDetection();
+
 #endif
+
 }
 
 // -- Static methods -------------------------------------------------------------

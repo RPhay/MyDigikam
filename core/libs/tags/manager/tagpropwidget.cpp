@@ -63,15 +63,15 @@ class Q_DECL_HIDDEN TagPropWidget::Private
 public:
 
     explicit Private()
+      : topLabel(nullptr),
+        iconButton(nullptr),
+        resetIconButton(nullptr),
+        saveButton(nullptr),
+        discardButton(nullptr),
+        keySeqWidget(nullptr),
+        titleEdit(nullptr),
+        changed(false)
     {
-        titleEdit       = nullptr;
-        iconButton      = nullptr;
-        resetIconButton = nullptr;
-        saveButton      = nullptr;
-        discardButton   = nullptr;
-        topLabel        = nullptr;
-        keySeqWidget    = nullptr;
-        changed         = false;
     }
 
     QLabel*             topLabel;
@@ -92,8 +92,8 @@ TagPropWidget::TagPropWidget(QWidget* const parent)
     : QWidget(parent),
       d(new Private())
 {
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-    const int cmargin = QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin);
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int cmargin       = QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin);
 
     QGridLayout* const grid = new QGridLayout(this);
     QLabel* const logo      = new QLabel(this);
@@ -139,9 +139,11 @@ TagPropWidget::TagPropWidget(QWidget* const parent)
                                                   i18n("Reset"), this);
 
 #ifndef HAVE_KICONTHEMES
+
     iconTextLabel->hide();
     d->iconButton->hide();
     d->resetIconButton->hide();
+
 #endif
 
     // ----------------------------------------------------------------------
@@ -258,9 +260,13 @@ void TagPropWidget::slotSelectionChanged(const QList<Album*>& albums)
         d->keySeqWidget->setKeySequence(Seq);
 
         if (album->isRoot())
+        {
             enableItems(TagPropWidget::DisabledAll);
+        }
         else
+        {
             enableItems(TagPropWidget::EnabledAll);
+        }
     }
     else
     {
@@ -277,7 +283,9 @@ void TagPropWidget::slotSelectionChanged(const QList<Album*>& albums)
                 d->selectedAlbums.append(temp);
 
                 if (temp->isRoot())
+                {
                     containsRoot = true;
+                }
             }
         }
 
@@ -287,9 +295,13 @@ void TagPropWidget::slotSelectionChanged(const QList<Album*>& albums)
         d->keySeqWidget->clearKeySequence();
 
         if (containsRoot)
+        {
             enableItems(TagPropWidget::DisabledAll);
+        }
         else
+        {
             enableItems(TagPropWidget::IconOnly);
+        }
     }
 
     d->changed = false;
@@ -319,10 +331,10 @@ void TagPropWidget::slotIconChanged()
 
     QPointer<KIconDialog> dlg = new KIconDialog(this);
     dlg->setup(KIconLoader::NoGroup, KIconLoader::Application, false, 20, false, false, false);
-    QString icon = dlg->openDialog();
+    QString icon              = dlg->openDialog();
     delete dlg;
 
-    if (icon.isEmpty() || icon == d->icon)
+    if (icon.isEmpty() || (icon == d->icon))
     {
         return;
     }
@@ -348,7 +360,7 @@ void TagPropWidget::slotSaveChanges()
         QString icon      = d->icon;
         QKeySequence ks   = d->keySeqWidget->keySequence();
 
-        if (tag && tag->title() != title)
+        if (tag && (tag->title() != title))
         {
             QString errMsg;
 
@@ -358,7 +370,7 @@ void TagPropWidget::slotSaveChanges()
             }
         }
 
-        if (tag && tag->icon() != icon)
+        if (tag && (tag->icon() != icon))
         {
             QString errMsg;
 
@@ -368,7 +380,7 @@ void TagPropWidget::slotSaveChanges()
             }
         }
 
-        if (tag && tag->property(TagPropertyName::tagKeyboardShortcut()) != ks.toString())
+        if (tag && (tag->property(TagPropertyName::tagKeyboardShortcut()) != ks.toString()))
         {
             TagsActionMngr::defaultManager()->updateTagShortcut(tag->id(), ks);
         }
@@ -381,7 +393,7 @@ void TagPropWidget::slotSaveChanges()
         {
             TAlbum* const tag = *it;
 
-            if (tag && tag->icon() != d->icon)
+            if (tag && (tag->icon() != d->icon))
             {
                 QString errMsg;
 

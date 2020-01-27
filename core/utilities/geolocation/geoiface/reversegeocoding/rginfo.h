@@ -44,7 +44,6 @@ namespace Digikam
  *
  * @brief This class contains data needed in reverse geocoding process.
  */
-
 class DIGIKAM_EXPORT RGInfo
 {
 public:
@@ -60,6 +59,7 @@ public:
     ~RGInfo();
 
 public:
+
     /**
      * The image index.
      */

@@ -252,20 +252,20 @@ public:
 
     QAction*                     toMainWindowAction;
 
-    // Delete actions
+    /// Delete actions
     QAction*                     fileDeletePermanentlyAction;
     QAction*                     fileDeletePermanentlyDirectlyAction;
     QAction*                     fileTrashDirectlyAction;
 
-    ItemInfo                    currentItemInfo;
-    ItemListModel*              imageInfoModel;
-    ItemFilterModel*            imageFilterModel;
-    ItemDragDropHandler*        dragDropHandler;
+    ItemInfo                     currentItemInfo;
+    ItemListModel*               imageInfoModel;
+    ItemFilterModel*             imageFilterModel;
+    ItemDragDropHandler*         dragDropHandler;
 
-    ItemThumbnailBar*           thumbBar;
+    ItemThumbnailBar*            thumbBar;
     ThumbBarDock*                thumbBarDock;
 
-    ItemPropertiesSideBarDB*    rightSideBar;
+    ItemPropertiesSideBarDB*     rightSideBar;
 
     DatabaseVersionManager       versionManager;
 

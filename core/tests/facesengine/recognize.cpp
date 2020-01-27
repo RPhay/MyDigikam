@@ -31,7 +31,7 @@
 #include <QApplication>
 #include <QDir>
 #include <QImage>
-#include <QTime>
+#include <QElapsedTimer>
 #include <QDebug>
 
 // Local includes
@@ -89,10 +89,10 @@ int main(int argc, char** argv)
         QStringList paths    = toPaths(argv, 2, argc);
         QList<QImage> images = toImages(paths);
 
-        QTime time;
-        time.start();
+        QElapsedTimer timer;
+        timer.start();
         QList<Identity> identities = db.recognizeFaces(images);
-        int elapsed                = time.elapsed();
+        int elapsed                = timer.elapsed();
 
         qDebug() << "Recognition took " << elapsed
                  << " for " << images.size() << ", "
@@ -121,12 +121,12 @@ int main(int argc, char** argv)
             identity                                = db.addIdentity(attributes);
         }
 
-        QTime time;
-        time.start();
+        QElapsedTimer timer;
+        timer.start();
 
         db.train(identity, images, QString::fromLatin1("test application"));
 
-        int elapsed = time.elapsed();
+        int elapsed = timer.elapsed();
         qDebug() << "Training took " << elapsed << " for "
                  << images.size() << ", "
                  << ((float)elapsed/images.size()) << " per image";
@@ -201,8 +201,8 @@ int main(int argc, char** argv)
             return 0;
         }
 
-        QTime time;
-        time.start();
+        QElapsedTimer timer;
+        timer.start();
 
         int correct         = 0;
         int notRecognized   = 0;
@@ -227,7 +227,7 @@ int main(int argc, char** argv)
             totalTrained        += images.size();
         }
 
-        elapsed = time.restart();
+        elapsed = timer.restart();
 
         if (totalTrained)
         {
@@ -265,7 +265,7 @@ int main(int argc, char** argv)
             totalRecognized += images.size();
         }
 
-        elapsed = time.elapsed();
+        elapsed = timer.elapsed();
 
         if (totalRecognized)
         {

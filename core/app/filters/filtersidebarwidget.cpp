@@ -53,6 +53,7 @@
 #include "ratingfilter.h"
 #include "mimefilter.h"
 #include "tagfilterview.h"
+#include "searchtextbardb.h"
 #include "facetags.h"
 
 namespace Digikam
@@ -99,7 +100,7 @@ public:
     QVBoxLayout*                           expanderVlay;
 
     TagFilterView*                         tagFilterView;
-    SearchTextBar*                         tagFilterSearchBar;
+    SearchTextBarDb*                       tagFilterSearchBar;
     QToolButton*                           tagOptionsBtn;
     QMenu*                                 tagOptionsMenu;
     TagModel*                              tagFilterModel;
@@ -108,7 +109,7 @@ public:
     ItemFilterSettings::MatchingCondition  tagMatchCond;
 
     TagFilterView*                         faceFilterView;
-    SearchTextBar*                         faceFilterSearchBar;
+    SearchTextBarDb*                       faceFilterSearchBar;
     QToolButton*                           faceOptionsBtn;
     QMenu*                                 faceOptionsMenu;
     TagModel*                              faceFilterModel;
@@ -171,7 +172,7 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
     //d->tagFilterView->filteredModel()->doNotListTagsWithProperty(TagPropertyName::person());
     //d->tagFilterView->filteredModel()->setFilterBehavior(AlbumFilterModel::StrictFiltering);
 
-    d->tagFilterSearchBar = new SearchTextBar(box3, QLatin1String("ItemIconViewTagFilterSearchBar"));
+    d->tagFilterSearchBar = new SearchTextBarDb(box3, QLatin1String("ItemIconViewTagFilterSearchBar"));
     d->tagFilterSearchBar->setModel(d->tagFilterView->filteredModel(),
                                     AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
     d->tagFilterSearchBar->setFilterModel(d->tagFilterView->albumFilterModel());
@@ -188,8 +189,8 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
                                         "to filter the images. This also includes the '%1' check box.",
                                         notTaggedTitle));
 
-    d->tagOptionsMenu = new QMenu(d->tagOptionsBtn);
-    d->tagOrCondAction = d->tagOptionsMenu->addAction(i18n("OR"));
+    d->tagOptionsMenu   = new QMenu(d->tagOptionsBtn);
+    d->tagOrCondAction  = d->tagOptionsMenu->addAction(i18n("OR"));
     d->tagOrCondAction->setCheckable(true);
     d->tagAndCondAction = d->tagOptionsMenu->addAction(i18n("AND"));
     d->tagAndCondAction->setCheckable(true);
@@ -217,7 +218,7 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
     d->faceFilterView->filteredModel()->listOnlyTagsWithProperty(TagPropertyName::person());
     d->faceFilterView->filteredModel()->setFilterBehavior(AlbumFilterModel::StrictFiltering);
 
-    d->faceFilterSearchBar = new SearchTextBar(box5, QLatin1String("ItemIconViewFaceTagFilterSearchBar"));
+    d->faceFilterSearchBar = new SearchTextBarDb(box5, QLatin1String("ItemIconViewFaceTagFilterSearchBar"));
     d->faceFilterSearchBar->setModel(d->faceFilterView->filteredModel(),
                                     AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
     d->faceFilterSearchBar->setFilterModel(d->faceFilterView->albumFilterModel());

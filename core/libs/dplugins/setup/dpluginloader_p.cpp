@@ -26,7 +26,7 @@
 // Qt includes
 
 #include <QStringList>
-#include <QTime>
+#include <QElapsedTimer>
 #include <QDirIterator>
 #include <QStandardPaths>
 #include <QMessageBox>
@@ -145,7 +145,7 @@ void DPluginLoader::Private::loadPlugins()
         return;
     }
 
-    QTime t;
+    QElapsedTimer t;
     t.start();
     qCDebug(DIGIKAM_GENERAL_LOG) << "Starting to load external tools.";
 

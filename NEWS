@@ -1,14 +1,14 @@
-digiKam 7.0.0-beta2 - Release date: 2020-01-26
+digiKam 7.0.0-beta3 - Release date: 2020-02-23
 
 *****************************************************************************************************
 NEW FEATURES:
 
 FaceManagement: New Neural Network engine based on OpenCV Deep Learning module to detect and recognize faces.
-FaceManagement: Face Scan dialog contents is now simlified and embeded into left side-bar tab.
+FaceManagement: Face Scan dialog contents is now simplified and embeded into left side-bar tab.
 SlideShow     : Add new shuffle mode.
 HTMLGallery   : Add new theme "Html5Responsive".
 General       : Update internal libraw engine to last 201910 snapshot aka next 0.20.0 release (https://www.libraw.org/news/libraw-snapshot-201910)
-Genral        : All bundles have switched to last Qt 5.14.0. Linux and MacOS use QtWebEngine instead QtWebKit.
+General       : All bundles have switched to last Qt 5.14.0. Linux and MacOS use QtWebEngine instead QtWebKit.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -609,4 +609,8 @@ BUGFIXES:
 593 ==> 416526 - Exporting no longer works at all on the 20/01 version.
 594 ==> 416551 - Create an utility to allow to create external soft links for tagged files from database.
 595 ==> 372230 - Searches tool : "Current Searches" virtual album appears more than one.
-596 ==> 
+596 ==> 416492 - Panorama tool fails to make panoramas.
+597 ==> 416756 - When searching for duplicates, only one photo is shown if the other one is in a group (and not the first of the group).
+598 ==> 416759 - In duplicate tab, it should be possible to have reference image always at first/last.
+599 ==> 416802 - Add confirmation dialog for "Delete all" action.
+600 ==> 

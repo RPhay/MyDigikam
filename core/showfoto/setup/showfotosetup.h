@@ -43,7 +43,7 @@ public:
     {
         LastPageUsed = -1,
 
-        EditorPage = 0,
+        EditorPage   = 0,
         MetadataPage,
         ToolTipPage,
         RawPage,

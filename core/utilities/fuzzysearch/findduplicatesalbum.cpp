@@ -47,9 +47,9 @@ class Q_DECL_HIDDEN FindDuplicatesAlbum::Private
 public:
 
     explicit Private()
-        : iconSize(64)
+        : iconSize(64),
+          thumbLoadThread(nullptr)
     {
-        thumbLoadThread = nullptr;
     }
 
     const int            iconSize;

@@ -71,6 +71,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
     if (!file)
     {
         loadingFailed();
+
         return false;
     }
 
@@ -80,6 +81,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
     {
         fclose(file);
         loadingFailed();
+
         return false;
     }
 
@@ -88,11 +90,13 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
     unsigned char jp2ID[5] = { 0x6A, 0x50, 0x20, 0x20, 0x0D, };
     unsigned char jpcID[2] = { 0xFF, 0x4F };
 
-    if (memcmp(&header[4], &jp2ID, 5) != 0 &&
-        memcmp(&header,    &jpcID, 2) != 0)
+    if ((memcmp(&header[4], &jp2ID, 5) != 0) &&
+        (memcmp(&header,    &jpcID, 2) != 0))
     {
         // not a jpeg2000 file
+
         loadingFailed();
+
         return false;
     }
 
@@ -103,6 +107,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
         // libjasper will load the full image in memory already when calling jas_image_decode.
         // This is bad when scanning. See bugs 215458 and 195583.
         // FIXME: Use Exiv2 to extract this info
+
         DMetadata metadata(filePath);
         QSize size = metadata.getItemDimensions();
 
@@ -133,6 +138,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
     {
         qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to init JPEG2000 decoder";
         loadingFailed();
+
         return false;
     }
 
@@ -142,6 +148,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
     {
         qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to open JPEG2000 stream";
         loadingFailed();
+
         return false;
     }
 
@@ -153,12 +160,14 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
         jas_stream_close(jp2_stream);
         qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to decode JPEG2000 image";
         loadingFailed();
+
         return false;
     }
 
     jas_stream_close(jp2_stream);
 
     // some pseudo-progress
+
     if (observer)
     {
         observer->progressInfo(0.1F);
@@ -182,6 +191,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
                 jas_image_destroy(jp2_image);
                 qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Error parsing JPEG2000 image : Missing Image Channel";
                 loadingFailed();
+
                 return false;
             }
 
@@ -202,11 +212,13 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
         {
             components[0] = jas_image_getcmptbytype(jp2_image, JAS_IMAGE_CT_GRAY_Y);
 
+            // cppcheck-suppress knownConditionTrueFalse
             if (components[0] < 0)
             {
                 jas_image_destroy(jp2_image);
                 qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Error parsing JP2000 image : Missing Image Channel";
                 loadingFailed();
+
                 return false;
             }
 
@@ -221,11 +233,13 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
             components[1] = jas_image_getcmptbytype(jp2_image, JAS_IMAGE_CT_YCBCR_CB);
             components[2] = jas_image_getcmptbytype(jp2_image, JAS_IMAGE_CT_YCBCR_CR);
 
+            // cppcheck-suppress knownConditionTrueFalse
             if ((components[0] < 0) || (components[1] < 0) || (components[2] < 0))
             {
                 jas_image_destroy(jp2_image);
                 qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Error parsing JP2000 image : Missing Image Channel";
                 loadingFailed();
+
                 return false;
             }
 
@@ -238,7 +252,8 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
                 ++number_components;
             }
 
-            // FIXME : image->colorspace=YCbCrColorspace;
+            // FIXME: image->colorspace=YCbCrColorspace;
+
             colorModel = DImg::YCBCR;
             break;
         }
@@ -248,6 +263,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
             jas_image_destroy(jp2_image);
             qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Error parsing JP2000 image : Colorspace Model Is Not Supported";
             loadingFailed();
+
             return false;
         }
     }
@@ -271,6 +287,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
             jas_image_destroy(jp2_image);
             qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Error parsing JPEG2000 image : Irregular Channel Geometry Not Supported";
             loadingFailed();
+
             return false;
         }
 
@@ -295,6 +312,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
             jas_image_destroy(jp2_image);
             qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Error decoding JPEG2000 image data : Memory Allocation Failed";
             loadingFailed();
+
             return false;
         }
     }
@@ -343,6 +361,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
             jas_cleanup();
             loadingFailed();
+
             return false;
         }
 
@@ -371,6 +390,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
 
                     jas_cleanup();
                     loadingFailed();
+
                     return false;
                 }
             }
@@ -485,6 +505,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
             }
 
             // use 0-10% and 90-100% for pseudo-progress
+
             if (observer && y >= (long)checkPoint)
             {
                 checkPoint += granularity(observer, y, 0.8F);
@@ -501,6 +522,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
                     jas_cleanup();
 
                     loadingFailed();
+
                     return false;
                 }
 
@@ -553,6 +575,7 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
         else
         {
             // If ICC profile is null, check Exif metadata.
+
             checkExifWorkingColorSpace();
         }
     }

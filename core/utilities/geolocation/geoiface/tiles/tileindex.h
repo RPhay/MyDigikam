@@ -66,33 +66,36 @@ public:
     explicit TileIndex();
     virtual ~TileIndex();
 
-    int indexCount()                    const;
-    int level()                         const;
-    int linearIndex(const int getLevel) const;
-    int at(const int getLevel)          const;
-    int lastIndex()                     const;
-    int indexLat(const int getLevel)    const;
-    int indexLon(const int getLevel)    const;
+    int indexCount()                                                                const;
+    int level()                                                                     const;
+    int linearIndex(const int getLevel)                                             const;
+    int at(const int getLevel)                                                      const;
+    int lastIndex()                                                                 const;
+    int indexLat(const int getLevel)                                                const;
+    int indexLon(const int getLevel)                                                const;
 
     void clear();
     void appendLinearIndex(const int newIndex);
 
-    QPoint latLonIndex(const int getLevel) const;
+    QPoint latLonIndex(const int getLevel)                                          const;
 
-    void latLonIndex(const int getLevel, int* const latIndex, int* const lonIndex) const;
+    void latLonIndex(const int getLevel, int* const latIndex, int* const lonIndex)  const;
     void appendLatLonIndex(const int latIndex, const int lonIndex);
 
-    QIntList toIntList() const;
+    QIntList toIntList()                                                            const;
 
-    GeoCoordinates toCoordinates()                              const;
-    GeoCoordinates toCoordinates(const CornerPosition ofCorner) const;
+    GeoCoordinates toCoordinates()                                                  const;
+    GeoCoordinates toCoordinates(const CornerPosition ofCorner)                     const;
 
-    TileIndex mid(const int first, const int len) const;
+    TileIndex mid(const int first, const int len)                                   const;
     void oneUp();
 
-    static TileIndex fromCoordinates(const Digikam::GeoCoordinates& coordinate, const int getLevel);
+    static TileIndex fromCoordinates(const Digikam::GeoCoordinates& coordinate,
+                                     const int getLevel);
     static TileIndex fromIntList(const QIntList& intList);
-    static bool indicesEqual(const TileIndex& a, const TileIndex& b, const int upToLevel);
+    static bool indicesEqual(const TileIndex& a,
+                             const TileIndex& b,
+                             const int upToLevel);
     static QList<QIntList> listToIntListList(const QList<TileIndex>& tileIndexList);
 
 public:

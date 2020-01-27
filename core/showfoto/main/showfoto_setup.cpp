@@ -127,6 +127,7 @@ void ShowFoto::setupUserArea()
     // Code to check for the now depreciated HorizontalThumbar directive. It
     // is found, it is honored and deleted. The state will from than on be saved
     // by viewContainers built-in mechanism.
+
     Qt::DockWidgetArea dockArea = Qt::LeftDockWidgetArea;
 
     d->thumbBarDock = new Digikam::ThumbBarDock(viewContainer, Qt::Tool);
@@ -182,7 +183,7 @@ void ShowFoto::toggleNavigation(int index)
         return;
     }
 
-    if (d->itemsNb == 0 || d->itemsNb == 1)
+    if ((d->itemsNb == 0) || (d->itemsNb == 1))
     {
         m_backwardAction->setEnabled(false);
         m_forwardAction->setEnabled(false);

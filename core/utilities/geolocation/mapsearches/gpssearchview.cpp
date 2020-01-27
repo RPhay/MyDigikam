@@ -57,6 +57,7 @@
 #include "coredbsearchxml.h"
 #include "gpsmarkertiler.h"
 #include "gpsiteminfosorter.h"
+#include "searchtextbardb.h"
 
 namespace Digikam
 {
@@ -87,7 +88,7 @@ public:
     QToolButton*            saveBtn;
     QLineEdit*              nameEdit;
     ItemInfoJob             imageInfoJob;
-    SearchTextBar*          searchGPSBar;
+    SearchTextBarDb*        searchGPSBar;
     EditableSearchTreeView* searchTreeView;
     QSplitter*              splitter;
     MapWidget*              mapSearchWidget;
@@ -180,7 +181,7 @@ GPSSearchView::GPSSearchView(QWidget* const parent,
     d->searchTreeView->filteredModel()->setFilterSearchType(DatabaseSearch::MapSearch);
     d->searchTreeView->filteredModel()->setListTemporarySearches(true);
     d->searchTreeView->setAlbumManagerCurrentAlbum(true);
-    d->searchGPSBar   = new SearchTextBar(this, QLatin1String("GPSSearchViewSearchGPSBar"));
+    d->searchGPSBar   = new SearchTextBarDb(this, QLatin1String("GPSSearchViewSearchGPSBar"));
     d->searchGPSBar->setModel(d->searchTreeView->filteredModel(), AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
     d->searchGPSBar->setFilterModel(d->searchTreeView->albumFilterModel());
 

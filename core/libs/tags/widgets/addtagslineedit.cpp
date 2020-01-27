@@ -103,9 +103,11 @@ void AddTagsLineEdit::setFilterModel(AlbumFilterModel* const model)
     d->completer->setTagFilterModel(d->tagFilterModel);
 }
 
-void AddTagsLineEdit::setModel(TagModel* const model, TagPropertiesFilterModel* const filteredModel, AlbumFilterModel* const filterModel)
+void AddTagsLineEdit::setModel(TagModel* const model,
+                               TagPropertiesFilterModel* const filteredModel,
+                               AlbumFilterModel* const filterModel)
 {
-    if (filterModel)
+    if      (filterModel)
     {
         setFilterModel(filterModel);
     }
@@ -151,18 +153,21 @@ void AddTagsLineEdit::setParentTag(Album* const album)
 void AddTagsLineEdit::setAllowExceedBound(bool value)
 {
     Q_UNUSED(value);
+
     // -> the pop-up is allowed to be bigger than the line edit widget
     // Currently unimplemented, QCompleter calculates the size automatically.
     // Idea: intercept show event via event filter on completer->popup(); from there, change width.
 }
 
-// Tagging action is used by facemanagement and assignwidget
-
+/**
+ * Tagging action is used by facemanagement and assignwidget
+ */
 void AddTagsLineEdit::slotReturnPressed()
 {
-    if (text().isEmpty())
+    if      (text().isEmpty())
     {
         //focus back to mainview
+
         emit taggingActionFinished();
     }
     else if (!d->currentTaggingAction.isValid())
@@ -195,6 +200,7 @@ void AddTagsLineEdit::slotTextEdited(const QString& text)
 void AddTagsLineEdit::completerActivated(const TaggingAction& action)
 {
     setCurrentTaggingAction(action);
+
     emit taggingActionActivated(action);
 }
 
@@ -206,12 +212,13 @@ void AddTagsLineEdit::completerHighlighted(const TaggingAction& action)
 void AddTagsLineEdit::setCurrentTaggingAction(const TaggingAction& action)
 {
     d->currentTaggingAction = action;
+
     emit taggingActionSelected(action);
 }
 
 TaggingAction AddTagsLineEdit::currentTaggingAction() const
 {
-    if (d->currentTaggingAction.isValid())
+    if      (d->currentTaggingAction.isValid())
     {
         return d->currentTaggingAction;
     }

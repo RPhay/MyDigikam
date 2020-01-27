@@ -41,8 +41,8 @@ class Q_DECL_HIDDEN ListItem::Private
 public:
 
     explicit Private()
+      : parentItem(nullptr)
     {
-        parentItem = nullptr;
     }
 
     QList<ListItem*> childItems;
@@ -78,7 +78,9 @@ void ListItem::deleteChild(ListItem* const item)
     int row = d->childItems.indexOf(item);
 
     if (row != -1)
+    {
         deleteChild(row);
+    }
 }
 
 QList<ListItem*> ListItem::allChildren() const
@@ -157,12 +159,17 @@ QVariant ListItem::data(int role) const
             }
 
             if (display.isEmpty())
+            {
                 display.append(i18n("All Tags"));
+            }
             else
+            {
                 display.remove(display.size()-2, 2);
+            }
 
             return QVariant(display);
         }
+
         default:
         {
             return QVariant();

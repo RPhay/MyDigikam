@@ -187,7 +187,7 @@ void HTMLWidget::mouseReleaseEvent(QMouseEvent* e)
 
 void HTMLWidget::mouseMoveEvent(QMouseEvent *e)
 {
-    if (s->currentMouseMode == MouseModeRegionSelection &&
+    if ((s->currentMouseMode == MouseModeRegionSelection) &&
         d->firstSelectionPoint.hasCoordinates())
     {
         runScript2Coordinates(QString::fromLatin1("kgeomapPixelToLatLng(%1, %2);")
@@ -237,14 +237,18 @@ void HTMLWidget::mouseMoveEvent(QMouseEvent *e)
 void HTMLWidget::slotScanForJSMessages(const QString& message)
 {
     if (message != QLatin1String("(event)"))
+    {
         return;
+    }
 
     //qCDebug(DIGIKAM_GEOIFACE_LOG) << message;
 
     const QString eventBufferString = runScript(QLatin1String("kgeomapReadEventStrings();")).toString();
 
     if (eventBufferString.isEmpty())
+    {
         return;
+    }
 
     const QStringList events = eventBufferString.split(QLatin1Char('|'));
 
@@ -259,9 +263,12 @@ QVariant HTMLWidget::runScript(const QString& scriptCode, bool /*async*/)
     GEOIFACE_ASSERT(d->isReady);
 
     if (!d->isReady)
+    {
         return QVariant();
+    }
 
     //qCDebug(DIGIKAM_GEOIFACE_LOG) << scriptCode;
+
     return page()->mainFrame()->evaluateJavaScript(scriptCode);
 }
 
@@ -279,7 +286,6 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
 {
     if (d->parent && object == d->parent)
     {
-
         if (event->type() == QEvent::Resize)
         {
             QResizeEvent* const resizeEvent = dynamic_cast<QResizeEvent*>(event);

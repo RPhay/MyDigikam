@@ -85,7 +85,7 @@ public:
 
 public:
 
-    // Declared as public because of use in ShowfotoNormalDelegate class.
+    /// Declared as public because of use in ShowfotoNormalDelegate class.
     class ShowfotoDelegatePrivate;
 
 protected:
@@ -98,20 +98,23 @@ protected:
 
     ShowfotoDelegate(ShowfotoDelegate::ShowfotoDelegatePrivate& dd, QObject* const parent);
 
-    /** Reimplement this to set contentWidth. This is the maximum width of all
-     *  content rectangles, typically excluding margins on both sides.
+    /**
+     * Reimplement this to set contentWidth. This is the maximum width of all
+     * content rectangles, typically excluding margins on both sides.
      */
     virtual void updateContentWidth();
 
-    /** In a subclass, you need to implement this method to set up the rects
-     *  for drawing. The paint() method operates depending on these rects.
+    /**
+     * In a subclass, you need to implement this method to set up the rects
+     * for drawing. The paint() method operates depending on these rects.
      */
     virtual void updateRects() = 0;
 
     virtual void clearCaches()               override;
 
-    /** Reimplement to clear caches based on model indexes (hash on row number etc.)
-     *  Change signals are listened to this is called whenever such properties become invalid.
+    /**
+     * Reimplement to clear caches based on model indexes (hash on row number etc.)
+     * Change signals are listened to this is called whenever such properties become invalid.
      */
     virtual void clearModelDataCaches();
 
@@ -143,8 +146,9 @@ public:
 
     void setFlow(QListView::Flow flow);
 
-    /** Returns the minimum or maximum viewport size in the limiting dimension,
-     *  width or height, depending on current flow.
+    /**
+     * Returns the minimum or maximum viewport size in the limiting dimension,
+     * width or height, depending on current flow.
      */
     int maximumSize() const;
     int minimumSize() const;

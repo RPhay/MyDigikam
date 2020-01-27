@@ -18,6 +18,7 @@ set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:dthread_src>
             $<TARGET_OBJECTS:versionmanager_src>
             $<TARGET_OBJECTS:kmemoryinfo_src>
+            $<TARGET_OBJECTS:libraw_src>
             $<TARGET_OBJECTS:rawengine_srcs>
             $<TARGET_OBJECTS:digikamfacesengine_src>
             $<TARGET_OBJECTS:dpluginsinterface_src>

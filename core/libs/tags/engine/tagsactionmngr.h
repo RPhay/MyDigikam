@@ -46,54 +46,57 @@ public:
     explicit TagsActionMngr(QWidget* const parent);
     ~TagsActionMngr();
 
-    /** Register all tag actions to collections managed with keyboard shortcuts.
-     *  Because Tags shortcuts are stored in database this method must be called after
-     *  database initialization and after that all root window instances have been created.
+    /**
+     * Register all tag actions to collections managed with keyboard shortcuts.
+     * Because Tags shortcuts are stored in database this method must be called after
+     * database initialization and after that all root window instances have been created.
      */
     void registerTagsActionCollections();
 
-    /** Register all labels actions to collections managed with keyboard shortcuts.
-     *  Unlike tags actions, labels shortcuts are stored in XML GUI file of each root windows,
-     *  to be able to customize it through KDE keyboards shortcuts config panel.
-     *  This method must be called before to DXmlGuiWindow::createGUI(), typically
-     *  when window actions are registered to ActionCollection instance.
+    /**
+     * Register all labels actions to collections managed with keyboard shortcuts.
+     * Unlike tags actions, labels shortcuts are stored in XML GUI file of each root windows,
+     * to be able to customize it through KDE keyboards shortcuts config panel.
+     * This method must be called before to DXmlGuiWindow::createGUI(), typically
+     * when window actions are registered to ActionCollection instance.
      */
     void registerLabelsActions(KActionCollection* const ac);
 
     void registerActionsToWidget(QWidget* const wdg);
 
-    /** Return the list of whole action collections managed.
-      */
-    QList<KActionCollection*> actionCollections() const;
+    /**
+     * Return the list of whole action collections managed.
+     */
+    QList<KActionCollection*> actionCollections()   const;
 
     /**
-      * Updates the shortcut action for a tag. Call this when a shortcut was
-      * added, removed or changed.
-      */
+     * Updates the shortcut action for a tag. Call this when a shortcut was
+     * added, removed or changed.
+     */
     void updateTagShortcut(int tagId, const QKeySequence& ks);
 
-    QString ratingShortcutPrefix() const;
-    QString tagShortcutPrefix()    const;
-    QString pickShortcutPrefix()   const;
-    QString colorShortcutPrefix()  const;
+    QString ratingShortcutPrefix()                  const;
+    QString tagShortcutPrefix()                     const;
+    QString pickShortcutPrefix()                    const;
+    QString colorShortcutPrefix()                   const;
 
     static TagsActionMngr* defaultManager();
 
 private Q_SLOTS:
 
     /**
-      * Removes the shortcut actions associated with a tag.
-      */
+     * Removes the shortcut actions associated with a tag.
+     */
     void slotAlbumDeleted(Album*);
 
     /**
-      * Wrapper around windows to run relevant code about keyboard shortcuts in GUI.
-      */
+     * Wrapper around windows to run relevant code about keyboard shortcuts in GUI.
+     */
     void slotAssignFromShortcut();
 
     /**
-      * Called by KDE config shortcuts dialog, when user change action properties.
-      */
+     * Called by config shortcuts dialog, when user change action properties.
+     */
     void slotTagActionChanged();
 
     void slotImageTagChanged(const ImageTagChangeset& changeset);

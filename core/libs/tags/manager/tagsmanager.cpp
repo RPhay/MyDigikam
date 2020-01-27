@@ -54,7 +54,7 @@
 #include "taglist.h"
 #include "tagfolderview.h"
 #include "ddragobjects.h"
-#include "searchtextbar.h"
+#include "searchtextbardb.h"
 #include "tageditdlg.h"
 #include "coredb.h"
 #include "facetags.h"
@@ -69,6 +69,7 @@ namespace
 QString JoinTagNamesToList(const QStringList& stringList)
 {
     const QString joinedStringList = stringList.join(QLatin1String("', '"));
+
     return QLatin1Char('\'') + joinedStringList + QLatin1Char('\'');
 }
 
@@ -84,28 +85,28 @@ class Q_DECL_HIDDEN TagsManager::Private
 public:
 
     explicit Private()
+      : tagMngrView(nullptr),
+        tagPixmap(nullptr),
+        searchBar(nullptr),
+        splitter(nullptr),
+        treeWindow(nullptr),
+        mainToolbar(nullptr),
+        organizeAction(nullptr),
+        syncexportAction(nullptr),
+        tagProperties(nullptr),
+        addAction(nullptr),
+        delAction(nullptr),
+        titleEdit(nullptr),
+        listView(nullptr),
+        tagPropWidget(nullptr),
+        tagModel(nullptr),
+        tagPropVisible(false)
     {
-        tagPixmap        = nullptr;
-        searchBar        = nullptr;
-        splitter         = nullptr;
-        treeWindow       = nullptr;
-        mainToolbar      = nullptr;
-        organizeAction   = nullptr;
-        syncexportAction = nullptr;
-        tagProperties    = nullptr;
-        addAction        = nullptr;
-        delAction        = nullptr;
-        titleEdit        = nullptr;
-        listView         = nullptr;
-        tagPropWidget    = nullptr;
-        tagMngrView      = nullptr;
-        tagModel         = nullptr;
-        tagPropVisible   = false;
     }
 
     TagMngrTreeView* tagMngrView;
     QLabel*          tagPixmap;
-    SearchTextBar*   searchBar;
+    SearchTextBarDb* searchBar;
 
 
     QSplitter*       splitter;
@@ -117,7 +118,10 @@ public:
     QAction*         addAction;
     QAction*         delAction;
     QAction*         titleEdit;
-    /** Options unavailable for root tag **/
+
+    /**
+     * Options unavailable for root tag
+     */
     QList<QAction*>  rootDisabledOptions;
 
     TagList*         listView;
@@ -154,12 +158,15 @@ TagsManager::TagsManager()
     StateSavingObject::loadState();
 
     // Set main window in center of the screen
+
     QScreen* screen = qApp->primaryScreen();
 
     if (QWidget* const widget = qApp->activeWindow())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     move(screen->geometry().center() - rect().center());
@@ -195,7 +202,7 @@ void TagsManager::setupUi()
      d->tagMngrView = new TagMngrTreeView(this, d->tagModel);
      d->tagMngrView->setConfigGroup(getConfigGroup());
 
-     d->searchBar   = new SearchTextBar(this, QLatin1String("ItemIconViewTagSearchBar"));
+     d->searchBar   = new SearchTextBarDb(this, QLatin1String("ItemIconViewTagSearchBar"));
      d->searchBar->setHighlightOnResult(true);
      d->searchBar->setModel(d->tagMngrView->filteredModel(),
                             AbstractAlbumModel::AlbumIdRole,
@@ -233,7 +240,7 @@ void TagsManager::slotSelectionChanged()
 {
     QList<Album*> selectedTags = d->tagMngrView->selectedTags();
 
-    if (selectedTags.isEmpty() || (selectedTags.size() == 1 && selectedTags.at(0)->isRoot()))
+    if (selectedTags.isEmpty() || ((selectedTags.size() == 1) && selectedTags.at(0)->isRoot()))
     {
         enableRootTagActions(false);
         d->listView->enableAddButton(false);
@@ -301,6 +308,7 @@ void TagsManager::slotDeleteAction()
         tagNames.append(tag->title());
 
         // find number of subtags
+
         int children = 0;
         AlbumIterator iter(tag);
 
@@ -340,6 +348,7 @@ void TagsManager::slotDeleteAction()
     }
 
     // ask for deletion of children
+
     if (!tagsWithChildren.isEmpty())
     {
         const int result = QMessageBox::warning(this, qApp->applicationName(),
@@ -410,7 +419,7 @@ void TagsManager::slotEditTagTitle()
 {
     QList<Album*> selectedTags = d->tagMngrView->selectedTags();
 
-    if (selectedTags.size() == 1 && !selectedTags.at(0)->isRoot())
+    if ((selectedTags.size() == 1) && !selectedTags.at(0)->isRoot())
     {
         d->tagPropWidget->show();
         d->tagPropWidget->slotFocusTitleEdit();
@@ -569,13 +578,15 @@ void TagsManager::slotWipeAll()
         return;
     }
 
-    /** Disable writing tags to images **/
+    /**
+     * Disable writing tags to images
+     */
     MetaEngineSettings* const metaSettings      = MetaEngineSettings::instance();
     MetaEngineSettingsContainer backUpContainer = metaSettings->settings();
     MetaEngineSettingsContainer newContainer    = backUpContainer;
     bool settingsChanged                        = false;
 
-    if (backUpContainer.saveTags == true || backUpContainer.saveFaceTags == true)
+    if ((backUpContainer.saveTags == true) || (backUpContainer.saveFaceTags == true))
     {
         settingsChanged           = true;
         newContainer.saveTags     = false;
@@ -606,7 +617,9 @@ void TagsManager::slotWipeAll()
         }
     }
 
-    /** Restore settings after tag deletion **/
+    /**
+     * Restore settings after tag deletion
+     */
     if (settingsChanged)
     {
         metaSettings->setSettings(backUpContainer);
@@ -678,7 +691,9 @@ void TagsManager::setupActions()
     d->delAction                 = new QAction(QIcon::fromTheme(QLatin1String("list-remove")),
                                                QLatin1String(""), this);
 
-    /** organize group **/
+    /**
+     * organize group
+     */
     d->organizeAction            = new QMenu(i18nc("@title:menu", "Organize"), this);
     d->organizeAction->setIcon(QIcon::fromTheme(QLatin1String("autocorrection")));
 
@@ -706,7 +721,9 @@ void TagsManager::setupActions()
     QAction* const deleteUnused  = new QAction(QIcon::fromTheme(QLatin1String("draw-eraser")),
                                                i18n("Delete Unassigned Tags"), this);
 
-    /** Tool tips  **/
+    /**
+     * Tool tips
+     */
     setHelpText(d->addAction, i18n("Add new tag to current tag. "
                                    "Current tag is last clicked tag."));
 
@@ -765,7 +782,9 @@ void TagsManager::setupActions()
     d->organizeAction->addAction(delTagFromImg);
     d->organizeAction->addAction(deleteUnused);
 
-    /** Sync & Export Group **/
+    /**
+     * Sync & Export Group
+     */
     d->syncexportAction     = new QMenu(i18n("Sync &Export"), this);
     d->syncexportAction->setIcon(QIcon::fromTheme(QLatin1String("network-server-database")));
 
@@ -812,7 +831,7 @@ void TagsManager::setupActions()
     d->rootDisabledOptions.append(delTagFromImg);
 }
 
-// helper based on KAction::setHelpText
+/// helper based on KAction::setHelpText
 void TagsManager::setHelpText(QAction* const action, const QString& text)
 {
     action->setStatusTip(text);
@@ -829,9 +848,13 @@ void TagsManager::enableRootTagActions(bool value)
     foreach (QAction* const action, d->rootDisabledOptions)
     {
         if (value)
+        {
             action->setEnabled(true);
+        }
         else
+        {
             action->setEnabled(false);
+        }
     }
 }
 
@@ -888,6 +911,7 @@ void TagsManager::slotRemoveNotAssignedTags()
         if (current.model()->hasIndex(0, 0, current))
         {
             // Add in the list
+
             int iterator = 0;
 
             while (current.model()->hasIndex(iterator, 0, current))

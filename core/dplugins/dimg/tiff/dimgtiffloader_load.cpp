@@ -57,9 +57,13 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     // libtiff will call these methods
 
 #ifdef Q_OS_WIN
+
     TIFFSetWarningHandler(NULL);
+
 #else
+
     TIFFSetWarningHandler(dimg_tiff_warning);
+
 #endif
 
     TIFFSetErrorHandler(dimg_tiff_error);
@@ -106,6 +110,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                                          << filePath;
         TIFFClose(tif);
         loadingFailed();
+
         return false;
     }
 
@@ -114,10 +119,12 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         rows_per_strip = h;
     }
 
-    if (   bits_per_sample   == 0
-        || samples_per_pixel == 0
-        || rows_per_strip    == 0
-//        || rows_per_strip    >  h
+    if (   (bits_per_sample   == 0)
+        || (samples_per_pixel == 0)
+        || (rows_per_strip    == 0)
+/*
+        || (rows_per_strip >  h)
+*/
        )
     {
         qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "TIFF loader: Encountered invalid value in image." << endl
@@ -128,6 +135,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                                          << " Loading file      : " << filePath;
         TIFFClose(tif);
         loadingFailed();
+
         return false;
     }
 
@@ -138,18 +146,21 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
     TIFFGetFieldDefaulted(tif, TIFFTAG_PHOTOMETRIC, &photometric);
 
-    if (photometric != PHOTOMETRIC_RGB                                    &&
-        photometric != PHOTOMETRIC_PALETTE                                &&
-        photometric != PHOTOMETRIC_MINISWHITE                             &&
-        photometric != PHOTOMETRIC_MINISBLACK                             &&
+    if (
+         (photometric != PHOTOMETRIC_RGB)                                 &&
+         (photometric != PHOTOMETRIC_PALETTE)                             &&
+         (photometric != PHOTOMETRIC_MINISWHITE)                          &&
+         (photometric != PHOTOMETRIC_MINISBLACK)                          &&
         ((photometric != PHOTOMETRIC_YCBCR) | (bits_per_sample != 8))     &&
         ((photometric != PHOTOMETRIC_SEPARATED) | (bits_per_sample != 8)) &&
-        (m_loadFlags & LoadImageData))
+        (m_loadFlags & LoadImageData)
+       )
     {
         qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Can not handle image without RGB color-space: "
                                          << photometric;
         TIFFClose(tif);
         loadingFailed();
+
         return false;
     }
 
@@ -203,7 +214,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         m_hasAlpha = false;
     }
 
-    if (bits_per_sample == 16 || bits_per_sample == 32)
+    if ((bits_per_sample == 16) || (bits_per_sample == 32))
     {
         m_sixteenBit = true;
     }
@@ -230,6 +241,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         else
         {
             // If ICC profile is null, check Exif metadata.
+
             checkExifWorkingColorSpace();
         }
     }
@@ -259,6 +271,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Failed to allocate memory for TIFF image" << filePath;
                 TIFFClose(tif);
                 loadingFailed();
+
                 return false;
             }
 
@@ -268,7 +281,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
             for (tstrip_t st = 0 ; st < num_of_strips ; ++st)
             {
-                if (observer && st == checkpoint)
+                if (observer && (st == checkpoint))
                 {
                     checkpoint += granularity(observer, num_of_strips, 0.8F);
 
@@ -276,6 +289,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     {
                         TIFFClose(tif);
                         loadingFailed();
+
                         return false;
                     }
 
@@ -289,6 +303,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Failed to read strip";
                     TIFFClose(tif);
                     loadingFailed();
+
                     return false;
                 }
 
@@ -300,18 +315,19 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                         offset = 0;
                     }
                 }
-                
+
                 ushort* stripPtr = reinterpret_cast<ushort*>(strip.data());
                 ushort* dataPtr  = reinterpret_cast<ushort*>(data.data() + offset);
                 ushort* p        = nullptr;
 
                 // tiff data is read as BGR or ABGR or Greyscale
 
-                if (samples_per_pixel == 1)   // See bug #148400: Greyscale pictures only have _one_ sample per pixel
+                if      (samples_per_pixel == 1)   // See bug #148400: Greyscale pictures only have _one_ sample per pixel
                 {
                     for (int i = 0 ; i < (bytesRead / 2) ; ++i)
                     {
                         // We have to read two bytes for one pixel
+
                         p        = dataPtr;
 
                         p[0]     = *stripPtr;      // RGB have to be set to the _same_ value
@@ -324,6 +340,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                     offset += bytesRead * 4;       // The _byte_offset in the data array is, of course, four times bytesRead
                 }
+
                 else if ((samples_per_pixel == 3) &&
                          (planar_config == PLANARCONFIG_CONTIG))
                 {
@@ -341,6 +358,8 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                     offset += bytesRead / 6 * 8;
                 }
+
+                // cppcheck-suppress knownConditionTrueFalse
                 else if ((samples_per_pixel == 3) &&
                          (planar_config == PLANARCONFIG_SEPARATE))
                 {
@@ -348,6 +367,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     {
                         p = dataPtr;
 
+                        // cppcheck-suppress knownConditionTrueFalse
                         if (samples_per_pixel != 0)
                         {
                             int den = (int)num_of_strips / (int)samples_per_pixel;
@@ -379,6 +399,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                     offset += bytesRead / 2 * 8;
                 }
+
                 else if ((samples_per_pixel == 4) &&
                          (planar_config == PLANARCONFIG_CONTIG))
                 {
@@ -396,6 +417,8 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                     offset += bytesRead;
                 }
+
+                // cppcheck-suppress knownConditionTrueFalse
                 else if ((samples_per_pixel == 4) &&
                          (planar_config == PLANARCONFIG_SEPARATE))
                 {
@@ -403,6 +426,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     {
                         p = dataPtr;
 
+                        // cppcheck-suppress knownConditionTrueFalse
                         if (samples_per_pixel != 0)
                         {
                             int den = (int)num_of_strips / (int)samples_per_pixel;
@@ -439,6 +463,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 }
             }
         }
+
         else if (bits_per_sample == 32)          // 32 bits image.
         {
             data.reset(new_failureTolerant(w, h, 8));
@@ -449,6 +474,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Failed to allocate memory for TIFF image" << filePath;
                 TIFFClose(tif);
                 loadingFailed();
+
                 return false;
             }
 
@@ -463,6 +489,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 {
                     TIFFClose(tif);
                     loadingFailed();
+
                     return false;
                 }
 
@@ -473,6 +500,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Failed to read strip";
                     TIFFClose(tif);
                     loadingFailed();
+
                     return false;
                 }
 
@@ -502,6 +530,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     {
                         TIFFClose(tif);
                         loadingFailed();
+
                         return false;
                     }
 
@@ -532,8 +561,8 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 ushort* dataPtr  = reinterpret_cast<ushort*>(data.data() + offset);
                 ushort* p        = nullptr;
 
-                if ((samples_per_pixel == 3) &&
-                    (planar_config == PLANARCONFIG_CONTIG))
+                if      ((samples_per_pixel == 3) &&
+                         (planar_config == PLANARCONFIG_CONTIG))
                 {
                     for (int i = 0 ; i < (bytesRead / 12) ; ++i)
                     {
@@ -549,6 +578,8 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                     offset += bytesRead / 12 * 8;
                 }
+
+                // cppcheck-suppress knownConditionTrueFalse
                 else if ((samples_per_pixel == 3) &&
                          (planar_config == PLANARCONFIG_SEPARATE))
                 {
@@ -556,6 +587,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     {
                         p = dataPtr;
 
+                        // cppcheck-suppress knownConditionTrueFalse
                         if (samples_per_pixel != 0)
                         {
                             int den = (int)num_of_strips / (int)samples_per_pixel;
@@ -587,6 +619,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                     offset += bytesRead / 4 * 8;
                 }
+
                 else if ((samples_per_pixel == 4) &&
                          (planar_config == PLANARCONFIG_CONTIG))
                 {
@@ -604,6 +637,8 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
                     offset += bytesRead / 16 * 8;
                 }
+
+                // cppcheck-suppress knownConditionTrueFalse
                 else if ((samples_per_pixel == 4) &&
                          (planar_config == PLANARCONFIG_SEPARATE))
                 {
@@ -611,6 +646,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     {
                         p = dataPtr;
 
+                        // cppcheck-suppress knownConditionTrueFalse
                         if (samples_per_pixel != 0)
                         {
                             int den = (int)num_of_strips / (int)samples_per_pixel;
@@ -619,7 +655,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                             {
                                 int val = st / den;
 
-                                switch (val)                        
+                                switch (val)
                                 {
                                     case 0:
                                         p[2] = (ushort)qBound(0.0, pow((double)*stripPtr++ / factor, scale) * 65535.0, 65535.0);
@@ -647,6 +683,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 }
             }
         }
+
         else       // Non 16 or 32 bits images ==> get it on BGRA 8 bits.
         {
             data.reset(new_failureTolerant(w, h, 4));
@@ -657,6 +694,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                 qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Failed to allocate memory for TIFF image" << filePath;
                 TIFFClose(tif);
                 loadingFailed();
+
                 return false;
             }
 
@@ -664,6 +702,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
             long pixelsRead     = 0;
 
             // this is inspired by TIFFReadRGBAStrip, tif_getimage.c
+
             char emsg[1024]     = "";
             uint32 rows_to_read = 0;
             uint checkpoint     = 0;
@@ -677,17 +716,20 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                                                  << TIFFFileName(tif) <<  " error message from Libtiff: " << emsg;
                 TIFFClose(tif);
                 loadingFailed();
+
                 return false;
             }
 
             // libtiff cannot handle all possible orientations, it give weird results.
             // We rotate ourselves. (Bug 274865)
+
             img.req_orientation = img.orientation;
 
             // read strips from image: read rows_per_strip, so always start at beginning of a strip
+
             for (uint row = 0 ; row < h ; row += rows_per_strip)
             {
-                if (observer && row >= checkpoint)
+                if (observer && (row >= checkpoint))
                 {
                     checkpoint += granularity(observer, h, 0.8F);
 
@@ -695,6 +737,7 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     {
                         TIFFClose(tif);
                         loadingFailed();
+
                         return false;
                     }
 
@@ -720,10 +763,11 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
                     qCWarning(DIGIKAM_DIMG_LOG_TIFF) << "Failed to read image data";
                     TIFFClose(tif);
                     loadingFailed();
+
                     return false;
                 }
 
-                pixelsRead = rows_to_read * img.width;
+                pixelsRead      = rows_to_read * img.width;
 
                 uchar* stripPtr = (uchar*)(strip.data());
                 uchar* dataPtr  = (uchar*)(data.data() + offset);

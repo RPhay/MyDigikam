@@ -141,7 +141,7 @@ void FuzzySearchView::dragMoveEvent(QDragMoveEvent* e)
 
 bool FuzzySearchView::dragEventWrapper(const QMimeData* data) const
 {
-    if (DItemDrag::canDecode(data))
+    if      (DItemDrag::canDecode(data))
     {
         return true;
     }
@@ -150,6 +150,7 @@ bool FuzzySearchView::dragEventWrapper(const QMimeData* data) const
         QList<QUrl> urls = data->urls();
 
         // If there is at least one URL and the URL is a local file.
+
         if (!urls.isEmpty() && urls.first().isLocalFile())
         {
             HaarIface haarIface;
@@ -190,11 +191,13 @@ void FuzzySearchView::dropEvent(QDropEvent* e)
     }
 
     // Allow dropping urls and handle them as sketch search if the urls represent images.
+
     if (e->mimeData()->hasUrls())
     {
         QList<QUrl> urls = e->mimeData()->urls();
 
         // If there is at least one URL and the URL is a local file.
+
         if (!urls.isEmpty() && urls.first().isLocalFile())
         {
             HaarIface haarIface;
@@ -204,6 +207,7 @@ void FuzzySearchView::dropEvent(QDropEvent* e)
             if (!image.isNull())
             {
                 // Set a temporary image id
+
                 d->imageInfo = ItemInfo(-1);
                 d->imageUrl  = urls.first();
 
@@ -254,7 +258,7 @@ void FuzzySearchView::slotFuzzyAlbumsChanged()
 
 void FuzzySearchView::slotTimerImageDone()
 {
-    if (d->imageInfo.isNull() && d->imageInfo.id() == -1 && !d->imageUrl.isEmpty())
+    if (d->imageInfo.isNull() && (d->imageInfo.id() == -1) && !d->imageUrl.isEmpty())
     {
         AlbumManager::instance()->clearCurrentAlbums();
         QString haarTitle = SAlbum::getTemporaryHaarTitle(DatabaseSearch::HaarImageSearch);
@@ -300,7 +304,7 @@ void FuzzySearchView::setItemInfo(const ItemInfo& info)
 
 void FuzzySearchView::slotThumbnailLoaded(const LoadingDescription& desc, const QPixmap& pix)
 {
-    if (!d->imageInfo.isNull() && QUrl::fromLocalFile(desc.filePath) == d->imageInfo.fileUrl())
+    if (!d->imageInfo.isNull() && (QUrl::fromLocalFile(desc.filePath) == d->imageInfo.fileUrl()))
     {
         d->imageWidget->setPixmap(pix.scaled(256, 256, Qt::KeepAspectRatio, Qt::SmoothTransformation));
     }

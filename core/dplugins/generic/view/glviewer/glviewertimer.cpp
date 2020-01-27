@@ -26,6 +26,7 @@
 // Qt includes
 
 #include <QDateTime>
+#include <QElapsedTimer>
 
 // Local includes
 
@@ -43,8 +44,8 @@ public:
         meantime = 0;
     }
 
-    QTime timer;
-    int   meantime;
+    QElapsedTimer timer;
+    int           meantime;
 };
 
 GLViewerTimer::GLViewerTimer()

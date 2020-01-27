@@ -55,8 +55,10 @@ public:
     void setSourceFilterModel(ShowfotoSortFilterModel* const sourceModel);
     ShowfotoSortFilterModel* sourceFilterModel() const;
 
-    /// Convenience methods mapped to ShowfotoItemModel.
-    /// Mentioned indexes returned come from the source Showfoto image model.
+    /**
+     *Convenience methods mapped to ShowfotoItemModel.
+     * Mentioned indexes returned come from the source Showfoto image model.
+     */
     QModelIndex mapToSourceShowfotoModel(const QModelIndex& proxyIndex)                       const;
     QModelIndex mapFromSourceShowfotoModel(const QModelIndex& showfotoModelIndex)             const;
     QModelIndex mapFromDirectSourceToSourceShowfotoModel(const QModelIndex& sourceModelIndex) const;
@@ -73,8 +75,9 @@ public:
     QModelIndex indexForShowfotoItemInfo(const ShowfotoItemInfo& info) const;
     QModelIndex indexForShowfotoItemId(qlonglong id)                   const;
 
-    /** Returns a list of all showfoto infos, sorted according to this model.
-     *  If you do not need a sorted list, use ShowfotoItemModel's showfotoItemInfo() method.
+    /**
+     * Returns a list of all showfoto infos, sorted according to this model.
+     * If you do not need a sorted list, use ShowfotoItemModel's showfotoItemInfo() method.
      */
     QList<ShowfotoItemInfo> showfotoItemInfosSorted() const;
 
@@ -112,8 +115,10 @@ public:
         /// Returns the format of the index which is used for category.
         CategoryFormatRole             = ShowfotoItemModel::FilterModelRoles + 3,
 
-        /// Returns true if the given showfoto item is a group leader, and the group is opened.
-        //TODO: GroupIsOpenRole        = ShowfotoItemModel::FilterModelRoles + 4
+        /**
+         * Returns true if the given showfoto item is a group leader, and the group is opened.
+         * TODO: GroupIsOpenRole        = ShowfotoItemModel::FilterModelRoles + 4
+         */
         ShowfotoFilterModelPointerRole = ShowfotoItemModel::FilterModelRoles + 50
     };
 
@@ -128,11 +133,11 @@ public:
 
     /// Enables sending ShowfotoItemInfosAdded and ShowfotoItemInfosAboutToBeRemoved.
     void setSendShowfotoItemInfoSignals(bool sendSignals);
-
-    //TODO: Implement grouping in Showfoto tool.
-    //bool isGroupOpen(qlonglong group) const;
-    //bool isAllGroupsOpen() const;
-
+/*
+    TODO: Implement grouping in Showfoto tool.
+    bool isGroupOpen(qlonglong group) const;
+    bool isAllGroupsOpen() const;
+*/
     virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
     virtual ShowfotoFilterModel* showfotoFilterModel()                          const override;
 
@@ -141,22 +146,24 @@ public Q_SLOTS:
     void setCategorizationMode(ShowfotoItemSortSettings::CategorizationMode mode);
     void setSortRole(ShowfotoItemSortSettings::SortRole role);
     void setSortOrder(ShowfotoItemSortSettings::SortOrder order);
+/*
+    TODO: Implement grouping in Showfoto tool.
+    void setGroupOpen(qlonglong group, bool open);
+    void toggleGroupOpen(qlonglong group);
+    void setAllGroupsOpen(bool open);
 
-    //TODO: Implement grouping in Showfoto tool.
-    //void setGroupOpen(qlonglong group, bool open);
-    //void toggleGroupOpen(qlonglong group);
-    //void setAllGroupsOpen(bool open);
+    /// Changes the current image filter settings and refilters.
+    TODO: Implement filtering in Showfoto tool.
+    virtual void setItemFilterSettings(const ItemFilterSettings& settings);
 
-    /** Changes the current image filter settings and refilters. */
-    //TODO: Implement filtering in Showfoto tool.
-    //virtual void setItemFilterSettings(const ItemFilterSettings& settings);
-
-    /** Changes the current image sort settings and resorts. */
-    //TODO: virtual void setItemSortSettings(const ItemSortSettings& settings);
+    /// Changes the current image sort settings and resorts.
+    TODO: virtual void setItemSortSettings(const ItemSortSettings& settings);
+*/
 
 Q_SIGNALS:
 
-    /** These signals need to be explicitly enabled with setSendItemInfoSignals().
+    /**
+     * These signals need to be explicitly enabled with setSendItemInfoSignals().
      */
     void showfotoItemInfosAdded(const QList<ShowfotoItemInfo>& infos);
     void showfotoItemInfosAboutToBeRemoved(const QList<ShowfotoItemInfo>& infos);
@@ -168,7 +175,7 @@ protected Q_SLOTS:
 
 public:
 
-    // Declared as public because of use in sub-classes.
+    /// Declared as public because of use in sub-classes.
     class ShowfotoFilterModelPrivate;
 
 protected:
@@ -178,23 +185,27 @@ protected:
 protected:
 
     virtual void setDirectSourceShowfotoModel(ShowfotoItemModel* const sourceModel) override;
-
-    //TODO: virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
-
+/*
+    TODO
+    virtual bool filterAcceptsRow(int source_row, const QModelIndex& source_parent) const;
+*/
     virtual int compareCategories(const QModelIndex& left, const QModelIndex& right) const override;
     virtual bool subSortLessThan(const QModelIndex& left, const QModelIndex& right)  const override;
 
-    /** Reimplement to customize category sorting,
-     *  Return negative if category of left < category right,
-     *  Return 0 if left and right are in the same category, else return positive.
+    /**
+     * Reimplement to customize category sorting,
+     * Return negative if category of left < category right,
+     * Return 0 if left and right are in the same category, else return positive.
      */
     virtual int compareInfosCategories(const ShowfotoItemInfo& left, const ShowfotoItemInfo& right) const;
 
-    /** Reimplement to customize sorting. Do not take categories into account here.
+    /**
+     * Reimplement to customize sorting. Do not take categories into account here.
      */
     virtual bool infosLessThan(const ShowfotoItemInfo& left, const ShowfotoItemInfo& right) const;
 
-    /** Returns a unique identifier for the category if info. The string need not be for user display.
+    /**
+     * Returns a unique identifier for the category if info. The string need not be for user display.
      */
     virtual QString categoryIdentifier(const ShowfotoItemInfo& info) const;
 

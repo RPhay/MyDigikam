@@ -48,7 +48,7 @@ int TileIndex::indexCount() const
 
 int TileIndex::level() const
 {
-    return m_indicesCount > 0 ? m_indicesCount - 1 : 0;
+    return (m_indicesCount > 0 ? m_indicesCount - 1 : 0);
 }
 
 void TileIndex::clear()
@@ -66,29 +66,32 @@ void TileIndex::appendLinearIndex(const int newIndex)
 int TileIndex::linearIndex(const int getLevel) const
 {
     GEOIFACE_ASSERT(getLevel<=level());
+
     return m_indices[getLevel];
 }
 
 int TileIndex::at(const int getLevel) const
 {
     GEOIFACE_ASSERT(getLevel<=level());
+
     return m_indices[getLevel];
 }
 
 int TileIndex::lastIndex() const
 {
     GEOIFACE_ASSERT(m_indicesCount>0);
+
     return m_indices[m_indicesCount-1];
 }
 
 int TileIndex::indexLat(const int getLevel) const
 {
-    return linearIndex(getLevel) / Tiling;
+    return (linearIndex(getLevel) / Tiling);
 }
 
 int TileIndex::indexLon(const int getLevel) const
 {
-    return linearIndex(getLevel) % Tiling;
+    return (linearIndex(getLevel) % Tiling);
 }
 
 QPoint TileIndex::latLonIndex(const int getLevel) const
@@ -186,7 +189,9 @@ TileIndex TileIndex::fromCoordinates(const Digikam::GeoCoordinates& coordinate, 
     GEOIFACE_ASSERT(getLevel <= MaxLevel);
 
     if (!coordinate.hasCoordinates())
+    {
         return TileIndex();
+    }
 
     qreal tileLatBL     = -90.0;
     qreal tileLonBL     = -180.0;
@@ -198,6 +203,7 @@ TileIndex TileIndex::fromCoordinates(const Digikam::GeoCoordinates& coordinate, 
     for (int l = 0 ; l <= getLevel ; ++l)
     {
         // how many tiles at this level?
+
         const qreal latDivisor = TileIndex::Tiling;
         const qreal lonDivisor = TileIndex::Tiling;
 
@@ -208,6 +214,7 @@ TileIndex TileIndex::fromCoordinates(const Digikam::GeoCoordinates& coordinate, 
         int lonIndex           = int( (coordinate.lon() - tileLonBL ) / dLon );
 
         // protect against invalid indices due to rounding errors
+
         bool haveRoundingErrors = false;
 
         if (latIndex < 0)
@@ -243,6 +250,7 @@ TileIndex TileIndex::fromCoordinates(const Digikam::GeoCoordinates& coordinate, 
 
         // update the start position for the next tile:
         // TODO: rounding errors
+
         tileLatBL     += latIndex*dLat;
         tileLonBL     += lonIndex*dLon;
         tileLatHeight /= latDivisor;
@@ -255,6 +263,7 @@ TileIndex TileIndex::fromCoordinates(const Digikam::GeoCoordinates& coordinate, 
 GeoCoordinates TileIndex::toCoordinates() const
 {
     // TODO: safeguards against rounding errors!
+
     qreal tileLatBL     = -90.0;
     qreal tileLonBL     = -180.0;
     qreal tileLatHeight = 180.0;
@@ -263,16 +272,18 @@ GeoCoordinates TileIndex::toCoordinates() const
     for (int l = 0 ; l < m_indicesCount ; ++l)
     {
         // how many tiles are at this level?
+
         const qreal latDivisor = TileIndex::Tiling;
         const qreal lonDivisor = TileIndex::Tiling;
 
         const qreal dLat       = tileLatHeight / latDivisor;
-        const qreal dLon       = tileLonWidth / lonDivisor;
+        const qreal dLon       = tileLonWidth  / lonDivisor;
 
         const int latIndex     = indexLat(l);
         const int lonIndex     = indexLon(l);
 
         // update the start position for the next tile:
+
         tileLatBL             += latIndex*dLat;
         tileLonBL             += lonIndex*dLon;
         tileLatHeight         /= latDivisor;
@@ -286,6 +297,7 @@ GeoCoordinates TileIndex::toCoordinates() const
 GeoCoordinates TileIndex::toCoordinates(const CornerPosition ofCorner) const
 {
     // TODO: safeguards against rounding errors!
+
     qreal tileLatBL     = -90.0;
     qreal tileLonBL     = -180.0;
     qreal tileLatHeight = 180.0;
@@ -294,6 +306,7 @@ GeoCoordinates TileIndex::toCoordinates(const CornerPosition ofCorner) const
     for (int l = 0 ; l < m_indicesCount ; ++l)
     {
         // how many tiles are at this level?
+
         const qreal latDivisor = TileIndex::Tiling;
         const qreal lonDivisor = TileIndex::Tiling;
 
@@ -304,9 +317,10 @@ GeoCoordinates TileIndex::toCoordinates(const CornerPosition ofCorner) const
         const int lonIndex     = indexLon(l);
 
         // update the start position for the next tile:
+
         if ((l+1) >= m_indicesCount)
         {
-            if (ofCorner == CornerNW)
+            if      (ofCorner == CornerNW)
             {
                 tileLatBL += latIndex*dLat;
                 tileLonBL += lonIndex*dLon;
@@ -330,6 +344,7 @@ GeoCoordinates TileIndex::toCoordinates(const CornerPosition ofCorner) const
         else
         {
             // update the start position for the next tile:
+
             tileLatBL += latIndex*dLat;
             tileLonBL += lonIndex*dLon;
         }
@@ -346,5 +361,6 @@ GeoCoordinates TileIndex::toCoordinates(const CornerPosition ofCorner) const
 QDebug operator<<(QDebug debug, const Digikam::TileIndex& tileIndex)
 {
     debug << tileIndex.toIntList();
+
     return debug;
 }

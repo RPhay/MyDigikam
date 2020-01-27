@@ -74,15 +74,17 @@ public:
     QList<ShowfotoItemInfo>     showfotoItemInfos()                     const;
     QList<QUrl>                 urls()                                  const;
 
-    /** Selects the index as current and scrolls to it
+    /**
+     * Selects the index as current and scrolls to it
      */
     void toIndex(const QUrl& url);
 
-    /** Returns the n-th info after the given one.
-     *  Specifically, return the previous info for nth = -1
-     *  and the next info for n = 1.
-     *  Returns a null info if either startingPoint or the nth info are
-     *  not contained in the model
+    /**
+     * Returns the n-th info after the given one.
+     * Specifically, return the previous info for nth = -1
+     * and the next info for n = 1.
+     * Returns a null info if either startingPoint or the nth info are
+     * not contained in the model
      */
     ShowfotoItemInfo nextInOrder(const ShowfotoItemInfo& startingPoint, int nth);
 
@@ -96,14 +98,17 @@ public:
         return nextInOrder(info, 1);
     }
 
-    /// Add and remove an overlay. It will as well be removed automatically when destroyed.
-    /// Unless you pass a different delegate, the current delegate will be used.
+    /**
+     * Add and remove an overlay. It will as well be removed automatically when destroyed.
+     * Unless you pass a different delegate, the current delegate will be used.
+     */
     void addOverlay(ItemDelegateOverlay* overlay, ShowfotoDelegate* delegate = nullptr);
     void removeOverlay(ItemDelegateOverlay* overlay);
 
-    //TODO: Implement This
-//    void addSelectionOverlay(ShowfotoDelegate* delegate = 0);
-
+    // TODO: Implement This
+/*
+    void addSelectionOverlay(ShowfotoDelegate* delegate = 0);
+*/
     ThumbnailSize thumbnailSize() const;
 
     virtual void setThumbnailSize(const ThumbnailSize& size);
@@ -112,27 +117,33 @@ public Q_SLOTS:
 
     void setThumbnailSize(int size);
 
-    /** Scroll the view to the given item when it becomes available
+    /**
+     * Scroll the view to the given item when it becomes available
      */
     void setCurrentWhenAvailable(qlonglong ShowfotoItemId);
 
-    /** Set as current item the item identified by its file url
+    /**
+     * Set as current item the item identified by its file url
      */
     void setCurrentUrl(const QUrl& url);
 
-    /** Set as current item the item identified by the ShowfotoItemInfo
+    /**
+     * Set as current item the item identified by the ShowfotoItemInfo
      */
     void setCurrentInfo(const ShowfotoItemInfo& info);
 
-    /** Set selected items identified by their file urls
+    /**
+     * Set selected items identified by their file urls
      */
     void setSelectedUrls(const QList<QUrl>& urlList);
 
-    /** Set selected items
+    /**
+     * Set selected items
      */
     void setSelectedShowfotoItemInfos(const QList<ShowfotoItemInfo>& infos);
 
-    /** Does something to gain attention for info, but not changing current selection
+    /**
+     * Does something to gain attention for info, but not changing current selection
      */
     void hintAt(const ShowfotoItemInfo& info);
 
@@ -140,12 +151,16 @@ Q_SIGNALS:
 
     void currentChanged(const ShowfotoItemInfo& info);
 
-    /// Emitted when new items are selected. The parameter includes only the newly selected infos,
-    /// there may be other already selected infos.
+    /**
+     * Emitted when new items are selected. The parameter includes only the newly selected infos,
+     * there may be other already selected infos.
+     */
     void selected(const QList<ShowfotoItemInfo>& newSelectedInfos);
 
-    /// Emitted when items are deselected. There may be other selected infos left.
-    /// This signal is not emitted when the model is reset; then only selectionCleared is emitted.
+    /**
+     * Emitted when items are deselected. There may be other selected infos left.
+     * This signal is not emitted when the model is reset; then only selectionCleared is emitted.
+     */
     void deselected(const QList<ShowfotoItemInfo>& nowDeselectedInfos);
 
     /// Emitted when the given ShowfotoItemInfo is activated. Info is never null.
@@ -156,7 +171,7 @@ Q_SIGNALS:
 
 protected:
 
-    // reimplemented from parent class
+    /// reimplemented from parent class
     QSortFilterProxyModel*       filterModel()     const                                                                   override;
     AbstractItemDragDropHandler* dragDropHandler() const                                                                   override;
     QModelIndex                  nextIndexHint(const QModelIndex& indexToAnchor, const QItemSelectionRange& removed) const override;

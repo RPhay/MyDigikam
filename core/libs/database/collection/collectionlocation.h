@@ -44,27 +44,32 @@ public:
 
     enum Status
     {
-        /** An invalid status. A location has this status if it is not valid,
-         *  and it had this status before its creation (for oldStatus information)
+        /**
+         * An invalid status. A location has this status if it is not valid,
+         * and it had this status before its creation (for oldStatus information)
          */
         LocationNull,
 
-        /** The location if available. This is the most common status.
+        /**
+         * The location if available. This is the most common status.
          */
         LocationAvailable,
 
-        /** The location is explicitly hidden. This gives no information if
-         *  the location was available were it not hidden.
+        /**
+         * The location is explicitly hidden. This gives no information if
+         * the location was available were it not hidden.
          */
         LocationHidden,
 
-        /** The location is currently not available. (Harddisk unplugged, CD not in drive,
-         *  network fs not mounted etc.) It may become available any time.
+        /**
+         * The location is currently not available. (Harddisk unplugged, CD not in drive,
+         * network fs not mounted etc.) It may become available any time.
          */
         LocationUnavailable,
 
-        /** An invalid status. A location object acquires this status if it has been deleted.
-         *  The object then does no longer point to an existing location.
+        /**
+         * An invalid status. A location object acquires this status if it has been deleted.
+         * The object then does no longer point to an existing location.
          */
         LocationDeleted
     };
@@ -73,19 +78,22 @@ public:
 
     enum Type
     {
-        /** The location is located on a storage device that is built-in
-         *  without frequent removal: Hard-disk inside the machine
+        /**
+         * The location is located on a storage device that is built-in
+         * without frequent removal: Hard-disk inside the machine
          */
         TypeVolumeHardWired = AlbumRoot::VolumeHardWired,
 
-        /** The location is located on a storage device that can be removed
-         *  from the local machine, and is expected to be removed.
-         *  USB stick, USB hard-disk, CD, DVD
+        /**
+         * The location is located on a storage device that can be removed
+         * from the local machine, and is expected to be removed.
+         * USB stick, USB hard-disk, CD, DVD
          */
         TypeVolumeRemovable = AlbumRoot::VolumeRemovable,
 
-        /** The location is available via a network file system.
-         *  The availability depends on the network connection.
+        /**
+         * The location is available via a network file system.
+         * The availability depends on the network connection.
          */
         TypeNetwork         = AlbumRoot::Network
     };
@@ -94,35 +102,40 @@ public:
 
     CollectionLocation();
 
-    /** The id uniquely identifying this collection
+    /**
+     * The id uniquely identifying this collection
      */
     int     id() const;
 
-    /** The current status. See above for possible values.
+    /**
+     * The current status. See above for possible values.
      */
     Status  status() const;
 
-    /** The type of location. See above for possible values.
+    /**
+     * The type of location. See above for possible values.
      */
     Type    type() const;
 
-    /** The current file system path leading to this album root.
-     *  Only guaranteed to be valid for location with status Available.
+    /**
+     * The current file system path leading to this album root.
+     * Only guaranteed to be valid for location with status Available.
      */
     QString albumRootPath() const;
 
-    /** A user-visible, optional label.
+    /**
+     * A user-visible, optional label.
      */
     QString label() const;
 
     bool isAvailable() const
     {
-        return m_status == LocationAvailable;
+        return (m_status == LocationAvailable);
     }
 
     bool isNull() const
     {
-        return m_status == LocationNull;
+        return (m_status == LocationNull);
     }
 
     uint hash() const

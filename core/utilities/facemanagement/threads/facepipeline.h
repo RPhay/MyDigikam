@@ -42,12 +42,16 @@ public:
     {
         /// Will read any given image
         ScanAll,
+
         /// Will skip any image that is already marked as scanned
         SkipAlreadyScanned,
+
         /// Will read unconfirmed faces for recognition
         ReadUnconfirmedFaces,
+
         /// Will read faces marked for training
         ReadFacesForTraining,
+
         /// Will read faces which are confirmed
         ReadConfirmedFaces
     };
@@ -56,6 +60,7 @@ public:
     {
         /// Write results. Merge with existing entries.
         NormalWrite,
+
         /// Add new results. Previous unconfirmed results will be cleared.
         OverwriteUnconfirmed
     };

@@ -49,8 +49,8 @@ class Q_DECL_HIDDEN AddTagsComboBox::Private
 public:
 
     explicit Private()
+      : lineEdit(nullptr)
     {
-        lineEdit   = nullptr;
     }
 
     AddTagsLineEdit* lineEdit;
@@ -73,6 +73,7 @@ AddTagsComboBox::AddTagsComboBox(QWidget* const parent)
     setLineEdit(d->lineEdit);
 
     // See QTBUG-20531
+
     d->lineEdit->completer()->popup()->setParent(d->lineEdit, Qt::Popup);
 
     connect(d->lineEdit, SIGNAL(taggingActionActivated(TaggingAction)),
@@ -96,11 +97,14 @@ AddTagsComboBox::~AddTagsComboBox()
     delete d;
 }
 
-void AddTagsComboBox::setModel(TagModel* const model, TagPropertiesFilterModel* const filteredModel, CheckableAlbumFilterModel* const filterModel)
+void AddTagsComboBox::setModel(TagModel* const model,
+                               TagPropertiesFilterModel* const filteredModel,
+                               CheckableAlbumFilterModel* const filterModel)
 {
     TagTreeViewSelectComboBox::setModel(model, filteredModel, filterModel);
 
     // the line edit will pick one
+
     d->lineEdit->setModel(model, filteredModel, filterModel);
 }
 
@@ -166,20 +170,22 @@ void AddTagsComboBox::slotViewIndexActivated(const QModelIndex& index)
 void AddTagsComboBox::slotLineEditActionActivated(const TaggingAction& action)
 {
     d->viewTaggingAction = TaggingAction();
+
     emit taggingActionActivated(action);
 }
 
 void AddTagsComboBox::slotLineEditActionSelected(const TaggingAction& action)
 {
     d->viewTaggingAction = TaggingAction();
+
     emit taggingActionSelected(action);
 }
 
 bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
 {
-    if (object == d->lineEdit->completer()->popup())
+    if      (object == d->lineEdit->completer()->popup())
     {
-        if (event->type() == QEvent::Show)
+        if      (event->type() == QEvent::Show)
         {
             QGraphicsProxyWidget* const proxyWidget = d->lineEdit->completer()->popup()->graphicsProxyWidget();
 
@@ -213,18 +219,21 @@ bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
     }
     else if (object == this)
     {
-        if (event->type() == QEvent::KeyPress || event->type() == QEvent::KeyRelease)
+        if      ((event->type() == QEvent::KeyPress) || (event->type() == QEvent::KeyRelease))
         {
             if (d->lineEdit->completer()->popup()->isVisible())
             {
                 QKeyEvent* const keyEvent = static_cast<QKeyEvent*>(event);
 
-                if (keyEvent && (keyEvent->key() == Qt::Key_Up ||
-                                 keyEvent->key() == Qt::Key_Down ||
-                                 keyEvent->key() == Qt::Key_Enter ||
-                                 keyEvent->key() == Qt::Key_Return))
+                if (keyEvent && (
+                                 (keyEvent->key() == Qt::Key_Up)      ||
+                                 (keyEvent->key() == Qt::Key_Down)    ||
+                                 (keyEvent->key() == Qt::Key_Enter)   ||
+                                 (keyEvent->key() == Qt::Key_Return))
+                                )
                 {
                     QApplication::sendEvent(d->lineEdit->completer()->popup(), event);
+
                     return true;
                 }
             }
@@ -235,8 +244,10 @@ bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
             {
                 QKeyEvent* const keyEvent = static_cast<QKeyEvent*>(event);
 
-                if (keyEvent && (keyEvent->key() == Qt::Key_Up ||
-                                 keyEvent->key() == Qt::Key_Down))
+                if (keyEvent && (
+                                 (keyEvent->key() == Qt::Key_Up) ||
+                                 (keyEvent->key() == Qt::Key_Down))
+                                )
                 {
                     event->accept();
                 }

@@ -113,14 +113,19 @@ void TagFolderView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
         return;
     }
 
-    if (tag->id() != FaceTags::unconfirmedPersonTagId() &&
-        tag->id() != FaceTags::unknownPersonTagId())
+    if ((tag->id() != FaceTags::unconfirmedPersonTagId()) &&
+        (tag->id() != FaceTags::unknownPersonTagId()))
     {
         cmh.addActionNewTag(tagModificationHelper(), tag);
+
 #ifdef HAVE_AKONADICONTACT
+
         cmh.addCreateTagFromAddressbookMenu();
+
 #endif
+
     }
+
     cmh.addAction(d->resetIconAction);
     cmh.addSeparator();
 
@@ -153,7 +158,9 @@ void TagFolderView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* a
     {
         cmh.addActionDeleteTag(tagModificationHelper(), tag);
         cmh.addSeparator();
+
         // If the tag is no face tag, add the option to set it as face tag.
+
         if (!FaceTags::isPerson(tag->id()) && !tag->isRoot())
         {
             cmh.addActionTagToFaceTag(tagModificationHelper(), tag);
@@ -219,7 +226,9 @@ void TagFolderView::slotExpandNode()
 
 void TagFolderView::slotCollapseNode()
 {
-    //QModelIndex root                 = this->model()->index(0,0);
+/*
+    QModelIndex root                 = this->model()->index(0,0);
+*/
     QItemSelectionModel* const model = this->selectionModel();
     QModelIndexList selected         = model->selectedIndexes();
 
@@ -240,8 +249,8 @@ void TagFolderView::slotCollapseNode()
             continue;
         }
 
-        int it            = 0;
-        QModelIndex child = current.model()->index(it++, 0, current);
+        int it              = 0;
+        QModelIndex child   = current.model()->index(it++, 0, current);
 
         while (child.isValid())
         {
@@ -262,7 +271,7 @@ void TagFolderView::handleCustomContextMenuAction(QAction* action, AlbumPointer<
         return;
     }
 
-    if (action == d->resetIconAction)
+    if      (action == d->resetIconAction)
     {
         QString errMsg;
         AlbumManager::instance()->updateTAlbumIcon(tag, QLatin1String("tag"), 0, errMsg);
@@ -308,7 +317,9 @@ void TagFolderView::setContexMenuItems(ContextMenuHelper& cmh, const QList<TAlbu
     else
     {
         cmh.addActionDeleteTags(tagModificationHelper(), albums);
+
         // If one of the selected tags is no face tag, add the action to mark them as face tags.
+
         foreach (TAlbum* const tag, albums)
         {
             if (!FaceTags::isPerson(tag->id()))
@@ -347,7 +358,6 @@ void TagFolderView::contextMenuEvent(QContextMenuEvent* event)
         setCurrentAlbum(album);
     }
 */
-
     // --------------------------------------------------------
 
     QModelIndexList selectedItems = selectionModel()->selectedIndexes();
@@ -390,8 +400,8 @@ void TagFolderView::contextMenuEvent(QContextMenuEvent* event)
 
 void TagFolderView::keyPressEvent(QKeyEvent* event)
 {
-    if (event->key() == Qt::Key_Return &&
-        event->modifiers() == Qt::AltModifier)
+    if ((event->key() == Qt::Key_Return) &&
+        (event->modifiers() == Qt::AltModifier))
     {
         QList<TAlbum*> selected = selectedTagAlbums();
 

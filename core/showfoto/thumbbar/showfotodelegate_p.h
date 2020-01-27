@@ -25,16 +25,29 @@
 #ifndef SHOW_FOTO_DELEGATE_P_H
 #define SHOW_FOTO_DELEGATE_P_H
 
+#include "showfotodelegate.h"
+
 // Qt includes
 
+#include <QPainter>
+#include <QApplication>
 #include <QRect>
 #include <QCache>
 
+// KDE includes
+
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
+
 // Local includes
 
+#include "showfotoimagemodel.h"
+#include "showfotofiltermodel.h"
 #include "showfotothumbnailbar.h"
+#include "showfotoiteminfo.h"
+#include "showfotothumbnailmodel.h"
+#include "showfotosettings.h"
 #include "itemviewshowfotodelegate_p.h"
-#include "showfotodelegate.h"
 
 namespace ShowFoto
 {
@@ -44,14 +57,13 @@ class Q_DECL_HIDDEN ShowfotoDelegate::ShowfotoDelegatePrivate : public ItemViewS
 public:
 
     ShowfotoDelegatePrivate()
+      : contentWidth(0),
+        drawImageFormat(true),
+        drawFocusFrame(true),
+        drawMouseOverFrame(true),
+        currentView(nullptr),
+        currentModel(nullptr)
     {
-        contentWidth        = 0;
-        drawImageFormat     = true;
-        drawMouseOverFrame  = true;
-        drawFocusFrame      = true;
-        currentModel        = nullptr;
-        currentView         = nullptr;
-
         actualPixmapRectCache.setMaxCost(250);
     }
 
@@ -87,12 +99,12 @@ class Q_DECL_HIDDEN ShowfotoThumbnailDelegatePrivate : public ShowfotoDelegate::
 public:
 
     ShowfotoThumbnailDelegatePrivate()
+      : flow(QListView::LeftToRight)
     {
-        flow                = QListView::LeftToRight;
-
         // switch off drawing of frames
-        drawMouseOverFrame  = false;
-        drawFocusFrame      = false;
+
+        drawMouseOverFrame = false;
+        drawFocusFrame     = false;
     }
 
     void init(ShowfotoThumbnailDelegate* const q);

@@ -99,9 +99,11 @@ void FindDuplicatesAlbumItem::calculateInfos(const QList<qlonglong>& deletedImag
         reader.readToFirstField();
 
         // Get the defined image ids.
+
         const QList<qlonglong>& list = reader.valueToLongLongList();
 
         // only images that are not removed/obsolete should be shown.
+
         QList<qlonglong> filteredList;
         double avgSim = 0.0;
 
@@ -111,6 +113,7 @@ void FindDuplicatesAlbumItem::calculateInfos(const QList<qlonglong>& deletedImag
 
             // If image is not deleted in this moment and was also not
             // removed before.
+
             if (!deletedImages.contains(imageId) && !info.isRemoved())
             {
                 filteredList << imageId;
@@ -163,7 +166,9 @@ void FindDuplicatesAlbumItem::setThumb(const QPixmap& pix, bool hasThumb)
                  (pixmap.height() / 2) - (pix.height() / 2), pix);
 
     QIcon icon = QIcon(pixmap);
-    //  We make sure the preview icon stays the same regardless of the role
+
+    // We make sure the preview icon stays the same regardless of the role
+
     icon.addPixmap(pixmap, QIcon::Selected, QIcon::On);
     icon.addPixmap(pixmap, QIcon::Selected, QIcon::Off);
     icon.addPixmap(pixmap, QIcon::Active,   QIcon::On);
@@ -190,7 +195,7 @@ bool FindDuplicatesAlbumItem::operator<(const QTreeWidgetItem& other) const
     int column = treeWidget()->sortColumn();
     int result = 0;
 
-    if (column == Column::AVG_SIMILARITY)
+    if      (column == Column::AVG_SIMILARITY)
     {
         result = ( text(column).toDouble() < other.text(column).toDouble() ) ? -1 : 0;
     }

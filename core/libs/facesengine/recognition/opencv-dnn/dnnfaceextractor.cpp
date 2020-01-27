@@ -30,7 +30,7 @@
 #include <QFile>
 #include <QDataStream>
 #include <QStandardPaths>
-#include <QTime>
+#include <QElapsedTimer>
 
 // Local includes
 
@@ -43,6 +43,7 @@ DNNFaceExtractor::DNNFaceExtractor(Preprocessor* const p)
     : preprocessor(p)
 {
     // Read pretrained neural network for face recognition
+
 /*
     QString nnproto = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                              QLatin1String("digikam/facesengine/dnnface/deep-residual-networks/ResNet-50-deploy.prototxt"));
@@ -50,6 +51,7 @@ DNNFaceExtractor::DNNFaceExtractor(Preprocessor* const p)
                                              QLatin1String("digikam/facesengine/dnnface/deep-residual-networks/ResNet-50-model.caffemodel"));
     net = cv::dnn::readNetFromCaffe(nnproto, nnmodel);
 */
+
     QString nnmodel   = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                QLatin1String("digikam/facesengine/openface_nn4.small2.v1.t7"));
     qCDebug(DIGIKAM_FACEDB_LOG) << nnmodel;
@@ -71,7 +73,7 @@ void DNNFaceExtractor::getFaceEmbedding(const cv::Mat& faceImage, std::vector<fl
     qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage channels: " << faceImage.channels();
     qCDebug(DIGIKAM_FACEDB_LOG) << "faceImage size: (" << faceImage.rows << ", " << faceImage.cols << ")\n";
 
-    QTime timer;
+    QElapsedTimer timer;
     timer.start();
 /*
     cv::Mat alignedFace = faceImage;

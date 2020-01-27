@@ -101,6 +101,7 @@ ClockPhotoDialog::ClockPhotoDialog(QWidget* const parent, const QUrl& defaultUrl
     QVBoxLayout* const vBox   = new QVBoxLayout(mainWidget);
 
     // Some explanation.
+
     QLabel* const explanationLabel = new QLabel(i18n("If you have a photo in your set with a clock or "
                                                      "another external time source on it, you can load "
                                                      "it here and set the indicator to the (date and) "
@@ -118,6 +119,7 @@ ClockPhotoDialog::ClockPhotoDialog(QWidget* const parent, const QUrl& defaultUrl
     // The date and time entry widget allows the user to enter the date and time
     // displayed in the image. The format is explicitly set, otherwise seconds
     // might not get displayed.
+
     d->dtLabel  = new QLabel();
     d->calendar = new QDateTimeEdit();
     d->calendar->setDisplayFormat(QLatin1String("d MMMM yyyy, hh:mm:ss"));
@@ -133,6 +135,7 @@ ClockPhotoDialog::ClockPhotoDialog(QWidget* const parent, const QUrl& defaultUrl
     setLayout(vBox);
 
     // Setup the signals and slots.
+
     connect(d->buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(slotOk()));
 
@@ -143,6 +146,7 @@ ClockPhotoDialog::ClockPhotoDialog(QWidget* const parent, const QUrl& defaultUrl
             this, SLOT(slotLoadPhoto()));
 
     // Show the window.
+
     loadSettings();
     show();
 
@@ -155,6 +159,7 @@ ClockPhotoDialog::ClockPhotoDialog(QWidget* const parent, const QUrl& defaultUrl
         // No default url was given.
         // Upon initialization, present the user with a photo loading dialog. This
         // is done before the main dialog is drawn.
+
         slotLoadPhoto();
     }
 }
@@ -179,6 +184,7 @@ bool ClockPhotoDialog::setImage(const QUrl& imageFile)
     d->previewManager->previewItem()->setPath(imageFile.toLocalFile(), true);
 
     // Try to read the datetime data.
+
     DMetadata meta;
 
     if (meta.load(imageFile.toLocalFile()))
@@ -190,6 +196,7 @@ bool ClockPhotoDialog::setImage(const QUrl& imageFile)
             msg = i18n("The clock date and time:");
 
             // Set the datetime widget to the photo datetime.
+
             d->calendar->setDateTime(d->photoDateTime);
             d->calendar->setEnabled(true);
             success = true;
@@ -199,9 +206,11 @@ bool ClockPhotoDialog::setImage(const QUrl& imageFile)
     d->dtLabel->setText(msg);
 
     // Disable all the GUI elements if loading failed.
+
     d->calendar->setEnabled(success);
 
     // enable the ok button if loading succeeded
+
     d->buttons->button(QDialogButtonBox::Ok)->setEnabled(success);
 
     return success;
@@ -241,6 +250,7 @@ void ClockPhotoDialog::slotLoadPhoto()
     if (!dlg.url().isEmpty())
     {
         // If the user selected a proper photo, try to load it.
+
         setImage(dlg.url());
     }
 }
@@ -252,10 +262,11 @@ void ClockPhotoDialog::slotOk()
     // the public variables.
 
     // Determine the number of seconds between the dates.
+
     int delta = d->photoDateTime.secsTo(d->calendar->dateTime());
 
-    // If the photo datetime is newer than the user datetime, it results in
-    // subtraction.
+    // If the photo datetime is newer than the user datetime, it results in subtraction.
+
     if (delta < 0)
     {
         d->deltaValues.deltaNegative = true;
@@ -267,6 +278,7 @@ void ClockPhotoDialog::slotOk()
     }
 
     // Calculate the number of days, hours, minutes and seconds.
+
     d->deltaValues.deltaDays    = delta / 86400;
     delta                       = delta % 86400;
     d->deltaValues.deltaHours   = delta / 3600;
@@ -276,6 +288,7 @@ void ClockPhotoDialog::slotOk()
     d->deltaValues.deltaSeconds = delta;
 
     // Accept the dialog.
+
     saveSettings();
     accept();
 }

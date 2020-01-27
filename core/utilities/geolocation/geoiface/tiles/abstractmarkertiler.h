@@ -156,7 +156,7 @@ public:
     void tileDelete(Tile* const tile);
     void tileDeleteChild(Tile* const parentTile, Tile* const childTile, const int knownLinearIndex = -1);
 
-    // these have to be implemented
+    /// these have to be implemented
     virtual TilerFlags tilerFlags() const;
     virtual Tile* tileNew();
     virtual void tileDeleteInternal(Tile* const tile);
@@ -166,7 +166,7 @@ public:
     virtual int getTileMarkerCount(const TileIndex& tileIndex)                                              = 0;
     virtual int getTileSelectedCount(const TileIndex& tileIndex)                                            = 0;
 
-    // these should be implemented for thumbnail handling
+    /// these should be implemented for thumbnail handling
     virtual QVariant getTileRepresentativeMarker(const TileIndex& tileIndex, const int sortKey)             = 0;
     virtual QVariant bestRepresentativeIndexFromList(const QList<QVariant>& indices, const int sortKey)     = 0;
     virtual QPixmap pixmapFromRepresentativeIndex(const QVariant& index, const QSize& size)                 = 0;
@@ -174,7 +174,7 @@ public:
     virtual GeoGroupState getTileGroupState(const TileIndex& tileIndex)                                     = 0;
     virtual GeoGroupState getGlobalGroupState()                                                             = 0;
 
-    // these can be implemented if you want to react to actions in geolocation interface
+    /// these can be implemented if you want to react to actions in geolocation interface
     virtual void onIndicesClicked(const ClickInfo& clickInfo);
     virtual void onIndicesMoved(const TileIndex::List& tileIndicesList, const GeoCoordinates& targetCoordinates,
                                 const QPersistentModelIndex& targetSnapIndex);

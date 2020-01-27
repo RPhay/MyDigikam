@@ -25,7 +25,7 @@
 
 // Qt includes
 
-#include <QTime>
+#include <QElapsedTimer>
 
 // Local includes
 
@@ -50,7 +50,7 @@ public:
 
     FaceDbAccess* dbAccess;
     bool          acquired;
-    QTime         timeAcquired;
+    QElapsedTimer timeAcquired;
     int           maxTime;
 
 public:
@@ -147,7 +147,7 @@ void FaceDbOperationGroup::resetTime()
 
 void FaceDbOperationGroup::allowLift()
 {
-    if (d->maxTime && d->timeAcquired.elapsed() > d->maxTime)
+    if (d->maxTime && (d->timeAcquired.elapsed() > d->maxTime))
     {
         lift();
     }

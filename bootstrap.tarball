@@ -8,7 +8,7 @@
 
 # Configuration to tune before to build tarball.
 
-TARBALL_VERSION="6.3.0"
+TARBALL_VERSION="7.0.0-beta2"
 
 # Location to host target files.
 TARBALL_DIR="$PWD/../digikam-$TARBALL_VERSION"
@@ -76,10 +76,6 @@ echo -e "\n---------- Compute tarball checksums for digiKam $TARBALL_VERSION\n" 
 echo    "File       : $TARBALL_FILE"                                            >> $TARBALL_CHECKSUMS
 echo -n "Size       : "                                                         >> $TARBALL_CHECKSUMS
 du -h "$TARBALL_FILE"     | { read first rest ; echo $first ; }                 >> $TARBALL_CHECKSUMS
-echo -n "MD5 sum    : "                                                         >> $TARBALL_CHECKSUMS
-md5sum "$TARBALL_FILE"    | { read first rest ; echo $first ; }                 >> $TARBALL_CHECKSUMS
-echo -n "SHA1 sum   : "                                                         >> $TARBALL_CHECKSUMS
-sha1sum "$TARBALL_FILE"   | { read first rest ; echo $first ; }                 >> $TARBALL_CHECKSUMS
 echo -n "SHA256 sum : "                                                         >> $TARBALL_CHECKSUMS
 sha256sum "$TARBALL_FILE" | { read first rest ; echo $first ; }                 >> $TARBALL_CHECKSUMS
 
@@ -98,10 +94,6 @@ if [[ $TARBALL_SIGN = 1 ]] ; then
     echo    "File       : $TARBALL_FILE.sig"                                        >> $TARBALL_CHECKSUMS
     echo -n "Size       : "                                                         >> $TARBALL_CHECKSUMS
     du -h "$TARBALL_FILE.sig"     | { read first rest ; echo $first ; }             >> $TARBALL_CHECKSUMS
-    echo -n "MD5 sum    : "                                                         >> $TARBALL_CHECKSUMS
-    md5sum "$TARBALL_FILE.sig"    | { read first rest ; echo $first ; }             >> $TARBALL_CHECKSUMS
-    echo -n "SHA1 sum   : "                                                         >> $TARBALL_CHECKSUMS
-    sha1sum "$TARBALL_FILE.sig"   | { read first rest ; echo $first ; }             >> $TARBALL_CHECKSUMS
     echo -n "SHA256 sum : "                                                         >> $TARBALL_CHECKSUMS
     sha256sum "$TARBALL_FILE.sig" | { read first rest ; echo $first ; }             >> $TARBALL_CHECKSUMS
 

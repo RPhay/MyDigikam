@@ -49,7 +49,7 @@
 
 // KDE includes
 
-#include "kconfiggroup.h"
+#include <kconfiggroup.h>
 #include <klocalizedstring.h>
 #include <kactioncollection.h>
 #include <ktoolbar.h>
@@ -203,9 +203,13 @@ public:
         assignTagAction(nullptr),
         imageViewSelectionAction(nullptr),
         imagePreviewAction(nullptr),
+
 #ifdef HAVE_MARBLE
+
         imageMapViewAction(nullptr),
+
 #endif // HAVE_MARBLE
+
         imageTableViewAction(nullptr),
         imageIconViewAction(nullptr),
         imageLightTableAction(nullptr),
@@ -293,7 +297,7 @@ public:
 
     KSharedConfig::Ptr                  config;
 
-    // Album Actions
+    /// Album Actions
     QAction*                            newAction;
     QAction*                            moveSelectionToAlbumAction;
     QAction*                            deleteAction;
@@ -312,7 +316,7 @@ public:
     QAction*                            writeAlbumMetadataAction;
     QAction*                            readAlbumMetadataAction;
 
-    // Tag Actions
+    /// Tag Actions
     QAction*                            browseTagsAction;
     QAction*                            openTagMngrAction;
     QAction*                            newTagAction;
@@ -320,12 +324,14 @@ public:
     QAction*                            editTagAction;
     QAction*                            assignTagAction;
 
-    // Image Actions
+    /// Image Actions
     KSelectAction*                      imageViewSelectionAction;
     QAction*                            imagePreviewAction;
 
 #ifdef HAVE_MARBLE
+
     QAction*                            imageMapViewAction;
+
 #endif // HAVE_MARBLE
 
     QAction*                            imageTableViewAction;
@@ -357,7 +363,7 @@ public:
     QAction*                            ieAction;
     QAction*                            ltAction;
 
-    // Edit Actions
+    /// Edit Actions
     QAction*                            cutItemsAction;
     QAction*                            copyItemsAction;
     QAction*                            pasteItemsAction;
@@ -365,7 +371,7 @@ public:
     QAction*                            selectNoneAction;
     QAction*                            selectInvertAction;
 
-    // View Actions
+    /// View Actions
     QAction*                            zoomPlusAction;
     QAction*                            zoomMinusAction;
     QAction*                            zoomFitToWindowAction;
@@ -381,7 +387,7 @@ public:
     QAction*                            showBarAction;
     QAction*                            viewCMViewAction;
 
-    // Tools Actions
+    /// Tools Actions
     QMenu*                              slideShowAction;
     QAction*                            slideShowAllAction;
     QAction*                            slideShowSelectionAction;
@@ -391,7 +397,7 @@ public:
     QAction*                            qualityAction;
     QAction*                            advSearchAction;
 
-    // Application Actions
+    /// Application Actions
     QAction*                            addCameraSeparatorAction;
     QAction*                            quitAction;
     QAction*                            tipAction;
@@ -409,7 +415,7 @@ public:
     MetadataStatusBar*                  metadataStatusBar;
     FilterStatusBar*                    filterStatusBar;
     DSplashScreen*                      splashScreen;
-    ItemIconView*                        view;
+    ItemIconView*                       view;
     CameraList*                         cameraList;
     TagsActionMngr*                     tagsActionManager;
     DZoomBar*                           zoomBar;

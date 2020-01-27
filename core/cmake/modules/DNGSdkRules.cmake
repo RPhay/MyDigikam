@@ -23,6 +23,7 @@ if(MSVC)
                     # DNG SDK
                     -DqWinOS=1
                     -DqMacOS=0
+                    -DqDNGThreadSafe=0
                     -DqDNGUseStdInt=0
                     )
 else()
@@ -33,6 +34,7 @@ else()
                     # DNG SDK
                     -DqWinOS=0
                     -DqMacOS=0
+                    -DqDNGThreadSafe=1   # Thread safe support under Mac and Linux using pthread library
                     -DqDNGUseStdInt=1
                    )
 endif()

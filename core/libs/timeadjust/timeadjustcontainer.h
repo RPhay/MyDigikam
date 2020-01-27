@@ -35,7 +35,8 @@
 namespace Digikam
 {
 
-/** Container that store all timestamp adjustments.
+/**
+ * Container that store all timestamp adjustments.
  */
 class DIGIKAM_EXPORT TimeAdjustContainer
 {
@@ -80,10 +81,10 @@ public:
     ~TimeAdjustContainer();
 
     /// Check if at least one option is selected
-    bool atLeastOneUpdateToProcess() const;
+    bool atLeastOneUpdateToProcess()                                const;
 
-    QDateTime calculateAdjustedDate(const QDateTime& originalTime) const;
-    QDateTime getDateTimeFromUrl(const QUrl& url) const;
+    QDateTime calculateAdjustedDate(const QDateTime& originalTime)  const;
+    QDateTime getDateTimeFromUrl(const QUrl& url)                   const;
 
 public:
 

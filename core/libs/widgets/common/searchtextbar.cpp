@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2007-11-25
- * Description : a bar used to search a string.
+ * Description : a bar used to search a string - version not based on database models
  *
  * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2010 by Johannes Wienke <languitar at semipol dot de>
@@ -41,7 +41,6 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "albumfiltermodel.h"
 
 namespace Digikam
 {
@@ -63,8 +62,7 @@ public:
         highlightOnResult(true),
         hasResultColor(200, 255, 200),
         hasNoResultColor(255, 200, 200),
-        completer(nullptr),
-        filterModel(nullptr)
+        completer(nullptr)
     {
     }
 
@@ -79,8 +77,6 @@ public:
     QColor                     hasNoResultColor;
 
     ModelCompleter*            completer;
-
-    QPointer<AlbumFilterModel> filterModel;
 
     SearchTextSettings         settings;
 };
@@ -163,42 +159,9 @@ void SearchTextBar::setHighlightOnResult(bool highlight)
     }
 }
 
-void SearchTextBar::setModel(QAbstractItemModel* model, int uniqueIdRole, int displayRole)
-{
-    d->completer->setItemModel(model, uniqueIdRole, displayRole);
-}
-
-void SearchTextBar::setModel(AbstractAlbumModel* model)
-{
-    d->completer->setItemModel(model, AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
-}
-
-void SearchTextBar::setFilterModel(AlbumFilterModel* filterModel)
-{
-    // if there already was a model, disconnect from this model
-
-    if (d->filterModel)
-    {
-        disconnect(d->filterModel);
-    }
-
-    d->filterModel = filterModel;
-
-    // connect to new model if desired
-
-    if (d->filterModel)
-    {
-        connect(this, SIGNAL(signalSearchTextSettings(SearchTextSettings)),
-                d->filterModel, SLOT(setSearchTextSettings(SearchTextSettings)));
-
-        connect(d->filterModel, SIGNAL(hasSearchResult(bool)),
-                this, SLOT(slotSearchResult(bool)));
-    }
-}
-
 SearchTextBar::HighlightState SearchTextBar::getCurrentHighlightState() const
 {
-    if (palette() == QPalette())
+    if      (palette() == QPalette())
     {
         return NEUTRAL;
     }

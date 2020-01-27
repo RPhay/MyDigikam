@@ -92,7 +92,8 @@ QString CollectionManager::albumRootPath(const QString& givenPath)
         if (!rootPath.isEmpty() && filePath.startsWith(rootPath))
         {
             // see also bug #221155 for extra checks
-            if (filePath == rootPath || filePath.startsWith(rootPath + QLatin1Char('/')))
+
+            if ((filePath == rootPath) || filePath.startsWith(rootPath + QLatin1Char('/')))
             {
                 return location->albumRootPath();
             }
@@ -142,7 +143,7 @@ QString CollectionManager::album(const QString& filePath)
 
         QString album = filePath.mid(rootPath.length());
 
-        if (album.isEmpty() || album == QLatin1String("/"))
+        if (album.isEmpty() ||( album == QLatin1String("/")))
         {
             return QLatin1String("/");
         }
@@ -226,8 +227,9 @@ void CollectionManager::slotAlbumRootChange(const AlbumRootChangeset& changeset)
             break;
 
         case AlbumRootChangeset::PropertiesChanged:
-            // label has changed
         {
+            // label has changed
+
             CollectionLocation toBeEmitted;
             {
                 QReadLocker locker(&d->lock);
@@ -253,8 +255,9 @@ void CollectionManager::slotAlbumRootChange(const AlbumRootChangeset& changeset)
             {
                 emit locationPropertiesChanged(toBeEmitted);
             }
+
+            break;
         }
-        break;
 
         case AlbumRootChangeset::Unknown:
             break;

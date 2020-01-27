@@ -151,6 +151,7 @@ ShowFoto::~ShowFoto()
 bool ShowFoto::queryClose()
 {
     // wait if a save operation is currently running
+
     if (!waitForSavingToComplete())
     {
         return false;
@@ -162,6 +163,7 @@ bool ShowFoto::queryClose()
     }
 
     saveSettings();
+
     return true;
 }
 
@@ -219,7 +221,7 @@ void ShowFoto::slotOpenFile()
 
     QList<QUrl> urls = Digikam::ImageDialog::getImageURLs(this, d->lastOpenedDirectory);
 
-    if (urls.count() > 1)
+    if      (urls.count() > 1)
     {
         d->infoList.clear();
         d->model->clearShowfotoItemInfos();
@@ -285,9 +287,13 @@ void ShowFoto::openUrls(const QList<QUrl> &urls)
         iteminfo.url       = QUrl::fromLocalFile(fi.filePath());
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
+
         iteminfo.dtime     = fi.birthTime();
+
 #else
+
         iteminfo.dtime     = fi.created();
+
 #endif
 
         meta.load(fi.filePath());
@@ -297,7 +303,9 @@ void ShowFoto::openUrls(const QList<QUrl> &urls)
         iteminfo.photoInfo = meta.getPhotographInformation();
 
         if (!d->infoList.contains(iteminfo))
+        {
             d->infoList << iteminfo;
+        }
     }
 }
 
@@ -356,9 +364,13 @@ void ShowFoto::openFolder(const QUrl& url)
         iteminfo.url       = QUrl::fromLocalFile((*fi).filePath());
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
+
         iteminfo.dtime     = (*fi).birthTime();
+
 #else
+
         iteminfo.dtime     = (*fi).created();
+
 #endif
 
         meta.load((*fi).filePath());
@@ -368,7 +380,9 @@ void ShowFoto::openFolder(const QUrl& url)
         iteminfo.photoInfo = meta.getPhotographInformation();
 
         if (!d->infoList.contains(iteminfo))
+        {
             d->infoList << iteminfo;
+        }
     }
 
     QApplication::restoreOverrideCursor();
@@ -394,10 +408,11 @@ void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
 
             // Add extra check of the image extensions that are still
             // unknown in older Qt versions or have an application mime type.
+
             if (QMimeDatabase().mimeTypeForUrl(url).name().startsWith(QLatin1String("image/")) ||
-                ext == QLatin1String("HEIC")                                                   ||
-                ext == QLatin1String("HEIF")                                                   ||
-                ext == QLatin1String("KRA"))
+                (ext == QLatin1String("HEIC"))                                                   ||
+                (ext == QLatin1String("HEIF"))                                                   ||
+                (ext == QLatin1String("KRA")))
             {
                 imagesUrls << url;
             }
@@ -424,7 +439,7 @@ void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
 
     if (!d->infoList.isEmpty())
     {
-        if (!dropped && foldersUrls.isEmpty() && imagesUrls.count() == 1)
+        if (!dropped && foldersUrls.isEmpty() && (imagesUrls.count() == 1))
         {
             openFolder(imagesUrls.first().adjusted(QUrl::RemoveFilename));
             d->model->clearShowfotoItemInfos();
@@ -432,10 +447,12 @@ void ShowFoto::slotDroppedUrls(const QList<QUrl>& droppedUrls, bool dropped)
 
             slotOpenUrl(d->thumbBar->findItemByUrl(imagesUrls.first()));
             d->thumbBar->setCurrentUrl(imagesUrls.first());
+
             return;
         }
 
         d->model->clearShowfotoItemInfos();
+
         emit signalInfoList(d->infoList);
 
         slotOpenUrl(d->thumbBar->currentInfo());
@@ -460,6 +477,7 @@ void ShowFoto::slotOpenUrl(const ShowfotoItemInfo& info)
     if (info.url.isLocalFile())
     {
         // file protocol. We do not need the network
+
         localFile = info.url.toLocalFile();
     }
     else
@@ -483,6 +501,7 @@ void ShowFoto::slotShowfotoItemInfoActivated(const ShowfotoItemInfo& info)
     if (!d->thumbBar->currentInfo().isNull() && !promptUserSave(d->currentLoadedUrl))
     {
         d->thumbBar->setCurrentUrl(d->currentLoadedUrl);
+
         return;
     }
 
@@ -620,6 +639,7 @@ void ShowFoto::slotPrepareToLoad()
     Digikam::EditorWindow::slotPrepareToLoad();
 
     // Here we enable specific actions on showfoto.
+
     d->openFilesInFolderAction->setEnabled(true);
     d->fileOpenAction->setEnabled(true);
 }
@@ -629,6 +649,7 @@ void ShowFoto::slotLoadingStarted(const QString& filename)
     Digikam::EditorWindow::slotLoadingStarted(filename);
 
     // Here we disable specific actions on showfoto.
+
     d->openFilesInFolderAction->setEnabled(false);
     d->fileOpenAction->setEnabled(false);
 }
@@ -638,6 +659,7 @@ void ShowFoto::slotLoadingFinished(const QString& filename, bool success)
     Digikam::EditorWindow::slotLoadingFinished(filename, success);
 
     // Here we re-enable specific actions on showfoto.
+
     d->openFilesInFolderAction->setEnabled(true);
     d->fileOpenAction->setEnabled(true);
 }
@@ -647,6 +669,7 @@ void ShowFoto::slotSavingStarted(const QString& filename)
     Digikam::EditorWindow::slotSavingStarted(filename);
 
     // Here we disable specific actions on showfoto.
+
     d->openFilesInFolderAction->setEnabled(false);
     d->fileOpenAction->setEnabled(false);
 }
@@ -680,6 +703,7 @@ void ShowFoto::finishSaving(bool success)
     Digikam::EditorWindow::finishSaving(success);
 
     // Here we re-enable specific actions on showfoto.
+
     d->openFilesInFolderAction->setEnabled(true);
     d->fileOpenAction->setEnabled(true);
 }
@@ -687,9 +711,11 @@ void ShowFoto::finishSaving(bool success)
 void ShowFoto::saveIsComplete()
 {
     Digikam::LoadingCacheInterface::putImage(m_savingContext.destinationURL.toLocalFile(), m_canvas->currentImage());
-    //d->thumbBar->invalidateThumb(d->currentItem);
-
+/*
+    d->thumbBar->invalidateThumb(d->currentItem);
+*/
     // Pop-up a message to bring user when save is done.
+
     Digikam::DNotificationWrapper(QLatin1String("editorsavefilecompleted"), i18n("Image saved successfully"),
                                   this, windowTitle());
 
@@ -703,6 +729,7 @@ void ShowFoto::saveAsIsComplete()
     Digikam::LoadingCacheInterface::putImage(m_savingContext.destinationURL.toLocalFile(), m_canvas->currentImage());
 
     // Add the file to the list of thumbbar images if it's not there already
+
     Digikam::ThumbBarItem* foundItem = d->thumbBar->findItemByUrl(m_savingContext.destinationURL);
     d->thumbBar->invalidateThumb(foundItem);
     qCDebug(DIGIKAM_SHOWFOTO_LOG) << wantedUrls;
@@ -720,6 +747,7 @@ void ShowFoto::saveAsIsComplete()
     slotUpdateItemInfo();
 
     // Pop-up a message to bring user when save is done.
+
     Digikam::DNotificationWrapper("editorsavefilecompleted", i18n("Image saved successfully"),
                                   this, windowTitle());
 */
@@ -746,10 +774,12 @@ bool ShowFoto::save()
     if (d->thumbBar->currentInfo().isNull())
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "This should not happen";
+
         return true;
     }
 
     startingSave(d->currentLoadedUrl);
+
     return true;
 }
 
@@ -758,6 +788,7 @@ bool ShowFoto::saveAs()
     if (d->thumbBar->currentInfo().isNull())
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "This should not happen";
+
         return false;
     }
 
@@ -789,6 +820,7 @@ void ShowFoto::slotDeleteCurrentItem()
         }
 
         // No error, remove item in thumbbar.
+
         d->model->removeIndex(d->thumbBar->currentIndex());
 
         // Disable menu actions and SideBar if no current image.
@@ -805,6 +837,7 @@ void ShowFoto::slotDeleteCurrentItem()
         else
         {
             // If there is an image after the deleted one, make that selected.
+
             slotOpenUrl(d->thumbBar->currentInfo());
         }
     }

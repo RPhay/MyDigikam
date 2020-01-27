@@ -71,7 +71,7 @@ public:
         ForRecognition     = 1 << 10,
         ForConfirmation    = 1 << 11,
         ForTraining        = 1 << 12,
-        ForEditing         = 1 << 13, // Add, Change or remove
+        ForEditing         = 1 << 13, ///< Add, Change or remove
 
         /// Executed action (task is cleared)
         Confirmed          = 1 << 20,
@@ -156,7 +156,7 @@ class Q_DECL_HIDDEN FacePipelineExtendedPackage : public FacePipelinePackage,
 public:
 
     QString                                                           filePath;
-    DImg                                                              detectionImage; // image scaled to about 0.5 Mpx
+    DImg                                                              detectionImage; ///< image scaled to about 0.5 Mpx
     typedef QExplicitlySharedDataPointer<FacePipelineExtendedPackage> Ptr;
 
 public:

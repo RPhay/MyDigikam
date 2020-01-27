@@ -31,7 +31,7 @@
 #include <QApplication>
 #include <QDir>
 #include <QImage>
-#include <QTime>
+#include <QElapsedTimer>
 #include <QDebug>
 #include <QCommandLineParser>
 #include <QList>
@@ -360,7 +360,7 @@ int main(int argc, char* argv[])
     std::vector<int> clusteredIndices(dataset.size(), -1);
     QList<QImage> faces = retrieveFaces(detectedFaces, bboxes);
 
-    QTime timer;
+    QElapsedTimer timer;
 
     timer.start();
     db.clusterFaces(faces, clusteredIndices, dataset, nbOfClusters);

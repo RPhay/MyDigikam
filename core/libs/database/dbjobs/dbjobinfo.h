@@ -41,13 +41,13 @@ class DIGIKAM_DATABASE_EXPORT DBJobInfo
 public:
 
     void setFoldersJob();
-    bool isFoldersJob() const;
+    bool isFoldersJob()                 const;
 
     void setListAvailableImagesOnly();
-    bool isListAvailableImagesOnly() const;
+    bool isListAvailableImagesOnly()    const;
 
     void setRecursive();
-    bool isRecursive() const;
+    bool isRecursive()                  const;
 
 protected:
 
@@ -89,13 +89,13 @@ public:
     explicit TagsDBJobInfo();
 
     void setFaceFoldersJob();
-    bool isFaceFoldersJob() const;
+    bool isFaceFoldersJob()         const;
 
     void setSpecialTag(const QString& tag);
-    QString specialTag() const;
+    QString specialTag()            const;
 
     void setTagsIds(const QList<int>& tagsIds);
-    QList<int> tagsIds() const;
+    QList<int> tagsIds()            const;
 
 private:
 
@@ -113,19 +113,19 @@ public:
     explicit GPSDBJobInfo();
 
     void setDirectQuery();
-    bool isDirectQuery() const;
+    bool isDirectQuery()            const;
 
     void setLat1(qreal lat);
-    qreal lat1() const;
+    qreal lat1()                    const;
 
     void setLng1(qreal lng);
-    qreal lng1() const;
+    qreal lng1()                    const;
 
     void setLat2(qreal lat);
-    qreal lat2() const;
+    qreal lat2()                    const;
 
     void setLng2(qreal lng);
-    qreal lng2() const;
+    qreal lng2()                    const;
 
 private:
 
@@ -145,35 +145,35 @@ public:
     explicit SearchesDBJobInfo();
 
     void setDuplicatesJob();
-    bool isDuplicatesJob() const;
+    bool isDuplicatesJob()          const;
 
     void setAlbumUpdate();
-    bool isAlbumUpdate() const;
+    bool isAlbumUpdate()            const;
 
     void setSearchIds(QList<int> ids);
     void setSearchId(int id);
-    QList<int> searchIds() const;
+    QList<int> searchIds()          const;
 
     void setMinThreshold(double t);
-    double minThreshold() const;
+    double minThreshold()           const;
 
     void setMaxThreshold(double t);
-    double maxThreshold() const;
+    double maxThreshold()           const;
 
     void setAlbumTagRelation(int type);
-    int albumTagRelation() const;
+    int albumTagRelation()          const;
 
     void setSearchResultRestriction(int type);
-    int searchResultRestriction() const;
+    int searchResultRestriction()   const;
 
     void setAlbumsIds(const QList<int>& albumsIds);
-    QList<int> albumsIds() const;
+    QList<int> albumsIds()          const;
 
     void setImageIds(const QList<qlonglong>& imageIds);
-    QList<qlonglong> imageIds() const;
+    QList<qlonglong> imageIds()     const;
 
     void setTagsIds(const QList<int>& tagsIds);
-    QList<int> tagsIds() const;
+    QList<int> tagsIds()            const;
 
 public:
 
@@ -198,10 +198,10 @@ public:
     explicit DatesDBJobInfo();
 
     void setStartDate(const QDate& date);
-    QDate startDate() const;
+    QDate startDate()   const;
 
     void setEndDate(const QDate& date);
-    QDate endDate() const;
+    QDate endDate()     const;
 
 private:
 

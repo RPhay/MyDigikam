@@ -21,37 +21,18 @@
  *
  * ============================================================ */
 
-#include "itemviewshowfotodelegate.h"
 #include "itemviewshowfotodelegate_p.h"
-
-// Qt includes
-
-#include <QPainter>
-#include <QApplication>
-
-// KDE includes
-
-#include <klocalizedstring.h>
-
-// Local includes
-
-#include "thememanager.h"
-#include "itempropertiestab.h"
-#include "showfotoiteminfo.h"
-#include "colorlabelwidget.h"
 
 namespace ShowFoto
 {
 
 ItemViewShowfotoDelegatePrivate::ItemViewShowfotoDelegatePrivate()
+    : spacing(0),
+      thumbSize(ThumbnailSize(0)),
+      q(nullptr),
+      radius(3),                // painting constants
+      margin(5)
 {
-    q             = nullptr;
-    spacing       = 0;
-    thumbSize     = ThumbnailSize(0);
-
-    // painting constants
-    radius        = 3;
-    margin        = 5;
 }
 
 void ItemViewShowfotoDelegatePrivate::init(ItemViewShowfotoDelegate* const _q)
@@ -93,6 +74,7 @@ ItemViewShowfotoDelegate::~ItemViewShowfotoDelegate()
 ThumbnailSize ItemViewShowfotoDelegate::thumbnailSize() const
 {
     Q_D(const ItemViewShowfotoDelegate);
+
     return d->thumbSize;
 }
 
@@ -123,12 +105,14 @@ void ItemViewShowfotoDelegate::setSpacing(int spacing)
 int ItemViewShowfotoDelegate::spacing() const
 {
     Q_D(const ItemViewShowfotoDelegate);
+
     return d->spacing;
 }
 
 QRect ItemViewShowfotoDelegate::rect() const
 {
     Q_D(const ItemViewShowfotoDelegate);
+
     return d->rect;
 }
 
@@ -145,12 +129,14 @@ QRect ItemViewShowfotoDelegate::imageInformationRect() const
 QSize ItemViewShowfotoDelegate::sizeHint(const QStyleOptionViewItem& /*option*/, const QModelIndex& /*index*/) const
 {
     Q_D(const ItemViewShowfotoDelegate);
+
     return d->rect.size();
 }
 
 QSize ItemViewShowfotoDelegate::gridSize() const
 {
     Q_D(const ItemViewShowfotoDelegate);
+
     return d->gridSize;
 }
 
@@ -187,6 +173,7 @@ void ItemViewShowfotoDelegate::overlayDestroyed(QObject* o)
 void ItemViewShowfotoDelegate::mouseMoved(QMouseEvent* e, const QRect& visualRect, const QModelIndex& index)
 {
     // 3-way indirection AbstractShowfotoItemDelegate -> ItemViewShowfotoDelegate -> ItemDelegateOverlayContainer
+
     ItemDelegateOverlayContainer::mouseMoved(e, visualRect, index);
 }
 
@@ -216,7 +203,9 @@ void ItemViewShowfotoDelegate::invalidatePaintingCache()
     if (oldGridSize != d->gridSize)
     {
         emit gridSizeChanged(d->gridSize);
+/*
         // emit sizeHintChanged(QModelIndex());
+*/
     }
 
     emit visualChange();
@@ -257,7 +246,7 @@ void ItemViewShowfotoDelegate::drawName(QPainter* p,const QRect& nameRect, const
 {
     Q_D(const ItemViewShowfotoDelegate);
     p->setFont(d->fontReg);
-    p->drawText(nameRect, Qt::AlignCenter, name);//squeezedTextCached(p, nameRect.width(), name));
+    p->drawText(nameRect, Qt::AlignCenter, name);   //squeezedTextCached(p, nameRect.width(), name));
 }
 
 void ItemViewShowfotoDelegate::drawCreationDate(QPainter* p, const QRect& dateRect, const QDateTime& date) const
@@ -266,7 +255,7 @@ void ItemViewShowfotoDelegate::drawCreationDate(QPainter* p, const QRect& dateRe
     p->setFont(d->fontXtra);
     QString str = dateToString(date);
     str         = i18nc("date of image creation", "created: %1", str);
-    p->drawText(dateRect, Qt::AlignCenter, str);//squeezedTextCached(p, dateRect.width(), str));
+    p->drawText(dateRect, Qt::AlignCenter, str);    //squeezedTextCached(p, dateRect.width(), str));
 }
 
 void ItemViewShowfotoDelegate::drawImageFormat(QPainter* p, const QRect& r, const QString& mime) const

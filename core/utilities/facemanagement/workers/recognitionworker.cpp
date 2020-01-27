@@ -60,6 +60,7 @@ void RecognitionWorker::process(FacePipelineExtendedPackage::Ptr package)
     if (package->processFlags & FacePipelinePackage::ProcessedByDetector)
     {
         // assume we have an image
+
         images = imageRetriever.getDetails(package->image, package->detectedFaces);
     }
     else if (!package->databaseFaces.isEmpty())

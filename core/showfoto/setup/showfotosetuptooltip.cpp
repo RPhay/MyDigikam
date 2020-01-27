@@ -67,7 +67,8 @@ public:
         photoSettingBox(nullptr),
         fontSelect(nullptr),
         settings(nullptr)
-    {}
+    {
+    }
 
     QCheckBox*            showFileDateBox;
     QCheckBox*            showFileNameBox;
@@ -100,7 +101,7 @@ SetupToolTip::SetupToolTip(QWidget* const parent)
     setWidget(panel);
     setWidgetResizable(true);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QVBoxLayout* const layout = new QVBoxLayout(panel);
     d->showToolTipsBox        = new QCheckBox(i18n("Show Thumbbar items' toolti&ps"), panel);

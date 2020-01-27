@@ -268,7 +268,8 @@ void ColorFXFilter::vivid(DImg* const orgImage, DImg* const destImage, int facto
     *destImage = curves.getTargetImage();
 }
 
-/* Function to apply the Neon effect
+/**
+ * Function to apply the Neon effect
  *
  * data             => The image data in RGBA mode.
  * Width            => Width of image.
@@ -285,7 +286,8 @@ void ColorFXFilter::neon(DImg* const orgImage, DImg* const destImage, int Intens
     neonFindEdges(orgImage, destImage, true, Intensity, BW);
 }
 
-/* Function to apply the Find Edges effect
+/**
+ * Function to apply the Find Edges effect
  *
  * data             => The image data in RGBA mode.
  * Width            => Width of image.
@@ -311,7 +313,7 @@ static inline int Lim_Max(int Now, int Up, int Max)
 {
     --Max;
 
-    while (Now > Max - Up)
+    while (Now > (Max - Up))
     {
         --Up;
     }
@@ -337,9 +339,11 @@ void ColorFXFilter::neonFindEdges(DImg* const orgImage, DImg* const destImage, b
     uchar* ptr=nullptr, *ptr1=nullptr, *ptr2=nullptr;
 
     // these must be uint, we need full 2^32 range for 16 bit
+
     uint color_1, color_2, colorPoint, colorOther1, colorOther2;
 
     // initial copy
+
     memcpy(pResBits, data, Width * Height * bytesDepth);
 
     double intensityFactor = qSqrt(1 << Intensity);
@@ -414,6 +418,7 @@ void ColorFXFilter::loadLut3D(const QString& path)
     if (fi.suffix().toLower() == QLatin1String("cube"))
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Ca not yet process Cube LUTs";
+
         // TODO: Adobe Cube LUT http://wwwimages.adobe.com/content/dam/Adobe/en/products/speedgrade/cc/pdfs/cube-lut-specification-1.0.pdf
     }
     else
@@ -429,6 +434,7 @@ void ColorFXFilter::loadLut3D(const QString& path)
         if (img.width() == img.height())
         {
             // HALD LUT (Like imagemagick creates)
+
             int w          = img.width();
 
             m_lutTableSize = int(pow(pow(w, 1 / 3.0), 2) + 0.1);
@@ -530,14 +536,13 @@ static inline int interp(const quint16* src, int p, int* off ,float dr, float dg
     return (int)frbg;
 }
 
-#define unlikely(x)     __builtin_expect(!!(x), 0)
 static inline int clamp(int from, int maxVal)
 {
-    if      (unlikely(from < 0))
+    if      (Q_UNLIKELY(from < 0))
     {
         from = 0;
     }
-    else if (unlikely(from > 65535))
+    else if (Q_UNLIKELY(from > 65535))
     {
         from = 65535;
     }
@@ -548,7 +553,7 @@ static inline int clamp(int from, int maxVal)
     }
     else
     {
-        return from * maxVal / 65535;
+        return (from * maxVal / 65535);
     }
 }
 
@@ -608,7 +613,6 @@ static void ItemFilterFx(const quint16* lutrgb, int lutTableSize,
     }
 }
 
-#define min(a, b) ((a) < (b) ? (a) : (b))
 void ColorFXFilter::applyLut3D()
 {
     uint i, stepI, maxI;
@@ -616,7 +620,9 @@ void ColorFXFilter::applyLut3D()
     const int steps = 10;
 
     if (!m_lutTable)
+    {
         return;
+    }
 
     maxI  = m_orgImage.width() * m_orgImage.height();
     stepI = maxI / steps;
@@ -628,13 +634,13 @@ void ColorFXFilter::applyLut3D()
         if (!m_orgImage.sixteenBit())
         {
             ItemFilterFx(m_lutTable, m_lutTableSize, m_orgImage.bits(),
-                          i, min(i + stepI, maxI),
+                          i, qMin(i + stepI, maxI),
                           255, m_settings.intensity);
         }
         else
         {
             ItemFilterFx(m_lutTable, m_lutTableSize, reinterpret_cast<unsigned short*>(m_orgImage.bits()),
-                          i, min(i + stepI, maxI),
+                          i, qMin(i + stepI, maxI),
                           65535, m_settings.intensity);
         }
 

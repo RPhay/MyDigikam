@@ -29,8 +29,12 @@
 
 extern "C"
 {
-#include <utime.h>
-#include <unistd.h>
+#ifndef Q_CC_MSVC
+#   include <unistd.h>
+#   include <utime.h>
+#else
+#   include <sys/utime.h>
+#endif
 }
 
 // C++ includes

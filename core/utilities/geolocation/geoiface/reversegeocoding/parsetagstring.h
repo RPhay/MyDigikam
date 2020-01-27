@@ -54,7 +54,7 @@ QStringList makeTagString(const RGInfo& info,const QString& inputFormat,const QS
 
         if (backendName == QLatin1String("OSM"))
         {
-            if (humanTag == QLatin1String("Country"))
+            if      (humanTag == QLatin1String("Country"))
             {
                 if (!info.rgData[QLatin1String("country")].isEmpty())
                 {
@@ -178,7 +178,7 @@ QStringList makeTagString(const RGInfo& info,const QString& inputFormat,const QS
         else if (backendName == QLatin1String("GeonamesUS"))
         {
 
-            if (humanTag.compare(QLatin1String("LAU2")) == 0)
+            if      (humanTag.compare(QLatin1String("LAU2")) == 0)
             {
                 if (!info.rgData[QLatin1String("adminName2")].isEmpty())
                 {
@@ -224,7 +224,7 @@ QStringList makeTagString(const RGInfo& info,const QString& inputFormat,const QS
 
         else if (backendName == QLatin1String("Geonames"))
         {
-            if (humanTag.compare(QLatin1String("Country")) == 0)
+            if      (humanTag.compare(QLatin1String("Country")) == 0)
             {
                 if (!info.rgData[QLatin1String("countryName")].isEmpty())
                 {

@@ -9,7 +9,7 @@
  * Copyright (C) 2002-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C)      2006 by Tom Albers <tomalbers at kde dot nl>
  * Copyright (C) 2009-2012 by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C)      2013 by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2014-2015 by Mohamed_Anwer <m_dot_anwer at gmx dot com>
  * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
@@ -48,6 +48,7 @@ DigikamApp::DigikamApp()
 
 
 #ifdef HAVE_DBUS
+
     new DigikamAdaptor(this);
     QDBusConnection::sessionBus().registerObject(QLatin1String("/Digikam"), this);
     QDBusConnection::sessionBus().registerService(QLatin1String("org.kde.digikam-") +
@@ -55,6 +56,7 @@ DigikamApp::DigikamApp()
 #endif
 
     // collection scan
+
     if (!CollectionScanner::databaseInitialScanDone())
     {
         ScanController::instance()->completeCollectionScanDeferFiles();
@@ -69,6 +71,7 @@ DigikamApp::DigikamApp()
     else
     {
         // Windows need here QCoreApplication::processEvents().
+
         qApp->processEvents();
     }
 
@@ -78,6 +81,7 @@ DigikamApp::DigikamApp()
     }
 
     // ensure creation
+
     AlbumManager::instance();
     LoadingCacheInterface::initialize();
     IccSettings::instance()->loadAllProfilesProperties();
@@ -89,12 +93,17 @@ DigikamApp::DigikamApp()
 
     // creation of the engine on first use - when drawing -
     // can take considerable time and cause a noticeable hang in the UI thread.
+
     QFontMetrics fm(font());
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 11, 0))
+
     fm.horizontalAdvance(QLatin1String("a"));
+
 #else
+
     fm.width(QLatin1String("a"));
+
 #endif
 
     connect(ApplicationSettings::instance(), SIGNAL(setupChanged()),
@@ -119,9 +128,11 @@ DigikamApp::DigikamApp()
     d->modelCollection = new DModelFactory;
 
     // This manager must be created after collection setup and before accelerators setup.
+
     d->tagsActionManager = new TagsActionMngr(this);
 
     // Load plugins
+
     if (d->splashScreen)
     {
         d->splashScreen->setMessage(i18n("Load Plugins..."));
@@ -133,6 +144,7 @@ DigikamApp::DigikamApp()
     // First create everything, then connect.
     // Otherwise some items may send signals and the slots can try
     // to access items which were not created yet.
+
     setupView();
     setupAccelerators();
     setupActions();
@@ -161,19 +173,23 @@ DigikamApp::DigikamApp()
     }
 
     // Setting the initial menu options after all tools have been loaded
+
     QList<Album*> albumList = AlbumManager::instance()->currentAlbums();
     d->view->slotAlbumSelected(albumList);
 
     // preload additional windows
+
     preloadWindows();
 
     readFullScreenSettings(group);
 
 #ifdef HAVE_KFILEMETADATA
+
     // Create BalooWrap object, because it need to register a listener
     // to update digiKam data when changes in Baloo occur
     BalooWrap* const baloo = BalooWrap::instance();
     Q_UNUSED(baloo);
+
 #endif //HAVE_KFILEMETADATA
 
     setAutoSaveSettings(group, true);
@@ -194,8 +210,11 @@ DigikamApp::~DigikamApp()
     if (ImageWindow::imageWindowCreated())
     {
         // Delete after close
+
         ImageWindow::imageWindow()->setAttribute(Qt::WA_DeleteOnClose, true);
+
         // close the window
+
         ImageWindow::imageWindow()->close();
         qApp->processEvents();
     }
@@ -229,10 +248,12 @@ DigikamApp::~DigikamApp()
     }
 
 #ifdef HAVE_KFILEMETADATA
+
     if (BalooWrap::isCreated())
     {
         delete BalooWrap::internalPtr;
     }
+
 #endif
 
     delete d->view;
@@ -253,6 +274,7 @@ DigikamApp::~DigikamApp()
     DIO::cleanUp();
 
     // close database server
+
     DatabaseServerStarter::instance()->stopServerManagerProcess();
 
     AlbumManager::instance()->removeFakeConnection();
@@ -314,6 +336,7 @@ void DigikamApp::show()
     }
 
     // Init album icon view zoom factor.
+
     slotThumbSizeChanged(ApplicationSettings::instance()->getDefaultIconSize());
     slotZoomSliderChanged(ApplicationSettings::instance()->getDefaultIconSize());
     d->autoShowZoomToolTip = true;
@@ -336,7 +359,8 @@ void DigikamApp::show()
 
 void DigikamApp::restoreSession()
 {
-    //TODO: show and restore ImageEditor, Lighttable, and Batch Queue Manager main windows
+    // TODO: show and restore ImageEditor, Lighttable, and Batch Queue Manager main windows
+
     if (qApp->isSessionRestored())
     {
         int n = 1;
@@ -359,10 +383,15 @@ void DigikamApp::restoreSession()
 void DigikamApp::closeEvent(QCloseEvent* e)
 {
     // may show a progress dialog to finish actions
+
     FileActionMngr::instance()->requestShutDown();
+
     // may show a progress dialog to apply pending metadata
+
     if (MetadataHubMngr::isCreated())
+    {
         MetadataHubMngr::instance()->requestShutDown();
+    }
 
     DXmlGuiWindow::closeEvent(e);
 }
@@ -410,7 +439,7 @@ void DigikamApp::slotAboutToShowBackwardMenu()
     QStringList titles;
     d->view->getBackwardHistory(titles);
 
-    for (int i = 0; i < titles.size(); ++i)
+    for (int i = 0 ; i < titles.size() ; ++i)
     {
         QAction* const action = d->backwardActionMenu->menu()->addAction(titles.at(i));
         int id                = i + 1;
@@ -426,7 +455,7 @@ void DigikamApp::slotAboutToShowForwardMenu()
     QStringList titles;
     d->view->getForwardHistory(titles);
 
-    for (int i = 0; i < titles.size(); ++i)
+    for (int i = 0 ; i < titles.size() ; ++i)
     {
         QAction* const action = d->forwardActionMenu->menu()->addAction(titles.at(i));
         int id                = i + 1;
@@ -536,11 +565,11 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
 
     Album* const album                   = d->view->currentAlbum();
 
-    if (album && album->type() == Album::PHYSICAL)
+    if (album && (album->type() == Album::PHYSICAL))
     {
         if (!CoreDbAccess().backend()->isInTransaction())
         {
-            numOfImagesInAlbum           = CoreDbAccess().db()->getNumberOfItemsInAlbum(album->id());
+            numOfImagesInAlbum = CoreDbAccess().db()->getNumberOfItemsInAlbum(album->id());
         }
     }
 
@@ -569,6 +598,7 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
                                 numImagesWithoutGrouped, numImagesWithGrouped);
             break;
         }
+
         default:
         {
             if (numImagesWithGrouped == numImagesWithoutGrouped)
@@ -606,10 +636,13 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
             }
 
 #if __GNUC__ >= 7   // krazy:exclude=cpp
+
             // no break; is completely intentional, arriving here is equivalent to case 1:
             [[fallthrough]];
+
 #endif
         }
+
         case 1:
         {
             slotSetCheckedExifOrientationAction(selectionWithoutGrouped.first());
@@ -661,7 +694,8 @@ void DigikamApp::slotSelectionChanged(int selectionCount)
 {
     // The preview can either be activated when only one image is selected,
     // or if multiple images are selected, but one image is the 'current image'.
-    bool hasAtLeastCurrent =(selectionCount == 1) || ( (selectionCount > 0) && d->view->hasCurrentItem());
+
+    bool hasAtLeastCurrent = (selectionCount == 1) || ((selectionCount > 0) && d->view->hasCurrentItem());
 
     d->imagePreviewAction->setEnabled(hasAtLeastCurrent);
     d->imageViewAction->setEnabled(hasAtLeastCurrent);
@@ -765,7 +799,7 @@ void DigikamApp::moveEvent(QMoveEvent*)
 
 void DigikamApp::slotTransformAction()
 {
-    if (sender()->objectName() == QLatin1String("rotate_ccw"))
+    if      (sender()->objectName() == QLatin1String("rotate_ccw"))
     {
         d->view->imageTransform(MetaEngineRotation::Rotate270);
     }
@@ -784,6 +818,7 @@ void DigikamApp::slotTransformAction()
     else if (sender()->objectName() == QLatin1String("image_transform_exif"))
     {
         // special value for FileActionMngr
+
         d->view->imageTransform(MetaEngineRotation::NoTransformation);
     }
 }
@@ -802,8 +837,10 @@ void DigikamApp::slotResetExifOrientationActions()
 
 void DigikamApp::slotSetCheckedExifOrientationAction(const ItemInfo& info)
 {
-    //DMetadata meta(info.fileUrl().toLocalFile());
-    //int orientation = (meta.isEmpty()) ? 0 : meta.getItemOrientation();
+/*
+    DMetadata meta(info.fileUrl().toLocalFile());
+    int orientation = (meta.isEmpty()) ? 0 : meta.getItemOrientation();
+*/
     int orientation = info.orientation();
 
     switch (orientation)
@@ -811,27 +848,35 @@ void DigikamApp::slotSetCheckedExifOrientationAction(const ItemInfo& info)
         case 1:
             d->imageSetExifOrientation1Action->setChecked(true);
             break;
+
         case 2:
             d->imageSetExifOrientation2Action->setChecked(true);
             break;
+
         case 3:
             d->imageSetExifOrientation3Action->setChecked(true);
             break;
+
         case 4:
             d->imageSetExifOrientation4Action->setChecked(true);
             break;
+
         case 5:
             d->imageSetExifOrientation5Action->setChecked(true);
             break;
+
         case 6:
             d->imageSetExifOrientation6Action->setChecked(true);
             break;
+
         case 7:
             d->imageSetExifOrientation7Action->setChecked(true);
             break;
+
         case 8:
             d->imageSetExifOrientation8Action->setChecked(true);
             break;
+
         default:
             slotResetExifOrientationActions();
             break;
@@ -907,11 +952,16 @@ void DigikamApp::slotSwitchedToIconView()
 
 void DigikamApp::slotSwitchedToMapView()
 {
-    //TODO: Link to map view's zoom actions
+    // TODO: Link to map view's zoom actions
+
     d->zoomBar->setBarMode(DZoomBar::ThumbsSizeCtrl);
+
 #ifdef HAVE_MARBLE
+
     d->imageMapViewAction->setChecked(true);
+
 #endif // HAVE_MARBLE
+
     customizedTrashView(true);
     toggleShowBar();
 }
@@ -947,9 +997,13 @@ void DigikamApp::customizedTrashView(bool set)
     d->slideShowSelectionAction->setEnabled(set);
     d->imageTableViewAction->setEnabled(set);
     d->imageIconViewAction->setEnabled(set);
+
 #ifdef HAVE_MARBLE
+
     d->imageMapViewAction->setEnabled(set);
+
 #endif
+
     d->imagePreviewAction->setEnabled(set);
     d->slideShowAction->setEnabled(set);
     d->bqmAction->setEnabled(set);
@@ -1024,15 +1078,19 @@ DInfoInterface* DigikamApp::infoIface(DPluginAction* const ac)
         case DPluginAction::GenericImport:
             aset = ApplicationSettings::ImportExport;
             break;
+
         case DPluginAction::GenericMetadata:
             aset = ApplicationSettings::Metadata;
             break;
+
         case DPluginAction::GenericTool:
             aset = ApplicationSettings::Tools;
             break;
+
         case DPluginAction::GenericView:
             aset = ApplicationSettings::Slideshow;
             break;
+
         default:
             break;
     }

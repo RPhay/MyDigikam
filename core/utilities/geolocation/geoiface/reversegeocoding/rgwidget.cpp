@@ -200,8 +200,8 @@ RGWidget::RGWidget(GPSItemModel* const imageModel, QItemSelectionModel* const se
     d->imageModel     = imageModel;
     d->selectionModel = selectionModel;
 
-    // we need to have a main layout and add KVBox to it or derive from KVBox
-    // - or is there an easier way to use KVBox?
+    // we need to have a main layout and add QVBoxLayout
+
     QVBoxLayout* const vBoxLayout = new QVBoxLayout(this);
     d->UGridContainer             = new QWidget(this);
 
@@ -213,14 +213,18 @@ RGWidget::RGWidget(GPSItemModel* const imageModel, QItemSelectionModel* const se
     Q_ASSERT(d->tagTreeView != nullptr);
 
     if (!externTagModel)
+    {
         externTagModel = new SimpleTreeModel(1, this);
+    }
 
     d->tagModel = new RGTagModel(externTagModel, this);
     d->tagTreeView->setModel(d->tagModel);
 
 #ifdef GPSSYNC_MODELTEST
+
     new ModelTest(externTagModel, d->tagTreeView);
     new ModelTest(d->tagModel, d->tagTreeView);
+
 #endif // GPSSYNC_MODELTEST
 
     d->tagSelectionModel         = new QItemSelectionModel(d->tagModel);
@@ -434,7 +438,7 @@ void RGWidget::slotButtonRGSelected()
     QString wantedLanguage                 = d->languageEdit->itemData(d->languageEdit->currentIndex()).toString();
     QList<QList<TagData> > returnedSpacers = d->tagModel->getSpacers();
 
-    for ( int i = 0 ; i < selectedItems.count() ; ++i)
+    for (int i = 0 ; i < selectedItems.count() ; ++i)
     {
         const QPersistentModelIndex itemIndex = selectedItems.at(i);
         GPSItemContainer* const selectedItem      = d->imageModel->itemFromIndex(itemIndex);
@@ -497,10 +501,13 @@ void RGWidget::slotRGReady(QList<RGInfo>& returnedRGList)
     if (!errorString.isEmpty())
     {
         /// @todo This collides with the message box displayed if the user aborts the RG process
+
         QMessageBox::critical(this, qApp->applicationName(), errorString);
 
         d->receivedRGCount+=returnedRGList.count();
+
         emit signalSetUIEnabled(true);
+
         return;
     }
 
@@ -514,7 +521,7 @@ void RGWidget::slotRGReady(QList<RGInfo>& returnedRGList)
         {
             QString addressElementsWantedFormat;
 
-            if (d->currentBackend->backendName() == QLatin1String("Geonames"))
+            if      (d->currentBackend->backendName() == QLatin1String("Geonames"))
             {
                 addressElementsWantedFormat.append(QLatin1String("/{Country}/{Place}"));
             }
@@ -532,6 +539,7 @@ void RGWidget::slotRGReady(QList<RGInfo>& returnedRGList)
             QString addressElements    = combinedResult[1];
 
             //removes first "/" from tag addresses
+
             addressFormat.remove(0, 1);
             addressElements.remove(0, 1);
             addressElementsWantedFormat.remove(0, 1);
@@ -573,11 +581,13 @@ void RGWidget::slotRGReady(QList<RGInfo>& returnedRGList)
         if (d->currentlyAskingCancelQuestion)
         {
             // if the user is currently answering the cancel question, do nothing, only report progress
+
             emit signalProgressChanged(d->receivedRGCount);
         }
         else
         {
             emit signalUndoCommand(d->undoCommand);
+
             d->undoCommand = nullptr;
 
             emit signalSetUIEnabled(true);
@@ -616,7 +626,7 @@ bool RGWidget::eventFilter(QObject* watched, QEvent* event)
             d->currentTagTreeIndex        = d->tagTreeView->indexAt(e->pos());
             const Type tagType            = d->tagModel->getTagType(d->currentTagTreeIndex);
 
-            if ( backendName == QLatin1String("OSM"))
+            if      (backendName == QLatin1String("OSM"))
             {
                 menu->addAction(d->actionAddAllAddressElementsToTag);
                 menu->addSeparator();
@@ -694,7 +704,7 @@ void RGWidget::saveSettingsToGroup(KConfigGroup* const group)
         {
             spacerTagNames.append(currentSpacerList[i].at(j).tagName);
 
-            if (currentSpacerList[i].at(j).tagType == TypeSpacer)
+            if      (currentSpacerList[i].at(j).tagType == TypeSpacer)
             {
                 spacerTypes.append(QLatin1String("Spacer"));
             }
@@ -734,12 +744,18 @@ void RGWidget::readSettingsFromGroup(const KConfigGroup* const group)
             currentTagData.tagName = spacerTagNames.at(j);
             QString currentTagType = spacerTypes.at(j);
 
-            if (currentTagType == QLatin1String("Spacer"))
+            if      (currentTagType == QLatin1String("Spacer"))
+            {
                 currentTagData.tagType = TypeSpacer;
+            }
             else if (currentTagType == QLatin1String("NewChild"))
+            {
                 currentTagData.tagType = TypeNewChild;
+            }
             else if (currentTagType == QLatin1String("OldChild"))
+            {
                 currentTagData.tagType = TypeChild;
+            }
 
             currentSpacerAddress.append(currentTagData);
         }
@@ -747,7 +763,8 @@ void RGWidget::readSettingsFromGroup(const KConfigGroup* const group)
         spacersList.append(currentSpacerAddress);
     }
 
-    //this make sure that all external tags are added to tag tree view before spacers are re-added
+    // this make sure that all external tags are added to tag tree view before spacers are re-added
+
     d->tagModel->addAllExternalTagsToTreeView();
     d->tagModel->readdNewTags(spacersList);
 
@@ -765,13 +782,19 @@ void RGWidget::readSettingsFromGroup(const KConfigGroup* const group)
  */
 void RGWidget::slotAddSingleSpacer()
 {
-    //    const QModelIndex baseIndex = d->tagSelectionModel->currentIndex();
+/*
+    const QModelIndex baseIndex = d->tagSelectionModel->currentIndex();
+*/
     QModelIndex baseIndex;
 
     if (!d->currentTagTreeIndex.isValid())
+    {
         baseIndex = d->currentTagTreeIndex;
+    }
     else
+    {
         baseIndex = d->tagSelectionModel->currentIndex();
+    }
 
     QAction* const senderAction = qobject_cast<QAction*>(sender());
     QString currentSpacerName   = senderAction->data().toString();
@@ -843,7 +866,7 @@ void RGWidget::slotReaddNewTags()
 {
     for (int row = 0 ; row < d->imageModel->rowCount() ; ++row)
     {
-        GPSItemContainer* const currentItem     = d->imageModel->itemFromIndex(d->imageModel->index(row, 0));
+        GPSItemContainer* const currentItem = d->imageModel->itemFromIndex(d->imageModel->index(row, 0));
         QList<QList<TagData> > tagAddresses = currentItem->getTagList();
 
         if (!tagAddresses.isEmpty())
@@ -883,9 +906,10 @@ void RGWidget::slotAddAllAddressElementsToTag()
 
     QStringList spacerList;
 
-    if (d->currentBackend->backendName() == QLatin1String("OSM"))
+    if      (d->currentBackend->backendName() == QLatin1String("OSM"))
     {
         /// @todo Why are these wrapped in QString?
+
         spacerList.append(QLatin1String("{Country}"));
         spacerList.append(QLatin1String("{State}"));
         spacerList.append(QLatin1String("{State district}"));
@@ -920,6 +944,7 @@ void RGWidget::slotRGCanceled()
     {
         // the undo command object is not available, therefore
         // RG has probably been finished already
+
         return;
     }
 
@@ -931,6 +956,7 @@ void RGWidget::slotRGCanceled()
         // ATTENTION: While we ask the question, the RG backend continues running
         //            and sends information about new images to this widget.
         //            This means that RG might finish while we ask the question!!!
+
         d->currentlyAskingCancelQuestion = true;
 
         const QString question = i18n("%1 out of %2 images have been reverse geocoded. "
@@ -949,9 +975,11 @@ void RGWidget::slotRGCanceled()
             // continue
 
             // did RG finish while we asked the question?
+
             if (d->receivedRGCount==d->requestedRGCount)
             {
                 // the undo data was delayed, now send it
+
                 if (d->undoCommand)
                 {
                     emit signalUndoCommand(d->undoCommand);
@@ -959,6 +987,7 @@ void RGWidget::slotRGCanceled()
                 }
 
                 // unlock the UI
+
                 emit signalSetUIEnabled(true);
             }
 
@@ -968,6 +997,7 @@ void RGWidget::slotRGCanceled()
         if (result == QMessageBox::No)
         {
             // discard the tags
+
             d->undoCommand->undo();
         }
 
@@ -982,6 +1012,7 @@ void RGWidget::slotRGCanceled()
     }
 
     // clean up the RG request:
+
     d->currentBackend->cancelRequests();
 
     if (d->undoCommand)

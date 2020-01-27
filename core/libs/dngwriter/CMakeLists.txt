@@ -39,14 +39,16 @@ include_directories(
 
 set(libmd5_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/extra/md5/XMP_MD5.cpp)
 
-# Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
-foreach(_currentfile ${libmd5_SRCS})
-    if(NOT MSVC)
-        set_source_files_properties(${_currentfile} PROPERTIES COMPILE_FLAGS "-fPIC")
-    endif()
-endforeach()
-
 add_library(libmd5_src OBJECT ${libmd5_SRCS})
+
+# Disable warnings: we will never touch this code.
+# Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
+
+if(MSVC)
+    target_compile_options(libmd5_src PRIVATE /w)
+else()
+    target_compile_options(libmd5_src PRIVATE -w -fPIC)
+endif()
 
 #------------------------------------------------------------------------------------
 
@@ -200,17 +202,16 @@ set(libxmp_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/xmp_sdk/XMPCore/source/XMPUtils-FileInfo.cpp
 )
 
+add_library(libxmp_src OBJECT ${libxmp_SRCS})
+
 # Disable warnings: we will never touch this code.
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
-foreach(_currentfile ${libxmp_SRCS})
-    if(MSVC)
-        set_source_files_properties(${_currentfile} PROPERTIES COMPILE_FLAGS "-w")
-    else()
-        set_source_files_properties(${_currentfile} PROPERTIES COMPILE_FLAGS "-w -fPIC")
-    endif()
-endforeach()
 
-add_library(libxmp_src OBJECT ${libxmp_SRCS})
+if(MSVC)
+    target_compile_options(libxmp_src PRIVATE /w)
+else()
+    target_compile_options(libxmp_src PRIVATE -w -fPIC)
+endif()
 
 #------------------------------------------------------------------------------------
 
@@ -285,17 +286,16 @@ set(libdng_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/extra/dng_sdk/dng_xy_coord.cpp
 )
 
+add_library(libdng_src OBJECT ${libdng_SRCS})
+
 # Disable warnings: we will never touch this code.
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
-foreach(_currentfile ${libdng_SRCS})
-    if(MSVC)
-        set_source_files_properties(${_currentfile} PROPERTIES COMPILE_FLAGS "-w")
-    else()
-        set_source_files_properties(${_currentfile} PROPERTIES COMPILE_FLAGS "-w -fPIC")
-    endif()
-endforeach()
 
-add_library(libdng_src OBJECT ${libdng_SRCS})
+if(MSVC)
+    target_compile_options(libdng_src PRIVATE /w)
+else()
+    target_compile_options(libdng_src PRIVATE -w -fPIC)
+endif()
 
 #------------------------------------------------------------------------------------
 

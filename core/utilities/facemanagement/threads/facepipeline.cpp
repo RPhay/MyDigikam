@@ -128,6 +128,7 @@ void FacePipeline::plugParallelFaceDetectors()
     }
 
     // limit number of parallel detectors to 3, because of memory cost (cascades)
+
     const int n          = qMin(3, QThread::idealThreadCount());
     d->parallelDetectors = new ParallelPipes;
 
@@ -238,7 +239,7 @@ void FacePipeline::construct()
     connect(d, SIGNAL(startProcess(FacePipelineExtendedPackage::Ptr)),
             d->pipeline.first(), SLOT(process(FacePipelineExtendedPackage::Ptr)));
 
-    for (int i = 0 ; i < d->pipeline.size() - 1 ; ++i)
+    for (int i = 0 ; i < (d->pipeline.size() - 1) ; ++i)
     {
         connect(d->pipeline.at(i), SIGNAL(processed(FacePipelineExtendedPackage::Ptr)),
                 d->pipeline.at(i + 1), SLOT(process(FacePipelineExtendedPackage::Ptr)));

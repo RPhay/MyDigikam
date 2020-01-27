@@ -45,7 +45,7 @@
 
 #include "digikam_debug.h"
 #include "applicationsettings.h"
-#include "searchtextbar.h"
+#include "searchtextbardb.h"
 #include "tagfolderview.h"
 #include "tagsmanager.h"
 #include "coredb.h"
@@ -81,7 +81,7 @@ public:
 public:
 
     QPushButton*         openTagMngr;
-    SearchTextBar*       tagSearchBar;
+    SearchTextBarDb*     tagSearchBar;
     TagFolderView*       tagFolderView;
     QButtonGroup*        btnGroup;
     QRadioButton*        noTagsBtn;
@@ -126,7 +126,7 @@ TagViewSideBarWidget::TagViewSideBarWidget(QWidget* const parent, TagModel* cons
     //d->tagFolderView->filteredModel()->doNotListTagsWithProperty(TagPropertyName::person());
     //d->tagFolderView->filteredModel()->setFilterBehavior(AlbumFilterModel::StrictFiltering);
 
-    d->tagSearchBar  = new SearchTextBar(this, QLatin1String("ItemIconViewTagSearchBar"));
+    d->tagSearchBar  = new SearchTextBarDb(this, QLatin1String("ItemIconViewTagSearchBar"));
     d->tagSearchBar->setHighlightOnResult(true);
     d->tagSearchBar->setModel(model, AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
 

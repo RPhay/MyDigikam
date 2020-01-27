@@ -64,7 +64,7 @@ SetupPlugins::SetupPlugins(QWidget* const parent)
     : QScrollArea(parent),
       d(new Private)
 {
-    d->tab = new QTabWidget(viewport());
+    d->tab          = new QTabWidget(viewport());
     setWidget(d->tab);
     setWidgetResizable(true);
 
@@ -76,13 +76,13 @@ SetupPlugins::SetupPlugins(QWidget* const parent)
 
     // --------------------
 
-    d->setupEditor = new Digikam::DPluginSetup(d->tab);
+    d->setupEditor  = new Digikam::DPluginSetup(d->tab);
     d->setupEditor->setPluginConfView(new Digikam::DPluginConfViewEditor(d->setupEditor));
     d->tab->insertTab(Editor, d->setupEditor, i18nc("@title:tab", "Image Editor"));
 
     // --------------------
 
-    d->setupDImg = new Digikam::DPluginSetup(d->tab);
+    d->setupDImg    = new Digikam::DPluginSetup(d->tab);
     d->setupDImg->setPluginConfView(new Digikam::DPluginConfViewDImg(d->setupEditor));
     d->tab->insertTab(Loaders, d->setupDImg, i18nc("@title:tab", "Image Loaders"));
 }

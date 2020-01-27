@@ -225,9 +225,9 @@ class Q_DECL_HIDDEN ShowfotoFilterModel::ShowfotoFilterModelPrivate : public QOb
 public:
 
     ShowfotoFilterModelPrivate()
+      : q(nullptr),
+        showfotoItemModel(nullptr)
     {
-        q                  = nullptr;
-        showfotoItemModel = nullptr;
     }
 
     void init(ShowfotoFilterModel* const _q);
@@ -240,7 +240,7 @@ Q_SIGNALS:
 public:
 
     ShowfotoFilterModel*     q;
-    ShowfotoItemModel*      showfotoItemModel;
+    ShowfotoItemModel*       showfotoItemModel;
     ShowfotoItemSortSettings sorter;
 };
 
@@ -376,22 +376,27 @@ void ShowfotoFilterModel::setDirectSourceShowfotoModel(ShowfotoItemModel* const 
 
     if (d->showfotoItemModel)
     {
-        //disconnect(d->ShowfotoItemModel, SIGNAL(modelReset()),
-                           //this, SLOT(slotModelReset()));
-        //TODO: slotModelReset(); will be added when implementing filtering options
+/*
+        disconnect(d->ShowfotoItemModel, SIGNAL(modelReset()),
+                   this, SLOT(slotModelReset()));
+
+        TODO: slotModelReset(); will be added when implementing filtering options
+*/
     }
 
     d->showfotoItemModel = sourceModel;
 
     if (d->showfotoItemModel)
     {
-        //connect(d, SIGNAL(reAddShowfotoItemInfos(QList<ShowfotoItemInfo>)),
-                //d->showfotoItemModel, SLOT(reAddShowfotoItemInfos(QList<ShowfotoItemInfo>)));
+/*
+        connect(d, SIGNAL(reAddShowfotoItemInfos(QList<ShowfotoItemInfo>)),
+                d->showfotoItemModel, SLOT(reAddShowfotoItemInfos(QList<ShowfotoItemInfo>)));
 
-        //connect(d, SIGNAL(reAddingFinished()),
-                //d->showfotoItemModel, SLOT(reAddingFinished()));
+        connect(d, SIGNAL(reAddingFinished()),
+                d->showfotoItemModel, SLOT(reAddingFinished()));
 
-        //TODO: connect(d->showfotoItemModel, SIGNAL(modelReset()), this, SLOT(slotModelReset()));
+        TODO: connect(d->showfotoItemModel, SIGNAL(modelReset()), this, SLOT(slotModelReset()));
+*/
     }
 
     setSourceModel(d->showfotoItemModel);
@@ -408,7 +413,7 @@ int ShowfotoFilterModel::compareCategories(const QModelIndex& left, const QModel
 
     if (!left.isValid() || !right.isValid())
     {
-        return -1;
+        return (-1);
     }
 
     return compareInfosCategories(d->showfotoItemModel->showfotoItemInfoRef(left), d->showfotoItemModel->showfotoItemInfoRef(right));
@@ -442,12 +447,14 @@ bool ShowfotoFilterModel::subSortLessThan(const QModelIndex& left, const QModelI
 int ShowfotoFilterModel::compareInfosCategories(const ShowfotoItemInfo& left, const ShowfotoItemInfo& right) const
 {
     Q_D(const ShowfotoFilterModel);
+
     return d->sorter.compareCategories(left, right);
 }
 
 bool ShowfotoFilterModel::infosLessThan(const ShowfotoItemInfo& left, const ShowfotoItemInfo& right) const
 {
     Q_D(const ShowfotoFilterModel);
+
     return d->sorter.lessThan(left, right);
 }
 
@@ -459,10 +466,13 @@ QString ShowfotoFilterModel::categoryIdentifier(const ShowfotoItemInfo& info) co
     {
         case ShowfotoItemSortSettings::NoCategories:
             return QString();
+
         case ShowfotoItemSortSettings::CategoryByFolder:
             return info.folder;
+
         case ShowfotoItemSortSettings::CategoryByFormat:
             return info.mime;
+
         default:
             return QString();
     }

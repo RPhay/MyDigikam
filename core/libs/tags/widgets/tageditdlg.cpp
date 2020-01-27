@@ -77,15 +77,15 @@ class Q_DECL_HIDDEN TagEditDlg::Private
 public:
 
     explicit Private()
+      : create(false),
+        topLabel(nullptr),
+        iconButton(nullptr),
+        resetIconButton(nullptr),
+        buttons(nullptr),
+        keySeqWidget(nullptr),
+        mainRootAlbum(nullptr),
+        titleEdit(nullptr)
     {
-        titleEdit       = nullptr;
-        iconButton      = nullptr;
-        resetIconButton = nullptr;
-        buttons         = nullptr;
-        mainRootAlbum   = nullptr;
-        topLabel        = nullptr;
-        keySeqWidget    = nullptr;
-        create          = false;
     }
 
     bool                create;
@@ -137,7 +137,7 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
     d->topLabel->setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
     d->topLabel->setWordWrap(false);
 
-    DLineWidget* const line  = new DLineWidget(Qt::Horizontal, page);
+    DLineWidget* const line = new DLineWidget(Qt::Horizontal, page);
 
     // --------------------------------------------------------
 
@@ -163,7 +163,7 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
     {
         AlbumList tList = AlbumManager::instance()->allTAlbums();
 
-        for (AlbumList::const_iterator it = tList.constBegin(); it != tList.constEnd(); ++it)
+        for (AlbumList::const_iterator it = tList.constBegin() ; it != tList.constEnd() ; ++it)
         {
             TAlbum* const tag = static_cast<TAlbum*>(*it);
 
@@ -190,6 +190,7 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
     iconTextLabel->setBuddy(d->iconButton);
 
     // In create mode, by default assign the icon of the parent (if not root) to this new tag.
+
     d->icon = album->icon();
 
     d->resetIconButton = new QPushButton(QIcon::fromTheme(QLatin1String("view-refresh")), i18n("Reset"), page);
@@ -200,9 +201,11 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
     }
 
 #ifndef HAVE_KICONTHEMES
+
     iconTextLabel->hide();
     d->iconButton->hide();
     d->resetIconButton->hide();
+
 #endif
 
     // --------------------------------------------------------
@@ -221,6 +224,7 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
     else
     {
         // Do not inherit tag shortcut, it creates a conflict shortcut, see bug 309558.
+
         d->keySeqWidget->setCheckActionCollections(TagsActionMngr::defaultManager()->actionCollections());
     }
 
@@ -311,22 +315,24 @@ void TagEditDlg::slotIconResetClicked()
 
 void TagEditDlg::slotIconChanged()
 {
+
 #ifdef HAVE_KICONTHEMES
 
     QPointer<KIconDialog> dlg = new KIconDialog(this);
     dlg->setup(KIconLoader::NoGroup, KIconLoader::Application, false, 20, false, false, false);
-    QString icon = dlg->openDialog();
+    QString icon              = dlg->openDialog();
     delete dlg;
 
-    if (icon.isEmpty() || icon == d->icon)
+    if (icon.isEmpty() || (icon == d->icon))
     {
         return;
     }
 
-    d->icon = icon;
+    d->icon                   = icon;
     d->iconButton->setIcon(QIcon::fromTheme(d->icon));
 
 #endif
+
 }
 
 void TagEditDlg::slotTitleChanged(const QString& newtitle)
@@ -364,8 +370,7 @@ void TagEditDlg::slotTitleChanged(const QString& newtitle)
 bool TagEditDlg::tagEdit(QWidget* const parent, TAlbum* const album, QString& title, QString& icon, QKeySequence& ks)
 {
     QPointer<TagEditDlg> dlg = new TagEditDlg(parent, album);
-
-    bool valRet = dlg->exec();
+    bool valRet              = dlg->exec();
 
     if (valRet == QDialog::Accepted)
     {
@@ -375,6 +380,7 @@ bool TagEditDlg::tagEdit(QWidget* const parent, TAlbum* const album, QString& ti
     }
 
     delete dlg;
+
     return valRet;
 }
 
@@ -392,6 +398,7 @@ bool TagEditDlg::tagCreate(QWidget* const parent, TAlbum* const album, QString& 
     }
 
     delete dlg;
+
     return valRet;
 }
 
@@ -412,8 +419,8 @@ AlbumList TagEditDlg::createTAlbum(TAlbum* const mainRootAlbum, const QString& t
         return createdTagsList;
     }
 
-    for (QStringList::const_iterator it = tagsHierarchies.constBegin();
-         it != tagsHierarchies.constEnd(); ++it)
+    for (QStringList::const_iterator it = tagsHierarchies.constBegin() ;
+         it != tagsHierarchies.constEnd() ; ++it)
     {
         QString hierarchy = (*it).trimmed();
 
@@ -437,8 +444,8 @@ AlbumList TagEditDlg::createTAlbum(TAlbum* const mainRootAlbum, const QString& t
 
             if (!tagsList.isEmpty())
             {
-                for (QStringList::const_iterator it2 = tagsList.constBegin();
-                     it2 != tagsList.constEnd(); ++it2)
+                for (QStringList::const_iterator it2 = tagsList.constBegin() ;
+                     it2 != tagsList.constEnd() ; ++it2)
                 {
                     QString tagPath, errMsg;
                     QString tag = (*it2).trimmed();
@@ -457,6 +464,7 @@ AlbumList TagEditDlg::createTAlbum(TAlbum* const mainRootAlbum, const QString& t
                     if (!tag.isEmpty())
                     {
                         // Tag already exist ?
+
                         TAlbum* const album = AlbumManager::instance()->findTAlbum(tagPath);
 
                         if (!album)
@@ -480,6 +488,7 @@ AlbumList TagEditDlg::createTAlbum(TAlbum* const mainRootAlbum, const QString& t
                     }
 
                     // Sanity check if tag creation failed.
+
                     if (!root)
                     {
                         errMap.insert(tagPath, errMsg);
@@ -491,6 +500,7 @@ AlbumList TagEditDlg::createTAlbum(TAlbum* const mainRootAlbum, const QString& t
     }
 
     // Assign the keyboard shortcut to the last tag created from the hierarchy.
+
     if (root && !ks.isEmpty())
     {
         TagsActionMngr::defaultManager()->updateTagShortcut(root->id(), ks);
@@ -522,17 +532,17 @@ TagsListCreationErrorDialog::TagsListCreationErrorDialog(QWidget* const parent, 
     setModal(true);
     setWindowTitle(i18n("Tag creation Error"));
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
-    const int cmargin = QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin);
+    const int spacing               = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int cmargin               = QApplication::style()->pixelMetric(QStyle::PM_DefaultChildMargin);
 
     QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Ok, this);
     buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
-    QWidget* const page         = new QWidget(this);
-    QVBoxLayout* const vLay     = new QVBoxLayout(page);
+    QWidget* const page             = new QWidget(this);
+    QVBoxLayout* const vLay         = new QVBoxLayout(page);
 
-    QLabel* const label         = new QLabel(i18n("An error occurred during tag creation:"), page);
-    QTreeWidget* const listView = new QTreeWidget(page);
+    QLabel* const label             = new QLabel(i18n("An error occurred during tag creation:"), page);
+    QTreeWidget* const listView     = new QTreeWidget(page);
     listView->setHeaderLabels(QStringList() << i18n("Tag Path") << i18n("Error"));
     listView->setRootIsDecorated(false);
     listView->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -543,7 +553,8 @@ TagsListCreationErrorDialog::TagsListCreationErrorDialog(QWidget* const parent, 
     vLay->setContentsMargins(cmargin, cmargin, cmargin, cmargin);
     vLay->setSpacing(spacing);
 
-    for (QMap<QString, QString>::const_iterator it = errMap.constBegin(); it != errMap.constEnd(); ++it)
+    for (QMap<QString, QString>::const_iterator it = errMap.constBegin() ;
+         it != errMap.constEnd() ; ++it)
     {
         new QTreeWidgetItem(listView, QStringList() << it.key() << it.value());
     }

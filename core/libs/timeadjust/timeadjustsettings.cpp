@@ -386,11 +386,27 @@ void TimeAdjustSettings::setSettings(const TimeAdjustContainer& settings)
     d->settingsExpander->readSettings(group);
 */
     int useTimestampType = settings.dateSource;
-    if      (useTimestampType == TimeAdjustContainer::APPDATE)      d->useApplDateBtn->setChecked(true);
-    else if (useTimestampType == TimeAdjustContainer::FILENAME)     d->useFileNameBtn->setChecked(true);
-    else if (useTimestampType == TimeAdjustContainer::FILEDATE)     d->useFileDateBtn->setChecked(true);
-    else if (useTimestampType == TimeAdjustContainer::METADATADATE) d->useMetaDateBtn->setChecked(true);
-    else if (useTimestampType == TimeAdjustContainer::CUSTOMDATE)   d->useCustomDateBtn->setChecked(true);
+
+    if      (useTimestampType == TimeAdjustContainer::APPDATE)
+    {
+          d->useApplDateBtn->setChecked(true);
+    }
+    else if (useTimestampType == TimeAdjustContainer::FILENAME)
+    {
+         d->useFileNameBtn->setChecked(true);
+    }
+    else if (useTimestampType == TimeAdjustContainer::FILEDATE)
+    {
+         d->useFileDateBtn->setChecked(true);
+    }
+    else if (useTimestampType == TimeAdjustContainer::METADATADATE)
+    {
+         d->useMetaDateBtn->setChecked(true);
+    }
+    else if (useTimestampType == TimeAdjustContainer::CUSTOMDATE)
+    {
+         d->useCustomDateBtn->setChecked(true);
+    }
 
     d->useFileDateTypeChooser->setCurrentIndex(settings.fileDateSource);
     d->useMetaDateTypeChooser->setCurrentIndex(settings.metadataSource);
@@ -437,10 +453,25 @@ TimeAdjustContainer TimeAdjustSettings::settings() const
     settings.updXMPDate     = d->updXMPDateCheck->isChecked();
     settings.dateSource     = TimeAdjustContainer::APPDATE;
 
-    if (d->useFileNameBtn->isChecked())   settings.dateSource = TimeAdjustContainer::FILENAME;
-    if (d->useFileDateBtn->isChecked())   settings.dateSource = TimeAdjustContainer::FILEDATE;
-    if (d->useMetaDateBtn->isChecked())   settings.dateSource = TimeAdjustContainer::METADATADATE;
-    if (d->useCustomDateBtn->isChecked()) settings.dateSource = TimeAdjustContainer::CUSTOMDATE;
+    if (d->useFileNameBtn->isChecked())
+    {
+       settings.dateSource = TimeAdjustContainer::FILENAME;
+    }
+
+    if (d->useFileDateBtn->isChecked())
+    {
+       settings.dateSource = TimeAdjustContainer::FILEDATE;
+    }
+
+    if (d->useMetaDateBtn->isChecked())
+    {
+       settings.dateSource = TimeAdjustContainer::METADATADATE;
+    }
+
+    if (d->useCustomDateBtn->isChecked())
+    {
+       settings.dateSource = TimeAdjustContainer::CUSTOMDATE;
+    }
 
     settings.metadataSource = d->useMetaDateTypeChooser->currentIndex();
     settings.fileDateSource = d->useFileDateTypeChooser->currentIndex();
@@ -450,9 +481,10 @@ TimeAdjustContainer TimeAdjustSettings::settings() const
 
 void TimeAdjustSettings::detAdjustmentByClockPhotoUrl(const QUrl& url)
 {
-    /* When user press the clock photo button, a dialog is displayed and set the
-    *  results to the proper widgets.
-    */
+    /**
+     * When user press the clock photo button, a dialog is displayed and set the
+     * results to the proper widgets.
+     */
     QPointer<ClockPhotoDialog> dlg = new ClockPhotoDialog(this, url);
     const int result               = dlg->exec();
 
@@ -522,6 +554,7 @@ void TimeAdjustSettings::slotResetDateToCurrent()
 void TimeAdjustSettings::slotAdjustmentTypeChanged()
 {
     // If the addition or subtraction has been selected, enable the edit boxes to enter the adjustment length
+
     bool isAdjustment = (d->adjTypeChooser->currentIndex() > TimeAdjustContainer::COPYVALUE);
     d->adjDaysInput->setEnabled(isAdjustment);
     d->adjDaysLabel->setEnabled(isAdjustment);
@@ -533,14 +566,15 @@ void TimeAdjustSettings::slotAdjustmentTypeChanged()
 void TimeAdjustSettings::slotDetAdjustmentByClockPhotoUrl(const QUrl& url)
 {
     //usually called when a photo is dropped onto the push button
+
     detAdjustmentByClockPhotoUrl(url);
 }
 
 void TimeAdjustSettings::slotDetAdjustmentByClockPhotoDialog()
 {
     // Determine the currently selected item and preselect it as clock photo
-    QUrl emptyUrl;
 
+    QUrl emptyUrl;
     detAdjustmentByClockPhotoUrl(emptyUrl);
 }
 

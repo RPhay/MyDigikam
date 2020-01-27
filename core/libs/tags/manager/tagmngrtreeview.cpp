@@ -51,8 +51,8 @@ class Q_DECL_HIDDEN TagMngrTreeView::Private
 public:
 
     explicit Private()
+      : tagMngr(nullptr)
     {
-        tagMngr = nullptr;
     }
 
     TagsManager* tagMngr;
@@ -140,7 +140,9 @@ void TagMngrTreeView::setContexMenuItems(ContextMenuHelper& cmh, const QList<TAl
     }
     else
     {
-        /** This is a dummy action, delete is disable for root tag **/
+        /**
+         * This is a dummy action, delete is disable for root tag
+         */
         QAction* deleteTagsAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")),
                                                 i18n("Delete Tags"), this);
         cmh.addAction(deleteTagsAction);

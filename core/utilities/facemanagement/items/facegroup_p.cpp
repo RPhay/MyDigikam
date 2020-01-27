@@ -64,20 +64,24 @@ QList<QGraphicsItem*> FaceGroup::Private::hotItems(const QPointF& scenePos)
     d->faceGroup->closestItem(mapToScene(e->pos()), &distance);
 
     if (distance < 15)
+    {
         return false;
+    }
 */
 }
 
 void FaceGroup::Private::applyVisible()
 {
-    if (state == NoFaces)
+    if      (state == NoFaces)
     {
         // If not yet loaded, load. load() will transitionToVisible after loading.
+
         q->load();
     }
     else if (state == FacesLoaded)
     {
         // show existing faces, if we have an image
+
         if (view->previewItem()->isLoaded())
         {
             visibilityController->show();
@@ -113,8 +117,9 @@ FaceItem* FaceGroup::Private::addItem(const FaceTagsIface& face)
 
     AssignNameWidget* const assignWidget = createAssignNameWidget(face, items.size());
     item->setHudWidget(assignWidget);
-    //new StyleSheetDebugger(assignWidget);
-
+/*
+    new StyleSheetDebugger(assignWidget);
+*/
     visibilityController->addItem(item);
 
     items << item;

@@ -56,7 +56,7 @@ DK_BUILDTEMP=~/dktemp
 # digiKam tag version from git. Official tarball do not include extra shared libraries.
 # The list of tags can be listed with this url: https://quickgit.kde.org/?p=digikam.git&a=tags
 # If you want to package current implemntation from git, use "master" as tag.
-#DK_VERSION=v6.4.0
+#DK_VERSION=v7.0.0-beta2
 DK_VERSION=master
 #DK_VERSION=development/dplugins
 

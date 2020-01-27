@@ -23,7 +23,9 @@
 
 #include "collectionmanager_p.h"
 
-// This is because of the CollectionManager private slot.
+/**
+ * NOTE: This is because of the CollectionManager private slot.
+ */
 #include "moc_collectionmanager.cpp"
 
 namespace Digikam
@@ -127,8 +129,10 @@ void CollectionManager::accessibilityChanged(bool accessible, const QString& udi
 void CollectionManager::clearLocations()
 {
     QWriteLocker locker(&d->lock);
+
     // Internal method: Called with write lock
     // Cave: Difficult recursions with CoreDbAccess constructor and setParameters
+
     foreach (AlbumRootLocation* const location, d->locations)
     {
         CollectionLocation::Status oldStatus = location->status();

@@ -53,17 +53,23 @@ void FaceScanWidget::doLoadState()
     QString mainTask   = group.readEntry(entryName(d->configMainTask),
                                          d->configValueDetect);
 
-    if (mainTask == d->configValueRecognizedMarkedFaces)
+    if      (mainTask == d->configValueRecognizedMarkedFaces)
     {
         d->reRecognizeButton->setChecked(true);
     }
     else if (mainTask == d->configValueDetectAndRecognize)
     {
+
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
+
         d->detectAndRecognizeButton->setChecked(true);
+
 #else
+
         d->detectButton->setChecked(true);
+
 #endif
+
     }
     else
     {
@@ -74,13 +80,19 @@ void FaceScanWidget::doLoadState()
     QString skipHandling = group.readEntry(entryName(d->configAlreadyScannedHandling),
                                            QString::fromLatin1("Skip"));
 
-    if (skipHandling == QLatin1String("Rescan"))
+    if      (skipHandling == QLatin1String("Rescan"))
     {
+
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
+
         handling = FaceScanSettings::Rescan;
+
 #else
+
         handling = FaceScanSettings::Skip;
+
 #endif
+
     }
     else if (skipHandling == QLatin1String("Merge"))
     {
@@ -112,12 +124,16 @@ void FaceScanWidget::doSaveState()
     {
         mainTask = d->configValueDetect;
     }
+
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
+
     else if (d->detectAndRecognizeButton->isChecked())
     {
         mainTask = d->configValueDetectAndRecognize;
     }
+
 #endif
+
     else // d->reRecognizeButton
     {
         mainTask = d->configValueRecognizedMarkedFaces;
@@ -167,7 +183,9 @@ void FaceScanWidget::setupUi()
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Scan again and merge results"),         FaceScanSettings::Merge);
 
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
+
     d->alreadyScannedBox->addSqueezedItem(i18nc("@label:listbox", "Clear unconfirmed results and rescan"), FaceScanSettings::Rescan);
+
 #endif
 
     d->alreadyScannedBox->setCurrentIndex(FaceScanSettings::Skip);
@@ -176,6 +194,7 @@ void FaceScanWidget::setupUi()
     d->detectButton->setToolTip(i18nc("@info", "Find all faces in your photos"));
 
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
+
     d->detectAndRecognizeButton       = new QRadioButton(i18nc("@option:radio", "Detect and recognize faces"));
     d->detectAndRecognizeButton->setToolTip(i18nc("@info", "Find all faces in your photos and\n"
                                                            "try to recognize which person is depicted"));
@@ -189,16 +208,20 @@ void FaceScanWidget::setupUi()
     optionLayout->addWidget(d->detectButton);
 
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
+
     optionLayout->addWidget(d->detectAndRecognizeButton);
+
 #endif
 
     optionLayout->addWidget(d->reRecognizeButton);
 
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
+
     QStyleOptionButton buttonOption;
     buttonOption.initFrom(d->detectAndRecognizeButton);
     int indent = style()->subElementRect(QStyle::SE_RadioButtonIndicator, &buttonOption, d->detectAndRecognizeButton).width();
     optionLayout->setColumnMinimumWidth(0, indent);
+
 #endif
 
     d->workflowWidget->setLayout(optionLayout);
@@ -258,8 +281,10 @@ void FaceScanWidget::setupConnections()
 */
 
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
+
     connect(d->detectAndRecognizeButton, SIGNAL(toggled(bool)),
             d->alreadyScannedBox, SLOT(setEnabled(bool)));
+
 #endif
 
     connect(d->detectButton, SIGNAL(toggled(bool)),
@@ -298,17 +323,22 @@ FaceScanSettings FaceScanWidget::settings() const
     }
     else
     {
+
 #ifdef ENABLE_DETECT_AND_RECOGNIZE
+
         if (d->detectAndRecognizeButton->isChecked())
         {
             settings.task = FaceScanSettings::DetectAndRecognize;
         }
         else // recognize only
+
 #endif
+
         {
             settings.task = FaceScanSettings::RecognizeMarkedFaces;
 
             // preset settingsConflicted as True, since by default there are no tags to recognize
+
             d->settingsConflicted = true;
         }
     }

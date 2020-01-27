@@ -27,8 +27,12 @@
 
 extern "C"
 {
-#include <unistd.h>
-#include <utime.h>
+#ifndef Q_CC_MSVC
+#   include <unistd.h>
+#   include <utime.h>
+#else
+#   include <sys/utime.h>
+#endif
 }
 
 // Qt includes

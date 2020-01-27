@@ -22,6 +22,9 @@
  * ============================================================ */
 
 #include "duplicatesprogressobserver.h"
+
+// Local includes
+
 #include "dbjob.h"
 
 namespace Digikam

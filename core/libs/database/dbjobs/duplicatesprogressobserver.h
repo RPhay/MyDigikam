@@ -41,9 +41,9 @@ public:
     explicit DuplicatesProgressObserver(SearchesJob* const thread);
     ~DuplicatesProgressObserver();
 
-    virtual void totalNumberToScan(int number) override;
-    virtual void processedNumber(int number) override;
-    virtual bool isCanceled() override;
+    virtual void totalNumberToScan(int number)  override;
+    virtual void processedNumber(int number)    override;
+    virtual bool isCanceled()                   override;
 
 private:
 

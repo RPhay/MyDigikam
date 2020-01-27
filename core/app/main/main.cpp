@@ -101,18 +101,25 @@ int main(int argc, char* argv[])
     tryInitDrMingw();
 
 #ifdef HAVE_IMAGE_MAGICK
+
     InitializeMagick(nullptr);
+
 #endif
 
 #ifdef Q_OS_LINUX
+
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
+
 #endif
 
 #ifdef HAVE_QWEBENGINE
+
     app.setAttribute(Qt::AA_ShareOpenGLContexts, true);
+
 #endif
 
     // if we have some local breeze icon resource, prefer it
+
     DXmlGuiWindow::setupIconTheme();
 
     KLocalizedString::setApplicationDomain("digikam");
@@ -155,6 +162,7 @@ int main(int argc, char* argv[])
     MetaEngine::initializeExiv2();
 
     // Force to use application icon for non plasma desktop as Unity for ex.
+
     QApplication::setWindowIcon(QIcon::fromTheme(QLatin1String("digikam"), app.windowIcon()));
 
     // Check if Qt database plugins are available.
@@ -182,6 +190,7 @@ int main(int argc, char* argv[])
         }
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "QT Sql drivers list: " << QSqlDatabase::drivers();
+
         return 1;
     }
 
@@ -206,7 +215,7 @@ int main(int argc, char* argv[])
         QString configFilename = parser.value(QLatin1String("config"));
         QFileInfo configFile(configFilename);
 
-        if (configFile.isDir() || !configFile.dir().exists() ||
+        if (configFile.isDir()       || !configFile.dir().exists() ||
             !configFile.isReadable() || !configFile.isWritable())
         {
             QMessageBox::critical(qApp->activeWindow(),
@@ -233,6 +242,7 @@ int main(int argc, char* argv[])
     DbEngineParameters params;
 
     // Run the first run assistant if we have no or very old config
+
     if (!mainConfig.exists() || (version.startsWith(QLatin1String("0.5"))))
     {
         FirstRunDlg firstRun;
@@ -244,6 +254,7 @@ int main(int argc, char* argv[])
         }
 
         // parameters are written to config
+
         firstAlbumPath = firstRun.firstAlbumPath();
 
         if (firstRun.getDbEngineParameters().isSQLite())
@@ -255,6 +266,7 @@ int main(int argc, char* argv[])
     if (!commandLineDBPath.isNull())
     {
         // command line option set?
+
         params = DbEngineParameters::parametersForSQLiteDefaultFile(commandLineDBPath);
         ApplicationSettings::instance()->setDatabaseDirSetAtCmd(true);
         ApplicationSettings::instance()->setDbEngineParameters(params);
@@ -263,12 +275,15 @@ int main(int argc, char* argv[])
     {
         params = DbEngineParameters::parametersFromConfig();
         params.legacyAndDefaultChecks(firstAlbumPath);
+
         // sync to config, for all first-run or upgrade situations
+
         params.writeToConfig();
         ApplicationSettings::instance()->setDbEngineParameters(params);
     }
 
     // initialize database
+
     if (!AlbumManager::instance()->setDatabase(params, !commandLineDBPath.isNull(), firstAlbumPath))
     {
         DatabaseServerStarter::instance()->stopServerManagerProcess();
@@ -288,15 +303,19 @@ int main(int argc, char* argv[])
     }
 
 #ifdef Q_OS_WIN
+
     // Necessary to open native open with dialog on windows
     CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
+
 #endif
 
     // create main window
+
     DigikamApp* const digikam = new DigikamApp();
 
     // If application storage place in home directory to save customized XML settings files do not exist, create it,
     // else QFile will not able to create new files as well.
+
     if (!QFile::exists(QStandardPaths::writableLocation(QStandardPaths::DataLocation)))
     {
         QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::DataLocation));
@@ -314,13 +333,14 @@ int main(int argc, char* argv[])
     //
     // Right now this is the easiest and cleanest fix for the described problem, but we might re-think the
     // solution later on, just in case there are better ways to do it.
+
     QObject::connect(digikam, SIGNAL(destroyed(QObject*)),
                      &app, SLOT(quit()));
 
     digikam->restoreSession();
     digikam->show();
 
-    if (parser.isSet(QLatin1String("download-from")))
+    if      (parser.isSet(QLatin1String("download-from")))
     {
         digikam->downloadFrom(parser.value(QLatin1String("download-from")));
     }
@@ -342,13 +362,17 @@ int main(int argc, char* argv[])
     MetaEngine::cleanupExiv2();
 
 #ifdef Q_OS_WIN
+
     // Necessary to open native open with dialog on windows
     CoUninitialize();
+
 #endif
 
 #ifdef HAVE_IMAGE_MAGICK
 #   if MagickLibVersion >= 0x693
+
     TerminateMagick();
+
 #   endif
 #endif
 

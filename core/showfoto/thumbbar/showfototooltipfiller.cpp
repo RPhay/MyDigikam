@@ -94,7 +94,7 @@ QString ShowfotoToolTipFiller::ShowfotoItemInfoTipContents(const ShowfotoItemInf
 
         if (settings->getShowFileDim())
         {
-            if (info.width == 0 || info.height == 0 || info.width == -1 || info.height == -1)
+            if ((info.width == 0) || (info.height == 0) || (info.width == -1) || (info.height == -1))
             {
                 str = i18nc("unknown / invalid image dimension",
                             "Unknown");
@@ -153,7 +153,9 @@ QString ShowfotoToolTipFiller::ShowfotoItemInfoTipContents(const ShowfotoItemInf
                     int space = str.lastIndexOf(QLatin1Char(' '), cnt.maxStringLength);
 
                     if (space == -1)
+                    {
                         space = cnt.maxStringLength;
+                    }
 
                     metaStr += cnt.cellBeg + lens + cnt.cellMid + str.left(space).toHtmlEscaped() + cnt.cellEnd;
 
@@ -220,7 +222,7 @@ QString ShowfotoToolTipFiller::ShowfotoItemInfoTipContents(const ShowfotoItemInf
 
             if (settings->getShowPhotoMode())
             {
-                if (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
+                if      (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
                 {
                     str = cnt.unavailable;
                 }

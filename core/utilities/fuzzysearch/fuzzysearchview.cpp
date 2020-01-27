@@ -68,7 +68,7 @@ FuzzySearchView::FuzzySearchView(SearchModel* const searchModel,
     d->searchTreeView->filteredModel()->setListTemporarySearches(true);
     d->searchTreeView->setAlbumManagerCurrentAlbum(true);
 
-    d->searchFuzzyBar = new SearchTextBar(d->folderView, QLatin1String("FuzzySearchViewSearchFuzzyBar"));
+    d->searchFuzzyBar = new SearchTextBarDb(d->folderView, QLatin1String("FuzzySearchViewSearchFuzzyBar"));
     d->searchFuzzyBar->setModel(d->searchTreeView->filteredModel(),
                                 AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
     d->searchFuzzyBar->setFilterModel(d->searchTreeView->albumFilterModel());
@@ -291,6 +291,7 @@ void FuzzySearchView::setActive(bool val)
     d->active = val;
 
     // at first occasion, warn if no fingerprints are available
+
     if (val && !d->fingerprintsChecked && isVisible())
     {
         if (!SimilarityDbAccess().db()->hasFingerprints())
@@ -383,7 +384,7 @@ void FuzzySearchView::slotAlbumSelected(Album* album)
     QStringRef maxThresholdString = reader.attributes().value(QLatin1String("maxthreshold"));
     QStringRef sketchTypeString   = reader.attributes().value(QLatin1String("sketchtype"));
 
-    if (type == QLatin1String("imageid"))
+    if      (type == QLatin1String("imageid"))
     {
         setCurrentImage(reader.valueToLongLong());
         d->imageSAlbum = salbum;

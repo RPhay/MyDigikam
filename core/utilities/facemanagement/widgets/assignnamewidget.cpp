@@ -51,6 +51,7 @@ void AssignNameWidget::setModel(TagModel* const model,
                                 CheckableAlbumFilterModel* const filterModel)
 {
     // Restrict the tag properties filter model to people if configured.
+
     ApplicationSettings* const settings = ApplicationSettings::instance();
 
     if (settings)
@@ -73,6 +74,7 @@ void AssignNameWidget::setModel(TagModel* const model,
     if (model || filteredModel || filterModel)
     {
         // possibly set later on box
+
         d->modelsGiven      = true;
         d->tagModel         = model;
         d->tagFilterModel   = filterModel;
@@ -84,7 +86,7 @@ void AssignNameWidget::setParentTag(TAlbum* album)
 {
     d->parentTag = album;
 
-    if (d->comboBox)
+    if      (d->comboBox)
     {
         d->comboBox->setParentTag(album);
     }

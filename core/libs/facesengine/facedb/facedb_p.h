@@ -29,11 +29,25 @@
 
 // Local includes
 
+#include "digikam_debug.h"
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+#   include "dnnfacemodel.h"
+
+#else
+
+#   include "lbphfacemodel.h"
+
+#endif
+
+/*
+NOTE: experimental and deprecated
+
 #include "eigenfacemodel.h"
 #include "fisherfacemodel.h"
-#include "lbphfacemodel.h"
-#include "dnnfacemodel.h"
-#include "digikam_debug.h"
+
+*/
 
 namespace Digikam
 {

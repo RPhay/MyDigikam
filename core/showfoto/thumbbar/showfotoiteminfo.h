@@ -50,11 +50,13 @@ public:
     explicit ShowfotoItemInfo();
     ~ShowfotoItemInfo();
 
-    /** Return true if all member in this container are null.
+    /**
+     * Return true if all member in this container are null.
      */
     bool isNull() const;
 
-    /** Compare for information equality and un-equality, not including variable values.
+    /**
+     * Compare for information equality and un-equality, not including variable values.
      */
     bool operator==(const ShowfotoItemInfo& info) const;
     bool operator!=(const ShowfotoItemInfo& info) const;
@@ -62,22 +64,22 @@ public:
 public:
 
     /// Static values.
-    qint64             size;                 // file size in bytes.
-    QUrl               url;                  // file Url
+    qint64             size;                 ///< file size in bytes.
+    QUrl               url;                  ///< file Url
 
-    QString            name;                 // File name in file-system
-    QString            folder;               // Folder path to access to file
-    QString            mime;                 // Type mime of file
+    QString            name;                 ///< File name in file-system
+    QString            folder;               ///< Folder path to access to file
+    QString            mime;                 ///< Type mime of file
 
     /// Unique image id
     qlonglong          id;
 
     PhotoInfoContainer photoInfo;
 
-    QDateTime          dtime;                // creation time on disk
-    QDateTime          ctime;                // camera date stamp
-    int                width;                // Image width in pixels
-    int                height;               // Image height in pixels
+    QDateTime          dtime;                ///< creation time on disk
+    QDateTime          ctime;                ///< camera date stamp
+    int                width;                ///< Image width in pixels
+    int                height;               ///< Image height in pixels
 };
 
 QDataStream& operator<<(QDataStream&, const ShowfotoItemInfo&);

@@ -60,6 +60,7 @@ public:
     ImageListProvider* images(const Identity&)
     {
         // Not implemented. Would be needed if we use a backend with a "holistic" approach that needs all images to train.
+
         return &empty;
     }
 
@@ -92,6 +93,7 @@ TrainerWorker::~TrainerWorker()
 void TrainerWorker::process(FacePipelineExtendedPackage::Ptr package)
 {
     //qCDebug(DIGIKAM_GENERAL_LOG) << "TrainerWorker: processing one package";
+
     // Get a list of faces with type FaceForTraining (probably type is ConfirmedFace)
 
     QList<FaceTagsIface> toTrain;

@@ -46,7 +46,7 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "searchtextbar.h"
+#include "searchtextbardb.h"
 #include "tagfolderview.h"
 #include "timelinewidget.h"
 #include "facescanwidget.h"
@@ -73,7 +73,7 @@ public:
     SearchModificationHelper* searchModificationHelper;
     FaceScanWidget*           settingsWdg;
     TagFolderView*            tagFolderView;
-    SearchTextBar*            tagSearchBar;
+    SearchTextBarDb*          tagSearchBar;
 };
 
 PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
@@ -107,7 +107,7 @@ PeopleSideBarWidget::PeopleSideBarWidget(QWidget* const parent,
     d->tagFolderView->filteredModel()->listOnlyTagsWithProperty(TagPropertyName::person());
     d->tagFolderView->filteredModel()->setFilterBehavior(AlbumFilterModel::StrictFiltering);
 
-    d->tagSearchBar   = new SearchTextBar(this, QLatin1String("ItemIconViewPeopleSearchBar"));
+    d->tagSearchBar   = new SearchTextBarDb(this, QLatin1String("ItemIconViewPeopleSearchBar"));
     d->tagSearchBar->setHighlightOnResult(true);
     d->tagSearchBar->setModel(d->tagFolderView->filteredModel(),
                               AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);

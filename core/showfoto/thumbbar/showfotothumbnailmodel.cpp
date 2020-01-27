@@ -57,9 +57,9 @@ public:
         thumbSize(0),
         lastGlobalThumbSize(0),
         preloadThumbSize(0),
+        maxThumbSize(ThumbnailSize::Huge),
         emitDataChanged(true)
     {
-        maxThumbSize = ThumbnailSize::Huge;
     }
 
     int preloadThumbnailSize() const
@@ -142,8 +142,7 @@ void ShowfotoThumbnailModel::showfotoItemInfosCleared()
 
 QVariant ShowfotoThumbnailModel::data(const QModelIndex& index, int role) const
 {
-
-    if (role == ThumbnailRole && d->thread && index.isValid())
+    if ((role == ThumbnailRole) && (d->thread && index.isValid()))
     {
         QImage    thumbnailImage;
         QPixmap   pixmap;
@@ -164,13 +163,15 @@ QVariant ShowfotoThumbnailModel::data(const QModelIndex& index, int role) const
         double ratio  = qApp->devicePixelRatio();
         int thumbSize = qRound((double)d->thumbSize.size() * ratio);
 
-        //if pixmapForItem Failed
+        // if pixmapForItem Failed
+
         if (getThumbnail(info, thumbnailImage))
         {
             thumbnailImage = thumbnailImage.scaled(thumbSize, thumbSize,
                                                    Qt::KeepAspectRatio,
                                                    Qt::SmoothTransformation);
             emit signalThumbInfo(info, thumbnailImage);
+
             return thumbnailImage;
         }
 
@@ -231,6 +232,7 @@ void ShowfotoThumbnailModel::slotThumbnailLoaded(const LoadingDescription& loadi
     }
 
     // In case of multiple occurrence, we currently do not know which thumbnail is this. Signal change on all.
+
     foreach (const QModelIndex& index, indexesForUrl(QUrl::fromLocalFile(loadingDescription.filePath)))
     {
         if (thumb.isNull())
@@ -277,6 +279,7 @@ bool ShowfotoThumbnailModel::getThumbnail(const ShowfotoItemInfo& itemInfo, QIma
     bool turnHighQualityThumbs = group.readEntry(QLatin1String("TurnHighQualityThumbs"), false);
 
     // Try to get thumbnail from Exif data (poor quality).
+
     if (!turnHighQualityThumbs)
     {
         thumbnail = metadata.getExifThumbnail(true);
@@ -311,17 +314,17 @@ bool ShowfotoThumbnailModel::getThumbnail(const ShowfotoItemInfo& itemInfo, QIma
     }
 
     // Finally, we trying to get thumbnail using DImg API (slow).
+/*
+    qCDebug(DIGIKAM_SHOWFOTO_LOG) << "Use DImg loader to get thumbnail from : " << path;
 
-//    qCDebug(DIGIKAM_SHOWFOTO_LOG) << "Use DImg loader to get thumbnail from : " << path;
+    DImg dimgThumb(path);
 
-//    DImg dimgThumb(path);
-
-//    if (!dimgThumb.isNull())
-//    {
-//        thumbnail = dimgThumb.copyQImage();
-//        return true;
-//    }
-
+    if (!dimgThumb.isNull())
+    {
+        thumbnail = dimgThumb.copyQImage();
+        return true;
+    }
+*/
     return false;
 }
 
@@ -332,7 +335,7 @@ bool ShowfotoThumbnailModel::pixmapForItem(QString url, QPixmap& pix) const
 
     if (thumbSize > d->maxThumbSize)
     {
-        //TODO: Install a widget maximum size to prevent this situation
+        // TODO: Install a widget maximum size to prevent this situation
 
         bool hasPixmap = d->thread->find(ThumbnailIdentifier(url), pix, d->maxThumbSize);
 

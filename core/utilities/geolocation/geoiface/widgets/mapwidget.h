@@ -146,7 +146,8 @@ public:
                        Qt::PenStyle* strokeStyle, QString* labelText, QColor* labelColor) const;
 
     QString convertZoomToBackendZoom(const QString& someZoom, const QString& targetBackend) const;
-    QPixmap getDecoratedPixmapForCluster(const int clusterId, const GeoGroupState* const selectedStateOverride, const int* const countOverride, QPoint* const centerPoint);
+    QPixmap getDecoratedPixmapForCluster(const int clusterId, const GeoGroupState* const selectedStateOverride,
+                                         const int* const countOverride, QPoint* const centerPoint);
     QVariant getClusterRepresentativeMarker(const int clusterIndex, const int sortKey);
     //@}
 
@@ -178,7 +179,8 @@ Q_SIGNALS:
 
 public:
 
-    /** Return a string version of LibMarbleWidget release in format "major.minor.patch"
+    /**
+     * Return a string version of LibMarbleWidget release in format "major.minor.patch"
      */
     static QString MarbleWidgetVersion();
 
@@ -188,8 +190,8 @@ protected:
     void applyCacheToBackend();
     void saveBackendToCache();
     void rebuildConfigurationMenu();
-    void dropEvent(QDropEvent* event) override;
-    void dragMoveEvent(QDragMoveEvent* event) override;
+    void dropEvent(QDropEvent* event)           override;
+    void dragMoveEvent(QDragMoveEvent* event)   override;
     void dragEnterEvent(QDragEnterEvent* event) override;
     void dragLeaveEvent(QDragLeaveEvent* event) override;
     void createActions();

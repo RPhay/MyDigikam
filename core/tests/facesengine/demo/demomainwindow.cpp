@@ -31,7 +31,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QGraphicsPixmapItem>
-#include <QTime>
+#include <QElapsedTimer>
 #include <QDebug>
 #include <QStandardPaths>
 
@@ -246,10 +246,10 @@ void MainWindow::slotRecognise()
 
     foreach (FaceItem* const item, d->faceitems)
     {
-        QTime time;
-        time.start();
+        QElapsedTimer timer;
+        timer.start();
         Identity identity = d->database.recognizeFace(d->currentPhoto.copy(item->originalRect()));
-        int elapsed       = time.elapsed();
+        int elapsed       = timer.elapsed();
 
         qDebug() << "Recognition took " << elapsed << " for Face #" << i+1;
 
@@ -281,8 +281,8 @@ void MainWindow::slotUpdateDatabase()
     {
         if (item->text() != QString::fromLatin1("?"))
         {
-            QTime time;
-            time.start();
+            QElapsedTimer timer;
+            timer.start();
 
             QString name = item->text();
             qDebug() << "Face #" << i+1 << ": training name '" << name << "'";
@@ -303,7 +303,7 @@ void MainWindow::slotUpdateDatabase()
 
             d->database.train(identity, d->currentPhoto.copy(item->originalRect()), QString::fromLatin1("test application"));
 
-            int elapsed = time.elapsed();
+            int elapsed = timer.elapsed();
 
             qDebug() << "Training took " << elapsed << " for Face #" << i+1;
         }

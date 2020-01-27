@@ -60,9 +60,9 @@ public:
 
     virtual ~CollectionScannerHintContainer() {};
 
-    virtual void recordHints(const QList<AlbumCopyMoveHint>& hints) = 0;
-    virtual void recordHints(const QList<ItemCopyMoveHint>& hints) = 0;
-    virtual void recordHints(const QList<ItemChangeHint>& hints) = 0;
+    virtual void recordHints(const QList<AlbumCopyMoveHint>& hints)  = 0;
+    virtual void recordHints(const QList<ItemCopyMoveHint>& hints)   = 0;
+    virtual void recordHints(const QList<ItemChangeHint>& hints)     = 0;
     virtual void recordHint(const ItemMetadataAdjustmentHint& hints) = 0;
 
     virtual void clear() = 0;
@@ -150,20 +150,21 @@ class DIGIKAM_DATABASE_EXPORT AlbumCopyMoveHint
 {
 public:
 
-    /** An AlbumCopyMoveHint describes an existing album
-     *  and a destination to which this album is expected to be
-     *  copied, moved or renamed.
+    /**
+     * An AlbumCopyMoveHint describes an existing album
+     * and a destination to which this album is expected to be
+     * copied, moved or renamed.
      */
 
     AlbumCopyMoveHint();
     AlbumCopyMoveHint(int srcAlbumRootId, int srcAlbum,
                       int dstAlbumRootId, const QString& dstRelativePath);
 
-    int albumRootIdSrc()                          const;
-    int albumIdSrc()                              const;
-    bool isSrcAlbum(int albumRootId, int albumId) const;
+    int albumRootIdSrc()                                          const;
+    int albumIdSrc()                                              const;
+    bool isSrcAlbum(int albumRootId, int albumId)                 const;
 
-    CollectionScannerHints::Album src() const
+    CollectionScannerHints::Album src()                           const
     {
         return m_src;
     }
@@ -172,34 +173,36 @@ public:
     QString relativePathDst()                                     const;
     bool isDstAlbum(int albumRootId, const QString& relativePath) const;
 
-    CollectionScannerHints::DstPath dst() const
+    CollectionScannerHints::DstPath dst()                         const
     {
         return m_dst;
     }
 
-    uint qHash() const;
+    uint qHash()                                                  const;
 
-    bool operator==(const CollectionScannerHints::Album& src) const
+    bool operator==(const CollectionScannerHints::Album& src)     const
     {
-        return src == m_src;
+        return (src == m_src);
     }
 
-    bool operator==(const CollectionScannerHints::DstPath& dst) const
+    bool operator==(const CollectionScannerHints::DstPath& dst)   const
     {
-        return dst == m_dst;
+        return (dst == m_dst);
     }
 
 #ifdef HAVE_DBUS
+
     AlbumCopyMoveHint& operator<<(const QDBusArgument& argument);
-    const AlbumCopyMoveHint& operator>>(QDBusArgument& argument) const;
+    const AlbumCopyMoveHint& operator>>(QDBusArgument& argument)  const;
+
 #endif
 
-    operator const CollectionScannerHints::Album& () const
+    operator const CollectionScannerHints::Album& ()              const
     {
         return m_src;
     }
 
-    operator const CollectionScannerHints::DstPath& () const
+    operator const CollectionScannerHints::DstPath& ()            const
     {
         return m_dst;
     }
@@ -216,39 +219,42 @@ class DIGIKAM_DATABASE_EXPORT ItemCopyMoveHint
 {
 public:
 
-    /** An ItemCopyMoveHint describes a list of existing items that will
-     *  be copied, moved or renamed to an album given by album root id and album id.
-     *  In the new album, the items will have the filenames given in dstNames.
+    /**
+     * An ItemCopyMoveHint describes a list of existing items that will
+     * be copied, moved or renamed to an album given by album root id and album id.
+     * In the new album, the items will have the filenames given in dstNames.
      */
 
     ItemCopyMoveHint();
     ItemCopyMoveHint(const QList<qlonglong>& srcIds, int dstAlbumRootId, int albumId, const QStringList& dstNames);
 
-    QList<qlonglong> srcIds()                     const;
-    bool isSrcId(qlonglong id)                    const;
-    int albumRootIdDst()                          const;
-    int albumIdDst()                              const;
-    bool isDstAlbum(int albumRootId, int albumId) const;
+    QList<qlonglong> srcIds()                                   const;
+    bool isSrcId(qlonglong id)                                  const;
+    int albumRootIdDst()                                        const;
+    int albumIdDst()                                            const;
+    bool isDstAlbum(int albumRootId, int albumId)               const;
 
-    CollectionScannerHints::Album dst() const
+    CollectionScannerHints::Album dst()                         const
     {
         return m_dst;
     }
 
-    QStringList dstNames()        const;
-    QString dstName(qlonglong id) const;
+    QStringList dstNames()                                      const;
+    QString dstName(qlonglong id)                               const;
 
-    bool operator==(const CollectionScannerHints::Album& dst) const
+    bool operator==(const CollectionScannerHints::Album& dst)   const
     {
-        return dst == m_dst;
+        return (dst == m_dst);
     }
 
 #ifdef HAVE_DBUS
+
     ItemCopyMoveHint& operator<<(const QDBusArgument& argument);
     const ItemCopyMoveHint& operator>>(QDBusArgument& argument) const;
+
 #endif
 
-    operator const CollectionScannerHints::Album& () const
+    operator const CollectionScannerHints::Album& ()            const
     {
         return m_dst;
     }
@@ -266,14 +272,15 @@ class DIGIKAM_DATABASE_EXPORT ItemChangeHint
 {
 public:
 
-    /** An ItemCopyMoveHint describes a list of existing items that
-     *  should be updated although the modification date may not have changed.
+    /**
+     * An ItemCopyMoveHint describes a list of existing items that
+     * should be updated although the modification date may not have changed.
      */
 
     enum ChangeType
     {
-        ItemModified, /// treat as if modification date changed
-        ItemRescan    /// reread metadata
+        ItemModified, ///< treat as if modification date changed
+        ItemRescan    ///< reread metadata
     };
 
 public:
@@ -281,23 +288,25 @@ public:
     ItemChangeHint();
     explicit ItemChangeHint(QList<qlonglong> srcIds, ChangeType type = ItemModified);
 
-    QList<qlonglong> ids()  const;
-    bool isId(qlonglong id) const;
-    ChangeType changeType() const;
+    QList<qlonglong> ids()                                      const;
+    bool isId(qlonglong id)                                     const;
+    ChangeType changeType()                                     const;
 
-    bool isModified() const
+    bool isModified()                                           const
     {
-        return changeType() == ItemModified;
+        return (changeType() == ItemModified);
     }
 
-    bool needsRescan() const
+    bool needsRescan()                                          const
     {
-        return changeType() == ItemRescan;
+        return (changeType() == ItemRescan);
     }
 
 #ifdef HAVE_DBUS
+
     ItemChangeHint& operator<<(const QDBusArgument& argument);
-    const ItemChangeHint& operator>>(QDBusArgument& argument) const;
+    const ItemChangeHint& operator>>(QDBusArgument& argument)   const;
+
 #endif
 
 protected:
@@ -312,48 +321,50 @@ class DIGIKAM_DATABASE_EXPORT ItemMetadataAdjustmentHint
 {
 public:
 
-    /** The file's has been edited writing out information from
-      *  the database, i.e., the db is already guaranteed to contain
-      *  all changed information in the file's metadata.
-      *  There is no need for a full rescan, optimizations are possible.
-      */
+    /**
+     * The file's has been edited writing out information from
+     * the database, i.e., the db is already guaranteed to contain
+     * all changed information in the file's metadata.
+     * There is no need for a full rescan, optimizations are possible.
+     */
 
     enum AdjustmentStatus
     {
-        AboutToEditMetadata,       /// The file is about to be edited. Suspends scanning. The Finished hint must follow.
-        MetadataEditingFinished,   /// The file's metadata has been edited as described above.
-        MetadataEditingAborted     /// The file's metadata has not been edited, despite sending AboutToEditMedata
+        AboutToEditMetadata,       ///< The file is about to be edited. Suspends scanning. The Finished hint must follow.
+        MetadataEditingFinished,   ///< The file's metadata has been edited as described above.
+        MetadataEditingAborted     ///< The file's metadata has not been edited, despite sending AboutToEditMedata
     };
 
 public:
 
     ItemMetadataAdjustmentHint();
     explicit ItemMetadataAdjustmentHint(qlonglong id, AdjustmentStatus status,
-                                        const QDateTime& modificationDateOnDisk, qlonglong fileSize);
+                                        const QDateTime& modificationDateOnDisk,
+                                        qlonglong fileSize);
 
-    qlonglong id()                      const;
-    AdjustmentStatus adjustmentStatus() const;
-    QDateTime modificationDate()        const;
-    qlonglong fileSize()                const;
+    qlonglong id()                                                          const;
+    AdjustmentStatus adjustmentStatus()                                     const;
+    QDateTime modificationDate()                                            const;
+    qlonglong fileSize()                                                    const;
 
-    bool isAboutToEdit() const
+    bool isAboutToEdit()                                                    const
     {
-        return adjustmentStatus() == AboutToEditMetadata;
+        return (adjustmentStatus() == AboutToEditMetadata);
     }
 
-    bool isEditingFinished() const
+    bool isEditingFinished()                                                const
     {
-        return adjustmentStatus() == MetadataEditingFinished;
+        return (adjustmentStatus() == MetadataEditingFinished);
     }
 
-    bool isEditingFinishedAborted() const
+    bool isEditingFinishedAborted()                                         const
     {
-        return adjustmentStatus() == MetadataEditingAborted;
+        return (adjustmentStatus() == MetadataEditingAborted);
     }
 
 #ifdef HAVE_DBUS
     ItemMetadataAdjustmentHint& operator<<(const QDBusArgument& argument);
-    const ItemMetadataAdjustmentHint& operator>>(QDBusArgument& argument) const;
+    const ItemMetadataAdjustmentHint& operator>>(QDBusArgument& argument)   const;
 #endif
 
 protected:
@@ -372,9 +383,11 @@ inline uint qHash(const Digikam::AlbumCopyMoveHint& hint)
 } // namespace Digikam
 
 #ifdef HAVE_DBUS
+
 DECLARE_METATYPE_FOR_DBUS(Digikam::AlbumCopyMoveHint)
 DECLARE_METATYPE_FOR_DBUS(Digikam::ItemCopyMoveHint)
 DECLARE_METATYPE_FOR_DBUS(Digikam::ItemChangeHint)
+
 #endif
 
 #endif // DIGIKAM_COLLECTION_SCANNER_HINTS_H

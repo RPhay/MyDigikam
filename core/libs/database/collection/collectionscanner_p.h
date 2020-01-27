@@ -32,7 +32,9 @@
 
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <unistd.h>
+#ifndef Q_CC_MSVC
+#   include <unistd.h>
+#endif
 
 // Qt includes
 
@@ -44,7 +46,7 @@
 #include <QReadLocker>
 #include <QStringList>
 #include <QSet>
-#include <QTime>
+#include <QElapsedTimer>
 
 // Local includes
 
@@ -104,8 +106,8 @@ class Q_DECL_HIDDEN CollectionScannerHintContainerImplementation : public Collec
 public:
 
     virtual void recordHints(const QList<AlbumCopyMoveHint>& hints) override;
-    virtual void recordHints(const QList<ItemCopyMoveHint>& hints) override;
-    virtual void recordHints(const QList<ItemChangeHint>& hints) override;
+    virtual void recordHints(const QList<ItemCopyMoveHint>& hints)  override;
+    virtual void recordHints(const QList<ItemChangeHint>& hints)    override;
     virtual void recordHint(const ItemMetadataAdjustmentHint& hint) override;
 
     virtual void clear() override;

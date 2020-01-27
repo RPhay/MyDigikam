@@ -87,6 +87,7 @@ TagCheckView::TagCheckView(QWidget* const parent, TagModel* const tagModel)
     setShowFindDuplicateAction(false);
 
     // prepare custom menu action
+
     d->toggleAutoAction     = new KSelectAction(i18n("Toggle Auto"), this);
     d->toggleNoneAction     = d->toggleAutoAction->addAction(i18nc("no auto toggle", "None"));
     d->toggleAutoAction->menu()->addSeparator();
@@ -122,22 +123,27 @@ void TagCheckView::slotCheckStateChange(Album* album, Qt::CheckState state)
     Q_UNUSED(state);
 
     // handle custom toggle modes
+
     disconnect(albumModel(), SIGNAL(checkStateChanged(Album*,Qt::CheckState)),
                this, SLOT(slotCheckStateChange(Album*,Qt::CheckState)));
 
     // avoid signal recursion here
+
     switch (d->toggleAutoTags)
     {
         case Children:
             albumModel()->setCheckStateForChildren(album, state);
             break;
+
         case Parents:
             albumModel()->setCheckStateForParents(album, state);
             break;
+
         case ChildrenAndParents:
             albumModel()->setCheckStateForChildren(album, state);
             albumModel()->setCheckStateForParents(album, state);
             break;
+
         default:
             break;
     }
@@ -248,9 +254,9 @@ void TagCheckView::addCustomContextMenuActions(ContextMenuHelper& cmh, Album* al
     cmh.addSeparator();
 
     // selection (checked) modification
+
     cmh.setAlbumModel(albumModel());
     cmh.addAlbumCheckUncheckActions(album);
-
     cmh.addSeparator();
 
     // automatic toggle

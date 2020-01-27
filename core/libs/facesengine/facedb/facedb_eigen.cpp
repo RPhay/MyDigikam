@@ -59,7 +59,8 @@ void FaceDb::updateEIGENFaceModel(EigenFaceModel& model, const std::vector<cv::M
                 QByteArray compressed = qCompress(data.data);
                 std::vector<float> vecdata;
 
-                /** FIXME !!! Why the Eigen face use DNN code here ???
+                /**
+                 * FIXME !!! Why the Eigen face use DNN code here ???
                  * Otherwise, how does it comput vecdata ???
                  * Buggy codes from GSoC 2017
                  */

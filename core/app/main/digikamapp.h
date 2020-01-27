@@ -10,7 +10,7 @@
  * Copyright (C)      2006 by Tom Albers <tomalbers at kde dot nl>
  * Copyright (C) 2002-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2009-2011 by Andi Clemens <andi dot clemens at gmail dot com>
- * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C)      2013 by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -70,7 +70,7 @@ public:
     void enableAlbumForwardHistory(bool enable);
 
     ItemIconView* view()    const;
-    QMenu* slideShowMenu() const;
+    QMenu* slideShowMenu()  const;
 
     static DigikamApp* instance();
 
@@ -93,16 +93,16 @@ Q_SIGNALS:
 
 protected:
 
-    bool queryClose() override;
-    void moveEvent(QMoveEvent* e) override;
-    void closeEvent(QCloseEvent* e) override;
+    bool queryClose()                                                   override;
+    void moveEvent(QMoveEvent* e)                                       override;
+    void closeEvent(QCloseEvent* e)                                     override;
 
 private:
 
-    void showThumbBar(bool visible) override;
-    void showSideBars(bool visible) override;
-    bool thumbbarVisibility() const override;
-    void customizedFullScreenMode(bool set) override;
+    void showThumbBar(bool visible)                                     override;
+    void showSideBars(bool visible)                                     override;
+    bool thumbbarVisibility() const                                     override;
+    void customizedFullScreenMode(bool set)                             override;
     void customizedTrashView(bool set);
     void toggleShowBar();
 
@@ -113,8 +113,8 @@ private Q_SLOTS:
     void slotTrashSelectionChanged(const QString& text);
     void slotSelectionChanged(int selectionCount);
     void slotExit();
-    void slotDBStat() override;
-    void slotComponentsInfo() override;
+    void slotDBStat()                                                   override;
+    void slotComponentsInfo()                                           override;
 
     void slotRecurseAlbums(bool);
     void slotRecurseTags(bool);
@@ -130,12 +130,12 @@ private Q_SLOTS:
     void slotResetExifOrientationActions();
     void slotTransformAction();
 
-    void slotToggleLeftSideBar() override;
-    void slotToggleRightSideBar() override;
-    void slotPreviousLeftSideBarTab() override;
-    void slotNextLeftSideBarTab() override;
-    void slotPreviousRightSideBarTab() override;
-    void slotNextRightSideBarTab() override;
+    void slotToggleLeftSideBar()                                        override;
+    void slotToggleRightSideBar()                                       override;
+    void slotPreviousLeftSideBarTab()                                   override;
+    void slotNextLeftSideBarTab()                                       override;
+    void slotPreviousRightSideBarTab()                                  override;
+    void slotNextRightSideBarTab()                                      override;
 
     void slotToggleShowBar();
 
@@ -190,9 +190,9 @@ private:
 
 private Q_SLOTS:
 
-    void slotSetup() override;
+    void slotSetup()                                                    override;
     void slotSetupChanged();
-    void slotEditKeys() override;
+    void slotEditKeys()                                                 override;
     void slotThemeChanged();
 //@}
 

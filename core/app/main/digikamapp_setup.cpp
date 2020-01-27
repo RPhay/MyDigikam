@@ -127,15 +127,15 @@ void DigikamApp::setupActions()
 
     KActionCollection* const ac = actionCollection();
 
-    d->solidCameraActionGroup = new QActionGroup(this);
+    d->solidCameraActionGroup   = new QActionGroup(this);
     connect(d->solidCameraActionGroup, SIGNAL(triggered(QAction*)),
             this, SLOT(slotOpenSolidCamera(QAction*)));
 
-    d->solidUsmActionGroup = new QActionGroup(this);
+    d->solidUsmActionGroup      = new QActionGroup(this);
     connect(d->solidUsmActionGroup, SIGNAL(triggered(QAction*)),
             this, SLOT(slotOpenSolidUsmDevice(QAction*)));
 
-    d->manualCameraActionGroup = new QActionGroup(this);
+    d->manualCameraActionGroup  = new QActionGroup(this);
     connect(d->manualCameraActionGroup, SIGNAL(triggered(QAction*)),
             this, SLOT(slotOpenManualCamera(QAction*)));
 
@@ -306,12 +306,14 @@ void DigikamApp::setupActions()
     d->imageViewSelectionAction->addAction(d->imagePreviewAction);
 
 #ifdef HAVE_MARBLE
+
     d->imageMapViewAction = new QAction(QIcon::fromTheme(QLatin1String("globe")),
                                         i18nc("@action Switch to map view", "Map"), this);
     d->imageMapViewAction->setCheckable(true);
     ac->addAction(QLatin1String("map_view"), d->imageMapViewAction);
     connect(d->imageMapViewAction, SIGNAL(triggered()), d->view, SLOT(slotMapWidgetView()));
     d->imageViewSelectionAction->addAction(d->imageMapViewAction);
+
 #endif // HAVE_MARBLE
 
     d->imageTableViewAction = new QAction(QIcon::fromTheme(QLatin1String("view-list-details")),
@@ -430,6 +432,7 @@ void DigikamApp::setupActions()
     // -----------------------------------------------------------
 
     // Pop up dialog to ask user whether to move to trash
+
     d->imageDeleteAction = new QAction(QIcon::fromTheme(QLatin1String("user-trash-full")), i18nc("Non-pluralized", "Move to Trash"), this);
     connect(d->imageDeleteAction, SIGNAL(triggered()), d->view, SLOT(slotImageDelete()));
     ac->addAction(QLatin1String("image_delete"), d->imageDeleteAction);
@@ -442,6 +445,7 @@ void DigikamApp::setupActions()
     //        This is especially important when deleting from a different partition or from a net source.
     //        Also note that we use the wrong icon for the default album delete action, which should have a trashcan icon instead
     //        of a red cross, it confuses users.
+
     d->imageDeletePermanentlyAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")), i18n("Delete Permanently"), this);
     connect(d->imageDeletePermanentlyAction, SIGNAL(triggered()), d->view, SLOT(slotImageDeletePermanently()));
     ac->addAction(QLatin1String("image_delete_permanently"), d->imageDeletePermanentlyAction);
@@ -451,6 +455,7 @@ void DigikamApp::setupActions()
 
     // These two actions are hidden, no menu entry, no toolbar entry, no shortcut.
     // Power users may add them.
+
     d->imageDeletePermanentlyDirectlyAction = new QAction(QIcon::fromTheme(QLatin1String("edit-delete")),
                                                           i18n("Delete permanently without confirmation"), this);
     connect(d->imageDeletePermanentlyDirectlyAction, SIGNAL(triggered()),
@@ -473,6 +478,7 @@ void DigikamApp::setupActions()
     ac->addAction(QLatin1String("album_sort"), d->albumSortAction);
 
     // Use same list order as in applicationsettings enum
+
     QStringList sortActionList;
     sortActionList.append(i18n("By Folder"));
     sortActionList.append(i18n("By Category"));
@@ -508,6 +514,7 @@ void DigikamApp::setupActions()
     ac->addAction(QLatin1String("image_sort"), d->imageSortAction);
 
     // map to ItemSortSettings enum
+
     QAction* const sortByNameAction               = d->imageSortAction->addAction(i18n("By Name"));
     QAction* const sortByPathAction               = d->imageSortAction->addAction(i18n("By Path"));
     QAction* const sortByDateAction               = d->imageSortAction->addAction(i18n("By Creation Date"));
@@ -521,6 +528,7 @@ void DigikamApp::setupActions()
     QAction* const sortByManualOrderAndDateAction = d->imageSortAction->addAction(i18n("By Manual and Date"));
 
     // activate the sort by similarity if the fuzzy search sidebar is active. Deactivate at start.
+
     sortBySimilarityAction->setEnabled(false);
     connect(d->view, SIGNAL(signalFuzzySidebarActive(bool)), sortBySimilarityAction, SLOT(setEnabled(bool)));
 
@@ -581,6 +589,7 @@ void DigikamApp::setupActions()
     ac->addAction(QLatin1String("image_separation"), d->imageSeparationAction);
 
     // map to ItemSortSettings enum
+
     QAction* const noCategoriesAction     = d->imageSeparationAction->addAction(i18n("Flat List"));
     QAction* const separateByAlbumAction  = d->imageSeparationAction->addAction(i18n("By Album"));
     QAction* const separateByFormatAction = d->imageSeparationAction->addAction(i18n("By Format"));
@@ -650,12 +659,15 @@ void DigikamApp::setupActions()
     ac->setDefaultShortcut(d->showBarAction, Qt::CTRL + Qt::Key_T);
 
     // Provides a menu entry that allows showing/hiding the toolbar(s)
+
     setStandardToolBarMenuEnabled(true);
 
     // Provides a menu entry that allows showing/hiding the statusbar
+
     createStandardStatusBarAction();
 
     // Standard 'Configure' menu actions
+
     createSettingsActions();
 
     // -----------------------------------------------------------
@@ -752,9 +764,11 @@ void DigikamApp::setupActions()
     // -----------------------------------------------------------
 
 #ifdef HAVE_MYSQLSUPPORT
+
     QAction* const databaseMigrationAction = new QAction(QIcon::fromTheme(QLatin1String("network-server-database")), i18n("Database Migration..."), this);
     connect(databaseMigrationAction, SIGNAL(triggered()), this, SLOT(slotDatabaseMigration()));
     ac->addAction(QLatin1String("database_migration"), databaseMigrationAction);
+
 #endif
 
     // -----------------------------------------------------------
@@ -773,6 +787,7 @@ void DigikamApp::setupActions()
 
     // Load Cameras -- do this before the createGUI so that the cameras
     // are plugged into the toolbar at startup
+
     if (d->splashScreen)
     {
         d->splashScreen->setMessage(i18n("Loading cameras..."));
@@ -808,6 +823,7 @@ void DigikamApp::setupAccelerators()
     KActionCollection* const ac = actionCollection();
 
     // Action are added by <MainWindow> tag in ui.rc XML file
+
     QAction* const escapeAction = new QAction(i18n("Exit Preview Mode"), this);
     ac->addAction(QLatin1String("exit_preview_mode"), escapeAction);
     ac->setDefaultShortcut(escapeAction, Qt::Key_Escape);
@@ -839,8 +855,10 @@ void DigikamApp::setupAccelerators()
     d->cutItemsAction->setIcon(QIcon::fromTheme(QLatin1String("edit-cut")));
     d->cutItemsAction->setWhatsThis(i18n("Cut selection to clipboard"));
     ac->addAction(QLatin1String("cut_album_selection"), d->cutItemsAction);
+
     // NOTE: shift+del keyboard shortcut must not be assigned to Cut action
     // else the shortcut for Delete permanently collides with secondary shortcut of Cut
+
     ac->setDefaultShortcut(d->cutItemsAction, Qt::CTRL + Qt::Key_X);
     connect(d->cutItemsAction, SIGNAL(triggered()), this, SIGNAL(signalCutAlbumItemsSelection()));
 
@@ -851,6 +869,7 @@ void DigikamApp::setupAccelerators()
     ac->addAction(QLatin1String("paste_album_selection"), d->pasteItemsAction);
 
     // Labels shortcuts must be registered here to be saved in XML GUI files if user customize it.
+
     d->tagsActionManager->registerLabelsActions(ac);
 
     QAction* const editTitles = new QAction(i18n("Edit Titles"), this);
@@ -1065,7 +1084,7 @@ void DigikamApp::initGui()
     d->recurseAlbumsAction->setChecked(ApplicationSettings::instance()->getRecurseAlbums());
     d->recurseTagsAction->setChecked(ApplicationSettings::instance()->getRecurseTags());
     d->showBarAction->setChecked(ApplicationSettings::instance()->getShowThumbbar());
-    showMenuBarAction()->setChecked(!menuBar()->isHidden());  // NOTE: workaround for bug #171080
+    showMenuBarAction()->setChecked(!menuBar()->isHidden());                                                    // NOTE: workaround for bug #171080
 
     slotSwitchedToIconView();
 }

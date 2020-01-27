@@ -41,10 +41,15 @@
 
 extern "C"
 {
+#ifndef Q_CC_MSVC
+#   include <unistd.h>
+#   include <utime.h>
+#else
+#   include <sys/utime.h>
+#endif
+
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <unistd.h>
-#include <utime.h>
 #include <setjmp.h>
 #include <jpeglib.h>
 }

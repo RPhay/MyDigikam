@@ -4,6 +4,10 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+if(POLICY CMP0054)
+    cmake_policy(SET CMP0054 OLD) # work around cmake warning about "c" file suffix test in macro LIBRAW_BUILD_SAMPLES
+endif()
+
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../../libs/rawengine/libraw
                     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
@@ -47,7 +51,11 @@ macro(LIBRAW_BUILD_SAMPLES)
         endwhile()
     endif()
 
-    set_source_files_properties(${${_target}_SRCS} PROPERTIES COMPILE_FLAGS -w)
+    if(WIN32 AND MSVC)
+        set_source_files_properties(${${_target}_SRCS} PROPERTIES COMPILE_FLAGS /w)
+    else()
+        set_source_files_properties(${${_target}_SRCS} PROPERTIES COMPILE_FLAGS "-w")
+    endif()
 
     add_executable(${_target} ${${_target}_SRCS})
 

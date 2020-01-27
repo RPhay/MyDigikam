@@ -50,8 +50,10 @@ public:
     {
         /// Load the relation cloud to the graph. Will give all edges, but no further info
         LoadRelationCloud  = 1 << 0,
+
         /// Will load the DImageHistory of the given subject
         LoadSubjectHistory = 1 << 1,
+
         /// Will load the DImageHistory of all leave vertices of the graph
         LoadLeavesHistory  = 1 << 2,
 

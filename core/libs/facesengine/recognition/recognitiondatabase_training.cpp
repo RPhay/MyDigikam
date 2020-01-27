@@ -28,6 +28,19 @@
 namespace Digikam
 {
 
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+void RecognitionDatabase::Private::train(OpenCVDNNFaceRecognizer* const r,
+                                         const QList<Identity>& identitiesToBeTrained,
+                                         TrainingDataProvider* const data,
+                                         const QString& trainingContext)
+{
+    qCDebug(DIGIKAM_FACESENGINE_LOG) << "Training using opencv DNN";
+    trainIdentityBatchDNN(r, identitiesToBeTrained, data, trainingContext, this);
+}
+
+#else
+
 void RecognitionDatabase::Private::train(OpenCVLBPHFaceRecognizer* const r,
                                          const QList<Identity>& identitiesToBeTrained,
                                          TrainingDataProvider* const data,
@@ -36,6 +49,11 @@ void RecognitionDatabase::Private::train(OpenCVLBPHFaceRecognizer* const r,
     qCDebug(DIGIKAM_FACESENGINE_LOG) << "Training using opencv LBPH";
     trainIdentityBatchLBPH(r, identitiesToBeTrained, data, trainingContext, this);
 }
+
+#endif
+
+/*
+NOTE: experimental and deprecated
 
 void RecognitionDatabase::Private::train(OpenCVEIGENFaceRecognizer* const r,
                                          const QList<Identity>& identitiesToBeTrained,
@@ -55,14 +73,7 @@ void RecognitionDatabase::Private::train(OpenCVFISHERFaceRecognizer* const r,
     trainIdentityBatchFISHER(r, identitiesToBeTrained, data, trainingContext, this);
 }
 
-void RecognitionDatabase::Private::train(OpenCVDNNFaceRecognizer* const r,
-                                         const QList<Identity>& identitiesToBeTrained,
-                                         TrainingDataProvider* const data,
-                                         const QString& trainingContext)
-{
-    qCDebug(DIGIKAM_FACESENGINE_LOG) << "Training using opencv DNN";
-    trainIdentityBatchDNN(r, identitiesToBeTrained, data, trainingContext, this);
-}
+*/
 
 // -------------------------------------------------------------------------------------
 
@@ -89,10 +100,25 @@ void RecognitionDatabase::train(const QList<Identity>& identitiesToBeTrained,
 
     QMutexLocker lock(&d->mutex);
 
-    if      (d->recognizeAlgorithm == RecognizeAlgorithm::LBP)
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+    if (d->recognizeAlgorithm == RecognizeAlgorithm::DNN)
+    {
+        d->train(d->dnn(),   identitiesToBeTrained, data, trainingContext);
+    }
+
+#else
+
+    if (d->recognizeAlgorithm == RecognizeAlgorithm::LBP)
     {
         d->train(d->lbph(),  identitiesToBeTrained, data, trainingContext);
     }
+
+#endif
+
+/*
+    NOTE: experimental and deprecated
+
     else if (d->recognizeAlgorithm == RecognizeAlgorithm::EigenFace)
     {
         d->train(d->eigen(), identitiesToBeTrained, data, trainingContext);
@@ -101,10 +127,7 @@ void RecognitionDatabase::train(const QList<Identity>& identitiesToBeTrained,
     {
         d->train(d->fisher(), identitiesToBeTrained, data, trainingContext);
     }
-    else if (d->recognizeAlgorithm == RecognizeAlgorithm::DNN)
-    {
-        d->train(d->dnn(),   identitiesToBeTrained, data, trainingContext);
-    }
+*/
     else
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "No obvious recognize algorithm";
@@ -140,12 +163,22 @@ void RecognitionDatabase::clearAllTraining(const QString& trainingContext)
     QMutexLocker lock(&d->mutex);
 
     FaceDbAccess().db()->clearIdentities();
-/*
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+    d->clear(d->dnn(),    QList<int>(), trainingContext);
+
+#else
+
     d->clear(d->lbph(),   QList<int>(), trainingContext);
+
+#endif
+
+/*
+    NOTE: experimental and deprecated
     d->clear(d->eigen(),  QList<int>(), trainingContext);
     d->clear(d->fisher(), QList<int>(), trainingContext);
 */
-    d->clear(d->dnn(),    QList<int>(), trainingContext);
 }
 
 void RecognitionDatabase::clearTraining(const QList<Identity>& identitiesToClean,
@@ -164,10 +197,25 @@ void RecognitionDatabase::clearTraining(const QList<Identity>& identitiesToClean
         ids << id.id();
     }
 
-    if      (d->recognizeAlgorithm == RecognizeAlgorithm::LBP)
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+    if (d->recognizeAlgorithm == RecognizeAlgorithm::DNN)
+    {
+        d->clear(d->dnn(), ids, trainingContext);
+    }
+
+#else
+
+    if (d->recognizeAlgorithm == RecognizeAlgorithm::LBP)
     {
         d->clear(d->lbph(), ids, trainingContext);
     }
+
+#endif
+
+/*
+    NOTE: experimental and deprecated
+
     else if (d->recognizeAlgorithm == RecognizeAlgorithm::EigenFace)
     {
         d->clear(d->eigen(), ids, trainingContext);
@@ -176,10 +224,8 @@ void RecognitionDatabase::clearTraining(const QList<Identity>& identitiesToClean
     {
         d->clear(d->fisher(), ids, trainingContext);
     }
-    else if (d->recognizeAlgorithm == RecognizeAlgorithm::DNN)
-    {
-        d->clear(d->dnn(), ids, trainingContext);
-    }
+*/
+
     else
     {
         qCCritical(DIGIKAM_FACESENGINE_LOG) << "No obvious recognize algorithm";
@@ -223,6 +269,64 @@ static void trainSingle(Recognizer* const r,
  * Training where the train method takes a list of identities and images,
  * and updating per-identity is non-inferior to updating all at once.
  */
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+void trainIdentityBatchDNN(OpenCVDNNFaceRecognizer* const r,
+                           const QList<Identity>& identitiesToBeTrained,
+                           TrainingDataProvider* const data,
+                           const QString& trainingContext,
+                           RecognitionDatabase::Private* const d)
+{
+    foreach (const Identity& identity, identitiesToBeTrained)
+    {
+        std::vector<int>     labels;
+        std::vector<cv::Mat> images;
+        std::vector<cv::Mat> images_rgb;
+
+        ImageListProvider* const imageList = data->newImages(identity);
+        images.reserve(imageList->size());
+
+        for ( ; !imageList->atEnd() ; imageList->proceed())
+        {
+            try
+            {
+                cv::Mat cvImage     = d->preprocessingChain(imageList->image());
+                cv::Mat cvImage_rgb = d->preprocessingChainRGB(imageList->image());
+
+                labels.push_back(identity.id());
+                images.push_back(cvImage);
+                images_rgb.push_back(cvImage_rgb);
+            }
+            catch (cv::Exception& e)
+            {
+                qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception preparing image for DNN:" << e.what();
+            }
+            catch (...)
+            {
+                qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+            }
+        }
+
+        qCDebug(DIGIKAM_FACESENGINE_LOG) << "DNN Training" << images.size() << "images for identity" << identity.id();
+
+        try
+        {
+            r->train(images, labels, trainingContext, images_rgb);
+        }
+        catch (cv::Exception& e)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception training DNN Recognizer:" << e.what();
+        }
+        catch (...)
+        {
+            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
+        }
+    }
+}
+
+#else
+
 void trainIdentityBatchLBPH(OpenCVLBPHFaceRecognizer* const r,
                             const QList<Identity>& identitiesToBeTrained,
                             TrainingDataProvider* const data,
@@ -273,6 +377,11 @@ void trainIdentityBatchLBPH(OpenCVLBPHFaceRecognizer* const r,
         }
     }
 }
+
+#endif
+
+/*
+NOTE: experimental and deprecated
 
 void trainIdentityBatchEIGEN(OpenCVEIGENFaceRecognizer* const r,
                              const QList<Identity>& identitiesToBeTrained,
@@ -378,57 +487,6 @@ void trainIdentityBatchFISHER(OpenCVFISHERFaceRecognizer* const r,
     }
 }
 
-void trainIdentityBatchDNN(OpenCVDNNFaceRecognizer* const r,
-                           const QList<Identity>& identitiesToBeTrained,
-                           TrainingDataProvider* const data,
-                           const QString& trainingContext,
-                           RecognitionDatabase::Private* const d)
-{
-    foreach (const Identity& identity, identitiesToBeTrained)
-    {
-        std::vector<int>     labels;
-        std::vector<cv::Mat> images;
-        std::vector<cv::Mat> images_rgb;
-
-        ImageListProvider* const imageList = data->newImages(identity);
-        images.reserve(imageList->size());
-
-        for ( ; !imageList->atEnd() ; imageList->proceed())
-        {
-            try
-            {
-                cv::Mat cvImage     = d->preprocessingChain(imageList->image());
-                cv::Mat cvImage_rgb = d->preprocessingChainRGB(imageList->image());
-
-                labels.push_back(identity.id());
-                images.push_back(cvImage);
-                images_rgb.push_back(cvImage_rgb);
-            }
-            catch (cv::Exception& e)
-            {
-                qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception preparing image for DNN:" << e.what();
-            }
-            catch (...)
-            {
-                qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
-            }
-        }
-
-        qCDebug(DIGIKAM_FACESENGINE_LOG) << "DNN Training" << images.size() << "images for identity" << identity.id();
-
-        try
-        {
-            r->train(images, labels, trainingContext, images_rgb);
-        }
-        catch (cv::Exception& e)
-        {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "cv::Exception training DNN Recognizer:" << e.what();
-        }
-        catch (...)
-        {
-            qCCritical(DIGIKAM_FACESENGINE_LOG) << "Default exception from OpenCV";
-        }
-    }
-}
+*/
 
 } // namespace Digikam

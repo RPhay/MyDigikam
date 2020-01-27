@@ -61,9 +61,9 @@ public:
 
 public:
 
-    DInfoInterface* infoIface(DPluginAction* const ac) override;
+    DInfoInterface* infoIface(DPluginAction* const ac)                  override;
 
-    virtual VersionManager* versionManager() const override;
+    virtual VersionManager* versionManager() const                      override;
 
 public Q_SLOTS:
 
@@ -87,28 +87,28 @@ private:
 
     void loadIndex(const QModelIndex& index);
 
-    void closeEvent(QCloseEvent* e)       override;
-    void showEvent(QShowEvent*)           override;
-    void dragMoveEvent(QDragMoveEvent* e) override;
-    void dropEvent(QDropEvent* e)         override;
+    void closeEvent(QCloseEvent* e)                                     override;
+    void showEvent(QShowEvent*)                                         override;
+    void dragMoveEvent(QDragMoveEvent* e)                               override;
+    void dropEvent(QDropEvent* e)                                       override;
 
-    bool save()                                        override;
-    bool saveAs()                                      override;
-    bool saveNewVersion()                              override;
-    bool saveCurrentVersion()                          override;
-    bool saveNewVersionAs()                            override;
-    bool saveNewVersionInFormat(const QString& format) override;
+    bool save()                                                         override;
+    bool saveAs()                                                       override;
+    bool saveNewVersion()                                               override;
+    bool saveCurrentVersion()                                           override;
+    bool saveNewVersionAs()                                             override;
+    bool saveNewVersionInFormat(const QString& format)                  override;
 
-    QUrl saveDestinationUrl()                                        override;
-    bool hasOriginalToRestore()                                      override;
-    DImageHistory resolvedImageHistory(const DImageHistory& history) override;
+    QUrl saveDestinationUrl()                                           override;
+    bool hasOriginalToRestore()                                         override;
+    DImageHistory resolvedImageHistory(const DImageHistory& history)    override;
 
     void prepareImageToSave();
     void saveFaceTagsToImage(const ItemInfo& info);
 
-    void saveIsComplete()        override;
-    void saveAsIsComplete()      override;
-    void saveVersionIsComplete() override;
+    void saveIsComplete()                                               override;
+    void saveAsIsComplete()                                             override;
+    void saveVersionIsComplete()                                        override;
 
     void setViewToURL(const QUrl& url);
     void deleteCurrentItem(bool ask, bool permanently);
@@ -119,8 +119,8 @@ private:
     void assignRating(const ItemInfo& info, int rating);
     void toggleTag(const ItemInfo& info, int tagID);
 
-    ThumbBarDock* thumbBar()     const override;
-    Sidebar*      rightSideBar() const override;
+    ThumbBarDock* thumbBar()                                      const override;
+    Sidebar*      rightSideBar()                                  const override;
 
 Q_SIGNALS: // private signals
 
@@ -131,11 +131,11 @@ private Q_SLOTS:
     void slotLoadItemInfosStage2();
     void slotThumbBarModelReady();
 
-    void slotForward()                    override;
-    void slotBackward()                   override;
-    void slotFirst()                      override;
-    void slotLast()                       override;
-    void slotFileWithDefaultApplication() override;
+    void slotForward()                                                  override;
+    void slotBackward()                                                 override;
+    void slotFirst()                                                    override;
+    void slotLast()                                                     override;
+    void slotFileWithDefaultApplication()                               override;
 
     void slotToMainWindow();
 
@@ -146,12 +146,12 @@ private Q_SLOTS:
     void slotDeleteCurrentItemPermanentlyDirectly();
     void slotTrashCurrentItemDirectly();
 
-    void slotChanged()                         override;
-    void slotUpdateItemInfo()                  override;
-    void slotFileOriginChanged(const QString&) override;
+    void slotChanged()                                                  override;
+    void slotUpdateItemInfo()                                           override;
+    void slotFileOriginChanged(const QString&)                          override;
 
-    void slotRevert()       override;
-    void slotOpenOriginal() override;
+    void slotRevert()                                                   override;
+    void slotOpenOriginal()                                             override;
 
     void slotAssignTag(int tagID);
     void slotRemoveTag(int tagID);
@@ -162,15 +162,17 @@ private Q_SLOTS:
     void slotToggleTag(const QUrl&, int);
 
     void slotFileMetadataChanged(const QUrl&);
-    //void slotCollectionImageChange(const CollectionImageChangeset&);
-    //void slotRowsAboutToBeRemoved(const QModelIndex& parent, int start, int end);
+/*
+    void slotCollectionImageChange(const CollectionImageChangeset&);
+    void slotRowsAboutToBeRemoved(const QModelIndex& parent, int start, int end);
+*/
     void slotDroppedOnThumbbar(const QList<ItemInfo>& infos);
 
     void slotComponentsInfo() override;
     void slotDBStat()         override;
 
-    void slotAddedDropedItems(QDropEvent*)     override;
-    void slotOpenWith(QAction* action=nullptr) override;
+    void slotAddedDropedItems(QDropEvent*)                              override;
+    void slotOpenWith(QAction* action=nullptr)                          override;
 
     void slotRightSideBarActivateTitles();
     void slotRightSideBarActivateComments();
@@ -180,8 +182,8 @@ private Q_SLOTS:
 
 public Q_SLOTS:
 
-    void slotSetup()    override;
-    void slotSetupICC() override;
+    void slotSetup()                                                    override;
+    void slotSetupICC()                                                 override;
 
     void slotSetupChanged();
 
@@ -189,21 +191,21 @@ public Q_SLOTS:
 
 private:
 
-    void setupActions()     override;
-    void setupConnections() override;
-    void setupUserArea()    override;
+    void setupActions()                                                 override;
+    void setupConnections()                                             override;
+    void setupUserArea()                                                override;
 
-    void addServicesMenu()  override;
+    void addServicesMenu()                                              override;
 
 private Q_SLOTS:
 
-    void slotContextMenu()  override;
+    void slotContextMenu()                                              override;
 
 // -- Extra tool methods implemented in imagewindow_tools.cpp ----------------------------------------
 
 private:
 
-    void slideShow(SlideShowSettings& settings) override;
+    void slideShow(SlideShowSettings& settings)                         override;
 
 // -- Import tools methods implemented in imagewindow_import.cpp -------------------------------------
 

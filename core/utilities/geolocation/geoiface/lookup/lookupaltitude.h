@@ -43,26 +43,6 @@ class DIGIKAM_EXPORT LookupAltitude : public QObject
 
 public:
 
-    class  Request
-    {
-    public:
-
-        explicit Request()
-          : coordinates(),
-            success(false),
-            data()
-        {
-        }
-
-        GeoCoordinates         coordinates;
-        bool                   success;
-        QVariant               data;
-
-        typedef QList<Request> List;
-    };
-
-public:
-
     enum StatusEnum
     {
         StatusInProgress = 0,
@@ -74,20 +54,42 @@ public:
 
 public:
 
+    class  Request
+    {
+    public:
+
+        explicit Request()
+          : coordinates(),
+            success(false),
+            data()
+        {
+        }
+
+    public:
+
+        GeoCoordinates         coordinates;
+        bool                   success;
+        QVariant               data;
+
+        typedef QList<Request> List;
+    };
+
+public:
+
     explicit LookupAltitude(QObject* const parent);
     virtual ~LookupAltitude();
 
-    virtual QString backendName() const = 0;
-    virtual QString backendHumanName() const = 0;
+    virtual QString backendName()                           const = 0;
+    virtual QString backendHumanName()                      const = 0;
 
-    virtual void addRequests(const Request::List& requests) = 0;
-    virtual Request::List getRequests() const = 0;
-    virtual Request getRequest(const int index) const = 0;
+    virtual void addRequests(const Request::List& requests)       = 0;
+    virtual Request::List getRequests()                     const = 0;
+    virtual Request getRequest(const int index)             const = 0;
 
-    virtual void startLookup() = 0;
-    virtual StatusAltitude getStatus() const = 0;
-    virtual QString errorMessage() const = 0;
-    virtual void cancel() = 0;
+    virtual void startLookup()                                    = 0;
+    virtual StatusAltitude getStatus()                      const = 0;
+    virtual QString errorMessage()                          const = 0;
+    virtual void cancel()                                         = 0;
 
 Q_SIGNALS:
 

@@ -61,7 +61,9 @@ int SimpleTreeModel::columnCount(const QModelIndex& parent) const
     const Item* const item = indexToItem(parent);
 
     if (!item)
+    {
         return 0;
+    }
 
     return d->columnCount;
 }
@@ -71,17 +73,24 @@ bool SimpleTreeModel::setData(const QModelIndex& index, const QVariant& value, i
     Item* const item = indexToItem(index);
 
     if (!item)
+    {
         return false;
+    }
 
     const int column = index.column();
 
-    if (column<0)
+    if (column < 0)
+    {
         return false;
+    }
 
     while (item->dataColumns.count()<column)
+    {
         item->dataColumns.append(QMap<int, QVariant>());
+    }
 
     item->dataColumns[column].insert(role, value);
+
     emit dataChanged(index, index);
 
     return true;
@@ -92,15 +101,21 @@ QVariant SimpleTreeModel::data(const QModelIndex& index, int role) const
     const Item* const item = indexToItem(index);
 
     if (!item)
+    {
         return QVariant();
+    }
 
-    if (index.row()>0)
+    if (index.row() > 0)
+    {
         return QVariant();
+    }
 
     const int column = index.column();
 
-    if ((column<0)||(column>=item->dataColumns.count()))
+    if ((column < 0) || (column >= item->dataColumns.count()))
+    {
         return QVariant();
+    }
 
     return item->dataColumns.at(column).value(role);
 }
@@ -110,16 +125,24 @@ QModelIndex SimpleTreeModel::index(int row, int column, const QModelIndex& paren
     Item* const item = indexToItem(parent);
 
     if (!item)
+    {
         return QModelIndex();
+    }
 
-    if (parent.isValid()&&(parent.column()!=0))
+    if (parent.isValid() && (parent.column() != 0))
+    {
         return QModelIndex();
+    }
 
-    if ((row<0)||(column!=0))
+    if ((row < 0) || (column != 0))
+    {
         return QModelIndex();
+    }
 
-    if (row>=item->children.count())
+    if (row >= item->children.count())
+    {
         return QModelIndex();
+    }
 
     return createIndex(row, column, item);
 }
@@ -127,15 +150,21 @@ QModelIndex SimpleTreeModel::index(int row, int column, const QModelIndex& paren
 QModelIndex SimpleTreeModel::parent(const QModelIndex& index) const
 {
     if (!index.isValid())
+    {
         return QModelIndex();
+    }
 
     Item* const item = indexToItem(index);
 
     if (!item)
+    {
         return QModelIndex();
+    }
 
-    if ((item->parent==nullptr)||(item->parent==d->rootItem))
+    if ((item->parent == nullptr) || (item->parent == d->rootItem))
+    {
         return QModelIndex();
+    }
 
     return itemToIndex(item->parent);
 }
@@ -145,7 +174,9 @@ int SimpleTreeModel::rowCount(const QModelIndex& parent) const
     const Item* const item = indexToItem(parent);
 
     if (!item)
+    {
         return 0;
+    }
 
     return item->children.count();
 }
@@ -156,6 +187,7 @@ bool SimpleTreeModel::setHeaderData(int section, Qt::Orientation orientation, co
     Q_UNUSED(orientation);
     Q_UNUSED(value);
     Q_UNUSED(role);
+
     return false;
 }
 
@@ -164,6 +196,7 @@ QVariant SimpleTreeModel::headerData(int section, Qt::Orientation orientation, i
     Q_UNUSED(section);
     Q_UNUSED(orientation);
     Q_UNUSED(role);
+
     return QVariant();
 }
 
@@ -196,13 +229,17 @@ SimpleTreeModel::Item* SimpleTreeModel::addItem(SimpleTreeModel::Item* const par
 SimpleTreeModel::Item* SimpleTreeModel::indexToItem(const QModelIndex& itemIndex) const
 {
     if (!itemIndex.isValid())
+    {
         return d->rootItem;
+    }
 
     Item* const item = static_cast<Item*>(itemIndex.internalPointer());
     const int row    = itemIndex.row();
 
     if ((row < 0) || (row >= item->children.count()))
+    {
         return nullptr;
+    }
 
     return item->children.at(row);
 }
@@ -215,13 +252,17 @@ SimpleTreeModel::Item* SimpleTreeModel::rootItem() const
 QModelIndex SimpleTreeModel::itemToIndex(const Item* const item) const
 {
     if ((!item) || (item == d->rootItem))
+    {
         return QModelIndex();
+    }
 
     Item* const parentItem = item->parent;
     const int rowNumber    = parentItem->children.indexOf(const_cast<Item*>(item));
 
     if (rowNumber < 0)
+    {
         return QModelIndex();
+    }
 
     return createIndex(rowNumber, 0, parentItem);
 }

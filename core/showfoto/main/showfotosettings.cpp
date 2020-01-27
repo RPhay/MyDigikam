@@ -153,10 +153,10 @@ public:
     KConfigGroup         group;
 };
 
-//Configuration Group
+/// Configuration Group
 const QString ShowfotoSettings::Private::configGroupDefault(QLatin1String("ImageViewer Settings"));
 
-//Misc. & Showfoto Generals Settings
+/// Misc. & Showfoto Generals Settings
 const QString ShowfotoSettings::Private::configLastOpenedDir(QLatin1String("Last Opened Directory"));
 const QString ShowfotoSettings::Private::configDeleteItem2Trash(QLatin1String("DeleteItem2Trash"));
 const QString ShowfotoSettings::Private::configCurrentTheme(QLatin1String("Theme"));
@@ -172,17 +172,17 @@ const QString ShowfotoSettings::Private::configItemCenter(QLatin1String("Item To
 const QString ShowfotoSettings::Private::configSortOrder(QLatin1String("SortOrder"));
 const QString ShowfotoSettings::Private::configReverseSort(QLatin1String("ReverseSort"));
 
-//Tool Tip Enable/Disable
+/// Tool Tip Enable/Disable
 const QString ShowfotoSettings::Private::configShowToolTip(QLatin1String("Show ToolTips"));
 
-//Tool Tip File Properties
+/// Tool Tip File Properties
 const QString ShowfotoSettings::Private::configShowFileName(QLatin1String("ToolTips Show File Name"));
 const QString ShowfotoSettings::Private::configShowFileDate(QLatin1String("ToolTips Show File Date"));
 const QString ShowfotoSettings::Private::configShowFileSize(QLatin1String("ToolTips Show File Size"));
 const QString ShowfotoSettings::Private::configShowFileType(QLatin1String("ToolTips Show Image Type"));
 const QString ShowfotoSettings::Private::configShowFileDim(QLatin1String("ToolTips Show Image Dim"));
 
-//Tool Tip Photograph Info
+/// Tool Tip Photograph Info
 const QString ShowfotoSettings::Private::configShowPhotoMake(QLatin1String("ToolTips Show Photo Make"));
 const QString ShowfotoSettings::Private::configShowPhotoLens(QLatin1String("ToolTips Show Photo Lens"));
 const QString ShowfotoSettings::Private::configShowPhotoFocal(QLatin1String("ToolTips Show Photo Focal"));
@@ -192,7 +192,7 @@ const QString ShowfotoSettings::Private::configShowPhotoWB(QLatin1String("ToolTi
 const QString ShowfotoSettings::Private::configShowPhotoDate(QLatin1String("ToolTips Show Photo Date"));
 const QString ShowfotoSettings::Private::configShowPhotoMode(QLatin1String("ToolTips Show Photo Mode"));
 
-//Tool Tips Font
+/// Tool Tips Font
 const QString ShowfotoSettings::Private::configToolTipsFont(QLatin1String("ToolTips Font"));
 
 // -------------------------------------------------------------------------------------------------

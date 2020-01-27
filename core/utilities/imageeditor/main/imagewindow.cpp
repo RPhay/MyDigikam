@@ -51,7 +51,9 @@ ImageWindow::ImageWindow()
     setXMLFile(QLatin1String("imageeditorui5.rc"));
 
     m_instance = this;
+
     // We don't want to be deleted on close
+
     setAttribute(Qt::WA_DeleteOnClose, false);
     setAcceptDrops(true);
 
@@ -115,6 +117,7 @@ void ImageWindow::closeEvent(QCloseEvent* e)
     }
 
     // put right side bar in a defined state
+
     emit signalNoCurrentItem();
 
     m_canvas->resetImage();
@@ -126,6 +129,7 @@ void ImageWindow::closeEvent(QCloseEvent* e)
     // This only needs to be done when closing a visible window and not when
     // destroying a closed window, since the latter case will always report that
     // the thumbnail bar isn't visible.
+
     if (isVisible())
     {
         thumbBar()->hide();
@@ -143,6 +147,7 @@ void ImageWindow::closeEvent(QCloseEvent* e)
 void ImageWindow::showEvent(QShowEvent*)
 {
     // Restore the visibility of the thumbbar and start autosaving again.
+
     thumbBar()->restoreVisibility();
 }
 
@@ -152,6 +157,7 @@ bool ImageWindow::queryClose()
     // Additionally, queryClose is called from DigikamApp.
 
     // wait if a save operation is currently running
+
     if (!waitForSavingToComplete())
     {
         return false;
@@ -161,9 +167,10 @@ bool ImageWindow::queryClose()
 }
 
 void ImageWindow::loadItemInfos(const ItemInfoList& imageInfoList, const ItemInfo& imageInfoCurrent,
-                                 const QString& caption)
+                                const QString& caption)
 {
     // Very first thing is to check for changes, user may choose to cancel operation
+
     if (!promptUserSave(d->currentUrl(), AskIfNeeded))
     {
         return;
@@ -174,6 +181,7 @@ void ImageWindow::loadItemInfos(const ItemInfoList& imageInfoList, const ItemInf
     // Note: Addition is asynchronous, indexes not yet available
     // We enable thumbbar as soon as indexes are available
     // If not, we load imageInfoCurrent, then the index 0, then again imageInfoCurrent
+
     d->thumbBar->setEnabled(false);
     d->imageInfoModel->setItemInfos(imageInfoList);
     d->setThumbBarToCurrent();
@@ -188,12 +196,14 @@ void ImageWindow::loadItemInfos(const ItemInfoList& imageInfoList, const ItemInf
     }
 
     // it can slightly improve the responsiveness when inserting an event loop run here
+
     QTimer::singleShot(0, this, SLOT(slotLoadItemInfosStage2()));
 }
 
 void ImageWindow::slotLoadItemInfosStage2()
 {
     // if window is minimized, show it
+
     if (isMinimized())
     {
         KWindowSystem::unminimizeWindow(winId());
@@ -241,6 +251,7 @@ void ImageWindow::slotLoadCurrent()
     // Do this _after_ the canvas->load(), so that the main view histogram does not load
     // a smaller version if a raw image, and after that the EditorCore loads the full version.
     // So first let EditorCore create its loading task, only then any external objects.
+
     setViewToURL(d->currentUrl());
 }
 
@@ -251,7 +262,7 @@ void ImageWindow::setViewToURL(const QUrl& url)
 
 void ImageWindow::slotThumbBarImageSelected(const ItemInfo& info)
 {
-    if (d->currentItemInfo == info || !d->thumbBar->isEnabled())
+    if ((d->currentItemInfo == info) || (!d->thumbBar->isEnabled()))
     {
         return;
     }
@@ -300,6 +311,7 @@ void ImageWindow::slotFileOriginChanged(const QString& filePath)
 {
     // By redo or undo, we have virtually switched to a new image.
     // So we do _not_ load anything!
+
     ItemInfo newCurrent = ItemInfo::fromLocalFile(filePath);
 
     if (newCurrent.isNull() || !d->imageInfoModel->hasImage(newCurrent))
@@ -370,6 +382,7 @@ void ImageWindow::slotChanged()
     d->rightSideBar->itemChanged(d->currentItemInfo, m_canvas->getSelectedArea(), img, redoHistory);
 
     // Filters for redo will be turn in grey out
+
     d->rightSideBar->getFiltersHistoryTab()->setEnabledHistorySteps(history.actionCount());
 
 /*
@@ -551,17 +564,21 @@ void ImageWindow::saveIsComplete()
     // subsequent editing operations.
 
     // put image in cache, the LoadingCacheInterface cares for the details
+
     LoadingCacheInterface::putImage(m_savingContext.destinationURL.toLocalFile(), m_canvas->currentImage());
     ItemInfo info = ScanController::instance()->scannedInfo(m_savingContext.destinationURL.toLocalFile());
 
     // Save new face tags to the image
+
     saveFaceTagsToImage(info);
 
     // reset the orientation flag in the database
+
     DMetadata meta(m_canvas->currentImage().getMetadata());
     d->currentItemInfo.setOrientation(meta.getItemOrientation());
 
     // Pop-up a message to bring user when save is done.
+
     DNotificationWrapper(QLatin1String("editorsavefilecompleted"), i18n("Image saved successfully"),
                          this, windowTitle());
 
@@ -589,6 +606,7 @@ void ImageWindow::saveAsIsComplete()
     qCDebug(DIGIKAM_GENERAL_LOG) << "Saved" << m_savingContext.srcURL << "to" << m_savingContext.destinationURL;
 
     // Nothing to be done if operating without database
+
     if (d->currentItemInfo.isNull())
     {
         return;
@@ -598,22 +616,27 @@ void ImageWindow::saveAsIsComplete()
         CollectionManager::instance()->albumRootPath(m_savingContext.destinationURL).isNull())
     {
         // not in-collection operation - nothing to do
+
         return;
     }
 
     // copy the metadata of the original file to the new file
+
     qCDebug(DIGIKAM_GENERAL_LOG) << "was versioned"
              << (m_savingContext.executedOperation == SavingContext::SavingStateVersion)
              << "current" << d->currentItemInfo.id() << d->currentItemInfo.name()
              << "destinations" << m_savingContext.versionFileOperation.allFilePaths();
 
     ItemInfo sourceInfo = d->currentItemInfo;
+
     // Set new current index. Employ synchronous scanning for this main file.
+
     d->currentItemInfo = ScanController::instance()->scannedInfo(m_savingContext.destinationURL.toLocalFile());
 
     if (m_savingContext.destinationExisted)
     {
         // reset the orientation flag in the database
+
         DMetadata meta(m_canvas->currentImage().getMetadata());
         d->currentItemInfo.setOrientation(meta.getItemOrientation());
     }
@@ -630,20 +653,25 @@ void ImageWindow::saveAsIsComplete()
     }
 
     // Will ensure files are scanned, and then copy attributes in a thread
+
     FileActionMngr::instance()->copyAttributes(sourceInfo, derivedFilePaths);
 
     // The model updates asynchronously, so we need to force addition of the main entry
+
     d->ensureModelContains(d->currentItemInfo);
 
     // Save new face tags to the image
+
     saveFaceTagsToImage(d->currentItemInfo);
 
     // set origin of EditorCore: "As if" the last saved image was loaded directly
+
     resetOriginSwitchFile();
 
     // If the DImg is put in the cache under the new name, this means the new file will not be reloaded.
     // This may irritate users who want to check for quality loss in lossy formats.
     // In any case, only do that if the format did not change - too many assumptions otherwise (see bug #138949).
+
     if (m_savingContext.originalFormat == m_savingContext.format)
     {
         LoadingCacheInterface::putImage(m_savingContext.destinationURL.toLocalFile(), m_canvas->currentImage());
@@ -665,6 +693,7 @@ void ImageWindow::saveAsIsComplete()
     slotUpdateItemInfo();
 
     // Pop-up a message to bring user when save is done.
+
     DNotificationWrapper(QLatin1String("editorsavefilecompleted"), i18n("Image saved successfully"),
                          this, windowTitle());
 }
@@ -677,6 +706,7 @@ void ImageWindow::prepareImageToSave()
         hub.load(d->currentItemInfo);
 
         // Get face tags
+
         d->newFaceTags.clear();
         QMultiMap<QString, QVariant> faceTags = hub.getFaceTags();
 
@@ -690,6 +720,7 @@ void ImageWindow::prepareImageToSave()
             for (it = faceTags.constBegin() ; it != faceTags.constEnd() ; ++it)
             {
                 // Start transform each face rect
+
                 QRect faceRect = TagRegion::relativeToAbsolute(it.value().toRectF(), size);
                 QSize tempSize = TagRegion::adjustToOrientation(faceRect, orientation, size);
 
@@ -706,15 +737,19 @@ void ImageWindow::prepareImageToSave()
                         case EditorWindow::TransformType::RotateLeft:
                             tempSize = TagRegion::adjustToOrientation(faceRect, MetaEngine::ORIENTATION_ROT_270, tempSize);
                             break;
+
                         case EditorWindow::TransformType::RotateRight:
                             tempSize = TagRegion::adjustToOrientation(faceRect, MetaEngine::ORIENTATION_ROT_90,  tempSize);
                             break;
+
                         case EditorWindow::TransformType::FlipHorizontal:
                             tempSize = TagRegion::adjustToOrientation(faceRect, MetaEngine::ORIENTATION_HFLIP,   tempSize);
                             break;
+
                         case EditorWindow::TransformType::FlipVertical:
                             tempSize = TagRegion::adjustToOrientation(faceRect, MetaEngine::ORIENTATION_VFLIP,   tempSize);
                             break;
+
                         default:
                             break;
                     }
@@ -730,6 +765,7 @@ void ImageWindow::prepareImageToSave()
 
         // Ensure there is a UUID for the source image in the database,
         // even if not in the source image's metadata
+
         if (d->currentItemInfo.uuid().isNull())
         {
             QString uuid = m_canvas->interface()->ensureHasCurrentUuid();
@@ -747,6 +783,7 @@ void ImageWindow::saveFaceTagsToImage(const ItemInfo& info)
     if (!info.isNull() && !d->newFaceTags.isEmpty())
     {
         // Delete all old faces
+
         FaceTagsEditor().removeAllFaces(info.id());
 
         QMap<QString, QVariant>::const_iterator it;
@@ -786,36 +823,42 @@ bool ImageWindow::save()
 {
     prepareImageToSave();
     startingSave(d->currentUrl());
+
     return true;
 }
 
 bool ImageWindow::saveAs()
 {
     prepareImageToSave();
+
     return startingSaveAs(d->currentUrl());
 }
 
 bool ImageWindow::saveNewVersion()
 {
     prepareImageToSave();
+
     return startingSaveNewVersion(d->currentUrl());
 }
 
 bool ImageWindow::saveCurrentVersion()
 {
     prepareImageToSave();
+
     return startingSaveCurrentVersion(d->currentUrl());
 }
 
 bool ImageWindow::saveNewVersionAs()
 {
     prepareImageToSave();
+
     return startingSaveNewVersionAs(d->currentUrl());
 }
 
 bool ImageWindow::saveNewVersionInFormat(const QString& format)
 {
     prepareImageToSave();
+
     return startingSaveNewVersionInFormat(d->currentUrl(), format);
 }
 
@@ -888,6 +931,7 @@ void ImageWindow::deleteCurrentItem(bool ask, bool permanently)
     DIO::del(d->currentItemInfo, useTrash);
 
     // bring all (sidebar) to a defined state without letting them sit on the deleted file
+
     emit signalNoCurrentItem();
 
     // We have database information, which means information will get through
@@ -937,18 +981,22 @@ void ImageWindow::slotRowsAboutToBeRemoved(const QModelIndex& parent, int start,
 {
 
 // ignore when closed
+
 if (!isVisible() || !d->currentIsValid())
 {
     return;
 }
 
 QModelIndex currentIndex = d->currentIndex();
+
 if (currentIndex.row() >= start && currentIndex.row() <= end)
 {
     promptUserSave(d->currentUrl(), AlwaysNewVersion, false);
 
     // ensure selection
+
     int totalToRemove = end - start + 1;
+
     if (d->imageFilterModel->rowCount(parent) > totalToRemove)
     {
         if (end == d->imageFilterModel->rowCount(parent) - 1)
@@ -996,6 +1044,7 @@ void ImageWindow::slotCollectionImageChange(const CollectionImageChangeset& chan
             }
 
             break;
+
         case CollectionImageChangeset::RemovedAll:
 
             for (int i=0; i<d->imageInfoList.size(); ++i)
@@ -1021,6 +1070,7 @@ void ImageWindow::slotCollectionImageChange(const CollectionImageChangeset& chan
             }
 
             break;
+
         default:
             break;
     }
@@ -1040,7 +1090,7 @@ void ImageWindow::dragMoveEvent(QDragMoveEvent* e)
     QList<QUrl>      urls;
 
     if (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs) ||
-        DAlbumDrag::decode(e->mimeData(), urls, albumID)                    ||
+        DAlbumDrag::decode(e->mimeData(), urls, albumID)           ||
         DTagListDrag::canDecode(e->mimeData()))
     {
         e->accept();
@@ -1057,13 +1107,14 @@ void ImageWindow::dropEvent(QDropEvent* e)
     QList<qlonglong> imageIDs;
     QList<QUrl>      urls;
 
-    if (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs))
+    if      (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs))
     {
         ItemInfoList imageInfoList(imageIDs);
 
         if (imageInfoList.isEmpty())
         {
             e->ignore();
+
             return;
         }
 
@@ -1089,6 +1140,7 @@ void ImageWindow::dropEvent(QDropEvent* e)
         if (imageInfoList.isEmpty())
         {
             e->ignore();
+
             return;
         }
 
@@ -1120,6 +1172,7 @@ void ImageWindow::dropEvent(QDropEvent* e)
         if (imageInfoList.isEmpty())
         {
             e->ignore();
+
             return;
         }
 
@@ -1167,6 +1220,7 @@ void ImageWindow::slotOpenOriginal()
     }
 
     // this time, with mustBeAvailable = true
+
     DImageHistory availableResolved = ItemScanner::resolvedImageHistory(m_canvas->interface()->getItemHistory(), true);
 
     QList<HistoryImageId> originals = availableResolved.referredImagesOfType(HistoryImageId::Original);
@@ -1175,6 +1229,7 @@ void ImageWindow::slotOpenOriginal()
     if (originals.isEmpty())
     {
         //TODO: point to remote collection
+
         QMessageBox::warning(this, i18nc("@title", "File Not Available"),
                              i18nc("@info", "<qt>The original file (<b>%1</b>) is currently not available</qt>",
                                    originalId.m_fileName));
@@ -1202,7 +1257,8 @@ void ImageWindow::slotOpenOriginal()
 bool ImageWindow::hasOriginalToRestore()
 {
     // not implemented for db-less situation, so check for ItemInfo
-    return !d->currentItemInfo.isNull() && EditorWindow::hasOriginalToRestore();
+
+    return (!d->currentItemInfo.isNull() && EditorWindow::hasOriginalToRestore());
 }
 
 DImageHistory ImageWindow::resolvedImageHistory(const DImageHistory& history)
@@ -1236,9 +1292,9 @@ void ImageWindow::slotAddedDropedItems(QDropEvent* e)
     QList<int>       albumIDs;
     QList<qlonglong> imageIDs;
     QList<QUrl>      urls;
-    ItemInfoList    imgList;
+    ItemInfoList     imgList;
 
-    if (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs))
+    if      (DItemDrag::decode(e->mimeData(), urls, albumIDs, imageIDs))
     {
         imgList = ItemInfoList(imageIDs);
     }
@@ -1307,15 +1363,19 @@ DInfoInterface* ImageWindow::infoIface(DPluginAction* const ac)
         case DPluginAction::GenericImport:
             aset = ApplicationSettings::ImportExport;
             break;
+
         case DPluginAction::GenericMetadata:
             aset = ApplicationSettings::Metadata;
             break;
+
         case DPluginAction::GenericTool:
             aset = ApplicationSettings::Tools;
             break;
+
         case DPluginAction::GenericView:
             aset = ApplicationSettings::Slideshow;
             break;
+
         default:
             break;
     }

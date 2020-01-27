@@ -30,33 +30,8 @@ namespace Digikam
 
 void RecognitionDatabase::Private::applyParameters()
 {
-    if (lbphConst()   ||
-        eigenConst()  ||
-        fisherConst())
-    {
-        for (QVariantMap::const_iterator it = parameters.constBegin() ; it != parameters.constEnd() ; ++it)
-        {
-            if ((it.key() == QLatin1String("threshold")) || (it.key() == QLatin1String("accuracy")))
-            {
-                if      (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::LBP)
-                {
-                    lbph()->setThreshold(it.value().toFloat());
-                }
-                else if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::EigenFace)
-                {
-                    eigen()->setThreshold(it.value().toFloat());
-                }
-                else if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::FisherFace)
-                {
-                    fisher()->setThreshold(it.value().toFloat());
-                }
-                else
-                {
-                    qCCritical(DIGIKAM_FACESENGINE_LOG) << "No obvious recognize algorithm";
-                }
-            }
-        }
-    }
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
 
     if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::DNN)
     {
@@ -73,26 +48,85 @@ void RecognitionDatabase::Private::applyParameters()
 
         OpenCVDNNFaceRecognizer::m_threshold = threshold;
     }
+
+#else
+
+    if (
+        lbphConst()
+/*
+    NOTE: experimental and deprecated
+        || eigenConst()
+        || fisherConst()
+*/
+       )
+    {
+        for (QVariantMap::const_iterator it = parameters.constBegin() ; it != parameters.constEnd() ; ++it)
+        {
+            if ((it.key() == QLatin1String("threshold")) || (it.key() == QLatin1String("accuracy")))
+            {
+                if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::LBP)
+                {
+                    lbph()->setThreshold(it.value().toFloat());
+                }
+/*
+                NOTE: experimental and deprecated
+
+                else if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::EigenFace)
+                {
+                    eigen()->setThreshold(it.value().toFloat());
+                }
+                else if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::FisherFace)
+                {
+                    fisher()->setThreshold(it.value().toFloat());
+                }
+*/
+                else
+                {
+                    qCCritical(DIGIKAM_FACESENGINE_LOG) << "No obvious recognize algorithm";
+                }
+            }
+        }
+    }
+
+#endif
+
 }
 
 // --------------------------------------------------------------------------
 
 QString RecognitionDatabase::backendIdentifier() const
 {
-    if      (d->recognizeAlgorithm == RecognizeAlgorithm::LBP)
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
+    if (d->recognizeAlgorithm == RecognizeAlgorithm::DNN)
+    {
+        return QLatin1String("dnn");
+    }
+
+#else
+
+    if (d->recognizeAlgorithm == RecognizeAlgorithm::LBP)
     {
         return QLatin1String("opencvlbph");
     }
-    else if (d->recognizeAlgorithm == RecognizeAlgorithm::EigenFace)
+
+#endif
+
+/*
+    NOTE: experimental and deprecated
+
+    if (d->recognizeAlgorithm == RecognizeAlgorithm::EigenFace)
     {
         return QLatin1String("eigenfaces");
     }
-    else if (d->recognizeAlgorithm == RecognizeAlgorithm::FisherFace)
+
+    if (d->recognizeAlgorithm == RecognizeAlgorithm::FisherFace)
     {
         return QLatin1String("fisherfaces");
     }
-
-    return QLatin1String("dnn");
+*/
+    return QString();
 }
 
 void RecognitionDatabase::setParameter(const QString& parameter, const QVariant& value)
@@ -127,7 +161,17 @@ void RecognitionDatabase::setParameters(const QVariantMap& parameters)
 
 void RecognitionDatabase::setRecognizerThreshold(float threshold)
 {
+
+#ifdef USE_DNN_RECOGNITION_BACKEND
+
     OpenCVDNNFaceRecognizer::m_threshold = threshold;
+
+#else
+
+    Q_UNUSED(threshold)
+
+#endif
+
 }
 
 QVariantMap RecognitionDatabase::parameters() const

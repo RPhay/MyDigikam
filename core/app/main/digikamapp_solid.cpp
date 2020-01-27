@@ -67,6 +67,7 @@ bool s_checkSolidCamera(const Solid::Device& cameraDevice)
                                  << " drivers " << camera->supportedDrivers(QLatin1String("ptp"));
 
     // We handle gphoto2 cameras in this loop
+
     if (!(camera->supportedDrivers().contains(QLatin1String("gphoto")) ||
         camera->supportedProtocols().contains(QLatin1String("ptp"))))
     {
@@ -155,6 +156,7 @@ void DigikamApp::fillSolidMenus()
     d->cardReaderMenu->clear();
 
     // delete the actionGroups to avoid duplicate menu entries
+
     delete d->solidUsmActionGroup;
     delete d->solidCameraActionGroup;
 
@@ -175,6 +177,7 @@ void DigikamApp::fillSolidMenus()
     foreach (const Solid::Device& cameraDevice, cameraDevices)
     {
         // USM camera: will be handled below
+
         if (cameraDevice.is<Solid::StorageAccess>())
         {
             continue;
@@ -202,7 +205,9 @@ void DigikamApp::fillSolidMenus()
         QAction* const action = new QAction(label, d->solidCameraActionGroup);
 
         action->setIcon(QIcon::fromTheme(iconName));
+
         // set data to identify device in action slot slotSolidSetupDevice
+
         action->setData(cameraDevice.udi());
         newAppearanceTimes[cameraDevice.udi()] = d->cameraAppearanceTimes.contains(cameraDevice.udi()) ?
                                                  d->cameraAppearanceTimes.value(cameraDevice.udi())    :
@@ -216,12 +221,14 @@ void DigikamApp::fillSolidMenus()
     foreach (const Solid::Device& accessDevice, storageDevices)
     {
         // check for StorageAccess
+
         if (!accessDevice.is<Solid::StorageAccess>())
         {
             continue;
         }
 
         // check for StorageDrive
+
         Solid::Device driveDevice;
 
         for (Solid::Device currentDevice = accessDevice ;
@@ -248,32 +255,41 @@ void DigikamApp::fillSolidMenus()
 
         switch (drive->driveType())
         {
-                // skip these
+            // skip these
+
             case Solid::StorageDrive::CdromDrive:
             case Solid::StorageDrive::Floppy:
             case Solid::StorageDrive::Tape:
             default:
                 continue;
-                // accept card readers
+
+            // accept card readers
+
             case Solid::StorageDrive::CompactFlash:
                 driveType = i18n("CompactFlash Card Reader");
                 break;
+
             case Solid::StorageDrive::MemoryStick:
                 driveType = i18n("Memory Stick Reader");
                 break;
+
             case Solid::StorageDrive::SmartMedia:
                 driveType = i18n("SmartMedia Card Reader");
                 break;
+
             case Solid::StorageDrive::SdMmc:
                 driveType = i18n("SD / MMC Card Reader");
                 break;
+
             case Solid::StorageDrive::Xd:
                 driveType = i18n("xD Card Reader");
                 break;
+
             case Solid::StorageDrive::HardDisk:
 
                 // We don't want to list HardDisk partitions, but USB Mass Storage devices.
                 // Don't know what is the exact difference between removable and hotpluggable.
+
                 if (drive->isRemovable() || drive->isHotpluggable())
                 {
                     isHarddisk = true;
@@ -296,6 +312,7 @@ void DigikamApp::fillSolidMenus()
         }
 
         // check for StorageVolume
+
         Solid::Device volumeDevice;
 
         for (Solid::Device currentDevice = accessDevice ;
@@ -333,7 +350,7 @@ void DigikamApp::fillSolidMenus()
         {
             QString labelOrProduct;
 
-            if (!volume->label().isEmpty())
+            if      (!volume->label().isEmpty())
             {
                 labelOrProduct = volume->label();
             }
@@ -387,7 +404,7 @@ void DigikamApp::fillSolidMenus()
 
         QString iconName;
 
-        if (!driveDevice.icon().isEmpty())
+        if      (!driveDevice.icon().isEmpty())
         {
             iconName = driveDevice.icon();
         }
@@ -408,6 +425,7 @@ void DigikamApp::fillSolidMenus()
         }
 
         // set data to identify device in action slot slotSolidSetupDevice
+
         action->setData(accessDevice.udi());
         newAppearanceTimes[accessDevice.udi()] = d->cameraAppearanceTimes.contains(accessDevice.udi()) ?
                                                  d->cameraAppearanceTimes.value(accessDevice.udi())    :
@@ -432,6 +450,7 @@ void DigikamApp::fillSolidMenus()
     //TODO: Find best usable solution when no devices are connected: One entry, hide, or disable?
 
     // Add one entry telling that no device is available
+
     if (d->cameraSolidMenu->isEmpty())
     {
         QAction* const action = d->cameraSolidMenu->addAction(i18n("No Camera Connected"));
@@ -451,6 +470,7 @@ void DigikamApp::fillSolidMenus()
     }
 
     // hide empty menus
+
     d->cameraSolidMenu->menuAction()->setVisible(!d->cameraSolidMenu->isEmpty());
     d->usbMediaMenu->menuAction()->setVisible(!d->usbMediaMenu->isEmpty());
     d->cardReaderMenu->menuAction()->setVisible(!d->cardReaderMenu->isEmpty());
@@ -459,6 +479,7 @@ void DigikamApp::fillSolidMenus()
     d->cameraAppearanceTimes = newAppearanceTimes;
 
     // disable empty menus
+
     d->usbMediaMenu->setEnabled(!d->usbMediaMenu->isEmpty());
     d->cardReaderMenu->setEnabled(!d->cardReaderMenu->isEmpty());
 
@@ -490,6 +511,7 @@ void DigikamApp::connectToSolidNotifiers()
 void DigikamApp::openSolidCamera(const QString& udi, const QString& cameraLabel)
 {
     // if there is already an open ImportUI for the device, show and raise it, and be done
+
     if (d->cameraUIMap.contains(udi))
     {
         ImportUI* const ui = d->cameraUIMap.value(udi);
@@ -502,11 +524,13 @@ void DigikamApp::openSolidCamera(const QString& udi, const QString& cameraLabel)
             }
 
             KWindowSystem::activateWindow(ui->winId());
+
             return;
         }
     }
 
     // recreate device from unambiguous UDI
+
     Solid::Device device(udi);
 
     if (device.isValid())
@@ -520,6 +544,7 @@ void DigikamApp::openSolidCamera(const QString& udi, const QString& cameraLabel)
         QList<QVariant> list        = camera->driverHandle(QLatin1String("gphoto")).toList();
 
         // all sanity checks have already been done when creating the action
+
         if (list.size() < 3)
         {
             return;
@@ -527,6 +552,7 @@ void DigikamApp::openSolidCamera(const QString& udi, const QString& cameraLabel)
 
         // NOTE: See bug #262296: With KDE 4.6, Solid API return device vendor id
         // and product id in hexadecimal strings.
+
         bool ok;
         int vendorId  = list.at(1).toString().toInt(&ok, 16);
         int productId = list.at(2).toString().toInt(&ok, 16);
@@ -538,6 +564,7 @@ void DigikamApp::openSolidCamera(const QString& udi, const QString& cameraLabel)
                                          << " camera is: " << model << " at " << port;
 
             // the ImportUI will delete itself when it has finished
+
             ImportUI* const cgui = new ImportUI(cameraLabel, model, port, QLatin1String("/"), 1);
             d->cameraUIMap[udi]  = cgui;
 
@@ -558,6 +585,7 @@ void DigikamApp::openSolidUsmDevice(const QString& udi, const QString& givenLabe
     QString mediaLabel = givenLabel;
 
     // if there is already an open ImportUI for the device, show and raise it
+
     if (d->cameraUIMap.contains(udi))
     {
         ImportUI* const ui = d->cameraUIMap.value(udi);
@@ -570,11 +598,13 @@ void DigikamApp::openSolidUsmDevice(const QString& udi, const QString& givenLabe
             }
 
             KWindowSystem::activateWindow(ui->winId());
+
             return;
         }
     }
 
     // recreate device from unambiguous UDI
+
     Solid::Device device(udi);
 
     if (device.isValid())
@@ -643,6 +673,7 @@ void DigikamApp::openSolidUsmDevice(const QString& udi, const QString& givenLabe
         }
 
         // the ImportUI will delete itself when it has finished
+
         ImportUI* const cgui = new ImportUI(i18n("Images on %1", mediaLabel),
                                             QLatin1String("directory browse"),
                                             QLatin1String("Fixed"), path, 1);
@@ -680,7 +711,7 @@ void DigikamApp::slotOpenSolidDevice(const QString& udi)
         return;
     }
 
-    if (device.is<Solid::StorageAccess>())
+    if      (device.is<Solid::StorageAccess>())
     {
         openSolidUsmDevice(udi);
     }

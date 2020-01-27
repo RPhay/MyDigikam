@@ -48,6 +48,22 @@ class DIGIKAM_EXPORT TrackManager : public QObject
 
 public:
 
+    /// NOTE: we assume here that we will never load more than uint32_max tracks.
+    typedef quint32 Id;
+
+    enum ChangeFlag
+    {
+        ChangeTrackPoints = 1,
+        ChangeMetadata    = 2,
+
+        ChangeRemoved     = 4,
+        ChangeAdd         = ChangeTrackPoints | ChangeMetadata
+    };
+
+    typedef QPair<Id, ChangeFlag> TrackChanges;
+
+public:
+
     class  TrackPoint
     {
     public:
@@ -80,9 +96,6 @@ public:
 
     // -------------------------------------
 
-    // We assume here that we will never load more than uint32_max tracks.
-    typedef quint32 Id;
-
     class Track
     {
     public:
@@ -107,6 +120,7 @@ public:
 
         QUrl                 url;
         QList<TrackPoint>    points;
+
         /// 0 means no track id assigned yet
         Id                   id;
         QColor               color;
@@ -114,17 +128,6 @@ public:
 
         typedef QList<Track> List;
     };
-
-    enum ChangeFlag
-    {
-        ChangeTrackPoints = 1,
-        ChangeMetadata    = 2,
-
-        ChangeRemoved     = 4,
-        ChangeAdd         = ChangeTrackPoints | ChangeMetadata
-    };
-
-    typedef QPair<Id, ChangeFlag> TrackChanges;
 
 public:
 
@@ -135,16 +138,16 @@ public:
     QList<QPair<QUrl, QString> > readLoadErrors();
     void clear();
 
-    const Track& getTrack(const int index) const;
-    Track::List getTrackList() const;
-    int trackCount() const;
+    const Track& getTrack(const int index)      const;
+    Track::List getTrackList()                  const;
+    int trackCount()                            const;
 
     quint64 getNextFreeTrackId();
     Track   getTrackById(const quint64 trackId) const;
     QColor  getNextFreeTrackColor();
 
     void setVisibility(const bool value);
-    bool getVisibility() const;
+    bool getVisibility()                        const;
 
 Q_SIGNALS:
 

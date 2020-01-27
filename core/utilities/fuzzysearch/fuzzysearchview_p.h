@@ -70,7 +70,7 @@
 #include "iteminfo.h"
 #include "itemlister.h"
 #include "searchmodificationhelper.h"
-#include "searchtextbar.h"
+#include "searchtextbardb.h"
 #include "coredbsearchxml.h"
 #include "sketchwidget.h"
 #include "thumbnailloadthread.h"
@@ -110,7 +110,7 @@ public:
         configPenSkethValueEntry(QLatin1String("Pen Sketch Value")),
         configSimilarsThresholdEntry(QLatin1String("Similars Threshold")),
         configSimilarsMaxThresholdEntry(QLatin1String("Similars Maximum Threshold")),
-        active(false),    // initially be active to update sketch panel when the search list is restored
+        active(false),                      ///< initially be active to update sketch panel when the search list is restored
         fingerprintsChecked(false),
         resetButton(nullptr),
         saveBtnSketch(nullptr),
@@ -190,10 +190,10 @@ public:
     DAdjustableLabel*         labelFile;
     DAdjustableLabel*         labelFolder;
 
-    ItemInfo                 imageInfo;
+    ItemInfo                  imageInfo;
     QUrl                      imageUrl;
 
-    SearchTextBar*            searchFuzzyBar;
+    SearchTextBarDb*          searchFuzzyBar;
 
     EditableSearchTreeView*   searchTreeView;
 
