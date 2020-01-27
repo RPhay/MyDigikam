@@ -90,7 +90,6 @@
 #include "digikam_debug.h"
 #include "digikam_globals.h"
 #include "dmessagebox.h"
-#include "applicationsettings.h"
 #include "actioncategorizedview.h"
 #include "canvas.h"
 #include "categorizeditemmodel.h"
