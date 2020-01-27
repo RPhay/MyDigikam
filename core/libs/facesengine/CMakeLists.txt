@@ -5,11 +5,11 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 
-# Option to switch betweeen DNN or HAAR face detection.
+# Option to switch between DNN or HAAR face detection.
 # DNN is the default one, Haar is the legacy deprecated method.
 set(DNN_DETECTION TRUE)
 
-# Option to switch betweeen DNN or LBPH face recognition.
+# Option to switch between DNN or LBPH face recognition.
 # DNN is the default one, LBPH is the legacy deprecated method.
 set(DNN_RECOGNITION TRUE)
 
