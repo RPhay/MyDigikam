@@ -64,6 +64,7 @@ void AlbumsJob::run()
     if (m_jobInfo.isFoldersJob())
     {
         QMap<int, int> albumNumberMap = CoreDbAccess().db()->getNumberOfImagesInAlbums();
+
         emit foldersData(albumNumberMap);
     }
     else
@@ -73,6 +74,7 @@ void AlbumsJob::run()
         lister.setListOnlyAvailable(m_jobInfo.isListAvailableImagesOnly());
 
         // Send data every 200 images to be more responsive
+
         ItemListerJobGrowingPartsSendingReceiver receiver(this, 200, 2000, 100);
         lister.listPAlbum(&receiver, m_jobInfo.albumRootId(), m_jobInfo.album());
         receiver.sendData();
@@ -98,6 +100,7 @@ void DatesJob::run()
     if (m_jobInfo.isFoldersJob())
     {
         QMap<QDateTime, int> dateNumberMap = CoreDbAccess().db()->getAllCreationDatesAndNumberOfImages();
+
         emit foldersData(dateNumberMap);
     }
     else
@@ -106,10 +109,12 @@ void DatesJob::run()
         lister.setListOnlyAvailable(true);
 
         // Send data every 200 images to be more responsive
+
         ItemListerJobPartsSendingReceiver receiver(this, 200);
         lister.listDateRange(&receiver, m_jobInfo.startDate(), m_jobInfo.endDate());
 
         // Send rest
+
         receiver.sendData();
     }
 
@@ -149,6 +154,7 @@ void GPSJob::run()
         lister.setListOnlyAvailable(m_jobInfo.isListAvailableImagesOnly());
 
         // Send data every 200 images to be more responsive
+
         ItemListerJobPartsSendingReceiver receiver(this, 200);
         lister.listAreaRange(&receiver,
                              m_jobInfo.lat1(),
@@ -156,6 +162,7 @@ void GPSJob::run()
                              m_jobInfo.lng1(),
                              m_jobInfo.lng2());
         // send rest
+
         receiver.sendData();
     }
 
@@ -176,10 +183,12 @@ TagsJob::~TagsJob()
 
 void TagsJob::run()
 {
-    if (m_jobInfo.isFoldersJob())
+    if      (m_jobInfo.isFoldersJob())
     {
         QMap<int, int> tagNumberMap = CoreDbAccess().db()->getNumberOfImagesInTags();
+
         //qCDebug(DIGIKAM_DBJOB_LOG) << tagNumberMap;
+
         emit foldersData(tagNumberMap);
     }
     else if (m_jobInfo.isFaceFoldersJob())
@@ -225,6 +234,7 @@ void TagsJob::run()
         lister.setListOnlyAvailable(m_jobInfo.isListAvailableImagesOnly());
 
         // Send data every 200 images to be more responsive
+
         ItemListerJobPartsSendingReceiver receiver(this, 200);
 
         if (!m_jobInfo.specialTag().isNull())
@@ -242,6 +252,7 @@ void TagsJob::run()
         }
 
         // Finish sending
+
         receiver.sendData();
     }
 
@@ -275,6 +286,7 @@ void SearchesJob::run()
         lister.setListOnlyAvailable(m_jobInfo.isListAvailableImagesOnly());
 
         // Send data every 200 images to be more responsive
+
         ItemListerJobPartsSendingReceiver receiver(this, 200);
 
         foreach (const SearchInfo& info, infos)
@@ -306,7 +318,9 @@ void SearchesJob::run()
     }
     else
     {
-        if (m_jobInfo.albumsIds().isEmpty() && m_jobInfo.tagsIds().isEmpty() && m_jobInfo.imageIds().isEmpty())
+        if (m_jobInfo.albumsIds().isEmpty() &&
+            m_jobInfo.tagsIds().isEmpty()   &&
+            m_jobInfo.imageIds().isEmpty())
         {
             qCDebug(DIGIKAM_DBJOB_LOG) << "No album, tag or image ids passed for duplicates search";
             return;
@@ -320,6 +334,7 @@ void SearchesJob::run()
         DuplicatesProgressObserver observer(this);
 
         // Rebuild the duplicate albums
+
         HaarIface iface;
 
         if (m_jobInfo.isAlbumUpdate())

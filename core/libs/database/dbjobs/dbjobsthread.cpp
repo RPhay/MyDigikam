@@ -22,6 +22,9 @@
  * ============================================================ */
 
 #include "dbjobsthread.h"
+
+// Local includes
+
 #include "coredbaccess.h"
 #include "dbjobinfo.h"
 #include "dbjob.h"
