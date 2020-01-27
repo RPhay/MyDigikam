@@ -27,6 +27,10 @@
 // To include pragma directives for MSVC
 #include "digikam_config.h"
 
+#if defined(_MSC_VER)
+#   include <ciso646>
+#endif
+
 // Pragma directives to reduce warnings from Boost header files.
 #if !defined(Q_OS_DARWIN) && defined(Q_CC_GNU)
 #   pragma GCC diagnostic push
