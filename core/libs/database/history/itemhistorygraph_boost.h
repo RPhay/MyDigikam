@@ -27,7 +27,7 @@
 // To include pragma directives for MSVC
 #include "digikam_config.h"
 
-#if defined(_MSC_VER)
+#ifndef Q_CC_MSVC
 #   include <ciso646>
 #endif
 
