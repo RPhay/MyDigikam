@@ -33,7 +33,7 @@
 
 #include "albummanager.h"
 #include "albumtreeview.h"
-#include "searchtextbar.h"
+#include "searchtextbardb.h"
 
 class QTreeWidget;
 
@@ -61,7 +61,9 @@ public:
      * @param albumModificationHelper helper object for modifying albums
      * @param parent parent for Qt's parent child mechanism
      */
-    AlbumSelectTreeView(AlbumModel* const model, AlbumModificationHelper* const albumModificationHelper, QWidget* const parent = nullptr);
+    AlbumSelectTreeView(AlbumModel* const model,
+                        AlbumModificationHelper* const albumModificationHelper,
+                        QWidget* const parent = nullptr);
 
     /**
      * Destructor.
@@ -94,7 +96,8 @@ class AlbumSelectWidget : public QWidget
 public:
 
     explicit AlbumSelectWidget(QWidget* const parent = nullptr,
-                               PAlbum* const albumToSelect = nullptr, bool completerSelect = false);
+                               PAlbum* const albumToSelect = nullptr,
+                               bool completerSelect = false);
     ~AlbumSelectWidget();
 
     void setCurrentAlbumUrl(const QUrl& albumUrl);

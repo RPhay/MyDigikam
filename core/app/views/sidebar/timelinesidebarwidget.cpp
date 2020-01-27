@@ -61,7 +61,7 @@
 #include "timelinewidget.h"
 #include "searchfolderview.h"
 #include "searchtabheader.h"
-#include "searchtextbar.h"
+#include "searchtextbardb.h"
 
 namespace Digikam
 {
@@ -102,7 +102,7 @@ public:
     QLineEdit*                nameEdit;
     DAdjustableLabel*         cursorDateLabel;
 
-    SearchTextBar*            searchDateBar;
+    SearchTextBarDb*          searchDateBar;
     EditableSearchTreeView*   timeLineFolderView;
     TimeLineWidget*           timeLineWidget;
 
@@ -242,7 +242,7 @@ TimelineSideBarWidget::TimelineSideBarWidget(QWidget* const parent,
     d->timeLineFolderView->filteredModel()->listTimelineSearches();
     d->timeLineFolderView->filteredModel()->setListTemporarySearches(false);
     d->timeLineFolderView->setAlbumManagerCurrentAlbum(false);
-    d->searchDateBar      = new SearchTextBar(this, QLatin1String("TimeLineViewSearchDateBar"));
+    d->searchDateBar      = new SearchTextBarDb(this, QLatin1String("TimeLineViewSearchDateBar"));
     d->searchDateBar->setModel(d->timeLineFolderView->filteredModel(),
                                AbstractAlbumModel::AlbumIdRole,
                                AbstractAlbumModel::AlbumTitleRole);

@@ -46,7 +46,7 @@
 #include "editablesearchtreeview.h"
 #include "searchfolderview.h"
 #include "searchtabheader.h"
-#include "searchtextbar.h"
+#include "searchtextbardb.h"
 #include "searchtreeview.h"
 
 namespace Digikam
@@ -63,7 +63,7 @@ public:
     {
     }
 
-    SearchTextBar*        searchSearchBar;
+    SearchTextBarDb*      searchSearchBar;
     NormalSearchTreeView* searchTreeView;
     SearchTabHeader*      searchTabHeader;
 };
@@ -87,7 +87,7 @@ SearchSideBarWidget::SearchSideBarWidget(QWidget* const parent,
     d->searchTreeView->filteredModel()->listNormalSearches();
     d->searchTreeView->filteredModel()->setListTemporarySearches(true);
     d->searchTreeView->setAlbumManagerCurrentAlbum(true);
-    d->searchSearchBar  = new SearchTextBar(this, QLatin1String("ItemIconViewSearchSearchBar"));
+    d->searchSearchBar  = new SearchTextBarDb(this, QLatin1String("ItemIconViewSearchSearchBar"));
     d->searchSearchBar->setModel(d->searchTreeView->filteredModel(),
                                  AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
     d->searchSearchBar->setFilterModel(d->searchTreeView->albumFilterModel());

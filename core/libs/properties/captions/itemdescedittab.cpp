@@ -78,7 +78,7 @@
 #include "fileactionprogress.h"
 #include "tagsmanager.h"
 #include "tagtreeview.h"
-#include "searchtextbar.h"
+#include "searchtextbardb.h"
 #include "disjointmetadata.h"
 #include "altlangstredit.h"
 
@@ -154,7 +154,7 @@ public:
 
     QTabWidget*          tabWidget;
 
-    SearchTextBar*       tagsSearchBar;
+    SearchTextBarDb*     tagsSearchBar;
     AddTagsLineEdit*     newTagEdit;
 
     ItemInfoList         currInfos;
@@ -298,9 +298,12 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     DHBox* const tagsSearch = new DHBox(tagsArea);
     tagsSearch->setSpacing(spacing);
 
-    d->tagsSearchBar   = new SearchTextBar(tagsSearch, QLatin1String("ItemDescEditTabTagsSearchBar"));
+    d->tagsSearchBar   = new SearchTextBarDb(tagsSearch, QLatin1String("ItemDescEditTabTagsSearchBar"));
+
     d->tagsSearchBar->setModel(d->tagCheckView->filteredModel(),
-                               AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
+                               AbstractAlbumModel::AlbumIdRole,
+                               AbstractAlbumModel::AlbumTitleRole);
+
     d->tagsSearchBar->setFilterModel(d->tagCheckView->albumFilterModel());
 
     d->assignedTagsBtn = new QToolButton(tagsSearch);

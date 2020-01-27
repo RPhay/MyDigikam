@@ -45,6 +45,7 @@
 #include "albummanager.h"
 #include "albumselectiontreeview.h"
 #include "applicationsettings.h"
+#include "searchtextbardb.h"
 
 namespace Digikam
 {
@@ -62,7 +63,7 @@ public:
 
     AlbumModificationHelper* albumModificationHelper;
     AlbumSelectionTreeView*  albumFolderView;
-    SearchTextBar*           searchTextBar;
+    SearchTextBarDb*         searchTextBar;
 };
 
 AlbumFolderViewSideBarWidget::AlbumFolderViewSideBarWidget(QWidget* const parent,
@@ -83,7 +84,7 @@ AlbumFolderViewSideBarWidget::AlbumFolderViewSideBarWidget(QWidget* const parent
     d->albumFolderView->setConfigGroup(getConfigGroup());
     d->albumFolderView->setExpandNewCurrentItem(true);
     d->albumFolderView->setAlbumManagerCurrentAlbum(true);
-    d->searchTextBar           = new SearchTextBar(this, QLatin1String("ItemIconViewFolderSearchBar"));
+    d->searchTextBar           = new SearchTextBarDb(this, QLatin1String("ItemIconViewFolderSearchBar"));
     d->searchTextBar->setHighlightOnResult(true);
     d->searchTextBar->setModel(model, AbstractAlbumModel::AlbumIdRole, AbstractAlbumModel::AlbumTitleRole);
     d->searchTextBar->setFilterModel(d->albumFolderView->albumFilterModel());

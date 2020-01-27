@@ -70,7 +70,7 @@
 #include "iteminfo.h"
 #include "itemlister.h"
 #include "searchmodificationhelper.h"
-#include "searchtextbar.h"
+#include "searchtextbardb.h"
 #include "coredbsearchxml.h"
 #include "sketchwidget.h"
 #include "thumbnailloadthread.h"
@@ -193,7 +193,7 @@ public:
     ItemInfo                  imageInfo;
     QUrl                      imageUrl;
 
-    SearchTextBar*            searchFuzzyBar;
+    SearchTextBarDb*          searchFuzzyBar;
 
     EditableSearchTreeView*   searchTreeView;
 

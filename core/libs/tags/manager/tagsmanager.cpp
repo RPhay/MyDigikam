@@ -54,7 +54,7 @@
 #include "taglist.h"
 #include "tagfolderview.h"
 #include "ddragobjects.h"
-#include "searchtextbar.h"
+#include "searchtextbardb.h"
 #include "tageditdlg.h"
 #include "coredb.h"
 #include "facetags.h"
@@ -69,6 +69,7 @@ namespace
 QString JoinTagNamesToList(const QStringList& stringList)
 {
     const QString joinedStringList = stringList.join(QLatin1String("', '"));
+
     return QLatin1Char('\'') + joinedStringList + QLatin1Char('\'');
 }
 
@@ -105,7 +106,7 @@ public:
 
     TagMngrTreeView* tagMngrView;
     QLabel*          tagPixmap;
-    SearchTextBar*   searchBar;
+    SearchTextBarDb* searchBar;
 
 
     QSplitter*       splitter;
@@ -201,7 +202,7 @@ void TagsManager::setupUi()
      d->tagMngrView = new TagMngrTreeView(this, d->tagModel);
      d->tagMngrView->setConfigGroup(getConfigGroup());
 
-     d->searchBar   = new SearchTextBar(this, QLatin1String("ItemIconViewTagSearchBar"));
+     d->searchBar   = new SearchTextBarDb(this, QLatin1String("ItemIconViewTagSearchBar"));
      d->searchBar->setHighlightOnResult(true);
      d->searchBar->setModel(d->tagMngrView->filteredModel(),
                             AbstractAlbumModel::AlbumIdRole,
