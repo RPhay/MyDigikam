@@ -47,7 +47,9 @@ class ItemPropertiesMetadataTab;
 class ItemPropertiesColorsTab;
 
 #ifdef HAVE_MARBLE
+
 class ItemPropertiesGPSTab;
+
 #endif // HAVE_MARBLE
 
 class DIGIKAM_EXPORT ItemPropertiesSideBar : public Sidebar
@@ -111,8 +113,11 @@ protected:
     ItemPropertiesColorsTab*   m_colorTab;
 
 #ifdef HAVE_MARBLE
+
     ItemPropertiesGPSTab*      m_gpsTab;
+
 #endif // HAVE_MARBLE
+
 };
 
 } // namespace Digikam

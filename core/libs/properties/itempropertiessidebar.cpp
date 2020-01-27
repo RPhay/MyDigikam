@@ -57,20 +57,6 @@
 
 namespace Digikam
 {
-    bool                       m_dirtyPropertiesTab;
-    bool                       m_dirtyMetadataTab;
-    bool                       m_dirtyColorTab;
-    bool                       m_dirtyGpsTab;
-    bool                       m_dirtyHistoryTab;
-    QRect                      m_currentRect;
-    QUrl                       m_currentURL;
-    DImg*                      m_image;
-    ItemPropertiesTab*         m_propertiesTab;
-    ItemPropertiesMetadataTab* m_metadataTab;
-    ItemPropertiesColorsTab*   m_colorTab;
-#ifdef HAVE_MARBLE
-    ItemPropertiesGPSTab*      m_gpsTab;
-#endif // HAVE_MARBLE
 
 ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
                                              SidebarSplitter* const splitter,
@@ -101,8 +87,10 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
     appendTab(m_colorTab,      QIcon::fromTheme(QLatin1String("fill-color")),       i18n("Colors"));
 
 #ifdef HAVE_MARBLE
+
     m_gpsTab = new ItemPropertiesGPSTab(parent);
     appendTab(m_gpsTab,        QIcon::fromTheme(QLatin1String("globe")),            i18n("Map"));
+
 #endif // HAVE_MARBLE
 
     connect(m_metadataTab, SIGNAL(signalSetupMetadataFilters(int)),
@@ -146,7 +134,9 @@ void ItemPropertiesSideBar::slotNoCurrentItem()
     m_colorTab->setData();
 
 #ifdef HAVE_MARBLE
+
     m_gpsTab->setCurrentURL();
+
 #endif // HAVE_MARBLE
 
     m_dirtyPropertiesTab = false;
@@ -174,8 +164,11 @@ void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
 {
     if (!m_currentURL.isValid())
     {
+
 #ifdef HAVE_MARBLE
+
         m_gpsTab->setActive(tab == m_gpsTab);
+
 #endif // HAVE_MARBLE
 
         return;
@@ -199,7 +192,9 @@ void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
         m_colorTab->setData(m_currentURL, m_currentRect, m_image);
         m_dirtyColorTab = true;
     }
+
 #ifdef HAVE_MARBLE
+
     else if ((tab == m_gpsTab) && !m_dirtyGpsTab)
     {
         m_gpsTab->setCurrentURL(m_currentURL);
@@ -207,6 +202,7 @@ void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
     }
 
     m_gpsTab->setActive(tab == m_gpsTab);
+
 #endif // HAVE_MARBLE
 
     unsetCursor();
@@ -382,6 +378,7 @@ void ItemPropertiesSideBar::doLoadState()
     Sidebar::doLoadState();
 
     /// @todo m_propertiesTab should load its settings from our group
+
     m_propertiesTab->setObjectName(QLatin1String("Image Properties SideBar Expander"));
 
     KConfigGroup group = getConfigGroup();
@@ -389,8 +386,10 @@ void ItemPropertiesSideBar::doLoadState()
     m_propertiesTab->readSettings(group);
 
 #ifdef HAVE_MARBLE
+
     const KConfigGroup groupGPSTab      = KConfigGroup(&group, entryName(QLatin1String("GPS Properties Tab")));
     m_gpsTab->readSettings(groupGPSTab);
+
 #endif // HAVE_MARBLE
 
     const KConfigGroup groupColorTab    = KConfigGroup(&group, entryName(QLatin1String("Color Properties Tab")));
@@ -409,8 +408,10 @@ void ItemPropertiesSideBar::doSaveState()
     m_propertiesTab->writeSettings(group);
 
 #ifdef HAVE_MARBLE
+
     KConfigGroup groupGPSTab      = KConfigGroup(&group, entryName(QLatin1String("GPS Properties Tab")));
     m_gpsTab->writeSettings(groupGPSTab);
+
 #endif // HAVE_MARBLE
 
     KConfigGroup groupColorTab    = KConfigGroup(&group, entryName(QLatin1String("Color Properties Tab")));

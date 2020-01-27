@@ -664,6 +664,7 @@ void ItemPropertiesTab::setVideoAspectRatio(const QString& str)
 void ItemPropertiesTab::setVideoAudioBitRate(const QString& str)
 {
     // use string given as parameter by default because it contains the value for "unavailable" if needed
+
     QString audioBitRateString = str;
     bool ok                    = false;
     const int audioBitRateInt  = str.toInt(&ok);
@@ -690,6 +691,7 @@ void ItemPropertiesTab::setVideoDuration(const QString& str)
 {
     // duration is given as a string in milliseconds
     // use string given as parameter by default because it contains the value for "unavailable" if needed
+
     QString durationString = str;
     bool ok                = false;
     const int durationVal  = str.toInt(&ok);
@@ -716,6 +718,7 @@ void ItemPropertiesTab::setVideoDuration(const QString& str)
 void ItemPropertiesTab::setVideoFrameRate(const QString& str)
 {
     // use string given as parameter by default because it contains the value for "unavailable" if needed
+
     QString frameRateString      = str;
     bool ok;
     const double frameRateDouble = str.toDouble(&ok);
@@ -795,7 +798,9 @@ QStringList ItemPropertiesTab::shortenedTagPaths(const QStringList& tagPaths, QL
         {
             QString indent;
             indent.fill(QLatin1Char(' '), qMin(depth, 5));
-            //indent += QChar(0x2026);
+/*
+            indent += QChar(0x2026);
+*/
             shortenedPath = indent + tagPath.section(QLatin1Char('/'), depth);
         }
 

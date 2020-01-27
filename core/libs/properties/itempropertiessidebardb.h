@@ -66,7 +66,7 @@ public:
     void populateTags();
     void refreshTagsView();
 
-    ///This is for image editor to be able to update the filter list in sidebar
+    /// This is for image editor to be able to update the filter list in sidebar
     ItemPropertiesVersionsTab* getFiltersHistoryTab() const;
     ItemDescEditTab*           imageDescEditTab()     const;
 

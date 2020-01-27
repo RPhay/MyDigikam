@@ -140,8 +140,11 @@ void ItemPropertiesSideBarDB::itemChanged(const QUrl& url, const QRect& rect, DI
     itemChanged(url, ItemInfo(), rect, img, DImageHistory());
 }
 
-void ItemPropertiesSideBarDB::itemChanged(const QUrl& url, const ItemInfo& info,
-                                          const QRect& rect, DImg* const img, const DImageHistory& history)
+void ItemPropertiesSideBarDB::itemChanged(const QUrl& url,
+                                          const ItemInfo& info,
+                                          const QRect& rect,
+                                          DImg* const img,
+                                          const DImageHistory& history)
 {
     if (!url.isValid())
     {
@@ -172,7 +175,10 @@ void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos)
     itemChanged(infos, QRect(), nullptr, DImageHistory());
 }
 
-void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos, const QRect& rect, DImg* const img, const DImageHistory& history)
+void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos,
+                                          const QRect& rect,
+                                          DImg* const img,
+                                          const DImageHistory& history)
 {
     m_currentRect        = rect;
     m_image              = img;
@@ -290,7 +296,7 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
     }
     else if ((tab == d->desceditTab) && !d->dirtyDesceditTab)
     {
-        if (d->currentInfos.count() == 0)
+        if      (d->currentInfos.count() == 0)
         {
             // Do nothing here. We cannot get data from database !
 
@@ -307,7 +313,9 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
 
         d->dirtyDesceditTab = true;
     }
+
 #ifdef HAVE_MARBLE
+
     else if ((tab == m_gpsTab) && !m_dirtyGpsTab)
     {
         if (d->currentInfos.count() == 0)
@@ -341,12 +349,14 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
 
         m_dirtyGpsTab = true;
     }
+
 #endif // HAVE_MARBLE
-    else if (tab == d->versionsHistoryTab && !m_dirtyHistoryTab)
+
+    else if ((tab == d->versionsHistoryTab) && !m_dirtyHistoryTab)
     {
         // TODO: Make a database-less parent class with only the filters tab
 
-        if ((d->currentInfos.count() == 0) || d->currentInfos.count() > 1)
+        if ((d->currentInfos.count() == 0) || (d->currentInfos.count() > 1))
         {
             // FIXME: Any sensible multi-selection functionality? Must scale for large n!
 
@@ -361,7 +371,9 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
     }
 
 #ifdef HAVE_MARBLE
+
     m_gpsTab->setActive(tab == m_gpsTab);
+
 #endif // HAVE_MARBLE
 
     unsetCursor();
@@ -379,7 +391,7 @@ void ItemPropertiesSideBarDB::slotFileMetadataChanged(const QUrl& url)
         {
             // update now - reuse code form slotChangedTab
 
-            slotChangedTab( getActiveTab() );
+            slotChangedTab(getActiveTab());
         }
     }
 }
@@ -395,10 +407,14 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
             return;
         }
 
-        if (tab == m_propertiesTab
+        if ((tab == m_propertiesTab)
+
 #ifdef HAVE_MARBLE
-            || tab == m_gpsTab
+
+            || (tab == m_gpsTab)
+
 #endif // HAVE_MARBLE
+
            )
         {
             ItemInfo& info = d->currentInfos.first();
@@ -409,11 +425,11 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
 
                 DatabaseFields::Set set = changeset.changes();
 
-                if ((set & DatabaseFields::ImagesAll)          ||
-                    (set & DatabaseFields::ItemInformationAll) ||
-                    (set & DatabaseFields::ImageMetadataAll)   ||
-                    (set & DatabaseFields::VideoMetadataAll)   ||
-                    (set & DatabaseFields::ItemCommentsAll))
+                if      ((set & DatabaseFields::ImagesAll)          ||
+                         (set & DatabaseFields::ItemInformationAll) ||
+                         (set & DatabaseFields::ImageMetadataAll)   ||
+                         (set & DatabaseFields::VideoMetadataAll)   ||
+                         (set & DatabaseFields::ItemCommentsAll))
                 {
                     m_dirtyPropertiesTab = false;
                 }
@@ -422,13 +438,18 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
                     m_dirtyGpsTab = false;
                 }
 
-                if (tab == m_propertiesTab
+                if ((tab == m_propertiesTab)
+
 #ifdef HAVE_MARBLE
-                    || tab == m_gpsTab
+
+                    || (tab == m_gpsTab)
+
 #endif // HAVE_MARBLE
+
                    )
                 {
                     // update now - reuse code form slotChangedTab
+
                     slotChangedTab(tab);
                 }
             }
@@ -498,7 +519,9 @@ void ItemPropertiesSideBarDB::slotAssignRatingFiveStar()
 void ItemPropertiesSideBarDB::refreshTagsView()
 {
     // TODO update, do we still need this method?
-    //d->desceditTab->refreshTagsView();
+/*
+    d->desceditTab->refreshTagsView();
+*/
 }
 
 void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)

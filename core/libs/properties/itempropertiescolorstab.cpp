@@ -318,6 +318,7 @@ ItemPropertiesColorsTab::~ItemPropertiesColorsTab()
 {
     // If there is a currently histogram computation when dialog is closed,
     // stop it before the d->image data are deleted automatically!
+
     d->histogramBox->histogram()->stopHistogramComputation();
     d->redHistogram->stopHistogramComputation();
     d->greenHistogram->stopHistogramComputation();
@@ -358,7 +359,7 @@ void ItemPropertiesColorsTab::setData(const QUrl& url, const QRect& selectionAre
     // So filter here, before the stopHistogramComputation!
     // But do not filter if current path is null, as it would not disable the widget on first run.
 
-    if (!img && !d->currentFilePath.isNull() && url.toLocalFile() == d->currentFilePath)
+    if (!img && !d->currentFilePath.isNull() && (url.toLocalFile() == d->currentFilePath))
     {
         return;
     }
@@ -623,7 +624,7 @@ void ItemPropertiesColorsTab::slotMinValueChanged(int min)
 
     // make the one control "push" the other
 
-    if (min == d->maxInterv->value()+1)
+    if (min == (d->maxInterv->value() + 1))
     {
         d->maxInterv->setValue(min);
     }
@@ -638,7 +639,7 @@ void ItemPropertiesColorsTab::slotMinValueChanged(int min)
 
 void ItemPropertiesColorsTab::slotMaxValueChanged(int max)
 {
-    if (max == d->minInterv->value()-1)
+    if (max == (d->minInterv->value() - 1))
     {
         d->minInterv->setValue(max);
     }
@@ -686,7 +687,7 @@ void ItemPropertiesColorsTab::slotUpdateInterval(int min, int max)
 
 void ItemPropertiesColorsTab::slotUpdateIntervRange(int range)
 {
-    d->maxInterv->setMaximum( range );
+    d->maxInterv->setMaximum(range);
 }
 
 void ItemPropertiesColorsTab::updateInformation()
@@ -739,7 +740,7 @@ void ItemPropertiesColorsTab::updateStatistics()
 
 void ItemPropertiesColorsTab::getICCData()
 {
-    if (DImg::fileFormat(d->currentFilePath) == DImg::RAW)
+    if      (DImg::fileFormat(d->currentFilePath) == DImg::RAW)
     {
         d->iccProfileWidget->setUncalibratedColor();
     }
