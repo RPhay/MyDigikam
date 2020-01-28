@@ -10,17 +10,7 @@
 # Boost uses operator names (and, not, ...)
 string(REPLACE "-fno-operator-names" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
-set(libdatabasemodels_SRCS
-    models/itemfiltermodel.cpp
-    models/itemfiltermodel_p.cpp
-    models/itemfiltermodelthreads.cpp
-    models/itemfiltersettings.cpp
-    models/itemversionsmodel.cpp
-    models/itemthumbnailmodel.cpp
-    models/itemsortsettings.cpp
-    models/itemlistmodel.cpp
-    models/itemmodel.cpp
-)
+# exported as DIGIKAM_CORE_EXPORT symbols
 
 set(libdatabasecore_SRCS
     server/databaseserverstarter.cpp
@@ -61,6 +51,20 @@ set(libdatabaseutils_SRCS
     utils/scan/scancontroller_start.cpp
     utils/scan/scancontroller_progress.cpp
     utils/scan/scancontroller_stop.cpp
+)
+
+# exported as DIGIKAM_DATABASE_EXPORT symbols
+
+set(libdatabasemodels_SRCS
+    models/itemfiltermodel.cpp
+    models/itemfiltermodel_p.cpp
+    models/itemfiltermodelthreads.cpp
+    models/itemfiltersettings.cpp
+    models/itemversionsmodel.cpp
+    models/itemthumbnailmodel.cpp
+    models/itemsortsettings.cpp
+    models/itemlistmodel.cpp
+    models/itemmodel.cpp
 )
 
 set(libdatabase_SRCS
@@ -238,9 +242,11 @@ target_include_directories(digikamdatabase
 
 target_link_libraries(digikamdatabase
 
-                      PRIVATE
+                      PUBLIC
 
                       digikamcore
+
+                      PRIVATE
 
                       Qt5::Core
                       Qt5::Gui
