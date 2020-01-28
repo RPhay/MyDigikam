@@ -208,7 +208,8 @@ endif()
 add_library(digikamdatabase_src     OBJECT ${digikamdatabase_LIB_SRCS} ${libdatabasemodels_SRCS})
 add_library(digikamdatabasemain_src OBJECT ${libdatabaseutils_SRCS})
 add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})
-add_library(digikamdatabase         $<TARGET_OBJECTS:digikamdatabase_src>)
+
+add_library(digikamdatabase         SHARED $<TARGET_OBJECTS:digikamdatabase_src>)
 
 generate_export_header(digikamdatabase
                        BASE_NAME digikam_database
