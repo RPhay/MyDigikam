@@ -10,7 +10,7 @@
 # Boost uses operator names (and, not, ...)
 string(REPLACE "-fno-operator-names" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
-# Necessary symbols from Class listed below are exported with DIGIKAM_CORE_EXPORT
+# Necessary symbols from Class listed below are exported with DIGIKAM_EXPORT
 
 set(libdatabasecore_SRCS
     server/databaseserverstarter.cpp

@@ -40,7 +40,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_CORE_EXPORT DbEngineConfigSettingsLoader
+class DIGIKAM_EXPORT DbEngineConfigSettingsLoader
 {
 public:
 

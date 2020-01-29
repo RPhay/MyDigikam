@@ -37,7 +37,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_CORE_EXPORT DbEngineActionElement
+class DIGIKAM_EXPORT DbEngineActionElement
 {
 public:
 
@@ -53,7 +53,7 @@ public:
 
 // ---------------------------------------------------------------
 
-class DIGIKAM_CORE_EXPORT DbEngineAction
+class DIGIKAM_EXPORT DbEngineAction
 {
 public:
 

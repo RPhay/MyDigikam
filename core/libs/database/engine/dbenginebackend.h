@@ -48,7 +48,7 @@ class DbEngineConfigSettings;
 class BdEngineBackendPrivate;
 class DbEngineErrorHandler;
 
-class DIGIKAM_CORE_EXPORT DbEngineLocking
+class DIGIKAM_EXPORT DbEngineLocking
 {
 public:
 
@@ -62,7 +62,7 @@ public:
 
 // -----------------------------------------------------------------
 
-class DIGIKAM_CORE_EXPORT BdEngineBackend : public QObject
+class DIGIKAM_EXPORT BdEngineBackend : public QObject
 {
     Q_OBJECT
 

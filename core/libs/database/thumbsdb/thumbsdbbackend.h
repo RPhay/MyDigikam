@@ -35,7 +35,7 @@ namespace Digikam
 
 class ThumbsDbSchemaUpdater;
 
-class DIGIKAM_CORE_EXPORT ThumbsDbBackend : public BdEngineBackend
+class DIGIKAM_EXPORT ThumbsDbBackend : public BdEngineBackend
 {
     Q_OBJECT
 
