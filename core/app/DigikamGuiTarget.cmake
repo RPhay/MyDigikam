@@ -186,7 +186,7 @@ target_link_libraries(digikamgui
                       PRIVATE
 
                       digikamcore
-                      digikamdatabase
+#                      digikamdatabase
 
                       Qt5::Core
                       Qt5::Gui

@@ -23,7 +23,7 @@ add_test(timestampupdatetest timestampupdatetest)
 ecm_mark_as_test(timestampupdatetest)
 
 target_link_libraries(timestampupdatetest
-                      digikamdatabase
+#                      digikamdatabase
                       digikamcore
 
                       ${COMMON_TEST_LINK}
