@@ -41,6 +41,7 @@
 #include "thumbsdbschemaupdater.h"
 #include "dbengineparameters.h"
 #include "dbengineaccess.h"
+#include "dbengineerrorhandler.h"
 
 namespace Digikam
 {

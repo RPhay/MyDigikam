@@ -29,11 +29,11 @@
 
 #include "digikam_export.h"
 #include "dbengineparameters.h"
-#include "dbengineerrorhandler.h"
 
 namespace Digikam
 {
 
+class DbEngineErrorHandler;
 class InitializationObserver;
 class ThumbsDb;
 class ThumbsDbAccessStaticPriv;
@@ -43,9 +43,10 @@ class DIGIKAM_DATABASE_EXPORT ThumbsDbAccess
 {
 public:
 
-    /** This class is written in analogy to CoreDbAccess
-     *  (some features stripped off).
-     *  For documentation, see coredbaccess.h
+    /**
+     * This class is written in analogy to CoreDbAccess
+     * (some features stripped off).
+     * For documentation, see coredbaccess.h
      */
     ThumbsDbAccess();
     ~ThumbsDbAccess();

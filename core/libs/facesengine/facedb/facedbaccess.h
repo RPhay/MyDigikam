@@ -29,7 +29,6 @@
 
 #include "digikam_export.h"
 #include "dbengineparameters.h"
-#include "dbengineerrorhandler.h"
 #include "collectionscannerobserver.h"
 
 namespace Digikam
@@ -38,6 +37,7 @@ namespace Digikam
 class FaceDb;
 class FaceDbAccessStaticPriv;
 class FaceDbBackend;
+class DbEngineErrorHandler;
 
 class DIGIKAM_DATABASE_EXPORT FaceDbAccess
 {
