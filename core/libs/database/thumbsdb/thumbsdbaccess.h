@@ -39,7 +39,7 @@ class ThumbsDb;
 class ThumbsDbAccessStaticPriv;
 class ThumbsDbBackend;
 
-class DIGIKAM_DATABASE_EXPORT ThumbsDbAccess
+class DIGIKAM_CORE_EXPORT ThumbsDbAccess
 {
 public:
 

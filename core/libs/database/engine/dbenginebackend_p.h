@@ -63,7 +63,7 @@ public:
 
 // ------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT BdEngineBackendPrivate : public DbEngineErrorAnswer
+class DIGIKAM_CORE_EXPORT BdEngineBackendPrivate : public DbEngineErrorAnswer
 {
 public:
 

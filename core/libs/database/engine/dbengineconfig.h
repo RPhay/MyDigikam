@@ -33,7 +33,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT DbEngineConfig
+class DIGIKAM_CORE_EXPORT DbEngineConfig
 {
 public:
 

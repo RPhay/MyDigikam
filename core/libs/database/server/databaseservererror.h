@@ -37,7 +37,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT DatabaseServerError
+class DIGIKAM_CORE_EXPORT DatabaseServerError
 {
 public:
 

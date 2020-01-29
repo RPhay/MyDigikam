@@ -42,7 +42,7 @@ namespace Digikam
 
 class DImg;
 
-class DIGIKAM_DATABASE_EXPORT TagRegion
+class DIGIKAM_CORE_EXPORT TagRegion
 {
 
 public:
@@ -142,7 +142,7 @@ protected:
     Type     m_type;
 };
 
-QDebug DIGIKAM_DATABASE_EXPORT operator<<(QDebug dbg, const TagRegion& r);
+QDebug DIGIKAM_CORE_EXPORT operator<<(QDebug dbg, const TagRegion& r);
 
 } // namespace Digikam
 

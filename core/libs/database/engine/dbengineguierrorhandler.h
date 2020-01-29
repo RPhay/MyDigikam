@@ -38,7 +38,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT DbEngineConnectionChecker : public QThread
+class DIGIKAM_CORE_EXPORT DbEngineConnectionChecker : public QThread
 {
     Q_OBJECT
 
@@ -70,7 +70,7 @@ private:
 
 // --------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT DbEngineGuiErrorHandler : public DbEngineErrorHandler
+class DIGIKAM_CORE_EXPORT DbEngineGuiErrorHandler : public DbEngineErrorHandler
 {
     Q_OBJECT
 
