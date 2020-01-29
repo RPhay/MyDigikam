@@ -71,6 +71,7 @@ ecm_mark_as_test(filesaveoptionsboxtest)
 
 target_link_libraries(filesaveoptionsboxtest
                       digikamcore
+                      digikamdatabase
 
                       ${COMMON_TEST_LINK}
 )

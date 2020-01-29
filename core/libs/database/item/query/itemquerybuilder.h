@@ -42,7 +42,7 @@ class QUrl;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ItemQueryBuilder
+class DIGIKAM_DATABASE_EXPORT ItemQueryBuilder
 {
 public:
 

@@ -36,7 +36,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ItemVersionsModel : public QAbstractListModel
+class DIGIKAM_DATABASE_EXPORT ItemVersionsModel : public QAbstractListModel
 {
     Q_OBJECT
 

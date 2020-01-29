@@ -31,7 +31,7 @@ set(DIGIKAM_SUFFIX_VERSION "-beta3")
 # ==============================================================================
 # Set env. variables accordingly.
 
-# NOTE: This string is used to set libdigikamcore SO version ID
+# NOTE: This string is used to set libdigikamcore and libdigikamdatabase SO version ID
 set(DIGIKAM_VERSION_SHORT
     "${DIGIKAM_MAJOR_VERSION}.${DIGIKAM_MINOR_VERSION}.${DIGIKAM_PATCH_VERSION}"
 )
@@ -722,6 +722,7 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # This will only done near to library declaration in Cmake files.
     if(WIN32)
         add_definitions(-Ddigikamcore_EXPORTS)
+        add_definitions(-Ddigikamdatabase_EXPORTS)
     endif()
 
     # Enable C++ Exceptions support, require by Greycstoration algorithm
@@ -773,9 +774,6 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # Common targets parts
 
     set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-    set(CMAKE_AUTOMOC ON)
-    set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
     add_subdirectory(data)
     add_subdirectory(libs)
     add_subdirectory(utilities)

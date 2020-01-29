@@ -36,7 +36,7 @@ namespace Digikam
 
 class SimilarityDbSchemaUpdater;
 
-class DIGIKAM_EXPORT SimilarityDbBackend : public BdEngineBackend
+class DIGIKAM_DATABASE_EXPORT SimilarityDbBackend : public BdEngineBackend
 {
     Q_OBJECT
 

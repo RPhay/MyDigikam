@@ -45,7 +45,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ItemLister
+class DIGIKAM_DATABASE_EXPORT ItemLister
 {
 
 public:

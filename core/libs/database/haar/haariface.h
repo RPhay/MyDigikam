@@ -63,7 +63,7 @@ public:
 
 // --------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT HaarIface
+class DIGIKAM_DATABASE_EXPORT HaarIface
 {
 
 public:

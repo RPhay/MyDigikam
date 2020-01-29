@@ -43,6 +43,7 @@ ecm_mark_as_test(cameranamehelpertest)
 
 target_link_libraries(cameranamehelpertest
 
+                      digikamdatabase
                       digikamcore
                       digikamgui
 
@@ -67,6 +68,7 @@ ecm_mark_as_test(advancedrenametest)
 
 target_link_libraries(advancedrenametest
 
+                      digikamdatabase
                       digikamcore
                       digikamgui
 

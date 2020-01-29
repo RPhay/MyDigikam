@@ -39,7 +39,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT CoreDbUrl : public QUrl
+class DIGIKAM_DATABASE_EXPORT CoreDbUrl : public QUrl
 {
 public:
 

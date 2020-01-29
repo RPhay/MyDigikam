@@ -33,7 +33,7 @@ namespace Digikam
 
 class SearchesJob;
 
-class DIGIKAM_EXPORT DuplicatesProgressObserver : public HaarProgressObserver
+class DIGIKAM_DATABASE_EXPORT DuplicatesProgressObserver : public HaarProgressObserver
 {
 
 public:

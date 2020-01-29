@@ -24,6 +24,7 @@ ecm_mark_nongui_executable(albummodeltest)
 
 target_link_libraries(albummodeltest
                       digikamcore
+                      digikamdatabase
                       digikamgui
 
                       ${COMMON_TEST_LINK}

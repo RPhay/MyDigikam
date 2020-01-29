@@ -80,7 +80,7 @@ public:
 class ItemFilterModelPreparer;
 class ItemFilterModelFilterer;
 
-class DIGIKAM_EXPORT ItemFilterModel::ItemFilterModelPrivate : public QObject
+class DIGIKAM_DATABASE_EXPORT ItemFilterModel::ItemFilterModelPrivate : public QObject
 {
     Q_OBJECT
 

@@ -37,7 +37,7 @@ namespace Digikam
 class LoadingDescription;
 class ThumbnailLoadThread;
 
-class DIGIKAM_EXPORT ItemThumbnailModel : public ItemModel
+class DIGIKAM_DATABASE_EXPORT ItemThumbnailModel : public ItemModel
 {
     Q_OBJECT
 

@@ -44,7 +44,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ImageChangeset
+class DIGIKAM_DATABASE_EXPORT ImageChangeset
 {
 public:
 
@@ -75,7 +75,7 @@ private:
 
 // ----------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ImageTagChangeset
+class DIGIKAM_DATABASE_EXPORT ImageTagChangeset
 {
 public:
 
@@ -146,7 +146,7 @@ private:
 
 // ----------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT CollectionImageChangeset
+class DIGIKAM_DATABASE_EXPORT CollectionImageChangeset
 {
 public:
 
@@ -242,7 +242,7 @@ private:
 
 // ----------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT AlbumChangeset
+class DIGIKAM_DATABASE_EXPORT AlbumChangeset
 {
 public:
 
@@ -276,7 +276,7 @@ private:
 
 // ----------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT TagChangeset
+class DIGIKAM_DATABASE_EXPORT TagChangeset
 {
 public:
 
@@ -313,7 +313,7 @@ private:
 
 // ----------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT AlbumRootChangeset
+class DIGIKAM_DATABASE_EXPORT AlbumRootChangeset
 {
 public:
 
@@ -346,7 +346,7 @@ private:
 
 // ----------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT SearchChangeset
+class DIGIKAM_DATABASE_EXPORT SearchChangeset
 {
 public:
 

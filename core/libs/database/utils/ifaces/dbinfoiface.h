@@ -36,7 +36,7 @@ namespace Digikam
 
 class Album;
 
-class DIGIKAM_EXPORT DBInfoIface : public DInfoInterface
+class DIGIKAM_DATABASE_EXPORT DBInfoIface : public DInfoInterface
 {
     Q_OBJECT
 

@@ -20,6 +20,10 @@ DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wno-extra-semi")
 # It also does not export symbols, so export all by default
 unset(CMAKE_CXX_VISIBILITY_PRESET)
 
+# Copied from o2/src/CMakeLists.txt
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
 set(libwso2_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2reply.cpp

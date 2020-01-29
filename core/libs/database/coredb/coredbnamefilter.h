@@ -39,7 +39,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT CoreDbNameFilter
+class DIGIKAM_DATABASE_EXPORT CoreDbNameFilter
 {
 public:
 

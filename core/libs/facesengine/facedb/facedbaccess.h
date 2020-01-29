@@ -39,7 +39,7 @@ class FaceDbAccessStaticPriv;
 class FaceDbBackend;
 class DbEngineErrorHandler;
 
-class DIGIKAM_EXPORT FaceDbAccess
+class DIGIKAM_DATABASE_EXPORT FaceDbAccess
 {
 public:
 

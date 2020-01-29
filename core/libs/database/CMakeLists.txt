@@ -183,6 +183,8 @@ set(libhaar_SRCS
     haar/haariface_p.cpp
 )
 
+# Shared libdigikamdatabase ########################################################
+
 set(digikamdatabase_LIB_SRCS
     ${libdatabase_SRCS}
     ${libhaar_SRCS}
@@ -207,5 +209,68 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
-add_library(digikamdatabase_src     OBJECT ${digikamdatabase_LIB_SRCS} ${libdatabasemodels_SRCS} ${libdatabasecore_SRCS})
+add_library(digikamdatabase_src     OBJECT ${digikamdatabase_LIB_SRCS} ${libdatabasemodels_SRCS})
 add_library(digikamdatabasemain_src OBJECT ${libdatabaseutils_SRCS})
+add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})
+
+add_library(digikamdatabase         SHARED $<TARGET_OBJECTS:digikamdatabase_src>)
+
+generate_export_header(digikamdatabase
+                       BASE_NAME digikam_database
+                       EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/../../app/utils/digikam_database_export.h"
+)
+
+target_include_directories(digikamdatabase
+                           PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/coredb>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/collection>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/engine>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/dbjobs>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/item/containers>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/item/lister>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/item/query>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/item/scanner>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/tags>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/haar>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/imagehistory>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/server>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/thumbsdb>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/utils/ifaces>
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/utils/scan>
+)
+
+target_link_libraries(digikamdatabase
+
+                      PUBLIC
+
+                      digikamcore
+
+                      PRIVATE
+
+                      Qt5::Core
+                      Qt5::Gui
+                      Qt5::Sql
+
+                      KF5::ConfigCore
+                      KF5::Solid
+                      KF5::I18n
+)
+
+if(ENABLE_DBUS)
+    target_link_libraries(digikamdatabase PRIVATE Qt5::DBus)
+endif()
+
+set_target_properties(digikamdatabase PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
+
+# --- Install Rules ---
+
+install(TARGETS digikamdatabase EXPORT DigikamDatabaseConfig ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(EXPORT DigikamDatabaseConfig DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamDatabase" NAMESPACE Digikam::)
+
+write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/DigikamDatabaseConfigVersion.cmake
+                                 VERSION ${DIGIKAM_VERSION_SHORT}
+                                 COMPATIBILITY SameMajorVersion)
+
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamDatabaseConfigVersion.cmake
+        DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamDatabase")

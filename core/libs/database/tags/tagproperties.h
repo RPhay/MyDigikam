@@ -39,7 +39,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT TagProperties
+class DIGIKAM_DATABASE_EXPORT TagProperties
 {
 public:
 

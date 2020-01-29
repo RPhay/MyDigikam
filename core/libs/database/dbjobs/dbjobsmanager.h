@@ -37,7 +37,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DBJobsManager : public QObject
+class DIGIKAM_DATABASE_EXPORT DBJobsManager : public QObject
 {
     Q_OBJECT
 

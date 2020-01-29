@@ -38,7 +38,7 @@ class CoreDbSchemaUpdater;
 class CoreDbWatch;
 class CoreDbBackendPrivate;
 
-class DIGIKAM_EXPORT CoreDbBackend : public BdEngineBackend
+class DIGIKAM_DATABASE_EXPORT CoreDbBackend : public BdEngineBackend
 {
     Q_OBJECT
 

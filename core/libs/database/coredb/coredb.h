@@ -53,7 +53,7 @@ namespace Digikam
 
 class CoreDbBackend;
 
-class DIGIKAM_EXPORT CoreDB
+class DIGIKAM_DATABASE_EXPORT CoreDB
 {
 public:
 

@@ -37,7 +37,7 @@ namespace Digikam
 
 class DuplicatesProgressObserver;
 
-class DIGIKAM_EXPORT DBJob : public ActionJob
+class DIGIKAM_DATABASE_EXPORT DBJob : public ActionJob
 {
     Q_OBJECT
 
@@ -54,7 +54,7 @@ Q_SIGNALS:
 
 // ----------------------------------------------
 
-class DIGIKAM_EXPORT AlbumsJob : public DBJob
+class DIGIKAM_DATABASE_EXPORT AlbumsJob : public DBJob
 {
     Q_OBJECT
 
@@ -78,7 +78,7 @@ private:
 
 // ----------------------------------------------
 
-class DIGIKAM_EXPORT DatesJob : public DBJob
+class DIGIKAM_DATABASE_EXPORT DatesJob : public DBJob
 {
     Q_OBJECT
 
@@ -102,7 +102,7 @@ private:
 
 // ----------------------------------------------
 
-class DIGIKAM_EXPORT GPSJob : public DBJob
+class DIGIKAM_DATABASE_EXPORT GPSJob : public DBJob
 {
     Q_OBJECT
 
@@ -126,7 +126,7 @@ private:
 
 // ----------------------------------------------
 
-class DIGIKAM_EXPORT TagsJob : public DBJob
+class DIGIKAM_DATABASE_EXPORT TagsJob : public DBJob
 {
     Q_OBJECT
 
@@ -151,7 +151,7 @@ private:
 
 // ----------------------------------------------
 
-class DIGIKAM_EXPORT SearchesJob : public DBJob
+class DIGIKAM_DATABASE_EXPORT SearchesJob : public DBJob
 {
     Q_OBJECT
 

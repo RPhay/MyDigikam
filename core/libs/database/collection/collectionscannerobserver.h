@@ -37,7 +37,7 @@ namespace Digikam
 
 class CollectionScanner;
 
-class DIGIKAM_EXPORT CollectionScannerObserver
+class DIGIKAM_DATABASE_EXPORT CollectionScannerObserver
 {
 public:
 
@@ -50,7 +50,7 @@ public:
 
 // ------------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT InitializationObserver : public CollectionScannerObserver
+class DIGIKAM_DATABASE_EXPORT InitializationObserver : public CollectionScannerObserver
 {
 public:
 

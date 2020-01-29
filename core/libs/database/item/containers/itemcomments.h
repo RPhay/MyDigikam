@@ -44,7 +44,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ItemComments
+class DIGIKAM_DATABASE_EXPORT ItemComments
 {
 public:
 

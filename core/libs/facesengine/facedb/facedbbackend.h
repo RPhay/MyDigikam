@@ -36,7 +36,7 @@ namespace Digikam
 class FaceDbSchemaUpdater;
 class FaceDbBackendPrivate;
 
-class DIGIKAM_EXPORT FaceDbBackend : public BdEngineBackend
+class DIGIKAM_DATABASE_EXPORT FaceDbBackend : public BdEngineBackend
 {
     Q_OBJECT
 

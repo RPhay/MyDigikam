@@ -44,7 +44,7 @@ class ImageChangeset;
 class ItemFilterModel;
 class ImageTagChangeset;
 
-class DIGIKAM_EXPORT ItemFilterModelPrepareHook
+class DIGIKAM_DATABASE_EXPORT ItemFilterModelPrepareHook
 {
 public:
 
@@ -54,7 +54,7 @@ public:
 
 // -----------------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ImageSortFilterModel : public DCategorizedSortFilterProxyModel
+class DIGIKAM_DATABASE_EXPORT ImageSortFilterModel : public DCategorizedSortFilterProxyModel
 {
     Q_OBJECT
 
@@ -110,7 +110,7 @@ protected:
 
 // -----------------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ItemFilterModel : public ImageSortFilterModel
+class DIGIKAM_DATABASE_EXPORT ItemFilterModel : public ImageSortFilterModel
 {
     Q_OBJECT
 
@@ -287,7 +287,7 @@ private:
 
 // -----------------------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT NoDuplicatesItemFilterModel : public ImageSortFilterModel
+class DIGIKAM_DATABASE_EXPORT NoDuplicatesItemFilterModel : public ImageSortFilterModel
 {
     Q_OBJECT
 

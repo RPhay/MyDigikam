@@ -38,7 +38,7 @@ class CoreDbAccess;
  * you want to declare a database commit.
  * Equivalent to calling beginTransaction and commitTransaction on the album db.
  */
-class DIGIKAM_EXPORT CoreDbTransaction
+class DIGIKAM_DATABASE_EXPORT CoreDbTransaction
 {
 public:
 
