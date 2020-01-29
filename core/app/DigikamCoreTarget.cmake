@@ -83,6 +83,8 @@ add_library(digikamcore
 
 set_target_properties(digikamcore PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
 
+target_compile_definitions(digikamcore PRIVATE digikamcore_EXPORTS)
+
 add_dependencies(digikamcore digikam-gitversion)
 
 generate_export_header(digikamcore BASE_NAME digikam EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_core_export.h")
