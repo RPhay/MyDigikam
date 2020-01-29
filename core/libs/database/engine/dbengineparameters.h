@@ -45,7 +45,7 @@ namespace Digikam
  * a connection to a database (inspired by the API of Qt::Sql).
  * The values can be read from and written to a QUrl.
  */
-class DIGIKAM_DATABASE_EXPORT DbEngineParameters
+class DIGIKAM_EXPORT DbEngineParameters
 {
 
 public:
@@ -207,7 +207,7 @@ public:
     QString internalServerMysqlInitCmd;
 };
 
-DIGIKAM_DATABASE_EXPORT QDebug operator<<(QDebug dbg, const DbEngineParameters& t);
+DIGIKAM_EXPORT QDebug operator<<(QDebug dbg, const DbEngineParameters& t);
 
 } // namespace Digikam
 

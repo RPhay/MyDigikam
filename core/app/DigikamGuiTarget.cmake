@@ -186,7 +186,6 @@ target_link_libraries(digikamgui
                       PRIVATE
 
                       digikamcore
-#                      digikamdatabase
 
                       Qt5::Core
                       Qt5::Gui
@@ -237,7 +236,7 @@ if(NOT WIN32)
 endif()
 
 if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
-    target_link_libraries(digikamcore PRIVATE ${KVM_LIBRARY})
+    target_link_libraries(digikamgui PRIVATE ${KVM_LIBRARY})
 endif()
 
 if(Gphoto2_FOUND)

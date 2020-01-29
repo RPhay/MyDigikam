@@ -45,7 +45,7 @@ class QFileInfo;
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT CollectionScanner : public QObject
+class DIGIKAM_EXPORT CollectionScanner : public QObject
 {
     Q_OBJECT
 

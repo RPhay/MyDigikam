@@ -37,7 +37,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT OpenCVMatData
+class DIGIKAM_EXPORT OpenCVMatData
 {
 public:
 

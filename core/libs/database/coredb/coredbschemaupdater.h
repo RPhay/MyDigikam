@@ -43,7 +43,7 @@ namespace Digikam
 class CoreDbAccess;
 class InitializationObserver;
 
-class DIGIKAM_DATABASE_EXPORT CoreDbSchemaUpdater
+class DIGIKAM_EXPORT CoreDbSchemaUpdater
 {
 public:
 

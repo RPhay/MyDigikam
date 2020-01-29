@@ -62,7 +62,6 @@ ecm_mark_nongui_executable(testnrestimate)
 
 target_link_libraries(testnrestimate
                       digikamcore
-#                      digikamdatabase
 
                       ${COMMON_TEST_LINK}
 

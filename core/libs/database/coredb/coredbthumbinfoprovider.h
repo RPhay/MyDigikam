@@ -34,14 +34,14 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT ThumbsDbInfoProvider : public ThumbnailInfoProvider
+class DIGIKAM_EXPORT ThumbsDbInfoProvider : public ThumbnailInfoProvider
 {
 public:
 
     ThumbnailInfo thumbnailInfo(const ThumbnailIdentifier& identifier) override;
 };
 
-class DIGIKAM_DATABASE_EXPORT DatabaseLoadSaveFileInfoProvider : public LoadSaveFileInfoProvider
+class DIGIKAM_EXPORT DatabaseLoadSaveFileInfoProvider : public LoadSaveFileInfoProvider
 {
 public:
 

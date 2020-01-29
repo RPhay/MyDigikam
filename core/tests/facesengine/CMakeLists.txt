@@ -16,7 +16,6 @@ target_link_libraries(detect
                       digikamcore
                       digikamgui
                       digikamfacesengine
-#                      digikamdatabase
 
                       ${COMMON_TEST_LINK}
 
@@ -33,7 +32,6 @@ target_link_libraries(recognize
                       digikamcore
                       digikamgui
                       digikamfacesengine
-#                      digikamdatabase
 
                       ${COMMON_TEST_LINK}
 
@@ -50,7 +48,6 @@ target_link_libraries(face_rec
                       digikamcore
                       digikamgui
                       digikamfacesengine
-#                      digikamdatabase
 
                       ${COMMON_TEST_LINK}
 
@@ -67,7 +64,6 @@ target_link_libraries(face_cluster
                       digikamcore
                       digikamgui
                       digikamfacesengine
-#                      digikamdatabase
 
                       ${COMMON_TEST_LINK}
 
@@ -86,7 +82,6 @@ target_link_libraries(align
                       digikamcore
                       digikamgui
                       digikamfacesengine
-#                      digikamdatabase
 
                       ${COMMON_TEST_LINK}
 
@@ -103,7 +98,6 @@ target_link_libraries(preprocess
                       digikamcore
                       digikamgui
                       digikamfacesengine
-#                      digikamdatabase
 
                       ${COMMON_TEST_LINK}
 
@@ -120,7 +114,6 @@ target_link_libraries(traindb
                       digikamcore
                       digikamgui
                       digikamfacesengine
-#                      digikamdatabase
 
                       ${COMMON_TEST_LINK}
 

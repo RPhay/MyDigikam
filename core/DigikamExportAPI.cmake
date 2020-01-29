@@ -19,7 +19,6 @@ install(FILES
 
               ${CMAKE_CURRENT_BINARY_DIR}/app/utils/digikam_config.h
               ${CMAKE_CURRENT_BINARY_DIR}/app/utils/digikam_core_export.h
-#              ${CMAKE_CURRENT_BINARY_DIR}/app/utils/digikam_database_export.h
               ${CMAKE_CURRENT_SOURCE_DIR}/app/utils/digikam_export.h
               ${CMAKE_CURRENT_SOURCE_DIR}/app/utils/digikam_globals.h
 

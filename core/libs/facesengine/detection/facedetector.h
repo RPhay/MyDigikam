@@ -39,7 +39,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT FaceDetector
+class DIGIKAM_EXPORT FaceDetector
 {
 
 public:

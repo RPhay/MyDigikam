@@ -41,7 +41,7 @@ class AlbumFilterModel;
  *
  * @author Gilles Caulier
  */
-class DIGIKAM_DATABASE_EXPORT SearchTextBarDb : public SearchTextBar
+class DIGIKAM_EXPORT SearchTextBarDb : public SearchTextBar
 {
     Q_OBJECT
 

@@ -39,7 +39,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT FullObjectDetection
+class DIGIKAM_EXPORT FullObjectDetection
 {
 public:
 

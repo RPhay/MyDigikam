@@ -9,7 +9,6 @@
 
 set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:digikamdatabase_src>
-            $<TARGET_OBJECTS:digikamdatabasecore_src>
             $<TARGET_OBJECTS:dimg_src>
             $<TARGET_OBJECTS:dmetadata_src>
             $<TARGET_OBJECTS:jpegutils_src>

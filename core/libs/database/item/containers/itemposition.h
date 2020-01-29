@@ -43,7 +43,7 @@ namespace Digikam
 class CoreDbAccess;
 class ItemPositionPriv;
 
-class DIGIKAM_DATABASE_EXPORT ItemPosition
+class DIGIKAM_EXPORT ItemPosition
 {
 
 public:

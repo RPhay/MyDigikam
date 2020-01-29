@@ -52,7 +52,7 @@ class CoreDbAccessStaticPriv;
  * - to make sure that the database is available and the schema
  *   is properly initialized, call checkReadyForUse()
  */
-class DIGIKAM_DATABASE_EXPORT CoreDbAccess
+class DIGIKAM_EXPORT CoreDbAccess
 {
 public:
 

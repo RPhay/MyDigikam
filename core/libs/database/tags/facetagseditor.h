@@ -45,7 +45,7 @@ namespace Digikam
 
 class ItemTagPair;
 
-class DIGIKAM_DATABASE_EXPORT FaceTagsEditor
+class DIGIKAM_EXPORT FaceTagsEditor
 {
 public:
 

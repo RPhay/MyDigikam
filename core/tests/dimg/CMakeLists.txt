@@ -49,7 +49,6 @@ ecm_mark_as_test(dimghistorygraphtest)
 target_link_libraries(dimghistorygraphtest
 
                       digikamcore
-#                      digikamdatabase
 
                       ${COMMON_TEST_LINK}
 

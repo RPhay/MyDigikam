@@ -33,7 +33,6 @@ target_link_libraries(digikam
                       PUBLIC
 
                       digikamcore
-#                      digikamdatabase
                       digikamgui
 
                       Qt5::Core

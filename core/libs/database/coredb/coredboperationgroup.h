@@ -44,7 +44,7 @@ class CoreDbAccess;
  * occurring in short time results in enormous speedup (800x).
  * For system that do not need this optimization, this class is a no-op.
  */
-class DIGIKAM_DATABASE_EXPORT CoreDbOperationGroup
+class DIGIKAM_EXPORT CoreDbOperationGroup
 {
 public:
 

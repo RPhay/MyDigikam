@@ -54,7 +54,7 @@ enum class FuzzyAlgorithm
 };
 
 
-class DIGIKAM_DATABASE_EXPORT SimilarityDb
+class DIGIKAM_EXPORT SimilarityDb
 {
 public:
 

@@ -65,7 +65,7 @@ public:
  *        it also watches for changes in Baloo and notify
  *        digiKam, so it could trigger a scan
  */
-class DIGIKAM_DATABASE_EXPORT BalooWrap : public QObject
+class DIGIKAM_EXPORT BalooWrap : public QObject
 {
     Q_OBJECT
 

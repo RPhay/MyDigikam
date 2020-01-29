@@ -42,7 +42,7 @@ namespace Digikam
  * where for each entry a QImage can be provided.
  * Only forward iteration is required.
  */
-class DIGIKAM_DATABASE_EXPORT ImageListProvider
+class DIGIKAM_EXPORT ImageListProvider
 {
 public:
 
@@ -59,7 +59,7 @@ public:
 /**
  * A wrapper implementation for ImageListProvider if you have a QList of QImages
  */
-class DIGIKAM_DATABASE_EXPORT QListImageListProvider : public ImageListProvider
+class DIGIKAM_EXPORT QListImageListProvider : public ImageListProvider
 {
 public:
 
@@ -83,7 +83,7 @@ public:
 
 // ----------------------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT EmptyImageListProvider : public ImageListProvider
+class DIGIKAM_EXPORT EmptyImageListProvider : public ImageListProvider
 {
 public:
 
@@ -101,7 +101,7 @@ public:
  * It is not specified, but depends on the backend which of the methods
  * in which order and for which identities will be called.
  */
-class DIGIKAM_DATABASE_EXPORT TrainingDataProvider
+class DIGIKAM_EXPORT TrainingDataProvider
 {
 public:
 

@@ -39,7 +39,7 @@ namespace Digikam
 
 class ItemFilterModelTodoPackage;
 
-class DIGIKAM_DATABASE_EXPORT ItemFilterModelWorker : public WorkerObject
+class DIGIKAM_EXPORT ItemFilterModelWorker : public WorkerObject
 {
     Q_OBJECT
 
@@ -65,7 +65,7 @@ protected:
 
 // -----------------------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT ItemFilterModelPreparer : public ItemFilterModelWorker
+class DIGIKAM_EXPORT ItemFilterModelPreparer : public ItemFilterModelWorker
 {
     Q_OBJECT
 
@@ -81,7 +81,7 @@ public:
 
 // ----------------------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT ItemFilterModelFilterer : public ItemFilterModelWorker
+class DIGIKAM_EXPORT ItemFilterModelFilterer : public ItemFilterModelWorker
 {
     Q_OBJECT
 

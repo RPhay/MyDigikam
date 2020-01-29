@@ -37,7 +37,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT DbEngineSqlQuery : public QSqlQuery
+class DIGIKAM_EXPORT DbEngineSqlQuery : public QSqlQuery
 {
 
 public:

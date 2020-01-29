@@ -53,7 +53,7 @@ namespace Digikam
  * - an instance of this class is thread-safe
  *   (this class is also reentrant, for different objects and paths)
  */
-class DIGIKAM_DATABASE_EXPORT RecognitionDatabase
+class DIGIKAM_EXPORT RecognitionDatabase
 {
 
 public:

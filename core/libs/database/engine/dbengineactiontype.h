@@ -41,7 +41,7 @@ namespace Digikam
  * and controls whether it should be used as field entry or as value
  * (prepared to an sql statement with positional binding).
  */
-class DIGIKAM_DATABASE_EXPORT DbEngineActionType
+class DIGIKAM_EXPORT DbEngineActionType
 {
 public:
 

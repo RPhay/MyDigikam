@@ -148,7 +148,7 @@ enum Type
 
 // ----------------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT InternalTagName
+class DIGIKAM_EXPORT InternalTagName
 {
 public:
 
@@ -180,7 +180,7 @@ public:
 
 // ----------------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT TagPropertyName
+class DIGIKAM_EXPORT TagPropertyName
 {
 public:
 
@@ -194,7 +194,7 @@ public:
 
 // ----------------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT ImageTagPropertyName
+class DIGIKAM_EXPORT ImageTagPropertyName
 {
 public:
 

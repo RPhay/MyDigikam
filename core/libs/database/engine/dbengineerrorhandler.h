@@ -38,7 +38,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT DbEngineErrorAnswer
+class DIGIKAM_EXPORT DbEngineErrorAnswer
 {
 
 public:
@@ -50,7 +50,7 @@ public:
 
 // -----------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT DbEngineErrorHandler : public QObject
+class DIGIKAM_EXPORT DbEngineErrorHandler : public QObject
 {
     Q_OBJECT
 

@@ -39,7 +39,7 @@ namespace Digikam
  * The DbEngineAccess class provides access to the database:
  * Create an instance of this class on the stack to retrieve a pointer to the database.
  */
-class DIGIKAM_DATABASE_EXPORT DbEngineAccess
+class DIGIKAM_EXPORT DbEngineAccess
 {
 public:
 

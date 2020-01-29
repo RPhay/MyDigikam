@@ -66,7 +66,7 @@ private:
 
 // --------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT DatabaseMigrationDialog : public QDialog
+class DIGIKAM_EXPORT DatabaseMigrationDialog : public QDialog
 {
     Q_OBJECT
 
