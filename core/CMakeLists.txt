@@ -721,8 +721,8 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # To force to declare as exported classes in all sub components.
     # This will only done near to library declaration in Cmake files.
     if(WIN32)
-        add_definitions(-Ddigikamcore_EXPORTS)
-        add_definitions(-Ddigikamdatabase_EXPORTS)
+#        add_definitions(-Ddigikamcore_EXPORTS)
+#        add_definitions(-Ddigikamdatabase_EXPORTS)
     endif()
 
     # Enable C++ Exceptions support, require by Greycstoration algorithm
