@@ -774,6 +774,9 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # Common targets parts
 
     set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+    set(CMAKE_AUTOMOC ON)
+    set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
     add_subdirectory(data)
     add_subdirectory(libs)
     add_subdirectory(utilities)
