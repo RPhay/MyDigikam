@@ -197,6 +197,10 @@ if(WIN32)
     target_link_libraries(digikamcore PRIVATE wsock32 ws2_32)
 endif()
 
+if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
+    target_link_libraries(digikamcore PRIVATE ${KVM_LIBRARY})
+endif()
+
 if(ENABLE_MEDIAPLAYER)
     target_link_libraries(digikamcore PRIVATE ${QTAV_LIBRARIES})
 endif()

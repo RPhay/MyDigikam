@@ -236,10 +236,6 @@ if(NOT WIN32)
     target_link_libraries(digikamgui PRIVATE ${MATH_LIBRARY})
 endif()
 
-if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
-    target_link_libraries(digikamcore PRIVATE ${KVM_LIBRARY})
-endif()
-
 if(Gphoto2_FOUND)
     # See bug #258931: libgphoto2 library must be the last arg for linker.
     # See bug #268267 : digiKam need to be linked to libusb to prevent crash
