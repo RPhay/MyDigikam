@@ -130,7 +130,7 @@ XMPEditWidget::XMPEditWidget(MetadataEditDialog* const parent)
 
     d->creditsPage  = new XMPCredits(this);
     d->page_credits = addPage(d->creditsPage, i18n("Credits"));
-    d->page_credits->setIcon(QIcon::fromTheme(QLatin1String("view-pim-contacts")));
+    d->page_credits->setIcon(QIcon::fromTheme(QLatin1String("address-book-new")));
 
     d->subjectsPage  = new XMPSubjects(this);
     d->page_subjects = addPage(d->subjectsPage, i18n("Subjects"));
@@ -146,7 +146,7 @@ XMPEditWidget::XMPEditWidget(MetadataEditDialog* const parent)
 
     d->statusPage  = new XMPStatus(this);
     d->page_status = addPage(d->statusPage, i18n("Status"));
-    d->page_status->setIcon(QIcon::fromTheme(QLatin1String("view-pim-tasks")));
+    d->page_status->setIcon(QIcon::fromTheme(QLatin1String("view-task")));
 
     d->propertiesPage  = new XMPProperties(this);
     d->page_properties = addPage(d->propertiesPage, i18n("Properties"));

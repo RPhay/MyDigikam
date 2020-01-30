@@ -122,7 +122,7 @@ IPTCEditWidget::IPTCEditWidget(MetadataEditDialog* const parent)
 
     d->contentPage   = new IPTCContent(this);
     d->page_content  = addPage(d->contentPage, i18n("Content"));
-    d->page_content->setIcon(QIcon::fromTheme(QLatin1String("help-contents")));
+    d->page_content->setIcon(QIcon::fromTheme(QLatin1String("system-help")));
 
     d->originPage  = new IPTCOrigin(this);
     d->page_origin = addPage(d->originPage, i18n("Origin"));
@@ -130,7 +130,7 @@ IPTCEditWidget::IPTCEditWidget(MetadataEditDialog* const parent)
 
     d->creditsPage  = new IPTCCredits(this);
     d->page_credits = addPage(d->creditsPage, i18n("Credits"));
-    d->page_credits->setIcon(QIcon::fromTheme(QLatin1String("view-pim-contacts")));
+    d->page_credits->setIcon(QIcon::fromTheme(QLatin1String("address-book-new")));
 
     d->subjectsPage  = new IPTCSubjects(this);
     d->page_subjects = addPage(d->subjectsPage, i18n("Subjects"));
@@ -146,7 +146,7 @@ IPTCEditWidget::IPTCEditWidget(MetadataEditDialog* const parent)
 
     d->statusPage  = new IPTCStatus(this);
     d->page_status = addPage(d->statusPage, i18n("Status"));
-    d->page_status->setIcon(QIcon::fromTheme(QLatin1String("view-pim-tasks")));
+    d->page_status->setIcon(QIcon::fromTheme(QLatin1String("view-task")));
 
     d->propertiesPage  = new IPTCProperties(this);
     d->page_properties = addPage(d->propertiesPage, i18n("Properties"));
@@ -154,7 +154,7 @@ IPTCEditWidget::IPTCEditWidget(MetadataEditDialog* const parent)
 
     d->envelopePage  = new IPTCEnvelope(this);
     d->page_envelope = addPage(d->envelopePage, i18n("Envelope"));
-    d->page_envelope->setIcon(QIcon::fromTheme(QLatin1String("view-pim-mail")));
+    d->page_envelope->setIcon(QIcon::fromTheme(QLatin1String("mail-mark-unread")));
 
     // ---------------------------------------------------------------
 
