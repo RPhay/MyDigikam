@@ -215,6 +215,12 @@ add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})
 
 add_library(digikamdatabase         SHARED $<TARGET_OBJECTS:digikamdatabase_src>)
 
+set_target_properties(digikamdatabase         PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
+set_target_properties(digikamdatabase         PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
+set_target_properties(digikamdatabase_src     PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
+set_target_properties(digikamdatabasemain_src PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(digikamdatabasecore_src PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+
 generate_export_header(digikamdatabase
                        BASE_NAME digikam_database
                        EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/../../app/utils/digikam_database_export.h"
@@ -260,12 +266,6 @@ target_link_libraries(digikamdatabase
 if(ENABLE_DBUS)
     target_link_libraries(digikamdatabase PRIVATE Qt5::DBus)
 endif()
-
-set_target_properties(digikamdatabase         PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
-set_target_properties(digikamdatabase         PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
-set_target_properties(digikamdatabase_src     PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
-set_target_properties(digikamdatabasemain_src PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(digikamdatabasecore_src PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
 
 # --- Install Rules ---
 

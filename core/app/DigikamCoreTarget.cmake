@@ -127,7 +127,7 @@ add_library(digikamcore
 )
 
 set_target_properties(digikamcore PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
-set_target_properties(digikamcore PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(digikamcore PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS)
 
 add_dependencies(digikamcore digikam-gitversion)
 
