@@ -131,8 +131,7 @@ add_library(digikamgui_src
 
 ######################### digiKam GUI objects ############################
 
-set_target_properties(digikamdatabasemain_src           PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(digikamfacesenginedatabase_src    PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(digikamfacesenginedatabase_src    PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
 set_target_properties(digikamgui_src                    PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
 set_target_properties(digikamdeletedialog_src           PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
 set_target_properties(digikamtemplate_src               PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
@@ -161,6 +160,7 @@ set_target_properties(advancedrename_src                PROPERTIES COMPILE_FLAGS
 
 set(DIGIKAM_OBJECTS
             $<TARGET_OBJECTS:digikamdatabasemain_src>
+
             $<TARGET_OBJECTS:digikamfacesenginedatabase_src>
             $<TARGET_OBJECTS:digikamgui_src>
             $<TARGET_OBJECTS:digikamdeletedialog_src>

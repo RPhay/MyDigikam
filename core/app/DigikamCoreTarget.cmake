@@ -7,7 +7,7 @@
 
 # digiKam CORE shared library
 
-set_target_properties(digikamdatabasecore_src       PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(digikamfacesengine_src        PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
 set_target_properties(dimg_src                      PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
 set_target_properties(dmetadata_src                 PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
 set_target_properties(jpegutils_src                 PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
@@ -19,7 +19,6 @@ set_target_properties(versionmanager_src            PROPERTIES COMPILE_FLAGS -Dd
 set_target_properties(kmemoryinfo_src               PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
 set_target_properties(libraw_src                    PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
 set_target_properties(rawengine_srcs                PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(digikamfacesengine_src        PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
 set_target_properties(dpluginsinterface_src         PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
 set_target_properties(libwso2_src                   PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
 set_target_properties(libmd5_src                    PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
@@ -39,6 +38,8 @@ set_target_properties(timeadjust_src                PROPERTIES COMPILE_FLAGS -Dd
 
 set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:digikamdatabasecore_src>
+
+            $<TARGET_OBJECTS:digikamfacesengine_src>
             $<TARGET_OBJECTS:dimg_src>
             $<TARGET_OBJECTS:dmetadata_src>
             $<TARGET_OBJECTS:jpegutils_src>
@@ -50,7 +51,6 @@ set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:kmemoryinfo_src>
             $<TARGET_OBJECTS:libraw_src>
             $<TARGET_OBJECTS:rawengine_srcs>
-            $<TARGET_OBJECTS:digikamfacesengine_src>
             $<TARGET_OBJECTS:dpluginsinterface_src>
             $<TARGET_OBJECTS:libwso2_src>
 
