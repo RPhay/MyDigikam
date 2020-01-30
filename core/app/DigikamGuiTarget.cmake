@@ -131,7 +131,6 @@ add_library(digikamgui_src
 
 ######################### digiKam GUI objects ############################
 
-set_target_properties(digikamfacesenginedatabase_src    PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
 set_target_properties(digikamgui_src                    PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
 set_target_properties(digikamdeletedialog_src           PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
 set_target_properties(digikamtemplate_src               PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)

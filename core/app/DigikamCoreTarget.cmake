@@ -7,7 +7,6 @@
 
 # digiKam CORE shared library
 
-set_target_properties(digikamfacesengine_src        PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
 set_target_properties(dimg_src                      PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
 set_target_properties(dmetadata_src                 PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
 set_target_properties(jpegutils_src                 PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
