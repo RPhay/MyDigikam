@@ -262,8 +262,7 @@ if(ENABLE_DBUS)
 endif()
 
 set_target_properties(digikamdatabase PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
-
-target_compile_definitions(digikamdatabase PRIVATE digikamdatabase_EXPORTS)
+set_target_properties(digikamdatabase PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
 
 # --- Install Rules ---
 
