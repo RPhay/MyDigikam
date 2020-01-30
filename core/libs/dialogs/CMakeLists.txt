@@ -53,6 +53,3 @@ endif()
 add_library(digikamdialogscore_src OBJECT ${libdialogs_SRCS})
 
 add_library(digikamdeletedialog_src OBJECT ${libdeletedialog_SRCS})
-
-# NOT USED???
-#add_library(digikamdialogs_src OBJECT ${libdialogs_SRCS} ${libdeletedialog_SRCS})
