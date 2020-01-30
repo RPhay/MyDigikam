@@ -613,4 +613,5 @@ BUGFIXES:
 597 ==> 416756 - When searching for duplicates, only one photo is shown if the other one is in a group (and not the first of the group).
 598 ==> 416759 - In duplicate tab, it should be possible to have reference image always at first/last.
 599 ==> 416802 - Add confirmation dialog for "Delete all" action.
-600 ==> 
+600 ==> 416755 - Tag with "." not processed correctly, likely to result in data loss.
+601 ==> 
