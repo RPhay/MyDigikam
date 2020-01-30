@@ -261,8 +261,9 @@ if(ENABLE_DBUS)
     target_link_libraries(digikamdatabase PRIVATE Qt5::DBus)
 endif()
 
-set_target_properties(digikamdatabase PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
-set_target_properties(digikamdatabase PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
+set_target_properties(digikamdatabase     PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
+set_target_properties(digikamdatabase_src PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
+set_target_properties(digikamdatabase     PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
 
 # --- Install Rules ---
 
