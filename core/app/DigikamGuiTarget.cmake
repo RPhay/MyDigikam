@@ -181,11 +181,14 @@ add_library(digikamgui
 
 set_target_properties(digikamgui PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
 
+add_dependencies(digikamgui digikamcore digikamdatabase)
+
 if(WIN32)
     set_target_properties(digikamgui PROPERTIES COMPILE_FLAGS -DJPEG_STATIC)
 endif()
 
 target_link_libraries(digikamgui
+
                       PRIVATE
 
                       digikamcore
