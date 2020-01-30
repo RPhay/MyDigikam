@@ -14,6 +14,10 @@ set(ECM_MIN_VERSION     "1.5.0")
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
 ############## ECM setup #################################################################################################################
 
 find_package(ECM ${ECM_MIN_VERSION} CONFIG REQUIRED)

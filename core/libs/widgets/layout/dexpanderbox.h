@@ -46,11 +46,9 @@ namespace Digikam
 
 /**
  * A widget to show an horizontal or vertical line separator
- **/
+ */
 class DIGIKAM_EXPORT DLineWidget : public QFrame
 {
-    Q_OBJECT
-
 public:
 
     explicit DLineWidget(Qt::Orientation orientation, QWidget* const parent=nullptr);
@@ -59,7 +57,8 @@ public:
 
 // -------------------------------------------------------------------------
 
-/** A label to show text adjusted to widget size
+/**
+ * A label to show text adjusted to widget size
  */
 class DIGIKAM_EXPORT DAdjustableLabel : public QLabel
 {
@@ -114,6 +113,7 @@ Q_SIGNALS:
 
     /// Emitted when activated by left mouse click
     void leftClicked();
+
     /// Emitted when activated, by mouse or key press
     void activated();
 

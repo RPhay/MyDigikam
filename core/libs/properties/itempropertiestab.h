@@ -41,8 +41,6 @@ namespace Digikam
 
 class DIGIKAM_EXPORT ItemPropertiesTab : public DExpanderBox
 {
-    Q_OBJECT
-
 public:
 
     explicit ItemPropertiesTab(QWidget* const parent);
