@@ -157,6 +157,8 @@ add_library(digikamwidgetscore_src OBJECT
     ${liblayouttools_SRCS}
 )
 
+set_target_properties(digikamwidgetscore_src PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+
 #############################################################"
 
 set(libimagehistory_SRCS
@@ -168,3 +170,5 @@ set(libimagehistory_SRCS
 )
 
 add_library(imagehistorywidgets_src OBJECT ${libimagehistory_SRCS})
+
+set_target_properties(imagehistorywidgets_src PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")

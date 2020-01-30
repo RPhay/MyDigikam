@@ -129,17 +129,16 @@ add_library(digikamgui_src
             ${libdigikamgui_SRCS}
 )
 
+set_target_properties(digikamgui_src                    PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+
 ######################### digiKam GUI objects ############################
 
 set_target_properties(digikamgui_src                    PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
-set_target_properties(digikamdeletedialog_src           PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 set_target_properties(digikamtemplate_src               PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
-set_target_properties(itempropertiesdigikam_src         PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 set_target_properties(setup_src                         PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 set_target_properties(lighttable_src                    PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 set_target_properties(maintenance_src                   PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 set_target_properties(searchwindow_src                  PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
-set_target_properties(digikammodels_src                 PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 set_target_properties(digikamalbum_src                  PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 set_target_properties(firstrun_src                      PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 set_target_properties(fuzzysearch_src                   PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
@@ -149,7 +148,6 @@ set_target_properties(digikamtags_src                   PROPERTIES COMPILE_FLAGS
 set_target_properties(digikamsettings_src               PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 set_target_properties(filters_src                       PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 set_target_properties(importuibackend_src               PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
-set_target_properties(imagehistorywidgets_src           PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 set_target_properties(iojobs_src                        PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 set_target_properties(dtrash_src                        PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 set_target_properties(facemanagement_src                PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
