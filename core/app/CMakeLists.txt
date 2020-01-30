@@ -49,6 +49,7 @@ endif()
 # Targets to build
 
 include(DigikamCoreTarget.cmake)
+include(DigikamDatabaseTarget.cmake)
 include(DigikamGuiTarget.cmake)
 include(DigikamTarget.cmake)
 
