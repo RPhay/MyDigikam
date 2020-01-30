@@ -131,6 +131,34 @@ add_library(digikamgui_src
 
 ######################### digiKam GUI objects ############################
 
+set_target_properties(digikamdatabasemain_src           PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(digikamfacesenginedatabase_src    PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(digikamgui_src                    PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(digikamdeletedialog_src           PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(digikamtemplate_src               PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(itempropertiesdigikam_src         PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(setup_src                         PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(lighttable_src                    PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(maintenance_src                   PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(searchwindow_src                  PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(digikammodels_src                 PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(digikamalbum_src                  PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(firstrun_src                      PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(fuzzysearch_src                   PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(imageeditorgui_src                PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(fileactionmanager_src             PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(digikamtags_src                   PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(digikamsettings_src               PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(filters_src                       PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(importuibackend_src               PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(imagehistorywidgets_src           PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(iojobs_src                        PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(dtrash_src                        PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(facemanagement_src                PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(queuemanager_src                  PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(importui_src                      PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(advancedrename_src                PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+
 set(DIGIKAM_OBJECTS
             $<TARGET_OBJECTS:digikamdatabasemain_src>
             $<TARGET_OBJECTS:digikamfacesenginedatabase_src>
@@ -162,11 +190,15 @@ set(DIGIKAM_OBJECTS
 )
 
 if(${Marble_FOUND})
+
     set(DIGIKAM_OBJECTS
         ${DIGIKAM_OBJECTS}
-            $<TARGET_OBJECTS:geomapwrapper_src>
-            $<TARGET_OBJECTS:gpssearch_src>
+        $<TARGET_OBJECTS:geomapwrapper_src>
+        $<TARGET_OBJECTS:gpssearch_src>
     )
+    set_target_properties(geomapwrapper_src   PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+    set_target_properties(gpssearch_src       PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+
 endif()
 
 #################### Digikam GUI shared Lib ################################
@@ -177,6 +209,7 @@ add_library(digikamgui
 )
 
 set_target_properties(digikamgui PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
+set_target_properties(digikamgui PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
 
 if(WIN32)
     set_target_properties(digikamgui PROPERTIES COMPILE_FLAGS -DJPEG_STATIC)

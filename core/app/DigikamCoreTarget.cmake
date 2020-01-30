@@ -77,34 +77,50 @@ set(DIGIKAMCORE_OBJECTS
 )
 
 if(ENABLE_MEDIAPLAYER)
+
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
         $<TARGET_OBJECTS:videotools_src>
     )
+
+    set_target_properties(videotools_src PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+
 endif()
 
 if(Marble_FOUND)
+
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
         $<TARGET_OBJECTS:geoiface_src>
         $<TARGET_OBJECTS:geomapwrapper_src>
     )
+
+    set_target_properties(geoiface_src      PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+    set_target_properties(geomapwrapper_src PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+
 endif()
 
 if(KF5FileMetaData_FOUND)
+
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
         $<TARGET_OBJECTS:baloowrap_src>
     )
+
+    set_target_properties(baloowrap_src PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+
 endif()
 
 if(KF5AkonadiContact_FOUND)
+
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
         $<TARGET_OBJECTS:akonadiiface_src>
     )
-endif()
 
+    set_target_properties(akonadiiface_src PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+
+endif()
 
 add_library(digikamcore
             SHARED
