@@ -40,7 +40,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT CoreDbWatch : public QObject
+class DIGIKAM_EXPORT CoreDbWatch : public QObject
 {
     Q_OBJECT
 

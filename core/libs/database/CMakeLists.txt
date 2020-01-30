@@ -10,8 +10,6 @@
 # Boost uses operator names (and, not, ...)
 string(REPLACE "-fno-operator-names" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
-# Necessary symbols from Class listed below are exported with DIGIKAM_EXPORT
-
 set(libdatabasecore_SRCS
     server/databaseserverstarter.cpp
     server/databaseservererror.cpp
@@ -52,8 +50,6 @@ set(libdatabaseutils_SRCS
     utils/scan/scancontroller_progress.cpp
     utils/scan/scancontroller_stop.cpp
 )
-
-# Necessary symbols from Class listed below are exported with DIGIKAM_DATABASE_EXPORT
 
 set(libdatabasemodels_SRCS
     models/itemfiltermodel.cpp
@@ -215,16 +211,8 @@ add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})
 
 add_library(digikamdatabase         SHARED $<TARGET_OBJECTS:digikamdatabase_src>)
 
-set_target_properties(digikamdatabase         PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
-set_target_properties(digikamdatabase         PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
-set_target_properties(digikamdatabase_src     PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
-set_target_properties(digikamdatabasemain_src PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
-set_target_properties(digikamdatabasecore_src PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(digikamdatabase PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
 
-generate_export_header(digikamdatabase
-                       BASE_NAME digikam_database
-                       EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/../../app/utils/digikam_database_export.h"
-)
 
 target_include_directories(digikamdatabase
                            PUBLIC

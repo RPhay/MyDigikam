@@ -42,7 +42,7 @@ namespace Digikam
 class ItemHistoryGraphData;
 class DImageHistory;
 
-class DIGIKAM_DATABASE_EXPORT ItemHistoryGraph
+class DIGIKAM_EXPORT ItemHistoryGraph
 {
 public:
 
@@ -191,7 +191,7 @@ private:
     QSharedDataPointer<ItemHistoryGraphData> d;
 };
 
-QDebug DIGIKAM_DATABASE_EXPORT operator<<(QDebug dbg, const ItemHistoryGraph& g);
+QDebug DIGIKAM_EXPORT operator<<(QDebug dbg, const ItemHistoryGraph& g);
 
 } // namespace Digikam
 

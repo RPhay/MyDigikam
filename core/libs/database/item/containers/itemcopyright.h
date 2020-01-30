@@ -44,7 +44,7 @@ class CopyrightInfo;
 class ItemCopyrightCache;
 class Template;
 
-class DIGIKAM_DATABASE_EXPORT ItemCopyright
+class DIGIKAM_EXPORT ItemCopyright
 {
 public:
 

@@ -134,7 +134,7 @@ inline SearchXml::Relation standardFieldRelation()
 
 // ---------------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT SearchXmlReader : public QXmlStreamReader
+class DIGIKAM_EXPORT SearchXmlReader : public QXmlStreamReader
 {
 public:
 
@@ -219,7 +219,7 @@ protected:
 
 // ---------------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT SearchXmlWriter : public QXmlStreamWriter
+class DIGIKAM_EXPORT SearchXmlWriter : public QXmlStreamWriter
 {
 public:
 
@@ -321,25 +321,25 @@ namespace KeywordSearch
  *  Splits at whitespace, but recognizes quotation marks
  *  to group words in a single keyword.
  */
-DIGIKAM_DATABASE_EXPORT QStringList split(const QString& string);
+DIGIKAM_EXPORT QStringList split(const QString& string);
 
 /** Reverse of split().
  *  From a list of keywords, gives a single string for a text entry field.
  */
-DIGIKAM_DATABASE_EXPORT QString merge(const QStringList& keywordList);
+DIGIKAM_EXPORT QString merge(const QStringList& keywordList);
 
 /** Assuming previousContent is a string
  *  as accepted by split and returned by merge,
  *  adds newEntry as another (single) keyword to the string,
  *  returning the combined result.
  */
-DIGIKAM_DATABASE_EXPORT QString merge(const QString& previousContent, const QString& newEntry);
+DIGIKAM_EXPORT QString merge(const QString& previousContent, const QString& newEntry);
 
 } // namespace KeywordSearch
 
 // ---------------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT KeywordSearchReader : public SearchXmlReader
+class DIGIKAM_EXPORT KeywordSearchReader : public SearchXmlReader
 {
 public:
 
@@ -360,7 +360,7 @@ private:
 
 // ---------------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT KeywordSearchWriter : public SearchXmlWriter
+class DIGIKAM_EXPORT KeywordSearchWriter : public SearchXmlWriter
 {
 public:
 
@@ -371,7 +371,7 @@ public:
 
 // ---------------------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT SearchXmlCachingReader : public SearchXmlReader
+class DIGIKAM_EXPORT SearchXmlCachingReader : public SearchXmlReader
 {
 public:
 

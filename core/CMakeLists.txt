@@ -722,6 +722,12 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # (CImg.h) and PGF codec
     kde_enable_exceptions()
 
+    # To force to declare as exported classes in all sub components.
+    # This will only done near to library declaration in Cmake files.
+    if(WIN32)
+        add_definitions(-Ddigikamcore_EXPORTS)
+    endif()
+
     # ==========================================================================
     # Includes rules
 

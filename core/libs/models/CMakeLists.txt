@@ -35,7 +35,5 @@ endif()
 
 #for digikam core lib
 add_library(digikamgenericmodels_src OBJECT ${libgenericmodels_SRCS})
-set_target_properties(digikamgenericmodels_src PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 
 add_library(digikammodels_src OBJECT ${libalbummodels_SRCS} ${libgenericmodels_SRCS})
-set_target_properties(digikammodels_src PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")

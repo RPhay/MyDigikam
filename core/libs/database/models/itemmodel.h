@@ -48,7 +48,7 @@ namespace DatabaseFields
 class Set;
 }
 
-class DIGIKAM_DATABASE_EXPORT ItemModel : public QAbstractListModel,
+class DIGIKAM_EXPORT ItemModel : public QAbstractListModel,
                                           public DragDropModelImplementation
 {
     Q_OBJECT

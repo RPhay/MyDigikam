@@ -37,7 +37,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT CollectionLocation
+class DIGIKAM_EXPORT CollectionLocation
 {
 
 public:

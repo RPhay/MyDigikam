@@ -46,7 +46,7 @@ namespace DatabaseFields
     class Set;
 }
 
-class DIGIKAM_DATABASE_EXPORT ItemSortSettings
+class DIGIKAM_EXPORT ItemSortSettings
 {
 public:
 

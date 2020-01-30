@@ -54,7 +54,5 @@ endif()
 
 # used to build digikamcore
 add_library(itemproperties_src OBJECT ${libitemproperties_SRCS})
-set_target_properties(itemproperties_src PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 
 add_library(itempropertiesdigikam_src OBJECT ${libitemversionssidebar_SRCS} ${libitempropertiesdigikam_SRCS})
-set_target_properties(itempropertiesdigikam_src PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")

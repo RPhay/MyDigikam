@@ -51,10 +51,8 @@ endif()
 
 #used by digikamcore
 add_library(digikamdialogscore_src OBJECT ${libdialogs_SRCS})
-set_target_properties(digikamdialogscore_src PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 
 add_library(digikamdeletedialog_src OBJECT ${libdeletedialog_SRCS})
-set_target_properties(digikamdeletedialog_src PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 
-add_library(digikamdialogs_src OBJECT ${libdialogs_SRCS} ${libdeletedialog_SRCS})
-set_target_properties(digikamdialogs_src PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+# NOT USED???
+#add_library(digikamdialogs_src OBJECT ${libdialogs_SRCS} ${libdeletedialog_SRCS})

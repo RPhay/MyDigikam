@@ -37,7 +37,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT Identity
+class DIGIKAM_EXPORT Identity
 {
 
 public:

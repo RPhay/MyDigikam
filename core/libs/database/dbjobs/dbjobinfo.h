@@ -36,7 +36,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT DBJobInfo
+class DIGIKAM_EXPORT DBJobInfo
 {
 public:
 
@@ -62,7 +62,7 @@ private:
 
 // ---------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT AlbumsDBJobInfo : public DBJobInfo
+class DIGIKAM_EXPORT AlbumsDBJobInfo : public DBJobInfo
 {
 public:
 
@@ -82,7 +82,7 @@ private:
 
 // ---------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT TagsDBJobInfo : public DBJobInfo
+class DIGIKAM_EXPORT TagsDBJobInfo : public DBJobInfo
 {
 public:
 
@@ -106,7 +106,7 @@ private:
 
 // ---------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT GPSDBJobInfo : public DBJobInfo
+class DIGIKAM_EXPORT GPSDBJobInfo : public DBJobInfo
 {
 public:
 
@@ -138,7 +138,7 @@ private:
 
 // ---------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT SearchesDBJobInfo : public DBJobInfo
+class DIGIKAM_EXPORT SearchesDBJobInfo : public DBJobInfo
 {
 public:
 
@@ -191,7 +191,7 @@ public:
 
 // ---------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT DatesDBJobInfo : public DBJobInfo
+class DIGIKAM_EXPORT DatesDBJobInfo : public DBJobInfo
 {
 public:
 

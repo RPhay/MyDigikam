@@ -53,7 +53,7 @@ public:
 
 // --------------------------------------------------------------------
 
-class DIGIKAM_DATABASE_EXPORT ItemQueryPostHooks
+class DIGIKAM_EXPORT ItemQueryPostHooks
 {
 public:
 

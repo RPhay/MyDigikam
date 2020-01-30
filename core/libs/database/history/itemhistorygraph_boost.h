@@ -127,7 +127,7 @@ enum MeaningOfDirection
  * The graph base class template
  */
 template <class VertexProperties, class EdgeProperties>
-class DIGIKAM_DATABASE_EXPORT Graph
+class DIGIKAM_EXPORT Graph
 {
 public:
 

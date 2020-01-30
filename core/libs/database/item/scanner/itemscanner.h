@@ -40,7 +40,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT ItemScanner
+class DIGIKAM_EXPORT ItemScanner
 {
 
 public:

@@ -42,7 +42,7 @@ namespace Digikam
 class ItemInfo;
 class ItemTagPairPriv;
 
-class DIGIKAM_DATABASE_EXPORT ItemTagPair
+class DIGIKAM_EXPORT ItemTagPair
 {
 public:
 

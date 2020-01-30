@@ -33,7 +33,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_DATABASE_EXPORT CoreDbPrivilegesChecker
+class DIGIKAM_EXPORT CoreDbPrivilegesChecker
 {
 
 public:
