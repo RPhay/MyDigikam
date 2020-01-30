@@ -35,7 +35,9 @@
 
 #include "tparser.h"
 
-/* void TokenBegin(char *t); */
+/*
+void TokenBegin(char *t);
+*/
 
 int  panoScriptDataReset(void);
 int  panoScriptParserInit(const char* const filename);
@@ -44,7 +46,7 @@ void panoScriptParserClose(void);
 int  panoScriptScannerGetNextChar(char* b, int maxBuffer);
 void panoScriptScannerTokenBegin(char* t);
 
-#ifndef Q_CC_MSVC
+#ifndef _MSC_VER   // krazy:exclude=cpp
 void panoScriptParserError(char const* errorstring, ...) __attribute__ ((format (printf, 1, 2)));
 #else
 void panoScriptParserError(char const* errorstring, ...);
