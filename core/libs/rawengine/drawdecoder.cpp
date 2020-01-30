@@ -288,9 +288,11 @@ bool DRawDecoder::loadFullImage(QImage& image,
     uchar tmp8[2];
 
     // Set RGB color components.
+
     for (int i = 0 ; i < (width * height) ; ++i)
     {
         // Swap Red and Blue
+
         tmp8[0] = sptr[2];
         tmp8[1] = sptr[0];
         sptr[0] = tmp8[0];
@@ -579,9 +581,13 @@ QString DRawDecoder::librawVersion()
 int DRawDecoder::librawUseGomp()
 {
 #ifdef LIBRAW_USE_OPENMP
+
     return true;
+
 #else
+
     return false;
+
 #endif
 }
 

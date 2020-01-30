@@ -64,8 +64,6 @@ public:
 
 class DIGIKAM_EXPORT BdEngineBackend : public QObject
 {
-    Q_OBJECT
-
 public:
 
     enum QueryStateEnum

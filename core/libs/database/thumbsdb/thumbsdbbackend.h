@@ -37,7 +37,6 @@ class ThumbsDbSchemaUpdater;
 
 class DIGIKAM_EXPORT ThumbsDbBackend : public BdEngineBackend
 {
-    Q_OBJECT
 
 public:
 

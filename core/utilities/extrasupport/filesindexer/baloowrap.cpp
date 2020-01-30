@@ -44,9 +44,9 @@ class Q_DECL_HIDDEN BalooWrap::Private
 public:
 
     explicit Private()
+      : syncFromDigikamToBaloo(false),
+        syncFromBalooToDigikam(false)
     {
-        syncFromBalooToDigikam = false;
-        syncFromDigikamToBaloo = false;
     }
 
     bool syncFromDigikamToBaloo;
@@ -121,6 +121,7 @@ void BalooWrap::setAllData(const QUrl& url,
     {
         // digiKam store rating as value form 0 to 5
         // while baloo store it as value from 0 to 10
+
         md.setRating(rating * 2);
     }
 }
@@ -133,11 +134,13 @@ BalooInfo BalooWrap::getSemanticInfo(const QUrl& url) const
     }
 
     KFileMetaData::UserMetaData md(url.toLocalFile());
-
-    //Baloo::File file = job->file();
+/*
+    Baloo::File file = job->file();
+*/
     BalooInfo bInfo;
 
     // Baloo have rating from 0 to 10, while digiKam have only from 0 to 5
+
     bInfo.rating  = md.rating() / 2;
     bInfo.comment = md.userComment();
 

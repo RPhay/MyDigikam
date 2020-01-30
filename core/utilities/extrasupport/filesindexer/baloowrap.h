@@ -46,8 +46,8 @@ class BalooInfo
 public:
 
     BalooInfo()
+      : rating(-1)
     {
-        rating = -1;
     }
 
     QStringList tags;
@@ -67,8 +67,6 @@ public:
  */
 class DIGIKAM_EXPORT BalooWrap : public QObject
 {
-    Q_OBJECT
-
 public:
 
     explicit BalooWrap();

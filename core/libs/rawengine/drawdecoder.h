@@ -48,8 +48,6 @@ namespace Digikam
 
 class DIGIKAM_EXPORT DRawDecoder : public QObject
 {
-    Q_OBJECT
-
 public:
 
     /**

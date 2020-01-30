@@ -151,7 +151,7 @@ int DCategorizedSortFilterProxyModel::compareCategories(const QModelIndex &left,
         {
             if (lstr < rstr)
             {
-                return -1;
+                return (-1);
             }
 
             if (lstr > rstr)

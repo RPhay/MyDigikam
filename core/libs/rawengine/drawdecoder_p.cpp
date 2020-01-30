@@ -78,9 +78,11 @@ int DRawDecoder::Private::progressCallback(enum LibRaw_progress p, int iteration
                                    << iteration << " of " << expected;
 
     // post a little change in progress indicator to show raw processor activity.
+
     setProgress(progressValue()+0.01);
 
     // Clean processing termination by user...
+
     if (m_parent->checkToCancelWaitingData())
     {
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw process terminaison invoked...";
@@ -91,6 +93,7 @@ int DRawDecoder::Private::progressCallback(enum LibRaw_progress p, int iteration
     }
 
     // Return 0 to continue processing...
+
     return 0;
 }
 
@@ -176,7 +179,9 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     m_parent->m_cancel = false;
 
     LibRaw* const raw = new LibRaw;
+
     // Set progress call back function.
+
     raw->set_progress_handler(callbackForLibRaw, this);
 
     QByteArray deadpixelPath = QFile::encodeName(m_parent->m_decoderSettings.deadPixelMap);
@@ -186,63 +191,74 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     if (!m_parent->m_decoderSettings.autoBrightness)
     {
         // Use a fixed white level, ignoring the image histogram.
+
         raw->imgdata.params.no_auto_bright = 1;
     }
 
     if (m_parent->m_decoderSettings.sixteenBitsImage)
     {
         // (-4) 16bit ppm output
+
         raw->imgdata.params.output_bps = 16;
     }
 
     if (m_parent->m_decoderSettings.halfSizeColorImage)
     {
         // (-h) Half-size color image (3x faster than -q).
+
         raw->imgdata.params.half_size = 1;
     }
 
     if (m_parent->m_decoderSettings.RGBInterpolate4Colors)
     {
         // (-f) Interpolate RGB as four colors.
+
         raw->imgdata.params.four_color_rgb = 1;
     }
 
     if (m_parent->m_decoderSettings.DontStretchPixels)
     {
         // (-j) Do not stretch the image to its correct aspect ratio.
+
         raw->imgdata.params.use_fuji_rotate = 1;
     }
 
     // (-H) Unclip highlight color.
+
     raw->imgdata.params.highlight = m_parent->m_decoderSettings.unclipColors;
 
     if (m_parent->m_decoderSettings.brightness != 1.0)
     {
         // (-b) Set Brightness value.
+
         raw->imgdata.params.bright = m_parent->m_decoderSettings.brightness;
     }
 
     if (m_parent->m_decoderSettings.enableBlackPoint)
     {
         // (-k) Set Black Point value.
+
         raw->imgdata.params.user_black = m_parent->m_decoderSettings.blackPoint;
     }
 
     if (m_parent->m_decoderSettings.enableWhitePoint)
     {
         // (-S) Set White Point value (saturation).
+
         raw->imgdata.params.user_sat = m_parent->m_decoderSettings.whitePoint;
     }
 
     if (m_parent->m_decoderSettings.medianFilterPasses > 0)
     {
         // (-m) After interpolation, clean up color artifacts by repeatedly applying a 3x3 median filter to the R-G and B-G channels.
+
         raw->imgdata.params.med_passes = m_parent->m_decoderSettings.medianFilterPasses;
     }
 
     if (!m_parent->m_decoderSettings.deadPixelMap.isEmpty())
     {
         // (-P) Read the dead pixel list from this file.
+
         raw->imgdata.params.bad_pixels = deadpixelPath.data();
     }
 
@@ -256,6 +272,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         case DRawDecoderSettings::CAMERA:
         {
             // (-w) Use camera white balance, if possible.
+
             raw->imgdata.params.use_camera_wb = 1;
             break;
         }
@@ -263,6 +280,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         case DRawDecoderSettings::AUTO:
         {
             // (-a) Use automatic white balance.
+
             raw->imgdata.params.use_auto_wb = 1;
             break;
         }
@@ -344,6 +362,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
             }
 
             // (-r) set Raw Color Balance Multipliers.
+
             raw->imgdata.params.user_mul[0] = RGB[0];
             raw->imgdata.params.user_mul[1] = RGB[1];
             raw->imgdata.params.user_mul[2] = RGB[2];
@@ -354,6 +373,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         case DRawDecoderSettings::AERA:
         {
             // (-A) Calculate the white balance by averaging a rectangular area from image.
+
             raw->imgdata.params.greybox[0] = m_parent->m_decoderSettings.whiteBalanceArea.left();
             raw->imgdata.params.greybox[1] = m_parent->m_decoderSettings.whiteBalanceArea.top();
             raw->imgdata.params.greybox[2] = m_parent->m_decoderSettings.whiteBalanceArea.width();
@@ -363,6 +383,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     }
 
     // (-q) Use an interpolation method.
+
     raw->imgdata.params.user_qual = m_parent->m_decoderSettings.RAWQuality;
 
     switch (m_parent->m_decoderSettings.NRType)
@@ -370,6 +391,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         case DRawDecoderSettings::WAVELETSNR:
         {
             // (-n) Use wavelets to erase noise while preserving real detail.
+
             raw->imgdata.params.threshold    = m_parent->m_decoderSettings.NRThreshold;
             break;
         }
@@ -377,6 +399,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         case DRawDecoderSettings::FBDDNR:
         {
             // (100 - 1000) => (1 - 10) conversion
+
             raw->imgdata.params.fbdd_noiserd = lround(m_parent->m_decoderSettings.NRThreshold / 100.0);
             break;
         }
@@ -390,6 +413,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     }
 
     // Exposure Correction before interpolation.
+
     raw->imgdata.params.exp_correc = m_parent->m_decoderSettings.expoCorrection;
     raw->imgdata.params.exp_shift  = m_parent->m_decoderSettings.expoCorrectionShift;
     raw->imgdata.params.exp_preser = m_parent->m_decoderSettings.expoCorrectionHighlight;
@@ -399,6 +423,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         case DRawDecoderSettings::EMBEDDED:
         {
             // (-p embed) Use input profile from RAW file to define the camera's raw colorspace.
+
             raw->imgdata.params.camera_profile = (char*)"embed";
             break;
         }
@@ -408,6 +433,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
             if (!m_parent->m_decoderSettings.inputProfile.isEmpty())
             {
                 // (-p) Use input profile file to define the camera's raw colorspace.
+
                 raw->imgdata.params.camera_profile = cameraProfile.data();
             }
 
@@ -417,6 +443,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         default:
         {
             // No input profile
+
             break;
         }
     }
@@ -428,6 +455,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
             if (!m_parent->m_decoderSettings.outputProfile.isEmpty())
             {
                 // (-o) Use ICC profile file to define the output colorspace.
+
                 raw->imgdata.params.output_profile = outputProfile.data();
             }
 
@@ -437,6 +465,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
         default:
         {
             // (-o) Define the output colorspace.
+
             raw->imgdata.params.output_color = m_parent->m_decoderSettings.outputColorSpace;
             break;
         }
@@ -499,13 +528,17 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     if (m_parent->m_decoderSettings.fixColorsHighlights)
     {
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "Applying LibRaw highlights adjustments";
+
         // 1.0 is fallback to default value
+
         raw->imgdata.params.adjust_maximum_thr = 1.0;
     }
     else
     {
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "Disabling LibRaw highlights adjustments";
+
         // 0.0 disables this feature
+
         raw->imgdata.params.adjust_maximum_thr = 0.0;
     }
 
@@ -544,6 +577,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     if (m_parent->m_cancel)
     {
         // Clear memory allocation. Introduced with LibRaw 0.11.0
+
         raw->dcraw_clear_mem(img);
         raw->recycle();
         delete raw;
@@ -564,6 +598,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     else
     {
         // img->colors == 1 (Grayscale) : convert to RGB
+
         imageData = QByteArray();
 
         for (int i = 0 ; i < (int)img->data_size ; ++i)
@@ -576,6 +611,7 @@ bool DRawDecoder::Private::loadFromLibraw(const QString& filePath, QByteArray& i
     }
 
     // Clear memory allocation. Introduced with LibRaw 0.11.0
+
     raw->dcraw_clear_mem(img);
     raw->recycle();
     delete raw;
@@ -628,6 +664,7 @@ bool DRawDecoder::Private::loadEmbeddedPreview(QByteArray& imgData, LibRaw* cons
     }
 
     // Clear memory allocation. Introduced with LibRaw 0.11.0
+
     raw->dcraw_clear_mem(thumb);
     raw->recycle();
     delete raw;
