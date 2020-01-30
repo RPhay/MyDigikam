@@ -208,7 +208,7 @@ add_library(digikamgui
 )
 
 set_target_properties(digikamgui PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
-set_target_properties(digikamgui PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS)
+set_target_properties(digikamgui PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 
 if(WIN32)
     set_target_properties(digikamgui PROPERTIES COMPILE_FLAGS -DJPEG_STATIC)
