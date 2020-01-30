@@ -173,8 +173,8 @@ add_library(digikamfacesenginedatabase_src
 
 add_library(digikamfacesenginedatabase STATIC $<TARGET_OBJECTS:digikamfacesenginedatabase_src>)
 
-set_target_properties(digikamfacesengine_src          PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
-set_target_properties(digikamfacesengine              PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
+set_target_properties(digikamfacesengine_src          PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(digikamfacesengine              PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 
-set_target_properties(digikamfacesenginedatabase_src  PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
-set_target_properties(digikamfacesenginedatabase      PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
+set_target_properties(digikamfacesenginedatabase_src  PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(digikamfacesenginedatabase      PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")

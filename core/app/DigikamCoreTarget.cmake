@@ -7,32 +7,32 @@
 
 # digiKam CORE shared library
 
-set_target_properties(dimg_src                      PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(dmetadata_src                 PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(jpegutils_src                 PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(progressmanager_src           PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(threadimageio_src             PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(pgfutils_src                  PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(dthread_src                   PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(versionmanager_src            PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(kmemoryinfo_src               PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(libraw_src                    PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(rawengine_srcs                PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(dpluginsinterface_src         PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(libwso2_src                   PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(libmd5_src                    PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(libxmp_src                    PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(libdng_src                    PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(dngwriter_src                 PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(digikamwidgetscore_src        PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(digikamdialogscore_src        PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(itemproperties_src            PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(digikamgenericmodels_src      PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(notificationmanager_src       PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(slideshow_src                 PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(imageeditor_src               PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(digikamlibtransitionmngr_src  PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-set_target_properties(timeadjust_src                PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(dimg_src                      PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(dmetadata_src                 PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(jpegutils_src                 PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(progressmanager_src           PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(threadimageio_src             PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(pgfutils_src                  PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(dthread_src                   PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(versionmanager_src            PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(kmemoryinfo_src               PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(libraw_src                    PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(rawengine_srcs                PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(dpluginsinterface_src         PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(libwso2_src                   PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(libmd5_src                    PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(libxmp_src                    PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(libdng_src                    PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(dngwriter_src                 PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(digikamwidgetscore_src        PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(digikamdialogscore_src        PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(itemproperties_src            PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(digikamgenericmodels_src      PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(notificationmanager_src       PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(slideshow_src                 PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(imageeditor_src               PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(digikamlibtransitionmngr_src  PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+set_target_properties(timeadjust_src                PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 
 
 set(DIGIKAMCORE_OBJECTS
@@ -82,7 +82,7 @@ if(ENABLE_MEDIAPLAYER)
         $<TARGET_OBJECTS:videotools_src>
     )
 
-    set_target_properties(videotools_src PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+    set_target_properties(videotools_src PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 
 endif()
 
@@ -94,8 +94,8 @@ if(Marble_FOUND)
         $<TARGET_OBJECTS:geomapwrapper_src>
     )
 
-    set_target_properties(geoiface_src      PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
-    set_target_properties(geomapwrapper_src PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+    set_target_properties(geoiface_src      PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
+    set_target_properties(geomapwrapper_src PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 
 endif()
 
@@ -106,7 +106,7 @@ if(KF5FileMetaData_FOUND)
         $<TARGET_OBJECTS:baloowrap_src>
     )
 
-    set_target_properties(baloowrap_src PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+    set_target_properties(baloowrap_src PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 
 endif()
 
@@ -117,7 +117,7 @@ if(KF5AkonadiContact_FOUND)
         $<TARGET_OBJECTS:akonadiiface_src>
     )
 
-    set_target_properties(akonadiiface_src PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+    set_target_properties(akonadiiface_src PROPERTIES COMPILE_FLAGS "-Ddigikamcore_EXPORTS -Ddigikamdatabase_EXPORTS")
 
 endif()
 
