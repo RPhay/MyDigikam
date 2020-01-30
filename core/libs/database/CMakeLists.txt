@@ -264,8 +264,8 @@ endif()
 set_target_properties(digikamdatabase         PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
 set_target_properties(digikamdatabase         PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
 set_target_properties(digikamdatabase_src     PROPERTIES COMPILE_FLAGS -Ddigikamdatabase_EXPORTS)
-set_target_properties(digikamdatabasemain_src PROPERTIES COMPILE_FLAGS -Ddigikam_EXPORTS)
-set_target_properties(digikamdatabasecore_src PROPERTIES COMPILE_FLAGS -Ddigikam_EXPORTS)
+set_target_properties(digikamdatabasemain_src PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
+set_target_properties(digikamdatabasecore_src PROPERTIES COMPILE_FLAGS -Ddigikamcore_EXPORTS)
 
 # --- Install Rules ---
 
