@@ -47,7 +47,7 @@ namespace Digikam
  *        as names, what types of data expects and extra
  *        xml tags
  */
-class NamespaceEntry
+class DIGIKAM_EXPORT NamespaceEntry
 {
 
 public:
