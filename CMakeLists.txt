@@ -31,7 +31,7 @@ endif()
 if(POLICY CMP0071)
     # Automoc/autouic files handling introduced in CMake version 3.10
     # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0071.html
-    cmake_policy(SET CMP0071 NEW)
+    cmake_policy(SET CMP0071 OLD)
     message(STATUS "CMake policy CMP0071 enabled")
 endif()
 
