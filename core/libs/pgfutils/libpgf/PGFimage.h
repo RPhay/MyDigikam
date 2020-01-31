@@ -31,6 +31,8 @@
 
 #include "PGFstream.h"
 
+#include "digikam_export.h"
+
 //////////////////////////////////////////////////////////////////////
 // prototypes
 class CDecoder;
@@ -50,7 +52,7 @@ class CWaveletTransform;
 ///		Write()
 /// @author C. Stamm, R. Spuler
 /// @brief PGF main class
-class CPGFImage {
+class DIGIKAM_EXPORT CPGFImage {
 public:
 	
 	//////////////////////////////////////////////////////////////////////

@@ -32,11 +32,13 @@
 #include "PGFtypes.h"
 #include <new>
 
+#include "digikam_export.h"
+
 /////////////////////////////////////////////////////////////////////
 /// Abstract stream base class.
 /// @author C. Stamm
 /// @brief Abstract stream base class
-class CPGFStream {
+class DIGIKAM_EXPORT CPGFStream {
 public:
 	//////////////////////////////////////////////////////////////////////
 	/// Standard constructor.
@@ -79,7 +81,7 @@ public:
 /// A PGF stream subclass for external storage files.
 /// @author C. Stamm
 /// @brief File stream class
-class CPGFFileStream : public CPGFStream {
+class DIGIKAM_EXPORT CPGFFileStream : public CPGFStream {
 protected:
 	HANDLE m_hFile;	///< file handle
 
@@ -103,7 +105,7 @@ public:
 /// A PGF stream subclass for internal memory.
 /// @author C. Stamm
 /// @brief Memory stream class
-class CPGFMemoryStream : public CPGFStream {
+class DIGIKAM_EXPORT CPGFMemoryStream : public CPGFStream {
 protected:
 	UINT8 *m_buffer, *m_pos;///< buffer start address and current buffer address
 	UINT8 *m_eos;			///< end of stream (first address beyond written area)
@@ -156,7 +158,7 @@ public:
 /// @author C. Stamm
 /// @brief Cached memory file stream class
 #ifdef _MFC_VER
-class CPGFMemFileStream : public CPGFStream {
+class DIGIKAM_EXPORT CPGFMemFileStream : public CPGFStream {
 protected:
 	CMemFile *m_memFile;	///< MFC memory file
 public:
@@ -175,7 +177,7 @@ public:
 /// @author C. Stamm
 /// @brief COM IStream class
 #if defined(WIN32) || defined(WINCE)
-class CPGFIStream : public CPGFStream {
+class DIGIKAM_EXPORT CPGFIStream : public CPGFStream {
 protected:
 	IStream *m_stream;	///< COM+ IStream
 public:
