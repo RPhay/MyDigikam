@@ -29,14 +29,18 @@
 #include <QString>
 #include <QMap>
 
+// Local includes
+
+#include "digikam_export.h"
+
 namespace Digikam
 {
 
-QMap<QString, QString> s_rawFileExtensionsdWithDesc();
+DIGIKAM_EXPORT QMap<QString, QString> s_rawFileExtensionsdWithDesc();
 
-QString                s_rawFileExtensions();
+DIGIKAM_EXPORT QString                s_rawFileExtensions();
 
-int                    s_rawFileExtensionsVersion();
+DIGIKAM_EXPORT int                    s_rawFileExtensionsVersion();
 
 } // namespace Digikam
 
