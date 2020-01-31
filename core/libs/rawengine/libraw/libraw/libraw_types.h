@@ -110,7 +110,7 @@ typedef unsigned long long UINT64;
 #endif
 #endif
 #else
-#define DllDef
+#define DllDef __attribute__((visibility("default")))
 #endif
 
   typedef struct
