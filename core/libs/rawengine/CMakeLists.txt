@@ -149,6 +149,10 @@ else()
     target_compile_options(libraw_src PRIVATE -w -fPIC -O4)
 endif()
 
+# For unit tests.
+add_library(libraw STATIC
+            $<TARGET_OBJECTS:libraw_src>
+)
 
 #################################
 

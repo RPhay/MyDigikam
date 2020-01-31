@@ -148,7 +148,7 @@ else()
 endif()
 
 # For unit tests.
-add_library(libdng STATIC 
+add_library(libdng STATIC
             $<TARGET_OBJECTS:libdng_src>
             $<TARGET_OBJECTS:libxmp_src>
             $<TARGET_OBJECTS:libmd5_src>

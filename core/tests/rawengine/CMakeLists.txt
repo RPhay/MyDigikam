@@ -62,11 +62,16 @@ macro(LIBRAW_BUILD_SAMPLES)
     target_link_libraries(${_target}
                           ${OPENMP_LDFLAGS}
                           ${JPEG_LIBRARIES}
+                          ${LCMS2_LIBRARIES}
                           ${CMAKE_THREAD_LIBS_INIT}
-                          digikamcore
+                          libraw
 
                           ${COMMON_TEST_LINK}
     )
+
+    if(Jasper_FOUND)
+        target_link_libraries(${_target} ${JASPER_LIBRARIES})
+    endif()
 
     if(WIN32)
         target_link_libraries(${_target} ws2_32)
