@@ -59,14 +59,11 @@ namespace Digikam
 // See http://techbase.kde.org/Development/AkonadiPorting/AddressBook
 
 AkonadiIface::AkonadiIface(QMenu* const parent)
-    : QObject(parent)
+    : QObject(parent),
+      m_parent(parent)
 {
-    m_parent  = parent;
-    m_ABCmenu = 0;
-
-    m_ABCmenu = new QMenu(m_parent);
-
-    QAction* const abcAction = m_ABCmenu->menuAction();
+    m_ABCmenu                   = new QMenu(m_parent);
+    QAction* const abcAction    = m_ABCmenu->menuAction();
     abcAction->setIcon(QIcon::fromTheme(QLatin1String("address-book-new")));
     abcAction->setText(i18n("Create Tag From Address Book"));
     m_parent->addMenu(m_ABCmenu);
@@ -89,7 +86,7 @@ void AkonadiIface::slotABCSearchResult(KJob* job)
 {
     if (job->error())
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Akonadi search was not successful";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Adress book search was not successful";
         return;
     }
 
@@ -98,7 +95,7 @@ void AkonadiIface::slotABCSearchResult(KJob* job)
 
     if (contacts.isEmpty())
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "No contacts in Akonadi";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "No contacts in address book";
         return;
     }
 
@@ -135,6 +132,7 @@ void AkonadiIface::slotABCSearchResult(KJob* job)
 void AkonadiIface::slotABCMenuTriggered(QAction* action)
 {
     QString name = action->iconText();
+
     emit signalContactTriggered(name);
 }
 
