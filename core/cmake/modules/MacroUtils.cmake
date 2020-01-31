@@ -189,6 +189,12 @@ if(POLICY CMP0063)
     cmake_policy(SET CMP0063 NEW)
 endif()
 
+if(POLICY CMP0068)
+    # MacOS RPATH settings policy introduced in CMake version 3.9
+    # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0068.html
+    cmake_policy(SET CMP0068 NEW)
+endif()
+
 if(POLICY CMP0071)
     # Automoc/autouic files handling introduced in CMake version 3.10
     # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0071.html
