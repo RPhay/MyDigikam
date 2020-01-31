@@ -35,11 +35,12 @@
 // Local includes
 
 #include "dexpanderbox.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class DTextLabelName : public DAdjustableLabel
+class DIGIKAM_EXPORT DTextLabelName : public DAdjustableLabel
 {
 
 public:
@@ -50,7 +51,7 @@ public:
 
 // -------------------------------------------------------------------
 
-class DTextLabelValue : public DAdjustableLabel
+class DIGIKAM_EXPORT DTextLabelValue : public DAdjustableLabel
 {
 
 public:
@@ -61,7 +62,7 @@ public:
 
 // -------------------------------------------------------------------
 
-class DTextBrowser : public QTextBrowser
+class DIGIKAM_EXPORT DTextBrowser : public QTextBrowser
 {
 public:
 
@@ -73,7 +74,7 @@ public:
 
 // -------------------------------------------------------------------
 
-class DTextList : public QListWidget
+class DIGIKAM_EXPORT DTextList : public QListWidget
 {
 public:
 
