@@ -660,6 +660,8 @@ if(DIGIKAM_CAN_BE_COMPILED)
     # ==========================================================================
     # Create git version header
 
+    APPLY_COMMON_POLICIES()
+
     # We only do this IF we are in a .git dir
     find_file(GIT_MARKER entries PATHS ${CMAKE_SOURCE_DIR}/.git)
 

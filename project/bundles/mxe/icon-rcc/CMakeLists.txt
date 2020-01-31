@@ -6,6 +6,12 @@
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
+if(POLICY CMP0063)
+    # C++ symbols visibility policy introduced in CMake version 3.3
+    # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0063.html
+    cmake_policy(SET CMP0063 NEW)
+endif()
+
 find_package(Qt5 NO_MODULE REQUIRED Core)
 get_target_property(QT_RCC_EXECUTABLE Qt5::rcc LOCATION)
 

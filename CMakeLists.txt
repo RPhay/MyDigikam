@@ -21,25 +21,10 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-if(POLICY CMP0063)
-    # C++ symbols visibility policy introduced in CMake version 3.3
-    # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0063.html
-    cmake_policy(SET CMP0063 NEW)
-    message(STATUS "CMake policy CMP0063 enabled")
-endif()
-
-if(POLICY CMP0071)
-    # Automoc/autouic files handling introduced in CMake version 3.10
-    # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0071.html
-    cmake_policy(SET CMP0071 OLD)
-    message(STATUS "CMake policy CMP0071 enabled")
-endif()
-
-
 ############## ECM setup #################################################################################################################
 
 find_package(ECM ${ECM_MIN_VERSION} CONFIG REQUIRED)
-set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+set(CMAKE_MODULE_PATH ${digikam_SOURCE_DIR}/cmake/modules ${ECM_MODULE_PATH})
 
 include(ECMGenerateHeaders)
 include(ECMGeneratePriFile)
@@ -52,6 +37,8 @@ include(KDEFrameworkCompilerSettings)
 include(CMakePackageConfigHelpers)
 include(GenerateExportHeader)
 include(FeatureSummary)
+# Local macros
+include(MacroUtils)
 
 # COMPILATION OPTIONS MANAGEMENT ###########################################################################################################
 
