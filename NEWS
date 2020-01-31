@@ -615,4 +615,5 @@ BUGFIXES:
 599 ==> 416802 - Add confirmation dialog for "Delete all" action.
 600 ==> 416755 - Tag with "." not processed correctly, likely to result in data loss.
 601 ==> 416984 - Build failure with opencv4-4.2.0.
-602 ==> 
+602 ==> 406066 - Cannot parse date string YYYY-MM-DDTHH:MM:SS.ssss and YYYY:MM:DD HH:MM:SS in EXIF and XMP.
+603 ==> 
