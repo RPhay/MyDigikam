@@ -51,7 +51,7 @@ set(DBCORECONFIG_XML_VERSION "3")
 
 # ==============================================================================
 
-set(CMAKE_MIN_VERSION     "3.0.0")
+set(CMAKE_MIN_VERSION     "3.3.2")
 set(ECM_MIN_VERSION       "1.7.0")
 set(KF5_MIN_VERSION       "5.5.0")
 set(QT_MIN_VERSION        "5.9.0")
@@ -657,10 +657,10 @@ message(STATUS "")
 
 if(DIGIKAM_CAN_BE_COMPILED)
 
+    APPLY_COMMON_POLICIES()
+
     # ==========================================================================
     # Create git version header
-
-    APPLY_COMMON_POLICIES()
 
     # We only do this IF we are in a .git dir
     find_file(GIT_MARKER entries PATHS ${CMAKE_SOURCE_DIR}/.git)

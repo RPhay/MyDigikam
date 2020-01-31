@@ -10,7 +10,7 @@ message(STATUS "----------------------------------------------------------------
 message(STATUS "Starting CMake configuration for: ${PROJECT_NAME}")
 
 set(CMAKE_MIN_VERSION   "3.3.2")
-set(ECM_MIN_VERSION     "1.5.0")
+set(ECM_MIN_VERSION     "1.7.0")
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 
@@ -24,21 +24,31 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 ############## ECM setup #################################################################################################################
 
 find_package(ECM ${ECM_MIN_VERSION} CONFIG REQUIRED)
-set(CMAKE_MODULE_PATH ${digikam_SOURCE_DIR}/cmake/modules ${ECM_MODULE_PATH})
+set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/core/cmake/modules ${ECM_MODULE_PATH})
 
+include(CMakePackageConfigHelpers)
+include(GenerateExportHeader)
+include(CheckFunctionExists)
+include(FeatureSummary)
+# ECM macros
+include(ECMOptionalAddSubdirectory)
+include(ECMAddTests)
+include(ECMMarkNonGuiExecutable)
 include(ECMGenerateHeaders)
 include(ECMGeneratePriFile)
 include(ECMSetupVersion)
-include(ECMMarkNonGuiExecutable)
-include(ECMOptionalAddSubdirectory)
+include(ECMInstallIcons)
+include(ECMAddAppIcon)
+include(ECMPoQmTools)
+# KDE macros
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings)
-include(CMakePackageConfigHelpers)
-include(GenerateExportHeader)
-include(FeatureSummary)
+include(KDECompilerSettings)
 # Local macros
 include(MacroUtils)
+
+APPLY_COMMON_POLICIES()
 
 # COMPILATION OPTIONS MANAGEMENT ###########################################################################################################
 
