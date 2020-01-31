@@ -47,29 +47,30 @@ namespace Digikam
 class DImgLoaderObserver;
 class DMetadata;
 
-class DImgLoader
+class DIGIKAM_EXPORT DImgLoader
 {
 public:
 
-    /** This is the list of loading modes usable by DImg image plugins
+    /**
+     * This is the list of loading modes usable by DImg image plugins
      */
     enum LoadFlag
     {
-        // Load image information without image data
+        /// Load image information without image data
 
-        LoadItemInfo     = 1,           /// Image info as width and height
-        LoadMetadata     = 2,           /// Image metadata
-        LoadICCData      = 4,           /// Image color profile
+        LoadItemInfo     = 1,           ///< Image info as width and height
+        LoadMetadata     = 2,           ///< Image metadata
+        LoadICCData      = 4,           ///< Image color profile
 
-        LoadImageData    = 8,           /// Full image data
-        LoadUniqueHash   = 16,          /// Image unique hash
-        LoadImageHistory = 32,          /// Image version history
+        LoadImageData    = 8,           ///< Full image data
+        LoadUniqueHash   = 16,          ///< Image unique hash
+        LoadImageHistory = 32,          ///< Image version history
 
-        // Special mode to load reduced image data
+        /// Special mode to load reduced image data
 
-        LoadPreview      = 64,          /// Load embedded preview image instead full size image
+        LoadPreview      = 64,          ///< Load embedded preview image instead full size image
 
-        // Helper to load all information, metadata and full image.
+        /// Helper to load all information, metadata and full image.
 
         LoadAll          = LoadItemInfo | LoadMetadata | LoadICCData | LoadImageData | LoadUniqueHash | LoadImageHistory
     };
@@ -150,8 +151,10 @@ private:
 
 // ---------------------------------------------------------------------------------------------------
 
-/// Allows safe multiplication of requested pixel number and bytes per pixel, avoiding particularly
-/// 32bit overflow and exceeding the size_t type
+/**
+ * Allows safe multiplication of requested pixel number and bytes per pixel, avoiding particularly
+ * 32bit overflow and exceeding the size_t type
+ */
 template <typename Type>
 Q_INLINE_TEMPLATE Type* DImgLoader::new_failureTolerant(quint64 w, quint64 h, uint typesPerPixel)
 {
