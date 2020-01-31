@@ -9,7 +9,7 @@ project(digikam-software-collection)
 message(STATUS "----------------------------------------------------------------------------------")
 message(STATUS "Starting CMake configuration for: ${PROJECT_NAME}")
 
-set(CMAKE_MIN_VERSION   "3.0.0")
+set(CMAKE_MIN_VERSION   "3.3.2")
 set(ECM_MIN_VERSION     "1.5.0")
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
@@ -20,6 +20,12 @@ message(STATUS "CMake version: ${VERSION_CMAKE_INFO}")
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+if(POLICY CMP0063)
+    # C++ symbols visibility policy introduced in CMake version 3.3
+    # Details: https://cmake.org/cmake/help/v3.3/policy/CMP0063.html
+    cmake_policy(SET CMP0063 NEW)
+endif()
 
 ############## ECM setup #################################################################################################################
 
