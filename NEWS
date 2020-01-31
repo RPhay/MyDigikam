@@ -614,4 +614,5 @@ BUGFIXES:
 598 ==> 416759 - In duplicate tab, it should be possible to have reference image always at first/last.
 599 ==> 416802 - Add confirmation dialog for "Delete all" action.
 600 ==> 416755 - Tag with "." not processed correctly, likely to result in data loss.
-601 ==> 
+601 ==> 416984 - Build failure with opencv4-4.2.0.
+602 ==> 
