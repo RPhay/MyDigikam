@@ -23,9 +23,18 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 if(POLICY CMP0063)
     # C++ symbols visibility policy introduced in CMake version 3.3
-    # Details: https://cmake.org/cmake/help/v3.3/policy/CMP0063.html
+    # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0063.html
     cmake_policy(SET CMP0063 NEW)
+    message(STATUS "CMake policy CMP0063 enabled")
 endif()
+
+if(POLICY CMP0071)
+    # Automoc/autouic files handling introduced in CMake version 3.10
+    # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0071.html
+    cmake_policy(SET CMP0071 NEW)
+    message(STATUS "CMake policy CMP0071 enabled")
+endif()
+
 
 ############## ECM setup #################################################################################################################
 
