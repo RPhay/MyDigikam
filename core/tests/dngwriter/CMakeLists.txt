@@ -1,8 +1,10 @@
 #
-# Copyright (c) 2010-2019, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
+
+include(${CMAKE_SOURCE_DIR}/core/cmake/modules/DNGSdkRules.cmake)
 
 # =======================================================
 # DNGVALIDATE tool from DNG SDK
@@ -14,6 +16,9 @@ ecm_mark_nongui_executable(dngvalidate)
 
 target_link_libraries(dngvalidate
                       libdng
+                      digikamcore
+
+                      ${EXPAT_LIBRARY}
                       ${CMAKE_THREAD_LIBS_INIT}
                      )
 
@@ -27,6 +32,7 @@ ecm_mark_nongui_executable(dnginfo)
 
 target_link_libraries(dnginfo
                       libdng
+                      digikamcore
 
                       ${COMMON_TEST_LINK}
 
@@ -47,7 +53,6 @@ ecm_mark_nongui_executable(raw2dng)
 
 target_link_libraries(raw2dng
                       digikamcore
-                      libdng
 
                       ${COMMON_TEST_LINK}
 

@@ -147,6 +147,13 @@ else()
     target_compile_options(libdng_src PRIVATE -w -fPIC)
 endif()
 
+# For unit tests.
+add_library(libdng STATIC 
+            $<TARGET_OBJECTS:libdng_src>
+            $<TARGET_OBJECTS:libxmp_src>
+            $<TARGET_OBJECTS:libmd5_src>
+)
+
 #------------------------------------------------------------------------------------
 
 set(libdngwriter_SRCS
