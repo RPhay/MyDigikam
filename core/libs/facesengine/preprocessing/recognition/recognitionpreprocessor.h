@@ -26,6 +26,10 @@
 
 #include "facepreprocessor.h"
 
+// Local includes
+
+#include "digikam_export.h"
+
 namespace Digikam
 {
 
@@ -34,7 +38,7 @@ enum PreprocessorSelection
     OPENFACE = 0
 };
 
-class RecognitionPreprocessor: public Preprocessor
+class DIGIKAM_EXPORT RecognitionPreprocessor: public Preprocessor
 {
 
 public:
