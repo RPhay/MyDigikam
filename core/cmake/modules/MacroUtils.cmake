@@ -195,4 +195,10 @@ if(POLICY CMP0071)
     cmake_policy(SET CMP0071 NEW)
 endif()
 
+if(POLICY CMP0092)
+    # MSVC warnings flag rules introduced in CMake version 3.16
+    # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0092.html
+    cmake_policy(SET CMP0092 NEW)
+endif()
+
 endmacro()
