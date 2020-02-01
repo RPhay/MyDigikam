@@ -183,6 +183,7 @@ set(libhaar_SRCS
 
 set(digikamdatabase_LIB_SRCS
     ${libdatabase_SRCS}
+    ${libdatabasemodels_SRCS}
     ${libhaar_SRCS}
     ${pgfutils_SRCS}
 )
@@ -205,6 +206,6 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
-add_library(digikamdatabase_src     OBJECT ${digikamdatabase_LIB_SRCS} ${libdatabasemodels_SRCS})
+add_library(digikamdatabase_src     OBJECT ${digikamdatabase_LIB_SRCS})
 add_library(digikamdatabasemain_src OBJECT ${libdatabaseutils_SRCS})
 add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})
