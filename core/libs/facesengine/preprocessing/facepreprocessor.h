@@ -27,11 +27,12 @@
 // Local includes
 
 #include "digikam_opencv.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class Preprocessor
+class DIGIKAM_EXPORT Preprocessor
 {
 
 public:
