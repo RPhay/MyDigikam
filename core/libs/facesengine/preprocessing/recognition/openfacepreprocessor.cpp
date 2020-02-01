@@ -48,9 +48,9 @@ namespace Digikam
   * for matrix faceTemplate below.
   */
 static float FACE_TEMPLATE[3][2] = {
-                                       {18.639072, 16.249624},
-                                       {75.73048,  15.18443 },
-                                       {47.515285, 49.38637 }
+                                       {18.639072F, 16.249624F},
+                                       {75.73048F,  15.18443F },
+                                       {47.515285F, 49.38637F }
                                    };
 
 // ---------------------------------------------------------------------------------------------------
@@ -125,8 +125,8 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
     for (size_t i = 0 ; i < outerEyesNosePositions.size() ; ++i)
     {
         int index                 = outerEyesNosePositions[i];
-        landmarks.at<float>(i, 0) = object.part(index)[0];
-        landmarks.at<float>(i, 1) = object.part(index)[1];
+        landmarks.at<float>(i, 0) = (float)object.part(index)[0];
+        landmarks.at<float>(i, 1) = (float)object.part(index)[1];
 /*
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "index = " << index
                                          << ", landmarks: (" << landmarks.at<float>(i, 0)
