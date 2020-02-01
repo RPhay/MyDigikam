@@ -709,7 +709,7 @@ void ItemPropertiesTab::setVideoDuration(const QString& str)
         s = r / 1000;
         f = r % 1000;
 
-        durationString = QString().sprintf("%d.%02d:%02d:%02d.%03d", d, h, m, s, f);
+        durationString = QString().asprintf("%d.%02d:%02d:%02d.%03d", d, h, m, s, f);
     }
 
     d->labelVideoDuration->setAdjustedText(durationString);
@@ -965,7 +965,7 @@ QString ItemPropertiesTab::humanReadableBytesCount(qint64 bytes, bool si)
     {
         int exp     = (int)(qLn(bytes) / qLn(unit));
         QString pre = QString(si ? QLatin1String("kMGTPEZY") : QLatin1String("KMGTPEZY")).at(exp-1) + (si ? QLatin1String("") : QLatin1String("i"));
-        ret.sprintf("%.1f %s", bytes / qPow(unit, exp), pre.toLatin1().constData());
+        ret.asprintf("%.1f %s", bytes / qPow(unit, exp), pre.toLatin1().constData());
     }
 
     return (QString::fromUtf8("%1%2").arg(ret).arg(byteStr));

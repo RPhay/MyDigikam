@@ -354,7 +354,7 @@ void MixerSettings::updateTotalPercents()
 {
     double total = d->redGain->value() + d->greenGain->value() + d->blueGain->value();
     QString str;
-    d->totalPercents->setText(i18n("Total: %1 (%)", str.sprintf("%3.1f", total)));
+    d->totalPercents->setText(i18n("Total: %1 (%)", str.asprintf("%3.1f", total)));
 }
 
 void MixerSettings::updateSettingsWidgets()
