@@ -205,26 +205,6 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
-#target_include_directories(digikamdatabase
-#                           PUBLIC
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/coredb>
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/collection>
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/engine>
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/dbjobs>
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/item/containers>
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/item/lister>
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/item/query>
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/item/scanner>
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/tags>
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/haar>
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/imagehistory>
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/server>
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/thumbsdb>
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/utils/widgets>
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/utils/ifaces>
-#                           $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/utils/scan>
-#)
-
 add_library(digikamdatabase_src     OBJECT ${digikamdatabase_LIB_SRCS} ${libdatabasemodels_SRCS})
 add_library(digikamdatabasemain_src OBJECT ${libdatabaseutils_SRCS})
 add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})
