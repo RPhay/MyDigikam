@@ -185,7 +185,6 @@ set(digikamdatabase_LIB_SRCS
     ${libdatabase_SRCS}
     ${libdatabasemodels_SRCS}
     ${libhaar_SRCS}
-    ${pgfutils_SRCS}
 )
 
 include_directories(
