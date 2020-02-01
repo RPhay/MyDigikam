@@ -310,7 +310,10 @@ void FaceGroup::load()
         return;
     }
 
-    d->state = LoadingFaces;
+    d->state      = LoadingFaces;
+    d->exifRotate = (MetaEngineSettings::instance()->settings().exifRotate           ||
+                     ((d->view->previewItem()->image().detectedFormat() == DImg::RAW) &&
+                      !d->view->previewItem()->image().attribute(QLatin1String("fromRawEmbeddedPreview")).toBool()));
 
     if (d->info.isNull())
     {
@@ -318,10 +321,6 @@ void FaceGroup::load()
 
         return;
     }
-
-    d->exifRotate              = (MetaEngineSettings::instance()->settings().exifRotate           ||
-                                 ((d->view->previewItem()->image().detectedFormat() == DImg::RAW) &&
-                                  !d->view->previewItem()->image().attribute(QLatin1String("fromRawEmbeddedPreview")).toBool()));
 
     QList<FaceTagsIface> faces = FaceTagsEditor().databaseFaces(d->info.id());
     d->visibilityController->clear();
