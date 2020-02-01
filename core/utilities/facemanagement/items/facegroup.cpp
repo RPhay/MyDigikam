@@ -311,7 +311,7 @@ void FaceGroup::load()
     }
 
     d->state      = LoadingFaces;
-    d->exifRotate = (MetaEngineSettings::instance()->settings().exifRotate           ||
+    d->exifRotate = (MetaEngineSettings::instance()->settings().exifRotate            ||
                      ((d->view->previewItem()->image().detectedFormat() == DImg::RAW) &&
                       !d->view->previewItem()->image().attribute(QLatin1String("fromRawEmbeddedPreview")).toBool()));
 
