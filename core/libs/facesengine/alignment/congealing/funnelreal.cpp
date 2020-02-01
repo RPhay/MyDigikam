@@ -706,7 +706,7 @@ void FunnelReal::Private::getNewFeatsInvT(std::vector<std::vector<float> >& newF
                                           float centerX,
                                           float centerY) const
 {
-    int numFeats      = newFIDs[0].size();
+    int numFeats      = (int)newFIDs[0].size();
     std::vector<float> uniformDist(numFeats, 1.0f/numFeats);
 
     float postM[2][3] = {{1, 0,  centerX}, {0, 1, centerY}};

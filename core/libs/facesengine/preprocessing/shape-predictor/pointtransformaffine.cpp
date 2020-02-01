@@ -109,8 +109,8 @@ PointTransformAffine findSimilarityTransform(const std::vector<std::vector<float
 
     std::vector<float> meanFrom(2, 0);
     std::vector<float> meanTo(2, 0);
-    float sigmaFrom = 0;
-    float sigmaTo   = 0;
+    float sigmaFrom = 0.0F;
+    float sigmaTo   = 0.0F;
     std::vector<std::vector<float> > cov(2, std::vector<float>(2, 0));
 
     for (unsigned long i = 0 ; i < fromPoints.size() ; ++i)
@@ -119,8 +119,8 @@ PointTransformAffine findSimilarityTransform(const std::vector<std::vector<float
         meanTo   = meanTo   + toPoints[i];
     }
 
-    meanFrom = meanFrom / (float)fromPoints.size();
-    meanTo   = meanTo   / (float)fromPoints.size();
+    meanFrom = meanFrom / (int)fromPoints.size();
+    meanTo   = meanTo   / (int)fromPoints.size();
 
     for (unsigned long i = 0 ; i < fromPoints.size() ; ++i)
     {
@@ -129,9 +129,9 @@ PointTransformAffine findSimilarityTransform(const std::vector<std::vector<float
         cov       = cov + (toPoints[i] - meanTo)*(fromPoints[i] - meanFrom);
     }
 
-    sigmaFrom = sigmaFrom / (float)fromPoints.size();
-    sigmaTo   = sigmaTo   / (float)fromPoints.size();
-    cov       = cov       / (float)fromPoints.size();
+    sigmaFrom = sigmaFrom / (int)fromPoints.size();
+    sigmaTo   = sigmaTo   / (int)fromPoints.size();
+    cov       = cov       / (int)fromPoints.size();
     (void)sigmaTo; // to silent clang scan-build
 
     std::vector<std::vector<float> >  u(2,std::vector<float>(2));
@@ -160,11 +160,11 @@ PointTransformAffine findSimilarityTransform(const std::vector<std::vector<float
 
     MatrixOperations::transpose(vt,v);
     std::vector<std::vector<float> > r = u * s * v;
-    float c                            = 1;
+    float c                            = 1.0F;
 
     if (sigmaFrom != 0)
     {
-        c = 1.0 / sigmaFrom * MatrixOperations::trace(d * s);
+        c = 1.0F / sigmaFrom * MatrixOperations::trace(d * s);
     }
 
     std::vector<float> t = meanTo - r * meanFrom * c;

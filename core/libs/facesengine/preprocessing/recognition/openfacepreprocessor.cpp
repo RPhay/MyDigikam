@@ -125,8 +125,8 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
     for (size_t i = 0 ; i < outerEyesNosePositions.size() ; ++i)
     {
         int index                 = outerEyesNosePositions[i];
-        landmarks.at<float>(i, 0) = (float)object.part(index)[0];
-        landmarks.at<float>(i, 1) = (float)object.part(index)[1];
+        landmarks.at<float>(i, 0) = (int)object.part(index)[0];
+        landmarks.at<float>(i, 1) = (int)object.part(index)[1];
 /*
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "index = " << index
                                          << ", landmarks: (" << landmarks.at<float>(i, 0)

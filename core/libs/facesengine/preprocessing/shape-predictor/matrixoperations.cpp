@@ -54,8 +54,8 @@ std::vector<std::vector<float> > inv2(const std::vector<std::vector<float> >& ma
 std::vector<std::vector<float> > pinv(const std::vector<std::vector<float> >& mat)
 {
     std::vector<std::vector<float> > result(mat[0].size(), std::vector<float>(mat.size()));
-    cv::Mat B(mat[0].size(), mat.size()   , CV_32FC1);
-    cv::Mat A(mat.size()   , mat[0].size(), CV_32FC1);
+    cv::Mat B(mat[0].size(),  (int)mat.size(), CV_32FC1);
+    cv::Mat A((int)mat.size(), mat[0].size(),  CV_32FC1);
 
     for (unsigned int i = 0 ; i < mat.size() ; ++i)
     {
@@ -142,10 +142,10 @@ bool svd3(std::vector<std::vector<float> >& a,
     // a is a square matrix
 
     // columns
-    const long n        = a.size();
+    const long n        = (long)a.size();
 
     // rows
-    const long m        = a.size();
+    const long m        = (long)a.size();
 
     const float eps     = std::numeric_limits<float>::epsilon();
     long nm             = 0;
@@ -319,7 +319,7 @@ bool svd3(std::vector<std::vector<float> >& a,
 
         if (g != 0)
         {
-            g = 1.0 / g;
+            g = 1.0F / g;
 
             for (long j = l ; j < n ; ++j)
             {
@@ -394,7 +394,7 @@ bool svd3(std::vector<std::vector<float> >& a,
                     g    = w[i];
                     h    = pythag(f, g);
                     w[i] = h;
-                    h    = 1.0 / h;
+                    h    = 1.0F / h;
                     c    = g * h;
                     s    = -f * h;
 
@@ -435,7 +435,7 @@ bool svd3(std::vector<std::vector<float> >& a,
             y  = w[nm];
             g  = rv1[nm];
             h  = rv1[k];
-            f  = ((y - z) * (y + z) + (g - h) * (g + h)) / (2.0 * h * y);
+            f  = ((y - z) * (y + z) + (g - h) * (g + h)) / (2.0F * h * y);
             g  = pythag(f, one);
             f  = ((x - z) * (x + z) + h * ((y / (f + signdlib(g, f))) - h)) / x;
             c  = s = 1.0;
@@ -469,7 +469,7 @@ bool svd3(std::vector<std::vector<float> >& a,
 
                 if (z != 0)
                 {
-                    z = 1.0 / z;
+                    z = 1.0F / z;
                     c = f * z;
                     s = h * z;
                 }

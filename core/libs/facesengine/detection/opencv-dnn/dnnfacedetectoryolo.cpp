@@ -44,7 +44,7 @@ namespace Digikam
 {
 
 DNNFaceDetectorYOLO::DNNFaceDetectorYOLO()
-    : DNNFaceDetectorBase(1.0 / 255.0, cv::Scalar(0.0, 0.0, 0.0), cv::Size(416, 416))
+    : DNNFaceDetectorBase(1.0F / 255.0F, cv::Scalar(0.0, 0.0, 0.0), cv::Size(416, 416))
 {
     QString nnmodel = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                              QLatin1String("digikam/facesengine/yolov3-face.cfg"));

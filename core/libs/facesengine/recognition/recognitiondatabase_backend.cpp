@@ -35,7 +35,7 @@ void RecognitionDatabase::Private::applyParameters()
 
     if (recognizeAlgorithm == RecognitionDatabase::RecognizeAlgorithm::DNN)
     {
-        float threshold = 0.8;
+        float threshold = 0.8F;
 
         if      (parameters.contains(QLatin1String("threshold")))
         {

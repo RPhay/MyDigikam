@@ -135,7 +135,7 @@ void DNNDbscan::run()
         }
 
         std::list<int> neighbors;
-        findNeighbors(points[i], i, neighbors);
+        findNeighbors(points[i], (int)i, neighbors);
 
         if ((int)neighbors.size() < minPtsPerCluster)
         {
@@ -229,7 +229,7 @@ void DNNDbscan::checkNearPoints()
             if (points[i].computeSimilarity(points[j]) >= eps) // since it is cosine similarity
             {
                 points[i].ptsCount++;
-                vecAdjToPoint.push_back(j);
+                vecAdjToPoint.push_back((int)j);
             }
         }
 
