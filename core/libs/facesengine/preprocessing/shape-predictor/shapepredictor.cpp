@@ -63,7 +63,7 @@ unsigned long right_child(unsigned long idx)
 
 unsigned long RegressionTree::num_leaves() const
 {
-    return leaf_values.size();
+    return (unsigned long)leaf_values.size();
 }
 
 const std::vector<float>& RegressionTree::operator()(const std::vector<float>& feature_pixel_values, unsigned long& i) const
@@ -82,7 +82,7 @@ const std::vector<float>& RegressionTree::operator()(const std::vector<float>& f
         }
     }
 
-    i = i - splits.size();
+    i = i - (unsigned long)splits.size();
 
     return leaf_values[i];
 }
@@ -147,7 +147,7 @@ unsigned long nearestShapePoint(const std::vector<float>& shape,
     // find the nearest part of the shape to this pixel
 
     float best_dist                     = std::numeric_limits<float>::infinity();
-    const unsigned long num_shape_parts = shape.size()/2;
+    const unsigned long num_shape_parts = (unsigned long)shape.size() / 2;
     unsigned long best_idx              = 0;
 
     for (unsigned long j = 0 ; j < num_shape_parts ; ++j)
@@ -191,7 +191,7 @@ PointTransformAffine findTformBetweenShapes(const std::vector<float>& from_shape
            (from_shape.size() > 0));
 
     std::vector<std::vector<float> > from_points, to_points;
-    const unsigned long num = from_shape.size() / 2;
+    const unsigned long num = (unsigned long)from_shape.size() / 2;
     from_points.reserve(num);
     to_points.reserve(num);
 
@@ -338,7 +338,7 @@ ShapePredictor::ShapePredictor()
 
 unsigned long ShapePredictor::num_parts() const
 {
-    return (initial_shape.size() / 2);
+    return ((unsigned long)initial_shape.size() / 2);
 }
 
 unsigned long ShapePredictor::num_features() const
