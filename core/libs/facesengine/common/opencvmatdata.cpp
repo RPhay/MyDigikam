@@ -52,7 +52,7 @@ void OpenCVMatData::setMat(const cv::Mat& mat)
     rows                   = mat.rows;
     cols                   = mat.cols;
     const size_t data_size = cols * rows * mat.elemSize();
-    data                   = QByteArray::fromRawData((const char*)mat.ptr(), data_size);
+    data                   = QByteArray::fromRawData((const char*)mat.ptr(), (int)data_size);
 }
 
 cv::Mat OpenCVMatData::toMat() const
