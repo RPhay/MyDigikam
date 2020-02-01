@@ -78,7 +78,6 @@
 #include "timelinesidebarwidget.h"
 #include "searchsidebarwidget.h"
 #include "fuzzysearchsidebarwidget.h"
-#include "gpssearchsidebarwidget.h"
 #include "labelssidebarwidget.h"
 #include "peoplesidebarwidget.h"
 #include "tagviewsidebarwidget.h"
@@ -111,6 +110,7 @@
 #endif //HAVE_MEDIAPLAYER
 
 #ifdef HAVE_MARBLE
+#include "gpssearchsidebarwidget.h"
 #   include "mapwidgetview.h"
 #endif // HAVE_MARBLE
 
@@ -139,8 +139,10 @@ public:
         fuzzySearchSideBar(nullptr),
 
 #ifdef HAVE_MARBLE
+
         gpsSearchSideBar(nullptr),
         mapView(nullptr),
+
 #endif // HAVE_MARBLE
 
         peopleSideBar(nullptr),
@@ -231,8 +233,10 @@ public:
     FuzzySearchSideBarWidget*     fuzzySearchSideBar;
 
 #ifdef HAVE_MARBLE
+
     GPSSearchSideBarWidget*       gpsSearchSideBar;
     MapWidgetView*                mapView;
+
 #endif // HAVE_MARBLE
 
     PeopleSideBarWidget*          peopleSideBar;

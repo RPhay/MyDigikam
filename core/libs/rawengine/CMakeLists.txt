@@ -45,16 +45,8 @@ add_definitions(-DDCRAW_VERBOSE)
 # Flag used into LibRaw to be not thread-safe. Never use this mode.
 #add_definitions(-DLIBRAW_NOTHREADS)
 
-# Flag to export library symbols
-if(WIN32)
-    if(MSVC)
-        add_definitions(-DLIBRAW_BUILDLIB)
-    else()
-        add_definitions(-DLIBRAW_NODLL)
-    endif()
-else()
-    add_definitions(-DLIBRAW_BUILDLIB)
-endif()
+# No need a Flag to export library symbols, as we use a static version for the unit tests.
+add_definitions(-DLIBRAW_NODLL)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/libraw/
                     ${CMAKE_CURRENT_SOURCE_DIR}/libraw

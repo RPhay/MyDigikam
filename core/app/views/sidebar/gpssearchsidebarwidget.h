@@ -34,15 +34,10 @@
 #include "searchmodificationhelper.h"
 #include "sidebarwidget.h"
 #include "itemfiltermodel.h"
-
-#ifdef HAVE_MARBLE
-#   include "gpssearchview.h"
-#endif // HAVE_MARBLE
+#include "gpssearchview.h"
 
 namespace Digikam
 {
-
-#ifdef HAVE_MARBLE
 
 class GPSSearchSideBarWidget : public SidebarWidget
 {
@@ -74,8 +69,6 @@ private:
     class Private;
     Private* const d;
 };
-
-#endif // HAVE_MARBLE
 
 } // namespace Digikam
 

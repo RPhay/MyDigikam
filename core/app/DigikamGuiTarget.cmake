@@ -103,7 +103,6 @@ set(libdigikamgui_SRCS
     views/sidebar/timelinesidebarwidget.cpp
     views/sidebar/searchsidebarwidget.cpp
     views/sidebar/fuzzysearchsidebarwidget.cpp
-    views/sidebar/gpssearchsidebarwidget.cpp
     views/sidebar/labelssidebarwidget.cpp
     views/sidebar/peoplesidebarwidget.cpp
     views/sidebar/tagviewsidebarwidget.cpp
@@ -120,6 +119,7 @@ if(${Marble_FOUND})
     set(libdigikamgui_SRCS
         ${libdigikamgui_SRCS}
         views/stack/mapwidgetview.cpp
+        views/sidebar/gpssearchsidebarwidget.cpp
        )
 endif()
 

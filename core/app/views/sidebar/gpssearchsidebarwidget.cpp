@@ -53,8 +53,6 @@
 namespace Digikam
 {
 
-#ifdef HAVE_MARBLE
-
 class Q_DECL_HIDDEN GPSSearchSideBarWidget::Private
 {
 public:
@@ -133,7 +131,5 @@ const QString GPSSearchSideBarWidget::getCaption()
 {
     return i18nc("Search images on a map", "Map");
 }
-
-#endif // HAVE_MARBLE
 
 } // namespace Digikam
