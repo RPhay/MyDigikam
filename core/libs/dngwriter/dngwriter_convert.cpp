@@ -116,9 +116,9 @@ int DNGWriter::convert()
         for (int i = 0 ; i < 4 ; ++i)
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "                   "
-                     << QString().sprintf("%03.4f  %03.4f  %03.4f", identify.cameraXYZMatrix[i][0],
-                                                                    identify.cameraXYZMatrix[i][1],
-                                                                    identify.cameraXYZMatrix[i][2]);
+                     << QString().asprintf("%03.4f  %03.4f  %03.4f", identify.cameraXYZMatrix[i][0],
+                                                                     identify.cameraXYZMatrix[i][1],
+                                                                     identify.cameraXYZMatrix[i][2]);
         }
 
         // Check if CFA layout is supported by DNG SDK.
@@ -1101,12 +1101,12 @@ int DNGWriter::convert()
 
             std::vector<char> tiff_mem_buffer(dms->Length());
             dms->SetReadPosition(0);
-            dms->Get(&tiff_mem_buffer.front(), tiff_mem_buffer.size());
+            dms->Get(&tiff_mem_buffer.front(), (int)tiff_mem_buffer.size());
             dms.Reset();
 
             QImage pre_image;
 
-            if (!pre_image.loadFromData((uchar*)&tiff_mem_buffer.front(), tiff_mem_buffer.size(), "TIFF"))
+            if (!pre_image.loadFromData((uchar*)&tiff_mem_buffer.front(), (int)tiff_mem_buffer.size(), "TIFF"))
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot load TIFF preview data in memory. Aborted..." ;
                 return PROCESSFAILED;

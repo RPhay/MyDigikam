@@ -34,11 +34,11 @@ void FaceDb::updateDNNFaceModel(DNNFaceModel& model)
 
     for (size_t i = 0 ; i < (size_t)metadataList.size() ; ++i)
     {
-        const DNNFaceVecMetadata& metadata = metadataList[i];
+        const DNNFaceVecMetadata& metadata = metadataList[(int)i];
 
         if (metadata.storageStatus == DNNFaceVecMetadata::Created)
         {
-            std::vector<float> vecdata = model.vecData(i);
+            std::vector<float> vecdata = model.vecData((int)i);
 
             if (vecdata.size() > 2)
             {
@@ -46,7 +46,7 @@ void FaceDb::updateDNNFaceModel(DNNFaceModel& model)
                                                            << vecdata[vecdata.size()-1];
             }
 
-            QByteArray vec_byte(vecdata.size() * sizeof(float), 0);
+            QByteArray vec_byte((int)vecdata.size() * sizeof(float), 0);
             float* const fp = reinterpret_cast<float*>(vec_byte.data());
 
             for (size_t k = 0 ; k < vecdata.size() ; ++k)
@@ -92,7 +92,7 @@ void FaceDb::updateDNNFaceModel(DNNFaceModel& model)
                                              "VALUES (?,?,?);"),
                                histogramValues, nullptr, &insertedId);
 
-                model.setWrittenToDatabase(i, insertedId.toInt());
+                model.setWrittenToDatabase((int)i, insertedId.toInt());
 
                 qCDebug(DIGIKAM_FACEDB_LOG) << "Commit compressed face mat data " << insertedId << " for identity "
                                             << metadata.identity << " with size " << compressed_vecdata.size();
