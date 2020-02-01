@@ -45,7 +45,7 @@ public:
     /**
      * Global container for Metadata settings. All accessor methods are thread-safe.
      */
-    static MetaEngineSettings* instance();
+    DIGIKAM_EXPORT static MetaEngineSettings* instance();
 
     /**
      * Returns the current Metadata settings.
