@@ -60,3 +60,5 @@ install(PROGRAMS main/org.kde.digikam.desktop     DESTINATION ${XDG_APPS_INSTALL
 install(FILES    main/org.kde.digikam.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 install(FILES    main/digikamui5.rc               DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)
 install(FILES    main/digikam.notifyrc            DESTINATION ${KNOTIFYRC_INSTALL_DIR})
+
+include(DigikamExportAPI.cmake)

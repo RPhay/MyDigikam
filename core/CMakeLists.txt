@@ -785,8 +785,6 @@ if(DIGIKAM_CAN_BE_COMPILED)
         add_subdirectory(tests)
     endif()
 
-    include(DigikamExportAPI.cmake)
-
 endif()
 
 # ==============================================================================
