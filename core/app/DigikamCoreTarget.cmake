@@ -98,7 +98,7 @@ generate_export_header(digikamcore BASE_NAME digikam EXPORT_FILE_NAME "${CMAKE_C
 
 target_link_libraries(digikamcore
 
-                      PRIVATE
+                      PUBLIC
 
                       Qt5::Core
                       Qt5::Gui
