@@ -319,7 +319,10 @@ void FaceGroup::load()
         return;
     }
 
-    d->exifRotate              = MetaEngineSettings::instance()->settings().exifRotate;
+    d->exifRotate              = (MetaEngineSettings::instance()->settings().exifRotate           ||
+                                 ((d->view->previewItem()->image().detectedFormat() == DImg::RAW) &&
+                                  !d->view->previewItem()->image().attribute(QLatin1String("fromRawEmbeddedPreview")).toBool()));
+
     QList<FaceTagsIface> faces = FaceTagsEditor().databaseFaces(d->info.id());
     d->visibilityController->clear();
 
