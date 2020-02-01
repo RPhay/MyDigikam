@@ -36,8 +36,8 @@
 namespace Digikam
 {
 
-float DNNFaceDetectorBase::confidenceThreshold  = 0.6;
-float DNNFaceDetectorBase::nmsThreshold         = 0.4;
+float DNNFaceDetectorBase::confidenceThreshold  = 0.6F;
+float DNNFaceDetectorBase::nmsThreshold         = 0.4F;
 
 // --------------------------------------------------------------------------------------------------------
 

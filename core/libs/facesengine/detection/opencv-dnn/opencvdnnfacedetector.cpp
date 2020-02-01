@@ -54,11 +54,13 @@ OpenCVDNNFaceDetector::OpenCVDNNFaceDetector(DetectorNNModel model)
             m_inferenceEngine = new DNNFaceDetectorSSD;
             break;
         }
+
         case DetectorNNModel::YOLO:
         {
             m_inferenceEngine = new DNNFaceDetectorYOLO;
             break;
         }
+
         default:
         {
             assert(0 && "UNKNOWN neural network model");
