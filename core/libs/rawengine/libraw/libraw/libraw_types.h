@@ -98,20 +98,21 @@ typedef unsigned long long UINT64;
 
   typedef unsigned char uchar;
   typedef unsigned short ushort;
-
+/*
 #ifdef LIBRAW_WIN32_DLLDEFS
-#ifdef LIBRAW_NODLL
+#   ifdef LIBRAW_NODLL
+#       define DllDef
+#   else
+#       ifdef LIBRAW_BUILDLIB
+#           define DllDef __declspec(dllexport)
+#       else
+#           define DllDef __declspec(dllimport)
+#       endif
+#   endif
+#else
+*/
 #define DllDef
-#else
-#ifdef LIBRAW_BUILDLIB
-#define DllDef __declspec(dllexport)
-#else
-#define DllDef __declspec(dllimport)
-#endif
-#endif
-#else
-#define DllDef
-#endif
+//#endif
 
   typedef struct
   {
