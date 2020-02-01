@@ -4,7 +4,7 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
+cmake_minimum_required(VERSION 3.3.2)
 
 if(POLICY CMP0063)
     # C++ symbols visibility policy introduced in CMake version 3.3

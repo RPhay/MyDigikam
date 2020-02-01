@@ -8,7 +8,7 @@
 
 project(digikam-bundles)
 
-cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
+cmake_minimum_required(VERSION 3.3.2)
 
 function(JoinListAsString VALUES GLUE OUTPUT)
     string(REPLACE ";" "${GLUE}" _TMP_STR "${VALUES}")
