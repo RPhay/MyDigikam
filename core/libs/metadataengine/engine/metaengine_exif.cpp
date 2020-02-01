@@ -113,7 +113,7 @@ QByteArray MetaEngine::getExifEncoded(bool addExifHeader) const
             Exiv2::ExifData& exif = d->exifMetadata();
             Exiv2::Blob blob;
             Exiv2::ExifParser::encode(blob, Exiv2::bigEndian, exif);
-            QByteArray ba((const char*)&blob[0], blob.size());
+            QByteArray ba((const char*)&blob[0], (int)blob.size());
 
             if (addExifHeader)
             {

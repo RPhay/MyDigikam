@@ -128,7 +128,7 @@ QByteArray MetaEngine::getXmp() const
 
             std::string xmpPacket;
             Exiv2::XmpParser::encode(xmpPacket, d->xmpMetadata());
-            QByteArray data(xmpPacket.data(), xmpPacket.size());
+            QByteArray data(xmpPacket.data(), (int)xmpPacket.size());
 
             return data;
         }

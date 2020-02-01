@@ -124,9 +124,9 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
 
     for (size_t i = 0 ; i < outerEyesNosePositions.size() ; ++i)
     {
-        int index                 = outerEyesNosePositions[i];
-        landmarks.at<float>(i, 0) = (int)object.part(index)[0];
-        landmarks.at<float>(i, 1) = (int)object.part(index)[1];
+        int index                      = outerEyesNosePositions[i];
+        landmarks.at<float>((int)i, 0) = object.part(index)[0];
+        landmarks.at<float>((int)i, 1) = object.part(index)[1];
 /*
         qCDebug(DIGIKAM_FACESENGINE_LOG) << "index = " << index
                                          << ", landmarks: (" << landmarks.at<float>(i, 0)
@@ -135,6 +135,7 @@ cv::Mat OpenfacePreprocessor::process(const cv::Mat& image)
     }
 
     qCDebug(DIGIKAM_FACEDB_LOG) << "Full object detection and landmard computation finished";
+
     // qCDebug(DIGIKAM_FACEDB_LOG) << "Finish computing landmark in " << timer.restart() << " ms";
 
     cv::Mat affineTransformMatrix = cv::getAffineTransform(landmarks, faceTemplate);

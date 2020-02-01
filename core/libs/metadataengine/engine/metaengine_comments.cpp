@@ -47,7 +47,7 @@ bool MetaEngine::canWriteComment(const QString& filePath)
 
         Exiv2::AccessMode mode      = image->checkMode(Exiv2::mdComment);
 
-        return (mode == Exiv2::amWrite || mode == Exiv2::amReadWrite);
+        return ((mode == Exiv2::amWrite) || (mode == Exiv2::amReadWrite));
     }
     catch(Exiv2::AnyError& e)
     {
@@ -75,7 +75,7 @@ bool MetaEngine::clearComments() const
 
 QByteArray MetaEngine::getComments() const
 {
-    return QByteArray(d->itemComments().data(), d->itemComments().size());
+    return QByteArray(d->itemComments().data(), (int)d->itemComments().size());
 }
 
 QString MetaEngine::getCommentsDecoded() const

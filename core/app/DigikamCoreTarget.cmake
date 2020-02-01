@@ -8,9 +8,7 @@
 # digiKam CORE shared library
 
 set(DIGIKAMCORE_OBJECTS
-            $<TARGET_OBJECTS:digikamdatabasecore_src>
 
-            $<TARGET_OBJECTS:digikamfacesengine_src>
             $<TARGET_OBJECTS:dimg_src>
             $<TARGET_OBJECTS:dmetadata_src>
             $<TARGET_OBJECTS:jpegutils_src>
@@ -42,6 +40,9 @@ set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:imageeditor_src>
             $<TARGET_OBJECTS:digikamlibtransitionmngr_src>
             $<TARGET_OBJECTS:timeadjust_src>
+
+            $<TARGET_OBJECTS:digikamdatabasecore_src>
+            $<TARGET_OBJECTS:digikamfacesengine_src>
 
             utils/digikam_debug.cpp
             utils/digikam_version.cpp

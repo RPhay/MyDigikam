@@ -54,8 +54,8 @@ std::vector<std::vector<float> > inv2(const std::vector<std::vector<float> >& ma
 std::vector<std::vector<float> > pinv(const std::vector<std::vector<float> >& mat)
 {
     std::vector<std::vector<float> > result(mat[0].size(), std::vector<float>(mat.size()));
-    cv::Mat B(mat[0].size(),  (int)mat.size(), CV_32FC1);
-    cv::Mat A((int)mat.size(), mat[0].size(),  CV_32FC1);
+    cv::Mat B((int)mat[0].size(), (int)mat.size(),    CV_32FC1);
+    cv::Mat A((int)mat.size(),    (int)mat[0].size(), CV_32FC1);
 
     for (unsigned int i = 0 ; i < mat.size() ; ++i)
     {

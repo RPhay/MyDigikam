@@ -171,7 +171,9 @@ if(Marble_FOUND)
 endif()
 
 # enable exceptions
-kde_source_files_enable_exceptions(history/itemhistorygraph.cpp history/itemhistorygraphmodel.cpp)
+kde_source_files_enable_exceptions(history/itemhistorygraph.cpp
+                                   history/itemhistorygraphmodel.cpp
+)
 
 set(libhaar_SRCS
     haar/haar.cpp
@@ -199,10 +201,10 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
+add_library(digikamdatabasemain_src OBJECT ${libdatabaseutils_SRCS})
+add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})
+
 add_library(digikamdatabase_src     OBJECT ${libdatabase_SRCS}
                                            ${libdatabasemodels_SRCS}
                                            ${libhaar_SRCS}
 )
-
-add_library(digikamdatabasemain_src OBJECT ${libdatabaseutils_SRCS})
-add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})

@@ -517,7 +517,7 @@ public:
     /// NOTE: for "hasAdjacentVertices", simply use hasEdges(v, flags)
     int vertexCount() const
     {
-        return boost::num_vertices(graph);
+        return (int)boost::num_vertices(graph);
     }
 
     bool isEmpty() const
@@ -527,7 +527,7 @@ public:
 
     int outDegree(const Vertex& v) const
     {
-        return boost::out_degree(v, graph);
+        return (int)boost::out_degree(v, graph);
     }
 
     int inDegree(const Vertex& v) const
