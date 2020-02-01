@@ -1320,9 +1320,9 @@ BdEngineBackend::QueryState BdEngineBackend::execUpsertDBAction(const DbEngineAc
     DbEngineActionType valueList      = DbEngineActionType::value(values);
 
     parameters.insert(QLatin1String(":id"),             id);
-    parameters.insert(QLatin1String(":fieldValueList"), qVariantFromValue(fieldValueList));
-    parameters.insert(QLatin1String(":fieldList"),      qVariantFromValue(fieldList));
-    parameters.insert(QLatin1String(":valueList"),      qVariantFromValue(valueList));
+    parameters.insert(QLatin1String(":fieldValueList"), QVariant::fromValue(fieldValueList));
+    parameters.insert(QLatin1String(":fieldList"),      QVariant::fromValue(fieldList));
+    parameters.insert(QLatin1String(":valueList"),      QVariant::fromValue(valueList));
 
     return execDBAction(action, parameters);
 }

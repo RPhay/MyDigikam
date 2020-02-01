@@ -99,7 +99,7 @@ QPersistentModelIndex DWItemDelegate::focusedIndex() const
 
 void DWItemDelegate::setBlockedEventTypes(QWidget* const widget, QList<QEvent::Type> types) const
 {
-    widget->setProperty("DigiKam:blockedEventTypes", qVariantFromValue(types));
+    widget->setProperty("DigiKam:blockedEventTypes", QVariant::fromValue(types));
 }
 
 QList<QEvent::Type> DWItemDelegate::blockedEventTypes(QWidget* const widget) const
