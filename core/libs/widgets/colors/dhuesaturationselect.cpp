@@ -219,11 +219,11 @@ void DPointSelect::wheelEvent(QWheelEvent* e)
 {
     if (e->orientation() == Qt::Horizontal)
     {
-        setValues(xValue() + e->angleDelta().y()/120, yValue());
+        setValues(xValue() + e->angleDelta().y() / 120, yValue());
     }
     else
     {
-        setValues(xValue(), yValue() + e->angleDelta().y()/120);
+        setValues(xValue(), yValue() + e->angleDelta().y() / 120);
     }
 
     emit valueChanged(d->xPos, d->yPos);

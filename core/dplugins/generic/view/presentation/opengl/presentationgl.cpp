@@ -453,7 +453,7 @@ void PresentationGL::wheelEvent(QWheelEvent* e)
 
     int delta = e->angleDelta().y();
 
-    if (delta < 0)
+    if      (delta < 0)
     {
         d->timer->stop();
         d->slideCtrlWidget->setPaused(true);
