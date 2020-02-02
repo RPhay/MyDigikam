@@ -27,6 +27,8 @@ include(CMakeParseArguments)
 #
 macro(DIGIKAM_ADD_GENERIC_PLUGIN)
 
+    APPLY_COMMON_POLICIES()
+
     set(_OPTIONS_ARGS)
     set(_ONE_VALUE_ARGS)
     set(_MULTI_VALUE_ARGS NAME SOURCES DEPENDS)
@@ -106,6 +108,8 @@ endmacro()
 #
 macro(DIGIKAM_ADD_EDITOR_PLUGIN)
 
+    APPLY_COMMON_POLICIES()
+
     set(_OPTIONS_ARGS)
     set(_ONE_VALUE_ARGS)
     set(_MULTI_VALUE_ARGS NAME SOURCES DEPENDS)
@@ -183,6 +187,8 @@ endmacro()
 # Bqm_${_pluginname_}_Plugin
 #
 macro(DIGIKAM_ADD_BQM_PLUGIN)
+
+    APPLY_COMMON_POLICIES()
 
     set(_OPTIONS_ARGS)
     set(_ONE_VALUE_ARGS)
@@ -265,6 +271,8 @@ endmacro()
 #
 macro(DIGIKAM_ADD_RAWIMPORT_PLUGIN)
 
+    APPLY_COMMON_POLICIES()
+
     set(_OPTIONS_ARGS)
     set(_ONE_VALUE_ARGS)
     set(_MULTI_VALUE_ARGS NAME SOURCES DEPENDS)
@@ -342,6 +350,8 @@ endmacro()
 # DImg_${_pluginname_}_Plugin
 #
 macro(DIGIKAM_ADD_DIMG_PLUGIN)
+
+    APPLY_COMMON_POLICIES()
 
     set(_OPTIONS_ARGS)
     set(_ONE_VALUE_ARGS)
