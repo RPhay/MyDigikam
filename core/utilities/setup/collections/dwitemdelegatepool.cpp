@@ -228,7 +228,7 @@ bool DWItemDelegateEventListener::eventFilter(QObject* watched, QEvent* event)
             {
                 QWheelEvent* const wheelEvent = static_cast<QWheelEvent*>(event);
                 QWheelEvent evt(viewport->mapFromGlobal(wheelEvent->globalPos()),
-                                wheelEvent->delta(), wheelEvent->buttons(), wheelEvent->modifiers(),
+                                wheelEvent->angleDelta().y(), wheelEvent->buttons(), wheelEvent->modifiers(),
                                 wheelEvent->orientation());
                 QApplication::sendEvent(viewport, &evt);
                 break;

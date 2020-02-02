@@ -503,7 +503,7 @@ void DDateTable::setFontSize(int size)
 
 void DDateTable::wheelEvent(QWheelEvent *e)
 {
-    setDate(d->date.addMonths(-(int)(e->delta() / 120)));
+    setDate(d->date.addMonths(-(int)(e->angleDelta().y() / 120)));
     e->accept();
 }
 

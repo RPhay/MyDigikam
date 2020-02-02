@@ -383,11 +383,11 @@ void GraphicsDImgView::wheelEvent(QWheelEvent* e)
     {
         e->accept();
 
-        if      (e->delta() < 0)
+        if      (e->angleDelta().y() < 0)
         {
             emit toNextImage();
         }
-        else if (e->delta() > 0)
+        else if (e->angleDelta().y() > 0)
         {
             emit toPreviousImage();
         }
@@ -398,11 +398,11 @@ void GraphicsDImgView::wheelEvent(QWheelEvent* e)
     {
         // When zooming with the mouse-wheel, the image center is kept fixed.
  
-        if      (e->delta() < 0)
+        if      (e->angleDelta().y() < 0)
         {
             d->layout->decreaseZoom(e->pos());
         }
-        else if (e->delta() > 0)
+        else if (e->angleDelta().y() > 0)
         {
             d->layout->increaseZoom(e->pos());
         }

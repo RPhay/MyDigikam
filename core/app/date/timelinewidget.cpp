@@ -1793,7 +1793,7 @@ void TimeLineWidget::slotForward()
 
 void TimeLineWidget::wheelEvent(QWheelEvent* e)
 {
-    if (e->delta() < 0)
+    if (e->angleDelta().y() < 0)
     {
         if (e->modifiers() & Qt::ShiftModifier)
         {
@@ -1805,7 +1805,7 @@ void TimeLineWidget::wheelEvent(QWheelEvent* e)
         }
     }
 
-    if (e->delta() > 0)
+    if (e->angleDelta().y() > 0)
     {
         if (e->modifiers() & Qt::ShiftModifier)
         {

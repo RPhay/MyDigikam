@@ -697,7 +697,7 @@ void PresentationWidget::wheelEvent(QWheelEvent* e)
     if (m_endOfShow)
         slotClose();
 
-    int delta = e->delta();
+    int delta = e->angleDelta().y();
 
     if (delta < 0)
     {

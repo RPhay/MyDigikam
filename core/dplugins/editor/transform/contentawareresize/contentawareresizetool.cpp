@@ -846,10 +846,18 @@ bool ContentAwareResizeTool::eventFilter(QObject* obj, QEvent* ev)
             {
                 QWheelEvent* const wheel = static_cast<QWheelEvent *>(ev);
 
-                if (wheel->delta() >= 0)
-                    d->maskPenSize->setValue(d->maskPenSize->value() + (wheel->delta()/8/15)*(wheel->delta()/8/15));
+                if (wheel->angleDelta().y() >= 0)
+                {
+                    d->maskPenSize->setValue(d->maskPenSize->value()        +
+                                             (wheel->angleDelta().y()/8/15) *
+                                             (wheel->angleDelta().y()/8/15));
+                }
                 else
-                    d->maskPenSize->setValue(d->maskPenSize->value() - (wheel->delta()/8/15)*(wheel->delta()/8/15));
+                {
+                    d->maskPenSize->setValue(d->maskPenSize->value()        -
+                                             (wheel->angleDelta().y()/8/15) *
+                                             (wheel->angleDelta().y()/8/15));
+                }
 
                 d->previewWidget->setMaskCursor();
             }

@@ -451,7 +451,7 @@ void PresentationGL::wheelEvent(QWheelEvent* e)
     if (d->endOfShow)
         slotClose();
 
-    int delta = e->delta();
+    int delta = e->angleDelta().y();
 
     if (delta < 0)
     {

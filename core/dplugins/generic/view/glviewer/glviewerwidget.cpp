@@ -654,12 +654,12 @@ void GLViewerWidget::wheelEvent(QWheelEvent* e)
         // mousewheel triggers zoom
         case GLViewerWidget::Private::zoomImage:
             setCursor(d->zoomCursor);
-            zoom(e->delta(), e->pos(), d->zoomfactor_scrollwheel);
+            zoom(e->angleDelta().y(), e->pos(), d->zoomfactor_scrollwheel);
             break;
 
         // mousewheel triggers image change
         case GLViewerWidget::Private::changeImage:
-            if (e->delta() < 0)
+            if (e->angleDelta().y() < 0)
                 nextImage();
             else
                 prevImage();

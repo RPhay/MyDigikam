@@ -922,7 +922,7 @@ void ItemViewCategorized::wheelEvent(QWheelEvent* event)
 
     if (event->modifiers() & Qt::ControlModifier)
     {
-        const int delta = event->delta();
+        const int delta = event->angleDelta().y();
 
         if      (delta > 0)
         {
@@ -939,7 +939,7 @@ void ItemViewCategorized::wheelEvent(QWheelEvent* event)
 
     if (verticalScrollBarPolicy() == Qt::ScrollBarAlwaysOff && event->orientation() == Qt::Vertical)
     {
-        QWheelEvent n(event->pos(), event->globalPos(), event->delta(),
+        QWheelEvent n(event->pos(), event->globalPos(), event->angleDelta().y(),
                       event->buttons(), event->modifiers(), Qt::Horizontal);
         QApplication::sendEvent(horizontalScrollBar(), &n);
         event->setAccepted(n.isAccepted());
