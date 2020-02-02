@@ -5,6 +5,8 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+APPLY_COMMON_POLICIES()
+
 kde_enable_exceptions()
 
 # TODO: How to extract exiv2lib definitions properties with cmake import interface?
@@ -42,7 +44,7 @@ set(libdmetadata_SRCS
     engine/metaengine_rotation.cpp
     engine/metaenginesettings.cpp
     engine/metaenginesettingscontainer.cpp
-   
+
     dmetadata/dmetadata.cpp
     dmetadata/dmetadata_video.cpp
     dmetadata/dmetadata_fileio.cpp

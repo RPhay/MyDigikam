@@ -18,12 +18,6 @@ cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
 execute_process(COMMAND ${CMAKE_COMMAND} --version OUTPUT_VARIABLE VERSION_CMAKE_INFO)
 message(STATUS "CMake version: ${VERSION_CMAKE_INFO}")
 
-set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-set_property(GLOBAL PROPERTY AUTOGEN_TARGETS_FOLDER "Generated")
 
 ### ECM setup #########################################################################################################
 
@@ -57,7 +51,21 @@ include(MacroOpenCV)
 include(MacroJPEG)
 include(MacroBoolTo01)
 
+#######################################################################################################################
+
 APPLY_COMMON_POLICIES()
+
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set_property(GLOBAL PROPERTY AUTOGEN_TARGETS_FOLDER "Generated")
+
+#set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/objects")
+#set(AUTOGEN_BUILD_DIR "${CMAKE_SOURCE_DIR}/objects")
 
 ### COMPILATION OPTIONS MANAGEMENT ####################################################################################
 

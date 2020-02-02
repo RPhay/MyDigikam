@@ -5,6 +5,8 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+APPLY_COMMON_POLICIES()
+
 # Define libjpeg_EXPORTS: kde-win emerged libjpeg uses this define to
 # decide whether to make dllimport (by default) or dllexport. So, we need to export.
 add_definitions(-Dlibjpeg_EXPORTS)

@@ -4,6 +4,8 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+APPLY_COMMON_POLICIES()
+
 set(libdtrash_SRCS
     ${CMAKE_SOURCE_DIR}/core/libs/dtrash/dtrash.cpp
     ${CMAKE_SOURCE_DIR}/core/libs/dtrash/dtrashiteminfo.cpp

@@ -4,6 +4,7 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+APPLY_COMMON_POLICIES()
 
 # Option to switch between DNN or HAAR face detection.
 # DNN is the default one, Haar is the legacy deprecated method.

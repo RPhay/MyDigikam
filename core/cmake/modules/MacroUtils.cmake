@@ -183,28 +183,28 @@ endmacro()
 
 macro(APPLY_COMMON_POLICIES)
 
-if(POLICY CMP0063)
-    # C++ symbols visibility policy introduced in CMake version 3.3
-    # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0063.html
-    cmake_policy(SET CMP0063 NEW)
-endif()
+    if(POLICY CMP0063)
+        # C++ symbols visibility policy introduced in CMake version 3.3
+        # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0063.html
+        cmake_policy(SET CMP0063 NEW)
+    endif()
 
-if(POLICY CMP0068)
-    # MacOS RPATH settings policy introduced in CMake version 3.9
-    # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0068.html
-    cmake_policy(SET CMP0068 NEW)
-endif()
+    if(POLICY CMP0068)
+        # MacOS RPATH settings policy introduced in CMake version 3.9
+        # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0068.html
+        cmake_policy(SET CMP0068 NEW)
+    endif()
 
-if(POLICY CMP0071)
-    # Automoc/autouic files handling introduced in CMake version 3.10
-    # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0071.html
-    cmake_policy(SET CMP0071 NEW)
-endif()
+    if(POLICY CMP0071)
+        # Automoc/autouic files handling introduced in CMake version 3.10
+        # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0071.html
+        cmake_policy(SET CMP0071 NEW)
+    endif()
 
-if(POLICY CMP0092)
-    # MSVC warnings flag rules introduced in CMake version 3.16
-    # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0092.html
-    cmake_policy(SET CMP0092 NEW)
-endif()
+    if(POLICY CMP0092)
+        # MSVC warnings flag rules introduced in CMake version 3.16
+        # Details: https://cmake.org/cmake/help/git-stage/policy/CMP0092.html
+        cmake_policy(SET CMP0092 NEW)
+    endif()
 
 endmacro()

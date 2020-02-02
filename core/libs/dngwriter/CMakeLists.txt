@@ -4,6 +4,8 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+APPLY_COMMON_POLICIES()
+
 # DNG SDK and XMP SDK use C++ exceptions
 kde_enable_exceptions()
 
@@ -20,7 +22,6 @@ include_directories(
     extra/xmp_sdk/common
     extra/xmp_sdk/include
     extra/xmp_sdk/include/client-glue
-    
 )
 
 #------------------------------------------------------------------------------------
