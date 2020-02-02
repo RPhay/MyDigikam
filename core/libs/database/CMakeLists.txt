@@ -11,174 +11,174 @@
 string(REPLACE "-fno-operator-names" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
 set(libdatabasecore_SRCS
-    server/databaseserverstarter.cpp
-    server/databaseservererror.cpp
-    server/databaseserver.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/server/databaseserverstarter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/server/databaseservererror.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/server/databaseserver.cpp
 
-    engine/dbengineconfigloader.cpp
-    engine/dbengineconfig.cpp
-    engine/dbengineactiontype.cpp
-    engine/dbengineerrorhandler.cpp
-    engine/dbengineguierrorhandler.cpp
-    engine/dbengineparameters.cpp
-    engine/dbenginebackend.cpp
-    engine/dbenginesqlquery.cpp
-    engine/dbengineaccess.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/engine/dbengineconfigloader.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/engine/dbengineconfig.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/engine/dbengineactiontype.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/engine/dbengineerrorhandler.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/engine/dbengineguierrorhandler.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/engine/dbengineparameters.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/engine/dbenginebackend.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/engine/dbenginesqlquery.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/engine/dbengineaccess.cpp
 
-    tags/tagregion.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/tags/tagregion.cpp
 
-    thumbsdb/thumbsdb.cpp
-    thumbsdb/thumbsdbschemaupdater.cpp
-    thumbsdb/thumbsdbbackend.cpp
-    thumbsdb/thumbsdbaccess.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/thumbsdb/thumbsdb.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/thumbsdb/thumbsdbschemaupdater.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/thumbsdb/thumbsdbbackend.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/thumbsdb/thumbsdbaccess.cpp
 )
 
 set(libdatabaseutils_SRCS
-    utils/widgets/dbstatdlg.cpp
-    utils/widgets/dbsettingswidget.cpp
-    utils/widgets/dbmigrationdlg.cpp
-    utils/widgets/mysqlinitbinary.cpp
-    utils/widgets/mysqlservbinary.cpp
-    utils/widgets/searchtextbardb.cpp
-    utils/ifaces/dbinfoiface.cpp
-    utils/ifaces/syncjob.cpp
-    utils/ifaces/dio.cpp
-    utils/ifaces/diofinders.cpp
-    utils/scan/scancontroller.cpp
-    utils/scan/scancontroller_p.cpp
-    utils/scan/scancontroller_start.cpp
-    utils/scan/scancontroller_progress.cpp
-    utils/scan/scancontroller_stop.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/utils/widgets/dbstatdlg.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/utils/widgets/dbsettingswidget.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/utils/widgets/dbmigrationdlg.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/utils/widgets/mysqlinitbinary.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/utils/widgets/mysqlservbinary.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/utils/widgets/searchtextbardb.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/utils/ifaces/dbinfoiface.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/utils/ifaces/syncjob.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/utils/ifaces/dio.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/utils/ifaces/diofinders.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/utils/scan/scancontroller.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/utils/scan/scancontroller_p.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/utils/scan/scancontroller_start.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/utils/scan/scancontroller_progress.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/utils/scan/scancontroller_stop.cpp
 )
 
 set(libdatabasemodels_SRCS
-    models/itemfiltermodel.cpp
-    models/itemfiltermodel_p.cpp
-    models/itemfiltermodelthreads.cpp
-    models/itemfiltersettings.cpp
-    models/itemversionsmodel.cpp
-    models/itemthumbnailmodel.cpp
-    models/itemsortsettings.cpp
-    models/itemlistmodel.cpp
-    models/itemmodel.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/models/itemfiltermodel.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/models/itemfiltermodel_p.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/models/itemfiltermodelthreads.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/models/itemfiltersettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/models/itemversionsmodel.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/models/itemthumbnailmodel.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/models/itemsortsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/models/itemlistmodel.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/models/itemmodel.cpp
 )
 
 set(libdatabase_SRCS
-    collection/collectionscanner.cpp
-    collection/collectionscanner_p.cpp
-    collection/collectionscanner_scan.cpp
-    collection/collectionscanner_utils.cpp
-    collection/collectionmanager.cpp
-    collection/collectionmanager_p.cpp
-    collection/collectionmanager_location.cpp
-    collection/collectionmanager_album.cpp
-    collection/collectionlocation.cpp
-    collection/collectionscannerhints.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/collection/collectionscanner.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/collection/collectionscanner_p.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/collection/collectionscanner_scan.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/collection/collectionscanner_utils.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/collection/collectionmanager.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/collection/collectionmanager_p.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/collection/collectionmanager_location.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/collection/collectionmanager_album.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/collection/collectionlocation.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/collection/collectionscannerhints.cpp
 
-    coredb/coredb.cpp
-    coredb/coredbsearchxml.cpp
-    coredb/coredbchecker.cpp
-    coredb/coredbcopymanager.cpp
-    coredb/coredbconstants.cpp
-    coredb/coredbtransaction.cpp
-    coredb/coredbschemaupdater.cpp
-    coredb/coredbchangesets.cpp
-    coredb/coredbthumbinfoprovider.cpp
-    coredb/coredboperationgroup.cpp
-    coredb/coredbbackend.cpp
-    coredb/coredbwatch.cpp
-    coredb/coredburl.cpp
-    coredb/coredbaccess.cpp
-    coredb/coredbnamefilter.cpp
-    coredb/coredbdownloadhistory.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredb.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredbsearchxml.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredbchecker.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredbcopymanager.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredbconstants.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredbtransaction.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredbschemaupdater.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredbchangesets.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredbthumbinfoprovider.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredboperationgroup.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredbbackend.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredbwatch.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredburl.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredbaccess.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredbnamefilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredbdownloadhistory.cpp
 
-    tags/tagproperties.cpp
-    tags/tagscache.cpp
-    tags/facetags.cpp
-    tags/facetagseditor.cpp
-    tags/facetagsiface.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/tags/tagproperties.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/tags/tagscache.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/tags/facetags.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/tags/facetagseditor.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/tags/facetagsiface.cpp
 
-    dbjobs/dbjobsthread.cpp
-    dbjobs/dbjob.cpp
-    dbjobs/dbjobinfo.cpp
-    dbjobs/dbjobsmanager.cpp
-    dbjobs/duplicatesprogressobserver.cpp
-
-    item/containers/iteminfo.cpp
-    item/containers/iteminfo_p.cpp
-    item/containers/iteminfo_containers.cpp
-    item/containers/iteminfo_geolocation.cpp
-    item/containers/iteminfo_groups.cpp
-    item/containers/iteminfo_history.cpp
-    item/containers/iteminfo_labels.cpp
-    item/containers/iteminfo_properties.cpp
-    item/containers/iteminfo_similarity.cpp
-    item/containers/iteminfo_tags.cpp
-    item/containers/iteminfo_thumbnail.cpp
-    item/containers/iteminfodata.cpp
-    item/containers/iteminfolist.cpp
-    item/containers/iteminfocache.cpp
-    item/containers/itemcomments.cpp
-    item/containers/itemcopyright.cpp
-    item/containers/itemposition.cpp
-    item/containers/itemtagpair.cpp
-    item/containers/itemextendedproperties.cpp
-
-    item/lister/itemlister.cpp
-    item/lister/itemlister_palbum.cpp
-    item/lister/itemlister_talbum.cpp
-    item/lister/itemlister_salbum.cpp
-    item/lister/itemlister_falbum.cpp
-    item/lister/itemlisterrecord.cpp
-    item/lister/itemlisterreceiver.cpp
-    item/lister/itemattributeswatch.cpp
-
-    item/query/itemquerybuilder.cpp
-    item/query/itemquerybuilder_p.cpp
-    item/query/itemqueryposthooks.cpp
-    item/query/fieldquerybuilder.cpp
-
-    item/scanner/itemscanner.cpp
-    item/scanner/itemscanner_p.cpp
-    item/scanner/itemscanner_database.cpp
-    item/scanner/itemscanner_file.cpp
-    item/scanner/itemscanner_photo.cpp
-    item/scanner/itemscanner_video.cpp
-    item/scanner/itemscanner_history.cpp
-    item/scanner/itemscanner_baloo.cpp
-
-    history/itemhistorygraph.cpp
-    history/itemhistorygraphmodel.cpp
-
-    similaritydb/similaritydb.cpp
-    similaritydb/similaritydbschemaupdater.cpp
-    similaritydb/similaritydbbackend.cpp
-    similaritydb/similaritydbaccess.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/dbjobs/dbjobsthread.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/dbjobs/dbjob.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/dbjobs/dbjobinfo.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/dbjobs/dbjobsmanager.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/dbjobs/duplicatesprogressobserver.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/iteminfo.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/iteminfo_p.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/iteminfo_containers.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/iteminfo_geolocation.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/iteminfo_groups.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/iteminfo_history.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/iteminfo_labels.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/iteminfo_properties.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/iteminfo_similarity.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/iteminfo_tags.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/iteminfo_thumbnail.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/iteminfodata.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/iteminfolist.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/iteminfocache.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/itemcomments.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/itemcopyright.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/itemposition.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/itemtagpair.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/itemextendedproperties.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/lister/itemlister.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/lister/itemlister_palbum.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/lister/itemlister_talbum.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/lister/itemlister_salbum.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/lister/itemlister_falbum.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/lister/itemlisterrecord.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/lister/itemlisterreceiver.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/lister/itemattributeswatch.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/query/itemquerybuilder.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/query/itemquerybuilder_p.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/query/itemqueryposthooks.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/query/fieldquerybuilder.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/scanner/itemscanner.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/scanner/itemscanner_p.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/scanner/itemscanner_database.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/scanner/itemscanner_file.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/scanner/itemscanner_photo.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/scanner/itemscanner_video.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/scanner/itemscanner_history.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/item/scanner/itemscanner_baloo.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/
+    ${CMAKE_SOURCE_DIR}/core/libs/database/history/itemhistorygraph.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/history/itemhistorygraphmodel.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/
+    ${CMAKE_SOURCE_DIR}/core/libs/database/similaritydb/similaritydb.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/similaritydb/similaritydbschemaupdater.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/similaritydb/similaritydbbackend.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/similaritydb/similaritydbaccess.cpp
 )
 
 if(ENABLE_DBUS)
     set(libdatabase_SRCS
         ${libdatabase_SRCS}
-        coredb/coredbwatchadaptor.cpp
+        ${CMAKE_SOURCE_DIR}/core/libs/database/coredb/coredbwatchadaptor.cpp
        )
 endif()
 
 if(Marble_FOUND)
     set(libdatabase_SRCS
         ${libdatabase_SRCS}
-        item/containers/itemgps.cpp
+        ${CMAKE_SOURCE_DIR}/core/libs/database/item/containers/itemgps.cpp
        )
 endif()
 
 # enable exceptions
-kde_source_files_enable_exceptions(history/itemhistorygraph.cpp
-                                   history/itemhistorygraphmodel.cpp
+kde_source_files_enable_exceptions(${CMAKE_SOURCE_DIR}/core/libs/database/history/itemhistorygraph.cpp
+                                   ${CMAKE_SOURCE_DIR}/core/libs/database/history/itemhistorygraphmodel.cpp
 )
 
 set(libhaar_SRCS
-    haar/haar.cpp
-    haar/haariface.cpp
-    haar/haariface_p.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/haar/haar.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/haar/haariface.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/database/haar/haariface_p.cpp
 )
 
 # Shared libdigikamdatabase ########################################################

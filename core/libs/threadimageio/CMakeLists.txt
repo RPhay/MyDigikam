@@ -6,39 +6,43 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set(libthreadimageio_SRCS
-    engine/dfileoperations.cpp
-    engine/filereadwritelock.cpp
-    engine/managedloadsavethread.cpp
-    engine/sharedloadsavethread.cpp
-    preview/previewloadthread.cpp
-    preview/previewtask.cpp
-    preview/previewsettings.cpp
-    thumb/thumbnailbasic.cpp
-    thumb/thumbnailcreator.cpp
-    thumb/thumbnailcreator_freedesktop.cpp
-    thumb/thumbnailcreator_database.cpp
-    thumb/thumbnailcreator_engine.cpp
-    thumb/thumbnailloadthread.cpp
-    thumb/thumbnailloadthread_p.cpp
-    thumb/thumbnailtask.cpp
-    thumb/thumbnailsize.cpp
-    fileio/loadsavethread.cpp
-    fileio/loadingdescription.cpp
-    fileio/loadingcache.cpp
-    fileio/loadingcacheinterface.cpp
-    fileio/loadsavetask.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/engine/dfileoperations.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/engine/filereadwritelock.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/engine/managedloadsavethread.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/engine/sharedloadsavethread.cpp
+
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/preview/previewloadthread.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/preview/previewtask.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/preview/previewsettings.cpp
+
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/thumb/thumbnailbasic.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/thumb/thumbnailcreator.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/thumb/thumbnailcreator_freedesktop.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/thumb/thumbnailcreator_database.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/thumb/thumbnailcreator_engine.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/thumb/thumbnailloadthread.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/thumb/thumbnailloadthread_p.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/thumb/thumbnailtask.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/thumb/thumbnailsize.cpp
+
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/fileio/loadsavethread.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/fileio/loadingdescription.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/fileio/loadingcache.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/fileio/loadingcacheinterface.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/fileio/loadsavetask.cpp
 )
 
 if(ENABLE_MEDIAPLAYER)
 
     set(libthreadimageio_SRCS
         ${libthreadimageio_SRCS}
-        video/videostripfilter.cpp
-        video/videodecoder.cpp
-        video/videodecoder_p.cpp
-        video/videothumbwriter.cpp
-        video/videothumbnailer.cpp
-       )
+        ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/video/videostripfilter.cpp
+        ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/video/videodecoder.cpp
+        ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/video/videodecoder_p.cpp
+        ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/video/videothumbwriter.cpp
+        ${CMAKE_SOURCE_DIR}/core/libs/threadimageio/video/videothumbnailer.cpp
+    )
+
 endif()
 
 include_directories(

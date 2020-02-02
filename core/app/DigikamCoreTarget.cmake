@@ -5,9 +5,12 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-# digiKam CORE shared library
+### digiKam core object library #################################################################################################
 
 set(DIGIKAMCORE_OBJECTS
+
+            ${CMAKE_SOURCE_DIR}/core/app/utils/digikam_debug.cpp
+            ${CMAKE_SOURCE_DIR}/core/app/utils/digikam_version.cpp
 
             $<TARGET_OBJECTS:dimg_src>
             $<TARGET_OBJECTS:dmetadata_src>
@@ -43,9 +46,6 @@ set(DIGIKAMCORE_OBJECTS
 
             $<TARGET_OBJECTS:digikamdatabasecore_src>
             $<TARGET_OBJECTS:digikamfacesengine_src>
-
-            utils/digikam_debug.cpp
-            utils/digikam_version.cpp
 )
 
 if(ENABLE_MEDIAPLAYER)
@@ -214,14 +214,14 @@ if(ENABLE_MEDIAPLAYER)
     target_link_libraries(digikamcore PRIVATE ${QTAV_LIBRARIES})
 endif()
 
-# --- Install Rules ---
+### Install Rules ###############################################################################################################
 
 install(TARGETS digikamcore EXPORT DigikamCoreConfig ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(EXPORT DigikamCoreConfig DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamCore" NAMESPACE Digikam::)
 
-write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/DigikamCoreConfigVersion.cmake
+write_basic_package_version_file(${CMAKE_BINARY_DIR}/core/app/DigikamCoreConfigVersion.cmake
                                  VERSION ${DIGIKAM_VERSION_SHORT}
                                  COMPATIBILITY SameMajorVersion)
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamCoreConfigVersion.cmake
+install(FILES ${CMAKE_BINARY_DIR}/core/app/DigikamCoreConfigVersion.cmake
         DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamCore")

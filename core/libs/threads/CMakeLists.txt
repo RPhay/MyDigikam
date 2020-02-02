@@ -5,12 +5,12 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-set(libdthread_SRCS
-    actionthreadbase.cpp
-    threadmanager.cpp
-    workerobject.cpp
-    dynamicthread.cpp
-    parallelworkers.cpp
+set(${CMAKE_SOURCE_DIR}/core/libs/threads/libdthread_SRCS
+    ${CMAKE_SOURCE_DIR}/core/libs/threads/actionthreadbase.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threads/threadmanager.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threads/workerobject.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threads/dynamicthread.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/threads/parallelworkers.cpp
 )
 
 include_directories(

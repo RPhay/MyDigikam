@@ -7,6 +7,8 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+### digiKam database shared library target ######################################################################################
+
 add_library(digikamdatabase SHARED $<TARGET_OBJECTS:digikamdatabase_src>)
 
 set_target_properties(digikamdatabase PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
@@ -32,14 +34,14 @@ if(ENABLE_DBUS)
     target_link_libraries(digikamdatabase PRIVATE Qt5::DBus)
 endif()
 
-# --- Install Rules ---
+### Install Rules ###############################################################################################################
 
 install(TARGETS digikamdatabase EXPORT DigikamDatabaseConfig ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(EXPORT DigikamDatabaseConfig DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamDatabase" NAMESPACE Digikam::)
 
-write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/DigikamDatabaseConfigVersion.cmake
+write_basic_package_version_file(${CMAKE_BINARY_DIR}/core/app/DigikamDatabaseConfigVersion.cmake
                                  VERSION ${DIGIKAM_VERSION_SHORT}
                                  COMPATIBILITY SameMajorVersion)
 
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamDatabaseConfigVersion.cmake
+install(FILES ${CMAKE_BINARY_DIR}/core/app/DigikamDatabaseConfigVersion.cmake
         DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamDatabase")

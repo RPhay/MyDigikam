@@ -8,11 +8,11 @@
 # digiKam executable
 
 set(digikam_SRCS
-    main/main.cpp
+    ${CMAKE_SOURCE_DIR}/core/app/main/main.cpp
 )
 
 # this is only required by Win & OSX
-file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../data/icons/apps/*-apps-digikam.png")
+file(GLOB ICONS_SRCS "${CMAKE_SOURCE_DIR}/core/data/icons/apps/*-apps-digikam.png")
 ecm_add_app_icon(digikam_SRCS ICONS ${ICONS_SRCS})
 
 add_executable(digikam ${digikam_SRCS})
