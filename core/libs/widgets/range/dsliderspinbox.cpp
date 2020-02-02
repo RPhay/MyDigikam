@@ -590,7 +590,7 @@ void DAbstractSliderSpinBox::wheelEvent(QWheelEvent *e)
 {
     Q_D(DAbstractSliderSpinBox);
 
-    if (e->delta() > 0)
+    if (e->angleDelta().y() > 0)
     {
         setInternalValue(d->value + d->singleStep);
     }

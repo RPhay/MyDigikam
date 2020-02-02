@@ -520,13 +520,13 @@ void SlideShow::preloadNextItem()
 
 void SlideShow::wheelEvent(QWheelEvent* e)
 {
-    if (e->delta() < 0)
+    if (e->angleDelta().y() < 0)
     {
         d->osd->pause(true);
         slotLoadNextItem();
     }
 
-    if (e->delta() > 0)
+    if (e->angleDelta().y() > 0)
     {
         if (d->fileIndex == -1)
         {

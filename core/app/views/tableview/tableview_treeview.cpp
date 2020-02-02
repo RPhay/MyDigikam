@@ -316,7 +316,7 @@ void TableViewTreeView::wheelEvent(QWheelEvent* event)
 {
     if (event->modifiers() & Qt::ControlModifier)
     {
-        const int delta = event->delta();
+        const int delta = event->angleDelta().y();
 
         if (delta > 0)
         {

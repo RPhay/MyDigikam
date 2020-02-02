@@ -560,7 +560,7 @@ void SketchWidget::wheelEvent(QWheelEvent* e)
         int size = d->penWidth;
         int decr = (e->modifiers() & Qt::SHIFT) ? 1 : 10;
 
-        if (e->delta() > 0)
+        if (e->angleDelta().y() > 0)
         {
             size += decr;
         }
