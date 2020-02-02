@@ -4,6 +4,8 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+APPLY_COMMON_POLICIES()
+
 include(${CMAKE_SOURCE_DIR}/core/cmake/modules/DNGSdkRules.cmake)
 
 # =======================================================
