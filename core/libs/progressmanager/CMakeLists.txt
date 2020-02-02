@@ -6,16 +6,16 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set(libprogressmanager_SRCS
-    dhistoryview.cpp
-    dprogresswdg.cpp
-    overlaywidget.cpp
-    progressview.cpp
-    progressmanager.cpp
-    statusbarprogresswidget.cpp
-    statusprogressbar.cpp
-    workingwidget.cpp
-    dworkingpixmap.cpp
-    dlogoaction.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/progressmanager/dhistoryview.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/progressmanager/dprogresswdg.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/progressmanager/overlaywidget.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/progressmanager/progressview.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/progressmanager/progressmanager.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/progressmanager/statusbarprogresswidget.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/progressmanager/statusprogressbar.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/progressmanager/workingwidget.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/progressmanager/dworkingpixmap.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/progressmanager/dlogoaction.cpp
 )
 
 include_directories(

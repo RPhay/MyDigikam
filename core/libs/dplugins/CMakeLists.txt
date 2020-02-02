@@ -29,51 +29,56 @@ if(KF5KIO_FOUND)
 endif()
 
 set(libdpluginsinterface_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/core/dplugin.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/core/dplugingeneric.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/core/dplugineditor.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/core/dpluginrawimport.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/core/dplugindimg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/core/dpluginauthor.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/core/dpluginaction.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginloader.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginloader_p.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginconfview.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginconfviewgeneric.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginconfvieweditor.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginconfviewdimg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginsetup.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/setup/dpluginaboutdlg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/iface/dinfointerface.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/iface/dmetainfoiface.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dplugindialog.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dwizardpage.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dwizarddlg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dsavesettingswidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dwizardpage.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dpreviewmanager.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/dpreviewimage.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/ditemslist.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wscomboboxdelegate.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wscomboboxintermediate.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wstooldialog.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wstoolutils.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wssettingswidget.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wsselectuserdlg.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wslogindialog.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wsnewalbumdialog.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/webservices/wssettings.cpp
+
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dplugin.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dplugingeneric.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dplugineditor.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dpluginrawimport.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dplugindimg.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dpluginauthor.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/core/dpluginaction.cpp
+
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/setup/dpluginloader.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/setup/dpluginloader_p.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/setup/dpluginconfview.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/setup/dpluginconfviewgeneric.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/setup/dpluginconfvieweditor.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/setup/dpluginconfviewdimg.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/setup/dpluginsetup.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/setup/dpluginaboutdlg.cpp
+
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/iface/dinfointerface.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/iface/dmetainfoiface.cpp
+
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/widgets/dplugindialog.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/widgets/dwizardpage.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/widgets/dwizarddlg.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/widgets/dsavesettingswidget.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/widgets/dwizardpage.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/widgets/dpreviewmanager.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/widgets/dpreviewimage.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/widgets/ditemslist.cpp
+
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/wscomboboxdelegate.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/wscomboboxintermediate.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/wstooldialog.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/wstoolutils.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/wssettingswidget.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/wsselectuserdlg.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/wslogindialog.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/wsnewalbumdialog.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/wssettings.cpp
 )
 
 #if(ENABLE_QWEBENGINE)
 #    set(libdpluginsinterface_SRCS
 #        ${libdpluginsinterface_SRCS}
-#        ${CMAKE_CURRENT_SOURCE_DIR}/webservices/webwidget_qwebengine.cpp
+#        ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/webwidget_qwebengine.cpp
 #       )
 #else()
 #    set(libdpluginsinterface_SRCS
 #        ${libdpluginsinterface_SRCS}
-#        ${CMAKE_CURRENT_SOURCE_DIR}/webservices/webwidget.cpp
+#        ${CMAKE_SOURCE_DIR}/core/libs/dplugins/webservices/webwidget.cpp
 #       )
 #endif()
 

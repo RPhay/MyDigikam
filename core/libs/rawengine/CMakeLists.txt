@@ -48,86 +48,86 @@ add_definitions(-DDCRAW_VERBOSE)
 # No need a Flag to export library symbols, as we use a static version for the unit tests.
 add_definitions(-DLIBRAW_NODLL)
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR}/libraw/
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw
-                    ${CMAKE_CURRENT_SOURCE_DIR}/../dngwriter/extra/dng_sdk
+include_directories(${CMAKE_BINARY_DIR}/core/libs/rawengine/libraw/
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw
+                    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk
 )
 
-set(libraw_LIB_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/libraw_c_api.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/libraw_datastream.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/canon_600.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/crx.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/decoders_dcraw.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/decoders_libraw_dcrdefs.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/decoders_libraw.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/dng.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/fp_dng.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/fuji_compressed.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/generic.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/kodak_decoders.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/load_mfbacks.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/smal.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/unpack_thumb.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/decoders/unpack.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/demosaic/aahd_demosaic.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/demosaic/ahd_demosaic.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/demosaic/dcb_demosaic.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/demosaic/dht_demosaic.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/demosaic/misc_demosaic.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/demosaic/xtrans_demosaic.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/integration/dngsdk_glue.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/integration/rawspeed_glue.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/adobepano.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/canon.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/ciff.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/cr3_parser.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/epson.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/exif_gps.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/fuji.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/identify_tools.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/identify.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/kodak.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/leica.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/makernotes.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/mediumformat.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/minolta.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/misc_parsers.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/nikon.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/normalize_model.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/olympus.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/hasselblad_model.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/p1.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/pentax.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/samsung.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/sony.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/metadata/tiff.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/postprocessing/aspect_ratio.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/postprocessing/dcraw_process.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/postprocessing/mem_image.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/postprocessing/postprocessing_aux.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/postprocessing/postprocessing_utils_dcrdefs.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/postprocessing/postprocessing_utils.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/preprocessing/ext_preprocess.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/preprocessing/raw2image.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/preprocessing/subtract_black.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/tables/cameralist.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/tables/colorconst.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/tables/colordata.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/tables/wblists.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/utils/curves.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/utils/decoder_info.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/utils/init_close_utils.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/utils/open.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/utils/phaseone_processing.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/utils/read_utils.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/utils/thumb_utils.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/utils/utils_dcraw.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/utils/utils_libraw.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/write/apply_profile.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/write/file_write.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/write/tiff_writer.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/x3f/x3f_parse_process.cpp
-                    ${CMAKE_CURRENT_SOURCE_DIR}/libraw/src/x3f/x3f_utils_patched.cpp
+set(libraw_LIB_SRCS ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/libraw_c_api.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/libraw_datastream.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/decoders/canon_600.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/decoders/crx.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/decoders/decoders_dcraw.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/decoders/decoders_libraw_dcrdefs.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/decoders/decoders_libraw.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/decoders/dng.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/decoders/fp_dng.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/decoders/fuji_compressed.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/decoders/generic.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/decoders/kodak_decoders.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/decoders/load_mfbacks.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/decoders/smal.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/decoders/unpack_thumb.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/decoders/unpack.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/demosaic/aahd_demosaic.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/demosaic/ahd_demosaic.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/demosaic/dcb_demosaic.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/demosaic/dht_demosaic.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/demosaic/misc_demosaic.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/demosaic/xtrans_demosaic.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/integration/dngsdk_glue.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/integration/rawspeed_glue.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/adobepano.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/canon.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/ciff.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/cr3_parser.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/epson.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/exif_gps.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/fuji.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/identify_tools.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/identify.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/kodak.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/leica.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/makernotes.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/mediumformat.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/minolta.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/misc_parsers.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/nikon.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/normalize_model.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/olympus.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/hasselblad_model.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/p1.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/pentax.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/samsung.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/sony.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/metadata/tiff.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/postprocessing/aspect_ratio.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/postprocessing/dcraw_process.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/postprocessing/mem_image.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/postprocessing/postprocessing_aux.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/postprocessing/postprocessing_utils_dcrdefs.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/postprocessing/postprocessing_utils.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/preprocessing/ext_preprocess.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/preprocessing/raw2image.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/preprocessing/subtract_black.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/tables/cameralist.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/tables/colorconst.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/tables/colordata.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/tables/wblists.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/utils/curves.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/utils/decoder_info.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/utils/init_close_utils.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/utils/open.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/utils/phaseone_processing.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/utils/read_utils.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/utils/thumb_utils.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/utils/utils_dcraw.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/utils/utils_libraw.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/write/apply_profile.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/write/file_write.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/write/tiff_writer.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/x3f/x3f_parse_process.cpp
+                    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw/src/x3f/x3f_utils_patched.cpp
 )
 
 add_library(libraw_src OBJECT ${libraw_LIB_SRCS})
@@ -149,12 +149,12 @@ add_library(libraw STATIC
 #################################
 
 set(librawengine_SRCS
-    drawdecoder.cpp
-    drawdecoder_p.cpp
-    drawdecodersettings.cpp
-    drawdecoderwidget.cpp
-    drawinfo.cpp
-    drawfiles.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawdecoder.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawdecoder_p.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawdecodersettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawdecoderwidget.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawinfo.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/rawengine/drawfiles.cpp
 )
 
 include_directories(

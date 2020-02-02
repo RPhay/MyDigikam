@@ -10,8 +10,8 @@
 add_definitions(-Dlibjpeg_EXPORTS)
 
 set(libjpegutils_SRCS
-    jpegutils.cpp
-    iccjpeg.c
+    ${CMAKE_SOURCE_DIR}/core/libs/jpegutils/jpegutils.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/jpegutils/iccjpeg.c
     ${DIGIKAM_LIBJPEG_DIR}/transupp.c
 )
 
@@ -25,7 +25,7 @@ endif()
 if(WIN32)
     set(libjpegutils_SRCS
         ${libjpegutils_SRCS}
-        jpegwin.cpp
+        ${CMAKE_SOURCE_DIR}/core/libs/jpegutils/jpegwin.cpp
     )
 endif()
 

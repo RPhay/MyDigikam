@@ -11,122 +11,124 @@ kde_enable_exceptions()
 string(REPLACE "-fno-operator-names" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
 set(libdimg_SRCS
-    dimg.cpp
-    dimg_bitsops.cpp
-    dimg_colors.cpp
-    dimg_copy.cpp
-    dimg_data.cpp
-    dimg_fileio.cpp
-    dimg_metadata.cpp
-    dimg_props.cpp
-    dimg_qimage.cpp
-    dimg_qpixmap.cpp
-    dimg_scale.cpp
-    dimg_transform.cpp
-    color/dcolor.cpp
-    color/dcolorcomposer.cpp
-    history/dimagehistory.cpp
-    history/filteraction.cpp
-    history/historyimageid.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/dimg.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/dimg_bitsops.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/dimg_colors.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/dimg_copy.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/dimg_data.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/dimg_fileio.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/dimg_metadata.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/dimg_props.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/dimg_qimage.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/dimg_qpixmap.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/dimg_scale.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/dimg_transform.cpp
+
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/color/dcolor.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/color/dcolorcomposer.cpp
+
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/history/dimagehistory.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/history/filteraction.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/history/historyimageid.cpp
 )
 
 set(libdimgfilters_SRCS
-    filters/dimgbuiltinfilter.cpp
-    filters/dimgthreadedfilter.cpp
-    filters/dimgthreadedanalyser.cpp
-    filters/dimgfiltermanager.cpp
-    filters/dimgfiltergenerator.cpp
-    filters/dpixelsaliasfilter.cpp
-    filters/filteractionfilter.cpp
-    filters/randomnumbergenerator.cpp
-    filters/raw/rawprocessingfilter.cpp
-    filters/raw/drawdecoding.cpp
-    filters/decorate/borderfilter.cpp
-    filters/decorate/bordersettings.cpp
-    filters/decorate/texturefilter.cpp
-    filters/film/filmfilter.cpp
-    filters/fx/blurfilter.cpp
-    filters/fx/blurfxfilter.cpp
-    filters/fx/colorfxfilter.cpp
-    filters/fx/colorfxsettings.cpp
-    filters/fx/distortionfxfilter.cpp
-    filters/fx/charcoalfilter.cpp
-    filters/fx/embossfilter.cpp
-    filters/fx/filmgrainfilter.cpp
-    filters/fx/filmgrainsettings.cpp
-    filters/fx/invertfilter.cpp
-    filters/fx/oilpaintfilter.cpp
-    filters/fx/raindropfilter.cpp
-    filters/auto/autolevelsfilter.cpp
-    filters/auto/autoexpofilter.cpp
-    filters/auto/equalizefilter.cpp
-    filters/auto/stretchfilter.cpp
-    filters/auto/normalizefilter.cpp
-    filters/cb/cbfilter.cpp
-    filters/cb/cbsettings.cpp
-    filters/bcg/bcgfilter.cpp
-    filters/bcg/bcgsettings.cpp
-    filters/bw/bwsepiafilter.cpp
-    filters/bw/bwsepiasettings.cpp
-    filters/bw/tonalityfilter.cpp
-    filters/bw/infraredfilter.cpp
-    filters/bw/mixerfilter.cpp
-    filters/bw/mixersettings.cpp
-    filters/hsl/hslfilter.cpp
-    filters/hsl/hslsettings.cpp
-    filters/hsl/hspreviewwidget.cpp
-    filters/icc/iccmanager.cpp
-    filters/icc/iccprofile.cpp
-    filters/icc/iccprofilesettings.cpp
-    filters/icc/icctransform.cpp
-    filters/icc/icctransformfilter.cpp
-    filters/icc/iccsettingscontainer.cpp
-    filters/icc/iccsettings.cpp
-    filters/icc/digikam-lcms.cpp
-    filters/lc/localcontrastfilter.cpp
-    filters/lc/localcontrastsettings.cpp
-    filters/lc/localcontrastcontainer.cpp
-    filters/nr/nrfilter.cpp
-    filters/nr/nrestimate.cpp
-    filters/nr/nrsettings.cpp
-    filters/sharp/sharpenfilter.cpp
-    filters/sharp/unsharpmaskfilter.cpp
-    filters/sharp/sharpsettings.cpp
-    filters/levels/imagelevels.cpp
-    filters/levels/levelsfilter.cpp
-    filters/levels/imagehistogram.cpp
-    filters/levels/histogrambox.cpp
-    filters/levels/histogramwidget.cpp
-    filters/levels/histogrampainter.cpp
-    filters/curves/curvescontainer.cpp
-    filters/curves/imagecurves.cpp
-    filters/curves/curvesfilter.cpp
-    filters/curves/curvessettings.cpp
-    filters/curves/curveswidget.cpp
-    filters/curves/curvesbox.cpp
-    filters/wb/wbcontainer.cpp
-    filters/wb/wbfilter.cpp
-    filters/wb/wbsettings.cpp
-    filters/transform/freerotationfilter.cpp
-    filters/transform/freerotationsettings.cpp
-    filters/transform/shearfilter.cpp
-    filters/transform/autocrop.cpp
-    filters/greycstoration/greycstorationfilter.cpp
-    filters/greycstoration/greycstorationsettings.cpp
-    filters/lens/antivignettingfilter.cpp
-    filters/lens/antivignettingsettings.cpp
-    filters/lens/lensdistortionfilter.cpp
-    filters/lens/lensdistortionpixelaccess.cpp
-    filters/redeye/redeyecorrectionfilter.cpp
-    filters/redeye/redeyecorrectionsettings.cpp
-    filters/redeye/redeyecorrectioncontainer.cpp
-    filters/imgqsort/imagequalitycontainer.cpp
-    filters/imgqsort/imagequalitysettings.cpp
-    filters/imgqsort/imagequalityparser.cpp
-    filters/imgqsort/imagequalityparser_blur.cpp
-    filters/imgqsort/imagequalityparser_exposure.cpp
-    filters/imgqsort/imagequalityparser_noise.cpp
-    filters/imgqsort/imagequalityparser_compression.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/dimgbuiltinfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/dimgthreadedfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/dimgthreadedanalyser.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/dimgfiltermanager.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/dimgfiltergenerator.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/dpixelsaliasfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/filteractionfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/randomnumbergenerator.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/raw/rawprocessingfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/raw/drawdecoding.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/decorate/borderfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/decorate/bordersettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/decorate/texturefilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/film/filmfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/fx/blurfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/fx/blurfxfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/fx/colorfxfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/fx/colorfxsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/fx/distortionfxfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/fx/charcoalfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/fx/embossfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/fx/filmgrainfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/fx/filmgrainsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/fx/invertfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/fx/oilpaintfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/fx/raindropfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/auto/autolevelsfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/auto/autoexpofilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/auto/equalizefilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/auto/stretchfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/auto/normalizefilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/cb/cbfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/cb/cbsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/bcg/bcgfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/bcg/bcgsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/bw/bwsepiafilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/bw/bwsepiasettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/bw/tonalityfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/bw/infraredfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/bw/mixerfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/bw/mixersettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/hsl/hslfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/hsl/hslsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/hsl/hspreviewwidget.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/icc/iccmanager.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/icc/iccprofile.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/icc/iccprofilesettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/icc/icctransform.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/icc/icctransformfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/icc/iccsettingscontainer.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/icc/iccsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/icc/digikam-lcms.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/lc/localcontrastfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/lc/localcontrastsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/lc/localcontrastcontainer.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/nr/nrfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/nr/nrestimate.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/nr/nrsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/sharp/sharpenfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/sharp/unsharpmaskfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/sharp/sharpsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/levels/imagelevels.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/levels/levelsfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/levels/imagehistogram.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/levels/histogrambox.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/levels/histogramwidget.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/levels/histogrampainter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/curves/curvescontainer.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/curves/imagecurves.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/curves/curvesfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/curves/curvessettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/curves/curveswidget.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/curves/curvesbox.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/wb/wbcontainer.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/wb/wbfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/wb/wbsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/transform/freerotationfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/transform/freerotationsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/transform/shearfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/transform/autocrop.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/greycstoration/greycstorationfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/greycstoration/greycstorationsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/lens/antivignettingfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/lens/antivignettingsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/lens/lensdistortionfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/lens/lensdistortionpixelaccess.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/redeye/redeyecorrectionfilter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/redeye/redeyecorrectionsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/redeye/redeyecorrectioncontainer.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/imgqsort/imagequalitycontainer.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/imgqsort/imagequalitysettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/imgqsort/imagequalityparser.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/imgqsort/imagequalityparser_blur.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/imgqsort/imagequalityparser_exposure.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/imgqsort/imagequalityparser_noise.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/imgqsort/imagequalityparser_compression.cpp
 )
 
 # ==================================================================================================
@@ -150,7 +152,7 @@ endif()
 if(Lqr-1_FOUND)
     set(libdimgfilters_SRCS
         ${libdimgfilters_SRCS}
-        filters/transform/contentawarefilter.cpp
+        ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/transform/contentawarefilter.cpp
     )
     include_directories(${LQR-1_INCLUDE_DIRS})
 endif()
@@ -158,10 +160,10 @@ endif()
 if(LensFun_FOUND)
     set(libdimgfilters_SRCS
         ${libdimgfilters_SRCS}
-        filters/lens/lensfunfilter.cpp
-        filters/lens/lensfuncameraselector.cpp
-        filters/lens/lensfuniface.cpp
-        filters/lens/lensfunsettings.cpp
+        ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/lens/lensfunfilter.cpp
+        ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/lens/lensfuncameraselector.cpp
+        ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/lens/lensfuniface.cpp
+        ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/lens/lensfunsettings.cpp
     )
     include_directories(${LENSFUN_INCLUDE_DIRS})
 endif()
@@ -169,18 +171,18 @@ endif()
 if(Eigen3_FOUND)
     set(libdimgfilters_SRCS
         ${libdimgfilters_SRCS}
-        filters/sharp/refocusfilter.cpp
-        filters/sharp/refocusmatrix.cpp
+        ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/sharp/refocusfilter.cpp
+        ${CMAKE_SOURCE_DIR}/core/libs/dimg/filters/sharp/refocusmatrix.cpp
     )
     include_directories(${EIGEN3_INCLUDE_DIR})
 endif()
 
 set(libdimgloaders_SRCS
-    loaders/dimgloader.cpp
-    loaders/jpegsettings.cpp
-    loaders/pngsettings.cpp
-    loaders/tiffsettings.cpp
-    loaders/pgfsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/loaders/dimgloader.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/loaders/jpegsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/loaders/pngsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/loaders/tiffsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dimg/loaders/pgfsettings.cpp
 )
 
 # JPEG2000 support
@@ -188,7 +190,7 @@ set(libdimgloaders_SRCS
 if(Jasper_FOUND)
     set(libdimgloaders_SRCS
         ${libdimgloaders_SRCS}
-        loaders/jp2ksettings.cpp
+        ${CMAKE_SOURCE_DIR}/core/libs/dimg/loaders/jp2ksettings.cpp
     )
 endif()
 
@@ -196,7 +198,7 @@ endif()
 if(X265_FOUND)
     set(libdimgloaders_SRCS
         ${libdimgloaders_SRCS}
-        loaders/heifsettings.cpp
+        ${CMAKE_SOURCE_DIR}/core/libs/dimg/loaders/heifsettings.cpp
     )
 endif()
 

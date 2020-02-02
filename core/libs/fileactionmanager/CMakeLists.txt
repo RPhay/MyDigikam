@@ -6,16 +6,16 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set(fileactionmanager_SRCS
-    metadatahub.cpp
-    metadatahubmngr.cpp
-    metadatastatusbar.cpp
-    fileactionprogress.cpp
-    fileactionmngr.cpp
-    fileactionmngr_p.cpp
-    iteminfotasksplitter.cpp
-    databaseworkeriface.cpp
-    fileworkeriface.cpp
-    fileactionimageinfolist.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/fileactionmanager/metadatahub.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/fileactionmanager/metadatahubmngr.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/fileactionmanager/metadatastatusbar.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/fileactionmanager/fileactionprogress.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/fileactionmanager/fileactionmngr.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/fileactionmanager/fileactionmngr_p.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/fileactionmanager/iteminfotasksplitter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/fileactionmanager/databaseworkeriface.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/fileactionmanager/fileworkeriface.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/fileactionmanager/fileactionimageinfolist.cpp
 )
 
 include_directories(

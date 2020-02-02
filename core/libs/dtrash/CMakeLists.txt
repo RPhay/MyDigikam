@@ -5,9 +5,9 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set(libdtrash_SRCS
-    dtrash.cpp
-    dtrashiteminfo.cpp
-    dtrashitemmodel.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dtrash/dtrash.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dtrash/dtrashiteminfo.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/dtrash/dtrashitemmodel.cpp
 )
 
 include_directories(

@@ -6,10 +6,10 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set(libversionmanager_SRCS
-    versionmanager.cpp
-    versionmanagersettings.cpp
-    versionnamingscheme.cpp
-    versionfileoperation.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/versionmanager/versionmanager.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/versionmanager/versionmanagersettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/versionmanager/versionnamingscheme.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/versionmanager/versionfileoperation.cpp
 )
 
 include_directories(

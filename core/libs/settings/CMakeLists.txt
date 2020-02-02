@@ -6,14 +6,14 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set(libsettings_SRCS
-    applicationsettings.cpp
-    applicationsettings_p.cpp
-    applicationsettings_albums.cpp
-    applicationsettings_database.cpp
-    applicationsettings_iconview.cpp
-    applicationsettings_mime.cpp
-    applicationsettings_miscs.cpp
-    applicationsettings_tooltips.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/settings/applicationsettings.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/settings/applicationsettings_p.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/settings/applicationsettings_albums.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/settings/applicationsettings_database.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/settings/applicationsettings_iconview.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/settings/applicationsettings_mime.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/settings/applicationsettings_miscs.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/settings/applicationsettings_tooltips.cpp
 )
 
 include_directories(

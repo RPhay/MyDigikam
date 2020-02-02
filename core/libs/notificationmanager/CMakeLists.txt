@@ -6,16 +6,16 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set(libnotificationmanager_SRCS
-    dnotificationwrapper.cpp
-    dnotificationpopup.cpp
-    dnotificationwidget.cpp
-    dnotificationwidget_p.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/notificationmanager/dnotificationwrapper.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/notificationmanager/dnotificationpopup.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/notificationmanager/dnotificationwidget.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/notificationmanager/dnotificationwidget_p.cpp
 )
 
 if(APPLE)
     set(libnotificationmanager_SRCS
         ${libnotificationmanager_SRCS}
-        macnotification.mm
+        ${CMAKE_SOURCE_DIR}/core/libs/notificationmanager/macnotification.mm
     )
 endif()
 

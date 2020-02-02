@@ -5,17 +5,17 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-set(libalbummodels_SRCS
-    itemalbummodel.cpp
-    itemalbumfiltermodel.cpp
-    abstractalbummodel.cpp
-    albummodel.cpp
-    albumfiltermodel.cpp
-    albummodeldragdrophandler.cpp
+set(${CMAKE_SOURCE_DIR}/core/libs/models/libalbummodels_SRCS
+    ${CMAKE_SOURCE_DIR}/core/libs/models/itemalbummodel.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/models/itemalbumfiltermodel.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/models/abstractalbummodel.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/models/albummodel.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/models/albumfiltermodel.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/models/albummodeldragdrophandler.cpp
 )
 
 set(libgenericmodels_SRCS
-    categorizeditemmodel.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/models/categorizeditemmodel.cpp
 )
 
 include_directories(

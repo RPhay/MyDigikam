@@ -13,11 +13,11 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-set(libtimeadjust_SRCS
-    clockphotodialog.cpp
-    detbyclockphotobutton.cpp
-    timeadjustcontainer.cpp
-    timeadjustsettings.cpp
+set(${CMAKE_SOURCE_DIR}/core/libs/timeadjust/libtimeadjust_SRCS
+    ${CMAKE_SOURCE_DIR}/core/libs/timeadjust/clockphotodialog.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/timeadjust/detbyclockphotobutton.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/timeadjust/timeadjustcontainer.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/timeadjust/timeadjustsettings.cpp
 )
 
 add_library(timeadjust_src OBJECT ${libtimeadjust_SRCS})

@@ -6,27 +6,28 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set(libtags_SRCS
-    widgets/addtagscombobox.cpp
-    widgets/addtagslineedit.cpp
-    widgets/tagcheckview.cpp
-    widgets/tagfolderview.cpp
-    widgets/tagslineeditoverlay.cpp
-    widgets/tagspopupmenu.cpp
-    widgets/tageditdlg.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/widgets/addtagscombobox.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/widgets/addtagslineedit.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/widgets/tagcheckview.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/widgets/tagfolderview.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/widgets/tagslineeditoverlay.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/widgets/tagspopupmenu.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/widgets/tageditdlg.cpp
 
-    engine/tagscompleter.cpp
-    engine/tagmodificationhelper.cpp
-    engine/tagsactionmngr.cpp
-    engine/taggingaction.cpp
-    engine/taggingactionfactory.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/engine/tagscompleter.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/engine/tagmodificationhelper.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/engine/tagsactionmngr.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/engine/taggingaction.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/engine/taggingactionfactory.cpp
 
-    manager/tagsmanager.cpp
-    manager/tagpropwidget.cpp
-    manager/taglist.cpp
-    manager/tagmngrtreeview.cpp
-    manager/models/tagmngrlistview.cpp
-    manager/models/tagmngrlistmodel.cpp
-    manager/models/tagmngrlistitem.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/manager/tagsmanager.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/manager/tagpropwidget.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/manager/taglist.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/manager/tagmngrtreeview.cpp
+
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/manager/models/tagmngrlistview.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/manager/models/tagmngrlistmodel.cpp
+    ${CMAKE_SOURCE_DIR}/core/libs/tags/manager/models/tagmngrlistitem.cpp
 )
 
 include_directories(
