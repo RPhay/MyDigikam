@@ -318,7 +318,7 @@ void TableViewTreeView::wheelEvent(QWheelEvent* event)
     {
         const int delta = event->angleDelta().y();
 
-        if (delta > 0)
+        if      (delta > 0)
         {
             emit signalZoomInStep();
         }

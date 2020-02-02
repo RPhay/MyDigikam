@@ -187,7 +187,7 @@ void DSelector::mouseReleaseEvent(QMouseEvent* e)
 
 void DSelector::wheelEvent(QWheelEvent* e)
 {
-    int val = value() + e->angleDelta().y()/120;
+    int val = value() + e->angleDelta().y() / 120;
     setSliderDown(true);
     setValue(val);
     setSliderDown(false);

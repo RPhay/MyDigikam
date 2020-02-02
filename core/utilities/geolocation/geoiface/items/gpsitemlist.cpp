@@ -189,11 +189,11 @@ void GPSItemList::wheelEvent(QWheelEvent* we)
 
     we->accept();
 
-    if (we->angleDelta().y() > 0)
+    if      (we->angleDelta().y() > 0)
     {
         slotIncreaseThumbnailSize();
     }
-    else
+    else if (we->angleDelta().y() < 0)
     {
         slotDecreaseThumbnailSize();
     }

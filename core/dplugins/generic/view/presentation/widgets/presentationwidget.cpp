@@ -692,14 +692,18 @@ void PresentationWidget::mouseMoveEvent(QMouseEvent* e)
 void PresentationWidget::wheelEvent(QWheelEvent* e)
 {
     if (!d->sharedData->enableMouseWheel)
+    {
         return;
+    }
 
     if (m_endOfShow)
+    {
         slotClose();
+    }
 
     int delta = e->angleDelta().y();
 
-    if (delta < 0)
+    if      (delta < 0)
     {
         d->timer->stop();
         d->slideCtrlWidget->setPaused(true);

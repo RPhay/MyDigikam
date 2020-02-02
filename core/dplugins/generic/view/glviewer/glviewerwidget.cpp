@@ -659,10 +659,15 @@ void GLViewerWidget::wheelEvent(QWheelEvent* e)
 
         // mousewheel triggers image change
         case GLViewerWidget::Private::changeImage:
-            if (e->angleDelta().y() < 0)
+            if      (e->angleDelta().y() < 0)
+            {
                 nextImage();
-            else
+            }
+            else if (e->angleDelta().y() > 0)
+            {
                 prevImage();
+            }
+
             break;
     }
 }
