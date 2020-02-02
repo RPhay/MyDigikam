@@ -219,11 +219,11 @@ void DPointSelect::wheelEvent(QWheelEvent* e)
 {
     QPoint delta = e->angleDelta();
 
-    if      ((delta.x() > 0) || (delta.x() < 0))
+    if      (delta.x() != 0)
     {
         setValues(xValue() + delta.x() / 120, yValue());
     }
-    else if ((delta.y() > 0) || (delta.y() < 0))
+    else if (delta.y() != 0)
     {
         setValues(xValue(), yValue() + delta.y() / 120);
     }
