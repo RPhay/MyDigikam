@@ -60,12 +60,12 @@ macro(LIBRAW_BUILD_SAMPLES)
     add_executable(${_target} ${${_target}_SRCS})
 
     target_link_libraries(${_target}
+                          libraw
                           ${OPENMP_LDFLAGS}
                           ${JPEG_LIBRARIES}
                           ${LCMS2_LIBRARIES}
                           ${CMAKE_THREAD_LIBS_INIT}
-                          libraw
-
+ 
                           ${COMMON_TEST_LINK}
     )
 
