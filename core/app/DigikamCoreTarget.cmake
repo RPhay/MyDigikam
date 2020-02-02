@@ -9,8 +9,8 @@
 
 set(DIGIKAMCORE_OBJECTS
 
-            ${CMAKE_SOURCE_DIR}/core/app/utils/digikam_debug.cpp
-            ${CMAKE_SOURCE_DIR}/core/app/utils/digikam_version.cpp
+            utils/digikam_debug.cpp
+            utils/digikam_version.cpp
 
             $<TARGET_OBJECTS:dimg_src>
             $<TARGET_OBJECTS:dmetadata_src>
@@ -219,9 +219,9 @@ endif()
 install(TARGETS digikamcore EXPORT DigikamCoreConfig ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(EXPORT DigikamCoreConfig DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamCore" NAMESPACE Digikam::)
 
-write_basic_package_version_file(${CMAKE_BINARY_DIR}/core/app/DigikamCoreConfigVersion.cmake
+write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/DigikamCoreConfigVersion.cmake
                                  VERSION ${DIGIKAM_VERSION_SHORT}
                                  COMPATIBILITY SameMajorVersion)
 
-install(FILES ${CMAKE_BINARY_DIR}/core/app/DigikamCoreConfigVersion.cmake
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamCoreConfigVersion.cmake
         DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamCore")

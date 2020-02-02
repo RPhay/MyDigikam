@@ -8,7 +8,7 @@
 # digiKam executable
 
 set(digikam_SRCS
-    ${CMAKE_SOURCE_DIR}/core/app/main/main.cpp
+    main/main.cpp
 )
 
 # this is only required by Win & OSX

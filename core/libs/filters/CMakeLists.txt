@@ -6,13 +6,13 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set(libfilters_SRCS
-    ${CMAKE_SOURCE_DIR}/core/libs/filters/filterstatusbar.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/filters/geolocationfilter.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/filters/textfilter.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/filters/mimefilter.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/filters/colorlabelfilter.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/filters/picklabelfilter.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/filters/ratingfilter.cpp
+    filterstatusbar.cpp
+    geolocationfilter.cpp
+    textfilter.cpp
+    mimefilter.cpp
+    colorlabelfilter.cpp
+    picklabelfilter.cpp
+    ratingfilter.cpp
 )
 
 include_directories(

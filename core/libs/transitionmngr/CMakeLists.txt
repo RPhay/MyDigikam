@@ -5,22 +5,22 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set(libtransitionmngr_SRCS
-    ${CMAKE_SOURCE_DIR}/core/libs/transitionmngr/effectpreview.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/transitionmngr/effectmngr.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/transitionmngr/effectmngr_p.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/transitionmngr/effectmngr_p_pan.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/transitionmngr/effectmngr_p_zoom.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/transitionmngr/frameutils.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/transitionmngr/transitionpreview.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/transitionmngr/transitionmngr.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/transitionmngr/transitionmngr_p.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/transitionmngr/transitionmngr_p_abstract.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/transitionmngr/transitionmngr_p_blur.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/transitionmngr/transitionmngr_p_lines.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/transitionmngr/transitionmngr_p_push.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/transitionmngr/transitionmngr_p_slide.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/transitionmngr/transitionmngr_p_squares.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/transitionmngr/transitionmngr_p_swap.cpp
+    effectpreview.cpp
+    effectmngr.cpp
+    effectmngr_p.cpp
+    effectmngr_p_pan.cpp
+    effectmngr_p_zoom.cpp
+    frameutils.cpp
+    transitionpreview.cpp
+    transitionmngr.cpp
+    transitionmngr_p.cpp
+    transitionmngr_p_abstract.cpp
+    transitionmngr_p_blur.cpp
+    transitionmngr_p_lines.cpp
+    transitionmngr_p_push.cpp
+    transitionmngr_p_slide.cpp
+    transitionmngr_p_squares.cpp
+    transitionmngr_p_swap.cpp
 )
 
 include_directories(

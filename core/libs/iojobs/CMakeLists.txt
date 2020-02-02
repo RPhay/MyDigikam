@@ -5,10 +5,10 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set(libiojobs_SRCS
-    ${CMAKE_SOURCE_DIR}/core/libs/iojobs/iojob.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/iojobs/iojobdata.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/iojobs/iojobsthread.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/iojobs/iojobsmanager.cpp
+    iojob.cpp
+    iojobdata.cpp
+    iojobsthread.cpp
+    iojobsmanager.cpp
 )
 
 include_directories(

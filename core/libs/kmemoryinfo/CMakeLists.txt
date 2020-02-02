@@ -7,6 +7,6 @@
 
 include_directories($<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>)
 
-set(libkmemoryinfo_SRCS ${CMAKE_SOURCE_DIR}/core/libs/kmemoryinfo/kmemoryinfo.cpp)
+set(libkmemoryinfo_SRCS kmemoryinfo.cpp)
 
 add_library(kmemoryinfo_src OBJECT ${libkmemoryinfo_SRCS})

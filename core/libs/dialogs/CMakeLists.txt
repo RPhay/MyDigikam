@@ -6,26 +6,26 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set(libdialogs_SRCS
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/dprogressdlg.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/dbusydlg.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/filesaveoptionsdlg.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/iccprofileinfodlg.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/imagedialog.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/infodlg.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/libsinfodlg.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/rawcameradlg.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/dconfigdlg.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/dconfigdlgmodels.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/dconfigdlgview.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/dconfigdlgview_p.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/dconfigdlgwidgets.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/dmessagebox.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/dsplashscreen.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/webbrowserdlg.cpp
+    dprogressdlg.cpp
+    dbusydlg.cpp
+    filesaveoptionsdlg.cpp
+    iccprofileinfodlg.cpp
+    imagedialog.cpp
+    infodlg.cpp
+    libsinfodlg.cpp
+    rawcameradlg.cpp
+    dconfigdlg.cpp
+    dconfigdlgmodels.cpp
+    dconfigdlgview.cpp
+    dconfigdlgview_p.cpp
+    dconfigdlgwidgets.cpp
+    dmessagebox.cpp
+    dsplashscreen.cpp
+    webbrowserdlg.cpp
 )
 
 set(libdeletedialog_SRCS
-    ${CMAKE_SOURCE_DIR}/core/libs/dialogs/deletedialog.cpp
+    deletedialog.cpp
 )
 
 if(LensFun_FOUND)

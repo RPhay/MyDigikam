@@ -6,35 +6,35 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set(libitemproperties_SRCS
-    ${CMAKE_SOURCE_DIR}/core/libs/properties/itempropertiessidebar.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/properties/itempropertiestab.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/properties/itempropertiesmetadatatab.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/properties/itempropertiescolorstab.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/properties/itempropertiestxtlabel.cpp
+    itempropertiessidebar.cpp
+    itempropertiestab.cpp
+    itempropertiesmetadatatab.cpp
+    itempropertiescolorstab.cpp
+    itempropertiestxtlabel.cpp
 )
 
 set(libitemversionssidebar_SRCS
-    ${CMAKE_SOURCE_DIR}/core/libs/properties/history/itempropertiesversionstab.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/properties/history/versionstreeview.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/properties/history/versionsoverlays.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/properties/history/versionsdelegate.cpp
+    history/itempropertiesversionstab.cpp
+    history/versionstreeview.cpp
+    history/versionsoverlays.cpp
+    history/versionsdelegate.cpp
 )
 
 if(${Marble_FOUND})
     set(libitemproperties_SRCS
         ${libitemproperties_SRCS}
-        ${CMAKE_SOURCE_DIR}/core/libs/properties/geolocation/itempropertiesgpstab.cpp
-        ${CMAKE_SOURCE_DIR}/core/libs/properties/geolocation/itemgpsmodelhelper.cpp
+        geolocation/itempropertiesgpstab.cpp
+        geolocation/itemgpsmodelhelper.cpp
    )
 endif()
 
 set(libitempropertiesdigikam_SRCS
-    ${CMAKE_SOURCE_DIR}/core/libs/properties/itempropertiessidebardb.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/properties/import/importitempropertiessidebar.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/properties/import/importitempropertiestab.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/properties/captions/itemdescedittab.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/properties/captions/disjointmetadata.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/properties/captions/captionedit.cpp
+    itempropertiessidebardb.cpp
+    import/importitempropertiessidebar.cpp
+    import/importitempropertiestab.cpp
+    captions/itemdescedittab.cpp
+    captions/disjointmetadata.cpp
+    captions/captionedit.cpp
 )
 
 include_directories(

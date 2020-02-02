@@ -13,13 +13,13 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
 )
 
 set(libvideotools_SRCS
-    ${CMAKE_SOURCE_DIR}/core/libs/video/manager/vidslidesettings.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/video/manager/vidslidethread.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/video/manager/vidslidetask.cpp
+    manager/vidslidesettings.cpp
+    manager/vidslidethread.cpp
+    manager/vidslidetask.cpp
 
-    ${CMAKE_SOURCE_DIR}/core/libs/video/player/vidplayerdlg.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/video/player/mediaplayerview.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/video/player/slidevideo.cpp
+    player/vidplayerdlg.cpp
+    player/mediaplayerview.cpp
+    player/slidevideo.cpp
 )
 
 add_library(videotools_src OBJECT ${libvideotools_SRCS})

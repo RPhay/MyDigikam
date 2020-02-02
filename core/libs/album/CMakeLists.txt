@@ -7,40 +7,40 @@
 
 set(libalbum_SRCS
 
-    ${CMAKE_SOURCE_DIR}/core/libs/album/engine/album.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/engine/albumhistory.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/engine/albummodificationhelper.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/engine/albumthumbnailloader.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/engine/albumwatch.cpp
+    engine/album.cpp
+    engine/albumhistory.cpp
+    engine/albummodificationhelper.cpp
+    engine/albumthumbnailloader.cpp
+    engine/albumwatch.cpp
 
-    ${CMAKE_SOURCE_DIR}/core/libs/album/widgets/albumpropsedit.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/widgets/albumselectors.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/widgets/albumselectcombobox.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/widgets/albumselectdialog.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/widgets/albumselectwidget.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/widgets/albumselecttabs.cpp
+    widgets/albumpropsedit.cpp
+    widgets/albumselectors.cpp
+    widgets/albumselectcombobox.cpp
+    widgets/albumselectdialog.cpp
+    widgets/albumselectwidget.cpp
+    widgets/albumselecttabs.cpp
 
-    ${CMAKE_SOURCE_DIR}/core/libs/album/treeview/abstractalbumtreeview.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/treeview/abstractcountingalbumtreeview.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/treeview/abstractcheckablealbumtreeview.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/treeview/albumtreeview.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/treeview/labelstreeview.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/treeview/albumlabelssearchhandler.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/treeview/tagtreeview.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/treeview/searchtreeview.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/treeview/datetreeview.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/treeview/albumselectiontreeview.cpp
-
-    ${CMAKE_SOURCE_DIR}/core/libs/album/manager/albummanager.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/manager/albummanager_p.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/manager/albummanager_album.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/manager/albummanager_palbum.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/manager/albummanager_talbum.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/manager/albummanager_dalbum.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/manager/albummanager_falbum.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/manager/albummanager_salbum.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/manager/albummanager_database.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/album/manager/albummanager_collection.cpp
+    treeview/abstractalbumtreeview.cpp
+    treeview/abstractcountingalbumtreeview.cpp
+    treeview/abstractcheckablealbumtreeview.cpp
+    treeview/albumtreeview.cpp
+    treeview/labelstreeview.cpp
+    treeview/albumlabelssearchhandler.cpp
+    treeview/tagtreeview.cpp
+    treeview/searchtreeview.cpp
+    treeview/datetreeview.cpp
+    treeview/albumselectiontreeview.cpp
+    
+    manager/albummanager.cpp
+    manager/albummanager_p.cpp
+    manager/albummanager_album.cpp
+    manager/albummanager_palbum.cpp
+    manager/albummanager_talbum.cpp
+    manager/albummanager_dalbum.cpp
+    manager/albummanager_falbum.cpp
+    manager/albummanager_salbum.cpp
+    manager/albummanager_database.cpp
+    manager/albummanager_collection.cpp
 )
 
 include_directories(

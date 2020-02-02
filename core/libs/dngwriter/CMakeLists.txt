@@ -14,18 +14,18 @@ include_directories(
 
     ${EXPAT_INCLUDE_DIR}
 
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/md5
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/XMPCore
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/common
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/include
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/include/client-glue
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/
+    extra/md5
+    extra/dng_sdk
+    extra/xmp_sdk/XMPCore
+    extra/xmp_sdk/common
+    extra/xmp_sdk/include
+    extra/xmp_sdk/include/client-glue
+    
 )
 
 #------------------------------------------------------------------------------------
 
-set(libmd5_SRCS ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/md5/XMP_MD5.cpp)
+set(libmd5_SRCS extra/md5/XMP_MD5.cpp)
 
 add_library(libmd5_src OBJECT ${libmd5_SRCS})
 
@@ -41,21 +41,21 @@ endif()
 #------------------------------------------------------------------------------------
 
 set(libxmp_SRCS
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/common/XML_Node.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/common/UnicodeConversions.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/XMPCore/XMPCore_Impl.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/XMPCore/WXMPIterator.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/XMPCore/WXMPMeta.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/XMPCore/WXMPUtils.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/XMPCore/XMPIterator.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/XMPCore/XMPMeta-GetSet.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/XMPCore/XMPMeta-Parse.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/XMPCore/XMPMeta-Serialize.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/XMPCore/XMPMeta.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/XMPCore/XMPUtils-FileInfo.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/XMPCore/XMPUtils.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/XMPCore/ExpatAdapter.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/xmp_sdk/XMPCore/ParseRDF.cpp
+    extra/xmp_sdk/common/XML_Node.cpp
+    extra/xmp_sdk/common/UnicodeConversions.cpp
+    extra/xmp_sdk/XMPCore/XMPCore_Impl.cpp
+    extra/xmp_sdk/XMPCore/WXMPIterator.cpp
+    extra/xmp_sdk/XMPCore/WXMPMeta.cpp
+    extra/xmp_sdk/XMPCore/WXMPUtils.cpp
+    extra/xmp_sdk/XMPCore/XMPIterator.cpp
+    extra/xmp_sdk/XMPCore/XMPMeta-GetSet.cpp
+    extra/xmp_sdk/XMPCore/XMPMeta-Parse.cpp
+    extra/xmp_sdk/XMPCore/XMPMeta-Serialize.cpp
+    extra/xmp_sdk/XMPCore/XMPMeta.cpp
+    extra/xmp_sdk/XMPCore/XMPUtils-FileInfo.cpp
+    extra/xmp_sdk/XMPCore/XMPUtils.cpp
+    extra/xmp_sdk/XMPCore/ExpatAdapter.cpp
+    extra/xmp_sdk/XMPCore/ParseRDF.cpp
 )
 
 add_library(libxmp_src OBJECT ${libxmp_SRCS})
@@ -72,68 +72,68 @@ endif()
 #------------------------------------------------------------------------------------
 
 set(libdng_SRCS
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_1d_function.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_date_time.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_ifd.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_memory.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_point.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_simple_image.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_utils.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_1d_table.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_exceptions.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_image.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_memory_stream.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_rational.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_spline.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_xmp.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_abort_sniffer.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_exif.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_image_writer.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_preview.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_misc_opcodes.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_mosaic_info.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_read_image.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_stream.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_xmp_sdk.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_area_task.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_file_stream.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_info.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_mutex.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_rect.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_string.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_xy_coord.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_bottlenecks.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_bad_pixels.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_filter_task.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_iptc.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_negative.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_reference.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_string_list.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_camera_profile.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_fingerprint.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_lens_correction.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_linearization_info.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_opcode_list.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_opcodes.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_orientation.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_render.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_tag_types.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_color_space.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_globals.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_gain_map.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_lossless_jpeg.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_parse_utils.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_resample.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_temperature.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_color_spec.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_host.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_matrix.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_pixel_buffer.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_shared.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_tile_iterator.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_tone_curve.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_hue_sat_map.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk/dng_pthread.cpp
+    extra/dng_sdk/dng_1d_function.cpp
+    extra/dng_sdk/dng_date_time.cpp
+    extra/dng_sdk/dng_ifd.cpp
+    extra/dng_sdk/dng_memory.cpp
+    extra/dng_sdk/dng_point.cpp
+    extra/dng_sdk/dng_simple_image.cpp
+    extra/dng_sdk/dng_utils.cpp
+    extra/dng_sdk/dng_1d_table.cpp
+    extra/dng_sdk/dng_exceptions.cpp
+    extra/dng_sdk/dng_image.cpp
+    extra/dng_sdk/dng_memory_stream.cpp
+    extra/dng_sdk/dng_rational.cpp
+    extra/dng_sdk/dng_spline.cpp
+    extra/dng_sdk/dng_xmp.cpp
+    extra/dng_sdk/dng_abort_sniffer.cpp
+    extra/dng_sdk/dng_exif.cpp
+    extra/dng_sdk/dng_image_writer.cpp
+    extra/dng_sdk/dng_preview.cpp
+    extra/dng_sdk/dng_misc_opcodes.cpp
+    extra/dng_sdk/dng_mosaic_info.cpp
+    extra/dng_sdk/dng_read_image.cpp
+    extra/dng_sdk/dng_stream.cpp
+    extra/dng_sdk/dng_xmp_sdk.cpp
+    extra/dng_sdk/dng_area_task.cpp
+    extra/dng_sdk/dng_file_stream.cpp
+    extra/dng_sdk/dng_info.cpp
+    extra/dng_sdk/dng_mutex.cpp
+    extra/dng_sdk/dng_rect.cpp
+    extra/dng_sdk/dng_string.cpp
+    extra/dng_sdk/dng_xy_coord.cpp
+    extra/dng_sdk/dng_bottlenecks.cpp
+    extra/dng_sdk/dng_bad_pixels.cpp
+    extra/dng_sdk/dng_filter_task.cpp
+    extra/dng_sdk/dng_iptc.cpp
+    extra/dng_sdk/dng_negative.cpp
+    extra/dng_sdk/dng_reference.cpp
+    extra/dng_sdk/dng_string_list.cpp
+    extra/dng_sdk/dng_camera_profile.cpp
+    extra/dng_sdk/dng_fingerprint.cpp
+    extra/dng_sdk/dng_lens_correction.cpp
+    extra/dng_sdk/dng_linearization_info.cpp
+    extra/dng_sdk/dng_opcode_list.cpp
+    extra/dng_sdk/dng_opcodes.cpp
+    extra/dng_sdk/dng_orientation.cpp
+    extra/dng_sdk/dng_render.cpp
+    extra/dng_sdk/dng_tag_types.cpp
+    extra/dng_sdk/dng_color_space.cpp
+    extra/dng_sdk/dng_globals.cpp
+    extra/dng_sdk/dng_gain_map.cpp
+    extra/dng_sdk/dng_lossless_jpeg.cpp
+    extra/dng_sdk/dng_parse_utils.cpp
+    extra/dng_sdk/dng_resample.cpp
+    extra/dng_sdk/dng_temperature.cpp
+    extra/dng_sdk/dng_color_spec.cpp
+    extra/dng_sdk/dng_host.cpp
+    extra/dng_sdk/dng_matrix.cpp
+    extra/dng_sdk/dng_pixel_buffer.cpp
+    extra/dng_sdk/dng_shared.cpp
+    extra/dng_sdk/dng_tile_iterator.cpp
+    extra/dng_sdk/dng_tone_curve.cpp
+    extra/dng_sdk/dng_hue_sat_map.cpp
+    extra/dng_sdk/dng_pthread.cpp
 )
 
 add_library(libdng_src OBJECT ${libdng_SRCS})
@@ -157,11 +157,11 @@ add_library(libdng STATIC
 #------------------------------------------------------------------------------------
 
 set(libdngwriter_SRCS
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/dngwriter.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/dngwriter_p.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/dngwriter_convert.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/dngwriterhost.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/dngsettings.cpp
+    dngwriter.cpp
+    dngwriter_p.cpp
+    dngwriter_convert.cpp
+    dngwriterhost.cpp
+    dngsettings.cpp
 )
 
 add_library(dngwriter_src OBJECT ${libdngwriter_SRCS})

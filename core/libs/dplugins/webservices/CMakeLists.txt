@@ -21,29 +21,29 @@ DISABLE_CLANG_COMPILER_WARNINGS("4.99.99" "-Wno-extra-semi")
 unset(CMAKE_CXX_VISIBILITY_PRESET)
 
 set(libwso2_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2reply.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2replyserver.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2requestor.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2simplecrypt.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o0settingsstore.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o0baseauth.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o0abstractstore.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o0globals.h
+    o2/src/o2.cpp
+    o2/src/o2reply.cpp
+    o2/src/o2replyserver.cpp
+    o2/src/o2requestor.cpp
+    o2/src/o2simplecrypt.cpp
+    o2/src/o0settingsstore.cpp
+    o2/src/o0baseauth.cpp
+    o2/src/o0abstractstore.h
+    o2/src/o0globals.h
     # Enable when needed
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o1.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o1requestor.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o1timedreply.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o1smugmug.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o1twitter.h
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/oxtwitter.cpp
-    #${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o1dropbox.h
-    #${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o1flickr.h
-    #${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2gft.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2facebook.cpp
-    #${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2skydrive.cpp
-    #${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2hubic.cpp
-    #${CMAKE_CURRENT_SOURCE_DIR}/o2/src/o2uber.cpp
+    o2/src/o1.cpp
+    o2/src/o1requestor.cpp
+    o2/src/o1timedreply.cpp
+    o2/src/o1smugmug.cpp
+    o2/src/o1twitter.h
+    o2/src/oxtwitter.cpp
+    #o2/src/o1dropbox.h
+    #o2/src/o1flickr.h
+    #o2/src/o2gft.cpp
+    o2/src/o2facebook.cpp
+    #o2/src/o2skydrive.cpp
+    #o2/src/o2hubic.cpp
+    #o2/src/o2uber.cpp
 )
 
 add_library(libwso2_src OBJECT ${libwso2_SRCS})

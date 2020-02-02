@@ -27,45 +27,45 @@ endif()
 
 set(libdmetadata_SRCS
 
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine_p.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine_data.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine_data_p.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine_exif.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine_fileio.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine_item.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine_comments.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine_iptc.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine_gps.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine_xmp.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine_previews.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaengine_rotation.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaenginesettings.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/engine/metaenginesettingscontainer.cpp
+    engine/metaengine.cpp
+    engine/metaengine_p.cpp
+    engine/metaengine_data.cpp
+    engine/metaengine_data_p.cpp
+    engine/metaengine_exif.cpp
+    engine/metaengine_fileio.cpp
+    engine/metaengine_item.cpp
+    engine/metaengine_comments.cpp
+    engine/metaengine_iptc.cpp
+    engine/metaengine_gps.cpp
+    engine/metaengine_xmp.cpp
+    engine/metaengine_previews.cpp
+    engine/metaengine_rotation.cpp
+    engine/metaenginesettings.cpp
+    engine/metaenginesettingscontainer.cpp
    
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadata.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadata_video.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadata_fileio.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadata_comments.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadata_template.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadata_exif.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadata_iptc.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadata_labels.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadata_faces.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadata_history.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadata_photo.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadata_tags.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadata_generic.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadata_xmp.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadatasettings.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/dmetadatasettingscontainer.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/dmetadata/geodetictools.cpp
+    dmetadata/dmetadata.cpp
+    dmetadata/dmetadata_video.cpp
+    dmetadata/dmetadata_fileio.cpp
+    dmetadata/dmetadata_comments.cpp
+    dmetadata/dmetadata_template.cpp
+    dmetadata/dmetadata_exif.cpp
+    dmetadata/dmetadata_iptc.cpp
+    dmetadata/dmetadata_labels.cpp
+    dmetadata/dmetadata_faces.cpp
+    dmetadata/dmetadata_history.cpp
+    dmetadata/dmetadata_photo.cpp
+    dmetadata/dmetadata_tags.cpp
+    dmetadata/dmetadata_generic.cpp
+    dmetadata/dmetadata_xmp.cpp
+    dmetadata/dmetadatasettings.cpp
+    dmetadata/dmetadatasettingscontainer.cpp
+    dmetadata/geodetictools.cpp
 
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/containers/metadatainfo.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/containers/photoinfocontainer.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/containers/videoinfocontainer.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/containers/template.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/metadataengine/containers/captionvalues.cpp
+    containers/metadatainfo.cpp
+    containers/photoinfocontainer.cpp
+    containers/videoinfocontainer.cpp
+    containers/template.cpp
+    containers/captionvalues.cpp
 )
 
 include_directories(

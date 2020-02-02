@@ -9,112 +9,112 @@
 
 if(ENABLE_DBUS)
     qt5_add_dbus_adaptor(digikamadaptor_SRCS
-                         ${CMAKE_SOURCE_DIR}/core/app/main/org.kde.digikam.xml
-                         ${CMAKE_SOURCE_DIR}/core/app/main/digikamapp.h
+                         main/org.kde.digikam.xml
+                         main/digikamapp.h
                          Digikam::DigikamApp)
 endif()
 
 set(libdigikamgui_SRCS
 
-    ${CMAKE_SOURCE_DIR}/core/app/main/digikamapp.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/main/digikamapp_solid.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/main/digikamapp_camera.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/main/digikamapp_import.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/main/digikamapp_config.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/main/digikamapp_tools.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/main/digikamapp_setup.cpp
+    main/digikamapp.cpp
+    main/digikamapp_solid.cpp
+    main/digikamapp_camera.cpp
+    main/digikamapp_import.cpp
+    main/digikamapp_config.cpp
+    main/digikamapp_tools.cpp
+    main/digikamapp_setup.cpp
 
-    ${CMAKE_SOURCE_DIR}/core/app/date/dpopupframe.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/date/ddateedit.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/date/ddatetable.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/date/ddatetable_p.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/date/ddatepicker.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/date/ddatepicker_p.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/date/ddatetimeedit.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/date/ddatepickerpopup.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/date/datefolderview.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/date/monthwidget.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/date/timelinewidget.cpp
+    date/dpopupframe.cpp
+    date/ddateedit.cpp
+    date/ddatetable.cpp
+    date/ddatetable_p.cpp
+    date/ddatepicker.cpp
+    date/ddatepicker_p.cpp
+    date/ddatetimeedit.cpp
+    date/ddatepickerpopup.cpp
+    date/datefolderview.cpp
+    date/monthwidget.cpp
+    date/timelinewidget.cpp
 
-    ${CMAKE_SOURCE_DIR}/core/app/dragdrop/importdragdrop.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/dragdrop/albumdragdrop.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/dragdrop/ddragobjects.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/dragdrop/itemdragdrop.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/dragdrop/tagdragdrop.cpp
+    dragdrop/importdragdrop.cpp
+    dragdrop/albumdragdrop.cpp
+    dragdrop/ddragobjects.cpp
+    dragdrop/itemdragdrop.cpp
+    dragdrop/tagdragdrop.cpp
 
-    ${CMAKE_SOURCE_DIR}/core/app/filters/filtersidebarwidget.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/filters/tagfilterview.cpp
+    filters/filtersidebarwidget.cpp
+    filters/tagfilterview.cpp
 
-    ${CMAKE_SOURCE_DIR}/core/app/items/delegate/digikamitemdelegate.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/delegate/itemdelegate.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/delegate/itemfacedelegate.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/views/digikamitemview.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/views/digikamitemview_p.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/views/itemcategorizedview.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/thumbbar/itemthumbnailbar.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/thumbbar/itemthumbnaildelegate.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/overlays/assignnameoverlay.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/overlays/facerejectionoverlay.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/overlays/groupindicatoroverlay.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/overlays/itemfullscreenoverlay.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/overlays/itemratingoverlay.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/overlays/itemrotationoverlay.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/overlays/itemcoordinatesoverlay.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/overlays/itemselectionoverlay.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/utils/itemviewutilities.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/utils/tooltipfiller.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/utils/contextmenuhelper.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/utils/groupingviewimplementation.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/items/utils/itemcategorydrawer.cpp
+    items/delegate/digikamitemdelegate.cpp
+    items/delegate/itemdelegate.cpp
+    items/delegate/itemfacedelegate.cpp
+    items/views/digikamitemview.cpp
+    items/views/digikamitemview_p.cpp
+    items/views/itemcategorizedview.cpp
+    items/thumbbar/itemthumbnailbar.cpp
+    items/thumbbar/itemthumbnaildelegate.cpp
+    items/overlays/assignnameoverlay.cpp
+    items/overlays/facerejectionoverlay.cpp
+    items/overlays/groupindicatoroverlay.cpp
+    items/overlays/itemfullscreenoverlay.cpp
+    items/overlays/itemratingoverlay.cpp
+    items/overlays/itemrotationoverlay.cpp
+    items/overlays/itemcoordinatesoverlay.cpp
+    items/overlays/itemselectionoverlay.cpp
+    items/utils/itemviewutilities.cpp
+    items/utils/tooltipfiller.cpp
+    items/utils/contextmenuhelper.cpp
+    items/utils/groupingviewimplementation.cpp
+    items/utils/itemcategorydrawer.cpp
 
-    ${CMAKE_SOURCE_DIR}/core/app/utils/digikam_debug.cpp
+    utils/digikam_debug.cpp
 
-    ${CMAKE_SOURCE_DIR}/core/app/views/tableview/tableview.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/tableview/tableview_treeview.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/tableview/tableview_treeview_delegate.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/tableview/tableview_column_configuration_dialog.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/tableview/tableview_model.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/tableview/tableview_columns.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/tableview/tableview_column_audiovideo.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/tableview/tableview_column_file.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/tableview/tableview_column_geo.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/tableview/tableview_column_digikam.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/tableview/tableview_column_item.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/tableview/tableview_column_photo.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/tableview/tableview_column_thumbnail.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/tableview/tableview_columnfactory.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/tableview/tableview_selection_model_syncer.cpp
+    views/tableview/tableview.cpp
+    views/tableview/tableview_treeview.cpp
+    views/tableview/tableview_treeview_delegate.cpp
+    views/tableview/tableview_column_configuration_dialog.cpp
+    views/tableview/tableview_model.cpp
+    views/tableview/tableview_columns.cpp
+    views/tableview/tableview_column_audiovideo.cpp
+    views/tableview/tableview_column_file.cpp
+    views/tableview/tableview_column_geo.cpp
+    views/tableview/tableview_column_digikam.cpp
+    views/tableview/tableview_column_item.cpp
+    views/tableview/tableview_column_photo.cpp
+    views/tableview/tableview_column_thumbnail.cpp
+    views/tableview/tableview_columnfactory.cpp
+    views/tableview/tableview_selection_model_syncer.cpp
 
-    ${CMAKE_SOURCE_DIR}/core/app/views/stack/itemiconview.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/stack/itemiconview_albums.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/stack/itemiconview_groups.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/stack/itemiconview_items.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/stack/itemiconview_search.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/stack/itemiconview_sidebars.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/stack/itemiconview_slideshow.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/stack/itemiconview_tags.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/stack/itemiconview_tools.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/stack/itemiconview_views.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/stack/itemiconview_zoom.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/stack/trashview.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/stack/stackedview.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/stack/welcomepageview.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/preview/itempreviewcanvas.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/preview/itempreviewview.cpp
+    views/stack/itemiconview.cpp
+    views/stack/itemiconview_albums.cpp
+    views/stack/itemiconview_groups.cpp
+    views/stack/itemiconview_items.cpp
+    views/stack/itemiconview_search.cpp
+    views/stack/itemiconview_sidebars.cpp
+    views/stack/itemiconview_slideshow.cpp
+    views/stack/itemiconview_tags.cpp
+    views/stack/itemiconview_tools.cpp
+    views/stack/itemiconview_views.cpp
+    views/stack/itemiconview_zoom.cpp
+    views/stack/trashview.cpp
+    views/stack/stackedview.cpp
+    views/stack/welcomepageview.cpp
+    views/preview/itempreviewcanvas.cpp
+    views/preview/itempreviewview.cpp
 
-    ${CMAKE_SOURCE_DIR}/core/app/views/sidebar/albumfolderviewsidebarwidget.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/sidebar/datefolderviewsidebarwidget.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/sidebar/timelinesidebarwidget.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/sidebar/searchsidebarwidget.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/sidebar/fuzzysearchsidebarwidget.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/sidebar/labelssidebarwidget.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/sidebar/peoplesidebarwidget.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/sidebar/tagviewsidebarwidget.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/sidebar/sidebarwidget.cpp
+    views/sidebar/albumfolderviewsidebarwidget.cpp
+    views/sidebar/datefolderviewsidebarwidget.cpp
+    views/sidebar/timelinesidebarwidget.cpp
+    views/sidebar/searchsidebarwidget.cpp
+    views/sidebar/fuzzysearchsidebarwidget.cpp
+    views/sidebar/labelssidebarwidget.cpp
+    views/sidebar/peoplesidebarwidget.cpp
+    views/sidebar/tagviewsidebarwidget.cpp
+    views/sidebar/sidebarwidget.cpp
 
-    ${CMAKE_SOURCE_DIR}/core/app/views/utils/dmodelfactory.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/utils/slideshowbuilder.cpp
-    ${CMAKE_SOURCE_DIR}/core/app/views/utils/componentsinfodlg.cpp
+    views/utils/dmodelfactory.cpp
+    views/utils/slideshowbuilder.cpp
+    views/utils/componentsinfodlg.cpp
 
     ${digikamadaptor_SRCS}
 )
@@ -122,8 +122,8 @@ set(libdigikamgui_SRCS
 if(${Marble_FOUND})
     set(libdigikamgui_SRCS
         ${libdigikamgui_SRCS}
-        ${CMAKE_SOURCE_DIR}/core/app/views/stack/mapwidgetview.cpp
-        ${CMAKE_SOURCE_DIR}/core/app/views/sidebar/gpssearchsidebarwidget.cpp
+        views/stack/mapwidgetview.cpp
+        views/sidebar/gpssearchsidebarwidget.cpp
        )
 endif()
 
@@ -263,9 +263,9 @@ endif()
 install(TARGETS digikamgui EXPORT DigikamGuiConfig ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(EXPORT DigikamGuiConfig  DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamGui" NAMESPACE Digikam::)
 
-write_basic_package_version_file(${CMAKE_BINARY_DIR}/core/app/DigikamGuiConfigVersion.cmake
+write_basic_package_version_file(${CMAKE_CURRENT_BINARY_DIR}/DigikamGuiConfigVersion.cmake
                                  VERSION ${DIGIKAM_VERSION_SHORT}
                                  COMPATIBILITY SameMajorVersion)
 
-install(FILES ${CMAKE_BINARY_DIR}/core/app/DigikamGuiConfigVersion.cmake
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/DigikamGuiConfigVersion.cmake
         DESTINATION "${CMAKE_INSTALL_LIBDIR}/cmake/DigikamGui")

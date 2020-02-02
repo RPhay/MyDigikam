@@ -6,12 +6,12 @@
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
 set(libtemplate_SRCS
-    ${CMAKE_SOURCE_DIR}/core/libs/template/templatemanager.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/template/templatelist.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/template/templateselector.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/template/templateviewer.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/template/templatepanel.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/template/subjectedit.cpp
+    templatemanager.cpp
+    templatelist.cpp
+    templateselector.cpp
+    templateviewer.cpp
+    templatepanel.cpp
+    subjectedit.cpp
 )
 
 include_directories(

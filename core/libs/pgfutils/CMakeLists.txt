@@ -15,13 +15,13 @@ if(NOT MSVC)
 endif()
 
 set(libpgfutils_SRCS
-    ${CMAKE_SOURCE_DIR}/core/libs/pgfutils/pgfutils.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/pgfutils/libpgf/Decoder.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/pgfutils/libpgf/Encoder.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/pgfutils/libpgf/PGFimage.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/pgfutils/libpgf/PGFstream.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/pgfutils/libpgf/Subband.cpp
-    ${CMAKE_SOURCE_DIR}/core/libs/pgfutils/libpgf/WaveletTransform.cpp
+    pgfutils.cpp
+    libpgf/Decoder.cpp
+    libpgf/Encoder.cpp
+    libpgf/PGFimage.cpp
+    libpgf/PGFstream.cpp
+    libpgf/Subband.cpp
+    libpgf/WaveletTransform.cpp
 )
 
 include_directories(
