@@ -624,8 +624,6 @@ message(STATUS "")
 
 if(DIGIKAM_CAN_BE_COMPILED)
 
-    APPLY_COMMON_POLICIES()
-
     # ==========================================================================
     # Create git version header
 
