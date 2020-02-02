@@ -4,10 +4,11 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-project(digikam-software-collection)
+project(digikam)
 
 message(STATUS "----------------------------------------------------------------------------------")
-message(STATUS "Starting CMake configuration for: ${PROJECT_NAME}")
+message(STATUS "Starting CMake configuration for ${PROJECT_NAME}")
+message(STATUS "")
 
 set(CMAKE_MIN_VERSION   "3.3.2")
 set(ECM_MIN_VERSION     "1.7.0")
@@ -21,11 +22,12 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-############## ECM setup #################################################################################################################
+### ECM setup #########################################################################################################
 
 find_package(ECM ${ECM_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/core/cmake/modules ${ECM_MODULE_PATH})
 
+# Cmake macros
 include(CMakePackageConfigHelpers)
 include(GenerateExportHeader)
 include(CheckFunctionExists)
@@ -47,10 +49,14 @@ include(KDEFrameworkCompilerSettings)
 include(KDECompilerSettings)
 # Local macros
 include(MacroUtils)
+include(MacroCompiler)
+include(MacroOpenCV)
+include(MacroJPEG)
+include(MacroBoolTo01)
 
 APPLY_COMMON_POLICIES()
 
-# COMPILATION OPTIONS MANAGEMENT ###########################################################################################################
+### COMPILATION OPTIONS MANAGEMENT ####################################################################################
 
 # doc and translations options
 
@@ -60,7 +66,7 @@ option(DIGIKAMSC_COMPILE_PO              "Build translations files (default=ON)"
 option(DIGIKAMSC_COMPILE_DOC             "Build handbook files (default=ON)"                                                      ON)
 option(DIGIKAMSC_COMPILE_DIGIKAM         "Build digiKam core (default=ON)"                                                        ON)
 
-###########################################################################################################################################
+#######################################################################################################################
 
 if(DIGIKAMSC_CHECKOUT_PO OR DIGIKAMSC_CHECKOUT_DOC)
 
@@ -134,20 +140,21 @@ if(BUILD_TESTING)
     include(CTest)
 endif()
 
-############################################################################################################################################
+######################################################################################################################
 
 message(STATUS "----------------------------------------------------------------------------------")
-message(STATUS "Compilation configuration for: ${PROJECT_NAME}")
+message(STATUS "Top level compilation configuration for ${PROJECT_NAME}")
+message(STATUS "")
 
 if(DIGIKAMSC_COMPILE_DIGIKAM)
     if(NOT EXISTS ${CMAKE_SOURCE_DIR}/core)
-        message(STATUS "digiKam core will be compiled.................. NO (source code not available)")
+        message(STATUS "${PROJECT_NAME} will be compiled....................... NO (source code not available)")
         set (DIGIKAMSC_COMPILE_DIGIKAM OFF)
     else()
-        message(STATUS "digiKam core will be compiled.................. YES")
+        message(STATUS "${PROJECT_NAME} will be compiled....................... YES")
     endif()
 else()
-    message(STATUS     "digiKam core will be compiled.................. NO")
+    message(STATUS     "${PROJECT_NAME} will be compiled....................... NO")
 endif()
 
 if(DIGIKAMSC_CHECKOUT_PO)
@@ -180,7 +187,7 @@ else()
     message(STATUS "Tests code will be compiled.................... NO")
 endif()
 
-#############################################################################################
+######################################################################################################################
 
 if(DIGIKAMSC_COMPILE_DIGIKAM)
     add_subdirectory(core)

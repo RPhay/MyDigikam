@@ -6,10 +6,6 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-project(digikam)
-
-message(STATUS "----------------------------------------------------------------------------------")
-message(STATUS "Starting CMake configuration for: ${PROJECT_NAME}")
 
 # ==============================================================================
 # Information to update before to release this package.
@@ -51,8 +47,10 @@ set(DBCORECONFIG_XML_VERSION "3")
 
 # ==============================================================================
 
-set(CMAKE_MIN_VERSION     "3.3.2")
-set(ECM_MIN_VERSION       "1.7.0")
+message(STATUS "----------------------------------------------------------------------------------")
+message(STATUS "Check dependencies for ${PROJECT_NAME} version ${DIGIKAM_VERSION_STRING}")
+message(STATUS "")
+
 set(KF5_MIN_VERSION       "5.5.0")
 set(QT_MIN_VERSION        "5.9.0")
 set(LENSFUN_MIN_VERSION   "0.2.6.0")
@@ -65,37 +63,6 @@ set(AKONADI_MIN_VERSION   "4.89.0")       # Akonadi Contact dependency
 set(VKONTAKTE_MIN_VERSION "5.0.0")        # VKontakte library dependency
 
 cmake_minimum_required(VERSION ${CMAKE_MIN_VERSION})
-
-############## ECM setup ######################
-
-find_package(ECM ${ECM_MIN_VERSION} CONFIG REQUIRED)
-set(CMAKE_MODULE_PATH ${digikam_SOURCE_DIR}/cmake/modules ${ECM_MODULE_PATH})
-
-# Cmake macros
-include(GenerateExportHeader)
-include(CheckFunctionExists)
-include(FeatureSummary)
-# ECM macros
-include(ECMOptionalAddSubdirectory)
-include(ECMAddTests)
-include(ECMMarkNonGuiExecutable)
-include(ECMGenerateHeaders)
-include(ECMGeneratePriFile)
-include(ECMSetupVersion)
-include(ECMInstallIcons)
-include(ECMAddAppIcon)
-include(ECMPoQmTools)
-# KDE macros
-include(KDEInstallDirs)
-include(KDECMakeSettings)
-include(KDEFrameworkCompilerSettings)
-include(KDECompilerSettings)
-# Local macros
-include(MacroUtils)
-include(MacroCompiler)
-include(MacroOpenCV)
-include(MacroJPEG)
-include(MacroBoolTo01)
 
 # ==============================================================================
 
