@@ -22,5 +22,5 @@ set(localcontrasttoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    LocalContrastTool
-                                   SOURCES ${localcontrasttoolplugin_SRCS}
+                          SOURCES ${localcontrasttoolplugin_SRCS}
 )

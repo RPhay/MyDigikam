@@ -20,5 +20,5 @@ set(slideshowplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    SlideShow
-                                    SOURCES ${slideshowplugin_SRCS}
+                           SOURCES ${slideshowplugin_SRCS}
 )

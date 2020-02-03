@@ -24,5 +24,5 @@ set(lensautofixtoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    LensAutoFixTool
-                                   SOURCES ${lensautofixtoolplugin_SRCS}
+                          SOURCES ${lensautofixtoolplugin_SRCS}
 )

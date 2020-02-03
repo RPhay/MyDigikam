@@ -22,5 +22,5 @@ set(blurtoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    BlurTool
-                                   SOURCES ${blurtoolplugin_SRCS}
+                          SOURCES ${blurtoolplugin_SRCS}
 )

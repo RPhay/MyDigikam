@@ -22,5 +22,5 @@ set(sharpentoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    SharpenTool
-                                   SOURCES ${sharpentoolplugin_SRCS}
+                          SOURCES ${sharpentoolplugin_SRCS}
 )

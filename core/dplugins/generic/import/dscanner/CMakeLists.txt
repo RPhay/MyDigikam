@@ -24,6 +24,6 @@ set(dscannerplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    DigitalScanner
-                                    SOURCES ${dscannerplugin_SRCS}
-                                    DEPENDS KF5::Sane
+                           SOURCES ${dscannerplugin_SRCS}
+                           DEPENDS KF5::Sane
 )

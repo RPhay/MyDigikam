@@ -22,5 +22,5 @@ set(noisereductiontoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    NoiseReductionTool
-                                   SOURCES ${noisereductiontoolplugin_SRCS}
+                          SOURCES ${noisereductiontoolplugin_SRCS}
 )

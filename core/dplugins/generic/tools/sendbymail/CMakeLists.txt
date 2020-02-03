@@ -33,5 +33,5 @@ set(sendbymailplugin_SRCS
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    SendByMail
-                                    SOURCES ${sendbymailplugin_SRCS}
+                           SOURCES ${sendbymailplugin_SRCS}
 )

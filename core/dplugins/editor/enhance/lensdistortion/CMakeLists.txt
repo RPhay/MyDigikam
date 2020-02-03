@@ -22,5 +22,5 @@ set(lensdistortiontoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    LensDistortionTool
-                                   SOURCES ${lensdistortiontoolplugin_SRCS}
+                          SOURCES ${lensdistortiontoolplugin_SRCS}
 )

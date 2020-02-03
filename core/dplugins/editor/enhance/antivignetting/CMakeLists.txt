@@ -22,5 +22,5 @@ set(antivignettingtoolplugin_SRCS
 )
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    AntivignettingTool
-                                   SOURCES ${antivignettingtoolplugin_SRCS}
+                          SOURCES ${antivignettingtoolplugin_SRCS}
 )
