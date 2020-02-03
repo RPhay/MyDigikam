@@ -18,6 +18,7 @@ set(liblayouttools_SRCS
     layout/statesavingobject.cpp
     layout/dlayoutbox.cpp
     layout/sidebar.cpp
+    layout/thumbbardock.cpp
 )
 
 set(librangetools_SRCS
@@ -61,7 +62,6 @@ set(libmainview_SRCS
     mainview/daboutdata.cpp
     mainview/dzoombar.cpp
     mainview/dcursortracker.cpp
-    mainview/thumbbardock.cpp
     mainview/thememanager.cpp
     mainview/thememanager_p.cpp
     mainview/fullscreensettings.cpp
