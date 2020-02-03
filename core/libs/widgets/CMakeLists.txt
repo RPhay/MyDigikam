@@ -7,9 +7,9 @@
 
 APPLY_COMMON_POLICIES()
 
-set(libcommonwidgets_SRCS
-    common/modelcompleter.cpp
-    common/searchtextbar.cpp
+set(libtextwidgets_SRCS
+    text/modelcompleter.cpp
+    text/searchtextbar.cpp
 )
 
 set(liblayouttools_SRCS
