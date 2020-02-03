@@ -91,6 +91,13 @@ add_library(digikamcore
             ${DIGIKAMCORE_OBJECTS}
 )
 
+if(MSVC)
+    add_library(digikamcore_static
+                STATIC
+                ${DIGIKAMCORE_OBJECTS}
+    )
+endif()
+
 set_target_properties(digikamcore PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
 
 add_dependencies(digikamcore digikam-gitversion)
