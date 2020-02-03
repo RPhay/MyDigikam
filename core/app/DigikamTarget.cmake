@@ -33,10 +33,6 @@ target_link_libraries(digikam
 
                       PUBLIC
 
-                      digikamcore
-                      digikamdatabase
-                      digikamgui
-
                       Qt5::Core
                       Qt5::Gui
                       Qt5::Widgets
@@ -47,22 +43,46 @@ target_link_libraries(digikam
                       KF5::XmlGui
                       KF5::ConfigCore
                       KF5::Service
+
+                      digikamcore
+                      digikamdatabase
+                      digikamgui
 )
 
 if(ENABLE_DBUS)
-    target_link_libraries(digikam PUBLIC Qt5::DBus)
+
+    target_link_libraries(digikam
+                          PUBLIC
+                          Qt5::DBus
+    )
+
 endif()
 
 if(KF5IconThemes_FOUND)
-    target_link_libraries(digikam PUBLIC KF5::IconThemes)
+
+    target_link_libraries(digikam
+                          PUBLIC
+                          KF5::IconThemes
+    )
+
 endif()
 
 if(KF5KIO_FOUND)
-    target_link_libraries(digikam PUBLIC KF5::KIOWidgets)
+
+    target_link_libraries(digikam
+                          PUBLIC
+                          KF5::KIOWidgets
+    )
+
 endif()
 
 if(ImageMagick_Magick++_FOUND)
-    target_link_libraries(digikam PUBLIC ${ImageMagick_LIBRARIES})
+
+    target_link_libraries(digikam
+                          PUBLIC
+                          ${ImageMagick_LIBRARIES}
+    )
+
 endif()
 
 install(TARGETS digikam ${INSTALL_TARGETS_DEFAULT_ARGS})

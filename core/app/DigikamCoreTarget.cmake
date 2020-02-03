@@ -98,7 +98,7 @@ generate_export_header(digikamcore BASE_NAME digikam EXPORT_FILE_NAME "${CMAKE_C
 
 target_link_libraries(digikamcore
 
-                      PUBLIC
+#                      PUBLIC
 
                       Qt5::Core
                       Qt5::Gui
@@ -134,84 +134,186 @@ target_link_libraries(digikamcore
 )
 
 if(ENABLE_QWEBENGINE)
-    target_link_libraries(digikamcore PRIVATE Qt5::WebEngineWidgets)
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          Qt5::WebEngineWidgets
+    )
+
 else()
-    target_link_libraries(digikamcore PRIVATE Qt5::WebKitWidgets)
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          Qt5::WebKitWidgets
+    )
+
 endif()
 
 if(ENABLE_DBUS)
-    target_link_libraries(digikamcore PRIVATE Qt5::DBus)
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          Qt5::DBus
+    )
+
 endif()
 
 if(KF5IconThemes_FOUND)
-    target_link_libraries(digikamcore PRIVATE KF5::IconThemes)
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          KF5::IconThemes
+    )
+
 endif()
 
 if(KF5KIO_FOUND)
-    target_link_libraries(digikamcore PRIVATE KF5::KIOCore)
-    target_link_libraries(digikamcore PRIVATE KF5::KIOWidgets)
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          KF5::KIOCore
+                          KF5::KIOWidgets
+    )
+
 endif()
 
 if(KF5Notifications_FOUND)
-    target_link_libraries(digikamcore PRIVATE KF5::Notifications)
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          KF5::Notifications
+    )
+
 endif()
 
 if(KF5NotifyConfig_FOUND)
-    target_link_libraries(digikamcore PRIVATE KF5::NotifyConfig)
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          KF5::NotifyConfig
+    )
+
 endif()
 
 if(Marble_FOUND)
-    target_link_libraries(digikamcore PRIVATE ${MARBLE_LIBRARIES})
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          ${MARBLE_LIBRARIES}
+    )
+
 endif()
 
 if(X11_FOUND)
-    target_link_libraries(digikamcore PRIVATE Qt5::X11Extras ${X11_LIBRARIES})
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          Qt5::X11Extras
+                          ${X11_LIBRARIES}
+    )
+
 endif()
 
 if(Jasper_FOUND)
-    target_link_libraries(digikamcore PRIVATE ${JASPER_LIBRARIES})
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          ${JASPER_LIBRARIES}
+    )
+
 endif()
 
 # LibLqr-1 library rules for content-aware filter
 if(Lqr-1_FOUND)
-    target_link_libraries(digikamcore PRIVATE ${LQR-1_LIBRARIES})
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          ${LQR-1_LIBRARIES}
+    )
+
 endif()
 
 if(LensFun_FOUND)
-    target_link_libraries(digikamcore PRIVATE ${LENSFUN_LIBRARIES})
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          ${LENSFUN_LIBRARIES}
+    )
+
 endif()
 
 if(ImageMagick_FOUND)
-    target_link_libraries(digikamcore PRIVATE ${ImageMagick_LIBRARIES})
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          ${ImageMagick_LIBRARIES}
+    )
+
 endif()
 
 # for nrfilter
 if(OpenCV_FOUND)
-    target_link_libraries(digikamcore PRIVATE ${OpenCV_LIBRARIES})
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          ${OpenCV_LIBRARIES}
+    )
+
 endif()
 
 if(KF5FileMetaData_FOUND)
-    target_link_libraries(digikamcore PRIVATE KF5::FileMetaData)
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          KF5::FileMetaData
+    )
+
 endif()
 
 if(KF5AkonadiContact_FOUND)
-    target_link_libraries(digikamcore PRIVATE KF5::AkonadiContact)
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          KF5::AkonadiContact
+    )
+
 endif()
 
 if(APPLE)
-    target_link_libraries(digikamcore PRIVATE /System/Library/Frameworks/AppKit.framework)
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          /System/Library/Frameworks/AppKit.framework
+    )
+
 endif()
 
 if(WIN32)
-    target_link_libraries(digikamcore PRIVATE wsock32 ws2_32)
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          wsock32
+                          ws2_32
+    )
+
 endif()
 
 if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
-    target_link_libraries(digikamcore PRIVATE ${KVM_LIBRARY})
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          ${KVM_LIBRARY}
+    )
+
 endif()
 
 if(ENABLE_MEDIAPLAYER)
-    target_link_libraries(digikamcore PRIVATE ${QTAV_LIBRARIES})
+
+    target_link_libraries(digikamcore
+#                          PRIVATE
+                          ${QTAV_LIBRARIES}
+    )
+
 endif()
 
 ### Install Rules ###############################################################################################################

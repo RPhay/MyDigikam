@@ -17,9 +17,7 @@ add_dependencies(digikamdatabase digikamcore)
 
 target_link_libraries(digikamdatabase
 
-                      PUBLIC
-
-                      digikamcore
+#                      PUBLIC
 
                       Qt5::Core
                       Qt5::Gui
@@ -28,10 +26,17 @@ target_link_libraries(digikamdatabase
                       KF5::ConfigCore
                       KF5::Solid
                       KF5::I18n
+
+                      digikamcore
 )
 
 if(ENABLE_DBUS)
-    target_link_libraries(digikamdatabase PRIVATE Qt5::DBus)
+
+    target_link_libraries(digikamdatabase
+#                          PRIVATE
+                          Qt5::DBus
+    )
+
 endif()
 
 ### Install Rules ###############################################################################################################
