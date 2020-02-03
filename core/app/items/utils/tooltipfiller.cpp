@@ -351,7 +351,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
                     s = r / 1000;
                     f = r % 1000;
 
-                    durationString = QString().sprintf("%d.%02d:%02d:%02d.%03d", d, h, m, s, f);
+                    durationString = QString().asprintf("%d.%02d:%02d:%02d.%03d", d, h, m, s, f);
                 }
 
                 str = videoInfo.duration.isEmpty() ? cnt.unavailable : durationString;

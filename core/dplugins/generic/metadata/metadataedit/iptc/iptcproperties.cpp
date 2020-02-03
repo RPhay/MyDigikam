@@ -736,7 +736,7 @@ void IPTCProperties::applyMetadata(QByteArray& iptcData)
     if (d->objectTypeCheck->isChecked())
     {
         QString objectType;
-        objectType.sprintf("%2d", d->objectTypeCB->currentIndex()+1);
+        objectType.asprintf("%2d", d->objectTypeCB->currentIndex()+1);
         objectType.append(QString::fromUtf8(":%1").arg(d->objectTypeDescEdit->text()));
         meta.setIptcTagString("Iptc.Application2.ObjectType", objectType);
     }
