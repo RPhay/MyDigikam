@@ -39,16 +39,6 @@ if(ENABLE_DBUS)
 
 endif()
 
-if(MSVC)
-
-    target_link_libraries(digikamdatabase
-                          PRIVATE
-                          digikamcore_static
-    )
-
-endif()
-
-
 ### Install Rules ###############################################################################################################
 
 install(TARGETS digikamdatabase EXPORT DigikamDatabaseConfig ${INSTALL_TARGETS_DEFAULT_ARGS})
