@@ -8,7 +8,6 @@
 APPLY_COMMON_POLICIES()
 
 set(libcommonwidgets_SRCS
-    common/dactivelabel.cpp
     common/modelcompleter.cpp
     common/searchtextbar.cpp
 )
@@ -60,6 +59,7 @@ set(libfilestools_SRCS
 set(libmainview_SRCS
     mainview/dxmlguiwindow.cpp
     mainview/daboutdata.cpp
+    mainview/dactivelabel.cpp
     mainview/dzoombar.cpp
     mainview/dcursortracker.cpp
     mainview/thememanager.cpp
