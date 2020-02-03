@@ -13,6 +13,7 @@ set(DIGIKAMCORE_OBJECTS
             utils/digikam_version.cpp
 
             $<TARGET_OBJECTS:dimg_src>
+            $<TARGET_OBJECTS:dragdrop_src>
             $<TARGET_OBJECTS:dmetadata_src>
             $<TARGET_OBJECTS:jpegutils_src>
             $<TARGET_OBJECTS:progressmanager_src>

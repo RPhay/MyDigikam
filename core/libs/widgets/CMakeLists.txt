@@ -8,9 +8,7 @@
 APPLY_COMMON_POLICIES()
 
 set(libcommonwidgets_SRCS
-    common/abstractitemdragdrophandler.cpp
     common/dactivelabel.cpp
-    common/dragdropimplementations.cpp
     common/modelcompleter.cpp
     common/searchtextbar.cpp
 )
