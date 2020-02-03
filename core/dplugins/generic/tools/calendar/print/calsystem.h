@@ -81,8 +81,8 @@ public:
     bool isValid(int year, int month, int day) const;
     bool isValid(int year, int dayOfYear)      const;
 
-    QDate date(int year, int month, int day) const;
-    QDate date(int year, int dayOfYear)      const;
+    QDate date(int year, int month, int day)   const;
+    QDate date(int year, int dayOfYear)        const;
 
     void getDate(const QDate& date, int* year, int* month, int* day) const;
 
@@ -90,8 +90,8 @@ public:
     int month(const QDate& date) const;
     int day(const QDate& date)   const;
 
-    int quarter(const QDate& date)            const;
-    int quarter(int year, int month, int day) const;
+    int quarter(const QDate& date)              const;
+    int quarter(int year, int month, int day)   const;
 
     int dayOfYear(const QDate& date)            const;
     int dayOfYear(int year, int month, int day) const;
