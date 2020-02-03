@@ -617,4 +617,5 @@ BUGFIXES:
 601 ==> 416984 - Build failure with opencv4-4.2.0.
 602 ==> 406066 - Cannot parse date string YYYY-MM-DDTHH:MM:SS.ssss and YYYY:MM:DD HH:MM:SS in EXIF and XMP.
 603 ==> 417008 - Flickr export ERR_CERT_AUTHORITY_INVALID.
-604 ==> 
+604 ==> 417100 - kbuildsycoca5 cannot be started under MacOS 10.11.6 when digiKam PKG is installed.
+605 ==> 
