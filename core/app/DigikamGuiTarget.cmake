@@ -196,9 +196,6 @@ target_link_libraries(digikamgui
 
                       PUBLIC
 
-                      digikamcore
-                      digikamdatabase
-
                       Qt5::Core
                       Qt5::Gui
                       Qt5::Widgets
@@ -214,6 +211,9 @@ target_link_libraries(digikamgui
                       KF5::I18n
 
                       ${OpenCV_LIBRARIES}
+
+                      digikamcore
+                      digikamdatabase
 )
 
 if(ENABLE_QWEBENGINE)

@@ -98,7 +98,7 @@ generate_export_header(digikamcore BASE_NAME digikam EXPORT_FILE_NAME "${CMAKE_C
 
 target_link_libraries(digikamcore
 
-                      PUBLIC
+#                      PUBLIC
 
                       Qt5::Core
                       Qt5::Gui
@@ -136,14 +136,14 @@ target_link_libraries(digikamcore
 if(ENABLE_QWEBENGINE)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           Qt5::WebEngineWidgets
     )
 
 else()
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           Qt5::WebKitWidgets
     )
 
@@ -152,7 +152,7 @@ endif()
 if(ENABLE_DBUS)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           Qt5::DBus
     )
 
@@ -161,7 +161,7 @@ endif()
 if(KF5IconThemes_FOUND)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           KF5::IconThemes
     )
 
@@ -170,7 +170,7 @@ endif()
 if(KF5KIO_FOUND)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           KF5::KIOCore
                           KF5::KIOWidgets
     )
@@ -180,7 +180,7 @@ endif()
 if(KF5Notifications_FOUND)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           KF5::Notifications
     )
 
@@ -189,7 +189,7 @@ endif()
 if(KF5NotifyConfig_FOUND)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           KF5::NotifyConfig
     )
 
@@ -198,7 +198,7 @@ endif()
 if(Marble_FOUND)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           ${MARBLE_LIBRARIES}
     )
 
@@ -207,7 +207,7 @@ endif()
 if(X11_FOUND)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           Qt5::X11Extras
                           ${X11_LIBRARIES}
     )
@@ -217,7 +217,7 @@ endif()
 if(Jasper_FOUND)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           ${JASPER_LIBRARIES}
     )
 
@@ -227,7 +227,7 @@ endif()
 if(Lqr-1_FOUND)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           ${LQR-1_LIBRARIES}
     )
 
@@ -236,7 +236,7 @@ endif()
 if(LensFun_FOUND)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           ${LENSFUN_LIBRARIES}
     )
 
@@ -245,7 +245,7 @@ endif()
 if(ImageMagick_FOUND)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           ${ImageMagick_LIBRARIES}
     )
 
@@ -255,7 +255,7 @@ endif()
 if(OpenCV_FOUND)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           ${OpenCV_LIBRARIES}
     )
 
@@ -264,7 +264,7 @@ endif()
 if(KF5FileMetaData_FOUND)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           KF5::FileMetaData
     )
 
@@ -273,7 +273,7 @@ endif()
 if(KF5AkonadiContact_FOUND)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           KF5::AkonadiContact
     )
 
@@ -282,7 +282,7 @@ endif()
 if(APPLE)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           /System/Library/Frameworks/AppKit.framework
     )
 
@@ -291,8 +291,9 @@ endif()
 if(WIN32)
 
     target_link_libraries(digikamcore
-                          PRIVATE
-                          wsock32 ws2_32
+#                          PRIVATE
+                          wsock32
+                          ws2_32
     )
 
 endif()
@@ -300,7 +301,7 @@ endif()
 if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           ${KVM_LIBRARY}
     )
 
@@ -309,7 +310,7 @@ endif()
 if(ENABLE_MEDIAPLAYER)
 
     target_link_libraries(digikamcore
-                          PRIVATE
+#                          PRIVATE
                           ${QTAV_LIBRARIES}
     )
 

@@ -33,10 +33,6 @@ target_link_libraries(digikam
 
                       PUBLIC
 
-                      digikamcore
-                      digikamdatabase
-                      digikamgui
-
                       Qt5::Core
                       Qt5::Gui
                       Qt5::Widgets
@@ -47,6 +43,10 @@ target_link_libraries(digikam
                       KF5::XmlGui
                       KF5::ConfigCore
                       KF5::Service
+
+                      digikamcore
+                      digikamdatabase
+                      digikamgui
 )
 
 if(ENABLE_DBUS)
