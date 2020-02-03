@@ -23,5 +23,5 @@ set(converttodngplugin_SRCS
 
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    ConvertToDNG
-                                SOURCES ${converttodngplugin_SRCS}
+                       SOURCES ${converttodngplugin_SRCS}
 )

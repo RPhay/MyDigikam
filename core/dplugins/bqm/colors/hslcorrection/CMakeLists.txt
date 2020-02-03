@@ -23,5 +23,5 @@ set(hslcorrectionplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    HslCorrection
-                                SOURCES ${hslcorrectionplugin_SRCS}
+                       SOURCES ${hslcorrectionplugin_SRCS}
 )

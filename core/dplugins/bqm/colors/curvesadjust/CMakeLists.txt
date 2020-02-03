@@ -22,5 +22,5 @@ set(curvesadjustplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    CurvesAdjust
-                                SOURCES ${curvesadjustplugin_SRCS}
+                       SOURCES ${curvesadjustplugin_SRCS}
 )

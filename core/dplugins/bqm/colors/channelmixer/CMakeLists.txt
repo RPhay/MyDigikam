@@ -22,5 +22,5 @@ set(channelmixerplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    ChannelMixer
-                                SOURCES ${channelmixerplugin_SRCS}
+                       SOURCES ${channelmixerplugin_SRCS}
 )

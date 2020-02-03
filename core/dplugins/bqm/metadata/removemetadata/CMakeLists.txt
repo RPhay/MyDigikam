@@ -22,5 +22,5 @@ set(removemetadataplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    RemoveMetadata
-                                SOURCES ${removemetadataplugin_SRCS}
+                       SOURCES ${removemetadataplugin_SRCS}
 )

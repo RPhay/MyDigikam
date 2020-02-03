@@ -22,5 +22,5 @@ set(resizeplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    Resize
-                                SOURCES ${resizeplugin_SRCS}
+                       SOURCES ${resizeplugin_SRCS}
 )

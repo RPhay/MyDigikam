@@ -22,5 +22,5 @@ set(bcgcorrectionplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    BcgCorrection
-                                SOURCES ${bcgcorrectionplugin_SRCS}
+                       SOURCES ${bcgcorrectionplugin_SRCS}
 )

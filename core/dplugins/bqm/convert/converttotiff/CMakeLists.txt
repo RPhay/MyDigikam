@@ -22,5 +22,5 @@ set(converttotiffplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    ConvertToTIFF
-                                SOURCES ${converttotiffplugin_SRCS}
+                       SOURCES ${converttotiffplugin_SRCS}
 )

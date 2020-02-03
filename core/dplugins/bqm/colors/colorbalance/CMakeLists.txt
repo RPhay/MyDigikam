@@ -22,5 +22,5 @@ set(colorbalanceplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    ColorBalance
-                                SOURCES ${colorbalanceplugin_SRCS}
+                       SOURCES ${colorbalanceplugin_SRCS}
 )

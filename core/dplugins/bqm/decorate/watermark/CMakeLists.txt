@@ -22,6 +22,6 @@ set(watermarkplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    WaterMark
-                                SOURCES ${watermarkplugin_SRCS}
+                       SOURCES ${watermarkplugin_SRCS}
 )
 

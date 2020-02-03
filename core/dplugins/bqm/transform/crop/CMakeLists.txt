@@ -22,5 +22,5 @@ set(cropplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    Crop
-                                SOURCES ${cropplugin_SRCS}
+                       SOURCES ${cropplugin_SRCS}
 )

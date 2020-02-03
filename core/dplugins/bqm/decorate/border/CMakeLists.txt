@@ -22,5 +22,5 @@ set(borderplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    Border
-                                SOURCES ${borderplugin_SRCS}
+                       SOURCES ${borderplugin_SRCS}
 )

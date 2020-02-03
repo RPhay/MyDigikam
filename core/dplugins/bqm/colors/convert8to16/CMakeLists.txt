@@ -22,5 +22,5 @@ set(convert8to16plugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    Convert8To16
-                                SOURCES ${convert8to16plugin_SRCS}
+                       SOURCES ${convert8to16plugin_SRCS}
 )

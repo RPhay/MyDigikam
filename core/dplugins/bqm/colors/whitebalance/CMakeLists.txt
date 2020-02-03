@@ -22,5 +22,5 @@ set(whitebalanceplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    WhiteBalance
-                                SOURCES ${whitebalanceplugin_SRCS}
+                       SOURCES ${whitebalanceplugin_SRCS}
 )

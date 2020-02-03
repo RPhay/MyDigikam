@@ -22,5 +22,5 @@ set(invertplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    Invert
-                                SOURCES ${invertplugin_SRCS}
+                       SOURCES ${invertplugin_SRCS}
 )

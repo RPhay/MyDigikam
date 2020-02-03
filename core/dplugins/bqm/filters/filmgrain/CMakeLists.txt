@@ -22,6 +22,6 @@ set(filmgrainplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    FilmGrain
-                                SOURCES ${filmgrainplugin_SRCS}
+                       SOURCES ${filmgrainplugin_SRCS}
 )
 

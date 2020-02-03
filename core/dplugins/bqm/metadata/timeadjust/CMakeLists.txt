@@ -22,6 +22,6 @@ set(timeadjustplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    TimeAdjust
-                                SOURCES ${timeadjustplugin_SRCS}
+                       SOURCES ${timeadjustplugin_SRCS}
 )
 

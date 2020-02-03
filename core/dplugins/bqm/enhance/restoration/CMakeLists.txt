@@ -22,5 +22,5 @@ set(restorationplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    Restoration
-                                SOURCES ${restorationplugin_SRCS}
+                       SOURCES ${restorationplugin_SRCS}
 )

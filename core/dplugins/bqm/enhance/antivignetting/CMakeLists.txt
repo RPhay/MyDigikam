@@ -22,6 +22,6 @@ set(antivignettingplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    AntiVignetting
-                                SOURCES ${antivignettingplugin_SRCS}
+                       SOURCES ${antivignettingplugin_SRCS}
 )
 

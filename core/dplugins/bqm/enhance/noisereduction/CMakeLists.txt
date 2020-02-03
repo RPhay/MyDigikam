@@ -22,5 +22,5 @@ set(noisereductionplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    NoiseReduction
-                                SOURCES ${noisereductionplugin_SRCS}
+                       SOURCES ${noisereductionplugin_SRCS}
 )

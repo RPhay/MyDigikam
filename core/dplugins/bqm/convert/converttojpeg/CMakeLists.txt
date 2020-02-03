@@ -22,5 +22,5 @@ set(converttojpegplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    ConvertToJPEG
-                                SOURCES ${converttojpegplugin_SRCS}
+                       SOURCES ${converttojpegplugin_SRCS}
 )

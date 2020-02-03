@@ -22,5 +22,5 @@ set(converttopgfplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    ConvertToPGF
-                                SOURCES ${converttopgfplugin_SRCS}
+                       SOURCES ${converttopgfplugin_SRCS}
 )

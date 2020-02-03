@@ -22,5 +22,5 @@ set(converttopngplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    ConvertToPNG
-                                SOURCES ${converttopngplugin_SRCS}
+                       SOURCES ${converttopngplugin_SRCS}
 )

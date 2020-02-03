@@ -22,5 +22,5 @@ set(colorfxplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    ColorFX
-                                SOURCES ${colorfxplugin_SRCS}
+                       SOURCES ${colorfxplugin_SRCS}
 )

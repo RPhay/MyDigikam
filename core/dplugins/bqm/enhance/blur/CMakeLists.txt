@@ -23,5 +23,5 @@ set(blurplugin_SRCS
 
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    Blur
-                                SOURCES ${blurplugin_SRCS}
+                       SOURCES ${blurplugin_SRCS}
 )

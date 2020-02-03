@@ -23,5 +23,5 @@ set(localcontrastplugin_SRCS
 
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    LocalContrast
-                                SOURCES ${localcontrastplugin_SRCS}
+                       SOURCES ${localcontrastplugin_SRCS}
 )

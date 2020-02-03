@@ -22,6 +22,6 @@ set(flipplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    Flip
-                                SOURCES ${flipplugin_SRCS}
+                       SOURCES ${flipplugin_SRCS}
 )
 

@@ -22,5 +22,5 @@ set(iccconvertplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    IccConvert
-                                SOURCES ${iccconvertplugin_SRCS}
+                       SOURCES ${iccconvertplugin_SRCS}
 )

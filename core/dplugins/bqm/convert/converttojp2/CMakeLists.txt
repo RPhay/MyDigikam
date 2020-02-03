@@ -22,5 +22,5 @@ set(converttojp2plugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    ConvertToJP2lugin
-                                SOURCES ${converttojp2plugin_SRCS}
+                       SOURCES ${converttojp2plugin_SRCS}
 )

@@ -22,5 +22,5 @@ set(bwconvertplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    BWconvert
-                                SOURCES ${bwconvertplugin_SRCS}
+                       SOURCES ${bwconvertplugin_SRCS}
 )

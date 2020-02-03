@@ -22,5 +22,5 @@ set(rotateplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    Rotate
-                                SOURCES ${rotateplugin_SRCS}
+                       SOURCES ${rotateplugin_SRCS}
 )

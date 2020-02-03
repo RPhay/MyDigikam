@@ -22,5 +22,5 @@ set(sharpenplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    Sharpen
-                                SOURCES ${sharpenplugin_SRCS}
+                       SOURCES ${sharpenplugin_SRCS}
 )

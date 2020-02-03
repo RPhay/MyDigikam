@@ -22,6 +22,6 @@ set(assigntemplateplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    AssignTemplate
-                                SOURCES ${assigntemplateplugin_SRCS}
+                       SOURCES ${assigntemplateplugin_SRCS}
 )
 

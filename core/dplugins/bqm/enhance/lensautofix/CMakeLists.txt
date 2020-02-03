@@ -24,5 +24,5 @@ set(lensautofixplugin_SRCS
 )
 
 DIGIKAM_ADD_BQM_PLUGIN(NAME    LensAutoFix
-                                SOURCES ${lensautofixplugin_SRCS}
+                       SOURCES ${lensautofixplugin_SRCS}
 )
