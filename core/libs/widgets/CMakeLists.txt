@@ -144,7 +144,6 @@ endif()
 
 add_library(digikamwidgetscore_src OBJECT
     ${libmainview_SRCS}
-    ${libcommonwidgets_SRCS}
     ${libgraphicsviewwidgets_SRCS}
     ${libiccprofileswidgets_SRCS}
     ${libitemview_SRCS}
@@ -155,6 +154,7 @@ add_library(digikamwidgetscore_src OBJECT
     ${libcombotools_SRCS}
     ${librangetools_SRCS}
     ${liblayouttools_SRCS}
+    ${libtextwidgets_SRCS}
 )
 
 #############################################################"
