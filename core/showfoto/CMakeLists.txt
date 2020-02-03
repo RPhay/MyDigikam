@@ -83,28 +83,58 @@ target_link_libraries(showfoto
 )
 
 if(KF5Notifications_FOUND)
-    target_link_libraries(showfoto PUBLIC KF5::Notifications)
+
+    target_link_libraries(showfoto
+                          PUBLIC
+                          KF5::Notifications
+    )
+
 endif()
 
 if(KF5NotifyConfig_FOUND)
-    target_link_libraries(showfoto PUBLIC KF5::NotifyConfig)
+
+    target_link_libraries(showfoto
+                          PUBLIC
+                          KF5::NotifyConfig
+    )
+
 endif()
 
 if(ImageMagick_Magick++_FOUND)
-    target_link_libraries(showfoto PUBLIC ${ImageMagick_LIBRARIES})
+
+    target_link_libraries(showfoto
+                          PUBLIC
+                          ${ImageMagick_LIBRARIES}
+    )
+
 endif()
 
 if(NOT WIN32)
+
     # To link under Solaris (see bug #274484)
-    target_link_libraries(showfoto PUBLIC ${MATH_LIBRARY})
+    target_link_libraries(showfoto
+                          PUBLIC
+                          ${MATH_LIBRARY}
+    )
+
 endif()
 
 if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
-    target_link_libraries(showfoto PUBLIC ${KVM_LIBRARY})
+
+    target_link_libraries(showfoto
+                          PUBLIC
+                          ${KVM_LIBRARY}
+    )
+
 endif()
 
 if(APPLE)
-    target_link_libraries(showfoto PUBLIC /System/Library/Frameworks/AppKit.framework)
+
+    target_link_libraries(showfoto
+                          PUBLIC
+                          /System/Library/Frameworks/AppKit.framework
+    )
+
 endif()
 
 install(TARGETS  showfoto                          ${INSTALL_TARGETS_DEFAULT_ARGS})

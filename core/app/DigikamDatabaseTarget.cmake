@@ -31,7 +31,12 @@ target_link_libraries(digikamdatabase
 )
 
 if(ENABLE_DBUS)
-    target_link_libraries(digikamdatabase PRIVATE Qt5::DBus)
+
+    target_link_libraries(digikamdatabase
+                          PRIVATE
+                          Qt5::DBus
+    )
+
 endif()
 
 ### Install Rules ###############################################################################################################
