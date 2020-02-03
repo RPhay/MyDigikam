@@ -48,7 +48,8 @@ public:
     explicit EnfuseStackItem(QTreeWidget* const parent);
     ~EnfuseStackItem();
 
-    /** Return the preview image url assigned to item.
+    /**
+     * Return the preview image url assigned to item.
      */
     const QUrl& url() const;
 

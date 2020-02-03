@@ -280,7 +280,9 @@ void EnfuseStackList::setOnItem(const QUrl& url, bool on)
     EnfuseStackItem* const item = findItemByUrl(url);
 
     if (item)
+    {
         item->setOn(on);
+    }
 }
 
 void EnfuseStackList::removeItem(const QUrl& url)
@@ -292,9 +294,12 @@ void EnfuseStackList::removeItem(const QUrl& url)
 void EnfuseStackList::addItem(const QUrl& url, const EnfuseSettings& settings)
 {
     if (!url.isValid())
+    {
         return;
+    }
 
     // Check if the new item already exist in the list.
+
     if (!findItemByUrl(url))
     {
         EnfuseSettings enfusePrms = settings;
@@ -313,12 +318,17 @@ void EnfuseStackList::addItem(const QUrl& url, const EnfuseSettings& settings)
 
 void EnfuseStackList::setThumbnail(const QUrl& url, const QImage& img)
 {
-    if (img.isNull()) return;
+    if (img.isNull())
+    {
+        return;
+    }
 
     EnfuseStackItem* const item = findItemByUrl(url);
 
     if (item && (!item->asValidThumb()))
+    {
         item->setThumbnail(QPixmap::fromImage(img.scaled(iconSize().width(), iconSize().height(), Qt::KeepAspectRatio)));
+    }
 }
 
 void EnfuseStackList::slotItemClicked(QTreeWidgetItem* item)
@@ -326,7 +336,9 @@ void EnfuseStackList::slotItemClicked(QTreeWidgetItem* item)
     EnfuseStackItem* const eItem = dynamic_cast<EnfuseStackItem*>(item);
 
     if (eItem)
+    {
         emit signalItemClicked(eItem->url());
+    }
 }
 
 void EnfuseStackList::slotProgressTimerDone()
@@ -335,7 +347,9 @@ void EnfuseStackList::slotProgressTimerDone()
     d->progressCount++;
 
     if (d->progressCount == 8)
+    {
         d->progressCount = 0;
+    }
 
     d->progressTimer->start(300);
 }
@@ -349,7 +363,9 @@ EnfuseStackItem* EnfuseStackList::findItemByUrl(const QUrl& url)
         EnfuseStackItem* const item = dynamic_cast<EnfuseStackItem*>(*it);
 
         if (item && (item->url() == url))
+        {
             return item;
+        }
 
         ++it;
     }
@@ -382,7 +398,10 @@ void EnfuseStackList::processedItem(const QUrl& url, bool success)
     EnfuseStackItem* const item = findItemByUrl(url);
 
     if (item)
-        item->setProcessedIcon(QIcon::fromTheme(success ? QLatin1String("dialog-ok-apply") : QLatin1String("dialog-cancel")));
+    {
+        item->setProcessedIcon(QIcon::fromTheme(success ? QLatin1String("dialog-ok-apply")
+                                                        : QLatin1String("dialog-cancel")));
+    }
 }
 
 void EnfuseStackList::setTemplateFileName(DSaveSettingsWidget::OutputFormat frm, const QString& string)
@@ -403,7 +422,7 @@ void EnfuseStackList::setTemplateFileName(DSaveSettingsWidget::OutputFormat frm,
             EnfuseSettings settings = item->enfuseSettings();
             QString ext             = DSaveSettingsWidget::extensionForFormat(d->outputFormat);
             settings.outputFormat   = d->outputFormat;
-            settings.targetFileName = d->templateFileName + temp.sprintf("-%02i", count+1).append(ext);
+            settings.targetFileName = d->templateFileName + temp.asprintf("-%02i", count+1).append(ext);
             item->setEnfuseSettings(settings);
         }
 
