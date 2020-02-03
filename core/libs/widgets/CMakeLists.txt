@@ -17,6 +17,7 @@ set(liblayouttools_SRCS
     layout/dexpanderbox.cpp
     layout/statesavingobject.cpp
     layout/dlayoutbox.cpp
+    layout/sidebar.cpp
 )
 
 set(librangetools_SRCS
@@ -63,7 +64,6 @@ set(libmainview_SRCS
     mainview/thumbbardock.cpp
     mainview/thememanager.cpp
     mainview/thememanager_p.cpp
-    mainview/sidebar.cpp
     mainview/fullscreensettings.cpp
     ${CMAKE_SOURCE_DIR}/core/app/utils/digikam_globals.cpp
 )
