@@ -1057,7 +1057,7 @@ void ImportUI::finishDialog()
         d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode,
                                                  i18nc("@info:status", "Scanning for new files, please wait..."));
 
-        NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScheduleCollectionScan, d->foldersToScan.toList());
+        NewItemsFinder* const tool = new NewItemsFinder(NewItemsFinder::ScheduleCollectionScan, d->foldersToScan.values());
         tool->start();
 
         d->foldersToScan.clear();
