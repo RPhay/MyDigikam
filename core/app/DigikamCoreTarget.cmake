@@ -95,7 +95,10 @@ set_target_properties(digikamcore PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SO
 
 add_dependencies(digikamcore digikam-gitversion)
 
-generate_export_header(digikamcore BASE_NAME digikam EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_export.h")
+generate_export_header(digikamcore
+                       BASE_NAME digikam
+                       EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_export.h"
+)
 
 # Note all this target dependencies must be private and not exported to prevent inherited external plugins dependencies.
 
