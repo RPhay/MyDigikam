@@ -1514,7 +1514,7 @@ void ItemDescEditTab::slotApplyChangesToAllVersions()
         tmpSet.insert(relations.at(i).second);
     }
 
-    FileActionMngr::instance()->applyMetadata(ItemInfoList(tmpSet.toList()), d->hub);
+    FileActionMngr::instance()->applyMetadata(ItemInfoList(tmpSet.values()), d->hub);
 
     d->modified = false;
     d->hub.resetChanged();
