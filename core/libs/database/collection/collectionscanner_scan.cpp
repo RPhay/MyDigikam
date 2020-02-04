@@ -311,7 +311,7 @@ void CollectionScanner::partialScan(const QString& albumRoot, const QString& alb
         }
     }
 
-    scanForStaleAlbums(locationIdsToScan.toList());
+    scanForStaleAlbums(locationIdsToScan.values());
 
     if (!d->checkObserver())
     {
@@ -782,7 +782,7 @@ void CollectionScanner::scanAlbum(const CollectionLocation& location, const QStr
 
     if (!itemIdSet.isEmpty())
     {
-        QList<qlonglong> ids = itemIdSet.toList();
+        QList<qlonglong> ids = itemIdSet.values();
         CoreDbOperationGroup group;
         CoreDbAccess().db()->removeItems(ids, QList<int>() << albumID);
         itemsWereRemoved(ids);
@@ -1052,7 +1052,7 @@ void CollectionScanner::finishHistoryScanning()
 
     // stage 2
 
-    ids = d->needResolveHistorySet.toList();
+    ids = d->needResolveHistorySet.values();
     d->needResolveHistorySet.clear();
     historyScanningStage2(ids);
 
@@ -1063,7 +1063,7 @@ void CollectionScanner::finishHistoryScanning()
 
     // stage 3
 
-    ids = d->needTaggingHistorySet.toList();
+    ids = d->needTaggingHistorySet.values();
     d->needTaggingHistorySet.clear();
     historyScanningStage3(ids);
 }
