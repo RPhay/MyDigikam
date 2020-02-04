@@ -88,6 +88,7 @@ DbCleaner::DbCleaner(bool cleanThumbsDb,
       d(new Private)
 {
     // register the identity list as meta type to be able to use it in signal/slot connection
+
     qRegisterMetaType<QList<Identity>>("QList<Identity>");
 
     d->cleanThumbsDb     = cleanThumbsDb;
@@ -225,6 +226,7 @@ void DbCleaner::slotCleanItems()
         setLabel(i18n("Clean up the databases : ") + i18n("cleaning core db"));
 
         // GO!
+
         d->thread->cleanCoreDb(d->imagesToRemove);
         d->thread->start();
     }
@@ -238,6 +240,7 @@ void DbCleaner::slotCleanItems()
 void DbCleaner::slotCleanedItems()
 {
     // We cleaned the items. Now clean the thumbs db
+
     disconnect(d->thread, SIGNAL(signalCompleted()),
                this, SLOT(slotCleanedItems()));
 
@@ -252,6 +255,7 @@ void DbCleaner::slotCleanedItems()
             setLabel(i18n("Clean up the databases : ") + i18n("cleaning thumbnails db"));
 
             // GO!
+
             d->thread->cleanThumbsDb(d->staleThumbnails);
             d->thread->start();
         }
@@ -376,15 +380,19 @@ void DbCleaner::slotShrinkDatabases()
 
     //qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items before vacuum: " << completedItems() << "/" << totalItems();
 
-//    slotShrinkNextDBInfo(true,true);
-//    qCDebug(DIGIKAM_GENERAL_LOG) << "Is timer active before start():"
-//                                 << d->progressTimer->isActive();
+/*
+    slotShrinkNextDBInfo(true,true);
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Is timer active before start():"
+                                 << d->progressTimer->isActive();
+*/
 
     d->thread->start();
 
-//    qCDebug(DIGIKAM_GENERAL_LOG) << "Is timer active after start():"
-//                                 << d->progressTimer->isActive();
-//    d->progressTimer->start(300);
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Is timer active after start():"
+                                 << d->progressTimer->isActive();
+    d->progressTimer->start(300);
+*/
 }
 
 void DbCleaner::slotAdvance()
@@ -508,9 +516,11 @@ DbShrinkDialog::DbShrinkDialog(QWidget* const parent)
     {
         d->statusList->item(i)->setIcon(QIcon::fromTheme(QLatin1String("system-run")));
     }
-//    d->statusList->setMinimumSize(0, 0);
-//    d->statusList->setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum));
-//    d->statusList->adjustSize();
+/*
+    d->statusList->setMinimumSize(0, 0);
+    d->statusList->setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum));
+    d->statusList->adjustSize();
+*/
     d->statusList->setMaximumHeight(4 * d->statusList->sizeHintForRow(0) +
                                     2 * d->statusList->frameWidth());
     statusLayout->addWidget(d->statusList);
