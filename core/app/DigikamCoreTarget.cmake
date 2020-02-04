@@ -97,9 +97,11 @@ add_dependencies(digikamcore digikam-gitversion)
 
 generate_export_header(digikamcore BASE_NAME digikam EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_export.h")
 
+# Note all this target dependencies must be private and not exported to prevent inherited external plugins dependencies.
+
 target_link_libraries(digikamcore
 
-                      PUBLIC
+                      PRIVATE
 
                       Qt5::Core
                       Qt5::Gui

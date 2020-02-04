@@ -15,9 +15,11 @@ set_target_properties(digikamdatabase PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT
 
 add_dependencies(digikamdatabase digikamcore)
 
+# Note all this target dependencies must be private and not exported to prevent inherited external plugins dependencies.
+
 target_link_libraries(digikamdatabase
 
-                      PUBLIC
+                      PRIVATE
 
                       Qt5::Core
                       Qt5::Gui

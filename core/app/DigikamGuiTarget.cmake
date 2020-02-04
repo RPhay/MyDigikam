@@ -192,9 +192,11 @@ if(WIN32)
     set_target_properties(digikamgui PROPERTIES COMPILE_FLAGS -DJPEG_STATIC)
 endif()
 
+# Note all this target dependencies must be private and not exported to prevent inherited external plugins dependencies.
+
 target_link_libraries(digikamgui
 
-                      PUBLIC
+                      PRIVATE
 
                       Qt5::Core
                       Qt5::Gui
