@@ -33,7 +33,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "dbsettingswidget.h"
 #include "coredbbackend.h"
 #include "coredbcopymanager.h"
@@ -66,7 +66,7 @@ private:
 
 // --------------------------------------------------------------------
 
-class DIGIKAM_EXPORT DatabaseMigrationDialog : public QDialog
+class DIGIKAM_DATABASE_EXPORT DatabaseMigrationDialog : public QDialog
 {
     Q_OBJECT
 

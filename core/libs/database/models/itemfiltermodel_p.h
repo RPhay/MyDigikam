@@ -38,7 +38,7 @@
 
 #include "iteminfo.h"
 #include "itemfiltermodel.h"
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 // NOTE: we need the EXPORT macro in a private header because
 // this private header is shared across binary objects.
@@ -80,7 +80,7 @@ public:
 class ItemFilterModelPreparer;
 class ItemFilterModelFilterer;
 
-class DIGIKAM_EXPORT ItemFilterModel::ItemFilterModelPrivate : public QObject
+class DIGIKAM_DATABASE_EXPORT ItemFilterModel::ItemFilterModelPrivate : public QObject
 {
     Q_OBJECT
 

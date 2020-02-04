@@ -15,6 +15,11 @@ set_target_properties(digikamdatabase PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT
 
 add_dependencies(digikamdatabase digikamcore)
 
+generate_export_header(digikamdatabase
+                       BASE_NAME digikam_database
+                       EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_database_export.h"
+)
+
 # Note all this target dependencies must be private and not exported to prevent inherited external plugins dependencies.
 
 target_link_libraries(digikamdatabase

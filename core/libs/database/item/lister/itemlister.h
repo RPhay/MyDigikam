@@ -33,7 +33,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "iteminfo.h"
 #include "iteminfolist.h"
 #include "coredbaccess.h"
@@ -45,7 +45,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ItemLister
+class DIGIKAM_DATABASE_EXPORT ItemLister
 {
 
 public:

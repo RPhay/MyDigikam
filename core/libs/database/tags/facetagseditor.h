@@ -37,7 +37,7 @@
 // Local includes
 
 #include "facetagsiface.h"
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "facetags.h"
 
 namespace Digikam
@@ -45,7 +45,7 @@ namespace Digikam
 
 class ItemTagPair;
 
-class DIGIKAM_EXPORT FaceTagsEditor
+class DIGIKAM_DATABASE_EXPORT FaceTagsEditor
 {
 public:
 

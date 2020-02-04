@@ -39,7 +39,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 namespace Digikam
 {
@@ -73,7 +73,7 @@ public:
 namespace CollectionScannerHints
 {
 
-class DIGIKAM_EXPORT Album
+class DIGIKAM_DATABASE_EXPORT Album
 {
 public:
 
@@ -92,7 +92,7 @@ public:
 
 // ---------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT DstPath
+class DIGIKAM_DATABASE_EXPORT DstPath
 {
 public:
 
@@ -111,7 +111,7 @@ public:
 
 // ---------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT Item
+class DIGIKAM_DATABASE_EXPORT Item
 {
 public:
 
@@ -146,7 +146,7 @@ inline uint qHash(const Item& item)
 
 // ---------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT AlbumCopyMoveHint
+class DIGIKAM_DATABASE_EXPORT AlbumCopyMoveHint
 {
 public:
 
@@ -215,7 +215,7 @@ protected:
 
 // ---------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ItemCopyMoveHint
+class DIGIKAM_DATABASE_EXPORT ItemCopyMoveHint
 {
 public:
 
@@ -268,7 +268,7 @@ protected:
 
 // ---------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ItemChangeHint
+class DIGIKAM_DATABASE_EXPORT ItemChangeHint
 {
 public:
 
@@ -317,7 +317,7 @@ protected:
 
 // ---------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ItemMetadataAdjustmentHint
+class DIGIKAM_DATABASE_EXPORT ItemMetadataAdjustmentHint
 {
 public:
 

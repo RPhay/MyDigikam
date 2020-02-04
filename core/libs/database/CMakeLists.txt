@@ -30,7 +30,7 @@ endif()
 # Boost uses operator names (and, not, ...)
 string(REPLACE "-fno-operator-names" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
-### For digikamcore target ###########################################################
+### For digikamcore target - Symbols exported with DIGIKAM_EXPORT macro ##########################
 
 set(libdatabasecore_SRCS
     server/databaseserverstarter.cpp
@@ -55,7 +55,7 @@ set(libdatabasecore_SRCS
     thumbsdb/thumbsdbaccess.cpp
 )
 
-### For digikamgui target ############################################################
+### For digikamgui target - Symbols exported with DIGIKAM_EXPORT macro ############################
 
 set(libdatabaseutils_SRCS
     utils/widgets/dbstatdlg.cpp
@@ -75,8 +75,7 @@ set(libdatabaseutils_SRCS
     utils/scan/scancontroller_stop.cpp
 )
 
-### For digikamdatabase target #######################################################
-
+### For digikamdatabase target - Symbols exported with DIGIKAM_DATABASE_EXPORT macro ##############
 
 set(libdatabase_SRCS
     collection/collectionscanner.cpp
@@ -210,13 +209,12 @@ set(libhaar_SRCS
 
 ### Shared digiKam database objects definitions ########################################################
 
+add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})             # hosted by digikamcore target.
 
-add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})             # include in digikamcore target.
 
-
-add_library(digikamdatabase_src     OBJECT ${libdatabase_SRCS}                  # include in digikamdatabase target.
+add_library(digikamdatabase_src     OBJECT ${libdatabase_SRCS}                  # hosted by digikamdatabase target.
                                            ${libdatabasemodels_SRCS}
                                            ${libhaar_SRCS}
 )
 
-add_library(digikamdatabasemain_src OBJECT ${libdatabaseutils_SRCS})            # include in digikamgui target.
+add_library(digikamdatabasemain_src OBJECT ${libdatabaseutils_SRCS})            # hosted by digikamgui target.

@@ -29,7 +29,7 @@
 
 #include "itemmodel.h"
 #include "thumbnailsize.h"
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 namespace Digikam
 {
@@ -37,7 +37,7 @@ namespace Digikam
 class LoadingDescription;
 class ThumbnailLoadThread;
 
-class DIGIKAM_EXPORT ItemThumbnailModel : public ItemModel
+class DIGIKAM_DATABASE_EXPORT ItemThumbnailModel : public ItemModel
 {
     Q_OBJECT
 

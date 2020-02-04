@@ -27,7 +27,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "dbengineparameters.h"
 
 namespace Digikam
@@ -52,7 +52,7 @@ class CoreDbAccessStaticPriv;
  * - to make sure that the database is available and the schema
  *   is properly initialized, call checkReadyForUse()
  */
-class DIGIKAM_EXPORT CoreDbAccess
+class DIGIKAM_DATABASE_EXPORT CoreDbAccess
 {
 public:
 

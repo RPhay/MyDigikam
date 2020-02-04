@@ -40,7 +40,7 @@
 #include "dbenginesqlquery.h"
 #include "similaritydbbackend.h"
 #include "similaritydbaccess.h"
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "iteminfo.h"
 
 namespace Digikam
@@ -54,7 +54,7 @@ enum class FuzzyAlgorithm
 };
 
 
-class DIGIKAM_EXPORT SimilarityDb
+class DIGIKAM_DATABASE_EXPORT SimilarityDb
 {
 public:
 

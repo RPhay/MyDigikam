@@ -34,7 +34,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "itemlisterrecord.h"
 #include "dbjob.h"
 
@@ -42,7 +42,7 @@ namespace Digikam
 {
 
 //TODO: Docs
-class DIGIKAM_EXPORT ItemListerReceiver
+class DIGIKAM_DATABASE_EXPORT ItemListerReceiver
 {
 
 public:
@@ -54,7 +54,7 @@ public:
 
 // ------------------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ItemListerValueListReceiver
+class DIGIKAM_DATABASE_EXPORT ItemListerValueListReceiver
     : public ItemListerReceiver
 {
 
@@ -73,7 +73,7 @@ public:
 
 // ------------------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ItemListerJobReceiver
+class DIGIKAM_DATABASE_EXPORT ItemListerJobReceiver
     : public ItemListerValueListReceiver
 {
 
@@ -90,7 +90,7 @@ protected:
 
 // ------------------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ItemListerJobPartsSendingReceiver
+class DIGIKAM_DATABASE_EXPORT ItemListerJobPartsSendingReceiver
     : public ItemListerJobReceiver
 {
 
@@ -107,7 +107,7 @@ protected:
 
 // ------------------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ItemListerJobGrowingPartsSendingReceiver
+class DIGIKAM_DATABASE_EXPORT ItemListerJobGrowingPartsSendingReceiver
     : public ItemListerJobPartsSendingReceiver
 {
 

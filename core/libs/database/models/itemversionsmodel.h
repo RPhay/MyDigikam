@@ -31,12 +31,12 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ItemVersionsModel : public QAbstractListModel
+class DIGIKAM_DATABASE_EXPORT ItemVersionsModel : public QAbstractListModel
 {
     Q_OBJECT
 

@@ -33,7 +33,7 @@
 
 #include "dragdropimplementations.h"
 #include "iteminfo.h"
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 class QItemSelection;
 
@@ -48,7 +48,7 @@ namespace DatabaseFields
 class Set;
 }
 
-class DIGIKAM_EXPORT ItemModel : public QAbstractListModel,
+class DIGIKAM_DATABASE_EXPORT ItemModel : public QAbstractListModel,
                                           public DragDropModelImplementation
 {
     Q_OBJECT

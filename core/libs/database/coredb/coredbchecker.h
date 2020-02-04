@@ -28,12 +28,12 @@
 
 #include "dbengineparameters.h"
 #include "coredbbackend.h"
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT CoreDbPrivilegesChecker
+class DIGIKAM_DATABASE_EXPORT CoreDbPrivilegesChecker
 {
 
 public:

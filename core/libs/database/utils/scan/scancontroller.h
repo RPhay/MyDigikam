@@ -34,7 +34,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "collectionscannerobserver.h"
 #include "collectionscannerhints.h"
 #include "iteminfo.h"
@@ -47,7 +47,7 @@ namespace Digikam
 class CollectionScanner;
 class PAlbum;
 
-class DIGIKAM_EXPORT ScanController : public QThread,
+class DIGIKAM_DATABASE_EXPORT ScanController : public QThread,
                                       public InitializationObserver
 {
     Q_OBJECT

@@ -42,7 +42,7 @@
 
 #include "searchtextbar.h"
 #include "mimefilter.h"
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 namespace Digikam
 {
@@ -57,7 +57,7 @@ namespace DatabaseFields
 
 // ---------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT SearchTextFilterSettings : public SearchTextSettings
+class DIGIKAM_DATABASE_EXPORT SearchTextFilterSettings : public SearchTextSettings
 {
 
 public:
@@ -94,7 +94,7 @@ public:
 
 // ---------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ItemFilterSettings
+class DIGIKAM_DATABASE_EXPORT ItemFilterSettings
 {
 public:
 
@@ -265,7 +265,7 @@ private:
 
 // ---------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT VersionItemFilterSettings
+class DIGIKAM_DATABASE_EXPORT VersionItemFilterSettings
 {
 public:
 
@@ -309,7 +309,7 @@ protected:
 
 // ---------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT GroupItemFilterSettings
+class DIGIKAM_DATABASE_EXPORT GroupItemFilterSettings
 {
 public:
 

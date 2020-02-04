@@ -35,7 +35,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "coredbaccess.h"
 #include "coredbalbuminfo.h"
 #include "collectionscannerhints.h"
@@ -45,7 +45,7 @@ class QFileInfo;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT CollectionScanner : public QObject
+class DIGIKAM_DATABASE_EXPORT CollectionScanner : public QObject
 {
     Q_OBJECT
 

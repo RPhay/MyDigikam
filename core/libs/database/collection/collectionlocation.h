@@ -31,13 +31,13 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "coredbalbuminfo.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT CollectionLocation
+class DIGIKAM_DATABASE_EXPORT CollectionLocation
 {
 
 public:

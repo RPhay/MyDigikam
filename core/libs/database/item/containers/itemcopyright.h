@@ -35,7 +35,7 @@
 
 #include "metaengine.h"
 #include "metadatainfo.h"
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 namespace Digikam
 {
@@ -44,7 +44,7 @@ class CopyrightInfo;
 class ItemCopyrightCache;
 class Template;
 
-class DIGIKAM_EXPORT ItemCopyright
+class DIGIKAM_DATABASE_EXPORT ItemCopyright
 {
 public:
 

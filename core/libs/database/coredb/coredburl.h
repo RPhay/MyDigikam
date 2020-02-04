@@ -32,14 +32,14 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "dbengineparameters.h"
 #include "coredbaccess.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT CoreDbUrl : public QUrl
+class DIGIKAM_DATABASE_EXPORT CoreDbUrl : public QUrl
 {
 public:
 

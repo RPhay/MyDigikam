@@ -40,7 +40,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 #ifdef HAVE_DBUS
 class QDBusArgument;
@@ -248,7 +248,7 @@ template<typename FieldName> class FieldMetaInfo
 };
 
 #define DECLARE_FIELDMETAINFO(FieldName)                                                                    \
-    template<> class DIGIKAM_EXPORT FieldMetaInfo <FieldName>                                      \
+    template<> class DIGIKAM_DATABASE_EXPORT FieldMetaInfo <FieldName>                                      \
     {                                                                                                       \
         public:                                                                                             \
             static const FieldName##Field First = FieldName##First;                                         \

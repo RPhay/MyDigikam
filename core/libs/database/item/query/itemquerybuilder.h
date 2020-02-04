@@ -35,14 +35,14 @@
 
 #include "coredbsearchxml.h"
 #include "itemqueryposthooks.h"
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 class QUrl;
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ItemQueryBuilder
+class DIGIKAM_DATABASE_EXPORT ItemQueryBuilder
 {
 public:
 

@@ -37,7 +37,7 @@
 // Local includes
 
 #include "haar.h"
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 class QImage;
 
@@ -63,7 +63,7 @@ public:
 
 // --------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT HaarIface
+class DIGIKAM_DATABASE_EXPORT HaarIface
 {
 
 public:

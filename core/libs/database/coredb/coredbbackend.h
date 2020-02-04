@@ -27,7 +27,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "dbenginebackend.h"
 #include "coredbchangesets.h"
 
@@ -38,7 +38,7 @@ class CoreDbSchemaUpdater;
 class CoreDbWatch;
 class CoreDbBackendPrivate;
 
-class DIGIKAM_EXPORT CoreDbBackend : public BdEngineBackend
+class DIGIKAM_DATABASE_EXPORT CoreDbBackend : public BdEngineBackend
 {
     Q_OBJECT
 

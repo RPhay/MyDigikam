@@ -32,12 +32,12 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DbEngineActionElement
+class DIGIKAM_DATABASE_EXPORT DbEngineActionElement
 {
 public:
 
@@ -53,7 +53,7 @@ public:
 
 // ---------------------------------------------------------------
 
-class DIGIKAM_EXPORT DbEngineAction
+class DIGIKAM_DATABASE_EXPORT DbEngineAction
 {
 public:
 

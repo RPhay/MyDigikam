@@ -38,7 +38,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "coredbalbuminfo.h"
 #include "coredburl.h"
 #include "coredbfields.h"
@@ -74,7 +74,7 @@ class ThumbnailInfo;
  * The id and albumId are the exception to this rule, as they are
  * primitive and will never change during the lifetime of an object.
  */
-class DIGIKAM_EXPORT ItemInfo
+class DIGIKAM_DATABASE_EXPORT ItemInfo
 {
 public:
     
@@ -652,7 +652,7 @@ inline uint qHash(const ItemInfo& info)
 }
 
 //! qDebug() stream operator. Writes property @a info to the debug output in a nicely formatted way.
-DIGIKAM_EXPORT QDebug operator<<(QDebug stream, const ItemInfo& info);
+DIGIKAM_DATABASE_EXPORT QDebug operator<<(QDebug stream, const ItemInfo& info);
 
 } // namespace Digikam
 

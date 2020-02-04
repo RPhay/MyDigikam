@@ -34,12 +34,12 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT FaceTags
+class DIGIKAM_DATABASE_EXPORT FaceTags
 {
 
 public:

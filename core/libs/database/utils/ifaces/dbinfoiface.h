@@ -29,14 +29,14 @@
 
 #include "applicationsettings.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 namespace Digikam
 {
 
 class Album;
 
-class DIGIKAM_EXPORT DBInfoIface : public DInfoInterface
+class DIGIKAM_DATABASE_EXPORT DBInfoIface : public DInfoInterface
 {
     Q_OBJECT
 

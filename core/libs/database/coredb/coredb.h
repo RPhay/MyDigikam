@@ -44,7 +44,7 @@
 #include "coredbfields.h"
 #include "coredbaccess.h"
 #include "coredbconstants.h"
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "dbenginesqlquery.h"
 #include "album.h"
 
@@ -53,7 +53,7 @@ namespace Digikam
 
 class CoreDbBackend;
 
-class DIGIKAM_EXPORT CoreDB
+class DIGIKAM_DATABASE_EXPORT CoreDB
 {
 public:
 

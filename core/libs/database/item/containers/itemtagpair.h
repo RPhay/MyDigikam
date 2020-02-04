@@ -34,7 +34,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 namespace Digikam
 {
@@ -42,7 +42,7 @@ namespace Digikam
 class ItemInfo;
 class ItemTagPairPriv;
 
-class DIGIKAM_EXPORT ItemTagPair
+class DIGIKAM_DATABASE_EXPORT ItemTagPair
 {
 public:
 

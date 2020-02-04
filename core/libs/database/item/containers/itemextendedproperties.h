@@ -35,12 +35,12 @@
 
 #include "template.h"
 #include "metadatainfo.h"
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ItemExtendedProperties
+class DIGIKAM_DATABASE_EXPORT ItemExtendedProperties
 {
 
 public:

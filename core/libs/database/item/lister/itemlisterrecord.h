@@ -37,13 +37,13 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "coredbalbuminfo.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ItemListerRecord
+class DIGIKAM_DATABASE_EXPORT ItemListerRecord
 {
 
 public:
@@ -93,8 +93,8 @@ public:
     BinaryFormat           binaryFormat;
 };
 
-DIGIKAM_EXPORT QDataStream& operator<<(QDataStream& os, const ItemListerRecord& record);
-DIGIKAM_EXPORT QDataStream& operator>>(QDataStream& ds, ItemListerRecord& record);
+DIGIKAM_DATABASE_EXPORT QDataStream& operator<<(QDataStream& os, const ItemListerRecord& record);
+DIGIKAM_DATABASE_EXPORT QDataStream& operator>>(QDataStream& ds, ItemListerRecord& record);
 
 } // namespace Digikam
 

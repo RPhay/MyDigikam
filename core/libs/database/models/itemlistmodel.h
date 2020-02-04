@@ -27,7 +27,7 @@
 // Local includes
 
 #include "itemthumbnailmodel.h"
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 namespace Digikam
 {
@@ -35,7 +35,7 @@ namespace Digikam
 class ImageChangeset;
 class CollectionImageChangeset;
 
-class DIGIKAM_EXPORT ItemListModel : public ItemThumbnailModel
+class DIGIKAM_DATABASE_EXPORT ItemListModel : public ItemThumbnailModel
 {
     Q_OBJECT
 

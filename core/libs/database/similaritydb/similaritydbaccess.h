@@ -29,7 +29,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "dbengineparameters.h"
 
 namespace Digikam
@@ -41,7 +41,7 @@ class SimilarityDb;
 class SimilarityDbAccessStaticPriv;
 class SimilarityDbBackend;
 
-class DIGIKAM_EXPORT SimilarityDbAccess
+class DIGIKAM_DATABASE_EXPORT SimilarityDbAccess
 {
 public:
 

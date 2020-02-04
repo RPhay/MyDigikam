@@ -31,13 +31,13 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "coredbbackend.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT CoreDbCopyManager : public QObject
+class DIGIKAM_DATABASE_EXPORT CoreDbCopyManager : public QObject
 {
     Q_OBJECT
 

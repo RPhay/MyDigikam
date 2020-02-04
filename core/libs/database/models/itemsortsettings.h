@@ -34,7 +34,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 namespace Digikam
 {
@@ -46,7 +46,7 @@ namespace DatabaseFields
     class Set;
 }
 
-class DIGIKAM_EXPORT ItemSortSettings
+class DIGIKAM_DATABASE_EXPORT ItemSortSettings
 {
 public:
 

@@ -32,13 +32,13 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "camiteminfo.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT CoreDbDownloadHistory
+class DIGIKAM_DATABASE_EXPORT CoreDbDownloadHistory
 {
 public:
 

@@ -26,7 +26,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "searchtextbar.h"
 
 namespace Digikam
@@ -41,7 +41,7 @@ class AlbumFilterModel;
  *
  * @author Gilles Caulier
  */
-class DIGIKAM_EXPORT SearchTextBarDb : public SearchTextBar
+class DIGIKAM_DATABASE_EXPORT SearchTextBarDb : public SearchTextBar
 {
     Q_OBJECT
 

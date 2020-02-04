@@ -25,13 +25,17 @@
 #ifndef DIGIKAM_THUMBS_DB_SCHEMA_UPDATER_H
 #define DIGIKAM_THUMBS_DB_SCHEMA_UPDATER_H
 
+// Local includes
+
+#include "digikam_export.h"
+
 namespace Digikam
 {
 
 class ThumbsDbAccess;
 class InitializationObserver;
 
-class ThumbsDbSchemaUpdater
+class DIGIKAM_EXPORT ThumbsDbSchemaUpdater
 {
 public:
 

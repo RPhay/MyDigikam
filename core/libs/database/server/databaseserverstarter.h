@@ -31,14 +31,14 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "databaseservererror.h"
 #include "dbengineparameters.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DatabaseServerStarter : public QObject
+class DIGIKAM_DATABASE_EXPORT DatabaseServerStarter : public QObject
 {
     Q_OBJECT
 

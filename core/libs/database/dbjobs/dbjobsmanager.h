@@ -32,12 +32,12 @@
 
 #include "dbjobinfo.h"
 #include "dbjobsthread.h"
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DBJobsManager : public QObject
+class DIGIKAM_DATABASE_EXPORT DBJobsManager : public QObject
 {
     Q_OBJECT
 

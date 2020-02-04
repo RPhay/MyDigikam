@@ -28,7 +28,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "dbenginebackend.h"
 
 namespace Digikam
@@ -36,7 +36,7 @@ namespace Digikam
 
 class SimilarityDbSchemaUpdater;
 
-class DIGIKAM_EXPORT SimilarityDbBackend : public BdEngineBackend
+class DIGIKAM_DATABASE_EXPORT SimilarityDbBackend : public BdEngineBackend
 {
     Q_OBJECT
 

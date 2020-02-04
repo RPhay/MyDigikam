@@ -32,7 +32,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 
 namespace Digikam
 {
@@ -148,7 +148,7 @@ enum Type
 
 // ----------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT InternalTagName
+class DIGIKAM_DATABASE_EXPORT InternalTagName
 {
 public:
 
@@ -180,7 +180,7 @@ public:
 
 // ----------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT TagPropertyName
+class DIGIKAM_DATABASE_EXPORT TagPropertyName
 {
 public:
 
@@ -194,7 +194,7 @@ public:
 
 // ----------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ImageTagPropertyName
+class DIGIKAM_DATABASE_EXPORT ImageTagPropertyName
 {
 public:
 

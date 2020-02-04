@@ -34,13 +34,13 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "coredbchangesets.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT CoreDbWatch : public QObject
+class DIGIKAM_DATABASE_EXPORT CoreDbWatch : public QObject
 {
     Q_OBJECT
 

@@ -32,7 +32,7 @@
 // Local includes
 
 #include "iteminfo.h"
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "digikam_config.h"
 
 namespace Digikam
@@ -43,7 +43,7 @@ class ItemInfo;
 // NOTE: implementations of batch loading methods:
 // See imageinfo.cpp (next to the corresponding single-item implementation)
 
-class DIGIKAM_EXPORT ItemInfoList : public QList<ItemInfo>
+class DIGIKAM_DATABASE_EXPORT ItemInfoList : public QList<ItemInfo>
 {
 public:
 

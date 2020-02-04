@@ -34,7 +34,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "digikam_database_export.h"
 #include "coredbfields.h"
 
 namespace Digikam
@@ -43,7 +43,7 @@ namespace Digikam
 class CoreDbAccess;
 class ItemPositionPriv;
 
-class DIGIKAM_EXPORT ItemPosition
+class DIGIKAM_DATABASE_EXPORT ItemPosition
 {
 
 public:
