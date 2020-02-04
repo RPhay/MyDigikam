@@ -94,7 +94,11 @@ add_library(digikamcore
 set_target_properties(digikamcore PROPERTIES
                       VERSION ${DIGIKAM_VERSION_SHORT}
                       SOVERSION ${DIGIKAM_VERSION_SHORT}
-                      COMPILE_DEFINITIONS digikamcore_EXPORTS=1
+)
+
+target_compile_definitions(digikamcore
+                           INTERFACE
+                           digikamcore_EXPORTS
 )
 
 add_dependencies(digikamcore digikam-gitversion)

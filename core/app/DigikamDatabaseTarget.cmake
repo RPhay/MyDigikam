@@ -14,7 +14,11 @@ add_library(digikamdatabase SHARED $<TARGET_OBJECTS:digikamdatabase_src>)
 set_target_properties(digikamdatabase PROPERTIES
                       VERSION ${DIGIKAM_VERSION_SHORT}
                       SOVERSION ${DIGIKAM_VERSION_SHORT}
-                      COMPILE_DEFINITIONS digikamdatabase_EXPORTS=1
+)
+
+target_compile_definitions(digikamdatabase
+                           INTERFACE
+                           digikamdatabase_EXPORTS
 )
 
 add_dependencies(digikamdatabase digikamcore)
