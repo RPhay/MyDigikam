@@ -9,8 +9,28 @@
 
 APPLY_COMMON_POLICIES()
 
+include_directories(
+    $<TARGET_PROPERTY:Qt5::Xml,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
+
+    $<TARGET_PROPERTY:KF5::Solid,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:KF5::CoreAddons,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:KF5::WidgetsAddons,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
+)
+
+if(ENABLE_DBUS)
+    include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
+endif()
+
 # Boost uses operator names (and, not, ...)
 string(REPLACE "-fno-operator-names" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+
+### For digikamcore target ###########################################################
 
 set(libdatabasecore_SRCS
     server/databaseserverstarter.cpp
@@ -35,6 +55,8 @@ set(libdatabasecore_SRCS
     thumbsdb/thumbsdbaccess.cpp
 )
 
+### For digikamgui target ############################################################
+
 set(libdatabaseutils_SRCS
     utils/widgets/dbstatdlg.cpp
     utils/widgets/dbsettingswidget.cpp
@@ -53,17 +75,8 @@ set(libdatabaseutils_SRCS
     utils/scan/scancontroller_stop.cpp
 )
 
-set(libdatabasemodels_SRCS
-    models/itemfiltermodel.cpp
-    models/itemfiltermodel_p.cpp
-    models/itemfiltermodelthreads.cpp
-    models/itemfiltersettings.cpp
-    models/itemversionsmodel.cpp
-    models/itemthumbnailmodel.cpp
-    models/itemsortsettings.cpp
-    models/itemlistmodel.cpp
-    models/itemmodel.cpp
-)
+### For digikamdatabase target #######################################################
+
 
 set(libdatabase_SRCS
     collection/collectionscanner.cpp
@@ -177,36 +190,33 @@ kde_source_files_enable_exceptions(history/itemhistorygraph.cpp
                                    history/itemhistorygraphmodel.cpp
 )
 
+set(libdatabasemodels_SRCS
+    models/itemfiltermodel.cpp
+    models/itemfiltermodel_p.cpp
+    models/itemfiltermodelthreads.cpp
+    models/itemfiltersettings.cpp
+    models/itemversionsmodel.cpp
+    models/itemthumbnailmodel.cpp
+    models/itemsortsettings.cpp
+    models/itemlistmodel.cpp
+    models/itemmodel.cpp
+)
+
 set(libhaar_SRCS
     haar/haar.cpp
     haar/haariface.cpp
     haar/haariface_p.cpp
 )
 
-# Shared libdigikamdatabase ########################################################
+### Shared digiKam database objects definitions ########################################################
 
-include_directories(
-    $<TARGET_PROPERTY:Qt5::Xml,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
-    $<TARGET_PROPERTY:KF5::Solid,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:KF5::CoreAddons,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:KF5::WidgetsAddons,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
-)
+add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})             # include in digikamcore target.
 
-if(ENABLE_DBUS)
-    include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
-endif()
 
-add_library(digikamdatabasemain_src OBJECT ${libdatabaseutils_SRCS})
-add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})
-
-add_library(digikamdatabase_src     OBJECT ${libdatabase_SRCS}
+add_library(digikamdatabase_src     OBJECT ${libdatabase_SRCS}                  # include in digikamdatabase target.
                                            ${libdatabasemodels_SRCS}
                                            ${libhaar_SRCS}
 )
+
+add_library(digikamdatabasemain_src OBJECT ${libdatabaseutils_SRCS})            # include in digikamgui target.
