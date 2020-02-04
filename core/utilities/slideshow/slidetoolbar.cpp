@@ -117,7 +117,7 @@ SlideToolBar::SlideToolBar(const SlideShowSettings& settings, QWidget* const par
             QString model      = qApp->screens().at(i)->model();
             QAction* const act = screenMenu->addAction(i18nc("%1 is the screen number (0, 1, ...)", "Screen %1", i) +
                                                        QString::fromUtf8(" (%1)").arg(model.left(model.length() - 1)));
-            act->setData(qVariantFromValue(i));
+            act->setData(QVariant::fromValue(i));
             act->setCheckable(true);
             group->addAction(act);
 
