@@ -54,7 +54,7 @@ set(DBCORECONFIG_XML_VERSION "3")
 
 project(digikam
         VERSION ${DIGIKAM_VERSION_SHORT}
-        LANGUAGES CXX)
+        LANGUAGES CXX C)
 
 message(STATUS "----------------------------------------------------------------------------------")
 message(STATUS "Starting CMake configuration for ${PROJECT_NAME}")
