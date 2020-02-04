@@ -86,7 +86,7 @@ void AkonadiIface::slotABCSearchResult(KJob* job)
 {
     if (job->error())
     {
-        qCDebug(DIGIKAM_GENERAL_LOG) << "Adress book search was not successful";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "Address book search was not successful";
         return;
     }
 
