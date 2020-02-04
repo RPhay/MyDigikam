@@ -183,6 +183,20 @@ set(libhaar_SRCS
     haar/haariface_p.cpp
 )
 
+
+if(MSVC)
+
+    set_property(SOURCE
+
+                 haar/haariface.h
+                 haar/haariface_p.h
+
+                 PROPERTY
+                 SKIP_AUTOMOC ON
+    )
+
+endif()
+
 # Shared libdigikamdatabase ########################################################
 
 include_directories(
