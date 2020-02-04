@@ -35,6 +35,7 @@ void DatabaseBlob::read(const QByteArray& array, Haar::SignatureData* const data
     QDataStream stream(array);
 
     // check version
+
     qint32 version;
     stream >> version;
 
@@ -47,12 +48,14 @@ void DatabaseBlob::read(const QByteArray& array, Haar::SignatureData* const data
     stream.setVersion(QDataStream::Qt_4_3);
 
     // read averages
+
     for (int i = 0 ; i < 3 ; ++i)
     {
         stream >> data->avg[i];
     }
 
     // read coefficients
+
     for (int i = 0 ; i < 3 ; ++i)
     {
         for (int j = 0 ; j < Haar::NumberOfCoefficients ; ++j)
@@ -70,15 +73,18 @@ QByteArray DatabaseBlob::write(Haar::SignatureData* const data)
     stream.setVersion(QDataStream::Qt_4_3);
 
     // write version
+
     stream << (qint32)Version;
 
     // write averages
+
     for (int i = 0 ; i < 3 ; ++i)
     {
         stream << data->avg[i];
     }
 
     // write coefficients
+
     for (int i = 0 ; i < 3 ; ++i)
     {
         for (int j = 0 ; j < Haar::NumberOfCoefficients ; ++j)
@@ -131,6 +137,7 @@ void HaarIface::Private::setSignatureCacheEnabled(bool cache, const QSet<qlonglo
     setSignatureCacheEnabled(cache);
 
     // stop here if we disable cached signatures
+
     if (!cache || imageIds.isEmpty())
     {
         return;
@@ -138,6 +145,7 @@ void HaarIface::Private::setSignatureCacheEnabled(bool cache, const QSet<qlonglo
 
     // Remove all ids from the fully created signatureCache that are not needed for the duplicates search.
     // This is usually faster then starting a query for every single id in imageIds.
+
     for (SignatureCache::iterator it = signatureCache->begin() ;
          it != signatureCache->end() ; )
     {
@@ -168,6 +176,7 @@ void HaarIface::Private::setSignatureCacheEnabled(bool cache)
     useSignatureCache = cache;
 
     // stop here if we disable cached signatures
+
     if (!cache)
     {
         return;

@@ -76,18 +76,18 @@ public:
 
     enum DuplicatesSearchRestrictions
     {
-        None           = 0,
-        SameAlbum      = 1,
-        DifferentAlbum = 2
+        None            = 0,
+        SameAlbum       = 1,
+        DifferentAlbum  = 2
     };
 
     enum AlbumTagRelation
     {
-        NoMix          = 0,
-        Union          = 1,
-        Intersection   = 2,
-        AlbumExclusive = 3,
-        TagExclusive   = 4
+        NoMix           = 0,
+        Union           = 1,
+        Intersection    = 2,
+        AlbumExclusive  = 3,
+        TagExclusive    = 4
     };
 
 public:
