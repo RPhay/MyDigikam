@@ -887,7 +887,7 @@ static QStringList joinMainAndUserFilterString(const QChar& sep, const QString& 
         }
     }
 
-    sortedList = filterSet.toList();
+    sortedList = filterSet.values();
     sortedList.sort();
 
     return sortedList;
@@ -2409,7 +2409,7 @@ QList<QPair<qlonglong, qlonglong> > CoreDB::getRelationCloud(qlonglong imageId, 
         }
     }
 
-    return pairs.toList();
+    return pairs.values();
 }
 
 QList<qlonglong> CoreDB::getOneRelatedImageEach(const QList<qlonglong>& ids, DatabaseRelation::Type type) const
@@ -2463,7 +2463,7 @@ QList<qlonglong> CoreDB::getOneRelatedImageEach(const QList<qlonglong>& ids, Dat
         }
     }
 
-    return result.toList();
+    return result.values();
 }
 
 QList<qlonglong> CoreDB::getRelatedImagesToByType(DatabaseRelation::Type type) const
