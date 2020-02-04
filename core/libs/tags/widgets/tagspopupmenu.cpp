@@ -776,7 +776,7 @@ QMenu* TagsPopupMenu::buildSubMenu(int tagid)
 void TagsPopupMenu::buildFlatMenu(QMenu* menu)
 {
     QList<int> ids;
-    QStringList shortenedPaths = TagsCache::instance()->shortenedTagPaths(d->assignedTags.toList(), &ids,
+    QStringList shortenedPaths = TagsCache::instance()->shortenedTagPaths(d->assignedTags.values(), &ids,
                                                         TagsCache::NoLeadingSlash, TagsCache::NoHiddenTags);
 
     for (int i = 0 ; i < shortenedPaths.size() ; ++i)
