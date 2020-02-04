@@ -292,7 +292,7 @@ void AlbumManager::slotImagesDeleted(const QList<qlonglong>& imageIds)
 
     if (!sAlbumsToUpdate.isEmpty())
     {
-        emit signalUpdateDuplicatesAlbums(sAlbumsToUpdate.toList(), deletedImages.toList());
+        emit signalUpdateDuplicatesAlbums(sAlbumsToUpdate.values(), deletedImages.values());
     }
 }
 
