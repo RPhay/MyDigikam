@@ -1083,7 +1083,7 @@ bool CoreDbSchemaUpdater::updateV4toV7()
     configVideoFilter.subtract(defaultVideoFilter.toSet());
     configAudioFilter.subtract(defaultAudioFilter.toSet());
 
-    d->albumDB->setUserFilterSettings(configItemFilter.toList(), configVideoFilter.toList(), configAudioFilter.toList());
+    d->albumDB->setUserFilterSettings(configItemFilter.values(), configVideoFilter.values(), configAudioFilter.values());
     qCDebug(DIGIKAM_COREDB_LOG) << "Core database: set initial filter settings with user settings" << configItemFilter;
 
     if (d->observer)
