@@ -37,13 +37,14 @@
 #include "databaseservererror.h"
 #include "databaseserverstarter.h"
 #include "dbengineparameters.h"
+#include "digikam_export.h"
 
 class QCoreApplication;
 
 namespace Digikam
 {
 
-class DatabaseServer : public QThread
+class DIGIKAM_EXPORT DatabaseServer : public QThread
 {
     Q_OBJECT
 

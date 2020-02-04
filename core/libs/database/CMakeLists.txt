@@ -64,10 +64,12 @@ set(libdatabaseutils_SRCS
     utils/widgets/mysqlinitbinary.cpp
     utils/widgets/mysqlservbinary.cpp
     utils/widgets/searchtextbardb.cpp
+
     utils/ifaces/dbinfoiface.cpp
     utils/ifaces/syncjob.cpp
     utils/ifaces/dio.cpp
     utils/ifaces/diofinders.cpp
+
     utils/scan/scancontroller.cpp
     utils/scan/scancontroller_p.cpp
     utils/scan/scancontroller_start.cpp

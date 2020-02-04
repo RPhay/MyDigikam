@@ -156,5 +156,5 @@ void ItemInfo::setRating(int value)
     m_data->rating       = value;
     m_data->ratingCached = true;
 }
-    
+
 } // namespace Digikam

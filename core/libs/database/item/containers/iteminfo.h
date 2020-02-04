@@ -77,7 +77,7 @@ class ThumbnailInfo;
 class DIGIKAM_DATABASE_EXPORT ItemInfo
 {
 public:
-    
+
     typedef DatabaseFields::Hash<QVariant> DatabaseFieldsHashRaw;
 
 public:
@@ -542,7 +542,7 @@ public:
 private:
 
     void loadTagIds()                                                                   const;
-    
+
     //@}
 
 public:
@@ -568,7 +568,6 @@ public:
      * Returns the rating
      */
     int rating()                                                                        const;
-
 
     /** Set the pick Label Id for the item (see PickLabel values from globals.h)
      */
