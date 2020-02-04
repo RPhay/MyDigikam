@@ -11,10 +11,14 @@
 
 add_library(digikamdatabase SHARED $<TARGET_OBJECTS:digikamdatabase_src>)
 
-set_target_properties(digikamdatabase PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
+set_target_properties(digikamdatabase PROPERTIES
+                      VERSION ${DIGIKAM_VERSION_SHORT}
+                      SOVERSION ${DIGIKAM_VERSION_SHORT}
+)
 
 add_dependencies(digikamdatabase digikamcore)
 
+# All codes from this target are exported with digikam_database_export.h header and DIGIKAM_DATABASE_EXPORT macro.
 generate_export_header(digikamdatabase
                        BASE_NAME digikam_database
                        EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_database_export.h"

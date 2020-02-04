@@ -135,7 +135,7 @@ add_library(digikamgui_src
 
 ### digiKam GUI shared library objects declaration ##############################################################################
 
-set(DIGIKAM_OBJECTS
+set(DIGIKAMGUI_OBJECTS
 
             $<TARGET_OBJECTS:digikamdatabasemain_src>
 
@@ -169,8 +169,8 @@ set(DIGIKAM_OBJECTS
 
 if(${Marble_FOUND})
 
-    set(DIGIKAM_OBJECTS
-        ${DIGIKAM_OBJECTS}
+    set(DIGIKAMGUI_OBJECTS
+        ${DIGIKAMGUI_OBJECTS}
         $<TARGET_OBJECTS:geomapwrapper_src>
         $<TARGET_OBJECTS:gpssearch_src>
     )
@@ -181,10 +181,13 @@ endif()
 
 add_library(digikamgui
             SHARED
-            ${DIGIKAM_OBJECTS}
+            ${DIGIKAMGUI_OBJECTS}
 )
 
-set_target_properties(digikamgui PROPERTIES VERSION ${DIGIKAM_VERSION_SHORT} SOVERSION ${DIGIKAM_VERSION_SHORT})
+set_target_properties(digikamgui PROPERTIES
+                      VERSION ${DIGIKAM_VERSION_SHORT}
+                      SOVERSION ${DIGIKAM_VERSION_SHORT}
+)
 
 add_dependencies(digikamgui digikamcore digikamdatabase)
 
