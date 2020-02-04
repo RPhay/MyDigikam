@@ -2,6 +2,7 @@
 Type=Theme
 Name=HTML5 Responsive
 Name[ca]=HTML5 responsiu
+Name[ca@valencia]=HTML5 responsiu
 Name[en_GB]=HTML5 Responsive
 Name[es]=HTML5 adaptable
 Name[et]=Reageeriv HTML5
@@ -14,6 +15,7 @@ Name[uk]=Інтерактивний HTML5
 Name[x-test]=xxHTML5 Responsivexx
 Comment=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
 Comment[ca]=Genera una galeria usant HTML5 responsiu i CSS3 i codificació UTF-8. Opcionalment usa el PhotoSwipe del Dmitry Semenov por mostrar les imatges.
+Comment[ca@valencia]=Genera una galeria usant HTML5 responsiu i CSS3 i codificació UTF-8. Opcionalment usa el PhotoSwipe del Dmitry Semenov por mostrar les imatges.
 Comment[en_GB]=Generates a gallery using responsive HTML5 and CSS3 and UTF-8 encoding. Optionally uses PhotoSwipe by Dmitry Semenov to display the images.
 Comment[es]=Genera una galería usando HTML5 adaptable con CSS3 y codificación UTF-8. Opcionalmente usa PhotoSwipe, por Dmitry Semenov, para mostrar las imágenes.
 Comment[et]=Galerii loomine reageeriva HTML5 ja CSS3 ning UTF-8 kodeeringu abil. Lisaks tarvitatakse piltide näitamiseks Dmitry Semenovi PhotoSwipe'i.
@@ -28,6 +30,7 @@ Comment[x-test]=xxGenerates a gallery using responsive HTML5 and CSS3 and UTF-8 
 [X-HTMLGallery Author]
 Name=Bobulous
 Name[ca]=Bobulous
+Name[ca@valencia]=Bobulous
 Name[en_GB]=Bobulous
 Name[es]=Bobulous
 Name[it]=Bobulous
@@ -42,6 +45,7 @@ Url=https://www.bobulous.org.uk/
 [X-HTMLGallery Preview]
 Name=HTML5 Responsive
 Name[ca]=HTML5 responsiu
+Name[ca@valencia]=HTML5 responsiu
 Name[en_GB]=HTML5 Responsive
 Name[es]=HTML5 adaptable
 Name[et]=Reageeriv HTML5
@@ -194,6 +198,7 @@ Caption-2=Both
 [X-HTMLGallery Parameter paginationModeTop]
 Name=Top pagination mode
 Name[ca]=Mode de paginació de la part superior
+Name[ca@valencia]=Mode de paginació de la part superior
 Name[en_GB]=Top pagination mode
 Name[es]=Modo de paginación superior
 Name[it]=Modalità impaginazione superiore
@@ -213,6 +218,7 @@ Caption-1=List all
 [X-HTMLGallery Parameter paginationModeBottom]
 Name=Bottom pagination mode
 Name[ca]=Mode de paginació de la part inferior
+Name[ca@valencia]=Mode de paginació de la part inferior
 Name[en_GB]=Bottom pagination mode
 Name[es]=Modo de paginación inferior
 Name[it]=Modalità impaginazione inferiore
@@ -232,6 +238,7 @@ Caption-1=List all
 [X-HTMLGallery Parameter usePhotoSwipe]
 Name=Use PhotoSwipe
 Name[ca]=Usa el PhotoSwipe
+Name[ca@valencia]=Usa el PhotoSwipe
 Name[en_GB]=Use PhotoSwipe
 Name[es]=Usar PhotoSwipe
 Name[et]=PhotoSwipe'i kasutamine
@@ -252,6 +259,7 @@ Caption-1=No
 [X-HTMLGallery Parameter photoSwipeBackgroundOpacity]
 Name=PhotoSwipe Background Opacity
 Name[ca]=Opacitat del fons del PhotoSwipe
+Name[ca@valencia]=Opacitat del fons del PhotoSwipe
 Name[en_GB]=PhotoSwipe Background Opacity
 Name[es]=Opacidad de fondo de PhotoSwipe
 Name[et]=PhotoSwipe'i tausta läbipaistmatus
@@ -270,6 +278,7 @@ Max=10
 [X-HTMLGallery Parameter photoSwipeShowSharingButton]
 Name=PhotoSwipe sharing button
 Name[ca]=Botó de compartició del PhotoSwipe
+Name[ca@valencia]=Botó de compartició del PhotoSwipe
 Name[en_GB]=PhotoSwipe sharing button
 Name[es]=Botón para compartir en PhotoSwipe
 Name[et]=PhotoSwipe'i jagamisnupp
@@ -290,6 +299,7 @@ Caption-1=No
 [X-HTMLGallery Parameter addJiggle]
 Name=Add jiggle
 Name[ca]=Afegeix un sacseig
+Name[ca@valencia]=Afig un sacseig
 Name[en_GB]=Add jiggle
 Name[es]=Añadir sacudida
 Name[it]=Aggiungi scuotimento
@@ -309,6 +319,7 @@ Caption-1=No
 [X-HTMLGallery Parameter showGPS]
 Name=Show GPS data
 Name[ca]=Mostra les dades del GPS
+Name[ca@valencia]=Mostra les dades del GPS
 Name[en_GB]=Show GPS data
 Name[es]=Mostrar datos GPS
 Name[et]=GPS-andmete näitamine
