@@ -150,3 +150,5 @@ void MetaEngineSettings::readFromConfig()
 }
 
 } // namespace Digikam
+
+#include "moc_metaenginesettings.cpp"
