@@ -9,44 +9,6 @@
 APPLY_COMMON_POLICIES()
 
 # ==============================================================================
-# Information to update before to release this package.
-
-# digiKam version
-set(DIGIKAM_MAJOR_VERSION "7")
-set(DIGIKAM_MINOR_VERSION "0")
-set(DIGIKAM_PATCH_VERSION "0")
-
-# Suffix to add at end of version string. Usual values are:
-# "-git"   : alpha code unstable from git. Do not use in production
-# "-beta1" : beta1 release.
-# "-beta2" : beta2 release.
-# "-beta3" : beta3 release.
-# "-rc"    : release candidate.
-# ""       : final release. Can be used in production.
-set(DIGIKAM_SUFFIX_VERSION "-beta3")
-
-# ==============================================================================
-# Set env. variables accordingly.
-
-# NOTE: This string is used to set libdigikamcore and libdigikamdatabase SO version ID
-set(DIGIKAM_VERSION_SHORT
-    "${DIGIKAM_MAJOR_VERSION}.${DIGIKAM_MINOR_VERSION}.${DIGIKAM_PATCH_VERSION}"
-)
-
-set(DIGIKAM_VERSION_STRING
-    "${DIGIKAM_VERSION_SHORT}${DIGIKAM_SUFFIX_VERSION}"
-)
-
-# Core Database XML version
-# We must set this variable here at top level because it is used in both
-# libs/database/core and data/database
-# Version history:
-# 1 : Original database XML file, published in production.
-# 2 : 08-08-2014 : Fix Images.names field size (see bug #327646).
-# 3 : 05/11/2015 : Add Face DB schema.
-set(DBCORECONFIG_XML_VERSION "3")
-
-# ==============================================================================
 
 message(STATUS "----------------------------------------------------------------------------------")
 message(STATUS "Check dependencies for ${PROJECT_NAME} version ${DIGIKAM_VERSION_STRING}")
