@@ -78,7 +78,7 @@ void CollectionScanner::setDeferredFileScanning(bool defer)
 
 QStringList CollectionScanner::deferredAlbumPaths() const
 {
-    return d->deferredAlbumPaths.toList();
+    return d->deferredAlbumPaths.values();
 }
 
 } // namespace Digikam
