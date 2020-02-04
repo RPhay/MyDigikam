@@ -702,7 +702,7 @@ QList<TAlbum*> TagModificationHelper::getFaceTags(TAlbum* rootTag)
     QList<TAlbum*> tags;
     tags.append(rootTag);
 
-    return getFaceTags(tags).toList();
+    return getFaceTags(tags).values();
 }
 
 QSet<TAlbum*> TagModificationHelper::getFaceTags(QList<TAlbum*> tags)
