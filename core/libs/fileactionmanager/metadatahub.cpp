@@ -563,7 +563,7 @@ QStringList MetadataHub::cleanupTags(const QStringList& toClean)
         }
     }
 
-    return deduplicator.toList();
+    return deduplicator.values();
 }
 
 bool MetadataHub::willWriteMetadata(WriteComponent writeMode, const MetaEngineSettingsContainer& settings) const
