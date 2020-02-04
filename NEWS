@@ -618,4 +618,5 @@ BUGFIXES:
 602 ==> 406066 - Cannot parse date string YYYY-MM-DDTHH:MM:SS.ssss and YYYY:MM:DD HH:MM:SS in EXIF and XMP.
 603 ==> 417008 - Flickr export ERR_CERT_AUTHORITY_INVALID.
 604 ==> 417100 - kbuildsycoca5 cannot be started under MacOS 10.11.6 when digiKam PKG is installed.
-605 ==> 
+605 ==> 417136 - Export pictures by creating symlinks (e.g. for a best-of-selection on filesystem).
+606 ==> 
