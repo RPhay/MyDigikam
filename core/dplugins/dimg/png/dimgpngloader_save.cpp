@@ -27,7 +27,9 @@
 
 extern "C"
 {
-#include <unistd.h>
+#ifndef Q_CC_MSVC
+#   include <unistd.h>
+#endif
 }
 
 // C++ includes

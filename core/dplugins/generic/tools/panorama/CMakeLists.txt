@@ -49,6 +49,15 @@ set(libpanoparser_SRCS
 # For unit-tests and plugin
 add_library(panoparser STATIC ${libpanoparser_SRCS})
 
+if(MSVC)
+
+    target_compile_definitions(panoparser
+                               PRIVATE
+                               YY_NO_UNISTD_H
+    )
+
+endif()
+
 target_link_libraries(panoparser
                       digikamcore
 )
