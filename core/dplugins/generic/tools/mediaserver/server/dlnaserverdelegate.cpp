@@ -36,23 +36,6 @@
 #include "PltVersion.h"
 #include "PltMimeType.h"
 
-// Qt includes
-
-#include <QString>
-#include <QUrl>
-#include <QList>
-#include <QMap>
-#include <QImage>
-#include <QByteArray>
-#include <QBuffer>
-
-// Local includes
-
-#include "digikam_debug.h"
-#include "previewloadthread.h"
-#include "dimg.h"
-#include "drawdecoder.h"
-
 NPT_SET_LOCAL_LOGGER("digiKam.media.server.delegate")
 
 namespace Digikam

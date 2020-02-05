@@ -23,17 +23,6 @@
 
 #include "dlnaserver.h"
 
-// Qt includes
-
-#include <QApplication>
-#include <QStandardPaths>
-#include <QBuffer>
-#include <QIODevice>
-
-// Local includes
-
-#include "digikam_debug.h"
-
 namespace Digikam
 {
 

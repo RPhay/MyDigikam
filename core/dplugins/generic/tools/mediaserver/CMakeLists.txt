@@ -150,7 +150,7 @@ endif()
 
 # Dont process automoc on UpnpSdk headers
 
-file(GLOB_RECURSE upnpsdk_headers *.h)
+file(GLOB_RECURSE upnpsdk_headers ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/*.h)
 
 foreach(_file ${upnpsdk_headers})
     set_property(SOURCE ${_file} PROPERTY SKIP_AUTOMOC ON)

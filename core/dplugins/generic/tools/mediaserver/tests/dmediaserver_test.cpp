@@ -35,8 +35,8 @@
 
 // Local includes
 
-#include "dmediaservermngr.h"
 #include "dfiledialog.h"
+#include "dmediaservermngr.h"
 
 using namespace Digikam;
 

@@ -24,15 +24,32 @@
 #ifndef DIGIKAM_DLNA_SERVER_DELEGATE_H
 #define DIGIKAM_DLNA_SERVER_DELEGATE_H
 
+// Qt includes
+
+#include <QString>
+#include <QUrl>
+#include <QList>
+#include <QMap>
+#include <QImage>
+#include <QByteArray>
+#include <QBuffer>
+
+// Local includes
+
+#include "digikam_debug.h"
+#include "previewloadthread.h"
+#include "dimg.h"
+#include "drawdecoder.h"
+
+// Local includes
+
+#include "dmediaserver.h"
+
 // Platinum includes
 
 #include "Neptune.h"
 #include "PltMediaServer.h"
 #include "PltMediaCache.h"
-
-// Local includes
-
-#include "dmediaserver.h"
 
 namespace Digikam
 {

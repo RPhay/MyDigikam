@@ -46,9 +46,9 @@
 
 #include "dinfointerface.h"
 #include "ditemslist.h"
-#include "dmediaservermngr.h"
 #include "dxmlguiwindow.h"
 #include "workingwidget.h"
+#include "dmediaservermngr.h"
 
 namespace DigikamGenericMediaServerPlugin
 {

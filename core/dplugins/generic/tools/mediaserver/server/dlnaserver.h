@@ -24,21 +24,29 @@
 #ifndef DIGIKAM_DLNA_SERVER_H
 #define DIGIKAM_DLNA_SERVER_H
 
-// Platinum includes
-
-#include "Neptune.h"
-#include "PltMediaServer.h"
-
 // Qt includes
 
 #include <QImage>
 #include <QString>
 #include <QByteArray>
 
+// Qt includes
+
+#include <QApplication>
+#include <QStandardPaths>
+#include <QBuffer>
+#include <QIODevice>
+
 // Local includes
 
+#include "digikam_debug.h"
 #include "dmediaserver.h"
 #include "dlnaserverdelegate.h"
+
+// Platinum includes
+
+#include "Neptune.h"
+#include "PltMediaServer.h"
 
 namespace Digikam
 {

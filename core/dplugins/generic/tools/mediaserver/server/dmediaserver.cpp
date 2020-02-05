@@ -34,17 +34,17 @@
 
 #include <klocalizedstring.h>
 
+// Local includes
+
+#include "digikam_debug.h"
+#include "digikam_version.h"
+#include "daboutdata.h"
+#include "dlnaserver.h"
+
 // Platinum includes
 
 #include "PltDeviceHost.h"
 #include "Platinum.h"
-
-// Local includes
-
-#include "dlnaserver.h"
-#include "digikam_debug.h"
-#include "digikam_version.h"
-#include "daboutdata.h"
 
 void NPT_Console::Output(const char* msg)
 {
