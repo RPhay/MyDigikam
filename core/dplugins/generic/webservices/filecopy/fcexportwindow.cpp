@@ -29,6 +29,7 @@
 #include <QWindow>
 #include <QCloseEvent>
 #include <QMessageBox>
+#include <QAbstractButton>
 
 // KDE includes
 
@@ -43,6 +44,7 @@
 #include "fcexportwidget.h"
 #include "ditemslist.h"
 #include "fcthread.h"
+#include "fctask.h"
 
 namespace DigikamGenericFileCopyPlugin
 {
@@ -59,7 +61,7 @@ public:
 
     const static QString TARGET_URL_PROPERTY;
     const static QString TARGET_OVERWRITE;
-    const static QString TARGET_SYMLINKS;
+    const static QString TARGET_BEHAVIOR;
     const static QString CONFIG_GROUP;
 
     FCExportWidget*      exportWidget;
@@ -68,7 +70,7 @@ public:
 
 const QString FCExportWindow::Private::TARGET_URL_PROPERTY = QLatin1String("targetUrl");
 const QString FCExportWindow::Private::TARGET_OVERWRITE    = QLatin1String("overwrite");
-const QString FCExportWindow::Private::TARGET_SYMLINKS     = QLatin1String("symlinks");
+const QString FCExportWindow::Private::TARGET_BEHAVIOR     = QLatin1String("targetBehavior");
 const QString FCExportWindow::Private::CONFIG_GROUP        = QLatin1String("FileCopyExport");
 
 FCExportWindow::FCExportWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
@@ -137,8 +139,15 @@ void FCExportWindow::restoreSettings()
     KConfig config;
     KConfigGroup group  = config.group(d->CONFIG_GROUP);
     d->exportWidget->setTargetUrl(group.readEntry(d->TARGET_URL_PROPERTY,            QUrl()));
-    d->exportWidget->symLinksBox()->setChecked(group.readEntry(d->TARGET_SYMLINKS,   false));
     d->exportWidget->overwriteBox()->setChecked(group.readEntry(d->TARGET_OVERWRITE, false));
+
+    int buttonId                  = group.readEntry(d->TARGET_BEHAVIOR, (int)FCTask::CopyFile);
+    QAbstractButton* const button = d->exportWidget->targetButtonGroup()->button(buttonId);
+
+    if (button)
+    {
+        button->setChecked(true);
+    }
 
     winId();
     KConfigGroup group2 = config.group(QLatin1String("FileCopy Export Dialog"));
@@ -151,8 +160,8 @@ void FCExportWindow::saveSettings()
     KConfig config;
     KConfigGroup group = config.group(d->CONFIG_GROUP);
     group.writeEntry(d->TARGET_URL_PROPERTY, d->exportWidget->targetUrl().url());
-    group.writeEntry(d->TARGET_SYMLINKS,     d->exportWidget->symLinksBox()->isChecked());
     group.writeEntry(d->TARGET_OVERWRITE,    d->exportWidget->overwriteBox()->isChecked());
+    group.writeEntry(d->TARGET_BEHAVIOR,     d->exportWidget->targetButtonGroup()->checkedId());
 
     KConfigGroup group2 = config.group(QLatin1String("FileCopy Export Dialog"));
     KWindowConfig::saveWindowSize(windowHandle(), group2);
@@ -224,8 +233,8 @@ void FCExportWindow::slotCopy()
 
     d->thread->createCopyJobs(d->exportWidget->imagesList()->imageUrls(),
                               d->exportWidget->targetUrl(),
-                              d->exportWidget->overwriteBox()->isChecked(),
-                              d->exportWidget->symLinksBox()->isChecked());
+                              d->exportWidget->targetButtonGroup()->checkedId(),
+                              d->exportWidget->overwriteBox()->isChecked());
 
     d->thread->start();
 }

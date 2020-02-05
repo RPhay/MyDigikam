@@ -27,6 +27,7 @@
 
 // Qt includes
 
+#include <QButtonGroup>
 #include <QCheckBox>
 #include <QWidget>
 #include <QList>
@@ -71,9 +72,9 @@ public:
     QCheckBox* overwriteBox() const;
 
     /**
-     * Returns a pointer to the symLinks QCheckBox.
+     * Returns a pointer to the target QButtonGroup.
      */
-    QCheckBox* symLinksBox() const;
+    QButtonGroup* targetButtonGroup() const;
 
     /**
      * Returns the currently selected target url. Maybe invalid.

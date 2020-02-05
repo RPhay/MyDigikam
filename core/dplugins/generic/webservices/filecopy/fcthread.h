@@ -50,7 +50,7 @@ public:
 
     void createCopyJobs(const QList<QUrl>& itemsList,
                         const QUrl& dstUrl,
-                        bool overwrite, bool symLinks);
+                        int behavior, bool overwrite);
     void cancel();
 
 Q_SIGNALS:

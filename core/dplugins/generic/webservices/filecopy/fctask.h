@@ -44,9 +44,18 @@ class FCTask : public ActionJob
 
 public:
 
+    enum FileCopyType
+    {
+        CopyFile = 0,
+        FullSymLink,
+        RelativeSymLink
+    };
+
+public:
+
     explicit FCTask(const QUrl& srcUrl,
                     const QUrl& dstUrl,
-                    bool overwrite, bool symLinks);
+                    int behavior, bool overwrite);
     ~FCTask();
 
 Q_SIGNALS:

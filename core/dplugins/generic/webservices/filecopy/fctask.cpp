@@ -38,6 +38,7 @@ extern "C"
 
 // Qt includes
 
+#include <QDir>
 #include <QFile>
 #include <qplatformdefs.h>
 
@@ -45,7 +46,6 @@ extern "C"
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
-#include "dinfointerface.h"
 
 namespace DigikamGenericFileCopyPlugin
 {
@@ -55,27 +55,29 @@ class Q_DECL_HIDDEN FCTask::Private
 public:
 
     explicit Private()
-      : overwrite(false),
-        symLinks(false)
+      : behavior(CopyFile),
+        overwrite(false)
     {
     }
 
     QUrl srcUrl;
     QUrl dstUrl;
+    int  behavior;
     bool overwrite;
-    bool symLinks;
+
 };
 
 FCTask::FCTask(const QUrl& srcUrl,
                const QUrl& dstUrl,
-               bool overwrite, bool symLinks)
+               int behavior, bool overwrite)
     : ActionJob(),
       d(new Private)
 {
     d->srcUrl    = srcUrl;
     d->dstUrl    = dstUrl;
+    d->behavior  = behavior;
     d->overwrite = overwrite;
-    d->symLinks  = symLinks;
+
 }
 
 FCTask::~FCTask()
@@ -103,25 +105,37 @@ void FCTask::run()
 
     bool ok = false;
 
-    if (d->symLinks)
+    if       (d->behavior == CopyFile)
+    {
+        ok = QFile::copy(d->srcUrl.toLocalFile(),
+                         dest.toLocalFile());
+    }
+    else if ((d->behavior == FullSymLink) ||
+             (d->behavior == RelativeSymLink))
     {
 #ifdef Q_OS_WIN
         dest.setPath(dest.path() + QLatin1String(".lnk")); 
 #endif
 
-        ok = QFile::link(d->srcUrl.toLocalFile(),
-                         dest.toLocalFile());
-    }
-    else
-    {
-        ok = QFile::copy(d->srcUrl.toLocalFile(),
-                         dest.toLocalFile());
+        if (d->behavior == FullSymLink)
+        {
+            ok = QFile::link(d->srcUrl.toLocalFile(),
+                             dest.toLocalFile());
+        }
+        else
+        {
+            QDir dir(d->dstUrl.toLocalFile());
+            QString path = dir.relativeFilePath(d->srcUrl.toLocalFile());
+            QUrl srcUrl  = QUrl::fromLocalFile(path);
+            ok           = QFile::link(srcUrl.toLocalFile(),
+                                       dest.toLocalFile());
+        }
     }
 
     // Since QFileInfo does not support timestamp updates,
     // we have to use the utime() system call.
 
-    if (ok && !d->symLinks)
+    if (ok && (d->behavior == CopyFile))
     {
         QT_STATBUF st;
 

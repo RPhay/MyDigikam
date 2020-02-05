@@ -27,6 +27,7 @@
 // Qt includes
 
 #include <QApplication>
+#include <QRadioButton>
 #include <QVBoxLayout>
 #include <QLabel>
 
@@ -41,6 +42,7 @@
 #include "ditemslist.h"
 #include "wstoolutils.h"
 #include "dlayoutbox.h"
+#include "fctask.h"
 
 namespace DigikamGenericFileCopyPlugin
 {
@@ -53,14 +55,21 @@ public:
       : selector(nullptr),
         imageList(nullptr),
         overwrite(nullptr),
-        symLinks(nullptr)
+        targetButtonGroup(nullptr),
+        fileCopyButton(nullptr),
+        symLinkButton(nullptr),
+        relativeButton(nullptr)
     {
     }
 
     DFileSelector* selector;
     DItemsList*    imageList;
     QCheckBox*     overwrite;
-    QCheckBox*     symLinks;
+
+    QButtonGroup*  targetButtonGroup;
+    QRadioButton*  fileCopyButton;
+    QRadioButton*  symLinkButton;
+    QRadioButton*  relativeButton;
 
     QUrl           targetUrl;
 
@@ -72,11 +81,23 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 {
     // setup local target selection
 
-    DHBox* const hbox   = new DHBox(this);
-    QLabel* const label = new QLabel(hbox);
-    d->selector         = new DFileSelector(hbox);
-    d->overwrite        = new QCheckBox(i18n("Overwrite existing items in the target"), this);
-    d->symLinks         = new QCheckBox(i18n("Create symlinks in the target"), this);
+    DHBox* const hbox         = new DHBox(this);
+    QLabel* const label       = new QLabel(hbox);
+    d->selector               = new DFileSelector(hbox);
+
+    QLabel* const targetLabel = new QLabel(i18n("Target File behavior:"), this);
+    d->targetButtonGroup      = new QButtonGroup(this);
+    d->fileCopyButton         = new QRadioButton(i18n("Copy files"), this);
+    d->symLinkButton          = new QRadioButton(i18n("Create symlinks"), this);
+    d->relativeButton         = new QRadioButton(i18n("Create relative symlinks"), this);
+
+    d->overwrite              = new QCheckBox(i18n("Overwrite existing items in the target"), this);
+
+    d->targetButtonGroup->addButton(d->fileCopyButton, FCTask::CopyFile);
+    d->targetButtonGroup->addButton(d->symLinkButton,  FCTask::FullSymLink);
+    d->targetButtonGroup->addButton(d->relativeButton, FCTask::RelativeSymLink);
+    d->targetButtonGroup->setExclusive(true);
+    d->fileCopyButton->setChecked(true);
 
     label->setText(i18n("Target location: "));
     d->selector->setFileDlgMode(QFileDialog::Directory);
@@ -96,8 +117,11 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     QVBoxLayout* const layout = new QVBoxLayout(this);
 
     layout->addWidget(hbox);
+    layout->addWidget(targetLabel);
+    layout->addWidget(d->fileCopyButton);
+    layout->addWidget(d->symLinkButton);
+    layout->addWidget(d->relativeButton);
     layout->addWidget(d->overwrite);
-    layout->addWidget(d->symLinks);
     layout->addWidget(d->imageList);
     layout->setSpacing(QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing));
     layout->setContentsMargins(QMargins());
@@ -137,9 +161,9 @@ QCheckBox* FCExportWidget::overwriteBox() const
     return d->overwrite;
 }
 
-QCheckBox* FCExportWidget::symLinksBox() const
+QButtonGroup* FCExportWidget::targetButtonGroup() const
 {
-    return d->symLinks;
+    return d->targetButtonGroup;
 }
 
 void FCExportWidget::slotLabelUrlChanged()
