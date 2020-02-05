@@ -182,7 +182,7 @@ set(libdngwriter_SRCS
 
 add_library(dngwriter_src OBJECT ${libdngwriter_SRCS})
 
-target_compile_definitions(dngwritter_src
+target_compile_definitions(dngwriter_src
                            PRIVATE
                            digikamcore_EXPORTS
 )
