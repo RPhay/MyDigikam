@@ -32,13 +32,14 @@
 
 // Local includes
 
+#include "digikam_export.h"
 #include "geocoordinates.h"
 #include "geogroupstate.h"
 
 namespace Digikam
 {
 
-class GPSItemInfo
+class DIGIKAM_EXPORT GPSItemInfo
 {
 public:
 

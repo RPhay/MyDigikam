@@ -34,6 +34,7 @@
 
 // Local includes
 
+#include "digikam_export.h"
 #include "geocoordinates.h"
 #include "geogroupstate.h"
 #include "gpsiteminfo.h"
@@ -42,7 +43,7 @@
 namespace Digikam
 {
 
-class GPSItemInfoSorter : public QObject
+class DIGIKAM_EXPORT GPSItemInfoSorter : public QObject
 {
     Q_OBJECT
 
