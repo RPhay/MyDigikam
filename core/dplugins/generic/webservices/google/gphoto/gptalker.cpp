@@ -679,7 +679,7 @@ void GPTalker::slotFinished(QNetworkReply* reply)
 
             QUrl redirectUrl = reply->attribute(QNetworkRequest::RedirectionTargetAttribute).toUrl();
 
-            if (redirectUrl.isValid() && reply->url() != redirectUrl && d->redirectCounter++ < 3)
+            if (redirectUrl.isValid() && (reply->url() != redirectUrl) && (d->redirectCounter++ < 3))
             {
                 qCDebug(DIGIKAM_WEBSERVICES_LOG) << "redirection counter:" << d->redirectCounter;
 
