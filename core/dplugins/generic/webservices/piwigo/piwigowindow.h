@@ -43,7 +43,7 @@ namespace DigikamGenericPiwigoPlugin
 
 class PiwigoAlbum;
 
-class DIGIKAM_EXPORT PiwigoWindow : public WSToolDialog
+class PiwigoWindow : public WSToolDialog
 {
     Q_OBJECT
 
