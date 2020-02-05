@@ -34,14 +34,13 @@
 #include "ditemslist.h"
 #include "dinfointerface.h"
 #include "dwizarddlg.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericPrintCreatorPlugin
 {
 
-class DIGIKAM_EXPORT AdvPrintWizard : public DWizardDlg
+class AdvPrintWizard : public DWizardDlg
 {
     Q_OBJECT
 
@@ -56,7 +55,8 @@ public:
     DInfoInterface*   iface()    const;
     AdvPrintSettings* settings() const;
 
-    /** Update the pages to be printed and preview first/last pages.
+    /**
+     * Update the pages to be printed and preview first/last pages.
      */
     void previewPhotos();
 

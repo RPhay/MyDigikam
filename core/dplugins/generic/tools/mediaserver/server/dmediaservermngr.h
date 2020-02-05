@@ -34,13 +34,12 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "dmediaserver.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DMediaServerMngr : public QObject
+class DMediaServerMngr : public QObject
 {
     Q_OBJECT
 

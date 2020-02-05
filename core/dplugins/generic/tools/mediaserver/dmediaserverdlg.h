@@ -29,7 +29,6 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "dinfointerface.h"
 #include "dplugindialog.h"
 
@@ -38,7 +37,7 @@ using namespace Digikam;
 namespace DigikamGenericMediaServerPlugin
 {
 
-class DIGIKAM_EXPORT DMediaServerDlg : public DPluginDialog
+class DMediaServerDlg : public DPluginDialog
 {
     Q_OBJECT
 

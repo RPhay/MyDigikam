@@ -32,7 +32,6 @@
 
 #include "dwizarddlg.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 #include "mailsettings.h"
 
 using namespace Digikam;
@@ -40,7 +39,7 @@ using namespace Digikam;
 namespace DigikamGenericSendByMailPlugin
 {
 
-class DIGIKAM_EXPORT MailWizard : public DWizardDlg
+class MailWizard : public DWizardDlg
 {
 public:
 

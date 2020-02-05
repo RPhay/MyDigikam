@@ -33,12 +33,11 @@
 // Local includes
 
 #include "ptotype.h"
-#include "digikam_export.h"
 
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT PTOFile
+class PTOFile
 {
 public:
 

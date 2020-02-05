@@ -29,14 +29,13 @@
 #include "advprintsettings.h"
 #include "advprinttask.h"
 #include "actionthreadbase.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericPrintCreatorPlugin
 {
 
-class DIGIKAM_EXPORT AdvPrintThread : public ActionThreadBase
+class AdvPrintThread : public ActionThreadBase
 {
     Q_OBJECT
 

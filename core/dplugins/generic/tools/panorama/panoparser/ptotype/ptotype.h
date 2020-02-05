@@ -37,14 +37,10 @@
 #include <QPair>
 #include <QTextStream>
 
-// Local includes
-
-#include "digikam_export.h"
-
 namespace Digikam
 {
 
-struct DIGIKAM_EXPORT PTOType
+struct PTOType
 {
     struct Project
     {

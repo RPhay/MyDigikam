@@ -33,7 +33,6 @@
 
 #include "dwizarddlg.h"
 #include "gallerytheme.h"
-#include "digikam_export.h"
 #include "dinfointerface.h"
 
 using namespace Digikam;
@@ -46,7 +45,7 @@ class GalleryInfo;
 /**
  * The wizard used by the user to select the various settings.
  */
-class DIGIKAM_EXPORT HTMLWizard : public DWizardDlg
+class HTMLWizard : public DWizardDlg
 {
     Q_OBJECT
 

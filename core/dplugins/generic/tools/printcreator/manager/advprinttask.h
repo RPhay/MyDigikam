@@ -37,7 +37,6 @@
 
 #include "advprintsettings.h"
 #include "actionthreadbase.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 

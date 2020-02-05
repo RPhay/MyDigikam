@@ -34,7 +34,6 @@
 #include "panoactions.h"
 #include "ptotype.h"
 #include "dplugingeneric.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
@@ -52,7 +51,7 @@ class PanoModifyBinary;
 class Pto2MkBinary;
 class HuginExecutorBinary;
 
-class DIGIKAM_EXPORT PanoManager : public QObject
+class PanoManager : public QObject
 {
     Q_OBJECT
 
