@@ -270,7 +270,7 @@ NPT_File::GetRoots(NPT_List<NPT_String>& roots)
 #endif
 }
 
-#if defined(_WIN32_WCE)
+//#if defined(_WIN32_WCE)
 /*----------------------------------------------------------------------
 |   NPT_File::GetWorkingDir
 +---------------------------------------------------------------------*/
@@ -289,7 +289,7 @@ NPT_File::GetInfo(const char* path, NPT_FileInfo* info)
 {
     return NPT_ERROR_NOT_IMPLEMENTED;
 }
-#endif
+//#endif
 
 /*----------------------------------------------------------------------
 |   NPT_File::CreateDir
