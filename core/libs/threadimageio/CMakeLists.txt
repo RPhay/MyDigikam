@@ -62,6 +62,7 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
+# Used by digikamcore
 add_library(threadimageio_src OBJECT ${libthreadimageio_SRCS})
 
 target_compile_definitions(threadimageio_src

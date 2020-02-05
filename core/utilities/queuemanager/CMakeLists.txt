@@ -47,4 +47,10 @@ include_directories($<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
 
 add_library(queuemanager_src OBJECT ${libqueuemanager_SRCS} ${libdlib_SRCS})
 
+# Used by digikamgui
+target_compile_definitions(queuemanager_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
 install(FILES main/queuemgrwindowui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)

@@ -159,7 +159,7 @@ else()
 
 endif()
 
-
+# Used by digikamcore
 add_library(digikamfacesengine_src
             OBJECT
             ${facesengine_LIB_SRCS}
@@ -170,8 +170,10 @@ target_compile_definitions(digikamfacesengine_src
                            digikamcore_EXPORTS
 )
 
+# For unit-tests
 add_library(digikamfacesengine STATIC $<TARGET_OBJECTS:digikamfacesengine_src>)
 
+# Used by digikamgui
 add_library(digikamfacesenginedatabase_src
             OBJECT
             ${facesengine_database_LIB_SRCS}

@@ -19,6 +19,7 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+# Used by digikamcore
 add_library(dthread_src OBJECT ${libdthread_SRCS})
 
 target_compile_definitions(dthread_src

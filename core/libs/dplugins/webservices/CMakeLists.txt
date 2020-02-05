@@ -48,6 +48,7 @@ set(libwso2_SRCS
     #o2/src/o2uber.cpp
 )
 
+# Used by digikamcore
 add_library(libwso2_src OBJECT ${libwso2_SRCS})
 
 target_compile_definitions(libwso2_src

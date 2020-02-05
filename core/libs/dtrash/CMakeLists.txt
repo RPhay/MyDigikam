@@ -21,4 +21,10 @@ include_directories(
     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+# Used by digikamgui
 add_library(dtrash_src OBJECT ${libdtrash_SRCS})
+
+target_compile_definitions(dtrash_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

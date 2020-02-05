@@ -82,8 +82,21 @@ set(libimportui_SRCS
     main/importui.cpp
 )
 
+# Used by digikamgui
 add_library(importuibackend_src OBJECT ${libimportuibackend_SRCS})
 
+target_compile_definitions(importuibackend_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
+# Used by digikamgui
 add_library(importui_src OBJECT ${libimportui_SRCS})
+
+target_compile_definitions(importui_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
 
 install(FILES main/importui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)

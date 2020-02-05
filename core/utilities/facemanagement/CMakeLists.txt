@@ -45,4 +45,10 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
+# Used by digikamgui
 add_library(facemanagement_src OBJECT ${libfacemanagement_SRCS})
+
+target_compile_definitions(facemanagement_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

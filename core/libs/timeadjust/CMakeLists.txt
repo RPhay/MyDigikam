@@ -22,6 +22,7 @@ set(libtimeadjust_SRCS
     timeadjustsettings.cpp
 )
 
+# Used by digikamcore
 add_library(timeadjust_src OBJECT ${libtimeadjust_SRCS})
 
 target_compile_definitions(timeadjust_src

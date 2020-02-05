@@ -162,13 +162,13 @@ set(DIGIKAMGUI_OBJECTS
             $<TARGET_OBJECTS:digikamtags_src>
             $<TARGET_OBJECTS:digikamsettings_src>
             $<TARGET_OBJECTS:filters_src>
+            $<TARGET_OBJECTS:importui_src>
             $<TARGET_OBJECTS:importuibackend_src>
             $<TARGET_OBJECTS:imagehistorywidgets_src>
             $<TARGET_OBJECTS:iojobs_src>
             $<TARGET_OBJECTS:dtrash_src>
             $<TARGET_OBJECTS:facemanagement_src>
             $<TARGET_OBJECTS:queuemanager_src>
-            $<TARGET_OBJECTS:importui_src>
             $<TARGET_OBJECTS:advancedrename_src>
 )
 

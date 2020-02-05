@@ -15,6 +15,7 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+# Used by digikamcore and digikamgui
 add_library(geomapwrapper_src OBJECT ${libgeomapwrapper_SRCS})
 
 target_compile_definitions(geomapwrapper_src

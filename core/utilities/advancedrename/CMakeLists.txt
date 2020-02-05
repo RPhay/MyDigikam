@@ -38,4 +38,10 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+# Used by digikamgui
 add_library(advancedrename_src OBJECT ${libadvancedrename_SRCS})
+
+target_compile_definitions(advancedrename_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

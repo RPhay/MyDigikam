@@ -80,6 +80,7 @@ include_directories(
     $<TARGET_PROPERTY:exiv2lib,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+# Used by digikamcore
 add_library(dmetadata_src OBJECT ${libdmetadata_SRCS})
 
 target_compile_definitions(dmetadata_src

@@ -132,6 +132,7 @@ set(libraw_LIB_SRCS libraw/src/libraw_c_api.cpp
                     libraw/src/x3f/x3f_utils_patched.cpp
 )
 
+# Used by digikamcore
 add_library(libraw_src OBJECT ${libraw_LIB_SRCS})
 
 target_compile_definitions(libraw_src
@@ -173,6 +174,7 @@ include_directories(
     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+# Used by digikamcore
 add_library(rawengine_srcs OBJECT ${librawengine_SRCS})
 
 target_compile_definitions(rawengine_srcs

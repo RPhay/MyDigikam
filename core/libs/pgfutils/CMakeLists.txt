@@ -31,6 +31,7 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+# Used by digikamcore
 add_library(pgfutils_src OBJECT ${libpgfutils_SRCS})
 
 target_compile_definitions(pgfutils_src

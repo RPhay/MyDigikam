@@ -24,4 +24,10 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
+# Used by digikamgui
 add_library(gpssearch_src OBJECT ${libgpssearch_SRCS})
+
+target_compile_definitions(gpssearch_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

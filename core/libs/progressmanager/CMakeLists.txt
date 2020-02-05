@@ -27,6 +27,7 @@ include_directories(
     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+# Used by digikamcore
 add_library(progressmanager_src OBJECT ${libprogressmanager_SRCS})
 
 target_compile_definitions(progressmanager_src

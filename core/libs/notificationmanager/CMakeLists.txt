@@ -37,6 +37,7 @@ if(KF5Notifications_FOUND)
     include_directories($<TARGET_PROPERTY:KF5::Notifications,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
+# Used by digikamcore
 add_library(notificationmanager_src OBJECT ${libnotificationmanager_SRCS})
 
 target_compile_definitions(notificationmanager_src

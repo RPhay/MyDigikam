@@ -20,6 +20,7 @@ include_directories(
     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+# Used by digikamcore
 add_library(dragdrop_src OBJECT ${libdragdrop_SRCS})
 
 target_compile_definitions(dragdrop_src

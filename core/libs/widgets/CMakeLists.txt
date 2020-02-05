@@ -142,6 +142,7 @@ if(Gphoto2_FOUND)
     include_directories(${GPHOTO2_INCLUDE_DIRS})
 endif()
 
+# Used by digikamcore
 add_library(digikamwidgetscore_src OBJECT
     ${libmainview_SRCS}
     ${libgraphicsviewwidgets_SRCS}
@@ -172,4 +173,10 @@ set(libimagehistory_SRCS
     history/versionswidget.cpp
 )
 
+# Used by digikamgui
 add_library(imagehistorywidgets_src OBJECT ${libimagehistory_SRCS})
+
+target_compile_definitions(imagehistorywidgets_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

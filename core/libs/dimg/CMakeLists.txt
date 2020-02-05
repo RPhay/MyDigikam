@@ -218,6 +218,7 @@ if(X11_FOUND)
     include_directories($<TARGET_PROPERTY:Qt5::X11Extras,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
+# Used by digikamcore
 add_library(dimg_src OBJECT
             ${libdimgloaders_SRCS}
             ${libdimgfilters_SRCS}

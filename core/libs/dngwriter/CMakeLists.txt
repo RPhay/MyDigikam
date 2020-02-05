@@ -28,6 +28,7 @@ include_directories(
 
 set(libmd5_SRCS extra/md5/XMP_MD5.cpp)
 
+# Used by digikamcore
 add_library(libmd5_src OBJECT ${libmd5_SRCS})
 
 target_compile_definitions(libmd5_src
@@ -64,6 +65,7 @@ set(libxmp_SRCS
     extra/xmp_sdk/XMPCore/ParseRDF.cpp
 )
 
+# Used by digikamcore
 add_library(libxmp_src OBJECT ${libxmp_SRCS})
 
 target_compile_definitions(libxmp_src
@@ -147,6 +149,7 @@ set(libdng_SRCS
     extra/dng_sdk/dng_pthread.cpp
 )
 
+# Used by digikamcore
 add_library(libdng_src OBJECT ${libdng_SRCS})
 
 target_compile_definitions(libdng_src
@@ -180,6 +183,7 @@ set(libdngwriter_SRCS
     dngsettings.cpp
 )
 
+# Used by digikamcore
 add_library(dngwriter_src OBJECT ${libdngwriter_SRCS})
 
 target_compile_definitions(dngwriter_src

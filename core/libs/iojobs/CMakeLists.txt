@@ -23,6 +23,7 @@ include_directories(
     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+# Used by digikamgui
 add_library(iojobs_src OBJECT ${libiojobs_SRCS})
 
 target_compile_definitions(iojobs_src

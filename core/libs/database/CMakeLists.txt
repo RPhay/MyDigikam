@@ -55,7 +55,8 @@ set(libdatabasecore_SRCS
     thumbsdb/thumbsdbaccess.cpp
 )
 
-add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})             # hosted by digikamcore target.
+# Used by digikamcore
+add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})
 
 target_compile_definitions(digikamdatabasecore_src
                            PRIVATE
@@ -194,7 +195,8 @@ set(libhaar_SRCS
     haar/haariface_p.cpp
 )
 
-add_library(digikamdatabase_src OBJECT ${libdatabase_SRCS}                  # hosted by digikamdatabase target.
+# Used by digikamdatabase
+add_library(digikamdatabase_src OBJECT ${libdatabase_SRCS}
                                        ${libdatabasemodels_SRCS}
                                        ${libhaar_SRCS}
 )
@@ -226,7 +228,8 @@ set(libdatabasemain_SRCS
     utils/scan/scancontroller_stop.cpp
 )
 
-add_library(digikamdatabasemain_src OBJECT ${libdatabasemain_SRCS})            # hosted by digikamgui target.
+# Used by digikamgui
+add_library(digikamdatabasemain_src OBJECT ${libdatabasemain_SRCS})
 
 target_compile_definitions(digikamdatabasemain_src
                            PRIVATE
