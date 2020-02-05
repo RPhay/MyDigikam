@@ -149,6 +149,14 @@ set(libdng_SRCS
     extra/dng_sdk/dng_pthread.cpp
 )
 
+# Dont process automoc on headers from extra subdir
+
+file(GLOB_RECURSE extra_headers ${CMAKE_CURRENT_SOURCE_DIR}/extra/*.h)
+
+foreach(_file ${extra_headers})
+    set_property(SOURCE ${_file} PROPERTY SKIP_AUTOMOC ON)
+endforeach()
+
 # Used by digikamcore
 add_library(libdng_src OBJECT ${libdng_SRCS})
 

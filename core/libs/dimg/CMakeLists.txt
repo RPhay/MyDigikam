@@ -218,6 +218,14 @@ if(X11_FOUND)
     include_directories($<TARGET_PROPERTY:Qt5::X11Extras,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
+# Dont process automoc on LibCImg headers
+
+file(GLOB_RECURSE cimg_headers ${CMAKE_CURRENT_SOURCE_DIR}/filters/greycstoration/cimg/*.h)
+
+foreach(_file ${cimg_headers})
+    set_property(SOURCE ${_file} PROPERTY SKIP_AUTOMOC ON)
+endforeach()
+
 # Used by digikamcore
 add_library(dimg_src OBJECT
             ${libdimgloaders_SRCS}

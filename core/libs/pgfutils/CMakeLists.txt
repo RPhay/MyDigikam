@@ -16,6 +16,11 @@ if(NOT MSVC)
 
 endif()
 
+include_directories(
+    $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
+)
+
 set(libpgfutils_SRCS
     pgfutils.cpp
     libpgf/Decoder.cpp
@@ -26,10 +31,13 @@ set(libpgfutils_SRCS
     libpgf/WaveletTransform.cpp
 )
 
-include_directories(
-    $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
-    $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
-)
+# Dont process automoc on Libpgf headers
+
+file(GLOB_RECURSE libpgf_headers ${CMAKE_CURRENT_SOURCE_DIR}/libpgf/*.h)
+
+foreach(_file ${libpgf_headers})
+    set_property(SOURCE ${_file} PROPERTY SKIP_AUTOMOC ON)
+endforeach()
 
 # Used by digikamcore
 add_library(pgfutils_src OBJECT ${libpgfutils_SRCS})

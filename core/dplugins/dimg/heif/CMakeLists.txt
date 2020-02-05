@@ -183,6 +183,20 @@ foreach(_currentfile ${libde265_SRCS})
     endif()
 endforeach()
 
+# Dont process automoc on libheif and libde265 headers
+
+file(GLOB_RECURSE heif_headers ${CMAKE_CURRENT_SOURCE_DIR}/libheif/*.h)
+
+foreach(_file ${heif_headers})
+    set_property(SOURCE ${_file} PROPERTY SKIP_AUTOMOC ON)
+endforeach()
+
+file(GLOB_RECURSE de265_headers ${CMAKE_CURRENT_SOURCE_DIR}/libde265/*.h)
+
+foreach(_file ${de265_headers})
+    set_property(SOURCE ${_file} PROPERTY SKIP_AUTOMOC ON)
+endforeach()
+
 set(dimgheifplugin_SRCS
     ${libheif_SRCS}
     ${libde265_SRCS}

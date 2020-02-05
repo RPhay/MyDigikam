@@ -132,6 +132,14 @@ set(libraw_LIB_SRCS libraw/src/libraw_c_api.cpp
                     libraw/src/x3f/x3f_utils_patched.cpp
 )
 
+# Dont process automoc on Libraw headers
+
+file(GLOB_RECURSE libraw_headers ${CMAKE_CURRENT_SOURCE_DIR}/libraw/*.h)
+
+foreach(_file ${libraw_headers})
+    set_property(SOURCE ${_file} PROPERTY SKIP_AUTOMOC ON)
+endforeach()
+
 # Used by digikamcore
 add_library(libraw_src OBJECT ${libraw_LIB_SRCS})
 
