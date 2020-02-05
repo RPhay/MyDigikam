@@ -32,7 +32,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+
 #include "mediawiki_job.h"
 #include "mediawiki_generalinfo.h"
 
@@ -47,7 +47,7 @@ class QuerySiteInfoGeneralPrivate;
  *
  * Uses for fetch a generals information about the wiki.
  */
-class DIGIKAM_EXPORT QuerySiteInfoGeneral : public Job
+class QuerySiteInfoGeneral : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(QuerySiteInfoGeneral)

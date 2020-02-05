@@ -35,7 +35,7 @@
 
 #include "mediawiki_job.h"
 #include "mediawiki_revision.h"
-#include "digikam_export.h"
+
 
 namespace MediaWiki
 {
@@ -48,7 +48,7 @@ class QueryRevisionPrivate;
  *
  * Uses for fetch a revision information about one pages of the wiki.
  */
-class DIGIKAM_EXPORT QueryRevision : public Job
+class QueryRevision : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(QueryRevision)

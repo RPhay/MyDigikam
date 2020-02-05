@@ -30,7 +30,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+
 
 namespace MediaWiki
 {
@@ -40,7 +40,7 @@ namespace MediaWiki
  *
  * Represent protection parameters in a page.
  */
-class DIGIKAM_EXPORT Protection
+class Protection
 {
 
 public:

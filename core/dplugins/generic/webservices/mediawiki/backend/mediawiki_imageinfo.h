@@ -34,7 +34,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+
 
 namespace MediaWiki
 {
@@ -42,7 +42,7 @@ namespace MediaWiki
 /**
  * @brief An image info.
  */
-class DIGIKAM_EXPORT Imageinfo
+class Imageinfo
 {
 public:
 

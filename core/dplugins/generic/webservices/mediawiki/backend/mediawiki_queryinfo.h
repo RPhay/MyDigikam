@@ -36,7 +36,7 @@
 #include "mediawiki_page.h"
 #include "mediawiki_protection.h"
 #include "mediawiki_job.h"
-#include "digikam_export.h"
+
 
 namespace MediaWiki
 {
@@ -49,7 +49,7 @@ class QueryInfoPrivate;
  *
  * Uses to send a request to get basic page information.
  */
-class DIGIKAM_EXPORT QueryInfo : public Job
+class QueryInfo : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(QueryInfo)

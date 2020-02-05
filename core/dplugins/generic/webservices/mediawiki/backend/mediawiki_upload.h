@@ -34,7 +34,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+
 #include "mediawiki_job.h"
 #include "mediawiki_queryinfo.h"
 
@@ -49,7 +49,7 @@ class UploadPrivate;
  *
  * Uses for upload files.
  */
-class DIGIKAM_EXPORT Upload : public Job
+class Upload : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(Upload)

@@ -32,7 +32,7 @@
 
 #include "mediawiki_job.h"
 #include "mediawiki_image.h"
-#include "digikam_export.h"
+
 
 namespace MediaWiki
 {
@@ -45,7 +45,7 @@ class QueryImagesPrivate;
  *
  * Gets a list of all images used on pages.
  */
-class DIGIKAM_EXPORT QueryImages : public Job
+class QueryImages : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(QueryImages)

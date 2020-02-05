@@ -34,7 +34,7 @@
 // Local includes
 
 #include "mediawiki_job.h"
-#include "digikam_export.h"
+
 
 namespace MediaWiki
 {
@@ -46,7 +46,7 @@ class LoginPrivate;
  *
  * Uses for log in a user.
  */
-class DIGIKAM_EXPORT Login : public Job
+class Login : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(Login)

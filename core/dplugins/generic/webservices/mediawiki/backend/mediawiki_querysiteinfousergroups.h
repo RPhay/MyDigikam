@@ -26,7 +26,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+
 #include "mediawiki_job.h"
 #include "mediawiki_usergroup.h"
 
@@ -41,7 +41,7 @@ class QuerySiteinfoUsergroupsPrivate;
  *
  * Uses for fetch a list of all user groups and their permissions.
  */
-class DIGIKAM_EXPORT QuerySiteinfoUsergroups : public Job
+class QuerySiteinfoUsergroups : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(QuerySiteinfoUsergroups)

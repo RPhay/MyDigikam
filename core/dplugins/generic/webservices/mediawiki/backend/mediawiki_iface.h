@@ -33,7 +33,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+
 
 namespace MediaWiki
 {
@@ -41,7 +41,7 @@ namespace MediaWiki
 /**
  * @brief Provides access to wiki powered by Iface.
  */
-class DIGIKAM_EXPORT Iface
+class Iface
 {
 public:
 

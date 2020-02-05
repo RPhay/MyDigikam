@@ -27,7 +27,7 @@
 // Local includes
 
 #include "mediawiki_job.h"
-#include "digikam_export.h"
+
 
 namespace MediaWiki
 {
@@ -40,7 +40,7 @@ class LogoutPrivate;
  *
  * Uses for log out a user.
  */
-class DIGIKAM_EXPORT Logout : public Job
+class Logout : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(Logout)

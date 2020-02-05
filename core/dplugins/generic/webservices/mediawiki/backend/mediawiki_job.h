@@ -30,7 +30,7 @@
 
 // Local includes
 
-#include "digikam_export.h"
+
 
 namespace MediaWiki
 {
@@ -41,7 +41,7 @@ class JobPrivate;
 /**
  * @brief The base class for all Iface jobs.
  */
-class DIGIKAM_EXPORT Job : public KJob
+class Job : public KJob
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(Job)

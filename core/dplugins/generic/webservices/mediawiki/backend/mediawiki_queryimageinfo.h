@@ -32,7 +32,7 @@
 
 #include "mediawiki_imageinfo.h"
 #include "mediawiki_job.h"
-#include "digikam_export.h"
+
 
 namespace MediaWiki
 {
@@ -45,7 +45,7 @@ class QueryImageinfoPrivate;
  *
  * Gets image information for an image.
  */
-class DIGIKAM_EXPORT QueryImageinfo : public Job
+class QueryImageinfo : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(QueryImageinfo)

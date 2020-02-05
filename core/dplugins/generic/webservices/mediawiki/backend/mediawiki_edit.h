@@ -38,7 +38,6 @@
 
 #include "mediawiki_job.h"
 #include "mediawiki_queryinfo.h"
-#include "digikam_export.h"
 
 namespace MediaWiki
 {
@@ -51,7 +50,7 @@ class EditPrivate;
  *
  * Uses for create or edit a wiki.
  */
-class DIGIKAM_EXPORT Edit : public Job
+class Edit : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(Edit)

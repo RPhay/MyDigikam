@@ -33,7 +33,7 @@
 // Local includes
 
 #include "mediawiki_job.h"
-#include "digikam_export.h"
+
 
 namespace MediaWiki
 {
@@ -41,7 +41,7 @@ namespace MediaWiki
 class Iface;
 class ParsePrivate;
 
-class DIGIKAM_EXPORT Parse : public Job
+class Parse : public Job
 {
     Q_OBJECT
     Q_DECLARE_PRIVATE(Parse)
