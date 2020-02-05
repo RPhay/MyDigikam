@@ -35,13 +35,12 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "printoptionspage.h"
 
 namespace DigikamEditorPrintToolPlugin
 {
 
-class DIGIKAM_EXPORT PrintConfig : public KConfigSkeleton
+class PrintConfig : public KConfigSkeleton
 {
 public:
 

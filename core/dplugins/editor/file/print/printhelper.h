@@ -26,7 +26,6 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "dimg.h"
 
 class QWidget;
@@ -36,7 +35,7 @@ using namespace Digikam;
 namespace DigikamEditorPrintToolPlugin
 {
 
-class DIGIKAM_EXPORT PrintHelper
+class PrintHelper
 {
 
 public:
