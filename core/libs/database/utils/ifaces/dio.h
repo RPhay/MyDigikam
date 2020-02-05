@@ -32,7 +32,7 @@
 
 // Local includes
 
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 
 class QUrl;
 
@@ -45,7 +45,7 @@ class ItemInfo;
 class IOJobData;
 class ProgressItem;
 
-class DIGIKAM_DATABASE_EXPORT DIO : public QObject
+class DIGIKAM_EXPORT DIO : public QObject
 {
     Q_OBJECT
 

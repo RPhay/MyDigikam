@@ -34,14 +34,14 @@
 
 // Local includes
 
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {
 
 class ItemInfo;
 
-class SidecarFinder
+class DIGIKAM_EXPORT SidecarFinder
 {
 
 public:
@@ -56,7 +56,7 @@ public:
 
 // -----------------------------------------------------------------------------------------
 
-class GroupedImagesFinder
+class DIGIKAM_EXPORT GroupedImagesFinder
 {
 
 public:

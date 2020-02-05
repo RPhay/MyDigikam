@@ -30,6 +30,10 @@
 #include <QObject>
 #include <QPixmap>
 
+// Local includes
+
+#include "digikam_export.h"
+
 class QString;
 
 namespace Digikam
@@ -40,7 +44,7 @@ class TAlbum;
 
 // -------------------------------------------------------------------------------
 
-class SyncJob : public QObject
+class DIGIKAM_EXPORT SyncJob : public QObject
 {
     Q_OBJECT
 

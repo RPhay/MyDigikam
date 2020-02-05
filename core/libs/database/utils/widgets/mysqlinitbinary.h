@@ -25,12 +25,13 @@
 
 // Local includes
 
+#include "digikam_export.h"
 #include "dbinaryiface.h"
 
 namespace Digikam
 {
 
-class MysqlInitBinary : public DBinaryIface
+class DIGIKAM_EXPORT MysqlInitBinary : public DBinaryIface
 {
 
 public:

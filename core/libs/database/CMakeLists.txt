@@ -194,9 +194,9 @@ set(libhaar_SRCS
     haar/haariface_p.cpp
 )
 
-add_library(digikamdatabase_src     OBJECT ${libdatabase_SRCS}                  # hosted by digikamdatabase target.
-                                           ${libdatabasemodels_SRCS}
-                                           ${libhaar_SRCS}
+add_library(digikamdatabase_src OBJECT ${libdatabase_SRCS}                  # hosted by digikamdatabase target.
+                                       ${libdatabasemodels_SRCS}
+                                       ${libhaar_SRCS}
 )
 
 target_compile_definitions(digikamdatabase_src
@@ -228,8 +228,8 @@ set(libdatabasemain_SRCS
 
 add_library(digikamdatabasemain_src OBJECT ${libdatabasemain_SRCS})            # hosted by digikamgui target.
 
-#target_compile_definitions(digikamdatabasemain_src
-#                           PRIVATE
-#                           digikamcore_EXPORTS
-#)
+target_compile_definitions(digikamdatabasemain_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
 
