@@ -81,17 +81,21 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
 {
     // setup local target selection
 
-    DHBox* const hbox         = new DHBox(this);
-    QLabel* const label       = new QLabel(hbox);
-    d->selector               = new DFileSelector(hbox);
+    DHBox* const hbox           = new DHBox(this);
+    QLabel* const locationLabel = new QLabel(hbox);
+    locationLabel->setText(i18n("Target location: "));
+    d->selector                 = new DFileSelector(hbox);
+    d->selector->setFileDlgMode(QFileDialog::Directory);
+    d->selector->setFileDlgTitle(i18n("Target Folder"));
+    d->selector->setWhatsThis(i18n("Sets the target address to copy the items to."));
 
-    QLabel* const targetLabel = new QLabel(i18n("Target File behavior:"), this);
-    d->targetButtonGroup      = new QButtonGroup(this);
-    d->fileCopyButton         = new QRadioButton(i18n("Copy files"), this);
-    d->symLinkButton          = new QRadioButton(i18n("Create symlinks"), this);
-    d->relativeButton         = new QRadioButton(i18n("Create relative symlinks"), this);
+    QLabel* const targetLabel   = new QLabel(i18n("Target File behavior:"), this);
+    d->targetButtonGroup        = new QButtonGroup(this);
+    d->fileCopyButton           = new QRadioButton(i18n("Copy files"), this);
+    d->symLinkButton            = new QRadioButton(i18n("Create symlinks"), this);
+    d->relativeButton           = new QRadioButton(i18n("Create relative symlinks"), this);
 
-    d->overwrite              = new QCheckBox(i18n("Overwrite existing items in the target"), this);
+    d->overwrite                = new QCheckBox(i18n("Overwrite existing items in the target"), this);
 
     d->targetButtonGroup->addButton(d->fileCopyButton, FCTask::CopyFile);
     d->targetButtonGroup->addButton(d->symLinkButton,  FCTask::FullSymLink);
@@ -99,13 +103,8 @@ FCExportWidget::FCExportWidget(DInfoInterface* const iface, QWidget* const paren
     d->targetButtonGroup->setExclusive(true);
     d->fileCopyButton->setChecked(true);
 
-    label->setText(i18n("Target location: "));
-    d->selector->setFileDlgMode(QFileDialog::Directory);
-    d->selector->setFileDlgTitle(i18n("Target Folder"));
-    d->selector->setWhatsThis(i18n("Sets the target address to copy the items to."));
-
     // setup image list
-    d->imageList = new DItemsList(this);
+    d->imageList                = new DItemsList(this);
     d->imageList->setObjectName(QLatin1String("FCExport ImagesList"));
     d->imageList->setIface(iface);
     d->imageList->loadImagesFromCurrentSelection();

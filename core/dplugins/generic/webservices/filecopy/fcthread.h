@@ -27,7 +27,6 @@
 
 // Qt includes
 
-#include <QMap>
 #include <QUrl>
 
 // Local includes
