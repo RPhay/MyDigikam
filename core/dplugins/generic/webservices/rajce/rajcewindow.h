@@ -28,7 +28,6 @@
 
 #include "wstooldialog.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
@@ -37,7 +36,7 @@ namespace DigikamGenericRajcePlugin
 
 class RajceWidget;
 
-class DIGIKAM_EXPORT RajceWindow : public WSToolDialog
+class RajceWindow : public WSToolDialog
 {
     Q_OBJECT
 

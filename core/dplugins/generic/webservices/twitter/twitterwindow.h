@@ -29,7 +29,6 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "dinfointerface.h"
 #include "wstooldialog.h"
 
@@ -43,7 +42,7 @@ namespace DigikamGenericTwitterPlugin
 
 class TwAlbum;
 
-class DIGIKAM_EXPORT TwWindow : public WSToolDialog
+class TwWindow : public WSToolDialog
 {
     Q_OBJECT
 

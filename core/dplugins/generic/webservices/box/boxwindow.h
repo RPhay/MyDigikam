@@ -32,7 +32,6 @@
 // Local includes
 
 #include "wstooldialog.h"
-#include "digikam_export.h"
 #include "dinfointerface.h"
 
 class QCloseEvent;
@@ -43,7 +42,7 @@ using namespace Digikam;
 namespace DigikamGenericBoxPlugin
 {
 
-class DIGIKAM_EXPORT BOXWindow : public WSToolDialog
+class BOXWindow : public WSToolDialog
 {
     Q_OBJECT
 

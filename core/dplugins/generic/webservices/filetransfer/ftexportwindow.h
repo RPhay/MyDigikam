@@ -33,7 +33,6 @@
 
 #include "wstooldialog.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 
 class KJob;
 
@@ -53,7 +52,7 @@ class FTExportWidget;
  * Main window of the KIOExport tool.
  */
 
-class DIGIKAM_EXPORT FTExportWindow: public WSToolDialog
+class FTExportWindow: public WSToolDialog
 {
     Q_OBJECT
 

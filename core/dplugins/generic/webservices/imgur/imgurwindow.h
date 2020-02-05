@@ -36,7 +36,6 @@
 #include "imgurimageslist.h"
 #include "wstooldialog.h"
 #include "imgurtalker.h"
-#include "digikam_export.h"
 #include "dinfointerface.h"
 
 using namespace Digikam;
@@ -44,7 +43,7 @@ using namespace Digikam;
 namespace DigikamGenericImgUrPlugin
 {
 
-class DIGIKAM_EXPORT ImgurWindow : public WSToolDialog
+class ImgurWindow : public WSToolDialog
 {
     Q_OBJECT
 

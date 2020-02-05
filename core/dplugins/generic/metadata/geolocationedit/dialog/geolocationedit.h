@@ -40,7 +40,6 @@
 #include "geomodelhelper.h"
 #include "trackmanager.h"
 #include "gpsitemcontainer.h"
-#include "digikam_export.h"
 #include "dinfointerface.h"
 #include "mapwidget.h"
 #include "gpsundocommand.h"
@@ -52,7 +51,7 @@ using namespace Digikam;
 namespace DigikamGenericGeolocationEditPlugin
 {
 
-class DIGIKAM_EXPORT GeolocationEdit : public DPluginDialog
+class GeolocationEdit : public DPluginDialog
 {
     Q_OBJECT
 
@@ -61,7 +60,8 @@ public:
     explicit GeolocationEdit(QWidget* const parent, DInfoInterface* const iface);
     ~GeolocationEdit();
 
-    /* Populate items in dialog list based on url. To be used in case of non database as with Showfoto.
+    /*
+     * Populate items in dialog list based on url. To be used in case of non database as with Showfoto.
      */
     void setImages(const QList<QUrl>& images);
 

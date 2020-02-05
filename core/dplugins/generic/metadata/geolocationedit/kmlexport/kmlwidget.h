@@ -34,7 +34,6 @@
 #include "dfileselector.h"
 #include "dcolorselector.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 #include "geolocationedit.h"
 #include "gpsitemmodel.h"
 
@@ -56,7 +55,7 @@ using namespace Digikam;
 namespace DigikamGenericGeolocationEditPlugin
 {
 
-class DIGIKAM_EXPORT KmlWidget : public QWidget
+class KmlWidget : public QWidget
 {
     Q_OBJECT
 

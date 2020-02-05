@@ -34,7 +34,6 @@
 
 #include "dwizarddlg.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 #include "o0settingsstore.h"
 #include "wssettings.h"
 #include "wsauthentication.h"
@@ -44,7 +43,7 @@ using namespace Digikam;
 namespace DigikamGenericUnifiedPlugin
 {
 
-class DIGIKAM_EXPORT WSWizard : public DWizardDlg
+class WSWizard : public DWizardDlg
 {
     Q_OBJECT
 

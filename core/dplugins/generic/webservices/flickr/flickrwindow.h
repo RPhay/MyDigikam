@@ -41,14 +41,13 @@
 #include "wscomboboxintermediate.h"
 #include "dinfointerface.h"
 #include "wstooldialog.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericFlickrPlugin
 {
 
-class DIGIKAM_EXPORT FlickrWindow : public WSToolDialog
+class FlickrWindow : public WSToolDialog
 {
     Q_OBJECT
 

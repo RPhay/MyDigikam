@@ -32,7 +32,6 @@
 
 #include "dwizarddlg.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 #include "vidslidesettings.h"
 
 using namespace Digikam;
@@ -40,7 +39,7 @@ using namespace Digikam;
 namespace DigikamGenericVideoSlideShowPlugin
 {
 
-class DIGIKAM_EXPORT VidSlideWizard : public DWizardDlg
+class VidSlideWizard : public DWizardDlg
 {
     Q_OBJECT
 

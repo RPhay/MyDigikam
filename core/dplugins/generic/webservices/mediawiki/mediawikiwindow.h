@@ -30,7 +30,6 @@
 
 #include "wstooldialog.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 
 class QCloseEvent;
 
@@ -41,7 +40,7 @@ using namespace Digikam;
 namespace DigikamGenericMediaWikiPlugin
 {
 
-class DIGIKAM_EXPORT MediaWikiWindow : public WSToolDialog
+class MediaWikiWindow : public WSToolDialog
 {
     Q_OBJECT
 

@@ -33,7 +33,6 @@
 // Local includes
 
 #include "dplugindialog.h"
-#include "digikam_export.h"
 #include "timeadjustsettings.h"
 #include "dinfointerface.h"
 
@@ -42,7 +41,7 @@ using namespace Digikam;
 namespace DigikamGenericTimeAdjustPlugin
 {
 
-class DIGIKAM_EXPORT TimeAdjustDialog : public DPluginDialog
+class TimeAdjustDialog : public DPluginDialog
 {
     Q_OBJECT
 

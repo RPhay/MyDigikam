@@ -34,7 +34,6 @@
 #include "ipfsimageslist.h"
 #include "ipfstalker.h"
 #include "wstooldialog.h"
-#include "digikam_export.h"
 #include "dinfointerface.h"
 
 using namespace Digikam;
@@ -42,7 +41,7 @@ using namespace Digikam;
 namespace DigikamGenericIpfsPlugin
 {
 
-class DIGIKAM_EXPORT IpfsWindow : public WSToolDialog
+class IpfsWindow : public WSToolDialog
 {
     Q_OBJECT
 

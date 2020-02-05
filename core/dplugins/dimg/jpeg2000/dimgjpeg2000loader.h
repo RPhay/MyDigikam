@@ -34,14 +34,13 @@
 
 #include "dimg.h"
 #include "dimgloader.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
 namespace DigikamJPEG2000DImgPlugin
 {
 
-class DIGIKAM_EXPORT DImgJPEG2000Loader : public DImgLoader
+class DImgJPEG2000Loader : public DImgLoader
 {
 
 public:

@@ -32,7 +32,6 @@
 // Local includes
 
 #include "wstooldialog.h"
-#include "digikam_export.h"
 #include "ditemslist.h"
 #include "dinfointerface.h"
 
@@ -41,7 +40,7 @@ using namespace Digikam;
 namespace DigikamGenericImageShackPlugin
 {
 
-class DIGIKAM_EXPORT ImageShackWindow : public WSToolDialog
+class ImageShackWindow : public WSToolDialog
 {
     Q_OBJECT
 

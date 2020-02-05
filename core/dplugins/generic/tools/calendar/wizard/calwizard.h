@@ -36,14 +36,13 @@
 #include "dwizarddlg.h"
 #include "dwizardpage.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericCalendarPlugin
 {
 
-class DIGIKAM_EXPORT CalWizard : public DWizardDlg
+class CalWizard : public DWizardDlg
 {
     Q_OBJECT
 

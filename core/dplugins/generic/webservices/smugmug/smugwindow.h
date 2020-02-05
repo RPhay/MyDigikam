@@ -38,14 +38,13 @@
 #include "wslogindialog.h"
 #include "smugitem.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericSmugPlugin
 {
 
-class DIGIKAM_EXPORT SmugWindow : public WSToolDialog
+class SmugWindow : public WSToolDialog
 {
     Q_OBJECT
 

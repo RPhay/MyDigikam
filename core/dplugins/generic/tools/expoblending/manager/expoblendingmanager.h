@@ -34,7 +34,6 @@
 
 #include "dplugingeneric.h"
 #include "expoblendingactions.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
@@ -45,7 +44,7 @@ class ExpoBlendingThread;
 class AlignBinary;
 class EnfuseBinary;
 
-class DIGIKAM_EXPORT ExpoBlendingManager : public QObject
+class ExpoBlendingManager : public QObject
 {
     Q_OBJECT
 

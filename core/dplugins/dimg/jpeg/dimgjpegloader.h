@@ -47,14 +47,13 @@ extern "C"
 
 #include "dimg.h"
 #include "dimgloader.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
 namespace DigikamJPEGDImgPlugin
 {
 
-class DIGIKAM_EXPORT DImgJPEGLoader : public DImgLoader
+class DImgJPEGLoader : public DImgLoader
 {
 
 public:

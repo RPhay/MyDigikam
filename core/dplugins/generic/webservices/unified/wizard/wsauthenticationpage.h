@@ -47,7 +47,6 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "dwizardpage.h"
 #include "dinfointerface.h"
 #include "wsauthentication.h"

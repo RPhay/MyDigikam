@@ -33,7 +33,6 @@
 
 #include "wstooldialog.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
@@ -46,7 +45,7 @@ class FCExportWidget;
  * Main window of the FileCopyExport tool.
  */
 
-class DIGIKAM_EXPORT FCExportWindow: public WSToolDialog
+class FCExportWindow: public WSToolDialog
 {
     Q_OBJECT
 

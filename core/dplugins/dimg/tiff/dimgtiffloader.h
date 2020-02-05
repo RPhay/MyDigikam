@@ -55,14 +55,13 @@ extern "C"
 #include "dimg.h"
 #include "dimgloader.h"
 #include "dmetadata.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
 namespace DigikamTIFFDImgPlugin
 {
 
-class DIGIKAM_EXPORT DImgTIFFLoader : public DImgLoader
+class DImgTIFFLoader : public DImgLoader
 {
 public:
 

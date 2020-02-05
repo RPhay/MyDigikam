@@ -34,7 +34,6 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "dplugingeneric.h"
 #include "dinfointerface.h"
 
@@ -45,7 +44,7 @@ namespace DigikamGenericPresentationPlugin
 
 class PresentationContainer;
 
-class DIGIKAM_EXPORT PresentationMngr : public QObject
+class PresentationMngr : public QObject
 {
     Q_OBJECT
 

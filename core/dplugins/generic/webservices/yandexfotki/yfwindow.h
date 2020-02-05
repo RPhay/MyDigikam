@@ -33,19 +33,18 @@
 // Local includes
 
 #include "wstooldialog.h"
-#include "digikam_export.h"
 #include "yfalbum.h"
 #include "yfphoto.h"
 #include "dinfointerface.h"
 
-using namespace Digikam;
-
 class QCloseEvent;
+
+using namespace Digikam;
 
 namespace DigikamGenericYFPlugin
 {
 
-class DIGIKAM_EXPORT YFWindow : public WSToolDialog
+class YFWindow : public WSToolDialog
 {
     Q_OBJECT
 

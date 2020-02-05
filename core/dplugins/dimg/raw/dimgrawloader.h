@@ -32,7 +32,6 @@
 #include "drawdecoder.h"
 #include "dimgloader.h"
 #include "drawdecoding.h"
-#include "digikam_export.h"
 #include "rawprocessingfilter.h"
 
 using namespace Digikam;
@@ -40,7 +39,7 @@ using namespace Digikam;
 namespace DigikamRAWDImgPlugin
 {
 
-class DIGIKAM_EXPORT DImgRAWLoader : public DRawDecoder, public DImgLoader
+class DImgRAWLoader : public DRawDecoder, public DImgLoader
 {
     Q_OBJECT
 

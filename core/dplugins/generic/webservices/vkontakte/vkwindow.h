@@ -30,7 +30,6 @@
 // Local includes
 
 #include "wstooldialog.h"
-#include "digikam_export.h"
 #include "dprogresswdg.h"
 #include "dinfointerface.h"
 #include "ditemslist.h"
@@ -42,7 +41,7 @@ using namespace Digikam;
 namespace DigikamGenericVKontaktePlugin
 {
 
-class DIGIKAM_EXPORT VKWindow : public WSToolDialog
+class VKWindow : public WSToolDialog
 {
     Q_OBJECT
 

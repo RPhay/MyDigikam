@@ -31,7 +31,6 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "dinfointerface.h"
 #include "wstooldialog.h"
 
@@ -45,7 +44,7 @@ namespace DigikamGenericFaceBookPlugin
 
 class FbAlbum;
 
-class DIGIKAM_EXPORT FbWindow : public WSToolDialog
+class FbWindow : public WSToolDialog
 {
     Q_OBJECT
 

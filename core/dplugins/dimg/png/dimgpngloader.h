@@ -32,14 +32,13 @@
 
 #include "dimg.h"
 #include "dimgloader.h"
-#include "digikam_export.h"
 
 using namespace Digikam;
 
 namespace DigikamPNGDImgPlugin
 {
 
-class DIGIKAM_EXPORT DImgPNGLoader : public DImgLoader
+class DImgPNGLoader : public DImgLoader
 {
 public:
 

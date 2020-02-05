@@ -31,7 +31,6 @@
 
 // Local includes
 
-#include "digikam_export.h"
 #include "dplugindialog.h"
 #include "dinfointerface.h"
 
@@ -40,7 +39,7 @@ using namespace Digikam;
 namespace DigikamGenericMetadataEditPlugin
 {
 
-class DIGIKAM_EXPORT MetadataEditDialog : public DPluginDialog
+class MetadataEditDialog : public DPluginDialog
 {
     Q_OBJECT
 
@@ -55,7 +54,7 @@ public:
 Q_SIGNALS:
 
     void signalMetadataChangedForUrl(const QUrl&);
-    
+
 public Q_SLOTS:
 
     void slotModified();

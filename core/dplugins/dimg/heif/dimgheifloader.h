@@ -36,7 +36,6 @@
 
 #include "dimg.h"
 #include "dimgloader.h"
-#include "digikam_export.h"
 #include "heif.h"
 
 using namespace Digikam;
@@ -44,7 +43,7 @@ using namespace Digikam;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DImgHEIFLoader : public DImgLoader
+class DImgHEIFLoader : public DImgLoader
 {
 
 public:

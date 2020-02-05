@@ -28,7 +28,6 @@
 
 #include "dimg.h"
 #include "dimgloader.h"
-#include "digikam_export.h"
 #include "digikam_config.h"
 
 using namespace Digikam;
@@ -36,7 +35,7 @@ using namespace Digikam;
 namespace DigikamImageMagickDImgPlugin
 {
 
-class DIGIKAM_EXPORT DImgImageMagickLoader : public DImgLoader
+class DImgImageMagickLoader : public DImgLoader
 {
 public:
 

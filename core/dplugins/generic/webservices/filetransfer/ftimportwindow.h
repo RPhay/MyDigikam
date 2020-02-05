@@ -32,7 +32,6 @@
 
 #include "wstooldialog.h"
 #include "dinfointerface.h"
-#include "digikam_export.h"
 
 class KJob;
 
@@ -49,7 +48,7 @@ namespace DigikamGenericFileTransferPlugin
 /**
  * Main dialog used for the import tool.
  */
-class DIGIKAM_EXPORT FTImportWindow : public WSToolDialog
+class FTImportWindow : public WSToolDialog
 {
     Q_OBJECT
 
