@@ -55,26 +55,11 @@ set(libdatabasecore_SRCS
     thumbsdb/thumbsdbaccess.cpp
 )
 
-### For digikamgui target - Symbols exported with DIGIKAM_EXPORT macro ############################
+add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})             # hosted by digikamcore target.
 
-set(libdatabaseutils_SRCS
-    utils/widgets/dbstatdlg.cpp
-    utils/widgets/dbsettingswidget.cpp
-    utils/widgets/dbmigrationdlg.cpp
-    utils/widgets/mysqlinitbinary.cpp
-    utils/widgets/mysqlservbinary.cpp
-    utils/widgets/searchtextbardb.cpp
-
-    utils/ifaces/dbinfoiface.cpp
-    utils/ifaces/syncjob.cpp
-    utils/ifaces/dio.cpp
-    utils/ifaces/diofinders.cpp
-
-    utils/scan/scancontroller.cpp
-    utils/scan/scancontroller_p.cpp
-    utils/scan/scancontroller_start.cpp
-    utils/scan/scancontroller_progress.cpp
-    utils/scan/scancontroller_stop.cpp
+target_compile_definitions(digikamdatabasecore_src
+                           PRIVATE
+                           digikamcore_EXPORTS
 )
 
 ### For digikamdatabase target - Symbols exported with DIGIKAM_DATABASE_EXPORT macro ##############
@@ -209,16 +194,6 @@ set(libhaar_SRCS
     haar/haariface_p.cpp
 )
 
-### Shared digiKam database objects definitions ########################################################
-
-add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})             # hosted by digikamcore target.
-
-target_compile_definitions(digikamdatabasecore_src
-                           PRIVATE
-                           digikamcore_EXPORTS
-)
-
-
 add_library(digikamdatabase_src     OBJECT ${libdatabase_SRCS}                  # hosted by digikamdatabase target.
                                            ${libdatabasemodels_SRCS}
                                            ${libhaar_SRCS}
@@ -229,10 +204,32 @@ target_compile_definitions(digikamdatabase_src
                            digikamdatabase_EXPORTS
 )
 
+### For digikamgui target - Symbols exported with DIGIKAM_EXPORT macro ############################
 
-add_library(digikamdatabasemain_src OBJECT ${libdatabaseutils_SRCS})            # hosted by digikamgui target.
+set(libdatabasemain_SRCS
+    utils/widgets/dbstatdlg.cpp
+    utils/widgets/dbsettingswidget.cpp
+    utils/widgets/dbmigrationdlg.cpp
+    utils/widgets/mysqlinitbinary.cpp
+    utils/widgets/mysqlservbinary.cpp
+    utils/widgets/searchtextbardb.cpp
 
-target_compile_definitions(digikamdatabasemain_src
-                           PRIVATE
-                           digikamcore_EXPORTS
+    utils/ifaces/dbinfoiface.cpp
+    utils/ifaces/syncjob.cpp
+    utils/ifaces/dio.cpp
+    utils/ifaces/diofinders.cpp
+
+    utils/scan/scancontroller.cpp
+    utils/scan/scancontroller_p.cpp
+    utils/scan/scancontroller_start.cpp
+    utils/scan/scancontroller_progress.cpp
+    utils/scan/scancontroller_stop.cpp
 )
+
+add_library(digikamdatabasemain_src OBJECT ${libdatabasemain_SRCS})            # hosted by digikamgui target.
+
+#target_compile_definitions(digikamdatabasemain_src
+#                           PRIVATE
+#                           digikamcore_EXPORTS
+#)
+
