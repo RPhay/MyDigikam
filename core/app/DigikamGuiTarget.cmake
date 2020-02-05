@@ -133,14 +133,19 @@ add_library(digikamgui_src
             ${libdigikamgui_SRCS}
 )
 
+target_compile_definitions(digikamgui_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
 ### digiKam GUI shared library objects declaration ##############################################################################
 
 set(DIGIKAMGUI_OBJECTS
 
-            $<TARGET_OBJECTS:digikamdatabasemain_src>
-
-            $<TARGET_OBJECTS:digikamfacesenginedatabase_src>
             $<TARGET_OBJECTS:digikamgui_src>
+
+            $<TARGET_OBJECTS:digikamdatabasemain_src>
+            $<TARGET_OBJECTS:digikamfacesenginedatabase_src>
             $<TARGET_OBJECTS:digikamdeletedialog_src>
             $<TARGET_OBJECTS:digikamtemplate_src>
             $<TARGET_OBJECTS:itempropertiesdigikam_src>
@@ -187,6 +192,11 @@ add_library(digikamgui
 set_target_properties(digikamgui PROPERTIES
                       VERSION ${DIGIKAM_VERSION_SHORT}
                       SOVERSION ${DIGIKAM_VERSION_SHORT}
+)
+
+target_compile_definitions(digikamgui
+                           PRIVATE
+                           digikamcore_EXPORTS
 )
 
 add_dependencies(digikamgui digikamcore digikamdatabase)

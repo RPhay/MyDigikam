@@ -65,6 +65,13 @@ include_directories($<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+# Used by digikamgui
 add_library(setup_src OBJECT ${libsetup_SRCS} ${libsetupshowfoto_SRCS})
 
+target_compile_definitions(setup_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
+# Used by showfoto
 add_library(setupshowfoto_src OBJECT  ${libsetupshowfoto_SRCS})

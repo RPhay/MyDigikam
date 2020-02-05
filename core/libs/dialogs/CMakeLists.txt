@@ -51,7 +51,7 @@ else()
     include_directories($<TARGET_PROPERTY:Qt5::WebKitWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
-#used by digikamcore
+# Used by digikamcore
 add_library(digikamdialogscore_src OBJECT ${libdialogs_SRCS})
 
 target_compile_definitions(digikamdialogscore_src
@@ -59,4 +59,10 @@ target_compile_definitions(digikamdialogscore_src
                            digikamcore_EXPORTS
 )
 
+# Used by digikamgui
 add_library(digikamdeletedialog_src OBJECT ${libdeletedialog_SRCS})
+
+target_compile_definitions(digikamdeletedialog_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

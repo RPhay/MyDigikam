@@ -61,4 +61,10 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
+# Used by digikamgui
 add_library(digikamalbum_src OBJECT ${libalbum_SRCS})
+
+target_compile_definitions(digikamalbum_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

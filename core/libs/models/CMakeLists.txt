@@ -35,7 +35,7 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
-#for digikam core lib
+# Used by digikamcore
 add_library(digikamgenericmodels_src OBJECT ${libgenericmodels_SRCS})
 
 target_compile_definitions(digikamgenericmodels_src
@@ -43,4 +43,10 @@ target_compile_definitions(digikamgenericmodels_src
                            digikamcore_EXPORTS
 )
 
+# Used by digikamgui
 add_library(digikammodels_src OBJECT ${libalbummodels_SRCS} ${libgenericmodels_SRCS})
+
+target_compile_definitions(digikammodels_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

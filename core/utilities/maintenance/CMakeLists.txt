@@ -41,4 +41,10 @@ include_directories($<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+# Used by digikamgui
 add_library(maintenance_src OBJECT ${libmaintenance_SRCS})
+
+target_compile_definitions(maintenance_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

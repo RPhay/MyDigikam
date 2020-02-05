@@ -48,4 +48,10 @@ if(KF5IconThemes_FOUND)
     include_directories($<TARGET_PROPERTY:KF5::IconThemes,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
+# Used by digikamgui
 add_library(digikamtags_src OBJECT ${libtags_SRCS})
+
+target_compile_definitions(digikamtags_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

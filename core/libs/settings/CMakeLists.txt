@@ -28,4 +28,10 @@ include_directories(
     $<TARGET_PROPERTY:KF5::ConfigCore,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+# Used by digikamgui
 add_library(digikamsettings_src OBJECT ${libsettings_SRCS})
+
+target_compile_definitions(digikamsettings_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

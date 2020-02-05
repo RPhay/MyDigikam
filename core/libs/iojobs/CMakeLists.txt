@@ -24,3 +24,8 @@ include_directories(
 )
 
 add_library(iojobs_src OBJECT ${libiojobs_SRCS})
+
+target_compile_definitions(iojobs_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

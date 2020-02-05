@@ -30,4 +30,10 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
+# Used by digikamgui
 add_library(fuzzysearch_src OBJECT ${libfuzzysearch_SRCS})
+
+target_compile_definitions(fuzzysearch_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

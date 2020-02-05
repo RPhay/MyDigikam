@@ -73,7 +73,7 @@ set(libeditoriface_SRCS
     editor/imageiface.cpp
 )
 
-# this lib is used to build digikam core
+# Used by digikamcore
 add_library(imageeditor_src OBJECT ${libeditorcore_SRCS}
                                    ${libeditordlg_SRCS}
                                    ${libeditoriface_SRCS}
@@ -85,4 +85,10 @@ target_compile_definitions(imageeditor_src
                            digikamcore_EXPORTS
 )
 
+# Used by digikamgui
 add_library(imageeditorgui_src OBJECT ${libeditorgui_SRCS})
+
+target_compile_definitions(imageeditorgui_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

@@ -54,7 +54,7 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
-# used to build digikamcore
+# Used by digikamcore
 add_library(itemproperties_src OBJECT ${libitemproperties_SRCS})
 
 target_compile_definitions(itemproperties_src
@@ -62,4 +62,10 @@ target_compile_definitions(itemproperties_src
                            digikamcore_EXPORTS
 )
 
+# Used by digikamgui
 add_library(itempropertiesdigikam_src OBJECT ${libitemversionssidebar_SRCS} ${libitempropertiesdigikam_SRCS})
+
+target_compile_definitions(itempropertiesdigikam_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

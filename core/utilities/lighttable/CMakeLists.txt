@@ -38,6 +38,12 @@ if(Gphoto2_FOUND)
     include_directories(${GPHOTO2_INCLUDE_DIRS})
 endif()
 
+# Used by digikamgui
 add_library(lighttable_src OBJECT ${liblighttable_SRCS})
+
+target_compile_definitions(lighttable_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
 
 install(FILES lighttablewindowui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)

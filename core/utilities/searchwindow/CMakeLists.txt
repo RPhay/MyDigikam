@@ -36,4 +36,10 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
+# Used by digikamgui
 add_library(searchwindow_src OBJECT ${libsearchwindow_SRCS})
+
+target_compile_definitions(searchwindow_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

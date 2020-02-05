@@ -177,4 +177,10 @@ add_library(digikamfacesenginedatabase_src
             ${facesengine_database_LIB_SRCS}
 )
 
+target_compile_definitions(digikamfacesenginedatabase_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
+# For unit-tests
 add_library(digikamfacesenginedatabase STATIC $<TARGET_OBJECTS:digikamfacesenginedatabase_src>)
