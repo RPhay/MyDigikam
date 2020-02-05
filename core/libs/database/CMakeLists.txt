@@ -213,10 +213,26 @@ set(libhaar_SRCS
 
 add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})             # hosted by digikamcore target.
 
+target_compile_definitions(digikamdatabasecore_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
 
 add_library(digikamdatabase_src     OBJECT ${libdatabase_SRCS}                  # hosted by digikamdatabase target.
                                            ${libdatabasemodels_SRCS}
                                            ${libhaar_SRCS}
 )
 
+target_compile_definitions(digikamdatabase_src
+                           PRIVATE
+                           digikamdatabase_EXPORTS
+)
+
+
 add_library(digikamdatabasemain_src OBJECT ${libdatabaseutils_SRCS})            # hosted by digikamgui target.
+
+target_compile_definitions(digikamdatabasemain_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

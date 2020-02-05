@@ -134,6 +134,11 @@ set(libraw_LIB_SRCS libraw/src/libraw_c_api.cpp
 
 add_library(libraw_src OBJECT ${libraw_LIB_SRCS})
 
+target_compile_definitions(libraw_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
 # Disable compilation warnings from LibRaw. Just to be clear on the console.
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (Bug: #269903)
 # Use O4 GCC compilation option to prevent artifacts with OpenMP (Bug #305382)
@@ -169,3 +174,8 @@ include_directories(
 )
 
 add_library(rawengine_srcs OBJECT ${librawengine_SRCS})
+
+target_compile_definitions(rawengine_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

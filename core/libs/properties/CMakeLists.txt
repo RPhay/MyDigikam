@@ -57,4 +57,9 @@ endif()
 # used to build digikamcore
 add_library(itemproperties_src OBJECT ${libitemproperties_SRCS})
 
+target_compile_definitions(itemproperties_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
 add_library(itempropertiesdigikam_src OBJECT ${libitemversionssidebar_SRCS} ${libitempropertiesdigikam_SRCS})

@@ -23,3 +23,8 @@ set(libtimeadjust_SRCS
 )
 
 add_library(timeadjust_src OBJECT ${libtimeadjust_SRCS})
+
+target_compile_definitions(timeadjust_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

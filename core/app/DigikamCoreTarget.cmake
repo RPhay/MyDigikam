@@ -97,7 +97,7 @@ set_target_properties(digikamcore PROPERTIES
 )
 
 target_compile_definitions(digikamcore
-                           INTERFACE
+                           PRIVATE
                            digikamcore_EXPORTS
 )
 

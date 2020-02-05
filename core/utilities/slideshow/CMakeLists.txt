@@ -31,3 +31,8 @@ if(ENABLE_DBUS)
 endif()
 
 add_library(slideshow_src OBJECT ${libslideshow_SRCS})
+
+target_compile_definitions(slideshow_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

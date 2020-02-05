@@ -16,3 +16,8 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
 )
 
 add_library(geomapwrapper_src OBJECT ${libgeomapwrapper_SRCS})
+
+target_compile_definitions(geomapwrapper_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

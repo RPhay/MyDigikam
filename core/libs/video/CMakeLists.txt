@@ -25,3 +25,8 @@ set(libvideotools_SRCS
 )
 
 add_library(videotools_src OBJECT ${libvideotools_SRCS})
+
+target_compile_definitions(videotools_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

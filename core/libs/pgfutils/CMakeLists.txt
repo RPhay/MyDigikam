@@ -32,3 +32,8 @@ include_directories(
 )
 
 add_library(pgfutils_src OBJECT ${libpgfutils_SRCS})
+
+target_compile_definitions(pgfutils_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

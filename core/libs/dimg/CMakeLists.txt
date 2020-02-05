@@ -223,3 +223,8 @@ add_library(dimg_src OBJECT
             ${libdimgfilters_SRCS}
             ${libdimg_SRCS}
 )
+
+target_compile_definitions(dimg_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

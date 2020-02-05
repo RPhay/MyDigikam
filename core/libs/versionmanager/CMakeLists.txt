@@ -21,3 +21,8 @@ include_directories(
 )
 
 add_library(versionmanager_src OBJECT ${libversionmanager_SRCS})
+
+target_compile_definitions(versionmanager_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

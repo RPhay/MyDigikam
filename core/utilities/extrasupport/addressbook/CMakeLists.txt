@@ -24,6 +24,13 @@ if(KF5AkonadiContact_FOUND)
 endif()
 
 add_library(akonadiiface_src OBJECT ${akonadiiface_SRCS})
+
+target_compile_definitions(akonadiiface_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
+
 add_library(akonadiiface STATIC $<TARGET_OBJECTS:akonadiiface_src>)
 
 target_link_libraries(akonadiiface PRIVATE Qt5::Core KF5::I18n)

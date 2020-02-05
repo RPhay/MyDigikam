@@ -28,3 +28,8 @@ include_directories(
 )
 
 add_library(progressmanager_src OBJECT ${libprogressmanager_SRCS})
+
+target_compile_definitions(progressmanager_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

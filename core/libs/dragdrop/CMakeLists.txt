@@ -21,3 +21,8 @@ include_directories(
 )
 
 add_library(dragdrop_src OBJECT ${libdragdrop_SRCS})
+
+target_compile_definitions(dragdrop_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

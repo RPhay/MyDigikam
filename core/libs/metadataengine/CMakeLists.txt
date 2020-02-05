@@ -81,3 +81,8 @@ include_directories(
 )
 
 add_library(dmetadata_src OBJECT ${libdmetadata_SRCS})
+
+target_compile_definitions(dmetadata_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

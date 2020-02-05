@@ -49,3 +49,8 @@ set(libwso2_SRCS
 )
 
 add_library(libwso2_src OBJECT ${libwso2_SRCS})
+
+target_compile_definitions(libwso2_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

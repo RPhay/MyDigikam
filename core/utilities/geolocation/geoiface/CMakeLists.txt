@@ -103,3 +103,8 @@ endif()
 ecm_create_qm_loader(libgeoiface_SRCS marble_qt)
 
 add_library(geoiface_src OBJECT ${libgeoiface_SRCS})
+
+target_compile_definitions(geoiface_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

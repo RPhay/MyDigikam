@@ -38,3 +38,8 @@ if(KF5Notifications_FOUND)
 endif()
 
 add_library(notificationmanager_src OBJECT ${libnotificationmanager_SRCS})
+
+target_compile_definitions(notificationmanager_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

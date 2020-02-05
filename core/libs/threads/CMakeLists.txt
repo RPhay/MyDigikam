@@ -20,3 +20,8 @@ include_directories(
 )
 
 add_library(dthread_src OBJECT ${libdthread_SRCS})
+
+target_compile_definitions(dthread_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

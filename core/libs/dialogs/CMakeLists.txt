@@ -54,4 +54,9 @@ endif()
 #used by digikamcore
 add_library(digikamdialogscore_src OBJECT ${libdialogs_SRCS})
 
+target_compile_definitions(digikamdialogscore_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
 add_library(digikamdeletedialog_src OBJECT ${libdeletedialog_SRCS})

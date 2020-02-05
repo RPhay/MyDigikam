@@ -157,6 +157,11 @@ add_library(digikamwidgetscore_src OBJECT
     ${libtextwidgets_SRCS}
 )
 
+target_compile_definitions(digikamwidgetscore_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
 #############################################################"
 
 set(libimagehistory_SRCS

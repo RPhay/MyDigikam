@@ -38,4 +38,9 @@ endif()
 #for digikam core lib
 add_library(digikamgenericmodels_src OBJECT ${libgenericmodels_SRCS})
 
+target_compile_definitions(digikamgenericmodels_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
 add_library(digikammodels_src OBJECT ${libalbummodels_SRCS} ${libgenericmodels_SRCS})

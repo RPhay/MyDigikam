@@ -17,3 +17,7 @@ include_directories($<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
 
 add_library(baloowrap_src OBJECT ${baloowrap_SRCS})
 
+target_compile_definitions(baloowrap_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

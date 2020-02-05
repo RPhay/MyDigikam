@@ -17,7 +17,7 @@ set_target_properties(digikamdatabase PROPERTIES
 )
 
 target_compile_definitions(digikamdatabase
-                           INTERFACE
+                           PRIVATE
                            digikamdatabase_EXPORTS
 )
 

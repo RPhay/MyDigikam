@@ -63,3 +63,8 @@ if(ENABLE_DBUS)
 endif()
 
 add_library(threadimageio_src OBJECT ${libthreadimageio_SRCS})
+
+target_compile_definitions(threadimageio_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

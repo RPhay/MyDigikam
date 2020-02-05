@@ -86,6 +86,11 @@ set(libdpluginsinterface_SRCS
 
 add_library(dpluginsinterface_src OBJECT ${libdpluginsinterface_SRCS})
 
+target_compile_definitions(dpluginsinterface_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
 # Parse O2 library code and rules at end, and compilation rules remove important Qt definitions.
 
 if(WIN32)

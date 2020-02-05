@@ -30,6 +30,11 @@ set(libmd5_SRCS extra/md5/XMP_MD5.cpp)
 
 add_library(libmd5_src OBJECT ${libmd5_SRCS})
 
+target_compile_definitions(libmd5_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
 # Disable warnings: we will never touch this code.
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
 
@@ -60,6 +65,11 @@ set(libxmp_SRCS
 )
 
 add_library(libxmp_src OBJECT ${libxmp_SRCS})
+
+target_compile_definitions(libxmp_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
 
 # Disable warnings: we will never touch this code.
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
@@ -139,6 +149,11 @@ set(libdng_SRCS
 
 add_library(libdng_src OBJECT ${libdng_SRCS})
 
+target_compile_definitions(libdng_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
 # Disable warnings: we will never touch this code.
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
 
@@ -166,3 +181,8 @@ set(libdngwriter_SRCS
 )
 
 add_library(dngwriter_src OBJECT ${libdngwriter_SRCS})
+
+target_compile_definitions(dngwritter_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

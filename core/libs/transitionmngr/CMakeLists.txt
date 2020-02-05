@@ -35,3 +35,8 @@ include_directories(
 )
 
 add_library(digikamlibtransitionmngr_src OBJECT ${libtransitionmngr_SRCS})
+
+target_compile_definitions(digikamlibtransitionngr_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)

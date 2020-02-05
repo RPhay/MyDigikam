@@ -80,4 +80,9 @@ add_library(imageeditor_src OBJECT ${libeditorcore_SRCS}
                                    ${libeditorwidgets_SRCS}
 )
 
+target_compile_definitions(imageeditor_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
 add_library(imageeditorgui_src OBJECT ${libeditorgui_SRCS})

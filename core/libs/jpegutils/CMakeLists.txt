@@ -39,3 +39,8 @@ include_directories(
 )
 
 add_library(jpegutils_src OBJECT ${libjpegutils_SRCS})
+
+target_compile_definitions(jpegutils_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
