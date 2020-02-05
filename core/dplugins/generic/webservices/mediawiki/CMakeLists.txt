@@ -45,7 +45,7 @@ set(libmediawiki_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/backend/mediawiki_upload.cpp
 )
 
-# For unit-tests
+# For unit-tests and plugin
 add_library(mediawikibackend STATIC ${libmediawiki_SRCS})
 
 # --------------------------------------------------------------------------------

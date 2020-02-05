@@ -164,6 +164,7 @@ foreach(_currentfile ${libmediaserver_SRCS})
     endif()
 endforeach()
 
+# For Unit-tests and plugin
 add_library(mediaserverbackend STATIC ${libmediaserver_SRCS})
 
 target_link_libraries(mediaserverbackend

@@ -46,6 +46,7 @@ set(libpanoparser_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/panoparser/ptoparser/ptofile.cpp
 )
 
+# For unit-tests and plugin
 add_library(panoparser STATIC ${libpanoparser_SRCS})
 
 target_link_libraries(panoparser
