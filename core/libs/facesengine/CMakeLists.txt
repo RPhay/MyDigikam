@@ -45,6 +45,8 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/..
                     # ${CMAKE_CURRENT_SOURCE_DIR}/preprocessing/tantriggs
 )
 
+# ---------------------------------------------------------------------------
+
 set(facesengine_LIB_SRCS common/identity.cpp
                          common/dataproviders.cpp
                          common/opencvmatdata.cpp
@@ -86,6 +88,22 @@ else()
     )
 
 endif()
+
+# Used by digikamcore
+add_library(digikamfacesengine_src
+            OBJECT
+            ${facesengine_LIB_SRCS}
+)
+
+target_compile_definitions(digikamfacesengine_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
+# For unit-tests
+add_library(digikamfacesengine STATIC $<TARGET_OBJECTS:digikamfacesengine_src>)
+
+# ---------------------------------------------------------------------------
 
 set(facesengine_database_LIB_SRCS recognition/recognitiondatabase.cpp
                                   recognition/recognitiondatabase_p.cpp
@@ -159,19 +177,6 @@ else()
 
 endif()
 
-# Used by digikamcore
-add_library(digikamfacesengine_src
-            OBJECT
-            ${facesengine_LIB_SRCS}
-)
-
-target_compile_definitions(digikamfacesengine_src
-                           PRIVATE
-                           digikamcore_EXPORTS
-)
-
-# For unit-tests
-add_library(digikamfacesengine STATIC $<TARGET_OBJECTS:digikamfacesengine_src>)
 
 # Used by digikamgui
 add_library(digikamfacesenginedatabase_src
@@ -181,7 +186,7 @@ add_library(digikamfacesenginedatabase_src
 
 target_compile_definitions(digikamfacesenginedatabase_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )
 
 # For unit-tests

@@ -42,7 +42,7 @@ class SidebarSplitter;
 class CamItemInfo;
 class DMetadata;
 
-class DIGIKAM_EXPORT ImportItemPropertiesSideBarImport : public Sidebar
+class DIGIKAM_GUI_EXPORT ImportItemPropertiesSideBarImport : public Sidebar
 {
     Q_OBJECT
 

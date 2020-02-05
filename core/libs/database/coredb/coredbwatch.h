@@ -34,7 +34,7 @@
 
 // Local includes
 
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 #include "coredbchangesets.h"
 
 namespace Digikam

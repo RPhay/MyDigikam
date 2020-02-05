@@ -44,7 +44,7 @@ class QDataStream;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT CamItemInfo
+class DIGIKAM_GUI_EXPORT CamItemInfo
 {
 
 public:

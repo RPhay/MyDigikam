@@ -40,7 +40,7 @@ class QDialogButtonBox;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT CameraItem : public QTreeWidgetItem
+class DIGIKAM_GUI_EXPORT CameraItem : public QTreeWidgetItem
 {
 
 public:
@@ -61,7 +61,7 @@ private:
 
 // -----------------------------------------------------------
 
-class DIGIKAM_EXPORT CameraItemList : public QTreeWidget
+class DIGIKAM_GUI_EXPORT CameraItemList : public QTreeWidget
 {
     Q_OBJECT
 
@@ -89,7 +89,7 @@ private:
 
 // -----------------------------------------------------------
 
-class DIGIKAM_EXPORT CameraMessageBox
+class DIGIKAM_GUI_EXPORT CameraMessageBox
 {
 
 public:

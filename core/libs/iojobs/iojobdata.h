@@ -40,7 +40,7 @@ namespace Digikam
 class PAlbum;
 class ItemInfo;
 
-class DIGIKAM_EXPORT IOJobData
+class DIGIKAM_GUI_EXPORT IOJobData
 {
 
 public:

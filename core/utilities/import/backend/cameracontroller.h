@@ -47,7 +47,7 @@ namespace Digikam
 
 class CameraCommand;
 
-class DIGIKAM_EXPORT CameraController : public QThread
+class DIGIKAM_GUI_EXPORT CameraController : public QThread
 {
     Q_OBJECT
 

@@ -58,7 +58,7 @@ class CameraHistoryUpdater;
 class ImportIconView;
 class CameraThumbsCtrl;
 
-class DIGIKAM_EXPORT ImportUI : public DXmlGuiWindow
+class DIGIKAM_GUI_EXPORT ImportUI : public DXmlGuiWindow
 {
     Q_OBJECT
 

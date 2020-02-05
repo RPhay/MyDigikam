@@ -46,7 +46,7 @@ class DDateTable;
 /**
  * Provides a widget for calendar date input.
  */
-class DIGIKAM_EXPORT DDatePicker : public QFrame
+class DIGIKAM_GUI_EXPORT DDatePicker : public QFrame
 {
     Q_OBJECT
     Q_PROPERTY(QDate date READ date WRITE setDate NOTIFY dateChanged USER true)

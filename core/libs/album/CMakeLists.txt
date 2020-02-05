@@ -66,5 +66,5 @@ add_library(digikamalbum_src OBJECT ${libalbum_SRCS})
 
 target_compile_definitions(digikamalbum_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

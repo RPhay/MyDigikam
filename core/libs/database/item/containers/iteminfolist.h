@@ -32,7 +32,7 @@
 // Local includes
 
 #include "iteminfo.h"
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 #include "digikam_config.h"
 
 namespace Digikam

@@ -38,7 +38,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT FirstRunDlg : public QWizard
+class DIGIKAM_GUI_EXPORT FirstRunDlg : public QWizard
 {
     Q_OBJECT
 

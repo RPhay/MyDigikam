@@ -46,7 +46,7 @@ namespace Digikam
 class AlbumWidgetStack;
 class ImageChangeset;
 
-class DIGIKAM_EXPORT MapWidgetView : public QWidget, public StateSavingObject
+class DIGIKAM_GUI_EXPORT MapWidgetView : public QWidget, public StateSavingObject
 {
     Q_OBJECT
 

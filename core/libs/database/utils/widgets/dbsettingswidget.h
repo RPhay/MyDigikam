@@ -40,7 +40,7 @@ namespace Digikam
 class ApplicationSettings;
 class DbEngineParameters;
 
-class DIGIKAM_EXPORT DatabaseSettingsWidget : public QWidget
+class DIGIKAM_GUI_EXPORT DatabaseSettingsWidget : public QWidget
 {
     Q_OBJECT
 

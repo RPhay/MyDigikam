@@ -42,7 +42,7 @@ namespace Digikam
 class ParseSettings;
 class Parser;
 
-class DIGIKAM_EXPORT AdvancedRenameWidget : public QWidget
+class DIGIKAM_GUI_EXPORT AdvancedRenameWidget : public QWidget
 {
     Q_OBJECT
 

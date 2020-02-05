@@ -27,7 +27,7 @@
 // Local includes
 
 #include "itemthumbnailmodel.h"
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {

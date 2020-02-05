@@ -7,29 +7,6 @@
 
 APPLY_COMMON_POLICIES()
 
-set(libdialogs_SRCS
-    dprogressdlg.cpp
-    dbusydlg.cpp
-    filesaveoptionsdlg.cpp
-    iccprofileinfodlg.cpp
-    imagedialog.cpp
-    infodlg.cpp
-    libsinfodlg.cpp
-    rawcameradlg.cpp
-    dconfigdlg.cpp
-    dconfigdlgmodels.cpp
-    dconfigdlgview.cpp
-    dconfigdlgview_p.cpp
-    dconfigdlgwidgets.cpp
-    dmessagebox.cpp
-    dsplashscreen.cpp
-    webbrowserdlg.cpp
-)
-
-set(libdeletedialog_SRCS
-    deletedialog.cpp
-)
-
 if(LensFun_FOUND)
     include_directories(${LENSFUN_INCLUDE_DIRS})
 endif()
@@ -51,6 +28,25 @@ else()
     include_directories($<TARGET_PROPERTY:Qt5::WebKitWidgets,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
+set(libdialogs_SRCS
+    dprogressdlg.cpp
+    dbusydlg.cpp
+    filesaveoptionsdlg.cpp
+    iccprofileinfodlg.cpp
+    imagedialog.cpp
+    infodlg.cpp
+    libsinfodlg.cpp
+    rawcameradlg.cpp
+    dconfigdlg.cpp
+    dconfigdlgmodels.cpp
+    dconfigdlgview.cpp
+    dconfigdlgview_p.cpp
+    dconfigdlgwidgets.cpp
+    dmessagebox.cpp
+    dsplashscreen.cpp
+    webbrowserdlg.cpp
+)
+
 # Used by digikamcore
 add_library(digikamdialogscore_src OBJECT ${libdialogs_SRCS})
 
@@ -59,10 +55,14 @@ target_compile_definitions(digikamdialogscore_src
                            digikamcore_EXPORTS
 )
 
+set(libdeletedialog_SRCS
+    deletedialog.cpp
+)
+
 # Used by digikamgui
 add_library(digikamdeletedialog_src OBJECT ${libdeletedialog_SRCS})
 
 target_compile_definitions(digikamdeletedialog_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

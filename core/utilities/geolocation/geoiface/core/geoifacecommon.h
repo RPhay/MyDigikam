@@ -201,10 +201,7 @@ const int GeoIfaceMinThumbnailSize           = GeoIfaceMinThumbnailGroupingRadiu
  * @param b Point b
  * @return Square of the distance between a and b
  */
-DIGIKAM_EXPORT inline int QPointSquareDistance(const QPoint& a, const QPoint& b)
-{
-    return (a.x() - b.x()) * (a.x() - b.x()) + (a.y() - b.y()) * (a.y() - b.y());
-}
+DIGIKAM_EXPORT int QPointSquareDistance(const QPoint& a, const QPoint& b);
 
 // ----------------------------------------------------------------------------------------------
 

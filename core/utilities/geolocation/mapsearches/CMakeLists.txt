@@ -29,5 +29,5 @@ add_library(gpssearch_src OBJECT ${libgpssearch_SRCS})
 
 target_compile_definitions(gpssearch_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

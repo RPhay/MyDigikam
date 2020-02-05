@@ -38,7 +38,7 @@ class MetadataHub;
 class MetadataHubOnTheRoad;
 class DisjointMetadata;
 
-class DIGIKAM_EXPORT FileActionMngr : public QObject
+class DIGIKAM_GUI_EXPORT FileActionMngr : public QObject
 {
     Q_OBJECT
 

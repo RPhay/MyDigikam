@@ -53,5 +53,5 @@ add_library(digikamtags_src OBJECT ${libtags_SRCS})
 
 target_compile_definitions(digikamtags_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

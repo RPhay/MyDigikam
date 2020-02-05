@@ -35,7 +35,7 @@
 
 #include "coredbsearchxml.h"
 #include "itemqueryposthooks.h"
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 
 class QUrl;
 

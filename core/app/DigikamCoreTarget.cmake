@@ -103,10 +103,10 @@ target_compile_definitions(digikamcore
 
 add_dependencies(digikamcore digikam-gitversion)
 
-# All codes from this target are exported with digikam_export.h header and DIGIKAM_EXPORT macro.
+# All codes from this target are exported with digikam_core_export.h header and DIGIKAM_EXPORT macro.
 generate_export_header(digikamcore
                        BASE_NAME digikam
-                       EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_export.h"
+                       EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_core_export.h"
 )
 
 # Note all this target dependencies must be private and not exported to prevent inherited external plugins dependencies.

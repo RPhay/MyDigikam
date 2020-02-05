@@ -43,5 +43,5 @@ add_library(advancedrename_src OBJECT ${libadvancedrename_SRCS})
 
 target_compile_definitions(advancedrename_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

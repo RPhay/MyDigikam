@@ -233,6 +233,6 @@ add_library(digikamdatabasemain_src OBJECT ${libdatabasemain_SRCS})
 
 target_compile_definitions(digikamdatabasemain_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )
 

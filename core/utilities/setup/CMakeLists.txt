@@ -7,6 +7,16 @@
 
 APPLY_COMMON_POLICIES()
 
+include_directories($<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
+
+                    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF5::WidgetsAddons,INTERFACE_INCLUDE_DIRECTORIES>
+                    $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
+)
+
+
 set(libsetupshowfoto_SRCS
     editor/setupeditoriface.cpp
     editor/setupiofiles.cpp
@@ -14,6 +24,16 @@ set(libsetupshowfoto_SRCS
     setupicc.cpp
     setupslideshow.cpp
 )
+
+# Used by digikamcore
+add_library(setupshowfoto_src OBJECT  ${libsetupshowfoto_SRCS})
+
+target_compile_definitions(setupshowfoto_src
+                           PRIVATE
+                           digikamcore_EXPORTS
+)
+
+# ---------------------------------------------------------------------
 
 set(libsetup_SRCS
     setupicc.cpp
@@ -56,22 +76,10 @@ set(libsetup_SRCS
     camera/cameratype.cpp
 )
 
-include_directories($<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
-
-                    $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::WidgetsAddons,INTERFACE_INCLUDE_DIRECTORIES>
-                    $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
-)
-
 # Used by digikamgui
-add_library(setup_src OBJECT ${libsetup_SRCS} ${libsetupshowfoto_SRCS})
+add_library(setup_src OBJECT ${libsetup_SRCS})
 
 target_compile_definitions(setup_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )
-
-# Used by showfoto
-add_library(setupshowfoto_src OBJECT  ${libsetupshowfoto_SRCS})

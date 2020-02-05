@@ -35,7 +35,7 @@ namespace Digikam
 class ItemInfo;
 class ItemInfoList;
 
-class DIGIKAM_EXPORT GroupingViewImplementation
+class DIGIKAM_GUI_EXPORT GroupingViewImplementation
 {
 
 public:

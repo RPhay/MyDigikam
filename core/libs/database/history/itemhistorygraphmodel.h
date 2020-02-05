@@ -32,7 +32,7 @@
 
 #include "dragdropimplementations.h"
 #include "itemhistorygraph.h"
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {

@@ -35,7 +35,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT CameraNameHelper
+class DIGIKAM_GUI_EXPORT CameraNameHelper
 {
 
 public:

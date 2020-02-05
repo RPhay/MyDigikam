@@ -41,7 +41,7 @@ namespace Digikam
 
 class ItemInfo;
 
-class DIGIKAM_EXPORT IOJob : public ActionJob
+class DIGIKAM_GUI_EXPORT IOJob : public ActionJob
 {
     Q_OBJECT
 
@@ -57,7 +57,7 @@ Q_SIGNALS:
 
 // ---------------------------------------
 
-class DIGIKAM_EXPORT CopyOrMoveJob : public IOJob
+class DIGIKAM_GUI_EXPORT CopyOrMoveJob : public IOJob
 {
     Q_OBJECT
 
@@ -76,7 +76,7 @@ private:
 
 // ---------------------------------------
 
-class DIGIKAM_EXPORT DeleteJob : public IOJob
+class DIGIKAM_GUI_EXPORT DeleteJob : public IOJob
 {
     Q_OBJECT
 
@@ -95,7 +95,7 @@ private:
 
 // ---------------------------------------
 
-class DIGIKAM_EXPORT RenameFileJob : public IOJob
+class DIGIKAM_GUI_EXPORT RenameFileJob : public IOJob
 {
     Q_OBJECT
 
@@ -118,7 +118,7 @@ private:
 
 // ----------------------------------------------
 
-class DIGIKAM_EXPORT DTrashItemsListingJob : public IOJob
+class DIGIKAM_GUI_EXPORT DTrashItemsListingJob : public IOJob
 {
     Q_OBJECT
 
@@ -141,7 +141,7 @@ private:
 
 // ----------------------------------------------
 
-class DIGIKAM_EXPORT RestoreDTrashItemsJob : public IOJob
+class DIGIKAM_GUI_EXPORT RestoreDTrashItemsJob : public IOJob
 {
     Q_OBJECT
 
@@ -160,7 +160,7 @@ private:
 
 // ----------------------------------------------
 
-class DIGIKAM_EXPORT DeleteDTrashItemsJob : public IOJob
+class DIGIKAM_GUI_EXPORT DeleteDTrashItemsJob : public IOJob
 {
     Q_OBJECT
 

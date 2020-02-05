@@ -42,7 +42,7 @@ namespace Digikam
  * with the exception that a QTimeEdit is placed directly
  * besides it.
  */
-class DIGIKAM_EXPORT DDateTimeEdit : public DHBox
+class DIGIKAM_GUI_EXPORT DDateTimeEdit : public DHBox
 {
     Q_OBJECT
 

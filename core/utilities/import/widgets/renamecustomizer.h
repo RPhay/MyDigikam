@@ -42,7 +42,7 @@ namespace Digikam
 
 class AdvancedRenameManager;
 
-class DIGIKAM_EXPORT RenameCustomizer : public QWidget
+class DIGIKAM_GUI_EXPORT RenameCustomizer : public QWidget
 {
     Q_OBJECT
 

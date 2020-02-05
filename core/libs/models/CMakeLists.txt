@@ -7,19 +7,6 @@
 
 APPLY_COMMON_POLICIES()
 
-set(libalbummodels_SRCS
-    itemalbummodel.cpp
-    itemalbumfiltermodel.cpp
-    abstractalbummodel.cpp
-    albummodel.cpp
-    albumfiltermodel.cpp
-    albummodeldragdrophandler.cpp
-)
-
-set(libgenericmodels_SRCS
-    categorizeditemmodel.cpp
-)
-
 include_directories(
     $<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
@@ -35,6 +22,12 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
+# ---------------------------------------------------------------------
+
+set(libgenericmodels_SRCS
+    categorizeditemmodel.cpp
+)
+
 # Used by digikamcore
 add_library(digikamgenericmodels_src OBJECT ${libgenericmodels_SRCS})
 
@@ -43,10 +36,21 @@ target_compile_definitions(digikamgenericmodels_src
                            digikamcore_EXPORTS
 )
 
+# ---------------------------------------------------------------------
+
+set(libalbummodels_SRCS
+    itemalbummodel.cpp
+    itemalbumfiltermodel.cpp
+    abstractalbummodel.cpp
+    albummodel.cpp
+    albumfiltermodel.cpp
+    albummodeldragdrophandler.cpp
+)
+
 # Used by digikamgui
-add_library(digikammodels_src OBJECT ${libalbummodels_SRCS} ${libgenericmodels_SRCS})
+add_library(digikammodels_src OBJECT ${libalbummodels_SRCS})
 
 target_compile_definitions(digikammodels_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

@@ -163,7 +163,7 @@ target_compile_definitions(digikamwidgetscore_src
                            digikamcore_EXPORTS
 )
 
-#############################################################"
+#############################################################
 
 set(libimagehistory_SRCS
     history/filtershistorywidget.cpp
@@ -178,5 +178,5 @@ add_library(imagehistorywidgets_src OBJECT ${libimagehistory_SRCS})
 
 target_compile_definitions(imagehistorywidgets_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

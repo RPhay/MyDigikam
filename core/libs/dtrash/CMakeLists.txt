@@ -26,5 +26,5 @@ add_library(dtrash_src OBJECT ${libdtrash_SRCS})
 
 target_compile_definitions(dtrash_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

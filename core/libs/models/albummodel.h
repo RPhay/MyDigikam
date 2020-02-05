@@ -36,7 +36,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT AlbumModel : public AbstractCheckableAlbumModel
+class DIGIKAM_GUI_EXPORT AlbumModel : public AbstractCheckableAlbumModel
 {
 public:
 
@@ -55,7 +55,7 @@ protected:
 
 // ------------------------------------------------------------------
 
-class DIGIKAM_EXPORT TagModel : public AbstractCheckableAlbumModel
+class DIGIKAM_GUI_EXPORT TagModel : public AbstractCheckableAlbumModel
 {
 public:
 
@@ -92,7 +92,7 @@ private:
 
 // ------------------------------------------------------------------
 
-class DIGIKAM_EXPORT SearchModel : public AbstractCheckableAlbumModel
+class DIGIKAM_GUI_EXPORT SearchModel : public AbstractCheckableAlbumModel
 {
     Q_OBJECT
 
@@ -140,7 +140,7 @@ protected:
 /**
  * A model for date based albums.
  */
-class DIGIKAM_EXPORT DateAlbumModel : public AbstractCountingAlbumModel
+class DIGIKAM_GUI_EXPORT DateAlbumModel : public AbstractCountingAlbumModel
 {
     Q_OBJECT
 

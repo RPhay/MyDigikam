@@ -67,8 +67,6 @@ set(libdigikamgui_SRCS
     items/utils/groupingviewimplementation.cpp
     items/utils/itemcategorydrawer.cpp
 
-    utils/digikam_debug.cpp
-
     views/tableview/tableview.cpp
     views/tableview/tableview_treeview.cpp
     views/tableview/tableview_treeview_delegate.cpp
@@ -135,7 +133,7 @@ add_library(digikamgui_src
 
 target_compile_definitions(digikamgui_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )
 
 ### digiKam GUI shared library objects declaration ##############################################################################
@@ -144,29 +142,32 @@ set(DIGIKAMGUI_OBJECTS
 
             $<TARGET_OBJECTS:digikamgui_src>
 
+            # Libs
             $<TARGET_OBJECTS:digikamdatabasemain_src>
             $<TARGET_OBJECTS:digikamfacesenginedatabase_src>
             $<TARGET_OBJECTS:digikamdeletedialog_src>
             $<TARGET_OBJECTS:digikamtemplate_src>
             $<TARGET_OBJECTS:itempropertiesdigikam_src>
-            $<TARGET_OBJECTS:setup_src>
-            $<TARGET_OBJECTS:lighttable_src>
-            $<TARGET_OBJECTS:maintenance_src>
-            $<TARGET_OBJECTS:searchwindow_src>
             $<TARGET_OBJECTS:digikammodels_src>
             $<TARGET_OBJECTS:digikamalbum_src>
-            $<TARGET_OBJECTS:firstrun_src>
-            $<TARGET_OBJECTS:fuzzysearch_src>
-            $<TARGET_OBJECTS:imageeditorgui_src>
             $<TARGET_OBJECTS:fileactionmanager_src>
             $<TARGET_OBJECTS:digikamtags_src>
             $<TARGET_OBJECTS:digikamsettings_src>
             $<TARGET_OBJECTS:filters_src>
-            $<TARGET_OBJECTS:importui_src>
-            $<TARGET_OBJECTS:importuibackend_src>
             $<TARGET_OBJECTS:imagehistorywidgets_src>
             $<TARGET_OBJECTS:iojobs_src>
             $<TARGET_OBJECTS:dtrash_src>
+
+            # Utilities
+            $<TARGET_OBJECTS:setup_src>
+            $<TARGET_OBJECTS:lighttable_src>
+            $<TARGET_OBJECTS:maintenance_src>
+            $<TARGET_OBJECTS:searchwindow_src>
+            $<TARGET_OBJECTS:firstrun_src>
+            $<TARGET_OBJECTS:fuzzysearch_src>
+            $<TARGET_OBJECTS:imageeditorgui_src>
+            $<TARGET_OBJECTS:importui_src>
+            $<TARGET_OBJECTS:importuibackend_src>
             $<TARGET_OBJECTS:facemanagement_src>
             $<TARGET_OBJECTS:queuemanager_src>
             $<TARGET_OBJECTS:advancedrename_src>
@@ -176,7 +177,6 @@ if(${Marble_FOUND})
 
     set(DIGIKAMGUI_OBJECTS
         ${DIGIKAMGUI_OBJECTS}
-        $<TARGET_OBJECTS:geomapwrapper_src>
         $<TARGET_OBJECTS:gpssearch_src>
     )
 
@@ -200,6 +200,12 @@ target_compile_definitions(digikamgui
 )
 
 add_dependencies(digikamgui digikamcore digikamdatabase)
+
+# All codes from this target are exported with digikam_gui_export.h header and DIGIKAM_GUI_EXPORT macro.
+generate_export_header(digikamgui
+                       BASE_NAME digikam_gui
+                       EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_gui_export.h"
+)
 
 if(WIN32)
     set_target_properties(digikamgui PROPERTIES COMPILE_FLAGS -DJPEG_STATIC)

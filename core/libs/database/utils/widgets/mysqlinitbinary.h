@@ -31,7 +31,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT MysqlInitBinary : public DBinaryIface
+class DIGIKAM_GUI_EXPORT MysqlInitBinary : public DBinaryIface
 {
 
 public:

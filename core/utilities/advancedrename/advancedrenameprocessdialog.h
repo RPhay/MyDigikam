@@ -39,7 +39,7 @@ namespace Digikam
 
 class LoadingDescription;
 
-class DIGIKAM_EXPORT AdvancedRenameProcessDialog : public DProgressDlg
+class DIGIKAM_GUI_EXPORT AdvancedRenameProcessDialog : public DProgressDlg
 {
     Q_OBJECT
 

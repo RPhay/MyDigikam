@@ -43,7 +43,7 @@ namespace Digikam
 
 class CameraType;
 
-class DIGIKAM_EXPORT CameraList : public QObject
+class DIGIKAM_GUI_EXPORT CameraList : public QObject
 {
     Q_OBJECT
 

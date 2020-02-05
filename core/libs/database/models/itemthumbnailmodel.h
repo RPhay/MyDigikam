@@ -29,7 +29,7 @@
 
 #include "itemmodel.h"
 #include "thumbnailsize.h"
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {

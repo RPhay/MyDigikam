@@ -1,5 +1,5 @@
 /*============================================================
- * 
+ *
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
@@ -7,17 +7,17 @@
  *
  * Copyright (C) 2007 by Daniel M German <dmgerman at uvic doooot ca>
  * Copyright (C) 2012 by Benjamin Girault <benjamin dot girault at gmail dot com>
- * 
+ *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
- * published by the Free Software Foundation; either version 2 of 
+ * published by the Free Software Foundation; either version 2 of
  * the License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
@@ -35,19 +35,19 @@
 
 #include "tparserdebug.h"
 
-int g_debug                  = 0;
+int          g_debug           = 0;
 
-static FILE* g_file          = NULL;
+static FILE* g_file            = NULL;
 
-static int g_eof             = 0;
-static int g_nRow            = 0;
-static int g_nBuffer         = 0;
-static int g_lBuffer         = 0;
-static int g_nTokenStart     = 0;
-static int g_nTokenLength    = 0;
-static int g_nTokenNextStart = 0;
-static char g_buffer[PARSER_MAX_LINE + 1];
-static int g_lMaxBuffer      = PARSER_MAX_LINE;
+static int   g_eof             = 0;
+static int   g_nRow            = 0;
+static int   g_nBuffer         = 0;
+static int   g_lBuffer         = 0;
+static int   g_nTokenStart     = 0;
+static int   g_nTokenLength    = 0;
+static int   g_nTokenNextStart = 0;
+static char  g_buffer[PARSER_MAX_LINE + 1];
+static int   g_lMaxBuffer      = PARSER_MAX_LINE;
 
 extern char* yytext;
 
@@ -56,9 +56,11 @@ int panoScriptScannerGetNextLine(void)
     char* p;
 
     /* Reset line counters */
+
     g_nBuffer         = 0;
     g_nTokenStart     = -1;
     g_nTokenNextStart = 1;
+
     /* Reset marker for end of file */
 
     p                 = fgets(g_buffer, g_lMaxBuffer, g_file);
@@ -136,6 +138,7 @@ int panoScriptScannerGetNextChar(char* b, int maxBuffer)
         return 0;
 
     /* read next line if at the end of the current */
+
     while (g_nBuffer >= g_lBuffer)
     {
         frc = panoScriptScannerGetNextLine();

@@ -39,7 +39,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT RemoveFilterAction : public QAction
+class DIGIKAM_GUI_EXPORT RemoveFilterAction : public QAction
 {
     Q_OBJECT
 
@@ -75,7 +75,7 @@ private:
 
 // -------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT ItemPropertiesHistoryTab : public QWidget
+class DIGIKAM_GUI_EXPORT ItemPropertiesHistoryTab : public QWidget
 {
     Q_OBJECT
 

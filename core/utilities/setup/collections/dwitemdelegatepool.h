@@ -45,7 +45,7 @@ namespace Digikam
 class DWItemDelegate;
 class DWItemDelegatePoolPrivate;
 
-class DIGIKAM_EXPORT DWItemDelegatePool
+class DIGIKAM_GUI_EXPORT DWItemDelegatePool
 {
 public:
 

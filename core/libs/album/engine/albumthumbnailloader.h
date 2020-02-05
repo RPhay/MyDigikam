@@ -41,7 +41,7 @@ class TAlbum;
 class PAlbum;
 class LoadingDescription;
 
-class DIGIKAM_EXPORT AlbumThumbnailLoader : public QObject
+class DIGIKAM_GUI_EXPORT AlbumThumbnailLoader : public QObject
 {
     Q_OBJECT
 

@@ -41,7 +41,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT AlbumFilterModel : public QSortFilterProxyModel
+class DIGIKAM_GUI_EXPORT AlbumFilterModel : public QSortFilterProxyModel
 {
     Q_OBJECT
 
@@ -285,7 +285,7 @@ protected:
  * Filter model for checkable album models that allows more filtering options
  * based on check state.
  */
-class DIGIKAM_EXPORT CheckableAlbumFilterModel : public AlbumFilterModel
+class DIGIKAM_GUI_EXPORT CheckableAlbumFilterModel : public AlbumFilterModel
 {
     Q_OBJECT
 
@@ -318,7 +318,7 @@ protected:
 /**
  * Filter model for searches that can filter by search type
  */
-class DIGIKAM_EXPORT SearchFilterModel : public CheckableAlbumFilterModel
+class DIGIKAM_GUI_EXPORT SearchFilterModel : public CheckableAlbumFilterModel
 {
     Q_OBJECT
 
@@ -367,7 +367,7 @@ protected:
 /**
  * Filter model for tags that can filter by tag property
  */
-class DIGIKAM_EXPORT TagPropertiesFilterModel : public CheckableAlbumFilterModel
+class DIGIKAM_GUI_EXPORT TagPropertiesFilterModel : public CheckableAlbumFilterModel
 {
     Q_OBJECT
 
@@ -401,7 +401,7 @@ protected:
 
 // -----------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT TagsManagerFilterModel : public TagPropertiesFilterModel
+class DIGIKAM_GUI_EXPORT TagsManagerFilterModel : public TagPropertiesFilterModel
 {
     Q_OBJECT
 

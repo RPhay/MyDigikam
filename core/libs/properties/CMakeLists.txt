@@ -7,38 +7,6 @@
 
 APPLY_COMMON_POLICIES()
 
-set(libitemproperties_SRCS
-    itempropertiessidebar.cpp
-    itempropertiestab.cpp
-    itempropertiesmetadatatab.cpp
-    itempropertiescolorstab.cpp
-    itempropertiestxtlabel.cpp
-)
-
-set(libitemversionssidebar_SRCS
-    history/itempropertiesversionstab.cpp
-    history/versionstreeview.cpp
-    history/versionsoverlays.cpp
-    history/versionsdelegate.cpp
-)
-
-if(${Marble_FOUND})
-    set(libitemproperties_SRCS
-        ${libitemproperties_SRCS}
-        geolocation/itempropertiesgpstab.cpp
-        geolocation/itemgpsmodelhelper.cpp
-   )
-endif()
-
-set(libitempropertiesdigikam_SRCS
-    itempropertiessidebardb.cpp
-    import/importitempropertiessidebar.cpp
-    import/importitempropertiestab.cpp
-    captions/itemdescedittab.cpp
-    captions/disjointmetadata.cpp
-    captions/captionedit.cpp
-)
-
 include_directories(
     $<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
@@ -54,6 +22,22 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
+set(libitemproperties_SRCS
+    itempropertiessidebar.cpp
+    itempropertiestab.cpp
+    itempropertiesmetadatatab.cpp
+    itempropertiescolorstab.cpp
+    itempropertiestxtlabel.cpp
+)
+
+if(${Marble_FOUND})
+    set(libitemproperties_SRCS
+        ${libitemproperties_SRCS}
+        geolocation/itempropertiesgpstab.cpp
+        geolocation/itemgpsmodelhelper.cpp
+   )
+endif()
+
 # Used by digikamcore
 add_library(itemproperties_src OBJECT ${libitemproperties_SRCS})
 
@@ -62,10 +46,27 @@ target_compile_definitions(itemproperties_src
                            digikamcore_EXPORTS
 )
 
+set(libitemversionssidebar_SRCS
+    history/itempropertiesversionstab.cpp
+    history/versionstreeview.cpp
+    history/versionsoverlays.cpp
+    history/versionsdelegate.cpp
+)
+
+set(libitempropertiesdigikam_SRCS
+    itempropertiessidebardb.cpp
+    import/importitempropertiessidebar.cpp
+    import/importitempropertiestab.cpp
+    captions/itemdescedittab.cpp
+    captions/disjointmetadata.cpp
+    captions/captionedit.cpp
+)
+
+
 # Used by digikamgui
 add_library(itempropertiesdigikam_src OBJECT ${libitemversionssidebar_SRCS} ${libitempropertiesdigikam_SRCS})
 
 target_compile_definitions(itempropertiesdigikam_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

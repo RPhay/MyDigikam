@@ -33,5 +33,5 @@ add_library(digikamsettings_src OBJECT ${libsettings_SRCS})
 
 target_compile_definitions(digikamsettings_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

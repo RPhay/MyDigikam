@@ -32,7 +32,7 @@
 #include "haariface.h"
 #include "itemlisterrecord.h"
 #include "actionthreadbase.h"
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {

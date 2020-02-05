@@ -34,7 +34,7 @@ namespace Digikam
 
 class Template;
 
-class DIGIKAM_EXPORT TemplateSelector : public DHBox
+class DIGIKAM_GUI_EXPORT TemplateSelector : public DHBox
 {
     Q_OBJECT
 

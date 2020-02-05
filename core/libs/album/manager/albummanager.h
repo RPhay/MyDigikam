@@ -69,7 +69,7 @@ class ImageTagChangeset;
  * updating icons and moving Albums.
  *
  */
-class DIGIKAM_EXPORT AlbumManager : public QObject
+class DIGIKAM_GUI_EXPORT AlbumManager : public QObject
 {
     Q_OBJECT
 

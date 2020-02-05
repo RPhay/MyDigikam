@@ -51,7 +51,6 @@ ecm_add_app_icon(showfoto_SRCS ICONS ${ICONS_SRCS})
 
 add_executable(showfoto ${showfoto_SRCS}
                         $<TARGET_OBJECTS:setupshowfoto_src>
-                        $<TARGET_OBJECTS:notificationmanager_src>
 )
 
 add_dependencies(showfoto digikam-gitversion)

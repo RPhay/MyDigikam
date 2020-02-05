@@ -35,7 +35,7 @@
 
 // Local includes
 
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 #include "coredbaccess.h"
 #include "coredbalbuminfo.h"
 #include "collectionscannerhints.h"

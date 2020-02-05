@@ -45,7 +45,7 @@ class Album;
 class AlbumManager;
 class AlbumModelDragDropHandler;
 
-class DIGIKAM_EXPORT AbstractAlbumModel : public QAbstractItemModel
+class DIGIKAM_GUI_EXPORT AbstractAlbumModel : public QAbstractItemModel
 {
     Q_OBJECT
 
@@ -224,7 +224,7 @@ private:
 
 // ------------------------------------------------------------------
 
-class DIGIKAM_EXPORT AbstractSpecificAlbumModel : public AbstractAlbumModel
+class DIGIKAM_GUI_EXPORT AbstractSpecificAlbumModel : public AbstractAlbumModel
 {
     Q_OBJECT
 
@@ -258,7 +258,7 @@ protected:
 
 // ------------------------------------------------------------------
 
-class DIGIKAM_EXPORT AbstractCountingAlbumModel : public AbstractSpecificAlbumModel
+class DIGIKAM_GUI_EXPORT AbstractCountingAlbumModel : public AbstractSpecificAlbumModel
 {
     Q_OBJECT
 
@@ -344,7 +344,7 @@ private:
 
 // ------------------------------------------------------------------
 
-class DIGIKAM_EXPORT AbstractCheckableAlbumModel : public AbstractCountingAlbumModel
+class DIGIKAM_GUI_EXPORT AbstractCheckableAlbumModel : public AbstractCountingAlbumModel
 {
     Q_OBJECT
 

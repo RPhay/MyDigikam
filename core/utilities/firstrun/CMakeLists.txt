@@ -36,5 +36,5 @@ add_library(firstrun_src OBJECT ${libfirstrun_SRCS})
 
 target_compile_definitions(firstrun_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

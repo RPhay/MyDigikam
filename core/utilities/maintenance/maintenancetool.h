@@ -37,7 +37,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT MaintenanceTool : public ProgressItem
+class DIGIKAM_GUI_EXPORT MaintenanceTool : public ProgressItem
 {
     Q_OBJECT
 

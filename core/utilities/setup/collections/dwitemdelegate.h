@@ -56,7 +56,7 @@ class DWItemDelegatePrivate;
  * with items. For instance you can add push buttons, line edits, etc. to your delegate
  * and use them to modify the state of your model.
  */
-class DIGIKAM_EXPORT DWItemDelegate : public QAbstractItemDelegate
+class DIGIKAM_GUI_EXPORT DWItemDelegate : public QAbstractItemDelegate
 {
     Q_OBJECT
 

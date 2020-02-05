@@ -432,4 +432,11 @@ void GeoIface_assert(const char* const condition, const char* const filename, co
     qCDebug(DIGIKAM_GEOIFACE_LOG) << debugString;
 }
 
+// ---------------------------------------------------
+
+int QPointSquareDistance(const QPoint& a, const QPoint& b)
+{
+    return (a.x() - b.x()) * (a.x() - b.x()) + (a.y() - b.y()) * (a.y() - b.y());
+}
+
 } // namespace Digikam

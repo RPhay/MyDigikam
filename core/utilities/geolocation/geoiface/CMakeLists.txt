@@ -102,6 +102,7 @@ endif()
 # Marble translations need explicit loading
 ecm_create_qm_loader(libgeoiface_SRCS marble_qt)
 
+# Used by digikamcore
 add_library(geoiface_src OBJECT ${libgeoiface_SRCS})
 
 target_compile_definitions(geoiface_src

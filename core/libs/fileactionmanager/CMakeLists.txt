@@ -39,5 +39,5 @@ add_library(fileactionmanager_src OBJECT ${fileactionmanager_SRCS})
 
 target_compile_definitions(fileactionmanager_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

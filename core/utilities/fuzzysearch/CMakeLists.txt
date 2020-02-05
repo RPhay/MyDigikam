@@ -35,5 +35,5 @@ add_library(fuzzysearch_src OBJECT ${libfuzzysearch_SRCS})
 
 target_compile_definitions(fuzzysearch_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

@@ -44,7 +44,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT SetupCollectionModel : public QAbstractItemModel
+class DIGIKAM_GUI_EXPORT SetupCollectionModel : public QAbstractItemModel
 {
     Q_OBJECT
 

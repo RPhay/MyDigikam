@@ -39,7 +39,7 @@ class KConfigGroup;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ScriptingSettings : public QWidget
+class DIGIKAM_GUI_EXPORT ScriptingSettings : public QWidget
 {
     Q_OBJECT
 

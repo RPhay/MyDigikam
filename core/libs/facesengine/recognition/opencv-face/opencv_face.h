@@ -53,7 +53,7 @@ namespace Face
 /**
  * @brief Abstract base class for all strategies of prediction result handling
  */
-class DIGIKAM_EXPORT PredictCollector
+class DIGIKAM_GUI_EXPORT PredictCollector
 {
 public:
 
@@ -84,7 +84,7 @@ public:
  * @brief Default predict collector
  * Trace minimal distance with threshold checking (that is default behavior for most predict logic)
  */
-class DIGIKAM_EXPORT StandardCollector : public PredictCollector
+class DIGIKAM_GUI_EXPORT StandardCollector : public PredictCollector
 {
 public:
 
@@ -247,7 +247,7 @@ public:
  * @endcode
  *
  */
-class DIGIKAM_EXPORT FaceRecognizer : public Algorithm
+class DIGIKAM_GUI_EXPORT FaceRecognizer : public Algorithm
 {
 public:
 

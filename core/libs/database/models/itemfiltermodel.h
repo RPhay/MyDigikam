@@ -35,7 +35,7 @@
 #include "itemfiltersettings.h"
 #include "itemmodel.h"
 #include "itemsortsettings.h"
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {

@@ -53,7 +53,7 @@ class DbEngineParameters;
 class VersionManagerSettings;
 class PreviewSettings;
 
-class DIGIKAM_EXPORT ApplicationSettings : public QObject
+class DIGIKAM_GUI_EXPORT ApplicationSettings : public QObject
 {
     Q_OBJECT
 

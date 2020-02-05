@@ -40,7 +40,7 @@ namespace Digikam
 
 class Template;
 
-class DIGIKAM_EXPORT TemplateManager : public QObject
+class DIGIKAM_GUI_EXPORT TemplateManager : public QObject
 {
     Q_OBJECT
 

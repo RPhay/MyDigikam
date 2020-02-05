@@ -62,7 +62,7 @@ class CoreDbUrl;
  * This class provides a means of building a tree representation for
  * Albums @see Album::setParent().
  */
-class DIGIKAM_EXPORT Album
+class DIGIKAM_GUI_EXPORT Album
 {
 public:
 
@@ -354,7 +354,7 @@ private:
  *
  * A Physical Album representation
  */
-class DIGIKAM_EXPORT PAlbum : public Album
+class DIGIKAM_GUI_EXPORT PAlbum : public Album
 {
 public:
 
@@ -412,7 +412,7 @@ private:
  *
  * A Tag Album representation
  */
-class DIGIKAM_EXPORT TAlbum : public Album
+class DIGIKAM_GUI_EXPORT TAlbum : public Album
 {
 public:
 
@@ -451,7 +451,7 @@ private:
  *
  * A Date Album representation
  */
-class DIGIKAM_EXPORT DAlbum : public Album
+class DIGIKAM_GUI_EXPORT DAlbum : public Album
 {
 public:
 
@@ -484,7 +484,7 @@ private:
  *
  * A Search Album representation
  */
-class DIGIKAM_EXPORT SAlbum : public Album
+class DIGIKAM_GUI_EXPORT SAlbum : public Album
 {
 public:
 
@@ -563,7 +563,7 @@ private:
  *
  *  \warning Do not delete albums using this iterator.
  */
-class DIGIKAM_EXPORT AlbumIterator
+class DIGIKAM_GUI_EXPORT AlbumIterator
 {
 public:
 

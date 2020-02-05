@@ -44,7 +44,7 @@ class CameraController;
 
 typedef QPair<CamItemInfo, QPixmap> CachedItem;
 
-class DIGIKAM_EXPORT CameraThumbsCtrl : public QObject
+class DIGIKAM_GUI_EXPORT CameraThumbsCtrl : public QObject
 {
     Q_OBJECT
 

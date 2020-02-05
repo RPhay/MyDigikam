@@ -51,7 +51,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ImportStackedView : public QStackedWidget
+class DIGIKAM_GUI_EXPORT ImportStackedView : public QStackedWidget
 {
     Q_OBJECT
 

@@ -41,7 +41,7 @@ namespace Digikam
 
 class IOJobData;
 
-class DIGIKAM_EXPORT IOJobsManager : public QObject
+class DIGIKAM_GUI_EXPORT IOJobsManager : public QObject
 {
 
 public:

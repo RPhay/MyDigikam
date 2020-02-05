@@ -40,7 +40,7 @@ namespace Digikam
 {
 class Album;
 
-class DIGIKAM_EXPORT ItemViewUtilities : public QObject
+class DIGIKAM_GUI_EXPORT ItemViewUtilities : public QObject
 {
     Q_OBJECT
 

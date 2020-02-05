@@ -31,5 +31,5 @@ add_library(digikamtemplate_src OBJECT  ${libtemplate_SRCS})
 
 target_compile_definitions(digikamtemplate_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

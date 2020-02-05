@@ -26,7 +26,7 @@
 
 #include "haariface.h"
 #include "dbjob.h"
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {

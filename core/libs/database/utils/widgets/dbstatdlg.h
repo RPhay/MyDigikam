@@ -33,7 +33,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DBStatDlg : public InfoDlg
+class DIGIKAM_GUI_EXPORT DBStatDlg : public InfoDlg
 {
 public:
 

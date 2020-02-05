@@ -39,7 +39,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ImportDragDropHandler : public AbstractItemDragDropHandler
+class DIGIKAM_GUI_EXPORT ImportDragDropHandler : public AbstractItemDragDropHandler
 {
     Q_OBJECT
 

@@ -44,7 +44,7 @@
 #include "coredbfields.h"
 #include "coredbaccess.h"
 #include "coredbconstants.h"
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 #include "dbenginesqlquery.h"
 #include "album.h"
 

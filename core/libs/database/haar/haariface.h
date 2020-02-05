@@ -37,7 +37,7 @@
 // Local includes
 
 #include "haar.h"
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 
 class QImage;
 

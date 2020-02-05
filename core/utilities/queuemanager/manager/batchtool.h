@@ -52,7 +52,7 @@ class DPluginBqm;
  */
 typedef QMap<QString, QVariant> BatchToolSettings;
 
-class DIGIKAM_EXPORT BatchTool : public QObject
+class DIGIKAM_GUI_EXPORT BatchTool : public QObject
 {
     Q_OBJECT
 

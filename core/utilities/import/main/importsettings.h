@@ -37,7 +37,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT ImportSettings : public QObject
+class DIGIKAM_GUI_EXPORT ImportSettings : public QObject
 {
     Q_OBJECT
 

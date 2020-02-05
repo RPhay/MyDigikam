@@ -37,7 +37,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT NewItemsFinder : public MaintenanceTool
+class DIGIKAM_GUI_EXPORT NewItemsFinder : public MaintenanceTool
 {
     Q_OBJECT
 

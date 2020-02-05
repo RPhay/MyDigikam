@@ -40,7 +40,7 @@ namespace Digikam
 class ImportDelegate;
 class ICCSettingsContainer;
 
-class DIGIKAM_EXPORT ImportCategorizedView : public ItemViewCategorized
+class DIGIKAM_GUI_EXPORT ImportCategorizedView : public ItemViewCategorized
 {
     Q_OBJECT
 

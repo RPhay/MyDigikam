@@ -37,7 +37,7 @@ namespace Digikam
 class IOJob;
 class IOJobData;
 
-class DIGIKAM_EXPORT IOJobsThread : public ActionThreadBase
+class DIGIKAM_GUI_EXPORT IOJobsThread : public ActionThreadBase
 {
     Q_OBJECT
 

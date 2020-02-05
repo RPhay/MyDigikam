@@ -33,7 +33,7 @@
 
 // Local includes
 
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 #include "iteminfo.h"
 #include "iteminfolist.h"
 #include "coredbaccess.h"

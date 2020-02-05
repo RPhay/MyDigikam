@@ -31,9 +31,9 @@
 namespace Digikam
 {
 
-DIGIKAM_EXPORT void showDigikamComponentsInfo();
+DIGIKAM_GUI_EXPORT void showDigikamComponentsInfo();
 
-DIGIKAM_EXPORT void showDigikamDatabaseStat();
+DIGIKAM_GUI_EXPORT void showDigikamDatabaseStat();
 
 } // namespace Digikam
 

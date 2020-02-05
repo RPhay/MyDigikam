@@ -30,7 +30,7 @@
 #include "itemlisterrecord.h"
 #include "duplicatesprogressobserver.h"
 #include "actionthreadbase.h"
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 
 namespace Digikam
 {

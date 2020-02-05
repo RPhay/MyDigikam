@@ -38,7 +38,7 @@ namespace Digikam
 
 class Template;
 
-class DIGIKAM_EXPORT TemplateViewer : public DExpanderBox
+class DIGIKAM_GUI_EXPORT TemplateViewer : public DExpanderBox
 {
     Q_OBJECT
 

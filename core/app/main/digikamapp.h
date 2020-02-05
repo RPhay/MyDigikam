@@ -52,7 +52,7 @@ class ItemInfo;
 class ItemInfoList;
 class CameraType;
 
-class DIGIKAM_EXPORT DigikamApp : public DXmlGuiWindow
+class DIGIKAM_GUI_EXPORT DigikamApp : public DXmlGuiWindow
 {
     Q_OBJECT
 

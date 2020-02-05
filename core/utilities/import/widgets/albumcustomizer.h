@@ -38,7 +38,7 @@ class KConfigGroup;
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT AlbumCustomizer : public QWidget
+class DIGIKAM_GUI_EXPORT AlbumCustomizer : public QWidget
 {
     Q_OBJECT
 

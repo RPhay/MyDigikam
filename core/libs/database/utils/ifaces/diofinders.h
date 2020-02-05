@@ -41,7 +41,7 @@ namespace Digikam
 
 class ItemInfo;
 
-class DIGIKAM_EXPORT SidecarFinder
+class DIGIKAM_GUI_EXPORT SidecarFinder
 {
 
 public:
@@ -56,7 +56,7 @@ public:
 
 // -----------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT GroupedImagesFinder
+class DIGIKAM_GUI_EXPORT GroupedImagesFinder
 {
 
 public:

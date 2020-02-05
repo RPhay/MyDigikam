@@ -34,5 +34,5 @@ add_library(filters_src OBJECT ${libfilters_SRCS})
 
 target_compile_definitions(filters_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

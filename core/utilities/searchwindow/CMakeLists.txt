@@ -41,5 +41,5 @@ add_library(searchwindow_src OBJECT ${libsearchwindow_SRCS})
 
 target_compile_definitions(searchwindow_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

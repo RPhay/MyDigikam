@@ -36,7 +36,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT VisibilityObject
+class DIGIKAM_GUI_EXPORT VisibilityObject
 {
 public:
 
@@ -50,7 +50,7 @@ public:
 
 // -----------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT VisibilityController : public QObject
+class DIGIKAM_GUI_EXPORT VisibilityController : public QObject
 {
     Q_OBJECT
 

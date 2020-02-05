@@ -48,7 +48,7 @@ namespace Digikam
 
 class Parser;
 
-class DIGIKAM_EXPORT AdvancedRenameListItem : public QTreeWidgetItem
+class DIGIKAM_GUI_EXPORT AdvancedRenameListItem : public QTreeWidgetItem
 {
 public:
 
@@ -92,7 +92,7 @@ private:
 typedef QPair<QUrl, QString> NewNameInfo;
 typedef QList<NewNameInfo>   NewNamesList;
 
-class DIGIKAM_EXPORT AdvancedRenameDialog : public QDialog
+class DIGIKAM_GUI_EXPORT AdvancedRenameDialog : public QDialog
 {
     Q_OBJECT
 

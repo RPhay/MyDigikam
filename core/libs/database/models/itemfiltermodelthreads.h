@@ -30,7 +30,7 @@
 
 // Local includes
 
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 #include "workerobject.h"
 #include "itemfiltermodel.h"
 

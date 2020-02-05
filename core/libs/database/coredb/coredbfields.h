@@ -40,7 +40,7 @@
 
 // Local includes
 
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 
 #ifdef HAVE_DBUS
 class QDBusArgument;

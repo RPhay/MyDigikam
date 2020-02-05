@@ -50,5 +50,5 @@ add_library(facemanagement_src OBJECT ${libfacemanagement_SRCS})
 
 target_compile_definitions(facemanagement_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

@@ -35,7 +35,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT SetupCollections : public QScrollArea
+class DIGIKAM_GUI_EXPORT SetupCollections : public QScrollArea
 {
 
 public:

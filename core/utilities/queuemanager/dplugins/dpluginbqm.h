@@ -38,7 +38,7 @@
 namespace Digikam
 {
 
-class DIGIKAM_EXPORT DPluginBqm : public DPlugin
+class DIGIKAM_GUI_EXPORT DPluginBqm : public DPlugin
 {
     Q_OBJECT
 

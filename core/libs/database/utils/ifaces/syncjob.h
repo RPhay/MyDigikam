@@ -44,7 +44,7 @@ class TAlbum;
 
 // -------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT SyncJob : public QObject
+class DIGIKAM_GUI_EXPORT SyncJob : public QObject
 {
     Q_OBJECT
 

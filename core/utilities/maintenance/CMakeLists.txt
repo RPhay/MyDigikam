@@ -46,5 +46,5 @@ add_library(maintenance_src OBJECT ${libmaintenance_SRCS})
 
 target_compile_definitions(maintenance_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )

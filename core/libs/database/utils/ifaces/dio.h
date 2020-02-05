@@ -45,7 +45,7 @@ class ItemInfo;
 class IOJobData;
 class ProgressItem;
 
-class DIGIKAM_EXPORT DIO : public QObject
+class DIGIKAM_GUI_EXPORT DIO : public QObject
 {
     Q_OBJECT
 

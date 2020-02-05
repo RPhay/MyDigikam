@@ -38,7 +38,7 @@
 
 #include "iteminfo.h"
 #include "itemfiltermodel.h"
-#include "digikam_database_export.h"
+#include "digikam_export.h"
 
 // NOTE: we need the EXPORT macro in a private header because
 // this private header is shared across binary objects.

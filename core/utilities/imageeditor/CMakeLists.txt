@@ -29,6 +29,8 @@ if(Gphoto2_FOUND)
     include_directories(${GPHOTO2_INCLUDE_DIRS})
 endif()
 
+# ------------------------------------------------------------------------------------
+
 set(libeditorwidgets_SRCS
     widgets/imageguidewidget.cpp
     widgets/imagepreviewitem.cpp
@@ -45,16 +47,6 @@ set(libeditordlg_SRCS
     dialogs/softproofdialog.cpp
     dialogs/versioningpromptusersavedlg.cpp
 )
-
-set(libeditorgui_SRCS
-    main/imagewindow.cpp
-    main/imagewindow_setup.cpp
-    main/imagewindow_config.cpp
-    main/imagewindow_tools.cpp
-    main/imagewindow_import.cpp
-)
-
-install(FILES main/imageeditorui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)
 
 set(libeditorcore_SRCS
     core/undocache.cpp
@@ -85,10 +77,22 @@ target_compile_definitions(imageeditor_src
                            digikamcore_EXPORTS
 )
 
+# ------------------------------------------------------------------------------------
+
+set(libeditorgui_SRCS
+    main/imagewindow.cpp
+    main/imagewindow_setup.cpp
+    main/imagewindow_config.cpp
+    main/imagewindow_tools.cpp
+    main/imagewindow_import.cpp
+)
+
 # Used by digikamgui
 add_library(imageeditorgui_src OBJECT ${libeditorgui_SRCS})
 
 target_compile_definitions(imageeditorgui_src
                            PRIVATE
-                           digikamcore_EXPORTS
+                           digikamgui_EXPORTS
 )
+
+install(FILES main/imageeditorui5.rc DESTINATION ${KXMLGUI_INSTALL_DIR}/digikam)
