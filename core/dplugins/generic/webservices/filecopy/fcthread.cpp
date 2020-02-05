@@ -24,9 +24,12 @@
 
 #include "fcthread.h"
 
+// Qt includes
+
+#include <QMap>
+
 // Local includes
 
-#include "dinfointerface.h"
 #include "fctask.h"
 
 namespace DigikamGenericFileCopyPlugin
@@ -70,7 +73,9 @@ void FCThread::createCopyJobs(const QList<QUrl>& itemsList,
 void FCThread::cancel()
 {
     if (isRunning())
+    {
         emit signalCancelTask();
+    }
 
     ActionThreadBase::cancel();
 }

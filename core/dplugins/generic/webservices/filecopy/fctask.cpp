@@ -105,7 +105,7 @@ void FCTask::run()
 
     bool ok = false;
 
-    if       (d->behavior == CopyFile)
+    if      (d->behavior == CopyFile)
     {
         ok = QFile::copy(d->srcUrl.toLocalFile(),
                          dest.toLocalFile());

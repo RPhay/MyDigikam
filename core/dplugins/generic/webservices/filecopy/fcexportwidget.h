@@ -30,7 +30,6 @@
 #include <QButtonGroup>
 #include <QCheckBox>
 #include <QWidget>
-#include <QList>
 #include <QUrl>
 
 // Local includes
