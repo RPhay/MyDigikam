@@ -6,7 +6,7 @@ Notice to make release tarballs from GIT
 
 2/  Commit last changes from source code to GIT. The code MUST compile in all cases.
 
-3/  Update the release info in top of core/CMakeLists.txt and commit it to GIT.
+3/  Update the release info in top level CMakeLists.txt and commit to GIT.
 
 4/  Update NEWS file. If ChangeLog is a dry historical record of development,
     NEWS should focus on the improvements and changes, summarize everything since
