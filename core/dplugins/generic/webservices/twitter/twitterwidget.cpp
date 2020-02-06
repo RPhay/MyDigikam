@@ -55,7 +55,9 @@ void TwWidget::updateLabels(const QString& name, const QString& url)
     QString web(QLatin1String("https://www.twitter.com/"));
 
     if (!url.isEmpty())
+    {
         web = url;
+    }
 
     getHeaderLbl()->setText(QString::fromLatin1(
         "<b><h2><a href='%1'>"

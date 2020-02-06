@@ -55,12 +55,12 @@ class Q_DECL_HIDDEN TwWindow::Private
 public:
 
     explicit Private()
+      : imagesCount(0),
+        imagesTotal(0),
+        widget(nullptr),
+        albumDlg(nullptr),
+        talker(nullptr)
     {
-        imagesCount = 0;
-        imagesTotal = 0;
-        widget      = nullptr;
-        albumDlg    = nullptr;
-        talker      = nullptr;
     }
 
     unsigned int   imagesCount;
@@ -101,10 +101,10 @@ TwWindow::TwWindow(DInfoInterface* const iface,
 
     connect(d->widget->getNewAlbmBtn(), SIGNAL(clicked()),
             this, SLOT(slotNewAlbumRequest()));
-
-    //connect(d->widget->getReloadBtn(), SIGNAL(clicked()),
-            //this, SLOT(slotReloadAlbumsRequest()));
-
+/*
+    connect(d->widget->getReloadBtn(), SIGNAL(clicked()),
+            this, SLOT(slotReloadAlbumsRequest()));
+*/
     connect(startButton(), SIGNAL(clicked()),
             this, SLOT(slotStartTransfer()));
 
@@ -243,8 +243,7 @@ void TwWindow::slotListAlbumsDone(const QList<QPair<QString,QString> >& list)
 
     for (int i = 0 ; i < list.size() ; ++i)
     {
-        d->widget->getAlbumsCoB()->addItem(
-            QIcon::fromTheme(QLatin1String("system-users")),
+        d->widget->getAlbumsCoB()->addItem(QIcon::fromTheme(QLatin1String("system-users")),
         list.value(i).second, list.value(i).first);
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "slotListAlbumsDone:" << list.value(i).second << " " << list.value(i).first;
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "slotListAlbumsDone:" <<d->currentAlbumName;
@@ -311,8 +310,7 @@ void TwWindow::slotStartTransfer()
     d->widget->progressBar()->setValue(0);
     d->widget->progressBar()->show();
     d->widget->progressBar()->progressScheduled(i18n("Twitter export"), true, true);
-    d->widget->progressBar()->progressThumbnailChanged(
-        QIcon::fromTheme(QLatin1String("twitter")).pixmap(22, 22));
+    d->widget->progressBar()->progressThumbnailChanged(QIcon::fromTheme(QLatin1String("twitter")).pixmap(22, 22));
 
     uploadNextPhoto();
 }
@@ -368,6 +366,7 @@ void TwWindow::slotAddPhotoFailed(const QString& msg)
 void TwWindow::slotAddPhotoSucceeded()
 {
     // Remove photo uploaded from the list
+
     d->widget->imagesList()->removeItemByUrl(d->transferQueue.first());
     d->transferQueue.pop_front();
     d->imagesCount++;
@@ -390,7 +389,9 @@ void TwWindow::slotNewAlbumRequest()
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "slotNewAlbumRequest:" << newAlbum.title;
         d->currentAlbumName = d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString();
         QString temp = d->currentAlbumName + newAlbum.title;
-        //d->talker->createFolder(temp);
+/*
+        d->talker->createFolder(temp);
+*/
     }
 }
 
@@ -416,7 +417,9 @@ void TwWindow::slotSignalLinkingFailed()
 
 void TwWindow::slotSignalLinkingSucceeded()
 {
-    //d->talker->listFolders();
+/*
+    d->talker->listFolders();
+*/
     emit slotBusy(false);
 }
 
@@ -432,7 +435,9 @@ void TwWindow::slotCreateFolderFailed(const QString& msg)
 
 void TwWindow::slotCreateFolderSucceeded()
 {
-    //d->talker->listFolders();
+/*
+    d->talker->listFolders();
+*/
 }
 
 void TwWindow::slotTransferCancel()

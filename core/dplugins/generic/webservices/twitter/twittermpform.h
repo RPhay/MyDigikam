@@ -51,9 +51,9 @@ public:
     void finish();
     QByteArray border();
 
-    int numberOfChunks() const;
-    QString contentType() const;
-    QByteArray formData() const;
+    int numberOfChunks()           const;
+    QString contentType()          const;
+    QByteArray formData()          const;
     QByteArray getChunk(int index) const;
 
 private:
@@ -62,8 +62,8 @@ private:
 
 private:
 
-    QByteArray m_buffer;
-    QByteArray m_boundary;
+    QByteArray        m_buffer;
+    QByteArray        m_boundary;
     QList<QByteArray> m_chunks;
 };
 

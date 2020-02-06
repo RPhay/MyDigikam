@@ -57,7 +57,9 @@ Q_SIGNALS:
 
 private Q_SLOTS:
 
-    //void slotReloadAlbumsRequest();
+/*
+    void slotReloadAlbumsRequest();
+*/
 
 private:
 
