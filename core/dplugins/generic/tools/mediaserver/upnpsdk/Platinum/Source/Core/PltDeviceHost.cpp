@@ -32,6 +32,10 @@
 |
 ****************************************************************/
 
+#if defined(_MSC_VER)
+#   pragma warning(disable : 4102)
+#endif
+
 /*----------------------------------------------------------------------
 |   includes
 +---------------------------------------------------------------------*/
@@ -728,9 +732,9 @@ PLT_DeviceHost::ProcessHttpSubscriberRequest(NPT_HttpRequest&              reque
             if (nt || callback_urls) {
                 goto cleanup;
             }
-          
+
             // default lease
-            NPT_Int32 timeout = *PLT_Constants::GetInstance().GetDefaultSubscribeLease().AsPointer();
+            NPT_Int32 timeout = (NPT_Int32)*PLT_Constants::GetInstance().GetDefaultSubscribeLease().AsPointer();
 
             // subscription renewed
             // send the info to the service
@@ -753,7 +757,7 @@ PLT_DeviceHost::ProcessHttpSubscriberRequest(NPT_HttpRequest&              reque
             }
 
             // default lease time
-            NPT_Int32 timeout = *PLT_Constants::GetInstance().GetDefaultSubscribeLease().AsPointer();
+            NPT_Int32 timeout = (NPT_Int32)*PLT_Constants::GetInstance().GetDefaultSubscribeLease().AsPointer();
 
             // send the info to the service
             service->ProcessNewSubscription(m_TaskManager,
@@ -778,7 +782,7 @@ PLT_DeviceHost::ProcessHttpSubscriberRequest(NPT_HttpRequest&              reque
                                                response);
             return NPT_SUCCESS;
         }
-        
+
         response.SetStatus(412, "Precondition failed");
         return NPT_SUCCESS;
     }
