@@ -49,13 +49,16 @@ using namespace Digikam;
 
 // --------------------------------------------------------------------------------------------------
 
-// Function to return the
-// intersection vector of v1 and v2
+/**
+ * Function to return the
+ * intersection vector of v1 and v2
+ */
 void intersection(const std::vector<int>& v1,
                   const std::vector<int>& v2,
                   std::vector<int>& vout)
 {
     // Find the intersection of the two sets
+
     std::set_intersection(v1.begin(), v1.end(), v2.begin(), v2.end(),
                           std::inserter(vout, vout.begin()));
 }
@@ -65,25 +68,31 @@ double jaccard_distance(const std::vector<int>& v1,
                         const std::vector<int>& v2)
 {
     // Sizes of both the sets
+
     double size_v1       = v1.size();
     double size_v2       = v2.size();
 
     // Get the intersection set
+
     std::vector<int> intersect;
     intersection(v1, v2, intersect);
 
     // Size of the intersection set
+
     double size_in       = intersect.size();
 
     // Calculate the Jaccard index
     // using the formula
+
     double jaccard_index = size_in / (size_v1 + size_v2 - size_in);
 
     // Calculate the Jaccard distance
     // using the formula
+
     double jaccard_dist  = 1 - jaccard_index;
 
     // Return the Jaccard distance
+
     return jaccard_dist;
 }
 
@@ -315,7 +324,8 @@ int main(int argc, char* argv[])
     CoreDbAccess::setParameters(prm, CoreDbAccess::MainApplication);
     RecognitionDatabase db;
     db.activeFaceRecognizer(RecognitionDatabase::RecognizeAlgorithm::DNN);
-    db.setRecognizerThreshold(0.91); // This is sensitive for the performance of face clustering
+
+    db.setRecognizerThreshold(0.91F);       // This is sensitive for the performance of face clustering
 
     // Construct test set, data set
 
@@ -329,6 +339,7 @@ int main(int argc, char* argv[])
     FaceDetector detector;
 
     // Evaluation metrics
+
     unsigned totalClustered    = 0;
     unsigned elapsedClustering = 0;
 
