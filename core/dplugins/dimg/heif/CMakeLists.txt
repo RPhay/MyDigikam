@@ -76,6 +76,8 @@ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/libde265/de265-version.h.in"
                "${CMAKE_CURRENT_BINARY_DIR}/libde265/de265-version.h"
 )
 
+add_definitions(-DLIBHEIF_STATIC_BUILD)
+
 set(libheif_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/libheif/bitstream.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/libheif/box.cc
