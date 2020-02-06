@@ -9,6 +9,7 @@ SlideShow     : Add new shuffle mode.
 HTMLGallery   : Add new theme "Html5Responsive".
 General       : Update internal libraw engine to last 201910 snapshot aka next 0.20.0 release (https://www.libraw.org/news/libraw-snapshot-201910)
 General       : All bundles have switched to last Qt 5.14.0. Linux and MacOS use QtWebEngine instead QtWebKit.
+General       : Add Microsoft Visual C++ support and a Continuous Integration workflow to check code with this compiler.
 
 *****************************************************************************************************
 BUGFIXES:
