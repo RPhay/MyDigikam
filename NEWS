@@ -620,4 +620,5 @@ BUGFIXES:
 604 ==> 417100 - kbuildsycoca5 cannot be started under MacOS 10.11.6 when digiKam PKG is installed.
 605 ==> 417136 - Export pictures by creating symlinks (e.g. for a best-of-selection on filesystem).
 606 ==> 417178 - Export pictures by creating "relative" symlinks.
-607 ==> 
+607 ==> 417221 - "Tags Filter" not honouring "AND" modifier.
+608 ==> 

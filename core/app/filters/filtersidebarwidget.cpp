@@ -236,10 +236,8 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
                                         notfaceTaggedTitle));
 
     d->faceOptionsMenu = new QMenu(d->faceOptionsBtn);
-    d->tagOrCondAction = d->faceOptionsMenu->addAction(i18n("OR"));
-    d->tagOrCondAction->setCheckable(true);
-    d->tagAndCondAction = d->faceOptionsMenu->addAction(i18n("AND"));
-    d->tagAndCondAction->setCheckable(true);
+    d->faceOptionsMenu->addAction(d->tagOrCondAction);
+    d->faceOptionsMenu->addAction(d->tagAndCondAction);
     d->faceOptionsBtn->setMenu(d->faceOptionsMenu);
 
     QGridLayout* const lay5 = new QGridLayout(box5);
@@ -308,7 +306,13 @@ FilterSideBarWidget::FilterSideBarWidget(QWidget* const parent, TagModel* const 
     connect(d->tagOptionsMenu, SIGNAL(triggered(QAction*)),
             this, SLOT(slotTagOptionsTriggered(QAction*)));
 
+    connect(d->faceOptionsMenu, SIGNAL(triggered(QAction*)),
+            this, SLOT(slotTagOptionsTriggered(QAction*)));
+
     connect(d->tagOptionsMenu, SIGNAL(aboutToShow()),
+            this, SLOT(slotTagOptionsMenu()));
+
+    connect(d->faceOptionsMenu, SIGNAL(aboutToShow()),
             this, SLOT(slotTagOptionsMenu()));
 
     connect(d->ratingFilter, SIGNAL(signalRatingFilterChanged(int,ItemFilterSettings::RatingCondition,bool)),
