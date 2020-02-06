@@ -1,10 +1,11 @@
 ![](https://c1.staticflickr.com/1/822/26082076957_5ff0796a99_o.png) digiKam - Professional Photo Management with the Power of Open Source
 
-| Job           | Status                                                                                                                                                                                          |
-|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Linux Build   | [![Linux Build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20SUSEQt5.12/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20SUSEQt5.12/)         |
-| FreeBSD build | [![FreeBSD Build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20FreeBSDQt5.13/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20FreeBSDQt5.13/) |
-| Coverity Scan | [![Coverity Scan Status](https://scan.coverity.com/projects/285/badge.svg)](https://scan.coverity.com/projects/digikam)                                                                         |
+| CI Job        | Status                                                                                                                                                                                                  |
+|---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Linux Build   | [![Linux Build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20SUSEQt5.12/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20SUSEQt5.12/)                 |
+| FreeBSD Build | [![FreeBSD Build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20FreeBSDQt5.13/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20FreeBSDQt5.13/)         |
+| Windows Build | [![Windows build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20WindowsMSVCQt5.14/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20WindowsMSVCQt5.14/) |
+| Coverity Scan | [![Coverity Scan Status](https://scan.coverity.com/projects/285/badge.svg)](https://scan.coverity.com/projects/digikam)                                                                                 |
 
 If you are reading this on Github, be aware that this is just a mirror. Our real code repository [is located here](https://invent.kde.org/kde/digikam)
 
