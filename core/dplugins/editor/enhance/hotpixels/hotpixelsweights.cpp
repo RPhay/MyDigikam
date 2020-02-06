@@ -174,18 +174,18 @@ void HotPixelsWeights::calculateHotPixelsWeights()
     {
         for (ix = 0 ; ix < mCoefficientNumber ; ++ix)
         {
-            matrix[iy* mCoefficientNumber + ix] = 0.0;
+            matrix[(int)(iy* mCoefficientNumber + ix)] = 0.0;
         }
 
         for (j = 0 ; j < (size_t)mPositions.count() ; ++j)
         {
-            vector0[iy * mPositions.count() + j] = polyTerm(iy, mPositions.at(j).x(),
-                                                   mPositions.at(j).y(), mPolynomeOrder);
+            vector0[(int)(iy * mPositions.count() + j)] = polyTerm(iy, mPositions.at(j).x(),
+                                                                   mPositions.at(j).y(), mPolynomeOrder);
 
             for (ix = 0 ; ix < mCoefficientNumber ; ++ix)
             {
-                matrix[iy* mCoefficientNumber + ix] += (vector0[iy * mPositions.count() + j] *
-                                                        polyTerm(ix, mPositions.at(j).x(), mPositions.at(j).y(), mPolynomeOrder));
+                matrix[(int)(iy* mCoefficientNumber + ix)] += (vector0[(int)(iy * mPositions.count() + j)] *
+                                                              polyTerm(ix, mPositions.at(j).x(), mPositions.at(j).y(), mPolynomeOrder));
             }
         }
     }
@@ -200,12 +200,12 @@ void HotPixelsWeights::calculateHotPixelsWeights()
     {
         for (j = 0 ; j < (size_t)mPositions.count() ; ++j)
         {
-            vector1 [iy * mPositions.count() + j] = 0.0;
+            vector1[(int)(iy * mPositions.count() + j)] = 0.0;
 
             for (ix = 0 ; ix < mCoefficientNumber ; ++ix)
             {
-                vector1[iy * mPositions.count() + j] += matrix [iy * mCoefficientNumber + ix] *
-                        vector0[ix * mPositions.count() + j];
+                vector1[(int)(iy * mPositions.count() + j)] += matrix[(int)(iy * mCoefficientNumber + ix)] *
+                                                               vector0[ix * mPositions.count() + j];
             }
         }
     }
@@ -240,11 +240,11 @@ void HotPixelsWeights::calculateHotPixelsWeights()
 
                 for (iy = 0 ; iy < mCoefficientNumber ; ++iy)
                 {
-                    mWeightMatrices [j][y][x] += vector1 [iy * mPositions.count() + j] *
-                                                 polyTerm (iy, x, y, mPolynomeOrder);
+                    mWeightMatrices[j][y][x] += vector1[(int)(iy * mPositions.count() + j)] *
+                                                polyTerm (iy, x, y, mPolynomeOrder);
                 }
 
-                mWeightMatrices [j][y][x] *= (double) mPositions.count();
+                mWeightMatrices[j][y][x] *= (double) mPositions.count();
             }
         }
     }

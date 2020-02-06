@@ -63,7 +63,9 @@ void intersection(const std::vector<int>& v1,
                           std::inserter(vout, vout.begin()));
 }
 
-// Function to return the Jaccard distance of two vectors
+/**
+ * Function to return the Jaccard distance of two vectors
+ */
 double jaccard_distance(const std::vector<int>& v1,
                         const std::vector<int>& v2)
 {
@@ -209,9 +211,9 @@ void createClustersFromClusterIndices(const std::vector<int>& clusteredIndices,
 
     qDebug() << "nbOfClusters " << clusters.size();
 
-    for (size_t i = 0 ; i < clusteredIndices.size() ; ++i)
+    for (int i = 0 ; i < (int)clusteredIndices.size() ; ++i)
     {
-        clusters[clusteredIndices[(int)i]].push_back(i);
+        clusters[clusteredIndices[i]].push_back(i);
     }
 }
 
