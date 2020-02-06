@@ -197,7 +197,3 @@ DIGIKAM_ADD_GENERIC_PLUGIN(NAME    MediaServer
                            SOURCES ${mediaserverplugin_SRCS}
                            DEPENDS mediaserverbackend
 )
-
-if(BUILD_TESTING)
-    add_subdirectory(tests)
-endif()
