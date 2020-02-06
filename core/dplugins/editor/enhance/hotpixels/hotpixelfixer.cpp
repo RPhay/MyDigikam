@@ -298,7 +298,7 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction 
         {
             for (int x = 0 ; x < px.width() ; ++x)
             {
-                if (validPoint (img, QPoint(px.x() + x, px.y() + y)))
+                if (validPoint(img, QPoint(px.x() + x, px.y() + y)))
                 {
                     double sum_weight = 0.0;
                     double v          = 0.0;
@@ -309,10 +309,10 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction 
                         // In the one-dimensional case, only the y coordinate is used.
 
                         const int xx = px.x() + ((dir == VERTICAL_DIRECTION) ? x
-                                                                             : (dir== HORIZONTAL_DIRECTION) ? w.positions().at(i).y()
-                                                                                                            : w.positions().at(i).x());
+                                                                             : (dir == HORIZONTAL_DIRECTION) ? w.positions().at((int)i).y()
+                                                                                                             : w.positions().at((int)i).x());
                         const int yy = px.y() + ((dir == HORIZONTAL_DIRECTION) ? y
-                                                                               : w.positions().at(i).y());
+                                                                               : w.positions().at((int)i).y());
 
                         if (validPoint (img,QPoint(xx, yy)))
                         {
@@ -322,15 +322,15 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction 
 
                             if      (dir == VERTICAL_DIRECTION)
                             {
-                                weight = w[i][y][0];
+                                weight = w[(int)i][y][0];
                             }
                             else if (dir == HORIZONTAL_DIRECTION)
                             {
-                                weight = w[i][0][x];
+                                weight = w[(int)i][0][x];
                             }
                             else
                             {
-                                weight = w[i][y][x];
+                                weight = w[(int)i][y][x];
                             }
 
                             if      (iComp == 0)
