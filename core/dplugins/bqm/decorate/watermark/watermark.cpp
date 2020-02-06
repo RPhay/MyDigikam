@@ -605,12 +605,13 @@ bool WaterMark::toolOperations()
                                                        DImg::ANGLE::ROTNONE;
 
     // rotate and/or flip the image depending on the exif information to allow for the expected watermark placement.
-    //note that this operation is reversed after proper watermark generation to leave everything as it was.
+    // note that this operation is reversed after proper watermark generation to leave everything as it was.
+
     image().exifRotate(inputUrl().toLocalFile());
 
     float ratio = (float)image().height()/image().width();
 
-    if (rotationAngle == DImg::ANGLE::ROT90 || rotationAngle == DImg::ANGLE::ROT270)
+    if ((rotationAngle == DImg::ANGLE::ROT90) || (rotationAngle == DImg::ANGLE::ROT270))
     {
         size = size * ratio;
     }
@@ -618,12 +619,15 @@ bool WaterMark::toolOperations()
     {
         // For Images whose height are much larger than their width, this helps keep
         // the watermark size reasonable
+
         if (ratio > 1.5)
         {
             int tempSize  = size * ratio;
 
             if (tempSize < 35)
+            {
                 tempSize *= 1.5 ;
+            }
 
             size          = (tempSize < 100) ? tempSize : 100;
         }
@@ -695,6 +699,7 @@ bool WaterMark::toolOperations()
         QRect fontRect = fontMt.boundingRect(radius, radius, image().width(), image().height(), 0, text);
 
         // Add a transparent layer.
+
         QRect backgroundRect(fontRect.x() - radius, fontRect.y() - radius,
                              fontRect.width() + 2 * radius, fontRect.height() + 2 * radius);
         DImg backgroundLayer(backgroundRect.width(), backgroundRect.height(), image().sixteenBit(), true);
@@ -731,6 +736,7 @@ bool WaterMark::toolOperations()
         backgroundLayer.putImageData(blur.getTargetImage().bits());
 
         // Draw text
+
         QImage img = backgroundLayer.copyQImage(fontRect);
         QPainter p(&img);
         fontColor.setAlpha(textOpacity * 255 / 100);
@@ -764,7 +770,7 @@ bool WaterMark::toolOperations()
 
             case Private::TopRight:
 
-                if (rotationAngle == DImg::ANGLE::ROT270 || rotationAngle == DImg::ANGLE::ROT90)
+                if ((rotationAngle == DImg::ANGLE::ROT270) || (rotationAngle == DImg::ANGLE::ROT90))
                 {
                     xAdditionalValue += watermarkRect.width() - watermarkRect.height();
                 }
@@ -774,7 +780,7 @@ bool WaterMark::toolOperations()
 
             case Private::BottomLeft:
 
-                if (rotationAngle == DImg::ANGLE::ROT90 || rotationAngle == DImg::ANGLE::ROT270)
+                if ((rotationAngle == DImg::ANGLE::ROT90) || (rotationAngle == DImg::ANGLE::ROT270))
                 {
                     yAdditionalValue += watermarkRect.height() - watermarkRect.width();
                 }
@@ -784,7 +790,7 @@ bool WaterMark::toolOperations()
 
             case Private::Center:
 
-                if (rotationAngle == DImg::ANGLE::ROT90 || rotationAngle == DImg::ANGLE::ROT270)
+                if ((rotationAngle == DImg::ANGLE::ROT90) || (rotationAngle == DImg::ANGLE::ROT270))
                 {
                     xAdditionalValue += (watermarkRect.width()  - watermarkRect.height()) / 2;
                     yAdditionalValue += (watermarkRect.height() - watermarkRect.width())  / 2;
@@ -813,8 +819,8 @@ bool WaterMark::toolOperations()
     }
     else
     {
-        const float DENSE_SPACING_FACTOR  = 1.2;
-        const float SPARSE_SPACING_FACTOR = 1.8;
+        const float DENSE_SPACING_FACTOR  = 1.2F;
+        const float SPARSE_SPACING_FACTOR = 1.8F;
         float widthRatio                  = (float)watermarkRect.width()  / image().width();
         float heightRatio                 = (float)watermarkRect.height() / image().height();
         float spacingFactor               = (denseRepetition) ? DENSE_SPACING_FACTOR : SPARSE_SPACING_FACTOR;
@@ -822,10 +828,10 @@ bool WaterMark::toolOperations()
 
         if (placementType == Private::SystematicRepetition)
         {
-            if (rotationAngle == DImg::ANGLE::ROT270 || rotationAngle == DImg::ANGLE::ROT90)
+            if ((rotationAngle == DImg::ANGLE::ROT270) || (rotationAngle == DImg::ANGLE::ROT90))
             {
-                widthRatio = (float)watermarkRect.height()/image().width();
-                heightRatio = (float)watermarkRect.width()/image().height();
+                widthRatio  = (float)watermarkRect.height() / image().width();
+                heightRatio = (float)watermarkRect.width()  / image().height();
             }
 
             for (uint i = 0 ; i < image().width() ; i += spacingFactor * widthRatio * image().width())
@@ -868,12 +874,14 @@ bool WaterMark::toolOperations()
 
     delete composer;
     image().reverseExifRotate(inputUrl().toLocalFile());
+
     return (savefromDImg());
 }
 
 int WaterMark::queryFontSize(const QString& text, const QFont& font, int length) const
 {
     // Find font size using relative length compared to image width.
+
     QFont fnt = font;
     QRect fontRect;
 
