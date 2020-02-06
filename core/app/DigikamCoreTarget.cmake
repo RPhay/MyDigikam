@@ -23,7 +23,7 @@ set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:versionmanager_src>
             $<TARGET_OBJECTS:kmemoryinfo_src>
             $<TARGET_OBJECTS:libraw_src>
-            $<TARGET_OBJECTS:rawengine_srcs>
+            $<TARGET_OBJECTS:rawengine_src>
             $<TARGET_OBJECTS:dpluginsinterface_src>
             $<TARGET_OBJECTS:libwso2_src>
 

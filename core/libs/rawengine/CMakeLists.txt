@@ -183,9 +183,9 @@ include_directories(
 )
 
 # Used by digikamcore
-add_library(rawengine_srcs OBJECT ${librawengine_SRCS})
+add_library(rawengine_src OBJECT ${librawengine_SRCS})
 
-target_compile_definitions(rawengine_srcs
+target_compile_definitions(rawengine_src
                            PRIVATE
                            digikamcore_EXPORTS
 )

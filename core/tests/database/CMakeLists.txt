@@ -60,8 +60,8 @@ endif()
 
 #------------------------------------------------------------------------
 
-set(databasefieldstest_srcs databasefieldstest.cpp)
-add_executable(databasefieldstest ${databasefieldstest_srcs})
+set(databasefieldstest_src databasefieldstest.cpp)
+add_executable(databasefieldstest ${databasefieldstest_src})
 add_test(databasefieldstest databasefieldstest)
 ecm_mark_as_test(databasefieldstest)
 
@@ -83,17 +83,17 @@ endif()
 
 #------------------------------------------------------------------------
 
-# set(databasetagstest_srcs databasetagstest.cpp)
-# add_executable(databasetagstest ${databasetagstest_srcs})
-# add_test(databasetagstest databasetagstest)
-# ecm_mark_as_test(databasetagstest)
+#set(databasetagstest_src databasetagstest.cpp)
+#add_executable(databasetagstest ${databasetagstest_src})
+#add_test(databasetagstest databasetagstest)
+#ecm_mark_as_test(databasetagstest)
 #
-# target_link_libraries(databasetagstest
+#target_link_libraries(databasetagstest
 #
-#                       digikamdatabase
-#                       digikamgui
+#                      digikamdatabase
+#                      digikamgui
 #
-#                       ${COMMON_TEST_LINK}
+#                      ${COMMON_TEST_LINK}
 #)
 #
 #if(ENABLE_DBUS)
