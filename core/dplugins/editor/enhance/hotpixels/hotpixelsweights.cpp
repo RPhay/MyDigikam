@@ -174,18 +174,18 @@ void HotPixelsWeights::calculateHotPixelsWeights()
     {
         for (ix = 0 ; ix < mCoefficientNumber ; ++ix)
         {
-            matrix [iy* mCoefficientNumber+ix] = 0.0;
+            matrix[iy* mCoefficientNumber + ix] = 0.0;
         }
 
         for (j = 0 ; j < (size_t)mPositions.count() ; ++j)
         {
-            vector0 [iy * mPositions.count() + j] = polyTerm (iy, mPositions.at(j).x(),
-                                                    mPositions.at(j).y(), mPolynomeOrder);
+            vector0[iy * mPositions.count() + j] = polyTerm(iy, mPositions.at(j).x(),
+                                                   mPositions.at(j).y(), mPolynomeOrder);
 
             for (ix = 0 ; ix < mCoefficientNumber ; ++ix)
             {
-                matrix [iy* mCoefficientNumber + ix] += (vector0 [iy * mPositions.count() + j] *
-                                                         polyTerm (ix, mPositions.at(j).x(), mPositions.at(j).y(), mPolynomeOrder));
+                matrix[iy* mCoefficientNumber + ix] += (vector0[iy * mPositions.count() + j] *
+                                                        polyTerm(ix, mPositions.at(j).x(), mPositions.at(j).y(), mPolynomeOrder));
             }
         }
     }
@@ -204,8 +204,8 @@ void HotPixelsWeights::calculateHotPixelsWeights()
 
             for (ix = 0 ; ix < mCoefficientNumber ; ++ix)
             {
-                vector1 [iy * mPositions.count() + j] += matrix [iy * mCoefficientNumber + ix] *
-                         vector0 [ix * mPositions.count() + j];
+                vector1[iy * mPositions.count() + j] += matrix [iy * mCoefficientNumber + ix] *
+                        vector0[ix * mPositions.count() + j];
             }
         }
     }
@@ -252,10 +252,12 @@ void HotPixelsWeights::calculateHotPixelsWeights()
 
 bool HotPixelsWeights::operator==(const HotPixelsWeights& ws) const
 {
-    return (mHeight        == ws.height()        &&
-            mWidth         == ws.width()         &&
-            mPolynomeOrder == ws.polynomeOrder() &&
-            mTwoDim        == ws.twoDim());
+    return (
+            (mHeight        == ws.height())        &&
+            (mWidth         == ws.width())         &&
+            (mPolynomeOrder == ws.polynomeOrder()) &&
+            (mTwoDim        == ws.twoDim())
+           );
 }
 
 /**
@@ -276,7 +278,7 @@ void HotPixelsWeights::matrixInv (double* const a, const size_t size)
     {
         for (ix = 0 ; ix < size ; ++ix)
         {
-            a [iy* size + ix] = ix == iy ? 1.0 : 0.0;
+            a[(int)(iy* size + ix)] = (ix == iy) ? 1.0 : 0.0;
         }
     }
 
@@ -286,12 +288,12 @@ void HotPixelsWeights::matrixInv (double* const a, const size_t size)
     {
         for (j = iy + 1 ; j < size ; ++j)
         {
-            const double factor = b [j * size + iy] / b [iy * size + iy];
+            const double factor = b[(int)(j * size + iy)] / b[(int)(iy * size + iy)];
 
             for (ix = 0 ; ix < size ; ++ix)
             {
-                b [j* size + ix] -= factor * b [iy * size + ix];
-                a [j* size + ix] -= factor * a [iy * size + ix];
+                b[(int)(j* size + ix)] -= factor * b[(int)(iy * size + ix)];
+                a[(int)(j* size + ix)] -= factor * a[(int)(iy * size + ix)];
             }
         }
     }
@@ -302,11 +304,11 @@ void HotPixelsWeights::matrixInv (double* const a, const size_t size)
     {
         for (j = 0 ; j < iy ; ++j)
         {
-            const double factor =  b [j * size + iy] / b [iy * size + iy];
+            const double factor =  b[(int)(j * size + iy)] / b[(int)(iy * size + iy)];
 
             for (ix = 0 ; ix < size ; ++ix)
             {
-                a [j* size + ix] -= factor * a [iy * size + ix];
+                a[(int)(j* size + ix)] -= factor * a[(int)(iy * size + ix)];
             }
         }
     }
@@ -317,7 +319,7 @@ void HotPixelsWeights::matrixInv (double* const a, const size_t size)
     {
         for (ix = 0 ; ix < size ; ++ix)
         {
-            a[iy* size + ix] /= b[iy * size + iy];
+            a[(int)(iy* size + ix)] /= b[(int)(iy * size + iy)];
         }
     }
 }
