@@ -44,7 +44,7 @@ namespace Digikam
 
 class IccProfile;
 
-class SetupICC : public QScrollArea
+class DIGIKAM_EXPORT SetupICC : public QScrollArea
 {
     Q_OBJECT
 

@@ -49,9 +49,7 @@ set(showfoto_SRCS
 file(GLOB ICONS_SRCS "${CMAKE_CURRENT_SOURCE_DIR}/../data/icons/apps/*-apps-showfoto.png")
 ecm_add_app_icon(showfoto_SRCS ICONS ${ICONS_SRCS})
 
-add_executable(showfoto ${showfoto_SRCS}
-                        $<TARGET_OBJECTS:setupshowfoto_src>
-)
+add_executable(showfoto ${showfoto_SRCS})
 
 add_dependencies(showfoto digikam-gitversion)
 
@@ -66,8 +64,8 @@ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/../cmake/templates/Info.plist.cmake.i
 set_target_properties(showfoto PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_BINARY_DIR}/Info.plist)
 
 target_link_libraries(showfoto
-                      PRIVATE
-                      digikamcore
+
+                      PUBLIC
 
                       Qt5::Core
                       Qt5::Gui
@@ -79,6 +77,8 @@ target_link_libraries(showfoto
                       KF5::I18n
                       KF5::ConfigCore
                       KF5::Service
+
+                      digikamcore
 )
 
 if(KF5Notifications_FOUND)

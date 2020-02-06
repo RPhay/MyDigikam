@@ -35,7 +35,7 @@
 namespace Digikam
 {
 
-class SetupEditorIface : public QScrollArea
+class DIGIKAM_EXPORT SetupEditorIface : public QScrollArea
 {
     Q_OBJECT
 

@@ -40,6 +40,7 @@ set(DIGIKAMCORE_OBJECTS
             $<TARGET_OBJECTS:notificationmanager_src>
 
             # utilities
+            $<TARGET_OBJECTS:setupshowfoto_src>
             $<TARGET_OBJECTS:slideshow_src>
             $<TARGET_OBJECTS:imageeditor_src>
             $<TARGET_OBJECTS:digikamlibtransitionmngr_src>

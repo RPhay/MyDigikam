@@ -36,11 +36,9 @@ target_compile_definitions(setupshowfoto_src
 # ---------------------------------------------------------------------
 
 set(libsetup_SRCS
-    setupicc.cpp
     setup.cpp
     setuptooltip.cpp
     setuptemplate.cpp
-    setupslideshow.cpp
     setupmisc.cpp
     setupplugins.cpp
     setuplighttable.cpp
@@ -49,10 +47,7 @@ set(libsetup_SRCS
     setuputils.cpp
 
     editor/setupeditor.cpp
-    editor/setupeditoriface.cpp
-    editor/setupiofiles.cpp
     editor/setupversioning.cpp
-    editor/setupraw.cpp
 
     album/setupalbumview.cpp
     album/setupcategory.cpp

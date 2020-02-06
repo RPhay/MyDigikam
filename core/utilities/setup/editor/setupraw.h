@@ -28,12 +28,16 @@
 
 #include <QObject>
 
+// Local includes
+
+#include "digikam_export.h"
+
 class QTabWidget;
 
 namespace Digikam
 {
 
-class SetupRaw : public QObject
+class DIGIKAM_EXPORT SetupRaw : public QObject
 {
     Q_OBJECT
 

@@ -35,7 +35,7 @@
 namespace Digikam
 {
 
-class SetupIOFiles : public QScrollArea
+class DIGIKAM_EXPORT SetupIOFiles : public QScrollArea
 {
     Q_OBJECT
 

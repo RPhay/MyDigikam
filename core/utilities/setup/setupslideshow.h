@@ -35,7 +35,7 @@
 namespace Digikam
 {
 
-class SetupSlideShow : public QScrollArea
+class DIGIKAM_EXPORT SetupSlideShow : public QScrollArea
 {
     Q_OBJECT
 
