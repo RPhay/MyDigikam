@@ -211,7 +211,7 @@ void createClustersFromClusterIndices(const std::vector<int>& clusteredIndices,
 
     for (size_t i = 0 ; i < clusteredIndices.size() ; ++i)
     {
-        clusters[clusteredIndices[i]].push_back(i);
+        clusters[clusteredIndices[(int)i]].push_back(i);
     }
 }
 
