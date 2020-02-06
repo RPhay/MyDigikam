@@ -8,7 +8,19 @@
 kde_enable_exceptions()
 
 if(APPLE)
-    set(_extra_deps /System/Library/Frameworks/AppKit.framework)
+
+    set(_extra_deps ${_extra_deps} /System/Library/Frameworks/AppKit.framework)
+
+endif()
+
+if(ENABLE_QWEBENGINE)
+
+    set(_extra_deps ${_extra_deps} Qt5::WebEngineWidgets)
+
+else()
+
+    set(_extra_deps ${_extra_deps} Qt5::WebKitWidgets)
+
 endif()
 
 set(COMMON_TEST_LINK Qt5::Core
