@@ -132,7 +132,7 @@ set(libraw_LIB_SRCS libraw/src/libraw_c_api.cpp
                     libraw/src/x3f/x3f_utils_patched.cpp
 )
 
-# Dont process automoc on Libraw headers
+# Don't process automoc on Libraw headers
 
 file(GLOB_RECURSE libraw_headers ${CMAKE_CURRENT_SOURCE_DIR}/libraw/*.h)
 

@@ -218,7 +218,7 @@ if(X11_FOUND)
     include_directories($<TARGET_PROPERTY:Qt5::X11Extras,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
-# Dont process automoc on LibCImg headers
+# Don't process automoc on LibCImg headers
 
 file(GLOB_RECURSE cimg_headers ${CMAKE_CURRENT_SOURCE_DIR}/filters/greycstoration/cimg/*.h)
 

@@ -187,7 +187,7 @@ foreach(_currentfile ${libde265_SRCS})
     endif()
 endforeach()
 
-# Dont process automoc on libheif and libde265 headers
+# Don't process automoc on libheif and libde265 headers
 
 file(GLOB_RECURSE heif_headers ${CMAKE_CURRENT_SOURCE_DIR}/libheif/*.h)
 

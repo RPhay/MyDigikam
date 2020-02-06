@@ -149,7 +149,7 @@ set(libdng_SRCS
     extra/dng_sdk/dng_pthread.cpp
 )
 
-# Dont process automoc on headers from extra subdir
+# Don't process automoc on headers from extra subdir
 
 file(GLOB_RECURSE extra_headers ${CMAKE_CURRENT_SOURCE_DIR}/extra/*.h)
 

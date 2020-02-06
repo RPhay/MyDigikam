@@ -149,7 +149,7 @@ if(MSVC)
 
 endif()
 
-# Dont process automoc on UpnpSdk headers
+# Don't process automoc on UpnpSdk headers
 
 file(GLOB_RECURSE upnpsdk_headers ${CMAKE_CURRENT_SOURCE_DIR}/upnpsdk/*.h)
 

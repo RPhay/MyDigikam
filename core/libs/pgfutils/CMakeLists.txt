@@ -31,7 +31,7 @@ set(libpgfutils_SRCS
     libpgf/WaveletTransform.cpp
 )
 
-# Dont process automoc on Libpgf headers
+# Don't process automoc on Libpgf headers
 
 file(GLOB_RECURSE libpgf_headers ${CMAKE_CURRENT_SOURCE_DIR}/libpgf/*.h)
 
