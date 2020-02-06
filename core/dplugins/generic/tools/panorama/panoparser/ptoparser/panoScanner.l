@@ -41,6 +41,7 @@
 #if defined(_MSC_VER)
 #   define _CRT_NONSTDC_NO_WARNINGS
 #   include <windows.h>
+#   pragma warning(disable : 4267)
 #endif
 
 char strBuffer[PT_TOKEN_MAX_LEN + 1];
