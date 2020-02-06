@@ -65,9 +65,9 @@ find_package(Qt5 ${QT_MIN_VERSION} REQUIRED
 )
 
 if(ENABLE_QWEBENGINE)
-    find_package(Qt5 ${QT_MIN_VERSION} NO_MODULE COMPONENTS WebEngineWidgets)
+    find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS WebEngineWidgets)
 else()
-    find_package(Qt5 ${QT_MIN_VERSION} NO_MODULE COMPONENTS WebKitWidgets)
+    find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS WebKitWidgets)
 endif()
 
 find_package(Qt5 ${QT_MIN_VERSION}
