@@ -450,7 +450,7 @@ There are two configuration sections : the top level and the core.
   - \b ENABLE_MEDIAPLAYER                    : Build digiKam with Media Player support (default=OFF).
   - \b ENABLE_DBUS                           : Build digiKam with DBUS support (default=ON).
   - \b ENABLE_APPSTYLES                      : Build digiKam with support for changing the widget application style (default=OFF).
-  - \b ENABLE_QWEBENGINE                     : Build digiKam with QWebEngine instead of QWebKit (default=OFF).
+  - \b ENABLE_QWEBENGINE                     : Build digiKam with QWebEngine instead of QWebKit (default=ON).
 
  - Experimental support options
 
@@ -547,15 +547,18 @@ Independent Cmake configuration is presents in following folders:
 
  - root source dir
  - core
- - extra
  - doc
 
-The Cmake rules for the core component will link the following executable:
+The Cmake rules will build the folowwing targets:
 
- - digikam
- - showfoto
- - digikam database server - if compilation is enabled in cmake files
+ - digikamcore shared lib
+ - digikamdatabase shared lib
+ - digikamgui shared lib
+ - digikam executable
+ - showfoto executable
+ - plugin shared libraries (dplugins)
  - various test executables - if testing is enabled
+ - various unit-tests - if testing is enabled
 
 Each of them depend on various sources which must be compiled before.
 A complete description of source code direction is given to the sourcedirs section.
