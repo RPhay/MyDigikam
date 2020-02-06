@@ -36,27 +36,6 @@ target_link_libraries(dimgfilteractiontest
                       ${OpenCV_LIBRARIES}
 )
 
-#------------------------------------------------------------------------
-
-set(dimghistorygraphtest_SRCS
-    dimgabstracthistorytest.cpp
-    dimghistorygraphtest.cpp
-    ../modeltest/modeltest.cpp
-)
-
-add_executable(dimghistorygraphtest ${dimghistorygraphtest_SRCS})
-add_test(dimghistorygraphtest dimghistorygraphtest)
-ecm_mark_as_test(dimghistorygraphtest)
-
-target_link_libraries(dimghistorygraphtest
-
-                      digikamcore
-                      digikamdatabase
-
-                      ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
-)
 
 #------------------------------------------------------------------------
 
@@ -154,6 +133,34 @@ if(ImageMagick_Magick++_FOUND)
                           ${COMMON_TEST_LINK}
 
                           ${ImageMagick_LIBRARIES}
+    )
+
+endif()
+
+#------------------------------------------------------------------------
+
+# TODO: This unit-test do not link yet under Microsoft compiler
+
+if(NOT MSVC)
+
+    set(dimghistorygraphtest_SRCS
+        dimgabstracthistorytest.cpp
+        dimghistorygraphtest.cpp
+        ../modeltest/modeltest.cpp
+    )
+
+    add_executable(dimghistorygraphtest ${dimghistorygraphtest_SRCS})
+    add_test(dimghistorygraphtest dimghistorygraphtest)
+    ecm_mark_as_test(dimghistorygraphtest)
+
+    target_link_libraries(dimghistorygraphtest
+
+                          digikamcore
+                          digikamdatabase
+
+                          ${COMMON_TEST_LINK}
+
+                          ${OpenCV_LIBRARIES}
     )
 
 endif()
