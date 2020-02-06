@@ -54,6 +54,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     {
         qWarning() << "Error: Could not open source file.";
         loadingFailed();
+
         return false;
     }
 
@@ -66,6 +67,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         qWarning() << "Error: Could not parse magic identifier.";
         fclose(file);
         loadingFailed();
+
         return false;
     }
 
@@ -77,6 +79,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         qWarning() << "Error: source file is not HEIF image.";
         fclose(file);
         loadingFailed();
+
         return false;
     }
 
@@ -102,6 +105,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         qWarning() << "Error: Could not read source file.";
         loadingFailed();
         heif_context_free(heif_context);
+
         return false;
     }
 
@@ -112,6 +116,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         qWarning() << "Error: Could not load image data.";
         loadingFailed();
         heif_context_free(heif_context);
+
         return false;
     }
 
@@ -120,6 +125,7 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 
 bool DImgHEIFLoader::readHEICColorProfile(struct heif_image_handle* const image_handle)
 {
+
 #if LIBHEIF_NUMERIC_VERSION >= 0x01040000
 
     switch (heif_image_handle_get_color_profile_type(image_handle))
@@ -137,7 +143,7 @@ bool DImgHEIFLoader::readHEICColorProfile(struct heif_image_handle* const image_
                 // Read color profile.
 
                 QByteArray profile;
-                profile.resize(length);
+                profile.resize((int)length);
 
                 struct heif_error error = heif_image_handle_get_raw_color_profile(image_handle,
                                                                                   profile.data());
@@ -146,6 +152,7 @@ bool DImgHEIFLoader::readHEICColorProfile(struct heif_image_handle* const image_
                 {
                     qDebug() << "HEIF color profile found with size:" << length;
                     imageSetIccProfile(IccProfile(profile));
+
                     return true;
                 }
             }
@@ -157,8 +164,11 @@ bool DImgHEIFLoader::readHEICColorProfile(struct heif_image_handle* const image_
             qWarning() << "Unknown HEIF color profile type discarded";
             break;
     }
+
 #else
+
     Q_UNUSED(image_handle);
+
 #endif
 
     // If ICC profile is null, check Exif metadata.
@@ -198,7 +208,7 @@ bool DImgHEIFLoader::readHEICMetadata(struct heif_image_handle* const image_hand
                 size_t length = heif_image_handle_get_metadata_size(image_handle, dataIds[i]);
 
                 QByteArray exifChunk;
-                exifChunk.resize(length);
+                exifChunk.resize((int)length);
 
                 struct heif_error error = heif_image_handle_get_metadata(image_handle,
                                                                          dataIds[i],
@@ -230,7 +240,7 @@ bool DImgHEIFLoader::readHEICMetadata(struct heif_image_handle* const image_hand
 
                 size_t length = heif_image_handle_get_metadata_size(image_handle, dataIds[i]);
 
-                iptc.resize(length);
+                iptc.resize((int)length);
 
                 struct heif_error error = heif_image_handle_get_metadata(image_handle,
                                                                          dataIds[i],
@@ -255,7 +265,7 @@ bool DImgHEIFLoader::readHEICMetadata(struct heif_image_handle* const image_hand
 
                 size_t length = heif_image_handle_get_metadata_size(image_handle, dataIds[i]);
 
-                xmp.resize(length);
+                xmp.resize((int)length);
 
                 struct heif_error error = heif_image_handle_get_metadata(image_handle,
                                                                          dataIds[i],
@@ -278,15 +288,22 @@ bool DImgHEIFLoader::readHEICMetadata(struct heif_image_handle* const image_hand
         MetaEngine meta;
 
         if (!exif.isEmpty())
+        {
             meta.setExif(exif);
+        }
 
         if (!iptc.isEmpty())
+        {
             meta.setIptc(iptc);
+        }
 
         if (!xmp.isEmpty())
+        {
             meta.setXmp(xmp);
+        }
 
         m_image->setMetadata(meta.data());
+
         return true;
     }
 
@@ -337,11 +354,13 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
             if (!isHeifSuccess(&error))
             {
                 heif_image_handle_release(image_handle);
+
                 return false;
             }
 
             heif_image_handle_release(image_handle);
             qDebug() << "HEIF preview found in thumbnail chunk";
+
             return readHEICImageByHandle(thumbnail_handle, heif_image);
         }
     }
@@ -352,6 +371,7 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
     }
 
     heif_image_handle_release(image_handle);
+
     return true;
 }
 
@@ -368,6 +388,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
                                                                     : heif_chroma_interleaved_RGB;
 
     // Trace to check image size properties before decoding, as these values can be different.
+
     qDebug() << "HEIF image size: ("
                 << heif_image_handle_get_width(image_handle)
                 << "x"
@@ -383,6 +404,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     if (!isHeifSuccess(&error))
     {
         heif_image_handle_release(image_handle);
+
         return false;
     }
 
@@ -423,6 +445,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
         qWarning() << "HEIC data pixels information not valid!";
         heif_image_release(heif_image);
         heif_image_handle_release(image_handle);
+
         return false;
     }
 
@@ -430,7 +453,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     int colorMul = 1;       // color multiplier
     colorModel   = DImg::RGB;
 
-    if (colorDepth == 8)
+    if      (colorDepth == 8)
     {
         qDebug() << "Color bytes depth: 8";
         m_sixteenBit = false;
@@ -446,6 +469,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
         qWarning() << "Color bits depth: " << colorDepth << ": not supported!";
         heif_image_release(heif_image);
         heif_image_handle_release(image_handle);
+
         return false;
     }
 
@@ -538,6 +562,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
                 heif_image_handle_release(image_handle);
 
                 loadingFailed();
+
                 return false;
             }
 
