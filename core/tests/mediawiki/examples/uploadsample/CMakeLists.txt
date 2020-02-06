@@ -4,6 +4,8 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+APPLY_COMMON_POLICIES()
+
 set(uploadsample_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
                       ${CMAKE_CURRENT_SOURCE_DIR}/mainwindow.cpp
 )
@@ -15,22 +17,12 @@ add_executable(uploadsample
 )
 
 target_link_libraries(uploadsample
+
                       PRIVATE
+
                       digikamcore
                       mediawikibackend
 
-                      Qt5::Core
-                      Qt5::Gui
-                      Qt5::Xml
-                      Qt5::XmlPatterns
-                      Qt5::Widgets
-                      Qt5::Test
-                      Qt5::Sql
-
-                      KF5::XmlGui
-                      KF5::I18n
-                      KF5::ConfigCore
-                      KF5::Service
-                      KF5::Solid
+                      ${COMMON_TEST_LINK}
 )
 

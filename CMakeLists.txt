@@ -70,6 +70,7 @@ include(CMakePackageConfigHelpers)
 include(GenerateExportHeader)
 include(CheckFunctionExists)
 include(FeatureSummary)
+
 # ECM macros
 include(ECMOptionalAddSubdirectory)
 include(ECMAddTests)
@@ -80,11 +81,14 @@ include(ECMSetupVersion)
 include(ECMInstallIcons)
 include(ECMAddAppIcon)
 include(ECMPoQmTools)
+include(ECMMarkAsTest)
+
 # KDE macros
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDEFrameworkCompilerSettings)
 include(KDECompilerSettings)
+
 # Local macros
 include(MacroUtils)
 include(MacroCompiler)

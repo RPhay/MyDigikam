@@ -63,7 +63,3 @@ DIGIKAM_ADD_GENERIC_PLUGIN(NAME    MediaWiki
 )
 
 add_subdirectory(icons)
-
-if(BUILD_TESTING)
-    add_subdirectory(tests)
-endif()

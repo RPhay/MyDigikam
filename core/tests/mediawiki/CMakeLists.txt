@@ -1,12 +1,12 @@
 #
-# Copyright (c) 2010-2019, Gilles Caulier, <caulier dot gilles at gmail dot com>
+# Copyright (c) 2010-2020, Gilles Caulier, <caulier dot gilles at gmail dot com>
 #
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-add_subdirectory(examples)
+APPLY_COMMON_POLICIES()
 
-include(ECMMarkAsTest)
+add_subdirectory(examples)
 
 macro(mediawiki_executable_tests)
 
@@ -15,21 +15,13 @@ macro(mediawiki_executable_tests)
         add_executable(${_testname} ${_testname}.cpp fakeserver/fakeserver.cpp)
 
         target_link_libraries(${_testname}
+
+                              PRIVATE
+
                               digikamcore
                               mediawikibackend
-                              Qt5::Core
-                              Qt5::Gui
-                              Qt5::Xml
-                              Qt5::XmlPatterns
-                              Qt5::Widgets
-                              Qt5::Test
-                              Qt5::Sql
 
-                              KF5::XmlGui
-                              KF5::I18n
-                              KF5::ConfigCore
-                              KF5::Service
-                              KF5::Solid
+                              ${COMMON_TEST_LINK}
         )
 
         ecm_mark_as_test(${_testname})
@@ -63,7 +55,8 @@ macro(MEDIAWIKI_TEST_RESOURCES)
                            "${CMAKE_CURRENT_SOURCE_DIR}/data/${resource}"
                            "${CMAKE_CURRENT_BINARY_DIR}/${resource}"
                            DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/data/${resource}")
-        list(APPEND test_resources_dest "${resource}" )
+
+        list(APPEND test_resources_dest "${resource}")
 
     endforeach()
 
