@@ -109,6 +109,8 @@ foreach(_currentfile ${libheif_SRCS})
     endif()
 endforeach()
 
+add_definitions(-DLIBDE265_STATIC_BUILD)
+
 set(libde265_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/libde265/bitstream.cc
     ${CMAKE_CURRENT_SOURCE_DIR}/libde265/cabac.cc
