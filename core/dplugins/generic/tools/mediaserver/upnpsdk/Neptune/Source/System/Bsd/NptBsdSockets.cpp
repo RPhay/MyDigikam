@@ -128,26 +128,60 @@ const int NPT_TCP_SERVER_SOCKET_DEFAULT_LISTEN_COUNT = 20;
 static NPT_WinsockSystem& WinsockInitializer = NPT_WinsockSystem::Initializer; 
 
 #if defined(SetPort)
-#undef SetPort
+#   undef SetPort
 #endif
 
-#define EWOULDBLOCK  WSAEWOULDBLOCK
-#define EINPROGRESS  WSAEINPROGRESS
-#define ECONNREFUSED WSAECONNREFUSED
-#define ECONNABORTED WSAECONNABORTED
-#define ECONNRESET   WSAECONNRESET
-#define ETIMEDOUT    WSAETIMEDOUT
-#define ENETRESET    WSAENETRESET
-#define EADDRINUSE   WSAEADDRINUSE
-#define ENETDOWN     WSAENETDOWN
-#define ENETUNREACH  WSAENETUNREACH
-#define ENOTCONN     WSAENOTCONN
-#if !defined(EAGAIN)
-#define EAGAIN       WSAEWOULDBLOCK 
-#define EINTR        WSAEINTR
+#if !defined(EWOULDBLOCK)
+#   define EWOULDBLOCK  WSAEWOULDBLOCK
 #endif
+
+#if !defined(EINPROGRESS)
+#   define EINPROGRESS  WSAEINPROGRESS
+#endif
+
+#if !defined(ECONNREFUSED)
+#   define ECONNREFUSED WSAECONNREFUSED
+#endif
+
+#if !defined(ECONNABORTED)
+#   define ECONNABORTED WSAECONNABORTED
+#endif
+
+#if !defined(ECONNRESET)
+#   define ECONNRESET   WSAECONNRESET
+#endif
+
+#if !defined(ETIMEDOUT)
+#   define ETIMEDOUT    WSAETIMEDOUT
+#endif
+
+#if !defined(ENETRESET)
+#   define ENETRESET    WSAENETRESET
+#endif
+
+#if !defined(EADDRINUSE)
+#   define EADDRINUSE   WSAEADDRINUSE
+#endif
+
+#if !defined(ENETDOWN)
+#   define ENETDOWN     WSAENETDOWN
+#endif
+
+#if !defined(ENETUNREACH)
+#   define ENETUNREACH  WSAENETUNREACH
+#endif
+
+#if !defined(ENOTCONN)
+#   define ENOTCONN     WSAENOTCONN
+#endif
+
+#if !defined(EAGAIN)
+#   define EAGAIN       WSAEWOULDBLOCK 
+#   define EINTR        WSAEINTR
+#endif
+
 #if !defined(SHUT_RDWR)
-#define SHUT_RDWR SD_BOTH 
+#   define SHUT_RDWR SD_BOTH 
 #endif
 
 #if !defined(__MINGW32__)
