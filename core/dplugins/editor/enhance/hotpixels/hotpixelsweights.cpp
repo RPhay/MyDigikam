@@ -149,7 +149,7 @@ void HotPixelsWeights::calculateHotPixelsWeights()
     {
         // In the one-dimensional case, only the y coordinate and y size is used.  */
 
-        for (y = -mPolynomeOrder ; y < 0 ; ++y)
+        for (y = (-1)*mPolynomeOrder ; y < 0 ; ++y)
         {
             QPoint position(0, y);
             mPositions.append(position);
