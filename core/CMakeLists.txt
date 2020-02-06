@@ -89,7 +89,9 @@ if(BUILD_TESTING)
                  NO_MODULE COMPONENTS
                  Test
     )
+
     find_package(Qt5 ${QT_MIN_VERSION}
+                 QUIET
                  OPTIONAL_COMPONENTS
                  Qml WebView  # Optional, for 'sialis' O2 library test tool.
     )
