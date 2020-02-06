@@ -63,6 +63,7 @@ HotPixelsWeights& HotPixelsWeights::operator=(const HotPixelsWeights& w)
     if (this == &w)
     {
         // we have to be sure that we are not self-assignment
+
         return *this;
     }
 
@@ -83,17 +84,21 @@ HotPixelsWeights& HotPixelsWeights::operator=(const HotPixelsWeights& w)
     else
     {
         double** * const origMatrices = w.weightMatrices();
+
         // Allocate mPositions.count() matrices
+
         mWeightMatrices               = new double** [mPositions.count()];
 
         for (int i = 0 ; i < mPositions.count() ; ++i)
         {
             // Allocate mHeight rows on each position
+
             mWeightMatrices[i] = new double*[mHeight];
 
             for (uint j = 0 ; j < mHeight ; ++j)
             {
                 // Allocate mWidth columns on each row
+
                 mWeightMatrices[i][j] = new double[mWidth];
 
                 for (uint k = 0 ; k < mWidth ; ++k)
@@ -119,7 +124,7 @@ void HotPixelsWeights::calculateHotPixelsWeights()
     if (mTwoDim)
     {
 
-        int iPolynomeOrder = (int) mPolynomeOrder; //lets avoid signed/unsigned comparison warnings
+        int iPolynomeOrder = (int) mPolynomeOrder; // lets avoid signed/unsigned comparison warnings
         int iHeight        = (int) height();
         int iWidth         = (int) width();
 
@@ -208,16 +213,19 @@ void HotPixelsWeights::calculateHotPixelsWeights()
     // Store weights
 
     // Allocate mPositions.count() matrices.
+
     mWeightMatrices = new double** [mPositions.count()];
 
     for (i = 0 ; i < (size_t)mPositions.count() ; ++i)
     {
         // Allocate mHeight rows on each position
+
         mWeightMatrices[i] = new double*[mHeight];
 
         for (j = 0 ; j < mHeight ; ++j)
         {
             // Allocate mWidth columns on each row
+
             mWeightMatrices[i][j] = new double[mWidth];
         }
     }
@@ -250,7 +258,9 @@ bool HotPixelsWeights::operator==(const HotPixelsWeights& ws) const
             mTwoDim        == ws.twoDim());
 }
 
-//Invert a quadratic matrix.
+/**
+ * Invert a quadratic matrix.
+ */
 void HotPixelsWeights::matrixInv (double* const a, const size_t size)
 {
     QScopedArrayPointer<double> b(new double[size * size]);
@@ -312,7 +322,9 @@ void HotPixelsWeights::matrixInv (double* const a, const size_t size)
     }
 }
 
-// Calculates one term of the polynomial
+/**
+ * Calculates one term of the polynomial
+ */
 double HotPixelsWeights::polyTerm (const size_t i_coeff, const int x, const int y, const int poly_order) const
 {
     const size_t x_power = i_coeff / ((size_t)poly_order + 1);

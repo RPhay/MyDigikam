@@ -152,10 +152,10 @@ BlackFrameListView::BlackFrameListView(QWidget* const parent)
     setIconSize(QSize(THUMB_WIDTH, THUMB_WIDTH));
 
     QStringList labels;
-    labels.append( i18n("Preview") );
-    labels.append( i18n("Size") );
-    labels.append( i18nc("This is a column which will contain the amount of HotPixels "
-                         "found in the black frame file", "HP") );
+    labels.append(i18n("Preview"));
+    labels.append(i18n("Size"));
+    labels.append(i18nc("This is a column which will contain the amount of HotPixels "
+                        "found in the black frame file", "HP"));
     setHeaderLabels(labels);
 }
 

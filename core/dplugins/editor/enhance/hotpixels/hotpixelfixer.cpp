@@ -135,7 +135,9 @@ void HotPixelFixer::filterImage()
     m_destImage = m_orgImage;
 }
 
-// Interpolates a pixel block
+/**
+ * Interpolates a pixel block
+ */
 void HotPixelFixer::interpolate(DImg& img, HotPixel& hp, int method)
 {
     const int xPos = hp.x();
@@ -143,6 +145,7 @@ void HotPixelFixer::interpolate(DImg& img, HotPixel& hp, int method)
     bool sixtBits  = img.sixteenBit();
 
     // Interpolate pixel.
+
     switch (method)
     {
         case AVERAGE_INTERPOLATION:
@@ -240,7 +243,7 @@ void HotPixelFixer::interpolate(DImg& img, HotPixel& hp, int method)
 
 void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction dir, int maxComponent)
 {
-    //TODO: implement direction here too
+    // TODO: implement direction here too
 
     for (int iComp = 0 ; iComp < 3 ; ++iComp)
     {
@@ -277,9 +280,9 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction 
         w.setPolynomeOrder(polynomeOrder);
         w.setTwoDim(dir == TWODIM_DIRECTION);
 
-        //TODO: check this, it must not recalculate existing calculated weights
-        //for now I don't think it is finding the duplicates fine, so it uses
-        //the previous one always...
+        // TODO: check this, it must not recalculate existing calculated weights
+        // for now I don't think it is finding the duplicates fine, so it uses
+        // the previous one always...
 
         //if (mWeightList.find(w)==mWeightList.end())
         //{
@@ -290,7 +293,8 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction 
         //}
 
         // Calculate weighted pixel sum.
-        for (int y = 0 ; y<px.height() ; ++y)
+
+        for (int y = 0 ; y < px.height() ; ++y)
         {
             for (int x = 0 ; x < px.width() ; ++x)
             {
@@ -303,17 +307,20 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction 
                     for (i = 0 ; i < (size_t)w.positions().count() ; ++i)
                     {
                         // In the one-dimensional case, only the y coordinate is used.
-                        const int xx = px.x() + (dir == VERTICAL_DIRECTION ? x :
-                                                 dir== HORIZONTAL_DIRECTION ? w.positions().at(i).y() : w.positions().at(i).x());
-                        const int yy = px.y() + (dir == HORIZONTAL_DIRECTION ? y :
-                                                 w.positions().at(i).y());
+
+                        const int xx = px.x() + ((dir == VERTICAL_DIRECTION) ? x
+                                                                             : (dir== HORIZONTAL_DIRECTION) ? w.positions().at(i).y()
+                                                                                                            : w.positions().at(i).x());
+                        const int yy = px.y() + ((dir == HORIZONTAL_DIRECTION) ? y
+                                                                               : w.positions().at(i).y());
 
                         if (validPoint (img,QPoint(xx, yy)))
                         {
-                            //TODO: check this. I think it is broken
+                            // TODO: check this. I think it is broken
+
                             double weight;
 
-                            if (dir == VERTICAL_DIRECTION)
+                            if      (dir == VERTICAL_DIRECTION)
                             {
                                 weight = w[i][y][0];
                             }
@@ -326,7 +333,7 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction 
                                 weight = w[i][y][x];
                             }
 
-                            if (iComp == 0)
+                            if      (iComp == 0)
                             {
                                 v += weight * img.getPixelColor(xx, yy).red();
                             }
@@ -346,7 +353,7 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction 
                     DColor color = img.getPixelColor(px.x()+x,px.y()+y);
                     int component;
 
-                    if (fabs (v) <= DBL_MIN)
+                    if      (fabs (v) <= DBL_MIN)
                     {
                         component = 0;
                     }
@@ -354,7 +361,8 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction 
                     {
                         component = (int) (v / sum_weight);
 
-                        //Clamp value
+                        // Clamp value
+
                         if (component < 0)
                         {
                             component = 0;
@@ -374,7 +382,7 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction 
                         component = 0;
                     }
 
-                    if (iComp == 0)
+                    if      (iComp == 0)
                     {
                         color.setRed(component);
                     }

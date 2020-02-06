@@ -50,7 +50,7 @@ public:
 
         for (int i = 0 ; i < mPositions.count() ; ++i)
         {
-            for (unsigned int j = 0; j < mHeight; ++j)
+            for (unsigned int j = 0 ; j < mHeight ; ++j)
             {
                 delete [] mWeightMatrices[i][j];
             }
@@ -137,7 +137,7 @@ private:
     unsigned int  mCoefficientNumber;
     bool          mTwoDim;
     unsigned int  mPolynomeOrder;
-    double** *    mWeightMatrices;   // Stores a list of weight matrices
+    double** *    mWeightMatrices;   ///< Stores a list of weight matrices
     QList<QPoint> mPositions;
 };
 

@@ -27,13 +27,13 @@
  *
  * ============================================================ */
 
-// Denominator for relative quantities.
+/// Denominator for relative quantities.
 #define DENOM (DENOM_SQRT * DENOM_SQRT)
 
-// Square root of denominator for relative quantities.
+/// Square root of denominator for relative quantities.
 #define DENOM_SQRT 10000
 
-// Convert relative to absolute numbers. Care must be taken not to overflow integers.
+/// Convert relative to absolute numbers. Care must be taken not to overflow integers.
 #define REL_TO_ABS(n,m) \
     ((((n) / DENOM_SQRT) * (m) + ((n) % DENOM_SQRT) * (m) / DENOM_SQRT) / DENOM_SQRT)
 
@@ -112,11 +112,13 @@ void BlackFrameParser::parseBlackFrame(QImage& img)
     blackFrameParsing();
 }
 
-// Parses black frames
-
+/**
+ * Parses black frames
+ */
 void BlackFrameParser::blackFrameParsing()
 {
     // Now find the hot pixels and store them in a list
+
     QList<HotPixel> hpList;
 
     // If you accidentally open a normal image for a black frame, the tool and host application will
@@ -124,18 +126,21 @@ void BlackFrameParser::blackFrameParsing()
     // We should stop at a certain amount of hot pixels, to avoid the freeze.
     // 1000 of total hot pixels should be good enough for a trigger. Images with such an amount of hot pixels should
     // be considered as messed up anyway.
+
     const int maxHotPixels = 1000;
 
     for (int y=0 ; y < m_Image.height(); ++y)
     {
         for (int x=0 ; x < m_Image.width(); ++x)
         {
-            //Get each point in the image
+            // Get each point in the image
+
             QRgb pixrgb = m_Image.pixel(x,y);
             QColor color;
             color.setRgb(pixrgb);
 
             // Find maximum component value.
+
             int       maxValue;
             int       threshold       = DENOM / 10;
             const int threshold_value = REL_TO_ABS(threshold,255);
@@ -147,11 +152,14 @@ void BlackFrameParser::blackFrameParsing()
             }
 
             // If the component is bigger than the threshold, add the point
+
             if (maxValue > threshold_value)
             {
                 HotPixel point;
                 point.rect       = QRect (x, y, 1, 1);
-                //TODO:check this
+
+                // TODO: check this
+
                 point.luminosity = ((2 * DENOM) / 255 ) * maxValue / 2;
 
                 hpList.append(point);
@@ -164,15 +172,18 @@ void BlackFrameParser::blackFrameParsing()
         }
     }
 
-    //Now join points together into groups
+    // Now join points together into groups
+
     consolidatePixels (hpList);
 
-    //And notify
+    // And notify
+
     emit signalParsed(hpList);
 }
 
-// Consolidate adjacent points into larger points.
-
+/**
+ * Consolidate adjacent points into larger points.
+ */
 void BlackFrameParser::consolidatePixels(QList<HotPixel>& list)
 {
     if (list.isEmpty())
@@ -180,7 +191,7 @@ void BlackFrameParser::consolidatePixels(QList<HotPixel>& list)
         return;
     }
 
-    /* Consolidate horizontally.  */
+    // Consolidate horizontally.
 
     QList<HotPixel>::iterator it, prevPointIt;
 
@@ -201,7 +212,8 @@ void BlackFrameParser::consolidatePixels(QList<HotPixel>& list)
 
             QList<HotPixel>::iterator point_below_it;
 
-            //find any intersecting hot pixels below tmp
+            // find any intersecting hot pixels below tmp
+
             int i = list.indexOf(tmp);
 
             if (i == -1)
@@ -224,7 +236,7 @@ void BlackFrameParser::consolidatePixels(QList<HotPixel>& list)
                 point.rect.setHeight(qMax(point.y() + point.height(),
                                           point_below.y() + point_below.height()) - point.y());
                 *it = point;
-                list.erase(point_below_it); //TODO: Check! this could remove it++?
+                list.erase(point_below_it); // TODO: Check! this could remove it++?
             }
             else
             {

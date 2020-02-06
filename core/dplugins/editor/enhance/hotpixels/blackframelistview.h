@@ -73,7 +73,7 @@ private Q_SLOTS:
 
 private:
 
-    // Data contained within each listview item
+    /// Data contained within each listview item
 
     QImage            m_thumb;
     QImage            m_image;

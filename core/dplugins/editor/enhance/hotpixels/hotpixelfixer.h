@@ -59,16 +59,18 @@ public:
 
     enum Direction
     {
-        TWODIM_DIRECTION     = 0,
-        VERTICAL_DIRECTION   = 1,
-        HORIZONTAL_DIRECTION = 2
+        TWODIM_DIRECTION        = 0,
+        VERTICAL_DIRECTION      = 1,
+        HORIZONTAL_DIRECTION    = 2
     };
 
 public:
 
     explicit HotPixelFixer(QObject* const parent = nullptr);
-    explicit HotPixelFixer(DImg* const orgImage, QObject* const parent,
-                           const QList<HotPixel>& hpList, int interpolationMethod);
+    explicit HotPixelFixer(DImg* const orgImage,
+                           QObject* const parent,
+                           const QList<HotPixel>& hpList,
+                           int interpolationMethod);
     ~HotPixelFixer();
 
     static QString          FilterIdentifier()
@@ -88,26 +90,36 @@ public:
         return 1;
     }
 
-    void readParameters(const FilterAction& action) override;
+    void readParameters(const FilterAction& action)  override;
 
     virtual QString         filterIdentifier() const override
     {
         return FilterIdentifier();
     }
 
-    virtual Digikam::FilterAction filterAction() override;
+    virtual Digikam::FilterAction filterAction()     override;
 
 private:
 
-    virtual void filterImage() override;
+    virtual void filterImage()                       override;
 
-    void interpolate(DImg& img,HotPixel& hp, int method);
-    void weightPixels(DImg& img, HotPixel& px, int method,
-                      Direction dir, int maxComponent);
+    void interpolate(DImg& img,
+                     HotPixel& hp,
+                     int method);
+    void weightPixels(DImg& img,
+                      HotPixel& px,
+                      int method,
+                      Direction dir,
+                      int maxComponent);
 
     inline bool validPoint(DImg& img, const QPoint& p)
     {
-        return (p.x() >= 0 && p.y() >= 0 && p.x() < (long) img.width() && p.y() < (long) img.height());
+        return (
+                (p.x() >= 0) &&
+                (p.y() >= 0) &&
+                (p.x() < (long) img.width()) &&
+                (p.y() < (long) img.height())
+               );
     };
 
     QList <HotPixelsWeights> mWeightList;
