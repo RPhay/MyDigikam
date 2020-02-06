@@ -46,10 +46,14 @@
 #include "PltDeviceHost.h"
 #include "Platinum.h"
 
+#ifndef Q_CC_MSVC
+
 void NPT_Console::Output(const char* msg)
 {
     qCDebug(DIGIKAM_MEDIASRV_LOG) << msg;
 }
+
+#endif
 
 void UPnPLogger(const NPT_LogRecord* record)
 {
@@ -63,18 +67,23 @@ void UPnPLogger(const NPT_LogRecord* record)
         case NPT_LOG_LEVEL_FATAL:
             qCDebug(DIGIKAM_MEDIASRV_LOG_FATAL) << msg;
             break;
+
         case NPT_LOG_LEVEL_SEVERE:
             qCDebug(DIGIKAM_MEDIASRV_LOG_SEVERE) << msg;
             break;
+
         case NPT_LOG_LEVEL_WARNING:
             qCDebug(DIGIKAM_MEDIASRV_LOG_WARN) << msg;
             break;
+
         case NPT_LOG_LEVEL_INFO:
             qCDebug(DIGIKAM_MEDIASRV_LOG_INFO) << msg;
             break;
+
         case NPT_LOG_LEVEL_FINE:
             qCDebug(DIGIKAM_MEDIASRV_LOG) << msg;
             break;
+
         default: // NPT_LOG_LEVEL_DEBUG:
             qCDebug(DIGIKAM_MEDIASRV_LOG_DEBUG) << msg;
             break;
