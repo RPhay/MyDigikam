@@ -38,6 +38,11 @@
 #include "tparserprivate.h"
 #include "panoParser.h"
 
+#if defined(_MSC_VER)
+#   define _CRT_NONSTDC_NO_WARNINGS
+#   include <windows.h>
+#endif
+
 char strBuffer[PT_TOKEN_MAX_LEN + 1];
 char *strBuffer_ptr;
 int first_eof;
