@@ -46,14 +46,10 @@
 #include "PltDeviceHost.h"
 #include "Platinum.h"
 
-#ifndef Q_CC_MSVC
-
 void NPT_Console::Output(const char* msg)
 {
     qCDebug(DIGIKAM_MEDIASRV_LOG) << msg;
 }
-
-#endif
 
 void UPnPLogger(const NPT_LogRecord* record)
 {
