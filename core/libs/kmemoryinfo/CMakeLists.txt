@@ -12,9 +12,9 @@ include_directories($<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>)
 set(libkmemoryinfo_SRCS kmemoryinfo.cpp)
 
 # Used by digikamcore
-add_library(kmemoryinfo_src OBJECT ${libkmemoryinfo_SRCS})
+add_library(core_kmemoryinfo_obj OBJECT ${libkmemoryinfo_SRCS})
 
-target_compile_definitions(kmemoryinfo_src
+target_compile_definitions(core_kmemoryinfo_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

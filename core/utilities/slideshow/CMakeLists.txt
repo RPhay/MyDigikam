@@ -30,9 +30,9 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
-add_library(slideshow_src OBJECT ${libslideshow_SRCS})
+add_library(core_slideshow_obj OBJECT ${libslideshow_SRCS})
 
-target_compile_definitions(slideshow_src
+target_compile_definitions(core_slideshow_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

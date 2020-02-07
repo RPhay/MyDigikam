@@ -39,9 +39,9 @@ if(${Marble_FOUND})
 endif()
 
 # Used by digikamcore
-add_library(itemproperties_src OBJECT ${libitemproperties_SRCS})
+add_library(core_itemproperties_obj OBJECT ${libitemproperties_SRCS})
 
-target_compile_definitions(itemproperties_src
+target_compile_definitions(core_itemproperties_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

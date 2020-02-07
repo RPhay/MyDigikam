@@ -26,9 +26,9 @@ set(libsetupshowfoto_SRCS
 )
 
 # Used by digikamcore
-add_library(setupshowfoto_src OBJECT  ${libsetupshowfoto_SRCS})
+add_library(core_setupcommon_obj OBJECT  ${libsetupshowfoto_SRCS})
 
-target_compile_definitions(setupshowfoto_src
+target_compile_definitions(core_setupcommon_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

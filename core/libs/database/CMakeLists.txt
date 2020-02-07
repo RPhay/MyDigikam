@@ -56,9 +56,9 @@ set(libdatabasecore_SRCS
 )
 
 # Used by digikamcore
-add_library(digikamdatabasecore_src OBJECT ${libdatabasecore_SRCS})
+add_library(core_digikamdatabase_obj OBJECT ${libdatabasecore_SRCS})
 
-target_compile_definitions(digikamdatabasecore_src
+target_compile_definitions(core_digikamdatabase_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

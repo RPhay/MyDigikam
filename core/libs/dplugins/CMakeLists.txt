@@ -85,9 +85,9 @@ set(libdpluginsinterface_SRCS
 #endif()
 
 # Used by digikamcore
-add_library(dpluginsinterface_src OBJECT ${libdpluginsinterface_SRCS})
+add_library(core_dpluginsinterface_obj OBJECT ${libdpluginsinterface_SRCS})
 
-target_compile_definitions(dpluginsinterface_src
+target_compile_definitions(core_dpluginsinterface_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

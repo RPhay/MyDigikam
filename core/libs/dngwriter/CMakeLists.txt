@@ -29,9 +29,9 @@ include_directories(
 set(libmd5_SRCS extra/md5/XMP_MD5.cpp)
 
 # Used by digikamcore
-add_library(libmd5_src OBJECT ${libmd5_SRCS})
+add_library(core_libmd5_obj OBJECT ${libmd5_SRCS})
 
-target_compile_definitions(libmd5_src
+target_compile_definitions(core_libmd5_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )
@@ -40,9 +40,9 @@ target_compile_definitions(libmd5_src
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
 
 if(MSVC)
-    target_compile_options(libmd5_src PRIVATE /w)
+    target_compile_options(core_libmd5_obj PRIVATE /w)
 else()
-    target_compile_options(libmd5_src PRIVATE -w -fPIC)
+    target_compile_options(core_libmd5_obj PRIVATE -w -fPIC)
 endif()
 
 #------------------------------------------------------------------------------------
@@ -66,9 +66,9 @@ set(libxmp_SRCS
 )
 
 # Used by digikamcore
-add_library(libxmp_src OBJECT ${libxmp_SRCS})
+add_library(core_libxmp_obj OBJECT ${libxmp_SRCS})
 
-target_compile_definitions(libxmp_src
+target_compile_definitions(core_libxmp_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )
@@ -77,9 +77,9 @@ target_compile_definitions(libxmp_src
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
 
 if(MSVC)
-    target_compile_options(libxmp_src PRIVATE /w)
+    target_compile_options(core_libxmp_obj PRIVATE /w)
 else()
-    target_compile_options(libxmp_src PRIVATE -w -fPIC)
+    target_compile_options(core_libxmp_obj PRIVATE -w -fPIC)
 endif()
 
 #------------------------------------------------------------------------------------
@@ -158,9 +158,9 @@ foreach(_file ${extra_headers})
 endforeach()
 
 # Used by digikamcore
-add_library(libdng_src OBJECT ${libdng_SRCS})
+add_library(core_libdng_obj OBJECT ${libdng_SRCS})
 
-target_compile_definitions(libdng_src
+target_compile_definitions(core_libdng_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )
@@ -169,16 +169,16 @@ target_compile_definitions(libdng_src
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
 
 if(MSVC)
-    target_compile_options(libdng_src PRIVATE /w)
+    target_compile_options(core_libdng_obj PRIVATE /w)
 else()
-    target_compile_options(libdng_src PRIVATE -w -fPIC)
+    target_compile_options(core_libdng_obj PRIVATE -w -fPIC)
 endif()
 
 # For unit tests.
 add_library(libdng STATIC
-            $<TARGET_OBJECTS:libdng_src>
-            $<TARGET_OBJECTS:libxmp_src>
-            $<TARGET_OBJECTS:libmd5_src>
+            $<TARGET_OBJECTS:core_libdng_obj>
+            $<TARGET_OBJECTS:core_libxmp_obj>
+            $<TARGET_OBJECTS:core_libmd5_obj>
 )
 
 #------------------------------------------------------------------------------------
@@ -192,9 +192,9 @@ set(libdngwriter_SRCS
 )
 
 # Used by digikamcore
-add_library(dngwriter_src OBJECT ${libdngwriter_SRCS})
+add_library(core_dngwriter_obj OBJECT ${libdngwriter_SRCS})
 
-target_compile_definitions(dngwriter_src
+target_compile_definitions(core_dngwriter_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

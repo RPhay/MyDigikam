@@ -227,13 +227,13 @@ foreach(_file ${cimg_headers})
 endforeach()
 
 # Used by digikamcore
-add_library(dimg_src OBJECT
+add_library(core_dimg_obj OBJECT
             ${libdimgloaders_SRCS}
             ${libdimgfilters_SRCS}
             ${libdimg_SRCS}
 )
 
-target_compile_definitions(dimg_src
+target_compile_definitions(core_dimg_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

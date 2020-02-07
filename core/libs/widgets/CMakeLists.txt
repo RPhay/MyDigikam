@@ -143,7 +143,7 @@ if(Gphoto2_FOUND)
 endif()
 
 # Used by digikamcore
-add_library(digikamwidgetscore_src OBJECT
+add_library(core_digikamwidgets_obj OBJECT
     ${libmainview_SRCS}
     ${libgraphicsviewwidgets_SRCS}
     ${libiccprofileswidgets_SRCS}
@@ -158,7 +158,7 @@ add_library(digikamwidgetscore_src OBJECT
     ${libtextwidgets_SRCS}
 )
 
-target_compile_definitions(digikamwidgetscore_src
+target_compile_definitions(core_digikamwidgets_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

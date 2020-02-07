@@ -40,9 +40,9 @@ foreach(_file ${libpgf_headers})
 endforeach()
 
 # Used by digikamcore
-add_library(pgfutils_src OBJECT ${libpgfutils_SRCS})
+add_library(core_pgfutils_obj OBJECT ${libpgfutils_SRCS})
 
-target_compile_definitions(pgfutils_src
+target_compile_definitions(core_pgfutils_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

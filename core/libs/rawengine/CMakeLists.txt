@@ -141,9 +141,9 @@ foreach(_file ${libraw_headers})
 endforeach()
 
 # Used by digikamcore
-add_library(libraw_src OBJECT ${libraw_LIB_SRCS})
+add_library(core_libraw_obj OBJECT ${libraw_LIB_SRCS})
 
-target_compile_definitions(libraw_src
+target_compile_definitions(core_libraw_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )
@@ -152,14 +152,14 @@ target_compile_definitions(libraw_src
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (Bug: #269903)
 # Use O4 GCC compilation option to prevent artifacts with OpenMP (Bug #305382)
 if(MSVC)
-    target_compile_options(libraw_src PRIVATE /w)
+    target_compile_options(core_libraw_obj PRIVATE /w)
 else()
-    target_compile_options(libraw_src PRIVATE -w -fPIC -O4)
+    target_compile_options(core_libraw_obj PRIVATE -w -fPIC -O4)
 endif()
 
 # For unit tests.
 add_library(libraw STATIC
-            $<TARGET_OBJECTS:libraw_src>
+            $<TARGET_OBJECTS:core_libraw_obj>
 )
 
 #################################
@@ -183,9 +183,9 @@ include_directories(
 )
 
 # Used by digikamcore
-add_library(rawengine_src OBJECT ${librawengine_SRCS})
+add_library(core_rawengine_obj OBJECT ${librawengine_SRCS})
 
-target_compile_definitions(rawengine_src
+target_compile_definitions(core_rawengine_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

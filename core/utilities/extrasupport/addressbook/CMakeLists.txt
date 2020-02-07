@@ -23,19 +23,19 @@ if(KF5AkonadiContact_FOUND)
     )
 endif()
 
-add_library(akonadiiface_src OBJECT ${akonadiiface_SRCS})
+add_library(core_akonadiiface_obj OBJECT ${akonadiiface_SRCS})
 
-target_compile_definitions(akonadiiface_src
+target_compile_definitions(core_akonadiiface_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )
 
 
-add_library(akonadiiface STATIC $<TARGET_OBJECTS:akonadiiface_src>)
+add_library(akonadiiface STATIC $<TARGET_OBJECTS:core_akonadiiface_obj>)
 
 target_link_libraries(akonadiiface PRIVATE Qt5::Core KF5::I18n)
 
 if(KF5AkonadiContact_FOUND)
-    target_include_directories(akonadiiface_src PRIVATE $<TARGET_PROPERTY:KF5::AkonadiContact,INTERFACE_INCLUDE_DIRECTORIES>)
+    target_include_directories(core_akonadiiface_obj PRIVATE $<TARGET_PROPERTY:KF5::AkonadiContact,INTERFACE_INCLUDE_DIRECTORIES>)
     target_link_libraries(akonadiiface PRIVATE KF5::AkonadiContact KF5::Contacts)
 endif()

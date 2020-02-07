@@ -48,9 +48,9 @@ set(libdialogs_SRCS
 )
 
 # Used by digikamcore
-add_library(digikamdialogscore_src OBJECT ${libdialogs_SRCS})
+add_library(core_digikamdialogs_obj OBJECT ${libdialogs_SRCS})
 
-target_compile_definitions(digikamdialogscore_src
+target_compile_definitions(core_digikamdialogs_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

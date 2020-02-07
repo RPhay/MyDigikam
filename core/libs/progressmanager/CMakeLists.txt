@@ -28,9 +28,9 @@ include_directories(
 )
 
 # Used by digikamcore
-add_library(progressmanager_src OBJECT ${libprogressmanager_SRCS})
+add_library(core_progressmanager_obj OBJECT ${libprogressmanager_SRCS})
 
-target_compile_definitions(progressmanager_src
+target_compile_definitions(core_progressmanager_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

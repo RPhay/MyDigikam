@@ -29,9 +29,9 @@ set(libgenericmodels_SRCS
 )
 
 # Used by digikamcore
-add_library(digikamgenericmodels_src OBJECT ${libgenericmodels_SRCS})
+add_library(core_digikamgenericmodels_obj OBJECT ${libgenericmodels_SRCS})
 
-target_compile_definitions(digikamgenericmodels_src
+target_compile_definitions(core_digikamgenericmodels_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

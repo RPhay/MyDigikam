@@ -35,9 +35,9 @@ include_directories(
 )
 
 # Used by digikamcore
-add_library(digikamlibtransitionmngr_src OBJECT ${libtransitionmngr_SRCS})
+add_library(core_libtransitionmngr_obj OBJECT ${libtransitionmngr_SRCS})
 
-target_compile_definitions(digikamlibtransitionmngr_src
+target_compile_definitions(core_libtransitionmngr_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

@@ -39,9 +39,9 @@ include_directories(
 )
 
 # Used by digikamcore
-add_library(jpegutils_src OBJECT ${libjpegutils_SRCS})
+add_library(core_jpegutils_obj OBJECT ${libjpegutils_SRCS})
 
-target_compile_definitions(jpegutils_src
+target_compile_definitions(core_jpegutils_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

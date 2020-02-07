@@ -23,9 +23,9 @@ set(libtimeadjust_SRCS
 )
 
 # Used by digikamcore
-add_library(timeadjust_src OBJECT ${libtimeadjust_SRCS})
+add_library(core_timeadjust_obj OBJECT ${libtimeadjust_SRCS})
 
-target_compile_definitions(timeadjust_src
+target_compile_definitions(core_timeadjust_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

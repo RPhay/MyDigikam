@@ -90,18 +90,18 @@ else()
 endif()
 
 # Used by digikamcore
-add_library(digikamfacesengine_src
+add_library(core_digikamfacesengine_obj
             OBJECT
             ${facesengine_LIB_SRCS}
 )
 
-target_compile_definitions(digikamfacesengine_src
+target_compile_definitions(core_digikamfacesengine_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )
 
 # For unit-tests
-add_library(digikamfacesengine STATIC $<TARGET_OBJECTS:digikamfacesengine_src>)
+add_library(digikamfacesengine STATIC $<TARGET_OBJECTS:core_digikamfacesengine_obj>)
 
 # ---------------------------------------------------------------------------
 

@@ -25,9 +25,9 @@ set(libvideotools_SRCS
 )
 
 # Used by digikamcore
-add_library(videotools_src OBJECT ${libvideotools_SRCS})
+add_library(core_videotools_obj OBJECT ${libvideotools_SRCS})
 
-target_compile_definitions(videotools_src
+target_compile_definitions(core_videotools_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

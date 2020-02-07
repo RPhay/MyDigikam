@@ -49,9 +49,9 @@ set(libwso2_SRCS
 )
 
 # Used by digikamcore
-add_library(libwso2_src OBJECT ${libwso2_SRCS})
+add_library(core_libwso2_obj OBJECT ${libwso2_SRCS})
 
-target_compile_definitions(libwso2_src
+target_compile_definitions(core_libwso2_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

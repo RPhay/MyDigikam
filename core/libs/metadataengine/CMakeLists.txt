@@ -81,9 +81,9 @@ include_directories(
 )
 
 # Used by digikamcore
-add_library(dmetadata_src OBJECT ${libdmetadata_SRCS})
+add_library(core_dmetadata_obj OBJECT ${libdmetadata_SRCS})
 
-target_compile_definitions(dmetadata_src
+target_compile_definitions(core_dmetadata_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

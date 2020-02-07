@@ -12,49 +12,49 @@ set(DIGIKAMCORE_OBJECTS
             utils/digikam_debug.cpp
             utils/digikam_version.cpp
 
-            $<TARGET_OBJECTS:dimg_src>
-            $<TARGET_OBJECTS:dragdrop_src>
-            $<TARGET_OBJECTS:dmetadata_src>
-            $<TARGET_OBJECTS:jpegutils_src>
-            $<TARGET_OBJECTS:progressmanager_src>
-            $<TARGET_OBJECTS:threadimageio_src>
-            $<TARGET_OBJECTS:pgfutils_src>
-            $<TARGET_OBJECTS:dthread_src>
-            $<TARGET_OBJECTS:versionmanager_src>
-            $<TARGET_OBJECTS:kmemoryinfo_src>
-            $<TARGET_OBJECTS:libraw_src>
-            $<TARGET_OBJECTS:rawengine_src>
-            $<TARGET_OBJECTS:dpluginsinterface_src>
-            $<TARGET_OBJECTS:libwso2_src>
+            $<TARGET_OBJECTS:core_dimg_obj>
+            $<TARGET_OBJECTS:core_dragdrop_obj>
+            $<TARGET_OBJECTS:core_dmetadata_obj>
+            $<TARGET_OBJECTS:core_jpegutils_obj>
+            $<TARGET_OBJECTS:core_progressmanager_obj>
+            $<TARGET_OBJECTS:core_threadimageio_obj>
+            $<TARGET_OBJECTS:core_pgfutils_obj>
+            $<TARGET_OBJECTS:core_dthread_obj>
+            $<TARGET_OBJECTS:core_versionmanager_obj>
+            $<TARGET_OBJECTS:core_kmemoryinfo_obj>
+            $<TARGET_OBJECTS:core_libraw_obj>
+            $<TARGET_OBJECTS:core_rawengine_obj>
+            $<TARGET_OBJECTS:core_dpluginsinterface_obj>
+            $<TARGET_OBJECTS:core_libwso2_obj>
 
-            $<TARGET_OBJECTS:libmd5_src>
-            $<TARGET_OBJECTS:libxmp_src>
-            $<TARGET_OBJECTS:libdng_src>
-            $<TARGET_OBJECTS:dngwriter_src>
+            $<TARGET_OBJECTS:core_libmd5_obj>
+            $<TARGET_OBJECTS:core_libxmp_obj>
+            $<TARGET_OBJECTS:core_libdng_obj>
+            $<TARGET_OBJECTS:core_dngwriter_obj>
 
             # widgets
-            $<TARGET_OBJECTS:digikamwidgetscore_src>
-            $<TARGET_OBJECTS:digikamdialogscore_src>
-            $<TARGET_OBJECTS:itemproperties_src>
-            $<TARGET_OBJECTS:digikamgenericmodels_src>
-            $<TARGET_OBJECTS:notificationmanager_src>
+            $<TARGET_OBJECTS:core_digikamwidgets_obj>
+            $<TARGET_OBJECTS:core_digikamdialogs_obj>
+            $<TARGET_OBJECTS:core_itemproperties_obj>
+            $<TARGET_OBJECTS:core_digikamgenericmodels_obj>
+            $<TARGET_OBJECTS:core_notificationmanager_obj>
 
             # utilities
-            $<TARGET_OBJECTS:setupshowfoto_src>
-            $<TARGET_OBJECTS:slideshow_src>
-            $<TARGET_OBJECTS:imageeditor_src>
-            $<TARGET_OBJECTS:digikamlibtransitionmngr_src>
-            $<TARGET_OBJECTS:timeadjust_src>
+            $<TARGET_OBJECTS:core_setupcommon_obj>
+            $<TARGET_OBJECTS:core_slideshow_obj>
+            $<TARGET_OBJECTS:core_imageeditor_obj>
+            $<TARGET_OBJECTS:core_libtransitionmngr_obj>
+            $<TARGET_OBJECTS:core_timeadjust_obj>
 
-            $<TARGET_OBJECTS:digikamdatabasecore_src>
-            $<TARGET_OBJECTS:digikamfacesengine_src>
+            $<TARGET_OBJECTS:core_digikamdatabase_obj>
+            $<TARGET_OBJECTS:core_digikamfacesengine_obj>
 )
 
 if(ENABLE_MEDIAPLAYER)
 
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
-        $<TARGET_OBJECTS:videotools_src>
+        $<TARGET_OBJECTS:core_videotools_obj>
     )
 
 endif()
@@ -63,8 +63,8 @@ if(Marble_FOUND)
 
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
-        $<TARGET_OBJECTS:geoiface_src>
-        $<TARGET_OBJECTS:geomapwrapper_src>
+        $<TARGET_OBJECTS:core_geoiface_obj>
+        $<TARGET_OBJECTS:core_geomapwrapper_obj>
     )
 
 endif()
@@ -73,7 +73,7 @@ if(KF5FileMetaData_FOUND)
 
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
-        $<TARGET_OBJECTS:baloowrap_src>
+        $<TARGET_OBJECTS:core_baloowrap_obj>
     )
 
 endif()
@@ -82,7 +82,7 @@ if(KF5AkonadiContact_FOUND)
 
     set(DIGIKAMCORE_OBJECTS
         ${DIGIKAMCORE_OBJECTS}
-        $<TARGET_OBJECTS:akonadiiface_src>
+        $<TARGET_OBJECTS:core_akonadiiface_obj>
     )
 
 endif()

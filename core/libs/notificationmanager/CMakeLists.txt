@@ -38,9 +38,9 @@ if(KF5Notifications_FOUND)
 endif()
 
 # Used by digikamcore
-add_library(notificationmanager_src OBJECT ${libnotificationmanager_SRCS})
+add_library(core_notificationmanager_obj OBJECT ${libnotificationmanager_SRCS})
 
-target_compile_definitions(notificationmanager_src
+target_compile_definitions(core_notificationmanager_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

@@ -20,9 +20,9 @@ include_directories(
 )
 
 # Used by digikamcore
-add_library(dthread_src OBJECT ${libdthread_SRCS})
+add_library(core_dthread_obj OBJECT ${libdthread_SRCS})
 
-target_compile_definitions(dthread_src
+target_compile_definitions(core_dthread_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )

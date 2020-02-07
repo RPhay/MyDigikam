@@ -66,13 +66,13 @@ set(libeditoriface_SRCS
 )
 
 # Used by digikamcore
-add_library(imageeditor_src OBJECT ${libeditorcore_SRCS}
+add_library(core_imageeditor_obj OBJECT ${libeditorcore_SRCS}
                                    ${libeditordlg_SRCS}
                                    ${libeditoriface_SRCS}
                                    ${libeditorwidgets_SRCS}
 )
 
-target_compile_definitions(imageeditor_src
+target_compile_definitions(core_imageeditor_obj
                            PRIVATE
                            digikamcore_EXPORTS
 )
