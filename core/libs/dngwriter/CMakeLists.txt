@@ -169,9 +169,17 @@ target_compile_definitions(core_libdng_obj
 # Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
 
 if(MSVC)
-    target_compile_options(core_libdng_obj PRIVATE /w)
+
+    foreach(_file ${libdng_SRCS})
+        get_source_file_property(FILEPROPS ${_file} COMPILE_FLAGS)
+        string(REPLACE "/W3" "/w" FILEPROPS ${FILEPROPS} )
+        set_source_files_properties(${_file} COMPILE_FLAGS ${FILEPROPS})
+    endforeach()
+
 else()
+
     target_compile_options(core_libdng_obj PRIVATE -w -fPIC)
+
 endif()
 
 # For unit tests.
