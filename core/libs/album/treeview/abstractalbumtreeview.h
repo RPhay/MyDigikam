@@ -363,6 +363,7 @@ protected:
     AlbumFilterModel*           m_albumFilterModel;
     AlbumModelDragDropHandler*  m_dragDropHandler;
 
+    int                         m_lastScrollBarValue;
     bool                        m_checkOnMiddleClick;
     bool                        m_restoreCheckState;
     Flags                       m_flags;
@@ -424,6 +425,12 @@ private Q_SLOTS:
      * album is selected again. Therefore it tracks new selections.
      */
     void currentAlbumChangedForBackupSelection(Album* currentAlbum);
+
+    /**
+     * This slots is used to fix bug 400960.
+     */
+    void slotScrollBarValueChanged(int value);
+    void slotScrollBarActionTriggered(int action);
 
 private:
 

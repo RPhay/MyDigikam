@@ -40,6 +40,7 @@ AbstractAlbumTreeView::AbstractAlbumTreeView(QWidget* const parent, Flags flags)
       m_albumModel(nullptr),
       m_albumFilterModel(nullptr),
       m_dragDropHandler(nullptr),
+      m_lastScrollBarValue(0),
       m_checkOnMiddleClick(false),
       m_restoreCheckState(false),
       m_flags(flags),
@@ -73,9 +74,7 @@ AbstractAlbumTreeView::AbstractAlbumTreeView(QWidget* const parent, Flags flags)
         setAlbumFilterModel(new AlbumFilterModel(this));
     }
 
-    setAutoScroll(false);
     setSortingEnabled(true);
-
     albumSettingsChanged();
 }
 
@@ -172,6 +171,12 @@ void AbstractAlbumTreeView::setAlbumFilterModel(AlbumFilterModel* const filterMo
 
         connect(m_albumFilterModel, SIGNAL(layoutChanged()),
                 this, SLOT(adaptColumnsOnLayoutChange()));
+
+        connect(horizontalScrollBar(), SIGNAL(valueChanged(int)),
+                this, SLOT(slotScrollBarValueChanged(int)));
+
+        connect(horizontalScrollBar(), SIGNAL(actionTriggered(int)),
+                this, SLOT(slotScrollBarActionTriggered(int)));
 
         adaptColumnsToContent();
 
@@ -426,6 +431,7 @@ void AbstractAlbumTreeView::slotSelectionChanged()
 {
     /** Dead signal? Nobody listens to it **/
     //emit selectedAlbumsChanged(selectedAlbums<Album>(selectionModel(), m_albumFilterModel));
+
     if (d->selectAlbumOnClick)
     {
         AlbumManager::instance()->setCurrentAlbums(selectedAlbums<Album>(selectionModel(),
@@ -551,16 +557,12 @@ void AbstractAlbumTreeView::dragMoveEvent(QDragMoveEvent* e)
             e->setDropAction(action);
             e->accept();
         }
-        // Workaround for bug 400960
-        // setAutoScroll(false) in dragLeaveEvent() and dropEvent()
-        setAutoScroll(true);
     }
 }
 
 void AbstractAlbumTreeView::dragLeaveEvent(QDragLeaveEvent* e)
 {
     QTreeView::dragLeaveEvent(e);
-    setAutoScroll(false);
 }
 
 void AbstractAlbumTreeView::dropEvent(QDropEvent* e)
@@ -576,8 +578,6 @@ void AbstractAlbumTreeView::dropEvent(QDropEvent* e)
         {
             e->accept();
         }
-
-        setAutoScroll(false);
     }
 }
 
@@ -1024,6 +1024,27 @@ void AbstractAlbumTreeView::albumSettingsChanged()
     if (d->delegate)
     {
         d->delegate->updateHeight();
+    }
+}
+
+void AbstractAlbumTreeView::slotScrollBarValueChanged(int value)
+{
+    if (m_lastScrollBarValue == -1)
+    {
+        m_lastScrollBarValue = value;
+    }
+
+    if ((value == 0) && (m_lastScrollBarValue > 0))
+    {
+        horizontalScrollBar()->setValue(m_lastScrollBarValue);
+    }
+}
+
+void AbstractAlbumTreeView::slotScrollBarActionTriggered(int action)
+{
+    if (action == QAbstractSlider::SliderMove)
+    {
+        m_lastScrollBarValue = -1;
     }
 }
 

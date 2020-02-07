@@ -623,4 +623,5 @@ BUGFIXES:
 606 ==> 417178 - Export pictures by creating "relative" symlinks.
 607 ==> 417221 - "Tags Filter" not honouring "AND" modifier.
 608 ==> 417255 - People > Search In > Albums/Tags requires scrollbar.
-609 ==> 
+609 ==> 417257 - When navigating various TreeViews with keyboard, selected item is not always in focus.
+610 ==> 
