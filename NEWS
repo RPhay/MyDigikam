@@ -622,4 +622,5 @@ BUGFIXES:
 605 ==> 417136 - Export pictures by creating symlinks (e.g. for a best-of-selection on filesystem).
 606 ==> 417178 - Export pictures by creating "relative" symlinks.
 607 ==> 417221 - "Tags Filter" not honouring "AND" modifier.
-608 ==> 
+608 ==> 417255 - People > Search In > Albums/Tags requires scrollbar.
+609 ==> 
