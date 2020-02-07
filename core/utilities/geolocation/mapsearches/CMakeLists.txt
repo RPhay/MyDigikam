@@ -25,9 +25,9 @@ if(ENABLE_DBUS)
 endif()
 
 # Used by digikamgui
-add_library(gpssearch_src OBJECT ${libgpssearch_SRCS})
+add_library(gui_gpssearch_obj OBJECT ${libgpssearch_SRCS})
 
-target_compile_definitions(gpssearch_src
+target_compile_definitions(gui_gpssearch_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

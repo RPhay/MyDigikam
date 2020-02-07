@@ -37,9 +37,9 @@ if(ENABLE_DBUS)
 endif()
 
 # Used by digikamgui
-add_library(searchwindow_src OBJECT ${libsearchwindow_SRCS})
+add_library(gui_searchwindow_obj OBJECT ${libsearchwindow_SRCS})
 
-target_compile_definitions(searchwindow_src
+target_compile_definitions(gui_searchwindow_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

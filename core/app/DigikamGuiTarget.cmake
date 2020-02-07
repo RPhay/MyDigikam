@@ -126,12 +126,12 @@ if(${Marble_FOUND})
 endif()
 
 
-add_library(digikamgui_src
+add_library(gui_digikam_obj
             OBJECT
             ${libdigikamgui_SRCS}
 )
 
-target_compile_definitions(digikamgui_src
+target_compile_definitions(gui_digikam_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )
@@ -140,44 +140,44 @@ target_compile_definitions(digikamgui_src
 
 set(DIGIKAMGUI_OBJECTS
 
-            $<TARGET_OBJECTS:digikamgui_src>
+            $<TARGET_OBJECTS:gui_digikam_obj>
 
             # Libs
-            $<TARGET_OBJECTS:digikamdatabasemain_src>
-            $<TARGET_OBJECTS:digikamfacesenginedatabase_src>
-            $<TARGET_OBJECTS:digikamdeletedialog_src>
-            $<TARGET_OBJECTS:digikamtemplate_src>
-            $<TARGET_OBJECTS:itempropertiesdigikam_src>
-            $<TARGET_OBJECTS:digikammodels_src>
-            $<TARGET_OBJECTS:digikamalbum_src>
-            $<TARGET_OBJECTS:fileactionmanager_src>
-            $<TARGET_OBJECTS:digikamtags_src>
-            $<TARGET_OBJECTS:digikamsettings_src>
-            $<TARGET_OBJECTS:filters_src>
-            $<TARGET_OBJECTS:imagehistorywidgets_src>
-            $<TARGET_OBJECTS:iojobs_src>
-            $<TARGET_OBJECTS:dtrash_src>
+            $<TARGET_OBJECTS:gui_digikamdatabasemain_obj>
+            $<TARGET_OBJECTS:gui_digikamfacesenginedatabase_obj>
+            $<TARGET_OBJECTS:gui_digikamdeletedialog_obj>
+            $<TARGET_OBJECTS:gui_digikamtemplate_obj>
+            $<TARGET_OBJECTS:gui_itempropertiesdigikam_obj>
+            $<TARGET_OBJECTS:gui_digikammodels_obj>
+            $<TARGET_OBJECTS:gui_digikamalbum_obj>
+            $<TARGET_OBJECTS:gui_fileactionmanager_obj>
+            $<TARGET_OBJECTS:gui_digikamtags_obj>
+            $<TARGET_OBJECTS:gui_digikamsettings_obj>
+            $<TARGET_OBJECTS:gui_filters_obj>
+            $<TARGET_OBJECTS:gui_imagehistorywidgets_obj>
+            $<TARGET_OBJECTS:gui_iojobs_obj>
+            $<TARGET_OBJECTS:gui_dtrash_obj>
 
             # Utilities
-            $<TARGET_OBJECTS:setup_src>
-            $<TARGET_OBJECTS:lighttable_src>
-            $<TARGET_OBJECTS:maintenance_src>
-            $<TARGET_OBJECTS:searchwindow_src>
-            $<TARGET_OBJECTS:firstrun_src>
-            $<TARGET_OBJECTS:fuzzysearch_src>
-            $<TARGET_OBJECTS:imageeditorgui_src>
-            $<TARGET_OBJECTS:importui_src>
-            $<TARGET_OBJECTS:importuibackend_src>
-            $<TARGET_OBJECTS:facemanagement_src>
-            $<TARGET_OBJECTS:queuemanager_src>
-            $<TARGET_OBJECTS:advancedrename_src>
+            $<TARGET_OBJECTS:gui_setup_obj>
+            $<TARGET_OBJECTS:gui_lighttable_obj>
+            $<TARGET_OBJECTS:gui_maintenance_obj>
+            $<TARGET_OBJECTS:gui_searchwindow_obj>
+            $<TARGET_OBJECTS:gui_firstrun_obj>
+            $<TARGET_OBJECTS:gui_fuzzysearch_obj>
+            $<TARGET_OBJECTS:gui_imageeditorgui_obj>
+            $<TARGET_OBJECTS:gui_importui_obj>
+            $<TARGET_OBJECTS:gui_importuibackend_obj>
+            $<TARGET_OBJECTS:gui_facemanagement_obj>
+            $<TARGET_OBJECTS:gui_queuemanager_obj>
+            $<TARGET_OBJECTS:gui_advancedrename_obj>
 )
 
 if(${Marble_FOUND})
 
     set(DIGIKAMGUI_OBJECTS
         ${DIGIKAMGUI_OBJECTS}
-        $<TARGET_OBJECTS:gpssearch_src>
+        $<TARGET_OBJECTS:gui_gpssearch_obj>
     )
 
 endif()

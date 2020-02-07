@@ -35,9 +35,9 @@ if(ENABLE_DBUS)
 endif()
 
 # Used by digikamgui
-add_library(fileactionmanager_src OBJECT ${fileactionmanager_SRCS})
+add_library(gui_fileactionmanager_obj OBJECT ${fileactionmanager_SRCS})
 
-target_compile_definitions(fileactionmanager_src
+target_compile_definitions(gui_fileactionmanager_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

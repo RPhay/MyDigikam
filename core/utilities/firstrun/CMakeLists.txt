@@ -32,9 +32,9 @@ include_directories($<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 # Used by digikamgui
-add_library(firstrun_src OBJECT ${libfirstrun_SRCS})
+add_library(gui_firstrun_obj OBJECT ${libfirstrun_SRCS})
 
-target_compile_definitions(firstrun_src
+target_compile_definitions(gui_firstrun_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

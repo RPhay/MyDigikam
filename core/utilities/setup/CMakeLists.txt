@@ -72,9 +72,9 @@ set(libsetup_SRCS
 )
 
 # Used by digikamgui
-add_library(setup_src OBJECT ${libsetup_SRCS})
+add_library(gui_setup_obj OBJECT ${libsetup_SRCS})
 
-target_compile_definitions(setup_src
+target_compile_definitions(gui_setup_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

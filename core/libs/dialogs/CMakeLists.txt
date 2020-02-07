@@ -60,9 +60,9 @@ set(libdeletedialog_SRCS
 )
 
 # Used by digikamgui
-add_library(digikamdeletedialog_src OBJECT ${libdeletedialog_SRCS})
+add_library(gui_digikamdeletedialog_obj OBJECT ${libdeletedialog_SRCS})
 
-target_compile_definitions(digikamdeletedialog_src
+target_compile_definitions(gui_digikamdeletedialog_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

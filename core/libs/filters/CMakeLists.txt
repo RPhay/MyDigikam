@@ -30,9 +30,9 @@ if(ENABLE_DBUS)
 endif()
 
 # Used by digikamgui
-add_library(filters_src OBJECT ${libfilters_SRCS})
+add_library(gui_filters_obj OBJECT ${libfilters_SRCS})
 
-target_compile_definitions(filters_src
+target_compile_definitions(gui_filters_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

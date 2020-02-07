@@ -64,9 +64,9 @@ set(libitempropertiesdigikam_SRCS
 
 
 # Used by digikamgui
-add_library(itempropertiesdigikam_src OBJECT ${libitemversionssidebar_SRCS} ${libitempropertiesdigikam_SRCS})
+add_library(gui_itempropertiesdigikam_obj OBJECT ${libitemversionssidebar_SRCS} ${libitempropertiesdigikam_SRCS})
 
-target_compile_definitions(itempropertiesdigikam_src
+target_compile_definitions(gui_itempropertiesdigikam_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

@@ -29,9 +29,9 @@ include_directories(
 )
 
 # Used by digikamgui
-add_library(digikamsettings_src OBJECT ${libsettings_SRCS})
+add_library(gui_digikamsettings_obj OBJECT ${libsettings_SRCS})
 
-target_compile_definitions(digikamsettings_src
+target_compile_definitions(gui_digikamsettings_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

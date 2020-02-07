@@ -88,9 +88,9 @@ set(libeditorgui_SRCS
 )
 
 # Used by digikamgui
-add_library(imageeditorgui_src OBJECT ${libeditorgui_SRCS})
+add_library(gui_imageeditorgui_obj OBJECT ${libeditorgui_SRCS})
 
-target_compile_definitions(imageeditorgui_src
+target_compile_definitions(gui_imageeditorgui_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

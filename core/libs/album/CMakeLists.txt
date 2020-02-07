@@ -62,9 +62,9 @@ if(ENABLE_DBUS)
 endif()
 
 # Used by digikamgui
-add_library(digikamalbum_src OBJECT ${libalbum_SRCS})
+add_library(gui_digikamalbum_obj OBJECT ${libalbum_SRCS})
 
-target_compile_definitions(digikamalbum_src
+target_compile_definitions(gui_digikamalbum_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

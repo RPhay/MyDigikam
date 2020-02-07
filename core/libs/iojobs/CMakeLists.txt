@@ -24,9 +24,9 @@ include_directories(
 )
 
 # Used by digikamgui
-add_library(iojobs_src OBJECT ${libiojobs_SRCS})
+add_library(gui_iojobs_obj OBJECT ${libiojobs_SRCS})
 
-target_compile_definitions(iojobs_src
+target_compile_definitions(gui_iojobs_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

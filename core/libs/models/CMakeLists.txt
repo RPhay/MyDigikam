@@ -48,9 +48,9 @@ set(libalbummodels_SRCS
 )
 
 # Used by digikamgui
-add_library(digikammodels_src OBJECT ${libalbummodels_SRCS})
+add_library(gui_digikammodels_obj OBJECT ${libalbummodels_SRCS})
 
-target_compile_definitions(digikammodels_src
+target_compile_definitions(gui_digikammodels_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

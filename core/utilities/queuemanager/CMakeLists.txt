@@ -45,10 +45,10 @@ include_directories($<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
                     $<TARGET_PROPERTY:KF5::Solid,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-add_library(queuemanager_src OBJECT ${libqueuemanager_SRCS} ${libdlib_SRCS})
+add_library(gui_queuemanager_obj OBJECT ${libqueuemanager_SRCS} ${libdlib_SRCS})
 
 # Used by digikamgui
-target_compile_definitions(queuemanager_src
+target_compile_definitions(gui_queuemanager_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

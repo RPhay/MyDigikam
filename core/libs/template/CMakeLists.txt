@@ -27,9 +27,9 @@ include_directories(
 )
 
 # Used by digikamgui
-add_library(digikamtemplate_src OBJECT  ${libtemplate_SRCS})
+add_library(gui_digikamtemplate_obj OBJECT  ${libtemplate_SRCS})
 
-target_compile_definitions(digikamtemplate_src
+target_compile_definitions(gui_digikamtemplate_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

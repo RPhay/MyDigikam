@@ -39,9 +39,9 @@ include_directories(
 )
 
 # Used by digikamgui
-add_library(advancedrename_src OBJECT ${libadvancedrename_SRCS})
+add_library(gui_advancedrename_obj OBJECT ${libadvancedrename_SRCS})
 
-target_compile_definitions(advancedrename_src
+target_compile_definitions(gui_advancedrename_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

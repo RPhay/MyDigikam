@@ -46,9 +46,9 @@ if(ENABLE_DBUS)
 endif()
 
 # Used by digikamgui
-add_library(facemanagement_src OBJECT ${libfacemanagement_SRCS})
+add_library(gui_facemanagement_obj OBJECT ${libfacemanagement_SRCS})
 
-target_compile_definitions(facemanagement_src
+target_compile_definitions(gui_facemanagement_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

@@ -31,9 +31,9 @@ if(ENABLE_DBUS)
 endif()
 
 # Used by digikamgui
-add_library(fuzzysearch_src OBJECT ${libfuzzysearch_SRCS})
+add_library(gui_fuzzysearch_obj OBJECT ${libfuzzysearch_SRCS})
 
-target_compile_definitions(fuzzysearch_src
+target_compile_definitions(gui_fuzzysearch_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

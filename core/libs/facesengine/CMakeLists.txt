@@ -179,15 +179,15 @@ endif()
 
 
 # Used by digikamgui
-add_library(digikamfacesenginedatabase_src
+add_library(gui_digikamfacesenginedatabase_obj
             OBJECT
             ${facesengine_database_LIB_SRCS}
 )
 
-target_compile_definitions(digikamfacesenginedatabase_src
+target_compile_definitions(gui_digikamfacesenginedatabase_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )
 
 # For unit-tests
-add_library(digikamfacesenginedatabase STATIC $<TARGET_OBJECTS:digikamfacesenginedatabase_src>)
+add_library(digikamfacesenginedatabase STATIC $<TARGET_OBJECTS:gui_digikamfacesenginedatabase_obj>)

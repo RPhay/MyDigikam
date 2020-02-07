@@ -22,9 +22,9 @@ include_directories(
 )
 
 # Used by digikamgui
-add_library(dtrash_src OBJECT ${libdtrash_SRCS})
+add_library(gui_dtrash_obj OBJECT ${libdtrash_SRCS})
 
-target_compile_definitions(dtrash_src
+target_compile_definitions(gui_dtrash_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

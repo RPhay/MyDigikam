@@ -83,17 +83,17 @@ set(libimportui_SRCS
 )
 
 # Used by digikamgui
-add_library(importuibackend_src OBJECT ${libimportuibackend_SRCS})
+add_library(gui_importuibackend_obj OBJECT ${libimportuibackend_SRCS})
 
-target_compile_definitions(importuibackend_src
+target_compile_definitions(gui_importuibackend_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )
 
 # Used by digikamgui
-add_library(importui_src OBJECT ${libimportui_SRCS})
+add_library(gui_importui_obj OBJECT ${libimportui_SRCS})
 
-target_compile_definitions(importui_src
+target_compile_definitions(gui_importui_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

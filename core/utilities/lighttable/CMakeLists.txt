@@ -39,9 +39,9 @@ if(Gphoto2_FOUND)
 endif()
 
 # Used by digikamgui
-add_library(lighttable_src OBJECT ${liblighttable_SRCS})
+add_library(gui_lighttable_obj OBJECT ${liblighttable_SRCS})
 
-target_compile_definitions(lighttable_src
+target_compile_definitions(gui_lighttable_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

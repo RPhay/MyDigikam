@@ -174,9 +174,9 @@ set(libimagehistory_SRCS
 )
 
 # Used by digikamgui
-add_library(imagehistorywidgets_src OBJECT ${libimagehistory_SRCS})
+add_library(gui_imagehistorywidgets_obj OBJECT ${libimagehistory_SRCS})
 
-target_compile_definitions(imagehistorywidgets_src
+target_compile_definitions(gui_imagehistorywidgets_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

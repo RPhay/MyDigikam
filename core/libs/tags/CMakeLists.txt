@@ -49,9 +49,9 @@ if(KF5IconThemes_FOUND)
 endif()
 
 # Used by digikamgui
-add_library(digikamtags_src OBJECT ${libtags_SRCS})
+add_library(gui_digikamtags_obj OBJECT ${libtags_SRCS})
 
-target_compile_definitions(digikamtags_src
+target_compile_definitions(gui_digikamtags_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )

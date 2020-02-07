@@ -229,9 +229,9 @@ set(libdatabasemain_SRCS
 )
 
 # Used by digikamgui
-add_library(digikamdatabasemain_src OBJECT ${libdatabasemain_SRCS})
+add_library(gui_digikamdatabasemain_obj OBJECT ${libdatabasemain_SRCS})
 
-target_compile_definitions(digikamdatabasemain_src
+target_compile_definitions(gui_digikamdatabasemain_obj
                            PRIVATE
                            digikamgui_EXPORTS
 )
