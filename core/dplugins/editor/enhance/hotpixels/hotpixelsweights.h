@@ -59,12 +59,12 @@ public:
         delete [] mWeightMatrices;
     }
 
-    unsigned int height() const
+    unsigned int height()                       const
     {
         return mHeight;
     };
 
-    unsigned int polynomeOrder() const
+    unsigned int polynomeOrder()                const
     {
         return mPolynomeOrder;
     };
@@ -74,7 +74,7 @@ public:
         return mTwoDim;
     };
 
-    unsigned int width() const
+    unsigned int width()                        const
     {
         return mWidth;
     };
@@ -108,27 +108,32 @@ public:
         return mWeightMatrices[n];
     };
 
-    const QList<QPoint> positions() const
+    const QList<QPoint> positions()             const
     {
         return mPositions;
     };
 
 protected:
 
-    int coefficientNumber() const
+    int coefficientNumber()                     const
     {
         return mCoefficientNumber;
     };
 
-    double** * weightMatrices() const
+    double** * weightMatrices()                 const
     {
         return mWeightMatrices;
     };
 
 private:
 
-    double polyTerm(const size_t i_coeff, const int x, const int y, const int poly_order) const;
-    void   matrixInv(double* const a, const size_t size);
+    double polyTerm(const size_t i_coeff,
+                    const int x,
+                    const int y,
+                    const int poly_order)       const;
+
+    void   matrixInv(double* const a,
+                     const size_t size);
 
 private:
 

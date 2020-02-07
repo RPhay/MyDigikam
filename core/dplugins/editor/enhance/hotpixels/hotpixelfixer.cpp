@@ -62,9 +62,10 @@ namespace DigikamEditorHotPixelsToolPlugin
 {
 
 HotPixelFixer::HotPixelFixer(QObject* const parent)
-    : DImgThreadedFilter(parent)
+    : DImgThreadedFilter(parent),
+      m_interpolationMethod(TWODIM_DIRECTION)
+
 {
-    m_interpolationMethod = TWODIM_DIRECTION;
     initFilter();
 }
 
@@ -256,12 +257,15 @@ void HotPixelFixer::weightPixels(DImg& img, HotPixel& px, int method, Direction 
         {
             case AVERAGE_INTERPOLATION:  // Gilles: to prevent warnings from compiler.
                 break;
+
             case LINEAR_INTERPOLATION:
                 polynomeOrder=1;
                 break;
+
             case QUADRATIC_INTERPOLATION:
                 polynomeOrder=2;
                 break;
+
             case CUBIC_INTERPOLATION:
                 polynomeOrder=3;
                 break;

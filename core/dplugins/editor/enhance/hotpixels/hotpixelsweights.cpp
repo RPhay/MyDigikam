@@ -128,16 +128,18 @@ void HotPixelsWeights::calculateHotPixelsWeights()
         int iHeight        = (int) height();
         int iWidth         = (int) width();
 
-        for (y = -iPolynomeOrder ; y < iHeight + iPolynomeOrder ; ++y)
+        for (y = (-1)*iPolynomeOrder ; (y < iHeight + iPolynomeOrder) ; ++y)
         {
-            for (x = -iPolynomeOrder ; x < iWidth + iPolynomeOrder ; ++x)
+            for (x = (-1)*iPolynomeOrder ; (x < iWidth + iPolynomeOrder) ; ++x)
             {
-                if ((x < 0       && y < 0        && (-x - y < iPolynomeOrder + 2))                            ||
-                    (x < 0       && y >= iHeight && (-x + y - iHeight < iPolynomeOrder + 1))                  ||
-                    (x >= iWidth && y < 0        && ( x - y - iWidth < iPolynomeOrder + 1))                   ||
-                    (x >= iWidth && y >= iHeight && ( x + y - iWidth - iHeight < iPolynomeOrder))             ||
-                    (x < 0       && y >= 0       &&   y < iHeight) || (x >= iWidth  && y >= 0 && y < iHeight) ||
-                    (y < 0       && x >= 0       &&   x < iWidth ) || (y >= iHeight && x >= 0 && x < iWidth))
+                if (
+                    ((x < 0)       && (y < 0)        && (-x - y < iPolynomeOrder + 2))                                  ||
+                    ((x < 0)       && (y >= iHeight) && (-x + y - iHeight < iPolynomeOrder + 1))                        ||
+                    ((x >= iWidth) && (y < 0)        && ( x - y - iWidth < iPolynomeOrder + 1))                         ||
+                    ((x >= iWidth) && (y >= iHeight) && ( x + y - iWidth - iHeight < iPolynomeOrder))                   ||
+                    ((x < 0)       && (y >= 0)       && (y < iHeight)) || ((x >= iWidth)  && (y >= 0) && (y < iHeight)) ||
+                    ((y < 0)       && (x >= 0)       && (x < iWidth))  || ((y >= iHeight) && (x >= 0) && (x < iWidth))
+                   )
                 {
                     QPoint position(x,y);
                     mPositions.append(position);
@@ -155,7 +157,7 @@ void HotPixelsWeights::calculateHotPixelsWeights()
             mPositions.append(position);
         }
 
-        for (y = (int) height() ; y < (int) height() + (int) mPolynomeOrder ; ++y)
+        for (y = (int)height() ; (y < (int)height() + (int)mPolynomeOrder) ; ++y)
         {
             QPoint position(0, y);
             mPositions.append(position);
@@ -179,13 +181,13 @@ void HotPixelsWeights::calculateHotPixelsWeights()
 
         for (j = 0 ; j < (size_t)mPositions.count() ; ++j)
         {
-            vector0[(int)(iy * mPositions.count() + j)] = polyTerm(iy, mPositions.at(j).x(),
-                                                                   mPositions.at(j).y(), mPolynomeOrder);
+            vector0[(int)(iy * mPositions.count() + j)] = polyTerm(iy, mPositions.at((int)j).x(),
+                                                                   mPositions.at((int)j).y(), mPolynomeOrder);
 
             for (ix = 0 ; ix < mCoefficientNumber ; ++ix)
             {
                 matrix[(int)(iy* mCoefficientNumber + ix)] += (vector0[(int)(iy * mPositions.count() + j)] *
-                                                              polyTerm(ix, mPositions.at(j).x(), mPositions.at(j).y(), mPolynomeOrder));
+                                                              polyTerm(ix, mPositions.at((int)j).x(), mPositions.at((int)j).y(), mPolynomeOrder));
             }
         }
     }
@@ -205,7 +207,7 @@ void HotPixelsWeights::calculateHotPixelsWeights()
             for (ix = 0 ; ix < mCoefficientNumber ; ++ix)
             {
                 vector1[(int)(iy * mPositions.count() + j)] += matrix[(int)(iy * mCoefficientNumber + ix)] *
-                                                               vector0[ix * mPositions.count() + j];
+                                                               vector0[(int)(ix * mPositions.count() + j)];
             }
         }
     }
@@ -230,21 +232,21 @@ void HotPixelsWeights::calculateHotPixelsWeights()
         }
     }
 
-    for (y = 0 ; y < (int) mHeight ; ++y)
+    for (y = 0 ; y < (int)mHeight ; ++y)
     {
-        for (x = 0 ; x < (int) mWidth ; ++x)
+        for (x = 0 ; x < (int)mWidth ; ++x)
         {
             for (j = 0 ; j < (size_t)mPositions.count() ; ++j)
             {
-                mWeightMatrices [j][y][x] = 0.0;
+                mWeightMatrices[j][y][x] = 0.0;
 
                 for (iy = 0 ; iy < mCoefficientNumber ; ++iy)
                 {
                     mWeightMatrices[j][y][x] += vector1[(int)(iy * mPositions.count() + j)] *
-                                                polyTerm (iy, x, y, mPolynomeOrder);
+                                                polyTerm(iy, x, y, mPolynomeOrder);
                 }
 
-                mWeightMatrices[j][y][x] *= (double) mPositions.count();
+                mWeightMatrices[j][y][x] *= (double)mPositions.count();
             }
         }
     }

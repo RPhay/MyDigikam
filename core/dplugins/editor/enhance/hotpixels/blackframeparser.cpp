@@ -103,6 +103,7 @@ void BlackFrameParser::slotLoadImageFromUrlComplete(const LoadingDescription&, c
     DImg image(img);
     m_Image = image.copyQImage();
     blackFrameParsing();
+
     emit signalLoadingComplete();
 }
 
@@ -129,9 +130,9 @@ void BlackFrameParser::blackFrameParsing()
 
     const int maxHotPixels = 1000;
 
-    for (int y=0 ; y < m_Image.height(); ++y)
+    for (int y = 0 ; y < m_Image.height(); ++y)
     {
-        for (int x=0 ; x < m_Image.width(); ++x)
+        for (int x = 0 ; x < m_Image.width(); ++x)
         {
             // Get each point in the image
 

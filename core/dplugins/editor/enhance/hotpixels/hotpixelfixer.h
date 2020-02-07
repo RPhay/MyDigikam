@@ -106,6 +106,7 @@ private:
     void interpolate(DImg& img,
                      HotPixel& hp,
                      int method);
+
     void weightPixels(DImg& img,
                       HotPixel& px,
                       int method,
@@ -115,8 +116,8 @@ private:
     inline bool validPoint(DImg& img, const QPoint& p)
     {
         return (
-                (p.x() >= 0) &&
-                (p.y() >= 0) &&
+                (p.x() >= 0)                 &&
+                (p.y() >= 0)                 &&
                 (p.x() < (long) img.width()) &&
                 (p.y() < (long) img.height())
                );

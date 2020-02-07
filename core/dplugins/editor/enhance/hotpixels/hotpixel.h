@@ -70,8 +70,13 @@ public:
         return (rect.intersects(p.rect));
 */
         return (
-                (rect != p.rect) &&
-                (x() + width() >= p.x() && x() <= p.x() + p.width() && y() + height() >= p.y() && y() <= p.y() + p.height()) &&
+                (rect != p.rect)                &&
+                (
+                 (x() + width() >= p.x())   &&
+                 (x() <= p.x() + p.width()) &&
+                 (y() + height() >= p.y())  &&
+                 (y() <= p.y() + p.height())
+                )                               &&
                 !diagonal(rect, p.rect)
                );
     }
@@ -82,10 +87,10 @@ private:
     {
         // locate next-to positions
 
-        bool top    = r1.y() + height() - 1 == r2.y() - 1; // r1 is on the top of r2
-        bool left   = r1.x() + width()  - 1 == r2.x() - 1; // r1 is on the left of r2
-        bool right  = r1.x() == r2.x() + r2.width();
-        bool bottom = r1.y() == r2.y() + r2.height();
+        bool top    = ((r1.y() + height() - 1) == (r2.y() - 1)); // r1 is on the top of r2
+        bool left   = ((r1.x() + width()  - 1) == (r2.x() - 1)); // r1 is on the left of r2
+        bool right  = (r1.x() == (r2.x() + r2.width()));
+        bool bottom = (r1.y() == (r2.y() + r2.height()));
 
         return (
                 (top && left)    ||
