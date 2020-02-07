@@ -126,7 +126,7 @@ XMPEditWidget::XMPEditWidget(MetadataEditDialog* const parent)
 
     d->originPage  = new XMPOrigin(this);
     d->page_origin = addPage(d->originPage, i18n("Origin"));
-    d->page_origin->setIcon(QIcon::fromTheme(QLatin1String("configure")));
+    d->page_origin->setIcon(QIcon::fromTheme(QLatin1String("globe")));
 
     d->creditsPage  = new XMPCredits(this);
     d->page_credits = addPage(d->creditsPage, i18n("Credits"));
@@ -142,7 +142,7 @@ XMPEditWidget::XMPEditWidget(MetadataEditDialog* const parent)
 
     d->categoriesPage  = new XMPCategories(this);
     d->page_categories = addPage(d->categoriesPage, i18n("Categories"));
-    d->page_categories->setIcon(QIcon::fromTheme(QLatin1String("folder")));
+    d->page_categories->setIcon(QIcon::fromTheme(QLatin1String("folder-pictures")));
 
     d->statusPage  = new XMPStatus(this);
     d->page_status = addPage(d->statusPage, i18n("Status"));

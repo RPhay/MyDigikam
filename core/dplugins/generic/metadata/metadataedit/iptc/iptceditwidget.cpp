@@ -122,7 +122,7 @@ IPTCEditWidget::IPTCEditWidget(MetadataEditDialog* const parent)
 
     d->contentPage   = new IPTCContent(this);
     d->page_content  = addPage(d->contentPage, i18n("Content"));
-    d->page_content->setIcon(QIcon::fromTheme(QLatin1String("system-help")));
+    d->page_content->setIcon(QIcon::fromTheme(QLatin1String("draw-text")));
 
     d->originPage  = new IPTCOrigin(this);
     d->page_origin = addPage(d->originPage, i18n("Origin"));
