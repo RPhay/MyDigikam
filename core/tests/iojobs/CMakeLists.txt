@@ -22,4 +22,4 @@ target_link_libraries(IOJobsTest
                       digikamgui
 
                       ${COMMON_TEST_LINK}
-                     )
+)

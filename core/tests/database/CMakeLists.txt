@@ -83,23 +83,24 @@ endif()
 
 #------------------------------------------------------------------------
 
-#set(databasetagstest_src databasetagstest.cpp)
-#add_executable(databasetagstest ${databasetagstest_src})
-#add_test(databasetagstest databasetagstest)
-#ecm_mark_as_test(databasetagstest)
-#
-#target_link_libraries(databasetagstest
-#
-#                      digikamdatabase
-#                      digikamgui
-#
-#                      ${COMMON_TEST_LINK}
-#)
-#
-#if(ENABLE_DBUS)
-#    target_link_libraries(databasetagstest Qt5::DBus)
-#endif()
-#
-#if(KF5Notifications_FOUND)
-#    target_link_libraries(databasetagstest KF5::Notifications)
-#endif()
+set(databasetagstest_src databasetagstest.cpp)
+add_executable(databasetagstest ${databasetagstest_src})
+add_test(databasetagstest databasetagstest)
+ecm_mark_as_test(databasetagstest)
+
+target_link_libraries(databasetagstest
+
+                      digikamcore
+                      digikamdatabase
+                      digikamgui
+
+                      ${COMMON_TEST_LINK}
+)
+
+if(ENABLE_DBUS)
+    target_link_libraries(databasetagstest Qt5::DBus)
+endif()
+
+if(KF5Notifications_FOUND)
+    target_link_libraries(databasetagstest KF5::Notifications)
+endif()

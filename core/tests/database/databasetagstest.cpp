@@ -40,6 +40,7 @@
 #include "loadingcacheinterface.h"
 #include "scancontroller.h"
 #include "thumbnailloadthread.h"
+#include "databaseserverstarter.h"
 
 using namespace Digikam;
 
@@ -92,7 +93,7 @@ void DatabaseTagsTest::initTestCase()
 
     DbEngineParameters params = DbEngineParameters::defaultParameters(QLatin1String("QMYSQL"));
     params.setInternalServerPath(dbPath);
-    DatabaseServerStarter::startServerManagerProcess();
+    DatabaseServerStarter::instance()->startServerManagerProcess(params);
 
     bool dbChangeGood = AlbumManager::instance()->setDatabase(params, false,
                         QDir::temp().absoluteFilePath(tempSuffix));
