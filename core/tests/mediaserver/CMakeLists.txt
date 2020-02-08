@@ -22,7 +22,6 @@ target_link_libraries(dmediaservertest
 
 ########################################################################
 # CLI test tool from Platinum SDK
-# NOTE : disable due to unexported symbols from UPNP sdk
 
 set(filemediaserver_SRCS
     ${CMAKE_SOURCE_DIR}/core/dplugins/generic/tools/mediaserver/upnpsdk/Platinum/Source/Tests/FileMediaServer/FileMediaServerTest.cpp
