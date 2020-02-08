@@ -86,10 +86,10 @@ endif()
 
 set(databasetagstest_src databasetagstest.cpp)
 add_executable(databasetagstest ${databasetagstest_src})
-add_test(databasetagstest databasetagstest)
 
 # NOTE: this unit test fail to work as the temporary collection creation cannot be done in /tmp.
 #       we need to port code to use QTest directory, as it done with metadataengine unit-tests.
+#add_test(databasetagstest databasetagstest)
 #ecm_mark_as_test(databasetagstest)
 
 target_link_libraries(databasetagstest
