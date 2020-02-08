@@ -170,12 +170,6 @@ target_compile_definitions(core_libdng_obj
 
 if(MSVC)
 
-#    foreach(_file ${libdng_SRCS})
-#        get_source_file_property(FILEPROPS ${_file} COMPILE_FLAGS)
-#        string(REPLACE "/W3" "/w" FILEPROPS ${FILEPROPS} )
-#        set_source_files_properties(${_file} COMPILE_FLAGS ${FILEPROPS})
-#    endforeach()
-
     target_compile_options(core_libdng_obj PRIVATE /w)
 
 else()
