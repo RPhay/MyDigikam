@@ -55,15 +55,15 @@ namespace DigikamGenericPresentationPlugin
 {
 
 KBViewTrans::KBViewTrans(bool zoomIn, float relAspect)
+    : m_deltaX(0.0),
+      m_deltaY(0.0),
+      m_deltaScale(0.0),
+      m_baseScale(0.0),
+      m_baseX(0.0),
+      m_baseY(0.0),
+      m_xScale(0.0),
+      m_yScale(0.0)
 {
-    m_deltaX     = 0.0;
-    m_deltaY     = 0.0;
-    m_deltaScale = 0.0;
-    m_baseScale  = 0.0;
-    m_baseX      = 0.0;
-    m_baseY      = 0.0;
-    m_xScale     = 0.0;
-    m_yScale     = 0.0;
     int i        = 0;
 
     // randomly select sizes of start and end viewport
@@ -112,6 +112,7 @@ KBViewTrans::KBViewTrans(bool zoomIn, float relAspect)
     m_yScale   = sy;
 
     // calculate path
+
     xMargin[0] = (s[0] * sx - 1.0) / 2.0;
     yMargin[0] = (s[0] * sy - 1.0) / 2.0;
     xMargin[1] = (s[1] * sx - 1.0) / 2.0;
@@ -142,15 +143,15 @@ KBViewTrans::KBViewTrans(bool zoomIn, float relAspect)
 }
 
 KBViewTrans::KBViewTrans()
+    : m_deltaX(0.0),
+      m_deltaY(0.0),
+      m_deltaScale(0.0),
+      m_baseScale(0.0),
+      m_baseX(0.0),
+      m_baseY(0.0),
+      m_xScale(0.0),
+      m_yScale(0.0)
 {
-    m_deltaX     = 0.0;
-    m_deltaY     = 0.0;
-    m_deltaScale = 0.0;
-    m_baseScale  = 0.0;
-    m_baseX      = 0.0;
-    m_baseY      = 0.0;
-    m_xScale     = 0.0;
-    m_yScale     = 0.0;
 }
 
 KBViewTrans::~KBViewTrans()
@@ -159,17 +160,17 @@ KBViewTrans::~KBViewTrans()
 
 float KBViewTrans::transX(float pos) const
 {
-    return m_baseX + m_deltaX * pos;
+    return (m_baseX + m_deltaX * pos);
 }
 
 float KBViewTrans::transY(float pos) const
 {
-    return m_baseY + m_deltaY * pos;
+    return (m_baseY + m_deltaY * pos);
 }
 
 float KBViewTrans::scale (float pos) const
 {
-    return m_baseScale * (1.0 + m_deltaScale * pos);
+    return (m_baseScale * (1.0 + m_deltaScale * pos));
 }
 
 float KBViewTrans::xScaleCorrect() const
@@ -184,24 +185,24 @@ float KBViewTrans::yScaleCorrect() const
 
 double KBViewTrans::rnd() const
 {
-    return (double)qrand() / (double)RAND_MAX;
+    return ((double)qrand() / (double)RAND_MAX);
 }
 
 double KBViewTrans::rndSign() const
 {
-    return (qrand() < RAND_MAX / 2) ? 1.0 : -1.0;
+    return ((qrand() < RAND_MAX / 2) ? 1.0 : -1.0);
 }
 
 // -------------------------------------------------------------------------
 
 KBImage::KBImage(KBViewTrans* const viewTrans, float aspect)
+    : m_viewTrans(viewTrans),
+      m_aspect(aspect),
+      m_pos(0.0),
+      m_opacity(0.0),
+      m_texture(nullptr)
 {
-    m_viewTrans = viewTrans;
-    m_aspect    = aspect;
-    m_pos       = 0.0;
-    m_opacity   = 0.0;
-    m_paint     = (m_viewTrans) ? true : false;
-    m_texture   = nullptr;
+    m_paint = (m_viewTrans) ? true : false;
 }
 
 KBImage::~KBImage()
@@ -348,7 +349,7 @@ PresentationKB::~PresentationKB()
 
 float PresentationKB::aspect() const
 {
-    return (float)width() / (float)height();
+    return ((float)width() / (float)height());
 }
 
 void PresentationKB::setNewKBEffect()
@@ -439,6 +440,7 @@ bool PresentationKB::setupNewImage(int idx)
 
     // don't forget to release the lock on the copy of the image
     // owned by the image loader thread
+
     d->imageLoadThread->ungrabImage();
 
     return ok;
@@ -448,7 +450,8 @@ void PresentationKB::startSlideShowOnce()
 {
     // when the image loader thread is ready, it will already have loaded
     // the first image
-    if (d->initialized == false && d->imageLoadThread->ready())
+
+    if ((d->initialized == false) && d->imageLoadThread->ready())
     {
         setupNewImage(0);                      // setup the first image and
         d->imageLoadThread->requestNewImage(); // load the next one in background
@@ -468,20 +471,26 @@ void PresentationKB::swapImages()
 void PresentationKB::initializeGL()
 {
     // Enable Texture Mapping
+
     glEnable(GL_TEXTURE_2D);
 
     // Clear The Background Color
+
     glClearColor(0.0, 0.0, 0.0, 1.0f);
 
     glEnable(GL_TEXTURE_2D);
     glShadeModel(GL_SMOOTH);
 
     // Turn Blending On
+
     glEnable(GL_BLEND);
+
     // Blending Function For Translucency Based On Source Alpha Value
+
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     // Enable perspective vision
+
     glClearDepth(1.0f);
 }
 
@@ -494,8 +503,8 @@ void PresentationKB::paintGL()
 
     // only clear the color buffer, if none of the active images is fully opaque
 
-    if (!((d->image[0]->m_paint && d->image[0]->m_opacity == 1.0) ||
-        (d->image[1]->m_paint && d->image[1]->m_opacity == 1.0)))
+    if (!((d->image[0]->m_paint && (d->image[0]->m_opacity == 1.0)) ||
+        (d->image[1]->m_paint && (d->image[1]->m_opacity == 1.0))))
     {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
@@ -514,10 +523,14 @@ void PresentationKB::paintGL()
     else
     {
         if (d->image[1]->m_paint)
+        {
             paintTexture(d->image[1]);
+        }
 
         if (d->image[0]->m_paint)
+        {
             paintTexture(d->image[0]);
+        }
     }
 
     glFlush();
@@ -531,6 +544,7 @@ void PresentationKB::resizeGL(int w, int h)
 void PresentationKB::applyTexture(KBImage* const img, const QImage &texture)
 {
     /* create the texture */
+
     img->m_texture = new QOpenGLTexture(QOpenGLTexture::Target2D);
     img->m_texture->setData(texture.mirrored());
     img->m_texture->setMinificationFilter(QOpenGLTexture::Linear);
@@ -608,6 +622,7 @@ void PresentationKB::endOfShow()
     p.end();
 
     /* create the texture */
+
     d->endTexture = new QOpenGLTexture(QOpenGLTexture::Target2D);
     d->endTexture->setData(pix.toImage().mirrored());
     d->endTexture->setMinificationFilter(QOpenGLTexture::Linear);
@@ -664,7 +679,9 @@ void PresentationKB::keyPressEvent(QKeyEvent* event)
     }
 
 #ifdef HAVE_MEDIAPLAYER
+
     d->playbackWidget->keyPressEvent(event);
+
 #endif
 
     if (event->key() == Qt::Key_Escape)
@@ -692,6 +709,7 @@ void PresentationKB::mouseMoveEvent(QMouseEvent* e)
     d->mouseMoveTimer->start(1000);
 
 #ifdef HAVE_MEDIAPLAYER
+
     if (!d->playbackWidget->canHide())
     {
         return;
@@ -717,7 +735,9 @@ void PresentationKB::mouseMoveEvent(QMouseEvent* e)
 
     d->playbackWidget->show();
 #else
+
     Q_UNUSED(e);
+
 #endif
 }
 
@@ -727,9 +747,13 @@ void PresentationKB::slotMouseMoveTimeOut()
 
     if ((pos.y() < (d->deskY + 20)) ||
         (pos.y() > (d->deskY + d->deskHeight - 20 - 1))
+
 #ifdef HAVE_MEDIAPLAYER
+
         || d->playbackWidget->underMouse()
+
 #endif
+
        )
     {
         return;
@@ -741,12 +765,14 @@ void PresentationKB::slotMouseMoveTimeOut()
 bool PresentationKB::checkOpenGL() const
 {
     // No OpenGL context is found. Are the drivers ok?
+
     if (!isValid())
     {
         return false;
     }
 
     // GL_EXT_texture3D is not supported
+
     QString s = QString::fromLatin1(reinterpret_cast<const char*>(glGetString(GL_EXTENSIONS)));
 
     if (!s.contains(QString::fromLatin1("GL_EXT_texture3D"), Qt::CaseInsensitive))
@@ -755,6 +781,7 @@ bool PresentationKB::checkOpenGL() const
     }
 
     // Everything is ok!
+
     return true;
 }
 

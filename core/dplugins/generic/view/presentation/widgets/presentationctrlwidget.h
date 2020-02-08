@@ -37,7 +37,8 @@
 namespace DigikamGenericPresentationPlugin
 {
 
-class PresentationCtrlWidget : public QWidget, public Ui::PresentationCtrlWidget
+class PresentationCtrlWidget : public QWidget,
+                               public Ui::PresentationCtrlWidget
 {
     Q_OBJECT
 

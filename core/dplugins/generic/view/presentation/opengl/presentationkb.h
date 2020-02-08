@@ -31,9 +31,9 @@
 // C++ includes
 
 #ifndef Q_CC_MSVC
-#include <cstdlib>
+#   include <cstdlib>
 #else
-#include <winsock2.h>
+#   include <winsock2.h>
 #endif
 
 // Qt includes
@@ -76,7 +76,7 @@ private:
 
 private:
 
-    // delta and scale values (begin to end) and the needed offsets
+    /// delta and scale values (begin to end) and the needed offsets
     double m_deltaX;
     double m_deltaY;
     double m_deltaScale;

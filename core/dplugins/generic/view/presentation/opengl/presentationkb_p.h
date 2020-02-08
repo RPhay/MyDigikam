@@ -55,31 +55,31 @@ class Q_DECL_HIDDEN PresentationKB::Private
 public:
 
     explicit Private()
+      : deskX(0),
+        deskY(0),
+        deskWidth(0),
+        deskHeight(0),
+        endTexture(nullptr),
+        imageLoadThread(nullptr),
+        mouseMoveTimer(nullptr),
+        timer(nullptr),
+        haveImages(true),
+        effect(nullptr),
+        numKBEffectRepeated(0),
+        initialized(false),
+        step(0.0),
+        endOfShow(false),
+        showingEnd(false),
+        delay(0),
+        disableFadeInOut(false),
+        disableCrossFade(false),
+        forceFrameRate(0),
+        sharedData(nullptr),
+        playbackWidget(nullptr)
     {
-        zoomIn              = qrand() < RAND_MAX / 2;
-        effect              = nullptr;
-        initialized         = false;
-        haveImages          = true;
-        endOfShow           = false;
-        showingEnd          = false;
-        deskX               = 0;
-        deskY               = 0;
-        deskWidth           = 0;
-        deskHeight          = 0;
-        endTexture          = nullptr;
-        imageLoadThread     = nullptr;
-        mouseMoveTimer      = nullptr;
-        timer               = nullptr;
-        image[0]            = nullptr;
-        image[1]            = nullptr;
-        numKBEffectRepeated = 0;
-        step                = 0.0;
-        delay               = 0;
-        disableFadeInOut    = false;
-        disableCrossFade    = false;
-        forceFrameRate      = 0;
-        sharedData          = nullptr;
-        playbackWidget      = nullptr;
+        zoomIn   = (qrand() < (RAND_MAX / 2));
+        image[0] = nullptr;
+        image[1] = nullptr;
     }
 
     int                      deskX;

@@ -97,7 +97,9 @@ bool PresentationCtrlWidget::isPaused() const
 void PresentationCtrlWidget::setPaused(bool val)
 {
     if (val == isPaused())
+    {
         return;
+    }
 
     m_playButton->setChecked(val);
 
@@ -150,34 +152,42 @@ void PresentationCtrlWidget::keyPressEvent(QKeyEvent* event)
 {
     switch (event->key())
     {
-        case(Qt::Key_Space):
+        case (Qt::Key_Space):
         {
             if (m_playButton->isEnabled())
+            {
                 m_playButton->animateClick();
+            }
 
             break;
         }
 
-        case(Qt::Key_PageUp):
+        case (Qt::Key_PageUp):
         {
             if (m_prevButton->isEnabled())
+            {
                 m_prevButton->animateClick();
+            }
 
             break;
         }
 
-        case(Qt::Key_PageDown):
+        case (Qt::Key_PageDown):
         {
             if (m_nextButton->isEnabled())
+            {
                 m_nextButton->animateClick();
+            }
 
             break;
         }
 
-        case(Qt::Key_Escape):
+        case (Qt::Key_Escape):
         {
             if (m_stopButton->isEnabled())
+            {
                 m_stopButton->animateClick();
+            }
 
             break;
         }
