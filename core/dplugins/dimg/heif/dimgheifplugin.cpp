@@ -78,6 +78,7 @@ QString DImgHEIFPlugin::details() const
     QString x265Notice = i18n("This library is not present on your system.");
 
 #ifdef HAVE_X265
+
     int depth = DImgHEIFLoader::x265MaxBitsDepth();
 
     if (depth != -1)
@@ -90,6 +91,7 @@ QString DImgHEIFPlugin::details() const
         x265Notice = i18n("This library is available on your system but is not able to encode "
                           "image with a suitable color depth.");
     }
+
 #endif
 
     return i18n("<p>This plugin permit to load and save image using Libheif codec.</p>"
@@ -123,6 +125,7 @@ QMap<QString, QString> DImgHEIFPlugin::extraAboutData() const
     QMap<QString, QString> map;
     map.insert(QLatin1String("HEIC"), i18n("High efficiency image coding"));
     map.insert(QLatin1String("HEIF"), i18n("High efficiency image file format"));
+
     return map;
 }
 
@@ -176,9 +179,11 @@ int DImgHEIFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     fclose(f);
 
-    if (memcmp(&header[4], "ftypheic", 8) == 0 ||
-        memcmp(&header[4], "ftypheix", 8) == 0 ||
-        memcmp(&header[4], "ftypmif1", 8) == 0)
+    if (
+        (memcmp(&header[4], "ftypheic", 8) == 0) ||
+        (memcmp(&header[4], "ftypheix", 8) == 0) ||
+        (memcmp(&header[4], "ftypmif1", 8) == 0)
+       )
     {
         return 10;
     }
@@ -188,12 +193,20 @@ int DImgHEIFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
 int DImgHEIFPlugin::canWrite(const QString& format) const
 {
+
 #ifdef HAVE_X265
+
     if (format.toUpper() == QLatin1String("HEIC"))
     {
         return 10;
     }
+
+#else
+
+    Q_UNUSED(format);
+
 #endif
+
     return 0;
 }
 
