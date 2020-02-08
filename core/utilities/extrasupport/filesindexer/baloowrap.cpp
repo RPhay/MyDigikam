@@ -149,7 +149,7 @@ BalooInfo BalooWrap::getSemanticInfo(const QUrl& url) const
 #if (QT_VERSION < QT_VERSION_CHECK(5, 14, 0))
              md.tags().toSet())
 #else
-             QSet<QString>(md.tags().begin(), md.tags().end())
+             QSet<QString>(md.tags().begin(), md.tags().end()))
 #endif
 
     {
