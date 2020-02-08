@@ -62,8 +62,8 @@ public:
     QCache<QString, DImg>           imageCache;
     QCache<QString, QImage>         thumbnailImageCache;
     QCache<QString, QPixmap>        thumbnailPixmapCache;
-    QMultiMap<QString, QString>     imageFilePathHash;
-    QMultiMap<QString, QString>     thumbnailFilePathHash;
+    QMultiMap<QString, QString>     imageFilePathMap;
+    QMultiMap<QString, QString>     thumbnailFilePathMap;
     QMap<QString, LoadingProcess*>  loadingDict;
 
     /// Note: Don't make the mutex recursive, we need to use a wait condition on it
@@ -88,22 +88,22 @@ LoadingCacheFileWatch* LoadingCache::Private::fileWatch() const
 
 void LoadingCache::Private::mapImageFilePath(const QString& filePath, const QString& cacheKey)
 {
-    if (imageFilePathHash.size() > (5*imageCache.size()))
+    if (imageFilePathMap.size() > (5*imageCache.size()))
     {
         cleanUpImageFilePathHash();
     }
 
-    imageFilePathHash.insert(filePath, cacheKey);
+    imageFilePathMap.insert(filePath, cacheKey);
 }
 
 void LoadingCache::Private::mapThumbnailFilePath(const QString& filePath, const QString& cacheKey)
 {
-    if (thumbnailFilePathHash.size() > (5*(thumbnailImageCache.size() + thumbnailPixmapCache.size())))
+    if (thumbnailFilePathMap.size() > (5*(thumbnailImageCache.size() + thumbnailPixmapCache.size())))
     {
         cleanUpThumbnailFilePathHash();
     }
 
-    thumbnailFilePathHash.insert(filePath, cacheKey);
+    thumbnailFilePathMap.insert(filePath, cacheKey);
 }
 
 void LoadingCache::Private::cleanUpImageFilePathHash()
@@ -113,11 +113,11 @@ void LoadingCache::Private::cleanUpImageFilePathHash()
     QList<QString> keys = imageCache.keys();
     QMultiMap<QString, QString>::iterator it;
 
-    for (it = imageFilePathHash.begin() ; it != imageFilePathHash.end() ; )
+    for (it = imageFilePathMap.begin() ; it != imageFilePathMap.end() ; )
     {
         if (!keys.contains(it.value()))
         {
-            it = imageFilePathHash.erase(it);
+            it = imageFilePathMap.erase(it);
         }
         else
         {
@@ -135,11 +135,11 @@ void LoadingCache::Private::cleanUpThumbnailFilePathHash()
 
     QMultiMap<QString, QString>::iterator it;
 
-    for (it = thumbnailFilePathHash.begin() ; it != thumbnailFilePathHash.end() ; )
+    for (it = thumbnailFilePathMap.begin() ; it != thumbnailFilePathMap.end() ; )
     {
         if (!keys.contains(it.value()))
         {
-            it = thumbnailFilePathHash.erase(it);
+            it = thumbnailFilePathMap.erase(it);
         }
         else
         {
@@ -337,26 +337,26 @@ QStringList LoadingCache::imageFilePathsInCache() const
 {
     d->cleanUpImageFilePathHash();
 
-    return d->imageFilePathHash.uniqueKeys();
+    return d->imageFilePathMap.uniqueKeys();
 }
 
 QStringList LoadingCache::thumbnailFilePathsInCache() const
 {
     d->cleanUpThumbnailFilePathHash();
 
-    return d->thumbnailFilePathHash.uniqueKeys();
+    return d->thumbnailFilePathMap.uniqueKeys();
 }
 
 void LoadingCache::notifyFileChanged(const QString& filePath, bool notify)
 {
-    QList<QString> keys = d->imageFilePathHash.values(filePath);
+    QList<QString> keys = d->imageFilePathMap.values(filePath);
 
     foreach (const QString& cacheKey, keys)
     {
         d->imageCache.remove(cacheKey);
     }
 
-    keys = d->thumbnailFilePathHash.values(filePath);
+    keys = d->thumbnailFilePathMap.values(filePath);
 
     foreach (const QString& cacheKey, keys)
     {
