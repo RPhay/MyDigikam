@@ -110,7 +110,12 @@ void LoadingCache::Private::cleanUpImageFilePathHash()
 {
     // Remove all entries from hash whose value is no longer a key in the cache
 
+#if (QT_VERSION < QT_VERSION_CHECK(5, 14, 0))
     QSet<QString> keys = imageCache.keys().toSet();
+#else
+    QSet<QString> keys(imageCache.keys().begin(), imageCache.keys().end());
+#endif
+
     QMultiMap<QString, QString>::iterator it;
 
     for (it = imageFilePathHash.begin() ; it != imageFilePathHash.end() ; )
@@ -129,8 +134,15 @@ void LoadingCache::Private::cleanUpImageFilePathHash()
 void LoadingCache::Private::cleanUpThumbnailFilePathHash()
 {
     QSet<QString> keys;
+
+#if (QT_VERSION < QT_VERSION_CHECK(5, 14, 0))
     keys += thumbnailImageCache.keys().toSet();
     keys += thumbnailPixmapCache.keys().toSet();
+#else
+    keys += QSet<QString>(thumbnailImageCache.keys().begin(),  thumbnailImageCache.keys().end());
+    keys += QSet<QString>(thumbnailPixmapCache.keys().begin(), thumbnailPixmapCache.keys().end());
+#endif
+
     QMultiMap<QString, QString>::iterator it;
 
     for (it = thumbnailFilePathHash.begin() ; it != thumbnailFilePathHash.end() ; )
