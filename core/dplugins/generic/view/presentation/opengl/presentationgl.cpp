@@ -79,38 +79,40 @@ class Q_DECL_HIDDEN PresentationGL::Private
 public:
 
     explicit Private()
-    {
-        timer               = nullptr;
-        fileIndex           = 0;
-        imageLoader         = nullptr;
-        texture[0]          = nullptr;
-        texture[1]          = nullptr;
-        texture[2]          = nullptr;
-        curr                = 0;
-        width               = 0;
-        height              = 0;
-        xMargin             = 0;
-        yMargin             = 0;
-        effect              = nullptr;
-        tex1First           = true;
-        effectRunning       = false;
-        timeout             = 0;
-        endOfShow           = false;
-        random              = false;
-        i                   = 0;
-        dir                 = 0;
-        slideCtrlWidget     = nullptr;
+      : timer(nullptr),
+        fileIndex(0),
+        imageLoader(nullptr),
+        tex1First(true),
+        curr(0),
+        width(0),
+        height(0),
+        xMargin(0),
+        yMargin(0),
+        effect(nullptr),
+        effectRunning(false),
+        timeout(0),
+        random(false),
+        endOfShow(false),
+        i(0),
+        dir(0),
+        slideCtrlWidget(nullptr),
 
 #ifdef HAVE_MEDIAPLAYER
-        playbackWidget      = nullptr;
+
+        playbackWidget(nullptr),
+
 #endif
 
-        mouseMoveTimer      = nullptr;
-        deskX               = 0;
-        deskY               = 0;
-        deskWidth           = 0;
-        deskHeight          = 0;
-        sharedData          = nullptr;
+        mouseMoveTimer(nullptr),
+        deskX(0),
+        deskY(0),
+        deskWidth(0),
+        deskHeight(0),
+        sharedData(nullptr)
+    {
+        texture[0] = nullptr;
+        texture[1] = nullptr;
+        texture[2] = nullptr;
     }
 
     QMap<QString, EffectMethod>       effects;
@@ -167,7 +169,9 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
     if (QWidget* const widget = qApp->activeWindow())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     QRect deskRect  = screen->geometry();
@@ -245,7 +249,9 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
         d->effect = d->effects[d->sharedData->effectNameGL];
 
         if (!d->effect)
+        {
             d->effect = d->effects[QLatin1String("None")];
+        }
 
         d->random = false;
     }
@@ -274,15 +280,20 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
 #ifdef HAVE_MEDIAPLAYER
 
     if (d->sharedData->soundtrackPlay)
+    {
         d->playbackWidget->slotPlay();
+    }
 
 #endif
 }
 
 PresentationGL::~PresentationGL()
 {
+
 #ifdef HAVE_MEDIAPLAYER
+
     d->playbackWidget->slotStop();
+
 #endif
 
     d->timer->stop();
@@ -302,35 +313,42 @@ PresentationGL::~PresentationGL()
 void PresentationGL::initializeGL()
 {
     // Enable Texture Mapping
+
     glEnable(GL_TEXTURE_2D);
 
     // Clear The Background Color
+
     glClearColor(0.0, 0.0, 0.0, 1.0f);
 
     // Turn Blending On
+
     glEnable(GL_BLEND);
 
     // Blending Function For Translucency Based On Source Alpha Value
+
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     // Enable perspective vision
+
     glClearDepth(1.0f);
 
     // get the maximum texture value.
+
     GLint maxTexVal;
     glGetIntegerv(GL_MAX_TEXTURE_SIZE, &maxTexVal);
 
     // allow only maximum texture value of 1024. anything bigger and things slow down
-    maxTexVal = qMin(1024, maxTexVal);
 
-    d->width  = d->deskWidth;
-    d->height = d->deskHeight;
+    maxTexVal     = qMin(1024, maxTexVal);
 
-    d->width  = 1 << (int)ceil(log((float)d->width)  / log((float)2)) ;
-    d->height = 1 << (int)ceil(log((float)d->height) / log((float)2));
+    d->width      = d->deskWidth;
+    d->height     = d->deskHeight;
 
-    d->width  = qMin(maxTexVal, d->width);
-    d->height = qMin(maxTexVal, d->height);
+    d->width      = 1 << (int)ceil(log((float)d->width)  / log((float)2)) ;
+    d->height     = 1 << (int)ceil(log((float)d->height) / log((float)2));
+
+    d->width      = qMin(maxTexVal, d->width);
+    d->height     = qMin(maxTexVal, d->height);
 
     d->texture[0] = new QOpenGLTexture(QOpenGLTexture::Target2D);
     d->texture[1] = new QOpenGLTexture(QOpenGLTexture::Target2D);
@@ -351,19 +369,26 @@ void PresentationGL::paintGL()
     glLoadIdentity();
 
     if (d->endOfShow)
+    {
         showEndOfShow();
+    }
     else
     {
         if (d->effectRunning && d->effect)
+        {
             (this->*d->effect)();
+        }
         else
+        {
             paintTexture();
+        }
     }
 }
 
 void PresentationGL::resizeGL(int w, int h)
 {
     // Reset The Current Viewport And Perspective Transformation
+
     glViewport(0, 0, (GLint)w, (GLint)h);
 
     glMatrixMode(GL_PROJECTION);
@@ -373,26 +398,33 @@ void PresentationGL::resizeGL(int w, int h)
 void PresentationGL::keyPressEvent(QKeyEvent* event)
 {
     if (!event)
+    {
         return;
+    }
 
     d->slideCtrlWidget->keyPressEvent(event);
+
 #ifdef HAVE_MEDIAPLAYER
+
     d->playbackWidget->keyPressEvent(event);
+
 #endif
 }
 
 void PresentationGL::mousePressEvent(QMouseEvent* e)
 {
     if (d->endOfShow)
+    {
         slotClose();
+    }
 
-    if (e->button() == Qt::LeftButton)
+    if      (e->button() == Qt::LeftButton)
     {
         d->timer->stop();
         d->slideCtrlWidget->setPaused(true);
         slotNext();
     }
-    else if (e->button() == Qt::RightButton && d->fileIndex - 1 >= 0)
+    else if ((e->button() == Qt::RightButton) && ((d->fileIndex - 1) >= 0))
     {
         d->timer->stop();
         d->slideCtrlWidget->setPaused(true);
@@ -406,11 +438,17 @@ void PresentationGL::mouseMoveEvent(QMouseEvent* e)
     d->mouseMoveTimer->start(1000);
 
     if (!d->slideCtrlWidget->canHide()
+
 #ifdef HAVE_MEDIAPLAYER
+
         || !d->playbackWidget->canHide()
+
 #endif
+
        )
+    {
         return;
+    }
 
     QPoint pos(e->pos());
 
@@ -418,9 +456,13 @@ void PresentationGL::mouseMoveEvent(QMouseEvent* e)
         (pos.y() < (d->deskY + d->deskHeight - 20 - 1)))
     {
         if (d->slideCtrlWidget->isHidden()
+
 #ifdef HAVE_MEDIAPLAYER
+
             || d->playbackWidget->isHidden()
+
 #endif
+
            )
         {
             return;
@@ -428,9 +470,13 @@ void PresentationGL::mouseMoveEvent(QMouseEvent* e)
         else
         {
             d->slideCtrlWidget->hide();
+
 #ifdef HAVE_MEDIAPLAYER
+
             d->playbackWidget->hide();
+
 #endif
+
             setFocus();
         }
 
@@ -438,18 +484,26 @@ void PresentationGL::mouseMoveEvent(QMouseEvent* e)
     }
 
     d->slideCtrlWidget->show();
+
 #ifdef HAVE_MEDIAPLAYER
+
     d->playbackWidget->show();
+
 #endif
+
 }
 
 void PresentationGL::wheelEvent(QWheelEvent* e)
 {
     if (!d->sharedData->enableMouseWheel)
+    {
         return;
+    }
 
     if (d->endOfShow)
+    {
         slotClose();
+    }
 
     int delta = e->angleDelta().y();
 
@@ -459,7 +513,7 @@ void PresentationGL::wheelEvent(QWheelEvent* e)
         d->slideCtrlWidget->setPaused(true);
         slotNext();
     }
-    else if (delta > 0 && d->fileIndex - 1 >= 0)
+    else if ((delta > 0) && ((d->fileIndex - 1) >= 0))
     {
         d->timer->stop();
         d->slideCtrlWidget->setPaused(true);
@@ -586,7 +640,7 @@ void PresentationGL::previousFrame()
     if (!d->sharedData->loop && !d->endOfShow)
     {
         d->slideCtrlWidget->setEnabledPrev(d->fileIndex > 0);
-        d->slideCtrlWidget->setEnabledNext(d->fileIndex < num - 1);
+        d->slideCtrlWidget->setEnabledNext(d->fileIndex < (num - 1));
     }
 
     d->tex1First = !d->tex1First;
@@ -615,15 +669,22 @@ void PresentationGL::loadImage()
         }
 
         if (d->sharedData->printFileName)
+        {
             printFilename(black);
+        }
 
         if (d->sharedData->printProgress)
+        {
             printProgress(black);
+        }
 
         if (d->sharedData->printFileComments)
+        {
             printComments(black);
+        }
 
         /* create the texture */
+
         d->texture[a]->destroy();
         d->texture[a]->setData(black.mirrored());
         d->texture[a]->setMinificationFilter(QOpenGLTexture::Linear);
@@ -639,16 +700,22 @@ void PresentationGL::montage(QImage& top, QImage& bot)
     int bw = bot.width();
     int bh = bot.height();
 
-    if (tw > bw || th > bh)
+    if ((tw > bw) || (th > bh))
+    {
         qFatal("Top Image should be smaller or same size as Bottom Image");
+    }
 
     if (top.depth() != 32)
+    {
         top = top.convertToFormat(QImage::Format_RGB32);
+    }
 
     if (bot.depth() != 32)
+    {
         bot = bot.convertToFormat(QImage::Format_RGB32);
+    }
 
-    int sw = bw / 2 - tw / 2; //int ew = bw/2 + tw/2;
+    int sw = bw / 2 - tw / 2; // int ew = bw/2 + tw/2;
     int sh = bh / 2 - th / 2;
     int eh = bh / 2 + th / 2;
 
@@ -701,7 +768,9 @@ void PresentationGL::printComments(QImage& layer)
     int yPos = 5; // Text Y coordinate
 
     if (d->sharedData->printFileName)
+    {
         yPos += 20;
+    }
 
     QStringList commentsByLines;
 
@@ -717,7 +786,7 @@ void PresentationGL::printComments(QImage& layer)
 
         int commentsLinesLengthLocal = d->sharedData->commentsLinesLength;
 
-        for (currIndex = commentsIndex ; currIndex < (uint)comments.length() && !breakLine ; ++currIndex)
+        for (currIndex = commentsIndex ; (currIndex < (uint)comments.length()) && !breakLine ; ++currIndex)
         {
             if (comments[currIndex] == QLatin1Char('\n') || comments[currIndex].isSpace())
             {
@@ -726,19 +795,25 @@ void PresentationGL::printComments(QImage& layer)
         }
 
         if (commentsLinesLengthLocal <= (int)((currIndex - commentsIndex)))
+        {
             commentsLinesLengthLocal = (currIndex - commentsIndex);
+        }
 
         breakLine = false;
 
-        for ( currIndex = commentsIndex ; currIndex <= commentsIndex + commentsLinesLengthLocal &&
-                currIndex < (uint)comments.length() && !breakLine ; ++currIndex )
+        for (currIndex = commentsIndex ; (currIndex <= (commentsIndex + commentsLinesLengthLocal)) &&
+             (currIndex < (uint)comments.length()) && !breakLine ; ++currIndex )
         {
             breakLine = (comments[currIndex] == QLatin1Char('\n')) ? true : false;
 
             if (breakLine)
+            {
                 newLine.append(QLatin1Char(' '));
+            }
             else
-                newLine.append( comments[currIndex] );
+            {
+                newLine.append(comments[currIndex]);
+            }
         }
 
         commentsIndex = currIndex; // The line is ended
@@ -805,6 +880,7 @@ void PresentationGL::showEndOfShow()
     QImage image(pix.toImage());
 
     /* create the texture */
+
     d->texture[2]->destroy();
     d->texture[2]->setData(image.mirrored());
     d->texture[2]->setMinificationFilter(QOpenGLTexture::Linear);
@@ -853,6 +929,7 @@ void PresentationGL::slotTimeOut()
         {
             // effect was running and is complete now
             // run timer while showing current image
+
             d->timeout = d->sharedData->delay;
             d->i       = 0;
         }
@@ -861,8 +938,11 @@ void PresentationGL::slotTimeOut()
 
             // timed out after showing current image
             // load next image and start effect
+
             if (d->random)
+            {
                 d->effect = getRandomEffect();
+            }
 
             advanceFrame();
 
@@ -893,11 +973,17 @@ void PresentationGL::slotMouseMoveTimeOut()
     if ((pos.y() < (d->deskY + 20))                     ||
         (pos.y() > (d->deskY + d->deskHeight - 20 - 1)) ||
         d->slideCtrlWidget->underMouse()
+
 #ifdef HAVE_MEDIAPLAYER
+
         || d->playbackWidget->underMouse()
+
 #endif
+
        )
+    {
         return;
+    }
 
     setCursor(QCursor(Qt::BlankCursor));
 }
@@ -1054,10 +1140,12 @@ void PresentationGL::effectRotate()
     }
 
     if (d->i == 0)
+    {
         d->dir = (int)((2.0 * qrand() / (RAND_MAX + 1.0)));
+    }
 
-    int a = (d->curr == 0) ? 1 : 0;
-    int b =  d->curr;
+    int a     = (d->curr == 0) ? 1 : 0;
+    int b     = d->curr;
 
     GLuint ta = d->texture[a]->textureId();
     GLuint tb = d->texture[b]->textureId();
@@ -1121,10 +1209,12 @@ void PresentationGL::effectBend()
     }
 
     if (d->i == 0)
+    {
         d->dir = (int)((2.0 * qrand() / (RAND_MAX + 1.0)));
+    }
 
-    int a = (d->curr == 0) ? 1 : 0;
-    int b =  d->curr;
+    int a     = (d->curr == 0) ? 1 : 0;
+    int b     = d->curr;
 
     GLuint ta = d->texture[a]->textureId();
     GLuint tb = d->texture[b]->textureId();
@@ -1199,16 +1289,16 @@ void PresentationGL::effectInOut()
 
     if (d->i <= 50)
     {
-        a = (d->curr == 0) ? 1 : 0;
+        a   = (d->curr == 0) ? 1 : 0;
         out = 1;
     }
     else
     {
-        a = d->curr;
+        a   = d->curr;
         out = 0;
     }
 
-    GLuint ta = d->texture[a]->textureId();
+    GLuint ta  = d->texture[a]->textureId();
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     float t    = out ? 1.0 / 50.0 * (50.0 - d->i) : 1.0 / 50.0 * (d->i - 50.0);
@@ -1254,10 +1344,12 @@ void PresentationGL::effectSlide()
     }
 
     if (d->i == 0)
+    {
         d->dir = 1 + (int)((4.0 * qrand() / (RAND_MAX + 1.0)));
+    }
 
-    int a      = (d->curr == 0) ? 1 : 0;
-    int b      =  d->curr;
+    int a     = (d->curr == 0) ? 1 : 0;
+    int b     =  d->curr;
     GLuint ta = d->texture[a]->textureId();
     GLuint tb = d->texture[b]->textureId();
     glBindTexture(GL_TEXTURE_2D, tb);
@@ -1401,7 +1493,7 @@ void PresentationGL::effectFlutter()
 
     // wave every two iterations
 
-    if (d->i % 2 == 0)
+    if ((d->i % 2) == 0)
     {
 
         float hold;
@@ -1441,8 +1533,8 @@ void PresentationGL::effectCube()
     glDepthFunc(GL_LEQUAL);
     glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 
-    int a      = (d->curr == 0) ? 1 : 0;
-    int b      =  d->curr;
+    int a     = (d->curr == 0) ? 1 : 0;
+    int b     =  d->curr;
     GLuint ta = d->texture[a]->textureId();
     GLuint tb = d->texture[b]->textureId();
     glMatrixMode(GL_PROJECTION);
@@ -1481,41 +1573,46 @@ void PresentationGL::effectCube()
         glColor4f(0.0f, 0.0f, 0.0f, 1.0f);
 
         /* Front Face */
+
         glVertex3f( -1.00f, -1.00f,  0.99f );
         glVertex3f(  1.00f, -1.00f,  0.99f );
         glVertex3f(  1.00f,  1.00f,  0.99f );
         glVertex3f( -1.00f,  1.00f,  0.99f );
 
         /* Back Face */
+
         glVertex3f( -1.00f, -1.00f, -0.99f );
         glVertex3f( -1.00f,  1.00f, -0.99f );
         glVertex3f(  1.00f,  1.00f, -0.99f );
         glVertex3f(  1.00f, -1.00f, -0.99f );
 
         /* Top Face */
+
         glVertex3f( -1.00f,  0.99f, -1.00f );
         glVertex3f( -1.00f,  0.99f,  1.00f );
         glVertex3f(  1.00f,  0.99f,  1.00f );
         glVertex3f(  1.00f,  0.99f, -1.00f );
 
         /* Bottom Face */
+
         glVertex3f( -1.00f, -0.99f, -1.00f );
         glVertex3f(  1.00f, -0.99f, -1.00f );
         glVertex3f(  1.00f, -0.99f,  1.00f );
         glVertex3f( -1.00f, -0.99f,  1.00f );
 
         /* Right face */
+
         glVertex3f( 0.99f, -1.00f, -1.00f );
         glVertex3f( 0.99f,  1.00f, -1.00f );
         glVertex3f( 0.99f,  1.00f,  1.00f );
         glVertex3f( 0.99f, -1.00f,  1.00f );
 
         /* Left Face */
+
         glVertex3f( -0.99f, -1.00f, -1.00f );
         glVertex3f( -0.99f, -1.00f,  1.00f );
         glVertex3f( -0.99f,  1.00f,  1.00f );
         glVertex3f( -0.99f,  1.00f, -1.00f );
-
     }
 
     glEnd();
@@ -1526,6 +1623,7 @@ void PresentationGL::effectCube()
         glColor4d(1.0, 1.0, 1.0, 1.0);
 
         // Front Face
+
         glTexCoord2f( 0.0f, 0.0f );
         glVertex3f( -1.0f, -1.0f,  1.00f );
         glTexCoord2f( 1.0f, 0.0f );
@@ -1535,8 +1633,8 @@ void PresentationGL::effectCube()
         glTexCoord2f( 0.0f, 1.0f );
         glVertex3f( -1.0f,  1.0f,  1.00f );
 
-
         // Top Face
+
         glTexCoord2f( 1.0f, 1.0f );
         glVertex3f( -1.0f,  1.00f, -1.0f );
         glTexCoord2f( 1.0f, 0.0f );
@@ -1547,6 +1645,7 @@ void PresentationGL::effectCube()
         glVertex3f(  1.0f,  1.00f, -1.0f );
 
         // Bottom Face
+
         glTexCoord2f( 0.0f, 1.0f );
         glVertex3f( -1.0f, -1.00f, -1.0f );
         glTexCoord2f( 1.0f, 1.0f );
@@ -1557,6 +1656,7 @@ void PresentationGL::effectCube()
         glVertex3f( -1.0f, -1.00f,  1.0f );
 
         // Right face
+
         glTexCoord2f( 0.0f, 0.0f );
         glVertex3f( 1.00f, -1.0f, -1.0f );
         glTexCoord2f( 0.0f, 1.0f );
@@ -1567,6 +1667,7 @@ void PresentationGL::effectCube()
         glVertex3f( 1.00f,  1.0f, -1.0f );
 
         // Left Face
+
         glTexCoord2f( 1.0f, 0.0f );
         glVertex3f( -1.00f, -1.0f, -1.0f );
         glTexCoord2f( 0.0f, 0.0f );
@@ -1575,7 +1676,6 @@ void PresentationGL::effectCube()
         glVertex3f( -1.00f,  1.0f,  1.0f );
         glTexCoord2f( 1.0f, 1.0f );
         glVertex3f( -1.00f, -1.0f,  1.0f );
-
     }
 
     glEnd();
@@ -1586,6 +1686,7 @@ void PresentationGL::effectCube()
         glColor4d(1.0, 1.0, 1.0, 1.0);
 
         // Back Face
+
         glTexCoord2f( 1.0f, 0.0f );
         glVertex3f( -1.0f, -1.0f, -1.00f );
         glTexCoord2f( 1.0f, 1.0f );
@@ -1705,6 +1806,7 @@ QPixmap PresentationGL::generateCustomOutlinedTextPixmap(const QString& text, QF
     p.setPen(QPen());
 
     // draw outline
+
     QPainterPath path;
     path.addText(fm.maxWidth(), fm.height() * 1.5, fn, text);
 
@@ -1715,7 +1817,9 @@ QPixmap PresentationGL::generateCustomOutlinedTextPixmap(const QString& text, QF
     QPainterPath outline = stroker.createStroke(path);
 
     if (drawTextOutline)
+    {
         p.fillPath(outline, Qt::black);
+    }
 
     p.fillPath(path,    QBrush(fgColor));
 
@@ -1728,12 +1832,14 @@ QPixmap PresentationGL::generateCustomOutlinedTextPixmap(const QString& text, QF
 bool PresentationGL::checkOpenGL() const
 {
     // No OpenGL context is found. Are the drivers ok?
+
     if (!isValid())
     {
         return false;
     }
 
     // GL_EXT_texture3D is not supported
+
     QString s = QString::fromLatin1(reinterpret_cast<const char*>(glGetString(GL_EXTENSIONS)));
 
     if (!s.contains(QString::fromLatin1("GL_EXT_texture3D"), Qt::CaseInsensitive))
@@ -1742,6 +1848,7 @@ bool PresentationGL::checkOpenGL() const
     }
 
     // Everything is ok!
+
     return true;
 }
 
