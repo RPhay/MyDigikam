@@ -33,16 +33,16 @@ namespace DigikamGenericSendByMailPlugin
 {
 
 MailSettings::MailSettings()
+    : selMode(IMAGES),
+      addFileProperties(false),
+      imagesChangeProp(false),
+      removeMetadata(false),
+      imageCompression(75),
+      attLimitInMbytes(17),
+      mailProgram(THUNDERBIRD),
+      imageSize(1024),
+      imageFormat(JPEG)
 {
-    selMode           = IMAGES;
-    addFileProperties = false;
-    imagesChangeProp  = false;
-    removeMetadata    = false;
-    attLimitInMbytes  = 17;
-    imageCompression  = 75;
-    mailProgram       = THUNDERBIRD;
-    imageSize         = 1024;
-    imageFormat       = JPEG;
 }
 
 MailSettings::~MailSettings()
@@ -87,7 +87,9 @@ void MailSettings::writeSettings(KConfigGroup& group)
 QString MailSettings::format() const
 {
     if (imageFormat == JPEG)
+    {
         return QLatin1String("JPEG");
+    }
 
     return QLatin1String("PNG");
 }
@@ -110,6 +112,7 @@ QUrl MailSettings::mailUrl(const QUrl& orgUrl) const
 qint64 MailSettings::attachementLimit() const
 {
     qint64 val = attLimitInMbytes * 1024 * 1024;
+
     return val;
 }
 

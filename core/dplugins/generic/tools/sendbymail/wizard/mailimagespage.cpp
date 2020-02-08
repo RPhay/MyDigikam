@@ -110,7 +110,9 @@ void MailImagesPage::initializePage()
 bool MailImagesPage::validatePage()
 {
     if (d->imageList->imageUrls().isEmpty())
+    {
         return false;
+    }
 
     d->wizard->settings()->inputImages = d->imageList->imageUrls();
 

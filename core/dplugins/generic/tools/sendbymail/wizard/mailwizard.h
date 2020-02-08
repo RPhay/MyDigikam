@@ -46,8 +46,8 @@ public:
     explicit MailWizard(QWidget* const parent, DInfoInterface* const iface = nullptr);
     ~MailWizard();
 
-    bool validateCurrentPage() override;
-    int  nextId() const override;
+    bool validateCurrentPage()       override;
+    int  nextId() const              override;
 
     DInfoInterface* iface()    const;
     MailSettings*   settings() const;

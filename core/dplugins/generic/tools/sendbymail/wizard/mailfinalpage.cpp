@@ -100,7 +100,9 @@ MailFinalPage::MailFinalPage(QWizard* const dialog, const QString& title)
 MailFinalPage::~MailFinalPage()
 {
     if (d->processor)
+    {
         d->processor->slotCancel();
+    }
 
     delete d;
 }
@@ -141,8 +143,8 @@ void MailFinalPage::slotProcess()
     d->progressView->addEntry(i18n("%1 input items to process", d->settings->itemsList.count()),
                                   DHistoryView::ProgressEntry);
 
-    for (QMap<QUrl, QUrl>::const_iterator it = d->settings->itemsList.constBegin();
-         it != d->settings->itemsList.constEnd(); ++it)
+    for (QMap<QUrl, QUrl>::const_iterator it = d->settings->itemsList.constBegin() ;
+         it != d->settings->itemsList.constEnd() ; ++it)
     {
         d->progressView->addEntry(QDir::toNativeSeparators(it.key().toLocalFile()),
                                   DHistoryView::ProgressEntry);
@@ -169,7 +171,9 @@ void MailFinalPage::slotProcess()
 void MailFinalPage::cleanupPage()
 {
     if (d->processor)
+    {
         d->processor->slotCancel();
+    }
 }
 
 void MailFinalPage::slotMessage(const QString& mess, bool err)

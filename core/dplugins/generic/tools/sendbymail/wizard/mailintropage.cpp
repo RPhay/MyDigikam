@@ -132,18 +132,25 @@ MailIntroPage::MailIntroPage(QWizard* const dialog, const QString& title)
     d->binSearch->addBinary(d->thundBin);
 
 #ifdef Q_OS_OSX
+
     // Std Macports install
+
     d->binSearch->addDirectory(QLatin1String("/opt/local/bin"));
 
     // digiKam Bundle PKG install
+
     d->binSearch->addDirectory(QLatin1String("/opt/digikam/bin"));
+
 #endif
 
 #ifdef Q_OS_WIN
+
     // FIXME : adjust paths
+
     d->binSearch->addDirectory(QLatin1String("C:/Program Files/"));
 
     d->binSearch->addDirectory(QLatin1String("C:/Program Files (x86)/"));
+
 #endif
 
     vbox->setStretchFactor(desc,      2);

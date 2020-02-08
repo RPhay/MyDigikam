@@ -125,30 +125,38 @@ bool ImageResizeJob::imageResize(MailSettings* const settings,
         uint w = img.width();
         uint h = img.height();
 
-        if (w > sizeFactor || h > sizeFactor)
+        if ((w > sizeFactor) || (h > sizeFactor))
         {
             if (w > h)
             {
                 h = (uint)((double)(h * sizeFactor) / w);
 
-                if (h == 0) h = 1;
+                if (h == 0)
+                {
+                    h = 1;
+                }
 
                 w = sizeFactor;
+
                 Q_ASSERT(h <= sizeFactor);
             }
             else
             {
                 w = (uint)((double)(w * sizeFactor) / h);
 
-                if (w == 0) w = 1;
+                if (w == 0)
+                {
+                    w = 1;
+                }
 
                 h = sizeFactor;
+
                 Q_ASSERT(w <= sizeFactor);
             }
 
             DImg scaledImg = img.smoothScale(w, h, Qt::IgnoreAspectRatio);
 
-            if (scaledImg.width() != w || scaledImg.height() != h)
+            if ((scaledImg.width() != w) || (scaledImg.height() != h))
             {
                 err = i18n("Cannot resize image. Aborting.");
                 return false;

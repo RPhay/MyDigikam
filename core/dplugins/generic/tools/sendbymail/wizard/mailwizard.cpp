@@ -123,7 +123,9 @@ MailSettings* MailWizard::settings() const
 bool MailWizard::validateCurrentPage()
 {
     if (!DWizardDlg::validateCurrentPage())
+    {
         return false;
+    }
 
     return true;
 }
@@ -133,12 +135,16 @@ int MailWizard::nextId() const
     if (d->settings->selMode == MailSettings::ALBUMS)
     {
         if (currentPage() == d->introPage)
+        {
             return d->albumsPage->id();
+        }
     }
     else
     {
         if (currentPage() == d->introPage)
+        {
             return d->imagesPage->id();
+        }
     }
 
     return DWizardDlg::nextId();

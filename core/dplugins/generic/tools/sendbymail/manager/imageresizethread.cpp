@@ -55,12 +55,12 @@ void ImageResizeThread::resize(MailSettings* const settings)
     *m_count = 0;
     int i    = 1;
 
-    for (QMap<QUrl, QUrl>::const_iterator it = settings->itemsList.constBegin();
-         it != settings->itemsList.constEnd(); ++it)
+    for (QMap<QUrl, QUrl>::const_iterator it = settings->itemsList.constBegin() ;
+         it != settings->itemsList.constEnd() ; ++it)
     {
         ImageResizeJob* const t = new ImageResizeJob(m_count);
-        t->m_orgUrl   = it.key();
-        t->m_settings = settings;
+        t->m_orgUrl             = it.key();
+        t->m_settings           = settings;
 
         QTemporaryDir tmpDir(t->m_settings->tempPath);
         tmpDir.setAutoRemove(false);
@@ -79,7 +79,7 @@ void ImageResizeThread::resize(MailSettings* const settings)
                 this, SIGNAL(failedResize(QUrl,QString,int)));
 
         collection.insert(t, 0);
-        i++;
+        ++i;
     }
 
     appendJobs(collection);
@@ -87,7 +87,7 @@ void ImageResizeThread::resize(MailSettings* const settings)
 
 void ImageResizeThread::cancel()
 {
-    *m_count   = 0;
+    *m_count = 0;
     ActionThreadBase::cancel();
 }
 
