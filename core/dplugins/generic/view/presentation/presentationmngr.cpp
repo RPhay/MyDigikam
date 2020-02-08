@@ -63,11 +63,11 @@ namespace DigikamGenericPresentationPlugin
 {
 
 PresentationMngr::PresentationMngr(QObject* const parent, DInfoInterface* const iface)
-    : QObject(parent)
+    : QObject(parent),
+      m_plugin(nullptr)
 {
-    m_sharedData        = new PresentationContainer();
-    m_sharedData->iface = iface;
-    m_plugin            = nullptr;
+      m_sharedData = new PresentationContainer();
+      m_sharedData->iface = iface;
 }
 
 PresentationMngr::~PresentationMngr()
@@ -117,7 +117,7 @@ void PresentationMngr::slotSlideShow()
         QList<QUrl>::iterator it = m_sharedData->urlList.begin();
         QList<QUrl>::iterator it1;
 
-        for (uint i = 0; i < (uint) m_sharedData->urlList.size(); ++i)
+        for (uint i = 0 ; i < (uint) m_sharedData->urlList.size() ; ++i)
         {
             int inc = (int) (float(m_sharedData->urlList.count()) * qrand() / (RAND_MAX + 1.0));
 

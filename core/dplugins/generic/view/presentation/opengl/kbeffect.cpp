@@ -45,11 +45,11 @@ int KBEffect::m_numKBEffectRepeated = 0;
 // -------------------------------------------------------------------------
 
 KBEffect::KBEffect(PresentationKB* const parent, bool needFadeIn)
+    : m_needFadeIn(needFadeIn),
+      m_slideWidget(parent)
 {
-    m_img[0]      = nullptr;
-    m_img[1]      = nullptr;
-    m_slideWidget = parent;
-    m_needFadeIn  = needFadeIn;
+    m_img[0] = nullptr;
+    m_img[1] = nullptr;
 }
 
 KBEffect::~KBEffect()
@@ -68,14 +68,13 @@ void KBEffect::swapImages()
 
 KBImage* KBEffect::image(int img) const
 {
-    Q_ASSERT (img >= 0 && img < 2);
+    Q_ASSERT ((img >= 0) && (img < 2));
 
     return m_slideWidget->d->image[img];
 }
 
 KBEffect::Type KBEffect::chooseKBEffect(KBEffect::Type oldType)
 {
-
     KBEffect::Type type;
 
     do
@@ -85,9 +84,13 @@ KBEffect::Type KBEffect::chooseKBEffect(KBEffect::Type oldType)
     while ((type == oldType) && (m_numKBEffectRepeated >= 1));
 
     if (type == oldType)
+    {
         m_numKBEffectRepeated++;
+    }
     else
+    {
         m_numKBEffectRepeated = 0;
+    }
 
     return type;
 }
@@ -120,14 +123,22 @@ void FadeKBEffect::advanceTime(float step)
     m_img[0]->m_pos += step;
 
     if (m_img[0]->m_pos >= 1.0)
+    {
         m_img[0]->m_pos = 1.0;
+    }
 
     if (m_needFadeIn && m_img[0]->m_pos < 0.1)
+    {
         m_img[0]->m_opacity = m_img[0]->m_pos * 10;
+    }
     else if (m_img[0]->m_pos > 0.9)
+    {
         m_img[0]->m_opacity = (1.0 - m_img[0]->m_pos) * 10;
+    }
     else
+    {
         m_img[0]->m_opacity = 1.0;
+    }
 }
 
 // -------------------------------------------------------------------------

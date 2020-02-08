@@ -62,11 +62,11 @@ class Q_DECL_HIDDEN PresentationDlg::Private
 public:
 
     explicit Private()
+      : buttonBox(nullptr),
+        startButton(nullptr),
+        tab(nullptr),
+        sharedData(nullptr)
     {
-        buttonBox   = nullptr;
-        startButton = nullptr;
-        tab         = nullptr;
-        sharedData  = nullptr;
     }
 
     QDialogButtonBox*      buttonBox;
@@ -81,7 +81,7 @@ PresentationDlg::PresentationDlg(QWidget* const parent, PresentationContainer* c
 {
     setWindowTitle(i18n("Presentation"));
 
-    d->sharedData  = sharedData;
+    d->sharedData = sharedData;
 
     m_buttons->addButton(QDialogButtonBox::Close);
     m_buttons->addButton(QDialogButtonBox::Ok);
@@ -160,6 +160,7 @@ void PresentationDlg::readSettings()
     d->sharedData->delayMsLineStep   = 100;
 
     // Comments tab settings
+
     QFont* const savedFont = new QFont();
     savedFont->setFamily(    grp.readEntry("Comments Font Family"));
     savedFont->setPointSize( grp.readEntry("Comments Font Size",        10));
@@ -180,6 +181,7 @@ void PresentationDlg::readSettings()
 
 #ifdef HAVE_MEDIAPLAYER
     // Soundtrack tab
+
     d->sharedData->soundtrackLoop             = grp.readEntry("Soundtrack Loop",                     false);
     d->sharedData->soundtrackPlay             = grp.readEntry("Soundtrack Auto Play",                false);
     d->sharedData->soundtrackPath             = QUrl::fromLocalFile(grp.readEntry("Soundtrack Path", ""));
@@ -187,6 +189,7 @@ void PresentationDlg::readSettings()
 #endif
 
     // Advanced tab
+
     d->sharedData->useMilliseconds     = grp.readEntry("Use Milliseconds",      false);
     d->sharedData->enableMouseWheel    = grp.readEntry("Enable Mouse Wheel",    true);
 
@@ -202,6 +205,7 @@ void PresentationDlg::readSettings()
         KConfigGroup soundGrp = config.group(groupName);
 
         // load and check playlist files, if valid, add to tracklist widget
+
         QList<QUrl> playlistFiles = soundGrp.readEntry("Tracks", QList<QUrl>());
 
         foreach (const QUrl& playlistFile, playlistFiles)
@@ -249,7 +253,8 @@ void PresentationDlg::saveSettings()
     grp.writeEntry("Enable Mouse Wheel",       d->sharedData->enableMouseWheel);
 
     // Comments tab settings
-    QFont* commentsFont = d->sharedData->captionFont;
+
+    QFont* const commentsFont = d->sharedData->captionFont;
     grp.writeEntry("Comments Font Family",     commentsFont->family());
     grp.writeEntry("Comments Font Size",       commentsFont->pointSize());
     grp.writeEntry("Comments Font Bold",       commentsFont->bold());
@@ -268,6 +273,7 @@ void PresentationDlg::saveSettings()
 
 #ifdef HAVE_MEDIAPLAYER
     // Soundtrack tab
+
     grp.writeEntry("Soundtrack Loop",              d->sharedData->soundtrackLoop);
     grp.writeEntry("Soundtrack Auto Play",         d->sharedData->soundtrackPlay);
     grp.writeEntry("Soundtrack Path",              d->sharedData->soundtrackPath.toLocalFile());
@@ -275,6 +281,7 @@ void PresentationDlg::saveSettings()
 #endif
 
     // Advanced settings
+
     grp.writeEntry("KB Disable FadeInOut", d->sharedData->kbDisableFadeInOut);
     grp.writeEntry("KB Disable Crossfade", d->sharedData->kbDisableCrossFade);
     grp.writeEntry("Enable Cache",         d->sharedData->enableCache);
@@ -284,6 +291,7 @@ void PresentationDlg::saveSettings()
 
     // only save tracks when option is set and tracklist is NOT empty, to prevent deletion
     // of older track entries
+
     if (d->sharedData->soundtrackRememberPlaylist && d->sharedData->soundtrackPlayListNeedsUpdate)
     {
         QString groupName(QLatin1String("Presentation Settings") + QLatin1String(" Soundtrack "));
@@ -299,7 +307,9 @@ void PresentationDlg::slotStartClicked()
     saveSettings();
 
     if (d->sharedData->mainPage->updateUrlList())
+    {
         emit buttonStartClicked();
+    }
 
     return;
 }

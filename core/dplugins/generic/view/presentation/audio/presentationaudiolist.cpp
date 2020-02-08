@@ -64,8 +64,8 @@ class Q_DECL_HIDDEN PresentationAudioListItem::Private
 public:
 
     explicit Private()
+        : mediaObject(nullptr)
     {
-        mediaObject = nullptr;
     }
 
     QUrl          url;
@@ -153,9 +153,13 @@ void PresentationAudioListItem::slotMediaStateChanged(QtAV::MediaStatus status)
     d->title       = meta.value(QLatin1String("title"));
 
     if ( d->artist.isEmpty() && d->title.isEmpty() )
+    {
         setText(d->url.fileName());
+    }
     else
+    {
         setText(i18nc("artist - title", "%1 - %2", artist(), title()));
+    }
 
     emit signalTotalTimeReady(d->url, d->totalTime);
 }
@@ -197,13 +201,17 @@ PresentationAudioList::PresentationAudioList(QWidget* const parent)
 void PresentationAudioList::dragEnterEvent(QDragEnterEvent* e)
 {
     if (e->mimeData()->hasUrls())
+    {
         e->acceptProposedAction();
+    }
 }
 
 void PresentationAudioList::dragMoveEvent(QDragMoveEvent* e)
 {
     if (e->mimeData()->hasUrls())
+    {
         e->acceptProposedAction();
+    }
 }
 
 void PresentationAudioList::dropEvent(QDropEvent* e)
@@ -216,20 +224,24 @@ void PresentationAudioList::dropEvent(QDropEvent* e)
         QFileInfo fi(url.toLocalFile());
 
         if (fi.isFile() && fi.exists())
+        {
             urls.append(QUrl(url));
+        }
     }
 
     e->acceptProposedAction();
 
     if (!urls.isEmpty())
+    {
         emit signalAddedDropItems(urls);
+    }
 }
 
 QList<QUrl> PresentationAudioList::fileUrls()
 {
     QList<QUrl> files;
 
-    for (int i = 0; i < count(); ++i)
+    for (int i = 0 ; i < count() ; ++i)
     {
         PresentationAudioListItem* const sitem = dynamic_cast<PresentationAudioListItem*>(item(i));
 

@@ -52,16 +52,16 @@ class Q_DECL_HIDDEN KBImageLoader::Private
 public:
 
     explicit Private()
+      : sharedData(nullptr),
+        fileIndex(0),
+        width(0),
+        height(0),
+        initialized(false),
+        needImage(true),
+        haveImages(false),
+        quitRequested(false),
+        textureAspect(0.0)
     {
-        sharedData    = nullptr;
-        fileIndex     = 0;
-        width         = 0;
-        height        = 0;
-        initialized   = false;
-        needImage     = true;
-        haveImages    = false;
-        quitRequested = false;
-        textureAspect = 0.0;
     }
 
     PresentationContainer* sharedData;
@@ -135,7 +135,9 @@ void KBImageLoader::run()
     while (true)
     {
         if (d->quitRequested)
+        {
             break;
+        }
 
         if (d->needImage)
         {
@@ -175,6 +177,7 @@ void KBImageLoader::run()
             if (!ok)
             {
                 // generate a black dummy image
+
                 d->texture = QImage(128, 128, QImage::Format_ARGB32);
                 d->texture.fill(Qt::black);
             }
@@ -192,6 +195,7 @@ void KBImageLoader::run()
         else
         {
             // wait for new requests from the consumer
+
             d->imageRequest.wait(&d->condLock);
         }
     }
@@ -229,6 +233,7 @@ void KBImageLoader::invalidateCurrentImageName()
 bool KBImageLoader::grabImage()
 {
     d->imageLock.lock();
+
     return d->haveImages;
 }
 

@@ -73,11 +73,11 @@ class Q_DECL_HIDDEN PresentationAudioPage::Private
 public:
 
     explicit Private()
+      : sharedData(nullptr),
+        tracksTime(nullptr),
+        soundItems(nullptr),
+        timeMutex(nullptr)
     {
-        tracksTime = nullptr;
-        sharedData = nullptr;
-        soundItems = nullptr;
-        timeMutex  = nullptr;
     }
 
     QList<QUrl>                             urlList;
@@ -188,8 +188,11 @@ void PresentationAudioPage::readSettings()
              this, SLOT(slotImageTotalTimeChanged(QTime)) );
 
     // if tracks are already set in d->sharedData, add them now
+
     if (!d->sharedData->soundtrackUrls.isEmpty())
+    {
         addItems(d->sharedData->soundtrackUrls);
+    }
 
     updateFileList();
     updateTracksNumber();
@@ -206,15 +209,17 @@ void PresentationAudioPage::saveSettings()
 void PresentationAudioPage::addItems(const QList<QUrl>& fileList)
 {
     if (fileList.isEmpty())
+    {
         return;
+    }
 
     QList<QUrl> Files = fileList;
 
-    for (QList<QUrl>::ConstIterator it = Files.constBegin(); it != Files.constEnd(); ++it)
+    for (QList<QUrl>::ConstIterator it = Files.constBegin() ; it != Files.constEnd() ; ++it)
     {
-        QUrl currentFile              = *it;
-        d->sharedData->soundtrackPath = currentFile;
-        PresentationAudioListItem* const item         = new PresentationAudioListItem(m_SoundFilesListBox, currentFile);
+        QUrl currentFile                      = *it;
+        d->sharedData->soundtrackPath         = currentFile;
+        PresentationAudioListItem* const item = new PresentationAudioListItem(m_SoundFilesListBox, currentFile);
         item->setName(currentFile.fileName());
         m_SoundFilesListBox->insertItem(m_SoundFilesListBox->count() - 1, item);
 
@@ -242,13 +247,14 @@ void PresentationAudioPage::updateTracksNumber()
     {
         displayTime = displayTime.addMSecs(1000 * (number - 1));
 
-        for (QMap<QUrl, QTime>::iterator it = d->tracksTime->begin(); it != d->tracksTime->end(); ++it)
+        for (QMap<QUrl, QTime>::iterator it = d->tracksTime->begin() ; it != d->tracksTime->end() ; ++it)
         {
             int hours = it.value().hour()   + displayTime.hour();
             int mins  = it.value().minute() + displayTime.minute();
             int secs  = it.value().second() + displayTime.second();
 
-            /* QTime doesn't get a overflow value in input. They need
+            /*
+             * QTime doesn't get a overflow value in input. They need
              * to be cut down to size.
              */
 
@@ -311,9 +317,13 @@ void PresentationAudioPage::compareTimes()
         QPalette paletteTimeLabel = m_soundtrackTimeLabel->palette();
 
         if (d->imageTime < d->totalTime)
+        {
             paletteTimeLabel.setColor(QPalette::WindowText, Qt::black);
+        }
         else
+        {
             paletteTimeLabel.setColor(QPalette::WindowText, Qt::green);
+        }
 
         m_soundtrackTimeLabel->setPalette(paletteTimeLabel);
 
@@ -335,7 +345,7 @@ void PresentationAudioPage::slotSoundFilesSelected( int row )
 {
     QListWidgetItem* const item = m_SoundFilesListBox->item(row);
 
-    if (!item || m_SoundFilesListBox->count() == 0)
+    if (!item || (m_SoundFilesListBox->count() == 0))
     {
         return;
     }
@@ -395,7 +405,9 @@ void PresentationAudioPage::slotSoundFilesButtonDelete()
     slotSoundFilesSelected(m_SoundFilesListBox->currentRow());
 
     if (m_SoundFilesListBox->count() == 0)
+    {
         m_previewButton->setEnabled(false);
+    }
 
     updateFileList();
 }
@@ -407,7 +419,9 @@ void PresentationAudioPage::slotSoundFilesButtonUp()
     for (int i = 0 ; i < m_SoundFilesListBox->count() ; ++i)
     {
         if (m_SoundFilesListBox->currentRow() == i)
+        {
             ++Cpt;
+        }
     }
 
     if (Cpt == 0)
@@ -443,7 +457,9 @@ void PresentationAudioPage::slotSoundFilesButtonDown()
     for (int i = 0 ; i < m_SoundFilesListBox->count() ; ++i)
     {
         if (m_SoundFilesListBox->currentRow() == i)
+        {
             ++Cpt;
+        }
     }
 
     if (Cpt == 0)
@@ -501,8 +517,11 @@ void PresentationAudioPage::slotSoundFilesButtonLoad()
                 QString line = in.readLine();
 
                 // we ignore the extended information of the m3u playlist file
+
                 if (line.startsWith(QLatin1Char('#')) || line.isEmpty())
+                {
                     continue;
+                }
 
                 QUrl fUrl = QUrl::fromLocalFile(line);
 
@@ -550,7 +569,7 @@ void PresentationAudioPage::slotSoundFilesButtonSave()
             QTextStream out(&file);
             QList<QUrl> playlistFiles = m_SoundFilesListBox->fileUrls();
 
-            for (int i = 0; i < playlistFiles.count(); ++i)
+            for (int i = 0 ; i < playlistFiles.count() ; ++i)
             {
                 QUrl fUrl(playlistFiles.at(i));
 
@@ -583,7 +602,7 @@ void PresentationAudioPage::slotPreviewButtonClicked()
 
         if (pitem)
         {
-            QString path           = pitem->url().toLocalFile();
+            QString path = pitem->url().toLocalFile();
 
             if (!QFile::exists(path))
             {
@@ -602,6 +621,7 @@ void PresentationAudioPage::slotPreviewButtonClicked()
     }
 
     // Update PresentationContainer from interface
+
     saveSettings();
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Tracks : " << urlList;
@@ -610,10 +630,9 @@ void PresentationAudioPage::slotPreviewButtonClicked()
     preview->exec();
 
     delete preview;
-    return;
 }
 
-void PresentationAudioPage::slotImageTotalTimeChanged( const QTime& imageTotalTime )
+void PresentationAudioPage::slotImageTotalTimeChanged(const QTime& imageTotalTime)
 {
     d->imageTime = imageTotalTime;
     m_slideTimeLabel->setText(imageTotalTime.toString());

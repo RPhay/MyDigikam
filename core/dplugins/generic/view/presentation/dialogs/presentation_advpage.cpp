@@ -86,6 +86,7 @@ void PresentationAdvPage::saveSettings()
 void PresentationAdvPage::slotUseMillisecondsToggled()
 {
     m_sharedData->useMilliseconds = m_useMillisecondsCheckBox->isChecked();
+
     emit useMillisecondsToggled();
 }
 

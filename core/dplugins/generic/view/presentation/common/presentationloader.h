@@ -50,13 +50,13 @@ public:
     void    next();
     void    prev();
 
-    QImage  getCurrent()   const;
-    QString currFileName() const;
-    QUrl    currPath()     const;
+    QImage  getCurrent()        const;
+    QString currFileName()      const;
+    QUrl    currPath()          const;
 
 private:
 
-    void checkIsIn(int index) const;
+    void checkIsIn(int index)   const;
 
 private:
 

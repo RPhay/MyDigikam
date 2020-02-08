@@ -40,6 +40,7 @@ PresentationCaptionPage::PresentationCaptionPage(QWidget* const parent, Presenta
     : QWidget(parent)
 {
     setupUi(this);
+
     m_sharedData = sharedData;
     m_fontSampleLbl->setText(i18n("This is a comment sample..."));
     m_fontSampleLbl->setAutoFillBackground(true);

@@ -75,7 +75,7 @@ public:
 
     // Config file data
 
-    // --> Main page
+    /// Main page
     bool                     opengl;
     bool                     openGlFullScale;
     int                      delay;
@@ -87,7 +87,7 @@ public:
     QString                  effectName;
     QString                  effectNameGL;
 
-    // --> Captions page
+    /// Captions page
     uint                     commentsFontColor;
     uint                     commentsBgColor;
     bool                     commentsDrawOutline;
@@ -95,7 +95,7 @@ public:
     int                      commentsLinesLength;
     QFont*                   captionFont;
 
-    // --> Soundtrack page
+    /// Soundtrack page
     bool                     soundtrackLoop;
     bool                     soundtrackPlay;
     bool                     soundtrackRememberPlaylist;
@@ -103,14 +103,14 @@ public:
     QUrl                     soundtrackPath;
     QList<QUrl>              soundtrackUrls;
 
-    // --> Advanced page
+    /// Advanced page
     bool                     useMilliseconds;
     bool                     enableMouseWheel;
     bool                     enableCache;
     bool                     kbDisableFadeInOut;
     bool                     kbDisableCrossFade;
     uint                     cacheSize;
-    
+
     DInfoInterface*          iface;
 };
 

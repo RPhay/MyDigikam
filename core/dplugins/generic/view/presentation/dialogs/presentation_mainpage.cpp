@@ -69,14 +69,14 @@ class Q_DECL_HIDDEN PresentationMainPage::Private
 public:
 
     explicit Private()
+      : sharedData(nullptr),
+        imagesFilesListBox(nullptr)
     {
-        sharedData         = nullptr;
-        imagesFilesListBox = nullptr;
     }
 
     PresentationContainer* sharedData;
     QTime                  totalTime;
-    DItemsList*           imagesFilesListBox;
+    DItemsList*            imagesFilesListBox;
 };
 
 PresentationMainPage::PresentationMainPage(QWidget* const parent, PresentationContainer* const sharedData)
@@ -168,7 +168,7 @@ void PresentationMainPage::saveSettings()
         QMap<QString, QString> effectNames = PresentationWidget::effectNamesI18N();
         QMap<QString, QString>::ConstIterator it;
 
-        for (it = effectNames.constBegin(); it != effectNames.constEnd(); ++it)
+        for (it = effectNames.constBegin() ; it != effectNames.constEnd() ; ++it)
         {
             if (it.value() == m_effectsComboBox->currentText())
             {
@@ -187,24 +187,26 @@ void PresentationMainPage::saveSettings()
         QMap<QString, QString>::ConstIterator it;
 
         // Load slideshowgl effects
+
         effectNames = PresentationGL::effectNamesI18N();
 
-        for (it = effectNames.constBegin(); it != effectNames.constEnd(); ++it)
+        for (it = effectNames.constBegin() ; it != effectNames.constEnd() ; ++it)
         {
             effects.insert(it.key(), it.value());
         }
 
         // Load Ken Burns effect
+
         effectNames = PresentationKB::effectNamesI18N();
 
-        for (it = effectNames.constBegin(); it != effectNames.constEnd(); ++it)
+        for (it = effectNames.constBegin() ; it != effectNames.constEnd() ; ++it)
         {
             effects.insert(it.key(), it.value());
         }
 
         QString effect;
 
-        for (it = effects.constBegin(); it != effects.constEnd(); ++it)
+        for (it = effects.constBegin() ; it != effects.constEnd() ; ++it)
         {
             if (it.value() == m_effectsComboBox->currentText())
             {
@@ -247,6 +249,7 @@ void PresentationMainPage::showNumberImages()
     d->totalTime = totalDuration;
 
     // Notify total time is changed
+
     emit signalTotalTimeChanged(d->totalTime);
 
     m_label6->setText(i18np("%1 image [%2]", "%1 images [%2]", numberOfImages, totalDuration.toString()));
@@ -261,14 +264,14 @@ void PresentationMainPage::loadEffectNames()
 
     QMap<QString, QString>::Iterator it;
 
-    for (it = effectNames.begin(); it != effectNames.end(); ++it)
+    for (it = effectNames.begin() ; it != effectNames.end() ; ++it)
     {
         effects.append(it.value());
     }
 
     m_effectsComboBox->insertItems(0, effects);
 
-    for (int i = 0; i < m_effectsComboBox->count(); ++i)
+    for (int i = 0 ; i < m_effectsComboBox->count() ; ++i)
     {
         if (effectNames[d->sharedData->effectName] == m_effectsComboBox->itemText(i))
         {
@@ -288,12 +291,14 @@ void PresentationMainPage::loadEffectNamesGL()
     QMap<QString, QString>::Iterator it;
 
     // Load slideshowgl effects
+
     effectNames = PresentationGL::effectNamesI18N();
 
     // Add Ken Burns effect
+
     effectNames.unite(PresentationKB::effectNamesI18N());
 
-    for (it = effectNames.begin(); it != effectNames.end(); ++it)
+    for (it = effectNames.begin() ; it != effectNames.end() ; ++it)
     {
         effects.append(it.value());
     }
@@ -304,7 +309,7 @@ void PresentationMainPage::loadEffectNamesGL()
 
     m_effectsComboBox->insertItems(0, effects);
 
-    for (int i = 0; i < m_effectsComboBox->count(); ++i)
+    for (int i = 0 ; i < m_effectsComboBox->count() ; ++i)
     {
         if (effectNames[d->sharedData->effectNameGL] == m_effectsComboBox->itemText(i))
         {
@@ -325,7 +330,9 @@ bool PresentationMainPage::updateUrlList()
         DItemsListViewItem* const item = dynamic_cast<DItemsListViewItem*>(*it);
 
         if (!item)
+        {
             continue;
+        }
 
         if (!QFile::exists(item->url().toLocalFile()))
         {
@@ -353,7 +360,9 @@ void PresentationMainPage::slotImagesFilesSelected(QTreeWidgetItem* item)
     DItemsListViewItem* const pitem = dynamic_cast<DItemsListViewItem*>(item);
 
     if (!pitem)
+    {
         return;
+    }
 
     connect(ThumbnailLoadThread::defaultThread(), SIGNAL(signalThumbnailLoaded(LoadingDescription,QPixmap)),
             this, SLOT(slotThumbnail(LoadingDescription,QPixmap)));
@@ -372,7 +381,9 @@ void PresentationMainPage::slotImagesFilesSelected(QTreeWidgetItem* item)
 void PresentationMainPage::addItems(const QList<QUrl>& fileList)
 {
     if (fileList.isEmpty())
+    {
         return;
+    }
 
     QList<QUrl> files = fileList;
 
@@ -402,9 +413,11 @@ void PresentationMainPage::slotEffectChanged()
     m_printNameCheckBox->setEnabled(!isKB);
     m_printProgressCheckBox->setEnabled(!isKB);
     m_printCommentsCheckBox->setEnabled(!isKB);
+
 #ifdef HAVE_OPENGL
     d->sharedData->advancedPage->m_openGlFullScale->setEnabled(!isKB && m_openglCheckBox->isChecked());
 #endif
+
     d->sharedData->captionPage->setEnabled((!isKB) && m_printCommentsCheckBox->isChecked());
 }
 

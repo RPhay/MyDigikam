@@ -58,7 +58,8 @@ private :
 
 // ----------------------------------------------------------------------
 
-class PresentationAudioPage : public QWidget, public Ui::PresentationAudioPage
+class PresentationAudioPage : public QWidget,
+                              public Ui::PresentationAudioPage
 {
     Q_OBJECT
 
