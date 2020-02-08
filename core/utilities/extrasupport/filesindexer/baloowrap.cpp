@@ -144,7 +144,14 @@ BalooInfo BalooWrap::getSemanticInfo(const QUrl& url) const
     bInfo.rating  = md.rating() / 2;
     bInfo.comment = md.userComment();
 
-    foreach (const QString& tag, md.tags().toSet())
+    foreach (const QString& tag,
+
+#if (QT_VERSION < QT_VERSION_CHECK(5, 14, 0))
+             md.tags().toSet())
+#else
+             QSet<QString>(md.tags().begin(), md.tags().end())
+#endif
+
     {
         bInfo.tags.append(i18n("BalooTags") +
                           QLatin1Char('/')  + tag);
