@@ -868,29 +868,28 @@ QString CoreDB::getSetting(const QString& keyword) const
 static QStringList joinMainAndUserFilterString(const QChar& sep, const QString& filter,
                                                const QString& userFilter)
 {
-    QSet<QString> filterSet;
-    QStringList   userFilterList;
-    QStringList   sortedList;
+    QStringList filterList;
+    QStringList userFilterList;
 
-    filterSet      = filter.split(sep, QString::SkipEmptyParts).toSet();
+    filterList     = filter.split(sep, QString::SkipEmptyParts);
     userFilterList = userFilter.split(sep, QString::SkipEmptyParts);
 
     foreach (const QString& userFormat, userFilterList)
     {
         if (userFormat.startsWith(QLatin1Char('-')))
         {
-            filterSet.remove(userFormat.mid(1));
+            filterList.removeAll(userFormat.mid(1));
         }
         else
         {
-            filterSet << userFormat;
+            filterList << userFormat;
         }
     }
 
-    sortedList = filterSet.values();
-    sortedList.sort();
+    filterList.removeDuplicates();
+    filterList.sort();
 
-    return sortedList;
+    return filterList;
 }
 
 void CoreDB::getFilterSettings(QStringList* imageFilter, QStringList* videoFilter, QStringList* audioFilter)
