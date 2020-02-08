@@ -27,7 +27,6 @@
 // Qt includes
 
 #include <QPixmap>
-#include <QSet>
 #include <QFileSystemWatcher>
 
 // Local includes
