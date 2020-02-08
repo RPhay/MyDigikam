@@ -9,7 +9,7 @@
 
 ### digiKam database shared library target ######################################################################################
 
-add_library(digikamdatabase SHARED $<TARGET_OBJECTS:digikamdatabase_src>)
+add_library(digikamdatabase SHARED $<TARGET_OBJECTS:digikamdatabase_obj>)
 
 set_target_properties(digikamdatabase PROPERTIES
                       VERSION ${DIGIKAM_VERSION_SHORT}

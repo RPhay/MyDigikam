@@ -35,7 +35,8 @@
 namespace DigikamEditorPerspectiveToolPlugin
 {
 
-static double identityPerspectiveMatrix[3][3] = {
+static double identityPerspectiveMatrix[3][3] =
+                                     {
                                        { 1.0, 0.0, 0.0 },
                                        { 0.0, 1.0, 0.0 },
                                        { 0.0, 0.0, 1.0 }

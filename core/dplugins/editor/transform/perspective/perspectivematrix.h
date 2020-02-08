@@ -95,7 +95,7 @@ public:
 
 public:
 
-     /**
+    /**
      * coeff:
      *
      * The 3x3 matrix data

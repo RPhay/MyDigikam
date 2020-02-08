@@ -196,12 +196,12 @@ set(libhaar_SRCS
 )
 
 # Used by digikamdatabase
-add_library(digikamdatabase_src OBJECT ${libdatabase_SRCS}
+add_library(digikamdatabase_obj OBJECT ${libdatabase_SRCS}
                                        ${libdatabasemodels_SRCS}
                                        ${libhaar_SRCS}
 )
 
-target_compile_definitions(digikamdatabase_src
+target_compile_definitions(digikamdatabase_obj
                            PRIVATE
                            digikamdatabase_EXPORTS
 )
