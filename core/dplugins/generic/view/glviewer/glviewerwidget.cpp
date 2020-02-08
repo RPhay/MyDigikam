@@ -7,7 +7,7 @@
  * Description : a tool to show image using an OpenGL interface.
  *
  * Copyright (C) 2007-2008 by Markus Leuthold <kusi at forum dot titlis dot org>
- * Copyright (C) 2008-2016 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2008-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -77,48 +77,50 @@ public:
 public:
 
     Private()
+      :
+        /// index of picture to be displayed
+        file_idx(0),
+
+        texture(nullptr),
+        ratio_view_y(0.0F),
+        ratio_view_x(0.0F),
+        delta(0.0F),
+        vertex_height(0.0F),
+        vertex_width(0.0F),
+        vertex_left(0.0F),
+        vertex_top(0.0F),
+        vertex_right(0.0F),
+        vertex_bottom(0.0F),
+        wheelAction(zoomImage),
+        firstImage(true),
+
+        /**
+         * while zooming is performed, the image is downsampled to d->zoomsize. This seems to
+         * be the optimal way for a PentiumM 1.4G, Nvidia FX5200. For a faster setup, this might
+         * not be necessary anymore
+         */
+        zoomsize(QSize(1024, 768)),
+
+        /// load cursors for zooming and panning
+        moveCursor(QCursor(Qt::PointingHandCursor)),
+        zoomCursor(QCursor(QIcon::fromTheme(QLatin1String("zoom-in")).pixmap(64))),
+
+        /// define zoomfactors for one zoom step
+        zoomfactor_scrollwheel(1.1F),
+        zoomfactor_mousemove(1.03F),
+        zoomfactor_keyboard(1.05F),
+
+        /// get path of nullImage in case QImage can't load the image
+        nullImage(QIcon::fromTheme(QLatin1String("image-jpeg")).pixmap(256)),
+
+        iface(nullptr),
+        plugin(nullptr)
     {
-        texture                = nullptr;
-        firstImage             = true;
-
-        // index of picture to be displayed
-        file_idx               = 0;
-
-        // define zoomfactors for one zoom step
-        zoomfactor_scrollwheel = 1.1F;
-        zoomfactor_mousemove   = 1.03F;
-        zoomfactor_keyboard    = 1.05F;
-
-        // load cursors for zooming and panning
-        zoomCursor             = QCursor(QIcon::fromTheme(QLatin1String("zoom-in")).pixmap(64));
-        moveCursor             = QCursor(Qt::PointingHandCursor);
-
-        // get path of nullImage in case QImage can't load the image
-        nullImage              = QIcon::fromTheme(QLatin1String("image-jpeg")).pixmap(256);
-
-        // while zooming is performed, the image is downsampled to d->zoomsize. This seems to
-        // be the optimal way for a PentiumM 1.4G, Nvidia FX5200. For a faster setup, this might
-        // not be necessary anymore
-        zoomsize               = QSize(1024, 768);
-
         for (int i = 0 ; i < CACHESIZE ; ++i)
         {
             cache[i].file_index = 0;
             cache[i].texture    = nullptr;
         }
-
-        ratio_view_x           = 0.0F;
-        ratio_view_y           = 0.0F;
-        delta                  = 0.0F;
-        vertex_height          = 0.0F;
-        vertex_width           = 0.0F;
-        vertex_left            = 0.0F;
-        vertex_top             = 0.0F;
-        vertex_right           = 0.0F;
-        vertex_bottom          = 0.0F;
-        wheelAction            = zoomImage;
-        iface                  = nullptr;
-        plugin                 = nullptr;
     }
 
     QStringList      files;
@@ -136,12 +138,14 @@ public:
     float            vertex_right;
     float            vertex_bottom;
 
-    QPoint           startdrag, previous_pos;
+    QPoint           startdrag;
+    QPoint           previous_pos;
     WheelAction      wheelAction;
     bool             firstImage;
     QSize            zoomsize;
     QTimer           timerMouseMove;
-    QCursor          moveCursor, zoomCursor;
+    QCursor          moveCursor;
+    QCursor          zoomCursor;
     float            zoomfactor_scrollwheel;
     float            zoomfactor_mousemove;
     float            zoomfactor_keyboard;
