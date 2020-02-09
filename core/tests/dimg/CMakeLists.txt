@@ -76,11 +76,7 @@ endif()
 
 #------------------------------------------------------------------------
 
-set(dimgfilteractiontest_SRCS
-    dimgfilteractiontest.cpp
-)
-
-ecm_add_tests(${dimgfilteractiontest_SRCS}
+ecm_add_tests(dimgfilteractiontest.cpp
 
               GUI
 
@@ -97,11 +93,7 @@ ecm_add_tests(${dimgfilteractiontest_SRCS}
 
 #------------------------------------------------------------------------
 
-set(dimgfreerotationtest_SRCS
-    dimgfreerotationtest.cpp
-)
-
-ecm_add_tests(${dimgfreerotationtest_SRCS}
+ecm_add_tests(dimgfreerotationtest.cpp
 
               GUI
 
@@ -118,15 +110,9 @@ ecm_add_tests(${dimgfreerotationtest_SRCS}
 
 #------------------------------------------------------------------------
 
-add_library(libabstracthistory STATIC
-            dimgabstracthistorytest.cpp
-)
+add_library(libabstracthistory STATIC dimgabstracthistorytest.cpp)
 
-set(dimghistorytest_SRCS
-    dimghistorytest.cpp
-)
-
-ecm_add_tests(${dimghistorytest_SRCS}
+ecm_add_tests(dimghistorytest.cpp
 
               GUI
 
@@ -149,13 +135,7 @@ ecm_add_tests(${dimghistorytest_SRCS}
 
 if(NOT MSVC)
 
-    set(dimghistorygraphtest_SRCS
-        dimghistorygraphtest.cpp
-    )
-
-    ecm_add_tests(${dimghistorygraphtest_SRCS}
-
-                  GUI
+    ecm_add_tests(dimghistorygraphtest.cpp
 
                   NAME_PREFIX
 

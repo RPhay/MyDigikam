@@ -22,8 +22,7 @@ endif()
 
 #------------------------------------------------------------------------
 
-set(testdatabaseswitch_SRCS testdatabaseswitch.cpp)
-add_executable(testdatabaseswitch ${testdatabaseswitch_SRCS})
+add_executable(testdatabaseswitch testdatabaseswitch.cpp)
 
 target_link_libraries(testdatabaseswitch
 
@@ -36,8 +35,7 @@ target_link_libraries(testdatabaseswitch
 
 #------------------------------------------------------------------------
 
-set(testdatabaseinit_SRCS testdatabaseinit.cpp)
-add_executable(testdatabaseinit ${testdatabaseinit_SRCS})
+add_executable(testdatabaseinit testdatabaseinit.cpp)
 
 target_link_libraries(testdatabaseinit
 
@@ -50,9 +48,7 @@ target_link_libraries(testdatabaseinit
 
 #------------------------------------------------------------------------
 
-set(databasefieldstest_src databasefieldstest.cpp)
-
-ecm_add_tests(${databasefieldstest_src}
+ecm_add_tests(databasefieldstest.cpp
 
               NAME_PREFIX
 
@@ -71,9 +67,7 @@ ecm_add_tests(${databasefieldstest_src}
 
 #------------------------------------------------------------------------
 
-
-set(databasetagstest_src databasetagstest.cpp)
-add_executable(databasetagstest ${databasetagstest_src})
+add_executable(databasetagstest databasetagstest.cpp)
 
 target_link_libraries(databasetagstest
 
@@ -87,7 +81,7 @@ target_link_libraries(databasetagstest
 # NOTE: this unit test fail to work as the temporary collection creation cannot be done in /tmp.
 #       we need to port code to use QTest directory, as it done with metadataengine unit-tests.
 #
-#ecm_add_tests(${databasetagstest_src}
+#ecm_add_tests(databasetagstest.cpp
 #
 #              NAME_PREFIX
 #

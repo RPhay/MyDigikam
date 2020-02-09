@@ -6,11 +6,7 @@
 
 APPLY_COMMON_POLICIES()
 
-set(dmediaservertest_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/dmediaserver_test.cpp
-)
-
-add_executable(dmediaservertest ${dmediaservertest_SRCS})
+add_executable(dmediaservertest dmediaserver_test.cpp)
 
 target_link_libraries(dmediaservertest
 
@@ -23,13 +19,12 @@ target_link_libraries(dmediaservertest
 ########################################################################
 # CLI test tool from Platinum SDK
 
-set(filemediaserver_SRCS
-    ${CMAKE_SOURCE_DIR}/core/dplugins/generic/tools/mediaserver/upnpsdk/Platinum/Source/Tests/FileMediaServer/FileMediaServerTest.cpp
+add_executable(filemediaserver
+               ${CMAKE_SOURCE_DIR}/core/dplugins/generic/tools/mediaserver/upnpsdk/Platinum/Source/Tests/FileMediaServer/FileMediaServerTest.cpp
 )
 
-add_executable(filemediaserver ${filemediaserver_SRCS})
-
 target_link_libraries(filemediaserver
+
                       digikamcore
                       mediaserverbackend
 

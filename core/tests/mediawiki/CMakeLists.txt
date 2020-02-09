@@ -8,24 +8,30 @@ APPLY_COMMON_POLICIES()
 
 add_subdirectory(examples)
 
+add_library(libfakeserver STATIC fakeserver/fakeserver.cpp)
+
+target_link_libraries(libfakeserver ${COMMON_TEST_LINK})
+
+# ----------------------------------------------------------------------------------
+
 macro(mediawiki_executable_tests)
 
     foreach(_testname ${ARGN})
 
-        add_executable(${_testname} ${_testname}.cpp fakeserver/fakeserver.cpp)
+        ecm_add_tests(${_testname}.cpp
 
-        target_link_libraries(${_testname}
+                      NAME_PREFIX
 
-                              PRIVATE
+                      "digikam-"
 
-                              digikamcore
-                              mediawikibackend
+                      LINK_LIBRARIES
 
-                              ${COMMON_TEST_LINK}
+                      digikamcore
+                      mediawikibackend
+                      libfakeserver
+
+                      ${COMMON_TEST_LINK}
         )
-
-        ecm_mark_as_test(${_testname})
-        add_test(mediawiki-${_testname} ${_testname})
 
     endforeach()
 
@@ -45,6 +51,8 @@ mediawiki_executable_tests(
     querysiteinfousergroupstest
     uploadtest
 )
+
+# ----------------------------------------------------------------------------------
 
 macro(MEDIAWIKI_TEST_RESOURCES)
 

@@ -12,13 +12,12 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-set(IOJobsTest_SRCS iojobstest.cpp)
-
-add_executable(IOJobsTest ${IOJobsTest_SRCS})
+add_executable(IOJobsTest iojobstest.cpp)
 
 ecm_mark_nongui_executable(IOJobsTest)
 
 target_link_libraries(IOJobsTest
+
                       digikamgui
 
                       ${COMMON_TEST_LINK}

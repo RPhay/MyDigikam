@@ -122,11 +122,11 @@ add_subdirectory(facesengine)
 add_subdirectory(fileio)
 add_subdirectory(filters)
 add_subdirectory(geolocation)                   # Some unit-tests based on ModelTest
-
 add_subdirectory(imgqsort)
 add_subdirectory(iojobs)
 add_subdirectory(mediaserver)
 add_subdirectory(mediawiki)
+
 add_subdirectory(metadataengine)
 add_subdirectory(multithreading)
 add_subdirectory(panorama)

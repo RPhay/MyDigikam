@@ -9,6 +9,7 @@ APPLY_COMMON_POLICIES()
 include_directories(
     $<TARGET_PROPERTY:Qt5::Core,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Test,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
 # --------------------------------------------------------------
@@ -25,11 +26,10 @@ macro(IMGQSORT_BUILD_STANDALONE)
     add_executable(${_target} ${${_target}_SRCS})
 
     target_link_libraries(${_target}
+
                           digikamcore
 
                           ${COMMON_TEST_LINK}
-
-                          ${OpenCV_LIBRARIES}
     )
 
 endmacro()
@@ -41,28 +41,31 @@ IMGQSORT_BUILD_STANDALONE(detectexposure.cpp)
 
 # --------------------------------------------------------------
 
+add_library(libimgqsorttest STATIC imgqsorttest_shared.cpp)
+target_link_libraries(libimgqsorttest ${COMMON_TEST_LINK})
+
 macro(IMGQSORT_BUILD_UNITTEST)
 
     set(_filename ${ARGV0})
     string(REPLACE "." ";" _temp ${_filename})
     list(GET _temp 0 _target)
 
-    set(${_target}_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/${_filename}
-                        ${CMAKE_CURRENT_SOURCE_DIR}/imgqsorttest_shared.cpp)
+    set(${_target}_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/${_filename})
 
-    add_executable(${_target} ${${_target}_SRCS})
+    ecm_add_tests(${${_target}_SRCS}
 
-    target_link_libraries(${_target}
-                          digikamcore
+                  NAME_PREFIX
 
-                          ${COMMON_TEST_LINK}
+                  "digikam-"
 
-                          ${OpenCV_LIBRARIES}
+                  LINK_LIBRARIES
+
+                  digikamcore
+                  libimgqsorttest
+
+                  ${COMMON_TEST_LINK}
     )
-
-    ecm_mark_as_test(${_target})
 
 endmacro()
 
 IMGQSORT_BUILD_UNITTEST(imgqsorttest.cpp)
-

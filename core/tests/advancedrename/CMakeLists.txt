@@ -6,10 +6,6 @@
 
 APPLY_COMMON_POLICIES()
 
-set(renamecustomizertest_SRCS
-    renamecustomizertest.cpp
-)
-
 include_directories(
     $<TARGET_PROPERTY:Qt5::Test,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
@@ -22,7 +18,7 @@ include_directories(
 
 #------------------------------------------------------------------------
 
-ecm_add_tests(${renamecustomizertest_SRCS}
+ecm_add_tests(renamecustomizertest.cpp
 
               NAME_PREFIX
 
@@ -38,11 +34,7 @@ ecm_add_tests(${renamecustomizertest_SRCS}
 
 #------------------------------------------------------------------------
 
-set(cameranamehelper_SRCS
-    cameranamehelpertest.cpp
-)
-
-ecm_add_tests(${cameranamehelper_SRCS}
+ecm_add_tests(cameranamehelpertest.cpp
 
               NAME_PREFIX
 
@@ -59,11 +51,7 @@ ecm_add_tests(${cameranamehelper_SRCS}
 
 #------------------------------------------------------------------------
 
-set(advancedrenametest_SRCS
-    advancedrenametest.cpp
-)
-
-ecm_add_tests(${advancedrenametest_SRCS}
+ecm_add_tests(advancedrenametest.cpp
 
               NAME_PREFIX
 

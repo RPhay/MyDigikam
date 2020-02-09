@@ -65,11 +65,7 @@ target_link_libraries(loadsavethreadtest
 
 #------------------------------------------------------------------------
 
-set(filesaveoptionsboxtest_SRCS
-    filesaveoptionsboxtest.cpp
-)
-
-ecm_add_tests(${filesaveoptionsboxtest_SRCS}
+ecm_add_tests(filesaveoptionsboxtest.cpp
 
               NAME_PREFIX
 
@@ -85,11 +81,7 @@ ecm_add_tests(${filesaveoptionsboxtest_SRCS}
 
 #------------------------------------------------------------------------
 
-set(statesavingobject_SRCS
-    statesavingobjecttest.cpp
-)
-
-ecm_add_tests(${statesavingobject_SRCS}
+ecm_add_tests(statesavingobjecttest.cpp
 
               NAME_PREFIX
 
