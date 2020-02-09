@@ -125,6 +125,16 @@ if(${Marble_FOUND})
        )
 endif()
 
+# FIXME
+#
+#if(ENABLE_DIGIKAM_MODELTEST)
+#    message(STATUS "Modeltest enabled")
+#
+#    set(libdigikamgui_SRCS ${libdigikamgui_SRCS}
+#        modeltest/modeltest.cpp)
+#
+#    add_definitions(-DENABLE_DIGIKAM_MODELTEST)
+#endif()
 
 add_library(gui_digikam_obj
             OBJECT
