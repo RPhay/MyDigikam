@@ -53,10 +53,10 @@ namespace DigikamGenericDebianScreenshotsPlugin
 
 DSTalker::DSTalker(QWidget* const parent)
     : QObject(parent),
+      m_userAgent(QString::fromUtf8("KIPI-Plugin-DebianScreenshots/%1 (pgquiles@elpauer.org)").arg(digiKamVersion())),
+      m_uploadUrl(DigikamGenericDebianScreenshotsPlugin::debshotsUrl + QLatin1String("/uploadfile")),
       m_job(0)
 {
-    m_userAgent = QString::fromUtf8("KIPI-Plugin-DebianScreenshots/%1 (pgquiles@elpauer.org)").arg(digiKamVersion());
-    m_uploadUrl = DigikamGenericDebianScreenshotsPlugin::debshotsUrl + QLatin1String("/uploadfile");
 }
 
 DSTalker::~DSTalker()
@@ -71,7 +71,7 @@ bool DSTalker::addScreenshot(const QString& imgPath, const QString& packageName,
                              const QString& packageVersion, const QString& description)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Adding screenshot " << imgPath << " to package "
-             << packageName << " " << packageVersion<< " using description '" << description << "'";
+                                     << packageName << " " << packageVersion<< " using description '" << description << "'";
 
     if (m_job)
     {
@@ -102,6 +102,7 @@ bool DSTalker::addScreenshot(const QString& imgPath, const QString& packageName,
 
     m_job   = job;
     m_buffer.resize(0);
+
     return true;
 }
 

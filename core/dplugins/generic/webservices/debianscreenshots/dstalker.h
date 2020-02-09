@@ -51,7 +51,7 @@ public:
 
     bool addScreenshot(const QString& imgPath, const QString& packageName,
                        const QString& packageVersion = QString(),
-                       const QString& description = QString() );
+                       const QString& description = QString());
 
 Q_SIGNALS:
 
