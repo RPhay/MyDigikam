@@ -23,6 +23,4 @@ target_link_libraries(browser
                       digikamcore
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
 )

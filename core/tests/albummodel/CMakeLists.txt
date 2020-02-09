@@ -16,11 +16,7 @@ include_directories(
     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-set(albummodeltest_SRCS
-    albummodeltest.cpp
-)
-
-ecm_add_tests(${albummodeltest_SRCS}
+ecm_add_tests(albummodeltest.cpp
 
               NAME_PREFIX
 
@@ -35,5 +31,4 @@ ecm_add_tests(${albummodeltest_SRCS}
               libmodeltest
 
               ${COMMON_TEST_LINK}
-              ${OpenCV_LIBRARIES}
 )

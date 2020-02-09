@@ -17,93 +17,98 @@ add_subdirectory(demo)
 
 # -- test the primitive datatypes and helper functions -----------------------------------------
 
-set(test_primitives_sources
-    test_primitives.cpp)
+ecm_add_tests(test_primitives.cpp
 
-add_executable(geoiface_test_primitives ${test_primitives_sources})
-add_test(geoiface_test_primitives geoiface_test_primitives)
-ecm_mark_as_test(geoiface_test_primitives)
+              NAME_PREFIX
 
-target_link_libraries(geoiface_test_primitives
-                      digikamcore
+              "digikam-"
 
-                      ${COMMON_TEST_LINK}
+              LINK_LIBRARIES
+
+              digikamcore
+
+              ${COMMON_TEST_LINK}
 )
 
 # -- test the GeoCoordinates class --------------------------------------------------------------
 
-set(test_geocoordinates_sources test_geocoordinates.cpp)
+ecm_add_tests(test_geocoordinates.cpp
 
-add_executable(geoiface_test_geocoordinates ${test_geocoordinates_sources})
-add_test(geoiface_test_geocoordinates geoiface_test_geocoordinates)
-ecm_mark_as_test(geoiface_test_geocoordinates)
+              NAME_PREFIX
 
-target_link_libraries(geoiface_test_geocoordinates
-                      digikamcore
+              "digikam-"
 
-                      ${COMMON_TEST_LINK}
+              LINK_LIBRARIES
+
+              digikamcore
+
+              ${COMMON_TEST_LINK}
 )
 
 # -- test the TileIndex class --------------------------------------------------------------------
 
-set(test_tileindex_sources test_tileindex.cpp)
+ecm_add_tests(test_tileindex.cpp
 
-add_executable(geoiface_test_tileindex ${test_tileindex_sources})
-add_test(geoiface_test_tileindex geoiface_test_tileindex)
-ecm_mark_as_test(geoiface_test_tileindex)
+              NAME_PREFIX
 
-target_link_libraries(geoiface_test_tileindex
-                      digikamcore
+              "digikam-"
 
-                      ${COMMON_TEST_LINK}
+              LINK_LIBRARIES
+
+              digikamcore
+
+              ${COMMON_TEST_LINK}
 )
 
 # -- test the LookupAltitudeGeonames class -------------------------------------------------------
 
 # do not add this as a test because it only works if there is an internet connection
 #
-# set(test_lookup_altitude_geonames_sources test_lookup_altitude_geonames.cpp)
+#ecm_add_tests(test_lookup_altitude_geonames.cpp
 #
-# add_executable(geoiface_test_lookup_altitude_geonames ${test_lookup_altitude_geonames_sources})
-# add_test(geoiface_test_lookup_altitude_geonames geoiface_test_lookup_altitude_geonames)
-# ecm_mark_as_test(geoiface_test_lookup_altitude_geonames)
+#              NAME_PREFIX
 #
-# target_link_libraries(geoiface_test_lookup_altitude_geonames
-#                       digikamcore
-#                       ${COMMON_TEST_LINK}
+#              "digikam-"
+#
+#              LINK_LIBRARIES
+#
+#              digikamcore
+#
+#              ${COMMON_TEST_LINK}
 #)
 
 # -- test the marker model ------------------------------------------------------------------------
 
 if(NOT WIN32)
 
-    set(test_itemmarkertiler_sources
-        test_itemmarkertiler.cpp)
+    ecm_add_tests(test_itemmarkertiler.cpp
 
-    add_executable(geoiface_test_itemmarkertiler ${test_itemmarkertiler_sources})
-    add_test(geoiface_test_itemmarkertiler geoiface_test_itemmarkertiler)
-    ecm_mark_as_test(geoiface_test_itemmarkertiler)
+                  NAME_PREFIX
 
-    target_link_libraries(geoiface_test_itemmarkertiler
-                          digikamcore
+                  "digikam-"
 
-                          ${COMMON_TEST_LINK}
+                  LINK_LIBRARIES
+
+                  digikamcore
+
+                  ${COMMON_TEST_LINK}
     )
 
 endif()
 
 # -- test the track management classes -------------------------------------------------------------
 
-set(test_tracks_sources test_tracks.cpp)
+ecm_add_tests(test_tracks.cpp
 
-add_executable(geoiface_test_tracks ${test_tracks_sources})
-add_test(geoiface_test_tracks geoiface_test_tracks)
-ecm_mark_as_test(geoiface_test_tracks)
+              NAME_PREFIX
 
-target_link_libraries(geoiface_test_tracks
-                      digikamcore
+              "digikam-"
 
-                      ${COMMON_TEST_LINK}
+              LINK_LIBRARIES
+
+              digikamcore
+
+              ${COMMON_TEST_LINK}
 )
 
 # -- track loading application for timing tests ----------------------------------------------------
@@ -113,6 +118,7 @@ set(loadtrack_sources loadtrack.cpp)
 add_executable(loadtrack ${loadtrack_sources})
 
 target_link_libraries(loadtrack
+
                       digikamcore
 
                       ${COMMON_TEST_LINK}

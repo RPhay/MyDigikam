@@ -20,9 +20,8 @@ target_link_libraries(dngvalidate
                       libdng
                       digikamcore
 
-                      ${EXPAT_LIBRARY}
-                      ${CMAKE_THREAD_LIBS_INIT}
-                     )
+                      ${COMMON_TEST_LINK}
+)
 
 # =======================================================
 # DNGINFO command line tool
@@ -37,10 +36,7 @@ target_link_libraries(dnginfo
                       digikamcore
 
                       ${COMMON_TEST_LINK}
-
-                      ${EXPAT_LIBRARY}
-                      ${CMAKE_THREAD_LIBS_INIT}
-                     )
+)
 
 # =======================================================
 # RAW2DNG command line tool
@@ -57,7 +53,5 @@ target_link_libraries(raw2dng
                       digikamcore
 
                       ${COMMON_TEST_LINK}
-
-                      ${EXPAT_LIBRARY}
                       ${CMAKE_THREAD_LIBS_INIT}
-                     )
+)

@@ -40,6 +40,31 @@ if(Gphoto2_FOUND)
 
 endif()
 
+if(ImageMagick_Magick++_FOUND)
+
+    set(_extra_deps ${_extra_deps} ${ImageMagick_LIBRARIES})
+
+endif()
+
+if(LensFun_FOUND)
+
+    set(_extra_deps ${_extra_deps} ${LENSFUN_LIBRARIES})
+
+endif()
+
+if(NOT WIN32)
+
+    # To link under Solaris (see bug #274484)
+    set(_extra_deps ${_extra_deps} ${MATH_LIBRARY})
+
+endif()
+
+if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
+
+    set(_extra_deps ${_extra_deps} ${KVM_LIBRARY})
+
+endif()
+
 if(APPLE)
 
     set(_extra_deps ${_extra_deps} /System/Library/Frameworks/AppKit.framework)
@@ -60,6 +85,10 @@ set(COMMON_TEST_LINK Qt5::Core
                      KF5::ConfigCore
                      KF5::Service
                      KF5::Solid
+
+                     ${OpenCV_LIBRARIES}
+                     ${EXPAT_LIBRARY}
+                     ${CMAKE_THREAD_LIBS_INIT}
 
                      ${_extra_deps}
 )
@@ -90,10 +119,10 @@ add_subdirectory(dimg)
 add_subdirectory(dngwriter)
 add_subdirectory(dplugins)
 add_subdirectory(facesengine)
-
 add_subdirectory(fileio)
 add_subdirectory(filters)
-add_subdirectory(geolocation)
+add_subdirectory(geolocation)                   # Some unit-tests based on ModelTest
+
 add_subdirectory(imgqsort)
 add_subdirectory(iojobs)
 add_subdirectory(mediaserver)

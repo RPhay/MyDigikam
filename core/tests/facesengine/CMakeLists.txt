@@ -21,8 +21,6 @@ target_link_libraries(detect
                       digikamdatabase
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
 )
 
 # -----------------------------------------------------------------------------
@@ -38,8 +36,6 @@ target_link_libraries(recognize
                       digikamdatabase
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
 )
 
 # -----------------------------------------------------------------------------
@@ -55,8 +51,6 @@ target_link_libraries(face_rec
                       digikamdatabase
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
 )
 
 # -----------------------------------------------------------------------------
@@ -72,8 +66,6 @@ target_link_libraries(face_cluster
                       digikamdatabase
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
 )
 
 # -----------------------------------------------------------------------------
@@ -91,8 +83,6 @@ target_link_libraries(align
                       digikamdatabase
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
 )
 
 # -----------------------------------------------------------------------------
@@ -108,8 +98,6 @@ target_link_libraries(preprocess
                       digikamdatabase
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
 )
 
 # -----------------------------------------------------------------------------
@@ -125,8 +113,6 @@ target_link_libraries(traindb
                       digikamdatabase
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
 )
 
 # -----------------------------------------------------------------------------
@@ -150,6 +136,4 @@ target_link_libraries(facesenginedemo
                       digikamdatabase
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
 )

@@ -16,16 +16,17 @@ include_directories(
     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+#------------------------------------------------------------------------
+
 set(testautocrop_SRCS testautocrop.cpp)
 add_executable(testautocrop ${testautocrop_SRCS})
 ecm_mark_nongui_executable(testautocrop)
 
 target_link_libraries(testautocrop
+
                       digikamcore
 
-                      KF5::XmlGui
-
-                      ${OpenCV_LIBRARIES}
+                      ${COMMON_TEST_LINK}
 )
 
 #------------------------------------------------------------------------
@@ -37,22 +38,11 @@ if(LensFun_FOUND)
     ecm_mark_nongui_executable(testlensfuniface)
 
     target_link_libraries(testlensfuniface
+
                           digikamcore
 
                           ${COMMON_TEST_LINK}
-
-                          ${LENSFUN_LIBRARIES}
-                          ${OpenCV_LIBRARIES}
     )
-
-    if(NOT WIN32)
-        # To link under Solaris (see bug #274484)
-        target_link_libraries(testlensfuniface ${MATH_LIBRARY})
-    endif()
-
-    if(CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
-        target_link_libraries(testlensfuniface ${KVM_LIBRARY})
-    endif()
 
 endif()
 
@@ -63,10 +53,9 @@ add_executable (testnrestimate ${testnrestimate_SRCS})
 ecm_mark_nongui_executable(testnrestimate)
 
 target_link_libraries(testnrestimate
+
                       digikamcore
                       digikamdatabase
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
 )

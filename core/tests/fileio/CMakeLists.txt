@@ -15,6 +15,8 @@ include_directories(
     $<TARGET_PROPERTY:KF5::XmlGui,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+#------------------------------------------------------------------------
+
 set(pgfscaled_SRCS pgfscaled.cpp ${pgfutils_SRCS})
 add_executable(pgfscaled ${pgfscaled_SRCS})
 ecm_mark_nongui_executable(pgfscaled)
@@ -67,15 +69,18 @@ set(filesaveoptionsboxtest_SRCS
     filesaveoptionsboxtest.cpp
 )
 
-add_executable(filesaveoptionsboxtest ${filesaveoptionsboxtest_SRCS})
-add_test(filesaveoptionsboxtest filesaveoptionsboxtest)
-ecm_mark_as_test(filesaveoptionsboxtest)
+ecm_add_tests(${filesaveoptionsboxtest_SRCS}
 
-target_link_libraries(filesaveoptionsboxtest
-                      digikamcore
-                      digikamdatabase
+              NAME_PREFIX
 
-                      ${COMMON_TEST_LINK}
+              "digikam-"
+
+              LINK_LIBRARIES
+
+              digikamcore
+              digikamdatabase
+
+              ${COMMON_TEST_LINK}
 )
 
 #------------------------------------------------------------------------
@@ -84,19 +89,15 @@ set(statesavingobject_SRCS
     statesavingobjecttest.cpp
 )
 
-add_executable(statesavingobjecttest ${statesavingobject_SRCS})
-add_test(statesavingobjecttest statesavingobjecttest)
-ecm_mark_as_test(statesavingobjecttest)
+ecm_add_tests(${statesavingobject_SRCS}
 
-target_link_libraries(statesavingobjecttest
-                      digikamcore
+              NAME_PREFIX
 
-                      ${COMMON_TEST_LINK}
+              "digikam-"
 
-                      ${OpenCV_LIBRARIES}
+              LINK_LIBRARIES
+
+              digikamcore
+
+              ${COMMON_TEST_LINK}
 )
-
-if(Gphoto2_FOUND)
-    target_link_libraries(statesavingobjecttest ${GPHOTO2_LIBRARIES})
-endif()
-

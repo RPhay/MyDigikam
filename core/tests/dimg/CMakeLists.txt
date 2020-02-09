@@ -30,8 +30,6 @@ target_link_libraries(testdimgloader
                       digikamcore
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
 )
 
 #------------------------------------------------------------------------
@@ -45,8 +43,6 @@ target_link_libraries(testequalizefilter
                       digikamcore
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
 )
 
 #------------------------------------------------------------------------
@@ -60,8 +56,6 @@ target_link_libraries(testcolorbalancefilter
                       digikamcore
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
 )
 
 #------------------------------------------------------------------------
@@ -76,8 +70,6 @@ if(ImageMagick_Magick++_FOUND)
                           digikamcore
 
                           ${COMMON_TEST_LINK}
-
-                          ${ImageMagick_LIBRARIES}
     )
 
 endif()
@@ -101,8 +93,6 @@ ecm_add_tests(${dimgfilteractiontest_SRCS}
               digikamcore
 
               ${COMMON_TEST_LINK}
-
-              ${OpenCV_LIBRARIES}
 )
 
 #------------------------------------------------------------------------
@@ -151,8 +141,6 @@ ecm_add_tests(${dimghistorytest_SRCS}
               libabstracthistory
 
               ${COMMON_TEST_LINK}
-
-              ${OpenCV_LIBRARIES}
 )
 
 #------------------------------------------------------------------------
@@ -181,8 +169,6 @@ if(NOT MSVC)
                   libabstracthistory
 
                   ${COMMON_TEST_LINK}
-
-                  ${OpenCV_LIBRARIES}
     )
 
 endif()

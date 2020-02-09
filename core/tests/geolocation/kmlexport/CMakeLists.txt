@@ -6,13 +6,17 @@
 
 APPLY_COMMON_POLICIES()
 
-add_executable(test_geoparsing
-               test_geoparsing.cpp
-)
+ecm_add_tests(test_geoparsing.cpp
 
-target_link_libraries(test_geoparsing
+              NAME_PREFIX
 
-                      ${COMMON_TEST_LINK}
+              "digikam-"
+
+              LINK_LIBRARIES
+
+              digikamcore
+
+              ${COMMON_TEST_LINK}
 )
 
 add_test(test_geoparsing ${EXECUTABLE_OUTPUT_PATH}/test_geoparsing)

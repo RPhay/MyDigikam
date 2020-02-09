@@ -26,13 +26,12 @@ set(testdatabaseswitch_SRCS testdatabaseswitch.cpp)
 add_executable(testdatabaseswitch ${testdatabaseswitch_SRCS})
 
 target_link_libraries(testdatabaseswitch
+
                       digikamcore
                       digikamdatabase
                       digikamgui
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
 )
 
 #------------------------------------------------------------------------
@@ -41,13 +40,12 @@ set(testdatabaseinit_SRCS testdatabaseinit.cpp)
 add_executable(testdatabaseinit ${testdatabaseinit_SRCS})
 
 target_link_libraries(testdatabaseinit
+
                       digikamcore
                       digikamdatabase
                       digikamgui
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
 )
 
 #------------------------------------------------------------------------

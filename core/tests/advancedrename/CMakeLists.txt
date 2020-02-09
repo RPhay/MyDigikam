@@ -20,6 +20,8 @@ include_directories(
     $<TARGET_PROPERTY:KF5::Solid,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
+#------------------------------------------------------------------------
+
 ecm_add_tests(${renamecustomizertest_SRCS}
 
               NAME_PREFIX
@@ -32,7 +34,6 @@ ecm_add_tests(${renamecustomizertest_SRCS}
               digikamgui
 
               ${COMMON_TEST_LINK}
-              ${OpenCV_LIBRARIES}
 )
 
 #------------------------------------------------------------------------
@@ -54,7 +55,6 @@ ecm_add_tests(${cameranamehelper_SRCS}
               digikamgui
 
               ${COMMON_TEST_LINK}
-              ${OpenCV_LIBRARIES}
 )
 
 #------------------------------------------------------------------------
@@ -76,5 +76,4 @@ ecm_add_tests(${advancedrenametest_SRCS}
               digikamgui
 
               ${COMMON_TEST_LINK}
-              ${OpenCV_LIBRARIES}
 )

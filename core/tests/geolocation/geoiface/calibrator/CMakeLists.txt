@@ -17,6 +17,7 @@ set(calibrator_sources calibrator.cpp)
 add_executable(geoiface_calibrator ${calibrator_sources})
 
 target_link_libraries(geoiface_calibrator
+
                       digikamcore
 
                       ${COMMON_TEST_LINK}

@@ -26,6 +26,7 @@ set(geoiface_demo_SRCS
 add_executable(geoiface_demo ${geoiface_demo_SRCS})
 
 target_link_libraries(geoiface_demo
+
                       digikamcore
 
                       ${COMMON_TEST_LINK}
