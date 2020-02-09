@@ -87,7 +87,7 @@ protected:
     int     effectCircleOut(bool doInit);
     int     effectBlobs(bool doInit);
 
-    void    paintEvent(QPaintEvent*)     override;
+    void    paintEvent(QPaintEvent*)      override;
     void    startPainter();
 
 protected:
