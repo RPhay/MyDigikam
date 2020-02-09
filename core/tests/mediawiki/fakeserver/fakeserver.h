@@ -52,17 +52,19 @@ public:
         }
 
         Request(const QString& t, const QString& a, const QString& v)
+            : type(t),
+              agent(a),
+              value(v)
         {
-            type  = t;
-            agent = a;
-            value = v;
         }
 
         bool operator==(const FakeServer::Request &other) const
         {
-            return this->type  == other.type  &&
-                   this->agent == other.agent &&
-                   this->value == other.value;
+            return (
+                    (this->type  == other.type)  &&
+                    (this->agent == other.agent) &&
+                    (this->value == other.value)
+                   );
         }
 
     public:

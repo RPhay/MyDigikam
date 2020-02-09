@@ -150,7 +150,7 @@ public:
     DDoubleNumInput*     saturationInput;
     DDoubleNumInput*     mainExposureInput;
 
-    DRawDecoderWidget* decodingSettingsBox;
+    DRawDecoderWidget*   decodingSettingsBox;
 };
 
 RawSettingsBox::RawSettingsBox(const QUrl& url, QWidget* const parent)

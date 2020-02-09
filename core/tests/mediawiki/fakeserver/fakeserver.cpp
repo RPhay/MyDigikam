@@ -34,11 +34,10 @@
 #include <QFile>
 
 FakeServer::FakeServer(QObject* const parent)
-    :  QThread(parent)
+    :  QThread(parent),
+       m_tcpServer(nullptr),
+       m_clientSocket(nullptr)
 {
-    m_clientSocket = nullptr;
-    m_tcpServer    = nullptr;
-
     moveToThread(this);
 }
 
@@ -51,7 +50,9 @@ FakeServer::~FakeServer()
 void FakeServer::startAndWait()
 {
     start();
+
     // this will block until the event queue starts
+
     QMetaObject::invokeMethod(this, "started", Qt::BlockingQueuedConnection);
 }
 
@@ -80,14 +81,16 @@ void FakeServer::dataAvailable()
 
             int index     = token.indexOf(QLatin1String("User-Agent:"));
 
-            if (index > 0 && index + 1 < token.size())
+            if ((index > 0) && ((index + 1) < token.size()))
+            {
                 request.agent = token[index + 1];
+            }
 
             // It might happen that the same request cames through more than once, so you need to check that you are
             // counting each different request only once.
             //
             // For more information, see: http://qt-project.org/forums/viewthread/25521
-            //
+
             if (!m_request.contains(request))
             {
                 m_request << request;

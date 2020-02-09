@@ -55,12 +55,12 @@ public:
 
 private:
 
-    void setBusy(bool busy) override;
-    void preparePreview() override;
-    void setPreviewImage() override;
-    void setBackgroundColor(const QColor& bg) override;
-    void ICCSettingsChanged() override;
-    void exposureSettingsChanged() override;
+    void setBusy(bool busy)                         override;
+    void preparePreview()                           override;
+    void setPreviewImage()                          override;
+    void setBackgroundColor(const QColor& bg)       override;
+    void ICCSettingsChanged()                       override;
+    void exposureSettingsChanged()                  override;
 
 private Q_SLOTS:
 
@@ -70,13 +70,13 @@ private Q_SLOTS:
     void slotDemosaicedImage();
     void slotLoadingFailed();
     void slotLoadingProgress(float);
-    void slotScaleChanged() override;
+    void slotScaleChanged()                         override;
 
     void slotUpdatePreview();
-    void slotAbort() override;
+    void slotAbort()                                override;
 
     void slotOk() override;
-    void slotCancel() override;
+    void slotCancel()                               override;
 
 private:
 

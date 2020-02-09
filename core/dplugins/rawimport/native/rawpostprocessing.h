@@ -42,7 +42,9 @@ public:
                                QObject* const parent = 0,
                                const DRawDecoding& settings = DRawDecoding());
 
-    // Constructor for slave mode: execute immediately in current thread with specified master filter
+    /**
+     * Constructor for slave mode: execute immediately in current thread with specified master filter
+     */
     RawPostProcessing(DImgThreadedFilter* const parentFilter,
                       const DImg& orgImage, const DImg& destImage,
                       int progressBegin = 0,

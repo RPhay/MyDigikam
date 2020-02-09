@@ -85,6 +85,7 @@ RawPreview::RawPreview(const QUrl& url, QWidget* const parent)
     // ------------------------------------------------------------
 
     // set default zoom
+
     layout()->fitToWindow();
 
     installPanIcon();
@@ -124,15 +125,17 @@ DImg& RawPreview::demosaicedImage() const
 
 void RawPreview::setDecodingSettings(const DRawDecoding& settings)
 {
-    if (d->settings == settings && d->thread->isRunning())
+    if ((d->settings == settings) && d->thread->isRunning())
     {
         return;
     }
 
     // Save post processing settings.
+
     d->settings                     = settings;
 
     // All post processing settings will be used after demosaicing.
+
     DRawDecoding demosaisedSettings = settings;
     demosaisedSettings.resetPostProcessingSettings();
 
@@ -185,7 +188,9 @@ void RawPreview::slotImageLoaded(const LoadingDescription& description, const DI
         p.setPen(QPen(qApp->palette().color(QPalette::Text)));
         p.drawText(0, 0, pix.width(), pix.height(), Qt::AlignCenter | Qt::TextWordWrap, msg);
         p.end();
+
         // three copies - but the image is small
+
         setPostProcessedImage(DImg(pix.toImage()));
         emit signalLoadingFailed();
     }
@@ -193,6 +198,7 @@ void RawPreview::slotImageLoaded(const LoadingDescription& description, const DI
     {
         d->demosaicedImg = image;
         emit signalDemosaicedImage();
+
         // NOTE: we will apply all Raw post processing corrections in RawImport class.
     }
 }

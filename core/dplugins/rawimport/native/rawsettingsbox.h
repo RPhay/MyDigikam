@@ -52,13 +52,13 @@ public:
     CurvesWidget* curvesWidget() const;
     DRawDecoding  settings()     const;
 
-    void writeSettings() override;
-    void readSettings() override;
+    void writeSettings()                override;
+    void readSettings()                 override;
 
     void setDemosaicedImage(DImg& img);
     void setPostProcessedImage(DImg& img);
 
-    void resetSettings() override;
+    void resetSettings()                override;
 
     void enableUpdateBtn(bool b);
     bool updateBtnEnabled() const;
