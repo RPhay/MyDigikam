@@ -24,7 +24,7 @@ endif()
 
 if(ENABLE_DBUS)
 
-    set(_extra_deps ${_extra_deps}  Qt5::DBus)
+    set(_extra_deps ${_extra_deps} Qt5::DBus)
 
 endif()
 
@@ -104,6 +104,7 @@ set(COMMON_TEST_LINK Qt5::Core
                      ${OpenCV_LIBRARIES}
                      ${EXPAT_LIBRARY}
                      ${CMAKE_THREAD_LIBS_INIT}
+                     ${QTAV_LIBRARIES}
 
                      ${_extra_deps}
 )
@@ -145,9 +146,9 @@ add_subdirectory(metadataengine)
 add_subdirectory(multithreading)
 add_subdirectory(panorama)
 add_subdirectory(rawengine)
-
 add_subdirectory(timestampupdate)
 add_subdirectory(webservices)
+
 add_subdirectory(widgets)
 
 if(ENABLE_MEDIAPLAYER)

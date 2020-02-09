@@ -15,8 +15,9 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Xml,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-set(framesencoder_SRCS framesencoder.cpp)
-add_executable(framesencoder ${framesencoder_SRCS})
+# -------------------------------------------------
+
+add_executable(framesencoder framesencoder.cpp)
 ecm_mark_nongui_executable(framesencoder)
 
 target_link_libraries(framesencoder
@@ -24,15 +25,11 @@ target_link_libraries(framesencoder
                       digikamcore
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
-                      ${QTAV_LIBRARIES}
 )
 
 # -------------------------------------------------
 
-set(qtavcodecs_SRCS qtavcodecs.cpp)
-add_executable(qtavcodecs ${qtavcodecs_SRCS})
+add_executable(qtavcodecs qtavcodecs.cpp)
 ecm_mark_nongui_executable(qtavcodecs)
 
 target_link_libraries(qtavcodecs
@@ -40,36 +37,26 @@ target_link_libraries(qtavcodecs
                       digikamcore
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
-                      ${QTAV_LIBRARIES}
 )
 
 # -------------------------------------------------
 
-set(player_SRCS player.cpp)
-add_executable(player ${player_SRCS})
+add_executable(player player.cpp)
 
 target_link_libraries(player
 
                       digikamcore
 
                       ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
-                      ${QTAV_LIBRARIES}
 )
 
 # -------------------------------------------------
 
-set(videothumbtest_SRCS videothumbtest.cpp)
-add_executable(videothumbtest ${videothumbtest_SRCS})
+add_executable(videothumbtest videothumbtest.cpp)
 ecm_mark_nongui_executable(videothumbtest)
 
 target_link_libraries(videothumbtest
                       digikamcore
 
                       ${COMMON_TEST_LINK}
-
-                      ${QTAV_LIBRARIES}
 )

@@ -19,18 +19,16 @@ if(ENABLE_DBUS)
     include_directories($<TARGET_PROPERTY:Qt5::DBus,INTERFACE_INCLUDE_DIRECTORIES>)
 endif()
 
-set(timestampupdatetest_SRCS timestampupdatetest.cpp)
-add_executable(timestampupdatetest ${timestampupdatetest_SRCS})
-add_test(timestampupdatetest timestampupdatetest)
-ecm_mark_as_test(timestampupdatetest)
+ecm_add_tests(timestampupdatetest.cpp
 
-target_link_libraries(timestampupdatetest
-                      digikamdatabase
-                      digikamcore
+              NAME_PREFIX
 
-                      ${COMMON_TEST_LINK}
-                     )
+              "digikam-"
 
-if(ENABLE_DBUS)
-    target_link_libraries(timestampupdatetest Qt5::DBus)
-endif()
+              LINK_LIBRARIES
+
+              digikamcore
+              digikamdatabase
+
+              ${COMMON_TEST_LINK}
+)
