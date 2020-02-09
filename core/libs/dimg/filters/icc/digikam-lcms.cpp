@@ -28,7 +28,7 @@
 
 // Turn off the specific compiler warnings with LCMS header.
 
-#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
+#if defined(Q_CC_CLANG)
 #    pragma clang diagnostic push
 #    pragma clang diagnostic ignored "-Wundef"
 #    pragma clang diagnostic ignored "-Wdeprecated-register"
@@ -36,7 +36,7 @@
 
 #include <lcms2_plugin.h>
 
-#if defined(Q_OS_DARWIN) && defined(Q_CC_CLANG)
+#if defined(Q_CC_CLANG)
 #    pragma clang diagnostic pop
 #endif
 
