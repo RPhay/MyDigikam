@@ -58,6 +58,12 @@ if(Jasper_FOUND)
 
 endif()
 
+if(ENABLE_MEDIAPLAYER)
+
+    set(_extra_deps ${_extra_deps} ${QTAV_LIBRARIES})
+
+endif()
+
 if(WIN32)
 
     set(_extra_deps ${_extra_deps} ws2_32)
@@ -104,7 +110,6 @@ set(COMMON_TEST_LINK Qt5::Core
                      ${OpenCV_LIBRARIES}
                      ${EXPAT_LIBRARY}
                      ${CMAKE_THREAD_LIBS_INIT}
-                     ${QTAV_LIBRARIES}
 
                      ${_extra_deps}
 )

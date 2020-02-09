@@ -12,29 +12,27 @@ include_directories(
     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-set(searchtextbartest_SRCS
-    searchtextbartest.cpp
-)
+##################################################################
 
-add_executable(searchtextbartest ${searchtextbartest_SRCS})
-add_test(searchtextbartest searchtextbartest)
-ecm_mark_as_test(searchtextbartest)
+ecm_add_tests(searchtextbartest.cpp
 
-target_link_libraries(searchtextbartest
-                      digikamcore
+              NAME_PREFIX
 
-                      ${COMMON_TEST_LINK}
+              "digikam-"
+
+              LINK_LIBRARIES
+
+              digikamcore
+
+              ${COMMON_TEST_LINK}
 )
 
 ##################################################################
 
-set(ditemslisttest_SRCS
-    ditemslisttest.cpp
-)
-
-add_executable(ditemslisttest ${ditemslisttest_SRCS})
+add_executable(ditemslisttest ditemslisttest.cpp)
 
 target_link_libraries(ditemslisttest
+
                       digikamcore
 
                       ${COMMON_TEST_LINK}
