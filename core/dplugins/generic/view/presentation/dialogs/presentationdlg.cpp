@@ -80,6 +80,7 @@ PresentationDlg::PresentationDlg(QWidget* const parent, PresentationContainer* c
       d(new Private)
 {
     setWindowTitle(i18n("Presentation"));
+    setModal(false);
 
     d->sharedData = sharedData;
 
@@ -89,8 +90,6 @@ PresentationDlg::PresentationDlg(QWidget* const parent, PresentationContainer* c
     m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info:tooltip", "Start Presentation"));
     m_buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("media-playback-start")));
     m_buttons->button(QDialogButtonBox::Ok)->setDefault(true);
-
-    setModal(true);
 
     // --- Pages settings ---
 

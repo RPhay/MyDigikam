@@ -36,6 +36,7 @@
 
 #include "dplugingeneric.h"
 #include "dinfointerface.h"
+#include "presentationdlg.h"
 
 using namespace Digikam;
 
@@ -65,6 +66,7 @@ private Q_SLOTS:
 private:
 
     DPlugin*               m_plugin;
+    PresentationDlg*       m_dialog;
     PresentationContainer* m_sharedData;
 };
 

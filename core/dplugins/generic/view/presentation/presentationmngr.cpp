@@ -50,7 +50,6 @@
 
 #include "digikam_config.h"
 #include "digikam_debug.h"
-#include "presentationdlg.h"
 #include "presentationwidget.h"
 #include "presentationcontainer.h"
 
@@ -64,7 +63,8 @@ namespace DigikamGenericPresentationPlugin
 
 PresentationMngr::PresentationMngr(QObject* const parent, DInfoInterface* const iface)
     : QObject(parent),
-      m_plugin(nullptr)
+      m_plugin(nullptr),
+      m_dialog(nullptr)
 {
       m_sharedData = new PresentationContainer();
       m_sharedData->iface = iface;
@@ -72,6 +72,7 @@ PresentationMngr::PresentationMngr(QObject* const parent, DInfoInterface* const 
 
 PresentationMngr::~PresentationMngr()
 {
+    delete m_dialog;
     delete m_sharedData;
 }
 
@@ -87,13 +88,13 @@ void PresentationMngr::addFiles(const QList<QUrl>& urls)
 
 void PresentationMngr::showConfigDialog()
 {
-    PresentationDlg* const dlg = new PresentationDlg(QApplication::activeWindow(), m_sharedData);
+    m_dialog = new PresentationDlg(QApplication::activeWindow(), m_sharedData);
 
-    connect(dlg, SIGNAL(buttonStartClicked()),
+    connect(m_dialog, SIGNAL(buttonStartClicked()),
             this, SLOT(slotSlideShow()));
 
-    dlg->setPlugin(m_plugin);
-    dlg->show();
+    m_dialog->setPlugin(m_plugin);
+    m_dialog->show();
 }
 
 void PresentationMngr::slotSlideShow()
@@ -130,7 +131,7 @@ void PresentationMngr::slotSlideShow()
 
     if (!opengl)
     {
-        PresentationWidget* const slide = new PresentationWidget(m_sharedData);
+        PresentationWidget* const slide = new PresentationWidget(m_dialog, m_sharedData);
         slide->show();
     }
     else
@@ -140,7 +141,7 @@ void PresentationMngr::slotSlideShow()
 
         if (wantKB)
         {
-            PresentationKB* const slide = new PresentationKB(m_sharedData);
+            PresentationKB* const slide = new PresentationKB(m_dialog, m_sharedData);
             slide->show();
 
             if (!slide->checkOpenGL())
@@ -152,7 +153,7 @@ void PresentationMngr::slotSlideShow()
         }
         else
         {
-            PresentationGL* const slide = new PresentationGL(m_sharedData);
+            PresentationGL* const slide = new PresentationGL(m_dialog, m_sharedData);
             slide->show();
 
             if (!slide->checkOpenGL())

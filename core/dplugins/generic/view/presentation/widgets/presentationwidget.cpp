@@ -181,12 +181,14 @@ public:
     int                         deskHeight;
 };
 
-PresentationWidget::PresentationWidget(PresentationContainer* const sharedData)
-    : QWidget(),
+PresentationWidget::PresentationWidget(QWidget* const parent, PresentationContainer* const sharedData)
+    : QWidget(parent),
       d(new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
-    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint | Qt::Popup);
+    setContextMenuPolicy(Qt::PreventContextMenu);
+    setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog);
+    setWindowState(windowState() | Qt::WindowFullScreen);
 
     QScreen* screen = qApp->primaryScreen();
 
