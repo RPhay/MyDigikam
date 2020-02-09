@@ -163,16 +163,18 @@ set(libmediaserver_SRCS
     ${upnpsdk_SRCS}
 )
 
-# Adjust flag for static lib and 64 bits computers using -fPIC for GCC compiler (bug: #269903)
-foreach(_currentfile ${libmediaserver_SRCS})
-    if(NOT MSVC)
-        set_source_files_properties(${_currentfile} PROPERTIES COMPILE_FLAGS
-            "-Wno-unused-parameter -Wno-sequence-point -Wno-unused-label -Wno-unused-variable -Wno-nonnull -Wno-narrowing -Wno-cast-align -Wno-deprecated-declarations")
-    endif()
-endforeach()
-
 # For Unit-tests and plugin
 add_library(mediaserverbackend STATIC ${libmediaserver_SRCS})
+
+if(MSVC)
+
+    target_compile_options(mediaserverbackend PRIVATE /w)
+
+else()
+
+    target_compile_options(mediaserverbackend PRIVATE -w)
+
+endif()
 
 target_link_libraries(mediaserverbackend
                       PRIVATE
