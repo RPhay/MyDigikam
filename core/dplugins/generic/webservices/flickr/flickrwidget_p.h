@@ -63,22 +63,22 @@ class Q_DECL_HIDDEN FlickrWidget::Private
 public:
 
     explicit Private()
+      : removeAccount(nullptr),
+        extendedTagsButton(nullptr),
+        extendedPublicationButton(nullptr),
+        exportHostTagsCheckBox(nullptr),
+        stripSpaceTagsCheckBox(nullptr),
+        addExtraTagsCheckBox(nullptr),
+        familyCheckBox(nullptr),
+        friendsCheckBox(nullptr),
+        publicCheckBox(nullptr),
+        extendedTagsBox(nullptr),
+        extendedPublicationBox(nullptr),
+        tagsLineEdit(nullptr),
+        contentTypeComboBox(nullptr),
+        safetyLevelComboBox(nullptr),
+        imglst(nullptr)
     {
-        removeAccount             = nullptr;
-        extendedTagsButton        = nullptr;
-        extendedPublicationButton = nullptr;
-        exportHostTagsCheckBox    = nullptr;
-        stripSpaceTagsCheckBox    = nullptr;
-        addExtraTagsCheckBox      = nullptr;
-        familyCheckBox            = nullptr;
-        friendsCheckBox           = nullptr;
-        publicCheckBox            = nullptr;
-        extendedTagsBox           = nullptr;
-        extendedPublicationBox    = nullptr;
-        tagsLineEdit              = nullptr;
-        contentTypeComboBox       = nullptr;
-        safetyLevelComboBox       = nullptr;
-        imglst                    = nullptr;
     }
 
     QString                 serviceName;

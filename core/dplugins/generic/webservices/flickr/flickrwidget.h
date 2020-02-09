@@ -54,7 +54,8 @@ public:
                           const QString& serviceName);
     ~FlickrWidget();
 
-    void updateLabels(const QString& name = QString(), const QString& url = QString()) override;
+    void updateLabels(const QString& name = QString(),
+                      const QString& url = QString()) override;
 
 private Q_SLOTS:
 

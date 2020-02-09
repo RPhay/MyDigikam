@@ -150,7 +150,8 @@ public:
      */
     QStringList extraTags() const;
 
-    /** This method should be called when one of the checkboxes is clicked.
+    /**
+     * This method should be called when one of the checkboxes is clicked.
      */
     void toggled();
 

@@ -42,11 +42,11 @@ class GPhoto
 public:
 
     GPhoto()
+      : is_public(false),
+        is_private(false),
+        is_family(false),
+        ref_num(-1)
     {
-        is_public  = false;
-        is_private = false;
-        is_family  = false;
-        ref_num    = -1;
     }
 
     bool        is_public;
@@ -75,13 +75,13 @@ class FPhotoInfo
 public:
 
     FPhotoInfo()
+      : is_public(false),
+        is_friend(false),
+        is_family(false),
+        size(0),
+        safety_level(FlickrList::SAFE),
+        content_type(FlickrList::PHOTO)
     {
-        is_public    = false;
-        is_family    = false;
-        is_friend    = false;
-        safety_level = FlickrList::SAFE;
-        content_type = FlickrList::PHOTO;
-        size         = 0;
     }
 
     bool                    is_public;
@@ -105,15 +105,14 @@ class GAlbum
 public:
 
     GAlbum()
+      : add(false),
+        write(false),
+        del_item(false),
+        del_alb(false),
+        create_sub(false),
+        ref_num(-1),
+        parent_ref_num(-1)
     {
-        ref_num        = -1;
-        parent_ref_num = -1;
-
-        add            = false;
-        write          = false;
-        del_item       = false;
-        del_alb        = false;
-        create_sub     = false;
     }
 
     bool    add;
@@ -140,13 +139,13 @@ class FPhotoSet
 public:
 
     FPhotoSet()
+      : id(QStringLiteral("-1"))
     {
-        id = QStringLiteral("-1");
     }
 
     QString id;
-    QString primary;    //="2483"
-    QString secret;     //="abcdef"
+    QString primary;    ///< "2483"
+    QString secret;     ///< "abcdef"
     QString server;
     QString photos;
     QString title;

@@ -117,8 +117,9 @@ Q_SIGNALS:
     void signalLinkingSucceeded();
 
 private:
-
-    //  void parseResponseLogin(const QByteArray& data);
+/*
+    void parseResponseLogin(const QByteArray& data);
+*/
     void parseResponseMaxSize(const QByteArray& data);
     void parseResponseListPhotoSets(const QByteArray& data);
     void parseResponseListPhotos(const QByteArray& data);
@@ -134,7 +135,7 @@ private Q_SLOTS:
     void slotLinkingFailed();
     void slotLinkingSucceeded();
     void slotCatchUrl(const QUrl& url);
-    void slotOpenBrowser(const QUrl& url); 
+    void slotOpenBrowser(const QUrl& url);
     void slotError(const QString& msg);
     void slotFinished(QNetworkReply* reply);
 

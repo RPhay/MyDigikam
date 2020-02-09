@@ -63,36 +63,36 @@ class Q_DECL_HIDDEN FlickrWindow::Private
 public:
 
     explicit Private()
+      : uploadCount(0),
+        uploadTotal(0),
+        newAlbumBtn(nullptr),
+        changeUserButton(nullptr),
+        removeAccount(nullptr),
+        albumsListComboBox(nullptr),
+        publicCheckBox(nullptr),
+        familyCheckBox(nullptr),
+        friendsCheckBox(nullptr),
+        exportHostTagsCheckBox(nullptr),
+        stripSpaceTagsCheckBox(nullptr),
+        addExtraTagsCheckBox(nullptr),
+        originalCheckBox(nullptr),
+        resizeCheckBox(nullptr),
+        dimensionSpinBox(nullptr),
+        imageQualitySpinBox(nullptr),
+        extendedPublicationButton(nullptr),
+        extendedTagsButton(nullptr),
+        contentTypeComboBox(nullptr),
+        safetyLevelComboBox(nullptr),
+        userNameDisplayLabel(nullptr),
+        authProgressDlg(nullptr),
+        tagsLineEdit(nullptr),
+        widget(nullptr),
+        talker(nullptr),
+        imglst(nullptr),
+        select(nullptr),
+        albumDlg(nullptr),
+        iface(nullptr)
     {
-        uploadCount               = 0;
-        uploadTotal               = 0;
-        newAlbumBtn               = nullptr;
-        changeUserButton          = nullptr;
-        removeAccount             = nullptr;
-        albumsListComboBox        = nullptr;
-        publicCheckBox            = nullptr;
-        familyCheckBox            = nullptr;
-        friendsCheckBox           = nullptr;
-        exportHostTagsCheckBox    = nullptr;
-        stripSpaceTagsCheckBox    = nullptr;
-        addExtraTagsCheckBox      = nullptr;
-        originalCheckBox          = nullptr;
-        resizeCheckBox            = nullptr;
-        dimensionSpinBox          = nullptr;
-        imageQualitySpinBox       = nullptr;
-        extendedPublicationButton = nullptr;
-        extendedTagsButton        = nullptr;
-        contentTypeComboBox       = nullptr;
-        safetyLevelComboBox       = nullptr;
-        userNameDisplayLabel      = nullptr;
-        authProgressDlg           = nullptr;
-        tagsLineEdit              = nullptr;
-        widget                    = nullptr;
-        talker                    = nullptr;
-        imglst                    = nullptr;
-        select                    = nullptr;
-        albumDlg                  = nullptr;
-        iface                     = nullptr;
     }
 
     unsigned int                     uploadCount;
@@ -442,7 +442,9 @@ void FlickrWindow::slotLinkingSucceeded()
     foreach (const QString& group, config.groupList())
     {
         if (!(group.contains(d->serviceName)))
+        {
             continue;
+        }
 
         KConfigGroup grp = config.group(group);
 
@@ -516,13 +518,16 @@ QString FlickrWindow::guessSensibleSetName(const QList<QUrl>& urlList) const
     QMap<QString, int> nrFolderOccurences;
 
     // Extract last component of directory
+
     foreach (const QUrl& url, urlList)
     {
         QString dir      = url.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash).toLocalFile();
         QStringList list = dir.split(QLatin1Char('/'));
 
         if (list.isEmpty())
+        {
             continue;
+        }
 
         nrFolderOccurences[list.last()]++;
     }
@@ -531,7 +536,7 @@ QString FlickrWindow::guessSensibleSetName(const QList<QUrl>& urlList) const
     int totalCount = 0;
     QString name;
 
-    for (QMap<QString, int>::const_iterator it = nrFolderOccurences.constBegin();
+    for (QMap<QString, int>::const_iterator it = nrFolderOccurences.constBegin() ;
          it != nrFolderOccurences.constEnd() ; ++it)
     {
         totalCount += it.value();
@@ -544,13 +549,17 @@ QString FlickrWindow::guessSensibleSetName(const QList<QUrl>& urlList) const
     }
 
     // If there is only one entry or one name appears at least twice, return the suggestion
-    if (totalCount == 1 || maxCount > 1)
+
+    if ((totalCount == 1) || (maxCount > 1))
+    {
         return name;
+    }
 
     return QString();
 }
 
-/** This method is called when the photo set creation button is pressed. It
+/**
+ * This method is called when the photo set creation button is pressed. It
  * summons a creation dialog for user input. When that is closed, it
  * creates a new photo set in the local list. The id gets the form of
  * UNDEFINED_ followed by a number, to indicate that it doesn't exist on
@@ -565,6 +574,7 @@ void FlickrWindow::slotCreateNewPhotoSet()
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "in slotCreateNewPhotoSet()" << fps.title;
 
         // Lets find an UNDEFINED_ style id that isn't taken yet.s
+
         QString id;
         int i                               = 0;
         id                                  = QLatin1String("UNDEFINED_") + QString::number(i);
@@ -586,11 +596,14 @@ void FlickrWindow::slotCreateNewPhotoSet()
         fps.id = id;
 
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Created new photoset with temporary id" << id;
+
         // Append the new photoset to the list.
+
         d->talker->m_photoSetsList->prepend(fps);
         d->talker->m_selectedPhotoSet = fps;
 
         // Re-populate the photo sets combo box.
+
         slotPopulatePhotoSetComboBox();
     }
     else
@@ -623,7 +636,9 @@ void FlickrWindow::slotPopulatePhotoSetComboBox()
         {
             FPhotoSet photoSet = *it;
             QString name       = photoSet.title;
+
             // Store the id as user data, because the title is not unique.
+
             QVariant id        = QVariant(photoSet.id);
 
             if (id == d->talker->m_selectedPhotoSet.id)
@@ -639,14 +654,15 @@ void FlickrWindow::slotPopulatePhotoSetComboBox()
     }
 }
 
-/** This slot is call when 'Start Uploading' button is pressed.
-*/
+/**
+ * This slot is call when 'Start Uploading' button is pressed.
+ */
 void FlickrWindow::slotUser1()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "SlotUploadImages invoked";
-
-    //d->widget->d->tab->setCurrentIndex(FlickrWidget::FILELIST);
-
+/*
+    d->widget->d->tab->setCurrentIndex(FlickrWidget::FILELIST);
+*/
     if (d->imglst->imageUrls().isEmpty())
     {
         return;
@@ -681,6 +697,7 @@ void FlickrWindow::slotUser1()
             QStringList::Iterator itTags;
 
             // Tags from the dialog
+
             itTags = tagsFromDialog.begin();
 
             while (itTags != tagsFromDialog.end())
@@ -690,6 +707,7 @@ void FlickrWindow::slotUser1()
             }
 
             // Tags from the database
+
             if (d->exportHostTagsCheckBox->isChecked())
             {
                 QStringList tagsFromDatabase;
@@ -705,6 +723,7 @@ void FlickrWindow::slotUser1()
             }
 
             // Tags from the list view.
+
             itTags = tagsFromList.begin();
 
             while (itTags != tagsFromList.end())
@@ -714,17 +733,17 @@ void FlickrWindow::slotUser1()
             }
 
             // Remove spaces if the user doesn't like them.
+
             if (d->stripSpaceTagsCheckBox->isChecked())
             {
-                for (QStringList::iterator it = allTags.begin();
-                     it != allTags.end();
-                    ++it)
+                for (QStringList::iterator it = allTags.begin() ; it != allTags.end() ; ++it)
                 {
                     *it = (*it).trimmed().remove(QLatin1Char(' '));
                 }
             }
 
             // Debug the tag list.
+
             itTags = allTags.begin();
 
             while (itTags != allTags.end())
@@ -811,6 +830,7 @@ void FlickrWindow::slotAddPhotoSucceeded(const QString& photoId)
     QUrl photoUrl = d->uploadQueue.first().first;
 
     // Set location for uploaded photo
+
     DItemInfo info(d->iface->itemInfo(photoUrl));
 
     if (info.hasGeolocationInfo() && !photoId.isEmpty())
@@ -822,6 +842,7 @@ void FlickrWindow::slotAddPhotoSucceeded(const QString& photoId)
     }
 
     // Remove photo uploaded from the list
+
     d->imglst->removeItemByUrl(photoUrl);
     d->uploadQueue.removeFirst();
     d->uploadCount++;
@@ -866,7 +887,8 @@ void FlickrWindow::slotAddPhotoFailed(const QString& msg)
     delete warn;
 }
 
-/* Method called when a photo set has been successfully created on Flickr.
+/**
+ * Method called when a photo set has been successfully created on Flickr.
  * It functions to restart the normal flow after a photo set has been created
  * on Flickr.
  */

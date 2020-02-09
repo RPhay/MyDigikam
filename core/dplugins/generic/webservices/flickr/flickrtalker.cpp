@@ -151,8 +151,11 @@ FlickrTalker::FlickrTalker(QWidget* const parent,
             this, SLOT(slotFinished(QNetworkReply*)));
 
     /* Initialize selected photo set as empty. */
+
     m_selectedPhotoSet = FPhotoSet();
+
     /* Initialize photo sets list. */
+
     m_photoSetsList    = new QLinkedList<FPhotoSet>();
 
     d->o1 = new O1(this);
@@ -325,7 +328,9 @@ void FlickrTalker::maxAllowedFileSize()
     }
 
     if (!d->o1->linked())
+    {
         return;
+    }
 
     QUrl url(d->apiUrl);
     QNetworkRequest netRequest(url);
@@ -356,7 +361,9 @@ void FlickrTalker::listPhotoSets()
     }
 
     if (!d->o1->linked())
+    {
         return;
+    }
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "List photoset invoked";
 
@@ -385,7 +392,9 @@ void FlickrTalker::getPhotoProperty(const QString& method, const QStringList& ar
     }
 
     if (!d->o1->linked())
+    {
         return;
+    }
 
     QUrl url(d->apiUrl);
     QNetworkRequest netRequest(url);
@@ -424,7 +433,9 @@ void FlickrTalker::createPhotoSet(const QString& /*albumName*/, const QString& a
     }
 
     if (!d->o1->linked())
+    {
         return;
+    }
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Create photoset invoked";
 
@@ -457,14 +468,19 @@ void FlickrTalker::addPhotoToPhotoSet(const QString& photoId,
     }
 
     if (!d->o1->linked())
+    {
         return;
+    }
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "AddPhotoToPhotoSet invoked";
 
-    /* If the photoset id starts with the special string "UNDEFINED_", it means
+    /*
+     * If the photoset id starts with the special string "UNDEFINED_", it means
      * it doesn't exist yet on Flickr and needs to be created. Note that it's
      * not necessary to subsequently add the photo to the photo set, as this
-     * is done in the set creation call to Flickr. */
+     * is done in the set creation call to Flickr.
+     */
+
     if (photoSetId.startsWith(QLatin1String("UNDEFINED_")))
     {
         createPhotoSet(QLatin1String(""), m_selectedPhotoSet.title, m_selectedPhotoSet.description, photoId);
@@ -500,7 +516,9 @@ bool FlickrTalker::addPhoto(const QString& photoPath, const FPhotoInfo& info,
     }
 
     if (!d->o1->linked())
+    {
         return false;
+    }
 
     emit signalBusy(true);
 
@@ -590,11 +608,13 @@ bool FlickrTalker::addPhoto(const QString& photoPath, const FPhotoInfo& info,
                 // NOTE: see bug #153207: Flickr use IPTC keywords to create Tags in web interface
                 //       As IPTC do not support UTF-8, we need to remove it.
                 //       This function call remove all Application2 Tags.
+
                 meta.removeIptcTags(QStringList() << QLatin1String("Application2"));
 
                 // NOTE: see bug # 384260: Flickr use Xmp.dc.subject to create Tags
                 //       in web interface, we need to remove it.
                 //       This function call remove all Dublin Core Tags.
+
                 meta.removeXmpTags(QStringList() << QLatin1String("dc"));
 
                 meta.setMetadataWritingMode((int)DMetadata::WRITE_TO_FILE_ONLY);
@@ -617,12 +637,14 @@ bool FlickrTalker::addPhoto(const QString& photoPath, const FPhotoInfo& info,
     {
         emit signalAddPhotoFailed(i18n("File Size exceeds maximum allowed file size."));
         emit signalBusy(false);
+
         return false;
     }
 
     if (!form.addFile(QLatin1String("photo"), path))
     {
         emit signalBusy(false);
+
         return false;
     }
 
@@ -631,8 +653,8 @@ bool FlickrTalker::addPhoto(const QString& photoPath, const FPhotoInfo& info,
     netRequest.setHeader(QNetworkRequest::ContentTypeHeader, form.contentType());
 
     d->reply = d->requestor->post(netRequest, reqParams, form.formData());
-
     d->state = FE_ADDPHOTO;
+
     return true;
 }
 
@@ -645,7 +667,9 @@ void FlickrTalker::setGeoLocation(const QString& photoId, const QString& lat, co
     }
 
     if (!d->o1->linked())
+    {
         return;
+    }
 
     QUrl url(d->apiUrl);
     QNetworkRequest netRequest(url);
@@ -921,9 +945,11 @@ void FlickrTalker::parseResponseCreatePhotoSet(const QByteArray& data)
         if (node.isElement() && node.nodeName() == QLatin1String("photoset"))
         {
             // Parse the id from the response.
+
             QString new_id = node.toElement().attribute(QLatin1String("id"));
 
             // Set the new id in the photo sets list.
+
             QLinkedList<FPhotoSet>::iterator it = m_photoSetsList->begin();
 
             while (it != m_photoSetsList->end())
@@ -938,6 +964,7 @@ void FlickrTalker::parseResponseCreatePhotoSet(const QByteArray& data)
             }
 
             // Set the new id in the selected photo set.
+
             m_selectedPhotoSet.id = new_id;
 
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "PhotoSet created successfully with id" << new_id;
@@ -1003,7 +1030,7 @@ void FlickrTalker::parseResponseListPhotoSets(const QByteArray& data)
                         {
                             e_detail = photoSetDetails.toElement();
 
-                            if (photoSetDetails.nodeName() == QLatin1String("title"))
+                            if      (photoSetDetails.nodeName() == QLatin1String("title"))
                             {
                                 qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Title=" << e_detail.text();
                                 photoSet_title = e_detail.text();
