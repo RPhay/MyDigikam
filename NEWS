@@ -626,4 +626,5 @@ BUGFIXES:
 609 ==> 417257 - When navigating various TreeViews with keyboard, selected item is not always in focus.
 610 ==> 412539 - digiKam crash when starting.
 611 ==> 417317 - digikam git master crash.
-612 ==> 
+612 ==> 417322 - Unable to move album because tree view does not scroll.
+613 ==> 
