@@ -21,6 +21,7 @@ set(multicorerawtopng_SRCS
 add_executable(multicorerawtopng ${multicorerawtopng_SRCS})
 
 target_link_libraries(multicorerawtopng
+
                       digikamcore
 
                       ${COMMON_TEST_LINK}

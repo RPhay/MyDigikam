@@ -6,7 +6,7 @@
  * Date        : 2018-11-03
  * Description : An abstract digiKam unit-test template.
  *
- * Copyright (C) 2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,13 +46,13 @@ class AbstractUnitTest : public QObject
 public:
 
     AbstractUnitTest()
-        : m_originalImageFolder(QFINDTESTDATA("data/")) // Original files come with source code.
+        : m_originalImageFolder(QFINDTESTDATA("data/")) ///< Original files come with source code.
     {
     }
 
 protected Q_SLOTS:
 
-    // Re-implemented from QTest framework
+    /// Re-implemented from QTest framework
     virtual void initTestCase()
     {
         MetaEngine::initializeExiv2();
@@ -61,19 +61,19 @@ protected Q_SLOTS:
         m_tempPath.replace(QLatin1String("./"), QString());
     }
 
-    // Re-implemented from QTest framework
+    /// Re-implemented from QTest framework
     virtual void init()
     {
         m_tempDir = WSToolUtils::makeTemporaryDir(m_tempPath.toLatin1().data());
     }
 
-    // Re-implemented from QTest framework
+    /// Re-implemented from QTest framework
     virtual void cleanup()
     {
         WSToolUtils::removeTemporaryDir(m_tempPath.toLatin1().data());
     }
 
-    // Re-implemented from QTest framework
+    /// Re-implemented from QTest framework
     virtual void cleanupTestCase()
     {
         MetaEngine::cleanupExiv2();
@@ -81,10 +81,9 @@ protected Q_SLOTS:
 
 protected:
 
-    QString       m_tempPath;               // The temporary path to store file to process un unit test.
-    QDir          m_tempDir;                // Same that previous as QDir object.
-    const QString m_originalImageFolder;    // The path to original files to process by unit test,
-                                            // and copied to the temporary directory. Original files still in read only.
+    QString       m_tempPath;               ///< The temporary path to store file to process un unit test.
+    QDir          m_tempDir;                ///< Same that previous as QDir object.
+    const QString m_originalImageFolder;    ///< The path to original files to process by unit test, and copied to the temporary directory. Original files still in read only.
 };
 
 #endif // DIGIKAM_ABSTRACT_UNIT_TEST_H

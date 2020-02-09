@@ -52,6 +52,18 @@ if(LensFun_FOUND)
 
 endif()
 
+if(Jasper_FOUND)
+
+    set(_extra_deps ${_extra_deps} ${JASPER_LIBRARIES})
+
+endif()
+
+if(WIN32)
+
+    set(_extra_deps ${_extra_deps} ws2_32)
+
+endif()
+
 if(NOT WIN32)
 
     # To link under Solaris (see bug #274484)
@@ -86,6 +98,9 @@ set(COMMON_TEST_LINK Qt5::Core
                      KF5::Service
                      KF5::Solid
 
+                     ${OPENMP_LDFLAGS}
+                     ${JPEG_LIBRARIES}
+                     ${LCMS2_LIBRARIES}
                      ${OpenCV_LIBRARIES}
                      ${EXPAT_LIBRARY}
                      ${CMAKE_THREAD_LIBS_INIT}
@@ -126,11 +141,11 @@ add_subdirectory(imgqsort)
 add_subdirectory(iojobs)
 add_subdirectory(mediaserver)
 add_subdirectory(mediawiki)
-
 add_subdirectory(metadataengine)
 add_subdirectory(multithreading)
 add_subdirectory(panorama)
 add_subdirectory(rawengine)
+
 add_subdirectory(timestampupdate)
 add_subdirectory(webservices)
 add_subdirectory(widgets)

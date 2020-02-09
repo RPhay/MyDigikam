@@ -16,26 +16,30 @@ include_directories(
 
 # ----------------------------------------------------------------------------------
 
+QT5_WRAP_CPP(MOC_files ${CMAKE_CURRENT_SOURCE_DIR}/abstractunittest.h)
+add_library(libmetadatenginetest STATIC ${MOC_files})
+target_link_libraries(libmetadatenginetest ${COMMON_TEST_LINK})
+
 macro(METADATAENGINE_TESTS_BUILD)
 
     set(_filename ${ARGV0})
     string(REPLACE "." ";" _temp ${_filename})
     list(GET _temp 0 _target)
 
-    QT5_WRAP_CPP(MOC_files ${CMAKE_CURRENT_SOURCE_DIR}/abstractunittest.h)
+    ecm_add_tests(${CMAKE_CURRENT_SOURCE_DIR}/${_target}.cpp
 
-    set(${_target}_SRCS
-        ${MOC_files}
-        ${CMAKE_CURRENT_SOURCE_DIR}/${_target}.cpp)
+                  NAME_PREFIX
 
-    add_executable(${_target} ${${_target}_SRCS})
-    add_test(${_target} ${_target})
-    ecm_mark_as_test(${target})
+                  "digikam-"
 
-    target_link_libraries(${_target}
-                          digikamcore
-                          ${COMMON_TEST_LINK}
+                  LINK_LIBRARIES
+
+                  digikamcore
+                  libmetadatenginetest
+
+                  ${COMMON_TEST_LINK}
     )
+
 
 ENDMACRO()
 
