@@ -39,7 +39,6 @@ class AlbumModel;
 
 class AlbumModelTest: public QObject
 {
-
     Q_OBJECT
 
 public:
@@ -69,7 +68,7 @@ private Q_SLOTS:
 
     void setLastPAlbumCountMap(const QMap<int, int> &map);
 
-    // slots for ensuring signal order while scanning albums
+    /// slots for ensuring signal order while scanning albums
     void slotStartModelRowsInserted(const QModelIndex& parent, int start, int end);
     void slotStartModelDataChanged(const QModelIndex& topLeft, const QModelIndex& bottomRight);
 

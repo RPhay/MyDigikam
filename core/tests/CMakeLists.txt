@@ -7,12 +7,6 @@
 # enabling for everything although only required by DImg.
 kde_enable_exceptions()
 
-if(APPLE)
-
-    set(_extra_deps ${_extra_deps} /System/Library/Frameworks/AppKit.framework)
-
-endif()
-
 if(ENABLE_QWEBENGINE)
 
     set(_extra_deps ${_extra_deps} Qt5::WebEngineWidgets)
@@ -23,9 +17,27 @@ else()
 
 endif()
 
+if(ENABLE_DBUS)
+
+    set(_extra_deps ${_extra_deps}  Qt5::DBus)
+
+endif()
+
+if(KF5Notifications_FOUND)
+
+    set(_extra_deps ${_extra_deps} KF5::Notifications)
+
+endif()
+
 if(Gphoto2_FOUND)
 
     set(_extra_deps ${_extra_deps} ${GPHOTO2_LIBRARIES})
+
+endif()
+
+if(APPLE)
+
+    set(_extra_deps ${_extra_deps} /System/Library/Frameworks/AppKit.framework)
 
 endif()
 
@@ -72,12 +84,4 @@ add_subdirectory(dplugins)
 
 if(ENABLE_MEDIAPLAYER)
     add_subdirectory(video)
-endif()
-
-if(ENABLE_DIGIKAM_MODELTEST)
-    message(STATUS "Modeltest enabled")
-    set(libdigikamgui_SRCS ${libdigikamgui_SRCS}
-        modeltest/modeltest.cpp
-       )
-    add_definitions(-DENABLE_DIGIKAM_MODELTEST)
 endif()
