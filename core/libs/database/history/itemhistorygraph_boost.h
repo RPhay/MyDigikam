@@ -29,6 +29,7 @@
 
 #ifdef Q_CC_MSVC
 #   include <ciso646>
+#   pragma warning(disable : 4267)
 #endif
 
 // Pragma directives to reduce warnings from Boost header files.
