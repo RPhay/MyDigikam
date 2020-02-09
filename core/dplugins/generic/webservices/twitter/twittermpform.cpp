@@ -39,6 +39,7 @@ namespace DigikamGenericTwitterPlugin
 {
 
 TwMPForm::TwMPForm()
+    : m_boundary()
 {
     m_boundary  = "00TwDK";
     m_boundary += Digikam::WSToolUtils::randomString(42 + 13).toLatin1();
