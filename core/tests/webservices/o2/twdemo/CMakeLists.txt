@@ -35,3 +35,13 @@ target_link_libraries(twdemo
 )
 
 target_compile_definitions(twdemo PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)
+
+if(MSVC)
+
+    target_compile_options(twdemo PRIVATE /w)
+
+else()
+
+    target_compile_options(twdemo PRIVATE -w)
+
+endif()

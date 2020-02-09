@@ -44,3 +44,12 @@ target_link_libraries(fbinter
 
 target_compile_definitions(fbinter PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)
 
+if(MSVC)
+
+    target_compile_options(fbinter PRIVATE /w)
+
+else()
+
+    target_compile_options(fbinter PRIVATE -w)
+
+endif()

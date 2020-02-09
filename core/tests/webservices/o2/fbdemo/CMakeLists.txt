@@ -35,3 +35,12 @@ target_link_libraries(fbdemo
 
 target_compile_definitions(fbdemo PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)
 
+if(MSVC)
+
+    target_compile_options(fbdemo PRIVATE /w)
+
+else()
+
+    target_compile_options(fbdemo PRIVATE -w)
+
+endif()

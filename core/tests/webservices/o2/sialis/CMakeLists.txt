@@ -43,3 +43,13 @@ target_link_libraries(sialis
 )
 
 target_compile_definitions(sialis PRIVATE signals=Q_SIGNALS slots=Q_SLOTS)
+
+if(MSVC)
+
+    target_compile_options(sialis PRIVATE /w)
+
+else()
+
+    target_compile_options(sialis PRIVATE -w)
+
+endif()
