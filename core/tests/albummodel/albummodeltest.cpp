@@ -42,7 +42,7 @@
 #include "loadingcacheinterface.h"
 #include "scancontroller.h"
 #include "thumbnailloadthread.h"
-#include "../modeltest/modeltest.h"
+#include "modeltest.h"
 
 using namespace Digikam;
 

@@ -51,7 +51,7 @@
 
 QString DImgAbstractHistoryTest::imagePath()
 {
-    // NOTE: We will use same daya dir than album model tests.
+    // NOTE: We will use same data dir than album model tests.
     return QFINDTESTDATA("../albummodel/data/");
 }
 
@@ -195,7 +195,8 @@ QString DImgAbstractHistoryTest::tempFilePath(const QString& purpose) const
 
 void DImgAbstractHistoryTest::initBaseTestCase()
 {
-    // initialize Exiv2 before doing any multitasking
+    // initialize Exiv2 before doing any multi-tasking
+
     MetaEngine::initializeExiv2();
 
     ICCSettingsContainer c = IccSettings::instance()->settings();
@@ -221,6 +222,7 @@ void DImgAbstractHistoryTest::cleanupBaseTestCase()
     file.remove();
 
     // clean up the Exiv2 memory:
+
     MetaEngine::cleanupExiv2();
 }
 

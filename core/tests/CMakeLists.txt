@@ -4,8 +4,13 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
+APPLY_COMMON_POLICIES()
+
 # enabling for everything although only required by DImg.
 kde_enable_exceptions()
+
+# -------------------------------------------------------------------------------
+# Unit-tests common dependencies
 
 if(ENABLE_QWEBENGINE)
 
@@ -59,28 +64,47 @@ set(COMMON_TEST_LINK Qt5::Core
                      ${_extra_deps}
 )
 
-add_subdirectory(albummodel)
+# -------------------------------------------------------------------------------
+# Common static library for uint-tests based on ModelTest
+
+include_directories(modeltest)
+
+add_library(libmodeltest STATIC
+            modeltest/modeltest.cpp
+)
+
+target_link_libraries(libmodeltest
+                      PRIVATE
+                      Qt5::Core
+                      Qt5::Test
+)
+
+# -------------------------------------------------------------------------------
+# Unit-tests and CLI tools
+
 add_subdirectory(advancedrename)
-add_subdirectory(database)
+add_subdirectory(albummodel)                    # Unit-test based on ModelTest
+add_subdirectory(database)                      # Some unit-tests based on ModelTest
 add_subdirectory(dialogs)
 add_subdirectory(dimg)
 add_subdirectory(dngwriter)
-add_subdirectory(metadataengine)
+add_subdirectory(dplugins)
 add_subdirectory(facesengine)
+
+add_subdirectory(fileio)
+add_subdirectory(filters)
 add_subdirectory(geolocation)
 add_subdirectory(imgqsort)
 add_subdirectory(iojobs)
-add_subdirectory(multithreading)
 add_subdirectory(mediaserver)
 add_subdirectory(mediawiki)
+add_subdirectory(metadataengine)
+add_subdirectory(multithreading)
 add_subdirectory(panorama)
-add_subdirectory(fileio)
-add_subdirectory(filters)
-add_subdirectory(timestampupdate)
-add_subdirectory(widgets)
 add_subdirectory(rawengine)
+add_subdirectory(timestampupdate)
 add_subdirectory(webservices)
-add_subdirectory(dplugins)
+add_subdirectory(widgets)
 
 if(ENABLE_MEDIAPLAYER)
     add_subdirectory(video)

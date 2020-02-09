@@ -22,8 +22,6 @@ include_directories(
 
 ecm_add_tests(${renamecustomizertest_SRCS}
 
-              GUI
-
               NAME_PREFIX
 
               "digikam-"
@@ -44,8 +42,6 @@ set(cameranamehelper_SRCS
 )
 
 ecm_add_tests(${cameranamehelper_SRCS}
-
-              GUI
 
               NAME_PREFIX
 
@@ -68,8 +64,6 @@ set(advancedrenametest_SRCS
 )
 
 ecm_add_tests(${advancedrenametest_SRCS}
-
-              GUI
 
               NAME_PREFIX
 

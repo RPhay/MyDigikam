@@ -35,10 +35,6 @@ target_link_libraries(testdatabaseswitch
                       ${OpenCV_LIBRARIES}
 )
 
-if(KF5Notifications_FOUND)
-    target_link_libraries(testdatabaseswitch KF5::Notifications)
-endif()
-
 #------------------------------------------------------------------------
 
 set(testdatabaseinit_SRCS testdatabaseinit.cpp)
@@ -54,43 +50,32 @@ target_link_libraries(testdatabaseinit
                       ${OpenCV_LIBRARIES}
 )
 
-if(KF5Notifications_FOUND)
-    target_link_libraries(testdatabaseinit KF5::Notifications)
-endif()
-
 #------------------------------------------------------------------------
 
 set(databasefieldstest_src databasefieldstest.cpp)
-add_executable(databasefieldstest ${databasefieldstest_src})
-add_test(databasefieldstest databasefieldstest)
-ecm_mark_as_test(databasefieldstest)
 
-target_link_libraries(databasefieldstest
+ecm_add_tests(${databasefieldstest_src}
 
-                      digikamdatabase
-                      digikamgui
+              NAME_PREFIX
 
-                      ${COMMON_TEST_LINK}
+              "digikam-"
+
+              LINK_LIBRARIES
+
+              digikamcore
+              digikamdatabase
+              digikamgui
+
+              libmodeltest
+
+              ${COMMON_TEST_LINK}
 )
-
-if(ENABLE_DBUS)
-    target_link_libraries(databasefieldstest Qt5::DBus)
-endif()
-
-if(KF5Notifications_FOUND)
-    target_link_libraries(databasefieldstest KF5::Notifications)
-endif()
 
 #------------------------------------------------------------------------
 
 
 set(databasetagstest_src databasetagstest.cpp)
 add_executable(databasetagstest ${databasetagstest_src})
-
-# NOTE: this unit test fail to work as the temporary collection creation cannot be done in /tmp.
-#       we need to port code to use QTest directory, as it done with metadataengine unit-tests.
-#add_test(databasetagstest databasetagstest)
-#ecm_mark_as_test(databasetagstest)
 
 target_link_libraries(databasetagstest
 
@@ -101,10 +86,22 @@ target_link_libraries(databasetagstest
                       ${COMMON_TEST_LINK}
 )
 
-if(ENABLE_DBUS)
-    target_link_libraries(databasetagstest Qt5::DBus)
-endif()
-
-if(KF5Notifications_FOUND)
-    target_link_libraries(databasetagstest KF5::Notifications)
-endif()
+# NOTE: this unit test fail to work as the temporary collection creation cannot be done in /tmp.
+#       we need to port code to use QTest directory, as it done with metadataengine unit-tests.
+#
+#ecm_add_tests(${databasetagstest_src}
+#
+#              NAME_PREFIX
+#
+#              "digikam-"
+#
+#              LINK_LIBRARIES
+#
+#              digikamcore
+#              digikamdatabase
+#              digikamgui
+#
+#              libmodeltest
+#
+#              ${COMMON_TEST_LINK}
+#)

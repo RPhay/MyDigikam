@@ -18,18 +18,22 @@ include_directories(
 
 set(albummodeltest_SRCS
     albummodeltest.cpp
-    ../modeltest/modeltest.cpp
 )
 
-add_executable(albummodeltest ${albummodeltest_SRCS})
-ecm_mark_nongui_executable(albummodeltest)
+ecm_add_tests(${albummodeltest_SRCS}
 
-target_link_libraries(albummodeltest
-                      digikamcore
-                      digikamdatabase
-                      digikamgui
+              NAME_PREFIX
 
-                      ${COMMON_TEST_LINK}
+              "digikam-"
 
-                      ${OpenCV_LIBRARIES}
+              LINK_LIBRARIES
+
+              digikamcore
+              digikamdatabase
+              digikamgui
+
+              libmodeltest
+
+              ${COMMON_TEST_LINK}
+              ${OpenCV_LIBRARIES}
 )

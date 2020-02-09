@@ -19,61 +19,6 @@ include_directories(
     $<TARGET_PROPERTY:Qt5::Sql,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-set(dimgfilteractiontest_SRCS
-    dimgfilteractiontest.cpp
-)
-
-add_executable(dimgfilteractiontest ${dimgfilteractiontest_SRCS})
-add_test(dimgfilteractiontest dimgfilteractiontest)
-ecm_mark_as_test(dimgfilteractiontest)
-
-target_link_libraries(dimgfilteractiontest
-
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
-)
-
-
-#------------------------------------------------------------------------
-
-set(dimghistorytest_SRCS
-    dimgabstracthistorytest.cpp
-    dimghistorytest.cpp
-)
-
-add_executable(dimghistorytest ${dimghistorytest_SRCS})
-add_test(dimghistorytest dimghistorytest)
-ecm_mark_as_test(dimghistorytest)
-
-target_link_libraries(dimghistorytest
-
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-
-                      ${OpenCV_LIBRARIES}
-)
-
-#------------------------------------------------------------------------
-
-set(dimgfreerotationtest_SRCS
-    dimgfreerotationtest.cpp
-)
-
-add_executable(dimgfreerotationtest ${dimgfreerotationtest_SRCS})
-add_test(dimgfreerotationtest dimgfreerotationtest)
-ecm_mark_as_test(dimgfreerotationtest)
-
-target_link_libraries(dimgfreerotationtest
-
-                      digikamcore
-
-                      ${COMMON_TEST_LINK}
-)
-
 #------------------------------------------------------------------------
 
 set(testdimgloader_SRCS testdimgloader.cpp)
@@ -139,28 +84,105 @@ endif()
 
 #------------------------------------------------------------------------
 
+set(dimgfilteractiontest_SRCS
+    dimgfilteractiontest.cpp
+)
+
+ecm_add_tests(${dimgfilteractiontest_SRCS}
+
+              GUI
+
+              NAME_PREFIX
+
+              "digikam-"
+
+              LINK_LIBRARIES
+
+              digikamcore
+
+              ${COMMON_TEST_LINK}
+
+              ${OpenCV_LIBRARIES}
+)
+
+#------------------------------------------------------------------------
+
+set(dimgfreerotationtest_SRCS
+    dimgfreerotationtest.cpp
+)
+
+ecm_add_tests(${dimgfreerotationtest_SRCS}
+
+              GUI
+
+              NAME_PREFIX
+
+              "digikam-"
+
+              LINK_LIBRARIES
+
+              digikamcore
+
+              ${COMMON_TEST_LINK}
+)
+
+#------------------------------------------------------------------------
+
+add_library(libabstracthistory STATIC
+            dimgabstracthistorytest.cpp
+)
+
+set(dimghistorytest_SRCS
+    dimghistorytest.cpp
+)
+
+ecm_add_tests(${dimghistorytest_SRCS}
+
+              GUI
+
+              NAME_PREFIX
+
+              "digikam-"
+
+              LINK_LIBRARIES
+
+              digikamcore
+
+              libabstracthistory
+
+              ${COMMON_TEST_LINK}
+
+              ${OpenCV_LIBRARIES}
+)
+
+#------------------------------------------------------------------------
+
 # TODO: This unit-test do not link yet under Microsoft compiler
 
 if(NOT MSVC)
 
     set(dimghistorygraphtest_SRCS
-        dimgabstracthistorytest.cpp
         dimghistorygraphtest.cpp
-        ../modeltest/modeltest.cpp
     )
 
-    add_executable(dimghistorygraphtest ${dimghistorygraphtest_SRCS})
-    add_test(dimghistorygraphtest dimghistorygraphtest)
-    ecm_mark_as_test(dimghistorygraphtest)
+    ecm_add_tests(${dimghistorygraphtest_SRCS}
 
-    target_link_libraries(dimghistorygraphtest
+                  GUI
 
-                          digikamcore
-                          digikamdatabase
+                  NAME_PREFIX
 
-                          ${COMMON_TEST_LINK}
+                  "digikam-"
 
-                          ${OpenCV_LIBRARIES}
+                  LINK_LIBRARIES
+
+                  digikamcore
+                  digikamdatabase
+                  libmodeltest
+                  libabstracthistory
+
+                  ${COMMON_TEST_LINK}
+
+                  ${OpenCV_LIBRARIES}
     )
 
 endif()

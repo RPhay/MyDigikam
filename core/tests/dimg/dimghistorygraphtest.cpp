@@ -48,7 +48,7 @@
 #include "itemhistorygraphmodel.h"
 #include "iofilesettings.h"
 #include "tagscache.h"
-#include "../modeltest/modeltest.h"
+#include "modeltest.h"
 
 using namespace Digikam;
 
