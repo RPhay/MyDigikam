@@ -50,6 +50,11 @@
 
 // X11 includes
 
+#if defined(Q_CC_CLANG)
+#    pragma clang diagnostic push
+#    pragma clang diagnostic ignored "-Wvariadic-macros"
+#endif
+
 // Note must be after all other to prevent broken compilation
 #ifdef HAVE_X11
 #   include <climits>
@@ -57,6 +62,10 @@
 #   include <X11/Xatom.h>
 #   include <QX11Info>
 #endif // HAVE_X11
+
+#if defined(Q_CC_CLANG)
+#    pragma clang diagnostic pop
+#endif
 
 namespace Digikam
 {
