@@ -23,6 +23,12 @@ else()
 
 endif()
 
+if(Gphoto2_FOUND)
+
+    set(_extra_deps ${_extra_deps} ${GPHOTO2_LIBRARIES})
+
+endif()
+
 set(COMMON_TEST_LINK Qt5::Core
                      Qt5::Gui
                      Qt5::Xml

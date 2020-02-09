@@ -20,17 +20,19 @@ include_directories(
     $<TARGET_PROPERTY:KF5::Solid,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-add_executable(renamecustomizertest ${renamecustomizertest_SRCS})
-add_test(renamecustomizertest renamecustomizertest)
-ecm_mark_as_test(renamecustomizertest)
+ecm_add_tests(${renamecustomizertest_SRCS}
 
-target_link_libraries(renamecustomizertest
+              NAME_PREFIX
 
-                      digikamcore
-                      digikamgui
+              "digikam-"
 
-                      ${COMMON_TEST_LINK}
-                      ${OpenCV_LIBRARIES}
+              LINK_LIBRARIES
+
+              digikamcore
+              digikamgui
+
+              ${COMMON_TEST_LINK}
+              ${OpenCV_LIBRARIES}
 )
 
 #------------------------------------------------------------------------
@@ -39,24 +41,21 @@ set(cameranamehelper_SRCS
     cameranamehelpertest.cpp
 )
 
-add_executable(cameranamehelpertest ${cameranamehelper_SRCS})
-add_test(cameranamehelpertest cameranamehelpertest)
-ecm_mark_as_test(cameranamehelpertest)
+ecm_add_tests(${cameranamehelper_SRCS}
 
-target_link_libraries(cameranamehelpertest
+              NAME_PREFIX
 
-                      digikamdatabase
-                      digikamcore
-                      digikamgui
+              "digikam-"
 
-                      ${COMMON_TEST_LINK}
+              LINK_LIBRARIES
 
-                      ${OpenCV_LIBRARIES}
+              digikamcore
+              digikamdatabase
+              digikamgui
+
+              ${COMMON_TEST_LINK}
+              ${OpenCV_LIBRARIES}
 )
-
-if(Gphoto2_FOUND)
-    target_link_libraries(cameranamehelpertest ${GPHOTO2_LIBRARIES})
-endif()
 
 #------------------------------------------------------------------------
 
@@ -64,17 +63,18 @@ set(advancedrenametest_SRCS
     advancedrenametest.cpp
 )
 
-add_executable(advancedrenametest ${advancedrenametest_SRCS})
-add_test(advancedrenametest advancedrenametest)
-ecm_mark_as_test(advancedrenametest)
+ecm_add_tests(${advancedrenametest_SRCS}
 
-target_link_libraries(advancedrenametest
+              NAME_PREFIX
 
-                      digikamdatabase
-                      digikamcore
-                      digikamgui
+              "digikam-"
 
-                      ${COMMON_TEST_LINK}
+              LINK_LIBRARIES
 
-                      ${OpenCV_LIBRARIES}
+              digikamcore
+              digikamdatabase
+              digikamgui
+
+              ${COMMON_TEST_LINK}
+              ${OpenCV_LIBRARIES}
 )

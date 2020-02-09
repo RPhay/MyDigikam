@@ -82,6 +82,7 @@ include(ECMInstallIcons)
 include(ECMAddAppIcon)
 include(ECMPoQmTools)
 include(ECMMarkAsTest)
+include(ECMAddTests)
 
 # KDE macros
 include(KDEInstallDirs)
