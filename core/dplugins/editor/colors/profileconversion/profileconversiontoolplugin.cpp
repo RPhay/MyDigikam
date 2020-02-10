@@ -179,7 +179,17 @@ void ProfileConversionToolPlugin::slotUpdateColorSpaceMenu()
         m_profileMenuAction->addSeparator();
 
         QStringList profileList = ProfileConversionTool::favoriteProfiles();
+
+#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
+
+        QSet<QString> favoriteProfilePaths = QSet<QString>::fromList(profileList);
+
+#else
+
         QSet<QString> favoriteProfilePaths(profileList.begin(), profileList.end());
+
+#endif
+
         favoriteProfilePaths   -= standardProfilePaths;
 
         foreach (const QString& path, favoriteProfilePaths)
