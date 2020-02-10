@@ -98,17 +98,16 @@ private Q_SLOTS:
                                const QString& errMsg,
                                const QList <SmugAlbumTmpl>& albumTList);
 
-    /**
-     * Categories now are deprecated in API v2
-     * 
-     * void slotListCategoriesDone(int errCode,
-     *                            const QString& errMsg,
-     *                            const QList <SmugCategory>& categoriesList);
+/*  Categories now are deprecated in API v2
 
-     * void slotListSubCategoriesDone(int errCode,
-     *                               const QString& errMsg,
-     *                               const QList <SmugCategory>& categoriesList);
-     */
+    void slotListCategoriesDone(int errCode,
+                                const QString& errMsg,
+                                const QList <SmugCategory>& categoriesList);
+
+    void slotListSubCategoriesDone(int errCode,
+                                   const QString& errMsg,
+                                   const QList <SmugCategory>& categoriesList);
+*/
 
     void slotUserChangeRequest(bool anonymous);
     void slotReloadAlbumsRequest();
@@ -122,11 +121,11 @@ private Q_SLOTS:
     void slotImageListChanged();
 
     void slotTemplateSelectionChanged(int index);
-    /**
-     * Categories now are deprecated in API v2
-     *  
-     * void slotCategorySelectionChanged(int index);
-     */
+
+/*  Categories now are deprecated in API v2
+
+    void slotCategorySelectionChanged(int index);
+*/
 
 private:
 

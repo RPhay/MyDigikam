@@ -74,7 +74,7 @@ public:
     QString getAlbumPassword()   const;
     QString getDestinationPath() const;
 
-    DItemsList* imagesList()    const;
+    DItemsList* imagesList()     const;
     DProgressWdg* progressBar()  const;
 
 Q_SIGNALS:

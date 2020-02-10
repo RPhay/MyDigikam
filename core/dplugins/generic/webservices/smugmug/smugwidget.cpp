@@ -50,11 +50,11 @@ namespace DigikamGenericSmugPlugin
 {
 
 SmugWidget::SmugWidget(QWidget* const parent, DInfoInterface* const iface, bool import)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_iface(iface)
 {
     setObjectName(QLatin1String("SmugWidget"));
 
-    m_iface                       = iface;
     const int spacing             = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
     QHBoxLayout* const mainLayout = new QHBoxLayout(this);
 
@@ -236,6 +236,7 @@ SmugWidget::SmugWidget(QWidget* const parent, DInfoInterface* const iface, bool 
         /**
          * Deactivate anonymous login functionality
          */
+
         m_anonymousRBtn->hide();
         m_accountRBtn->hide();
         m_nickNameLbl->hide();
@@ -322,7 +323,9 @@ void SmugWidget::updateLabels(const QString& email, const QString& name, const Q
     QString web(QLatin1String("www"));
 
     if (!nick.isEmpty())
+    {
         web = nick;
+    }
 
     m_headerLbl->setText(QString::fromLatin1("<b><h2><a href='http://%1.smugmug.com'>"
                                              "<font color=\"#9ACD32\">SmugMug</font>"

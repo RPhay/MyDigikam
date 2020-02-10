@@ -89,6 +89,7 @@ bool SmugMPForm::addPair(const QString& name,
         str += "Mime-version: 1.0 ";
         str += "\r\n";
     }
+
     str += "Content-Length: ";
     str += content_length.toLatin1();
     str += "\r\n\r\n";
@@ -109,13 +110,16 @@ bool SmugMPForm::addFile(const QString& name, const QString& path)
     {
         // if we ourselves can't determine the mime of the local file,
         // very unlikely the remote site will be able to identify it
+
         return false;
     }
 
     QFile imageFile(path);
 
     if (!imageFile.open(QIODevice::ReadOnly))
+    {
         return false;
+    }
 
     QByteArray imageData = imageFile.readAll();
 

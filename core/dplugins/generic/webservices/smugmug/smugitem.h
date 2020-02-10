@@ -38,8 +38,8 @@ class SmugUser
 public:
 
     explicit SmugUser()
+      : fileSizeLimit(0)
     {
-        fileSizeLimit = 0;
     }
 
     void clear()
@@ -74,14 +74,14 @@ class SmugAlbum
 public:
 
     explicit SmugAlbum()
+      : id(-1),
+        categoryID(-1),
+        subCategoryID(-1),
+        isPublic(true),
+        canShare(true),
+        imageCount(0),
+        tmplID(-1)
     {
-        id            = -1;
-        categoryID    = -1;
-        subCategoryID = -1;
-        tmplID        = -1;
-        isPublic      = true;
-        imageCount    = 0;
-        canShare      = true;
     }
 
 public:
@@ -108,7 +108,7 @@ public:
 
     int     imageCount;
 
-    // below fields only used by createAlbum (and not by listAlbums)
+    /// below fields only used by createAlbum (and not by listAlbums)
     qint64  tmplID;
     QString tmpl;
 
@@ -126,8 +126,8 @@ class SmugPhoto
 public:
 
     explicit SmugPhoto()
+      : id(-1)
     {
-        id = -1;
     }
 
 public:
@@ -150,9 +150,9 @@ class SmugAlbumTmpl
 public:
 
     explicit SmugAlbumTmpl()
+      : id(-1),
+        isPublic(true)
     {
-        id       = -1;
-        isPublic = true;
     }
 
 public:
@@ -174,8 +174,8 @@ class SmugCategory
 public:
 
     explicit SmugCategory()
+      : id(-1)
     {
-        id = -1;
     }
 
 public:
