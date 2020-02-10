@@ -46,7 +46,6 @@ private Q_SLOTS:
 
     void testParseTestImagesForExposureDetection();
     void testParseTestImagesForNoiseDetection();
-
     void testParseTestImagesForBlurDetection();
     void testParseTestImagesForCompressionDetection();
 };
