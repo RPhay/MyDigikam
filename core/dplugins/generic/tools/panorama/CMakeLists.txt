@@ -29,9 +29,16 @@ FLEX_TARGET(PTOScanner panoparser/ptoparser/panoScanner.l ${CMAKE_CURRENT_BINARY
 BISON_TARGET(PTOParser panoparser/ptoparser/panoParser.y  ${CMAKE_CURRENT_BINARY_DIR}/panoParser.c)
 ADD_FLEX_BISON_DEPENDENCY(PTOScanner PTOParser)
 
-if(NOT MSVC)
+if(MSVC)
+
     set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/panoScanner.c
-                                PROPERTIES COMPILE_FLAGS "-Wno-unused-function -Wno-sign-compare")
+                                PROPERTIES COMPILE_FLAGS "/w")
+
+else()
+
+    set_source_files_properties(${CMAKE_CURRENT_BINARY_DIR}/panoScanner.c
+                                PROPERTIES COMPILE_FLAGS "-w")
+
 endif()
 
 set_property(SOURCE panoParser.h PROPERTY SKIP_AUTOMOC ON)
