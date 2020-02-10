@@ -181,7 +181,7 @@ void HotPixelsTool::readSettings()
     if (d->blackFrameURL.isValid())
     {
         EditorToolIface::editorToolIface()->setToolStartProgress(i18n("Loading: "));
-        BlackFrameListViewItem* const item = new BlackFrameListViewItem(d->blackFrameListView, d->blackFrameURL);
+        QPointer<BlackFrameListViewItem> item = new BlackFrameListViewItem(d->blackFrameListView, d->blackFrameURL);
 
         connect(item, SIGNAL(signalLoadingProgress(float)),
                 this, SLOT(slotLoadingProgress(float)));
@@ -227,7 +227,7 @@ void HotPixelsTool::slotAddBlackFrame()
 
         d->blackFrameURL = url;
         d->blackFrameListView->clear();
-        BlackFrameListViewItem* const item = new BlackFrameListViewItem(d->blackFrameListView, d->blackFrameURL);
+        QPointer<BlackFrameListViewItem> item = new BlackFrameListViewItem(d->blackFrameListView, d->blackFrameURL);
 
         connect(item, SIGNAL(signalLoadingProgress(float)),
                 this, SLOT(slotLoadingProgress(float)));
