@@ -163,7 +163,7 @@ void HotPixelFixer::interpolate(DImg& img, HotPixel& hp, int method)
 
             for (x = xPos ; x < xPos+hp.width() ; ++x)
             {
-                if (validPoint(img,QPoint(x, yPos - 1)))
+                if (validPoint(img, QPoint(x, yPos - 1)))
                 {
                     col = img.getPixelColor(x, yPos - 1);
                     vr += col.red();
@@ -172,7 +172,7 @@ void HotPixelFixer::interpolate(DImg& img, HotPixel& hp, int method)
                     ++sum_weight;
                 }
 
-                if (validPoint(img,QPoint(x, yPos + hp.height())))
+                if (validPoint(img, QPoint(x, yPos + hp.height())))
                 {
                     col = img.getPixelColor(x, yPos + hp.height());
                     vr += col.red();

@@ -149,9 +149,11 @@ void HotPixelsWeights::calculateHotPixelsWeights()
     }
     else
     {
-        // In the one-dimensional case, only the y coordinate and y size is used.  */
+        // In the one-dimensional case, only the y coordinate and y size is used.
 
-        for (y = (-1)*mPolynomeOrder ; y < 0 ; ++y)
+        int low = (-1)*mPolynomeOrder;
+
+        for (y = low ; y < 0 ; ++y)
         {
             QPoint position(0, y);
             mPositions.append(position);
@@ -206,7 +208,7 @@ void HotPixelsWeights::calculateHotPixelsWeights()
 
             for (ix = 0 ; ix < mCoefficientNumber ; ++ix)
             {
-                vector1[(int)(iy * mPositions.count() + j)] += matrix[(int)(iy * mCoefficientNumber + ix)] *
+                vector1[(int)(iy * mPositions.count() + j)] += matrix[(int)(iy  * mCoefficientNumber + ix)] *
                                                                vector0[(int)(ix * mPositions.count() + j)];
             }
         }
