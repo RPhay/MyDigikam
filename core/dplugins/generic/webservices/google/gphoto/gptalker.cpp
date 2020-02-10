@@ -94,18 +94,15 @@ public:
 public:
 
     explicit Private()
+      : userInfoUrl(QLatin1String("https://www.googleapis.com/plus/v1/people/me")),
+        apiUrl(QString::fromLatin1("https://photoslibrary.googleapis.com/%1/%2").arg(apiVersion)),
+        apiVersion(QLatin1String("v1")),
+        state(GP_LOGOUT),
+        albumIdToUpload(QLatin1String("-1")),
+        previousImageId(QLatin1String("-1")),
+        netMngr(nullptr),
+        redirectCounter(0)
     {
-        state           = GP_LOGOUT;
-        netMngr         = nullptr;
-        redirectCounter = 0;
-
-        userInfoUrl     = QLatin1String("https://www.googleapis.com/plus/v1/people/me");
-
-        apiVersion      = QLatin1String("v1");
-        apiUrl          = QString::fromLatin1("https://photoslibrary.googleapis.com/%1/%2").arg(apiVersion);
-
-        albumIdToUpload = QLatin1String("-1");
-        previousImageId = QLatin1String("-1");
     }
 
 public:

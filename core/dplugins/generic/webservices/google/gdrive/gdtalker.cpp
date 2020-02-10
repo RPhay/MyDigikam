@@ -7,7 +7,7 @@
  * Description : a tool to export items to Google web services
  *
  * Copyright (C) 2013      by Pankaj Kumar <me at panks dot me>
- * Copyright (C) 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -87,14 +87,14 @@ public:
 public:
 
     explicit Private()
+      : apiUrl(QLatin1String("https://www.googleapis.com/drive/v2/%1")),
+        uploadUrl(QLatin1String("https://www.googleapis.com/upload/drive/v2/files")),
+        rootid(QLatin1String("root")),
+        rootfoldername(QLatin1String("GoogleDrive Root")),
+        state(GD_LOGOUT),
+        listPhotoId(QStringList()),
+        netMngr(nullptr)
     {
-        apiUrl         = QLatin1String("https://www.googleapis.com/drive/v2/%1");
-        uploadUrl      = QLatin1String("https://www.googleapis.com/upload/drive/v2/files");
-        state          = GD_LOGOUT;
-        netMngr        = nullptr;
-        rootid         = QLatin1String("root");
-        rootfoldername = QLatin1String("GoogleDrive Root");
-        listPhotoId    = QStringList();
     }
 
 public:

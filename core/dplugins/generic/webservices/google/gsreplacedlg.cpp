@@ -7,7 +7,7 @@
  * Description : a tool to export items to Google web services
  *
  * Copyright (C) 2010      by Jens Mueller <tschenser at gmx dot de>
- * Copyright (C) 2013-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -53,20 +53,20 @@ class Q_DECL_HIDDEN ReplaceDialog::Private
 public:
 
     explicit Private()
+      : bAdd(nullptr),
+        bAddAll(nullptr),
+        bReplace(nullptr),
+        bReplaceAll(nullptr),
+        iface(nullptr),
+        lbSrc(nullptr),
+        lbDest(nullptr),
+        netMngr(nullptr),
+        progressPix(DWorkingPixmap()),
+        thumbLoadThread(ThumbnailLoadThread::defaultThread()),
+        progressCount(0),
+        progressTimer(nullptr),
+        result(-1)
     {
-        progressPix     = DWorkingPixmap();
-        bAdd            = nullptr;
-        bAddAll         = nullptr;
-        bReplace        = nullptr;
-        bReplaceAll     = nullptr;
-        iface           = nullptr;
-        lbSrc           = nullptr;
-        lbDest          = nullptr;
-        netMngr         = nullptr;
-        progressCount   = 0;
-        progressTimer   = nullptr;
-        result          = -1;
-        thumbLoadThread = ThumbnailLoadThread::defaultThread();
     }
 
     QPushButton*           bAdd;
@@ -311,6 +311,7 @@ QPixmap ReplaceDialog::setProgressAnimation(const QPixmap& thumb, const QPixmap&
     QPainter p(&overlay);
     p.drawPixmap(0, 0, mask);
     p.drawPixmap((overlay.width()/2) - (pix.width()/2), (overlay.height()/2) - (pix.height()/2), pix);
+
     return overlay;
 }
 
@@ -320,7 +321,9 @@ void ReplaceDialog::slotProgressTimerDone()
     d->progressCount++;
 
     if (d->progressCount == 8)
+    {
         d->progressCount = 0;
+    }
 
     d->progressTimer->start(300);
 }

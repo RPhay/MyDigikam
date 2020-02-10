@@ -7,7 +7,7 @@
  * Description : a tool to export items to Google web services
  *
  * Copyright (C) 2015      by Shourya Singh Gupta <shouryasgupta at gmail dot com>
- * Copyright (C) 2015-2018 by Caulier Gilles <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2015-2020 by Caulier Gilles <caulier dot gilles at gmail dot com>
  * Copyright (C) 2018      by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -73,15 +73,15 @@ public:
 
     explicit Private()
       : parent(nullptr),
+        authUrl(QLatin1String("https://accounts.google.com/o/oauth2/auth")),
+        tokenUrl(QLatin1String("https://accounts.google.com/o/oauth2/token")),
+        refreshUrl(QLatin1String("https://accounts.google.com/o/oauth2/token")),
+        apikey(QLatin1String("258540448336-hgdegpohibcjasvk1p595fpvjor15pbc.apps.googleusercontent.com")),
+        clientSecret(QLatin1String("iiIKTNM4ggBXiTdquAzbs2xw")),
         o2(nullptr),
         settings(nullptr),
         browser(nullptr)
     {
-        apikey       = QLatin1String("258540448336-hgdegpohibcjasvk1p595fpvjor15pbc.apps.googleusercontent.com");
-        clientSecret = QLatin1String("iiIKTNM4ggBXiTdquAzbs2xw");
-        authUrl      = QLatin1String("https://accounts.google.com/o/oauth2/auth");
-        tokenUrl     = QLatin1String("https://accounts.google.com/o/oauth2/token");
-        refreshUrl   = QLatin1String("https://accounts.google.com/o/oauth2/token");
     }
 
     QWidget*       parent;
@@ -112,21 +112,26 @@ GSTalkerBase::GSTalkerBase(QWidget* const parent, const QStringList& scope, cons
     d->o2->setClientSecret(d->clientSecret);
 
     // OAuth2 flow control
+
     d->o2->setLocalPort(8000);
     d->o2->setTokenUrl(d->tokenUrl);
     d->o2->setRequestUrl(d->authUrl);
     d->o2->setRefreshTokenUrl(d->refreshUrl);
+
     //d->o2->setUseExternalWebInterceptor(true);
+
     d->o2->setScope(m_scope.join(QLatin1String(" ")));
     d->o2->setGrantFlow(O2::GrantFlow::GrantFlowAuthorizationCode);
 
     // OAuth configuration saved to between dk sessions
+
     d->settings                  = WSToolUtils::getOauthSettings(this);
     O0SettingsStore* const store = new O0SettingsStore(d->settings, QLatin1String(O2_ENCRYPTION_KEY), this);
     store->setGroupKey(m_serviceName);
     d->o2->setStore(store);
 
     // Refresh token permission when offline
+
     QMap<QString, QVariant> extraParams;
     extraParams.insert(QLatin1String("access_type"), QLatin1String("offline"));
     d->o2->setExtraRequestParams(extraParams);
@@ -253,10 +258,11 @@ void GSTalkerBase::doOAuth()
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "expires at : " << sessionExpires;
 
     /**
-    * If user has not logined yet (sessionExpires == 0), link
-    * If access token has expired yet, refresh
-    * TODO: Otherwise, provoke slotLinkingSucceeded
-    */
+     * If user has not logined yet (sessionExpires == 0), link
+     * If access token has expired yet, refresh
+     * TODO: Otherwise, provoke slotLinkingSucceeded
+     */
+
     if (sessionExpires == 0)
     {
         link();
