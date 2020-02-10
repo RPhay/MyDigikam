@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef TEMPLATE_ICON_H
-#define TEMPLATE_ICON_H
+#ifndef DIGIKAM_TEMPLATE_ICON_H
+#define DIGIKAM_TEMPLATE_ICON_H
 
 // Qt includes
 
@@ -89,4 +89,4 @@ private:
 
 } // namespace DigikamGenericPrintCreatorPlugin
 
-#endif // TEMPLATE_ICON_H
+#endif // DIGIKAM_TEMPLATE_ICON_H

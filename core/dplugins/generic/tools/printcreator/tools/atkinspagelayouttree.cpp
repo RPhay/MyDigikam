@@ -87,6 +87,7 @@ int AtkinsPageLayoutTree::addImage(double aspectRatio,
     }
 
     // Section 2.1
+
     AtkinsPageLayoutNode* bestTree = nullptr;
     double highScore               = 0;
 
@@ -95,38 +96,47 @@ int AtkinsPageLayoutTree::addImage(double aspectRatio,
         for (int horizontal = 0 ; horizontal < 2 ; ++horizontal)
         {
             // create temporary tree
+
             AtkinsPageLayoutNode* candidateTree          = new AtkinsPageLayoutNode(*m_root);
 
             // select the subtree which will be replace by a new internal node
+
             AtkinsPageLayoutNode* const candidateSubtree = candidateTree->nodeForIndex(i);
 
             // find parent node
+
             AtkinsPageLayoutNode* const parentNode       = candidateTree->parentOf(candidateSubtree);
 
             // create new terminal node
+
             AtkinsPageLayoutNode* const newTerminalNode  = new AtkinsPageLayoutNode(aspectRatio,
                                                                                     relativeArea,
                                                                                     index);
 
             // create new internal node
+
             AtkinsPageLayoutNode* const newInternalNode  = new AtkinsPageLayoutNode(candidateSubtree,
                                                                                     newTerminalNode,
                                                                                     horizontal,
                                                                                     index+1);
 
             // replace in tree
+
             if (parentNode)
             {
                 // replace in tree
+
                 parentNode->takeAndSetChild(candidateSubtree, newInternalNode);
             }
             else
             {
                 // candidateTree is candidateSubtree is root
+
                 candidateTree = newInternalNode;
             }
 
             // recompute sizes
+
             candidateTree->computeRelativeSizes();
 
             double candidateScore = score(candidateTree, m_count+2);
@@ -148,18 +158,23 @@ int AtkinsPageLayoutTree::addImage(double aspectRatio,
     m_root = bestTree;
 
     if (m_root)
+    {
         m_root->computeDivisions();
+    }
 
     m_count += 2;
+
     return index;
 }
 
-// Section 2.2.1
+/// Section 2.2.1
 double AtkinsPageLayoutTree::score(AtkinsPageLayoutNode* const root,
                                    int nodeCount)
 {
     if (!root)
+    {
         return 0;
+    }
 
     double areaSum = 0;
 
@@ -168,7 +183,9 @@ double AtkinsPageLayoutTree::score(AtkinsPageLayoutNode* const root,
         AtkinsPageLayoutNode* const node = root->nodeForIndex(i);
 
         if (node->type() == AtkinsPageLayoutNode::TerminalNode)
+        {
             areaSum += node->relativeArea();
+        }
     }
 
     double minRatioPage = root->aspectRatio() < m_aspectRatioPage ? root->aspectRatio()
@@ -179,29 +196,33 @@ double AtkinsPageLayoutTree::score(AtkinsPageLayoutNode* const root,
     return G() * (areaSum / root->relativeArea()) * (minRatioPage / maxRatioPage);
 }
 
-// Section 2.2.2
+/// Section 2.2.2
 double AtkinsPageLayoutTree::G() const
 {
     return 0.95 * 0.95;
 }
 
-// Section 2.2.2
+/// Section 2.2.2
 double AtkinsPageLayoutTree::absoluteArea(AtkinsPageLayoutNode* const node)
 {
     // min(a_pbb, a_page), max(a_pbb, a_page)
+
     double minRatioPage     = m_root->aspectRatio() < m_aspectRatioPage ? m_root->aspectRatio()
                                                                         : m_aspectRatioPage;
     double maxRatioPage     = m_root->aspectRatio() > m_aspectRatioPage ? m_root->aspectRatio()
                                                                         : m_aspectRatioPage;
 
     // A_pbb
+
     double absoluteAreaRoot = m_absoluteAreaPage * minRatioPage / maxRatioPage;
 
     if (node == m_root)
+    {
         return absoluteAreaRoot;
+    }
 
     // A_i
-    return G() * node->relativeArea() / m_root->relativeArea() * absoluteAreaRoot;
+    return (G() * node->relativeArea() / m_root->relativeArea() * absoluteAreaRoot);
 }
 
 QRectF AtkinsPageLayoutTree::drawingArea(int index, const QRectF& absoluteRectPage)
@@ -209,9 +230,12 @@ QRectF AtkinsPageLayoutTree::drawingArea(int index, const QRectF& absoluteRectPa
     AtkinsPageLayoutNode* const node = m_root->nodeForIndex(index);
 
     if (!node)
+    {
         return QRectF();
+    }
 
     // find out the "line of ancestry" of the node
+
     QList<AtkinsPageLayoutNode*> treePath;
     AtkinsPageLayoutNode* parent = node;
 
@@ -222,12 +246,14 @@ QRectF AtkinsPageLayoutTree::drawingArea(int index, const QRectF& absoluteRectPa
     }
 
     // find out the rect of the page bounding box (the rect of the root node in the page rect)
+
     QRectF absoluteRect = rectInRect(absoluteRectPage,
                                      m_root->aspectRatio(),
                                      absoluteArea(m_root));
 
     // go along the line of ancestry and narrow down the bounding rectangle,
     // as described in section 2.2.2
+
     for (int i = 0 ; i < treePath.count() - 1 ; ++i)
     {
         AtkinsPageLayoutNode* const parent = treePath[i];
@@ -251,6 +277,7 @@ QRectF AtkinsPageLayoutTree::drawingArea(int index, const QRectF& absoluteRectPa
         else // horizontal division: one on top of the other
         {
             // left child is topmost
+
             double upperHeight = absoluteRect.height() * parent->division();
 
             if (child == parent->leftChild())

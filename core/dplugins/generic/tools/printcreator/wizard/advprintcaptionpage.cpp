@@ -188,7 +188,7 @@ void AdvPrintCaptionPage::enableCaptionGroup(int index)
 {
     bool fontSettingsEnabled;
 
-    if (index == AdvPrintSettings::NONE)
+    if      (index == AdvPrintSettings::NONE)
     {
         fontSettingsEnabled = false;
         d->captionUi->m_customCaptionGB->setEnabled(false);
@@ -219,13 +219,13 @@ void AdvPrintCaptionPage::updateCaption(AdvPrintPhoto* const pPhoto)
 {
     if (pPhoto)
     {
-        if (!pPhoto->m_pAdvPrintCaptionInfo &&
-            d->captionUi->m_captionType->currentIndex() != AdvPrintSettings::NONE)
+        if      (!pPhoto->m_pAdvPrintCaptionInfo &&
+                 (d->captionUi->m_captionType->currentIndex() != AdvPrintSettings::NONE))
         {
             pPhoto->m_pAdvPrintCaptionInfo = new AdvPrintCaptionInfo();
         }
         else if (pPhoto->m_pAdvPrintCaptionInfo &&
-                 d->captionUi->m_captionType->currentIndex() == AdvPrintSettings::NONE)
+                 (d->captionUi->m_captionType->currentIndex() == AdvPrintSettings::NONE))
         {
             delete pPhoto->m_pAdvPrintCaptionInfo;
             pPhoto->m_pAdvPrintCaptionInfo = nullptr;
@@ -245,7 +245,7 @@ void AdvPrintCaptionPage::updateCaption(AdvPrintPhoto* const pPhoto)
                 d->captionUi->m_FreeCaptionFormat->text();
 
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Update caption properties for"
-                                         << pPhoto->m_url;
+                                                 << pPhoto->m_url;
         }
     }
 }
@@ -266,9 +266,10 @@ void AdvPrintCaptionPage::slotUpdateCaptions()
                 {
                     QString cap;
 
-                    if (pPhoto->m_pAdvPrintCaptionInfo->m_captionType !=
-                        AdvPrintSettings::NONE)
+                    if (pPhoto->m_pAdvPrintCaptionInfo->m_captionType != AdvPrintSettings::NONE)
+                    {
                         cap = captionFormatter(pPhoto);
+                    }
 
                     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << cap;
 
@@ -279,6 +280,7 @@ void AdvPrintCaptionPage::slotUpdateCaptions()
     }
 
     // create our photo sizes list
+
     d->wizard->previewPhotos();
 }
 
@@ -287,7 +289,7 @@ QString AdvPrintCaptionPage::captionFormatter(AdvPrintPhoto* const photo)
     if (!photo->m_pAdvPrintCaptionInfo)
     {
         qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Internal caption info container is NULL for"
-                                       << photo->m_url;
+                                               << photo->m_url;
         return QString();
     }
 
@@ -309,18 +311,22 @@ QString AdvPrintCaptionPage::captionFormatter(AdvPrintPhoto* const photo)
         case AdvPrintSettings::FILENAME:
             format = QLatin1String("%f");
             break;
+
         case AdvPrintSettings::DATETIME:
             format = QLatin1String("%d");
             break;
+
         case AdvPrintSettings::COMMENT:
             format = QLatin1String("%c");
             break;
+
         case AdvPrintSettings::CUSTOM:
             format = photo->m_pAdvPrintCaptionInfo->m_captionText;
             break;
+
         default:
             qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "UNKNOWN caption type "
-                                           << photo->m_pAdvPrintCaptionInfo->m_captionType;
+                                                   << photo->m_pAdvPrintCaptionInfo->m_captionType;
             break;
     }
 
@@ -367,8 +373,8 @@ QString AdvPrintCaptionPage::captionFormatter(AdvPrintPhoto* const photo)
     format.replace(QString::fromUtf8("%r"), resolution);
 
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Caption for"
-                                 << photo->m_url
-                                 << ":" << format;
+                                         << photo->m_url
+                                         << ":" << format;
     return format;
 }
 

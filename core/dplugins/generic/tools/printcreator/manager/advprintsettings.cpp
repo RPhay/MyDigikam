@@ -36,25 +36,25 @@ namespace DigikamGenericPrintCreatorPlugin
 {
 
 AdvPrintSettings::AdvPrintSettings()
+    : selMode(IMAGES),
+      printerName(outputName(PDF)),
+
+      /// Select a different page to force a refresh in initPhotoSizes.
+      pageSize(QSizeF(-1, -1)),
+
+      captionType(NONE),
+      captionColor(QColor(Qt::yellow)),
+      captionFont(QFont(QLatin1String("Sans Serif"))),
+      captionSize(4),
+      currentPreviewPage(0),
+      currentCropPhoto(0),
+      disableCrop(false),
+      imageFormat(JPEG),
+      conflictRule(FileSaveConflictBox::OVERWRITE),
+      openInFileBrowser(true),
+      outputLayouts(nullptr),
+      outputPrinter(nullptr)
 {
-    selMode            = IMAGES;
-
-    // Select a different page to force a refresh in initPhotoSizes.
-    pageSize           = QSizeF(-1, -1);
-
-    currentPreviewPage = 0;
-    currentCropPhoto   = 0;
-    disableCrop        = false;
-    imageFormat        = JPEG;
-    printerName        = outputName(PDF);
-    captionType        = NONE;
-    captionColor       = QColor(Qt::yellow);
-    captionFont        = QFont(QLatin1String("Sans Serif"));
-    captionSize        = 4;
-    outputLayouts      = nullptr;
-    outputPrinter      = nullptr;
-    conflictRule       = FileSaveConflictBox::OVERWRITE;
-    openInFileBrowser  = true;
 }
 
 AdvPrintSettings::~AdvPrintSettings()
@@ -140,7 +140,7 @@ QMap<AdvPrintSettings::Output, QString> AdvPrintSettings::outputNames()
 
 QString AdvPrintSettings::format() const
 {
-    if (imageFormat == JPEG)
+    if      (imageFormat == JPEG)
     {
         return QLatin1String("JPEG");
     }
@@ -182,9 +182,11 @@ QRect* AdvPrintSettings::getLayout(int photoIndex, int sizeIndex) const
     AdvPrintPhotoSize* const s = photosizes.at(sizeIndex);
 
     // how many photos would actually be printed, including copies?
+
     int photoCount             = (photoIndex + 1);
 
     // how many pages?  Recall that the first layout item is the paper size
+
     int photosPerPage          = s->m_layouts.count() - 1;
     int remainder              = photoCount % photosPerPage;
     int retVal                 = (remainder == 0) ? photosPerPage : remainder;

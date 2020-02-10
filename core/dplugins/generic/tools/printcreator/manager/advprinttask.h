@@ -60,8 +60,8 @@ public:
 
     explicit AdvPrintTask(AdvPrintSettings* const settings,
                           PrintMode mode,
-                          const QSize& size = QSize(),        // For PREVIEW stage.
-                          int sizeIndex = 0);                 // For PREPAREPRINT stage.
+                          const QSize& size = QSize(),        ///< For PREVIEW stage.
+                          int sizeIndex = 0);                 ///< For PREPAREPRINT stage.
     ~AdvPrintTask();
 
 Q_SIGNALS:

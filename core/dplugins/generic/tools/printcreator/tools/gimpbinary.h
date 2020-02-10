@@ -20,8 +20,8 @@
  *
  * ============================================================ */
 
-#ifndef GIMP_BINARY_H
-#define GIMP_BINARY_H
+#ifndef DIGIKAM_GIMP_BINARY_H
+#define DIGIKAM_GIMP_BINARY_H
 
 // Local includes
 
@@ -38,13 +38,21 @@ public:
 
     GimpBinary()
         : DBinaryIface(
+
 #ifdef Q_OS_OSX
+
                        QLatin1String("GIMP-bin"),
+
 #elif defined Q_OS_WIN
+
                        QLatin1String("gimp-2.10"),
+
 #else
+
                        QLatin1String("gimp"),
+
 #endif
+
                        QLatin1String("The Gimp"),
                        QLatin1String("https://www.gimp.org/downloads/"),
                        QLatin1String("PrintCreator"),
@@ -62,4 +70,4 @@ public:
 
 } // namespace DigikamGenericPrintCreatorPlugin
 
-#endif // GIMP_BINARY_H
+#endif // DIGIKAM_GIMP_BINARY_H

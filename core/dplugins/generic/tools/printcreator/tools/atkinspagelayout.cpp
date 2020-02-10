@@ -43,8 +43,8 @@ class Q_DECL_HIDDEN AtkinsPageLayout::Private
 public:
 
     explicit Private()
+      : tree(nullptr)
     {
-        tree = nullptr;
     }
 
     QMap<int, int>        indexMap;
@@ -95,9 +95,13 @@ QRectF AtkinsPageLayout::itemRect(int key)
     if (it != d->indexMap.end())
     {
         // get rect relative to 0,0
+
         QRectF rect = d->tree->drawingArea(*it, d->pageRect);
+
         // translate to page rect origin
+
         rect.translate(d->pageRect.topLeft());
+
         return rect;
     }
 

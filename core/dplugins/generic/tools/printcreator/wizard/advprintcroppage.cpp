@@ -186,14 +186,22 @@ void AdvPrintCropPage::slotBtnCropNextClicked()
 void AdvPrintCropPage::setBtnCropEnabled()
 {
     if (d->settings->currentCropPhoto == 0)
+    {
         d->cropUi->BtnCropPrev->setEnabled(false);
+    }
     else
+    {
         d->cropUi->BtnCropPrev->setEnabled(true);
+    }
 
     if (d->settings->currentCropPhoto == (int)d->settings->photos.count() - 1)
+    {
         d->cropUi->BtnCropNext->setEnabled(false);
+    }
     else
+    {
         d->cropUi->BtnCropNext->setEnabled(true);
+    }
 }
 
 void AdvPrintCropPage::slotBtnCropRotateLeftClicked()
@@ -203,6 +211,7 @@ void AdvPrintCropPage::slotBtnCropRotateLeftClicked()
     // so we will initialize it to -2 in an awful hack (this
     // tells the cropFrame to reset the crop region, but don't
     // automatically rotate the image to fit.
+
     AdvPrintPhoto* const photo = d->settings->photos[d->settings->currentCropPhoto];
     photo->m_cropRegion        = QRect(-2, -2, -2, -2);
     photo->m_rotation          = (photo->m_rotation - 90) % 360;
@@ -217,6 +226,7 @@ void AdvPrintCropPage::slotBtnCropRotateRightClicked()
     // so we will initialize it to -2 in an awful hack (this
     // tells the cropFrame to reset the crop region, but don't
     // automatically rotate the image to fit.
+
     AdvPrintPhoto* const photo = d->settings->photos[d->settings->currentCropPhoto];
     photo->m_cropRegion        = QRect(-2, -2, -2, -2);
     photo->m_rotation          = (photo->m_rotation + 90) % 360;

@@ -64,7 +64,8 @@ public:
     void initializePage();
     bool validatePage();
 
-    /** Create a MxN grid of photos, fitting on the page.
+    /**
+     * Create a MxN grid of photos, fitting on the page.
      */
     void createPhotoGrid(AdvPrintPhotoSize* const p,
                          int pageWidth,
@@ -75,13 +76,15 @@ public:
 
     void manageBtnPreviewPage();
 
-    /** Initialize page layout to the given pageSize in mm.
+    /**
+     * Initialize page layout to the given pageSize in mm.
      */
     void initPhotoSizes(const QSizeF& pageSize);
 
 private:
 
-    /** To parse template file with 'fn' as filename, and 'pageSize' in mm.
+    /**
+     * To parse template file with 'fn' as filename, and 'pageSize' in mm.
      */
     void parseTemplateFile(const QString& fn,
                            const QSizeF& pageSize);
@@ -94,13 +97,15 @@ private Q_SLOTS:
 
     void slotXMLLoadElement(QXmlStreamReader&);
 
-    /** Save item list => we catch the signal to add
-     *  our PA attributes and elements Image children
+    /**
+     * Save item list => we catch the signal to add
+     * our PA attributes and elements Image children
      */
     void slotXMLSaveItem(QXmlStreamWriter&, int);
 
-    /** Save item list => we catch the signal to add
-     *  our PA elements (not per image)
+    /**
+     * Save item list => we catch the signal to add
+     * our PA elements (not per image)
      */
     void slotXMLCustomElement(QXmlStreamWriter&);
 

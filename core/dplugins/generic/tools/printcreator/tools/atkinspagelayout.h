@@ -21,8 +21,8 @@
  *
  * ============================================================ */
 
-#ifndef ATKINS_PAGE_LAYOUT_H
-#define ATKINS_PAGE_LAYOUT_H
+#ifndef DIGIKAM_ATKINS_PAGE_LAYOUT_H
+#define DIGIKAM_ATKINS_PAGE_LAYOUT_H
 
 // Qt includes
 
@@ -33,19 +33,17 @@ namespace DigikamGenericPrintCreatorPlugin
 {
 
 /**
-    Implements the algorithm described in
-
-    "Adaptive Photo Collection Page Layout",
-    C. Brian Atkins
-    Imaging Technology Department
-    HP Labs
-    Palo Alto, CA 94304
-    cbatkins@hpl.hp.com
-
-    PDF available at:
-    http://hpl.hp.com/research/isl/layout/
-*/
-
+ * Implements the algorithm described in
+ * "Adaptive Photo Collection Page Layout",
+ * C. Brian Atkins
+ * Imaging Technology Department
+ * HP Labs
+ * Palo Alto, CA 94304
+ * cbatkins@hpl.hp.com
+ *
+ * PDF available at:
+ * http://hpl.hp.com/research/isl/layout/
+ */
 class AtkinsPageLayout
 {
 public:
@@ -89,4 +87,4 @@ private:
 
 } // Namespace Digikam
 
-#endif // ATKINS_PAGE_LAYOUT_H
+#endif // DIGIKAM_ATKINS_PAGE_LAYOUT_H

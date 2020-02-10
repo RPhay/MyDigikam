@@ -167,7 +167,9 @@ void AdvPrintOutputPage::initializePage()
 bool AdvPrintOutputPage::validatePage()
 {
     if (d->destUrl->fileDlgPath().isEmpty())
+    {
         return false;
+    }
 
     d->settings->outputDir         = QUrl::fromLocalFile(d->destUrl->fileDlgPath());
     d->settings->conflictRule      = d->conflictBox->conflictRule();

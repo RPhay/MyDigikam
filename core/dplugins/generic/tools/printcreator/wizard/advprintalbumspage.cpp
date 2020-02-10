@@ -85,14 +85,19 @@ AdvPrintAlbumsPage::~AdvPrintAlbumsPage()
 bool AdvPrintAlbumsPage::validatePage()
 {
     if (!d->iface)
+    {
         return false;
+    }
 
     if (d->iface->albumChooserItems().isEmpty())
+    {
         return false;
+    }
 
     d->wizard->settings()->inputImages.clear();
 
     // update image list with album contents.
+
     foreach (const QUrl& url, d->iface->albumsItems(d->iface->albumChooserItems()))
     {
         d->wizard->settings()->inputImages << url;
@@ -104,7 +109,9 @@ bool AdvPrintAlbumsPage::validatePage()
 bool AdvPrintAlbumsPage::isComplete() const
 {
     if (!d->iface)
+    {
         return false;
+    }
 
     return (!d->iface->albumChooserItems().isEmpty());
 }

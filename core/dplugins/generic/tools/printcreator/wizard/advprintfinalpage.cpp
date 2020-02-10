@@ -114,7 +114,9 @@ AdvPrintFinalPage::AdvPrintFinalPage(QWizard* const dialog, const QString& title
 AdvPrintFinalPage::~AdvPrintFinalPage()
 {
     if (d->printThread)
+    {
         d->printThread->cancel();
+    }
 
     delete d;
 }
@@ -127,7 +129,9 @@ void AdvPrintFinalPage::setPhotoPage(AdvPrintPhotoPage* const photoPage)
 void AdvPrintFinalPage::initializePage()
 {
     d->complete = false;
+
     emit completeChanged();
+
     QTimer::singleShot(0, this, SLOT(slotProcess()));
 }
 
@@ -160,6 +164,7 @@ void AdvPrintFinalPage::slotProcess()
     d->progressBar->setMaximum(d->settings->photos.count());
 
     // set the default crop regions if not already set
+
     int sizeIndex              = d->photoPage->ui()->ListPhotoSizes->currentRow();
     d->settings->outputLayouts = d->settings->photosizes.at(sizeIndex);
     d->printThread             = new AdvPrintThread(this);
@@ -236,7 +241,7 @@ void AdvPrintFinalPage::slotDone(bool completed)
         d->progressView->addEntry(i18n("Printing process completed."),
                                   DHistoryView::ProgressEntry);
 
-        if (d->settings->printerName == d->settings->outputName(AdvPrintSettings::FILES))
+        if      (d->settings->printerName == d->settings->outputName(AdvPrintSettings::FILES))
         {
             if (d->settings->openInFileBrowser)
             {
@@ -302,6 +307,7 @@ void AdvPrintFinalPage::removeGimpFiles()
 bool AdvPrintFinalPage::checkTempPath(const QString& tempPath) const
 {
     // does the temp path exist?
+
     QDir tempDir(tempPath);
 
     if (!tempDir.exists())
@@ -324,10 +330,11 @@ bool AdvPrintFinalPage::print()
 {
     // Real printer to use.
 
-    if (d->settings->printerName != d->settings->outputName(AdvPrintSettings::FILES) &&
-        d->settings->printerName != d->settings->outputName(AdvPrintSettings::GIMP))
+    if ((d->settings->printerName != d->settings->outputName(AdvPrintSettings::FILES)) &&
+        (d->settings->printerName != d->settings->outputName(AdvPrintSettings::GIMP)))
     {
         // tell him again!
+
         d->photoPage->printer()->setFullPage(true);
 
         qreal left, top, right, bottom;
@@ -371,6 +378,7 @@ bool AdvPrintFinalPage::print()
                                      << dialog->printer()->paperSize(QPrinter::Millimeter);
 
         // Why paperSize changes if printer properties is not pressed?
+
         if (paperSize != d->photoPage->printer()->paperSize())
         {
             d->photoPage->printer()->setPaperSize(paperSize);

@@ -255,6 +255,7 @@ QStringList AdvPrintTask::printPhotosToFile()
     {
         // make a pixmap to save to file.  Make it just big enough to show the
         // highest-dpi image on the page without losing data.
+
         double dpi       = layouts->m_dpi;
 
         if (dpi == 0.0)
@@ -333,7 +334,9 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
     if (photos.count() == 0)
     {
         qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "no photo to print";
+
         // no photos => last photo
+
         return true;
     }
 
@@ -344,6 +347,7 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
 
     // scale the page size to best fit the painter
     // size the rectangle based on the minimum image dimension
+
     int destW = p.window().width();
     int destH = p.window().height();
     int srcW  = srcPage->width();
@@ -376,6 +380,7 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
     int top       = (p.window().height() - destH) / 2;
 
     // FIXME: may not want to erase the background page
+
     p.eraseRect(left, top,
                 AdvPrintWizard::normalizedInt((double) srcPage->width()  * xRatio),
                 AdvPrintWizard::normalizedInt((double) srcPage->height() * yRatio));
@@ -383,7 +388,9 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
     for ( ; (current < photos.count()) && !m_cancel ; ++current)
     {
         AdvPrintPhoto* const photo = photos.at(current);
+
         // crop
+
         QImage img;
 
         if (useThumbnails)
@@ -396,9 +403,11 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
         }
 
         // next, do we rotate?
+
         if (photo->m_rotation != 0)
         {
             // rotate
+
             QMatrix matrix;
             matrix.rotate(photo->m_rotation);
             img = img.transformed(matrix);
@@ -407,6 +416,7 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
         if (useThumbnails)
         {
             // scale the crop region to thumbnail coords
+
             double xRatio = 0.0;
             double yRatio = 0.0;
 
@@ -474,19 +484,20 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
         p.setBrushOrigin(point);
 
         if (photo->m_pAdvPrintCaptionInfo &&
-            photo->m_pAdvPrintCaptionInfo->m_captionType != AdvPrintSettings::NONE)
+            (photo->m_pAdvPrintCaptionInfo->m_captionType != AdvPrintSettings::NONE))
         {
             p.save();
             QString caption = AdvPrintCaptionPage::captionFormatter(photo);
 
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Caption for"
-                                         << photo->m_url
-                                         << ":"
-                                         << caption;
+                                                 << photo->m_url
+                                                 << ":"
+                                                 << caption;
 
             // draw the text at (0,0), but we will translate and rotate the world
             // before drawing so the text will be in the correct location
             // next, do we rotate?
+
             int captionW        = w - 2;
             double ratio        = photo->m_pAdvPrintCaptionInfo->m_captionSize * 0.01;
             int captionH        = (int)(qMin(w, h) * ratio);
@@ -508,15 +519,17 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
 
             // ROT_90_HFLIP .. ROT_270
 
-            if (exifOrientation == DMetadata::ORIENTATION_ROT_90_HFLIP ||
-                exifOrientation == DMetadata::ORIENTATION_ROT_90       ||
-                exifOrientation == DMetadata::ORIENTATION_ROT_90_VFLIP ||
-                exifOrientation == DMetadata::ORIENTATION_ROT_270)
+            if (
+                (exifOrientation == DMetadata::ORIENTATION_ROT_90_HFLIP) ||
+                (exifOrientation == DMetadata::ORIENTATION_ROT_90)       ||
+                (exifOrientation == DMetadata::ORIENTATION_ROT_90_VFLIP) ||
+                (exifOrientation == DMetadata::ORIENTATION_ROT_270)
+               )
             {
                 orientatation = (photo->m_rotation + 270) % 360;   // -90 degrees
             }
 
-            if (orientatation == 90 || orientatation == 270)
+            if ((orientatation == 90) || (orientatation == 270))
             {
                 captionW = h;
             }
@@ -537,18 +550,21 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
                     ty += y1 + (h - captionH - 1);
                     break;
                 }
+
                 case 90:
                 {
                     tx = top + y1 + 1;
                     ty = -left - x1 - captionH - 1;
                     break;
                 }
+
                 case 180:
                 {
                     tx = -left - x1 - w + 1;
                     ty = -top - y1 - (captionH + 1);
                     break;
                 }
+
                 case 270:
                 {
                     tx = -top - y1 - h + 1;
@@ -563,6 +579,7 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
         }
 
         // iterate to the next position
+
         ++it;
         layout = (it == layouts.end()) ? nullptr : static_cast<QRect*>(*it);
 
@@ -574,6 +591,7 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
     }
 
     // did we print the last photo?
+
     return (current < photos.count());
 }
 
@@ -599,6 +617,7 @@ double AdvPrintTask::getMaxDPI(const QList<AdvPrintPhoto*>& photos,
             maxDPI = dpi;
 
         // iterate to the next position
+
         ++it;
         layout = (it == layouts.end()) ? nullptr : static_cast<QRect*>(*it);
 
@@ -629,12 +648,13 @@ void AdvPrintTask::printCaption(QPainter& p,
 
         // Check minimal lines dimension
         // TODO: fix length, maybe useless
+
         int captionLineLocalLength = 40;
 
         for (currIndex = captionIndex ;
              currIndex < caption.length() && !breakLine ; ++currIndex)
         {
-            if (caption[currIndex] == QLatin1Char('\n') ||
+            if ((caption[currIndex] == QLatin1Char('\n')) ||
                 caption[currIndex].isSpace())
             {
                 breakLine = true;
@@ -656,9 +676,13 @@ void AdvPrintTask::printCaption(QPainter& p,
             breakLine = (caption[currIndex] == QLatin1Char('\n')) ? true : false;
 
             if (breakLine)
+            {
                 newLine.append(QLatin1Char(' '));
+            }
             else
+            {
                 newLine.append(caption[currIndex]);
+            }
         }
 
         captionIndex = currIndex; // The line is ended
@@ -691,6 +715,7 @@ void AdvPrintTask::printCaption(QPainter& p,
 
     // Now draw the caption
     // TODO allow printing captions  per photo and on top, bottom and vertically
+
     for (int lineNumber = 0 ;
          lineNumber < (int) captionByLines.count() ; ++lineNumber)
     {

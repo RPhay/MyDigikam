@@ -69,7 +69,8 @@ public Q_SLOTS:
 
 private:
 
-    /** Fix caption group layout according to captions combobox text.
+    /**
+     * Fix caption group layout according to captions combobox text.
      */
     void enableCaptionGroup(int);
 

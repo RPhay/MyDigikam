@@ -275,6 +275,7 @@ void AdvPrintWizard::previewPhotos()
     d->previewThread->cancel();
 
     // get the selected layout
+
     int photoCount             = d->settings->photos.count();
     int curr                   = d->photoPage->ui()->ListPhotoSizes->currentRow();
     AdvPrintPhotoSize* const s = d->settings->photosizes.at(curr);
@@ -285,6 +286,7 @@ void AdvPrintWizard::previewPhotos()
     if (photoCount > 0)
     {
         // how many pages?  Recall that the first layout item is the paper size
+
         photosPerPage = s->m_layouts.count() - 1;
         int remainder = photoCount % photosPerPage;
 
@@ -310,6 +312,7 @@ void AdvPrintWizard::previewPhotos()
         // photo previews
         // preview the first page.
         // find the first page of photos
+
         int count   = 0;
         int page    = 0;
         int current = 0;
@@ -383,7 +386,7 @@ int AdvPrintWizard::normalizedInt(double n)
 
 bool AdvPrintWizard::eventFilter(QObject* o, QEvent* e)
 {
-    if (e && e->type() == QEvent::KeyRelease)
+    if (e && (e->type() == QEvent::KeyRelease))
     {
         QKeyEvent* const k = (QKeyEvent*)e;
 
@@ -395,8 +398,10 @@ bool AdvPrintWizard::eventFilter(QObject* o, QEvent* e)
             if (currentPage() == d->cropPage)
             {
                 // Pass the key event to move crop frame region.
+
                 d->cropPage->ui()->cropFrame->setFocus();
                 QApplication::sendEvent(d->cropPage->ui()->cropFrame, e);
+
                 return true; // eat event
             }
         }
