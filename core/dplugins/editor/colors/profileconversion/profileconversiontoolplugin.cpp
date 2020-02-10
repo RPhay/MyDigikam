@@ -161,8 +161,10 @@ void ProfileConversionToolPlugin::slotUpdateColorSpaceMenu()
     {
         ICCSettingsContainer settings = IccSettings::instance()->settings();
 
-        QList<IccProfile> standardProfiles, favoriteProfiles;
-        QSet<QString> standardProfilePaths, favoriteProfilePaths;
+        QList<IccProfile> standardProfiles;
+        QList<IccProfile> favoriteProfiles;
+        QSet<QString> standardProfilePaths;
+
         standardProfiles << IccProfile::sRGB()
                          << IccProfile::adobeRGB()
                          << IccProfile::wideGamutRGB()
@@ -176,8 +178,9 @@ void ProfileConversionToolPlugin::slotUpdateColorSpaceMenu()
 
         m_profileMenuAction->addSeparator();
 
-        favoriteProfilePaths  = QSet<QString>::fromList(ProfileConversionTool::favoriteProfiles());
-        favoriteProfilePaths -= standardProfilePaths;
+        QStringList profilesList = ProfileConversionTool::favoriteProfiles();
+        QSet<QString> favoriteProfilePaths(profilesList.begin(), profilesList.end());
+        favoriteProfilePaths    -= standardProfilePaths;
 
         foreach (const QString& path, favoriteProfilePaths)
         {
