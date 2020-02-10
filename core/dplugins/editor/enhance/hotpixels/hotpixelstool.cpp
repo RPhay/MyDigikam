@@ -34,6 +34,7 @@
 #include <QPushButton>
 #include <QIcon>
 #include <QApplication>
+#include <QPointer>
 
 // KDE includes
 
