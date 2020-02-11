@@ -71,6 +71,8 @@ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/libheif/heif_version.h.in"
                "${CMAKE_CURRENT_BINARY_DIR}/libheif/heif_version.h"
 )
 
+# NOTE: definition shared between libheif and plugin
+add_definitions(-DLIBHEIF_STATIC_BUILD)
 
 set(libheif_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/libheif/bitstream.cc
@@ -119,7 +121,6 @@ endif()
 target_compile_definitions(libheif_obj
                            PRIVATE
                            HAVE_LIBDE265=1
-                           LIBHEIF_STATIC_BUILD
 )
 
 if(X265_FOUND)
@@ -139,6 +140,9 @@ set(PACKAGE_VERSION 1.0.0)
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/libde265/de265-version.h.in"
                "${CMAKE_CURRENT_BINARY_DIR}/libde265/de265-version.h"
 )
+
+# NOTE: definition shared between libde265 and plugin
+add_definitions(-DLIBDE265_STATIC_BUILD)
 
 set(libde265_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/libde265/bitstream.cc
@@ -218,7 +222,7 @@ add_library(libde265_obj OBJECT ${libde265_SRCS})
 
 if(MSVC)
 
-    target_compile_options(libde265_obj PRIVATE /w)
+    target_compile_options(libde265_obj PRIVATE /w /wd4267 /wd4244)
 
 else()
 
@@ -226,12 +230,8 @@ else()
 
 endif()
 
-target_compile_definitions(libde265_obj
-                           PRIVATE
-                           LIBDE265_STATIC_BUILD
-)
-
 # Plugin compilation rules #######################################################
+
 
 set(dimgheifplugin_SRCS
     $<TARGET_OBJECTS:libheif_obj>
