@@ -320,9 +320,9 @@ QSize Setup::sizeHint() const
                 continue;
             }
 
-            QWidget* const page           = item->widget();
-            maxHintHeight                 = qMax(maxHintHeight, page->sizeHint().height());
-            QScrollArea* const scrollArea = qobject_cast<QScrollArea*>(page);
+            QWidget* const wdg            = item->widget();
+            maxHintHeight                 = qMax(maxHintHeight, wdg->sizeHint().height());
+            QScrollArea* const scrollArea = qobject_cast<QScrollArea*>(wdg);
 
             if (scrollArea)
             {
