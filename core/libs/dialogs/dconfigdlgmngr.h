@@ -63,7 +63,6 @@ namespace Digikam
  */
 class DIGIKAM_EXPORT DConfigDlgMngr : public QObject
 {
-
     Q_OBJECT
 
 Q_SIGNALS:
@@ -81,7 +80,7 @@ Q_SIGNALS:
      * contains the one or more modified setting.
      * @see settingsChanged()
      */
-    void settingsChanged(QWidget *widget);
+    void settingsChanged(QWidget* widget);
 
     /**
      * If retrieveSettings() was told to track changes then if
@@ -99,7 +98,7 @@ public:
      * @param parent Dialog widget to manage
      * @param conf Object that contains settings
      */
-    DConfigDlgMngr(QWidget *parent, KConfigSkeleton* conf);
+    DConfigDlgMngr(QWidget* const parent, KConfigSkeleton* const conf);
 
     /**
      * Destructor.
@@ -110,7 +109,7 @@ public:
      * Add additional widgets to manage
      * @param widget Additional widget to manage, including all its children
      */
-    void addWidget(QWidget *widget);
+    void addWidget(QWidget* const widget);
 
     /**
      * Returns whether the current state of the known widgets are
@@ -122,7 +121,7 @@ public:
      * Returns whether the current state of the known widgets are
      * the same as the default state in the config object.
      */
-    bool isDefault() const;
+    bool isDefault()  const;
 
     /**
      * Retrieve the map between widgets class names and the
@@ -134,7 +133,7 @@ public:
      * Retrieve the map between widgets class names and signals that are listened
      * to detect changes in the configuration values.
      */
-    static QHash<QString, QByteArray> *changedMap();
+    static QHash<QString, QByteArray>* changedMap();
 
 public Q_SLOTS:
 
@@ -182,25 +181,25 @@ protected:
      * widget that are known.
      * @return bool - If a widget was set to something other than its default.
      */
-    bool parseChildren(const QWidget *widget, bool trackChanges);
+    bool parseChildren(const QWidget* widget, bool trackChanges);
 
     /**
      * Finds the USER property name using Qt's MetaProperty system, and caches
      * it in the property map (the cache could be retrieved by propertyMap() ).
      */
-    QByteArray getUserProperty(const QWidget *widget) const;
+    QByteArray getUserProperty(const QWidget* widget)                const;
 
     /**
      * Find the property to use for a widget by querying the "kcfg_property"
      * property of the widget. Like a widget can use a property other than the
      * USER property.
      */
-    QByteArray getCustomProperty(const QWidget *widget) const;
+    QByteArray getCustomProperty(const QWidget* widget)              const;
 
     /**
      * Finds the changed signal of the USER property using Qt's MetaProperty system.
      */
-    QByteArray getUserPropertyChangedSignal(const QWidget *widget) const;
+    QByteArray getUserPropertyChangedSignal(const QWidget* widget)   const;
 
     /**
      * Find the changed signal of the property to use for a widget by querying

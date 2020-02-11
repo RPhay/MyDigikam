@@ -57,7 +57,7 @@ class DConfigDlgMngr::Private
 {
 public:
 
-    Private(DConfigDlgMngr* q)
+    Private(DConfigDlgMngr* const q)
         : q(q),
           conf(nullptr),
           dialog(nullptr),
@@ -67,26 +67,26 @@ public:
 
 public:
 
-    DConfigDlgMngr* const q;
+    DConfigDlgMngr* const    q;
 
     /**
      * Skeleton object used to store settings
      */
-    KConfigSkeleton*            conf;
+    KConfigSkeleton*         conf;
 
     /**
      * Dialog being managed
      */
-    QWidget*                    dialog;
+    QWidget*                 dialog;
 
-    QHash<QString, QWidget *>   knownWidget;
-    QHash<QString, QWidget *>   buddyWidget;
-    QSet<QWidget*>              allExclusiveGroupBoxes;
-    bool                        insideGroupBox : 1;
-    bool                        trackChanges   : 1;
+    QHash<QString, QWidget*> knownWidget;
+    QHash<QString, QWidget*> buddyWidget;
+    QSet<QWidget*>           allExclusiveGroupBoxes;
+    bool                     insideGroupBox : 1;
+    bool                     trackChanges   : 1;
 };
 
-DConfigDlgMngr::DConfigDlgMngr(QWidget *parent, KConfigSkeleton *conf)
+DConfigDlgMngr::DConfigDlgMngr(QWidget* const parent, KConfigSkeleton* const conf)
     : QObject(parent),
       d(new Private(this))
 {
@@ -124,14 +124,14 @@ void DConfigDlgMngr::initMaps()
     }
 }
 
-QHash<QString, QByteArray> *DConfigDlgMngr::propertyMap()
+QHash<QString, QByteArray>* DConfigDlgMngr::propertyMap()
 {
     initMaps();
 
     return s_propertyMap();
 }
 
-QHash<QString, QByteArray> *DConfigDlgMngr::changedMap()
+QHash<QString, QByteArray>* DConfigDlgMngr::changedMap()
 {
     initMaps();
 
@@ -148,12 +148,12 @@ void DConfigDlgMngr::init(bool trackChanges)
     (void)parseChildren(d->dialog, trackChanges);
 }
 
-void DConfigDlgMngr::addWidget(QWidget *widget)
+void DConfigDlgMngr::addWidget(QWidget* const widget)
 {
     (void)parseChildren(widget, true);
 }
 
-void DConfigDlgMngr::setupWidget(QWidget *widget, KConfigSkeletonItem *item)
+void DConfigDlgMngr::setupWidget(QWidget* widget, KConfigSkeletonItem* item)
 {
     QVariant minValue = item->minValue();
 
@@ -218,14 +218,19 @@ void DConfigDlgMngr::setupWidget(QWidget *widget, KConfigSkeletonItem *item)
 
         if (item->property().type() == QVariant::Int)
         {
-            QObjectList children = gb->children();
+            QObjectList children                  = gb->children();
             children.removeAll(gb->layout());
-            const QList<QAbstractButton*> buttons = gb->findChildren<QAbstractButton *>();
+            const QList<QAbstractButton*> buttons = gb->findChildren<QAbstractButton*>();
             bool allAutoExclusiveDirectChildren   = true;
 
             for (QAbstractButton* const button : buttons)
             {
-                allAutoExclusiveDirectChildren = allAutoExclusiveDirectChildren && button->autoExclusive() && (button->parent() == gb);
+                // cppcheck-suppress useStlAlgorithm
+                allAutoExclusiveDirectChildren = (
+                                                  allAutoExclusiveDirectChildren &&
+                                                  button->autoExclusive()        &&
+                                                  (button->parent() == gb)
+                                                 );
             }
 
             if (allAutoExclusiveDirectChildren)
@@ -241,7 +246,7 @@ void DConfigDlgMngr::setupWidget(QWidget *widget, KConfigSkeletonItem *item)
     }
 }
 
-bool DConfigDlgMngr::parseChildren(const QWidget *widget, bool trackChanges)
+bool DConfigDlgMngr::parseChildren(const QWidget* widget, bool trackChanges)
 {
     bool valueChanged                    = false;
     const QList<QObject*> listOfChildren = widget->children();
@@ -253,7 +258,7 @@ bool DConfigDlgMngr::parseChildren(const QWidget *widget, bool trackChanges)
 
     const QMetaMethod widgetModifiedSignal = metaObject()->method(metaObject()->indexOfSignal("widgetModified()"));
 
-    Q_ASSERT(widgetModifiedSignal.isValid() && metaObject()->indexOfSignal("widgetModified()") >= 0);
+    Q_ASSERT(widgetModifiedSignal.isValid() && (metaObject()->indexOfSignal("widgetModified()") >= 0));
 
     for (QObject* const object : listOfChildren)
     {
@@ -262,17 +267,18 @@ bool DConfigDlgMngr::parseChildren(const QWidget *widget, bool trackChanges)
             continue;    // Skip non-widgets
         }
 
-        QWidget* childWidget     = static_cast<QWidget *>(object);
-        QString widgetName       = childWidget->objectName();
-        bool bParseChildren      = true;
-        bool bSaveInsideGroupBox = d->insideGroupBox;
+        QWidget* const childWidget = static_cast<QWidget*>(object);
+        QString widgetName         = childWidget->objectName();
+        bool bParseChildren        = true;
+        bool bSaveInsideGroupBox   = d->insideGroupBox;
 
-        if (widgetName.startsWith(QLatin1String("kcfg_")))
+        if      (widgetName.startsWith(QLatin1String("kcfg_")))
         {
             // This is one of our widgets!
 
             QString configId                = widgetName.mid(5);
             KConfigSkeletonItem* const item = d->conf->findItem(configId);
+
             if (item)
             {
                 d->knownWidget.insert(configId, childWidget);
@@ -285,7 +291,7 @@ bool DConfigDlgMngr::parseChildren(const QWidget *widget, bool trackChanges)
 
                     if (d->allExclusiveGroupBoxes.contains(childWidget))
                     {
-                        const QList<QAbstractButton*> buttons = childWidget->findChildren<QAbstractButton *>();
+                        const QList<QAbstractButton*> buttons = childWidget->findChildren<QAbstractButton*>();
 
                         for (QAbstractButton* const button : buttons)
                         {
@@ -370,10 +376,12 @@ bool DConfigDlgMngr::parseChildren(const QWidget *widget, bool trackChanges)
             }
             else
             {
-               qCWarning(DIGIKAM_GENERAL_LOG) << "A widget named '" << widgetName << "' was found but there is no setting named '" << configId << "'";
+               qCWarning(DIGIKAM_GENERAL_LOG) << "A widget named '" << widgetName 
+                                              << "' was found but there is no setting named '" 
+                                              << configId << "'";
             }
         }
-        else if (QLabel* const label = qobject_cast<QLabel *>(childWidget))
+        else if (QLabel* const label = qobject_cast<QLabel*>(childWidget))
         {
             QWidget* const buddy = label->buddy();
 
@@ -498,7 +506,7 @@ void DConfigDlgMngr::updateSettings()
     }
 }
 
-QByteArray DConfigDlgMngr::getUserProperty(const QWidget *widget) const
+QByteArray DConfigDlgMngr::getUserProperty(const QWidget* widget) const
 {
     if (!s_propertyMap()->contains(QString::fromUtf8(widget->metaObject()->className())))
     {
@@ -511,18 +519,18 @@ QByteArray DConfigDlgMngr::getUserProperty(const QWidget *widget) const
         }
         else
         {
-            return QByteArray(); //no USER property
+            return QByteArray(); // no USER property
         }
     }
 
-    const QComboBox* const cb = qobject_cast<const QComboBox *>(widget);
+    const QComboBox* const cb = qobject_cast<const QComboBox*>(widget);
 
     if (cb)
     {
         const char* const qcomboUserPropertyName = cb->QComboBox::metaObject()->userProperty().name();
         const int qcomboUserPropertyIndex        = qcomboUserPropertyName ? cb->QComboBox::metaObject()->indexOfProperty(qcomboUserPropertyName) : -1;
         const char* const widgetUserPropertyName = widget->metaObject()->userProperty().name();
-        const int widgetUserPropertyIndex        = widgetUserPropertyName ? cb->metaObject()->indexOfProperty(widgetUserPropertyName) : -1;
+        const int widgetUserPropertyIndex        = widgetUserPropertyName ? cb->metaObject()->indexOfProperty(widgetUserPropertyName)            : -1;
 
         // no custom user property set on subclass of QComboBox?
 
@@ -535,7 +543,7 @@ QByteArray DConfigDlgMngr::getUserProperty(const QWidget *widget) const
     return s_propertyMap()->value(QString::fromUtf8(widget->metaObject()->className()));
 }
 
-QByteArray DConfigDlgMngr::getCustomProperty(const QWidget *widget) const
+QByteArray DConfigDlgMngr::getCustomProperty(const QWidget* widget) const
 {
     QVariant prop(widget->property("kcfg_property"));
 
@@ -555,7 +563,7 @@ QByteArray DConfigDlgMngr::getCustomProperty(const QWidget *widget) const
     return QByteArray();
 }
 
-QByteArray DConfigDlgMngr::getUserPropertyChangedSignal(const QWidget *widget) const
+QByteArray DConfigDlgMngr::getUserPropertyChangedSignal(const QWidget* widget) const
 {
     QHash<QString, QByteArray>::const_iterator changedIt = s_changedMap()->constFind(QString::fromUtf8(widget->metaObject()->className()));
 
@@ -593,11 +601,11 @@ QByteArray DConfigDlgMngr::getCustomPropertyChangedSignal(const QWidget *widget)
     return QByteArray();
 }
 
-void DConfigDlgMngr::setProperty(QWidget *w, const QVariant &v)
+void DConfigDlgMngr::setProperty(QWidget* w, const QVariant& v)
 {
     if (d->allExclusiveGroupBoxes.contains(w))
     {
-        const QList<QAbstractButton*> buttons = w->findChildren<QAbstractButton *>();
+        const QList<QAbstractButton*> buttons = w->findChildren<QAbstractButton*>();
 
         if (v.toInt() < buttons.count())
         {
@@ -651,13 +659,13 @@ void DConfigDlgMngr::setProperty(QWidget *w, const QVariant &v)
     w->setProperty(userproperty.constData(), v);
 }
 
-QVariant DConfigDlgMngr::property(QWidget *w) const
+QVariant DConfigDlgMngr::property(QWidget* w) const
 {
     if (d->allExclusiveGroupBoxes.contains(w))
     {
-        const QList<QAbstractButton *> buttons = w->findChildren<QAbstractButton *>();
+        const QList<QAbstractButton*> buttons = w->findChildren<QAbstractButton*>();
 
-        for (int i = 0; i < buttons.count(); ++i)
+        for (int i = 0 ; i < buttons.count() ; ++i)
         {
             if (buttons[i]->isChecked())
             {
