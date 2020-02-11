@@ -151,9 +151,8 @@ void HotPixelsWeights::calculateHotPixelsWeights()
     {
         // In the one-dimensional case, only the y coordinate and y size is used.
 
-        int low = (-1)*mPolynomeOrder;
-
-        for (y = low ; y < 0 ; ++y)
+        // cppcheck-suppress signConversion
+        for (y = (-1)*mPolynomeOrder ; y < 0 ; ++y)
         {
             QPoint position(0, y);
             mPositions.append(position);
