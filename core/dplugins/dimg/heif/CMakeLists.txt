@@ -19,6 +19,8 @@ include_directories($<TARGET_PROPERTY:Qt5::Gui,INTERFACE_INCLUDE_DIRECTORIES>
 include(CheckFunctionExists)
 include(CheckIncludeFile)
 
+# Common libheif and libde265 system features detection #############################
+
 CHECK_FUNCTION_EXISTS(posix_memalign HAVE_POSIX_MEMALIGN)
 CHECK_INCLUDE_FILE(malloc.h HAVE_MALLOC_H)
 CHECK_INCLUDE_FILE(stdint.h HAVE_STDINT_H)
@@ -60,7 +62,7 @@ if(HAVE_POSIX_MEMALIGN)
     add_definitions(-DHAVE_POSIX_MEMALIGN)
 endif()
 
-add_definitions(-DHAVE_LIBDE265=1)
+# Libheif compilation rules ##########################################################
 
 set(NUMERIC_VERSION 0x01050100)
 set(PACKAGE_VERSION 1.5.1)
@@ -69,14 +71,6 @@ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/libheif/heif_version.h.in"
                "${CMAKE_CURRENT_BINARY_DIR}/libheif/heif_version.h"
 )
 
-set(NUMERIC_VERSION 0x01000000)
-set(PACKAGE_VERSION 1.0.0)
-
-configure_file("${CMAKE_CURRENT_SOURCE_DIR}/libde265/de265-version.h.in"
-               "${CMAKE_CURRENT_BINARY_DIR}/libde265/de265-version.h"
-)
-
-add_definitions(-DLIBHEIF_STATIC_BUILD)
 
 set(libheif_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/libheif/bitstream.cc
@@ -94,7 +88,6 @@ set(libheif_SRCS
 )
 
 if(X265_FOUND)
-    add_definitions(-DHAVE_X265=1)
     include_directories(${X265_INCLUDE_DIRS})
     set(libheif_SRCS ${libheif_SRCS}
         ${CMAKE_CURRENT_SOURCE_DIR}/libheif/heif_encoder_x265.cc
@@ -103,15 +96,49 @@ else()
     set(X265_LIBRARIES "")
 endif()
 
-foreach(_currentfile ${libheif_SRCS})
-    if(MSVC)
-        set_source_files_properties(${_currentfile} PROPERTIES COMPILE_FLAGS /w)
-    else()
-        set_source_files_properties(${_currentfile} PROPERTIES COMPILE_FLAGS "-w")
-    endif()
+# Don't process automoc on libheif headers
+
+file(GLOB_RECURSE heif_headers ${CMAKE_CURRENT_SOURCE_DIR}/libheif/*.h)
+
+foreach(_file ${heif_headers})
+    set_property(SOURCE ${_file} PROPERTY SKIP_AUTOMOC ON)
 endforeach()
 
-add_definitions(-DLIBDE265_STATIC_BUILD)
+add_library(libheif_obj OBJECT ${libheif_SRCS})
+
+if(MSVC)
+
+    target_compile_options(libheif_obj PRIVATE /w)
+
+else()
+
+    target_compile_options(libheif_obj PRIVATE -w)
+
+endif()
+
+target_compile_definitions(libheif_obj
+                           PRIVATE
+                           HAVE_LIBDE265=1
+                           LIBHEIF_STATIC_BUILD
+)
+
+if(X265_FOUND)
+
+    target_compile_definitions(libheif_obj
+                               PRIVATE
+                               HAVE_X265=1
+    )
+
+endif()
+
+# Libde265 compilation rules ##########################################################
+
+set(NUMERIC_VERSION 0x01000000)
+set(PACKAGE_VERSION 1.0.0)
+
+configure_file("${CMAKE_CURRENT_SOURCE_DIR}/libde265/de265-version.h.in"
+               "${CMAKE_CURRENT_BINARY_DIR}/libde265/de265-version.h"
+)
 
 set(libde265_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/libde265/bitstream.cc
@@ -179,21 +206,7 @@ if(WIN32)
     )
 endif()
 
-foreach(_currentfile ${libde265_SRCS})
-    if(MSVC)
-        set_source_files_properties(${_currentfile} PROPERTIES COMPILE_FLAGS /w)
-    else()
-        set_source_files_properties(${_currentfile} PROPERTIES COMPILE_FLAGS "-w")
-    endif()
-endforeach()
-
-# Don't process automoc on libheif and libde265 headers
-
-file(GLOB_RECURSE heif_headers ${CMAKE_CURRENT_SOURCE_DIR}/libheif/*.h)
-
-foreach(_file ${heif_headers})
-    set_property(SOURCE ${_file} PROPERTY SKIP_AUTOMOC ON)
-endforeach()
+# Don't process automoc on libde265 headers
 
 file(GLOB_RECURSE de265_headers ${CMAKE_CURRENT_SOURCE_DIR}/libde265/*.h)
 
@@ -201,9 +214,28 @@ foreach(_file ${de265_headers})
     set_property(SOURCE ${_file} PROPERTY SKIP_AUTOMOC ON)
 endforeach()
 
+add_library(libde265_obj OBJECT ${libde265_SRCS})
+
+if(MSVC)
+
+    target_compile_options(libde265_obj PRIVATE /w)
+
+else()
+
+    target_compile_options(libde265_obj PRIVATE -w)
+
+endif()
+
+target_compile_definitions(libde265_obj
+                           PRIVATE
+                           LIBDE265_STATIC_BUILD
+)
+
+# Plugin compilation rules #######################################################
+
 set(dimgheifplugin_SRCS
-    ${libheif_SRCS}
-    ${libde265_SRCS}
+    $<TARGET_OBJECTS:libheif_obj>
+    $<TARGET_OBJECTS:libde265_obj>
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgheifplugin.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgheifloader.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dimgheifloader_load.cpp
