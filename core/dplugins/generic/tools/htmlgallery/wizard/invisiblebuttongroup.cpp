@@ -28,9 +28,11 @@
 #include <QAbstractButton>
 #include <QButtonGroup>
 
-// KDE includes
+// Local includes
 
-#include <kconfigdialogmanager.h>
+#include "dconfigdlgmngr.h"
+
+using namespace Digikam;
 
 namespace DigikamGenericHtmlGalleryPlugin
 {
@@ -61,10 +63,10 @@ InvisibleButtonGroup::InvisibleButtonGroup(QWidget* const parent)
 
     const QString name = QString::fromLatin1(metaObject()->className());
 
-    if (!KConfigDialogManager::propertyMap()->contains(name))
+    if (!DConfigDlgMngr::propertyMap()->contains(name))
     {
-        KConfigDialogManager::propertyMap()->insert(name, "current");
-        KConfigDialogManager::changedMap()->insert(name, SIGNAL(selectionChanged(int)));
+        DConfigDlgMngr::propertyMap()->insert(name, "current");
+        DConfigDlgMngr::changedMap()->insert(name, SIGNAL(selectionChanged(int)));
     }
 }
 

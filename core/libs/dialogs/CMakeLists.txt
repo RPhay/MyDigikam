@@ -38,6 +38,7 @@ set(libdialogs_SRCS
     libsinfodlg.cpp
     rawcameradlg.cpp
     dconfigdlg.cpp
+    dconfigdlgmngr.cpp
     dconfigdlgmodels.cpp
     dconfigdlgview.cpp
     dconfigdlgview_p.cpp

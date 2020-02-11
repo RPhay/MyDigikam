@@ -35,12 +35,12 @@
 
 // KDE includes
 
-#include <kconfigdialogmanager.h>
 #include <klocalizedstring.h>
 
 // Local includes
 
 #include "dwizardpage.h"
+#include "dconfigdlgmngr.h"
 #include "digikam_debug.h"
 #include "abstractthemeparameter.h"
 #include "galleryinfo.h"
@@ -74,7 +74,7 @@ public:
     }
 
     GalleryInfo*           info;
-    KConfigDialogManager*  configManager;
+    DConfigDlgMngr*        configManager;
 
     HTMLIntroPage*         introPage;
     HTMLSelectionPage*     selectionPage;
@@ -102,7 +102,7 @@ HTMLWizard::HTMLWizard(QWidget* const parent, DInfoInterface* const iface)
     d->imageSettingsPage = new HTMLImageSettingsPage(this, i18n("Image Settings"));
     d->outputPage        = new HTMLOutputPage(this,        i18n("Output Settings"));
     d->finalPage         = new HTMLFinalPage(this,         i18n("Generating Gallery"));
-    d->configManager     = new KConfigDialogManager(this, d->info);
+    d->configManager     = new DConfigDlgMngr(this, d->info);
     d->configManager->updateWidgets();
 }
 
@@ -119,7 +119,9 @@ void HTMLWizard::setItemsList(const QList<QUrl>& urls)
 bool HTMLWizard::validateCurrentPage()
 {
     if (!DWizardDlg::validateCurrentPage())
+    {
         return false;
+    }
 
     if (currentPage() == d->outputPage)
     {

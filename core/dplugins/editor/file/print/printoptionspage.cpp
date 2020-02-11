@@ -35,10 +35,6 @@
 #include <QMessageBox>
 #include <QSignalBlocker>
 
-// KDE includes
-
-#include <kconfigdialogmanager.h>
-
 // Local includes
 
 #include "digikam_debug.h"
@@ -47,6 +43,7 @@
 #include "iccsettingscontainer.h"
 #include "iccmanager.h"
 #include "editorwindow.h"
+#include "dconfigdlgmngr.h"
 #include "ui_printoptionspage.h"
 
 namespace DigikamEditorPrintToolPlugin
@@ -54,7 +51,7 @@ namespace DigikamEditorPrintToolPlugin
 
 static inline double unitToInches(PrintOptionsPage::Unit unit)
 {
-    if (unit == PrintOptionsPage::Inches)
+    if      (unit == PrintOptionsPage::Inches)
     {
         return 1.0;
     }
@@ -87,7 +84,7 @@ public:
     QSize                 mImageSize;
     QButtonGroup          mScaleGroup;
     QButtonGroup          mPositionGroup;
-    KConfigDialogManager* mConfigDialogManager;
+    DConfigDlgMngr* mConfigDialogManager;
     IccProfile            outputProfile;
     QCheckBox*            colorManaged;
     QPushButton*          cmPreferences;
@@ -185,7 +182,7 @@ PrintOptionsPage::PrintOptionsPage(QWidget* const parent,
     d->setupUi(this);
     d->mParent              = parent;
     d->mImageSize           = imageSize;
-    d->mConfigDialogManager = new KConfigDialogManager(this, PrintConfig::self());
+    d->mConfigDialogManager = new DConfigDlgMngr(this, PrintConfig::self());
 
     d->initPositionFrame();
 
