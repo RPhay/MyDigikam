@@ -228,9 +228,11 @@ void SketchWidget::slotUndo()
 
         emit signalSketchChanged(sketchImage());
 
-        // cppcheck-suppress knownConditionTrueFalse
-        emit signalUndoRedoStateChanged((d->eventIndex != -1),
-                                        (d->eventIndex != (d->drawEventList.count() - 1)));
+        emit signalUndoRedoStateChanged(
+                                        // cppcheck-suppress knownConditionTrueFalse
+                                        (d->eventIndex != -1),
+                                        (d->eventIndex != (d->drawEventList.count() - 1))
+                                       );
     }
 }
 
@@ -247,9 +249,11 @@ void SketchWidget::slotRedo()
 
     emit signalSketchChanged(sketchImage());
 
-    // cppcheck-suppress knownConditionTrueFalse
-    emit signalUndoRedoStateChanged((d->eventIndex != -1),
-                                    (d->eventIndex != (d->drawEventList.count() - 1)));
+    emit signalUndoRedoStateChanged(
+                                    (d->eventIndex != -1),
+                                    // cppcheck-suppress knownConditionTrueFalse
+                                    (d->eventIndex != (d->drawEventList.count() - 1))
+                                   );
 }
 
 void SketchWidget::replayEvents(int index)
