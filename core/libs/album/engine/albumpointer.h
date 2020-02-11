@@ -141,6 +141,7 @@ public:
         return QList<AlbumPointer<T> >::operator=(list);
     }
 
+    // cppcheck-suppress operatorEqRetRefThis
     AlbumPointerList<T>& operator=(const QList<T*>& list)
     {
         foreach (T* const t, list)
