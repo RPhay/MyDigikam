@@ -24,6 +24,8 @@
 #ifndef DIGIKAM_KML_WIDGET_H
 #define DIGIKAM_KML_WIDGET_H
 
+// Qt includes
+
 #include <QWidget>
 #include <QList>
 #include <QUrl>

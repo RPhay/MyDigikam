@@ -78,6 +78,7 @@ private:
     {
         QDomElement kmlElement = kmlDocument->createElement( tag );
         target.appendChild( kmlElement );
+
         return kmlElement;
     }
 
@@ -94,6 +95,7 @@ private:
         target.appendChild( kmlElement );
         QDomText kmlTextElement = kmlDocument->createTextNode( text );
         kmlElement.appendChild( kmlTextElement );
+
         return kmlElement;
     }
 

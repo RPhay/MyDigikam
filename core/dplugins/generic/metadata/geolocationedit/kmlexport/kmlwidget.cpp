@@ -67,6 +67,7 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
     TargetPreferenceGroupBoxLayout = new QGridLayout(TargetPreferenceGroupBox);
 
     // target type
+
     TargetTypeGroupBox             = new QGroupBox(i18n("Target Type"), this);
     buttonGroupTargetTypeLayout    = new QGridLayout(TargetTypeGroupBox);
     buttonGroupTargetType          = new QButtonGroup(TargetTypeGroupBox);
@@ -102,14 +103,14 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
 
     destinationDirectoryLabel_ = new QLabel(i18n("Destination Directory:"), TargetPreferenceGroupBox);
 
-    DestinationDirectory_= new DFileSelector(TargetPreferenceGroupBox);
+    DestinationDirectory_      = new DFileSelector(TargetPreferenceGroupBox);
     DestinationDirectory_->setFileDlgMode(QFileDialog::Directory);
     DestinationDirectory_->setFileDlgTitle(i18n("Select a directory in which to save the kml file and pictures"));
 
-    DestinationUrlLabel_ = new QLabel(i18n("Destination Path:"), TargetPreferenceGroupBox);
-    DestinationUrl_      = new QLineEdit(TargetPreferenceGroupBox);
-    FileNameLabel_       = new QLabel(i18n("Filename:"), TargetPreferenceGroupBox);
-    FileName_            = new QLineEdit(TargetPreferenceGroupBox);
+    DestinationUrlLabel_       = new QLabel(i18n("Destination Path:"), TargetPreferenceGroupBox);
+    DestinationUrl_            = new QLineEdit(TargetPreferenceGroupBox);
+    FileNameLabel_             = new QLabel(i18n("Filename:"), TargetPreferenceGroupBox);
+    FileName_                  = new QLineEdit(TargetPreferenceGroupBox);
 
     TargetPreferenceGroupBoxLayout->addWidget(TargetTypeGroupBox,         0, 0, 2, 5);
     TargetPreferenceGroupBoxLayout->addWidget(AltitudeLabel_,             2, 0, 1, 1);
@@ -152,9 +153,11 @@ KmlWidget::KmlWidget(GeolocationEdit* const dlg,
     QGridLayout* const GPXTracksGroupBoxLayout = new QGridLayout(GPXTracksGroupBox);
 
     // add a gpx track checkbox
+
     GPXTracksCheckBox_   = new QCheckBox(i18n("Draw GPX Track"), GPXTracksGroupBox);
 
     // file selector
+
     GPXFileLabel_ = new QLabel(i18n("GPX file:"), GPXTracksGroupBox);
 
     GPXFileUrlRequester_ = new DFileSelector(GPXTracksGroupBox);
@@ -293,7 +296,7 @@ void KmlWidget::slotKMLGenerate()
 
     QList<QUrl> urls;
 
-    for (int i = 0; i < m_model->rowCount(); ++i)
+    for (int i = 0 ; i < m_model->rowCount() ; ++i)
     {
         GPSItemContainer* const item = m_model->itemFromIndex(m_model->index(i, 0));
 
@@ -366,7 +369,7 @@ void KmlWidget::readSettings()
     bool    optimize_googlemap;
     int     iconSize;
 
-    // int googlemapSize;
+    /// int googlemapSize;
     int     size;
     QString UrlDestDir;
     QString baseDestDir;
@@ -387,10 +390,13 @@ void KmlWidget::readSettings()
     localTarget         = group.readEntry(QLatin1String("localTarget"), true);
     optimize_googlemap  = group.readEntry(QLatin1String("optimize_googlemap"), false);
     iconSize            = group.readEntry(QLatin1String("iconSize"), 33);
+
     // not saving this size as it should not change
     // googlemapSize = group.readNumEntry("googlemapSize", 32);
+
     size                = group.readEntry(QLatin1String("size"), 320);
-    // UrlDestDir have to have the trailing /
+
+    /// UrlDestDir have to have the trailing /
     baseDestDir         = group.readEntry(QLatin1String("baseDestDir"), QString::fromUtf8("/tmp/"));
     UrlDestDir          = group.readEntry(QLatin1String("UrlDestDir"),  QString::fromUtf8("http://www.example.com/"));
     KMLFileName         = group.readEntry(QLatin1String("KMLFileName"), QString::fromUtf8("kmldocument"));

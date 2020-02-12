@@ -23,6 +23,8 @@
 #ifndef DIGIKAM_GEO_DATA_CONTAINER_H
 #define DIGIKAM_GEO_DATA_CONTAINER_H
 
+// Qt includes
+
 #include <QStringList>
 #include <QMetaType>
 
@@ -76,11 +78,14 @@ public:
 
     // use this instead of '==', because '==' implies having the
     // same value for m_interpolated
+
     bool sameCoordinatesAs(const GeoDataContainer& a) const
     {
-        return ( a.m_altitude  == m_altitude ) &&
-               ( a.m_latitude  == m_latitude ) &&
-               ( a.m_longitude == m_longitude);
+        return (
+                (a.m_altitude  == m_altitude) &&
+                (a.m_latitude  == m_latitude) &&
+                (a.m_longitude == m_longitude)
+               );
     }
 
     void setInterpolated(bool ite)  { m_interpolated = ite; };
@@ -110,11 +115,15 @@ public:
         // parse geo:-uri according to (only partially implemented):
         // http://tools.ietf.org/html/draft-ietf-geopriv-geo-uri-04
         // TODO: verify that we follow the spec fully!
+
         if (!url.startsWith(QLatin1String("geo:")))
         {
             // TODO: error
+
             if (parsedOkay)
+            {
                 *parsedOkay = false;
+            }
 
             return GeoDataContainer();
         }
@@ -131,14 +140,19 @@ public:
             double ptLatitude  = parts[0].toDouble(&okay);
 
             if (okay)
+            {
                 ptLongitude = parts[1].toDouble(&okay);
+            }
 
             if (okay&&(parts.size()==3))
+            {
                 ptAltitude = parts[2].toDouble(&okay);
+            }
 
             if (!okay)
             {
                 *parsedOkay = false;
+
                 return GeoDataContainer();
             }
 
@@ -147,13 +161,17 @@ public:
         else
         {
             if (parsedOkay)
+            {
                 *parsedOkay = false;
+            }
 
             return GeoDataContainer();
         }
 
         if (parsedOkay)
-                *parsedOkay = true;
+        {
+            *parsedOkay = true;
+        }
 
         return position;
     }

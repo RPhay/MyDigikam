@@ -56,7 +56,7 @@ public:
 
 private:
 
-    // Methods used to perform interpolation.
+    /// Methods used to perform interpolation.
     QDateTime findNextDate(const QDateTime& dateTime, int secs);
     QDateTime findPrevDate(const QDateTime& dateTime, int secs);
 

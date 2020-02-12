@@ -64,6 +64,7 @@ bool GeoDataParser::matchDate(const QDateTime& photoDateTime, int maxGapTime, in
                               GeoDataContainer* const gpsData)
 {
     // GPS device are sync in time by satelite using GMT time.
+
     QDateTime cameraGMTDateTime = photoDateTime.addSecs(secondsOffset*(-1));
 
     if (offsetContainsTimeZone)
@@ -75,6 +76,7 @@ bool GeoDataParser::matchDate(const QDateTime& photoDateTime, int maxGapTime, in
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "cameraGMTDateTime: " << cameraGMTDateTime << cameraGMTDateTime.timeSpec();
 
     // We are trying to find the right date in the GPS points list.
+
     bool findItem = false;
     int nbSecItem = maxGapTime;
     int nbSecs;
@@ -89,7 +91,8 @@ bool GeoDataParser::matchDate(const QDateTime& photoDateTime, int maxGapTime, in
 //         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << it.key().timeSpec() << cameraGMTDateTime.timeSpec() << nbSecs;
 
         // We tring to find the minimal accuracy.
-        if (nbSecs < maxGapTime && nbSecs < nbSecItem)
+
+        if ((nbSecs < maxGapTime) && (nbSecs < nbSecItem))
         {
             if (gpsData)
             {
@@ -118,15 +121,15 @@ bool GeoDataParser::matchDate(const QDateTime& photoDateTime, int maxGapTime, in
             GeoDataContainer prevGPSPoint = m_GeoDataMap[prevDateTime];
             GeoDataContainer nextGPSPoint = m_GeoDataMap[nextDateTime];
 
-            double alt1 = prevGPSPoint.altitude();
-            double lon1 = prevGPSPoint.longitude();
-            double lat1 = prevGPSPoint.latitude();
-            uint   t1   = prevDateTime.toTime_t();
-            double alt2 = nextGPSPoint.altitude();
-            double lon2 = nextGPSPoint.longitude();
-            double lat2 = nextGPSPoint.latitude();
-            uint   t2   = nextDateTime.toTime_t();
-            uint   tCor = cameraGMTDateTime.toTime_t();
+            double alt1                   = prevGPSPoint.altitude();
+            double lon1                   = prevGPSPoint.longitude();
+            double lat1                   = prevGPSPoint.latitude();
+            uint   t1                     = prevDateTime.toTime_t();
+            double alt2                   = nextGPSPoint.altitude();
+            double lon2                   = nextGPSPoint.longitude();
+            double lat2                   = nextGPSPoint.latitude();
+            uint   t2                     = nextDateTime.toTime_t();
+            uint   tCor                   = cameraGMTDateTime.toTime_t();
 
             if (tCor-t1 != 0)
             {
@@ -149,10 +152,11 @@ QDateTime GeoDataParser::findNextDate(const QDateTime& dateTime, int secs)
 {
     // We will find the item in GPS data list where the time is
     // at the maximum bigger than 'secs' mn of the value to match.
+
     QDateTime itemFound = dateTime.addSecs(secs);
     bool found          = false;
 
-    for (GeoDataMap::ConstIterator it = m_GeoDataMap.constBegin(); it != m_GeoDataMap.constEnd(); ++it )
+    for (GeoDataMap::ConstIterator it = m_GeoDataMap.constBegin() ; it != m_GeoDataMap.constEnd() ; ++it)
     {
         if (it.key() > dateTime)
         {
@@ -165,7 +169,9 @@ QDateTime GeoDataParser::findNextDate(const QDateTime& dateTime, int secs)
     }
 
     if (found)
+    {
         return itemFound;
+    }
 
     return QDateTime();
 }
@@ -174,23 +180,26 @@ QDateTime GeoDataParser::findPrevDate(const QDateTime& dateTime, int secs)
 {
     // We will find the item in GPS data list where the time is
     // at the maximum smaller than 'secs' mn of the value to match.
+
     QDateTime itemFound = dateTime.addSecs((-1)*secs);
     bool found          = false;
 
-    for (GeoDataMap::ConstIterator it = m_GeoDataMap.constBegin(); it != m_GeoDataMap.constEnd(); ++it )
+    for (GeoDataMap::ConstIterator it = m_GeoDataMap.constBegin() ; it != m_GeoDataMap.constEnd() ; ++it)
     {
         if (it.key() < dateTime)
         {
             if (it.key() > itemFound)
             {
                 itemFound = it.key();
-                found = true;
+                found     = true;
             }
         }
     }
 
     if (found)
+    {
         return itemFound;
+    }
 
     return QDateTime();
 }
@@ -200,7 +209,9 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
     QFile gpxfile(url.toLocalFile());
 
     if (!gpxfile.open(QIODevice::ReadOnly))
+    {
         return false;
+    }
 
     QDomDocument gpxDoc(QLatin1String("gpx"));
 
@@ -226,7 +237,7 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
 
         if (trkElem.tagName() != QLatin1String("trk")) continue;
 
-        for (QDomNode nTrkseg = trkElem.firstChild(); !nTrkseg.isNull(); nTrkseg = nTrkseg.nextSibling())
+        for (QDomNode nTrkseg = trkElem.firstChild() ; !nTrkseg.isNull() ; nTrkseg = nTrkseg.nextSibling())
         {
             QDomElement trksegElem = nTrkseg.toElement();
 
@@ -234,7 +245,7 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
 
             if (trksegElem.tagName() != QLatin1String("trkseg")) continue;
 
-            for (QDomNode nTrkpt = trksegElem.firstChild(); !nTrkpt.isNull(); nTrkpt = nTrkpt.nextSibling())
+            for (QDomNode nTrkpt = trksegElem.firstChild() ; !nTrkpt.isNull() ; nTrkpt = nTrkpt.nextSibling())
             {
                 QDomElement trkptElem = nTrkpt.toElement();
 
@@ -248,6 +259,7 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
                 double    ptLongitude = 0.0;
 
                 // Get GPS position. If not available continue to next point.
+
                 QString lat = trkptElem.attribute(QLatin1String("lat"));
                 QString lon = trkptElem.attribute(QLatin1String("lon"));
 
@@ -257,7 +269,8 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
                 ptLongitude = lon.toDouble();
 
                 // Get metadata of track point (altitude and time stamp)
-                for (QDomNode nTrkptMeta = trkptElem.firstChild(); !nTrkptMeta.isNull(); nTrkptMeta = nTrkptMeta.nextSibling())
+
+                for (QDomNode nTrkptMeta = trkptElem.firstChild() ; !nTrkptMeta.isNull() ; nTrkptMeta = nTrkptMeta.nextSibling())
                 {
                     QDomElement trkptMetaElem = nTrkptMeta.toElement();
 
@@ -266,6 +279,7 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
                     if (trkptMetaElem.tagName() == QLatin1String("time"))
                     {
                         // Get GPS point time stamp. If not available continue to next point.
+
                         const QString time = trkptMetaElem.text();
 
                         if (time.isEmpty()) continue;
@@ -276,15 +290,20 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
                     if (trkptMetaElem.tagName() == QLatin1String("ele"))
                     {
                         // Get GPS point altitude. If not available continue to next point.
+
                         QString ele = trkptMetaElem.text();
 
                         if (!ele.isEmpty())
+                        {
                             ptAltitude  = ele.toDouble();
+                        }
                     }
                 }
 
                 if (ptDateTime.isNull())
+                {
                     continue;
+                }
 
                 GeoDataContainer gpsData(ptAltitude, ptLatitude, ptLongitude, false);
                 m_GeoDataMap.insert( ptDateTime, gpsData );
@@ -293,9 +312,11 @@ bool GeoDataParser::loadGPXFile(const QUrl& url)
     }
 
     //qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "GPX File " << url.fileName()
-    //                         << " parsed with " << numPoints()
-    //                         << " points extracted" ;
+    //                                     << " parsed with " << numPoints()
+    //                                     << " points extracted" ;
+
     gpxfile.close();
+
     return true;
 }
 

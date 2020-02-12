@@ -152,7 +152,7 @@ private:
     int                         m_GPXOpacity;
     int                         m_GPXAltitudeMode;
 
-    /** directory used in kmldocument structure */
+    /// directory used in kmldocument structure
     QString                     m_imageDirBasename;
     QString                     m_GPXFile;
     QString                     m_UrlDestDir;
@@ -164,7 +164,7 @@ private:
     QDir                        m_tempDestDir;
     QDir                        m_imageDir;
 
-    // Directory selected by user
+    /// Directory selected by user
     QString                     m_baseDestDir;
 
     QString                     m_imgdir;
@@ -176,13 +176,13 @@ private:
     DInfoInterface*             m_iface;
     DMetadata                   m_meta;
 
-    // the root document, used to create all QDomElements
+    /// the root document, used to create all QDomElements
     QDomDocument*               m_kmlDocument;
 
-    // the GPS parsed data
+    /// the GPS parsed data
     KMLGeoDataParser            m_gpxParser;
 
-    // To store errors and warnings while processing.
+    /// To store errors and warnings while processing.
     QStringList                 m_logData;
 };
 
