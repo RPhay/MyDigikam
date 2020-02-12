@@ -157,13 +157,12 @@ public:
     PresentationContainer*            sharedData;
 };
 
-PresentationGL::PresentationGL(QWidget* const parent, PresentationContainer* const sharedData)
-    : QOpenGLWidget(parent),
+PresentationGL::PresentationGL(PresentationContainer* const sharedData)
+    : QOpenGLWidget(),
       d(new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setContextMenuPolicy(Qt::PreventContextMenu);
-    setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog);
     setWindowState(windowState() | Qt::WindowFullScreen);
 
     QScreen* screen = qApp->primaryScreen();

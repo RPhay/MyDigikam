@@ -57,7 +57,7 @@ public:
 
 public:
 
-    explicit PresentationWidget(QWidget* const parent, PresentationContainer* const sharedData);
+    explicit PresentationWidget(PresentationContainer* const sharedData);
     ~PresentationWidget();
 
     void registerEffects();

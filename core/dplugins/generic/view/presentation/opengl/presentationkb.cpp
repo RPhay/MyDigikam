@@ -218,13 +218,12 @@ KBImage::~KBImage()
 
 // -------------------------------------------------------------------------
 
-PresentationKB::PresentationKB(QWidget* const parent, PresentationContainer* const sharedData)
-    : QOpenGLWidget(parent),
+PresentationKB::PresentationKB(PresentationContainer* const sharedData)
+    : QOpenGLWidget(),
       d(new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setContextMenuPolicy(Qt::PreventContextMenu);
-    setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog);
     setWindowState(windowState() | Qt::WindowFullScreen);
 
     QScreen* screen = qApp->primaryScreen();

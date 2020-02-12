@@ -53,7 +53,7 @@ class PresentationGL : public QOpenGLWidget
 
 public:
 
-    explicit PresentationGL(QWidget* const parent, PresentationContainer* const sharedData);
+    explicit PresentationGL(PresentationContainer* const sharedData);
     ~PresentationGL();
 
     void registerEffects();
