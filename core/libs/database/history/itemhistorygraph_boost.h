@@ -175,7 +175,7 @@ public:
      * These two classes provide source-compatible wrappers for the vertex and edge descriptors,
      * providing default construction to null and the isNull() method.
      */
-    class Vertex
+    class DIGIKAM_DATABASE_EXPORT Vertex
     {
     public:
 
@@ -222,7 +222,7 @@ public:
         vertex_t v;
     };
 
-    class Edge
+    class DIGIKAM_DATABASE_EXPORT Edge
     {
     public:
 
