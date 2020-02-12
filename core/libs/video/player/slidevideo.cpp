@@ -62,8 +62,10 @@ public:
 
     using QProxyStyle::QProxyStyle;
 
-    int styleHint(QStyle::StyleHint hint, const QStyleOption* option = nullptr,
-                  const QWidget* widget = nullptr, QStyleHintReturn* returnData = nullptr) const
+    int styleHint(QStyle::StyleHint hint,
+                  const QStyleOption* option = nullptr,
+                  const QWidget* widget = nullptr,
+                  QStyleHintReturn* returnData = nullptr) const
     {
         if (hint == QStyle::SH_Slider_AbsoluteSetButtons)
         {
@@ -262,8 +264,11 @@ void SlideVideo::slotPlayerStateChanged(QtAV::AVPlayer::State state)
         int rotate = 0;
 
 #if QTAV_VERSION > QTAV_VERSION_CHK(1, 12, 0)
+
         // fix wrong rotation from QtAV git/master
+
         rotate     = d->player->statistics().video_only.rotate;
+
 #endif
         d->videoWidget->setOrientation((-rotate) + d->videoOrientation);
         qCDebug(DIGIKAM_GENERAL_LOG) << "Found video orientation:"

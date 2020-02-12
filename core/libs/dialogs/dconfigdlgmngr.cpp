@@ -61,7 +61,8 @@ public:
         : q(q),
           conf(nullptr),
           dialog(nullptr),
-          insideGroupBox(false)
+          insideGroupBox(false),
+          trackChanges(false)
     {
     }
 
@@ -82,8 +83,8 @@ public:
     QHash<QString, QWidget*> knownWidget;
     QHash<QString, QWidget*> buddyWidget;
     QSet<QWidget*>           allExclusiveGroupBoxes;
-    bool                     insideGroupBox : 1;
-    bool                     trackChanges   : 1;
+    bool                     insideGroupBox;
+    bool                     trackChanges;
 };
 
 DConfigDlgMngr::DConfigDlgMngr(QWidget* const parent, KConfigSkeleton* const conf)
@@ -421,7 +422,7 @@ void DConfigDlgMngr::updateWidgets()
     bool bSignalsBlocked = signalsBlocked();
     blockSignals(true);
 
-    QWidget* widget = nullptr;
+    QWidget* widget      = nullptr;
     QHashIterator<QString, QWidget*> it(d->knownWidget);
 
     while (it.hasNext())
@@ -472,16 +473,14 @@ void DConfigDlgMngr::updateWidgetsDefault()
 
 void DConfigDlgMngr::updateSettings()
 {
-    bool changed = false;
-
+    bool changed    = false;
     QWidget* widget = nullptr;
     QHashIterator<QString, QWidget*> it(d->knownWidget);
 
     while (it.hasNext())
     {
         it.next();
-        widget = it.value();
-
+        widget                          = it.value();
         KConfigSkeletonItem* const item = d->conf->findItem(it.key());
 
         if (!item)
@@ -551,7 +550,7 @@ QByteArray DConfigDlgMngr::getCustomProperty(const QWidget* widget) const
     {
         if (!prop.canConvert(QVariant::ByteArray))
         {
-           qCWarning(DIGIKAM_GENERAL_LOG) << "kcfg_property on" << widget->metaObject()->className()
+           qCWarning(DIGIKAM_GENERAL_LOG) << "Property on" << widget->metaObject()->className()
                                           << "is not of type ByteArray";
         }
         else
@@ -589,7 +588,7 @@ QByteArray DConfigDlgMngr::getCustomPropertyChangedSignal(const QWidget *widget)
     {
         if (!prop.canConvert(QVariant::ByteArray))
         {
-           qCWarning(DIGIKAM_GENERAL_LOG) << "kcfg_propertyNotify on" << widget->metaObject()->className()
+           qCWarning(DIGIKAM_GENERAL_LOG) << "PropertyNotify on" << widget->metaObject()->className()
                                           << "is not of type ByteArray";
         }
         else
@@ -717,8 +716,7 @@ bool DConfigDlgMngr::hasChanged() const
     while (it.hasNext())
     {
         it.next();
-        widget = it.value();
-
+        widget                          = it.value();
         KConfigSkeletonItem* const item = d->conf->findItem(it.key());
 
         if (!item)

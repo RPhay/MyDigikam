@@ -123,6 +123,8 @@ public:
      */
     bool isDefault()  const;
 
+public:
+
     /**
      * Retrieve the map between widgets class names and the
      * USER properties used for the configuration values.
