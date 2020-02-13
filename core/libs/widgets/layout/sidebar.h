@@ -329,7 +329,7 @@ public:
      *           is part of the main view. Internally, the width of the widget stack can
      *           be changed by a QSplitter.
      * @param side where the sidebar should be displayed. At the left or right border.
-                   Use Qt::LeftEdge or Qt::RightEdge.
+     *             Use Qt::LeftEdge or Qt::RightEdge.
      * @param minimizedDefault hide the sidebar when the program is started the first time.
      */
     explicit Sidebar(QWidget* const parent, SidebarSplitter* const sp, Qt::Edge side = Qt::LeftEdge,
@@ -369,7 +369,7 @@ public:
 
     /**
      * Returns the currently activated tab, or 0 if no tab is active
-    */
+     */
     QWidget* getActiveTab() const;
 
     /**

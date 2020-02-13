@@ -151,6 +151,7 @@ int DMultiTabBarFrame::appendTab(const QPixmap& pic, int id, const QString& text
     d->tabs.append(tab);
 
     // Insert before the stretch.
+
     d->mainLayout->insertWidget(d->tabs.size()-1, tab);
     tab->show();
 
@@ -164,6 +165,7 @@ void DMultiTabBarFrame::removeTab(int id)
         if (d->tabs.at(pos)->id() == id)
         {
             // remove & delete the tab
+
             delete d->tabs.takeAt(pos);
             break;
         }
@@ -1064,11 +1066,11 @@ void Sidebar::deleteTab(QWidget* const w)
 
         if (state.activeWidget)
         {
-            int tab = d->stack->indexOf(state.activeWidget);
+            int atab = d->stack->indexOf(state.activeWidget);
 
-            if (tab != -1)
+            if (atab != -1)
             {
-                switchTabAndStackToTab(tab);
+                switchTabAndStackToTab(atab);
                 emit signalChangedTab(d->stack->currentWidget());
 
                 if (state.size == 0)
@@ -1429,7 +1431,7 @@ void SidebarSplitter::slotSplitterMoved(int pos, int index)
 
     // Is there a sidebar with size 0 before index ?
 
-    if (index > 0 && sizeList.at(index-1) == 0)
+    if ((index > 0) && (sizeList.at(index-1) == 0))
     {
         QWidget* const w = widget(index-1);
 

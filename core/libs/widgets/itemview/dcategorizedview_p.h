@@ -183,7 +183,6 @@ public:
 public:
 
     /// Attributes
-
     struct ElementInfo
     {
         QString category;
@@ -193,13 +192,11 @@ public:
 public:
 
     /// Basic data
-
     DCategorizedView*                 listView;
     DCategoryDrawer*                  categoryDrawer;
     QSize                             biggestItemSize;
 
     /// Behavior data
-
     bool                              mouseButtonPressed;
     bool                              rightMouseButtonPressed;
     bool                              dragLeftViewport;
@@ -225,7 +222,6 @@ public:
     QItemSelection                    lastSelection;
 
     /// Attributes for speed reasons
-
     DCategorizedSortFilterProxyModel* proxyModel;
 };
 

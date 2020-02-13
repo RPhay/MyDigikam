@@ -404,11 +404,13 @@ const QRect& DCategorizedView::Private::cachedRectIndex(const QModelIndex& index
     if (it != elementsPosition.constEnd())   // If we have it cached
     {
         // return it
+
         return *it;
     }
     else                                     // Otherwise, cache it
     {
         // and return it
+
         return cacheIndex(index);
     }
 }
@@ -420,11 +422,13 @@ const QRect& DCategorizedView::Private::cachedRectCategory(const QString& catego
     if (it != categoriesPosition.constEnd()) // If we have it cached
     {
         // return it
+
         return *it;
     }
     else                                     // Otherwise, cache it and
     {
         // return it
+
         return cacheCategory(category);
     }
 }
@@ -477,7 +481,7 @@ void DCategorizedView::Private::drawNewCategory(const QModelIndex& index, int so
 
     if ((listView->selectionMode() != SingleSelection) && (listView->selectionMode() != NoSelection))
     {
-        if ((category == hoveredCategory) && !mouseButtonPressed)
+        if      ((category == hoveredCategory) && !mouseButtonPressed)
         {
             optionCopy.state |= QStyle::State_MouseOver;
         }
@@ -669,7 +673,7 @@ QModelIndex DCategorizedView::categoryAt(const QPoint& point) const
     {
         y = d->categoryVisualRect(category).top();
 
-        if ((point.y() >= lastY) && point.y() < y)
+        if ((point.y() >= lastY) && (point.y() < y))
         {
             break;
         }
@@ -704,6 +708,7 @@ QItemSelectionRange DCategorizedView::categoryRange(const QModelIndex& index) co
     QString category  = d->elementsInfo[index.row()].category;
     QModelIndex first = d->proxyModel->index(d->categoriesIndexes[category].first(), d->proxyModel->sortColumn());
     QModelIndex last  = d->proxyModel->index(d->categoriesIndexes[category].last(), d->proxyModel->sortColumn());
+
     return QItemSelectionRange(first, last);
 }
 
@@ -830,7 +835,7 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
 
     foreach (const QModelIndex& index, dirtyIndexes)
     {
-        if (alternatingRows && alternate)
+        if      (alternatingRows && alternate)
         {
             option.features |= QStyleOptionViewItem::Alternate;
             alternate        = false;
@@ -856,7 +861,7 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
             if ((d->proxyModel->flags(index) & Qt::ItemIsEnabled) == 0)
             {
                 option.state &= ~QStyle::State_Enabled;
-                cg           = QPalette::Disabled;
+                cg            = QPalette::Disabled;
             }
             else
             {
@@ -899,7 +904,7 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
         otherOption.rect   = d->categoryVisualRect(category);
         otherOption.state &= ~QStyle::State_MouseOver;
 
-        if (otherOption.rect.intersects(area))
+        if      (otherOption.rect.intersects(area))
         {
             intersectedInThePast    = true;
             QModelIndex indexToDraw = d->proxyModel->index(d->categoriesIndexes[category][0],
@@ -917,7 +922,7 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
 
     if ((selectionMode() != SingleSelection) && (selectionMode() != NoSelection))
     {
-        if (d->mouseButtonPressed && QListView::state() != DraggingState)
+        if (d->mouseButtonPressed && (QListView::state() != DraggingState))
         {
             QPoint start, end, initialPressPosition;
 
@@ -949,7 +954,7 @@ void DCategorizedView::paintEvent(QPaintEvent* event)
         }
     }
 
-    if (d->drawItemsWhileDragging && QListView::state() == DraggingState && !d->dragLeftViewport)
+    if (d->drawItemsWhileDragging && (QListView::state() == DraggingState) && !d->dragLeftViewport)
     {
         painter.setOpacity(0.5);
         d->drawDraggedItems(&painter);
@@ -1291,7 +1296,7 @@ void DCategorizedView::mouseMoveEvent(QMouseEvent* event)
 
     foreach (const QString& category, d->categories)
     {
-        if (d->categoryVisualRect(category).intersects(QRect(event->pos(), event->pos())))
+        if      (d->categoryVisualRect(category).intersects(QRect(event->pos(), event->pos())))
         {
             d->hoveredCategory = category;
             viewport()->update(d->categoryVisualRect(category));
@@ -1371,13 +1376,13 @@ void DCategorizedView::mouseReleaseEvent(QMouseEvent* event)
         return;
     }
 
-    QPoint initialPressPosition = viewport()->mapFromGlobal(QCursor::pos());
-    initialPressPosition.setY(initialPressPosition.y() + verticalOffset());
-    initialPressPosition.setX(initialPressPosition.x() + horizontalOffset());
+    QPoint initPressPos = viewport()->mapFromGlobal(QCursor::pos());
+    initPressPos.setY(initPressPos.y() + verticalOffset());
+    initPressPos.setX(initPressPos.x() + horizontalOffset());
 
     if ((selectionMode() != SingleSelection) &&
         (selectionMode() != NoSelection)     &&
-        (initialPressPosition == d->initialPressPosition))
+        (initPressPos == d->initialPressPosition))
     {
         foreach (const QString& category, d->categories)
         {
@@ -1405,22 +1410,22 @@ void DCategorizedView::mouseReleaseEvent(QMouseEvent* event)
 
     if (state() != DraggingState)
     {
-        QPoint start, end, initialPressPosition;
+        QPoint start, end, newInitPressPos;
 
-        initialPressPosition = d->initialPressPosition;
+        newInitPressPos = d->initialPressPosition;
 
-        initialPressPosition.setY(initialPressPosition.y() - verticalOffset());
-        initialPressPosition.setX(initialPressPosition.x() - horizontalOffset());
+        newInitPressPos.setY(newInitPressPos.y() - verticalOffset());
+        newInitPressPos.setX(newInitPressPos.x() - horizontalOffset());
 
         if ((d->initialPressPosition.x() > d->mousePosition.x()) ||
             (d->initialPressPosition.y() > d->mousePosition.y()))
         {
             start = d->mousePosition;
-            end   = initialPressPosition;
+            end   = newInitPressPos;
         }
         else
         {
-            start = initialPressPosition;
+            start = newInitPressPos;
             end   = d->mousePosition;
         }
 
@@ -1457,9 +1462,13 @@ void DCategorizedView::startDrag(Qt::DropActions supportedActions)
     // QAbstractItemView::startDrag(supportedActions);
 
 #if defined(DOLPHIN_DRAGANDDROP)
+
     Q_UNUSED(supportedActions);
+
 #else
+
     QListView::startDrag(supportedActions);
+
 #endif
 }
 
@@ -1469,9 +1478,13 @@ void DCategorizedView::dragMoveEvent(QDragMoveEvent* event)
     d->dragLeftViewport = false;
 
 #if defined(DOLPHIN_DRAGANDDROP)
+
     QAbstractItemView::dragMoveEvent(event);
+
 #else
+
     QListView::dragMoveEvent(event);
+
 #endif
 
     if (!d->proxyModel || !d->categoryDrawer || !d->proxyModel->isCategorizedModel())
@@ -1482,7 +1495,9 @@ void DCategorizedView::dragMoveEvent(QDragMoveEvent* event)
     d->hovered = indexAt(event->pos());
 
 #if !defined(DOLPHIN_DRAGANDDROP)
+
     d->drawDraggedItems();
+
 #endif
 }
 
@@ -1491,18 +1506,26 @@ void DCategorizedView::dragLeaveEvent(QDragLeaveEvent* event)
     d->dragLeftViewport = true;
 
 #if defined(DOLPHIN_DRAGANDDROP)
+
     QAbstractItemView::dragLeaveEvent(event);
+
 #else
+
     QListView::dragLeaveEvent(event);
+
 #endif
 }
 
 void DCategorizedView::dropEvent(QDropEvent* event)
 {
 #if defined(DOLPHIN_DRAGANDDROP)
+
     QAbstractItemView::dropEvent(event);
+
 #else
+
     QListView::dropEvent(event);
+
 #endif
 }
 
@@ -1603,6 +1626,7 @@ QModelIndex DCategorizedView::moveCursor(CursorAction cursorAction,
             if (!visibleIndexes.isEmpty())
             {
                 int indexToMove = qMax(current.row() - visibleIndexes.size(), 0);
+
                 return d->proxyModel->index(indexToMove, 0);
             }
 
@@ -1648,6 +1672,7 @@ QModelIndex DCategorizedView::moveCursor(CursorAction cursorAction,
             if (!visibleIndexes.isEmpty())
             {
                 int indexToMove = qMin(current.row() + visibleIndexes.size(), d->elementsInfo.size() - 1);
+
                 return d->proxyModel->index(indexToMove, 0);
             }
         }
@@ -1943,7 +1968,8 @@ void DCategorizedView::updateGeometries()
     }
 
     // Avoid QListView::updateGeometries(), since it will try to set another
-    // range to our scroll bars, what we don't want (ereslibre)
+    // range to our scroll bars, what we don't want
+
     QAbstractItemView::updateGeometries();
 }
 
