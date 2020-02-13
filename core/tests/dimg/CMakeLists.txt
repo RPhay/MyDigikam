@@ -131,9 +131,9 @@ ecm_add_tests(dimghistorytest.cpp
 
 #------------------------------------------------------------------------
 
-# TODO: This unit-test do not link yet under Microsoft compiler
+# TODO: This unit-test do not link yet under Microsoft compiler about HistoryGraphData
 
-#if(NOT MSVC)
+if(NOT MSVC)
 
     ecm_add_tests(dimghistorygraphtest.cpp
 
@@ -151,4 +151,4 @@ ecm_add_tests(dimghistorytest.cpp
                   ${COMMON_TEST_LINK}
     )
 
-#endif()
+endif()
