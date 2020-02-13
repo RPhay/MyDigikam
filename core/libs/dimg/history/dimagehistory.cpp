@@ -197,6 +197,7 @@ DImageHistory& DImageHistory::operator<<(const FilterAction& action)
     Entry entry;
     entry.action = action;
     d->entries << entry;
+
     //qCDebug(DIGIKAM_DIMG_LOG) << "Entry added, total count " << d->entries.count();
 
     return *this;
@@ -227,6 +228,7 @@ void DImageHistory::insertReferredImage(int index, const HistoryImageId& id)
     if (id.isCurrentFile())
     {
         // enforce to have exactly one Current id
+
         adjustReferredImages();
     }
 
@@ -425,7 +427,8 @@ void DImageHistory::adjustReferredImages()
 
             if (id.isCurrentFile())
             {
-                id.m_type = (i == 0) ? HistoryImageId::Original : HistoryImageId::Intermediate;
+                id.m_type = (i == 0) ? HistoryImageId::Original 
+                                     : HistoryImageId::Intermediate;
             }
         }
     }
@@ -580,7 +583,7 @@ QString DImageHistory::toXml() const
                     stream.writeAttribute(QLatin1String("uuid"), imageId.m_uuid);
                 }
 
-                if (imageId.isOriginalFile())
+                if      (imageId.isOriginalFile())
                 {
                     stream.writeAttribute(QLatin1String("type"), QLatin1String("original"));
                 }
@@ -635,6 +638,7 @@ QString DImageHistory::toXml() const
 DImageHistory DImageHistory::fromXml(const QString& xml) //DImageHistory
 {
     //qCDebug(DIGIKAM_DIMG_LOG) << "Parsing image history XML";
+
     DImageHistory h;
 
     if (xml.isEmpty())
@@ -662,9 +666,10 @@ DImageHistory DImageHistory::fromXml(const QString& xml) //DImageHistory
         if (stream.name() == QLatin1String("file"))
         {
             //qCDebug(DIGIKAM_DIMG_LOG) << "Parsing file tag";
+
             HistoryImageId imageId(stream.attributes().value(QLatin1String("uuid")).toString());
 
-            if (stream.attributes().value(QLatin1String("type")) == QLatin1String("original"))
+            if      (stream.attributes().value(QLatin1String("type")) == QLatin1String("original"))
             {
                 imageId.m_type = HistoryImageId::Original;
             }
@@ -676,7 +681,6 @@ DImageHistory DImageHistory::fromXml(const QString& xml) //DImageHistory
             {
                 imageId.m_type = HistoryImageId::Intermediate;
             }
-
 
             while (stream.readNextStartElement())
             {
@@ -730,7 +734,8 @@ DImageHistory DImageHistory::fromXml(const QString& xml) //DImageHistory
         else if (stream.name() == QLatin1String("filter"))
         {
             //qCDebug(DIGIKAM_DIMG_LOG) << "Parsing filter tag";
-            FilterAction::Category c = FilterAction::ComplexFilter;
+
+            FilterAction::Category c  = FilterAction::ComplexFilter;
             QStringRef categoryString = stream.attributes().value(QLatin1String("filterCategory"));
 
             if      (categoryString == QLatin1String("reproducible"))
@@ -761,7 +766,8 @@ DImageHistory DImageHistory::fromXml(const QString& xml) //DImageHistory
                 {
                     while (stream.readNextStartElement())
                     {
-                        if (stream.name() == QLatin1String("param") && stream.attributes().hasAttribute(QLatin1String("name")))
+                        if ((stream.name() == QLatin1String("param")) &&
+                            stream.attributes().hasAttribute(QLatin1String("name")))
                         {
                             action.addParameter(stream.attributes().value(QLatin1String("name")).toString(),
                                                 stream.attributes().value(QLatin1String("value")).toString());

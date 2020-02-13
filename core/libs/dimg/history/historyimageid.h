@@ -45,6 +45,7 @@ public:
     enum Type
     {
         InvalidType    = 0,
+
         /**
          * The original file (typically created by a camera)
          */
