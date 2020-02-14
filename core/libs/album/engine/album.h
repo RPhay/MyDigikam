@@ -44,7 +44,8 @@
 namespace Digikam
 {
 
-/** Album list type definition.
+/**
+ * Album list type definition.
  */
 class Album;
 typedef QList<Album*> AlbumList;
@@ -360,10 +361,13 @@ public:
 
     /// Constructor for root album
     explicit PAlbum(const QString& title);
+
     /// Constructor for album root albums
     PAlbum(int albumRoot, const QString& label);
+
     /// Constructor for normal albums
     PAlbum(int albumRoot, const QString& parentPath, const QString& title, int id);
+
     /// Constructor for Trash album
     PAlbum(const QString& parentPath, int albumRoot);
     ~PAlbum();
@@ -388,8 +392,10 @@ public:
 
 private:
 
-    /// A special integer for Trash virtual folders Ids;
-    /// That gets decremented not incremented
+    /**
+     * A special integer for Trash virtual folders Ids;
+     * That gets decremented not incremented
+     */
     static int m_uniqueTrashId;
 
     bool       m_isAlbumRootAlbum;
@@ -421,7 +427,7 @@ public:
 
     /**
      * @return The tag path, e.g. "/People/Friend/John" if leadingSlash is true,
-               "People/Friend/John" if leadingSlash if false.
+     *         "People/Friend/John" if leadingSlash if false.
      *         The root TAlbum returns "/" resp. "".
      */
     QString                tagPath(bool leadingSlash = true) const;

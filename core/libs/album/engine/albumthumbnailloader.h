@@ -143,10 +143,13 @@ public:
     QPixmap getStandardAlbumRootIcon(RelativeSize size = NormalSize);
     QPixmap getStandardAlbumIcon(PAlbum* const album, RelativeSize size = NormalSize);
 
-    /** Return a preview of physical album directly without to use cache.
-     *  Size of image can be passed as argument.
+    /**
+     * Return a preview of physical album directly without to use cache.
+     * Size of image can be passed as argument.
      */
-    //QImage getAlbumPreviewDirectly(PAlbum* const album, int size);
+/*
+    QImage getAlbumPreviewDirectly(PAlbum* const album, int size);
+*/
 
 public:
 

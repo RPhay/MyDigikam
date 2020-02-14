@@ -96,7 +96,7 @@ public:
             return false;
         }
 
-        return albums == item.albums;
+        return (albums == item.albums);
     }
 
     QList<Album*>                              albums;
@@ -122,8 +122,10 @@ public:
 
     bool operator==(const HistoryPosition& item)
     {
-        return (current == item.current) && (select == item.select);
+        return ((current == item.current) && (select == item.select));
     }
+
+public:
 
     ItemInfo        current;
     QList<ItemInfo> select;
@@ -156,7 +158,7 @@ public:
 
 void AlbumHistory::Private::forward(unsigned int steps)
 {
-    if (forwardStack.isEmpty() || (int)steps > forwardStack.count())
+    if (forwardStack.isEmpty() || ((int)steps > forwardStack.count()))
     {
         return;
     }
@@ -196,6 +198,7 @@ void AlbumHistory::addAlbums(const QList<Album*>& albums, QWidget* const widget)
     if (albums.isEmpty() || !widget || d->moving)
     {
         d->moving = false;
+
         return;
     }
 
@@ -204,6 +207,7 @@ void AlbumHistory::addAlbums(const QList<Album*>& albums, QWidget* const widget)
     if (!d->backwardStack.isEmpty() && d->backwardStack.last().albums == albums)
     {
         d->backwardStack.last().widget = widget;
+
         return;
     }
 
@@ -445,7 +449,7 @@ void AlbumHistory::forward(QList<Album*>& album, QWidget** const widget, unsigne
 {
     *widget = nullptr;
 
-    if (d->forwardStack.isEmpty() || (int)steps > d->forwardStack.count())
+    if (d->forwardStack.isEmpty() || ((int)steps > d->forwardStack.count()))
     {
         return;
     }
@@ -490,7 +494,7 @@ bool AlbumHistory::isBackwardEmpty() const
     // the last album of the backwardStack is the currently shown
     // album, and therefore not really a previous album
 
-    return (d->backwardStack.count() <= 1) ? true : false;
+    return ((d->backwardStack.count() <= 1) ? true : false);
 }
 
 QHash<LabelsTreeView::Labels, QList<int> > AlbumHistory::neededLabels()

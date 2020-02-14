@@ -198,6 +198,7 @@ int AlbumThumbnailLoader::computeIconSize(RelativeSize relativeSize) const
     if (relativeSize == SmallerSize)
     {
         // when size was 32 smaller was 20. Scale.
+
         return lround(20.0 / 32.0 * (double)d->iconSize);
     }
 
@@ -223,11 +224,13 @@ bool AlbumThumbnailLoader::getTagThumbnail(TAlbum* const album, QPixmap& icon)
     {
         addUrl(album, album->iconId());
         icon = QPixmap();
+
         return true;
     }
     else if (!album->icon().isEmpty())
     {
         icon = loadIcon(album->icon(), d->iconSize);
+
         return false;
     }
 
@@ -278,6 +281,7 @@ QPixmap AlbumThumbnailLoader::getAlbumThumbnailDirectly(PAlbum* const album)
     if (album->iconId() && (d->iconSize > d->minBlendSize))
     {
         // icon cached?
+
         AlbumThumbnailMap::const_iterator it = d->thumbnailMap.constFind(album->globalID());
 
         if (it != d->thumbnailMap.constEnd())
@@ -286,6 +290,7 @@ QPixmap AlbumThumbnailLoader::getAlbumThumbnailDirectly(PAlbum* const album)
         }
 
         // schedule for loading
+
         addUrl(album, album->iconId());
     }
 
@@ -308,6 +313,7 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
         // less elegant, it feels much better this way.
 
         emit signalDispatchThumbnailInternal(album->globalID(), *ttit);
+
         return;
     }
 
@@ -334,12 +340,14 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
             .arg(faceRect.x()).arg(faceRect.y()).arg(faceRect.right()).arg(faceRect.bottom());
 
     // Check if the URL has already been added
+
     IdAlbumMap::iterator it = d->idAlbumMap.find(QPair<qlonglong, QString>(id, faceRectStr));
 
     if (it == d->idAlbumMap.end())
     {
         // use two threads so that tag and album thumbnails are loaded
         // in parallel and not first album, then tag thumbnails
+
         if (album->type() == Album::TAG)
         {
             if (!d->iconTagThumbThread)
@@ -381,6 +389,7 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
         }
 
         // insert new entry to map, add album globalID
+
         QList<int> &list = d->idAlbumMap[QPair<qlonglong, QString>(id, faceRectStr)];
         list.removeAll(album->globalID());
         list.append(album->globalID());
@@ -388,6 +397,7 @@ void AlbumThumbnailLoader::addUrl(Album* const album, qlonglong id)
     else
     {
         // only add album global ID to list which is already inserted in map
+
         (*it).removeAll(album->globalID());
         (*it).append(album->globalID());
     }
@@ -403,8 +413,11 @@ void AlbumThumbnailLoader::setThumbnailSize(int size)
     d->iconSize = size;
 
     // clear task list
+
     d->idAlbumMap.clear();
+
     // clear cached thumbnails
+
     d->thumbnailMap.clear();
 
     if (d->iconAlbumThumbThread)
@@ -454,6 +467,7 @@ void AlbumThumbnailLoader::slotGotThumbnailFromIcon(const LoadingDescription& lo
         if (thumbnail.isNull())
         {
             // Loading failed
+
             for (QList<int>::const_iterator vit = (*it).constBegin() ; vit != (*it).constEnd() ; ++vit)
             {
                 Album* const album = manager->findAlbum(*vit);
@@ -471,6 +485,7 @@ void AlbumThumbnailLoader::slotGotThumbnailFromIcon(const LoadingDescription& lo
             for (QList<int>::const_iterator vit = (*it).constBegin() ; vit != (*it).constEnd() ; ++vit)
             {
                 // look up with global id
+
                 Album* const album = manager->findAlbum(*vit);
 
                 if (album)
@@ -507,7 +522,7 @@ void AlbumThumbnailLoader::slotDispatchThumbnailInternal(int albumID, const QPix
 
 void AlbumThumbnailLoader::slotIconChanged(Album* album)
 {
-    if (!album || (album->type() != Album::TAG && album->type() != Album::PHYSICAL))
+    if (!album || ((album->type() != Album::TAG) && (album->type() != Album::PHYSICAL)))
     {
         return;
     }
@@ -534,7 +549,9 @@ QImage AlbumThumbnailLoader::getAlbumPreviewDirectly(PAlbum* const album, int si
         delete catcher;
 
         if (!images.isEmpty())
+        {
             return images[0];
+        }
     }
 
     return loadIcon("folder", size).toImage();

@@ -67,7 +67,8 @@ public:
 };
 
 AlbumModificationHelper::AlbumModificationHelper(QObject* const parent, QWidget* const dialogParent)
-    : QObject(parent), d(new Private)
+    : QObject(parent),
+      d(new Private)
 {
     d->dialogParent = dialogParent;
 }
@@ -86,7 +87,7 @@ PAlbum* AlbumModificationHelper::boundAlbum(QObject* const sender) const
 {
     QAction* action = nullptr;
 
-    if ( (action = qobject_cast<QAction*>(sender)) )
+    if ((action = qobject_cast<QAction*>(sender)))
     {
         return action->data().value<AlbumPointer<PAlbum> >();
     }
@@ -130,6 +131,7 @@ PAlbum* AlbumModificationHelper::slotAlbumNew(PAlbum* parent)
 */
 
     // if we create an album under root, need to supply the album root path.
+
     QString albumRootPath;
 
     albumRootPath = CollectionManager::instance()->oneAlbumRootPath();
@@ -157,7 +159,7 @@ PAlbum* AlbumModificationHelper::slotAlbumNew(PAlbum* parent)
     QString errMsg;
     PAlbum* album = nullptr;
 
-    if (parent->isRoot() || parentSelector == 1)
+    if (parent->isRoot() || (parentSelector == 1))
     {
         album = AlbumManager::instance()->createPAlbum(albumRootPath, title, comments,
                                                        date, category, errMsg);
@@ -171,6 +173,7 @@ PAlbum* AlbumModificationHelper::slotAlbumNew(PAlbum* parent)
     if (!album)
     {
         QMessageBox::critical(qApp->activeWindow(), qApp->applicationName(), errMsg);
+
         return nullptr;
     }
 
@@ -190,15 +193,17 @@ void AlbumModificationHelper::slotAlbumDelete(PAlbum* album)
     }
 
     // find subalbums
+
     QList<QUrl> childrenList;
     addAlbumChildrenToList(childrenList, album);
 
     DeleteDialog dialog(d->dialogParent);
 
     // All subalbums will be presented in the list as well
+
     if (!dialog.confirmDeleteList(childrenList,
-                                  childrenList.size() == 1 ?
-                                  DeleteDialogMode::Albums : DeleteDialogMode::Subalbums,
+                                  (childrenList.size() == 1) ? DeleteDialogMode::Albums
+                                                             : DeleteDialogMode::Subalbums,
                                   DeleteDialogMode::UserPreference))
     {
         return;
@@ -254,6 +259,7 @@ void AlbumModificationHelper::slotAlbumRename(PAlbum* album)
 void AlbumModificationHelper::addAlbumChildrenToList(QList<QUrl>& list, Album* const album)
 {
     // simple recursive helper function
+
     if (album)
     {
         if (!list.contains(album->databaseUrl()))
@@ -301,7 +307,7 @@ void AlbumModificationHelper::slotAlbumEdit(PAlbum* album)
             album->setCaption(comments);
         }
 
-        if (date != oldDate && date.isValid())
+        if ((date != oldDate) && date.isValid())
         {
             album->setDate(date);
         }
@@ -327,6 +333,7 @@ void AlbumModificationHelper::slotAlbumEdit(PAlbum* album)
         }
 
         // Resorting the tree View after changing metadata
+
         DigikamApp::instance()->view()->slotSortAlbums(ApplicationSettings::instance()->getAlbumSortRole());
     }
 }
