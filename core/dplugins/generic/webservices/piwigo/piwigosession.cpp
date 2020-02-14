@@ -102,9 +102,9 @@ void PiwigoSession::load()
     KConfig config;
     KConfigGroup group = config.group("Piwigo Settings");
 
-    d->url      = group.readEntry("URL",      QString());
-    d->username = group.readEntry("Username", QString());
-    d->password = group.readEntry("Password", QString());
+    d->url             = group.readEntry("URL",      QString());
+    d->username        = group.readEntry("Username", QString());
+    d->password        = group.readEntry("Password", QString());
 }
 
 void PiwigoSession::save()

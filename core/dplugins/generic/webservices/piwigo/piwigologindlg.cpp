@@ -53,11 +53,11 @@ class Q_DECL_HIDDEN PiwigoLoginDlg::Private
 public:
 
     explicit Private()
+      : pUrlEdit(nullptr),
+        pUsernameEdit(nullptr),
+        pPasswordEdit(nullptr),
+        pPiwigo(nullptr)
     {
-        pUrlEdit      = nullptr;
-        pUsernameEdit = nullptr;
-        pPasswordEdit = nullptr;
-        pPiwigo       = nullptr;
     }
 
     QLineEdit*     pUrlEdit;
@@ -139,13 +139,19 @@ PiwigoLoginDlg::~PiwigoLoginDlg()
 void PiwigoLoginDlg::slotOk()
 {
     if (d->pUrlEdit->isModified())
+    {
         d->pPiwigo->setUrl(d->pUrlEdit->text());
+    }
 
     if (d->pUsernameEdit->isModified())
+    {
         d->pPiwigo->setUsername(d->pUsernameEdit->text());
+    }
 
     if (d->pPasswordEdit->isModified())
+    {
         d->pPiwigo->setPassword(d->pPasswordEdit->text());
+    }
 
     d->pPiwigo->save();
     accept();

@@ -39,27 +39,27 @@ class PiwigoAlbum
 public:
 
     explicit PiwigoAlbum()
+      : m_refNum(-1),
+        m_parentRefNum(-1)
     {
-        m_refNum       = -1;
-        m_parentRefNum = -1;
     }
 
     bool operator<(const PiwigoAlbum& rhs) const
     {
         if (m_parentRefNum == rhs.m_parentRefNum)
         {
-            return m_refNum < rhs.m_refNum;
+            return (m_refNum < rhs.m_refNum);
         }
 
-        return m_parentRefNum < rhs.m_parentRefNum;
+        return (m_parentRefNum < rhs.m_parentRefNum);
     }
 
 public:
 
-    int     m_refNum;         // album reference number
-    int     m_parentRefNum;   // parent's album reference number
+    int     m_refNum;         ///< album reference number
+    int     m_parentRefNum;   ///< parent's album reference number
 
-    QString m_name;           // Album name
+    QString m_name;           ///< Album name
 };
 
 } // namespace DigikamGenericPiwigoPlugin

@@ -143,7 +143,7 @@ private:
 
     class Private;
     Private* const d;
-    
+
     static QString s_authToken;
 };
 
