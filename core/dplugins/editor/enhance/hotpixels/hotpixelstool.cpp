@@ -171,6 +171,9 @@ void HotPixelsTool::registerFilter()
     DImgFilterManager::instance()->addGenerator(new BasicDImgFilterGenerator<HotPixelFixer>());
 }
 
+#ifndef __clang_analyzer__
+// NOTE: disable false positive report from scan build about "item" instance creation
+
 void HotPixelsTool::readSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
@@ -190,6 +193,8 @@ void HotPixelsTool::readSettings()
                 this, SLOT(slotLoadingComplete()));
     }
 }
+
+#endif
 
 void HotPixelsTool::writeSettings()
 {
@@ -217,6 +222,9 @@ void HotPixelsTool::slotResetSettings()
     d->filterMethodCombo->blockSignals(false);
 }
 
+#ifndef __clang_analyzer__
+// NOTE: disable false positive report from scan build about "item" instance creation
+
 void HotPixelsTool::slotAddBlackFrame()
 {
     QUrl url = ImageDialog::getImageURL(qApp->activeWindow(), d->blackFrameURL, i18n("Select Black Frame Image"));
@@ -225,7 +233,7 @@ void HotPixelsTool::slotAddBlackFrame()
     {
         // Load the selected file and insert into the list.
 
-        d->blackFrameURL = url;
+        d->blackFrameURL                      = url;
         d->blackFrameListView->clear();
         QPointer<BlackFrameListViewItem> item = new BlackFrameListViewItem(d->blackFrameListView, d->blackFrameURL);
 
@@ -236,6 +244,8 @@ void HotPixelsTool::slotAddBlackFrame()
                 this, SLOT(slotLoadingComplete()));
     }
 }
+
+#endif
 
 void HotPixelsTool::preparePreview()
 {
