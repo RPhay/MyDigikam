@@ -330,7 +330,8 @@ bool HTMLWidget::eventFilter(QObject* object, QEvent* event)
         {
             QMouseEvent* const e = dynamic_cast<QMouseEvent*>(event);
 
-            if ((s->currentMouseMode == MouseModeRegionSelection) &&
+            if (e                                                 &&
+                (s->currentMouseMode == MouseModeRegionSelection) &&
                 d->firstSelectionPoint.hasCoordinates())
             {
                 runScript2Coordinates(QString::fromLatin1("kgeomapPixelToLatLng(%1, %2);")
