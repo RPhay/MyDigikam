@@ -135,13 +135,13 @@ public:
 
 public:
 
-    // API-related public constants
+    /// API-related public constants
     static const QString USERPAGE_URL;
     static const QString USERPAGE_DEFAULT_URL;
 
 Q_SIGNALS:
 
-    // emits than  than we are in a bad state
+    /// emits when we are in a bad state
     void signalError();
     void signalGetSessionDone();
     void signalGetTokenDone();
@@ -157,7 +157,9 @@ private Q_SLOTS:
     void slotFinished(QNetworkReply* reply);
 
     void slotParseResponseGetSession();
-    //void slotParseResponseCheckToken();
+/*
+    void slotParseResponseCheckToken();
+*/
     void slotParseResponseGetToken();
     void slotParseResponseGetService();
     void slotParseResponseListAlbums();
@@ -172,19 +174,19 @@ private Q_SLOTS:
 
 private:
 
-    // for updatePhoto
+    /// for updatePhoto
     void updatePhotoFile(YFPhoto& photo);
     void updatePhotoInfo(YFPhoto& photo);
 
-    // for updateAlbum
+    /// for updateAlbum
     void updateAlbumCreate(YandexFotkiAlbum& album);
 
-    // return result from any place
+    /// return result from any place
     void setErrorState(State state);
 
     void listAlbumsNext(); // see listPhotos();
 
-    // for photos pagination in listPhotos()
+    /// for photos pagination in listPhotos()
     void listPhotosNext(); // see listPhotos();
 
 private:
