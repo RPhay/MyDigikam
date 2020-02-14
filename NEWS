@@ -628,4 +628,5 @@ BUGFIXES:
 611 ==> 417317 - digikam git master crash.
 612 ==> 417322 - Unable to move album because tree view does not scroll.
 613 ==> 417333 - Advanced slideshow is blocking the desktop.
-614 ==> 
+614 ==> 417633 - The Google Photos transfer no longer works.
+615 ==> 
