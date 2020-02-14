@@ -70,7 +70,9 @@ private Q_SLOTS:
     void slotImageListChanged();
     void slotUserChangeRequest();
     void slotNewAlbumRequest();
-    //void slotReloadAlbumsRequest();
+/*
+    void slotReloadAlbumsRequest();
+*/
     void slotStartTransfer();
 
     void slotBusy(bool);

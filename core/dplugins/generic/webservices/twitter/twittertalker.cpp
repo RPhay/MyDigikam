@@ -465,7 +465,7 @@ bool TwTalker::addPhotoInit(const QString& imgPath)
      * Video must be <= 512MB
      */
 
-    if (imageFormat.indexOf(fileFormat) != -1)
+    if      (imageFormat.indexOf(fileFormat) != -1)
     {
         mediaType = "image/jpeg";
 
@@ -964,8 +964,8 @@ void TwTalker::parseResponseListFolders(const QByteArray& data)
 
 void TwTalker::parseResponseCreateFolder(const QByteArray& data)
 {
-    QJsonDocument doc      = QJsonDocument::fromJson(data);
-    QJsonObject jsonObject = doc.object();
+    QJsonDocument doc1      = QJsonDocument::fromJson(data);
+    QJsonObject jsonObject = doc1.object();
     bool fail              = jsonObject.contains(QLatin1String("error"));
 
     emit signalBusy(false);
@@ -973,8 +973,9 @@ void TwTalker::parseResponseCreateFolder(const QByteArray& data)
     if (fail)
     {
       QJsonParseError err;
-      QJsonDocument doc = QJsonDocument::fromJson(data, &err);
-      qCDebug(DIGIKAM_WEBSERVICES_LOG) << "parseResponseCreateFolder ERROR: " << doc;
+      QJsonDocument doc2 = QJsonDocument::fromJson(data, &err);
+      qCDebug(DIGIKAM_WEBSERVICES_LOG) << "parseResponseCreateFolder ERROR: " << doc2;
+
       emit signalCreateFolderFailed(jsonObject[QLatin1String("error_summary")].toString());
     }
     else
