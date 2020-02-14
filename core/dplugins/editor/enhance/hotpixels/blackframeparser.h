@@ -62,10 +62,7 @@ public:
     void parseBlackFrame(const QUrl& url);
     void parseBlackFrame(QImage& img);
 
-    QImage image() const
-    {
-        return m_Image;
-    }
+    QImage image() const;
 
 Q_SIGNALS:
 

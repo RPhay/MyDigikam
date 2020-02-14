@@ -29,6 +29,7 @@
 // Qt includes
 
 #include <QList>
+#include <QPointer>
 #include <QPainter>
 #include <QPixmap>
 
@@ -44,7 +45,7 @@ BlackFrameListViewItem::BlackFrameListViewItem(QTreeWidget* const parent, const 
       QTreeWidgetItem(parent),
       m_blackFrameURL(url)
 {
-    m_parser = new BlackFrameParser(parent);
+    QPointer<BlackFrameParser> m_parser = new BlackFrameParser(parent);
     m_parser->parseBlackFrame(url);
 
     connect(m_parser, SIGNAL(signalParsed(QList<HotPixel>)),

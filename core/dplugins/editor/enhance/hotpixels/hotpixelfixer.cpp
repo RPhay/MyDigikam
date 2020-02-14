@@ -69,7 +69,9 @@ HotPixelFixer::HotPixelFixer(QObject* const parent)
     initFilter();
 }
 
-HotPixelFixer::HotPixelFixer(DImg* const orgImage, QObject* const parent, const QList<HotPixel>& hpList,
+HotPixelFixer::HotPixelFixer(DImg* const orgImage,
+                             QObject* const parent,
+                             const QList<HotPixel>& hpList,
                              int interpolationMethod)
     : DImgThreadedFilter(orgImage, parent, QLatin1String("HotPixels")),
       m_interpolationMethod(interpolationMethod),
@@ -157,7 +159,9 @@ void HotPixelFixer::interpolate(DImg& img, HotPixel& hp, int method)
             //case twodim:
             // {
             int sum_weight = 0;
-            double vr      = 0.0, vg = 0.0, vb = 0.0;
+            double vr      = 0.0;
+            double vg      = 0.0;
+            double vb      = 0.0;
             int x, y;
             DColor col;
 

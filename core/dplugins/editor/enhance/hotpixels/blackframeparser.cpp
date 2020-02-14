@@ -54,9 +54,9 @@ namespace DigikamEditorHotPixelsToolPlugin
 {
 
 BlackFrameParser::BlackFrameParser(QObject* const parent)
-    : QObject(parent)
+    : QObject(parent),
+      m_imageLoaderThread(nullptr)
 {
-    m_imageLoaderThread = nullptr;
 }
 
 BlackFrameParser::~BlackFrameParser()
@@ -113,6 +113,11 @@ void BlackFrameParser::parseBlackFrame(QImage& img)
     blackFrameParsing();
 }
 
+QImage BlackFrameParser::image() const
+{
+    return m_Image;
+}
+
 /**
  * Parses black frames
  */
@@ -130,9 +135,9 @@ void BlackFrameParser::blackFrameParsing()
 
     const int maxHotPixels = 1000;
 
-    for (int y = 0 ; y < m_Image.height(); ++y)
+    for (int y = 0 ; y < m_Image.height() ; ++y)
     {
-        for (int x = 0 ; x < m_Image.width(); ++x)
+        for (int x = 0 ; x < m_Image.width() ; ++x)
         {
             // Get each point in the image
 
@@ -204,7 +209,7 @@ void BlackFrameParser::consolidatePixels(QList<HotPixel>& list)
     HotPixel point;
     HotPixel point_below;
 
-    for ( ; it != list.end() ; ++it )
+    for ( ; it != list.end() ; ++it)
     {
         while (1)
         {
@@ -236,7 +241,7 @@ void BlackFrameParser::consolidatePixels(QList<HotPixel>& list)
                                          point_below.x() + point_below.width()) - point.x());
                 point.rect.setHeight(qMax(point.y() + point.height(),
                                           point_below.y() + point_below.height()) - point.y());
-                *it = point;
+                *it         = point;
                 list.erase(point_below_it); // TODO: Check! this could remove it++?
             }
             else
