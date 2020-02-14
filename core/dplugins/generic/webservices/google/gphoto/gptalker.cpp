@@ -95,8 +95,8 @@ public:
 
     explicit Private()
       : userInfoUrl(QLatin1String("https://www.googleapis.com/plus/v1/people/me")),
-        apiUrl(QString::fromLatin1("https://photoslibrary.googleapis.com/%1/%2").arg(apiVersion)),
         apiVersion(QLatin1String("v1")),
+        apiUrl(QString::fromLatin1("https://photoslibrary.googleapis.com/%1/%2").arg(apiVersion)),
         state(GP_LOGOUT),
         albumIdToUpload(QLatin1String("-1")),
         previousImageId(QLatin1String("-1")),
@@ -109,8 +109,8 @@ public:
 
     QString                userInfoUrl;
 
-    QString                apiUrl;
     QString                apiVersion;
+    QString                apiUrl;
 
     State                  state;
 
