@@ -54,8 +54,8 @@ class Q_DECL_HIDDEN YFNewAlbumDlg::Private
 public:
 
     explicit Private()
+      : passwordEdit(nullptr)
     {
-        passwordEdit = nullptr;
     }
 
     QLineEdit*       passwordEdit;
@@ -67,7 +67,7 @@ YFNewAlbumDlg::YFNewAlbumDlg(QWidget* const parent, YandexFotkiAlbum& album)
     : WSNewAlbumDialog(parent, QLatin1String("Yandex.Fotki")),
       d(new Private)
 {
-    d->album = album;
+    d->album                          = album;
 
     hideLocation();
     hideDateTime();

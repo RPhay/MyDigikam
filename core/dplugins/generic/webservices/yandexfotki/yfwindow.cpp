@@ -74,44 +74,44 @@ class Q_DECL_HIDDEN YFWindow::Private
 public:
 
     explicit Private()
+      : import(false),
+        widget(nullptr),
+        loginLabel(nullptr),
+        headerLabel(nullptr),
+        changeUserButton(nullptr),
+        albumsBox(nullptr),
+        newAlbumButton(nullptr),
+        reloadAlbumsButton(nullptr),
+        albumsCombo(nullptr),
+        accessCombo(nullptr),
+        hideOriginalCheck(nullptr),
+        disableCommentsCheck(nullptr),
+        adultCheck(nullptr),
+        resizeCheck(nullptr),
+        dimensionSpin(nullptr),
+        imageQualitySpin(nullptr),
+        policyGroup(nullptr),
+        imgList(nullptr),
+        progressBar(nullptr),
+        iface(nullptr)
     {
-        import               = false;
-        widget               = nullptr;
-        loginLabel           = nullptr;
-        headerLabel          = nullptr;
-        changeUserButton     = nullptr;
-        albumsBox            = nullptr;
-        newAlbumButton       = nullptr;
-        reloadAlbumsButton   = nullptr;
-        albumsCombo          = nullptr;
-        accessCombo          = nullptr;
-        hideOriginalCheck    = nullptr;
-        disableCommentsCheck = nullptr;
-        adultCheck           = nullptr;
-        resizeCheck          = nullptr;
-        dimensionSpin        = nullptr;
-        imageQualitySpin     = nullptr;
-        policyGroup          = nullptr;
-        imgList              = nullptr;
-        progressBar          = nullptr;
-        iface                = nullptr;
     }
 
     bool                        import;
     YFWidget*                   widget;
 
-    // User interface
+    /// User interface
     QLabel*                     loginLabel;
     QLabel*                     headerLabel;
     QPushButton*                changeUserButton;
 
-    // albums
+    /// albums
     QGroupBox*                  albumsBox;
     QPushButton*                newAlbumButton;
     QPushButton*                reloadAlbumsButton;
     QComboBox*                  albumsCombo;
 
-    // upload settings
+    /// upload settings
     QComboBox*                  accessCombo;
     QCheckBox*                  hideOriginalCheck;
     QCheckBox*                  disableCommentsCheck;
@@ -121,11 +121,11 @@ public:
     QSpinBox*                   imageQualitySpin;
     QButtonGroup*               policyGroup;
 
-    DItemsList*                imgList;
+    DItemsList*                 imgList;
     DProgressWdg*               progressBar;
     DInfoInterface*             iface;
 
-    // Backend
+    /// Backend
     QString                     tmpDir;
     YFTalker                    talker;
 
@@ -133,7 +133,7 @@ public:
 
     DMetadata                   meta;
 
-    // XMP id const for images
+    /// XMP id const for images
     static const char*          XMP_SERVICE_ID;
 };
 
@@ -314,6 +314,7 @@ void YFWindow::readSettings()
     KConfigGroup grp = config.group("YandexFotki Settings");
 
     d->talker.setLogin(grp.readEntry("login", ""));
+
     // don't store tokens in plaintext
     //d->talker.setToken(grp.readEntry("token", ""));
 
@@ -341,6 +342,7 @@ void YFWindow::writeSettings()
     KConfigGroup grp = config.group("YandexFotki Settings");
 
     grp.writeEntry("token", d->talker.token());
+
     // don't store tokens in plaintext
     //grp.writeEntry("login", d->talker.login());
 
@@ -392,6 +394,7 @@ void YFWindow::cancelProcessing()
 void YFWindow::authenticate(bool forceAuthWindow)
 {
     // update credentials
+
     if (forceAuthWindow || d->talker.login().isNull() || d->talker.password().isNull())
     {
         WSLoginDialog* const dlg = new WSLoginDialog(this, QLatin1String("Yandex.Fotki"), d->talker.login(), QString());
@@ -419,12 +422,15 @@ void YFWindow::authenticate(bool forceAuthWindow)
 */
 
     // if new credentials non-empty, authenticate
+
     if (!d->talker.login().isEmpty() && !d->talker.password().isEmpty())
     {
         // cancel all tasks first
+
         reset();
 
         // start authentication chain
+
         updateControls(false);
         d->talker.getService();
     }
@@ -508,6 +514,7 @@ void YFWindow::slotListPhotosDoneForUpload(const QList <YFPhoto>& photosList)
             }
 
             // old photo copy
+
             d->transferQueue.push(photosList[oldPhotoId]);
 
             if (policy == YFWidget::UpdatePolicy::POLICY_UPDATE_MERGE)
@@ -526,11 +533,14 @@ void YFWindow::slotListPhotosDoneForUpload(const QList <YFPhoto>& photosList)
         else
         {
             // empty photo
+
             d->transferQueue.push(YFPhoto());
         }
 
         YFPhoto& photo = d->transferQueue.top();
+
         // TODO: updateFile is not used
+
         photo.setOriginalUrl(url.toLocalFile());
         photo.setTitle(info.name());
         photo.setSummary(info.comment());
@@ -539,8 +549,11 @@ void YFWindow::slotListPhotosDoneForUpload(const QList <YFPhoto>& photosList)
         photo.setDisableComments(d->disableCommentsCheck->isChecked());
 
         // adult flag can't be removed, API restrictions
+
         if (!photo.isAdult())
+        {
             photo.setAdult(d->adultCheck->isChecked());
+        }
 
         foreach (const QString& t, tags)
         {

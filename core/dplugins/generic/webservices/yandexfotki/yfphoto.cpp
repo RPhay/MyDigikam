@@ -73,7 +73,7 @@ YFPhoto::YFPhoto(const QString& urn,
       m_adult(adult),
       m_remoteUrl(remoteUrl)
 {
-    // nothing
+    // nothing to do
 }
 
 YFPhoto::YFPhoto(const YFPhoto& other)
@@ -97,33 +97,33 @@ YFPhoto::YFPhoto(const YFPhoto& other)
       m_localUrl(other.localUrl()),
       m_originalUrl(other.originalUrl())
 {
-    //nothing
+    // nothing to do
 }
 
 QDebug operator<<(QDebug d, const YFPhoto& p)
 {
     d.nospace() << "YFPhoto(\n";
 
-    d.space() << "urn:" << p.urn() << ",\n";
-    d.space() << "author:" << p.author() << ",\n";
-    d.space() << "title:" << p.title() << ",\n";
-    d.space() << "summary:" << p.summary() << ",\n";
-    d.space() << "apiEditUrl:" << p.m_apiEditUrl << ",\n";
-    d.space() << "apiSelfUrl:" << p.m_apiSelfUrl << ",\n";
-    d.space() << "apiMediaUrl:" << p.m_apiMediaUrl << ",\n";
-    d.space() << "apiAlbumUrl:" << p.m_apiAlbumUrl << ",\n";
-    d.space() << "publishedDate:" << p.publishedDate() << ",\n";
-    d.space() << "editedDate:" << p.editedDate() << ",\n";
-    d.space() << "updatedDate:" << p.updatedDate() << ",\n";
-    d.space() << "createdDate:" << p.createdDate() << ",\n";
-    d.space() << "access:" << p.access() << ",\n";
-    d.space() << "hideOriginal:" << p.isHideOriginal() << ",\n";
+    d.space() << "urn:"             << p.urn()                << ",\n";
+    d.space() << "author:"          << p.author()            << ",\n";
+    d.space() << "title:"           << p.title()             << ",\n";
+    d.space() << "summary:"         << p.summary()           << ",\n";
+    d.space() << "apiEditUrl:"      << p.m_apiEditUrl        << ",\n";
+    d.space() << "apiSelfUrl:"      << p.m_apiSelfUrl        << ",\n";
+    d.space() << "apiMediaUrl:"     << p.m_apiMediaUrl       << ",\n";
+    d.space() << "apiAlbumUrl:"     << p.m_apiAlbumUrl       << ",\n";
+    d.space() << "publishedDate:"   << p.publishedDate()     << ",\n";
+    d.space() << "editedDate:"      << p.editedDate()        << ",\n";
+    d.space() << "updatedDate:"     << p.updatedDate()       << ",\n";
+    d.space() << "createdDate:"     << p.createdDate()       << ",\n";
+    d.space() << "access:"          << p.access()            << ",\n";
+    d.space() << "hideOriginal:"    << p.isHideOriginal()    << ",\n";
     d.space() << "disableComments:" << p.isDisableComments() << ",\n";
-    d.space() << "adult:" << p.isAdult() << ",\n";
-    d.space() << "remoteUrl:" << p.remoteUrl() << ",\n";
-    d.space() << "localUrl:" << p.localUrl() << ",\n";
-    d.space() << "originalUrl:" << p.originalUrl() << ",\n";
-    d.space() << "tags:" << "\n";
+    d.space() << "adult:"           << p.isAdult()           << ",\n";
+    d.space() << "remoteUrl:"       << p.remoteUrl()         << ",\n";
+    d.space() << "localUrl:"        << p.localUrl()          << ",\n";
+    d.space() << "originalUrl:"     << p.originalUrl()       << ",\n";
+    d.space() << "tags:"            << "\n";
 
     foreach (const QString& t, p.tags)
     {
@@ -131,8 +131,8 @@ QDebug operator<<(QDebug d, const YFPhoto& p)
     }
 
     d.space() << "\n";
-
     d.nospace() << ")";
+
     return d;
 }
 

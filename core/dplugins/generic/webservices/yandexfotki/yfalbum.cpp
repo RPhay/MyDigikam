@@ -28,7 +28,7 @@ namespace DigikamGenericYFPlugin
 
 YandexFotkiAlbum::YandexFotkiAlbum()
 {
-    // nothing
+    // nothing to do
 }
 
 YandexFotkiAlbum::YandexFotkiAlbum(const QString&   urn,
@@ -54,7 +54,7 @@ YandexFotkiAlbum::YandexFotkiAlbum(const QString&   urn,
         m_updatedDate(updatedDate),
         m_password(password)
 {
-    // nothing
+    // nothing to do
 }
 
 YandexFotkiAlbum::YandexFotkiAlbum(const YandexFotkiAlbum& other)
@@ -70,7 +70,7 @@ YandexFotkiAlbum::YandexFotkiAlbum(const YandexFotkiAlbum& other)
         m_updatedDate(other.updatedDate()),
         m_password(other.m_password)
 {
-    //nothing
+    // nothing to do
 }
 
 YandexFotkiAlbum::~YandexFotkiAlbum()
@@ -98,19 +98,20 @@ QDebug operator<<(QDebug d, const YandexFotkiAlbum& a)
 {
     d.nospace() << "YandexFotkiAlbum(\n";
 
-    d.space() << "urn:" << a.urn() << ",\n";
-    d.space() << "author:" << a.author() << ",\n";
-    d.space() << "title:" << a.title() << ",\n";
-    d.space() << "summary:" << a.summary() << ",\n";
-    d.space() << "apiEditUrl:" << a.m_apiEditUrl << ",\n";
-    d.space() << "apiSelfUrl:" << a.m_apiSelfUrl << ",\n";
-    d.space() << "apiPhotoUrl:" << a.m_apiPhotosUrl << ",\n";
-    d.space() << "publishedDate:" << a.publishedDate() << ",\n";
-    d.space() << "editedDate:" << a.editedDate() << ",\n";
-    d.space() << "updatedDate:" << a.updatedDate() << ",\n";
-    d.space() << "password:" << !a.m_password.isNull() << "" << a.m_password << "\n";
+    d.space() << "urn:"           << a.urn()                << ",\n";
+    d.space() << "author:"        << a.author()             << ",\n";
+    d.space() << "title:"         << a.title()              << ",\n";
+    d.space() << "summary:"       << a.summary()            << ",\n";
+    d.space() << "apiEditUrl:"    << a.m_apiEditUrl         << ",\n";
+    d.space() << "apiSelfUrl:"    << a.m_apiSelfUrl         << ",\n";
+    d.space() << "apiPhotoUrl:"   << a.m_apiPhotosUrl       << ",\n";
+    d.space() << "publishedDate:" << a.publishedDate()      << ",\n";
+    d.space() << "editedDate:"    << a.editedDate()         << ",\n";
+    d.space() << "updatedDate:"   << a.updatedDate()        << ",\n";
+    d.space() << "password:"      << !a.m_password.isNull() << "" << a.m_password << "\n";
 
     d.nospace() << ")";
+
     return d;
 }
 

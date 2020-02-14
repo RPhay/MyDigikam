@@ -53,15 +53,15 @@ class Q_DECL_HIDDEN YFWidget::Private
 public:
 
     explicit Private()
+      : accessCombo(nullptr),
+        hideOriginalCheck(nullptr),
+        disableCommentsCheck(nullptr),
+        adultCheck(nullptr),
+        policyGroup(nullptr)
     {
-        accessCombo          = nullptr;
-        hideOriginalCheck    = nullptr;
-        disableCommentsCheck = nullptr;
-        adultCheck           = nullptr;
-        policyGroup          = nullptr;
     }
 
-    // upload settings
+    /// upload settings
     QComboBox*    accessCombo;
     QCheckBox*    hideOriginalCheck;
     QCheckBox*    disableCommentsCheck;
@@ -106,17 +106,17 @@ YFWidget::YFWidget(QWidget* const parent, DInfoInterface* const iface, const QSt
     d->policyGroup->addButton(policyRadio3, POLICY_SKIP);
     d->policyGroup->addButton(policyRadio4, POLICY_ADDNEW);
 
-    optionsBoxLayout->addItem(spacer1,                  3, 0, 1, 5);
-    optionsBoxLayout->addWidget(accessLabel,            4, 0, 1, 5);
+    optionsBoxLayout->addItem(spacer1,                   3, 0, 1, 5);
+    optionsBoxLayout->addWidget(accessLabel,             4, 0, 1, 5);
     optionsBoxLayout->addWidget(d->accessCombo,          5, 1, 1, 4);
     optionsBoxLayout->addWidget(d->adultCheck,           6, 1, 1, 4);
     optionsBoxLayout->addWidget(d->hideOriginalCheck,    7, 1, 1, 4);
     optionsBoxLayout->addWidget(d->disableCommentsCheck, 8, 1, 1, 4);
-    optionsBoxLayout->addItem(spacer2,                  9, 0, 1, 5);
-    optionsBoxLayout->addWidget(policyLabel,            10, 0, 1, 5);
-    optionsBoxLayout->addWidget(policyRadio1,           11, 1, 1, 4);
-    optionsBoxLayout->addWidget(policyRadio3,           13, 1, 1, 4);
-    optionsBoxLayout->addWidget(policyRadio4,           14, 1, 1, 4);
+    optionsBoxLayout->addItem(spacer2,                   9, 0, 1, 5);
+    optionsBoxLayout->addWidget(policyLabel,             10, 0, 1, 5);
+    optionsBoxLayout->addWidget(policyRadio1,            11, 1, 1, 4);
+    optionsBoxLayout->addWidget(policyRadio3,            13, 1, 1, 4);
+    optionsBoxLayout->addWidget(policyRadio4,            14, 1, 1, 4);
 
     getUploadBox()->hide();
     getSizeBox()->hide();
