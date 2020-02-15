@@ -222,6 +222,7 @@ double AtkinsPageLayoutTree::absoluteArea(AtkinsPageLayoutNode* const node)
     }
 
     // A_i
+
     return (G() * node->relativeArea() / m_root->relativeArea() * absoluteAreaRoot);
 }
 
@@ -237,12 +238,12 @@ QRectF AtkinsPageLayoutTree::drawingArea(int index, const QRectF& absoluteRectPa
     // find out the "line of ancestry" of the node
 
     QList<AtkinsPageLayoutNode*> treePath;
-    AtkinsPageLayoutNode* parent = node;
+    AtkinsPageLayoutNode* parent1 = node;
 
-    while (parent)
+    while (parent1)
     {
-        treePath.prepend(parent);
-        parent = m_root->parentOf(parent);
+        treePath.prepend(parent1);
+        parent1 = m_root->parentOf(parent1);
     }
 
     // find out the rect of the page bounding box (the rect of the root node in the page rect)
@@ -256,14 +257,14 @@ QRectF AtkinsPageLayoutTree::drawingArea(int index, const QRectF& absoluteRectPa
 
     for (int i = 0 ; i < treePath.count() - 1 ; ++i)
     {
-        AtkinsPageLayoutNode* const parent = treePath[i];
-        AtkinsPageLayoutNode* const child  = treePath[i+1]; // only iterating to count-1
+        AtkinsPageLayoutNode* const parent2 = treePath[i];
+        AtkinsPageLayoutNode* const child   = treePath[i+1]; // only iterating to count-1
 
-        if (parent->type() == AtkinsPageLayoutNode::VerticalDivision) // side by side
+        if (parent2->type() == AtkinsPageLayoutNode::VerticalDivision) // side by side
         {
-            double leftWidth = absoluteRect.width() * parent->division();
+            double leftWidth = absoluteRect.width() * parent2->division();
 
-            if (child == parent->leftChild())
+            if (child == parent2->leftChild())
             {
                 absoluteRect.setWidth(leftWidth);
             }
@@ -278,9 +279,9 @@ QRectF AtkinsPageLayoutTree::drawingArea(int index, const QRectF& absoluteRectPa
         {
             // left child is topmost
 
-            double upperHeight = absoluteRect.height() * parent->division();
+            double upperHeight = absoluteRect.height() * parent2->division();
 
-            if (child == parent->leftChild())
+            if (child == parent2->leftChild())
             {
                 absoluteRect.setHeight(upperHeight);
             }

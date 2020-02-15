@@ -111,8 +111,8 @@ void AdvPrintTask::run()
 
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Start to print";
 
-            if (d->settings->printerName != d->settings->outputName(AdvPrintSettings::FILES) &&
-                d->settings->printerName != d->settings->outputName(AdvPrintSettings::GIMP))
+            if ((d->settings->printerName != d->settings->outputName(AdvPrintSettings::FILES)) &&
+                (d->settings->printerName != d->settings->outputName(AdvPrintSettings::GIMP)))
             {
                 printPhotos();
                 emit signalDone(!m_cancel);
@@ -151,7 +151,9 @@ void AdvPrintTask::run()
             p.end();
 
             if (!m_cancel)
+            {
                 emit signalPreview(img);
+            }
 
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Preview computation is done";
 
@@ -168,7 +170,7 @@ void AdvPrintTask::preparePrint()
     {
         AdvPrintPhoto* const photo = static_cast<AdvPrintPhoto*>(*it);
 
-        if (photo && photo->m_cropRegion == QRect(-1, -1, -1, -1))
+        if (photo && (photo->m_cropRegion == QRect(-1, -1, -1, -1)))
         {
             QRect* const curr = d->settings->getLayout(photoIndex, d->sizeIndex);
 
@@ -243,13 +245,13 @@ QStringList AdvPrintTask::printPhotosToFile()
     Q_ASSERT(!dir.isEmpty());
     Q_ASSERT(layouts->m_layouts.count() > 1);
 
-    QList<AdvPrintPhoto*> photos = d->settings->photos;
+    QList<AdvPrintPhoto*> photos     = d->settings->photos;
 
     QStringList files;
-    int current          = 0;
-    int pageCount        = 1;
-    bool printing        = true;
-    QRect* const srcPage = layouts->m_layouts.at(0);
+    int current                      = 0;
+    int pageCount                    = 1;
+    bool printing                    = true;
+    QRect* const srcPage             = layouts->m_layouts.at(0);
 
     while (printing)
     {
@@ -279,7 +281,7 @@ QStringList AdvPrintTask::printPhotosToFile()
                            QLatin1Char('.') + ext;
 
         if (QFile::exists(filename) &&
-            d->settings->conflictRule != FileSaveConflictBox::OVERWRITE)
+            (d->settings->conflictRule != FileSaveConflictBox::OVERWRITE))
         {
             filename = DFileOperations::getUniqueFileUrl(QUrl::fromLocalFile(filename)).toLocalFile();
         }
@@ -374,16 +376,16 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
         }
     }
 
-    double xRatio = (double) destW / (double) srcPage->width();
-    double yRatio = (double) destH / (double) srcPage->height();
-    int left      = (p.window().width()  - destW) / 2;
-    int top       = (p.window().height() - destH) / 2;
+    double xRatio1 = (double) destW / (double) srcPage->width();
+    double yRatio1 = (double) destH / (double) srcPage->height();
+    int left       = (p.window().width()  - destW) / 2;
+    int top        = (p.window().height() - destH) / 2;
 
     // FIXME: may not want to erase the background page
 
     p.eraseRect(left, top,
-                AdvPrintWizard::normalizedInt((double) srcPage->width()  * xRatio),
-                AdvPrintWizard::normalizedInt((double) srcPage->height() * yRatio));
+                AdvPrintWizard::normalizedInt((double) srcPage->width()  * xRatio1),
+                AdvPrintWizard::normalizedInt((double) srcPage->height() * yRatio1));
 
     for ( ; (current < photos.count()) && !m_cancel ; ++current)
     {
@@ -413,27 +415,27 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
             img = img.transformed(matrix);
         }
 
-        if (useThumbnails)
+        if      (useThumbnails)
         {
             // scale the crop region to thumbnail coords
 
-            double xRatio = 0.0;
-            double yRatio = 0.0;
+            double xRatio2 = 0.0;
+            double yRatio2 = 0.0;
 
             if (photo->thumbnail().width() != 0)
             {
-                xRatio = (double)photo->thumbnail().width()  / (double)photo->width();
+                xRatio2 = (double)photo->thumbnail().width()  / (double)photo->width();
             }
 
             if (photo->thumbnail().height() != 0)
             {
-                yRatio = (double)photo->thumbnail().height() / (double)photo->height();
+                yRatio2 = (double)photo->thumbnail().height() / (double)photo->height();
             }
 
-            int x1 = AdvPrintWizard::normalizedInt((double)photo->m_cropRegion.left()   * xRatio);
-            int y1 = AdvPrintWizard::normalizedInt((double)photo->m_cropRegion.top()    * yRatio);
-            int w  = AdvPrintWizard::normalizedInt((double)photo->m_cropRegion.width()  * xRatio);
-            int h  = AdvPrintWizard::normalizedInt((double)photo->m_cropRegion.height() * yRatio);
+            int x1 = AdvPrintWizard::normalizedInt((double)photo->m_cropRegion.left()   * xRatio2);
+            int y1 = AdvPrintWizard::normalizedInt((double)photo->m_cropRegion.top()    * yRatio2);
+            int w  = AdvPrintWizard::normalizedInt((double)photo->m_cropRegion.width()  * xRatio2);
+            int h  = AdvPrintWizard::normalizedInt((double)photo->m_cropRegion.height() * yRatio2);
             img    = img.copy(QRect(x1, y1, w, h));
         }
         else if (!cropDisabled)
@@ -441,10 +443,10 @@ bool AdvPrintTask::paintOnePage(QPainter& p,
             img = img.copy(photo->m_cropRegion);
         }
 
-        int x1 = AdvPrintWizard::normalizedInt((double) layout->left()   * xRatio);
-        int y1 = AdvPrintWizard::normalizedInt((double) layout->top()    * yRatio);
-        int w  = AdvPrintWizard::normalizedInt((double) layout->width()  * xRatio);
-        int h  = AdvPrintWizard::normalizedInt((double) layout->height() * yRatio);
+        int x1 = AdvPrintWizard::normalizedInt((double) layout->left()   * xRatio1);
+        int y1 = AdvPrintWizard::normalizedInt((double) layout->top()    * yRatio1);
+        int w  = AdvPrintWizard::normalizedInt((double) layout->width()  * xRatio1);
+        int h  = AdvPrintWizard::normalizedInt((double) layout->height() * yRatio1);
 
         QRect rectViewPort    = p.viewport();
         QRect newRectViewPort = QRect(x1 + left, y1 + top, w, h);
@@ -614,7 +616,9 @@ double AdvPrintTask::getMaxDPI(const QList<AdvPrintPhoto*>& photos,
                                         ((double) layout->height() / 1000.0));
 
         if (dpi > maxDPI)
+        {
             maxDPI = dpi;
+        }
 
         // iterate to the next position
 
@@ -652,7 +656,7 @@ void AdvPrintTask::printCaption(QPainter& p,
         int captionLineLocalLength = 40;
 
         for (currIndex = captionIndex ;
-             currIndex < caption.length() && !breakLine ; ++currIndex)
+             (currIndex < caption.length()) && !breakLine ; ++currIndex)
         {
             if ((caption[currIndex] == QLatin1Char('\n')) ||
                 caption[currIndex].isSpace())
@@ -668,9 +672,9 @@ void AdvPrintTask::printCaption(QPainter& p,
 
         breakLine = false;
 
-        for (currIndex = captionIndex;
-             (currIndex <= captionIndex + captionLineLocalLength) &&
-             (currIndex < caption.length()) && !breakLine;
+        for (currIndex = captionIndex ;
+             (currIndex <= (captionIndex + captionLineLocalLength)) &&
+             (currIndex < caption.length()) && !breakLine ;
              ++currIndex)
         {
             breakLine = (caption[currIndex] == QLatin1Char('\n')) ? true : false;
@@ -717,7 +721,7 @@ void AdvPrintTask::printCaption(QPainter& p,
     // TODO allow printing captions  per photo and on top, bottom and vertically
 
     for (int lineNumber = 0 ;
-         lineNumber < (int) captionByLines.count() ; ++lineNumber)
+         lineNumber < (int)captionByLines.count() ; ++lineNumber)
     {
         if (lineNumber > 0)
         {
