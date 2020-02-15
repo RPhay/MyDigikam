@@ -45,26 +45,8 @@ macro(DETECT_OPENCV OPENCV_MIN_VERSION)
 
         endif()
 
-        # There are two versions of FindOpenCV.cmake in the wild, one defining
-        # OpenCV_LIBRARIES, the other defining OpenCV_LIBS. Make sure we handle
-        # both cases.
-
-        if(NOT OpenCV_LIBRARIES)
-
-            set(OpenCV_LIBRARIES ${OpenCV_LIBS})
-
-        endif()
-
-        # Same story with OpenCV_INCLUDE_DIRS and OpenCV_INCLUDE_DIR:
-
-        if(NOT OpenCV_INCLUDE_DIRS)
-
-            set(OpenCV_INCLUDE_DIRS ${OpenCV_INCLUDE_DIR})
-
-        endif()
-
         message(STATUS "OpenCV headers: ${OpenCV_INCLUDE_DIRS}")
-        message(STATUS "OpenCV libs   : ${OpenCV_LIBRARIES}")
+        message(STATUS "OpenCV libs   : ${OpenCV_LIBS}")
 
     endif()
 
