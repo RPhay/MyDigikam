@@ -23,6 +23,4 @@ set(redeyetoolplugin_SRCS
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    RedEyeTool
                           SOURCES ${redeyetoolplugin_SRCS}
-                          DEPENDS ${OpenCV_LIBRARIES}
-
 )

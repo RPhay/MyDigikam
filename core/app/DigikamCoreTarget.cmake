@@ -147,6 +147,15 @@ target_link_libraries(digikamcore
                       ${FFMPEG_LIBRARIES}
 
                       ${OPENMP_LDFLAGS}
+
+                      PUBLIC
+
+                      opencv_core
+                      opencv_objdetect
+                      opencv_imgproc
+                      opencv_imgcodecs
+                      opencv_dnn
+                      opencv_flann
 )
 
 if(ENABLE_QWEBENGINE)

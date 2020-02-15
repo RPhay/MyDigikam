@@ -107,7 +107,6 @@ set(COMMON_TEST_LINK Qt5::Core
                      ${OPENMP_LDFLAGS}
                      ${JPEG_LIBRARIES}
                      ${LCMS2_LIBRARIES}
-                     ${OpenCV_LIBRARIES}
                      ${EXPAT_LIBRARY}
                      ${CMAKE_THREAD_LIBS_INIT}
 

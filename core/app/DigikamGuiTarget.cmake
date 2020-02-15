@@ -241,8 +241,6 @@ target_link_libraries(digikamgui
                       KF5::WindowSystem
                       KF5::I18n
 
-                      ${OpenCV_LIBRARIES}
-
                       digikamcore
                       digikamdatabase
 )
