@@ -629,4 +629,5 @@ BUGFIXES:
 612 ==> 417322 - Unable to move album because tree view does not scroll.
 613 ==> 417333 - Advanced slideshow is blocking the desktop.
 614 ==> 417633 - The Google Photos transfer no longer works.
-615 ==> 
+615 ==> 409324 - digiKam freezes when exiting image editor from edit on image from filtered view.
+616 ==> 
