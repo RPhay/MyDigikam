@@ -4,11 +4,6 @@
 # Redistribution and use is allowed according to the terms of the BSD license.
 # For details see the accompanying COPYING-CMAKE-SCRIPTS file.
 
-# Sometime Haar Cascade XML files used by Face Detection are not installed with OpenCV rules.
-# With OpenCV3, as cv::face go to contrib repository, XML files can miss.
-# So we always generalize installation of these files directly through digiKam,
-# to be sure that Face Management always work.
-
 # Shape predictor model data file
 
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/shape-predictor/shapepredictor.dat
