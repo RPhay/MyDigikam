@@ -88,9 +88,9 @@ bool DNGWriter::Private::fujiRotate(QByteArray& rawData, DRawInfo& identify) con
     unsigned short* tmp    = reinterpret_cast<unsigned short*>(tmpData.data());
     unsigned short* output = reinterpret_cast<unsigned short*>(rawData.data());
 
-    for (int row=0 ; row < height ; ++row)
+    for (int row = 0 ; row < height ; ++row)
     {
-        for (int col=0 ; col < width ; ++col)
+        for (int col = 0 ; col < width ; ++col)
         {
             output[col * height + row] = tmp[row * width + col];
         }

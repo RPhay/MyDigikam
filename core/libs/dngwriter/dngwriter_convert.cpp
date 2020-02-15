@@ -60,6 +60,7 @@ int DNGWriter::convert()
         if (!rawProcessor.rawFileIdentify(identifyMake, inputFile()))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Reading RAW file failed. Aborted..." ;
+
             return PROCESSFAILED;
         }
 
@@ -86,6 +87,7 @@ int DNGWriter::convert()
         if (!rawProcessor.extractRAWData(inputFile(), rawData, identify, 0))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Loading RAW data failed. Aborted..." ;
+
             return FILENOTSUPPORTED;
         }
 
@@ -115,7 +117,8 @@ int DNGWriter::convert()
 
         for (int i = 0 ; i < 4 ; ++i)
         {
-            qCDebug(DIGIKAM_GENERAL_LOG) << "                   "
+            qCDebug(DIGIKAM_GENERAL_LOG)
+                     << "                   "
                      << QString().asprintf("%03.4f  %03.4f  %03.4f", identify.cameraXYZMatrix[i][0],
                                                                      identify.cameraXYZMatrix[i][1],
                                                                      identify.cameraXYZMatrix[i][2]);
@@ -181,6 +184,7 @@ int DNGWriter::convert()
             if (identify.filterPattern.length() != 16)
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted..." ;
+
                 return FILENOTSUPPORTED;
             }
 
@@ -207,6 +211,7 @@ int DNGWriter::convert()
                 else
                 {
                     qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted..." ;
+
                     return FILENOTSUPPORTED;
                 }
             }
@@ -214,6 +219,7 @@ int DNGWriter::convert()
         else
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Bayer mosaic not supported. Aborted..." ;
+
             return FILENOTSUPPORTED;
         }
 
@@ -222,6 +228,7 @@ int DNGWriter::convert()
             if (!d->fujiRotate(rawData, identify))
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Can not rotate fuji image. Aborted...";
+
                 return PROCESSFAILED;
             }
 
@@ -239,6 +246,7 @@ int DNGWriter::convert()
         if ((identify.rawColors != 3) && (identify.rawColors != 4))
         {
             qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Number of Raw color components not supported. Aborted..." ;
+
             return PROCESSFAILED;
         }
 
@@ -292,7 +300,7 @@ int DNGWriter::convert()
 
         buffer.fArea       = rect;
         buffer.fPlane      = 0;
-        buffer.fPlanes     = bayerPattern == Private::LinearRaw ? 3 : 1;
+        buffer.fPlanes     = (bayerPattern == Private::LinearRaw) ? 3 : 1;
         buffer.fRowStep    = buffer.fPlanes * width;
         buffer.fColStep    = buffer.fPlanes;
         buffer.fPlaneStep  = 1;
@@ -312,7 +320,8 @@ int DNGWriter::convert()
 
         AutoPtr<dng_negative> negative(host.Make_dng_negative());
 
-        negative->SetDefaultScale(dng_urational(outputWidth, activeWidth), dng_urational(outputHeight, activeHeight));
+        negative->SetDefaultScale(dng_urational(outputWidth,  activeWidth),
+                                  dng_urational(outputHeight, activeHeight));
 
         if (bayerPattern != Private::LinearRaw)
         {
@@ -331,7 +340,13 @@ int DNGWriter::convert()
         negative->SetOriginalRawFileName(inputInfo.fileName().toLatin1().constData());
         negative->SetColorChannels(identify.rawColors);
 
-        ColorKeyCode colorCodes[4] = { colorKeyMaxEnum, colorKeyMaxEnum, colorKeyMaxEnum, colorKeyMaxEnum };
+        ColorKeyCode colorCodes[4] =
+        {
+            colorKeyMaxEnum,
+            colorKeyMaxEnum,
+            colorKeyMaxEnum,
+            colorKeyMaxEnum
+        };
 
         for (int i = 0 ; i < qMax(4, identify.colorKeys.length()) ; ++i)
         {
@@ -366,6 +381,7 @@ int DNGWriter::convert()
         switch (bayerPattern)
         {
             case Private::Standard:
+
                 // Standard bayer mosaicing. All work fine there.
                 // Bayer CCD mask: https://en.wikipedia.org/wiki/Bayer_filter
 
@@ -373,6 +389,7 @@ int DNGWriter::convert()
                 break;
 
             case Private::Fuji:
+
                 // TODO: Fuji is special case. Need to setup different bayer rules here.
                 // It do not work in all settings. Need indeep investiguations.
                 // Fuji superCCD: https://en.wikipedia.org/wiki/Super_CCD
@@ -513,7 +530,7 @@ int DNGWriter::convert()
 
         for (int i = 0 ; i < identify.rawColors ; ++i)
         {
-            camNeutral[i] = 1.0/identify.cameraMult[i];
+            camNeutral[i] = 1.0 / identify.cameraMult[i];
         }
 
         negative->SetCameraNeutral(camNeutral);
@@ -691,19 +708,21 @@ int DNGWriter::convert()
             if (meta.getExifTagLong("Exif.Photo.FocalPlaneResolutionUnit", val))       exif->fFocalPlaneResolutionUnit = (uint32)val;
             if (meta.getExifTagLong("Exif.GPSInfo.GPSAltitudeRef", val))               exif->fGPSAltitudeRef           = (uint32)val;
             if (meta.getExifTagLong("Exif.GPSInfo.GPSDifferential", val))              exif->fGPSDifferential          = (uint32)val;
-            long gpsVer1 = 0;
-            long gpsVer2 = 0;
-            long gpsVer3 = 0;
-            long gpsVer4 = 0;
+
+            long gpsVer1        = 0;
+            long gpsVer2        = 0;
+            long gpsVer3        = 0;
+            long gpsVer4        = 0;
             meta.getExifTagLong("Exif.GPSInfo.GPSVersionID", gpsVer1, 0);
             meta.getExifTagLong("Exif.GPSInfo.GPSVersionID", gpsVer2, 1);
             meta.getExifTagLong("Exif.GPSInfo.GPSVersionID", gpsVer3, 2);
             meta.getExifTagLong("Exif.GPSInfo.GPSVersionID", gpsVer4, 3);
-            long gpsVer  = 0;
-            gpsVer += gpsVer1 << 24;
-            gpsVer += gpsVer2 << 16;
-            gpsVer += gpsVer3 <<  8;
-            gpsVer += gpsVer4;
+
+            long gpsVer         = 0;
+            gpsVer             += gpsVer1 << 24;
+            gpsVer             += gpsVer2 << 16;
+            gpsVer             += gpsVer3 <<  8;
+            gpsVer             += gpsVer4;
             exif->fGPSVersionID = (uint32)gpsVer;
 
             // Nikon Markernotes
@@ -881,7 +900,9 @@ int DNGWriter::convert()
 
             // -------------------------------------------
 
-            if ((exif->fLensName.IsEmpty()) && (exif->fLensInfo[0].As_real64() > 0) && (exif->fLensInfo[1].As_real64() > 0))
+            if ((exif->fLensName.IsEmpty())          &&
+                (exif->fLensInfo[0].As_real64() > 0) &&
+                (exif->fLensInfo[1].As_real64() > 0))
             {
                 QString     lensName;
                 QTextStream stream(&lensName);
@@ -920,15 +941,15 @@ int DNGWriter::convert()
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Backup Makernote (" << mkrnts.size() << " bytes)" ;
 
-                dng_memory_allocator memalloc(gDefaultDNGMemoryAllocator);
-                dng_memory_stream stream(memalloc);
+                dng_memory_allocator memalloc1(gDefaultDNGMemoryAllocator);
+                dng_memory_stream stream(memalloc1);
                 stream.Put(mkrnts.data(), mkrnts.size());
                 AutoPtr<dng_memory_block> block(host.Allocate(mkrnts.size()));
                 stream.SetReadPosition(0);
                 stream.Get(block->Buffer(), mkrnts.size());
 
-                if (identifyMake.make != QLatin1String("Canon") &&
-                    identifyMake.make != QLatin1String("Panasonic"))
+                if ((identifyMake.make != QLatin1String("Canon")) &&
+                    (identifyMake.make != QLatin1String("Panasonic")))
                 {
                     negative->SetMakerNote(block);
                     negative->SetMakerNoteSafety(true);
@@ -968,6 +989,7 @@ int DNGWriter::convert()
             if (!originalFile.open(QIODevice::ReadOnly))
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open original RAW file to backup in DNG. Aborted...";
+
                 return PROCESSFAILED;
             }
 
@@ -977,7 +999,7 @@ int DNGWriter::convert()
             quint32 forkBlocks = (quint32)floor((forkLength + 65535.0) / 65536.0);
 
             QVector<quint32> offsets;
-            quint32 offset = (2 + forkBlocks) * sizeof(quint32);
+            quint32 offset     = (2 + forkBlocks) * sizeof(quint32);
             offsets.push_back(offset);
 
             QByteArray originalDataBlock;
@@ -988,6 +1010,7 @@ int DNGWriter::convert()
             if (!compressedFile.open())
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open temporary file to write Zipped Raw data. Aborted...";
+
                 return PROCESSFAILED;
             }
 
@@ -1007,12 +1030,12 @@ int DNGWriter::convert()
                 compressedDataStream.writeRawData(compressedDataBlock.data(), compressedDataBlock.size());
             }
 
-            dng_memory_allocator memalloc(gDefaultDNGMemoryAllocator);
-            dng_memory_stream tempDataStream(memalloc);
+            dng_memory_allocator memalloc2(gDefaultDNGMemoryAllocator);
+            dng_memory_stream tempDataStream(memalloc2);
             tempDataStream.SetBigEndian(true);
             tempDataStream.Put_uint32(forkLength);
 
-            for (qint32 idx = 0; idx < offsets.size(); ++idx)
+            for (qint32 idx = 0 ; idx < offsets.size() ; ++idx)
             {
                 tempDataStream.Put_uint32(offsets[idx]);
             }
@@ -1109,6 +1132,7 @@ int DNGWriter::convert()
             if (!pre_image.loadFromData((uchar*)&tiff_mem_buffer.front(), (int)tiff_mem_buffer.size(), "TIFF"))
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot load TIFF preview data in memory. Aborted..." ;
+
                 return PROCESSFAILED;
             }
 
@@ -1117,12 +1141,14 @@ int DNGWriter::convert()
             if (!previewFile.open())
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot open temporary file to write JPEG preview. Aborted..." ;
+
                 return PROCESSFAILED;
             }
 
             if (!pre_image.save(previewFile.fileName(), "JPEG", 90))
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: Cannot save file to write JPEG preview. Aborted..." ;
+
                 return PROCESSFAILED;
             }
 
@@ -1226,12 +1252,14 @@ int DNGWriter::convert()
     {
         int ret = exception.ErrorCode();
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code (" << ret << ")" ;
+
         return DNGSDKINTERNALERROR;
     }
 
     catch (...)
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: DNG SDK exception code unknow" ;
+
         return DNGSDKINTERNALERROR;
     }
 

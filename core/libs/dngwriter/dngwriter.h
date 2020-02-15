@@ -86,7 +86,7 @@ public:
 
 public:
 
-    // Declared public because of DNGWriterHost class.
+    // Declared public for DNGWriterHost class.
     class Private;
 
 private:
