@@ -221,7 +221,7 @@ if(WIN32)
     set_target_properties(digikamgui PROPERTIES COMPILE_FLAGS -DJPEG_STATIC)
 endif()
 
-# Note all this target dependencies must be private and not exported to prevent inherited external plugins dependencies.
+# NOTE: all this target dependencies must be private and not exported to prevent inherited dependencies on external plugins.
 
 target_link_libraries(digikamgui
 
@@ -243,6 +243,13 @@ target_link_libraries(digikamgui
 
                       digikamcore
                       digikamdatabase
+
+                      opencv_core
+                      opencv_objdetect
+                      opencv_imgproc
+                      opencv_imgcodecs
+                      opencv_dnn
+                      opencv_flann
 )
 
 if(ENABLE_QWEBENGINE)

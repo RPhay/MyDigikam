@@ -23,4 +23,10 @@ set(redeyetoolplugin_SRCS
 
 DIGIKAM_ADD_EDITOR_PLUGIN(NAME    RedEyeTool
                           SOURCES ${redeyetoolplugin_SRCS}
+                          DEPENDS opencv_core
+                                  opencv_objdetect
+                                  opencv_imgproc
+                                  opencv_imgcodecs
+                                  opencv_dnn
+                                  opencv_flann
 )

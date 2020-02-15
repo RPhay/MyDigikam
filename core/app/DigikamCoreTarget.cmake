@@ -110,7 +110,7 @@ generate_export_header(digikamcore
                        EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_core_export.h"
 )
 
-# Note all this target dependencies must be private and not exported to prevent inherited external plugins dependencies.
+# NOTE: all this target dependencies must be private and not exported to prevent inherited dependencies on external plugins.
 
 target_link_libraries(digikamcore
 
@@ -147,8 +147,6 @@ target_link_libraries(digikamcore
                       ${FFMPEG_LIBRARIES}
 
                       ${OPENMP_LDFLAGS}
-
-                      PUBLIC
 
                       opencv_core
                       opencv_objdetect

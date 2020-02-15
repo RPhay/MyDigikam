@@ -110,6 +110,13 @@ set(COMMON_TEST_LINK Qt5::Core
                      ${EXPAT_LIBRARY}
                      ${CMAKE_THREAD_LIBS_INIT}
 
+                     opencv_core
+                     opencv_objdetect
+                     opencv_imgproc
+                     opencv_imgcodecs
+                     opencv_dnn
+                     opencv_flann
+
                      ${_extra_deps}
 )
 

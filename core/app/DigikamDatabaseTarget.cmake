@@ -29,7 +29,7 @@ generate_export_header(digikamdatabase
                        EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/utils/digikam_database_export.h"
 )
 
-# Note all this target dependencies must be private and not exported to prevent inherited external plugins dependencies.
+# NOTE: all this target dependencies must be private and not exported to prevent inherited dependencies on external plugins.
 
 target_link_libraries(digikamdatabase
 
@@ -44,6 +44,13 @@ target_link_libraries(digikamdatabase
                       KF5::I18n
 
                       digikamcore
+
+                      opencv_core
+                      opencv_objdetect
+                      opencv_imgproc
+                      opencv_imgcodecs
+                      opencv_dnn
+                      opencv_flann
 )
 
 if(ENABLE_DBUS)
