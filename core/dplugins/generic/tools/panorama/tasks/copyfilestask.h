@@ -30,7 +30,7 @@
 // Local includes
 
 #include "panotask.h"
-#include "metaengine.h"
+#include "dmetadata.h"
 
 using namespace Digikam;
 
@@ -63,7 +63,7 @@ private:
     const bool                       savePTO;
     const bool                       addGPlusMetadata;
 
-    MetaEngine                       m_meta;
+    DMetadata                        m_meta;
 };
 
 } // namespace DigikamGenericPanoramaPlugin
