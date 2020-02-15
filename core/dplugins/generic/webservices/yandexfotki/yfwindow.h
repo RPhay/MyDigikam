@@ -65,7 +65,7 @@ public:
 
 private Q_SLOTS:
 
-    // ui slots
+    /// ui slots
     void slotChangeUserClicked();
 
     void slotError();

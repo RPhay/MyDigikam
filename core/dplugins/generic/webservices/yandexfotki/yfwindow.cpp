@@ -437,6 +437,7 @@ void YFWindow::authenticate(bool forceAuthWindow)
     else
     {
         // we don't have valid credentials, so cancel all transfers and reset
+
         reset();
     }
 
@@ -500,6 +501,7 @@ void YFWindow::slotListPhotosDoneForUpload(const QList <YFPhoto>& photosList)
         }
 
         // get tags
+
         QStringList tags = info.tagsPath();
         bool updateFile  = true;
 
@@ -588,6 +590,7 @@ void YFWindow::slotListPhotosDoneForUpload(const QList <YFPhoto>& photosList)
 void YFWindow::updateNextPhoto()
 {
     // select only one image from stack
+
     while (!d->transferQueue.isEmpty())
     {
         YFPhoto& photo = d->transferQueue.top();
@@ -601,9 +604,9 @@ void YFWindow::updateNextPhoto()
                 image.load(photo.originalUrl());
             }
 
-            photo.setLocalUrl(d->tmpDir + QFileInfo(photo.originalUrl())
-                              .baseName()
-                              .trimmed() + QLatin1String(".jpg"));
+            photo.setLocalUrl(d->tmpDir                                           +
+                              QFileInfo(photo.originalUrl()).baseName().trimmed() +
+                              QLatin1String(".jpg"));
 
             bool prepared = false;
 
@@ -612,9 +615,10 @@ void YFWindow::updateNextPhoto()
                 // get temporary file name
 
                 // rescale image if requested
+
                 int maxDim = d->dimensionSpin->value();
 
-                if (d->resizeCheck->isChecked() && (image.width() > maxDim || image.height() > maxDim))
+                if (d->resizeCheck->isChecked() && ((image.width() > maxDim) || (image.height() > maxDim)))
                 {
                     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Resizing to " << maxDim;
                     image = image.scaled(maxDim, maxDim, Qt::KeepAspectRatio,
@@ -644,6 +648,7 @@ void YFWindow::updateNextPhoto()
                     != QMessageBox::Yes)
                 {
                     // stop uploading
+
                     d->transferQueue.clear();
                     continue;
                 }
@@ -694,16 +699,18 @@ void YFWindow::slotStartTransfer()
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "slotStartTransfer invoked";
 
-    if (d->albumsCombo->currentIndex() == -1 || d->albumsCombo->count() == 0)
+    if ((d->albumsCombo->currentIndex() == -1) || (d->albumsCombo->count() == 0))
     {
         QMessageBox::information(this, QString(), i18n("Please select album first"));
         return;
     }
 
     // TODO: import support
+
     if (!d->import)
     {
         // list photos of the album, then start upload
+
         const YandexFotkiAlbum& album = d->talker.albums().at(d->albumsCombo->currentIndex());
 
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Album selected" << album;
@@ -720,13 +727,18 @@ void YFWindow::slotError()
         case YFTalker::STATE_GETSESSION_ERROR:
             QMessageBox::critical(this, QString(), i18n("Session error"));
             break;
+
         case YFTalker::STATE_GETTOKEN_ERROR:
             QMessageBox::critical(this, QString(), i18n("Token error"));
             break;
+
         case YFTalker::STATE_INVALID_CREDENTIALS:
             QMessageBox::critical(this, QString(), i18n("Invalid credentials"));
-//            authenticate(true);
+/*
+            authenticate(true);
+*/
             break;
+
         case YFTalker::STATE_GETSERVICE_ERROR:
             QMessageBox::critical(this, QString(), i18n("Cannot get service document"));
             break;
@@ -743,12 +755,15 @@ void YFWindow::slotError()
             d->albumsCombo->clear();
             QMessageBox::critical(this, QString(), i18n("Cannot list albums"));
             break;
+
         case YFTalker::STATE_LISTPHOTOS_ERROR:
             QMessageBox::critical(this, QString(), i18n("Cannot list photos"));
             break;
+
         case YFTalker::STATE_UPDATEALBUM_ERROR:
             QMessageBox::critical(this, QString(), i18n("Cannot update album info"));
             break;
+
         case YFTalker::STATE_UPDATEPHOTO_FILE_ERROR:
         case YFTalker::STATE_UPDATEPHOTO_INFO_ERROR:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "UpdatePhotoError";
@@ -760,15 +775,21 @@ void YFWindow::slotError()
                 != QMessageBox::Yes)
             {
                 // clear upload stack
+
                 d->transferQueue.clear();
             }
             else
             {
                 // cancel current operation
+
                 d->talker.cancel();
+
                 // remove only bad image
+
                 d->transferQueue.pop();
+
                 // and try next
+
                 updateNextPhoto();
                 return;
             }
@@ -779,6 +800,7 @@ void YFWindow::slotError()
     }
 
     // cancel current operation
+
     d->talker.cancel();
     updateControls(true);
 }
@@ -829,10 +851,12 @@ void YFWindow::slotUpdatePhotoDone(YFPhoto& photo)
 {
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "photoUploaded" << photo;
 
-    if (d->meta.supportXmp() && d->meta.canWriteXmp(photo.originalUrl()) &&
+    if (d->meta.supportXmp()                     &&
+        d->meta.canWriteXmp(photo.originalUrl()) &&
         d->meta.load(photo.originalUrl()))
     {
         // ignore errors here
+
         if (d->meta.setXmpTagString(d->XMP_SERVICE_ID, photo.urn()) &&
             d->meta.save(photo.originalUrl()))
         {
