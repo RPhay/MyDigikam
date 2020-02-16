@@ -322,8 +322,9 @@ void PTalker::listBoards(const QString& /*path*/)
 
     QNetworkRequest netRequest(url);
     netRequest.setRawHeader("Authorization", QString::fromLatin1("Bearer %1").arg(d->accessToken).toUtf8());
-    //netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
-
+/*
+    netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
+*/
     d->reply = d->netMngr->get(netRequest);
 
     d->state = Private::P_LISTBOARDS;
@@ -355,7 +356,7 @@ bool PTalker::addPin(const QString& imgPath,
     QString path = WSToolUtils::makeTemporaryDir("pinterest").filePath(QFileInfo(imgPath)
                                                  .baseName().trimmed() + QLatin1String(".jpg"));
 
-    if (rescale && (image.width() > maxDim || image.height() > maxDim))
+    if (rescale && ((image.width() > maxDim) || (image.height() > maxDim)))
     {
         image = image.scaled(maxDim, maxDim, Qt::KeepAspectRatio, Qt::SmoothTransformation);
     }
@@ -469,22 +470,27 @@ void PTalker::slotFinished(QNetworkReply* reply)
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In P_LISTBOARDS";
             parseResponseListBoards(buffer);
             break;
+
         case Private::P_CREATEBOARD:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In P_CREATEBOARD";
             parseResponseCreateBoard(buffer);
             break;
+
         case Private::P_ADDPIN:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In P_ADDPIN";
             parseResponseAddPin(buffer);
             break;
+
         case Private::P_USERNAME:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In P_USERNAME";
             parseResponseUserName(buffer);
             break;
+
         case Private::P_ACCESSTOKEN:
             qCDebug(DIGIKAM_WEBSERVICES_LOG) << "In P_ACCESSTOKEN";
             parseResponseAccessToken(buffer);
             break;
+
         default:
             break;
     }
@@ -557,8 +563,6 @@ void PTalker::parseResponseListBoards(const QByteArray& data)
     QJsonArray jsonArray   = jsonObject[QLatin1String("data")].toArray();
 
     QList<QPair<QString, QString> > list;
-    QString boardID;
-    QString boardName;
 
     foreach (const QJsonValue& value, jsonArray)
     {
@@ -577,8 +581,8 @@ void PTalker::parseResponseListBoards(const QByteArray& data)
 
 void PTalker::parseResponseCreateBoard(const QByteArray& data)
 {
-    QJsonDocument doc      = QJsonDocument::fromJson(data);
-    QJsonObject jsonObject = doc.object();
+    QJsonDocument doc1     = QJsonDocument::fromJson(data);
+    QJsonObject jsonObject = doc1.object();
     bool fail              = jsonObject.contains(QLatin1String("error"));
 
     emit signalBusy(false);
@@ -586,7 +590,7 @@ void PTalker::parseResponseCreateBoard(const QByteArray& data)
     if (fail)
     {
         QJsonParseError err;
-        QJsonDocument doc = QJsonDocument::fromJson(data, &err);
+        QJsonDocument doc2 = QJsonDocument::fromJson(data, &err);
         emit signalCreateBoardFailed(jsonObject[QLatin1String("error_summary")].toString());
     }
     else
