@@ -45,7 +45,8 @@ class FlickrList : public DItemsList
 
 public:
 
-    /** The different columns in a Flickr list.
+    /**
+     * The different columns in a Flickr list.
      */
     enum FieldType
     {
@@ -57,7 +58,8 @@ public:
         FRIENDS     = DItemsListView::User6
     };
 
-    /** The different possible safety levels recognized by Flickr.
+    /**
+     * The different possible safety levels recognized by Flickr.
      */
     enum SafetyLevel
     {
@@ -67,7 +69,8 @@ public:
         MIXEDLEVELS = -1
     };
 
-    /** The different possible content types recognized by Flickr.
+    /**
+     * The different possible content types recognized by Flickr.
      */
     enum ContentType
     {
@@ -90,9 +93,11 @@ public:
 
 Q_SIGNALS:
 
-    // Signal for notifying when the states of one of the permission columns has
-    // changed. The first argument specifies which permission has changed, the
-    // second the state.
+    /**
+     * Signal for notifying when the states of one of the permission columns has
+     * changed. The first argument specifies which permission has changed, the
+     * second the state.
+     */
     void signalPermissionChanged(FlickrList::FieldType, Qt::CheckState);
 
     void signalSafetyLevelChanged(FlickrList::SafetyLevel);
@@ -139,9 +144,9 @@ public:
     void setFriends(bool);
     void setSafetyLevel(FlickrList::SafetyLevel);
     void setContentType(FlickrList::ContentType);
-    bool isPublic() const;
-    bool isFamily() const;
-    bool isFriends() const;
+    bool isPublic()                       const;
+    bool isFamily()                       const;
+    bool isFriends()                      const;
     FlickrList::SafetyLevel safetyLevel() const;
     FlickrList::ContentType contentType() const;
 

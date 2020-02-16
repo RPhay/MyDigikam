@@ -569,9 +569,9 @@ void FlickrWindow::slotCreateNewPhotoSet()
 {
     if (d->albumDlg->exec() == QDialog::Accepted)
     {
-        FPhotoSet fps;
-        d->albumDlg->getFolderProperties(fps);
-        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "in slotCreateNewPhotoSet()" << fps.title;
+        FPhotoSet fps1;
+        d->albumDlg->getFolderProperties(fps1);
+        qCDebug(DIGIKAM_WEBSERVICES_LOG) << "in slotCreateNewPhotoSet()" << fps1.title;
 
         // Lets find an UNDEFINED_ style id that isn't taken yet.s
 
@@ -582,9 +582,9 @@ void FlickrWindow::slotCreateNewPhotoSet()
 
         while (it != d->talker->m_photoSetsList->end())
         {
-            FPhotoSet fps = *it;
+            FPhotoSet fps2 = *it;
 
-            if (fps.id == id)
+            if (fps2.id == id)
             {
                 id = QLatin1String("UNDEFINED_") + QString::number(++i);
                 it = d->talker->m_photoSetsList->begin();
@@ -593,14 +593,14 @@ void FlickrWindow::slotCreateNewPhotoSet()
             ++it;
         }
 
-        fps.id = id;
+        fps1.id = id;
 
         qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Created new photoset with temporary id" << id;
 
         // Append the new photoset to the list.
 
-        d->talker->m_photoSetsList->prepend(fps);
-        d->talker->m_selectedPhotoSet = fps;
+        d->talker->m_photoSetsList->prepend(fps1);
+        d->talker->m_selectedPhotoSet = fps1;
 
         // Re-populate the photo sets combo box.
 

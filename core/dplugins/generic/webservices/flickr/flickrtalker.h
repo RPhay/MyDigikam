@@ -117,6 +117,7 @@ Q_SIGNALS:
     void signalLinkingSucceeded();
 
 private:
+
 /*
     void parseResponseLogin(const QByteArray& data);
 */

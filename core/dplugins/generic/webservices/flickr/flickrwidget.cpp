@@ -459,18 +459,18 @@ void FlickrWidget::mainPermissionToggled(FlickrList::FieldType checkbox, Qt::Che
 void FlickrWidget::slotMainSafetyLevelChanged(int index)
 {
     int currValue = (d->safetyLevelComboBox->itemData(index)).value<int>();
-
-//     int currValue = qVariantValue<int>(d->safetyLevelComboBox->itemData(index));
-
+/*
+     int currValue = qVariantValue<int>(d->safetyLevelComboBox->itemData(index));
+*/
     d->imglst->setSafetyLevels(static_cast<FlickrList::SafetyLevel>(currValue));
 }
 
 void FlickrWidget::slotMainContentTypeChanged(int index)
 {
     int currValue = (d->contentTypeComboBox->itemData(index)).value<int>();
-
-//     int currValue = qVariantValue<int>(d->contentTypeComboBox->itemData(index));
-
+/*
+     int currValue = qVariantValue<int>(d->contentTypeComboBox->itemData(index));
+*/
     d->imglst->setContentTypes(static_cast<FlickrList::ContentType>(currValue));
 }
 
