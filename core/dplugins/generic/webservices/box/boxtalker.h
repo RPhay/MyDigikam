@@ -90,7 +90,9 @@ private:
 
     void parseResponseUserName(const QByteArray& data);
     void parseResponseListFolders(const QByteArray& data);
-    //QList<QPair<QString, QString> > parseListFoldersRequest(const QByteArray& data);
+/*
+    QList<QPair<QString, QString> > parseListFoldersRequest(const QByteArray& data);
+*/
     void parseResponseCreateFolder(const QByteArray& data);
     void parseResponseAddPhoto(const QByteArray& data);
 

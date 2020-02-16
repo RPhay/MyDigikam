@@ -55,12 +55,12 @@ class Q_DECL_HIDDEN BOXWindow::Private
 public:
 
     explicit Private()
+      : imagesCount(0),
+        imagesTotal(0),
+        widget(nullptr),
+        albumDlg(nullptr),
+        talker(nullptr)
     {
-        imagesCount = 0;
-        imagesTotal = 0;
-        widget      = nullptr;
-        albumDlg    = nullptr;
-        talker      = nullptr;
     }
 
     unsigned int    imagesCount;
