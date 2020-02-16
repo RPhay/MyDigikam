@@ -206,9 +206,10 @@ GPSSearchView::GPSSearchView(QWidget* const parent,
                                              MouseModeFilter        |
                                              MouseModeSelectThumbnail);
 
-    // construct a second row of control actions below the control widget
-    /// @todo Should we still replace the icons of the actions with text as discussed during the sprint?
-
+    /**
+     * construct a second row of control actions below the control widget
+     * @todo Should we still replace the icons of the actions with text as discussed during the sprint?
+     */
     QWidget* const secondActionRow            = new QWidget();
     QHBoxLayout* const secondActionRowHBox    = new QHBoxLayout();
     secondActionRowHBox->setContentsMargins(QMargins());

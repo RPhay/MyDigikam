@@ -37,9 +37,6 @@
 
 #include "abstractmarkertiler.h"
 #include "mapwidget.h"
-
-// Local includes
-
 #include "digikam_export.h"
 #include "itemposition.h"
 #include "coredbchangesets.h"

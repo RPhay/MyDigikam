@@ -35,9 +35,6 @@
 
 #include "geomodelhelper.h"
 #include "mapwidget.h"
-
-// Local includes
-
 #include "statesavingobject.h"
 #include "itemfiltermodel.h"
 

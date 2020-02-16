@@ -35,9 +35,6 @@
 // Local includes
 
 #include "groupstatecomputer.h"
-
-// Local includes
-
 #include "gpsiteminfosorter.h"
 #include "dnotificationwrapper.h"
 #include "digikamapp.h"
@@ -308,19 +305,19 @@ AbstractMarkerTiler::Tile* GPSMarkerTiler::getTile(const TileIndex& tileIndex, c
                 const GPSItemInfo currentItemInfo = d->imagesHash[currentImageId];
                 const TileIndex markerTileIndex   = TileIndex::fromCoordinates(currentItemInfo.coordinates, level);
                 const int newTileIndex            = markerTileIndex.lastIndex();
-                MyTile* const newTile             = static_cast<MyTile*>(tile->getChild(newTileIndex));
+                MyTile* const newTile1            = static_cast<MyTile*>(tile->getChild(newTileIndex));
 
-                if (newTile == nullptr)
+                if (newTile1 == nullptr)
                 {
-                    MyTile* const newTile = static_cast<MyTile*>(tileNew());
-                    newTile->imagesId.append(currentImageId);
-                    tile->addChild(newTileIndex, newTile);
+                    MyTile* const newTile2 = static_cast<MyTile*>(tileNew());
+                    newTile2->imagesId.append(currentImageId);
+                    tile->addChild(newTileIndex, newTile2);
                 }
                 else
                 {
-                    if (!newTile->imagesId.contains(currentImageId))
+                    if (!newTile1->imagesId.contains(currentImageId))
                     {
-                        newTile->imagesId.append(currentImageId);
+                        newTile1->imagesId.append(currentImageId);
                     }
                 }
             }
@@ -618,7 +615,7 @@ void GPSMarkerTiler::slotMapImagesJobResult()
     const int wantedLevel = d->jobs.at(foundIndex).level;
 */
     // remove the finished job
-    
+
     d->jobs[foundIndex].jobThread->cancel();
     d->jobs[foundIndex].jobThread = nullptr;
     d->jobs.removeAt(foundIndex);
