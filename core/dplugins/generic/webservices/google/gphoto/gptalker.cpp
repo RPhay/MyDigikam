@@ -190,18 +190,20 @@ void GPTalker::listAlbums(const QString& nextPageToken)
 
     QUrl url(d->apiUrl.arg(QLatin1String("albums")));
 
+    QUrlQuery query(url);
+    query.addQueryItem(QLatin1String("pageSize"), QString::number(50));
+
     if (nextPageToken.isEmpty())
     {
         d->albumList.clear();
     }
     else
     {
-        QUrlQuery query(url);
         query.addQueryItem(QLatin1String("pageToken"), nextPageToken);
-        url.setQuery(query);
     }
 
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "url for list albums" << url;
+    url.setQuery(query);
+    // qCDebug(DIGIKAM_WEBSERVICES_LOG) << "url for list albums" << url;
 
     QNetworkRequest netRequest(url);
     netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
@@ -254,12 +256,12 @@ void GPTalker::listPhotos(const QString& albumId, const QString& /*imgmax*/)
 
     QNetworkRequest netRequest(url);
     netRequest.setHeader(QNetworkRequest::ContentTypeHeader, QLatin1String("application/json"));
-    netRequest.setRawHeader("Authorization", m_bearerAccessToken.toUtf8());
+    netRequest.setRawHeader("Authorization", m_bearerAccessToken.toLatin1());
 
     QByteArray data;
     data += "{\"pageSize\": \"100\",";
-    data += "\"albumId\":\"";
-    data += albumId.toUtf8();
+    data += "\"albumId\": \"";
+    data += albumId.toLatin1();
     data += "\"}";
     // qCDebug(DIGIKAM_WEBSERVICES_LOG) << "data to list photos:" << data;
 
@@ -279,8 +281,8 @@ void GPTalker::createAlbum(const GSFolder& album)
 
     // Create body in json
     QByteArray data;
-    data += "{\"album\":";
-    data += "{\"title\":\"";
+    data += "{\"album\": ";
+    data += "{\"title\": \"";
     data += album.title.toUtf8();
     data += "\"}}";
     // qCDebug(DIGIKAM_WEBSERVICES_LOG) << data;
@@ -757,7 +759,7 @@ void GPTalker::slotUploadPhoto()
         data += "\",";
         data += "\"simpleMediaItem\": {";
         data += "\"uploadToken\": \"";
-        data += uploadToken.toUtf8();
+        data += uploadToken.toLatin1();
         data += "\"}}";
 
         if (d->uploadTokenList.length() > 0)
