@@ -43,4 +43,4 @@ private Q_SLOTS:
     void testGroupStateComputer();
 };
 
-#endif /* DIGIKAM_TEST_PRIMITIVES_H */
+#endif // DIGIKAM_TEST_PRIMITIVES_H

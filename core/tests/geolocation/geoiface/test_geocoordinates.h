@@ -39,4 +39,4 @@ private Q_SLOTS:
     void testMovable();
 };
 
-#endif /* DIGIKAM_TEST_GEOCOORDINATES_H */
+#endif // DIGIKAM_TEST_GEOCOORDINATES_H

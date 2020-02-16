@@ -30,7 +30,7 @@
 
 class TestSimpleTreeModel : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 
 private Q_SLOTS:
 
@@ -38,5 +38,5 @@ private Q_SLOTS:
     void testModel1();
 };
 
-#endif /* DIGIKAM_TEST_SIMPLETREEMODEL_H */
+#endif // DIGIKAM_TEST_SIMPLETREEMODEL_H
 

@@ -40,4 +40,4 @@ private Q_SLOTS:
 
 };
 
-#endif /* DIGIKAM_TEST_CORRELATOR_H */
+#endif // DIGIKAM_TEST_CORRELATOR_H

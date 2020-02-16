@@ -38,4 +38,4 @@ private Q_SLOTS:
     void testSimpleLookup();
 };
 
-#endif /* DIGIKAM_TEST_LOOKUP_ALTITUDE_GEONAMES_H */
+#endif // DIGIKAM_TEST_LOOKUP_ALTITUDE_GEONAMES_H

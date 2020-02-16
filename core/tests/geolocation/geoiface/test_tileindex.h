@@ -41,4 +41,4 @@ private Q_SLOTS:
     void testMovable();
 };
 
-#endif /* DIGIKAM_TEST_TILEINDEX_H */
+#endif // DIGIKAM_TEST_TILEINDEX_H

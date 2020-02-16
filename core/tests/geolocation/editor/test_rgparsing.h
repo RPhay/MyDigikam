@@ -39,4 +39,4 @@ private Q_SLOTS:
     void testVerifyRG();
 };
 
-#endif /* DIGIKAM_TEST_RGPARSING_H */
+#endif // DIGIKAM_TEST_RGPARSING_H

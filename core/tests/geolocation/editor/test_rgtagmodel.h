@@ -44,4 +44,4 @@ private Q_SLOTS:
     void testModelSpacerTags();
 };
 
-#endif /* DIGIKAM_TEST_RGTAGMODEL_H */
+#endif // DIGIKAM_TEST_RGTAGMODEL_H
