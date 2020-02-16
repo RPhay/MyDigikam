@@ -64,7 +64,7 @@ public:
         logo(nullptr),
         gridLayout(nullptr),
         page(nullptr),
-        subspaceCombo(nullptr),           // NamespaceEntry variables
+        subspaceCombo(nullptr),           ///< NamespaceEntry variables
         specialOptsCombo(nullptr),
         altSpecialOptsCombo(nullptr),
         namespaceName(nullptr),
@@ -78,7 +78,7 @@ public:
         threeStars(nullptr),
         fourStars(nullptr),
         fiveStars(nullptr),
-        tagTipLabel(nullptr),             // Labels
+        tagTipLabel(nullptr),             ///< Labels
         ratingTipLabel(nullptr),
         commentTipLabel(nullptr),
         subspaceLabel(nullptr),
@@ -100,7 +100,7 @@ public:
     QGridLayout*                    gridLayout;
     QWidget*                        page;
 
-    // NamespaceEntry variables
+    /// NamespaceEntry variables
     QComboBox*                      subspaceCombo;
     QComboBox*                      specialOptsCombo;
     QComboBox*                      altSpecialOptsCombo;
@@ -117,7 +117,7 @@ public:
     QSpinBox*                       fourStars;
     QSpinBox*                       fiveStars;
 
-    // Labels
+    /// Labels
     QLabel*                         tagTipLabel;
     QLabel*                         ratingTipLabel;
     QLabel*                         commentTipLabel;
@@ -425,13 +425,13 @@ void NamespaceEditDlg::setupTagGui(NamespaceEntry& entry)
     d->gridLayout->addWidget(d->altspecialOptsLabel,        9, 0, 1, 2);
     d->gridLayout->addWidget(d->altSpecialOptsCombo,        9, 2, 1, 4);
 
-    d->gridLayout->addWidget(d->separatorLabel,             10, 0, 1, 2);
-    d->gridLayout->addWidget(d->nameSpaceSeparator,         10, 2, 1, 4);
-    d->gridLayout->addWidget(d->isTagLabel,                 11, 0, 1, 2);
-    d->gridLayout->addWidget(d->isPath,                     11, 2, 1, 3);
+    d->gridLayout->addWidget(d->separatorLabel,            10, 0, 1, 2);
+    d->gridLayout->addWidget(d->nameSpaceSeparator,        10, 2, 1, 4);
+    d->gridLayout->addWidget(d->isTagLabel,                11, 0, 1, 2);
+    d->gridLayout->addWidget(d->isPath,                    11, 2, 1, 3);
 
-    d->gridLayout->addWidget(d->ratingMappings,             12, 0, 2, 6);
-    d->gridLayout->addWidget(d->tipLabel2,                  14, 0, 1, 6);
+    d->gridLayout->addWidget(d->ratingMappings,            12, 0, 2, 6);
+    d->gridLayout->addWidget(d->tipLabel2,                 14, 0, 1, 6);
 
     d->gridLayout->setContentsMargins(cmargin, cmargin, cmargin, cmargin);
     d->gridLayout->setSpacing(spacing);
@@ -480,7 +480,7 @@ void NamespaceEditDlg::setType(NamespaceEntry::NamespaceType type)
             d->commentTipLabel->hide();
             d->ratingMappings->hide();
 
-            // disable IPTC and EXIV for tags
+            // disable IPTC and EXIF for tags
 
             d->subspaceCombo->setItemData(0, 0, Qt::UserRole -1);
             d->subspaceCombo->setItemData(1, 0, Qt::UserRole -1);
@@ -555,7 +555,7 @@ bool NamespaceEditDlg::validifyCheck(QString& errMsg)
             }
 
             if (!d->alternativeName->text().isEmpty() &&
-                d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Exif"))
+                (d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Exif")))
             {
                 errMsg = i18n("EXIF alternative namespace name must start with \"Exif\".");
                 return false;
@@ -572,7 +572,7 @@ bool NamespaceEditDlg::validifyCheck(QString& errMsg)
             }
 
             if (!d->alternativeName->text().isEmpty() &&
-                d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Iptc"))
+                (d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Iptc")))
             {
                 errMsg = i18n("IPTC alternative namespace name must start with \"Iptc\".");
                 return false;
@@ -589,7 +589,7 @@ bool NamespaceEditDlg::validifyCheck(QString& errMsg)
             }
 
             if (!d->alternativeName->text().isEmpty() &&
-                d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Xmp"))
+                (d->alternativeName->text().split(QLatin1Char('.')).first() != QLatin1String("Xmp")))
             {
                 errMsg = i18n("XMP alternative namespace name must start with \"Xmp\".");
                 return false;

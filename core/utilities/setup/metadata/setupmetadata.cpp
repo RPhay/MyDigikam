@@ -186,23 +186,23 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
 
     QLabel* const fieldsLabel     = new QLabel(i18nc("@label", "Write This Information to the Metadata"));
 
-    d->saveTagsBox      = new QCheckBox;
+    d->saveTagsBox       = new QCheckBox;
     d->saveTagsBox->setText(i18nc("@option:check", "Image tags"));
     d->saveTagsBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store the item tags "
                                        "in the XMP and IPTC tags."));
 
-    d->saveCommentsBox  = new QCheckBox;
+    d->saveCommentsBox   = new QCheckBox;
     d->saveCommentsBox->setText(i18nc("@option:check", "Captions and title"));
     d->saveCommentsBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store item caption and title "
                                            "in the JFIF Comment section, the EXIF tag, the XMP tag, "
                                            "and the IPTC tag."));
 
-    d->saveRatingBox    = new QCheckBox;
+    d->saveRatingBox     = new QCheckBox;
     d->saveRatingBox->setText(i18nc("@option:check", "Rating"));
     d->saveRatingBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store the item rating "
                                          "in the EXIF tag and the XMP tags."));
 
-    d->savePickLabelBox = new QCheckBox;
+    d->savePickLabelBox  = new QCheckBox;
     d->savePickLabelBox->setText(i18nc("@option:check", "Pick label"));
     d->savePickLabelBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store the item pick label "
                                             "in the XMP tags."));
@@ -222,7 +222,7 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->saveTemplateBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store the metadata "
                                            "template in the XMP and the IPTC tags. "
                                            "You can set template values to Template setup page."));
-    d->saveFaceTags = new QCheckBox;
+    d->saveFaceTags      = new QCheckBox;
     d->saveFaceTags->setText(i18nc("@option:check", "Face Tags (including face areas)"));
     d->saveFaceTags->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store face tags "
                                         "with face rectangles in the XMP tags."));
@@ -255,7 +255,7 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->useLazySync->setWhatsThis(i18nc("@info:whatsthis",
                                        "Instead of synchronizing metadata, just schedule it for synchronization."
                                        "Synchronization can be done later by triggering the apply pending, or at digikam exit"));
-    d->writeRawFilesBox = new QCheckBox;
+    d->writeRawFilesBox   = new QCheckBox;
     d->writeRawFilesBox->setText(i18nc("@option:check", "If possible write Metadata to RAW files (experimental)"));
     d->writeRawFilesBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to write metadata into RAW TIFF/EP files. "
                                             "This feature requires the Exiv2 shared library, version >= 0.18.0. It is still "
@@ -322,8 +322,10 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
                     "photographer information in images.</p>"));
 
     if (MetaEngine::supportXmp())
+    {
         txt.append(i18n("<p><a href='https://en.wikipedia.org/wiki/Extensible_Metadata_Platform'>XMP</a> - "
                         "a new standard used in digital photography, designed to replace IPTC.</p>"));
+    }
 
     explanation->setText(txt);
 
@@ -620,7 +622,7 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     QLabel* const extensionsLogo = new QLabel(extensionsGroup);
     extensionsLogo->setPixmap(QIcon::fromTheme(QLatin1String("text-x-texinfo")).pixmap(48));
 
-    d->extensionsEdit = new QLineEdit(extensionsGroup);
+    d->extensionsEdit            = new QLineEdit(extensionsGroup);
     d->extensionsEdit->setWhatsThis(i18n("<p>Here you can add extra extensions "
                                          "of sidecars files to be processed alongside "
                                          "regular items. These files will not be visible, "
@@ -788,7 +790,7 @@ void SetupMetadata::readSettings()
     d->allowRotateByMetadata->setChecked(set.rotationBehavior & MetaEngineSettingsContainer::RotateByMetadataFlag);
     d->allowLossyRotate->setChecked(set.rotationBehavior & MetaEngineSettingsContainer::RotateByLossyRotation);
 
-    d->exifAutoRotateOriginal = set.exifRotate;
+    d->exifAutoRotateOriginal       = set.exifRotate;
     d->exifRotateBox->setChecked(d->exifAutoRotateOriginal);
     d->exifSetOrientationBox->setChecked(set.exifSetOrientation);
 
@@ -893,20 +895,20 @@ void SetupMetadata::slotWriteRawFilesToggled(bool b)
         msgBox->button(QMessageBox::Yes)->setText(i18n("Yes I understand"));
         msgBox->setDefaultButton(QMessageBox::No);
 
-        int result = msgBox->exec();
+        int result1 = msgBox->exec();
         delete msgBox;
 
-        if (result == QMessageBox::Yes)
+        if (result1 == QMessageBox::Yes)
         {
             QPointer<QMessageBox> msgBox = new QMessageBox(QMessageBox::Warning,
                      qApp->applicationName(),
                      i18n("You would rather disable writing metadata to RAW files?"),
                      QMessageBox::Yes | QMessageBox::No, this);
 
-            int result = msgBox->exec();
+            int result2 = msgBox->exec();
             delete msgBox;
 
-            if (result == QMessageBox::No)
+            if (result2 == QMessageBox::No)
             {
                 return;
             }
