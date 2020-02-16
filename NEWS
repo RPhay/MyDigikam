@@ -630,4 +630,5 @@ BUGFIXES:
 613 ==> 417333 - Advanced slideshow is blocking the desktop.
 614 ==> 417633 - The Google Photos transfer no longer works.
 615 ==> 409324 - digiKam freezes when exiting image editor from edit on image from filtered view.
-616 ==> 
+616 ==> 417696 - Using the button "Determine difference from clock photo" without any result.
+617 ==> 
