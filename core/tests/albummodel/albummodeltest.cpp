@@ -149,17 +149,17 @@ void AlbumModelTest::cleanupTestCase()
 
 #define safeCreatePAlbum(parent, name, result) \
 { \
-    QString error; \
+    QString error3; \
     result = AlbumManager::instance()->createPAlbum(parent, name, name, \
-                    QDate::currentDate(), albumCategory, error); \
-    QVERIFY2(result, QString::fromUtf8("Error creating PAlbum for test: %1").arg(error).toLatin1().constData()); \
+                    QDate::currentDate(), albumCategory, error3); \
+    QVERIFY2(result, QString::fromUtf8("Error creating PAlbum for test: %1").arg(error3).toLatin1().constData()); \
 }
 
 #define safeCreateTAlbum(parent, name, result) \
 { \
-    QString error; \
-    result = AlbumManager::instance()->createTAlbum(parent, name, QLatin1String(""), error); \
-    QVERIFY2(result, QString::fromUtf8("Error creating TAlbum for test: %1").arg(error).toLatin1().constData()); \
+    QString error2; \
+    result = AlbumManager::instance()->createTAlbum(parent, name, QLatin1String(""), error2); \
+    QVERIFY2(result, QString::fromUtf8("Error creating TAlbum for test: %1").arg(error2).toLatin1().constData()); \
 }
 
 void AlbumModelTest::init()
@@ -206,7 +206,7 @@ void AlbumModelTest::init()
 
     QCOMPARE(AlbumManager::instance()->allPAlbums().size(), 5);
 
-    QString error;
+    QString error1;
     palbumRoot0 = AlbumManager::instance()->findPAlbum(QUrl::fromLocalFile(dbPath + QLatin1String("/root0")));
     QVERIFY2(palbumRoot0, "Error having PAlbum root0 in AlbumManager");
     palbumRoot1 = AlbumManager::instance()->findPAlbum(QUrl::fromLocalFile(dbPath + QLatin1String("/root1")));
@@ -215,8 +215,8 @@ void AlbumModelTest::init()
     // Create some more through AlbumManager
 
     palbumRoot2 = AlbumManager::instance()->createPAlbum(dbPath, QLatin1String("root2"),
-                  QLatin1String("root album 2"), QDate::currentDate(), albumCategory, error);
-    QVERIFY2(palbumRoot2, QString::fromUtf8("Error creating PAlbum for test: %1").arg(error).toLatin1().constData());
+                  QLatin1String("root album 2"), QDate::currentDate(), albumCategory, error1);
+    QVERIFY2(palbumRoot2, QString::fromUtf8("Error creating PAlbum for test: %1").arg(error1).toLatin1().constData());
 
     safeCreatePAlbum(palbumRoot0, QLatin1String("root0child0"), palbumChild0Root0);
     safeCreatePAlbum(palbumRoot0, QLatin1String("root0child1"), palbumChild1Root0);
