@@ -1191,8 +1191,10 @@ void GSWindow::slotCreateFolderDone(int code, const QString& msg, const QString&
     {
         case GoogleService::GDrive:
             if (code == 0)
+            {
                 QMessageBox::critical(this, i18nc("@title:window", "Error"),
                                       i18n("Google Drive call failed:\n%1", msg));
+            }
             else
             {
                 d->currentAlbumId = albumId;
@@ -1203,8 +1205,10 @@ void GSWindow::slotCreateFolderDone(int code, const QString& msg, const QString&
         case GoogleService::GPhotoImport:
         case GoogleService::GPhotoExport:
             if (code == 0)
+            {
                 QMessageBox::critical(this, i18nc("@title:window", "Error"),
                                       i18n("Google Photos call failed:\n%1", msg));
+            }
             else
             {
                 d->currentAlbumId = albumId;

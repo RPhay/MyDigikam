@@ -191,7 +191,7 @@ void GPTalker::listAlbums(const QString& nextPageToken)
     QUrl url(d->apiUrl.arg(QLatin1String("albums")));
 
     QUrlQuery query(url);
-    query.addQueryItem(QLatin1String("pageSize"), QString::number(50));
+    query.addQueryItem(QLatin1String("pageSize"), QLatin1String("50"));
 
     if (nextPageToken.isEmpty())
     {
