@@ -50,27 +50,35 @@ public:
     ~RGTagModel();
 
     /// QAbstractItemModel:
-    virtual int columnCount(const QModelIndex& parent = QModelIndex()) const override;
-    virtual bool setData(const QModelIndex& index, const QVariant& value, int role) override;
-    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const override;
-    virtual QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex()) const override;
-    virtual QModelIndex parent(const QModelIndex& index) const override;
-    virtual int rowCount(const QModelIndex& parent = QModelIndex()) const override;
-    virtual bool setHeaderData(int section, Qt::Orientation orientation, const QVariant& value, int role) override;
-    virtual QVariant headerData(int section, Qt::Orientation orientation, int role) const override;
-    virtual Qt::ItemFlags flags(const QModelIndex& index) const override;
+    virtual int columnCount(const QModelIndex& parent = QModelIndex())                                      const override;
+    virtual bool setData(const QModelIndex& index, const QVariant& value, int role)                               override;
+    virtual QVariant data(const QModelIndex& index, int role = Qt::DisplayRole)                             const override;
+    virtual QModelIndex index(int row, int column, const QModelIndex& parent = QModelIndex())               const override;
+    virtual QModelIndex parent(const QModelIndex& index)                                                    const override;
+    virtual int rowCount(const QModelIndex& parent = QModelIndex())                                         const override;
+    virtual bool setHeaderData(int section, Qt::Orientation orientation, const QVariant& value, int role)         override;
+    virtual QVariant headerData(int section, Qt::Orientation orientation, int role)                         const override;
+    virtual Qt::ItemFlags flags(const QModelIndex& index)                                                   const override;
 
     /// Local functions:
-    QModelIndex fromSourceIndex(const QModelIndex& externalTagModelIndex) const;
-    QModelIndex toSourceIndex(const QModelIndex& tagModelIndex) const;
+    QModelIndex fromSourceIndex(const QModelIndex& externalTagModelIndex)                                   const;
+    QModelIndex toSourceIndex(const QModelIndex& tagModelIndex)                                             const;
     void addSpacerTag(const QModelIndex& parent, const QString& spacerName);
-    QPersistentModelIndex addNewTag(const QModelIndex& parent, const QString& newTagName, const QString& newElement);
+    QPersistentModelIndex addNewTag(const QModelIndex& parent,
+                                    const QString& newTagName,
+                                    const QString& newElement);
     QList<QList<TagData> > addNewData(QStringList& elements, QStringList& resultedData);
-    void addDataInTree(TreeBranch* currentBranch, int currentRow,const QStringList& addressElements, const QStringList& elementsData);
+    void addDataInTree(TreeBranch* currentBranch,
+                       int currentRow,
+                       const QStringList& addressElements,
+                       const QStringList& elementsData);
     QList<TagData> getTagAddress();
-    void findAndDeleteSpacersOrNewTags(TreeBranch* currentBranch, int currentRow, Type whatShouldRemove);
+    void findAndDeleteSpacersOrNewTags(TreeBranch* currentBranch,
+                                       int currentRow,
+                                       Type whatShouldRemove);
     void deleteAllSpacersOrNewTags(const QModelIndex& currentIndex, Type whatShouldRemove);
-    void readdTag(TreeBranch*& currentBranch, int currentRow,const QList<TagData> tagAddressElements, int currentAddressElementIndex);
+    void readdTag(TreeBranch*& currentBranch, int currentRow,
+                  const QList<TagData> tagAddressElements, int currentAddressElementIndex);
     void readdNewTags(const QList<QList<TagData> >& tagAddressList);
     void deleteTag(const QModelIndex& currentIndex);
     QList<QList<TagData> > getSpacers();
@@ -78,9 +86,10 @@ public:
     QList<TagData> getSpacerAddress(TreeBranch* currentBranch);
     void addExternalTags(TreeBranch* parentBranch, int currentRow);
     void addAllExternalTagsToTreeView();
-    void addAllSpacersToTag(const QModelIndex currentIndex, const QStringList spacerList, int spacerListIndex);
-    Type getTagType(const QModelIndex& index) const;
-    TreeBranch* branchFromIndex(const QModelIndex& index) const;
+    void addAllSpacersToTag(const QModelIndex currentIndex,
+                            const QStringList spacerList, int spacerListIndex);
+    Type getTagType(const QModelIndex& index)                                                               const;
+    TreeBranch* branchFromIndex(const QModelIndex& index)                                                   const;
 
 public Q_SLOTS:
 
@@ -89,7 +98,7 @@ public Q_SLOTS:
     void slotColumnsAboutToBeInserted(const QModelIndex & parent, int start, int end);
     void slotColumnsAboutToBeMoved(const QModelIndex & sourceParent, int sourceStart, int sourceEnd,
                                    const QModelIndex & destinationParent, int destinationColumn);
-    void slotColumnsAboutToBeRemoved(const QModelIndex & parent, int start, int end );
+    void slotColumnsAboutToBeRemoved(const QModelIndex & parent, int start, int end);
     void slotColumnsInserted();
     void slotColumnsMoved();
     void slotColumnsRemoved();
