@@ -59,19 +59,18 @@ class Q_DECL_HIDDEN XMPProperties::Private
 public:
 
     explicit Private()
+      : originalTransCheck(nullptr),
+        priorityCB(nullptr),
+        objectTypeCB(nullptr),
+        objectAttributeEdit(nullptr),
+        originalTransEdit(nullptr),
+        priorityCheck(nullptr),
+        objectAttributeCheck(nullptr),
+        sceneEdit(nullptr),
+        objectTypeEdit(nullptr),
+        languageEdit(nullptr),
+        objectAttributeCB(nullptr)
     {
-        priorityCB           = nullptr;
-        objectTypeCB         = nullptr;
-        priorityCheck        = nullptr;
-        objectAttributeCheck = nullptr;
-        sceneEdit            = nullptr;
-        objectTypeEdit       = nullptr;
-        objectAttributeEdit  = nullptr;
-        objectAttributeCB    = nullptr;
-        languageEdit         = nullptr;
-        originalTransEdit    = nullptr;
-        originalTransCheck   = nullptr;
-
         sceneCodeMap.insert( QLatin1String("010100"), i18n("Headshot") );
         sceneCodeMap.insert( QLatin1String("010200"), i18n("Half-length") );
         sceneCodeMap.insert( QLatin1String("010300"), i18n("Full-length") );
@@ -158,9 +157,11 @@ XMPProperties::XMPProperties(QWidget* const parent)
 
     QStringList list;
 
-    for (Private::LanguageCodeMap::Iterator it = d->languageCodeMap.begin();
-         it != d->languageCodeMap.end(); ++it)
+    for (Private::LanguageCodeMap::Iterator it = d->languageCodeMap.begin() ;
+         it != d->languageCodeMap.end() ; ++it)
+    {
         list.append(QString::fromUtf8("%1 - %2").arg(it.key()).arg(it.value()));
+    }
 
     d->languageEdit->setData(list);
 
@@ -187,9 +188,11 @@ XMPProperties::XMPProperties(QWidget* const parent)
 
     QStringList list2;
 
-    for (Private::SceneCodeMap::Iterator it = d->sceneCodeMap.begin();
-         it != d->sceneCodeMap.end(); ++it)
+    for (Private::SceneCodeMap::Iterator it = d->sceneCodeMap.begin() ;
+         it != d->sceneCodeMap.end() ; ++it)
+    {
         list2.append(QString::fromUtf8("%1 - %2").arg(it.key()).arg(it.value()));
+    }
 
     d->sceneEdit->setData(list2);
 
@@ -200,9 +203,11 @@ XMPProperties::XMPProperties(QWidget* const parent)
 
     QStringList list3;
 
-    for (Private::TypeCodeMap::Iterator it = d->typeCodeMap.begin();
-         it != d->typeCodeMap.end(); ++it)
+    for (Private::TypeCodeMap::Iterator it = d->typeCodeMap.begin() ;
+         it != d->typeCodeMap.end() ; ++it)
+    {
         list3.append(it.value());
+    }
 
     d->objectTypeEdit->setData(list3);
 
@@ -334,12 +339,12 @@ void XMPProperties::readMetadata(QByteArray& xmpData)
 
     code = meta.getXmpTagStringBag("Xmp.dc.language", false);
 
-    for (QStringList::Iterator it = code.begin(); it != code.end(); ++it)
+    for (QStringList::Iterator it = code.begin() ; it != code.end() ; ++it)
     {
-        QStringList data = d->languageEdit->getData();
+        QStringList lst1 = d->languageEdit->getData();
         QStringList::Iterator it2;
 
-        for (it2 = data.begin(); it2 != data.end(); ++it2)
+        for (it2 = lst1.begin() ; it2 != lst1.end() ; ++it2)
         {
             if ((*it2).left(2) == (*it))
             {
@@ -348,8 +353,10 @@ void XMPProperties::readMetadata(QByteArray& xmpData)
             }
         }
 
-        if (it2 == data.end())
+        if (it2 == lst1.end())
+        {
             d->languageEdit->setValid(false);
+        }
     }
 
     d->languageEdit->setValues(list);
@@ -364,7 +371,7 @@ void XMPProperties::readMetadata(QByteArray& xmpData)
     {
         val = data.toInt();
 
-        if (val >= 0 && val <= 9)
+        if ((val >= 0) && (val <= 9))
         {
             d->priorityCB->setCurrentIndex(val);
             d->priorityCheck->setChecked(true);
@@ -379,12 +386,12 @@ void XMPProperties::readMetadata(QByteArray& xmpData)
 
     code = meta.getXmpTagStringBag("Xmp.iptc.Scene", false);
 
-    for (QStringList::Iterator it = code.begin(); it != code.end(); ++it)
+    for (QStringList::Iterator it = code.begin() ; it != code.end() ; ++it)
     {
-        QStringList data = d->sceneEdit->getData();
+        QStringList lst2 = d->sceneEdit->getData();
         QStringList::Iterator it2;
 
-        for (it2 = data.begin(); it2 != data.end(); ++it2)
+        for (it2 = lst2.begin() ; it2 != lst2.end() ; ++it2)
         {
             if ((*it2).left(6) == (*it))
             {
@@ -393,8 +400,10 @@ void XMPProperties::readMetadata(QByteArray& xmpData)
             }
         }
 
-        if (it2 == data.end())
+        if (it2 == lst2.end())
+        {
             d->sceneEdit->setValid(false);
+        }
     }
 
     d->sceneEdit->setValues(list);
@@ -403,12 +412,12 @@ void XMPProperties::readMetadata(QByteArray& xmpData)
 
     code = meta.getXmpTagStringBag("Xmp.dc.type", false);
 
-    for (QStringList::Iterator it3 = code.begin(); it3 != code.end(); ++it3)
+    for (QStringList::Iterator it3 = code.begin() ; it3 != code.end() ; ++it3)
     {
-        QStringList data = d->objectTypeEdit->getData();
+        QStringList lst3 = d->objectTypeEdit->getData();
         QStringList::Iterator it4;
 
-        for (it4 = data.begin(); it4 != data.end(); ++it4)
+        for (it4 = lst3.begin() ; it4 != lst3.end() ; ++it4)
         {
             if ((*it4) == (*it3))
             {
@@ -417,8 +426,10 @@ void XMPProperties::readMetadata(QByteArray& xmpData)
             }
         }
 
-        if (it4 == data.end())
+        if (it4 == lst3.end())
+        {
             d->objectTypeEdit->setValid(false);
+        }
     }
 
     d->objectTypeEdit->setValues(list2);
@@ -438,14 +449,16 @@ void XMPProperties::readMetadata(QByteArray& xmpData)
         {
             int attr = attrSec.toInt()-1;
 
-            if (attr >= 0 && attr < 23)
+            if ((attr >= 0) && (attr < 23))
             {
                 d->objectAttributeCB->setCurrentIndex(attr);
                 d->objectAttributeEdit->setText(data.section(QLatin1Char(':'), -1));
                 d->objectAttributeCheck->setChecked(true);
             }
             else
+            {
                 d->objectAttributeCheck->setValid(false);
+            }
         }
     }
 
@@ -483,8 +496,10 @@ void XMPProperties::applyMetadata(QByteArray& xmpData)
     {
         QStringList newCode;
 
-        for (QStringList::Iterator it2 = newList.begin(); it2 != newList.end(); ++it2)
+        for (QStringList::Iterator it2 = newList.begin() ; it2 != newList.end() ; ++it2)
+        {
             newCode.append((*it2).left(2));
+        }
 
         meta.setXmpTagStringBag("Xmp.dc.language", newCode);
     }
@@ -495,10 +510,14 @@ void XMPProperties::applyMetadata(QByteArray& xmpData)
 
     // ---------------------------------------------------------------
 
-    if (d->priorityCheck->isChecked())
+    if      (d->priorityCheck->isChecked())
+    {
         meta.setXmpTagString("Xmp.photoshop.Urgency", QString::number(d->priorityCB->currentIndex()));
+    }
     else if (d->priorityCheck->isValid())
+    {
         meta.removeXmpTag("Xmp.photoshop.Urgency");
+    }
 
     // ---------------------------------------------------------------
 
@@ -506,8 +525,10 @@ void XMPProperties::applyMetadata(QByteArray& xmpData)
     {
         QStringList newCode;
 
-        for (QStringList::Iterator it2 = newList.begin(); it2 != newList.end(); ++it2)
+        for (QStringList::Iterator it2 = newList.begin() ; it2 != newList.end() ; ++it2)
+        {
             newCode.append((*it2).left(6));
+        }
 
         meta.setXmpTagStringBag("Xmp.iptc.Scene", newCode);
     }
@@ -519,13 +540,17 @@ void XMPProperties::applyMetadata(QByteArray& xmpData)
     // ---------------------------------------------------------------
 
     if (d->objectTypeEdit->getValues(oldList, newList))
+    {
         meta.setXmpTagStringBag("Xmp.dc.type", newList);
+    }
     else
+    {
         meta.removeXmpTag("Xmp.dc.type");
+    }
 
     // ---------------------------------------------------------------
 
-    if (d->objectAttributeCheck->isChecked())
+    if      (d->objectAttributeCheck->isChecked())
     {
         QString objectAttribute;
         objectAttribute.asprintf("%3d", d->objectAttributeCB->currentIndex()+1);
@@ -540,9 +565,13 @@ void XMPProperties::applyMetadata(QByteArray& xmpData)
     // ---------------------------------------------------------------
 
     if (d->originalTransCheck->isChecked())
+    {
         meta.setXmpTagString("Xmp.photoshop.TransmissionReference", d->originalTransEdit->text());
+    }
     else
+    {
         meta.removeXmpTag("Xmp.photoshop.TransmissionReference");
+    }
 
     xmpData = meta.getXmp();
 }

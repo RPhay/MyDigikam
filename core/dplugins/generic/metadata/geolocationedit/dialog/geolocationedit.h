@@ -60,12 +60,13 @@ public:
     explicit GeolocationEdit(QWidget* const parent, DInfoInterface* const iface);
     ~GeolocationEdit();
 
-    /*
+    /**
      * Populate items in dialog list based on url. To be used in case of non database as with Showfoto.
      */
     void setImages(const QList<QUrl>& images);
 
-    /* Populate items in dialog list based dedicated GPSItemContainer instances filled with DB info
+    /**
+     * Populate items in dialog list based dedicated GPSItemContainer instances filled with DB info
      */
     void setItems(const QList<GPSItemContainer*>& items);
 

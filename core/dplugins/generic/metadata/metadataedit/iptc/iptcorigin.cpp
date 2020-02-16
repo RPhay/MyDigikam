@@ -62,29 +62,29 @@ class Q_DECL_HIDDEN IPTCOrigin::Private
 public:
 
     explicit Private()
+      : dateCreatedCheck(nullptr),
+        dateDigitalizedCheck(nullptr),
+        timeCreatedCheck(nullptr),
+        timeDigitalizedCheck(nullptr),
+        syncEXIFDateCheck(nullptr),
+        cityCheck(nullptr),
+        sublocationCheck(nullptr),
+        provinceCheck(nullptr),
+        timeCreatedSel(nullptr),
+        timeDigitalizedSel(nullptr),
+        zoneCreatedSel(nullptr),
+        zoneDigitalizedSel(nullptr),
+        setTodayCreatedBtn(nullptr),
+        setTodayDigitalizedBtn(nullptr),
+        dateCreatedSel(nullptr),
+        dateDigitalizedSel(nullptr),
+        cityEdit(nullptr),
+        sublocationEdit(nullptr),
+        provinceEdit(nullptr),
+        locationEdit(nullptr),
+        countryCheck(nullptr),
+        countryCB(nullptr)
     {
-        cityEdit               = nullptr;
-        sublocationEdit        = nullptr;
-        provinceEdit           = nullptr;
-        locationEdit           = nullptr;
-        cityCheck              = nullptr;
-        sublocationCheck       = nullptr;
-        provinceCheck          = nullptr;
-        countryCheck           = nullptr;
-        dateCreatedSel         = nullptr;
-        dateDigitalizedSel     = nullptr;
-        timeCreatedSel         = nullptr;
-        timeDigitalizedSel     = nullptr;
-        zoneCreatedSel         = nullptr;
-        zoneDigitalizedSel     = nullptr;
-        dateCreatedCheck       = nullptr;
-        dateDigitalizedCheck   = nullptr;
-        timeCreatedCheck       = nullptr;
-        timeDigitalizedCheck   = nullptr;
-        syncEXIFDateCheck      = nullptr;
-        setTodayCreatedBtn     = nullptr;
-        setTodayDigitalizedBtn = nullptr;
-        countryCB              = nullptr;
     }
 
     QCheckBox*                     dateCreatedCheck;
@@ -126,6 +126,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     QGridLayout* const grid = new QGridLayout(this);
 
     // IPTC only accept printable Ascii char.
+
     QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
     QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
 
@@ -231,14 +232,18 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     d->countryCheck = new MetadataCheckBox(i18n("Country:"), this);
     d->countryCB    = new CountrySelector(this);
     d->countryCB->setWhatsThis(i18n("Select here country name of content origin."));
+
     // Remove 2 last items for the list (separator + Unknown item)
+
     d->countryCB->removeItem(d->countryCB->count()-1);
     d->countryCB->removeItem(d->countryCB->count()-1);
 
     QStringList list;
 
     for (int i = 0 ; i < d->countryCB->count() ; ++i)
+    {
         list.append(d->countryCB->itemText(i));
+    }
 
     d->locationEdit->setData(list);
 
@@ -270,7 +275,7 @@ IPTCOrigin::IPTCOrigin(QWidget* const parent)
     grid->addWidget(d->setTodayCreatedBtn,                  3, 5, 1, 1);
     grid->addWidget(d->syncEXIFDateCheck,                   5, 0, 1, 6);
     grid->addWidget(d->locationEdit,                        6, 0, 1, 6);
-    grid->addWidget(new DLineWidget(Qt::Horizontal, this),   7, 0, 1, 6);
+    grid->addWidget(new DLineWidget(Qt::Horizontal, this),  7, 0, 1, 6);
     grid->addWidget(d->cityCheck,                           8, 0, 1, 1);
     grid->addWidget(d->cityEdit,                            8, 1, 1, 5);
     grid->addWidget(d->sublocationCheck,                    9, 0, 1, 1);
@@ -519,10 +524,10 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
 
     for (QStringList::Iterator it = code.begin(); it != code.end(); ++it)
     {
-        QStringList data = d->locationEdit->getData();
+        QStringList lst = d->locationEdit->getData();
         QStringList::Iterator it2;
 
-        for (it2 = data.begin(); it2 != data.end(); ++it2)
+        for (it2 = lst.begin() ; it2 != lst.end() ; ++it2)
         {
             if ((*it2).left(3) == (*it))
             {
@@ -531,8 +536,10 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
             }
         }
 
-        if (it2 == data.end())
+        if (it2 == lst.end())
+        {
             d->locationEdit->setValid(false);
+        }
     }
 
     d->locationEdit->setValues(list);
@@ -584,7 +591,9 @@ void IPTCOrigin::readMetadata(QByteArray& iptcData)
         for (int i = 0 ; i < d->countryCB->count() ; ++i)
         {
             if (d->countryCB->itemText(i).left(3) == data)
+            {
                 item = i;
+            }
         }
 
         if (item != -1)
@@ -659,13 +668,13 @@ void IPTCOrigin::applyMetadata(QByteArray& exifData, QByteArray& iptcData)
     {
         QStringList oldCode, newCode, oldName, newName;
 
-        for (QStringList::Iterator it = oldList.begin(); it != oldList.end(); ++it)
+        for (QStringList::Iterator it = oldList.begin() ; it != oldList.end() ; ++it)
         {
             oldCode.append((*it).left(3));
             oldName.append((*it).mid(6));
         }
 
-        for (QStringList::Iterator it2 = newList.begin(); it2 != newList.end(); ++it2)
+        for (QStringList::Iterator it2 = newList.begin() ; it2 != newList.end() ; ++it2)
         {
             newCode.append((*it2).left(3));
             newName.append((*it2).mid(6));
@@ -681,21 +690,33 @@ void IPTCOrigin::applyMetadata(QByteArray& exifData, QByteArray& iptcData)
     }
 
     if (d->cityCheck->isChecked())
+    {
         meta.setIptcTagString("Iptc.Application2.City", d->cityEdit->text());
+    }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.City");
+    }
 
     if (d->sublocationCheck->isChecked())
+    {
         meta.setIptcTagString("Iptc.Application2.SubLocation", d->sublocationEdit->text());
+    }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.SubLocation");
+    }
 
     if (d->provinceCheck->isChecked())
+    {
         meta.setIptcTagString("Iptc.Application2.ProvinceState", d->provinceEdit->text());
+    }
     else
+    {
         meta.removeIptcTag("Iptc.Application2.ProvinceState");
+    }
 
-    if (d->countryCheck->isChecked())
+    if      (d->countryCheck->isChecked())
     {
         QString countryName = d->countryCB->currentText().mid(6);
         QString countryCode = d->countryCB->currentText().left(3);

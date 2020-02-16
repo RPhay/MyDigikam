@@ -44,11 +44,11 @@ public:
     void applyMetadata(QByteArray& exifData, QByteArray& iptcData);
     void readMetadata(QByteArray& iptcData);
 
-    bool syncEXIFDateIsChecked() const;
+    bool syncEXIFDateIsChecked()            const;
 
     void setCheckedSyncEXIFDate(bool c);
 
-    QDateTime getIPTCCreationDate() const;
+    QDateTime getIPTCCreationDate()         const;
 
 Q_SIGNALS:
 
