@@ -75,7 +75,7 @@ public:
 
     QList<TableViewColumnProfile> columnProfiles;
     ThumbnailSize                 thumbnailSize;
-    ItemViewUtilities*           imageViewUtilities;
+    ItemViewUtilities*            imageViewUtilities;
 };
 
 TableView::TableView(QItemSelectionModel* const selectionModel,
@@ -202,6 +202,7 @@ void TableView::slotItemActivated(const QModelIndex& tableViewIndex)
 bool TableView::eventFilter(QObject* watched, QEvent* event)
 {
     // we are looking for context menu events for the table view
+
     if ((watched == s->treeView) && (event->type() == QEvent::ContextMenu))
     {
         QContextMenuEvent* const e = static_cast<QContextMenuEvent*>(event);
@@ -211,9 +212,9 @@ bool TableView::eventFilter(QObject* watched, QEvent* event)
 
         if (contextMenuIndex.isValid())
         {
-            emit signalShowContextMenuOnInfo(
-                        e, s->tableViewModel->imageInfo(contextMenuIndex),
-                        getExtraGroupingActions());
+            emit signalShowContextMenuOnInfo(e,
+                                             s->tableViewModel->imageInfo(contextMenuIndex),
+                                             getExtraGroupingActions());
         }
         else
         {
@@ -221,6 +222,7 @@ bool TableView::eventFilter(QObject* watched, QEvent* event)
         }
 
         // event has been filtered by us
+
         return true;
     }
 
@@ -296,6 +298,7 @@ void TableView::slotDeleteSelected(const ItemViewUtilities::DeleteMode deleteMod
     const ItemInfoList infoList = selectedItemInfos(true);
 
     /// @todo Update parameter naming for deleteImages
+
     if (d->imageViewUtilities->deleteImages(infoList, deleteMode))
     {
         slotAwayFromSelection();
@@ -406,6 +409,7 @@ ItemInfo TableView::deepRowItemInfo(const int rowNumber, const bool relative) co
     }
 
     const QModelIndex targetIndex = s->tableViewModel->deepRowIndex(targetRowNumber);
+
     return s->tableViewModel->imageInfo(targetIndex);
 }
 
@@ -421,6 +425,7 @@ ItemInfo TableView::nextInfo() const
     }
 
     const QModelIndex nextDeepRowIndex = s->tableViewModel->deepRowIndex(nextDeepRowNumber);
+
     return s->tableViewModel->imageInfo(nextDeepRowIndex);
 }
 
@@ -436,6 +441,7 @@ ItemInfo TableView::previousInfo() const
     }
 
     const QModelIndex previousDeepRowIndex = s->tableViewModel->deepRowIndex(previousDeepRowNumber);
+
     return s->tableViewModel->imageInfo(previousDeepRowIndex);
 }
 
@@ -446,6 +452,7 @@ void TableView::slotSetCurrentWhenAvailable(const qlonglong id)
     if (!idx.isValid())
     {
         /// @todo Actually buffer this request until the model is fully populated
+
         return;
     }
 
@@ -473,6 +480,7 @@ void TableView::slotAwayFromSelection()
     {
         // both the first and the last index are selected, we have to
         // select an index inbetween
+
         const int nextFreeDeepRow = s->tableViewModel->firstDeepRowNotInList(selection);
 
         if (nextFreeDeepRow < 0)
@@ -519,7 +527,7 @@ void TableView::invertSelection()
 
     /// @todo Create a DeepRowIterator because there is a lot of overhead here
 
-    for (int i = 0; i < deepRowCount; ++i)
+    for (int i = 0 ; i < deepRowCount ; ++i)
     {
         const QModelIndex iIndex = s->tableViewModel->deepRowIndex(i);
 
@@ -527,7 +535,7 @@ void TableView::invertSelection()
         {
             if (i - 1 > lastSelectedRow)
             {
-                for (int j = lastSelectedRow + 1; j < i; ++j)
+                for (int j = lastSelectedRow + 1 ; j < i ; ++j)
                 {
                     rowsToSelect << j;
                 }
@@ -539,7 +547,7 @@ void TableView::invertSelection()
 
     if (lastSelectedRow + 1 < deepRowCount)
     {
-        for (int j = lastSelectedRow + 1; j < deepRowCount; ++j)
+        for (int j = lastSelectedRow + 1 ; j < deepRowCount ; ++j)
         {
             rowsToSelect << j;
         }
@@ -558,6 +566,7 @@ void TableView::invertSelection()
 void TableView::selectAll()
 {
     /// @todo This only selects expanded items.
+
     s->treeView->selectAll();
 }
 

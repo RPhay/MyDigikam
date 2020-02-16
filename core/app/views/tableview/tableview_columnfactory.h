@@ -151,7 +151,7 @@ public:
         {
             const TableViewColumnDescription desc = leftToSearch.takeFirst();
 
-            if (desc.columnId==targetId)
+            if (desc.columnId == targetId)
             {
                 *resultDescription = desc;
                 return true;
@@ -203,18 +203,18 @@ public:
 
     enum ColumnFlag
     {
-        ColumnNoFlags = 0,
-        ColumnCustomPainting = 1,
-        ColumnCustomSorting = 2,
+        ColumnNoFlags                = 0,
+        ColumnCustomPainting         = 1,
+        ColumnCustomSorting          = 2,
         ColumnHasConfigurationWidget = 4
     };
     Q_DECLARE_FLAGS(ColumnFlags, ColumnFlag)
 
     enum ColumnCompareResult
     {
-        CmpEqual = 0,
+        CmpEqual    = 0,
         CmpABiggerB = 1,
-        CmpALessB = 2
+        CmpALessB   = 2
     };
 
 public:
@@ -224,17 +224,17 @@ public:
                              QObject* const parent = nullptr);
     virtual ~TableViewColumn();
 
-    virtual TableViewColumnConfiguration getConfiguration() const;
+    virtual TableViewColumnConfiguration getConfiguration()                                                             const;
     virtual void setConfiguration(const TableViewColumnConfiguration& newConfiguration);
-    virtual TableViewColumnConfigurationWidget* getConfigurationWidget(QWidget* const parentWidget) const;
-    virtual ColumnFlags getColumnFlags() const;
-    virtual QString getTitle() const = 0;
+    virtual TableViewColumnConfigurationWidget* getConfigurationWidget(QWidget* const parentWidget)                     const;
+    virtual ColumnFlags getColumnFlags()                                                                                const;
+    virtual QString getTitle()                                                                                          const = 0;
 
-    virtual QVariant data(TableViewModel::Item* const item, const int role) const;
-    virtual ColumnCompareResult compare(TableViewModel::Item* const itemA, TableViewModel::Item* const itemB) const;
-    virtual bool columnAffectedByChangeset(const ImageChangeset& imageChangeset) const;
-    virtual bool paint(QPainter* const painter, const QStyleOptionViewItem& option, TableViewModel::Item* const item) const;
-    virtual QSize sizeHint(const QStyleOptionViewItem& option, TableViewModel::Item* const item) const;
+    virtual QVariant data(TableViewModel::Item* const item, const int role)                                             const;
+    virtual ColumnCompareResult compare(TableViewModel::Item* const itemA, TableViewModel::Item* const itemB)           const;
+    virtual bool columnAffectedByChangeset(const ImageChangeset& imageChangeset)                                        const;
+    virtual bool paint(QPainter* const painter, const QStyleOptionViewItem& option, TableViewModel::Item* const item)   const;
+    virtual QSize sizeHint(const QStyleOptionViewItem& option, TableViewModel::Item* const item)                        const;
     virtual void updateThumbnailSize();
 
     static TableViewColumnDescription getDescription();
@@ -242,11 +242,11 @@ public:
 
     template<class MyType> static ColumnCompareResult compareHelper(const MyType& A, const MyType& B)
     {
-        if (A==B)
+        if      (A == B)
         {
             return CmpEqual;
         }
-        else if (A>B)
+        else if (A > B)
         {
             return CmpABiggerB;
         }
@@ -258,12 +258,13 @@ public:
     {
         const int index = columnClass::getSubColumns().indexOf(subColumnId);
 
-        if (index<0)
+        if (index < 0)
         {
             return false;
         }
 
         *subColumn = typename columnClass::SubColumn(index);
+
         return true;
     }
 

@@ -43,8 +43,8 @@ class TableViewShared
 {
 public:
 
-    ItemModel*                    imageModel;
-    ItemFilterModel*              imageFilterModel;
+    ItemModel*                     imageModel;
+    ItemFilterModel*               imageFilterModel;
     QItemSelectionModel*           imageFilterSelectionModel;
     ThumbnailLoadThread*           thumbnailLoadThread;
 

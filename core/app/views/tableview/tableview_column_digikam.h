@@ -45,11 +45,11 @@ public:
 
     enum SubColumn
     {
-        SubColumnRating = 0,
-        SubColumnPickLabel = 1,
+        SubColumnRating     = 0,
+        SubColumnPickLabel  = 1,
         SubColumnColorLabel = 2,
-        SubColumnTitle = 3,
-        SubColumnCaption = 4
+        SubColumnTitle      = 3,
+        SubColumnCaption    = 4
     };
 
 public:
@@ -58,15 +58,14 @@ public:
             TableViewShared* const tableViewShared,
             const TableViewColumnConfiguration& pConfiguration,
             const SubColumn pSubColumn,
-            QObject* const parent = nullptr
-        );
+            QObject* const parent = nullptr);
     virtual ~ColumnDigikamProperties();
 
-    virtual QString getTitle() const;
-    virtual ColumnFlags getColumnFlags() const;
-    virtual QVariant data(TableViewModel::Item* const item, const int role) const;
+    virtual QString getTitle()                                                                                const;
+    virtual ColumnFlags getColumnFlags()                                                                      const;
+    virtual QVariant data(TableViewModel::Item* const item, const int role)                                   const;
     virtual ColumnCompareResult compare(TableViewModel::Item* const itemA, TableViewModel::Item* const itemB) const;
-    virtual bool columnAffectedByChangeset(const ImageChangeset& imageChangeset) const;
+    virtual bool columnAffectedByChangeset(const ImageChangeset& imageChangeset)                              const;
 
     static TableViewColumnDescription getDescription();
     static QStringList getSubColumns();
@@ -74,7 +73,6 @@ public:
 private:
 
     SubColumn subColumn;
-
 };
 
 } // namespace TableViewColumns

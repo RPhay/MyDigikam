@@ -59,8 +59,10 @@ ColumnDigikamProperties::~ColumnDigikamProperties()
 QStringList ColumnDigikamProperties::getSubColumns()
 {
     QStringList columns;
-    columns << QLatin1String("digikam-rating")     << QLatin1String("digikam-picklabel")
-            << QLatin1String("digikam-colorlabel") << QLatin1String("digikam-title")
+    columns << QLatin1String("digikam-rating")
+            << QLatin1String("digikam-picklabel")
+            << QLatin1String("digikam-colorlabel")
+            << QLatin1String("digikam-title")
             << QLatin1String("digikam-caption");
 
     return columns;
@@ -74,9 +76,13 @@ TableViewColumnDescription ColumnDigikamProperties::getDescription()
     description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-rating"),     i18n("Rating")).setIcon(QLatin1String("draw-star")));
     description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-picklabel"),  i18n("Pick label")).setIcon(QLatin1String("flag")));
     description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-colorlabel"), i18n("Color label")));
+
     /// @todo This column will show the 'default' title. Add a configuration dialog to choose different languages.
+
     description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-title"),      i18n("Title")));
+
     /// @todo This column will show the 'default' caption. Add a configuration dialog to choose different languages.
+
     description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-caption"),    i18n("Caption")));
 
     return description;
@@ -88,12 +94,16 @@ QString ColumnDigikamProperties::getTitle() const
     {
         case SubColumnRating:
             return i18n("Rating");
+
         case SubColumnPickLabel:
             return i18n("Pick label");
+
         case SubColumnColorLabel:
             return i18n("Color label");
+
         case SubColumnTitle:
             return i18n("Title");
+
         case SubColumnCaption:
             return i18n("Caption");
     }
@@ -105,9 +115,11 @@ TableViewColumn::ColumnFlags ColumnDigikamProperties::getColumnFlags() const
 {
     ColumnFlags flags(ColumnNoFlags);
 
-    if ((subColumn == SubColumnRating)    ||
+    if (
+        (subColumn == SubColumnRating)    ||
         (subColumn == SubColumnPickLabel) ||
-        (subColumn == SubColumnColorLabel))
+        (subColumn == SubColumnColorLabel)
+       )
     {
         flags |= ColumnCustomSorting;
     }
@@ -117,9 +129,11 @@ TableViewColumn::ColumnFlags ColumnDigikamProperties::getColumnFlags() const
 
 QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const int role) const
 {
-    if ( (role != Qt::DisplayRole)       &&
-         (role != Qt::TextAlignmentRole) &&
-         (role != Qt::ForegroundRole ) )
+    if (
+        (role != Qt::DisplayRole)       &&
+        (role != Qt::TextAlignmentRole) &&
+        (role != Qt::ForegroundRole)
+       )
     {
         return QVariant();
     }
@@ -158,11 +172,13 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
 
                     case PendingLabel:
                         // yellow is too hard to read
+
                         labelColor = Qt::darkYellow;
                         break;
 
                     case AcceptedLabel:
                         // green is too hard to read
+
                         labelColor = Qt::darkGreen;
                         break;
 
@@ -239,8 +255,11 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
 
     const ItemInfo info = s->tableViewModel->infoFromItem(item);
 
-    /// @todo Also display the pick label icon?
-    /// @todo Make display of text/icon configurable.
+    /**
+     * @todo Also display the pick label icon?
+     *       Make display of text/icon configurable.
+     */
+
     switch (subColumn)
     {
         case SubColumnRating:
@@ -250,6 +269,7 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
             if (itemRating <= 0)
             {
                 // no rating
+
                 return QString();
             }
 
@@ -369,6 +389,7 @@ TableViewColumn::ColumnCompareResult ColumnDigikamProperties::compare(TableViewM
         case SubColumnRating:
         {
             /// @todo Handle un-rated vs rated items differently?
+
             const int ratingA = infoA.rating();
             const int ratingB = infoB.rating();
 
@@ -378,6 +399,7 @@ TableViewColumn::ColumnCompareResult ColumnDigikamProperties::compare(TableViewM
         case SubColumnPickLabel:
         {
             /// @todo Handle un-rated vs rated items differently?
+
             const int pickLabelA = infoA.pickLabel();
             const int pickLabelB = infoB.pickLabel();
 
@@ -387,6 +409,7 @@ TableViewColumn::ColumnCompareResult ColumnDigikamProperties::compare(TableViewM
         case SubColumnColorLabel:
         {
             /// @todo Handle un-rated vs rated items differently?
+
             const int colorLabelA = infoA.colorLabel();
             const int colorLabelB = infoB.colorLabel();
 
@@ -409,8 +432,9 @@ bool Digikam::TableViewColumns::ColumnDigikamProperties::columnAffectedByChanges
         case SubColumnCaption:
             return true;
             /// @todo These are not the right flags for these columns
-//             return imageChangeset.changes() & DatabaseFields::ItemCommentsAll;
-
+/*
+            return imageChangeset.changes() & DatabaseFields::ItemCommentsAll;
+*/
         case SubColumnRating:
             return imageChangeset.changes() & DatabaseFields::Rating;
 
