@@ -50,7 +50,8 @@ public:
         SubColumnPickLabel  = 1,
         SubColumnColorLabel = 2,
         SubColumnTitle      = 3,
-        SubColumnCaption    = 4
+        SubColumnCaption    = 4,
+        SubColumnTags       = 5
     };
 
 public:

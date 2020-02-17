@@ -277,6 +277,11 @@ void TableViewColumnProfile::loadSettings(const KConfigGroup& configGroup)
         {
             columnConfigurationList << nextDesc.toConfiguration();
         }
+
+        if (TableViewColumnDescription::FindInListById(allColumns, QLatin1String("digikam-tags"), &nextDesc))
+        {
+            columnConfigurationList << nextDesc.toConfiguration();
+        }
     }
 }
 

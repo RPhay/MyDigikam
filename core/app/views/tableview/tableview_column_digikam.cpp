@@ -35,6 +35,7 @@
 
 #include "digikam_debug.h"
 #include "coredbfields.h"
+#include "albummanager.h"
 #include "digikam_globals.h"
 #include "iteminfo.h"
 
@@ -64,7 +65,8 @@ QStringList ColumnDigikamProperties::getSubColumns()
             << QLatin1String("digikam-picklabel")
             << QLatin1String("digikam-colorlabel")
             << QLatin1String("digikam-title")
-            << QLatin1String("digikam-caption");
+            << QLatin1String("digikam-caption")
+            << QLatin1String("digikam-tags");
 
     return columns;
 }
@@ -85,6 +87,8 @@ TableViewColumnDescription ColumnDigikamProperties::getDescription()
     /// @todo This column will show the 'default' caption. Add a configuration dialog to choose different languages.
 
     description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-caption"),    i18n("Caption")));
+
+    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-tags"),       i18n("Tags")).setIcon(QLatin1String("tags")));
 
     return description;
 }
@@ -107,6 +111,9 @@ QString ColumnDigikamProperties::getTitle() const
 
         case SubColumnCaption:
             return i18n("Caption");
+
+        case SubColumnTags:
+            return i18n("Tags");
     }
 
     return QString();
@@ -252,7 +259,9 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
             }
 
             default:
+            {
                 return QVariant();
+            }
         }
     }
 
@@ -376,6 +385,15 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
 
             return caption;
         }
+
+        case SubColumnTags:
+        {
+            QStringList tagPaths = AlbumManager::instance()->tagPaths(info.tagIds(), false);
+            tagPaths.sort();
+
+            return tagPaths;
+        }
+
     }
 
     return QVariant();
@@ -433,19 +451,21 @@ bool Digikam::TableViewColumns::ColumnDigikamProperties::columnAffectedByChanges
     {
         case SubColumnTitle:
         case SubColumnCaption:
+        case SubColumnTags:
             return true;
+
             /// @todo These are not the right flags for these columns
 /*
             return imageChangeset.changes() & DatabaseFields::ItemCommentsAll;
 */
         case SubColumnRating:
-            return imageChangeset.changes() & DatabaseFields::Rating;
+            return (imageChangeset.changes() & DatabaseFields::Rating);
 
         case SubColumnPickLabel:
-            return imageChangeset.changes() & DatabaseFields::PickLabel;
+            return (imageChangeset.changes() & DatabaseFields::PickLabel);
 
         case SubColumnColorLabel:
-            return imageChangeset.changes() & DatabaseFields::ColorLabel;
+            return (imageChangeset.changes() & DatabaseFields::ColorLabel);
     }
 
     return false;
