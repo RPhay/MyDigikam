@@ -6,7 +6,8 @@
  * Date        : 2013-03-02
  * Description : Table view: Column configuration dialog
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -86,7 +87,7 @@ TableViewConfigurationDialog::TableViewConfigurationDialog(TableViewShared* cons
         qCWarning(DIGIKAM_GENERAL_LOG) << "Column object from TableView is null";
     }
 
-    d->buttons = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    d->buttons             = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
     QVBoxLayout* const vbx = new QVBoxLayout(this);
@@ -114,6 +115,7 @@ TableViewColumnConfiguration TableViewConfigurationDialog::getNewConfiguration()
     else
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Configuration widget from TableView is null";
+
         return TableViewColumnConfiguration();
     }
 }

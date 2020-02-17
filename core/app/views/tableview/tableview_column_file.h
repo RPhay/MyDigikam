@@ -6,7 +6,8 @@
  * Date        : 2013-02-25
  * Description : Table view column helpers: File properties
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -47,9 +48,9 @@ public:
 
     enum SubColumn
     {
-        SubColumnName = 0,
-        SubColumnFilePath = 1,
-        SubColumnSize = 2,
+        SubColumnName         = 0,
+        SubColumnFilePath     = 1,
+        SubColumnSize         = 2,
         SubColumnLastModified = 3
     };
 
@@ -61,11 +62,11 @@ public:
                                   QObject* const parent = nullptr);
     virtual ~ColumnFileProperties() {};
 
-    virtual TableViewColumnConfigurationWidget* getConfigurationWidget(QWidget* const parentWidget) const;
+    virtual TableViewColumnConfigurationWidget* getConfigurationWidget(QWidget* const parentWidget)           const;
     virtual void setConfiguration(const TableViewColumnConfiguration& newConfiguration);
-    virtual QString getTitle() const;
-    virtual ColumnFlags getColumnFlags() const;
-    virtual QVariant data(TableViewModel::Item* const item, const int role) const;
+    virtual QString getTitle()                                                                                const;
+    virtual ColumnFlags getColumnFlags()                                                                      const;
+    virtual QVariant data(TableViewModel::Item* const item, const int role)                                   const;
     virtual ColumnCompareResult compare(TableViewModel::Item* const itemA, TableViewModel::Item* const itemB) const;
 
 public:
