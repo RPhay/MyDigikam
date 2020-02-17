@@ -6,7 +6,7 @@
  * Date        : 2010-01-17
  * Description : test parsing gpx data
  *
- * Copyright (C) 2010 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2010      by Michael G. Hansen <mike at mghansen dot de>
  * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
