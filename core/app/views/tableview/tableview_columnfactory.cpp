@@ -6,7 +6,8 @@
  * Date        : 2013-02-12
  * Description : Table view column helpers
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -232,7 +233,7 @@ void TableViewColumnProfile::loadSettings(const KConfigGroup& configGroup)
         /// @todo check for invalid column configurations
 
         const QString configSubGroupName = QString::fromUtf8("Column %1").arg(i);
-        const KConfigGroup subGroup = configGroup.group(configSubGroupName);
+        const KConfigGroup subGroup      = configGroup.group(configSubGroupName);
 
         /// @todo move loading into TableViewColumnConfiguration
 
@@ -245,6 +246,7 @@ void TableViewColumnProfile::loadSettings(const KConfigGroup& configGroup)
     if (columnConfigurationList.isEmpty())
     {
         // no data loaded, create default entries
+
         /// @todo Set the default sorting column to something other than the thumbnail.
 
         TableViewColumnDescription::List allColumns = TableViewColumnFactory::getColumnDescriptionList();

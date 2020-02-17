@@ -68,11 +68,11 @@ set(libdigikamgui_SRCS
     items/utils/itemcategorydrawer.cpp
 
     views/tableview/tableview.cpp
+    views/tableview/tableview_model.cpp
+    views/tableview/tableview_shared.cpp
     views/tableview/tableview_treeview.cpp
     views/tableview/tableview_treeview_delegate.cpp
     views/tableview/tableview_column_configuration_dialog.cpp
-    views/tableview/tableview_model.cpp
-    views/tableview/tableview_columns.cpp
     views/tableview/tableview_column_audiovideo.cpp
     views/tableview/tableview_column_file.cpp
     views/tableview/tableview_column_geo.cpp

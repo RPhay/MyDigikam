@@ -533,7 +533,7 @@ void TableView::invertSelection()
 
         if (s->tableViewSelectionModel->isSelected(iIndex))
         {
-            if (i - 1 > lastSelectedRow)
+            if ((i - 1) > lastSelectedRow)
             {
                 for (int j = lastSelectedRow + 1 ; j < i ; ++j)
                 {
