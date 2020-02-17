@@ -1082,7 +1082,7 @@ void QueueListView::updateDestFileNames()
 
         manager.addFiles(files);
         manager.parseFiles(psettings);
-        renamingResults = manager.newFileList();
+        renamingResults = manager.newFileList(true);
     }
 
     AssignedBatchTools tools = assignedTools();

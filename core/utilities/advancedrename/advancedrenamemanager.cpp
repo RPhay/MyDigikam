@@ -372,8 +372,20 @@ QStringList AdvancedRenameManager::fileList() const
     return d->files;
 }
 
-QMap<QString, QString> AdvancedRenameManager::newFileList() const
+QMap<QString, QString> AdvancedRenameManager::newFileList(bool checkFileSystem) const
 {
+    if (checkFileSystem)
+    {
+        QMap<QString, QString> renamedFiles;
+
+        foreach (const QString& fileName, d->renamedFiles.keys())
+        {
+            renamedFiles[fileName] = newName(fileName);
+        }
+
+        return renamedFiles;
+    }
+
     return d->renamedFiles;
 }
 

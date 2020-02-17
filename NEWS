@@ -633,4 +633,5 @@ BUGFIXES:
 615 ==> 409324 - digiKam freezes when exiting image editor from edit on image from filtered view.
 616 ==> 417696 - Using the button "Determine difference from clock photo" without any result.
 617 ==> 386141 - Export to Google Photos not responding under Windows with QtWebKit.
-618 ==> 
+618 ==> 417786 - Renaming files in batch processor fails.
+619 ==> 

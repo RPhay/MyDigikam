@@ -101,7 +101,7 @@ public:
     QString newName(const QString& filename) const;
 
     QStringList            fileList() const;
-    QMap<QString, QString> newFileList() const;
+    QMap<QString, QString> newFileList(bool checkFileSystem = false) const;
 
 Q_SIGNALS:
 
