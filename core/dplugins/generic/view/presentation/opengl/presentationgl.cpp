@@ -162,8 +162,6 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
       d(new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
-    setContextMenuPolicy(Qt::PreventContextMenu);
-    setWindowState(windowState() | Qt::WindowFullScreen);
 
     QScreen* screen = qApp->primaryScreen();
 
@@ -183,6 +181,9 @@ PresentationGL::PresentationGL(PresentationContainer* const sharedData)
 
     move(d->deskX, d->deskY);
     resize(d->deskWidth, d->deskHeight);
+
+    setContextMenuPolicy(Qt::PreventContextMenu);
+    setWindowState(windowState() | Qt::WindowFullScreen);
 
     d->sharedData  = sharedData;
 
