@@ -635,4 +635,6 @@ BUGFIXES:
 617 ==> 386141 - Export to Google Photos not responding under Windows with QtWebKit.
 618 ==> 417786 - Renaming files in batch processor fails.
 619 ==> 318516 - SCAN : Improve digiKam loading time [patch].
-620 ==> 
+620 ==> 417708 - Video export => geolocation is not exported.
+621 ==> 
+
