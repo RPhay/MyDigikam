@@ -6,8 +6,9 @@
  * Date        : 2013-02-11
  * Description : Table view
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
- * Copyright (C) 2017 by Simon Frei <freisim93 at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
+ * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -123,7 +124,8 @@ Q_SIGNALS:
 private:
 
     class Private;
-    const QScopedPointer<Private> d;
+
+    const QScopedPointer<Private>         d;
     const QScopedPointer<TableViewShared> s;
 };
 

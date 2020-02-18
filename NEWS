@@ -638,4 +638,5 @@ BUGFIXES:
 620 ==> 417708 - Video export => geolocation is not exported.
 621 ==> 397819 - digiKam not showing date taken.
 622 ==> 327466 - digiKam crashes after launching alternate image processing software.
-623 ==> 
+623 ==> 332903 - Altering Geo-Data.
+624 ==>

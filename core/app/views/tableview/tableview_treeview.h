@@ -6,7 +6,8 @@
  * Date        : 2013-03-02
  * Description : Table view: Tree view subelement
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -46,10 +47,12 @@ class QContextMenuEvent;
 namespace Digikam
 {
 
-/// @todo For proper drag-and-drop support, we probably have to implement more
-///       of DragDropModelImplementation's functions in the TableViewModel or
-///       in the sort model. Subclassing DragDropModelImplementation would not
-///       work there, because we want to re-use ItemDragDropHandler...
+/**
+ * @todo For proper drag-and-drop support, we probably have to implement more
+ *        of DragDropModelImplementation's functions in the TableViewModel or
+ *        in the sort model. Subclassing DragDropModelImplementation would not
+ *        work there, because we want to re-use ItemDragDropHandler.
+ */
 class TableViewTreeView : public QTreeView, public DragDropViewImplementation, public GroupingViewImplementation
 {
     Q_OBJECT
@@ -67,12 +70,12 @@ protected:
 
     DECLARE_VIEW_DRAG_DROP_METHODS(QTreeView)
 
-    virtual AbstractItemDragDropHandler* dragDropHandler() const               override;
-    virtual QModelIndex mapIndexForDragDrop(const QModelIndex& index) const    override;
+    virtual AbstractItemDragDropHandler* dragDropHandler()               const override;
+    virtual QModelIndex mapIndexForDragDrop(const QModelIndex& index)    const override;
     virtual QPixmap     pixmapForDrag(const QList<QModelIndex>& indexes) const override;
     virtual void wheelEvent(QWheelEvent* event)                                override;
 
-    virtual bool hasHiddenGroupedImages(const ItemInfo& info) const            override;
+    virtual bool hasHiddenGroupedImages(const ItemInfo& info)            const override;
 
 private:
 
@@ -94,9 +97,9 @@ Q_SIGNALS:
 private:
 
     class Private;
-    const QScopedPointer<Private> d;
 
-    TableViewShared* const s;
+    const QScopedPointer<Private> d;
+    TableViewShared* const        s;
 };
 
 } // namespace Digikam
