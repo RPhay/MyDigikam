@@ -223,6 +223,19 @@ PresentationKB::PresentationKB(PresentationContainer* const sharedData)
       d(new Private)
 {
     setAttribute(Qt::WA_DeleteOnClose);
+    setContextMenuPolicy(Qt::PreventContextMenu);
+
+#ifdef Q_OS_WIN
+
+    setWindowFlags(Qt::Popup               |
+                   Qt::FramelessWindowHint |
+                   Qt::WindowStaysOnTopHint);
+
+#else
+
+    setWindowState(windowState() | Qt::WindowFullScreen);
+
+#endif
 
     QScreen* screen = qApp->primaryScreen();
 
@@ -242,9 +255,6 @@ PresentationKB::PresentationKB(PresentationContainer* const sharedData)
 
     move(d->deskX, d->deskY);
     resize(d->deskWidth, d->deskHeight);
-
-    setContextMenuPolicy(Qt::PreventContextMenu);
-    setWindowState(windowState() | Qt::WindowFullScreen);
 
     d->sharedData  = sharedData;
 
