@@ -72,8 +72,7 @@ QStringList ColumnPhotoProperties::getSubColumns()
             << QLatin1String("sensitivity")
             << QLatin1String("modeprogram")
             << QLatin1String("flash")
-            << QLatin1String("whitebalance")
-            << QLatin1String("date");
+            << QLatin1String("whitebalance");
 
     return columns;
 }
@@ -93,7 +92,6 @@ TableViewColumnDescription ColumnPhotoProperties::getDescription()
     description.addSubColumn(TableViewColumnDescription(QLatin1String("modeprogram"),  i18n("Mode/program")));
     description.addSubColumn(TableViewColumnDescription(QLatin1String("flash"),        i18n("Flash")));
     description.addSubColumn(TableViewColumnDescription(QLatin1String("whitebalance"), i18n("White balance")));
-    description.addSubColumn(TableViewColumnDescription(QLatin1String("date"),         i18n("Date")));
 
     return description;
 }
@@ -131,9 +129,6 @@ QString ColumnPhotoProperties::getTitle() const
 
         case SubColumnWhiteBalance:
             return i18n("White balance");
-
-        case SubColumnDate:
-            return i18n("Date");
     }
 
     return QString();
@@ -156,11 +151,6 @@ TableViewColumn::ColumnFlags ColumnPhotoProperties::getColumnFlags() const
     if (subColumn == SubColumnExposure)
     {
         flags |= ColumnHasConfigurationWidget;
-    }
-
-    if (subColumn == SubColumnDate)
-    {
-        return (ColumnCustomSorting | ColumnHasConfigurationWidget);
     }
 
     return flags;
@@ -343,14 +333,6 @@ QVariant ColumnPhotoProperties::data(TableViewModel::Item* const item, const int
 
             return whiteBalanceString;
         }
-
-        case SubColumnDate:
-        {
-            const ItemInfo info = s->tableViewModel->infoFromItem(item);
-            const QDateTime dt  = info.dateTime();
-
-            return QLocale().toString(dt, QLocale::ShortFormat);
-        }
     }
 
     return QVariant();
@@ -411,14 +393,6 @@ TableViewColumn::ColumnCompareResult ColumnPhotoProperties::compare(TableViewMod
             const double sensitivityB = variantB.toDouble();
 
             return compareHelper<double>(sensitivityA, sensitivityB);
-        }
-
-        case SubColumnDate:
-        {
-            const QDateTime dtA = infoA.dateTime();
-            const QDateTime dtB = infoB.dateTime();
-
-            return compareHelper<QDateTime>(dtA, dtB);
         }
 
         default:

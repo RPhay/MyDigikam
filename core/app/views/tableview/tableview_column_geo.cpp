@@ -6,7 +6,8 @@
  * Date        : 2013-02-25
  * Description : Table view column helpers: Geographic columns
  *
- * Copyright (C) 2013 by Michael G. Hansen <mike at mghansen dot de>
+ * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2013      by Michael G. Hansen <mike at mghansen dot de>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,12 +46,14 @@ QString FormatAltitude(const qreal altitudeInMeters, const QLocale::MeasurementS
     if (measureSystem == QLocale::MetricSystem)
     {
         const QString altitudeInMetersString = QLocale().toString(altitudeInMeters);
+
         return QString::fromUtf8("%1 m").arg(altitudeInMetersString);
     }
     else
     {
         const qreal altitudeInFeet         = altitudeInMeters /* m */ / ( 0.3048 /* m/foot */ );
         const QString altitudeInFeetString = QLocale().toString(altitudeInFeet, 'g', 2);
+
         return QString::fromUtf8("%1 ft").arg(altitudeInFeetString);
     }
 }
@@ -79,7 +82,8 @@ ColumnGeoProperties::~ColumnGeoProperties()
 QStringList ColumnGeoProperties::getSubColumns()
 {
     QStringList columns;
-    columns << QLatin1String("geohascoordinates") << QLatin1String("geocoordinates")
+    columns << QLatin1String("geohascoordinates")
+            << QLatin1String("geocoordinates")
             << QLatin1String("geoaltitude");
 
     return columns;
@@ -102,8 +106,10 @@ QString ColumnGeoProperties::getTitle() const
     {
         case SubColumnHasCoordinates:
             return i18n("Geotagged");
+
         case SubColumnCoordinates:
             return i18n("Coordinates");
+
         case SubColumnAltitude:
             return i18n("Altitude");
     }
@@ -117,15 +123,17 @@ TableViewColumn::ColumnFlags ColumnGeoProperties::getColumnFlags() const
 
     if (subColumn == SubColumnAltitude)
     {
-        flags |= ColumnCustomSorting | ColumnHasConfigurationWidget;
+        flags |= (ColumnCustomSorting | ColumnHasConfigurationWidget);
     }
 
     return flags;
 }
 QVariant ColumnGeoProperties::data(TableViewModel::Item* const item, const int role) const
 {
-    if ( (role != Qt::DisplayRole) &&
-         (role != Qt::TextAlignmentRole) )
+    if (
+        (role != Qt::DisplayRole) &&
+        (role != Qt::TextAlignmentRole)
+       )
     {
         return QVariant();
     }
@@ -165,16 +173,18 @@ QVariant ColumnGeoProperties::data(TableViewModel::Item* const item, const int r
         case SubColumnAltitude:
         {
             /// @todo Needs custom sorting
+
             if ((!info.hasCoordinates()) || (!info.hasAltitude()))
             {
                 return QString();
             }
 
             /// @todo Use an enum instead to avoid lots of string comparisons
+
             const QString formatKey                  = configuration.getSetting(QLatin1String("format"), QLatin1String("metric"));
             QLocale::MeasurementSystem measureSystem = QLocale().measurementSystem();
 
-            if (formatKey == QLatin1String("metric"))
+            if      (formatKey == QLatin1String("metric"))
             {
                 measureSystem = QLocale::MetricSystem;
             }
@@ -250,12 +260,14 @@ ColumnGeoConfigurationWidget::ColumnGeoConfigurationWidget(TableViewShared* cons
             setLayout(box1);
 
             const int index = selectorAltitudeUnit->findData(configuration.getSetting(QLatin1String("format"), QLatin1String("metric")));
-            selectorAltitudeUnit->setCurrentIndex(index >= 0 ? index : 0);
+            selectorAltitudeUnit->setCurrentIndex((index >= 0) ? index : 0);
             break;
         }
 
         default:
+        {
             break;
+        }
     }
 }
 
