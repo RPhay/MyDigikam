@@ -100,37 +100,59 @@ QString ColumnItemProperties::getTitle() const
     switch (subColumn)
     {
         case SubColumnWidth:
+        {
             return i18n("Width");
+        }
 
         case SubColumnHeight:
+        {
             return i18n("Height");
+        }
 
         case SubColumnDimensions:
+        {
             return i18n("Dimensions");
+        }
 
         case SubColumnPixelCount:
+        {
             return i18n("Pixel count");
+        }
 
         case SubColumnBitDepth:
+        {
             return i18n("Bit depth");
+        }
 
         case SubColumnColorMode:
+        {
             return i18n("Color mode");
+        }
 
         case SubColumnType:
+        {
             return i18n("Type");
+        }
 
         case SubColumnCreationDateTime:
+        {
             return i18n("Creation date/time");
+        }
 
         case SubColumnDigitizationDateTime:
+        {
             return i18n("Digitization date/time");
+        }
 
         case SubColumnAspectRatio:
+        {
             return i18n("Aspect ratio");
+        }
 
         case SubColumnSimilarity:
+        {
             return i18n("Similarity");
+        }
     }
 
     return QString();
@@ -175,10 +197,14 @@ QVariant ColumnItemProperties::data(TableViewModel::Item* const item, const int 
             case SubColumnHeight:
             case SubColumnWidth:
             case SubColumnPixelCount:
+            {
                 return QVariant(Qt::Alignment(Qt::AlignRight | Qt::AlignVCenter));
+            }
 
             default:
+            {
                 return QVariant();
+            }
         }
     }
 
@@ -420,6 +446,7 @@ TableViewColumn::ColumnCompareResult ColumnItemProperties::compare(TableViewMode
         default:
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "item: unimplemented comparison, subColumn=" << subColumn;
+
             return CmpEqual;
         }
     }

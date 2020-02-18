@@ -105,13 +105,19 @@ QString ColumnGeoProperties::getTitle() const
     switch (subColumn)
     {
         case SubColumnHasCoordinates:
+        {
             return i18n("Geotagged");
+        }
 
         case SubColumnCoordinates:
+        {
             return i18n("Coordinates");
+        }
 
         case SubColumnAltitude:
+        {
             return i18n("Altitude");
+        }
     }
 
     return QString();
@@ -128,6 +134,7 @@ TableViewColumn::ColumnFlags ColumnGeoProperties::getColumnFlags() const
 
     return flags;
 }
+
 QVariant ColumnGeoProperties::data(TableViewModel::Item* const item, const int role) const
 {
     if (
@@ -143,10 +150,14 @@ QVariant ColumnGeoProperties::data(TableViewModel::Item* const item, const int r
         switch (subColumn)
         {
             case SubColumnAltitude:
+            {
                 return QVariant(Qt::Alignment(Qt::AlignRight | Qt::AlignVCenter));
+            }
 
             default:
+            {
                 return QVariant();
+            }
         }
     }
 

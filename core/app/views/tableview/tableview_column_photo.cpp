@@ -101,34 +101,54 @@ QString ColumnPhotoProperties::getTitle() const
     switch (subColumn)
     {
         case SubColumnCameraMaker:
+        {
             return i18n("Camera maker");
+        }
 
         case SubColumnCameraModel:
+        {
             return i18n("Camera model");
+        }
 
         case SubColumnLens:
+        {
             return i18n("Lens");
+        }
 
         case SubColumnAperture:
+        {
             return i18n("Aperture");
+        }
 
         case SubColumnFocal:
+        {
             return i18n("Focal length");
+        }
 
         case SubColumnExposure:
+        {
             return i18n("Exposure");
+        }
 
         case SubColumnSensitivity:
+        {
             return i18n("Sensitivity");
+        }
 
         case SubColumnModeProgram:
+        {
             return i18n("Mode/program");
+        }
 
         case SubColumnFlash:
+        {
             return i18n("Flash");
+        }
 
         case SubColumnWhiteBalance:
+        {
             return i18n("White balance");
+        }
     }
 
     return QString();

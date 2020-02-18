@@ -84,16 +84,24 @@ QString ColumnFileProperties::getTitle() const
     switch (subColumn)
     {
         case SubColumnName:
+        {
             return i18n("Filename");
+        }
 
         case SubColumnFilePath:
+        {
             return i18n("Path");
+        }
 
         case SubColumnSize:
+        {
             return i18n("Size");
+        }
 
         case SubColumnLastModified:
+        {
             return i18n("Last modified");
+        }
     }
 
     return QString();
@@ -127,10 +135,14 @@ QVariant ColumnFileProperties::data(TableViewModel::Item* const item, const int 
         switch (subColumn)
         {
             case SubColumnSize:
+            {
                 return QVariant(Qt::Alignment(Qt::AlignRight | Qt::AlignVCenter));
+            }
 
             default:
+            {
                 return QVariant();
+            }
         }
     }
 
@@ -139,12 +151,14 @@ QVariant ColumnFileProperties::data(TableViewModel::Item* const item, const int 
     switch (subColumn)
     {
         case SubColumnName:
+        {
             return info.fileUrl().fileName();
-            break;
+        }
 
         case SubColumnFilePath:
+        {
             return QDir::toNativeSeparators(info.fileUrl().toLocalFile());
-            break;
+        }
 
         case SubColumnSize:
         {

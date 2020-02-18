@@ -90,22 +90,34 @@ QString ColumnAudioVideoProperties::getTitle() const
     switch (subColumn)
     {
         case SubColumnAudioBitRate:
+        {
             return i18n("Audio bitrate");
+        }
 
         case SubColumnAudioChannelType:
+        {
             return i18n("Audio channel type");
+        }
 
         case SubColumnAudioCodec:
+        {
             return i18n("Audio Codec");
+        }
 
         case SubColumnDuration:
+        {
             return i18n("Duration");
+        }
 
         case SubColumnFrameRate:
+        {
             return i18n("Frame rate");
+        }
 
         case SubColumnVideoCodec:
+        {
             return i18n("Video codec");
+        }
     }
 
     return QString();
@@ -116,6 +128,7 @@ TableViewColumn::ColumnFlags ColumnAudioVideoProperties::getColumnFlags() const
     ColumnFlags flags(ColumnNoFlags);
 
     /// @todo AudioChannelType contains "Mono" or "2", have to check for custom sorting
+
     if (
         (subColumn == SubColumnAudioBitRate) ||
         (subColumn == SubColumnDuration)     ||
@@ -287,6 +300,7 @@ TableViewColumn::ColumnCompareResult ColumnAudioVideoProperties::compare(TableVi
         default:
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "item: unimplemented comparison, subColumn=" << subColumn;
+
             return CmpEqual;
         }
     }
