@@ -72,7 +72,8 @@ QStringList ColumnPhotoProperties::getSubColumns()
             << QLatin1String("sensitivity")
             << QLatin1String("modeprogram")
             << QLatin1String("flash")
-            << QLatin1String("whitebalance");
+            << QLatin1String("whitebalance")
+            << QLatin1String("date");
 
     return columns;
 }
@@ -92,6 +93,7 @@ TableViewColumnDescription ColumnPhotoProperties::getDescription()
     description.addSubColumn(TableViewColumnDescription(QLatin1String("modeprogram"),  i18n("Mode/program")));
     description.addSubColumn(TableViewColumnDescription(QLatin1String("flash"),        i18n("Flash")));
     description.addSubColumn(TableViewColumnDescription(QLatin1String("whitebalance"), i18n("White balance")));
+    description.addSubColumn(TableViewColumnDescription(QLatin1String("date"),         i18n("Date")));
 
     return description;
 }
@@ -129,6 +131,9 @@ QString ColumnPhotoProperties::getTitle() const
 
         case SubColumnWhiteBalance:
             return i18n("White balance");
+
+        case SubColumnDate:
+            return i18n("Date");
     }
 
     return QString();
@@ -153,6 +158,11 @@ TableViewColumn::ColumnFlags ColumnPhotoProperties::getColumnFlags() const
         flags |= ColumnHasConfigurationWidget;
     }
 
+    if (subColumn == SubColumnDate)
+    {
+        return (ColumnCustomSorting | ColumnHasConfigurationWidget);
+    }
+
     return flags;
 }
 
@@ -168,30 +178,33 @@ QVariant ColumnPhotoProperties::data(TableViewModel::Item* const item, const int
         case SubColumnCameraMaker:
         {
             QString cameraMaker = s->tableViewModel->itemDatabaseFieldRaw(item,
-                DatabaseFields::Set(DatabaseFields::Make)).toString();
+                                  DatabaseFields::Set(DatabaseFields::Make)).toString();
             ItemPropertiesTab::shortenedMakeInfo(cameraMaker);
+
             return cameraMaker;
         }
 
         case SubColumnCameraModel:
         {
             QString cameraModel = s->tableViewModel->itemDatabaseFieldRaw(item,
-                DatabaseFields::Set(DatabaseFields::Model)).toString();
+                                  DatabaseFields::Set(DatabaseFields::Model)).toString();
             ItemPropertiesTab::shortenedModelInfo(cameraModel);
+
             return cameraModel;
         }
 
         case SubColumnLens:
         {
             const QString cameraLens = s->tableViewModel->itemDatabaseFieldRaw(item,
-                DatabaseFields::Set(DatabaseFields::Lens)).toString();
+                                       DatabaseFields::Set(DatabaseFields::Lens)).toString();
+
             return cameraLens;
         }
 
         case SubColumnAperture:
         {
             const QVariant apertureVariant = s->tableViewModel->itemDatabaseFieldRaw(item,
-                DatabaseFields::Set(DatabaseFields::Aperture));
+                                             DatabaseFields::Set(DatabaseFields::Aperture));
             const QString apertureString   = DMetadata::valueToString(apertureVariant, MetadataInfo::Aperture);
 
             return apertureString;
@@ -228,7 +241,7 @@ QVariant ColumnPhotoProperties::data(TableViewModel::Item* const item, const int
             /// @todo Add a configuration option for fraction vs number, units s vs ms vs mus
 
             const QVariant exposureVariant = s->tableViewModel->itemDatabaseFieldRaw(item,
-                DatabaseFields::Set(DatabaseFields::ExposureTime));
+                                             DatabaseFields::Set(DatabaseFields::ExposureTime));
 
             if (configuration.getSetting(QLatin1String("format"), QLatin1String("fraction")) == QLatin1String("fraction"))
             {
@@ -316,7 +329,7 @@ QVariant ColumnPhotoProperties::data(TableViewModel::Item* const item, const int
         case SubColumnFlash:
         {
             const QVariant flashModeVariant = s->tableViewModel->itemDatabaseFieldRaw(item,
-                DatabaseFields::Set(DatabaseFields::FlashMode));
+                                              DatabaseFields::Set(DatabaseFields::FlashMode));
             const QString flashModeString   = DMetadata::valueToString(flashModeVariant, MetadataInfo::FlashMode);
 
             return flashModeString;
@@ -325,10 +338,18 @@ QVariant ColumnPhotoProperties::data(TableViewModel::Item* const item, const int
         case SubColumnWhiteBalance:
         {
             const QVariant whiteBalanceVariant = s->tableViewModel->itemDatabaseFieldRaw(item,
-                DatabaseFields::Set(DatabaseFields::WhiteBalance));
+                                                 DatabaseFields::Set(DatabaseFields::WhiteBalance));
             const QString whiteBalanceString   = DMetadata::valueToString(whiteBalanceVariant, MetadataInfo::WhiteBalance);
 
             return whiteBalanceString;
+        }
+
+        case SubColumnDate:
+        {
+            const ItemInfo info = s->tableViewModel->infoFromItem(item);
+            const QDateTime dt  = info.dateTime();
+
+            return QLocale().toString(dt, QLocale::ShortFormat);
         }
     }
 
@@ -345,9 +366,9 @@ TableViewColumn::ColumnCompareResult ColumnPhotoProperties::compare(TableViewMod
         case SubColumnAperture:
         {
             const QVariant variantA = s->tableViewModel->itemDatabaseFieldRaw(itemA,
-                DatabaseFields::Set(DatabaseFields::Aperture));
+                                      DatabaseFields::Set(DatabaseFields::Aperture));
             const QVariant variantB = s->tableViewModel->itemDatabaseFieldRaw(itemB,
-                DatabaseFields::Set(DatabaseFields::Aperture));
+                                      DatabaseFields::Set(DatabaseFields::Aperture));
             const double apertureA  = variantA.toDouble();
             const double apertureB  = variantB.toDouble();
 
@@ -359,9 +380,9 @@ TableViewColumn::ColumnCompareResult ColumnPhotoProperties::compare(TableViewMod
             /// @todo This just works if both have focal length set, not if focal length 35 has to be used
 
             const QVariant variantA   = s->tableViewModel->itemDatabaseFieldRaw(itemA,
-                DatabaseFields::Set(DatabaseFields::FocalLength));
+                                        DatabaseFields::Set(DatabaseFields::FocalLength));
             const QVariant variantB   = s->tableViewModel->itemDatabaseFieldRaw(itemB,
-                DatabaseFields::Set(DatabaseFields::FocalLength));
+                                        DatabaseFields::Set(DatabaseFields::FocalLength));
             const double focalLengthA = variantA.toDouble();
             const double focalLengthB = variantB.toDouble();
 
@@ -371,9 +392,9 @@ TableViewColumn::ColumnCompareResult ColumnPhotoProperties::compare(TableViewMod
         case SubColumnExposure:
         {
             const QVariant variantA    = s->tableViewModel->itemDatabaseFieldRaw(itemA,
-                DatabaseFields::Set(DatabaseFields::ExposureTime));
+                                         DatabaseFields::Set(DatabaseFields::ExposureTime));
             const QVariant variantB    = s->tableViewModel->itemDatabaseFieldRaw(itemB,
-                DatabaseFields::Set(DatabaseFields::ExposureTime));
+                                         DatabaseFields::Set(DatabaseFields::ExposureTime));
             const double exposureTimeA = variantA.toDouble();
             const double exposureTimeB = variantB.toDouble();
 
@@ -383,18 +404,27 @@ TableViewColumn::ColumnCompareResult ColumnPhotoProperties::compare(TableViewMod
         case SubColumnSensitivity:
         {
             const QVariant variantA   = s->tableViewModel->itemDatabaseFieldRaw(itemA,
-                DatabaseFields::Set(DatabaseFields::Sensitivity));
+                                        DatabaseFields::Set(DatabaseFields::Sensitivity));
             const QVariant variantB   = s->tableViewModel->itemDatabaseFieldRaw(itemB,
-                DatabaseFields::Set(DatabaseFields::Sensitivity));
+                                        DatabaseFields::Set(DatabaseFields::Sensitivity));
             const double sensitivityA = variantA.toDouble();
             const double sensitivityB = variantB.toDouble();
 
             return compareHelper<double>(sensitivityA, sensitivityB);
         }
 
+        case SubColumnDate:
+        {
+            const QDateTime dtA = infoA.dateTime();
+            const QDateTime dtB = infoB.dateTime();
+
+            return compareHelper<QDateTime>(dtA, dtB);
+        }
+
         default:
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "item: unimplemented comparison, subColumn=" << subColumn;
+
             return CmpEqual;
         }
     }
@@ -403,7 +433,8 @@ TableViewColumn::ColumnCompareResult ColumnPhotoProperties::compare(TableViewMod
 TableViewColumnConfigurationWidget* ColumnPhotoProperties::getConfigurationWidget(QWidget* const parentWidget) const
 {
     TableViewColumnConfiguration myConfiguration = getConfiguration();
-    return new ColumnPhotoConfigurationWidget(s, myConfiguration, parentWidget);
+
+    return (new ColumnPhotoConfigurationWidget(s, myConfiguration, parentWidget));
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -437,9 +468,9 @@ ColumnPhotoConfigurationWidget::ColumnPhotoConfigurationWidget(TableViewShared* 
             setLayout(box1);
 
             const int indexF = selectorExposureTimeFormat->findData(configuration.getSetting(QLatin1String("format"), QLatin1String("fraction")));
-            selectorExposureTimeFormat->setCurrentIndex(indexF >= 0 ? indexF : 0);
+            selectorExposureTimeFormat->setCurrentIndex((indexF >= 0) ? indexF : 0);
             const int indexU = selectorExposureTimeUnit->findData(configuration.getSetting(QLatin1String("unit"), QLatin1String("seconds")));
-            selectorExposureTimeUnit->setCurrentIndex(indexU >= 0 ? indexU : 0);
+            selectorExposureTimeUnit->setCurrentIndex((indexU >= 0) ? indexU : 0);
 
             slotUpdateUI();
 

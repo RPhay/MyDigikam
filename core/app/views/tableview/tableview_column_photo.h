@@ -57,7 +57,8 @@ public:
         SubColumnSensitivity  = 6,
         SubColumnModeProgram  = 7,
         SubColumnFlash        = 8,
-        SubColumnWhiteBalance = 9
+        SubColumnWhiteBalance = 9,
+        SubColumnDate         = 10
     };
 
 private:

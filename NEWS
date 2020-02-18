@@ -10,7 +10,8 @@ HTMLGallery   : Add new theme "Html5Responsive".
 General       : Update internal libraw engine to last 201910 snapshot aka next 0.20.0 release (https://www.libraw.org/news/libraw-snapshot-201910)
 General       : All bundles have switched to last Qt 5.14.0. Linux and MacOS use QtWebEngine instead QtWebKit.
 General       : Add Microsoft Visual C++ support and a Continuous Integration workflow to check code with this compiler.
-General       : Table-view is now able to show Tag-Paths properties.
+General       : Table-view is now able to show digiKam Tag-Paths properties.
+General       : Table-view is now able to show Photo date taken properties.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -636,5 +637,5 @@ BUGFIXES:
 618 ==> 417786 - Renaming files in batch processor fails.
 619 ==> 318516 - SCAN : Improve digiKam loading time [patch].
 620 ==> 417708 - Video export => geolocation is not exported.
-621 ==> 
-
+621 ==> 397819 - digiKam not showing date taken.
+622 ==> 

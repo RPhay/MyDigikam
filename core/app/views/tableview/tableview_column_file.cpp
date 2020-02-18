@@ -204,6 +204,7 @@ TableViewColumn::ColumnCompareResult ColumnFileProperties::compare(TableViewMode
         default:
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "file: unimplemented comparison, subColumn=" << subColumn;
+
             return CmpEqual;
         }
     }
@@ -233,7 +234,7 @@ ColumnFileConfigurationWidget::ColumnFileConfigurationWidget(TableViewShared* co
             setLayout(box1);
 
             const int index = selectorSizeType->findData(configuration.getSetting(QLatin1String("format"), QLatin1String("human")));
-            selectorSizeType->setCurrentIndex(index>=0 ? index : 0);
+            selectorSizeType->setCurrentIndex((index >= 0) ? index : 0);
             break;
         }
 

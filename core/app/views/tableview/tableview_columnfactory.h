@@ -155,6 +155,7 @@ public:
             if (desc.columnId == targetId)
             {
                 *resultDescription = desc;
+
                 return true;
             }
 

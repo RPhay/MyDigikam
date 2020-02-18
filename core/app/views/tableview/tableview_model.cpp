@@ -51,7 +51,7 @@
 #   include "../../../tests/modeltest/modeltest.h"
 #endif // DIGIKAM_ENABLE_MODELTEST
 
-#define ASSERT_MODEL(index, modelPointer) if (index.isValid()) { Q_ASSERT(index.model()==modelPointer); }
+#define ASSERT_MODEL(index, modelPointer) if (index.isValid()) { Q_ASSERT(index.model() == modelPointer); }
 
 namespace Digikam
 {
@@ -1247,7 +1247,7 @@ bool TableViewModel::lessThan(TableViewModel::Item* const itemA, TableViewModel:
 
         if ((stringA == stringB) || (stringA.isEmpty() && stringB.isEmpty()))
         {
-            return itemA->imageId < itemB->imageId;
+            return (itemA->imageId < itemB->imageId);
         }
 
         return (stringA < stringB);
@@ -1392,7 +1392,7 @@ qlonglong TableViewModel::imageId(const QModelIndex& anIndex) const
 
     if (!anItem)
     {
-        return -1;
+        return (-1);
     }
 
     return anItem->imageId;
@@ -1500,7 +1500,7 @@ int TableViewModel::indexToDeepRowNumber(const QModelIndex& rowIndex) const
 
     if (!cIndex.isValid())
     {
-        return -1;
+        return (-1);
     }
 
     return deepRowNumber;
