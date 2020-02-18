@@ -109,11 +109,11 @@ public:
 
     typedef QList<TableViewColumnDescription> List;
 
-    QString                           columnId;
-    QString                           columnTitle;
-    QString                           columnIcon;
-    QHash<QString, QString>           columnSettings;
-    QList<TableViewColumnDescription> subColumns;
+    QString                                   columnId;
+    QString                                   columnTitle;
+    QString                                   columnIcon;
+    QHash<QString, QString>                   columnSettings;
+    QList<TableViewColumnDescription>         subColumns;
 
 public:
 
@@ -214,9 +214,9 @@ public:
 
     enum ColumnCompareResult
     {
-        CmpEqual    = 0,
-        CmpABiggerB = 1,
-        CmpALessB   = 2
+        CmpEqual                     = 0,
+        CmpABiggerB                  = 1,
+        CmpALessB                    = 2
     };
 
 public:
@@ -225,6 +225,8 @@ public:
                              const TableViewColumnConfiguration& pConfiguration,
                              QObject* const parent = nullptr);
     virtual ~TableViewColumn();
+
+public:
 
     virtual TableViewColumnConfiguration getConfiguration()                                                             const;
     virtual void setConfiguration(const TableViewColumnConfiguration& newConfiguration);
@@ -239,10 +241,13 @@ public:
     virtual QSize sizeHint(const QStyleOptionViewItem& option, TableViewModel::Item* const item)                        const;
     virtual void updateThumbnailSize();
 
+public:
+
     static TableViewColumnDescription getDescription();
     static bool compareHelperBoolFailCheck(const bool okA, const bool okB, ColumnCompareResult* const result);
 
-    template<class MyType> static ColumnCompareResult compareHelper(const MyType& A, const MyType& B)
+    template<class MyType>
+    static ColumnCompareResult compareHelper(const MyType& A, const MyType& B)
     {
         if      (A == B)
         {
@@ -256,7 +261,8 @@ public:
         return CmpALessB;
     }
 
-    template<typename columnClass> static bool getSubColumnIndex(const QString& subColumnId, typename columnClass::SubColumn* const subColumn)
+    template<typename columnClass>
+    static bool getSubColumnIndex(const QString& subColumnId, typename columnClass::SubColumn* const subColumn)
     {
         const int index = columnClass::getSubColumns().indexOf(subColumnId);
 
@@ -270,10 +276,11 @@ public:
         return true;
     }
 
-    template<typename columnClass> static bool CreateFromConfiguration(TableViewShared* const tableViewShared,
-                                                                       const TableViewColumnConfiguration& pConfiguration,
-                                                                       TableViewColumn** const pNewColumn,
-                                                                       QObject* const parent)
+    template<typename columnClass>
+    static bool CreateFromConfiguration(TableViewShared* const tableViewShared,
+                                        const TableViewColumnConfiguration& pConfiguration,
+                                        TableViewColumn** const pNewColumn,
+                                        QObject* const parent)
     {
         typename columnClass::SubColumn subColumn;
 

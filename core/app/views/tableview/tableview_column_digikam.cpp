@@ -98,22 +98,34 @@ QString ColumnDigikamProperties::getTitle() const
     switch (subColumn)
     {
         case SubColumnRating:
+        {
             return i18n("Rating");
+        }
 
         case SubColumnPickLabel:
+        {
             return i18n("Pick label");
+        }
 
         case SubColumnColorLabel:
+        {
             return i18n("Color label");
+        }
 
         case SubColumnTitle:
+        {
             return i18n("Title");
+        }
 
         case SubColumnCaption:
+        {
             return i18n("Caption");
+        }
 
         case SubColumnTags:
+        {
             return i18n("Tags");
+        }
     }
 
     return QString();
@@ -151,10 +163,14 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
         switch (subColumn)
         {
             case SubColumnRating:
+            {
                 return QVariant(Qt::Alignment(Qt::AlignCenter));
+            }
 
             default:
+            {
                 return QVariant();
+            }
         }
     }
 
@@ -164,36 +180,44 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
         {
             case SubColumnPickLabel:
             {
-                const ItemInfo info      = s->tableViewModel->infoFromItem(item);
+                const ItemInfo info       = s->tableViewModel->infoFromItem(item);
                 const PickLabel pickLabel = PickLabel(info.pickLabel());
                 QColor labelColor;
 
                 switch (pickLabel)
                 {
                     case NoPickLabel:
+                    {
                         labelColor = Qt::darkGray;
                         break;
+                    }
 
                     case RejectedLabel:
+                    {
                         labelColor = Qt::red;
                         break;
+                    }
 
                     case PendingLabel:
-
+                    {
                         // yellow is too hard to read
 
                         labelColor = Qt::darkYellow;
                         break;
+                    }
 
                     case AcceptedLabel:
-
+                    {
                         // green is too hard to read
 
                         labelColor = Qt::darkGreen;
                         break;
+                    }
 
                     default:
+                    {
                         break;
+                    }
                 }
 
                 QBrush labelBrush(labelColor);
@@ -210,47 +234,69 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
                 switch (colorLabel)
                 {
                     case NoColorLabel:
+                    {
                         labelColor = Qt::lightGray;
                         break;
+                    }
 
                     case RedLabel:
+                    {
                         labelColor = Qt::red;
                         break;
+                    }
 
                     case OrangeLabel:
+                    {
                         labelColor = QColor(0xff, 0x80, 0x00);
                         break;
+                    }
 
                     case YellowLabel:
+                    {
                         labelColor = Qt::darkYellow;
                         break;
+                    }
 
                     case GreenLabel:
+                    {
                         labelColor = Qt::darkGreen;
                         break;
+                    }
 
                     case BlueLabel:
+                    {
                         labelColor = Qt::darkBlue;
                         break;
+                    }
 
                     case MagentaLabel:
+                    {
                         labelColor = Qt::magenta;
                         break;
+                    }
 
                     case GrayLabel:
+                    {
                         labelColor = Qt::darkGray;
                         break;
+                    }
 
                     case BlackLabel:
+                    {
                         labelColor = Qt::black;
                         break;
+                    }
 
                     case WhiteLabel:
+                    {
                         labelColor = Qt::white;
                         break;
+                    }
 
                     default:
+                    {
                         break;
+                    }
                 }
 
                 QBrush labelBrush(labelColor);
@@ -296,23 +342,33 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
             switch (pickLabel)
             {
                 case NoPickLabel:
+                {
                     labelString = i18n("None");
                     break;
+                }
 
                 case RejectedLabel:
+                {
                     labelString = i18n("Rejected");
                     break;
+                }
 
                 case PendingLabel:
+                {
                     labelString = i18n("Pending");
                     break;
+                }
 
                 case AcceptedLabel:
+                {
                     labelString = i18n("Accepted");
                     break;
+                }
 
                 default:
+                {
                     break;
+                }
             }
 
             return labelString;
@@ -326,47 +382,69 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
             switch (colorLabel)
             {
                 case NoColorLabel:
+                {
                     labelString = i18n("None");
                     break;
+                }
 
                 case RedLabel:
+                {
                     labelString = i18n("Red");
                     break;
+                }
 
                 case OrangeLabel:
+                {
                     labelString = i18n("Orange");
                     break;
+                }
 
                 case YellowLabel:
+                {
                     labelString = i18n("Yellow");
                     break;
+                }
 
                 case GreenLabel:
+                {
                     labelString = i18n("Green");
                     break;
+                }
 
                 case BlueLabel:
+                {
                     labelString = i18n("Blue");
                     break;
+                }
 
                 case MagentaLabel:
+                {
                     labelString = i18n("Magenta");
                     break;
+                }
 
                 case GrayLabel:
+                {
                     labelString = i18n("Gray");
                     break;
+                }
 
                 case BlackLabel:
+                {
                     labelString = i18n("Black");
                     break;
+                }
 
                 case WhiteLabel:
+                {
                     labelString = i18n("White");
                     break;
+                }
 
                 default:
+                {
                     break;
+                }
             }
 
             return labelString;
@@ -391,7 +469,7 @@ QVariant ColumnDigikamProperties::data(TableViewModel::Item* const item, const i
             QStringList tagPaths = AlbumManager::instance()->tagPaths(info.tagIds(), false);
             tagPaths.sort();
 
-            return tagPaths;
+            return tagPaths.join(QLatin1Char('\n'));
         }
 
     }
@@ -440,6 +518,7 @@ TableViewColumn::ColumnCompareResult ColumnDigikamProperties::compare(TableViewM
         default:
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "item: unimplemented comparison, subColumn=" << subColumn;
+
             return CmpEqual;
         }
     }
@@ -452,20 +531,28 @@ bool Digikam::TableViewColumns::ColumnDigikamProperties::columnAffectedByChanges
         case SubColumnTitle:
         case SubColumnCaption:
         case SubColumnTags:
+        {
             return true;
-
             /// @todo These are not the right flags for these columns
 /*
             return imageChangeset.changes() & DatabaseFields::ItemCommentsAll;
 */
+        }
+
         case SubColumnRating:
+        {
             return (imageChangeset.changes() & DatabaseFields::Rating);
+        }
 
         case SubColumnPickLabel:
+        {
             return (imageChangeset.changes() & DatabaseFields::PickLabel);
+        }
 
         case SubColumnColorLabel:
+        {
             return (imageChangeset.changes() & DatabaseFields::ColorLabel);
+        }
     }
 
     return false;

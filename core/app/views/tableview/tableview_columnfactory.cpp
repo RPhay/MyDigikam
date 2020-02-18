@@ -193,12 +193,14 @@ bool TableViewColumn::compareHelperBoolFailCheck(const bool okA, const bool okB,
     if (okA && !okB)
     {
         *result = CmpABiggerB;
+
         return false;
     }
 
     if (okB && !okA)
     {
         *result = CmpALessB;
+
         return false;
     }
 
