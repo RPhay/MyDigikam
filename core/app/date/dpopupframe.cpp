@@ -89,10 +89,12 @@ public:
 
         // To catch outside clicks, it is sufficient to check for
         // hide events on Qt::Popup type widgets
+
         if (event->type() == QEvent::Hide && m_popup)
         {
             // do not set d->result here, because the popup
             // hides itself after leaving the event loop.
+
             emit m_popup->leaveModality();
         }
 
@@ -180,7 +182,9 @@ void DPopupFrame::popup(const QPoint& p)
     if (QWidget* const widget = nativeParentWidget())
     {
         if (QWindow* const window = widget->windowHandle())
+        {
             screen = window->screen();
+        }
     }
 
     QRect desktopGeometry = screen->geometry();
@@ -190,12 +194,12 @@ void DPopupFrame::popup(const QPoint& p)
     int w = width();
     int h = height();
 
-    if (x + w > desktopGeometry.x() + desktopGeometry.width())
+    if ((x + w) > (desktopGeometry.x() + desktopGeometry.width()))
     {
         x = desktopGeometry.width() - w;
     }
 
-    if (y + h > desktopGeometry.y() + desktopGeometry.height())
+    if ((y + h) > (desktopGeometry.y() + desktopGeometry.height()))
     {
         y = desktopGeometry.height() - h;
     }
@@ -211,6 +215,7 @@ void DPopupFrame::popup(const QPoint& p)
     }
 
     // Pop the thingy up.
+
     move(x, y);
     show();
     d->main->setFocus();
@@ -229,6 +234,7 @@ int DPopupFrame::exec(const QPoint& p)
     eventLoop.exec();
 
     hide();
+
     return d->result;
 }
 

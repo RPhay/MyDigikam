@@ -50,8 +50,10 @@ class Q_DECL_HIDDEN DDateTable::Private : public QObject
 
 public:
 
-    struct DatePaintingMode
+    class Q_DECL_HIDDEN DatePaintingMode
     {
+    public:
+
         QColor         fgColor;
         QColor         bgColor;
         BackgroundMode bgMode;
@@ -77,8 +79,8 @@ public:
     DDateTable*                   q;
 
     /**
-    * The currently selected date.
-    */
+     * The currently selected date.
+     */
     QDate                         date;
 
     /**

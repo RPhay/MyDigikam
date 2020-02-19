@@ -46,16 +46,16 @@ namespace Digikam
 
 DDateTable::Private::Private(DDateTable* const qq)
     : QObject(qq),
-      q(qq)
+      q(qq),
+      weekDayFirstOfMonth(0),
+      numDaysThisMonth(0),
+      numWeekRows(0),
+      numDayColumns(0),
+      fontsize(0),
+      popupMenuEnabled(false),
+      useCustomColors(false),
+      hoveredPos(-1)
 {
-    weekDayFirstOfMonth = 0;
-    numDaysThisMonth    = 0;
-    numWeekRows         = 0;
-    numDayColumns       = 0;
-    fontsize            = 0;
-    popupMenuEnabled    = false;
-    useCustomColors     = false;
-    hoveredPos          = -1;
     setDate(QDate::currentDate());
 }
 
@@ -66,24 +66,28 @@ DDateTable::Private::~Private()
 void DDateTable::Private::nextMonth()
 {
     // setDate does validity checking for us
+
     q->setDate(date.addMonths(1));
 }
 
 void DDateTable::Private::previousMonth()
 {
     // setDate does validity checking for us
+
     q->setDate(date.addMonths(-1));
 }
 
 void DDateTable::Private::beginningOfMonth()
 {
     // setDate does validity checking for us
+
     q->setDate(QDate(date.year(), date.month(), 1));
 }
 
 void DDateTable::Private::endOfMonth()
 {
     // setDate does validity checking for us
+
     q->setDate(QDate(date.year(), date.month() + 1, 0));
 }
 
@@ -91,12 +95,14 @@ void DDateTable::Private::endOfMonth()
 void DDateTable::Private::beginningOfWeek()
 {
     // setDate does validity checking for us
+
     q->setDate(date.addDays(1 - date.dayOfWeek()));
 }
 
 void DDateTable::Private::endOfWeek()
 {
     // setDate does validity checking for us
+
     q->setDate(date.addDays(7 - date.dayOfWeek()));
 }
 
