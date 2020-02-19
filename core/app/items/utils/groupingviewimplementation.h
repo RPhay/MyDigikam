@@ -6,7 +6,7 @@
  * Date        : 2017-11-02
  * Description : Implementation of grouping specific functions for views
  *
- * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
+ * Copyright (C) 2017 by Simon Frei <freisim93 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,17 +44,18 @@ public:
     {
     }
 
-    // must be implemented by parent view
-    virtual bool  hasHiddenGroupedImages(const ItemInfo&) const
+    /// must be implemented by parent view
+
+    virtual bool  hasHiddenGroupedImages(const ItemInfo&)                       const
     {
         return false;
     }
 
     bool          needGroupResolving(ApplicationSettings::OperationType type,
-                                     const ItemInfoList& infos)    const;
+                                     const ItemInfoList& infos)                 const;
 
-    ItemInfoList resolveGrouping(const ItemInfoList& infos)       const;
-    ItemInfoList getHiddenGroupedInfos(const ItemInfoList& infos) const;
+    ItemInfoList resolveGrouping(const ItemInfoList& infos)                     const;
+    ItemInfoList getHiddenGroupedInfos(const ItemInfoList& infos)               const;
 };
 
 } // namespace Digikam

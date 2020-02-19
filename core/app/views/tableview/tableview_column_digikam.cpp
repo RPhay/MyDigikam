@@ -88,7 +88,7 @@ TableViewColumnDescription ColumnDigikamProperties::getDescription()
 
     description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-caption"),    i18n("Caption")));
 
-    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-tags"),       i18n("Tags")).setIcon(QLatin1String("tags")));
+    description.addSubColumn(TableViewColumnDescription(QLatin1String("digikam-tags"),       i18n("Tags")).setIcon(QLatin1String("tag")));
 
     return description;
 }

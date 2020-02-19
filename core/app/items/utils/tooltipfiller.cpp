@@ -107,7 +107,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
         if (settings->getToolTipsShowImageDim())
         {
-            if (commonInfo.width == 0 || commonInfo.height == 0)
+            if ((commonInfo.width == 0) || (commonInfo.height == 0))
             {
                 str = i18nc("unknown / invalid image dimension",
                             "Unknown");
@@ -178,7 +178,9 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
                     int space = str.lastIndexOf(QLatin1Char(' '), cnt.maxStringLength);
 
                     if (space == -1)
+                    {
                         space = cnt.maxStringLength;
+                    }
 
                     metaStr += cnt.cellBeg + lens + cnt.cellMid + str.left(space).toHtmlEscaped() + cnt.cellEnd;
 
@@ -251,7 +253,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
             if (settings->getToolTipsShowPhotoMode())
             {
-                if (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
+                if      (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
                 {
                     str = cnt.unavailable;
                 }
@@ -535,7 +537,7 @@ QString ToolTipFiller::imageInfoTipContents(const ItemInfo& info)
 
             int rating = info.rating();
 
-            if (rating > RatingMin && rating <= RatingMax)
+            if ((rating > RatingMin) && (rating <= RatingMax))
             {
                 for (int i = 0 ; i < rating ; ++i)
                 {
@@ -658,10 +660,12 @@ QString ToolTipFiller::filterActionTipContents(const FilterAction& action)
     tip += cnt.headBeg + i18n("Filter") + cnt.headEnd;
 
     // Displayable name
+
     tip += cnt.cellBeg + i18n("Name:") + cnt.cellMid
         + DImgFilterManager::instance()->i18nDisplayableName(action) + cnt.cellEnd;
 
     // Category
+
     QString reproducible = QLatin1String("---");
 
     switch (action.category())
@@ -669,12 +673,15 @@ QString ToolTipFiller::filterActionTipContents(const FilterAction& action)
         case FilterAction::ReproducibleFilter:
             reproducible = i18nc("Image filter reproducible: Yes", "Yes");
             break;
+
         case FilterAction::ComplexFilter:
             reproducible = i18nc("Image filter reproducible: Partially", "Partially");
             break;
+
         case FilterAction::DocumentedHistory:
             reproducible = i18nc("Image filter reproducible: No", "No");
             break;
+
         default:
             break;
     };
@@ -695,6 +702,7 @@ QString ToolTipFiller::filterActionTipContents(const FilterAction& action)
         + cnt.breakString(str) + cnt.cellSpecEnd;
 
     // Identifier + version
+
     tip += cnt.cellBeg + i18n("Identifier:") + cnt.cellMid
         + action.identifier() + QLatin1String(" (v") + QString::number(action.version()) + QLatin1String(") ") + cnt.cellEnd;
 
@@ -710,7 +718,7 @@ QString ToolTipFiller::filterActionTipContents(const FilterAction& action)
         {
             QHash<QString, QVariant>::const_iterator it;
 
-            for (it = params.find(key) ; it != params.end() && it.key() == key ; ++it)
+            for (it = params.find(key) ; ((it != params.end()) && (it.key() == key)) ; ++it)
             {
                 if (it.key().isEmpty() || !it.value().isValid())
                 {

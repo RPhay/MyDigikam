@@ -6,7 +6,7 @@
  * Date        : 2017-11-02
  * Description : Implementation of grouping specific functions for views
  *
- * Copyright (C) 2017      by Simon Frei <freisim93 at gmail dot com>
+ * Copyright (C) 2017 by Simon Frei <freisim93 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -36,8 +36,7 @@ namespace Digikam
 
 bool GroupingViewImplementation::needGroupResolving(ApplicationSettings::OperationType type, const ItemInfoList& infos) const
 {
-    ApplicationSettings::ApplyToEntireGroup applyAll =
-            ApplicationSettings::instance()->getGroupingOperateOnAll(type);
+    ApplicationSettings::ApplyToEntireGroup applyAll = ApplicationSettings::instance()->getGroupingOperateOnAll(type);
 
     if (applyAll == ApplicationSettings::No)
     {

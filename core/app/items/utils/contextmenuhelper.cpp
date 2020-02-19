@@ -130,6 +130,7 @@ public:
         if ((action = qobject_cast<QAction*>(sender)))
         {
             Album* const album = action->data().value<AlbumPointer<> >();
+
             return albumModel->indexForAlbum(album);
         }
 
@@ -148,6 +149,7 @@ public:
         QAction* const action = new QAction(mainAction->icon(), mainAction->text(), q);
         action->setShortcut(mainAction->shortcut());
         action->setToolTip(mainAction->toolTip());
+
         return action;
     }
 };
@@ -220,7 +222,8 @@ void ContextMenuHelper::addStandardActionLightTable()
     ltActionNames << QLatin1String("image_add_to_lighttable")
                   << QLatin1String("image_lighttable");
 
-    if (LightTableWindow::lightTableWindowCreated() && !LightTableWindow::lightTableWindow()->isEmpty())
+    if (LightTableWindow::lightTableWindowCreated() &&
+        !LightTableWindow::lightTableWindow()->isEmpty())
     {
         action = d->stdActionCollection->action(ltActionNames.at(0));
     }
@@ -241,9 +244,9 @@ void ContextMenuHelper::addStandardActionThumbnail(const imageIds& ids, Album* a
 
     setSelectedIds(ids);
 
-    if (album && ids.count() == 1)
+    if (album && (ids.count() == 1))
     {
-        if (album->type() == Album::PHYSICAL)
+        if      (album->type() == Album::PHYSICAL)
         {
             d->setThumbnailAction = new QAction(i18n("Set as Album Thumbnail"), this);
         }
@@ -278,6 +281,7 @@ void ContextMenuHelper::addOpenAndNavigateActions(const imageIds& ids, bool ligh
     addServicesMenu(ItemInfoList(ids).toImageUrlList());
 
     // addServicesMenu() has stored d->selectedItems
+
     if (!d->selectedItems.isEmpty())
     {
         QAction* const openFileMngr = new QAction(QIcon::fromTheme(QLatin1String("folder-open")),
@@ -315,7 +319,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
 
     if (!offers.isEmpty())
     {
-        QMenu* const servicesMenu = new QMenu(d->parent);
+        QMenu* const servicesMenu    = new QMenu(d->parent);
         qDeleteAll(servicesMenu->actions());
 
         QAction* const serviceAction = servicesMenu->menuAction();
@@ -358,6 +362,7 @@ void ContextMenuHelper::addServicesMenu(const QList<QUrl>& selectedItems)
 void ContextMenuHelper::slotOpenWith()
 {
     // call the slot with an "empty" action
+
     slotOpenWith(nullptr);
 }
 
@@ -405,6 +410,7 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
         if (!service)
         {
             // User entered a custom command
+
             if (!dlg->text().isEmpty())
             {
                 DFileOperations::runFiles(dlg->text(), list);
@@ -427,6 +433,7 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
     DFileOperations::runFiles(service.data(), list);
 
 #endif // Q_OS_WIN
+
 }
 
 void ContextMenuHelper::slotOpenInFileManager()
@@ -524,7 +531,9 @@ void ContextMenuHelper::addActionEditTag(TagModificationHelper* helper, TAlbum* 
 {
     QAction* const editTagAction = new QAction(QIcon::fromTheme(QLatin1String("tag-properties")),
                                                i18nc("Edit Tag Properties", "Properties..."), this);
+
     // This is only for the user to give a hint for the shortcut key
+
     editTagAction->setShortcut(Qt::ALT + Qt::Key_Return);
     addAction(editTagAction);
     helper->bindTag(editTagAction, tag);
@@ -639,6 +648,7 @@ void ContextMenuHelper::addRemoveTagsMenu(const imageIds& ids)
 
     // Performance: Only check for tags if there are <250 images selected
     // Otherwise enable it regardless if there are tags or not
+
     if (ids.count() < 250)
     {
         QList<int> tagIDs = CoreDbAccess().db()->getItemCommonTagIDs(ids);
@@ -646,9 +656,11 @@ void ContextMenuHelper::addRemoveTagsMenu(const imageIds& ids)
 
         foreach (int tag, tagIDs)
         {
-            if (TagsCache::instance()->colorLabelForTag(tag) == -1 &&
-                TagsCache::instance()->pickLabelForTag(tag)  == -1 &&
-                TagsCache::instance()->isInternalTag(tag)    == false)
+            if (
+                (TagsCache::instance()->colorLabelForTag(tag) == -1)    &&
+                (TagsCache::instance()->pickLabelForTag(tag)  == -1)    &&
+                (TagsCache::instance()->isInternalTag(tag)    == false)
+               )
             {
                 enable = true;
                 break;
@@ -685,14 +697,18 @@ void ContextMenuHelper::addLabelsAction()
 
 void ContextMenuHelper::addCreateTagFromAddressbookMenu()
 {
+
 #ifdef HAVE_AKONADICONTACT
+
     AkonadiIface* const abc = new AkonadiIface(d->parent);
 
     connect(abc, SIGNAL(signalContactTriggered(QString)),
             this, SIGNAL(signalAddNewTagFromABCMenu(QString)));
 
     // AkonadiIface instance will be deleted with d->parent.
+
 #endif
+
 }
 
 void ContextMenuHelper::slotDeselectAllAlbumItems()
@@ -733,8 +749,10 @@ void ContextMenuHelper::addExportMenu()
                                     dynamic_cast<KXmlGuiWindow*>(client));
 
 #if 0
+
     QAction* selectAllAction = 0;
     selectAllAction = d->stdActionCollection->action("selectAll");
+
 #endif
 
     if (!actions.isEmpty())
@@ -774,6 +792,7 @@ void ContextMenuHelper::addGotoMenu(const imageIds& ids)
     setSelectedIds(ids);
 
     // the currently selected image is always the first item
+
     ItemInfo item;
 
     if (!d->selectedIds.isEmpty())
@@ -787,6 +806,7 @@ void ContextMenuHelper::addGotoMenu(const imageIds& ids)
     }
 
     // when more then one item is selected, don't add the menu
+
     if (d->selectedIds.count() > 1)
     {
         return;
@@ -804,6 +824,7 @@ void ContextMenuHelper::addGotoMenu(const imageIds& ids)
     gotoTag->setText(i18n("Tag"));
 
     // Disable the goto Tag popup menu, if there are no tags at all.
+
     if (!CoreDbAccess().db()->hasTags(d->selectedIds))
     {
         gotoTag->setEnabled(false);
@@ -812,6 +833,7 @@ void ContextMenuHelper::addGotoMenu(const imageIds& ids)
     /**
      * TODO:tags to be ported to multiple selection
      */
+
     QList<Album*> albumList = AlbumManager::instance()->currentAlbums();
     Album* currentAlbum     = nullptr;
 
@@ -824,11 +846,12 @@ void ContextMenuHelper::addGotoMenu(const imageIds& ids)
         return;
     }
 
-    if (currentAlbum->type() == Album::PHYSICAL)
+    if      (currentAlbum->type() == Album::PHYSICAL)
     {
         // If the currently selected album is the same as album to
         // which the image belongs, then disable the "Go To" Album.
         // (Note that in recursive album view these can be different).
+
         if (item.albumId() == currentAlbum->id())
         {
             d->gotoAlbumAction->setEnabled(false);
@@ -857,6 +880,7 @@ void ContextMenuHelper::addQueueManagerMenu()
     bqmMenu->addAction(d->stdActionCollection->action(QLatin1String("image_add_to_new_queue")));
 
     // if queue list is empty, do not display the queue submenu
+
     if (QueueMgrWindow::queueManagerWindowCreated() &&
         !QueueMgrWindow::queueManagerWindow()->queuesMap().isEmpty())
     {
@@ -865,6 +889,7 @@ void ContextMenuHelper::addQueueManagerMenu()
 
         // queueActions is used by the exec() method to emit an appropriate signal.
         // Reset the map before filling in the actions.
+
         if (!d->queueActions.isEmpty())
         {
             d->queueActions.clear();
@@ -874,6 +899,7 @@ void ContextMenuHelper::addQueueManagerMenu()
 
         // get queue list from BQM window, do not access it directly, it might crash
         // when the list is changed
+
         QMap<int, QString> qmwMap = qmw->queuesMap();
 
         for (QMap<int, QString>::const_iterator it = qmwMap.constBegin() ; it != qmwMap.constEnd() ; ++it)
@@ -890,6 +916,7 @@ void ContextMenuHelper::addQueueManagerMenu()
     d->parent->addMenu(bqmMenu);
 
     // NOTE: see bug #252130 : we need to disable new items to add on BQM is this one is running.
+
     bqmMenu->setDisabled(QueueMgrWindow::queueManagerWindow()->isBusy());
 }
 
@@ -910,10 +937,12 @@ void ContextMenuHelper::addAlbumCheckUncheckActions(Album* album)
         albumData = QVariant::fromValue(AlbumPointer<>(album));
 
         if (album->type() == Album::TAG)
+        {
             allString = i18n("All Tags");
+        }
     }
 
-    QMenu* const selectTagsMenu = new QMenu(i18nc("select tags menu", "Select"));
+    QMenu* const selectTagsMenu         = new QMenu(i18nc("select tags menu", "Select"));
     addSubMenu(selectTagsMenu);
 
     selectTagsMenu->addAction(allString, d->albumModel, SLOT(checkAllAlbums()));
@@ -923,7 +952,7 @@ void ContextMenuHelper::addAlbumCheckUncheckActions(Album* album)
     selectChildrenAction->setData(albumData);
     selectParentsAction->setData(albumData);
 
-    QMenu* const deselectTagsMenu = new QMenu(i18nc("deselect tags menu", "Deselect"));
+    QMenu* const deselectTagsMenu       = new QMenu(i18nc("deselect tags menu", "Deselect"));
     addSubMenu(deselectTagsMenu);
 
     deselectTagsMenu->addAction(allString, d->albumModel, SLOT(resetAllCheckedAlbums()));
@@ -1240,7 +1269,7 @@ QAction* ContextMenuHelper::exec(const QPoint& pos, QAction* at)
         {
             ItemInfo selectedItem(d->selectedIds.first());
 
-            if (choice == d->gotoAlbumAction)
+            if      (choice == d->gotoAlbumAction)
             {
                 emit signalGotoAlbum(selectedItem);
             }
@@ -1255,12 +1284,14 @@ QAction* ContextMenuHelper::exec(const QPoint& pos, QAction* at)
         }
 
         // check if a BQM action has been triggered
+
         for (QMap<int, QAction*>::const_iterator it = d->queueActions.constBegin() ;
              it != d->queueActions.constEnd() ; ++it)
         {
             if (choice == it.value())
             {
                 emit signalAddToExistingQueue(it.key());
+
                 return choice;
             }
         }
