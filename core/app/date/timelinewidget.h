@@ -57,15 +57,15 @@ public:
 
     enum SelectionMode
     {
-        Unselected = 0,    // No selection.
-        FuzzySelection,    // Partially selected.
-        Selected           // Fully selected.
+        Unselected = 0,    ///< No selection.
+        FuzzySelection,    ///< Partially selected.
+        Selected           ///< Fully selected.
     };
 
     enum ScaleMode
     {
-        LinScale = 0,      // Linear scale.
-        LogScale           // Logarithmic scale.
+        LinScale = 0,      ///< Linear scale.
+        LogScale           ///< Logarithmic scale.
     };
 
 public:
@@ -155,7 +155,9 @@ private:
                                       const QDateTime& dte);
     void          updateAllSelection();
 
-    // helper methods for painting
+    /**
+     * helper methods for painting
+     */
     int           calculateTop(int& val)                                        const;
     void          paintItem(QPainter& p,
                             const QRect& barRect,
