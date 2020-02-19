@@ -639,4 +639,5 @@ BUGFIXES:
 621 ==> 397819 - digiKam not showing date taken.
 622 ==> 327466 - digiKam crashes after launching alternate image processing software.
 623 ==> 332903 - Altering Geo-Data.
-624 ==>
+624 ==> 417887 - Need Windows admin rights in order to see selected file list in Geolocation editor.
+625 ==> 
