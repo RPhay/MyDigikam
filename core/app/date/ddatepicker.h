@@ -77,7 +77,7 @@ public:
      * size hint, try adding 28 to each of the reported numbers of
      * pixels.
      */
-    QSize sizeHint() const override;
+    QSize sizeHint()                                                    const override;
 
     /**
      * Sets the date.
@@ -89,13 +89,13 @@ public:
     /**
      * @returns the selected date.
      */
-    const QDate& date() const;
+    const QDate& date()                                                 const;
 
     /**
      * @returns the DDateTable widget child of this DDatePicker
      * widget.
      */
-    DDateTable* dateTable() const;
+    DDateTable* dateTable()                                             const;
 
     /**
      * Sets the font size of the widgets elements.
@@ -105,7 +105,7 @@ public:
     /**
      * Returns the font size of the widget elements.
      */
-    int fontSize() const;
+    int fontSize()                                                      const;
 
     /**
      * By calling this method with @p enable = true, DDatePicker will show
@@ -121,16 +121,16 @@ public:
      * @returns true if a DDatePicker shows a close-button.
      * @see setCloseButton
      */
-    bool hasCloseButton() const;
+    bool hasCloseButton()                                               const;
 
 protected:
 
     /// to catch move keyEvents when QLineEdit has keyFocus
-    bool eventFilter(QObject*, QEvent*) override;
+    bool eventFilter(QObject*, QEvent*)                                       override;
 
     /// the resize event
-    void resizeEvent(QResizeEvent*) override;
-    void changeEvent(QEvent*) override;
+    void resizeEvent(QResizeEvent*)                                           override;
+    void changeEvent(QEvent*)                                                 override;
 
 protected Q_SLOTS:
 

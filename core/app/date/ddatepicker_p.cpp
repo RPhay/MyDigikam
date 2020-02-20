@@ -70,9 +70,10 @@ QValidator::State DatePickerValidator::validate(QString& text, int&) const
 
 // ------------------------------------------------------------------------------
 
-// Week numbers are defined by ISO 8601
-// See https://en.wikipedia.org/wiki/Week#Week_numbering for details
-
+/**
+ * NOTE: Week numbers are defined by ISO 8601
+ * See https://en.wikipedia.org/wiki/Week#Week_numbering for details
+ */
 DatePickerYearSelector::DatePickerYearSelector(const QDate& currentDate, QWidget* const parent)
     : QLineEdit(parent),
       val(new QIntValidator(this)),
@@ -83,9 +84,10 @@ DatePickerYearSelector::DatePickerYearSelector(const QDate& currentDate, QWidget
 
     setFrame(false);
 
-    // TODO: Find a way to get that from QLocale
-    //val->setRange( calendar->year( calendar->earliestValidDate() ),
-    //               calendar->year( calendar->latestValidDate() ) );
+/*  TODO: Find a way to get that from QLocale
+    val->setRange(calendar->year(calendar->earliestValidDate()),
+                  calendar->year(calendar->latestValidDate()));
+*/
     setValidator(val);
 
     connect(this, &QLineEdit::returnPressed,
@@ -98,6 +100,7 @@ void DatePickerYearSelector::yearEnteredSlot()
     int newYear;
 
     // check if entered value is a number
+
     newYear = text().toInt(&ok);
 
     if (!ok)
@@ -107,6 +110,7 @@ void DatePickerYearSelector::yearEnteredSlot()
     }
 
     // check if new year will lead to a valid date
+
     if (QDate(newYear, oldDate.month(), oldDate.day()).isValid())
     {
         result = newYear;
@@ -131,32 +135,33 @@ void DatePickerYearSelector::setYear(int year)
 // ------------------------------------------------------------------------------
 
 DDatePicker::Private::Private(DDatePicker* const qq)
-    : q(qq)
+    : q(qq),
+      closeButton(nullptr),
+      selectWeek(nullptr),
+      todayButton(nullptr),
+      navigationLayout(nullptr),
+      yearForward(nullptr),
+      yearBackward(nullptr),
+      monthForward(nullptr),
+      monthBackward(nullptr),
+      selectMonth(nullptr),
+      selectYear(nullptr),
+      line(nullptr),
+      val(nullptr),
+      table(nullptr),
+      fontsize(0)
 {
-    closeButton      = nullptr;
-    selectWeek       = nullptr;
-    todayButton      = nullptr;
-    navigationLayout = nullptr;
-    yearForward      = nullptr;
-    yearBackward     = nullptr;
-    monthForward     = nullptr;
-    monthBackward    = nullptr;
-    selectMonth      = nullptr;
-    selectYear       = nullptr;
-    line             = nullptr;
-    val              = nullptr;
-    table            = nullptr;
-    fontsize         = 0;
 }
 
 void DDatePicker::Private::fillWeeksCombo()
 {
-    // every year can have a different number of weeks
-    // it could be that we had 53,1..52 and now 1..53 which is the same number but different
-    // so always fill with new values
-    // We show all week numbers for all weeks between first day of year to last day of year
-    // This of course can be a list like 53,1,2..52
-
+    /**
+     * NOTE: every year can have a different number of weeks
+     * it could be that we had 53,1..52 and now 1..53 which is the same number but different
+     * so always fill with new values
+     * We show all week numbers for all weeks between first day of year to last day of year
+     * This of course can be a list like 53,1,2..52
+     */
     const QDate thisDate      = q->date();
     const int thisYear        = thisDate.year();
     QDate day(thisDate.year(), 1, 1);
@@ -171,11 +176,13 @@ void DDatePicker::Private::fillWeeksCombo()
     {
         // Get the ISO week number for the current day and what year that week is in
         // e.g. 1st day of this year may fall in week 53 of previous year
+
         int weekYear       = thisYear;
         const int week     = day.weekNumber(&weekYear);
         QString weekString = i18n("Week %1", week);
 
         // show that this is a week from a different year
+
         if (weekYear != thisYear)
         {
             weekString += QLatin1Char('*');
@@ -183,14 +190,18 @@ void DDatePicker::Private::fillWeeksCombo()
 
         // when the week is selected, go to the same weekday as the one
         // that is currently selected in the date table
+
         QDate targetDate = day.addDays(thisDate.dayOfWeek() - day.dayOfWeek());
         selectWeek->addItem(weekString, targetDate);
 
         // make sure that the week of the lastDayOfYear is always inserted: in Chinese calendar
         // system, this is not always the case
-        if (day < lastDayOfYear           &&
-            day.daysTo(lastDayOfYear) < 7 &&
-            lastDayOfYear.weekNumber() != day.weekNumber())
+
+        if (
+            (day < lastDayOfYear)           &&
+            (day.daysTo(lastDayOfYear) < 7) &&
+            (lastDayOfYear.weekNumber() != day.weekNumber())
+           )
         {
             day = lastDayOfYear.addDays(-7);
         }
@@ -203,7 +214,8 @@ QDate DDatePicker::Private::validDateInYearMonth(int year, int month)
 
     // Try to create a valid date in this year and month
     // First try the first of the month, then try last of month
-    if (QDate(year, month, 1).isValid())
+
+    if      (QDate(year, month, 1).isValid())
     {
         newDate = QDate(year, month, 1);
     }

@@ -74,9 +74,9 @@ public:
     /**
      * @return True if the widget is read-only, false if read-write.
      */
-    bool isReadOnly() const;
+    bool isReadOnly()                                                   const;
 
-    virtual void showPopup() override;
+    virtual void showPopup()                                                  override;
 
 Q_SIGNALS:
 
@@ -105,8 +105,8 @@ protected Q_SLOTS:
 
 protected:
 
-    virtual bool eventFilter(QObject*, QEvent*) override;
-    virtual void mousePressEvent(QMouseEvent*) override;
+    virtual bool eventFilter(QObject*, QEvent*)                               override;
+    virtual void mousePressEvent(QMouseEvent*)                                override;
 
     /**
      * Sets the date, without altering the display.
@@ -129,7 +129,7 @@ protected:
 
 private:
 
-    QDate parseDate(bool* = nullptr) const;
+    QDate parseDate(bool* = nullptr)                                    const;
     void updateView();
 
 private:

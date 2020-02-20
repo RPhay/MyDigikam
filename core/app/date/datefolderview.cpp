@@ -54,12 +54,12 @@ public:
     {
     }
 
-    bool               active;
+    bool          active;
 
-    QString            selected;
+    QString       selected;
 
-    DateTreeView*      dateTreeView;
-    MonthWidget*       monthview;
+    DateTreeView* dateTreeView;
+    MonthWidget*  monthview;
 };
 
 DateFolderView::DateFolderView(QWidget* const parent, DateAlbumModel* const dateAlbumModel)
@@ -82,6 +82,7 @@ DateFolderView::DateFolderView(QWidget* const parent, DateAlbumModel* const date
     // manager as it is not yet loaded. To achieve this, we wait for loading
     // DAlbums and set the active album in the album manager if this tab is
     // active
+
     connect(AlbumManager::instance(), SIGNAL(signalAllDAlbumsLoaded()),
             this, SLOT(slotAllAlbumsLoaded()));
 }
@@ -152,8 +153,7 @@ void DateFolderView::slotAllAlbumsLoaded()
 {
     if (d->active)
     {
-        AlbumManager::instance()->setCurrentAlbums(QList<Album*>()
-                                                    << d->dateTreeView->currentAlbum());
+        AlbumManager::instance()->setCurrentAlbums(QList<Album*>() << d->dateTreeView->currentAlbum());
         slotSelectionChanged(d->dateTreeView->currentAlbum());
     }
 }
@@ -183,6 +183,7 @@ void DateFolderView::gotoDate(const QDate& dt)
     if (!dateIndex.isValid())
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Cannot find an album for date " << dt;
+
         return;
     }
 
@@ -191,6 +192,7 @@ void DateFolderView::gotoDate(const QDate& dt)
     if (!dateAlbum)
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Could not retrieve an album for index " << dateIndex;
+
         return;
     }
 
@@ -207,7 +209,7 @@ void DateFolderView::changeAlbumFromHistory(DAlbum* const album)
 
 AlbumPointer<DAlbum> DateFolderView::currentAlbum() const
 {
-    return AlbumPointer<DAlbum> (d->dateTreeView->currentAlbum());
+    return AlbumPointer<DAlbum>(d->dateTreeView->currentAlbum());
 }
 
 } // namespace Digikam

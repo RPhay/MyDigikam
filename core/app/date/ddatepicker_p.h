@@ -114,22 +114,31 @@ public:
 
     /// the year forward button
     QToolButton*         yearForward;
+
     /// the year backward button
     QToolButton*         yearBackward;
+
     /// the month forward button
     QToolButton*         monthForward;
+
     /// the month backward button
     QToolButton*         monthBackward;
+
     /// the button for selecting the month directly
     QToolButton*         selectMonth;
+
     /// the button for selecting the year directly
     QToolButton*         selectYear;
+
     /// the line edit to enter the date directly
     QLineEdit*           line;
+
     /// the validator for the line edit:
     DatePickerValidator* val;
+
     /// the date table
     DDateTable*          table;
+
     /// the widest month string in pixels:
     QSize                maxMonthRect;
 

@@ -53,6 +53,7 @@ protected:
     QWidget* createWidget(QWidget* const parent)
     {
         m_datePicker->setParent(parent);
+
         return m_datePicker;
     }
 
