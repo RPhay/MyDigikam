@@ -77,7 +77,7 @@ private:
 
 private:
 
-    struct double_packet
+    struct Q_DECL_HIDDEN double_packet
     {
         double_packet()
             : red(0.0),
@@ -93,7 +93,7 @@ private:
         double alpha;
     };
 
-    struct int_packet
+    struct Q_DECL_HIDDEN int_packet
     {
        int_packet()
             : red(0),

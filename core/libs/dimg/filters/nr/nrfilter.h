@@ -66,7 +66,7 @@ class DIGIKAM_EXPORT NRFilter : public DImgThreadedFilter
 
 private:
 
-    struct Args
+    struct Q_DECL_HIDDEN Args
     {
         explicit Args()
           : start(0),

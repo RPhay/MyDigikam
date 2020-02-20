@@ -77,7 +77,7 @@ private:
 
 private:
 
-    struct NormalizeParam
+    struct Q_DECL_HIDDEN NormalizeParam
     {
         unsigned short* lut;
         double          min;

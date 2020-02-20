@@ -50,13 +50,13 @@ public:
     // NOTE : Using a structure instead a class is more faster
     // (access with memset() and bytes manipulation).
 
-    struct double_packet
+    struct Q_DECL_HIDDEN double_packet
     {
-        double value;
-        double red;
-        double green;
-        double blue;
-        double alpha;
+        double value = 0.0;
+        double red   = 0.0;
+        double green = 0.0;
+        double blue  = 0.0;
+        double alpha = 0.0;
     };
 
 public:
@@ -69,6 +69,7 @@ public:
     }
 
 public:
+
     /**
      * The histogram data.
      */

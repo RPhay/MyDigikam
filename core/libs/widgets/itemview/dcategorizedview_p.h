@@ -183,8 +183,15 @@ public:
 public:
 
     /// Attributes
-    struct ElementInfo
+    class Q_DECL_HIDDEN ElementInfo
     {
+    public:
+
+        explicit ElementInfo()
+            : relativeOffsetToCategory(0)
+        {
+        }
+
         QString category;
         int     relativeOffsetToCategory;
     };
@@ -212,7 +219,7 @@ public:
      * We cannot merge some of them into structs because it would affect
      * performance
      */
-    QVector<struct ElementInfo>       elementsInfo;
+    QVector<ElementInfo>              elementsInfo;
     QHash<int, QRect>                 elementsPosition;
     QHash<QString, QVector<int> >     categoriesIndexes;
     QHash<QString, QRect>             categoriesPosition;

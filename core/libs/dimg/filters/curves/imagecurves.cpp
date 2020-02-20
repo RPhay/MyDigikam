@@ -52,7 +52,7 @@ class Q_DECL_HIDDEN ImageCurves::Private : public QSharedData
 
 public:
 
-    struct _Curves
+    struct Q_DECL_HIDDEN _Curves
     {
         /**
          * Curve types by channels (Smooth or Free).
@@ -68,16 +68,16 @@ public:
         unsigned short         curve[ImageCurves::NUM_CHANNELS][NUM_SEGMENTS_16BIT];
     };
 
-    struct _Lut
+    struct Q_DECL_HIDDEN _Lut
     {
-        unsigned short** luts;
-        int              nchannels;
+        unsigned short** luts       = nullptr;
+        int              nchannels  = 0;
     };
 
 public:
 
-    explicit Private() :
-        curves(nullptr),
+    explicit Private()
+      : curves(nullptr),
         lut(nullptr),
         segmentMax(0),
         dirty(false)
@@ -124,10 +124,10 @@ public:
         }
     }
 
-    // Curves data.
+    /// Curves data.
     struct _Curves* curves;
 
-    // Lut data.
+    /// Lut data.
     struct _Lut*    lut;
 
     int             segmentMax;

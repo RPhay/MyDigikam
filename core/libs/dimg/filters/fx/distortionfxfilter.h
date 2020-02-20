@@ -65,7 +65,7 @@ public:
 
 private:
 
-    struct Args
+    struct Q_DECL_HIDDEN Args
     {
         explicit Args()
           : start(0),

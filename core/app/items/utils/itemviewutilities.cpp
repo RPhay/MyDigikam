@@ -482,8 +482,10 @@ void ItemViewUtilities::createGroupByFilenameFromInfoList(const ItemInfoList& it
 namespace
 {
 
-struct Q_DECL_HIDDEN NumberInFilenameMatch
+class Q_DECL_HIDDEN NumberInFilenameMatch
 {
+public:
+
     NumberInFilenameMatch()
         : value(0),
           containsValue(false)
@@ -543,6 +545,8 @@ struct Q_DECL_HIDDEN NumberInFilenameMatch
 
         return ((value + 1) == other.value);
     }
+
+public:
 
     qulonglong value;
     QStringRef prefix;

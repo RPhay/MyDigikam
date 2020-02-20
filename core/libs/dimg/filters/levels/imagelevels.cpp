@@ -67,21 +67,21 @@ public:
         AlphaPixel
     };
 
-    struct _Levels
+    struct Q_DECL_HIDDEN _Levels
     {
-        double gamma[5];
+        double gamma[5]         = { 0.0 };
 
-        int    low_input[5];
-        int    high_input[5];
+        int    low_input[5]     = { 0 };
+        int    high_input[5]    = { 0 };
 
-        int    low_output[5];
-        int    high_output[5];
+        int    low_output[5]    = { 0 };
+        int    high_output[5]   = { 0 };
     };
 
-    struct _Lut
+    struct Q_DECL_HIDDEN _Lut
     {
-        unsigned short** luts;
-        int              nchannels;
+        unsigned short** luts      = nullptr;
+        int              nchannels = 0;
     };
 
 public:
@@ -95,13 +95,13 @@ public:
     }
 
     /// Levels data.
-    struct _Levels* levels;
+    _Levels* levels;
 
     /// Lut data.
-    struct _Lut*    lut;
+    _Lut*    lut;
 
-    bool            sixteenBit;
-    bool            dirty;
+    bool     sixteenBit;
+    bool     dirty;
 };
 
 ImageLevels::ImageLevels(bool sixteenBit)
@@ -111,7 +111,7 @@ ImageLevels::ImageLevels(bool sixteenBit)
     d->levels         = new Private::_Levels;
     d->sixteenBit     = sixteenBit;
 
-    memset(d->levels, 0, sizeof(struct Private::_Levels));
+    memset(d->levels, 0, sizeof(Private::_Levels));
     d->lut->luts      = nullptr;
     d->lut->nchannels = 0;
 

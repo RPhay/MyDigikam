@@ -1889,7 +1889,7 @@ void DCategorizedView::rowsInsertedArtifficial(const QModelIndex& parent, int st
 
     SparseModelIndexVector modelIndexList(rowCount, d->proxyModel, sortColumn);
 
-    d->elementsInfo      = QVector<struct Private::ElementInfo>(rowCount);
+    d->elementsInfo      = QVector<Private::ElementInfo>(rowCount);
     int categorySizes    = 0;
     int categoryCounts   = 0;
 
@@ -1924,10 +1924,10 @@ void DCategorizedView::rowsInsertedArtifficial(const QModelIndex& parent, int st
 
         for (int i = k ; i < upperBound ; ++i, ++offset)
         {
-            rows[offset]                             = i;
-            struct Private::ElementInfo& elementInfo = d->elementsInfo[i];
-            elementInfo.category                     = lastCategory;
-            elementInfo.relativeOffsetToCategory     = offset;
+            rows[offset]                         = i;
+            Private::ElementInfo& elementInfo    = d->elementsInfo[i];
+            elementInfo.category                 = lastCategory;
+            elementInfo.relativeOffsetToCategory = offset;
         }
 
         k = upperBound;
@@ -1942,7 +1942,9 @@ void DCategorizedView::rowsInsertedArtifficial(const QModelIndex& parent, int st
     // list (ereslibre).
     // Note: QItemSelectionModel will save it selection in persistend indexes
     // on layoutChanged(). All works fine for me.
-    //selectionModel()->clear();
+/*
+    selectionModel()->clear();
+*/
 }
 
 void DCategorizedView::rowsRemoved(const QModelIndex& parent, int start, int end)

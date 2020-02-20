@@ -43,7 +43,7 @@ class DIGIKAM_EXPORT RainDropFilter : public DImgThreadedFilter
 
 private:
 
-    struct Args
+    struct Q_DECL_HIDDEN Args
     {
         explicit Args()
             : start(0),
@@ -123,9 +123,11 @@ private:
 
     bool SetDropStatusBits(int Width, int Height, uchar* const pStatusBits, int X, int Y, int DropSize);
 
-    // A color is represented in RGB value (e.g. 0xFFFFFF is white color).
-    // But R, G and B values has 256 values to be used so, this function analyzes
-    // the value and limits to this range.
+    /**
+     * A color is represented in RGB value (e.g. 0xFFFFFF is white color).
+     * But R, G and B values has 256 values to be used so, this function analyzes
+     * the value and limits to this range.
+     */
     inline int  limitValues8(int ColorValue);
 
     inline int  limitValues16(int ColorValue);
