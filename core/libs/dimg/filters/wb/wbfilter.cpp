@@ -316,6 +316,8 @@ void WBFilter::adjustWhiteBalance(uchar* const data, int width, int height, bool
     uint j;
     int  progress;
 
+    qCDebug(DIGIKAM_DIMG_LOG) << "DImg size:" << size << "16 bit:" << sixteenBit;
+
     if (!sixteenBit)        // 8 bits image.
     {
         uchar  red, green, blue;
