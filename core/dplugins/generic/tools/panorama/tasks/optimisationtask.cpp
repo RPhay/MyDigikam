@@ -55,8 +55,8 @@ void OptimisationTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     if (levelHorizon)
         args << QLatin1String("-l");
 
-    if (!buildGPano)
-       args << QLatin1String("-s");
+    if (buildGPano)
+        args << QLatin1String("-s");
 
     args << QLatin1String("-o");
     args << autoOptimiserPtoUrl.toLocalFile();
