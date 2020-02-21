@@ -55,9 +55,12 @@ void OptimisationTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     if (levelHorizon)
         args << QLatin1String("-l");
 
-    if (!buildGPano)
-       args << QLatin1String("-s");
-
+    // This parameter changes the projection type
+    // See also Bug 346053 and Bug 416492
+/*
+    if (buildGPano)
+        args << QLatin1String("-s");
+*/
     args << QLatin1String("-o");
     args << autoOptimiserPtoUrl.toLocalFile();
     args << ptoUrl.toLocalFile();
