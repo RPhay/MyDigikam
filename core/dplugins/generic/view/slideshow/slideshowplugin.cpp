@@ -27,6 +27,7 @@
 
 #include <QPointer>
 #include <QMenu>
+#include <QDebug>
 
 // KDE includes
 
@@ -34,7 +35,8 @@
 
 // Local includes
 
-#include "slideshow.h"
+//#include "slideshow.h"
+#include "slideshowmngr.h"
 
 namespace DigikamGenericSlideShowPlugin
 {
@@ -46,6 +48,11 @@ SlideShowPlugin::SlideShowPlugin(QObject* const parent)
 
 SlideShowPlugin::~SlideShowPlugin()
 {
+}
+
+void SlideShowPlugin::cleanUp()
+{
+    delete m_slideshowMngr;
 }
 
 QString SlideShowPlugin::name() const
@@ -207,6 +214,20 @@ void SlideShowPlugin::slotMenuSlideShowRecursive()
 void SlideShowPlugin::slotMenuSlideShowConfiguration()
 {
     qDebug() << "SlideshowPlugin::slotMenuSlideShowConfiguration";
+
+    DInfoInterface* const iface = infoIface(sender());
+
+    if (m_slideshowMngr)
+    {
+        delete m_slideshowMngr;
+    }
+
+    m_slideshowMngr = new SlideShowMngr(this, iface);
+
+    m_slideshowMngr->addFiles(iface->currentSelectedItems());
+    m_slideshowMngr->setPlugin(this);
+
+    //m_slideshowMngr->showConfigDialog();
 }
 
 } // namespace DigikamGenericSlideShowPlugin
