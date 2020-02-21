@@ -93,58 +93,68 @@ void SlideShowPlugin::setup(QObject* const parent)
 {
     DPluginAction* const ac = new DPluginAction(parent);
     ac->setIcon(icon());
-    //TODO: rechange name to 'slideshow'
+    ac->setText(i18nc("@action", "Slideshow Plugin"));
+    //TODO: rechange all name 'slideshow plugin' to 'slideshow'
     ac->setObjectName(QLatin1String("slideshow_plugin"));
     ac->setActionCategory(DPluginAction::GenericView);
     //c->setShortcut(Qt::ALT + Qt::SHIFT + Qt::Key_F9);
 
+
     DInfoInterface* const iface = infoIface(parent);
-/*
-    if (iface && iface->supportAlbums())
+
+    if (iface == nullptr)
     {
-        QMenu* const slideShowAction = new QMenu(i18n("Slideshow"), parent);
-        slideShowAction->setIcon(icon());
-        ac->setMenu(slideShowAction);
+        qDebug() << "SlideShowPlugin::iface is null";
+    }
+
+    //supportAlbums return false ??? and iface is null ???
+    if (iface /*&& iface->supportAlbums()*/)
+    {
+        QMenu* const slideShowActions = new QMenu(i18n("Slideshow_Plugin"), nullptr);
+        slideShowActions->setIcon(icon());
+        ac->setMenu(slideShowActions);
 
         QAction* const slideShowAllAction = new QAction(i18n("All"), parent);
         slideShowAllAction->setObjectName(QLatin1String("slideshow_all"));
-        slideShowAllAction->setShortcut(Qt::Key_F9);
-        slideShowAction->addAction(d->slideShowAllAction);
+        slideShowAllAction->setShortcut(Qt::Key_A);                 //TODO: rechange shortcut to F9
+        slideShowActions->addAction(slideShowAllAction);
 
         connect(slideShowAllAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowAll()));
 
-        QCation* const slideShowSelectionAction = new QAction(i18n("Selection"), parent);
+        QAction* const slideShowSelectionAction = new QAction(i18n("Selection"), parent);
         slideShowSelectionAction->setObjectName(QLatin1String("slideshow_selected"));
-        slideShowSelectionAction->setShortcut(Qt::ALT + Qt::Key_F9);
-        slideShowAction->addAction(d->slideShowSelectionAction);
+        slideShowSelectionAction->setShortcut(Qt::ALT + Qt::Key_A);     //TODO: rechange shortcut to ALT+F9
+        slideShowActions->addAction(slideShowSelectionAction);
 
         connect(slideShowSelectionAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowSelection()));
 
         QAction* const slideShowRecursiveAction = new QAction(i18n("With All Sub-Albums"), parent);
         slideShowRecursiveAction->setObjectName(QLatin1String("slideshow_recursive"));
-        slideShowRecursiveAction->setShortcut(Qt::SHIFT + Qt::Key_F9);
-        slideShowAction->addAction(d->slideShowRecursiveAction);
+        slideShowRecursiveAction->setShortcut(Qt::SHIFT + Qt::Key_A);    //TODO: rechange shortcut to SHIFT+F9
+        slideShowActions->addAction(slideShowRecursiveAction);
 
         connect(slideShowRecursiveAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowRecursive()));
+
     }
     else
     {
-        ac->setText(i18nc("@action", "Slideshow"));
-        ac->setShortcut(Qt::Key_F9);
+        //TODO change shortcut to F9
+        ac->setShortcut(Qt::Key_A);
 
         connect(ac, SIGNAL(triggered(bool)),
                 this, SLOT(slotSlideShow()));
     }
-*/
+
     addAction(ac);
 }
 
 void SlideShowPlugin::slotSlideShow()
 {
     DInfoInterface* const iface = infoIface(sender());
+    qDebug() << "SlideshowPlugin::slotSlideShow";
 }
 
 void SlideShowPlugin::slotMenuSlideShowAll()
@@ -164,14 +174,17 @@ void SlideShowPlugin::slotMenuSlideShowAll()
     mngr->setPlugin(this);
     mngr->showConfigDialog();
     */
+    qDebug() << "SlideshowPlugin::slotMenuSlideShowAll";
 }
 
 void SlideShowPlugin::slotMenuSlideShowSelection()
 {
+    qDebug() << "SlideshowPlugin::slotMenuSlideShowSelection";
 }
 
 void SlideShowPlugin::slotMenuSlideShowRecursive()
 {
+    qDebug() << "SlideshowPlugin::slotMenuSlideShowRecursive";
 }
 
 } // namespace DigikamGenericSlideShowPlugin
