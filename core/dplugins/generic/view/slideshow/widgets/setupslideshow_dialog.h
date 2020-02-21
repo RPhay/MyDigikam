@@ -32,11 +32,15 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "dplugindialog.h"
+
+
+using namespace Digikam;
 
 namespace DigikamGenericSlideShowPlugin
 {
 
-class DIGIKAM_EXPORT SetupSlideShowDialog : public QScrollArea
+class DIGIKAM_EXPORT SetupSlideShowDialog : public DPluginDialog
 {
     Q_OBJECT
 
@@ -45,11 +49,11 @@ public:
     explicit SetupSlideShowDialog(QWidget* const parent = nullptr);
     ~SetupSlideShowDialog();
 
-    void applySettings();
-
 public Q_SLOTS:
 
     void slotSetUnchecked(int);
+
+    void slotApplySettings();
 
 private:
 

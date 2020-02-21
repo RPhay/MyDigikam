@@ -37,7 +37,7 @@
 
 #include "dplugingeneric.h"
 #include "dinfointerface.h"
-#include "presentationdlg.h"
+#include "setupslideshow_dialog.h"
 
 using namespace Digikam;
 
@@ -56,7 +56,8 @@ public:
     ~SlideShowMngr();
 
     void addFiles(const QList<QUrl>& urls);
-    //void showConfigDialog();
+
+    void showConfigDialog();
 
     void setPlugin(DPlugin* const plugin);
 
@@ -67,7 +68,7 @@ private Q_SLOTS:
 private:
 
     DPlugin*               m_plugin;
-    //PresentationDlg*       m_dialog;
+    SetupSlideShowDialog*  m_dialog;
     //PresentationContainer* m_sharedData;
 };
 

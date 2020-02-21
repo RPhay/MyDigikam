@@ -31,7 +31,7 @@
 #include <cstdlib>
 
 // Qt includes
-
+#include <QApplication>
 
 
 namespace DigikamGenericSlideShowPlugin
@@ -39,8 +39,8 @@ namespace DigikamGenericSlideShowPlugin
 
 SlideShowMngr::SlideShowMngr(QObject* const parent, DInfoInterface* const iface)
     : QObject(parent),
-      m_plugin(nullptr)
-      //m_dialog(nullptr)
+      m_plugin(nullptr),
+      m_dialog(nullptr)
 {
       //m_sharedData = new PresentationContainer();
       //m_sharedData->iface = iface;
@@ -48,7 +48,7 @@ SlideShowMngr::SlideShowMngr(QObject* const parent, DInfoInterface* const iface)
 
 SlideShowMngr::~SlideShowMngr()
 {
-    //delete m_dialog;
+    delete m_dialog;
     //delete m_sharedData;
 }
 
@@ -62,18 +62,16 @@ void SlideShowMngr::addFiles(const QList<QUrl>& urls)
     //m_sharedData->urlList = urls;
 }
 
-/*
+
 void SlideShowMngr::showConfigDialog()
 {
-    m_dialog = new PresentationDlg(QApplication::activeWindow(), m_sharedData);
-
-    connect(m_dialog, SIGNAL(buttonStartClicked()),
-            this, SLOT(slotSlideShow()));
+    m_dialog = new SetupSlideShowDialog(QApplication::activeWindow());
 
     m_dialog->setPlugin(m_plugin);
+
     m_dialog->show();
 }
-*/
+
 
 void SlideShowMngr::slotSlideShow()
 {

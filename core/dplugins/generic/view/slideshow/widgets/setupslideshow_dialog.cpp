@@ -35,6 +35,8 @@
 #include <QScreen>
 #include <QStyle>
 #include <QComboBox>
+#include <QDialogButtonBox>
+#include <QPushButton>
 
 // KDE includes
 
@@ -105,12 +107,26 @@ public:
 // --------------------------------------------------------
 
 SetupSlideShowDialog::SetupSlideShowDialog(QWidget* const parent)
-    : QScrollArea(parent),
+    : DPluginDialog(parent, QLatin1String("Slideshow Settings")),
       d(new Private)
 {
-    QWidget* const panel      = new QWidget(viewport());
-    setWidget(panel);
-    setWidgetResizable(true);
+    //Setup dialog
+    setWindowTitle(i18n("Slideshow Settings"));
+    setModal(false);
+
+    m_buttons->addButton(QDialogButtonBox::Close);
+    m_buttons->addButton(QDialogButtonBox::Ok);
+    m_buttons->button(QDialogButtonBox::Ok)->setText(i18n("Save"));
+    m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info:tooltip", "Save Slideshow Settings"));
+    m_buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("document-save")));
+    m_buttons->button(QDialogButtonBox::Ok)->setDefault(true);
+
+    //Setup scroll area
+    QScrollArea*  scrollArea = new QScrollArea(this);
+
+    QWidget* const panel      = new QWidget(scrollArea->viewport());
+    scrollArea->setWidget(panel);
+    scrollArea->setWidgetResizable(true);
 
     const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
@@ -230,6 +246,15 @@ SetupSlideShowDialog::SetupSlideShowDialog(QWidget* const parent)
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
 
+    grid->addWidget(m_buttons, 11, 1, 1, 2);
+    setLayout(grid);
+
+    connect(m_buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
+            this, SLOT(slotApplySettings()));
+
+    connect(m_buttons->button(QDialogButtonBox::Close), SIGNAL(clicked()),
+            this, SLOT(reject()));
+
     readSettings();
 }
 
@@ -243,7 +268,7 @@ void SetupSlideShowDialog::slotSetUnchecked(int)
     d->showCapIfNoTitle->setCheckState(Qt::Unchecked);
 }
 
-void SetupSlideShowDialog::applySettings()
+void SetupSlideShowDialog::slotApplySettings()
 {
     SlideShowSettings settings;
 
@@ -305,4 +330,4 @@ void SetupSlideShowDialog::readSettings()
     }
 }
 
-} // namespace Digikam
+} // namespace DigikamGenericSlideShowPlugin

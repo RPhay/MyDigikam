@@ -42,7 +42,8 @@ namespace DigikamGenericSlideShowPlugin
 {
 
 SlideShowPlugin::SlideShowPlugin(QObject* const parent)
-    : DPluginGeneric(parent)
+    : DPluginGeneric(parent),
+      m_slideshowMngr(nullptr)
 {
 }
 
@@ -217,6 +218,12 @@ void SlideShowPlugin::slotMenuSlideShowConfiguration()
 
     DInfoInterface* const iface = infoIface(sender());
 
+    if (iface == nullptr)
+    {
+        //TODO: resolve the problem iface is null
+        qDebug() << "SlideShowPlugin::slotMenuSlideShowConfiguration() : iface is null";
+    }
+
     if (m_slideshowMngr)
     {
         delete m_slideshowMngr;
@@ -224,10 +231,10 @@ void SlideShowPlugin::slotMenuSlideShowConfiguration()
 
     m_slideshowMngr = new SlideShowMngr(this, iface);
 
-    m_slideshowMngr->addFiles(iface->currentSelectedItems());
     m_slideshowMngr->setPlugin(this);
 
-    //m_slideshowMngr->showConfigDialog();
+    m_slideshowMngr->showConfigDialog();
+
 }
 
 } // namespace DigikamGenericSlideShowPlugin
