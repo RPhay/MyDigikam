@@ -60,6 +60,7 @@ private Q_SLOTS:
     void slotMenuSlideShowAll();
     void slotMenuSlideShowSelection();
     void slotMenuSlideShowRecursive();
+    void slotMenuSlideShowConfiguration();
 };
 
 } // namespace DigikamGenericSlideShowPlugin

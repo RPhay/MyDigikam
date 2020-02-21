@@ -108,12 +108,13 @@ void SlideShowPlugin::setup(QObject* const parent)
     }
 
     //supportAlbums return false ??? and iface is null ???
-    if (iface /*&& iface->supportAlbums()*/)
+    if (1 /*iface && iface->supportAlbums()*/)
     {
         QMenu* const slideShowActions = new QMenu(i18n("Slideshow_Plugin"), nullptr);
         slideShowActions->setIcon(icon());
         ac->setMenu(slideShowActions);
 
+        //Action show all
         QAction* const slideShowAllAction = new QAction(i18n("All"), parent);
         slideShowAllAction->setObjectName(QLatin1String("slideshow_all"));
         slideShowAllAction->setShortcut(Qt::Key_A);                 //TODO: rechange shortcut to F9
@@ -122,6 +123,7 @@ void SlideShowPlugin::setup(QObject* const parent)
         connect(slideShowAllAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowAll()));
 
+        //Action show selection
         QAction* const slideShowSelectionAction = new QAction(i18n("Selection"), parent);
         slideShowSelectionAction->setObjectName(QLatin1String("slideshow_selected"));
         slideShowSelectionAction->setShortcut(Qt::ALT + Qt::Key_A);     //TODO: rechange shortcut to ALT+F9
@@ -130,6 +132,7 @@ void SlideShowPlugin::setup(QObject* const parent)
         connect(slideShowSelectionAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowSelection()));
 
+        //Action show recursive
         QAction* const slideShowRecursiveAction = new QAction(i18n("With All Sub-Albums"), parent);
         slideShowRecursiveAction->setObjectName(QLatin1String("slideshow_recursive"));
         slideShowRecursiveAction->setShortcut(Qt::SHIFT + Qt::Key_A);    //TODO: rechange shortcut to SHIFT+F9
@@ -137,6 +140,15 @@ void SlideShowPlugin::setup(QObject* const parent)
 
         connect(slideShowRecursiveAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowRecursive()));
+
+        //Action configuration
+        QAction* const configurationAction = new QAction(i18n("Configurations"), parent);
+        configurationAction->setObjectName(QLatin1String("slideshow_configation"));
+        configurationAction->setShortcut(Qt::CTRL + Qt::Key_A);    //TODO: rechange shortcut to CTRL+F9
+        slideShowActions->addAction(configurationAction);
+
+        connect(configurationAction, SIGNAL(triggered()),
+                this, SLOT(slotMenuSlideShowConfiguration()));
 
     }
     else
@@ -157,6 +169,7 @@ void SlideShowPlugin::slotSlideShow()
     qDebug() << "SlideshowPlugin::slotSlideShow";
 }
 
+//TODO: add slotMenuSlideShowAll
 void SlideShowPlugin::slotMenuSlideShowAll()
 {
     /*
@@ -177,14 +190,22 @@ void SlideShowPlugin::slotMenuSlideShowAll()
     qDebug() << "SlideshowPlugin::slotMenuSlideShowAll";
 }
 
+//TODO: add slotMenuSlideShowSelection
 void SlideShowPlugin::slotMenuSlideShowSelection()
 {
     qDebug() << "SlideshowPlugin::slotMenuSlideShowSelection";
 }
 
+//TODO: add slotMenuSlideShowRecursive
 void SlideShowPlugin::slotMenuSlideShowRecursive()
 {
     qDebug() << "SlideshowPlugin::slotMenuSlideShowRecursive";
+}
+
+//TODO: show configuration dialog
+void SlideShowPlugin::slotMenuSlideShowConfiguration()
+{
+    qDebug() << "SlideshowPlugin::slotMenuSlideShowConfiguration";
 }
 
 } // namespace DigikamGenericSlideShowPlugin
