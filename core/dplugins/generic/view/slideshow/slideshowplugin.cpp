@@ -93,11 +93,13 @@ void SlideShowPlugin::setup(QObject* const parent)
 {
     DPluginAction* const ac = new DPluginAction(parent);
     ac->setIcon(icon());
-    ac->setObjectName(QLatin1String("slideshow"));
+    //TODO: rechange name to 'slideshow'
+    ac->setObjectName(QLatin1String("slideshow_plugin"));
     ac->setActionCategory(DPluginAction::GenericView);
+    //c->setShortcut(Qt::ALT + Qt::SHIFT + Qt::Key_F9);
 
     DInfoInterface* const iface = infoIface(parent);
-
+/*
     if (iface && iface->supportAlbums())
     {
         QMenu* const slideShowAction = new QMenu(i18n("Slideshow"), parent);
@@ -136,7 +138,7 @@ void SlideShowPlugin::setup(QObject* const parent)
         connect(ac, SIGNAL(triggered(bool)),
                 this, SLOT(slotSlideShow()));
     }
-
+*/
     addAction(ac);
 }
 
