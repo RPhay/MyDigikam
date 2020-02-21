@@ -17,6 +17,7 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
 
 set(slideshowplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/slideshowplugin.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/slideshowmngr.cpp
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    SlideShow
