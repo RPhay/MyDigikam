@@ -155,12 +155,14 @@ add_subdirectory(mediaserver)
 add_subdirectory(mediawiki)
 add_subdirectory(metadataengine)
 add_subdirectory(multithreading)
-add_subdirectory(panorama)
 add_subdirectory(rawengine)
 add_subdirectory(timestampupdate)
 add_subdirectory(webservices)
-
 add_subdirectory(widgets)
+
+if(FLEX_FOUND AND BISON_FOUND AND KF5ThreadWeaver_FOUND)
+    add_subdirectory(panorama)
+endif()
 
 if(ENABLE_MEDIAPLAYER)
     add_subdirectory(video)
