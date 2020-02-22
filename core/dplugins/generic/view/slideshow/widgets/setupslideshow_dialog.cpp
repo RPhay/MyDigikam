@@ -121,13 +121,7 @@ SetupSlideShowDialog::SetupSlideShowDialog(QWidget* const parent)
     m_buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("document-save")));
     m_buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
-    //Setup scroll area
-    QScrollArea*  scrollArea = new QScrollArea(this);
-
-    QWidget* const panel      = new QWidget(scrollArea->viewport());
-    scrollArea->setWidget(panel);
-    scrollArea->setWidgetResizable(true);
-
+    QWidget* const panel      = new QWidget(this);
     const int spacing         = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     DHBox* const hbox1        = new DHBox(panel);
@@ -246,8 +240,11 @@ SetupSlideShowDialog::SetupSlideShowDialog(QWidget* const parent)
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
 
-    grid->addWidget(m_buttons, 11, 1, 1, 2);
-    setLayout(grid);
+    QVBoxLayout* mainLayout = new QVBoxLayout(this);
+    mainLayout->addWidget(panel);
+    mainLayout->addWidget(m_buttons);
+
+    setLayout(mainLayout);
 
     connect(m_buttons->button(QDialogButtonBox::Ok), SIGNAL(clicked()),
             this, SLOT(slotApplySettings()));
@@ -290,7 +287,10 @@ void SetupSlideShowDialog::slotApplySettings()
     settings.showProgressIndicator = d->showProgress->isChecked();
     settings.captionFont           = d->captionFont->font();
     settings.slideScreen           = d->screenPlacement->currentIndex() - 2;
+
     settings.writeToConfig();
+
+    accept();
 }
 
 void SetupSlideShowDialog::readSettings()
