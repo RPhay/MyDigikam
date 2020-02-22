@@ -16,7 +16,6 @@
 #include <stdio.h>
 
 #include "NptConfig.h"
-#include "NptDefs.h"
 #include "NptTypes.h"
 #include "NptDebug.h"
 

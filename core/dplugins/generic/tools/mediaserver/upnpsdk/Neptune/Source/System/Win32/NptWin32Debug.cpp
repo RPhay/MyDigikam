@@ -14,7 +14,6 @@
 #include <windows.h>
 
 #include "NptConfig.h"
-#include "NptDefs.h"
 #include "NptTypes.h"
 #include "NptDebug.h"
 #include <memory>
