@@ -62,7 +62,7 @@ public:
     QFileInfo          fileInfo;
     QTemporaryFile*    tempFile;
 };
-    
+
 UFRawRawImportPlugin::UFRawRawImportPlugin(QObject* const parent)
     : DPluginRawImport(parent),
       d(new Private)
