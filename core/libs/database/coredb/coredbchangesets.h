@@ -222,7 +222,7 @@ public:
     CollectionImageChangeset& operator<<(const QDBusArgument& argument);
     const CollectionImageChangeset& operator>>(QDBusArgument& argument) const;
 #endif
-    
+
     /** Specification of this changeset.
      *  All special cases where the returned list may be empty are noted above.
      *  The lists are valid unless such a case is explicitly mentioned.

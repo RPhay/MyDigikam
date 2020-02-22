@@ -335,7 +335,7 @@ void AlbumHistory::deleteAlbum(Album* const album)
         }
         else
         {
-            if (lhs == (d->backwardStack.isEmpty() ? d->backwardStack.end() 
+            if (lhs == (d->backwardStack.isEmpty() ? d->backwardStack.end()
                                                    : --d->backwardStack.end()))
             {
                 lhs = d->forwardStack.begin();

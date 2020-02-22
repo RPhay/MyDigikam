@@ -123,7 +123,7 @@ public:
 class TagInfo
 {
 public:
-    
+
     typedef QList<TagInfo> List;
 
 public:

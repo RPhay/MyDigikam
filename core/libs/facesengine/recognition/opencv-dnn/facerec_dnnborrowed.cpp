@@ -176,7 +176,7 @@ void DNNFaceRecognizer::predict(cv::InputArray _src,
         }
 */
 
-        // The codes below compute the average similarity between the new face and the old faces of 
+        // The codes below compute the average similarity between the new face and the old faces of
         // each ID (label). Then, it finds out the group the most similar to that face.
 
         double newDist     = cosineDistance(vecdata, m_src[sampleIdx]);

@@ -5,7 +5,7 @@
  * Date        : 2017-06-10
  * Description : Face Recognition based on Fisherfaces
  *               https://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html#Fisherfaces
- *               Turk, Matthew A and Pentland, Alex P. "Face recognition using Fisherfaces." 
+ *               Turk, Matthew A and Pentland, Alex P. "Face recognition using Fisherfaces."
  *               Computer Vision and Pattern Recognition, 1991. Proceedings {CVPR'91.},
  *               {IEEE} Computer Society Conference on 1991.
  *

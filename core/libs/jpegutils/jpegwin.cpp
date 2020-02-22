@@ -80,7 +80,7 @@ void jpeg_memory_src (j_decompress_ptr cinfo, const JOCTET* buffer, size_t bufsi
 
     if (cinfo->src == NULL)
     {
-        cinfo->src = (struct jpeg_source_mgr*) (*cinfo->mem->alloc_small) ((j_common_ptr) cinfo, 
+        cinfo->src = (struct jpeg_source_mgr*) (*cinfo->mem->alloc_small) ((j_common_ptr) cinfo,
                         JPOOL_PERMANENT,
                         sizeof(digikam_source_mgr));
     }

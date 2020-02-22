@@ -485,7 +485,7 @@ public:
      */
     int exifOrientation(const QString& filePath);
 
-    /** 
+    /**
      * When loaded from a file, some attributes like format and isReadOnly still depend on this
      * originating file. When saving in a different format to a different file,
      * you may wish to switch these attributes to the new file.

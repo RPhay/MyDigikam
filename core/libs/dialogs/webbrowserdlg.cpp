@@ -255,7 +255,7 @@ void WebBrowserDlg::slotSearchTextChanged(const SearchTextSettings& settings)
 #else
     bool found = d->browser->findText(
                     settings.text,
-                    (settings.caseSensitive == Qt::CaseInsensitive) ? QWebPage::FindCaseSensitively 
+                    (settings.caseSensitive == Qt::CaseInsensitive) ? QWebPage::FindCaseSensitively
                                                                     : QWebPage::FindFlags());
     d->searchbar->slotSearchResult(found);
 #endif

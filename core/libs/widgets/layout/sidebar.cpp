@@ -533,9 +533,9 @@ void DMultiTabBarTab::paintEvent(QPaintEvent*)
         {
             bottomIcon = true;
         }
- 
+
         if ((d->position == Qt::RightEdge) && rtl)
-        { 
+        {
            bottomIcon = true;
         }
     }

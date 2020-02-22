@@ -40,14 +40,14 @@ namespace Digikam
  * class SimpleRectChildItem : public DImgChildItem
  * {
  * public:
- * 
+ *
  *     SimpleRectChildItem(QGraphicsItem* const parent)
  *         : DImgChildItem(parent)
  *     {
  *         setRelativePos(0.5, 0.5);
  *         setRelativeSize(0.01, 0.01);
  *     }
- * 
+ *
  *     void paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
  *     {
  *         painter->setPen(Qt::red);

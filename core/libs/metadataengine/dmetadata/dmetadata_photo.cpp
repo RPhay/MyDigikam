@@ -282,13 +282,13 @@ QString DMetadata::getLensDescription() const
     // -------------------------------------------------------------------
     // Try to get Lens Data information from XMP.
     // XMP aux tags.
- 
+
     lens = getXmpTagString("Xmp.aux.Lens");
 
     if (lens.isEmpty())
     {
         // XMP M$ tags (Lens Maker + Lens Model).
- 
+
         lens = getXmpTagString("Xmp.MicrosoftPhoto.LensManufacturer");
 
         if (!lens.isEmpty())
@@ -305,7 +305,7 @@ QString DMetadata::getLensDescription() const
 double DMetadata::apexApertureToFNumber(double aperture)
 {
     // convert from APEX. See Exif spec, Annex C.
- 
+
     if      (aperture == 0.0)
     {
         return 1;

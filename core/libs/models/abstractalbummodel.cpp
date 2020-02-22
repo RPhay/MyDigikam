@@ -914,7 +914,7 @@ public:
           rootIsCheckable(true),
           addExcludeTristate(false),
           staticVectorContainingCheckStateRole(1, Qt::CheckStateRole)
-          
+
     {
     }
 

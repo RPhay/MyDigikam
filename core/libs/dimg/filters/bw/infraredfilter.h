@@ -70,7 +70,7 @@ public:
 
     explicit InfraredFilter(QObject* const parent = nullptr);
     explicit InfraredFilter(DImg* const orgImage,
-                            QObject* const parent=nullptr, 
+                            QObject* const parent=nullptr,
                             const InfraredContainer& settings=InfraredContainer());
     ~InfraredFilter();
 

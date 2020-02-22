@@ -98,7 +98,7 @@ void AlbumManager::slotDatesJobResult()
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to list dates";
 
         // Pop-up a message about the error.
-        
+
         DNotificationWrapper(QString(), d->dateListJob->errorsList().first(),
                              nullptr, i18n("digiKam"));
     }

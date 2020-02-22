@@ -377,8 +377,8 @@ bool DConfigDlgMngr::parseChildren(const QWidget* widget, bool trackChanges)
             }
             else
             {
-               qCWarning(DIGIKAM_GENERAL_LOG) << "A widget named '" << widgetName 
-                                              << "' was found but there is no setting named '" 
+               qCWarning(DIGIKAM_GENERAL_LOG) << "A widget named '" << widgetName
+                                              << "' was found but there is no setting named '"
                                               << configId << "'";
             }
         }

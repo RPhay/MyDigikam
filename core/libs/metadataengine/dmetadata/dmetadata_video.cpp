@@ -101,7 +101,7 @@ QString s_setXmpTagStringFromEntry(DMetadata* const meta,
                 {
                     // Only register the tag value if it doesn't exists yet.
 
-                    if (meta->getXmpTagString(tag.toLatin1().data()).isNull()) 
+                    if (meta->getXmpTagString(tag.toLatin1().data()).isNull())
                     {
                         meta->setXmpTagString(tag.toLatin1().data(), it.value());
                     }
@@ -317,7 +317,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                 QString::number(codec->sample_rate));
 
             // See XMP Dynamic Media properties from Adobe.
-            // Audio Channel type is a limited untranslated string choice depending of amount of audio channels 
+            // Audio Channel type is a limited untranslated string choice depending of amount of audio channels
 
             data = QString();
 
@@ -361,7 +361,7 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
                 QString::fromUtf8(av_get_sample_fmt_name((AVSampleFormat)codec->format)));
 
             // See XMP Dynamic Media properties from Adobe.
-            // Audio Sample type is a limited untranslated string choice depending of amount of audio samples 
+            // Audio Sample type is a limited untranslated string choice depending of amount of audio samples
 
             data = s_convertFFMpegFormatToXMP(codec->format);
 
@@ -839,21 +839,21 @@ bool DMetadata::loadUsingFFmpeg(const QString& filePath)
 
     // --------------
 
-    s_setXmpTagStringFromEntry(this, 
+    s_setXmpTagStringFromEntry(this,
                                QStringList() << QLatin1String("lyrics"),                                        // Generic.
                                rmeta,
                                QStringList() << QLatin1String("Xmp.video.Lyrics"));
 
     // --------------
 
-    s_setXmpTagStringFromEntry(this, 
+    s_setXmpTagStringFromEntry(this,
                                QStringList() << QLatin1String("filename"),                                      // Generic.
                                rmeta,
                                QStringList() << QLatin1String("Xmp.video.FileName"));
 
     // --------------
 
-    s_setXmpTagStringFromEntry(this, 
+    s_setXmpTagStringFromEntry(this,
                                QStringList() << QLatin1String("disk"),                                          // Generic.
                                rmeta,
                                QStringList() << QLatin1String("Xmp.xmpDM.discNumber"));

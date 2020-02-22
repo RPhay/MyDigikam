@@ -733,7 +733,7 @@ bool ItemFilterSettings::matches(const ItemInfo& info, bool* const foundText) co
             int pixelSize = size.height()*size.width();
             QString text  = m_textFilterSettings.text;
 
-            if      (text.contains(QRegExp(QLatin1String("^>\\d{1,15}$"))) && 
+            if      (text.contains(QRegExp(QLatin1String("^>\\d{1,15}$"))) &&
                 (pixelSize > (text.remove(0, 1)).toInt()))
             {
                 textMatch = true;

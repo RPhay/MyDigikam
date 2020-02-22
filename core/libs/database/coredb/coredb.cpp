@@ -2277,7 +2277,7 @@ QList<qlonglong> CoreDB::removeAllImageRelationsFrom(qlonglong subjectId, Databa
 
     d->db->execSql(QString::fromUtf8("DELETE FROM ImageRelations WHERE subject=? AND type=?;"),
                    subjectId, type);
-    d->db->recordChangeset(ImageChangeset(QList<qlonglong>() << affected << subjectId, 
+    d->db->recordChangeset(ImageChangeset(QList<qlonglong>() << affected << subjectId,
                                           DatabaseFields::Set(DatabaseFields::ImageRelations)));
 
     return affected;
@@ -3575,7 +3575,7 @@ qlonglong CoreDB::addItem(int albumID, const QString& name,
     }
 
     d->db->recordChangeset(ImageChangeset(id.toLongLong(), DatabaseFields::Set(DatabaseFields::ImagesAll)));
-    d->db->recordChangeset(CollectionImageChangeset(id.toLongLong(), albumID, 
+    d->db->recordChangeset(CollectionImageChangeset(id.toLongLong(), albumID,
                                                     CollectionImageChangeset::Added));
     return id.toLongLong();
 }
@@ -3591,7 +3591,7 @@ void CoreDB::updateItem(qlonglong imageID, DatabaseItem::Category category,
                                      "WHERE id=?;"),
                    boundValues);
 
-    d->db->recordChangeset(ImageChangeset(imageID, 
+    d->db->recordChangeset(ImageChangeset(imageID,
                                           DatabaseFields::Set(DatabaseFields::Category         |
                                                               DatabaseFields::ModificationDate |
                                                               DatabaseFields::FileSize         |

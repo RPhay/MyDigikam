@@ -126,7 +126,7 @@ void VideoDecoder::destroy()
     }
 }
 
-QString VideoDecoder::getCodec() const 
+QString VideoDecoder::getCodec() const
 {
     QString codecName;
 

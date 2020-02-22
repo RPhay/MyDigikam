@@ -427,7 +427,7 @@ void DImageHistory::adjustReferredImages()
 
             if (id.isCurrentFile())
             {
-                id.m_type = (i == 0) ? HistoryImageId::Original 
+                id.m_type = (i == 0) ? HistoryImageId::Original
                                      : HistoryImageId::Intermediate;
             }
         }
