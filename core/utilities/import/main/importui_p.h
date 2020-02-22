@@ -147,21 +147,21 @@ public:
     static const QString               configDefaultTargetAlbumId;
     static const QString               configFileSaveConflictRule;
     static const QString               importFiltersConfigGroupName;
-                                 
+
     bool                               deleteAfter;
     bool                               busy;
     bool                               closed;
-                                 
+
     QString                            cameraTitle;
-                                 
+
     QStringList                        autoRotateItemsList;
     QStringList                        currentlyDeleting;
     QSet<QString>                      foldersToScan;
-                                 
+
     QMenu*                             downloadMenu;
     QMenu*                             deleteMenu;
     QMenu*                             imageMenu;
-                                 
+
     QAction*                           cameraCancelAction;
     QAction*                           cameraCaptureAction;
     QAction*                           cameraInfoAction;

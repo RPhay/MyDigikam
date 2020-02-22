@@ -115,7 +115,7 @@ Q_SIGNALS:
     void signalScaleChanged();
 
 private Q_SLOTS:
-    
+
     void slotAboutPlugin();
 
 private:

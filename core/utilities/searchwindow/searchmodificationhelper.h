@@ -177,7 +177,7 @@ public Q_SLOTS:
                                         bool overwriteIfExisting = false);
 
     /**
-     * Creates a new fuzzy search for finding similar photos based on the file 
+     * Creates a new fuzzy search for finding similar photos based on the file
      * path of a photo
      * and selects it in the album manager after creation.
      *

@@ -89,4 +89,4 @@ private:
 
 } // namespace Digikam
 
-#endif // DIGIKAM_CAMERA_LIST_H 
+#endif // DIGIKAM_CAMERA_LIST_H

@@ -353,7 +353,7 @@ void DatabaseTask::run()
                         q.addQueryItem(QLatin1String("rect"), r);
                         url.setQuery(q);
 
-                        //qCDebug(DIGIKAM_GENERAL_LOG) << "URL: " << url.toString(); 
+                        //qCDebug(DIGIKAM_GENERAL_LOG) << "URL: " << url.toString();
 
                         // Remove the id that is found by the custom identifier. Finding the id -1 does no harm
 
