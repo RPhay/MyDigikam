@@ -39,13 +39,12 @@
 #include "dinfointerface.h"
 #include "loadingdescription.h"
 #include "slideshowsettings.h"
+#include "dimg.h"
 
 using namespace Digikam;
 
 namespace DigikamGenericSlideShowPlugin
 {
-
-class DImg;
 
 class SlideShowLoader : public QStackedWidget
 {

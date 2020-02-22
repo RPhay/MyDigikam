@@ -4,7 +4,7 @@
  * https://www.digikam.org
  *
  * Date        : 2014-09-18
- * Description : slideshow image widget
+ * Description : slideshow OSD widget
  *
  * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2020      by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SLIDE_IMAGE_PLUGIN_H
-#define DIGIKAM_SLIDE_IMAGE_PLUGIN_H
+#ifndef DIGIKAM_SLIDE_OSD_PLUGIN_H
+#define DIGIKAM_SLIDE_OSD_PLUGIN_H
 
 // Qt includes
 
@@ -32,41 +32,49 @@
 
 // Local includes
 
-#include "digikam_export.h"
-#include "loadingdescription.h"
-#include "previewsettings.h"
-#include "dimg.h"
+#include "slideshowsettings.h"
+
+//#include "./slidetoolbar.h"
+
+class QEvent;
 
 using namespace Digikam;
 
 namespace DigikamGenericSlideShowPlugin
 {
 
-class SlideImage : public QWidget
+class SlideShowLoader;
+class SlideToolBar;
+
+class SlideOSD : public QWidget
 {
     Q_OBJECT
 
 public:
 
-    explicit SlideImage(QWidget* const parent = nullptr);
-    virtual ~SlideImage();
+    explicit SlideOSD(const SlideShowSettings& settings, SlideShowLoader* const parent = nullptr);
+    ~SlideOSD();
+//TODO: move slideTooBar to this directory
+    void setCurrentUrl(const QUrl& url);
 
-    void setPreviewSettings(const PreviewSettings& settings);
-    void setLoadUrl(const QUrl& url);
-    void setPreloadUrl(const QUrl& url);
+    void pause(bool b);
+    void video(bool b);
+    bool isPaused()                 const;
+    bool isUnderMouse()             const;
+    void toggleProperties();
+    void setLoadingReady(bool b);
 
-Q_SIGNALS:
 
-    void signalImageLoaded(bool);
+    SlideToolBar* toolBar()         const;
 
 private Q_SLOTS:
 
-    void slotGotImagePreview(const LoadingDescription&, const DImg&);
+    void slotProgressTimer();
+    void slotStart();
 
 private:
 
-    void paintEvent(QPaintEvent*) override;
-    void updatePixmap();
+    bool eventFilter(QObject* obj, QEvent* ev) override;
 
 private:
 
@@ -76,4 +84,4 @@ private:
 
 } // namespace DigikamGenericSlideShowPlugin
 
-#endif // DIGIKAM_SLIDE_IMAGE_PLUGIN_H
+#endif // DIGIKAM_SLIDE_OSD_PLUGIN_H

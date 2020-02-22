@@ -76,8 +76,8 @@ SlideImage::SlideImage(QWidget* const parent)
     d->previewThread        = new PreviewLoadThread();
     d->previewPreloadThread = new PreviewLoadThread();
 
-    connect(d->previewThread, SIGNAL(signalImageLoaded(LoadingDescription,DImg)),
-            this, SLOT(slotGotImagePreview(LoadingDescription,DImg)));
+    connect(d->previewThread, SIGNAL(signalImageLoaded(LoadingDescription, DImg)),
+            this, SLOT(slotGotImagePreview(LoadingDescription, DImg)));
 }
 
 SlideImage::~SlideImage()
