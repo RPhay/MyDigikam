@@ -148,7 +148,6 @@ add_subdirectory(dplugins)
 add_subdirectory(facesengine)
 add_subdirectory(fileio)
 add_subdirectory(filters)
-add_subdirectory(geolocation)                   # Some unit-tests based on ModelTest
 add_subdirectory(imgqsort)
 add_subdirectory(iojobs)
 add_subdirectory(mediaserver)
@@ -159,6 +158,10 @@ add_subdirectory(rawengine)
 add_subdirectory(timestampupdate)
 add_subdirectory(webservices)
 add_subdirectory(widgets)
+
+if(Marble_FOUND)
+    add_subdirectory(geolocation)               # Some unit-tests based on ModelTest
+endif()
 
 if(FLEX_FOUND AND BISON_FOUND AND KF5ThreadWeaver_FOUND)
     add_subdirectory(panorama)
