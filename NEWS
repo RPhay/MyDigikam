@@ -641,5 +641,5 @@ BUGFIXES:
 623 ==> 332903 - Altering Geo-Data.
 624 ==> 417887 - Need Windows admin rights in order to see selected file list in Geolocation editor.
 625 ==> 417797 - Batch video timestamp changing fails.
-626 ==> 
-
+626 ==> 418056 - Not possible to filter for "no labels".
+627 ==> 
