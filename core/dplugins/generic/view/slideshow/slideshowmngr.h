@@ -36,8 +36,8 @@
 // Local includes
 
 #include "dplugingeneric.h"
-#include "dinfointerface.h"
 #include "setupslideshow_dialog.h"
+#include "slideshowloader.h"
 
 using namespace Digikam;
 
@@ -61,7 +61,7 @@ public:
 
     void setPlugin(DPlugin* const plugin);
 
-private Q_SLOTS:
+public Q_SLOTS:
 
     void slotSlideShow();
 
@@ -69,7 +69,7 @@ private:
 
     DPlugin*               m_plugin;
     SetupSlideShowDialog*  m_dialog;
-    //PresentationContainer* m_sharedData;
+    SlideShowLoader*       m_loader;
 };
 
 } // namespace DigikamGenericSlideShowPlugin

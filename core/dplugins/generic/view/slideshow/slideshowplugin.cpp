@@ -176,26 +176,26 @@ void SlideShowPlugin::slotSlideShow()
 {
     DInfoInterface* const iface = infoIface(sender());
     qDebug() << "SlideshowPlugin::slotSlideShow";
+
+    m_slideshowMngr = new SlideShowMngr(this, iface);
+
+    m_slideshowMngr->setPlugin(this);
+
+    m_slideshowMngr->slotSlideShow();
 }
 
 //TODO: add slotMenuSlideShowAll
 void SlideShowPlugin::slotMenuSlideShowAll()
 {
-    /*
+
     DInfoInterface* const iface = infoIface(sender());
 
-    QPointer<PresentationMngr> mngr = new PresentationMngr(this);
+    m_slideshowMngr = new SlideShowMngr(this, iface);
 
-    foreach (const QUrl& url, iface->currentSelectedItems())
-    {
-        DItemInfo info(iface->itemInfo(url));
-        mngr->addFile(url, info.comment());
-        qApp->processEvents();
-    }
+    m_slideshowMngr->setPlugin(this);
 
-    mngr->setPlugin(this);
-    mngr->showConfigDialog();
-    */
+    m_slideshowMngr->slotSlideShow();
+
     qDebug() << "SlideshowPlugin::slotMenuSlideShowAll";
 }
 

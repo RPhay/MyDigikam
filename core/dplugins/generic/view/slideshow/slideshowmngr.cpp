@@ -42,14 +42,13 @@ SlideShowMngr::SlideShowMngr(QObject* const parent, DInfoInterface* const iface)
       m_plugin(nullptr),
       m_dialog(nullptr)
 {
-      //m_sharedData = new PresentationContainer();
-      //m_sharedData->iface = iface;
+    m_loader = new SlideShowLoader(iface, SlideShowSettings());
 }
 
 SlideShowMngr::~SlideShowMngr()
 {
     delete m_dialog;
-    //delete m_sharedData;
+    delete m_loader;
 }
 
 void SlideShowMngr::setPlugin(DPlugin* const plugin)
@@ -75,81 +74,7 @@ void SlideShowMngr::showConfigDialog()
 
 void SlideShowMngr::slotSlideShow()
 {
-/*
-    KConfig config;
-    KConfigGroup grp = config.group("Presentation Settings");
-    bool opengl      = grp.readEntry("OpenGL",  false);
-    bool shuffle     = grp.readEntry("Shuffle", false);
-    bool wantKB      = grp.readEntry("Effect Name (OpenGL)") == QLatin1String("Ken Burns");
-
-    if (m_sharedData->urlList.isEmpty())
-    {
-        QMessageBox::information(QApplication::activeWindow(), QString(), i18n("There are no images to show."));
-        return;
-    }
-
-    if (shuffle)
-    {
-        qsrand(QTime::currentTime().msec());
-
-        QList<QUrl>::iterator it = m_sharedData->urlList.begin();
-        QList<QUrl>::iterator it1;
-
-        for (uint i = 0 ; i < (uint) m_sharedData->urlList.size() ; ++i)
-        {
-            int inc = (int) (float(m_sharedData->urlList.count()) * qrand() / (RAND_MAX + 1.0));
-
-            it1  = m_sharedData->urlList.begin();
-            it1 += inc;
-
-            std::swap(*(it++), *(it1));
-        }
-    }
-
-    if (!opengl)
-    {
-        PresentationWidget* const slide = new PresentationWidget(m_sharedData);
-        slide->show();
-    }
-    else
-    {
-#ifdef HAVE_OPENGL
-        bool supportsOpenGL = true;
-
-        if (wantKB)
-        {
-            PresentationKB* const slide = new PresentationKB(m_sharedData);
-            slide->show();
-
-            if (!slide->checkOpenGL())
-            {
-                supportsOpenGL = false;
-                slide->close();
-            }
-
-        }
-        else
-        {
-            PresentationGL* const slide = new PresentationGL(m_sharedData);
-            slide->show();
-
-            if (!slide->checkOpenGL())
-            {
-                supportsOpenGL = false;
-                slide->close();
-            }
-        }
-
-        if (!supportsOpenGL)
-        {
-            QMessageBox::critical(QApplication::activeWindow(), QString(),
-                                  i18n("OpenGL support is not available on your system."));
-        }
-#else
-        Q_UNUSED(wantKB);
-#endif
-    }
-*/
+    m_loader->show();
 }
 
 } // namespace DigikamGenericSlideShowPlugin
