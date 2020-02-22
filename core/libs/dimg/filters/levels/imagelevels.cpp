@@ -110,8 +110,6 @@ ImageLevels::ImageLevels(bool sixteenBit)
     d->lut            = new Private::_Lut;
     d->levels         = new Private::_Levels;
     d->sixteenBit     = sixteenBit;
-
-    memset(d->levels, 0, sizeof(Private::_Levels));
     d->lut->luts      = nullptr;
     d->lut->nchannels = 0;
 

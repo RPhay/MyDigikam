@@ -48,7 +48,7 @@ class Q_DECL_HIDDEN ImageHistogram::Private
 public:
 
     // NOTE : Using a structure instead a class is more faster
-    // (access with memset() and bytes manipulation).
+    // with bytes manipulation.
 
     struct Q_DECL_HIDDEN double_packet
     {
@@ -200,8 +200,6 @@ void ImageHistogram::calculate()
         emit calculationFinished(false);
         return;
     }
-
-    memset(d->histogram, 0, d->histoSegments * sizeof(struct Private::double_packet));
 
     if (isSixteenBit())         // 16 bits image.
     {
