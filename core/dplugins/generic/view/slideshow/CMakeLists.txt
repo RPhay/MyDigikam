@@ -32,7 +32,7 @@ set(slideshowplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/slideend.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/slideerror.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/slidehelp.cpp
-    #${CMAKE_CURRENT_SOURCE_DIR}/widgets/slideimage.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/slideimage.cpp
     #${CMAKE_CURRENT_SOURCE_DIR}/widgets/slideosd.cpp
 )
 
