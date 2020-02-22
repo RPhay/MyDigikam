@@ -101,8 +101,10 @@ DMediaServerDlg::DMediaServerDlg(QObject* const /*parent*/,
     setWindowTitle(i18nc("@title:window", "Share Files with DLNA Media Server"));
 
     d->iface                 = iface;
+
     // NOTE: We overwrite the default albums chooser object name for load save check items state between sessions.
     // The goal is not mix these settings with other export tools.
+
     d->iface->setObjectName(QLatin1String("SetupMediaServerIface"));
 
     m_buttons->addButton(QDialogButtonBox::Cancel);
@@ -136,9 +138,11 @@ DMediaServerDlg::DMediaServerDlg(QObject* const /*parent*/,
         d->listView->setIface(d->iface);
 
         // Add all items currently loaded in application.
+
         d->listView->loadImagesFromCurrentSelection();
 
         // Replug the previous shared items list.
+
         d->listView->slotAddImages(d->mngr->itemsList());
         grid->addWidget(d->listView, 0, 0, 1, 6);
 
@@ -327,10 +331,14 @@ bool DMediaServerDlg::setMediaServerContents()
 void DMediaServerDlg::startMediaServer()
 {
     if (d->dirty)
+    {
         d->dirty = false;
+    }
 
     if (!setMediaServerContents())
+    {
         return;
+    }
 
     if (!d->mngr->startMediaServer())
     {

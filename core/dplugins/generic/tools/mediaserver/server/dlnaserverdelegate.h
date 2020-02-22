@@ -63,12 +63,12 @@ class DLNAMediaServerDelegate : public PLT_MediaServerDelegate
 {
 public:
 
-    // Constructor & destructor
+    /// Constructor and destructor
     explicit DLNAMediaServerDelegate(const char* url_root,
                                      bool use_cache = false);
     ~DLNAMediaServerDelegate() override;
 
-    // Class methods
+    /// Class methods
     static NPT_String BuildSafeResourceUri(const NPT_HttpUrl& base_uri,
                                            const char*        host,
                                            const char*        file_path);
@@ -77,7 +77,7 @@ public:
 
 protected:
 
-    // PLT_MediaServerDelegate methods
+    /// PLT_MediaServerDelegate methods
     NPT_Result OnBrowseMetadata(PLT_ActionReference&          action,
                                 const char*                   object_id,
                                 const char*                   filter,
@@ -113,7 +113,7 @@ protected:
                               NPT_Map<NPT_String,NPT_String>& new_vals,
                               const PLT_HttpRequestContext&   context)          override;
 
-    // Overridable methods
+    /// Overridable methods
     virtual NPT_Result ExtractResourcePath(const NPT_HttpUrl& url,
                                            NPT_String& file_path);
 
