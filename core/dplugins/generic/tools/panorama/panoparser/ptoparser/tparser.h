@@ -237,4 +237,4 @@ void    panoScriptParserSetDefaults(pt_script* ptr);
 int     panoScriptParse(const char* const filename, pt_script* scriptOut);
 void    panoScriptFree(pt_script* ptr);
 
-#endif // DIGIKAM_T_PARSER_H
+#endif /* DIGIKAM_T_PARSER_H */

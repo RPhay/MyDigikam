@@ -177,4 +177,4 @@ int     panoScriptGetMaskPointY(pt_script* script, int m, int p);
 int     panoScriptGetEndingCommentCount(pt_script* script);
 char*   panoScriptGetEndingComment(pt_script* script, int c);
 
-#endif // DIGIKAM_T_PARSER_GETTERS_H
+#endif /* DIGIKAM_T_PARSER_GETTERS_H */

@@ -46,7 +46,7 @@ void panoScriptParserClose(void);
 int  panoScriptScannerGetNextChar(char* b, int maxBuffer);
 void panoScriptScannerTokenBegin(char* t);
 
-#ifndef _MSC_VER   // krazy:exclude=cpp
+#ifndef _MSC_VER   /* krazy:exclude=cpp */
 void panoScriptParserError(char const* errorstring, ...) __attribute__ ((format (printf, 1, 2)));
 #else
 void panoScriptParserError(char const* errorstring, ...);
@@ -55,4 +55,4 @@ void panoScriptParserError(char const* errorstring, ...);
 void  yyerror(char const* st);
 void* panoScriptReAlloc(void** ptr, size_t size, int* count);
 
-#endif // DIGIKAM_T_PARSER_PRIVATE_H
+#endif /* DIGIKAM_T_PARSER_PRIVATE_H */

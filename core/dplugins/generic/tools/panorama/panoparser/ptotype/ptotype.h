@@ -63,10 +63,10 @@ struct PTOType
             } CompressionMethod;
 
             FileType          fileType;
-            unsigned char     quality;            // JPEG
-            CompressionMethod compressionMethod;  // TIFF
-            bool              cropped;            // TIFF
-            bool              savePositions;      // TIFF
+            unsigned char     quality;            ///< for JPEG
+            CompressionMethod compressionMethod;  ///< for TIFF
+            bool              cropped;            ///< for TIFF
+            bool              savePositions;      ///< for TIFF
 
             FileFormat()
               : fileType(JPEG),
@@ -289,10 +289,10 @@ struct PTOType
         LensParameter<double>         whiteBalanceRed;
         LensParameter<double>         whiteBalanceBlue;
         LensParameter<VignettingMode> vignettingMode;
-        LensParameter<double>         vignettingCorrectionI;      // Va
-        LensParameter<double>         vignettingCorrectionJ;      // Vb
-        LensParameter<double>         vignettingCorrectionK;      // Vc
-        LensParameter<double>         vignettingCorrectionL;      // Vd
+        LensParameter<double>         vignettingCorrectionI;      ///< Va
+        LensParameter<double>         vignettingCorrectionJ;      ///< Vb
+        LensParameter<double>         vignettingCorrectionK;      ///< Vc
+        LensParameter<double>         vignettingCorrectionL;      ///< Vd
         LensParameter<int>            vignettingOffsetX;
         LensParameter<int>            vignettingOffsetY;
         QString                       vignettingFlatfieldImageName;
@@ -363,7 +363,7 @@ struct PTOType
         double      p1_y;
         double      p2_x;
         double      p2_y;
-        int         type;   // FIXME: change that for an enum if possible
+        int         type;                   // FIXME: change that for an enum if possible
         QStringList unmatchedParameters;
     };
 
@@ -381,8 +381,8 @@ struct PTOType
     }
 
     explicit PTOType(const QString& version)
-      : version(version.split(QLatin1Char('.'))[0].toInt() >= 2014 ? V2014 
-                                                                   : PRE_V2014)
+      : version((version.split(QLatin1Char('.'))[0].toInt() >= 2014) ? V2014 
+                                                                     : PRE_V2014)
     {
     }
 
