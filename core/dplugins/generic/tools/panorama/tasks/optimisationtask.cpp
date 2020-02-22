@@ -53,13 +53,19 @@ void OptimisationTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     args << QLatin1String("-am");
 
     if (levelHorizon)
-        args << QLatin1String("-l");
+    {
+       args << QLatin1String("-l");
+    }
 
-    // This parameter changes the projection type
+    // NOTE: This parameter changes the projection type
     // See also Bug 346053 and Bug 416492
+
+    Q_UNUSED(buildGPano);
 /*
     if (buildGPano)
+    {
         args << QLatin1String("-s");
+    }
 */
     args << QLatin1String("-o");
     args << autoOptimiserPtoUrl.toLocalFile();
@@ -68,6 +74,7 @@ void OptimisationTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     runProcess(args);
 
     // AutoOptimiser does not return an error code when something went wrong...
+
     QFile ptoOutput(autoOptimiserPtoUrl.toLocalFile());
 
     if (!ptoOutput.exists())
