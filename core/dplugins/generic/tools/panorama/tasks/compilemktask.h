@@ -49,7 +49,9 @@ protected:
 
 private:
 
-//  const QUrl* const panoUrl;
+/*
+    const QUrl* const panoUrl;
+*/
     const QUrl&       mkUrl;
     const QString     nonaPath;
     const QString     enblendPath;

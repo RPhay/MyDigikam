@@ -37,8 +37,10 @@
 namespace DigikamGenericPanoramaPlugin
 {
 
-CreatePreviewTask::CreatePreviewTask(const QString& workDirPath, QSharedPointer<const PTOType> inputPTO,
-                                     QUrl& previewPtoUrl, const PanoramaItemUrlsMap& preProcessedUrlsMap)
+CreatePreviewTask::CreatePreviewTask(const QString& workDirPath,
+                                     QSharedPointer<const PTOType> inputPTO,
+                                     QUrl& previewPtoUrl,
+                                     const PanoramaItemUrlsMap& preProcessedUrlsMap)
     : PanoTask(PANO_CREATEMKPREVIEW, workDirPath),
       previewPtoUrl(previewPtoUrl),
       ptoData(inputPTO),
@@ -56,19 +58,19 @@ void CreatePreviewTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 
     if (data.images.size() != preProcessedUrlsMap.size())
     {
-        errString = i18n("Project file parsing failed.");
+        errString   = i18n("Project file parsing failed.");
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Missing parsing data!";
         successFlag = false;
         return;
     }
 
     m_meta.load(preProcessedUrlsMap.begin().value().preprocessedUrl.toLocalFile());
-    double wIn  = (double)m_meta.getPixelSize().width();
+    double wIn                       = (double)m_meta.getPixelSize().width();
 
     m_meta.load(preProcessedUrlsMap.begin().value().previewUrl.toLocalFile());
-    double wOut = (double)m_meta.getPixelSize().width();
+    double wOut                      = (double)m_meta.getPixelSize().width();
 
-    double scalingFactor = wOut / wIn;
+    double scalingFactor             = wOut / wIn;
 
     data.project.fileFormat.fileType = PTOType::Project::FileFormat::JPEG;
     data.project.fileFormat.quality  = 90;
@@ -78,19 +80,22 @@ void CreatePreviewTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 
     for (auto& image : data.images)
     {
-        QUrl imgUrl = QUrl::fromLocalFile(image.fileName);
+        QUrl imgUrl                           = QUrl::fromLocalFile(image.fileName);
 
         PanoramaItemUrlsMap::const_iterator it;
         const PanoramaItemUrlsMap* const ppum = &preProcessedUrlsMap;
 
-        for (it = ppum->constBegin(); it != ppum->constEnd() && it.value().preprocessedUrl.toLocalFile() != imgUrl.toLocalFile(); ++it);
+        for (it = ppum->constBegin() ;
+             it != ppum->constEnd() && (it.value().preprocessedUrl.toLocalFile() != imgUrl.toLocalFile()) ;
+             ++it);
 
         if (it == ppum->constEnd())
         {
-            errString = i18n("Unknown input file in the project file: <filename>%1</filename>", image.fileName);
+            errString   = i18n("Unknown input file in the project file: <filename>%1</filename>", image.fileName);
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown input File in the PTO: " << image.fileName;
             qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "IMG: " << imgUrl.toLocalFile();
             successFlag = false;
+
             return;
         }
 
@@ -101,9 +106,11 @@ void CreatePreviewTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     }
 
     // Remove unnecessary stuff
+
     data.controlPoints.clear();
 
     // Add two commented line for a JPEG output
+
     data.lastComments.clear();
     data.lastComments << QLatin1String("#hugin_outputImageType jpg");
     data.lastComments << QLatin1String("#hugin_outputJPEGQuality 90");

@@ -51,7 +51,8 @@ class Q_DECL_HIDDEN PreProcessTask::Private
 {
 public:
 
-    explicit Private(PanoramaPreprocessedUrls& urls, const QUrl& url)
+    explicit Private(PanoramaPreprocessedUrls& urls,
+                     const QUrl& url)
         : fileUrl(url),
           preProcessedUrl(urls),
           observer(nullptr)
@@ -88,7 +89,9 @@ private:
     PreProcessTask* const parent;
 };
 
-PreProcessTask::PreProcessTask(const QString& workDirPath, int id, PanoramaPreprocessedUrls& targetUrls,
+PreProcessTask::PreProcessTask(const QString& workDirPath,
+                               int id,
+                               PanoramaPreprocessedUrls& targetUrls,
                                const QUrl& sourceUrl)
     : PanoTask(PANO_PREPROCESS_INPUT, workDirPath),
       id(id),
@@ -109,6 +112,7 @@ void PreProcessTask::requestAbort()
 void PreProcessTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
 {
     // check if its a RAW file.
+
     if (DRawDecoder::isRawFile(d->fileUrl))
     {
         d->preProcessedUrl.preprocessedUrl = tmpDir;
@@ -116,12 +120,14 @@ void PreProcessTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
         if (!convertRaw())
         {
             successFlag = false;
+
             return;
         }
     }
     else
     {
         // NOTE: in this case, preprocessed Url is the original file Url.
+
         d->preProcessedUrl.preprocessedUrl = d->fileUrl;
     }
 
@@ -130,11 +136,11 @@ void PreProcessTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     if (!computePreview(d->preProcessedUrl.preprocessedUrl))
     {
         successFlag = false;
+
         return;
     }
 
     successFlag = true;
-    return;
 }
 
 bool PreProcessTask::computePreview(const QUrl& inUrl)
@@ -153,6 +159,7 @@ bool PreProcessTask::computePreview(const QUrl& inUrl)
         bool saved   = preview.save(outUrl.toLocalFile(), DImg::JPEG);
 
         // save exif information also to preview image for auto rotation
+
         if (saved)
         {
             d->meta.load(inUrl.toLocalFile());
@@ -165,6 +172,7 @@ bool PreProcessTask::computePreview(const QUrl& inUrl)
         }
 
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Preview Image url: " << outUrl << ", saved: " << saved;
+
         return saved;
     }
     else
@@ -178,8 +186,8 @@ bool PreProcessTask::computePreview(const QUrl& inUrl)
 
 bool PreProcessTask::convertRaw()
 {
-    const QUrl& inUrl = d->fileUrl;
-    QUrl& outUrl      = d->preProcessedUrl.preprocessedUrl;
+    const QUrl& inUrl           = d->fileUrl;
+    QUrl& outUrl                = d->preProcessedUrl.preprocessedUrl;
     DImg img;
 
     DRawDecoding settings;
@@ -195,7 +203,7 @@ bool PreProcessTask::convertRaw()
 
         if (!m.isEmpty())
         {
-            for (DMetadata::MetaDataMap::iterator it = m.begin(); it != m.end(); ++it)
+            for (DMetadata::MetaDataMap::iterator it = m.begin() ; it != m.end() ; ++it)
             {
                 d->meta.removeExifTag(it.key().toLatin1().constData());
             }
@@ -210,13 +218,14 @@ bool PreProcessTask::convertRaw()
         QFileInfo fi(inUrl.toLocalFile());
         QDir outDir(outUrl.toLocalFile());
         outDir.cdUp();
-        QString path = outDir.path() + QLatin1Char('/');
+        QString path    = outDir.path() + QLatin1Char('/');
         outUrl.setPath(path + fi.completeBaseName().replace(QLatin1Char('.'), QLatin1String("_"))
                             + QLatin1String(".tif"));
 
         if (!img.save(outUrl.toLocalFile(), QLatin1String("TIF")))
         {
             errString = i18n("Tiff image creation failed.");
+
             return false;
         }
 

@@ -60,9 +60,11 @@ void CreateMKTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
         case JPEG:
             panoUrl.setPath(panoUrl.path() + fi.completeBaseName() + QLatin1String(".jpg"));
             break;
+
         case TIFF:
             panoUrl.setPath(panoUrl.path() + fi.completeBaseName() + QLatin1String(".tif"));
             break;
+
         case HDR:
             panoUrl.setPath(panoUrl.path() + fi.completeBaseName() + QLatin1String(".hdr"));
             break;

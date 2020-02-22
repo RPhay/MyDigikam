@@ -30,12 +30,15 @@ namespace DigikamGenericPanoramaPlugin
 {
 
 AutoCropTask::AutoCropTask(const QString& workDirPath,
-                           const QUrl& autoOptimiserPtoUrl, QUrl& viewCropPtoUrl,
-                           bool /*buildGPano*/, const QString& panoModifyPath)
+                           const QUrl& autoOptimiserPtoUrl,
+                           QUrl& viewCropPtoUrl,
+                           bool /*buildGPano*/,
+                           const QString& panoModifyPath)
     : CommandTask(PANO_AUTOCROP, workDirPath, panoModifyPath),
       autoOptimiserPtoUrl(autoOptimiserPtoUrl),
-      viewCropPtoUrl(viewCropPtoUrl)/*,
-      buildGPano(buildGPano),*/
+      viewCropPtoUrl(viewCropPtoUrl)
+/*    , buildGPano(buildGPano)
+*/
 {
 }
 
@@ -60,7 +63,9 @@ void AutoCropTask::run(ThreadWeaver::JobPointer, ThreadWeaver::Thread*)
     runProcess(args);
 
     // PanoModify does not return an error code when something went wrong...
+
     QFile ptoOutput(viewCropPtoUrl.toLocalFile());
+
     if (!ptoOutput.exists())
     {
         successFlag = false;

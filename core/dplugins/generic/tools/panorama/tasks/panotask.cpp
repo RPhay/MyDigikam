@@ -29,7 +29,8 @@
 namespace DigikamGenericPanoramaPlugin
 {
 
-PanoTask::PanoTask(PanoAction action, const QString& workDirPath)
+PanoTask::PanoTask(PanoAction action,
+                   const QString& workDirPath)
     : action(action),
       isAbortedFlag(false),
       successFlag(false),

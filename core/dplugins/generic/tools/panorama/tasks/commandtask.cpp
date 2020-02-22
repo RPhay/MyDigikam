@@ -54,13 +54,17 @@ void CommandTask::requestAbort()
     PanoTask::requestAbort();
 
     if (!process.isNull())
+    {
         process->kill();
+    }
 }
 
 void CommandTask::runProcess(QStringList& args)
 {
     if (isAbortedFlag)
+    {
         return;
+    }
 
     process.reset(new QProcess());
     process->setWorkingDirectory(tmpDir.toLocalFile());
@@ -79,13 +83,17 @@ void CommandTask::runProcess(QStringList& args)
     output      = QString::fromLocal8Bit(process->readAll());
 
     if (!successFlag)
+    {
         errString = getProcessError();
+    }
 }
 
 QString CommandTask::getProgram()
 {
     if (process.isNull())
+    {
         return QString();
+    }
 
     return process->program();
 }
@@ -93,7 +101,9 @@ QString CommandTask::getProgram()
 QString CommandTask::getCommandLine()
 {
     if (process.isNull())
+    {
         return QString();
+    }
 
     return (process->program() + QLatin1Char(' ') + process->arguments().join(QLatin1Char(' ')));
 }
@@ -101,21 +111,28 @@ QString CommandTask::getCommandLine()
 QString CommandTask::getProcessError()
 {
     if (isAbortedFlag)
+    {
         return i18n("<b>Canceled</b>");
+    }
 
     if (process.isNull())
+    {
         return QString();
+    }
 
-    return (i18n("<b>Cannot run <i>%1</i>:</b><p>%2</p>",
+    return (
+            i18n("<b>Cannot run <i>%1</i>:</b><p>%2</p>",
                  getProgram(),
-                 output.toHtmlEscaped().replace(QLatin1Char('\n'), QLatin1String("<br />"))));
+                 output.toHtmlEscaped().replace(QLatin1Char('\n'), QLatin1String("<br />")))
+           );
 }
 
 void CommandTask::printDebug(const QString& binaryName)
 {
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << binaryName << "command line: " << getCommandLine();
-    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << binaryName << "output:" << endl << qPrintable(QLatin1String(" >>\t") +
-                                                                       output.replace(QLatin1Char('\n'), QLatin1String("\n >>\t")));
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << binaryName << "output:" << endl
+                                         << qPrintable(QLatin1String(" >>\t") +
+                                            output.replace(QLatin1Char('\n'), QLatin1String("\n >>\t")));
 }
 
 } // namespace DigikamGenericPanoramaPlugin

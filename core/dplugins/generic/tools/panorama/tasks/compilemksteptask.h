@@ -45,11 +45,11 @@ public:
 
 public:
 
-    const int                           id;
+    const int     id;
 
 protected:
 
-    void run(ThreadWeaver::JobPointer self, ThreadWeaver::Thread *thread) override;
+    void run(ThreadWeaver::JobPointer self, ThreadWeaver::Thread* thread) override;
 
 private:
 

@@ -33,7 +33,10 @@
 namespace DigikamGenericPanoramaPlugin
 {
 
-CreateFinalPtoTask::CreateFinalPtoTask(const QString& workDirPath, QSharedPointer<const PTOType> ptoData, QUrl& finalPtoUrl, const QRect& crop)
+CreateFinalPtoTask::CreateFinalPtoTask(const QString& workDirPath,
+                                       QSharedPointer<const PTOType> ptoData,
+                                       QUrl& finalPtoUrl,
+                                       const QRect& crop)
     : PanoTask(PANO_CREATEFINALPTO, workDirPath),
       ptoData(*ptoData),
       finalPtoUrl(finalPtoUrl),
