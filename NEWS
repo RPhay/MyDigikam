@@ -642,4 +642,5 @@ BUGFIXES:
 624 ==> 417887 - Need Windows admin rights in order to see selected file list in Geolocation editor.
 625 ==> 417797 - Batch video timestamp changing fails.
 626 ==> 418056 - Not possible to filter for "no labels".
-627 ==> 
+627 ==> 418022 - Difficulty in organizing tags if tags not visible in tag manager window.
+628 ==> 
