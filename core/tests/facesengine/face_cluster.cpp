@@ -257,7 +257,7 @@ void verifyClusteringResults(const std::vector<int>& clusteredIndices,
             visited[indice]            = minDist;
             std::set<int> lastVisitSet = lastVisit[indice];
             std::set<int> newVisitSet;
-            std::set_symmetric_difference(refSet.begin(), refSet.end(), similarSet.begin(), similarSet.end(), 
+            std::set_symmetric_difference(refSet.begin(), refSet.end(), similarSet.begin(), similarSet.end(),
                                           std::inserter(newVisitSet, newVisitSet.begin()));
 
             for (int elm: lastVisitSet)
@@ -270,7 +270,7 @@ void verifyClusteringResults(const std::vector<int>& clusteredIndices,
         }
         else
         {
-            std::set_intersection(refSet.begin(), refSet.end(), similarSet.begin(), similarSet.end(), 
+            std::set_intersection(refSet.begin(), refSet.end(), similarSet.begin(), similarSet.end(),
                                   std::inserter(falsePositivePoints, falsePositivePoints.begin()));
         }
     }

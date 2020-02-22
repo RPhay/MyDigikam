@@ -37,7 +37,7 @@ class PrintTagsListTest : public AbstractUnitTest
     Q_OBJECT
 
 private:
-    
+
     void parseTagsList(const DMetadata::TagsMap& tags);
 
 private Q_SLOTS:

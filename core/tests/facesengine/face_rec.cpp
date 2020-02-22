@@ -486,8 +486,8 @@ int main(int argc, char* argv[])
     }
 
     unsigned nbUndetectedTrainedFaces = undetectedTrainedFaces.size();
-    qDebug() << "\n" << nbUndetectedTrainedFaces << " / " << totalTrained + nbUndetectedTrainedFaces 
-             << " (" << float(nbUndetectedTrainedFaces) / (totalTrained + nbUndetectedTrainedFaces) * 100 << "%)" 
+    qDebug() << "\n" << nbUndetectedTrainedFaces << " / " << totalTrained + nbUndetectedTrainedFaces
+             << " (" << float(nbUndetectedTrainedFaces) / (totalTrained + nbUndetectedTrainedFaces) * 100 << "%)"
              << " faces cannot be detected for training";
 
     foreach (const QString& path, undetectedTrainedFaces)
@@ -503,8 +503,8 @@ int main(int argc, char* argv[])
     }
 
     unsigned nbUndetectedTestedFaces = undetectedTestedFaces.size();
-    qDebug() << "\n" << nbUndetectedTestedFaces << " / " << totalRecognized + nbUndetectedTestedFaces 
-             << " (" << float(nbUndetectedTestedFaces) / (totalRecognized + nbUndetectedTestedFaces) * 100 << "%)" 
+    qDebug() << "\n" << nbUndetectedTestedFaces << " / " << totalRecognized + nbUndetectedTestedFaces
+             << " (" << float(nbUndetectedTestedFaces) / (totalRecognized + nbUndetectedTestedFaces) * 100 << "%)"
              << " faces cannot be detected for testing";
 
     foreach (const QString& path, undetectedTestedFaces)

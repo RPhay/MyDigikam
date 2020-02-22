@@ -80,7 +80,7 @@ void CreateXmpSidecarTest::createXmpSidecar(const QString& file,
     QFile sidecar(pathXmp);
     ret = sidecar.exists();
     QVERIFY(ret);
-    
+
     qDebug() << "Sidecar" << pathXmp << "size :" << sidecar.size();
 
     // Check if xmp sidecar are created and can be loaded

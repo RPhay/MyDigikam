@@ -45,7 +45,7 @@ void PatchPreviewTest::patchPreview(const QString& file, bool rescale, int maxDi
 {
     qDebug() << "File to process:" << file;
 
-    QString path = m_tempDir.filePath(QFileInfo(file).fileName().trimmed()) + 
+    QString path = m_tempDir.filePath(QFileInfo(file).fileName().trimmed()) +
                    QLatin1String(".jpg");
 
     qDebug() << "Temporary target file:" << path;
