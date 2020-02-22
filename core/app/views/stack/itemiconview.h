@@ -264,7 +264,7 @@ Q_SIGNALS:
     void signalAlbumSelected(Album*);
 
 private:
-    
+
     void changeAlbumFromHistory(const QList<Album*>& album, QWidget* const widget);
 
 private Q_SLOTS:
@@ -358,7 +358,7 @@ public:
     void imageTransform(MetaEngineRotation::TransformationAction transform);
 
 Q_SIGNALS:
-    
+
     void signalNoCurrentItem();
     void signalSelectionChanged(int numberOfSelectedItems);
     void signalTrashSelectionChanged(const QString& text);

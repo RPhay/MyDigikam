@@ -102,7 +102,7 @@ Q_SIGNALS:
      * that is active.
      */
     void requestActiveTab(SidebarWidget*);
-    
+
     /**
      * To dispatch error message to temporized pop-up notification widget hosted with icon-view.
      */

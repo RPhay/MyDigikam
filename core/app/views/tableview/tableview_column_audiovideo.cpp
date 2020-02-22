@@ -278,7 +278,7 @@ TableViewColumn::ColumnCompareResult ColumnAudioVideoProperties::compare(TableVi
 
         case SubColumnFrameRate:
         {
-            const QVariant variantA = s->tableViewModel->itemDatabaseFieldRaw(itemA, 
+            const QVariant variantA = s->tableViewModel->itemDatabaseFieldRaw(itemA,
                                       DatabaseFields::Set(DatabaseFields::FrameRate));
             const QVariant variantB = s->tableViewModel->itemDatabaseFieldRaw(itemB,
                                       DatabaseFields::Set(DatabaseFields::FrameRate));

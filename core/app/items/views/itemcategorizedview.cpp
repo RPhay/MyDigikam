@@ -283,7 +283,7 @@ void ItemCategorizedView::setItemDelegate(ItemDelegate* delegate)
 Album* ItemCategorizedView::currentAlbum() const
 {
     ItemAlbumModel* const albumModel = imageAlbumModel();
-    
+
     // TODO: Change to QList return type
 
     if (albumModel && !(albumModel->currentAlbums().isEmpty()))

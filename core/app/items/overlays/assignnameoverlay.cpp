@@ -380,7 +380,7 @@ bool AssignNameOverlay::eventFilter(QObject* o, QEvent* e)
             }
             break;
         }
-    
+
         default:
             break;
     }
