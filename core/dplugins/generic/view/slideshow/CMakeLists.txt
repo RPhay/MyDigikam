@@ -15,12 +15,24 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
                     $<TARGET_PROPERTY:KF5::I18n,INTERFACE_INCLUDE_DIRECTORIES>
 )
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/widgets)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/dialogs)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/common)
+
+#TODO: uncomment this when remove utilities/slideshow
+#include_directories(${CMAKE_CURRENT_SOURCE_DIR}/widgets)
 
 set(slideshowplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/slideshowplugin.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/slideshowmngr.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/setupslideshow_dialog.cpp
+    #${CMAKE_CURRENT_SOURCE_DIR}/common/slideshowloader.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/widgets/slidetoolbar.cpp
+    #${CMAKE_CURRENT_SOURCE_DIR}/widgets/slideproperties.cpp
+    #${CMAKE_CURRENT_SOURCE_DIR}/widgets/slideend.cpp
+    #${CMAKE_CURRENT_SOURCE_DIR}/widgets/slideerror.cpp
+    #${CMAKE_CURRENT_SOURCE_DIR}/widgets/slidehelp.cpp
+    #${CMAKE_CURRENT_SOURCE_DIR}/widgets/slideimage.cpp
+    #${CMAKE_CURRENT_SOURCE_DIR}/widgets/slideosd.cpp
 )
 
 DIGIKAM_ADD_GENERIC_PLUGIN(NAME    SlideShow
