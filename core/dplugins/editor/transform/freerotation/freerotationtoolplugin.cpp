@@ -114,7 +114,7 @@ void FreeRotationToolPlugin::setup(QObject* const parent)
     QAction* const autoAdjustAction = new QAction(i18n("Free Rotation Auto Adjust"), parent);
     autoAdjustAction->setObjectName(QLatin1String("editorwindow_transform_freerotation_autoadjust"));
     autoAdjustAction->setShortcut(Qt::CTRL + Qt::SHIFT + Qt::Key_R);
-    
+
     connect(autoAdjustAction, SIGNAL(triggered(bool)),
             this, SIGNAL(signalAutoAdjustAction()));
 }
@@ -127,7 +127,7 @@ void FreeRotationToolPlugin::slotFreeRotation()
     {
         FreeRotationTool* const tool = new FreeRotationTool(editor);
         tool->setPlugin(this);
-        
+
         connect(this, SIGNAL(signalPoint1Action()),
                 tool, SLOT(slotAutoAdjustP1Clicked()));
 
@@ -136,7 +136,7 @@ void FreeRotationToolPlugin::slotFreeRotation()
 
         connect(this, SIGNAL(signalAutoAdjustAction()),
                 tool, SLOT(slotAutoAdjustClicked()));
-        
+
         editor->loadTool(tool);
     }
 }

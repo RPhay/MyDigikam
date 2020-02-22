@@ -58,8 +58,8 @@ Q_SIGNALS:
 
     void signalPoint1Action();
     void signalPoint2Action();
-    void signalAutoAdjustAction();    
-    
+    void signalAutoAdjustAction();
+
 private Q_SLOTS:
 
     void slotFreeRotation();

@@ -44,7 +44,7 @@
 namespace DigikamEditorHotPixelsToolPlugin
 {
 
-class BlackFrameListViewItem : public QObject, 
+class BlackFrameListViewItem : public QObject,
                                public QTreeWidgetItem
 {
     Q_OBJECT
