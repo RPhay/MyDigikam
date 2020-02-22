@@ -71,13 +71,17 @@ public:
         group(config.group("Panorama Settings"))
     {
         gPano    = group.readEntry("GPano", false);
-//      hdr      = group.readEntry("HDR", false);
+/*
+        hdr      = group.readEntry("HDR", false);
+*/
         fileType = (PanoramaFileType) group.readEntry("File Type", (int) JPEG);
     }
 
     ~Private()
     {
-//      group.writeEntry("HDR", hdr);
+/*
+        group.writeEntry("HDR", hdr);
+*/
         group.writeEntry("GPano", gPano);
         group.writeEntry("File Type", (int) fileType);
         config.sync();
@@ -107,7 +111,9 @@ public:
 
     bool                           hugin2015;
     bool                           gPano;
-//     bool                           hdr;
+/*
+    bool                           hdr;
+*/
 
     PanoramaFileType               fileType;
 
@@ -217,15 +223,17 @@ bool PanoManager::gPano() const
     return d->gPano;
 }
 
-// void PanoManager::setHDR(bool hdr)
-// {
-//     d->hdr = hdr;
-// }
-//
-// bool PanoManager::hdr() const
-// {
-//     return d->hdr;
-// }
+/*
+void PanoManager::setHDR(bool hdr)
+{
+    d->hdr = hdr;
+}
+
+bool PanoManager::hdr() const
+{
+    return d->hdr;
+}
+*/
 
 void PanoManager::setFileFormatJPEG()
 {
@@ -306,7 +314,9 @@ QSharedPointer<PTOType> PanoManager::basePtoData()
         d->basePtoData = QSharedPointer<PTOType>(file.getPTO());
 
         if (d->basePtoData.isNull())
+        {
             d->basePtoData = QSharedPointer<PTOType>(new PTOType(cpFindBinary().version()));
+        }
     }
 
     return d->basePtoData;
@@ -340,7 +350,9 @@ QSharedPointer<PTOType> PanoManager::cpFindPtoData()
         d->cpFindPtoData = QSharedPointer<PTOType>(file.getPTO());
 
         if (d->cpFindPtoData.isNull())
+        {
             d->cpFindPtoData = QSharedPointer<PTOType>(new PTOType(cpFindBinary().version()));
+        }
     }
 
     return d->cpFindPtoData;
@@ -374,7 +386,9 @@ QSharedPointer<PTOType> PanoManager::cpCleanPtoData()
         d->cpCleanPtoData = QSharedPointer<PTOType>(file.getPTO());
 
         if (d->cpCleanPtoData.isNull())
+        {
             d->cpCleanPtoData = QSharedPointer<PTOType>(new PTOType(cpFindBinary().version()));
+        }
     }
 
     return d->cpCleanPtoData;
@@ -408,7 +422,9 @@ QSharedPointer<PTOType> PanoManager::autoOptimisePtoData()
         d->autoOptimisePtoData = QSharedPointer<PTOType>(file.getPTO());
 
         if (d->autoOptimisePtoData.isNull())
+        {
             d->autoOptimisePtoData = QSharedPointer<PTOType>(new PTOType(cpFindBinary().version()));
+        }
     }
 
     return d->autoOptimisePtoData;
@@ -442,7 +458,9 @@ QSharedPointer<PTOType> PanoManager::viewAndCropOptimisePtoData()
         d->viewAndCropOptimisePtoData = QSharedPointer<PTOType>(file.getPTO());
 
         if (d->viewAndCropOptimisePtoData.isNull())
+        {
             d->viewAndCropOptimisePtoData = QSharedPointer<PTOType>(new PTOType(cpFindBinary().version()));
+        }
     }
 
     return d->viewAndCropOptimisePtoData;
@@ -476,7 +494,9 @@ QSharedPointer<PTOType> PanoManager::previewPtoData()
         d->previewPtoData = QSharedPointer<PTOType>(file.getPTO());
 
         if (d->previewPtoData.isNull())
+        {
             d->previewPtoData = QSharedPointer<PTOType>(new PTOType(cpFindBinary().version()));
+        }
     }
 
     return d->previewPtoData;
@@ -510,7 +530,9 @@ QSharedPointer<PTOType> PanoManager::panoPtoData()
         d->panoPtoData = QSharedPointer<PTOType>(file.getPTO());
 
         if (d->panoPtoData.isNull())
+        {
             d->panoPtoData = QSharedPointer<PTOType>(new PTOType(cpFindBinary().version()));
+        }
     }
 
     return d->panoPtoData;
