@@ -82,7 +82,7 @@ public:
 
     bool addPhotoInit(const QString& imgPath);
     bool addPhotoAppend(const QString& mediaId, int segmentIndex=0);
-    bool addPhotoFinalize(const QString& mediaId); 
+    bool addPhotoFinalize(const QString& mediaId);
 
 Q_SIGNALS:
 

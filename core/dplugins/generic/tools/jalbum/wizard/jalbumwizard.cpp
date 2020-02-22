@@ -80,7 +80,7 @@ JAlbumWizard::JAlbumWizard(QWidget* const parent, DInfoInterface* const iface)
     setWindowTitle(i18n("Create jAlbum Album"));
 
     d->settings          = new JAlbumSettings(iface);
-    
+
     KConfig config;
     KConfigGroup group   = config.group("jAlbum tool");
     d->settings->readSettings(group);

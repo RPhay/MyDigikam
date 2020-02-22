@@ -103,7 +103,7 @@ bool FbMPForm::addFile(const QString& name, const QString& path)
     if (mime.isEmpty())
         return false;
 
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "mime = " << mime.toLatin1(); 
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "mime = " << mime.toLatin1();
 
     QFile imageFile(path);
 

@@ -129,7 +129,7 @@ bool GLViewerTexture::load(const QString& fn, const QSize& size)
     loadInternal();
     reset();
     d->rotate_idx = 0;
-    
+
     return true;
 }
 

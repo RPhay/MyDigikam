@@ -267,7 +267,7 @@ void DSWidget::slotCompletePackageNameFinished(QNetworkReply* reply)
 
 void DSWidget::slotFindVersionsForPackage(const QString& package)
 {
-    QUrl sdnVersionUrl(DigikamGenericDebianScreenshotsPlugin::debshotsUrl + 
+    QUrl sdnVersionUrl(DigikamGenericDebianScreenshotsPlugin::debshotsUrl +
                        QLatin1String("/packages/ajax_get_version_for_package")); // DOES RETURN JSON
     QUrlQuery query(sdnVersionUrl);
     query.addQueryItem(QLatin1String("q"),     QString::fromUtf8(QUrl::toPercentEncoding(package)));

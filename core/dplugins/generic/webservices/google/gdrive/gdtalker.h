@@ -75,7 +75,7 @@ private Q_SLOTS:
 
     void slotFinished(QNetworkReply* reply);
     void slotUploadPhoto();
-    
+
 private:
 
     void parseResponseListFolders(const QByteArray& data);

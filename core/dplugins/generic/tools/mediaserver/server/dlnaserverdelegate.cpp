@@ -324,7 +324,7 @@ NPT_Result DLNAMediaServerDelegate::OnBrowseDirectChildren(PLT_ActionReference& 
 
     // 0 means we don't know how many we have but most browsers don't like that!!
 
-    NPT_CHECK_SEVERE(action->SetArgumentValue("TotalMatches",   NPT_String::FromInteger(total_matches))); 
+    NPT_CHECK_SEVERE(action->SetArgumentValue("TotalMatches",   NPT_String::FromInteger(total_matches)));
 
     NPT_CHECK_SEVERE(action->SetArgumentValue("UpdateId",       "1"));
 
@@ -767,7 +767,7 @@ NPT_Result DLNAMediaServerDelegate::ServeFile(const NPT_HttpRequest&        requ
     {
         date.ToTimeStamp(timestamp);
 
-        NPT_LOG_INFO_5("File %s timestamps: request=%d (%s) vs file=%d (%s)", 
+        NPT_LOG_INFO_5("File %s timestamps: request=%d (%s) vs file=%d (%s)",
                        (const char*)request.GetUrl().GetPath(),
                        (NPT_UInt32)timestamp.ToSeconds(),
                        (const char*)date.ToString(),

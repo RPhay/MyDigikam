@@ -62,7 +62,7 @@ public:
     // Read and write settings in config file between sessions.
     void  readSettings(KConfigGroup& group);
     void  writeSettings(KConfigGroup& group);
-    
+
 public:
 
     QString                   m_destPath;

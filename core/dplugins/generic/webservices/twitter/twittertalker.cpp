@@ -361,7 +361,7 @@ bool TwTalker::addPhoto(const QString& imgPath,
 
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << imgFileInfo.suffix();
 
-    if ((imgFileInfo.suffix() != QLatin1String("gif")) && 
+    if ((imgFileInfo.suffix() != QLatin1String("gif")) &&
         (imgFileInfo.suffix() != QLatin1String("mp4")))
     {
         QImage image     = PreviewLoadThread::loadHighQualitySynchronously(imgPath).copyQImage();
@@ -824,7 +824,7 @@ void TwTalker::parseResponseAddPhotoFinalize(const QByteArray& data)
 
         if (state == QLatin1String("pending"))
         {
-            QTimer::singleShot(processingInfo.toObject()[QLatin1String("check_after_secs")].toInt()*1000 /*msec*/, 
+            QTimer::singleShot(processingInfo.toObject()[QLatin1String("check_after_secs")].toInt()*1000 /*msec*/,
                                this, SLOT(slotCheckUploadStatus()));
         }
     }
@@ -862,9 +862,9 @@ void TwTalker::parseCheckUploadStatus(const QByteArray& data)
         QJsonObject error = processingInfo[QLatin1String("error")].toObject();
         emit signalBusy(false);
         emit signalAddPhotoFailed(i18n("Failed to upload photo\n"
-                                       "Code: %1, name: %2, message: %3", 
-                                       QString::number(error[QLatin1String("code")].toInt()), 
-                                       error[QLatin1String("name")].toString(), 
+                                       "Code: %1, name: %2, message: %3",
+                                       QString::number(error[QLatin1String("code")].toInt()),
+                                       error[QLatin1String("name")].toString(),
                                        error[QLatin1String("message")].toString()));
         return;
     }

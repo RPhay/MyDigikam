@@ -374,7 +374,7 @@ public:
             return false;
         }
 
-        QString destFileName = QDir::toNativeSeparators(info->destUrl().toLocalFile() + 
+        QString destFileName = QDir::toNativeSeparators(info->destUrl().toLocalFile() +
                                                         QLatin1String("/index.html"));
 
         if (xsltSaveResultToFilename(destFileName.toUtf8().data(), xmlOutput, xslt, 0) == -1)

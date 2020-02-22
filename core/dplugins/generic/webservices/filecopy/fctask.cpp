@@ -114,7 +114,7 @@ void FCTask::run()
              (d->behavior == RelativeSymLink))
     {
 #ifdef Q_OS_WIN
-        dest.setPath(dest.path() + QLatin1String(".lnk")); 
+        dest.setPath(dest.path() + QLatin1String(".lnk"));
 #endif
 
         if (d->behavior == FullSymLink)

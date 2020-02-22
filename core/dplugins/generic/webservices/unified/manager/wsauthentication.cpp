@@ -391,13 +391,13 @@ void WSAuthentication::slotListAlbumsDone(int errCode, const QString& errMsg, co
         albumDebug.append(QString::fromLatin1("%1: %2\n").arg(album.id).arg(album.title));
     }
 
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Received albums (errCode = " << errCode << ", errMsg = " 
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Received albums (errCode = " << errCode << ", errMsg = "
                                      << errMsg << "): " << albumDebug;
 
     if (errCode != 0)
     {
         QMessageBox::critical(QApplication::activeWindow(),
-                              i18n("%1 Call Failed",  d->serviceName), 
+                              i18n("%1 Call Failed",  d->serviceName),
                               i18n("Code: %1. %2", errCode, errMsg));
         return;
     }

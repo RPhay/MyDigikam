@@ -71,7 +71,7 @@ DSWindow::DSWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
     setWindowIcon(QIcon::fromTheme(QLatin1String("dk-debianscreenshots")));
     setModal(false);
     setWindowTitle(i18n("Export to Debian Screenshots"));
-    
+
     startButton()->setText(i18n("Start Upload"));
     startButton()->setToolTip(i18n("Start upload to Debian Screenshots web service"));
     startButton()->setEnabled(false); // Disable until package and version data have been fulfilled
@@ -92,7 +92,7 @@ DSWindow::DSWindow(DInfoInterface* const iface, QWidget* const /*parent*/)
 
     connect(m_talker, SIGNAL(signalAddScreenshotDone(int,QString)),
             this, SLOT(slotAddScreenshotDone(int,QString)));
-    
+
     connect(m_buttons, SIGNAL(clicked(QAbstractButton*)),
             this, SLOT(slotButtonClicked(QAbstractButton*)));
 }

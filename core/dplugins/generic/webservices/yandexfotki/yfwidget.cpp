@@ -140,20 +140,20 @@ QCheckBox* YFWidget::hideOriginalCB() const
 {
     return d->hideOriginalCheck;
 }
-    
+
 QCheckBox* YFWidget::disableCommentsCB() const
 {
     return d->disableCommentsCheck;
 }
-    
+
 QCheckBox* YFWidget::adultCB() const
 {
     return d->adultCheck;
 }
-    
+
 QButtonGroup* YFWidget::policyGB() const
 {
     return d->policyGroup;
 }
-    
+
 } // namespace DigikamGenericYFPlugin

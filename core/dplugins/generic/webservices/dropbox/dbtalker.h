@@ -72,7 +72,7 @@ private Q_SLOTS:
 
     void slotLinkingFailed();
     void slotLinkingSucceeded();
-    void slotOpenBrowser(const QUrl& url); 
+    void slotOpenBrowser(const QUrl& url);
     void slotFinished(QNetworkReply* reply);
 
 private:

@@ -104,7 +104,7 @@ bool DSMPForm::addFile(const QString& fileName, const QString& path, const QStri
     if (mime.isEmpty())
         return false;
 
-    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "mime = " << mime.toLatin1(); 
+    qCDebug(DIGIKAM_WEBSERVICES_LOG) << "mime = " << mime.toLatin1();
 
     QFile imageFile(path);
 

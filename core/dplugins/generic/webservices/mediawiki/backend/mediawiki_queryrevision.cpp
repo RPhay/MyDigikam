@@ -269,7 +269,7 @@ void QueryRevision::doWorkSendRequest()
     d->reply = d->manager->get(request);
     connectReply();
 
-    connect(d->reply, SIGNAL(finished()), 
+    connect(d->reply, SIGNAL(finished()),
             this, SLOT(doWorkProcessReply()));
 
     setPercent(50); // Request sent.

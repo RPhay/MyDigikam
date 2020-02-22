@@ -147,7 +147,7 @@ void QueryInfo::doWorkProcessReply()
 {
     Q_D(QueryInfo);
 
-    disconnect(d->reply, SIGNAL(finished()), 
+    disconnect(d->reply, SIGNAL(finished()),
                this, SLOT(doWorkProcessReply()));
 
     if (d->reply->error() == QNetworkReply::NoError)

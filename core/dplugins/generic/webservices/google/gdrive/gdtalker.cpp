@@ -111,7 +111,7 @@ public:
 };
 
 GDTalker::GDTalker(QWidget* const parent)
-    : GSTalkerBase(parent, QStringList(QLatin1String("https://www.googleapis.com/auth/drive")), QLatin1String("GoogleDrive")), 
+    : GSTalkerBase(parent, QStringList(QLatin1String("https://www.googleapis.com/auth/drive")), QLatin1String("GoogleDrive")),
       d(new Private)
 {
     d->netMngr = new QNetworkAccessManager(this);

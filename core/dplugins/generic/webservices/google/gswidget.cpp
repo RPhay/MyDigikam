@@ -89,7 +89,7 @@ GSWidget::GSWidget(QWidget* const parent,
             getOptionsBox()->hide();
             imagesList()->hide();
             leafBox->hide();
-            getSizeBox()->hide(); // (Trung) Hide this option temporary, until factorization 
+            getSizeBox()->hide(); // (Trung) Hide this option temporary, until factorization
             break;
 
         case GoogleService::GDrive:

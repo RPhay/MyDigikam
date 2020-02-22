@@ -129,7 +129,7 @@ void QuerySiteinfoUsergroups::doWorkProcessReply()
                 if (reader.name() == QLatin1String("group"))
                 {
                     name = reader.attributes().value(QStringLiteral("name")).toString();
-    
+
                     if (d->includeNumber)
                     {
                         number = reader.attributes().value(QStringLiteral("number")).toString().toUInt();

@@ -68,7 +68,7 @@ public:
         image           = nullptr;
     }
 
-    /* API key and secret 
+    /* API key and secret
      */
     QString                   client_id;
     QString                   client_secret;
@@ -266,7 +266,7 @@ void ImgurTalker::slotReplyFinished()
     {
         if (code == 403)
         {
-            /* HTTP 403 Forbidden -> Invalid token? 
+            /* HTTP 403 Forbidden -> Invalid token?
              * That needs to be handled internally, so don't emit signalProgress
              * and keep the action in the queue for later retries.
              */

@@ -1043,7 +1043,7 @@ void GSWindow::slotAddPhotoDone(int err, const QString& msg)
     else
     {
         /**
-         * (Trung) Take first item out of transferQueue and append to uploadQueue, 
+         * (Trung) Take first item out of transferQueue and append to uploadQueue,
          * in order to use it again to write id in slotUploadPhotoDone
          */
         QPair<QUrl, GSPhoto> item = d->transferQueue.first();
@@ -1252,7 +1252,7 @@ void GSWindow::slotUserChangeRequest()
         /**
          * We do not force user to logout from their account
          * We simply unlink user account and direct use to login page to login new account
-         * (In the future, we may not unlink() user, but let them change account and 
+         * (In the future, we may not unlink() user, but let them change account and
          * choose which one they want to use)
          * After unlink(), waiting actively until O2 completely unlink() account, before doOAuth() again
          */

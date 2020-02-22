@@ -5,7 +5,7 @@
  *
  * Date        : 2017-06-27
  * Description : page visualizing photos user choosing to upload and
- *               user albums list to upload photos to. Creating new album 
+ *               user albums list to upload photos to. Creating new album
  *               is also available on this page.
  *
  * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
