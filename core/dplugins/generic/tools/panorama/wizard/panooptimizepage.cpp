@@ -68,9 +68,13 @@ public:
         optimisationDone(false),
         canceled(false),
         title(nullptr),
-//      preprocessResults(0),
+/*
+        preprocessResults(0),
+*/
         horizonCheckbox(nullptr),
-//      projectionAndSizeCheckbox(0),
+/*
+        projectionAndSizeCheckbox(0),
+*/
         detailsText(nullptr),
         progressPix(DWorkingPixmap()),
         mngr(nullptr)
@@ -80,16 +84,18 @@ public:
     int                        progressCount;
     QLabel*                    progressLabel;
     QTimer*                    progressTimer;
-    QMutex                     progressMutex;      // This is a precaution in case the user does a back / next action at the wrong moment
+    QMutex                     progressMutex;      ///< This is a precaution in case the user does a back / next action at the wrong moment
     bool                       optimisationDone;
     bool                       canceled;
 
     QLabel*                    title;
-//  QLabel*                    preprocessResults;
-
+/*
+    QLabel*                    preprocessResults;
+*/
     QCheckBox*                 horizonCheckbox;
-//  QCheckBox*                 projectionAndSizeCheckboxs;
-
+/*
+    QCheckBox*                 projectionAndSizeCheckboxs;
+*/
     QTextBrowser*              detailsText;
 
     DWorkingPixmap             progressPix;
@@ -139,11 +145,13 @@ PanoOptimizePage::PanoOptimizePage(PanoManager* const mngr, QWizard* const dlg)
     }
 */
 
-//  d->preprocessResults            = new QLabel(vbox);
+/*
+    d->preprocessResults    = new QLabel(vbox);
+*/
 
     vbox->setStretchFactor(new QWidget(vbox), 2);
 
-    d->detailsText    = new QTextBrowser(vbox);
+    d->detailsText          = new QTextBrowser(vbox);
     d->detailsText->hide();
 
     vbox->setStretchFactor(new QWidget(vbox), 2);
@@ -167,7 +175,9 @@ PanoOptimizePage::~PanoOptimizePage()
     KConfig config;
     KConfigGroup group = config.group("Panorama Settings");
     group.writeEntry("Horizon", d->horizonCheckbox->isChecked());
-//  group.writeEntry("Output Projection And Size", d->projectionAndSizeCheckbox->isChecked());
+/*
+    group.writeEntry("Output Projection And Size", d->projectionAndSizeCheckbox->isChecked());
+*/
     config.sync();
 
     delete d;
@@ -182,7 +192,9 @@ void PanoOptimizePage::process()
                            "<p>This can take a while...</p>"
                            "</qt>"));
     d->horizonCheckbox->hide();
-//  d->projectionAndSizeCheckbox->hide();
+/*
+    d->projectionAndSizeCheckbox->hide();
+*/
     d->progressTimer->start(300);
 
     connect(d->mngr->thread(), SIGNAL(stepFinished(DigikamGenericPanoramaPlugin::PanoActionData)),
@@ -216,13 +228,16 @@ void PanoOptimizePage::initializePage()
                            d->mngr->autoOptimiserBinary().url().url(),
                            d->mngr->autoOptimiserBinary().projectName()));
 
-//  QPair<double, int> result = d->mngr->cpFindUrlData().standardDeviation();
-//  d->preprocessResults->setText(i18n("Alignment error: %1px", result.first / ((double) result.second)));
+/*
+    QPair<double, int> result = d->mngr->cpFindUrlData().standardDeviation();
+    d->preprocessResults->setText(i18n("Alignment error: %1px", result.first / ((double) result.second)));
+*/
     d->detailsText->hide();
     d->horizonCheckbox->show();
-//  d->projectionAndSizeCheckbox->show();
-
-    d->canceled = false;
+/*
+    d->projectionAndSizeCheckbox->show();
+*/
+    d->canceled         = false;
     d->optimisationDone = false;
 
     setComplete(true);
@@ -232,7 +247,9 @@ void PanoOptimizePage::initializePage()
 bool PanoOptimizePage::validatePage()
 {
     if (d->optimisationDone)
+    {
         return true;
+    }
 
     setComplete(false);
     process();
@@ -312,7 +329,9 @@ void PanoOptimizePage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAc
                                                "</qt>"));
                         d->progressTimer->stop();
                         d->horizonCheckbox->hide();
-//                      d->projectionAndSizeCheckbox->hide();
+/*
+                        d->projectionAndSizeCheckbox->hide();
+*/
                         d->detailsText->show();
                         d->progressLabel->clear();
                         d->detailsText->setText(ad.message);
@@ -320,8 +339,10 @@ void PanoOptimizePage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAc
                         setComplete(false);
                         emit completeChanged();
                     }
+
                     break;
                 }
+
                 default:
                 {
                     qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action (optimize) " << ad.action;
@@ -337,6 +358,7 @@ void PanoOptimizePage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAc
                 {
                     return;
                 }
+
                 case PANO_AUTOCROP:
                 {
                     disconnect(d->mngr->thread(), SIGNAL(stepFinished(DigikamGenericPanoramaPlugin::PanoActionData)),
@@ -354,6 +376,7 @@ void PanoOptimizePage::slotPanoAction(const DigikamGenericPanoramaPlugin::PanoAc
 
                     break;
                 }
+
                 default:
                 {
                     qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action (optimize) " << ad.action;

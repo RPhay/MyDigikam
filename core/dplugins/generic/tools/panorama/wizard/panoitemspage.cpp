@@ -55,7 +55,7 @@ public:
     {
     }
 
-    DItemsList* list;
+    DItemsList*  list;
 
     PanoManager* mngr;
 };

@@ -62,11 +62,13 @@ public:
 
     explicit Private(PanoManager* const m)
         : mngr(m),
-//        addGPlusMetadataCheckBox(0),
-
+/*
+          addGPlusMetadataCheckBox(0),
+*/
+/*
           // TODO HDR
-//        hdrCheckBox(0),
-
+          hdrCheckBox(0),
+*/
           formatGroupBox(nullptr),
           settingsGroupBox(nullptr),
           jpegRadioButton(nullptr),
@@ -77,12 +79,13 @@ public:
     }
 
     PanoManager*        mngr;
-
-//  QCheckBox*      addGPlusMetadataCheckBox;
-
+/*
+    QCheckBox*      addGPlusMetadataCheckBox;
+*/
+/*
     // TODO HDR
-//  QCheckBox*      hdrCheckBox;
-
+    QCheckBox*      hdrCheckBox;
+*/
     QGroupBox*      formatGroupBox;
     QGroupBox*      settingsGroupBox;
     QRadioButton*   jpegRadioButton;
@@ -138,23 +141,30 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
     d->mngr->checkBinaries();
 
 #ifdef Q_OS_OSX
+
     // Hugin bundle PKG install
+
     d->binariesWidget->addDirectory(QLatin1String("/Applications/Hugin/HuginTools"));
     d->binariesWidget->addDirectory(QLatin1String("/Applications/Hugin/Hugin.app/Contents/MacOS"));
     d->binariesWidget->addDirectory(QLatin1String("/Applications/Hugin/tools_mac"));
 
     // Std Macports install
+
     d->binariesWidget->addDirectory(QLatin1String("/opt/local/bin"));
 
     // digiKam Bundle PKG install
+
     d->binariesWidget->addDirectory(QLatin1String("/opt/digikam/bin"));
+
 #endif
 
 #ifdef Q_OS_WIN
+
     d->binariesWidget->addDirectory(QLatin1String("C:/Program Files/Hugin/bin"));
     d->binariesWidget->addDirectory(QLatin1String("C:/Program Files (x86)/Hugin/bin"));
     d->binariesWidget->addDirectory(QLatin1String("C:/Program Files/GnuWin32/bin"));
     d->binariesWidget->addDirectory(QLatin1String("C:/Program Files (x86)/GnuWin32/bin"));
+
 #endif
 
 /*
@@ -177,7 +187,9 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
     QButtonGroup* const group     = new QButtonGroup();
 
     d->jpegRadioButton            = new QRadioButton(i18nc("@option:radio", "JPEG output"), d->formatGroupBox);
+
     // The following comment is to get the next string extracted for translation
+
     // xgettext: no-c-format
     d->jpegRadioButton->setToolTip(i18nc("@info:tooltip", "Selects a JPEG output with 90% compression rate "
                                          "(lossy compression, smaller size)."));
@@ -195,8 +207,8 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
     formatVBox->addWidget(d->tiffRadioButton);
     group->addButton(d->tiffRadioButton);
 
-    // TODO HDR
 /*
+    // TODO HDR
     d->hdrRadioButton           = new QRadioButton(i18nc("@option:radio", "HDR output"), d->formatGroupBox);
     d->hdrRadioButton->setToolTip(i18nc("@info:tooltip", "Selects an High Dynamic Range (HDR) image, that can be processed further "
                                         "with a dedicated software."));
@@ -213,12 +225,16 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
         case JPEG:
             d->jpegRadioButton->setChecked(true);
             break;
+
         case TIFF:
             d->tiffRadioButton->setChecked(true);
             break;
+
         case HDR:
+/*
             // TODO HDR
-//             d->hdrRadioButton->setChecked(true);
+            d->hdrRadioButton->setChecked(true);
+*/
             break;
     }
 
@@ -240,9 +256,10 @@ PanoIntroPage::PanoIntroPage(PanoManager* const mngr, QWizard* const dlg)
 
     connect(d->binariesWidget, SIGNAL(signalBinariesFound(bool)),
             this, SLOT(slotBinariesChanged(bool)));
-
+/*
     // TODO HDR
-//   d->hdrCheckBox->setChecked(d->mngr->hdr());
+     d->hdrCheckBox->setChecked(d->mngr->hdr());
+*/
 }
 
 PanoIntroPage::~PanoIntroPage()
@@ -262,12 +279,18 @@ void PanoIntroPage::slotToggleGPano(int state)
 
 void PanoIntroPage::slotChangeFileFormat(QAbstractButton* button)
 {
-    if (button == d->jpegRadioButton)
+    if      (button == d->jpegRadioButton)
+    {
         d->mngr->setFileFormatJPEG();
+    }
     else if (button == d->tiffRadioButton)
+    {
         d->mngr->setFileFormatTIFF();
+    }
     else if (button == d->hdrRadioButton)
+    {
         d->mngr->setFileFormatHDR();
+    }
 }
 
 void PanoIntroPage::slotBinariesChanged(bool found)
@@ -276,11 +299,12 @@ void PanoIntroPage::slotBinariesChanged(bool found)
     emit completeChanged();
 }
 
-    // TODO HDR
 /*
+// TODO HDR
 void PanoIntroPage::slotShowFileFormat(int state)
 {
     d->mngr->setHDR(state);
+
     if (state)
     {
         d->formatGroupBox->setEnabled(false);

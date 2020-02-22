@@ -39,8 +39,7 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QTextBrowser>
-
-// #include <QList>
+#include <QList>
 
 // KDE includes
 
@@ -83,7 +82,7 @@ public:
     int                        progressCount;
     QLabel*                    progressLabel;
     QTimer*                    progressTimer;
-    QMutex                     progressMutex;      // This is a precaution in case the user does a back / next action at the wrong moment
+    QMutex                     progressMutex;      ///< This is a precaution in case the user does a back / next action at the wrong moment
     bool                       preprocessingDone;
     bool                       canceled;
 
@@ -113,9 +112,9 @@ PanoPreProcessPage::PanoPreProcessPage(PanoManager* const mngr, QWizard* const d
     d->title->setOpenExternalLinks(true);
 
     KConfig config;
-    KConfigGroup group  = config.group("Panorama Settings");
+    KConfigGroup group      = config.group("Panorama Settings");
 
-    d->celesteCheckBox  = new QCheckBox(i18nc("@option:check", "Detect moving skies"), vbox);
+    d->celesteCheckBox      = new QCheckBox(i18nc("@option:check", "Detect moving skies"), vbox);
     d->celesteCheckBox->setChecked(group.readEntry("Celeste", false));
     d->celesteCheckBox->setToolTip(i18nc("@info:tooltip", "Automatic detection of clouds to prevent wrong keypoints matching "
                                          "between images due to moving clouds."));
@@ -125,12 +124,12 @@ PanoPreProcessPage::PanoPreProcessPage(PanoManager* const mngr, QWizard* const d
                                            "process."));
     vbox->setStretchFactor(new QWidget(vbox), 2);
 
-    d->detailsText    = new QTextBrowser(vbox);
+    d->detailsText          = new QTextBrowser(vbox);
     d->detailsText->hide();
 
     vbox->setStretchFactor(new QWidget(vbox), 2);
 
-    d->progressLabel = new QLabel(vbox);
+    d->progressLabel        = new QLabel(vbox);
     d->progressLabel->setAlignment(Qt::AlignCenter);
 
     vbox->setStretchFactor(new QWidget(vbox), 10);
@@ -171,9 +170,9 @@ void PanoPreProcessPage::process()
 
     connect(d->mngr->thread(), SIGNAL(jobCollectionFinished(DigikamGenericPanoramaPlugin::PanoActionData)),
             this, SLOT(slotPanoAction(DigikamGenericPanoramaPlugin::PanoActionData)));
-
-//  d->nbFilesProcessed = 0;
-
+/*
+    d->nbFilesProcessed = 0;
+*/
     d->mngr->resetBasePto();
     d->mngr->resetCpFindPto();
     d->mngr->resetCpCleanPto();
@@ -184,7 +183,9 @@ void PanoPreProcessPage::process()
                                        d->mngr->cpFindPtoUrl(),
                                        d->mngr->cpCleanPtoUrl(),
                                        d->celesteCheckBox->isChecked(),
-//                                     d->mngr->hdr(),
+/*
+                                       d->mngr->hdr(),
+*/
                                        d->mngr->format(),
                                        d->mngr->gPano(),
                                        d->mngr->cpFindBinary().version(),
@@ -220,7 +221,9 @@ void PanoPreProcessPage::initializePage()
 bool PanoPreProcessPage::validatePage()
 {
     if (d->preprocessingDone)
+    {
         return true;
+    }
 
     setComplete(false);
     process();
@@ -311,6 +314,7 @@ void PanoPreProcessPage::slotPanoAction(const DigikamGenericPanoramaPlugin::Pano
                     }
                     break;
                 }
+
                 default:
                 {
                     qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action (preprocessing) " << ad.action;
@@ -324,18 +328,20 @@ void PanoPreProcessPage::slotPanoAction(const DigikamGenericPanoramaPlugin::Pano
             {
                 case PANO_PREPROCESS_INPUT:
                 {
-//                     QMutexLocker nbProcessed(&d->nbFilesProcessed_mutex);
-
-//                     d->nbFilesProcessed++;
-
+/*
+                    QMutexLocker nbProcessed(&d->nbFilesProcessed_mutex);
+                    d->nbFilesProcessed++;
+*/
                     break;
                 }
+
                 case PANO_CREATEPTO:
                 case PANO_CPFIND:
                 {
                     // Nothing to do, that just another step towards the end
                     break;
                 }
+
                 case PANO_CPCLEAN:
                 {
                     disconnect(d->mngr->thread(), SIGNAL(stepFinished(DigikamGenericPanoramaPlugin::PanoActionData)),
@@ -353,9 +359,11 @@ void PanoPreProcessPage::slotPanoAction(const DigikamGenericPanoramaPlugin::Pano
 
                     break;
                 }
+
                 default:
                 {
                     qCWarning(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Unknown action (preprocessing) " << ad.action;
+
                     break;
                 }
             }

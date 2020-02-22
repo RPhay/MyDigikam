@@ -57,10 +57,10 @@ private Q_SLOTS:
     void slotToggleGPano(int state);
     void slotChangeFileFormat(QAbstractButton* button);
     void slotBinariesChanged(bool found);
-
+/*
     // TODO HDR
-//     void slotShowFileFormat(int state);
-
+    void slotShowFileFormat(int state);
+*/
 private:
 
     void initializePage();
