@@ -27,17 +27,21 @@ stringA="klocalizedstring.h"
 stringB="18n"
 
 # run loop for each file in the directory
+
 for i in `find \( -name '*.cpp' -o -name '*.h' \)` ; do
 
-   # check if file contains "string B" 
+   # check if file contains "string B"
    # if true then filename is not printed
+
    if [[ `egrep $stringB $i | wc -l` -eq 0 ]] ; then
 
       # check if file contains "string A"
       # if false then file name is not printed
+
       if [[ `egrep $stringA $i | wc -l` -gt 0 ]] ; then
 
          # file name is printed only if "string A" is present and "string B" is absent
+
          echo "$i\n"
 
       fi
