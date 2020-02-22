@@ -85,7 +85,7 @@ QList<DPluginAuthor> WaterMarkPlugin::authors() const
                              QString::fromUtf8("(C) 2010"))
             << DPluginAuthor(QString::fromUtf8("Ahmed Fathi"),
                              QString::fromUtf8("ahmed dot fathi dot abdelmageed at gmail dot com"),
-                             QString::fromUtf8("(C) 2017"))            
+                             QString::fromUtf8("(C) 2017"))
             ;
 }
 

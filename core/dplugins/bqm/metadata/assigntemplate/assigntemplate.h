@@ -47,7 +47,7 @@ public:
     BatchToolSettings defaultSettings();
 
     BatchTool* clone(QObject* const parent=nullptr) const
-    { 
+    {
         return new AssignTemplate(parent);
     };
 
