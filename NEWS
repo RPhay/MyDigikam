@@ -644,4 +644,5 @@ BUGFIXES:
 626 ==> 418056 - Not possible to filter for "no labels".
 627 ==> 418022 - Difficulty in organizing tags if tags not visible in tag manager window.
 628 ==> 418061 - Position of faces copied when rotating an image.
-629 ==> 
+629 ==> 417946 - Tool not implemented.
+630 ==> 
