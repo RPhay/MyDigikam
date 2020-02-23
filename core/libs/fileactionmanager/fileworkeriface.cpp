@@ -414,7 +414,7 @@ void FileActionMngrFileWorker::adjustFaceRectangles(const ItemInfo& info, bool r
     // Adjusted newSize
 
     hub.loadFaceTags(info, newSize);
-    hub.write(info.filePath(), MetadataHub::WRITE_ALL);
+    hub.write(info.filePath(), MetadataHub::WRITE_ALL, true);
 }
 
 } // namespace Digikam

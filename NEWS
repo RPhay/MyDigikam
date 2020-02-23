@@ -643,4 +643,5 @@ BUGFIXES:
 625 ==> 417797 - Batch video timestamp changing fails.
 626 ==> 418056 - Not possible to filter for "no labels".
 627 ==> 418022 - Difficulty in organizing tags if tags not visible in tag manager window.
-628 ==> 
+628 ==> 418061 - Position of faces copied when rotating an image.
+629 ==> 
