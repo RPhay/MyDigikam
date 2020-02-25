@@ -556,11 +556,11 @@ void CIETongueWidget::drawTongueAxis()
         int xstart = (y * (d->pxcols - 1)) / 10;
         int ystart = (y * (d->pxrows - 1)) / 10;
 
-        s.asprintf("0.%d", y);
+        s = QString().asprintf("0.%d", y);
         biasedLine(xstart, d->pxrows - grids(1), xstart,   d->pxrows - grids(4));
         biasedText(xstart - grids(11), d->pxrows + grids(15), s);
 
-        s.asprintf("0.%d", 10 - y);
+        s = QString().asprintf("0.%d", 10 - y);
         biasedLine(0, ystart, grids(3), ystart);
         biasedText(grids(-25), ystart + grids(5), s);
     }
@@ -625,7 +625,7 @@ void CIETongueWidget::drawLabels()
         QRgb Color = colorByCoord(icx, icy);
         d->painter.setPen(Color);
 
-        wl.asprintf("%d", x);
+        wl = QString().asprintf("%d", x);
         biasedText(icx+bx, icy+by, wl);
     }
 }

@@ -1395,7 +1395,7 @@ QString ItemQueryBuilder::possibleDate(const QString& str, bool& exact) const
                 (str.toLower() == m_longMonths[i-1]))
             {
                 QString monGlob;
-                monGlob.asprintf("%.2d", i);
+                monGlob = QString().asprintf("%.2d", i);
                 monGlob = QString::fromUtf8("%-") + monGlob + QString::fromUtf8("-%");
 
                 return monGlob;

@@ -553,7 +553,7 @@ void XMPProperties::applyMetadata(QByteArray& xmpData)
     if      (d->objectAttributeCheck->isChecked())
     {
         QString objectAttribute;
-        objectAttribute.asprintf("%3d", d->objectAttributeCB->currentIndex()+1);
+        objectAttribute = QString().asprintf("%3d", d->objectAttributeCB->currentIndex()+1);
         objectAttribute.append(QString::fromUtf8(":%1").arg(d->objectAttributeEdit->text()));
         meta.setXmpTagString("Xmp.iptc.IntellectualGenre", objectAttribute);
     }
