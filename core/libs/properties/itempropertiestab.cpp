@@ -965,7 +965,7 @@ QString ItemPropertiesTab::humanReadableBytesCount(qint64 bytes, bool si)
     {
         int exp     = (int)(qLn(bytes) / qLn(unit));
         QString pre = QString(si ? QLatin1String("kMGTPEZY") : QLatin1String("KMGTPEZY")).at(exp-1) + (si ? QLatin1String("") : QLatin1String("i"));
-        ret.asprintf("%.1f %s", bytes / qPow(unit, exp), pre.toLatin1().constData());
+        ret         = ret.asprintf("%.1f %s", bytes / qPow(unit, exp), pre.toUtf8().constData());
     }
 
     return (QString::fromUtf8("%1%2").arg(ret).arg(byteStr));

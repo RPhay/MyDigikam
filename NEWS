@@ -645,4 +645,5 @@ BUGFIXES:
 627 ==> 418022 - Difficulty in organizing tags if tags not visible in tag manager window.
 628 ==> 418061 - Position of faces copied when rotating an image.
 629 ==> 417946 - Tool not implemented.
-630 ==> 
+630 ==> 418199 - Would it be possible to display file sizes in Megabytes?
+631 ==> 
