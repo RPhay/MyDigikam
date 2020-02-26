@@ -646,4 +646,5 @@ BUGFIXES:
 628 ==> 418061 - Position of faces copied when rotating an image.
 629 ==> 417946 - Tool not implemented.
 630 ==> 418199 - Would it be possible to display file sizes in Megabytes?
-631 ==> 
+631 ==> 418200 - 'Use native dialogs from system' option seems to do nothing on Win 10.
+632 ==> 
