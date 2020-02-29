@@ -43,8 +43,6 @@
 #include "slidehelp.h"
 #include "digikam_debug.h"
 
-using namespace Digikam;
-
 namespace DigikamGenericSlideShowPlugin
 {
 

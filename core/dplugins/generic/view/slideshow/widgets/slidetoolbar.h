@@ -34,12 +34,10 @@
 // Local includes
 
 #include "digikam_export.h"
-#include "slideshowsettings.h"
+#include "../common/slideshowsettings.h"
 #include "dlayoutbox.h"
 
 class QAction;
-
-using namespace Digikam;
 
 namespace DigikamGenericSlideShowPlugin
 {
