@@ -33,9 +33,7 @@
 
 // Local includes
 
-#include "slideshowsettings.h"
-
-using namespace Digikam;            //TODO: remove this line once SlideSettings is moved to plugin
+#include "../common/slideshowsettings.h"
 
 namespace DigikamGenericSlideShowPlugin
 {
