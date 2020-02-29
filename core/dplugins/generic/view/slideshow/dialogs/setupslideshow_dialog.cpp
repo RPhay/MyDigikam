@@ -49,7 +49,7 @@
 #include "dfontselect.h"
 #include "digikam_debug.h"
 
-#include "slideshowsettings.h"
+#include "../common/slideshowsettings.h"
 
 using namespace Digikam;
 
