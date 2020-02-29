@@ -108,8 +108,8 @@ void SlideShowPlugin::setup(QObject* const parent)
     ac->setActionCategory(DPluginAction::GenericView);
     //c->setShortcut(Qt::ALT + Qt::SHIFT + Qt::Key_F9);
 
-
-    DInfoInterface* const iface = infoIface(parent);
+    //TODO: customize for showfoto and digikam
+    DInfoInterface* const iface = infoIface(ac);
 
     if (iface == nullptr)
     {
