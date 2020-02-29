@@ -38,7 +38,7 @@
 #include "digikam_export.h"
 #include "dinfointerface.h"
 #include "loadingdescription.h"
-#include "slideshowsettings.h"
+#include "./slideshowsettings.h"
 #include "dimg.h"
 
 using namespace Digikam;
