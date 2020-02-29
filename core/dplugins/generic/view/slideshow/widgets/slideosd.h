@@ -32,13 +32,11 @@
 
 // Local includes
 
-#include "slideshowsettings.h"
+#include "../common/slideshowsettings.h"
 
 //#include "./slidetoolbar.h"
 
 class QEvent;
-
-using namespace Digikam;
 
 namespace DigikamGenericSlideShowPlugin
 {
