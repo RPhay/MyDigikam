@@ -98,6 +98,12 @@ int main(int argc, char* argv[])
 
     qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", "1");
 
+#ifdef HAVE_QWEBENGINE
+
+    QApplication::setAttribute(Qt::AA_ShareOpenGLContexts, true);
+
+#endif
+
     QApplication app(argc, argv);
 
     digikamSetDebugFilterRules();
@@ -113,12 +119,6 @@ int main(int argc, char* argv[])
 #ifndef Q_OS_OSX
 
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-
-#endif
-
-#ifdef HAVE_QWEBENGINE
-
-    app.setAttribute(Qt::AA_ShareOpenGLContexts, true);
 
 #endif
 

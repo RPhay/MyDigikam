@@ -80,6 +80,12 @@ int main(int argc, char* argv[])
 
     qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", "1");
 
+#ifdef HAVE_QWEBENGINE
+
+    QApplication::setAttribute(Qt::AA_ShareOpenGLContexts, true);
+
+#endif
+
     QApplication app(argc, argv);
 
     digikamSetDebugFilterRules();
@@ -87,15 +93,15 @@ int main(int argc, char* argv[])
     tryInitDrMingw();
 
 #ifdef HAVE_IMAGE_MAGICK
+
     InitializeMagick(nullptr);
+
 #endif
 
 #ifdef Q_OS_LINUX
-    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-#endif
 
-#ifdef HAVE_QWEBENGINE
-    app.setAttribute(Qt::AA_ShareOpenGLContexts, true);
+    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
+
 #endif
 
     // if we have some local breeze icon resource, prefer it
