@@ -155,6 +155,7 @@ TagPropWidget::TagPropWidget(QWidget* const parent)
 
     d->keySeqWidget            = new KKeySequenceWidget(this);
     kscTextLabel->setBuddy(d->keySeqWidget);
+    d->keySeqWidget->setModifierlessAllowed(true);
     d->keySeqWidget->setCheckActionCollections(TagsActionMngr::defaultManager()->actionCollections());
 
     QLabel* const tipLabel2    = new QLabel(this);

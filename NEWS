@@ -647,4 +647,5 @@ BUGFIXES:
 629 ==> 417946 - Tool not implemented.
 630 ==> 418199 - Would it be possible to display file sizes in Megabytes?
 631 ==> 418200 - 'Use native dialogs from system' option seems to do nothing on Win 10.
-632 ==> 
+632 ==> 418342 - Tag shortcuts does not support single key shortcut.
+633 ==> 
