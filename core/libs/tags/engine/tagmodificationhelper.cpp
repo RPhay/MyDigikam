@@ -566,9 +566,9 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
                                 "Do you want to continue?",
                                 tagsWithChildrenCount, tagsWithChildren);
 
-        bool removeChildren = QMessageBox::Yes == (QMessageBox::warning(qApp->activeWindow(),
-                                                      qApp->applicationName(), message,
-                                                      QMessageBox::Yes | QMessageBox::Cancel));
+        bool removeChildren = (QMessageBox::Yes == QMessageBox::warning(qApp->activeWindow(),
+                                                     qApp->applicationName(), message,
+                                                     QMessageBox::Yes | QMessageBox::Cancel));
 
         if (!removeChildren)
         {
@@ -591,9 +591,9 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
         message = i18np("Remove face tag?", "Remove face tags?", tags.size());
     }
 
-    bool removeFaceTag = QMessageBox::Yes == (QMessageBox::warning(qApp->activeWindow(),
-                                      qApp->applicationName(), message,
-                                      QMessageBox::Yes | QMessageBox::Cancel));
+    bool removeFaceTag = (QMessageBox::Yes == QMessageBox::warning(qApp->activeWindow(),
+                                                qApp->applicationName(), message,
+                                                QMessageBox::Yes | QMessageBox::Cancel));
 
     if (removeFaceTag)
     {
@@ -603,9 +603,9 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
                             "Remove the %1 tags corresponding to this face tags from the images?",
                             allPersonTagsToDelete.size());
 
-        bool removeTagFromImages = QMessageBox::Yes == (QMessageBox::warning(qApp->activeWindow(),
-                                                            qApp->applicationName(), msg,
-                                                            QMessageBox::Yes | QMessageBox::No));
+        bool removeTagFromImages = (QMessageBox::Yes == QMessageBox::warning(qApp->activeWindow(),
+                                                          qApp->applicationName(), msg,
+                                                          QMessageBox::Yes | QMessageBox::No));
 
         MetadataHub metadataHub;
 
