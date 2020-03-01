@@ -94,6 +94,10 @@ using namespace Digikam;
 
 int main(int argc, char* argv[])
 {
+    // enable scaling on high DPI displays
+
+    qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", "1");
+
     QApplication app(argc, argv);
 
     digikamSetDebugFilterRules();
