@@ -649,4 +649,5 @@ BUGFIXES:
 631 ==> 418200 - 'Use native dialogs from system' option seems to do nothing on Win 10.
 632 ==> 418342 - Tag shortcuts does not support single key shortcut.
 633 ==> 418213 - When I add a Person to tagged Faces and delete it, it already exist. No recreation possible.
-634 ==> 
+634 ==> 418138 - Export to local storage not working on Windows machine.
+635 ==> 
