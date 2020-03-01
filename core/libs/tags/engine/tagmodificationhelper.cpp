@@ -463,9 +463,9 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
     // We use a set here since else one tag could occur more than once
     // which could lead to undefined behaviour.
 
-    QSet<TAlbum*> allPersonTagsToDelete;
+    QList<TAlbum*> allPersonTagsToDelete;
     int tagsWithChildrenCount = 0;
-    QSet<qlonglong> allAssignedItems;
+    QList<qlonglong> allAssignedItems;
     int tagsWithImagesCount   = 0;
 
     foreach (TAlbum* const selectedTag, tags)
@@ -477,7 +477,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
 
         // find tags and subtags with person property
 
-        QSet<TAlbum*> personTagsToDelete = getFaceTags(selectedTag).toSet();
+        QList<TAlbum*> personTagsToDelete = getFaceTags(selectedTag);
 
         // If there is more than one person tag in the list,
         // the tag to remove has at least one sub tag that is a face tag.
@@ -491,7 +491,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
         {
             if (tagsWithChildrenCount > 0)
             {
-                tagsWithChildren.append(QLatin1String(","));
+                tagsWithChildren.append(QLatin1String(" , "));
             }
 
             tagsWithChildren.append(selectedTag->title());
@@ -506,21 +506,35 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
 
             if (!allPersonTagsToDelete.contains(tAlbum))
             {
-                QSet<qlonglong> assignedItems = CoreDbAccess().db()->getImagesWithImageTagProperty(
-                    tAlbum->id(), ImageTagPropertyName::tagRegion()).toSet();
+                QList<qlonglong> assignedItems = CoreDbAccess().db()->getImagesWithImageTagProperty(
+                    tAlbum->id(), ImageTagPropertyName::tagRegion());
 
-                assignedItems.unite(CoreDbAccess().db()->getImagesWithImageTagProperty(
-                    tAlbum->id(), ImageTagPropertyName::autodetectedFace()).toSet());
+                QList<qlonglong> autodetected  = CoreDbAccess().db()->getImagesWithImageTagProperty(
+                    tAlbum->id(), ImageTagPropertyName::autodetectedFace());
+
+                foreach (const qlonglong& id1, autodetected)
+                {
+                    if (!assignedItems.contains(id1))
+                    {
+                        assignedItems << id1;
+                    }
+                }
 
                 if (!assignedItems.isEmpty())
                 {
                     // Add the items to the global set for potential untagging
 
-                    allAssignedItems.unite(assignedItems);
+                    foreach (const qlonglong& id2, assignedItems)
+                    {
+                        if (!allAssignedItems.contains(id2))
+                        {
+                            allAssignedItems << id2;
+                        }
+                    }
 
                     if (tagsWithImagesCount > 0)
                     {
-                        tagsWithImages.append(QLatin1String(","));
+                        tagsWithImages.append(QLatin1String(" , "));
                     }
 
                     tagsWithImages.append(tAlbum->title());
@@ -531,7 +545,13 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
 
         // Add the found tags to the global set.
 
-        allPersonTagsToDelete.unite(personTagsToDelete);
+        foreach (TAlbum* const album, personTagsToDelete)
+        {
+            if (!allPersonTagsToDelete.contains(album))
+            {
+                allPersonTagsToDelete << album;
+            }
+        }
     }
 
     // ask for deletion of children
@@ -595,7 +615,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
         {
             foreach (TAlbum* const tagToRemove, allPersonTagsToDelete)
             {
-                ItemTagPair imageTagAssociation(imageId,tagToRemove->id());
+                ItemTagPair imageTagAssociation(imageId, tagToRemove->id());
 
                 if (imageTagAssociation.isAssigned())
                 {
@@ -616,7 +636,7 @@ void TagModificationHelper::slotMultipleFaceTagDel(QList<TAlbum*>& tags)
 
                             if (!metadataHub.writeToMetadata(info))
                             {
-                                qCWarning(DIGIKAM_GENERAL_LOG) << "Failed writing tags to image " << info.filePath();
+                                qCWarning(DIGIKAM_GENERAL_LOG) << "Tags in image not changed:" << info.filePath();
                             }
                         }
                     }
