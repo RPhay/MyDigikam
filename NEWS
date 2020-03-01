@@ -650,4 +650,5 @@ BUGFIXES:
 632 ==> 418342 - Tag shortcuts does not support single key shortcut.
 633 ==> 418213 - When I add a Person to tagged Faces and delete it, it already exist. No recreation possible.
 634 ==> 418138 - Export to local storage not working on Windows machine.
-635 ==> 
+635 ==> 418057 - Icons missing in xubuntu.
+636 ==> 
