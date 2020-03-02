@@ -14,6 +14,7 @@ set(libalbum_SRCS
     engine/albummodificationhelper.cpp
     engine/albumthumbnailloader.cpp
     engine/albumwatch.cpp
+    engine/albumparser.cpp
 
     widgets/albumpropsedit.cpp
     widgets/albumselectors.cpp
