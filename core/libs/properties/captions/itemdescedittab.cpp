@@ -233,7 +233,7 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     d->applyBtn = new QPushButton(i18n("Apply"), applyButtonBox);
     d->applyBtn->setIcon(QIcon::fromTheme(QLatin1String("dialog-ok-apply")));
     d->applyBtn->setEnabled(false);
-    d->applyBtn->setToolTip( i18n("Apply all changes to images"));
+    d->applyBtn->setToolTip(i18n("Apply all changes to images"));
     //buttonsBox->setStretchFactor(d->applyBtn, 10);
 
     DHBox* const buttonsBox = new DHBox(this);
@@ -241,7 +241,7 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
 
     d->revertBtn = new QToolButton(buttonsBox);
     d->revertBtn->setIcon(QIcon::fromTheme(QLatin1String("document-revert")));
-    d->revertBtn->setToolTip( i18n("Revert all changes"));
+    d->revertBtn->setToolTip(i18n("Revert all changes"));
     d->revertBtn->setEnabled(false);
 
     d->applyToAllVersionsButton = new QPushButton(i18n("Apply to all versions"), buttonsBox);
@@ -283,7 +283,7 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     d->tagCheckView = new TagCheckView(tagsArea, d->tagModel);
     d->tagCheckView->setCheckNewTags(true);
 
-    d->openTagMngr = new QPushButton( i18n("Open Tag Manager"));
+    d->openTagMngr = new QPushButton(i18n("Open Tag Manager"));
 
     d->newTagEdit  = new AddTagsLineEdit(tagsArea);
     d->newTagEdit->setSupportingTagModel(d->tagModel);
@@ -307,13 +307,13 @@ ItemDescEditTab::ItemDescEditTab(QWidget* const parent)
     d->tagsSearchBar->setFilterModel(d->tagCheckView->albumFilterModel());
 
     d->assignedTagsBtn = new QToolButton(tagsSearch);
-    d->assignedTagsBtn->setToolTip( i18n("Tags already assigned"));
+    d->assignedTagsBtn->setToolTip(i18n("Tags already assigned"));
     d->assignedTagsBtn->setIcon(QIcon::fromTheme(QLatin1String("tag-assigned")));
     d->assignedTagsBtn->setCheckable(true);
 
     d->recentTagsBtn            = new QToolButton(tagsSearch);
     QMenu* const recentTagsMenu = new QMenu(d->recentTagsBtn);
-    d->recentTagsBtn->setToolTip( i18n("Recent Tags"));
+    d->recentTagsBtn->setToolTip(i18n("Recent Tags"));
     d->recentTagsBtn->setIcon(QIcon::fromTheme(QLatin1String("tag-recents")));
     d->recentTagsBtn->setIconSize(QSize(16, 16));
     d->recentTagsBtn->setMenu(recentTagsMenu);
