@@ -202,14 +202,6 @@ void SlideShowPlugin::slotMenuSlideShowConfiguration()
 {
     qDebug() << "SlideshowPlugin::slotMenuSlideShowConfiguration";
 
-    DInfoInterface* const iface = infoIface(sender());
-
-    if (iface == nullptr)
-    {
-        //TODO: resolve the problem iface is null
-        qDebug() << "SlideShowPlugin::slotMenuSlideShowConfiguration() : iface is null";
-    }
-
     SetupSlideShowDialog* m_dialog = new SetupSlideShowDialog(QApplication::activeWindow());
 
     m_dialog->setPlugin(this);
