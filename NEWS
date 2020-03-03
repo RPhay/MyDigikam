@@ -651,4 +651,5 @@ BUGFIXES:
 633 ==> 418213 - When I add a Person to tagged Faces and delete it, it already exist. No recreation possible.
 634 ==> 418138 - Export to local storage not working on Windows machine.
 635 ==> 418057 - Icons missing in xubuntu.
-636 ==> 
+636 ==> 418446 - Move Filters menu from right to left side of main window.
+637 ==> 
