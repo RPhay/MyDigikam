@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SLIDESHOW_SETTINGS_PLUGINS_H
-#define DIGIKAM_SLIDESHOW_SETTINGS_PLUGINS_H
+#ifndef DIGIKAM_SLIDESHOW_SETTINGS_PLUGIN_H
+#define DIGIKAM_SLIDESHOW_SETTINGS_PLUGIN_H
 
 // Qt includes
 
@@ -46,7 +46,7 @@ namespace DigikamGenericSlideShowPlugin
 
 /** This class contain all settings to perform a slide show of a group of pictures
  */
-class DIGIKAM_EXPORT SlideShowSettings
+class SlideShowSettings
 {
 
 public:
@@ -211,4 +211,4 @@ private:
 
 } // namespace DigikamGenericSlideShowPlugin
 
-#endif // DIGIKAM_SLIDESHOW_SETTINGS_PLUGINS_H
+#endif // DIGIKAM_SLIDESHOW_SETTINGS_PLUGIN_H

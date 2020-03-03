@@ -24,7 +24,6 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/common)
 
 set(slideshowplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/common/slideshowloader.cpp
-    #${CMAKE_CURRENT_SOURCE_DIR}/common/slideshowbuidler.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/common/slideshowsettings.cpp
 
     ${CMAKE_CURRENT_SOURCE_DIR}/widgets/slidetoolbar.cpp
@@ -37,7 +36,6 @@ set(slideshowplugin_SRCS
 
     ${CMAKE_CURRENT_SOURCE_DIR}/dialogs/setupslideshow_dialog.cpp
 
-    ${CMAKE_CURRENT_SOURCE_DIR}/slideshowmngr.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/slideshowplugin.cpp
 )
 

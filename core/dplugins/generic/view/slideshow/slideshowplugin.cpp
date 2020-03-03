@@ -28,6 +28,7 @@
 #include <QPointer>
 #include <QMenu>
 #include <QDebug>
+#include <QApplication>
 
 // KDE includes
 
@@ -35,15 +36,14 @@
 
 // Local includes
 
-//#include "slideshow.h"
-#include "slideshowmngr.h"
+#include "setupslideshow_dialog.h"
+#include "slideshowloader.h"
 
 namespace DigikamGenericSlideShowPlugin
 {
 
 SlideShowPlugin::SlideShowPlugin(QObject* const parent)
-    : DPluginGeneric(parent),
-      m_slideshowMngr(nullptr)
+    : DPluginGeneric(parent)
 {
 }
 
@@ -53,7 +53,6 @@ SlideShowPlugin::~SlideShowPlugin()
 
 void SlideShowPlugin::cleanUp()
 {
-    delete m_slideshowMngr;
 }
 
 QString SlideShowPlugin::name() const
@@ -176,25 +175,12 @@ void SlideShowPlugin::slotSlideShow()
 {
     DInfoInterface* const iface = infoIface(sender());
     qDebug() << "SlideshowPlugin::slotSlideShow";
-
-    m_slideshowMngr = new SlideShowMngr(this, iface);
-
-    m_slideshowMngr->setPlugin(this);
-
-    m_slideshowMngr->slotSlideShow();
 }
 
 //TODO: add slotMenuSlideShowAll
 void SlideShowPlugin::slotMenuSlideShowAll()
 {
-
     DInfoInterface* const iface = infoIface(sender());
-
-    m_slideshowMngr = new SlideShowMngr(this, iface);
-
-    m_slideshowMngr->setPlugin(this);
-
-    m_slideshowMngr->slotSlideShow();
 
     qDebug() << "SlideshowPlugin::slotMenuSlideShowAll";
 }
@@ -224,16 +210,15 @@ void SlideShowPlugin::slotMenuSlideShowConfiguration()
         qDebug() << "SlideShowPlugin::slotMenuSlideShowConfiguration() : iface is null";
     }
 
-    if (m_slideshowMngr)
-    {
-        delete m_slideshowMngr;
-    }
+    SetupSlideShowDialog* m_dialog = new SetupSlideShowDialog(QApplication::activeWindow());
 
-    m_slideshowMngr = new SlideShowMngr(this, iface);
+    m_dialog->setPlugin(this);
 
-    m_slideshowMngr->setPlugin(this);
+    m_dialog->show();
+}
 
-    m_slideshowMngr->showConfigDialog();
+void SlideShowPlugin::slideshow(const ItemInfoList &infoList)
+{
 
 }
 

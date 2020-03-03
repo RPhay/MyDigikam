@@ -27,6 +27,7 @@
 // Local includes
 
 #include "dplugingeneric.h"
+#include "iteminfolist.h"
 
 #define DPLUGIN_IID "org.kde.digikam.SlideShow"
 
@@ -34,8 +35,6 @@ using namespace Digikam;
 
 namespace DigikamGenericSlideShowPlugin
 {
-
-class SlideShowMngr;
 
 class SlideShowPlugin : public DPluginGeneric
 {
@@ -67,8 +66,7 @@ private Q_SLOTS:
     void slotMenuSlideShowConfiguration();
 
 private:
-
-    QPointer<SlideShowMngr> m_slideshowMngr;
+    void slideshow(const ItemInfoList& infoList);
 };
 
 } // namespace DigikamGenericSlideShowPlugin
