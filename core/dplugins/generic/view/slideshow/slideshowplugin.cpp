@@ -36,6 +36,8 @@
 
 // Local includes
 
+#include "albumparser.h"
+#include "albummanager.h"
 #include "setupslideshow_dialog.h"
 #include "slideshowloader.h"
 
@@ -210,6 +212,19 @@ void SlideShowPlugin::slotMenuSlideShowConfiguration()
 }
 
 void SlideShowPlugin::slideshow(const ItemInfoList &infoList)
+{
+    //TODO: implement differentiation between digikam and showfoto
+
+    //init slideshow for digikam
+    AlbumParser* const parser = new AlbumParser(infoList);
+
+    connect(parser, SIGNAL(signalComplete(const QList<QUrl*>&)),
+            this, SLOT(slotSlideShowBuilderComplete(const QList<QUrl*>&)));
+
+    parser->run();
+}
+
+void SlideShowPlugin::slotSlideShowBuilderComplete(const QList<QUrl*>& imageList)
 {
 
 }
