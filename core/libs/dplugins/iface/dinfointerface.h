@@ -80,6 +80,7 @@ public:
 
     virtual QList<QUrl> currentSelectedItems()                 const;
     virtual QList<QUrl> currentAlbumItems()                    const;
+    virtual QList<QUrl> currentAlbumItemsReccursive()          const;
 
     virtual QList<QUrl> albumItems(int)                        const;
     virtual QList<QUrl> albumsItems(const DAlbumIDs&)          const;

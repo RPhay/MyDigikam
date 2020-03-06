@@ -65,6 +65,11 @@ QList<QUrl> DInfoInterface::currentAlbumItems() const
     return QList<QUrl>();
 }
 
+QList<QUrl> DInfoInterface::currentAlbumItemsReccursive()          const
+{
+    return QList<QUrl>();
+}
+
 QList<QUrl> DInfoInterface::allAlbumItems() const
 {
     return QList<QUrl>();
