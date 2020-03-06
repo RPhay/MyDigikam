@@ -30,7 +30,6 @@
 #include "iteminfo.h"
 #include "progressmanager.h"
 #include "slideshowsettings.h"
-#include "digikam_export.h"
 
 namespace Digikam
 {
