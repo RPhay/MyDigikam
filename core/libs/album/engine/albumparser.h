@@ -29,7 +29,6 @@
 
 #include "iteminfo.h"
 #include "progressmanager.h"
-#include "slideshowsettings.h"
 
 namespace Digikam
 {
