@@ -199,7 +199,7 @@ void SlideShowPlugin::slotMenuSlideShowRecursive()
     qDebug() << "SlideshowPlugin::slotMenuSlideShowRecursive";
 }
 
-//TODO: show configuration dialog
+//TODO: show configuration dialog in slideshow toolbar
 void SlideShowPlugin::slotMenuSlideShowConfiguration()
 {
     qDebug() << "SlideshowPlugin::slotMenuSlideShowConfiguration";
@@ -214,7 +214,9 @@ void SlideShowPlugin::slotMenuSlideShowConfiguration()
 void SlideShowPlugin::slideshow(const ItemInfoList &infoList)
 {
     //TODO: implement differentiation between digikam and showfoto
-
+/*
+    //Use DbInfoIface for digikam and DMetaInfo for Showfoto
+    //Pass AlbumParser in DbInfoIface
     //init slideshow for digikam
     AlbumParser* const parser = new AlbumParser(infoList);
 
@@ -222,6 +224,7 @@ void SlideShowPlugin::slideshow(const ItemInfoList &infoList)
             this, SLOT(slotSlideShowBuilderComplete(const QList<QUrl*>&)));
 
     parser->run();
+*/
 }
 
 void SlideShowPlugin::slotSlideShowBuilderComplete(const QList<QUrl*>& imageList)
