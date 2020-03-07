@@ -52,8 +52,6 @@ public:
 
     ~AlbumParser();
 
-    QList<QUrl>& getImageList();
-
     void run();
 
 Q_SIGNALS:

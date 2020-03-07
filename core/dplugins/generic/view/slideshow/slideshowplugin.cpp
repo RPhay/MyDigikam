@@ -152,6 +152,9 @@ void SlideShowPlugin::setup(QObject* const parent)
         connect(slideShowRecursiveAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowRecursive()));
 
+        connect(iface, SIGNAL(signalAlbumItemsReccursiveCompleted(QList<QUrl>)),
+                this, SLOT(slotShowRecursive(QList<QUrl>)));
+
         //Action configuration
         QAction* const configurationAction = new QAction(i18n("Configurations"), parent);
         configurationAction->setObjectName(QLatin1String("slideshow_configation"));
@@ -219,11 +222,16 @@ void SlideShowPlugin::slotMenuSlideShowRecursive()
 {
     qDebug() << "SlideshowPlugin::slotMenuSlideShowRecursive";
 
+    iface->parseAlbumItemsReccursive();
+}
+
+void SlideShowPlugin::slotShowRecursive(const QList<QUrl>& imageList)
+{
     SlideShowSettings settings;
 
     settings.readFromConfig();
 
-    settings.fileList = iface->currentAlbumItemsReccursive();
+    settings.fileList = imageList;
 
     slideshow(settings);
 }

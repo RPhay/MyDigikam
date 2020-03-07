@@ -56,7 +56,7 @@ public:
 
     QList<QUrl> currentSelectedItems()                    const override;
     QList<QUrl> currentAlbumItems()                       const override;
-    QList<QUrl> currentAlbumItemsReccursive()             const override;
+    void        parseAlbumItemsReccursive()                     override;
 
     QList<QUrl> albumItems(Album* const album)            const;
     QList<QUrl> albumItems(int id)                        const override;
@@ -84,6 +84,10 @@ public:
     QList<GPSItemContainer*> currentGPSItems()            const override;
 
 #endif
+
+private:
+
+    Q_SLOT void slotPassImageList(const QList<QUrl>& imageList);
 
 private:
 

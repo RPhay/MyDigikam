@@ -55,17 +55,16 @@ void DInfoInterface::slotMetadataChangedForUrl(const QUrl& /*url*/)
 {
 }
 
+void DInfoInterface::parseAlbumItemsReccursive()
+{
+}
+
 QList<QUrl> DInfoInterface::currentSelectedItems() const
 {
     return QList<QUrl>();
 }
 
 QList<QUrl> DInfoInterface::currentAlbumItems() const
-{
-    return QList<QUrl>();
-}
-
-QList<QUrl> DInfoInterface::currentAlbumItemsReccursive() const
 {
     return QList<QUrl>();
 }

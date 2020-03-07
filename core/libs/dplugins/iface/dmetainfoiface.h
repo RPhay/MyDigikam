@@ -54,7 +54,7 @@ public:
     QList<QUrl> currentSelectedItems()                      const override;
     QList<QUrl> currentAlbumItems()                         const override;
     QList<QUrl> allAlbumItems()                             const override;
-    QList<QUrl> currentAlbumItemsReccursive()               const override;
+    void        parseAlbumItemsReccursive()                       override;
 
     DInfoMap    itemInfo(const QUrl&)                       const override;
     void        setItemInfo(const QUrl&, const DInfoMap&)   const override;

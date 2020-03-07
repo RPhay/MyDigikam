@@ -50,18 +50,13 @@ public:
 
     explicit Private()
       : cancel(false),
-        album(nullptr),
-        finished(false)
+        album(nullptr)
     {
     }
 
     bool         cancel;
     ItemInfoList infoList;
     Album*       album;
-
-    QList<QUrl>  imageList;
-    bool         finished;
-    //QUrl         startFrom;           // Overrides the startFromCurrent flag read from settings.
 };
 
 AlbumParser::AlbumParser(const ItemInfoList& infoList)
@@ -87,22 +82,8 @@ AlbumParser::~AlbumParser()
     delete d;
 }
 
-QList<QUrl>& AlbumParser::getImageList()
-{
-    run();
-
-    while (!d->finished)
-    {
-        //wait
-    }
-
-    return d->imageList;
-}
-
 void AlbumParser::run()
 {
-    d->finished = false;
-
     QTimer::singleShot(500, this, SLOT(slotRun()));
 }
 
@@ -145,23 +126,21 @@ void AlbumParser::slotParseItemInfoList(const ItemInfoList& list)
 
     int               i = 0;
 
-    d->imageList.clear();
+    QList<QUrl> imageList;
 
     for (ItemInfoList::const_iterator it = list.constBegin();
          !d->cancel && (it != list.constEnd()) ;
          ++it)
     {
         ItemInfo info = *it;
-        d->imageList.append(info.fileUrl());
+        imageList.append(info.fileUrl());
 
         advance(i++);
         qApp->processEvents();
     }
 
     if (!d->cancel)
-        emit signalComplete(d->imageList);
-
-    d->finished = true;
+        emit signalComplete(imageList);
 
     setComplete();
 }
@@ -169,7 +148,6 @@ void AlbumParser::slotParseItemInfoList(const ItemInfoList& list)
 void AlbumParser::slotCancel()
 {
     d->cancel = true;
-    d->finished = true;
 }
 
 } // namespace Digikam

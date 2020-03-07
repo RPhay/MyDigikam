@@ -73,6 +73,8 @@ public:
     /// Slot to call when something in metadata from item is changed.
     Q_SLOT virtual void slotMetadataChangedForUrl(const QUrl& url);
 
+    Q_SIGNAL void signalAlbumItemsReccursiveCompleted(const QList<QUrl>& imageList);
+
 public:
 
     ///@{
@@ -80,7 +82,7 @@ public:
 
     virtual QList<QUrl> currentSelectedItems()                 const;
     virtual QList<QUrl> currentAlbumItems()                    const;
-    virtual QList<QUrl> currentAlbumItemsReccursive()          const;
+    virtual void        parseAlbumItemsReccursive()                 ;
 
     virtual QList<QUrl> albumItems(int)                        const;
     virtual QList<QUrl> albumsItems(const DAlbumIDs&)          const;

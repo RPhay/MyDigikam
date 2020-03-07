@@ -80,6 +80,11 @@ void DMetaInfoIface::slotMetadataChangedForUrl(const QUrl& url)
     emit signalItemChanged(url);
 }
 
+void DMetaInfoIface::parseAlbumItemsReccursive()
+{
+    emit signalAlbumItemsReccursiveCompleted(d->urls);
+}
+
 QList<QUrl> DMetaInfoIface::currentAlbumItems() const
 {
     return d->urls;
@@ -94,11 +99,6 @@ QList<QUrl> DMetaInfoIface::currentSelectedItems() const
 QList<QUrl> DMetaInfoIface::allAlbumItems() const
 {
     // No album management available in DMeta.
-    return currentAlbumItems();
-}
-
-QList<QUrl> DMetaInfoIface::currentAlbumItemsReccursive() const
-{
     return currentAlbumItems();
 }
 
