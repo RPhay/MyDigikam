@@ -42,6 +42,7 @@
 
 #include "slidehelp.h"
 #include "digikam_debug.h"
+#include "../dialogs/setupslideshow_dialog.h"
 
 namespace DigikamGenericSlideShowPlugin
 {
@@ -55,6 +56,7 @@ public:
         stopBtn(nullptr),
         nextBtn(nullptr),
         prevBtn(nullptr),
+        setupBtn(nullptr),
         screenSelectBtn(nullptr)
     {
     }
@@ -63,6 +65,7 @@ public:
     QToolButton* stopBtn;
     QToolButton* nextBtn;
     QToolButton* prevBtn;
+    QToolButton* setupBtn;
     QToolButton* screenSelectBtn;
 };
 
@@ -73,10 +76,11 @@ SlideToolBar::SlideToolBar(const SlideShowSettings& settings, QWidget* const par
     setMouseTracking(true);
     setContentsMargins(QMargins());
 
-    d->playBtn = new QToolButton(this);
-    d->prevBtn = new QToolButton(this);
-    d->nextBtn = new QToolButton(this);
-    d->stopBtn = new QToolButton(this);
+    d->playBtn  = new QToolButton(this);
+    d->prevBtn  = new QToolButton(this);
+    d->nextBtn  = new QToolButton(this);
+    d->stopBtn  = new QToolButton(this);
+    d->setupBtn = new QToolButton(this);
 
     d->playBtn->setCheckable(true);
     d->playBtn->setChecked(!settings.autoPlayEnabled);
@@ -84,11 +88,14 @@ SlideToolBar::SlideToolBar(const SlideShowSettings& settings, QWidget* const par
     d->prevBtn->setFocusPolicy(Qt::NoFocus);
     d->nextBtn->setFocusPolicy(Qt::NoFocus);
     d->stopBtn->setFocusPolicy(Qt::NoFocus);
+    d->setupBtn->setFocusPolicy(Qt::NoFocus);
+
     QSize s(32, 32);
     d->playBtn->setIconSize(s);
     d->prevBtn->setIconSize(s);
     d->nextBtn->setIconSize(s);
     d->stopBtn->setIconSize(s);
+    d->setupBtn->setIconSize(s);
 
     QString iconString = settings.autoPlayEnabled ? QLatin1String("media-playback-pause")
                                                   : QLatin1String("media-playback-start");
@@ -96,6 +103,7 @@ SlideToolBar::SlideToolBar(const SlideShowSettings& settings, QWidget* const par
     d->prevBtn->setIcon(QIcon::fromTheme(QLatin1String("media-skip-backward")));
     d->nextBtn->setIcon(QIcon::fromTheme(QLatin1String("media-skip-forward")));
     d->stopBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-stop")));
+    d->setupBtn->setIcon(QIcon::fromTheme(QLatin1String("preferences-system")));
 
     int num = qApp->screens().count();
 
@@ -149,6 +157,8 @@ SlideToolBar::SlideToolBar(const SlideShowSettings& settings, QWidget* const par
 
     connect(d->stopBtn, SIGNAL(clicked()),
             this, SIGNAL(signalClose()));
+    connect(d->setupBtn, SIGNAL(clicked()),
+            this, SLOT(slotMenuSlideShowConfiguration()));
 }
 
 SlideToolBar::~SlideToolBar()
@@ -212,6 +222,13 @@ void SlideToolBar::slotNexPrevClicked()
 
         emit signalPause();
     }
+}
+
+void SlideToolBar::slotMenuSlideShowConfiguration()
+{
+    SetupSlideShowDialog* m_dialog = new SetupSlideShowDialog(QApplication::activeWindow());
+
+    m_dialog->show();
 }
 
 void SlideToolBar::keyPressEvent(QKeyEvent* e)

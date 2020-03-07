@@ -77,6 +77,7 @@ private Q_SLOTS:
     void slotPlayBtnToggled();
     void slotNexPrevClicked();
     void slotScreenSelected(QAction*);
+    void slotMenuSlideShowConfiguration();
 
 private:
 
