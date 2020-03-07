@@ -63,6 +63,7 @@ void ItemIconView::slotSlideShowRecursive()
     }
 }
 
+//TODO: port this function to plugin
 void ItemIconView::slotSlideShowManualFromCurrent()
 {
     slotSlideShowManualFrom(currentInfo());
@@ -70,8 +71,7 @@ void ItemIconView::slotSlideShowManualFromCurrent()
 
 void ItemIconView::slotSlideShowManualFrom(const ItemInfo& info)
 {
-   SlideShowBuilder* const builder
-           = new SlideShowBuilder(allInfo(ApplicationSettings::Slideshow));
+   SlideShowBuilder* const builder = new SlideShowBuilder(allInfo(ApplicationSettings::Slideshow));
    builder->setOverrideStartFrom(info);
    builder->setAutoPlayEnabled(false);
 
@@ -105,6 +105,7 @@ void ItemIconView::slotSlideShowBuilderComplete(const SlideShowSettings& setting
         slide->setCurrentItem(currentInfo().fileUrl());
     }
 
+    //TODO: port these slot from itemiconview_tags.cpp to plugin
     connect(slide, SIGNAL(signalRatingChanged(QUrl,int)),
             this, SLOT(slotRatingChanged(QUrl,int)));
 

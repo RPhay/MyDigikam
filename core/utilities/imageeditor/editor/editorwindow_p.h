@@ -121,7 +121,7 @@
 #include "pngsettings.h"
 #include "savingcontext.h"
 #include "sidebar.h"
-#include "slideshowsettings.h"
+#include "../../slideshow/slideshowsettings.h"
 #include "softproofdialog.h"
 #include "statusprogressbar.h"
 #include "thememanager.h"

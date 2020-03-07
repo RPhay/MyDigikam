@@ -45,7 +45,7 @@
 #include "dnuminput.h"
 #include "dfontselect.h"
 #include "digikam_debug.h"
-#include "slideshowsettings.h"
+#include "../slideshow/slideshowsettings.h"
 
 namespace Digikam
 {

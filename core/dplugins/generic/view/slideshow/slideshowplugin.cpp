@@ -28,6 +28,7 @@
 #include <QPointer>
 #include <QMenu>
 #include <QDebug>
+#include <QString>
 #include <QApplication>
 
 // KDE includes
@@ -35,26 +36,25 @@
 #include <klocalizedstring.h>
 
 // Local includes
+#include "applicationsettings.h"
 
-#include "albumparser.h"
-#include "albummanager.h"
 #include "setupslideshow_dialog.h"
 #include "slideshowloader.h"
+
+using namespace Digikam;
 
 namespace DigikamGenericSlideShowPlugin
 {
 
 SlideShowPlugin::SlideShowPlugin(QObject* const parent)
-    : DPluginGeneric(parent)
+    : DPluginGeneric(parent),
+      iface(nullptr)
 {
 }
 
 SlideShowPlugin::~SlideShowPlugin()
 {
-}
-
-void SlideShowPlugin::cleanUp()
-{
+    delete iface;
 }
 
 QString SlideShowPlugin::name() const
@@ -107,18 +107,19 @@ void SlideShowPlugin::setup(QObject* const parent)
     //TODO: rechange all name 'slideshow plugin' to 'slideshow'
     ac->setObjectName(QLatin1String("slideshow_plugin"));
     ac->setActionCategory(DPluginAction::GenericView);
-    //c->setShortcut(Qt::ALT + Qt::SHIFT + Qt::Key_F9);
 
     //TODO: customize for showfoto and digikam
-    DInfoInterface* const iface = infoIface(ac);
+    qDebug() << "SlideShowPlugin::setup: application name: " << parent->objectName();
+
+    iface = infoIface(ac);
+
 
     if (iface == nullptr)
     {
         qDebug() << "SlideShowPlugin::iface is null";
     }
 
-    //supportAlbums return false ??? and iface is null ???
-    if (1 /*iface && iface->supportAlbums()*/)
+    if (iface && iface->supportAlbums())
     {
         QMenu* const slideShowActions = new QMenu(i18n("Slideshow_Plugin"), nullptr);
         slideShowActions->setIcon(icon());
@@ -167,36 +168,52 @@ void SlideShowPlugin::setup(QObject* const parent)
         ac->setShortcut(Qt::Key_A);
 
         connect(ac, SIGNAL(triggered(bool)),
-                this, SLOT(slotSlideShow()));
+                this, SLOT(slotMenuSlideShowAll()));
     }
 
     addAction(ac);
 }
 
-void SlideShowPlugin::slotSlideShow()
-{
-    DInfoInterface* const iface = infoIface(sender());
-    qDebug() << "SlideshowPlugin::slotSlideShow";
-}
-
 //TODO: add slotMenuSlideShowAll
 void SlideShowPlugin::slotMenuSlideShowAll()
 {
-    DInfoInterface* const iface = infoIface(sender());
-
     qDebug() << "SlideshowPlugin::slotMenuSlideShowAll";
+
+    SlideShowSettings settings;
+
+    settings.readFromConfig();
+
+    settings.fileList = iface->currentAlbumItems();
+
+    slideshow(settings);
 }
 
 //TODO: add slotMenuSlideShowSelection
 void SlideShowPlugin::slotMenuSlideShowSelection()
 {
     qDebug() << "SlideshowPlugin::slotMenuSlideShowSelection";
+
+    SlideShowSettings settings;
+
+    settings.readFromConfig();
+
+    settings.fileList = iface->currentSelectedItems();
+
+    slideshow(settings);
 }
 
 //TODO: add slotMenuSlideShowRecursive
 void SlideShowPlugin::slotMenuSlideShowRecursive()
 {
     qDebug() << "SlideshowPlugin::slotMenuSlideShowRecursive";
+
+    SlideShowSettings settings;
+
+    settings.readFromConfig();
+
+    settings.fileList = iface->currentAlbumItemsReccursive();
+
+    slideshow(settings);
 }
 
 //TODO: show configuration dialog in slideshow toolbar
@@ -211,25 +228,30 @@ void SlideShowPlugin::slotMenuSlideShowConfiguration()
     m_dialog->show();
 }
 
-void SlideShowPlugin::slideshow(const ItemInfoList &infoList)
+void SlideShowPlugin::slideshow(SlideShowSettings& settings, bool autoPlayEnabled, const QUrl& startFrom)
 {
-    //TODO: implement differentiation between digikam and showfoto
-/*
-    //Use DbInfoIface for digikam and DMetaInfo for Showfoto
-    //Pass AlbumParser in DbInfoIface
-    //init slideshow for digikam
-    AlbumParser* const parser = new AlbumParser(infoList);
+    SlideShowLoader* slide = new SlideShowLoader(iface, settings);
 
-    connect(parser, SIGNAL(signalComplete(const QList<QUrl*>&)),
-            this, SLOT(slotSlideShowBuilderComplete(const QList<QUrl*>&)));
+    settings.autoPlayEnabled = autoPlayEnabled;
+    //TODO: preview settings for digikam and exiv rotate for showfoto
+    //settings.previewSettings = ApplicationSettings::instance()->getPreviewSettings();
 
-    parser->run();
-*/
-}
+    if (startFrom.isValid())
+    {
+        settings.imageUrl = startFrom;
+    }
 
-void SlideShowPlugin::slotSlideShowBuilderComplete(const QList<QUrl*>& imageList)
-{
+    if (settings.imageUrl.isValid())
+    {
+        slide->setCurrentItem(settings.imageUrl);
+    }
+    else if (settings.startWithCurrent)
+    {
+        slide->setCurrentItem(iface->currentSelectedItems()[0]);
+    }
 
+    //TODO link to slot tags
+    slide->show();
 }
 
 } // namespace DigikamGenericSlideShowPlugin

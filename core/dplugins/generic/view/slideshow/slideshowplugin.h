@@ -36,6 +36,8 @@ using namespace Digikam;
 namespace DigikamGenericSlideShowPlugin
 {
 
+class SlideShowSettings;
+
 class SlideShowPlugin : public DPluginGeneric
 {
     Q_OBJECT
@@ -55,20 +57,19 @@ public:
     QList<DPluginAuthor> authors() const override;
 
     void setup(QObject* const)           override;
-    void cleanUp()                       override;
 
 private Q_SLOTS:
 
-    void slotSlideShow();
     void slotMenuSlideShowAll();
     void slotMenuSlideShowSelection();
     void slotMenuSlideShowRecursive();
     void slotMenuSlideShowConfiguration();
 
-    void slotSlideShowBuilderComplete(const QList<QUrl*>& imageList);
+private:
+    void slideshow(SlideShowSettings& settings, bool autoPlayEnabled = true, const QUrl& startFrom = QUrl());
 
 private:
-    void slideshow(const ItemInfoList& infoList);
+    DInfoInterface* iface;
 };
 
 } // namespace DigikamGenericSlideShowPlugin
