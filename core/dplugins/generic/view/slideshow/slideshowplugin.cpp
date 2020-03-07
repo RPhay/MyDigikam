@@ -168,13 +168,25 @@ void SlideShowPlugin::setup(QObject* const parent)
         ac->setShortcut(Qt::Key_A);
 
         connect(ac, SIGNAL(triggered(bool)),
-                this, SLOT(slotMenuSlideShowAll()));
+                this, SLOT(slotMenuSlideShow()));
     }
 
     addAction(ac);
 }
 
-//TODO: add slotMenuSlideShowAll
+void SlideShowPlugin::slotMenuSlideShow()
+{
+    iface = infoIface(sender());
+
+    SlideShowSettings settings;
+
+    settings.readFromConfig();
+
+    settings.fileList = iface->currentAlbumItems();
+
+    slideshow(settings);
+}
+
 void SlideShowPlugin::slotMenuSlideShowAll()
 {
     qDebug() << "SlideshowPlugin::slotMenuSlideShowAll";

@@ -60,6 +60,7 @@ public:
 
 private Q_SLOTS:
 
+    void slotMenuSlideShow();
     void slotMenuSlideShowAll();
     void slotMenuSlideShowSelection();
     void slotMenuSlideShowRecursive();
