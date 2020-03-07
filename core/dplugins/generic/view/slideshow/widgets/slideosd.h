@@ -70,6 +70,8 @@ private Q_SLOTS:
     void slotProgressTimer();
     void slotStart();
 
+    void slotRechargeSettings();
+
 private:
 
     bool eventFilter(QObject* obj, QEvent* ev) override;

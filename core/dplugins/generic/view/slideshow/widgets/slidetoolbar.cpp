@@ -57,7 +57,8 @@ public:
         nextBtn(nullptr),
         prevBtn(nullptr),
         setupBtn(nullptr),
-        screenSelectBtn(nullptr)
+        screenSelectBtn(nullptr),
+        configDialog(nullptr)
     {
     }
 
@@ -67,6 +68,8 @@ public:
     QToolButton* prevBtn;
     QToolButton* setupBtn;
     QToolButton* screenSelectBtn;
+
+    SetupSlideShowDialog* configDialog;
 };
 
 SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const parent)
@@ -81,6 +84,8 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
     d->nextBtn  = new QToolButton(this);
     d->stopBtn  = new QToolButton(this);
     d->setupBtn = new QToolButton(this);
+
+    d->configDialog = new SetupSlideShowDialog(settings, this /*QApplication::activeWindow()*/);
 
     d->playBtn->setCheckable(true);
     d->playBtn->setChecked(!settings->autoPlayEnabled);
@@ -157,8 +162,12 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
 
     connect(d->stopBtn, SIGNAL(clicked()),
             this, SIGNAL(signalClose()));
+
     connect(d->setupBtn, SIGNAL(clicked()),
             this, SLOT(slotMenuSlideShowConfiguration()));
+
+    connect(d->configDialog, SIGNAL(finished(int)),
+            this, SLOT(slotConfigurationAccepted()));
 }
 
 SlideToolBar::~SlideToolBar()
@@ -226,9 +235,13 @@ void SlideToolBar::slotNexPrevClicked()
 
 void SlideToolBar::slotMenuSlideShowConfiguration()
 {
-    SetupSlideShowDialog* m_dialog = new SetupSlideShowDialog(QApplication::activeWindow());
+    pause(true);
+    d->configDialog->show();
+}
 
-    m_dialog->show();
+void SlideToolBar::slotConfigurationAccepted()
+{
+    pause(false);
 }
 
 void SlideToolBar::keyPressEvent(QKeyEvent* e)

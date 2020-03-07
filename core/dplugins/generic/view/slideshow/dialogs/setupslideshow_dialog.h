@@ -34,11 +34,12 @@
 #include "digikam_export.h"
 #include "dplugindialog.h"
 
-
 using namespace Digikam;
 
 namespace DigikamGenericSlideShowPlugin
 {
+
+class SlideShowSettings;
 
 class DIGIKAM_EXPORT SetupSlideShowDialog : public DPluginDialog
 {
@@ -46,7 +47,7 @@ class DIGIKAM_EXPORT SetupSlideShowDialog : public DPluginDialog
 
 public:
 
-    explicit SetupSlideShowDialog(QWidget* const parent = nullptr);
+    explicit SetupSlideShowDialog(SlideShowSettings* const settings, QWidget* const parent = nullptr);
     ~SetupSlideShowDialog();
 
 public Q_SLOTS:

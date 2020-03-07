@@ -190,6 +190,9 @@ SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const par
     connect(d->toolBar, SIGNAL(signalPlay()),
             d->parent, SLOT(slotPlay()));
 
+    connect(d->toolBar, SIGNAL(signalPlay()),
+            this, SLOT(slotRechargeSettings()));
+
     connect(d->toolBar, SIGNAL(signalNext()),
             d->parent, SLOT(slotLoadNextItem()));
 
@@ -236,6 +239,16 @@ void SlideOSD::slotStart()
     d->parent->slotLoadNextItem();
     d->progressTimer->start(d->refresh);
     pause(!d->settings->autoPlayEnabled);
+}
+
+void SlideOSD::slotRechargeSettings()
+{
+    d->labelsBox->setVisible(d->settings->printLabels || d->settings->printRating);
+    d->ratingWidget->setVisible(d->settings->printRating);
+    d->clWidget->setVisible(d->settings->printLabels);
+    d->plWidget->setVisible(d->settings->printLabels);
+    d->progressBox->setVisible(d->settings->showProgressIndicator);
+    d->progressBar->setMaximum(d->settings->delay);
 }
 
 SlideToolBar* SlideOSD::toolBar() const

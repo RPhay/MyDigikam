@@ -120,6 +120,11 @@ SlideShowLoader::SlideShowLoader(DInfoInterface* const iface, SlideShowSettings*
     d->settings       = settings;
     d->settings->iface = iface;
 
+    if (d->settings->suffle)
+    {
+        d->settings->suffleImages();
+    }
+
     setAttribute(Qt::WA_DeleteOnClose);
     setWindowFlags(Qt::FramelessWindowHint);
     setContextMenuPolicy(Qt::PreventContextMenu);
@@ -219,11 +224,6 @@ SlideShowLoader::SlideShowLoader(DInfoInterface* const iface, SlideShowSettings*
         screenIndex             = activeScreenIndex;
         d->settings->slideScreen = -2;
         d->settings->writeToConfig();
-    }
-
-    if (d->settings->suffle)
-    {
-        d->settings->suffleImages();
     }
 
     slotScreenSelected(screenIndex);

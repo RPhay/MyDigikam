@@ -78,7 +78,8 @@ public:
         showProgress(nullptr),
         screenPlacement(nullptr),
         captionFont(nullptr),
-        delayInput(nullptr)
+        delayInput(nullptr),
+        settings(nullptr)
     {
     }
 
@@ -102,11 +103,13 @@ public:
 
     DFontSelect*  captionFont;
     DIntNumInput* delayInput;
+
+    SlideShowSettings* settings;
 };
 
 // --------------------------------------------------------
 
-SetupSlideShowDialog::SetupSlideShowDialog(QWidget* const parent)
+SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QWidget* const parent)
     : DPluginDialog(parent, QLatin1String("Slideshow Settings")),
       d(new Private)
 {
@@ -252,6 +255,8 @@ SetupSlideShowDialog::SetupSlideShowDialog(QWidget* const parent)
     connect(m_buttons->button(QDialogButtonBox::Close), SIGNAL(clicked()),
             this, SLOT(reject()));
 
+    d->settings = settings;
+
     readSettings();
 }
 
@@ -267,56 +272,51 @@ void SetupSlideShowDialog::slotSetUnchecked(int)
 
 void SetupSlideShowDialog::slotApplySettings()
 {
-    SlideShowSettings settings;
+    d->settings->delay                 = d->delayInput->value();
+    d->settings->startWithCurrent      = d->startWithCurrent->isChecked();
+    d->settings->loop                  = d->loopMode->isChecked();
+    d->settings->suffle                = d->suffleMode->isChecked();
+    d->settings->printName             = d->showName->isChecked();
+    d->settings->printDate             = d->showDate->isChecked();
+    d->settings->printApertureFocal    = d->showApertureFocal->isChecked();
+    d->settings->printExpoSensitivity  = d->showExpoSensitivity->isChecked();
+    d->settings->printMakeModel        = d->showMakeModel->isChecked();
+    d->settings->printComment          = d->showComment->isChecked();
+    d->settings->printTitle            = d->showTitle->isChecked();
+    d->settings->printCapIfNoTitle     = d->showCapIfNoTitle->isChecked();
+    d->settings->printTags             = d->showTags->isChecked();
+    d->settings->printLabels           = d->showLabels->isChecked();
+    d->settings->printRating           = d->showRating->isChecked();
+    d->settings->showProgressIndicator = d->showProgress->isChecked();
+    d->settings->captionFont           = d->captionFont->font();
+    d->settings->slideScreen           = d->screenPlacement->currentIndex() - 2;
 
-    settings.delay                 = d->delayInput->value();
-    settings.startWithCurrent      = d->startWithCurrent->isChecked();
-    settings.loop                  = d->loopMode->isChecked();
-    settings.suffle                = d->suffleMode->isChecked();
-    settings.printName             = d->showName->isChecked();
-    settings.printDate             = d->showDate->isChecked();
-    settings.printApertureFocal    = d->showApertureFocal->isChecked();
-    settings.printExpoSensitivity  = d->showExpoSensitivity->isChecked();
-    settings.printMakeModel        = d->showMakeModel->isChecked();
-    settings.printComment          = d->showComment->isChecked();
-    settings.printTitle            = d->showTitle->isChecked();
-    settings.printCapIfNoTitle     = d->showCapIfNoTitle->isChecked();
-    settings.printTags             = d->showTags->isChecked();
-    settings.printLabels           = d->showLabels->isChecked();
-    settings.printRating           = d->showRating->isChecked();
-    settings.showProgressIndicator = d->showProgress->isChecked();
-    settings.captionFont           = d->captionFont->font();
-    settings.slideScreen           = d->screenPlacement->currentIndex() - 2;
-
-    settings.writeToConfig();
+    d->settings->writeToConfig();
 
     accept();
 }
 
 void SetupSlideShowDialog::readSettings()
 {
-    SlideShowSettings settings;
-    settings.readFromConfig();
+    d->delayInput->setValue(d->settings->delay);
+    d->startWithCurrent->setChecked(d->settings->startWithCurrent);
+    d->loopMode->setChecked(d->settings->loop);
+    d->suffleMode->setChecked(d->settings->suffle);
+    d->showName->setChecked(d->settings->printName);
+    d->showDate->setChecked(d->settings->printDate);
+    d->showApertureFocal->setChecked(d->settings->printApertureFocal);
+    d->showExpoSensitivity->setChecked(d->settings->printExpoSensitivity);
+    d->showMakeModel->setChecked(d->settings->printMakeModel);
+    d->showComment->setChecked(d->settings->printComment);
+    d->showTitle->setChecked(d->settings->printTitle);
+    d->showCapIfNoTitle->setChecked(d->settings->printCapIfNoTitle);
+    d->showTags->setChecked(d->settings->printTags);
+    d->showLabels->setChecked(d->settings->printLabels);
+    d->showRating->setChecked(d->settings->printRating);
+    d->showProgress->setChecked(d->settings->showProgressIndicator);
+    d->captionFont->setFont(d->settings->captionFont);
 
-    d->delayInput->setValue(settings.delay);
-    d->startWithCurrent->setChecked(settings.startWithCurrent);
-    d->loopMode->setChecked(settings.loop);
-    d->suffleMode->setChecked(settings.suffle);
-    d->showName->setChecked(settings.printName);
-    d->showDate->setChecked(settings.printDate);
-    d->showApertureFocal->setChecked(settings.printApertureFocal);
-    d->showExpoSensitivity->setChecked(settings.printExpoSensitivity);
-    d->showMakeModel->setChecked(settings.printMakeModel);
-    d->showComment->setChecked(settings.printComment);
-    d->showTitle->setChecked(settings.printTitle);
-    d->showCapIfNoTitle->setChecked(settings.printCapIfNoTitle);
-    d->showTags->setChecked(settings.printTags);
-    d->showLabels->setChecked(settings.printLabels);
-    d->showRating->setChecked(settings.printRating);
-    d->showProgress->setChecked(settings.showProgressIndicator);
-    d->captionFont->setFont(settings.captionFont);
-
-    const int screen = settings.slideScreen;
+    const int screen = d->settings->slideScreen;
 
     if ((screen >= -2) && (screen < qApp->screens().count()))
     {
@@ -325,8 +325,8 @@ void SetupSlideShowDialog::readSettings()
     else
     {
         d->screenPlacement->setCurrentIndex(0);
-        settings.slideScreen = -2;
-        settings.writeToConfig();
+        d->settings->slideScreen = -2;
+        d->settings->writeToConfig();
     }
 }
 
