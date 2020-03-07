@@ -97,6 +97,11 @@ QList<QUrl> DMetaInfoIface::allAlbumItems() const
     return currentAlbumItems();
 }
 
+QList<QUrl> DMetaInfoIface::currentAlbumItemsReccursive() const
+{
+    return currentAlbumItems();
+}
+
 DMetaInfoIface::DInfoMap DMetaInfoIface::itemInfo(const QUrl& url) const
 {
     DInfoMap map;
