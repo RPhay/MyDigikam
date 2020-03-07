@@ -88,36 +88,37 @@ public:
 
           errorView(nullptr),
           endView(nullptr),
-          osd(nullptr)
+          osd(nullptr),
+          settings(nullptr)
     {
     }
 
-    int               fileIndex;
-    int               screenSaverCookie;
+    int                fileIndex;
+    int                screenSaverCookie;
 
-    QTimer*           mouseMoveTimer;  ///< To hide cursor when not moved.
+    QTimer*            mouseMoveTimer;  ///< To hide cursor when not moved.
 
-    SlideImage*       imageView;
+    SlideImage*        imageView;
 
 #ifdef HAVE_MEDIAPLAYER
 
-    SlideVideo*       videoView;
+    SlideVideo*        videoView;
 
 #endif
 
-    SlideError*       errorView;
-    SlideEnd*         endView;
-    SlideOSD*         osd;
+    SlideError*        errorView;
+    SlideEnd*          endView;
+    SlideOSD*          osd;
 
-    SlideShowSettings settings;
+    SlideShowSettings* settings;
 };
 
-SlideShowLoader::SlideShowLoader(DInfoInterface* const iface, const SlideShowSettings& settings)
+SlideShowLoader::SlideShowLoader(DInfoInterface* const iface, SlideShowSettings* const settings)
     : QStackedWidget(nullptr),
       d(new Private)
 {
     d->settings       = settings;
-    d->settings.iface = iface;
+    d->settings->iface = iface;
 
     setAttribute(Qt::WA_DeleteOnClose);
     setWindowFlags(Qt::FramelessWindowHint);
@@ -137,7 +138,7 @@ SlideShowLoader::SlideShowLoader(DInfoInterface* const iface, const SlideShowSet
     // ---------------------------------------------------------------
 
     d->imageView = new SlideImage(this);
-    d->imageView->setPreviewSettings(d->settings.previewSettings);
+    d->imageView->setPreviewSettings(d->settings->previewSettings);
     d->imageView->installEventFilter(this);
 
     connect(d->imageView, SIGNAL(signalImageLoaded(bool)),
@@ -150,7 +151,7 @@ SlideShowLoader::SlideShowLoader(DInfoInterface* const iface, const SlideShowSet
 #ifdef HAVE_MEDIAPLAYER
 
     d->videoView = new SlideVideo(this);
-    d->videoView->setInfoInterface(d->settings.iface);
+    d->videoView->setInfoInterface(d->settings->iface);
     d->videoView->installEventFilter(this);
 
     connect(d->videoView, SIGNAL(signalVideoLoaded(bool)),
@@ -197,7 +198,7 @@ SlideShowLoader::SlideShowLoader(DInfoInterface* const iface, const SlideShowSet
     }
 
     const int activeScreenIndex = qMax(qApp->screens().indexOf(screen), 0);
-    const int preferenceScreen  = d->settings.slideScreen;
+    const int preferenceScreen  = d->settings->slideScreen;
     int screenIndex             = 0;
 
     if      (preferenceScreen == -2)
@@ -216,13 +217,13 @@ SlideShowLoader::SlideShowLoader(DInfoInterface* const iface, const SlideShowSet
     else
     {
         screenIndex             = activeScreenIndex;
-        d->settings.slideScreen = -2;
-        d->settings.writeToConfig();
+        d->settings->slideScreen = -2;
+        d->settings->writeToConfig();
     }
 
-    if (d->settings.suffle)
+    if (d->settings->suffle)
     {
-        d->settings.suffleImages();
+        d->settings->suffleImages();
     }
 
     slotScreenSelected(screenIndex);
@@ -232,9 +233,6 @@ SlideShowLoader::SlideShowLoader(DInfoInterface* const iface, const SlideShowSet
     inhibitScreenSaver();
     slotMouseMoveTimeOut();
     setCurrentIndex(ImageView);
-
-    qDebug() << "SlideShow plugin current index: " << currentIndex();
-    qDebug() << "Slideshow plugin nb of file: " << d->settings.count();
 }
 
 SlideShowLoader::~SlideShowLoader()
@@ -245,6 +243,7 @@ SlideShowLoader::~SlideShowLoader()
 
     allowScreenSaver();
 
+    delete d->settings;
     delete d;
 }
 
@@ -305,7 +304,7 @@ void SlideShowLoader::setCurrentView(SlideShowViewMode view)
 
 void SlideShowLoader::setCurrentItem(const QUrl& url)
 {
-    int index = d->settings.indexOf(url);
+    int index = d->settings->indexOf(url);
 
     if (index != -1)
     {
@@ -315,16 +314,16 @@ void SlideShowLoader::setCurrentItem(const QUrl& url)
 
 QUrl SlideShowLoader::currentItem() const
 {
-    return d->settings.fileList.value(d->fileIndex);
+    return d->settings->fileList.value(d->fileIndex);
 }
 
 void SlideShowLoader::slotLoadNextItem()
 {
-    int num = d->settings.count();
+    int num = d->settings->count();
 
     if (d->fileIndex == (num - 1))
     {
-        if (d->settings.loop)
+        if (d->settings->loop)
         {
             d->fileIndex = -1;
         }
@@ -334,7 +333,7 @@ void SlideShowLoader::slotLoadNextItem()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "fileIndex: " << d->fileIndex;
 
-    if (!d->settings.loop)
+    if (!d->settings->loop)
     {
         d->osd->toolBar()->setEnabledPrev(d->fileIndex > 0);
         d->osd->toolBar()->setEnabledNext(d->fileIndex < (num - 1));
@@ -349,7 +348,9 @@ void SlideShowLoader::slotLoadNextItem()
 
         if (mimeDB.mimeTypeForFile(currentItem().toLocalFile())
                                   .name().startsWith(QLatin1String("video/")))
-        {
+        {FR
+                    7
+
             d->videoView->setCurrentUrl(currentItem());
             return;
         }
@@ -366,11 +367,11 @@ void SlideShowLoader::slotLoadNextItem()
 
 void SlideShowLoader::slotLoadPrevItem()
 {
-    int num = d->settings.count();
+    int num = d->settings->count();
 
     if (d->fileIndex == 0)
     {
-        if (d->settings.loop)
+        if (d->settings->loop)
         {
             d->fileIndex = num;
         }
@@ -380,7 +381,7 @@ void SlideShowLoader::slotLoadPrevItem()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "fileIndex: " << d->fileIndex;
 
-    if (!d->settings.loop)
+    if (!d->settings->loop)
     {
         d->osd->toolBar()->setEnabledPrev(d->fileIndex > 0);
         d->osd->toolBar()->setEnabledNext(d->fileIndex < (num - 1));
@@ -497,11 +498,11 @@ void SlideShowLoader::endOfSlide()
 void SlideShowLoader::preloadNextItem()
 {
     int index = d->fileIndex + 1;
-    int num   = d->settings.count();
+    int num   = d->settings->count();
 
     if (index >= num)
     {
-        if (d->settings.loop)
+        if (d->settings->loop)
         {
             index = 0;
         }
@@ -509,7 +510,7 @@ void SlideShowLoader::preloadNextItem()
 
     if (index < num)
     {
-        QUrl nextItem = d->settings.fileList.value(index);
+        QUrl nextItem = d->settings->fileList.value(index);
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -541,7 +542,7 @@ void SlideShowLoader::wheelEvent(QWheelEvent* e)
         {
             // EndView => backward.
 
-            d->fileIndex = d->settings.count();
+            d->fileIndex = d->settings->count();
         }
 
         d->osd->pause(true);
@@ -570,7 +571,7 @@ void SlideShowLoader::mousePressEvent(QMouseEvent* e)
         {
             // EndView => backward.
 
-            d->fileIndex = d->settings.count() - 1;
+            d->fileIndex = d->settings->count() - 1;
         }
 
         d->osd->pause(true);
@@ -681,7 +682,7 @@ void SlideShowLoader::slotAssignRating(int rating)
     DInfoInterface::DInfoMap info;
     DItemInfo item(info);
     item.setRating(rating);
-    d->settings.iface->setItemInfo(currentItem(), info);
+    d->settings->iface->setItemInfo(currentItem(), info);
 
     dispatchCurrentInfoChange(currentItem());
 
@@ -693,7 +694,7 @@ void SlideShowLoader::slotAssignColorLabel(int color)
     DInfoInterface::DInfoMap info;
     DItemInfo item(info);
     item.setColorLabel(color);
-    d->settings.iface->setItemInfo(currentItem(), info);
+    d->settings->iface->setItemInfo(currentItem(), info);
 
     dispatchCurrentInfoChange(currentItem());
 
@@ -705,7 +706,7 @@ void SlideShowLoader::slotAssignPickLabel(int pick)
     DInfoInterface::DInfoMap info;
     DItemInfo item(info);
     item.setPickLabel(pick);
-    d->settings.iface->setItemInfo(currentItem(), info);
+    d->settings->iface->setItemInfo(currentItem(), info);
 
     dispatchCurrentInfoChange(currentItem());
 

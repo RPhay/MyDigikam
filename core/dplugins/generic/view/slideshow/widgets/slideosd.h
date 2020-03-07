@@ -50,7 +50,7 @@ class SlideOSD : public QWidget
 
 public:
 
-    explicit SlideOSD(const SlideShowSettings& settings, SlideShowLoader* const parent = nullptr);
+    explicit SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const parent = nullptr);
     ~SlideOSD();
 //TODO: move slideTooBar to this directory
     void setCurrentUrl(const QUrl& url);

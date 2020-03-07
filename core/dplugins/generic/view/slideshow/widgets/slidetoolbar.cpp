@@ -69,7 +69,7 @@ public:
     QToolButton* screenSelectBtn;
 };
 
-SlideToolBar::SlideToolBar(const SlideShowSettings& settings, QWidget* const parent)
+SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const parent)
     : DHBox(parent),
       d(new Private)
 {
@@ -83,7 +83,7 @@ SlideToolBar::SlideToolBar(const SlideShowSettings& settings, QWidget* const par
     d->setupBtn = new QToolButton(this);
 
     d->playBtn->setCheckable(true);
-    d->playBtn->setChecked(!settings.autoPlayEnabled);
+    d->playBtn->setChecked(!settings->autoPlayEnabled);
     d->playBtn->setFocusPolicy(Qt::NoFocus);
     d->prevBtn->setFocusPolicy(Qt::NoFocus);
     d->nextBtn->setFocusPolicy(Qt::NoFocus);
@@ -97,7 +97,7 @@ SlideToolBar::SlideToolBar(const SlideShowSettings& settings, QWidget* const par
     d->stopBtn->setIconSize(s);
     d->setupBtn->setIconSize(s);
 
-    QString iconString = settings.autoPlayEnabled ? QLatin1String("media-playback-pause")
+    QString iconString = settings->autoPlayEnabled ? QLatin1String("media-playback-pause")
                                                   : QLatin1String("media-playback-start");
     d->playBtn->setIcon(QIcon::fromTheme(iconString));
     d->prevBtn->setIcon(QIcon::fromTheme(QLatin1String("media-skip-backward")));
@@ -130,7 +130,7 @@ SlideToolBar::SlideToolBar(const SlideShowSettings& settings, QWidget* const par
             act->setCheckable(true);
             group->addAction(act);
 
-            if (i == settings.slideScreen)
+            if (i == settings->slideScreen)
             {
                act->setChecked(true);
             }

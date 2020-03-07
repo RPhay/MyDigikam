@@ -42,7 +42,7 @@ class SlideProperties : public QWidget
 {
 public:
 
-    explicit SlideProperties(const SlideShowSettings& settings, QWidget* const parent);
+    explicit SlideProperties(SlideShowSettings* const settings, QWidget* const parent);
     ~SlideProperties();
 
     void setCurrentUrl(const QUrl& url);

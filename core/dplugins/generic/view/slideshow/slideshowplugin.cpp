@@ -162,22 +162,22 @@ void SlideShowPlugin::slotMenuSlideShow()
 {
     iface = infoIface(sender());
 
-    SlideShowSettings settings;
+    SlideShowSettings* settings = new SlideShowSettings();
 
-    settings.readFromConfig();
+    settings->readFromConfig();
 
-    settings.fileList = iface->currentAlbumItems();
+    settings->fileList = iface->currentAlbumItems();
 
     slideshow(settings);
 }
 
 void SlideShowPlugin::slotMenuSlideShowAll()
 {
-    SlideShowSettings settings;
+    SlideShowSettings* settings = new SlideShowSettings();
 
-    settings.readFromConfig();
+    settings->readFromConfig();
 
-    settings.fileList = iface->currentAlbumItems();
+    settings->fileList = iface->currentAlbumItems();
 
     slideshow(settings);
 }
@@ -185,11 +185,11 @@ void SlideShowPlugin::slotMenuSlideShowAll()
 //TODO: add slotMenuSlideShowSelection
 void SlideShowPlugin::slotMenuSlideShowSelection()
 {
-    SlideShowSettings settings;
+    SlideShowSettings* settings = new SlideShowSettings();
 
-    settings.readFromConfig();
+    settings->readFromConfig();
 
-    settings.fileList = iface->currentSelectedItems();
+    settings->fileList = iface->currentSelectedItems();
 
     slideshow(settings);
 }
@@ -202,33 +202,33 @@ void SlideShowPlugin::slotMenuSlideShowRecursive()
 
 void SlideShowPlugin::slotShowRecursive(const QList<QUrl>& imageList)
 {
-    SlideShowSettings settings;
+    SlideShowSettings* settings = new SlideShowSettings();
 
-    settings.readFromConfig();
+    settings->readFromConfig();
 
-    settings.fileList = imageList;
+    settings->fileList = imageList;
 
     slideshow(settings);
 }
 
-void SlideShowPlugin::slideshow(SlideShowSettings& settings, bool autoPlayEnabled, const QUrl& startFrom)
+void SlideShowPlugin::slideshow(SlideShowSettings* settings, bool autoPlayEnabled, const QUrl& startFrom)
 {
     SlideShowLoader* slide = new SlideShowLoader(iface, settings);
 
-    settings.autoPlayEnabled = autoPlayEnabled;
+    settings->autoPlayEnabled = autoPlayEnabled;
     //TODO: preview settings for digikam and exiv rotate for showfoto
     //settings.previewSettings = ApplicationSettings::instance()->getPreviewSettings();
 
     if (startFrom.isValid())
     {
-        settings.imageUrl = startFrom;
+        settings->imageUrl = startFrom;
     }
 
-    if (settings.imageUrl.isValid())
+    if (settings->imageUrl.isValid())
     {
-        slide->setCurrentItem(settings.imageUrl);
+        slide->setCurrentItem(settings->imageUrl);
     }
-    else if (settings.startWithCurrent)
+    else if (settings->startWithCurrent)
     {
         slide->setCurrentItem(iface->currentSelectedItems()[0]);
     }

@@ -76,7 +76,8 @@ public:
         toolBar(nullptr),
         ratingWidget(nullptr),
         clWidget(nullptr),
-        plWidget(nullptr)
+        plWidget(nullptr),
+        settings(nullptr)
     {
     }
 
@@ -99,10 +100,10 @@ public:
     RatingWidget*       ratingWidget;
     ColorLabelSelector* clWidget;
     PickLabelSelector*  plWidget;
-    SlideShowSettings   settings;
+    SlideShowSettings*  settings;
 };
 
-SlideOSD::SlideOSD(const SlideShowSettings& settings, SlideShowLoader* const parent)
+SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const parent)
     : QWidget(parent),
       d(new Private())
 {
@@ -151,10 +152,10 @@ SlideOSD::SlideOSD(const SlideShowSettings& settings, SlideShowLoader* const par
     d->labelsBox->installEventFilter(d->parent);
     d->labelsBox->setMouseTracking(true);
 
-    d->labelsBox->setVisible(d->settings.printLabels || d->settings.printRating);
-    d->ratingWidget->setVisible(d->settings.printRating);
-    d->clWidget->setVisible(d->settings.printLabels);
-    d->plWidget->setVisible(d->settings.printLabels);
+    d->labelsBox->setVisible(d->settings->printLabels || d->settings->printRating);
+    d->ratingWidget->setVisible(d->settings->printRating);
+    d->clWidget->setVisible(d->settings->printLabels);
+    d->plWidget->setVisible(d->settings->printLabels);
 
     connect(d->ratingWidget, SIGNAL(signalRatingChanged(int)),
             parent, SLOT(slotAssignRating(int)));
@@ -168,13 +169,13 @@ SlideOSD::SlideOSD(const SlideShowSettings& settings, SlideShowLoader* const par
     // ---------------------------------------------------------------
 
     d->progressBox   = new DHBox(this);
-    d->progressBox->setVisible(d->settings.showProgressIndicator);
+    d->progressBox->setVisible(d->settings->showProgressIndicator);
     d->progressBox->installEventFilter(d->parent);
     d->progressBox->setMouseTracking(true);
 
     d->progressBar   = new QProgressBar(d->progressBox);
     d->progressBar->setMinimum(0);
-    d->progressBar->setMaximum(d->settings.delay);
+    d->progressBar->setMaximum(d->settings->delay);
     d->progressBar->setFocusPolicy(Qt::NoFocus);
     d->progressBar->installEventFilter(d->parent);
     d->progressBar->setMouseTracking(true);
@@ -234,7 +235,7 @@ void SlideOSD::slotStart()
 {
     d->parent->slotLoadNextItem();
     d->progressTimer->start(d->refresh);
-    pause(!d->settings.autoPlayEnabled);
+    pause(!d->settings->autoPlayEnabled);
 }
 
 SlideToolBar* SlideOSD::toolBar() const
@@ -244,7 +245,7 @@ SlideToolBar* SlideOSD::toolBar() const
 
 void SlideOSD::setCurrentUrl(const QUrl& url)
 {
-    DInfoInterface::DInfoMap info = d->settings.iface->itemInfo(url);
+    DInfoInterface::DInfoMap info = d->settings->iface->itemInfo(url);
     DItemInfo item(info);
 
     // Update info text.
@@ -253,7 +254,7 @@ void SlideOSD::setCurrentUrl(const QUrl& url)
 
     // Display Labels.
 
-    if (d->settings.printLabels)
+    if (d->settings->printLabels)
     {
         d->clWidget->blockSignals(true);
         d->plWidget->blockSignals(true);
@@ -263,7 +264,7 @@ void SlideOSD::setCurrentUrl(const QUrl& url)
         d->plWidget->blockSignals(false);
     }
 
-    if (d->settings.printRating)
+    if (d->settings->printRating)
     {
         d->ratingWidget->blockSignals(true);
         d->ratingWidget->setRating(item.rating());
@@ -329,8 +330,8 @@ bool SlideOSD::eventFilter(QObject* obj, QEvent* ev)
 void SlideOSD::slotProgressTimer()
 {
     QString str = QString::fromUtf8("(%1/%2)")
-                    .arg(QString::number(d->settings.fileList.indexOf(d->parent->currentItem()) + 1))
-                    .arg(QString::number(d->settings.fileList.count()));
+                    .arg(QString::number(d->settings->fileList.indexOf(d->parent->currentItem()) + 1))
+                    .arg(QString::number(d->settings->fileList.count()));
 
     if      (isPaused())
     {
@@ -352,7 +353,7 @@ void SlideOSD::slotProgressTimer()
     {
         d->progressBar->setFormat(str);
 
-        if (d->progressBar->value() == d->settings.delay)
+        if (d->progressBar->value() == d->settings->delay)
         {
             if (!d->ready)
             {
