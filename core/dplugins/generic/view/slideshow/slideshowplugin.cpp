@@ -154,16 +154,6 @@ void SlideShowPlugin::setup(QObject* const parent)
 
         connect(iface, SIGNAL(signalAlbumItemsReccursiveCompleted(QList<QUrl>)),
                 this, SLOT(slotShowRecursive(QList<QUrl>)));
-
-        //Action configuration
-        QAction* const configurationAction = new QAction(i18n("Configurations"), parent);
-        configurationAction->setObjectName(QLatin1String("slideshow_configation"));
-        configurationAction->setShortcut(Qt::CTRL + Qt::Key_A);    //TODO: rechange shortcut to CTRL+F9
-        slideShowActions->addAction(configurationAction);
-
-        connect(configurationAction, SIGNAL(triggered()),
-                this, SLOT(slotMenuSlideShowConfiguration()));
-
     }
     else
     {
@@ -234,18 +224,6 @@ void SlideShowPlugin::slotShowRecursive(const QList<QUrl>& imageList)
     settings.fileList = imageList;
 
     slideshow(settings);
-}
-
-//TODO: show configuration dialog in slideshow toolbar
-void SlideShowPlugin::slotMenuSlideShowConfiguration()
-{
-    qDebug() << "SlideshowPlugin::slotMenuSlideShowConfiguration";
-
-    SetupSlideShowDialog* m_dialog = new SetupSlideShowDialog(QApplication::activeWindow());
-
-    m_dialog->setPlugin(this);
-
-    m_dialog->show();
 }
 
 void SlideShowPlugin::slideshow(SlideShowSettings& settings, bool autoPlayEnabled, const QUrl& startFrom)
