@@ -87,18 +87,6 @@ AlbumParser::~AlbumParser()
     delete d;
 }
 
-/* TODO: init from slideshow plugin
-void AlbumParser::setOverrideStartFrom(const ItemInfo& info)
-{
-   d->startFrom = info.fileUrl();
-}
-
-void AlbumParser::setAutoPlayEnabled(bool enable)
-{
-    d->autoPlayEnabled = enable;
-}
-*/
-
 QList<QUrl>& AlbumParser::getImageList()
 {
     run();
@@ -157,18 +145,6 @@ void AlbumParser::slotParseItemInfoList(const ItemInfoList& list)
 
     int               i = 0;
 
-    //TODO: parse to slideshow settings when init Slideshow plugin
-/*
-    SlideShowSettings settings;
-    settings.readFromConfig();
-    settings.autoPlayEnabled = d->autoPlayEnabled;
-    settings.previewSettings = ApplicationSettings::instance()->getPreviewSettings();
-
-    if (d->startFrom.isValid())
-    {
-        settings.imageUrl = d->startFrom;
-    }
-*/
     d->imageList.clear();
 
     for (ItemInfoList::const_iterator it = list.constBegin();
