@@ -38,6 +38,7 @@
 #include "albummanager.h"
 #include "albumfiltermodel.h"
 #include "albumselectwidget.h"
+#include "albumparser.h"
 #include "coredb.h"
 #include "collectionmanager.h"
 #include "coredbnamefilter.h"
@@ -340,6 +341,20 @@ QList<QUrl> DBInfoIface::currentAlbumItems() const
     }
 
     return imageList;
+}
+
+QList<QUrl> DBInfoIface::currentAlbumItemsReccursive() const
+{
+    Album* const currAlbum = d->albumManager->currentAlbums().first();
+
+    if (currAlbum)
+    {
+        AlbumParser* const parser = new AlbumParser(currAlbum);
+
+        return parser->getImageList();
+    }
+
+    return QList<QUrl>();
 }
 
 QList<QUrl> DBInfoIface::currentSelectedItems() const
