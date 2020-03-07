@@ -120,11 +120,6 @@ SlideShowLoader::SlideShowLoader(DInfoInterface* const iface, SlideShowSettings*
     d->settings       = settings;
     d->settings->iface = iface;
 
-    if (d->settings->suffle)
-    {
-        d->settings->suffleImages();
-    }
-
     setAttribute(Qt::WA_DeleteOnClose);
     setWindowFlags(Qt::FramelessWindowHint);
     setContextMenuPolicy(Qt::PreventContextMenu);
@@ -530,6 +525,8 @@ void SlideShowLoader::preloadNextItem()
 
 void SlideShowLoader::wheelEvent(QWheelEvent* e)
 {
+    d->osd->toolBar()->closeConfigurationDialog();
+
     if (e->angleDelta().y() < 0)
     {
         d->osd->pause(true);
@@ -552,6 +549,8 @@ void SlideShowLoader::wheelEvent(QWheelEvent* e)
 
 void SlideShowLoader::mousePressEvent(QMouseEvent* e)
 {
+    d->osd->toolBar()->closeConfigurationDialog();
+
     if (d->fileIndex == -1)
     {
         qDebug() << "Mouse pressed at the end of slideshow";
@@ -751,6 +750,7 @@ void SlideShowLoader::slotPause()
 
 void SlideShowLoader::slotPlay()
 {
+    d->settings->suffleImages();
 
 #ifdef HAVE_MEDIAPLAYER
 

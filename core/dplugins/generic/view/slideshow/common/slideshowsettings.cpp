@@ -111,7 +111,7 @@ void SlideShowSettings::readFromConfig()
     printTags                 = group.readEntry(configSlideShowPrintTagsEntry,            false);
     printLabels               = group.readEntry(configSlideShowPrintLabelsEntry,          false);
     printRating               = group.readEntry(configSlideShowPrintRatingEntry,          false);
-    showProgressIndicator     = group.readEntry(configSlideShowProgressIndicatorEntry,    true);
+    //showProgressIndicator     = group.readEntry(configSlideShowProgressIndicatorEntry,    true);
     captionFont               = group.readEntry(configSlideShowCaptionFontEntry,
                                                 QFontDatabase::systemFont(QFontDatabase::GeneralFont));
     slideScreen               = group.readEntry(configSlideScreenEntry,                   -2);
@@ -138,7 +138,7 @@ void SlideShowSettings::writeToConfig()
     group.writeEntry(configSlideShowPrintTagsEntry,            printTags);
     group.writeEntry(configSlideShowPrintLabelsEntry,          printLabels);
     group.writeEntry(configSlideShowPrintRatingEntry,          printRating);
-    group.writeEntry(configSlideShowProgressIndicatorEntry,    showProgressIndicator);
+    //group.writeEntry(configSlideShowProgressIndicatorEntry,    showProgressIndicator);
     group.writeEntry(configSlideShowCaptionFontEntry,          captionFont);
     group.writeEntry(configSlideScreenEntry,                   slideScreen);
     group.sync();
@@ -156,20 +156,39 @@ int SlideShowSettings::count() const
 
 void SlideShowSettings::suffleImages()
 {
-    qsrand(QTime::currentTime().msec());
-
-    QList<QUrl>::iterator it = fileList.begin();
-    QList<QUrl>::iterator it1;
-
-    for (uint i = 0 ; i < (uint)count() ; ++i)
+    if(suffle)
     {
-        int inc = (int) (float(count()) * qrand() / (RAND_MAX + 1.0));
+        if (originalFileList.isEmpty())
+        {
+            //keep a backup of original file list at the first suffle
+            originalFileList = fileList;
 
-        it1     = fileList.begin();
-        it1    += inc;
+            //suffle
+            qsrand(QTime::currentTime().msec());
 
-        std::swap(*(it++), *(it1));
-     }
+            QList<QUrl>::iterator it = fileList.begin();
+            QList<QUrl>::iterator it1;
+
+            for (uint i = 0 ; i < (uint)count() ; ++i)
+            {
+                int inc = (int) (float(count()) * qrand() / (RAND_MAX + 1.0));
+
+                it1     = fileList.begin();
+                it1    += inc;
+
+                std::swap(*(it++), *(it1));
+             }
+        }
+    }
+    else
+    {
+        if (!originalFileList.isEmpty())
+        {
+            //return to original list
+            fileList = originalFileList;
+            originalFileList.clear();
+        }
+    }
 }
 
 } // namespace DigikamGenericSlideShowPlugin

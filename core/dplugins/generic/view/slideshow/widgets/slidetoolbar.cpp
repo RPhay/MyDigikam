@@ -206,6 +206,14 @@ void SlideToolBar::setEnabledPrev(bool val)
     d->prevBtn->setEnabled(val);
 }
 
+void SlideToolBar::closeConfigurationDialog()
+{
+    if (d->configDialog->isVisible())
+    {
+        d->configDialog->reject();
+    }
+}
+
 void SlideToolBar::slotPlayBtnToggled()
 {
     if (d->playBtn->isChecked())
@@ -235,6 +243,13 @@ void SlideToolBar::slotNexPrevClicked()
 
 void SlideToolBar::slotMenuSlideShowConfiguration()
 {
+    if (d->configDialog->isVisible())
+    {
+        d->configDialog->reject();
+
+        return;
+    }
+
     pause(true);
     d->configDialog->show();
 }

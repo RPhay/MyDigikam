@@ -58,6 +58,8 @@ public:
     void setEnabledNext(bool val);
     void setEnabledPrev(bool val);
 
+    void closeConfigurationDialog();
+
 protected:
 
     void keyPressEvent(QKeyEvent* e) override;

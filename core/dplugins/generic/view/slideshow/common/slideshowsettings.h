@@ -172,6 +172,11 @@ public:
     QList<QUrl>                  fileList;
 
     /**
+     * Original list of pictures URL to slide
+     */
+    QList<QUrl>                  originalFileList;
+
+    /**
      * URL of the first image to show if requested
      */
     QUrl                         imageUrl;
