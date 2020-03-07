@@ -320,11 +320,6 @@ void DBInfoIface::slotMetadataChangedForUrl(const QUrl& url)
     ItemAttributesWatch::instance()->fileMetadataChanged(url);
 }
 
-Q_SLOT void DBInfoIface::slotPassImageList(const QList<QUrl>& imageList)
-{
-    emit signalAlbumItemsReccursiveCompleted(imageList);
-}
-
 void DBInfoIface::parseAlbumItemsReccursive()
 {
     Album* const currAlbum = d->albumManager->currentAlbums().first();
@@ -334,7 +329,7 @@ void DBInfoIface::parseAlbumItemsReccursive()
         AlbumParser* const parser = new AlbumParser(currAlbum);
 
         connect(parser, SIGNAL(signalComplete(const QList<QUrl>&)),
-                this, SLOT(slotPassImageList(const QList<QUrl>&)));
+                this, SIGNAL(signalAlbumItemsReccursiveCompleted(const QList<QUrl>&)));
 
         parser->run();
     }

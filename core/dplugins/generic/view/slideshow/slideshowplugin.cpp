@@ -108,16 +108,7 @@ void SlideShowPlugin::setup(QObject* const parent)
     ac->setObjectName(QLatin1String("slideshow_plugin"));
     ac->setActionCategory(DPluginAction::GenericView);
 
-    //TODO: customize for showfoto and digikam
-    qDebug() << "SlideShowPlugin::setup: application name: " << parent->objectName();
-
     iface = infoIface(ac);
-
-
-    if (iface == nullptr)
-    {
-        qDebug() << "SlideShowPlugin::iface is null";
-    }
 
     if (iface && iface->supportAlbums())
     {
@@ -182,8 +173,6 @@ void SlideShowPlugin::slotMenuSlideShow()
 
 void SlideShowPlugin::slotMenuSlideShowAll()
 {
-    qDebug() << "SlideshowPlugin::slotMenuSlideShowAll";
-
     SlideShowSettings settings;
 
     settings.readFromConfig();
@@ -196,8 +185,6 @@ void SlideShowPlugin::slotMenuSlideShowAll()
 //TODO: add slotMenuSlideShowSelection
 void SlideShowPlugin::slotMenuSlideShowSelection()
 {
-    qDebug() << "SlideshowPlugin::slotMenuSlideShowSelection";
-
     SlideShowSettings settings;
 
     settings.readFromConfig();
@@ -210,8 +197,6 @@ void SlideShowPlugin::slotMenuSlideShowSelection()
 //TODO: add slotMenuSlideShowRecursive
 void SlideShowPlugin::slotMenuSlideShowRecursive()
 {
-    qDebug() << "SlideshowPlugin::slotMenuSlideShowRecursive";
-
     iface->parseAlbumItemsReccursive();
 }
 

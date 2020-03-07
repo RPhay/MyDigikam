@@ -87,10 +87,6 @@ public:
 
 private:
 
-    Q_SLOT void slotPassImageList(const QList<QUrl>& imageList);
-
-private:
-
     class Private;
     Private* const d;
 };
