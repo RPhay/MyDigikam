@@ -234,7 +234,23 @@ void SlideShowPlugin::slideshow(SlideShowSettings* settings, bool autoPlayEnable
         slide->setCurrentItem(iface->currentSelectedItems()[0]);
     }
 
-    //TODO link to slot tags
+/*
+    //TODO: port these slot from itemiconview_tags.cpp to plugin
+    connect(slide, SIGNAL(signalRatingChanged(QUrl,int)),
+            this, SLOT(slotRatingChanged(QUrl,int)));
+
+    connect(slide, SIGNAL(signalColorLabelChanged(QUrl,int)),
+            this, SLOT(slotColorLabelChanged(QUrl,int)));
+
+    connect(slide, SIGNAL(signalPickLabelChanged(QUrl,int)),
+            this, SLOT(slotPickLabelChanged(QUrl,int)));
+
+    connect(slide, SIGNAL(signalToggleTag(QUrl,int)),
+            this, SLOT(slotToggleTag(QUrl,int)));
+
+    connect(slide, SIGNAL(signalLastItemUrl(QUrl)),
+            d->iconView, SLOT(setCurrentUrl(QUrl)));
+*/
     slide->show();
 }
 

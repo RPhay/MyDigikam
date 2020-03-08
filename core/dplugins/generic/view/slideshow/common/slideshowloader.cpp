@@ -293,8 +293,6 @@ void SlideShowLoader::setCurrentView(SlideShowViewMode view)
             setCurrentIndex(view);
             break;
     }
-
-    qDebug() << "Slideshow plugin set Current view to: " << view;
 }
 
 void SlideShowLoader::setCurrentItem(const QUrl& url)
@@ -406,8 +404,6 @@ void SlideShowLoader::slotLoadPrevItem()
 
 void SlideShowLoader::slotImageLoaded(bool loaded)
 {
-    qDebug() << "Slideshow plugin new image loaded";
-
     if (loaded)
     {
         setCurrentView(ImageView);
@@ -553,7 +549,6 @@ void SlideShowLoader::mousePressEvent(QMouseEvent* e)
 
     if (d->fileIndex == -1)
     {
-        qDebug() << "Mouse pressed at the end of slideshow";
         // EndView => close Slideshow view.
 
         close();
