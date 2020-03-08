@@ -653,4 +653,5 @@ BUGFIXES:
 635 ==> 418057 - Icons missing in xubuntu.
 636 ==> 418446 - Move Filters menu from right to left side of main window.
 637 ==> 418594 - Should warn the user immediately when database not writable.
-638 ==> 
+638 ==> 418536 - Editing date used as picture-taking date.
+639 ==> 
