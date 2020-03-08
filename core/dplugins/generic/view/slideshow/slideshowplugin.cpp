@@ -96,6 +96,9 @@ QList<DPluginAuthor> SlideShowPlugin::authors() const
             << DPluginAuthor(QString::fromUtf8("Gilles Caulier"),
                              QString::fromUtf8("caulier dot gilles at gmail dot com"),
                              QString::fromUtf8("(C) 2005-2020"))
+            << DPluginAuthor(QString::fromUtf8("Minh Nghia Duong"),
+                             QString::fromUtf8("minhnghiaduong997 at gmail dot com"),
+                             QString::fromUtf8("(C) 2019-2020"))
             ;
 }
 

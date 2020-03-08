@@ -105,7 +105,6 @@ void ItemIconView::slotSlideShowBuilderComplete(const SlideShowSettings& setting
         slide->setCurrentItem(currentInfo().fileUrl());
     }
 
-    //TODO: port these slot from itemiconview_tags.cpp to plugin
     connect(slide, SIGNAL(signalRatingChanged(QUrl,int)),
             this, SLOT(slotRatingChanged(QUrl,int)));
 
