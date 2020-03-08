@@ -36,7 +36,7 @@
 #include <klocalizedstring.h>
 
 // Local includes
-#include "applicationsettings.h"
+#include "metaenginesettings.h"
 
 #include "setupslideshow_dialog.h"
 #include "slideshowloader.h"
@@ -166,6 +166,7 @@ void SlideShowPlugin::slotMenuSlideShow()
 
     settings->readFromConfig();
 
+    settings->exifRotate = MetaEngineSettings::instance()->settings().exifRotate;
     settings->fileList = iface->currentAlbumItems();
 
     slideshow(settings);
@@ -216,7 +217,7 @@ void SlideShowPlugin::slideshow(SlideShowSettings* settings, bool autoPlayEnable
     SlideShowLoader* slide = new SlideShowLoader(iface, settings);
 
     settings->autoPlayEnabled = autoPlayEnabled;
-    //TODO: preview settings for digikam and exiv rotate for showfoto
+    //TODO: preview settings for digikam
     //settings.previewSettings = ApplicationSettings::instance()->getPreviewSettings();
 
     if (startFrom.isValid())
