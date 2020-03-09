@@ -79,6 +79,7 @@ Q_SIGNALS:
     void signalPreviewLoaded(bool success);
     void signalEscapePreview();
     void signalAddToExistingQueue(int);
+    void signalSlideShowCurrent();
 
     void signalGotoAlbumAndItem(const ItemInfo&);
     void signalGotoDateAndItem(const ItemInfo&);
@@ -121,6 +122,8 @@ private Q_SLOTS:
     void slotUpdateFaces();
 
     void slotShowContextMenu(QGraphicsSceneContextMenuEvent* event);
+
+    void slotSlideShowCurrent();
 
 private:
 

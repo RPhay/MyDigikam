@@ -118,34 +118,28 @@ void SlideShowPlugin::setup(QObject* const parent)
         ac->setMenu(slideShowActions);
 
         //Action show all
-        DPluginAction* const slideShowAllAction = new DPluginAction(parent);
-        slideShowAllAction->setText(i18nc("@action", "All"));
+        QAction* const slideShowAllAction = new QAction(i18n("All"), parent);
         slideShowAllAction->setObjectName(QLatin1String("slideshow_all"));
         slideShowAllAction->setShortcut(Qt::Key_F9);
         slideShowActions->addAction(slideShowAllAction);
-        addAction(slideShowAllAction);
 
         connect(slideShowAllAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowAll()));
 
         //Action show selection
-        DPluginAction* const slideShowSelectionAction = new DPluginAction(parent);
-        slideShowSelectionAction->setText(i18nc("@action", "Selection"));
+        QAction* const slideShowSelectionAction = new QAction(i18n("Selection"), parent);
         slideShowSelectionAction->setObjectName(QLatin1String("slideshow_selected"));
         slideShowSelectionAction->setShortcut(Qt::ALT + Qt::Key_F9);
         slideShowActions->addAction(slideShowSelectionAction);
-        addAction(slideShowSelectionAction);
 
         connect(slideShowSelectionAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowSelection()));
 
         //Action show recursive
-        DPluginAction* const slideShowRecursiveAction = new DPluginAction(parent);
-        slideShowRecursiveAction->setText(i18nc("@action", "With All Sub-Albums"));
+        QAction* const slideShowRecursiveAction = new QAction(i18n("With All Sub-Albums"), parent);
         slideShowRecursiveAction->setObjectName(QLatin1String("slideshow_recursive"));
         slideShowRecursiveAction->setShortcut(Qt::SHIFT + Qt::Key_F9);
         slideShowActions->addAction(slideShowRecursiveAction);
-        addAction(slideShowRecursiveAction);
 
         connect(slideShowRecursiveAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowRecursive()));
