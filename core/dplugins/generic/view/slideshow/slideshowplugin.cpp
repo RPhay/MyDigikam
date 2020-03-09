@@ -145,7 +145,7 @@ void SlideShowPlugin::setup(QObject* const parent)
         connect(slideShowRecursiveAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowRecursive()));
 
-        connect(iface, SIGNAL(signalAlbumItemsReccursiveCompleted(QList<QUrl>)),
+        connect(iface, SIGNAL(signalAlbumItemsRecursiveCompleted(QList<QUrl>)),
                 this, SLOT(slotShowRecursive(QList<QUrl>)));
     }
     else
@@ -158,23 +158,33 @@ void SlideShowPlugin::setup(QObject* const parent)
     }
 
     addAction(ac);
-
-    if (iface && parent->objectName() == QLatin1String("Light Table"))
-    {
-        DPluginAction* const hiddenAction = new DPluginAction(parent);
-        hiddenAction->setText(i18nc("@action", "Slideshow From Current"));
-        hiddenAction->setObjectName(QLatin1String("slideshow_current"));
-        hiddenAction->setActionCategory(DPluginAction::GenericView);
-
-        connect(hiddenAction, SIGNAL(triggered(bool)),
-                this, SLOT(slotMenuSlideShowManualFromCurrent()));
-
-        addAction(hiddenAction);
-    }
 }
 
 void SlideShowPlugin::slotMenuSlideShow()
 {
+    DPluginAction* ac = dynamic_cast<DPluginAction*>(sender());
+
+    QUrl startFrom;
+    if (ac)
+    {
+        startFrom = ac->data().toUrl();
+
+        ac->setData(QVariant());
+
+        if (startFrom.isValid())
+        {
+            qDebug() << "image Valid";
+        }
+        else
+        {
+            qDebug() << "image inValid";
+        }
+    }
+    else
+    {
+        qDebug() << "ac is null";
+    }
+
     iface = infoIface(sender());
 
     SlideShowSettings* settings = new SlideShowSettings();
@@ -184,7 +194,7 @@ void SlideShowPlugin::slotMenuSlideShow()
     settings->exifRotate = MetaEngineSettings::instance()->settings().exifRotate;
     settings->fileList = iface->currentAlbumItems();
 
-    slideshow(settings);
+    slideshow(settings, true, startFrom);
 }
 
 void SlideShowPlugin::slotMenuSlideShowAll()
@@ -207,29 +217,6 @@ void SlideShowPlugin::slotMenuSlideShowSelection()
     settings->fileList = iface->currentSelectedItems();
 
     slideshow(settings);
-}
-
-void SlideShowPlugin::slotMenuSlideShowManualFromCurrent()
-{
-    DPluginAction* ac = dynamic_cast<DPluginAction*>(sender());
-
-    if (ac)
-    {
-        QUrl startFrom = ac->data().toUrl();
-
-        if (startFrom.isValid())
-        {
-            qDebug() << "image Valid";
-        }
-
-        SlideShowSettings* settings = new SlideShowSettings();
-
-        settings->readFromConfig();
-
-        settings->fileList = iface->currentAlbumItems();
-
-        slideshow(settings, false, startFrom);
-    }
 }
 
 void SlideShowPlugin::slotMenuSlideShowRecursive()

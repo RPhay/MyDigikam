@@ -68,13 +68,35 @@ void LightTableWindow::slotSlideShowAll()
 
 void LightTableWindow::slotLeftSlideShowManualFromCurrent()
 {
-    slotSlideShowManualFrom(d->previewView->leftItemInfo());
+    QList<DPluginAction*> actions = DPluginLoader::instance()->pluginActions(QLatin1String("org.kde.digikam.SlideShow"), this);
+
+    if (actions.isEmpty())
+    {
+        return;
+    }
+
+    //set current image to SlideShow Plugin
+    actions[0]->setData(d->previewView->leftItemInfo().fileUrl());
+
+    actions[0]->trigger();
+
     d->fromLeftPreview = true;
 }
 
 void LightTableWindow::slotRightSlideShowManualFromCurrent()
 {
-    slotSlideShowManualFrom(d->previewView->rightItemInfo());
+    QList<DPluginAction*> actions = DPluginLoader::instance()->pluginActions(QLatin1String("org.kde.digikam.SlideShow"), this);
+
+    if (actions.isEmpty())
+    {
+        return;
+    }
+
+    //set current image to SlideShow Plugin
+    actions[0]->setData(d->previewView->rightItemInfo().fileUrl());
+
+    actions[0]->trigger();
+
     d->fromLeftPreview = false;
 }
 

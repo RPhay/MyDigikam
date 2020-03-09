@@ -25,7 +25,6 @@
 
     <Menu name="View" ><text>&amp;View</text>
         <Action name="lighttable_fullscreen" />
-        <Action name="lighttable_slideshow" />
 
         <!-- _DPLUGINS_GENERIC_VIEW_ACTIONS_ -->
 
@@ -114,7 +113,7 @@
      <Action name="lighttable_syncpreview" />
      <Action name="lighttable_navigatebypair" />
      <Separator/>
-     <Action name="lighttable_slideshow" />
+     <Action name="slideshow_plugin" />
      <Action name="lighttable_fullscreen" />
      <Merge />
      <WeakSeparator/>
