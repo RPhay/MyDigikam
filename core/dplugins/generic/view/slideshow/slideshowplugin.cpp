@@ -144,9 +144,6 @@ void SlideShowPlugin::setup(QObject* const parent)
         connect(slideShowRecursiveAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowRecursive()));
 
-        connect(iface, SIGNAL(signalAlbumItemsRecursiveCompleted(QList<QUrl>)),
-                this, SLOT(slotShowRecursive(QList<QUrl>)));
-
         connect(ac, SIGNAL(triggered(bool)),
                 this, SLOT(slotShowManual()));
     }
@@ -171,19 +168,6 @@ void SlideShowPlugin::slotMenuSlideShow()
         startFrom = ac->data().toUrl();
 
         ac->setData(QVariant());
-
-        if (startFrom.isValid())
-        {
-            qDebug() << "image Valid";
-        }
-        else
-        {
-            qDebug() << "image inValid";
-        }
-    }
-    else
-    {
-        qDebug() << "ac is null";
     }
 
     iface = infoIface(sender());
@@ -222,6 +206,9 @@ void SlideShowPlugin::slotMenuSlideShowSelection()
 
 void SlideShowPlugin::slotMenuSlideShowRecursive()
 {
+    connect(iface, SIGNAL(signalAlbumItemsRecursiveCompleted(const QList<QUrl>&)),
+            this, SLOT(slotShowRecursive(const QList<QUrl>&)));
+
     iface->parseAlbumItemsRecursive();
 }
 
@@ -241,29 +228,22 @@ void SlideShowPlugin::slotShowManual()
     DPluginAction* ac = dynamic_cast<DPluginAction*>(sender());
 
     QUrl startFrom;
+
     if (ac)
     {
         startFrom = ac->data().toUrl();
 
         ac->setData(QVariant());
 
-        if (startFrom.isValid())
+        if (!startFrom.isValid())
         {
-            qDebug() << "image Valid";
-        }
-        else
-        {
-            qDebug() << "image inValid";
             return;
         }
     }
     else
     {
-        qDebug() << "ac is null";
         return;
     }
-
-    iface = infoIface(sender());
 
     SlideShowSettings* settings = new SlideShowSettings();
 
