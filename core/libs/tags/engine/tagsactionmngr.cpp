@@ -57,7 +57,6 @@
 #include "tagscache.h"
 #include "tagproperties.h"
 #include "ratingwidget.h"
-#include "slideshow.h"
 #include "syncjob.h"
 
 namespace Digikam
@@ -495,7 +494,8 @@ void TagsActionMngr::slotAssignFromShortcut()
 
         return;
     }
-
+/*
+ *  TODO:
     SlideShow* const sld = dynamic_cast<SlideShow*>(w);
 
     if (sld)
@@ -521,6 +521,7 @@ void TagsActionMngr::slotAssignFromShortcut()
 
         return;
     }
+*/
 }
 
 // Special case with Slideshow which do not depend on database.
@@ -528,6 +529,8 @@ void TagsActionMngr::slotAssignFromShortcut()
 void TagsActionMngr::slotImageTagChanged(const ImageTagChangeset&)
 {
     QWidget* const w     = qApp->activeWindow();
+/*
+ *  TODO
     SlideShow* const sld = dynamic_cast<SlideShow*>(w);
 
     if (sld)
@@ -536,6 +539,7 @@ void TagsActionMngr::slotImageTagChanged(const ImageTagChangeset&)
         ItemInfo info = ItemInfo::fromUrl(url);
         sld->updateTags(url, AlbumManager::instance()->tagNames(info.tagIds()));
     }
+*/
 }
 
 } // namespace Digikam
