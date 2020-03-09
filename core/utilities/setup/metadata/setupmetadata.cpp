@@ -85,6 +85,7 @@ public:
         saveDateTimeBox(nullptr),
         saveTemplateBox(nullptr),
         saveFaceTags(nullptr),
+        savePosition(nullptr),
         useLazySync(nullptr),
         writeRawFilesBox(nullptr),
         writeXMPSidecarBox(nullptr),
@@ -127,6 +128,7 @@ public:
     QCheckBox*           saveDateTimeBox;
     QCheckBox*           saveTemplateBox;
     QCheckBox*           saveFaceTags;
+    QCheckBox*           savePosition;
 
     QCheckBox*           useLazySync;
     QCheckBox*           writeRawFilesBox;
@@ -227,6 +229,11 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->saveFaceTags->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store face tags "
                                         "with face rectangles in the XMP tags."));
 
+    d->savePosition      = new QCheckBox;
+    d->savePosition->setText(i18nc("@option:check", "Geolocation information (GPS)"));
+    d->savePosition->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store Geolocation information "
+                                        "in the EXIF tag and the XMP tags."));
+
     fieldsLayout->addWidget(fieldsIconLabel,       0, 0, 2, 3);
     fieldsLayout->addWidget(fieldsLabel,           0, 1, 2, 3);
     fieldsLayout->addWidget(d->saveTagsBox,        2, 0, 1, 3);
@@ -236,7 +243,8 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     fieldsLayout->addWidget(d->saveColorLabelBox,  6, 0, 1, 3);
     fieldsLayout->addWidget(d->saveDateTimeBox,    7, 0, 1, 3);
     fieldsLayout->addWidget(d->saveTemplateBox,    8, 0, 1, 3);
-    fieldsLayout->addWidget(d->saveFaceTags,       9 ,0, 1, 3);
+    fieldsLayout->addWidget(d->saveFaceTags,       9, 0, 1, 3);
+    fieldsLayout->addWidget(d->savePosition,      10, 0, 1, 3);
     fieldsLayout->setColumnStretch(3, 10);
     d->fieldsGroup->setLayout(fieldsLayout);
 
@@ -719,6 +727,7 @@ void SetupMetadata::applySettings()
     set.saveTags              = d->saveTagsBox->isChecked();
     set.saveTemplate          = d->saveTemplateBox->isChecked();
     set.saveFaceTags          = d->saveFaceTags->isChecked();
+    set.savePosition          = d->savePosition->isChecked();
 
     set.useLazySync           = d->useLazySync->isChecked();
     set.writeRawFiles         = d->writeRawFilesBox->isChecked();
@@ -802,6 +811,7 @@ void SetupMetadata::readSettings()
     d->saveDateTimeBox->setChecked(set.saveDateTime);
     d->saveTemplateBox->setChecked(set.saveTemplate);
     d->saveFaceTags->setChecked(set.saveFaceTags);
+    d->savePosition->setChecked(set.savePosition);
 
     d->useLazySync->setChecked(set.useLazySync);
     d->writeRawFilesBox->setChecked(set.writeRawFiles);

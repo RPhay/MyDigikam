@@ -38,6 +38,7 @@
 #include "coredbwatch.h"
 #include "iteminfo.h"
 #include "itemcomments.h"
+#include "itemposition.h"
 #include "template.h"
 #include "templatemanager.h"
 #include "applicationsettings.h"
@@ -91,6 +92,8 @@ public:
     QStringList                       tagList;
 
     QMultiMap<QString, QVariant>      faceTagsList;
+
+    ItemPosition                      itemPosition;
 
     MetadataHub::Status               dateTimeStatus;
     MetadataHub::Status               titlesStatus;
@@ -174,6 +177,8 @@ void MetadataHub::load(const ItemInfo& info)
     loadTags(tagIds);
 
     loadFaceTags(info, info.dimensions());
+
+    d->itemPosition = info.imagePosition();
 }
 
 // private common code to merge tags
@@ -285,8 +290,9 @@ bool MetadataHub::write(DMetadata& metadata, WriteComponent writeMode, const Met
     bool saveColorLabel = (settings.saveColorLabel && (d->colorLabelStatus == MetadataAvailable) && writeMode.testFlag(WRITE_COLORLABEL));
     bool saveRating     = (settings.saveRating     && (d->ratingStatus     == MetadataAvailable) && writeMode.testFlag(WRITE_RATING));
     bool saveTemplate   = (settings.saveTemplate   && (d->templateStatus   == MetadataAvailable) && writeMode.testFlag(WRITE_TEMPLATE));
-    bool saveTags       = settings.saveTags && writeMode.testFlag(WRITE_TAGS);
-    bool saveFaces      = settings.saveFaceTags && writeMode.testFlag((WRITE_TAGS));
+    bool saveTags       = (settings.saveTags       && writeMode.testFlag(WRITE_TAGS));
+    bool saveFaces      = (settings.saveFaceTags   && writeMode.testFlag(WRITE_TAGS));
+    bool savePosition   = (settings.savePosition   && writeMode.testFlag(WRITE_POSITION));
 
     if (saveTitle)
     {
@@ -341,6 +347,20 @@ bool MetadataHub::write(DMetadata& metadata, WriteComponent writeMode, const Met
             // Store metadata template as XMP tag.
             dirty |= metadata.removeMetadataTemplate();
             dirty |= metadata.setMetadataTemplate(d->metadataTemplate);
+        }
+    }
+
+    if (savePosition)
+    {
+        if (d->itemPosition.hasCoordinates())
+        {
+            dirty |= metadata.setGPSInfo(d->itemPosition.altitude(),
+                                         d->itemPosition.latitudeNumber(),
+                                         d->itemPosition.longitudeNumber());
+        }
+        else
+        {
+            dirty |= metadata.removeGPSInfo();
         }
     }
 
@@ -578,7 +598,9 @@ bool MetadataHub::willWriteMetadata(WriteComponent writeMode, const MetaEngineSe
     bool saveColorLabel = (settings.saveColorLabel && (d->colorLabelStatus == MetadataAvailable) && writeMode.testFlag(WRITE_COLORLABEL));
     bool saveRating     = (settings.saveRating     && (d->ratingStatus     == MetadataAvailable) && writeMode.testFlag(WRITE_RATING));
     bool saveTemplate   = (settings.saveTemplate   && (d->templateStatus   == MetadataAvailable) && writeMode.testFlag(WRITE_TEMPLATE));
-    bool saveTags       = settings.saveTags && writeMode.testFlag(WRITE_TAGS);
+    bool saveTags       = (settings.saveTags       && writeMode.testFlag(WRITE_TAGS));
+    bool saveFaces      = (settings.saveFaceTags   && writeMode.testFlag(WRITE_TAGS));
+    bool savePosition   = (settings.savePosition   && writeMode.testFlag(WRITE_POSITION));
 
     return (
                saveTitle       ||
@@ -587,8 +609,10 @@ bool MetadataHub::willWriteMetadata(WriteComponent writeMode, const MetaEngineSe
                savePickLabel   ||
                saveColorLabel  ||
                saveRating      ||
+               saveTemplate    ||
                saveTags        ||
-               saveTemplate
+               saveFaces       ||
+               savePosition
            );
 }
 
