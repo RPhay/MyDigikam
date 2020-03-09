@@ -65,7 +65,7 @@ private Q_SLOTS:
     void slotMenuSlideShowSelection();
     void slotMenuSlideShowRecursive();
     void slotShowRecursive(const QList<QUrl>& imageList);
-
+    void slotShowManual();
     void slotSlideShowFinished(const QUrl& lastImage);
 
 private:

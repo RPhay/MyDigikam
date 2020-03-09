@@ -712,7 +712,6 @@ void DigikamApp::slotSelectionChanged(int selectionCount)
     d->imageRotateActionMenu->setEnabled(selectionCount > 0);
     d->imageFlipActionMenu->setEnabled(selectionCount > 0);
     d->imageExifOrientationActionMenu->setEnabled(selectionCount > 0);
-    d->slideShowSelectionAction->setEnabled(selectionCount > 0);
     d->moveSelectionToAlbumAction->setEnabled(selectionCount > 0);
     d->cutItemsAction->setEnabled(selectionCount > 0);
     d->copyItemsAction->setEnabled(selectionCount > 0);
@@ -883,11 +882,6 @@ void DigikamApp::slotSetCheckedExifOrientationAction(const ItemInfo& info)
     }
 }
 
-QMenu* DigikamApp::slideShowMenu() const
-{
-    return d->slideShowAction;
-}
-
 void DigikamApp::showSideBars(bool visible)
 {
     visible ? d->view->showSideBars()
@@ -994,7 +988,6 @@ void DigikamApp::customizedFullScreenMode(bool set)
 
 void DigikamApp::customizedTrashView(bool set)
 {
-    d->slideShowSelectionAction->setEnabled(set);
     d->imageTableViewAction->setEnabled(set);
     d->imageIconViewAction->setEnabled(set);
 
@@ -1005,7 +998,6 @@ void DigikamApp::customizedTrashView(bool set)
 #endif
 
     d->imagePreviewAction->setEnabled(set);
-    d->slideShowAction->setEnabled(set);
     d->bqmAction->setEnabled(set);
     d->ltAction->setEnabled(set);
     d->ieAction->setEnabled(set);

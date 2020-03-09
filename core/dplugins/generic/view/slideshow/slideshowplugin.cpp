@@ -147,6 +147,9 @@ void SlideShowPlugin::setup(QObject* const parent)
 
         connect(iface, SIGNAL(signalAlbumItemsRecursiveCompleted(QList<QUrl>)),
                 this, SLOT(slotShowRecursive(QList<QUrl>)));
+
+        connect(ac, SIGNAL(triggered(bool)),
+                this, SLOT(slotShowManual()));
     }
     else
     {
@@ -233,6 +236,45 @@ void SlideShowPlugin::slotShowRecursive(const QList<QUrl>& imageList)
     settings->fileList = imageList;
 
     slideshow(settings);
+}
+
+void SlideShowPlugin::slotShowManual()
+{
+    DPluginAction* ac = dynamic_cast<DPluginAction*>(sender());
+
+    QUrl startFrom;
+    if (ac)
+    {
+        startFrom = ac->data().toUrl();
+
+        ac->setData(QVariant());
+
+        if (startFrom.isValid())
+        {
+            qDebug() << "image Valid";
+        }
+        else
+        {
+            qDebug() << "image inValid";
+            return;
+        }
+    }
+    else
+    {
+        qDebug() << "ac is null";
+        return;
+    }
+
+    iface = infoIface(sender());
+
+    SlideShowSettings* settings = new SlideShowSettings();
+
+    settings->readFromConfig();
+
+    settings->exifRotate = MetaEngineSettings::instance()->settings().exifRotate;
+    settings->fileList = iface->currentAlbumItems();
+
+    slideshow(settings, true, startFrom);
 }
 
 void SlideShowPlugin::slotSlideShowFinished(const QUrl& lastImage)

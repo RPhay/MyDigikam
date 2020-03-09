@@ -53,7 +53,6 @@ class PAlbum;
 class TAlbum;
 class BatchSyncMetadata;
 class FilterStatusBar;
-class SlideShowSettings;
 class DCategorizedView;
 class ItemFilterModel;
 
@@ -196,29 +195,6 @@ public Q_SLOTS:
     void slotCreateGroupByTimelapseFromSelection();
     void slotRemoveSelectedFromGroup();
     void slotUngroupSelected();
-    //@}
-
-    // ----------------------------------------------------------------------------------------
-
-    //@{
-    /// Slide-show methods - itemiconview_slideshow.cpp
-
-private:
-
-    void slideShow(const ItemInfoList& infoList);
-
-public Q_SLOTS:
-
-    void slotSlideShowAll();
-    void slotSlideShowSelection();
-    void slotSlideShowRecursive();
-    void slotSlideShowManualFromCurrent();
-    void slotSlideShowManualFrom(const ItemInfo& info);
-
-private Q_SLOTS:
-
-    void slotSlideShowBuilderComplete(const SlideShowSettings& settings);
-
     //@}
 
     // ----------------------------------------------------------------------------------------

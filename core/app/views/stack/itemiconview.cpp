@@ -36,8 +36,6 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     : DHBox(parent),
       d(new Private)
 {
-    qRegisterMetaType<SlideShowSettings>("SlideShowSettings");
-
     d->parent                   = static_cast<DigikamApp*>(parent);
     d->modelCollection          = modelCollection;
     d->albumManager             = AlbumManager::instance();
@@ -296,9 +294,6 @@ void ItemIconView::setupConnections()
     connect(d->iconView, SIGNAL(previewRequested(ItemInfo)),
             this, SLOT(slotTogglePreviewMode(ItemInfo)));
 
-    connect(d->iconView, SIGNAL(fullscreenRequested(ItemInfo)),
-            this, SLOT(slotSlideShowManualFrom(ItemInfo)));
-
     connect(d->iconView, SIGNAL(zoomOutStep()),
             this, SLOT(slotZoomOut()));
 
@@ -405,9 +400,6 @@ void ItemIconView::setupConnections()
 
     connect(d->stackedview, SIGNAL(signalEscapePreview()),
             this, SLOT(slotEscapePreview()));
-
-    connect(d->stackedview, SIGNAL(signalSlideShowCurrent()),
-            this, SLOT(slotSlideShowManualFromCurrent()));
 
     connect(d->stackedview, SIGNAL(signalZoomFactorChanged(double)),
             this, SLOT(slotZoomFactorChanged(double)));
