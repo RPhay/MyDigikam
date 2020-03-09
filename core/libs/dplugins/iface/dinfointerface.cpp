@@ -55,7 +55,7 @@ void DInfoInterface::slotMetadataChangedForUrl(const QUrl& /*url*/)
 {
 }
 
-void DInfoInterface::parseAlbumItemsReccursive()
+void DInfoInterface::parseAlbumItemsRecursive()
 {
 }
 

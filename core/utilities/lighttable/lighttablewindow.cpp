@@ -318,7 +318,6 @@ void LightTableWindow::slotItemSelected(const ItemInfo& info)
     d->lastAction->setEnabled(hasInfo);
     d->syncPreviewAction->setEnabled(hasInfo);
     d->navigateByPairAction->setEnabled(hasInfo);
-    d->slideShowAction->setEnabled(hasInfo);
 
     if (hasInfo)
     {

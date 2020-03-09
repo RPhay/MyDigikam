@@ -80,9 +80,9 @@ void DMetaInfoIface::slotMetadataChangedForUrl(const QUrl& url)
     emit signalItemChanged(url);
 }
 
-void DMetaInfoIface::parseAlbumItemsReccursive()
+void DMetaInfoIface::parseAlbumItemsRecursive()
 {
-    emit signalAlbumItemsReccursiveCompleted(d->urls);
+    emit signalAlbumItemsRecursiveCompleted(d->urls);
 }
 
 QList<QUrl> DMetaInfoIface::currentAlbumItems() const

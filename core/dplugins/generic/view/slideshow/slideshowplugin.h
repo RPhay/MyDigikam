@@ -66,6 +66,8 @@ private Q_SLOTS:
     void slotMenuSlideShowRecursive();
     void slotShowRecursive(const QList<QUrl>& imageList);
 
+    void slotSlideShowFinished(const QUrl& lastImage);
+
 private:
     void slideshow(SlideShowSettings* settings, bool autoPlayEnabled = true, const QUrl& startFrom = QUrl());
 

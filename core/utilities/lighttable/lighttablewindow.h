@@ -38,8 +38,6 @@
 namespace Digikam
 {
 
-class SlideShowSettings;
-
 class LightTableWindow : public DXmlGuiWindow
 {
     Q_OBJECT
@@ -187,12 +185,9 @@ private Q_SLOTS:
     void slotEditItem();
     void slotEditItem(const ItemInfo&);
 
-    void slotSlideShowAll();
     void slotLeftSlideShowManualFromCurrent();
     void slotRightSlideShowManualFromCurrent();
-    void slotSlideShowLastItemUrl(const QUrl&);
-    void slotSlideShowManualFrom(const ItemInfo&);
-    void slotSlideShowBuilderComplete(const SlideShowSettings&);
+    void slotSlideShowLastItemUrl();
 
 // -- Import tools methods implemented in lighttablewindow_import.cpp -------------------------------------
 

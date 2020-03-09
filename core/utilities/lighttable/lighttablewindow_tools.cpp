@@ -53,19 +53,6 @@ void LightTableWindow::slotEditItem(const ItemInfo& info)
     im->setFocus();
 }
 
-void LightTableWindow::slotSlideShowAll()
-{
-   SlideShowBuilder* const builder = new SlideShowBuilder(d->thumbView->allItemInfos());
-
-   d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode,
-                                            i18n("Preparing slideshow. Please wait..."));
-
-   connect(builder, SIGNAL(signalComplete(SlideShowSettings)),
-           this, SLOT(slotSlideShowBuilderComplete(SlideShowSettings)));
-
-   builder->run();
-}
-
 void LightTableWindow::slotLeftSlideShowManualFromCurrent()
 {
     QList<DPluginAction*> actions = DPluginLoader::instance()->pluginActions(QLatin1String("org.kde.digikam.SlideShow"), this);
@@ -100,58 +87,18 @@ void LightTableWindow::slotRightSlideShowManualFromCurrent()
     d->fromLeftPreview = false;
 }
 
-void LightTableWindow::slotSlideShowManualFrom(const ItemInfo& info)
-{
-   SlideShowBuilder* const builder = new SlideShowBuilder(d->thumbView->allItemInfos());
-   builder->setOverrideStartFrom(info);
-   builder->setAutoPlayEnabled(false);
+void LightTableWindow::slotSlideShowLastItemUrl()
+{    
+    QList<DPluginAction*> actions = DPluginLoader::instance()->pluginActions(QLatin1String("org.kde.digikam.SlideShow"), this);
 
-   d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode,
-                                            i18n("Preparing slideshow. Please wait..."));
-
-   connect(builder, SIGNAL(signalComplete(SlideShowSettings)),
-           this, SLOT(slotSlideShowBuilderComplete(SlideShowSettings)));
-
-   builder->run();
-}
-
-void LightTableWindow::slotSlideShowBuilderComplete(const SlideShowSettings& settings)
-{
-    QPointer<Digikam::SlideShow> slide = new SlideShow(new DBInfoIface(this, QList<QUrl>()), settings);
-    TagsActionMngr::defaultManager()->registerActionsToWidget(slide);
-
-    d->statusProgressBar->setProgressBarMode(StatusProgressBar::TextMode, QString());
-    slotRefreshStatusBar();
-
-    if (settings.imageUrl.isValid())
+    if (actions.isEmpty())
     {
-        slide->setCurrentItem(settings.imageUrl);
-    }
-    else if (settings.startWithCurrent)
-    {
-        slide->setCurrentItem(d->thumbView->currentInfo().fileUrl());
+        return;
     }
 
-    connect(slide, SIGNAL(signalRatingChanged(QUrl,int)),
-            d->thumbView, SLOT(slotRatingChanged(QUrl,int)));
+    //get last image to SlideShow Plugin
+    QUrl url = actions[0]->data().toUrl();
 
-    connect(slide, SIGNAL(signalColorLabelChanged(QUrl,int)),
-            d->thumbView, SLOT(slotColorLabelChanged(QUrl,int)));
-
-    connect(slide, SIGNAL(signalPickLabelChanged(QUrl,int)),
-            d->thumbView, SLOT(slotPickLabelChanged(QUrl,int)));
-
-    connect(slide, SIGNAL(signalToggleTag(QUrl,int)),
-            d->thumbView, SLOT(slotToggleTag(QUrl,int)));
-
-    connect(slide, SIGNAL(signalLastItemUrl(QUrl)),
-            this, SLOT(slotSlideShowLastItemUrl(QUrl)));
-
-    slide->show();
-}
-
-void LightTableWindow::slotSlideShowLastItemUrl(const QUrl& url)
-{
     if (d->fromLeftPreview && !d->navigateByPairAction->isChecked())
     {
         d->thumbView->blockSignals(true);

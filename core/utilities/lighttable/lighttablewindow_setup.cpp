@@ -139,11 +139,6 @@ void LightTableWindow::setupActions()
     createFullScreenAction(QLatin1String("lighttable_fullscreen"));
     createSidebarActions();
 
-    d->slideShowAction = new QAction(QIcon::fromTheme(QLatin1String("view-presentation")), i18n("Slideshow"), this);
-    connect(d->slideShowAction, SIGNAL(triggered()), this, SLOT(slotSlideShowAll()));
-    ac->addAction(QLatin1String("lighttable_slideshow"), d->slideShowAction);
-    ac->setDefaultShortcut(d->slideShowAction, Qt::Key_F9);
-
     // Left Panel Zoom Actions
 
     d->leftZoomPlusAction  = buildStdAction(StdZoomInAction, d->previewView, SLOT(slotIncreaseLeftZoom()), this);
@@ -403,6 +398,8 @@ void LightTableWindow::setupConnections()
 
     connect(this, SIGNAL(signalWindowHasMoved()),
             d->rightZoomBar, SLOT(slotUpdateTrackerPos()));
+
+    // TODO: connect signal last image from SLideShow plugin to slotSlideShowLastItemUrl
 
     // -- FileWatch connections ------------------------------
 

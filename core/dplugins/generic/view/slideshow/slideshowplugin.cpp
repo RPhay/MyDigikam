@@ -235,6 +235,23 @@ void SlideShowPlugin::slotShowRecursive(const QList<QUrl>& imageList)
     slideshow(settings);
 }
 
+void SlideShowPlugin::slotSlideShowFinished(const QUrl& lastImage)
+{
+/*
+ *  TODO: pass Url of last image out to main Apps
+    QList<DPluginAction*> actionList = actions(parent());
+
+    qDebug() << "SlideShowPlugin::slotSlideShowFinished actionList" << actionList.size();
+
+    if(!actionList.isEmpty())
+    {
+        actionList[0]->setData(lastImage);
+
+        actionList[0]->changed();
+    }
+*/
+}
+
 void SlideShowPlugin::slideshow(SlideShowSettings* settings, bool autoPlayEnabled, const QUrl& startFrom)
 {
     SlideShowLoader* slide = new SlideShowLoader(iface, settings);
@@ -270,10 +287,11 @@ void SlideShowPlugin::slideshow(SlideShowSettings* settings, bool autoPlayEnable
 
     connect(slide, SIGNAL(signalToggleTag(QUrl,int)),
             this, SLOT(slotToggleTag(QUrl,int)));
+*/
 
     connect(slide, SIGNAL(signalLastItemUrl(QUrl)),
-            d->iconView, SLOT(setCurrentUrl(QUrl)));
-*/
+            this, SLOT(slotSlideShowFinished(QUrl)));
+
     slide->show();
 }
 

@@ -71,8 +71,6 @@
 #include "iccsettings.h"
 #include "imagewindow.h"
 #include "itemdescedittab.h"
-#include "slideshowbuilder.h"
-#include "slideshow.h"
 #include "setup.h"
 #include "syncjob.h"
 #include "lighttablepreview.h"
@@ -108,7 +106,6 @@ public:
         removeItemAction(nullptr),
         fileDeleteAction(nullptr),
         fileDeleteFinalAction(nullptr),
-        slideShowAction(nullptr),
         leftZoomPlusAction(nullptr),
         leftZoomMinusAction(nullptr),
         leftZoomTo100percents(nullptr),
@@ -161,7 +158,6 @@ public:
     QAction*                  removeItemAction;
     QAction*                  fileDeleteAction;
     QAction*                  fileDeleteFinalAction;
-    QAction*                  slideShowAction;
     QAction*                  leftZoomPlusAction;
     QAction*                  leftZoomMinusAction;
     QAction*                  leftZoomTo100percents;
