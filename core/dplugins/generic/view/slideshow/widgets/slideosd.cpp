@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "./slideosd.h"
+#include "slideosd.h"
 
 // Qt includes
 
@@ -45,8 +45,8 @@
 
 #include "digikam_debug.h"
 #include "slideshowloader.h"
-#include "./slidetoolbar.h"
-#include "./slideproperties.h"
+#include "slidetoolbar.h"
+#include "slideproperties.h"
 #include "ratingwidget.h"
 #include "colorlabelwidget.h"
 #include "picklabelwidget.h"

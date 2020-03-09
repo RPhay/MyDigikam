@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "./slideerror.h"
+#include "slideerror.h"
 
 // Qt includes
 

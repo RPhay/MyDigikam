@@ -23,7 +23,7 @@
  *
  * ============================================================ */
 
-#include "./slidetoolbar.h"
+#include "slidetoolbar.h"
 
 // Qt includes
 
@@ -42,7 +42,7 @@
 
 #include "slidehelp.h"
 #include "digikam_debug.h"
-#include "../dialogs/setupslideshow_dialog.h"
+#include "setupslideshow_dialog.h"
 
 namespace DigikamGenericSlideShowPlugin
 {

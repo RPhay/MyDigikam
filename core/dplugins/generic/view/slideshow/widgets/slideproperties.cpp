@@ -21,7 +21,7 @@
  *
  * ============================================================ */
 
-#include "./slideproperties.h"
+#include "slideproperties.h"
 
 // Qt includes
 

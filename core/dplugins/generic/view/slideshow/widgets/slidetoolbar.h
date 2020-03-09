@@ -34,7 +34,7 @@
 // Local includes
 
 #include "digikam_export.h"
-#include "../common/slideshowsettings.h"
+#include "slideshowsettings.h"
 #include "dlayoutbox.h"
 
 class QAction;

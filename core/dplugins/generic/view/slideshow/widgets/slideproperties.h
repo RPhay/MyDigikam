@@ -33,7 +33,7 @@
 
 // Local includes
 
-#include "../common/slideshowsettings.h"
+#include "slideshowsettings.h"
 
 namespace DigikamGenericSlideShowPlugin
 {

@@ -19,8 +19,7 @@ include_directories($<TARGET_PROPERTY:Qt5::Widgets,INTERFACE_INCLUDE_DIRECTORIES
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/dialogs)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/common)
 
-#TODO: uncomment this when remove utilities/slideshow
-#include_directories(${CMAKE_CURRENT_SOURCE_DIR}/widgets)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/widgets)
 
 set(slideshowplugin_SRCS
     ${CMAKE_CURRENT_SOURCE_DIR}/common/slideshowloader.cpp

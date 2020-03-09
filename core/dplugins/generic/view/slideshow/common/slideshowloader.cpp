@@ -54,11 +54,11 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "../widgets/slidetoolbar.h"
-#include "../widgets/slideimage.h"
-#include "../widgets/slideerror.h"
-#include "../widgets/slideosd.h"
-#include "../widgets/slideend.h"
+#include "slidetoolbar.h"
+#include "slideimage.h"
+#include "slideerror.h"
+#include "slideosd.h"
+#include "slideend.h"
 
 #ifdef HAVE_MEDIAPLAYER
 #   include "slidevideo.h"

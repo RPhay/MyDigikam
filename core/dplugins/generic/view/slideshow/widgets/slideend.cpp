@@ -22,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "./slideend.h"
+#include "slideend.h"
 
 // Qt includes
 

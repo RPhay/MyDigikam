@@ -32,9 +32,7 @@
 
 // Local includes
 
-#include "../common/slideshowsettings.h"
-
-//#include "./slidetoolbar.h"
+#include "slideshowsettings.h"
 
 class QEvent;
 
@@ -52,7 +50,7 @@ public:
 
     explicit SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const parent = nullptr);
     ~SlideOSD();
-//TODO: move slideTooBar to this directory
+
     void setCurrentUrl(const QUrl& url);
 
     void pause(bool b);
