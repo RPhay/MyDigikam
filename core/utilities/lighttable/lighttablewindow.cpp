@@ -47,6 +47,7 @@ LightTableWindow::LightTableWindow()
     : DXmlGuiWindow(nullptr),
       d(new Private)
 {
+    setObjectName(QLatin1String("Light Table"));
     setConfigGroupName(QLatin1String("LightTable Settings"));
     setXMLFile(QLatin1String("lighttablewindowui5.rc"));
 
