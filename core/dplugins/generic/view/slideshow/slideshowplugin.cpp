@@ -54,7 +54,6 @@ SlideShowPlugin::SlideShowPlugin(QObject* const parent)
 
 SlideShowPlugin::~SlideShowPlugin()
 {
-    delete iface;
 }
 
 QString SlideShowPlugin::name() const
