@@ -202,9 +202,6 @@ StackedView::StackedView(QWidget* const parent)
     connect(d->imagePreviewView, SIGNAL(signalEscapePreview()),
             this, SIGNAL(signalEscapePreview()));
 
-    connect(d->imagePreviewView, SIGNAL(signalSlideShowCurrent()),
-            this, SIGNAL(signalSlideShowCurrent()));
-
     connect(d->imagePreviewView->layout(), SIGNAL(zoomFactorChanged(double)),
             this, SLOT(slotZoomFactorChanged(double)));
 

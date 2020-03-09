@@ -78,7 +78,6 @@ Q_SIGNALS:
     void signalDeleteItem();
     void signalPreviewLoaded(bool success);
     void signalEscapePreview();
-    void signalSlideShowCurrent();
     void signalAddToExistingQueue(int);
 
     void signalGotoAlbumAndItem(const ItemInfo&);
