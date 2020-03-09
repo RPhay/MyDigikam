@@ -120,6 +120,7 @@ void EditorWindow::setupContextMenu()
     // --------------------------------------------------------
 
     addAction2ContextMenu(QLatin1String("editorwindow_slideshow"),    true);
+    addAction2ContextMenu(QLatin1String("slideshow_plugin"),    true);
     addAction2ContextMenu(QLatin1String("editorwindow_transform_rotateleft"),  true);
     addAction2ContextMenu(QLatin1String("editorwindow_transform_rotateright"), true);
     addAction2ContextMenu(QLatin1String("editorwindow_transform_crop"),         true);
@@ -422,6 +423,9 @@ void EditorWindow::setupStandardActions()
     connect(d->slideShowAction, SIGNAL(triggered()), this, SLOT(slotToggleSlideShow()));
     ac->addAction(QLatin1String("editorwindow_slideshow"), d->slideShowAction);
     ac->setDefaultShortcut(d->slideShowAction, Qt::Key_F9);
+
+    //QList<DPluginAction*> DPluginLoader::instance()->pluginActions("org.kde.digikam.SlideShow", this);
+
 
     d->viewUnderExpoAction = new QAction(QIcon::fromTheme(QLatin1String("underexposure")), i18n("Under-Exposure Indicator"), this);
     d->viewUnderExpoAction->setCheckable(true);

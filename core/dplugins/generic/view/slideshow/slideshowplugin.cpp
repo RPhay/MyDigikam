@@ -113,7 +113,7 @@ void SlideShowPlugin::setup(QObject* const parent)
 
     iface = infoIface(ac);
 
-    if (iface && iface->supportAlbums())
+    if (iface && parent->objectName() == QLatin1String("Digikam"))
     {
         QMenu* const slideShowActions = new QMenu(i18n("Slideshow_Plugin"), nullptr);
         slideShowActions->setIcon(icon());
