@@ -105,8 +105,8 @@ void SlideShowPlugin::setup(QObject* const parent)
 {
     DPluginAction* const ac = new DPluginAction(parent);
     ac->setIcon(icon());
+    //TODO: change Text to "Slideshow"
     ac->setText(i18nc("@action", "Slideshow Plugin"));
-    //TODO: rechange all name 'slideshow plugin' to 'slideshow'
     ac->setObjectName(QLatin1String("slideshow_plugin"));
     ac->setActionCategory(DPluginAction::GenericView);
 
@@ -194,6 +194,17 @@ void SlideShowPlugin::slotMenuSlideShowSelection()
     settings->fileList = iface->currentSelectedItems();
 
     slideshow(settings);
+}
+
+void SlideShowPlugin::slotMenuSlideShowManualFrom(const QUrl& image)
+{
+    SlideShowSettings* settings = new SlideShowSettings();
+
+    settings->readFromConfig();
+
+    settings->fileList = iface->currentAlbumItems();
+
+    slideshow(settings, false, image);
 }
 
 void SlideShowPlugin::slotMenuSlideShowRecursive()
