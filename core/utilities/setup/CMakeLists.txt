@@ -22,7 +22,6 @@ set(libsetupshowfoto_SRCS
     editor/setupiofiles.cpp
     editor/setupraw.cpp
     setupicc.cpp
-    setupslideshow.cpp
 )
 
 # Used by digikamcore

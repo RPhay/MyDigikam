@@ -49,7 +49,6 @@
 #include "setuplighttable.h"
 #include "setupmetadata.h"
 #include "setupmisc.h"
-#include "setupslideshow.h"
 #include "setupimagequalitysorter.h"
 #include "setuptooltip.h"
 #include "setupdatabase.h"
@@ -73,7 +72,6 @@ public:
         page_template(nullptr),
         page_lighttable(nullptr),
         page_editor(nullptr),
-        page_slideshow(nullptr),
         page_imagequalitysorter(nullptr),
         page_icc(nullptr),
         page_camera(nullptr),
@@ -87,7 +85,6 @@ public:
         templatePage(nullptr),
         lighttablePage(nullptr),
         editorPage(nullptr),
-        slideshowPage(nullptr),
         imageQualitySorterPage(nullptr),
         iccPage(nullptr),
         cameraPage(nullptr),
@@ -104,7 +101,6 @@ public:
     DConfigDlgWdgItem*       page_template;
     DConfigDlgWdgItem*       page_lighttable;
     DConfigDlgWdgItem*       page_editor;
-    DConfigDlgWdgItem*       page_slideshow;
     DConfigDlgWdgItem*       page_imagequalitysorter;
     DConfigDlgWdgItem*       page_icc;
     DConfigDlgWdgItem*       page_camera;
@@ -119,7 +115,6 @@ public:
     SetupTemplate*           templatePage;
     SetupLightTable*         lighttablePage;
     SetupEditor*             editorPage;
-    SetupSlideShow*          slideshowPage;
     SetupImageQualitySorter* imageQualitySorterPage;
     SetupICC*                iccPage;
     SetupCamera*             cameraPage;
@@ -199,12 +194,6 @@ Setup::Setup(QWidget* const parent)
     d->page_lighttable->setHeader(i18n("<qt>Light Table Settings<br/>"
                                        "<i>Customize tool used to compare images</i></qt>"));
     d->page_lighttable->setIcon(QIcon::fromTheme(QLatin1String("lighttable")));
-
-    d->slideshowPage  = new SetupSlideShow();
-    d->page_slideshow = addPage(d->slideshowPage, i18n("Slide Show"));
-    d->page_slideshow->setHeader(i18n("<qt>Slide Show Settings<br/>"
-                                      "<i>Customize slideshow settings</i></qt>"));
-    d->page_slideshow->setIcon(QIcon::fromTheme(QLatin1String("view-presentation")));
 
     d->imageQualitySorterPage = new SetupImageQualitySorter();
     d->page_imagequalitysorter = addPage(d->imageQualitySorterPage, i18n("Image Quality Sorter"));
@@ -433,7 +422,6 @@ void Setup::slotOkClicked()
     d->templatePage->applySettings();
     d->lighttablePage->applySettings();
     d->editorPage->applySettings();
-    d->slideshowPage->applySettings();
     d->imageQualitySorterPage->applySettings();
     d->iccPage->applySettings();
     d->pluginsPage->applySettings();
@@ -515,11 +503,6 @@ Setup::Page Setup::activePageIndex() const
         return EditorPage;
     }
 
-    if (cur == d->page_slideshow)
-    {
-        return SlideshowPage;
-    }
-
     if (cur == d->page_imagequalitysorter)
     {
         return ImageQualityPage;
@@ -575,9 +558,6 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
 
         case Setup::EditorPage:
             return page_editor;
-
-        case Setup::SlideshowPage:
-            return page_slideshow;
 
         case Setup::ImageQualityPage:
             return page_imagequalitysorter;
