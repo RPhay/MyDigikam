@@ -39,7 +39,6 @@
 
     <Menu name="View" ><text>&amp;View</text>
         <Action name="editorwindow_fullscreen" />
-        <Action name="editorwindow_slideshow" />
 
         <!-- _DPLUGINS_GENERIC_VIEW_ACTIONS_ -->
 
@@ -158,7 +157,7 @@
     <Action name="editorwindow_transform_crop" />
     <Separator/>
     <Action name="editorwindow_fullscreen" />
-    <Action name="editorwindow_slideshow" />
+    <Action name="slideshow_plugin" />
     <Merge />
     <WeakSeparator/>
     <Action name="logo_action" />

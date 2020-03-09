@@ -40,7 +40,6 @@ set(showfoto_SRCS
     main/showfotosettings.cpp
     main/main.cpp
     main/showfoto.cpp
-    main/showfoto_tools.cpp
     main/showfoto_setup.cpp
     main/showfoto_config.cpp
     main/showfoto_import.cpp

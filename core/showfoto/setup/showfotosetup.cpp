@@ -39,7 +39,6 @@
 #include "setupeditoriface.h"
 #include "setupicc.h"
 #include "setupiofiles.h"
-#include "setupslideshow.h"
 #include "showfotosetupraw.h"
 #include "showfotosetupmisc.h"
 #include "showfotosetupmetadata.h"
@@ -60,7 +59,6 @@ public:
         page_tooltip(nullptr),
         page_raw(nullptr),
         page_iofiles(nullptr),
-        page_slideshow(nullptr),
         page_icc(nullptr),
         page_plugins(nullptr),
         page_misc(nullptr),
@@ -71,7 +69,6 @@ public:
         pluginsPage(nullptr),
         editorIfacePage(nullptr),
         iofilesPage(nullptr),
-        slideshowPage(nullptr),
         iccPage(nullptr)
     {
     }
@@ -81,7 +78,6 @@ public:
     DConfigDlgWdgItem*            page_tooltip;
     DConfigDlgWdgItem*            page_raw;
     DConfigDlgWdgItem*            page_iofiles;
-    DConfigDlgWdgItem*            page_slideshow;
     DConfigDlgWdgItem*            page_icc;
     DConfigDlgWdgItem*            page_plugins;
     DConfigDlgWdgItem*            page_misc;
@@ -94,7 +90,6 @@ public:
 
     Digikam::SetupEditorIface*    editorIfacePage;
     Digikam::SetupIOFiles*        iofilesPage;
-    Digikam::SetupSlideShow*      slideshowPage;
     Digikam::SetupICC*            iccPage;
 
 public:
@@ -147,12 +142,6 @@ Setup::Setup(QWidget* const parent, Setup::Page page)
     d->page_iofiles->setHeader(i18n("<qt>Settings for Saving Image Files<br/>"
                                     "<i>Set default configuration used to save images</i></qt>"));
     d->page_iofiles->setIcon(QIcon::fromTheme(QLatin1String("document-save-all")));
-
-    d->slideshowPage  = new Digikam::SetupSlideShow();
-    d->page_slideshow = addPage(d->slideshowPage, i18n("Slide Show"));
-    d->page_slideshow->setHeader(i18n("<qt>Slide Show Settings<br/>"
-                                      "<i>Customize slideshow settings</i></qt>"));
-    d->page_slideshow->setIcon(QIcon::fromTheme(QLatin1String("view-presentation")));
 
     d->pluginsPage  = new SetupPlugins();
     d->page_plugins = addPage(d->pluginsPage, i18n("Plugins"));
@@ -228,7 +217,6 @@ void Setup::slotOkClicked()
     d->toolTipPage->applySettings();
     d->rawPage->applySettings();
     d->iofilesPage->applySettings();
-    d->slideshowPage->applySettings();
     d->iccPage->applySettings();
     d->pluginsPage->applySettings();
     d->miscPage->applySettings();
@@ -249,10 +237,6 @@ void Setup::showPage(Setup::Page page)
 
         case IOFilesPage:
             setCurrentPage(d->page_iofiles);
-            break;
-
-        case SlideshowPage:
-            setCurrentPage(d->page_slideshow);
             break;
 
         case ICCPage:
@@ -296,11 +280,6 @@ Setup::Page Setup::activePageIndex()
         return IOFilesPage;
     }
 
-    if (cur == d->page_slideshow)
-    {
-        return SlideshowPage;
-    }
-
     if (cur == d->page_icc)
     {
         return ICCPage;
@@ -342,9 +321,6 @@ DConfigDlgWdgItem* Setup::Private::pageItem(Setup::Page page) const
 
         case Setup::IOFilesPage:
             return page_iofiles;
-
-        case Setup::SlideshowPage:
-            return page_slideshow;
 
         case Setup::ICCPage:
             return page_icc;

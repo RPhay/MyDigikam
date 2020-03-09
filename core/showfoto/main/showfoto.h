@@ -35,7 +35,6 @@
 // Local includes
 
 #include "editorwindow.h"
-#include "../../utilities/slideshow/slideshowsettings.h"
 #include "showfotoiteminfo.h"
 
 namespace ShowFoto
@@ -148,12 +147,6 @@ private:
 private Q_SLOTS:
 
     void slotContextMenu();
-
-// -- Extra tool methods implemented in showfoto_tools.cpp ----------------------------------------
-
-private:
-
-    void slideShow(Digikam::SlideShowSettings& settings);
 
 // -- Import tools methods implemented in showfoto_import.cpp -------------------------------------
 
