@@ -186,7 +186,6 @@ void SlideShowPlugin::slotMenuSlideShowAll()
     slideshow(settings);
 }
 
-//TODO: add slotMenuSlideShowSelection
 void SlideShowPlugin::slotMenuSlideShowSelection()
 {
     SlideShowSettings* settings = new SlideShowSettings();
@@ -198,7 +197,6 @@ void SlideShowPlugin::slotMenuSlideShowSelection()
     slideshow(settings);
 }
 
-//TODO: add slotMenuSlideShowRecursive
 void SlideShowPlugin::slotMenuSlideShowRecursive()
 {
     iface->parseAlbumItemsReccursive();
@@ -238,7 +236,7 @@ void SlideShowPlugin::slideshow(SlideShowSettings* settings, bool autoPlayEnable
     }
 
 /*
-    //TODO: port these slot from itemiconview_tags.cpp to plugin
+    //TODO: port these slot from itemiconview_tags.cpp for Digikam, Image Editor, Light Table but now Showfoto via DBInfoIface
     connect(slide, SIGNAL(signalRatingChanged(QUrl,int)),
             this, SLOT(slotRatingChanged(QUrl,int)));
 

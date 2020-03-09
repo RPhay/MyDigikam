@@ -83,7 +83,6 @@ set(libeditorgui_SRCS
     main/imagewindow.cpp
     main/imagewindow_setup.cpp
     main/imagewindow_config.cpp
-    main/imagewindow_tools.cpp
     main/imagewindow_import.cpp
 )
 

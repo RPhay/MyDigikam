@@ -69,7 +69,6 @@ class IOFileSettings;
 class ICCSettingsContainer;
 class Sidebar;
 class SidebarSplitter;
-class SlideShowSettings;
 class StatusProgressBar;
 class VersionManager;
 class VersionFileOperation;
@@ -241,8 +240,6 @@ protected:
     virtual ThumbBarDock* thumbBar() const = 0;
     virtual Sidebar* rightSideBar() const = 0;
 
-    virtual void slideShow(SlideShowSettings& settings) = 0;
-
     virtual void setupConnections() = 0;
     virtual void setupActions() = 0;
     virtual void setupUserArea() = 0;
@@ -316,7 +313,6 @@ private Q_SLOTS:
     void slotSoftProofingOptions();
     void slotUpdateSoftProofingState();
     void slotSavingFinished(const QString& filename, bool success);
-    void slotToggleSlideShow();
     void slotZoomTo100Percents();
     void slotZoomChanged(bool isMax, bool isMin, double zoom);
     void slotSelectionChanged(const QRect& sel);

@@ -35,6 +35,7 @@
 // Local includes
 
 #include "editorwindow.h"
+#include "../../utilities/slideshow/slideshowsettings.h"
 #include "showfotoiteminfo.h"
 
 namespace ShowFoto

@@ -42,7 +42,6 @@ class QDropEvent;
 namespace Digikam
 {
 
-class SlideShowSettings;
 class CollectionImageChangeset;
 
 class ImageWindow : public EditorWindow
@@ -200,12 +199,6 @@ private:
 private Q_SLOTS:
 
     void slotContextMenu()                                              override;
-
-// -- Extra tool methods implemented in imagewindow_tools.cpp ----------------------------------------
-
-private:
-
-    void slideShow(SlideShowSettings& settings)                         override;
 
 // -- Import tools methods implemented in imagewindow_import.cpp -------------------------------------
 
