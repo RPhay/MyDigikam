@@ -339,11 +339,8 @@ void SlideShowLoader::slotLoadNextItem()
 
         QMimeDatabase mimeDB;
 
-        if (mimeDB.mimeTypeForFile(currentItem().toLocalFile())
-                                  .name().startsWith(QLatin1String("video/")))
-        {FR
-                    7
-
+        if (mimeDB.mimeTypeForFile(currentItem().toLocalFile()).name().startsWith(QLatin1String("video/")))
+        {
             d->videoView->setCurrentUrl(currentItem());
             return;
         }
