@@ -676,8 +676,6 @@ void SlideShowLoader::slotAssignRating(int rating)
     d->settings->iface->setItemInfo(currentItem(), info);
 
     dispatchCurrentInfoChange(currentItem());
-
-    emit signalRatingChanged(currentItem(), rating);
 }
 
 void SlideShowLoader::slotAssignColorLabel(int color)
@@ -688,8 +686,6 @@ void SlideShowLoader::slotAssignColorLabel(int color)
     d->settings->iface->setItemInfo(currentItem(), info);
 
     dispatchCurrentInfoChange(currentItem());
-
-    emit signalColorLabelChanged(currentItem(), color);
 }
 
 void SlideShowLoader::slotAssignPickLabel(int pick)
@@ -700,8 +696,6 @@ void SlideShowLoader::slotAssignPickLabel(int pick)
     d->settings->iface->setItemInfo(currentItem(), info);
 
     dispatchCurrentInfoChange(currentItem());
-
-    emit signalPickLabelChanged(currentItem(), pick);
 }
 
 void SlideShowLoader::updateTags(const QUrl& url, const QStringList& /*tags*/)
@@ -711,6 +705,7 @@ void SlideShowLoader::updateTags(const QUrl& url, const QStringList& /*tags*/)
 
 void SlideShowLoader::toggleTag(int tag)
 {
+    //TODO: unclear purpose of this function
     emit signalToggleTag(currentItem(), tag);
 }
 

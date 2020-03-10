@@ -73,9 +73,6 @@ public:
 
 Q_SIGNALS:
 
-    void signalRatingChanged(const QUrl&, int);
-    void signalColorLabelChanged(const QUrl&, int);
-    void signalPickLabelChanged(const QUrl&, int);
     void signalToggleTag(const QUrl&, int);
     void signalLastItemUrl(const QUrl&);
 

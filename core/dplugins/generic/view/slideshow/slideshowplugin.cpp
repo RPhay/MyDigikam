@@ -294,21 +294,6 @@ void SlideShowPlugin::slideshow(SlideShowSettings* settings, bool autoPlayEnable
         slide->setCurrentItem(iface->currentSelectedItems()[0]);
     }
 
-/*
-    //TODO: port these slot from itemiconview_tags.cpp for Digikam, Image Editor, Light Table but now Showfoto via DBInfoIface
-    connect(slide, SIGNAL(signalRatingChanged(QUrl,int)),
-            this, SLOT(slotRatingChanged(QUrl,int)));
-
-    connect(slide, SIGNAL(signalColorLabelChanged(QUrl,int)),
-            this, SLOT(slotColorLabelChanged(QUrl,int)));
-
-    connect(slide, SIGNAL(signalPickLabelChanged(QUrl,int)),
-            this, SLOT(slotPickLabelChanged(QUrl,int)));
-
-    connect(slide, SIGNAL(signalToggleTag(QUrl,int)),
-            this, SLOT(slotToggleTag(QUrl,int)));
-*/
-
     connect(slide, SIGNAL(signalLastItemUrl(QUrl)),
             this, SLOT(slotSlideShowFinished(QUrl)));
 
