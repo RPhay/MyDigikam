@@ -25,6 +25,7 @@
 
 // Local includes
 
+#include "metaenginesettings.h"
 #include "itemposition.h"
 #include "coredb.h"
 #include "tagscache.h"
@@ -130,9 +131,19 @@ QString ItemGPS::saveChanges()
         CoreDbAccess().db()->addTagsToItems(QList<qlonglong>() << m_info.id(), tagIds);
     }
 
-    // Save info to file.
+    if (MetaEngineSettings::instance()->settings().savePosition)
+    {
+        // Save info to file.
 
-    return GPSItemContainer::saveChanges();
+        return GPSItemContainer::saveChanges();
+    }
+
+    m_dirty        = false;
+    m_savedState   = m_gpsData;
+    m_tagListDirty = false;
+    m_savedTagList = m_tagList;
+
+    return QString();
 }
 
 } // namespace Digikam
