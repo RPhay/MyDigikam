@@ -131,19 +131,14 @@ QString ItemGPS::saveChanges()
         CoreDbAccess().db()->addTagsToItems(QList<qlonglong>() << m_info.id(), tagIds);
     }
 
-    if (MetaEngineSettings::instance()->settings().savePosition)
-    {
-        // Save info to file.
+    // Save info to file.
 
-        return GPSItemContainer::saveChanges();
-    }
+    MetaEngineSettings* const settings = MetaEngineSettings::instance();
 
-    m_dirty        = false;
-    m_savedState   = m_gpsData;
-    m_tagListDirty = false;
-    m_savedTagList = m_tagList;
+    m_saveTags                         = settings->settings().saveTags;
+    m_saveGPS                          = settings->settings().savePosition;
 
-    return QString();
+    return GPSItemContainer::saveChanges();
 }
 
 } // namespace Digikam
