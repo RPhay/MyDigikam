@@ -118,6 +118,7 @@ void ItemIconView::slotAssignTag()
     d->rightSideBar->imageDescEditTab()->setFocusToNewTagEdit();
 }
 
+/*
 void ItemIconView::slotRatingChanged(const QUrl& url, int rating)
 {
     rating = qMin(RatingMax, qMax(RatingMin, rating));
@@ -161,5 +162,6 @@ void ItemIconView::slotToggleTag(const QUrl& url, int tagID)
             FileActionMngr::instance()->assignTag(info, tagID);
     }
 }
+*/
 
 } // namespace Digikam

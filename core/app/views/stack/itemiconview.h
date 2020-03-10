@@ -291,10 +291,10 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
-    void slotRatingChanged(const QUrl&, int);
-    void slotColorLabelChanged(const QUrl&, int);
-    void slotPickLabelChanged(const QUrl&, int);
-    void slotToggleTag(const QUrl&, int);
+    //void slotRatingChanged(const QUrl&, int);
+    //void slotColorLabelChanged(const QUrl&, int);
+    //void slotPickLabelChanged(const QUrl&, int);
+    //void slotToggleTag(const QUrl&, int);
 
     //@}
 
