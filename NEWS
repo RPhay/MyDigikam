@@ -11,7 +11,7 @@ General       : Update internal libraw engine to last 201910 snapshot aka next 0
 General       : All bundles have switched to last Qt 5.14.0. Linux and MacOS use QtWebEngine instead QtWebKit.
 General       : Add Microsoft Visual C++ support and a Continuous Integration workflow to check code with this compiler.
 General       : Table-view is now able to show digiKam Tag-Paths properties.
-
+Metadata      : New option to enable to write geolocation data to file metadata.
 *****************************************************************************************************
 BUGFIXES:
 
@@ -656,4 +656,5 @@ BUGFIXES:
 638 ==> 418536 - Editing date used as picture-taking date.
 639 ==> 229010 - No support to resync GPS data from digikams database into into jpg files.
 640 ==> 418658 - GPS data not exported on metadata export to sidecar files.
-641 ==> 
+641 ==> 381347 - Non expected geolocation error message.
+642 ==> 
