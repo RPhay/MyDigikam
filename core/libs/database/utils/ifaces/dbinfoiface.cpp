@@ -57,7 +57,6 @@
 #include "itemlister.h"
 #include "itemlisterreceiver.h"
 #include "dio.h"
-#include "fileactionmngr.h"
 
 #ifdef HAVE_MARBLE
 #   include "itemgps.h"
@@ -503,39 +502,19 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
 
     if (map.contains(QLatin1String("rating")))
     {
-        const int ratingMax = 5;
-        const int ratingMin = 0;
-
-        int rating = map[QLatin1String("rating")].toInt();
-
-        info.setRating(rating);
-
-        rating = qMin(ratingMax, qMax(ratingMin, rating));
-
-        FileActionMngr::instance()->assignRating(info, rating);
-
+        info.setRating(map[QLatin1String("rating")].toInt());
         keys.removeAll(QLatin1String("rating"));
     }
 
     if  (map.contains(QLatin1String("colorlabel")))
     {
-        int color = map[QLatin1String("colorlabel")].toInt();
-
-        info.setColorLabel(color);
-
-        FileActionMngr::instance()->assignColorLabel(info, color);
-
+        info.setColorLabel(map[QLatin1String("colorlabel")].toInt());
         keys.removeAll(QLatin1String("colorlabel"));
     }
 
     if  (map.contains(QLatin1String("picklabel")))
     {
-        int pick = map[QLatin1String("picklabel")].toInt();
-
-        info.setPickLabel(pick);
-
-        FileActionMngr::instance()->assignPickLabel(info, pick);
-
+        info.setPickLabel(map[QLatin1String("picklabel")].toInt());
         keys.removeAll(QLatin1String("picklabel"));
     }
 

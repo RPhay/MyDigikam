@@ -671,8 +671,8 @@ void SlideShowLoader::allowScreenSaver()
 void SlideShowLoader::slotAssignRating(int rating)
 {
     DInfoInterface::DInfoMap info;
-    DItemInfo item(info);
-    item.setRating(rating);
+    info.insert(QLatin1String("rating"), rating);
+
     d->settings->iface->setItemInfo(currentItem(), info);
 
     dispatchCurrentInfoChange(currentItem());
@@ -681,8 +681,8 @@ void SlideShowLoader::slotAssignRating(int rating)
 void SlideShowLoader::slotAssignColorLabel(int color)
 {
     DInfoInterface::DInfoMap info;
-    DItemInfo item(info);
-    item.setColorLabel(color);
+    info.insert(QLatin1String("colorlabel"), color);
+
     d->settings->iface->setItemInfo(currentItem(), info);
 
     dispatchCurrentInfoChange(currentItem());
@@ -691,8 +691,8 @@ void SlideShowLoader::slotAssignColorLabel(int color)
 void SlideShowLoader::slotAssignPickLabel(int pick)
 {
     DInfoInterface::DInfoMap info;
-    DItemInfo item(info);
-    item.setPickLabel(pick);
+    info.insert(QLatin1String("picklabel"), pick);
+
     d->settings->iface->setItemInfo(currentItem(), info);
 
     dispatchCurrentInfoChange(currentItem());
@@ -705,7 +705,7 @@ void SlideShowLoader::updateTags(const QUrl& url, const QStringList& /*tags*/)
 
 void SlideShowLoader::toggleTag(int tag)
 {
-    //TODO: unclear purpose of this function
+    //TODO: clear purpose of this function
     emit signalToggleTag(currentItem(), tag);
 }
 
