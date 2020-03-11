@@ -495,7 +495,7 @@ void TagsActionMngr::slotAssignFromShortcut()
         return;
     }
 /*
- *  TODO:
+ *  TODO: remove this
     SlideShow* const sld = dynamic_cast<SlideShow*>(w);
 
     if (sld)
@@ -530,7 +530,7 @@ void TagsActionMngr::slotImageTagChanged(const ImageTagChangeset&)
 {
     QWidget* const w     = qApp->activeWindow();
 /*
- *  TODO
+ *  TODO: remove this
     SlideShow* const sld = dynamic_cast<SlideShow*>(w);
 
     if (sld)

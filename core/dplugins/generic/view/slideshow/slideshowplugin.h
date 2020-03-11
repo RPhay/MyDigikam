@@ -58,6 +58,8 @@ public:
 
     void setup(QObject* const)           override;
 
+    void addConnectionSlideEnd(QObject* obj);
+
 private Q_SLOTS:
 
     void slotMenuSlideShow();
@@ -72,7 +74,9 @@ private:
     void slideshow(SlideShowSettings* settings, bool autoPlayEnabled = true, const QUrl& startFrom = QUrl());
 
 private:
-    DInfoInterface* iface;
+
+    DInfoInterface* m_iface;
+
 };
 
 } // namespace DigikamGenericSlideShowPlugin

@@ -48,7 +48,7 @@ namespace DigikamGenericSlideShowPlugin
 
 SlideShowPlugin::SlideShowPlugin(QObject* const parent)
     : DPluginGeneric(parent),
-      iface(nullptr)
+      m_iface(nullptr)
 {
 }
 
@@ -109,9 +109,9 @@ void SlideShowPlugin::setup(QObject* const parent)
     ac->setObjectName(QLatin1String("slideshow_plugin"));
     ac->setActionCategory(DPluginAction::GenericView);
 
-    iface = infoIface(ac);
+    m_iface = infoIface(ac);
 
-    if (iface && parent->objectName() == QLatin1String("Digikam"))
+    if (m_iface && parent->objectName() == QLatin1String("Digikam"))
     {
         QMenu* const slideShowActions = new QMenu(i18n("Slideshow"), nullptr);
         slideShowActions->setIcon(icon());
@@ -158,6 +158,11 @@ void SlideShowPlugin::setup(QObject* const parent)
     addAction(ac);
 }
 
+void SlideShowPlugin::addConnectionSlideEnd(QObject* obj)
+{
+
+}
+
 void SlideShowPlugin::slotMenuSlideShow()
 {
     DPluginAction* ac = dynamic_cast<DPluginAction*>(sender());
@@ -170,14 +175,14 @@ void SlideShowPlugin::slotMenuSlideShow()
         ac->setData(QVariant());
     }
 
-    iface = infoIface(sender());
+    m_iface = infoIface(sender());
 
     SlideShowSettings* settings = new SlideShowSettings();
 
     settings->readFromConfig();
 
     settings->exifRotate = MetaEngineSettings::instance()->settings().exifRotate;
-    settings->fileList = iface->currentAlbumItems();
+    settings->fileList = m_iface->currentAlbumItems();
 
     slideshow(settings, true, startFrom);
 }
@@ -188,7 +193,7 @@ void SlideShowPlugin::slotMenuSlideShowAll()
 
     settings->readFromConfig();
 
-    settings->fileList = iface->currentAlbumItems();
+    settings->fileList = m_iface->currentAlbumItems();
 
     slideshow(settings);
 }
@@ -199,17 +204,17 @@ void SlideShowPlugin::slotMenuSlideShowSelection()
 
     settings->readFromConfig();
 
-    settings->fileList = iface->currentSelectedItems();
+    settings->fileList = m_iface->currentSelectedItems();
 
     slideshow(settings);
 }
 
 void SlideShowPlugin::slotMenuSlideShowRecursive()
 {
-    connect(iface, SIGNAL(signalAlbumItemsRecursiveCompleted(const QList<QUrl>&)),
+    connect(m_iface, SIGNAL(signalAlbumItemsRecursiveCompleted(const QList<QUrl>&)),
             this, SLOT(slotShowRecursive(const QList<QUrl>&)));
 
-    iface->parseAlbumItemsRecursive();
+    m_iface->parseAlbumItemsRecursive();
 }
 
 void SlideShowPlugin::slotShowRecursive(const QList<QUrl>& imageList)
@@ -250,7 +255,7 @@ void SlideShowPlugin::slotShowManual()
     settings->readFromConfig();
 
     settings->exifRotate = MetaEngineSettings::instance()->settings().exifRotate;
-    settings->fileList = iface->currentAlbumItems();
+    settings->fileList = m_iface->currentAlbumItems();
 
     slideshow(settings, true, startFrom);
 }
@@ -274,7 +279,7 @@ void SlideShowPlugin::slotSlideShowFinished(const QUrl& lastImage)
 
 void SlideShowPlugin::slideshow(SlideShowSettings* settings, bool autoPlayEnabled, const QUrl& startFrom)
 {
-    SlideShowLoader* slide = new SlideShowLoader(iface, settings);
+    SlideShowLoader* slide = new SlideShowLoader(m_iface, settings);
 
     settings->autoPlayEnabled = autoPlayEnabled;
     //TODO: preview settings for digikam
@@ -291,7 +296,7 @@ void SlideShowPlugin::slideshow(SlideShowSettings* settings, bool autoPlayEnable
     }
     else if (settings->startWithCurrent)
     {
-        slide->setCurrentItem(iface->currentSelectedItems()[0]);
+        slide->setCurrentItem(m_iface->currentSelectedItems()[0]);
     }
 
     connect(slide, SIGNAL(signalLastItemUrl(QUrl)),
