@@ -658,4 +658,5 @@ BUGFIXES:
 640 ==> 418658 - GPS data not exported on metadata export to sidecar files.
 641 ==> 381347 - Non expected geolocation error message.
 642 ==> 418760 - Suggested people tag does not appear on Unconfirmed thumbnails until you click on the thumbnail.
-643 ==> 
+643 ==> 418554 - In face tagging, when manually entering a name, all other suggestions will default to that name.
+644 ==> 
