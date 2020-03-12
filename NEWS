@@ -657,4 +657,5 @@ BUGFIXES:
 639 ==> 229010 - No support to resync GPS data from digikams database into into jpg files.
 640 ==> 418658 - GPS data not exported on metadata export to sidecar files.
 641 ==> 381347 - Non expected geolocation error message.
-642 ==> 
+642 ==> 418760 - Suggested people tag does not appear on Unconfirmed thumbnails until you click on the thumbnail.
+643 ==> 
