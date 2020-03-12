@@ -133,8 +133,9 @@ QVariant TagModel::albumData(Album* a, int role) const
         m_unconfirmedFaceCount.contains(a->id())  &&
         (a->id() != FaceTags::unknownPersonTagId()))
     {
+        QString str = i18n("%1 new").arg(m_unconfirmedFaceCount.value(a->id()));
         QString res = AbstractCheckableAlbumModel::albumData(a, role).toString() +
-                QString::fromUtf8(" (%1 new)").arg(m_unconfirmedFaceCount.find(a->id()).value());
+                      QString::fromUtf8(" (%1)").arg(str);
 
         return res;
     }
