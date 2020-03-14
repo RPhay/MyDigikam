@@ -420,7 +420,9 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
 
 void ItemPreviewView::slotSlideShowCurrent()
 {
-    QList<DPluginAction*> actions = DPluginLoader::instance()->pluginActions(QLatin1String("org.kde.digikam.SlideShow"), DigikamApp::instance());
+    QList<DPluginAction*> actions = DPluginLoader::instance()->pluginActions(
+                                                               QLatin1String("org.kde.digikam.SlideShow"),
+                                                               DigikamApp::instance());
 
     if (actions.isEmpty())
     {

@@ -77,9 +77,6 @@ public:
 
     Q_SIGNAL void signalShortcutPressed(const QString& shortcut, int val);
 
-    /// signal for intermediate exchange channel between app and Dplugin
-    Q_SIGNAL void signalExchangeMedia(const QVariant&);
-
 public:
 
     ///@{

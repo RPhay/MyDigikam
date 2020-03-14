@@ -91,6 +91,7 @@ public Q_SLOTS:
     void slotImageAddToCurrentQueue();
     void slotImageAddToNewQueue();
     void slotImageAddToExistingQueue(int);
+
     //@}
 
     // ----------------------------------------------------------------------------------------
