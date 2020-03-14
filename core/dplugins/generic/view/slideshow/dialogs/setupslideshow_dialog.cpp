@@ -116,9 +116,6 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
 
     m_buttons->addButton(QDialogButtonBox::Close);
     m_buttons->addButton(QDialogButtonBox::Ok);
-    m_buttons->button(QDialogButtonBox::Ok)->setText(i18n("Save"));
-    m_buttons->button(QDialogButtonBox::Ok)->setToolTip(i18nc("@info:tooltip", "Save Slideshow Settings"));
-    m_buttons->button(QDialogButtonBox::Ok)->setIcon(QIcon::fromTheme(QLatin1String("document-save")));
     m_buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
     QWidget* const panel      = new QWidget(this);
