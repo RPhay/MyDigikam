@@ -119,7 +119,8 @@ public:
             case ItemSortSettings::SortByRating:
                 sortOrder = CoreDB::ByItemRating;
                 break;
-                // ByISize not supported
+
+            // NOTE: ByISize not supported
         }
 
         QStringList list = CoreDbAccess().db()->getItemURLsInAlbum(album->id(), sortOrder);
@@ -166,10 +167,12 @@ public:
         if (album->isDuplicatesSearch())
         {
             // duplicates search album -> get the id list from the query
+
             SearchXmlReader reader(album->query());
             reader.readToFirstField();
 
             // Get the defined image ids.
+
             QList<int> list;
             list << reader.valueToIntList();
 
@@ -180,6 +183,7 @@ public:
                 {
                     // if the image is visible, i.e. existent and not deleted,
                     // add the url if the name filter matches
+
                     QUrl imageUrl = imageInfo.fileUrl();
 /*
                     qCDebug(DIGIKAM_GENERAL_LOG) << "Duplicates search Image url "
@@ -195,6 +199,7 @@ public:
         else
         {
             // If we do not have a duplicates search, we use the image lister to get the images.
+
             ItemLister lister;
             lister.setListOnlyAvailable(true);
 
@@ -212,6 +217,7 @@ public:
             if (!receiver.hasError)
             {
                 // if there were no error, fetch and process the results.
+
                 foreach (const ItemListerRecord &record, receiver.records)
                 {
                     ItemInfo imageInfo(record);
@@ -290,9 +296,10 @@ DBInfoIface::DBInfoIface(QObject* const parent, const QList<QUrl>& lst,
     d->itemUrls      = lst;
     d->operationType = type;
 
-    //forward signal to DPluginAction of Digikam
-    connect(TagsActionMngr::defaultManager(), SIGNAL(signalShortcutPressed(const QString&, int)),
-            this, SIGNAL(signalShortcutPressed(const QString&, int)));
+    // forward signal to DPluginAction of Digikam
+
+    connect(TagsActionMngr::defaultManager(), SIGNAL(signalShortcutPressed(QString,int)),
+            this, SIGNAL(signalShortcutPressed(QString,int)));
 }
 
 DBInfoIface::~DBInfoIface()
@@ -320,6 +327,7 @@ void DBInfoIface::slotDateTimeForUrl(const QUrl& url, const QDateTime& dt, bool 
 void DBInfoIface::slotMetadataChangedForUrl(const QUrl& url)
 {
     // Refresh Database with new metadata from file.
+
     CollectionScanner scanner;
 
     scanner.scanFile(url.toLocalFile(), CollectionScanner::Rescan);
@@ -334,8 +342,8 @@ void DBInfoIface::parseAlbumItemsRecursive()
     {
         AlbumParser* const parser = new AlbumParser(currAlbum);
 
-        connect(parser, SIGNAL(signalComplete(const QList<QUrl>&)),
-                this, SIGNAL(signalAlbumItemsRecursiveCompleted(const QList<QUrl>&)));
+        connect(parser, SIGNAL(signalComplete(QList<QUrl>)),
+                this, SIGNAL(signalAlbumItemsRecursiveCompleted(QList<QUrl>)));
 
         parser->run();
     }
@@ -384,6 +392,7 @@ QList<QUrl> DBInfoIface::allAlbumItems() const
          it != palbumList.constEnd(); ++it)
     {
         // don't add the root album
+
         if ((*it)->isRoot())
         {
             continue;
@@ -445,16 +454,19 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
 
         // Get digiKam Tags Path list of picture from database.
         // Ex.: "City/Paris/Monuments/Notre Dame"
+
         QList<int> tagIds    = info.tagIds();
         QStringList tagspath = AlbumManager::instance()->tagPaths(tagIds, false);
         map.insert(QLatin1String("tagspath"),    tagspath);
 
         // Get digiKam Tags name (keywords) list of picture from database.
         // Ex.: "Notre Dame"
+
         QStringList tags     = AlbumManager::instance()->tagNames(tagIds);
         map.insert(QLatin1String("keywords"),    tags);
 
         // Get GPS location of picture from database.
+
         ItemPosition pos    = info.imagePosition();
 
         if (!pos.isEmpty())
@@ -465,6 +477,7 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
         }
 
         // Get Copyright information of picture from database.
+
         ItemCopyright rights        = info.imageCopyright();
         map.insert(QLatin1String("creators"),     rights.creator());
         map.insert(QLatin1String("credit"),       rights.credit());
@@ -481,6 +494,7 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
         map.insert(QLatin1String("focalLength35mm"), photoInfo.focalLength35mm);
 
         // TODO: add more video metadata as needed
+
         VideoInfoContainer videoInfo = info.videoInfoContainer();
         map.insert(QLatin1String("videocodec"),   videoInfo.videoCodec);
 
