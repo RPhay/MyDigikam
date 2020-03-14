@@ -698,15 +698,20 @@ void SlideShowLoader::slotAssignPickLabel(int pick)
     dispatchCurrentInfoChange(currentItem());
 }
 
-void SlideShowLoader::updateTags(const QUrl& url, const QStringList& /*tags*/)
+void SlideShowLoader::slotToggleTag(int tag)
 {
-    dispatchCurrentInfoChange(url);
+    DInfoInterface::DInfoMap info;
+    info.insert(QLatin1String("tag"), tag);
+
+    d->settings->iface->setItemInfo(currentItem(), info);
+
+    //dispatchCurrentInfoChange(currentItem());
 }
 
-void SlideShowLoader::toggleTag(int tag)
+void SlideShowLoader::updateTags(const QUrl& url, const QStringList& /*tags*/)
 {
-    //TODO: clear purpose of this function
-    emit signalToggleTag(currentItem(), tag);
+    //TODO : manage this function in TagActionMngr
+    dispatchCurrentInfoChange(url);
 }
 
 void SlideShowLoader::dispatchCurrentInfoChange(const QUrl& url)

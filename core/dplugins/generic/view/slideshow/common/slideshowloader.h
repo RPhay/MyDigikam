@@ -68,12 +68,10 @@ public:
     void setCurrentItem(const QUrl& url);
     QUrl currentItem() const;
 
-    void toggleTag(int tag);
     void updateTags(const QUrl& url, const QStringList& tags);
 
 Q_SIGNALS:
 
-    void signalToggleTag(const QUrl&, int);
     void signalLastItemUrl(const QUrl&);
 
 public Q_SLOTS:
@@ -86,6 +84,7 @@ public Q_SLOTS:
     void slotAssignRating(int);
     void slotAssignColorLabel(int);
     void slotAssignPickLabel(int);
+    void slotToggleTag(int tag);
 
 protected:
 
