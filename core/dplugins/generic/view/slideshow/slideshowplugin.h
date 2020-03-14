@@ -77,7 +77,6 @@ private:
 private:
 
     DInfoInterface* m_iface;
-
 };
 
 } // namespace DigikamGenericSlideShowPlugin

@@ -8,7 +8,7 @@
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C)      2004 by Enrico Ros <eros dot kde at email dot it>
- * Copyright (C)      2019 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -93,24 +93,24 @@ public:
     {
     }
 
-    int                fileIndex;
-    int                screenSaverCookie;
+    int                    fileIndex;
+    int                    screenSaverCookie;
 
-    QTimer*            mouseMoveTimer;  ///< To hide cursor when not moved.
+    QTimer*                mouseMoveTimer;  ///< To hide cursor when not moved.
 
-    SlideImage*        imageView;
+    SlideImage*            imageView;
 
 #ifdef HAVE_MEDIAPLAYER
 
-    SlideVideo*        videoView;
+    SlideVideo*            videoView;
 
 #endif
 
-    SlideError*        errorView;
-    SlideEnd*          endView;
-    SlideOSD*          osd;
+    SlideError*            errorView;
+    SlideEnd*              endView;
+    SlideOSD*              osd;
 
-    SlideShowSettings* settings;
+    SlideShowSettings*     settings;
 
     QMap<QString, QString> shortcutPrefixes;
 };
@@ -247,7 +247,7 @@ SlideShowLoader::~SlideShowLoader()
 
 void SlideShowLoader::setCurrentView(SlideShowViewMode view)
 {
-    switch(view)
+    switch (view)
     {
         case ErrorView:
             d->osd->video(false);
@@ -340,7 +340,7 @@ void SlideShowLoader::slotLoadNextItem()
         d->osd->toolBar()->setEnabledNext(d->fileIndex < (num - 1));
     }
 
-    if (d->fileIndex >= 0 && d->fileIndex < num)
+    if ((d->fileIndex >= 0) && (d->fileIndex < num))
     {
 
 #ifdef HAVE_MEDIAPLAYER

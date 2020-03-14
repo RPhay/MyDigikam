@@ -154,14 +154,16 @@ int SlideShowSettings::count() const
 
 void SlideShowSettings::suffleImages()
 {
-    if(suffle)
+    if (suffle)
     {
         if (originalFileList.isEmpty())
         {
-            //keep a backup of original file list at the first suffle
+            // keep a backup of original file list at the first suffle
+
             originalFileList = fileList;
 
-            //suffle
+            // suffle
+
             qsrand(QTime::currentTime().msec());
 
             QList<QUrl>::iterator it = fileList.begin();
@@ -182,7 +184,8 @@ void SlideShowSettings::suffleImages()
     {
         if (!originalFileList.isEmpty())
         {
-            //return to original list
+            // return to original list
+
             fileList = originalFileList;
             originalFileList.clear();
         }

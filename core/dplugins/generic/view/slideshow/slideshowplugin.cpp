@@ -7,7 +7,7 @@
  * Description : a plugin to render slideshow.
  *
  * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C) 2020      by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -117,7 +117,8 @@ void SlideShowPlugin::setup(QObject* const parent)
         slideShowActions->setIcon(icon());
         ac->setMenu(slideShowActions);
 
-        //Action show all
+        // Action show all
+
         QAction* const slideShowAllAction = new QAction(i18n("All"), parent);
         slideShowAllAction->setObjectName(QLatin1String("slideshow_all"));
         slideShowAllAction->setShortcut(Qt::Key_F9);
@@ -126,7 +127,8 @@ void SlideShowPlugin::setup(QObject* const parent)
         connect(slideShowAllAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowAll()));
 
-        //Action show selection
+        // Action show selection
+
         QAction* const slideShowSelectionAction = new QAction(i18n("Selection"), parent);
         slideShowSelectionAction->setObjectName(QLatin1String("slideshow_selected"));
         slideShowSelectionAction->setShortcut(Qt::ALT + Qt::Key_F9);
@@ -135,7 +137,8 @@ void SlideShowPlugin::setup(QObject* const parent)
         connect(slideShowSelectionAction, SIGNAL(triggered()),
                 this, SLOT(slotMenuSlideShowSelection()));
 
-        //Action show recursive
+        // Action show recursive
+
         QAction* const slideShowRecursiveAction = new QAction(i18n("With All Sub-Albums"), parent);
         slideShowRecursiveAction->setObjectName(QLatin1String("slideshow_recursive"));
         slideShowRecursiveAction->setShortcut(Qt::SHIFT + Qt::Key_F9);
@@ -160,12 +163,11 @@ void SlideShowPlugin::setup(QObject* const parent)
 
 void SlideShowPlugin::addConnectionSlideEnd(QObject* obj)
 {
-
 }
 
 void SlideShowPlugin::slotMenuSlideShow()
 {
-    DPluginAction* ac = dynamic_cast<DPluginAction*>(sender());
+    DPluginAction* const ac = dynamic_cast<DPluginAction*>(sender());
 
     QUrl startFrom;
     if (ac)
@@ -175,36 +177,35 @@ void SlideShowPlugin::slotMenuSlideShow()
         ac->setData(QVariant());
     }
 
-    m_iface = infoIface(sender());
-
-    SlideShowSettings* settings = new SlideShowSettings();
+    m_iface                           = infoIface(sender());
+    SlideShowSettings* const settings = new SlideShowSettings();
 
     settings->readFromConfig();
 
     settings->exifRotate = MetaEngineSettings::instance()->settings().exifRotate;
-    settings->fileList = m_iface->currentAlbumItems();
+    settings->fileList   = m_iface->currentAlbumItems();
 
     slideshow(settings, true, startFrom);
 }
 
 void SlideShowPlugin::slotMenuSlideShowAll()
 {
-    SlideShowSettings* settings = new SlideShowSettings();
+    SlideShowSettings* const settings = new SlideShowSettings();
 
     settings->readFromConfig();
 
-    settings->fileList = m_iface->currentAlbumItems();
+    settings->fileList                = m_iface->currentAlbumItems();
 
     slideshow(settings);
 }
 
 void SlideShowPlugin::slotMenuSlideShowSelection()
 {
-    SlideShowSettings* settings = new SlideShowSettings();
+    SlideShowSettings* const settings = new SlideShowSettings();
 
     settings->readFromConfig();
 
-    settings->fileList = m_iface->currentSelectedItems();
+    settings->fileList                = m_iface->currentSelectedItems();
 
     slideshow(settings);
 }
@@ -219,18 +220,18 @@ void SlideShowPlugin::slotMenuSlideShowRecursive()
 
 void SlideShowPlugin::slotShowRecursive(const QList<QUrl>& imageList)
 {
-    SlideShowSettings* settings = new SlideShowSettings();
+    SlideShowSettings* const settings = new SlideShowSettings();
 
     settings->readFromConfig();
 
-    settings->fileList = imageList;
+    settings->fileList                = imageList;
 
     slideshow(settings);
 }
 
 void SlideShowPlugin::slotShowManual()
 {
-    DPluginAction* ac = dynamic_cast<DPluginAction*>(sender());
+    DPluginAction* const ac = dynamic_cast<DPluginAction*>(sender());
 
     QUrl startFrom;
 
@@ -250,12 +251,12 @@ void SlideShowPlugin::slotShowManual()
         return;
     }
 
-    SlideShowSettings* settings = new SlideShowSettings();
+    SlideShowSettings* const settings = new SlideShowSettings();
 
     settings->readFromConfig();
 
-    settings->exifRotate = MetaEngineSettings::instance()->settings().exifRotate;
-    settings->fileList = m_iface->currentAlbumItems();
+    settings->exifRotate              = MetaEngineSettings::instance()->settings().exifRotate;
+    settings->fileList                = m_iface->currentAlbumItems();
 
     slideshow(settings, true, startFrom);
 }
@@ -279,11 +280,12 @@ void SlideShowPlugin::slotSlideShowFinished(const QUrl& lastImage)
 
 void SlideShowPlugin::slideshow(SlideShowSettings* settings, bool autoPlayEnabled, const QUrl& startFrom)
 {
-    SlideShowLoader* slide = new SlideShowLoader(m_iface, settings);
+    SlideShowLoader* const slide = new SlideShowLoader(m_iface, settings);
 
     slide->setShortCutPrefixes(m_iface->passShortcutActionsToWidget(slide));
 
-    settings->autoPlayEnabled = autoPlayEnabled;
+    settings->autoPlayEnabled    = autoPlayEnabled;
+
     //TODO: preview settings for digikam
     //settings.previewSettings = ApplicationSettings::instance()->getPreviewSettings();
 
@@ -292,7 +294,7 @@ void SlideShowPlugin::slideshow(SlideShowSettings* settings, bool autoPlayEnable
         settings->imageUrl = startFrom;
     }
 
-    if (settings->imageUrl.isValid())
+    if      (settings->imageUrl.isValid())
     {
         slide->setCurrentItem(settings->imageUrl);
     }
@@ -304,8 +306,8 @@ void SlideShowPlugin::slideshow(SlideShowSettings* settings, bool autoPlayEnable
     connect(slide, SIGNAL(signalLastItemUrl(QUrl)),
             this, SLOT(slotSlideShowFinished(QUrl)));
 
-    connect(m_iface, SIGNAL(signalShortcutPressed(QString, int)),
-            slide, SLOT(slotHandleShortcut(QString, int)));
+    connect(m_iface, SIGNAL(signalShortcutPressed(QString,int)),
+            slide, SLOT(slotHandleShortcut(QString,int)));
 
     slide->show();
 }

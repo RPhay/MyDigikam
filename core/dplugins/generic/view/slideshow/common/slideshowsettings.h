@@ -44,7 +44,8 @@ using namespace Digikam;
 namespace DigikamGenericSlideShowPlugin
 {
 
-/** This class contain all settings to perform a slide show of a group of pictures
+/**
+ * This class contain all settings to perform a slide show of a group of pictures
  */
 class SlideShowSettings
 {
