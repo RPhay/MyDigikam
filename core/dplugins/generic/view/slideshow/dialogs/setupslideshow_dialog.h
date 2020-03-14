@@ -52,7 +52,6 @@ public:
 public Q_SLOTS:
 
     void slotSetUnchecked(int);
-
     void slotApplySettings();
 
 private:

@@ -56,7 +56,8 @@ public:
 
     explicit Private()
         : maxStringLen(80),
-          paintEnabled(true)
+          paintEnabled(true),
+          settings(nullptr)
     {
     }
 

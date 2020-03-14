@@ -76,8 +76,8 @@ SlideImage::SlideImage(QWidget* const parent)
     d->previewThread        = new PreviewLoadThread();
     d->previewPreloadThread = new PreviewLoadThread();
 
-    connect(d->previewThread, SIGNAL(signalImageLoaded(LoadingDescription, DImg)),
-            this, SLOT(slotGotImagePreview(LoadingDescription, DImg)));
+    connect(d->previewThread, SIGNAL(signalImageLoaded(LoadingDescription,DImg)),
+            this, SLOT(slotGotImagePreview(LoadingDescription,DImg)));
 }
 
 SlideImage::~SlideImage()
@@ -95,7 +95,9 @@ void SlideImage::setPreviewSettings(const PreviewSettings& settings)
 void SlideImage::setLoadUrl(const QUrl& url)
 {
     d->currentImage = url;
+
     // calculate preview size which is used for fast previews
+
     QScreen* screen = qApp->primaryScreen();
 
     if (QWidget* const widget = nativeParentWidget())
@@ -140,7 +142,7 @@ void SlideImage::paintEvent(QPaintEvent*)
 
 void SlideImage::slotGotImagePreview(const LoadingDescription& desc, const DImg& preview)
 {
-    if (desc.filePath != d->currentImage.toLocalFile() || desc.isThumbnail())
+    if ((desc.filePath != d->currentImage.toLocalFile()) || desc.isThumbnail())
     {
         return;
     }

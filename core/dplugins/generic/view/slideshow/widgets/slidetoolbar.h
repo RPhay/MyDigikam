@@ -71,7 +71,6 @@ Q_SIGNALS:
     void signalClose();
     void signalPlay();
     void signalPause();
-
     void signalScreenSelected(int);
 
 private Q_SLOTS:

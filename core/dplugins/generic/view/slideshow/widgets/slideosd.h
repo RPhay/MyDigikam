@@ -67,7 +67,6 @@ private Q_SLOTS:
 
     void slotProgressTimer();
     void slotStart();
-
     void slotRechargeSettings();
 
 private:

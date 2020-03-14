@@ -36,8 +36,8 @@
 #include <klocalizedstring.h>
 
 // Local includes
-#include "metaenginesettings.h"
 
+#include "metaenginesettings.h"
 #include "setupslideshow_dialog.h"
 #include "slideshowloader.h"
 
@@ -287,7 +287,7 @@ void SlideShowPlugin::slideshow(SlideShowSettings* const settings, bool autoPlay
 
     settings->autoPlayEnabled    = autoPlayEnabled;
 
-    //TODO: preview settings for digikam
+    // TODO: preview settings for digikam
     //settings.previewSettings = ApplicationSettings::instance()->getPreviewSettings();
 
     if (startFrom.isValid())

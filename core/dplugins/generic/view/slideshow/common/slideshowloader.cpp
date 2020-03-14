@@ -119,7 +119,7 @@ SlideShowLoader::SlideShowLoader(DInfoInterface* const iface, SlideShowSettings*
     : QStackedWidget(nullptr),
       d(new Private)
 {
-    d->settings       = settings;
+    d->settings        = settings;
     d->settings->iface = iface;
 
     setAttribute(Qt::WA_DeleteOnClose);
@@ -389,6 +389,7 @@ void SlideShowLoader::slotLoadPrevItem()
     {
 
 #ifdef HAVE_MEDIAPLAYER
+
         QMimeDatabase mimeDB;
 
         if (mimeDB.mimeTypeForFile(currentItem().toLocalFile())
@@ -397,6 +398,7 @@ void SlideShowLoader::slotLoadPrevItem()
             d->videoView->setCurrentUrl(currentItem());
             return;
         }
+
 #endif
 
         d->imageView->setLoadUrl(currentItem());
@@ -720,32 +722,32 @@ void SlideShowLoader::slotHandleShortcut(const QString& shortcut, int val)
 {
     //qCDebug(DIGIKAM_GENERAL_LOG) << "SlideShowLoader::slotHandleShortcut";
 
-    if (d->shortcutPrefixes.contains(QLatin1String("rating"))
-        && shortcut.startsWith(d->shortcutPrefixes[QLatin1String("rating")]))
+    if (d->shortcutPrefixes.contains(QLatin1String("rating")) &&
+        shortcut.startsWith(d->shortcutPrefixes[QLatin1String("rating")]))
     {
         slotAssignRating(val);
 
         return;
     }
 
-    if (d->shortcutPrefixes.contains(QLatin1String("colorlabel"))
-        && shortcut.startsWith(d->shortcutPrefixes[QLatin1String("colorlabel")]))
+    if (d->shortcutPrefixes.contains(QLatin1String("colorlabel")) &&
+        shortcut.startsWith(d->shortcutPrefixes[QLatin1String("colorlabel")]))
     {
         slotAssignColorLabel(val);
 
         return;
     }
 
-    if (d->shortcutPrefixes.contains(QLatin1String("picklabel"))
-        && shortcut.startsWith(d->shortcutPrefixes[QLatin1String("picklabel")]))
+    if (d->shortcutPrefixes.contains(QLatin1String("picklabel")) &&
+        shortcut.startsWith(d->shortcutPrefixes[QLatin1String("picklabel")]))
     {
         slotAssignPickLabel(val);
 
         return;
     }
 
-    if (d->shortcutPrefixes.contains(QLatin1String("tag"))
-        && shortcut.startsWith(d->shortcutPrefixes[QLatin1String("tag")]))
+    if (d->shortcutPrefixes.contains(QLatin1String("tag")) &&
+        shortcut.startsWith(d->shortcutPrefixes[QLatin1String("tag")]))
     {
         slotToggleTag(val);
 
