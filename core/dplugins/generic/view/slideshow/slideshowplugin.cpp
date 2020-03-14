@@ -86,7 +86,7 @@ QString SlideShowPlugin::details() const
 QList<DPluginAuthor> SlideShowPlugin::authors() const
 {
     return QList<DPluginAuthor>()
-            << DPluginAuthor(QString::fromUtf8("Enrico Ros <eros dot kde at email dot it>"),
+            << DPluginAuthor(QString::fromUtf8("Enrico Ros"),
                              QString::fromUtf8("eros dot kde at email dot it"),
                              QString::fromUtf8("(C) 2004"))
             << DPluginAuthor(QString::fromUtf8("Renchi Raju"),
