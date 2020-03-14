@@ -291,8 +291,8 @@ DBInfoIface::DBInfoIface(QObject* const parent, const QList<QUrl>& lst,
     d->operationType = type;
 
     //forward signal to DPluginAction of Digikam
-    connect(TagsActionMngr::defaultManager(), SIGNAL(signalShortcutPressed(QString)),
-            this, SIGNAL(signalShortcutPressed(QString)));
+    connect(TagsActionMngr::defaultManager(), SIGNAL(signalShortcutPressed(const QString&, int)),
+            this, SIGNAL(signalShortcutPressed(const QString&, int)));
 }
 
 DBInfoIface::~DBInfoIface()
@@ -742,5 +742,10 @@ QList<GPSItemContainer*> DBInfoIface::currentGPSItems() const
     return items;
 }
 #endif
+
+void DBInfoIface::passActionsToWidget(QWidget* const wdg) const
+{
+    TagsActionMngr::defaultManager()->registerActionsToWidget(wdg);
+}
 
 } // namespace Digikam

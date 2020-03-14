@@ -85,6 +85,8 @@ public:
 
 #endif
 
+    void passActionsToWidget(QWidget* const wdg)          const override;
+
 private:
 
     class Private;

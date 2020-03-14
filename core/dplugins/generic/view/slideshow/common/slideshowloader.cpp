@@ -708,6 +708,11 @@ void SlideShowLoader::slotToggleTag(int tag)
     //dispatchCurrentInfoChange(currentItem());
 }
 
+void SlideShowLoader::slotHandleShortcut(const QString& shortcut, int val)
+{
+    qDebug() << "SlideShowLoader receive shortcut" << shortcut << val;
+}
+
 void SlideShowLoader::updateTags(const QUrl& url, const QStringList& /*tags*/)
 {
     //TODO : manage this function in TagActionMngr

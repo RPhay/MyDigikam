@@ -86,6 +86,8 @@ public Q_SLOTS:
     void slotAssignPickLabel(int);
     void slotToggleTag(int tag);
 
+    void slotHandleShortcut(const QString& shortcut, int val);
+
 protected:
 
     void mousePressEvent(QMouseEvent*)          override;

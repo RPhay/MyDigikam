@@ -75,7 +75,7 @@ public:
 
     Q_SIGNAL void signalAlbumItemsRecursiveCompleted(const QList<QUrl>& imageList);
 
-    Q_SIGNAL void signalShortcutPressed(const QString& shortcut);
+    Q_SIGNAL void signalShortcutPressed(const QString& shortcut, int val);
 
 public:
 
@@ -134,6 +134,10 @@ public:
     virtual QList<GPSItemContainer*> currentGPSItems()         const;
 #endif
 
+public:
+
+    //Pass extra actions to widget
+    virtual void passActionsToWidget(QWidget* const wdg)       const;
 };
 
 // -----------------------------------------------------------------

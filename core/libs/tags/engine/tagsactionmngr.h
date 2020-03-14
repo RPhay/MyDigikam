@@ -84,7 +84,7 @@ public:
 
 Q_SIGNALS:
 
-    void signalShortcutPressed(const QString& shortcut);
+    void signalShortcutPressed(const QString& shortcut, int val);
 
 private Q_SLOTS:
 

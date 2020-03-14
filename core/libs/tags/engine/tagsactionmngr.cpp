@@ -496,7 +496,7 @@ void TagsActionMngr::slotAssignFromShortcut()
     }
 
     //emit signal to DInfoInterface to broadcast to another component:
-    emit signalShortcutPressed(action->objectName());
+    emit signalShortcutPressed(action->objectName(), val);
 
 /*
  *  TODO: remove this
