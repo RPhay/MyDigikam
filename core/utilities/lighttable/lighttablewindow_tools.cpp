@@ -89,7 +89,7 @@ void LightTableWindow::slotRightSlideShowManualFromCurrent()
 }
 
 void LightTableWindow::slotSlideShowLastItemUrl()
-{    
+{
     QList<DPluginAction*> actions = DPluginLoader::instance()->pluginActions(QLatin1String("org.kde.digikam.SlideShow"), this);
 
     if (actions.isEmpty())
