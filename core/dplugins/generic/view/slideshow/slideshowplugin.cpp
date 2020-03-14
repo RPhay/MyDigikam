@@ -161,8 +161,9 @@ void SlideShowPlugin::setup(QObject* const parent)
     addAction(ac);
 }
 
-void SlideShowPlugin::addConnectionSlideEnd(QObject* obj)
+void SlideShowPlugin::addConnectionSlideEnd(QObject* const obj)
 {
+    Q_UNUSED(obj);
 }
 
 void SlideShowPlugin::slotMenuSlideShow()
@@ -262,6 +263,7 @@ void SlideShowPlugin::slotShowManual()
 
 void SlideShowPlugin::slotSlideShowFinished(const QUrl& lastImage)
 {
+    Q_UNUSED(lastImage);
 /*
  *  TODO: pass Url of last image out to main Apps
     QList<DPluginAction*> actionList = actions(parent());
@@ -277,7 +279,7 @@ void SlideShowPlugin::slotSlideShowFinished(const QUrl& lastImage)
 */
 }
 
-void SlideShowPlugin::slideshow(SlideShowSettings* settings, bool autoPlayEnabled, const QUrl& startFrom)
+void SlideShowPlugin::slideshow(SlideShowSettings* const settings, bool autoPlayEnabled, const QUrl& startFrom)
 {
     SlideShowLoader* const slide = new SlideShowLoader(m_iface, settings);
 

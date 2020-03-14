@@ -46,7 +46,7 @@ class SlideShowPlugin : public DPluginGeneric
 
 public:
 
-    explicit SlideShowPlugin(QObject* const parent = 0);
+    explicit SlideShowPlugin(QObject* const parent = nullptr);
     ~SlideShowPlugin();
 
     QString name()                 const override;
@@ -58,7 +58,7 @@ public:
 
     void setup(QObject* const)           override;
 
-    void addConnectionSlideEnd(QObject* obj);
+    void addConnectionSlideEnd(QObject* const obj);
 
 private Q_SLOTS:
 
@@ -72,7 +72,10 @@ private Q_SLOTS:
     void slotSlideShowFinished(const QUrl& lastImage);
 
 private:
-    void slideshow(SlideShowSettings* settings, bool autoPlayEnabled = true, const QUrl& startFrom = QUrl());
+
+    void slideshow(SlideShowSettings* const settings,
+                   bool autoPlayEnabled = true,
+                   const QUrl& startFrom = QUrl());
 
 private:
 
