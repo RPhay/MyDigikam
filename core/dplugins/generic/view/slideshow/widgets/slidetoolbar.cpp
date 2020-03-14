@@ -62,12 +62,12 @@ public:
     {
     }
 
-    QToolButton* playBtn;
-    QToolButton* stopBtn;
-    QToolButton* nextBtn;
-    QToolButton* prevBtn;
-    QToolButton* setupBtn;
-    QToolButton* screenSelectBtn;
+    QToolButton*          playBtn;
+    QToolButton*          stopBtn;
+    QToolButton*          nextBtn;
+    QToolButton*          prevBtn;
+    QToolButton*          setupBtn;
+    QToolButton*          screenSelectBtn;
 
     SetupSlideShowDialog* configDialog;
 };

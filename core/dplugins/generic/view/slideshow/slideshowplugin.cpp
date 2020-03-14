@@ -111,7 +111,7 @@ void SlideShowPlugin::setup(QObject* const parent)
 
     m_iface = infoIface(ac);
 
-    if (m_iface && parent->objectName() == QLatin1String("Digikam"))
+    if (m_iface && (parent->objectName() == QLatin1String("Digikam")))
     {
         QMenu* const slideShowActions = new QMenu(i18n("Slideshow"), nullptr);
         slideShowActions->setIcon(icon());
@@ -167,13 +167,12 @@ void SlideShowPlugin::addConnectionSlideEnd(QObject* obj)
 
 void SlideShowPlugin::slotMenuSlideShow()
 {
+    QUrl startFrom;
     DPluginAction* const ac = dynamic_cast<DPluginAction*>(sender());
 
-    QUrl startFrom;
     if (ac)
     {
         startFrom = ac->data().toUrl();
-
         ac->setData(QVariant());
     }
 
