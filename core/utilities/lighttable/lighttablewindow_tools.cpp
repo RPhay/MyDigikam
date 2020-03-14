@@ -53,6 +53,7 @@ void LightTableWindow::slotEditItem(const ItemInfo& info)
     im->setFocus();
 }
 
+//FIXME
 void LightTableWindow::slotLeftSlideShowManualFromCurrent()
 {
     QList<DPluginAction*> actions = DPluginLoader::instance()->pluginActions(QLatin1String("org.kde.digikam.SlideShow"), this);

@@ -128,6 +128,7 @@ SlideShowLoader::SlideShowLoader(DInfoInterface* const iface, SlideShowSettings*
     setWindowState(windowState() | Qt::WindowFullScreen);
 
     setWindowTitle(i18n("Slideshow"));
+    setObjectName(QLatin1String("Slideshow"));
     setMouseTracking(true);
 
     // ---------------------------------------------------------------
@@ -712,7 +713,7 @@ void SlideShowLoader::slotToggleTag(int tag)
 
     d->settings->iface->setItemInfo(currentItem(), info);
 
-    //dispatchCurrentInfoChange(currentItem());
+    dispatchCurrentInfoChange(currentItem());
 }
 
 void SlideShowLoader::slotHandleShortcut(const QString& shortcut, int val)
@@ -727,24 +728,24 @@ void SlideShowLoader::slotHandleShortcut(const QString& shortcut, int val)
         return;
     }
 
-    if  (d->shortcutPrefixes.contains(QLatin1String("colorlabel"))
-         && shortcut.startsWith(d->shortcutPrefixes[QLatin1String("colorlabel")]))
+    if (d->shortcutPrefixes.contains(QLatin1String("colorlabel"))
+        && shortcut.startsWith(d->shortcutPrefixes[QLatin1String("colorlabel")]))
     {
         slotAssignColorLabel(val);
 
         return;
     }
 
-    if  (d->shortcutPrefixes.contains(QLatin1String("picklabel"))
-         && shortcut.startsWith(d->shortcutPrefixes[QLatin1String("picklabel")]))
+    if (d->shortcutPrefixes.contains(QLatin1String("picklabel"))
+        && shortcut.startsWith(d->shortcutPrefixes[QLatin1String("picklabel")]))
     {
         slotAssignPickLabel(val);
 
         return;
     }
 
-    if  (d->shortcutPrefixes.contains(QLatin1String("tag"))
-         && shortcut.startsWith(d->shortcutPrefixes[QLatin1String("tag")]))
+    if (d->shortcutPrefixes.contains(QLatin1String("tag"))
+        && shortcut.startsWith(d->shortcutPrefixes[QLatin1String("tag")]))
     {
         slotToggleTag(val);
 
@@ -752,12 +753,6 @@ void SlideShowLoader::slotHandleShortcut(const QString& shortcut, int val)
     }
 
     qCWarning(DIGIKAM_GENERAL_LOG) << "Shortcut is not yet supported in SlideShowLoader::slotHandleShortcut():" << shortcut;
-}
-
-void SlideShowLoader::updateTags(const QUrl& url, const QStringList& /*tags*/)
-{
-    //TODO : manage this function in TagActionMngr
-    dispatchCurrentInfoChange(url);
 }
 
 void SlideShowLoader::dispatchCurrentInfoChange(const QUrl& url)

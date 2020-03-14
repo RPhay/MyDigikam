@@ -68,8 +68,6 @@ public:
     void setCurrentItem(const QUrl& url);
     QUrl currentItem() const;
 
-    void updateTags(const QUrl& url, const QStringList& tags);
-
     void setShortCutPrefixes(const QMap<QString, QString>& prefixes);
 
 Q_SIGNALS:

@@ -103,9 +103,6 @@ TagsActionMngr::TagsActionMngr(QWidget* const parent)
 
     connect(AlbumManager::instance(), SIGNAL(signalAlbumDeleted(Album*)),
             this, SLOT(slotAlbumDeleted(Album*)));
-
-    connect(CoreDbAccess::databaseWatch(), SIGNAL(imageTagChange(ImageTagChangeset)),
-            this, SLOT(slotImageTagChanged(ImageTagChangeset)));
 }
 
 TagsActionMngr::~TagsActionMngr()
@@ -497,24 +494,6 @@ void TagsActionMngr::slotAssignFromShortcut()
 
     //emit signal to DInfoInterface to broadcast to another component:
     emit signalShortcutPressed(action->objectName(), val);
-}
-
-// Special case with Slideshow which do not depend on database.
-
-void TagsActionMngr::slotImageTagChanged(const ImageTagChangeset&)
-{
-    QWidget* const w     = qApp->activeWindow();
-/*
- *  TODO: remove this
-    SlideShow* const sld = dynamic_cast<SlideShow*>(w);
-
-    if (sld)
-    {
-        QUrl url      = sld->currentItem();
-        ItemInfo info = ItemInfo::fromUrl(url);
-        sld->updateTags(url, AlbumManager::instance()->tagNames(info.tagIds()));
-    }
-*/
 }
 
 } // namespace Digikam

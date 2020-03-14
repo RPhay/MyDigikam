@@ -103,8 +103,6 @@ private Q_SLOTS:
      */
     void slotTagActionChanged();
 
-    void slotImageTagChanged(const ImageTagChangeset& changeset);
-
 private:
 
     bool createTagActionShortcut(int tagId);
