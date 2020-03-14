@@ -57,6 +57,7 @@
 #include "itemlister.h"
 #include "itemlisterreceiver.h"
 #include "dio.h"
+#include "fileactionmngr.h"
 
 #ifdef HAVE_MARBLE
 #   include "itemgps.h"
@@ -516,6 +517,21 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
     {
         info.setPickLabel(map[QLatin1String("picklabel")].toInt());
         keys.removeAll(QLatin1String("picklabel"));
+    }
+
+    // NOTE: For now tag doesn't really exist anywhere else apart from digikam therefore it's not really necessary to implement accessor method in InfoIface
+    if  (map.contains(QLatin1String("tag")))
+    {
+        int tagID = map[QLatin1String("tag")].toInt();
+
+        if (!info.tagIds().contains(tagID))
+        {
+            FileActionMngr::instance()->assignTag(info, tagID);
+        }
+        else
+        {
+            FileActionMngr::instance()->removeTag(info, tagID);
+        }
     }
 
     if (!keys.isEmpty())
