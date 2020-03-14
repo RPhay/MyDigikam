@@ -660,4 +660,5 @@ BUGFIXES:
 642 ==> 418760 - Suggested people tag does not appear on Unconfirmed thumbnails until you click on the thumbnail.
 643 ==> 418554 - In face tagging, when manually entering a name, all other suggestions will default to that name.
 644 ==> 418786 - Metadata Editors Missing.
-645 ==> 
+645 ==> 418641 - Saves Mysql password in plain text.
+646 ==> 
