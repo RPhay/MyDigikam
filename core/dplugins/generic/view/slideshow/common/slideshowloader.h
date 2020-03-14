@@ -70,6 +70,8 @@ public:
 
     void updateTags(const QUrl& url, const QStringList& tags);
 
+    void setShortCutPrefixes(const QMap<QString, QString>& prefixes);
+
 Q_SIGNALS:
 
     void signalLastItemUrl(const QUrl&);

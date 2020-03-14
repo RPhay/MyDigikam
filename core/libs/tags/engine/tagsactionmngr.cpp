@@ -497,35 +497,6 @@ void TagsActionMngr::slotAssignFromShortcut()
 
     //emit signal to DInfoInterface to broadcast to another component:
     emit signalShortcutPressed(action->objectName(), val);
-
-/*
- *  TODO: remove this
-    SlideShow* const sld = dynamic_cast<SlideShow*>(w);
-
-    if (sld)
-    {
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "Handling by SlideShow";
-
-        if      (action->objectName().startsWith(d->ratingShortcutPrefix))
-        {
-            sld->slotAssignRating(val);
-        }
-        else if (action->objectName().startsWith(d->pickShortcutPrefix))
-        {
-            sld->slotAssignPickLabel(val);
-        }
-        else if (action->objectName().startsWith(d->colorShortcutPrefix))
-        {
-            sld->slotAssignColorLabel(val);
-        }
-        else if (action->objectName().startsWith(d->tagShortcutPrefix))
-        {
-            sld->toggleTag(val);
-        }
-
-        return;
-    }
-*/
 }
 
 // Special case with Slideshow which do not depend on database.

@@ -743,9 +743,17 @@ QList<GPSItemContainer*> DBInfoIface::currentGPSItems() const
 }
 #endif
 
-void DBInfoIface::passActionsToWidget(QWidget* const wdg) const
+QMap<QString, QString> DBInfoIface::passShortcutActionsToWidget(QWidget* const wdg) const
 {
     TagsActionMngr::defaultManager()->registerActionsToWidget(wdg);
+
+    QMap<QString, QString> shortcutPrefixes;
+    shortcutPrefixes.insert(QLatin1String("rating"), TagsActionMngr::defaultManager()->ratingShortcutPrefix());
+    shortcutPrefixes.insert(QLatin1String("tag"), TagsActionMngr::defaultManager()->tagShortcutPrefix());
+    shortcutPrefixes.insert(QLatin1String("picklabel"), TagsActionMngr::defaultManager()->pickShortcutPrefix());
+    shortcutPrefixes.insert(QLatin1String("colorlabel"), TagsActionMngr::defaultManager()->colorShortcutPrefix());
+
+    return shortcutPrefixes;
 }
 
 } // namespace Digikam

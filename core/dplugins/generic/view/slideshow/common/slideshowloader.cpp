@@ -111,6 +111,8 @@ public:
     SlideOSD*          osd;
 
     SlideShowSettings* settings;
+
+    QMap<QString, QString> shortcutPrefixes;
 };
 
 SlideShowLoader::SlideShowLoader(DInfoInterface* const iface, SlideShowSettings* const settings)
@@ -308,6 +310,11 @@ void SlideShowLoader::setCurrentItem(const QUrl& url)
 QUrl SlideShowLoader::currentItem() const
 {
     return d->settings->fileList.value(d->fileIndex);
+}
+
+void SlideShowLoader::setShortCutPrefixes(const QMap<QString, QString>& prefixes)
+{
+    d->shortcutPrefixes = prefixes;
 }
 
 void SlideShowLoader::slotLoadNextItem()
@@ -710,7 +717,41 @@ void SlideShowLoader::slotToggleTag(int tag)
 
 void SlideShowLoader::slotHandleShortcut(const QString& shortcut, int val)
 {
-    qDebug() << "SlideShowLoader receive shortcut" << shortcut << val;
+    //qCDebug(DIGIKAM_GENERAL_LOG) << "SlideShowLoader::slotHandleShortcut";
+
+    if (d->shortcutPrefixes.contains(QLatin1String("rating"))
+        && shortcut.startsWith(d->shortcutPrefixes[QLatin1String("rating")]))
+    {
+        slotAssignRating(val);
+
+        return;
+    }
+
+    if  (d->shortcutPrefixes.contains(QLatin1String("colorlabel"))
+         && shortcut.startsWith(d->shortcutPrefixes[QLatin1String("colorlabel")]))
+    {
+        slotAssignColorLabel(val);
+
+        return;
+    }
+
+    if  (d->shortcutPrefixes.contains(QLatin1String("picklabel"))
+         && shortcut.startsWith(d->shortcutPrefixes[QLatin1String("picklabel")]))
+    {
+        slotAssignPickLabel(val);
+
+        return;
+    }
+
+    if  (d->shortcutPrefixes.contains(QLatin1String("tag"))
+         && shortcut.startsWith(d->shortcutPrefixes[QLatin1String("tag")]))
+    {
+        slotToggleTag(val);
+
+        return;
+    }
+
+    qCWarning(DIGIKAM_GENERAL_LOG) << "Shortcut is not yet supported in SlideShowLoader::slotHandleShortcut():" << shortcut;
 }
 
 void SlideShowLoader::updateTags(const QUrl& url, const QStringList& /*tags*/)

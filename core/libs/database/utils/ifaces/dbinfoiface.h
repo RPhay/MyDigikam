@@ -85,7 +85,7 @@ public:
 
 #endif
 
-    void passActionsToWidget(QWidget* const wdg)          const override;
+    QMap<QString, QString> passShortcutActionsToWidget(QWidget* const wdg) const override;
 
 private:
 

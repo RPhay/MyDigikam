@@ -136,8 +136,8 @@ public:
 
 public:
 
-    //Pass extra actions to widget
-    virtual void passActionsToWidget(QWidget* const wdg)       const;
+    //Pass extra shortcut actions to widget and return prefixes of shortcuts
+    virtual QMap<QString, QString> passShortcutActionsToWidget(QWidget* const wdg) const;
 };
 
 // -----------------------------------------------------------------

@@ -280,7 +280,9 @@ void SlideShowPlugin::slotSlideShowFinished(const QUrl& lastImage)
 void SlideShowPlugin::slideshow(SlideShowSettings* settings, bool autoPlayEnabled, const QUrl& startFrom)
 {
     SlideShowLoader* slide = new SlideShowLoader(m_iface, settings);
-    m_iface->passActionsToWidget(slide);
+
+    slide->setShortCutPrefixes(m_iface->passShortcutActionsToWidget(slide));
+
     settings->autoPlayEnabled = autoPlayEnabled;
     //TODO: preview settings for digikam
     //settings.previewSettings = ApplicationSettings::instance()->getPreviewSettings();

@@ -146,8 +146,9 @@ QList<GPSItemContainer*> DInfoInterface::currentGPSItems() const
 }
 #endif
 
-void DInfoInterface::passActionsToWidget(QWidget* const wdg) const
+QMap<QString, QString> DInfoInterface::passShortcutActionsToWidget(QWidget* const wdg) const
 {
+    return QMap<QString, QString>();
 }
 
 // -----------------------------------------------------------------
