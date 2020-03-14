@@ -58,6 +58,7 @@
 #include "itemlisterreceiver.h"
 #include "dio.h"
 #include "fileactionmngr.h"
+#include "tagsactionmngr.h"
 
 #ifdef HAVE_MARBLE
 #   include "itemgps.h"
@@ -288,6 +289,10 @@ DBInfoIface::DBInfoIface(QObject* const parent, const QList<QUrl>& lst,
     setObjectName(QLatin1String("DBInfoIface"));
     d->itemUrls      = lst;
     d->operationType = type;
+
+    //forward signal to DPluginAction of Digikam
+    connect(TagsActionMngr::defaultManager(), SIGNAL(signalShortcutPressed(QString)),
+            this, SIGNAL(signalShortcutPressed(QString)));
 }
 
 DBInfoIface::~DBInfoIface()

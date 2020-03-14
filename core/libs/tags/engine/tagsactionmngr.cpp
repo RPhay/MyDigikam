@@ -494,6 +494,10 @@ void TagsActionMngr::slotAssignFromShortcut()
 
         return;
     }
+
+    //emit signal to DInfoInterface to broadcast to another component:
+    emit signalShortcutPressed(action->objectName());
+
 /*
  *  TODO: remove this
     SlideShow* const sld = dynamic_cast<SlideShow*>(w);

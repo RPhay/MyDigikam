@@ -82,6 +82,10 @@ public:
 
     static TagsActionMngr* defaultManager();
 
+Q_SIGNALS:
+
+    void signalShortcutPressed(const QString& shortcut);
+
 private Q_SLOTS:
 
     /**

@@ -75,6 +75,8 @@ public:
 
     Q_SIGNAL void signalAlbumItemsRecursiveCompleted(const QList<QUrl>& imageList);
 
+    Q_SIGNAL void signalShortcutPressed(const QString& shortcut);
+
 public:
 
     ///@{
