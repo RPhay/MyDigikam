@@ -7,8 +7,7 @@
  * Description : setup tab for slideshow options.
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C)      2019 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
- * Copyright (C) 2020      by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -48,7 +47,6 @@
 #include "dnuminput.h"
 #include "dfontselect.h"
 #include "digikam_debug.h"
-
 #include "slideshowsettings.h"
 
 using namespace Digikam;
@@ -83,26 +81,26 @@ public:
     {
     }
 
-    QCheckBox*    startWithCurrent;
-    QCheckBox*    loopMode;
-    QCheckBox*    suffleMode;
-    QCheckBox*    showName;
-    QCheckBox*    showDate;
-    QCheckBox*    showApertureFocal;
-    QCheckBox*    showExpoSensitivity;
-    QCheckBox*    showMakeModel;
-    QCheckBox*    showLabels;
-    QCheckBox*    showRating;
-    QCheckBox*    showComment;
-    QCheckBox*    showTitle;
-    QCheckBox*    showTags;
-    QCheckBox*    showCapIfNoTitle;
-    QCheckBox*    showProgress;
+    QCheckBox*         startWithCurrent;
+    QCheckBox*         loopMode;
+    QCheckBox*         suffleMode;
+    QCheckBox*         showName;
+    QCheckBox*         showDate;
+    QCheckBox*         showApertureFocal;
+    QCheckBox*         showExpoSensitivity;
+    QCheckBox*         showMakeModel;
+    QCheckBox*         showLabels;
+    QCheckBox*         showRating;
+    QCheckBox*         showComment;
+    QCheckBox*         showTitle;
+    QCheckBox*         showTags;
+    QCheckBox*         showCapIfNoTitle;
+    QCheckBox*         showProgress;
 
-    QComboBox*    screenPlacement;
+    QComboBox*         screenPlacement;
 
-    DFontSelect*  captionFont;
-    DIntNumInput* delayInput;
+    DFontSelect*       captionFont;
+    DIntNumInput*      delayInput;
 
     SlideShowSettings* settings;
 };
@@ -113,7 +111,6 @@ SetupSlideShowDialog::SetupSlideShowDialog(SlideShowSettings* const settings, QW
     : DPluginDialog(parent, QLatin1String("Slideshow Settings")),
       d(new Private)
 {
-    //Setup dialog
     setWindowTitle(i18n("Slideshow Settings"));
     setModal(false);
 
