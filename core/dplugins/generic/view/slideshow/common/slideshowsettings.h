@@ -38,6 +38,7 @@
 #include "digikam_export.h"
 #include "previewsettings.h"
 #include "dinfointerface.h"
+#include "dplugingeneric.h"
 
 using namespace Digikam;
 
@@ -59,7 +60,7 @@ public:
     void writeToConfig();
 
     int indexOf(const QUrl&) const;
-    int count() const;
+    int count()              const;
 
     void suffleImages();
 
@@ -191,6 +192,11 @@ public:
      * Interface to access to host application data
      */
     DInfoInterface*              iface;
+
+    /**
+     * The plugin instance.
+     */
+    DPluginGeneric*              plugin;
 
 private:
 

@@ -178,10 +178,9 @@ void SlideShowPlugin::slotMenuSlideShow()
     }
 
     m_iface                           = infoIface(sender());
+
     SlideShowSettings* const settings = new SlideShowSettings();
-
     settings->readFromConfig();
-
     settings->exifRotate = MetaEngineSettings::instance()->settings().exifRotate;
     settings->fileList   = m_iface->currentAlbumItems();
 
@@ -191,9 +190,7 @@ void SlideShowPlugin::slotMenuSlideShow()
 void SlideShowPlugin::slotMenuSlideShowAll()
 {
     SlideShowSettings* const settings = new SlideShowSettings();
-
     settings->readFromConfig();
-
     settings->fileList                = m_iface->currentAlbumItems();
 
     slideshow(settings);
@@ -202,9 +199,7 @@ void SlideShowPlugin::slotMenuSlideShowAll()
 void SlideShowPlugin::slotMenuSlideShowSelection()
 {
     SlideShowSettings* const settings = new SlideShowSettings();
-
     settings->readFromConfig();
-
     settings->fileList                = m_iface->currentSelectedItems();
 
     slideshow(settings);
@@ -221,9 +216,7 @@ void SlideShowPlugin::slotMenuSlideShowRecursive()
 void SlideShowPlugin::slotShowRecursive(const QList<QUrl>& imageList)
 {
     SlideShowSettings* const settings = new SlideShowSettings();
-
     settings->readFromConfig();
-
     settings->fileList                = imageList;
 
     slideshow(settings);
@@ -252,9 +245,7 @@ void SlideShowPlugin::slotShowManual()
     }
 
     SlideShowSettings* const settings = new SlideShowSettings();
-
     settings->readFromConfig();
-
     settings->exifRotate              = MetaEngineSettings::instance()->settings().exifRotate;
     settings->fileList                = m_iface->currentAlbumItems();
 
@@ -281,11 +272,8 @@ void SlideShowPlugin::slotSlideShowFinished(const QUrl& lastImage)
 
 void SlideShowPlugin::slideshow(SlideShowSettings* const settings, bool autoPlayEnabled, const QUrl& startFrom)
 {
-    SlideShowLoader* const slide = new SlideShowLoader(m_iface, settings);
-
-    slide->setShortCutPrefixes(m_iface->passShortcutActionsToWidget(slide));
-
     settings->autoPlayEnabled    = autoPlayEnabled;
+    settings->plugin             = this;
 
     // TODO: preview settings for digikam
     //settings.previewSettings = ApplicationSettings::instance()->getPreviewSettings();
@@ -294,6 +282,9 @@ void SlideShowPlugin::slideshow(SlideShowSettings* const settings, bool autoPlay
     {
         settings->imageUrl = startFrom;
     }
+
+    SlideShowLoader* const slide = new SlideShowLoader(m_iface, settings);
+    slide->setShortCutPrefixes(m_iface->passShortcutActionsToWidget(slide));
 
     if      (settings->imageUrl.isValid())
     {

@@ -83,7 +83,8 @@ SlideShowSettings::SlideShowSettings()
       slideScreen(-2),
       showProgressIndicator(true),
       captionFont(QFontDatabase::systemFont(QFontDatabase::GeneralFont)),
-      iface(nullptr)
+      iface(nullptr),
+      plugin(nullptr)
 {
 }
 

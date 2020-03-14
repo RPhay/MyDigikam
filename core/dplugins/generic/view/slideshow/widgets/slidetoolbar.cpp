@@ -79,13 +79,13 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
     setMouseTracking(true);
     setContentsMargins(QMargins());
 
-    d->playBtn  = new QToolButton(this);
-    d->prevBtn  = new QToolButton(this);
-    d->nextBtn  = new QToolButton(this);
-    d->stopBtn  = new QToolButton(this);
-    d->setupBtn = new QToolButton(this);
+    d->playBtn      = new QToolButton(this);
+    d->prevBtn      = new QToolButton(this);
+    d->nextBtn      = new QToolButton(this);
+    d->stopBtn      = new QToolButton(this);
+    d->setupBtn     = new QToolButton(this);
 
-    d->configDialog = new SetupSlideShowDialog(settings, this /*QApplication::activeWindow()*/);
+    d->configDialog = new SetupSlideShowDialog(settings, this);
 
     d->playBtn->setCheckable(true);
     d->playBtn->setChecked(!settings->autoPlayEnabled);
