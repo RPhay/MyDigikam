@@ -207,8 +207,8 @@ void SlideShowPlugin::slotMenuSlideShowSelection()
 
 void SlideShowPlugin::slotMenuSlideShowRecursive()
 {
-    connect(m_iface, SIGNAL(signalAlbumItemsRecursiveCompleted(const QList<QUrl>&)),
-            this, SLOT(slotShowRecursive(const QList<QUrl>&)));
+    connect(m_iface, SIGNAL(signalAlbumItemsRecursiveCompleted(QList<QUrl>)),
+            this, SLOT(slotShowRecursive(QList<QUrl>)));
 
     m_iface->parseAlbumItemsRecursive();
 }
