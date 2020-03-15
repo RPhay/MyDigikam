@@ -29,7 +29,7 @@
 #include "dplugingeneric.h"
 #include "iteminfolist.h"
 
-#define DPLUGIN_IID "org.kde.digikam.SlideShow"
+#define DPLUGIN_IID "org.kde.digikam.plugin.generic.SlideShow"
 
 using namespace Digikam;
 
