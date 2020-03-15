@@ -79,7 +79,7 @@
     UninstallIcon "digikam-uninstaller.ico"
     OutFile "${OUTFILE}"
 
-    ;Request application privileges for Windows Vista
+    ;Request application privileges for Windows Vista and upper versions
 
     RequestExecutionLevel admin
 
@@ -112,7 +112,7 @@
 ;Interface Configuration
 
     !define MUI_HEADERIMAGE
-    !define MUI_HEADERIMAGE_BITMAP "digikam_header.bmp" 
+    !define MUI_HEADERIMAGE_BITMAP "digikam_header.bmp"
     !define MUI_WELCOMEFINISHPAGE_BITMAP "digikam_welcome.bmp"
     !define MUI_UNWELCOMEFINISHPAGE_BITMAP "digikam_welcome.bmp"
     !define MUI_ABORTWARNING
