@@ -9,6 +9,7 @@
  *               to permit to re-use tools on Showfoto.
  *
  * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -140,10 +141,12 @@ QAbstractItemModel* DInfoInterface::tagFilterModel()
 }
 
 #ifdef HAVE_MARBLE
+
 QList<GPSItemContainer*> DInfoInterface::currentGPSItems() const
 {
     return QList<GPSItemContainer*>();
 }
+
 #endif
 
 QMap<QString, QString> DInfoInterface::passShortcutActionsToWidget(QWidget* const wdg) const
@@ -156,7 +159,9 @@ QMap<QString, QString> DInfoInterface::passShortcutActionsToWidget(QWidget* cons
 DItemInfo::DItemInfo(const DInfoInterface::DInfoMap& info)
     : m_info(info)
 {
-    //qCDebug(DIGIKAM_GENERAL_LOG) << m_info;
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << m_info;
+*/
 }
 
 DItemInfo::~DItemInfo()
@@ -179,49 +184,57 @@ QVariant DItemInfo::parseInfoMap(const QString& key) const
 QString DItemInfo::name() const
 {
     QVariant val = parseInfoMap(QLatin1String("name"));
-    return !val.isNull() ? val.toString() : QString();
+
+    return (!val.isNull() ? val.toString() : QString());
 }
 
 QString DItemInfo::comment() const
 {
     QVariant val = parseInfoMap(QLatin1String("comment"));
-    return !val.isNull() ? val.toString() : QString();
+
+    return (!val.isNull() ? val.toString() : QString());
 }
 
 QString DItemInfo::title() const
 {
     QVariant val = parseInfoMap(QLatin1String("title"));
-    return !val.isNull() ? val.toString() : QString();
+
+    return (!val.isNull() ? val.toString() : QString());
 }
 
 QSize DItemInfo::dimensions() const
 {
     QVariant val = parseInfoMap(QLatin1String("dimensions"));
-    return !val.isNull() ? val.toSize() : QSize();
+
+    return (!val.isNull() ? val.toSize() : QSize());
 }
 
 QDateTime DItemInfo::dateTime() const
 {
     QVariant val = parseInfoMap(QLatin1String("datetime"));
-    return !val.isNull() ? val.toDateTime() : QDateTime();
+
+    return (!val.isNull() ? val.toDateTime() : QDateTime());
 }
 
 QStringList DItemInfo::keywords() const
 {
     QVariant val = parseInfoMap(QLatin1String("keywords"));
-    return !val.isNull() ? val.toStringList() : QStringList();
+
+    return (!val.isNull() ? val.toStringList() : QStringList());
 }
 
 QStringList DItemInfo::tagsPath() const
 {
     QVariant val = parseInfoMap(QLatin1String("tagspath"));
-    return !val.isNull() ? val.toStringList() : QStringList();
+
+    return (!val.isNull() ? val.toStringList() : QStringList());
 }
 
 int DItemInfo::orientation() const
 {
     QVariant val = parseInfoMap(QLatin1String("orientation"));
-    return !val.isNull() ? val.toInt() : MetaEngine::ORIENTATION_UNSPECIFIED;
+
+    return (!val.isNull() ? val.toInt() : MetaEngine::ORIENTATION_UNSPECIFIED);
 }
 
 void DItemInfo::setOrientation(int val)
@@ -232,7 +245,8 @@ void DItemInfo::setOrientation(int val)
 int DItemInfo::rating() const
 {
     QVariant val = parseInfoMap(QLatin1String("rating"));
-    return !val.isNull() ? val.toInt() : RatingMin;
+
+    return (!val.isNull() ? val.toInt() : RatingMin);
 }
 
 void DItemInfo::setRating(int rating)
@@ -243,7 +257,8 @@ void DItemInfo::setRating(int rating)
 int DItemInfo::colorLabel() const
 {
     QVariant val = parseInfoMap(QLatin1String("colorlabel"));
-    return !val.isNull() ? val.toInt() : NoColorLabel;
+
+    return (!val.isNull() ? val.toInt() : NoColorLabel);
 }
 
 void DItemInfo::setColorLabel(int color)
@@ -254,7 +269,8 @@ void DItemInfo::setColorLabel(int color)
 int DItemInfo::pickLabel() const
 {
     QVariant val = parseInfoMap(QLatin1String("picklabel"));
-    return !val.isNull() ? val.toInt() : NoPickLabel;
+
+    return (!val.isNull() ? val.toInt() : NoPickLabel);
 }
 
 void DItemInfo::setPickLabel(int pick)
@@ -265,102 +281,119 @@ void DItemInfo::setPickLabel(int pick)
 double DItemInfo::latitude() const
 {
     QVariant val = parseInfoMap(QLatin1String("latitude"));
-    return !val.isNull() ? val.toDouble() : qQNaN();
+
+    return (!val.isNull() ? val.toDouble() : qQNaN());
 }
 
 double DItemInfo::longitude() const
 {
     QVariant val = parseInfoMap(QLatin1String("longitude"));
-    return !val.isNull() ? val.toDouble() : qQNaN();
+
+    return (!val.isNull() ? val.toDouble() : qQNaN());
 }
 
 double DItemInfo::altitude() const
 {
     QVariant val = parseInfoMap(QLatin1String("altitude"));
-    return !val.isNull() ? val.toDouble() : qQNaN();
+
+    return (!val.isNull() ? val.toDouble() : qQNaN());
 }
 
 qlonglong DItemInfo::fileSize() const
 {
     QVariant val = parseInfoMap(QLatin1String("filesize"));
-    return !val.isNull() ? val.toLongLong() : 0;
+
+    return (!val.isNull() ? val.toLongLong() : 0);
 }
 
 QStringList DItemInfo::creators() const
 {
     QVariant val = parseInfoMap(QLatin1String("creators"));
-    return !val.isNull() ? val.toStringList() : QStringList();
+
+    return (!val.isNull() ? val.toStringList() : QStringList());
 }
 
 QString DItemInfo::credit() const
 {
     QVariant val = parseInfoMap(QLatin1String("credit"));
-    return !val.isNull() ? val.toString() : QString();
+
+    return (!val.isNull() ? val.toString() : QString());
 }
 
 QString DItemInfo::rights() const
 {
     QVariant val = parseInfoMap(QLatin1String("rights"));
-    return !val.isNull() ? val.toString() : QString();
+
+    return (!val.isNull() ? val.toString() : QString());
 }
 
 QString DItemInfo::source() const
 {
     QVariant val = parseInfoMap(QLatin1String("source"));
-    return !val.isNull() ? val.toString() : QString();
+
+    return (!val.isNull() ? val.toString() : QString());
 }
 
 QString DItemInfo::make() const
 {
     QVariant val = parseInfoMap(QLatin1String("make"));
-    return !val.isNull() ? val.toString() : QString();
+
+    return (!val.isNull() ? val.toString() : QString());
 }
 
 QString DItemInfo::model() const
 {
     QVariant val = parseInfoMap(QLatin1String("model"));
-    return !val.isNull() ? val.toString() : QString();
+
+    return (!val.isNull() ? val.toString() : QString());
 }
 
 QString DItemInfo::exposureTime() const
 {
     QVariant val = parseInfoMap(QLatin1String("exposuretime"));
-    return !val.isNull() ? val.toString() : QString();
+
+    return (!val.isNull() ? val.toString() : QString());
 }
 
 QString DItemInfo::sensitivity() const
 {
     QVariant val = parseInfoMap(QLatin1String("sensitivity"));
-    return !val.isNull() ? val.toString() : QString();
+
+    return (!val.isNull() ? val.toString() : QString());
 }
 
 QString DItemInfo::aperture() const
 {
     QVariant val = parseInfoMap(QLatin1String("aperture"));
-    return !val.isNull() ? val.toString() : QString();
+
+    return (!val.isNull() ? val.toString() : QString());
 }
 
 QString DItemInfo::focalLength() const
 {
     QVariant val = parseInfoMap(QLatin1String("focallength"));
-    return !val.isNull() ? val.toString() : QString();
+
+    return (!val.isNull() ? val.toString() : QString());
 }
 
 QString DItemInfo::focalLength35mm() const
 {
     QVariant val = parseInfoMap(QLatin1String("focalLength35mm"));
-    return !val.isNull() ? val.toString() : QString();
+
+    return (!val.isNull() ? val.toString() : QString());
 }
 
 QString DItemInfo::videoCodec() const
 {
     QVariant val = parseInfoMap(QLatin1String("videocodec"));
-    return !val.isNull() ? val.toString() : QString();
+
+    return (!val.isNull() ? val.toString() : QString());
 }
 
 bool DItemInfo::hasGeolocationInfo() const
 {
     // NOTE: GPS position without altitude is a valid geolocation.
+
     return (!qIsNaN(latitude()) && !qIsNaN(longitude()));
 }
 

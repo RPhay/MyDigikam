@@ -9,6 +9,7 @@
  *               to permit to re-use tools on Showfoto.
  *
  * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -57,8 +58,8 @@ class DIGIKAM_EXPORT DInfoInterface : public QObject
 
 public:
 
-    typedef QMap<QString, QVariant> DInfoMap;  ///< Map of properties name and value.
-    typedef QList<int>              DAlbumIDs; ///< List of Album ids.
+    typedef QMap<QString, QVariant> DInfoMap;       ///< Map of properties name and value.
+    typedef QList<int>              DAlbumIDs;      ///< List of Album ids.
 
 public:
 
@@ -68,7 +69,9 @@ public:
 public:
 
     /// Slot to call when date time stamp from item is changed.
-    Q_SLOT virtual void slotDateTimeForUrl(const QUrl& url, const QDateTime& dt, bool updModDate);
+    Q_SLOT virtual void slotDateTimeForUrl(const QUrl& url,
+                                           const QDateTime& dt,
+                                           bool updModDate);
 
     /// Slot to call when something in metadata from item is changed.
     Q_SLOT virtual void slotMetadataChangedForUrl(const QUrl& url);
@@ -236,10 +239,10 @@ public:
 
 public:
 
-    QString title()   const;
-    QString caption() const;
-    QDate   date()    const;
-    QString path()    const;
+    QString title()                           const;
+    QString caption()                         const;
+    QDate   date()                            const;
+    QString path()                            const;
 
 private:
 

@@ -8,6 +8,7 @@
  *               based on DMetadata.
  *
  * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -112,27 +113,27 @@ DMetaInfoIface::DInfoMap DMetaInfoIface::itemInfo(const QUrl& url) const
         QString   def = QLatin1String("x-default");
         QFileInfo info(url.toLocalFile());
 
-        map.insert(QLatin1String("name"),        info.fileName());
-        map.insert(QLatin1String("title"),       meta.getItemTitles()[def].caption);
-        map.insert(QLatin1String("comment"),     meta.getItemComments()[def].caption);
-        map.insert(QLatin1String("orientation"), (int)meta.getItemOrientation());
-        map.insert(QLatin1String("datetime"),    meta.getItemDateTime());
-        map.insert(QLatin1String("rating"),      meta.getItemRating());
-        map.insert(QLatin1String("colorlabel"),  meta.getItemColorLabel());
-        map.insert(QLatin1String("picklabel"),   meta.getItemPickLabel());
-        map.insert(QLatin1String("filesize"),    (qlonglong)info.size());
-        map.insert(QLatin1String("dimensions"),  meta.getItemDimensions());
+        map.insert(QLatin1String("name"),            info.fileName());
+        map.insert(QLatin1String("title"),           meta.getItemTitles()[def].caption);
+        map.insert(QLatin1String("comment"),         meta.getItemComments()[def].caption);
+        map.insert(QLatin1String("orientation"),     (int)meta.getItemOrientation());
+        map.insert(QLatin1String("datetime"),        meta.getItemDateTime());
+        map.insert(QLatin1String("rating"),          meta.getItemRating());
+        map.insert(QLatin1String("colorlabel"),      meta.getItemColorLabel());
+        map.insert(QLatin1String("picklabel"),       meta.getItemPickLabel());
+        map.insert(QLatin1String("filesize"),        (qlonglong)info.size());
+        map.insert(QLatin1String("dimensions"),      meta.getItemDimensions());
 
         // Get digiKam Tags Path list of picture from database.
         // Ex.: "City/Paris/Monuments/Notre Dame"
         QStringList tagsPath;
         meta.getItemTagsPath(tagsPath);
-        map.insert(QLatin1String("tagspath"),    tagsPath);
+        map.insert(QLatin1String("tagspath"),        tagsPath);
 
         // Get digiKam Tags name (keywords) list of picture from database.
         // Ex.: "Notre Dame"
         QStringList keywords = meta.getMetadataField(MetadataInfo::Keywords).toStringList();
-        map.insert(QLatin1String("keywords"),    keywords);
+        map.insert(QLatin1String("keywords"),        keywords);
 
         // Get GPS location of picture from database.
         double lat = 0.0;
@@ -141,19 +142,19 @@ DMetaInfoIface::DInfoMap DMetaInfoIface::itemInfo(const QUrl& url) const
 
         if (meta.getGPSInfo(lat, lng, alt))
         {
-            map.insert(QLatin1String("latitude"),  lat);
-            map.insert(QLatin1String("longitude"), lng);
-            map.insert(QLatin1String("altitude"),  alt);
+            map.insert(QLatin1String("latitude"),    lat);
+            map.insert(QLatin1String("longitude"),   lng);
+            map.insert(QLatin1String("altitude"),    alt);
         }
 
         // Get Copyright information of picture from database.
         Template temp;
         meta.getCopyrightInformation(temp);
 
-        map.insert(QLatin1String("creators"),     temp.authors());
-        map.insert(QLatin1String("credit"),       temp.credit());
-        map.insert(QLatin1String("rights"),       temp.copyright()[def]);
-        map.insert(QLatin1String("source"),       temp.source());
+        map.insert(QLatin1String("creators"),        temp.authors());
+        map.insert(QLatin1String("credit"),          temp.credit());
+        map.insert(QLatin1String("rights"),          temp.copyright()[def]);
+        map.insert(QLatin1String("source"),          temp.source());
 
         PhotoInfoContainer photoInfo = meta.getPhotographInformation();
         map.insert(QLatin1String("make"),            photoInfo.make);
@@ -166,7 +167,7 @@ DMetaInfoIface::DInfoMap DMetaInfoIface::itemInfo(const QUrl& url) const
 
         // TODO: add more video metadata as needed
         VideoInfoContainer videoInfo = meta.getVideoInformation();
-        map.insert(QLatin1String("videocodec"),   videoInfo.videoCodec);
+        map.insert(QLatin1String("videocodec"),      videoInfo.videoCodec);
     }
 
     return map;
@@ -263,6 +264,7 @@ QUrl DMetaInfoIface::defaultUploadUrl() const
 }
 
 #ifdef HAVE_MARBLE
+
 QList<GPSItemContainer*> DMetaInfoIface::currentGPSItems() const
 {
     QList<GPSItemContainer*> items;
@@ -274,6 +276,7 @@ QList<GPSItemContainer*> DMetaInfoIface::currentGPSItems() const
 
     return items;
 }
+
 #endif
 
 } // namespace Digikam

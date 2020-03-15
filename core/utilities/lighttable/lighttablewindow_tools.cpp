@@ -64,7 +64,8 @@ void LightTableWindow::slotLeftSlideShowManualFromCurrent()
         return;
     }
 
-    //set current image to SlideShow Plugin
+    // set current image to SlideShow Plugin
+
     actions[0]->setData(d->previewView->leftItemInfo().fileUrl());
 
     actions[0]->trigger();
@@ -81,9 +82,9 @@ void LightTableWindow::slotRightSlideShowManualFromCurrent()
         return;
     }
 
-    //set current image to SlideShow Plugin
-    actions[0]->setData(d->previewView->rightItemInfo().fileUrl());
+    // set current image to SlideShow Plugin
 
+    actions[0]->setData(d->previewView->rightItemInfo().fileUrl());
     actions[0]->trigger();
 
     d->fromLeftPreview = false;
@@ -98,7 +99,8 @@ void LightTableWindow::slotSlideShowLastItemUrl()
         return;
     }
 
-    //get last image to SlideShow Plugin
+    // get last image to SlideShow Plugin
+
     QUrl url = actions[0]->data().toUrl();
 
     if (d->fromLeftPreview && !d->navigateByPairAction->isChecked())

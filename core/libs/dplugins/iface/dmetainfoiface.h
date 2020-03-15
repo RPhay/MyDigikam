@@ -8,6 +8,7 @@
  *               based on DMetadata.
  *
  * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -45,6 +46,7 @@ public:
     Q_SLOT void slotDateTimeForUrl(const QUrl& url,
                                    const QDateTime& dt,
                                    bool updModDate)               override;
+
     Q_SLOT void slotMetadataChangedForUrl(const QUrl& url)        override;
 
     Q_SIGNAL void signalItemChanged(const QUrl& url);
@@ -67,7 +69,9 @@ public:
     QUrl     defaultUploadUrl()                             const override;
 
 #ifdef HAVE_MARBLE
+
     QList<GPSItemContainer*> currentGPSItems()              const override;
+
 #endif
 
 private:

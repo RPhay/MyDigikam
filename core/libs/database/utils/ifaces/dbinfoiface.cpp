@@ -107,20 +107,28 @@ public:
         {
             default:
             case ItemSortSettings::SortByFileName:
+            {
                 sortOrder = CoreDB::ByItemName;
                 break;
+            }
 
             case ItemSortSettings::SortByFilePath:
+            {
                 sortOrder = CoreDB::ByItemPath;
                 break;
+            }
 
             case ItemSortSettings::SortByCreationDate:
+            {
                 sortOrder = CoreDB::ByItemDate;
                 break;
+            }
 
             case ItemSortSettings::SortByRating:
+            {
                 sortOrder = CoreDB::ByItemRating;
                 break;
+            }
 
             // NOTE: ByISize not supported
         }
@@ -393,8 +401,8 @@ QList<QUrl> DBInfoIface::allAlbumItems() const
 
     const AlbumList palbumList = d->albumManager->allPAlbums();
 
-    for (AlbumList::ConstIterator it = palbumList.constBegin();
-         it != palbumList.constEnd(); ++it)
+    for (AlbumList::ConstIterator it = palbumList.constBegin() ;
+         it != palbumList.constEnd() ; ++it)
     {
         // don't add the root album
 
@@ -664,7 +672,9 @@ DBInfoIface::DAlbumIDs DBInfoIface::albumChooserItems() const
     foreach (Album* const a, lst)
     {
         if (a)
+        {
             ids << a->globalID();
+        }
     }
 
     return ids;
