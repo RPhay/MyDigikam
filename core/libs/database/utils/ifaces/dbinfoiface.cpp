@@ -7,6 +7,7 @@
  * Description : interface to database information for shared tools.
  *
  * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  * Copyright (C) 2017      by Mario Frank <mario dot frank at uni minus potsdam dot de>
  *
  * This program is free software; you can redistribute it
@@ -93,7 +94,8 @@ public:
 
 public:
 
-    /** get the images from the Physical album in database and return the items found.
+    /**
+     * get the images from the Physical album in database and return the items found.
      */
     QList<QUrl> imagesFromPAlbum(PAlbum* const album) const
     {
@@ -138,7 +140,8 @@ public:
         return urlList;
     }
 
-    /** get the images from the Tags album in database and return the items found.
+    /**
+     * get the images from the Tags album in database and return the items found.
      */
     QList<QUrl> imagesFromTAlbum(TAlbum* const album) const
     {
@@ -157,7 +160,8 @@ public:
         return urlList;
     }
 
-    /** get the images from the search album in database and return the items found.
+    /**
+     * get the images from the search album in database and return the items found.
      */
     QList<QUrl> imagesFromSAlbum(SAlbum* const album) const
     {
@@ -237,7 +241,8 @@ public:
         return urlList;
     }
 
-    /** Remove grouped images if user chose/chooses to.
+    /**
+     * Remove grouped images if user chose/chooses to.
      */
     QList<QUrl> resolveGroupsFromAlbums(const QList<QUrl>& urlList)
     {
@@ -441,29 +446,29 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
 
     if (!info.isNull())
     {
-        map.insert(QLatin1String("name"),        info.name());
-        map.insert(QLatin1String("title"),       info.title());
-        map.insert(QLatin1String("comment"),     info.comment());
-        map.insert(QLatin1String("orientation"), info.orientation());
-        map.insert(QLatin1String("datetime"),    info.dateTime());
-        map.insert(QLatin1String("rating"),      info.rating());
-        map.insert(QLatin1String("colorlabel"),  info.colorLabel());
-        map.insert(QLatin1String("picklabel"),   info.pickLabel());
-        map.insert(QLatin1String("filesize"),    info.fileSize());
-        map.insert(QLatin1String("dimensions"),  info.dimensions());
+        map.insert(QLatin1String("name"),            info.name());
+        map.insert(QLatin1String("title"),           info.title());
+        map.insert(QLatin1String("comment"),         info.comment());
+        map.insert(QLatin1String("orientation"),     info.orientation());
+        map.insert(QLatin1String("datetime"),        info.dateTime());
+        map.insert(QLatin1String("rating"),          info.rating());
+        map.insert(QLatin1String("colorlabel"),      info.colorLabel());
+        map.insert(QLatin1String("picklabel"),       info.pickLabel());
+        map.insert(QLatin1String("filesize"),        info.fileSize());
+        map.insert(QLatin1String("dimensions"),      info.dimensions());
 
         // Get digiKam Tags Path list of picture from database.
         // Ex.: "City/Paris/Monuments/Notre Dame"
 
         QList<int> tagIds    = info.tagIds();
         QStringList tagspath = AlbumManager::instance()->tagPaths(tagIds, false);
-        map.insert(QLatin1String("tagspath"),    tagspath);
+        map.insert(QLatin1String("tagspath"),        tagspath);
 
         // Get digiKam Tags name (keywords) list of picture from database.
         // Ex.: "Notre Dame"
 
         QStringList tags     = AlbumManager::instance()->tagNames(tagIds);
-        map.insert(QLatin1String("keywords"),    tags);
+        map.insert(QLatin1String("keywords"),        tags);
 
         // Get GPS location of picture from database.
 
@@ -471,18 +476,18 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
 
         if (!pos.isEmpty())
         {
-            map.insert(QLatin1String("latitude"),  pos.latitudeNumber());
-            map.insert(QLatin1String("longitude"), pos.longitudeNumber());
-            map.insert(QLatin1String("altitude"),  pos.altitude());
+            map.insert(QLatin1String("latitude"),    pos.latitudeNumber());
+            map.insert(QLatin1String("longitude"),   pos.longitudeNumber());
+            map.insert(QLatin1String("altitude"),    pos.altitude());
         }
 
         // Get Copyright information of picture from database.
 
         ItemCopyright rights        = info.imageCopyright();
-        map.insert(QLatin1String("creators"),     rights.creator());
-        map.insert(QLatin1String("credit"),       rights.credit());
-        map.insert(QLatin1String("rights"),       rights.rights());
-        map.insert(QLatin1String("source"),       rights.source());
+        map.insert(QLatin1String("creators"),        rights.creator());
+        map.insert(QLatin1String("credit"),          rights.credit());
+        map.insert(QLatin1String("rights"),          rights.rights());
+        map.insert(QLatin1String("source"),          rights.source());
 
         PhotoInfoContainer photoInfo = info.photoInfoContainer();
         map.insert(QLatin1String("make"),            photoInfo.make);
@@ -496,14 +501,13 @@ DBInfoIface::DInfoMap DBInfoIface::itemInfo(const QUrl& url) const
         // TODO: add more video metadata as needed
 
         VideoInfoContainer videoInfo = info.videoInfoContainer();
-        map.insert(QLatin1String("videocodec"),   videoInfo.videoCodec);
+        map.insert(QLatin1String("videocodec"),      videoInfo.videoCodec);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "Database Info populated for" << url;
     }
     else
     {
         qCDebug(DIGIKAM_GENERAL_LOG) << "Database Info is NULL for" << url;
-
     }
 
     return map;
@@ -539,6 +543,7 @@ void DBInfoIface::setItemInfo(const QUrl& url, const DInfoMap& map) const
     }
 
     // NOTE: For now tag doesn't really exist anywhere else apart from digikam therefore it's not really necessary to implement accessor method in InfoIface
+
     if  (map.contains(QLatin1String("tag")))
     {
         int tagID = map[QLatin1String("tag")].toInt();
@@ -706,7 +711,9 @@ QUrl DBInfoIface::defaultUploadUrl() const
     QStringList pics = QStandardPaths::standardLocations(QStandardPaths::PicturesLocation);
 
     if (!pics.isEmpty())
+    {
         place = QUrl::fromLocalFile(pics.first());
+    }
 
     Album* const album = AlbumManager::instance()->currentAlbums().first();
 
@@ -743,6 +750,7 @@ QAbstractItemModel* DBInfoIface::tagFilterModel()
 }
 
 #ifdef HAVE_MARBLE
+
 QList<GPSItemContainer*> DBInfoIface::currentGPSItems() const
 {
     QList<GPSItemContainer*> items;
@@ -755,6 +763,7 @@ QList<GPSItemContainer*> DBInfoIface::currentGPSItems() const
 
     return items;
 }
+
 #endif
 
 QMap<QString, QString> DBInfoIface::passShortcutActionsToWidget(QWidget* const wdg) const
@@ -762,9 +771,9 @@ QMap<QString, QString> DBInfoIface::passShortcutActionsToWidget(QWidget* const w
     TagsActionMngr::defaultManager()->registerActionsToWidget(wdg);
 
     QMap<QString, QString> shortcutPrefixes;
-    shortcutPrefixes.insert(QLatin1String("rating"), TagsActionMngr::defaultManager()->ratingShortcutPrefix());
-    shortcutPrefixes.insert(QLatin1String("tag"), TagsActionMngr::defaultManager()->tagShortcutPrefix());
-    shortcutPrefixes.insert(QLatin1String("picklabel"), TagsActionMngr::defaultManager()->pickShortcutPrefix());
+    shortcutPrefixes.insert(QLatin1String("rating"),     TagsActionMngr::defaultManager()->ratingShortcutPrefix());
+    shortcutPrefixes.insert(QLatin1String("tag"),        TagsActionMngr::defaultManager()->tagShortcutPrefix());
+    shortcutPrefixes.insert(QLatin1String("picklabel"),  TagsActionMngr::defaultManager()->pickShortcutPrefix());
     shortcutPrefixes.insert(QLatin1String("colorlabel"), TagsActionMngr::defaultManager()->colorShortcutPrefix());
 
     return shortcutPrefixes;
