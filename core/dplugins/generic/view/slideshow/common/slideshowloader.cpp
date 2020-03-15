@@ -219,7 +219,7 @@ SlideShowLoader::SlideShowLoader(DInfoInterface* const iface, SlideShowSettings*
     }
     else
     {
-        screenIndex             = activeScreenIndex;
+        screenIndex              = activeScreenIndex;
         d->settings->slideScreen = -2;
         d->settings->writeToConfig();
     }
@@ -250,14 +250,17 @@ void SlideShowLoader::setCurrentView(SlideShowViewMode view)
     switch (view)
     {
         case ErrorView:
+        {
             d->osd->video(false);
             d->errorView->setCurrentUrl(currentItem());
 
             setCurrentIndex(view);
             d->osd->setCurrentUrl(currentItem());
             break;
+        }
 
         case ImageView:
+        {
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -269,8 +272,10 @@ void SlideShowLoader::setCurrentView(SlideShowViewMode view)
             setCurrentIndex(view);
             d->osd->setCurrentUrl(currentItem());
             break;
+        }
 
         case VideoView:
+        {
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -282,8 +287,10 @@ void SlideShowLoader::setCurrentView(SlideShowViewMode view)
 #endif
 
             break;
+        }
 
         default : // EndView
+        {
 
 #ifdef HAVE_MEDIAPLAYER
 
@@ -295,6 +302,7 @@ void SlideShowLoader::setCurrentView(SlideShowViewMode view)
             d->osd->pause(true);
             setCurrentIndex(view);
             break;
+        }
     }
 }
 

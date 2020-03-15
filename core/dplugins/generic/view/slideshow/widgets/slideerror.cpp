@@ -60,13 +60,13 @@ SlideError::SlideError(QWidget* const parent)
     setMouseTracking(true);
     setAutoFillBackground(true);
 
-    const int spacing = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+    const int spacing       = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     QPalette palette;
     palette.setColor(backgroundRole(), Qt::black);
     setPalette(palette);
 
-    d->errorMsg = new QLabel(this);
+    d->errorMsg             = new QLabel(this);
     d->errorMsg->setAlignment(Qt::AlignCenter);
 
     QGridLayout* const grid = new QGridLayout(this);
