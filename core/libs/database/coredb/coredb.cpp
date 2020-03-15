@@ -1279,6 +1279,7 @@ void CoreDB::addImageTagProperty(qlonglong imageId, int tagId, const QString& pr
                    imageId, tagId, property, value);
 
     d->db->recordChangeset(ImageTagChangeset(imageId, tagId, ImageTagChangeset::PropertiesChanged));
+    d->db->recordChangeset(TagChangeset(tagId, TagChangeset::Added));
 }
 
 void CoreDB::addImageTagProperty(const ImageTagProperty& property)
@@ -1314,6 +1315,7 @@ void CoreDB::removeImageTagProperties(qlonglong imageId, int tagId, const QStrin
     }
 
     d->db->recordChangeset(ImageTagChangeset(imageId, tagId, ImageTagChangeset::PropertiesChanged));
+    d->db->recordChangeset(TagChangeset(tagId, TagChangeset::Deleted));
 }
 
 ItemShortInfo CoreDB::getItemShortInfo(qlonglong imageID) const
