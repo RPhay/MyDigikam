@@ -661,4 +661,5 @@ BUGFIXES:
 643 ==> 418554 - In face tagging, when manually entering a name, all other suggestions will default to that name.
 644 ==> 418786 - Metadata Editors Missing.
 645 ==> 418641 - Saves Mysql password in plain text.
-646 ==> 
+646 ==> 406586 - Item count in "People" is not updated until you click or hover a tag.
+647 ==> 
