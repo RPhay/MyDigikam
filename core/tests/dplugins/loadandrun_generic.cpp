@@ -50,11 +50,12 @@ int main(int argc, char* argv[])
 
     QCommandLineParser parser;
     parser.addHelpOption();
-    parser.setApplicationDescription(QLatin1String("Test application to run digiKam generic plugins as stand alone"));
+    parser.setApplicationDescription(QLatin1String("Test application to run digiKam generic plugins as stand alone\n"
+                                                   "Example: ./loadandrun_generic -l \"org.kde.digikam.plugin.generic.TimeAdjust\" -a \"timeadjust_edit\" /mnt/photo/*.jpg"));
 
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("list"), QLatin1String("List all available plugins")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("l"),    QLatin1String("Unique name ID of the plugin to use"), QLatin1String("Plugin IID")));
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("a"),    QLatin1String("Plugin action name to run"), QLatin1String("Action Name")));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("a"),    QLatin1String("Plugin internal action name to run"),  QLatin1String("Internal Action Name")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("w"),    QLatin1String("Wait until plugin non-modal dialog is closed")));
     parser.addPositionalArgument(QLatin1String("files"), QLatin1String("File(s) to open"), QLatin1String("+[file(s)]"));
     parser.process(app);
@@ -74,7 +75,7 @@ int main(int argc, char* argv[])
 
     bool found = false;
 
-    if (parser.isSet(QString::fromLatin1("list")))
+    if      (parser.isSet(QString::fromLatin1("list")))
     {
         foreach (DPlugin* const p, dpl->allPlugins())
         {
@@ -153,6 +154,16 @@ int main(int argc, char* argv[])
                     else
                     {
                         qDebug() << action << "action not found in plugin!";
+
+                        QString actions;
+
+                        foreach (DPluginAction* const ac, gene->actions(&iface))
+                        {
+                            actions.append(ac->toString());
+                            actions.append(QLatin1String(" ; "));
+                        }
+
+                        qDebug() << "Available Actions:" << actions;
                     }
 
                     break;
