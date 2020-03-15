@@ -50,7 +50,7 @@ int main(int argc, char* argv[])
 
     QCommandLineParser parser;
     parser.addHelpOption();
-    parser.setApplicationDescription(QLatin1String("Test application to run digiKam plugins as stand alone"));
+    parser.setApplicationDescription(QLatin1String("Test application to run digiKam generic plugins as stand alone"));
 
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("list"), QLatin1String("List all available plugins")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("l"),    QLatin1String("Unique name ID of the plugin to use"), QLatin1String("Plugin IID")));
@@ -78,28 +78,28 @@ int main(int argc, char* argv[])
     {
         foreach (DPlugin* const p, dpl->allPlugins())
         {
-            qDebug() << "--------------------------------------------";
-            qDebug() << "IID    :" << p->iid();
-            qDebug() << "Name   :" << p->name();
-            qDebug() << "Version:" << p->version();
-            qDebug() << "Desc   :" << p->description();
-
-            QString authors;
-
-            foreach (const DPluginAuthor& au, p->authors())
-            {
-                authors.append(au.toString());
-                authors.append(QLatin1String(" ; "));
-            }
-
-            qDebug() << "Authors:" << authors;
-
-            QString actions;
-
             DPluginGeneric* const gene = dynamic_cast<DPluginGeneric*>(p);
 
             if (gene)
             {
+                qDebug() << "--------------------------------------------";
+                qDebug() << "IID    :" << p->iid();
+                qDebug() << "Name   :" << p->name();
+                qDebug() << "Version:" << p->version();
+                qDebug() << "Desc   :" << p->description();
+
+                QString authors;
+
+                foreach (const DPluginAuthor& au, p->authors())
+                {
+                    authors.append(au.toString());
+                    authors.append(QLatin1String(" ; "));
+                }
+
+                qDebug() << "Authors:" << authors;
+
+                QString actions;
+
                 foreach (DPluginAction* const ac, gene->actions(&iface))
                 {
                     actions.append(ac->toString());
