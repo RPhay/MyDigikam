@@ -558,6 +558,7 @@ int CoreDB::addTag(int parentTagID, const QString& name, const QString& iconKDE,
         d->db->execSql(QString::fromUtf8("UPDATE Tags SET icon=? WHERE id=?;"),
                        iconID, id.toInt());
     }
+
     d->db->recordChangeset(TagChangeset(id.toInt(), TagChangeset::Added));
     return id.toInt();
 }
@@ -1276,6 +1277,7 @@ void CoreDB::addImageTagProperty(qlonglong imageId, int tagId, const QString& pr
     d->db->execSql(QString::fromUtf8("INSERT INTO ImageTagProperties (imageid, tagid, property, value) "
                                      "VALUES(?, ?, ?, ?);"),
                    imageId, tagId, property, value);
+
     d->db->recordChangeset(ImageTagChangeset(imageId, tagId, ImageTagChangeset::PropertiesChanged));
     d->db->recordChangeset(TagChangeset(tagId, TagChangeset::Added));
 }
