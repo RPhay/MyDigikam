@@ -76,10 +76,6 @@ private:
     void slideshow(SlideShowSettings* const settings,
                    bool autoPlayEnabled = true,
                    const QUrl& startFrom = QUrl());
-
-private:
-
-    DInfoInterface* m_iface;
 };
 
 } // namespace DigikamGenericSlideShowPlugin

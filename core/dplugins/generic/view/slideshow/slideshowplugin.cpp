@@ -47,8 +47,7 @@ namespace DigikamGenericSlideShowPlugin
 {
 
 SlideShowPlugin::SlideShowPlugin(QObject* const parent)
-    : DPluginGeneric(parent),
-      m_iface(nullptr)
+    : DPluginGeneric(parent)
 {
 }
 
@@ -103,15 +102,15 @@ QList<DPluginAuthor> SlideShowPlugin::authors() const
 
 void SlideShowPlugin::setup(QObject* const parent)
 {
-    DPluginAction* const ac = new DPluginAction(parent);
+    DPluginAction* const ac     = new DPluginAction(parent);
     ac->setIcon(icon());
     ac->setText(i18nc("@action", "Slideshow"));
     ac->setObjectName(QLatin1String("slideshow_plugin"));
     ac->setActionCategory(DPluginAction::GenericView);
 
-    m_iface = infoIface(ac);
+    DInfoInterface* const iface = infoIface(ac);
 
-    if (m_iface && (parent->objectName() == QLatin1String("Digikam")))
+    if (iface && (parent->objectName() == QLatin1String("Digikam")))
     {
         QMenu* const slideShowActions = new QMenu(i18n("Slideshow"), nullptr);
         slideShowActions->setIcon(icon());
@@ -119,7 +118,7 @@ void SlideShowPlugin::setup(QObject* const parent)
 
         // Action show all
 
-        QAction* const slideShowAllAction = new QAction(i18n("All"), parent);
+        QAction* const slideShowAllAction = new QAction(i18n("All"), ac);
         slideShowAllAction->setObjectName(QLatin1String("slideshow_all"));
         slideShowAllAction->setShortcut(Qt::Key_F9);
         slideShowActions->addAction(slideShowAllAction);
@@ -129,7 +128,7 @@ void SlideShowPlugin::setup(QObject* const parent)
 
         // Action show selection
 
-        QAction* const slideShowSelectionAction = new QAction(i18n("Selection"), parent);
+        QAction* const slideShowSelectionAction = new QAction(i18n("Selection"), ac);
         slideShowSelectionAction->setObjectName(QLatin1String("slideshow_selected"));
         slideShowSelectionAction->setShortcut(Qt::ALT + Qt::Key_F9);
         slideShowActions->addAction(slideShowSelectionAction);
@@ -139,7 +138,7 @@ void SlideShowPlugin::setup(QObject* const parent)
 
         // Action show recursive
 
-        QAction* const slideShowRecursiveAction = new QAction(i18n("With All Sub-Albums"), parent);
+        QAction* const slideShowRecursiveAction = new QAction(i18n("With All Sub-Albums"), ac);
         slideShowRecursiveAction->setObjectName(QLatin1String("slideshow_recursive"));
         slideShowRecursiveAction->setShortcut(Qt::SHIFT + Qt::Key_F9);
         slideShowActions->addAction(slideShowRecursiveAction);
@@ -177,12 +176,11 @@ void SlideShowPlugin::slotMenuSlideShow()
         ac->setData(QVariant());
     }
 
-    m_iface                           = infoIface(sender());
-
     SlideShowSettings* const settings = new SlideShowSettings();
+    settings->iface                   = infoIface(ac);
     settings->readFromConfig();
-    settings->exifRotate = MetaEngineSettings::instance()->settings().exifRotate;
-    settings->fileList   = m_iface->currentAlbumItems();
+    settings->exifRotate              = MetaEngineSettings::instance()->settings().exifRotate;
+    settings->fileList                = settings->iface->currentAlbumItems();
 
     slideshow(settings, true, startFrom);
 }
@@ -190,8 +188,9 @@ void SlideShowPlugin::slotMenuSlideShow()
 void SlideShowPlugin::slotMenuSlideShowAll()
 {
     SlideShowSettings* const settings = new SlideShowSettings();
+    settings->iface                   = infoIface(sender()->parent());
     settings->readFromConfig();
-    settings->fileList                = m_iface->currentAlbumItems();
+    settings->fileList                = settings->iface->currentAlbumItems();
 
     slideshow(settings);
 }
@@ -199,23 +198,27 @@ void SlideShowPlugin::slotMenuSlideShowAll()
 void SlideShowPlugin::slotMenuSlideShowSelection()
 {
     SlideShowSettings* const settings = new SlideShowSettings();
+    settings->iface                   = infoIface(sender()->parent());
     settings->readFromConfig();
-    settings->fileList                = m_iface->currentSelectedItems();
+    settings->fileList                = settings->iface->currentSelectedItems();
 
     slideshow(settings);
 }
 
 void SlideShowPlugin::slotMenuSlideShowRecursive()
 {
-    connect(m_iface, SIGNAL(signalAlbumItemsRecursiveCompleted(QList<QUrl>)),
+    DInfoInterface* const iface = infoIface(sender()->parent());
+
+    connect(iface, SIGNAL(signalAlbumItemsRecursiveCompleted(QList<QUrl>)),
             this, SLOT(slotShowRecursive(QList<QUrl>)));
 
-    m_iface->parseAlbumItemsRecursive();
+    iface->parseAlbumItemsRecursive();
 }
 
 void SlideShowPlugin::slotShowRecursive(const QList<QUrl>& imageList)
 {
     SlideShowSettings* const settings = new SlideShowSettings();
+    settings->iface                   = dynamic_cast<DInfoInterface*>(sender());
     settings->readFromConfig();
     settings->fileList                = imageList;
 
@@ -245,9 +248,10 @@ void SlideShowPlugin::slotShowManual()
     }
 
     SlideShowSettings* const settings = new SlideShowSettings();
+    settings->iface                   = infoIface(ac);
     settings->readFromConfig();
     settings->exifRotate              = MetaEngineSettings::instance()->settings().exifRotate;
-    settings->fileList                = m_iface->currentAlbumItems();
+    settings->fileList                = settings->iface->currentAlbumItems();
 
     slideshow(settings, false, startFrom);
 }
@@ -261,10 +265,9 @@ void SlideShowPlugin::slotSlideShowFinished(const QUrl& lastImage)
 
     qDebug() << "SlideShowPlugin::slotSlideShowFinished actionList" << actionList.size();
 
-    if(!actionList.isEmpty())
+    if (!actionList.isEmpty())
     {
         actionList[0]->setData(lastImage);
-
         actionList[0]->changed();
     }
 */
@@ -283,8 +286,8 @@ void SlideShowPlugin::slideshow(SlideShowSettings* const settings, bool autoPlay
         settings->imageUrl = startFrom;
     }
 
-    SlideShowLoader* const slide = new SlideShowLoader(m_iface, settings);
-    slide->setShortCutPrefixes(m_iface->passShortcutActionsToWidget(slide));
+    SlideShowLoader* const slide = new SlideShowLoader(settings);
+    slide->setShortCutPrefixes(settings->iface->passShortcutActionsToWidget(slide));
 
     if      (settings->imageUrl.isValid())
     {
@@ -292,13 +295,21 @@ void SlideShowPlugin::slideshow(SlideShowSettings* const settings, bool autoPlay
     }
     else if (settings->startWithCurrent)
     {
-        slide->setCurrentItem(m_iface->currentSelectedItems()[0]);
+        if (!settings->iface->currentSelectedItems().isEmpty())
+        {
+            slide->setCurrentItem(settings->iface->currentSelectedItems()[0]);
+        }
+        else
+        {
+            // no current selection, do nothing.
+            return;
+        }
     }
 
     connect(slide, SIGNAL(signalLastItemUrl(QUrl)),
             this, SLOT(slotSlideShowFinished(QUrl)));
 
-    connect(m_iface, SIGNAL(signalShortcutPressed(QString,int)),
+    connect(settings->iface, SIGNAL(signalShortcutPressed(QString,int)),
             slide, SLOT(slotHandleShortcut(QString,int)));
 
     slide->show();

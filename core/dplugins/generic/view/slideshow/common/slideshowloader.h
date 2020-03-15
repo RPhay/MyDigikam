@@ -62,7 +62,7 @@ public:
 
 public:
 
-    explicit SlideShowLoader(DInfoInterface* const iface, SlideShowSettings* const settings);
+    explicit SlideShowLoader(SlideShowSettings* const settings);
     ~SlideShowLoader();
 
     void setCurrentItem(const QUrl& url);

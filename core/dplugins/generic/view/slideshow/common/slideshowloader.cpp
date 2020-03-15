@@ -115,12 +115,11 @@ public:
     QMap<QString, QString> shortcutPrefixes;
 };
 
-SlideShowLoader::SlideShowLoader(DInfoInterface* const iface, SlideShowSettings* const settings)
+SlideShowLoader::SlideShowLoader(SlideShowSettings* const settings)
     : QStackedWidget(nullptr),
       d(new Private)
 {
-    d->settings        = settings;
-    d->settings->iface = iface;
+    d->settings = settings;
 
     setAttribute(Qt::WA_DeleteOnClose);
     setWindowFlags(Qt::FramelessWindowHint);
