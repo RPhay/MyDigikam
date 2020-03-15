@@ -249,7 +249,7 @@ void SlideShowPlugin::slotShowManual()
     settings->exifRotate              = MetaEngineSettings::instance()->settings().exifRotate;
     settings->fileList                = m_iface->currentAlbumItems();
 
-    slideshow(settings, true, startFrom);
+    slideshow(settings, false, startFrom);
 }
 
 void SlideShowPlugin::slotSlideShowFinished(const QUrl& lastImage)
