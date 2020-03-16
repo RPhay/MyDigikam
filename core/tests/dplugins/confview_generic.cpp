@@ -30,6 +30,7 @@
 
 #include "dpluginloader.h"
 #include "dpluginsetup.h"
+#include "dpluginconfviewgeneric.h"
 
 using namespace Digikam;
 
@@ -42,6 +43,7 @@ int main(int argc, char* argv[])
     dpl->registerGenericPlugins(qApp);
 
     DPluginSetup view;
+    view.setPluginConfView(new DPluginConfViewGeneric(&view));
     view.show();
     view.resize(1024, 640);
 
