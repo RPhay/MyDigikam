@@ -7,7 +7,7 @@
  * Description : album parser progress indicator
  *
  * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C)      2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -124,11 +124,11 @@ void AlbumParser::slotParseItemInfoList(const ItemInfoList& list)
 {
     setTotalItems(list.count());
 
-    int               i = 0;
+    int i = 0;
 
     QList<QUrl> imageList;
 
-    for (ItemInfoList::const_iterator it = list.constBegin();
+    for (ItemInfoList::const_iterator it = list.constBegin() ;
          !d->cancel && (it != list.constEnd()) ;
          ++it)
     {
@@ -140,7 +140,9 @@ void AlbumParser::slotParseItemInfoList(const ItemInfoList& list)
     }
 
     if (!d->cancel)
+    {
         emit signalComplete(imageList);
+    }
 
     setComplete();
 }
