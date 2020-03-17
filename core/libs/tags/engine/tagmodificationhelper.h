@@ -100,7 +100,11 @@ public Q_SLOTS:
      * @param tag the tag to change
      */
     void slotTagEdit(TAlbum* tag);
-    void slotTagEdit(); /// must use bindTag and a QAction
+
+    /**
+     * must use bindTag and a QAction
+     */
+    void slotTagEdit();
 
     /**
      * Deletes the given tag and after prompting the user for this.
@@ -137,7 +141,7 @@ public Q_SLOTS:
     /**
      * must use bindTag and a QAction
      */
-    void slotFaceTagDelete(); /// must use bindTag and a QAction
+    void slotFaceTagDelete();
 
     /**
      * Delete multiple face tags and prompt user only once for all
