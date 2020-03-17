@@ -5,7 +5,8 @@
  *
  * Date        : 2017-05-06
  * Description : interface to item information for shared tools
- *               based on DMetadata.
+ *               based on DMetadata. This interface is used in all cases
+ *               where no database is available (aka Showfoto).
  *
  * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
@@ -93,13 +94,15 @@ QList<QUrl> DMetaInfoIface::currentAlbumItems() const
 
 QList<QUrl> DMetaInfoIface::currentSelectedItems() const
 {
-    // No multiple items selection is available in DMeta.
+    // No multiple items selection is available in this interface.
+
     return currentAlbumItems();
 }
 
 QList<QUrl> DMetaInfoIface::allAlbumItems() const
 {
-    // No album management available in DMeta.
+    // No album management is available in this interface.
+
     return currentAlbumItems();
 }
 
@@ -124,18 +127,21 @@ DMetaInfoIface::DInfoMap DMetaInfoIface::itemInfo(const QUrl& url) const
         map.insert(QLatin1String("filesize"),        (qlonglong)info.size());
         map.insert(QLatin1String("dimensions"),      meta.getItemDimensions());
 
-        // Get digiKam Tags Path list of picture from database.
+        // Get digiKam Tags Path list of picture from metadata.
         // Ex.: "City/Paris/Monuments/Notre Dame"
+
         QStringList tagsPath;
         meta.getItemTagsPath(tagsPath);
         map.insert(QLatin1String("tagspath"),        tagsPath);
 
-        // Get digiKam Tags name (keywords) list of picture from database.
+        // Get digiKam Tags name (keywords) list of picture from metadata.
         // Ex.: "Notre Dame"
+
         QStringList keywords = meta.getMetadataField(MetadataInfo::Keywords).toStringList();
         map.insert(QLatin1String("keywords"),        keywords);
 
-        // Get GPS location of picture from database.
+        // Get GPS location of picture from metadata.
+
         double lat = 0.0;
         double lng = 0.0;
         double alt = 0.0;
@@ -147,7 +153,8 @@ DMetaInfoIface::DInfoMap DMetaInfoIface::itemInfo(const QUrl& url) const
             map.insert(QLatin1String("altitude"),    alt);
         }
 
-        // Get Copyright information of picture from database.
+        // Get Copyright information of picture from metadata.
+
         Template temp;
         meta.getCopyrightInformation(temp);
 
@@ -165,9 +172,12 @@ DMetaInfoIface::DInfoMap DMetaInfoIface::itemInfo(const QUrl& url) const
         map.insert(QLatin1String("focallength"),     photoInfo.focalLength);
         map.insert(QLatin1String("focalLength35mm"), photoInfo.focalLength35mm);
 
-        // TODO: add more video metadata as needed
+        // Get Video information from metadata
+
         VideoInfoContainer videoInfo = meta.getVideoInformation();
         map.insert(QLatin1String("videocodec"),      videoInfo.videoCodec);
+
+        // TODO: add more video metadata as needed
     }
 
     return map;

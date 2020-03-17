@@ -6,7 +6,7 @@
  * Date        : 2017-05-06
  * Description : template interface to image information.
  *               This class do not depend of digiKam database library
- *               to permit to re-use tools on Showfoto.
+ *               to permit to re-use plugins with Showfoto.
  *
  * Copyright (C) 2017-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
@@ -149,7 +149,7 @@ QList<GPSItemContainer*> DInfoInterface::currentGPSItems() const
 
 #endif
 
-QMap<QString, QString> DInfoInterface::passShortcutActionsToWidget(QWidget* const wdg) const
+QMap<QString, QString> DInfoInterface::passShortcutActionsToWidget(QWidget* const) const
 {
     return QMap<QString, QString>();
 }
