@@ -13,7 +13,7 @@ preload_shared_library ()
     FILE=$1
     echo -e "$FILE "
 
-    if [[ "$(arch)" = "x86_64" ]] ; then
+    if [[ "$(uname -m)" = "x86_64" ]] ; then
         # 64 bits system
 
         if   [ -f "$DIR/usr/lib64/$FILE" ] ; then
