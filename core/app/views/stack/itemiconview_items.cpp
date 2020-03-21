@@ -516,7 +516,7 @@ void ItemIconView::slotSetCurrentUrlWhenAvailable(const QUrl& url)
     switch (viewMode())
     {
         case StackedView::TableViewMode:
-
+            d->tableView->slotSetCurrentUrlWhenAvailable(url);
             break;
 
         default:
