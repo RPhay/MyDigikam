@@ -69,8 +69,6 @@ private Q_SLOTS:
     void slotShowRecursive(const QList<QUrl>& imageList);
     void slotShowManual();
 
-    void slotSlideShowFinished(const QUrl& lastImage);
-
 private:
 
     void slideshow(SlideShowSettings* const settings,

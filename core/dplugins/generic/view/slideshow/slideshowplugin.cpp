@@ -256,27 +256,10 @@ void SlideShowPlugin::slotShowManual()
     slideshow(settings, false, startFrom);
 }
 
-void SlideShowPlugin::slotSlideShowFinished(const QUrl& lastImage)
-{
-    Q_UNUSED(lastImage);
-/*
- *  TODO: pass Url of last image out to main Apps
-    QList<DPluginAction*> actionList = actions(parent());
-
-    qDebug() << "SlideShowPlugin::slotSlideShowFinished actionList" << actionList.size();
-
-    if (!actionList.isEmpty())
-    {
-        actionList[0]->setData(lastImage);
-        actionList[0]->changed();
-    }
-*/
-}
-
 void SlideShowPlugin::slideshow(SlideShowSettings* const settings, bool autoPlayEnabled, const QUrl& startFrom)
 {
-    settings->autoPlayEnabled    = autoPlayEnabled;
-    settings->plugin             = this;
+    settings->autoPlayEnabled = autoPlayEnabled;
+    settings->plugin          = this;
 
     // TODO: preview settings for digikam
     //settings.previewSettings = ApplicationSettings::instance()->getPreviewSettings();
@@ -289,7 +272,7 @@ void SlideShowPlugin::slideshow(SlideShowSettings* const settings, bool autoPlay
     SlideShowLoader* const slide = new SlideShowLoader(settings);
     slide->setShortCutPrefixes(settings->iface->passShortcutActionsToWidget(slide));
 
-    if      (settings->imageUrl.isValid())
+    if     (settings->imageUrl.isValid())
     {
         slide->setCurrentItem(settings->imageUrl);
     }
@@ -307,7 +290,7 @@ void SlideShowPlugin::slideshow(SlideShowSettings* const settings, bool autoPlay
     }
 
     connect(slide, SIGNAL(signalLastItemUrl(QUrl)),
-            this, SLOT(slotSlideShowFinished(QUrl)));
+            settings->iface, SIGNAL(signalLastItemUrl(QUrl)));
 
     connect(settings->iface, SIGNAL(signalShortcutPressed(QString,int)),
             slide, SLOT(slotHandleShortcut(QString,int)));

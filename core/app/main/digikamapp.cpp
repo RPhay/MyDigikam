@@ -1092,6 +1092,12 @@ DInfoInterface* DigikamApp::infoIface(DPluginAction* const ac)
     connect(iface, SIGNAL(signalImportedImage(QUrl)),
             this, SLOT(slotImportedImagefromScanner(QUrl)));
 
+    if (aset == ApplicationSettings::Slideshow)
+    {
+        connect(iface, SIGNAL(signalLastItemUrl(QUrl)),
+                d->view, SLOT(slotSetCurrentUrlWhenAvailable(QUrl)));
+    }
+
     return iface;
 }
 

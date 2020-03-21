@@ -98,6 +98,8 @@ public:
 
     virtual DInfoMap itemInfo(const QUrl&)                                      const;
     virtual void     setItemInfo(const QUrl&, const DInfoMap&)                  const;
+
+    Q_SIGNAL void signalLastItemUrl(const QUrl&);
     ///@}
 
 public:

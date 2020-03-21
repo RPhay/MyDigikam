@@ -231,6 +231,7 @@ public Q_SLOTS:
     void slotGotoTagAndItem(int tagID);
 
     void slotSelectAlbum(const QUrl& url);
+    void slotSetCurrentUrlWhenAvailable(const QUrl& url);
     void slotSetCurrentWhenAvailable(const qlonglong id);
 
     void slotSetAsAlbumThumbnail(const ItemInfo& info);

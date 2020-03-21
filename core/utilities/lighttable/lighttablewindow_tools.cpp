@@ -75,7 +75,8 @@ void LightTableWindow::slotLeftSlideShowManualFromCurrent()
 
 void LightTableWindow::slotRightSlideShowManualFromCurrent()
 {
-    QList<DPluginAction*> actions = DPluginLoader::instance()->pluginActions(QLatin1String("org.kde.digikam.SlideShow"), this);
+    QList<DPluginAction*> actions = DPluginLoader::instance()->
+                                       pluginActions(QLatin1String("org.kde.digikam.plugin.generic.SlideShow"), this);
 
     if (actions.isEmpty())
     {
@@ -92,7 +93,8 @@ void LightTableWindow::slotRightSlideShowManualFromCurrent()
 
 void LightTableWindow::slotSlideShowLastItemUrl()
 {
-    QList<DPluginAction*> actions = DPluginLoader::instance()->pluginActions(QLatin1String("org.kde.digikam.SlideShow"), this);
+    QList<DPluginAction*> actions = DPluginLoader::instance()->
+                                       pluginActions(QLatin1String("org.kde.digikam.plugin.generic.SlideShow"), this);
 
     if (actions.isEmpty())
     {
