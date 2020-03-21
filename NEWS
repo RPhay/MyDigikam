@@ -662,4 +662,5 @@ BUGFIXES:
 644 ==> 418786 - Metadata Editors Missing.
 645 ==> 418641 - Saves Mysql password in plain text.
 646 ==> 406586 - Item count in "People" is not updated until you click or hover a tag.
-647 ==> 
+647 ==> 414055 - Port Slideshow tool to plugin architecture [patch].
+648 ==> 
