@@ -24,7 +24,7 @@
 #ifndef DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_GLOBAL_H
 #define DIGIKAM_GLVIEWER_PLUGIN_GLVIEWER_GLOBAL_H
 
-//Uncomment this line to enable performance checks.
+// Uncomment this line to enable performance checks.
 //#define PERFORMANCE_ANALYSIS
 
 /// Images cache settings. Keep in mind that one cache entry takes 20MB for a 5mpix pic

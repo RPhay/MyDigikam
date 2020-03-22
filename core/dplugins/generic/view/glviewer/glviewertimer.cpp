@@ -35,11 +35,11 @@
 namespace DigikamGenericGLViewerPlugin
 {
 
-class GLViewerTimer::Private
+class Q_DECL_HIDDEN GLViewerTimer::Private
 {
 public:
 
-    Private()
+    explicit Private()
     {
         meantime = 0;
     }
@@ -67,9 +67,11 @@ void GLViewerTimer::start()
 void GLViewerTimer::at(const QString& s)
 {
     d->meantime = d->timer.elapsed() - d->meantime;
+
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "stopwatch:" << s
                                          << ": " << d->meantime
-                                         << " ms    overall: " << d->timer.elapsed() << " ms";
+                                         << " ms    overall: " 
+                                         << d->timer.elapsed() << " ms";
 }
 
 } // namespace DigikamGenericGLViewerPlugin

@@ -112,18 +112,24 @@ void GLViewerPlugin::slotGLViewer()
     switch (view->getOGLstate())
     {
         case oglOK:
+        {
             view->show();
             break;
+        }
 
         case oglNoRectangularTexture:
+        {
             qCCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "GL_ARB_texture_rectangle not supported";
             QMessageBox::critical(nullptr, i18n("OpenGL error"), i18n("GL_ARB_texture_rectangle not supported"));
             break;
+        }
 
         case oglNoContext:
+        {
             qCCritical(DIGIKAM_DPLUGIN_GENERIC_LOG) << "no OpenGL context found";
             QMessageBox::critical(nullptr, i18n("OpenGL error"), i18n("No OpenGL context found"));
             break;
+        }
     }
 }
 
