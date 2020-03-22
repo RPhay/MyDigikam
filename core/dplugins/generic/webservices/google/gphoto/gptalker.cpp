@@ -115,11 +115,13 @@ public:
     State                  state;
 
     QString                albumIdToUpload;
+    QString                albumIdToImport;
     QString                previousImageId;
 
     QStringList            descriptionList;
     QStringList            uploadTokenList;
     QList<GSFolder>        albumList;
+    QList<GSPhoto>         photoList;
 
     QNetworkAccessManager* netMngr;
 
@@ -244,12 +246,19 @@ void GPTalker::getLoggedInUser()
     emit signalBusy(true);
 }
 
-void GPTalker::listPhotos(const QString& albumId, const QString& /*imgmax*/)
+void GPTalker::listPhotos(const QString& albumId, const QString& nextPageToken)
 {
     if (m_reply)
     {
         m_reply->abort();
         m_reply = nullptr;
+    }
+
+    d->albumIdToImport = albumId;
+
+    if (nextPageToken.isEmpty())
+    {
+        d->photoList.clear();
     }
 
     QUrl url(d->apiUrl.arg(QLatin1String("mediaItems:search")));
@@ -260,6 +269,14 @@ void GPTalker::listPhotos(const QString& albumId, const QString& /*imgmax*/)
 
     QByteArray data;
     data += "{\"pageSize\": \"100\",";
+
+    if (!nextPageToken.isEmpty())
+    {
+        data += "\"pageToken\": \"";
+        data += nextPageToken.toLatin1();
+        data += "\",";
+    }
+
     data += "\"albumId\": \"";
     data += albumId.toLatin1();
     data += "\"}";
@@ -870,7 +887,6 @@ void GPTalker::parseResponseListPhotos(const QByteArray& data)
 
     QJsonObject jsonObject  = doc.object();
     QJsonArray jsonArray    = jsonObject[QLatin1String("mediaItems")].toArray();
-    QList<GSPhoto> photoList;
 
     foreach (const QJsonValue& value, jsonArray)
     {
@@ -900,10 +916,18 @@ void GPTalker::parseResponseListPhotos(const QByteArray& data)
         photo.originalURL    = QUrl(photo.baseUrl + option);
         // qCDebug(DIGIKAM_WEBSERVICES_LOG) << photo.originalURL;
 
-        photoList.append(photo);
+        d->photoList.append(photo);
     }
 
-    emit signalListPhotosDone(1, QLatin1String(""), photoList);
+    QString nextPageToken    = jsonObject[QLatin1String("nextPageToken")].toString();
+
+    if (!nextPageToken.isEmpty())
+    {
+        listPhotos(d->albumIdToImport, nextPageToken);
+        return;
+    }
+
+    emit signalListPhotosDone(1, QLatin1String(""), d->photoList);
 }
 
 void GPTalker::parseResponseCreateAlbum(const QByteArray& data)

@@ -573,8 +573,7 @@ void GSWindow::slotStartTransfer()
                         this, SLOT(slotListPhotosDoneForDownload(int,QString,QList<GSPhoto>)));
 
                 d->gphotoTalker->listPhotos(
-                    d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString(),
-                    d->widget->getDimensionCoB()->itemData(d->widget->getDimensionCoB()->currentIndex()).toString());
+                    d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString());
 
                 return;
             }
