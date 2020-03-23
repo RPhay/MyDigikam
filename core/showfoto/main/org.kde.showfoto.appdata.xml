@@ -52,6 +52,7 @@
   <summary xml:lang="pl">Edytor obrazów</summary>
   <summary xml:lang="pt">Editor de Imagem</summary>
   <summary xml:lang="pt-BR">Editor de imagem</summary>
+  <summary xml:lang="ru">Редактор изображений</summary>
   <summary xml:lang="sl">Urejevalnik slik</summary>
   <summary xml:lang="sv">Bildeditor</summary>
   <summary xml:lang="tr">Resim Düzenleyici</summary>
@@ -84,6 +85,7 @@
     <p xml:lang="pl">Showfoto jest szybkim edytorem obrazów z zaawansowanymi narzędziami edycyjnymi. Można go używać do oglądania i polepszania zdjęć. Showfoto jest samodzielnym edytorem obrazów dla projektu digiKam.</p>
     <p xml:lang="pt">O Showfoto é um editor de imagens rápido com ferramentas de edição de imagens poderosas. Podê-lo-á usar para ver as suas fotografias e melhorá-las. O Showfoto é o editor de imagens independente do projecto digiKam.</p>
     <p xml:lang="pt-BR">Showfoto é um editor de imagens rápido com ferramentas poderosas para edição de imagens. Você poderá usá-lo para ver e aprimorar suas fotos. O Showfoto é o editor de imagens independentemente do projeto digiKam.</p>
+    <p xml:lang="ru">Showfoto — отдельное приложение для редактирования изображений из проекта digiKam, обладающее расширенным набором различных инструментов редактирования. Приложение позволяет просматривать и улучшать фотографии.</p>
     <p xml:lang="sk">Showfoto je rýchly editor obrázkov so silnými nástrojmi na editáciu obrázkov. Môžete ho použiť na prehliadanie vašich fotografií a zlepšiť ich. ShowFoto je samostatný editor obrázkov projektu digiKam.</p>
     <p xml:lang="sl">Showfoto je hiter urejevalnik slik z zmogljivimi orodji za urejanje slik. Uporabite ga lahko za ogled fotografij in njihovo izboljšavo. Showfoto je samostojen urejevalnik slik projekta digiKam.</p>
     <p xml:lang="sv">Showfoto är en snabb bildeditor med kraftfulla bildredigeringsverktyg. Den kan användas för att titta på fotografier och förbättra dem. Showfoto är Digikam-projektets  fristående bildeditor.</p>
@@ -117,6 +119,7 @@
       <caption xml:lang="pl">Edytowanie zdjęcia w Showfoto</caption>
       <caption xml:lang="pt">Edição de uma fotografia no Showfoto</caption>
       <caption xml:lang="pt-BR">Editando foto no Showfoto</caption>
+      <caption xml:lang="ru">Редактирование фотографии в приложении Showfoto</caption>
       <caption xml:lang="sv">Redigera foto i Showfoto</caption>
       <caption xml:lang="uk">Редагування фотографій у Showfoto</caption>
       <caption xml:lang="x-test">xxEditing photo in Showfotoxx</caption>
@@ -147,6 +150,7 @@
   <developer_name xml:lang="pl">Projekt digiKam</developer_name>
   <developer_name xml:lang="pt">Projecto digiKam</developer_name>
   <developer_name xml:lang="pt-BR">Projeto digiKam</developer_name>
+  <developer_name xml:lang="ru">Проект digiKam</developer_name>
   <developer_name xml:lang="sk">Projekt digiKamu</developer_name>
   <developer_name xml:lang="sl">Projekt digiKam</developer_name>
   <developer_name xml:lang="sv">Digikam-projekt</developer_name>
