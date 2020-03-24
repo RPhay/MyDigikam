@@ -50,10 +50,10 @@ public:
     bool getValues(DMetadata::AltLangMap& oldValues, DMetadata::AltLangMap& newValues);
 
     void setValid(bool v);
-    bool isValid() const;
+    bool isValid()              const;
 
-    QString defaultAltLang() const;
-    bool    asDefaultAltLang() const;
+    QString defaultAltLang()    const;
+    bool    asDefaultAltLang()  const;
 
 Q_SIGNALS:
 

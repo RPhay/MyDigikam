@@ -40,7 +40,7 @@ public:
     ~MultiValuesEdit();
 
     void setValid(bool v);
-    bool isValid() const;
+    bool isValid()        const;
 
     void setData(const QStringList& data);
     QStringList getData() const;
