@@ -942,6 +942,7 @@ void AlbumManager::slotTagChange(const TagChangeset& changeset)
         case TagChangeset::Added:
         case TagChangeset::Moved:
         case TagChangeset::Deleted:
+        case TagChangeset::Updated:
         case TagChangeset::Reparented:
 
             if (!d->scanTAlbumsTimer->isActive())

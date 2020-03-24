@@ -664,4 +664,5 @@ BUGFIXES:
 646 ==> 406586 - Item count in "People" is not updated until you click or hover a tag.
 647 ==> 414055 - Port Slideshow tool to plugin architecture [patch].
 648 ==> 419119 - Download limited to 100 photos.
-649 ==> 
+649 ==> 419171 - Tagging multiple images at once broken with commit "modified CoreDB to perform recordChangeSet operation on tags".
+650 ==> 
