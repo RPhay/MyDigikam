@@ -1,9 +1,9 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
-<gui version="615" name="showfoto" translationDomain="digikam" >
+<gui version="616" name="showfoto" translationDomain="digikam" >
 
 <MenuBar>
 
-    <Menu name="file" ><text>&amp;File</text>
+    <Menu name="File" ><text>&amp;File</text>
         <Action name="showfoto_open_file" />
         <Action name="showfoto_open_folder" />
         <Separator/>
