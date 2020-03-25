@@ -298,6 +298,28 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
             }
         }
 
+        if (d->makeDescription.contains(QLatin1String("olympus"), Qt::CaseInsensitive))
+        {
+            if (!findCamera(d->makeDescription, d->modelDescription))
+            {
+                QStringList olympusList;
+                olympusList << QLatin1String("Olympus Imaging Corp.");
+                olympusList << QLatin1String("Olympus Corporation");
+                olympusList << QLatin1String("Olympus");
+
+                while (!olympusList.isEmpty())
+                {
+                    if (findCamera(olympusList.first(), d->modelDescription))
+                    {
+                        d->makeDescription = olympusList.first();
+                        break;
+                    }
+
+                    olympusList.removeFirst();
+                }
+            }
+        }
+
         d->lensDescription = photoInfo.lens.trimmed();
 
         // ------------------------------------------------------------------------------------------------
