@@ -268,6 +268,7 @@ QString DMetadata::getLensDescription() const
 
         if (!lens.isEmpty()                     &&
             (lens != QLatin1String("----"))     &&
+            (lens != QLatin1String("65535"))    &&
             !(lens.startsWith(QLatin1Char('(')) &&
               lens.endsWith(QLatin1Char(')'))
              )
