@@ -242,9 +242,9 @@ LensFunIface::LensList LensFunIface::findLenses(const lfCamera* const lfCamera,
 
     if (lfCamera)
     {
-        const auto maker            = lensMaker.isEmpty() ? nullptr : lensMaker.toLatin1().constData();
-        const auto model            = lensDesc.isEmpty()  ? nullptr : lensDesc.toLatin1().constData();
-        const lfLens *const *lfLens = d->lfDb->FindLenses(lfCamera, maker, model);
+        const char* const maker     = lensMaker.isEmpty() ? nullptr : lensMaker.toLatin1().constData();
+        const char* const model     = lensDesc.isEmpty()  ? nullptr : lensDesc.toLatin1().constData();
+        const lfLens* const *lfLens = d->lfDb->FindLenses(lfCamera, maker, model);
 
         while (lfLens && *lfLens)
         {
@@ -384,7 +384,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
             {
                 qCDebug(DIGIKAM_DIMG_LOG) << "Lens description string is empty";
 
-                const auto lensList = findLenses(d->usedCamera, QString{});
+                const LensList lensList = findLenses(d->usedCamera, QString());
 
                 if (lensList.count() == 1)
                 {
