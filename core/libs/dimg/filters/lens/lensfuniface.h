@@ -132,6 +132,8 @@ private:
                         const QString& lensDesc,
                         const QString& lensMaker=QString())         const;
 
+    double checkSimilarity(const QString& a, const QString& b)      const;
+
 private:
 
     LensFunIface(const LensFunIface&); // Disable

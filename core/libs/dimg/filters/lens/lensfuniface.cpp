@@ -419,20 +419,26 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
             else
             {
                 qCDebug(DIGIKAM_DIMG_LOG) << "lens matches   : more than one...";
-                const lfLens* exact = nullptr;
+                const lfLens* similar = nullptr;
+                double percent        = 0.0;
 
                 foreach (const lfLens* const l, lensMatches)
                 {
-                    if (QLatin1String(l->Model) == d->lensDescription)
+                    double result = checkSimilarity(d->lensDescription, QLatin1String(l->Model));
+
+                    if (result > percent)
                     {
-                        qCDebug(DIGIKAM_DIMG_LOG) << "found exact match from" << lensMatches.count() << "possibilities:" << l->Model;
-                        exact = l;
+                        percent = result;
+                        similar = l;
                     }
                 }
 
-                if (exact)
+                if (similar)
                 {
-                    setUsedLens(exact);
+                    qCDebug(DIGIKAM_DIMG_LOG) << "found similary match from" << lensMatches.count()
+                                              << "possibilities:" << similar->Model
+                                              << "similarity:" << percent;
+                    setUsedLens(similar);
                 }
                 else
                 {
@@ -615,6 +621,40 @@ QString LensFunIface::lensFunVersion()
            .arg(LF_VERSION_MINOR)
            .arg(LF_VERSION_MICRO)
            .arg(LF_VERSION_BUGFIX);
+}
+
+// Inspired by https://www.qtcentre.org/threads/49601-String-similarity-check
+
+double LensFunIface::checkSimilarity(const QString& a, const QString& b) const
+{
+    if (a.isEmpty() || b.isEmpty())
+    {
+        return 0.0;
+    }
+
+    const int chars = 3;
+
+    int results     = 0;
+    QString spaces  = QString::fromLatin1(" ").repeated(chars - 1);
+    QString aa      = spaces + a + spaces;
+    QString bb      = spaces + b + spaces;
+
+    for (int i = 0 ; i < (aa.count() - (chars - 1)) ; ++i)
+    {
+        QString part = aa.mid(i, chars);
+
+        if (bb.contains(part, Qt::CaseInsensitive))
+        {
+            ++results;
+        }
+    }
+
+    if (aa.length() < bb.length())
+    {
+        return (100.0 * results / (aa.length() - (chars - 1)));
+    }
+
+    return (100.0 * results / (bb.length() - (chars - 1)));
 }
 
 // Restore warnings
