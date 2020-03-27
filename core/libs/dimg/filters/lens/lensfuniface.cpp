@@ -633,8 +633,8 @@ double LensFunIface::checkSimilarity(const QString& a, const QString& b) const
     }
 
     const int chars = 3;
+    int counter     = 0;
 
-    int results     = 0;
     QString spaces  = QString::fromLatin1(" ").repeated(chars - 1);
     QString aa      = spaces + a + spaces;
     QString bb      = spaces + b + spaces;
@@ -645,16 +645,13 @@ double LensFunIface::checkSimilarity(const QString& a, const QString& b) const
 
         if (bb.contains(part, Qt::CaseInsensitive))
         {
-            ++results;
+            ++counter;
         }
     }
 
-    if (aa.length() < bb.length())
-    {
-        return (100.0 * results / (aa.length() - (chars - 1)));
-    }
+    QString s = (aa.length() < bb.length()) ? aa : bb;
 
-    return (100.0 * results / (bb.length() - (chars - 1)));
+    return (100.0 * counter / (s.length() - (chars - 1)));
 }
 
 // Restore warnings
