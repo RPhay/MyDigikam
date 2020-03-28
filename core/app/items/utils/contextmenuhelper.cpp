@@ -381,7 +381,7 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
         sei.fMask            = SEE_MASK_INVOKEIDLIST | SEE_MASK_NOASYNC;
         sei.nShow            = SW_SHOWNORMAL;
         sei.lpVerb           = (LPCWSTR)QString::fromLatin1("openas").utf16();
-        sei.lpFile           = (LPCWSTR)d->selectedItems.first().toLocalFile().utf16();
+        sei.lpFile           = (LPCWSTR)QDir::toNativeSeparators(d->selectedItems.first().toLocalFile()).utf16();
         ShellExecuteEx(&sei);
 
         qCDebug(DIGIKAM_GENERAL_LOG) << "ShellExecuteEx::openas called";
