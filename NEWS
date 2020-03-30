@@ -666,4 +666,5 @@ BUGFIXES:
 648 ==> 419119 - Download limited to 100 photos.
 649 ==> 419171 - Tagging multiple images at once broken with commit "modified CoreDB to perform recordChangeSet operation on tags".
 650 ==> 419409 - Exif dates shown are wrong in some images.
-651 ==> 
+651 ==> 419410 - Fuji S3Pro Image Preview Rotation is wrong.
+652 ==> 
