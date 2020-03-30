@@ -928,6 +928,7 @@ QDateTime MetaEngine::getItemDateTime() const
 
         if (!dateMap.isEmpty())
         {
+            int counter = 0;
             QDateTime dateTime;
             QMap<QDateTime, int>::const_iterator it;
 
@@ -937,14 +938,10 @@ QDateTime MetaEngine::getItemDateTime() const
                 {
                     continue;
                 }
-                else if (it.key().time().isNull())
+                else if (it.value() > counter)
                 {
+                    counter  = it.value();
                     dateTime = it.key();
-                }
-                else
-                {
-                    dateTime = it.key();
-                    break;
                 }
             }
 
@@ -1161,6 +1158,7 @@ QDateTime MetaEngine::getDigitizationDateTime(bool fallbackToCreationTime) const
 
         if (!dateMap.isEmpty())
         {
+            int counter = 0;
             QDateTime dateTime;
             QMap<QDateTime, int>::const_iterator it;
 
@@ -1170,14 +1168,10 @@ QDateTime MetaEngine::getDigitizationDateTime(bool fallbackToCreationTime) const
                 {
                     continue;
                 }
-                else if (it.key().time().isNull())
+                else if (it.value() > counter)
                 {
+                    counter  = it.value();
                     dateTime = it.key();
-                }
-                else
-                {
-                    dateTime = it.key();
-                    break;
                 }
             }
 
