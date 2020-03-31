@@ -108,7 +108,7 @@ SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const par
     d->prevBtn->setIcon(QIcon::fromTheme(QLatin1String("media-skip-backward")));
     d->nextBtn->setIcon(QIcon::fromTheme(QLatin1String("media-skip-forward")));
     d->stopBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-stop")));
-    d->setupBtn->setIcon(QIcon::fromTheme(QLatin1String("preferences-system")));
+    d->setupBtn->setIcon(QIcon::fromTheme(QLatin1String("systemsettings")));
 
     int num = qApp->screens().count();
 
