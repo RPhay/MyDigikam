@@ -667,4 +667,5 @@ BUGFIXES:
 649 ==> 419171 - Tagging multiple images at once broken with commit "modified CoreDB to perform recordChangeSet operation on tags".
 650 ==> 419409 - Exif dates shown are wrong in some images.
 651 ==> 419410 - Fuji S3Pro Image Preview Rotation is wrong.
-652 ==> 
+652 ==> 419294 - Open with does not work with collection on network shares (on Windows).
+653 ==> 
