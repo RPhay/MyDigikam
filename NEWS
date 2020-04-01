@@ -669,4 +669,5 @@ BUGFIXES:
 651 ==> 419410 - Fuji S3Pro Image Preview Rotation is wrong.
 652 ==> 419294 - Open with does not work with collection on network shares (on Windows).
 653 ==> 418120 - Uninstaller recursively deleted C:/ drive.
-654 ==> 
+654 ==> 419510 - Digikam crashed on exit after importing collection.
+655 ==> 
