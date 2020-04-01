@@ -233,10 +233,12 @@
         ;folder with the name 'bin' in all subdirectories of ${BUNDLEPATH}
 
         SetOutPath "$INSTDIR\"
-        File "${BUNDLEPATH}\*.dll"
         File "${BUNDLEPATH}\*.exe"
         File "${BUNDLEPATH}\*.conf"
         File "${BUNDLEPATH}\*.rcc"
+
+        SetOutPath "$INSTDIR\bin"
+        File "${BUNDLEPATH}\*.dll"
 
         SetOutPath "$INSTDIR\etc"
         File /r "${BUNDLEPATH}\etc\*.*"
@@ -315,7 +317,6 @@
         Call un.CheckDigikamRunning
         Call un.CheckShowfotoRunning
 
-        Delete "$INSTDIR\*.dll"
         Delete "$INSTDIR\*.exe"
         Delete "$INSTDIR\*.conf"
         Delete "$INSTDIR\*.rcc"
