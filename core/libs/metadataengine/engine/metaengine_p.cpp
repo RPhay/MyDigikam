@@ -195,7 +195,7 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
 
     QStringList rawTiffBasedSupported, rawTiffBasedNotSupported;
 
-    // Raw files supported by Exiv2 0.26
+    // Raw files supported by Exiv2 0.27
 
     rawTiffBasedSupported << QLatin1String("cr2")
                           << QLatin1String("crw")
@@ -205,7 +205,7 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
                           << QLatin1String("orf")
                           << QLatin1String("srw");
 
-    // Raw files not supported by Exiv2 0.26
+    // Raw files not supported by Exiv2 0.27
 
     rawTiffBasedNotSupported << QLatin1String("3fr")
                              << QLatin1String("arw")
@@ -214,8 +214,10 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
                              << QLatin1String("k25")
                              << QLatin1String("kdc")
                              << QLatin1String("mos")
+                             << QLatin1String("mrw")
                              << QLatin1String("raf")
                              << QLatin1String("raw")
+                             << QLatin1String("rw2")
                              << QLatin1String("sr2")
                              << QLatin1String("srf")
                              << QLatin1String("rw2");
