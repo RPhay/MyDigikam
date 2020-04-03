@@ -32,6 +32,7 @@
 
 // Local includes
 
+#include "digikam_config.h"
 #include "digikam_debug.h"
 #include "iccsettings.h"
 #include "kmemoryinfo.h"
@@ -461,7 +462,11 @@ void ClassicLoadingCacheFileWatch::addedImage(const QString& filePath)
     // schedule update of file watch
     // QFileSystemWatch can only be accessed from main thread!
 
+#ifndef Q_OS_WIN
+
     emit signalUpdateDirWatch();
+
+#endif
 }
 
 void ClassicLoadingCacheFileWatch::addedThumbnail(const QString& filePath)
