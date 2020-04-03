@@ -87,8 +87,8 @@ public:
         saveFaceTags(nullptr),
         savePosition(nullptr),
         useLazySync(nullptr),
-        writeRawFilesBox(nullptr),
         writeDngFilesBox(nullptr),
+        writeRawFilesBox(nullptr),
         writeXMPSidecarBox(nullptr),
         readXMPSidecarBox(nullptr),
         sidecarFileNameBox(nullptr),
@@ -132,8 +132,8 @@ public:
     QCheckBox*           savePosition;
 
     QCheckBox*           useLazySync;
-    QCheckBox*           writeRawFilesBox;
     QCheckBox*           writeDngFilesBox;
+    QCheckBox*           writeRawFilesBox;
     QCheckBox*           writeXMPSidecarBox;
     QCheckBox*           readXMPSidecarBox;
     QCheckBox*           sidecarFileNameBox;
@@ -265,17 +265,18 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->useLazySync->setWhatsThis(i18nc("@info:whatsthis",
                                        "Instead of synchronizing metadata, just schedule it for synchronization."
                                        "Synchronization can be done later by triggering the apply pending, or at digikam exit"));
+
+    d->writeDngFilesBox   = new QCheckBox;
+    d->writeDngFilesBox->setText(i18nc("@option:check", "Write metadata to DNG files"));
+    d->writeDngFilesBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to write metadata into DNG files."));
+    d->writeDngFilesBox->setEnabled(MetaEngine::supportMetadataWritting(QLatin1String("image/x-raw")));
+
     d->writeRawFilesBox   = new QCheckBox;
-    d->writeRawFilesBox->setText(i18nc("@option:check", "If possible write Metadata to RAW files (experimental)"));
+    d->writeRawFilesBox->setText(i18nc("@option:check", "If possible write metadata to RAW files (experimental)"));
     d->writeRawFilesBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to write metadata into RAW TIFF/EP files. "
                                             "This feature requires the Exiv2 shared library, version >= 0.18.0. It is still "
                                             "experimental, and is disabled by default."));
     d->writeRawFilesBox->setEnabled(MetaEngine::supportMetadataWritting(QLatin1String("image/x-raw")));
-
-    d->writeDngFilesBox   = new QCheckBox;
-    d->writeDngFilesBox->setText(i18nc("@option:check", "If possible write Metadata to DNG files"));
-    d->writeDngFilesBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to write metadata into DNG files."));
-    d->writeDngFilesBox->setEnabled(MetaEngine::supportMetadataWritting(QLatin1String("image/x-raw")));
 
     d->updateFileTimeStampBox = new QCheckBox;
     d->updateFileTimeStampBox->setText(i18nc("@option:check", "&Update file modification timestamp when files are modified"));
@@ -305,8 +306,8 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     readWriteLayout->addWidget(readWriteIconLabel,          0, 0, 2, 3);
     readWriteLayout->addWidget(readWriteLabel,              0, 1, 2, 3);
     readWriteLayout->addWidget(d->useLazySync,              2, 0, 1, 3);
-    readWriteLayout->addWidget(d->writeRawFilesBox,         3, 0, 1, 3);
-    readWriteLayout->addWidget(d->writeDngFilesBox,         4, 0, 1, 3);
+    readWriteLayout->addWidget(d->writeDngFilesBox,         3, 0, 1, 3);
+    readWriteLayout->addWidget(d->writeRawFilesBox,         4, 0, 1, 3);
     readWriteLayout->addWidget(d->updateFileTimeStampBox,   5, 0, 1, 3);
     readWriteLayout->addWidget(d->rescanImageIfModifiedBox, 6, 0, 1, 3);
     readWriteLayout->addWidget(d->clearMetadataIfRescanBox, 7, 0, 1, 3);
@@ -738,8 +739,8 @@ void SetupMetadata::applySettings()
     set.savePosition          = d->savePosition->isChecked();
 
     set.useLazySync           = d->useLazySync->isChecked();
-    set.writeRawFiles         = d->writeRawFilesBox->isChecked();
     set.writeDngFiles         = d->writeDngFilesBox->isChecked();
+    set.writeRawFiles         = d->writeRawFilesBox->isChecked();
     set.useXMPSidecar4Reading = d->readXMPSidecarBox->isChecked();
     set.useCompatibleFileName = d->sidecarFileNameBox->isChecked();
 
@@ -823,8 +824,8 @@ void SetupMetadata::readSettings()
     d->savePosition->setChecked(set.savePosition);
 
     d->useLazySync->setChecked(set.useLazySync);
-    d->writeRawFilesBox->setChecked(set.writeRawFiles);
     d->writeDngFilesBox->setChecked(set.writeDngFiles);
+    d->writeRawFilesBox->setChecked(set.writeRawFiles);
     d->readXMPSidecarBox->setChecked(set.useXMPSidecar4Reading);
     d->sidecarFileNameBox->setChecked(set.useCompatibleFileName);
     d->updateFileTimeStampBox->setChecked(set.updateFileTimeStamp);
