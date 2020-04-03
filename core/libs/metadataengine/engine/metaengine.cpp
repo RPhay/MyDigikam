@@ -271,6 +271,16 @@ bool MetaEngine::writeRawFiles() const
     return d->writeRawFiles;
 }
 
+void MetaEngine::setWriteDngFiles(const bool on)
+{
+    d->writeDngFiles = on;
+}
+
+bool MetaEngine::writeDngFiles() const
+{
+    return d->writeDngFiles;
+}
+
 void MetaEngine::setUseXMPSidecar4Reading(const bool on)
 {
     d->useXMPSidecar4Reading = on;

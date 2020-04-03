@@ -255,6 +255,16 @@ public:
     bool writeRawFiles() const;
 
     /**
+     * Enable or disable writing metadata operations to DNG files.
+     */
+    void setWriteDngFiles(const bool on);
+
+    /**
+     * Return true if writing metadata operations on DNG files is enabled.
+     */
+    bool writeDngFiles() const;
+
+    /**
      * Enable or disable using XMP sidecar for reading metadata.
      */
     void setUseXMPSidecar4Reading(const bool on);

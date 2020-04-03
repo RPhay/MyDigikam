@@ -1213,13 +1213,13 @@ int DNGWriter::convert()
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "DNGWriter: cleanup makernotes using Exiv2" ;
 
-                meta.setWriteRawFiles(true);
-                meta.removeExifTag("Exif.OlympusIp.BlackLevel", false);
+                meta.setWriteDngFiles(true);
+                meta.removeExifTag("Exif.OlympusIp.BlackLevel");
             }
             else
             {
                 // Don't touch DNG file and create XMP sidecar depending of host application settings.
-                meta.setWriteRawFiles(false);
+                meta.setWriteDngFiles(false);
             }
 
             meta.applyChanges();

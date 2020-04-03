@@ -670,4 +670,5 @@ BUGFIXES:
 652 ==> 419294 - Open with does not work with collection on network shares (on Windows).
 653 ==> 418120 - Uninstaller recursively deleted C:/ drive.
 654 ==> 419510 - Digikam crashed on exit after importing collection.
-655 ==> 
+655 ==> 380838 - Metadata only written to DNG when "write metadata to Raw" selected.
+656 ==> 

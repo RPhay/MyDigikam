@@ -99,6 +99,7 @@ public:
     bool                            savePosition;
 
     bool                            writeRawFiles;
+    bool                            writeDngFiles;
     bool                            updateFileTimeStamp;
     bool                            rescanImageIfModified;
     bool                            clearMetadataIfRescan;

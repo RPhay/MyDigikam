@@ -51,6 +51,7 @@ MetaEngineSettingsContainer::MetaEngineSettingsContainer()
       saveFaceTags(false),
       savePosition(false),
       writeRawFiles(false),
+      writeDngFiles(false),
       updateFileTimeStamp(true),
       rescanImageIfModified(false),
       clearMetadataIfRescan(false),
@@ -84,6 +85,7 @@ void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
     saveRating            = group.readEntry("Save Rating",                 false);
 
     writeRawFiles         = group.readEntry("Write Metadata To RAW Files", false);
+    writeDngFiles         = group.readEntry("Write Metadata To DNG Files", false);
     useXMPSidecar4Reading = group.readEntry("Use XMP Sidecar For Reading", false);
     useCompatibleFileName = group.readEntry("Use Compatible File Name",    false);
     metadataWritingMode   = (MetaEngine::MetadataWritingMode)
@@ -135,6 +137,7 @@ void MetaEngineSettingsContainer::writeToConfig(KConfigGroup& group) const
     group.writeEntry("Save Rating",                 saveRating);
 
     group.writeEntry("Write Metadata To RAW Files", writeRawFiles);
+    group.writeEntry("Write Metadata To DNG Files", writeDngFiles);
     group.writeEntry("Use XMP Sidecar For Reading", useXMPSidecar4Reading);
     group.writeEntry("Use Compatible File Name",    useCompatibleFileName);
     group.writeEntry("Metadata Writing Mode",       (int)metadataWritingMode);
@@ -177,6 +180,8 @@ QDebug operator<<(QDebug dbg, const MetaEngineSettingsContainer& inf)
                   << inf.savePosition << "), ";
     dbg.nospace() << "writeRawFiles("
                   << inf.writeRawFiles << "), ";
+    dbg.nospace() << "writeDngFiles("
+                  << inf.writeDngFiles << "), ";
     dbg.nospace() << "updateFileTimeStamp("
                   << inf.updateFileTimeStamp << "), ";
     dbg.nospace() << "rescanImageIfModified("
