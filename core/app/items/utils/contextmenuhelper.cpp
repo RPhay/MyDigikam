@@ -384,7 +384,7 @@ void ContextMenuHelper::slotOpenWith(QAction* action)
         sei.lpFile           = (LPCWSTR)QDir::toNativeSeparators(d->selectedItems.first().toLocalFile()).utf16();
         ShellExecuteEx(&sei);
 
-        qCDebug(DIGIKAM_GENERAL_LOG) << "ShellExecuteEx::openas called";
+        qCDebug(DIGIKAM_GENERAL_LOG) << "ShellExecuteEx::openas return code:" << GetLastError();
     }
 
 #else // Q_OS_WIN
