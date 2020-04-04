@@ -671,4 +671,6 @@ BUGFIXES:
 653 ==> 418120 - Uninstaller recursively deleted C:/ drive.
 654 ==> 419510 - Digikam crashed on exit after importing collection.
 655 ==> 380838 - Metadata only written to DNG when "write metadata to Raw" selected.
-656 ==> 
+656 ==> 402938 - Rename album an within album property fails when a subalbum exists.
+657 ==> 417737 - File operations locked under Windows.
+658 ==> 
