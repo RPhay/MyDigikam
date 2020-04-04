@@ -563,6 +563,19 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
     int numImagesWithoutGrouped          = d->view->allUrls(false).count();
     ItemInfoList selectionWithoutGrouped = d->view->selectedInfoList(true, false);
 
+    qlonglong selectionFileSize = 0;
+    qlonglong listAllFileSize = 0;
+
+    for (const ItemInfo info : selection)
+    {
+        selectionFileSize += info.fileSize();
+    }
+
+    for (const ItemInfo info : listAll)
+    {
+        listAllFileSize += info.fileSize();
+    }
+
     Album* const album                   = d->view->currentAlbum();
 
     if (album && (album->type() == Album::PHYSICAL))
@@ -603,8 +616,10 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
         {
             if (numImagesWithGrouped == numImagesWithoutGrouped)
             {
-                statusBarSelectionText = i18n("%1/%2 items selected",
-                                              selection.count(), numImagesWithoutGrouped);
+                statusBarSelectionText = i18n("%1/%2 items selected (%3/%4)",
+                                              selection.count(), numImagesWithoutGrouped,
+                                              ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
+                                              ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
                 break;
             }
 
@@ -613,8 +628,10 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
                 if (selection.count() == selectionWithoutGrouped.count())
                 {
                     statusBarSelectionText
-                            = i18n("%1/%2 [%3] items selected", selectionWithoutGrouped.count(),
-                                   numImagesWithoutGrouped, numImagesWithGrouped);
+                            = i18n("%1/%2 [%3] items selected (%4/%5)", selectionWithoutGrouped.count(),
+                                   numImagesWithoutGrouped, numImagesWithGrouped,
+                                   ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
+                                   ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
                     statusBarSelectionToolTip
                             = i18n("%1/%2 items selected. Total with grouped items: %3",
                                    selectionWithoutGrouped.count(), numImagesWithoutGrouped,
@@ -623,9 +640,11 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
                 else
                 {
                     statusBarSelectionText
-                            = i18n("%1/%2 [%3/%4] items selected",
+                            = i18n("%1/%2 [%3/%4] items selected (%5/%6)",
                                    selectionWithoutGrouped.count(), numImagesWithoutGrouped,
-                                   selection.count(), numImagesWithGrouped);
+                                   selection.count(), numImagesWithGrouped,
+                                   ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
+                                   ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
                     statusBarSelectionToolTip
                             = i18n("%1/%2 items selected. With grouped items: %3/%4",
                                    selectionWithoutGrouped.count(), numImagesWithoutGrouped,
@@ -661,7 +680,7 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
                         = d->view->allInfo(false).indexOf(selectionWithoutGrouped.first()) + 1;
                 statusBarSelectionText
                         = selection.first().fileUrl().fileName()
-                          + i18n(" (%1 of %2 [%3])", indexWithoutGrouped,
+                          + i18n(" (%1 of %2 [%3] )", indexWithoutGrouped,
                                  numImagesWithoutGrouped, numImagesWithGrouped);
                 statusBarSelectionToolTip
                         = selection.first().fileUrl().fileName()
