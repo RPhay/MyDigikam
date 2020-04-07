@@ -92,9 +92,9 @@ public:
           xmax(0),
           animationState(0),
           animation(nullptr),
+          progressPix(nullptr),
           histogramPainter(nullptr)
     {
-        progressPix = DWorkingPixmap();
     }
 
 public:
@@ -123,7 +123,7 @@ public:
 
     int                              animationState;
     QPropertyAnimation*              animation;
-    DWorkingPixmap                   progressPix;
+    DWorkingPixmap*                  progressPix;
 
     DColor                           colorGuide;
 
@@ -136,6 +136,7 @@ HistogramWidget::HistogramWidget(int w, int h,
     : QWidget(parent),
       d(new Private)
 {
+    d->progressPix  = new DWorkingPixmap(this);
     setup(w, h, selectMode, statisticsVisible);
     d->showProgress = showProgress;
 }
@@ -156,8 +157,8 @@ void HistogramWidget::setup(int w, int h, bool selectMode, bool statisticsVisibl
     d->histogramPainter  = new HistogramPainter(this);
     d->animation         = new QPropertyAnimation(this, "animationState", this);
     d->animation->setStartValue(0);
-    d->animation->setEndValue(d->progressPix.frameCount() - 1);
-    d->animation->setDuration(200 * d->progressPix.frameCount());
+    d->animation->setEndValue(d->progressPix->frameCount() - 1);
+    d->animation->setDuration(200 * d->progressPix->frameCount());
     d->animation->setLoopCount(-1);
 
     setMouseTracking(true);
@@ -489,7 +490,7 @@ void HistogramWidget::paintEvent(QPaintEvent*)
 
         // In first, we draw an animation.
 
-        QPixmap anim = d->progressPix.frameAt(d->animationState);
+        QPixmap anim = d->progressPix->frameAt(d->animationState);
 
         // ... and we render busy text.
 

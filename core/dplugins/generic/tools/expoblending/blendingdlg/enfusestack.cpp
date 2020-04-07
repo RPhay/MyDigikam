@@ -151,7 +151,7 @@ public:
       : outputFormat(DSaveSettingsWidget::OUTPUT_PNG),
         progressCount(0),
         progressTimer(nullptr),
-        progressPix(DWorkingPixmap()),
+        progressPix(nullptr),
         processItem(nullptr)
     {
     }
@@ -162,7 +162,7 @@ public:
 
     int                               progressCount;
     QTimer*                           progressTimer;
-    DWorkingPixmap                    progressPix;
+    DWorkingPixmap*                   progressPix;
     EnfuseStackItem*                  processItem;
 };
 
@@ -171,6 +171,7 @@ EnfuseStackList::EnfuseStackList(QWidget* const parent)
       d(new Private)
 {
     d->progressTimer = new QTimer(this);
+    d->progressPix   = new DWorkingPixmap(this);
 
     setContextMenuPolicy(Qt::CustomContextMenu);
     setIconSize(QSize(64, 64));
@@ -343,7 +344,7 @@ void EnfuseStackList::slotItemClicked(QTreeWidgetItem* item)
 
 void EnfuseStackList::slotProgressTimerDone()
 {
-    d->processItem->setProgressAnimation(d->progressPix.frameAt(d->progressCount));
+    d->processItem->setProgressAnimation(d->progressPix->frameAt(d->progressCount));
     d->progressCount++;
 
     if (d->progressCount == 8)

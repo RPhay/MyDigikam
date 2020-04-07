@@ -477,18 +477,18 @@ public:
     {
     }
 
-    int            active;
-    DWorkingPixmap progressPix;
-    QTimer*        progressTimer;
-    int            progressIndex;
-    QListWidget*   statusList;
+    int             active;
+    DWorkingPixmap* progressPix;
+    QTimer*         progressTimer;
+    int             progressIndex;
+    QListWidget*    statusList;
 };
 
 DbShrinkDialog::DbShrinkDialog(QWidget* const parent)
     : QDialog(parent),
       d(new Private)
 {
-    d->progressPix   = DWorkingPixmap();
+    d->progressPix   = new DWorkingPixmap(this);
     d->progressTimer = new QTimer(parent);
     d->statusList    = new QListWidget(this);
 
@@ -550,7 +550,7 @@ void DbShrinkDialog::setActive(const int pos)
     {
         if (d->active >= 0)
         {
-            d->statusList->item(d->active)->setIcon(d->progressPix.frameAt(0));
+            d->statusList->item(d->active)->setIcon(d->progressPix->frameAt(0));
             d->progressTimer->start(300);
             d->progressIndex = 1;
         }
@@ -582,12 +582,12 @@ void DbShrinkDialog::slotProgressTimerDone()
         return;
     }
 
-    if (d->progressIndex == d->progressPix.frameCount())
+    if (d->progressIndex == d->progressPix->frameCount())
     {
         d->progressIndex = 0;
     }
 
-    d->statusList->item(d->active)->setIcon(d->progressPix.frameAt(d->progressIndex));
+    d->statusList->item(d->active)->setIcon(d->progressPix->frameAt(d->progressIndex));
     ++d->progressIndex;
 }
 

@@ -60,7 +60,7 @@ public:
 
     explicit Private()
     {
-        progressPix   = DWorkingPixmap();
+        progressPix   = nullptr;
         progressCount = 0;
         progressTimer = nullptr;
         progressLabel = nullptr,
@@ -80,7 +80,7 @@ public:
 
     QTextBrowser*        detailsText;
 
-    DWorkingPixmap       progressPix;
+    DWorkingPixmap*      progressPix;
 
     ExpoBlendingManager* mngr;
 };
@@ -91,6 +91,7 @@ ExpoBlendingPreProcessPage::ExpoBlendingPreProcessPage(ExpoBlendingManager* cons
 {
     d->mngr           = mngr;
     d->progressTimer  = new QTimer(this);
+    d->progressPix    = new DWorkingPixmap(this);
     DVBox* const vbox = new DVBox(this);
     d->title          = new QLabel(vbox);
     d->title->setWordWrap(true);
@@ -189,7 +190,7 @@ void ExpoBlendingPreProcessPage::cancel()
 
 void ExpoBlendingPreProcessPage::slotProgressTimerDone()
 {
-    d->progressLabel->setPixmap(d->progressPix.frameAt(d->progressCount));
+    d->progressLabel->setPixmap(d->progressPix->frameAt(d->progressCount));
 
     d->progressCount++;
 

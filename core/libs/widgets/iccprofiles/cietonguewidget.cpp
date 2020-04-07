@@ -170,7 +170,7 @@ public:
         progressCount(0),
         gridside(0),
         progressTimer(nullptr),
-        progressPix(DWorkingPixmap()),
+        progressPix(nullptr),
         hMonitorProfile(nullptr),
         hXFORM(nullptr)
     {
@@ -195,7 +195,7 @@ public:
     QTimer*                      progressTimer;
 
     QPixmap                      pixmap;
-    DWorkingPixmap               progressPix;
+    DWorkingPixmap*              progressPix;
 
     cmsHPROFILE                  hMonitorProfile;
     cmsHTRANSFORM                hXFORM;
@@ -208,6 +208,7 @@ CIETongueWidget::CIETongueWidget(int w, int h, QWidget* const parent, cmsHPROFIL
 {
     cmsHPROFILE hXYZProfile;
     d->progressTimer = new QTimer(this);
+    d->progressPix   = new DWorkingPixmap(this);
     setMinimumSize(w, h);
     setAttribute(Qt::WA_DeleteOnClose);
     dkCmsErrorAction(LCMS_ERROR_SHOW);
@@ -765,10 +766,10 @@ void CIETongueWidget::paintEvent(QPaintEvent*)
     {
         // In first, we draw an animation.
 
-        QPixmap anim(d->progressPix.frameAt(d->progressCount));
+        QPixmap anim(d->progressPix->frameAt(d->progressCount));
         d->progressCount++;
 
-        if (d->progressCount >= d->progressPix.frameCount())
+        if (d->progressCount >= d->progressPix->frameCount())
         {
             d->progressCount = 0;
         }

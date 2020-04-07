@@ -58,7 +58,7 @@ public:
           filterItemExtraSpacing(4),
           animationState(0),
           animation(nullptr),
-          workingPixmap(DWorkingPixmap()),
+          workingPixmap(nullptr),
           categoryDrawer(nullptr),
           thumbnailSize(64),
           thumbsWaitingFor(0),
@@ -71,7 +71,7 @@ public:
 
     int                           animationState;
     QPropertyAnimation*           animation;
-    DWorkingPixmap                workingPixmap;
+    DWorkingPixmap*               workingPixmap;
     DCategoryDrawer*              categoryDrawer;
     int                           thumbnailSize;
 
@@ -99,13 +99,15 @@ public:
 };
 
 VersionsDelegate::VersionsDelegate(QObject* const parent)
-    : QStyledItemDelegate(parent), d(new Private)
+    : QStyledItemDelegate(parent),
+      d(new Private)
 {
+    d->workingPixmap  = new DWorkingPixmap(this);
     d->categoryDrawer = new DCategoryDrawer(nullptr);
     d->animation      = new QPropertyAnimation(this, "animationState", this);
     d->animation->setStartValue(0);
-    d->animation->setEndValue(d->workingPixmap.frameCount() - 1);
-    d->animation->setDuration(100 * d->workingPixmap.frameCount());
+    d->animation->setEndValue(d->workingPixmap->frameCount() - 1);
+    d->animation->setDuration(100 * d->workingPixmap->frameCount());
     d->animation->setLoopCount(-1);
 }
 
@@ -262,7 +264,7 @@ void VersionsDelegate::initStyleOption(QStyleOptionViewItem* option, const QMode
 
             if (pix.isNull())
             {
-                pix = d->workingPixmap.frameAt(d->animationState);
+                pix = d->workingPixmap->frameAt(d->animationState);
                 d->thumbsWaitingFor++;
             }
 
