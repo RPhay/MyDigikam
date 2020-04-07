@@ -674,4 +674,5 @@ BUGFIXES:
 656 ==> 402938 - Rename album an within album property fails when a subalbum exists.
 657 ==> 417737 - File operations locked under Windows.
 658 ==> 419667 - Preview in file opener.
-659 ==> 
+659 ==> 419744 - 7.0.0-beta3 Geolocation Editor does not save new location.
+660 ==> 

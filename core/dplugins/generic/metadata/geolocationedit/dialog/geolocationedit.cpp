@@ -960,9 +960,12 @@ void GeolocationEdit::slotFileChangesSaved(int beginIndex, int endIndex)
                 errorList << d->fileIOFuture.resultAt(i);
             }
 
-            // To rescan item metadata from host.
+            if (!d->iface->supportAlbums())
+            {
+                // To rescan item metadata from host.
 
-            emit signalMetadataChangedForUrl(d->fileIOFuture.resultAt(i).first);
+                emit signalMetadataChangedForUrl(d->fileIOFuture.resultAt(i).first);
+            }
         }
 
         if (!errorList.isEmpty())
