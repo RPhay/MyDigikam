@@ -20,7 +20,7 @@ public:
     explicit ItemSelectionPropertiesTab(QWidget* const parent);
     ~ItemSelectionPropertiesTab();
     
-    void setCurrentURL(const QUrl &url = QUrl());
+    // void setCurrentURL(const QUrl &url = QUrl());
     void setCurrentInfos(const ItemInfoList &selection);
    
     // void setSelectionFileSize();    //what will this need? See from status bar.
