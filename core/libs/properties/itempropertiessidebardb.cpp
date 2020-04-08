@@ -224,7 +224,7 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
 {
     setCursor(Qt::WaitCursor);
 
-    if      ((tab == m_propertiesTab) && !m_dirtyPropertiesTab)
+    if      ((tab == m_propertiesStackedView) && !m_dirtyPropertiesTab)
     {
         m_propertiesTab->setCurrentURL(m_currentURL);
 
@@ -407,7 +407,7 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
             return;
         }
 
-        if ((tab == m_propertiesTab)
+        if ((tab == m_propertiesStackedView)
 
 #ifdef HAVE_MARBLE
 
@@ -438,7 +438,7 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
                     m_dirtyGpsTab = false;
                 }
 
-                if ((tab == m_propertiesTab)
+                if ((tab == m_propertiesStackedView)
 
 #ifdef HAVE_MARBLE
 
@@ -468,7 +468,7 @@ void ItemPropertiesSideBarDB::slotImageTagChanged(const ImageTagChangeset& chang
             return;
         }
 
-        if (tab == m_propertiesTab)
+        if (tab == m_propertiesStackedView)
         {
             ItemInfo& info = d->currentInfos.first();
 
