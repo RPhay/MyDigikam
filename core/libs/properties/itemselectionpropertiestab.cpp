@@ -8,7 +8,11 @@
 #include "klocalizedstring.h"
 
 //Local includes
+#include "itempropertiestab.h"
 #include "itempropertiestxtlabel.h"
+#include "iteminfo.h"
+#include "iteminfolist.h"
+
 namespace Digikam
 {
 class Q_DECL_HIDDEN ItemSelectionPropertiesTab::Private
@@ -62,4 +66,15 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
 ItemSelectionPropertiesTab::~ItemSelectionPropertiesTab(){
     delete d;
 }
+
+void ItemSelectionPropertiesTab::setCurrentInfos(const ItemInfoList &selection)
+{
+    qlonglong selectionFileSize = 0;
+    foreach (const ItemInfo& info, selection)
+    {
+        selectionFileSize += info.fileSize();
+    }
+    d->labelSelectionSize->setAdjustedText(ItemPropertiesTab::humanReadableBytesCount(selectionFileSize));
+}
+
 } // namespace Digikam 
