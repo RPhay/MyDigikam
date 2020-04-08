@@ -67,7 +67,6 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
 ItemSelectionPropertiesTab::~ItemSelectionPropertiesTab(){
     delete d;
 }
-
 void ItemSelectionPropertiesTab::setCurrentInfos(const ItemInfoList &selection)
 {
     qlonglong selectionFileSize = 0;
