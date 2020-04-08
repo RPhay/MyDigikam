@@ -50,6 +50,7 @@
 #include "itemdescedittab.h"
 #include "iteminfo.h"
 #include "itempropertiestab.h"
+#include "itemselectionpropertiestab.h"
 #include "itempropertiesmetadatatab.h"
 #include "itempropertiescolorstab.h"
 #include "itempropertiesversionstab.h"
@@ -227,6 +228,13 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
     if      ((tab == m_propertiesStackedView) && !m_dirtyPropertiesTab)
     {
         m_propertiesTab->setCurrentURL(m_currentURL);
+        m_selectionPropertiesTab->setCurrentInfos(d->currentInfos);
+
+        if(d->currentInfos.count() > 1)
+            m_propertiesStackedView->setCurrentIndex(1);
+        else{
+            m_propertiesStackedView->setCurrentIndex(0);
+        }
 
         if (d->currentInfos.isEmpty())
         {
