@@ -2,6 +2,7 @@
 #define DIGIKAM_ITEM_SELECTION_PROPERTIES_TAB_H
 
 //Qt includes
+#include <QUrl>
 
 //Local includes
 #include "dexpanderbox.h"
@@ -10,12 +11,18 @@
 namespace Digikam
 {
 
+class ItemInfoList;
+
 class DIGIKAM_EXPORT ItemSelectionPropertiesTab : public DExpanderBox
 {
 public:
 
     explicit ItemSelectionPropertiesTab(QWidget* const parent);
     ~ItemSelectionPropertiesTab();
+    
+    void setCurrentURL(const QUrl &url = QUrl());
+    void setCurrentInfos(const ItemInfoList &selection);
+   
     // void setSelectionFileSize();    //what will this need? See from status bar.
 
 private:
