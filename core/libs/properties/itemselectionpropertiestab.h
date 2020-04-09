@@ -11,15 +11,17 @@
 namespace Digikam
 {
 
+class ItemInfoList;
+
 class DIGIKAM_EXPORT ItemSelectionPropertiesTab : public DExpanderBox
 {
 public:
 
     explicit ItemSelectionPropertiesTab(QWidget* const parent);
     ~ItemSelectionPropertiesTab();
-    
-    // void setCurrentURL(const QUrl &url = QUrl());   
-    void setSelectionSize(const QString &str);    //what will this need? See from status bar.
+
+    void setDisabled();
+    void setSelectionSize(const QString &str);
 
 private:
 
