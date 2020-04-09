@@ -79,8 +79,7 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
 
     m_propertiesStackedView->addWidget(m_propertiesTab);
     m_propertiesStackedView->addWidget(m_selectionPropertiesTab);
-    
-    m_propertiesStackedView->setCurrentIndex(1);
+
     // NOTE: Special case with Showfoto which will only be able to load image, not video.
 
     if (QApplication::applicationName() != QLatin1String("digikam"))
@@ -88,14 +87,14 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
         m_propertiesTab->setVideoInfoDisable(true);
     }
 
-    appendTab(m_propertiesStackedView, QIcon::fromTheme(QLatin1String("configure")), i18n("Properties"));
-    appendTab(m_metadataTab, QIcon::fromTheme(QLatin1String("format-text-code")), i18n("Metadata")); // krazy:exclude=iconnames
-    appendTab(m_colorTab, QIcon::fromTheme(QLatin1String("fill-color")), i18n("Colors"));
+    appendTab(m_propertiesStackedView, QIcon::fromTheme(QLatin1String("configure")),        i18n("Properties"));
+    appendTab(m_metadataTab,           QIcon::fromTheme(QLatin1String("format-text-code")), i18n("Metadata")); // krazy:exclude=iconnames
+    appendTab(m_colorTab,              QIcon::fromTheme(QLatin1String("fill-color")),       i18n("Colors"));
 
 #ifdef HAVE_MARBLE
 
     m_gpsTab = new ItemPropertiesGPSTab(parent);
-    appendTab(m_gpsTab, QIcon::fromTheme(QLatin1String("globe")), i18n("Map"));
+    appendTab(m_gpsTab,                QIcon::fromTheme(QLatin1String("globe")),            i18n("Map"));
 
 #endif // HAVE_MARBLE
 
@@ -112,21 +111,21 @@ ItemPropertiesSideBar::~ItemPropertiesSideBar()
 {
 }
 
-void ItemPropertiesSideBar::itemChanged(const QUrl &url, const QRect &rect, DImg *const img)
+void ItemPropertiesSideBar::itemChanged(const QUrl& url, const QRect& rect, DImg* const img)
 {
     if (!url.isValid())
     {
         return;
     }
 
-    m_currentURL = url;
-    m_currentRect = rect;
-    m_image = img;
+    m_currentURL         = url;
+    m_currentRect        = rect;
+    m_image              = img;
     m_dirtyPropertiesTab = false;
-    m_dirtyMetadataTab = false;
-    m_dirtyColorTab = false;
-    m_dirtyGpsTab = false;
-    m_dirtyHistoryTab = false;
+    m_dirtyMetadataTab   = false;
+    m_dirtyColorTab      = false;
+    m_dirtyGpsTab        = false;
+    m_dirtyHistoryTab    = false;
 
     slotChangedTab(getActiveTab());
 }
@@ -146,13 +145,13 @@ void ItemPropertiesSideBar::slotNoCurrentItem()
 
 #endif // HAVE_MARBLE
     m_dirtyPropertiesTab = false;
-    m_dirtyMetadataTab = false;
-    m_dirtyColorTab = false;
-    m_dirtyGpsTab = false;
-    m_dirtyHistoryTab = false;
+    m_dirtyMetadataTab   = false;
+    m_dirtyColorTab      = false;
+    m_dirtyGpsTab        = false;
+    m_dirtyHistoryTab    = false;
 }
 
-void ItemPropertiesSideBar::slotImageSelectionChanged(const QRect &rect)
+void ItemPropertiesSideBar::slotImageSelectionChanged(const QRect& rect)
 {
     m_currentRect = rect;
 
@@ -166,7 +165,7 @@ void ItemPropertiesSideBar::slotImageSelectionChanged(const QRect &rect)
     }
 }
 
-void ItemPropertiesSideBar::slotChangedTab(QWidget *tab)
+void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
 {
     if (!m_currentURL.isValid())
     {
@@ -214,7 +213,7 @@ void ItemPropertiesSideBar::slotChangedTab(QWidget *tab)
     unsetCursor();
 }
 
-void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl &url)
+void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
 {
     if (!url.isValid())
     {
@@ -232,30 +231,31 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl &url)
     str = QLocale().toString(modifiedDate, QLocale::ShortFormat);
     m_propertiesTab->setFileModifiedDate(str);
 
-    str = QString::fromUtf8("%1 (%2)").arg(ItemPropertiesTab::humanReadableBytesCount(fileInfo.size())).arg(QLocale().toString(fileInfo.size()));
+    str = QString::fromUtf8("%1 (%2)").arg(ItemPropertiesTab::humanReadableBytesCount(fileInfo.size()))
+                                      .arg(QLocale().toString(fileInfo.size()));
     m_propertiesTab->setFileSize(str);
     m_propertiesTab->setFileOwner(QString::fromUtf8("%1 - %2").arg(fileInfo.owner()).arg(fileInfo.group()));
     m_propertiesTab->setFilePermissions(ItemPropertiesTab::permissionsString(fileInfo));
 
     // -- Image Properties --------------------------------------------------
 
-    QSize dims;
+    QSize   dims;
     QString bitDepth, colorMode;
     QString rawFilesExt = DRawDecoder::rawFiles();
-    QString ext = fileInfo.suffix().toUpper();
+    QString ext         = fileInfo.suffix().toUpper();
 
     if (!ext.isEmpty() && rawFilesExt.toUpper().contains(ext))
     {
         m_propertiesTab->setImageMime(i18n("RAW Image"));
-        bitDepth = QLatin1String("48");
-        dims = metaData.getItemDimensions();
-        colorMode = i18n("Uncalibrated");
+        bitDepth    = QLatin1String("48");
+        dims        = metaData.getItemDimensions();
+        colorMode   = i18n("Uncalibrated");
     }
     else
     {
         m_propertiesTab->setImageMime(QMimeDatabase().mimeTypeForFile(fileInfo).comment());
 
-        dims = metaData.getPixelSize();
+        dims        = metaData.getPixelSize();
 
         DImg img;
         img.loadItemInfo(url.toLocalFile(), false, false, false, false);
@@ -265,7 +265,8 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl &url)
 
     QString mpixels;
     mpixels.setNum(dims.width() * dims.height() / 1000000.0, 'f', 2);
-    str = (!dims.isValid()) ? i18n("Unknown") : i18n("%1x%2 (%3Mpx)", dims.width(), dims.height(), mpixels);
+    str = (!dims.isValid()) ? i18n("Unknown") : i18n("%1x%2 (%3Mpx)",
+            dims.width(), dims.height(), mpixels);
     m_propertiesTab->setItemDimensions(str);
 
     if (!dims.isValid())
@@ -279,7 +280,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl &url)
 
     m_propertiesTab->setImageRatio(str);
     m_propertiesTab->setImageColorMode(colorMode.isEmpty() ? unavailable : colorMode);
-    m_propertiesTab->setImageBitDepth(bitDepth.isEmpty() ? unavailable : i18n("%1 bpp", bitDepth));
+    m_propertiesTab->setImageBitDepth(bitDepth.isEmpty()   ? unavailable : i18n("%1 bpp", bitDepth));
     m_propertiesTab->setHasSidecar(DMetadata::hasSidecar(url.toLocalFile()) ? i18n("Yes") : i18n("No"));
 
     // -- Photograph information ------------------------------------------
@@ -289,7 +290,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl &url)
     m_propertiesTab->setPhotoInfoDisable(photoInfo.isEmpty());
     ItemPropertiesTab::shortenedMakeInfo(photoInfo.make);
     ItemPropertiesTab::shortenedModelInfo(photoInfo.model);
-    m_propertiesTab->setPhotoMake(photoInfo.make.isEmpty() ? unavailable : photoInfo.make);
+    m_propertiesTab->setPhotoMake(photoInfo.make.isEmpty()   ? unavailable : photoInfo.make);
     m_propertiesTab->setPhotoModel(photoInfo.model.isEmpty() ? unavailable : photoInfo.model);
 
     if (photoInfo.dateTime.isValid())
@@ -302,7 +303,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl &url)
         m_propertiesTab->setPhotoDateTime(unavailable);
     }
 
-    m_propertiesTab->setPhotoLens(photoInfo.lens.isEmpty() ? unavailable : photoInfo.lens);
+    m_propertiesTab->setPhotoLens(photoInfo.lens.isEmpty()         ? unavailable : photoInfo.lens);
     m_propertiesTab->setPhotoAperture(photoInfo.aperture.isEmpty() ? unavailable : photoInfo.aperture);
 
     if (photoInfo.focalLength35mm.isEmpty())
@@ -316,7 +317,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl &url)
     }
 
     m_propertiesTab->setPhotoExposureTime(photoInfo.exposureTime.isEmpty() ? unavailable : photoInfo.exposureTime);
-    m_propertiesTab->setPhotoSensitivity(photoInfo.sensitivity.isEmpty() ? unavailable : i18n("%1 ISO", photoInfo.sensitivity));
+    m_propertiesTab->setPhotoSensitivity(photoInfo.sensitivity.isEmpty()   ? unavailable : i18n("%1 ISO", photoInfo.sensitivity));
 
     if (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
     {
@@ -336,7 +337,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl &url)
         m_propertiesTab->setPhotoExposureMode(str);
     }
 
-    m_propertiesTab->setPhotoFlash(photoInfo.flash.isEmpty() ? unavailable : photoInfo.flash);
+    m_propertiesTab->setPhotoFlash(photoInfo.flash.isEmpty()               ? unavailable : photoInfo.flash);
     m_propertiesTab->setPhotoWhiteBalance(photoInfo.whiteBalance.isEmpty() ? unavailable : photoInfo.whiteBalance);
 
     // -- Audio/Video information ------------------------------------------
@@ -345,13 +346,13 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl &url)
 
     m_propertiesTab->setVideoInfoDisable(videoInfo.isEmpty());
 
-    m_propertiesTab->setVideoAspectRatio(videoInfo.aspectRatio.isEmpty() ? unavailable : videoInfo.aspectRatio);
-    m_propertiesTab->setVideoDuration(videoInfo.duration.isEmpty() ? unavailable : videoInfo.duration);
-    m_propertiesTab->setVideoFrameRate(videoInfo.frameRate.isEmpty() ? unavailable : videoInfo.frameRate);
-    m_propertiesTab->setVideoVideoCodec(videoInfo.videoCodec.isEmpty() ? unavailable : videoInfo.videoCodec);
-    m_propertiesTab->setVideoAudioBitRate(videoInfo.audioBitRate.isEmpty() ? unavailable : videoInfo.audioBitRate);
+    m_propertiesTab->setVideoAspectRatio(videoInfo.aspectRatio.isEmpty()           ? unavailable : videoInfo.aspectRatio);
+    m_propertiesTab->setVideoDuration(videoInfo.duration.isEmpty()                 ? unavailable : videoInfo.duration);
+    m_propertiesTab->setVideoFrameRate(videoInfo.frameRate.isEmpty()               ? unavailable : videoInfo.frameRate);
+    m_propertiesTab->setVideoVideoCodec(videoInfo.videoCodec.isEmpty()             ? unavailable : videoInfo.videoCodec);
+    m_propertiesTab->setVideoAudioBitRate(videoInfo.audioBitRate.isEmpty()         ? unavailable : videoInfo.audioBitRate);
     m_propertiesTab->setVideoAudioChannelType(videoInfo.audioChannelType.isEmpty() ? unavailable : videoInfo.audioChannelType);
-    m_propertiesTab->setVideoAudioCodec(videoInfo.audioCodec.isEmpty() ? unavailable : videoInfo.audioCodec);
+    m_propertiesTab->setVideoAudioCodec(videoInfo.audioCodec.isEmpty()             ? unavailable : videoInfo.audioCodec);
 
     // -- Caption, ratings, tag information ---------------------
 
@@ -391,12 +392,12 @@ void ItemPropertiesSideBar::doLoadState()
 
 #ifdef HAVE_MARBLE
 
-    const KConfigGroup groupGPSTab = KConfigGroup(&group, entryName(QLatin1String("GPS Properties Tab")));
+    const KConfigGroup groupGPSTab      = KConfigGroup(&group, entryName(QLatin1String("GPS Properties Tab")));
     m_gpsTab->readSettings(groupGPSTab);
 
 #endif // HAVE_MARBLE
 
-    const KConfigGroup groupColorTab = KConfigGroup(&group, entryName(QLatin1String("Color Properties Tab")));
+    const KConfigGroup groupColorTab    = KConfigGroup(&group, entryName(QLatin1String("Color Properties Tab")));
     m_colorTab->readSettings(groupColorTab);
 
     const KConfigGroup groupMetadataTab = KConfigGroup(&group, entryName(QLatin1String("Metadata Properties Tab")));
@@ -413,12 +414,12 @@ void ItemPropertiesSideBar::doSaveState()
 
 #ifdef HAVE_MARBLE
 
-    KConfigGroup groupGPSTab = KConfigGroup(&group, entryName(QLatin1String("GPS Properties Tab")));
+    KConfigGroup groupGPSTab      = KConfigGroup(&group, entryName(QLatin1String("GPS Properties Tab")));
     m_gpsTab->writeSettings(groupGPSTab);
 
 #endif // HAVE_MARBLE
 
-    KConfigGroup groupColorTab = KConfigGroup(&group, entryName(QLatin1String("Color Properties Tab")));
+    KConfigGroup groupColorTab    = KConfigGroup(&group, entryName(QLatin1String("Color Properties Tab")));
     m_colorTab->writeSettings(groupColorTab);
 
     KConfigGroup groupMetadataTab = KConfigGroup(&group, entryName(QLatin1String("Metadata Properties Tab")));
