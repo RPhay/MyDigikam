@@ -24,6 +24,7 @@
 #include "itempropertiessidebar.h"
 
 // Qt includes
+
 #include <QRect>
 #include <QSplitter>
 #include <QFileInfo>
