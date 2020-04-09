@@ -3,6 +3,8 @@
 //Qt includes
 #include <QApplication>
 #include <QGridLayout>
+#include <QStyle>
+#include <QIcon>
 
 //KDE includes
 #include "klocalizedstring.h"
@@ -44,7 +46,7 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     QWidget* const w1 = new QWidget(this);
     QGridLayout* const glay1 = new QGridLayout(w1);
 
-    DTextLabelName* const selectionSize = new DTextLabelName(i18n("Selection Size: "), w1);
+    DTextLabelName* const selectionSize = new DTextLabelName(i18n("Size: "), w1);
 
     d->labelSelectionSize = new DTextLabelValue(QString(), w1);
 
@@ -62,13 +64,21 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     addStretch();
 }
 
-ItemSelectionPropertiesTab::~ItemSelectionPropertiesTab(){
+ItemSelectionPropertiesTab::~ItemSelectionPropertiesTab()
+{
     delete d;
+}
+
+void ItemSelectionPropertiesTab::setDisabled()
+{
+        d->labelSelectionSize->setAdjustedText(QString());
+        setEnabled(false);
 }
 
 void ItemSelectionPropertiesTab::setSelectionSize(const QString &str)
 {
     d->labelSelectionSize->setAdjustedText(str);
+    setEnabled(true);
 }
 
 } // namespace Digikam 
