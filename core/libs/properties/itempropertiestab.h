@@ -46,7 +46,7 @@ public:
     explicit ItemPropertiesTab(QWidget* const parent);
     ~ItemPropertiesTab();
 
-    void setCurrentURL(const QUrl& url=QUrl());
+    void setCurrentURL(const QUrl& url = QUrl());
 
     void setPhotoInfoDisable(const bool b);
     void setVideoInfoDisable(const bool b);
