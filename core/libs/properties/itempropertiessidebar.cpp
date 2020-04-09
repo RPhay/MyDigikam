@@ -145,6 +145,7 @@ void ItemPropertiesSideBar::slotNoCurrentItem()
     m_gpsTab->setCurrentURL();
 
 #endif // HAVE_MARBLE
+
     m_dirtyPropertiesTab = false;
     m_dirtyMetadataTab   = false;
     m_dirtyColorTab      = false;
@@ -256,7 +257,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     {
         m_propertiesTab->setImageMime(QMimeDatabase().mimeTypeForFile(fileInfo).comment());
 
-        dims        = metaData.getPixelSize();
+        dims       = metaData.getPixelSize();
 
         DImg img;
         img.loadItemInfo(url.toLocalFile(), false, false, false, false);

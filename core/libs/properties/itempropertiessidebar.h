@@ -82,6 +82,7 @@ protected Q_SLOTS:
     virtual void slotChangedTab(QWidget* tab);
 
 protected:
+
     /**
      * load the last view state from disk - called by StateSavingObject#loadState()
      */
@@ -96,21 +97,23 @@ protected:
 
 protected:
     
-    bool                       m_dirtyPropertiesTab;
-    bool                       m_dirtyMetadataTab;
-    bool                       m_dirtyColorTab;
-    bool                       m_dirtyGpsTab;
-    bool                       m_dirtyHistoryTab;
+    bool                        m_dirtyPropertiesTab;
+    bool                        m_dirtyMetadataTab;
+    bool                        m_dirtyColorTab;
+    bool                        m_dirtyGpsTab;
+    bool                        m_dirtyHistoryTab;
 
-    QRect                      m_currentRect;
+    QRect                       m_currentRect;
 
-    QUrl                       m_currentURL;
+    QUrl                        m_currentURL;
 
-    DImg*                      m_image;
+    DImg*                       m_image;
 
-    ItemPropertiesTab*         m_propertiesTab;
-    ItemPropertiesMetadataTab* m_metadataTab;
-    ItemPropertiesColorsTab*   m_colorTab;
+    QStackedWidget*             m_propertiesStackedView;
+    ItemPropertiesTab*          m_propertiesTab;
+    ItemSelectionPropertiesTab* m_selectionPropertiesTab; 
+    ItemPropertiesMetadataTab*  m_metadataTab;
+    ItemPropertiesColorsTab*    m_colorTab;
 
 #ifdef HAVE_MARBLE
 
