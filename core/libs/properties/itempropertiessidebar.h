@@ -59,13 +59,13 @@ class DIGIKAM_EXPORT ItemPropertiesSideBar : public Sidebar
     Q_OBJECT
 
 public:
-    explicit ItemPropertiesSideBar(QWidget *const parent,
-                                   SidebarSplitter *const splitter,
+    explicit ItemPropertiesSideBar(QWidget* const parent,
+                                   SidebarSplitter* const splitter,
                                    Qt::Edge side = Qt::LeftEdge,
                                    bool mimimizedDefault = false);
     ~ItemPropertiesSideBar();
 
-    virtual void itemChanged(const QUrl &url, const QRect &rect = QRect(), DImg *const img = nullptr);
+    virtual void itemChanged(const QUrl& url, const QRect& rect = QRect(), DImg* const img = nullptr);
 
 Q_SIGNALS:
 
@@ -74,12 +74,12 @@ Q_SIGNALS:
 public Q_SLOTS:
 
     void slotLoadMetadataFilters();
-    void slotImageSelectionChanged(const QRect &rect);
+    void slotImageSelectionChanged(const QRect& rect);
     virtual void slotNoCurrentItem();
 
 protected Q_SLOTS:
 
-    virtual void slotChangedTab(QWidget *tab);
+    virtual void slotChangedTab(QWidget* tab);
 
 protected:
     /**
@@ -92,32 +92,32 @@ protected:
      */
     void doSaveState() override;
 
-    virtual void setImagePropertiesInformation(const QUrl &url);
+    virtual void setImagePropertiesInformation(const QUrl& url);
 
 protected:
-    bool m_dirtyPropertiesTab;
-    bool m_dirtyMetadataTab;
-    bool m_dirtyColorTab;
-    bool m_dirtyGpsTab;
-    bool m_dirtyHistoryTab;
+    
+    bool                       m_dirtyPropertiesTab;
+    bool                       m_dirtyMetadataTab;
+    bool                       m_dirtyColorTab;
+    bool                       m_dirtyGpsTab;
+    bool                       m_dirtyHistoryTab;
 
-    QRect m_currentRect;
+    QRect                      m_currentRect;
 
-    QUrl m_currentURL;
+    QUrl                       m_currentURL;
 
-    DImg *m_image;
+    DImg*                      m_image;
 
-    QStackedWidget *m_propertiesStackedView;
-    ItemPropertiesTab *m_propertiesTab;
-    ItemSelectionPropertiesTab *m_selectionPropertiesTab;
-    ItemPropertiesMetadataTab *m_metadataTab;
-    ItemPropertiesColorsTab *m_colorTab;
+    ItemPropertiesTab*         m_propertiesTab;
+    ItemPropertiesMetadataTab* m_metadataTab;
+    ItemPropertiesColorsTab*   m_colorTab;
 
 #ifdef HAVE_MARBLE
 
-    ItemPropertiesGPSTab *m_gpsTab;
+    ItemPropertiesGPSTab*      m_gpsTab;
 
 #endif // HAVE_MARBLE
+
 };
 
 } // namespace Digikam
