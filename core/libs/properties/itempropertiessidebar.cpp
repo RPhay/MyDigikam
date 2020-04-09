@@ -58,8 +58,8 @@
 namespace Digikam
 {
 
-ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget *const parent,
-                                             SidebarSplitter *const splitter,
+ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
+                                             SidebarSplitter* const splitter,
                                              Qt::Edge side,
                                              bool mimimizedDefault)
     : Sidebar(parent, splitter, side, mimimizedDefault),
