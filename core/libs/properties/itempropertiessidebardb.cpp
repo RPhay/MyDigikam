@@ -228,21 +228,21 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
     if      ((tab == m_propertiesStackedView) && !m_dirtyPropertiesTab)
     {
         m_propertiesTab->setCurrentURL(m_currentURL);
-        m_selectionPropertiesTab->setCurrentInfos(d->currentInfos);
-
-        if(d->currentInfos.count() > 1)
-            m_propertiesStackedView->setCurrentIndex(1);
-        else{
-            m_propertiesStackedView->setCurrentIndex(0);
-        }
 
         if (d->currentInfos.isEmpty())
         {
             ItemPropertiesSideBar::setImagePropertiesInformation(m_currentURL);
+            m_propertiesStackedView->setCurrentWidget(m_propertiesTab);
+        }
+        else if(d->currentInfos.count() == 1)
+        {
+            setImagePropertiesInformation(m_currentURL);
+            m_propertiesStackedView->setCurrentWidget(m_propertiesTab);
         }
         else
         {
-            setImagePropertiesInformation(m_currentURL);
+            setImageSelectionPropertiesInformation();
+            m_propertiesStackedView->setCurrentWidget(m_selectionPropertiesTab);
         }
 
         m_dirtyPropertiesTab = true;
@@ -672,6 +672,16 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
             return;
         }
     }
+}
+
+void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
+{
+    qlonglong selectionFileSize = 0;
+    foreach (const ItemInfo& info, d->currentInfos)
+    {   
+        selectionFileSize += info.fileSize();
+    }
+    m_selectionPropertiesTab->setSelectionSize(ItemPropertiesTab::humanReadableBytesCount(selectionFileSize));
 }
 
 ItemPropertiesVersionsTab* ItemPropertiesSideBarDB::getFiltersHistoryTab() const
