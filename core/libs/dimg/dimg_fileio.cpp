@@ -121,8 +121,7 @@ bool DImg::load(const QString& filePath,
         return false;
     }
 
-    if (plugin && (((loadFlags & DImgLoader::LoadPreview) && plugin->previewSupported()) ||
-        !(loadFlags & DImgLoader::LoadPreview)))
+    if (plugin && (!(loadFlags & DImgLoader::LoadPreview) || plugin->previewSupported()))
     {
         qCDebug(DIGIKAM_DIMG_LOG) << filePath << ":" << plugin->loaderName() << "file identified";
         FORMAT format            = m_priv->loaderNameToFormat(plugin->loaderName());
@@ -153,8 +152,7 @@ bool DImg::load(const QString& filePath,
         return false;
     }
 
-    if (plugin && (((loadFlags & DImgLoader::LoadPreview) && plugin->previewSupported()) ||
-        !(loadFlags & DImgLoader::LoadPreview)))
+    if (plugin && (!(loadFlags & DImgLoader::LoadPreview) || plugin->previewSupported()))
     {
         qCDebug(DIGIKAM_DIMG_LOG) << filePath << ":" << plugin->loaderName() << "file identified (magic)";
         FORMAT format            = m_priv->loaderNameToFormat(plugin->loaderName());
