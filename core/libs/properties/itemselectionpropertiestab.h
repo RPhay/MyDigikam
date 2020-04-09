@@ -11,8 +11,6 @@
 namespace Digikam
 {
 
-class ItemInfoList;
-
 class DIGIKAM_EXPORT ItemSelectionPropertiesTab : public DExpanderBox
 {
 public:
@@ -20,10 +18,8 @@ public:
     explicit ItemSelectionPropertiesTab(QWidget* const parent);
     ~ItemSelectionPropertiesTab();
     
-    // void setCurrentURL(const QUrl &url = QUrl());
-    void setCurrentInfos(const ItemInfoList &selection);
-   
-    // void setSelectionFileSize();    //what will this need? See from status bar.
+    // void setCurrentURL(const QUrl &url = QUrl());   
+    void setSelectionSize(const QString &str);    //what will this need? See from status bar.
 
 private:
 

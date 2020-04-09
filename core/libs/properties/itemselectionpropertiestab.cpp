@@ -10,8 +10,6 @@
 //Local includes
 #include "itempropertiestab.h"
 #include "itempropertiestxtlabel.h"
-#include "iteminfolist.h"
-#include "iteminfo.h"
 
 namespace Digikam
 {
@@ -67,14 +65,10 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
 ItemSelectionPropertiesTab::~ItemSelectionPropertiesTab(){
     delete d;
 }
-void ItemSelectionPropertiesTab::setCurrentInfos(const ItemInfoList &selection)
+
+void ItemSelectionPropertiesTab::setSelectionSize(const QString &str)
 {
-    qlonglong selectionFileSize = 0;
-    foreach (const ItemInfo& info, selection)
-    {   
-        selectionFileSize += info.fileSize();
-    }
-    d->labelSelectionSize->setAdjustedText(ItemPropertiesTab::humanReadableBytesCount(selectionFileSize));
+    d->labelSelectionSize->setAdjustedText(str);
 }
 
 } // namespace Digikam 
