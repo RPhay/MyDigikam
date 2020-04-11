@@ -29,6 +29,8 @@
 #include <QString>
 #include <QSize>
 #include <QPixmap>
+#include <QObject>
+#include <QVector>
 
 // Local includes
 
@@ -39,12 +41,12 @@ namespace Digikam
 
 /** A widget to draw progress wheel indicator over thumbnails.
  */
-class DIGIKAM_EXPORT DWorkingPixmap
+class DIGIKAM_EXPORT DWorkingPixmap : public QObject
 {
 public:
 
-    explicit DWorkingPixmap();
-    virtual ~DWorkingPixmap();
+    explicit DWorkingPixmap(QObject* const parent = nullptr);
+    ~DWorkingPixmap();
 
     bool    isEmpty()          const;
     QSize   frameSize()        const;

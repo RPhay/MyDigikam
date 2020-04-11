@@ -99,6 +99,7 @@ public:
     GPTalker*                     gphotoTalker;
 
     QString                       currentAlbumId;
+    QString                       newFolderTitle;
 
     QList< QPair<QUrl, GSPhoto> > transferQueue;
     QList< QPair<QUrl, GSPhoto> > uploadQueue;
@@ -1134,6 +1135,7 @@ void GSWindow::slotNewAlbumRequest()
                 GSFolder newFolder;
                 d->gphotoAlbumDlg->getAlbumProperties(newFolder);
                 d->gphotoTalker->createAlbum(newFolder);
+                d->newFolderTitle = newFolder.title;
             }
             break;
     }
@@ -1211,7 +1213,10 @@ void GSWindow::slotCreateFolderDone(int code, const QString& msg, const QString&
             else
             {
                 d->currentAlbumId = albumId;
-                d->gphotoTalker->listAlbums();
+                d->widget->getAlbumsCoB()->addItem(QIcon::fromTheme(QLatin1String("folder")),
+                                                   d->newFolderTitle, d->currentAlbumId);
+                d->widget->getAlbumsCoB()->setCurrentIndex(d->widget->getAlbumsCoB()->
+                                               findData(d->currentAlbumId));
             }
             break;
     }
