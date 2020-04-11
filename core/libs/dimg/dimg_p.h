@@ -142,7 +142,7 @@ public:
         delete [] lanczos_func;
     }
 
-    static QList<DPluginDImg*> pluginsForFile(const QFileInfo& fileInfo, bool magic)
+    static DPluginDImg* pluginsForFile(const QFileInfo& fileInfo, bool magic)
     {
         QMap<int, DPluginDImg*> pluginMap;
 
@@ -162,7 +162,12 @@ public:
             }
         }
 
-        return pluginMap.values();
+        if (pluginMap.isEmpty())
+        {
+            return nullptr;
+        }
+
+        return pluginMap.first();
     }
 
     static DPluginDImg* pluginForFormat(const QString& format)

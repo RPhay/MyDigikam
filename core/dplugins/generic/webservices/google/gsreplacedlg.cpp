@@ -61,7 +61,7 @@ public:
         lbSrc(nullptr),
         lbDest(nullptr),
         netMngr(nullptr),
-        progressPix(DWorkingPixmap()),
+        progressPix(nullptr),
         thumbLoadThread(ThumbnailLoadThread::defaultThread()),
         progressCount(0),
         progressTimer(nullptr),
@@ -80,7 +80,7 @@ public:
     QLabel*                lbDest;
     QNetworkAccessManager* netMngr;
     QPixmap                mimePix;
-    DWorkingPixmap         progressPix;
+    DWorkingPixmap*        progressPix;
     ThumbnailLoadThread*   thumbLoadThread;
     int                    progressCount;
     QTimer*                progressTimer;
@@ -97,9 +97,10 @@ ReplaceDialog::ReplaceDialog(QWidget* const parent,
 {
     setObjectName(QLatin1String("ReplaceDialog"));
 
-    d->src   = src;
-    d->dest  = dest;
-    d->iface = iface;
+    d->src         = src;
+    d->dest        = dest;
+    d->iface       = iface;
+    d->progressPix = new DWorkingPixmap(this);
 
     setWindowTitle(_caption);
 
@@ -317,7 +318,7 @@ QPixmap ReplaceDialog::setProgressAnimation(const QPixmap& thumb, const QPixmap&
 
 void ReplaceDialog::slotProgressTimerDone()
 {
-    d->lbDest->setPixmap(setProgressAnimation(d->mimePix, d->progressPix.frameAt(d->progressCount)));
+    d->lbDest->setPixmap(setProgressAnimation(d->mimePix, d->progressPix->frameAt(d->progressCount)));
     d->progressCount++;
 
     if (d->progressCount == 8)

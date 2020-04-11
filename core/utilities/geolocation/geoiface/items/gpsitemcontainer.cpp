@@ -971,7 +971,7 @@ QString GPSItemContainer::saveChanges()
 
     if (success1)
     {
-        if (m_saveGPS || m_saveTags)
+        if (m_saveGPS || (m_saveTags && !m_tagList.isEmpty() && m_writeXmpTags))
         {
             success1 = meta->save(m_url.toLocalFile());
         }

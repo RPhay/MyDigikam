@@ -76,7 +76,7 @@ public:
         projectionAndSizeCheckbox(0),
 */
         detailsText(nullptr),
-        progressPix(DWorkingPixmap()),
+        progressPix(nullptr),
         mngr(nullptr)
     {
     }
@@ -98,7 +98,7 @@ public:
 */
     QTextBrowser*              detailsText;
 
-    DWorkingPixmap             progressPix;
+    DWorkingPixmap*            progressPix;
 
     PanoManager*               mngr;
 };
@@ -109,6 +109,7 @@ PanoOptimizePage::PanoOptimizePage(PanoManager* const mngr, QWizard* const dlg)
 {
     d->mngr                         = mngr;
     d->progressTimer                = new QTimer(this);
+    d->progressPix                  = new DWorkingPixmap(this);
     DVBox* const vbox               = new DVBox(this);
     d->title                        = new QLabel(vbox);
     d->title->setOpenExternalLinks(true);
@@ -280,11 +281,11 @@ void PanoOptimizePage::cleanupPage()
 
 void PanoOptimizePage::slotProgressTimerDone()
 {
-    d->progressLabel->setPixmap(d->progressPix.frameAt(d->progressCount));
+    d->progressLabel->setPixmap(d->progressPix->frameAt(d->progressCount));
 
-    if (d->progressPix.frameCount())
+    if (d->progressPix->frameCount())
     {
-        d->progressCount = (d->progressCount + 1) % d->progressPix.frameCount();
+        d->progressCount = (d->progressCount + 1) % d->progressPix->frameCount();
     }
 
     d->progressTimer->start(300);

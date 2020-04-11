@@ -485,12 +485,12 @@ public:
         clearButton(nullptr),
         loadButton(nullptr),
         saveButton(nullptr),
+        progressPix(nullptr),
         progressCount(0),
         progressTimer(nullptr),
         listView(nullptr),
         iface(nullptr)
     {
-        progressPix     = DWorkingPixmap();
         thumbLoadThread = ThumbnailLoadThread::defaultThread();
     }
 
@@ -508,7 +508,7 @@ public:
     CtrlButton*                saveButton;
 
     QList<QUrl>                processItems;
-    DWorkingPixmap             progressPix;
+    DWorkingPixmap*            progressPix;
     int                        progressCount;
     QTimer*                    progressTimer;
 
@@ -529,7 +529,8 @@ DItemsList::DItemsList(QWidget* const parent, int iconSize)
 
     // --------------------------------------------------------
 
-    d->listView = new DItemsListView(d->iconSize, this);
+    d->progressPix = new DWorkingPixmap(this);
+    d->listView    = new DItemsListView(d->iconSize, this);
     d->listView->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
     // --------------------------------------------------------
@@ -1181,7 +1182,7 @@ void DItemsList::slotProgressTimerDone()
 
             if (item)
             {
-                item->setProgressAnimation(d->progressPix.frameAt(d->progressCount));
+                item->setProgressAnimation(d->progressPix->frameAt(d->progressCount));
             }
         }
 

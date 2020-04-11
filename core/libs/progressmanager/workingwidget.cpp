@@ -46,20 +46,22 @@ class Q_DECL_HIDDEN WorkingWidget::Private
 public:
 
     explicit Private()
-        : pixmaps(DWorkingPixmap()),
+        : pixmaps(nullptr),
           currentPixmap(0)
     {
     }
 
-    DWorkingPixmap pixmaps;
-    int            currentPixmap;
-    QTimer         timer;
+    DWorkingPixmap* pixmaps;
+    int             currentPixmap;
+    QTimer          timer;
 };
 
 WorkingWidget::WorkingWidget(QWidget* const parent)
     : QLabel(parent),
       d(new Private)
 {
+    d->pixmaps = new DWorkingPixmap(this);
+
     connect(&d->timer, SIGNAL(timeout()),
             this, SLOT(slotChangeImage()));
 
@@ -74,12 +76,12 @@ WorkingWidget::~WorkingWidget()
 
 void WorkingWidget::slotChangeImage()
 {
-    if (d->currentPixmap >= d->pixmaps.frameCount())
+    if (d->currentPixmap >= d->pixmaps->frameCount())
     {
         d->currentPixmap = 0;
     }
 
-    setPixmap(d->pixmaps.frameAt(d->currentPixmap));
+    setPixmap(d->pixmaps->frameAt(d->currentPixmap));
 
     d->currentPixmap++;
 
