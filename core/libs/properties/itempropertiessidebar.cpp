@@ -53,7 +53,7 @@
 #include "itempropertiesversionstab.h"
 
 #ifdef HAVE_MARBLE
-#include "itempropertiesgpstab.h"
+#   include "itempropertiesgpstab.h"
 #endif // HAVE_MARBLE
 
 namespace Digikam
@@ -183,7 +183,7 @@ void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
 
     setCursor(Qt::WaitCursor);
 
-    if ((tab == m_propertiesStackedView) && !m_dirtyPropertiesTab)
+    if      ((tab == m_propertiesStackedView) && !m_dirtyPropertiesTab)
     {
         m_propertiesTab->setCurrentURL(m_currentURL);
         setImagePropertiesInformation(m_currentURL);
@@ -257,7 +257,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     {
         m_propertiesTab->setImageMime(QMimeDatabase().mimeTypeForFile(fileInfo).comment());
 
-        dims       = metaData.getPixelSize();
+        dims      = metaData.getPixelSize();
 
         DImg img;
         img.loadItemInfo(url.toLocalFile(), false, false, false, false);
@@ -266,7 +266,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     }
 
     QString mpixels;
-    mpixels.setNum(dims.width() * dims.height() / 1000000.0, 'f', 2);
+    mpixels.setNum(dims.width()*dims.height()/1000000.0,'f',2);
     str = (!dims.isValid()) ? i18n("Unknown") : i18n("%1x%2 (%3Mpx)",
             dims.width(), dims.height(), mpixels);
     m_propertiesTab->setItemDimensions(str);
@@ -321,7 +321,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     m_propertiesTab->setPhotoExposureTime(photoInfo.exposureTime.isEmpty() ? unavailable : photoInfo.exposureTime);
     m_propertiesTab->setPhotoSensitivity(photoInfo.sensitivity.isEmpty()   ? unavailable : i18n("%1 ISO", photoInfo.sensitivity));
 
-    if (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
+    if      (photoInfo.exposureMode.isEmpty() && photoInfo.exposureProgram.isEmpty())
     {
         m_propertiesTab->setPhotoExposureMode(unavailable);
     }
@@ -361,7 +361,7 @@ void ItemPropertiesSideBar::setImagePropertiesInformation(const QUrl& url)
     CaptionsMap captions = metaData.getItemComments();
     QString caption;
 
-    if (captions.contains(QLatin1String("x-default")))
+    if      (captions.contains(QLatin1String("x-default")))
     {
         caption = captions.value(QLatin1String("x-default")).caption;
     }
