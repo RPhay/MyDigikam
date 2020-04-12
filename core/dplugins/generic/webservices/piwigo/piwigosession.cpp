@@ -33,7 +33,7 @@
 
 // KDE includes
 
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -99,24 +99,24 @@ void PiwigoSession::setPassword(const QString& password)
 
 void PiwigoSession::load()
 {
-    KConfig config;
-    KConfigGroup group = config.group("Piwigo Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Piwigo Settings");
 
-    d->url             = group.readEntry("URL",      QString());
-    d->username        = group.readEntry("Username", QString());
-    d->password        = group.readEntry("Password", QString());
+    d->url                  = group.readEntry("URL",      QString());
+    d->username             = group.readEntry("Username", QString());
+    d->password             = group.readEntry("Password", QString());
 }
 
 void PiwigoSession::save()
 {
-    KConfig config;
-    KConfigGroup group = config.group("Piwigo Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Piwigo Settings");
 
     group.writeEntry(QString::fromUtf8("URL"),      url());
     group.writeEntry(QString::fromUtf8("Username"), username());
     group.writeEntry(QString::fromUtf8("Password"), password());
 
-    config.sync();
+    config->sync();
 }
 
 } // namespace DigikamGenericPiwigoPlugin

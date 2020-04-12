@@ -42,8 +42,8 @@
 
 // KDE includes
 
-#include <kconfig.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 #include <kwindowconfig.h>
 
 // MediaWiki includes
@@ -164,27 +164,27 @@ void MediaWikiWindow::reactivate()
 
 void MediaWikiWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup group  = config.group(QLatin1String("MediaWiki export settings"));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(QLatin1String("MediaWiki export settings"));
 
     d->widget->readSettings(group);
 
     winId();
-    KConfigGroup group2 = config.group(QLatin1String("MediaWiki export dialog"));
+    KConfigGroup group2 = config->group(QLatin1String("MediaWiki export dialog"));
     KWindowConfig::restoreWindowSize(windowHandle(), group2);
     resize(windowHandle()->size());
 }
 
 void MediaWikiWindow::saveSettings()
 {
-    KConfig config;
-    KConfigGroup group  = config.group(QLatin1String("MediaWiki export settings"));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(QLatin1String("MediaWiki export settings"));
 
     d->widget->saveSettings(group);
 
-    KConfigGroup group2 = config.group(QLatin1String("MediaWiki export dialog"));
+    KConfigGroup group2     = config->group(QLatin1String("MediaWiki export dialog"));
     KWindowConfig::saveWindowSize(windowHandle(), group2);
-    config.sync();
+    config->sync();
 }
 
 void MediaWikiWindow::slotFinished()

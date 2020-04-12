@@ -48,9 +48,9 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -310,8 +310,8 @@ void YFWindow::updateLabels()
 
 void YFWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("YandexFotki Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("YandexFotki Settings");
 
     d->talker.setLogin(grp.readEntry("login", ""));
 
@@ -331,25 +331,25 @@ void YFWindow::readSettings()
         d->imageQualitySpin->setEnabled(false);
     }
 
-    d->dimensionSpin->setValue(grp.readEntry("Maximum Width", 1600));
+    d->dimensionSpin->setValue(grp.readEntry("Maximum Width",    1600));
     d->imageQualitySpin->setValue(grp.readEntry("Image Quality", 85));
-    d->policyGroup->button(grp.readEntry("Sync policy", 0))->setChecked(true);
+    d->policyGroup->button(grp.readEntry("Sync policy",          0))->setChecked(true);
 }
 
 void YFWindow::writeSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("YandexFotki Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("YandexFotki Settings");
 
     grp.writeEntry("token", d->talker.token());
 
     // don't store tokens in plaintext
     //grp.writeEntry("login", d->talker.login());
 
-    grp.writeEntry("Resize", d->resizeCheck->isChecked());
+    grp.writeEntry("Resize",        d->resizeCheck->isChecked());
     grp.writeEntry("Maximum Width", d->dimensionSpin->value());
     grp.writeEntry("Image Quality", d->imageQualitySpin->value());
-    grp.writeEntry("Sync policy", d->policyGroup->checkedId());
+    grp.writeEntry("Sync policy",   d->policyGroup->checkedId());
 }
 
 void YFWindow::slotChangeUserClicked()

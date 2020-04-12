@@ -51,8 +51,8 @@
 
 // KDE includes
 
-#include <kconfig.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -260,9 +260,9 @@ PiwigoWindow::PiwigoWindow(DInfoInterface* const iface,
 
     connectSignals();
 
-    KConfig config;
+    KSharedConfigPtr config = KSharedConfig::openConfig();
 
-    if (!config.hasGroup("Piwigo Settings"))
+    if (!config->hasGroup("Piwigo Settings"))
     {
         QPointer<PiwigoLoginDlg> dlg = new PiwigoLoginDlg(QApplication::activeWindow(),
                                                           d->pPiwigo, i18n("Edit Piwigo Data"));
@@ -278,8 +278,8 @@ PiwigoWindow::~PiwigoWindow()
 {
     // write config
 
-    KConfig config;
-    KConfigGroup group = config.group("PiwigoSync Galleries");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("PiwigoSync Galleries");
 
     group.writeEntry("Resize",         d->resizeCheckBox->isChecked());
     group.writeEntry("Maximum Width",  d->widthSpinBox->value());

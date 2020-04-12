@@ -47,7 +47,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // libkvkontakte includes
@@ -299,11 +299,11 @@ void VKWindow::slotUpdateBusyStatusReady()
 
 void VKWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("VKontakte Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("VKontakte Settings");
 
-    d->appId         = grp.readEntry("VkAppId", "2446321");
-    d->albumToSelect = grp.readEntry("SelectedAlbumId", -1);
+    d->appId                = grp.readEntry("VkAppId", "2446321");
+    d->albumToSelect        = grp.readEntry("SelectedAlbumId", -1);
     d->vkapi->setAppId(d->appId);
     d->vkapi->setRequiredPermissions(Vkontakte::AppPermissions::Photos);
     d->vkapi->setInitialAccessToken(grp.readEntry("AccessToken", ""));
@@ -311,8 +311,8 @@ void VKWindow::readSettings()
 
 void VKWindow::writeSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("VKontakte Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("VKontakte Settings");
 
     grp.writeEntry("VkAppId", d->appId);
 
