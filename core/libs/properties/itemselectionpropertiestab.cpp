@@ -47,11 +47,13 @@ public:
     };
 
 public:
-  
+
     explicit Private()
-      : labelSelectionSize(nullptr)
+      : labelSelectionCount(nullptr),
+        labelSelectionSize(nullptr)
     {
     }
+    DTextLabelValue* labelSelectionCount;
     DTextLabelValue* labelSelectionSize;
 };
 
@@ -70,11 +72,16 @@ ItemSelectionPropertiesTab::ItemSelectionPropertiesTab(QWidget* const parent)
     QGridLayout* const glay1 = new QGridLayout(w1);
 
     DTextLabelName* const selectionSize = new DTextLabelName(i18n("Size: "), w1);
+    DTextLabelName* const selectionCount = new DTextLabelName(i18n("Count: "), w1);
 
     d->labelSelectionSize = new DTextLabelValue(QString(), w1);
+    d->labelSelectionCount = new DTextLabelValue(QString(), w1);
 
-    glay1->addWidget(selectionSize, 0, 0, 1, 1);
-    glay1->addWidget(d->labelSelectionSize, 0, 1, 1, 1);
+    glay1->addWidget(selectionCount,         0, 0, 1, 1);
+    glay1->addWidget(d->labelSelectionCount, 0, 1, 1, 1);
+    glay1->addWidget(selectionSize,          1, 0, 1, 1);
+    glay1->addWidget(d->labelSelectionSize,  1, 1, 1, 1);
+
     glay1->setContentsMargins(spacing, spacing, spacing, spacing);
     glay1->setColumnStretch(0, 10);
     glay1->setColumnStretch(1, 25);
