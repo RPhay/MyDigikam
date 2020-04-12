@@ -42,7 +42,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -499,8 +499,8 @@ void RajceWidget::setEnabledWidgets(bool enabled)
 
 void RajceWidget::readSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("RajceExport Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("RajceExport Settings");
 
     RajceSession session;
 
@@ -522,8 +522,8 @@ void RajceWidget::readSettings()
 
 void RajceWidget::writeSettings()
 {
-    KConfig config;
-    KConfigGroup grp            = config.group("RajceExport Settings");
+    KSharedConfigPtr config     = KSharedConfig::openConfig();
+    KConfigGroup grp            = config->group("RajceExport Settings");
     const RajceSession& session = d->talker->session();
 
     grp.writeEntry("token",        session.sessionToken());

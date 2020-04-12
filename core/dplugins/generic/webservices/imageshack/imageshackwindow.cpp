@@ -49,8 +49,8 @@
 
 // KDE includes
 
-#include <kconfig.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 #include <kwindowconfig.h>
 
 // Local includes
@@ -202,8 +202,8 @@ void ImageShackWindow::closeEvent(QCloseEvent* e)
 void ImageShackWindow::readSettings()
 {
     winId();
-    KConfig config;
-    KConfigGroup group = config.group("ImageShack Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("ImageShack Settings");
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size());
 
@@ -224,8 +224,8 @@ void ImageShackWindow::readSettings()
 
 void ImageShackWindow::saveSettings()
 {
-    KConfig config;
-    KConfigGroup group = config.group("ImageShack Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("ImageShack Settings");
     KWindowConfig::saveWindowSize(windowHandle(), group);
 
     group.writeEntry("Private", d->widget->d->privateImagesChb->isChecked());

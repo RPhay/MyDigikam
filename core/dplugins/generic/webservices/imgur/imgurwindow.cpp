@@ -36,8 +36,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 #include <kwindowconfig.h>
-#include <kconfig.h>
 
 // Local includes
 
@@ -307,26 +307,26 @@ void ImgurWindow::closeEvent(QCloseEvent* e)
 
 void ImgurWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup groupAuth   = config.group("Imgur Auth");
-    d->username              = groupAuth.readEntry("username", QString());
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup groupAuth  = config->group("Imgur Auth");
+    d->username             = groupAuth.readEntry("username", QString());
     slotApiAuthorized(!d->username.isEmpty(), d->username);
 
     winId();
-    KConfigGroup groupDialog = config.group("Imgur Dialog");
+    KConfigGroup groupDialog = config->group("Imgur Dialog");
     KWindowConfig::restoreWindowSize(windowHandle(), groupDialog);
     resize(windowHandle()->size());
 }
 
 void ImgurWindow::saveSettings()
 {
-    KConfig config;
-    KConfigGroup groupAuth   = config.group("Imgur Auth");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup groupAuth  = config->group("Imgur Auth");
     groupAuth.writeEntry("username", d->username);
 
-    KConfigGroup groupDialog = config.group("Imgur Dialog");
+    KConfigGroup groupDialog = config->group("Imgur Dialog");
     KWindowConfig::saveWindowSize(windowHandle(), groupDialog);
-    config.sync();
+    config->sync();
 }
 
 } // namespace DigikamGenericImgUrPlugin

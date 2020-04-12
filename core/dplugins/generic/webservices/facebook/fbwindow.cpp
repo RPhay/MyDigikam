@@ -39,8 +39,8 @@
 
 // KDE includes
 
-#include <kconfig.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 #include <kwindowconfig.h>
 
 // Local includes
@@ -241,8 +241,8 @@ void FbWindow::closeEvent(QCloseEvent* e)
 
 void FbWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup grp  = config.group("Facebook Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Facebook Settings");
 
     if (grp.readEntry("Resize", false))
     {
@@ -260,25 +260,25 @@ void FbWindow::readSettings()
     d->imageQualitySpB->setValue(grp.readEntry("Image Quality", 85));
 
     winId();
-    KConfigGroup dialogGroup = config.group("Facebook Export Dialog");
+    KConfigGroup dialogGroup = config->group("Facebook Export Dialog");
     KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
     resize(windowHandle()->size());
 }
 
 void FbWindow::writeSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("Facebook Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Facebook Settings");
 
     grp.writeEntry("Current Album", d->currentAlbumID);
     grp.writeEntry("Resize",        d->resizeChB->isChecked());
     grp.writeEntry("Maximum Width", d->dimensionSpB->value());
     grp.writeEntry("Image Quality", d->imageQualitySpB->value());
 
-    KConfigGroup dialogGroup = config.group("Facebook Export Dialog");
+    KConfigGroup dialogGroup = config->group("Facebook Export Dialog");
     KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
 
-    config.sync();
+    config->sync();
 }
 
 void FbWindow::authenticate(bool forceLogin)

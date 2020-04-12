@@ -40,8 +40,8 @@
 
 // KDE includes
 
-#include <kconfig.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 #include <kwindowconfig.h>
 
 // Local includes
@@ -356,13 +356,13 @@ void SmugWindow::authenticate()
 
 void SmugWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup grp   = config.group("Smug Settings");
-    d->anonymousImport = grp.readEntry("AnonymousImport", true);
-    d->email           = grp.readEntry("Email");
-    d->password        = grp.readEntry("Password");
-    d->currentAlbumID  = grp.readEntry("Current Album", -1);
-    d->currentAlbumKey = grp.readEntry("Current Key", -1);
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Smug Settings");
+    d->anonymousImport      = grp.readEntry("AnonymousImport", true);
+    d->email                = grp.readEntry("Email");
+    d->password             = grp.readEntry("Password");
+    d->currentAlbumID       = grp.readEntry("Current Album", -1);
+    d->currentAlbumKey      = grp.readEntry("Current Key", -1);
 
     if (grp.readEntry("Resize", false))
     {
@@ -383,14 +383,14 @@ void SmugWindow::readSettings()
     if (d->import)
     {
         winId();
-        KConfigGroup dialogGroup = config.group("Smug Import Dialog");
+        KConfigGroup dialogGroup = config->group("Smug Import Dialog");
         KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
         resize(windowHandle()->size());
     }
     else
     {
         winId();
-        KConfigGroup dialogGroup = config.group("Smug Export Dialog");
+        KConfigGroup dialogGroup = config->group("Smug Export Dialog");
         KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
         resize(windowHandle()->size());
     }
@@ -398,8 +398,8 @@ void SmugWindow::readSettings()
 
 void SmugWindow::writeSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("Smug Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Smug Settings");
     grp.writeEntry("AnonymousImport", d->anonymousImport);
     grp.writeEntry("Email",           d->email);
     grp.writeEntry("Password",        d->password);
@@ -411,16 +411,16 @@ void SmugWindow::writeSettings()
 
     if (d->import)
     {
-        KConfigGroup dialogGroup = config.group("Smug Import Dialog");
+        KConfigGroup dialogGroup = config->group("Smug Import Dialog");
         KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
     }
     else
     {
-        KConfigGroup dialogGroup = config.group("Smug Export Dialog");
+        KConfigGroup dialogGroup = config->group("Smug Export Dialog");
         KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
     }
 
-    config.sync();
+    config->sync();
 }
 
 void SmugWindow::slotLoginProgress(int step, int maxStep, const QString &label)
