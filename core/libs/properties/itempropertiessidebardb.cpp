@@ -228,13 +228,13 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
     if      ((tab == m_propertiesStackedView) && !m_dirtyPropertiesTab)
     {
         m_propertiesTab->setCurrentURL(m_currentURL);
+        m_selectionPropertiesTab->setCurrentURL(m_currentURL);
 
-        if (d->currentInfos.isEmpty())
+        if      (d->currentInfos.isEmpty())
         {
             ItemPropertiesSideBar::setImagePropertiesInformation(m_currentURL);
-            m_propertiesStackedView->setCurrentWidget(m_propertiesTab);
         }
-        else if(d->currentInfos.count() == 1)
+        else if (d->currentInfos.count() == 1)
         {
             setImagePropertiesInformation(m_currentURL);
             m_propertiesStackedView->setCurrentWidget(m_propertiesTab);
@@ -676,9 +676,12 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
 
 void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 {
+    m_selectionPropertiesTab->setSelectionCount(QString::fromUtf8("%1").arg(QLocale().toString(d->currentInfos.count())));
+
     qlonglong selectionFileSize = 0;
+
     foreach (const ItemInfo& info, d->currentInfos)
-    {   
+    {
         selectionFileSize += info.fileSize();
     }
     m_selectionPropertiesTab->setSelectionSize(ItemPropertiesTab::humanReadableBytesCount(selectionFileSize));
