@@ -31,7 +31,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -250,18 +250,20 @@ QString DBinaryIface::readConfig()
         return QLatin1String("");
     }
 
-    KConfig config;
-    KConfigGroup group = config.group(m_configGroup);
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(m_configGroup);
     return group.readPathEntry(QString::fromUtf8("%1Binary").arg(m_binaryBaseName), QLatin1String(""));
 }
 
 void DBinaryIface::writeConfig()
 {
     if (m_configGroup.isEmpty())
+    {
         return;
+    }
 
-    KConfig config;
-    KConfigGroup group = config.group(m_configGroup);
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(m_configGroup);
     group.writePathEntry(QString::fromUtf8("%1Binary").arg(m_binaryBaseName), m_pathDir);
 }
 

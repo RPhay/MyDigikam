@@ -329,8 +329,8 @@ void PiwigoWindow::connectSignals()
 
 void PiwigoWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup group = config.group("PiwigoSync Galleries");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("PiwigoSync Galleries");
 
     if (group.readEntry("Resize", false))
     {
@@ -345,9 +345,9 @@ void PiwigoWindow::readSettings()
         d->widthSpinBox->setEnabled(false);
     }
 
-    d->widthSpinBox->setValue(group.readEntry("Maximum Width", 1600));
+    d->widthSpinBox->setValue(group.readEntry("Maximum Width",   1600));
     d->heightSpinBox->setValue(group.readEntry("Maximum Height", 1600));
-    d->qualitySpinBox->setValue(group.readEntry("Quality", 95));
+    d->qualitySpinBox->setValue(group.readEntry("Quality",       95));
 }
 
 void PiwigoWindow::slotDoLogin()

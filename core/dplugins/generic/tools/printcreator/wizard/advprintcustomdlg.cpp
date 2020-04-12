@@ -25,7 +25,7 @@
 
 // KDE includes
 
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 namespace DigikamGenericPrintCreatorPlugin
@@ -63,8 +63,8 @@ AdvPrintCustomLayoutDlg:: ~AdvPrintCustomLayoutDlg()
 
 void AdvPrintCustomLayoutDlg::readSettings()
 {
-    KConfig config;
-    KConfigGroup group = config.group(QLatin1String("PrintCreator"));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(QLatin1String("PrintCreator"));
 
     QSize gridSize     = group.readEntry(QLatin1String("Custom-gridSize"), QSize(3, 8));
     m_gridRows->setValue(gridSize.width());
@@ -94,9 +94,9 @@ void AdvPrintCustomLayoutDlg::readSettings()
 
 void AdvPrintCustomLayoutDlg::saveSettings()
 {
-    KConfig config;
-    KConfigGroup group = config.group(QLatin1String("PrintCreator"));
-    int choice         = PHOTO_GRID;
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(QLatin1String("PrintCreator"));
+    int choice              = PHOTO_GRID;
 
     if (m_fitAsManyCheck->isChecked())
     {
