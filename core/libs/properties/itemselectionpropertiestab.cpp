@@ -99,16 +99,27 @@ ItemSelectionPropertiesTab::~ItemSelectionPropertiesTab()
     delete d;
 }
 
-void ItemSelectionPropertiesTab::setDisabled()
+void ItemSelectionPropertiesTab::setCurrentURL(const QUrl &url)
 {
-        d->labelSelectionSize->setAdjustedText(QString());
-        setEnabled(false);
+    if (url.isEmpty())
+    {
+         d->labelSelectionSize->setAdjustedText(QString());
+         d->labelSelectionCount->setAdjustedText(QString());
+         setEnabled(false);
+         return;
+    }
+
+    setEnabled(true);
+}
+
+void ItemSelectionPropertiesTab::setSelectionCount(const QString &str)
+{
+    d->labelSelectionCount->setAdjustedText(str);
 }
 
 void ItemSelectionPropertiesTab::setSelectionSize(const QString &str)
 {
     d->labelSelectionSize->setAdjustedText(str);
-    setEnabled(true);
 }
 
-} // namespace Digikam 
+} // namespace Digikam
