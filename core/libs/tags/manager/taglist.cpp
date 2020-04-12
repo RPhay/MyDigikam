@@ -109,10 +109,10 @@ TagList::~TagList()
 
 void TagList::saveSettings()
 {
-    KConfig conf(QLatin1String("digikam_tagsmanagerrc"));
-    conf.deleteGroup(QLatin1String("List Content"));
+    KConfig config(QLatin1String("digikam_tagsmanagerrc"));
+    config.deleteGroup(QLatin1String("List Content"));
 
-    KConfigGroup group            = conf.group(QLatin1String("List Content"));
+    KConfigGroup group            = config.group(QLatin1String("List Content"));
 
     QList<ListItem*> currentItems = d->tagListModel->allItems();
     group.writeEntry(QLatin1String("Size"), currentItems.count()-1);
@@ -133,8 +133,8 @@ void TagList::saveSettings()
 
 void TagList::restoreSettings()
 {
-    KConfig conf(QLatin1String("digikam_tagsmanagerrc"));
-    KConfigGroup group = conf.group(QLatin1String("List Content"));
+    KConfig config(QLatin1String("digikam_tagsmanagerrc"));
+    KConfigGroup group = config.group(QLatin1String("List Content"));
     QStringList items;
 
     int size           = group.readEntry(QLatin1String("Size"), -1);
