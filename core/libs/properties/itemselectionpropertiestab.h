@@ -40,16 +40,17 @@ class DIGIKAM_EXPORT ItemSelectionPropertiesTab : public DExpanderBox
 {
 public:
 
-    explicit ItemSelectionPropertiesTab(QWidget* const parent);
+    explicit ItemSelectionPropertiesTab(QWidget *const parent);
     ~ItemSelectionPropertiesTab();
 
-    void setDisabled();
+    void setCurrentInfos(const QUrl &url = QUrl());
+    void setSelectionCount(const QString &str);
     void setSelectionSize(const QString &str);
 
 private:
 
     class Private;
-    Private* const d;
+    Private *const d;
 };
 
 } // namespace Digikam
