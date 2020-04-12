@@ -40,9 +40,9 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -115,8 +115,8 @@ PanoOptimizePage::PanoOptimizePage(PanoManager* const mngr, QWizard* const dlg)
     d->title->setOpenExternalLinks(true);
     d->title->setWordWrap(true);
 
-    KConfig config;
-    KConfigGroup group              = config.group("Panorama Settings");
+    KSharedConfigPtr config         = KSharedConfig::openConfig();
+    KConfigGroup group              = config->group("Panorama Settings");
 
     d->horizonCheckbox              = new QCheckBox(i18nc("@option:check", "Level horizon"), vbox);
     d->horizonCheckbox->setChecked(group.readEntry("Horizon", true));
@@ -173,13 +173,13 @@ PanoOptimizePage::PanoOptimizePage(PanoManager* const mngr, QWizard* const dlg)
 
 PanoOptimizePage::~PanoOptimizePage()
 {
-    KConfig config;
-    KConfigGroup group = config.group("Panorama Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Panorama Settings");
     group.writeEntry("Horizon", d->horizonCheckbox->isChecked());
 /*
     group.writeEntry("Output Projection And Size", d->projectionAndSizeCheckbox->isChecked());
 */
-    config.sync();
+    config->sync();
 
     delete d;
 }
