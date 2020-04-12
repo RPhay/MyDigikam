@@ -32,8 +32,8 @@
 
 // KDE includes
 
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <kconfiggroup.h>
 #include <kconfig.h>
 
 // Local includes
@@ -137,7 +137,7 @@ void TagList::restoreSettings()
     KConfigGroup group = conf.group(QLatin1String("List Content"));
     QStringList items;
 
-    int size = group.readEntry(QLatin1String("Size"), -1);
+    int size           = group.readEntry(QLatin1String("Size"), -1);
 
     /**
      * If config is empty add generic All Tags

@@ -30,7 +30,7 @@
 
 // KDE includes
 
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -68,7 +68,8 @@ public:
         thread(nullptr),
         plugin(nullptr),
         wizard(nullptr),
-        group(config.group("Panorama Settings"))
+        config(KSharedConfig::openConfig()),
+        group(config->group("Panorama Settings"))
     {
         gPano    = group.readEntry("GPano", false);
 /*
@@ -82,9 +83,9 @@ public:
 /*
         group.writeEntry("HDR", hdr);
 */
-        group.writeEntry("GPano", gPano);
+        group.writeEntry("GPano",     gPano);
         group.writeEntry("File Type", (int) fileType);
-        config.sync();
+        config->sync();
     }
 
     QList<QUrl>                    inputUrls;
@@ -137,7 +138,7 @@ public:
 
 private:
 
-    KConfig                        config;
+    KSharedConfigPtr               config;
     KConfigGroup                   group;
 };
 
