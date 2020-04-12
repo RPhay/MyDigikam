@@ -675,4 +675,6 @@ BUGFIXES:
 657 ==> 417737 - File operations locked under Windows.
 658 ==> 419667 - Preview in file opener.
 659 ==> 419744 - 7.0.0-beta3 Geolocation Editor does not save new location.
-660 ==> 
+660 ==> 419793 - Presentation shuffle not working.
+661 ==> 
+
