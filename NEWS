@@ -678,4 +678,5 @@ BUGFIXES:
 660 ==> 419793 - Presentation shuffle not working.
 661 ==> 419904 - Editor plugin icons same size or plugin list.
 662 ==> 405995 - Large blank spaces between icons in "Tools" panel.
-663 ==> 
+663 ==> 419771 - A possible configuration for automatically scanning for new added pictures?
+664 ==> 
