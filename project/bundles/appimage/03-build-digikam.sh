@@ -76,6 +76,7 @@ if [ -d "$DK_BUILDTEMP/digikam-$DK_VERSION" ] ; then
     git reset --hard
     git pull
 
+    rm -fr build
     mkdir -p build
     cd build
 
@@ -158,7 +159,7 @@ echo -e "\n\n"
 echo "---------- Installing digiKam $DK_VERSION"
 echo -e "\n\n"
 
-make install/fast && cd "$ORIG_WD" && rm -rf "$DK_BUILDTEMP"
+make install/fast && cd "$ORIG_WD"
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot install digiKam $DK_VERSION."
