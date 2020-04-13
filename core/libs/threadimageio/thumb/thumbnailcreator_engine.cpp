@@ -72,6 +72,11 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
                 qimage = loadImagePreview(metadata);
             }
 
+            if (d->observer && !d->observer->continueQuery())
+            {
+                return ThumbnailImage();
+            }
+
             // To speed-up thumb extraction, we now try to load the images by the file extension.
 
             QString ext = fileInfo.suffix().toUpper();
@@ -114,6 +119,11 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
 
             // Trying to load with libraw: RAW files.
 
+            if (d->observer && !d->observer->continueQuery())
+            {
+                return ThumbnailImage();
+            }
+
             if (qimage.isNull())
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Trying to get thumbnail from Embedded preview with libraw for" << path;
@@ -123,6 +133,11 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
                     fromEmbeddedPreview = true;
                     profile             = metadata.getIccProfile();
                 }
+            }
+
+            if (d->observer && !d->observer->continueQuery())
+            {
+                return ThumbnailImage();
             }
 
             if (qimage.isNull())
@@ -136,6 +151,11 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
 
             // Special case with DNG file. See bug #338081
 
+            if (d->observer && !d->observer->continueQuery())
+            {
+                return ThumbnailImage();
+            }
+
             if (qimage.isNull())
             {
                 qCDebug(DIGIKAM_GENERAL_LOG) << "Trying to get thumbnail from Embedded preview with Exiv2 for" << path;
@@ -146,12 +166,22 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
 
             // DImg-dependent loading methods: TIFF, PNG, everything supported by QImage
 
+            if (d->observer && !d->observer->continueQuery())
+            {
+                return ThumbnailImage();
+            }
+
             if (qimage.isNull() && !failedAtDImg)
             {
                 qimage = loadWithDImgScaled(path, &profile);
             }
 
             // Try JPEG anyway
+
+            if (d->observer && !d->observer->continueQuery())
+            {
+                return ThumbnailImage();
+            }
 
             if (qimage.isNull() && !failedAtJPEGScaled)
             {
@@ -160,6 +190,11 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
             }
 
             // Try PGF anyway
+
+            if (d->observer && !d->observer->continueQuery())
+            {
+                return ThumbnailImage();
+            }
 
             if (qimage.isNull() && !failedAtPGFScaled)
             {
