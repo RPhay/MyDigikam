@@ -679,4 +679,5 @@ BUGFIXES:
 661 ==> 419904 - Editor plugin icons same size or plugin list.
 662 ==> 405995 - Large blank spaces between icons in "Tools" panel.
 663 ==> 419771 - A possible configuration for automatically scanning for new added pictures?
-664 ==> 
+664 ==> 420023 - RAW-editor integration with RawTherapee.
+665 ==> 
