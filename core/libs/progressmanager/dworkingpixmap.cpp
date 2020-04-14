@@ -35,24 +35,20 @@
 namespace Digikam
 {
 
-DWorkingPixmap::DWorkingPixmap()
+DWorkingPixmap::DWorkingPixmap(QObject* const parent)
+    : QObject(parent)
 {
     QPixmap pix(QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                        QLatin1String("digikam/data/process-working.png")));
-    QSize   size(22, 22);
-
     if (pix.isNull())
     {
         qCWarning(DIGIKAM_WIDGETS_LOG) << "Invalid pixmap specified.";
         return;
     }
 
-    if (!size.isValid())
-    {
-        size = QSize(pix.width(), pix.width());
-    }
+    QSize size = QSize(pix.width(), pix.width());
 
-    if (pix.width() % size.width() || pix.height() % size.height())
+    if ((pix.width()) % size.width() || (pix.height() % size.height()))
     {
         qCWarning(DIGIKAM_WIDGETS_LOG) << "Invalid framesize.";
         return;

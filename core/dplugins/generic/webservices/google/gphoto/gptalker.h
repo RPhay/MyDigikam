@@ -56,7 +56,7 @@ public:
 
     void    listAlbums(const QString& nextPageToken = QString());
     void    listPhotos(const QString& albumId,
-                       const QString& imgmax = QString());
+                       const QString& nextPageToken = QString());
 
     void    createAlbum(const GSFolder& newAlbum);
 

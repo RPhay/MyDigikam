@@ -156,6 +156,12 @@ void DAboutData::authorsRegistration(KAboutData& aboutData)
                           QLatin1String("https://www.linkedin.com/in/thanhtrungdinh/")
                         );
 
+    aboutData.addCredit ( ki18n("Minh Nghĩa Duong").toString(),
+                          ki18n("Port Slideshow tool to plugins interface").toString(),
+                          QLatin1String("minhnghiaduong997 at gmail dot com"),
+                          QLatin1String("https://www.linkedin.com/in/minh-nghia-duong-2b5bbb15a/")
+                        );
+
     aboutData.addCredit ( ki18n("Ahmed Fathi").toString(),
                           ki18n("UPNP/DLNA export tool, and Healing clone tool for image editor").toString(),
                           QLatin1String("ahmed dot fathi dot abdelmageed at gmail dot com"),

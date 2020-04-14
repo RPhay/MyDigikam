@@ -47,6 +47,7 @@ LightTableWindow::LightTableWindow()
     : DXmlGuiWindow(nullptr),
       d(new Private)
 {
+    setObjectName(QLatin1String("Light Table"));
     setConfigGroupName(QLatin1String("LightTable Settings"));
     setXMLFile(QLatin1String("lighttablewindowui5.rc"));
 
@@ -317,7 +318,6 @@ void LightTableWindow::slotItemSelected(const ItemInfo& info)
     d->lastAction->setEnabled(hasInfo);
     d->syncPreviewAction->setEnabled(hasInfo);
     d->navigateByPairAction->setEnabled(hasInfo);
-    d->slideShowAction->setEnabled(hasInfo);
 
     if (hasInfo)
     {

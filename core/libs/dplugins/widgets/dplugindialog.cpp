@@ -32,9 +32,9 @@
 
 // KDE includes
 
-#include <kconfiggroup.h>
-#include <kconfig.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -88,8 +88,8 @@ void DPluginDialog::slotAboutPlugin()
 
 void DPluginDialog::restoreDialogSize()
 {
-    KConfig config;
-    KConfigGroup group = config.group(objectName());
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(objectName());
 
     if (group.exists())
     {
@@ -117,10 +117,10 @@ void DPluginDialog::restoreDialogSize()
 
 void DPluginDialog::saveDialogSize()
 {
-    KConfig config;
-    KConfigGroup group = config.group(objectName());
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(objectName());
     DXmlGuiWindow::saveWindowSize(windowHandle(), group);
-    config.sync();
+    config->sync();
 }
 
 } // namespace Digikam

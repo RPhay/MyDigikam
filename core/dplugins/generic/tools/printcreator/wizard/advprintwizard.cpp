@@ -44,9 +44,9 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -112,8 +112,8 @@ AdvPrintWizard::AdvPrintWizard(QWidget* const parent, DInfoInterface* const ifac
     d->settings        = new AdvPrintSettings;
     d->previewThread   = new AdvPrintThread(this);
 
-    KConfig config;
-    KConfigGroup group = config.group("PrintCreator");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("PrintCreator");
     d->settings->readSettings(group);
 
     d->introPage       = new AdvPrintIntroPage(this,   i18n("Welcome to Print Creator"));
@@ -146,8 +146,8 @@ AdvPrintWizard::~AdvPrintWizard()
 {
     d->previewThread->cancel();
 
-    KConfig config;
-    KConfigGroup group = config.group("PrintCreator");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("PrintCreator");
     d->settings->writeSettings(group);
 
     delete d->settings;

@@ -57,7 +57,6 @@
 #include "tagscache.h"
 #include "tagproperties.h"
 #include "ratingwidget.h"
-#include "slideshow.h"
 #include "syncjob.h"
 
 namespace Digikam
@@ -104,9 +103,6 @@ TagsActionMngr::TagsActionMngr(QWidget* const parent)
 
     connect(AlbumManager::instance(), SIGNAL(signalAlbumDeleted(Album*)),
             this, SLOT(slotAlbumDeleted(Album*)));
-
-    connect(CoreDbAccess::databaseWatch(), SIGNAL(imageTagChange(ImageTagChangeset)),
-            this, SLOT(slotImageTagChanged(ImageTagChangeset)));
 }
 
 TagsActionMngr::~TagsActionMngr()
@@ -496,46 +492,8 @@ void TagsActionMngr::slotAssignFromShortcut()
         return;
     }
 
-    SlideShow* const sld = dynamic_cast<SlideShow*>(w);
-
-    if (sld)
-    {
-        //qCDebug(DIGIKAM_GENERAL_LOG) << "Handling by SlideShow";
-
-        if      (action->objectName().startsWith(d->ratingShortcutPrefix))
-        {
-            sld->slotAssignRating(val);
-        }
-        else if (action->objectName().startsWith(d->pickShortcutPrefix))
-        {
-            sld->slotAssignPickLabel(val);
-        }
-        else if (action->objectName().startsWith(d->colorShortcutPrefix))
-        {
-            sld->slotAssignColorLabel(val);
-        }
-        else if (action->objectName().startsWith(d->tagShortcutPrefix))
-        {
-            sld->toggleTag(val);
-        }
-
-        return;
-    }
-}
-
-// Special case with Slideshow which do not depend on database.
-
-void TagsActionMngr::slotImageTagChanged(const ImageTagChangeset&)
-{
-    QWidget* const w     = qApp->activeWindow();
-    SlideShow* const sld = dynamic_cast<SlideShow*>(w);
-
-    if (sld)
-    {
-        QUrl url      = sld->currentItem();
-        ItemInfo info = ItemInfo::fromUrl(url);
-        sld->updateTags(url, AlbumManager::instance()->tagNames(info.tagIds()));
-    }
+    //emit signal to DInfoInterface to broadcast to another component:
+    emit signalShortcutPressed(action->objectName(), val);
 }
 
 } // namespace Digikam

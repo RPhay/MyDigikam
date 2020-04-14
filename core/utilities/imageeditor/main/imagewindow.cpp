@@ -64,6 +64,7 @@ ImageWindow::ImageWindow()
     setupStatusBar();
     createGUI(xmlFile());
     registerPluginsActions();
+
     cleanupActions();
 
     showMenuBarAction()->setChecked(!menuBar()->isHidden());  // NOTE: workaround for bug #171080

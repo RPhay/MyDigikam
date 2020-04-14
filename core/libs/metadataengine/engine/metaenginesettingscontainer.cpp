@@ -49,7 +49,9 @@ MetaEngineSettingsContainer::MetaEngineSettingsContainer()
       saveTemplate(false),
       saveTags(false),
       saveFaceTags(false),
+      savePosition(false),
       writeRawFiles(false),
+      writeDngFiles(false),
       updateFileTimeStamp(true),
       rescanImageIfModified(false),
       clearMetadataIfRescan(false),
@@ -74,6 +76,7 @@ void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
     saveTags              = group.readEntry("Save Tags",                   false);
     saveTemplate          = group.readEntry("Save Template",               false);
     saveFaceTags          = group.readEntry("Save FaceTags",               false);
+    savePosition          = group.readEntry("Save Position",               false);
 
     saveComments          = group.readEntry("Save EXIF Comments",          false);
     saveDateTime          = group.readEntry("Save Date Time",              false);
@@ -82,6 +85,7 @@ void MetaEngineSettingsContainer::readFromConfig(KConfigGroup& group)
     saveRating            = group.readEntry("Save Rating",                 false);
 
     writeRawFiles         = group.readEntry("Write Metadata To RAW Files", false);
+    writeDngFiles         = group.readEntry("Write Metadata To DNG Files", false);
     useXMPSidecar4Reading = group.readEntry("Use XMP Sidecar For Reading", false);
     useCompatibleFileName = group.readEntry("Use Compatible File Name",    false);
     metadataWritingMode   = (MetaEngine::MetadataWritingMode)
@@ -124,6 +128,7 @@ void MetaEngineSettingsContainer::writeToConfig(KConfigGroup& group) const
     group.writeEntry("Save Tags",                   saveTags);
     group.writeEntry("Save Template",               saveTemplate);
     group.writeEntry("Save FaceTags",               saveFaceTags);
+    group.writeEntry("Save Position",               savePosition);
 
     group.writeEntry("Save EXIF Comments",          saveComments);
     group.writeEntry("Save Date Time",              saveDateTime);
@@ -132,6 +137,7 @@ void MetaEngineSettingsContainer::writeToConfig(KConfigGroup& group) const
     group.writeEntry("Save Rating",                 saveRating);
 
     group.writeEntry("Write Metadata To RAW Files", writeRawFiles);
+    group.writeEntry("Write Metadata To DNG Files", writeDngFiles);
     group.writeEntry("Use XMP Sidecar For Reading", useXMPSidecar4Reading);
     group.writeEntry("Use Compatible File Name",    useCompatibleFileName);
     group.writeEntry("Metadata Writing Mode",       (int)metadataWritingMode);
@@ -170,8 +176,12 @@ QDebug operator<<(QDebug dbg, const MetaEngineSettingsContainer& inf)
                   << inf.saveTags << "), ";
     dbg.nospace() << "saveFaceTags("
                   << inf.saveFaceTags << "), ";
+    dbg.nospace() << "savePosition("
+                  << inf.savePosition << "), ";
     dbg.nospace() << "writeRawFiles("
                   << inf.writeRawFiles << "), ";
+    dbg.nospace() << "writeDngFiles("
+                  << inf.writeDngFiles << "), ";
     dbg.nospace() << "updateFileTimeStamp("
                   << inf.updateFileTimeStamp << "), ";
     dbg.nospace() << "rescanImageIfModified("

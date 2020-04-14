@@ -48,7 +48,6 @@ public:
         ToolTipPage,
         RawPage,
         IOFilesPage,
-        SlideshowPage,
         ICCPage,
         PluginsPage,
         MiscellaneousPage,

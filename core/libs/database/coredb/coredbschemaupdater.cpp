@@ -201,30 +201,27 @@ void CoreDbSchemaUpdater::setObserver(InitializationObserver* const observer)
 
 bool CoreDbSchemaUpdater::startUpdates()
 {
-    if (!d->parameters.isSQLite())
+    // Do we have sufficient privileges
+    QStringList insufficientRights;
+    CoreDbPrivilegesChecker checker(d->parameters);
+
+    if (!checker.checkPrivileges(insufficientRights))
     {
-        // Do we have sufficient privileges
-        QStringList insufficientRights;
-        CoreDbPrivilegesChecker checker(d->parameters);
+        qCDebug(DIGIKAM_COREDB_LOG) << "Core database: insufficient rights on database.";
 
-        if (!checker.checkPrivileges(insufficientRights))
+        QString errorMsg = i18n("You have insufficient privileges on the database.\n"
+                                "Following privileges are not assigned to you:\n %1\n"
+                                "Check your privileges on the database and restart digiKam.",
+                                insufficientRights.join(QLatin1String(",\n")));
+        d->lastErrorMessage = errorMsg;
+
+        if (d->observer)
         {
-            qCDebug(DIGIKAM_COREDB_LOG) << "Core database: insufficient rights on database.";
-
-            QString errorMsg = i18n("You have insufficient privileges on the database.\n"
-                                    "Following privileges are not assigned to you:\n %1\n"
-                                    "Check your privileges on the database and restart digiKam.",
-                                    insufficientRights.join(QLatin1String(",\n")));
-            d->lastErrorMessage = errorMsg;
-
-            if (d->observer)
-            {
-                d->observer->error(errorMsg);
-                d->observer->finishedSchemaUpdate(InitializationObserver::UpdateErrorMustAbort);
-            }
-
-            return false;
+            d->observer->error(errorMsg);
+            d->observer->finishedSchemaUpdate(InitializationObserver::UpdateErrorMustAbort);
         }
+
+         return false;
     }
 
     // First step: do we have an empty database?

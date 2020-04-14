@@ -63,14 +63,14 @@ class Q_DECL_HIDDEN MetadataEditDialog::Private
 public:
 
     explicit Private()
+      : isReadOnly(false),
+        tabWidget(nullptr),
+        tabExif(nullptr),
+        tabIptc(nullptr),
+        tabXmp(nullptr),
+        catcher(nullptr),
+        iface(nullptr)
     {
-        isReadOnly = false;
-        tabWidget  = nullptr;
-        tabExif    = nullptr;
-        tabIptc    = nullptr;
-        tabXmp     = nullptr;
-        catcher    = nullptr;
-        iface      = nullptr;
     }
 
     bool                   isReadOnly;
@@ -200,6 +200,7 @@ QString MetadataEditDialog::currentItemTitleHeader(const QString& title) const
 {
     QString start = QLatin1String("<qt><table cellspacing=\"0\" cellpadding=\"0\" width=\"250\" border=\"0\">");
     QString end   = QLatin1String("</table></qt>");
+
     return QString::fromLatin1("%1<tr><td>%2</td><td>%3</td></tr>%4").arg(start).arg(d->preview).arg(title).arg(end);
 }
 
@@ -212,7 +213,7 @@ void MetadataEditDialog::updatePreview()
     QList<QImage> images = d->catcher->waitForThumbnails();
 
     QImage img(48, 48, QImage::Format_ARGB32);
-    QImage thm = images.first();
+    QImage thm           = images.first();
     QPainter p(&img);
     p.fillRect(img.rect(), QPalette().window());
     p.setPen(Qt::black);
@@ -327,27 +328,31 @@ void MetadataEditDialog::slotItemChanged()
 
 bool MetadataEditDialog::eventFilter(QObject*, QEvent* e)
 {
-    if ( e->type() == QEvent::KeyPress )
+    if (e->type() == QEvent::KeyPress)
     {
         QKeyEvent* const k = (QKeyEvent*)e;
 
-        if (k->modifiers() == Qt::ControlModifier &&
-            (k->key() == Qt::Key_Enter || k->key() == Qt::Key_Return))
+        if      ((k->modifiers() == Qt::ControlModifier) &&
+                 ((k->key() == Qt::Key_Enter) || (k->key() == Qt::Key_Return)))
         {
             slotApply();
 
             if (m_buttons->button(QDialogButtonBox::No)->isEnabled())
+            {
                 slotNext();
+            }
 
             return true;
         }
-        else if (k->modifiers() == Qt::ShiftModifier &&
-                 (k->key() == Qt::Key_Enter || k->key() == Qt::Key_Return))
+        else if ((k->modifiers() == Qt::ShiftModifier) &&
+                 ((k->key() == Qt::Key_Enter) || (k->key() == Qt::Key_Return)))
         {
             slotApply();
 
             if (m_buttons->button(QDialogButtonBox::Yes)->isEnabled())
+            {
                 slotPrevious();
+            }
 
             return true;
         }
@@ -360,7 +365,10 @@ bool MetadataEditDialog::eventFilter(QObject*, QEvent* e)
 
 void MetadataEditDialog::closeEvent(QCloseEvent* e)
 {
-    if (!e) return;
+    if (!e)
+    {
+        return;
+    }
 
     saveSettings();
     e->accept();

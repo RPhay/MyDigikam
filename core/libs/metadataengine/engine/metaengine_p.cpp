@@ -69,6 +69,7 @@ QMutex s_metaEngineMutex(QMutex::Recursive);
 
 MetaEngine::Private::Private()
     : writeRawFiles(false),
+      writeDngFiles(false),
       updateFileTimeStamp(false),
       useXMPSidecar4Reading(false),
       useCompatibleFileName(false),
@@ -135,6 +136,7 @@ void MetaEngine::Private::copyPrivateData(const Private* const other)
     data                  = other->data;
     filePath              = other->filePath;
     writeRawFiles         = other->writeRawFiles;
+    writeDngFiles         = other->writeDngFiles;
     updateFileTimeStamp   = other->updateFileTimeStamp;
     useXMPSidecar4Reading = other->useXMPSidecar4Reading;
     useCompatibleFileName = other->useCompatibleFileName;
@@ -195,17 +197,16 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
 
     QStringList rawTiffBasedSupported, rawTiffBasedNotSupported;
 
-    // Raw files supported by Exiv2 0.26
+    // Raw files supported by Exiv2 0.27
 
     rawTiffBasedSupported << QLatin1String("cr2")
                           << QLatin1String("crw")
-                          << QLatin1String("dng")
                           << QLatin1String("nef")
                           << QLatin1String("pef")
                           << QLatin1String("orf")
                           << QLatin1String("srw");
 
-    // Raw files not supported by Exiv2 0.26
+    // Raw files not supported by Exiv2 0.27
 
     rawTiffBasedNotSupported << QLatin1String("3fr")
                              << QLatin1String("arw")
@@ -214,11 +215,18 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
                              << QLatin1String("k25")
                              << QLatin1String("kdc")
                              << QLatin1String("mos")
+                             << QLatin1String("mrw")
                              << QLatin1String("raf")
                              << QLatin1String("raw")
+                             << QLatin1String("rw2")
                              << QLatin1String("sr2")
                              << QLatin1String("srf")
                              << QLatin1String("rw2");
+
+    if (!writeDngFiles)
+    {
+         rawTiffBasedNotSupported << (QLatin1String("dng"));
+    }
 
     QString ext = finfo.suffix().toLower();
 

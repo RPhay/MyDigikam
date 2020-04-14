@@ -4,9 +4,10 @@
  * https://www.digikam.org
  *
  * Date        : 2014-09-18
- * Description : slideshow image widget
+ * Description : slideshow end view
  *
  * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,56 +22,30 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SLIDE_IMAGE_H
-#define DIGIKAM_SLIDE_IMAGE_H
+#ifndef DIGIKAM_SLIDE_END_PLUGIN_H
+#define DIGIKAM_SLIDE_END_PLUGIN_H
 
 // Qt includes
 
 #include <QWidget>
-#include <QUrl>
 
 // Local includes
 
 #include "digikam_export.h"
-#include "loadingdescription.h"
 
-class PreviewSettings;
-
-namespace Digikam
+namespace DigikamGenericSlideShowPlugin
 {
 
-class DIGIKAM_EXPORT SlideImage : public QWidget
+class SlideEnd : public QWidget
 {
     Q_OBJECT
 
 public:
 
-    explicit SlideImage(QWidget* const parent = nullptr);
-    virtual ~SlideImage();
-
-    void setPreviewSettings(const PreviewSettings& settings);
-    void setLoadUrl(const QUrl& url);
-    void setPreloadUrl(const QUrl& url);
-
-Q_SIGNALS:
-
-    void signalImageLoaded(bool);
-
-private Q_SLOTS:
-
-    void slotGotImagePreview(const LoadingDescription&, const DImg&);
-
-private:
-
-    void paintEvent(QPaintEvent*) override;
-    void updatePixmap();
-
-private:
-
-    class Private;
-    Private* const d;
+    explicit SlideEnd(QWidget* const parent = nullptr);
+    ~SlideEnd();
 };
 
-} // namespace Digikam
+} // namespace DigikamGenericSlideShowPlugin
 
-#endif // DIGIKAM_SLIDE_IMAGE_H
+#endif // DIGIKAM_SLIDE_END_PLUGIN_H

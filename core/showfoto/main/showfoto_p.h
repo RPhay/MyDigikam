@@ -90,7 +90,6 @@
 #include "showfotosetup.h"
 #include "showfotosetupmisc.h"
 #include "setupicc.h"
-#include "slideshow.h"
 #include "statusprogressbar.h"
 #include "thememanager.h"
 #include "thumbnailsize.h"

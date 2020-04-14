@@ -89,7 +89,6 @@ set(libdigikamgui_SRCS
     views/stack/itemiconview_items.cpp
     views/stack/itemiconview_search.cpp
     views/stack/itemiconview_sidebars.cpp
-    views/stack/itemiconview_slideshow.cpp
     views/stack/itemiconview_tags.cpp
     views/stack/itemiconview_tools.cpp
     views/stack/itemiconview_views.cpp
@@ -111,7 +110,6 @@ set(libdigikamgui_SRCS
     views/sidebar/sidebarwidget.cpp
 
     views/utils/dmodelfactory.cpp
-    views/utils/slideshowbuilder.cpp
     views/utils/componentsinfodlg.cpp
 
     ${digikamadaptor_SRCS}

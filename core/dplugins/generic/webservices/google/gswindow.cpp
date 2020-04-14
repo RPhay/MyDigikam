@@ -99,6 +99,7 @@ public:
     GPTalker*                     gphotoTalker;
 
     QString                       currentAlbumId;
+    QString                       newFolderTitle;
 
     QList< QPair<QUrl, GSPhoto> > transferQueue;
     QList< QPair<QUrl, GSPhoto> > uploadQueue;
@@ -283,17 +284,17 @@ void GSWindow::reactivate()
 
 void GSWindow::readSettings()
 {
-    KConfig config;
+    KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup grp;
 
     switch (d->service)
     {
         case GoogleService::GDrive:
-            grp = config.group("Google Drive Settings");
+            grp = config->group("Google Drive Settings");
             break;
 
         default:
-            grp = config.group("Google Photo Settings");
+            grp = config->group("Google Photo Settings");
             break;
     }
 
@@ -320,7 +321,7 @@ void GSWindow::readSettings()
         d->widget->m_tagsBGrp->button(grp.readEntry("Tag Paths", 0))->setChecked(true);
     }
 
-    KConfigGroup dialogGroup = config.group(QString::fromLatin1("%1Export Dialog").arg(d->serviceName));
+    KConfigGroup dialogGroup = config->group(QString::fromLatin1("%1Export Dialog").arg(d->serviceName));
 
     winId();
     KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
@@ -329,17 +330,17 @@ void GSWindow::readSettings()
 
 void GSWindow::writeSettings()
 {
-    KConfig config;
+    KSharedConfigPtr config = KSharedConfig::openConfig();
     KConfigGroup grp;
 
     switch (d->service)
     {
         case GoogleService::GDrive:
-            grp = config.group("Google Drive Settings");
+            grp = config->group("Google Drive Settings");
             break;
 
         default:
-            grp = config.group("Google Photo Settings");
+            grp = config->group("Google Photo Settings");
             break;
     }
 
@@ -355,9 +356,9 @@ void GSWindow::writeSettings()
         grp.writeEntry("Tag Paths", d->widget->m_tagsBGrp->checkedId());
     }
 
-    KConfigGroup dialogGroup = config.group(QString::fromLatin1("%1Export Dialog").arg(d->serviceName));
+    KConfigGroup dialogGroup = config->group(QString::fromLatin1("%1Export Dialog").arg(d->serviceName));
     KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
-    config.sync();
+    config->sync();
 }
 
 void GSWindow::slotSetUserName(const QString& msg)
@@ -573,8 +574,7 @@ void GSWindow::slotStartTransfer()
                         this, SLOT(slotListPhotosDoneForDownload(int,QString,QList<GSPhoto>)));
 
                 d->gphotoTalker->listPhotos(
-                    d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString(),
-                    d->widget->getDimensionCoB()->itemData(d->widget->getDimensionCoB()->currentIndex()).toString());
+                    d->widget->getAlbumsCoB()->itemData(d->widget->getAlbumsCoB()->currentIndex()).toString());
 
                 return;
             }
@@ -1135,6 +1135,7 @@ void GSWindow::slotNewAlbumRequest()
                 GSFolder newFolder;
                 d->gphotoAlbumDlg->getAlbumProperties(newFolder);
                 d->gphotoTalker->createAlbum(newFolder);
+                d->newFolderTitle = newFolder.title;
             }
             break;
     }
@@ -1212,7 +1213,10 @@ void GSWindow::slotCreateFolderDone(int code, const QString& msg, const QString&
             else
             {
                 d->currentAlbumId = albumId;
-                d->gphotoTalker->listAlbums();
+                d->widget->getAlbumsCoB()->addItem(QIcon::fromTheme(QLatin1String("folder")),
+                                                   d->newFolderTitle, d->currentAlbumId);
+                d->widget->getAlbumsCoB()->setCurrentIndex(d->widget->getAlbumsCoB()->
+                                               findData(d->currentAlbumId));
             }
             break;
     }

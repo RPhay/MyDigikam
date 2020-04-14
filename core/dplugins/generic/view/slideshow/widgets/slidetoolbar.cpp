@@ -8,6 +8,7 @@
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -41,8 +42,9 @@
 
 #include "slidehelp.h"
 #include "digikam_debug.h"
+#include "setupslideshow_dialog.h"
 
-namespace Digikam
+namespace DigikamGenericSlideShowPlugin
 {
 
 class Q_DECL_HIDDEN SlideToolBar::Private
@@ -54,47 +56,59 @@ public:
         stopBtn(nullptr),
         nextBtn(nullptr),
         prevBtn(nullptr),
-        screenSelectBtn(nullptr)
+        setupBtn(nullptr),
+        screenSelectBtn(nullptr),
+        configDialog(nullptr)
     {
     }
 
-    QToolButton* playBtn;
-    QToolButton* stopBtn;
-    QToolButton* nextBtn;
-    QToolButton* prevBtn;
-    QToolButton* screenSelectBtn;
+    QToolButton*          playBtn;
+    QToolButton*          stopBtn;
+    QToolButton*          nextBtn;
+    QToolButton*          prevBtn;
+    QToolButton*          setupBtn;
+    QToolButton*          screenSelectBtn;
+
+    SetupSlideShowDialog* configDialog;
 };
 
-SlideToolBar::SlideToolBar(const SlideShowSettings& settings, QWidget* const parent)
+SlideToolBar::SlideToolBar(SlideShowSettings* const settings, QWidget* const parent)
     : DHBox(parent),
       d(new Private)
 {
     setMouseTracking(true);
     setContentsMargins(QMargins());
 
-    d->playBtn = new QToolButton(this);
-    d->prevBtn = new QToolButton(this);
-    d->nextBtn = new QToolButton(this);
-    d->stopBtn = new QToolButton(this);
+    d->playBtn      = new QToolButton(this);
+    d->prevBtn      = new QToolButton(this);
+    d->nextBtn      = new QToolButton(this);
+    d->stopBtn      = new QToolButton(this);
+    d->setupBtn     = new QToolButton(this);
+
+    d->configDialog = new SetupSlideShowDialog(settings, this);
 
     d->playBtn->setCheckable(true);
-    d->playBtn->setChecked(!settings.autoPlayEnabled);
+    d->playBtn->setChecked(!settings->autoPlayEnabled);
     d->playBtn->setFocusPolicy(Qt::NoFocus);
     d->prevBtn->setFocusPolicy(Qt::NoFocus);
     d->nextBtn->setFocusPolicy(Qt::NoFocus);
     d->stopBtn->setFocusPolicy(Qt::NoFocus);
+    d->setupBtn->setFocusPolicy(Qt::NoFocus);
+
     QSize s(32, 32);
     d->playBtn->setIconSize(s);
     d->prevBtn->setIconSize(s);
     d->nextBtn->setIconSize(s);
     d->stopBtn->setIconSize(s);
+    d->setupBtn->setIconSize(s);
 
-    QString iconString = settings.autoPlayEnabled ? QLatin1String("media-playback-pause")
-                                                  : QLatin1String("media-playback-start");
+    QString iconString = settings->autoPlayEnabled ? QLatin1String("media-playback-pause")
+                                                   : QLatin1String("media-playback-start");
     d->playBtn->setIcon(QIcon::fromTheme(iconString));
     d->prevBtn->setIcon(QIcon::fromTheme(QLatin1String("media-skip-backward")));
     d->nextBtn->setIcon(QIcon::fromTheme(QLatin1String("media-skip-forward")));
     d->stopBtn->setIcon(QIcon::fromTheme(QLatin1String("media-playback-stop")));
+    d->setupBtn->setIcon(QIcon::fromTheme(QLatin1String("systemsettings")));
 
     int num = qApp->screens().count();
 
@@ -121,7 +135,7 @@ SlideToolBar::SlideToolBar(const SlideShowSettings& settings, QWidget* const par
             act->setCheckable(true);
             group->addAction(act);
 
-            if (i == settings.slideScreen)
+            if (i == settings->slideScreen)
             {
                act->setChecked(true);
             }
@@ -148,6 +162,12 @@ SlideToolBar::SlideToolBar(const SlideShowSettings& settings, QWidget* const par
 
     connect(d->stopBtn, SIGNAL(clicked()),
             this, SIGNAL(signalClose()));
+
+    connect(d->setupBtn, SIGNAL(clicked()),
+            this, SLOT(slotMenuSlideShowConfiguration()));
+
+    connect(d->configDialog, SIGNAL(finished(int)),
+            this, SLOT(slotConfigurationAccepted()));
 }
 
 SlideToolBar::~SlideToolBar()
@@ -186,6 +206,14 @@ void SlideToolBar::setEnabledPrev(bool val)
     d->prevBtn->setEnabled(val);
 }
 
+void SlideToolBar::closeConfigurationDialog()
+{
+    if (d->configDialog->isVisible())
+    {
+        d->configDialog->reject();
+    }
+}
+
 void SlideToolBar::slotPlayBtnToggled()
 {
     if (d->playBtn->isChecked())
@@ -211,6 +239,24 @@ void SlideToolBar::slotNexPrevClicked()
 
         emit signalPause();
     }
+}
+
+void SlideToolBar::slotMenuSlideShowConfiguration()
+{
+    if (d->configDialog->isVisible())
+    {
+        d->configDialog->reject();
+
+        return;
+    }
+
+    pause(true);
+    d->configDialog->show();
+}
+
+void SlideToolBar::slotConfigurationAccepted()
+{
+    pause(false);
 }
 
 void SlideToolBar::keyPressEvent(QKeyEvent* e)
@@ -287,4 +333,4 @@ void SlideToolBar::slotScreenSelected(QAction* act)
     emit signalScreenSelected(act->data().toInt());
 }
 
-} // namespace Digikam
+} // namespace DigikamGenericSlideShowPlugin

@@ -47,9 +47,10 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
+
 
 namespace DigikamGenericPresentationPlugin
 {
@@ -598,13 +599,13 @@ void PresentationKB::paintTexture(KBImage* const img)
 
 void PresentationKB::readSettings()
 {
-    KConfig config;
-    KConfigGroup group  = config.group("Presentation Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Presentation Settings");
 
-    d->delay            = group.readEntry("Delay", 8000) / 1000;
-    d->disableFadeInOut = group.readEntry("KB Disable FadeInOut", false);
-    d->disableCrossFade = group.readEntry("KB Disable Crossfade", false);
-    d->forceFrameRate   = group.readEntry("KB Force Framerate", 0);
+    d->delay                = group.readEntry("Delay", 8000) / 1000;
+    d->disableFadeInOut     = group.readEntry("KB Disable FadeInOut", false);
+    d->disableCrossFade     = group.readEntry("KB Disable Crossfade", false);
+    d->forceFrameRate       = group.readEntry("KB Force Framerate", 0);
 
     if (d->delay < 5)
     {

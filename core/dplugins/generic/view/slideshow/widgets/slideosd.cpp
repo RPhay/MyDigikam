@@ -7,6 +7,7 @@
  * Description : slideshow OSD widget
  *
  * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -43,7 +44,7 @@
 // Local includes
 
 #include "digikam_debug.h"
-#include "slideshow.h"
+#include "slideshowloader.h"
 #include "slidetoolbar.h"
 #include "slideproperties.h"
 #include "ratingwidget.h"
@@ -51,7 +52,9 @@
 #include "picklabelwidget.h"
 #include "dinfointerface.h"
 
-namespace Digikam
+using namespace Digikam;
+
+namespace DigikamGenericSlideShowPlugin
 {
 
 class Q_DECL_HIDDEN SlideOSD::Private
@@ -73,7 +76,8 @@ public:
         toolBar(nullptr),
         ratingWidget(nullptr),
         clWidget(nullptr),
-        plWidget(nullptr)
+        plWidget(nullptr),
+        settings(nullptr)
     {
     }
 
@@ -90,18 +94,18 @@ public:
     DHBox*              labelsBox;
     DHBox*              progressBox;
 
-    SlideShow*          parent;
+    SlideShowLoader*    parent;
     SlideProperties*    slideProps;
     SlideToolBar*       toolBar;
     RatingWidget*       ratingWidget;
     ColorLabelSelector* clWidget;
     PickLabelSelector*  plWidget;
-    SlideShowSettings   settings;
+    SlideShowSettings*  settings;
 };
 
-SlideOSD::SlideOSD(const SlideShowSettings& settings, SlideShow* const parent)
+SlideOSD::SlideOSD(SlideShowSettings* const settings, SlideShowLoader* const parent)
     : QWidget(parent),
-      d(new Private)
+      d(new Private())
 {
     Qt::WindowFlags flags = Qt::FramelessWindowHint  |
                             Qt::WindowStaysOnTopHint |
@@ -114,6 +118,7 @@ SlideOSD::SlideOSD(const SlideShowSettings& settings, SlideShow* const parent)
 
     d->settings   = settings;
     d->parent     = parent;
+
     d->slideProps = new SlideProperties(d->settings, this);
     d->slideProps->installEventFilter(d->parent);
 
@@ -147,10 +152,10 @@ SlideOSD::SlideOSD(const SlideShowSettings& settings, SlideShow* const parent)
     d->labelsBox->installEventFilter(d->parent);
     d->labelsBox->setMouseTracking(true);
 
-    d->labelsBox->setVisible(d->settings.printLabels || d->settings.printRating);
-    d->ratingWidget->setVisible(d->settings.printRating);
-    d->clWidget->setVisible(d->settings.printLabels);
-    d->plWidget->setVisible(d->settings.printLabels);
+    d->labelsBox->setVisible(d->settings->printLabels || d->settings->printRating);
+    d->ratingWidget->setVisible(d->settings->printRating);
+    d->clWidget->setVisible(d->settings->printLabels);
+    d->plWidget->setVisible(d->settings->printLabels);
 
     connect(d->ratingWidget, SIGNAL(signalRatingChanged(int)),
             parent, SLOT(slotAssignRating(int)));
@@ -164,13 +169,13 @@ SlideOSD::SlideOSD(const SlideShowSettings& settings, SlideShow* const parent)
     // ---------------------------------------------------------------
 
     d->progressBox   = new DHBox(this);
-    d->progressBox->setVisible(d->settings.showProgressIndicator);
+    d->progressBox->setVisible(d->settings->showProgressIndicator);
     d->progressBox->installEventFilter(d->parent);
     d->progressBox->setMouseTracking(true);
 
     d->progressBar   = new QProgressBar(d->progressBox);
     d->progressBar->setMinimum(0);
-    d->progressBar->setMaximum(d->settings.delay);
+    d->progressBar->setMaximum(d->settings->delay);
     d->progressBar->setFocusPolicy(Qt::NoFocus);
     d->progressBar->installEventFilter(d->parent);
     d->progressBar->setMouseTracking(true);
@@ -184,6 +189,9 @@ SlideOSD::SlideOSD(const SlideShowSettings& settings, SlideShow* const parent)
 
     connect(d->toolBar, SIGNAL(signalPlay()),
             d->parent, SLOT(slotPlay()));
+
+    connect(d->toolBar, SIGNAL(signalPlay()),
+            this, SLOT(slotRechargeSettings()));
 
     connect(d->toolBar, SIGNAL(signalNext()),
             d->parent, SLOT(slotLoadNextItem()));
@@ -230,7 +238,17 @@ void SlideOSD::slotStart()
 {
     d->parent->slotLoadNextItem();
     d->progressTimer->start(d->refresh);
-    pause(!d->settings.autoPlayEnabled);
+    pause(!d->settings->autoPlayEnabled);
+}
+
+void SlideOSD::slotRechargeSettings()
+{
+    d->labelsBox->setVisible(d->settings->printLabels || d->settings->printRating);
+    d->ratingWidget->setVisible(d->settings->printRating);
+    d->clWidget->setVisible(d->settings->printLabels);
+    d->plWidget->setVisible(d->settings->printLabels);
+    d->progressBox->setVisible(d->settings->showProgressIndicator);
+    d->progressBar->setMaximum(d->settings->delay);
 }
 
 SlideToolBar* SlideOSD::toolBar() const
@@ -240,7 +258,7 @@ SlideToolBar* SlideOSD::toolBar() const
 
 void SlideOSD::setCurrentUrl(const QUrl& url)
 {
-    DInfoInterface::DInfoMap info = d->settings.iface->itemInfo(url);
+    DInfoInterface::DInfoMap info = d->settings->iface->itemInfo(url);
     DItemInfo item(info);
 
     // Update info text.
@@ -249,7 +267,7 @@ void SlideOSD::setCurrentUrl(const QUrl& url)
 
     // Display Labels.
 
-    if (d->settings.printLabels)
+    if (d->settings->printLabels)
     {
         d->clWidget->blockSignals(true);
         d->plWidget->blockSignals(true);
@@ -259,7 +277,7 @@ void SlideOSD::setCurrentUrl(const QUrl& url)
         d->plWidget->blockSignals(false);
     }
 
-    if (d->settings.printRating)
+    if (d->settings->printRating)
     {
         d->ratingWidget->blockSignals(true);
         d->ratingWidget->setRating(item.rating());
@@ -325,8 +343,8 @@ bool SlideOSD::eventFilter(QObject* obj, QEvent* ev)
 void SlideOSD::slotProgressTimer()
 {
     QString str = QString::fromUtf8("(%1/%2)")
-                    .arg(QString::number(d->settings.fileList.indexOf(d->parent->currentItem()) + 1))
-                    .arg(QString::number(d->settings.fileList.count()));
+                    .arg(QString::number(d->settings->fileList.indexOf(d->parent->currentItem()) + 1))
+                    .arg(QString::number(d->settings->fileList.count()));
 
     if      (isPaused())
     {
@@ -348,7 +366,7 @@ void SlideOSD::slotProgressTimer()
     {
         d->progressBar->setFormat(str);
 
-        if (d->progressBar->value() == d->settings.delay)
+        if (d->progressBar->value() == d->settings->delay)
         {
             if (!d->ready)
             {
@@ -404,4 +422,4 @@ void SlideOSD::setLoadingReady(bool b)
     d->ready = b;
 }
 
-} // namespace Digikam
+} // namespace DigikamGenericSlideShowPlugin

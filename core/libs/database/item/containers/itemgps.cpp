@@ -25,6 +25,7 @@
 
 // Local includes
 
+#include "metaenginesettings.h"
 #include "itemposition.h"
 #include "coredb.h"
 #include "tagscache.h"
@@ -131,6 +132,11 @@ QString ItemGPS::saveChanges()
     }
 
     // Save info to file.
+
+    MetaEngineSettings* const settings = MetaEngineSettings::instance();
+
+    m_saveTags                         = settings->settings().saveTags;
+    m_saveGPS                          = settings->settings().savePosition;
 
     return GPSItemContainer::saveChanges();
 }

@@ -50,9 +50,9 @@
 
 // KDE includes
 
+#include <klocalizedstring.h>
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
-#include <klocalizedstring.h>
 
 // Local includes
 
@@ -728,8 +728,8 @@ void MediaWikiWidget::slotNewWikiClicked()
 
 void MediaWikiWidget::slotAddWikiClicked()
 {
-    KConfig config;
-    KConfigGroup group = config.group(QLatin1String("MediaWiki export settings"));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(QLatin1String("MediaWiki export settings"));
 
     d->UrlsHistory << d->newWikiUrlEdit->text();
     group.writeEntry(QLatin1String("Urls history"), d->UrlsHistory);

@@ -148,12 +148,6 @@ private Q_SLOTS:
 
     void slotContextMenu();
 
-// -- Extra tool methods implemented in showfoto_tools.cpp ----------------------------------------
-
-private:
-
-    void slideShow(Digikam::SlideShowSettings& settings);
-
 // -- Import tools methods implemented in showfoto_import.cpp -------------------------------------
 
 private Q_SLOTS:

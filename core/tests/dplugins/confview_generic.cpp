@@ -3,10 +3,10 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2014-09-18
- * Description : slideshow end view
+ * Date        : 2018-07-30
+ * Description : stand alone test application for plugin configuration view.
  *
- * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,30 +21,35 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SLIDE_END_H
-#define DIGIKAM_SLIDE_END_H
+// Qt Includes
 
-// Qt includes
-
-#include <QWidget>
+#include <QApplication>
+#include <QDebug>
 
 // Local includes
 
-#include "digikam_export.h"
+#include "dpluginloader.h"
+#include "dpluginsetup.h"
+#include "dpluginconfviewgeneric.h"
 
-namespace Digikam
+using namespace Digikam;
+
+int main(int argc, char* argv[])
 {
+    QApplication app(argc, argv);
 
-class DIGIKAM_EXPORT SlideEnd : public QWidget
-{
-    Q_OBJECT
+    DPluginLoader* const dpl = DPluginLoader::instance();
+    dpl->init();
+    dpl->registerGenericPlugins(qApp);
 
-public:
+    DPluginSetup view;
+    view.setPluginConfView(new DPluginConfViewGeneric(&view));
+    view.show();
+    view.resize(1024, 640);
 
-    explicit SlideEnd(QWidget* const parent = nullptr);
-    virtual ~SlideEnd();
-};
+    app.exec();
 
-} // namespace Digikam
+    view.applySettings();
 
-#endif // DIGIKAM_SLIDE_END_H
+    return 0;
+}

@@ -70,7 +70,6 @@ public:
     void enableAlbumForwardHistory(bool enable);
 
     ItemIconView* view()    const;
-    QMenu* slideShowMenu()  const;
 
     static DigikamApp* instance();
 

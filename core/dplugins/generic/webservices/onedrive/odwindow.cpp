@@ -34,7 +34,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kwindowconfig.h>
 
 // Local includes
@@ -159,9 +159,9 @@ ODWindow::~ODWindow()
 
 void ODWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup grp    = config.group("Onedrive Settings");
-    d->currentAlbumName = grp.readEntry("Current Album", QString());
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Onedrive Settings");
+    d->currentAlbumName     = grp.readEntry("Current Album", QString());
 
     if (grp.readEntry("Resize", false))
     {
@@ -177,7 +177,7 @@ void ODWindow::readSettings()
     d->widget->getDimensionSpB()->setValue(grp.readEntry("Maximum Width",  1600));
     d->widget->getImgQualitySpB()->setValue(grp.readEntry("Image Quality", 90));
 
-    KConfigGroup dialogGroup = config.group("Onedrive Export Dialog");
+    KConfigGroup dialogGroup = config->group("Onedrive Export Dialog");
 
     winId();
     KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
@@ -186,18 +186,18 @@ void ODWindow::readSettings()
 
 void ODWindow::writeSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("Onedrive Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Onedrive Settings");
 
     grp.writeEntry("Current Album", d->currentAlbumName);
     grp.writeEntry("Resize",        d->widget->getResizeCheckBox()->isChecked());
     grp.writeEntry("Maximum Width", d->widget->getDimensionSpB()->value());
     grp.writeEntry("Image Quality", d->widget->getImgQualitySpB()->value());
 
-    KConfigGroup dialogGroup = config.group("Onedrive Export Dialog");
+    KConfigGroup dialogGroup = config->group("Onedrive Export Dialog");
     KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
 
-    config.sync();
+    config->sync();
 }
 
 void ODWindow::reactivate()

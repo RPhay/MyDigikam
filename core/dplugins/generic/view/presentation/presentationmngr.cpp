@@ -43,7 +43,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -99,11 +99,11 @@ void PresentationMngr::showConfigDialog()
 
 void PresentationMngr::slotSlideShow()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("Presentation Settings");
-    bool opengl      = grp.readEntry("OpenGL",  false);
-    bool shuffle     = grp.readEntry("Shuffle", false);
-    bool wantKB      = grp.readEntry("Effect Name (OpenGL)") == QLatin1String("Ken Burns");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Presentation Settings");
+    bool opengl             = grp.readEntry("OpenGL",  false);
+    bool shuffle            = grp.readEntry("Shuffle", false);
+    bool wantKB             = grp.readEntry("Effect Name (OpenGL)") == QLatin1String("Ken Burns");
 
     if (m_sharedData->urlList.isEmpty())
     {

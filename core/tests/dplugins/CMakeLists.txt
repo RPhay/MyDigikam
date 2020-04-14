@@ -32,4 +32,4 @@ macro(DPLUGINS_BUILD_TOOL)
 endmacro()
 
 DPLUGINS_BUILD_TOOL(loadandrun_generic.cpp)
-DPLUGINS_BUILD_TOOL(confview.cpp)
+DPLUGINS_BUILD_TOOL(confview_generic.cpp)

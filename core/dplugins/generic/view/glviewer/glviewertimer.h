@@ -44,7 +44,7 @@ public:
 
 private:
 
-    // Hidden copy constructor and assignment operator.
+    /// Hidden copy constructor and assignment operator.
     GLViewerTimer(const GLViewerTimer&);
     GLViewerTimer& operator=(const GLViewerTimer&);
 

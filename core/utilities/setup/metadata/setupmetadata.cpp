@@ -85,7 +85,9 @@ public:
         saveDateTimeBox(nullptr),
         saveTemplateBox(nullptr),
         saveFaceTags(nullptr),
+        savePosition(nullptr),
         useLazySync(nullptr),
+        writeDngFilesBox(nullptr),
         writeRawFilesBox(nullptr),
         writeXMPSidecarBox(nullptr),
         readXMPSidecarBox(nullptr),
@@ -127,8 +129,10 @@ public:
     QCheckBox*           saveDateTimeBox;
     QCheckBox*           saveTemplateBox;
     QCheckBox*           saveFaceTags;
+    QCheckBox*           savePosition;
 
     QCheckBox*           useLazySync;
+    QCheckBox*           writeDngFilesBox;
     QCheckBox*           writeRawFilesBox;
     QCheckBox*           writeXMPSidecarBox;
     QCheckBox*           readXMPSidecarBox;
@@ -227,6 +231,11 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->saveFaceTags->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store face tags "
                                         "with face rectangles in the XMP tags."));
 
+    d->savePosition      = new QCheckBox;
+    d->savePosition->setText(i18nc("@option:check", "Geolocation information (GPS)"));
+    d->savePosition->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to store Geolocation information "
+                                        "in the EXIF tag and the XMP tags."));
+
     fieldsLayout->addWidget(fieldsIconLabel,       0, 0, 2, 3);
     fieldsLayout->addWidget(fieldsLabel,           0, 1, 2, 3);
     fieldsLayout->addWidget(d->saveTagsBox,        2, 0, 1, 3);
@@ -236,7 +245,8 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     fieldsLayout->addWidget(d->saveColorLabelBox,  6, 0, 1, 3);
     fieldsLayout->addWidget(d->saveDateTimeBox,    7, 0, 1, 3);
     fieldsLayout->addWidget(d->saveTemplateBox,    8, 0, 1, 3);
-    fieldsLayout->addWidget(d->saveFaceTags,       9 ,0, 1, 3);
+    fieldsLayout->addWidget(d->saveFaceTags,       9, 0, 1, 3);
+    fieldsLayout->addWidget(d->savePosition,      10, 0, 1, 3);
     fieldsLayout->setColumnStretch(3, 10);
     d->fieldsGroup->setLayout(fieldsLayout);
 
@@ -255,8 +265,14 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     d->useLazySync->setWhatsThis(i18nc("@info:whatsthis",
                                        "Instead of synchronizing metadata, just schedule it for synchronization."
                                        "Synchronization can be done later by triggering the apply pending, or at digikam exit"));
+
+    d->writeDngFilesBox   = new QCheckBox;
+    d->writeDngFilesBox->setText(i18nc("@option:check", "Write metadata to DNG files"));
+    d->writeDngFilesBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to write metadata into DNG files."));
+    d->writeDngFilesBox->setEnabled(MetaEngine::supportMetadataWritting(QLatin1String("image/x-raw")));
+
     d->writeRawFilesBox   = new QCheckBox;
-    d->writeRawFilesBox->setText(i18nc("@option:check", "If possible write Metadata to RAW files (experimental)"));
+    d->writeRawFilesBox->setText(i18nc("@option:check", "If possible write metadata to RAW files (experimental)"));
     d->writeRawFilesBox->setWhatsThis(i18nc("@info:whatsthis", "Turn on this option to write metadata into RAW TIFF/EP files. "
                                             "This feature requires the Exiv2 shared library, version >= 0.18.0. It is still "
                                             "experimental, and is disabled by default."));
@@ -290,10 +306,11 @@ SetupMetadata::SetupMetadata(QWidget* const parent)
     readWriteLayout->addWidget(readWriteIconLabel,          0, 0, 2, 3);
     readWriteLayout->addWidget(readWriteLabel,              0, 1, 2, 3);
     readWriteLayout->addWidget(d->useLazySync,              2, 0, 1, 3);
-    readWriteLayout->addWidget(d->writeRawFilesBox,         3, 0, 1, 3);
-    readWriteLayout->addWidget(d->updateFileTimeStampBox,   4, 0, 1, 3);
-    readWriteLayout->addWidget(d->rescanImageIfModifiedBox, 5, 0, 1, 3);
-    readWriteLayout->addWidget(d->clearMetadataIfRescanBox, 6, 0, 1, 3);
+    readWriteLayout->addWidget(d->writeDngFilesBox,         3, 0, 1, 3);
+    readWriteLayout->addWidget(d->writeRawFilesBox,         4, 0, 1, 3);
+    readWriteLayout->addWidget(d->updateFileTimeStampBox,   5, 0, 1, 3);
+    readWriteLayout->addWidget(d->rescanImageIfModifiedBox, 6, 0, 1, 3);
+    readWriteLayout->addWidget(d->clearMetadataIfRescanBox, 7, 0, 1, 3);
     readWriteLayout->setColumnStretch(3, 10);
     d->readWriteGroup->setLayout(readWriteLayout);
 
@@ -719,8 +736,10 @@ void SetupMetadata::applySettings()
     set.saveTags              = d->saveTagsBox->isChecked();
     set.saveTemplate          = d->saveTemplateBox->isChecked();
     set.saveFaceTags          = d->saveFaceTags->isChecked();
+    set.savePosition          = d->savePosition->isChecked();
 
     set.useLazySync           = d->useLazySync->isChecked();
+    set.writeDngFiles         = d->writeDngFilesBox->isChecked();
     set.writeRawFiles         = d->writeRawFilesBox->isChecked();
     set.useXMPSidecar4Reading = d->readXMPSidecarBox->isChecked();
     set.useCompatibleFileName = d->sidecarFileNameBox->isChecked();
@@ -802,8 +821,10 @@ void SetupMetadata::readSettings()
     d->saveDateTimeBox->setChecked(set.saveDateTime);
     d->saveTemplateBox->setChecked(set.saveTemplate);
     d->saveFaceTags->setChecked(set.saveFaceTags);
+    d->savePosition->setChecked(set.savePosition);
 
     d->useLazySync->setChecked(set.useLazySync);
+    d->writeDngFilesBox->setChecked(set.writeDngFiles);
     d->writeRawFilesBox->setChecked(set.writeRawFiles);
     d->readXMPSidecarBox->setChecked(set.useXMPSidecar4Reading);
     d->sidecarFileNameBox->setChecked(set.useCompatibleFileName);

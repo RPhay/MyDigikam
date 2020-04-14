@@ -64,7 +64,7 @@ QString DImgJPEG2000Plugin::iid() const
 
 QIcon DImgJPEG2000Plugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("image-jpeg2000"));
+    return QIcon::fromTheme(QLatin1String("image-jpeg"));
 }
 
 QString DImgJPEG2000Plugin::description() const

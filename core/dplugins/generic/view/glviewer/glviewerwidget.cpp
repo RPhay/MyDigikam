@@ -58,7 +58,7 @@
 namespace DigikamGenericGLViewerPlugin
 {
 
-class GLViewerWidget::Private
+class Q_DECL_HIDDEN GLViewerWidget::Private
 {
 public:
 
@@ -76,10 +76,9 @@ public:
 
 public:
 
-    Private()
+    explicit Private()
       :
-        /// index of picture to be displayed
-        file_idx(0),
+        file_idx(0),                    ///< index of picture to be displayed
 
         texture(nullptr),
         ratio_view_y(0.0F),
@@ -162,8 +161,8 @@ GLViewerWidget::GLViewerWidget(DPlugin* const plugin, DInfoInterface* const ifac
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
-    d->plugin = plugin;
-    d->iface  = iface;
+    d->plugin       = plugin;
+    d->iface        = iface;
 
     // Determine screen size for isReallyFullScreen
 
@@ -183,9 +182,9 @@ GLViewerWidget::GLViewerWidget(DPlugin* const plugin, DInfoInterface* const ifac
     QList<QUrl> selection = d->iface->currentSelectedItems();
     QString selectedImage;                                          // selected pic in hostapp
 
-    int foundNumber = 0;
+    int foundNumber       = 0;
 
-    if (selection.count() == 0)
+    if      (selection.count() == 0)
     {
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "no image selected, load entire album";
         myfiles = d->iface->currentAlbumItems();
@@ -392,8 +391,10 @@ void GLViewerWidget::resizeGL(int w, int h)
  */
 void GLViewerWidget::drawImage(GLViewerTexture* const tex)
 {
-    // qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "enter drawImage: target=" << d->texture->textureId()
-    //                                      << "dim=" << d->texture->height() << d->texture->width();
+/*
+    qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "enter drawImage: target=" << d->texture->textureId()
+                                         << "dim=" << d->texture->height() << d->texture->width();
+*/
     glBindTexture(GL_TEXTURE_RECTANGLE_NV, tex->textureId());
     glBegin(GL_QUADS);
     glTexCoord2f(0, 0);
@@ -421,40 +422,56 @@ void GLViewerWidget::keyPressEvent(QKeyEvent* e)
     switch (e->key())
     {
         // next image
+
         case Qt::Key_N:
         case Qt::Key_Right:
         case Qt::Key_Down:
         case Qt::Key_PageDown:
         case Qt::Key_Space:
+        {
             nextImage();
             break;
+        }
 
         // previous image
+
         case Qt::Key_P:
         case Qt::Key_Left:
         case Qt::Key_Up:
         case Qt::Key_PageUp:
+        {
             prevImage();
             break;
+        }
 
         // rotate image
+
         case Qt::Key_R:
+        {
             d->texture->rotate();
             downloadTexture(d->texture);
             update();
             break;
+        }
 
         // terminate image viewer
+
         case Qt::Key_Escape:
+        {
             // clean up: where does this have to be done?
+
             close();
             break;
+        }
 
         // full screen
+
         case Qt::Key_F:
+        {
             // according to QT documentation, showFullScreen() has some
             // serious issues on window managers that do not follow modern
             // post-ICCCM specifications
+
             if (isFullScreen())
             {
                 d->texture->reset();
@@ -465,82 +482,122 @@ void GLViewerWidget::keyPressEvent(QKeyEvent* e)
                 d->texture->reset();
                 showFullScreen(); // krazy:exclude=qmethods
             }
+
             break;
+        }
 
         // reset size and redraw
+
         case Qt::Key_Z:
+        {
             d->texture->reset();
             update();
+
             break;
+        }
 
         // toggle permanent between "show next image" and "zoom" on mousewheel change
+
         case Qt::Key_C:
+        {
             if (d->wheelAction == GLViewerWidget::Private::zoomImage)
+            {
                 d->wheelAction = GLViewerWidget::Private::changeImage;
+            }
             else
+            {
                 d->wheelAction = GLViewerWidget::Private::zoomImage;
+            }
+
             break;
+        }
 
         // zoom in
+
         case Qt::Key_Plus:
-            middlepoint = QPoint(width() / 2, height() / 2);
-
-            if (d->texture->setNewSize(d->zoomsize))
-                downloadTexture(d->texture); //load full resolution image
-
-            zoom(-1, middlepoint, d->zoomfactor_keyboard);
-            break;
-
-        // zoom out
-        case Qt::Key_Minus:
+        {
             middlepoint = QPoint(width() / 2, height() / 2);
 
             if (d->texture->setNewSize(d->zoomsize))
             {
-                downloadTexture(d->texture); //load full resolution image
+                downloadTexture(d->texture); // load full resolution image
+            }
+
+            zoom(-1, middlepoint, d->zoomfactor_keyboard);
+
+            break;
+        }
+
+        // zoom out
+
+        case Qt::Key_Minus:
+        {
+            middlepoint = QPoint(width() / 2, height() / 2);
+
+            if (d->texture->setNewSize(d->zoomsize))
+            {
+                downloadTexture(d->texture); // load full resolution image
             }
 
             zoom(1, middlepoint, d->zoomfactor_keyboard);
+
             break;
+        }
 
         // zoom to original size
+
         case Qt::Key_O:
+        {
             d->texture->loadFullSize();
 
             if (d->texture->setNewSize(QSize(0, 0)))
             {
-                downloadTexture(d->texture); //load full resolution image
+                downloadTexture(d->texture); // load full resolution image
             }
 
             d->texture->zoomToOriginal();
             update();
+
             break;
+        }
 
         // toggle temorarily between "show next image" and "zoom" on mousewheel change
+
         case Qt::Key_Control:
+        {
             if (d->wheelAction == GLViewerWidget::Private::zoomImage)
             {
-                //scrollwheel changes to the next image
+                // scrollwheel changes to the next image
+
                 d->wheelAction = GLViewerWidget::Private::changeImage;
             }
             else
             {
-                //scrollwheel does zoom
+                // scrollwheel does zoom
+
                 d->wheelAction = GLViewerWidget::Private::zoomImage;
                 setCursor(d->zoomCursor);
                 d->timerMouseMove.stop();
             }
-            break;
 
-        //do noting, don't trigger the help dialog
+            break;
+        }
+
+        // do noting, don't trigger the help dialog
+
         case Qt::Key_Shift:
+        {
             break;
+        }
 
-        //key is not bound to any action, therefore show help dialog to enlighten the user
+        // key is not bound to any action, therefore show help dialog to enlighten the user
+
         default:
+        {
             QPointer<GLViewerHelpDlg> help = new GLViewerHelpDlg(d->plugin);
             help->exec();
             break;
+        }
     }
 }
 
@@ -550,6 +607,7 @@ void GLViewerWidget::keyReleaseEvent(QKeyEvent* e)
     {
         case Qt::Key_Plus:
         case Qt::Key_Minus:
+        {
             if (!e->isAutoRepeat())
             {
                 unsetCursor();
@@ -565,9 +623,12 @@ void GLViewerWidget::keyReleaseEvent(QKeyEvent* e)
             {
                 e->ignore();
             }
+
             break;
+        }
 
         case Qt::Key_Control:
+        {
             if (d->wheelAction == GLViewerWidget::Private::zoomImage)
             {
                 d->wheelAction = GLViewerWidget::Private::changeImage;
@@ -578,11 +639,15 @@ void GLViewerWidget::keyReleaseEvent(QKeyEvent* e)
                 unsetCursor();
                 d->timerMouseMove.start(2000);
             }
+
             break;
+        }
 
         default:
+        {
             e->ignore();
             break;
+        }
     }
 }
 
@@ -613,6 +678,7 @@ GLViewerTexture* GLViewerWidget::loadImage(int file_index) const
     if (d->cache[imod].file_index == file_index)
     {
         // image is already cached
+
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "image" << file_index << "is already in cache@" << imod;
 
         return d->cache[imod].texture;
@@ -620,11 +686,13 @@ GLViewerTexture* GLViewerWidget::loadImage(int file_index) const
     else
     {
         // image is net yet loaded
+
         QString f                 = d->files[file_index];
         qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "loading image" << f << "(idx=" << file_index << ") to cache@" << imod;
         d->cache[imod].file_index = file_index;
 
-        //when loadImage is called the first time, the frame is not yet fullscreen
+        // when loadImage is called the first time, the frame is not yet fullscreen
+
         QSize size;
 
         if (d->firstImage)
@@ -640,6 +708,7 @@ GLViewerTexture* GLViewerWidget::loadImage(int file_index) const
         }
 
         // handle non-loadable images
+
         if (!d->cache[imod].texture->load(f, size))
         {
             d->cache[imod].texture->load(d->nullImage.toImage(), size);
@@ -653,16 +722,21 @@ GLViewerTexture* GLViewerWidget::loadImage(int file_index) const
 
 void GLViewerWidget::wheelEvent(QWheelEvent* e)
 {
-    switch(d->wheelAction)
+    switch (d->wheelAction)
     {
         // mousewheel triggers zoom
+
         case GLViewerWidget::Private::zoomImage:
+        {
             setCursor(d->zoomCursor);
             zoom(e->angleDelta().y(), e->pos(), d->zoomfactor_scrollwheel);
             break;
+        }
 
         // mousewheel triggers image change
+
         case GLViewerWidget::Private::changeImage:
+        {
             if      (e->angleDelta().y() < 0)
             {
                 nextImage();
@@ -673,6 +747,7 @@ void GLViewerWidget::wheelEvent(QWheelEvent* e)
             }
 
             break;
+        }
     }
 }
 
@@ -681,13 +756,15 @@ void GLViewerWidget::mousePressEvent(QMouseEvent* e)
     // begin zoom
     // scale down d->texture  for fast zooming
     // d->texture will be set to original size on mouse up
+
     if (d->texture->setNewSize(d->zoomsize))
     {
-        //load downsampled image
+        // load downsampled image
+
         downloadTexture(d->texture);
     }
 
-    d->timerMouseMove.stop(); //user is something up to, therefore keep the cursor
+    d->timerMouseMove.stop(); // user is something up to, therefore keep the cursor
 
     if (e->button() == Qt::LeftButton)
     {
@@ -705,9 +782,10 @@ void GLViewerWidget::mousePressEvent(QMouseEvent* e)
 
 void GLViewerWidget::mouseMoveEvent(QMouseEvent* e)
 {
-    if (e->buttons() == Qt::LeftButton)
+    if      (e->buttons() == Qt::LeftButton)
     {
-        //panning
+        // panning
+
         setCursor(d->moveCursor);
         QPoint diff  = e->pos()-d->startdrag;
         d->texture->move(diff);
@@ -718,26 +796,30 @@ void GLViewerWidget::mouseMoveEvent(QMouseEvent* e)
     {
         int mdelta = 0;
 
-        //zooming
+        // zooming
         //
-        //if mouse pointer reached upper or lower boder, special treatment in order
-        //to keep zooming enabled in that special case
+        // if mouse pointer reached upper or lower boder, special treatment in order
+        // to keep zooming enabled in that special case
+
         if (d->previous_pos.y() == e->y())
         {
             if (e->y() == 0)
             {
                 // mouse pointer is at upper edge, therefore assume zoom in
+
                 mdelta = 1;
             }
             else
             {
                 // mouse pointer is as lower edge, therefore assume zoom out
+
                 mdelta = -1;
             }
         }
         else
         {
             // mouse pointer is in the middle of the screen, normal operation
+
             mdelta = d->previous_pos.y() - e->y();
         }
 
@@ -747,11 +829,13 @@ void GLViewerWidget::mouseMoveEvent(QMouseEvent* e)
     }
     else
     {
-        //no key is pressed while moving mouse
-        //don't do anything if ctrl is pressed
+        // no key is pressed while moving mouse
+        // don't do anything if ctrl is pressed
+
         if (d->timerMouseMove.isActive())
         {
-            //ctrl is not pressed, no zooming, therefore restore and hide cursor in 2 sec
+            // ctrl is not pressed, no zooming, therefore restore and hide cursor in 2 sec
+
             unsetCursor();
             d->timerMouseMove.start(2000);
         }
@@ -767,7 +851,8 @@ void GLViewerWidget::mouseReleaseEvent(QMouseEvent*)
 
     if (d->texture->setNewSize(QSize(0, 0)))
     {
-        //load full resolution image
+        // load full resolution image
+
         downloadTexture(d->texture);
     }
 
@@ -785,75 +870,107 @@ void GLViewerWidget::mouseDoubleClickEvent(QMouseEvent*)
 
 void GLViewerWidget::prevImage()
 {
+
 #ifdef PERFORMANCE_ANALYSIS
+
     GLViewerTimer timer;
+
 #endif
 
     if (d->file_idx > 0)
+    {
         d->file_idx--;
+    }
     else
+    {
         return;
+    }
 
 #ifdef PERFORMANCE_ANALYSIS
+
     timer.start();
+
 #endif
 
     d->texture = loadImage(d->file_idx);
     d->texture->reset();
 
 #ifdef PERFORMANCE_ANALYSIS
+
     timer.at("loadImage");
+
 #endif
 
     downloadTexture(d->texture);
 
 #ifdef PERFORMANCE_ANALYSIS
+
     timer.at("downloadTexture");
+
 #endif
 
     update();
 
 #ifdef PERFORMANCE_ANALYSIS
+
     timer.at("update");
+
 #endif
 
     //image preloading
+
     if (d->file_idx > 0)
+    {
         loadImage(d->file_idx - 1);
+    }
 }
 
 void GLViewerWidget::nextImage()
 {
 #ifdef PERFORMANCE_ANALYSIS
+
     GLViewerTimer timer;
+
 #endif
 
     if (d->file_idx < (unsigned int)(d->files.count() - 1))
+    {
         d->file_idx++;
+    }
     else
+    {
         return;
+    }
 
 #ifdef PERFORMANCE_ANALYSIS
+
     timer.start();
+
 #endif
 
     d->texture = loadImage(d->file_idx);
     d->texture->reset();
 
 #ifdef PERFORMANCE_ANALYSIS
+
     timer.at("loadImage");
+
 #endif
 
     downloadTexture(d->texture);
 
 #ifdef PERFORMANCE_ANALYSIS
+
     timer.at("downloadTexture");
+
 #endif
 
     update();
 
 #ifdef PERFORMANCE_ANALYSIS
+
     timer.at("updateGL");
+
 #endif
 
     //image preloading
@@ -862,8 +979,11 @@ void GLViewerWidget::nextImage()
         loadImage(d->file_idx + 1);
 
 #ifdef PERFORMANCE_ANALYSIS
+
         timer.at("preloading");
+
 #endif
+
     }
 }
 
@@ -879,19 +999,19 @@ void GLViewerWidget::zoom(int mdelta, const QPoint& pos, float factor)
 {
     if (mdelta == 0)
     {
-        //do nothing
+        // do nothing
         return;
     }
 
     if (mdelta > 0)
     {
-        //multiplicator for zooming in
+        // multiplicator for zooming in
         d->delta = factor;
     }
 
     if (mdelta < 0)
     {
-        //multiplicator for zooming out
+        // multiplicator for zooming out
         d->delta = 2.0 - factor;
     }
 
@@ -917,12 +1037,14 @@ void GLViewerWidget::slotTimeoutMouseMove()
 OGLstate GLViewerWidget::getOGLstate() const
 {
     // No OpenGL context is found. Are the drivers ok?
+
     if (!isValid())
     {
         return oglNoContext;
     }
 
     // GL_ARB_texture_rectangle is not supported
+
     QString s = QString::fromLatin1(reinterpret_cast<const char*>(glGetString(GL_EXTENSIONS)));
 
     if (!s.contains(QString::fromLatin1("GL_ARB_texture_rectangle"), Qt::CaseInsensitive))
@@ -931,6 +1053,7 @@ OGLstate GLViewerWidget::getOGLstate() const
     }
 
     // Everything is ok!
+
     return oglOK;
 }
 

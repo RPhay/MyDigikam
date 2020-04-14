@@ -701,30 +701,6 @@ void DigikamApp::setupActions()
 
     // -----------------------------------------------------------
 
-    d->slideShowAction = new QMenu(i18n("Slideshow"), this);
-    d->slideShowAction->setIcon(QIcon::fromTheme(QLatin1String("view-presentation")));
-    ac->addAction(QLatin1String("slideshow"), d->slideShowAction->menuAction());
-
-    d->slideShowAllAction = new QAction(i18n("All"), this);
-    connect(d->slideShowAllAction, SIGNAL(triggered()), d->view, SLOT(slotSlideShowAll()));
-    ac->addAction(QLatin1String("slideshow_all"), d->slideShowAllAction);
-    ac->setDefaultShortcut(d->slideShowAllAction, Qt::Key_F9);
-    d->slideShowAction->addAction(d->slideShowAllAction);
-
-    d->slideShowSelectionAction = new QAction(i18n("Selection"), this);
-    connect(d->slideShowSelectionAction, SIGNAL(triggered()), d->view, SLOT(slotSlideShowSelection()));
-    ac->addAction(QLatin1String("slideshow_selected"), d->slideShowSelectionAction);
-    ac->setDefaultShortcut(d->slideShowSelectionAction, Qt::ALT + Qt::Key_F9);
-    d->slideShowAction->addAction(d->slideShowSelectionAction);
-
-    d->slideShowRecursiveAction = new QAction(i18n("With All Sub-Albums"), this);
-    connect(d->slideShowRecursiveAction, SIGNAL(triggered()), d->view, SLOT(slotSlideShowRecursive()));
-    ac->addAction(QLatin1String("slideshow_recursive"), d->slideShowRecursiveAction);
-    ac->setDefaultShortcut(d->slideShowRecursiveAction, Qt::SHIFT + Qt::Key_F9);
-    d->slideShowAction->addAction(d->slideShowRecursiveAction);
-
-    // -----------------------------------------------------------
-
     d->viewCMViewAction = new QAction(QIcon::fromTheme(QLatin1String("video-display")), i18n("Color-Managed View"), this);
     d->viewCMViewAction->setCheckable(true);
     connect(d->viewCMViewAction, SIGNAL(triggered()), this, SLOT(slotToggleColorManagedView()));
@@ -1067,7 +1043,6 @@ void DigikamApp::initGui()
     d->imageDeleteAction->setEnabled(false);
     d->imageExifOrientationActionMenu->setEnabled(false);
     d->openWithAction->setEnabled(false);
-    d->slideShowSelectionAction->setEnabled(false);
     d->imageAutoExifActionMenu->setEnabled(false);
 
     foreach (DPluginAction* const ac, DPluginLoader::instance()->pluginsActions(DPluginAction::GenericMetadata, this))

@@ -36,7 +36,7 @@
 
 // KDE includes
 
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -140,8 +140,8 @@ PresentationDlg::~PresentationDlg ()
 
 void PresentationDlg::readSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group(QLatin1String("Presentation Settings"));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group(QLatin1String("Presentation Settings"));
 
     d->sharedData->opengl            = grp.readEntry("OpenGL",                   false);
     d->sharedData->openGlFullScale   = grp.readEntry("OpenGLFullScale",          false);
@@ -201,7 +201,7 @@ void PresentationDlg::readSettings()
     if (d->sharedData->soundtrackRememberPlaylist)
     {
         QString groupName(QLatin1String("Presentation Settings") + QLatin1String(" Soundtrack "));
-        KConfigGroup soundGrp = config.group(groupName);
+        KConfigGroup soundGrp = config->group(groupName);
 
         // load and check playlist files, if valid, add to tracklist widget
 
@@ -230,7 +230,6 @@ void PresentationDlg::readSettings()
 
 void PresentationDlg::saveSettings()
 {
-    KConfig config;
     d->sharedData->mainPage->saveSettings();
     d->sharedData->captionPage->saveSettings();
     d->sharedData->advancedPage->saveSettings();
@@ -239,7 +238,8 @@ void PresentationDlg::saveSettings()
     d->sharedData->soundtrackPage->saveSettings();
 #endif
 
-    KConfigGroup grp = config.group(QLatin1String("Presentation Settings"));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group(QLatin1String("Presentation Settings"));
     grp.writeEntry("OpenGL",                   d->sharedData->opengl);
     grp.writeEntry("OpenGLFullScale",          d->sharedData->openGlFullScale);
     grp.writeEntry("Delay",                    d->sharedData->delay);
@@ -294,11 +294,11 @@ void PresentationDlg::saveSettings()
     if (d->sharedData->soundtrackRememberPlaylist && d->sharedData->soundtrackPlayListNeedsUpdate)
     {
         QString groupName(QLatin1String("Presentation Settings") + QLatin1String(" Soundtrack "));
-        KConfigGroup soundGrp = config.group(groupName);
+        KConfigGroup soundGrp = config->group(groupName);
         soundGrp.writeEntry("Tracks", d->sharedData->soundtrackUrls);
     }
 
-    config.sync();
+    config->sync();
 }
 
 void PresentationDlg::slotStartClicked()

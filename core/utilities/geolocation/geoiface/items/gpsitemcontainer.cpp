@@ -139,7 +139,9 @@ GPSItemContainer::GPSItemContainer(const QUrl& url)
       m_tagListDirty(false),
       m_tagList(),
       m_savedTagList(),
-      m_writeXmpTags(true)
+      m_writeXmpTags(true),
+      m_saveTags(true),
+      m_saveGPS(true)
 {
 }
 
@@ -837,7 +839,7 @@ QString GPSItemContainer::saveChanges()
 
     // first try to write the information to the image file
 
-    bool success1 = false;
+    bool success1 = true;
     QScopedPointer<DMetadata> meta(getMetadataForFile());
 
     if (!meta)
@@ -845,10 +847,11 @@ QString GPSItemContainer::saveChanges()
         // TODO: more verbosity!
 
         returnString = i18n("Failed to open file.");
+        success1     = false;
     }
     else
     {
-        if (p.shouldWriteCoordinates)
+        if (m_saveGPS && p.shouldWriteCoordinates)
         {
             if (p.shouldWriteAltitude)
             {
@@ -916,7 +919,7 @@ QString GPSItemContainer::saveChanges()
             }
         }
 
-        if (p.shouldRemoveCoordinates)
+        if (m_saveGPS && p.shouldRemoveCoordinates)
         {
             // TODO: remove only the altitude if requested
 
@@ -928,7 +931,7 @@ QString GPSItemContainer::saveChanges()
             }
         }
 
-        if (!m_tagList.isEmpty() && m_writeXmpTags)
+        if (m_saveTags && !m_tagList.isEmpty() && m_writeXmpTags)
         {
             QStringList tagSeq = meta->getXmpTagStringSeq("Xmp.digiKam.TagsList", false);
 
@@ -968,7 +971,10 @@ QString GPSItemContainer::saveChanges()
 
     if (success1)
     {
-        success1 = meta->save(m_url.toLocalFile());
+        if (m_saveGPS || (m_saveTags && !m_tagList.isEmpty() && m_writeXmpTags))
+        {
+            success1 = meta->save(m_url.toLocalFile());
+        }
 
         if (!success1)
         {

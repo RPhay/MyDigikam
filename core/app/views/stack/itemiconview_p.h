@@ -90,8 +90,6 @@
 #include "scancontroller.h"
 #include "setup.h"
 #include "sidebar.h"
-#include "slideshow.h"
-#include "slideshowbuilder.h"
 #include "statusprogressbar.h"
 #include "tableview.h"
 #include "tagmodificationhelper.h"

@@ -44,13 +44,13 @@ class Q_DECL_HIDDEN MultiStringsEdit::Private
 public:
 
     explicit Private()
+      : addValueButton(nullptr),
+        delValueButton(nullptr),
+        repValueButton(nullptr),
+        valueCheck(nullptr),
+        valueEdit(nullptr),
+        valueBox(nullptr)
     {
-        addValueButton = nullptr;
-        delValueButton = nullptr;
-        repValueButton = nullptr;
-        valueBox       = nullptr;
-        valueCheck     = nullptr;
-        valueEdit      = nullptr;
     }
 
     QStringList  oldValues;
@@ -75,7 +75,7 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent, const QString& title,
 
     // --------------------------------------------------------
 
-    d->valueCheck = new QCheckBox(title, this);
+    d->valueCheck     = new QCheckBox(title, this);
 
     d->addValueButton = new QPushButton(this);
     d->delValueButton = new QPushButton(this);
@@ -89,15 +89,15 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent, const QString& title,
     d->delValueButton->setEnabled(false);
     d->repValueButton->setEnabled(false);
 
-    d->valueBox  = new QListWidget(this);
+    d->valueBox       = new QListWidget(this);
     d->valueBox->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Ignored);
     d->valueBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    d->valueEdit = new QLineEdit(this);
+    d->valueEdit      = new QLineEdit(this);
     d->valueEdit->setClearButtonEnabled(true);
     QString whatsThis = desc;
 
-    if (ascii || size != -1)
+    if (ascii || (size != -1))
     {
         whatsThis.append(i18n(" This field is limited to:"));
     }
@@ -105,6 +105,7 @@ MultiStringsEdit::MultiStringsEdit(QWidget* const parent, const QString& title,
     if (ascii)
     {
         // IPTC only accept printable Ascii char.
+
         QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
         QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
         d->valueEdit->setValidator(asciiValidator);
@@ -188,7 +189,11 @@ MultiStringsEdit::~MultiStringsEdit()
 void MultiStringsEdit::slotDeleteValue()
 {
     QListWidgetItem* const item = d->valueBox->currentItem();
-    if (!item) return;
+
+    if (!item)
+    {
+        return;
+    }
 
     d->valueBox->takeItem(d->valueBox->row(item));
     delete item;
@@ -197,7 +202,11 @@ void MultiStringsEdit::slotDeleteValue()
 void MultiStringsEdit::slotReplaceValue()
 {
     QString newValue = d->valueEdit->text();
-    if (newValue.isEmpty()) return;
+
+    if (newValue.isEmpty())
+    {
+        return;
+    }
 
     if (!d->valueBox->selectedItems().isEmpty())
     {
@@ -224,11 +233,15 @@ void MultiStringsEdit::slotSelectionChanged()
 void MultiStringsEdit::slotAddValue()
 {
     QString newValue = d->valueEdit->text();
-    if (newValue.isEmpty()) return;
+
+    if (newValue.isEmpty())
+    {
+        return;
+    }
 
     bool found = false;
 
-    for (int i = 0 ; i < d->valueBox->count(); ++i)
+    for (int i = 0 ; i < d->valueBox->count() ; ++i)
     {
         QListWidgetItem* const item = d->valueBox->item(i);
 
@@ -273,7 +286,7 @@ bool MultiStringsEdit::getValues(QStringList& oldValues, QStringList& newValues)
     oldValues = d->oldValues;
     newValues.clear();
 
-    for (int i = 0 ; i < d->valueBox->count(); ++i)
+    for (int i = 0 ; i < d->valueBox->count() ; ++i)
     {
         QListWidgetItem* const item = d->valueBox->item(i);
         newValues.append(item->text());

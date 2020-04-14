@@ -59,24 +59,24 @@ public:
         thumbLabel(nullptr),
         button(nullptr),
         progressCount(0),
-        progressPix(DWorkingPixmap()),
+        progressPix(nullptr),
         progressTimer(nullptr),
         progressLabel(nullptr),
         preview(nullptr)
     {
     }
 
-    bool           busy;
+    bool            busy;
 
-    QLabel*        textLabel;
-    QLabel*        thumbLabel;
+    QLabel*         textLabel;
+    QLabel*         thumbLabel;
 
-    QPushButton*   button;
+    QPushButton*    button;
 
-    int            progressCount;
-    DWorkingPixmap progressPix;
-    QTimer*        progressTimer;
-    QLabel*        progressLabel;
+    int             progressCount;
+    DWorkingPixmap* progressPix;
+    QTimer*         progressTimer;
+    QLabel*         progressLabel;
 
     DPreviewImage* preview;
 };
@@ -88,6 +88,8 @@ DPreviewManager::DPreviewManager(QWidget* const parent)
     setAttribute(Qt::WA_DeleteOnClose);
     setMinimumSize(QSize(400, 300));
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+    d->progressPix             = new DWorkingPixmap(this);
 
     QFrame* const vbox         = new QFrame(this);
     QVBoxLayout* const vboxLay = new QVBoxLayout(vbox);
@@ -257,7 +259,7 @@ void DPreviewManager::setBusy(bool b, const QString& text)
 
 void DPreviewManager::slotProgressTimerDone()
 {
-    d->progressLabel->setPixmap(d->progressPix.frameAt(d->progressCount));
+    d->progressLabel->setPixmap(d->progressPix->frameAt(d->progressCount));
     d->progressCount++;
 
     if (d->progressCount == 8)

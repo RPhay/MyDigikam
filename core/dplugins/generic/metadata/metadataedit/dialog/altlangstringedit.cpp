@@ -43,9 +43,10 @@ class Q_DECL_HIDDEN AltLangStringsEdit::Private
 public:
 
     explicit Private()
+      : valueCheck(nullptr),
+        editor(nullptr)
+
     {
-        valueCheck = nullptr;
-        editor     = nullptr;
     }
 
     DMetadata::AltLangMap oldValues;
@@ -124,6 +125,7 @@ bool AltLangStringsEdit::getValues(DMetadata::AltLangMap& oldValues, DMetadata::
 {
     oldValues = d->oldValues;
     newValues = d->editor->values();
+
     return d->valueCheck->isChecked();
 }
 

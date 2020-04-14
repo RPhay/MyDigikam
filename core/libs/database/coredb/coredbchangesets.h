@@ -287,6 +287,7 @@ public:
         Moved,
         Deleted,
         Renamed,
+        Updated,
         Reparented,
         IconChanged,
         PropertiesChanged /// ImageTagProperties Table

@@ -51,8 +51,8 @@
 
 // KDE includes
 
-#include <kconfig.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -260,9 +260,9 @@ PiwigoWindow::PiwigoWindow(DInfoInterface* const iface,
 
     connectSignals();
 
-    KConfig config;
+    KSharedConfigPtr config = KSharedConfig::openConfig();
 
-    if (!config.hasGroup("Piwigo Settings"))
+    if (!config->hasGroup("Piwigo Settings"))
     {
         QPointer<PiwigoLoginDlg> dlg = new PiwigoLoginDlg(QApplication::activeWindow(),
                                                           d->pPiwigo, i18n("Edit Piwigo Data"));
@@ -278,8 +278,8 @@ PiwigoWindow::~PiwigoWindow()
 {
     // write config
 
-    KConfig config;
-    KConfigGroup group = config.group("PiwigoSync Galleries");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("PiwigoSync Galleries");
 
     group.writeEntry("Resize",         d->resizeCheckBox->isChecked());
     group.writeEntry("Maximum Width",  d->widthSpinBox->value());
@@ -329,8 +329,8 @@ void PiwigoWindow::connectSignals()
 
 void PiwigoWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup group = config.group("PiwigoSync Galleries");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("PiwigoSync Galleries");
 
     if (group.readEntry("Resize", false))
     {
@@ -345,9 +345,9 @@ void PiwigoWindow::readSettings()
         d->widthSpinBox->setEnabled(false);
     }
 
-    d->widthSpinBox->setValue(group.readEntry("Maximum Width", 1600));
+    d->widthSpinBox->setValue(group.readEntry("Maximum Width",   1600));
     d->heightSpinBox->setValue(group.readEntry("Maximum Height", 1600));
-    d->qualitySpinBox->setValue(group.readEntry("Quality", 95));
+    d->qualitySpinBox->setValue(group.readEntry("Quality",       95));
 }
 
 void PiwigoWindow::slotDoLogin()

@@ -267,7 +267,7 @@ public:
         thumbLoadThread(ThumbnailLoadThread::defaultThread()),
         toolTip(nullptr),
         toolTipItem(nullptr),
-        progressPix(DWorkingPixmap())
+        progressPix(nullptr)
     {
     }
 
@@ -288,7 +288,7 @@ public:
 
     QueueListViewItem*          toolTipItem;
 
-    DWorkingPixmap              progressPix;
+    DWorkingPixmap*             progressPix;
 };
 
 QueueListView::QueueListView(QWidget* const parent)
@@ -325,6 +325,7 @@ QueueListView::QueueListView(QWidget* const parent)
     d->toolTip       = new QueueToolTip(this);
     d->toolTipTimer  = new QTimer(this);
     d->progressTimer = new QTimer(this);
+    d->progressPix   = new DWorkingPixmap(this);
 
     // -----------------------------------------------------------
 
@@ -353,9 +354,9 @@ QueueListView::~QueueListView()
 
 QPixmap QueueListView::progressPixmapForIndex(int index) const
 {
-    if ((index >= 0) && (index < d->progressPix.frameCount()))
+    if ((index >= 0) && (index < d->progressPix->frameCount()))
     {
-        return (d->progressPix.frameAt(index));
+        return (d->progressPix->frameAt(index));
     }
 
     return QPixmap();

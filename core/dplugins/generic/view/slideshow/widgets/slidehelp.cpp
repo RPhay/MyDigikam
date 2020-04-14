@@ -7,6 +7,7 @@
  * Description : slideshow help dialog
  *
  * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2020-2019 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -34,7 +35,7 @@
 
 #include <klocalizedstring.h>
 
-namespace Digikam
+namespace DigikamGenericSlideShowPlugin
 {
 
 SlideHelp::SlideHelp()
@@ -102,4 +103,4 @@ SlideHelp::~SlideHelp()
 {
 }
 
-} // namespace Digikam
+} // namespace DigikamGenericSlideShowPlugin

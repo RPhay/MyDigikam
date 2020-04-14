@@ -80,7 +80,6 @@ public Q_SLOTS:
 Q_SIGNALS:
 
     void previewRequested(const ItemInfo& info);
-    void fullscreenRequested(const ItemInfo& info);
     void signalShowContextMenu(QContextMenuEvent* event,
                                const QList<QAction*>& actions = QList<QAction*>());
 

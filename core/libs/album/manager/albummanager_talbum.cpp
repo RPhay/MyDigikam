@@ -951,6 +951,12 @@ void AlbumManager::slotTagChange(const TagChangeset& changeset)
 
             break;
 
+        case TagChangeset::Updated:
+            // Start the timer new for fewer events
+            d->scanTAlbumsTimer->start();
+
+            break;
+
         case TagChangeset::Renamed:
         case TagChangeset::IconChanged:
             /**

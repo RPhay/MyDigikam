@@ -242,9 +242,9 @@ LensFunIface::LensList LensFunIface::findLenses(const lfCamera* const lfCamera,
 
     if (lfCamera)
     {
-        const auto maker            = lensMaker.isEmpty() ? nullptr : lensMaker.toLatin1().constData();
-        const auto model            = lensDesc.isEmpty()  ? nullptr : lensDesc.toLatin1().constData();
-        const lfLens *const *lfLens = d->lfDb->FindLenses(lfCamera, maker, model);
+        const char* const maker     = lensMaker.isEmpty() ? nullptr : lensMaker.toLatin1().constData();
+        const char* const model     = lensDesc.isEmpty()  ? nullptr : lensDesc.toLatin1().constData();
+        const lfLens* const *lfLens = d->lfDb->FindLenses(lfCamera, maker, model);
 
         while (lfLens && *lfLens)
         {
@@ -295,6 +295,28 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
             if (d->modelDescription == QLatin1String("G1 X"))
             {
                 d->modelDescription = QLatin1String("G1X");
+            }
+        }
+
+        if (d->makeDescription.contains(QLatin1String("olympus"), Qt::CaseInsensitive))
+        {
+            if (!findCamera(d->makeDescription, d->modelDescription))
+            {
+                QStringList olympusList;
+                olympusList << QLatin1String("Olympus Imaging Corp.");
+                olympusList << QLatin1String("Olympus Corporation");
+                olympusList << QLatin1String("Olympus");
+
+                while (!olympusList.isEmpty())
+                {
+                    if (findCamera(olympusList.first(), d->modelDescription))
+                    {
+                        d->makeDescription = olympusList.first();
+                        break;
+                    }
+
+                    olympusList.removeFirst();
+                }
             }
         }
 
@@ -362,7 +384,7 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
             {
                 qCDebug(DIGIKAM_DIMG_LOG) << "Lens description string is empty";
 
-                const auto lensList = findLenses(d->usedCamera, QString{});
+                const LensList lensList = findLenses(d->usedCamera, QString());
 
                 if (lensList.count() == 1)
                 {
@@ -397,20 +419,26 @@ LensFunIface::MetadataMatch LensFunIface::findFromMetadata(const DMetadata& meta
             else
             {
                 qCDebug(DIGIKAM_DIMG_LOG) << "lens matches   : more than one...";
-                const lfLens* exact = nullptr;
+                const lfLens* similar = nullptr;
+                double percent        = 0.0;
 
                 foreach (const lfLens* const l, lensMatches)
                 {
-                    if (QLatin1String(l->Model) == d->lensDescription)
+                    double result = checkSimilarity(d->lensDescription, QLatin1String(l->Model));
+
+                    if (result > percent)
                     {
-                        qCDebug(DIGIKAM_DIMG_LOG) << "found exact match from" << lensMatches.count() << "possibilities:" << l->Model;
-                        exact = l;
+                        percent = result;
+                        similar = l;
                     }
                 }
 
-                if (exact)
+                if (similar)
                 {
-                    setUsedLens(exact);
+                    qCDebug(DIGIKAM_DIMG_LOG) << "found similary match from" << lensMatches.count()
+                                              << "possibilities:" << similar->Model
+                                              << "similarity:" << percent;
+                    setUsedLens(similar);
                 }
                 else
                 {
@@ -593,6 +621,37 @@ QString LensFunIface::lensFunVersion()
            .arg(LF_VERSION_MINOR)
            .arg(LF_VERSION_MICRO)
            .arg(LF_VERSION_BUGFIX);
+}
+
+// Inspired by https://www.qtcentre.org/threads/49601-String-similarity-check
+
+double LensFunIface::checkSimilarity(const QString& a, const QString& b) const
+{
+    if (a.isEmpty() || b.isEmpty())
+    {
+        return 0.0;
+    }
+
+    const int chars = 3;
+    int counter     = 0;
+
+    QString spaces  = QString::fromLatin1(" ").repeated(chars - 1);
+    QString aa      = spaces + a + spaces;
+    QString bb      = spaces + b + spaces;
+
+    for (int i = 0 ; i < (aa.count() - (chars - 1)) ; ++i)
+    {
+        QString part = aa.mid(i, chars);
+
+        if (bb.contains(part, Qt::CaseInsensitive))
+        {
+            ++counter;
+        }
+    }
+
+    QString s = (aa.length() < bb.length()) ? aa : bb;
+
+    return (100.0 * counter / (s.length() - (chars - 1)));
 }
 
 // Restore warnings

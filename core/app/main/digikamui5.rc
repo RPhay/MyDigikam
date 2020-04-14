@@ -90,7 +90,6 @@
      <Action name="table_view" />
      <!--<Action name="view_selection" />-->
      <Separator/>
-     <Action name="slideshow" />
      <Action name="full_screen" />
      <Action name="view_refresh" />
 
@@ -197,7 +196,7 @@
   <Action name="map_view" />
   <Action name="table_view" />
   <Separator/>
-  <Action name="slideshow" />
+  <Action name="slideshow_plugin" />
   <Action name="full_screen" />
   <Merge />
   <WeakSeparator />

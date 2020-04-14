@@ -40,8 +40,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
-#include <kconfig.h>
 
 // Local includes
 
@@ -86,8 +86,8 @@ PanoLastPage::PanoLastPage(PanoManager* const mngr, QWizard* const dlg)
      : DWizardPage(dlg, i18nc("@title:window", "<b>Panorama Stitched</b>")),
        d(new Private)
 {
-    KConfig config;
-    KConfigGroup group              = config.group("Panorama Settings");
+    KSharedConfigPtr config         = KSharedConfig::openConfig();
+    KConfigGroup group              = config->group("Panorama Settings");
 
     d->mngr                         = mngr;
 
@@ -149,10 +149,10 @@ PanoLastPage::PanoLastPage(PanoManager* const mngr, QWizard* const dlg)
 
 PanoLastPage::~PanoLastPage()
 {
-    KConfig config;
-    KConfigGroup group = config.group("Panorama Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Panorama Settings");
     group.writeEntry("Save PTO", d->savePtoCheckBox->isChecked());
-    config.sync();
+    config->sync();
 
     delete d;
 }

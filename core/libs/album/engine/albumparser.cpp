@@ -4,9 +4,10 @@
  * https://www.digikam.org
  *
  * Date        : 2012-01-24
- * Description : slideshow builder progress indicator
+ * Description : album parser progress indicator
  *
  * Copyright (C) 2012-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,7 +22,7 @@
  *
  * ============================================================ */
 
-#include "slideshowbuilder.h"
+#include "albumparser.h"
 
 // Qt includes
 
@@ -43,26 +44,23 @@
 namespace Digikam
 {
 
-class Q_DECL_HIDDEN SlideShowBuilder::Private
+class Q_DECL_HIDDEN AlbumParser::Private
 {
 public:
 
     explicit Private()
       : cancel(false),
-        album(nullptr),
-        autoPlayEnabled(true)
+        album(nullptr)
     {
     }
 
     bool         cancel;
     ItemInfoList infoList;
     Album*       album;
-    bool         autoPlayEnabled;
-    QUrl         startFrom;           // Overrides the startFromCurrent flag read from settings.
 };
 
-SlideShowBuilder::SlideShowBuilder(const ItemInfoList& infoList)
-    : ProgressItem(nullptr, QLatin1String("SlideShowBuilder"), QString(), QString(), true, true),
+AlbumParser::AlbumParser(const ItemInfoList& infoList)
+    : ProgressItem(nullptr, QLatin1String("AlbumParser"), QString(), QString(), true, true),
       d(new Private)
 {
     d->infoList = infoList;
@@ -70,8 +68,8 @@ SlideShowBuilder::SlideShowBuilder(const ItemInfoList& infoList)
     ProgressManager::addProgressItem(this);
 }
 
-SlideShowBuilder::SlideShowBuilder(Album* const album)
-    : ProgressItem(nullptr, QLatin1String("SlideShowBuilder"), QString(), QString(), true, true),
+AlbumParser::AlbumParser(Album* const album)
+    : ProgressItem(nullptr, QLatin1String("AlbumParser"), QString(), QString(), true, true),
       d(new Private)
 {
     d->album = album;
@@ -79,32 +77,22 @@ SlideShowBuilder::SlideShowBuilder(Album* const album)
     ProgressManager::addProgressItem(this);
 }
 
-SlideShowBuilder::~SlideShowBuilder()
+AlbumParser::~AlbumParser()
 {
     delete d;
 }
 
-void SlideShowBuilder::setOverrideStartFrom(const ItemInfo& info)
-{
-   d->startFrom = info.fileUrl();
-}
-
-void SlideShowBuilder::setAutoPlayEnabled(bool enable)
-{
-    d->autoPlayEnabled = enable;
-}
-
-void SlideShowBuilder::run()
+void AlbumParser::run()
 {
     QTimer::singleShot(500, this, SLOT(slotRun()));
 }
 
-void SlideShowBuilder::slotRun()
+void AlbumParser::slotRun()
 {
     connect(this, SIGNAL(progressItemCanceled(ProgressItem*)),
             this, SLOT(slotCancel()));
 
-    setLabel(i18n("Preparing slideshow"));
+    setLabel(i18n("Scanning albums"));
     setThumbnail(QIcon::fromTheme(QLatin1String("digikam")));
 
     if (d->album)
@@ -132,38 +120,34 @@ void SlideShowBuilder::slotRun()
     }
 }
 
-void SlideShowBuilder::slotParseItemInfoList(const ItemInfoList& list)
+void AlbumParser::slotParseItemInfoList(const ItemInfoList& list)
 {
     setTotalItems(list.count());
 
-    int               i = 0;
-    SlideShowSettings settings;
-    settings.readFromConfig();
-    settings.autoPlayEnabled = d->autoPlayEnabled;
-    settings.previewSettings = ApplicationSettings::instance()->getPreviewSettings();
+    int i = 0;
 
-    if (d->startFrom.isValid())
-    {
-        settings.imageUrl = d->startFrom;
-    }
+    QList<QUrl> imageList;
 
-    for (ItemInfoList::const_iterator it = list.constBegin();
-         !d->cancel && (it != list.constEnd()) ; ++it)
+    for (ItemInfoList::const_iterator it = list.constBegin() ;
+         !d->cancel && (it != list.constEnd()) ;
+         ++it)
     {
         ItemInfo info = *it;
-        settings.fileList.append(info.fileUrl());
+        imageList.append(info.fileUrl());
 
         advance(i++);
         qApp->processEvents();
     }
 
     if (!d->cancel)
-        emit signalComplete(settings);
+    {
+        emit signalComplete(imageList);
+    }
 
     setComplete();
 }
 
-void SlideShowBuilder::slotCancel()
+void AlbumParser::slotCancel()
 {
     d->cancel = true;
 }

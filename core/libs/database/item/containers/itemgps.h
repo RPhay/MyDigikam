@@ -47,7 +47,7 @@ public:
     virtual ~ItemGPS();
 
     QString saveChanges() override;
-    bool loadImageData() override;
+    bool loadImageData()  override;
 
 private:
 

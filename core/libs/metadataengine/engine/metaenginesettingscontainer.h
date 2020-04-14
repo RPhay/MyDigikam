@@ -96,8 +96,10 @@ public:
     bool                            saveTemplate;
     bool                            saveTags;
     bool                            saveFaceTags;
+    bool                            savePosition;
 
     bool                            writeRawFiles;
+    bool                            writeDngFiles;
     bool                            updateFileTimeStamp;
     bool                            rescanImageIfModified;
     bool                            clearMetadataIfRescan;

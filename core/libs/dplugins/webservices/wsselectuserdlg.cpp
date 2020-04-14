@@ -35,7 +35,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 namespace Digikam
@@ -123,18 +123,18 @@ WSSelectUserDlg::~WSSelectUserDlg()
 
 void WSSelectUserDlg::reactivate()
 {
-    KConfig config;
+    KSharedConfigPtr config = KSharedConfig::openConfig();
 
     d->userComboBox->clear();
 
-    foreach (const QString& group, config.groupList())
+    foreach (const QString& group, config->groupList())
     {
         if (!(group.contains(d->serviceName)))
         {
             continue;
         }
 
-        KConfigGroup grp = config.group(group);
+        KConfigGroup grp = config->group(group);
 
         if (QString::compare(grp.readEntry(QLatin1String("username")), QString(), Qt::CaseInsensitive) == 0)
         {

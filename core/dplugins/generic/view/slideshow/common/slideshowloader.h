@@ -7,7 +7,7 @@
  * Description : slide show tool using preview of pictures.
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C)      2019 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SLIDE_SHOW_H
-#define DIGIKAM_SLIDE_SHOW_H
+#ifndef DIGIKAM_SLIDE_SHOW_LOADER_H
+#define DIGIKAM_SLIDE_SHOW_LOADER_H
 
 // Qt includes
 
@@ -39,13 +39,14 @@
 #include "dinfointerface.h"
 #include "loadingdescription.h"
 #include "slideshowsettings.h"
+#include "dimg.h"
 
-namespace Digikam
+using namespace Digikam;
+
+namespace DigikamGenericSlideShowPlugin
 {
 
-class DImg;
-
-class DIGIKAM_EXPORT SlideShow : public QStackedWidget
+class SlideShowLoader : public QStackedWidget
 {
     Q_OBJECT
 
@@ -61,21 +62,16 @@ public:
 
 public:
 
-    explicit SlideShow(DInfoInterface* const iface, const SlideShowSettings& settings);
-    ~SlideShow();
+    explicit SlideShowLoader(SlideShowSettings* const settings);
+    ~SlideShowLoader();
 
     void setCurrentItem(const QUrl& url);
     QUrl currentItem() const;
 
-    void toggleTag(int tag);
-    void updateTags(const QUrl& url, const QStringList& tags);
+    void setShortCutPrefixes(const QMap<QString, QString>& prefixes);
 
 Q_SIGNALS:
 
-    void signalRatingChanged(const QUrl&, int);
-    void signalColorLabelChanged(const QUrl&, int);
-    void signalPickLabelChanged(const QUrl&, int);
-    void signalToggleTag(const QUrl&, int);
     void signalLastItemUrl(const QUrl&);
 
 public Q_SLOTS:
@@ -88,6 +84,9 @@ public Q_SLOTS:
     void slotAssignRating(int);
     void slotAssignColorLabel(int);
     void slotAssignPickLabel(int);
+    void slotToggleTag(int tag);
+
+    void slotHandleShortcut(const QString& shortcut, int val);
 
 protected:
 
@@ -122,6 +121,6 @@ private:
     Private* const d;
 };
 
-} // namespace Digikam
+} // namespace DigikamGenericSlideShowPlugin
 
-#endif // DIGIKAM_SLIDE_SHOW_H
+#endif // DIGIKAM_SLIDE_SHOW_LOADER_H

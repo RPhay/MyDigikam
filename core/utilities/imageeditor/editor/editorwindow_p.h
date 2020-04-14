@@ -121,7 +121,6 @@
 #include "pngsettings.h"
 #include "savingcontext.h"
 #include "sidebar.h"
-#include "slideshowsettings.h"
 #include "softproofdialog.h"
 #include "statusprogressbar.h"
 #include "thememanager.h"
@@ -155,7 +154,6 @@ public:
         rotateRightAction(nullptr),
         selectAllAction(nullptr),
         selectNoneAction(nullptr),
-        slideShowAction(nullptr),
         softProofOptionsAction(nullptr),
         zoomFitToSelectAction(nullptr),
         zoomMinusAction(nullptr),
@@ -228,7 +226,6 @@ public:
     QAction*                     rotateRightAction;
     QAction*                     selectAllAction;
     QAction*                     selectNoneAction;
-    QAction*                     slideShowAction;
     QAction*                     softProofOptionsAction;
     QAction*                     zoomFitToSelectAction;
     QAction*                     zoomMinusAction;

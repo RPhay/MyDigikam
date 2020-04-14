@@ -53,7 +53,6 @@ class PAlbum;
 class TAlbum;
 class BatchSyncMetadata;
 class FilterStatusBar;
-class SlideShowSettings;
 class DCategorizedView;
 class ItemFilterModel;
 
@@ -92,6 +91,7 @@ public Q_SLOTS:
     void slotImageAddToCurrentQueue();
     void slotImageAddToNewQueue();
     void slotImageAddToExistingQueue(int);
+
     //@}
 
     // ----------------------------------------------------------------------------------------
@@ -201,29 +201,6 @@ public Q_SLOTS:
     // ----------------------------------------------------------------------------------------
 
     //@{
-    /// Slide-show methods - itemiconview_slideshow.cpp
-
-private:
-
-    void slideShow(const ItemInfoList& infoList);
-
-public Q_SLOTS:
-
-    void slotSlideShowAll();
-    void slotSlideShowSelection();
-    void slotSlideShowRecursive();
-    void slotSlideShowManualFromCurrent();
-    void slotSlideShowManualFrom(const ItemInfo& info);
-
-private Q_SLOTS:
-
-    void slotSlideShowBuilderComplete(const SlideShowSettings& settings);
-
-    //@}
-
-    // ----------------------------------------------------------------------------------------
-
-    //@{
     /// Album management methods - itemiconview_album.cpp
 
 public:
@@ -254,6 +231,7 @@ public Q_SLOTS:
     void slotGotoTagAndItem(int tagID);
 
     void slotSelectAlbum(const QUrl& url);
+    void slotSetCurrentUrlWhenAvailable(const QUrl& url);
     void slotSetCurrentWhenAvailable(const qlonglong id);
 
     void slotSetAsAlbumThumbnail(const ItemInfo& info);
@@ -315,10 +293,10 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
-    void slotRatingChanged(const QUrl&, int);
-    void slotColorLabelChanged(const QUrl&, int);
-    void slotPickLabelChanged(const QUrl&, int);
-    void slotToggleTag(const QUrl&, int);
+    //void slotRatingChanged(const QUrl&, int);
+    //void slotColorLabelChanged(const QUrl&, int);
+    //void slotPickLabelChanged(const QUrl&, int);
+    //void slotToggleTag(const QUrl&, int);
 
     //@}
 

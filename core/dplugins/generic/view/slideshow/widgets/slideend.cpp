@@ -4,9 +4,10 @@
  * https://www.digikam.org
  *
  * Date        : 2014-09-18
- * Description : slideshow error view
+ * Description : slideshow end view
  *
  * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,13 +22,14 @@
  *
  * ============================================================ */
 
-#include "slideerror.h"
+#include "slideend.h"
 
 // Qt includes
 
 #include <QLabel>
 #include <QGridLayout>
 #include <QPalette>
+#include <QStandardPaths>
 #include <QApplication>
 #include <QStyle>
 
@@ -35,25 +37,11 @@
 
 #include <klocalizedstring.h>
 
-namespace Digikam
+namespace DigikamGenericSlideShowPlugin
 {
 
-class Q_DECL_HIDDEN SlideError::Private
-{
-
-public:
-
-    explicit Private()
-      : errorMsg(nullptr)
-    {
-    }
-
-    QLabel* errorMsg;
-};
-
-SlideError::SlideError(QWidget* const parent)
-    : QWidget(parent),
-      d(new Private)
+SlideEnd::SlideEnd(QWidget* const parent)
+    : QWidget(parent)
 {
     setAttribute(Qt::WA_DeleteOnClose);
     setMouseTracking(true);
@@ -63,29 +51,45 @@ SlideError::SlideError(QWidget* const parent)
 
     QPalette palette;
     palette.setColor(backgroundRole(), Qt::black);
+    palette.setColor(foregroundRole(), Qt::white);
     setPalette(palette);
 
-    d->errorMsg = new QLabel(this);
-    d->errorMsg->setAlignment(Qt::AlignCenter);
+    QFont fn(font());
+    fn.setPointSize(fn.pointSize() + 10);
+    fn.setBold(true);
+    setFont(fn);
+
+    QLabel* const logoLabel = new QLabel(this);
+    logoLabel->setAlignment(Qt::AlignTop);
+
+    QPixmap logo;
+
+    if (QApplication::applicationName() == QLatin1String("digikam"))
+    {
+        logo = QIcon::fromTheme(QLatin1String("digikam")).pixmap(QSize(48,48));
+    }
+    else
+    {
+        logo = QIcon::fromTheme(QLatin1String("showfoto")).pixmap(QSize(48,48));
+    }
+
+    logoLabel->setPixmap(logo);
+
+    QLabel* const textLabel = new QLabel(i18n("Slideshow Completed.\nClick To Exit\nor press ESC..."), this);
 
     QGridLayout* const grid = new QGridLayout(this);
-    grid->addWidget(d->errorMsg, 1, 0, 1, 3 );
-    grid->setColumnStretch(0, 10);
+    grid->addWidget(logoLabel, 1, 1, 1, 1);
+    grid->addWidget(textLabel, 1, 2, 1, 1);
+    grid->setColumnStretch(0, 1);
     grid->setColumnStretch(2, 10);
-    grid->setRowStretch(0, 10);
+    grid->setRowStretch(0, 1);
     grid->setRowStretch(2, 10);
     grid->setContentsMargins(spacing, spacing, spacing, spacing);
     grid->setSpacing(spacing);
 }
 
-SlideError::~SlideError()
+SlideEnd::~SlideEnd()
 {
-    delete d;
 }
 
-void SlideError::setCurrentUrl(const QUrl& url)
-{
-    d->errorMsg->setText(i18n("An error has occurred to show item\n%1", url.fileName()));
-}
-
-} // namespace Digikam
+} // namespace DigikamGenericSlideShowPlugin

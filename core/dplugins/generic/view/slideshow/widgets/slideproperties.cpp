@@ -7,6 +7,7 @@
  * Description : slide properties widget
  *
  * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -44,7 +45,9 @@
 #include "dinfointerface.h"
 #include "itempropertiestab.h"
 
-namespace Digikam
+using namespace Digikam;
+
+namespace DigikamGenericSlideShowPlugin
 {
 
 class Q_DECL_HIDDEN SlideProperties::Private
@@ -53,7 +56,8 @@ public:
 
     explicit Private()
         : maxStringLen(80),
-          paintEnabled(true)
+          paintEnabled(true),
+          settings(nullptr)
     {
     }
 
@@ -62,12 +66,12 @@ public:
 
     QUrl                     url;
 
-    SlideShowSettings        settings;
+    SlideShowSettings*       settings;
 
     DInfoInterface::DInfoMap infoMap;
 };
 
-SlideProperties::SlideProperties(const SlideShowSettings& settings, QWidget* const parent)
+SlideProperties::SlideProperties(SlideShowSettings* const settings, QWidget* const parent)
     : QWidget(parent),
       d(new Private)
 {
@@ -93,7 +97,7 @@ void SlideProperties::setCurrentUrl(const QUrl& url)
     }
 
     setFixedSize(screen->availableGeometry().size() / 1.5);
-    d->infoMap = d->settings.iface->itemInfo(url);
+    d->infoMap = d->settings->iface->itemInfo(url);
     d->url     = url;
 
     update();
@@ -107,7 +111,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
     }
 
     QPainter p(this);
-    p.setFont(d->settings.captionFont);
+    p.setFont(d->settings->captionFont);
 
     DItemInfo item(d->infoMap);
 
@@ -122,14 +126,14 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display tag names.
 
-    if (d->settings.printTags)
+    if (d->settings->printTags)
     {
         printTags(p, offset, tags);
     }
 
     // Display Titles.
 
-    if (d->settings.printTitle)
+    if (d->settings->printTitle)
     {
         str.clear();
 
@@ -142,7 +146,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display Captions if no Titles.
 
-    if (d->settings.printCapIfNoTitle)
+    if (d->settings->printCapIfNoTitle)
     {
         str.clear();
 
@@ -155,7 +159,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display Comments.
 
-    if (d->settings.printComment)
+    if (d->settings->printComment)
     {
         str = comment;
         printComments(p, offset, str);
@@ -163,7 +167,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display Make and Model.
 
-    if (d->settings.printMakeModel)
+    if (d->settings->printMakeModel)
     {
         str.clear();
 
@@ -192,7 +196,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display Exposure and Sensitivity.
 
-    if (d->settings.printExpoSensitivity)
+    if (d->settings->printExpoSensitivity)
     {
         str.clear();
 
@@ -219,7 +223,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display Aperture and Focal.
 
-    if (d->settings.printApertureFocal)
+    if (d->settings->printApertureFocal)
     {
         str.clear();
 
@@ -266,7 +270,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display Creation Date.
 
-    if (d->settings.printDate)
+    if (d->settings->printDate)
     {
         QDateTime dateTime = item.dateTime();
 
@@ -279,7 +283,7 @@ void SlideProperties::paintEvent(QPaintEvent*)
 
     // Display image File Name.
 
-    if (d->settings.printName)
+    if (d->settings->printName)
     {
         printInfoText(p, offset, d->url.fileName());
     }
@@ -392,4 +396,4 @@ void SlideProperties::togglePaintEnabled()
     update();
 }
 
-} // namespace Digikam
+} // namespace DigikamGenericSlideShowPlugin

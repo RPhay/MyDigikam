@@ -116,7 +116,6 @@
 #include "savingcontext.h"
 #include "scancontroller.h"
 #include "setup.h"
-#include "slideshow.h"
 #include "statusprogressbar.h"
 #include "syncjob.h"
 #include "tagsactionmngr.h"

@@ -40,7 +40,6 @@
 
     <Menu name="View" ><text>&amp;View</text>
         <Action name="editorwindow_fullscreen" />
-        <Action name="editorwindow_slideshow" />
 
         <!-- _DPLUGINS_GENERIC_VIEW_ACTIONS_ -->
 

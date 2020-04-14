@@ -94,6 +94,7 @@ protected:
 public Q_SLOTS:
 
     void slotGoToRow(const int rowNumber, const bool relativeMove);
+    void slotSetCurrentUrlWhenAvailable(const QUrl& url);
     void slotSetCurrentWhenAvailable(const qlonglong id);
     void slotAwayFromSelection();
     void slotDeleteSelected(const ItemViewUtilities::DeleteMode deleteMode = ItemViewUtilities::DeleteUseTrash);

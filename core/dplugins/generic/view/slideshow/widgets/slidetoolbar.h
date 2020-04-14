@@ -8,6 +8,7 @@
  *
  * Copyright (C) 2004-2005 by Renchi Raju <renchi dot raju at gmail dot com>
  * Copyright (C) 2006-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -22,8 +23,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SLIDE_TOOL_BAR_H
-#define DIGIKAM_SLIDE_TOOL_BAR_H
+#ifndef DIGIKAM_SLIDE_TOOL_BAR_PLUGIN_H
+#define DIGIKAM_SLIDE_TOOL_BAR_PLUGIN_H
 
 // Qt includes
 
@@ -38,17 +39,17 @@
 
 class QAction;
 
-namespace Digikam
+namespace DigikamGenericSlideShowPlugin
 {
 
-class DIGIKAM_EXPORT SlideToolBar : public DHBox
+class SlideToolBar : public DHBox
 {
     Q_OBJECT
 
 public:
 
-    explicit SlideToolBar(const SlideShowSettings& settings, QWidget* const parent);
-    virtual ~SlideToolBar();
+    explicit SlideToolBar(SlideShowSettings* const settings, QWidget* const parent);
+    ~SlideToolBar();
 
     bool isPaused() const;
     void pause(bool val);
@@ -56,6 +57,8 @@ public:
     void setEnabledPlay(bool val);
     void setEnabledNext(bool val);
     void setEnabledPrev(bool val);
+
+    void closeConfigurationDialog();
 
 protected:
 
@@ -68,7 +71,6 @@ Q_SIGNALS:
     void signalClose();
     void signalPlay();
     void signalPause();
-
     void signalScreenSelected(int);
 
 private Q_SLOTS:
@@ -76,15 +78,17 @@ private Q_SLOTS:
     void slotPlayBtnToggled();
     void slotNexPrevClicked();
     void slotScreenSelected(QAction*);
+    void slotMenuSlideShowConfiguration();
+    void slotConfigurationAccepted();
 
 private:
 
     class Private;
     Private* const d;
 
-    friend class SlideShow;
+    friend class SlideShowLoader;
 };
 
-} // namespace Digikam
+} // namespace DigikamGenericSlideShowPlugin
 
-#endif // DIGIKAM_SLIDE_TOOL_BAR_H
+#endif // DIGIKAM_SLIDE_TOOL_BAR_PLUGIN_H

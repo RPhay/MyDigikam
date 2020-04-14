@@ -119,7 +119,7 @@ void EditorWindow::setupContextMenu()
 
     // --------------------------------------------------------
 
-    addAction2ContextMenu(QLatin1String("editorwindow_slideshow"),    true);
+    addAction2ContextMenu(QLatin1String("slideshow_plugin"),    true);
     addAction2ContextMenu(QLatin1String("editorwindow_transform_rotateleft"),  true);
     addAction2ContextMenu(QLatin1String("editorwindow_transform_rotateright"), true);
     addAction2ContextMenu(QLatin1String("editorwindow_transform_crop"),         true);
@@ -417,11 +417,6 @@ void EditorWindow::setupStandardActions()
 
     createFullScreenAction(QLatin1String("editorwindow_fullscreen"));
     createSidebarActions();
-
-    d->slideShowAction = new QAction(QIcon::fromTheme(QLatin1String("view-presentation")), i18n("Slideshow"), this);
-    connect(d->slideShowAction, SIGNAL(triggered()), this, SLOT(slotToggleSlideShow()));
-    ac->addAction(QLatin1String("editorwindow_slideshow"), d->slideShowAction);
-    ac->setDefaultShortcut(d->slideShowAction, Qt::Key_F9);
 
     d->viewUnderExpoAction = new QAction(QIcon::fromTheme(QLatin1String("underexposure")), i18n("Under-Exposure Indicator"), this);
     d->viewUnderExpoAction->setCheckable(true);
@@ -901,7 +896,6 @@ void EditorWindow::toggleStandardActions(bool val)
     m_exportAction->setEnabled(val);
     d->selectAllAction->setEnabled(val);
     d->selectNoneAction->setEnabled(val);
-    d->slideShowAction->setEnabled(val);
 
     QList<DPluginAction*> actions = DPluginLoader::instance()->pluginsActions(DPluginAction::Generic, this);
 
@@ -2291,13 +2285,6 @@ void EditorWindow::setOverExposureToolTip(bool on)
            : i18n("Over-Exposure indicator is disabled"));
 }
 
-void EditorWindow::slotToggleSlideShow()
-{
-    SlideShowSettings settings;
-    settings.readFromConfig();
-    slideShow(settings);
-}
-
 void EditorWindow::slotSelectionChanged(const QRect& sel)
 {
     slotSelectionSetText(sel);
@@ -2449,8 +2436,9 @@ void EditorWindow::setupSelectToolsAction()
     DCategorizedSortFilterProxyModel* const filterModel = actionModel->createFilterModel();
 
     ActionCategorizedView* const selectToolsActionView  = new ActionCategorizedView;
-    selectToolsActionView->setupIconMode();
+    selectToolsActionView->setIconSize(QSize(22, 22));
     selectToolsActionView->setModel(filterModel);
+    selectToolsActionView->setupIconMode();
     selectToolsActionView->adjustGridSize();
 
     connect(selectToolsActionView, SIGNAL(clicked(QModelIndex)),

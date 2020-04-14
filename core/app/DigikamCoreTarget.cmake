@@ -41,7 +41,6 @@ set(DIGIKAMCORE_OBJECTS
 
             # utilities
             $<TARGET_OBJECTS:core_setupcommon_obj>
-            $<TARGET_OBJECTS:core_slideshow_obj>
             $<TARGET_OBJECTS:core_imageeditor_obj>
             $<TARGET_OBJECTS:core_libtransitionmngr_obj>
             $<TARGET_OBJECTS:core_timeadjust_obj>

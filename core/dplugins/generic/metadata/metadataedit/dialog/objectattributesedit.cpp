@@ -53,14 +53,14 @@ class Q_DECL_HIDDEN ObjectAttributesEdit::Private
 public:
 
     explicit Private()
+      : addValueButton(nullptr),
+        delValueButton(nullptr),
+        repValueButton(nullptr),
+        valueEdit(nullptr),
+        valueBox(nullptr),
+        valueCheck(nullptr),
+        dataList(nullptr)
     {
-        addValueButton = nullptr;
-        delValueButton = nullptr;
-        repValueButton = nullptr;
-        valueBox       = nullptr;
-        valueCheck     = nullptr;
-        valueEdit      = nullptr;
-        dataList       = nullptr;
     }
 
     QStringList       oldValues;
@@ -100,13 +100,13 @@ ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, bool ascii, in
     d->delValueButton->setEnabled(false);
     d->repValueButton->setEnabled(false);
 
-    d->valueBox = new QListWidget(this);
+    d->valueBox       = new QListWidget(this);
     d->valueBox->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Ignored);
     d->valueBox->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     // --------------------------------------------------------
 
-    d->dataList = new SqueezedComboBox(this);
+    d->dataList       = new SqueezedComboBox(this);
     d->dataList->model()->sort(0);
     d->dataList->setWhatsThis(i18n("Select here the editorial attribute of content."));
     d->dataList->addSqueezedItem(QLatin1String("001 - ") + i18nc("Content type", "Current"));
@@ -139,7 +139,7 @@ ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, bool ascii, in
     QString whatsThis = i18n("Set here the editorial attribute description of "
                              "content. This field is limited to 64 ASCII characters.");
 
-    if (ascii || size != -1)
+    if (ascii || (size != -1))
     {
         whatsThis.append(i18n(" This field is limited to:"));
     }
@@ -147,6 +147,7 @@ ObjectAttributesEdit::ObjectAttributesEdit(QWidget* const parent, bool ascii, in
     if (ascii)
     {
         // IPTC only accept printable Ascii char.
+
         QRegExp asciiRx(QLatin1String("[\x20-\x7F]+$"));
         QValidator* const asciiValidator = new QRegExpValidator(asciiRx, this);
         d->valueEdit->setValidator(asciiValidator);
@@ -234,7 +235,11 @@ ObjectAttributesEdit::~ObjectAttributesEdit()
 void ObjectAttributesEdit::slotDeleteValue()
 {
     QListWidgetItem* const item = d->valueBox->currentItem();
-    if (!item) return;
+
+    if (!item)
+    {
+        return;
+    }
 
     d->valueBox->takeItem(d->valueBox->row(item));
     delete item;
@@ -246,7 +251,9 @@ void ObjectAttributesEdit::slotReplaceValue()
     newValue.append(QString::fromUtf8(":%1").arg(d->valueEdit->text()));
 
     if (!d->valueBox->selectedItems().isEmpty())
+    {
         d->valueBox->selectedItems()[0]->setText(newValue);
+    }
 }
 
 void ObjectAttributesEdit::slotSelectionChanged()
@@ -274,9 +281,9 @@ void ObjectAttributesEdit::slotAddValue()
 {
     QString newValue = d->dataList->itemHighlighted().left(3);
     newValue.append(QString::fromUtf8(":%1").arg(d->valueEdit->text()));
-    bool found = false;
+    bool found       = false;
 
-    for (int i = 0 ; i < d->valueBox->count(); ++i)
+    for (int i = 0 ; i < d->valueBox->count() ; ++i)
     {
         QListWidgetItem* const item = d->valueBox->item(i);
 
@@ -288,7 +295,9 @@ void ObjectAttributesEdit::slotAddValue()
     }
 
     if (!found)
+    {
         d->valueBox->insertItem(d->valueBox->count(), newValue);
+    }
 }
 
 void ObjectAttributesEdit::setValues(const QStringList& values)
@@ -318,7 +327,7 @@ bool ObjectAttributesEdit::getValues(QStringList& oldValues, QStringList& newVal
     oldValues = d->oldValues;
     newValues.clear();
 
-    for (int i = 0 ; i < d->valueBox->count(); ++i)
+    for (int i = 0 ; i < d->valueBox->count() ; ++i)
     {
         QListWidgetItem* const item = d->valueBox->item(i);
         newValues.append(item->text());

@@ -3,10 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2014-09-18
- * Description : slideshow OSD widget
+ * Date        : 2014-09-19
+ * Description : slide properties widget
  *
  * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,55 +22,38 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SLIDE_OSD_H
-#define DIGIKAM_SLIDE_OSD_H
-
-// Qt includes
+#ifndef DIGIKAM_SLIDE_PROPERTIES_PLUGIN_H
+#define DIGIKAM_SLIDE_PROPERTIES_PLUGIN_H
 
 #include <QWidget>
+#include <QPainter>
+#include <QString>
+#include <QColor>
 #include <QUrl>
 
 // Local includes
 
 #include "slideshowsettings.h"
 
-class QEvent;
-
-namespace Digikam
+namespace DigikamGenericSlideShowPlugin
 {
 
-class SlideShow;
-class SlideToolBar;
-
-class SlideOSD : public QWidget
+class SlideProperties : public QWidget
 {
-    Q_OBJECT
-
 public:
 
-    explicit SlideOSD(const SlideShowSettings& settings, SlideShow* const parent = nullptr);
-    ~SlideOSD();
+    explicit SlideProperties(SlideShowSettings* const settings, QWidget* const parent);
+    ~SlideProperties();
 
     void setCurrentUrl(const QUrl& url);
-
-    void pause(bool b);
-    void video(bool b);
-    bool isPaused()                 const;
-    bool isUnderMouse()             const;
-    void toggleProperties();
-    void setLoadingReady(bool b);
-
-
-    SlideToolBar* toolBar()         const;
-
-private Q_SLOTS:
-
-    void slotProgressTimer();
-    void slotStart();
+    void togglePaintEnabled();
 
 private:
 
-    bool eventFilter(QObject* obj, QEvent* ev) override;
+    void printInfoText(QPainter& p, int& offset, const QString& str, const QColor& pcol=Qt::white);
+    void printComments(QPainter& p, int& offset, const QString& comments);
+    void printTags(QPainter& p, int& offset, QStringList& tags);
+    void paintEvent(QPaintEvent*) override;
 
 private:
 
@@ -77,6 +61,6 @@ private:
     Private* const d;
 };
 
-} // namespace Digikam
+} // namespace DigikamGenericSlideShowPlugin
 
-#endif // DIGIKAM_SLIDE_OSD_H
+#endif // DIGIKAM_SLIDE_PROPERTIES_PLUGIN_H

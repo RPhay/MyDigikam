@@ -40,10 +40,17 @@
 #include <QTreeWidget>
 #include <QListWidget>
 #include <QHeaderView>
+#include <QFileInfo>
+#include <QLocale>
+#include <QDateTime>
 
 // KDE includes
 
 #include <klocalizedstring.h>
+
+// Local includes
+
+#include "itempropertiestab.h"
 
 namespace Digikam
 {
@@ -62,17 +69,17 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
     QDialogButtonBox* const buttons = new QDialogButtonBox(QDialogButtonBox::Ok, this);
     buttons->button(QDialogButtonBox::Ok)->setDefault(true);
 
-    QWidget* const page     = new QWidget(this);
-    QGridLayout* const grid = new QGridLayout(page);
+    QWidget* const page             = new QWidget(this);
+    QGridLayout* const grid         = new QGridLayout(page);
 
     // --------------------------------------------------------
 
-    QLabel* const logo      = new QLabel(page);
+    QLabel* const logo              = new QLabel(page);
     logo->setPixmap(tool->icon().pixmap(QSize(48, 48)));
 
     // --------------------------------------------------------
 
-    QLabel* const header    = new QLabel(page);
+    QLabel* const header            = new QLabel(page);
     header->setWordWrap(true);
     header->setText(i18n("<font size=\"5\">%1</font><br/>"
                          "<b>Version %2</b>"
@@ -81,11 +88,11 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
                          tool->version(),
                          tool->description()));
 
-    QTabWidget* const tab       = new QTabWidget(page);
+    QTabWidget* const tab           = new QTabWidget(page);
 
     // --------------------------------------------------------
 
-    QTextBrowser* const details = new QTextBrowser(tab);
+    QTextBrowser* const details     = new QTextBrowser(tab);
     details->setOpenExternalLinks(true);
     details->setFocusPolicy(Qt::NoFocus);
     details->setText(tool->details());
@@ -119,7 +126,7 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
 
     // --------------------------------------------------------
 
-    QTreeWidget* const props = new QTreeWidget(tab);
+    QTreeWidget* const props        = new QTreeWidget(tab);
     props->setSortingEnabled(false);
     props->setRootIsDecorated(false);
     props->setSelectionMode(QAbstractItemView::SingleSelection);
@@ -131,6 +138,12 @@ DPluginAboutDlg::DPluginAboutDlg(DPlugin* const tool, QWidget* const parent)
     new QTreeWidgetItem(props, QStringList() << i18n("Interface ID") << tool->ifaceIid());
     new QTreeWidgetItem(props, QStringList() << i18n("Tool ID")      << tool->iid());
     new QTreeWidgetItem(props, QStringList() << i18n("Library")      << tool->libraryFileName());
+
+    QFileInfo fi(tool->libraryFileName());
+
+    new QTreeWidgetItem(props, QStringList() << i18n("File Size")    << ItemPropertiesTab::humanReadableBytesCount(fi.size()));
+    new QTreeWidgetItem(props, QStringList() << i18n("File Date")    << QLocale().toString(fi.lastModified(), QLocale::ShortFormat));
+
 
     tab->addTab(props, i18n("Properties"));
 

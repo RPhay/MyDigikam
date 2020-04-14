@@ -40,9 +40,9 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -76,7 +76,7 @@ public:
         projectionAndSizeCheckbox(0),
 */
         detailsText(nullptr),
-        progressPix(DWorkingPixmap()),
+        progressPix(nullptr),
         mngr(nullptr)
     {
     }
@@ -98,7 +98,7 @@ public:
 */
     QTextBrowser*              detailsText;
 
-    DWorkingPixmap             progressPix;
+    DWorkingPixmap*            progressPix;
 
     PanoManager*               mngr;
 };
@@ -109,13 +109,14 @@ PanoOptimizePage::PanoOptimizePage(PanoManager* const mngr, QWizard* const dlg)
 {
     d->mngr                         = mngr;
     d->progressTimer                = new QTimer(this);
+    d->progressPix                  = new DWorkingPixmap(this);
     DVBox* const vbox               = new DVBox(this);
     d->title                        = new QLabel(vbox);
     d->title->setOpenExternalLinks(true);
     d->title->setWordWrap(true);
 
-    KConfig config;
-    KConfigGroup group              = config.group("Panorama Settings");
+    KSharedConfigPtr config         = KSharedConfig::openConfig();
+    KConfigGroup group              = config->group("Panorama Settings");
 
     d->horizonCheckbox              = new QCheckBox(i18nc("@option:check", "Level horizon"), vbox);
     d->horizonCheckbox->setChecked(group.readEntry("Horizon", true));
@@ -172,13 +173,13 @@ PanoOptimizePage::PanoOptimizePage(PanoManager* const mngr, QWizard* const dlg)
 
 PanoOptimizePage::~PanoOptimizePage()
 {
-    KConfig config;
-    KConfigGroup group = config.group("Panorama Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Panorama Settings");
     group.writeEntry("Horizon", d->horizonCheckbox->isChecked());
 /*
     group.writeEntry("Output Projection And Size", d->projectionAndSizeCheckbox->isChecked());
 */
-    config.sync();
+    config->sync();
 
     delete d;
 }
@@ -280,11 +281,11 @@ void PanoOptimizePage::cleanupPage()
 
 void PanoOptimizePage::slotProgressTimerDone()
 {
-    d->progressLabel->setPixmap(d->progressPix.frameAt(d->progressCount));
+    d->progressLabel->setPixmap(d->progressPix->frameAt(d->progressCount));
 
-    if (d->progressPix.frameCount())
+    if (d->progressPix->frameCount())
     {
-        d->progressCount = (d->progressCount + 1) % d->progressPix.frameCount();
+        d->progressCount = (d->progressCount + 1) % d->progressPix->frameCount();
     }
 
     d->progressTimer->start(300);

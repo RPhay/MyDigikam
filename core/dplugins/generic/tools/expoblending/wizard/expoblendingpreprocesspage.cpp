@@ -39,8 +39,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
-#include <kconfig.h>
 
 // Local includes
 
@@ -60,7 +60,7 @@ public:
 
     explicit Private()
     {
-        progressPix   = DWorkingPixmap();
+        progressPix   = nullptr;
         progressCount = 0;
         progressTimer = nullptr;
         progressLabel = nullptr,
@@ -80,7 +80,7 @@ public:
 
     QTextBrowser*        detailsText;
 
-    DWorkingPixmap       progressPix;
+    DWorkingPixmap*      progressPix;
 
     ExpoBlendingManager* mngr;
 };
@@ -91,24 +91,25 @@ ExpoBlendingPreProcessPage::ExpoBlendingPreProcessPage(ExpoBlendingManager* cons
 {
     d->mngr           = mngr;
     d->progressTimer  = new QTimer(this);
+    d->progressPix    = new DWorkingPixmap(this);
     DVBox* const vbox = new DVBox(this);
     d->title          = new QLabel(vbox);
     d->title->setWordWrap(true);
     d->title->setOpenExternalLinks(true);
 
-    KConfig config;
-    KConfigGroup group = config.group("ExpoBlending Settings");
-    d->alignCheckBox   = new QCheckBox(i18nc("@option:check", "Align bracketed images"), vbox);
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("ExpoBlending Settings");
+    d->alignCheckBox        = new QCheckBox(i18nc("@option:check", "Align bracketed images"), vbox);
     d->alignCheckBox->setChecked(group.readEntry("Auto Alignment", true));
 
     vbox->setStretchFactor(new QWidget(vbox), 2);
 
-    d->detailsText     = new QTextBrowser(vbox);
+    d->detailsText          = new QTextBrowser(vbox);
     d->detailsText->hide();
 
     vbox->setStretchFactor(new QWidget(vbox), 2);
 
-    d->progressLabel   = new QLabel(vbox);
+    d->progressLabel        = new QLabel(vbox);
     d->progressLabel->setAlignment(Qt::AlignCenter);
 
     vbox->setStretchFactor(new QWidget(vbox), 10);
@@ -129,10 +130,10 @@ ExpoBlendingPreProcessPage::ExpoBlendingPreProcessPage(ExpoBlendingManager* cons
 
 ExpoBlendingPreProcessPage::~ExpoBlendingPreProcessPage()
 {
-    KConfig config;
-    KConfigGroup group = config.group("ExpoBlending Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("ExpoBlending Settings");
     group.writeEntry("Auto Alignment", d->alignCheckBox->isChecked());
-    config.sync();
+    config->sync();
 
     delete d;
 }
@@ -189,7 +190,7 @@ void ExpoBlendingPreProcessPage::cancel()
 
 void ExpoBlendingPreProcessPage::slotProgressTimerDone()
 {
-    d->progressLabel->setPixmap(d->progressPix.frameAt(d->progressCount));
+    d->progressLabel->setPixmap(d->progressPix->frameAt(d->progressCount));
 
     d->progressCount++;
 

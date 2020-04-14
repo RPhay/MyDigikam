@@ -511,6 +511,19 @@ QUrl ItemIconView::currentUrl() const
     return cInfo.fileUrl();
 }
 
+void ItemIconView::slotSetCurrentUrlWhenAvailable(const QUrl& url)
+{
+    switch (viewMode())
+    {
+        case StackedView::TableViewMode:
+            d->tableView->slotSetCurrentUrlWhenAvailable(url);
+            break;
+
+        default:
+            d->iconView->setCurrentUrlWhenAvailable(url);
+    }
+}
+
 void ItemIconView::slotSetCurrentWhenAvailable(const qlonglong id)
 {
     switch (viewMode())

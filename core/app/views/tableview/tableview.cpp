@@ -446,6 +446,18 @@ ItemInfo TableView::previousInfo() const
     return s->tableViewModel->imageInfo(previousDeepRowIndex);
 }
 
+void TableView::slotSetCurrentUrlWhenAvailable(const QUrl& url)
+{
+    foreach (const ItemInfo& info, allItemInfos())
+    {
+        if (info.fileUrl() == url)
+        {
+            slotSetCurrentWhenAvailable(info.id());
+            break;
+        }
+    }
+}
+
 void TableView::slotSetCurrentWhenAvailable(const qlonglong id)
 {
     const QModelIndex idx = s->tableViewModel->indexFromImageId(id, 0);

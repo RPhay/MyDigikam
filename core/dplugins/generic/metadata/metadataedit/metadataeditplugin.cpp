@@ -105,12 +105,16 @@ void MetadataEditPlugin::slotEditMetadata()
     DInfoInterface* const iface = infoIface(sender());
 
     if (!iface)
+    {
         return;
+    }
 
     QList<QUrl> urls = iface->currentSelectedItems();
 
     if (urls.isEmpty())
+    {
         return;
+    }
 
     QPointer<MetadataEditDialog> dialog = new MetadataEditDialog(nullptr, iface);
     dialog->setPlugin(this);

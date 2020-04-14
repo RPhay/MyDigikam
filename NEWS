@@ -11,7 +11,7 @@ General       : Update internal libraw engine to last 201910 snapshot aka next 0
 General       : All bundles have switched to last Qt 5.14.0. Linux and MacOS use QtWebEngine instead QtWebKit.
 General       : Add Microsoft Visual C++ support and a Continuous Integration workflow to check code with this compiler.
 General       : Table-view is now able to show digiKam Tag-Paths properties.
-
+Metadata      : New option to write geolocation data in file metadata.
 *****************************************************************************************************
 BUGFIXES:
 
@@ -652,4 +652,32 @@ BUGFIXES:
 634 ==> 418138 - Export to local storage not working on Windows machine.
 635 ==> 418057 - Icons missing in xubuntu.
 636 ==> 418446 - Move Filters menu from right to left side of main window.
-637 ==> 
+637 ==> 418594 - Should warn the user immediately when database not writable.
+638 ==> 418536 - Editing date used as picture-taking date.
+639 ==> 229010 - No support to resync GPS data from digikams database into into jpg files.
+640 ==> 418658 - GPS data not exported on metadata export to sidecar files.
+641 ==> 381347 - Non expected geolocation error message.
+642 ==> 418760 - Suggested people tag does not appear on Unconfirmed thumbnails until you click on the thumbnail.
+643 ==> 418554 - In face tagging, when manually entering a name, all other suggestions will default to that name.
+644 ==> 418786 - Metadata Editors Missing.
+645 ==> 418641 - Saves Mysql password in plain text.
+646 ==> 406586 - Item count in "People" is not updated until you click or hover a tag.
+647 ==> 414055 - Port Slideshow tool to plugin architecture [patch].
+648 ==> 419119 - Download limited to 100 photos.
+649 ==> 419171 - Tagging multiple images at once broken with commit "modified CoreDB to perform recordChangeSet operation on tags".
+650 ==> 419409 - Exif dates shown are wrong in some images.
+651 ==> 419410 - Fuji S3Pro Image Preview Rotation is wrong.
+652 ==> 419294 - Open with does not work with collection on network shares (on Windows).
+653 ==> 418120 - Uninstaller recursively deleted C:/ drive.
+654 ==> 419510 - Digikam crashed on exit after importing collection.
+655 ==> 380838 - Metadata only written to DNG when "write metadata to Raw" selected.
+656 ==> 402938 - Rename album an within album property fails when a subalbum exists.
+657 ==> 417737 - File operations locked under Windows.
+658 ==> 419667 - Preview in file opener.
+659 ==> 419744 - 7.0.0-beta3 Geolocation Editor does not save new location.
+660 ==> 419793 - Presentation shuffle not working.
+661 ==> 419904 - Editor plugin icons same size or plugin list.
+662 ==> 405995 - Large blank spaces between icons in "Tools" panel.
+663 ==> 419771 - A possible configuration for automatically scanning for new added pictures?
+664 ==> 420023 - RAW-editor integration with RawTherapee.
+665 ==> 

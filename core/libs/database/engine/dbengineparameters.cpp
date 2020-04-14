@@ -43,6 +43,7 @@
 
 #include "digikam_config.h"
 #include "digikam_debug.h"
+#include "o0simplecrypt.h"      // For password encrypt
 
 namespace
 {
@@ -60,7 +61,8 @@ static const char* configDatabaseNameSimilarity             = "Database Name Sim
 static const char* configDatabaseHostName                   = "Database Hostname";
 static const char* configDatabasePort                       = "Database Port";
 static const char* configDatabaseUsername                   = "Database Username";
-static const char* configDatabasePassword                   = "Database Password";
+static const char* configDatabasePassword                   = "Database Password";          // For compatbilitity. Use crypted version instead.
+static const char* configDatabaseEncryptedPassword          = "Database Encrypted Password";
 static const char* configDatabaseConnectOptions             = "Database Connectoptions";
 // Legacy for older versions.
 static const char* configDatabaseFilePathEntry              = "Database File Path";
@@ -360,15 +362,34 @@ void DbEngineParameters::readFromConfig(const QString& configGroup)
     hostName                   = group.readEntry(configDatabaseHostName,                   QString());
     port                       = group.readEntry(configDatabasePort,                       -1);
     userName                   = group.readEntry(configDatabaseUsername,                   QString());
+
+    // Non encrypted password for compatibility.
     password                   = group.readEntry(configDatabasePassword,                   QString());
+
+    if (password.isEmpty())
+    {
+        password               = group.readEntry(configDatabaseEncryptedPassword,          QString());
+
+        if (!password.isEmpty())
+        {
+            O0SimpleCrypt crypto(QCryptographicHash::hash(configDatabaseEncryptedPassword, QCryptographicHash::Sha1).toULongLong());
+            password = crypto.decryptToString(password);
+        }
+    }
+
     connectOptions             = group.readEntry(configDatabaseConnectOptions,             QString());
+
 #if defined(HAVE_MYSQLSUPPORT) && defined(HAVE_INTERNALMYSQL)
+
     internalServer             = group.readEntry(configInternalDatabaseServer,             false);
     internalServerDBPath       = group.readEntry(configInternalDatabaseServerPath,         internalServerPrivatePath());
     internalServerMysqlServCmd = group.readEntry(configInternalDatabaseServerMysqlServCmd, defaultMysqlServerCmd());
     internalServerMysqlInitCmd = group.readEntry(configInternalDatabaseServerMysqlInitCmd, defaultMysqlInitCmd());
+
 #else
+
     internalServer             = false;
+
 #endif
 
     if (isSQLite() && !databaseNameCore.isNull())
@@ -594,12 +615,17 @@ void DbEngineParameters::writeToConfig(const QString& configGroup) const
     group.writeEntry(configDatabaseHostName,                   hostName);
     group.writeEntry(configDatabasePort,                       port);
     group.writeEntry(configDatabaseUsername,                   userName);
-    group.writeEntry(configDatabasePassword,                   password);
+
+    O0SimpleCrypt crypto(QCryptographicHash::hash(configDatabaseEncryptedPassword, QCryptographicHash::Sha1).toULongLong());
+    group.writeEntry(configDatabaseEncryptedPassword,          crypto.encryptToString(password));
+
     group.writeEntry(configDatabaseConnectOptions,             connectOptions);
     group.writeEntry(configInternalDatabaseServer,             internalServer);
     group.writeEntry(configInternalDatabaseServerPath,         internalServerDBPath);
     group.writeEntry(configInternalDatabaseServerMysqlServCmd, internalServerMysqlServCmd);
     group.writeEntry(configInternalDatabaseServerMysqlInitCmd, internalServerMysqlInitCmd);
+
+    group.deleteEntry(configDatabasePassword);// Remove non encrypted password
 }
 
 QString DbEngineParameters::getCoreDatabaseNameOrDir() const

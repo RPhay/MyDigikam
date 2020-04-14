@@ -140,7 +140,7 @@ QStringList WelcomePageView::featuresTabContent() const
 {
     QStringList newFeatures;
     newFeatures << i18n("New Neural Network engine based on OpenCV Deep Learning module to detect and recognize faces.");
-    newFeatures << i18n("Add new shuffle mode in SlideShow.");
+    newFeatures << i18n("Update Slideshow to plugin.");
     newFeatures << i18n("Add new theme Html5Responsive for HtmlGallery plugin.");
     newFeatures << i18n("Update internal RAW engine to last Libraw 0.20.0 release including Canon CR3 and Sony A7R4 support.");
     newFeatures << i18n("Face Scan dialog contents is now simplified and embedded into left sidebar.");

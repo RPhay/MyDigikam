@@ -189,6 +189,9 @@ protected:
     QList<QList<TagData> > m_savedTagList;
     bool                   m_writeXmpTags;
 
+    bool                   m_saveTags;
+    bool                   m_saveGPS;
+
     friend class GPSItemModel;
 };
 

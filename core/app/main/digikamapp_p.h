@@ -258,10 +258,6 @@ public:
         recurseTagsAction(nullptr),
         showBarAction(nullptr),
         viewCMViewAction(nullptr),
-        slideShowAction(nullptr),
-        slideShowAllAction(nullptr),
-        slideShowSelectionAction(nullptr),
-        slideShowRecursiveAction(nullptr),
         bqmAction(nullptr),
         maintenanceAction(nullptr),
         qualityAction(nullptr),
@@ -388,10 +384,6 @@ public:
     QAction*                            viewCMViewAction;
 
     /// Tools Actions
-    QMenu*                              slideShowAction;
-    QAction*                            slideShowAllAction;
-    QAction*                            slideShowSelectionAction;
-    QAction*                            slideShowRecursiveAction;
     QAction*                            bqmAction;
     QAction*                            maintenanceAction;
     QAction*                            qualityAction;

@@ -134,7 +134,6 @@ Q_SIGNALS:
     void signalDeleteItem();
     void signalViewModeChanged();
     void signalEscapePreview();
-    void signalSlideShowCurrent();
     void signalZoomFactorChanged(double);
     void signalPopupTagsView();
     void signalAddToExistingQueue(int);

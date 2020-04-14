@@ -34,7 +34,7 @@
 // KDE includes
 
 #include <klocalizedstring.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kwindowconfig.h>
 
 // Local includes
@@ -169,9 +169,9 @@ void DBWindow::reactivate()
 
 void DBWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup grp    = config.group("Dropbox Settings");
-    d->currentAlbumName = grp.readEntry("Current Album", QString());
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Dropbox Settings");
+    d->currentAlbumName     = grp.readEntry("Current Album", QString());
 
     if (grp.readEntry("Resize", false))
     {
@@ -189,15 +189,15 @@ void DBWindow::readSettings()
     d->widget->getImgQualitySpB()->setValue(grp.readEntry("Image Quality",        90));
 
     winId();
-    KConfigGroup dialogGroup = config.group("Dropbox Export Dialog");
+    KConfigGroup dialogGroup = config->group("Dropbox Export Dialog");
     KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
     resize(windowHandle()->size());
 }
 
 void DBWindow::writeSettings()
 {
-    KConfig config;
-    KConfigGroup grp = config.group("Dropbox Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group("Dropbox Settings");
 
     grp.writeEntry("Current Album",   d->currentAlbumName);
     grp.writeEntry("Resize",          d->widget->getResizeCheckBox()->isChecked());
@@ -205,10 +205,10 @@ void DBWindow::writeSettings()
     grp.writeEntry("Maximum Width",   d->widget->getDimensionSpB()->value());
     grp.writeEntry("Image Quality",   d->widget->getImgQualitySpB()->value());
 
-    KConfigGroup dialogGroup = config.group("Dropbox Export Dialog");
+    KConfigGroup dialogGroup = config->group("Dropbox Export Dialog");
     KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
 
-    config.sync();
+    config->sync();
 }
 
 void DBWindow::slotSetUserName(const QString& msg)

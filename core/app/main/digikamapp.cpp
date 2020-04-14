@@ -558,10 +558,24 @@ void DigikamApp::slotAlbumSelected(Album* album)
 
 void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfoList& listAll)
 {
+    qlonglong listAllFileSize            = 0;
+    qlonglong selectionFileSize          = 0;
+
     int numOfImagesInAlbum               = 0;
     int numImagesWithGrouped             = listAll.count();
     int numImagesWithoutGrouped          = d->view->allUrls(false).count();
+
     ItemInfoList selectionWithoutGrouped = d->view->selectedInfoList(true, false);
+
+    foreach (const ItemInfo& info, selection)
+    {
+        selectionFileSize += info.fileSize();
+    }
+
+    foreach (const ItemInfo& info, listAll)
+    {
+        listAllFileSize += info.fileSize();
+    }
 
     Album* const album                   = d->view->currentAlbum();
 
@@ -603,8 +617,10 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
         {
             if (numImagesWithGrouped == numImagesWithoutGrouped)
             {
-                statusBarSelectionText = i18n("%1/%2 items selected",
-                                              selection.count(), numImagesWithoutGrouped);
+                statusBarSelectionText = i18n("%1/%2 items selected (%3/%4)",
+                                              selection.count(), numImagesWithoutGrouped,
+                                              ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
+                                              ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
                 break;
             }
 
@@ -613,8 +629,10 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
                 if (selection.count() == selectionWithoutGrouped.count())
                 {
                     statusBarSelectionText
-                            = i18n("%1/%2 [%3] items selected", selectionWithoutGrouped.count(),
-                                   numImagesWithoutGrouped, numImagesWithGrouped);
+                            = i18n("%1/%2 [%3] items selected (%4/%5)", selectionWithoutGrouped.count(),
+                                   numImagesWithoutGrouped, numImagesWithGrouped,
+                                   ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
+                                   ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
                     statusBarSelectionToolTip
                             = i18n("%1/%2 items selected. Total with grouped items: %3",
                                    selectionWithoutGrouped.count(), numImagesWithoutGrouped,
@@ -623,9 +641,11 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
                 else
                 {
                     statusBarSelectionText
-                            = i18n("%1/%2 [%3/%4] items selected",
+                            = i18n("%1/%2 [%3/%4] items selected (%5/%6)",
                                    selectionWithoutGrouped.count(), numImagesWithoutGrouped,
-                                   selection.count(), numImagesWithGrouped);
+                                   selection.count(), numImagesWithGrouped,
+                                   ItemPropertiesTab::humanReadableBytesCount(selectionFileSize),
+                                   ItemPropertiesTab::humanReadableBytesCount(listAllFileSize));
                     statusBarSelectionToolTip
                             = i18n("%1/%2 items selected. With grouped items: %3/%4",
                                    selectionWithoutGrouped.count(), numImagesWithoutGrouped,
@@ -661,7 +681,7 @@ void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfo
                         = d->view->allInfo(false).indexOf(selectionWithoutGrouped.first()) + 1;
                 statusBarSelectionText
                         = selection.first().fileUrl().fileName()
-                          + i18n(" (%1 of %2 [%3])", indexWithoutGrouped,
+                          + i18n(" (%1 of %2 [%3] )", indexWithoutGrouped,
                                  numImagesWithoutGrouped, numImagesWithGrouped);
                 statusBarSelectionToolTip
                         = selection.first().fileUrl().fileName()
@@ -712,7 +732,6 @@ void DigikamApp::slotSelectionChanged(int selectionCount)
     d->imageRotateActionMenu->setEnabled(selectionCount > 0);
     d->imageFlipActionMenu->setEnabled(selectionCount > 0);
     d->imageExifOrientationActionMenu->setEnabled(selectionCount > 0);
-    d->slideShowSelectionAction->setEnabled(selectionCount > 0);
     d->moveSelectionToAlbumAction->setEnabled(selectionCount > 0);
     d->cutItemsAction->setEnabled(selectionCount > 0);
     d->copyItemsAction->setEnabled(selectionCount > 0);
@@ -883,11 +902,6 @@ void DigikamApp::slotSetCheckedExifOrientationAction(const ItemInfo& info)
     }
 }
 
-QMenu* DigikamApp::slideShowMenu() const
-{
-    return d->slideShowAction;
-}
-
 void DigikamApp::showSideBars(bool visible)
 {
     visible ? d->view->showSideBars()
@@ -994,7 +1008,6 @@ void DigikamApp::customizedFullScreenMode(bool set)
 
 void DigikamApp::customizedTrashView(bool set)
 {
-    d->slideShowSelectionAction->setEnabled(set);
     d->imageTableViewAction->setEnabled(set);
     d->imageIconViewAction->setEnabled(set);
 
@@ -1005,7 +1018,6 @@ void DigikamApp::customizedTrashView(bool set)
 #endif
 
     d->imagePreviewAction->setEnabled(set);
-    d->slideShowAction->setEnabled(set);
     d->bqmAction->setEnabled(set);
     d->ltAction->setEnabled(set);
     d->ieAction->setEnabled(set);
@@ -1099,6 +1111,12 @@ DInfoInterface* DigikamApp::infoIface(DPluginAction* const ac)
 
     connect(iface, SIGNAL(signalImportedImage(QUrl)),
             this, SLOT(slotImportedImagefromScanner(QUrl)));
+
+    if (aset == ApplicationSettings::Slideshow)
+    {
+        connect(iface, SIGNAL(signalLastItemUrl(QUrl)),
+                d->view, SLOT(slotSetCurrentUrlWhenAvailable(QUrl)));
+    }
 
     return iface;
 }

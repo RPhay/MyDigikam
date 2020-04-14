@@ -179,6 +179,7 @@ public:
 public:
 
     bool                                                  writeRawFiles;
+    bool                                                  writeDngFiles;
     bool                                                  updateFileTimeStamp;
 
     bool                                                  useXMPSidecar4Reading;

@@ -239,7 +239,6 @@ QString DMetadata::getLensDescription() const
     lensExifTags.append(QLatin1String("Exif.NikonLd2.LensIDNumber")); // Nikon Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.NikonLd3.LensIDNumber")); // Nikon Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.Minolta.LensID"));        // Minolta Cameras Makernote.
-    lensExifTags.append(QLatin1String("Exif.Photo.LensModel"));       // Sony Cameras Makernote (and others?).
     lensExifTags.append(QLatin1String("Exif.Sony1.LensID"));          // Sony Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.Sony2.LensID"));          // Sony Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.SonyMinolta.LensID"));    // Sony Cameras Makernote.
@@ -250,11 +249,10 @@ QString DMetadata::getLensDescription() const
     lensExifTags.append(QLatin1String("Exif.Sigma.LensRange"));       // Sigma Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.Samsung2.LensType"));     // Samsung Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.Photo.0xFDEA"));          // Non-standard Exif tag set by Camera Raw.
+    lensExifTags.append(QLatin1String("Exif.OlympusEq.LensType"));    // Olympus Cameras Makernote.
     lensExifTags.append(QLatin1String("Exif.OlympusEq.LensModel"));   // Olympus Cameras Makernote.
-
-    // Olympus Cameras Makernote. FIXME is this necessary? exiv2 returns complete name,
-    // which doesn't match with lensfun information, see bug #311295
-    //lensExifTags.append("Exif.OlympusEq.LensType");
+    // Check Makernotes first.
+    lensExifTags.append(QLatin1String("Exif.Photo.LensModel"));       // Sony Cameras Makernote and others.
 
     // TODO : add Fuji camera Makernotes.
 
@@ -270,6 +268,7 @@ QString DMetadata::getLensDescription() const
 
         if (!lens.isEmpty()                     &&
             (lens != QLatin1String("----"))     &&
+            (lens != QLatin1String("65535"))    &&
             !(lens.startsWith(QLatin1Char('(')) &&
               lens.endsWith(QLatin1Char(')'))
              )

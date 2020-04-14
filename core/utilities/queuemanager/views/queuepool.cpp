@@ -574,7 +574,8 @@ void QueuePool::applySettings()
 
             if (ICCSettings.enableCM)
             {
-                if (ICCSettings.defaultUncalibratedBehavior & ICCSettingsContainer::AutomaticColors)
+                if ((ICCSettings.defaultUncalibratedBehavior & ICCSettingsContainer::AskUser) ||
+                    (ICCSettings.defaultUncalibratedBehavior & ICCSettingsContainer::AutomaticColors))
                 {
                     prm.rawDecodingSettings.outputColorSpace = DRawDecoderSettings::CUSTOMOUTPUTCS;
                     prm.rawDecodingSettings.outputProfile    = ICCSettings.workspaceProfile;

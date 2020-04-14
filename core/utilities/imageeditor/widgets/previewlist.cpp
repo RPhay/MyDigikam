@@ -223,7 +223,7 @@ public:
     explicit Private()
       : progressCount(0),
         progressTimer(nullptr),
-        progressPix(DWorkingPixmap()),
+        progressPix(nullptr),
         wrapper(nullptr)
     {
     }
@@ -232,7 +232,7 @@ public:
 
     QTimer*               progressTimer;
 
-    DWorkingPixmap        progressPix;
+    DWorkingPixmap*       progressPix;
 
     PreviewThreadWrapper* wrapper;
 };
@@ -241,7 +241,8 @@ PreviewList::PreviewList(QObject* const /*parent*/)
     : QListWidget(),
       d(new Private)
 {
-    d->wrapper = new PreviewThreadWrapper(this);
+    d->wrapper     = new PreviewThreadWrapper(this);
+    d->progressPix = new DWorkingPixmap(this);
 
     setSelectionMode(QAbstractItemView::SingleSelection);
     setDropIndicatorShown(true);
@@ -363,7 +364,7 @@ int PreviewList::currentId() const
 
 void PreviewList::slotProgressTimerDone()
 {
-    QPixmap ppix(d->progressPix.frameAt(d->progressCount));
+    QPixmap ppix(d->progressPix->frameAt(d->progressCount));
     QPixmap pixmap(128, 128);
     pixmap.fill(Qt::transparent);
     QPainter p(&pixmap);
@@ -393,7 +394,7 @@ void PreviewList::slotProgressTimerDone()
 
     d->progressCount++;
 
-    if (d->progressCount >= d->progressPix.frameCount())
+    if (d->progressCount >= d->progressPix->frameCount())
     {
         d->progressCount = 0;
     }

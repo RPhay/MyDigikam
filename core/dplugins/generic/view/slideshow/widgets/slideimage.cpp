@@ -7,6 +7,7 @@
  * Description : slideshow image widget
  *
  * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -36,7 +37,9 @@
 #include "dimg.h"
 #include "previewloadthread.h"
 
-namespace Digikam
+using namespace Digikam;
+
+namespace DigikamGenericSlideShowPlugin
 {
 
 class Q_DECL_HIDDEN SlideImage::Private
@@ -92,7 +95,9 @@ void SlideImage::setPreviewSettings(const PreviewSettings& settings)
 void SlideImage::setLoadUrl(const QUrl& url)
 {
     d->currentImage = url;
+
     // calculate preview size which is used for fast previews
+
     QScreen* screen = qApp->primaryScreen();
 
     if (QWidget* const widget = nativeParentWidget())
@@ -137,7 +142,7 @@ void SlideImage::paintEvent(QPaintEvent*)
 
 void SlideImage::slotGotImagePreview(const LoadingDescription& desc, const DImg& preview)
 {
-    if (desc.filePath != d->currentImage.toLocalFile() || desc.isThumbnail())
+    if ((desc.filePath != d->currentImage.toLocalFile()) || desc.isThumbnail())
     {
         return;
     }
@@ -197,4 +202,4 @@ void SlideImage::updatePixmap()
                  0, 0, pix.width(), pix.height());
 }
 
-} // namespace Digikam
+} // namespace DigikamGenericSlideShowPlugin

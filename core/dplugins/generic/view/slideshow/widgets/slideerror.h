@@ -4,9 +4,10 @@
  * https://www.digikam.org
  *
  * Date        : 2014-09-18
- * Description : slideshow image widget
+ * Description : slideshow error view
  *
  * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,29 +22,38 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SLIDE_HELP_H
-#define DIGIKAM_SLIDE_HELP_H
+#ifndef DIGIKAM_SLIDE_ERROR_PLUGIN_H
+#define DIGIKAM_SLIDE_ERROR_PLUGIN_H
 
 // Qt includes
 
-#include <QDialog>
+#include <QWidget>
+#include <QUrl>
 
 // Local includes
 
 #include "digikam_export.h"
 
-namespace Digikam
+namespace DigikamGenericSlideShowPlugin
 {
 
-class DIGIKAM_EXPORT SlideHelp : public QDialog
+class SlideError : public QWidget
 {
+    Q_OBJECT
 
 public:
 
-    explicit SlideHelp();
-    virtual ~SlideHelp();
+    explicit SlideError(QWidget* const parent = nullptr);
+    ~SlideError();
+
+    void setCurrentUrl(const QUrl& url);
+
+private:
+
+    class Private;
+    Private* const d;
 };
 
-} // namespace Digikam
+} // namespace DigikamGenericSlideShowPlugin
 
-#endif // DIGIKAM_SLIDE_HELP_H
+#endif // DIGIKAM_SLIDE_ERROR_PLUGIN_H

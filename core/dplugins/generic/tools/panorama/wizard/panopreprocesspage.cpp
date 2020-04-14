@@ -43,9 +43,9 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -74,7 +74,7 @@ public:
         title(nullptr),
         celesteCheckBox(nullptr),
         detailsText(nullptr),
-        progressPix(DWorkingPixmap()),
+        progressPix(nullptr),
         mngr(nullptr)
     {
     }
@@ -95,7 +95,7 @@ public:
 
     QTextBrowser*              detailsText;
 
-    DWorkingPixmap             progressPix;
+    DWorkingPixmap*            progressPix;
 
     PanoManager*               mngr;
 };
@@ -106,13 +106,14 @@ PanoPreProcessPage::PanoPreProcessPage(PanoManager* const mngr, QWizard* const d
 {
     d->mngr                 = mngr;
     d->progressTimer        = new QTimer(this);
+    d->progressPix          = new DWorkingPixmap(this);
     DVBox* const vbox       = new DVBox(this);
     d->title                = new QLabel(vbox);
     d->title->setWordWrap(true);
     d->title->setOpenExternalLinks(true);
 
-    KConfig config;
-    KConfigGroup group      = config.group("Panorama Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Panorama Settings");
 
     d->celesteCheckBox      = new QCheckBox(i18nc("@option:check", "Detect moving skies"), vbox);
     d->celesteCheckBox->setChecked(group.readEntry("Celeste", false));
@@ -145,10 +146,10 @@ PanoPreProcessPage::PanoPreProcessPage(PanoManager* const mngr, QWizard* const d
 
 PanoPreProcessPage::~PanoPreProcessPage()
 {
-    KConfig config;
-    KConfigGroup group = config.group("Panorama Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Panorama Settings");
     group.writeEntry("Celeste", d->celesteCheckBox->isChecked());
-    config.sync();
+    config->sync();
 
     delete d;
 }
@@ -254,11 +255,11 @@ void PanoPreProcessPage::cleanupPage()
 
 void PanoPreProcessPage::slotProgressTimerDone()
 {
-    d->progressLabel->setPixmap(d->progressPix.frameAt(d->progressCount));
+    d->progressLabel->setPixmap(d->progressPix->frameAt(d->progressCount));
 
-    if (d->progressPix.frameCount())
+    if (d->progressPix->frameCount())
     {
-        d->progressCount = (d->progressCount + 1) % d->progressPix.frameCount();
+        d->progressCount = (d->progressCount + 1) % d->progressPix->frameCount();
     }
 
     d->progressTimer->start(300);

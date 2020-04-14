@@ -49,9 +49,9 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -485,12 +485,12 @@ public:
         clearButton(nullptr),
         loadButton(nullptr),
         saveButton(nullptr),
+        progressPix(nullptr),
         progressCount(0),
         progressTimer(nullptr),
         listView(nullptr),
         iface(nullptr)
     {
-        progressPix     = DWorkingPixmap();
         thumbLoadThread = ThumbnailLoadThread::defaultThread();
     }
 
@@ -508,7 +508,7 @@ public:
     CtrlButton*                saveButton;
 
     QList<QUrl>                processItems;
-    DWorkingPixmap             progressPix;
+    DWorkingPixmap*            progressPix;
     int                        progressCount;
     QTimer*                    progressTimer;
 
@@ -529,7 +529,8 @@ DItemsList::DItemsList(QWidget* const parent, int iconSize)
 
     // --------------------------------------------------------
 
-    d->listView = new DItemsListView(d->iconSize, this);
+    d->progressPix = new DWorkingPixmap(this);
+    d->listView    = new DItemsListView(d->iconSize, this);
     d->listView->setSelectionMode(QAbstractItemView::ExtendedSelection);
 
     // --------------------------------------------------------
@@ -861,8 +862,8 @@ void DItemsList::slotAddImages(const QList<QUrl>& list)
 
 void DItemsList::slotAddItems()
 {
-    KConfig config;
-    KConfigGroup grp = config.group(objectName());
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group(objectName());
     QUrl lastFileUrl = QUrl::fromLocalFile(grp.readEntry("Last Image Path",
                                            QStandardPaths::writableLocation(QStandardPaths::PicturesLocation)));
 
@@ -873,7 +874,7 @@ void DItemsList::slotAddItems()
     {
         slotAddImages(urls);
         grp.writeEntry("Last Image Path", urls.first().adjusted(QUrl::RemoveFilename).toLocalFile());
-        config.sync();
+        config->sync();
     }
 }
 
@@ -973,10 +974,10 @@ void DItemsList::slotClearItems()
 
 void DItemsList::slotLoadItems()
 {
-    KConfig config;
-    KConfigGroup grp = config.group(objectName());
-    QUrl lastFileUrl = QUrl::fromLocalFile(grp.readEntry("Last Images List Path",
-                                           QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group(objectName());
+    QUrl lastFileUrl        = QUrl::fromLocalFile(grp.readEntry("Last Images List Path",
+                                                  QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)));
     QUrl loadLevelsFile;
     loadLevelsFile = DFileDialog::getOpenFileUrl(this, i18n("Select the image file list to load"), lastFileUrl,
                                                  i18n("All Files (*)"));
@@ -1035,7 +1036,7 @@ void DItemsList::slotLoadItems()
         {
             // if EndElement is Images return
             grp.writeEntry("Last Images List Path", loadLevelsFile.adjusted(QUrl::RemoveFilename).toLocalFile());
-            config.sync();
+            config->sync();
             file.close();
             return;
         }
@@ -1048,10 +1049,10 @@ void DItemsList::slotLoadItems()
 
 void DItemsList::slotSaveItems()
 {
-    KConfig config;
-    KConfigGroup grp = config.group(objectName());
-    QUrl lastFileUrl = QUrl::fromLocalFile(grp.readEntry("Last Images List Path",
-                                           QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group(objectName());
+    QUrl lastFileUrl        = QUrl::fromLocalFile(grp.readEntry("Last Images List Path",
+                                                  QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)));
     QUrl saveLevelsFile;
     saveLevelsFile = DFileDialog::getSaveFileUrl(this, i18n("Select the image file list to save"), lastFileUrl,
                                                  i18n("All Files (*)"));
@@ -1107,7 +1108,7 @@ void DItemsList::slotSaveItems()
     xmlWriter.writeEndDocument(); // end document
 
     grp.writeEntry("Last Images List Path", saveLevelsFile.adjusted(QUrl::RemoveFilename).toLocalFile());
-    config.sync();
+    config->sync();
     file.close();
 }
 
@@ -1181,7 +1182,7 @@ void DItemsList::slotProgressTimerDone()
 
             if (item)
             {
-                item->setProgressAnimation(d->progressPix.frameAt(d->progressCount));
+                item->setProgressAnimation(d->progressPix->frameAt(d->progressCount));
             }
         }
 

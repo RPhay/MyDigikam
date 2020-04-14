@@ -206,7 +206,7 @@ ItemPreviewView::ItemPreviewView(QWidget* const parent, Mode mode, Album* const 
             d->faceGroup, SLOT(rejectAll()));
 
     connect(d->fullscreenAction, SIGNAL(triggered()),
-            this, SIGNAL(signalSlideShowCurrent()));
+            this, SLOT(slotSlideShowCurrent()));
 
     // ------------------------------------------------------------
 
@@ -416,6 +416,23 @@ void ItemPreviewView::slotShowContextMenu(QGraphicsSceneContextMenuEvent* event)
             this, SIGNAL(signalGotoDateAndItem(ItemInfo)));
 
     cmHelper.exec(event->screenPos());
+}
+
+void ItemPreviewView::slotSlideShowCurrent()
+{
+    QList<DPluginAction*> actions = DPluginLoader::instance()->
+                                        pluginActions(QLatin1String("org.kde.digikam.plugin.generic.SlideShow"),
+                                        DigikamApp::instance());
+
+    if (actions.isEmpty())
+    {
+        return;
+    }
+
+    //Trigger SlideShow manual
+    actions[0]->setData(getItemInfo().fileUrl());
+
+    actions[0]->trigger();
 }
 
 void ItemPreviewView::slotAssignTag(int tagID)

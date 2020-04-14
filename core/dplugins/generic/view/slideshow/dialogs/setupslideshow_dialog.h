@@ -7,6 +7,7 @@
  * Description : setup tab for slideshow options.
  *
  * Copyright (C) 2005-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SETUP_SLIDESHOW_H
-#define DIGIKAM_SETUP_SLIDESHOW_H
+#ifndef DIGIKAM_SETUP_SLIDESHOW_DIALOG_H
+#define DIGIKAM_SETUP_SLIDESHOW_DIALOG_H
 
 // Qt includes
 
@@ -30,25 +31,28 @@
 
 // Local includes
 
-#include "digikam_export.h"
+#include "dplugindialog.h"
 
-namespace Digikam
+using namespace Digikam;
+
+namespace DigikamGenericSlideShowPlugin
 {
 
-class DIGIKAM_EXPORT SetupSlideShow : public QScrollArea
+class SlideShowSettings;
+
+class SetupSlideShowDialog : public DPluginDialog
 {
     Q_OBJECT
 
 public:
 
-    explicit SetupSlideShow(QWidget* const parent = nullptr);
-    ~SetupSlideShow();
-
-    void applySettings();
+    explicit SetupSlideShowDialog(SlideShowSettings* const settings, QWidget* const parent = nullptr);
+    ~SetupSlideShowDialog();
 
 public Q_SLOTS:
 
     void slotSetUnchecked(int);
+    void slotApplySettings();
 
 private:
 
@@ -60,6 +64,6 @@ private:
     Private* const d;
 };
 
-} // namespace Digikam
+} // namespace DigikamGenericSlideShowPlugin
 
-#endif // DIGIKAM_SETUP_SLIDESHOW_H
+#endif // DIGIKAM_SETUP_SLIDESHOW_DIALOG_H

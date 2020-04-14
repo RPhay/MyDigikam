@@ -7,7 +7,7 @@
  * Description : slide show settings container.
  *
  * Copyright (C) 2007-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
- * Copyright (C)      2019 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -22,8 +22,8 @@
  *
  * ============================================================ */
 
-#ifndef DIGIKAM_SLIDESHOW_SETTINGS_H
-#define DIGIKAM_SLIDESHOW_SETTINGS_H
+#ifndef DIGIKAM_SLIDESHOW_SETTINGS_PLUGIN_H
+#define DIGIKAM_SLIDESHOW_SETTINGS_PLUGIN_H
 
 // Qt includes
 
@@ -38,13 +38,17 @@
 #include "digikam_export.h"
 #include "previewsettings.h"
 #include "dinfointerface.h"
+#include "dplugingeneric.h"
 
-namespace Digikam
+using namespace Digikam;
+
+namespace DigikamGenericSlideShowPlugin
 {
 
-/** This class contain all settings to perform a slide show of a group of pictures
+/**
+ * This class contain all settings to perform a slide show of a group of pictures
  */
-class DIGIKAM_EXPORT SlideShowSettings
+class SlideShowSettings
 {
 
 public:
@@ -56,7 +60,7 @@ public:
     void writeToConfig();
 
     int indexOf(const QUrl&) const;
-    int count() const;
+    int count()              const;
 
     void suffleImages();
 
@@ -170,6 +174,11 @@ public:
     QList<QUrl>                  fileList;
 
     /**
+     * Original list of pictures URL to slide
+     */
+    QList<QUrl>                  originalFileList;
+
+    /**
      * URL of the first image to show if requested
      */
     QUrl                         imageUrl;
@@ -183,6 +192,11 @@ public:
      * Interface to access to host application data
      */
     DInfoInterface*              iface;
+
+    /**
+     * The plugin instance.
+     */
+    DPluginGeneric*              plugin;
 
 private:
 
@@ -207,6 +221,6 @@ private:
     static const QString         configSlideScreenEntry;
 };
 
-} // namespace Digikam
+} // namespace DigikamGenericSlideShowPlugin
 
-#endif // DIGIKAM_SLIDESHOW_SETTINGS_H
+#endif // DIGIKAM_SLIDESHOW_SETTINGS_PLUGIN_H

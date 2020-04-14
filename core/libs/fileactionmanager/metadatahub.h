@@ -97,7 +97,8 @@ public:
         WRITE_RATING    = 32,
         WRITE_TEMPLATE  = 64,
         WRITE_TAGS      = 128,
-        WRITE_ALL       = 255
+        WRITE_POSITION  = 256,
+        WRITE_ALL       = 511
     };
     Q_DECLARE_FLAGS(WriteComponent, WriteComponents)
 

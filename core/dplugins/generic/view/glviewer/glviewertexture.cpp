@@ -41,7 +41,7 @@
 namespace DigikamGenericGLViewerPlugin
 {
 
-class GLViewerTexture::Private
+class Q_DECL_HIDDEN GLViewerTexture::Private
 {
 public:
 
@@ -81,7 +81,7 @@ public:
 
 private:
 
-    // No copy constructor
+    /// No copy constructor
     Private(const Private&);
 };
 
@@ -420,6 +420,7 @@ bool GLViewerTexture::setNewSize(QSize size)
     setMagnificationFilter(QOpenGLTexture::Linear);
 
     // recalculate half-texel offset
+
     calcVertex();
 
     return true;
@@ -468,6 +469,7 @@ void GLViewerTexture::zoomToOriginal()
     else
     {
         // Image touches upper and lower edge of window
+
         zoomfactorToOriginal = float(d->display_y) / d->qimage.height();
     }
 

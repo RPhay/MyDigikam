@@ -3,10 +3,11 @@
  * This file is a part of digiKam project
  * https://www.digikam.org
  *
- * Date        : 2018-07-30
- * Description : stand alone test application for plugin configuration view.
+ * Date        : 2014-09-18
+ * Description : slideshow image widget
  *
- * Copyright (C) 2018-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2014-2020 by Gilles Caulier <caulier dot gilles at gmail dot com>
+ * Copyright (C) 2019-2020 by Minh Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
  * and/or modify it under the terms of the GNU General
@@ -21,33 +22,29 @@
  *
  * ============================================================ */
 
-// Qt Includes
+#ifndef DIGIKAM_SLIDE_HELP_PLUGIN_H
+#define DIGIKAM_SLIDE_HELP_PLUGIN_H
 
-#include <QApplication>
-#include <QDebug>
+// Qt includes
+
+#include <QDialog>
 
 // Local includes
 
-#include "dpluginloader.h"
-#include "dpluginsetup.h"
+#include "digikam_export.h"
 
-using namespace Digikam;
-
-int main(int argc, char* argv[])
+namespace DigikamGenericSlideShowPlugin
 {
-    QApplication app(argc, argv);
 
-    DPluginLoader* const dpl = DPluginLoader::instance();
-    dpl->init();
-    dpl->registerGenericPlugins(qApp);
+class SlideHelp : public QDialog
+{
 
-    DPluginSetup view;
-    view.show();
-    view.resize(1024, 640);
+public:
 
-    app.exec();
+    explicit SlideHelp();
+    ~SlideHelp();
+};
 
-    view.applySettings();
+} // namespace DigikamGenericSlideShowPlugin
 
-    return 0;
-}
+#endif // DIGIKAM_SLIDE_HELP_PLUGIN_H
