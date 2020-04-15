@@ -680,4 +680,5 @@ BUGFIXES:
 662 ==> 405995 - Large blank spaces between icons in "Tools" panel.
 663 ==> 419771 - A possible configuration for automatically scanning for new added pictures?
 664 ==> 420023 - RAW-editor integration with RawTherapee.
-665 ==> 
+665 ==> 322117 - Open directory in File Manager and Open directory In Terminal not working under Windows and OSX.
+666 ==> 
