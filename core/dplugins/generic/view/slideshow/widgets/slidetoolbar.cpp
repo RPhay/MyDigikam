@@ -284,8 +284,9 @@ void SlideToolBar::keyPressEvent(QKeyEvent* e)
                 d->playBtn->animateClick();
             }
 
-            SlideHelp* const help = new SlideHelp();
+            QPointer<SlideHelp> help = new SlideHelp();
             help->exec();
+            delete help;
 
             if (!d->currentlyPause && d->playBtn->isEnabled())
             {
