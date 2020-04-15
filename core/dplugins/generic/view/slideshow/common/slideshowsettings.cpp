@@ -112,6 +112,7 @@ void SlideShowSettings::readFromConfig()
     printTags                 = group.readEntry(configSlideShowPrintTagsEntry,            false);
     printLabels               = group.readEntry(configSlideShowPrintLabelsEntry,          false);
     printRating               = group.readEntry(configSlideShowPrintRatingEntry,          false);
+    showProgressIndicator     = group.readEntry(configSlideShowProgressIndicatorEntry,    true);
     captionFont               = group.readEntry(configSlideShowCaptionFontEntry,
                                                 QFontDatabase::systemFont(QFontDatabase::GeneralFont));
     slideScreen               = group.readEntry(configSlideScreenEntry,                   -2);
@@ -138,6 +139,7 @@ void SlideShowSettings::writeToConfig()
     group.writeEntry(configSlideShowPrintTagsEntry,            printTags);
     group.writeEntry(configSlideShowPrintLabelsEntry,          printLabels);
     group.writeEntry(configSlideShowPrintRatingEntry,          printRating);
+    group.writeEntry(configSlideShowProgressIndicatorEntry,    showProgressIndicator);
     group.writeEntry(configSlideShowCaptionFontEntry,          captionFont);
     group.writeEntry(configSlideScreenEntry,                   slideScreen);
     group.sync();
