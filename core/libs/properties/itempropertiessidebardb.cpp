@@ -681,7 +681,15 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
 
 void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 {
-    m_selectionPropertiesTab->setSelectionCount(QString::fromUtf8("%1").arg(QLocale().toString(d->currentInfos.count())));
+    m_selectionPropertiesTab->setSelectionCount(QString::fromUtf8("%1/%2").arg(QLocale().toString(d->currentInfos.count()))
+                                                                          .arg(QLocale().toString(d->allInfos.count())));
+
+    double totalFileSize = 0;
+
+    foreach (const ItemInfo& info, d->allInfos)
+    {
+        totalFileSize += info.fileSize();
+    }
 
     qlonglong selectionFileSize = 0;
 
@@ -689,7 +697,11 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
     {
         selectionFileSize += info.fileSize();
     }
-    m_selectionPropertiesTab->setSelectionSize(ItemPropertiesTab::humanReadableBytesCount(selectionFileSize));
+
+    m_selectionPropertiesTab->setSelectionSize(QString::fromUtf8("%1/%2").arg(ItemPropertiesTab::humanReadableBytesCount(selectionFileSize))
+                                                                         .arg(ItemPropertiesTab::humanReadableBytesCount(totalFileSize)));
+
+    return;
 }
 
 ItemPropertiesVersionsTab* ItemPropertiesSideBarDB::getFiltersHistoryTab() const
