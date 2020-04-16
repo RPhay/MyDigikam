@@ -112,12 +112,12 @@ void ItemSelectionPropertiesTab::setCurrentURL(const QUrl &url)
     setEnabled(true);
 }
 
-void ItemSelectionPropertiesTab::setSelectionCount(const QString &str)
+void ItemSelectionPropertiesTab::setSelectionCount(const QString& str)
 {
     d->labelSelectionCount->setAdjustedText(str);
 }
 
-void ItemSelectionPropertiesTab::setSelectionSize(const QString &str)
+void ItemSelectionPropertiesTab::setSelectionSize(const QString& str)
 {
     d->labelSelectionSize->setAdjustedText(str);
 }
