@@ -85,6 +85,7 @@ public:
     bool                       hasItemInfoOwnership;
 
     ItemInfoList               currentInfos;
+    ItemInfoList               allInfos;
     DImageHistory              currentHistory;
     ItemDescEditTab*           desceditTab;
     ItemPropertiesVersionsTab* versionsHistoryTab;
