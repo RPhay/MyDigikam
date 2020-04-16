@@ -162,10 +162,12 @@ void ItemPropertiesSideBarDB::itemChanged(const QUrl& url,
         list << info;
     }
 
-    itemChanged(list, rect, img, history);
+    ItemInfoList allInfos;
+
+    itemChanged(list, allInfos, rect, img, history);
 }
 
-void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos)
+void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos, const ItemInfoList& allInfos)
 {
     if (infos.isEmpty())
     {
@@ -174,10 +176,11 @@ void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos)
 
     m_currentURL = infos.first().fileUrl();
 
-    itemChanged(infos, QRect(), nullptr, DImageHistory());
+    itemChanged(infos, allInfos, QRect(), nullptr, DImageHistory());
 }
 
 void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos,
+                                          const ItemInfoList& allInfos,
                                           const QRect& rect,
                                           DImg* const img,
                                           const DImageHistory& history)
@@ -186,6 +189,7 @@ void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos,
     m_image              = img;
     d->currentHistory    = history;
     d->currentInfos      = infos;
+    d->allInfos          = allInfos;
     m_dirtyPropertiesTab = false;
     m_dirtyMetadataTab   = false;
     m_dirtyColorTab      = false;
