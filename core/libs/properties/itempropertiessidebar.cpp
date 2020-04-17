@@ -135,8 +135,8 @@ void ItemPropertiesSideBar::slotNoCurrentItem()
 {
     m_currentURL = QUrl();
 
-    m_propertiesTab->setCurrentURL();
     m_selectionPropertiesTab->setCurrentURL();
+    m_propertiesTab->setCurrentURL();
     m_metadataTab->setCurrentURL();
     m_colorTab->setData();
 

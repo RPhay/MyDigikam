@@ -558,8 +558,8 @@ void DigikamApp::slotAlbumSelected(Album* album)
 
 void DigikamApp::slotImageSelected(const ItemInfoList& selection, const ItemInfoList& listAll)
 {
-    qlonglong listAllFileSize            = 0;
-    qlonglong selectionFileSize          = 0;
+    qint64 listAllFileSize               = 0;
+    qint64 selectionFileSize             = 0;
 
     int numOfImagesInAlbum               = 0;
     int numImagesWithGrouped             = listAll.count();
