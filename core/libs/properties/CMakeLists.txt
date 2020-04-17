@@ -25,6 +25,7 @@ endif()
 set(libitemproperties_SRCS
     itempropertiessidebar.cpp
     itempropertiestab.cpp
+    itemselectionpropertiestab.cpp
     itempropertiesmetadatatab.cpp
     itempropertiescolorstab.cpp
     itempropertiestxtlabel.cpp

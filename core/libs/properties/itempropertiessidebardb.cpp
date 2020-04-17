@@ -50,6 +50,7 @@
 #include "itemdescedittab.h"
 #include "iteminfo.h"
 #include "itempropertiestab.h"
+#include "itemselectionpropertiestab.h"
 #include "itempropertiesmetadatatab.h"
 #include "itempropertiescolorstab.h"
 #include "itempropertiesversionstab.h"
@@ -84,6 +85,7 @@ public:
     bool                       hasItemInfoOwnership;
 
     ItemInfoList               currentInfos;
+    ItemInfoList               allInfos;
     DImageHistory              currentHistory;
     ItemDescEditTab*           desceditTab;
     ItemPropertiesVersionsTab* versionsHistoryTab;
@@ -160,10 +162,12 @@ void ItemPropertiesSideBarDB::itemChanged(const QUrl& url,
         list << info;
     }
 
-    itemChanged(list, rect, img, history);
+    ItemInfoList allInfos;
+
+    itemChanged(list, allInfos, rect, img, history);
 }
 
-void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos)
+void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos, const ItemInfoList& allInfos)
 {
     if (infos.isEmpty())
     {
@@ -172,10 +176,11 @@ void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos)
 
     m_currentURL = infos.first().fileUrl();
 
-    itemChanged(infos, QRect(), nullptr, DImageHistory());
+    itemChanged(infos, allInfos, QRect(), nullptr, DImageHistory());
 }
 
 void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos,
+                                          const ItemInfoList& allInfos,
                                           const QRect& rect,
                                           DImg* const img,
                                           const DImageHistory& history)
@@ -184,6 +189,7 @@ void ItemPropertiesSideBarDB::itemChanged(const ItemInfoList& infos,
     m_image              = img;
     d->currentHistory    = history;
     d->currentInfos      = infos;
+    d->allInfos          = allInfos;
     m_dirtyPropertiesTab = false;
     m_dirtyMetadataTab   = false;
     m_dirtyColorTab      = false;
@@ -224,17 +230,24 @@ void ItemPropertiesSideBarDB::slotChangedTab(QWidget* tab)
 {
     setCursor(Qt::WaitCursor);
 
-    if      ((tab == m_propertiesTab) && !m_dirtyPropertiesTab)
+    if      ((tab == m_propertiesStackedView) && !m_dirtyPropertiesTab)
     {
         m_propertiesTab->setCurrentURL(m_currentURL);
+        m_selectionPropertiesTab->setCurrentURL(m_currentURL);
 
-        if (d->currentInfos.isEmpty())
+        if      (d->currentInfos.isEmpty())
         {
             ItemPropertiesSideBar::setImagePropertiesInformation(m_currentURL);
         }
-        else
+        else if (d->currentInfos.count() == 1)
         {
             setImagePropertiesInformation(m_currentURL);
+            m_propertiesStackedView->setCurrentWidget(m_propertiesTab);
+        }
+        else
+        {
+            setImageSelectionPropertiesInformation();
+            m_propertiesStackedView->setCurrentWidget(m_selectionPropertiesTab);
         }
 
         m_dirtyPropertiesTab = true;
@@ -407,7 +420,7 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
             return;
         }
 
-        if ((tab == m_propertiesTab)
+        if ((tab == m_propertiesStackedView)
 
 #ifdef HAVE_MARBLE
 
@@ -438,7 +451,7 @@ void ItemPropertiesSideBarDB::slotImageChangeDatabase(const ImageChangeset& chan
                     m_dirtyGpsTab = false;
                 }
 
-                if ((tab == m_propertiesTab)
+                if ((tab == m_propertiesStackedView)
 
 #ifdef HAVE_MARBLE
 
@@ -468,7 +481,7 @@ void ItemPropertiesSideBarDB::slotImageTagChanged(const ImageTagChangeset& chang
             return;
         }
 
-        if (tab == m_propertiesTab)
+        if (tab == m_propertiesStackedView)
         {
             ItemInfo& info = d->currentInfos.first();
 
@@ -664,6 +677,36 @@ void ItemPropertiesSideBarDB::setImagePropertiesInformation(const QUrl& url)
             return;
         }
     }
+}
+
+void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
+{
+    // --Selection Properties------------------------------------------------------
+
+    m_selectionPropertiesTab->setSelectionCount(QString::fromUtf8("%1").arg(QLocale().toString(d->currentInfos.count())));
+
+    qlonglong selectionFileSize = 0;
+
+    foreach (const ItemInfo& info, d->currentInfos)
+    {
+        selectionFileSize += info.fileSize();
+    }
+
+    m_selectionPropertiesTab->setSelectionSize(QString::fromUtf8("%1").arg(ItemPropertiesTab::humanReadableBytesCount(selectionFileSize)));
+
+    // --Total Selection Properties------------------------------------------------------
+
+    m_selectionPropertiesTab->setTotalCount(QString::fromUtf8("%1").arg(QLocale().toString(d->allInfos.count())));
+
+    double totalFileSize = 0;
+
+    foreach (const ItemInfo& info, d->allInfos)
+    {
+        totalFileSize += info.fileSize();
+    }
+    m_selectionPropertiesTab->setTotalSize(QString::fromUtf8("%1").arg(ItemPropertiesTab::humanReadableBytesCount(totalFileSize)));
+
+    return;
 }
 
 ItemPropertiesVersionsTab* ItemPropertiesSideBarDB::getFiltersHistoryTab() const

@@ -75,7 +75,7 @@ public:
     virtual void itemChanged(const ItemInfo& info, const QRect& rect = QRect(),
                              DImg* const img = nullptr, const DImageHistory& history = DImageHistory());
 
-    virtual void itemChanged(const ItemInfoList& infos);
+    virtual void itemChanged(const ItemInfoList& infos, const ItemInfoList& allInfos);
 
 
 #ifdef HAVE_MARBLE
@@ -115,8 +115,9 @@ private Q_SLOTS:
 private:
 
     void itemChanged(const QUrl& url, const ItemInfo& info, const QRect& rect, DImg* const img, const DImageHistory& history);
-    void itemChanged(const ItemInfoList& infos, const QRect& rect, DImg* const img, const DImageHistory& history);
+    void itemChanged(const ItemInfoList& infos,const ItemInfoList& allInfos, const QRect& rect, DImg* const img, const DImageHistory& history);
     void setImagePropertiesInformation(const QUrl& url) override;
+    void setImageSelectionPropertiesInformation();
 
 protected:
 

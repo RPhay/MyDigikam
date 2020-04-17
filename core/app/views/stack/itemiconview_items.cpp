@@ -155,7 +155,7 @@ void ItemIconView::slotDispatchImageSelected()
         }
         else
         {
-            d->rightSideBar->itemChanged(list);
+            d->rightSideBar->itemChanged(list,allImages);
 
             ItemInfo previousInfo;
             ItemInfo nextInfo;
