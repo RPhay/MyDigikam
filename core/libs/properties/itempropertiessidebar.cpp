@@ -72,11 +72,11 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
       m_currentRect(QRect()),
       m_image(nullptr)
 {
-    m_propertiesStackedView = new QStackedWidget(parent);
-    m_propertiesTab = new ItemPropertiesTab(parent);
+    m_propertiesStackedView  = new QStackedWidget(parent);
+    m_propertiesTab          = new ItemPropertiesTab(parent);
     m_selectionPropertiesTab = new ItemSelectionPropertiesTab(parent);
-    m_metadataTab = new ItemPropertiesMetadataTab(parent);
-    m_colorTab = new ItemPropertiesColorsTab(parent);
+    m_metadataTab            = new ItemPropertiesMetadataTab(parent);
+    m_colorTab               = new ItemPropertiesColorsTab(parent);
 
     m_propertiesStackedView->addWidget(m_propertiesTab);
     m_propertiesStackedView->addWidget(m_selectionPropertiesTab);

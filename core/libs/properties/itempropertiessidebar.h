@@ -117,7 +117,7 @@ protected:
 
 #ifdef HAVE_MARBLE
 
-    ItemPropertiesGPSTab*      m_gpsTab;
+    ItemPropertiesGPSTab*       m_gpsTab;
 
 #endif // HAVE_MARBLE
 

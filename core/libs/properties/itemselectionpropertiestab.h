@@ -24,10 +24,12 @@
 #ifndef DIGIKAM_ITEM_SELECTION_PROPERTIES_TAB_H
 #define DIGIKAM_ITEM_SELECTION_PROPERTIES_TAB_H
 
-//Qt includes
+// Qt includes
+
 #include <QUrl>
 
-//Local includes
+// Local includes
+
 #include "dexpanderbox.h"
 #include "digikam_export.h"
 
@@ -40,7 +42,7 @@ class DIGIKAM_EXPORT ItemSelectionPropertiesTab : public DExpanderBox
 {
 public:
 
-    explicit ItemSelectionPropertiesTab(QWidget *const parent);
+    explicit ItemSelectionPropertiesTab(QWidget* const parent);
     ~ItemSelectionPropertiesTab();
 
     void setCurrentURL(const QUrl& url = QUrl());
@@ -58,4 +60,4 @@ private:
 
 } // namespace Digikam
 
-#endif //DIGIKAM_ITEM_SELECTION_PROPERTIES_TAB_H
+#endif // DIGIKAM_ITEM_SELECTION_PROPERTIES_TAB_H

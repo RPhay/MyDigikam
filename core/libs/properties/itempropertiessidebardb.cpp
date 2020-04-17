@@ -685,7 +685,7 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 
     m_selectionPropertiesTab->setSelectionCount(QString::fromUtf8("%1").arg(QLocale().toString(d->currentInfos.count())));
 
-    qlonglong selectionFileSize = 0;
+    qint64 selectionFileSize = 0;
 
     foreach (const ItemInfo& info, d->currentInfos)
     {
@@ -698,12 +698,13 @@ void ItemPropertiesSideBarDB::setImageSelectionPropertiesInformation()
 
     m_selectionPropertiesTab->setTotalCount(QString::fromUtf8("%1").arg(QLocale().toString(d->allInfos.count())));
 
-    double totalFileSize = 0;
+    qint64 totalFileSize = 0;
 
     foreach (const ItemInfo& info, d->allInfos)
     {
         totalFileSize += info.fileSize();
     }
+
     m_selectionPropertiesTab->setTotalSize(QString::fromUtf8("%1").arg(ItemPropertiesTab::humanReadableBytesCount(totalFileSize)));
 
     return;
