@@ -47,6 +47,7 @@
 #include "dimg.h"
 #include "dmetadata.h"
 #include "itempropertiestab.h"
+#include "itemselectionpropertiestab.h"
 #include "itempropertiesmetadatatab.h"
 #include "itempropertiescolorstab.h"
 #include "itempropertiesversionstab.h"
@@ -71,9 +72,14 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
       m_currentRect(QRect()),
       m_image(nullptr)
 {
+    m_propertiesStackedView = new QStackedWidget(parent);
     m_propertiesTab = new ItemPropertiesTab(parent);
-    m_metadataTab   = new ItemPropertiesMetadataTab(parent);
-    m_colorTab      = new ItemPropertiesColorsTab(parent);
+    m_selectionPropertiesTab = new ItemSelectionPropertiesTab(parent);
+    m_metadataTab = new ItemPropertiesMetadataTab(parent);
+    m_colorTab = new ItemPropertiesColorsTab(parent);
+
+    m_propertiesStackedView->addWidget(m_propertiesTab);
+    m_propertiesStackedView->addWidget(m_selectionPropertiesTab);
 
     // NOTE: Special case with Showfoto which will only be able to load image, not video.
 
@@ -82,14 +88,14 @@ ItemPropertiesSideBar::ItemPropertiesSideBar(QWidget* const parent,
         m_propertiesTab->setVideoInfoDisable(true);
     }
 
-    appendTab(m_propertiesTab, QIcon::fromTheme(QLatin1String("configure")),        i18n("Properties"));
-    appendTab(m_metadataTab,   QIcon::fromTheme(QLatin1String("format-text-code")), i18n("Metadata")); // krazy:exclude=iconnames
-    appendTab(m_colorTab,      QIcon::fromTheme(QLatin1String("fill-color")),       i18n("Colors"));
+    appendTab(m_propertiesStackedView, QIcon::fromTheme(QLatin1String("configure")),        i18n("Properties"));
+    appendTab(m_metadataTab,           QIcon::fromTheme(QLatin1String("format-text-code")), i18n("Metadata")); // krazy:exclude=iconnames
+    appendTab(m_colorTab,              QIcon::fromTheme(QLatin1String("fill-color")),       i18n("Colors"));
 
 #ifdef HAVE_MARBLE
 
     m_gpsTab = new ItemPropertiesGPSTab(parent);
-    appendTab(m_gpsTab,        QIcon::fromTheme(QLatin1String("globe")),            i18n("Map"));
+    appendTab(m_gpsTab,                QIcon::fromTheme(QLatin1String("globe")),            i18n("Map"));
 
 #endif // HAVE_MARBLE
 
@@ -130,6 +136,7 @@ void ItemPropertiesSideBar::slotNoCurrentItem()
     m_currentURL = QUrl();
 
     m_propertiesTab->setCurrentURL();
+    m_selectionPropertiesTab->setCurrentURL();
     m_metadataTab->setCurrentURL();
     m_colorTab->setData();
 
@@ -176,7 +183,7 @@ void ItemPropertiesSideBar::slotChangedTab(QWidget* tab)
 
     setCursor(Qt::WaitCursor);
 
-    if      ((tab == m_propertiesTab) && !m_dirtyPropertiesTab)
+    if      ((tab == m_propertiesStackedView) && !m_dirtyPropertiesTab)
     {
         m_propertiesTab->setCurrentURL(m_currentURL);
         setImagePropertiesInformation(m_currentURL);
