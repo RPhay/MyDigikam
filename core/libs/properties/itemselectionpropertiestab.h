@@ -43,9 +43,12 @@ public:
     explicit ItemSelectionPropertiesTab(QWidget *const parent);
     ~ItemSelectionPropertiesTab();
 
-    void setCurrentURL(const QUrl &url = QUrl());
-    void setSelectionCount(const QString &str);
-    void setSelectionSize(const QString &str);
+    void setCurrentURL(const QUrl& url = QUrl());
+
+    void setSelectionCount(const QString& str);
+    void setSelectionSize(const QString& str);
+    void setTotalCount(const QString& str);
+    void setTotalSize(const QString& str);
 
 private:
 
