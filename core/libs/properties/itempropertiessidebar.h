@@ -96,7 +96,7 @@ protected:
     virtual void setImagePropertiesInformation(const QUrl& url);
 
 protected:
-    
+
     bool                        m_dirtyPropertiesTab;
     bool                        m_dirtyMetadataTab;
     bool                        m_dirtyColorTab;
@@ -110,8 +110,9 @@ protected:
     DImg*                       m_image;
 
     QStackedWidget*             m_propertiesStackedView;
+
     ItemPropertiesTab*          m_propertiesTab;
-    ItemSelectionPropertiesTab* m_selectionPropertiesTab; 
+    ItemSelectionPropertiesTab* m_selectionPropertiesTab;
     ItemPropertiesMetadataTab*  m_metadataTab;
     ItemPropertiesColorsTab*    m_colorTab;
 
