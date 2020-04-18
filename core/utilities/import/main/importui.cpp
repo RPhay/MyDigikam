@@ -2237,8 +2237,7 @@ bool ImportUI::createExtBasedSubAlbum(QUrl& downloadUrl, const CamItemInfo& info
 
     if (
         (fi.suffix().toUpper() == QLatin1String("JPEG")) ||
-        (fi.suffix().toUpper() == QLatin1String("JPE"))  ||
-        (fi.suffix().toUpper() == QLatin1String("MPO"))
+        (fi.suffix().toUpper() == QLatin1String("JPE"))
        )
     {
         subAlbum = QLatin1String("JPG");
