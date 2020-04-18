@@ -29,7 +29,7 @@ BUILDING_DIR="`pwd`/temp.build"
 # 10.15 : Catalina     :          : Qt                                5.11, 5.12, 5.13, 5.14
 # 10.14 : Mojave       : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14
 # 10.13 : High Sierra  : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14
-# 10.12 : Sierra       : tested   : Qt                5.8, 5.9, 5.10, 5.11, 5.12, 5.13
+# 10.12 : Sierra       : tested   : Qt                5.8, 5.9, 5.10, 5.11, 5.12, 5.13, 5.14           : NOTE: Qt 5.14 require sdk version 10.12.2
 # 10.11 : El Capitan   : tested   : Qt 5.5, 5.6, 5.7, 5.8, 5.9, 5.10, 5.11
 # 10.10 : Yosemite     : tested   : Qt 5.5, 5.6, 5.7, 5.8, 5.9
 # 10.9  : Mavericks    : tested   : Qt 5.5, 5.6, 5.7, 5.8
@@ -37,7 +37,7 @@ BUILDING_DIR="`pwd`/temp.build"
 # 10.7  : Lion         : untested : Qt 5.5, 5.6
 # 10.6  : SnowLeopard  : untested : ???
 # Older values cannot be set as it do not support x86_64.
-OSX_MIN_TARGET="10.13"
+OSX_MIN_TARGET="10.12"
 
 # Directory where not relocable bundle will be built, and where it will be installed by packaging script
 INSTALL_PREFIX="/opt/digikam"
