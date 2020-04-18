@@ -683,4 +683,5 @@ BUGFIXES:
 665 ==> 322117 - Open directory in File Manager and Open directory In Terminal not working under Windows and OSX.
 666 ==> 279372 - Show combined file sizes when selection is done into icon-view.
 667 ==> 420252 - Thumbnails of MPO images appear corrupted.
-668 ==> 
+668 ==> 420254 - Preview of MPO stereo files displays a black image.
+669 ==> 
