@@ -685,4 +685,5 @@ BUGFIXES:
 667 ==> 420252 - Thumbnails of MPO images appear corrupted.
 668 ==> 420254 - Preview of MPO stereo files displays a black image.
 669 ==> 419927 - Filter by favorites.
-670 ==> 
+670 ==> 415771 - Segmentation fault (11) crash when loading corrupt file with ImageMagick codec.
+671 ==> 
