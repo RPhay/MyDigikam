@@ -234,7 +234,7 @@ InstallKF5Component(kglobalaccel        ${KF5_VERSION} ""                       
 InstallKF5Component(kxmlgui             ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kbookmarks          ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kimageformats       ${KF5_VERSION} ""                                                                   "")
-InstallKF5Component(knotifyconfig       ${KF5_VERSION} ""                                                                   "")
+InstallKF5Component(knotifyconfig       ${KF5_VERSION} ""                                                                   "knotifyconfig-drop-phonon.patch")
 InstallKF5Component(knotifications      ${KF5_VERSION} ""                                                                   "knotifications-drop-phonon.patch")
 InstallKF5Component(kjobwidgets         ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(sonnet              ${KF5_VERSION} ""                                                                   "")
