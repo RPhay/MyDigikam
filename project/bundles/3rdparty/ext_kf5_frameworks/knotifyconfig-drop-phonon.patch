@@ -19,13 +19,15 @@ index 155422d..b5d66d3 100644
  endif()
  
  # Includes
-diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 1282446..3dfd8e8 100644
---- a/src/CMakeLists.txt
-+++ b/src/CMakeLists.txt
-@@ -1,4 +1,4 @@
--set(HAVE_PHONON ${Phonon4Qt5_FOUND})
-+#set(HAVE_PHONON ${Phonon4Qt5_FOUND})
- configure_file(knotify-config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/knotify-config.h )
+diff --git a/src/knotify-config.h.cmake b/src/knotify-config.h.cmake
+index 1794afc..262bae4 100644
+--- a/src/knotify-config.h.cmake
++++ b/src/knotify-config.h.cmake
+@@ -1,7 +1,5 @@
+ #ifndef KNOTIFY_CONFIG_H
+ #define KNOTIFY_CONFIG_H
  
- ########### next target ###############
+-#cmakedefine01 HAVE_PHONON
+-
+ #endif /* KNOTIFY_CONFIG_H */
+ 
