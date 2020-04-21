@@ -1627,14 +1627,14 @@ void BackendMarble::updateActionAvailability()
     s->worldMapWidget->getControlAction(QLatin1String("zoomout"))->setEnabled(d->cacheZoom>d->marbleWidget->minimumZoom());
     const QList<QAction*> mapThemeActions = d->actionGroupMapTheme->actions();
 
-    for (int i = 0 ; i<mapThemeActions.size() ; ++i)
+    for (int i = 0 ; i < mapThemeActions.size() ; ++i)
     {
         mapThemeActions.at(i)->setChecked(mapThemeActions.at(i)->data().toString() == getMapTheme());
     }
 
     const QList<QAction*> projectionActions = d->actionGroupProjection->actions();
 
-    for (int i = 0 ; i<projectionActions.size() ; ++i)
+    for (int i = 0 ; i < projectionActions.size() ; ++i)
     {
         projectionActions.at(i)->setChecked(projectionActions.at(i)->data().toString() == d->cacheProjection);
     }
