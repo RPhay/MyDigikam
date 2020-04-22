@@ -686,4 +686,5 @@ BUGFIXES:
 668 ==> 420254 - Preview of MPO stereo files displays a black image.
 669 ==> 419927 - Filter by favorites.
 670 ==> 415771 - Segmentation fault (11) crash when loading corrupt file with ImageMagick codec.
-671 ==> 
+671 ==> 420398 - Install icon elongated.
+672 ==> 
