@@ -183,7 +183,7 @@ public:
 
     void setDefaultFilter(const char** const list, QStringList& filter)
     {
-        for (int i=0 ; QLatin1String(list[i]) != QLatin1String("-1") ; ++i)
+        for (int i = 0 ; QLatin1String(list[i]) != QLatin1String("-1") ; ++i)
         {
             filter << QLatin1String(list[i]);
         }
