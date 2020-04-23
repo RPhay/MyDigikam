@@ -439,6 +439,7 @@ void LoadingCacheFileWatch::checkFileWatch(const QString& filePath)
             qCDebug(DIGIKAM_GENERAL_LOG) << "LoadingCache file dirty:" << filePath;
 
             m_cache->notifyFileChanged(filePath);
+            m_watchMap.remove(filePath);
         }
     }
 }
