@@ -75,11 +75,6 @@ public:
     static void cleanThumbnailCache();
 
     /**
-     * Remove file from LoadingCacheFileWatch.
-     */
-    static void removeFromFileWatch(const QString& filePath);
-
-    /**
      * add a copy of the image to cache
      */
     static void putImage(const QString& filePath, const DImg& img);
