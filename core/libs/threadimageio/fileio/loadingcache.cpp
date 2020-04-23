@@ -189,10 +189,8 @@ LoadingCache::~LoadingCache()
 
 DImg* LoadingCache::retrieveImage(const QString& cacheKey) const
 {
-    if (d->watch)
-    {
-        d->watch->checkFileWatch(d->imageFilePathMap.key(cacheKey));
-    }
+    QString filePath(d->imageFilePathMap.key(cacheKey));
+    d->fileWatch()->checkFileWatch(filePath);
 
     return d->imageCache[cacheKey];
 }
@@ -400,7 +398,7 @@ LoadingCacheFileWatch::~LoadingCacheFileWatch()
 
 void LoadingCacheFileWatch::addedImage(const QString& filePath)
 {
-    if (!m_cache)
+    if (!m_cache || filePath.isEmpty())
     {
         return;
     }
@@ -426,7 +424,7 @@ void LoadingCacheFileWatch::addedImage(const QString& filePath)
 
 void LoadingCacheFileWatch::checkFileWatch(const QString& filePath)
 {
-    if (!m_cache)
+    if (!m_cache || filePath.isEmpty())
     {
         return;
     }
