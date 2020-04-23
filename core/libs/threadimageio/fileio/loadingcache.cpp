@@ -189,7 +189,10 @@ LoadingCache::~LoadingCache()
 
 DImg* LoadingCache::retrieveImage(const QString& cacheKey) const
 {
-    d->watch->checkFileWatch(d->imageFilePathMap.key(cacheKey));
+    if (d->watch)
+    {
+        d->watch->checkFileWatch(d->imageFilePathMap.key(cacheKey));
+    }
 
     return d->imageCache[cacheKey];
 }
