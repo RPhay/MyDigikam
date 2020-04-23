@@ -688,4 +688,5 @@ BUGFIXES:
 670 ==> 415771 - Segmentation fault (11) crash when loading corrupt file with ImageMagick codec.
 671 ==> 420398 - Install icon elongated.
 672 ==> 420430 - Inconsistent behavior of View tab of Metadata dialog in digiKam Configure menu.
-673 ==> 
+673 ==> 272730 - Sidebar does not adjust scroll area size automatically.
+674 ==> 
