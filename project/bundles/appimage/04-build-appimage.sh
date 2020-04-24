@@ -467,7 +467,12 @@ mkdir -p $APP_IMG_DIR/usr/share/icons/default/128x128/mimetypes
 cp -r /usr/share/icons/hicolor/128x128/apps/digikam.png ./usr/share/icons/default/128x128/mimetypes/application-vnd.digikam.png
 
 mkdir -p $ORIG_WD/bundle
-rm -f $ORIG_WD/bundle/* || true
+
+if [[ "$ARCH" = "x86_64" ]] ; then
+    rm -f $ORIG_WD/bundle/*x86-64$DEBUG_SUF* || true
+elif [[ "$ARCH" = "i686" ]] ; then
+    rm -f $ORIG_WD/bundle/*i386$DEBUG_SUF* || true
+fi
 
 echo -e "---------- Create Bundle with AppImage SDK stage2\n"
 
