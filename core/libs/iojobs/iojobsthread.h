@@ -78,9 +78,9 @@ public:
 
     /**
      * @brief creates a job for every item to delete from collection trash
-     * @param items to delete
+     * @param data: IOJobsData container
      */
-    void deleteDTrashItems(const DTrashItemInfoList& items);
+    void emptyDTrash(IOJobData* const data);
 
     /**
      * @brief isCanceled

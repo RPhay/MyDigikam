@@ -168,14 +168,14 @@ void IOJobsThread::restoreDTrashItems(const DTrashItemInfoList& items)
     appendJobs(collection);
 }
 
-void IOJobsThread::deleteDTrashItems(const DTrashItemInfoList& items)
+void IOJobsThread::emptyDTrash(IOJobData* const data)
 {
+    d->jobData = data;
     ActionJobCollection collection;
 
-    DeleteDTrashItemsJob* const j = new DeleteDTrashItemsJob(items);
+    EmptyDTrashItemsJob* const j = new EmptyDTrashItemsJob(data);
 
-    connect(j, SIGNAL(signalDone()),
-            this, SIGNAL(finished()));
+    connectOneJob(j);
 
     collection.insert(j, 0);
     d->jobsCount++;

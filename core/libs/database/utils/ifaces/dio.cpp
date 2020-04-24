@@ -216,6 +216,13 @@ void DIO::del(PAlbum* const album, bool useTrash)
                                                  : IOJobData::Delete, album));
 }
 
+// Empty Trash ---------------------------------------------------------
+
+void DIO::emptyTrash(const DTrashItemInfoList& infos)
+{
+    instance()->createJob(new IOJobData(IOJobData::Empty, infos));
+}
+
 // ------------------------------------------------------------------------------------------------
 
 void DIO::processJob(IOJobData* const data)
@@ -312,6 +319,12 @@ void DIO::createJob(IOJobData* const data)
 
         connect(jobThread, SIGNAL(finished()),
                 this, SIGNAL(signalRenameFinished()));
+    }
+
+    if (data->operation() == IOJobData::Empty)
+    {
+        connect(jobThread, SIGNAL(finished()),
+                this, SIGNAL(signalTrashFinished()));
     }
 
     if (item)
@@ -540,11 +553,14 @@ QString DIO::getItemString(IOJobData* const data) const
         case IOJobData::MoveFiles:
             return i18n("Move Files");
 
+        case IOJobData::Delete:
+            return i18n("Delete");
+
         case IOJobData::Trash:
             return i18n("Trash");
 
-        case IOJobData::Delete:
-            return i18n("Delete");
+        case IOJobData::Empty:
+            return i18n("Empty Trash");
 
         default:
             break;

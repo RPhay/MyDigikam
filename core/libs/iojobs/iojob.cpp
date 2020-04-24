@@ -403,13 +403,18 @@ void RestoreDTrashItemsJob::run()
 
 // ----------------------------------------------
 
-DeleteDTrashItemsJob::DeleteDTrashItemsJob(const DTrashItemInfoList& infos)
-    : m_dtrashItemInfoList(infos)
+EmptyDTrashItemsJob::EmptyDTrashItemsJob(IOJobData* const data)
+    : m_data(data)
 {
 }
 
-void DeleteDTrashItemsJob::run()
+void EmptyDTrashItemsJob::run()
 {
+    if (!m_data)
+    {
+        return;
+    }
+
     {
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
@@ -417,7 +422,7 @@ void DeleteDTrashItemsJob::run()
         QList<int> albumsFromImages;
         QList<qlonglong> imagesToRemove;
 
-        foreach (const DTrashItemInfo& item, m_dtrashItemInfoList)
+        foreach (const DTrashItemInfo& item, m_data->trashItems())
         {
             QFile::remove(item.trashPath);
             QFile::remove(item.jsonFilePath);
@@ -428,6 +433,8 @@ void DeleteDTrashItemsJob::run()
             CoreDbAccess().db()->removeAllImageRelationsFrom(item.imageId,
                                                              DatabaseRelation::Grouped);
             group.allowLift();
+
+            emit signalOneProccessed(QUrl());
         }
 
          CoreDbAccess().db()->removeItemsPermanently(imagesToRemove, albumsFromImages);

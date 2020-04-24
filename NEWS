@@ -689,4 +689,5 @@ BUGFIXES:
 671 ==> 420398 - Install icon elongated.
 672 ==> 420430 - Inconsistent behavior of View tab of Metadata dialog in digiKam Configure menu.
 673 ==> 272730 - Sidebar does not adjust scroll area size automatically.
-674 ==> 
+674 ==> 420400 - Emptying Trash does not provide any feedback that it is active/running.
+675 ==> 

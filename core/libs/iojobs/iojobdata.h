@@ -33,6 +33,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "dtrashiteminfo.h"
 
 namespace Digikam
 {
@@ -56,7 +57,8 @@ public:
         MoveFiles,
         Rename,
         Delete,
-        Trash
+        Trash,
+        Empty
     };
 
 public:
@@ -82,33 +84,38 @@ public:
                        const QString& newName,
                        bool overwrite = false);
 
+    explicit IOJobData(int operation,
+                       const DTrashItemInfoList& infos);
+
     ~IOJobData();
 
-    void             setItemInfos(const QList<ItemInfo>& infos);
-    void             setSourceUrls(const QList<QUrl>& urls);
+    void               setItemInfos(const QList<ItemInfo>& infos);
+    void               setSourceUrls(const QList<QUrl>& urls);
 
-    void             setDestUrl(const QUrl& srcUrl,
+    void               setDestUrl(const QUrl& srcUrl,
                                 const QUrl& destUrl);
 
-    void             setProgressId(const QString& id);
+    void               setProgressId(const QString& id);
 
-    int              operation()                          const;
+    int                operation()                          const;
 
-    bool             overwrite()                          const;
+    bool               overwrite()                          const;
 
-    PAlbum*          srcAlbum()                           const;
-    PAlbum*          destAlbum()                          const;
+    PAlbum*            srcAlbum()                           const;
+    PAlbum*            destAlbum()                          const;
 
-    QUrl             destUrl(const QUrl& srcUrl = QUrl()) const;
-    QUrl             getNextUrl()                         const;
+    QUrl               destUrl(const QUrl& srcUrl = QUrl()) const;
+    QUrl               getNextUrl()                         const;
 
-    QString          getProgressId()                      const;
-    QDateTime        jobTime()                            const;
+    QString            getProgressId()                      const;
+    QDateTime          jobTime()                            const;
 
-    ItemInfo         findItemInfo(const QUrl& url)        const;
+    ItemInfo           findItemInfo(const QUrl& url)        const;
 
-    QList<QUrl>      sourceUrls()                         const;
-    QList<ItemInfo>  itemInfos()                          const;
+    QList<QUrl>        sourceUrls()                         const;
+    QList<ItemInfo>    itemInfos()                          const;
+
+    DTrashItemInfoList trashItems()                         const;
 
 private:
 

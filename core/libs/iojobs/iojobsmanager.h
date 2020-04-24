@@ -73,13 +73,6 @@ public:
      */
     IOJobsThread* startRestoringDTrashItems(const DTrashItemInfoList& trashItemsList);
 
-    /**
-     * @brief Starts a thread to delete multiple trash items
-     * @param trashItemsList: list of selected trash items to delete
-     * @return IOJobsThread pointer for signal/slot connection
-     */
-    IOJobsThread* startDeletingDTrashItems(const DTrashItemInfoList& trashItemsList);
-
 private:
 
     friend class IOJobsManagerCreator;

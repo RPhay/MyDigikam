@@ -75,6 +75,10 @@ IOJobsThread* IOJobsManager::startIOJobs(IOJobData* const data)
             thread->renameFile(data);
             break;
 
+        case IOJobData::Empty:
+            thread->emptyDTrash(data);
+            break;
+
         default:
             break;
     }
@@ -106,20 +110,6 @@ IOJobsThread* IOJobsManager::startRestoringDTrashItems(const DTrashItemInfoList&
 {
     IOJobsThread* const thread = new IOJobsThread(this);
     thread->restoreDTrashItems(trashItemsList);
-
-    connect(thread, SIGNAL(finished()),
-            thread, SLOT(deleteLater()),
-            Qt::QueuedConnection);
-
-    thread->start();
-
-    return thread;
-}
-
-IOJobsThread* IOJobsManager::startDeletingDTrashItems(const DTrashItemInfoList& trashItemsList)
-{
-    IOJobsThread* const thread = new IOJobsThread(this);
-    thread->deleteDTrashItems(trashItemsList);
 
     connect(thread, SIGNAL(finished()),
             thread, SLOT(deleteLater()),

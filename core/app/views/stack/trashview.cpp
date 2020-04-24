@@ -47,6 +47,7 @@
 #include "iojobsmanager.h"
 #include "thumbnailsize.h"
 #include "scancontroller.h"
+#include "dio.h"
 
 namespace Digikam
 {
@@ -327,14 +328,16 @@ void TrashView::slotDeleteSelectedItems()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Items count: " << items.count();
 
-    IOJobsThread* const thread = IOJobsManager::instance()->startDeletingDTrashItems(items);
+    DIO::emptyTrash(items);
 
-    connect(thread, SIGNAL(finished()),
+    connect(DIO::instance(), SIGNAL(signalTrashFinished()),
             this, SLOT(slotRemoveItemsFromModel()));
 }
 
 void TrashView::slotRemoveItemsFromModel()
 {
+    disconnect(DIO::instance(), 0, 0, 0);
+
     if (d->selectedIndexesToRemove.isEmpty())
     {
         return;
@@ -348,6 +351,8 @@ void TrashView::slotRemoveItemsFromModel()
 
 void TrashView::slotRemoveAllItemsFromModel()
 {
+    disconnect(DIO::instance(), 0, 0, 0);
+
     d->model->clearCurrentData();
 }
 
@@ -369,9 +374,9 @@ void TrashView::slotDeleteAllItems()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Removing all item from trash permanently";
 
-    IOJobsThread* const thread = IOJobsManager::instance()->startDeletingDTrashItems(d->model->allItems());
+    DIO::emptyTrash(d->model->allItems());
 
-    connect(thread, SIGNAL(finished()),
+    connect(DIO::instance(), SIGNAL(signalTrashFinished()),
             this, SLOT(slotRemoveAllItemsFromModel()));
 }
 
