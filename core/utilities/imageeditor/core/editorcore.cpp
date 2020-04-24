@@ -147,6 +147,10 @@ void EditorCore::load(const QString& filePath, IOFileSettings* const iofileSetti
             qCCritical(DIGIKAM_GENERAL_LOG) << "Cannot found Raw Import tool! This probably due to a wrong "
                                                "install of plugins. Load Raw file with default settings...";
         }
+
+        description = LoadingDescription(filePath, iofileSettings->rawDecodingSettings,
+                                         LoadingDescription::RawDecodingGlobalSettings,
+                                         LoadingDescription::ConvertForEditor);
     }
 
     d->load(description);
