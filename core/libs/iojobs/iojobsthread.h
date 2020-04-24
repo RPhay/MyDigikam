@@ -72,15 +72,15 @@ public:
 
     /**
      * @brief creates a job for every item to restore back to album
-     * @param items to restore
+     * @param data: IOJobsData container
      */
-    void restoreDTrashItems(const DTrashItemInfoList& items);
+    void restoreDTrashItems(IOJobData* const data);
 
     /**
      * @brief creates a job for every item to delete from collection trash
      * @param data: IOJobsData container
      */
-    void emptyDTrash(IOJobData* const data);
+    void emptyDTrashItems(IOJobData* const data);
 
     /**
      * @brief isCanceled

@@ -66,13 +66,6 @@ public:
      */
     IOJobsThread* startDTrashItemsListingForCollection(const QString& collectionPath);
 
-    /**
-     * @brief Starts a thread to restore multiple trash items
-     * @param trashItemsList: list of selected trash items to restore
-     * @return IOJobsThread pointer for signal/slot connection
-     */
-    IOJobsThread* startRestoringDTrashItems(const DTrashItemInfoList& trashItemsList);
-
 private:
 
     friend class IOJobsManagerCreator;

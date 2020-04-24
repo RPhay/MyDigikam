@@ -93,6 +93,8 @@ public:
     /// Rename item to new name
     static void rename(const QUrl& src, const QString& newName, bool overwrite = false);
 
+    /// Trash operations
+    static void restoreTrash(const DTrashItemInfoList& infos);
     static void emptyTrash(const DTrashItemInfoList& infos);
 
 Q_SIGNALS:

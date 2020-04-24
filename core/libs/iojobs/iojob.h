@@ -146,7 +146,7 @@ class DIGIKAM_GUI_EXPORT RestoreDTrashItemsJob : public IOJob
 
 public:
 
-    explicit RestoreDTrashItemsJob(const DTrashItemInfoList& infos);
+    explicit RestoreDTrashItemsJob(IOJobData* const data);
 
 protected:
 
@@ -154,7 +154,7 @@ protected:
 
 private:
 
-    DTrashItemInfoList m_dtrashItemInfoList;
+    IOJobData* m_data;
 };
 
 // ----------------------------------------------

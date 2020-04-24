@@ -216,6 +216,13 @@ void DIO::del(PAlbum* const album, bool useTrash)
                                                  : IOJobData::Delete, album));
 }
 
+// Restore Trash -------------------------------------------------------
+
+void DIO::restoreTrash(const DTrashItemInfoList& infos)
+{
+    instance()->createJob(new IOJobData(IOJobData::Restore, infos));
+}
+
 // Empty Trash ---------------------------------------------------------
 
 void DIO::emptyTrash(const DTrashItemInfoList& infos)
@@ -321,7 +328,8 @@ void DIO::createJob(IOJobData* const data)
                 this, SIGNAL(signalRenameFinished()));
     }
 
-    if (data->operation() == IOJobData::Empty)
+    if (data->operation() == IOJobData::Empty ||
+        data->operation() == IOJobData::Restore)
     {
         connect(jobThread, SIGNAL(finished()),
                 this, SIGNAL(signalTrashFinished()));
@@ -523,6 +531,12 @@ void DIO::slotOneProccessed(const QUrl& url)
         ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
     }
 
+    if (operation == IOJobData::Restore)
+    {
+        QString scanPath = url.adjusted(QUrl::RemoveFilename).toLocalFile();
+        ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
+    }
+
     ProgressItem* const item = getProgressItem(data);
 
     if (item)
@@ -558,6 +572,9 @@ QString DIO::getItemString(IOJobData* const data) const
 
         case IOJobData::Trash:
             return i18n("Trash");
+
+        case IOJobData::Restore:
+            return i18n("Restore Trash");
 
         case IOJobData::Empty:
             return i18n("Empty Trash");

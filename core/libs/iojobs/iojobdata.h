@@ -55,6 +55,7 @@ public:
         MoveAlbum,
         MoveImage,
         MoveFiles,
+        Restore,
         Rename,
         Delete,
         Trash,

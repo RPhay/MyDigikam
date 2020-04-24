@@ -369,14 +369,19 @@ void DTrashItemsListingJob::run()
 
 // ----------------------------------------------
 
-RestoreDTrashItemsJob::RestoreDTrashItemsJob(const DTrashItemInfoList& infos)
-    : m_dtrashItemInfoList(infos)
+RestoreDTrashItemsJob::RestoreDTrashItemsJob(IOJobData* const data)
+    : m_data(data)
 {
 }
 
 void RestoreDTrashItemsJob::run()
 {
-    foreach (const DTrashItemInfo& item, m_dtrashItemInfoList)
+    if (!m_data)
+    {
+        return;
+    }
+
+    foreach (const DTrashItemInfo& item, m_data->trashItems())
     {
         QUrl srcToRename = QUrl::fromLocalFile(item.collectionPath);
         QUrl newName     = DFileOperations::getUniqueFileUrl(srcToRename);
@@ -396,6 +401,8 @@ void RestoreDTrashItemsJob::run()
         {
             QFile::remove(item.jsonFilePath);
         }
+
+        emit signalOneProccessed(newName);
     }
 
     emit signalDone();
