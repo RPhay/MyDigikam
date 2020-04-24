@@ -150,7 +150,6 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
     uint               subItems      = 0;
     MdKeyListViewItem* parentifDItem = nullptr;
     QStringList        filters       = tagsFilter;
-    bool               filterIsEmpty = filters.isEmpty();
     QString            ifDItemName;
 
     for (DMetadata::MetaDataMap::const_iterator it = ifds.constBegin() ; it != ifds.constEnd() ; ++it)
@@ -174,7 +173,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
             subItems      = 0;
         }
 
-        if      (filterIsEmpty)
+        if      (tagsFilter.isEmpty())
         {
             QString tagTitle = m_parent->getTagTitle(it.key());
             new MetadataListViewItem(parentifDItem, it.key(), tagTitle, it.value());
@@ -253,7 +252,6 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
     clear();
 
     QStringList        filters       = tagsFilter;
-    bool               filterIsEmpty = filters.isEmpty();
     uint               subItems      = 0;
     MdKeyListViewItem* parentifDItem = nullptr;
 
@@ -276,7 +274,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
 
             if (*itKeysFilter == it.key().section(QLatin1Char('.'), 1, 1))
             {
-                if      (filterIsEmpty)
+                if      (tagsFilter.isEmpty())
                 {
                     QString tagTitle = m_parent->getTagTitle(it.key());
                     new MetadataListViewItem(parentifDItem, it.key(), tagTitle, it.value());
