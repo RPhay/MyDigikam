@@ -120,11 +120,7 @@ int DImgJPEGPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     if (!magic)
     {
-        return (
-                format == QLatin1String("JPEG") ||
-                format == QLatin1String("JPG")  ||
-                format == QLatin1String("JPE")
-               ) ? 10 : 0;
+        return typeMimes().contains(format) ? 10 : 0;
     }
 
     // In second, we trying to parse file header.
@@ -145,7 +141,7 @@ int DImgJPEGPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
     {
         qCDebug(DIGIKAM_DIMG_LOG) << "Failed to read header of file " << filePath;
         fclose(f);
-        return false;
+        return 0;
     }
 
     fclose(f);
