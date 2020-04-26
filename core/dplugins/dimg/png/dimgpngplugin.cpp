@@ -154,12 +154,7 @@ int DImgPNGPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
 int DImgPNGPlugin::canWrite(const QString& format) const
 {
-    if (format == QLatin1String("PNG"))
-    {
-        return 10;
-    }
-
-    return 0;
+    return typeMimes().contains(format.toUpper()) ? 10 : 0;
 }
 
 DImgLoader* DImgPNGPlugin::loader(DImg* const image, const DRawDecoding&) const

@@ -158,14 +158,7 @@ int DImgJPEGPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
 int DImgJPEGPlugin::canWrite(const QString& format) const
 {
-    if (format == QLatin1String("JPEG") ||
-        format == QLatin1String("JPG")  ||
-        format == QLatin1String("JPE"))
-    {
-        return 10;
-    }
-
-    return 0;
+    return typeMimes().contains(format.toUpper()) ? 10 : 0;
 }
 
 DImgLoader* DImgJPEGPlugin::loader(DImg* const image, const DRawDecoding&) const

@@ -196,18 +196,15 @@ int DImgHEIFPlugin::canWrite(const QString& format) const
 
 #ifdef HAVE_X265
 
-    if (format.toUpper() == QLatin1String("HEIC"))
-    {
-        return 10;
-    }
+    return typeMimes().contains(format.toUpper()) ? 10 : 0;
 
 #else
 
     Q_UNUSED(format);
 
-#endif
-
     return 0;
+
+#endif
 }
 
 DImgLoader* DImgHEIFPlugin::loader(DImg* const image, const DRawDecoding&) const

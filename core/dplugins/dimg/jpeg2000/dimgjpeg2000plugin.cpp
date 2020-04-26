@@ -169,14 +169,7 @@ int DImgJPEG2000Plugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
 int DImgJPEG2000Plugin::canWrite(const QString& format) const
 {
-    if (format == QLatin1String("JP2") || format == QLatin1String("JPX") || // JPEG2000 file format
-        format == QLatin1String("JPC") || format == QLatin1String("J2K") || // JPEG2000 code stream
-        format == QLatin1String("PGX"))                                     // JPEG2000 Verification Model
-    {
-        return 10;
-    }
-
-    return 0;
+    return typeMimes().contains(format.toUpper()) ? 10 : 0;
 }
 
 DImgLoader* DImgJPEG2000Plugin::loader(DImg* const image, const DRawDecoding&) const
