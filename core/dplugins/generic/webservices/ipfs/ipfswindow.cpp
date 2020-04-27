@@ -35,8 +35,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 #include <kwindowconfig.h>
-#include <kconfig.h>
 
 // Local includes
 
@@ -256,26 +256,26 @@ void IpfsWindow::closeEvent(QCloseEvent* e)
 
 void IpfsWindow::readSettings()
 {
-    KConfig config;
-    KConfigGroup groupAuth = config.group("IPFS Auth");
-    d->username               = groupAuth.readEntry("UserName", QString());
+    KSharedConfigPtr config  = KSharedConfig::openConfig();
+    KConfigGroup groupAuth   = config->group("IPFS Auth");
+    d->username              = groupAuth.readEntry("UserName", QString());
     // apiAuthorized(!d->username.isEmpty(), d->username);
 
     winId();
-    KConfigGroup groupDialog = config.group("IPFS Dialog");
+    KConfigGroup groupDialog = config->group("IPFS Dialog");
     KWindowConfig::restoreWindowSize(windowHandle(), groupDialog);
     resize(windowHandle()->size());
 }
 
 void IpfsWindow::saveSettings()
 {
-    KConfig config;
-    KConfigGroup groupAuth   = config.group("IPFS Auth");
+    KSharedConfigPtr config  = KSharedConfig::openConfig();
+    KConfigGroup groupAuth   = config->group("IPFS Auth");
     groupAuth.writeEntry("UserName", d->username);
 
-    KConfigGroup groupDialog = config.group("IPFS Dialog");
+    KConfigGroup groupDialog = config->group("IPFS Dialog");
     KWindowConfig::saveWindowSize(windowHandle(), groupDialog);
-    config.sync();
+    config->sync();
 }
 
 } // namespace DigikamGenericIpfsPlugin

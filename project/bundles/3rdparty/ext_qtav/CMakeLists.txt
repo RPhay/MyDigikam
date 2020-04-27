@@ -111,6 +111,7 @@ else() #Linux
                                               ${GLOBAL_PROFILE}
                                               -DBUILD_EXAMPLES=OFF
                                               -DBUILD_TESTS=OFF
+                                              -DBUILD_PLAYERS=OFF
                                               -DBUILD_QT5OPENGL=ON
 
         BUILD_COMMAND cd <SOURCE_DIR>/build && $(MAKE)

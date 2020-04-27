@@ -67,11 +67,11 @@ namespace Digikam
 {
 
 /*
- * This class is derived from the ClassicLoadingCacheFileWatch,
+ * This class is derived from the LoadingCacheFileWatch,
  * which means it has the full functionality of the class
  * and only extends it by listening to CollectionScanner information
  */
-class Q_DECL_HIDDEN ScanControllerLoadingCacheFileWatch : public ClassicLoadingCacheFileWatch
+class Q_DECL_HIDDEN ScanControllerLoadingCacheFileWatch : public LoadingCacheFileWatch
 {
     Q_OBJECT
 

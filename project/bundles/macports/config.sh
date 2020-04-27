@@ -23,12 +23,12 @@ BUILDING_DIR="`pwd`/temp.build"
 #
 # Uncompress the archive to /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/
 # and adjust the property "MinimumSDKVersion" from /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
-# sudo /usr/libexec/PlistBuddy -c "Set MinimumSDKVersion 10.12" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
+# sudo /usr/libexec/PlistBuddy -c "Set MinimumSDKVersion 10.13" /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Info.plist
 #
 # Possible values:
-# 10.15 : Catalina     :          : Qt                                ????, ????, ????
-# 10.14 : Mojave       : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13
-# 10.13 : High Sierra  : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13
+# 10.15 : Catalina     :          : Qt                                5.11, 5.12, 5.13, 5.14
+# 10.14 : Mojave       : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14
+# 10.13 : High Sierra  : tested   : Qt                     5.9, 5.10, 5.11, 5.12, 5.13, 5.14
 # 10.12 : Sierra       : tested   : Qt                5.8, 5.9, 5.10, 5.11, 5.12, 5.13
 # 10.11 : El Capitan   : tested   : Qt 5.5, 5.6, 5.7, 5.8, 5.9, 5.10, 5.11
 # 10.10 : Yosemite     : tested   : Qt 5.5, 5.6, 5.7, 5.8, 5.9
@@ -36,8 +36,8 @@ BUILDING_DIR="`pwd`/temp.build"
 # 10.8  : MountainLion : tested   : Qt 5.5, 5.6, 5.7
 # 10.7  : Lion         : untested : Qt 5.5, 5.6
 # 10.6  : SnowLeopard  : untested : ???
-# Older values cannot be set as it do no support x86_64.
-OSX_MIN_TARGET="10.12"
+# Older values cannot be set as it do not support x86_64.
+OSX_MIN_TARGET="10.13"
 
 # Directory where not relocable bundle will be built, and where it will be installed by packaging script
 INSTALL_PREFIX="/opt/digikam"

@@ -40,7 +40,7 @@
 
 // KDE includes
 
-#include <kconfig.h>
+#include <ksharedconfig.h>
 #include <kwindowconfig.h>
 
 // Local includes
@@ -155,8 +155,8 @@ FlickrWindow::FlickrWindow(DInfoInterface* const iface,
     setWindowTitle(i18n("Export to %1 Web Service", d->serviceName));
     setModal(false);
 
-    KConfig config;
-    KConfigGroup grp = config.group(QString::fromLatin1("%1Export Settings").arg(d->serviceName));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup grp        = config->group(QString::fromLatin1("%1Export Settings").arg(d->serviceName));
 
     if (grp.exists())
     {
@@ -351,10 +351,10 @@ void FlickrWindow::reactivate()
 
 void FlickrWindow::readSettings(QString uname)
 {
-    KConfig config;
-    QString groupName = QString::fromLatin1("%1%2Export Settings").arg(d->serviceName, uname);
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    QString groupName       = QString::fromLatin1("%1%2Export Settings").arg(d->serviceName, uname);
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Group name is:" << groupName;
-    KConfigGroup grp  = config.group(groupName);
+    KConfigGroup grp        = config->group(groupName);
 
     d->exportHostTagsCheckBox->setChecked(grp.readEntry("Export Host Tags",                     false));
     d->extendedTagsButton->setChecked(grp.readEntry("Show Extended Tag Options",                false));
@@ -389,15 +389,15 @@ void FlickrWindow::readSettings(QString uname)
     d->imageQualitySpinBox->setValue(grp.readEntry("Image Quality",  85));
 
     winId();
-    KConfigGroup dialogGroup = config.group(QString::fromLatin1("%1Export Dialog").arg(d->serviceName));
+    KConfigGroup dialogGroup = config->group(QString::fromLatin1("%1Export Dialog").arg(d->serviceName));
     KWindowConfig::restoreWindowSize(windowHandle(), dialogGroup);
     resize(windowHandle()->size());
 }
 
 void FlickrWindow::writeSettings()
 {
-    KConfig config;
-    QString groupName = QString::fromLatin1("%1%2Export Settings").arg(d->serviceName, d->username);
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    QString groupName       = QString::fromLatin1("%1%2Export Settings").arg(d->serviceName, d->username);
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Group name is:" << groupName;
 
     if (QString::compare(QString::fromLatin1("%1Export Settings").arg(d->serviceName), groupName) == 0)
@@ -406,7 +406,7 @@ void FlickrWindow::writeSettings()
         return;
     }
 
-    KConfigGroup grp = config.group(groupName);
+    KConfigGroup grp = config->group(groupName);
 
     grp.writeEntry("username",                          d->username);
     grp.writeEntry("Export Host Tags",                  d->exportHostTagsCheckBox->isChecked());
@@ -425,9 +425,10 @@ void FlickrWindow::writeSettings()
     grp.writeEntry("Upload Original",                   d->originalCheckBox->isChecked());
     grp.writeEntry("Maximum Width",                     d->dimensionSpinBox->value());
     grp.writeEntry("Image Quality",                     d->imageQualitySpinBox->value());
-    KConfigGroup dialogGroup = config.group(QString::fromLatin1("%1Export Dialog").arg(d->serviceName));
+
+    KConfigGroup dialogGroup = config->group(QString::fromLatin1("%1Export Dialog").arg(d->serviceName));
     KWindowConfig::saveWindowSize(windowHandle(), dialogGroup);
-    config.sync();
+    config->sync();
 }
 
 void FlickrWindow::slotLinkingSucceeded()
@@ -437,16 +438,16 @@ void FlickrWindow::slotLinkingSucceeded()
     qCDebug(DIGIKAM_WEBSERVICES_LOG) << "SlotLinkingSucceeded invoked setting user Display name to" << d->username;
     d->userNameDisplayLabel->setText(QString::fromLatin1("<b>%1</b>").arg(d->username));
 
-    KConfig config;
+    KSharedConfigPtr config = KSharedConfig::openConfig();
 
-    foreach (const QString& group, config.groupList())
+    foreach (const QString& group, config->groupList())
     {
         if (!(group.contains(d->serviceName)))
         {
             continue;
         }
 
-        KConfigGroup grp = config.group(group);
+        KConfigGroup grp = config->group(group);
 
         if (group.contains(d->username))
         {
@@ -489,9 +490,9 @@ void FlickrWindow::slotUserChangeRequest()
 
 void FlickrWindow::slotRemoveAccount()
 {
-    KConfig config;
-    QString groupName = QString::fromLatin1("%1%2Export Settings").arg(d->serviceName, d->username);
-    KConfigGroup grp  = config.group(groupName);
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    QString groupName       = QString::fromLatin1("%1%2Export Settings").arg(d->serviceName, d->username);
+    KConfigGroup grp        = config->group(groupName);
 
     if (grp.exists())
     {

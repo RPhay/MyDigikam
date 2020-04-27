@@ -84,6 +84,7 @@ if [ -d "$DK_BUILDTEMP/digikam-$DK_VERSION" ] ; then
     git reset --hard
     git pull
 
+    rm -fr build.mxe
     mkdir -p build.mxe
 
 else
@@ -101,7 +102,7 @@ else
     echo -e "\n\n"
     echo "---------- Downloading digiKam $DK_VERSION"
 
-    git clone --progress --verbose $DK_GITURL digikam-$DK_VERSION
+    git clone --progress --verbose --branch $DK_VERSION --single-branch $DK_GITURL digikam-$DK_VERSION
     cd digikam-$DK_VERSION
 
     if [ $? -ne 0 ] ; then
@@ -109,8 +110,6 @@ else
         echo "---------- Aborting..."
         exit;
     fi
-
-    git checkout $DK_VERSION
 
     mkdir build.mxe
 
@@ -153,7 +152,7 @@ echo -e "\n\n"
 echo "---------- Installing digiKam $DK_VERSION"
 echo -e "\n\n"
 
-make install/fast && cd "$ORIG_WD" && rm -rf "$DK_BUILDTEMP"
+make install/fast && cd "$ORIG_WD"
 
 if [ $? -ne 0 ]; then
     echo "---------- Cannot install digiKam $DK_VERSION."

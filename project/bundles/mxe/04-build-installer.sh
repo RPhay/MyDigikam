@@ -213,12 +213,12 @@ if [ $MXE_BUILD_TARGETS == "i686-w64-mingw32.shared" ]; then
     TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_EPOCH-Win32$DEBUG_SUF.exe
     PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_EPOCH-Win32$DEBUG_SUF.tar.xz
     CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_EPOCH-Win32$DEBUG_SUF.sum
-    rm -f $ORIG_WD/bundle/*Win32* || true
+    rm -f $ORIG_WD/bundle/*Win32$DEBUG_SUF* || true
 else
     TARGET_INSTALLER=digiKam-$DK_RELEASEID$DK_EPOCH-Win64$DEBUG_SUF.exe
     PORTABLE_FILE=digiKam-$DK_RELEASEID$DK_EPOCH-Win64$DEBUG_SUF.tar.xz
     CHECKSUM_FILE=digiKam-$DK_RELEASEID$DK_EPOCH-Win64$DEBUG_SUF.sum
-    rm -f $ORIG_WD/bundle/*Win64* || true
+    rm -f $ORIG_WD/bundle/*Win64$DEBUG_SUF* || true
 fi
 
 cd $ORIG_WD/installer

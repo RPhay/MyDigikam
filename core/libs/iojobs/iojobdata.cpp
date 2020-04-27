@@ -49,23 +49,24 @@ public:
     {
     }
 
-    int              operation;
+    int                operation;
 
-    bool             overwrite;
+    bool               overwrite;
 
-    PAlbum*          srcAlbum;
-    PAlbum*          destAlbum;
+    PAlbum*            srcAlbum;
+    PAlbum*            destAlbum;
 
-    QMap<QUrl, QUrl> changeDestMap;
-    QList<ItemInfo>  itemInfosList;
-    QList<QUrl>      sourceUrlList;
+    DTrashItemInfoList trashItemList;
+    QMap<QUrl, QUrl>   changeDestMap;
+    QList<ItemInfo>    itemInfosList;
+    QList<QUrl>        sourceUrlList;
 
-    QUrl             destUrl;
+    QUrl               destUrl;
 
-    QString          progressId;
-    QDateTime        jobTime;
+    QString            progressId;
+    QDateTime          jobTime;
 
-    QMutex           mutex;
+    QMutex             mutex;
 };
 
 IOJobData::IOJobData(int operation,
@@ -142,6 +143,21 @@ IOJobData::IOJobData(int operation,
 
     d->destUrl = info.fileUrl().adjusted(QUrl::RemoveFilename);
     d->destUrl.setPath(d->destUrl.path() + newName);
+}
+
+IOJobData::IOJobData(int operation,
+                     const DTrashItemInfoList& infos)
+    : d(new Private)
+{
+    d->operation     = operation;
+    d->trashItemList = infos;
+
+    // We need source URLs as dummy.
+
+    foreach (const DTrashItemInfo& item, d->trashItemList)
+    {
+        d->sourceUrlList << QUrl::fromLocalFile(item.trashPath);
+    }
 }
 
 IOJobData::~IOJobData()
@@ -253,6 +269,11 @@ QList<QUrl> IOJobData::sourceUrls() const
 QList<ItemInfo> IOJobData::itemInfos() const
 {
     return d->itemInfosList;
+}
+
+DTrashItemInfoList IOJobData::trashItems() const
+{
+    return d->trashItemList;
 }
 
 } // namespace Digikam

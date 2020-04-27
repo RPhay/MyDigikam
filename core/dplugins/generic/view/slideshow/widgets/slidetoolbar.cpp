@@ -58,6 +58,7 @@ public:
         prevBtn(nullptr),
         setupBtn(nullptr),
         screenSelectBtn(nullptr),
+        currentlyPause(false),
         configDialog(nullptr)
     {
     }
@@ -68,6 +69,8 @@ public:
     QToolButton*          prevBtn;
     QToolButton*          setupBtn;
     QToolButton*          screenSelectBtn;
+
+    bool                  currentlyPause;
 
     SetupSlideShowDialog* configDialog;
 };
@@ -250,13 +253,22 @@ void SlideToolBar::slotMenuSlideShowConfiguration()
         return;
     }
 
-    pause(true);
+    d->currentlyPause = isPaused();
+
+    if (!d->currentlyPause && d->playBtn->isEnabled())
+    {
+        d->playBtn->animateClick();
+    }
+
     d->configDialog->show();
 }
 
 void SlideToolBar::slotConfigurationAccepted()
 {
-    pause(false);
+    if (!d->currentlyPause && d->playBtn->isEnabled())
+    {
+        d->playBtn->animateClick();
+    }
 }
 
 void SlideToolBar::keyPressEvent(QKeyEvent* e)
@@ -265,10 +277,28 @@ void SlideToolBar::keyPressEvent(QKeyEvent* e)
     {
         case (Qt::Key_F1):
         {
-            d->playBtn->animateClick();
-            SlideHelp* const help = new SlideHelp();
+            d->currentlyPause = isPaused();
+
+            if (!d->currentlyPause && d->playBtn->isEnabled())
+            {
+                d->playBtn->animateClick();
+            }
+
+            QPointer<SlideHelp> help = new SlideHelp();
             help->exec();
-            d->playBtn->animateClick();
+            delete help;
+
+            if (!d->currentlyPause && d->playBtn->isEnabled())
+            {
+                d->playBtn->animateClick();
+            }
+
+            break;
+        }
+
+        case (Qt::Key_F2):
+        {
+            slotMenuSlideShowConfiguration();
             break;
         }
 

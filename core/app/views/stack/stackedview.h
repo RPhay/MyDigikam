@@ -77,7 +77,7 @@ public:
 
 public:
 
-    explicit StackedView(QWidget* const parent=nullptr);
+    explicit StackedView(QWidget* const parent = nullptr);
     ~StackedView();
 
     /* Attach the thumbnail dock widget to the specified QMainWindow. */
@@ -156,7 +156,7 @@ private Q_SLOTS:
 private:
 
     void readSettings();
-    void syncSelection(ItemCategorizedView* from, ItemCategorizedView* to);
+    void syncSelection(ItemCategorizedView* const from, ItemCategorizedView* const to);
 
 private:
 

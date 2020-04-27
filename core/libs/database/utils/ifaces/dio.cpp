@@ -216,6 +216,20 @@ void DIO::del(PAlbum* const album, bool useTrash)
                                                  : IOJobData::Delete, album));
 }
 
+// Restore Trash -------------------------------------------------------
+
+void DIO::restoreTrash(const DTrashItemInfoList& infos)
+{
+    instance()->createJob(new IOJobData(IOJobData::Restore, infos));
+}
+
+// Empty Trash ---------------------------------------------------------
+
+void DIO::emptyTrash(const DTrashItemInfoList& infos)
+{
+    instance()->createJob(new IOJobData(IOJobData::Empty, infos));
+}
+
 // ------------------------------------------------------------------------------------------------
 
 void DIO::processJob(IOJobData* const data)
@@ -312,6 +326,13 @@ void DIO::createJob(IOJobData* const data)
 
         connect(jobThread, SIGNAL(finished()),
                 this, SIGNAL(signalRenameFinished()));
+    }
+
+    if (data->operation() == IOJobData::Empty ||
+        data->operation() == IOJobData::Restore)
+    {
+        connect(jobThread, SIGNAL(finished()),
+                this, SIGNAL(signalTrashFinished()));
     }
 
     if (item)
@@ -510,6 +531,12 @@ void DIO::slotOneProccessed(const QUrl& url)
         ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
     }
 
+    if (operation == IOJobData::Restore)
+    {
+        QString scanPath = url.adjusted(QUrl::RemoveFilename).toLocalFile();
+        ScanController::instance()->scheduleCollectionScanRelaxed(scanPath);
+    }
+
     ProgressItem* const item = getProgressItem(data);
 
     if (item)
@@ -540,11 +567,17 @@ QString DIO::getItemString(IOJobData* const data) const
         case IOJobData::MoveFiles:
             return i18n("Move Files");
 
+        case IOJobData::Delete:
+            return i18n("Delete");
+
         case IOJobData::Trash:
             return i18n("Trash");
 
-        case IOJobData::Delete:
-            return i18n("Delete");
+        case IOJobData::Restore:
+            return i18n("Restore Trash");
+
+        case IOJobData::Empty:
+            return i18n("Empty Trash");
 
         default:
             break;

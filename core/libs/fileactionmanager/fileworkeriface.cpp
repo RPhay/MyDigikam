@@ -35,7 +35,6 @@
 #include "metaenginesettings.h"
 #include "itemattributeswatch.h"
 #include "iteminfotasksplitter.h"
-#include "loadingcacheinterface.h"
 #include "collectionscanner.h"
 #include "facetagseditor.h"
 #include "scancontroller.h"
@@ -60,8 +59,6 @@ void FileActionMngrFileWorker::writeOrientationToFiles(FileActionItemInfoList in
         DMetadata metadata(path);
         DMetadata::ImageOrientation o = (DMetadata::ImageOrientation)orientation;
         metadata.setItemOrientation(o);
-
-        LoadingCacheInterface::removeFromFileWatch(path);
 
         if (!metadata.applyChanges())
         {
@@ -222,8 +219,6 @@ void FileActionMngrFileWorker::transform(FileActionItemInfoList infos, int actio
         matrix                                        *= (MetaEngineRotation::TransformationAction)action;
         MetaEngine::ImageOrientation finalOrientation  = matrix.exifOrientation();
         bool rotatedPixels                             = false;
-
-        LoadingCacheInterface::removeFromFileWatch(path);
 
         if (rotateAsJpeg)
         {

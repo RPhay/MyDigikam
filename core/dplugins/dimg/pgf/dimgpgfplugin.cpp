@@ -124,7 +124,7 @@ int DImgPGFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
     if (!magic)
     {
-        return (format == QLatin1String("PGF")) ? 10 : 0;
+        return typeMimes().contains(format) ? 10 : 0;
     }
 
     // In second, we trying to parse file header.
@@ -162,12 +162,7 @@ int DImgPGFPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
 
 int DImgPGFPlugin::canWrite(const QString& format) const
 {
-    if (format == QLatin1String("PGF"))
-    {
-        return 10;
-    }
-
-    return 0;
+    return typeMimes().contains(format.toUpper()) ? 10 : 0;
 }
 
 DImgLoader* DImgPGFPlugin::loader(DImg* const image, const DRawDecoding&) const

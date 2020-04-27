@@ -102,16 +102,24 @@ SetupCollections::SetupCollections(QWidget* const parent)
 
     albumPathLabel->setWordWrap(true);
 
-    d->collectionView  = new SetupCollectionTreeView(albumPathBox);
-    d->collectionModel = new SetupCollectionModel(panel);
+    d->collectionView             = new SetupCollectionTreeView(albumPathBox);
+    d->collectionModel            = new SetupCollectionModel(panel);
     d->collectionView->setModel(d->collectionModel);
 
-    d->monitoringBox   = new QCheckBox(i18n("Monitor the albums for external changes (requires restart)"), panel);
+    d->monitoringBox              = new QCheckBox(i18n("Monitor the albums for external "
+                                                       "changes (requires restart)"), panel);
+
+    QLabel* const monitoringNote  = new QLabel(i18n("<b>Note: Album monitoring consumes system resources and "
+                                                    "can slow down digiKam. If you are using MacOS and network "
+                                                    "collections, you should not activate album monitoring.</b>"));
+    monitoringNote->setWordWrap(true);
+    monitoringNote->setFrameStyle(QFrame::StyledPanel | QFrame::Raised);
 
     QVBoxLayout* const albumPathBoxLayout = new QVBoxLayout;
     albumPathBoxLayout->addWidget(albumPathLabel);
     albumPathBoxLayout->addWidget(d->collectionView);
     albumPathBoxLayout->addWidget(d->monitoringBox);
+    albumPathBoxLayout->addWidget(monitoringNote);
     albumPathBox->setLayout(albumPathBoxLayout);
     albumPathBoxLayout->setContentsMargins(spacing, spacing, spacing, spacing);
     albumPathBoxLayout->setSpacing(0);

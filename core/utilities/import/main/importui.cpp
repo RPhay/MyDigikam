@@ -2235,8 +2235,10 @@ bool ImportUI::createExtBasedSubAlbum(QUrl& downloadUrl, const CamItemInfo& info
 
     QString subAlbum = fi.suffix().toUpper();
 
-    if (fi.suffix().toUpper() == QLatin1String("JPEG") ||
-        fi.suffix().toUpper() == QLatin1String("JPE"))
+    if (
+        (fi.suffix().toUpper() == QLatin1String("JPEG")) ||
+        (fi.suffix().toUpper() == QLatin1String("JPE"))
+       )
     {
         subAlbum = QLatin1String("JPG");
     }
@@ -2246,9 +2248,11 @@ bool ImportUI::createExtBasedSubAlbum(QUrl& downloadUrl, const CamItemInfo& info
         subAlbum = QLatin1String("TIF");
     }
 
-    if (fi.suffix().toUpper() == QLatin1String("MPEG") ||
-        fi.suffix().toUpper() == QLatin1String("MPE") ||
-        fi.suffix().toUpper() == QLatin1String("MPO"))
+    if (
+        (fi.suffix().toUpper() == QLatin1String("MPEG")) ||
+        (fi.suffix().toUpper() == QLatin1String("MPE"))  ||
+        (fi.suffix().toUpper() == QLatin1String("MTS"))
+       )
     {
         subAlbum = QLatin1String("MPG");
     }

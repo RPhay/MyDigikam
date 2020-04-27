@@ -369,14 +369,19 @@ void DTrashItemsListingJob::run()
 
 // ----------------------------------------------
 
-RestoreDTrashItemsJob::RestoreDTrashItemsJob(const DTrashItemInfoList& infos)
-    : m_dtrashItemInfoList(infos)
+RestoreDTrashItemsJob::RestoreDTrashItemsJob(IOJobData* const data)
+    : m_data(data)
 {
 }
 
 void RestoreDTrashItemsJob::run()
 {
-    foreach (const DTrashItemInfo& item, m_dtrashItemInfoList)
+    if (!m_data)
+    {
+        return;
+    }
+
+    foreach (const DTrashItemInfo& item, m_data->trashItems())
     {
         QUrl srcToRename = QUrl::fromLocalFile(item.collectionPath);
         QUrl newName     = DFileOperations::getUniqueFileUrl(srcToRename);
@@ -390,12 +395,15 @@ void RestoreDTrashItemsJob::run()
 
         if (!QFile::rename(item.trashPath, newName.toLocalFile()))
         {
-            qCDebug(DIGIKAM_IOJOB_LOG) << "Trash file could not be renamed!";
+            emit signalError(i18n("Could not restore file %1 from trash",
+                                  QDir::toNativeSeparators(newName.toLocalFile())));
         }
         else
         {
             QFile::remove(item.jsonFilePath);
         }
+
+        emit signalOneProccessed(newName);
     }
 
     emit signalDone();
@@ -403,13 +411,18 @@ void RestoreDTrashItemsJob::run()
 
 // ----------------------------------------------
 
-DeleteDTrashItemsJob::DeleteDTrashItemsJob(const DTrashItemInfoList& infos)
-    : m_dtrashItemInfoList(infos)
+EmptyDTrashItemsJob::EmptyDTrashItemsJob(IOJobData* const data)
+    : m_data(data)
 {
 }
 
-void DeleteDTrashItemsJob::run()
+void EmptyDTrashItemsJob::run()
 {
+    if (!m_data)
+    {
+        return;
+    }
+
     {
         CoreDbOperationGroup group;
         group.setMaximumTime(200);
@@ -417,7 +430,7 @@ void DeleteDTrashItemsJob::run()
         QList<int> albumsFromImages;
         QList<qlonglong> imagesToRemove;
 
-        foreach (const DTrashItemInfo& item, m_dtrashItemInfoList)
+        foreach (const DTrashItemInfo& item, m_data->trashItems())
         {
             QFile::remove(item.trashPath);
             QFile::remove(item.jsonFilePath);
@@ -428,6 +441,8 @@ void DeleteDTrashItemsJob::run()
             CoreDbAccess().db()->removeAllImageRelationsFrom(item.imageId,
                                                              DatabaseRelation::Grouped);
             group.allowLift();
+
+            emit signalOneProccessed(QUrl());
         }
 
          CoreDbAccess().db()->removeItemsPermanently(imagesToRemove, albumsFromImages);

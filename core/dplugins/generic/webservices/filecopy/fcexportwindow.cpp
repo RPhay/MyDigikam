@@ -33,9 +33,9 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kwindowconfig.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kwindowconfig.h>
 
 // Local includes
 
@@ -136,8 +136,8 @@ void FCExportWindow::reactivate()
 
 void FCExportWindow::restoreSettings()
 {
-    KConfig config;
-    KConfigGroup group  = config.group(d->CONFIG_GROUP);
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(d->CONFIG_GROUP);
     d->exportWidget->setTargetUrl(group.readEntry(d->TARGET_URL_PROPERTY,            QUrl()));
     d->exportWidget->overwriteBox()->setChecked(group.readEntry(d->TARGET_OVERWRITE, false));
 
@@ -150,22 +150,22 @@ void FCExportWindow::restoreSettings()
     }
 
     winId();
-    KConfigGroup group2 = config.group(QLatin1String("FileCopy Export Dialog"));
+    KConfigGroup group2 = config->group(QLatin1String("FileCopy Export Dialog"));
     KWindowConfig::restoreWindowSize(windowHandle(), group2);
     resize(windowHandle()->size());
 }
 
 void FCExportWindow::saveSettings()
 {
-    KConfig config;
-    KConfigGroup group = config.group(d->CONFIG_GROUP);
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(d->CONFIG_GROUP);
     group.writeEntry(d->TARGET_URL_PROPERTY, d->exportWidget->targetUrl().url());
     group.writeEntry(d->TARGET_OVERWRITE,    d->exportWidget->overwriteBox()->isChecked());
     group.writeEntry(d->TARGET_BEHAVIOR,     d->exportWidget->targetButtonGroup()->checkedId());
 
-    KConfigGroup group2 = config.group(QLatin1String("FileCopy Export Dialog"));
+    KConfigGroup group2 = config->group(QLatin1String("FileCopy Export Dialog"));
     KWindowConfig::saveWindowSize(windowHandle(), group2);
-    config.sync();
+    config->sync();
 }
 
 void FCExportWindow::slotImageListChanged()

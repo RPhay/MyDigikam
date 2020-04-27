@@ -46,9 +46,8 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <kconfiggroup.h>
 
 // Marbel includes
 
@@ -411,9 +410,8 @@ MapWidget::~MapWidget()
 QStringList MapWidget::availableBackends() const
 {
     QStringList result;
-    MapBackend* backend = nullptr;
 
-    foreach (backend, d->loadedBackends)
+    foreach (MapBackend* const backend, d->loadedBackends)
     {
         result.append(backend->backendName());
     }
@@ -467,9 +465,7 @@ bool MapWidget::setBackend(const QString& backendName)
 
     }
 
-    MapBackend* backend = nullptr;
-
-    foreach (backend, d->loadedBackends)
+    foreach (MapBackend* const backend, d->loadedBackends)
     {
         if (backend->backendName() == backendName)
         {
@@ -1471,7 +1467,7 @@ void MapWidget::slotLazyReclusteringRequestCallBack()
  */
 void MapWidget::slotClustersClicked(const QIntList& clusterIndices)
 {
-    qCDebug(DIGIKAM_GEOIFACE_LOG)<<clusterIndices;
+    qCDebug(DIGIKAM_GEOIFACE_LOG) << clusterIndices;
 
     if ((s->currentMouseMode == MouseModeZoomIntoGroup) ||
         (s->currentMouseMode == MouseModeRegionSelectionFromIcon) )
@@ -1812,11 +1808,13 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
     {
         const QVariant representativeMarker = getClusterRepresentativeMarker(clusterId, s->sortKey);
         const int undecoratedThumbnailSize  = getUndecoratedThumbnailSize();
-        QPixmap clusterPixmap               = s->markerModel->pixmapFromRepresentativeIndex(representativeMarker, QSize(undecoratedThumbnailSize, undecoratedThumbnailSize));
+        QPixmap clusterPixmap               = s->markerModel->pixmapFromRepresentativeIndex(representativeMarker,
+                                                                                            QSize(undecoratedThumbnailSize,
+                                                                                                  undecoratedThumbnailSize));
 
         if (!clusterPixmap.isNull())
         {
-            QPixmap resultPixmap(clusterPixmap.size() + QSize(2,2));
+            QPixmap resultPixmap(clusterPixmap.size() + QSize(2, 2));
 
             // we may draw with partially transparent pixmaps later, so make sure we have a defined
             // background color
@@ -1859,7 +1857,7 @@ QPixmap MapWidget::getDecoratedPixmapForCluster(const int clusterId,
                 p.end();
             }
 
-            painter.drawPixmap(QPoint(1,1), clusterPixmap);
+            painter.drawPixmap(QPoint(1, 1), clusterPixmap);
 
             if (shouldGrayOut || shouldCrossOut)
             {

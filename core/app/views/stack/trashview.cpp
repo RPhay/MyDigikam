@@ -34,6 +34,7 @@
 #include <QPainter>
 #include <QAction>
 #include <QMenu>
+#include <QUrl>
 
 // KDE includes
 
@@ -44,9 +45,8 @@
 #include "digikam_debug.h"
 #include "dtrashiteminfo.h"
 #include "dtrashitemmodel.h"
-#include "iojobsmanager.h"
 #include "thumbnailsize.h"
-#include "scancontroller.h"
+#include "dio.h"
 
 namespace Digikam
 {
@@ -251,10 +251,10 @@ void TrashView::slotUndoLastDeletedItems()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Items to Restore:\n " << items;
 
-    IOJobsThread* const thread = IOJobsManager::instance()->startRestoringDTrashItems(items);
+    DIO::restoreTrash(items);
 
-    connect(thread, SIGNAL(finished()),
-            this, SLOT(slotRestoreFinished()));
+    connect(DIO::instance(), SIGNAL(signalTrashFinished()),
+            this, SLOT(slotRemoveItemsFromModel()));
 }
 
 void TrashView::slotRestoreSelectedItems()
@@ -276,29 +276,10 @@ void TrashView::slotRestoreSelectedItems()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Items to Restore:\n " << items;
 
-    IOJobsThread* const thread = IOJobsManager::instance()->startRestoringDTrashItems(items);
+    DIO::restoreTrash(items);
 
-    connect(thread, SIGNAL(finished()),
-            this, SLOT(slotRestoreFinished()));
-}
-
-void TrashView::slotRestoreFinished()
-{
-    if (d->selectedIndexesToRemove.isEmpty())
-    {
-        return;
-    }
-
-    DTrashItemInfoList items = d->model->itemsForIndexes(d->selectedIndexesToRemove);
-
-    foreach (const DTrashItemInfo& item, items)
-    {
-        QUrl url     = QUrl::fromLocalFile(item.collectionPath);
-        QString path = url.adjusted(QUrl::RemoveFilename).toLocalFile();
-        ScanController::instance()->scheduleCollectionScanRelaxed(path);
-    }
-
-    slotRemoveItemsFromModel();
+    connect(DIO::instance(), SIGNAL(signalTrashFinished()),
+            this, SLOT(slotRemoveItemsFromModel()));
 }
 
 void TrashView::slotDeleteSelectedItems()
@@ -327,14 +308,16 @@ void TrashView::slotDeleteSelectedItems()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Items count: " << items.count();
 
-    IOJobsThread* const thread = IOJobsManager::instance()->startDeletingDTrashItems(items);
+    DIO::emptyTrash(items);
 
-    connect(thread, SIGNAL(finished()),
+    connect(DIO::instance(), SIGNAL(signalTrashFinished()),
             this, SLOT(slotRemoveItemsFromModel()));
 }
 
 void TrashView::slotRemoveItemsFromModel()
 {
+    disconnect(DIO::instance(), 0, 0, 0);
+
     if (d->selectedIndexesToRemove.isEmpty())
     {
         return;
@@ -348,6 +331,8 @@ void TrashView::slotRemoveItemsFromModel()
 
 void TrashView::slotRemoveAllItemsFromModel()
 {
+    disconnect(DIO::instance(), 0, 0, 0);
+
     d->model->clearCurrentData();
 }
 
@@ -369,9 +354,9 @@ void TrashView::slotDeleteAllItems()
 
     qCDebug(DIGIKAM_GENERAL_LOG) << "Removing all item from trash permanently";
 
-    IOJobsThread* const thread = IOJobsManager::instance()->startDeletingDTrashItems(d->model->allItems());
+    DIO::emptyTrash(d->model->allItems());
 
-    connect(thread, SIGNAL(finished()),
+    connect(DIO::instance(), SIGNAL(signalTrashFinished()),
             this, SLOT(slotRemoveAllItemsFromModel()));
 }
 

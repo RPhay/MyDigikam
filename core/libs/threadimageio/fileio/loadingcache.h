@@ -27,7 +27,6 @@
 // Qt includes
 
 #include <QPixmap>
-#include <QFileSystemWatcher>
 
 // Local includes
 
@@ -68,18 +67,17 @@ public:
 
 // --------------------------------------------------------------------------------------------------------------
 
-class DIGIKAM_EXPORT LoadingCacheFileWatch
+class DIGIKAM_EXPORT LoadingCacheFileWatch : public QObject
 {
+    Q_OBJECT
+
 public:
 
+    LoadingCacheFileWatch();
     virtual ~LoadingCacheFileWatch();
 
-    /**
-     * Called by the thread when a new entry is added to the cache
-     */
-    virtual void removeFile(const QString& filePath);
     virtual void addedImage(const QString& filePath);
-    virtual void addedThumbnail(const QString& filePath);
+    virtual void checkFileWatch(const QString& filePath);
 
 protected:
 
@@ -91,49 +89,17 @@ protected:
      */
     void notifyFileChanged(const QString& filePath);
 
-protected:
+    QMap<QString, QPair<qint64, QDateTime> > m_watchMap;
 
     friend class LoadingCache;
 
     class LoadingCache* m_cache;
-};
-
-// --------------------------------------------------------------------------------------------------------------
-
-class DIGIKAM_EXPORT ClassicLoadingCacheFileWatch : public QObject, public LoadingCacheFileWatch
-{
-    Q_OBJECT
-
-    /**
-     * Reference implementation
-     */
-
-public:
-
-    ClassicLoadingCacheFileWatch();
-    ~ClassicLoadingCacheFileWatch();
-    virtual void removeFile(const QString& filePath)     override;
-    virtual void addedImage(const QString& filePath)     override;
-    virtual void addedThumbnail(const QString& filePath) override;
-
-private Q_SLOTS:
-
-    void slotFileDirty(const QString& path);
-    void slotUpdateDirWatch();
-
-Q_SIGNALS:
-
-    void signalUpdateDirWatch();
-
-protected:
-
-    QFileSystemWatcher* m_watch;
 
 private:
 
     // Hidden copy constructor and assignment operator.
-    ClassicLoadingCacheFileWatch(const ClassicLoadingCacheFileWatch&);
-    ClassicLoadingCacheFileWatch& operator=(const ClassicLoadingCacheFileWatch&);
+    LoadingCacheFileWatch(const LoadingCacheFileWatch&);
+    LoadingCacheFileWatch& operator=(const LoadingCacheFileWatch&);
 };
 
 // --------------------------------------------------------------------------------------------------------------
@@ -279,11 +245,6 @@ public:
      * Ownership of this object is transferred to the cache.
      */
     void setFileWatch(LoadingCacheFileWatch* const watch);
-
-    /**
-     * Remove file from LoadingCacheFileWatch.
-     */
-    void removeFromFileWatch(const QString& filePath);
 
     /**
      * Returns a list of all possible file paths in cache.

@@ -57,8 +57,8 @@ extern "C"
 
 // KDE includes
 
-#include <kconfig.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
 
 // Local includes
@@ -396,8 +396,8 @@ void ExpoBlendingDlg::slotDefault()
 
 void ExpoBlendingDlg::readSettings()
 {
-    KConfig config;
-    KConfigGroup group = config.group("ExpoBlending Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("ExpoBlending Settings");
 
     d->enfuseSettingsBox->readSettings(group);
     d->saveSettingsBox->readSettings(group);
@@ -405,24 +405,24 @@ void ExpoBlendingDlg::readSettings()
     d->templateFileName->setText(group.readEntry("Template File Name", QString::fromLatin1("enfuse")));
 
     winId();
-    KConfigGroup group2 = config.group("ExpoBlending Dialog");
+    KConfigGroup group2 = config->group("ExpoBlending Dialog");
     DXmlGuiWindow::restoreWindowSize(windowHandle(), group2);
     resize(windowHandle()->size());
 }
 
 void ExpoBlendingDlg::saveSettings()
 {
-    KConfig config;
-    KConfigGroup group = config.group("ExpoBlending Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("ExpoBlending Settings");
 
     d->enfuseSettingsBox->writeSettings(group);
     d->saveSettingsBox->writeSettings(group);
 
     group.writeEntry("Template File Name", d->templateFileName->text());
 
-    KConfigGroup group2 = config.group("ExpoBlending Dialog");
+    KConfigGroup group2 = config->group("ExpoBlending Dialog");
     DXmlGuiWindow::saveWindowSize(windowHandle(), group2);
-    config.sync();
+    config->sync();
 }
 
 void ExpoBlendingDlg::slotPreview()

@@ -152,7 +152,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
     QStringList        filters       = tagsFilter;
     QString            ifDItemName;
 
-    for (DMetadata::MetaDataMap::const_iterator it = ifds.constBegin(); it != ifds.constEnd(); ++it)
+    for (DMetadata::MetaDataMap::const_iterator it = ifds.constBegin() ; it != ifds.constEnd() ; ++it)
     {
         // We checking if we have changed of ifDName
 
@@ -173,7 +173,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
             subItems      = 0;
         }
 
-        if      (filters.isEmpty())
+        if      (tagsFilter.isEmpty())
         {
             QString tagTitle = m_parent->getTagTitle(it.key());
             new MetadataListViewItem(parentifDItem, it.key(), tagTitle, it.value());
@@ -260,9 +260,8 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
         return;
     }
 
-    for (QStringList::const_iterator itKeysFilter = keysFilter.constBegin();
-         itKeysFilter != keysFilter.constEnd();
-         ++itKeysFilter)
+    for (QStringList::const_iterator itKeysFilter = keysFilter.constBegin() ;
+         itKeysFilter != keysFilter.constEnd() ; ++itKeysFilter)
     {
         subItems      = 0;
         parentifDItem = new MdKeyListViewItem(this, *itKeysFilter);
@@ -275,7 +274,7 @@ void MetadataListView::setIfdList(const DMetadata::MetaDataMap& ifds, const QStr
 
             if (*itKeysFilter == it.key().section(QLatin1Char('.'), 1, 1))
             {
-                if      (filters.isEmpty())
+                if      (tagsFilter.isEmpty())
                 {
                     QString tagTitle = m_parent->getTagTitle(it.key());
                     new MetadataListViewItem(parentifDItem, it.key(), tagTitle, it.value());

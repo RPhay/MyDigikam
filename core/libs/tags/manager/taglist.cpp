@@ -32,9 +32,9 @@
 
 // KDE includes
 
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
-#include <kconfig.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -109,67 +109,49 @@ TagList::~TagList()
 
 void TagList::saveSettings()
 {
-    KConfig conf(QLatin1String("digikam_tagsmanagerrc"));
-    conf.deleteGroup(QLatin1String("List Content"));
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(QLatin1String("Tags Manager List"));
+    QStringList itemList;
 
-    KConfigGroup group            = conf.group(QLatin1String("List Content"));
-
-    QList<ListItem*> currentItems = d->tagListModel->allItems();
-    group.writeEntry(QLatin1String("Size"), currentItems.count()-1);
-
-    for (int it = 1 ; it < currentItems.size() ; ++it)
+    foreach (ListItem* const listItem, d->tagListModel->allItems())
     {
-        QList<int> ids = currentItems.at(it)->getTagIds();
-        QString saveData;
+        QList<int> ids = listItem->getTagIds();
 
-        for (int jt = 0 ; jt < ids.size() ; ++jt)
+        if (!ids.isEmpty())
         {
-            saveData.append(QString::number(ids.at(jt)) + QLatin1Char(' '));
+            itemList << QString::number(ids.first());
         }
-
-        group.writeEntry(QString::fromUtf8("item%1").arg(it-1), saveData);
     }
+
+    group.writeEntry(QLatin1String("Items"), itemList);
 }
 
 void TagList::restoreSettings()
 {
-    KConfig conf(QLatin1String("digikam_tagsmanagerrc"));
-    KConfigGroup group = conf.group(QLatin1String("List Content"));
-    QStringList items;
-
-    int size = group.readEntry(QLatin1String("Size"), -1);
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group(QLatin1String("Tags Manager List"));
+    QStringList itemList    = group.readEntry(QLatin1String("Items"), QStringList());
 
     /**
      * If config is empty add generic All Tags
      */
     d->tagListModel->addItem(QList<QVariant>() << QBrush(Qt::cyan, Qt::Dense2Pattern));
 
-    if ((size == 0) || (size < 0))
+    if (itemList.isEmpty())
     {
         return;
     }
 
-    for (int it = 0 ; it < size ; ++it)
+    foreach (const QString& item, itemList)
     {
-        QString data = group.readEntry(QString::fromUtf8("item%1").arg(it), "");
-
-        if (data.isEmpty())
-        {
-            continue;
-        }
-
-        QStringList ids = data.split(QLatin1Char(' '), QString::SkipEmptyParts);
         QList<QVariant> itemData;
         itemData << QBrush(Qt::cyan, Qt::Dense2Pattern);
 
-        foreach (const QString& tagId, ids)
-        {
-            TAlbum* const item = AlbumManager::instance()->findTAlbum(tagId.toInt());
+        TAlbum* const talbum = AlbumManager::instance()->findTAlbum(item.toInt());
 
-            if (item)
-            {
-                itemData << item->id();
-            }
+        if (talbum)
+        {
+            itemData << talbum->id();
         }
 
         ListItem* const listItem = d->tagListModel->addItem(itemData);

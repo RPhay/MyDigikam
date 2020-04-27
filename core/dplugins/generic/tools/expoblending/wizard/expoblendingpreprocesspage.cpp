@@ -39,8 +39,8 @@
 // KDE includes
 
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
 #include <kconfiggroup.h>
-#include <kconfig.h>
 
 // Local includes
 
@@ -97,19 +97,19 @@ ExpoBlendingPreProcessPage::ExpoBlendingPreProcessPage(ExpoBlendingManager* cons
     d->title->setWordWrap(true);
     d->title->setOpenExternalLinks(true);
 
-    KConfig config;
-    KConfigGroup group = config.group("ExpoBlending Settings");
-    d->alignCheckBox   = new QCheckBox(i18nc("@option:check", "Align bracketed images"), vbox);
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("ExpoBlending Settings");
+    d->alignCheckBox        = new QCheckBox(i18nc("@option:check", "Align bracketed images"), vbox);
     d->alignCheckBox->setChecked(group.readEntry("Auto Alignment", true));
 
     vbox->setStretchFactor(new QWidget(vbox), 2);
 
-    d->detailsText     = new QTextBrowser(vbox);
+    d->detailsText          = new QTextBrowser(vbox);
     d->detailsText->hide();
 
     vbox->setStretchFactor(new QWidget(vbox), 2);
 
-    d->progressLabel   = new QLabel(vbox);
+    d->progressLabel        = new QLabel(vbox);
     d->progressLabel->setAlignment(Qt::AlignCenter);
 
     vbox->setStretchFactor(new QWidget(vbox), 10);
@@ -130,10 +130,10 @@ ExpoBlendingPreProcessPage::ExpoBlendingPreProcessPage(ExpoBlendingManager* cons
 
 ExpoBlendingPreProcessPage::~ExpoBlendingPreProcessPage()
 {
-    KConfig config;
-    KConfigGroup group = config.group("ExpoBlending Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("ExpoBlending Settings");
     group.writeEntry("Auto Alignment", d->alignCheckBox->isChecked());
-    config.sync();
+    config->sync();
 
     delete d;
 }

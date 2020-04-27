@@ -23,16 +23,19 @@
 
 #include "itemselectionpropertiestab.h"
 
-//Qt includes
+// Qt includes
+
 #include <QApplication>
 #include <QGridLayout>
 #include <QStyle>
 #include <QIcon>
 
-//KDE includes
+// KDE includes
+
 #include "klocalizedstring.h"
 
-//Local includes
+// Local includes
+
 #include "itempropertiestab.h"
 #include "itempropertiestxtlabel.h"
 
@@ -42,7 +45,8 @@ class Q_DECL_HIDDEN ItemSelectionPropertiesTab::Private
 {
 public:
 
-    enum Section{
+    enum Section
+    {
         SelectionProperties = 0
     };
 
@@ -115,7 +119,7 @@ ItemSelectionPropertiesTab::~ItemSelectionPropertiesTab()
     delete d;
 }
 
-void ItemSelectionPropertiesTab::setCurrentURL(const QUrl &url)
+void ItemSelectionPropertiesTab::setCurrentURL(const QUrl& url)
 {
     if (url.isEmpty())
     {

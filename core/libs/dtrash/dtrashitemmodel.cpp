@@ -70,7 +70,8 @@ public:
     IOJobsThread*        itemsLoadingThread;
     ThumbnailLoadThread* thumbnailThread;
 
-    QList<QString>       failedThumbnails;
+    QStringList          failedThumbnails;
+    QStringList          collectionThumbs;
     DTrashItemInfoList   data;
 };
 
@@ -128,7 +129,7 @@ QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
 
         if      (!d->failedThumbnails.contains(item.collectionPath))
         {
-            d->failedThumbnails << item.collectionPath;
+            d->collectionThumbs << item.collectionPath;
             thumbPath = item.collectionPath;
         }
         else if (!d->failedThumbnails.contains(item.trashPath))
@@ -150,10 +151,8 @@ QVariant DTrashItemModel::data(const QModelIndex& index, int role) const
 
             return pix;
         }
-        else
-        {
-            return QVariant(QVariant::Pixmap);
-        }
+
+        return QVariant(QVariant::Pixmap);
     }
 
     if ((role == Qt::ToolTipRole) && (index.column() == 1))
@@ -328,6 +327,12 @@ void DTrashItemModel::refreshThumbnails(const LoadingDescription& desc, const QP
         {
             d->failedThumbnails << desc.filePath;
         }
+    }
+
+    if (d->collectionThumbs.contains(desc.filePath))
+    {
+        d->collectionThumbs.removeAll(desc.filePath);
+        d->failedThumbnails << desc.filePath;
     }
 
     const QModelIndex topLeft     = index(0, 0);

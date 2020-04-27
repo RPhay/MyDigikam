@@ -1,4 +1,4 @@
-digiKam 7.0.0-beta3 - Release date: 2020-02-23
+digiKam 7.0.0-rc - Release date: 2020-05-31
 
 *****************************************************************************************************
 NEW FEATURES:
@@ -675,4 +675,19 @@ BUGFIXES:
 657 ==> 417737 - File operations locked under Windows.
 658 ==> 419667 - Preview in file opener.
 659 ==> 419744 - 7.0.0-beta3 Geolocation Editor does not save new location.
-660 ==> 
+660 ==> 419793 - Presentation shuffle not working.
+661 ==> 419904 - Editor plugin icons same size or plugin list.
+662 ==> 405995 - Large blank spaces between icons in "Tools" panel.
+663 ==> 419771 - A possible configuration for automatically scanning for new added pictures?
+664 ==> 420023 - RAW-editor integration with RawTherapee.
+665 ==> 322117 - Open directory in File Manager and Open directory In Terminal not working under Windows and OSX.
+666 ==> 279372 - Show combined file sizes when selection is done into icon-view.
+667 ==> 420252 - Thumbnails of MPO images appear corrupted.
+668 ==> 420254 - Preview of MPO stereo files displays a black image.
+669 ==> 419927 - Filter by favorites.
+670 ==> 415771 - Segmentation fault (11) crash when loading corrupt file with ImageMagick codec.
+671 ==> 420398 - Install icon elongated.
+672 ==> 420430 - Inconsistent behavior of View tab of Metadata dialog in digiKam Configure menu.
+673 ==> 272730 - Sidebar does not adjust scroll area size automatically.
+674 ==> 420400 - Emptying Trash does not provide any feedback that it is active/running.
+675 ==> 

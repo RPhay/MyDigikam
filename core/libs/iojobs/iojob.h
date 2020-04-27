@@ -32,7 +32,6 @@
 // Local includes
 
 #include "actionthreadbase.h"
-#include "dtrashiteminfo.h"
 #include "digikam_export.h"
 #include "iojobdata.h"
 
@@ -147,7 +146,7 @@ class DIGIKAM_GUI_EXPORT RestoreDTrashItemsJob : public IOJob
 
 public:
 
-    explicit RestoreDTrashItemsJob(const DTrashItemInfoList& infos);
+    explicit RestoreDTrashItemsJob(IOJobData* const data);
 
 protected:
 
@@ -155,18 +154,18 @@ protected:
 
 private:
 
-    DTrashItemInfoList m_dtrashItemInfoList;
+    IOJobData* m_data;
 };
 
 // ----------------------------------------------
 
-class DIGIKAM_GUI_EXPORT DeleteDTrashItemsJob : public IOJob
+class DIGIKAM_GUI_EXPORT EmptyDTrashItemsJob : public IOJob
 {
     Q_OBJECT
 
 public:
 
-    explicit DeleteDTrashItemsJob(const DTrashItemInfoList& infos);
+    explicit EmptyDTrashItemsJob(IOJobData* const data);
 
 protected:
 
@@ -174,7 +173,7 @@ protected:
 
 private:
 
-    DTrashItemInfoList m_dtrashItemInfoList;
+    IOJobData* m_data;
 };
 
 } // namespace Digikam

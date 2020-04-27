@@ -55,32 +55,52 @@ QString ItemScanner::detectVideoFormat() const
 {
     QString suffix = d->fileInfo.suffix().toUpper();
 
-    if ((suffix == QLatin1String("MPEG")) || (suffix == QLatin1String("MPG")) || (suffix == QLatin1String("MPO")) || (suffix == QLatin1String("MPE")))
+    if (
+        (suffix == QLatin1String("MPEG")) ||
+        (suffix == QLatin1String("MPG"))  ||
+        (suffix == QLatin1String("MPE"))
+       )
     {
         return QLatin1String("MPEG");
     }
 
-    if ((suffix == QLatin1String("ASF")) || (suffix == QLatin1String("WMV")))
+    if (
+        (suffix == QLatin1String("ASF")) ||
+        (suffix == QLatin1String("WMV"))
+       )
     {
         return QLatin1String("WMV");
     }
 
-    if ((suffix == QLatin1String("AVI")) || (suffix == QLatin1String("DIVX")))
+    if (
+        (suffix == QLatin1String("AVI")) ||
+        (suffix == QLatin1String("DIVX"))
+       )
     {
         return QLatin1String("AVI");
     }
 
-    if ((suffix == QLatin1String("MKV")) || (suffix == QLatin1String("MKS")))
+    if (
+        (suffix == QLatin1String("MKV")) ||
+        (suffix == QLatin1String("MKS"))
+       )
     {
         return QLatin1String("MKV");
     }
 
-    if ((suffix == QLatin1String("M4V")) || (suffix == QLatin1String("MOV")) || (suffix == QLatin1String("M2V")))
+    if (
+        (suffix == QLatin1String("M4V")) ||
+        (suffix == QLatin1String("MOV")) ||
+        (suffix == QLatin1String("M2V"))
+       )
     {
         return QLatin1String("MOV");
     }
 
-    if ((suffix == QLatin1String("3GP")) || (suffix == QLatin1String("3G2")))
+    if (
+        (suffix == QLatin1String("3GP")) ||
+        (suffix == QLatin1String("3G2"))
+       )
     {
         return QLatin1String("3GP");
     }

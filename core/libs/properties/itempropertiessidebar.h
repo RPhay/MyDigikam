@@ -103,6 +103,12 @@ protected:
     bool                        m_dirtyGpsTab;
     bool                        m_dirtyHistoryTab;
 
+    bool                        m_dirtyPropertiesTab;
+    bool                        m_dirtyMetadataTab;
+    bool                        m_dirtyColorTab;
+    bool                        m_dirtyGpsTab;
+    bool                        m_dirtyHistoryTab;
+
     QRect                       m_currentRect;
 
     QUrl                        m_currentURL;
@@ -110,14 +116,15 @@ protected:
     DImg*                       m_image;
 
     QStackedWidget*             m_propertiesStackedView;
+
     ItemPropertiesTab*          m_propertiesTab;
-    ItemSelectionPropertiesTab* m_selectionPropertiesTab; 
+    ItemSelectionPropertiesTab* m_selectionPropertiesTab;
     ItemPropertiesMetadataTab*  m_metadataTab;
     ItemPropertiesColorsTab*    m_colorTab;
 
 #ifdef HAVE_MARBLE
 
-    ItemPropertiesGPSTab*      m_gpsTab;
+    ItemPropertiesGPSTab*       m_gpsTab;
 
 #endif // HAVE_MARBLE
 

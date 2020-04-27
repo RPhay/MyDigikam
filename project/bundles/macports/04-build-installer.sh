@@ -507,7 +507,7 @@ fi
 echo "---------- Create MacOS package for digiKam $DKRELEASEID"
 
 mkdir -p $ORIG_WD/bundle
-rm -f $ORIG_WD/bundle/* || true
+rm -f $ORIG_WD/bundle/*x86-64$DEBUG_SUF* || true
 
 TARGET_INSTALLER=digiKam-$DKRELEASEID$DK_EPOCH-MacOS-x86-64$DEBUG_SUF.pkg
 TARGET_PKG_FILE=$BUILDDIR/bundle/$TARGET_INSTALLER

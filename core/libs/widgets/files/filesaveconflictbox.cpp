@@ -34,9 +34,8 @@
 
 // KDE includes
 
-#include <kconfiggroup.h>
-#include <kconfig.h>
 #include <klocalizedstring.h>
+#include <kconfiggroup.h>
 
 namespace Digikam
 {

@@ -33,6 +33,7 @@
 // Local includes
 
 #include "digikam_export.h"
+#include "dtrashiteminfo.h"
 
 class QUrl;
 
@@ -92,8 +93,13 @@ public:
     /// Rename item to new name
     static void rename(const QUrl& src, const QString& newName, bool overwrite = false);
 
+    /// Trash operations
+    static void restoreTrash(const DTrashItemInfoList& infos);
+    static void emptyTrash(const DTrashItemInfoList& infos);
+
 Q_SIGNALS:
 
+    void signalTrashFinished();
     void signalRenameFinished();
     void signalRenameFailed(const QUrl& url);
 

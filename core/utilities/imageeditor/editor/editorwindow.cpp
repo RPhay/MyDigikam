@@ -2436,8 +2436,9 @@ void EditorWindow::setupSelectToolsAction()
     DCategorizedSortFilterProxyModel* const filterModel = actionModel->createFilterModel();
 
     ActionCategorizedView* const selectToolsActionView  = new ActionCategorizedView;
-    selectToolsActionView->setupIconMode();
+    selectToolsActionView->setIconSize(QSize(22, 22));
     selectToolsActionView->setModel(filterModel);
+    selectToolsActionView->setupIconMode();
     selectToolsActionView->adjustGridSize();
 
     connect(selectToolsActionView, SIGNAL(clicked(QModelIndex)),

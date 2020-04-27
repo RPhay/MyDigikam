@@ -198,11 +198,11 @@ function(InstallKF5Component
 endfunction()
 
 if(MINGW)
-    set(KF5_VERSION 5.65) # we have Qt 5.12.1 available.
+    set(KF5_VERSION 5.69) # we have Qt 5.12.1 available.
 elseif(APPLE)
-    set(KF5_VERSION 5.65) # we have Qt 5.14.0 available.
+    set(KF5_VERSION 5.69) # we have Qt 5.14.0 available.
 else()
-    set(KF5_VERSION 5.65) # we have Qt 5.11.3 available.
+    set(KF5_VERSION 5.69) # we have Qt 5.11.3 available.
 endif()
 
 if(APPLE)
@@ -234,7 +234,7 @@ InstallKF5Component(kglobalaccel        ${KF5_VERSION} ""                       
 InstallKF5Component(kxmlgui             ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kbookmarks          ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kimageformats       ${KF5_VERSION} ""                                                                   "")
-InstallKF5Component(knotifyconfig       ${KF5_VERSION} ""                                                                   "")
+InstallKF5Component(knotifyconfig       ${KF5_VERSION} ""                                                                   "knotifyconfig-drop-phonon.patch")
 InstallKF5Component(knotifications      ${KF5_VERSION} ""                                                                   "knotifications-drop-phonon.patch")
 InstallKF5Component(kjobwidgets         ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(sonnet              ${KF5_VERSION} ""                                                                   "")

@@ -114,8 +114,10 @@ private Q_SLOTS:
 
 private:
 
-    void itemChanged(const QUrl& url, const ItemInfo& info, const QRect& rect, DImg* const img, const DImageHistory& history);
-    void itemChanged(const ItemInfoList& infos,const ItemInfoList& allInfos, const QRect& rect, DImg* const img, const DImageHistory& history);
+    void itemChanged(const QUrl& url, const ItemInfo& info,
+                     const QRect& rect, DImg* const img, const DImageHistory& history);
+    void itemChanged(const ItemInfoList& infos, const ItemInfoList& allInfos,
+                     const QRect& rect, DImg* const img, const DImageHistory& history);
     void setImagePropertiesInformation(const QUrl& url) override;
     void setImageSelectionPropertiesInformation();
 

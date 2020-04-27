@@ -43,9 +43,9 @@
 
 // KDE includes
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
 #include <klocalizedstring.h>
+#include <ksharedconfig.h>
+#include <kconfiggroup.h>
 
 // Local includes
 
@@ -112,8 +112,8 @@ PanoPreProcessPage::PanoPreProcessPage(PanoManager* const mngr, QWizard* const d
     d->title->setWordWrap(true);
     d->title->setOpenExternalLinks(true);
 
-    KConfig config;
-    KConfigGroup group      = config.group("Panorama Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Panorama Settings");
 
     d->celesteCheckBox      = new QCheckBox(i18nc("@option:check", "Detect moving skies"), vbox);
     d->celesteCheckBox->setChecked(group.readEntry("Celeste", false));
@@ -146,10 +146,10 @@ PanoPreProcessPage::PanoPreProcessPage(PanoManager* const mngr, QWizard* const d
 
 PanoPreProcessPage::~PanoPreProcessPage()
 {
-    KConfig config;
-    KConfigGroup group = config.group("Panorama Settings");
+    KSharedConfigPtr config = KSharedConfig::openConfig();
+    KConfigGroup group      = config->group("Panorama Settings");
     group.writeEntry("Celeste", d->celesteCheckBox->isChecked());
-    config.sync();
+    config->sync();
 
     delete d;
 }

@@ -62,7 +62,7 @@ int CoreDbSchemaUpdater::schemaVersion()
 
 int CoreDbSchemaUpdater::filterSettingsVersion()
 {
-    return 10;
+    return 11;
 }
 
 int CoreDbSchemaUpdater::uniqueHashVersion()
@@ -466,6 +466,7 @@ void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, 
     // https://en.wikipedia.org/wiki/Image_file_formats
 
     defaultItemFilter << QLatin1String("jpg") << QLatin1String("jpeg") << QLatin1String("jpe")   // JPEG
+                      << QLatin1String("mpo")
                       << QLatin1String("jp2") << QLatin1String("j2k")  << QLatin1String("jpx")   // JPEG-2000
                       << QLatin1String("jpc") << QLatin1String("pgx")
                       << QLatin1String("tif") << QLatin1String("tiff")                           // TIFF
@@ -486,8 +487,8 @@ void CoreDbSchemaUpdater::defaultFilterSettings(QStringList& defaultItemFilter, 
 
     // Video files: https://en.wikipedia.org/wiki/Video_file_format
 
-    defaultVideoFilter << QLatin1String("mpeg") << QLatin1String("mpg") << QLatin1String("mpo")
-                       << QLatin1String("mpe")  << QLatin1String("mts") << QLatin1String("vob")  // MPEG
+    defaultVideoFilter << QLatin1String("mpeg") << QLatin1String("mpg") << QLatin1String("mpe")  // MPEG
+                       << QLatin1String("mts")  << QLatin1String("vob")
                        << QLatin1String("avi")  << QLatin1String("divx")                         // RIFF
                        << QLatin1String("wmv")  << QLatin1String("wmf") << QLatin1String("asf")  // ASF
                        << QLatin1String("mp4")  << QLatin1String("3gp") << QLatin1String("mov")  // QuickTime

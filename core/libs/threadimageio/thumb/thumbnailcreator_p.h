@@ -55,6 +55,7 @@
 #include "digikam_debug.h"
 #include "dimg.h"
 #include "dimgloader.h"
+#include "dimgloaderobserver.h"
 #include "dmetadata.h"
 #include "iccmanager.h"
 #include "iccprofile.h"

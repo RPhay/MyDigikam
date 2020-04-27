@@ -72,6 +72,11 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
                 qimage = loadImagePreview(metadata);
             }
 
+            if (d->observer && !d->observer->continueQuery())
+            {
+                return ThumbnailImage();
+            }
+
             // To speed-up thumb extraction, we now try to load the images by the file extension.
 
             QString ext = fileInfo.suffix().toUpper();
@@ -109,6 +114,11 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
 
                     PGFUtils::loadPGFScaled(qimage, path, d->storageSize());
                     failedAtPGFScaled = qimage.isNull();
+                }
+
+                if (d->observer && !d->observer->continueQuery())
+                {
+                    return ThumbnailImage();
                 }
             }
 
@@ -149,6 +159,11 @@ ThumbnailImage ThumbnailCreator::createThumbnail(const ThumbnailInfo& info, cons
             if (qimage.isNull() && !failedAtDImg)
             {
                 qimage = loadWithDImgScaled(path, &profile);
+
+                if (d->observer && !d->observer->continueQuery())
+                {
+                    return ThumbnailImage();
+                }
             }
 
             // Try JPEG anyway
