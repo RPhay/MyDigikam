@@ -142,9 +142,9 @@ void DbCleaner::slotStart()
     // Set one item to make sure that the progress bar is shown.
 
     setTotalItems(d->databasesToAnalyseCount + d->databasesToShrinkCount);
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items at start: " << completedItems() << "/" << totalItems();
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items at start: " << completedItems() << "/" << totalItems();
+*/
     connect(d->thread, SIGNAL(signalCompleted()),
             this, SLOT(slotCleanItems()));
 
@@ -377,9 +377,9 @@ void DbCleaner::slotShrinkDatabases()
             this, SLOT(slotDone()));
 
     d->thread->shrinkDatabases();
-
-    //qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items before vacuum: " << completedItems() << "/" << totalItems();
-
+/*
+    qCDebug(DIGIKAM_GENERAL_LOG) << "Completed items before vacuum: " << completedItems() << "/" << totalItems();
+*/
 /*
     slotShrinkNextDBInfo(true,true);
     qCDebug(DIGIKAM_GENERAL_LOG) << "Is timer active before start():"
@@ -418,27 +418,35 @@ void DbCleaner::slotShrinkNextDBInfo(bool done, bool passed)
         }
     }
 
-    switch(d->databasesToShrinkCount)
+    switch (d->databasesToShrinkCount)
     {
         case 3:
+        {
             d->shrinkDlg->setIcon(0, statusIcon);
             d->shrinkDlg->setActive(1);
             break;
+        }
 
         case 2:
+        {
             d->shrinkDlg->setIcon(1, statusIcon);
             d->shrinkDlg->setActive(2);
             break;
+        }
 
         case 1:
+        {
             d->shrinkDlg->setIcon(2, statusIcon);
             d->shrinkDlg->setActive(3);
             break;
+        }
 
         case 0:
+        {
             d->shrinkDlg->setIcon(3, statusIcon);
             d->shrinkDlg->setActive(-1);
             break;
+        }
     }
 }
 
@@ -471,6 +479,7 @@ public:
 
     explicit Private()
       : active(-1),
+        progressPix(nullptr),
         progressTimer(nullptr),
         progressIndex(1),
         statusList(nullptr)
@@ -488,13 +497,12 @@ DbShrinkDialog::DbShrinkDialog(QWidget* const parent)
     : QDialog(parent),
       d(new Private)
 {
-    d->progressPix   = new DWorkingPixmap(this);
-    d->progressTimer = new QTimer(parent);
-    d->statusList    = new QListWidget(this);
-
+    d->progressPix                  = new DWorkingPixmap(this);
+    d->progressTimer                = new QTimer(parent);
+    d->statusList                   = new QListWidget(this);
     QVBoxLayout* const statusLayout = new QVBoxLayout(this);
 
-    QLabel* const infos = new QLabel(i18n("<p>Database shrinking in progress.</p>"
+    QLabel* const infos             = new QLabel(i18n("<p>Database shrinking in progress.</p>"
                                           "<p>Currently, your databases are being shrunk. "
                                           "This will take some time - depending on "
                                           "your databases size.</p>"
@@ -503,7 +511,7 @@ DbShrinkDialog::DbShrinkDialog(QWidget* const parent)
                                           "will vanish when the shrinking process is "
                                           "finished.</p>"
                                           "Current Status:"),
-                                     this);
+                                          this);
     infos->setWordWrap(true);
     statusLayout->addWidget(infos);
 
