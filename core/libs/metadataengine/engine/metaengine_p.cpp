@@ -158,8 +158,9 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
     try
     {
         Exiv2::Image::AutoPtr image;
-        image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
-                                            (const char*)(QFile::encodeName(filePath).constData()));
+        QByteArray fileArray = QFile::encodeName(QDir::toNativeSeparators(filePath));
+        image                = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
+                               (const char*)(fileArray.constData()));
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
@@ -264,7 +265,8 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
     try
     {
         Exiv2::Image::AutoPtr image;
-        image = Exiv2::ImageFactory::open((const char*)(QFile::encodeName(finfo.filePath()).constData()));
+        QByteArray fileArray = QFile::encodeName(QDir::toNativeSeparators(filePath));
+        image                = Exiv2::ImageFactory::open((const char*)(fileArray.constData()));
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
@@ -428,7 +430,8 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
             QT_STATBUF     st;
             struct utimbuf ut;
-            int ret = QT_STAT(QFile::encodeName(filePath).constData(), &st);
+            QByteArray fileArray = QFile::encodeName(QDir::toNativeSeparators(filePath));
+            int ret              = QT_STAT(fileArray.constData(), &st);
 
             if (ret == 0)
             {
@@ -440,7 +443,7 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
             if (ret == 0)
             {
-                ::utime(QFile::encodeName(filePath).constData(), &ut);
+                ::utime(fileArray.constData(), &ut);
             }
 
             qCDebug(DIGIKAM_METAENGINE_LOG) << "File time stamp restored";

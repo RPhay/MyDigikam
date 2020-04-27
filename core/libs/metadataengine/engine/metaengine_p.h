@@ -41,6 +41,7 @@
 
 // Qt includes
 
+#include <QDir>
 #include <QFile>
 #include <QSize>
 #include <QLatin1String>
