@@ -158,7 +158,6 @@ PAlbum* AlbumModificationHelper::slotAlbumNew(PAlbum* parent)
 
     QString errMsg;
     PAlbum* album = nullptr;
-    title = title.trimmed();
 
     if (parent->isRoot() || (parentSelector == 1))
     {
@@ -322,8 +321,6 @@ void AlbumModificationHelper::slotAlbumEdit(PAlbum* album)
 
         // Do this last : so that if anything else changed we can
         // successfully save to the db with the old name
-
-        title = title.trimmed();
 
         if (title != oldTitle)
         {

@@ -315,7 +315,7 @@ AlbumPropsEdit::~AlbumPropsEdit()
 
 QString AlbumPropsEdit::title() const
 {
-    return d->titleEdit->text();
+    return d->titleEdit->text().trimmed();
 }
 
 QString AlbumPropsEdit::comments() const
