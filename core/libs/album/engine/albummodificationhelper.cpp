@@ -323,6 +323,8 @@ void AlbumModificationHelper::slotAlbumEdit(PAlbum* album)
         // Do this last : so that if anything else changed we can
         // successfully save to the db with the old name
 
+        title = title.trimmed();
+
         if (title != oldTitle)
         {
             QString errMsg;
