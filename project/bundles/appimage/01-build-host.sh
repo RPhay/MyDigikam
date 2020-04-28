@@ -195,7 +195,6 @@ if [[ $DK_QTWEBENGINE = 0 ]] ; then
     cmake --build . --config RelWithDebInfo --target ext_qtwebkit  -- -j$CPU_CORES    # depend of Qt and libicu
 fi
 
-cmake --build . --config RelWithDebInfo --target ext_exiv2         -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_opencv        -- -j$CPU_CORES
 
 #################################################################################################

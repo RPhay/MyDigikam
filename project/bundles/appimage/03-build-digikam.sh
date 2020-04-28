@@ -60,6 +60,7 @@ cmake $ORIG_WD/../3rdparty \
       -DEXTERNALS_DOWNLOAD_DIR=$DOWNLOAD_DIR \
       -DENABLE_QTWEBENGINE=$DK_QTWEBENGINE
 
+cmake --build . --config RelWithDebInfo --target ext_exiv2         -- -j$CPU_CORES
 cmake --build . --config RelWithDebInfo --target ext_qtav          -- -j$CPU_CORES    # depend of qt and ffmpeg
 cmake --build . --config RelWithDebInfo --target ext_lensfun       -- -j$CPU_CORES
 
