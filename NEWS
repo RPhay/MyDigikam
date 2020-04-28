@@ -693,4 +693,5 @@ BUGFIXES:
 675 ==> 420634 - Face thumbnails not zoomed in and have wrong orientation on network shares.
 676 ==> 309598 - "Recent Tags" menu show existing tags added and shouldn't be.
 677 ==> 420724 - A space at the end of the name of folder causes problem in Windows Explorer.
-678 ==> 
+678 ==> 418688 - Face tagging in Thumbnails View?
+679 ==> 
