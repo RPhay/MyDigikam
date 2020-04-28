@@ -105,8 +105,7 @@ MetaEnginePreviews::MetaEnginePreviews(const QString& filePath)
 
     try
     {
-        QByteArray fileArray        = QFile::encodeName(QDir::toNativeSeparators(filePath));
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const char*)(fileArray.constData()));
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const char*)(QFile::encodeName(filePath).constData()));
 
 #if EXIV2_TEST_VERSION(0,27,99)
 

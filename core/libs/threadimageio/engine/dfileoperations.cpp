@@ -88,7 +88,7 @@ bool DFileOperations::localFileRename(const QString& source,
 
 #ifndef Q_OS_WIN
 
-    QByteArray dstFileName = QFile::encodeName(QDir::toNativeSeparators(dest));
+    QByteArray dstFileName = QFile::encodeName(dest).constData();
 
     // Store old permissions:
     // Just get the current umask.
@@ -116,7 +116,7 @@ bool DFileOperations::localFileRename(const QString& source,
 
     QT_STATBUF st;
 
-    if (QT_STAT(QFile::encodeName(QDir::toNativeSeparators(source)).constData(), &st) == 0)
+    if (QT_STAT(QFile::encodeName(source).constData(), &st) == 0)
     {
         // See bug #329608: Restore file modification time from original file
         // only if updateFileTimeStamp for Setup/Metadata is turned off.
@@ -127,7 +127,7 @@ bool DFileOperations::localFileRename(const QString& source,
             ut.modtime = st.st_mtime;
             ut.actime  = st.st_atime;
 
-            if (::utime(QFile::encodeName(QDir::toNativeSeparators(orgPath)).constData(), &ut) != 0)
+            if (::utime(QFile::encodeName(orgPath).constData(), &ut) != 0)
             {
                 qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file"
                                                << dest;

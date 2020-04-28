@@ -40,7 +40,6 @@ extern "C"
 
 #include <QImage>
 #include <QByteArray>
-#include <QDir>
 #include <QFile>
 #include <qplatformdefs.h>
 
@@ -166,17 +165,15 @@ bool writePGFImageFile(const QImage& image,
                        int quality,
                        bool verbose)
 {
-    QByteArray fileArray = QFile::encodeName(QDir::toNativeSeparators(filePath));
-
 #ifdef Q_OS_WIN32
 
 #   ifdef UNICODE
 
-    HANDLE fd = CreateFile((LPCWSTR)(fileArray.constData()), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
+    HANDLE fd = CreateFile((LPCWSTR)(QFile::encodeName(filePath).constData()), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
 
 #   else
 
-    HANDLE fd = CreateFile(fileArray.constData(), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
+    HANDLE fd = CreateFile(QFile::encodeName(filePath).constData(), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
 
 #   endif
 
@@ -189,7 +186,7 @@ bool writePGFImageFile(const QImage& image,
 
 #elif defined(__POSIX__)
 
-    int fd = QT_OPEN(fileArray.constData(),
+    int fd = QT_OPEN(QFile::encodeName(filePath).constData(),
                      O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 
     if (fd == -1)
@@ -433,8 +430,7 @@ bool writePGFImageDataToStream(const QImage& image,
 
 bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
 {
-    QByteArray fileArray = QFile::encodeName(QDir::toNativeSeparators(path));
-    FILE* const file     = fopen(fileArray.constData(), "rb");
+    FILE* const file = fopen(QFile::encodeName(path).constData(), "rb");
 
     if (!file)
     {
@@ -469,11 +465,11 @@ bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
 
 #   ifdef UNICODE
 
-    HANDLE fd = CreateFile((LPCWSTR)(fileArray.constData()), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
+    HANDLE fd = CreateFile((LPCWSTR)(QFile::encodeName(path).constData()), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
 
 #   else
 
-    HANDLE fd = CreateFile(fileArray.constData(), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
+    HANDLE fd = CreateFile(QFile::encodeName(path).constData(), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
 
 #   endif
 
@@ -484,7 +480,7 @@ bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
 
 #else
 
-    int fd = QT_OPEN(fileArray.constData(), O_RDONLY);
+    int fd = QT_OPEN(QFile::encodeName(path).constData(), O_RDONLY);
 
     if (fd == -1)
     {

@@ -83,7 +83,6 @@ extern "C"
 
 #include <QImageReader>
 #include <QByteArray>
-#include <QDir>
 #include <QFile>
 #include <QFileInfo>
 #include <qplatformdefs.h>
@@ -159,8 +158,7 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
         return false;
     }
 
-    QByteArray fileArray  = QFile::encodeName(QDir::toNativeSeparators(path));
-    FILE* const inputFile = fopen(fileArray.constData(), "rb");
+    FILE* const inputFile = fopen(QFile::encodeName(path).constData(), "rb");
 
     if (!inputFile)
     {
@@ -578,7 +576,7 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
 
     QT_STATBUF st;
 
-    if (QT_STAT(QFile::encodeName(QDir::toNativeSeparators(m_file)).constData(), &st) == 0)
+    if (QT_STAT(QFile::encodeName(m_file).constData(), &st) == 0)
     {
         // See bug #329608: Restore file modification time from original file
         // only if updateFileTimeStamp for Setup/Metadata is turned off.
@@ -589,7 +587,7 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
             ut.modtime = st.st_mtime;
             ut.actime  = st.st_atime;
 
-            if (::utime(QFile::encodeName(QDir::toNativeSeparators(fileName)).constData(), &ut) != 0)
+            if (::utime(QFile::encodeName(fileName).constData(), &ut) != 0)
             {
                 qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file " << fileName;
             }
@@ -599,7 +597,7 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
 
 #ifndef Q_OS_WIN
 
-        if (::chmod(QFile::encodeName(QDir::toNativeSeparators(fileName)).constData(), st.st_mode) != 0)
+        if (::chmod(QFile::encodeName(fileName).constData(), st.st_mode) != 0)
         {
             qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore file permissions for file " << fileName;
         }
@@ -616,8 +614,8 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
 
 bool JpegRotator::performJpegTransform(TransformAction action, const QString& src, const QString& dest)
 {
-    QByteArray in                   = QFile::encodeName(QDir::toNativeSeparators(src)).constData();
-    QByteArray out                  = QFile::encodeName(QDir::toNativeSeparators(dest)).constData();
+    QByteArray in                   = QFile::encodeName(src).constData();
+    QByteArray out                  = QFile::encodeName(dest).constData();
 
     JCOPY_OPTION copyoption         = JCOPYOPT_ALL;
     jpeg_transform_info transformoption;
@@ -872,8 +870,7 @@ int getJpegQuality(const QString& file)
         return quality;
     }
 
-    QByteArray fileArray = QFile::encodeName(QDir::toNativeSeparators(file));
-    FILE* const inFile   = fopen(fileArray.constData(), "rb");
+    FILE* const inFile = fopen(QFile::encodeName(file).constData(), "rb");
 
     if (!inFile)
     {

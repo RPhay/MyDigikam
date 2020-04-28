@@ -42,10 +42,8 @@ bool MetaEngine::canWriteIptc(const QString& filePath)
 
     try
     {
-        QByteArray fileArray        = QFile::encodeName(QDir::toNativeSeparators(filePath));
-
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const char*)
-                                      (fileArray.constData()));
+                                      (QFile::encodeName(filePath).constData()));
 
         Exiv2::AccessMode mode = image->checkMode(Exiv2::mdIptc);
 
