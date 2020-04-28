@@ -694,4 +694,5 @@ BUGFIXES:
 676 ==> 309598 - "Recent Tags" menu show existing tags added and shouldn't be.
 677 ==> 420724 - A space at the end of the name of folder causes problem in Windows Explorer.
 678 ==> 418688 - Face tagging in Thumbnails View?
-679 ==> 
+679 ==> 405980 - The area of a "face rectangle" in the picture is different than the face thumbnail.
+680 ==> 
