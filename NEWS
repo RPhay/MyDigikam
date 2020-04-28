@@ -691,4 +691,5 @@ BUGFIXES:
 673 ==> 272730 - Sidebar does not adjust scroll area size automatically.
 674 ==> 420400 - Emptying Trash does not provide any feedback that it is active/running.
 675 ==> 420634 - Face thumbnails not zoomed in and have wrong orientation on network shares.
-676 ==> 
+676 ==> 309598 - "Recent Tags" menu show existing tags added and shouldn't be.
+677 ==> 
