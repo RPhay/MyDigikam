@@ -103,12 +103,6 @@ protected:
     bool                        m_dirtyGpsTab;
     bool                        m_dirtyHistoryTab;
 
-    bool                        m_dirtyPropertiesTab;
-    bool                        m_dirtyMetadataTab;
-    bool                        m_dirtyColorTab;
-    bool                        m_dirtyGpsTab;
-    bool                        m_dirtyHistoryTab;
-
     QRect                       m_currentRect;
 
     QUrl                        m_currentURL;
