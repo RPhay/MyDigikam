@@ -690,4 +690,5 @@ BUGFIXES:
 672 ==> 420430 - Inconsistent behavior of View tab of Metadata dialog in digiKam Configure menu.
 673 ==> 272730 - Sidebar does not adjust scroll area size automatically.
 674 ==> 420400 - Emptying Trash does not provide any feedback that it is active/running.
-675 ==> 
+675 ==> 420634 - Face thumbnails not zoomed in and have wrong orientation on network shares.
+676 ==> 
