@@ -88,7 +88,7 @@ bool DFileOperations::localFileRename(const QString& source,
 
 #ifndef Q_OS_WIN
 
-    QByteArray dstFileName = QFile::encodeName(dest).constData();
+    QByteArray dstFileName = QFile::encodeName(dest);
 
     // Store old permissions:
     // Just get the current umask.

@@ -614,8 +614,8 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
 
 bool JpegRotator::performJpegTransform(TransformAction action, const QString& src, const QString& dest)
 {
-    QByteArray in                   = QFile::encodeName(src).constData();
-    QByteArray out                  = QFile::encodeName(dest).constData();
+    QByteArray in                   = QFile::encodeName(src);
+    QByteArray out                  = QFile::encodeName(dest);
 
     JCOPY_OPTION copyoption         = JCOPYOPT_ALL;
     jpeg_transform_info transformoption;
