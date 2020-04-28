@@ -339,7 +339,6 @@ QString ThumbnailCreator::identifierForDetail(const ThumbnailInfo& info, const Q
 {
     QUrl url = QUrl::fromLocalFile(info.filePath);
     url.setScheme(QLatin1String("detail"));
-
 /*
     A scheme to support loading by database id, but this is a hack. Solve cleanly later (schema update)
 
