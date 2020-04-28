@@ -695,4 +695,5 @@ BUGFIXES:
 677 ==> 420724 - A space at the end of the name of folder causes problem in Windows Explorer.
 678 ==> 418688 - Face tagging in Thumbnails View?
 679 ==> 405980 - The area of a "face rectangle" in the picture is different than the face thumbnail.
-680 ==> 
+680 ==> 402940 - No thumbnails with windows client using network share.
+681 ==> 
