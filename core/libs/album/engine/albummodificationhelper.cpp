@@ -158,6 +158,7 @@ PAlbum* AlbumModificationHelper::slotAlbumNew(PAlbum* parent)
 
     QString errMsg;
     PAlbum* album = nullptr;
+    title = title.trimmed();
 
     if (parent->isRoot() || (parentSelector == 1))
     {
@@ -242,7 +243,7 @@ void AlbumModificationHelper::slotAlbumRename(PAlbum* album)
         return;
     }
 
-    QString title = textDlg->textValue();
+    QString title = textDlg->textValue().trimmed();
     delete textDlg;
 
     if (title != oldTitle)
