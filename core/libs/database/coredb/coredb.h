@@ -1144,8 +1144,9 @@ public:
      * Add a tag for the item
      * @param imageID the ID of the item
      * @param tagID   the tagID for the tag
+     * @param newTag  add to last assigned tag list
      */
-    void addItemTag(qlonglong imageID, int tagID);
+    void addItemTag(qlonglong imageID, int tagID, bool newTag = false);
 
     /**
      * Add a tag for the item
