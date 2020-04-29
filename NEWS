@@ -696,4 +696,5 @@ BUGFIXES:
 678 ==> 418688 - Face tagging in Thumbnails View?
 679 ==> 405980 - The area of a "face rectangle" in the picture is different than the face thumbnail.
 680 ==> 402940 - No thumbnails with windows client using network share.
-681 ==> 
+681 ==> 420727 - digiKam-Window and all Sub-Windows are enlarged too much.
+682 ==> 

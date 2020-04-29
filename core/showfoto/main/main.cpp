@@ -76,9 +76,13 @@ using namespace Digikam;
 
 int main(int argc, char* argv[])
 {
-    // enable scaling on high DPI displays
+    // Enable scaling on high DPI displays,
+    // accept the user setting when it is set.
 
-    qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", "1");
+    if (qgetenv("QT_AUTO_SCREEN_SCALE_FACTOR").isNull())
+    {
+        qputenv("QT_AUTO_SCREEN_SCALE_FACTOR", "1");
+    }
 
 #ifdef HAVE_QWEBENGINE
 
