@@ -93,6 +93,7 @@ public:
 
     QList<ThumbnailLoadThread*>             thumbnailLoadThreads;
     bool                                    started;
+    bool                                    waiting;
     int                                     infosForFiltering;
     int                                     packagesOnTheRoad;
     int                                     maxPackagesOnTheRoad;

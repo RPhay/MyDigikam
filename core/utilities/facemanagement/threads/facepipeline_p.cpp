@@ -50,6 +50,7 @@ FacePipeline::Private::Private(FacePipeline* const q)
       recognitionBenchmarker(nullptr),
       priority(QThread::LowPriority),
       started(false),
+      waiting(false),
       infosForFiltering(0),
       packagesOnTheRoad(0),
       maxPackagesOnTheRoad(50),
@@ -279,11 +280,12 @@ void FacePipeline::Private::stop()
     }
 
     started = false;
+    waiting = true;
 }
 
 void FacePipeline::Private::wait()
 {
-    if (!started)
+    if (!waiting)
     {
         return;
     }
@@ -318,7 +320,7 @@ void FacePipeline::Private::wait()
         }
     }
 
-    started = false;
+    waiting = false;
 }
 
 void FacePipeline::Private::applyPriority()
