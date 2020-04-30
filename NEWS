@@ -698,4 +698,5 @@ BUGFIXES:
 680 ==> 402940 - No thumbnails with windows client using network share.
 681 ==> 420727 - digiKam-Window and all Sub-Windows are enlarged too much.
 682 ==> 420642 - Crash on face detection stop button.
-683 ==> 
+683 ==> 420773 - New pictures copied with shell in albums are not picked up from digikam.
+684 ==> 
