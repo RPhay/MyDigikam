@@ -239,6 +239,7 @@ void FacePipeline::Private::start()
     }
 
     started = true;
+    waiting = false;
     emit q->started(i18n("Applying face changes"));
 }
 
