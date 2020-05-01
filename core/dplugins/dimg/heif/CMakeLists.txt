@@ -64,8 +64,8 @@ endif()
 
 # Libheif compilation rules ##########################################################
 
-set(NUMERIC_VERSION 0x01050100)
-set(PACKAGE_VERSION 1.5.1)
+set(NUMERIC_VERSION 0x01060200)
+set(PACKAGE_VERSION 1.6.2)
 
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/libheif/heif_version.h.in"
                "${CMAKE_CURRENT_BINARY_DIR}/libheif/heif_version.h"

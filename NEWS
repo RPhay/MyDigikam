@@ -12,11 +12,13 @@ General       : All bundles have switched to last Qt 5.14.0. Linux and MacOS use
 General       : Add Microsoft Visual C++ support and a Continuous Integration workflow to check code with this compiler.
 General       : Table-view is now able to show digiKam Tag-Paths properties.
 Metadata      : New option to write geolocation data in file metadata.
+General       : Internal libheif updated to last stable 1.6.2.
+
 *****************************************************************************************************
 BUGFIXES:
 
 001 ==> 384401 - Various recognition algorithm improvements for face detection.
-002 ==> 413701 - DigiKam 6.3.0 does not build against current plasma.
+002 ==> 413701 - digiKam 6.3.0 does not build against current plasma.
 003 ==> 413748 - Broken theme on Windows 10 after Digikam update.
 004 ==> 413738 - Video Preview changes VLC volume.
 005 ==> 382311 - Photos in collapsed groups are incorrectly excluded if first photo in group does not match filter.

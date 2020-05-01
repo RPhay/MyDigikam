@@ -104,6 +104,9 @@ heif_filetype_result heif_check_filetype(const uint8_t* data, int len)
     if (brand == heif_heic) {
       return heif_filetype_yes_supported;
     }
+    else if (brand == heif_heix) {
+      return heif_filetype_yes_supported;
+    }
     else if (brand == heif_unknown_brand) {
       return heif_filetype_no;
     }
@@ -1569,7 +1572,7 @@ struct heif_error heif_encoder_parameter_string_valid_values(struct heif_encoder
 
 
 
-bool parse_boolean(const char* value)
+static bool parse_boolean(const char* value)
 {
   if (strcmp(value,"true")==0) {
     return true;
