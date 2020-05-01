@@ -41,6 +41,7 @@
 
 namespace Digikam
 {
+
 class Q_DECL_HIDDEN ItemSelectionPropertiesTab::Private
 {
 public:
@@ -59,6 +60,7 @@ public:
         labelTotalSize(nullptr)
     {
     }
+
     DTextLabelValue* labelSelectionCount;
     DTextLabelValue* labelSelectionSize;
     DTextLabelValue* labelTotalCount;
