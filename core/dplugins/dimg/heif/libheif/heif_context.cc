@@ -43,7 +43,6 @@
 #include "heif_hevc.h"
 #include "heif_plugin_registry.h"
 
-
 using namespace heif;
 
 
@@ -684,8 +683,8 @@ Error HeifContext::interpret_heif_file()
 
         // --- check whether the image size is "too large"
 
-        if (width  >= m_maximum_image_width_limit ||
-            height >= m_maximum_image_height_limit) {
+        if (width  > m_maximum_image_width_limit ||
+            height > m_maximum_image_height_limit) {
           std::stringstream sstr;
           sstr << "Image size " << width << "x" << height << " exceeds the maximum image size "
                << m_maximum_image_width_limit << "x" << m_maximum_image_height_limit << "\n";
@@ -749,7 +748,7 @@ Error HeifContext::interpret_heif_file()
     std::string content_type = m_heif_file->get_content_type(id);
 
     // we now assign all kinds of metadata to the image, not only 'Exif' and 'XMP'
-    
+
     std::shared_ptr<ImageMetadata> metadata = std::make_shared<ImageMetadata>();
     metadata->item_id = id;
     metadata->item_type = item_type;
@@ -1149,9 +1148,14 @@ Error HeifContext::decode_full_grid_image(heif_item_id ID,
   }
 
 
+
+  auto ipma = m_heif_file->get_ipma_box();
+  auto ipco = m_heif_file->get_ipco_box();
+  auto pixi_box = ipco->get_property_for_item_ID(ID, ipma, fourcc("pixi"));
+  auto pixi = std::dynamic_pointer_cast<Box_pixi>(pixi_box);
+
   const uint32_t w = grid.get_width();
   const uint32_t h = grid.get_height();
-  const int bpp = 8; // TODO: how do we know ?
 
 
   // --- determine output image chroma size and make sure all tiles have same chroma
@@ -1160,8 +1164,8 @@ Error HeifContext::decode_full_grid_image(heif_item_id ID,
   heif_item_id some_tile_id = image_references[0];
   heif_chroma tile_chroma = m_heif_file->get_image_chroma_from_configuration(some_tile_id);
 
-  const int cw = w/chroma_h_subsampling(tile_chroma);
-  const int ch = h/chroma_v_subsampling(tile_chroma);
+  const int cw = (w+chroma_h_subsampling(tile_chroma)-1)/chroma_h_subsampling(tile_chroma);
+  const int ch = (h+chroma_v_subsampling(tile_chroma)-1)/chroma_v_subsampling(tile_chroma);
 
   for (heif_item_id tile_id : image_references) {
     if (m_heif_file->get_image_chroma_from_configuration(tile_id) != tile_chroma) {
@@ -1190,11 +1194,38 @@ Error HeifContext::decode_full_grid_image(heif_item_id ID,
               heif_colorspace_YCbCr, // TODO: how do we know ?
               tile_chroma);
 
+  int bpp = 8;
+  if (pixi) {
+    if (pixi->get_num_channels()<1) {
+      return Error(heif_error_Invalid_input,
+                   heif_suberror_Invalid_pixi_box,
+                   "No pixi information for luma channel.");
+    }
+
+    bpp = pixi->get_bits_per_channel(0);
+  }
+
   img->add_plane(heif_channel_Y,  w,h, bpp);
 
+
   if (tile_chroma != heif_chroma_monochrome) {
-    img->add_plane(heif_channel_Cb, cw,ch, bpp);
-    img->add_plane(heif_channel_Cr, cw,ch, bpp);
+
+    int bpp_c1 = 8;
+    int bpp_c2 = 8;
+
+    if (pixi) {
+      if (pixi->get_num_channels()<3) {
+        return Error(heif_error_Invalid_input,
+                     heif_suberror_Invalid_pixi_box,
+                     "No pixi information for chroma channels.");
+      }
+
+      bpp_c1 = pixi->get_bits_per_channel(1);
+      bpp_c2 = pixi->get_bits_per_channel(2);
+    }
+
+    img->add_plane(heif_channel_Cb, cw,ch, bpp_c1);
+    img->add_plane(heif_channel_Cr, cw,ch, bpp_c2);
   }
 
 
@@ -1342,7 +1373,10 @@ Error HeifContext::decode_and_paste_tile_image(heif_item_id tileID,
     int copy_width  = std::min(src_width, w - x0);
     int copy_height = std::min(src_height, h - y0);
 
+    copy_width *= tile_img->get_storage_bits_per_pixel(heif_channel_Y)/8;
+
     int xs=x0, ys=y0;
+    xs *= tile_img->get_storage_bits_per_pixel(heif_channel_Y)/8;
 
     if (channel != heif_channel_Y) {
       int subH = chroma_h_subsampling(chroma);
@@ -1676,6 +1710,9 @@ Error HeifContext::Image::encode_image_as_hevc(std::shared_ptr<HeifPixelImage> i
       chroma != image->get_chroma_format()) {
     // @TODO: use color profile when converting
     image = convert_colorspace(image, colorspace, chroma);
+    if (!image) {
+      return Error(heif_error_Unsupported_feature, heif_suberror_Unsupported_color_conversion);
+    }
   }
 
 

@@ -24,17 +24,13 @@
 #include "config.h"
 #endif
 
-#if defined(HAVE_INTTYPES_H)
-#include <inttypes.h>
-#endif
-#if defined(HAVE_STDDEF_H)
-#include <stddef.h>
-#endif
+#include <cinttypes>
+#include <cstddef>
 
-static const size_t MAX_CHILDREN_PER_BOX = 1024;
-static const int MAX_ILOC_ITEMS = 1024;
+static const size_t MAX_CHILDREN_PER_BOX = 20000;
+static const int MAX_ILOC_ITEMS = 20000;
 static const int MAX_ILOC_EXTENTS_PER_ITEM = 32;
-static const int MAX_MEMORY_BLOCK_SIZE = 50*1024*1024; // 50 MB
+static const int MAX_MEMORY_BLOCK_SIZE = 512*1024*1024; // 512 MB
 
 // Artificial limit to avoid allocating too much memory.
 // 32768^2 = 1.5 GB as YUV-4:2:0 or 4 GB as RGB32

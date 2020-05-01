@@ -36,7 +36,8 @@ void ItemInfo::setTag(int tagID)
         return;
     }
 
-    CoreDbAccess().db()->addItemTag(m_data->id, tagID);
+    bool newTag = !tagIds().contains(tagID);
+    CoreDbAccess().db()->addItemTag(m_data->id, tagID, newTag);
 }
 
 void ItemInfo::removeTag(int tagID)

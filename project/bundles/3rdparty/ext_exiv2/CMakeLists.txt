@@ -47,13 +47,13 @@ if(MINGW)
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
 
         # To use official release tarball
-        URL https://github.com/Exiv2/exiv2/archive/v0.27.2.tar.gz
-        URL_MD5 15780152b1dfb5a0d2c0cdfe5f5a1588
+        #URL https://github.com/Exiv2/exiv2/archive/v0.27.2.tar.gz
+        #URL_MD5 15780152b1dfb5a0d2c0cdfe5f5a1588
 
         # To use current implementation from Git with tag 0.27 rc1
 
-        #GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
-        #GIT_TAG v0.27-RC1
+        GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
+        GIT_TAG 0.27-maintenance
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.mxe <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.mxe ${MXE_BUILDROOT} RelWithDebInfo ${BASH_OPTIONS}
@@ -76,12 +76,13 @@ elseif(APPLE)
 
         # To use official release tarball
 
-        URL https://github.com/Exiv2/exiv2/archive/v0.27.2.tar.gz
-        URL_MD5 15780152b1dfb5a0d2c0cdfe5f5a1588
+        #URL https://github.com/Exiv2/exiv2/archive/v0.27.2.tar.gz
+        #URL_MD5 15780152b1dfb5a0d2c0cdfe5f5a1588
 
         # To use current implementation from Git
 
-        #GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
+        GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
+        GIT_TAG 0.27-maintenance
 
         CONFIGURE_COMMAND cp -f ${CMAKE_CURRENT_SOURCE_DIR}/../../../../bootstrap.macports <SOURCE_DIR>/. &&
                           <SOURCE_DIR>/bootstrap.macports ${PREFIX_ext_exiv2} RelWithDebInfo x86_64 ${BASH_OPTIONS}
@@ -103,12 +104,15 @@ else() # Linux
 
         # To use official release tarball
 
-        URL https://github.com/Exiv2/exiv2/archive/v0.27.2.tar.gz
-        URL_MD5 15780152b1dfb5a0d2c0cdfe5f5a1588
+        #URL https://github.com/Exiv2/exiv2/archive/v0.27.2.tar.gz
+        #URL_MD5 15780152b1dfb5a0d2c0cdfe5f5a1588
 
         # To use current implementation from Git
 
-        #GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
+        GIT_REPOSITORY https://github.com/Exiv2/exiv2.git
+        GIT_TAG 0.27-maintenance
+
+        PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/exiv2-cmake-linux.patch
 
         CONFIGURE_COMMAND cd <SOURCE_DIR> &&
                    $(CMAKE_COMMAND) . -DCMAKE_INSTALL_PREFIX=${PREFIX_ext_exiv2}

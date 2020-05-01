@@ -159,7 +159,7 @@ ExpoBlendingThread::ExpoBlendingThread(QObject* const parent)
       d(new Private)
 {
     d->rawObserver = new RawObserver(d);
-    qRegisterMetaType<ExpoBlendingActionData>();
+    qRegisterMetaType<ExpoBlendingActionData>("ExpoBlendingActionData");
 }
 
 ExpoBlendingThread::~ExpoBlendingThread()

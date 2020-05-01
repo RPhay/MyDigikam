@@ -12,11 +12,13 @@ General       : All bundles have switched to last Qt 5.14.0. Linux and MacOS use
 General       : Add Microsoft Visual C++ support and a Continuous Integration workflow to check code with this compiler.
 General       : Table-view is now able to show digiKam Tag-Paths properties.
 Metadata      : New option to write geolocation data in file metadata.
+General       : Internal libheif updated to last stable 1.6.2 and internal libde265 updated to last stable 1.0.5.
+
 *****************************************************************************************************
 BUGFIXES:
 
 001 ==> 384401 - Various recognition algorithm improvements for face detection.
-002 ==> 413701 - DigiKam 6.3.0 does not build against current plasma.
+002 ==> 413701 - digiKam 6.3.0 does not build against current plasma.
 003 ==> 413748 - Broken theme on Windows 10 after Digikam update.
 004 ==> 413738 - Video Preview changes VLC volume.
 005 ==> 382311 - Photos in collapsed groups are incorrectly excluded if first photo in group does not match filter.
@@ -160,7 +162,7 @@ BUGFIXES:
 142 ==> 317413 - digiKam crashed while tagging faces.
 143 ==> 334580 - Face detection crashes digiKam.
 144 ==> 301781 - digiKam crashed while scanning photos for faces.
-145 ==> 321273 - crash during face scan.
+145 ==> 321273 - Crash during face scan.
 146 ==> 296784 - digiKam crashes while tagging faces.
 147 ==> 285517 - digiKam crashed when tagging faces.
 148 ==> 290818 - digiKam crash during face scanning.
@@ -690,4 +692,14 @@ BUGFIXES:
 672 ==> 420430 - Inconsistent behavior of View tab of Metadata dialog in digiKam Configure menu.
 673 ==> 272730 - Sidebar does not adjust scroll area size automatically.
 674 ==> 420400 - Emptying Trash does not provide any feedback that it is active/running.
-675 ==> 
+675 ==> 420634 - Face thumbnails not zoomed in and have wrong orientation on network shares.
+676 ==> 309598 - "Recent Tags" menu show existing tags added and shouldn't be.
+677 ==> 420724 - A space at the end of the name of folder causes problem in Windows Explorer.
+678 ==> 418688 - Face tagging in Thumbnails View?
+679 ==> 405980 - The area of a "face rectangle" in the picture is different than the face thumbnail.
+680 ==> 402940 - No thumbnails with windows client using network share.
+681 ==> 420727 - digiKam-Window and all Sub-Windows are enlarged too much.
+682 ==> 420642 - Crash on face detection stop button.
+683 ==> 420773 - New pictures copied with shell in albums are not picked up from digikam.
+684 ==> 420661 - Wishlist: option to clear/delete specific date field in a picture selection.
+685 ==> 

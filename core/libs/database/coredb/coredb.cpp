@@ -3042,7 +3042,7 @@ int CoreDB::addToDownloadHistory(const QString& identifier, const QString& name,
     return id.toInt();
 }
 
-void CoreDB::addItemTag(qlonglong imageID, int tagID)
+void CoreDB::addItemTag(qlonglong imageID, int tagID, bool newTag)
 {
     d->db->execSql(QString::fromUtf8("REPLACE INTO ImageTags (imageid, tagid) "
                                      "VALUES(?, ?);"),
@@ -3051,8 +3051,10 @@ void CoreDB::addItemTag(qlonglong imageID, int tagID)
     d->db->recordChangeset(ImageTagChangeset(imageID, tagID, ImageTagChangeset::Added));
 
     //don't save pick or color tags
-    if (TagsCache::instance()->isInternalTag(tagID))
+    if (!newTag || TagsCache::instance()->isInternalTag(tagID))
+    {
         return;
+    }
 
     //move current tag to front
     d->recentlyAssignedTags.removeAll(tagID);

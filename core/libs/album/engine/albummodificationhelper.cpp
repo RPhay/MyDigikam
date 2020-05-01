@@ -242,7 +242,7 @@ void AlbumModificationHelper::slotAlbumRename(PAlbum* album)
         return;
     }
 
-    QString title = textDlg->textValue();
+    QString title = textDlg->textValue().trimmed();
     delete textDlg;
 
     if (title != oldTitle)
