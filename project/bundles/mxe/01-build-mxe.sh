@@ -98,6 +98,9 @@ fi
 #################################################################################################
 # Dependencies build and installation
 
+# Switch to a more recent gcc version
+echo 'override MXE_PLUGIN_DIRS += plugins/gcc9' >> settings.mk
+
 echo -e "\n"
 echo "---------- Building digiKam low level dependencies with MXE"
 
