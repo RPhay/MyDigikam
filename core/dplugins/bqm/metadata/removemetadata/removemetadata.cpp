@@ -54,7 +54,8 @@ public:
         GPS,
         DATE,
         EXIF,
-        VIDEO
+        VIDEO,
+        DUBLIN
     };
 
 public:
@@ -94,8 +95,8 @@ RemoveMetadata::~RemoveMetadata()
 
 void RemoveMetadata::registerSettingsWidget()
 {
-    QWidget* const panel    = new QWidget;
-    QGridLayout* const grid = new QGridLayout(panel);
+    QWidget* const panel     = new QWidget;
+    QGridLayout* const grid  = new QGridLayout(panel);
 
     d->removeExif            = new QCheckBox(i18n("Exif:"), panel);
     d->exifComboBox          = new QComboBox(panel);
@@ -110,10 +111,11 @@ void RemoveMetadata::registerSettingsWidget()
 
     d->removeXmp             = new QCheckBox(i18n("Xmp:"), panel);
     d->xmpComboBox           = new QComboBox(panel);
-    d->xmpComboBox->addItem(i18n("Completely"), Private::ALL);
-    d->xmpComboBox->addItem(i18n("Date"),       Private::DATE);
-    d->xmpComboBox->addItem(i18n("Exif"),       Private::EXIF);
-    d->xmpComboBox->addItem(i18n("Video"),      Private::VIDEO);
+    d->xmpComboBox->addItem(i18n("Completely"),  Private::ALL);
+    d->xmpComboBox->addItem(i18n("Date"),        Private::DATE);
+    d->xmpComboBox->addItem(i18n("Dublin Core"), Private::DUBLIN);
+    d->xmpComboBox->addItem(i18n("Exif"),        Private::EXIF);
+    d->xmpComboBox->addItem(i18n("Video"),       Private::VIDEO);
 
     grid->addWidget(d->removeExif,   0, 0, 1, 1);
     grid->addWidget(d->exifComboBox, 0, 1, 1, 2);
@@ -287,6 +289,10 @@ bool RemoveMetadata::toolOperations()
             meta.removeXmpTag("Xmp.video.DateTimeOriginal");
             meta.removeXmpTag("Xmp.video.ModificationDate");
             meta.removeXmpTag("Xmp.video.DateUTC");
+        }
+        else if (xmpData == Private::DUBLIN)
+        {
+            meta.removeXmpTags(QStringList() << QLatin1String("dc"));
         }
         else if (xmpData == Private::EXIF)
         {
