@@ -134,8 +134,8 @@ endif()
 
 # Libde265 compilation rules ##########################################################
 
-set(NUMERIC_VERSION 0x01000000)
-set(PACKAGE_VERSION 1.0.0)
+set(NUMERIC_VERSION 0x01000500)
+set(PACKAGE_VERSION 1.0.5)
 
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/libde265/de265-version.h.in"
                "${CMAKE_CURRENT_BINARY_DIR}/libde265/de265-version.h"

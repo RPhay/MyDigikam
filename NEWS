@@ -12,7 +12,7 @@ General       : All bundles have switched to last Qt 5.14.0. Linux and MacOS use
 General       : Add Microsoft Visual C++ support and a Continuous Integration workflow to check code with this compiler.
 General       : Table-view is now able to show digiKam Tag-Paths properties.
 Metadata      : New option to write geolocation data in file metadata.
-General       : Internal libheif updated to last stable 1.6.2.
+General       : Internal libheif updated to last stable 1.6.2 and internal libde265 updated to last stable 1.0.5.
 
 *****************************************************************************************************
 BUGFIXES:
@@ -162,7 +162,7 @@ BUGFIXES:
 142 ==> 317413 - digiKam crashed while tagging faces.
 143 ==> 334580 - Face detection crashes digiKam.
 144 ==> 301781 - digiKam crashed while scanning photos for faces.
-145 ==> 321273 - crash during face scan.
+145 ==> 321273 - Crash during face scan.
 146 ==> 296784 - digiKam crashes while tagging faces.
 147 ==> 285517 - digiKam crashed when tagging faces.
 148 ==> 290818 - digiKam crash during face scanning.
