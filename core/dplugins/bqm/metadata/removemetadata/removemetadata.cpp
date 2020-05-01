@@ -154,10 +154,6 @@ BatchToolSettings RemoveMetadata::defaultSettings()
     settings.insert(QLatin1String("IptcData"),   Private::ALL);
     settings.insert(QLatin1String("XmpData"),    Private::ALL);
 
-    d->exifComboBox->setEnabled(false);
-    d->iptcComboBox->setEnabled(false);
-    d->xmpComboBox->setEnabled(false);
-
     return settings;
 }
 
@@ -197,10 +193,6 @@ void RemoveMetadata::slotSettingsChanged()
         settings.insert(QLatin1String("ExifData"),   d->exifComboBox->currentData().toInt());
         settings.insert(QLatin1String("IptcData"),   d->iptcComboBox->currentData().toInt());
         settings.insert(QLatin1String("XmpData" ),   d->xmpComboBox->currentData().toInt());
-
-        d->exifComboBox->setEnabled(d->removeExif->isChecked());
-        d->iptcComboBox->setEnabled(d->removeIptc->isChecked());
-        d->xmpComboBox->setEnabled(d->removeXmp->isChecked());
 
         BatchTool::slotSettingsChanged(settings);
     }
