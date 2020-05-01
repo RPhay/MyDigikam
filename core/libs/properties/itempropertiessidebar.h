@@ -96,7 +96,7 @@ protected:
     virtual void setImagePropertiesInformation(const QUrl& url);
 
 protected:
-    
+
     bool                        m_dirtyPropertiesTab;
     bool                        m_dirtyMetadataTab;
     bool                        m_dirtyColorTab;
