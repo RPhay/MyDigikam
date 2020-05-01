@@ -47,9 +47,7 @@ ItemIconView::ItemIconView(QWidget* const parent, DModelFactory* const modelColl
     const int spacing           = QApplication::style()->pixelMetric(QStyle::PM_DefaultLayoutSpacing);
 
     d->splitter    = new SidebarSplitter;
-    d->splitter->setFrameStyle(QFrame::NoFrame);
-    d->splitter->setFrameShadow(QFrame::Plain);
-    d->splitter->setFrameShape(QFrame::NoFrame);
+    d->splitter->setFrameStyle(QFrame::NoFrame || QFrame::Plain);
     d->splitter->setOpaqueResize(false);
 
     d->leftSideBar = new Sidebar(this, d->splitter, Qt::LeftEdge);
