@@ -28,9 +28,6 @@
 
 #include "batchtool.h"
 
-class QCheckBox;
-class QComboBox;
-
 using namespace Digikam;
 
 namespace DigikamBqmRemoveMetadataPlugin
@@ -47,7 +44,7 @@ public:
 
     BatchToolSettings defaultSettings();
 
-    BatchTool* clone(QObject* const parent=nullptr) const
+    BatchTool* clone(QObject* const parent = nullptr) const
     {
         return new RemoveMetadata(parent);
     };
@@ -61,26 +58,12 @@ private Q_SLOTS:
 
 private:
 
-    enum RemoveAction
-    {
-        ALL = 0,
-        DATE,
-        VIDEO
-    };
-
-    QCheckBox* m_removeExif;
-    QCheckBox* m_removeIptc;
-    QCheckBox* m_removeXmp;
-
-    QComboBox* m_exifComboBox;
-    QComboBox* m_iptcComboBox;
-    QComboBox* m_xmpComboBox;
-
-    bool       m_changeSettings;
+    bool toolOperations();
 
 private:
 
-    bool toolOperations();
+    class Private;
+    Private* const d;
 };
 
 } // namespace DigikamBqmRemoveMetadataPlugin

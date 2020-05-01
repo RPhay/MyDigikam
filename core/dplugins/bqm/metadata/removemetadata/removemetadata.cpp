@@ -44,20 +44,50 @@
 namespace DigikamBqmRemoveMetadataPlugin
 {
 
+class Q_DECL_HIDDEN RemoveMetadata::Private
+{
+public:
+
+    enum RemoveAction
+    {
+        ALL = 0,
+        DATE,
+        VIDEO
+    };
+
+public:
+
+    explicit Private()
+      : removeExif(nullptr),
+        removeIptc(nullptr),
+        removeXmp(nullptr),
+        exifComboBox(nullptr),
+        iptcComboBox(nullptr),
+        xmpComboBox(nullptr),
+        changeSettings(true)
+    {
+    }
+
+    QCheckBox* removeExif;
+    QCheckBox* removeIptc;
+    QCheckBox* removeXmp;
+
+    QComboBox* exifComboBox;
+    QComboBox* iptcComboBox;
+    QComboBox* xmpComboBox;
+
+    bool       changeSettings;
+};
+
 RemoveMetadata::RemoveMetadata(QObject* const parent)
     : BatchTool(QLatin1String("RemoveMetadata"), MetadataTool, parent),
-      m_removeExif(nullptr),
-      m_removeIptc(nullptr),
-      m_removeXmp(nullptr),
-      m_exifComboBox(nullptr),
-      m_iptcComboBox(nullptr),
-      m_xmpComboBox(nullptr),
-      m_changeSettings(true)
+      d(new Private)
 {
 }
 
 RemoveMetadata::~RemoveMetadata()
 {
+    delete d;
 }
 
 void RemoveMetadata::registerSettingsWidget()
@@ -65,49 +95,49 @@ void RemoveMetadata::registerSettingsWidget()
     QWidget* const panel    = new QWidget;
     QGridLayout* const grid = new QGridLayout(panel);
 
-    m_removeExif            = new QCheckBox(i18n("Exif:"), panel);
-    m_exifComboBox          = new QComboBox(panel);
-    m_exifComboBox->addItem(i18n("Completely"), RemoveAction::ALL);
-    m_exifComboBox->addItem(i18n("Date"),       RemoveAction::DATE);
+    d->removeExif            = new QCheckBox(i18n("Exif:"), panel);
+    d->exifComboBox          = new QComboBox(panel);
+    d->exifComboBox->addItem(i18n("Completely"), Private::ALL);
+    d->exifComboBox->addItem(i18n("Date"),       Private::DATE);
 
-    m_removeIptc            = new QCheckBox(i18n("Iptc:"), panel);
-    m_iptcComboBox          = new QComboBox(panel);
-    m_iptcComboBox->addItem(i18n("Completely"), RemoveAction::ALL);
-    m_iptcComboBox->addItem(i18n("Date"),       RemoveAction::DATE);
+    d->removeIptc            = new QCheckBox(i18n("Iptc:"), panel);
+    d->iptcComboBox          = new QComboBox(panel);
+    d->iptcComboBox->addItem(i18n("Completely"), Private::ALL);
+    d->iptcComboBox->addItem(i18n("Date"),       Private::DATE);
 
-    m_removeXmp             = new QCheckBox(i18n("Xmp:"), panel);
-    m_xmpComboBox           = new QComboBox(panel);
-    m_xmpComboBox->addItem(i18n("Completely"), RemoveAction::ALL);
-    m_xmpComboBox->addItem(i18n("Date"),       RemoveAction::DATE);
-    m_xmpComboBox->addItem(i18n("Video"),      RemoveAction::VIDEO);
+    d->removeXmp             = new QCheckBox(i18n("Xmp:"), panel);
+    d->xmpComboBox           = new QComboBox(panel);
+    d->xmpComboBox->addItem(i18n("Completely"), Private::ALL);
+    d->xmpComboBox->addItem(i18n("Date"),       Private::DATE);
+    d->xmpComboBox->addItem(i18n("Video"),      Private::VIDEO);
 
-    grid->addWidget(m_removeExif,   0, 0, 1, 1);
-    grid->addWidget(m_exifComboBox, 0, 1, 1, 2);
-    grid->addWidget(m_removeIptc,   1, 0, 1, 1);
-    grid->addWidget(m_iptcComboBox, 1, 1, 1, 2);
-    grid->addWidget(m_removeXmp,    2, 0, 1, 1);
-    grid->addWidget(m_xmpComboBox,  2, 1, 1, 2);
+    grid->addWidget(d->removeExif,   0, 0, 1, 1);
+    grid->addWidget(d->exifComboBox, 0, 1, 1, 2);
+    grid->addWidget(d->removeIptc,   1, 0, 1, 1);
+    grid->addWidget(d->iptcComboBox, 1, 1, 1, 2);
+    grid->addWidget(d->removeXmp,    2, 0, 1, 1);
+    grid->addWidget(d->xmpComboBox,  2, 1, 1, 2);
     grid->setColumnStretch(2, 10);
     grid->setRowStretch(3, 10);
 
     m_settingsWidget = panel;
 
-    connect(m_removeExif, SIGNAL(toggled(bool)),
+    connect(d->removeExif, SIGNAL(toggled(bool)),
             this, SLOT(slotSettingsChanged()));
 
-    connect(m_removeIptc, SIGNAL(toggled(bool)),
+    connect(d->removeIptc, SIGNAL(toggled(bool)),
             this, SLOT(slotSettingsChanged()));
 
-    connect(m_removeXmp, SIGNAL(toggled(bool)),
+    connect(d->removeXmp, SIGNAL(toggled(bool)),
             this, SLOT(slotSettingsChanged()));
 
-    connect(m_exifComboBox, SIGNAL(currentIndexChanged(int)),
+    connect(d->exifComboBox, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotSettingsChanged()));
 
-    connect(m_iptcComboBox, SIGNAL(currentIndexChanged(int)),
+    connect(d->iptcComboBox, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotSettingsChanged()));
 
-    connect(m_xmpComboBox, SIGNAL(currentIndexChanged(int)),
+    connect(d->xmpComboBox, SIGNAL(currentIndexChanged(int)),
             this, SLOT(slotSettingsChanged()));
 
     BatchTool::registerSettingsWidget();
@@ -120,57 +150,57 @@ BatchToolSettings RemoveMetadata::defaultSettings()
     settings.insert(QLatin1String("RemoveExif"), false);
     settings.insert(QLatin1String("RemoveIptc"), false);
     settings.insert(QLatin1String("RemoveXmp"),  false);
-    settings.insert(QLatin1String("ExifData"),   RemoveAction::ALL);
-    settings.insert(QLatin1String("IptcData"),   RemoveAction::ALL);
-    settings.insert(QLatin1String("XmpData"),    RemoveAction::ALL);
+    settings.insert(QLatin1String("ExifData"),   Private::ALL);
+    settings.insert(QLatin1String("IptcData"),   Private::ALL);
+    settings.insert(QLatin1String("XmpData"),    Private::ALL);
 
-    m_exifComboBox->setEnabled(false);
-    m_iptcComboBox->setEnabled(false);
-    m_xmpComboBox->setEnabled(false);
+    d->exifComboBox->setEnabled(false);
+    d->iptcComboBox->setEnabled(false);
+    d->xmpComboBox->setEnabled(false);
 
     return settings;
 }
 
 void RemoveMetadata::slotAssignSettings2Widget()
 {
-    m_changeSettings = false;
+    d->changeSettings = false;
 
-    m_removeExif->setChecked(settings()[QLatin1String("RemoveExif")].toBool());
-    m_removeIptc->setChecked(settings()[QLatin1String("RemoveIptc")].toBool());
-    m_removeXmp->setChecked(settings()[QLatin1String("RemoveXmp")].toBool());
+    d->removeExif->setChecked(settings()[QLatin1String("RemoveExif")].toBool());
+    d->removeIptc->setChecked(settings()[QLatin1String("RemoveIptc")].toBool());
+    d->removeXmp->setChecked(settings()[QLatin1String("RemoveXmp")].toBool());
 
     int exifData = settings()[QLatin1String("ExifData")].toInt();
-    m_exifComboBox->setCurrentIndex(m_exifComboBox->findData(exifData));
+    d->exifComboBox->setCurrentIndex(d->exifComboBox->findData(exifData));
 
     int iptcData = settings()[QLatin1String("IptcData")].toInt();
-    m_iptcComboBox->setCurrentIndex(m_iptcComboBox->findData(iptcData));
+    d->iptcComboBox->setCurrentIndex(d->iptcComboBox->findData(iptcData));
 
     int xmpData  = settings()[QLatin1String("XmpData")].toInt();
-    m_xmpComboBox->setCurrentIndex(m_xmpComboBox->findData(xmpData));
+    d->xmpComboBox->setCurrentIndex(d->xmpComboBox->findData(xmpData));
 
-    m_exifComboBox->setEnabled(m_removeExif->isChecked());
-    m_iptcComboBox->setEnabled(m_removeIptc->isChecked());
-    m_xmpComboBox->setEnabled(m_removeXmp->isChecked());
+    d->exifComboBox->setEnabled(d->removeExif->isChecked());
+    d->iptcComboBox->setEnabled(d->removeIptc->isChecked());
+    d->xmpComboBox->setEnabled(d->removeXmp->isChecked());
 
-    m_changeSettings = true;
+    d->changeSettings = true;
 }
 
 void RemoveMetadata::slotSettingsChanged()
 {
-    if (m_changeSettings)
+    if (d->changeSettings)
     {
         BatchToolSettings settings;
 
-        settings.insert(QLatin1String("RemoveExif"), m_removeExif->isChecked());
-        settings.insert(QLatin1String("RemoveIptc"), m_removeIptc->isChecked());
-        settings.insert(QLatin1String("RemoveXmp"),  m_removeXmp->isChecked());
-        settings.insert(QLatin1String("ExifData"),   m_exifComboBox->currentData().toInt());
-        settings.insert(QLatin1String("IptcData"),   m_iptcComboBox->currentData().toInt());
-        settings.insert(QLatin1String("XmpData" ),   m_xmpComboBox->currentData().toInt());
+        settings.insert(QLatin1String("RemoveExif"), d->removeExif->isChecked());
+        settings.insert(QLatin1String("RemoveIptc"), d->removeIptc->isChecked());
+        settings.insert(QLatin1String("RemoveXmp"),  d->removeXmp->isChecked());
+        settings.insert(QLatin1String("ExifData"),   d->exifComboBox->currentData().toInt());
+        settings.insert(QLatin1String("IptcData"),   d->iptcComboBox->currentData().toInt());
+        settings.insert(QLatin1String("XmpData" ),   d->xmpComboBox->currentData().toInt());
 
-        m_exifComboBox->setEnabled(m_removeExif->isChecked());
-        m_iptcComboBox->setEnabled(m_removeIptc->isChecked());
-        m_xmpComboBox->setEnabled(m_removeXmp->isChecked());
+        d->exifComboBox->setEnabled(d->removeExif->isChecked());
+        d->iptcComboBox->setEnabled(d->removeIptc->isChecked());
+        d->xmpComboBox->setEnabled(d->removeXmp->isChecked());
 
         BatchTool::slotSettingsChanged(settings);
     }
@@ -213,11 +243,11 @@ bool RemoveMetadata::toolOperations()
 
     if (removeExif)
     {
-        if      (exifData == RemoveAction::ALL)
+        if      (exifData == Private::ALL)
         {
             meta.clearExif();
         }
-        else if (exifData == RemoveAction::DATE)
+        else if (exifData == Private::DATE)
         {
             meta.removeExifTag("Exif.Image.DateTime");
             meta.removeExifTag("Exif.Image.PreviewDateTime");
@@ -228,11 +258,11 @@ bool RemoveMetadata::toolOperations()
 
     if (removeIptc)
     {
-        if      (iptcData == RemoveAction::ALL)
+        if      (iptcData == Private::ALL)
         {
             meta.clearIptc();
         }
-        else if (iptcData == RemoveAction::DATE)
+        else if (iptcData == Private::DATE)
         {
             meta.removeIptcTag("Iptc.Application2.DateCreated");
             meta.removeIptcTag("Iptc.Application2.TimeCreated");
@@ -241,11 +271,11 @@ bool RemoveMetadata::toolOperations()
 
     if (removeXmp)
     {
-        if      (xmpData == RemoveAction::ALL)
+        if      (xmpData == Private::ALL)
         {
             meta.clearXmp();
         }
-        else if (xmpData == RemoveAction::DATE)
+        else if (xmpData == Private::DATE)
         {
             meta.removeXmpTag("Xmp.photoshop.DateCreated");
             meta.removeXmpTag("Xmp.exif.DateTimeOriginal");
@@ -258,7 +288,7 @@ bool RemoveMetadata::toolOperations()
             meta.removeXmpTag("Xmp.video.ModificationDate");
             meta.removeXmpTag("Xmp.video.DateUTC");
         }
-        else if (xmpData == RemoveAction::VIDEO)
+        else if (xmpData == Private::VIDEO)
         {
             meta.removeXmpTags(QStringList() << QLatin1String("video"));
         }
