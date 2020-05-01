@@ -29,6 +29,7 @@
 #include "batchtool.h"
 
 class QCheckBox;
+class QComboBox;
 
 using namespace Digikam;
 
@@ -62,18 +63,20 @@ private:
 
     enum RemoveAction
     {
-        Tiny = 0,
-        Small,
-        Medium,
-        Big,
-        Large,
-        Huge
+        ALL = 0,
+        DATE,
+        VIDEO
     };
 
     QCheckBox* m_removeExif;
     QCheckBox* m_removeIptc;
     QCheckBox* m_removeXmp;
-    QCheckBox* m_removeXmpVideo;
+
+    QComboBox* m_exifComboBox;
+    QComboBox* m_iptcComboBox;
+    QComboBox* m_xmpComboBox;
+
+    bool       m_changeSettings;
 
 private:
 

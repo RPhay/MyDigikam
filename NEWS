@@ -701,4 +701,5 @@ BUGFIXES:
 681 ==> 420727 - digiKam-Window and all Sub-Windows are enlarged too much.
 682 ==> 420642 - Crash on face detection stop button.
 683 ==> 420773 - New pictures copied with shell in albums are not picked up from digikam.
-684 ==> 
+684 ==> 420661 - Wishlist: option to clear/delete specific date field in a picture selection.
+685 ==> 
