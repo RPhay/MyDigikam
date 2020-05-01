@@ -51,7 +51,9 @@ public:
     enum RemoveAction
     {
         ALL = 0,
+        GPS,
         DATE,
+        EXIF,
         VIDEO
     };
 
@@ -99,6 +101,7 @@ void RemoveMetadata::registerSettingsWidget()
     d->exifComboBox          = new QComboBox(panel);
     d->exifComboBox->addItem(i18n("Completely"), Private::ALL);
     d->exifComboBox->addItem(i18n("Date"),       Private::DATE);
+    d->exifComboBox->addItem(i18n("GPS"),        Private::GPS);
 
     d->removeIptc            = new QCheckBox(i18n("Iptc:"), panel);
     d->iptcComboBox          = new QComboBox(panel);
@@ -109,6 +112,7 @@ void RemoveMetadata::registerSettingsWidget()
     d->xmpComboBox           = new QComboBox(panel);
     d->xmpComboBox->addItem(i18n("Completely"), Private::ALL);
     d->xmpComboBox->addItem(i18n("Date"),       Private::DATE);
+    d->xmpComboBox->addItem(i18n("Exif"),       Private::EXIF);
     d->xmpComboBox->addItem(i18n("Video"),      Private::VIDEO);
 
     grid->addWidget(d->removeExif,   0, 0, 1, 1);
@@ -246,6 +250,10 @@ bool RemoveMetadata::toolOperations()
             meta.removeExifTag("Exif.Photo.DateTimeOriginal");
             meta.removeExifTag("Exif.Photo.DateTimeDigitized");
         }
+        else if (exifData == Private::GPS)
+        {
+            meta.removeExifTags(QStringList() << QLatin1String("GPSInfo"));
+        }
     }
 
     if (removeIptc)
@@ -279,6 +287,10 @@ bool RemoveMetadata::toolOperations()
             meta.removeXmpTag("Xmp.video.DateTimeOriginal");
             meta.removeXmpTag("Xmp.video.ModificationDate");
             meta.removeXmpTag("Xmp.video.DateUTC");
+        }
+        else if (xmpData == Private::EXIF)
+        {
+            meta.removeXmpTags(QStringList() << QLatin1String("exif"));
         }
         else if (xmpData == Private::VIDEO)
         {
