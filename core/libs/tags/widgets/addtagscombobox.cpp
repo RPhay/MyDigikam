@@ -183,11 +183,13 @@ void AddTagsComboBox::slotLineEditActionSelected(const TaggingAction& action)
 
 bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
 {
-    if      (object == d->lineEdit->completer()->popup())
+    QAbstractItemView* const popup = d->lineEdit->completer()->popup();
+
+    if      (popup && (object == popup))
     {
         if      (event->type() == QEvent::Show)
         {
-            QGraphicsProxyWidget* const proxyWidget = d->lineEdit->completer()->popup()->graphicsProxyWidget();
+            QGraphicsProxyWidget* const proxyWidget = popup->graphicsProxyWidget();
 
             if (proxyWidget)
             {
@@ -198,7 +200,7 @@ bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
         }
         else if (event->type() == QEvent::Hide)
         {
-            d->lineEdit->completer()->popup()->setFocus();
+            popup->setFocus();
         }
         else if (event->type() == QEvent::Move)
         {
@@ -208,20 +210,21 @@ bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
                 QPoint newPos = parentWidget()->mapToGlobal(pos);
                 newPos.ry()--;
 
-                if (d->lineEdit->completer()->popup()->pos() != newPos)
+                if (popup->pos() != newPos)
                 {
-                    d->lineEdit->completer()->popup()->move(newPos);
+                    popup->move(newPos);
                 }
             }
         }
 
         return false;
     }
-    else if (object == this)
+    else if (popup && (object == this))
     {
-        if      ((event->type() == QEvent::KeyPress) || (event->type() == QEvent::KeyRelease))
+        if      ((event->type() == QEvent::KeyPress) ||
+                 (event->type() == QEvent::KeyRelease))
         {
-            if (d->lineEdit->completer()->popup()->isVisible())
+            if (popup->isVisible())
             {
                 QKeyEvent* const keyEvent = static_cast<QKeyEvent*>(event);
 
@@ -232,7 +235,7 @@ bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
                                  (keyEvent->key() == Qt::Key_Return))
                                 )
                 {
-                    QApplication::sendEvent(d->lineEdit->completer()->popup(), event);
+                    QApplication::sendEvent(popup, event);
 
                     return true;
                 }
@@ -240,7 +243,7 @@ bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
         }
         else if (event->type() == QEvent::ShortcutOverride)
         {
-            if (d->lineEdit->completer()->popup()->isVisible())
+            if (popup->isVisible())
             {
                 QKeyEvent* const keyEvent = static_cast<QKeyEvent*>(event);
 
@@ -255,9 +258,9 @@ bool AddTagsComboBox::eventFilter(QObject* object, QEvent* event)
         }
         else if (event->type() == QEvent::HoverMove)
         {
-            if (d->lineEdit->completer()->popup()->isVisible())
+            if (popup->isVisible())
             {
-                d->lineEdit->completer()->popup()->hide();
+                popup->hide();
             }
         }
         else if (event->type() == QEvent::Show)
