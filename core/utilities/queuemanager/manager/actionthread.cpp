@@ -52,7 +52,7 @@ ActionThread::ActionThread(QObject* const parent)
       d(new Private)
 {
     setObjectName(QLatin1String("QueueMngrThread"));
-    qRegisterMetaType<ActionData>();
+    qRegisterMetaType<ActionData>("ActionData");
 
     connect(this, SIGNAL(finished()),
             this, SLOT(slotThreadFinished()));

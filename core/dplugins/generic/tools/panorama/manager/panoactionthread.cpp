@@ -75,7 +75,7 @@ PanoActionThread::PanoActionThread(QObject* const parent)
 {
     // PanoActionThread init
 
-    qRegisterMetaType<PanoActionData>();
+    qRegisterMetaType<PanoActionData>("PanoActionData");
 
     d->threadQueue->setMaximumNumberOfThreads(qMax(QThread::idealThreadCount(), 1));
     qCDebug(DIGIKAM_DPLUGIN_GENERIC_LOG) << "Starting Main Thread";
