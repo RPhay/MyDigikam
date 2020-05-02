@@ -98,7 +98,7 @@ typedef unsigned long long UINT64;
 
   typedef unsigned char uchar;
   typedef unsigned short ushort;
-
+/*
 #ifdef LIBRAW_WIN32_DLLDEFS
 #ifdef LIBRAW_NODLL
 #define DllDef
@@ -110,8 +110,9 @@ typedef unsigned long long UINT64;
 #endif
 #endif
 #else
+*/
 #define DllDef
-#endif
+//#endif
 
   typedef struct
   {

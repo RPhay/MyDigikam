@@ -50,6 +50,10 @@ add_definitions(-DDCRAW_VERBOSE)
 # No need a Flag to export library symbols, as we use a static version for the unit tests.
 add_definitions(-DLIBRAW_NODLL)
 
+if(WIN32)
+    add_definitions(-DLIBRAW_WIN32_DLLDEFS)
+endif()
+
 include_directories(${CMAKE_BINARY_DIR}/core/libs/rawengine/libraw/
                     ${CMAKE_SOURCE_DIR}/core/libs/rawengine/libraw
                     ${CMAKE_SOURCE_DIR}/core/libs/dngwriter/extra/dng_sdk
