@@ -7,12 +7,12 @@ FaceManagement: New Neural Network engine based on OpenCV Deep Learning module t
 FaceManagement: Face Scan dialog contents is now simplified and embeded into left side-bar tab.
 SlideShow     : Add new shuffle mode.
 HTMLGallery   : Add new theme "Html5Responsive".
-General       : Update internal libraw engine to last 201910 snapshot aka next 0.20.0 release (https://www.libraw.org/news/libraw-snapshot-201910)
-General       : All bundles have switched to last Qt 5.14.0. Linux and MacOS use QtWebEngine instead QtWebKit.
+General       : All bundles have switched to last Qt 5.14.2. Linux and MacOS use QtWebEngine instead QtWebKit.
 General       : Add Microsoft Visual C++ support and a Continuous Integration workflow to check code with this compiler.
 General       : Table-view is now able to show digiKam Tag-Paths properties.
 Metadata      : New option to write geolocation data in file metadata.
 General       : Internal libheif updated to last stable 1.6.2 and internal libde265 updated to last stable 1.0.5.
+General       : Internal libraw updated to May 2020 git snapshot (aka next 0.20.0 release).
 
 *****************************************************************************************************
 BUGFIXES:

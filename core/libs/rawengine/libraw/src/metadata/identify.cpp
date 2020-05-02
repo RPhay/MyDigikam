@@ -1927,6 +1927,10 @@ void LibRaw::identify()
         width += pana[i][4];
         height += pana[i][5];
       }
+
+    if (!tiff_bps && pana_bpp >= 12 && pana_bpp <= 14)
+	tiff_bps = pana_bpp;
+
     filters = 0x01010101U *
               (uchar) "\x94\x61\x49\x16"[((filters - 1) ^ (left_margin & 1) ^
                                           (top_margin << 1)) &
@@ -2774,7 +2778,7 @@ dng_skip:
     is_raw = 0;
 
   if (raw_width < 22 || raw_width > 64000 || raw_height < 22 ||
-      raw_height > 64000)
+      raw_height > 64000 || pixel_aspect < 0.1 || pixel_aspect > 10)
     is_raw = 0;
 
 #ifdef NO_JASPER
