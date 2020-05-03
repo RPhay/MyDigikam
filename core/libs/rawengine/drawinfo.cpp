@@ -165,6 +165,7 @@ QDebug operator<<(QDebug dbg, const DRawInfo& c)
     dbg.nospace() << "DRawInfo::topMargin: "        << c.topMargin        << ", ";
     dbg.nospace() << "DRawInfo::leftMargin: "       << c.leftMargin       << ", ";
     dbg.nospace() << "DRawInfo::orientation: "      << c.orientation;
+
     return dbg.space();
 }
 
