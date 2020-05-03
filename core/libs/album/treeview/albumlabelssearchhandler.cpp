@@ -166,23 +166,12 @@ QString AlbumLabelsSearchHandler::createXMLForCurrentSelection(const QHash<Label
 
     d->currentXmlIsEmpty = (ratings.isEmpty() && colorsAndPicks.isEmpty()) ? true : false;
 
-    if (!ratings.isEmpty() && !colorsAndPicks.isEmpty())
-    {
-        foreach (int val, ratings)
-        {
-            writer.writeGroup();
-            writer.writeField(QLatin1String("rating"), SearchXml::Equal);
-            writer.writeValue(val);
-            writer.finishField();
+    int noColor          = TagsCache::instance()->tagForColorLabel(NoColorLabel);
+    int noPick           = TagsCache::instance()->tagForPickLabel(NoPickLabel);
+    QList<int> allColors = TagsCache::instance()->colorLabelTags().toList();
+    QList<int> allPicks  = TagsCache::instance()->pickLabelTags().toList();
 
-            writer.writeField(QLatin1String("tagid"), SearchXml::InTree);
-            writer.writeValue(colorsAndPicks);
-            writer.finishField();
-
-            writer.finishGroup();
-        }
-    }
-    else if (!ratings.isEmpty())
+    if (!ratings.isEmpty())
     {
         foreach (int rate, ratings)
         {
@@ -193,15 +182,35 @@ QString AlbumLabelsSearchHandler::createXMLForCurrentSelection(const QHash<Label
             writer.finishGroup();
         }
     }
-    else if (!colorsAndPicks.isEmpty())
+
+    if (!colorsAndPicks.isEmpty())
     {
         writer.writeGroup();
         writer.writeField(QLatin1String("tagid"), SearchXml::InTree);
         writer.writeValue(colorsAndPicks);
         writer.finishField();
         writer.finishGroup();
+
+        if (colorsAndPicks.contains(noColor))
+        {
+            writer.writeGroup();
+            writer.writeField(QLatin1String("tagid"), SearchXml::NotInTree);
+            writer.writeValue(allColors);
+            writer.finishField();
+            writer.finishGroup();
+        }
+
+        if (colorsAndPicks.contains(noPick))
+        {
+            writer.writeGroup();
+            writer.writeField(QLatin1String("tagid"), SearchXml::NotInTree);
+            writer.writeValue(allPicks);
+            writer.finishField();
+            writer.finishGroup();
+        }
     }
-    else
+
+    if (ratings.isEmpty() && colorsAndPicks.isEmpty())
     {
         writer.writeGroup();
         writer.finishGroup();
