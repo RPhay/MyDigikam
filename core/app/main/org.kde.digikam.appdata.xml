@@ -268,7 +268,7 @@
       <li xml:lang="it">Importazione da più di 1.100 dispositivi fotografici digitali</li>
       <li xml:lang="ko">1100종 이상의 디지털 카메라에서 사진 가져오기</li>
       <li xml:lang="nl">Importeren uit meer dan 1100 digitale camera's</li>
-      <li xml:lang="nn">Støtte for importering av bilete frå meir enn 1 100 digitalkamera</li>
+      <li xml:lang="nn">Støtte for importering av bilete frå meir enn 1 100 ulike kameramodellar</li>
       <li xml:lang="pl">Importowanie z więcej niż 1100 aparatów cyfrowych</li>
       <li xml:lang="pt">Importar a partir de mais de 1100 máquinas digitais</li>
       <li xml:lang="pt-BR">Importação de mais de 1.100 câmeras digitais</li>
@@ -297,7 +297,7 @@
       <li xml:lang="it">Supporto per più di 900 immagini in formato RAW</li>
       <li xml:lang="ko">900종 이상의 RAW 사진 형식 지원</li>
       <li xml:lang="nl">Ondersteuning voor 900 RAW-format afbeeldingen</li>
-      <li xml:lang="nn">Støtte for meir enn 900 råbiletformat</li>
+      <li xml:lang="nn">Støtte for meir enn 900 ulike råbiletformat</li>
       <li xml:lang="pl">Obsługa dla więcej niż 900 postaci zdjęć RAW</li>
       <li xml:lang="pt">Suporte para mais de 900 formatos de imagens RAW</li>
       <li xml:lang="pt-BR">Suporte a mais de 900 formatos de imagem RAW</li>
@@ -325,7 +325,7 @@
       <li xml:lang="it">Tavolo luminoso per confrontare le foto fianco a fianco</li>
       <li xml:lang="ko">사진을 양쪽으로 비교하는 조명 테이블</li>
       <li xml:lang="nl">Lichttafel om foto's naast elkaar te vergelijken</li>
-      <li xml:lang="nn">Lysbord for å samanlikna bilete ved sidan av kvarandre</li>
+      <li xml:lang="nn">Lysbord for å samanlikna bilete ved sida av kvarandre</li>
       <li xml:lang="pl">Podświetlarka do porównywania zdjęć jedno obok drugiego</li>
       <li xml:lang="pt">Mesa de Luz para comparar as fotografias lado-a-lado</li>
       <li xml:lang="pt-BR">Mesa de Luz para comparação de fotos lado a lado</li>
@@ -379,7 +379,7 @@
       <li xml:lang="it">Condivisione delle foto tramite HTML o loro pubblicazione nei servizi web remoti</li>
       <li xml:lang="ko">HTML로 사진 공유 및 웹 서비스에 올리기</li>
       <li xml:lang="nl">Uw foto's delen met HTML of ze publiceren op websites op afstand</li>
-      <li xml:lang="nn">Del bileta med HTML eller publiser dei på ulike nett-tenester</li>
+      <li xml:lang="nn">Kan dela bileta med HTML eller publisera dei på ulike nett-tenester</li>
       <li xml:lang="pl">Udostępnianie zdjęć przy użyciu HTML lub publikowanie ich poprzez usługi sieciowe</li>
       <li xml:lang="pt">Partilhar as suas fotos por HTML ou publicá-las em serviços Web remotos</li>
       <li xml:lang="pt-BR">Compartilhamento de fotos usando HTML ou publicação em serviços remotos</li>
