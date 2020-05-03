@@ -156,7 +156,7 @@ int ItemAlbumFilterModel::compareInfosCategories(const ItemInfo& left, const Ite
             if ((d->sorter.sortRole == ItemSortSettings::SortByCreationDate) ||
                 (d->sorter.sortRole == ItemSortSettings::SortByModificationDate))
             {
-                // Here we want to sort the _categories_ by _album_ date if images are sorted by date
+                // Here we want to sort the categories by album date if images are sorted by date.
                 // We must still make sure that categorization is unique!
 
                 QDate leftDate  = leftAlbum->date();
@@ -170,7 +170,13 @@ int ItemAlbumFilterModel::compareInfosCategories(const ItemInfo& left, const Ite
                 }
             }
 
-            return ItemSortSettings::naturalCompare(leftAlbum->albumPath(), rightAlbum->albumPath(),
+            // Make album paths unique across different collections.
+            // The album root path can be empty if the collection is offline.
+
+            QString leftPath  = leftAlbum->albumPath()  + QString::number(leftAlbum->id());
+            QString rightPath = rightAlbum->albumPath() + QString::number(rightAlbum->id());
+
+            return ItemSortSettings::naturalCompare(leftPath, rightPath,
                                                     d->sorter.currentCategorizationSortOrder,
                                                     d->sorter.categorizationCaseSensitivity,
                                                     d->sorter.strTypeNatural);
