@@ -344,10 +344,8 @@ void FaceTagsEditor::removeFace(qlonglong imageid, const QRect& rect)
     QStringList        attributes = FaceTagsIface::attributesForFlags(FaceTagsIface::AllTypes);
     QList<ItemTagPair> pairs      = faceItemTagPairs(imageid, FaceTagsIface::AllTypes);
 
-    for (int i = 0 ; i < pairs.size() ; ++i)
+    foreach (ItemTagPair pair, pairs)
     {
-        ItemTagPair& pair = pairs[i];
-
         foreach (const QString& attribute, attributes)
         {
             foreach (const QString& regionString, pair.values(attribute))
