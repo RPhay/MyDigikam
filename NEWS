@@ -704,4 +704,5 @@ BUGFIXES:
 684 ==> 420661 - Wishlist: option to clear/delete specific date field in a picture selection.
 685 ==> 420865 - "Labels" tab in left menu shows unexpected behavior.
 686 ==> 328291 - BQM Metadata Tool : be able to customize tags or namespaces to drop.
-687 ==> 
+687 ==> 419852 - Seg fault (double free or corruption) while detecting faces, 0-length JPG files.
+688 ==> 
