@@ -395,7 +395,7 @@ qlonglong CollectionScanner::scanFile(const QString& albumRoot, const QString& a
 
 void CollectionScanner::scanFile(const ItemInfo& info, FileScanMode mode)
 {
-    if (info.isNull())
+    if (info.isNull() || !info.isLocationAvailable())
     {
         return;
     }
