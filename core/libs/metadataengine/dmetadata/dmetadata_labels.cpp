@@ -350,7 +350,7 @@ bool DMetadata::setItemRating(int rating, const DMetadataSettingsContainer& sett
 
             case NamespaceEntry::EXIF:
 
-                if (QLatin1String(nameSpace) == QLatin1String("Exif.Image.0x4749"))
+                if (QLatin1String(nameSpace) == QLatin1String("Exif.Image.RatingPercent"))
                 {
                     // Wrapper around rating percents managed by Windows Vista.
 
