@@ -27,22 +27,22 @@ if (NOT APPLE)
     find_path(QTAV_CORE_INCLUDE_DIR
               NAMES QtAV.h
               HINTS ${Qt5Core_INCLUDE_DIRS}
-                    ${_qt5_install_prefix}                                           # For MXE
-                    ${_qt5_install_prefix}/../qt5/include                            # For Mageia
-                    ${_qt5_install_prefix}/../../include/qt5                         # For Suse
+                    ${_qt5_install_prefix}                                                        # For MXE
+                    ${_qt5_install_prefix}/../qt5/include                                         # For Mageia
+                    ${_qt5_install_prefix}/../../include/qt5                                      # For Suse
                     ${_qt5_install_prefix}/../../../include/${CMAKE_LIBRARY_ARCHITECTURE}/qt5     # For Debian
-                    ${_qt5_install_prefix}/../../include/qt                          # For Arch
+                    ${_qt5_install_prefix}/../../include/qt                                       # For Arch
               PATH_SUFFIXES QtAV
     )
 
     find_path(QTAV_WIDGETS_INCLUDE_DIR
               NAMES QtAVWidgets.h
               HINTS ${Qt5Core_INCLUDE_DIRS}
-                    ${_qt5_install_prefix}                                           # For MXE
-                    ${_qt5_install_prefix}/../qt5/include                            # For Mageia
-                    ${_qt5_install_prefix}/../../include/qt5                         # For Suse
+                    ${_qt5_install_prefix}                                                        # For MXE
+                    ${_qt5_install_prefix}/../qt5/include                                         # For Mageia
+                    ${_qt5_install_prefix}/../../include/qt5                                      # For Suse
                     ${_qt5_install_prefix}/../../../include/${CMAKE_LIBRARY_ARCHITECTURE}/qt5     # For Debian
-                    ${_qt5_install_prefix}/../../include/qt                          # For Arch
+                    ${_qt5_install_prefix}/../../include/qt                                       # For Arch
               PATH_SUFFIXES QtAVWidgets
     )
 
@@ -96,10 +96,16 @@ find_package_handle_standard_args(QtAV REQUIRED_VARS QTAV_LIBRARIES QTAV_INCLUDE
 
 if(QtAV_FOUND)
 
-    if (NOT APPLE)
+    if(NOT APPLE)
         file(READ ${QTAV_CORE_INCLUDE_DIR}/version.h QTAV_VERSION_CONTENT)
     else()
-        file(READ ${QTAV_CORE_INCLUDE_DIR}/QtAV/version.h QTAV_VERSION_CONTENT)
+        if(EXISTS ${QTAV_CORE_INCLUDE_DIR}/QtAV/version.h)
+            file(READ ${QTAV_CORE_INCLUDE_DIR}/QtAV/version.h QTAV_VERSION_CONTENT)
+        else()
+            if(EXISTS ${QTAV_CORE_INCLUDE_DIR}/version.h)
+                file(READ ${QTAV_CORE_INCLUDE_DIR}/version.h QTAV_VERSION_CONTENT)
+            endif()
+        endif()
     endif()
 
     string(REGEX MATCH "#define QTAV_MAJOR ([0-9]+)" QTAV_MAJOR_MATCH ${QTAV_VERSION_CONTENT})
