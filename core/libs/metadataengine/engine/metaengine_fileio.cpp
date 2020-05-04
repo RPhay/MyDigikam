@@ -104,7 +104,7 @@ bool MetaEngine::load(const QString& filePath)
     {
         Exiv2::Image::AutoPtr image;
 
-        image        = Exiv2::ImageFactory::open((const char*)(QFile::encodeName(filePath)).constData());
+        image        = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
 
         image->readMetadata();
 
@@ -175,7 +175,7 @@ bool MetaEngine::loadFromSidecarAndMerge(const QString& filePath)
             {
                 // Read sidecar data
 
-                xmpsidecar = Exiv2::ImageFactory::open(QFile::encodeName(xmpSidecarPath).constData());
+                xmpsidecar = Exiv2::ImageFactory::open(xmpSidecarPath.toUtf8().constData());
                 xmpsidecar->readMetadata();
 
                 // Merge

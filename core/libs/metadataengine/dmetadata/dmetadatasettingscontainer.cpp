@@ -352,14 +352,14 @@ void DMetadataSettingsContainer::defaultRatingValues()
     ratingNs3.subspace      = NamespaceEntry::XMP;
 
     NamespaceEntry ratingNs4;
-    ratingNs4.namespaceName = QLatin1String("Exif.Image.0x4746");
+    ratingNs4.namespaceName = QLatin1String("Exif.Image.Rating");
     ratingNs4.convertRatio  = defaultVal;
     ratingNs4.nsType        = NamespaceEntry::RATING;
     ratingNs4.index         = 3;
     ratingNs4.subspace      = NamespaceEntry::EXIF;
 
     NamespaceEntry ratingNs5;
-    ratingNs5.namespaceName = QLatin1String("Exif.Image.0x4749");
+    ratingNs5.namespaceName = QLatin1String("Exif.Image.RatingPercent");
     ratingNs5.convertRatio  = microsoftMappings;
     ratingNs5.nsType        = NamespaceEntry::RATING;
     ratingNs5.index         = 4;
