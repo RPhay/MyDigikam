@@ -2,8 +2,8 @@
 
 | CI Job        | Status                                                                                                                                                                                                  |
 |---------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Linux Build   | [![Linux Build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20SUSEQt5.12/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20SUSEQt5.12/)                 |
-| FreeBSD Build | [![FreeBSD Build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20FreeBSDQt5.13/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20FreeBSDQt5.13/)         |
+| Linux Build   | [![Linux Build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20SUSEQt5.14/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20SUSEQt5.14/)                 |
+| FreeBSD Build | [![FreeBSD Build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20FreeBSDQt5.14/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20FreeBSDQt5.14/)         |
 | Windows Build | [![Windows build Status](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20WindowsMSVCQt5.14/badge/icon)](https://build.kde.org/job/Extragear/job/digikam/job/kf5-qt5%20WindowsMSVCQt5.14/) |
 | Coverity Scan | [![Coverity Scan Status](https://scan.coverity.com/projects/285/badge.svg)](https://scan.coverity.com/projects/digikam)                                                                                 |
 
