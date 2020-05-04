@@ -55,7 +55,9 @@ public:
         DATE,
         EXIF,
         VIDEO,
-        DUBLIN
+        DUBLIN,
+        DIGIKAM,
+        HISTORY
     };
 
 public:
@@ -111,11 +113,13 @@ void RemoveMetadata::registerSettingsWidget()
 
     d->removeXmp             = new QCheckBox(i18n("Xmp:"), panel);
     d->xmpComboBox           = new QComboBox(panel);
-    d->xmpComboBox->addItem(i18n("Completely"),  Private::ALL);
-    d->xmpComboBox->addItem(i18n("Date"),        Private::DATE);
-    d->xmpComboBox->addItem(i18n("Dublin Core"), Private::DUBLIN);
-    d->xmpComboBox->addItem(i18n("Exif"),        Private::EXIF);
-    d->xmpComboBox->addItem(i18n("Video"),       Private::VIDEO);
+    d->xmpComboBox->addItem(i18n("Completely"),            Private::ALL);
+    d->xmpComboBox->addItem(i18n("Date"),                  Private::DATE);
+    d->xmpComboBox->addItem(i18n("DigiKam"),               Private::DIGIKAM);
+    d->xmpComboBox->addItem(i18n("DigiKam image history"), Private::HISTORY);
+    d->xmpComboBox->addItem(i18n("Dublin Core"),           Private::DUBLIN);
+    d->xmpComboBox->addItem(i18n("Exif"),                  Private::EXIF);
+    d->xmpComboBox->addItem(i18n("Video"),                 Private::VIDEO);
 
     grid->addWidget(d->removeExif,   0, 0, 1, 1);
     grid->addWidget(d->exifComboBox, 0, 1, 1, 2);
@@ -289,6 +293,14 @@ bool RemoveMetadata::toolOperations()
             meta.removeXmpTag("Xmp.video.DateTimeOriginal");
             meta.removeXmpTag("Xmp.video.ModificationDate");
             meta.removeXmpTag("Xmp.video.DateUTC");
+        }
+        else if (xmpData == Private::HISTORY)
+        {
+            meta.removeXmpTag("Xmp.digiKam.ImageHistory");
+        }
+        else if (xmpData == Private::DIGIKAM)
+        {
+            meta.removeXmpTags(QStringList() << QLatin1String("digiKam"));
         }
         else if (xmpData == Private::DUBLIN)
         {
