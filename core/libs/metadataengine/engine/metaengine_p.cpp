@@ -428,7 +428,7 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
             QT_STATBUF     st;
             struct utimbuf ut;
-            int ret = QT_STAT(filePath.toUtf8().constData(), &st);
+            int ret = QT_STAT(QFile::encodeName(filePath).constData(), &st);
 
             if (ret == 0)
             {
@@ -440,7 +440,7 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
             if (ret == 0)
             {
-                ::utime(filePath.toUtf8().constData(), &ut);
+                ::utime(QFile::encodeName(filePath).constData(), &ut);
             }
 
             qCDebug(DIGIKAM_METAENGINE_LOG) << "File time stamp restored";
