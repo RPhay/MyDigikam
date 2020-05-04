@@ -69,7 +69,7 @@ QString MediaServerPlugin::iid() const
 
 QIcon MediaServerPlugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("arrow-right-double"));
+    return QIcon::fromTheme(QLatin1String("go-next-skip"));
 }
 
 QString MediaServerPlugin::description() const
