@@ -707,4 +707,5 @@ BUGFIXES:
 687 ==> 419852 - Seg fault (double free or corruption) while detecting faces, 0-length JPG files.
 688 ==> 420875 - Assigning Tag/Label makes thumbnail disappear.
 689 ==> 420564 - Google SSO auth broken.
-690 ==> 
+690 ==> 420986 - External picture rating can not be read.
+691 ==> 

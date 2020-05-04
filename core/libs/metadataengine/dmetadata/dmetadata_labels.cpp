@@ -169,7 +169,7 @@ int DMetadata::getItemRating(const DMetadataSettingsContainer& settings) const
 
                 if (exivSupported)
                 {
-                    value = getExifTagLong(nameSpace, rating);
+                    getExifTagLong(nameSpace, rating);
                 }
 
                 break;
