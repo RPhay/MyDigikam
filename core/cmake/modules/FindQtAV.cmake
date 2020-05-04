@@ -97,7 +97,9 @@ find_package_handle_standard_args(QtAV REQUIRED_VARS QTAV_LIBRARIES QTAV_INCLUDE
 if(QtAV_FOUND)
 
     if(NOT APPLE)
-        file(READ ${QTAV_CORE_INCLUDE_DIR}/version.h QTAV_VERSION_CONTENT)
+        if(EXISTS ${QTAV_CORE_INCLUDE_DIR}/version.h)
+            file(READ ${QTAV_CORE_INCLUDE_DIR}/version.h QTAV_VERSION_CONTENT)
+        endif()
     else()
         if(EXISTS ${QTAV_CORE_INCLUDE_DIR}/QtAV/version.h)
             file(READ ${QTAV_CORE_INCLUDE_DIR}/QtAV/version.h QTAV_VERSION_CONTENT)
