@@ -32,6 +32,7 @@
 #include <QPalette>
 #include <QString>
 #include <QMap>
+#include <QTimer>
 
 // KDE includes
 
@@ -62,23 +63,25 @@ public:
         highlightOnResult(true),
         hasResultColor(200, 255, 200),
         hasNoResultColor(255, 200, 200),
-        completer(nullptr)
+        completer(nullptr),
+        searchTimer(nullptr)
     {
     }
 
-    QString                    optionAutoCompletionModeEntry;
-    QString                    optionCaseSensitiveEntry;
+    QString            optionAutoCompletionModeEntry;
+    QString            optionCaseSensitiveEntry;
 
-    bool                       textQueryCompletion;
-    bool                       hasCaseSensitive;
-    bool                       highlightOnResult;
+    bool               textQueryCompletion;
+    bool               hasCaseSensitive;
+    bool               highlightOnResult;
 
-    QColor                     hasResultColor;
-    QColor                     hasNoResultColor;
+    QColor             hasResultColor;
+    QColor             hasNoResultColor;
 
-    ModelCompleter*            completer;
+    ModelCompleter*    completer;
 
-    SearchTextSettings         settings;
+    SearchTextSettings settings;
+    QTimer*            searchTimer;   ///< Timer to delay search processing and not signals bombarding at each key pressed.
 };
 
 SearchTextBar::SearchTextBar(QWidget* const parent, const QString& name, const QString& msg)
@@ -91,11 +94,18 @@ SearchTextBar::SearchTextBar(QWidget* const parent, const QString& name, const Q
     setClearButtonEnabled(true);
     setPlaceholderText(msg.isNull() ? i18n("Search...") : msg);
 
-    d->completer = new ModelCompleter(this);
+    d->completer   = new ModelCompleter(this);
     setCompleter(d->completer);
 
+    d->searchTimer = new QTimer(this);
+    d->searchTimer->setInterval(1000);
+    d->searchTimer->setSingleShot(true);
+
+    connect(d->searchTimer, SIGNAL(timeout()),
+            this, SLOT(slotTextChanged()));
+
     connect(this, SIGNAL(textChanged(QString)),
-            this, SLOT(slotTextChanged(QString)));
+            d->searchTimer, SLOT(start()));
 
     connect(d->completer, static_cast<void(ModelCompleter::*)(void)>(&ModelCompleter::activated),
             [this](void){ emit completerActivated(); });
@@ -183,14 +193,14 @@ void SearchTextBar::setCaseSensitive(bool b)
 {
     d->hasCaseSensitive = b;
 
-    // reset settings if selecting case sensitivity is not allowed
+    // Reset settings if selecting case sensitivity is not allowed
 
     if (!b)
     {
         d->settings.caseSensitive = Qt::CaseInsensitive;
     }
 
-    // re-emit signal with changed settings
+    // Ee-emit signal with changed settings
 
     if (!text().isEmpty())
     {
@@ -218,14 +228,16 @@ ModelCompleter* SearchTextBar::completerModel() const
     return d->completer;
 }
 
-void SearchTextBar::slotTextChanged(const QString& text)
+void SearchTextBar::slotTextChanged()
 {
-    if (text.isEmpty())
+    QString txt = text();
+
+    if (txt.isEmpty())
     {
         setPalette(QPalette());
     }
 
-    d->settings.text = text;
+    d->settings.text = txt;
 
     emit signalSearchTextSettings(d->settings);
 }

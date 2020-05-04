@@ -149,7 +149,7 @@ public Q_SLOTS:
 
 private Q_SLOTS:
 
-    void slotTextChanged(const QString&);
+    void slotTextChanged();
 
 protected:
 
