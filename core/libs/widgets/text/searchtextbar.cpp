@@ -98,7 +98,7 @@ SearchTextBar::SearchTextBar(QWidget* const parent, const QString& name, const Q
     setCompleter(d->completer);
 
     d->searchTimer = new QTimer(this);
-    d->searchTimer->setInterval(1000);
+    d->searchTimer->setInterval(500);
     d->searchTimer->setSingleShot(true);
 
     connect(d->searchTimer, SIGNAL(timeout()),
