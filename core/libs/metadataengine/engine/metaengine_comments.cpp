@@ -27,6 +27,7 @@
 
 #include "metaengine_p.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
@@ -42,7 +43,11 @@ bool MetaEngine::canWriteComment(const QString& filePath)
 
     try
     {
+#ifdef Q_OS_WIN
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(reinterpret_cast<const char*>(filePath.utf16()));
+#else
         Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
+#endif
 
         Exiv2::AccessMode mode      = image->checkMode(Exiv2::mdComment);
 
