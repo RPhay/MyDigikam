@@ -305,8 +305,8 @@ TagChangeset::TagChangeset()
 {
 }
 
-TagChangeset::TagChangeset(int albumId, Operation operation)
-    : m_id(albumId),
+TagChangeset::TagChangeset(int tagId, Operation operation)
+    : m_id(tagId),
       m_operation(operation)
 {
 }

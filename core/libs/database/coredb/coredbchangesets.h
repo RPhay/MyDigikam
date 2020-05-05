@@ -296,7 +296,7 @@ public:
 public:
 
     TagChangeset();
-    TagChangeset(int albumId, Operation operation);
+    TagChangeset(int tagId, Operation operation);
 
     int tagId() const;
     Operation operation() const;
