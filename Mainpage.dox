@@ -1102,7 +1102,7 @@ Example to delete the remote 'dplugins' development branch:
 git push origin :development/dplugins
 \endcode
 
-\subsection gitbranches Sync a Branch With Master From Git Repository
+\subsection syncgitbranches Sync a Branch With Master From Git Repository
 
 It typical to use a dedicated developement branch in Git to keep the
 master code stable for production. To synchronize branches with master, use these commands in your
