@@ -53,7 +53,7 @@ extern "C"
 
 // Windows includes
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
 #   include <windows.h>
 #endif
 
@@ -83,8 +83,9 @@ extern "C"
 
 // Local includes
 
-#include "digikam_debug.h"
 #include "dimg.h"
+#include "digikam_debug.h"
+#include "digikam_config.h"
 #include "dimgloaderobserver.h"
 #include "pgfutils.h"
 #include "metaengine.h"
@@ -96,14 +97,9 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 {
     m_observer = observer;
 
-#ifdef Q_OS_WIN32
-#   ifdef UNICODE
+#ifdef Q_OS_WIN
     HANDLE fd = CreateFileW((LPCWSTR)filePath.utf16(), GENERIC_READ | GENERIC_WRITE, 0,
                             NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
-#   else
-    HANDLE fd = CreateFile(QFile::encodeName(filePath).constData(), GENERIC_READ | GENERIC_WRITE, 0,
-                           NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, 0);
-#   endif
 
     if (fd == INVALID_HANDLE_VALUE)
     {
@@ -112,8 +108,9 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         return false;
     }
 
-#elif defined(__POSIX__)
-    int fd = QT_OPEN(QFile::encodeName(filePath).constData(),
+#else
+
+    int fd = QT_OPEN(filePath.toUtf8().constData(),
                      O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 
     if (fd == -1)
@@ -207,7 +204,7 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
         qCDebug(DIGIKAM_DIMG_LOG_PGF) << "PGF mode      = " << header.mode;
         qCDebug(DIGIKAM_DIMG_LOG_PGF) << "Bytes Written = " << nWrittenBytes;
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
         CloseHandle(fd);
 #else
         close(fd);
@@ -236,7 +233,7 @@ bool DImgPGFLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Error: Opening and saving PGF image failed (" << err << ")!";
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
         CloseHandle(fd);
 #else
         close(fd);

@@ -92,7 +92,11 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
     // -------------------------------------------------------------------
     // Open the file
 
-    f = fopen(QFile::encodeName(filePath).constData(), "wb");
+#ifdef Q_OS_WIN
+    f = _wfopen((const wchar_t*)filePath.utf16(), L"wb");
+#else
+    f = fopen(filePath.toUtf8().constData(), "wb");
+#endif
 
     if (!f)
     {

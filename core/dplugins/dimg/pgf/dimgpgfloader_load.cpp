@@ -53,7 +53,7 @@ extern "C"
 
 // Windows includes
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
 #   include <windows.h>
 #endif
 
@@ -83,8 +83,9 @@ extern "C"
 
 // Local includes
 
-#include "digikam_debug.h"
 #include "dimg.h"
+#include "digikam_debug.h"
+#include "digikam_config.h"
 #include "dimgloaderobserver.h"
 #include "pgfutils.h"
 #include "metaengine.h"
@@ -97,7 +98,11 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     m_observer = observer;
     readMetadata(filePath);
 
-    FILE* const file = fopen(QFile::encodeName(filePath).constData(), "rb");
+#ifdef Q_OS_WIN
+    FILE* const file = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
+#else
+    FILE* const file = fopen(filePath.toUtf8().constData(), "rb");
+#endif
 
     if (!file)
     {
@@ -130,12 +135,8 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     // -------------------------------------------------------------------
     // Initialize PGF API.
 
-#ifdef Q_OS_WIN32
-#   ifdef UNICODE
+#ifdef Q_OS_WIN
     HANDLE fd = CreateFileW((LPCWSTR)filePath.utf16(), GENERIC_READ, 0, NULL, OPEN_EXISTING, 0, 0);
-#   else
-    HANDLE fd = CreateFile(QFile::encodeName(filePath).constData(), GENERIC_READ, 0, NULL, OPEN_EXISTING, 0, 0);
-#   endif
 
     if (fd == INVALID_HANDLE_VALUE)
     {
@@ -147,7 +148,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
 #else
 
-    int fd = QT_OPEN(QFile::encodeName(filePath).constData(), O_RDONLY);
+    int fd = QT_OPEN(filePath.toUtf8().constData(), O_RDONLY);
 
     if (fd == -1)
     {
@@ -321,7 +322,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
         imageSetAttribute(QLatin1String("originalBitDepth"),   bitDepth);
         imageSetAttribute(QLatin1String("originalSize"),       originalSize);
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
         CloseHandle(fd);
 #else
         close(fd);
@@ -340,7 +341,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Error: Opening and reading PGF image failed (" << err << ")!";
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
         CloseHandle(fd);
 #else
         close(fd);
@@ -353,7 +354,7 @@ bool DImgPGFLoader::load(const QString& filePath, DImgLoaderObserver* const obse
     {
         qCWarning(DIGIKAM_DIMG_LOG_PGF) << "Failed to allocate memory for loading" << filePath << e.what();
 
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WIN
         CloseHandle(fd);
 #else
         close(fd);

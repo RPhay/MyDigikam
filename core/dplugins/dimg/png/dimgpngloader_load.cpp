@@ -100,7 +100,11 @@ bool DImgPNGLoader::load(const QString& filePath, DImgLoaderObserver* const obse
 
     qCDebug(DIGIKAM_DIMG_LOG_PNG) << "Opening file" << filePath;
 
-    f = fopen(QFile::encodeName(filePath).constData(), "rb");
+#ifdef Q_OS_WIN
+    f = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
+#else
+    f = fopen(filePath.toUtf8().constData(), "rb");
+#endif
 
     if (!f)
     {
