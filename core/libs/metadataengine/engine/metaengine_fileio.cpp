@@ -105,7 +105,7 @@ bool MetaEngine::load(const QString& filePath)
     {
         Exiv2::Image::AutoPtr image;
 #ifdef Q_OS_WIN
-        image        = Exiv2::ImageFactory::open(std::wstring((const wchar_t*)filePath.utf16()));
+        image        = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
 #else
         image        = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
 #endif
@@ -180,7 +180,7 @@ bool MetaEngine::loadFromSidecarAndMerge(const QString& filePath)
                 // Read sidecar data
 
 #ifdef Q_OS_WIN
-                xmpsidecar = Exiv2::ImageFactory::open(std::wstring((const wchar_t*)xmpSidecarPath.utf16()));
+                xmpsidecar = Exiv2::ImageFactory::open((const wchar_t*)xmpSidecarPath.utf16());
 #else
                 xmpsidecar = Exiv2::ImageFactory::open(xmpSidecarPath.toUtf8().constData());
 #endif
