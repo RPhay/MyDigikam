@@ -161,7 +161,7 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
         Exiv2::Image::AutoPtr image;
 #ifdef Q_OS_WIN
         image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
-                                            (const wchar_t*)filePath.utf16());
+                                            std::wstring((const wchar_t*)filePath.utf16()));
 #else
         image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
                                             filePath.toUtf8().constData());
@@ -271,7 +271,7 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
     {
         Exiv2::Image::AutoPtr image;
 #ifdef Q_OS_WIN
-        image = Exiv2::ImageFactory::open((const wchar_t*)finfo.filePath().utf16());
+        image = Exiv2::ImageFactory::open(std::wstring((const wchar_t*)finfo.filePath().utf16()));
 #else
         image = Exiv2::ImageFactory::open(finfo.filePath().toUtf8().constData());
 #endif
