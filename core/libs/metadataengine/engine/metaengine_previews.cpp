@@ -28,7 +28,6 @@
 #include "metaengine_previews.h"
 #include "metaengine_p.h"
 #include "digikam_debug.h"
-#include "digikam_config.h"
 
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
@@ -106,11 +105,7 @@ MetaEnginePreviews::MetaEnginePreviews(const QString& filePath)
 
     try
     {
-#ifdef Q_OS_WIN
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(reinterpret_cast<const char*>(filePath.utf16()));
-#else
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
-#endif
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(QFile::encodeName(filePath).constData());
 
 #if EXIV2_TEST_VERSION(0,27,99)
 

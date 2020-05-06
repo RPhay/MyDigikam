@@ -46,7 +46,6 @@ extern "C"
 // Local includes
 
 #include "digikam_debug.h"
-#include "digikam_config.h"
 #include "metaengine_data_p.h"
 
 // Pragma directives to reduce warnings from Exiv2.
@@ -159,13 +158,8 @@ bool MetaEngine::Private::saveToXMPSidecar(const QFileInfo& finfo) const
     try
     {
         Exiv2::Image::AutoPtr image;
-#ifdef Q_OS_WIN
         image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
-                                            reinterpret_cast<const char*>(filePath.utf16()));
-#else
-        image = Exiv2::ImageFactory::create(Exiv2::ImageType::xmp,
-                                            filePath.toUtf8().constData());
-#endif
+                                            QFile::encodeName(filePath).constData());
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
@@ -270,11 +264,7 @@ bool MetaEngine::Private::saveToFile(const QFileInfo& finfo) const
     try
     {
         Exiv2::Image::AutoPtr image;
-#ifdef Q_OS_WIN
-        image = Exiv2::ImageFactory::open(reinterpret_cast<const char*>(finfo.filePath().utf16()));
-#else
-        image = Exiv2::ImageFactory::open(finfo.filePath().toUtf8().constData());
-#endif
+        image = Exiv2::ImageFactory::open(QFile::encodeName(finfo.filePath()).constData());
 
 #if EXIV2_TEST_VERSION(0,27,99)
 
