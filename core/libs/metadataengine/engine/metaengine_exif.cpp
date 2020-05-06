@@ -37,6 +37,7 @@
 // Local includes
 
 #include "metaengine_rotation.h"
+#include "digikam_config.h"
 #include "digikam_debug.h"
 
 #if defined(Q_CC_CLANG)
@@ -53,7 +54,11 @@ bool MetaEngine::canWriteExif(const QString& filePath)
 
     try
     {
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(QFile::encodeName(filePath).constData());
+#ifdef Q_OS_WIN
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
+#else
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
+#endif
 
         Exiv2::AccessMode mode      = image->checkMode(Exiv2::mdExif);
 
