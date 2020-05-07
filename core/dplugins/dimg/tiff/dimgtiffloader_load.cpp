@@ -71,7 +71,15 @@ bool DImgTIFFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     // -------------------------------------------------------------------
     // Open the file
 
-    TIFF* const tif = TIFFOpen(QFile::encodeName(filePath).constData(), "r");
+#ifdef Q_OS_WIN
+
+    TIFF* const tif = TIFFOpenW((const wchar_t*)filePath.utf16(), "r");
+
+#else
+
+    TIFF* const tif = TIFFOpen(filePath.toUtf8().constData(), "r");
+
+#endif
 
     if (!tif)
     {

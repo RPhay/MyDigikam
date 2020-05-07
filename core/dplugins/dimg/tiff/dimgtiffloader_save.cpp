@@ -39,8 +39,8 @@ extern "C"
 
 // Local includes
 
-#include "digikam_config.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "dimgloaderobserver.h"
 #include "dimgtiffloader.h"     //krazy:exclude=includes
 
@@ -63,7 +63,15 @@ bool DImgTIFFLoader::save(const QString& filePath, DImgLoaderObserver* const obs
     // -------------------------------------------------------------------
     // Open the file
 
-    TIFF* const tif = TIFFOpen(QFile::encodeName(filePath).constData(), "w");
+#ifdef Q_OS_WIN
+
+    TIFF* const tif = TIFFOpenW((const wchar_t*)filePath.utf16(), "w");
+
+#else
+
+    TIFF* const tif = TIFFOpen(filePath.toUtf8().constData(), "w");
+
+#endif
 
     if (!tif)
     {
