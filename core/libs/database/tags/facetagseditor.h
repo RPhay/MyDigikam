@@ -144,6 +144,11 @@ public:
      */
     FaceTagsIface        changeRegion(const FaceTagsIface& face, const TagRegion& newRegion);
 
+    /**
+     * Changes the tag of the given entry. Returns the face with the new Tag.
+     */
+    FaceTagsIface        changeTag(const FaceTagsIface& face, int newTagId);
+
     // --- Utilities ---
 
     QList<FaceTagsIface> databaseFaces(qlonglong imageId, FaceTagsIface::TypeFlags flags)   const;
