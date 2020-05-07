@@ -203,7 +203,6 @@ public Q_SLOTS:
      * the tag needs to be converted from Unconfirmed to Unknown.
      */
     FaceTagsIface editTag(const ItemInfo& info,
-                          const DImg& image,
                           const FaceTagsIface& databaseFace,
                           int newTagId);
 

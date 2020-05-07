@@ -409,7 +409,6 @@ FaceTagsIface FacePipeline::editRegion(const ItemInfo& info,
 }
 
 FaceTagsIface FacePipeline::editTag(const ItemInfo& info,
-                                    const DImg& image,
                                     const FaceTagsIface& databaseFace,
                                     int newTagId)
 {
@@ -418,7 +417,7 @@ FaceTagsIface FacePipeline::editTag(const ItemInfo& info,
     face.assignedRegion                      = TagRegion();
     face.roles                              |= FacePipelineFaceTagsIface::ForEditing;
 
-    FacePipelineExtendedPackage::Ptr package = d->buildPackage(info, face, image);
+    FacePipelineExtendedPackage::Ptr package = d->buildPackage(info, face, DImg());
 
     package->databaseFaces.setRole(FacePipelineFaceTagsIface::ForEditing);
     d->send(package);
