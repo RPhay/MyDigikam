@@ -198,6 +198,16 @@ public Q_SLOTS:
                              const TagRegion& newRegion);
 
     /**
+     * Changes the given face's tagId to newTagId.
+     * Used to Reject Facial Recognition suggestions, since
+     * the tag needs to be converted from Unconfirmed to Unknown.
+     */
+    FaceTagsIface editTag(const ItemInfo& info,
+                          const DImg& image,
+                          const FaceTagsIface& databaseFace,
+                          int newTagId);
+
+    /**
      * Batch processing. If a filter is installed, the skipped() signal
      * will inform about skipped infos. Filtering is done in a thread, returns immediately.
      * Some of the signals below will be emitted in any case.
