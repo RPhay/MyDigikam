@@ -435,6 +435,37 @@ FaceTagsIface FaceTagsEditor::changeRegion(const FaceTagsIface& face, const TagR
     // todo: the Training entry is cleared.
 }
 
+FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId)
+{
+    if(face.isNull() || (face.tagId() == newTagId) || !FaceTags::isPerson(newTagId))
+    {
+        return face;
+    }
+
+    /**
+     * Since a new Tag is going to be assigned to the Face,
+     * it's important to remove the association between
+     * the face and the old tagId.
+     */
+    removeFace(face);
+
+    FaceTagsIface newFace = face;
+    newFace.setTagId(newTagId);
+
+    ItemTagPair newPair(newFace.imageId(), newFace.tagId());
+
+    /**
+     * The new face should be associated with the new tag
+     * only if the new tag corresponds to a person.
+     * Not if the new tag is Unconfirmed or Unknown.
+     */
+    bool isConfirmed = !FaceTags::isTheUnknownPerson(newTagId) && !FaceTags::isTheUnconfirmedPerson(newTagId);
+
+    addFaceAndTag(newPair, newFace, FaceTagsIface::attributesForFlags(newFace.type()), isConfirmed);
+
+    return newFace;
+ }
+
 // --- Editing normal tags ---
 
 void FaceTagsEditor::addNormalTag(qlonglong imageId, int tagId)
