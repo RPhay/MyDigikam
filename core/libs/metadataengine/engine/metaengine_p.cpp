@@ -436,9 +436,19 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
         {
             // Don't touch access and modification timestamp of file.
 
-            QT_STATBUF     st;
-            struct utimbuf ut;
-            int ret = QT_STAT(QFile::encodeName(filePath).constData(), &st);
+#ifdef Q_OS_WIN64
+            struct __utimbuf64 ut;
+            struct __stat64    st;
+            int ret = _wstat64((const wchar_t*)filePath.utf16(), &st);
+#elif defined Q_OS_WIN
+            struct _utimbuf    ut;
+            struct _stat       st;
+            int ret = _wstat((const wchar_t*)filePath.utf16(), &st);
+#else
+            struct utimbuf     ut;
+            QT_STATBUF         st;
+            int ret = QT_STAT(filePath.toUtf8().constData(), &st);
+#endif
 
             if (ret == 0)
             {
@@ -450,7 +460,13 @@ bool MetaEngine::Private::saveOperations(const QFileInfo& finfo, Exiv2::Image::A
 
             if (ret == 0)
             {
-                ::utime(QFile::encodeName(filePath).constData(), &ut);
+#ifdef Q_OS_WIN64
+                _wutime64((const wchar_t*)filePath.utf16(), &ut);
+#elif defined Q_OS_WIN
+                _wutime((const wchar_t*)filePath.utf16(), &ut);
+#else
+                ::utime(filePath.toUtf8().constData(), &ut);
+#endif
             }
 
             qCDebug(DIGIKAM_METAENGINE_LOG) << "File time stamp restored";
