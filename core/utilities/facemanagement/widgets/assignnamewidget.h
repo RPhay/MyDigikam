@@ -150,7 +150,7 @@ Q_SIGNALS:
     void assigned(const TaggingAction& action, const ItemInfo& info, const QVariant& faceIdentifier);
 
     /**
-     * The face has been reject and shall be removed.
+     * The suggestion has been rejected and the face will be moved to Unknown.
      * For convenience, info() and faceIdentifier() are provided.
      */
     void rejected(const ItemInfo& info, const QVariant& faceIdentifier);
