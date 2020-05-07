@@ -198,7 +198,7 @@ void AssignNameWidget::Private::checkWidgets()
             {
                 rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18n("Remove"));
 
-                rejectButton->setToolTip(i18nc("@info:tooltip", "If this is not a face, click to reject it."));
+                rejectButton->setToolTip(i18nc("@info:tooltip", "Reject this suggestion"));
 
                 q->connect(rejectButton, SIGNAL(clicked()),
                            q, SLOT(slotReject()));
