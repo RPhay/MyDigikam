@@ -457,7 +457,7 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
 
     for(int i = 0 ; i < infos.size() ; i++)
     {
-        d->editPipeline.editTag(infos[i], DImg(), faces[i], FaceTags::unknownPersonTagId());
+        d->editPipeline.editTag(infos[i], faces[i], FaceTags::unknownPersonTagId());
     }
 }
 
