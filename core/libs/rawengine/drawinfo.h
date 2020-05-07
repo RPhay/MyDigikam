@@ -56,13 +56,19 @@ public:
 
 public:
 
-    /** Standard constructor */
+    /**
+     * Standard constructor
+     */
     DRawInfo();
 
-    /** Standard destructor */
+    /**
+     * Standard destructor
+     */
     virtual ~DRawInfo();
 
-    /** Return 'true' if container is empty, else 'false' */
+    /**
+     * Return 'true' if container is empty, else 'false'
+     */
     bool isEmpty();
 
 public:

@@ -46,13 +46,13 @@ QString s_rawFileExtensions()
 QMap<QString, QString> s_rawFileExtensionsdWithDesc()
 {
     QMap<QString, QString> map;
+
     // NOTE: extension list Version 1 and 2 are taken from http://www.cybercom.net/~dcoffin/dcraw/rawphoto.c
     //
     //                        Ext                   Descriptions From
     //                                              www.file-extensions.org
     //                                              en.wikipedia.org/wiki/RAW_file_format
     //                                              filext.com
-
 
     // NOTE: VERSION 1
     map.insert(QLatin1String("bay"),  i18n("Casio Digital Camera Raw File Format"));

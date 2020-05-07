@@ -61,7 +61,7 @@ QString ConvertToJp2Plugin::iid() const
 
 QIcon ConvertToJp2Plugin::icon() const
 {
-    return QIcon::fromTheme(QLatin1String("image-jpeg2000"));
+    return QIcon::fromTheme(QLatin1String("image-jpeg"));
 }
 
 QString ConvertToJp2Plugin::description() const

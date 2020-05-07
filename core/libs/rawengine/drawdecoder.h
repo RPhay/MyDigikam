@@ -244,7 +244,7 @@ protected:
     bool                m_cancel;
 
     /**
-     * The settings container used to perform RAW pictures decoding. See 'rawdecodingsetting.h'
+     * The settings container used to perform RAW pictures decoding. See 'drawdecodingsetting.h'
      * for details.
      */
     DRawDecoderSettings m_decoderSettings;
@@ -267,7 +267,7 @@ protected:
 
 public:
 
-    // Declared public to be called externally by callbackForLibRaw() static method.
+    // NOTE: declared public to be called externally by callbackForLibRaw() static method.
     class Private;
 
 private:

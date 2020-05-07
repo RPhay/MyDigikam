@@ -155,9 +155,9 @@ $MXE_INSTALL_PREFIX/qt5/bin/QtWebNetworkProcess.exe \
 $MXE_INSTALL_PREFIX/qt5/bin/QtWebProcess.exe \
 $MXE_INSTALL_PREFIX/qt5/bin/QtWebStorageProcess.exe \
 "
-if [[ $DK_DEBUG = 1 ]] ; then
-    EXE_FILES="$EXE_FILES $MXE_INSTALL_PREFIX/bin/gdb.exe"
-fi
+#if [[ $DK_DEBUG = 1 ]] ; then
+#    EXE_FILES="$EXE_FILES $MXE_INSTALL_PREFIX/bin/gdb.exe"
+#fi
 
 for app in $EXE_FILES ; do
 

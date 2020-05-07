@@ -40,8 +40,8 @@ extern "C"
 
 // Local includes
 
-#include "digikam_config.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "dimgloaderobserver.h"
 
 #ifdef Q_OS_WIN
@@ -53,7 +53,11 @@ namespace DigikamJPEGDImgPlugin
 
 bool DImgJPEGLoader::save(const QString& filePath, DImgLoaderObserver* const observer)
 {
-    FILE* const file = fopen(QFile::encodeName(filePath).constData(), "wb");
+#ifdef Q_OS_WIN
+    FILE* const file = _wfopen((const wchar_t*)filePath.utf16(), L"wb");
+#else
+    FILE* const file = fopen(filePath.toUtf8().constData(), "wb");
+#endif
 
     if (!file)
     {

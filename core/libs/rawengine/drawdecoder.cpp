@@ -23,7 +23,6 @@
  *
  * ============================================================ */
 
-#include "drawdecoder.h"
 #include "drawdecoder_p.h"
 
 // Qt includes
@@ -90,6 +89,7 @@ bool DRawDecoder::loadEmbeddedPreview(QImage& image, const QString& path)
         if (image.loadFromData(imgData))
         {
             qCDebug(DIGIKAM_RAWENGINE_LOG) << "Using embedded RAW preview extraction";
+
             return true;
         }
     }
@@ -119,6 +119,7 @@ bool DRawDecoder::loadEmbeddedPreview(QByteArray& imgData, const QString& path)
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "LibRaw: failed to run open_file: " << libraw_strerror(ret);
         raw->recycle();
         delete raw;
+
         return false;
     }
 
@@ -214,6 +215,7 @@ bool DRawDecoder::loadHalfPreview(QByteArray& imgData, const QString& path)
     if (!Private::loadHalfPreview(image, raw))
     {
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "DRawDecoder: failed to get half preview: " << libraw_strerror(ret);
+
         return false;
     }
 
@@ -281,6 +283,7 @@ bool DRawDecoder::loadFullImage(QImage& image,
     if (!ret)
     {
         qCDebug(DIGIKAM_RAWENGINE_LOG) << "Failled to load full RAW picture";
+
         return false;
     }
 

@@ -28,6 +28,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "digikam_version.h"
 
 #if defined(Q_CC_CLANG)
@@ -103,8 +104,11 @@ bool MetaEngine::load(const QString& filePath)
     try
     {
         Exiv2::Image::AutoPtr image;
-
-        image        = Exiv2::ImageFactory::open((const char*)(QFile::encodeName(filePath)).constData());
+#ifdef Q_OS_WIN
+        image        = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
+#else
+        image        = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
+#endif
 
         image->readMetadata();
 
@@ -175,7 +179,11 @@ bool MetaEngine::loadFromSidecarAndMerge(const QString& filePath)
             {
                 // Read sidecar data
 
-                xmpsidecar = Exiv2::ImageFactory::open(QFile::encodeName(xmpSidecarPath).constData());
+#ifdef Q_OS_WIN
+                xmpsidecar = Exiv2::ImageFactory::open((const wchar_t*)xmpSidecarPath.utf16());
+#else
+                xmpsidecar = Exiv2::ImageFactory::open(xmpSidecarPath.toUtf8().constData());
+#endif
                 xmpsidecar->readMetadata();
 
                 // Merge

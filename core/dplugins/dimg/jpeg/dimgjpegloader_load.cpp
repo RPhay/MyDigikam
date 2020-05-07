@@ -40,8 +40,8 @@ extern "C"
 
 // Local includes
 
-#include "digikam_config.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "dimgloaderobserver.h"
 
 #ifdef Q_OS_WIN
@@ -55,7 +55,11 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
 {
     readMetadata(filePath);
 
-    FILE* const file = fopen(QFile::encodeName(filePath).constData(), "rb");
+#ifdef Q_OS_WIN
+    FILE* const file = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
+#else
+    FILE* const file = fopen(filePath.toUtf8().constData(), "rb");
+#endif
 
     if (!file)
     {

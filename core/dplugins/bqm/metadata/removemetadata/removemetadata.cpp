@@ -51,8 +51,13 @@ public:
     enum RemoveAction
     {
         ALL = 0,
+        GPS,
         DATE,
-        VIDEO
+        EXIF,
+        VIDEO,
+        DUBLIN,
+        DIGIKAM,
+        HISTORY
     };
 
 public:
@@ -92,13 +97,14 @@ RemoveMetadata::~RemoveMetadata()
 
 void RemoveMetadata::registerSettingsWidget()
 {
-    QWidget* const panel    = new QWidget;
-    QGridLayout* const grid = new QGridLayout(panel);
+    QWidget* const panel     = new QWidget;
+    QGridLayout* const grid  = new QGridLayout(panel);
 
     d->removeExif            = new QCheckBox(i18n("Exif:"), panel);
     d->exifComboBox          = new QComboBox(panel);
     d->exifComboBox->addItem(i18n("Completely"), Private::ALL);
     d->exifComboBox->addItem(i18n("Date"),       Private::DATE);
+    d->exifComboBox->addItem(i18n("GPS"),        Private::GPS);
 
     d->removeIptc            = new QCheckBox(i18n("Iptc:"), panel);
     d->iptcComboBox          = new QComboBox(panel);
@@ -107,9 +113,13 @@ void RemoveMetadata::registerSettingsWidget()
 
     d->removeXmp             = new QCheckBox(i18n("Xmp:"), panel);
     d->xmpComboBox           = new QComboBox(panel);
-    d->xmpComboBox->addItem(i18n("Completely"), Private::ALL);
-    d->xmpComboBox->addItem(i18n("Date"),       Private::DATE);
-    d->xmpComboBox->addItem(i18n("Video"),      Private::VIDEO);
+    d->xmpComboBox->addItem(i18n("Completely"),            Private::ALL);
+    d->xmpComboBox->addItem(i18n("Date"),                  Private::DATE);
+    d->xmpComboBox->addItem(i18n("DigiKam"),               Private::DIGIKAM);
+    d->xmpComboBox->addItem(i18n("DigiKam image history"), Private::HISTORY);
+    d->xmpComboBox->addItem(i18n("Dublin Core"),           Private::DUBLIN);
+    d->xmpComboBox->addItem(i18n("Exif"),                  Private::EXIF);
+    d->xmpComboBox->addItem(i18n("Video"),                 Private::VIDEO);
 
     grid->addWidget(d->removeExif,   0, 0, 1, 1);
     grid->addWidget(d->exifComboBox, 0, 1, 1, 2);
@@ -154,10 +164,6 @@ BatchToolSettings RemoveMetadata::defaultSettings()
     settings.insert(QLatin1String("IptcData"),   Private::ALL);
     settings.insert(QLatin1String("XmpData"),    Private::ALL);
 
-    d->exifComboBox->setEnabled(false);
-    d->iptcComboBox->setEnabled(false);
-    d->xmpComboBox->setEnabled(false);
-
     return settings;
 }
 
@@ -197,10 +203,6 @@ void RemoveMetadata::slotSettingsChanged()
         settings.insert(QLatin1String("ExifData"),   d->exifComboBox->currentData().toInt());
         settings.insert(QLatin1String("IptcData"),   d->iptcComboBox->currentData().toInt());
         settings.insert(QLatin1String("XmpData" ),   d->xmpComboBox->currentData().toInt());
-
-        d->exifComboBox->setEnabled(d->removeExif->isChecked());
-        d->iptcComboBox->setEnabled(d->removeIptc->isChecked());
-        d->xmpComboBox->setEnabled(d->removeXmp->isChecked());
 
         BatchTool::slotSettingsChanged(settings);
     }
@@ -254,6 +256,10 @@ bool RemoveMetadata::toolOperations()
             meta.removeExifTag("Exif.Photo.DateTimeOriginal");
             meta.removeExifTag("Exif.Photo.DateTimeDigitized");
         }
+        else if (exifData == Private::GPS)
+        {
+            meta.removeExifTags(QStringList() << QLatin1String("GPSInfo"));
+        }
     }
 
     if (removeIptc)
@@ -287,6 +293,22 @@ bool RemoveMetadata::toolOperations()
             meta.removeXmpTag("Xmp.video.DateTimeOriginal");
             meta.removeXmpTag("Xmp.video.ModificationDate");
             meta.removeXmpTag("Xmp.video.DateUTC");
+        }
+        else if (xmpData == Private::HISTORY)
+        {
+            meta.removeXmpTag("Xmp.digiKam.ImageHistory");
+        }
+        else if (xmpData == Private::DIGIKAM)
+        {
+            meta.removeXmpTags(QStringList() << QLatin1String("digiKam"));
+        }
+        else if (xmpData == Private::DUBLIN)
+        {
+            meta.removeXmpTags(QStringList() << QLatin1String("dc"));
+        }
+        else if (xmpData == Private::EXIF)
+        {
+            meta.removeXmpTags(QStringList() << QLatin1String("exif"));
         }
         else if (xmpData == Private::VIDEO)
         {

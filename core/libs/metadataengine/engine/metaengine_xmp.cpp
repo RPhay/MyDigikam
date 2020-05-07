@@ -27,6 +27,7 @@
 
 #include "metaengine_p.h"
 #include "digikam_debug.h"
+#include "digikam_config.h"
 
 #if defined(Q_CC_CLANG)
 #   pragma clang diagnostic push
@@ -45,8 +46,11 @@ bool MetaEngine::canWriteXmp(const QString& filePath)
 
     try
     {
-        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const char*)
-                                      (QFile::encodeName(filePath).constData()));
+#ifdef Q_OS_WIN
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open((const wchar_t*)filePath.utf16());
+#else
+        Exiv2::Image::AutoPtr image = Exiv2::ImageFactory::open(filePath.toUtf8().constData());
+#endif
 
         Exiv2::AccessMode mode = image->checkMode(Exiv2::mdXmp);
 
