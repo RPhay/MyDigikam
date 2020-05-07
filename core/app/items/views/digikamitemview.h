@@ -73,7 +73,20 @@ public Q_SLOTS:
     bool getFaceMode() const;
     void setFaceMode(bool on);
     void confirmFaces(const QList<QModelIndex>& indexes, int tagId);
+
+    /**
+     * Removes the Face from the Database.
+     * You will have to run Facial Detection again,
+     * to recover the face.
+     */
     void removeFaces(const QList<QModelIndex>& indexes);
+
+    /**
+     * Rejects a particular suggestion of a
+     * Facial Recognition. This would mark the face as
+     * Unknown, instead of deleting it.
+     */
+    void rejectFaces(const QList<QModelIndex>& indexes);
 
     void dragDropSort(const ItemInfo& pick, const QList<ItemInfo>& infos);
 
