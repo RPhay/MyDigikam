@@ -136,8 +136,10 @@ void DatabaseWriter::process(FacePipelineExtendedPackage::Ptr package)
                 else if (it->assignedRegion.isValid())
                 {
                     add << FacePipelineFaceTagsIface(utils.changeRegion(*it, it->assignedRegion));
-
-                    // not implemented: changing tag id
+                }
+                else if (FaceTags::isPerson(it->assignedTagId))
+                {
+                    add << FacePipelineFaceTagsIface(utils.changeTag(*it, it->assignedTagId));
                 }
                 else
                 {
