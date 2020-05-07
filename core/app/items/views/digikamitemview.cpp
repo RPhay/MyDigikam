@@ -429,6 +429,38 @@ void DigikamItemView::removeFaces(const QList<QModelIndex>& indexes)
     }
 }
 
+void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
+{
+    QList<ItemInfo> infos;
+    QList<FaceTagsIface> faces;
+    QList<QModelIndex> sourceIndexes;
+
+    foreach (const QModelIndex& index, indexes)
+    {
+        FaceTagsIface face = d->faceDelegate->face(index);
+
+        /**
+         * Rejecting an already Unknown Face, is a No-Op.
+         * This is a Workaround however, a better approach,
+         * would be to disable the Reject button, for
+         * Delegates on Unknown Faces.
+         */
+        if (!face.isUnknownName())
+        {
+            infos << ItemModel::retrieveItemInfo(index);
+            faces << face;
+            sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
+        }
+    }
+
+    imageAlbumModel()->removeIndexes(sourceIndexes);
+
+    for(int i = 0 ; i < infos.size() ; i++)
+    {
+        d->editPipeline.editTag(infos[i], DImg(), faces[i], FaceTags::unknownPersonTagId());
+    }
+}
+
 void DigikamItemView::activated(const ItemInfo& info, Qt::KeyboardModifiers modifiers)
 {
     if (info.isNull())
