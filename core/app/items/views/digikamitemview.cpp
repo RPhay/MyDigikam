@@ -370,7 +370,7 @@ void DigikamItemView::addAssignNameOverlay(ItemDelegate* delegate)
             this, SLOT(confirmFaces(QList<QModelIndex>,int)));
 
     connect(nameOverlay, SIGNAL(removeFaces(QList<QModelIndex>)),
-            this, SLOT(removeFaces(QList<QModelIndex>)));
+            this, SLOT(rejectFaces(QList<QModelIndex>)));
 }
 
 void DigikamItemView::confirmFaces(const QList<QModelIndex>& indexes, int tagId)
