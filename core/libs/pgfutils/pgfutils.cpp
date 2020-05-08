@@ -169,7 +169,7 @@ bool writePGFImageFile(const QImage& image,
 
 #   ifdef UNICODE
 
-    HANDLE fd = CreateFile((LPCWSTR)(QFile::encodeName(filePath).constData()), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
+    HANDLE fd = CreateFile((LPCWSTR)filePath.utf16(), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
 
 #   else
 
@@ -186,7 +186,7 @@ bool writePGFImageFile(const QImage& image,
 
 #elif defined(__POSIX__)
 
-    int fd = QT_OPEN(QFile::encodeName(filePath).constData(),
+    int fd = QT_OPEN(filePath.toUtf8().constData(),
                      O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 
     if (fd == -1)
@@ -430,7 +430,11 @@ bool writePGFImageDataToStream(const QImage& image,
 
 bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
 {
-    FILE* const file = fopen(QFile::encodeName(path).constData(), "rb");
+#ifdef Q_OS_WIN
+    FILE* const file = _wfopen((const wchar_t*)path.utf16(), L"rb");
+#else
+    FILE* const file = fopen(path.toUtf8().constData(), "rb");
+#endif
 
     if (!file)
     {
@@ -465,7 +469,7 @@ bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
 
 #   ifdef UNICODE
 
-    HANDLE fd = CreateFile((LPCWSTR)(QFile::encodeName(path).constData()), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
+    HANDLE fd = CreateFile((LPCWSTR)path.utf16(), GENERIC_READ, 0, 0, OPEN_EXISTING, 0, 0);
 
 #   else
 
@@ -480,7 +484,7 @@ bool loadPGFScaled(QImage& img, const QString& path, int maximumSize)
 
 #else
 
-    int fd = QT_OPEN(QFile::encodeName(path).constData(), O_RDONLY);
+    int fd = QT_OPEN(path.toUtf8().constData(), O_RDONLY);
 
     if (fd == -1)
     {

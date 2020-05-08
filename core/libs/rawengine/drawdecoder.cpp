@@ -40,6 +40,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "drawfiles.h"
 
 namespace Digikam
@@ -112,7 +113,11 @@ bool DRawDecoder::loadEmbeddedPreview(QByteArray& imgData, const QString& path)
 
     LibRaw* const raw = new LibRaw;
 
-    int ret           = raw->open_file((const char*)(QFile::encodeName(path)).constData());
+#ifdef Q_OS_WIN
+    int ret           = raw->open_file((const wchar_t*)path.utf16());
+#else
+    int ret           = raw->open_file(path.toUtf8().constData());
+#endif
 
     if (ret != LIBRAW_SUCCESS)
     {
@@ -162,7 +167,12 @@ bool DRawDecoder::loadHalfPreview(QImage& image, const QString& path)
     raw->imgdata.params.use_auto_wb   = 1;         // Use automatic white balance.
     raw->imgdata.params.use_camera_wb = 1;         // Use camera white balance, if possible.
     raw->imgdata.params.half_size     = 1;         // Half-size color image (3x faster than -q).
-    int ret                           = raw->open_file((const char*)(QFile::encodeName(path)).constData());
+
+#ifdef Q_OS_WIN
+    int ret                           = raw->open_file((const wchar_t*)path.utf16());
+#else
+    int ret                           = raw->open_file(path.toUtf8().constData());
+#endif
 
     if (ret != LIBRAW_SUCCESS)
     {
@@ -199,7 +209,12 @@ bool DRawDecoder::loadHalfPreview(QByteArray& imgData, const QString& path)
     qCDebug(DIGIKAM_RAWENGINE_LOG) << "Try to use reduced RAW picture extraction";
 
     LibRaw* const raw = new LibRaw;
-    int ret           = raw->open_file((const char*)(QFile::encodeName(path)).constData());
+
+#ifdef Q_OS_WIN
+    int ret           = raw->open_file((const wchar_t*)path.utf16());
+#else
+    int ret           = raw->open_file(path.toUtf8().constData());
+#endif
 
     if (ret != LIBRAW_SUCCESS)
     {
@@ -331,7 +346,12 @@ bool DRawDecoder::rawFileIdentify(DRawInfo& identify, const QString& path)
     }
 
     LibRaw* const raw = new LibRaw;
-    int ret           = raw->open_file((const char*)(QFile::encodeName(path)).constData());
+
+#ifdef Q_OS_WIN
+    int ret           = raw->open_file((const wchar_t*)path.utf16());
+#else
+    int ret           = raw->open_file(path.toUtf8().constData());
+#endif
 
     if (ret != LIBRAW_SUCCESS)
     {
@@ -390,7 +410,11 @@ bool DRawDecoder::extractRAWData(const QString& filePath,
 
     raw->set_progress_handler(callbackForLibRaw, d);
 
-    int ret           = raw->open_file((const char*)(QFile::encodeName(filePath)).constData());
+#ifdef Q_OS_WIN
+    int ret           = raw->open_file((const wchar_t*)filePath.utf16());
+#else
+    int ret           = raw->open_file(filePath.toUtf8().constData());
+#endif
 
     if (ret != LIBRAW_SUCCESS)
     {
