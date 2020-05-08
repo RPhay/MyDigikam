@@ -84,8 +84,6 @@ bool DFileOperations::localFileRename(const QString& source,
 
 #ifndef Q_OS_WIN
 
-    QByteArray dstFileName = QFile::encodeName(dest);
-
     // Store old permissions:
     // Just get the current umask.
 
@@ -103,32 +101,16 @@ bool DFileOperations::localFileRename(const QString& source,
 
     QT_STATBUF stbuf;
 
-    if (QT_STAT(dstFileName.constData(), &stbuf) == 0)
+    if (QT_STAT(dest.toUtf8().constData(), &stbuf) == 0)
     {
         filePermissions = stbuf.st_mode;
     }
 
 #endif // Q_OS_WIN
 
-    QT_STATBUF st;
-
-    if (QT_STAT(QFile::encodeName(source).constData(), &st) == 0)
+    if (!ignoreSettings && !MetaEngineSettings::instance()->settings().updateFileTimeStamp)
     {
-        // See bug #329608: Restore file modification time from original file
-        // only if updateFileTimeStamp for Setup/Metadata is turned off.
-
-        if (!ignoreSettings && !MetaEngineSettings::instance()->settings().updateFileTimeStamp)
-        {
-            struct utimbuf ut;
-            ut.modtime = st.st_mtime;
-            ut.actime  = st.st_atime;
-
-            if (::utime(QFile::encodeName(orgPath).constData(), &ut) != 0)
-            {
-                qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file"
-                                               << dest;
-            }
-        }
+        copyModificationTime(source, orgPath);
     }
 
     // remove dest file if it exist
@@ -149,10 +131,10 @@ bool DFileOperations::localFileRename(const QString& source,
 
     // restore permissions
 
-    if (::chmod(dstFileName.constData(), filePermissions) != 0)
+    if (::chmod(dest.toUtf8().constData(), filePermissions) != 0)
     {
         qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore file permissions for file"
-                                       << dstFileName;
+                                       << dest;
     }
 
 #endif // Q_OS_WIN

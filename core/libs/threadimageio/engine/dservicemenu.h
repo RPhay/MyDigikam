@@ -26,9 +26,9 @@
 
 // Qt includes
 
+#include <QUrl>
 #include <QString>
 #include <QStringList>
-#include <QUrl>
 
 // KDE includes
 
