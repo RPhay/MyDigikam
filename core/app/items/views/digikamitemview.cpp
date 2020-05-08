@@ -440,17 +440,13 @@ void DigikamItemView::rejectFaces(const QList<QModelIndex>& indexes)
         FaceTagsIface face = d->faceDelegate->face(index);
 
         /**
-         * Rejecting an already Unknown Face, is a No-Op.
-         * This is a Workaround however, a better approach,
-         * would be to disable the Reject button, for
-         * Delegates on Unknown Faces.
+         * No need to check whether face corresponds
+         * to Unknown Face or not, since Reject Button
+         * is disabled for Unknown Faces.
          */
-        if (!face.isUnknownName())
-        {
-            infos << ItemModel::retrieveItemInfo(index);
-            faces << face;
-            sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
-        }
+        infos << ItemModel::retrieveItemInfo(index);
+        faces << face;
+        sourceIndexes << imageSortFilterModel()->mapToSourceItemModel(index);
     }
 
     imageAlbumModel()->removeIndexes(sourceIndexes);
