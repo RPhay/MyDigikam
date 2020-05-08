@@ -709,4 +709,5 @@ BUGFIXES:
 689 ==> 420564 - Google SSO auth broken.
 690 ==> 420986 - External picture rating can not be read.
 691 ==> 420978 - Error on new install Failed to update the database schema from version 9 to version 10.
-692 ==> 
+692 ==> 421188 - Buttons in left and right sidebars are not visible except the active one.
+693 ==> 
