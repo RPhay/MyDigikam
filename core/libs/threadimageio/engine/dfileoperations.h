@@ -31,10 +31,6 @@
 #include <QDateTime>
 #include <QUrl>
 
-// KDE includes
-
-#include <kservice.h>
-
 // Local includes
 
 #include "digikam_export.h"
@@ -65,23 +61,6 @@ public:
      * Get unique file url if file exist by appending a counter suffix or return original url.
      */
     static QUrl getUniqueFileUrl(const QUrl& orgUrl, bool* const newurl = nullptr);
-
-    /**
-     * Open file urls with the service.
-     */
-    static bool runFiles(KService* const service, const QList<QUrl>& urls);
-
-    /**
-     * Open file urls with the application command.
-     */
-    static bool runFiles(const QString& appCmd,
-                         const QList<QUrl>& urls,
-                         KService* const service = nullptr);
-
-    /**
-     * Return list of service available on desktop to open files.
-     */
-    static KService::List servicesForOpenWith(const QList<QUrl>& urls);
 
     /**
      * Open system file manager and select the item.

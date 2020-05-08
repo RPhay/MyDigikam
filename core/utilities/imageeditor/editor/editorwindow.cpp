@@ -2534,7 +2534,7 @@ void EditorWindow::customizedFullScreenMode(bool set)
 
 void EditorWindow::addServicesMenuForUrl(const QUrl& url)
 {
-    KService::List offers = DFileOperations::servicesForOpenWith(QList<QUrl>() << url);
+    KService::List offers = DServiceMenu::servicesForOpenWith(QList<QUrl>() << url);
 
     qCDebug(DIGIKAM_GENERAL_LOG) << offers.count() << " services found to open " << url;
 
@@ -2609,7 +2609,7 @@ void EditorWindow::openWith(const QUrl& url, QAction* action)
             // User entered a custom command
             if (!dlg->text().isEmpty())
             {
-                DFileOperations::runFiles(dlg->text(), QList<QUrl>() << url);
+                DServiceMenu::runFiles(dlg->text(), QList<QUrl>() << url);
             }
 
             delete dlg;
@@ -2624,7 +2624,7 @@ void EditorWindow::openWith(const QUrl& url, QAction* action)
         service = d->servicesMap[name];
     }
 
-    DFileOperations::runFiles(service.data(), QList<QUrl>() << url);
+    DServiceMenu::runFiles(service.data(), QList<QUrl>() << url);
 }
 
 void EditorWindow::loadTool(EditorTool* const tool)
