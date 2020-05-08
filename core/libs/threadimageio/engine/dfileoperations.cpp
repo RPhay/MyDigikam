@@ -637,10 +637,8 @@ bool DFileOperations::renameFile(const QString& srcFile,
 bool DFileOperations::copyFile(const QString& srcFile,
                                const QString& dstFile)
 {
-    QT_STATBUF st;
     QString tmpFile;
 
-    int stat = QT_STAT(QFile::encodeName(srcFile).constData(), &st);
     int path = dstFile.lastIndexOf(QLatin1Char('/'));
     int dot  = dstFile.lastIndexOf(QLatin1Char('.'));
     dot      = (path > dot) ? -1 : dot;
@@ -657,20 +655,99 @@ bool DFileOperations::copyFile(const QString& srcFile,
         QFile::remove(tmpFile);
     }
 
-    if (ret && (stat == 0))
+    if (ret)
     {
-        struct utimbuf ut;
-        ut.modtime = st.st_mtime;
-        ut.actime  = st.st_atime;
-
-        if (::utime(QFile::encodeName(dstFile).constData(), &ut) != 0)
-        {
-            qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file"
-                                           << dstFile;
-        }
+        copyModificationTime(srcFile, dstFile);
     }
 
     return ret;
+}
+
+bool DFileOperations::copyModificationTime(const QString& srcFile,
+                                           const QString& dstFile)
+{
+#ifdef Q_OS_WIN64
+    struct __utimbuf64 ut;
+    struct __stat64    st;
+    int ret = _wstat64((const wchar_t*)srcFile.utf16(), &st);
+#elif defined Q_OS_WIN
+    struct _utimbuf    ut;
+    struct _stat       st;
+    int ret = _wstat((const wchar_t*)srcFile.utf16(), &st);
+#else
+    struct utimbuf     ut;
+    QT_STATBUF         st;
+    int ret = QT_STAT(srcFile.toUtf8().constData(), &st);
+#endif
+
+    if (ret == 0)
+    {
+        ut.modtime = st.st_mtime;
+        ut.actime  = st.st_atime;
+
+#ifdef Q_OS_WIN64
+        ret = _wutime64((const wchar_t*)dstFile.utf16(), &ut);
+#elif defined Q_OS_WIN
+        ret = _wutime((const wchar_t*)dstFile.utf16(), &ut);
+#else
+        ret = ::utime(dstFile.toUtf8().constData(), &ut);
+#endif
+    }
+
+    if (ret != 0)
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file"
+                                       << dstFile;
+        return false;
+    }
+
+    return true;
+}
+
+bool DFileOperations::setModificationTime(const QString& srcFile,
+                                          const QDateTime& dateTime)
+{
+    int modtime;
+    QDateTime unixDate;
+    unixDate.setDate(QDate(1970, 1, 1));
+    unixDate.setTime(QTime(0, 0, 0, 0));
+
+    if (dateTime < unixDate)
+    {
+        modtime = -(dateTime.secsTo(unixDate) + (60 * 60));
+    }
+    else
+    {
+        modtime = dateTime.toTime_t();
+    }
+
+ #ifdef Q_OS_WIN64
+    struct __utimbuf64 ut;
+#elif defined Q_OS_WIN
+    struct _utimbuf    ut;
+#else
+    struct utimbuf     ut;
+#endif
+
+    ut.modtime = modtime;
+    ut.actime  = QDateTime::currentDateTime().toTime_t();
+
+#ifdef Q_OS_WIN64
+    int ret    = _wutime64((const wchar_t*)srcFile.utf16(), &ut);
+#elif defined Q_OS_WIN
+    int ret    = _wutime((const wchar_t*)srcFile.utf16(), &ut);
+#else
+    int ret    = ::utime(srcFile.toUtf8().constData(), &ut);
+#endif
+
+    if (ret != 0)
+    {
+        qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to set modification time for file"
+                                       << srcFile;
+        return false;
+    }
+
+    return true;
 }
 
 } // namespace Digikam

@@ -41,15 +41,7 @@
 
 extern "C"
 {
-#ifndef Q_CC_MSVC
-#   include <unistd.h>
-#   include <utime.h>
-#else
-#   include <sys/utime.h>
-#endif
-
 #include <sys/types.h>
-#include <sys/stat.h>
 #include <setjmp.h>
 #include <jpeglib.h>
 }
@@ -92,6 +84,7 @@ extern "C"
 #include "dimg.h"
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "dfileoperations.h"
 #include "metaenginesettings.h"
 #include "filereadwritelock.h"
 
@@ -579,41 +572,17 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
 
     // File properties restoration.
 
-    QT_STATBUF st;
+    // See bug #329608: Restore file modification time from original file
+    // only if updateFileTimeStamp for Setup/Metadata is turned off.
 
-    if (QT_STAT(QFile::encodeName(m_file).constData(), &st) == 0)
+    if (!MetaEngineSettings::instance()->settings().updateFileTimeStamp)
     {
-        // See bug #329608: Restore file modification time from original file
-        // only if updateFileTimeStamp for Setup/Metadata is turned off.
-
-        if (!MetaEngineSettings::instance()->settings().updateFileTimeStamp)
-        {
-            struct utimbuf ut;
-            ut.modtime = st.st_mtime;
-            ut.actime  = st.st_atime;
-
-            if (::utime(QFile::encodeName(fileName).constData(), &ut) != 0)
-            {
-                qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore modification time for file " << fileName;
-            }
-        }
+        DFileOperations::copyModificationTime(m_file, fileName);
 
         // Restore permissions in all cases
 
-#ifndef Q_OS_WIN
-
-        if (::chmod(QFile::encodeName(fileName).constData(), st.st_mode) != 0)
-        {
-            qCWarning(DIGIKAM_GENERAL_LOG) << "Failed to restore file permissions for file " << fileName;
-        }
-
-#else  // Q_OS_WIN
-
         QFile::Permissions permissions = QFile::permissions(m_file);
         QFile::setPermissions(fileName, permissions);
-
-#endif //Q_OS_WIN
-
     }
 }
 

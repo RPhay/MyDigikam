@@ -28,6 +28,7 @@
 
 #include <QString>
 #include <QStringList>
+#include <QDateTime>
 #include <QUrl>
 
 // KDE includes
@@ -111,6 +112,17 @@ public:
      */
     static bool copyFile(const QString& srcFile,
                          const QString& dstFile);
+
+    /**
+     * Copy file modification time from source to destination file.
+     */
+    static bool copyModificationTime(const QString& srcFile,
+                                     const QString& dstFile);
+    /**
+     * Set file modification time from QDateTime.
+     */
+    static bool setModificationTime(const QString& srcFile,
+                                    const QDateTime& dateTime);
 };
 
 } // namespace Digikam
