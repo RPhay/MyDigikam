@@ -50,6 +50,7 @@
 #include "albummanager.h"
 #include "albumtreeview.h"
 #include "facetagsiface.h"
+#include "facetags.h"
 #include "dimg.h"
 #include "iteminfo.h"
 #include "thememanager.h"
