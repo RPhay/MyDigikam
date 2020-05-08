@@ -89,8 +89,9 @@ extern "C"
 
 // Local includes
 
-#include "digikam_debug.h"
 #include "dimg.h"
+#include "digikam_debug.h"
+#include "digikam_config.h"
 #include "metaenginesettings.h"
 #include "filereadwritelock.h"
 
@@ -158,7 +159,11 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
         return false;
     }
 
-    FILE* const inputFile = fopen(QFile::encodeName(path).constData(), "rb");
+#ifdef Q_OS_WIN
+    FILE* const inputFile = _wfopen((const wchar_t*)path.utf16(), L"rb");
+#else
+    FILE* const inputFile = fopen(path.toUtf8().constData(), "rb");
+#endif
 
     if (!inputFile)
     {
@@ -614,9 +619,6 @@ void JpegRotator::updateMetadata(const QString& fileName, const MetaEngineRotati
 
 bool JpegRotator::performJpegTransform(TransformAction action, const QString& src, const QString& dest)
 {
-    QByteArray in                   = QFile::encodeName(src);
-    QByteArray out                  = QFile::encodeName(dest);
-
     JCOPY_OPTION copyoption         = JCOPYOPT_ALL;
     jpeg_transform_info transformoption;
 
@@ -670,7 +672,11 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
     (void)input_file;
     (void)output_file;
 
-    input_file = fopen(in.constData(), "rb");
+#ifdef Q_OS_WIN
+    input_file = _wfopen((const wchar_t*)src.utf16(), L"rb");
+#else
+    input_file = fopen(src.toUtf8().constData(), "rb");
+#endif
 
     if (!input_file)
     {
@@ -678,7 +684,11 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
         return false;
     }
 
-    output_file = fopen(out.constData(), "wb");
+#ifdef Q_OS_WIN
+    output_file = _wfopen((const wchar_t*)dest.utf16(), L"wb");
+#else
+    output_file = fopen(dest.toUtf8().constData(), "wb");
+#endif
 
     if (!output_file)
     {
@@ -870,7 +880,11 @@ int getJpegQuality(const QString& file)
         return quality;
     }
 
-    FILE* const inFile = fopen(QFile::encodeName(file).constData(), "rb");
+#ifdef Q_OS_WIN
+    FILE* const inFile = _wfopen((const wchar_t*)file.utf16(), L"rb");
+#else
+    FILE* const inFile = fopen(file.toUtf8().constData(), "rb");
+#endif
 
     if (!inFile)
     {
