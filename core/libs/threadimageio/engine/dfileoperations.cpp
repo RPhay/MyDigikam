@@ -471,24 +471,33 @@ bool DFileOperations::setModificationTime(const QString& srcFile,
         modtime = dateTime.toTime_t();
     }
 
- #ifdef Q_OS_WIN64
+#ifdef Q_OS_WIN64
     struct __utimbuf64 ut;
+    struct __stat64    st;
+    int ret = _wstat64((const wchar_t*)srcFile.utf16(), &st);
 #elif defined Q_OS_WIN
     struct _utimbuf    ut;
+    struct _stat       st;
+    int ret = _wstat((const wchar_t*)srcFile.utf16(), &st);
 #else
     struct utimbuf     ut;
+    QT_STATBUF         st;
+    int ret = QT_STAT(srcFile.toUtf8().constData(), &st);
 #endif
 
-    ut.modtime = modtime;
-    ut.actime  = QDateTime::currentDateTime().toTime_t();
+    if (ret == 0)
+    {
+        ut.modtime = modtime;
+        ut.actime  = st.st_atime;
 
 #ifdef Q_OS_WIN64
-    int ret    = _wutime64((const wchar_t*)srcFile.utf16(), &ut);
+        int ret    = _wutime64((const wchar_t*)srcFile.utf16(), &ut);
 #elif defined Q_OS_WIN
-    int ret    = _wutime((const wchar_t*)srcFile.utf16(), &ut);
+        int ret    = _wutime((const wchar_t*)srcFile.utf16(), &ut);
 #else
-    int ret    = ::utime(srcFile.toUtf8().constData(), &ut);
+        int ret    = ::utime(srcFile.toUtf8().constData(), &ut);
 #endif
+    }
 
     if (ret != 0)
     {

@@ -99,6 +99,7 @@ public:
                                      const QString& dstFile);
     /**
      * Set file modification time from QDateTime.
+     * Keep access time from source file.
      */
     static bool setModificationTime(const QString& srcFile,
                                     const QDateTime& dateTime);
