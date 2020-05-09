@@ -72,10 +72,10 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
 
     if (!file)
     {
+        qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to open JPEG2000 file";
+
         return false;
     }
-
-    fclose(file);
 
     // -------------------------------------------------------------------
     // Initialize JPEG 2000 API.
@@ -93,14 +93,18 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
     if (init != 0)
     {
         qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to init JPEG2000 decoder";
+        fclose(file);
+
         return false;
     }
 
-    jp2_stream = jas_stream_fopen(QFile::encodeName(filePath).constData(), "wb");
+    jp2_stream = jas_stream_freopen(filePath.toUtf8().constData(), "wb", file);
 
     if (jp2_stream == nullptr)
     {
         qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to open JPEG2000 stream";
+        fclose(file);
+
         return false;
     }
 
@@ -122,8 +126,9 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
 
     if (jp2_image == nullptr)
     {
-        jas_stream_close(jp2_stream);
         qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Unable to create JPEG2000 image";
+        jas_stream_close(jp2_stream);
+
         return false;
     }
 
@@ -192,8 +197,9 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
                 jas_matrix_destroy(pixels[x]);
             }
 
-            jas_image_destroy(jp2_image);
             qCWarning(DIGIKAM_DIMG_LOG_JP2K) << "Error encoding JPEG2000 image data : Memory Allocation Failed";
+            jas_image_destroy(jp2_image);
+
             return false;
         }
     }
@@ -283,6 +289,7 @@ bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const
                 }
 
                 jas_cleanup();
+
                 return false;
             }
         }
