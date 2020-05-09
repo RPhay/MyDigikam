@@ -127,9 +127,13 @@ int DImgJPEGPlugin::canRead(const QFileInfo& fileInfo, bool magic) const
     // In second, we trying to parse file header.
 
 #ifdef Q_OS_WIN
+
     FILE* const f = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
+
 #else
+
     FILE* const f = fopen(filePath.toUtf8().constData(), "rb");
+
 #endif
 
     if (!f)

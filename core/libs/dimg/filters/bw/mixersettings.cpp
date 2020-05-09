@@ -559,9 +559,13 @@ void MixerSettings::loadSettings()
     }
 
 #ifdef Q_OS_WIN
+
     fp = _wfopen((const wchar_t*)loadGainsFileUrl.toLocalFile().utf16(), L"r");
+
 #else
+
     fp = fopen(loadGainsFileUrl.toLocalFile().toUtf8().constData(), "r");
+
 #endif
 
     if (fp)
@@ -645,9 +649,13 @@ void MixerSettings::saveAsSettings()
     }
 
 #ifdef Q_OS_WIN
+
     fp = _wfopen((const wchar_t*)saveGainsFileUrl.toLocalFile().utf16(), L"w");
+
 #else
+
     fp = fopen(saveGainsFileUrl.toLocalFile().toUtf8().constData(), "w");
+
 #endif
 
     if (fp)

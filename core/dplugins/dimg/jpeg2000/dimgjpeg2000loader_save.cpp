@@ -65,9 +65,13 @@ namespace DigikamJPEG2000DImgPlugin
 bool DImgJPEG2000Loader::save(const QString& filePath, DImgLoaderObserver* const observer)
 {
 #ifdef Q_OS_WIN
+
     FILE* const file = _wfopen((const wchar_t*)filePath.utf16(), L"wb");
+
 #else
+
     FILE* const file = fopen(filePath.toUtf8().constData(), "wb");
+
 #endif
 
     if (!file)

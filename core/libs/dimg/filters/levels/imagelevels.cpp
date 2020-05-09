@@ -716,9 +716,13 @@ bool ImageLevels::loadLevelsFromGimpLevelsFile(const QUrl& fileUrl)
     char*   nptr = nullptr;
 
 #ifdef Q_OS_WIN
+
     file = _wfopen((const wchar_t*)fileUrl.toLocalFile().utf16(), L"r");
+
 #else
+
     file = fopen(fileUrl.toLocalFile().toUtf8().constData(), "r");
+
 #endif
 
     if (!file)
@@ -793,9 +797,13 @@ bool ImageLevels::saveLevelsToGimpLevelsFile(const QUrl& fileUrl)
     int   i;
 
 #ifdef Q_OS_WIN
+
     file = _wfopen((const wchar_t*)fileUrl.toLocalFile().utf16(), L"w");
+
 #else
+
     file = fopen(fileUrl.toLocalFile().toUtf8().constData(), "w");
+
 #endif
 
     if (!file)

@@ -153,9 +153,13 @@ bool loadJPEGScaled(QImage& image, const QString& path, int maximumSize)
     }
 
 #ifdef Q_OS_WIN
+
     FILE* const inputFile = _wfopen((const wchar_t*)path.utf16(), L"rb");
+
 #else
+
     FILE* const inputFile = fopen(path.toUtf8().constData(), "rb");
+
 #endif
 
     if (!inputFile)
@@ -642,9 +646,13 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
     (void)output_file;
 
 #ifdef Q_OS_WIN
+
     input_file = _wfopen((const wchar_t*)src.utf16(), L"rb");
+
 #else
+
     input_file = fopen(src.toUtf8().constData(), "rb");
+
 #endif
 
     if (!input_file)
@@ -654,9 +662,13 @@ bool JpegRotator::performJpegTransform(TransformAction action, const QString& sr
     }
 
 #ifdef Q_OS_WIN
+
     output_file = _wfopen((const wchar_t*)dest.utf16(), L"wb");
+
 #else
+
     output_file = fopen(dest.toUtf8().constData(), "wb");
+
 #endif
 
     if (!output_file)
@@ -850,9 +862,13 @@ int getJpegQuality(const QString& file)
     }
 
 #ifdef Q_OS_WIN
+
     FILE* const inFile = _wfopen((const wchar_t*)file.utf16(), L"rb");
+
 #else
+
     FILE* const inFile = fopen(file.toUtf8().constData(), "rb");
+
 #endif
 
     if (!inFile)

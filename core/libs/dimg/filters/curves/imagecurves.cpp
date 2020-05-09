@@ -1184,9 +1184,13 @@ bool ImageCurves::loadCurvesFromGimpCurvesFile(const QUrl& fileUrl)
     int   value[NUM_CHANNELS][NUM_POINTS];
 
 #ifdef Q_OS_WIN
+
     file = _wfopen((const wchar_t*)fileUrl.toLocalFile().utf16(), L"r");
+
 #else
+
     file = fopen(fileUrl.toLocalFile().toUtf8().constData(), "r");
+
 #endif
 
     if (!file)
@@ -1260,9 +1264,13 @@ bool ImageCurves::saveCurvesToGimpCurvesFile(const QUrl& fileUrl) const
     int   index;
 
 #ifdef Q_OS_WIN
+
     file = _wfopen((const wchar_t*)fileUrl.toLocalFile().utf16(), L"w");
+
 #else
+
     file = fopen(fileUrl.toLocalFile().toUtf8().constData(), "w");
+
 #endif
 
     if (!file)
