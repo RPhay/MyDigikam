@@ -710,4 +710,12 @@ BUGFIXES:
 690 ==> 420986 - External picture rating can not be read.
 691 ==> 420978 - Error on new install Failed to update the database schema from version 9 to version 10.
 692 ==> 421188 - Buttons in left and right sidebars are not visible except the active one.
-693 ==> 
+693 ==> 309465 - Failed to load image for XCF files.
+694 ==> 186641 - digiKam: doesn't open XCF files with GIMP
+695 ==> 224697 - Crash with gimp xcf files with metadata.
+696 ==> 250003 - XCF support is needed.
+697 ==> 339152 - Crash when adding XCF file to Digikam collection.
+698 ==> 368444 - Not supporting XCF anymore.
+699 ==> 412339 - Bug report "Gimp 2.10 XCF serious issue".
+700 ==> 
+701 ==> 
