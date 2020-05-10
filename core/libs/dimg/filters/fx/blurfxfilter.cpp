@@ -876,7 +876,7 @@ void BlurFXFilter::shakeBlur(DImg* const orgImage, DImg* const destImage, int Di
 {
     int progress;
 
-    int numBytes = orgImage->numBytes();
+    quint64 numBytes = orgImage->numBytes();
     QScopedArrayPointer<uchar> layer1(new uchar[numBytes]);
     QScopedArrayPointer<uchar> layer2(new uchar[numBytes]);
     QScopedArrayPointer<uchar> layer3(new uchar[numBytes]);
