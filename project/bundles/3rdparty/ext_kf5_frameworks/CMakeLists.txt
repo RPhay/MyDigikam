@@ -31,7 +31,7 @@ function(InstallKF5Component
         )
 
         if(NOT ${wgetresult} MATCHES 0)
-            message(FATAL_ERROR "Cannot download MD5 sum for ${name}!")
+            message(WARNING "Cannot download MD5 sum for ${name}!")
         endif()
 
         message(STATUS "--------------------------------")
@@ -106,7 +106,7 @@ function(InstallKF5Component
         )
 
         if(NOT ${wgetresult} MATCHES 0)
-            message(FATAL_ERROR "Cannot download MD5 sum for ${name}!")
+            message(WARNING "Cannot download MD5 sum for ${name}!")
         endif()
 
         message(STATUS "--------------------------------")
@@ -160,7 +160,7 @@ function(InstallKF5Component
         )
 
         if(NOT ${wgetresult} MATCHES 0)
-            message(FATAL_ERROR "Cannot download MD5 sum for ${name}!")
+            message(WARNING "Cannot download MD5 sum for ${name}!")
         endif()
 
         message(STATUS "--------------------------------")

@@ -66,7 +66,7 @@ function(GetKF5ApplicationMd5Sums
         )
 
         if(NOT ${wgetresult} MATCHES 0)
-            message(FATAL_ERROR "Cannot download MD5 sum for ${name}!")
+            message(WARNING "Cannot download MD5 sum for ${name}!")
         endif()
 
     elseif(APPLE)
@@ -94,7 +94,7 @@ function(GetKF5ApplicationMd5Sums
         )
 
         if(NOT ${wgetresult} MATCHES 0)
-            message(FATAL_ERROR "Cannot download MD5 sum for ${name}!")
+            message(WARNING "Cannot download MD5 sum for ${name}!")
         endif()
 
     else() # Linux
@@ -114,7 +114,7 @@ function(GetKF5ApplicationMd5Sums
         )
 
         if(NOT ${wgetresult} MATCHES 0)
-            message(FATAL_ERROR "Cannot download MD5 sum for ${name}!")
+            message(WARNING "Cannot download MD5 sum for ${name}!")
         endif()
 
     endif()
