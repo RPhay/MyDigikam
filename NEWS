@@ -8,6 +8,7 @@ FaceManagement: Face Scan dialog contents is now simplified and embeded into lef
 SlideShow     : Add new shuffle mode.
 HTMLGallery   : Add new theme "Html5Responsive".
 General       : All bundles have switched to last Qt 5.14.2. Linux and MacOS use QtWebEngine instead QtWebKit.
+General       : All bundles have switched to last KF5 5.70.0. Fix support for Gimp XCF files >= 2.10.
 General       : Add Microsoft Visual C++ support and a Continuous Integration workflow to check code with this compiler.
 General       : Table-view is now able to show digiKam Tag-Paths properties.
 Metadata      : New option to write geolocation data in file metadata.
