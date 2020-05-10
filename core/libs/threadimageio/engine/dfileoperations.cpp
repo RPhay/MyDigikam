@@ -417,17 +417,23 @@ bool DFileOperations::copyModificationTime(const QString& srcFile,
                                            const QString& dstFile)
 {
 #ifdef Q_OS_WIN64
+
     struct __utimbuf64 ut;
     struct __stat64    st;
     int ret = _wstat64((const wchar_t*)srcFile.utf16(), &st);
+
 #elif defined Q_OS_WIN
+
     struct _utimbuf    ut;
     struct _stat       st;
     int ret = _wstat((const wchar_t*)srcFile.utf16(), &st);
+
 #else
+
     struct utimbuf     ut;
     QT_STATBUF         st;
     int ret = QT_STAT(srcFile.toUtf8().constData(), &st);
+
 #endif
 
     if (ret == 0)
@@ -436,11 +442,17 @@ bool DFileOperations::copyModificationTime(const QString& srcFile,
         ut.actime  = st.st_atime;
 
 #ifdef Q_OS_WIN64
+
         ret = _wutime64((const wchar_t*)dstFile.utf16(), &ut);
+
 #elif defined Q_OS_WIN
+
         ret = _wutime((const wchar_t*)dstFile.utf16(), &ut);
+
 #else
+
         ret = ::utime(dstFile.toUtf8().constData(), &ut);
+
 #endif
     }
 
@@ -472,17 +484,23 @@ bool DFileOperations::setModificationTime(const QString& srcFile,
     }
 
 #ifdef Q_OS_WIN64
+
     struct __utimbuf64 ut;
     struct __stat64    st;
     int ret = _wstat64((const wchar_t*)srcFile.utf16(), &st);
+
 #elif defined Q_OS_WIN
+
     struct _utimbuf    ut;
     struct _stat       st;
     int ret = _wstat((const wchar_t*)srcFile.utf16(), &st);
+
 #else
+
     struct utimbuf     ut;
     QT_STATBUF         st;
     int ret = QT_STAT(srcFile.toUtf8().constData(), &st);
+
 #endif
 
     if (ret == 0)
@@ -491,11 +509,17 @@ bool DFileOperations::setModificationTime(const QString& srcFile,
         ut.actime  = st.st_atime;
 
 #ifdef Q_OS_WIN64
-        int ret    = _wutime64((const wchar_t*)srcFile.utf16(), &ut);
+
+        ret        = _wutime64((const wchar_t*)srcFile.utf16(), &ut);
+
 #elif defined Q_OS_WIN
-        int ret    = _wutime((const wchar_t*)srcFile.utf16(), &ut);
+
+        ret        = _wutime((const wchar_t*)srcFile.utf16(), &ut);
+
 #else
-        int ret    = ::utime(srcFile.toUtf8().constData(), &ut);
+
+        ret        = ::utime(srcFile.toUtf8().constData(), &ut);
+
 #endif
     }
 

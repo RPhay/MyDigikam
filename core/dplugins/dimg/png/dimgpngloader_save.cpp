@@ -64,9 +64,13 @@ namespace DigikamPNGDImgPlugin
 {
 
 #if PNG_LIBPNG_VER_MAJOR >= 1 && PNG_LIBPNG_VER_MINOR >= 5
+
 typedef png_bytep iCCP_data;
+
 #else
+
 typedef png_charp iCCP_data;
+
 #endif
 
 bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const observer)
@@ -93,9 +97,13 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
     // Open the file
 
 #ifdef Q_OS_WIN
+
     f = _wfopen((const wchar_t*)filePath.utf16(), L"wb");
+
 #else
+
     f = fopen(filePath.toUtf8().constData(), "wb");
+
 #endif
 
     if (!f)
@@ -171,8 +179,11 @@ bool DImgPNGLoader::save(const QString& filePath, DImgLoaderObserver* const obse
 #if PNG_LIBPNG_VER >= 10400
 
     if (setjmp(png_jmpbuf(png_ptr)))
+
 #else
+
     if (setjmp(png_ptr->jmpbuf))
+
 #endif
     {
         qCWarning(DIGIKAM_DIMG_LOG_PNG) << "Internal libPNG error during writing file. Process aborted!";

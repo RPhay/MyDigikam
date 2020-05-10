@@ -67,9 +67,13 @@ bool DImgJPEG2000Loader::load(const QString& filePath, DImgLoaderObserver* const
     readMetadata(filePath);
 
 #ifdef Q_OS_WIN
+
     FILE* const file = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
+
 #else
+
     FILE* const file = fopen(filePath.toUtf8().constData(), "rb");
+
 #endif
 
     if (!file)

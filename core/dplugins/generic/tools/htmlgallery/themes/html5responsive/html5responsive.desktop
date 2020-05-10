@@ -48,6 +48,7 @@ Name[sl]=Bobulous
 Name[sv]=Bobulous
 Name[uk]=Круглий
 Name[x-test]=xxBobulousxx
+Name[zh_CN]=浆果
 Url=https://www.bobulous.org.uk/
 
 [X-HTMLGallery Preview]
@@ -225,6 +226,7 @@ Name[sl]=Način vrhnje paginacije
 Name[sv]=Övre pagineringsläge
 Name[uk]=Режим нумерації згори
 Name[x-test]=xxTop pagination modexx
+Name[zh_CN]=顶部分页模式
 Type=list
 Default=currentOfTotal
 Value-0=currentOfTotal
@@ -247,6 +249,7 @@ Name[sl]=Način spodnje paginacije
 Name[sv]=Nedre pagineringsläge
 Name[uk]=Режим нумерації знизу
 Name[x-test]=xxBottom pagination modexx
+Name[zh_CN]=底部分页模式
 Type=list
 Default=fullList
 Value-0=currentOfTotal

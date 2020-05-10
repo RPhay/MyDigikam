@@ -717,5 +717,5 @@ BUGFIXES:
 697 ==> 339152 - Crash when adding XCF file to Digikam collection.
 698 ==> 368444 - Not supporting XCF anymore.
 699 ==> 412339 - Bug report "Gimp 2.10 XCF serious issue".
-700 ==> 
+700 ==> 406461 - Can't update from V9 to V10.
 701 ==> 
