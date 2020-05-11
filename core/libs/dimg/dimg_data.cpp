@@ -166,9 +166,15 @@ void DImg::copyImageData(const QExplicitlySharedDataPointer<Private>& src)
 
 size_t DImg::allocateData() const
 {
-    size_t size  = (quint64)m_priv->width  *
+    quint64 size = (quint64)m_priv->width  *
                    (quint64)m_priv->height *
                    (quint64)(m_priv->sixteenBit ? 8 : 4);
+
+    if (size > (quint64)std::numeric_limits<size_t>::max())
+    {
+        return 0;
+    }
+
     m_priv->data = DImgLoader::new_failureTolerant(size);
 
     if (!m_priv->data)
