@@ -719,4 +719,5 @@ BUGFIXES:
 698 ==> 368444 - Not supporting XCF anymore.
 699 ==> 412339 - Bug report "Gimp 2.10 XCF serious issue".
 700 ==> 406461 - Can't update from V9 to V10.
-701 ==> 
+701 ==> 421361 - Removing a keyboard shortcut crashes Digikam.
+702 ==> 
