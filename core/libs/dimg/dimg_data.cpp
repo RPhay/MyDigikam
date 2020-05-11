@@ -172,6 +172,8 @@ size_t DImg::allocateData() const
 
     if (size > (quint64)std::numeric_limits<size_t>::max())
     {
+        m_priv->null = true;
+
         return 0;
     }
 
