@@ -1,6 +1,6 @@
 /* -*- C++ -*-
  * File: libraw_types.h
- * Copyright 2008-2019 LibRaw LLC (info@libraw.org)
+ * Copyright 2008-2020 LibRaw LLC (info@libraw.org)
  * Created: Sat Mar  8 , 2008
  *
  * LibRaw C data structures
@@ -98,7 +98,7 @@ typedef unsigned long long UINT64;
 
   typedef unsigned char uchar;
   typedef unsigned short ushort;
-/*
+
 #ifdef LIBRAW_WIN32_DLLDEFS
 #ifdef LIBRAW_NODLL
 #define DllDef
@@ -110,9 +110,8 @@ typedef unsigned long long UINT64;
 #endif
 #endif
 #else
-*/
 #define DllDef
-//#endif
+#endif
 
   typedef struct
   {
@@ -316,9 +315,11 @@ typedef unsigned long long UINT64;
     int   AFMicroAdjMode;
     float AFMicroAdjValue;
     short MakernotesFlip;
+    short RecordMode;
     short SRAWQuality;
     unsigned wbi;
-    short ColorSpace;
+    float firmware;
+    short RF_lensID;
   } libraw_canon_makernotes_t;
 
   typedef struct
@@ -370,6 +371,9 @@ typedef unsigned long long UINT64;
     ushort DynamicRangeSetting;
     ushort DevelopmentDynamicRange;
     ushort AutoDynamicRange;
+    ushort DRangePriority;
+    ushort DRangePriorityAuto;
+    ushort DRangePriorityFixed;
 
     /*
     tag 0x9200, converted to BrightnessCompensation
@@ -692,6 +696,7 @@ typedef unsigned long long UINT64;
                       7    Never seen
                       8    Name unknown
                       */
+	int ExifColorSpace;
   } libraw_colordata_t;
 
   typedef struct
@@ -744,6 +749,8 @@ typedef unsigned long long UINT64;
     float exifCameraElevationAngle;
     float real_ISO;
     float exifExposureIndex;
+    ushort ColorSpace;
+    char firmware[128];
   } libraw_metadata_common_t;
 
   typedef struct
