@@ -53,7 +53,7 @@ function(GetKF5ApplicationMd5Sums
 
         # Extract MD5 sums of KF5 application directly from server.
         execute_process(COMMAND
-                        wget -q -O - -o /dev/null http://download.kde.org/stable/applications/${version}/src/${name}-${version}.tar.xz.mirrorlist
+                        wget -q -O - -o /dev/null http://download.kde.org/stable/release-service/${version}/src/${name}-${version}.tar.xz.mirrorlist
                         COMMAND
                         grep "MD5 Hash"
                         COMMAND
@@ -73,7 +73,7 @@ function(GetKF5ApplicationMd5Sums
 
         # Extract MD5 sums of KF5 application directly from server.
         execute_process(COMMAND
-                            wget -q -O - -o /dev/null http://download.kde.org/stable/applications/${version}/src/${name}-${version}.tar.xz.mirrorlist
+                            wget -q -O - -o /dev/null http://download.kde.org/stable/release-service/${version}/src/${name}-${version}.tar.xz.mirrorlist
                         COMMAND
                             grep "MD5 Hash"
                         COMMAND
@@ -101,7 +101,7 @@ function(GetKF5ApplicationMd5Sums
 
         # Extract MD5 sums of KF5 application directly from server.
         execute_process(COMMAND
-                        wget -q -O - -o /dev/null http://download.kde.org/stable/applications/${version}/src/${name}-${version}.tar.xz.mirrorlist
+                        wget -q -O - -o /dev/null http://download.kde.org/stable/release-service/${version}/src/${name}-${version}.tar.xz.mirrorlist
                         COMMAND
                         grep "MD5 Hash"
                         COMMAND

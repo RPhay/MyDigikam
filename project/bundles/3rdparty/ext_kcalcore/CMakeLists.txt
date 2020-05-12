@@ -7,7 +7,7 @@
 #
 
 set(EXTPREFIX_kcalcore "${EXTPREFIX}" )
-set(KA_VERSION 19.08.3)
+set(KA_VERSION 20.04.0)
 
 GetKF5ApplicationMd5Sums(kcalcore ${KA_VERSION})
 
@@ -15,7 +15,7 @@ if(MINGW)
     ExternalProject_Add(
         ext_kcalcore
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-        URL http://download.kde.org/stable/applications/${KA_VERSION}/src/kcalcore-${KA_VERSION}.tar.xz
+        URL http://download.kde.org/stable/release-service/${KA_VERSION}/src/kcalcore-${KA_VERSION}.tar.xz
         URL_MD5 ${KF5_APPLICATION_MD5SUM}
         INSTALL_DIR ${EXTPREFIX_kcalcore}
 
@@ -35,7 +35,7 @@ elseif(APPLE)
     ExternalProject_Add(
         ext_kcalcore
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-        URL http://download.kde.org/stable/applications/${KA_VERSION}/src/kcalcore-${KA_VERSION}.tar.xz
+        URL http://download.kde.org/stable/release-service/${KA_VERSION}/src/kcalcore-${KA_VERSION}.tar.xz
         URL_MD5 ${KF5_APPLICATION_MD5SUM}
         INSTALL_DIR ${EXTPREFIX_kcalcore}
 
@@ -56,7 +56,7 @@ else() # Linux
     ExternalProject_Add(
         ext_kcalcore
         DOWNLOAD_DIR ${EXTERNALS_DOWNLOAD_DIR}
-        URL http://download.kde.org/stable/applications/${KA_VERSION}/src/kcalcore-${KA_VERSION}.tar.xz
+        URL http://download.kde.org/stable/release-service/${KA_VERSION}/src/kcalcore-${KA_VERSION}.tar.xz
         URL_MD5 ${KF5_APPLICATION_MD5SUM}
         INSTALL_DIR ${EXTPREFIX_kcalcore}
 
