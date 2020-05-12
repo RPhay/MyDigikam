@@ -198,7 +198,7 @@ public:
     QMap<int, int>              fAlbumsCount;
     // Unconfirmed face counts
     QMap<int, int>              uAlbumsCount;
-    QList<int>                  toUpdatedFaceTags;
+    QList<int>                  toUpdatedFaces;
 
 public:
 

@@ -997,9 +997,9 @@ void AlbumManager::slotImageTagChange(const ImageTagChangeset& changeset)
         {
             foreach (int id, changeset.tags())
             {
-                if (!d->toUpdatedFaceTags.contains(id))
+                if (!d->toUpdatedFaces.contains(id))
                 {
-                    d->toUpdatedFaceTags << id;
+                    d->toUpdatedFaces << id;
                 }
             }
 
