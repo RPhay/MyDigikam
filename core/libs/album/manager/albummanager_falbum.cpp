@@ -108,7 +108,21 @@ void AlbumManager::slotPeopleJobData(const QMap<QString, QMap<int, int> >& faces
         }
     }
 
-    emit signalFaceCountsDirty(d->fAlbumsCount, d->uAlbumsCount);
+    QList<TAlbum*> updateFaceAlbums;
+
+    foreach (int id, d->toUpdatedFaceTags)
+    {
+        TAlbum* const album = findTAlbum(id);
+
+        if (album)
+        {
+            updateFaceAlbums << album;
+        }
+    }
+
+    d->toUpdatedFaceTags.clear();
+
+    emit signalFaceCountsDirty(d->fAlbumsCount, d->uAlbumsCount, updateFaceAlbums);
 }
 
 } // namespace Digikam

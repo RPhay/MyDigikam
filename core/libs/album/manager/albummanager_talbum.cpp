@@ -951,12 +951,6 @@ void AlbumManager::slotTagChange(const TagChangeset& changeset)
 
             break;
 
-        case TagChangeset::Updated:
-            // Start the timer new for fewer events
-            d->scanTAlbumsTimer->start();
-
-            break;
-
         case TagChangeset::Renamed:
         case TagChangeset::IconChanged:
             /**
@@ -966,7 +960,7 @@ void AlbumManager::slotTagChange(const TagChangeset& changeset)
 
         case TagChangeset::PropertiesChanged:
         {
-            TAlbum* tag = findTAlbum(changeset.tagId());
+            TAlbum* const tag = findTAlbum(changeset.tagId());
 
             if (tag)
             {
@@ -1000,6 +994,14 @@ void AlbumManager::slotImageTagChange(const ImageTagChangeset& changeset)
         // Thus, the count of entries in face tags are not
         // updated. This adoption should fix the problem.
         case ImageTagChangeset::PropertiesChanged:
+        {
+            foreach (int id, changeset.tags())
+            {
+                if (!d->toUpdatedFaceTags.contains(id))
+                {
+                    d->toUpdatedFaceTags << id;
+                }
+            }
 
             if (!d->tagItemCountTimer->isActive())
             {
@@ -1007,6 +1009,7 @@ void AlbumManager::slotImageTagChange(const ImageTagChangeset& changeset)
             }
 
             break;
+        }
 
         default:
             break;
