@@ -82,9 +82,15 @@ public Q_SLOTS:
     void removeFaces(const QList<QModelIndex>& indexes);
 
     /**
-     * Rejects a particular suggestion of a
-     * Facial Recognition. This would mark the face as
-     * Unknown, instead of deleting it.
+     * This slot is connected to the reject signal of
+     * AssignNameOverlay, and handles two cases.
+     *
+     * If reject is done on an Unknown Face,
+     * it will mark the face as Ignored.
+     *
+     * If reject is done on Unconfirmed suggestions,
+     * the Suggestion is rejected and the face is
+     * marked as Unknown.
      */
     void rejectFaces(const QList<QModelIndex>& indexes);
 
