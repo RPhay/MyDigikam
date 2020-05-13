@@ -27,11 +27,57 @@
 #include <QCommandLineParser>
 #include <QDir>
 #include <QImage>
+#include <QDebug>
 
 // lib digikam includes
-#include "facedetector.h"
+#include "dnnfacedetectorssd.h"
 
 using namespace Digikam;
+
+QCommandLineParser* parseOptions(const QCoreApplication& app)
+{
+    QCommandLineParser* parser = new QCommandLineParser();
+
+   parser->addOption(QCommandLineOption(QLatin1String("database"), QLatin1String("Faces database"), QLatin1String("path to db folder")));
+   parser->addOption(QCommandLineOption(QLatin1String("split-ratio"), QLatin1String("Split ratio (test set / whole set)"), QLatin1String("decimal")));
+   parser->addOption(QCommandLineOption(QLatin1String("test-set"), QLatin1String("Test set folder"), QLatin1String("path relative to db folder")));
+   parser->addOption(QCommandLineOption(QLatin1String("dev-set"), QLatin1String("Training set (dev set) folder"), QLatin1String("path relative to db folder")));
+   parser->addOption(QCommandLineOption(QLatin1String("nb-label"), QLatin1String("Number of total objects"), QLatin1String("nbIdentities")));
+   parser->addOption(QCommandLineOption(QLatin1String("samples-per-label"), QLatin1String("Number of samples per object"), QLatin1String("nbSamples")));
+   parser->addOption(QCommandLineOption(QLatin1String("allset"), QLatin1String("Option to run test on the entire set")));
+   parser->addHelpOption();
+
+   parser->process(app);
+
+    if (parser->optionNames().empty())
+    {
+        qWarning() << "NO options!!!";
+        return nullptr;
+    }
+    else if (!parser->isSet(QLatin1String("database")))
+    {
+        qWarning() << "MISSING database for test!!!";
+        return nullptr;
+    }
+    else if (!parser->isSet(QLatin1String("allset")) &&
+            (!parser->isSet(QLatin1String("nb-label")) || !parser->isSet(QLatin1String("samples-per-label"))))
+    {
+        qWarning() << "UNKNOWN training set / test set separation!!!";
+        return nullptr;
+    }
+    else if (parser->isSet(QLatin1String("test-set")) && !parser->isSet(QLatin1String("dev-set")))
+    {
+        qWarning() << "UNKNOWN Dev set!!!";
+        return nullptr;
+    }
+    else if (parser->isSet(QLatin1String("dev-set")) && !parser->isSet(QLatin1String("test-set")))
+    {
+        qWarning() << "UNKNOWN Test set!!!";
+        return nullptr;
+    }
+
+    return parser;
+}
 
 
 int main(int argc, char* argv[])
@@ -41,69 +87,32 @@ int main(int argc, char* argv[])
 
     // Options for commandline parser
 
-    QCommandLineParser parser;
-    parser.addOption(QCommandLineOption(QLatin1String("database"), QLatin1String("Faces database"), QLatin1String("path to db folder")));
-    parser.addOption(QCommandLineOption(QLatin1String("split-ratio"), QLatin1String("Split ratio (test set / whole set)"), QLatin1String("decimal")));
-    parser.addOption(QCommandLineOption(QLatin1String("test-set"), QLatin1String("Test set folder"), QLatin1String("path relative to db folder")));
-    parser.addOption(QCommandLineOption(QLatin1String("dev-set"), QLatin1String("Training set (dev set) folder"), QLatin1String("path relative to db folder")));
-    parser.addOption(QCommandLineOption(QLatin1String("nb-label"), QLatin1String("Number of total objects"), QLatin1String("nbIdentities")));
-    parser.addOption(QCommandLineOption(QLatin1String("samples-per-label"), QLatin1String("Number of samples per object"), QLatin1String("nbSamples")));
-    parser.addOption(QCommandLineOption(QLatin1String("allset"), QLatin1String("Option to run test on the entire set")));
-    parser.addHelpOption();
-    parser.process(app);
+   QCommandLineParser* parser = parseOptions(app);
+
+   if (!parser)
+   {
+       parser->showHelp();
+
+       return 1;
+   }
 
     // Parse arguments
 
-    bool optionErrors = false;
-
-    if (parser.optionNames().empty())
-    {
-        qWarning() << "NO options!!!";
-        optionErrors = true;
-    }
-    else if (!parser.isSet(QLatin1String("database")))
-    {
-        qWarning() << "MISSING database for test!!!";
-        optionErrors = true;
-    }
-    else if (!parser.isSet(QLatin1String("allset")) &&
-            (!parser.isSet(QLatin1String("nb-label")) || !parser.isSet(QLatin1String("samples-per-label"))))
-    {
-        qWarning() << "UNKNOWN training set / test set separation!!!";
-        optionErrors = true;
-    }
-    else if (parser.isSet(QLatin1String("test-set")) && !parser.isSet(QLatin1String("dev-set")))
-    {
-        qWarning() << "UNKNOWN Dev set!!!";
-        optionErrors = true;
-    }
-    else if (parser.isSet(QLatin1String("dev-set")) && !parser.isSet(QLatin1String("test-set")))
-    {
-        qWarning() << "UNKNOWN Test set!!!";
-        optionErrors = true;
-    }
-
-    if (optionErrors)
-    {
-        parser.showHelp();
-        return 1;
-    }
-
-    QString facedb              = parser.value(QLatin1String("database"));
+    QString facedb              = parser->value(QLatin1String("database"));
     unsigned int nbOfSamples    = 0;
     unsigned int nbOfIdentities = 0;
 
-    if (!parser.isSet(QLatin1String("allset")))
+    if (!parser->isSet(QLatin1String("allset")))
     {
-        nbOfSamples    = parser.value(QLatin1String("samples-per-label")).toUInt();
-        nbOfIdentities = parser.value(QLatin1String("nb-label")).toUInt();
+        nbOfSamples    = parser->value(QLatin1String("samples-per-label")).toUInt();
+        nbOfIdentities = parser->value(QLatin1String("nb-label")).toUInt();
     }
 
     double ratio = 0;
 
-    if (parser.isSet(QLatin1String("split-ratio")))
+    if (parser->isSet(QLatin1String("split-ratio")))
     {
-        ratio = parser.value(QLatin1String("split-ratio")).toDouble();
+        ratio = parser->value(QLatin1String("split-ratio")).toDouble();
     }
 
     // Init config for digiKam
