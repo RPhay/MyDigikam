@@ -736,4 +736,5 @@ BUGFIXES:
 700 ==> 406461 - Can't update from V9 to V10.
 701 ==> 421361 - Removing a keyboard shortcut crashes Digikam.
 702 ==> 421387 - Camera Leica V-Lux (Typ 114) not supported.
-703 ==> 
+703 ==> 421023 - Face tagging quirky in digiKam 7.0.0-beta3.
+704 ==> 
