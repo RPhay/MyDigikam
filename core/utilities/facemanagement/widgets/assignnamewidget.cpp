@@ -177,21 +177,6 @@ void AssignNameWidget::setUserData(const ItemInfo& info, const QVariant& faceIde
 {
     d->info           = info;
     d->faceIdentifier = faceIdentifier;
-
-    FaceTagsIface face = FaceTagsIface::fromVariant(faceIdentifier);
-
-    /**
-     * You can not reject suggestions on an
-     * Unknown Face.
-     */
-    if(FaceTags::isTheUnknownPerson(face.tagId()))
-    {
-        d->rejectButton->setEnabled(false);
-    }
-    else
-    {
-        d->rejectButton->setEnabled(true);
-    }
 }
 
 ItemInfo AssignNameWidget::info() const
