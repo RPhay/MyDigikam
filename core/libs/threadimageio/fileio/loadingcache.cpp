@@ -197,16 +197,21 @@ DImg* LoadingCache::retrieveImage(const QString& cacheKey) const
 
 bool LoadingCache::putImage(const QString& cacheKey, const DImg& img, const QString& filePath) const
 {
-    int cost                 = img.numBytes();
-    bool successfulyInserted = d->imageCache.insert(cacheKey, new DImg(img), cost);
+    bool isInserted = false;
 
-    if (successfulyInserted && !filePath.isEmpty())
+    if (isCacheable(img))
     {
-        d->mapImageFilePath(filePath, cacheKey);
-        d->fileWatch()->addedImage(filePath);
+        int cost   = img.numBytes() / 1024;
+        isInserted = d->imageCache.insert(cacheKey, new DImg(img), cost);
+
+        if (isInserted && !filePath.isEmpty())
+        {
+            d->mapImageFilePath(filePath, cacheKey);
+            d->fileWatch()->addedImage(filePath);
+        }
     }
 
-    return successfulyInserted;
+    return isInserted;
 }
 
 void LoadingCache::removeImage(const QString& cacheKey)
@@ -223,7 +228,7 @@ bool LoadingCache::isCacheable(const DImg& img) const
 {
     // return whether image fits in cache
 
-    return (uint)d->imageCache.maxCost() >= img.numBytes();
+    return (quint64)d->imageCache.maxCost() >= (img.numBytes() / 1024);
 }
 
 void LoadingCache::addLoadingProcess(LoadingProcess* const process)
@@ -253,7 +258,7 @@ void LoadingCache::notifyNewLoadingProcess(LoadingProcess* const process, const 
 void LoadingCache::setCacheSize(int megabytes)
 {
     qCDebug(DIGIKAM_GENERAL_LOG) << "Allowing a cache size of" << megabytes << "MB";
-    d->imageCache.setMaxCost(megabytes * 1024 * 1024);
+    d->imageCache.setMaxCost(megabytes * 1024);
 }
 
 // --- Thumbnails ----

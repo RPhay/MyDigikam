@@ -61,6 +61,7 @@ extern "C"
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "dfileoperations.h"
 #include "dmetadata.h"
 
 //#define GPHOTO2_DEBUG 1
@@ -1188,15 +1189,12 @@ bool GPCamera::downloadItem(const QString& folder, const QString& itemName,
     time_t mtime;
     errorCode = gp_file_get_mtime(cfile, &mtime);
 
+    file.close();
+
     if (errorCode == GP_OK && mtime)
     {
-        struct utimbuf ut;
-        ut.modtime = mtime;
-        ut.actime  = mtime;
-        ::utime(QFile::encodeName(saveFile).constData(), &ut);
+        DFileOperations::setModificationTime(saveFile, QDateTime::fromTime_t(mtime));
     }
-
-    file.close();
 
     gp_file_unref(cfile);
     return true;

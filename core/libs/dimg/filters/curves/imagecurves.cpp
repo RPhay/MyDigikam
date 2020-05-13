@@ -40,6 +40,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "curvescontainer.h"
 #include "filteraction.h"
 #include "digikam_globals.h"
@@ -1182,7 +1183,15 @@ bool ImageCurves::loadCurvesFromGimpCurvesFile(const QUrl& fileUrl)
     int   index[NUM_CHANNELS][NUM_POINTS];
     int   value[NUM_CHANNELS][NUM_POINTS];
 
-    file = fopen(QFile::encodeName(fileUrl.toLocalFile()).constData(), "r");
+#ifdef Q_OS_WIN
+
+    file = _wfopen((const wchar_t*)fileUrl.toLocalFile().utf16(), L"r");
+
+#else
+
+    file = fopen(fileUrl.toLocalFile().toUtf8().constData(), "r");
+
+#endif
 
     if (!file)
     {
@@ -1254,7 +1263,15 @@ bool ImageCurves::saveCurvesToGimpCurvesFile(const QUrl& fileUrl) const
     int   i, j;
     int   index;
 
-    file = fopen(QFile::encodeName(fileUrl.toLocalFile()).constData(), "w");
+#ifdef Q_OS_WIN
+
+    file = _wfopen((const wchar_t*)fileUrl.toLocalFile().utf16(), L"w");
+
+#else
+
+    file = fopen(fileUrl.toLocalFile().toUtf8().constData(), "w");
+
+#endif
 
     if (!file)
     {

@@ -26,13 +26,10 @@
 
 // Qt includes
 
-#include <QString>
-#include <QStringList>
 #include <QUrl>
-
-// KDE includes
-
-#include <kservice.h>
+#include <QString>
+#include <QDateTime>
+#include <QStringList>
 
 // Local includes
 
@@ -66,23 +63,6 @@ public:
     static QUrl getUniqueFileUrl(const QUrl& orgUrl, bool* const newurl = nullptr);
 
     /**
-     * Open file urls with the service.
-     */
-    static bool runFiles(KService* const service, const QList<QUrl>& urls);
-
-    /**
-     * Open file urls with the application command.
-     */
-    static bool runFiles(const QString& appCmd,
-                         const QList<QUrl>& urls,
-                         KService* const service = nullptr);
-
-    /**
-     * Return list of service available on desktop to open files.
-     */
-    static KService::List servicesForOpenWith(const QList<QUrl>& urls);
-
-    /**
      * Open system file manager and select the item.
      */
     static void openInFileManager(const QList<QUrl>& urls);
@@ -111,6 +91,18 @@ public:
      */
     static bool copyFile(const QString& srcFile,
                          const QString& dstFile);
+
+    /**
+     * Copy file modification time from source to destination file.
+     */
+    static bool copyModificationTime(const QString& srcFile,
+                                     const QString& dstFile);
+    /**
+     * Set file modification time from QDateTime.
+     * Keep access time from source file.
+     */
+    static bool setModificationTime(const QString& srcFile,
+                                    const QDateTime& dateTime);
 };
 
 } // namespace Digikam

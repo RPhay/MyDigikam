@@ -73,7 +73,7 @@ public:
      * Updates the shortcut action for a tag. Call this when a shortcut was
      * added, removed or changed.
      */
-    void updateTagShortcut(int tagId, const QKeySequence& ks);
+    void updateTagShortcut(int tagId, const QKeySequence& ks, bool delAction = true);
 
     QString ratingShortcutPrefix()                  const;
     QString tagShortcutPrefix()                     const;
@@ -106,7 +106,7 @@ private Q_SLOTS:
 private:
 
     bool createTagActionShortcut(int tagId);
-    bool removeTagActionShortcut(int tagId);
+    bool removeTagActionShortcut(int tagId, bool delAction = true);
 
     bool createRatingActionShortcut(KActionCollection* const ac, int rating);
     bool createPickLabelActionShortcut(KActionCollection* const ac, int pickId);
