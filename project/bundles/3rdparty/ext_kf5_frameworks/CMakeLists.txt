@@ -198,11 +198,11 @@ function(InstallKF5Component
 endfunction()
 
 if(MINGW)
-    set(KF5_VERSION 5.70) # we have Qt 5.12.1 available.
+    set(KF5_VERSION 5.70) # we have Qt 5.14.2 available.
 elseif(APPLE)
-    set(KF5_VERSION 5.70) # we have Qt 5.14.0 available.
+    set(KF5_VERSION 5.70) # we have Qt 5.14.1 available.
 else()
-    set(KF5_VERSION 5.70) # we have Qt 5.11.3 available.
+    set(KF5_VERSION 5.70) # we have Qt 5.14.2 available.
 endif()
 
 if(APPLE)
@@ -231,6 +231,7 @@ InstallKF5Component(kconfigwidgets      ${KF5_VERSION} ""                       
 InstallKF5Component(kiconthemes         ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kservice            ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kglobalaccel        ${KF5_VERSION} ""                                                                   "")
+InstallKF5Component(kcalendarcore       ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kxmlgui             ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kbookmarks          ${KF5_VERSION} ""                                                                   "")
 InstallKF5Component(kimageformats       ${KF5_VERSION} ""                                                                   "")
