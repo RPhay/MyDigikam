@@ -243,6 +243,11 @@ bool FaceTags::isTheUnconfirmedPerson(int tagId)
     return TagsCache::instance()->hasProperty(tagId, TagPropertyName::unconfirmedPerson());
 }
 
+bool FaceTags::isTheIgnoredPerson(int tagId)
+{
+    return TagsCache::instance()->hasProperty(tagId, TagPropertyName::ignoredPerson());
+}
+
 QList<int> FaceTags::allPersonTags()
 {
     return TagsCache::instance()->tagsWithProperty(TagPropertyName::person());
@@ -465,6 +470,26 @@ int FaceTags::unconfirmedPersonTagId()
     props.setProperty(TagPropertyName::unconfirmedPerson(), QString()); // special property
 
     return unknownPersonTagId;
+}
+
+int FaceTags::ignoredPersonTagId()
+{
+    QList<int> ids = TagsCache::instance()->tagsWithPropertyCached(TagPropertyName::ignoredPerson());
+
+    if(!ids.isEmpty())
+    {
+        return ids.first();
+    }
+
+    int ignoredPersonTagId = TagsCache::instance()->getOrCreateTag(
+                                        FaceTagsHelper::tagPath(
+                                        i18nc("Ignored tag", "Ignored"),
+                                        personParentTag()));
+    TagProperties props(ignoredPersonTagId);
+    props.setProperty(TagPropertyName::person(), QString());
+    props.setProperty(TagPropertyName::ignoredPerson(), QString());
+
+    return ignoredPersonTagId;
 }
 
 } // Namespace Digikam

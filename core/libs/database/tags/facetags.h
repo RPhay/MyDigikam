@@ -55,6 +55,9 @@ public:
     static bool           isTheUnconfirmedPerson(int tagId);
     static int            unconfirmedPersonTagId();
 
+    static bool           isTheIgnoredPerson(int tagId);
+    static int            ignoredPersonTagId();
+
     /**
      * A method to return a list of all person tags in the DB
      */
