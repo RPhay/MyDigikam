@@ -49,12 +49,13 @@ public:
         InvalidFace      = 0,
         UnknownName      = 1 << 0,
         UnconfirmedName  = 1 << 1,
-        ConfirmedName    = 1 << 2,
-        FaceForTraining  = 1 << 3,
+        IgnoredName      = 1 << 2,
+        ConfirmedName    = 1 << 3,
+        FaceForTraining  = 1 << 4,
 
         UnconfirmedTypes = UnknownName | UnconfirmedName,
-        NormalFaces      = UnknownName | UnconfirmedName | ConfirmedName,
-        AllTypes         = UnknownName | UnconfirmedName | ConfirmedName | FaceForTraining,
+        NormalFaces      = UnknownName | UnconfirmedName | IgnoredName | ConfirmedName,
+        AllTypes         = UnknownName | UnconfirmedName | IgnoredName | ConfirmedName | FaceForTraining,
         TypeFirst        = UnknownName,
         TypeLast         = FaceForTraining
     };
