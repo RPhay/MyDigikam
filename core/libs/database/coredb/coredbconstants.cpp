@@ -151,6 +151,11 @@ QLatin1String TagPropertyName::unconfirmedPerson()
     return QLatin1String("unconfirmedPerson");
 }
 
+QLatin1String TagPropertyName::ignoredPerson()
+{
+    return QLatin1String("ignoredPerson");
+}
+
 QLatin1String TagPropertyName::faceEngineName()
 {
     // kept at its historical value for compatibility
@@ -182,6 +187,11 @@ QLatin1String ImageTagPropertyName::autodetectedFace()
 QLatin1String ImageTagPropertyName::autodetectedPerson()
 {
     return QLatin1String("autodetectedPerson");
+}
+
+QLatin1String ImageTagPropertyName::ignoredFace()
+{
+    return QLatin1String("ignoredFace");
 }
 
 QLatin1String ImageTagPropertyName::faceToTrain()
