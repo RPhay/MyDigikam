@@ -47,17 +47,17 @@ public:
     explicit DigikamItemView(QWidget* const parent = nullptr);
     ~DigikamItemView();
 
-    ItemViewUtilities* utilities()                                                          const;
+    ItemViewUtilities* utilities()                                                           const;
 
     int  fitToWidthIcons();
 
-    virtual void setThumbnailSize(const ThumbnailSize& size)                                      override;
+    virtual void setThumbnailSize(const ThumbnailSize& size)                                 override;
 
-    ItemInfoList allItemInfos(bool grouping = false)                                        const;
-    ItemInfoList selectedItemInfos(bool grouping = false)                                   const;
-    ItemInfoList selectedItemInfosCurrentFirst(bool grouping = false)                       const;
-    bool          allNeedGroupResolving(const ApplicationSettings::OperationType type)      const;
-    bool          selectedNeedGroupResolving(const ApplicationSettings::OperationType type) const;
+    ItemInfoList  allItemInfos(bool grouping = false)                                        const;
+    ItemInfoList  selectedItemInfos(bool grouping = false)                                   const;
+    ItemInfoList  selectedItemInfosCurrentFirst(bool grouping = false)                       const;
+    bool          allNeedGroupResolving(const ApplicationSettings::OperationType type)       const;
+    bool          selectedNeedGroupResolving(const ApplicationSettings::OperationType type)  const;
 
 public Q_SLOTS:
 
