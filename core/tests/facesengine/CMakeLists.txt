@@ -8,6 +8,9 @@ APPLY_COMMON_POLICIES()
 
 kde_enable_exceptions()
 
+add_custom_target(datalink ALL
+                  COMMAND ${CMAKE_COMMAND} -E create_symlink ${CMAKE_CURRENT_SOURCE_DIR}/data ${CMAKE_CURRENT_BINARY_DIR}/data)
+
 # -----------------------------------------------------------------------------
 
 set(detect_SRCS detect.cpp)
@@ -59,6 +62,21 @@ set(facecluster_SRCS face_cluster.cpp)
 add_executable(face_cluster ${facecluster_SRCS})
 
 target_link_libraries(face_cluster
+
+                      digikamcore
+                      digikamgui
+                      digikamfacesengine
+                      digikamdatabase
+
+                      ${COMMON_TEST_LINK}
+)
+
+# -----------------------------------------------------------------------------
+
+set(faceextraction_SRCS benchmark_extraction.cpp)
+add_executable(benchmark_extraction ${faceextraction_SRCS})
+
+target_link_libraries(benchmark_extraction
 
                       digikamcore
                       digikamgui
