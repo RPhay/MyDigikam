@@ -35,7 +35,7 @@
 
 namespace Digikam
 {
-
+// TODO: re-verify these threshold
 float DNNFaceDetectorBase::confidenceThreshold  = 0.6F;
 float DNNFaceDetectorBase::nmsThreshold         = 0.4F;
 
@@ -64,6 +64,7 @@ cv::Size DNNFaceDetectorBase::nnInputSizeRequired() const
     return inputImageSize;
 }
 
+// TODO: these confidence boxes usually go together --> a structure to encapsulate them ???
 void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
                                      float confidence,
                                      int left,
@@ -75,12 +76,12 @@ void DNNFaceDetectorBase::selectBbox(const cv::Size& paddedSize,
                                      std::vector<float>& doubtConfidences,
                                      std::vector<cv::Rect>& doubtBoxes)
 {
-
     int width        = right  - left;
     int height       = bottom - top;
 
     cv::Rect bbox(left, top, width, height);
 
+    // take the net size of image
     int borderLeft   = paddedSize.width;
     int borderRight  = inputImageSize.width  - paddedSize.width;
     int borderTop    = paddedSize.height;
