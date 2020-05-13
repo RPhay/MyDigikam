@@ -89,6 +89,11 @@ public:
         return (type() & UnconfirmedTypes);
     }
 
+    bool      isIgnoredName()                   const
+    {
+        return (type() == IgnoredName);
+    }
+
     bool      isConfirmedName()                 const
     {
         return (type() == ConfirmedName);
