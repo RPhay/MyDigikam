@@ -57,7 +57,8 @@ public:
         VIDEO,
         DUBLIN,
         DIGIKAM,
-        HISTORY
+        HISTORY,
+        XPKEYWORDS
     };
 
 public:
@@ -105,6 +106,7 @@ void RemoveMetadata::registerSettingsWidget()
     d->exifComboBox->addItem(i18n("Completely"), Private::ALL);
     d->exifComboBox->addItem(i18n("Date"),       Private::DATE);
     d->exifComboBox->addItem(i18n("GPS"),        Private::GPS);
+    d->exifComboBox->addItem(i18n("XPKeywords"), Private::XPKEYWORDS);
 
     d->removeIptc            = new QCheckBox(i18n("Iptc:"), panel);
     d->iptcComboBox          = new QComboBox(panel);
@@ -259,6 +261,10 @@ bool RemoveMetadata::toolOperations()
         else if (exifData == Private::GPS)
         {
             meta.removeExifTags(QStringList() << QLatin1String("GPSInfo"));
+        }
+        else if (exifData == Private::XPKEYWORDS)
+        {
+            meta.removeExifTag("Exif.Image.XPKeywords");
         }
     }
 
