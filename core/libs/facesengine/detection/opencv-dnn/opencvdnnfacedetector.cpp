@@ -164,6 +164,7 @@ cv::Mat OpenCVDNNFaceDetector::prepareForDetection(const QString& inputImagePath
 
 cv::Mat OpenCVDNNFaceDetector::prepareForDetection(cv::Mat& cvImage, cv::Size& paddedSize) const
 {
+    // resize image before padding to fit in neural net
     cv::Size inputImageSize = m_inferenceEngine->nnInputSizeRequired();
     float k                 = qMin(inputImageSize.width  * 1.0 / cvImage.cols,
                                    inputImageSize.height * 1.0 / cvImage.rows);
@@ -241,6 +242,7 @@ QList<QRect> OpenCVDNNFaceDetector::detectFaces(const cv::Mat& inputImage,
                                                 const cv::Size& paddedSize)
 {
     std::vector<cv::Rect> detectedBboxes;
+
     m_inferenceEngine->detectFaces(inputImage, paddedSize, detectedBboxes);
 
     QList<QRect> results;
