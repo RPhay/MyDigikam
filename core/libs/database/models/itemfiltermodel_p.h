@@ -68,7 +68,7 @@ public:
     {
     }
 
-    QVector<ItemInfo>     infos;
+    QVector<ItemInfo>      infos;
     QVector<QVariant>      extraValues;
     unsigned int           version;
     bool                   isForReAdd;
