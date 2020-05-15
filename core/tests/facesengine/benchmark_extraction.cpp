@@ -25,56 +25,86 @@
 // Qt includes
 #include <QApplication>
 #include <QCommandLineParser>
+#include <QMainWindow>
+#include <QScrollArea>
+#include <QHBoxLayout>
+#include <QListWidget>
+#include <QListWidgetItem>
 #include <QDir>
 #include <QImage>
 #include <QDebug>
 
 // lib digikam includes
-#include "dnnfacedetectorssd.h"
+#include "facedetector.h"
 
 using namespace Digikam;
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+public:
+    explicit MainWindow(const QDir& directory, QWidget *parent = nullptr);
+    ~MainWindow();
+};
+
+MainWindow::MainWindow(const QDir &directory, QWidget *parent)
+    : QMainWindow(parent)
+{
+    QWidget* const mainWidget = new QWidget;
+
+    QScrollArea* const scrollArea = new QScrollArea;
+    scrollArea->setWidgetResizable(true);
+    scrollArea->setAlignment(Qt::AlignBottom);
+    scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+
+    QHBoxLayout* const layout = new QHBoxLayout(mainWidget);
+    layout->addWidget(scrollArea);
+
+    QListWidget* imageListView = new QListWidget(mainWidget);
+    imageListView->setViewMode(QListView::IconMode);
+    imageListView->setIconSize(QSize(200, 150));
+    imageListView->setResizeMode(QListWidget::Adjust);
+    imageListView->setFlow(QListView::LeftToRight);
+    imageListView->setWrapping(false);
+    //imageListView->setItem
+
+    QStringList subjects = directory.entryList(QDir::Files | QDir::NoDotAndDotDot);
+
+    for (QStringList::const_iterator iter  = subjects.cbegin();
+                                     iter != subjects.cend();
+                                   ++iter)
+    {
+        QString filePath = directory.filePath(*iter);
+        QListWidgetItem* item = new QListWidgetItem(QIcon(filePath), filePath);
+
+        imageListView->addItem(item);
+    }
+
+    scrollArea->setWidget(imageListView);
+
+    setCentralWidget(mainWidget);
+}
+
+MainWindow::~MainWindow()
+{
+}
+
 
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
     QCommandLineParser* parser = new QCommandLineParser();
 
-   parser->addOption(QCommandLineOption(QLatin1String("database"), QLatin1String("Faces database"), QLatin1String("path to db folder")));
-   parser->addOption(QCommandLineOption(QLatin1String("split-ratio"), QLatin1String("Split ratio (test set / whole set)"), QLatin1String("decimal")));
-   parser->addOption(QCommandLineOption(QLatin1String("test-set"), QLatin1String("Test set folder"), QLatin1String("path relative to db folder")));
-   parser->addOption(QCommandLineOption(QLatin1String("dev-set"), QLatin1String("Training set (dev set) folder"), QLatin1String("path relative to db folder")));
-   parser->addOption(QCommandLineOption(QLatin1String("nb-label"), QLatin1String("Number of total objects"), QLatin1String("nbIdentities")));
-   parser->addOption(QCommandLineOption(QLatin1String("samples-per-label"), QLatin1String("Number of samples per object"), QLatin1String("nbSamples")));
-   parser->addOption(QCommandLineOption(QLatin1String("allset"), QLatin1String("Option to run test on the entire set")));
-   parser->addHelpOption();
+    //parser->addOption(QCommandLineOption(QLatin1String("database"), QLatin1String("Faces database"), QLatin1String("path to db folder")));
+    //parser->addOption(QCommandLineOption(QLatin1String("split-ratio"), QLatin1String("Split ratio (test set / whole set)"), QLatin1String("decimal")));
+    parser->addOption(QCommandLineOption(QLatin1String("data-set"), QLatin1String("Data set folder"), QLatin1String("path relative to data folder")));
+    //parser->addOption(QCommandLineOption(QLatin1String("dev-set"), QLatin1String("Training set (dev set) folder"), QLatin1String("path relative to db folder")));
+    //parser->addOption(QCommandLineOption(QLatin1String("nb-label"), QLatin1String("Number of total objects"), QLatin1String("nbIdentities")));
+    //parser->addOption(QCommandLineOption(QLatin1String("samples-per-label"), QLatin1String("Number of samples per object"), QLatin1String("nbSamples")));
+    //parser->addOption(QCommandLineOption(QLatin1String("allset"), QLatin1String("Option to run test on the entire set")));
+    //parser->addHelpOption();
 
-   parser->process(app);
-
-    if (parser->optionNames().empty())
-    {
-        qWarning() << "NO options!!!";
-        return nullptr;
-    }
-    else if (!parser->isSet(QLatin1String("database")))
-    {
-        qWarning() << "MISSING database for test!!!";
-        return nullptr;
-    }
-    else if (!parser->isSet(QLatin1String("allset")) &&
-            (!parser->isSet(QLatin1String("nb-label")) || !parser->isSet(QLatin1String("samples-per-label"))))
-    {
-        qWarning() << "UNKNOWN training set / test set separation!!!";
-        return nullptr;
-    }
-    else if (parser->isSet(QLatin1String("test-set")) && !parser->isSet(QLatin1String("dev-set")))
-    {
-        qWarning() << "UNKNOWN Dev set!!!";
-        return nullptr;
-    }
-    else if (parser->isSet(QLatin1String("dev-set")) && !parser->isSet(QLatin1String("test-set")))
-    {
-        qWarning() << "UNKNOWN Test set!!!";
-        return nullptr;
-    }
+    parser->process(app);
 
     return parser;
 }
@@ -82,39 +112,29 @@ QCommandLineParser* parseOptions(const QCoreApplication& app)
 
 int main(int argc, char* argv[])
 {
-    QCoreApplication app(argc, argv);
+    QApplication app(argc, argv);
     app.setApplicationName(QString::fromLatin1("digikam"));          // for DB init.
 
     // Options for commandline parser
 
    QCommandLineParser* parser = parseOptions(app);
 
-   if (!parser)
+   if (! parser->isSet(QLatin1String("data-set")))
    {
-       parser->showHelp();
+       qWarning("Data set is not set !!!");
 
        return 1;
    }
 
-    // Parse arguments
+   QDir dataset(parser->value(QLatin1String("data-set")));
 
-    QString facedb              = parser->value(QLatin1String("database"));
-    unsigned int nbOfSamples    = 0;
-    unsigned int nbOfIdentities = 0;
+   MainWindow* window = new MainWindow(dataset, nullptr);
 
-    if (!parser->isSet(QLatin1String("allset")))
-    {
-        nbOfSamples    = parser->value(QLatin1String("samples-per-label")).toUInt();
-        nbOfIdentities = parser->value(QLatin1String("nb-label")).toUInt();
-    }
+   window->show();
 
-    double ratio = 0;
-
-    if (parser->isSet(QLatin1String("split-ratio")))
-    {
-        ratio = parser->value(QLatin1String("split-ratio")).toDouble();
-    }
-
-    // Init config for digiKam
-
+   return app.exec();
 }
+
+#include "benchmark_extraction.moc"
+
+

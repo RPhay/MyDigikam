@@ -14,6 +14,7 @@ add_custom_target(datalink ALL
 # -----------------------------------------------------------------------------
 
 set(detect_SRCS detect.cpp)
+
 add_executable(detect ${detect_SRCS})
 
 target_link_libraries(detect
