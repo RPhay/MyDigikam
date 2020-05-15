@@ -179,11 +179,11 @@ bool UndoCache::putData(int level, const DImg& img) const
 
 DImg UndoCache::getData(int level) const
 {
-    uint w          = 0;
-    uint h          = 0;
-    uint numBytes   = 0;
-    bool hasAlpha   = false;
-    bool sixteenBit = false;
+    uint w             = 0;
+    uint h             = 0;
+    quint64 numBytes   = 0;
+    bool    hasAlpha   = false;
+    bool    sixteenBit = false;
 
     QFile file(d->cacheFile(level));
 

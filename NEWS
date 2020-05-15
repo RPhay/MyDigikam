@@ -737,4 +737,5 @@ BUGFIXES:
 701 ==> 421361 - Removing a keyboard shortcut crashes Digikam.
 702 ==> 421387 - Camera Leica V-Lux (Typ 114) not supported.
 703 ==> 421023 - Face tagging quirky in digiKam 7.0.0-beta3.
-704 ==> 
+704 ==> 421560 - Undo not working in ImageEditor RC.
+705 ==> 
