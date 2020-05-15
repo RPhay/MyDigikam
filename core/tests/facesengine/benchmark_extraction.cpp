@@ -59,11 +59,9 @@ private Q_SLOTS:
 
 private:
     FaceDetector m_detector;
+
     QLabel*      m_fullImage;
-
     QListWidget* m_imageListView;
-
-    QHBoxLayout* m_processingLayout;
     QVBoxLayout* m_croppedfaceLayout;
 };
 
@@ -72,14 +70,13 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 {
     setWindowTitle(QLatin1String("Face detection Test"));
 
-    QWidget* const mainWidget = new QWidget;
+    QWidget* const mainWidget = new QWidget(this);
 
     // Image erea
-    QWidget* const imageArea = new QWidget;
+    QWidget* const imageArea = new QWidget(mainWidget);
 
     m_fullImage = new QLabel;
     m_fullImage->setScaledContents(true);
-    m_fullImage->setText(QLatin1String("place holder"));
 
     QScrollArea* facesArea = new QScrollArea(this);
     m_croppedfaceLayout = new QVBoxLayout(facesArea);
@@ -91,35 +88,25 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     spLeft.setVerticalPolicy(QSizePolicy::Expanding);
     m_fullImage->setSizePolicy(spLeft);
 
-    QSizePolicy spMiddle(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    spMiddle.setVerticalPolicy(QSizePolicy::Preferred);
+    QSizePolicy spMiddle(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    spMiddle.setVerticalPolicy(QSizePolicy::Expanding);
     facesArea->setSizePolicy(spMiddle);
 
     QSizePolicy spRight(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    spRight.setVerticalPolicy(QSizePolicy::Preferred);
+    spRight.setVerticalPolicy(QSizePolicy::Expanding);
     metaDataArea->setSizePolicy(spRight);
 
-
-    m_processingLayout = new QHBoxLayout(imageArea);
-    m_processingLayout->addWidget(m_fullImage);
-    m_processingLayout->addWidget(facesArea);
-    //m_processingLayout->addWidget(metaDataArea);
-
-
-
+    QHBoxLayout* processingLayout = new QHBoxLayout(imageArea);
+    processingLayout->addWidget(m_fullImage);
+    processingLayout->addWidget(facesArea);
+    processingLayout->addWidget(metaDataArea);
 
     // Itemlist erea
-    QScrollArea* const scrollArea = new QScrollArea;
-    scrollArea->setWidgetResizable(true);
-    scrollArea->setAlignment(Qt::AlignBottom);
-    scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-
-
-
-
-
-
+    QScrollArea* const itemsArea = new QScrollArea;
+    itemsArea->setWidgetResizable(true);
+    itemsArea->setAlignment(Qt::AlignBottom);
+    itemsArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    itemsArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
     QSizePolicy spHigh(QSizePolicy::Preferred, QSizePolicy::Preferred);
     spHigh.setVerticalPolicy(QSizePolicy::Expanding);
@@ -127,11 +114,11 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 
     QSizePolicy spLow(QSizePolicy::Preferred, QSizePolicy::Preferred);
     spLow.setVerticalPolicy(QSizePolicy::Fixed);
-    scrollArea->setSizePolicy(spLow);
+    itemsArea->setSizePolicy(spLow);
 
     QVBoxLayout* const mainLayout = new QVBoxLayout(mainWidget);
     mainLayout->addWidget(imageArea);
-    mainLayout->addWidget(scrollArea);
+    mainLayout->addWidget(itemsArea);
 
     m_imageListView = new QListWidget(mainWidget);
     m_imageListView->setViewMode(QListView::IconMode);
@@ -156,13 +143,16 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     connect(m_imageListView, &QListWidget::currentItemChanged,
             this,            &MainWindow::slotDetectFaces);
 
-    scrollArea->setWidget(m_imageListView);
+    itemsArea->setWidget(m_imageListView);
 
     setCentralWidget(mainWidget);
 }
 
 MainWindow::~MainWindow()
 {
+    delete m_fullImage;
+    delete m_imageListView;
+    delete m_croppedfaceLayout;
 }
 
 void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
@@ -211,8 +201,8 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
             QRect rectDraw      = FaceDetector::toAbsoluteRect(rr, imgScaled.size());
             QRect r             = FaceDetector::toAbsoluteRect(rr, img.size());
             QImage part         = img.copy(r);
-            label->setPixmap(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 50),
-                                                            qMin(img.size().width(), 50),
+            label->setPixmap(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 100),
+                                                            qMin(img.size().width(), 100),
                                                             Qt::KeepAspectRatio)));
             m_croppedfaceLayout->addWidget(label);
             painter.drawRect(rectDraw);
@@ -235,7 +225,7 @@ QCommandLineParser* parseOptions(const QCoreApplication& app)
     //parser->addOption(QCommandLineOption(QLatin1String("nb-label"), QLatin1String("Number of total objects"), QLatin1String("nbIdentities")));
     //parser->addOption(QCommandLineOption(QLatin1String("samples-per-label"), QLatin1String("Number of samples per object"), QLatin1String("nbSamples")));
     //parser->addOption(QCommandLineOption(QLatin1String("allset"), QLatin1String("Option to run test on the entire set")));
-    //parser->addHelpOption();
+    parser->addHelpOption();
 
     parser->process(app);
 
