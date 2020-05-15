@@ -142,6 +142,11 @@ QString FaceTagsIface::attributeForType(Type type)
         return ImageTagPropertyName::tagRegion();
     }
 
+    if (type == FaceTagsIface::IgnoredName)
+    {
+        return ImageTagPropertyName::ignoredFace();
+    }
+
     if (type == FaceTagsIface::FaceForTraining)
     {
         return ImageTagPropertyName::faceToTrain();
