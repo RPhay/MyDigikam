@@ -321,6 +321,8 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
 
     if (!isHeifSuccess(&error))
     {
+        heif_context_free(heif_context);
+
         return false;
     }
 
@@ -354,6 +356,7 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
             if (!isHeifSuccess(&error))
             {
                 heif_image_handle_release(image_handle);
+                heif_context_free(heif_context);
 
                 return false;
             }
@@ -361,16 +364,23 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
             heif_image_handle_release(image_handle);
             qDebug() << "HEIF preview found in thumbnail chunk";
 
-            return readHEICImageByHandle(thumbnail_handle, heif_image);
+            bool ret = readHEICImageByHandle(thumbnail_handle, heif_image);
+            heif_context_free(heif_context);
+
+            return ret;
         }
     }
 
     if (m_loadFlags & LoadImageData)
     {
-        return readHEICImageByHandle(image_handle, heif_image);
+        bool ret = readHEICImageByHandle(image_handle, heif_image);
+        heif_context_free(heif_context);
+
+        return ret;
     }
 
     heif_image_handle_release(image_handle);
+    heif_context_free(heif_context);
 
     return true;
 }
@@ -431,6 +441,7 @@ bool DImgHEIFLoader::readHEICImageByHandle(struct heif_image_handle* image_handl
     {
         heif_image_release(heif_image);
         heif_image_handle_release(image_handle);
+
         return false;
     }
 

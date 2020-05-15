@@ -738,4 +738,5 @@ BUGFIXES:
 702 ==> 421387 - Camera Leica V-Lux (Typ 114) not supported.
 703 ==> 421023 - Face tagging quirky in digiKam 7.0.0-beta3.
 704 ==> 421560 - Undo not working in ImageEditor RC.
-705 ==> 
+705 ==> 421559 - HEIC: Failed to open the data source: Too many open files (errno = 24).
+706 ==> 
