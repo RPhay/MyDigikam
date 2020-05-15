@@ -7,6 +7,8 @@
  * Description : CLI tool to test and benchmark Face Extractor of face engines
  *
  *
+ * Copyright (C) 2010 by Aditya Bhatt <adityabhatt1991 at gmail dot com>
+ * Copyright (C) 2019 by Thanh Trung Dinh <dinhthanhtrung1996 at gmail dot com>
  * Copyright (C) 2020 by Nghia Duong <minhnghiaduong997 at gmail dot com>
  *
  * This program is free software; you can redistribute it
@@ -62,6 +64,7 @@ private:
     QListWidget* m_imageListView;
 
     QHBoxLayout* m_processingLayout;
+    QVBoxLayout* m_croppedfaceLayout;
 };
 
 MainWindow::MainWindow(const QDir &directory, QWidget *parent)
@@ -78,11 +81,19 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     m_fullImage->setScaledContents(true);
     m_fullImage->setText(QLatin1String("place holder"));
 
+    QScrollArea* facesArea = new QScrollArea(this);
+    m_croppedfaceLayout = new QVBoxLayout(facesArea);
+    facesArea->setLayout(m_croppedfaceLayout);
+
     QWidget* const metaDataArea = new QWidget;
 
     QSizePolicy spLeft(QSizePolicy::Preferred, QSizePolicy::Preferred);
     spLeft.setVerticalPolicy(QSizePolicy::Expanding);
     m_fullImage->setSizePolicy(spLeft);
+
+    QSizePolicy spMiddle(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    spMiddle.setVerticalPolicy(QSizePolicy::Preferred);
+    facesArea->setSizePolicy(spMiddle);
 
     QSizePolicy spRight(QSizePolicy::Preferred, QSizePolicy::Preferred);
     spRight.setVerticalPolicy(QSizePolicy::Preferred);
@@ -91,6 +102,7 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 
     m_processingLayout = new QHBoxLayout(imageArea);
     m_processingLayout->addWidget(m_fullImage);
+    m_processingLayout->addWidget(facesArea);
     //m_processingLayout->addWidget(metaDataArea);
 
 
@@ -129,9 +141,6 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     m_imageListView->setWrapping(false);
     m_imageListView->setDragEnabled(false);
 
-    connect(m_imageListView, &QListWidget::currentItemChanged,
-            this,            &MainWindow::slotDetectFaces);
-
     QStringList subjects = directory.entryList(QDir::Files | QDir::NoDotAndDotDot);
 
     for (QStringList::const_iterator iter  = subjects.cbegin();
@@ -143,6 +152,9 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 
         m_imageListView->addItem(item);
     }
+
+    connect(m_imageListView, &QListWidget::currentItemChanged,
+            this,            &MainWindow::slotDetectFaces);
 
     scrollArea->setWidget(m_imageListView);
 
@@ -170,36 +182,41 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
 
     qDebug() << "(Input CV) Found " << faces.size() << " faces, in " << elapsedDetection << "ms";
 
-    if (faces.isEmpty())
+    // clear faces layout
+    QLayoutItem *wItem;
+    while ((wItem = m_croppedfaceLayout->takeAt(0)) != nullptr)
     {
-        qDebug() << "No faces found";
-        return;
+        delete wItem->widget();
+        delete wItem;
     }
 
-    qDebug() << "Coordinates of detected faces : ";
-
-    foreach (const QRectF& r, faces)
+    if (! faces.isEmpty())
     {
-        qDebug() << r;
-    }
+        qDebug() << "Coordinates of detected faces : ";
 
-    QPainter painter(&imgScaled);
-    QPen paintPen(Qt::green);
-    paintPen.setWidth(1);
-    painter.setPen(paintPen);
+        foreach (const QRectF& r, faces)
+        {
+            qDebug() << r;
+        }
 
-    foreach (const QRectF& rr, faces)
-    {
-        QLabel* const label = new QLabel;
-        label->setScaledContents(false);
-        QRect rectDraw      = FaceDetector::toAbsoluteRect(rr, imgScaled.size());
-        QRect r             = FaceDetector::toAbsoluteRect(rr, img.size());
-        QImage part         = img.copy(r);
-        label->setPixmap(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 50),
-                                                        qMin(img.size().width(), 50),
-                                                        Qt::KeepAspectRatio)));
-        m_processingLayout->addWidget(label);
-        painter.drawRect(rectDraw);
+        QPainter painter(&imgScaled);
+        QPen paintPen(Qt::green);
+        paintPen.setWidth(1);
+        painter.setPen(paintPen);
+
+        foreach (const QRectF& rr, faces)
+        {
+            QLabel* const label = new QLabel;
+            label->setScaledContents(false);
+            QRect rectDraw      = FaceDetector::toAbsoluteRect(rr, imgScaled.size());
+            QRect r             = FaceDetector::toAbsoluteRect(rr, img.size());
+            QImage part         = img.copy(r);
+            label->setPixmap(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 50),
+                                                            qMin(img.size().width(), 50),
+                                                            Qt::KeepAspectRatio)));
+            m_croppedfaceLayout->addWidget(label);
+            painter.drawRect(rectDraw);
+        }
     }
 
     // Only setPixmap after finishing drawing bboxes around detected faces
