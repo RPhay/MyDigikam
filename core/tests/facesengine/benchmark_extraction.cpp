@@ -28,10 +28,12 @@
 #include <QMainWindow>
 #include <QScrollArea>
 #include <QHBoxLayout>
+#include <QVBoxLayout>
 #include <QListWidget>
 #include <QListWidgetItem>
 #include <QDir>
 #include <QImage>
+#include <QLabel>
 #include <QDebug>
 
 // lib digikam includes
@@ -52,13 +54,26 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 {
     QWidget* const mainWidget = new QWidget;
 
+    QLabel* const fullImage = new QLabel;
+    fullImage->setScaledContents(false);
+
     QScrollArea* const scrollArea = new QScrollArea;
     scrollArea->setWidgetResizable(true);
     scrollArea->setAlignment(Qt::AlignBottom);
     scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
 
-    QHBoxLayout* const layout = new QHBoxLayout(mainWidget);
+
+    QSizePolicy spHigh(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    spHigh.setVerticalPolicy(QSizePolicy::Expanding);
+    fullImage->setSizePolicy(spHigh);
+
+    QSizePolicy spLow(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    spLow.setVerticalPolicy(QSizePolicy::Fixed);
+    scrollArea->setSizePolicy(spLow);
+
+    QVBoxLayout* const layout = new QVBoxLayout(mainWidget);
+    layout->addWidget(fullImage);
     layout->addWidget(scrollArea);
 
     QListWidget* imageListView = new QListWidget(mainWidget);
@@ -67,7 +82,6 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     imageListView->setResizeMode(QListWidget::Adjust);
     imageListView->setFlow(QListView::LeftToRight);
     imageListView->setWrapping(false);
-    //imageListView->setItem
 
     QStringList subjects = directory.entryList(QDir::Files | QDir::NoDotAndDotDot);
 
