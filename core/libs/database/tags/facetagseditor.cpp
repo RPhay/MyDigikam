@@ -451,14 +451,32 @@ FaceTagsIface FaceTagsEditor::changeTag(const FaceTagsIface& face, int newTagId)
     FaceTagsIface newFace = face;
     newFace.setTagId(newTagId);
 
+    if      (FaceTags::isTheUnknownPerson(newTagId))
+    {
+        newFace.setType(FaceTagsIface::UnknownName);
+    }
+    else if (FaceTags::isTheUnconfirmedPerson(newTagId))
+    {
+        newFace.setType(FaceTagsIface::UnconfirmedName);
+    }
+    else if (FaceTags::isTheIgnoredPerson(newTagId))
+    {
+        newFace.setType(FaceTagsIface::IgnoredName);
+    }
+    else
+    {
+        newFace.setType(FaceTagsIface::ConfirmedName);
+    }
+
     ItemTagPair newPair(newFace.imageId(), newFace.tagId());
 
     /**
      * The new face should be associated with the new tag
-     * only if the new tag corresponds to a person.
-     * Not if the new tag is Unconfirmed or Unknown.
+     * only if the new tag corresponds to a Confirmed Person.
      */
-    bool isConfirmed = !FaceTags::isTheUnknownPerson(newTagId) && !FaceTags::isTheUnconfirmedPerson(newTagId);
+    bool isConfirmed = !FaceTags::isTheUnknownPerson(newTagId)     &&
+                       !FaceTags::isTheUnconfirmedPerson(newTagId) &&
+                       !FaceTags::isTheIgnoredPerson(newTagId);
 
     addFaceAndTag(newPair, newFace, FaceTagsIface::attributesForFlags(newFace.type()), isConfirmed);
 
