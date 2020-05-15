@@ -476,7 +476,7 @@ int FaceTags::ignoredPersonTagId()
 {
     QList<int> ids = TagsCache::instance()->tagsWithPropertyCached(TagPropertyName::ignoredPerson());
 
-    if(!ids.isEmpty())
+    if (!ids.isEmpty())
     {
         return ids.first();
     }
