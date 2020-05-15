@@ -483,7 +483,7 @@ int FaceTags::ignoredPersonTagId()
 
     int ignoredPersonTagId = TagsCache::instance()->getOrCreateTag(
                                         FaceTagsHelper::tagPath(
-                                        i18nc("Ignored tag", "Ignored"),
+                                        i18nc("List of detected faces that need not be recognized", "Ignored"),
                                         personParentTag()));
     TagProperties props(ignoredPersonTagId);
     props.setProperty(TagPropertyName::person(), QString());
