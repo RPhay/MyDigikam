@@ -120,7 +120,10 @@ bool DImgHEIFLoader::load(const QString& filePath, DImgLoaderObserver* const obs
         return false;
     }
 
-    return (readHEICImageByID(heif_context, primary_image_id));
+    bool ret = readHEICImageByID(heif_context, primary_image_id);
+    heif_context_free(heif_context);
+
+    return ret;
 }
 
 bool DImgHEIFLoader::readHEICColorProfile(struct heif_image_handle* const image_handle)
@@ -322,7 +325,6 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
     if (!isHeifSuccess(&error))
     {
         loadingFailed();
-        heif_context_free(heif_context);
 
         return false;
     }
@@ -358,7 +360,6 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
             {
                 loadingFailed();
                 heif_image_handle_release(image_handle);
-                heif_context_free(heif_context);
 
                 return false;
             }
@@ -366,23 +367,16 @@ bool DImgHEIFLoader::readHEICImageByID(struct heif_context* const heif_context,
             heif_image_handle_release(image_handle);
             qDebug() << "HEIF preview found in thumbnail chunk";
 
-            bool ret = readHEICImageByHandle(thumbnail_handle, heif_image);
-            heif_context_free(heif_context);
-
-            return ret;
+            return readHEICImageByHandle(thumbnail_handle, heif_image);
         }
     }
 
     if (m_loadFlags & LoadImageData)
     {
-        bool ret = readHEICImageByHandle(image_handle, heif_image);
-        heif_context_free(heif_context);
-
-        return ret;
+        return readHEICImageByHandle(image_handle, heif_image);
     }
 
     heif_image_handle_release(image_handle);
-    heif_context_free(heif_context);
 
     return true;
 }
