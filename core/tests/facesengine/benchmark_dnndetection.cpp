@@ -163,7 +163,10 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
     unsigned int elapsedDetection = 0;
 
     timer.start();
-    QList<QRectF> faces = m_detector.detectFaces(imagePath);
+
+    // NOTE detection with filePath won't work when format is not standard
+    // NOTE unexpected behaviour with detecFaces(const QString&)
+    QList<QRectF> faces = m_detector.detectFaces(img, img.size());
 
     elapsedDetection = timer.elapsed();
 
@@ -249,6 +252,6 @@ int main(int argc, char* argv[])
    return app.exec();
 }
 
-#include "benchmark_extraction.moc"
+#include "benchmark_dnndetection.moc"
 
 
