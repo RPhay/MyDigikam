@@ -74,10 +74,10 @@ target_link_libraries(face_cluster
 
 # -----------------------------------------------------------------------------
 
-set(faceextraction_SRCS benchmark_extraction.cpp)
-add_executable(benchmark_extraction ${faceextraction_SRCS})
+set(dnndetection_SRCS benchmark_dnndetection.cpp)
+add_executable(benchmark_dnndetection ${dnndetection_SRCS})
 
-target_link_libraries(benchmark_extraction
+target_link_libraries(benchmark_dnndetection
 
                       digikamcore
                       digikamgui
