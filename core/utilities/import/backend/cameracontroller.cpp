@@ -28,6 +28,7 @@
 
 // Qt includes
 
+#include <QApplication>
 #include <QMutex>
 #include <QWaitCondition>
 #include <QVariant>

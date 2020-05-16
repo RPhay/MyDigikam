@@ -24,18 +24,6 @@
 
 #include "timeadjusttask.h"
 
-// C ANSI includes
-
-extern "C"
-{
-#ifndef Q_CC_MSVC
-#   include <unistd.h>
-#   include <utime.h>
-#else
-#   include <sys/utime.h>
-#endif
-}
-
 // Qt includes
 
 #include <QFile>
@@ -46,6 +34,7 @@ extern "C"
 #include "dmetadata.h"
 #include "digikam_debug.h"
 #include "dinfointerface.h"
+#include "dfileoperations.h"
 #include "timeadjustlist.h"
 #include "timeadjustthread.h"
 #include "metaenginesettings.h"
@@ -314,24 +303,7 @@ void TimeAdjustTask::run()
 
     if (d->settings.updFileModDate)
     {
-        // Since QFileInfo does not support timestamp updates,
-        // we have to use the utime() system call.
-
-        int modtime;
-        QDateTime unixDate;
-        unixDate.setDate(QDate(1970, 1, 1));
-        unixDate.setTime(QTime(0, 0, 0, 0));
-
-        if (dt < unixDate)
-            modtime = -(dt.secsTo(unixDate) + (60 * 60));
-        else
-            modtime = dt.toTime_t();
-
-        struct utimbuf ut;
-        ut.modtime = modtime;
-        ut.actime  = QDateTime::currentDateTime().toTime_t();
-
-        if (::utime(QFile::encodeName(d->url.toLocalFile()).constData(), &ut) != 0)
+        if (!DFileOperations::setModificationTime(d->url.toLocalFile(), dt))
         {
             status |= TimeAdjustList::FILE_TIME_ERROR;
         }
@@ -339,18 +311,9 @@ void TimeAdjustTask::run()
 
     if (writeToSidecar && DMetadata::hasSidecar(d->url.toLocalFile()))
     {
-        QT_STATBUF st;
-
-        if (QT_STAT(QFile::encodeName(d->url.toLocalFile()).constData(), &st) == 0)
+        if (!DFileOperations::copyModificationTime(d->url.toLocalFile(), DMetadata::sidecarPath(d->url.toLocalFile())))
         {
-            struct utimbuf ut;
-            ut.modtime = st.st_mtime;
-            ut.actime  = st.st_atime;
-
-            if (::utime(QFile::encodeName(DMetadata::sidecarPath(d->url.toLocalFile())).constData(), &ut) != 0)
-            {
-                status |= TimeAdjustList::FILE_TIME_ERROR;
-            }
+            status |= TimeAdjustList::FILE_TIME_ERROR;
         }
     }
 

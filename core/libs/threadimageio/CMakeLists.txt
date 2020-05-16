@@ -8,6 +8,7 @@
 APPLY_COMMON_POLICIES()
 
 set(libthreadimageio_SRCS
+    engine/dservicemenu.cpp
     engine/dfileoperations.cpp
     engine/filereadwritelock.cpp
     engine/managedloadsavethread.cpp

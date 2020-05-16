@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 086b1b7..a9331f0 100644
+index 23e3f8c..432a549 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -46,13 +46,13 @@ find_package(KF5I18n ${KF5_VERSION} REQUIRED)
+@@ -44,13 +44,13 @@ find_package(KF5I18n ${KF5_VERSION} REQUIRED)
  
  if (NOT WIN32)
      find_package(KF5WidgetsAddons ${KF5_VERSION} REQUIRED)
@@ -20,12 +20,12 @@ index 086b1b7..a9331f0 100644
 +#    )
  
      # Check if sane API is available.
-     find_package(Sane)
+     find_package(Sane REQUIRED)
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index f5d1101..022dc92 100644
+index ce116aa..29aa535 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -54,7 +54,7 @@ target_link_libraries(KF5Sane
+@@ -56,7 +56,7 @@ target_link_libraries(KF5Sane
  
          KF5::I18n
          KF5::WidgetsAddons
@@ -35,7 +35,7 @@ index f5d1101..022dc92 100644
  )
  
 diff --git a/src/widgets/labeledslider.cpp b/src/widgets/labeledslider.cpp
-index 8ce9ddc..48c43e0 100644
+index 78abcbf..369a57c 100644
 --- a/src/widgets/labeledslider.cpp
 +++ b/src/widgets/labeledslider.cpp
 @@ -32,10 +32,11 @@
@@ -70,10 +70,20 @@ index 8ce9ddc..48c43e0 100644
  
  void LabeledSlider::setValue(int value)
 diff --git a/src/widgets/labeledslider.h b/src/widgets/labeledslider.h
-index 838c53e..927b3be 100644
+index 4d7cd8c..282971f 100644
 --- a/src/widgets/labeledslider.h
 +++ b/src/widgets/labeledslider.h
-@@ -95,7 +95,7 @@ Q_SIGNALS:
+@@ -31,7 +31,8 @@
+ 
+ #include "ksaneoptionwidget.h"
+ 
+-class QSlider;
++#include <QSlider>
++#include <QSpinBox>
+ 
+ /**
+   *@author Kåre Särs
+@@ -94,7 +95,7 @@ Q_SIGNALS:
  
  private:
      QSlider   *m_slider;

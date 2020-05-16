@@ -56,9 +56,13 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     readMetadata(filePath);
 
 #ifdef Q_OS_WIN
+
     FILE* const file = _wfopen((const wchar_t*)filePath.utf16(), L"rb");
+
 #else
+
     FILE* const file = fopen(filePath.toUtf8().constData(), "rb");
+
 #endif
 
     if (!file)
@@ -227,20 +231,7 @@ bool DImgJPEGLoader::load(const QString& filePath, DImgLoaderObserver* const obs
     jpeg_create_decompress(&cinfo);
     bool startedDecompress = false;
 
-#ifdef Q_OS_WIN
-    QFile inFile(filePath);
-    QByteArray buffer;
-
-    if (inFile.open(QIODevice::ReadOnly))
-    {
-        buffer = inFile.readAll();
-        inFile.close();
-    }
-
-    JPEGUtils::jpeg_memory_src(&cinfo, (JOCTET*)buffer.data(), buffer.size());
-#else
     jpeg_stdio_src(&cinfo, file);
-#endif
 
     // Recording ICC profile marker (from iccjpeg.c)
     if (m_loadFlags & LoadICCData)

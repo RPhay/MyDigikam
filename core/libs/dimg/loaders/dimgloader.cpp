@@ -83,7 +83,7 @@ unsigned char*& DImgLoader::imageData()
     return m_image->m_priv->data;
 }
 
-unsigned int DImgLoader::imageNumBytes() const
+quint64 DImgLoader::imageNumBytes() const
 {
     return m_image->numBytes();
 }

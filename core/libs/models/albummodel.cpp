@@ -170,10 +170,31 @@ void TagModel::setTagCount(TagCountMode mode)
     else
     {
         connect(AlbumManager::instance(), &AlbumManager::signalFaceCountsDirty,
-                [=](const QMap<int, int> &faceCount, const QMap<int, int>& unconfirmedFaceCount)
+                [=](const QMap<int, int>& faceCount,
+                    const QMap<int, int>& uFaceCount,
+                    const QList<int>& toUpdatedFaces)
         {
             setCountMap(faceCount);
-            m_unconfirmedFaceCount = unconfirmedFaceCount;
+            m_unconfirmedFaceCount = uFaceCount;
+
+            foreach (int id, toUpdatedFaces)
+            {
+                Album* const album = albumForId(id);
+
+                if (!album)
+                {
+                    continue;
+                }
+
+                QModelIndex index = indexForAlbum(album);
+
+                if (!index.isValid())
+                {
+                    continue;
+                }
+
+                emit dataChanged(index, index);
+            }
         });
 
         setCountMap(AlbumManager::instance()->getFaceCount());

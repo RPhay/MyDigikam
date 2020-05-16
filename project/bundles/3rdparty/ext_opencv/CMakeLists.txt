@@ -149,6 +149,7 @@ else() #Linux
 
         INSTALL_DIR ${EXTPREFIX_opencv}
 
+        # To fix broken compilation under Linux 32 bits
         PATCH_COMMAND ${PATCH_COMMAND} -p1 -i ${CMAKE_CURRENT_SOURCE_DIR}/opencv-mmpause-linux.patch
 
         CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${EXTPREFIX_opencv}
