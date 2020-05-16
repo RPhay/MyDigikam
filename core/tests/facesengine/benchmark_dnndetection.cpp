@@ -48,6 +48,7 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 public:
+
     explicit MainWindow(const QDir& directory, QWidget *parent = nullptr);
     ~MainWindow();
 
@@ -57,9 +58,14 @@ private Q_SLOTS:
 
 private:
 
+    void showCVMat(const cv::Mat& cvimage);
+
+private:
+
     OpenCVDNNFaceDetector* m_detector;
 
     QLabel*                m_fullImage;
+    QLabel*                m_paddedImage;
     QListWidget*           m_imageListView;
     QVBoxLayout*           m_croppedfaceLayout;
 };
@@ -79,28 +85,37 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     m_fullImage = new QLabel;
     m_fullImage->setScaledContents(true);
 
+    m_paddedImage = new QLabel;
+    m_paddedImage->setScaledContents(true);
+
     QScrollArea* facesArea = new QScrollArea(this);
     m_croppedfaceLayout = new QVBoxLayout(facesArea);
     facesArea->setLayout(m_croppedfaceLayout);
 
-    QWidget* const metaDataArea = new QWidget;
+    QWidget* const controlPanel = new QWidget;
 
-    QSizePolicy spLeft(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    spLeft.setVerticalPolicy(QSizePolicy::Expanding);
-    m_fullImage->setSizePolicy(spLeft);
+    QSizePolicy spImage(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    spImage.setVerticalPolicy(QSizePolicy::Expanding);
+    m_fullImage->setSizePolicy(spImage);
 
-    QSizePolicy spMiddle(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    spMiddle.setVerticalPolicy(QSizePolicy::Expanding);
-    facesArea->setSizePolicy(spMiddle);
+    QSizePolicy spPadded(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    spPadded.setVerticalPolicy(QSizePolicy::Expanding);
+    m_paddedImage->setSizePolicy(spPadded);
 
-    QSizePolicy spRight(QSizePolicy::Preferred, QSizePolicy::Preferred);
-    spRight.setVerticalPolicy(QSizePolicy::Expanding);
-    metaDataArea->setSizePolicy(spRight);
+
+    QSizePolicy spFaces(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    spFaces.setVerticalPolicy(QSizePolicy::Expanding);
+    facesArea->setSizePolicy(spFaces);
+
+    QSizePolicy spControl(QSizePolicy::Preferred, QSizePolicy::Preferred);
+    spControl.setVerticalPolicy(QSizePolicy::Expanding);
+    controlPanel->setSizePolicy(spControl);
 
     QHBoxLayout* processingLayout = new QHBoxLayout(imageArea);
     processingLayout->addWidget(m_fullImage);
+    processingLayout->addWidget(m_paddedImage);
     processingLayout->addWidget(facesArea);
-    processingLayout->addWidget(metaDataArea);
+    processingLayout->addWidget(controlPanel);
 
     // Itemlist erea
     QScrollArea* const itemsArea = new QScrollArea;
@@ -152,6 +167,7 @@ MainWindow::MainWindow(const QDir &directory, QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete m_fullImage;
+    delete m_paddedImage;
     delete m_imageListView;
     delete m_croppedfaceLayout;
 }
@@ -163,23 +179,29 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
     QImage img(imagePath);
     QImage imgScaled(img.scaled(416, 416, Qt::KeepAspectRatio));
 
-    QElapsedTimer timer;
-    unsigned int elapsedDetection = 0;
-
-    timer.start();
-
     // NOTE detection with filePath won't work when format is not standard
     // NOTE unexpected behaviour with detecFaces(const QString&)
     QList<QRectF> faces;
 
     try
     {
+        QElapsedTimer timer;
+        unsigned int elapsedDetection = 0;
+        timer.start();
+
         cv::Size paddedSize(0, 0);
         cv::Mat cvImage       = m_detector->prepareForDetection(img, paddedSize);
         QList<QRect> absRects = m_detector->detectFaces(cvImage, paddedSize);
         faces                 = FaceDetector::toRelativeRects(absRects,
                                                               QSize(cvImage.cols - 2*paddedSize.width,
                                                               cvImage.rows - 2*paddedSize.height));
+        elapsedDetection = timer.elapsed();
+
+
+        // debug padded image
+        showCVMat(cvImage);
+
+        qDebug() << "(Input CV) Found " << absRects.size() << " faces, in " << elapsedDetection << "ms";
     }
     catch (cv::Exception& e)
     {
@@ -189,10 +211,6 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
     {
         qWarning() << "Default exception from OpenCV";
     }
-
-    elapsedDetection = timer.elapsed();
-
-    qDebug() << "(Input CV) Found " << faces.size() << " faces, in " << elapsedDetection << "ms";
 
     // clear faces layout
     QLayoutItem *wItem;
@@ -233,6 +251,21 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
 
     // Only setPixmap after finishing drawing bboxes around detected faces
     m_fullImage->setPixmap(QPixmap::fromImage(imgScaled));
+}
+
+
+void MainWindow::showCVMat(const cv::Mat& cvimage)
+{
+    if(cvimage.cols*cvimage.rows)
+    {
+        cv::Mat rgb;
+        QPixmap p;
+        cv::cvtColor(cvimage, rgb, (-2*cvimage.channels()+10));
+        p.convertFromImage(QImage(rgb.data, rgb.cols, rgb.rows, QImage::Format_RGB888));
+
+        m_paddedImage->setPixmap(p);
+        //resize(cvimage.cols, cvimage.rows);
+    }
 }
 
 
