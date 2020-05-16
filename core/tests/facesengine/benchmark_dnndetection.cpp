@@ -39,6 +39,7 @@
 #include <QDebug>
 
 // lib digikam includes
+#include "opencvdnnfacedetector.h"
 #include "facedetector.h"
 
 using namespace Digikam;
@@ -55,17 +56,20 @@ private Q_SLOTS:
     void slotDetectFaces(const QListWidgetItem* imageItem);
 
 private:
-    FaceDetector m_detector;
 
-    QLabel*      m_fullImage;
-    QListWidget* m_imageListView;
-    QVBoxLayout* m_croppedfaceLayout;
+    OpenCVDNNFaceDetector* m_detector;
+
+    QLabel*                m_fullImage;
+    QListWidget*           m_imageListView;
+    QVBoxLayout*           m_croppedfaceLayout;
 };
 
 MainWindow::MainWindow(const QDir &directory, QWidget *parent)
     : QMainWindow(parent)
 {
     setWindowTitle(QLatin1String("Face detection Test"));
+
+    m_detector = new OpenCVDNNFaceDetector(DetectorNNModel::SSDMOBILENET);
 
     QWidget* const mainWidget = new QWidget(this);
 
@@ -166,7 +170,25 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
 
     // NOTE detection with filePath won't work when format is not standard
     // NOTE unexpected behaviour with detecFaces(const QString&)
-    QList<QRectF> faces = m_detector.detectFaces(img, img.size());
+    QList<QRectF> faces;
+
+    try
+    {
+        cv::Size paddedSize(0, 0);
+        cv::Mat cvImage       = m_detector->prepareForDetection(img, paddedSize);
+        QList<QRect> absRects = m_detector->detectFaces(cvImage, paddedSize);
+        faces                 = FaceDetector::toRelativeRects(absRects,
+                                                              QSize(cvImage.cols - 2*paddedSize.width,
+                                                              cvImage.rows - 2*paddedSize.height));
+    }
+    catch (cv::Exception& e)
+    {
+        qWarning() << "cv::Exception:" << e.what();
+    }
+    catch(...)
+    {
+        qWarning() << "Default exception from OpenCV";
+    }
 
     elapsedDetection = timer.elapsed();
 
@@ -217,10 +239,8 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
 QCommandLineParser* parseOptions(const QCoreApplication& app)
 {
     QCommandLineParser* parser = new QCommandLineParser();
-
     parser->addOption(QCommandLineOption(QLatin1String("data-set"), QLatin1String("Data set folder"), QLatin1String("path relative to data folder")));
     parser->addHelpOption();
-
     parser->process(app);
 
     return parser;
