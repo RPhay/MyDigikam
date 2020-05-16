@@ -168,6 +168,10 @@ FaceTagsIface::Type FaceTagsIface::typeForAttribute(const QString& attribute, in
             return FaceTagsIface::UnconfirmedName;
         }
     }
+    else if (attribute == ImageTagPropertyName::ignoredFace())
+    {
+        return FaceTagsIface::IgnoredName;
+    }
     else if (attribute == ImageTagPropertyName::tagRegion())
     {
         return FaceTagsIface::ConfirmedName;
