@@ -207,6 +207,25 @@ void AssignNameWidget::Private::checkWidgets()
             break;
         }
 
+        case IgnoredMode:
+        {
+            if (!confirmButton)
+            {
+                confirmButton = createToolButton(QIcon::fromTheme(QLatin1String("dialog-ok-apply")), i18n("Ok"));
+                confirmButton->setToolTip(i18nc("@info:tooltip", "Unmark this face as Ignored"));
+                q->connect(confirmButton, SIGNAL(clicked()),
+                           q, SLOT(slotReject()));
+            }
+
+            if(!rejectButton)
+            {
+                rejectButton = createToolButton(QIcon::fromTheme(QLatin1String("list-remove")), i18n("Reject"));
+                rejectButton->setEnabled(false);
+            }
+
+            break;
+        }
+
         case ConfirmedMode:
         {
             clickLabel = new DClickLabel;
