@@ -24,21 +24,6 @@
 
 #include "umscamera.h"
 
-// C ANSI includes
-
-extern "C"
-{
-#include <sys/types.h>
-#include <sys/stat.h>
-
-#ifndef Q_CC_MSVC
-#   include <unistd.h>
-#   include <utime.h>
-#else
-#   include <sys/utime.h>
-#endif
-}
-
 // Qt includes
 
 #include <QDir>
@@ -82,6 +67,7 @@ extern "C"
 #include "dimg.h"
 #include "dmetadata.h"
 #include "itemscanner.h"
+#include "dfileoperations.h"
 
 namespace Digikam
 {
@@ -434,16 +420,7 @@ bool UMSCamera::downloadItem(const QString& folder, const QString& itemName, con
     // Set the file modification time of the downloaded file to the original file.
     // NOTE: this behavior don't need to be managed through Setup/Metadata settings.
 
-    QT_STATBUF st;
-
-    if (QT_STAT(QFile::encodeName(src).constData(), &st) == 0)
-    {
-        struct utimbuf ut;
-        ut.modtime = st.st_mtime;
-        ut.actime  = st.st_atime;
-
-        ::utime(QFile::encodeName(dest).constData(), &ut);
-    }
+    DFileOperations::copyModificationTime(src, dest);
 
     return true;
 }
@@ -548,16 +525,7 @@ bool UMSCamera::uploadItem(const QString& folder, const QString& itemName, const
     // Set the file modification time of the uploaded file to original file.
     // NOTE: this behavior don't need to be managed through Setup/Metadata settings.
 
-    QT_STATBUF st;
-
-    if (QT_STAT(QFile::encodeName(src).constData(), &st) == 0)
-    {
-        struct utimbuf ut;
-        ut.modtime = st.st_mtime;
-        ut.actime  = st.st_atime;
-
-        ::utime(QFile::encodeName(dest).constData(), &ut);
-    }
+    DFileOperations::copyModificationTime(src, dest);
 
     // Get new camera item information.
 

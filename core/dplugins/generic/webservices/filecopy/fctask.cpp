@@ -24,28 +24,16 @@
 
 #include "fctask.h"
 
-// C ANSI includes
-
-extern "C"
-{
-#ifndef Q_CC_MSVC
-#   include <unistd.h>
-#   include <utime.h>
-#else
-#   include <sys/utime.h>
-#endif
-}
-
 // Qt includes
 
 #include <QDir>
 #include <QFile>
-#include <qplatformdefs.h>
 
 // Local includes
 
 #include "digikam_debug.h"
 #include "digikam_config.h"
+#include "dfileoperations.h"
 
 namespace DigikamGenericFileCopyPlugin
 {
@@ -132,25 +120,10 @@ void FCTask::run()
         }
     }
 
-    // Since QFileInfo does not support timestamp updates,
-    // we have to use the utime() system call.
-
     if (ok && (d->behavior == CopyFile))
     {
-        QT_STATBUF st;
-
-        if (QT_STAT(QFile::encodeName(d->srcUrl.toLocalFile()).constData(), &st) == 0)
-        {
-            struct utimbuf ut;
-            ut.modtime = st.st_mtime;
-            ut.actime  = st.st_atime;
-
-            if (::utime(QFile::encodeName(dest.toLocalFile()).constData(), &ut) != 0)
-            {
-                qCDebug(DIGIKAM_WEBSERVICES_LOG) << "Failed to restore modification time for file "
-                                                 << dest;
-            }
-        }
+        DFileOperations::copyModificationTime(d->srcUrl.toLocalFile(),
+                                              dest.toLocalFile());
     }
 
     if (ok)

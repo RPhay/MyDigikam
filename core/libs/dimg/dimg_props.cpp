@@ -182,14 +182,17 @@ void DImg::setMetadata(const MetaEngineData& data)
     m_priv->metaData = data;
 }
 
-uint DImg::numBytes() const
+quint64 DImg::numBytes() const
 {
-    return (width() * height() * bytesDepth());
+    return ((quint64)width()  *
+            (quint64)height() *
+            (quint64)bytesDepth());
 }
 
-uint DImg::numPixels() const
+quint64 DImg::numPixels() const
 {
-    return (width() * height());
+    return ((quint64)width() *
+            (quint64)height());
 }
 
 int DImg::bytesDepth() const

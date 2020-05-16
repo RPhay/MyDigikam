@@ -144,7 +144,15 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
     int          bit_depth, color_type, interlace_type;
     QImage       qimage;
 
-    FILE* const f = fopen(QFile::encodeName(path).constData(), "rb");
+#ifdef Q_OS_WIN
+
+    FILE* const f = _wfopen((const wchar_t*)path.utf16(), L"rb");
+
+#else
+
+    FILE* const f = fopen(path.toUtf8().constData(), "rb");
+
+#endif
 
     if (!f)
     {
@@ -156,9 +164,13 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
     size_t itemsRead = fread(buf, 1, PNG_BYTES_TO_CHECK, f);
 
 #if PNG_LIBPNG_VER >= 10400
+
     if (itemsRead != PNG_BYTES_TO_CHECK || png_sig_cmp(buf, 0, PNG_BYTES_TO_CHECK))
+
 #else
+
     if (itemsRead != PNG_BYTES_TO_CHECK || !png_check_sig(buf, PNG_BYTES_TO_CHECK))
+
 #endif
     {
         fclose(f);
@@ -188,9 +200,13 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
     }
 
 #if PNG_LIBPNG_VER >= 10400
+
     if (setjmp(png_jmpbuf(png_ptr)))
+
 #else
+
     if (setjmp(png_ptr->jmpbuf))
+
 #endif
     {
         png_destroy_read_struct(&png_ptr, &info_ptr, nullptr);
@@ -216,9 +232,13 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
     }
 
 #if PNG_LIBPNG_VER >= 10400
+
     png_byte info_color_type = png_get_color_type(png_ptr, info_ptr);
+
 #else
+
     png_byte info_color_type = info_ptr->color_type;
+
 #endif
 
     if (info_color_type == PNG_COLOR_TYPE_RGB_ALPHA)
@@ -288,10 +308,14 @@ QImage ThumbnailCreator::loadPNG(const QString& path) const
         png_set_gray_to_rgb(png_ptr);
 
         if (png_get_bit_depth(png_ptr, info_ptr) < 8)
+
 #if PNG_LIBPNG_VER >= 10400
+
             png_set_expand_gray_1_2_4_to_8(png_ptr);
 #else
+
             png_set_gray_1_2_4_to_8(png_ptr);
+
 #endif
     }
 

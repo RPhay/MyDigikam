@@ -23,18 +23,6 @@
 
 #include "timeadjust.h"
 
-// C ANSI includes
-
-extern "C"
-{
-#ifndef Q_CC_MSVC
-#   include <unistd.h>
-#   include <utime.h>
-#else
-#   include <sys/utime.h>
-#endif
-}
-
 // Qt includes
 
 #include <QLabel>
@@ -48,8 +36,9 @@ extern "C"
 // Local includes
 
 #include "dimg.h"
-#include "dlayoutbox.h"
 #include "dmetadata.h"
+#include "dlayoutbox.h"
+#include "dfileoperations.h"
 
 namespace DigikamBqmTimeAdjustPlugin
 {
@@ -462,27 +451,7 @@ bool TimeAdjust::toolOperations()
 
     if (ret && prm.updFileModDate)
     {
-        // Since QFileInfo does not support timestamp updates,
-        // we have to use the utime() system call.
-
-        int modtime;
-        QDateTime unixDate;
-        unixDate.setDate(QDate(1970, 1, 1));
-        unixDate.setTime(QTime(0, 0, 0, 0));
-
-        if (dt < unixDate)
-            modtime = -(dt.secsTo(unixDate) + (60 * 60));
-        else
-            modtime = dt.toTime_t();
-
-        struct utimbuf ut;
-        ut.modtime = modtime;
-        ut.actime  = QDateTime::currentDateTime().toTime_t();
-
-        if (::utime(QFile::encodeName(outputUrl().toLocalFile()).constData(), &ut) != 0)
-        {
-            ret = false;
-        }
+        ret = DFileOperations::setModificationTime(outputUrl().toLocalFile(), dt);
     }
 
     return ret;

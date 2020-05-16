@@ -48,6 +48,7 @@
 // Local includes
 
 #include "digikam_debug.h"
+#include "digikam_config.h"
 #include "imagehistogram.h"
 #include "digikam_globals.h"
 
@@ -714,7 +715,15 @@ bool ImageLevels::loadLevelsFromGimpLevelsFile(const QUrl& fileUrl)
     char    buf[50];
     char*   nptr = nullptr;
 
-    file = fopen(QFile::encodeName(fileUrl.toLocalFile()).constData(), "r");
+#ifdef Q_OS_WIN
+
+    file = _wfopen((const wchar_t*)fileUrl.toLocalFile().utf16(), L"r");
+
+#else
+
+    file = fopen(fileUrl.toLocalFile().toUtf8().constData(), "r");
+
+#endif
 
     if (!file)
     {
@@ -787,7 +796,15 @@ bool ImageLevels::saveLevelsToGimpLevelsFile(const QUrl& fileUrl)
     FILE* file = nullptr;
     int   i;
 
-    file = fopen(QFile::encodeName(fileUrl.toLocalFile()).constData(), "w");
+#ifdef Q_OS_WIN
+
+    file = _wfopen((const wchar_t*)fileUrl.toLocalFile().utf16(), L"w");
+
+#else
+
+    file = fopen(fileUrl.toLocalFile().toUtf8().constData(), "w");
+
+#endif
 
     if (!file)
     {

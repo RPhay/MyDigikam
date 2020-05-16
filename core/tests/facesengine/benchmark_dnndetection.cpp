@@ -59,6 +59,8 @@ private Q_SLOTS:
 private:
 
     void showCVMat(const cv::Mat& cvimage);
+    QList<QRectF> detectFaces(const QImage& img);
+    void extractFaces(const QImage& img, QImage& imgScaled, const QList<QRectF>& faces);
 
 private:
 
@@ -179,8 +181,39 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
     QImage img(imagePath);
     QImage imgScaled(img.scaled(416, 416, Qt::KeepAspectRatio));
 
-    // NOTE detection with filePath won't work when format is not standard
-    // NOTE unexpected behaviour with detecFaces(const QString&)
+    // clear faces layout
+    QLayoutItem *wItem;
+    while ((wItem = m_croppedfaceLayout->takeAt(0)) != nullptr)
+    {
+        delete wItem->widget();
+        delete wItem;
+    }
+
+    QList<QRectF> faces = detectFaces(img);
+
+    extractFaces(img, imgScaled, faces);
+
+    // Only setPixmap after finishing drawing bboxes around detected faces
+    m_fullImage->setPixmap(QPixmap::fromImage(imgScaled));
+}
+
+
+void MainWindow::showCVMat(const cv::Mat& cvimage)
+{
+    if(cvimage.cols*cvimage.rows != 0)
+    {
+        cv::Mat rgb;
+        QPixmap p;
+        cv::cvtColor(cvimage, rgb, (-2*cvimage.channels()+10));
+        p.convertFromImage(QImage(rgb.data, rgb.cols, rgb.rows, QImage::Format_RGB888));
+
+        m_paddedImage->setPixmap(p);
+        //resize(cvimage.cols, cvimage.rows);
+    }
+}
+
+QList<QRectF> MainWindow::detectFaces(const QImage& img)
+{
     QList<QRectF> faces;
 
     try
@@ -189,6 +222,8 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
         unsigned int elapsedDetection = 0;
         timer.start();
 
+        // NOTE detection with filePath won't work when format is not standard
+        // NOTE unexpected behaviour with detecFaces(const QString&)
         cv::Size paddedSize(0, 0);
         cv::Mat cvImage       = m_detector->prepareForDetection(img, paddedSize);
         QList<QRect> absRects = m_detector->detectFaces(cvImage, paddedSize);
@@ -212,59 +247,41 @@ void MainWindow::slotDetectFaces(const QListWidgetItem* imageItem)
         qWarning() << "Default exception from OpenCV";
     }
 
-    // clear faces layout
-    QLayoutItem *wItem;
-    while ((wItem = m_croppedfaceLayout->takeAt(0)) != nullptr)
-    {
-        delete wItem->widget();
-        delete wItem;
-    }
-
-    if (! faces.isEmpty())
-    {
-        qDebug() << "Coordinates of detected faces : ";
-
-        foreach (const QRectF& r, faces)
-        {
-            qDebug() << r;
-        }
-
-        QPainter painter(&imgScaled);
-        QPen paintPen(Qt::green);
-        paintPen.setWidth(1);
-        painter.setPen(paintPen);
-
-        foreach (const QRectF& rr, faces)
-        {
-            QLabel* const label = new QLabel;
-            label->setScaledContents(false);
-            QRect rectDraw      = FaceDetector::toAbsoluteRect(rr, imgScaled.size());
-            QRect r             = FaceDetector::toAbsoluteRect(rr, img.size());
-            QImage part         = img.copy(r);
-            label->setPixmap(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 100),
-                                                            qMin(img.size().width(), 100),
-                                                            Qt::KeepAspectRatio)));
-            m_croppedfaceLayout->addWidget(label);
-            painter.drawRect(rectDraw);
-        }
-    }
-
-    // Only setPixmap after finishing drawing bboxes around detected faces
-    m_fullImage->setPixmap(QPixmap::fromImage(imgScaled));
+    return faces;
 }
 
-
-void MainWindow::showCVMat(const cv::Mat& cvimage)
+void MainWindow::extractFaces(const QImage& img, QImage& imgScaled, const QList<QRectF>& faces)
 {
-    if(cvimage.cols*cvimage.rows)
+    if (faces.isEmpty())
     {
-        cv::Mat rgb;
-        QPixmap p;
-        cv::cvtColor(cvimage, rgb, (-2*cvimage.channels()+10));
-        p.convertFromImage(QImage(rgb.data, rgb.cols, rgb.rows, QImage::Format_RGB888));
+        qWarning() << "No face detected";
+        return;
+    }
 
-        m_paddedImage->setPixmap(p);
-        //resize(cvimage.cols, cvimage.rows);
+    qDebug() << "Coordinates of detected faces : ";
+
+    foreach (const QRectF& r, faces)
+    {
+        qDebug() << r;
+    }
+
+    QPainter painter(&imgScaled);
+    QPen paintPen(Qt::green);
+    paintPen.setWidth(1);
+    painter.setPen(paintPen);
+
+    foreach (const QRectF& rr, faces)
+    {
+        QLabel* const label = new QLabel;
+        label->setScaledContents(false);
+        QRect rectDraw      = FaceDetector::toAbsoluteRect(rr, imgScaled.size());
+        QRect r             = FaceDetector::toAbsoluteRect(rr, img.size());
+        QImage part         = img.copy(r);
+        label->setPixmap(QPixmap::fromImage(part.scaled(qMin(img.size().width(), 100),
+                                                        qMin(img.size().width(), 100),
+                                                        Qt::KeepAspectRatio)));
+        m_croppedfaceLayout->addWidget(label);
+        painter.drawRect(rectDraw);
     }
 }
 
