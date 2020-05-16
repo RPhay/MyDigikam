@@ -60,7 +60,8 @@ public:
         InvalidMode,
         UnconfirmedEditMode,
         ConfirmedMode,
-        ConfirmedEditMode
+        ConfirmedEditMode,
+        IgnoredMode
     };
 
     enum TagEntryWidgetMode
