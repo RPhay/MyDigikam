@@ -741,4 +741,5 @@ BUGFIXES:
 705 ==> 421559 - HEIC: Failed to open the data source: Too many open files (errno = 24).
 706 ==> 421464 - XPkeywords not being updated.
 707 ==> 421521 - Wrong EXIF photograph properties shown when there is no EXIF data at all.
-708 ==> 
+708 ==> 421646 - Impossible to add new tag.
+709 ==> 

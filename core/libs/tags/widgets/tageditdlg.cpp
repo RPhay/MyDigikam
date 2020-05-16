@@ -161,6 +161,7 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
 
     if (d->create)
     {
+        QStringList tagPaths;
         AlbumList tList = AlbumManager::instance()->allTAlbums();
 
         for (AlbumList::const_iterator it = tList.constBegin() ; it != tList.constEnd() ; ++it)
@@ -169,9 +170,11 @@ TagEditDlg::TagEditDlg(QWidget* const parent, TAlbum* const album, bool create)
 
             if (tag && !tag->isInternalTag())
             {
-                d->titleEdit->completerModel()->addItem(tag->tagPath());
+                tagPaths << tag->tagPath();
             }
         }
+
+        d->titleEdit->completerModel()->addItems(tagPaths);
     }
     else
     {

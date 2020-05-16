@@ -151,6 +151,12 @@ void ModelCompleter::addItem(const QString& item)
     d->stringModel->sort(0);
 }
 
+void ModelCompleter::addItems(const QStringList& items)
+{
+    d->stringModel->setStringList(items);
+    d->stringModel->sort(0);
+}
+
 QStringList ModelCompleter::items() const
 {
     return d->stringModel->stringList();
